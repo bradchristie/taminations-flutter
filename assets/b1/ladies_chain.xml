@@ -1,0 +1,531 @@
+<?xml version="1.0"?>
+<!DOCTYPE tamination SYSTEM "../src/tamination.dtd">
+<!--
+
+    Copyright 2020 Brad Christie
+
+    This file is part of Taminations.
+
+    Taminations is free software: you can redistribute it and/or modify
+    it under the terms of the GNU Affero General Public License as published
+    by the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Taminations is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU Affero General Public License for more details.
+
+    You should have received a copy of the GNU Affero General Public License
+    along with Taminations.  If not, see <http://www.gnu.org/licenses/>.
+
+-->
+<tamination title="Ladies Chain Family">
+
+  <tam title="Ladies Chain"
+       from="Facing Couples"
+       formation="Facing Couples" sequencer="gender-specific"
+       fractions="5" difficulty="1">
+    <path>
+      <move select="Stand" />
+      <move select="Flip Left" beats="4" offsetY="-4" />
+      <move select="Beau Wheel" />
+    </path>
+    <path>
+      <move select="Pull Left" beats="2.5" scaleX="2" scaleY="1.75" />
+      <move select="Extend Right" beats="2.5" scaleX="2" scaleY="1.75" />
+      <move select="Belle Wheel" />
+    </path>
+  </tam>
+
+  <tam title="Ladies Chain"
+       from="Normal Lines"
+       formation="Normal Lines" sequencer="gender-specific"
+       fractions="5" difficulty="1">
+    <path>
+      <move select="Stand" hands="nohands" />
+      <move select="Flip Left" beats="4" offsetY="-4" />
+      <move select="Beau Wheel" />
+    </path>
+    <path>
+      <move select="Pull Left" beats="2.5" scaleX="2" scaleY="1.75" />
+      <move select="Extend Right" beats="2.5" scaleX="2" scaleY="1.75" />
+      <move select="Belle Wheel" />
+    </path>
+    <path>
+      <move select="Stand" hands="nohands" />
+      <move select="Flip Left" beats="4" offsetY="-4" />
+      <move select="Beau Wheel" />
+    </path>
+    <path>
+      <move select="Pull Left" beats="2.5" scaleX="2" scaleY="1.75" />
+      <move select="Extend Right" beats="2.5" scaleX="2" scaleY="1.75" />
+      <move select="Belle Wheel" />
+    </path>
+  </tam>
+
+  <tam title="Ladies Chain" from="Eight Chain Thru" sequencer="gender-specific"
+       formation="Eight Chain Thru" fractions="5" difficulty="1">
+    <path>
+      <move select="Stand" />
+      <move select="Flip Left" beats="4" offsetY="-3.5" />
+      <move select="Beau Wheel" scaleX=".5" scaleY=".75" />
+    </path>
+    <path>
+      <move select="Pull Left" beats="2.5" scaleY="1.5" />
+      <move select="Extend Right" beats="2.5"/>
+      <move select="Belle Wheel" scaleX=".5" scaleY=".75"/>
+    </path>
+    <path>
+      <move select="Stand" />
+      <move select="Flip Left" beats="4" offsetY="-3.5" />
+      <move select="Beau Wheel" scaleX=".75" scaleY=".75"/>
+    </path>
+    <path>
+      <move select="Pull Left" beats="2.5" scaleY="1.5" />
+      <move select="Extend Right" beats="2.5"/>
+      <move select="Belle Wheel" scaleX=".5" scaleY=".75"/>
+    </path>
+  </tam>
+
+  <tam title="Ladies Chain" from="Double Pass Thru"
+       sequencer="gender-specific" difficulty="2">
+    <formation>
+      <dancer gender="boy" x="-3" y="1" angle="0"/>
+      <dancer gender="boy" x="-3" y="-1" angle="0"/>
+      <dancer gender="girl" x="-1" y="1" angle="0"/>
+      <dancer gender="girl" x="-1" y="-1" angle="0"/>
+    </formation>
+    <path>
+      <move select="Quarter Left" beats="3" offsetX="1" offsetY=".5"/>
+      <move select="U-Turn Left" beats="3" hands="right"/>
+      <move select="Quarter Left" hands="right" beats="2" offsetX="-1.5"/>
+    </path>
+    <path>
+      <move select="Quarter Left" beats="3" offsetX="1" offsetY="-.5"/>
+      <move select="U-Turn Left" beats="3" hands="right"/>
+      <move select="Quarter Left" hands="right" beats="2" offsetX="-.5"/>
+    </path>
+    <path>
+      <move select="Pull Left" scaleY=".5"/>
+      <move select="Quarter Right" beats="2" offsetX="1"/>
+      <move select="Swing Left"/>
+      <move select="Hinge Left" beats="2" scaleX="1.5"/>
+    </path>
+    <path>
+      <move select="Pull Left" scaleY=".5"/>
+      <move select="Lead Right" beats="2"/>
+      <move select="Swing Left"/>
+      <move select="Hinge Left" beats="2" scaleX=".5"/>
+    </path>
+  </tam>
+
+  <tam title="Head Ladies Chain" group=" "
+       from="Static Square"
+       formation="Static Square" sequencer="gender-specific" difficulty="1">
+    <path>
+      <move select="Flip Left" beats="5" offsetY="-4" />
+      <move select="Beau Wheel" />
+    </path>
+    <path>
+      <move select="Pull Left" beats="2.5" scaleX="3" scaleY="1.75" />
+      <move select="Extend Right" beats="2.5" scaleX="3" scaleY="1.75" />
+      <move select="Belle Wheel" />
+    </path>
+    <path>
+    </path>
+    <path>
+    </path>
+  </tam>
+
+  <tam title="Side Ladies Chain" group=" "
+       from="Static Square"
+       formation="Static Square" sequencer="gender-specific" difficulty="1">
+    <path>
+    </path>
+    <path>
+    </path>
+    <path>
+      <move select="Flip Left" beats="5" offsetY="-4" />
+      <move select="Beau Wheel" />
+    </path>
+    <path>
+      <move select="Pull Left" beats="2.5" scaleX="3" scaleY="1.75" />
+      <move select="Extend Right" beats="2.5" scaleX="3" scaleY="1.75" />
+      <move select="Belle Wheel" />
+    </path>
+  </tam>
+
+  <tam title="Head Ladies Chain Right" group=" "
+       formation="Static Square" sequencer="gender-specific" difficulty="2">
+    <path>
+      <move select="Stand" />
+      <move select="Flip Left" beats="4" offsetY="-4" />
+      <move select="Beau Wheel" />
+    </path>
+    <path>
+      <move select="Extend Left" beats="2" scaleX="1.5"/>
+      <move select="Lead Right" beats="3" scaleX="1.5" scaleY="3"/>
+      <move select="Belle Wheel" scaleX="0.75" scaleY="0.5"/>
+    </path>
+    <path>
+      <move select="Stand" />
+      <move select="Flip Left" beats="4" offsetY="-4" />
+      <move select="Beau Wheel" />
+    </path>
+    <path>
+      <move select="Extend Left" beats="2" scaleX="1.5" scaleY="2"/>
+      <move select="Lead Left" beats="3" scaleX="1.5" scaleY="2"/>
+      <move select="Belle Wheel" scaleX="0.75" scaleY="0.5"/>
+    </path>
+  </tam>
+
+  <tam title="Side Ladies Chain Right" group=" "
+       formation="Static Square" sequencer="gender-specific" difficulty="2">
+    <path>
+      <move select="Stand" />
+      <move select="Flip Left" beats="4" offsetY="-4" />
+      <move select="Beau Wheel" />
+    </path>
+    <path>
+      <move select="Extend Left" beats="2" scaleX="1.5" scaleY="2"/>
+      <move select="Lead Left" beats="3" scaleX="1.5" scaleY="2"/>
+      <move select="Belle Wheel" scaleX="0.75" scaleY="0.5"/>
+    </path>
+    <path>
+      <move select="Stand" />
+      <move select="Flip Left" beats="4" offsetY="-4" />
+      <move select="Beau Wheel" />
+    </path>
+    <path>
+      <move select="Extend Left" beats="2" scaleX="1.5"/>
+      <move select="Lead Right" beats="3" scaleX="1.5" scaleY="3"/>
+      <move select="Belle Wheel" scaleX="0.75" scaleY="0.5"/>
+    </path>
+  </tam>
+
+  <tam title="Head Ladies Chain Left" group=" "
+       formation="Static Square" sequencer="gender-specific" difficulty="2">
+    <path>
+      <move select="Stand" />
+      <move select="Flip Left" beats="4" offsetY="-4" />
+      <move select="Beau Wheel" />
+    </path>
+    <path>
+      <move select="Extend Left" beats="2" scaleX="1.5" scaleY="2"/>
+      <move select="Lead Left" beats="3" scaleX="1.5" scaleY="2"/>
+      <move select="Belle Wheel" scaleX="0.75" scaleY="0.5"/>
+    </path>
+    <path>
+      <move select="Stand" />
+      <move select="Flip Left" beats="4" offsetY="-4" />
+      <move select="Beau Wheel" />
+    </path>
+    <path>
+      <move select="Extend Left" beats="2" scaleX="1.5"/>
+      <move select="Lead Right" beats="3" scaleX="1.5" scaleY="3"/>
+      <move select="Belle Wheel" scaleX="0.75" scaleY="0.5"/>
+    </path>
+    <taminator>
+      This is the same as Side Ladies Chain Right
+    </taminator>
+  </tam>
+
+  <tam title="Side Ladies Chain Left" group=" "
+       formation="Static Square" sequencer="gender-specific" difficulty="2">
+    <path>
+      <move select="Stand" />
+      <move select="Flip Left" beats="4" offsetY="-4" />
+      <move select="Beau Wheel" />
+    </path>
+    <path>
+      <move select="Extend Left" beats="2" scaleX="1.5"/>
+      <move select="Lead Right" beats="3" scaleX="1.5" scaleY="3"/>
+      <move select="Belle Wheel" scaleX="0.75" scaleY="0.5"/>
+    </path>
+    <path>
+      <move select="Stand" />
+      <move select="Flip Left" beats="4" offsetY="-4" />
+      <move select="Beau Wheel" />
+    </path>
+    <path>
+      <move select="Extend Left" beats="2" scaleX="1.5" scaleY="2"/>
+      <move select="Lead Left" beats="3" scaleX="1.5" scaleY="2"/>
+      <move select="Belle Wheel" scaleX="0.75" scaleY="0.5"/>
+    </path>
+    <taminator>
+      This is the same as Head Ladies Chain Right
+    </taminator>
+  </tam>
+
+  <tam title="End Ladies Chain on a Diagonal" group=" "
+       formation="Normal Lines" sequencer="gender-specific" difficulty="2">
+    <path>
+    </path>
+    <path>
+    </path>
+    <path>
+      <move select="U-Turn Left" beats="9" offsetY="-2"/>
+      <move select="Beau Wheel"/>
+    </path>
+    <path>
+      <move select="Lead Left"/>
+      <move select="Forward 2"/>
+      <move select="Hinge Right" beats="2"/>
+      <move select="Forward 2" beats="3.5"/>
+      <move select="Belle Wheel"/>
+    </path>
+  </tam>
+
+  <tam title="Center Ladies Chain on a Diagonal" group=" "
+       formation="Normal Lines" sequencer="gender-specific" difficulty="3">
+    <path>
+      <move select="U-Turn Left" beats="9" offsetY="-2"/>
+      <move select="Beau Wheel"/>
+    </path>
+    <path>
+      <move select="Forward 2" beats="3.5"/>
+      <move select="Hinge Right" beats="2"/>
+      <move select="Forward 2"/>
+      <move select="Lead Left"/>
+      <move select="Belle Wheel"/>
+    </path>
+    <path>
+    </path>
+    <path>
+    </path>
+  </tam>
+
+  <tam title="Four Ladies Chain"
+       from="Static Square"
+       formation="Static Square" sequencer="gender-specific"
+       fractions="5" difficulty="1">
+    <path>
+      <move select="Flip Left" beats="5" offsetY="-4" />
+      <move select="Beau Wheel" />
+    </path>
+    <path>
+      <move select="Pull Left" beats="2.5" scaleX="3" scaleY="1.75" />
+      <move select="Extend Right" beats="2.5" scaleX="3" scaleY="1.75" />
+      <move select="Belle Wheel" />
+    </path>
+    <path>
+      <move select="Flip Left" beats="5" offsetY="-4" />
+      <move select="Beau Wheel" />
+    </path>
+    <path>
+      <move select="Pull Left" beats="2.5" scaleX="3" scaleY="1.75" />
+      <move select="Extend Right" beats="2.5" scaleX="3" scaleY="1.75" />
+      <move select="Belle Wheel" />
+    </path>
+  </tam>
+
+  <tam title="Four Ladies Chain" from="Normal Lines"
+       formation="Normal Lines" sequencer="gender-specific" difficulty="2">
+    <path>
+      <move select="U-Turn Left" beats="9" offsetY="-2"/>
+      <move select="Beau Wheel"/>
+    </path>
+    <path>
+      <move select="Forward 2" beats="3.5"/>
+      <move select="Hinge Right" beats="2"/>
+      <move select="Forward 2"/>
+      <move select="Lead Left"/>
+      <move select="Belle Wheel"/>
+    </path>
+    <path>
+      <move select="U-Turn Left" beats="9" offsetY="-2"/>
+      <move select="Beau Wheel"/>
+    </path>
+    <path>
+      <move select="Lead Left"/>
+      <move select="Forward 2"/>
+      <move select="Hinge Right" beats="2"/>
+      <move select="Forward 2" beats="3.5"/>
+      <move select="Belle Wheel"/>
+    </path>
+  </tam>
+
+  <tam title="Four Ladies Chain 3/4" group=" "
+       from="Static Square"
+       formation="Static Square" sequencer="gender-specific"
+       fractions="6.5"  difficulty="1">
+    <path>
+      <move select="Flip Left" beats="6.5" offsetY="-4" />
+      <move select="Beau Wheel" />
+    </path>
+    <path>
+      <move select="Extend Left" beats="2.5" scaleX="3" scaleY="2" />
+      <move select="Hinge Right" />
+      <move select="Extend Right" beats="2.5" scaleX="3" scaleY="2" />
+      <move select="Belle Wheel" />
+    </path>
+    <path>
+      <move select="Flip Left" beats="6.5" offsetY="-4" />
+      <move select="Beau Wheel" />
+    </path>
+    <path>
+      <move select="Extend Left" beats="2.5" scaleX="3" scaleY="2" />
+      <move select="Hinge Right" />
+      <move select="Extend Right" beats="2.5" scaleX="3" scaleY="2" />
+      <move select="Belle Wheel" />
+    </path>
+  </tam>
+
+  <tam title="Four Ladies Chain 1/4" group=" "
+       from="Static Square"
+       formation="Static Square" sequencer="gender-specific"
+       fractions="6.5" difficulty="2">
+    <path>
+      <move select="Flip Left" beats="4" offsetY="-4" />
+      <move select="Beau Wheel" />
+    </path>
+    <path>
+      <move select="Extend Left" beats="2" scaleX="2" scaleY="2" />
+      <move select="Lead Left" beats="2" scaleX="2" scaleY="2" />
+      <move select="Belle Wheel" />
+    </path>
+    <path>
+      <move select="Flip Left" beats="4" offsetY="-4" />
+      <move select="Beau Wheel" />
+    </path>
+    <path>
+      <move select="Extend Left" beats="2" scaleX="2" scaleY="2" />
+      <move select="Lead Left" beats="2" scaleX="2" scaleY="2" />
+      <move select="Belle Wheel" />
+    </path>
+  </tam>
+
+  <tam title="Chain Down the Line"
+       from="Two-Faced Line"
+       formation="Two-Faced Line RH"
+       fractions="3" difficulty="1">
+    <path>
+      <move select="Stand" beats="3" />
+      <move select="BackHinge Right" />
+      <move select="Beau Wheel" />
+    </path>
+    <path>
+      <move select="Swing Right" />
+      <move select="Hinge Left" />
+      <move select="Belle Wheel" />
+    </path>
+  </tam>
+
+  <tam title="Chain Down the Line" from="Left-Hand Wave"
+       formation="Wave LH" difficulty="1">
+    <path>
+      <move select="U-Turn Left" />
+      <move select="BackHinge Right" />
+      <move select="Beau Wheel" />
+    </path>
+    <path>
+      <move select="Swing Right" />
+      <move select="Hinge Left" />
+      <move select="Belle Wheel" />
+    </path>
+  </tam>
+
+  <tam title="Chain Down the Line"
+       from="Two-Faced Lines"
+       formation="Two-Faced Lines RH"
+       fractions="3" difficulty="1">
+    <path>
+      <move select="Stand" beats="3" />
+      <move select="BackHinge Right" />
+      <move select="Beau Wheel" />
+    </path>
+    <path>
+      <move select="Swing Right" />
+      <move select="Hinge Left" />
+      <move select="Belle Wheel" />
+    </path>
+    <path>
+      <move select="Swing Right" />
+      <move select="Hinge Left" />
+      <move select="Belle Wheel" />
+    </path>
+    <path>
+      <move select="Stand" beats="3" />
+      <move select="BackHinge Right" />
+      <move select="Beau Wheel" />
+    </path>
+  </tam>
+
+  <tam title="Chain Down the Line"
+       from="Left-Hand Waves"
+       formation="Ocean Waves LH BGGB"
+       fractions="3" difficulty="1">
+    <path>
+      <move select="U-Turn Left" />
+      <move select="BackHinge Right" />
+      <move select="Beau Wheel" />
+    </path>
+    <path>
+      <move select="Swing Right" />
+      <move select="Hinge Left" />
+      <move select="Belle Wheel" />
+    </path>
+    <path>
+      <move select="Swing Right" />
+      <move select="Hinge Left" />
+      <move select="Belle Wheel" />
+    </path>
+    <path>
+      <move select="U-Turn Left" />
+      <move select="BackHinge Right" />
+      <move select="Beau Wheel" />
+    </path>
+  </tam>
+
+  <tam title="Chain Down the Line" from="Tidal Two-Faced Line"
+       formation="Two-Faced Tidal Line RH" fractions="3" difficulty="2">
+    <path>
+      <move select="Stand" beats="3" />
+      <move select="BackHinge Right" scaleX=".5" scaleY=".5"/>
+      <move select="Beau Wheel" scaleX=".5" scaleY=".75" />
+    </path>
+    <path>
+      <move select="Swing Right" scaleX=".5" scaleY=".5"/>
+      <move select="Hinge Left" scaleX=".5" scaleY=".5"/>
+      <move select="Belle Wheel" scaleX=".5" scaleY=".75"/>
+    </path>
+    <path>
+      <move select="Swing Right" scaleX=".5" scaleY=".5"/>
+      <move select="Hinge Left" scaleX=".5" scaleY=".5"/>
+      <move select="Belle Wheel" scaleX=".5" scaleY=".75"/>
+    </path>
+    <path>
+      <move select="Stand" beats="3" />
+      <move select="BackHinge Right" scaleX=".5" scaleY=".5"/>
+      <move select="Beau Wheel" scaleX=".5" scaleY=".75"/>
+    </path>
+  </tam>
+
+  <tam title="Chain Down the Line"
+       from="Tidal Left-Hand Wave"
+       formation="Tidal Wave LH BGGB"
+       fractions="3" difficulty="2">
+    <path>
+      <move select="U-Turn Left" />
+      <move select="BackHinge Right" scaleX=".5" scaleY=".5"/>
+      <move select="Beau Wheel" scaleX=".5" scaleY=".75"/>
+    </path>
+    <path>
+      <move select="Swing Right" scaleX=".5" scaleY=".5"/>
+      <move select="Hinge Left" scaleX=".5" scaleY=".5"/>
+      <move select="Belle Wheel" scaleX=".5" scaleY=".75"/>
+    </path>
+    <path>
+      <move select="Swing Right" scaleX=".5" scaleY=".5"/>
+      <move select="Hinge Left" scaleX=".5" scaleY=".5"/>
+      <move select="Belle Wheel" scaleX=".5" scaleY=".75"/>
+    </path>
+    <path>
+      <move select="U-Turn Left" />
+      <move select="BackHinge Right" scaleX=".5" scaleY=".5"/>
+      <move select="Beau Wheel" scaleX=".5" scaleY=".75"/>
+    </path>
+  </tam>
+
+</tamination>

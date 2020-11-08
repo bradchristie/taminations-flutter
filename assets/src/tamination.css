@@ -1,0 +1,178 @@
+/*
+
+    Copyright 2020 Brad Christie
+
+    This file is part of TAMinations.
+
+    TAMinations is free software: you can redistribute it and/or modify
+    it under the terms of the GNU Affero General Public License as published
+    by the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    TAMinations is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU Affero General Public License for more details.
+
+    You should have received a copy of the GNU Affero General Public License
+    along with TAMinations.  If not, see <http://www.gnu.org/licenses/>.
+
+ */
+
+/*  Force scrolling inside each table cell
+    instead of overall page  */
+
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #fff8f0;
+}
+
+body > * {
+  margin-left: 10px;
+}
+
+/*  Only print the definition  */
+@media print {
+  .title, .menu, .menutitle, .animation
+  {
+    display: none;
+  }
+  body
+  {
+    height: auto;
+    overflow: visible;
+  }
+  #definition {
+    display: inline;
+  }
+}
+
+/*  H2 is used for the title for each call  */
+h2 {
+  font: bold x-large Helvetica, Arial, Sans Serif;
+  text-transform: uppercase;
+  color: red;
+  text-shadow: 2px 2px #e0e0e0;
+}
+h2 * { text-shadow: none }
+
+/*  H3 is used for the title of call variations  */
+h3, h3 > a {
+  font: bold large Helvetica, Arial, Sans Serif;
+  color: red;
+
+}
+
+
+/*  This helps space out the definition images  */
+img { background-color: white; padding: 6px; }
+
+div.intro,
+div.starting-formations,
+div.dance-action,
+div.ending-formation,
+div.timing,
+div.styling,
+div.comments,
+div.command-examples,
+div.teaching-tip
+{
+  margin: 10px;
+}
+
+
+div.command-examples > p
+{
+  font-style: italic;
+  margin: 0 0 0 20px;
+  text-indent: -20px;
+}
+
+div.parts {
+	text-align: right;
+  margin: 10px;
+}
+
+div.starting-formations > b,
+div.dance-action > b,
+div.ending-formation > b,
+div.timing > b,
+div.styling > b,
+div.comments > b,
+div.command-examples > b,
+div.teaching-tip > b,
+div.parts > b
+{
+  font-family: Helvetica, Arial, Sans Serif;
+  font-weight: bold;
+  color: blue;
+  display: block;
+  text-indent: -10px;
+}
+div.parts > b
+{
+	display: inline;
+}
+
+p { margin: 0 0 10px 0 }
+body > p { margin: 10px }
+
+/*  Styling info on mainstream call definition  */
+p.styling {
+  color: maroon;
+}
+/*  Copyright info at the end of each definition   */
+p.copyright {
+  color: maroon;
+  font-style: italic;
+  font-size: 10px;
+  margin: 10px;
+}
+
+/*  Vic Ceder uses this for noting call authors  */
+.subcallauthor {
+  color: maroon;
+  font: small Helvetica, Arial, Sans Serif;
+}
+
+/*  Hanging indent, often used by Vic  */
+.hanging {
+  margin-left: 30px;
+  text-indent: -30px;
+}
+
+/*  Timing info at end of mainstream/plus/advanced calls  */
+p.timing {
+  font: bold small Helvetica, Arial, Sans Serif;
+  color: navy;
+}
+
+/*  Text from Vic Ceder  */
+.ceder {
+  position: relative;
+  float: right;
+  border: 1px solid black;
+  width: 30%;
+  margin: 10px;
+  padding: 10px;
+  background-color: #ffe0ff;
+}
+
+/*  Highlight for call definition as it's animated  */
+.definition-highlight { background-color: yellow; }
+
+/* Platform-specific text, turned on by each platform */
+.android, .ios, .dom {
+  display: none;
+}
+
+.invisible {
+  visibility: hidden;
+ }
+
+.hidden {
+  display: none;
+}

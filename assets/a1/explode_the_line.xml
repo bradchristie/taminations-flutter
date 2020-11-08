@@ -1,0 +1,675 @@
+<?xml version="1.0"?>
+<!DOCTYPE tamination SYSTEM "../src/tamination.dtd">
+<!--
+
+    Copyright 2020 Brad Christie
+
+    This file is part of Taminations.
+
+    Taminations is free software: you can redistribute it and/or modify
+    it under the terms of the GNU Affero General Public License as published
+    by the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Taminations is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU Affero General Public License for more details.
+
+    You should have received a copy of the GNU Affero General Public License
+    along with Taminations.  If not, see <http://www.gnu.org/licenses/>.
+
+-->
+<tamination title="Explode the Line">
+
+  <tam title="Explode the Line"
+       from="Lines Facing Out"
+       formation="Lines Facing Out">
+    <path>
+      <move select="Quarter Left" beats="2" offsetX="-1" offsetY="1" />
+      <move select="Pull Left" beats="2" scaleX="2" scaleY=".5" />
+      <move select="Extend Right" beats="2" scaleX="2" scaleY=".5" />
+    </path>
+    <path>
+      <move select="Lead Left" beats="3" />
+      <move select="Forward 2" beats="3" />
+    </path>
+    <path>
+      <move select="Lead Right" beats="3" scaleX="2" />
+      <move select="Extend Right" beats="3" scaleX="2" />
+    </path>
+    <path>
+      <move select="Quarter Right" beats="2" offsetX="-1" offsetY="-1" />
+      <move select="Pull Left" beats="2" scaleX="2" scaleY=".5" />
+      <move select="Extend Right" beats="2" scaleX="2" scaleY=".5" />
+    </path>
+  </tam>
+
+  <tam title="Explode the Line"
+       from="Inverted Lines, Ends Facing In"
+       formation="Inverted Lines Ends Facing In">
+    <path>
+      <move select="Lead Right" hands="right" beats="4" scaleX="1.5" scaleY="3" />
+      <move select="Extend Right" beats="2" scaleX="2" scaleY=".5" />
+    </path>
+    <path>
+      <move select="Lead Left" hands="right" beats="4" scaleX=".5" />
+      <move select="Extend Right" beats="2" scaleX="2" scaleY=".5" />
+    </path>
+    <path>
+      <move select="Lead Right" hands="right" beats="4" scaleX="1.5" />
+      <move select="Extend Right" beats="2" scaleX="2" scaleY=".5" />
+    </path>
+    <path>
+      <move select="Lead Left" hands="right" beats="4" scaleX=".5" scaleY="3" />
+      <move select="Extend Right" beats="2" scaleX="2" scaleY=".5" />
+    </path>
+  </tam>
+
+  <tam title="Explode the Line"
+       from="Inverted Lines, Ends Facing Out"
+       formation="Inverted Lines Ends Facing Out">
+    <path>
+      <move select="Lead Left" hands="right" beats="4" scaleX=".5" scaleY="3" />
+      <move select="Extend Right" beats="2" scaleX="2" scaleY=".5" />
+    </path>
+    <path>
+      <move select="Lead Right" hands="right" beats="4" scaleX="1.5" />
+      <move select="Extend Right" beats="2" scaleX="2" scaleY=".5" />
+    </path>
+    <path>
+      <move select="Lead Left" hands="right" beats="4" scaleX=".5" />
+      <move select="Extend Right" beats="2" scaleX="2" scaleY=".5" />
+    </path>
+    <path>
+      <move select="Lead Right" hands="right" beats="4" scaleX="1.5" scaleY="3" />
+      <move select="Extend Right" beats="2" scaleX="2" scaleY=".5" />
+    </path>
+  </tam>
+
+  <tam title="Explode the Line"
+       from="Lines Facing In"
+       formation="Normal Lines">
+    <path>
+      <move select="Quarter Right" beats="2" offsetX="-1" offsetY="-1" />
+      <move select="Pull Left" beats="2" scaleX="2" scaleY=".5" />
+      <move select="Extend Right" beats="2" scaleX="2" scaleY=".5" />
+    </path>
+    <path>
+      <move select="Lead Right" beats="3" scaleX="1.5" />
+      <move select="Extend Right" beats="3" scaleX="2" scaleY="0.5"/>
+    </path>
+    <path>
+      <move select="Lead Left" scaleX="0.5" beats="3" />
+      <move select="Extend Right" scaleX="2" scaleY="0.5" beats="3" />
+    </path>
+    <path>
+      <move select="Quarter Left" beats="2" offsetX="-1" offsetY="1" />
+      <move select="Pull Left" beats="2" scaleX="2" scaleY=".5" />
+      <move select="Extend Right" beats="2" scaleX="2" scaleY=".5" />
+    </path>
+  </tam>
+
+  <tam title="Explode the Line"
+       from="3 and 1 Lines #1"
+       formation="3 and 1 lines #1">
+    <path>
+      <move select="Lead Left" hands="right" beats="4" scaleX=".5" scaleY="3" />
+      <move select="Extend Right" beats="2" scaleX="2" scaleY=".5" />
+    </path>
+    <path>
+      <move select="Lead Right" hands="right" beats="4" scaleX="1.5" />
+      <move select="Extend Right" beats="2" scaleX="2" scaleY=".5" />
+    </path>
+    <path>
+      <move select="Lead Left" hands="right" beats="4" scaleX=".5" />
+      <move select="Extend Right" beats="2" scaleX="2" scaleY=".5" />
+    </path>
+    <path>
+      <move select="Quarter Left" beats="2" offsetX="-1" offsetY="1" />
+      <move select="Pull Left" beats="2" scaleX="2" scaleY=".5" />
+      <move select="Extend Right" beats="2" scaleX="2" scaleY=".5" />
+    </path>
+  </tam>
+
+  <tam title="Explode the Line"
+       from="3 and 1 Lines #4"
+       formation="3 and 1 lines #4">
+    <path>
+      <move select="Quarter Right" beats="2" offsetX="-.5" offsetY="-1" />
+      <move select="Forward 2"/>
+      <move select="Extend Right" beats="2" scaleX="2" scaleY=".5" />
+    </path>
+    <path>
+      <move select="Lead Right" hands="right" beats="4" scaleX="1.5" />
+      <move select="Extend Right" beats="2" scaleX="2" scaleY=".5" />
+    </path>
+    <path>
+      <move select="Lead Left" hands="right" beats="4" scaleX=".5" />
+      <move select="Extend Right" beats="2" scaleX="2" scaleY=".5" />
+    </path>
+    <path>
+      <move select="Lead Right" hands="right" beats="4" scaleX="1.5" scaleY="3" />
+      <move select="Extend Right" beats="2" scaleX="2" scaleY=".5" />
+    </path>
+  </tam>
+
+  <tam title="Explode the Line"
+       from="3 and 1 Lines #5"
+       formation="3 and 1 lines #5">
+    <path>
+      <move select="Lead Right" hands="right" beats="4" scaleX="1.5" scaleY="3" />
+      <move select="Extend Right" beats="2" scaleX="2" scaleY=".5" />
+    </path>
+    <path>
+      <move select="Lead Left" hands="right" beats="4" scaleX=".5" />
+      <move select="Extend Right" beats="2" scaleX="2" scaleY=".5" />
+    </path>
+    <path>
+      <move select="Lead Right" hands="right" beats="4" scaleX="1.5" />
+      <move select="Extend Right" beats="2" scaleX="2" scaleY=".5" />
+    </path>
+    <path>
+      <move select="Quarter Right" beats="2" offsetX="-.5" offsetY="-1" />
+      <move select="Forward 2"/>
+      <move select="Extend Right" beats="2" scaleX="2" scaleY=".5" />
+    </path>
+  </tam>
+
+  <tam title="Explode the Line"
+       from="3 and 1 Lines #8"
+       formation="3 and 1 lines #8">
+    <path>
+      <move select="Quarter Left" beats="2" offsetX="-1" offsetY="1" />
+      <move select="Pull Left" beats="2" scaleX="2" scaleY=".5" />
+      <move select="Extend Right" beats="2" scaleX="2" scaleY=".5" />
+    </path>
+    <path>
+      <move select="Lead Left" hands="right" beats="4" scaleX=".5" />
+      <move select="Extend Right" beats="2" scaleX="2" scaleY=".5" />
+    </path>
+    <path>
+      <move select="Lead Right" hands="right" beats="4" scaleX="1.5" />
+      <move select="Extend Right" beats="2" scaleX="2" scaleY=".5" />
+    </path>
+    <path>
+      <move select="Lead Left" hands="right" beats="4" scaleX=".5" scaleY="3" />
+      <move select="Extend Right" beats="2" scaleX="2" scaleY=".5" />
+    </path>
+  </tam>
+
+
+  <tam title="Explode the Line"
+       from="Tidal Inverted Line, Right-Hand Centers"
+       formation="Tidal Inverted Line RH">
+    <path>
+      <move select="Lead Right" beats="2" scaleY=".5"/>
+      <move select="Extend Left" scaleY=".5"/>
+      <move select="Extend Right" scaleY=".5"/>
+    </path>
+    <path>
+      <move select="Quarter Left" beats="2" offsetX="1" offsetY="-.5"/>
+      <move select="Extend Left" scaleY=".5"/>
+      <move select="Extend Right" scaleY=".5"/>
+    </path>
+    <path>
+      <move select="Quarter Right" beats="2" offsetX="1" offsetY=".5"/>
+      <move select="Extend Left" scaleY=".5"/>
+      <move select="Extend Right" scaleY=".5"/>
+    </path>
+    <path>
+      <move select="Lead Left" beats="2" scaleY=".5"/>
+      <move select="Extend Left" scaleY=".5"/>
+      <move select="Extend Right" scaleY=".5"/>
+    </path>
+  </tam>
+
+  <tam title="Explode the Line"
+       from="Tidal Inverted Line, Left-Hand Centers"
+       formation="Tidal Inverted Line LH">
+    <path>
+      <move select="Lead Left" beats="2" scaleY=".5"/>
+      <move select="Extend Left" scaleY=".5"/>
+      <move select="Extend Right" scaleY=".5"/>
+    </path>
+    <path>
+      <move select="Quarter Right" beats="2" offsetX="1" offsetY=".5"/>
+      <move select="Extend Left" scaleY=".5"/>
+      <move select="Extend Right" scaleY=".5"/>
+    </path>
+    <path>
+      <move select="Quarter Left" beats="2" offsetX="1" offsetY="-.5"/>
+      <move select="Extend Left" scaleY=".5"/>
+      <move select="Extend Right" scaleY=".5"/>
+    </path>
+    <path>
+      <move select="Lead Right" beats="2" scaleY=".5"/>
+      <move select="Extend Left" scaleY=".5"/>
+      <move select="Extend Right" scaleY=".5"/>
+    </path>
+  </tam>
+
+  <tam title="Explode the Line"
+       from="Tidal Line, Right-Hand Centers"
+       formation="Tidal Line RH">
+    <path>
+      <move select="Quarter Right" beats="2" offsetX="-1" offsetY="-.5"/>
+      <move select="Extend Left" scaleY=".5"/>
+      <move select="Extend Right" scaleY=".5"/>
+    </path>
+    <path>
+      <move select="Quarter Right" beats="2" offsetX="1" offsetY=".5"/>
+      <move select="Extend Left" scaleY=".5"/>
+      <move select="Extend Right" scaleY=".5"/>
+    </path>
+    <path>
+      <move select="Quarter Left" beats="2" offsetX="1" offsetY="-.5"/>
+      <move select="Extend Left" scaleY=".5"/>
+      <move select="Extend Right" scaleY=".5"/>
+    </path>
+    <path>
+      <move select="Quarter Left" beats="2" offsetX="-1" offsetY=".5"/>
+      <move select="Extend Left" scaleY=".5"/>
+      <move select="Extend Right" scaleY=".5"/>
+    </path>
+  </tam>
+
+  <tam title="Explode the Line"
+       from="Tidal Line, Left-Hand Centers"
+       formation="Tidal Line LH">
+    <path>
+      <move select="Quarter Left" beats="2" offsetX="1" offsetY="-.5"/>
+      <move select="Extend Left" scaleY=".5"/>
+      <move select="Extend Right" scaleY=".5"/>
+    </path>
+    <path>
+      <move select="Quarter Left" beats="2" offsetX="-1" offsetY=".5"/>
+      <move select="Extend Left" scaleY=".5"/>
+      <move select="Extend Right" scaleY=".5"/>
+    </path>
+    <path>
+      <move select="Quarter Right" beats="2" offsetX="-1" offsetY="-.5"/>
+      <move select="Extend Left" scaleY=".5"/>
+      <move select="Extend Right" scaleY=".5"/>
+    </path>
+    <path>
+      <move select="Quarter Right" beats="2" offsetX="1" offsetY=".5"/>
+      <move select="Extend Left" scaleY=".5"/>
+      <move select="Extend Right" scaleY=".5"/>
+    </path>
+  </tam>
+
+  <tam title="Explode the Line"
+       from="Tidal 3 and 1 Line #1"
+       formation="Tidal 3 and 1 Line #1">
+    <path>
+      <move select="Quarter Right" beats="2" offsetX="-1" offsetY="-.5"/>
+      <move select="Extend Left" scaleY=".5"/>
+      <move select="Extend Right" scaleY=".5"/>
+    </path>
+    <path>
+      <move select="Quarter Right" beats="2" offsetX="1" offsetY=".5"/>
+      <move select="Extend Left" scaleY=".5"/>
+      <move select="Extend Right" scaleY=".5"/>
+    </path>
+    <path>
+      <move select="Quarter Left" beats="2" offsetX="1" offsetY="-.5"/>
+      <move select="Extend Left" scaleY=".5"/>
+      <move select="Extend Right" scaleY=".5"/>
+    </path>
+    <path>
+      <move select="Quarter Right" beats="2" offsetX="1" offsetY="-.5"/>
+      <move select="Extend Left" scaleY=".5"/>
+      <move select="Extend Right" scaleY=".5"/>
+    </path>
+  </tam>
+
+  <tam title="Explode the Line"
+       from="Tidal 3 and 1 Line #4"
+       formation="Tidal 3 and 1 Line #4">
+    <path>
+      <move select="Quarter Left" beats="2" offsetX="1" offsetY=".5"/>
+      <move select="Extend Left" scaleY=".5"/>
+      <move select="Extend Right" scaleY=".5"/>
+    </path>
+    <path>
+      <move select="Quarter Right" beats="2" offsetX="1" offsetY=".5"/>
+      <move select="Extend Left" scaleY=".5"/>
+      <move select="Extend Right" scaleY=".5"/>
+    </path>
+    <path>
+      <move select="Quarter Left" beats="2" offsetX="1" offsetY="-.5"/>
+      <move select="Extend Left" scaleY=".5"/>
+      <move select="Extend Right" scaleY=".5"/>
+    </path>
+    <path>
+      <move select="Quarter Left" beats="2" offsetX="-1" offsetY=".5"/>
+      <move select="Extend Left" scaleY=".5"/>
+      <move select="Extend Right" scaleY=".5"/>
+    </path>
+  </tam>
+
+  <tam title="Explode the Line"
+       from="Tidal 3 and 1 Line #5"
+       formation="Tidal 3 and 1 Line #5">
+    <path>
+      <move select="Quarter Left" beats="2" offsetX="-1" offsetY=".5"/>
+      <move select="Extend Left" scaleY=".5"/>
+      <move select="Extend Right" scaleY=".5"/>
+    </path>
+    <path>
+      <move select="Quarter Left" beats="2" offsetX="1" offsetY="-.5"/>
+      <move select="Extend Left" scaleY=".5"/>
+      <move select="Extend Right" scaleY=".5"/>
+    </path>
+    <path>
+      <move select="Quarter Right" beats="2" offsetX="1" offsetY=".5"/>
+      <move select="Extend Left" scaleY=".5"/>
+      <move select="Extend Right" scaleY=".5"/>
+    </path>
+    <path>
+      <move select="Quarter Left" beats="2" offsetX="1" offsetY=".5"/>
+      <move select="Extend Left" scaleY=".5"/>
+      <move select="Extend Right" scaleY=".5"/>
+    </path>
+  </tam>
+
+  <tam title="Explode the Line"
+       from="Tidal 3 and 1 Line #8"
+       formation="Tidal 3 and 1 Line #8">
+    <path>
+      <move select="Quarter Right" beats="2" offsetX="1" offsetY="-.5"/>
+      <move select="Extend Left" scaleY=".5"/>
+      <move select="Extend Right" scaleY=".5"/>
+    </path>
+    <path>
+      <move select="Quarter Left" beats="2" offsetX="1" offsetY="-.5"/>
+      <move select="Extend Left" scaleY=".5"/>
+      <move select="Extend Right" scaleY=".5"/>
+    </path>
+    <path>
+      <move select="Quarter Right" beats="2" offsetX="1" offsetY=".5"/>
+      <move select="Extend Left" scaleY=".5"/>
+      <move select="Extend Right" scaleY=".5"/>
+    </path>
+    <path>
+      <move select="Quarter Right" beats="2" offsetX="-1" offsetY="-.5"/>
+      <move select="Extend Left" scaleY=".5"/>
+      <move select="Extend Right" scaleY=".5"/>
+    </path>
+  </tam>
+
+  <!-- Theses animations for just Explode are for the sequencer  -->
+  <tam title="Explode" display="none"
+       from="Lines Facing Out"
+       formation="Lines Facing Out">
+    <path>
+      <move select="Quarter Left" beats="2" offsetX="-1" offsetY="1" />
+    </path>
+    <path>
+      <move select="Quarter Left" beats="2" offsetX="1"/>
+    </path>
+    <path>
+      <move select="Quarter Right" beats="2" offsetX="1" />
+    </path>
+    <path>
+      <move select="Quarter Right" beats="2" offsetX="-1" offsetY="-1" />
+    </path>
+  </tam>
+
+  <tam title="Explode" display="none"
+       from="Lines Facing In"
+       formation="Normal Lines">
+    <path>
+      <move select="Quarter Right" beats="2" offsetX="-1" offsetY="-1" />
+    </path>
+    <path>
+      <move select="Quarter Right" beats="2" offsetX="1" />
+    </path>
+    <path>
+      <move select="Quarter Left" beats="2" offsetX="1"/>
+    </path>
+    <path>
+      <move select="Quarter Left" beats="2" offsetX="-1" offsetY="1" />
+    </path>
+  </tam>
+
+  <tam title="Explode" display="none"
+       from="Inverted Lines"
+       formation="Inverted Lines Ends Facing In">
+    <path>
+      <move select="Lead Right" beats="2"/>
+    </path>
+    <path>
+      <move select="Quarter Left" beats="2" offsetX="1"/>
+    </path>
+    <path>
+      <move select="Quarter Right" beats="2" offsetX="1" />
+    </path>
+    <path>
+      <move select="Lead Left" beats="2"/>
+    </path>
+  </tam>
+
+  <tam title="Explode" display="none"
+       from="Inverted Lines 2"
+       formation="Inverted Lines Ends Facing Out">
+    <path>
+      <move select="Lead Left" beats="2"/>
+    </path>
+    <path>
+      <move select="Quarter Right" beats="2" offsetX="1"/>
+    </path>
+    <path>
+      <move select="Quarter Left" beats="2" offsetX="1" />
+    </path>
+    <path>
+      <move select="Lead Right" beats="2"/>
+    </path>
+  </tam>
+
+  <tam title="Explode" display="none"
+       from="3 and 1 Lines #1"
+       formation="3 and 1 lines #1">
+    <path>
+      <move select="Lead Left" beats="2"/>
+    </path>
+    <path>
+      <move select="Quarter Right" beats="2" offsetX="1"/>
+    </path>
+    <path>
+      <move select="Quarter Left" beats="2" offsetX="1" />
+    </path>
+    <path>
+      <move select="Quarter Left" beats="2" offsetX="-1" offsetY="1" />
+    </path>
+  </tam>
+
+  <tam title="Explode" display="none"
+       from="3 and 1 Lines #4"
+       formation="3 and 1 lines #4">
+    <path>
+      <move select="Quarter Right" beats="2" offsetX="-1" offsetY="-1" />
+    </path>
+    <path>
+      <move select="Quarter Right" beats="2" offsetX="1"/>
+    </path>
+    <path>
+      <move select="Quarter Left" beats="2" offsetX="1" />
+    </path>
+    <path>
+      <move select="Lead Right" beats="2"/>
+    </path>
+  </tam>
+
+  <tam title="Explode" display="none"
+       from="3 and 1 Lines #5"
+       formation="3 and 1 lines #5">
+    <path>
+      <move select="Lead Right" beats="2"/>
+    </path>
+    <path>
+      <move select="Quarter Left" beats="2" offsetX="1"/>
+    </path>
+    <path>
+      <move select="Quarter Right" beats="2" offsetX="1" />
+    </path>
+    <path>
+      <move select="Quarter Right" beats="2" offsetX="-1" offsetY="-1" />
+    </path>
+  </tam>
+
+  <tam title="Explode" display="none"
+       from="3 and 1 Lines #8"
+       formation="3 and 1 lines #8">
+    <path>
+      <move select="Quarter Left" beats="2" offsetX="-1" offsetY="1" />
+    </path>
+    <path>
+      <move select="Quarter Left" beats="2" offsetX="1"/>
+    </path>
+    <path>
+      <move select="Quarter Right" beats="2" offsetX="1" />
+    </path>
+    <path>
+      <move select="Lead Left" beats="2"/>
+    </path>
+  </tam>
+
+  <tam title="Explode" display="none"
+       from="Tidal Inverted Line RH"
+       formation="Tidal Inverted Line RH">
+    <path>
+      <move select="Lead Right" beats="2" scaleY=".5"/>
+    </path>
+    <path>
+      <move select="Quarter Left" beats="2" offsetX="1" offsetY="-.5"/>
+    </path>
+    <path>
+      <move select="Quarter Right" beats="2" offsetX="1" offsetY=".5"/>
+    </path>
+    <path>
+      <move select="Lead Left" beats="2" scaleY=".5"/>
+    </path>
+  </tam>
+
+  <tam title="Explode" display="none"
+       from="Tidal Inverted Line LH"
+       formation="Tidal Inverted Line LH">
+    <path>
+      <move select="Lead Left" beats="2" scaleY=".5"/>
+    </path>
+    <path>
+      <move select="Quarter Right" beats="2" offsetX="1" offsetY=".5"/>
+    </path>
+    <path>
+      <move select="Quarter Left" beats="2" offsetX="1" offsetY="-.5"/>
+    </path>
+    <path>
+      <move select="Lead Right" beats="2" scaleY=".5"/>
+    </path>
+  </tam>
+
+  <tam title="Explode" display="none"
+       from="Tidal Line RH"
+       formation="Tidal Line RH">
+    <path>
+      <move select="Quarter Right" beats="2" offsetX="-1" offsetY="-.5"/>
+    </path>
+    <path>
+      <move select="Quarter Right" beats="2" offsetX="1" offsetY=".5"/>
+    </path>
+    <path>
+      <move select="Quarter Left" beats="2" offsetX="1" offsetY="-.5"/>
+    </path>
+    <path>
+      <move select="Quarter Left" beats="2" offsetX="-1" offsetY=".5"/>
+    </path>
+  </tam>
+
+  <tam title="Explode" display="none"
+       from="Tidal Line LH"
+       formation="Tidal Line LH">
+    <path>
+      <move select="Quarter Left" beats="2" offsetX="1" offsetY="-.5"/>
+    </path>
+    <path>
+      <move select="Quarter Left" beats="2" offsetX="-1" offsetY=".5"/>
+    </path>
+    <path>
+      <move select="Quarter Right" beats="2" offsetX="-1" offsetY="-.5"/>
+    </path>
+    <path>
+      <move select="Quarter Right" beats="2" offsetX="1" offsetY=".5"/>
+    </path>
+  </tam>
+
+  <tam title="Explode" display="none"
+       from="Tidal 3 and 1 Line #1"
+       formation="Tidal 3 and 1 Line #1">
+    <path>
+      <move select="Quarter Right" beats="2" offsetX="-1" offsetY="-.5"/>
+    </path>
+    <path>
+      <move select="Quarter Right" beats="2" offsetX="1" offsetY=".5"/>
+    </path>
+    <path>
+      <move select="Quarter Left" beats="2" offsetX="1" offsetY="-.5"/>
+    </path>
+    <path>
+      <move select="Quarter Right" beats="2" offsetX="1" offsetY="-.5"/>
+    </path>
+  </tam>
+
+  <tam title="Explode" display="none"
+       from="Tidal 3 and 1 Line #4"
+       formation="Tidal 3 and 1 Line #4">
+    <path>
+      <move select="Quarter Left" beats="2" offsetX="1" offsetY=".5"/>
+    </path>
+    <path>
+      <move select="Quarter Right" beats="2" offsetX="1" offsetY=".5"/>
+    </path>
+    <path>
+      <move select="Quarter Left" beats="2" offsetX="1" offsetY="-.5"/>
+    </path>
+    <path>
+      <move select="Quarter Left" beats="2" offsetX="-1" offsetY=".5"/>
+    </path>
+  </tam>
+
+  <tam title="Explode" display="none"
+       from="Tidal 3 and 1 Line #5"
+       formation="Tidal 3 and 1 Line #5">
+    <path>
+      <move select="Quarter Left" beats="2" offsetX="-1" offsetY=".5"/>
+    </path>
+    <path>
+      <move select="Quarter Left" beats="2" offsetX="1" offsetY="-.5"/>
+    </path>
+    <path>
+      <move select="Quarter Right" beats="2" offsetX="1" offsetY=".5"/>
+    </path>
+    <path>
+      <move select="Quarter Left" beats="2" offsetX="1" offsetY=".5"/>
+    </path>
+  </tam>
+
+  <tam title="Explode" display="none"
+       from="Tidal 3 and 1 Line #8"
+       formation="Tidal 3 and 1 Line #8">
+    <path>
+      <move select="Quarter Right" beats="2" offsetX="1" offsetY="-.5"/>
+    </path>
+    <path>
+      <move select="Quarter Left" beats="2" offsetX="1" offsetY="-.5"/>
+    </path>
+    <path>
+      <move select="Quarter Right" beats="2" offsetX="1" offsetY=".5"/>
+    </path>
+    <path>
+      <move select="Quarter Right" beats="2" offsetX="-1" offsetY="-.5"/>
+    </path>
+  </tam>
+
+</tamination>

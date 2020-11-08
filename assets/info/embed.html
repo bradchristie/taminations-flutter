@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <link href="../src/tamination.css" type="text/css" rel="stylesheet" />
+  <script type="text/javascript" src="../src/framecode.js"></script>
+  <title>Embed</title>
+</head>
+<body>
+
+<h2>How to Put Taminations on Your Web Site</h2>
+
+<p>For web site authors, class teachers, and callers,
+  you can put any animation or sequence on your web site.
+  The basic concept is to set up an
+  <a href="https://www.w3schools.com/html/html_iframe.asp" target="_blank">iframe</a>,
+  link it to a specific animation or sequence,
+  and add the parameter &quot;embed&quot;.
+  That tells Taminations to strip away everything except the
+  animation and its controls.
+</p>
+
+<h3>Embed an Animation</h3>
+<p>The quick and easy way is to view an animation in your browser
+and copy the link.  Just click on the Share button and the link
+is copied to the clipboard.  Paste it into your HTML page
+as the source for your iframe, and append &quot;&amp;embed&quot;
+to the end.</p>
+
+<h3>Embed a Sequence</h3>
+<p>The method is much the same as an animation.  Write your calls in
+the sequencer, then copy the link with the Share button.
+  The starting formation and all the
+calls are in the link.  So then paste the link as the source
+for your iframe, appending &quot;&amp;embed&quot;</p>
+
+<h3>Additional Settings</h3>
+<p>To automatically run an animation as soon as it's displayed,
+add the &quot;Play&quot; parameter to the link.  In addition,
+  you can add any setting from the Settings page.
+  For checkbox settings, add  &lt;name&gt; or &lt;name&gt;=true
+  to turn it on, &lt;name&gt;=false to force it off.  Other
+  settings are set as &lt;name&gt;=&lt;value&gt;.
+  Separate all parameters including these settings
+  with ampersands.  Be sure to enter names and values exactly as on
+  the Settings page, case and spacing are important.
+</p>
+<table><tr>
+  <td valign="top">Here is an example.  The source link is (broken up and commented)<br/>
+    <pre>
+      <font color="blue">The Taminations link</font>
+    https://www.tamtwirlers.org/taminations/
+      <font color="blue">Parameters for an animation</font>
+      <font color="blue">These are from copying and pasting an animation link</font>
+      <font color="blue">Don't worry about the details</font>
+    #link=plus%2Ffan_the_top
+    &name=Fan%20the%20Top%20from%20Right-Hand%20Waves
+    &level=Plus
+    &title=Fan%20the%20Top
+    &animnum=5
+    &action=ANIMLIST
+      <font color="blue">Here are the additional values</font>
+      <font color="blue">First, the special &quot;embed&quot;</font>
+    &embed
+      <font color="blue">Additional settings</font>
+    &Play
+    &Loop
+    &Grid
+    &Numbers=1-8
+    &Couple 4=Black
+    </pre>
+  </td>
+<td><iframe src="https://www.tamtwirlers.org/taminations/#link=plus%2Ffan_the_top&name=Fan%20the%20Top%20from%20Right-Hand%20Waves&level=Plus&title=Fan%20the%20Top&animnum=5&action=ANIMLIST&embed&Play&Loop&Grid&Numbers=1-8&Couple 4=Black" height="500" width="400">
+</iframe>
+</td>
+</tr></table>
+
+</body>
+</html>
