@@ -233,20 +233,32 @@ class _AnimationFrameState extends FM.State<AnimationFrame>
                 },
                 onLongPress: longPressHandler,
                 onSecondaryTap: longPressHandler,
-                //  Finally here is the dance area widget
+                //  Stack to show info on animation
                 child: FM.Stack(
                     children: [
+                      //  Finally here is the dance area widget
                       FM.CustomPaint(
                         painter: painter,
                         child: FM.Center(), // so CustomPaint gets sized correctly
                       ),
+                      //  Note that fades out as animation starts
                       FM.Opacity(
                         opacity: ((-currentBeat)/2.0).coerceIn(0.0, 1.0),
                           child:FM.Container(
                               color: Color.WHITE,
                               child:FM.Text(animationNote,
                                   style:FM.TextStyle(fontSize:20))
-                          ))
+                          )),
+                      //  Show if Loop or Speed are set other than default
+                      FM.Positioned(
+                        bottom: 0.0,
+                        right: 0.0,
+                        child: FM.Text(
+                            settings.speed.replaceFirst("Normal","") +
+                                (settings.loop ? " Loop" : ""),
+                            style:FM.TextStyle(fontSize:24)
+                        )
+                      )
                     ])
             );
           })),
