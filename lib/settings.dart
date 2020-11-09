@@ -34,6 +34,7 @@ class Settings extends ChangeNotifier {
   bool _phantoms = false;
   String _geometry = "None";
   String _language = "System";
+  bool _isAbbrev = true;
 
   SharedPreferences prefs;
 
@@ -60,6 +61,7 @@ class Settings extends ChangeNotifier {
     _geometry = prefs.getString("Special Geometry") ?? "None";
     _language = prefs.getString("Language for Definitions") ?? "System";
     _preferencesRead = true;
+    _isAbbrev = prefs.getBool("DefinitionAbbrev") ?? true;
     notifyListeners();
     return true;
   }
@@ -132,6 +134,13 @@ class Settings extends ChangeNotifier {
   set language(String value) {
     _language = value;
     prefs.setString("Language for Definitions",value);
+    notifyListeners();
+  }
+
+  bool get isAbbrev => _isAbbrev;
+  set isAbbrev(bool value) {
+    _isAbbrev = value;
+    prefs.setBool("DefinitionAbbrev", value);
     notifyListeners();
   }
 

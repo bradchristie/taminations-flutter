@@ -44,7 +44,10 @@ class TamUtils {
   static List<CallListDatum> calldata = [];
   static Map<String,XmlElement> _formations = {};
   static Map<String,XmlElement> _moves = {};
+  //  CSS to be injected in web pages
   static String css;
+  //  Javascript to be injected in web pages
+  static String framecode;
 
   //  Read an XML file or other from the assets
   static Future<String> getAsset(String filename) async =>
@@ -80,6 +83,9 @@ class TamUtils {
     });
     getAsset("src/tamination.css").then((rawcss) {
       css = '<style>' + rawcss.replaceAll(r"/\*.*?\*/".rd, "") + '</style>';
+    });
+    getAsset("src/framecode.js").then((code) {
+      framecode = code;
     });
   }
 
