@@ -93,9 +93,11 @@ class _AnimationFrameState extends FM.State<AnimationFrame>
   AnimationPainter painter;
   //  controller sends ticks to the painter making it compute and draw an animation
   FM.AnimationController controller;
+  double currentBeat = -2.0;
   double sliderCurrentValue = 0.0;
   Vector locationTapped;
   Dancer dancerTapped;
+  String animationNote = "";
 
   //  Constructor
   _AnimationFrameState(this.link,this.animnum);
@@ -114,9 +116,16 @@ class _AnimationFrameState extends FM.State<AnimationFrame>
       painter.setAnimation(tam).then( (b) {
         controller.notifyListeners();
       });
+      animationNote = "";
+      var tamnote = tam.childrenNamed("taminator").firstOrNull;
+      if (tamnote != null) {
+        animationNote = tamnote.text.trim().replaceAll(r"\s+".r, " ");
+      }
     });
     controller.addListener(() {
       setState(() {
+        //  Remember the beat, for setting alpha on the notes
+        currentBeat = painter.beat;
         //  Set the slider now, totalBeats is now available
         sliderCurrentValue =
             min(100,(painter.beat + painter.leadin) * 100.0 / painter.totalBeats);
@@ -225,10 +234,20 @@ class _AnimationFrameState extends FM.State<AnimationFrame>
                 onLongPress: longPressHandler,
                 onSecondaryTap: longPressHandler,
                 //  Finally here is the dance area widget
-                child: FM.CustomPaint(
-                  painter: painter,
-                  child: FM.Center(), // so CustomPaint gets sized correctly
-                )
+                child: FM.Stack(
+                    children: [
+                      FM.CustomPaint(
+                        painter: painter,
+                        child: FM.Center(), // so CustomPaint gets sized correctly
+                      ),
+                      FM.Opacity(
+                        opacity: ((-currentBeat)/2.0).coerceIn(0.0, 1.0),
+                          child:FM.Container(
+                              color: Color.WHITE,
+                              child:FM.Text(animationNote,
+                                  style:FM.TextStyle(fontSize:20))
+                          ))
+                    ])
             );
           })),
 

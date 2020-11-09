@@ -54,6 +54,7 @@ extension TamDouble on double {
   }
   double get toRadians => this * pi / 180;
   double get toDegrees => this * 180 / pi;
+  double coerceIn(double a, double b) => max(a,min(b,this));
 
 }
 
@@ -73,6 +74,7 @@ extension TamString on String {
 extension TamList<E> on List<E> {
 
   List<int> get indices => asMap().keys;
+  E get firstOrNull => isNotEmpty ? first : null;
 
 }
 
