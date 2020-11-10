@@ -63,8 +63,6 @@ class AnimationPainter extends CustomPainter {
   DateTime _lastTime = DateTime(2000);
   var _iScore = 0.0;
   var _prevbeat = -2.0;
-  var partstr = "";
-  var _currentPart = 0;
   var hasParts = false;
   Function whenFinished;
   //  readyListener, partListener ??? TODO
@@ -145,11 +143,6 @@ class AnimationPainter extends CustomPainter {
   Dancer dancerAt(Vector p) =>
       dancers.firstWhere((d) =>  (d.location - p).length < 0.5, orElse:()=>null);
 
-  ///   Build an array of floats out of the parts of the animation
-  List<double> _partsValues() {
-    return [];
-  }
-
   //  Check that there isn't another dancer in the middle of
   //  a computed handhold.  Can happen when dancers are in
   //  tight formations like tidal waves.
@@ -217,16 +210,6 @@ class AnimationPainter extends CustomPainter {
       dancers.forEach((d) {
         d.animate(_prevbeat + j * delta / incs);
       });
-
-    //  Find the current part, and send a message if it's changed
-    var thisPart = 0;
-    if (beat >= 0 && beat <= _beats) {
-      thisPart = _partsValues().lastIndexWhere((it) => it < beat);
-      if (thisPart != _currentPart) {
-        _currentPart = thisPart;
-        //  TODO send message, or set Listenable, or ???
-      }
-    }
 
     //  Compute handholds
     List<Handhold> hhlist = [];
@@ -486,8 +469,6 @@ class AnimationPainter extends CustomPainter {
       }  //  All dancers added
 
       //  Initialize other instance variables
-      partstr = (_tam["parts"] ?? "") + (_tam["fractions"] ?? "");
-      hasParts = _tam["parts"] != null;
       isRunning = false;
       beat = -leadin;
       _prevbeat = -leadin;

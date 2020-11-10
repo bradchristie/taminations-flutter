@@ -35,6 +35,19 @@ import '../level_data.dart';
 import '../math/vector.dart';
 import '../dancer.dart';
 
+class AnimationState extends FM.ChangeNotifier {
+
+  int _part;
+  String title;
+
+  int get part => _part;
+  set part(int value) {
+    _part = value;
+    notifyListeners();
+  }
+
+}
+
 class AnimationPage extends FM.StatefulWidget {
   @override
   _AnimationPageState createState() => _AnimationPageState();
@@ -98,6 +111,10 @@ class _AnimationFrameState extends FM.State<AnimationFrame>
   Vector locationTapped;
   Dancer dancerTapped;
   String animationNote = "";
+  String partstr = "";
+  bool hasParts = false;
+  List<double> partsValues;
+  int currentPart = 0;
 
   //  Constructor
   _AnimationFrameState(this.link,this.animnum);
@@ -108,13 +125,16 @@ class _AnimationFrameState extends FM.State<AnimationFrame>
     //  Set up _controller, _painter
     controller = FM.AnimationController.unbounded(duration: Duration(hours: 1),vsync: this);
     painter = AnimationPainter(repaint:controller);
-    //  Get the requested square dance animation and send it to the _painter
+    //  Get the requested square dance animation and send it to the painter
     TamUtils.getXMLAsset(link).then((doc) {
       var tam = TamUtils.tamList(doc)
           .where((it) => !(it["display"] ?? "").startsWith("n"))
           .toList()[max(0,animnum)];
+      partstr = (tam["parts"] ?? "") + (tam["fractions"] ?? "");
+      hasParts = tam["parts"] != null;
       painter.setAnimation(tam).then( (b) {
         controller.notifyListeners();
+        findPartsValues();
       });
       animationNote = "";
       var tamnote = tam.childrenNamed("taminator").firstOrNull;
@@ -129,6 +149,15 @@ class _AnimationFrameState extends FM.State<AnimationFrame>
         //  Set the slider now, totalBeats is now available
         sliderCurrentValue =
             min(100,(painter.beat + painter.leadin) * 100.0 / painter.totalBeats);
+        //  Figure out what part we're on, send notice if it has changed
+        var thisPart = 0;
+        if (currentBeat >= 0 && currentBeat <= painter.beats) {
+          thisPart = partsValues.lastIndexWhere((it) => it < currentBeat);
+        }
+        if (thisPart != currentPart) {
+          currentPart = thisPart;
+          PP.Provider.of<AnimationState>(context, listen:false).part = thisPart;
+        }
       });
     });
   }
@@ -137,6 +166,34 @@ class _AnimationFrameState extends FM.State<AnimationFrame>
   void dispose() {
     controller.dispose();
     super.dispose();
+  }
+
+  //  From the parts string read from the XML animation, generate
+  //  a list of doubles where each part starts
+  //  This assumes a leadin of 2 beats, so the first value is -2 and
+  //  the second value is 0.
+  //  E.g, for Swing Thru with 2 parts of 3 beats each
+  //  the values are [-2, 0, 3, 6].
+  void findPartsValues() {
+    if (partstr.isEmpty)
+      partsValues = [ -2.0, 0.0, painter.beats-2.0 ];
+    else {
+      var b = 0.0;
+      var partSplit = partstr.split(";");
+      partsValues = [for (var i = -2; i <= partSplit.length; i++) i]
+          .map((it) {
+            if (it == -2)
+              return -2.0;
+            else if (it == -1)
+              return 0.0;
+            else if (it == partSplit.length)
+              return painter.beats - 2.0;
+            else {
+              b += partSplit[it].d;
+              return b;
+            }
+      }).toList();
+    }
   }
 
   FM.PopupMenuItem<String> oneItem(String colorName) =>
@@ -283,8 +340,8 @@ class _AnimationFrameState extends FM.State<AnimationFrame>
       FM.CustomPaint(
         painter: _SliderTicsPainter(
           beats: painter.totalBeats,
-          parts: painter.partstr,
-          isParts: painter.hasParts
+          parts: partstr,
+          isParts: hasParts
         ),
         size: FM.Size.fromHeight(40.0),
       ),
@@ -317,9 +374,7 @@ class _AnimationFrameState extends FM.State<AnimationFrame>
                           //  Not running - start animation, with callback to
                           //  turn off when finished (if not looping)
                           painter.doPlay(() {
-                            setState(() {
-                              controller.stop();
-                            });
+                            controller.stop();
                           });
                           controller.forward();
                         }

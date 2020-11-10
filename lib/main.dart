@@ -39,8 +39,11 @@ import 'pages/web_page.dart';
 void main() {
   //  Wrap the Settings around the top of the program
   //  so everybody has access to them
-  FM.runApp(PP.ChangeNotifierProvider(
-      create: (context) => Settings(),
+  FM.runApp(PP.MultiProvider(
+      providers: [
+        PP.ChangeNotifierProvider(create: (context) => Settings()),
+        PP.ChangeNotifierProvider(create: (context) => AnimationState())
+      ],
       child: TaminationsApp()
     )
   );

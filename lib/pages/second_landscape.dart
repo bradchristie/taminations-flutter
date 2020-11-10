@@ -20,27 +20,25 @@
 
 import 'package:flutter/material.dart' as FM;
 import 'package:xml/xml.dart';
+
+import '../color.dart';
+import '../extensions.dart';
+import '../level_data.dart';
+import '../main.dart';
+import '../request.dart';
+import '../tam_utils.dart';
+import '../title_bar.dart';
 import 'anim_list.dart';
 import 'animation.dart';
 import 'settings.dart';
-import '../main.dart';
-import '../title_bar.dart';
-import '../level_data.dart';
-import '../request.dart';
-import '../extensions.dart';
-import '../tam_utils.dart';
-import '../color.dart';
 import 'web_page.dart';
 
 class SecondLandscapePage extends FM.StatefulWidget {
-
   @override
   _SecondLandscapePageState createState() => _SecondLandscapePageState();
-
 }
 
 class _SecondLandscapePageState extends FM.State<SecondLandscapePage> {
-
   LevelDatum levelDatum;
   String link;
   int animnum;
@@ -51,38 +49,37 @@ class _SecondLandscapePageState extends FM.State<SecondLandscapePage> {
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
-    var router = FM.Router.of(context).routerDelegate as TaminationsRouterDelegate;
+    var router =
+        FM.Router.of(context).routerDelegate as TaminationsRouterDelegate;
     var path = router.currentPath;
     link = path.link;
     animnum = path.animnum;
     levelDatum = LevelData.find(path.level);
     leftChild = AnimListFrame(link);
-    centerChild = AnimationFrame(link,animnum);
-    if (rightChild == null)
-      rightChild = WebFrame(link + ".html");
+    centerChild = AnimationFrame(link, animnum);
+    if (rightChild == null) rightChild = WebFrame(link + ".html");
   }
 
   @override
   FM.Widget build(FM.BuildContext context) {
     return FM.FutureBuilder<XmlDocument>(
         future: TamUtils.getXMLAsset(link),
-        builder: (FM.BuildContext context, FM.AsyncSnapshot<XmlDocument> snapshot) {
+        builder:
+            (FM.BuildContext context, FM.AsyncSnapshot<XmlDocument> snapshot) {
           if (snapshot.hasData) {
             var doc = snapshot.data;
-            var title = doc.findAllElements("tamination").first.getAttribute("title");
+            var title =
+                doc.findAllElements("tamination").first.getAttribute("title");
             return FM.Scaffold(
                 appBar: FM.PreferredSize(
                     preferredSize: FM.Size.fromHeight(56.0),
-                    child: TitleBar(title: title, level: levelDatum.name)
-                ),
+                    child: TitleBar(title: title, level: levelDatum.name)),
                 body: RequestHandler(
                     child: SecondLandscapeFrame(
                         leftChild: leftChild,
                         centerChild: centerChild,
-                        rightChild: rightChild
-                    ),
+                        rightChild: rightChild),
                     handler: (request) {
-                      print(request.action);
                       if (request.action == Action.ANIMATION) {
                         setState(() {
                           animnum = request.params["animnum"].i;
@@ -101,44 +98,39 @@ class _SecondLandscapePageState extends FM.State<SecondLandscapePage> {
                           });
                         }
                       }
-                    }
-                )
-            );
+                    }));
           }
           return FM.Scaffold(
-            appBar: FM.PreferredSize(
-              preferredSize: FM.Size.fromHeight(56.0),
-              child: TitleBar(title: ""),
-            ),
-            body: FM.Container(  //  TODO add spinner
-              color: Color.FLOOR,
-            )
-          );
-
+              appBar: FM.PreferredSize(
+                preferredSize: FM.Size.fromHeight(56.0),
+                child: TitleBar(title: ""),
+              ),
+              body: FM.Container(
+                //  TODO add spinner
+                color: Color.FLOOR,
+              ));
         });
   }
-
 }
-class SecondLandscapeFrame extends FM.StatelessWidget {
 
+class SecondLandscapeFrame extends FM.StatelessWidget {
   final FM.Widget leftChild;
   final FM.Widget centerChild;
   final FM.Widget rightChild;
-  SecondLandscapeFrame({
-    @FM.required this.leftChild,
-    @FM.required this.centerChild,
-    @FM.required this.rightChild
-  });
 
+  SecondLandscapeFrame(
+      {@FM.required this.leftChild,
+      @FM.required this.centerChild,
+      @FM.required this.rightChild});
 
   @override
   FM.Widget build(FM.BuildContext context) {
     return FM.Row(
       crossAxisAlignment: FM.CrossAxisAlignment.stretch,
       children: [
-        FM.Expanded(child:leftChild, flex: 1),
-        FM.Expanded(child:centerChild, flex: 1),
-        FM.Expanded(child:rightChild, flex: 1)
+        FM.Expanded(child: leftChild, flex: 1),
+        FM.Expanded(child: centerChild, flex: 1),
+        FM.Expanded(child: rightChild, flex: 1)
       ],
     );
   }

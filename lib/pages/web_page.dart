@@ -30,6 +30,7 @@ import '../level_data.dart';
 import '../settings.dart';
 import '../tam_utils.dart';
 import '../title_bar.dart';
+import 'animation.dart';
 
 //  Classes to display both About and Definition
 class WebPage extends FM.StatelessWidget {
@@ -81,13 +82,22 @@ class _WebFrameState extends FM.State<WebFrame> {
           return FM.Column(
           children: [
             FM.Expanded(
-            child:WVF.WebView(
-              initialUrl: "about:blank",
-              javascriptMode: WVF.JavascriptMode.unrestricted,
-              onWebViewCreated: (webViewController) {
-                _controller = webViewController;
-                _loadHtmlFromAssets();
-              })),
+            child:PP.Consumer<AnimationState>(
+              builder: (context, settings, child) {
+                if (_controller != null) {
+                  var webTitle = settings.title?.replaceAll(" ", "") ?? "";
+                  _controller.evaluateJavascript('setPart(${settings.part},"$webTitle")');
+                }
+                return child;
+              },
+              child: WVF.WebView(
+                initialUrl: "about:blank",
+                javascriptMode: WVF.JavascriptMode.unrestricted,
+                onWebViewCreated: (webViewController) {
+                  _controller = webViewController;
+                  _loadHtmlFromAssets();
+                }),
+            )),
 
             //  Row of radio buttons at bottom to switch between
             //  Abbreviated and Full definition

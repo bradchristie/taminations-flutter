@@ -19,6 +19,7 @@
 */
 
 import 'package:flutter/material.dart' as FM;
+import 'package:provider/provider.dart' as PP;
 import 'package:xml/xml.dart';
 
 import '../button.dart';
@@ -29,6 +30,7 @@ import '../main.dart';
 import '../request.dart';
 import '../tam_utils.dart';
 import '../title_bar.dart';
+import 'animation.dart';
 
 enum CellType { Header, Separator, Indented, Plain }
 
@@ -236,6 +238,8 @@ class _AnimListState extends FM.State<AnimListFrame> {
             (FM.BuildContext context, FM.AsyncSnapshot<XmlDocument> snapshot) {
           if (snapshot.hasData) {
             _loadList(snapshot.data);
+            PP.Provider.of<AnimationState>(context, listen:false).title =
+                animListItems.firstWhere((item) => item.title.isNotEmpty).title;
             return FM.Column(children: [
               FM.Expanded(
                   child: FM.ListView.builder(
@@ -293,6 +297,7 @@ class _AnimListState extends FM.State<AnimListFrame> {
                                         "name": item.title,
                                         "animnum": item.animnumber.s
                                       }));
+                                  PP.Provider.of<AnimationState>(context, listen:false).title = item.title;
                                 },
                                 child: FM.Container(
                                     decoration: FM.BoxDecoration(

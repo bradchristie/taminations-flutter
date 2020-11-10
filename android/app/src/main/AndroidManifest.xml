@@ -1,8 +1,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.bradchristie.taminations">
    <application
-        android:label="taminations"
-        android:icon="@mipmap/ic_launcher">
+        android:label="Taminations"
+        android:icon="@drawable/ic_launcher">
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTop"
