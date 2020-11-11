@@ -65,8 +65,6 @@ class AnimationPainter extends CustomPainter {
   var _prevbeat = -2.0;
   var hasParts = false;
   Function whenFinished;
-  //  readyListener, partListener ??? TODO
-  //  dropDown (for changing color)  TODO
 
   //  Except for the phantoms, these are the standard colors
   //  used for teaching callers
@@ -128,6 +126,13 @@ class AnimationPainter extends CustomPainter {
     dancers.forEach((d) {
       d.hidden = d.isPhantom && !show;
     });
+  }
+
+  void setGeometry(int g) {
+    if (g != _geometry) {
+      _geometry = g;
+      _resetAnimation();
+    }
   }
 
   //  Convert widget x and y to dance floor coordinates
@@ -310,7 +315,6 @@ class AnimationPainter extends CustomPainter {
         Paint()..color = Color.FLOOR);
     _size = size.v;
     var range = min(size.width,size.height);
-    var p = Paint();
     //  For interactive leadin, show countdown  TODO
     //  Scale coordinate system to dancer's size
     ctx.translate(size.width/2, size.height/2);
@@ -323,7 +327,13 @@ class AnimationPainter extends CustomPainter {
     if (_showGrid) {
       Geometry(_geometry,0).drawGrid(ctx);
     }
-    //  Always show bigon center mark  TODO
+    //  Always show bigon center mark
+    if (_geometry == Geometry.BIGON) {
+      var p = Paint()
+          ..strokeWidth = 0.03;
+      ctx.drawLine(Offset(0,-0.5), Offset(0,0.5), p);
+      ctx.drawLine(Offset(-0.5,0), Offset(0.5,0), p);
+    }
 
     //  Draw paths if requested
     dancers.forEach((d) {
@@ -381,7 +391,6 @@ class AnimationPainter extends CustomPainter {
       _interactiveRandom = intrand;
       _resetAnimation();
       return true;
-      //  TODO notification ANIMATION_LOADED
     });
   }
 
@@ -390,7 +399,6 @@ class AnimationPainter extends CustomPainter {
       leadin = _interactiveDancer < 0 ? 2.0 : 3.0;
       leadout = _interactiveDancer < 0 ? 2.0 : 1.0;
       if (isRunning) {
-        //  TODO notification ANIMATION_DONE
         isRunning = false;
       }
       var tform = _tam.getElement("formation");
@@ -473,8 +481,6 @@ class AnimationPainter extends CustomPainter {
       beat = -leadin;
       _prevbeat = -leadin;
       updateDancers();
-      //  TODO mark graphics dirty
-      //  TODO call readyListener()  ???
     }
   }
 

@@ -34,6 +34,7 @@ import '../title_bar.dart';
 import '../level_data.dart';
 import '../math/vector.dart';
 import '../dancer.dart';
+import '../geometry.dart';
 
 class AnimationState extends FM.ChangeNotifier {
 
@@ -250,6 +251,7 @@ class _AnimationFrameState extends FM.State<AnimationFrame>
             painter.setPaths(settings.paths);
             painter.setLoop(settings.loop);
             painter.setPhantoms(settings.phantoms);
+            painter.setGeometry(Geometry.fromString(settings.geometry).geometry);
             //  Dancer colors - first set values for couples
             for (var i=1; i<=6; i++) {
               painter.setDancerColor(i * 2 - 1, Color.fromName(settings.coupleColor(i)));
