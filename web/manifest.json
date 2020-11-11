@@ -1,12 +1,12 @@
 {
-    "name": "taminations",
-    "short_name": "taminations",
-    "start_url": ".",
-    "display": "standalone",
+    "name": "Taminations",
+    "short_name": "Taminations",
+    "start_url": "index.html",
+    "display": "fullscreen",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
-    "description": "Taminations in Flutter",
-    "orientation": "portrait-primary",
+    "description": "Square Dance Calls - Animations and Definitions",
+    "orientation": "landscape-primary",
     "prefer_related_applications": false,
     "icons": [
         {
