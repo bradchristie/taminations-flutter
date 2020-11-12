@@ -19,6 +19,7 @@
 */
 
 import 'package:flutter/material.dart' as FM;
+import 'package:flutter/services.dart';
 import '../title_bar.dart';
 import '../color.dart';
 import '../main.dart';
@@ -37,6 +38,7 @@ class LevelPage extends FM.StatelessWidget {
           child: LevelFrame(),
           handler: (request) {
             var route = TaminationsRoute(level:request.params["level"]);
+            if (request.action == Action.PRACTICE) route = TaminationsRoute(practice: true);
             if (request.action == Action.SETTINGS) route = TaminationsRoute(settings: true);
             else if (request.action == Action.ABOUT) route = TaminationsRoute(about: true);
             FM.Router.of(context).routerDelegate.setNewRoutePath(route);

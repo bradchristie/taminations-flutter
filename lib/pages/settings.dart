@@ -93,12 +93,11 @@ class _SettingCheckbox extends FM.StatelessWidget {
 }
 
 //  Class for radio button setting
-typedef _stringChanger = void Function(String value);
 class _SettingRadioGroup extends FM.StatelessWidget {
 
   final String groupValue;
   final List<String> values;
-  final _stringChanger onChanged;
+  final void Function(String value) onChanged;
   _SettingRadioGroup({@FM.required this.groupValue,
     @FM.required this.values,
     @FM.required this.onChanged});
@@ -124,7 +123,7 @@ class _SettingRadioGroup extends FM.StatelessWidget {
 //  Class for one dancer color drop-down
 class _SettingsColorDropDown extends FM.StatefulWidget {
 
-  final _stringChanger onChanged;
+  final void Function(String value) onChanged;
   final String currentValue;
   _SettingsColorDropDown({
     @FM.required this.onChanged,
@@ -137,7 +136,7 @@ class _SettingsColorDropDown extends FM.StatefulWidget {
 
 class _SettingsColorDropDownState extends FM.State<_SettingsColorDropDown> {
 
-  final _stringChanger onChanged;
+  final void Function(String value) onChanged;
   String dropdownValue;
   _SettingsColorDropDownState(this.onChanged,this.dropdownValue);
 

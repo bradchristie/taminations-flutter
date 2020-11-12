@@ -37,6 +37,9 @@ class Settings extends ChangeNotifier {
   String _geometry = "None";
   String _language = "System";
   bool _isAbbrev = true;
+  String _practiceGender = "Boy";
+  String _practiceSpeed = "Slow";
+  String _primaryControl = "Left Finger";
 
   SharedPreferences prefs;
 
@@ -64,6 +67,9 @@ class Settings extends ChangeNotifier {
     _language = prefs.getString("Language for Definitions") ?? "System";
     _preferencesRead = true;
     _isAbbrev = prefs.getBool("DefinitionAbbrev") ?? true;
+    _practiceGender = prefs.getString("PracticeGender") ?? "Boy";
+    _practiceSpeed = prefs.getString("PracticeSpeed") ?? "Slow";
+    _primaryControl = prefs.getString("PrimaryControl") ?? "Left Finger";
     notifyListeners();
     return true;
   }
@@ -171,5 +177,25 @@ class Settings extends ChangeNotifier {
     return link;
   }
 
+  String get practiceGender => _practiceGender;
+  set practiceGender(String value) {
+    _practiceGender = value;
+    prefs.setString("PracticeGender",value);
+    notifyListeners();
+  }
+
+  String get practiceSpeed => _practiceSpeed;
+  set practiceSpeed(String value) {
+    _practiceSpeed = value;
+    prefs.setString("PracticeSpeed",value);
+    notifyListeners();
+  }
+
+  String get primaryControl => _primaryControl;
+  set primaryControl(String value) {
+    _primaryControl = value;
+    prefs.setString("PrimaryControl",value);
+    notifyListeners();
+  }
 
 }

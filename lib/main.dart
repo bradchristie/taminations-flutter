@@ -21,6 +21,7 @@
 import 'package:flutter/foundation.dart' as FF;
 import 'package:flutter/material.dart' as FM;
 import 'package:provider/provider.dart' as PP;
+import 'package:taminations/pages/start_practice.dart';
 
 import 'pages/calls.dart';
 import 'extensions.dart';
@@ -114,6 +115,7 @@ class TaminationsRoute {
       (level ?? "") + " " +
           (call ?? "") + " " +
           (animnum >= 0 ? animnum.s : "") + " " +
+          (practice ? "Practice " : "") +
           (settings ? "Settings " : "") +
           (definition ? "Definition" : "") +
           (about ? "About " : "");
@@ -195,7 +197,13 @@ class TaminationsRouterDelegate extends FM.RouterDelegate<TaminationsRoute>
                               FM.MaterialPage(
                                   key: FM.ValueKey("Landscape Page " + currentPath.link),
                                   child: SecondLandscapePage()
-                              )
+                              ),
+                            if (currentPath.practice)
+                              FM.MaterialPage(
+                                  key: FM.ValueKey("Practice"),
+                                  child: StartPracticePage()
+                              ),
+
                           ]
 
                           //  Pages for portrait - Level, Animlist, Animation, Settings, etc
@@ -234,6 +242,11 @@ class TaminationsRouterDelegate extends FM.RouterDelegate<TaminationsRoute>
                               FM.MaterialPage(
                                   key: FM.ValueKey("Settings"),
                                   child: SettingsPage()
+                              ),
+                            if (currentPath.practice)
+                              FM.MaterialPage(
+                                  key: FM.ValueKey("Practice"),
+                                  child: StartPracticePage()
                               ),
                           ],
 

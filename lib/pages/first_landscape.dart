@@ -19,6 +19,7 @@
 */
 
 import 'package:flutter/material.dart' as FM;
+import '../main.dart';
 import 'web_page.dart';
 import 'level.dart';
 import '../level_data.dart';
@@ -49,7 +50,11 @@ class _FirstLandscapePageState extends FM.State<FirstLandscapePage> {
         body: RequestHandler(
             child:FirstLandscapeFrame(rightChild:rightChild),
           handler: (request) {
-            if (request.action == Action.SETTINGS) {
+            if (request.action == Action.PRACTICE) {
+              var route = TaminationsRoute(practice: true);
+              FM.Router.of(context).routerDelegate.setNewRoutePath(route);
+            }
+            else if (request.action == Action.SETTINGS) {
               showSettingsFrame();
             }
             else if (request.action == Action.ABOUT) {
