@@ -19,7 +19,9 @@
 */
 
 import 'package:flutter/foundation.dart';
+import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'tam_utils.dart';
 
 class Settings extends ChangeNotifier {
 
@@ -130,6 +132,13 @@ class Settings extends ChangeNotifier {
     notifyListeners();
   }
 
+  bool get isAbbrev => _isAbbrev;
+  set isAbbrev(bool value) {
+    _isAbbrev = value;
+    prefs.setBool("DefinitionAbbrev", value);
+    notifyListeners();
+  }
+
   String get language => _language;
   set language(String value) {
     _language = value;
@@ -137,11 +146,30 @@ class Settings extends ChangeNotifier {
     notifyListeners();
   }
 
-  bool get isAbbrev => _isAbbrev;
-  set isAbbrev(bool value) {
-    _isAbbrev = value;
-    prefs.setBool("DefinitionAbbrev", value);
-    notifyListeners();
+  //  Get a language-specific link for retreiving the definition
+  String getLanguageLink(String link) {
+    var languageSetting = _language;
+    print("Language setting: $languageSetting");
+    if (languageSetting == "English")
+      languageSetting = "en";
+    else if (languageSetting == "German")
+      languageSetting = "de";
+    else if (languageSetting == "Japanese")
+      languageSetting = "ja";
+    else  //  System language
+      languageSetting = WidgetsBinding.instance.window.locale.languageCode;
+    print("link: $link   looking for definition in $languageSetting");
+    if (languageSetting != "en") {
+      if (TamUtils.calldata.firstWhere((item) {
+        if (item.link == link)
+          print("Languages available: ${item.languages}");
+        return item.link == link && item.languages.contains(languageSetting);
+      }, orElse: null) != null) {
+        link += ".lang-$languageSetting";
+      }
+    }
+    return link;
   }
+
 
 }

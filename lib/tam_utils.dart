@@ -67,7 +67,7 @@ class TamUtils {
               e.getAttribute("title"), // TODO normalize
               e.getAttribute("link"),
               e.getAttribute("sublevel"),
-              e.getAttribute("language"),
+              e.getAttribute("languages"),
               e.getAttribute("audio"))
       ).toList();
     });

@@ -228,7 +228,7 @@ class TaminationsRouterDelegate extends FM.RouterDelegate<TaminationsRoute>
                             if (currentPath.definition)
                               FM.MaterialPage(
                                 key: FM.ValueKey(currentPath.link + " definition"),
-                                child: WebPage(currentPath.link + ".html")
+                                child: WebPage(settings.getLanguageLink(currentPath.link) + ".html")
                               ),
                             if (currentPath.settings)
                               FM.MaterialPage(

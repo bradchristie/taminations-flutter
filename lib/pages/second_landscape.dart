@@ -19,6 +19,7 @@
 */
 
 import 'package:flutter/material.dart' as FM;
+import 'package:provider/provider.dart' as PP;
 import 'package:xml/xml.dart';
 
 import '../color.dart';
@@ -28,6 +29,7 @@ import '../main.dart';
 import '../request.dart';
 import '../tam_utils.dart';
 import '../title_bar.dart';
+import '../settings.dart';
 import 'anim_list.dart';
 import 'animation.dart';
 import 'settings.dart';
@@ -57,7 +59,9 @@ class _SecondLandscapePageState extends FM.State<SecondLandscapePage> {
     levelDatum = LevelData.find(path.level);
     leftChild = AnimListFrame(link);
     centerChild = AnimationFrame(link, animnum);
-    if (rightChild == null) rightChild = WebFrame(link + ".html");
+    var settings = PP.Provider.of<Settings>(context);
+    if (rightChild == null)
+      rightChild = WebFrame(settings.getLanguageLink(link) + ".html");
   }
 
   @override
@@ -74,31 +78,35 @@ class _SecondLandscapePageState extends FM.State<SecondLandscapePage> {
                 appBar: FM.PreferredSize(
                     preferredSize: FM.Size.fromHeight(56.0),
                     child: TitleBar(title: title, level: levelDatum.name)),
-                body: RequestHandler(
-                    child: SecondLandscapeFrame(
-                        leftChild: leftChild,
-                        centerChild: centerChild,
-                        rightChild: rightChild),
-                    handler: (request) {
-                      if (request.action == Action.ANIMATION) {
-                        setState(() {
-                          animnum = request.params["animnum"].i;
-                          centerChild = AnimationFrame(link, animnum);
-                        });
-                      }
-                      if (request.action == Action.BUTTON_PRESS) {
-                        if (request.params["button"] == "Settings") {
-                          setState(() {
-                            rightChild = SettingsFrame();
-                          });
-                        }
-                        if (request.params["button"] == "Definition") {
-                          setState(() {
-                            rightChild = WebFrame(link + ".html");
-                          });
-                        }
-                      }
-                    }));
+                body: PP.Consumer<Settings>(
+                  builder: (context, settings, child) {
+                    return RequestHandler(
+                        child: SecondLandscapeFrame(
+                            leftChild: leftChild,
+                            centerChild: centerChild,
+                            rightChild: rightChild),
+                        handler: (request) {
+                          if (request.action == Action.ANIMATION) {
+                            setState(() {
+                              animnum = request.params["animnum"].i;
+                              centerChild = AnimationFrame(link, animnum);
+                            });
+                          }
+                          if (request.action == Action.BUTTON_PRESS) {
+                            if (request.params["button"] == "Settings") {
+                              setState(() {
+                                rightChild = SettingsFrame();
+                              });
+                            }
+                            if (request.params["button"] == "Definition") {
+                              setState(() {
+                                rightChild = WebFrame(settings.getLanguageLink(link) + ".html");
+                              });
+                            }
+                          }
+                      });
+                    },
+                ));
           }
           return FM.Scaffold(
               appBar: FM.PreferredSize(

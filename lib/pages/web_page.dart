@@ -188,7 +188,7 @@ class _WebFrameState extends FM.State<WebFrame> {
         _html,
         mimeType: 'text/html',
         encoding: Encoding.getByName('utf-8')
-    ).toString()).whenComplete(() => print("HTML loaded."));
+    ).toString());
 
   //  Load the original HTML, then call all the routines to fix it up
   _loadHtmlFromAssets() async {
