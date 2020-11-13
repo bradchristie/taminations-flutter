@@ -54,6 +54,10 @@ class _FirstLandscapePageState extends FM.State<FirstLandscapePage> {
               var route = TaminationsRoute(practice: true);
               FM.Router.of(context).routerDelegate.setNewRoutePath(route);
             }
+            else if (request.action == Action.SEQUENCER) {
+              var route = TaminationsRoute(sequencer: true);
+              FM.Router.of(context).routerDelegate.setNewRoutePath(route);
+            }
             else if (request.action == Action.SETTINGS) {
               showSettingsFrame();
             }

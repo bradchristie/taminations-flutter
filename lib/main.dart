@@ -21,6 +21,7 @@
 import 'package:flutter/foundation.dart' as FF;
 import 'package:flutter/material.dart' as FM;
 import 'package:provider/provider.dart' as PP;
+import 'package:taminations/pages/practice.dart';
 import 'package:taminations/pages/start_practice.dart';
 
 import 'pages/calls.dart';
@@ -28,13 +29,14 @@ import 'extensions.dart';
 import 'pages/level.dart';
 import 'level_data.dart';
 import 'pages/anim_list.dart';
-import 'pages/animation.dart';
+import 'pages/animation_page.dart';
 import 'pages/first_landscape.dart';
 import 'pages/settings.dart';
 import 'pages/second_landscape.dart';
 import 'settings.dart';
 import 'tam_utils.dart';
 import 'pages/web_page.dart';
+import 'sequencer/sequencer_page.dart';
 
 ///  Main routine
 void main() {
@@ -200,8 +202,18 @@ class TaminationsRouterDelegate extends FM.RouterDelegate<TaminationsRoute>
                               ),
                             if (currentPath.practice)
                               FM.MaterialPage(
-                                  key: FM.ValueKey("Practice"),
+                                  key: FM.ValueKey("Start Practice"),
                                   child: StartPracticePage()
+                              ),
+                            if (currentPath.practice && currentPath.level != null)
+                              FM.MaterialPage(
+                                  key: FM.ValueKey("Practice"),
+                                  child: PracticePage()
+                              ),
+                            if (currentPath.sequencer)
+                              FM.MaterialPage(
+                                  key: FM.ValueKey("Sequencer"),
+                                  child: SequencerPage()
                               ),
 
                           ]

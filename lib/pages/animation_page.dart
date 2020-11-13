@@ -22,7 +22,7 @@ import 'dart:math';
 
 import 'package:flutter/material.dart' as FM;
 import 'package:provider/provider.dart' as PP;
-import '../animation_painter.dart';
+import '../dance_animation_painter.dart';
 import '../main.dart';
 import '../tam_utils.dart';
 import '../button.dart';
@@ -78,10 +78,23 @@ class _AnimationPageState extends FM.State<AnimationPage> {
             child: TitleBar(title: name, level: LevelData.find(link).name)
         ),
         body: RequestHandler(
-            child: AnimationFrame(link,animnum),
+            child: FM.Column(
+              children: [
+                AnimationFrame(link:link,animnum:animnum),
+                FM.Row(
+                  children: [
+                    FM.Expanded(
+                        child: Button("Definition",
+                            onPressed: () { })),
+                    FM.Expanded(
+                        child: Button("Settings",
+                            onPressed: () { })),
+                  ],
+                )
+              ],
+            ),
             handler: (request) {
-
-        }
+            }
         )
     );
   }
@@ -92,10 +105,12 @@ class AnimationFrame extends FM.StatefulWidget {
 
   final String link;
   final int animnum;
-  AnimationFrame(this.link,this.animnum) : super(key:FM.ValueKey("$link $animnum"));
+  final String startFormation;
+  AnimationFrame({this.link,this.animnum,this.startFormation})
+      : super(key:FM.ValueKey("$link $animnum"));
 
   @override
-  _AnimationFrameState createState() => _AnimationFrameState(link,animnum);
+  _AnimationFrameState createState() => _AnimationFrameState(link,animnum,startFormation);
 }
 
 class _AnimationFrameState extends FM.State<AnimationFrame>
@@ -104,7 +119,7 @@ class _AnimationFrameState extends FM.State<AnimationFrame>
   String link;
   int animnum;
   //  painter is where all the drawing and animation is done
-  AnimationPainter painter;
+  DanceAnimationPainter painter;
   //  controller sends ticks to the painter making it compute and draw an animation
   FM.AnimationController controller;
   double currentBeat = -2.0;
@@ -116,33 +131,47 @@ class _AnimationFrameState extends FM.State<AnimationFrame>
   bool hasParts = false;
   List<double> partsValues;
   int currentPart = 0;
+  String startFormation;  // for sequencer
 
   //  Constructor
-  _AnimationFrameState(this.link,this.animnum);
+  _AnimationFrameState(this.link,this.animnum,this.startFormation);
 
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
     //  Set up _controller, _painter
     controller = FM.AnimationController.unbounded(duration: Duration(hours: 1),vsync: this);
-    painter = AnimationPainter(repaint:controller);
-    //  Get the requested square dance animation and send it to the painter
-    TamUtils.getXMLAsset(link).then((doc) {
-      var tam = TamUtils.tamList(doc)
-          .where((it) => !(it["display"] ?? "").startsWith("n"))
-          .toList()[max(0,animnum)];
-      partstr = (tam["parts"] ?? "") + (tam["fractions"] ?? "");
-      hasParts = tam["parts"] != null;
-      painter.setAnimation(tam).then( (b) {
+    painter = DanceAnimationPainter(repaint:controller);
+    //  For sequencer, get the starting formation
+    if (startFormation != null) {
+      var tam = TamUtils.getFormation(startFormation);
+      painter.setAnimation(tam).whenComplete(() {
         controller.notifyListeners();
         findPartsValues();
       });
-      animationNote = "";
-      var tamnote = tam.childrenNamed("taminator").firstOrNull;
-      if (tamnote != null) {
-        animationNote = tamnote.text.trim().replaceAll(r"\s+".r, " ");
-      }
-    });
+
+    } else {
+      //  Not running the sequencer, just showing one animation
+      //  Get the requested square dance animation and send it to the painter
+      TamUtils.getXMLAsset(link).then((doc) {
+        var tam = TamUtils.tamList(doc)
+            .where((it) => !(it["display"] ?? "").startsWith("n"))
+            .toList()[max(0, animnum)];
+        partstr = (tam["parts"] ?? "") + (tam["fractions"] ?? "");
+        hasParts = tam["parts"] != null;
+        painter.setAnimation(tam).whenComplete(() {
+          controller.notifyListeners();
+          findPartsValues();
+        });
+        animationNote = "";
+        var tamnote = tam
+            .childrenNamed("taminator")
+            .firstOrNull;
+        if (tamnote != null) {
+          animationNote = tamnote.text.trim().replaceAll(r"\s+".r, " ");
+        }
+      });
+    }
     controller.addListener(() {
       setState(() {
         //  Remember the beat, for setting alpha on the notes
@@ -216,7 +245,6 @@ class _AnimationFrameState extends FM.State<AnimationFrame>
         context: context,
         position: FM.RelativeRect.fromLTRB(locationTapped.x, locationTapped.y,
           screenSize.x, screenSize.y),
-      //  color: Color(0),
         initialValue: currentColor,
         items: [
           oneItem("Black"),
@@ -240,6 +268,7 @@ class _AnimationFrameState extends FM.State<AnimationFrame>
     //  Necessary to get it to show any changed settings, colors, paths, etc.
     controller.forward();
     return FM.Column(children: [
+
       //  Dance area with animations
       FM.Expanded(child: PP.Consumer<Settings>(
           builder: (context, settings, child) {
@@ -390,13 +419,7 @@ class _AnimationFrameState extends FM.State<AnimationFrame>
             FM.Expanded(child: Button("End",
                 child: FM.Icon(FM.Icons.skip_next),
                 onPressed: () { })),
-          ]),
-      FM.Row(children: [
-        FM.Expanded(
-          child: Button("Definition"),
-        ),
-        FM.Expanded(child: Button("Settings"))
-      ]),
+          ])
     ]);
   }
 }

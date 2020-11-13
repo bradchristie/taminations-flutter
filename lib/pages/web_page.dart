@@ -30,7 +30,7 @@ import '../level_data.dart';
 import '../settings.dart';
 import '../tam_utils.dart';
 import '../title_bar.dart';
-import 'animation.dart';
+import 'animation_page.dart';
 
 //  Classes to display both About and Definition
 class WebPage extends FM.StatelessWidget {

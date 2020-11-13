@@ -33,7 +33,7 @@ import 'tam_utils.dart';
 import 'handhold.dart';
 import 'math/movement.dart';
 
-class AnimationPainter extends CustomPainter {
+class DanceAnimationPainter extends CustomPainter {
 
   static const SLOWSPEED = 1500.0;
   static const MODERATESPEED = 1000.0;
@@ -76,7 +76,7 @@ class AnimationPainter extends CustomPainter {
       : [Color.LIGHTGRAY, Color.RED, Color.GREEN, Color.BLUE, Color.YELLOW,
         Color.LIGHTGRAY, Color.LIGHTGRAY, Color.LIGHTGRAY, Color.LIGHTGRAY];
 
-  AnimationPainter({Listenable repaint}) : super(repaint:repaint) {
+  DanceAnimationPainter({Listenable repaint}) : super(repaint:repaint) {
     dancers = [ ];
     addListener(() { _onDraw(); });
   }
@@ -453,7 +453,7 @@ class AnimationPainter extends CustomPainter {
         var g = Gender.BOY;
         if (fd["gender"] == "girl") g = Gender.GIRL;
         if (fd["gender"] == "phantom") g = Gender.PHANTOM;
-        var movelist = (paths.length > i) ? TamUtils.translatePath(paths[i]) : [];
+        var movelist = (paths.length > i) ? TamUtils.translatePath(paths[i]) : <Movement>[];
         //  Each dancer listed in the formation corresponds to
         //  one, two, or three real dancers depending on the geometry
         geoms.forEach((geom) {

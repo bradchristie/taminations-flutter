@@ -22,6 +22,7 @@ import 'package:flutter/material.dart' as FM;
 import 'package:provider/provider.dart' as PP;
 import 'package:xml/xml.dart';
 
+import '../button.dart';
 import '../color.dart';
 import '../extensions.dart';
 import '../level_data.dart';
@@ -31,7 +32,7 @@ import '../tam_utils.dart';
 import '../title_bar.dart';
 import '../settings.dart';
 import 'anim_list.dart';
-import 'animation.dart';
+import 'animation_page.dart';
 import 'settings.dart';
 import 'web_page.dart';
 
@@ -58,7 +59,7 @@ class _SecondLandscapePageState extends FM.State<SecondLandscapePage> {
     animnum = path.animnum;
     levelDatum = LevelData.find(path.level);
     leftChild = AnimListFrame(link);
-    centerChild = AnimationFrame(link, animnum);
+    centerChild = AnimationFrame(link:link, animnum:animnum);
     var settings = PP.Provider.of<Settings>(context);
     if (rightChild == null)
       rightChild = WebFrame(settings.getLanguageLink(link) + ".html");
@@ -83,26 +84,36 @@ class _SecondLandscapePageState extends FM.State<SecondLandscapePage> {
                     return RequestHandler(
                         child: SecondLandscapeFrame(
                             leftChild: leftChild,
-                            centerChild: centerChild,
+                            centerChild: FM.Column(
+                              children: [
+                                FM.Expanded(child: centerChild),
+                                FM.Row(
+                                  children: [
+                                    FM.Expanded(
+                                        child: Button("Definition",
+                                            onPressed: () {
+                                              setState(() {
+                                                rightChild = WebFrame(settings.getLanguageLink(link) + ".html");
+                                              });
+                                            })),
+                                    FM.Expanded(
+                                        child: Button("Settings",
+                                            onPressed: () {
+                                              setState(() {
+                                                rightChild = SettingsFrame();
+                                              });
+                                            })),
+                                  ],
+                                )
+                              ],
+                            ),
                             rightChild: rightChild),
                         handler: (request) {
                           if (request.action == Action.ANIMATION) {
                             setState(() {
                               animnum = request.params["animnum"].i;
-                              centerChild = AnimationFrame(link, animnum);
+                              centerChild = AnimationFrame(link:link, animnum:animnum);
                             });
-                          }
-                          if (request.action == Action.BUTTON_PRESS) {
-                            if (request.params["button"] == "Settings") {
-                              setState(() {
-                                rightChild = SettingsFrame();
-                              });
-                            }
-                            if (request.params["button"] == "Definition") {
-                              setState(() {
-                                rightChild = WebFrame(settings.getLanguageLink(link) + ".html");
-                              });
-                            }
                           }
                       });
                     },

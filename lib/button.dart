@@ -18,6 +18,7 @@
 
 */
 
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart' as FM;
 import 'color.dart';
 import 'request.dart';
@@ -30,7 +31,7 @@ class Button extends FM.StatelessWidget {
 
   Button(this.name, { FM.Widget child, this.onPressed}) :
     this.child = child != null ? child :
-    FM.Text(name, style: FM.TextStyle(
+    AutoSizeText(name, maxLines: 1, style: FM.TextStyle(
       fontWeight: FM.FontWeight.bold,
       fontSize: 20,
     ));

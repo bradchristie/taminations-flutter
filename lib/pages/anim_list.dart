@@ -30,7 +30,7 @@ import '../main.dart';
 import '../request.dart';
 import '../tam_utils.dart';
 import '../title_bar.dart';
-import 'animation.dart';
+import 'animation_page.dart';
 
 enum CellType { Header, Separator, Indented, Plain }
 

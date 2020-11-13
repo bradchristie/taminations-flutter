@@ -92,14 +92,4 @@ extension TamXmlElement on XmlElement {
 
 }
 
-extension TamXmlDocument on XmlDocument {
-
-  //  Returns list of animations from an xml document
-  //  This selects both tam and tamxref elements
-  Future<List<XmlElement>> tamList() =>
-    TamUtils.getXMLAsset("tamlist").then((doc) =>
-      doc.findAllElements("taminations").first.children.cast<XmlElement>()
-          .where((e) => e.tag == "tam" || e.tag == "tam-xref").toList());
-
-}
 

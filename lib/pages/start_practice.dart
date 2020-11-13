@@ -23,6 +23,8 @@ import 'package:provider/provider.dart' as PP;
 import 'package:flutter/services.dart';
 import 'package:taminations/color.dart';
 
+import '../main.dart';
+import '../request.dart';
 import '../title_bar.dart';
 import '../settings.dart';
 
@@ -41,7 +43,13 @@ class StartPracticePage extends FM.StatelessWidget {
                 title: "Practice"
             )
         ),
-        body: StartPracticeFrame()
+        body: RequestHandler(
+            handler: (request) {
+              var route = TaminationsRoute(practice:true,level:request.params["level"]);
+              FM.Router.of(context).routerDelegate.setNewRoutePath(route);
+            },
+            child: StartPracticeFrame()
+        )
     );
   }
 
@@ -57,6 +65,8 @@ class _TapDetector extends FM.StatelessWidget {
   FM.Widget build(FM.BuildContext context) =>
       FM.GestureDetector(
           onTap: () {
+            var request = Request(action:Action.PRACTICE,params:{"level":text});
+            RequestHandler.of(context).processRequest(request);
           },
           child:child
       );
@@ -72,16 +82,19 @@ class _StartPracticeItem extends FM.StatelessWidget {
   @override
   FM.Widget build(FM.BuildContext context) =>
       FM.Expanded(
-        child: FM.Container(
-          decoration: FM.BoxDecoration(
-              color: color,
-              border: FM.Border(
-                  top: FM.BorderSide(width: 1, color: FM.Colors.black),
-                  left: FM.BorderSide(width: 1, color: FM.Colors.black)
-              )),
-          child: FM.Align(
-              alignment: FM.Alignment.center,
-              child: FM.Text(text, style: FM.TextStyle(fontWeight: FM.FontWeight.bold, fontSize: 20))),
+        child: _TapDetector(
+          text: text,
+          child: FM.Container(
+            decoration: FM.BoxDecoration(
+                color: color,
+                border: FM.Border(
+                    top: FM.BorderSide(width: 1, color: FM.Colors.black),
+                    left: FM.BorderSide(width: 1, color: FM.Colors.black)
+                )),
+            child: FM.Align(
+                alignment: FM.Alignment.center,
+                child: FM.Text(text, style: FM.TextStyle(fontWeight: FM.FontWeight.bold, fontSize: 20))),
+          ),
         ),
       );
 }
