@@ -19,6 +19,10 @@
 */
 
 import 'package:flutter/material.dart' as FM;
+import 'package:provider/provider.dart' as PP;
+import 'package:taminations/sequencer/sequencer_model.dart';
+
+import '../color.dart';
 
 class SequencerCallsFrame extends FM.StatefulWidget {
   @override
@@ -27,25 +31,68 @@ class SequencerCallsFrame extends FM.StatefulWidget {
 
 class _SequencerCallsFrameState extends FM.State<SequencerCallsFrame> {
 
+  FM.TextEditingController _controller;
+
+  void initState() {
+    super.initState();
+    _controller = FM.TextEditingController();
+  }
+
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
   @override
   FM.Widget build(FM.BuildContext context) {
-    return FM.Column(
-      children: [
-        FM.TextField(
-          decoration: FM.InputDecoration.collapsed(hintText: "Enter calls"),
-          enableSuggestions: false,
-          style: FM.TextStyle(fontSize: 24),
-          onChanged: (value) {
-            setState(() {
-
-            });
-          },
-        ),
-        FM.Expanded(
-          child: FM.Container()
-        )
-      ],
+    return PP.Consumer<SequencerModel>(
+       builder: (context, model, child) {
+         return FM.Column(
+           children: [
+             FM.TextField(
+               autofocus: true,
+               controller: _controller,
+               decoration: FM.InputDecoration.collapsed(
+                   hintText: "Enter calls"),
+               enableSuggestions: false,
+               style: FM.TextStyle(fontSize: 24),
+               onSubmitted: (value) {
+                 setState(() {
+                   model.loadOneCall(value);
+                   _controller.clear();
+                 });
+               },
+             ),
+             FM.Expanded(
+                 child: FM.ListView.builder(
+                   itemCount: model.callNames.length,
+                   itemBuilder: itemBuilder,
+                 )
+             )
+           ],
+         );
+       },
     );
+  }
+
+  //  Builder for one item of the list
+  FM.Widget itemBuilder(FM.BuildContext context, int index) {
+    return PP.Consumer<SequencerModel>(
+        builder: (context, model, child) {
+          return FM.GestureDetector(
+              onTap: () {},
+              child: FM.Container(
+                  decoration: FM.BoxDecoration(
+                    //  Color the item according the the level
+                      color: Color.WHITE, // TODO level color
+                      border: FM.Border(
+                          top: FM.BorderSide(width: 1, color: Color.BLACK))),
+                  padding: FM.EdgeInsets.only(left: 20.0, top: 4, bottom: 4),
+                  child: FM.Text(
+                      model.callNames[index], style: FM.TextStyle(fontSize: 20))
+              )
+          );
+        });
   }
 
 }

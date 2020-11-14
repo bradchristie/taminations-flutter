@@ -24,6 +24,7 @@ import 'tam_utils.dart';
 
 import 'package:xml/xml.dart';
 
+
 extension TamInt on int {
 
   double get d => this.toDouble();  // not sure if this is needed
@@ -75,6 +76,14 @@ extension TamList<E> on List<E> {
 
   List<int> get indices => asMap().keys;
   E get firstOrNull => isNotEmpty ? first : null;
+  List<E> operator -(E e) => this.where((element) => element != e).toList();
+  List<E> clone() => this.toList();
+  List<E> sortedBy(int compare(E e1, E e2)) {
+    var list2 = this.clone();
+    list2.sort(compare);
+    return list2;
+  }
+  List<E> drop(int n) => this.sublist(n);
 
 }
 

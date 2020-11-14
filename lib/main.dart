@@ -24,14 +24,14 @@ import 'package:provider/provider.dart' as PP;
 import 'package:taminations/pages/practice.dart';
 import 'package:taminations/pages/start_practice.dart';
 
-import 'pages/calls.dart';
+import 'pages/calls_page.dart';
 import 'extensions.dart';
-import 'pages/level.dart';
+import 'pages/level_page.dart';
 import 'level_data.dart';
 import 'pages/anim_list.dart';
 import 'pages/animation_page.dart';
 import 'pages/first_landscape.dart';
-import 'pages/settings.dart';
+import 'pages/settings_page.dart';
 import 'pages/second_landscape.dart';
 import 'settings.dart';
 import 'tam_utils.dart';

@@ -229,4 +229,72 @@ class TamUtils {
   ///   Gets a named path (move) from the file of moves
   static Path getMove(String name) => Path(_translate(_moves[name]));
 
+
+
+  /**  Standardize a call name to match against other names  */
+  static String normalizeCall(String callname) =>
+  callname.toLowerCase().trim()
+      .replaceAll("\\(.*\\)".r,"")
+      .replaceAll("&","and")
+      .replaceAll("\\s+".r," ")
+      .replaceAll("[^a-zA-Z0-9_ ]".r,"")
+  //  Through => Thru
+      .replaceAll("\\bthrou?g?h?\\b".r,"thru")
+  //  One and a half
+      .replaceAll("(onc?e and a half)|(1 12)|(15)".r,"112")
+  //  Process fractions 1/2 3/4 1/4 2/3
+  //  Non-alphanums are not used in matching
+  //  so these fractions become 12 34 14 23
+  //  Fortunately two-digit numbers are not used in calls
+      .replaceAll("\\b12|(and.)?((a|one).)?half\\b".r,"12")
+      .replaceAll("\\b(three.quarters?|34)\\b".r,"34")
+      .replaceAll("\\b(((a|one).)?quarter|14)\\b".r,"14")
+      .replaceAll("\\b23|two.thirds?\\b".r,"23")
+  //  Process any other numbers
+      .replaceAll("\\bzero\\b".r,"0")
+      .replaceAll("\\b(1|onc?e)\\b".r,"1")
+      .replaceAll("\\b(2|two)\\b".r,"2")
+      .replaceAll("\\b(3|three)\\b".r,"3")
+      .replaceAll("\\b(4|four)\\b".r,"4")
+      .replaceAll("\\b(5|five)\\b".r,"5")
+      .replaceAll("\\b(6|six)\\b".r,"6")
+      .replaceAll("\\b(7|seven)\\b".r,"7")
+      .replaceAll("\\b(8|eight)\\b".r,"8")
+      .replaceAll("\\b(9|nine)\\b".r,"9")
+  //  2.5, 3.5 etc
+      .replaceAllMapped("\\b([1-9])5".r,
+          (m) => "${m[1]}12")
+  //  Standardize 6 by 2, 6-2, 6 2 Acey Deucey
+      .replaceAll("(six|6)\\s*(by)?x?-?\\s*(two|2)".r,"62")
+      .replaceAll("(three|3)\\s*(by)?x?-?\\s*(two|2)".r,"32")
+  //  'Column' of Magic Column is optional
+      .replaceAll("magic (?!column)(?!o)(?!expand)".r,"magic column ")
+  //  Use singular form
+      .replaceAllMapped("\\b(boy|girl|beau|belle|center|end|point|head|(out)?side)s\\b".r, (m) => m[1])
+  //  Misc other variations
+      .replaceAll("\\bswap(\\s+around)?\\b".r,"swap")
+      .replaceAll("\\bmen\\b".r,"boy")
+      .replaceAll("\\bwomen\\b".r,"girl")
+      .replaceAll("\\blead(er)?(ing)?s?\\b".r,"lead")
+      .replaceAll("\\btrail(er)?(ing)?s?\\b".r,"trail")
+      .replaceAll("\\bcentres?\\b".r,"center")
+      .replaceAllMapped("\\b(1|3)4 tag the line\\b".r,
+          (m) => "${m[1]}4 tag")
+      .replaceAll("\\b12 square thru\\b".r,"square thru 2")
+      .replaceAll("\\bbox recycle\\b".r,"recycle")
+      .replaceAllMapped("interlocked (flip|cut) the".r,
+          (m) => "${m[1]} the interlocked")
+  //  'Dixie Style' -> 'Dixie Style to a Wave'
+      .replaceAll("\\bdixie style(?! to)".r,"dixie style to a wave")
+      .replaceAll("\\bchase left\\b".r,"left chase")
+  //  Accept optional "dancers" e.g. "head dancers" == "heads"
+      .replaceAll("\\bdancers?\\b".r,"")
+  //  Also handle "Lead Couples" as "Leads"
+  //  but make sure not to clobber "As Couples" or "Couples Hinge"
+      .replaceAllMapped("((head|side|lead|trail|center|end).)couple".r,
+          (m) => m[1])
+  //  Finally remove non-alphanums and strip spaces
+      .replaceAll("\\W".r,"")
+      .replaceAll("\\s".r,"");
+
 }

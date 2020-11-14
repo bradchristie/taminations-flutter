@@ -33,7 +33,7 @@ import '../title_bar.dart';
 import '../settings.dart';
 import 'anim_list.dart';
 import 'animation_page.dart';
-import 'settings.dart';
+import 'settings_page.dart';
 import 'web_page.dart';
 
 class SecondLandscapePage extends FM.StatefulWidget {

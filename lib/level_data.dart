@@ -23,12 +23,23 @@ import 'package:taminations/color.dart';
 import 'package:taminations/extensions.dart';
 
 typedef _Selector = bool Function(String text);
-class LevelDatum {
+class LevelDatum implements Comparable<LevelDatum> {
   final String name;
   final String dir;
   final Color color;
   final _Selector selector;
   LevelDatum(this.name,this.dir,this.color,this.selector);
+
+  @override
+  int compareTo(LevelDatum other) =>
+      LevelData._data.indexOf(this) - LevelData._data.indexOf(other);
+
+  bool operator <(Object other) {
+    if (other is LevelDatum)
+      return this.compareTo(other) < 0;
+    return false;
+  }
+
 }
 
 class LevelData {

@@ -21,10 +21,10 @@
 import 'package:flutter/material.dart' as FM;
 import '../main.dart';
 import 'web_page.dart';
-import 'level.dart';
+import 'level_page.dart';
 import '../level_data.dart';
-import 'settings.dart';
-import 'calls.dart';
+import 'settings_page.dart';
+import 'calls_page.dart';
 import '../title_bar.dart';
 import '../request.dart';
 
