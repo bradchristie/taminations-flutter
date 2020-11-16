@@ -18,24 +18,10 @@
 
 */
 
-class CallError implements Exception {
+import 'package:taminations/sequencer/calls/coded_call.dart';
 
-  final String description;
+class Action extends CodedCall {
 
-  CallError(this.description);
-  String toString() => "Call Error: $description";
-
-}
-
-class CallNotFoundError extends  CallError {
-
-  CallNotFoundError(String call) : super("Call $call not found");
-
-}
-
-class FormationNotFoundError extends CallError {
-
-  FormationNotFoundError(String call)
-      : super("No animation for $call from that formation.");
+  Action(String norm, String name) : super(norm, name);
 
 }

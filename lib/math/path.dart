@@ -26,8 +26,8 @@ class Path {
   List<Movement> movelist;
   List<Matrix> _transformlist;
 
-  Path(List<Movement> moves) {
-    movelist = moves.toList();
+  Path([List<Movement> moves]) {
+    movelist = moves == null ? [] : moves.toList();
     recalculate();
   }
 

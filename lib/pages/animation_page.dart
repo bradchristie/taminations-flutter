@@ -266,7 +266,8 @@ class _AnimationFrameState extends FM.State<AnimationFrame>
   FM.Widget build(FM.BuildContext context) {
     //  This sends a tick to the painter, generating a redraw
     //  Necessary to get it to show any changed settings, colors, paths, etc.
-    controller.forward();
+    controller.notifyListeners();
+
     return FM.Column(children: [
 
       //  Dance area with animations

@@ -42,12 +42,17 @@ class TamUtils {
 
   //  Data read at start of program, to speed up later lookups
   static List<CallListDatum> calldata = [];
+  static Map<String,List<CallListDatum>> callmap = {};
   static Map<String,XmlElement> _formations = {};
   static Map<String,XmlElement> _moves = {};
   //  CSS to be injected in web pages
   static String css;
   //  Javascript to be injected in web pages
   static String framecode;
+  //  Keep a set of all words used in calls.
+  //  Used to check sequencer abbreviations - don't let the use make
+  //  an abbreviation for a real word.
+  static Set<String> words = {};
 
   //  Read an XML file or other from the assets
   static Future<String> getAsset(String filename) async =>
@@ -70,7 +75,20 @@ class TamUtils {
               e.getAttribute("languages"),
               e.getAttribute("audio"))
       ).toList();
+      //  Add words in each call to set of all words
+      for (var data in calldata) {
+        var dataWords = data.title.split("\\s+".r).map((w) => w.toLowerCase());
+        words.addAll(dataWords);
+        //  Index link to this call by its normalized name
+        var norm = data.norm;
+        if (callmap.containsKey(norm))
+          callmap[norm].add(data);
+        else
+          callmap[norm] = [ data ];
+      }
     });
+
+
     getXMLAsset("src/formations").then((doc) {
       doc.findAllElements("formation").forEach((f) {
         _formations[f["name"]] = f;

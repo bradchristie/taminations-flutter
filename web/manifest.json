@@ -1,8 +1,8 @@
 {
     "name": "Taminations",
     "short_name": "Taminations",
-    "start_url": "index.html",
-    "display": "fullscreen",
+    "start_url": ".",
+    "display": "standalone",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
     "description": "Square Dance Calls - Animations and Definitions",

@@ -30,6 +30,7 @@ class LevelDatum implements Comparable<LevelDatum> {
   final _Selector selector;
   LevelDatum(this.name,this.dir,this.color,this.selector);
 
+  //  Comparison of levels - Basic 1 is smallest, C-3A is largest
   @override
   int compareTo(LevelDatum other) =>
       LevelData._data.indexOf(this) - LevelData._data.indexOf(other);
@@ -37,6 +38,11 @@ class LevelDatum implements Comparable<LevelDatum> {
   bool operator <(Object other) {
     if (other is LevelDatum)
       return this.compareTo(other) < 0;
+    return false;
+  }
+  bool operator >(Object other) {
+    if (other is LevelDatum)
+      return this.compareTo(other) > 0;
     return false;
   }
 

@@ -18,24 +18,21 @@
 
 */
 
-class CallError implements Exception {
+class Pair<A,B> {
 
-  final String description;
+  final A firstValue;
+  final B secondValue;
+  Pair(this.firstValue,this.secondValue);
 
-  CallError(this.description);
-  String toString() => "Call Error: $description";
+  @override
+  bool operator ==(Object other) {
+    if (other is Pair<A,B>) {
+      return other.firstValue == firstValue && other.secondValue == secondValue;
+    }
+    return false;
+  }
 
-}
-
-class CallNotFoundError extends  CallError {
-
-  CallNotFoundError(String call) : super("Call $call not found");
-
-}
-
-class FormationNotFoundError extends CallError {
-
-  FormationNotFoundError(String call)
-      : super("No animation for $call from that formation.");
+  @override
+  int get hashCode => firstValue.hashCode ^ secondValue.hashCode;
 
 }

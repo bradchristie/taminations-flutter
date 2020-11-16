@@ -23,7 +23,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart' as FM;
 import 'package:flutter/services.dart' show rootBundle;
 import 'package:provider/provider.dart' as PP;
-import 'package:webview_flutter/webview_flutter.dart' as WVF;
+import 'package:easy_web_view/easy_web_view.dart' as EWV;
 
 import '../extensions.dart';
 import '../level_data.dart';
@@ -64,15 +64,22 @@ class WebFrame extends FM.StatefulWidget {
 
 }
 
+
 class _WebFrameState extends FM.State<WebFrame> {
 
   String assetName;
-  WVF.WebViewController _controller;
   _WebFrameState(this.assetName);
-  String _html;
+  //String _html = "";
   String get _dir => assetName.replaceFirst(r'/.*'.r,'');
   bool isAbbrev = true;
   bool hasAbbrev = false;
+  Future<String> htmlFuture;
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    htmlFuture = _loadHtmlFromAssets();
+  }
 
   @override
   FM.Widget build(FM.BuildContext context) {
@@ -80,24 +87,28 @@ class _WebFrameState extends FM.State<WebFrame> {
         builder: (context, settings, child) {
           isAbbrev = settings.isAbbrev;
           return FM.Column(
-          children: [
-            FM.Expanded(
-            child:PP.Consumer<AnimationState>(
-              builder: (context, settings, child) {
-                if (_controller != null) {
-                  var webTitle = settings.title?.replaceAll(" ", "") ?? "";
-                  _controller.evaluateJavascript('setPart(${settings.part},"$webTitle")');
-                }
-                return child;
-              },
-              child: WVF.WebView(
-                initialUrl: "about:blank",
-                javascriptMode: WVF.JavascriptMode.unrestricted,
-                onWebViewCreated: (webViewController) {
-                  _controller = webViewController;
-                  _loadHtmlFromAssets();
-                }),
-            )),
+              children: [
+                FM.Expanded(
+                    child:PP.Consumer<AnimationState>(
+                        builder: (context, settings, child) {
+                          //  TODO highlight current part in definition
+                          return child;
+                        },
+                        child: FM.FutureBuilder(
+                            future: htmlFuture,
+                            builder:  (FM.BuildContext context,
+                                FM.AsyncSnapshot<String> snapshot) {
+                              if (snapshot.hasData) {
+                                return EWV.EasyWebView(
+                                    src: snapshot.data,
+                                    isHtml: true,
+                                    onLoaded: () { });
+                              }
+                              return FM.Container();
+                            }
+                        )
+                    )
+                ),
 
             //  Row of radio buttons at bottom to switch between
             //  Abbreviated and Full definition
@@ -111,7 +122,7 @@ class _WebFrameState extends FM.State<WebFrame> {
                     onChanged: (value) {
                       setState(() {
                         settings.isAbbrev = true;
-                        _controller.evaluateJavascript("setAbbrev(true)");
+                      //  _controller.evaluateJavascript("setAbbrev(true)");
                       });
                     },
                   ),
@@ -124,7 +135,7 @@ class _WebFrameState extends FM.State<WebFrame> {
                     onChanged: (value) {
                       setState(() {
                         settings.isAbbrev = false;
-                        _controller.evaluateJavascript("setAbbrev(false)");
+                     //   _controller.evaluateJavascript("setAbbrev(false)");
                       });
                     },
                   ),
@@ -141,18 +152,15 @@ class _WebFrameState extends FM.State<WebFrame> {
   //  inject the result into the original html
 
   //  Inject the CSS style info
-  void hackCSS() {
-    _html = _html.replaceFirst(r'<link href="../src/tamination.css" type="text/css" rel="stylesheet" />', TamUtils.css);
-  }
+  String hackCSS(String html) => html.replaceFirst(r'<link href="../src/tamination.css" type="text/css" rel="stylesheet" />', TamUtils.css);
 
   //  Replace link to javascript with inline javascript code
-  void hackJavascript() {
-    _html = _html.replaceFirst(r'<script type="text/javascript" src="../src/framecode.js"></script>',
+  String hackJavascript(String html) =>
+    html.replaceFirst(r'<script type="text/javascript" src="../src/framecode.js"></script>',
         //  Can't run the javascript until the page has been read and digested
         //  so insert first call in the body onLoad callback
     "<script>" + TamUtils.framecode + "</script>")
         .replaceFirst('<body>', '<body onLoad="setAbbrev($isAbbrev)">');
-  }
 
   //  Get an image asset and base64 encode it
   Future<String> _imageToBase64(String imageName) {
@@ -165,48 +173,44 @@ class _WebFrameState extends FM.State<WebFrame> {
   //  Find all links to images, replace with inline base64 src
   //  Return a future that completes after all the images have been
   //  retrieved and displayed
-  Future<void> hackImages() {
-    var myhtml = _html;
-    var myFuture = Future<void>.value(null);
+  Future<String> hackImages(String html) {
+    var myhtml = html;
+    var myFuture = Future<String>.value(myhtml);
     r'<img.*?src="(.*?)".*?/>'.r.allMatches(myhtml).forEach((match) {
       var filename = match.group(1);
-      var orightml = match.group(0);
-      myFuture = myFuture.whenComplete(() {
+      var imagetag = match.group(0);
+      myFuture = myFuture.then((morehtml) {
         return _imageToBase64("$_dir/$filename").then((base64str) {
-          _html = _html.replaceFirst(
-              orightml, r'<img src="data:image/png;base64,' + base64str + r'"/>');
+           return morehtml.replaceFirst(
+              imagetag, r'<img src="data:image/png;base64,' + base64str + r'"/>');
         });
       });
     });
-    return myFuture.whenComplete(() => loadMyHTML() );
+    return myFuture; //.whenComplete(() => loadMyHTML() );
   }
 
-  //  Load or re-load the current HTML string
+
+
   //  Return a future to perform more work on the HTML once loaded
-  Future<void> loadMyHTML() =>
-    _controller.loadUrl( Uri.dataFromString(
-        _html,
-        mimeType: 'text/html',
-        encoding: Encoding.getByName('utf-8')
-    ).toString());
+  //  Future<void> loadMyHTML() => Future<void>.value();
+    //_controller.loadUrl( Uri.dataFromString(
+    //    _html,
+    //    mimeType: 'text/html',
+    //    encoding: Encoding.getByName('utf-8')
+    //).toString());
 
   //  Load the original HTML, then call all the routines to fix it up
-  _loadHtmlFromAssets() async {
-    rootBundle.loadString('assets/$assetName').then((fileText) {
-      _html = fileText;
-      hackCSS();
-      loadMyHTML().whenComplete(() {
-        hackImages().whenComplete(() {
-          hackJavascript();
-          loadMyHTML();
-          if (_html.contains(r'class="abbrev"')) {
-            setState(() {
-              hasAbbrev = true;
-            });
-          }
-        });
+  Future<String> _loadHtmlFromAssets() async {
+    var fileText = await rootBundle.loadString('assets/$assetName');
+    fileText = hackCSS(fileText);
+    fileText = await hackImages(fileText);
+    fileText = hackJavascript(fileText);
+    if (fileText.contains(r'class="abbrev"')) {
+      setState(() {
+        hasAbbrev = true;
       });
-    });
+    }
+    return fileText;
   }
 
 }

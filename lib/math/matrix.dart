@@ -33,6 +33,7 @@ Dart
 */
 
 import 'dart:math';
+import 'package:taminations/math/triple.dart';
 import 'package:vector_math/vector_math.dart' hide Vector;
 import 'vector.dart';
 import '../extensions.dart';
@@ -81,13 +82,68 @@ class Matrix extends Matrix3 {
     @override
   String toString() => "[${m11.s}, ${m12.s}, ${m21.s}, ${m22.s}, ${m31.s}, ${m32.s}]";
 
+  //  This is for rotation transforms only,
+  //  or when using as a 2x2 matrix (as in SVD)
+  Matrix transpose() => Matrix(m11,m12,0,m21,m22,0);
+
   Matrix inverse() {
     var m = Matrix.getIdentity();
     m.copyInverse(this);
     return m;
   }
 
-  //  TODO snapTo90, svd22
+  //  If a rotation matrix is close to a 90 degree angle,snap to it
+  double _snapDouble(double d, double delta) {
+    if (d.isAbout(0,delta:delta)) return 0;
+    if (d.isAbout(1,delta:delta)) return 1;
+    if (d.isAbout(-1,delta:delta)) return -1;
+    return d;
+  }
+  Matrix snapTo90({double delta=0.1}) =>
+      Matrix(_snapDouble(m11, delta),_snapDouble(m21, delta),m31,
+             _snapDouble(m12, delta),_snapDouble(m22, delta),m32);
+
+  //  SVD simple and fast for 2x2 arrays
+  //  for matching 2d formations
+  Triple<Matrix,List<double>,Matrix> svd22() {
+    var a = m11;
+    var b = m12;
+    var c = m21;
+    var d = m22;
+    //  Check for trivial case
+    var epsilon = 0.0001;
+    if (b.abs() < epsilon && c.abs() < epsilon) {
+      var v = Matrix(a < 0 ? -1 : 1, 0,0,0, d < 0 ? -1 : 1, 0);
+      var sigma = [ a.abs(), d.abs() ];
+      var u = Matrix.getIdentity();
+      return Triple(u,sigma,v);
+    } else {   //  Otherwise, solve quadratic for eigenvalues
+      var atanarg1 = 2 * a * c + 2 * b * d;
+      var atanarg2 = a * a + b * b - c * c - d * d;
+      var theta = 0.5 * atan2(atanarg1, atanarg2);
+      var u = Matrix(
+          cos(theta), -sin(theta), 0.0,
+          sin(theta), cos(theta), 0.0
+      );
+
+      var phi = 0.5 * atan2(2 * a * b + 2 * c * d, a.sq - b.sq + c.sq - d.sq);
+      var s11 = (a * cos(theta) + c * sin(theta)) * cos(phi) +
+          (b * cos(theta) + d * sin(theta)) * sin(phi);
+      var s22 = (a * sin(theta) - c * cos(theta)) * sin(phi) +
+          (-b * sin(theta) + d * cos(theta)) * cos(phi);
+
+      var s1 = a.sq + b.sq + c.sq + d.sq;
+      var s2 = sqrt((a.sq + b.sq - c.sq - d.sq).sq + 4 * (a * c + b * d).sq);
+      var sigma = [ sqrt(s1 + s2) / 2, sqrt(s1 - s2) / 2 ];
+
+      var v = Matrix(
+          s11.sign * cos(phi), -s22.sign * sin(phi), 0.0,
+          s11.sign * sin(phi), s22.sign * cos(phi), 0.0
+      );
+      return Triple(u, sigma, v);
+    }
+
+  }
 
 }
 

@@ -18,24 +18,25 @@
 
 */
 
-class CallError implements Exception {
+class Triple<A,B,C> {
 
-  final String description;
+  final A firstValue;
+  final B secondValue;
+  final C thirdValue;
+  Triple(this.firstValue,this.secondValue,this.thirdValue);
 
-  CallError(this.description);
-  String toString() => "Call Error: $description";
+  @override
+  bool operator ==(Object other) {
+    if (other is Triple<A,B,C>) {
+      return other.firstValue == firstValue &&
+          other.secondValue == secondValue &&
+          other.thirdValue == thirdValue;
+    }
+    return false;
+  }
 
-}
-
-class CallNotFoundError extends  CallError {
-
-  CallNotFoundError(String call) : super("Call $call not found");
-
-}
-
-class FormationNotFoundError extends CallError {
-
-  FormationNotFoundError(String call)
-      : super("No animation for $call from that formation.");
+  @override
+  int get hashCode =>
+      firstValue.hashCode ^ secondValue.hashCode ^ thirdValue.hashCode;
 
 }

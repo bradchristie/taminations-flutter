@@ -18,24 +18,18 @@
 
 */
 
-class CallError implements Exception {
+import 'package:xml/xml.dart';
 
-  final String description;
+import '../call_context.dart';
+import 'call.dart';
 
-  CallError(this.description);
-  String toString() => "Call Error: $description";
+class XMLCall extends Call {
 
-}
+  final XmlElement xelem;
+  final List<int> xmlmap;
+  final CallContext ctx2;
 
-class CallNotFoundError extends  CallError {
-
-  CallNotFoundError(String call) : super("Call $call not found");
-
-}
-
-class FormationNotFoundError extends CallError {
-
-  FormationNotFoundError(String call)
-      : super("No animation for $call from that formation.");
+  XMLCall(this.xelem, this.xmlmap, this.ctx2)
+      : super(xelem.getAttribute("title"));
 
 }
