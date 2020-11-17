@@ -103,9 +103,14 @@ extension TamList<E> on List<E> {
   E get firstOrNull => isNotEmpty ? first : null;
   List<E> operator -(E e) => this.where((element) => element != e).toList();
   List<E> clone() => this.toList();
-  List<E> sortedBy(int compare(E e1, E e2)) {
+  List<E> sortedWith(int compare(E e1, E e2)) {
     var list2 = this.clone();
     list2.sort(compare);
+    return list2;
+  }
+  List<E> sortedBy(Comparable cf(E e)) {
+    var list2 = this.clone();
+    list2.sort((E e1, E e2) => cf(e1).compareTo(cf(e2)));
     return list2;
   }
   List<E> drop(int n) => this.sublist(n);

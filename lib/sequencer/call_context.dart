@@ -947,7 +947,7 @@ class CallContext {
   //  Return all dancers, ordered by distance from another dancer,
   //  that satisfies a conditional
   List<Dancer> dancersInOrder(Dancer d, bool f(Dancer d)) =>
-      (dancers - d).where(f).toList().sortedBy((d1,d2) => 0);
+      (dancers - d).where(f).toList().sortedWith((d1,d2) => 0);
 
   //  Return closest dancer that satisfies a given conditional
   Dancer dancerClosest(Dancer d, bool f(Dancer d2)) =>
@@ -996,12 +996,12 @@ class CallContext {
 
   //  Return outer 2, 4 , 6 dancers
   List<Dancer> outer(int num) =>
-      dancers.sortedBy((d1, d2) => d1.location.length.compareTo(d2.location.length))
+      dancers.sortedWith((d1, d2) => d1.location.length.compareTo(d2.location.length))
           .drop(dancers.length-num);
 
   //  Return center 2, 4 , 6 dancers
   List<Dancer> center(int num) =>
-      dancers.sortedBy((d1, d2) => d1.location.length.compareTo(d2.location.length))
+      dancers.sortedWith((d1, d2) => d1.location.length.compareTo(d2.location.length))
           .take(num);
 
   //  Returns points of a diamond formations
@@ -1225,6 +1225,100 @@ class CallContext {
   }
 
   void analyze() {
+    for (var d in dancers) {
+      d.animateToEnd();
+      d.data.beau = false;
+      d.data.belle = false;
+      d.data.leader = false;
+      d.data.trailer = false;
+      d.data.partner = null;
+      d.data.center = false;
+      d.data.end = false;
+      d.data.verycenter = false;
+    }
+    var isTidal = false;
+    for (var d1 in dancers.sortedBy((d) => -d.location.length)) {
+      var bestleft = dancerToLeft(d1);
+      var bestright = dancerToRight(d1);
+      var leftcount = dancersToLeft(d1).length;
+      var rightcount = dancersToRight(d1).length;
+      var frontcount = dancersInFront(d1).length;
+      var backcount = dancersInBack(d1).length;
+      //  Use the results of the counts to assign belle/beau/leader/trailer
+      //  and partner
+      var bestleftMismatch = bestleft != null &&
+          !isInWave(d1,bestleft) && !isInCouple(d1,bestleft);
+      var bestRightMismatch = bestright != null &&
+          !isInWave(d1,bestright) && !isInCouple(d1,bestright);
+      if (leftcount % 2 == 1 && rightcount % 2 == 0 && !bestleftMismatch &&
+          d1.distanceTo(bestleft) < 3 || (bestleft != null && bestRightMismatch)) {
+        d1.data.partner = bestleft;
+        d1.data.belle = true;
+      }
+      else if (rightcount % 2 == 1 && leftcount % 2 == 0 && !bestRightMismatch &&
+          d1.distanceTo(bestright) < 3 || (bestright != null && bestleftMismatch)) {
+        d1.data.partner = bestright;
+        d1.data.beau = true;
+      }
+      if (frontcount % 2 == 0 && backcount % 2 == 1)
+        d1.data.leader = true;
+      else if (frontcount % 2 == 1 && backcount % 2 == 0)
+        d1.data.trailer = true;
+      //  Assign ends
+      if (rightcount == 0 && leftcount > 1)
+        d1.data.end = true;
+      else if (leftcount == 0 && rightcount > 1)
+        d1.data.end = true;
+      else if (frontcount == 3 && backcount == 0)
+        d1.data.end = true;
+      else if (backcount == 3 && frontcount == 0)
+        d1.data.end = true;
+      //  The very centers of a tidal wave are ends
+      //  Remember this special case for assigning centers later
+      if (rightcount == 3 && leftcount == 4 ||
+          rightcount == 4 && leftcount == 3) {
+        d1.data.end = true;
+        isTidal = true;
+      }
+    }
+    //  Analyze for centers and very centers
+    //  Sort and group dancers by distance from center
+    var dorder = dancers.sortedBy((d) => d.location.length);
+    groups.clear();
+    var dist = 0.0;
+    for (var d in dorder) {
+      if (d.location.length.isGreaterThan(dist))
+        groups.add([]);
+      groups.last.add(d);
+      dist = d.location.length;
+    }
+
+    //  The 2 dancers closest to the center
+    //  are centers (4 dancers) or very centers (8 dancers)
+    if (dancers.length > 2) {
+      if (!dorder[1].location.length.isAbout(dorder[2].location.length)) {
+        if (dancers.length == 4) {
+          dorder.first.data.center = true;
+          dorder[1].data.center = true;
+        } else {
+          dorder.first.data.verycenter = true;
+          dorder[1].data.verycenter = true;
+        }
+      }
+    }
+
+    // If tidal, then the next 4 dancers are centers
+    if (isTidal) {
+      for (var i in [2,3,4,5])
+        dorder[i].data.center = true;
+    }
+    //  Otherwise, if there are 4 dancers closer to the center than the other 4,
+    //  they are the centers
+    else if (dancers.length > 4 &&
+        !(dorder[3].location.length.isAbout(dorder[4].location.length))) {
+      for (var i in [0,1,2,3])
+        dorder[i].data.center = true;
+    }
 
   }
 
