@@ -44,6 +44,7 @@ class DanceAnimationPainter extends CustomPainter {
   var _speed = NORMALSPEED;
   var _showGrid = false;
   var _showPaths = false;
+  var _showNumbers = Dancer.NUMBERS_OFF;
   var _geometry = Geometry.SQUARE;
   //  randomColors  TODO
   XmlElement _tam;
@@ -87,10 +88,10 @@ class DanceAnimationPainter extends CustomPainter {
 
   void setNumbers(String value) {
     if (_interactiveDancer >= 0) value = "None";
-    var numberValue = Dancer.NUMBERS_OFF;
-    if (value == "1-8") numberValue = Dancer.NUMBERS_DANCERS;
-    if (value == "1-4") numberValue = Dancer.NUMBERS_COUPLES;
-    dancers.forEach( (d) => d.showNumber = numberValue );
+    _showNumbers = Dancer.NUMBERS_OFF;
+    if (value == "1-8") _showNumbers = Dancer.NUMBERS_DANCERS;
+    if (value == "1-4") _showNumbers = Dancer.NUMBERS_COUPLES;
+    dancers.forEach( (d) => d.showNumber = _showNumbers );
   }
 
   void setDancerColor(int dancerNum, Color c) {
@@ -325,7 +326,7 @@ class DanceAnimationPainter extends CustomPainter {
     ctx.rotate(pi/2);
     //  Draw grid if on
     if (_showGrid) {
-      Geometry(_geometry,0).drawGrid(ctx);
+      Geometry(_geometry,0).drawGrid(ctx,lineWidth:1.0/s);
     }
     //  Always show bigon center mark
     if (_geometry == Geometry.BIGON) {
@@ -475,6 +476,8 @@ class DanceAnimationPainter extends CustomPainter {
           dnum += 1;
         });
       }  //  All dancers added
+      for (var d in dancers)
+        d.showNumber = _showNumbers;
 
       //  Initialize other instance variables
       isRunning = false;

@@ -36,10 +36,10 @@ abstract class Geometry {
 
   Geometry.create(this.rotnum);
 
-  Paint gridPaint() => Paint()
+  Paint gridPaint(double lineWidth) => Paint()
       ..color = Color.LIGHTGREY
       ..style = PaintingStyle.stroke
-      ..strokeWidth = 0.0;  // 1 pixel
+      ..strokeWidth = lineWidth;  // 0 for 1 pixel fails on web
 
   factory Geometry(int g, [int r = 0]) {
     if (g == BIGON) return BigonGeometry(r);
@@ -69,7 +69,7 @@ abstract class Geometry {
 
   /// Draw a dancer-sized grid of the specific geometry
   /// @param ctx  Canvas to draw grid on
-  void drawGrid(Canvas ctx);
+  void drawGrid(Canvas ctx,{double lineWidth=0.0});
 
   Geometry clone();
 }
@@ -87,8 +87,8 @@ class BigonGeometry extends Geometry {
   Geometry clone() => BigonGeometry(rotnum);
 
   @override
-  void drawGrid(Canvas ctx) {
-    var p = gridPaint();
+  void drawGrid(Canvas ctx,{double lineWidth=0.0}) {
+    var p = gridPaint(lineWidth);
     for (var xs = -1; xs <= 1; xs += 2) {
       ctx.save();
       ctx.scale(xs.d,1.0);
@@ -155,8 +155,8 @@ class SquareGeometry extends Geometry {
   Geometry clone() => SquareGeometry(rotnum);
 
   @override
-  void drawGrid(Canvas ctx) {
-    var p = gridPaint();
+  void drawGrid(Canvas ctx,{double lineWidth=0.0}) {
+    var p = gridPaint(lineWidth);
     for (var x = -75; x <= 75; x += 10) {
       var path = Path();
       path.moveTo(x/10.0, -7.5);
@@ -193,8 +193,8 @@ class HexagonGeometry extends Geometry {
   Geometry clone() => HexagonGeometry(rotnum);
 
   @override
-  void drawGrid(Canvas ctx) {
-    var p = gridPaint();
+  void drawGrid(Canvas ctx,{double lineWidth=0.0}) {
+    var p = gridPaint(lineWidth);
     for (var yscale = -1; yscale <= 1; yscale += 2) {
       for (var a=0; a<=6; a++) {
         ctx.save();

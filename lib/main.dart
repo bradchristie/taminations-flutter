@@ -58,6 +58,8 @@ void main() {
 //  generate the current layout
 class TaminationsRoute {
 
+  static const separator = "\t";
+
   final String level;  //  if not null, generate Calls page
   final String call;   //  if not null, generate AnimList page
   final int animnum;   //  if >= 0, generate Animation page
@@ -113,14 +115,22 @@ class TaminationsRoute {
 
   //  For debugging
   @override
-  String toString() =>
-      (level ?? "") + " " +
-          (call ?? "") + " " +
-          (animnum >= 0 ? animnum.s : "") + " " +
-          (practice ? "Practice " : "") +
-          (settings ? "Settings " : "") +
-          (definition ? "Definition" : "") +
-          (about ? "About " : "");
+  String toString() => <String>[
+    if (level != null && level.isNotEmpty) "level=$level",
+    if (call != null && call.isNotEmpty) "call=$call",
+    if (animnum >= 0) "animnum=${animnum.d}",
+    if (link != null && link.isNotEmpty) "link=$link",
+    if (name != null && name.isNotEmpty) "name=$name",
+    if (title != null && title.isNotEmpty) "title=$title",
+    if (practice) "practice",
+    if (sequencer) "sequencer",
+    if (about) "about",
+    if (settings) "settings",
+    if (definition) "definition"
+  ].join(separator);
+
+
+
 
 }
 
@@ -143,14 +153,11 @@ class _TaminationsAppState extends FM.State<TaminationsApp> {
 
   @override
   FM.Widget build(FM.BuildContext context) {
-    return PP.Consumer<Settings>(
-        builder: (context, settings, child) {
-          return FM.MaterialApp.router(
-            title: 'Taminations',
-            routerDelegate: _routerDelegate,
-            routeInformationParser: _routeInformationParser,
-          );
-        });
+    return FM.MaterialApp.router(
+      title: 'Taminations',
+      routerDelegate: _routerDelegate,
+      routeInformationParser: _routeInformationParser,
+    );
   }
 
   void setPath(TaminationsRoute path) {
@@ -166,7 +173,6 @@ class _TaminationsAppState extends FM.State<TaminationsApp> {
 class TaminationsRouterDelegate extends FM.RouterDelegate<TaminationsRoute>
     with FM.ChangeNotifier, FM.PopNavigatorRouterDelegateMixin<TaminationsRoute> {
 
-  //  not sure this is necessary ...
   final FM.GlobalKey<FM.NavigatorState> navigatorKey;
   TaminationsRouterDelegate() : navigatorKey = FM.GlobalKey<FM.NavigatorState>();
 
@@ -176,7 +182,6 @@ class TaminationsRouterDelegate extends FM.RouterDelegate<TaminationsRoute>
 
   @override
   FM.Widget build(FM.BuildContext context) {
-    paths.forEach((path) { print("    "+path.toString()); });
     return PP.Consumer<Settings>(
         builder: (context, settings, child) {
           return FM.FutureBuilder<bool>(
@@ -275,12 +280,14 @@ class TaminationsRouterDelegate extends FM.RouterDelegate<TaminationsRoute>
 
   }
 
+  //  this is necessary for the web URL and back button to work
+  TaminationsRoute get currentConfiguration => paths.last;
+
   @override
   Future<bool> popRoute() {
     if (paths.length > 1) {
       paths.removeLast();
       print("Navigator Pop");
-      paths.forEach((path) { print("    "+path.toString()); });
       return FF.SynchronousFuture(true);
     }
     else return FF.SynchronousFuture(false);
@@ -323,8 +330,8 @@ class TaminationsRouteInformationParser extends FM.RouteInformationParser<Tamina
 
   @override
   FM.RouteInformation restoreRouteInformation(TaminationsRoute path) {
-    print("location: /level=${path.level}&call=${path.call}");
-    return FM.RouteInformation(location: "/level=${path.level}&call=${path.call}");
+    var location = path.toString().replaceAll(TaminationsRoute.separator, "&");
+    return FM.RouteInformation(location: "/$location");
   }
 
 }

@@ -181,7 +181,7 @@ class _AnimationFrameState extends FM.State<AnimationFrame>
             min(100,(painter.beat + painter.leadin) * 100.0 / painter.totalBeats);
         //  Figure out what part we're on, send notice if it has changed
         var thisPart = 0;
-        if (currentBeat >= 0 && currentBeat <= painter.beats) {
+        if (partsValues != null && currentBeat >= 0 && currentBeat <= painter.beats) {
           thisPart = partsValues.lastIndexWhere((it) => it < currentBeat);
         }
         if (thisPart != currentPart) {
