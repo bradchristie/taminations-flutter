@@ -21,7 +21,7 @@
 import 'package:flutter/foundation.dart' as FF;
 import 'package:flutter/material.dart' as FM;
 import 'package:provider/provider.dart' as PP;
-import 'package:taminations/pages/practice.dart';
+import 'package:taminations/pages/practice_page.dart';
 import 'package:taminations/pages/start_practice.dart';
 
 import 'pages/calls_page.dart';

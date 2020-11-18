@@ -25,10 +25,10 @@ import '../extensions.dart';
 
 class Vector {
 
-  double x;
-  double y;
+  final double x;
+  final double y;
 
-  Vector(this.x,this.y);
+  const Vector([this.x=0.0,this.y=0.0]);
 
   @override
   String toString() => "(${x.s} ${y.s})";

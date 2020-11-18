@@ -21,6 +21,7 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:taminations/practice_dancer.dart';
 import 'package:xml/xml.dart';
 
 import 'dancer.dart';
@@ -51,7 +52,7 @@ class DanceAnimationPainter extends CustomPainter {
   List<Dancer> dancers = [];
   var _interactiveDancer = -1;
   var _interactiveRandom = true;
-  Dancer _iDancer;
+  PracticeDancer practiceDancer;
   Vector _size;
   var leadin = 2.0;
   var leadout = 2.0;
@@ -165,12 +166,40 @@ class DanceAnimationPainter extends CustomPainter {
       beat = -leadin;
     isRunning = true;
     _iScore = 0.0;
-    //  TODO start interactive dancer
     whenFinished = w;
   }
 
   void doPause() {
     isRunning = false;
+  }
+
+  bool _isInteractiveDancerOnTrack() {
+    //  Get where the dancer should be
+    var computetx = practiceDancer.computeMatrix(beat);
+    //  Get computed and actual location vectors
+    var ivu = practiceDancer.tx.location;
+    var ivc = computetx.location;
+
+    //  Check dancer's location and facing direction
+    var au = practiceDancer.tx.angle;
+    var ac = computetx.angle;
+    //  Cannot be way off correct spot
+    if ((ivu-ivc).length >= 2.0)
+      return false;
+    //  Cannot be facing the wrong way
+    if (au.angleDiff(ac).abs() > pi/4)
+      return false;
+    //  Must be in correct relation to other dancers
+    if (dancers.where((d) => d != practiceDancer).any((d) {
+      var dv = d.tx.location;
+      //  Compare angle to computed vs actual
+      var d2ivu = dv.vectorTo(ivu);
+      var d2ivc = dv.vectorTo(ivc);
+      var a = d2ivu.angleDiff(d2ivc);
+      return a.abs() > pi/4;
+    }))
+      return false;
+    return true;
   }
 
   void _onDraw() {
@@ -179,10 +208,8 @@ class DanceAnimationPainter extends CustomPainter {
       //  Update the animation time
       var now = DateTime.now();
       var diff = now.difference(_lastTime).inMilliseconds;
-      if (isRunning) {
-        var lastBeat = beat;
+      if (isRunning)
         beat += diff / _speed;
-      }
       _lastTime = now;
     }
 
@@ -302,7 +329,11 @@ class DanceAnimationPainter extends CustomPainter {
     });
 
     //  Update interactive dancer score
-    //  TODO
+    if (practiceDancer != null && beat > 0.0 && beat < beats-leadout) {
+      practiceDancer.onTrack = _isInteractiveDancerOnTrack();
+      if (practiceDancer.onTrack)
+        _iScore += (beat - max(_prevbeat,0.0)) * 10.0;
+    }
 
   }
 
@@ -440,9 +471,22 @@ class DanceAnimationPainter extends CustomPainter {
         couples = TamUtils.getCouples(_tam);
 
       var geoms = Geometry.getGeometry(_geometry);
-      //  TODO Select a random dancer of the correct gender for the interactive dancer
+
+      //  Select a random dancer of the correct gender for the interactive dancer
       var icount = -1;
       var im = Matrix.getIdentity();
+      if (_interactiveDancer > 0) {
+        var glist = formation.childrenNamed("dancer")
+            .where((d) => d["gender"] == (_interactiveDancer==Gender.BOY ? "boy" : "girl")).toList();
+        //  Select either the first or random dancer to be interactive
+        icount = _interactiveRandom ? Random().nextInt(glist.length) : 0;
+        //  Find the angle the interactive dancer faces at start
+        //  We want to rotate the formation so that direction is up
+        var iangle = glist[icount]["angle"].d;
+        im = Matrix.getRotation(-iangle.toRadians);
+        //  Adjust icount for looping through geometry below
+        icount = icount * geoms.length + 1;
+      }
 
       //  Create the dancers and set their starting positions
       var dnum = 0;
@@ -467,9 +511,14 @@ class DanceAnimationPainter extends CustomPainter {
           //  TODO random color
           if (g != Gender.PHANTOM)
             color = _dancerColor[colorstr.i];
+
           //  add one dancer
-          //  TODO interactive dancer
-          dancers.add(Dancer(nstr,cstr,g,color,m,geom.clone(),movelist));
+          //  practice dancer?
+          if (g == _interactiveDancer  && --icount == 0) {
+            practiceDancer = PracticeDancer(nstr,cstr,g,color,m,geom.clone(),movelist);
+            dancers.add(practiceDancer);
+          } else  // not the practice dancer
+            dancers.add(Dancer(nstr,cstr,g,color,m,geom.clone(),movelist));
           if (g == Gender.PHANTOM && !_showPhantoms)
             dancers.last.hidden = true;
           _beats = max(_beats, dancers.last.beats + leadout);

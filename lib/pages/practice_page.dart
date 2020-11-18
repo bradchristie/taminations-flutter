@@ -19,11 +19,14 @@
 */
 
 import 'dart:math';
+import 'dart:ui';
 
 import 'package:flutter/material.dart' as FM;
 import 'package:provider/provider.dart' as PP;
 import 'package:flutter/services.dart';
 import 'package:taminations/button.dart';
+import 'package:taminations/dancer.dart';
+import 'package:taminations/practice_dancer.dart';
 import 'package:xml/xml.dart';
 
 import '../dance_animation_painter.dart';
@@ -32,7 +35,7 @@ import '../main.dart';
 import '../tam_utils.dart';
 import '../title_bar.dart';
 import '../settings.dart';
-import '../extensions.dart';
+import '../math/vector.dart';
 
 class PracticePage extends FM.StatefulWidget {
 
@@ -95,12 +98,22 @@ class _PracticePageState extends FM.State<PracticePage> {
                 }
             )
         ),
-        body: PracticeFrame()
+        body:  FM.FutureBuilder(
+            future: tam,
+            builder:  (FM.BuildContext context,
+                FM.AsyncSnapshot<XmlElement> snapshot) {
+              if (snapshot.hasData)
+                return PracticeFrame(snapshot.data);
+              else
+                return FM.Container();
+            })
     );
   }
 }
 
 class PracticeFrame extends FM.StatefulWidget {
+  final XmlElement tam;
+  PracticeFrame(this.tam);
   @override
   _PracticeFrameState createState() => _PracticeFrameState();
 }
@@ -112,6 +125,8 @@ class _PracticeFrameState extends FM.State<PracticeFrame>
   DanceAnimationPainter painter;
   //  controller sends ticks to the painter making it compute and draw an animation
   FM.AnimationController controller;
+  PracticeDancer dancer;
+  var animationFinished = false;
 
   @override
   void didChangeDependencies() {
@@ -119,6 +134,16 @@ class _PracticeFrameState extends FM.State<PracticeFrame>
     //  Set up _controller, _painter
     controller = FM.AnimationController.unbounded(duration: Duration(hours: 1),vsync: this);
     painter = DanceAnimationPainter(repaint:controller);
+    painter.setAnimation(widget.tam,Gender.BOY).whenComplete(() {
+      dancer = painter.practiceDancer;
+      painter.doPlay(() {
+        controller.stop();
+        setState(() {
+          animationFinished = true;
+        });
+      });
+      controller.forward();
+    });
   }
 
   @override
@@ -127,37 +152,66 @@ class _PracticeFrameState extends FM.State<PracticeFrame>
         builder: (context, settings, child) {
           painter.setGridVisibility(true);
           painter.setSpeed(settings.practiceSpeed);
-          return FM.Stack(
-            children: [
-              FM.CustomPaint(
-                painter: painter,
-                child: FM.Center(), // so CustomPaint gets sized correctly
-              ),
-              FM.Positioned(
-                top: 100.0,
-                left: 20.0,
-                child:FM.Column(
-                  children: [
-                    _AnimationCompleteText("Animation Complete"),
-                    _AnimationCompleteText("Your Score"),
-                    _AnimationCompleteText("0 / 0"),
-                    _AnimationCompleteText("Poor"),
-                    FM.Row(
-                      children: [
-                        Button("Repeat"),
-                        Button("Continue"),
-                        Button("Return")
-                      ],
-                    ),
-                    Button("Definition")
-                  ],
+          return FM.Listener(
+            onPointerDown: (event) {
+              dancer.touchDown(
+                  event.pointer,
+                  painter.mouse2dance(event.position.v),
+                  isMouse: event.kind == PointerDeviceKind.mouse
+              );
+            },
+            onPointerUp: (event) {
+              dancer.touchUp(
+                  event.pointer,
+                  painter.mouse2dance(event.position.v),
+                  isMouse: event.kind == PointerDeviceKind.mouse
+              );
+            },
+            onPointerMove: (event) {
+              dancer.touchMove(
+                  event.pointer,
+                  painter.mouse2dance(event.position.v)
+              );
+            },
+            child: FM.Stack(
+              children: [
+                FM.CustomPaint(
+                  painter: painter,
+                  child: FM.Center(), // so CustomPaint gets sized correctly
+                ),
+                if (animationFinished) FM.Positioned(
+                  top: 100.0,
+                  left: 20.0,
+                  child:FM.Column(
+                    children: [
+                      _AnimationCompleteText("Animation Complete"),
+                      _AnimationCompleteText("Your Score"),
+                      _AnimationCompleteText("0 / 0"),
+                      _AnimationCompleteText("Poor"),
+                      FM.Row(
+                        children: [
+                          Button("Repeat"),
+                          Button("Continue"),
+                          Button("Return")
+                        ],
+                      ),
+                      Button("Definition")
+                    ],
+                  )
                 )
-              )
-            ],
+              ],
+            ),
           );
         }
     );
   }
+
+  @override
+  void dispose() {
+    controller.dispose();
+    super.dispose();
+  }
+
 }
 
 class _AnimationCompleteText extends FM.StatelessWidget {
