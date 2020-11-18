@@ -434,7 +434,7 @@ class DanceAnimationPainter extends CustomPainter {
         isRunning = false;
       }
       var tform = _tam.getElement("formation");
-      var aform = _tam["formation"];
+      var aform = _tam("formation");
       var formation = _tam;
       if (tform != null)
         formation = tform;
@@ -477,12 +477,12 @@ class DanceAnimationPainter extends CustomPainter {
       var im = Matrix.getIdentity();
       if (_interactiveDancer > 0) {
         var glist = formation.childrenNamed("dancer")
-            .where((d) => d["gender"] == (_interactiveDancer==Gender.BOY ? "boy" : "girl")).toList();
+            .where((d) => d("gender") == (_interactiveDancer==Gender.BOY ? "boy" : "girl")).toList();
         //  Select either the first or random dancer to be interactive
         icount = _interactiveRandom ? Random().nextInt(glist.length) : 0;
         //  Find the angle the interactive dancer faces at start
         //  We want to rotate the formation so that direction is up
-        var iangle = glist[icount]["angle"].d;
+        var iangle = glist[icount]("angle").d;
         im = Matrix.getRotation(-iangle.toRadians);
         //  Adjust icount for looping through geometry below
         icount = icount * geoms.length + 1;
@@ -492,12 +492,12 @@ class DanceAnimationPainter extends CustomPainter {
       var dnum = 0;
       for (var i=0; i<flist.length; i++) {
         var fd = flist[i];
-        var x = fd["x"].d;
-        var y = fd["y"].d;
-        var angle = fd["angle"].d;
+        var x = fd("x").d;
+        var y = fd("y").d;
+        var angle = fd("angle").d;
         var g = Gender.BOY;
-        if (fd["gender"] == "girl") g = Gender.GIRL;
-        if (fd["gender"] == "phantom") g = Gender.PHANTOM;
+        if (fd("gender") == "girl") g = Gender.GIRL;
+        if (fd("gender") == "phantom") g = Gender.PHANTOM;
         var movelist = (paths.length > i) ? TamUtils.translatePath(paths[i]) : <Movement>[];
         //  Each dancer listed in the formation corresponds to
         //  one, two, or three real dancers depending on the geometry

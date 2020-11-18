@@ -68,12 +68,12 @@ class TamUtils {
     getXMLAsset("src/calls").then((doc) {
       calldata = doc.findAllElements("call").map((e) =>
           CallListDatum(
-              e.getAttribute("title"),
-              e.getAttribute("title"), // TODO normalize
-              e.getAttribute("link"),
-              e.getAttribute("sublevel"),
-              e.getAttribute("languages"),
-              e.getAttribute("audio"))
+              e("title"),
+              normalizeCall(e("title")),
+              e("link"),
+              e("sublevel"),
+              e("languages"),
+              e("audio"))
       ).toList();
       //  Add words in each call to set of all words
       for (var data in calldata) {
@@ -91,12 +91,12 @@ class TamUtils {
 
     getXMLAsset("src/formations").then((doc) {
       doc.findAllElements("formation").forEach((f) {
-        _formations[f["name"]] = f;
+        _formations[f("name")] = f;
       });
     });
     getXMLAsset("src/moves").then((doc) {
       doc.findAllElements("path").forEach((m) {
-        _moves[m["name"]] = m;
+        _moves[m("name")] = m;
       });
     });
     getAsset("src/tamination.css").then((rawcss) {
@@ -117,16 +117,16 @@ class TamUtils {
   //  Returns animation element, looking up cross-reference if needed.
   static Future<XmlElement> tamXref(XmlElement tam) {
     if (tam.getAttribute("xref-link") != null) {
-      var link = tam.getAttribute("xref-link");
-      var title = tam.getAttribute("xref-title");
-      var from = tam.getAttribute("xref-from");
-      var formation = tam.getAttribute("xref-formation");
+      var link = tam("xref-link");
+      var title = tam("xref-title");
+      var from = tam("xref-from");
+      var formation = tam("xref-formation");
       var futureTam = getXMLAsset(link).then((doc) {
         var tams = doc.findAllElements("tam");
         var first = tams.firstWhere((it) =>
-            (title == null || it.getAttribute("title") == title) &&
-            (from == null || it.getAttribute("from") == from) &&
-            (formation == null || it.getAttribute("formation") == formation));
+            (title == null || it("title") == title) &&
+            (from == null || it("from") == from) &&
+            (formation == null || it("formation") == formation));
         return first;
       });
       return futureTam;
@@ -153,7 +153,7 @@ class TamUtils {
     var np = min(paths.length, 4);
     for (var i=0; i<paths.length; i++) {
       var p = paths[i];
-      var n = p["numbers"];
+      var n = p("numbers");
       if (n != null) {  //  numbers supplied in animation XML
         retval[i*2] = n.substring(0,1);
         retval[i*2+1] = n.substring(2,3);
@@ -178,7 +178,7 @@ class TamUtils {
     var paths = tam.childrenNamed("path");
     for (var i=0; i<paths.length; i++) {
       var p = paths[i];
-      var c = p["couples"];
+      var c = p("couples");
       if (c != null) {
         retval[i*2] = c.substring(0,1);
         retval[i*2+1] = c.substring(2,3);
@@ -220,21 +220,21 @@ class TamUtils {
   //  Returns an array of movements
   static List<Movement> _translateMove(XmlElement move) {
     //  First retrieve the requested path
-    var moveName = move["select"];
+    var moveName = move("select");
     var pathElem = _moves[moveName];
     //  Get the list of movements
     var movements = translatePath(pathElem);
     //  Get any modifications
-    var scaleX = move["scaleX"]?.d ?? 1.0;
-    var scaleY = (move["scaleY"]?.d ?? 1.0) *
-        (move["reflect"]==null ? 1 : -1);
-    var offsetX = move["offsetX"]?.d ?? 0.0;
-    var offsetY = move["offsetY"]?.d ?? 0.0;
-    var hands = move["hands"];
+    var scaleX = move("scaleX","1").d;
+    var scaleY = move("scaleY","1").d *
+        (move("reflect")==null ? 1 : -1);
+    var offsetX = move("offsetX","0").d;
+    var offsetY = move("offsetY","0").d;
+    var hands = move("hands");
     //  Sum up the total beats so if beats is given as a modification
     //  we know how much to change each movement
     var oldBeats = movements.fold(0.0, (b, m) => b + m.beats);
-    var beatFactor = (move["beats"]?.d ?? oldBeats) / oldBeats;
+    var beatFactor = (move("beats")?.d ?? oldBeats) / oldBeats;
     //  Now go through the movements applying the modifications
     //  The resulting list is the return value
     return movements.map((m) =>
@@ -249,7 +249,7 @@ class TamUtils {
 
 
 
-  /**  Standardize a call name to match against other names  */
+  /// Standardize a call name to match against other names  */
   static String normalizeCall(String callname) =>
   callname.toLowerCase().trim()
       .replaceAll("\\(.*\\)".r,"")

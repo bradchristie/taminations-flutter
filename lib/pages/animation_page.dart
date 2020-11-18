@@ -155,10 +155,10 @@ class _AnimationFrameState extends FM.State<AnimationFrame>
       //  Get the requested square dance animation and send it to the painter
       TamUtils.getXMLAsset(link).then((doc) {
         var tam = TamUtils.tamList(doc)
-            .where((it) => !(it["display"] ?? "").startsWith("n"))
+            .where((it) => !(it("display","").startsWith("n")))
             .toList()[max(0, animnum)];
-        partstr = (tam["parts"] ?? "") + (tam["fractions"] ?? "");
-        hasParts = tam["parts"] != null;
+        partstr = tam("parts","") + tam("fractions","");
+        hasParts = tam("parts") != null;
         painter.setAnimation(tam).whenComplete(() {
           controller.notifyListeners();
           findPartsValues();

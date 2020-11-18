@@ -179,12 +179,12 @@ class _AnimListState extends FM.State<AnimListFrame> {
     var prevGroup = "";
     var animationsAdded = 0;
     TamUtils.tamList(doc)
-        .where((it) => !(it["display"] ?? "").startsWith("n"))
+        .where((it) => !(it("display","")).startsWith("n"))
         .forEach((tam) {
-      var tamTitle = tam["title"];
+      var tamTitle = tam("title");
       var from = "from"; // updated later after tamxref is loaded
-      var group = tam["group"] ?? "";
-      if (tam["difficulty"] != null)
+      var group = tam("group","");
+      if (tam("difficulty") != null)
         hasDifficulty = true;
       if (group.isNotEmpty) {
         //  Add header for new group as needed
@@ -213,7 +213,7 @@ class _AnimListState extends FM.State<AnimListFrame> {
       //  Build list item for this animation
       prevTitle = tamTitle;
       prevGroup = group;
-      if (from == "from") from = tam["from"];
+      if (from == "from") from = tam("from");
       animListItems.add(AnimListItem(
           celltype: group.isBlank() && group.isNotEmpty
               ? CellType.Plain
@@ -222,7 +222,7 @@ class _AnimListState extends FM.State<AnimListFrame> {
           name: from,
           group: group.isEmpty ? "$tamTitle from" : group,
           animnumber: animationsAdded,
-          difficulty: (tam["difficulty"] ?? "0").i));
+          difficulty: tam("difficulty","0").i));
       animationsAdded += 1;
     });
   }

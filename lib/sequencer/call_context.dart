@@ -179,7 +179,7 @@ class CallContext {
     var doc = await TamUtils.getXMLAsset(link);
     //  Add all the calls to the index
     doc.findAllElements("tam").forEach((tam) {
-      var norm = TamUtils.normalizeCall(tam["title"]);
+      var norm = TamUtils.normalizeCall(tam("title"));
       if (!callindex.containsKey(norm))
         callindex[norm] = Set<String>();
       callindex[norm].add(link);
@@ -238,7 +238,7 @@ class CallContext {
     var numberArray = TamUtils.getNumbers(tam);
     var coupleArray = TamUtils.getCouples(tam);
     List<XmlElement> paths = loadPaths ? tam.childrenNamed("path") : [];
-    var fname = tam["formation"];
+    var fname = tam("formation");
     var f = fname != null
         ? TamUtils.getFormation(fname)
         : (tam.childrenNamed("formation").firstOrNull ?? tam);
@@ -252,8 +252,8 @@ class CallContext {
         numberArray[i*2], coupleArray[i*2],
         Gender.BOY,
         Color.WHITE,  // not used
-        Matrix.getTranslation(element["x"].d,element["y"].d) *
-          Matrix.getRotation(element["angle"].d.toRadians),
+        Matrix.getTranslation(element("x").d,element("y").d) *
+          Matrix.getRotation(element("angle").d.toRadians),
         Geometry.getGeometry(Geometry.SQUARE).first,
         paths.length > i ? TamUtils.translatePath(paths[i]) : []
       ));
@@ -261,8 +261,8 @@ class CallContext {
           numberArray[i*2+1], coupleArray[i*2+1],
           Gender.BOY,
           Color.WHITE,  // not used
-          Matrix.getTranslation(element["x"].d,element["y"].d) *
-              Matrix.getRotation(element["angle"].d.toRadians),
+          Matrix.getTranslation(element("x").d,element("y").d) *
+              Matrix.getRotation(element("angle").d.toRadians),
           Geometry.getGeometry(Geometry.SQUARE)[1],
           paths.length > i ? TamUtils.translatePath(paths[i]) : []
       ));
@@ -486,19 +486,19 @@ class CallContext {
     for (var link in callfiles) {
       var file = await loadOneFile(link);
       var tamlist = file.rootElement.findAllElements("tam").where((tam) =>
-      tam["sequencer"] != "no" &&
+      tam("sequencer") != "no" &&
           //  Check for calls that must go around the centers
           (!perimiter || tam("sequencer","").contains("perimeter") &&
           //  Check for 4-dancer calls that do not work for 8 dancers
           (exact || !tam("sequencer","").contains("exact")) &&
-          TamUtils.normalizeCall(tam["title"]) == callnorm));
+          TamUtils.normalizeCall(tam("title")) == callnorm));
       for (var tam in tamlist) {
         //  Calls that are gender-specific, e.g. Star Thru,
         //  are specifically flagged in XML
         var sexy = tam("sequencer","").contains("gender-specific");
         //  Make sure we don't mismatch heads and sides
         //  on calls that specifically refer to them
-        var headsMatchSides = !tam["title"].contains("Heads?|Sides".r);
+        var headsMatchSides = !tam("title").contains("Heads?|Sides".r);
         //  Try to match the formation to the current dancer positions
         var ctx2 = CallContext.fromXML(tam);
         var mm = ctx1.matchFormations(ctx2,sexy: sexy, fuzzy: fuzzy,
@@ -509,7 +509,7 @@ class CallContext {
           if (totOffset < bestOffset) {
             xmlCall = XMLCall(tam,mm,ctx2);
             bestOffset = totOffset;
-            title = tam["title"];
+            title = tam("title");
           }
         }
       }

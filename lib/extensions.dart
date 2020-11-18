@@ -146,8 +146,7 @@ extension TamList<E> on List<E> {
 
 extension TamXmlElement on XmlElement {
 
-  String operator [](String name) => this.getAttribute(name);
-  String call(String name, String dfault) => this[name] ?? dfault;
+  String call(String name, [String dfault]) => this.getAttribute(name) ?? dfault;
   List<XmlElement> childrenNamed(String name) {
     var a = children.toList();
     var b = a.where((element) => element is XmlElement);
