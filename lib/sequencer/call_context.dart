@@ -24,6 +24,7 @@ import 'package:taminations/color.dart';
 import 'package:taminations/geometry.dart';
 import 'package:taminations/level_data.dart';
 import 'package:taminations/math/matrix.dart';
+import 'package:taminations/math/movement.dart';
 import 'package:taminations/math/path.dart';
 import 'package:taminations/math/vector.dart';
 import 'package:taminations/sequencer/call_error.dart';
@@ -842,9 +843,11 @@ class CallContext {
       var d = dancers[i];
       if (match.offsets[i].length > 0.01) {
         //  Get the last movement
-        var m = (d.path.movelist.length > 0)
-            ? d.path.pop()
-            :  TamUtils.getMove("Stand").notFromCall().pop();
+        Movement m;
+        if (d.path.movelist.length > 0)
+          m = d.path.pop();
+        else
+          m = (TamUtils.getMove("Stand")..notFromCall()).pop();
         //  Transform the offset to the dancer's angle
         d.animateToEnd();
         var vd = match.offsets[i].rotate(-d.tx.angle);
@@ -1162,7 +1165,7 @@ class CallContext {
     for (var d in dancers) {
       var b = maxb - d.path.beats;
       if (b > 0)
-        d.path.add(TamUtils.getMove("Stand").changebeats(b).notFromCall());
+        d.path.add(TamUtils.getMove("Stand")..changebeats(b)..notFromCall());
     }
   }
 
@@ -1201,7 +1204,9 @@ class CallContext {
     if (adiff.isAround(-3*pi/4)) turn = "3/8 Right";
     if (adiff.isAround(-pi/2)) turn = "Quarter Right";
     if (adiff.isAround(-pi/4)) turn = "Eighth Right";
-    return TamUtils.getMove(turn).changebeats(2.0).skew(tohome.x, tohome.y);
+    return TamUtils.getMove(turn)
+      ..changebeats(2.0)
+      ..skew(tohome.x, tohome.y);
   }
 
   //  This is useful for calls that depend on re-defining dancer types

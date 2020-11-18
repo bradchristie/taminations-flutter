@@ -26,6 +26,8 @@ class Path {
   List<Movement> movelist;
   List<Matrix> _transformlist;
 
+  bool get isEmpty => movelist.length  == 0;
+
   Path([List<Movement> moves]) {
     movelist = moves == null ? [] : moves.toList();
     recalculate();
@@ -57,7 +59,7 @@ class Path {
     recalculate();
   }
 
-  Path add(dynamic mp) {
+  void add(dynamic mp) {
     if (mp is Path) {
       movelist += mp.movelist;
       recalculate();
@@ -65,10 +67,9 @@ class Path {
       movelist.add(mp);
       recalculate();
     } else throw ArgumentError();
-    return this;
   }
 
-  Path operator +(Path p) => add(p);
+  Path operator +(Path p) { add(p); return this; }
 
   Movement pop() {
     var m = movelist.removeLast();
@@ -85,71 +86,62 @@ class Path {
     return null;
   }
 
-  Path reflect() {
+  void reflect() {
     movelist = movelist.map((it) => it.reflect()).toList();
     recalculate();
-    return this;
   }
 
   double get beats => movelist.map((it) => it.beats).fold(0.0, (previousValue, element) => previousValue + element);
 
-  Path changebeats(double newbeats) {
+  void changebeats(double newbeats) {
     var factor = newbeats / beats;
     movelist = movelist.map((it) => it.time(it.beats * factor)).toList();
     //  no need to recalculate, transformlist doesn't depend on beats
-    return this;
   }
 
-  Path changehands(int hands) {
+  void changehands(int hands) {
     movelist = movelist.map((it) => it.useHands(hands));
-    return this;
   }
 
-  Path addhands(int hands) {
+  void addhands(int hands) {
     movelist = movelist.map((it) => it.useHands(it.hands | hands));
-    return this;
   }
 
-  Path scale(double x, double y) {
+  void scale(double x, double y) {
     movelist = movelist.map((it) => it.scale(x, y)).toList();
     recalculate();
-    return this;
   }
 
   //  This likely will not work well for paths with >1 movement
   //  Instead use skewFirst or skewFromEnd
-  Path skew(double x, double y) {
+  void skew(double x, double y) {
     if (movelist.isNotEmpty) {
       //  Apply the skew to just the list movement
       var last = movelist.removeLast();
       movelist.add(last.skew(x,y));
       recalculate();
     }
-    return this;
   }
 
   //  Shift path based on adjustment to final position
   //  This should work well with any number of movements in the path
-  Path skewFromEnd(double x, double y) {
+  void skewFromEnd(double x, double y) {
     if (movelist.isNotEmpty) {
       var last = movelist.removeLast();
       movelist.add(last.skewFromEnd(x, y));
       recalculate();
     }
-    return this;
   }
 
-  Path skewFirst(double x, double y) {
+  void skewFirst(double x, double y) {
     if (movelist.isNotEmpty) {
       var first = movelist.removeAt(0);
       movelist.insert(0, first.skew(x,y));
     }
-    return this;
   }
 
-  Path notFromCall() {
+  void notFromCall() {
     movelist = movelist.map((it) => it.notFromCall());
-    return this;
   }
 
   /// Return a transform for a specific point of time
