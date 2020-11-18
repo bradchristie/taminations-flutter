@@ -394,6 +394,7 @@ class CallContext {
   ///  [calltxt]  One complete call, lower case, words separated by single spaces
   ///  [noAction] set to true if it's ok for this call not to do anything
   Future<void> interpretCall(String calltext, {bool noAction = false}) async {
+    print("in interpretCall $calltext");
     calltext = _cleanupCall(calltext);
     CallError err = CallNotFoundError(calltext);
     //  Clear out any previous paths from incomplete parsing
@@ -764,6 +765,7 @@ class CallContext {
   //  This doesn't run an animation, rather it takes the stack of calls
   //  and builds the dancer movements.
   Future<void> performCall() async {
+    print("in performCall");
     analyze();
     for (var i=0; i<callstack.length; i++) {
       var c = callstack[i];

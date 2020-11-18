@@ -106,19 +106,18 @@ class _AnimListPageState extends FM.State<AnimListPage> {
               if (request.action == Action.ANIMATION) {
                 FM.Router.of(context).routerDelegate.setNewRoutePath(
                     TaminationsRoute(
-                        level: request.params["level"],
-                        link: request.params["link"],
-                        call: request.params["title"],
-                        name: request.params["name"],
-                        animnum: request.params["animnum"].i));
+                        level: request("level"),
+                        link: request("link"),
+                        call: request("title"),
+                        name: request("name"),
+                        animnum: request("animnum").i));
               }
               if (request.action == Action.BUTTON_PRESS) {
-                print("Pressed ${request.params["button"]}");
-                if (request.params["button"] == "Definition") {
+                if (request("button") == "Definition") {
                   FM.Router.of(context).routerDelegate.setNewRoutePath(
                       TaminationsRoute(link: link, definition: true));
                 }
-                if (request.params["button"] == "Settings") {
+                if (request("button") == "Settings") {
                   FM.Router.of(context).routerDelegate.setNewRoutePath(
                       TaminationsRoute(settings: true));
                 }

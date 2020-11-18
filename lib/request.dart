@@ -66,9 +66,10 @@ enum Action {
 class Request {
 
   Action action;
-  Map<String,String> params;
+  Map<String,String> _params;
   Request({ @FM.required this.action, params }) :
-      this.params = params == null ? { } : params;
+      this._params = params ?? { };
+  String call(String param) => _params[param];
 
 }
 

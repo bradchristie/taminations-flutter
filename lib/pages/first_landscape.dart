@@ -65,7 +65,7 @@ class _FirstLandscapePageState extends FM.State<FirstLandscapePage> {
               showAboutFrame();
             }
             else if (request.action == Action.LEVEL) {
-              showCallsFrame(request.params["level"]);
+              showCallsFrame(request("level"));
             }
             //FM.Router.of(context).routerDelegate.setNewRoutePath(route);
           }

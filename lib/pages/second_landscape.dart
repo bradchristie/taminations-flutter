@@ -111,7 +111,7 @@ class _SecondLandscapePageState extends FM.State<SecondLandscapePage> {
                         handler: (request) {
                           if (request.action == Action.ANIMATION) {
                             setState(() {
-                              animnum = request.params["animnum"].i;
+                              animnum = request("animnum").i;
                               centerChild = AnimationFrame(link:link, animnum:animnum);
                             });
                           }

@@ -72,26 +72,24 @@ class SequencerModel extends FM.ChangeNotifier {
     var prevbeats = animation.totalBeats;
     var cctx = CallContext.fromDancers(animation.dancers);
 
-    return cctx.interpretCall(call).whenComplete(() {
-      cctx.performCall().whenComplete(() {
-        cctx.checkForCollisions();
-        cctx.extendPaths();
-        //  Snap to a standard formation so subsequent calls will work
-        //  But not if just one XML call, as it knows how it should end
-        //  TODO  if (cctx.callstack.count() > 1 || cctx.callstack[0] is CodedCall)
-        //  TODO  cctx.matchStandardFormation()
-        if (cctx.isCollision())
-          throw CallError("Unable to calculate valid animation.");
-        cctx.appendToSource();
-        // animation.recalculate()  ???
-        var newbeats = animation.totalBeats;
-        if (newbeats > prevbeats) {
-          //  Call worked, add it to the list
-          callNames.add(cctx.callname);
-          callBeats.add(newbeats - prevbeats);
-        }
-      });
-    });
+    await cctx.interpretCall(call);
+    await cctx.performCall();
+    cctx.checkForCollisions();
+    cctx.extendPaths();
+    //  Snap to a standard formation so subsequent calls will work
+    //  But not if just one XML call, as it knows how it should end
+    //  TODO  if (cctx.callstack.count() > 1 || cctx.callstack[0] is CodedCall)
+    //  TODO  cctx.matchStandardFormation()
+    if (cctx.isCollision())
+      throw CallError("Unable to calculate valid animation.");
+    cctx.appendToSource();
+    // animation.recalculate()  ???
+    var newbeats = animation.totalBeats;
+    if (newbeats > prevbeats) {
+      //  Call worked, add it to the list
+      callNames.add(cctx.callname);
+      callBeats.add(newbeats - prevbeats);
+    }
   }
 
   //  Replace any abbreviations with their expanded equivalents
@@ -101,7 +99,7 @@ class SequencerModel extends FM.ChangeNotifier {
   }
 
   bool _isComment(String text) =>
-      text.trim().contains("[^\\[a-zA-Z0-9].*".r);
+      text.trim().startsWith("[^\\[a-zA-Z0-9]".r);
 
   void _startSequence() {
     _updateParts();

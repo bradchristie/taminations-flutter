@@ -27,6 +27,7 @@ import 'package:flutter/services.dart';
 import 'package:taminations/button.dart';
 import 'package:taminations/dancer.dart';
 import 'package:taminations/practice_dancer.dart';
+import 'package:taminations/request.dart';
 import 'package:xml/xml.dart';
 
 import '../dance_animation_painter.dart';
@@ -36,6 +37,7 @@ import '../tam_utils.dart';
 import '../title_bar.dart';
 import '../settings.dart';
 import '../math/vector.dart';
+import '../extensions.dart';
 
 class PracticePage extends FM.StatefulWidget {
 
@@ -48,6 +50,8 @@ class _PracticePageState extends FM.State<PracticePage> {
   LevelDatum levelDatum;
   Future<XmlDocument> tamdoc;
   Future<XmlElement> tam;
+  int randomAnim;
+  String randomLink;
 
   @override
   void didChangeDependencies() {
@@ -59,7 +63,10 @@ class _PracticePageState extends FM.State<PracticePage> {
     var router = FM.Router.of(context).routerDelegate as TaminationsRouterDelegate;
     var path = router.currentPath;
     levelDatum = LevelData.find(path.level);
+    _reset();
+  }
 
+  void _reset() {
     //  Choose a random call from the selected level
     var levelCalls = TamUtils.calldata.where((element) =>
         levelDatum.selector(element.link)).toList();
@@ -68,11 +75,13 @@ class _PracticePageState extends FM.State<PracticePage> {
     print("Will try ${randomCall.title}");
 
     //  Load that call and choose a random animation
-    tam = TamUtils.getXMLAsset(randomCall.link).then((doc) {
+    randomLink = randomCall.link;
+    tam = TamUtils.getXMLAsset(randomLink).then((doc) {
       var tams = TamUtils.tamList(doc).where((element) =>
       element.name.toString() == "tam").toList();
       print("Found ${tams.length} animations");
-      var randomTam = tams[Random().nextInt(tams.length)];
+      randomAnim = Random().nextInt(tams.length);
+      var randomTam = tams[randomAnim];
       return randomTam;
     });
   }
@@ -98,15 +107,27 @@ class _PracticePageState extends FM.State<PracticePage> {
                 }
             )
         ),
-        body:  FM.FutureBuilder(
-            future: tam,
-            builder:  (FM.BuildContext context,
-                FM.AsyncSnapshot<XmlElement> snapshot) {
-              if (snapshot.hasData)
-                return PracticeFrame(snapshot.data);
-              else
-                return FM.Container();
-            })
+        body:  RequestHandler(
+          handler: (request) {
+            if (request.action == Action.BUTTON_PRESS) {
+              if (request("button") == "Continue") {
+                setState(() {
+                  _reset();
+                });
+              }
+            }
+          },
+          child: FM.FutureBuilder(
+              key: FM.ValueKey("$randomLink $randomAnim"),
+              future: tam,
+              builder:  (FM.BuildContext context,
+                  FM.AsyncSnapshot<XmlElement> snapshot) {
+                if (snapshot.hasData)
+                  return PracticeFrame(snapshot.data);
+                else
+                  return FM.Container();
+              }),
+        )
     );
   }
 }
@@ -127,22 +148,39 @@ class _PracticeFrameState extends FM.State<PracticeFrame>
   FM.AnimationController controller;
   PracticeDancer dancer;
   var animationFinished = false;
+  var score = 0;
+  var maxScore = 0;
+  var congrats = "Poor";
+
+  void _reset() {
+    score = 0;
+    animationFinished = false;
+    painter.doPlay(() {
+      controller.stop();
+      setState(() {
+        animationFinished = true;
+        score = painter.practiceScore.ceil();
+        maxScore = (painter.movingBeats * 10).i;
+        if (score / maxScore >= 0.9)
+          congrats = "Excellent!";
+        else if (score / maxScore >= 0.7)
+          congrats = "Very Good!";
+        else
+          congrats = "Poor";
+      });
+    });
+    controller.forward();
+  }
 
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
-    //  Set up _controller, _painter
+    //  Set up controller, painter
     controller = FM.AnimationController.unbounded(duration: Duration(hours: 1),vsync: this);
     painter = DanceAnimationPainter(repaint:controller);
     painter.setAnimation(widget.tam,Gender.BOY).whenComplete(() {
       dancer = painter.practiceDancer;
-      painter.doPlay(() {
-        controller.stop();
-        setState(() {
-          animationFinished = true;
-        });
-      });
-      controller.forward();
+      _reset();
     });
   }
 
@@ -186,13 +224,23 @@ class _PracticeFrameState extends FM.State<PracticeFrame>
                     children: [
                       _AnimationCompleteText("Animation Complete"),
                       _AnimationCompleteText("Your Score"),
-                      _AnimationCompleteText("0 / 0"),
-                      _AnimationCompleteText("Poor"),
+                      _AnimationCompleteText("$score / $maxScore"),
+                      _AnimationCompleteText(congrats),
                       FM.Row(
                         children: [
-                          Button("Repeat"),
+                          Button("Repeat",onPressed:() {
+                            setState(() {
+                              _reset();
+                            });
+                          }),
                           Button("Continue"),
-                          Button("Return")
+                          Button("Return", onPressed: () {
+                            FM.Navigator.maybePop(context);
+                            FM.Router
+                                .of(context)
+                                .routerDelegate
+                                .popRoute();
+                          })
                         ],
                       ),
                       Button("Definition")

@@ -58,12 +58,14 @@ class DanceAnimationPainter extends CustomPainter {
   var leadout = 2.0;
   var _beats = 0.0;
   double get beats => _beats;  //  Includes leadout but not leadin
+  double get movingBeats => _beats - leadout;
   double get totalBeats => leadin + _beats;
+  double get practiceScore => _practiceScore;
   var beat = 0.0;
   var _showPhantoms = false;
   var isRunning = false;
   DateTime _lastTime = DateTime(2000);
-  var _iScore = 0.0;
+  var _practiceScore = 0.0;
   var _prevbeat = -2.0;
   var hasParts = false;
   Function whenFinished;
@@ -165,7 +167,7 @@ class DanceAnimationPainter extends CustomPainter {
     if (beat > _beats)
       beat = -leadin;
     isRunning = true;
-    _iScore = 0.0;
+    _practiceScore = 0.0;
     whenFinished = w;
   }
 
@@ -224,8 +226,12 @@ class DanceAnimationPainter extends CustomPainter {
         beat = -leadin;
       } else if (isRunning) {
         isRunning = false;
-        if (whenFinished != null)
-          whenFinished();
+        if (whenFinished != null) {
+          //  Flutter gets upset if we call setState from a painter callback
+          WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
+            whenFinished();
+          });
+        }
       }
     }
 
@@ -332,7 +338,7 @@ class DanceAnimationPainter extends CustomPainter {
     if (practiceDancer != null && beat > 0.0 && beat < beats-leadout) {
       practiceDancer.onTrack = _isInteractiveDancerOnTrack();
       if (practiceDancer.onTrack)
-        _iScore += (beat - max(_prevbeat,0.0)) * 10.0;
+        _practiceScore += (beat - max(_prevbeat,0.0)) * 10.0;
     }
 
   }

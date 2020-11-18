@@ -36,7 +36,7 @@ class LevelPage extends FM.StatelessWidget {
         body: RequestHandler(
           child: LevelFrame(),
           handler: (request) {
-            var route = TaminationsRoute(level:request.params["level"]);
+            var route = TaminationsRoute(level:request("level"));
             if (request.action == Action.PRACTICE) route = TaminationsRoute(practice: true);
             else if (request.action == Action.SETTINGS) route = TaminationsRoute(settings: true);
             else if (request.action == Action.SEQUENCER) route = TaminationsRoute(sequencer: true);
