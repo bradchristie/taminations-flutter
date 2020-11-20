@@ -18,12 +18,14 @@
 
 */
 
+import 'dart:math';
+
 import 'package:flutter/material.dart' as FM;
 import 'package:provider/provider.dart' as PP;
 import 'package:xml/xml.dart';
 
 import '../button.dart';
-import '../color.dart';
+import '../dance_animation_painter.dart';
 import '../extensions.dart';
 import '../level_data.dart';
 import '../main.dart';
@@ -48,6 +50,8 @@ class _SecondLandscapePageState extends FM.State<SecondLandscapePage> {
   FM.Widget leftChild;
   FM.Widget centerChild;
   FM.Widget rightChild;
+  DanceAnimationPainter painter;
+  XmlDocument doc;
 
   @override
   void didChangeDependencies() {
@@ -63,72 +67,68 @@ class _SecondLandscapePageState extends FM.State<SecondLandscapePage> {
     var settings = PP.Provider.of<Settings>(context);
     if (rightChild == null)
       rightChild = WebFrame(settings.getLanguageLink(link) + ".html");
+
+    painter = DanceAnimationPainter();
+    TamUtils.getXMLAsset(link).then((doc) {
+      this.doc = doc;
+      painter.setAnimation(tamFromAnimnum());
+    });
   }
+
+  XmlElement tamFromAnimnum() => TamUtils.tamList(doc)
+      .where((it) => !(it("display","").startsWith("n")))
+      .toList()[max(0, animnum)];
 
   @override
   FM.Widget build(FM.BuildContext context) {
-    return FM.FutureBuilder<XmlDocument>(
-        future: TamUtils.getXMLAsset(link),
-        builder:
-            (FM.BuildContext context, FM.AsyncSnapshot<XmlDocument> snapshot) {
-          if (snapshot.hasData) {
-            var doc = snapshot.data;
-            var title =
-                doc.findAllElements("tamination").first.getAttribute("title");
-            return FM.Scaffold(
-                appBar: FM.PreferredSize(
-                    preferredSize: FM.Size.fromHeight(56.0),
-                    child: TitleBar(title: title, level: levelDatum.name)),
-                body: PP.Consumer<Settings>(
-                  builder: (context, settings, child) {
-                    return RequestHandler(
-                        child: SecondLandscapeFrame(
-                            leftChild: leftChild,
-                            centerChild: FM.Column(
-                              children: [
-                                FM.Expanded(child: centerChild),
-                                FM.Row(
-                                  children: [
-                                    FM.Expanded(
-                                        child: Button("Definition",
-                                            onPressed: () {
-                                              setState(() {
-                                                rightChild = WebFrame(settings.getLanguageLink(link) + ".html");
-                                              });
-                                            })),
-                                    FM.Expanded(
-                                        child: Button("Settings",
-                                            onPressed: () {
-                                              setState(() {
-                                                rightChild = SettingsFrame();
-                                              });
-                                            })),
-                                  ],
-                                )
-                              ],
-                            ),
-                            rightChild: rightChild),
-                        handler: (request) {
-                          if (request.action == Action.ANIMATION) {
-                            setState(() {
-                              animnum = request("animnum").i;
-                              centerChild = AnimationFrame(link:link, animnum:animnum);
-                            });
-                          }
-                      });
-                    },
-                ));
-          }
-          return FM.Scaffold(
-              appBar: FM.PreferredSize(
+    return  RequestHandler(
+      handler: (request) {
+        if (request.action == Action.ANIMATION) {
+          animnum = request("animnum").i;
+          painter.setAnimation(tamFromAnimnum());
+        }
+      },
+      child: PP.ChangeNotifierProvider.value(
+        value: painter,
+        child: FM.Scaffold(
+            appBar: FM.PreferredSize(
                 preferredSize: FM.Size.fromHeight(56.0),
-                child: TitleBar(title: ""),
-              ),
-              body: FM.Container(
-                //  TODO add spinner
-                color: Color.FLOOR,
-              ));
-        });
+                child: PP.Consumer<DanceAnimationPainter>(
+                    builder: (context,painter2,child) =>
+                        TitleBar(title: painter2.title, level: levelDatum.name)
+                )),
+            body: PP.Consumer<Settings>(
+              builder: (context, settings, child) {
+                return  SecondLandscapeFrame(
+                        leftChild: leftChild,
+                        centerChild: FM.Column(
+                          children: [
+                            FM.Expanded(child: centerChild),
+                            FM.Row(
+                              children: [
+                                FM.Expanded(
+                                    child: Button("Definition",
+                                        onPressed: () {
+                                          setState(() {
+                                            rightChild = WebFrame(settings.getLanguageLink(link) + ".html");
+                                          });
+                                        })),
+                                FM.Expanded(
+                                    child: Button("Settings",
+                                        onPressed: () {
+                                          setState(() {
+                                            rightChild = SettingsFrame();
+                                          });
+                                        })),
+                              ],
+                            )
+                          ],
+                        ),
+                        rightChild: rightChild);
+              },
+            )),
+      ),
+    );
   }
 }
 

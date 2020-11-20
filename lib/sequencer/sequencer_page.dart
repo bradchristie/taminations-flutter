@@ -34,22 +34,33 @@ class SequencerPage extends FM.StatefulWidget {
 
 class _SequencerPageState extends FM.State<SequencerPage> {
 
+  SequencerModel model;
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    model = SequencerModel();
+  }
+
   @override
   FM.Widget build(FM.BuildContext context) {
-    return PP.ChangeNotifierProvider(
-        create: (context) => SequencerModel(),
-        child:FM.Scaffold(
-            appBar: FM.PreferredSize(
-                preferredSize: FM.Size.fromHeight(56.0),
-                child: TitleBar(title: "Sequencer")
-            ),
-            body: FM.Row(
-              children: [
-                FM.Expanded(child: SequencerCallsFrame()),
-                FM.Expanded(child: SequencerAnimationFrame()),
-                FM.Expanded(child: WebFrame("info/sequencer.html"))
-              ],
-            )
+    return PP.ChangeNotifierProvider.value(
+        value: model,
+        child:PP.ChangeNotifierProvider.value(
+          value: model.animation,
+          child: FM.Scaffold(
+              appBar: FM.PreferredSize(
+                  preferredSize: FM.Size.fromHeight(56.0),
+                  child: TitleBar(title: "Sequencer")
+              ),
+              body: FM.Row(
+                children: [
+                  FM.Expanded(child: SequencerCallsFrame()),
+                  FM.Expanded(child: SequencerAnimationFrame()),
+                  FM.Expanded(child: WebFrame("info/sequencer.html"))
+                ],
+              )
+          ),
         )
     );
   }

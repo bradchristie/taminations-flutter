@@ -18,16 +18,22 @@
 
 */
 
-import 'package:taminations/sequencer/calls/call.dart';
-import 'package:taminations/extensions.dart';
+import 'package:taminations/sequencer/call_context.dart';
+import 'package:taminations/sequencer/calls/action.dart';
 
-abstract class CodedCall extends Call {
+abstract class ActivesOnlyAction extends Action {
 
+  ActivesOnlyAction(String name) : super(name);
 
-  CodedCall(String name) : super(name.capWords());
-
-  factory CodedCall.fromName(String name) {
-    return null;
+  @override
+  Future<void> perform(CallContext ctx, [int i=0]) async {
+    if (ctx.actives.length < ctx.dancers.length) {
+      ctx.subContext(ctx.actives, (ctx2) async {
+        ctx2.analyze();
+        await perform(ctx2,i);
+      });
+    } else
+      await super.perform(ctx,i);
   }
 
 }

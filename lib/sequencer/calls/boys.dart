@@ -18,16 +18,15 @@
 
 */
 
-import 'package:taminations/sequencer/calls/call.dart';
-import 'package:taminations/extensions.dart';
+import 'package:taminations/dancer.dart';
+import 'package:taminations/sequencer/call_context.dart';
+import 'package:taminations/sequencer/calls/fliter_actives.dart';
 
-abstract class CodedCall extends Call {
+class Boys extends FilterActives {
 
+  Boys() : super("Boys");
 
-  CodedCall(String name) : super(name.capWords());
-
-  factory CodedCall.fromName(String name) {
-    return null;
-  }
+  @override
+  bool isActive(Dancer d, [CallContext ctx, int i]) => d.gender == Gender.BOY;
 
 }

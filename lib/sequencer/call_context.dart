@@ -214,7 +214,7 @@ class CallContext {
     this.dancers = dancers.map((d) {
       d.animateToEnd();
       return Dancer.clone(d);
-    });
+    }).toList();
   }
 
   CallContext.fromContext(
@@ -273,7 +273,7 @@ class CallContext {
   void noSnap() { _snap = false; }
 
   //  Get the active dancers, e.g. for "Boys Trade" the boys are active
-  List<Dancer> get actives => dancers.where( (d) => d.data.active );
+  List<Dancer> get actives => dancers.where( (d) => d.data.active ).toList();
 
   /// Append the result of processing this CallContext to it source.
   /// The CallContext must have been previously cloned from the source.

@@ -52,6 +52,8 @@ class _PracticePageState extends FM.State<PracticePage> {
   Future<XmlElement> tam;
   int randomAnim;
   String randomLink;
+  //  painter is where all the drawing and animation is done
+  DanceAnimationPainter painter;
 
   @override
   void didChangeDependencies() {
@@ -64,6 +66,9 @@ class _PracticePageState extends FM.State<PracticePage> {
     var path = router.currentPath;
     levelDatum = LevelData.find(path.level);
     _reset();
+
+    //  Set up painter
+    painter = DanceAnimationPainter();
   }
 
   void _reset() {
@@ -82,6 +87,9 @@ class _PracticePageState extends FM.State<PracticePage> {
       print("Found ${tams.length} animations");
       randomAnim = Random().nextInt(tams.length);
       var randomTam = tams[randomAnim];
+      painter.setAnimation(randomTam,Gender.BOY).whenComplete(() {
+        painter.doPlay(() { });
+      });
       return randomTam;
     });
   }
@@ -89,45 +97,48 @@ class _PracticePageState extends FM.State<PracticePage> {
   @override
   FM.Widget build(FM.BuildContext context) {
 
-    return FM.Scaffold(
-        appBar: FM.PreferredSize(
-            preferredSize: FM.Size.fromHeight(56.0),
+    return PP.ChangeNotifierProvider.value(
+      value: painter,
+      child: FM.Scaffold(
+          appBar: FM.PreferredSize(
+              preferredSize: FM.Size.fromHeight(56.0),
+              child: FM.FutureBuilder(
+                  future: tam,
+                  builder:  (FM.BuildContext context,
+                      FM.AsyncSnapshot<XmlElement> snapshot) {
+                    if (snapshot.hasData) {
+                      return TitleBar(
+                        title: snapshot.data.getAttribute("title"),
+                        level: levelDatum.name,
+                      );
+                    }
+                    else
+                      return TitleBar(title:" ");
+                  }
+              )
+          ),
+          body:  RequestHandler(
+            handler: (request) {
+              if (request.action == Action.BUTTON_PRESS) {
+                if (request("button") == "Continue") {
+                  setState(() {
+                    _reset();
+                  });
+                }
+              }
+            },
             child: FM.FutureBuilder(
+                key: FM.ValueKey("$randomLink $randomAnim"),
                 future: tam,
                 builder:  (FM.BuildContext context,
                     FM.AsyncSnapshot<XmlElement> snapshot) {
-                  if (snapshot.hasData) {
-                    return TitleBar(
-                      title: snapshot.data.getAttribute("title"),
-                      level: levelDatum.name,
-                    );
-                  }
+                  if (snapshot.hasData)
+                    return PracticeFrame(snapshot.data);
                   else
-                    return TitleBar(title:" ");
-                }
-            )
-        ),
-        body:  RequestHandler(
-          handler: (request) {
-            if (request.action == Action.BUTTON_PRESS) {
-              if (request("button") == "Continue") {
-                setState(() {
-                  _reset();
-                });
-              }
-            }
-          },
-          child: FM.FutureBuilder(
-              key: FM.ValueKey("$randomLink $randomAnim"),
-              future: tam,
-              builder:  (FM.BuildContext context,
-                  FM.AsyncSnapshot<XmlElement> snapshot) {
-                if (snapshot.hasData)
-                  return PracticeFrame(snapshot.data);
-                else
-                  return FM.Container();
-              }),
-        )
+                    return FM.Container();
+                }),
+          )
+      ),
     );
   }
 }
@@ -142,11 +153,6 @@ class PracticeFrame extends FM.StatefulWidget {
 class _PracticeFrameState extends FM.State<PracticeFrame>
     with FM.SingleTickerProviderStateMixin {
 
-  //  painter is where all the drawing and animation is done
-  DanceAnimationPainter painter;
-  //  controller sends ticks to the painter making it compute and draw an animation
-  FM.AnimationController controller;
-  PracticeDancer dancer;
   var animationFinished = false;
   var score = 0;
   var maxScore = 0;
@@ -155,110 +161,82 @@ class _PracticeFrameState extends FM.State<PracticeFrame>
   void _reset() {
     score = 0;
     animationFinished = false;
-    painter.doPlay(() {
-      controller.stop();
-      setState(() {
-        animationFinished = true;
-        score = painter.practiceScore.ceil();
-        maxScore = (painter.movingBeats * 10).i;
-        if (score / maxScore >= 0.9)
-          congrats = "Excellent!";
-        else if (score / maxScore >= 0.7)
-          congrats = "Very Good!";
-        else
-          congrats = "Poor";
-      });
-    });
-    controller.forward();
-  }
-
-  @override
-  void didChangeDependencies() {
-    super.didChangeDependencies();
-    //  Set up controller, painter
-    controller = FM.AnimationController.unbounded(duration: Duration(hours: 1),vsync: this);
-    painter = DanceAnimationPainter(repaint:controller);
-    painter.setAnimation(widget.tam,Gender.BOY).whenComplete(() {
-      dancer = painter.practiceDancer;
-      _reset();
-    });
   }
 
   @override
   FM.Widget build(FM.BuildContext context) {
-    return PP.Consumer<Settings>(
-        builder: (context, settings, child) {
-          painter.setGridVisibility(true);
-          painter.setSpeed(settings.practiceSpeed);
-          return FM.Listener(
-            onPointerDown: (event) {
-              dancer.touchDown(
-                  event.pointer,
-                  painter.mouse2dance(event.position.v),
-                  isMouse: event.kind == PointerDeviceKind.mouse
-              );
-            },
-            onPointerUp: (event) {
-              dancer.touchUp(
-                  event.pointer,
-                  painter.mouse2dance(event.position.v),
-                  isMouse: event.kind == PointerDeviceKind.mouse
-              );
-            },
-            onPointerMove: (event) {
-              dancer.touchMove(
-                  event.pointer,
-                  painter.mouse2dance(event.position.v)
-              );
-            },
-            child: FM.Stack(
-              children: [
-                FM.CustomPaint(
-                  painter: painter,
-                  child: FM.Center(), // so CustomPaint gets sized correctly
+    return PP.Consumer<DanceAnimationPainter>(
+      builder: (context,painter,child) {
+        return PP.Consumer<Settings>(
+            builder: (context, settings, child) {
+              painter.setGridVisibility(true);
+              painter.setSpeed(settings.practiceSpeed);
+              return FM.Listener(
+                onPointerDown: (event) {
+                  painter.practiceDancer.touchDown(
+                      event.pointer,
+                      painter.mouse2dance(event.position.v),
+                      isMouse: event.kind == PointerDeviceKind.mouse
+                  );
+                },
+                onPointerUp: (event) {
+                  painter.practiceDancer.touchUp(
+                      event.pointer,
+                      painter.mouse2dance(event.position.v),
+                      isMouse: event.kind == PointerDeviceKind.mouse
+                  );
+                },
+                onPointerMove: (event) {
+                  painter.practiceDancer.touchMove(
+                      event.pointer,
+                      painter.mouse2dance(event.position.v)
+                  );
+                },
+                child: FM.Stack(
+                  children: [
+                    FM.CustomPaint(
+                      painter: painter,
+                      child: FM.Center(), // so CustomPaint gets sized correctly
+                    ),
+                    if (painter.isFinished) FM.Positioned(
+                        top: 100.0,
+                        left: 20.0,
+                        child: FM.Column(
+                          children: [
+                            _AnimationCompleteText("Animation Complete"),
+                            _AnimationCompleteText("Your Score"),
+                            _AnimationCompleteText("$score / $maxScore"),
+                            _AnimationCompleteText(congrats),
+                            FM.Row(
+                              children: [
+                                Button("Repeat", onPressed: () {
+                                  setState(() {
+                                    _reset();
+                                  });
+                                }),
+                                Button("Continue"),
+                                Button("Return", onPressed: () {
+                                  FM.Navigator.maybePop(context);
+                                  FM.Router
+                                      .of(context)
+                                      .routerDelegate
+                                      .popRoute();
+                                })
+                              ],
+                            ),
+                            Button("Definition")
+                          ],
+                        )
+                    )
+                  ],
                 ),
-                if (animationFinished) FM.Positioned(
-                  top: 100.0,
-                  left: 20.0,
-                  child:FM.Column(
-                    children: [
-                      _AnimationCompleteText("Animation Complete"),
-                      _AnimationCompleteText("Your Score"),
-                      _AnimationCompleteText("$score / $maxScore"),
-                      _AnimationCompleteText(congrats),
-                      FM.Row(
-                        children: [
-                          Button("Repeat",onPressed:() {
-                            setState(() {
-                              _reset();
-                            });
-                          }),
-                          Button("Continue"),
-                          Button("Return", onPressed: () {
-                            FM.Navigator.maybePop(context);
-                            FM.Router
-                                .of(context)
-                                .routerDelegate
-                                .popRoute();
-                          })
-                        ],
-                      ),
-                      Button("Definition")
-                    ],
-                  )
-                )
-              ],
-            ),
-          );
-        }
+              );
+            }
+        );
+      }
     );
   }
 
-  @override
-  void dispose() {
-    controller.dispose();
-    super.dispose();
-  }
 
 }
 

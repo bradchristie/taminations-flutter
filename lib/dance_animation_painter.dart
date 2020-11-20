@@ -21,6 +21,7 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:taminations/practice_dancer.dart';
 import 'package:xml/xml.dart';
 
@@ -34,7 +35,7 @@ import 'tam_utils.dart';
 import 'handhold.dart';
 import 'math/movement.dart';
 
-class DanceAnimationPainter extends CustomPainter {
+class DanceAnimationPainter extends ChangeNotifier implements CustomPainter  {
 
   static const SLOWSPEED = 1500.0;
   static const MODERATESPEED = 1000.0;
@@ -69,6 +70,15 @@ class DanceAnimationPainter extends CustomPainter {
   var _prevbeat = -2.0;
   var hasParts = false;
   Function whenFinished;
+  bool isFinished = false;
+  String partstr;
+  String get animationNote =>
+      _tam?.childrenNamed("taminator")?.firstOrNull
+      ?.text?.trim()?.replaceAll(r"\s+".r, " ") ?? "";
+  //AnimationController controller;
+  Ticker _ticker;
+  String get title => _tam?.getAttribute("title")
+      ?.replaceAll(" \\(.*?\\) ".r, " ") ?? "";
 
   //  Except for the phantoms, these are the standard colors
   //  used for teaching callers
@@ -80,8 +90,9 @@ class DanceAnimationPainter extends CustomPainter {
       : [Color.LIGHTGRAY, Color.RED, Color.GREEN, Color.BLUE, Color.YELLOW,
         Color.LIGHTGRAY, Color.LIGHTGRAY, Color.LIGHTGRAY, Color.LIGHTGRAY];
 
-  DanceAnimationPainter({Listenable repaint}) : super(repaint:repaint) {
+  DanceAnimationPainter()  {
     dancers = [ ];
+    _ticker = Ticker((_) { notifyListeners(); });
     addListener(() { _onDraw(); });
   }
 
@@ -119,6 +130,7 @@ class DanceAnimationPainter extends CustomPainter {
   void togglePath(Dancer d) {
     d.showPath = !d.showPath;
     print("Dancer $d showPath ${d.showPath}");
+    notifyListeners();
   }
 
   void setLoop(bool loop) {
@@ -169,10 +181,12 @@ class DanceAnimationPainter extends CustomPainter {
     isRunning = true;
     _practiceScore = 0.0;
     whenFinished = w;
+    _ticker.start();
   }
 
   void doPause() {
     isRunning = false;
+    _ticker.stop();
   }
 
   bool _isInteractiveDancerOnTrack() {
@@ -226,6 +240,8 @@ class DanceAnimationPainter extends CustomPainter {
         beat = -leadin;
       } else if (isRunning) {
         isRunning = false;
+        _ticker.stop();
+        isFinished = true;
         if (whenFinished != null) {
           //  Flutter gets upset if we call setState from a painter callback
           WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
@@ -422,14 +438,15 @@ class DanceAnimationPainter extends CustomPainter {
     });
   }
 
-  Future<bool> setAnimation(XmlElement xtam, [int intdan = -1, bool intrand = true]) {
-    return TamUtils.tamXref(xtam).then((element) {
-      _tam = element;
-      _interactiveDancer = intdan;
-      _interactiveRandom = intrand;
-      _resetAnimation();
-      return true;
-    });
+  Future<void> setAnimation(XmlElement xtam,
+      [int intdan = -1, bool intrand = true]) async {
+    _tam = await TamUtils.tamXref(xtam);
+    _interactiveDancer = intdan;
+    _interactiveRandom = intrand;
+    _resetAnimation();
+    partstr = _tam("parts","") + _tam("fractions","");
+    hasParts = _tam("parts") != null;
+    notifyListeners();
   }
 
   void _resetAnimation() {
@@ -539,6 +556,7 @@ class DanceAnimationPainter extends CustomPainter {
       beat = -leadin;
       _prevbeat = -leadin;
       updateDancers();
+      notifyListeners();
     }
   }
 
@@ -546,5 +564,13 @@ class DanceAnimationPainter extends CustomPainter {
   bool shouldRepaint(covariant CustomPainter oldDelegate) {
     return true;
   }
+
+  @override
+  bool hitTest(Offset position) => null;
+  @override
+  get semanticsBuilder => null;
+
+  @override
+  bool shouldRebuildSemantics(covariant CustomPainter oldDelegate) => shouldRepaint(oldDelegate);
 
 }

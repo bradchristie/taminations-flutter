@@ -18,10 +18,38 @@
 
 */
 
+import 'package:taminations/dancer.dart';
+import 'package:taminations/math/path.dart';
 import 'package:taminations/sequencer/calls/coded_call.dart';
+
+import '../call_context.dart';
 
 class Action extends CodedCall {
 
-  Action(String norm, String name) : super(norm, name);
+  Action(String name) : super(name);
+
+  @override
+  Future<void> performCall(CallContext ctx, [int i=0]) async {
+    await perform(ctx,i);
+    for (var d in ctx.dancers) {
+      d.path.recalculate();
+      d.animateToEnd();
+    }
+  }
+
+  //  Default method to perform one call
+  //  Pass the call on to each active dancer
+  //  Then append the returned paths to each dancer
+  Future<void> perform(CallContext ctx, [int i=0]) async {
+    //  Get all the paths with performOne calls
+    for (var d in ctx.actives) {
+      var path = await performOne(d, ctx);
+      d.path.add(path);
+    }
+  }
+
+  //  Default method for one dancer to perform one call
+  //  Returns an empty path (the dancer just stands there)
+  Future<Path> performOne(Dancer d, CallContext ctx) async => Path();
 
 }

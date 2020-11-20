@@ -29,7 +29,7 @@ import '../../extensions.dart';
 ///   such as boys, leaders, centers, belles
 abstract class FilterActives extends CodedCall {
 
-  FilterActives(String norm, String name) : super(norm, name);
+  FilterActives(String name) : super(name);
 
   ///  Child classes need to override the isActive method
   ///  according to which dancers should be selected

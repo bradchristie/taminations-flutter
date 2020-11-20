@@ -31,7 +31,7 @@ class SequencerModel extends FM.ChangeNotifier {
   String startingFormation = "Static Square";  // TODO get from settings somehow
   String partString = "";
   String errorString = "";
-  DanceAnimationPainter animation;
+  DanceAnimationPainter animation = DanceAnimationPainter();
 
 
   void reset() {

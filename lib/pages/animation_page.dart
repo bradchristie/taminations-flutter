@@ -54,11 +54,13 @@ class AnimationPage extends FM.StatefulWidget {
   _AnimationPageState createState() => _AnimationPageState();
 }
 
-class _AnimationPageState extends FM.State<AnimationPage> {
+class _AnimationPageState extends FM.State<AnimationPage>
+    with FM.SingleTickerProviderStateMixin {
 
   String link;
   int animnum;
   String name;
+  DanceAnimationPainter painter;
 
   @override
   void didChangeDependencies() {
@@ -68,33 +70,43 @@ class _AnimationPageState extends FM.State<AnimationPage> {
     link = path.link;
     animnum = path.animnum;
     name = path.name;
+
+    painter = DanceAnimationPainter();
+    TamUtils.getXMLAsset(link).then((doc) {
+      var tam = TamUtils.tamList(doc)
+          .where((it) => !(it("display","").startsWith("n")))
+          .toList()[max(0, animnum)];
+      painter.setAnimation(tam);
+    });
+
   }
 
   @override
   FM.Widget build(FM.BuildContext context) {
-    return  FM.Scaffold(
-        appBar: FM.PreferredSize(
-            preferredSize: FM.Size.fromHeight(56.0),
-            child: TitleBar(title: name, level: LevelData.find(link).name)
-        ),
-        body: RequestHandler(
+    return PP.ChangeNotifierProvider.value(
+        value: painter,
+        child: FM.Scaffold(
+          appBar: FM.PreferredSize(
+              preferredSize: FM.Size.fromHeight(56.0),
+              child: TitleBar(title: name, level: LevelData.find(link).name)
+          ),
+          body: RequestHandler(
+            handler: (request) {
+            },
             child: FM.Column(
               children: [
-                AnimationFrame(link:link,animnum:animnum),
+                FM.Expanded(child: AnimationFrame(link:link,animnum:animnum)),
                 FM.Row(
                   children: [
                     FM.Expanded(
-                        child: Button("Definition",
-                            onPressed: () { })),
+                        child: Button("Definition")),
                     FM.Expanded(
-                        child: Button("Settings",
-                            onPressed: () { })),
+                        child: Button("Settings"))
                   ],
                 )
               ],
             ),
-            handler: (request) {
-            }
+          ),
         )
     );
   }
@@ -118,15 +130,9 @@ class _AnimationFrameState extends FM.State<AnimationFrame>
 
   String link;
   int animnum;
-  //  painter is where all the drawing and animation is done
-  DanceAnimationPainter painter;
-  //  controller sends ticks to the painter making it compute and draw an animation
-  FM.AnimationController controller;
-  double currentBeat = -2.0;
   double sliderCurrentValue = 0.0;
   Vector locationTapped;
   Dancer dancerTapped;
-  String animationNote = "";
   String partstr = "";
   bool hasParts = false;
   List<double> partsValues;
@@ -135,96 +141,6 @@ class _AnimationFrameState extends FM.State<AnimationFrame>
 
   //  Constructor
   _AnimationFrameState(this.link,this.animnum,this.startFormation);
-
-  @override
-  void didChangeDependencies() {
-    super.didChangeDependencies();
-    //  Set up _controller, _painter
-    controller = FM.AnimationController.unbounded(duration: Duration(hours: 1),vsync: this);
-    painter = DanceAnimationPainter(repaint:controller);
-    //  For sequencer, get the starting formation
-    if (startFormation != null) {
-      var tam = TamUtils.getFormation(startFormation);
-      painter.setAnimation(tam).whenComplete(() {
-        controller.notifyListeners();
-        findPartsValues();
-      });
-
-    } else {
-      //  Not running the sequencer, just showing one animation
-      //  Get the requested square dance animation and send it to the painter
-      TamUtils.getXMLAsset(link).then((doc) {
-        var tam = TamUtils.tamList(doc)
-            .where((it) => !(it("display","").startsWith("n")))
-            .toList()[max(0, animnum)];
-        partstr = tam("parts","") + tam("fractions","");
-        hasParts = tam("parts") != null;
-        painter.setAnimation(tam).whenComplete(() {
-          controller.notifyListeners();
-          findPartsValues();
-        });
-        animationNote = "";
-        var tamnote = tam
-            .childrenNamed("taminator")
-            .firstOrNull;
-        if (tamnote != null) {
-          animationNote = tamnote.text.trim().replaceAll(r"\s+".r, " ");
-        }
-      });
-    }
-    controller.addListener(() {
-      setState(() {
-        //  Remember the beat, for setting alpha on the notes
-        currentBeat = painter.beat;
-        //  Set the slider now, totalBeats is now available
-        sliderCurrentValue =
-            min(100,(painter.beat + painter.leadin) * 100.0 / painter.totalBeats);
-        //  Figure out what part we're on, send notice if it has changed
-        var thisPart = 0;
-        if (partsValues != null && currentBeat >= 0 && currentBeat <= painter.beats) {
-          thisPart = partsValues.lastIndexWhere((it) => it < currentBeat);
-        }
-        if (thisPart != currentPart) {
-          currentPart = thisPart;
-          PP.Provider.of<AnimationState>(context, listen:false).part = thisPart;
-        }
-      });
-    });
-  }
-
-  @override
-  void dispose() {
-    controller.dispose();
-    super.dispose();
-  }
-
-  //  From the parts string read from the XML animation, generate
-  //  a list of doubles where each part starts
-  //  This assumes a leadin of 2 beats, so the first value is -2 and
-  //  the second value is 0.
-  //  E.g, for Swing Thru with 2 parts of 3 beats each
-  //  the values are [-2, 0, 3, 6].
-  void findPartsValues() {
-    if (partstr.isEmpty)
-      partsValues = [ -2.0, 0.0, painter.beats-2.0 ];
-    else {
-      var b = 0.0;
-      var partSplit = partstr.split(";");
-      partsValues = [for (var i = -2; i <= partSplit.length; i++) i]
-          .map((it) {
-            if (it == -2)
-              return -2.0;
-            else if (it == -1)
-              return 0.0;
-            else if (it == partSplit.length)
-              return painter.beats - 2.0;
-            else {
-              b += partSplit[it].d;
-              return b;
-            }
-      }).toList();
-    }
-  }
 
   FM.PopupMenuItem<String> oneItem(String colorName) =>
       FM.PopupMenuItem(
@@ -262,166 +178,171 @@ class _AnimationFrameState extends FM.State<AnimationFrame>
     );
   }
 
+
   @override
   FM.Widget build(FM.BuildContext context) {
-    //  This sends a tick to the painter, generating a redraw
-    //  Necessary to get it to show any changed settings, colors, paths, etc.
-    controller.notifyListeners();
 
-    return FM.Column(children: [
+    return PP.Consumer<DanceAnimationPainter>(
+      builder: (context,painter,child) => FM.Column(children: [
 
-      //  Dance area with animations
-      FM.Expanded(child: PP.Consumer<Settings>(
-          builder: (context, settings, child) {
+        //  Dance area with animations
+        FM.Expanded(child: PP.Consumer<Settings>(
+            builder: (context, settings, child) {
 
-            //  Send current settings to the painter
-            painter.setGridVisibility(settings.grid);
-            painter.setNumbers(settings.numbers);
-            painter.setSpeed(settings.speed);
-            painter.setPaths(settings.paths);
-            painter.setLoop(settings.loop);
-            painter.setPhantoms(settings.phantoms);
-            painter.setGeometry(Geometry.fromString(settings.geometry).geometry);
-            //  Dancer colors - first set values for couples
-            for (var i=1; i<=6; i++) {
-              painter.setDancerColor(i * 2 - 1, Color.fromName(settings.coupleColor(i)));
-              painter.setDancerColor(i * 2, Color.fromName(settings.coupleColor(i)));
-            }
-            //  Now values set for any individual dancers
-            for (var i=1; i<=12; i++) {
-              var cname = settings.dancerColor(i);
-              if (cname != "default")
-                painter.setDancerColor(i, Color.fromName(cname));
-            }
-
-            //  Routines to handle pointer events
-            var tapDownHandler = (FM.TapDownDetails details) {
-              locationTapped = details.globalPosition.v;
-              dancerTapped = painter.dancerAt(
-                  painter.mouse2dance(details.localPosition.v));
-            };
-            var longPressHandler = () {
-              if (dancerTapped != null) {
-                _showColorPopup(
-                    context, settings.dancerColor(dancerTapped.number.i))
-                    .then((value) {
-                  if (value != null)
-                    settings.setDancerColor(dancerTapped.number.i, value);
-                });
+              //  Send current settings to the painter
+              painter.setGridVisibility(settings.grid);
+              painter.setNumbers(settings.numbers);
+              painter.setSpeed(settings.speed);
+              painter.setPaths(settings.paths);
+              painter.setLoop(settings.loop);
+              painter.setPhantoms(settings.phantoms);
+              painter.setGeometry(Geometry.fromString(settings.geometry).geometry);
+              //  Dancer colors - first set values for couples
+              for (var i=1; i<=6; i++) {
+                painter.setDancerColor(i * 2 - 1, Color.fromName(settings.coupleColor(i)));
+                painter.setDancerColor(i * 2, Color.fromName(settings.coupleColor(i)));
               }
-            };
+              //  Now values set for any individual dancers
+              for (var i=1; i<=12; i++) {
+                var cname = settings.dancerColor(i);
+                if (cname != "default")
+                  painter.setDancerColor(i, Color.fromName(cname));
+              }
 
-            //  Wrap dance area with widget to detect pointer events
-            return FM.GestureDetector(
-                onTapDown: tapDownHandler,
-                onSecondaryTapDown: tapDownHandler,
-                onTap: () {
-                  if (dancerTapped != null) {
-                      painter.togglePath(dancerTapped);
-                  }
-                },
-                onLongPress: longPressHandler,
-                onSecondaryTap: longPressHandler,
-                //  Stack to show info on animation
-                child: FM.Stack(
-                    children: [
-                      //  Finally here is the dance area widget
-                      FM.CustomPaint(
-                        painter: painter,
-                        child: FM.Center(), // so CustomPaint gets sized correctly
-                      ),
-                      //  Note that fades out as animation starts
-                      FM.Opacity(
-                        opacity: ((-currentBeat)/2.0).coerceIn(0.0, 1.0),
-                          child:FM.Container(
-                              color: Color.WHITE,
-                              child:FM.Text(animationNote,
-                                  style:FM.TextStyle(fontSize:20))
-                          )),
-                      //  Show if Loop or Speed are set other than default
-                      FM.Positioned(
-                        bottom: 0.0,
-                        right: 0.0,
-                        child: FM.Text(
-                            settings.speed.replaceFirst("Normal","") +
-                                (settings.loop ? " Loop" : ""),
-                            style:FM.TextStyle(fontSize:24)
-                        )
-                      )
-                    ])
-            );
-          })),
+              //  Routines to handle pointer events
+              var tapDownHandler = (FM.TapDownDetails details) {
+                locationTapped = details.globalPosition.v;
+                dancerTapped = painter.dancerAt(
+                    painter.mouse2dance(details.localPosition.v));
+              };
+              var longPressHandler = () {
+                if (dancerTapped != null) {
+                  _showColorPopup(
+                      context, settings.dancerColor(dancerTapped.number.i))
+                      .then((value) {
+                    if (value != null)
+                      settings.setDancerColor(dancerTapped.number.i, value);
+                  });
+                }
+              };
 
-      //  Slider to show current animation position
-      FM.Slider(
-        activeColor: Color.HIGHLIGHT,
-        inactiveColor: Color.HIGHLIGHT.veryBright(),
-        value: sliderCurrentValue,
-        min: 0,
-        max: 100,
-        onChanged: (double value) {
-          setState(() {
-            sliderCurrentValue = value;
-            painter.beat =
-                (value * painter.totalBeats / 100.0) - painter.leadin;
-          });
-        },
-      ),
+              //  Get position for slider
+              if (painter.totalBeats > 2.0)
+              sliderCurrentValue =
+                  min(100,(painter.beat + painter.leadin) * 100.0 / painter.totalBeats);
 
-      //  Painter to show animation start, end, beats, and parts
-      FM.CustomPaint(
-        painter: _SliderTicsPainter(
-          beats: painter.totalBeats,
-          parts: partstr,
-          isParts: hasParts
-        ),
-        size: FM.Size.fromHeight(40.0),
-      ),
-
-      //  Buttons to control the animation
-      FM.Row(
-          children: [
-            FM.Expanded(
-                child: Button("Start",
-                    child: FM.Icon(FM.Icons.skip_previous),
-                    onPressed: () { })),
-            FM.Expanded(
-                child:
-                Button("Back",
-                    child: FM.Icon(FM.Icons.navigate_before),
-                    onPressed: () { })),
-            FM.Expanded(
-              //  Play / Pause button
-                child: Button("Play",
-                    child: FM.Icon(painter.isRunning
-                        ? FM.Icons.pause
-                        : FM.Icons.play_arrow),
-                    onPressed: () {
-                      setState(() {
-                        //  If running, turn it off
-                        if (painter.isRunning) {
-                          painter.doPause();
-                          controller.stop();
-                        } else {
-                          //  Not running - start animation, with callback to
-                          //  turn off when finished (if not looping)
-                          painter.doPlay(() {
-                            controller.stop();
-                          });
-                          controller.forward();
-                        }
-                      });
+              //  Wrap dance area with widget to detect pointer events
+              return FM.GestureDetector(
+                  onTapDown: tapDownHandler,
+                  onSecondaryTapDown: tapDownHandler,
+                  onTap: () {
+                    if (dancerTapped != null) {
+                        painter.togglePath(dancerTapped);
                     }
-                )),
-            FM.Expanded(
-                child: Button("Forward",
-                    child: FM.Icon(FM.Icons.navigate_next),
-                    onPressed: () { })),
-            FM.Expanded(child: Button("End",
-                child: FM.Icon(FM.Icons.skip_next),
-                onPressed: () { })),
-          ])
-    ]);
+                  },
+                  onLongPress: longPressHandler,
+                  onSecondaryTap: longPressHandler,
+                  //  Stack to show info on animation
+                  child: FM.Stack(
+                      children: [
+                        //  Finally here is the dance area widget
+                        FM.CustomPaint(
+                          painter: painter,
+                          child: FM.Center(), // so CustomPaint gets sized correctly
+                        ),
+                        //  Note that fades out as animation starts
+                        FM.Opacity(
+                          opacity: ((-painter.beat)/2.0).coerceIn(0.0, 1.0),
+                            child:FM.Container(
+                                color: Color.WHITE,
+                                child:FM.Text(painter.animationNote,
+                                    style:FM.TextStyle(fontSize:20))
+                            )),
+                        //  Show if Loop or Speed are set other than default
+                        FM.Positioned(
+                          bottom: 0.0,
+                          right: 0.0,
+                          child: FM.Text(
+                              settings.speed.replaceFirst("Normal","") +
+                                  (settings.loop ? " Loop" : ""),
+                              style:FM.TextStyle(fontSize:24)
+                          )
+                        )
+                      ])
+              );
+            })),
+
+        //  Slider to show current animation position
+        FM.Slider(
+          activeColor: Color.HIGHLIGHT,
+          inactiveColor: Color.HIGHLIGHT.veryBright(),
+          value: sliderCurrentValue,
+          min: 0,
+          max: 100,
+          onChanged: (double value) {
+            setState(() {
+              sliderCurrentValue = value;
+              painter.beat =
+                  (value * painter.totalBeats / 100.0) - painter.leadin;
+            });
+          },
+        ),
+
+        //  Painter to show animation start, end, beats, and parts
+        FM.CustomPaint(
+          painter: _SliderTicsPainter(
+            beats: painter.totalBeats,
+            parts: partstr,
+            isParts: hasParts
+          ),
+          size: FM.Size.fromHeight(40.0),
+        ),
+
+        //  Buttons to control the animation
+        FM.Row(
+            children: [
+              FM.Expanded(
+                  child: Button("Start",
+                      child: FM.Icon(FM.Icons.skip_previous),
+                      onPressed: () { })),
+              FM.Expanded(
+                  child:
+                  Button("Back",
+                      child: FM.Icon(FM.Icons.navigate_before),
+                      onPressed: () { })),
+              FM.Expanded(
+                //  Play / Pause button
+                  child: Button("Play",
+                      child: FM.Icon(painter.isRunning
+                          ? FM.Icons.pause
+                          : FM.Icons.play_arrow),
+                      onPressed: () {
+                        setState(() {
+                          //  If running, turn it off
+                          if (painter.isRunning) {
+                            painter.doPause();
+                         //   controller.stop();
+                          } else {
+                            //  Not running - start animation, with callback to
+                            //  turn off when finished (if not looping)
+                            painter.doPlay(() {
+                       //       controller.stop();
+                            });
+                     //       controller.forward();
+                          }
+                        });
+                      }
+                  )),
+              FM.Expanded(
+                  child: Button("Forward",
+                      child: FM.Icon(FM.Icons.navigate_next),
+                      onPressed: () { })),
+              FM.Expanded(child: Button("End",
+                  child: FM.Icon(FM.Icons.skip_next),
+                  onPressed: () { })),
+            ])
+      ]),
+    );
   }
 }
 

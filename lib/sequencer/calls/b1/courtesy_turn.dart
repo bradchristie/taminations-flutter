@@ -18,16 +18,16 @@
 
 */
 
-import 'package:taminations/sequencer/calls/call.dart';
-import 'package:taminations/extensions.dart';
+import 'package:taminations/sequencer/call_context.dart';
+import 'package:taminations/sequencer/calls/action.dart';
 
-abstract class CodedCall extends Call {
+class CourtesyTurn extends Action {
 
+  CourtesyTurn() : super("Courtesy Turn");
 
-  CodedCall(String name) : super(name.capWords());
-
-  factory CodedCall.fromName(String name) {
-    return null;
+  @override
+  Future<void> perform(CallContext ctx, [int i=0]) async {
+    ctx.applyCalls(["Wheel Around"]);
   }
 
 }
