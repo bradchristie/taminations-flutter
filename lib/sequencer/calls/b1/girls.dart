@@ -27,6 +27,6 @@ class Girls extends FilterActives {
   Girls() : super("Girls");
 
   @override
-  bool isActive(Dancer d, [CallContext ctx, int i]) => d.gender == Gender.GIRL;
+  bool isActive(Dancer d, [CallContext ctx]) => d.gender == Gender.GIRL;
 
 }

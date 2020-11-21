@@ -29,8 +29,8 @@ class Action extends CodedCall {
   Action(String name) : super(name);
 
   @override
-  Future<void> performCall(CallContext ctx, [int i=0]) async {
-    await perform(ctx,i);
+  Future<void> performCall(CallContext ctx, [int stackIndex=0]) async {
+    await perform(ctx,stackIndex);
     for (var d in ctx.dancers) {
       d.path.recalculate();
       d.animateToEnd();
@@ -50,6 +50,6 @@ class Action extends CodedCall {
 
   //  Default method for one dancer to perform one call
   //  Returns an empty path (the dancer just stands there)
-  Future<Path> performOne(Dancer d, CallContext ctx) async => Path();
+  Path performOne(Dancer d, CallContext ctx) => Path();
 
 }

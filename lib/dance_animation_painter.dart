@@ -175,13 +175,15 @@ class DanceAnimationPainter extends ChangeNotifier implements CustomPainter  {
   }
 
   void doPlay(Function w) {
-    _lastTime = DateTime.now();
-    if (beat > _beats)
-      beat = -leadin;
-    isRunning = true;
-    _practiceScore = 0.0;
-    whenFinished = w;
-    _ticker.start();
+    if (!isRunning) {
+      _lastTime = DateTime.now();
+      if (beat > _beats)
+        beat = -leadin;
+      isRunning = true;
+      _practiceScore = 0.0;
+      whenFinished = w;
+      _ticker.start();
+    }
   }
 
   void doPause() {

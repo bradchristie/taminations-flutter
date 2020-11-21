@@ -25,6 +25,7 @@ import 'package:taminations/sequencer/calls/b1/girls.dart';
 import 'package:taminations/sequencer/calls/b1/heads.dart';
 import 'package:taminations/sequencer/calls/b1/sides.dart';
 import 'package:taminations/sequencer/calls/b1/turn_back.dart';
+import 'package:taminations/sequencer/calls/b1/circulate.dart';
 import 'package:taminations/sequencer/calls/call.dart';
 import 'package:taminations/tam_utils.dart';
 
@@ -34,6 +35,7 @@ abstract class CodedCall extends Call {
 
   static Map<RegExp, CodedCall Function(String norm)> normCallMap = {
     "boy".r: (_) => Boys(),
+    "circulate".r: (_) => Circulate(),
     "courtesyturn".r: (_) => CourtesyTurn(),
     "girl".r: (_) => Girls(),
     "head".r: (name) => Heads(name),
@@ -45,7 +47,6 @@ abstract class CodedCall extends Call {
     var norm = TamUtils.normalizeCall(name);
     for (var r in normCallMap.keys) {
       if (norm.matches(r)) {
-        print("*** Found $norm");
         return normCallMap[r].call(name);
       }
     }

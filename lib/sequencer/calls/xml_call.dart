@@ -37,7 +37,7 @@ class XMLCall extends Call {
       : super(xelem.getAttribute("title"));
 
   @override
-  Future<void> performCall(CallContext ctx, [int i = 0]) async {
+  Future<void> performCall(CallContext ctx, [int stackIndex = 0]) async {
     var allPaths = xelem.childrenNamed("path").map(
             (element) => Path(TamUtils.translatePath(element))).toList();
     //  If moving just some of the dancers,

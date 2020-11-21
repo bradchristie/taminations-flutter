@@ -33,13 +33,13 @@ abstract class FilterActives extends CodedCall {
 
   ///  Child classes need to override the isActive method
   ///  according to which dancers should be selected
-  bool isActive(Dancer d, [CallContext ctx, int i]);
+  bool isActive(Dancer d, [CallContext ctx]);
 
   @override
-  Future<void> performCall(CallContext ctx, [int i = 0]) async {
+  Future<void> performCall(CallContext ctx, [int stackIndex = 0]) async {
     var actives = ctx.actives.clone();
     for (var d in actives) {
-      d.data.active = isActive(d,ctx,i);
+      d.data.active = isActive(d,ctx);
     }
     if (ctx.actives.isEmpty)
       throw CallError("Unable to identify any $name");

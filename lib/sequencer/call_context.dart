@@ -509,10 +509,10 @@ class CallContext {
       var tamlist = file.rootElement.findAllElements("tam").where((tam) =>
       tam("sequencer") != "no" &&
           //  Check for calls that must go around the centers
-          (!perimeter || tam("sequencer","").contains("perimeter") &&
+          (!perimeter || tam("sequencer","").contains("perimeter")) &&
           //  Check for 4-dancer calls that do not work for 8 dancers
           (exact || !tam("sequencer","").contains("exact")) &&
-          TamUtils.normalizeCall(tam("title")) == callnorm));
+          TamUtils.normalizeCall(tam("title")) == callnorm);
       for (var tam in tamlist) {
         //  Calls that are gender-specific, e.g. Star Thru,
         //  are specifically flagged in XML
@@ -1103,7 +1103,7 @@ class CallContext {
   });
 
   //  Return true if 8 dancers are in 2 general columns of 4 dancers each
-  bool isColuns([int num = 4]) =>
+  bool isColumns([int num = 4]) =>
       dancers.every((d) =>
           dancersInFront(d).length + dancersInBack(d).length == num - 1
   );
