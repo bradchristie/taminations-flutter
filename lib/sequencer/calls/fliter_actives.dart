@@ -18,12 +18,11 @@
 
 */
 
-import 'package:taminations/sequencer/call_error.dart';
-import 'package:taminations/sequencer/calls/coded_call.dart';
-
 import '../../dancer.dart';
-import '../call_context.dart';
 import '../../extensions.dart';
+import '../call_context.dart';
+import '../call_error.dart';
+import 'coded_call.dart';
 
 ///   Parent class of all classes that select a group of dancers
 ///   such as boys, leaders, centers, belles

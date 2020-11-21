@@ -18,22 +18,33 @@
 
 */
 
-import '../call_context.dart';
-import 'action.dart';
+import '../../../tam_utils.dart';
+import '../../call_context.dart';
+import '../../call_error.dart';
+import '../action.dart';
 
-abstract class ActivesOnlyAction extends Action {
+class AroundToALine extends Action {
 
-  ActivesOnlyAction(String name) : super(name);
+  AroundToALine(String name) : super(name);
 
   @override
   Future<void> perform(CallContext ctx, [int stackIndex=0]) async {
     if (ctx.actives.length < ctx.dancers.length) {
-      ctx.subContext(ctx.actives, (ctx2) async {
-        ctx2.analyze();
-        await perform(ctx2,stackIndex);
-      });
-    } else
-      await super.perform(ctx,stackIndex);
+      ctx.matchStandardFormation();
+      for (var d in ctx.dancers)
+        d.data.active = true;
+      var norm = TamUtils.normalizeCall(name);
+      if (norm.contains("1andcomeintothemiddle"))
+        await ctx.applyCalls(["Around One and Come Into the Middle"]);
+      else if (norm.contains("1toaline"))
+        await  ctx.applyCalls(["Around One To A Line"]);
+      else if (norm.contains("2toaline"))
+        await  ctx.applyCalls(["Around Two To A Line"]);
+      else
+        throw CallError("Go Around What?");
+    }
+    else
+      throw CallError("Cannot Go Around to a Line");
   }
 
 }

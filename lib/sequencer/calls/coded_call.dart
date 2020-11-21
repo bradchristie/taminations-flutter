@@ -18,30 +18,47 @@
 
 */
 
-import 'package:taminations/extensions.dart';
-import 'package:taminations/sequencer/calls/b1/boys.dart';
-import 'package:taminations/sequencer/calls/b1/courtesy_turn.dart';
-import 'package:taminations/sequencer/calls/b1/girls.dart';
-import 'package:taminations/sequencer/calls/b1/heads.dart';
-import 'package:taminations/sequencer/calls/b1/sides.dart';
-import 'package:taminations/sequencer/calls/b1/turn_back.dart';
-import 'package:taminations/sequencer/calls/b1/circulate.dart';
-import 'package:taminations/sequencer/calls/call.dart';
-import 'package:taminations/tam_utils.dart';
+
+import '../../extensions.dart';
+import '../../tam_utils.dart';
+import 'b1/around_to_a_line.dart';
+import 'b1/bend_the_line.dart';
+import 'b1/boys.dart';
+import 'b1/circulate.dart';
+import 'b1/courtesy_turn.dart';
+import 'b1/girls.dart';
+import 'b1/heads.dart';
+import 'b1/sides.dart';
+import 'b1/turn_back.dart';
+import 'call.dart';
 
 abstract class CodedCall extends Call {
 
   CodedCall(String name) : super(name.capWords());
 
   static Map<RegExp, CodedCall Function(String norm)> normCallMap = {
+
+    "around1andcomeintothemiddle".r: (_) =>
+        AroundToALine("Around One and Come Into the Middle"),
+    "around1toaline".r: (_) => AroundToALine("Around One to a Line"),
+    "around2toaline".r: (_) => AroundToALine("Around Two to a Line"),
+
+    "bendtheline".r: (_) => BendTheLine(),
     "boy".r: (_) => Boys(),
+
     "circulate".r: (_) => Circulate(),
     "courtesyturn".r: (_) => CourtesyTurn(),
+
     "girl".r: (_) => Girls(),
+
     "head".r: (name) => Heads(name),
+
     "side".r: (name) => Sides(name),
+
     "u?turnback".r: (_) => TurnBack()
+
   };
+
 
   factory CodedCall.fromName(String name) {
     var norm = TamUtils.normalizeCall(name);
@@ -52,4 +69,5 @@ abstract class CodedCall extends Call {
     }
     return null;
   }
+
 }

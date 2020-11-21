@@ -21,11 +21,11 @@
 import 'package:xml/xml.dart';
 
 import '../../dancer.dart';
+import '../../extensions.dart';
+import '../../math/path.dart';
 import '../../tam_utils.dart';
 import '../call_context.dart';
 import 'call.dart';
-import '../../extensions.dart';
-import '../../math/path.dart';
 
 class XMLCall extends Call {
 

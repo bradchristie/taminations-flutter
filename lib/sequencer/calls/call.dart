@@ -18,8 +18,8 @@
 
 */
 
-import 'package:taminations/level_data.dart';
-import 'package:taminations/sequencer/call_context.dart';
+import '../../level_data.dart';
+import '../call_context.dart';
 
 abstract class Call {
 

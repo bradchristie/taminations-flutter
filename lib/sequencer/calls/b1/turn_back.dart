@@ -18,12 +18,11 @@
 
 */
 
-import 'package:taminations/math/path.dart';
-import 'package:taminations/sequencer/calls/action.dart';
-import 'package:taminations/tam_utils.dart';
-
 import '../../../dancer.dart';
+import '../../../math/path.dart';
+import '../../../tam_utils.dart';
 import '../../call_context.dart';
+import '../action.dart';
 
 class TurnBack extends Action {
 

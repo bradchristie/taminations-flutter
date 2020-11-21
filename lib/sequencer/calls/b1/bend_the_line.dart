@@ -18,19 +18,34 @@
 
 */
 
+import '../../../tam_utils.dart';
+
+import '../action.dart';
+import '../../../math/path.dart';
 import '../../../dancer.dart';
-import '../../../extensions.dart';
 import '../../call_context.dart';
-import '../fliter_actives.dart';
+import '../../call_error.dart';
 
-class Heads extends FilterActives {
+class BendTheLine extends Action {
 
-  Heads(String name) : super(name);
+  BendTheLine() : super("Bend the Line");
 
   @override
-  bool isActive(Dancer d, [CallContext ctx]) =>
-      ctx.isSquare()
-          ? d.location.x.abs().isAbout(3.0)
-          : d.numberCouple=="1" || d.numberCouple=="3";
+  Path performOne(Dancer d, CallContext ctx) {
+    if (!ctx.isInCouple(d))
+      throw CallError("Only couples can Bend the Line");
+    if (d.data.beau) {
+      if (d.isCenterRight)
+        return TamUtils.getMove("Hinge Right");
+      else if (d.isCenterLeft)
+        return TamUtils.getMove("BackHinge Right");
+    } else if (d.data.belle) {
+      if (d.isCenterRight)
+        return TamUtils.getMove("BackHinge Left");
+      else if (d.isCenterLeft)
+        return TamUtils.getMove("Hinge Left");
+    }
+    throw CallError("Cannot figure out how to Bend the Line");
+  }
 
 }

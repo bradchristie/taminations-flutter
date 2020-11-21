@@ -18,10 +18,10 @@
 
 */
 
-import 'package:taminations/dancer.dart';
-import 'package:taminations/sequencer/call_context.dart';
-import 'package:taminations/sequencer/calls/fliter_actives.dart';
-import 'package:taminations/extensions.dart';
+import '../../../dancer.dart';
+import '../../../extensions.dart';
+import '../../call_context.dart';
+import '../fliter_actives.dart';
 
 class Sides extends FilterActives {
 

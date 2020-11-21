@@ -17,14 +17,16 @@
   along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 */
+
 import 'dart:math';
-import 'package:taminations/math/path.dart';
-import 'package:taminations/dancer.dart';
-import 'package:taminations/tam_utils.dart';
-import 'package:taminations/extensions.dart';
-import 'package:taminations/sequencer/call_context.dart';
-import 'package:taminations/sequencer/call_error.dart';
-import 'package:taminations/sequencer/calls/action.dart';
+
+import '../../../dancer.dart';
+import '../../../extensions.dart';
+import '../../../math/path.dart';
+import '../../../tam_utils.dart';
+import '../../call_context.dart';
+import '../../call_error.dart';
+import '../action.dart';
 
 class Circulate extends Action {
 

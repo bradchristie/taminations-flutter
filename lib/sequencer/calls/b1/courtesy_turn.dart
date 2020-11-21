@@ -18,8 +18,8 @@
 
 */
 
-import 'package:taminations/sequencer/call_context.dart';
-import 'package:taminations/sequencer/calls/action.dart';
+import '../../call_context.dart';
+import '../action.dart';
 
 class CourtesyTurn extends Action {
 
