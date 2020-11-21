@@ -21,6 +21,7 @@
 import 'package:flutter/material.dart' as FM;
 import 'package:taminations/dance_animation_painter.dart';
 import 'package:taminations/sequencer/call_error.dart';
+import 'package:taminations/tam_utils.dart';
 import '../extensions.dart';
 import 'call_context.dart';
 
@@ -33,6 +34,10 @@ class SequencerModel extends FM.ChangeNotifier {
   String errorString = "";
   DanceAnimationPainter animation = DanceAnimationPainter();
 
+  SequencerModel() {
+    CallContext.init();
+    reset();
+  }
 
   void reset() {
     animation.doPause();
@@ -69,7 +74,7 @@ class SequencerModel extends FM.ChangeNotifier {
     call = call.replaceAll("_", "");
     //  Remove any [user annotations]
     call = call.replaceAll("\\[.*?\\]".r,"");
-    var prevbeats = animation.totalBeats;
+    var prevbeats = animation.beats;
     var cctx = CallContext.fromDancers(animation.dancers);
 
     await cctx.interpretCall(call);
@@ -83,12 +88,14 @@ class SequencerModel extends FM.ChangeNotifier {
     if (cctx.isCollision())
       throw CallError("Unable to calculate valid animation.");
     cctx.appendToSource();
-    // animation.recalculate()  ???
-    var newbeats = animation.totalBeats;
+    animation.recalculate();
+    var newbeats = animation.beats;
     if (newbeats > prevbeats) {
       //  Call worked, add it to the list
       callNames.add(cctx.callname);
       callBeats.add(newbeats - prevbeats);
+      animation.beat = prevbeats;
+      animation.doPlay(() { });
     }
   }
 
@@ -102,6 +109,7 @@ class SequencerModel extends FM.ChangeNotifier {
       text.trim().startsWith("[^\\[a-zA-Z0-9]".r);
 
   void _startSequence() {
+    animation.setAnimation(TamUtils.getFormation(startingFormation));
     _updateParts();
   }
 

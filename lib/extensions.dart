@@ -84,6 +84,7 @@ extension TamString on String {
       this.substring(0,1).toUpperCase() + this.substring(1).toLowerCase();
   String capWords() => this.split("\\s+".r).map((s) => s.capitalize()).join(" ")
       .replaceAllMapped("\\b(A|An|At|And|To|The)\\b".r, (m) => m[1].toLowerCase());
+  bool matches(RegExp e) => (e.stringMatch(this)?.length ?? -1) == this.length;
 
   //  Returns an array of strings, starting with the entire string,
   //  and each subsequent string chopping one word off the end
@@ -91,15 +92,28 @@ extension TamString on String {
     var ss = <String>[];
     return this.split("\\s+".r).map((it) {
       ss.add(it);
-      ss.reduce((a, b) => "$a $b");
+      return ss.reduce((a, b) => "$a $b");
     }).toList().reversed.toList();
   }
+
+  //  Return an array of strings, each removing one word from the start
+  List<String> diced() {
+    var ss = <String>[];
+    return this.split("\\s+".r).reversed.map((it) {
+      ss.insert(0,it);
+      return ss.reduce((a, b) => "$a $b");
+    }).toList().reversed.toList();
+  }
+
+  //  Return all combinations of words from a string
+  List<String> minced() =>
+      this.chopped().map((e) => e.diced()).expand((e) => e).toList();
 
 }
 
 extension TamList<E> on List<E> {
 
-  List<int> get indices => asMap().keys;
+  List<int> get indices => asMap().keys.toList();
   E get firstOrNull => isNotEmpty ? first : null;
   List<E> operator -(E e) => this.where((element) => element != e).toList();
   List<E> clone() => this.toList();

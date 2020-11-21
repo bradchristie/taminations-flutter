@@ -560,6 +560,16 @@ class DanceAnimationPainter extends ChangeNotifier implements CustomPainter  {
     }
   }
 
+  void recalculate() {
+    _beats = 0.0;
+    for (var d in dancers) {
+      d.computePath();
+      d.animate(beat);  // current position clobbered by computePath
+      _beats = max(_beats, d.beats + leadout);
+    }
+    notifyListeners();
+  }
+
   @override
   bool shouldRepaint(covariant CustomPainter oldDelegate) {
     return true;

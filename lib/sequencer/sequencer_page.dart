@@ -44,24 +44,24 @@ class _SequencerPageState extends FM.State<SequencerPage> {
 
   @override
   FM.Widget build(FM.BuildContext context) {
-    return PP.ChangeNotifierProvider.value(
-        value: model,
-        child:PP.ChangeNotifierProvider.value(
-          value: model.animation,
-          child: FM.Scaffold(
-              appBar: FM.PreferredSize(
-                  preferredSize: FM.Size.fromHeight(56.0),
-                  child: TitleBar(title: "Sequencer")
-              ),
-              body: FM.Row(
-                children: [
-                  FM.Expanded(child: SequencerCallsFrame()),
-                  FM.Expanded(child: SequencerAnimationFrame()),
-                  FM.Expanded(child: WebFrame("info/sequencer.html"))
-                ],
-              )
+    return PP.MultiProvider(
+      providers: [
+        PP.ChangeNotifierProvider.value(value: model),
+        PP.ChangeNotifierProvider.value(value: model.animation)
+      ],
+      child: FM.Scaffold(
+          appBar: FM.PreferredSize(
+              preferredSize: FM.Size.fromHeight(56.0),
+              child: TitleBar(title: "Sequencer")
           ),
-        )
+          body: FM.Row(
+            children: [
+              FM.Expanded(child: SequencerCallsFrame()),
+              FM.Expanded(child: SequencerAnimationFrame()),
+              FM.Expanded(child: WebFrame("info/sequencer.html"))
+            ],
+          )
+      ),
     );
   }
 

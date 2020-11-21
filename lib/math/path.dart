@@ -141,7 +141,7 @@ class Path {
   }
 
   void notFromCall() {
-    movelist = movelist.map((it) => it.notFromCall());
+    movelist = movelist.map((it) => it.notFromCall()).toList();
   }
 
   /// Return a transform for a specific point of time

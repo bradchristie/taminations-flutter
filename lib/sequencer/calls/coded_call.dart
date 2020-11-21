@@ -18,16 +18,37 @@
 
 */
 
-import 'package:taminations/sequencer/calls/call.dart';
 import 'package:taminations/extensions.dart';
+import 'package:taminations/sequencer/calls/b1/boys.dart';
+import 'package:taminations/sequencer/calls/b1/courtesy_turn.dart';
+import 'package:taminations/sequencer/calls/b1/girls.dart';
+import 'package:taminations/sequencer/calls/b1/heads.dart';
+import 'package:taminations/sequencer/calls/b1/sides.dart';
+import 'package:taminations/sequencer/calls/b1/turn_back.dart';
+import 'package:taminations/sequencer/calls/call.dart';
+import 'package:taminations/tam_utils.dart';
 
 abstract class CodedCall extends Call {
 
-
   CodedCall(String name) : super(name.capWords());
 
+  static Map<RegExp, CodedCall Function(String norm)> normCallMap = {
+    "boy".r: (_) => Boys(),
+    "courtesyturn".r: (_) => CourtesyTurn(),
+    "girl".r: (_) => Girls(),
+    "head".r: (name) => Heads(name),
+    "side".r: (name) => Sides(name),
+    "u?turnback".r: (_) => TurnBack()
+  };
+
   factory CodedCall.fromName(String name) {
+    var norm = TamUtils.normalizeCall(name);
+    for (var r in normCallMap.keys) {
+      if (norm.matches(r)) {
+        print("*** Found $norm");
+        return normCallMap[r].call(name);
+      }
+    }
     return null;
   }
-
 }

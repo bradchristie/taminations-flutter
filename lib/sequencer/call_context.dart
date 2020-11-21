@@ -190,6 +190,27 @@ class CallContext {
     return doc;
   }
 
+  static Set<String> _xmlFilesForCall(String norm) {
+    var callfiles1 = TamUtils.callmap.containsKey(norm)
+        ? TamUtils.callmap[norm].map((e) => e.link) : List<String>();
+    var callfiles2 = callindex.containsKey(norm)
+        ? callindex[norm] : Set<String>();
+    callfiles2.addAll(callfiles1);
+    return callfiles2;
+  }
+
+  //  Load all XML files that might be used to interpret a call
+  static Future<void> _loadAllFilesForCall(String call) async {
+    for (var item in call.minced()) {
+      var norm = TamUtils.normalizeCall(item);
+      var callitems = TamUtils.callmap[norm] ?? <CallListDatum>[];
+      for (var callitem in callitems) {
+        print("Will load ${callitem.link}");
+        await loadOneFile(callitem.link);
+      }
+    }
+  }
+
   static Future<void> init() {
     if (callindex.length == 0) {
       return Future.wait(callindexinitfiles.map((file) => loadOneFile(file)));
@@ -225,7 +246,7 @@ class CallContext {
     if (dancers == null)
       dancers = source.dancers;
     dancers.forEach((d) { d.animate(beat); });
-      this.dancers = dancers.map((d) => Dancer.clone(d));
+    this.dancers = dancers.map((d) => Dancer.clone(d)).toList();
     if (!dancers.areDancersOrdered())
       this.dancers = this.dancers.center().inOrder();
     _source = source;
@@ -244,6 +265,7 @@ class CallContext {
         ? TamUtils.getFormation(fname)
         : (tam.childrenNamed("formation").firstOrNull ?? tam);
     var dancerElements = f.childrenNamed("dancer");
+    dancers = [];
     for (var i=0; i<dancerElements.length; i++) {
       var element = dancerElements[i];
       //  This assumes square geometry
@@ -287,7 +309,7 @@ class CallContext {
       original.path.add(clone.path);
       original.animateToEnd();
     });
-    if (_source.level < level)
+    if (_source != null && _source.level < level)
       _source.level = level;
   }
 
@@ -396,6 +418,7 @@ class CallContext {
   Future<void> interpretCall(String calltext, {bool noAction = false}) async {
     print("in interpretCall $calltext");
     calltext = _cleanupCall(calltext);
+    await _loadAllFilesForCall(calltext);
     CallError err = CallNotFoundError(calltext);
     //  Clear out any previous paths from incomplete parsing
     for (var d in dancers) {
@@ -407,45 +430,40 @@ class CallContext {
     while (calltext.isNotEmpty) {
       //  Try chopping off each word from the end of the call until
       //  we find something we know
+      var foundOneCall = false;
       for (var onecall in calltext.chopped()) {
-        var success = false;
+        print("Looking for $onecall");
         //  First try to find a snapshot match
         try {
-          success = await matchXMLcall(onecall);
+          foundOneCall = await matchXMLcall(onecall);
         } on CallError catch (err2) {
           err = err2;
         }
         //  Then look for a code match
-        success = success || _matchCodedCall(onecall);
+        foundOneCall = foundOneCall || _matchCodedCall(onecall);
         //  Finally try a fuzzier snapshot match
         try {
-          success = await matchXMLcall(onecall,fuzzy:true);
+          foundOneCall = foundOneCall || await matchXMLcall(onecall,fuzzy:true);
         } on CallError catch (err3) {
           err = err3;
         }
-        if (success) {
+        if (foundOneCall) {
           //  Remove the words we matched, break out of
           //  the chopped loop, and continue if any words left
           calltext = calltext.replaceFirst(onecall, "").trim();
+          print("Now calltext is $calltext");
           break;
         }
-      } {
-        //  Every combination from calltext.chopped failed
-        throw err;
       }
+      //  Every combination from calltext.chopped failed
+      if (!foundOneCall) {
+        print(err);
+        throw err;
+        }
     }
     //  calltext empty - successful parse complete
     if (!noAction)
       _checkForAction(calltext);
-  }
-
-  Set<String> _xmlFilesForCall(String norm) {
-    var callfiles1 = TamUtils.callmap.containsKey(norm)
-        ? TamUtils.callmap[norm].map((e) => e.link) : List<String>();
-    var callfiles2 = callindex.containsKey(norm)
-        ? callindex[norm] : Set<String>();
-    callfiles2.addAll(callfiles1);
-    return callfiles2;
   }
 
   //  Main routine to map a call to an animation in a Taminations XML file
@@ -466,17 +484,18 @@ class CallContext {
     //  If actives != dancers, create another call context with just the actives
     var dc = ctx1.dancers.length;
     var ac = ctx1.actives.length;
-    var perimiter = false;
+    var perimeter = false;
     var exact = dc == ac;
     if (!exact) {
       //  Don't try to match unless the actives are together
       if (ctx1.actives.any((d) =>
           ctx1.inBetween(d, ctx1.actives.first).any((it) => !it.data.active)
       ))
-        perimiter = true;
+        perimeter = true;
       ctx1 = CallContext.fromContext(ctx1,dancers:ctx1.actives);
     }
     //  Try to find a match in the xml animations
+
     var callnorm = TamUtils.normalizeCall(calltext);
     var callfiles = _xmlFilesForCall(callnorm);
     //  Found xml file with call, now look through each animation
@@ -490,7 +509,7 @@ class CallContext {
       var tamlist = file.rootElement.findAllElements("tam").where((tam) =>
       tam("sequencer") != "no" &&
           //  Check for calls that must go around the centers
-          (!perimiter || tam("sequencer","").contains("perimeter") &&
+          (!perimeter || tam("sequencer","").contains("perimeter") &&
           //  Check for 4-dancer calls that do not work for 8 dancers
           (exact || !tam("sequencer","").contains("exact")) &&
           TamUtils.normalizeCall(tam("title")) == callnorm));
@@ -755,7 +774,7 @@ class CallContext {
     var call = CodedCall.fromName(callname);
     if (call != null) {
       callstack.add(call);
-      callname += call.name + " ";
+      this.callname += call.name + " ";
       return true;
     }
     return false;
@@ -981,7 +1000,7 @@ class CallContext {
   List<Dancer> inBetween(Dancer d1, Dancer d2) =>
       dancers.where((d) =>
       d != d1 && d != d2 &&
-          (d.distanceTo(d1)+d.distanceTo(d2)).isAbout(d1.distanceTo(d2)));
+          (d.distanceTo(d1)+d.distanceTo(d2)).isAbout(d1.distanceTo(d2))).toList();
 
   //  Return all the dancers to the right, in order
   List<Dancer> dancersToRight(Dancer d) =>

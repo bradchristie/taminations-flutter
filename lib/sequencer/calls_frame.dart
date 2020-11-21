@@ -31,15 +31,16 @@ class SequencerCallsFrame extends FM.StatefulWidget {
 
 class _SequencerCallsFrameState extends FM.State<SequencerCallsFrame> {
 
-  FM.TextEditingController _controller;
+  FM.TextEditingController textFieldController;
+  var focusNode = FM.FocusNode();
 
   void initState() {
     super.initState();
-    _controller = FM.TextEditingController();
+    textFieldController = FM.TextEditingController();
   }
 
   void dispose() {
-    _controller.dispose();
+    textFieldController.dispose();
     super.dispose();
   }
 
@@ -51,15 +52,21 @@ class _SequencerCallsFrameState extends FM.State<SequencerCallsFrame> {
            children: [
              FM.TextField(
                autofocus: true,
-               controller: _controller,
+               focusNode: focusNode,
+               controller: textFieldController,
                decoration: FM.InputDecoration.collapsed(
                    hintText: "Enter calls"),
                enableSuggestions: false,
                style: FM.TextStyle(fontSize: 24),
+               //  Code to run when user presses Enter
                onSubmitted: (value) {
                  setState(() {
+                   //  Process the call
                    model.loadOneCall(value);
-                   _controller.clear();
+                   //  Erase it from the the text field
+                   textFieldController.clear();
+                   //  And get the focus back for the next call
+                   focusNode.requestFocus();
                  });
                },
              ),

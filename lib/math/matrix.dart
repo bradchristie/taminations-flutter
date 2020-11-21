@@ -77,6 +77,12 @@ class Matrix extends Matrix3 {
   dynamic operator *(dynamic arg) {
     if (arg is Matrix3)
       return super.multiplied(arg).m;
+    else if (arg is Vector) {
+      return Vector(m11 * arg.x + m21 * arg.y + m31,
+          m12 * arg.x + m22 * arg.y + m32);
+    }
+    else
+      throw ArgumentError(arg);
   }
 
     @override

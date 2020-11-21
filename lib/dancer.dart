@@ -156,10 +156,14 @@ class Dancer implements Comparable<Dancer> {
     _animateComputed(-2.0);
   }
 
-  Dancer.clone(Dancer from,{String number, String numberCouple, int gender = 0}) :
-      this(number,numberCouple,gender,from.fillColor,from.tx,
-        //  Already geometrically rotated so don't do it again
-        Geometry(from._geom.geometry,0),[],from);
+  Dancer.clone(Dancer from,{String number, String numberCouple, int gender}) :
+      this(
+          number ?? from.number,
+          numberCouple ?? from.numberCouple,
+          gender ?? from.gender,
+          from.fillColor,from.tx,
+          //  Already geometrically rotated so don't do it again
+          Geometry(from._geom.geometry,0),[],from);
 
   @override
   int get hashCode => number.hashCode;
