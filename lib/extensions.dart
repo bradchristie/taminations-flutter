@@ -22,6 +22,11 @@ import 'dart:math';
 
 import 'package:xml/xml.dart';
 
+//  Not an extension but useful for
+//  var xx = somethingMightBeNull() ?? thrower(Exception("xx would be null")
+T thrower<T>(Exception e) {
+  throw e;
+}
 
 extension TamInt on int {
 

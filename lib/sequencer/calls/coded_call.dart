@@ -24,8 +24,12 @@ import '../../tam_utils.dart';
 import 'b1/around_to_a_line.dart';
 import 'b1/bend_the_line.dart';
 import 'b1/boys.dart';
+import 'b1/california_twirl.dart';
+import 'b1/centers.dart';
 import 'b1/circulate.dart';
 import 'b1/courtesy_turn.dart';
+import 'b1/dosado.dart';
+import 'b1/ends.dart';
 import 'b1/girls.dart';
 import 'b1/heads.dart';
 import 'b1/sides.dart';
@@ -46,8 +50,14 @@ abstract class CodedCall extends Call {
     "bendtheline".r: (_) => BendTheLine(),
     "boy".r: (_) => Boys(),
 
+    "californiatwirl".r: (_) => CaliforniaTwirl(),
+    "center".r: (_) => Centers(),
     "circulate".r: (_) => Circulate(),
     "courtesyturn".r: (_) => CourtesyTurn(),
+
+    "(left)?dosado".r: (name) => Dosado(name),
+
+    "end".r: (_) => Ends(),
 
     "girl".r: (_) => Girls(),
 
