@@ -296,6 +296,7 @@ class CallContext {
 
   //  Get the active dancers, e.g. for "Boys Trade" the boys are active
   List<Dancer> get actives => dancers.where( (d) => d.data.active ).toList();
+  List<Dancer> get inActives => dancers.where( (d) => !d.data.active ).toList();
 
   /// Append the result of processing this CallContext to it source.
   /// The CallContext must have been previously cloned from the source.

@@ -18,33 +18,24 @@
 
 */
 
-import '../../../dancer.dart';
-import '../../../extensions.dart';
-import '../../../math/path.dart';
 import '../../../tam_utils.dart';
 import '../../call_context.dart';
-import '../../call_error.dart';
 import '../../calls/action.dart';
+import '../../../extensions.dart';
 
-class Dosado extends Action {
+class Outsides extends Action {
 
-  Dosado(String name) : super(name);
+  Outsides(String name) : super(name);
 
   @override
-  Path performOne(Dancer d, CallContext ctx) {
-    var d2 = ctx.dancerFacing(d) ??
-        thrower(CallError("Dancer $d has no one to Dosado with."));
-    var dist = d.distanceTo(d2);
-    var dir1 = "Left";
-    var dir2 = "Right";
-    if (name.toLowerCase().startsWith("left")) {
-      dir1 = "Right";
-      dir2 = "Left";
-    }
-    return (TamUtils.getMove("Extend $dir1")..scale(dist/2.0,0.5)..changebeats(dist/2.0)) +
-        (TamUtils.getMove("Extend $dir2")..scale(1.0,0.5)) +
-        (TamUtils.getMove("Retreat $dir2")..scale(1.0,0.5)) +
-        (TamUtils.getMove("Retreat $dir1")..scale(1.0,0.5));
+  Future<void> performCall(CallContext ctx, [int stackIndex = 0]) {
+    var norm = TamUtils.normalizeCall(name);
+    var num = 4;
+    if (norm.endsWith("2")) num = 2;
+    if (norm.endsWith("6")) num = 6;
+    ctx.dancers.sortedBy((d) => -d.location.length).drop(num).forEach((d) {
+      d.data.active =  false;
+    });
   }
 
 }

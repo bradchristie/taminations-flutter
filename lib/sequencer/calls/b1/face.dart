@@ -26,25 +26,36 @@ import '../../call_context.dart';
 import '../../call_error.dart';
 import '../../calls/action.dart';
 
-class Dosado extends Action {
+//  Does Face In, Out, Left, Right
+class Face extends Action {
 
-  Dosado(String name) : super(name);
+  Face(String name) : super(name);
 
   @override
   Path performOne(Dancer d, CallContext ctx) {
-    var d2 = ctx.dancerFacing(d) ??
-        thrower(CallError("Dancer $d has no one to Dosado with."));
-    var dist = d.distanceTo(d2);
-    var dir1 = "Left";
-    var dir2 = "Right";
-    if (name.toLowerCase().startsWith("left")) {
-      dir1 = "Right";
-      dir2 = "Left";
+    var norm = TamUtils.normalizeCall(name);
+    var moveName = "";
+    if (norm == "facein") {
+      if (d.angleToOrigin.isLessThan(0))
+        moveName = "Quarter Right";
+      else if (d.angleToOrigin.isGreaterThan(0))
+        moveName = "Quarter Left";
+      else
+        throw CallError("Dancer $d does not know which way to turn.");
     }
-    return (TamUtils.getMove("Extend $dir1")..scale(dist/2.0,0.5)..changebeats(dist/2.0)) +
-        (TamUtils.getMove("Extend $dir2")..scale(1.0,0.5)) +
-        (TamUtils.getMove("Retreat $dir2")..scale(1.0,0.5)) +
-        (TamUtils.getMove("Retreat $dir1")..scale(1.0,0.5));
+    else if (norm == "faceout") {
+      if (d.angleToOrigin.isLessThan(0))
+        moveName = "Quarter Left";
+      else if (d.angleToOrigin.isGreaterThan(0))
+        moveName = "Quarter Right";
+      else
+        throw CallError("Dancer $d does not know which way to turn.");
+    }
+    else if (norm == "faceleft")
+      moveName = "Quarter Left";
+    else if (norm == "faceright")
+      moveName = "Quarter Right";
+    return TamUtils.getMove(moveName);
   }
 
 }

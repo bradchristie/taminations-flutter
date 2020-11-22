@@ -19,32 +19,34 @@
 */
 
 import '../../../dancer.dart';
-import '../../../extensions.dart';
 import '../../../math/path.dart';
 import '../../../tam_utils.dart';
 import '../../call_context.dart';
 import '../../call_error.dart';
 import '../../calls/action.dart';
 
-class Dosado extends Action {
+class HalfSashay extends Action {
 
-  Dosado(String name) : super(name);
+  HalfSashay(String name) : super(name);
 
   @override
   Path performOne(Dancer d, CallContext ctx) {
-    var d2 = ctx.dancerFacing(d) ??
-        thrower(CallError("Dancer $d has no one to Dosado with."));
-    var dist = d.distanceTo(d2);
-    var dir1 = "Left";
-    var dir2 = "Right";
-    if (name.toLowerCase().startsWith("left")) {
-      dir1 = "Right";
-      dir2 = "Left";
-    }
-    return (TamUtils.getMove("Extend $dir1")..scale(dist/2.0,0.5)..changebeats(dist/2.0)) +
-        (TamUtils.getMove("Extend $dir2")..scale(1.0,0.5)) +
-        (TamUtils.getMove("Retreat $dir2")..scale(1.0,0.5)) +
-        (TamUtils.getMove("Retreat $dir1")..scale(1.0,0.5));
+    //  Figure out who we sashay with
+    Dancer d2;
+    if (ctx.actives.contains(d.data.partner) && (d.data.beau || d.data.belle))
+      d2 = d.data.partner;
+    else if (ctx.dancerToRight(d)?.data?.active ?? false)
+      d2 = ctx.dancerToRight(d);
+    else if (ctx.dancerToLeft(d)?.data?.active ?? false)
+      d2 = ctx.dancerToLeft(d);
+    else
+      throw CallError("Dancer $d has nobody to Sashay with");
+    var move = "BackSashay Right";
+    if (name.toLowerCase().startsWith("reverse"))
+      move = d2.isLeftOf(d) ? "BackSashay Left" : "Sashay Right";
+    else if (d2.isLeftOf(d))
+      move = "Sashay Left";
+    return TamUtils.getMove(move)..scale(1,d.distanceTo(d2)/2);
   }
 
 }

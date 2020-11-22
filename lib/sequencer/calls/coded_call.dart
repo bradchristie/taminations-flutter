@@ -19,6 +19,8 @@
 */
 
 
+import 'package:taminations/sequencer/calls/b1/facing_dancers.dart';
+
 import '../../extensions.dart';
 import '../../tam_utils.dart';
 import 'b1/around_to_a_line.dart';
@@ -30,10 +32,20 @@ import 'b1/circulate.dart';
 import 'b1/courtesy_turn.dart';
 import 'b1/dosado.dart';
 import 'b1/ends.dart';
+import 'b1/face.dart';
 import 'b1/girls.dart';
+import 'b1/half_sashay.dart';
 import 'b1/heads.dart';
+import 'b1/insides.dart';
+import 'b1/leaders.dart';
+import 'b1/outsides.dart';
+import 'b1/pass_thru.dart';
+import 'b1/pull_by.dart';
+import 'b1/separate.dart';
 import 'b1/sides.dart';
+import 'b1/trailers.dart';
 import 'b1/turn_back.dart';
+import 'while.dart';
 import 'call.dart';
 
 abstract class CodedCall extends Call {
@@ -59,13 +71,33 @@ abstract class CodedCall extends Call {
 
     "end".r: (_) => Ends(),
 
+    "face(in|out|left|right)".r: (name) => Face(name),
+    "facing".r: (_) => FacingDancers(),
+
     "girl".r: (_) => Girls(),
 
+    "(reverse)?12sashay".r: (name) => HalfSashay(name),
     "head".r: (name) => Heads(name),
 
+    "center(2|4|6)".r: (name) => Insides(name),
+    "in(ner|sides?)(2|4|6)?".r: (name) => Insides(name),
+
+    "lead".r: (name) => Leaders(name),
+
+    "out(er|sides?)(2|4|6)?".r: (name) => Outsides(name),
+
+    "(left)?passthru".r: (name) => PassThru(name),
+    "(left)?pullby".r: (name) => PullBy(name),
+
+    "separate".r: (_) => Separate(),
     "side".r: (name) => Sides(name),
 
-    "u?turnback".r: (_) => TurnBack()
+    "trail".r: (name) => Trailers(name),
+
+    "u?turnback".r: (_) => TurnBack(),
+
+    "(and)?(the)?other?.+".r: (name) => While(name),
+    "while(the)?(others?)?.+".r: (name) => While(name),
 
   };
 
