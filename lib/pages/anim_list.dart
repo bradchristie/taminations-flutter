@@ -66,7 +66,7 @@ class AnimListPage extends FM.StatefulWidget {
 }
 
 class _AnimListPageState extends FM.State<AnimListPage> {
-  LevelDatum levelDatum;
+  LevelData levelDatum;
   Future<XmlDocument> docFuture;
   Future<bool> hasDifficulty;
   String link;

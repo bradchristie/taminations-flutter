@@ -108,34 +108,4 @@
     </path>
   </tam>
 
-  <tam title="Double Cross" from="Quarter Tag" formation="Quarter Tag">
-    <path>
-      <move select="Stand" hands="none" beats="3"/>
-    </path>
-    <path>
-      <move select="Cross Left" scaleX="1.5" beats="3"/>
-    </path>
-    <path>
-      <move select="Stand" hands="none" beats="3"/>
-    </path>
-    <path>
-      <move select="Cross Left" scaleX="1.5" beats="3"/>
-    </path>
-  </tam>
-
-  <tam title="Double Cross" from="Left-Hand Quarter Tag" formation="Quarter Tag LH">
-    <path>
-      <move select="Cross Right" scaleX="1.5" beats="3"/>
-    </path>
-    <path>
-      <move select="Stand" hands="none" beats="3"/>
-    </path>
-    <path>
-      <move select="Stand" hands="none" beats="3"/>
-    </path>
-    <path>
-      <move select="Cross Right" scaleX="1.5" beats="3"/>
-    </path>
-  </tam>
-
 </tamination>

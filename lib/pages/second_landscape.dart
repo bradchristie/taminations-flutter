@@ -44,7 +44,7 @@ class SecondLandscapePage extends FM.StatefulWidget {
 }
 
 class _SecondLandscapePageState extends FM.State<SecondLandscapePage> {
-  LevelDatum levelDatum;
+  LevelData levelDatum;
   String link;
   int animnum;
   FM.Widget leftChild;

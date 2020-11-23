@@ -73,6 +73,30 @@
     </path>
   </tam>
 
+  <tam title="All 4 Couples Left Touch a Quarter" group="All 4 Couples"
+       formation="Static Square">
+    <path>
+      <move select="Extend Left"/>
+      <move select="Forward 2"/>
+      <move select="Hinge Left"/>
+    </path>
+    <path>
+      <move select="Forward"/>
+      <move select="Extend Right" beats="2" scaleX="2" scaleY="2"/>
+      <move select="Hinge Left" offsetY="-1"/>
+    </path>
+    <path>
+      <move select="Extend Left"/>
+      <move select="Forward 2"/>
+      <move select="Hinge Left"/>
+    </path>
+    <path>
+      <move select="Forward"/>
+      <move select="Extend Right" beats="2" scaleX="2" scaleY="2"/>
+      <move select="Hinge Left" offsetY="-1"/>
+    </path>
+  </tam>
+
   <tam title="All 4 Couples Pass Thru" group="All 4 Couples"
        formation="Static Square">
     <path>

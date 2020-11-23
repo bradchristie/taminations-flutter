@@ -22,72 +22,65 @@ import 'package:flutter/material.dart';
 import 'package:taminations/color.dart';
 import 'package:taminations/extensions.dart';
 
-typedef _Selector = bool Function(String text);
-class LevelDatum implements Comparable<LevelDatum> {
+class LevelData implements Comparable<LevelData> {
   final String name;
   final String dir;
   final Color color;
-  final _Selector selector;
-  LevelDatum(this.name,this.dir,this.color,this.selector);
+  final  RegExp selectorString;
+  const LevelData(this.name,this.dir,this.color,this.selectorString);
+
+  bool selector(String text) => text.startsWith(selectorString);
+
+  static final BMS = LevelData("Basic and Mainstream", "bms", Color.BMS, "(b|ms)".r);
+  static final B1 = LevelData("Basic 1", "b1", Color.B1,"b1".r);
+  static final B2 = LevelData("Basic 2", "b2", Color.B2,"b2".r);
+  static final MS = LevelData("Mainstream", "ms", Color.MS,"ms".r);
+  static final PLUS = LevelData("Plus", "plus", Color.PLUS,"plus".r);
+  static final ADV = LevelData("Advanced", "adv", Color.ADV,"a".r);
+  static final A1 = LevelData("A-1", "a1", Color.A1,"a1".r);
+  static final A2 = LevelData("A-2", "a2", Color.A2,"a2".r);
+  static final CHALLENGE = LevelData("Challenge", "cha", Color.CHALLENGE,"c".r);
+  static final C1 = LevelData("C-1", "c1", Color.C1,"c1".r);
+  static final C2 = LevelData("C-2", "c2", Color.C2,"c2".r);
+  static final C3A = LevelData("C-3A", "c3a", Color.C3A, "c3a".r);
+  static final C3B = LevelData("C-3B", "c3b", Color.C3B,"c3b".r);
+  static final INDEX = LevelData("Index of All Calls", "all", Color.LIGHTGREY,"".r);
+
+  static List<LevelData> _data = [
+    LevelData.B1,
+    LevelData.B2,
+    LevelData.MS,
+    LevelData.PLUS,
+    LevelData.A1,
+    LevelData.A2,
+    LevelData.C1,
+    LevelData.C2,
+    LevelData.C3A,
+    LevelData.C3B,
+  ];
+
+  static LevelData find(String s) {
+    return _data.firstWhere((element) =>
+    element.name.toLowerCase() == s.toLowerCase() ||
+        s.startsWith(element.dir),
+        orElse: () => null
+    );
+  }
 
   //  Comparison of levels - Basic 1 is smallest, C-3A is largest
   @override
-  int compareTo(LevelDatum other) =>
+  int compareTo(LevelData other) =>
       LevelData._data.indexOf(this) - LevelData._data.indexOf(other);
 
   bool operator <(Object other) {
-    if (other is LevelDatum)
+    if (other is LevelData)
       return this.compareTo(other) < 0;
     return false;
   }
   bool operator >(Object other) {
-    if (other is LevelDatum)
+    if (other is LevelData)
       return this.compareTo(other) > 0;
     return false;
-  }
-
-}
-
-class LevelData {
-
-  static List<LevelDatum> _data = [
-    LevelDatum("Basic and Mainstream", "bms", Color.BMS,
-            (link) => link.startsWith("(b|ms)".r)),
-    LevelDatum("Basic 1", "b1", Color.B1,
-            (link) => link.startsWith("b1")),
-    LevelDatum("Basic 2", "b2", Color.B2,
-            (link) => link.startsWith("b2")),
-    LevelDatum("Mainstream", "ms", Color.MS,
-            (link) => link.startsWith("ms")),
-    LevelDatum("Plus", "plus", Color.PLUS,
-            (link) => link.startsWith("plus")),
-    LevelDatum("Advanced", "adv", Color.ADV,
-            (link) => link.startsWith("a")),
-    LevelDatum("A-1", "a1", Color.A1,
-            (link) => link.startsWith("a1")),
-    LevelDatum("A-2", "a2", Color.A2,
-            (link) => link.startsWith("a2")),
-    LevelDatum("Challenge", "cha", Color.CHALLENGE,
-            (link) => link.startsWith("c")),
-    LevelDatum("C-1", "c1", Color.C1,
-            (link) => link.startsWith("c1")),
-    LevelDatum("C-2", "c2", Color.C2,
-            (link) => link.startsWith("c1")),
-    LevelDatum("C-3A", "c3a", Color.C3A,
-            (link) => link.startsWith("c1")),
-    LevelDatum("C-3B", "c3b", Color.C3B,
-            (link) => link.startsWith("c1")),
-    LevelDatum("Index of All Calls", "all", Color.LIGHTGREY,
-            (link) => true)
-
-  ];
-
-  static LevelDatum find(String s) {
-    return _data.firstWhere((element) =>
-        element.name.toLowerCase() == s.toLowerCase() ||
-        s.startsWith(element.dir),
-        orElse: () => null
-    );
   }
 
 }

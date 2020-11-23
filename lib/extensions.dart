@@ -87,9 +87,12 @@ extension TamString on String {
   bool isBlank() => this.trim().isEmpty;
   String capitalize() => this.isEmpty ? this :
       this.substring(0,1).toUpperCase() + this.substring(1).toLowerCase();
+  //  Capitolize words except for common small words
   String capWords() => this.split("\\s+".r).map((s) => s.capitalize()).join(" ")
       .replaceAllMapped("\\b(A|An|At|And|To|The)\\b".r, (m) => m[1].toLowerCase());
   bool matches(RegExp e) => (e.stringMatch(this)?.length ?? -1) == this.length;
+  String get last => this[this.length-1];
+  int toIntOrNull() => int.tryParse(this);
 
   //  Returns an array of strings, starting with the entire string,
   //  and each subsequent string chopping one word off the end
@@ -120,6 +123,7 @@ extension TamList<E> on List<E> {
 
   List<int> get indices => asMap().keys.toList();
   E get firstOrNull => isNotEmpty ? first : null;
+  E getOrNull(int i) => (i >= 0 && i < length) ? this[i] : null;
   List<E> operator -(E e) => this.where((element) => element != e).toList();
   List<E> clone() => this.toList();
   List<E> sortedWith(int compare(E e1, E e2)) {

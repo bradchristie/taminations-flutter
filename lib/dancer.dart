@@ -168,6 +168,9 @@ class Dancer implements Comparable<Dancer> {
   @override
   int get hashCode => number.hashCode;
 
+  bool get isActive => data.active;
+  bool get isNotActive => !data.active;
+
   bool operator ==(Object other) {
     if (other is Dancer) {
       return number == other.number;

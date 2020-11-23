@@ -20,6 +20,7 @@
 
 import '../../../dancer.dart';
 import '../../../math/path.dart';
+import '../../../math/vector.dart';
 import '../../../tam_utils.dart';
 import '../../call_context.dart';
 import '../../call_error.dart';
@@ -44,9 +45,9 @@ class PassThru extends Action {
         var dist = d.distanceTo(d2);
         if (name.toLowerCase().startsWith("left")) {
           if (d2.isLeftOf(d))
-            return TamUtils.getMove("Extend Left")..scale(1.0, dist/2.0);
+            return TamUtils.getMove("Extend Left",scale:[1.0, dist/2.0].v);
         } else if (d2.isRightOf(d))
-          return TamUtils.getMove("Extend Right")..scale(1.0, dist/2.0);
+          return TamUtils.getMove("Extend Right",scale:[1.0, dist/2.0].v);
       }
     }
     //  Can only pass thru with another dancer
@@ -59,11 +60,11 @@ class PassThru extends Action {
       throw CallError("Dancers must Pass Thru with each other");
     var dist = d.distanceTo(d2);
     if (name.toLowerCase().startsWith("left"))
-      return (TamUtils.getMove("Extend Right")..scale(dist/2,0.5)) +
-             (TamUtils.getMove("Extend Left")..scale(dist/2,0.5));
+      return TamUtils.getMove("Extend Right",scale:[dist/2,0.5].v) +
+             TamUtils.getMove("Extend Left",scale:[dist/2,0.5].v);
     else
-      return (TamUtils.getMove("Extend Left")..scale(dist/2,0.5)) +
-             (TamUtils.getMove("Extend Right")..scale(dist/2,0.5));
+      return TamUtils.getMove("Extend Left",scale:[dist/2,0.5].v) +
+             TamUtils.getMove("Extend Right",scale:[dist/2,0.5].v);
   }
 
 }

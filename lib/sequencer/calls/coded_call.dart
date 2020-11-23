@@ -43,8 +43,14 @@ import 'b1/pass_thru.dart';
 import 'b1/pull_by.dart';
 import 'b1/separate.dart';
 import 'b1/sides.dart';
+import 'b1/split_circulate.dart';
+import 'b1/square_thru.dart';
 import 'b1/trailers.dart';
 import 'b1/turn_back.dart';
+import 'b1/very_centers.dart';
+import 'b1/very_ends.dart';
+import 'b2/box_the_gnat.dart';
+import 'b2/cross_run.dart';
 import 'while.dart';
 import 'call.dart';
 
@@ -61,11 +67,13 @@ abstract class CodedCall extends Call {
 
     "bendtheline".r: (_) => BendTheLine(),
     "boy".r: (_) => Boys(),
+    "boxthegnat".r: (_) => BoxTheGnat(),
 
     "californiatwirl".r: (_) => CaliforniaTwirl(),
     "center".r: (_) => Centers(),
     "circulate".r: (_) => Circulate(),
     "courtesyturn".r: (_) => CourtesyTurn(),
+    ".*crossrun".r: (name) => CrossRun(name),
 
     "(left)?dosado".r: (name) => Dosado(name),
 
@@ -91,10 +99,15 @@ abstract class CodedCall extends Call {
 
     "separate".r: (_) => Separate(),
     "side".r: (name) => Sides(name),
+    "splitcirculate".r: (_) => SplitCirculate(),
+    "(left)?squarethru(1|2|3|4|5|6|7)?(toawave)?".r: (name) => SquareThru(name),
 
     "trail".r: (name) => Trailers(name),
 
     "u?turnback".r: (_) => TurnBack(),
+
+    "verycenters".r: (_) => VeryCenters(),
+    "veryends".r: (_) => VeryEnds(),
 
     "(and)?(the)?other?.+".r: (name) => While(name),
     "while(the)?(others?)?.+".r: (name) => While(name),

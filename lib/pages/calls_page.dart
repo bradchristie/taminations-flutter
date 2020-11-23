@@ -36,7 +36,7 @@ class CallsPage extends FM.StatefulWidget {
 
 class _CallsPageState extends FM.State<CallsPage> {
 
-  LevelDatum levelDatum;
+  LevelData levelDatum;
 
   @override
   //  Get the info needed to select what calls to show, save for build
@@ -77,7 +77,7 @@ class _CallsState extends FM.State<CallsFrame> {
   final String level;
   List<CallListDatum> calls = [];
   List<CallListDatum> callsSearched = [];
-  LevelDatum levelDatum;
+  LevelData levelDatum;
   _CallsState(this.level);
   String search = "";
 

@@ -65,6 +65,10 @@ class Vector {
 
 }
 
+extension VectorFromList on List<double> {
+  Vector get v => Vector(this[0],this[1]);
+}
+
 extension Vector2Extension on Vector2 {
   Vector get v => Vector(x,y);
 }

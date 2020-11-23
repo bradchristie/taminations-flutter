@@ -47,7 +47,7 @@ class PracticePage extends FM.StatefulWidget {
 
 class _PracticePageState extends FM.State<PracticePage> {
 
-  LevelDatum levelDatum;
+  LevelData levelDatum;
   Future<XmlDocument> tamdoc;
   Future<XmlElement> tam;
   int randomAnim;

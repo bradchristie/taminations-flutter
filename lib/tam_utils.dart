@@ -21,11 +21,14 @@
 import 'dart:async' show Future;
 import 'dart:math';
 import 'dart:typed_data';
+
 import 'package:flutter/services.dart' show rootBundle;
 import 'package:xml/xml.dart';
+
 import 'extensions.dart';
 import 'math/movement.dart';
 import 'math/path.dart';
+import 'math/vector.dart';
 
 class CallListDatum {
   final String title;
@@ -245,7 +248,23 @@ class TamUtils {
   }
 
   ///   Gets a named path (move) from the file of moves
-  static Path getMove(String name) => Path(_translate(_moves[name]));
+  static Path getMove(String name, {
+    Vector scale,
+    Vector skew,
+    int hands,
+    double beats
+  }) {
+    var path = Path(_translate(_moves[name]));
+    if (scale != null)
+      path.scale(scale.x,scale.y);
+    if (skew != null)
+      path.skew(skew.x,skew.y);
+    if (hands != null)
+      path.changehands(hands);
+    if (beats != null)
+      path.changebeats(beats);
+    return path;
+  }
 
 
 

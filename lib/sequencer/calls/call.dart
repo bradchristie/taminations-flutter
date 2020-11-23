@@ -24,7 +24,7 @@ import '../call_context.dart';
 abstract class Call {
 
   final String name;
-  var level = LevelData.find("b1");
+  var level = LevelData.B1;
 
   Call(this.name);
   Future<void> performCall(CallContext ctx, [int stackIndex=0]) => Future<void>.value();

@@ -222,7 +222,7 @@ class CallContext {
 
   List<Dancer> dancers;
   String callname = "";
-  LevelDatum level = LevelData.find("b1");
+  LevelData level = LevelData.find("b1");
   List<Call> callstack = [];
   List<List<Dancer>> groups = [];
   String get groupstr => groups.map((e) => e.length).join();
@@ -408,7 +408,10 @@ class CallContext {
   String _cleanupCall(String calltext) {
     //  Clean up any whitespace
     return calltext.replaceAll("\\s+".r, " ")
+    //  Standardize capitalization
+        .capWords()
     //  Make sure Trade Circulate is not read as Trade and Circulate
+    //  TODO do this someplace better
         .replaceAll("trade circulate".ri, "tradecirculate");
   }
 
