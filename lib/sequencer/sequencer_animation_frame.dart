@@ -20,7 +20,9 @@
 
 
 import 'package:flutter/material.dart' as FM;
+import 'package:provider/provider.dart' as PP;
 import 'package:taminations/pages/animation_page.dart';
+import 'sequencer_model.dart';
 
 import '../button.dart';
 
@@ -38,7 +40,10 @@ class _SequencerAnimationFrameState extends FM.State<SequencerAnimationFrame> {
     return FM.Column(
       children: [
         FM.Expanded(
-            child:AnimationFrame(startFormation: "Static Square")
+            child:PP.Consumer<SequencerModel>(
+                builder: (context, settings, child) {
+                  return AnimationFrame(startFormation: "Static Square");
+                })
         ),
         FM.Row(
           children: [

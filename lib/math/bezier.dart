@@ -19,10 +19,12 @@
 */
 
 import 'dart:math';
+
 import "package:bezier/bezier.dart" hide Bezier;
-import 'vector.dart';
-import 'matrix.dart';
+
 import '../extensions.dart';
+import 'matrix.dart';
+import 'vector.dart';
 
 class Bezier extends CubicBezier {
 

@@ -167,6 +167,12 @@ extension TamList<E> on List<E> {
 
 }
 
+extension TamDoubleList on List<double> {
+
+  double sum() => this.fold(0.0, (a, b) => a+b);
+
+}
+
 extension TamXmlElement on XmlElement {
 
   String call(String name, [String dfault]) => this.getAttribute(name) ?? dfault;

@@ -19,11 +19,12 @@
 */
 
 import 'package:flutter/material.dart' as FM;
-import 'package:taminations/dance_animation_painter.dart';
-import 'package:taminations/sequencer/call_error.dart';
-import 'package:taminations/tam_utils.dart';
+
+import '../dance_animation_painter.dart';
 import '../extensions.dart';
+import '../tam_utils.dart';
 import 'call_context.dart';
+import 'call_error.dart';
 
 class SequencerModel extends FM.ChangeNotifier {
 
@@ -61,7 +62,21 @@ class SequencerModel extends FM.ChangeNotifier {
   }
 
   void undoLastCall() {
-
+    if (callNames.isNotEmpty) {
+      var lastCall = callNames.last;
+      callNames.removeLast();
+      callBeats.removeLast();
+      if (!_isComment(lastCall)) {
+        var totalBeats = callBeats.sum();
+        for (var d in animation.dancers) {
+          while (d.path.beats > totalBeats)
+            d.path.pop();
+        }
+      }
+      animation.recalculate();
+      _updateParts();
+      notifyListeners();
+    }
   }
 
   Future<void> _interpretOneCall(String call) async {

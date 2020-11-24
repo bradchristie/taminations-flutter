@@ -98,6 +98,7 @@ class DanceAnimationPainter extends ChangeNotifier implements CustomPainter  {
 
   void setGridVisibility(bool show) {
     _showGrid = show;
+
   }
 
   void setNumbers(String value) {

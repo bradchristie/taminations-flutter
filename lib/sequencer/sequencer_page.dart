@@ -26,6 +26,7 @@ import 'package:taminations/sequencer/sequencer_model.dart';
 import '../title_bar.dart';
 import 'sequencer_animation_frame.dart';
 import 'calls_frame.dart';
+import '../request.dart';
 
 class SequencerPage extends FM.StatefulWidget {
   @override
@@ -54,12 +55,22 @@ class _SequencerPageState extends FM.State<SequencerPage> {
               preferredSize: FM.Size.fromHeight(56.0),
               child: TitleBar(title: "Sequencer")
           ),
-          body: FM.Row(
-            children: [
-              FM.Expanded(child: SequencerCallsFrame()),
-              FM.Expanded(child: SequencerAnimationFrame()),
-              FM.Expanded(child: WebFrame("info/sequencer.html"))
-            ],
+          body: RequestHandler(
+            handler: (Request request) {
+              if (request("button") == "Undo")
+                setState(() {
+                  model.undoLastCall();
+                });
+              if (request("button") == "Reset")
+                model.reset();
+            },
+            child: FM.Row(
+              children: [
+                FM.Expanded(child: SequencerCallsFrame()),
+                FM.Expanded(child: SequencerAnimationFrame()),
+                FM.Expanded(child: WebFrame("info/sequencer.html"))
+              ],
+            ),
           )
       ),
     );

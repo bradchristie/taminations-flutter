@@ -252,7 +252,8 @@ class TamUtils {
     Vector scale,
     Vector skew,
     int hands,
-    double beats
+    double beats,
+    bool reflect
   }) {
     var path = Path(_translate(_moves[name]));
     if (scale != null)
@@ -263,6 +264,8 @@ class TamUtils {
       path.changehands(hands);
     if (beats != null)
       path.changebeats(beats);
+    if ((reflect ?? false))
+      path.reflect();
     return path;
   }
 

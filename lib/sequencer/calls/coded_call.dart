@@ -51,6 +51,12 @@ import 'b1/very_centers.dart';
 import 'b1/very_ends.dart';
 import 'b2/box_the_gnat.dart';
 import 'b2/cross_run.dart';
+import 'b2/run.dart';
+import 'b2/sweep_a_quarter.dart';
+import 'b2/touch_a_quarter.dart';
+import 'b2/trade.dart';
+import 'b2/wheel_around.dart';
+import 'b2/zoom.dart';
 import 'while.dart';
 import 'call.dart';
 
@@ -97,11 +103,16 @@ abstract class CodedCall extends Call {
     "(left)?passthru".r: (name) => PassThru(name),
     "(left)?pullby".r: (name) => PullBy(name),
 
+    "run(left|right)?".r: (name) => Run(name),
+
     "separate".r: (_) => Separate(),
     "side".r: (name) => Sides(name),
     "splitcirculate".r: (_) => SplitCirculate(),
     "(left)?squarethru(1|2|3|4|5|6|7)?(toawave)?".r: (name) => SquareThru(name),
+    "sweep14".r: (_) => SweepAQuarter(),
 
+    "(left)?touch14".r: (name) => TouchAQuarter(name),
+    "trade".r: (_) => Trade(),
     "trail".r: (name) => Trailers(name),
 
     "u?turnback".r: (_) => TurnBack(),
@@ -109,8 +120,11 @@ abstract class CodedCall extends Call {
     "verycenters".r: (_) => VeryCenters(),
     "veryends".r: (_) => VeryEnds(),
 
+    "(reverse)?wheelaround".r: (name) => WheelAround(name),
     "(and)?(the)?other?.+".r: (name) => While(name),
     "while(the)?(others?)?.+".r: (name) => While(name),
+
+    "zing|zoom".r:(name) => Zoom(name)
 
   };
 

@@ -62,7 +62,10 @@ class _SequencerCallsFrameState extends FM.State<SequencerCallsFrame> {
                onSubmitted: (value) {
                  setState(() {
                    //  Process the call
-                   model.loadOneCall(value);
+                   if (value.toLowerCase().trim() == "undo")
+                     model.undoLastCall();
+                   else
+                     model.loadOneCall(value);
                    //  Erase it from the the text field
                    textFieldController.clear();
                    //  And get the focus back for the next call

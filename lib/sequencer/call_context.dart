@@ -377,12 +377,15 @@ class CallContext {
     performCall();
   }
 
+  Future<void> applyCall(String call) async {
+    var ctx2 = CallContext.fromContext(this);
+    await ctx2.interpretCall(call);
+    await ctx2.performCall();
+    ctx2.appendToSource();
+  }
   Future<void> applyCalls(List<String> calls) async {
     for (var call in calls) {
-      var ctx2 = CallContext.fromContext(this);
-      await ctx2.interpretCall(call);
-      await ctx2.performCall();
-      ctx2.appendToSource();
+      await applyCall(call);
     }
   }
 
