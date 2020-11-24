@@ -18,22 +18,25 @@
 
 */
 
-import '../call_context.dart';
-import 'action.dart';
 
-abstract class ActivesOnlyAction extends Action {
+import '../../../tam_utils.dart';
+import '../../call_context.dart';
+import '../action.dart';
+import '../../../extensions.dart';
 
-  ActivesOnlyAction(String name) : super(name);
+class Insides extends Action {
+
+  Insides(String name) : super(name);
 
   @override
-  Future<void> perform(CallContext ctx, [int stackIndex=0]) async {
-    if (ctx.actives.length < ctx.dancers.length) {
-      ctx.subContext(ctx.actives, (ctx2) async {
-        ctx2.analyze();
-        await perform(ctx2,stackIndex);
-      });
-    } else
-      await super.perform(ctx,stackIndex);
+  Future<void> performCall(CallContext ctx, [int stackIndex = 0]) async {
+    var norm = TamUtils.normalizeCall(name);
+    var num = 4;
+    if (norm.endsWith("2")) num = 2;
+    if (norm.endsWith("6")) num = 6;
+    ctx.dancers.sortedBy((d) => d.location.length).drop(num).forEach((d) {
+      d.data.active =  false;
+    });
   }
 
 }

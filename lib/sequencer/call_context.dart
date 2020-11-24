@@ -333,11 +333,11 @@ class CallContext {
   //  Apply a function as a method of the new CallContext.
   //  Then transfer any new calls from the created CallContext to this CallContext.
   //  Return true if anything new was added.
-  bool subContext(List<Dancer> dancers, Function(CallContext) block) {
+  Future<bool> subContext(List<Dancer> dancers, Future<void> Function(CallContext) block) async {
     if (dancers == null)
       dancers = this.dancers;
     var ctx = CallContext.fromDancers(dancers.inOrder());
-    block(ctx);
+    await block(ctx);
     return ctx._appendTo(this);
   }
 

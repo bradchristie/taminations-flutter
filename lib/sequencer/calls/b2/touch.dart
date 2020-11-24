@@ -18,15 +18,29 @@
 
 */
 
+import '../action.dart';
+import '../../../level_data.dart';
+import '../../../math/path.dart';
 import '../../../dancer.dart';
 import '../../call_context.dart';
-import '../fliter_actives.dart';
+import '../../../tam_utils.dart';
+import '../../../math/vector.dart';
 
-class Girls extends FilterActives {
-
-  Girls() : super("Girls");
+class Touch extends Action {
 
   @override
-  bool isActive(Dancer d, [CallContext ctx]) => d.gender == Gender.GIRL;
+  var level = LevelData.B2;
+  Touch(String name) : super(name);
+
+  @override
+  Path performOne(Dancer d, CallContext ctx) {
+    var d2 = ctx.dancerFacing(d);
+    if (d2 == null)
+      return ctx.dancerCannotPerform(d,name);
+    var dist = d.distanceTo(d2);
+    var dir = name.startsWith("Left") ? "Right" : "Left";
+    //  Touch to handhold in between wide and narrow
+    return TamUtils.getMove("Extend $dir",scale:[dist/2,0.75].v);
+  }
 
 }

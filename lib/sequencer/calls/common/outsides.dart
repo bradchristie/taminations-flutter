@@ -18,15 +18,24 @@
 
 */
 
-import '../../../dancer.dart';
+import '../../../tam_utils.dart';
 import '../../call_context.dart';
-import '../fliter_actives.dart';
+import '../action.dart';
+import '../../../extensions.dart';
 
-class FacingDancers extends FilterActives {
+class Outsides extends Action {
 
-  FacingDancers() : super("Facing Dancers");
+  Outsides(String name) : super(name);
 
   @override
-  bool isActive(Dancer d, [CallContext ctx]) => ctx.dancerFacing(d) != null;
+  Future<void> performCall(CallContext ctx, [int stackIndex = 0]) {
+    var norm = TamUtils.normalizeCall(name);
+    var num = 4;
+    if (norm.endsWith("2")) num = 2;
+    if (norm.endsWith("6")) num = 6;
+    ctx.dancers.sortedBy((d) => -d.location.length).drop(num).forEach((d) {
+      d.data.active =  false;
+    });
+  }
 
 }

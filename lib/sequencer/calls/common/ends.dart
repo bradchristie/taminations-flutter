@@ -20,13 +20,13 @@
 
 import '../../../dancer.dart';
 import '../../call_context.dart';
-import '../fliter_actives.dart';
+import 'fliter_actives.dart';
 
-class Leaders extends FilterActives {
+class Ends extends FilterActives {
 
-  Leaders(name) : super(name);
+  Ends() : super("Ends");
 
   @override
-  bool isActive(Dancer d, [CallContext ctx]) => d.data.leader;
+  bool isActive(Dancer d, [CallContext ctx]) => d.data.end;
 
 }

@@ -18,34 +18,23 @@
 
 */
 
-import '../common/actives_only_action.dart';
-import '../../../level_data.dart';
-import '../../../math/path.dart';
 import '../../../dancer.dart';
+import '../../../math/path.dart';
+import '../../../tam_utils.dart';
 import '../../call_context.dart';
 import '../../call_error.dart';
-import '../../../extensions.dart';
-import '../../../tam_utils.dart';
-import '../../../math/vector.dart';
+import '../action.dart';
 
-class WheelAround extends ActivesOnlyAction {
+class BackAway extends Action {
 
-  @override
-  var level = LevelData.B2;
-  WheelAround(String name) : super(name);
+  BackAway() : super("Back Away");
 
   @override
   Path performOne(Dancer d, CallContext ctx) {
-    var d2 = d.data.partner
-        ?? thrower(CallError("Dancer $d must Wheel Around with partner"));
-    var dist = d.distanceTo(d2);
-    String move;
-    if (name.startsWith("Reverse"))
-      move = d2.isRightOf(d) ? "Beau Reverse Wheel" : "Belle Reverse Wheel";
-    else
-      move = d2.isRightOf(d) ? "Beau Wheel" : "Belle Wheel";
-    return TamUtils.getMove(move,
-        scale:[dist/2,dist/2].v);
+    if (ctx.dancersInBack(d).length == 0)
+      //  TODO hold hands with partner?
+      return TamUtils.getMove("Back 2");
+    throw CallError("Dancer $d cannot Back Away");
   }
 
 }

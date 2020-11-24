@@ -18,15 +18,10 @@
 
 */
 
-import '../../../dancer.dart';
-import '../../call_context.dart';
-import '../fliter_actives.dart';
+import '../action.dart';
 
-class VeryCenters extends FilterActives {
+class Nothing extends Action {
 
-  VeryCenters() : super("Very Ceners");
-
-  @override
-  bool isActive(Dancer d, [CallContext ctx]) => d.data.verycenter;
+  Nothing() : super("Nothing");
 
 }

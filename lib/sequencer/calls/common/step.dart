@@ -18,15 +18,19 @@
 
 */
 
+import '../action.dart';
+import '../../../math/path.dart';
 import '../../../dancer.dart';
 import '../../call_context.dart';
-import '../fliter_actives.dart';
+import '../../../tam_utils.dart';
 
-class Ends extends FilterActives {
+class Step extends Action {
 
-  Ends() : super("Ends");
+  Step() : super("Step");
 
   @override
-  bool isActive(Dancer d, [CallContext ctx]) => d.data.end;
+  Path performOne(Dancer d, CallContext ctx) {
+    return TamUtils.getMove("Forward 2");
+  }
 
 }

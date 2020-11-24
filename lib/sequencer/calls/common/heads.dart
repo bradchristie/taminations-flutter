@@ -18,22 +18,19 @@
 
 */
 
-import 'dart:math';
-
 import '../../../dancer.dart';
+import '../../../extensions.dart';
 import '../../call_context.dart';
-import '../fliter_actives.dart';
+import 'fliter_actives.dart';
 
-class VeryEnds extends FilterActives {
+class Heads extends FilterActives {
 
-  VeryEnds() : super("Very Ends");
+  Heads(String name) : super(name);
 
   @override
-  bool isActive(Dancer d, [CallContext ctx]) {
-    var leftCount = ctx.dancersToLeft(d).length;
-    var rightCount = ctx.dancersToRight(d).length;
-    return min(leftCount,rightCount) == 0 &&
-           max(leftCount,rightCount) >= 5;
-  }
+  bool isActive(Dancer d, [CallContext ctx]) =>
+      ctx.isSquare()
+          ? d.location.x.abs().isAbout(3.0)
+          : d.numberCouple=="1" || d.numberCouple=="3";
 
 }

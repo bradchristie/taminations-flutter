@@ -18,15 +18,17 @@
 
 */
 
-import '../../../dancer.dart';
+import '../coded_call.dart';
 import '../../call_context.dart';
-import '../fliter_actives.dart';
 
-class Trailers extends FilterActives {
+class ThoseWhoCan extends CodedCall {
 
-  Trailers(name) : super(name);
+  ThoseWhoCan() : super("Those Who Can");
 
   @override
-  bool isActive(Dancer d, [CallContext ctx]) => d.data.trailer;
+  Future<void> performCall(CallContext ctx, [int stackIndex=0]) async {
+    ctx.thoseWhoCanOnly();
+  }
+
 
 }

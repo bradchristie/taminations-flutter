@@ -18,19 +18,22 @@
 
 */
 
-import '../../../dancer.dart';
-import '../../../extensions.dart';
 import '../../call_context.dart';
-import '../fliter_actives.dart';
+import '../action.dart';
 
-class Heads extends FilterActives {
+abstract class ActivesOnlyAction extends Action {
 
-  Heads(String name) : super(name);
+  ActivesOnlyAction(String name) : super(name);
 
   @override
-  bool isActive(Dancer d, [CallContext ctx]) =>
-      ctx.isSquare()
-          ? d.location.x.abs().isAbout(3.0)
-          : d.numberCouple=="1" || d.numberCouple=="3";
+  Future<void> perform(CallContext ctx, [int stackIndex=0]) async {
+    if (ctx.actives.length < ctx.dancers.length) {
+      await ctx.subContext(ctx.actives, (ctx2) async {
+        ctx2.analyze();
+        await perform(ctx2,stackIndex);
+      });
+    } else
+      await super.perform(ctx,stackIndex);
+  }
 
 }

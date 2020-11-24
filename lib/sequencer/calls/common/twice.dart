@@ -18,15 +18,25 @@
 
 */
 
-import '../../../dancer.dart';
+import '../coded_call.dart';
 import '../../call_context.dart';
-import '../fliter_actives.dart';
+import '../../call_error.dart';
 
-class Boys extends FilterActives {
+class Twice extends CodedCall {
 
-  Boys() : super("Boys");
+  Twice(String name) : super(name);
 
   @override
-  bool isActive(Dancer d, [CallContext ctx]) => d.gender == Gender.BOY;
+  Future<void> performCall(CallContext ctx, [int stackIndex=0]) async {
+    if (ctx.callstack.length < 2)
+      throw CallError("Twice what?");
+    //  At this point the call has already been done once
+    //  Make sure everyone waits to finish the first time
+    ctx.extendPaths();
+    //  So just do it again
+    var prevCall = ctx.callstack.take(ctx.callstack.length-1)
+        .map((it) => it.name).join(" ");
+    await ctx.applyCall(prevCall);
+  }
 
 }

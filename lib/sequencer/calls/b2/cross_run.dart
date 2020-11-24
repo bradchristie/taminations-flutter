@@ -24,7 +24,7 @@ import '../../../math/vector.dart';
 import '../../../tam_utils.dart';
 import '../../call_context.dart';
 import '../../call_error.dart';
-import '../actives_only_action.dart';
+import '../common/actives_only_action.dart';
 
 class CrossRun extends ActivesOnlyAction {
 

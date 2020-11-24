@@ -19,18 +19,14 @@
 */
 
 import '../../../dancer.dart';
-import '../../../extensions.dart';
 import '../../call_context.dart';
-import '../fliter_actives.dart';
+import 'fliter_actives.dart';
 
-class Sides extends FilterActives {
+class VeryCenters extends FilterActives {
 
-  Sides(String name) : super(name);
+  VeryCenters() : super("Very Ceners");
 
   @override
-  bool isActive(Dancer d, [CallContext ctx]) =>
-      ctx.isSquare()
-          ? d.location.y.abs().isAbout(3.0)
-          : d.numberCouple=="2" || d.numberCouple=="4";
+  bool isActive(Dancer d, [CallContext ctx]) => d.data.verycenter;
 
 }

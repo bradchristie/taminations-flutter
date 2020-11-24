@@ -26,7 +26,7 @@ import '../../../math/path.dart';
 import '../../../math/vector.dart';
 import '../../../tam_utils.dart';
 import '../../call_context.dart';
-import '../actives_only_action.dart';
+import '../common/actives_only_action.dart';
 
 class BoxTheGnat extends ActivesOnlyAction {
 

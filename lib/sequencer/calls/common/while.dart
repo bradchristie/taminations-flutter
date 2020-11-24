@@ -18,9 +18,9 @@
 
 */
 
-import '../call_context.dart';
-import '../calls/action.dart';
-import '../../extensions.dart';
+import '../../call_context.dart';
+import '../action.dart';
+import '../../../extensions.dart';
 
 class While extends Action {
 

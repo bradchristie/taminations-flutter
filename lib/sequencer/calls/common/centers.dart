@@ -18,25 +18,15 @@
 
 */
 
-
-import '../../../tam_utils.dart';
+import '../../../dancer.dart';
 import '../../call_context.dart';
-import '../../calls/action.dart';
-import '../../../extensions.dart';
+import 'fliter_actives.dart';
 
-class Insides extends Action {
+class Centers extends FilterActives {
 
-  Insides(String name) : super(name);
+  Centers() : super("Centers");
 
   @override
-  Future<void> performCall(CallContext ctx, [int stackIndex = 0]) async {
-    var norm = TamUtils.normalizeCall(name);
-    var num = 4;
-    if (norm.endsWith("2")) num = 2;
-    if (norm.endsWith("6")) num = 6;
-    ctx.dancers.sortedBy((d) => d.location.length).drop(num).forEach((d) {
-      d.data.active =  false;
-    });
-  }
+  bool isActive(Dancer d, [CallContext ctx]) => d.data.center;
 
 }

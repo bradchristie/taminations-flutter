@@ -18,47 +18,57 @@
 
 */
 
-
-import 'package:taminations/sequencer/calls/b1/facing_dancers.dart';
-
 import '../../extensions.dart';
 import '../../tam_utils.dart';
 import 'b1/around_to_a_line.dart';
 import 'b1/bend_the_line.dart';
-import 'b1/boys.dart';
 import 'b1/california_twirl.dart';
-import 'b1/centers.dart';
 import 'b1/circulate.dart';
 import 'b1/courtesy_turn.dart';
 import 'b1/dosado.dart';
-import 'b1/ends.dart';
 import 'b1/face.dart';
-import 'b1/girls.dart';
 import 'b1/half_sashay.dart';
-import 'b1/heads.dart';
-import 'b1/insides.dart';
-import 'b1/leaders.dart';
-import 'b1/outsides.dart';
 import 'b1/pass_thru.dart';
 import 'b1/pull_by.dart';
 import 'b1/separate.dart';
-import 'b1/sides.dart';
 import 'b1/split_circulate.dart';
 import 'b1/square_thru.dart';
-import 'b1/trailers.dart';
 import 'b1/turn_back.dart';
-import 'b1/very_centers.dart';
-import 'b1/very_ends.dart';
 import 'b2/box_the_gnat.dart';
 import 'b2/cross_run.dart';
 import 'b2/run.dart';
 import 'b2/sweep_a_quarter.dart';
+import 'b2/touch.dart';
 import 'b2/touch_a_quarter.dart';
 import 'b2/trade.dart';
 import 'b2/wheel_around.dart';
 import 'b2/zoom.dart';
-import 'while.dart';
 import 'call.dart';
+import 'common/adjust.dart';
+import 'common/and.dart';
+import 'common/back_away.dart';
+import 'common/boys.dart';
+import 'common/centers.dart';
+import 'common/ends.dart';
+import 'common/facing_dancers.dart';
+import 'common/fraction.dart';
+import 'common/girls.dart';
+import 'common/heads.dart';
+import 'common/insides.dart';
+import 'common/leaders.dart';
+import 'common/nothing.dart';
+import 'common/one_and_a_half.dart';
+import 'common/outsides.dart';
+import 'common/sides.dart';
+import 'common/step.dart';
+import 'common/trailers.dart';
+import 'common/twice.dart';
+import 'common/very_centers.dart';
+import 'common/very_ends.dart';
+import 'common/while.dart';
+import 'ms/cast_off_three_quarters.dart';
+import 'ms/cross_fold.dart';
+import 'ms/fold.dart';
 
 abstract class CodedCall extends Call {
 
@@ -66,19 +76,24 @@ abstract class CodedCall extends Call {
 
   static Map<RegExp, CodedCall Function(String norm)> normCallMap = {
 
+    "adjustto.*".r: (name) => Adjust(name),
+    "and".r: (_) => And(),
     "around1andcomeintothemiddle".r: (_) =>
         AroundToALine("Around One and Come Into the Middle"),
     "around1toaline".r: (_) => AroundToALine("Around One to a Line"),
     "around2toaline".r: (_) => AroundToALine("Around Two to a Line"),
 
+    "backaway".r: (_) => BackAway(),
     "bendtheline".r: (_) => BendTheLine(),
     "boy".r: (_) => Boys(),
     "boxthegnat".r: (_) => BoxTheGnat(),
 
     "californiatwirl".r: (_) => CaliforniaTwirl(),
+    "castoff34".r: (_) => CastOffThreeQuarters(),
     "center".r: (_) => Centers(),
     "circulate".r: (_) => Circulate(),
     "courtesyturn".r: (_) => CourtesyTurn(),
+    "crossfold".r: (_) => CrossFold(),
     ".*crossrun".r: (name) => CrossRun(name),
 
     "(left)?dosado".r: (name) => Dosado(name),
@@ -87,6 +102,8 @@ abstract class CodedCall extends Call {
 
     "face(in|out|left|right)".r: (name) => Face(name),
     "facing".r: (_) => FacingDancers(),
+    "fold".r: (_) => Fold(),
+    "\\d\\d".r: (name) => Fraction(name),
 
     "girl".r: (_) => Girls(),
 
@@ -98,6 +115,9 @@ abstract class CodedCall extends Call {
 
     "lead".r: (name) => Leaders(name),
 
+    "nothing".r: (_) => Nothing(),
+
+    "112".r: (name) => OneAndaHalf(name),
     "out(er|sides?)(2|4|6)?".r: (name) => Outsides(name),
 
     "(left)?passthru".r: (name) => PassThru(name),
@@ -109,11 +129,14 @@ abstract class CodedCall extends Call {
     "side".r: (name) => Sides(name),
     "splitcirculate".r: (_) => SplitCirculate(),
     "(left)?squarethru(1|2|3|4|5|6|7)?(toawave)?".r: (name) => SquareThru(name),
+    "step".r: (_) => Step(),
     "sweep14".r: (_) => SweepAQuarter(),
 
+    "(left)?touch".r: (name) => Touch(name),
     "(left)?touch14".r: (name) => TouchAQuarter(name),
     "trade".r: (_) => Trade(),
     "trail".r: (name) => Trailers(name),
+    "(go)?twice".r: (name) => Twice(name),
 
     "u?turnback".r: (_) => TurnBack(),
 
