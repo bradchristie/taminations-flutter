@@ -9,12 +9,24 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import 'package:taminations/main.dart';
+import 'package:taminations/tam_utils.dart';
+
 
 void main() {
   testWidgets('Counter increments smoke test', (WidgetTester tester) async {
-    // Build our app and trigger a frame.
-    await tester.pumpWidget(TaminationsApp());
 
+    await tester.runAsync(() async {
+
+      await TamUtils.init();
+      await tester.pumpWidget(TaminationsApp());
+      await tester.pumpAndSettle();
+      expect(find.byKey(Key("Sequencer")),findsOneWidget);
+      await tester.tap(find.byKey(Key("Sequencer")));
+      await tester.pumpAndSettle();
+      await tester.tap(find.byKey(Key("Sequencer Input")));
+    });
+
+    /*
     // Verify that our counter starts at 0.
     expect(find.text('0'), findsOneWidget);
     expect(find.text('1'), findsNothing);
@@ -26,5 +38,7 @@ void main() {
     // Verify that our counter has incremented.
     expect(find.text('0'), findsNothing);
     expect(find.text('1'), findsOneWidget);
+
+     */
   });
 }

@@ -17,29 +17,15 @@
   along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 */
+export 'dart:math';
 
-import '../common.dart';
-
-class BendTheLine extends Action {
-
-  BendTheLine() : super("Bend the Line");
-
-  @override
-  Path performOne(Dancer d, CallContext ctx) {
-    if (!ctx.isInCouple(d))
-      throw CallError("Only couples can Bend the Line");
-    if (d.data.beau) {
-      if (d.isCenterRight)
-        return TamUtils.getMove("Hinge Right");
-      else if (d.isCenterLeft)
-        return TamUtils.getMove("BackHinge Right");
-    } else if (d.data.belle) {
-      if (d.isCenterRight)
-        return TamUtils.getMove("BackHinge Left");
-      else if (d.isCenterLeft)
-        return TamUtils.getMove("Hinge Left");
-    }
-    throw CallError("Cannot figure out how to Bend the Line");
-  }
-
-}
+export 'tam_utils.dart';
+export 'extensions.dart';
+export 'dancer.dart';
+export 'color.dart';
+export 'geometry.dart';
+export 'level_data.dart';
+export 'math/vector.dart';
+export 'math/matrix.dart';
+export 'math/path.dart';
+export 'math/movement.dart';

@@ -48,17 +48,17 @@ class SequencerModel extends FM.ChangeNotifier {
     notifyListeners();
   }
 
-  void loadOneCall(String call) {
+  void loadOneCall(String call) async {
     errorString = "";
-    _interpretOneCall(_replaceAbbreviations(call)).whenComplete(() {
+    try {
+      await _interpretOneCall(_replaceAbbreviations(call));
       //  TODO Highlight new call and start its animation
       notifyListeners();
-    }).catchError((e) {
-      if (e is CallError)
-        errorString = e.toString();
-      else
-        throw e;
-    });
+    } on CallError catch(e) {
+      errorString = e.toString();
+      print("errorString: $errorString");
+      notifyListeners();
+    }
   }
 
   void undoLastCall() {

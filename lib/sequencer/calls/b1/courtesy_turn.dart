@@ -18,8 +18,7 @@
 
 */
 
-import '../../call_context.dart';
-import '../action.dart';
+import '../common.dart';
 
 class CourtesyTurn extends Action {
 

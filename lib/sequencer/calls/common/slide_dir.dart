@@ -18,27 +18,31 @@
 
 */
 
-import '../common.dart';
+import '../action.dart';
+import '../../../math/path.dart';
+import '../../../dancer.dart';
+import '../../call_context.dart';
+import '../../call_error.dart';
+import '../../../tam_utils.dart';
 
-class Dosado extends Action {
+class SlideDir extends Action {
 
-  Dosado(String name) : super(name);
+  SlideDir(String name) : super(name);
 
   @override
   Path performOne(Dancer d, CallContext ctx) {
-    var d2 = ctx.dancerFacing(d) ??
-        thrower(CallError("Dancer $d has no one to Dosado with."));
-    var dist = d.distanceTo(d2);
-    var dir1 = "Left";
-    var dir2 = "Right";
-    if (name.toLowerCase().startsWith("left")) {
-      dir1 = "Right";
-      dir2 = "Left";
-    }
-    return (TamUtils.getMove("Extend $dir1")..scale(dist/2.0,0.5)..changebeats(dist/2.0)) +
-        (TamUtils.getMove("Extend $dir2")..scale(1.0,0.5)) +
-        (TamUtils.getMove("Retreat $dir2")..scale(1.0,0.5)) +
-        (TamUtils.getMove("Retreat $dir1")..scale(1.0,0.5));
+    String dir;
+    if (name == "Slide Left")
+      dir = "Left";
+    else if (name == "Slide Right")
+      dir = "Right";
+    else if (name == "Slide In")
+      dir = d.isCenterLeft ? "Left" : "Right";
+    else if (name == "Slide Out")
+      dir = d.isCenterLeft ? "Right" : "Left";
+    else
+      throw CallError("Slide how?");
+    return TamUtils.getMove("Dodge $dir");
   }
 
 }

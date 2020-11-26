@@ -18,11 +18,7 @@
 
 */
 
-import '../../../tam_utils.dart';
-import '../../call_context.dart';
-import '../../call_error.dart';
-import '../../calls/action.dart';
-import '../../../extensions.dart';
+import '../common.dart';
 
 class Separate extends Action {
 

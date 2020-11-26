@@ -165,6 +165,11 @@ extension TamList<E> on List<E> {
     return best;
   }
 
+  void forEachIndexed(void f(int i,E item)) {
+    for (var i=0; i<length; i++)
+      f(i,this[i]);
+  }
+
 }
 
 extension TamDoubleList on List<double> {

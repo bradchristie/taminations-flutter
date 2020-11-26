@@ -18,28 +18,14 @@
 
 */
 
-import '../common.dart';
+import 'package:flutter_driver/driver_extension.dart';
+import 'package:taminations/main.dart' as taminations;
 
-class BendTheLine extends Action {
+void main() {
+  // This line enables the extension.
+  enableFlutterDriverExtension();
 
-  BendTheLine() : super("Bend the Line");
-
-  @override
-  Path performOne(Dancer d, CallContext ctx) {
-    if (!ctx.isInCouple(d))
-      throw CallError("Only couples can Bend the Line");
-    if (d.data.beau) {
-      if (d.isCenterRight)
-        return TamUtils.getMove("Hinge Right");
-      else if (d.isCenterLeft)
-        return TamUtils.getMove("BackHinge Right");
-    } else if (d.data.belle) {
-      if (d.isCenterRight)
-        return TamUtils.getMove("BackHinge Left");
-      else if (d.isCenterLeft)
-        return TamUtils.getMove("Hinge Left");
-    }
-    throw CallError("Cannot figure out how to Bend the Line");
-  }
-
+  // Call the `main()` function of the app, or call `runApp` with
+  // any widget you are interested in testing.
+  taminations.main();
 }

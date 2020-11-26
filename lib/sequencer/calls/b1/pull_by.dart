@@ -18,10 +18,7 @@
 
 */
 
-import '../../../dancer.dart';
-import '../../../math/movement.dart';
-import '../../../math/path.dart';
-import '../../call_context.dart';
+import '../common.dart';
 import 'pass_thru.dart';
 
 class PullBy extends PassThru {

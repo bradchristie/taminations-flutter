@@ -18,28 +18,8 @@
 
 */
 
-import '../common.dart';
-
-class BendTheLine extends Action {
-
-  BendTheLine() : super("Bend the Line");
-
-  @override
-  Path performOne(Dancer d, CallContext ctx) {
-    if (!ctx.isInCouple(d))
-      throw CallError("Only couples can Bend the Line");
-    if (d.data.beau) {
-      if (d.isCenterRight)
-        return TamUtils.getMove("Hinge Right");
-      else if (d.isCenterLeft)
-        return TamUtils.getMove("BackHinge Right");
-    } else if (d.data.belle) {
-      if (d.isCenterRight)
-        return TamUtils.getMove("BackHinge Left");
-      else if (d.isCenterLeft)
-        return TamUtils.getMove("Hinge Left");
-    }
-    throw CallError("Cannot figure out how to Bend the Line");
-  }
-
-}
+export '../../common.dart';
+export '../call_context.dart';
+export '../call_error.dart';
+export 'action.dart';
+export 'common/fliter_actives.dart';

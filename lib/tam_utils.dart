@@ -67,47 +67,40 @@ class TamUtils {
       XmlDocument.parse(text));
 
   //  Read data at start of program
-  static void init() {
-    getXMLAsset("src/calls").then((doc) {
-      calldata = doc.findAllElements("call").map((e) =>
-          CallListDatum(
-              e("title"),
-              normalizeCall(e("title")),
-              e("link"),
-              e("sublevel"),
-              e("languages"),
-              e("audio"))
-      ).toList();
-      //  Add words in each call to set of all words
-      for (var data in calldata) {
-        var dataWords = data.title.split("\\s+".r).map((w) => w.toLowerCase());
-        words.addAll(dataWords);
-        //  Index link to this call by its normalized name
-        var norm = data.norm;
-        if (callmap.containsKey(norm))
-          callmap[norm].add(data);
-        else
-          callmap[norm] = [ data ];
-      }
-    });
+  static Future<void> init() async {
+    var callsDoc = await getXMLAsset("src/calls");
+    calldata = callsDoc.findAllElements("call").map((e) =>
+        CallListDatum(
+            e("title"),
+            normalizeCall(e("title")),
+            e("link"),
+            e("sublevel"),
+            e("languages"),
+            e("audio"))
+    ).toList();
+    //  Add words in each call to set of all words
+    for (var data in calldata) {
+      var dataWords = data.title.split("\\s+".r).map((w) => w.toLowerCase());
+      words.addAll(dataWords);
+      //  Index link to this call by its normalized name
+      var norm = data.norm;
+      if (callmap.containsKey(norm))
+        callmap[norm].add(data);
+      else
+        callmap[norm] = [ data ];
+    }
 
-
-    getXMLAsset("src/formations").then((doc) {
-      doc.findAllElements("formation").forEach((f) {
-        _formations[f("name")] = f;
-      });
+    var formationsDoc = await getXMLAsset("src/formations");
+    formationsDoc.findAllElements("formation").forEach((f) {
+      _formations[f("name")] = f;
     });
-    getXMLAsset("src/moves").then((doc) {
-      doc.findAllElements("path").forEach((m) {
-        _moves[m("name")] = m;
-      });
+    var movesDoc = await getXMLAsset("src/moves");
+    movesDoc.findAllElements("path").forEach((m) {
+      _moves[m("name")] = m;
     });
-    getAsset("src/tamination.css").then((rawcss) {
-      css = '<style>' + rawcss.replaceAll(r"/\*.*?\*/".rd, "") + '</style>';
-    });
-    getAsset("src/framecode.js").then((code) {
-      framecode = code;
-    });
+    var rawCSS = await getAsset("src/tamination.css");
+    css = '<style>' + rawCSS.replaceAll(r"/\*.*?\*/".rd, "") + '</style>';
+    framecode = await getAsset("src/framecode.js");
   }
 
   ///  Get all tam and tamxref elements from an animation XML document

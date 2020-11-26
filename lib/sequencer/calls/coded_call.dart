@@ -20,6 +20,8 @@
 
 import '../../extensions.dart';
 import '../../tam_utils.dart';
+import 'a1/beaus.dart';
+import 'a1/belles.dart';
 import 'b1/around_to_a_line.dart';
 import 'b1/bend_the_line.dart';
 import 'b1/california_twirl.dart';
@@ -48,8 +50,10 @@ import 'common/adjust.dart';
 import 'common/and.dart';
 import 'common/back_away.dart';
 import 'common/boys.dart';
+import 'common/center_six.dart';
 import 'common/centers.dart';
 import 'common/ends.dart';
+import 'common/everyone.dart';
 import 'common/facing_dancers.dart';
 import 'common/fraction.dart';
 import 'common/girls.dart';
@@ -59,7 +63,12 @@ import 'common/leaders.dart';
 import 'common/nothing.dart';
 import 'common/one_and_a_half.dart';
 import 'common/outsides.dart';
+import 'common/promenade_home.dart';
+import 'common/quarter_more.dart';
+import 'common/same_sex.dart';
 import 'common/sides.dart';
+import 'common/slide_dir.dart';
+import 'common/square_the_set.dart';
 import 'common/step.dart';
 import 'common/trailers.dart';
 import 'common/twice.dart';
@@ -84,6 +93,8 @@ abstract class CodedCall extends Call {
     "around2toaline".r: (_) => AroundToALine("Around Two to a Line"),
 
     "backaway".r: (_) => BackAway(),
+    "beau".r: (_) => Beaus(),
+    "belle".r: (_) => Belles(),
     "bendtheline".r: (_) => BendTheLine(),
     "boy".r: (_) => Boys(),
     "boxthegnat".r: (_) => BoxTheGnat(),
@@ -91,6 +102,7 @@ abstract class CodedCall extends Call {
     "californiatwirl".r: (_) => CaliforniaTwirl(),
     "castoff34".r: (_) => CastOffThreeQuarters(),
     "center".r: (_) => Centers(),
+    "center6".r: (_) => CenterSix(),
     "circulate".r: (_) => Circulate(),
     "courtesyturn".r: (_) => CourtesyTurn(),
     "crossfold".r: (_) => CrossFold(),
@@ -99,6 +111,7 @@ abstract class CodedCall extends Call {
     "(left)?dosado".r: (name) => Dosado(name),
 
     "end".r: (_) => Ends(),
+    "every(one|body)".r: (name) => Everyone(name),
 
     "face(in|out|left|right)".r: (name) => Face(name),
     "facing".r: (_) => FacingDancers(),
@@ -121,13 +134,20 @@ abstract class CodedCall extends Call {
     "out(er|sides?)(2|4|6)?".r: (name) => Outsides(name),
 
     "(left)?passthru".r: (name) => PassThru(name),
+    "promenadehome".r: (name) => PromenadeHome(name),
+    "swing(your)?corner(and)?promenade(home)?".r: (name) => PromenadeHome(name),
     "(left)?pullby".r: (name) => PullBy(name),
+
+    "and14more".r: (_) => QuarterMore(),
 
     "run(left|right)?".r: (name) => Run(name),
 
+    "samesex(es)?".r: (name) => SameSex(name),
     "separate".r: (_) => Separate(),
     "side".r: (name) => Sides(name),
+    "slide(in|out|left|right)".r: (name) => SlideDir(name),
     "splitcirculate".r: (_) => SplitCirculate(),
+    "squaretheset".r: (_) => SquareTheSet(),
     "(left)?squarethru(1|2|3|4|5|6|7)?(toawave)?".r: (name) => SquareThru(name),
     "step".r: (_) => Step(),
     "sweep14".r: (_) => SweepAQuarter(),

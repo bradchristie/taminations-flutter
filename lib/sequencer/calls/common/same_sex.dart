@@ -18,27 +18,18 @@
 
 */
 
-import '../common.dart';
+import '../action.dart';
+import '../../call_context.dart';
+import '../../../extensions.dart';
 
-class Dosado extends Action {
+class SameSex extends Action {
 
-  Dosado(String name) : super(name);
+  SameSex(String name) : super(name);
 
   @override
-  Path performOne(Dancer d, CallContext ctx) {
-    var d2 = ctx.dancerFacing(d) ??
-        thrower(CallError("Dancer $d has no one to Dosado with."));
-    var dist = d.distanceTo(d2);
-    var dir1 = "Left";
-    var dir2 = "Right";
-    if (name.toLowerCase().startsWith("left")) {
-      dir1 = "Right";
-      dir2 = "Left";
-    }
-    return (TamUtils.getMove("Extend $dir1")..scale(dist/2.0,0.5)..changebeats(dist/2.0)) +
-        (TamUtils.getMove("Extend $dir2")..scale(1.0,0.5)) +
-        (TamUtils.getMove("Retreat $dir2")..scale(1.0,0.5)) +
-        (TamUtils.getMove("Retreat $dir1")..scale(1.0,0.5));
+  Future<void> performCall(CallContext ctx, [int stackIndex=0]) async {
+    var call = name.replaceFirst("Same Sex(es)?".r, "");
+    await ctx.applyCall("Boys $call While Girls $call");
   }
 
 }

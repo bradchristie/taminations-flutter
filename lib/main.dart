@@ -42,16 +42,7 @@ import 'sequencer/sequencer_page.dart';
 void main() {
   //  Wrap the Settings around the top of the program
   //  so everybody has access to them
-  FM.runApp(PP.MultiProvider(
-      providers: [
-        PP.ChangeNotifierProvider(create: (context) => Settings()),
-        PP.ChangeNotifierProvider(create: (context) => AnimationState())
-      ],
-      child: TaminationsApp()
-    )
-  );
-  //  Read initializatio files
-  TamUtils.init();
+  FM.runApp(TaminationsApp());
 }
 
 //  This class holds state information used to
@@ -129,9 +120,6 @@ class TaminationsRoute {
     if (definition) "definition"
   ].join(separator);
 
-
-
-
 }
 
 
@@ -153,10 +141,18 @@ class _TaminationsAppState extends FM.State<TaminationsApp> {
 
   @override
   FM.Widget build(FM.BuildContext context) {
-    return FM.MaterialApp.router(
-      title: 'Taminations',
-      routerDelegate: _routerDelegate,
-      routeInformationParser: _routeInformationParser,
+    //  Read initialization files
+    TamUtils.init();
+    return PP.MultiProvider(
+      providers: [
+        PP.ChangeNotifierProvider(create: (context) => Settings()),
+        PP.ChangeNotifierProvider(create: (context) => AnimationState())
+      ],
+      child: FM.MaterialApp.router(
+        title: 'Taminations',
+        routerDelegate: _routerDelegate,
+        routeInformationParser: _routeInformationParser,
+      ),
     );
   }
 
@@ -287,7 +283,6 @@ class TaminationsRouterDelegate extends FM.RouterDelegate<TaminationsRoute>
   Future<bool> popRoute() {
     if (paths.length > 1) {
       paths.removeLast();
-      print("Navigator Pop");
       return FF.SynchronousFuture(true);
     }
     else return FF.SynchronousFuture(false);
@@ -301,8 +296,6 @@ class TaminationsRouterDelegate extends FM.RouterDelegate<TaminationsRoute>
   @override
   Future<void> setNewRoutePath(TaminationsRoute configuration) async {
     if (configuration != null) {
-      print("Navigator Set New Route: "+configuration.toString());
-      paths.forEach((path) { print("    "+path.toString()); });
       paths.add(currentPath + configuration);
       notifyListeners();
     }

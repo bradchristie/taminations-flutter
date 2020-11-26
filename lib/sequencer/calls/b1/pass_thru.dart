@@ -18,13 +18,7 @@
 
 */
 
-import '../../../dancer.dart';
-import '../../../math/path.dart';
-import '../../../math/vector.dart';
-import '../../../tam_utils.dart';
-import '../../call_context.dart';
-import '../../call_error.dart';
-import '../../calls/action.dart';
+import '../common.dart';
 
 class PassThru extends Action {
 

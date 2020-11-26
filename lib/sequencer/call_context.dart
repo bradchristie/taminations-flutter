@@ -205,7 +205,6 @@ class CallContext {
       var norm = TamUtils.normalizeCall(item);
       var callitems = TamUtils.callmap[norm] ?? <CallListDatum>[];
       for (var callitem in callitems) {
-        print("Will load ${callitem.link}");
         await loadOneFile(callitem.link);
       }
     }
@@ -229,6 +228,11 @@ class CallContext {
   CallContext _source;
   bool _snap = true;
   bool _thoseWhoCan = false;
+  var genderMap = {
+    "boy": Gender.BOY,
+    "girl": Gender.GIRL,
+    "phantom": Gender.PHANTOM
+  };
 
   //  Create a context from an array of Dancer
   CallContext.fromDancers(List<Dancer> dancers) {
@@ -273,7 +277,7 @@ class CallContext {
       //  diagonal opposite.  Required for mapping.
       dancers.add(Dancer(
         numberArray[i*2], coupleArray[i*2],
-        Gender.BOY,
+          genderMap[element("gender")],
         Color.WHITE,  // not used
         Matrix.getTranslation(element("x").d,element("y").d) *
           Matrix.getRotation(element("angle").d.toRadians),
@@ -282,7 +286,7 @@ class CallContext {
       ));
       dancers.add(Dancer(
           numberArray[i*2+1], coupleArray[i*2+1],
-          Gender.BOY,
+          genderMap[element("gender")],
           Color.WHITE,  // not used
           Matrix.getTranslation(element("x").d,element("y").d) *
               Matrix.getRotation(element("angle").d.toRadians),
@@ -423,7 +427,6 @@ class CallContext {
   ///  [calltxt]  One complete call, lower case, words separated by single spaces
   ///  [noAction] set to true if it's ok for this call not to do anything
   Future<void> interpretCall(String calltext, {bool noAction = false}) async {
-    print("in interpretCall $calltext");
     calltext = _cleanupCall(calltext);
     await _loadAllFilesForCall(calltext);
     CallError err = CallNotFoundError(calltext);
@@ -439,7 +442,6 @@ class CallContext {
       //  we find something we know
       var foundOneCall = false;
       for (var onecall in calltext.chopped()) {
-        print("Looking for $onecall");
         //  First try to find a snapshot match
         try {
           foundOneCall = await matchXMLcall(onecall);
@@ -458,15 +460,13 @@ class CallContext {
           //  Remove the words we matched, break out of
           //  the chopped loop, and continue if any words left
           calltext = calltext.replaceFirst(onecall, "").trim();
-          print("Now calltext is $calltext");
           break;
         }
       }
       //  Every combination from calltext.chopped failed
       if (!foundOneCall) {
-        print(err);
         throw err;
-        }
+      }
     }
     //  calltext empty - successful parse complete
     if (!noAction)
@@ -791,7 +791,6 @@ class CallContext {
   //  This doesn't run an animation, rather it takes the stack of calls
   //  and builds the dancer movements.
   Future<void> performCall() async {
-    print("in performCall");
     analyze();
     for (var i=0; i<callstack.length; i++) {
       var c = callstack[i];
@@ -978,7 +977,7 @@ class CallContext {
   //  Return all dancers, ordered by distance from another dancer,
   //  that satisfies a conditional
   List<Dancer> dancersInOrder(Dancer d, bool f(Dancer d)) =>
-      (dancers - d).where(f).toList().sortedWith((d1,d2) => 0);
+      (dancers - d).where(f).toList().sortedBy((d2) => d.distanceTo(d2) );
 
   //  Return closest dancer that satisfies a given conditional
   Dancer dancerClosest(Dancer d, bool f(Dancer d2)) =>

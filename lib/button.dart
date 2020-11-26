@@ -34,7 +34,8 @@ class Button extends FM.StatelessWidget {
     AutoSizeText(name, maxLines: 1, style: FM.TextStyle(
       fontWeight: FM.FontWeight.bold,
       fontSize: 20,
-    ));
+    )),
+        super(key: FM.Key(name));
 
   @override
   FM.Widget build(FM.BuildContext context) =>

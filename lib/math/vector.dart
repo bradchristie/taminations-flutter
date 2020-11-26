@@ -59,9 +59,16 @@ class Vector {
   Vector operator -(Vector v2) => Vector(x-v2.x,y-v2.y);
   Vector operator *(double s) => scale(s,s);
   Vector operator -() => Vector(-x,-y);
+  Vector operator /(double s) => scale(1/s,1/s);
+  bool operator ==(Object v2) => v2 is Vector &&
+      (v2.x.isAbout(x) && v2.y.isAbout(y));
+
+  @override
+  int get hashCode => x.round().hashCode ^ y.round().hashCode;
 
   //  Conversions
   Size get size => Size(x,y);
+
 
 }
 

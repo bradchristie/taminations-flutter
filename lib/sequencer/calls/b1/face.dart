@@ -18,13 +18,7 @@
 
 */
 
-import '../../../dancer.dart';
-import '../../../extensions.dart';
-import '../../../math/path.dart';
-import '../../../tam_utils.dart';
-import '../../call_context.dart';
-import '../../call_error.dart';
-import '../../calls/action.dart';
+import '../common.dart';
 
 //  Does Face In, Out, Left, Right
 class Face extends Action {

@@ -18,11 +18,7 @@
 
 */
 
-import '../../../dancer.dart';
-import '../../../math/path.dart';
-import '../../../tam_utils.dart';
-import '../../call_context.dart';
-import '../action.dart';
+import '../common.dart';
 
 class TurnBack extends Action {
 

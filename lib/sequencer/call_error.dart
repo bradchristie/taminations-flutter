@@ -23,7 +23,7 @@ class CallError implements Exception {
   final String description;
 
   CallError(this.description);
-  String toString() => "Call Error: $description";
+  String toString() => description;
 
 }
 

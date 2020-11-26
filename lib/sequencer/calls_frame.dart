@@ -44,6 +44,21 @@ class _SequencerCallsFrameState extends FM.State<SequencerCallsFrame> {
     super.dispose();
   }
 
+  void _sendOneCall(SequencerModel model) {
+    var value = textFieldController.value.text;
+    setState(() {
+      //  Process the call
+      if (value.toLowerCase().trim() == "undo")
+        model.undoLastCall();
+      else
+        model.loadOneCall(value);
+      //  Erase it from the the text field
+      textFieldController.clear();
+      //  And get the focus back for the next call
+      focusNode.requestFocus();
+    });
+  }
+
   @override
   FM.Widget build(FM.BuildContext context) {
     return PP.Consumer<SequencerModel>(
@@ -51,6 +66,7 @@ class _SequencerCallsFrameState extends FM.State<SequencerCallsFrame> {
          return FM.Column(
            children: [
              FM.TextField(
+               key: FM.Key("Sequencer Input"),
                autofocus: true,
                focusNode: focusNode,
                controller: textFieldController,
@@ -60,17 +76,7 @@ class _SequencerCallsFrameState extends FM.State<SequencerCallsFrame> {
                style: FM.TextStyle(fontSize: 24),
                //  Code to run when user presses Enter
                onSubmitted: (value) {
-                 setState(() {
-                   //  Process the call
-                   if (value.toLowerCase().trim() == "undo")
-                     model.undoLastCall();
-                   else
-                     model.loadOneCall(value);
-                   //  Erase it from the the text field
-                   textFieldController.clear();
-                   //  And get the focus back for the next call
-                   focusNode.requestFocus();
-                 });
+                 _sendOneCall(model);
                },
              ),
              FM.Expanded(
@@ -78,7 +84,23 @@ class _SequencerCallsFrameState extends FM.State<SequencerCallsFrame> {
                    itemCount: model.callNames.length,
                    itemBuilder: itemBuilder,
                  )
-             )
+             ),
+          //   if (model.errorString.isNotEmpty)
+               FM.Align(
+                 alignment: FM.Alignment.centerLeft,
+                 child: FM.Text(model.errorString,
+                     key: FM.Key("Error text"),
+                     style: FM.TextStyle(color:Color.RED,fontSize:30)),
+               ),
+             //  For testing - a very tiny spot to tap
+             //  since the tester cannot simulate keyboard Enter
+               FM.Container(
+                 key: FM.Key("Submit Call"),
+                 child: FM.GestureDetector(
+                   child: FM.Text(" ",style: FM.TextStyle(fontSize:1),),
+                   onTap: () { _sendOneCall(model); },
+                 ),
+               ),
            ],
          );
        },

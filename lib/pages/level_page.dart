@@ -53,7 +53,7 @@ class LevelPage extends FM.StatelessWidget {
 class _TapDetector extends FM.StatelessWidget {
   final String text;
   final FM.StatelessWidget child;
-  _TapDetector({this.text,this.child});
+  _TapDetector({FM.Key key,this.text,this.child}) : super(key:key);
 
   @override
   FM.Widget build(FM.BuildContext context) =>
@@ -93,6 +93,7 @@ class _FullLineWidget extends FM.StatelessWidget {
   FM.Widget build(FM.BuildContext context) =>
       FM.Expanded(
           child: _TapDetector(text:text,
+              key: FM.Key(text),
               child: FM.Container(
                   decoration: FM.BoxDecoration(
                       color: background,
@@ -117,6 +118,7 @@ class _IndentedLineWidget extends FM.StatelessWidget {
             FM.Flexible(
                 flex: 9,
                 child: _TapDetector(text:text,
+                    key: FM.Key(text),
                     child:FM.Container(
                         decoration: FM.BoxDecoration(
                             color: background,
@@ -144,6 +146,7 @@ class _TwoItemLineWidget extends FM.StatelessWidget {
                 flex: 1,
                 child: _TapDetector(
                     text: text1,
+                    key: FM.Key(text1),
                     child:FM.Container(
                         decoration: FM.BoxDecoration(
                             color: Color.LIGHTGREY,
@@ -155,6 +158,7 @@ class _TwoItemLineWidget extends FM.StatelessWidget {
                 flex: 1,
                 child: _TapDetector(
                     text: text2,
+                    key: FM.Key(text2),
                     child:FM.Container(
                         decoration: FM.BoxDecoration(
                             color: Color.LIGHTGREY,

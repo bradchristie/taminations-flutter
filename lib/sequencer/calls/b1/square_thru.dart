@@ -18,14 +18,7 @@
 
 */
 
-import '../action.dart';
-import '../../call_context.dart';
-import '../../../extensions.dart';
-import '../../call_error.dart';
-import '../../../level_data.dart';
-import '../../../math/path.dart';
-import '../../../dancer.dart';
-import '../../../tam_utils.dart';
+import '../common.dart';
 
 class SquareThru extends Action {
 

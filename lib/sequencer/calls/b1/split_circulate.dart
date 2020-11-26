@@ -18,12 +18,7 @@
 
 */
 
-import '../action.dart';
-import '../../call_context.dart';
-import '../../call_error.dart';
-import '../../../math/path.dart';
-import '../../../dancer.dart';
-import '../../../tam_utils.dart';
+import '../common.dart';
 
 class SplitCirculate extends Action {
 
