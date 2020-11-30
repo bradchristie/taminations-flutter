@@ -245,7 +245,7 @@ class _AnimListState extends FM.State<AnimListFrame> {
                       itemCount: animListItems.length,
                       itemBuilder: (FM.BuildContext context, int index) {
                         var item = animListItems[index];
-                        var backColor = FM.Colors.white;
+                        var backColor = Color.WHITE;
                         switch (item.difficulty) {
                           case Difficulty.COMMON:
                             backColor = Color.COMMON;
@@ -284,35 +284,41 @@ class _AnimListState extends FM.State<AnimListFrame> {
                                         color: Color.WHITE, fontSize: 20)));
                           case CellType.Indented:
                           case CellType.Plain:
-                            return FM.GestureDetector(
-                                onTap: () {
-                                  RequestHandler.of(context).processRequest(
-                                      Request(
-                                          action: Action.ANIMATION,
-                                          params: {
-                                        "level": path.level,
-                                        "link": path.link,
-                                        "call": item.title,
-                                        "name": item.title,
-                                        "animnum": item.animnumber.s
-                                      }));
-                                  PP.Provider.of<AnimationState>(context, listen:false).title = item.title;
-                                },
-                                child: FM.Container(
-                                    decoration: FM.BoxDecoration(
-                                        color: backColor,
-                                        border: FM.Border(
-                                            bottom: FM.BorderSide(
-                                                width: 1,
-                                                color: FM.Colors.black))),
-                                    padding: FM.EdgeInsets.only(
-                                        left: item.celltype == CellType.Indented
-                                            ? 40.0
-                                            : 20.0,
-                                        top: 4,
-                                        bottom: 4),
-                                    child: FM.Text(item.name,
-                                        style: FM.TextStyle(fontSize: 20))));
+                            return  FM.Container(
+                                    child: FM.Material(
+                                      color: backColor,
+                                      child: FM.InkWell(
+                                        highlightColor: backColor.darker(),
+                                        onTap: () {
+                                          RequestHandler.of(context).processRequest(
+                                              Request(
+                                                  action: Action.ANIMATION,
+                                                  params: {
+                                                    "level": path.level,
+                                                    "link": path.link,
+                                                    "call": item.title,
+                                                    "name": item.title,
+                                                    "animnum": item.animnumber.s
+                                                  }));
+                                          PP.Provider.of<AnimationState>(context, listen:false).title = item.title;
+                                        },
+                                        child: FM.Container(
+                                          decoration: FM.BoxDecoration(
+                                              border: FM.Border(
+                                                  bottom: FM.BorderSide(
+                                                      width: 1,
+                                                      color: FM.Colors.black))),
+                                          padding: FM.EdgeInsets.only(
+                                              left: item.celltype == CellType.Indented
+                                                  ? 40.0
+                                                  : 20.0,
+                                              top: 4,
+                                              bottom: 4),
+                                          child: FM.Text(item.name,
+                                              style: FM.TextStyle(fontSize: 20)),
+                                        ),
+                                      ),
+                                    ));
                         }
                         return FM.Text("Dummy text for ListView.builder");
                       })),

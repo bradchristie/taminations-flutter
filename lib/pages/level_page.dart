@@ -52,21 +52,29 @@ class LevelPage extends FM.StatelessWidget {
 //  Wrapper widget to handle taps
 class _TapDetector extends FM.StatelessWidget {
   final String text;
+  final Color color;
   final FM.StatelessWidget child;
-  _TapDetector({FM.Key key,this.text,this.child}) : super(key:key);
+  _TapDetector({FM.Key key,
+    @FM.required this.text,
+    @FM.required this.color,
+    @FM.required this.child}) : super(key:key);
 
   @override
   FM.Widget build(FM.BuildContext context) =>
-      FM.GestureDetector(
-          onTap: () {
-            var request = Request(action:Action.LEVEL,params:{"level":text});
-            if (text == "Practice") request = Request(action:Action.PRACTICE);
-            else if (text == "Sequencer") request = Request(action:Action.SEQUENCER);
-            else if (text == "Settings") request = Request(action:Action.SETTINGS);
-            else if (text == "About") request = Request(action:Action.ABOUT);
-            RequestHandler.of(context).processRequest(request);
-          },
-          child:child
+      FM.Material(
+        color: color,
+        child: FM.InkWell(
+            highlightColor: color.darker(),
+            onTap: () {
+              var request = Request(action:Action.LEVEL,params:{"level":text});
+              if (text == "Practice") request = Request(action:Action.PRACTICE);
+              else if (text == "Sequencer") request = Request(action:Action.SEQUENCER);
+              else if (text == "Settings") request = Request(action:Action.SETTINGS);
+              else if (text == "About") request = Request(action:Action.ABOUT);
+              RequestHandler.of(context).processRequest(request);
+            },
+            child:child
+        ),
       );
 
 }
@@ -94,9 +102,9 @@ class _FullLineWidget extends FM.StatelessWidget {
       FM.Expanded(
           child: _TapDetector(text:text,
               key: FM.Key(text),
+              color: background,
               child: FM.Container(
                   decoration: FM.BoxDecoration(
-                      color: background,
                       border: FM.Border(top: FM.BorderSide(width: 1, color: FM.Colors.black))),
                   padding: FM.EdgeInsets.only(left: 20.0),
                   child: _LevelTextWidget(text:text))));
@@ -119,9 +127,9 @@ class _IndentedLineWidget extends FM.StatelessWidget {
                 flex: 9,
                 child: _TapDetector(text:text,
                     key: FM.Key(text),
+                    color: background,
                     child:FM.Container(
                         decoration: FM.BoxDecoration(
-                            color: background,
                             border: FM.Border(
                                 top: FM.BorderSide(width: 1, color: FM.Colors.black),
                                 left: FM.BorderSide(width: 1, color: FM.Colors.black))),
@@ -145,11 +153,11 @@ class _TwoItemLineWidget extends FM.StatelessWidget {
             FM.Flexible(
                 flex: 1,
                 child: _TapDetector(
+                  color:Color.LIGHTGREY,
                     text: text1,
                     key: FM.Key(text1),
                     child:FM.Container(
                         decoration: FM.BoxDecoration(
-                            color: Color.LIGHTGREY,
                             border: FM.Border(
                                 top: FM.BorderSide(width: 1, color: FM.Colors.black))),
                         padding: FM.EdgeInsets.only(left: 20.0),
@@ -158,10 +166,10 @@ class _TwoItemLineWidget extends FM.StatelessWidget {
                 flex: 1,
                 child: _TapDetector(
                     text: text2,
+                    color: Color.LIGHTGREY,
                     key: FM.Key(text2),
                     child:FM.Container(
                         decoration: FM.BoxDecoration(
-                            color: Color.LIGHTGREY,
                             border: FM.Border(
                                 top: FM.BorderSide(width: 1, color: FM.Colors.black),
                                 left: FM.BorderSide(width: 1, color: FM.Colors.black))),

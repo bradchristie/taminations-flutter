@@ -47,16 +47,20 @@ class LevelData implements Comparable<LevelData> {
   static final INDEX = LevelData("Index of All Calls", "all", Color.LIGHTGREY,"".r);
 
   static List<LevelData> _data = [
+    LevelData.BMS,
     LevelData.B1,
     LevelData.B2,
     LevelData.MS,
     LevelData.PLUS,
+    LevelData.ADV,
     LevelData.A1,
     LevelData.A2,
+    LevelData.CHALLENGE,
     LevelData.C1,
     LevelData.C2,
     LevelData.C3A,
     LevelData.C3B,
+    LevelData.INDEX
   ];
 
   static LevelData find(String s) {

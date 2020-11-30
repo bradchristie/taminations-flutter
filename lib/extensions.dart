@@ -32,6 +32,8 @@ extension TamInt on int {
 
   double get d => this.toDouble();  // not sure if this is needed
   String get s => this.toString();
+  bool get isOdd => this % 2 == 1;
+  bool get isEven => this % 2 == 0;
   int pow(int i) {
     if (i == 0) return 1;
     if (i == 1) return this;

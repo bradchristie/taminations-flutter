@@ -139,26 +139,33 @@ class _CallsState extends FM.State<CallsFrame> {
 
   //  Builder for one item of the list or grid
   FM.Widget itemBuilder(FM.BuildContext context, int index) {
-    return FM.GestureDetector(
-        onTap: () {
-          //  Selection goes to another page regardless of landscape or portrait
-          //  So no need to get fancy, just set the new page here
-          FM.Router.of(context).routerDelegate
-              .setNewRoutePath(TaminationsRoute(
-              level: levelDatum.dir,
-              link: callsSearched[index].link,
-              call: callsSearched[index].title,
-              name: callsSearched[index].title
-          ));
-        },
-        child:FM.Container(
-            decoration: FM.BoxDecoration(
-              //  Color the item according the the level
-                color: LevelData.find(callsSearched[index].link).color,
-                border: FM.Border(top: FM.BorderSide(width: 1, color: Color.BLACK))),
-            padding: FM.EdgeInsets.only(left: 20.0, top:4, bottom:4),
-            child:FM.Text(callsSearched[index].title,style: FM.TextStyle(fontSize: 20))
-        )
+
+    return FM.Container(
+      decoration: FM.BoxDecoration(
+          border: FM.Border(top: FM.BorderSide(width: 1, color: Color.BLACK))),
+     // padding: FM.EdgeInsets.only(left: 20.0, top:4, bottom:4),
+      child: FM.Material(
+        //  Color the item according the the level
+        color: LevelData.find(callsSearched[index].link).color,
+        child: FM.InkWell(
+          highlightColor: LevelData.find(callsSearched[index].link).color.darker(),
+            onTap: () {
+              //  Selection goes to another page regardless of landscape or portrait
+              //  So no need to get fancy, just set the new page here
+              FM.Router.of(context).routerDelegate
+                  .setNewRoutePath(TaminationsRoute(
+                  level: levelDatum.dir,
+                  link: callsSearched[index].link,
+                  call: callsSearched[index].title,
+                  name: callsSearched[index].title
+              ));
+            },
+            child:FM.Container(
+                alignment: FM.Alignment.centerLeft,
+                padding: FM.EdgeInsets.only(left: 10.0),
+                child: FM.Text(callsSearched[index].title,style: FM.TextStyle(fontSize: 20)))
+        ),
+      )
     );
 
   }
