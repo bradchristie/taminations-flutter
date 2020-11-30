@@ -32,7 +32,7 @@ class CastOffThreeQuarters extends Action {
     var waveDancers = ctx.actives.where((d) => ctx.isInWave(d));
     if (waveDancers.isNotEmpty) {
       await ctx.subContext(waveDancers, (ctx2) async {
-        await ctx2.applyCalls(["Hinge","Hinge","Hinge"]);
+        await ctx2.applyCalls("Hinge","Hinge","Hinge");
       });
     }
     //  Couples right of center (they look left to view center)
@@ -42,7 +42,7 @@ class CastOffThreeQuarters extends Action {
         d.data.partner.isActive && d.data.partner.isCenterLeft);
     if (couplesLeft.isNotEmpty) {
       await ctx.subContext(couplesLeft, (ctx2) async =>
-          await ctx2.applyCall("Reverse Wheel Around 1.5"));
+          await ctx2.applyCalls("Reverse Wheel Around 1.5"));
     }
     //  Couples left of center wheel around 1.5
     var couplesRight = ctx.actives.where((d) =>
@@ -50,7 +50,7 @@ class CastOffThreeQuarters extends Action {
         d.data.partner.isActive && d.data.partner.isCenterRight);
     if (couplesLeft.isNotEmpty) {
       await ctx.subContext(couplesRight, (ctx2) async =>
-      await ctx2.applyCall("Wheel Around 1.5"));
+      await ctx2.applyCalls("Wheel Around 1.5"));
     }
     //  If nobody fell in any of these three categories then something's wrong
     if (waveDancers.isEmpty && couplesLeft.isEmpty && couplesRight.isEmpty)

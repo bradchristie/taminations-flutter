@@ -79,6 +79,10 @@ import 'ms/cast_off_three_quarters.dart';
 import 'ms/cross_fold.dart';
 import 'ms/fold.dart';
 import 'ms/half_tag.dart';
+import 'ms/quarter_tag.dart';
+import 'ms/slide_thru.dart';
+import 'ms/tag_the_line.dart';
+import 'ms/three_quarters_tag.dart';
 import 'plus/acey_deucey.dart';
 import 'plus/roll.dart';
 
@@ -145,6 +149,7 @@ abstract class CodedCall extends Call {
     "(left)?pullby".r: (name) => PullBy(name),
 
     "and14more".r: (_) => QuarterMore(),
+    "(left)?14tag".r: (name) => QuarterTag(name),
 
     "(and)?roll".r: (name) => Roll(name),
     "run(left|right)?".r: (name) => Run(name),
@@ -153,12 +158,15 @@ abstract class CodedCall extends Call {
     "separate".r: (_) => Separate(),
     "side".r: (name) => Sides(name),
     "slide(in|out|left|right)".r: (name) => SlideDir(name),
+    "slidethru".r: (_) => SlideThru(),
     "splitcirculate".r: (_) => SplitCirculate(),
     "squaretheset".r: (_) => SquareTheSet(),
     "(left)?squarethru(1|2|3|4|5|6|7)?(toawave)?".r: (name) => SquareThru(name),
     "step".r: (_) => Step(),
     "sweep14".r: (_) => SweepAQuarter(),
 
+    "tagtheline".r: (_) => TagTheLine(),
+    "(left)?34tag(theline)?".r : (name) => ThreeQuartersTag(name),
     "(left)?touch".r: (name) => Touch(name),
     "(left)?touch14".r: (name) => TouchAQuarter(name),
     "trade".r: (_) => Trade(),

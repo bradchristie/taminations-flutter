@@ -28,7 +28,7 @@ class AceyDeucey extends Action {
 
   @override
   Future<void> perform(CallContext ctx, [int i = 0]) async {
-    await ctx.applyCall("Center 4 Trade While Outer 4 Circulate");
+    await ctx.applyCalls("Center 4 Trade While Outer 4 Circulate");
   }
 
 }

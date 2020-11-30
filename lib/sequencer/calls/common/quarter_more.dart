@@ -42,9 +42,9 @@ class QuarterMore extends Action {
     //  Rolling direction determines rotation
     //  Usually belle forward beau backward
     if (isRight)
-      await ctx.applyCall("Half Reverse Wheel Around");
+      await ctx.applyCalls("Half Reverse Wheel Around");
     else if (isLeft)
-      await ctx.applyCall("Half Wheel Around");
+      await ctx.applyCalls("Half Wheel Around");
     else
       throw CallError("Unable to determine direction for A Quarter More");
   }

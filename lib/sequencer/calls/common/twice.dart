@@ -36,7 +36,7 @@ class Twice extends CodedCall {
     //  So just do it again
     var prevCall = ctx.callstack.take(ctx.callstack.length-1)
         .map((it) => it.name).join(" ");
-    await ctx.applyCall(prevCall);
+    await ctx.applyCalls(prevCall);
   }
 
 }

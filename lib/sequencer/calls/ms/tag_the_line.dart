@@ -20,16 +20,17 @@
 
 import '../common.dart';
 
-class HalfTag extends Action {
+class TagTheLine extends Action {
 
   @override
   var level = LevelData.MS;
-  HalfTag(String name) : super(name);
+  TagTheLine() : super("Tag the Line");
 
   @override
   Future<void> perform(CallContext ctx, [int i = 0]) async {
-    var dir = name.startsWith("Left") ? "Left" : "";
-    await ctx.applyCalls("$dir Quarter Tag","Extend");
+    await ctx.applyCalls("34tag");
+    ctx.contractPaths();
+    await ctx.applyCalls("extend");
   }
 
 }

@@ -94,7 +94,7 @@ abstract class FourDancerConcept extends Action {
     //  Create context for concept dancers
     var conceptctx = CallContext.fromDancers(singles);
     //  And apply the call
-    await conceptctx.applyCall(realCall);
+    await conceptctx.applyCalls(realCall);
     //  Hook for concept to see the result
     conceptctx.animate(0.0);
     analyzeConceptResult(conceptctx, ctx);

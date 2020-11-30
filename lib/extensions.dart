@@ -151,6 +151,7 @@ extension TamList<E> on List<E> {
     return [first,second];
   }
   bool none(bool test(E element)) => this.every((e) => !test(e));
+  List<E> whereNotNull() => this.where((element) => element != null).toList();
 
   E firstBy(Comparable selector(E)) {
     if (isEmpty) return null;

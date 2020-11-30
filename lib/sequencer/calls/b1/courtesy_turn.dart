@@ -26,7 +26,7 @@ class CourtesyTurn extends Action {
 
   @override
   Future<void> perform(CallContext ctx, [int stackIndex=0]) async {
-    ctx.applyCalls(["Wheel Around"]);
+    ctx.applyCalls("Wheel Around");
   }
 
 }

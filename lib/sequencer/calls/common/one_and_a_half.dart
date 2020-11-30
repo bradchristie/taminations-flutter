@@ -36,7 +36,7 @@ class OneAndaHalf extends CodedCall {
     //  Now do half of it again
     var prevCall = ctx.callstack.take(ctx.callstack.length-1)
         .map((it) => it.name).join(" ");
-    await ctx.applyCall("Half $prevCall");
+    await ctx.applyCalls("Half $prevCall");
   }
 
 }

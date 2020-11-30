@@ -56,7 +56,7 @@ abstract class ModifiedFormationConcept extends Action {
     var adjusted = ctx.dancers.where((d) => d.path.movelist.isNotEmpty);
 
     //  Perform the call
-    await ctx.applyCall(realCall);
+    await ctx.applyCalls(realCall);
     //  Merge the initial adjustment into the start of the call
     for (var d in ctx.dancers) {
       if (adjusted.contains(d) && d.path.movelist.length > 1) {

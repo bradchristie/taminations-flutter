@@ -32,11 +32,11 @@ class AroundToALine extends Action {
         d.data.active = true;
       var norm = TamUtils.normalizeCall(name);
       if (norm.contains("1andcomeintothemiddle"))
-        await ctx.applyCalls(["Around One and Come Into the Middle"]);
+        await ctx.applyCalls("Around One and Come Into the Middle");
       else if (norm.contains("1toaline"))
-        await  ctx.applyCalls(["Around One To A Line"]);
+        await  ctx.applyCalls("Around One To A Line");
       else if (norm.contains("2toaline"))
-        await  ctx.applyCalls(["Around Two To A Line"]);
+        await  ctx.applyCalls("Around Two To A Line");
       else
         throw CallError("Go Around What?");
     }

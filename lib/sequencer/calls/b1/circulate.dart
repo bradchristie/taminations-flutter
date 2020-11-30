@@ -31,7 +31,7 @@ class Circulate extends Action {
     if (ctx.actives.length == 4) {
       if (ctx.actives.every((d) => d.data.center)) {
         try {
-          await ctx.applyCalls(["Box Circulate"]);
+          await ctx.applyCalls("Box Circulate");
         } on CallError {
           //  That didn't work, try to find a circulate path for each dancer
           await super.perform(ctx, stackIndex);
@@ -45,13 +45,13 @@ class Circulate extends Action {
     //  All 8 dancers active
     //  Try various forms of Circulate
     else if (ctx.isTwoFacedLines())
-      await ctx.applyCalls(["Couples Circulate"]);
+      await ctx.applyCalls("Couples Circulate");
     else if (ctx.isLines())
-      await ctx.applyCalls(["All 8 Circulate"]);
+      await ctx.applyCalls("All 8 Circulate");
     else if (ctx.isColumns())
-      await ctx.applyCalls(["Column Circulate"]);
+      await ctx.applyCalls("Column Circulate");
     else if (ctx.actives.length == 6 && ctx.isColumns(3))
-      await ctx.applyCalls(["Column Circulate"]);
+      await ctx.applyCalls("Column Circulate");
     //  If none of these, but t-bones or 6 dancers, calculate paths
     else if (ctx.actives.length == 6 || ctx.isTBone()) {
       await super.perform(ctx,stackIndex);

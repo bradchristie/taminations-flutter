@@ -78,11 +78,11 @@ class PromenadeHome extends Action {
       await super.perform(ctx, stackIndex);
       //  Promenade to home
       do {
-        await ctx.applyCall("Counter Rotate");
+        await ctx.applyCalls("Counter Rotate");
       } while (ctx.dancers[0].path.movelist.length < 10 && // sanity check
           !ctx.dancers[0].anglePosition.isAround(pi));
       //  Adjust from promenade to squared set
-      await ctx.applyCall("Half Wheel Around");
+      await ctx.applyCalls("Half Wheel Around");
       ctx.level = LevelData.B1;  // otherwise Counter Rotate would set to C-1
     }
   }

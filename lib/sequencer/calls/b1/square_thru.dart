@@ -38,7 +38,7 @@ class SquareThru extends Action {
         .last.toIntOrNull() ?? 4;
     //  First hand is step to a wave if not already there
     if (ctx.actives.any((d) => ctx.isInCouple(d))) {
-      await  ctx.applyCalls(["Facing Dancers Step to a Compact $right Wave"]);
+      await  ctx.applyCalls("Facing Dancers Step to a Compact $right Wave");
       ctx.analyze();
     }
     //  Check that wave is the correct hand
@@ -50,14 +50,14 @@ class SquareThru extends Action {
     //  Square thru remaining hands
     for (var c=1; c<count; c++) {
       var hand = (c % 2 == 0) ? right : left;
-      ctx.applyCalls(["Explode and Step to a Compact $hand Wave"]);
+      ctx.applyCalls("Explode and Step to a Compact $hand Wave");
       ctx.level = LevelData.B1;  // override Explode (Plus)
     }
     //  Finish back-to-back unless C-1 concept "to a Wave" added
     if (name.toLowerCase().endsWith("to a wave"))
       level = LevelData.C1;
     else
-      await ctx.applyCalls(["Step Thru"]);
+      await ctx.applyCalls("Step Thru");
   }
 
 }

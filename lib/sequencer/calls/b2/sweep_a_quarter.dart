@@ -42,9 +42,9 @@ class SweepAQuarter extends Action {
     }
     //  Sweeping direction is opposite rolling direction
     if (isRight)
-      await ctx.applyCall("Sweep a Quarter Left");
+      await ctx.applyCalls("Sweep a Quarter Left");
     else if (isLeft)
-      await ctx.applyCall("Sweep a Quarter Right");
+      await ctx.applyCalls("Sweep a Quarter Right");
     else
       throw CallError("All dancers must be moving the same direction to Sweep a Quarter");
   }

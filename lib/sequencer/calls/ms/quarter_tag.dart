@@ -20,16 +20,33 @@
 
 import '../common.dart';
 
-class HalfTag extends Action {
+class QuarterTag extends Action {
 
   @override
   var level = LevelData.MS;
-  HalfTag(String name) : super(name);
+  QuarterTag(String name) : super(name);
+
+  bool _centersHoldLeftHands(CallContext ctx) =>
+      ctx.actives.where((d) => d.data.center)
+          .every((d) => ctx.dancerToLeft(d)?.data?.center ?? false);
+
+  bool _centersHoldRightHands(CallContext ctx) =>
+      ctx.actives.where((d) => d.data.center)
+          .every((d) => ctx.dancerToRight(d)?.data?.center ?? false);
 
   @override
   Future<void> perform(CallContext ctx, [int i = 0]) async {
     var dir = name.startsWith("Left") ? "Left" : "";
-    await ctx.applyCalls("$dir Quarter Tag","Extend");
+    if (ctx.isTidal())
+      await ctx.applyCalls("Center 4 Face Out While Outer 4 Face In","Facing Dancers $dir Touch");
+    else {
+      if (_centersHoldLeftHands(ctx) && dir == "" ||
+          _centersHoldRightHands(ctx) && dir == "Left")
+        await ctx.applyCalls("Center 4 Hinge and Spread While Ends Face In");
+      else
+        await ctx.applyCalls("Centers $dir Hinge While Ends Face In");
+    }
   }
 
 }
+

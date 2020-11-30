@@ -381,26 +381,32 @@ class CallContext {
     performCall();
   }
 
-  Future<void> applyCall(String call) async {
+  Future<void> _applyCall(String call) async {
     var ctx2 = CallContext.fromContext(this);
     await ctx2.interpretCall(call);
     await ctx2.performCall();
     ctx2.appendToSource();
   }
-  Future<void> applyCalls(List<String> calls) async {
+
+  Future<void> applyCalls(String call1, [String call2, String call3, String call4]) async {
+    var calls = [call1,call2,call3,call4].whereNotNull();
     for (var call in calls) {
-      await applyCall(call);
+      await _applyCall(call);
     }
   }
 
   Future<bool> _checkCalls(List<String> calls) async {
     var testctx = CallContext.fromContext(this);
     try {
-      await testctx.applyCalls(calls);
-      return testctx.isCollision();
+      for (var call in calls) {
+        await testctx.applyCalls(call);
+        if (testctx.isCollision())
+          return false;
+      }
     } on CallError catch (_) {
       return false;
     }
+    return true;
   }
 
   void animate(double beat) {
