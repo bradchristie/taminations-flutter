@@ -142,17 +142,22 @@ class _TaminationsAppState extends FM.State<TaminationsApp> {
   @override
   FM.Widget build(FM.BuildContext context) {
     //  Read initialization files
-    TamUtils.init();
-    return PP.MultiProvider(
-      providers: [
-        PP.ChangeNotifierProvider(create: (context) => Settings()),
-        PP.ChangeNotifierProvider(create: (context) => AnimationState())
-      ],
-      child: FM.MaterialApp.router(
-        title: 'Taminations',
-        routerDelegate: _routerDelegate,
-        routeInformationParser: _routeInformationParser,
-      ),
+//    TamUtils.init();
+    return FM.FutureBuilder<bool>(
+      future: TamUtils.init(),
+      builder: (context,snapshot) =>
+      snapshot.hasData ?
+          PP.MultiProvider(
+        providers: [
+          PP.ChangeNotifierProvider(create: (context) => Settings()),
+          PP.ChangeNotifierProvider(create: (context) => AnimationState())
+        ],
+        child: FM.MaterialApp.router(
+          title: 'Taminations',
+          routerDelegate: _routerDelegate,
+          routeInformationParser: _routeInformationParser,
+        ),
+      ) : FM.Container(),
     );
   }
 

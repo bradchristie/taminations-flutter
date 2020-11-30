@@ -67,7 +67,20 @@ class TamUtils {
       XmlDocument.parse(text));
 
   //  Read data at start of program
-  static Future<void> init() async {
+  static Future<bool> init() async {
+
+    var formationsDoc = await getXMLAsset("src/formations");
+    formationsDoc.findAllElements("formation").forEach((f) {
+      _formations[f("name")] = f;
+    });
+    var movesDoc = await getXMLAsset("src/moves");
+    movesDoc.findAllElements("path").forEach((m) {
+      _moves[m("name")] = m;
+    });
+    var rawCSS = await getAsset("src/tamination.css");
+    css = '<style>' + rawCSS.replaceAll(r"/\*.*?\*/".rd, "") + '</style>';
+    framecode = await getAsset("src/framecode.js");
+
     var callsDoc = await getXMLAsset("src/calls");
     calldata = callsDoc.findAllElements("call").map((e) =>
         CallListDatum(
@@ -89,18 +102,7 @@ class TamUtils {
       else
         callmap[norm] = [ data ];
     }
-
-    var formationsDoc = await getXMLAsset("src/formations");
-    formationsDoc.findAllElements("formation").forEach((f) {
-      _formations[f("name")] = f;
-    });
-    var movesDoc = await getXMLAsset("src/moves");
-    movesDoc.findAllElements("path").forEach((m) {
-      _moves[m("name")] = m;
-    });
-    var rawCSS = await getAsset("src/tamination.css");
-    css = '<style>' + rawCSS.replaceAll(r"/\*.*?\*/".rd, "") + '</style>';
-    framecode = await getAsset("src/framecode.js");
+    return true;
   }
 
   ///  Get all tam and tamxref elements from an animation XML document
