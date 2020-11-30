@@ -192,6 +192,26 @@ class DanceAnimationPainter extends ChangeNotifier implements CustomPainter  {
     _ticker.stop();
   }
 
+  void goToStart() {
+    beat = -leadin;
+    notifyListeners();
+  }
+
+  void goToEnd() {
+    beat = beats;
+    notifyListeners();
+  }
+
+  void stepForward() {
+    beat = min(beat+0.1,beats);
+    notifyListeners();
+  }
+
+  void stepBack() {
+    beat = max(beat-0.1,-leadin);
+    notifyListeners();
+  }
+
   bool _isInteractiveDancerOnTrack() {
     //  Get where the dancer should be
     var computetx = practiceDancer.computeMatrix(beat);

@@ -130,7 +130,6 @@ class _AnimationFrameState extends FM.State<AnimationFrame>
 
   String link;
   int animnum;
-  double sliderCurrentValue = 0.0;
   Vector locationTapped;
   Dancer dancerTapped;
   String partstr = "";
@@ -226,11 +225,6 @@ class _AnimationFrameState extends FM.State<AnimationFrame>
                 }
               };
 
-              //  Get position for slider
-              if (painter.totalBeats > 2.0)
-              sliderCurrentValue =
-                  min(100,(painter.beat + painter.leadin) * 100.0 / painter.totalBeats);
-
               //  Wrap dance area with widget to detect pointer events
               return FM.GestureDetector(
                   onTapDown: tapDownHandler,
@@ -276,12 +270,13 @@ class _AnimationFrameState extends FM.State<AnimationFrame>
         FM.Slider(
           activeColor: Color.HIGHLIGHT,
           inactiveColor: Color.HIGHLIGHT.veryBright(),
-          value: sliderCurrentValue,
+          value: painter.totalBeats > 2.0
+              ? min(100,(painter.beat + painter.leadin) * 100.0 / painter.totalBeats)
+              : 0.0,
           min: 0,
           max: 100,
           onChanged: (double value) {
             setState(() {
-              sliderCurrentValue = value;
               painter.beat =
                   (value * painter.totalBeats / 100.0) - painter.leadin;
             });
@@ -304,12 +299,20 @@ class _AnimationFrameState extends FM.State<AnimationFrame>
               FM.Expanded(
                   child: Button("Start",
                       child: FM.Icon(FM.Icons.skip_previous),
-                      onPressed: () { })),
+                      onPressed: () {
+                        setState(() {
+                          painter.goToStart();
+                        });
+                      })),
               FM.Expanded(
                   child:
                   Button("Back",
                       child: FM.Icon(FM.Icons.navigate_before),
-                      onPressed: () { })),
+                      onPressed: () {
+                        setState(() {
+                          painter.stepBack();
+                        });
+                      })),
               FM.Expanded(
                 //  Play / Pause button
                   child: Button("Play",
@@ -321,14 +324,10 @@ class _AnimationFrameState extends FM.State<AnimationFrame>
                           //  If running, turn it off
                           if (painter.isRunning) {
                             painter.doPause();
-                         //   controller.stop();
                           } else {
-                            //  Not running - start animation, with callback to
-                            //  turn off when finished (if not looping)
+                            //  Not running - start animation
                             painter.doPlay(() {
-                       //       controller.stop();
                             });
-                     //       controller.forward();
                           }
                         });
                       }
@@ -336,10 +335,18 @@ class _AnimationFrameState extends FM.State<AnimationFrame>
               FM.Expanded(
                   child: Button("Forward",
                       child: FM.Icon(FM.Icons.navigate_next),
-                      onPressed: () { })),
+                      onPressed: () {
+                        setState(() {
+                          painter.stepForward();
+                        });
+                      })),
               FM.Expanded(child: Button("End",
                   child: FM.Icon(FM.Icons.skip_next),
-                  onPressed: () { })),
+                  onPressed: () {
+                    setState(() {
+                      painter.goToEnd();
+                    });
+                  })),
             ])
       ]),
     );
