@@ -110,7 +110,7 @@ class SequencerModel extends FM.ChangeNotifier {
       callNames.add(cctx.callname);
       callBeats.add(newbeats - prevbeats);
       animation.beat = prevbeats;
-      animation.doPlay(() { });
+      animation.doPlay();
     }
   }
 

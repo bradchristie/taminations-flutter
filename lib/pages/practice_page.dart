@@ -22,22 +22,20 @@ import 'dart:math';
 import 'dart:ui';
 
 import 'package:flutter/material.dart' as FM;
-import 'package:provider/provider.dart' as PP;
 import 'package:flutter/services.dart';
+import 'package:provider/provider.dart' as PP;
 import 'package:taminations/button.dart';
 import 'package:taminations/dancer.dart';
-import 'package:taminations/practice_dancer.dart';
 import 'package:taminations/request.dart';
 import 'package:xml/xml.dart';
 
 import '../dance_animation_painter.dart';
 import '../level_data.dart';
 import '../main.dart';
+import '../math/vector.dart';
+import '../settings.dart';
 import '../tam_utils.dart';
 import '../title_bar.dart';
-import '../settings.dart';
-import '../math/vector.dart';
-import '../extensions.dart';
 
 class PracticePage extends FM.StatefulWidget {
 
@@ -88,7 +86,7 @@ class _PracticePageState extends FM.State<PracticePage> {
       randomAnim = Random().nextInt(tams.length);
       var randomTam = tams[randomAnim];
       painter.setAnimation(randomTam,Gender.BOY).whenComplete(() {
-        painter.doPlay(() { });
+        painter.doPlay();
       });
       return randomTam;
     });

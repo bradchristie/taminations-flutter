@@ -326,8 +326,7 @@ class _AnimationFrameState extends FM.State<AnimationFrame>
                             painter.doPause();
                           } else {
                             //  Not running - start animation
-                            painter.doPlay(() {
-                            });
+                            painter.doPlay();
                           }
                         });
                       }

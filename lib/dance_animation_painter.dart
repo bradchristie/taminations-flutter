@@ -69,7 +69,6 @@ class DanceAnimationPainter extends ChangeNotifier implements CustomPainter  {
   var _practiceScore = 0.0;
   var _prevbeat = -2.0;
   var hasParts = false;
-  Function whenFinished;
   bool isFinished = false;
   String partstr;
   String get animationNote =>
@@ -175,14 +174,13 @@ class DanceAnimationPainter extends ChangeNotifier implements CustomPainter  {
         (d.location - hhloc).length < 0.5 );
   }
 
-  void doPlay(Function w) {
+  void doPlay() {
     if (!isRunning) {
       _lastTime = DateTime.now();
       if (beat > _beats)
         beat = -leadin;
       isRunning = true;
       _practiceScore = 0.0;
-      whenFinished = w;
       _ticker.start();
     }
   }
@@ -263,15 +261,11 @@ class DanceAnimationPainter extends ChangeNotifier implements CustomPainter  {
         beat = -leadin;
       } else if (isRunning) {
         isRunning = false;
-        _ticker.stop();
         isFinished = true;
-        if (whenFinished != null) {
-          //  Flutter gets upset if we call setState from a painter callback
-          WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
-            whenFinished();
-          });
-        }
-      }
+      } else
+        //  Once everyone has noticed that the animation is over
+        //  we can stop the ticker (which bangs on the CPU).
+        _ticker.stop();
     }
 
   }
