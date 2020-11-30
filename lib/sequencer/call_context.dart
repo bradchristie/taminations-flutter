@@ -602,8 +602,8 @@ class CallContext {
       bxa[1][1] += v1.y * v2.y;
     }
     var svdSolution =  Matrix(bxa[0][0], bxa[1][0], 0.0, bxa[0][1], bxa[1][1], 0.0).svd22();
-    var u = svdSolution.firstValue;
-    var v = svdSolution.thirdValue;
+    var u = svdSolution.item1;
+    var v = svdSolution.item3;
     var ut = u.transpose();
     var rotmat = (v * ut).snapTo90(delta:delta);
     //  Now rotate the formation and compute any remaining

@@ -33,10 +33,10 @@ Dart
 */
 
 import 'dart:math';
-import 'package:taminations/math/triple.dart';
 import 'package:vector_math/vector_math.dart' hide Vector;
 import 'vector.dart';
 import '../extensions.dart';
+import 'package:tuple/tuple.dart';
 
 class Matrix extends Matrix3 {
 
@@ -111,7 +111,7 @@ class Matrix extends Matrix3 {
 
   //  SVD simple and fast for 2x2 arrays
   //  for matching 2d formations
-  Triple<Matrix,List<double>,Matrix> svd22() {
+  Tuple3<Matrix,List<double>,Matrix> svd22() {
     var a = m11;
     var b = m12;
     var c = m21;
@@ -122,7 +122,7 @@ class Matrix extends Matrix3 {
       var v = Matrix(a < 0 ? -1 : 1, 0,0,0, d < 0 ? -1 : 1, 0);
       var sigma = [ a.abs(), d.abs() ];
       var u = Matrix.getIdentity();
-      return Triple(u,sigma,v);
+      return Tuple3(u,sigma,v);
     } else {   //  Otherwise, solve quadratic for eigenvalues
       var atanarg1 = 2 * a * c + 2 * b * d;
       var atanarg2 = a * a + b * b - c * c - d * d;
@@ -146,7 +146,7 @@ class Matrix extends Matrix3 {
           s11.sign * cos(phi), -s22.sign * sin(phi), 0.0,
           s11.sign * sin(phi), s22.sign * cos(phi), 0.0
       );
-      return Triple(u, sigma, v);
+      return Tuple3(u, sigma, v);
     }
 
   }

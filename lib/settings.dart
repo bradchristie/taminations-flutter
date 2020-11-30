@@ -18,12 +18,11 @@
 
 */
 
-import 'package:flutter/foundation.dart';
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' as FM;
 import 'package:shared_preferences/shared_preferences.dart';
 import 'tam_utils.dart';
 
-class Settings extends ChangeNotifier {
+class Settings extends FM.ChangeNotifier {
 
   bool _preferencesRead = false;
   String _speed = "Normal";
@@ -163,7 +162,7 @@ class Settings extends ChangeNotifier {
     else if (languageSetting == "Japanese")
       languageSetting = "ja";
     else  //  System language
-      languageSetting = WidgetsBinding.instance.window.locale.languageCode;
+      languageSetting = FM.WidgetsBinding.instance.window.locale.languageCode;
     print("link: $link   looking for definition in $languageSetting");
     if (languageSetting != "en") {
       if (TamUtils.calldata.firstWhere((item) {
