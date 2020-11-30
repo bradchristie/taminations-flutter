@@ -78,6 +78,9 @@ import 'common/while.dart';
 import 'ms/cast_off_three_quarters.dart';
 import 'ms/cross_fold.dart';
 import 'ms/fold.dart';
+import 'ms/half_tag.dart';
+import 'plus/acey_deucey.dart';
+import 'plus/roll.dart';
 
 abstract class CodedCall extends Call {
 
@@ -85,6 +88,7 @@ abstract class CodedCall extends Call {
 
   static Map<RegExp, CodedCall Function(String norm)> normCallMap = {
 
+    "aceydeucey".r: (_) => AceyDeucey(),
     "adjustto.*".r: (name) => Adjust(name),
     "and".r: (_) => And(),
     "around1andcomeintothemiddle".r: (_) =>
@@ -120,6 +124,8 @@ abstract class CodedCall extends Call {
 
     "girl".r: (_) => Girls(),
 
+    "(left)?12tag".r: (name) => HalfTag(name),
+
     "(reverse)?12sashay".r: (name) => HalfSashay(name),
     "head".r: (name) => Heads(name),
 
@@ -140,6 +146,7 @@ abstract class CodedCall extends Call {
 
     "and14more".r: (_) => QuarterMore(),
 
+    "(and)?roll".r: (name) => Roll(name),
     "run(left|right)?".r: (name) => Run(name),
 
     "samesex(es)?".r: (name) => SameSex(name),

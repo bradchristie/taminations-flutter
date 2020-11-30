@@ -18,10 +18,7 @@
 
 */
 
-import '../../../level_data.dart';
-import '../../call_context.dart';
-import '../../call_error.dart';
-import '../action.dart';
+import '../common.dart';
 
 class CastOffThreeQuarters extends Action {
 

@@ -18,12 +18,7 @@
 
 */
 
-import '../action.dart';
-import '../../../level_data.dart';
-import '../../call_context.dart';
-import '../../call_error.dart';
-import '../../../tam_utils.dart';
-import '../../../math/vector.dart';
+import '../common.dart';
 
 class CrossFold extends Action {
 

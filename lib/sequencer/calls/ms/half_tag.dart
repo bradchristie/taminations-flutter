@@ -17,26 +17,19 @@
   along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 */
+
 import '../common.dart';
 
-class Roll extends Action {
+class HalfTag extends Action {
 
   @override
-  var level = LevelData.PLUS;
-  Roll(String name) : super(name);
+  var level = LevelData.MS;
+  HalfTag(String name) : super(name);
 
   @override
-  Future<void> perform(CallContext ctx, [int stackIndex=0]) async {
-    if (stackIndex == 0)  // TODO check that there's a previous action
-      throw CallError("'and Roll' must follow another call.");
-    super.perform(ctx, stackIndex);
-  }
-
-  @override
-  Path performOne(Dancer d, CallContext ctx) {
-    var roll = ctx.roll(d);
-    var move = roll.isEmpty ? "Stand" : "Quarter $roll";
-    return TamUtils.getMove(move);
+  Future<void> perform(CallContext ctx, [int i = 0]) async {
+    var dir = name.startsWith("Left") ? "Left" : "";
+    await ctx.applyCalls(["$dir Quarter Tag","Extend"]);
   }
 
 }
