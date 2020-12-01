@@ -188,7 +188,7 @@ class _AnimListState extends FM.State<AnimListFrame> {
       if (group.isNotEmpty) {
         //  Add header for new group as needed
         if (group != prevGroup) {
-          if (group.isBlank()) {
+          if (group.isBlank) {
             // Blank group, for calls with no common starting phrase
             // Add a separator unless it's the first group
             if (animListItems.length > 0) {
@@ -214,7 +214,7 @@ class _AnimListState extends FM.State<AnimListFrame> {
       prevGroup = group;
       if (from == "from") from = tam("from");
       animListItems.add(AnimListItem(
-          celltype: group.isBlank() && group.isNotEmpty
+          celltype: group.isBlank && group.isNotEmpty
               ? CellType.Plain
               : CellType.Indented,
           title: tamTitle,

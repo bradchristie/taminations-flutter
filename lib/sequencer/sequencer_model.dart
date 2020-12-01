@@ -23,8 +23,10 @@ import 'package:flutter/material.dart' as FM;
 import '../dance_animation_painter.dart';
 import '../extensions.dart';
 import '../tam_utils.dart';
+import 'calls/coded_call.dart';
 import 'call_context.dart';
 import 'call_error.dart';
+import 'abbreviaions_model.dart';
 
 class SequencerModel extends FM.ChangeNotifier {
 
@@ -34,6 +36,7 @@ class SequencerModel extends FM.ChangeNotifier {
   String partString = "";
   String errorString = "";
   DanceAnimationPainter animation = DanceAnimationPainter();
+  AbbreviationsModel abbreviations = AbbreviationsModel();
 
   SequencerModel() {
     CallContext.init();
@@ -98,8 +101,8 @@ class SequencerModel extends FM.ChangeNotifier {
     cctx.extendPaths();
     //  Snap to a standard formation so subsequent calls will work
     //  But not if just one XML call, as it knows how it should end
-    //  TODO  if (cctx.callstack.count() > 1 || cctx.callstack[0] is CodedCall)
-    //  TODO  cctx.matchStandardFormation()
+    if (cctx.callstack.length > 1 || cctx.callstack[0] is CodedCall)
+      cctx.matchStandardFormation();
     if (cctx.isCollision())
       throw CallError("Unable to calculate valid animation.");
     cctx.appendToSource();
@@ -116,9 +119,11 @@ class SequencerModel extends FM.ChangeNotifier {
 
   //  Replace any abbreviations with their expanded equivalents
   //  and return the new string
-  String _replaceAbbreviations(String text) {
-    return text;  // TODO
-  }
+  String _replaceAbbreviations(String text) =>
+  text.split("\\s+".r)
+      .map((word) => abbreviations.currentAbbreviations
+      .firstWhere((e) => e.item1 == word.toLowerCase(), orElse: () => null)?.item2 ?? word)
+      .join(" ");
 
   bool _isComment(String text) =>
       text.trim().startsWith("[^\\[a-zA-Z0-9]".r);

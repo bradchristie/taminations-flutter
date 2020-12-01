@@ -21,12 +21,15 @@
 import 'package:flutter/material.dart' as FM;
 import 'package:provider/provider.dart' as PP;
 import 'package:taminations/pages/web_page.dart';
-import 'package:taminations/sequencer/sequencer_model.dart';
 
-import '../title_bar.dart';
-import 'sequencer_animation_frame.dart';
-import 'calls_frame.dart';
+import '../pages/settings_page.dart';
 import '../request.dart';
+import '../title_bar.dart';
+import 'abbreviaions_model.dart';
+import 'abbreviations_frame.dart';
+import 'calls_frame.dart';
+import 'sequencer_animation_frame.dart';
+import 'sequencer_model.dart';
 
 class SequencerPage extends FM.StatefulWidget {
   @override
@@ -36,11 +39,16 @@ class SequencerPage extends FM.StatefulWidget {
 class _SequencerPageState extends FM.State<SequencerPage> {
 
   SequencerModel model;
+  AbbreviationsModel abbreviationsModel;
+  FM.Widget rightChild;
 
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
     model = SequencerModel();
+    abbreviationsModel = AbbreviationsModel();
+    if (rightChild == null)
+      rightChild = WebFrame("info/sequencer.html");
   }
 
   @override
@@ -48,7 +56,8 @@ class _SequencerPageState extends FM.State<SequencerPage> {
     return PP.MultiProvider(
       providers: [
         PP.ChangeNotifierProvider.value(value: model),
-        PP.ChangeNotifierProvider.value(value: model.animation)
+        PP.ChangeNotifierProvider.value(value: model.animation),
+        PP.ChangeNotifierProvider.value(value: abbreviationsModel)
       ],
       child: FM.Scaffold(
           appBar: FM.PreferredSize(
@@ -63,12 +72,24 @@ class _SequencerPageState extends FM.State<SequencerPage> {
                 });
               if (request("button") == "Reset")
                 model.reset();
+              if (request("button") == "Help")
+                setState(() {
+                  rightChild = WebFrame("info/sequencer.html");
+                });
+              if (request("button") == "Settings")
+                setState(() {
+                  rightChild = SettingsFrame();
+                });
+              if (request("button") == "Abbrev")
+                setState(() {
+                  rightChild = AbbreviationsFrame();
+                });
             },
             child: FM.Row(
               children: [
                 FM.Expanded(child: SequencerCallsFrame()),
                 FM.Expanded(child: SequencerAnimationFrame()),
-                FM.Expanded(child: WebFrame("info/sequencer.html"))
+                FM.Expanded(child: rightChild)
               ],
             ),
           )

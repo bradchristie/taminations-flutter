@@ -90,7 +90,7 @@ abstract class CodedCall extends Call {
 
   CodedCall(String name) : super(name.capWords());
 
-  static Map<RegExp, CodedCall Function(String norm)> normCallMap = {
+  static final Map<RegExp, CodedCall Function(String norm)> normCallMap = {
 
     "aceydeucey".r: (_) => AceyDeucey(),
     "adjustto.*".r: (name) => Adjust(name),

@@ -86,7 +86,8 @@ extension TamString on String {
   RegExp get ri => RegExp(this, caseSensitive: false);
   RegExp get rd => RegExp(this, dotAll: true);
   String get lc => this.toLowerCase();
-  bool isBlank() => this.trim().isEmpty;
+  bool get isBlank => this.trim().isEmpty;
+  bool get isNotBlank => !isBlank;
   String capitalize() => this.isEmpty ? this :
       this.substring(0,1).toUpperCase() + this.substring(1).toLowerCase();
   //  Capitolize words except for common small words

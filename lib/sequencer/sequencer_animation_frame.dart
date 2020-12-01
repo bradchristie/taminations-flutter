@@ -18,13 +18,12 @@
 
 */
 
-
 import 'package:flutter/material.dart' as FM;
 import 'package:provider/provider.dart' as PP;
-import 'package:taminations/pages/animation_page.dart';
-import 'sequencer_model.dart';
 
 import '../button.dart';
+import '../pages/animation_page.dart';
+import 'sequencer_model.dart';
 
 class SequencerAnimationFrame extends FM.StatefulWidget {
 
