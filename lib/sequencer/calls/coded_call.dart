@@ -20,8 +20,13 @@
 
 import '../../extensions.dart';
 import '../../tam_utils.dart';
+import 'a1/as_couples.dart';
 import 'a1/beaus.dart';
 import 'a1/belles.dart';
+import 'a1/brace_thru.dart';
+import 'a1/cast_a_shadow.dart';
+import 'a1/clover_and.dart';
+import 'a1/cross.dart';
 import 'b1/around_to_a_line.dart';
 import 'b1/bend_the_line.dart';
 import 'b1/california_twirl.dart';
@@ -109,6 +114,7 @@ abstract class CodedCall extends Call {
         AroundToALine('Around One and Come Into the Middle'),
     'around1toaline'.r: (_) => AroundToALine('Around One to a Line'),
     'around2toaline'.r: (_) => AroundToALine('Around Two to a Line'),
+    'ascouples.*'.r: (name) => AsCouples(name),
 
     'backaway'.r: (_) => BackAway(),
     'beau'.r: (_) => Beaus(),
@@ -116,14 +122,19 @@ abstract class CodedCall extends Call {
     'bendtheline'.r: (_) => BendTheLine(),
     'boy'.r: (_) => Boys(),
     'boxthegnat'.r: (_) => BoxTheGnat(),
+    'bracethru'.r: (_) => BraceThru(),
 
     'californiatwirl'.r: (_) => CaliforniaTwirl(),
+    'castashadowcenter(go|cast)?34'.r: (name) => CastAShadow(name),
     'castoff34'.r: (_) => CastOffThreeQuarters(),
     'center'.r: (_) => Centers(),
     'center6'.r: (_) => CenterSix(),
     'circulate'.r: (_) => Circulate(),
+    '(cross)?cloverand(\\w.*)'.r: (name) => CloverAnd(name),
+    'cloverleaf'.r: (_) => Cloverleaf(),
     'counterrotate'.r: (_) => CounterRotate(),
     'courtesyturn'.r: (_) => CourtesyTurn(),
+    'cross'.r: (_) => Cross(),
     'crossfold'.r: (_) => CrossFold(),
     '.*crossrun'.r: (name) => CrossRun(name),
 
@@ -144,7 +155,6 @@ abstract class CodedCall extends Call {
     '_grandswing(left|right)?'.r: (name) => GrandSwingX(name),
 
     '(left)?12tag'.r: (name) => HalfTag(name),
-
     '(reverse)?12sashay'.r: (name) => HalfSashay(name),
     'head'.r: (name) => Heads(name),
 
