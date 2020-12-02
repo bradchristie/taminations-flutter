@@ -31,6 +31,6 @@ class Sides extends FilterActives {
   bool isActive(Dancer d, [CallContext ctx]) =>
       ctx.isSquare()
           ? d.location.y.abs().isAbout(3.0)
-          : d.numberCouple=="2" || d.numberCouple=="4";
+          : d.numberCouple=='2' || d.numberCouple=='4';
 
 }

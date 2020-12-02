@@ -22,24 +22,24 @@ import '../common.dart';
 
 class BendTheLine extends Action {
 
-  BendTheLine() : super("Bend the Line");
+  BendTheLine() : super('Bend the Line' );
 
   @override
   Path performOne(Dancer d, CallContext ctx) {
     if (!ctx.isInCouple(d))
-      throw CallError("Only couples can Bend the Line");
+      throw CallError('Only couples can Bend the Line' );
     if (d.data.beau) {
       if (d.isCenterRight)
-        return TamUtils.getMove("Hinge Right");
+        return TamUtils.getMove('Hinge Right' );
       else if (d.isCenterLeft)
-        return TamUtils.getMove("BackHinge Right");
+        return TamUtils.getMove('BackHinge Right' );
     } else if (d.data.belle) {
       if (d.isCenterRight)
-        return TamUtils.getMove("BackHinge Left");
+        return TamUtils.getMove('BackHinge Left' );
       else if (d.isCenterLeft)
-        return TamUtils.getMove("Hinge Left");
+        return TamUtils.getMove('Hinge Left' );
     }
-    throw CallError("Cannot figure out how to Bend the Line");
+    throw CallError('Cannot figure out how to Bend the Line' );
   }
 
 }

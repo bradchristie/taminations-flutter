@@ -31,6 +31,6 @@ class Heads extends FilterActives {
   bool isActive(Dancer d, [CallContext ctx]) =>
       ctx.isSquare()
           ? d.location.x.abs().isAbout(3.0)
-          : d.numberCouple=="1" || d.numberCouple=="3";
+          : d.numberCouple=='1' || d.numberCouple=='3';
 
 }

@@ -31,13 +31,13 @@ class StarThru extends Action {
     if (d2 == null)
       return ctx.dancerCannotPerform(d, name);
     if (d2.gender == d.gender)
-      throw CallError("Cannot Star Thru with same gender.");
+      throw CallError('Cannot Star Thru with same gender.' );
     var dist = d.distanceTo(d2);
-    var move = TamUtils.getMove("Extend Left")..scale(dist/2,0.5);
+    var move = TamUtils.getMove('Extend Left' )..scale(dist/2,0.5);
     move += d.gender == Gender.BOY
-        ? (TamUtils.getMove("Lead Right")..scale(1.0,0.5))
-        : (TamUtils.getMove("Quarter Left")..skew(1.0,-.5));
-    if (name.toLowerCase().startsWith("left"))
+        ? (TamUtils.getMove('Lead Right' )..scale(1.0,0.5))
+        : (TamUtils.getMove('Quarter Left' )..skew(1.0,-.5));
+    if (name.toLowerCase().startsWith('left' ))
       move.reflect();
     return move;
   }

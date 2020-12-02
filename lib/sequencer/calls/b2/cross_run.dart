@@ -54,7 +54,7 @@ class CrossRun extends ActivesOnlyAction {
       return;
     }
     //  Get runners and dodgers
-    var spec = name.replaceFirst("Cross Run", "");
+    var spec = name.replaceFirst('Cross Run' , '' );
     var specCtx = CallContext.fromContext(ctx);
     specCtx.applySpecifier(spec);
     var runners = ctx.actives.where((d) => specCtx.actives.contains(d));
@@ -64,18 +64,18 @@ class CrossRun extends ActivesOnlyAction {
       //  Find active dancer 2 dancers away it can run to
       var dright = ctx.dancersToRight(d).getOrNull(1);
       var dleft = ctx.dancersToLeft(d).getOrNull(1);
-      var dir = "";
-      if (dright?.isNotActive ?? true) dir = "Left";
-      else if (dleft?.isNotActive ?? true) dir = "Right";
+      var dir = '' ;
+      if (dright?.isNotActive ?? true) dir = 'Left' ;
+      else if (dleft?.isNotActive ?? true) dir = 'Right' ;
       //  If 2 dancers away both left and right are active,
       //  choose dancer furthest from the center,
       //    as it must be a tidal formation and runners should not cross center
-      else if (dright.location.length > dleft.location.length) dir = "Right";
-      else dir = "Left";
-      var d2 = (dir == "Right" ? dright : dleft) ??
-          thrower(CallError("Dancer $d cannot Cross Run"));
+      else if (dright.location.length > dleft.location.length) dir = 'Right' ;
+      else dir = 'Left' ;
+      var d2 = (dir == 'Right'  ? dright : dleft) ??
+          thrower(CallError('Dancer $d cannot Cross Run' ));
       var dist = d.distanceTo(d2);
-      d.path += TamUtils.getMove("Run $dir",scale:[1.5, dist/2].v);
+      d.path += TamUtils.getMove('Run $dir' ,scale:[1.5, dist/2].v);
     }
     //  Loop through each dodger and figure out which way they are moving
     for (var d in dodgers) {
@@ -88,19 +88,19 @@ class CrossRun extends ActivesOnlyAction {
       var dback = ctx.dancerInBack(d);
       //  Dodge or move forward/back to that spot
       if (runners.contains(dright))
-        d.path = TamUtils.getMove("Dodge Right", scale:[1.0,d.distanceTo(dright)/2].v);
+        d.path = TamUtils.getMove('Dodge Right' , scale:[1.0,d.distanceTo(dright)/2].v);
       else if (runners.contains(dleft))
-        d.path = TamUtils.getMove("Dodge Left", scale:[1.0,d.distanceTo(dleft)/2].v);
+        d.path = TamUtils.getMove('Dodge Left' , scale:[1.0,d.distanceTo(dleft)/2].v);
       else if (runners.contains(dfront))
-        d.path = TamUtils.getMove("Forward",
+        d.path = TamUtils.getMove('Forward' ,
             beats: 3.0,
             scale:[d.distanceTo(dfront),1.0].v);
       else if (runners.contains(dback))
-        d.path = TamUtils.getMove("Back",
+        d.path = TamUtils.getMove('Back' ,
             beats: 3.0,
             scale:[d.distanceTo(dfront),1.0].v);
       else
-        throw CallError("Unable to calculate Cross Run action for dancer $d");
+        throw CallError('Unable to calculate Cross Run action for dancer $d' );
     }
   }
 

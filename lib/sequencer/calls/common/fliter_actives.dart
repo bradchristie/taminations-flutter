@@ -41,7 +41,7 @@ abstract class FilterActives extends CodedCall {
       d.data.active = isActive(d,ctx);
     }
     if (ctx.actives.isEmpty)
-      throw CallError("Unable to identify any $name");
+      throw CallError('Unable to identify any $name');
   }
 
 }

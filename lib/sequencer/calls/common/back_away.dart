@@ -27,14 +27,14 @@ import '../action.dart';
 
 class BackAway extends Action {
 
-  BackAway() : super("Back Away");
+  BackAway() : super('Back Away');
 
   @override
   Path performOne(Dancer d, CallContext ctx) {
-    if (ctx.dancersInBack(d).length == 0)
+    if (ctx.dancersInBack(d).isEmpty)
       //  TODO hold hands with partner?
-      return TamUtils.getMove("Back 2");
-    throw CallError("Dancer $d cannot Back Away");
+      return TamUtils.getMove('Back 2');
+    throw CallError('Dancer $d cannot Back Away');
   }
 
 }

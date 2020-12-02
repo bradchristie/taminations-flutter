@@ -37,13 +37,13 @@ class WheelAround extends ActivesOnlyAction {
   @override
   Path performOne(Dancer d, CallContext ctx) {
     var d2 = d.data.partner
-        ?? thrower(CallError("Dancer $d must Wheel Around with partner"));
+        ?? thrower(CallError('Dancer $d must Wheel Around with partner'));
     var dist = d.distanceTo(d2);
     String move;
-    if (name.startsWith("Reverse"))
-      move = d2.isRightOf(d) ? "Beau Reverse Wheel" : "Belle Reverse Wheel";
+    if (name.startsWith('Reverse'))
+      move = d2.isRightOf(d) ? 'Beau Reverse Wheel' : 'Belle Reverse Wheel';
     else
-      move = d2.isRightOf(d) ? "Beau Wheel" : "Belle Wheel";
+      move = d2.isRightOf(d) ? 'Beau Wheel' : 'Belle Wheel';
     return TamUtils.getMove(move,
         scale:[dist/2,dist/2].v);
   }

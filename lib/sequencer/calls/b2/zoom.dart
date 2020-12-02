@@ -35,7 +35,7 @@ class Zoom extends Action {
   @override
   LevelData level;
   Zoom(String name) : super(name) {
-    level = name == "Zing" ? LevelData.C1 : LevelData.B2;
+    level = name == 'Zing'  ? LevelData.C1 : LevelData.B2;
   }
 
   @override
@@ -47,25 +47,25 @@ class Zoom extends Action {
         ctx.dancersToLeft(d).length == 2;
     String c,c2,c3;
     if (centerLeft || (!centerRight && a > 0)) {
-      c = "Run Right";
-      c2 = "Lead Right";
-      c3 = "Quarter Left";
+      c = 'Run Right' ;
+      c2 = 'Lead Right' ;
+      c3 = 'Quarter Left' ;
     } else {
-      c = "Run Left";
-      c2 = "Lead Left";
-      c3 = "Quarter Right";
+      c = 'Run Left' ;
+      c2 = 'Lead Left' ;
+      c3 = 'Quarter Right' ;
     }
     var s = centerLeft || centerRight ? 0.25 : 1.0;
     if (d.data.leader) {
-      var d2 = ctx.dancerInBack(d) ?? thrower(CallError("Dancer $d cannot $name"));
+      var d2 = ctx.dancerInBack(d) ?? thrower(CallError('Dancer $d cannot $name' ));
       if (!d2.data.active)
-        throw CallError("Trailer of dancer $d is not active");
+        throw CallError('Trailer of dancer $d is not active' );
       var dist = d.distanceTo(d2);
       return TamUtils.getMove(c,
           beats:2.0,
           skew:[-dist/2,0.0].v,
           scale:[1.0,s].v) +
-          ((name == "Zoom")
+          ((name == 'Zoom' )
               ? TamUtils.getMove(c,
               beats:2.0,
               skew:[dist/2.0,0.0].v,
@@ -74,22 +74,22 @@ class Zoom extends Action {
               beats:2.0,
               scale:[dist/2.0,2.0*s].v));
     } else if (d.data.trailer) {
-      var d2 = ctx.dancerInFront(d) ?? thrower(CallError("Dancer $d cannot $name"));
+      var d2 = ctx.dancerInFront(d) ?? thrower(CallError('Dancer $d cannot $name' ));
       if (!d2.data.active)
-        throw CallError("Leader of dancer $d is not active");
+        throw CallError('Leader of dancer $d is not active' );
       var dist = d.distanceTo(d2);
-      return (name == "Zoom")
-          ? TamUtils.getMove("Forward",
+      return (name == 'Zoom' )
+          ? TamUtils.getMove('Forward' ,
           beats:4.0,
           scale:[dist,1.0].v)
-          : TamUtils.getMove("Forward",
+          : TamUtils.getMove('Forward' ,
           beats:2.0,
           scale:[dist-1,1.0].v) +
           TamUtils.getMove(c3,
               beats:2.0,
               skew:[0.0,0.0].v);
     } else
-      throw CallError("Dancer $d cannot $name");
+      throw CallError('Dancer $d cannot $name' );
   }
 
 

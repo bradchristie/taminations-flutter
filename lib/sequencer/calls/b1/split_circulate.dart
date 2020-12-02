@@ -22,27 +22,27 @@ import '../common.dart';
 
 class SplitCirculate extends Action {
 
-  SplitCirculate() : super("Split Circulate");
+  SplitCirculate() : super('Split Circulate' );
 
   @override
   Future<void> perform(CallContext ctx, [int i=0]) async {
     if (!ctx.isTBone())
-      throw CallError("Only 2 boxes of 4 can Split Circulate.");
+      throw CallError('Only 2 boxes of 4 can Split Circulate.' );
     await super.perform(ctx,i);
   }
 
   @override
   Path performOne(Dancer d, CallContext ctx) {
     if (d.data.trailer)
-      return TamUtils.getMove("Forward 2")..changebeats(3.0);
+      return TamUtils.getMove('Forward 2' )..changebeats(3.0);
     else if (d.data.leader) {
-      var move = (ctx.dancerInFront(d) != null) ? "Flip" : "Run";
+      var move = (ctx.dancerInFront(d) != null) ? 'Flip'  : 'Run' ;
       if (ctx.dancersToLeft(d).length % 2 == 1)
-        return TamUtils.getMove("$move Left");
+        return TamUtils.getMove('$move Left' );
       else if (ctx.dancersToRight(d).length % 2 == 1)
-        return TamUtils.getMove("$move Right");
+        return TamUtils.getMove('$move Right' );
     }
-    throw CallError("Unable to calculate Split Circulate for dancer $d.");
+    throw CallError('Unable to calculate Split Circulate for dancer $d.' );
   }
 
 }

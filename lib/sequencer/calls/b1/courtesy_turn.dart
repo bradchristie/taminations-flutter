@@ -22,11 +22,11 @@ import '../common.dart';
 
 class CourtesyTurn extends Action {
 
-  CourtesyTurn() : super("Courtesy Turn");
+  CourtesyTurn() : super('Courtesy Turn');
 
   @override
   Future<void> perform(CallContext ctx, [int stackIndex=0]) async {
-    ctx.applyCalls("Wheel Around");
+    await ctx.applyCalls('Wheel Around');
   }
 
 }

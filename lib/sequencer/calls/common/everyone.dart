@@ -25,6 +25,7 @@ class Everyone extends CodedCall {
 
   Everyone(String name) : super(name);
 
+  @override
   Future<void> performCall(CallContext ctx, [int stackIndex=0]) async {
     for (var d in ctx.dancers)
       d.data.active = true;

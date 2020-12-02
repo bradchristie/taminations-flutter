@@ -36,12 +36,12 @@ class Run extends Action {
 
   void _runOne(Dancer d, Dancer d2, String dir) {
     var dist = d.distanceTo(d2);
-    d.path = TamUtils.getMove("Run $dir",scale:[1.0,dist/2].v);
-    var m2 = "Stand";
-    if (d.isRightOf(d2)) m2 = "Dodge Right";
-    if (d.isLeftOf(d2)) m2 = "Dodge Left";
-    if (d.isInFrontOf(d2)) m2 = "Forward 2";
-    if (d.isInBackOf(d2)) m2 = "Back 2";  //  really ???
+    d.path = TamUtils.getMove('Run $dir' ,scale:[1.0,dist/2].v);
+    var m2 = 'Stand' ;
+    if (d.isRightOf(d2)) m2 = 'Dodge Right' ;
+    if (d.isLeftOf(d2)) m2 = 'Dodge Left' ;
+    if (d.isInFrontOf(d2)) m2 = 'Forward 2' ;
+    if (d.isInBackOf(d2)) m2 = 'Back 2' ;  //  really ???
     d2.path = TamUtils.getMove(m2,scale:[dist/2,dist/2].v);
   }
 
@@ -57,16 +57,16 @@ class Run extends Action {
         var dleft = ctx.dancerToLeft(d);
         var dright = ctx.dancerToRight(d);
         var isLeft = dleft != null && dancersToWalk.contains(dleft) &&
-            name != "Run Right";
+            name != 'Run Right' ;
         var isRight = dright != null && dancersToWalk.contains(dright) &&
-            name != "Run Left";
+            name != 'Run Left' ;
         if (!isLeft && !isRight)
-          throw CallError("Dancer $d cannot Run");
+          throw CallError('Dancer $d cannot Run' );
         else if (!isLeft ||
             (usePartner && dright!=null && dright == d.data.partner)) {
           //  Run Right
-          var d2 = dright ?? thrower(CallError("Dancer $d unable to Run"));
-          _runOne(d, d2, "Right");
+          var d2 = dright ?? thrower(CallError('Dancer $d unable to Run' ));
+          _runOne(d, d2, 'Right' );
           runnersRunned.add(d);
           dancersToWalk.remove(d2);
           foundRunner = true;
@@ -75,8 +75,8 @@ class Run extends Action {
         else if (!isRight ||
             (usePartner && dleft!=null && dleft == d.data.partner)) {
           //  Run Left
-          var d2 = dleft ?? thrower( CallError("Dancer $d unable to Run"));
-          _runOne(d,d2,"Left");
+          var d2 = dleft ?? thrower( CallError('Dancer $d unable to Run' ));
+          _runOne(d,d2,'Left' );
           runnersRunned.add(d);
           dancersToWalk.remove(d2);
           foundRunner = true;
@@ -88,7 +88,7 @@ class Run extends Action {
         if (!usePartner)
           usePartner = true;
         else
-          throw CallError("Unable to calculate $name for this formation.");
+          throw CallError('Unable to calculate $name for this formation.' );
       }
 
     }

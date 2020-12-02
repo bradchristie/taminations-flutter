@@ -38,9 +38,9 @@ class Touch extends Action {
     if (d2 == null)
       return ctx.dancerCannotPerform(d,name);
     var dist = d.distanceTo(d2);
-    var dir = name.startsWith("Left") ? "Right" : "Left";
+    var dir = name.startsWith('Left') ? 'Right' : 'Left';
     //  Touch to handhold in between wide and narrow
-    return TamUtils.getMove("Extend $dir",scale:[dist/2,0.75].v);
+    return TamUtils.getMove('Extend $dir',scale:[dist/2,0.75].v);
   }
 
 }

@@ -29,13 +29,13 @@ class Twice extends CodedCall {
   @override
   Future<void> performCall(CallContext ctx, [int stackIndex=0]) async {
     if (ctx.callstack.length < 2)
-      throw CallError("Twice what?");
+      throw CallError('Twice what?');
     //  At this point the call has already been done once
     //  Make sure everyone waits to finish the first time
     ctx.extendPaths();
     //  So just do it again
     var prevCall = ctx.callstack.take(ctx.callstack.length-1)
-        .map((it) => it.name).join(" ");
+        .map((it) => it.name).join(' ');
     await ctx.applyCalls(prevCall);
   }
 

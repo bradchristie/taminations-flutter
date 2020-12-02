@@ -32,7 +32,7 @@ class Trade extends Action {
 
   @override
   var level = LevelData.B2;
-  Trade() : super("Trade");
+  Trade() : super('Trade' );
 
   @override
   Path performOne(Dancer d, CallContext ctx) {
@@ -67,15 +67,15 @@ class Trade extends Action {
     //  an odd number of dancers
     if (bestright!=null && ((rightcount % 2 == 1 && leftcount % 2 == 0) || bestleft==null)) {
       dtrade = bestright;
-      call = "Run Right";
+      call = 'Run Right' ;
       samedir = d.isLeftOf(dtrade);
     } else if (bestleft!=null && ((rightcount % 2 == 0 && leftcount % 2 == 1) || bestright==null)) {
       dtrade = bestleft;
-      call = "Run Left";
+      call = 'Run Left' ;
       samedir = d.isRightOf(dtrade);
     }
     else
-      throw CallError("Unable to calculate Trade");
+      throw CallError('Unable to calculate Trade' );
 
     //  Found the dancer to trade with.
     //  Now make room for any dancers in between
@@ -85,18 +85,18 @@ class Trade extends Action {
     if (ctx.inBetween(d,dtrade).isNotEmpty) {
       //  Intervening dancers
       //  Allow enough room to get around them and pass right shoulders
-      if (call == "Run Right" && samedir)
+      if (call == 'Run Right'  && samedir)
         scaleX = 2.0;
     } else {
       //  No intervening dancers
-      if (call == "Run Left" && samedir)
+      if (call == 'Run Left'  && samedir)
         //  Partner trade, flip the belle
-        call = "Flip Left";
+        call = 'Flip Left' ;
       else
         scaleX = dist/2;
       //  Hold hands for trades that are swing/slip
       if (!samedir && dist < 2.1)
-        hands = (call == "Run Left") ? Hands.LEFTHAND : Hands.RIGHTHAND;
+        hands = (call == 'Run Left') ? Hands.LEFTHAND : Hands.RIGHTHAND;
     }
     return TamUtils.getMove(call,
         hands:hands,

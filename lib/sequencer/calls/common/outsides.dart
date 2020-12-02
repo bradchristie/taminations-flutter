@@ -28,11 +28,11 @@ class Outsides extends Action {
   Outsides(String name) : super(name);
 
   @override
-  Future<void> performCall(CallContext ctx, [int stackIndex = 0]) {
+  Future<void> performCall(CallContext ctx, [int stackIndex = 0]) async {
     var norm = TamUtils.normalizeCall(name);
     var num = 4;
-    if (norm.endsWith("2")) num = 2;
-    if (norm.endsWith("6")) num = 6;
+    if (norm.endsWith('2')) num = 2;
+    if (norm.endsWith('6')) num = 6;
     ctx.dancers.sortedBy((d) => -d.location.length).drop(num).forEach((d) {
       d.data.active =  false;
     });

@@ -37,11 +37,11 @@ class PassThru extends Action {
       }
       if (d2.data.active) {
         var dist = d.distanceTo(d2);
-        if (name.toLowerCase().startsWith("left")) {
+        if (name.toLowerCase().startsWith('left' )) {
           if (d2.isLeftOf(d))
-            return TamUtils.getMove("Extend Left",scale:[1.0, dist/2.0].v);
+            return TamUtils.getMove('Extend Left' ,scale:[1.0, dist/2.0].v);
         } else if (d2.isRightOf(d))
-          return TamUtils.getMove("Extend Right",scale:[1.0, dist/2.0].v);
+          return TamUtils.getMove('Extend Right' ,scale:[1.0, dist/2.0].v);
       }
     }
     //  Can only pass thru with another dancer
@@ -49,16 +49,16 @@ class PassThru extends Action {
     //  who is also facing this dancer
     var d2 = ctx.dancerFacing(d);
     if (d2 == null)
-      return ctx.dancerCannotPerform(d,"Pass Thru");
+      return ctx.dancerCannotPerform(d,'Pass Thru' );
     if (!d2.data.active)
-      throw CallError("Dancers must Pass Thru with each other");
+      throw CallError('Dancers must Pass Thru with each other' );
     var dist = d.distanceTo(d2);
-    if (name.toLowerCase().startsWith("left"))
-      return TamUtils.getMove("Extend Right",scale:[dist/2,0.5].v) +
-             TamUtils.getMove("Extend Left",scale:[dist/2,0.5].v);
+    if (name.toLowerCase().startsWith('left' ))
+      return TamUtils.getMove('Extend Right' ,scale:[dist/2,0.5].v) +
+             TamUtils.getMove('Extend Left' ,scale:[dist/2,0.5].v);
     else
-      return TamUtils.getMove("Extend Left",scale:[dist/2,0.5].v) +
-             TamUtils.getMove("Extend Right",scale:[dist/2,0.5].v);
+      return TamUtils.getMove('Extend Left' ,scale:[dist/2,0.5].v) +
+             TamUtils.getMove('Extend Right' ,scale:[dist/2,0.5].v);
   }
 
 }

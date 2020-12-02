@@ -34,7 +34,7 @@ class While extends Action {
 
     //  Use another context to do the rest of the call
     var ctx2 = CallContext.fromContext(ctx,beat:0.0)..noSnap();
-    if (name.toLowerCase().contains("others")) {
+    if (name.toLowerCase().contains('others')) {
       for (var d in ctx2.dancers) {
         d.data.active = !d.data.active;
       }
@@ -45,8 +45,8 @@ class While extends Action {
       }
     }
     var whilecall = name.toLowerCase()
-        .replaceAll("while (the )?".r,"")
-        .replaceAll("(the )?others? ".r,"");
+        .replaceAll('while (the )?'.r,'')
+        .replaceAll('(the )?others? '.r,'');
     await ctx2.applyCalls(whilecall);
     ctx2.appendToSource();
   }

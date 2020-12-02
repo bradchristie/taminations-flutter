@@ -33,7 +33,7 @@ class BoxTheGnat extends ActivesOnlyAction {
   @override
   var level = LevelData.B2;
 
-  BoxTheGnat() : super("Box the Gnat");
+  BoxTheGnat() : super('Box the Gnat');
 
   Dancer _checkOtherDancer(Dancer d, Dancer d2) {
     if (d2 == null)
@@ -55,7 +55,7 @@ class BoxTheGnat extends ActivesOnlyAction {
       var offset = -dist/2.0;
       if (dist > 1.5 && d.data.end) offset = -dist;
       if (dist > 1.5 && d.data.center) offset = 0.0;
-      return TamUtils.getMove((d.gender==Gender.BOY) ? "U-Turn Right" : "U-Turn Left")
+      return TamUtils.getMove((d.gender==Gender.BOY) ? 'U-Turn Right' : 'U-Turn Left')
         ..skew(1.0,offset)
         ..changehands(Hands.GRIPRIGHT);
     } else {

@@ -35,12 +35,12 @@ class HalfSashay extends Action {
     else if (ctx.dancerToLeft(d)?.data?.active ?? false)
       d2 = ctx.dancerToLeft(d);
     else
-      throw CallError("Dancer $d has nobody to Sashay with");
-    var move = "BackSashay Right";
-    if (name.toLowerCase().startsWith("reverse"))
-      move = d2.isLeftOf(d) ? "BackSashay Left" : "Sashay Right";
+      throw CallError('Dancer $d has nobody to Sashay with' );
+    var move = 'BackSashay Right' ;
+    if (name.toLowerCase().startsWith('reverse' ))
+      move = d2.isLeftOf(d) ? 'BackSashay Left'  : 'Sashay Right' ;
     else if (d2.isLeftOf(d))
-      move = "Sashay Left";
+      move = 'Sashay Left' ;
     return TamUtils.getMove(move)..scale(1,d.distanceTo(d2)/2);
   }
 

@@ -22,30 +22,30 @@ import '../common.dart';
 
 class CaliforniaTwirl extends Action {
 
-  CaliforniaTwirl() : super("California Twirl");
+  CaliforniaTwirl() : super('California Twirl' );
 
   @override
   Path performOne(Dancer d, CallContext ctx) {
     if (d.gender == Gender.BOY) {
       var d2 = ctx.dancerToRight(d);
       if (d2 == null || d2.gender != Gender.GIRL || !d2.data.active)
-        throw CallError("Dancer $d cannot California Twirl");
+        throw CallError('Dancer $d cannot California Twirl' );
       var dist = d.distanceTo(d2);
-      return TamUtils.getMove("Run Right")
+      return TamUtils.getMove('Run Right' )
           ..changehands(Hands.GRIPRIGHT)
           ..scale(dist/2,dist/2);
     }
     else if (d.gender == Gender.GIRL) {
       var d2 = ctx.dancerToLeft(d);
       if (d2 == null || d2.gender != Gender.BOY || !d2.data.active)
-        throw CallError("Dancer $d cannot California Twirl");
+        throw CallError('Dancer $d cannot California Twirl' );
       var dist = d.distanceTo(d2);
-      return TamUtils.getMove("Flip Left")
+      return TamUtils.getMove('Flip Left' )
           ..changehands(Hands.GRIPLEFT)
           ..scale(dist/2,dist/2);
     }
     else
-      throw CallError("Phantoms cannot Twirl");
+      throw CallError('Phantoms cannot Twirl' );
   }
 
 }

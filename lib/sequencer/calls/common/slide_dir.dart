@@ -32,17 +32,17 @@ class SlideDir extends Action {
   @override
   Path performOne(Dancer d, CallContext ctx) {
     String dir;
-    if (name == "Slide Left")
-      dir = "Left";
-    else if (name == "Slide Right")
-      dir = "Right";
-    else if (name == "Slide In")
-      dir = d.isCenterLeft ? "Left" : "Right";
-    else if (name == "Slide Out")
-      dir = d.isCenterLeft ? "Right" : "Left";
+    if (name == 'Slide Left' )
+      dir = 'Left' ;
+    else if (name == 'Slide Right' )
+      dir = 'Right' ;
+    else if (name == 'Slide In' )
+      dir = d.isCenterLeft ? 'Left'  : 'Right' ;
+    else if (name == 'Slide Out' )
+      dir = d.isCenterLeft ? 'Right'  : 'Left' ;
     else
-      throw CallError("Slide how?");
-    return TamUtils.getMove("Dodge $dir");
+      throw CallError('Slide how?' );
+    return TamUtils.getMove('Dodge $dir' );
   }
 
 }

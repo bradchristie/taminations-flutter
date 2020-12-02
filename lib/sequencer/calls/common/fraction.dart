@@ -46,7 +46,7 @@ class Fraction extends Action {
   @override
   Future<void> perform(CallContext ctx, [int stackIndex=0]) async {
     if (stackIndex >= ctx.callstack.length - 1)
-      throw CallError("$name of what?");
+      throw CallError('$name of what?' );
     //  Steal the next call off the stack
     _call = ctx.callstack[stackIndex+1];
     //  For XML calls there should be an explicit number of parts
@@ -54,14 +54,14 @@ class Fraction extends Action {
       //  Figure out how many beats are in the fractional call
       //  Calls could have either "parts" or "fractions"
       var xmlCall = _call as XMLCall;
-      var parts = xmlCall.xelem("parts","") + xmlCall.xelem("fractions","");
+      var parts = xmlCall.xelem('parts' ,'' ) + xmlCall.xelem('fractions' ,'' );
       if (parts.isNotEmpty) {
-        var partnums = parts.split(";");
+        var partnums = parts.split(';' );
         var numParts = partnums.length + 1;
         if (numParts % _denominator != 0)
-          throw CallError("Unable to divide ${_call.name} into $_denominator parts.");
+          throw CallError('Unable to divide ${_call.name} into $_denominator parts.' );
         if (_numerator < 1 || _numerator >= _denominator)
-          throw CallError("Invalid fraction.");
+          throw CallError('Invalid fraction.' );
         var partsToDo = numParts * _numerator ~/ _denominator;
         _partBeats = partnums.take(partsToDo).map((it) => it.d).toList().sum();
       }

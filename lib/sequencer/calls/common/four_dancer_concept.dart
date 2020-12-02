@@ -36,13 +36,13 @@ abstract class FourDancerConcept extends Action {
 
   FourDancerConcept(String name) : super(name);
 
-  var conceptName = "";
+  var conceptName = '' ;
 
-  String get extraCall => name.toLowerCase().split("individually").getOrNull(1);
+  String get extraCall => name.toLowerCase().split('individually' ).getOrNull(1);
 
   String get realCall =>
-      name.replaceFirst("$conceptName ".ri, "")
-          .replaceFirst("individually.*".ri, "");
+      name.replaceFirst('$conceptName ' .ri, '' )
+          .replaceFirst('individually.*' .ri, '' );
 
   //  Return list of groups of dancers
   //  List must have 4 sub-lists
@@ -59,10 +59,10 @@ abstract class FourDancerConcept extends Action {
 
   //  Any analysis or processing after call is applied to concept dancers
   //  but before application to real dancers
-  analyzeConceptResult(CallContext conceptctx, CallContext realctx) { }
+  void analyzeConceptResult(CallContext conceptctx, CallContext realctx) { }
 
   //  Make any changes to the final result (optional)
-  postAdjustment(CallContext ctx, Dancer cd, List<Dancer> group) { }
+  void postAdjustment(CallContext ctx, Dancer cd, List<Dancer> group) { }
 
   @override
   Future<void> perform(CallContext ctx, [int stackIndex=0]) async {
@@ -78,11 +78,11 @@ abstract class FourDancerConcept extends Action {
         g = Gender.GIRL;
       //  Select the couple number for the concept dancer
       //  Needed for e.g. <concept> Heads Run
-      var nc = "0";
-      if (group.every((it) => it.numberCouple.matches("[13]{2}".r)))
-        nc = "1";
-      if (group.every((it) => it.numberCouple.matches("[24]{2}".r)))
-        nc = "2";
+      var nc = '0' ;
+      if (group.every((it) => it.numberCouple.matches('[13]{2}' .r)))
+        nc = '1' ;
+      if (group.every((it) => it.numberCouple.matches('[24]{2}' .r)))
+        nc = '2' ;
       //  Create the concept dancer
       var dsingle = Dancer.clone(group.first, gender:g, numberCouple:nc);
       //  Set the location for the concept dancer
@@ -134,12 +134,12 @@ abstract class FourDancerConcept extends Action {
     conceptctx.dancers.forEachIndexed((ci, cd) {
       postAdjustment(ctx,cd,groups[ci]);
     });
-    //  Perform any calls for single dancers (e.g. "individually roll")
+    //  Perform any calls for single dancers (e.g. 'individually roll' )
     if (extraCall != null) {
-      if (extraCall.trim().matches("roll".ri))
-        await Roll("").perform(ctx,1);
+      if (extraCall.trim().matches('roll' .ri))
+        await Roll('' ).perform(ctx,1);
       else
-        throw CallError("Don't know how to Individually $extraCall");
+        throw CallError('Don''t know how to Individually $extraCall' );
     }
 
   }

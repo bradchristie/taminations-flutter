@@ -25,7 +25,7 @@ class Beaus extends FilterActives {
 
   @override
   var level = LevelData.A1;
-  Beaus() : super("Beaus");
+  Beaus() : super('Beaus');
 
   @override
   bool isActive(Dancer d, [CallContext ctx]) => d.data.beau;

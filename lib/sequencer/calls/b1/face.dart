@@ -28,27 +28,27 @@ class Face extends Action {
   @override
   Path performOne(Dancer d, CallContext ctx) {
     var norm = TamUtils.normalizeCall(name);
-    var moveName = "";
-    if (norm == "facein") {
+    var moveName = '' ;
+    if (norm == 'facein' ) {
       if (d.angleToOrigin.isLessThan(0))
-        moveName = "Quarter Right";
+        moveName = 'Quarter Right' ;
       else if (d.angleToOrigin.isGreaterThan(0))
-        moveName = "Quarter Left";
+        moveName = 'Quarter Left' ;
       else
-        throw CallError("Dancer $d does not know which way to turn.");
+        throw CallError('Dancer $d does not know which way to turn.' );
     }
-    else if (norm == "faceout") {
+    else if (norm == 'faceout' ) {
       if (d.angleToOrigin.isLessThan(0))
-        moveName = "Quarter Left";
+        moveName = 'Quarter Left' ;
       else if (d.angleToOrigin.isGreaterThan(0))
-        moveName = "Quarter Right";
+        moveName = 'Quarter Right' ;
       else
-        throw CallError("Dancer $d does not know which way to turn.");
+        throw CallError('Dancer $d does not know which way to turn.' );
     }
-    else if (norm == "faceleft")
-      moveName = "Quarter Left";
-    else if (norm == "faceright")
-      moveName = "Quarter Right";
+    else if (norm == 'faceleft' )
+      moveName = 'Quarter Left' ;
+    else if (norm == 'faceright' )
+      moveName = 'Quarter Right' ;
     return TamUtils.getMove(moveName);
   }
 

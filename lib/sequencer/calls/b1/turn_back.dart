@@ -22,10 +22,10 @@ import '../common.dart';
 
 class TurnBack extends Action {
 
-  TurnBack() : super("Turn Back");
+  TurnBack() : super('Turn Back');
 
   @override
   Path performOne(Dancer d, CallContext ctx) =>
-      TamUtils.getMove(d.data.beau ? "U-Turn Right" : "U-Turn Left");
+      TamUtils.getMove(d.data.beau ? 'U-Turn Right' : 'U-Turn Left');
 
 }

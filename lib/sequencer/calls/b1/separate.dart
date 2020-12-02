@@ -22,41 +22,41 @@ import '../common.dart';
 
 class Separate extends Action {
 
-  Separate() : super("Separate");
+  Separate() : super('Separate' );
 
   //  We need to look at all the dancers, not just actives
   //  because sometimes the inactives need to move in
   @override
   Future<void> perform(CallContext ctx, [int i = 0]) async {
     if (ctx.actives.length != 4)
-      throw CallError("Who is going to Separate?");
+      throw CallError('Who is going to Separate?' );
 
     //  Case 1 - Outer 4 Separate
     if (ctx.outer(4).every((it) => it.data.active)) {
       for (var d in ctx.actives) {
         var d2 = ctx.dancerClosest(d, (it) => it.data.active);
         if (d2.isRightOf(d) && d.isFacingIn)
-          d.path += TamUtils.getMove("Quarter Left") +
-              (TamUtils.getMove("Lead Right")
+          d.path += TamUtils.getMove('Quarter Left' ) +
+              (TamUtils.getMove('Lead Right' )
                 ..changebeats(2.0)
                 ..scale(2.0, 2.0));
         else if (d2.isRightOf(d) && d.isFacingOut)
-          d.path += TamUtils.getMove("Quarter Left") +
-              (TamUtils.getMove("Lead Left")
+          d.path += TamUtils.getMove('Quarter Left' ) +
+              (TamUtils.getMove('Lead Left' )
                 ..changebeats(2.0)
                 ..scale(2.0, 2.0));
         else if (d2.isLeftOf(d) && d.isFacingIn)
-          d.path += TamUtils.getMove("Quarter Right") +
-              (TamUtils.getMove("Lead Left")
+          d.path += TamUtils.getMove('Quarter Right' ) +
+              (TamUtils.getMove('Lead Left' )
                 ..changebeats(2.0)
                 ..scale(2.0, 2.0));
         else if (d2.isLeftOf(d) && d.isFacingOut)
-          d.path += TamUtils.getMove("Quarter Right") +
-              (TamUtils.getMove("Lead Right")
+          d.path += TamUtils.getMove('Quarter Right' ) +
+              (TamUtils.getMove('Lead Right' )
                 ..changebeats(2.0)
                 ..scale(2.0, 2.0));
         else
-          throw CallError("Unable to figure out how to Separate");
+          throw CallError('Unable to figure out how to Separate' );
       }
     }
 
@@ -65,11 +65,11 @@ class Separate extends Action {
       for (var d in ctx.actives) {
         var d2 = ctx.dancerClosest(d, (it) =>
         it.data.active && (it.isRightOf(d) || it.isLeftOf(d))
-        ) ?? thrower(CallError("Unable to figure out how to Separate"));
+        ) ?? thrower(CallError('Unable to figure out how to Separate' ));
         if (d2.isRightOf(d))
-          d.path += TamUtils.getMove("Run Left");
+          d.path += TamUtils.getMove('Run Left' );
         else
-          d.path += TamUtils.getMove("Run Right");
+          d.path += TamUtils.getMove('Run Right' );
       }
       //  Other dancers need to move in
       for (var d in ctx.inActives) {
@@ -78,7 +78,7 @@ class Separate extends Action {
             d, (it) => !it.data.active && it.isInFrontOf(d));
         //  Space the dancers 2 units apart
         var dist = d.distanceTo(d2) / 2 - 1;
-        d.path += TamUtils.getMove("Forward")
+        d.path += TamUtils.getMove('Forward' )
           ..scale(dist, 1.0)
           ..changebeats(3.0);
       }
@@ -86,7 +86,7 @@ class Separate extends Action {
 
     //  Did not match Case 1 or Case 2
     else
-      throw CallError("Cannot figure out how to Separate");
+      throw CallError('Cannot figure out how to Separate' );
 
   }
 

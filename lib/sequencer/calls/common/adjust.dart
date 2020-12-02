@@ -27,35 +27,35 @@ import '../../../tam_utils.dart';
 class Adjust extends Action {
 
   static Map<RegExp,String> formationMap = {
-  ".*lines?".r : "Normal Lines",
-  ".*thar".r : "Thar RH Boys",
-  ".*square(d)?set".r : "Squared Set",
-  ".*boxes?".r : "Eight Chain Thru",
-  ".*columns?".r : "Eight Chain Thru",
-  ".*14tag".r : "Quarter Tag",
-  ".*diamonds?".r : "Diamonds RH Girl Points",
-  ".*tidal(wave|line)?".r : "Tidal Line RH",
-  ".*hourglass".r : "Hourglass RH BP",
-  ".*galaxy".r : "Galaxy RH GP",
-  ".*butterfly".r : "Butterfly RH",
-  ".*o".r : "O RH"
+  '.*lines?' .r : 'Normal Lines' ,
+  '.*thar' .r : 'Thar RH Boys' ,
+  '.*square(d)?set' .r : 'Squared Set' ,
+  '.*boxes?' .r : 'Eight Chain Thru' ,
+  '.*columns?' .r : 'Eight Chain Thru' ,
+  '.*14tag' .r : 'Quarter Tag' ,
+  '.*diamonds?' .r : 'Diamonds RH Girl Points' ,
+  '.*tidal(wave|line)?' .r : 'Tidal Line RH' ,
+  '.*hourglass' .r : 'Hourglass RH BP' ,
+  '.*galaxy' .r : 'Galaxy RH GP' ,
+  '.*butterfly' .r : 'Butterfly RH' ,
+  '.*o' .r : 'O RH'
   };
 
   Adjust(String name) : super(name);
 
   @override
   Future<void> perform(CallContext ctx, [int stackIndex=0]) async {
-    var fname = name.replaceFirst("Adjust to (an?)? ".r, "");
+    var fname = name.replaceFirst('Adjust to (an?)? ' .r, '' );
     String formation;
     for (var r in formationMap.keys) {
       if (fname.matches(r))
         formation = formationMap[r];
     }
     if (formation == null)
-      throw CallError("Sorry, don't know how to $name from here.");
+      throw CallError('Sorry, don''t know how to $name from here.' );
     var ctx2 = CallContext.fromXML(TamUtils.getFormation(formation));
     var mapping = ctx.matchFormations(ctx2,sexy:false,fuzzy:true,rotate:180,handholds:false, maxError : 3.0)
-        ?? thrower(CallError("Unable to match formation to $fname"));
+        ?? thrower(CallError('Unable to match formation to $fname'));
     var matchResult = ctx.computeFormationOffsets(ctx2,mapping,delta:0.3);
     ctx.adjustToFormationMatch(matchResult);
     ctx.noSnap();

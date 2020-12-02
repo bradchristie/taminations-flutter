@@ -30,10 +30,10 @@ abstract class ModifiedFormationConcept extends Action {
 
   ModifiedFormationConcept(String name) : super(name);
 
-  var conceptName = "";
-  String get realCall => name.replaceFirst("$conceptName ".r, "");
-  var formationName = "";
-  var modifiedFormationName = "";
+  var conceptName = '' ;
+  String get realCall => name.replaceFirst('$conceptName ' .r, '' );
+  var formationName = '' ;
+  var modifiedFormationName = '' ;
 
   bool checkFormation(CallContext ctx) {
     var ctx2 = CallContext.fromXML(TamUtils.getFormation(formationName));
@@ -48,11 +48,11 @@ abstract class ModifiedFormationConcept extends Action {
   Future<void> perform(CallContext ctx, [int stackIndex=0]) async {
     //  Check that the formation matches
     if (!checkFormation(ctx))
-      throw CallError("Not $conceptName formation");
+      throw CallError('Not $conceptName formation' );
     //  Shift dancers into modified formation
     if (!ctx.adjustToFormation(modifiedFormationName,rotate:180) &&
         !ctx.adjustToFormation(modifiedFormationName,rotate:90))
-      throw CallError("Unable to adjust $formationName to $modifiedFormationName");
+      throw CallError('Unable to adjust $formationName to $modifiedFormationName' );
     var adjusted = ctx.dancers.where((d) => d.path.movelist.isNotEmpty);
 
     //  Perform the call
@@ -68,7 +68,7 @@ abstract class ModifiedFormationConcept extends Action {
 
     //  Reform the formation
     if (!reformFormation(ctx))
-      throw CallError("Unable to reform $formationName formation");
+      throw CallError('Unable to reform $formationName formation' );
   }
 
 }
