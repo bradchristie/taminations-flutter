@@ -19,16 +19,19 @@
 */
 
 import '../common.dart';
+import '../coded_call.dart';
 
-class AceyDeucey extends Action {
+class Points extends CodedCall {
+
+  Points() : super('Points');
 
   @override
-  var level = LevelData.PLUS;
-  AceyDeucey() : super('Acey Deucey');
-
-  @override
-  Future<void> perform(CallContext ctx, [int i = 0]) async {
-    await ctx.applyCalls('Center 4 Trade While Outer 4 Circulate');
+  Future<void> performCall(CallContext ctx, [int stackIndex = 0]) async {
+    var points = ctx.points();
+    if (points.isEmpty)
+      throw CallError('Unable to find Points');
+    ctx.dancers.where((d) => !points.contains(d))
+        .forEach((d) { d.data.active = false; });
   }
 
 }

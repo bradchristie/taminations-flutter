@@ -87,7 +87,12 @@ import 'ms/three_quarters_tag.dart';
 import 'ms/turn_thru.dart';
 import 'ms/walk_and_dodge.dart';
 import 'plus/acey_deucey.dart';
+import 'plus/diamond_circulate.dart';
+import 'plus/explode.dart';
+import 'plus/grand_swing_thru.dart';
+import 'plus/points.dart';
 import 'plus/roll.dart';
+import 'plus/spread.dart';
 
 abstract class CodedCall extends Call {
 
@@ -122,10 +127,12 @@ abstract class CodedCall extends Call {
     'crossfold'.r: (_) => CrossFold(),
     '.*crossrun'.r: (name) => CrossRun(name),
 
+    'diamondcirculate'.r: (_) => DiamondCirculate(),
     '(left)?dosado'.r: (name) => Dosado(name),
 
     'end'.r: (_) => Ends(),
     'every(one|body)'.r: (name) => Everyone(name),
+    'explode'.r: (_) => Explode(),
 
     'face(in|out|left|right)'.r: (name) => Face(name),
     'facing'.r: (_) => FacingDancers(),
@@ -133,6 +140,8 @@ abstract class CodedCall extends Call {
     '\\d\\d'.r: (name) => Fraction(name),
 
     'girl'.r: (_) => Girls(),
+    'grand(left)?swingthru'.r: (name) => GrandSwingThru(name),
+    '_grandswing(left|right)?'.r: (name) => GrandSwingX(name),
 
     '(left)?12tag'.r: (name) => HalfTag(name),
 
@@ -150,6 +159,7 @@ abstract class CodedCall extends Call {
     'out(er|sides?)(2|4|6)?'.r: (name) => Outsides(name),
 
     '(left)?passthru'.r: (name) => PassThru(name),
+    'point'.r: (_) => Points(),
     'promenadehome'.r: (name) => PromenadeHome(name),
     'swing(your)?corner(and)?promenade(home)?'.r: (name) => PromenadeHome(name),
     '(left)?pullby'.r: (name) => PullBy(name),
@@ -166,6 +176,7 @@ abstract class CodedCall extends Call {
     'slide(in|out|left|right)'.r: (name) => SlideDir(name),
     'slidethru'.r: (_) => SlideThru(),
     'splitcirculate'.r: (_) => SplitCirculate(),
+    '(and)?spread'.r: (name) => Spread(name),
     'squaretheset'.r: (_) => SquareTheSet(),
     '(left)?squarethru(1|2|3|4|5|6|7)?(toawave)?'.r: (name) => SquareThru(name),
     'step'.r: (_) => Step(),

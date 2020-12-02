@@ -25,12 +25,12 @@ class DiamondCirculate extends Action {
 
   @override
   var level = LevelData.PLUS;
-  DiamondCirculate() : super("Diamond Circulate");
+  DiamondCirculate() : super('Diamond Circulate');
 
   @override
   Future<void> perform(CallContext ctx, [int stackIndex = 0]) async {
     if (ctx.actives.length != 4)
-      throw CallError("Unable to calculate Diamond Circulate");
+      throw CallError('Unable to calculate Diamond Circulate');
     await super.perform(ctx, stackIndex);
   }
 
@@ -44,7 +44,7 @@ class DiamondCirculate extends Action {
       return !a.isAround(pi / 2) && a < pi / 2;
     });
     if (others.length != 1)
-      throw CallError("Cannot figure out how dancer $d can Diamond Circulate");
+      throw CallError('Cannot figure out how dancer $d can Diamond Circulate');
     var d2 = others.first;
     var a2 = d.angleToDancer(d2);
     if (a2.isAround(0.0))
@@ -53,7 +53,7 @@ class DiamondCirculate extends Action {
     var isLeft = a2 > 0;
     var xScale = dist * cos(a2);
     var yScale = dist * sin(a2);
-    var move = isLeft ? "Lead Left" : "Lead Right";
+    var move = isLeft ? 'Lead Left' : 'Lead Right';
     var simplePath = TamUtils.getMove(
         move, scale: [xScale, yScale.abs()].v, beats: 2.0);
     var isFacing = d2.angleToDancer(d).abs() < pi / 2;
