@@ -47,18 +47,18 @@ class Hinge extends Action {
 
     //  Hinge from mini-wave, left or right handed
     if (ctx.isInWave(d,d2))
-      return TamUtils.getMove(d2.isRightOf(d) ? "Hinge Right" : "Hinge Left",
+      return TamUtils.getMove(d2.isRightOf(d) ? 'Hinge Right' : 'Hinge Left',
           scale: [1.0,dist/2].v);
     //  Left Partner Hinge
-    else if (ctx.isInCouple(d,d2) && d2.isRightOf(d) && name.startsWith("Left"))
-      return TamUtils.getMove("Quarter Right", skew: [-1.0,-dist/2].v);
-    else if (ctx.isInCouple(d,d2) && d2.isLeftOf(d) && name.startsWith("Left"))
-      return TamUtils.getMove("Lead Left",scale:[1.0,dist/2].v);
+    else if (ctx.isInCouple(d,d2) && d2.isRightOf(d) && name.startsWith('Left'))
+      return TamUtils.getMove('Quarter Right', skew: [-1.0,-dist/2].v);
+    else if (ctx.isInCouple(d,d2) && d2.isLeftOf(d) && name.startsWith('Left'))
+      return TamUtils.getMove('Lead Left',scale:[1.0,dist/2].v);
     //  Partner Hinge
     else if (ctx.isInCouple(d,d2) && d2.isRightOf(d))
-      return TamUtils.getMove("Lead Right",scale: [1.0,dist/2].v);
+      return TamUtils.getMove('Lead Right',scale: [1.0,dist/2].v);
     else if (ctx.isInCouple(d,d2) && d2.isLeftOf(d))
-      return TamUtils.getMove("Quarter Left",skew: [-1.0,dist/2].v);
+      return TamUtils.getMove('Quarter Left',skew: [-1.0,dist/2].v);
     else
       return ctx.dancerCannotPerform(d, name);
   }

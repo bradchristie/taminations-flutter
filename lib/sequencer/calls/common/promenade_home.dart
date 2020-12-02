@@ -17,6 +17,7 @@
   along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 */
+
 import 'dart:math';
 import '../action.dart';
 import '../../../math/vector.dart';
@@ -39,11 +40,11 @@ class PromenadeHome extends Action {
   @override
   Future<void> perform(CallContext ctx, [int stackIndex=0]) async {
     if (ctx.dancers.length != 8)
-      throw CallError("Only for 4 couples at this point.");
+      throw CallError('Only for 4 couples at this point.');
     //   Compute the center point of each couple
     _startPoints = [1, 2, 3, 4].map((coupleNumber) {
       var couple = ctx.dancers.where((d) =>
-      (d.gender == Gender.GIRL && name.contains("Corner"))
+      (d.gender == Gender.GIRL && name.contains('Corner'))
           ? (d.numberCouple.i % 4 + 1 == coupleNumber)
           : d.numberCouple.i == coupleNumber).toList();
       var boy = couple[0];
@@ -61,11 +62,11 @@ class PromenadeHome extends Action {
         return Vector(0.0, -2.0);
       else
         return Vector(2.0, 0.0); // 4th quadrant
-    });
+    }).toList();
 
     //  Should be one couple at each axis point
     if (_startPoints.fold(Vector(), (a, b) => a+b) != Vector())
-      throw CallError("Dancers not positioned properly for Promenade.");
+      throw CallError('Dancers not positioned properly for Promenade.');
     //  Check that dancers are in sequence
     for (var i2=0; i2<_startPoints.length; i2++) {
       var v = _startPoints[i2];
@@ -73,37 +74,38 @@ class PromenadeHome extends Action {
       var a2 = _startPoints[(i2+1) % 4].angle;
       var adiff = a2.angleDiff(a1);
       if (!adiff.isAround(pi/2.0))
-        throw CallError("Dancers are not resolved, cannot promenade home.");
-      //  Now get each dancer to move to the calculated promenade position
-      await super.perform(ctx, stackIndex);
-      //  Promenade to home
-      do {
-        await ctx.applyCalls("Counter Rotate");
-      } while (ctx.dancers[0].path.movelist.length < 10 && // sanity check
-          !ctx.dancers[0].anglePosition.isAround(pi));
-      //  Adjust from promenade to squared set
-      await ctx.applyCalls("Half Wheel Around");
-      ctx.level = LevelData.B1;  // otherwise Counter Rotate would set to C-1
+        throw CallError('Dancers are not resolved, cannot promenade home.');
     }
+    //  Now get each dancer to move to the calculated promenade position
+    await super.perform(ctx, stackIndex);
+    //  Promenade to home
+
+    do {
+      await ctx.applyCalls('Counter Rotate');
+    } while (ctx.dancers[0].path.movelist.length < 10 && // sanity check
+        !ctx.dancers[0].anglePosition.isAround(pi));
+    //  Adjust from promenade to squared set
+    await ctx.applyCalls('Half Wheel Around');
+    ctx.level = LevelData.B1;  // otherwise Counter Rotate would set to C-1
   }
 
   @override
   Path performOne(Dancer d, CallContext ctx) {
-    var num = (d.gender == Gender.GIRL && name.contains("Corner"))
+    var num = (d.gender == Gender.GIRL && name.contains('Corner'))
         ? d.numberCouple.i % 4 + 1
         : d.numberCouple.i;
     var startCouple = _startPoints[num-1];
     var startLocation = startCouple * (d.gender == Gender.BOY ? 1.0 : 1.5);
     var startAngle = startCouple.angle + pi/2;
-    if (name.contains("Corner"))
+    if (name.contains('Corner'))
       startAngle = d.gender == Gender.BOY
           ? startCouple.angle
           : startCouple.angle + pi;
     var extraMoves = Path();
-    if (name.contains("Corner"))
-      extraMoves =  TamUtils.getMove("ssqtr") + TamUtils.getMove("ssqtr") +
-          TamUtils.getMove("ssqtr") + TamUtils.getMove("ssqtr") +
-          TamUtils.getMove(d.gender == Gender.BOY ? "Quarter Left" : "Quarter Right");
+    if (name.contains('Corner'))
+      extraMoves = TamUtils.getMove('ssqtr') + TamUtils.getMove('ssqtr') +
+          TamUtils.getMove('ssqtr') + TamUtils.getMove('ssqtr') +
+          TamUtils.getMove(d.gender == Gender.BOY ? 'Quarter Left' : 'Quarter Right');
     return ctx.moveToPosition(d, startLocation, startAngle) + extraMoves;
   }
 

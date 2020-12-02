@@ -45,6 +45,7 @@ import 'b2/touch_a_quarter.dart';
 import 'b2/trade.dart';
 import 'b2/wheel_around.dart';
 import 'b2/zoom.dart';
+import 'c1/counter_rotate.dart';
 import 'call.dart';
 import 'common/adjust.dart';
 import 'common/and.dart';
@@ -83,6 +84,8 @@ import 'ms/quarter_tag.dart';
 import 'ms/slide_thru.dart';
 import 'ms/tag_the_line.dart';
 import 'ms/three_quarters_tag.dart';
+import 'ms/turn_thru.dart';
+import 'ms/walk_and_dodge.dart';
 import 'plus/acey_deucey.dart';
 import 'plus/roll.dart';
 
@@ -90,99 +93,107 @@ abstract class CodedCall extends Call {
 
   CodedCall(String name) : super(name.capWords());
 
+  static const specifier = '\\s*(?:boys?|girls?|beaus?|belles?|centers?|ends?|lead(?:er)?s?|trail(?:er)?s?|heads?|sides?|very ?centers?)\\s*';
+
   static final Map<RegExp, CodedCall Function(String norm)> normCallMap = {
 
-    "aceydeucey".r: (_) => AceyDeucey(),
-    "adjustto.*".r: (name) => Adjust(name),
-    "and".r: (_) => And(),
-    "around1andcomeintothemiddle".r: (_) =>
-        AroundToALine("Around One and Come Into the Middle"),
-    "around1toaline".r: (_) => AroundToALine("Around One to a Line"),
-    "around2toaline".r: (_) => AroundToALine("Around Two to a Line"),
+    'aceydeucey'.r: (_) => AceyDeucey(),
+    'adjustto.*'.r: (name) => Adjust(name),
+    'and'.r: (_) => And(),
+    'around1andcomeintothemiddle'.r: (_) =>
+        AroundToALine('Around One and Come Into the Middle'),
+    'around1toaline'.r: (_) => AroundToALine('Around One to a Line'),
+    'around2toaline'.r: (_) => AroundToALine('Around Two to a Line'),
 
-    "backaway".r: (_) => BackAway(),
-    "beau".r: (_) => Beaus(),
-    "belle".r: (_) => Belles(),
-    "bendtheline".r: (_) => BendTheLine(),
-    "boy".r: (_) => Boys(),
-    "boxthegnat".r: (_) => BoxTheGnat(),
+    'backaway'.r: (_) => BackAway(),
+    'beau'.r: (_) => Beaus(),
+    'belle'.r: (_) => Belles(),
+    'bendtheline'.r: (_) => BendTheLine(),
+    'boy'.r: (_) => Boys(),
+    'boxthegnat'.r: (_) => BoxTheGnat(),
 
-    "californiatwirl".r: (_) => CaliforniaTwirl(),
-    "castoff34".r: (_) => CastOffThreeQuarters(),
-    "center".r: (_) => Centers(),
-    "center6".r: (_) => CenterSix(),
-    "circulate".r: (_) => Circulate(),
-    "courtesyturn".r: (_) => CourtesyTurn(),
-    "crossfold".r: (_) => CrossFold(),
-    ".*crossrun".r: (name) => CrossRun(name),
+    'californiatwirl'.r: (_) => CaliforniaTwirl(),
+    'castoff34'.r: (_) => CastOffThreeQuarters(),
+    'center'.r: (_) => Centers(),
+    'center6'.r: (_) => CenterSix(),
+    'circulate'.r: (_) => Circulate(),
+    'counterrotate'.r: (_) => CounterRotate(),
+    'courtesyturn'.r: (_) => CourtesyTurn(),
+    'crossfold'.r: (_) => CrossFold(),
+    '.*crossrun'.r: (name) => CrossRun(name),
 
-    "(left)?dosado".r: (name) => Dosado(name),
+    '(left)?dosado'.r: (name) => Dosado(name),
 
-    "end".r: (_) => Ends(),
-    "every(one|body)".r: (name) => Everyone(name),
+    'end'.r: (_) => Ends(),
+    'every(one|body)'.r: (name) => Everyone(name),
 
-    "face(in|out|left|right)".r: (name) => Face(name),
-    "facing".r: (_) => FacingDancers(),
-    "fold".r: (_) => Fold(),
-    "\\d\\d".r: (name) => Fraction(name),
+    'face(in|out|left|right)'.r: (name) => Face(name),
+    'facing'.r: (_) => FacingDancers(),
+    'fold'.r: (_) => Fold(),
+    '\\d\\d'.r: (name) => Fraction(name),
 
-    "girl".r: (_) => Girls(),
+    'girl'.r: (_) => Girls(),
 
-    "(left)?12tag".r: (name) => HalfTag(name),
+    '(left)?12tag'.r: (name) => HalfTag(name),
 
-    "(reverse)?12sashay".r: (name) => HalfSashay(name),
-    "head".r: (name) => Heads(name),
+    '(reverse)?12sashay'.r: (name) => HalfSashay(name),
+    'head'.r: (name) => Heads(name),
 
-    "center(2|4|6)".r: (name) => Insides(name),
-    "in(ner|sides?)(2|4|6)?".r: (name) => Insides(name),
+    'center(2|4|6)'.r: (name) => Insides(name),
+    'in(ner|sides?)(2|4|6)?'.r: (name) => Insides(name),
 
-    "lead".r: (name) => Leaders(name),
+    'lead'.r: (name) => Leaders(name),
 
-    "nothing".r: (_) => Nothing(),
+    'nothing'.r: (_) => Nothing(),
 
-    "112".r: (name) => OneAndaHalf(name),
-    "out(er|sides?)(2|4|6)?".r: (name) => Outsides(name),
+    '112'.r: (name) => OneAndaHalf(name),
+    'out(er|sides?)(2|4|6)?'.r: (name) => Outsides(name),
 
-    "(left)?passthru".r: (name) => PassThru(name),
-    "promenadehome".r: (name) => PromenadeHome(name),
-    "swing(your)?corner(and)?promenade(home)?".r: (name) => PromenadeHome(name),
-    "(left)?pullby".r: (name) => PullBy(name),
+    '(left)?passthru'.r: (name) => PassThru(name),
+    'promenadehome'.r: (name) => PromenadeHome(name),
+    'swing(your)?corner(and)?promenade(home)?'.r: (name) => PromenadeHome(name),
+    '(left)?pullby'.r: (name) => PullBy(name),
 
-    "and14more".r: (_) => QuarterMore(),
-    "(left)?14tag".r: (name) => QuarterTag(name),
+    'and14more'.r: (_) => QuarterMore(),
+    '(left)?14tag'.r: (name) => QuarterTag(name),
 
-    "(and)?roll".r: (name) => Roll(name),
-    "run(left|right)?".r: (name) => Run(name),
+    '(and)?roll'.r: (name) => Roll(name),
+    'run(left|right)?'.r: (name) => Run(name),
 
-    "samesex(es)?".r: (name) => SameSex(name),
-    "separate".r: (_) => Separate(),
-    "side".r: (name) => Sides(name),
-    "slide(in|out|left|right)".r: (name) => SlideDir(name),
-    "slidethru".r: (_) => SlideThru(),
-    "splitcirculate".r: (_) => SplitCirculate(),
-    "squaretheset".r: (_) => SquareTheSet(),
-    "(left)?squarethru(1|2|3|4|5|6|7)?(toawave)?".r: (name) => SquareThru(name),
-    "step".r: (_) => Step(),
-    "sweep14".r: (_) => SweepAQuarter(),
+    'samesex(es)?'.r: (name) => SameSex(name),
+    'separate'.r: (_) => Separate(),
+    'side'.r: (name) => Sides(name),
+    'slide(in|out|left|right)'.r: (name) => SlideDir(name),
+    'slidethru'.r: (_) => SlideThru(),
+    'splitcirculate'.r: (_) => SplitCirculate(),
+    'squaretheset'.r: (_) => SquareTheSet(),
+    '(left)?squarethru(1|2|3|4|5|6|7)?(toawave)?'.r: (name) => SquareThru(name),
+    'step'.r: (_) => Step(),
+    'sweep14'.r: (_) => SweepAQuarter(),
 
-    "tagtheline".r: (_) => TagTheLine(),
-    "(left)?34tag(theline)?".r : (name) => ThreeQuartersTag(name),
-    "(left)?touch".r: (name) => Touch(name),
-    "(left)?touch14".r: (name) => TouchAQuarter(name),
-    "trade".r: (_) => Trade(),
-    "trail".r: (name) => Trailers(name),
-    "(go)?twice".r: (name) => Twice(name),
+    'tagtheline'.r: (_) => TagTheLine(),
+    '(left)?34tag(theline)?'.r : (name) => ThreeQuartersTag(name),
+    '(left)?touch'.r: (name) => Touch(name),
+    '(left)?touch14'.r: (name) => TouchAQuarter(name),
+    'trade'.r: (_) => Trade(),
+    'trail'.r: (name) => Trailers(name),
+    '(left)turnthru'.r: (name) => TurnThru(name),
+    '(go)?twice'.r: (name) => Twice(name),
 
-    "u?turnback".r: (_) => TurnBack(),
+    'u?turnback'.r: (_) => TurnBack(),
 
-    "verycenters".r: (_) => VeryCenters(),
-    "veryends".r: (_) => VeryEnds(),
+    'verycenters'.r: (_) => VeryCenters(),
+    'veryends'.r: (_) => VeryEnds(),
 
-    "(reverse)?wheelaround".r: (name) => WheelAround(name),
-    "(and)?(the)?other?.+".r: (name) => While(name),
-    "while(the)?(others?)?.+".r: (name) => While(name),
+    'walkanddodge'.r: (_) => WalkAndDodge('Walk and Dodge'),
+    '${specifier}walk(and)?${specifier}dodge'.r: (name) => WalkAndDodge(name),
+    '$specifier${specifier}walk(and)?$specifier${specifier}dodge'.r:
+        (name) => WalkAndDodge(name),
+    '(reverse)?wheelaround'.r: (name) => WheelAround(name),
+    '(and)?(the)?other?.+'.r: (name) => While(name),
+    'while(the)?(others?)?.+'.r: (name) => While(name),
 
-    "zing|zoom".r:(name) => Zoom(name)
+    'zing|zoom'.r:(name) => Zoom(name)
 
   };
 

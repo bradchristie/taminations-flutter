@@ -31,22 +31,22 @@ class LevelData implements Comparable<LevelData> {
 
   bool selector(String text) => text.startsWith(selectorString);
 
-  static final BMS = LevelData("Basic and Mainstream", "bms", Color.BMS, "(b|ms)".r);
-  static final B1 = LevelData("Basic 1", "b1", Color.B1,"b1".r);
-  static final B2 = LevelData("Basic 2", "b2", Color.B2,"b2".r);
-  static final MS = LevelData("Mainstream", "ms", Color.MS,"ms".r);
-  static final PLUS = LevelData("Plus", "plus", Color.PLUS,"plus".r);
-  static final ADV = LevelData("Advanced", "adv", Color.ADV,"a".r);
-  static final A1 = LevelData("A-1", "a1", Color.A1,"a1".r);
-  static final A2 = LevelData("A-2", "a2", Color.A2,"a2".r);
-  static final CHALLENGE = LevelData("Challenge", "cha", Color.CHALLENGE,"c".r);
-  static final C1 = LevelData("C-1", "c1", Color.C1,"c1".r);
-  static final C2 = LevelData("C-2", "c2", Color.C2,"c2".r);
-  static final C3A = LevelData("C-3A", "c3a", Color.C3A, "c3a".r);
-  static final C3B = LevelData("C-3B", "c3b", Color.C3B,"c3b".r);
-  static final INDEX = LevelData("Index of All Calls", "all", Color.LIGHTGREY,"".r);
+  static final BMS = LevelData('Basic and Mainstream', 'bms', Color.BMS, '(b|ms)'.r);
+  static final B1 = LevelData('Basic 1', 'b1', Color.B1,'b1'.r);
+  static final B2 = LevelData('Basic 2', 'b2', Color.B2,'b2'.r);
+  static final MS = LevelData('Mainstream', 'ms', Color.MS,'ms'.r);
+  static final PLUS = LevelData('Plus', 'plus', Color.PLUS,'plus'.r);
+  static final ADV = LevelData('Advanced', 'adv', Color.ADV,'a'.r);
+  static final A1 = LevelData('A-1', 'a1', Color.A1,'a1'.r);
+  static final A2 = LevelData('A-2', 'a2', Color.A2,'a2'.r);
+  static final CHALLENGE = LevelData('Challenge', 'cha', Color.CHALLENGE,'c'.r);
+  static final C1 = LevelData('C-1', 'c1', Color.C1,'c1'.r);
+  static final C2 = LevelData('C-2', 'c2', Color.C2,'c2'.r);
+  static final C3A = LevelData('C-3A', 'c3a', Color.C3A, 'c3a'.r);
+  static final C3B = LevelData('C-3B', 'c3b', Color.C3B,'c3b'.r);
+  static final INDEX = LevelData('Index of All Calls', 'all', Color.LIGHTGREY,''.r);
 
-  static List<LevelData> _data = [
+  static final List<LevelData> _data = [
     LevelData.BMS,
     LevelData.B1,
     LevelData.B2,
@@ -78,12 +78,12 @@ class LevelData implements Comparable<LevelData> {
 
   bool operator <(Object other) {
     if (other is LevelData)
-      return this.compareTo(other) < 0;
+      return compareTo(other) < 0;
     return false;
   }
   bool operator >(Object other) {
     if (other is LevelData)
-      return this.compareTo(other) > 0;
+      return compareTo(other) > 0;
     return false;
   }
 

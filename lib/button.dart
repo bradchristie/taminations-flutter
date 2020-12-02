@@ -19,34 +19,33 @@
 */
 
 import 'package:auto_size_text/auto_size_text.dart';
-import 'package:flutter/material.dart' as FM;
+import 'package:flutter/material.dart' as fm;
 import 'color.dart';
 import 'request.dart';
 
-class Button extends FM.StatelessWidget {
+class Button extends fm.StatelessWidget {
 
   final String name;
-  final FM.Widget child;
-  final FM.VoidCallback onPressed;
+  final fm.Widget child;
+  final fm.VoidCallback onPressed;
 
-  Button(this.name, { FM.Widget child, this.onPressed}) :
-    this.child = child != null ? child :
-    AutoSizeText(name, maxLines: 1, style: FM.TextStyle(
-      fontWeight: FM.FontWeight.bold,
+  Button(this.name, { fm.Widget child, this.onPressed}) :
+    child = child ?? AutoSizeText(name, maxLines: 1, style: fm.TextStyle(
+      fontWeight: fm.FontWeight.bold,
       fontSize: 20,
     )),
-        super(key: FM.Key(name));
+        super(key: fm.Key(name));
 
   @override
-  FM.Widget build(FM.BuildContext context) =>
-    FM.Padding(padding:FM.EdgeInsets.all( 4.0),
-            child:FM.ElevatedButton(child:child,
-                style: FM.ElevatedButton.styleFrom(
+  fm.Widget build(fm.BuildContext context) =>
+    fm.Padding(padding:fm.EdgeInsets.all( 4.0),
+            child:fm.ElevatedButton(child:child,
+                style: fm.ElevatedButton.styleFrom(
                   primary: Color.HIGHLIGHT,
-                  onPrimary: FM.Colors.black,
-                  shadowColor: FM.Colors.black,
+                  onPrimary: fm.Colors.black,
+                  shadowColor: fm.Colors.black,
                   elevation: 6.0,
-                  side: FM.BorderSide(color:FM.Colors.grey, width: 1),
+                  side: fm.BorderSide(color:fm.Colors.grey, width: 1),
                 ),
                 onPressed: () {
                   if (onPressed != null) {
@@ -54,7 +53,7 @@ class Button extends FM.StatelessWidget {
                   } else {
                     var request = Request(
                         action:Action.BUTTON_PRESS,
-                        params:{"button":name}
+                        params:{'button':name}
                     );
                     RequestHandler.of(context).processRequest(request);
                   }

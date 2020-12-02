@@ -23,19 +23,20 @@ class CallError implements Exception {
   final String description;
 
   CallError(this.description);
+  @override
   String toString() => description;
 
 }
 
 class CallNotFoundError extends  CallError {
 
-  CallNotFoundError(String call) : super("Call $call not found");
+  CallNotFoundError(String call) : super('Call $call not found');
 
 }
 
 class FormationNotFoundError extends CallError {
 
   FormationNotFoundError(String call)
-      : super("No animation for $call from that formation.");
+      : super('No animation for $call from that formation.');
 
 }

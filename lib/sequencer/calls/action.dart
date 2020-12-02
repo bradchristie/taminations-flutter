@@ -40,10 +40,11 @@ class Action extends CodedCall {
   //  Default method to perform one call
   //  Pass the call on to each active dancer
   //  Then append the returned paths to each dancer
-  Future<void> perform(CallContext ctx, [int i=0]) async {
+  //  While this does not have any async calls, overrides might.
+  Future<void> perform(CallContext ctx, [int stackIndex=0]) async {
     //  Get all the paths with performOne calls
     for (var d in ctx.actives) {
-      var path = await performOne(d, ctx);
+      var path = performOne(d, ctx);
       d.path.add(path);
     }
   }

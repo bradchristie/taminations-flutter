@@ -18,7 +18,7 @@
 
 */
 
-import 'package:flutter/material.dart' as FM;
+import 'package:flutter/material.dart' as fm;
 
 import '../dance_animation_painter.dart';
 import '../extensions.dart';
@@ -28,13 +28,13 @@ import 'call_context.dart';
 import 'call_error.dart';
 import 'abbreviaions_model.dart';
 
-class SequencerModel extends FM.ChangeNotifier {
+class SequencerModel extends fm.ChangeNotifier {
 
   List<String> callNames = [];
   List<double> callBeats = [];
-  String startingFormation = "Static Square";  // TODO get from settings somehow
-  String partString = "";
-  String errorString = "";
+  String startingFormation = 'Static Square';  // TODO get from settings somehow
+  String partString = '';
+  String errorString = '';
   DanceAnimationPainter animation = DanceAnimationPainter();
   AbbreviationsModel abbreviations = AbbreviationsModel();
 
@@ -52,14 +52,14 @@ class SequencerModel extends FM.ChangeNotifier {
   }
 
   void loadOneCall(String call) async {
-    errorString = "";
+    errorString = '';
     try {
       await _interpretOneCall(_replaceAbbreviations(call));
       //  TODO Highlight new call and start its animation
       notifyListeners();
     } on CallError catch(e) {
       errorString = e.toString();
-      print("errorString: $errorString");
+      print('errorString: $errorString');
       notifyListeners();
     }
   }
@@ -89,9 +89,9 @@ class SequencerModel extends FM.ChangeNotifier {
       return Future<void>.value();
     }
     //  Remove any underscores, which are reserved for internal calls only
-    call = call.replaceAll("_", "");
+    call = call.replaceAll('_', '');
     //  Remove any [user annotations]
-    call = call.replaceAll("\\[.*?\\]".r,"");
+    call = call.replaceAll('\\[.*?\\]'.r,'');
     var prevbeats = animation.beats;
     var cctx = CallContext.fromDancers(animation.dancers);
 
@@ -104,7 +104,7 @@ class SequencerModel extends FM.ChangeNotifier {
     if (cctx.callstack.length > 1 || cctx.callstack[0] is CodedCall)
       cctx.matchStandardFormation();
     if (cctx.isCollision())
-      throw CallError("Unable to calculate valid animation.");
+      throw CallError('Unable to calculate valid animation.');
     cctx.appendToSource();
     animation.recalculate();
     var newbeats = animation.beats;
@@ -120,13 +120,13 @@ class SequencerModel extends FM.ChangeNotifier {
   //  Replace any abbreviations with their expanded equivalents
   //  and return the new string
   String _replaceAbbreviations(String text) =>
-  text.split("\\s+".r)
+  text.split('\\s+'.r)
       .map((word) => abbreviations.currentAbbreviations
       .firstWhere((e) => e.item1 == word.toLowerCase(), orElse: () => null)?.item2 ?? word)
-      .join(" ");
+      .join(' ');
 
   bool _isComment(String text) =>
-      text.trim().startsWith("[^\\[a-zA-Z0-9]".r);
+      text.trim().startsWith('[^\\[a-zA-Z0-9]'.r);
 
   void _startSequence() {
     animation.setAnimation(TamUtils.getFormation(startingFormation));

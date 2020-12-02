@@ -18,9 +18,9 @@
 
 */
 
-import 'package:flutter/foundation.dart' as FF;
-import 'package:flutter/material.dart' as FM;
-import 'package:provider/provider.dart' as PP;
+import 'package:flutter/foundation.dart' as ff;
+import 'package:flutter/material.dart' as fm;
+import 'package:provider/provider.dart' as pp;
 import 'package:taminations/pages/practice_page.dart';
 import 'package:taminations/pages/start_practice.dart';
 
@@ -42,14 +42,14 @@ import 'sequencer/sequencer_page.dart';
 void main() {
   //  Wrap the Settings around the top of the program
   //  so everybody has access to them
-  FM.runApp(TaminationsApp());
+  fm.runApp(TaminationsApp());
 }
 
 //  This class holds state information used to
 //  generate the current layout
 class TaminationsRoute {
 
-  static const separator = "\t";
+  static const separator = '\t';
 
   final String level;  //  if not null, generate Calls page
   final String call;   //  if not null, generate AnimList page
@@ -87,19 +87,19 @@ class TaminationsRoute {
   //  adding onto a previous route
   TaminationsRoute addFrom(TaminationsRoute from) =>
       TaminationsRoute(
-          level:from.level ?? this.level,
-          call:from.call ?? this.call,
-          animnum: (from.animnum >= 0) ? from.animnum : this.animnum,
-          practice: from.practice || this.practice,
-          sequencer: from.sequencer || this.sequencer,
-          definition: from.definition || this.definition,
-          about: from.about || this.about,
-          settings: from.settings || this.settings,
-          link: from.link ?? this.link,
-          name: from.name ?? this.name,
-          title: from.title ?? this.title);
+          level:from.level ?? level,
+          call:from.call ?? call,
+          animnum: (from.animnum >= 0) ? from.animnum : animnum,
+          practice: from.practice || practice,
+          sequencer: from.sequencer || sequencer,
+          definition: from.definition || definition,
+          about: from.about || about,
+          settings: from.settings || settings,
+          link: from.link ?? link,
+          name: from.name ?? name,
+          title: from.title ?? title);
 
-  operator +(TaminationsRoute other) => addFrom(other);
+  TaminationsRoute operator +(TaminationsRoute other) => addFrom(other);
 
   bool get isLevelPage => level.isEmpty;
   bool get isCallsPage => level.isNotEmpty && call.isEmpty;
@@ -107,17 +107,17 @@ class TaminationsRoute {
   //  For debugging
   @override
   String toString() => <String>[
-    if (level != null && level.isNotEmpty) "level=$level",
-    if (call != null && call.isNotEmpty) "call=$call",
-    if (animnum >= 0) "animnum=${animnum.d}",
-    if (link != null && link.isNotEmpty) "link=$link",
-    if (name != null && name.isNotEmpty) "name=$name",
-    if (title != null && title.isNotEmpty) "title=$title",
-    if (practice) "practice",
-    if (sequencer) "sequencer",
-    if (about) "about",
-    if (settings) "settings",
-    if (definition) "definition"
+    if (level != null && level.isNotEmpty) 'level=$level',
+    if (call != null && call.isNotEmpty) 'call=$call',
+    if (animnum >= 0) 'animnum=${animnum.d}',
+    if (link != null && link.isNotEmpty) 'link=$link',
+    if (name != null && name.isNotEmpty) 'name=$name',
+    if (title != null && title.isNotEmpty) 'title=$title',
+    if (practice) 'practice',
+    if (sequencer) 'sequencer',
+    if (about) 'about',
+    if (settings) 'settings',
+    if (definition) 'definition'
   ].join(separator);
 
 }
@@ -126,38 +126,38 @@ class TaminationsRoute {
 //  TaminationsApp is the top-level widget.
 //  Here it is just a wrapper for the router and its delegate (below),
 //  which does all the work
-class TaminationsApp extends FM.StatefulWidget {
+class TaminationsApp extends fm.StatefulWidget {
 
   @override
-  FM.State<FM.StatefulWidget> createState() => _TaminationsAppState();
+  fm.State<fm.StatefulWidget> createState() => _TaminationsAppState();
 
 }
 
-class _TaminationsAppState extends FM.State<TaminationsApp> {
+class _TaminationsAppState extends fm.State<TaminationsApp> {
 
-  TaminationsRouterDelegate _routerDelegate = TaminationsRouterDelegate();
-  TaminationsRouteInformationParser _routeInformationParser =
+  final TaminationsRouterDelegate _routerDelegate = TaminationsRouterDelegate();
+  final TaminationsRouteInformationParser _routeInformationParser =
       TaminationsRouteInformationParser();
 
   @override
-  FM.Widget build(FM.BuildContext context) {
+  fm.Widget build(fm.BuildContext context) {
     //  Read initialization files
 //    TamUtils.init();
-    return FM.FutureBuilder<bool>(
+    return fm.FutureBuilder<bool>(
       future: TamUtils.init(),
       builder: (context,snapshot) =>
       snapshot.hasData ?
-          PP.MultiProvider(
+          pp.MultiProvider(
         providers: [
-          PP.ChangeNotifierProvider(create: (context) => Settings()),
-          PP.ChangeNotifierProvider(create: (context) => AnimationState())
+          pp.ChangeNotifierProvider(create: (context) => Settings()),
+          pp.ChangeNotifierProvider(create: (context) => AnimationState())
         ],
-        child: FM.MaterialApp.router(
+        child: fm.MaterialApp.router(
           title: 'Taminations',
           routerDelegate: _routerDelegate,
           routeInformationParser: _routeInformationParser,
         ),
-      ) : FM.Container(),
+      ) : fm.Container(),
     );
   }
 
@@ -171,54 +171,55 @@ class _TaminationsAppState extends FM.State<TaminationsApp> {
 
 //  Router Delegate
 //  Handles all requests to change the layout
-class TaminationsRouterDelegate extends FM.RouterDelegate<TaminationsRoute>
-    with FM.ChangeNotifier, FM.PopNavigatorRouterDelegateMixin<TaminationsRoute> {
+class TaminationsRouterDelegate extends fm.RouterDelegate<TaminationsRoute>
+    with fm.ChangeNotifier, fm.PopNavigatorRouterDelegateMixin<TaminationsRoute> {
 
-  final FM.GlobalKey<FM.NavigatorState> navigatorKey;
-  TaminationsRouterDelegate() : navigatorKey = FM.GlobalKey<FM.NavigatorState>();
+  @override
+  final fm.GlobalKey<fm.NavigatorState> navigatorKey;
+  TaminationsRouterDelegate() : navigatorKey = fm.GlobalKey<fm.NavigatorState>();
 
   //  History for back navigation
   List<TaminationsRoute> paths = [TaminationsRoute()];
   TaminationsRoute get currentPath => paths.last;
 
   @override
-  FM.Widget build(FM.BuildContext context) {
-    return PP.Consumer<Settings>(
+  fm.Widget build(fm.BuildContext context) {
+    return pp.Consumer<Settings>(
         builder: (context, settings, child) {
-          return FM.FutureBuilder<bool>(
+          return fm.FutureBuilder<bool>(
               future: settings.getSettings(),
-              builder: (FM.BuildContext context, FM.AsyncSnapshot<bool> snapshot) {
+              builder: (fm.BuildContext context, fm.AsyncSnapshot<bool> snapshot) {
                 if (!snapshot.hasData)
-                  return FM.Container();
-                return FM.OrientationBuilder(
+                  return fm.Container();
+                return fm.OrientationBuilder(
                     builder: (context, orientation) {
-                      return FM.Navigator(
+                      return fm.Navigator(
                           key: navigatorKey,
 
                           //  Pages for landscape - first and second, Sequencer, Practice
-                          pages: (orientation == FM.Orientation.landscape)
-                              ? [ FM.MaterialPage(
-                              key: FM.ValueKey("Landscape Page"),
+                          pages: (orientation == fm.Orientation.landscape)
+                              ? [ fm.MaterialPage(
+                              key: fm.ValueKey('Landscape Page'),
                               child: FirstLandscapePage()
                           ),
                             if (currentPath?.link?.isNotEmpty ?? false)
-                              FM.MaterialPage(
-                                  key: FM.ValueKey("Landscape Page " + currentPath.link),
+                              fm.MaterialPage(
+                                  key: fm.ValueKey('Landscape Page ' + currentPath.link),
                                   child: SecondLandscapePage()
                               ),
                             if (currentPath.practice)
-                              FM.MaterialPage(
-                                  key: FM.ValueKey("Start Practice"),
+                              fm.MaterialPage(
+                                  key: fm.ValueKey('Start Practice'),
                                   child: StartPracticePage()
                               ),
                             if (currentPath.practice && currentPath.level != null)
-                              FM.MaterialPage(
-                                  key: FM.ValueKey("Practice"),
+                              fm.MaterialPage(
+                                  key: fm.ValueKey('Practice'),
                                   child: PracticePage()
                               ),
                             if (currentPath.sequencer)
-                              FM.MaterialPage(
-                                  key: FM.ValueKey("Sequencer"),
+                              fm.MaterialPage(
+                                  key: fm.ValueKey('Sequencer'),
                                   child: SequencerPage()
                               ),
 
@@ -226,44 +227,44 @@ class TaminationsRouterDelegate extends FM.RouterDelegate<TaminationsRoute>
 
                           //  Pages for portrait - Level, Animlist, Animation, Settings, etc
                               : [
-                            FM.MaterialPage(
-                                key: FM.ValueKey("LevelPage"),
+                            fm.MaterialPage(
+                                key: fm.ValueKey('LevelPage'),
                                 child: LevelPage()
                             ),
                             if (currentPath.level != null &&
                                 LevelData.find(currentPath.level) != null)
-                              FM.MaterialPage(
-                                  key: FM.ValueKey(currentPath.level),
+                              fm.MaterialPage(
+                                  key: fm.ValueKey(currentPath.level),
                                   child: CallsPage()
                               ),
                             if (currentPath.link?.isNotEmpty ?? false)
-                              FM.MaterialPage(
-                                  key: FM.ValueKey(currentPath.link),
+                              fm.MaterialPage(
+                                  key: fm.ValueKey(currentPath.link),
                                   child: AnimListPage()
                               ),
                             if (currentPath.animnum >= 0 )
-                              FM.MaterialPage(
-                                  key: FM.ValueKey(currentPath.link + " animation"),
+                              fm.MaterialPage(
+                                  key: fm.ValueKey(currentPath.link + ' animation'),
                                   child: AnimationPage()
                               ),
                             if (currentPath.about)
-                              FM.MaterialPage(
-                                  key: FM.ValueKey("About"),
-                                  child: WebPage("info/about.html")
+                              fm.MaterialPage(
+                                  key: fm.ValueKey('About'),
+                                  child: WebPage('info/about.html')
                               ),
                             if (currentPath.definition)
-                              FM.MaterialPage(
-                                key: FM.ValueKey(currentPath.link + " definition"),
-                                child: WebPage(settings.getLanguageLink(currentPath.link) + ".html")
+                              fm.MaterialPage(
+                                key: fm.ValueKey(currentPath.link + ' definition'),
+                                child: WebPage(settings.getLanguageLink(currentPath.link) + '.html')
                               ),
                             if (currentPath.settings)
-                              FM.MaterialPage(
-                                  key: FM.ValueKey("Settings"),
+                              fm.MaterialPage(
+                                  key: fm.ValueKey('Settings'),
                                   child: SettingsPage()
                               ),
                             if (currentPath.practice)
-                              FM.MaterialPage(
-                                  key: FM.ValueKey("Practice"),
+                              fm.MaterialPage(
+                                  key: fm.ValueKey('Practice'),
                                   child: StartPracticePage()
                               ),
                           ],
@@ -282,15 +283,16 @@ class TaminationsRouterDelegate extends FM.RouterDelegate<TaminationsRoute>
   }
 
   //  this is necessary for the web URL and back button to work
+  @override
   TaminationsRoute get currentConfiguration => paths.last;
 
   @override
   Future<bool> popRoute() {
     if (paths.length > 1) {
       paths.removeLast();
-      return FF.SynchronousFuture(true);
+      return ff.SynchronousFuture(true);
     }
-    else return FF.SynchronousFuture(false);
+    else return ff.SynchronousFuture(false);
   }
 
   @override
@@ -311,25 +313,25 @@ class TaminationsRouterDelegate extends FM.RouterDelegate<TaminationsRoute>
 //  This class converts an URL to/from the fields in
 //  TaminationsRoutePath
 //  Used by web browser implementation
-class TaminationsRouteInformationParser extends FM.RouteInformationParser<TaminationsRoute> {
+class TaminationsRouteInformationParser extends fm.RouteInformationParser<TaminationsRoute> {
 
   @override
   Future<TaminationsRoute>
-  parseRouteInformation(FM.RouteInformation routeInformation) async {
+  parseRouteInformation(fm.RouteInformation routeInformation) async {
     final params = Uri.parse(routeInformation.location).queryParameters;
-    var level = params["level"] ?? "";
-    var call = params["call"] ?? "";
-    var link = params["link"] ?? "";
-    var name = params["name"] ?? "";
-    var title = params["title"] ?? "";
-    var animnum = int.tryParse(params["animnum"] ?? "-1") ?? -1;
+    var level = params['level'] ?? '';
+    var call = params['call'] ?? '';
+    var link = params['link'] ?? '';
+    var name = params['name'] ?? '';
+    var title = params['title'] ?? '';
+    var animnum = int.tryParse(params['animnum'] ?? '-1') ?? -1;
     return TaminationsRoute(level:level,call:call,link:link,name:name,title:title,animnum:animnum);
   }
 
   @override
-  FM.RouteInformation restoreRouteInformation(TaminationsRoute path) {
-    var location = path.toString().replaceAll(TaminationsRoute.separator, "&");
-    return FM.RouteInformation(location: "/$location");
+  fm.RouteInformation restoreRouteInformation(TaminationsRoute path) {
+    var location = path.toString().replaceAll(TaminationsRoute.separator, '&');
+    return fm.RouteInformation(location: '/$location');
   }
 
 }

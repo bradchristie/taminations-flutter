@@ -18,119 +18,119 @@
 
 */
 
-import 'package:flutter/material.dart' as FM;
-import 'package:provider/provider.dart' as PP;
+import 'package:flutter/material.dart' as fm;
+import 'package:provider/provider.dart' as pm;
 import 'sequencer_model.dart';
 import '../color.dart';
 import '../button.dart';
 
-class AbbreviationsFrame extends FM.StatefulWidget {
+class AbbreviationsFrame extends fm.StatefulWidget {
   @override
   _AbbreviationsFrameState createState() => _AbbreviationsFrameState();
 }
 
-class _AbbreviationsFrameState extends FM.State<AbbreviationsFrame> {
+class _AbbreviationsFrameState extends fm.State<AbbreviationsFrame> {
   @override
-  FM.Widget build(FM.BuildContext context) {
-    return PP.Consumer<SequencerModel>(
+  fm.Widget build(fm.BuildContext context) {
+    return pm.Consumer<SequencerModel>(
         builder: (context,seqmodel,child) {
           var model = seqmodel.abbreviations;
-          return FM.Column(
+          return fm.Column(
               children: [
-                FM.Expanded(
-                    child: FM.ListView.builder(
+                fm.Expanded(
+                    child: fm.ListView.builder(
                       itemCount: model.currentAbbreviations.length,
                       itemBuilder: (context,index) =>
-                          FM.Row(
+                          fm.Row(
                             children: [
-                              FM.Expanded(
+                              fm.Expanded(
                                 flex:1,
-                                child: FM.Container(
+                                child: fm.Container(
                                   color: model.errors[index] ? Color.RED : Color.WHITE,
-                                    child: FM.Text(model.currentAbbreviations[index].item1,
-                                    style: FM.TextStyle(fontSize: 24),)
+                                    child: fm.Text(model.currentAbbreviations[index].item1,
+                                    style: fm.TextStyle(fontSize: 24),)
                                 ),
                               ),
-                              FM.Expanded(
+                              fm.Expanded(
                                 flex: 5,
-                                child: FM.Container(
-                                    child: FM.Text(model.currentAbbreviations[index].item2,
-                                    style: FM.TextStyle(fontSize: 24),)
+                                child: fm.Container(
+                                    child: fm.Text(model.currentAbbreviations[index].item2,
+                                    style: fm.TextStyle(fontSize: 24),)
                                 ),
                               )
                             ],
                           )
                     )
                 ),
-                FM.Row(
+                fm.Row(
                   children: [
-                    FM.Expanded(
-                        child: Button("Copy", onPressed: () {
+                    fm.Expanded(
+                        child: Button('Copy', onPressed: () {
                           model.copy();
-                          FM.ScaffoldMessenger.of(context).showSnackBar(FM.SnackBar(
+                          fm.ScaffoldMessenger.of(context).showSnackBar(fm.SnackBar(
                               backgroundColor: Color.BLUE,
                               duration: Duration(seconds: 2),
-                              content: FM.Text('Abbreviations Copied.')
+                              content: fm.Text('Abbreviations Copied.')
                           ));
                         })
                     ),
-                    FM.Expanded(
-                        child: Button("Paste", onPressed: () {
-                          FM.showDialog(
+                    fm.Expanded(
+                        child: Button('Paste', onPressed: () {
+                          fm.showDialog(
                             context: context,
                             barrierDismissible: false,
-                            builder: (context) => FM.AlertDialog(
-                              title: FM.Text("Confirm Paste"),
-                              content: FM.Text("This will REPLACE ALL your abbreviations!"),
+                            builder: (context) => fm.AlertDialog(
+                              title: fm.Text('Confirm Paste'),
+                              content: fm.Text('This will REPLACE ALL your abbreviations!'),
                               actions: [
-                                FM.TextButton(child:FM.Text("OK"),onPressed: () {
-                                  FM.Navigator.of(context).pop();
+                                fm.TextButton(child:fm.Text('OK'),onPressed: () {
+                                  fm.Navigator.of(context).pop();
                                   model.paste();
                                 }),
-                                FM.TextButton(child:FM.Text("Cancel"),onPressed: () {
-                                  FM.Navigator.of(context).pop();
+                                fm.TextButton(child:fm.Text('Cancel'),onPressed: () {
+                                  fm.Navigator.of(context).pop();
                                 })
                               ],
                             )
                           );
                         })
                     ),
-                    FM.Expanded(
-                        child: Button("Clear", onPressed: () {
-                          FM.showDialog(
+                    fm.Expanded(
+                        child: Button('Clear', onPressed: () {
+                          fm.showDialog(
                               context: context,
                               barrierDismissible: false,
-                              builder: (context) => FM.AlertDialog(
-                                title: FM.Text("Confirm Erase"),
-                                content: FM.Text("This will ERASE ALL your abbreviations!"),
+                              builder: (context) => fm.AlertDialog(
+                                title: fm.Text('Confirm Erase'),
+                                content: fm.Text('This will ERASE ALL your abbreviations!'),
                                 actions: [
-                                  FM.TextButton(child:FM.Text("OK"),onPressed: () {
-                                    FM.Navigator.of(context).pop();
+                                  fm.TextButton(child:fm.Text('OK'),onPressed: () {
+                                    fm.Navigator.of(context).pop();
                                     model.clear();
                                   }),
-                                  FM.TextButton(child:FM.Text("Cancel"),onPressed: () {
-                                    FM.Navigator.of(context).pop();
+                                  fm.TextButton(child:fm.Text('Cancel'),onPressed: () {
+                                    fm.Navigator.of(context).pop();
                                   })
                                 ],
                               )
                           );
                         })
                     ),
-                    FM.Expanded(
-                        child: Button("Reset", onPressed: () {
-                          FM.showDialog(
+                    fm.Expanded(
+                        child: Button('Reset', onPressed: () {
+                          fm.showDialog(
                               context: context,
                               barrierDismissible: false,
-                              builder: (context) => FM.AlertDialog(
-                                title: FM.Text("Confirm Reset"),
-                                content: FM.Text("This will REPLACE ALL your abbreviations!"),
+                              builder: (context) => fm.AlertDialog(
+                                title: fm.Text('Confirm Reset'),
+                                content: fm.Text('This will REPLACE ALL your abbreviations!'),
                                 actions: [
-                                  FM.TextButton(child:FM.Text("OK"),onPressed: () {
-                                    FM.Navigator.of(context).pop();
+                                  fm.TextButton(child:fm.Text('OK'),onPressed: () {
+                                    fm.Navigator.of(context).pop();
                                     model.reset();
                                   }),
-                                  FM.TextButton(child:FM.Text("Cancel"),onPressed: () {
-                                    FM.Navigator.of(context).pop();
+                                  fm.TextButton(child:fm.Text('Cancel'),onPressed: () {
+                                    fm.Navigator.of(context).pop();
                                   })
                                 ],
                               )

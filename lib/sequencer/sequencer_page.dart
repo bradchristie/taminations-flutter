@@ -18,8 +18,8 @@
 
 */
 
-import 'package:flutter/material.dart' as FM;
-import 'package:provider/provider.dart' as PP;
+import 'package:flutter/material.dart' as fm;
+import 'package:provider/provider.dart' as pp;
 import 'package:taminations/pages/web_page.dart';
 
 import '../pages/settings_page.dart';
@@ -31,65 +31,64 @@ import 'calls_frame.dart';
 import 'sequencer_animation_frame.dart';
 import 'sequencer_model.dart';
 
-class SequencerPage extends FM.StatefulWidget {
+class SequencerPage extends fm.StatefulWidget {
   @override
   _SequencerPageState createState() => _SequencerPageState();
 }
 
-class _SequencerPageState extends FM.State<SequencerPage> {
+class _SequencerPageState extends fm.State<SequencerPage> {
 
   SequencerModel model;
   AbbreviationsModel abbreviationsModel;
-  FM.Widget rightChild;
+  fm.Widget rightChild;
 
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
     model = SequencerModel();
     abbreviationsModel = AbbreviationsModel();
-    if (rightChild == null)
-      rightChild = WebFrame("info/sequencer.html");
+    rightChild ??= WebFrame('info/sequencer.html');
   }
 
   @override
-  FM.Widget build(FM.BuildContext context) {
-    return PP.MultiProvider(
+  fm.Widget build(fm.BuildContext context) {
+    return pp.MultiProvider(
       providers: [
-        PP.ChangeNotifierProvider.value(value: model),
-        PP.ChangeNotifierProvider.value(value: model.animation),
-        PP.ChangeNotifierProvider.value(value: abbreviationsModel)
+        pp.ChangeNotifierProvider.value(value: model),
+        pp.ChangeNotifierProvider.value(value: model.animation),
+        pp.ChangeNotifierProvider.value(value: abbreviationsModel)
       ],
-      child: FM.Scaffold(
-          appBar: FM.PreferredSize(
-              preferredSize: FM.Size.fromHeight(56.0),
-              child: TitleBar(title: "Sequencer")
+      child: fm.Scaffold(
+          appBar: fm.PreferredSize(
+              preferredSize: fm.Size.fromHeight(56.0),
+              child: TitleBar(title: 'Sequencer')
           ),
           body: RequestHandler(
             handler: (Request request) {
-              if (request("button") == "Undo")
+              if (request('button') == 'Undo')
                 setState(() {
                   model.undoLastCall();
                 });
-              if (request("button") == "Reset")
+              if (request('button') == 'Reset')
                 model.reset();
-              if (request("button") == "Help")
+              if (request('button') == 'Help')
                 setState(() {
-                  rightChild = WebFrame("info/sequencer.html");
+                  rightChild = WebFrame('info/sequencer.html');
                 });
-              if (request("button") == "Settings")
+              if (request('button') == 'Settings')
                 setState(() {
                   rightChild = SettingsFrame();
                 });
-              if (request("button") == "Abbrev")
+              if (request('button') == 'Abbrev')
                 setState(() {
                   rightChild = AbbreviationsFrame();
                 });
             },
-            child: FM.Row(
+            child: fm.Row(
               children: [
-                FM.Expanded(child: SequencerCallsFrame()),
-                FM.Expanded(child: SequencerAnimationFrame()),
-                FM.Expanded(child: rightChild)
+                fm.Expanded(child: SequencerCallsFrame()),
+                fm.Expanded(child: SequencerAnimationFrame()),
+                fm.Expanded(child: rightChild)
               ],
             ),
           )

@@ -18,11 +18,13 @@
 
 */
 
-import 'package:flutter/material.dart';
-import 'package:taminations/color.dart';
 import 'dart:math';
-import 'math/matrix.dart';
+
+import 'package:flutter/material.dart' as fm;
+
+import 'color.dart';
 import 'extensions.dart';
+import 'math/matrix.dart';
 
 abstract class Geometry {
 
@@ -36,9 +38,9 @@ abstract class Geometry {
 
   Geometry.create(this.rotnum);
 
-  Paint gridPaint(double lineWidth) => Paint()
+  fm.Paint gridPaint(double lineWidth) => fm.Paint()
       ..color = Color.LIGHTGREY
-      ..style = PaintingStyle.stroke
+      ..style = fm.PaintingStyle.stroke
       ..strokeWidth = lineWidth;  // 0 for 1 pixel fails on web
 
   factory Geometry(int g, [int r = 0]) {
@@ -49,8 +51,8 @@ abstract class Geometry {
   }
 
   factory Geometry.fromString(String gstr) {
-    if (gstr.toLowerCase() == "bi-gon") return BigonGeometry(0);
-    else if (gstr.toLowerCase() == "hexagon") return HexagonGeometry(0);
+    if (gstr.toLowerCase() == 'bi-gon') return BigonGeometry(0);
+    else if (gstr.toLowerCase() == 'hexagon') return HexagonGeometry(0);
     else return SquareGeometry(0);
   }
 
@@ -69,7 +71,7 @@ abstract class Geometry {
 
   /// Draw a dancer-sized grid of the specific geometry
   /// @param ctx  Canvas to draw grid on
-  void drawGrid(Canvas ctx,{double lineWidth=0.0});
+  void drawGrid(fm.Canvas ctx,{double lineWidth=0.0});
 
   Geometry clone();
 }
@@ -87,14 +89,14 @@ class BigonGeometry extends Geometry {
   Geometry clone() => BigonGeometry(rotnum);
 
   @override
-  void drawGrid(Canvas ctx,{double lineWidth=0.0}) {
+  void drawGrid(fm.Canvas ctx,{double lineWidth=0.0}) {
     var p = gridPaint(lineWidth);
     for (var xs = -1; xs <= 1; xs += 2) {
       ctx.save();
       ctx.scale(xs.d,1.0);
       for (var xi = -75; xi <= 75; xi += 10) {
         var x1 = xi / 10.0;
-        var path = Path();
+        var path = fm.Path();
         path.moveTo(x1.abs(), 0.0);
         for (var yi = 2; yi <= 75; yi += 2) {
           var y1 = yi / 10.0;
@@ -155,16 +157,16 @@ class SquareGeometry extends Geometry {
   Geometry clone() => SquareGeometry(rotnum);
 
   @override
-  void drawGrid(Canvas ctx,{double lineWidth=0.0}) {
+  void drawGrid(fm.Canvas ctx,{double lineWidth=0.0}) {
     var p = gridPaint(lineWidth);
     for (var x = -75; x <= 75; x += 10) {
-      var path = Path();
+      var path = fm.Path();
       path.moveTo(x/10.0, -7.5);
       path.lineTo(x/10.0, 7.5);
       ctx.drawPath(path,p);
     }
     for (var y = -75; y <= 75; y += 10) {
-      var path = Path();
+      var path = fm.Path();
       path.moveTo(-7.5, y/10.0);
       path.lineTo(7.5, y/10.0);
       ctx.drawPath(path,p);
@@ -193,7 +195,7 @@ class HexagonGeometry extends Geometry {
   Geometry clone() => HexagonGeometry(rotnum);
 
   @override
-  void drawGrid(Canvas ctx,{double lineWidth=0.0}) {
+  void drawGrid(fm.Canvas ctx,{double lineWidth=0.0}) {
     var p = gridPaint(lineWidth);
     for (var yscale = -1; yscale <= 1; yscale += 2) {
       for (var a=0; a<=6; a++) {
@@ -202,7 +204,7 @@ class HexagonGeometry extends Geometry {
         ctx.scale(1.0, yscale.d);
         for (var xi=5; xi<=85; xi+=10) {
           var x0 = xi / 10.0;
-          var path = Path();
+          var path = fm.Path();
           path.moveTo(0.0, x0);
           for (var yi=5; yi<=85; yi++) {
             var y0 = yi / 10.0;

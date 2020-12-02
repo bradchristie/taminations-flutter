@@ -20,22 +20,22 @@
 
 import 'dart:math';
 
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' as fm;
 import 'package:flutter/scheduler.dart';
-import 'package:taminations/practice_dancer.dart';
 import 'package:xml/xml.dart';
 
+import 'color.dart';
 import 'dancer.dart';
 import 'extensions.dart';
 import 'geometry.dart';
-import 'math/matrix.dart';
-import 'color.dart';
-import 'math/vector.dart';
-import 'tam_utils.dart';
 import 'handhold.dart';
+import 'math/matrix.dart';
 import 'math/movement.dart';
+import 'math/vector.dart';
+import 'practice_dancer.dart';
+import 'tam_utils.dart';
 
-class DanceAnimationPainter extends ChangeNotifier implements CustomPainter  {
+class DanceAnimationPainter extends fm.ChangeNotifier implements fm.CustomPainter  {
 
   static const SLOWSPEED = 1500.0;
   static const MODERATESPEED = 1000.0;
@@ -72,12 +72,12 @@ class DanceAnimationPainter extends ChangeNotifier implements CustomPainter  {
   bool isFinished = false;
   String partstr;
   String get animationNote =>
-      _tam?.childrenNamed("taminator")?.firstOrNull
-      ?.text?.trim()?.replaceAll(r"\s+".r, " ") ?? "";
+      _tam?.childrenNamed('taminator')?.firstOrNull
+      ?.text?.trim()?.replaceAll(r'\s+'.r, ' ') ?? '';
   //AnimationController controller;
   Ticker _ticker;
-  String get title => _tam?.getAttribute("title")
-      ?.replaceAll(" \\(.*?\\) ".r, " ") ?? "";
+  String get title => _tam?.getAttribute('title')
+      ?.replaceAll(' \\(.*?\\) '.r, ' ') ?? '';
 
   //  Except for the phantoms, these are the standard colors
   //  used for teaching callers
@@ -101,10 +101,10 @@ class DanceAnimationPainter extends ChangeNotifier implements CustomPainter  {
   }
 
   void setNumbers(String value) {
-    if (_interactiveDancer >= 0) value = "None";
+    if (_interactiveDancer >= 0) value = 'None';
     _showNumbers = Dancer.NUMBERS_OFF;
-    if (value == "1-8") _showNumbers = Dancer.NUMBERS_DANCERS;
-    if (value == "1-4") _showNumbers = Dancer.NUMBERS_COUPLES;
+    if (value == '1-8') _showNumbers = Dancer.NUMBERS_DANCERS;
+    if (value == '1-4') _showNumbers = Dancer.NUMBERS_COUPLES;
     dancers.forEach( (d) => d.showNumber = _showNumbers );
   }
 
@@ -116,9 +116,9 @@ class DanceAnimationPainter extends ChangeNotifier implements CustomPainter  {
 
   void setSpeed(String speed) {
     switch (speed) {
-      case "Slow" : _speed = SLOWSPEED; break;
-      case "Moderate" : _speed = MODERATESPEED; break;
-      case "Fast" : _speed = FASTSPEED; break;
+      case 'Slow' : _speed = SLOWSPEED; break;
+      case 'Moderate' : _speed = MODERATESPEED; break;
+      case 'Fast' : _speed = FASTSPEED; break;
       default : _speed = NORMALSPEED; break;
     }
   }
@@ -129,7 +129,7 @@ class DanceAnimationPainter extends ChangeNotifier implements CustomPainter  {
 
   void togglePath(Dancer d) {
     d.showPath = !d.showPath;
-    print("Dancer $d showPath ${d.showPath}");
+    print('Dancer $d showPath ${d.showPath}');
     notifyListeners();
   }
 
@@ -284,7 +284,7 @@ class DanceAnimationPainter extends ChangeNotifier implements CustomPainter  {
       });
 
     //  Compute handholds
-    List<Handhold> hhlist = [];
+    var hhlist = <Handhold>[];
     dancers.forEach((d0) {
       d0.rightDancer = null;
       d0.leftDancer = null;
@@ -378,18 +378,18 @@ class DanceAnimationPainter extends ChangeNotifier implements CustomPainter  {
 
 
   @override
-  void paint(Canvas ctx, Size size) {
+  void paint(fm.Canvas ctx, fm.Size size) {
 
     _onDraw();
 
-    ctx.drawRect(Rect.fromLTWH(0,0,size.width,size.height),
-        Paint()..color = Color.FLOOR);
+    ctx.drawRect(fm.Rect.fromLTWH(0,0,size.width,size.height),
+        fm.Paint()..color = Color.FLOOR);
     _size = size.v;
     var range = min(size.width,size.height);
     //  For interactive leadin, show countdown  TODO
     //  Scale coordinate system to dancer's size
     ctx.translate(size.width/2, size.height/2);
-    ctx.clipRect(Rect.fromCenter(center:Offset(0,0),width: size.width, height: size.height));
+    ctx.clipRect(fm.Rect.fromCenter(center:fm.Offset(0,0),width: size.width, height: size.height));
     var s = range / 13.0;
     //  Flip and rotate
     ctx.scale(s,-s);
@@ -400,10 +400,10 @@ class DanceAnimationPainter extends ChangeNotifier implements CustomPainter  {
     }
     //  Always show bigon center mark
     if (_geometry == Geometry.BIGON) {
-      var p = Paint()
+      var p = fm.Paint()
           ..strokeWidth = 0.03;
-      ctx.drawLine(Offset(0,-0.5), Offset(0,0.5), p);
-      ctx.drawLine(Offset(-0.5,0), Offset(0.5,0), p);
+      ctx.drawLine(fm.Offset(0,-0.5), fm.Offset(0,0.5), p);
+      ctx.drawLine(fm.Offset(-0.5,0), fm.Offset(0.5,0), p);
     }
 
     //  Draw paths if requested
@@ -413,32 +413,32 @@ class DanceAnimationPainter extends ChangeNotifier implements CustomPainter  {
     });
 
     //  Draw handholds
-    var hline = Paint()
-    ..color = Color.ORANGE
-    ..strokeWidth = 0.05;
+    var hline = fm.Paint()
+      ..color = Color.ORANGE
+      ..strokeWidth = 0.05;
     dancers.forEach( (d) {
       var loc = d.location;
       if (d.rightHandVisibility) {
         if (d.rightDancer == null) {  // hexagon center
-          ctx.drawLine(Offset(loc.x,loc.y), Offset(0,0), hline);
-          ctx.drawCircle(Offset(0,0), 0.125, hline);
+          ctx.drawLine(fm.Offset(loc.x,loc.y), fm.Offset(0,0), hline);
+          ctx.drawCircle(fm.Offset(0,0), 0.125, hline);
         } else if (d.rightDancer < d) {
           var loc2 = d.rightDancer.location;
-          ctx.drawLine(Offset(loc.x,loc.y), Offset(loc2.x,loc2.y), hline);
+          ctx.drawLine(fm.Offset(loc.x,loc.y), fm.Offset(loc2.x,loc2.y), hline);
           ctx.drawCircle(
-            Offset((loc.x+loc2.x)/2, (loc.y+loc2.y)/2),
+            fm.Offset((loc.x+loc2.x)/2, (loc.y+loc2.y)/2),
               0.125, hline);
         }
       }
       if (d.leftHandVisibility) {
         if (d.leftDancer == null) { // hexagon center
-          ctx.drawLine(Offset(loc.x, loc.y), Offset(0, 0), hline);
-          ctx.drawCircle(Offset(0, 0), 0.125, hline);
+          ctx.drawLine(fm.Offset(loc.x, loc.y), fm.Offset(0, 0), hline);
+          ctx.drawCircle(fm.Offset(0, 0), 0.125, hline);
         } else if (d.leftDancer < d) {
           var loc2 = d.leftDancer.location;
-          ctx.drawLine(Offset(loc.x,loc.y), Offset(loc2.x,loc2.y), hline);
+          ctx.drawLine(fm.Offset(loc.x,loc.y), fm.Offset(loc2.x,loc2.y), hline);
           ctx.drawCircle(
-              Offset((loc.x+loc2.x)/2, (loc.y+loc2.y)/2),
+              fm.Offset((loc.x+loc2.x)/2, (loc.y+loc2.y)/2),
               0.125, hline);
         }
       }
@@ -461,8 +461,8 @@ class DanceAnimationPainter extends ChangeNotifier implements CustomPainter  {
     _interactiveDancer = intdan;
     _interactiveRandom = intrand;
     _resetAnimation();
-    partstr = _tam("parts","") + _tam("fractions","");
-    hasParts = _tam("parts") != null;
+    partstr = _tam('parts','') + _tam('fractions','');
+    hasParts = _tam('parts') != null;
     notifyListeners();
   }
 
@@ -473,40 +473,40 @@ class DanceAnimationPainter extends ChangeNotifier implements CustomPainter  {
       if (isRunning) {
         isRunning = false;
       }
-      var tform = _tam.getElement("formation");
-      var aform = _tam("formation");
+      var tform = _tam.getElement('formation');
+      var aform = _tam('formation');
       var formation = _tam;
       if (tform != null)
         formation = tform;
       if (aform != null)
         formation = TamUtils.getFormation(aform);
-      var flist = formation.childrenNamed("dancer");
+      var flist = formation.childrenNamed('dancer');
       dancers = [];
 
       //  Get numbers for dancers and couples
       //  This fetches any custom numbers that might be defined in
       //  the animation to match a Callerlab or Ceder Chest illustration
-      var paths = _tam.childrenNamed("path");
-      List<String> numbers = [];
+      var paths = _tam.childrenNamed('path');
+      var numbers = <String>[];
       if (_geometry == Geometry.HEXAGON)
-        numbers = ["A", "E", "I",
-          "B", "F", "J",
-          "C", "G", "K",
-          "D", "H", "L",
-          "U", "V", "W", "X", "Y", "Z"];
+        numbers = ['A', 'E', 'I',
+          'B', 'F', 'J',
+          'C', 'G', 'K',
+          'D', 'H', 'L',
+          'U', 'V', 'W', 'X', 'Y', 'Z'];
       else if (_geometry == Geometry.BIGON)
-        numbers = ["1", "2", "3", "4", "5", "6", "7", "8"];
-      else if (paths.length == 0)
-        numbers = ["1", "5", "2", "6", "3", "7", "4", "8"];
+        numbers = ['1', '2', '3', '4', '5', '6', '7', '8'];
+      else if (paths.isEmpty)
+        numbers = ['1', '5', '2', '6', '3', '7', '4', '8'];
       else
         numbers = TamUtils.getNumbers(_tam);
-      List<String> couples = [];
+      var couples = <String>[];
       if (_geometry == Geometry.HEXAGON)
-        couples = ["1", "3", "5", "1", "3", "5",
-          "2", "4", "6", "2", "4", "6",
-          "7", "8", "7", "8", "7", "8"];
+        couples = ['1', '3', '5', '1', '3', '5',
+          '2', '4', '6', '2', '4', '6',
+          '7', '8', '7', '8', '7', '8'];
       else if (_geometry == Geometry.BIGON)
-        couples = [ "1", "2", "3", "4", "5", "6", "7", "8" ];
+        couples = [ '1', '2', '3', '4', '5', '6', '7', '8' ];
       else
         couples = TamUtils.getCouples(_tam);
 
@@ -516,13 +516,13 @@ class DanceAnimationPainter extends ChangeNotifier implements CustomPainter  {
       var icount = -1;
       var im = Matrix.getIdentity();
       if (_interactiveDancer > 0) {
-        var glist = formation.childrenNamed("dancer")
-            .where((d) => d("gender") == (_interactiveDancer==Gender.BOY ? "boy" : "girl")).toList();
+        var glist = formation.childrenNamed('dancer')
+            .where((d) => d('gender') == (_interactiveDancer==Gender.BOY ? 'boy' : 'girl')).toList();
         //  Select either the first or random dancer to be interactive
         icount = _interactiveRandom ? Random().nextInt(glist.length) : 0;
         //  Find the angle the interactive dancer faces at start
         //  We want to rotate the formation so that direction is up
-        var iangle = glist[icount]("angle").d;
+        var iangle = glist[icount]('angle').d;
         im = Matrix.getRotation(-iangle.toRadians);
         //  Adjust icount for looping through geometry below
         icount = icount * geoms.length + 1;
@@ -532,21 +532,21 @@ class DanceAnimationPainter extends ChangeNotifier implements CustomPainter  {
       var dnum = 0;
       for (var i=0; i<flist.length; i++) {
         var fd = flist[i];
-        var x = fd("x").d;
-        var y = fd("y").d;
-        var angle = fd("angle").d;
+        var x = fd('x').d;
+        var y = fd('y').d;
+        var angle = fd('angle').d;
         var g = Gender.BOY;
-        if (fd("gender") == "girl") g = Gender.GIRL;
-        if (fd("gender") == "phantom") g = Gender.PHANTOM;
+        if (fd('gender') == 'girl') g = Gender.GIRL;
+        if (fd('gender') == 'phantom') g = Gender.PHANTOM;
         var movelist = (paths.length > i) ? TamUtils.translatePath(paths[i]) : <Movement>[];
         //  Each dancer listed in the formation corresponds to
         //  one, two, or three real dancers depending on the geometry
         geoms.forEach((geom) {
           var m = im * Matrix.getTranslation(x,y) *
                   Matrix.getRotation(angle.toRadians);
-          var nstr = (g == Gender.PHANTOM) ? " " : numbers[dnum];
-          var cstr = (g == Gender.PHANTOM) ? " " : couples[dnum];
-          var colorstr = (g == Gender.PHANTOM) ? " " : couples[dnum];
+          var nstr = (g == Gender.PHANTOM) ? ' ' : numbers[dnum];
+          var cstr = (g == Gender.PHANTOM) ? ' ' : couples[dnum];
+          var colorstr = (g == Gender.PHANTOM) ? ' ' : couples[dnum];
           var color = Color.LIGHTGREY;
           //  TODO random color
           if (g != Gender.PHANTOM)
@@ -588,16 +588,16 @@ class DanceAnimationPainter extends ChangeNotifier implements CustomPainter  {
   }
 
   @override
-  bool shouldRepaint(covariant CustomPainter oldDelegate) {
+  bool shouldRepaint(covariant fm.CustomPainter oldDelegate) {
     return true;
   }
 
   @override
-  bool hitTest(Offset position) => null;
+  bool hitTest(fm.Offset position) => null;
   @override
-  get semanticsBuilder => null;
+  fm.SemanticsBuilderCallback get semanticsBuilder => null;
 
   @override
-  bool shouldRebuildSemantics(covariant CustomPainter oldDelegate) => shouldRepaint(oldDelegate);
+  bool shouldRebuildSemantics(covariant fm.CustomPainter oldDelegate) => shouldRepaint(oldDelegate);
 
 }

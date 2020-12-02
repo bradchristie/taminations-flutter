@@ -30,8 +30,8 @@ T thrower<T>(Exception e) {
 
 extension TamInt on int {
 
-  double get d => this.toDouble();  // not sure if this is needed
-  String get s => this.toString();
+  double get d => toDouble();  // not sure if this is needed
+  String get s => toString();
   bool get isOdd => this % 2 == 1;
   bool get isEven => this % 2 == 0;
   int pow(int i) {
@@ -50,18 +50,18 @@ extension TamInt on int {
 
 extension TamDouble on double {
 
-  int get i => this.toInt();
+  int get i => toInt();
   double get sq => this * this;
   String get s => ((this*1000.0).round() / 1000.0).toString();
 
   bool isAbout(double y, {double delta = 0.1}) => (this-y).abs() < delta;
-  bool isApproxInt({double delta = 0.1}) => (this-this.round()).abs() < delta;
+  bool isApproxInt({double delta = 0.1}) => (this-round()).abs() < delta;
   double angleDiff(double a2) =>
       ((((this-a2) % (pi*2)) + (pi*3)) % (pi*2)) - pi;
-  bool isAround(double a2) => this.angleDiff(a2).isAbout(0.0);
+  bool isAround(double a2) => angleDiff(a2).isAbout(0.0);
   //  Less than and not equal to, for floating point
   bool isLessThan(double a2, {double delta = 0.1}) =>
-      this < a2 && !this.isAbout(a2,delta:delta);
+      this < a2 && !isAbout(a2,delta:delta);
   bool isGreaterThan(double a2, {double delta = 0.1}) =>
       a2.isLessThan(this,delta:delta);
   // ignore: non_constant_identifier_names
@@ -69,7 +69,7 @@ extension TamDouble on double {
     var r = (this % y).abs();
     return (r.isNaN || r==y || r <= y.abs()/2.0)
       ? r
-      : this.sign * (r - y);
+      : sign * (r - y);
   }
   double get toRadians => this * pi / 180;
   double get toDegrees => this * 180 / pi;
@@ -85,40 +85,40 @@ extension TamString on String {
   RegExp get r => RegExp(this);
   RegExp get ri => RegExp(this, caseSensitive: false);
   RegExp get rd => RegExp(this, dotAll: true);
-  String get lc => this.toLowerCase();
-  bool get isBlank => this.trim().isEmpty;
+  String get lc => toLowerCase();
+  bool get isBlank => trim().isEmpty;
   bool get isNotBlank => !isBlank;
-  String capitalize() => this.isEmpty ? this :
-      this.substring(0,1).toUpperCase() + this.substring(1).toLowerCase();
-  //  Capitolize words except for common small words
-  String capWords() => this.split("\\s+".r).map((s) => s.capitalize()).join(" ")
-      .replaceAllMapped("\\b(A|An|At|And|To|The)\\b".r, (m) => m[1].toLowerCase());
-  bool matches(RegExp e) => (e.stringMatch(this)?.length ?? -1) == this.length;
-  String get last => this[this.length-1];
+  String capitalize() => isEmpty ? this :
+      substring(0,1).toUpperCase() + substring(1).toLowerCase();
+  //  Capitalize words except for common small words
+  String capWords() => split('\\s+'.r).map((s) => s.capitalize()).join(' ')
+      .replaceAllMapped('\\b(A|An|At|And|To|The)\\b'.r, (m) => m[1].toLowerCase());
+  bool matches(RegExp e) => (e.stringMatch(this)?.length ?? -1) == length;
+  String get last => this[length-1];
   int toIntOrNull() => int.tryParse(this);
 
   //  Returns an array of strings, starting with the entire string,
   //  and each subsequent string chopping one word off the end
   List<String> chopped() {
     var ss = <String>[];
-    return this.split("\\s+".r).map((it) {
+    return split('\\s+'.r).map((it) {
       ss.add(it);
-      return ss.reduce((a, b) => "$a $b");
+      return ss.reduce((a, b) => '$a $b');
     }).toList().reversed.toList();
   }
 
   //  Return an array of strings, each removing one word from the start
   List<String> diced() {
     var ss = <String>[];
-    return this.split("\\s+".r).reversed.map((it) {
+    return split('\\s+'.r).reversed.map((it) {
       ss.insert(0,it);
-      return ss.reduce((a, b) => "$a $b");
+      return ss.reduce((a, b) => '$a $b');
     }).toList().reversed.toList();
   }
 
   //  Return all combinations of words from a string
   List<String> minced() =>
-      this.chopped().map((e) => e.diced()).expand((e) => e).toList();
+      chopped().map((e) => e.diced()).expand((e) => e).toList();
 
 }
 
@@ -127,22 +127,22 @@ extension TamList<E> on List<E> {
   List<int> get indices => asMap().keys.toList();
   E get firstOrNull => isNotEmpty ? first : null;
   E getOrNull(int i) => (i >= 0 && i < length) ? this[i] : null;
-  List<E> operator -(E e) => this.where((element) => element != e).toList();
-  List<E> clone() => this.toList();
-  List<E> sortedWith(int compare(E e1, E e2)) {
-    var list2 = this.clone();
+  List<E> operator -(E e) => where((element) => element != e).toList();
+  List<E> clone() => toList();
+  List<E> sortedWith(int Function(E e1, E e2) compare) {
+    var list2 = clone();
     list2.sort(compare);
     return list2;
   }
-  List<E> sortedBy(Comparable cf(E e)) {
-    var list2 = this.clone();
+  List<E> sortedBy(Comparable Function(E e) cf) {
+    var list2 = clone();
     list2.sort((E e1, E e2) => cf(e1).compareTo(cf(e2)));
     return list2;
   }
-  List<E> drop(int n) => this.sublist(n);
-  List<List<E>> partition(bool predicate(E item)) {
-    List<E> first = [];
-    List<E> second = [];
+  List<E> drop(int n) => sublist(n);
+  List<List<E>> partition(bool Function(E item) predicate) {
+    var first = <E>[];
+    var second = <E>[];
     for (var item in this) {
       if (predicate(item))
         first.add(item);
@@ -151,10 +151,11 @@ extension TamList<E> on List<E> {
     }
     return [first,second];
   }
-  bool none(bool test(E element)) => this.every((e) => !test(e));
-  List<E> whereNotNull() => this.where((element) => element != null).toList();
+  bool none(bool Function(E element) test) => every((e) => !test(e));
+  List<E> whereNotNull() => where((element) => element != null).toList();
+  double maxOf(double Function(E e) of) => fold(-double.maxFinite, (a, b) => max(a,of(b)));
 
-  E firstBy(Comparable selector(E)) {
+  E firstBy(Comparable Function(E) selector) {
     if (isEmpty) return null;
     if (length == 1) return first;
     var best = first;
@@ -169,7 +170,7 @@ extension TamList<E> on List<E> {
     return best;
   }
 
-  void forEachIndexed(void f(int i,E item)) {
+  void forEachIndexed(void Function(int i,E item) f) {
     for (var i=0; i<length; i++)
       f(i,this[i]);
   }
@@ -178,21 +179,21 @@ extension TamList<E> on List<E> {
 
 extension TamDoubleList on List<double> {
 
-  double sum() => this.fold(0.0, (a, b) => a+b);
+  double sum() => fold(0.0, (a, b) => a+b);
 
 }
 
 extension TamXmlElement on XmlElement {
 
-  String call(String name, [String dfault]) => this.getAttribute(name) ?? dfault;
+  String call(String name, [String dfault]) => getAttribute(name) ?? dfault;
   List<XmlElement> childrenNamed(String name) {
     var a = children.toList();
-    var b = a.where((element) => element is XmlElement);
+    var b = a.whereType<XmlElement>();
     var c = b.cast<XmlElement>();
     var d = c.where((element) => element.name.local == name).toList();
     return d;
   }
-  String get tag => this.name.local;
+  String get tag => name.local;
 
 }
 

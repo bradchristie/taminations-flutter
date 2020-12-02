@@ -18,16 +18,17 @@
 
 */
 import 'dart:math';
-import 'package:flutter/material.dart' as FM;
+
+import 'package:flutter/material.dart' as fm;
 import 'package:flutter/painting.dart';
-import 'package:taminations/color.dart';
+
+import 'color.dart';
+import 'extensions.dart';
+import 'geometry.dart';
+import 'math/matrix.dart';
 import 'math/movement.dart';
 import 'math/path.dart';
-import 'geometry.dart';
-import 'extensions.dart';
 import 'math/vector.dart';
-import 'math/matrix.dart';
-import 'color.dart';
 
 class Gender {
   static const BOY = 1;
@@ -63,15 +64,15 @@ extension DancerList on List<Dancer> {
   //  That is, dancer 1 is the diagonal opposite of dancer 0, etc.
   bool areDancersOrdered() =>
       length % 2 == 0 &&
-  this.indices.where((it) => it % 2 == 0).every(
+  indices.where((it) => it % 2 == 0).every(
           (it) => this[it].location.isAbout(-this[it+1].location));
 
   //  Center a list of dancers
   //  Assumes dancers are distributed evenly around a central point
   List<Dancer> center() {
     if (length > 0) {
-      var vs = this.fold(Vector(0,0), (v, d) => v + d.location);
-      var va = vs / length;
+      var vs = fold(Vector(0.0,0.0), (v, d) => v + d.location);
+      var va = vs / length.d;
       forEach((d) {
         d.setStartPosition(d.location - va);
       });
@@ -91,7 +92,7 @@ extension DancerList on List<Dancer> {
           .expand((d) =>
       [
         d,
-        this.firstWhere((it) => it.location.isAbout(-d.location))
+        firstWhere((it) => it.location.isAbout(-d.location))
       ]);
     } catch (_) {
       return this;
@@ -107,9 +108,9 @@ class Dancer implements Comparable<Dancer> {
   static const NUMBERS_COUPLES = 2;
   static const NUMBERS_NAMES = 3;   //  sequencer only
 
-  static const rect = FM.Rect.fromLTWH(-0.5, -0.5, 1.0, 1.0);
-  static var rrect = FM.RRect.fromRectAndRadius(rect,
-      FM.Radius.circular(0.3));
+  static const rect = fm.Rect.fromLTWH(-0.5, -0.5, 1.0, 1.0);
+  static var rrect = fm.RRect.fromRectAndRadius(rect,
+      fm.Radius.circular(0.3));
 
   //  Passed into default constructor
   String number;
@@ -131,7 +132,7 @@ class Dancer implements Comparable<Dancer> {
   bool showPath = false;
   int hands = Hands.NOHANDS;
   Matrix tx = Matrix.getIdentity();
-  FM.Path _pathPath;
+  fm.Path _pathPath;
   double get beats => path.beats;
   //  Other vars for computing handholds
   Dancer leftDancer;
@@ -143,7 +144,7 @@ class Dancer implements Comparable<Dancer> {
   bool rightHandNewVisibility = false;
   bool leftHandNewVisibility = false;
   var data = DancerData();
-  var name = "";  // for sequencer
+  var name = '';  // for sequencer
 
   Dancer(this.number,this.numberCouple, this.gender,
       this.fillColor, Matrix mat, this._geom, this.moves, [this.clonedFrom]) {
@@ -171,6 +172,7 @@ class Dancer implements Comparable<Dancer> {
   bool get isActive => data.active;
   bool get isNotActive => !data.active;
 
+  @override
   bool operator ==(Object other) {
     if (other is Dancer) {
       return number == other.number;
@@ -203,7 +205,7 @@ class Dancer implements Comparable<Dancer> {
   double get anglePosition => tx.location.angle;
 
   //  Angle the dancer turns to look at the origin
-  double get angleToOrigin => tx.inverse().angle;
+  double get angleToOrigin => (tx.inverse()*Vector()).angle;
 
   Vector vectorToDancer(Dancer d2) =>
       tx.inverse() * d2.location;
@@ -229,9 +231,9 @@ class Dancer implements Comparable<Dancer> {
   bool get isCenterRight => angleToOrigin < 0;
   bool get isOnXAxis => location.y.isAbout(0);
   bool get isOnYAxis => location.x.isAbout(0);
-  bool get isOnAxis => this.isOnXAxis || this.isOnYAxis;
+  bool get isOnAxis => isOnXAxis || isOnYAxis;
   bool get isTidal =>
-      (this.isOnXAxis || this.isOnYAxis) && (this.isCenterLeft || this.isCenterRight);
+      (isOnXAxis || isOnYAxis) && (isCenterLeft || isCenterRight);
 
   bool isInFrontOf(Dancer d2) =>
       this != d2 && d2.angleToDancer(this).isAround(0);
@@ -281,7 +283,7 @@ class Dancer implements Comparable<Dancer> {
   void computePath() {
     _animateComputed(0);
     var loc = location;
-    _pathPath = FM.Path();
+    _pathPath = fm.Path();
     _pathPath.moveTo(loc.x, loc.y);
     for (var beat = 0.1; beat <= beats; beat += 0.1) {
       _animateComputed(beat);
@@ -292,11 +294,11 @@ class Dancer implements Comparable<Dancer> {
 
   ///   Draw the entire dancer's path as a translucent colored line
   /// @param c  Canvas to draw to
-  void drawPath(FM.Canvas c) {
+  void drawPath(fm.Canvas c) {
     //  The path color is a partly transparent version of the draw color
-    var p = FM.Paint()
+    var p = fm.Paint()
       ..color = drawColor.withAlpha(128)
-      ..style = FM.PaintingStyle.stroke
+      ..style = fm.PaintingStyle.stroke
       ..strokeWidth = 0.1;
     c.drawPath(_pathPath, p);
   }
@@ -304,12 +306,12 @@ class Dancer implements Comparable<Dancer> {
   //  Draw the dancer at its current position
   //  The Canvas is already transformed to the dancer's position and orientation
   //  and scaled to the dancer's size
-  void draw(FM.Canvas c) {
+  void draw(fm.Canvas c) {
     var dc = showColor ? drawColor : Color.GRAY;
     var fc = showColor ? fillColor : Color.LIGHTGREY;
     //  Draw the head
-    var p = FM.Paint()..color = dc;
-    c.drawCircle(FM.Offset(0.5,0.0), 0.33, p);
+    var p = fm.Paint()..color = dc;
+    c.drawCircle(fm.Offset(0.5,0.0), 0.33, p);
     //  Draw the body
     p.color = (showNumber == NUMBERS_OFF || gender == Gender.PHANTOM)
           ? fc : fc.veryBright();
@@ -317,17 +319,17 @@ class Dancer implements Comparable<Dancer> {
     if (g == Gender.BOY)
       c.drawRect(rect, p);
     else if (g == Gender.GIRL)
-      c.drawCircle(FM.Offset(0,0), 0.5, p);
+      c.drawCircle(fm.Offset(0,0), 0.5, p);
     else
       c.drawRRect(rrect, p);
     //  Draw the body outline
     p.strokeWidth = 0.1;
     p.color = dc;
-    p.style = FM.PaintingStyle.stroke;
+    p.style = fm.PaintingStyle.stroke;
     if (g == Gender.BOY)
       c.drawRect(rect, p);
     else if (g == Gender.GIRL)
-      c.drawCircle(FM.Offset(0,0), 0.5, p);
+      c.drawCircle(fm.Offset(0,0), 0.5, p);
     else
       c.drawRRect(rrect, p);
     //  Draw number if on
@@ -340,16 +342,16 @@ class Dancer implements Comparable<Dancer> {
       c.translate(txtext.location.x,txtext.location.y);
       c.rotate(txtext.angle);
       c.scale(-0.1,0.1);
-      var t = "";
+      var t = '';
       var textSize = 7.0;
       if (showNumber == NUMBERS_DANCERS) t = number;
       if (showNumber == NUMBERS_COUPLES) t = numberCouple;
       if (showNumber == NUMBERS_NAMES) t = name;
-      TextSpan span = TextSpan(text: t,
-          style:TextStyle(fontSize: 8, color:FM.Colors.black));
-      TextPainter tp = TextPainter(text: span,
+      var span = TextSpan(text: t,
+          style:TextStyle(fontSize: 8, color:fm.Colors.black));
+      var tp = TextPainter(text: span,
           textAlign: TextAlign.center,
-          textDirection: FM.TextDirection.ltr)..layout();
+          textDirection: fm.TextDirection.ltr)..layout();
       tp.paint(c, Offset(-textSize*0.35,-textSize*0.55));
     }
   }

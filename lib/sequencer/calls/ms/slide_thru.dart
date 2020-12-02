@@ -24,7 +24,7 @@ class SlideThru extends Action {
 
   @override
   var level = LevelData.MS;
-  SlideThru() : super("Slide Thru");
+  SlideThru() : super('Slide Thru');
 
   @override
   Path performOne(Dancer d, CallContext ctx) {
@@ -32,9 +32,9 @@ class SlideThru extends Action {
     if (ctx.isInWave(d) && d.data.beau && ctx.dancerToRight(d).data.active) {
       var dist = d.distanceTo(ctx.dancerToRight(d));
       if (d.gender == Gender.BOY)
-        return TamUtils.getMove("Lead Right",scale:[1.0,dist/2.0].v);
+        return TamUtils.getMove('Lead Right',scale:[1.0,dist/2.0].v);
       else
-        return TamUtils.getMove("Quarter Left",skew:[1.0, -dist/2.0].v);
+        return TamUtils.getMove('Quarter Left',skew:[1.0, -dist/2.0].v);
     } else {
       //  Not in wave
       //  Must be facing dancers
@@ -42,10 +42,10 @@ class SlideThru extends Action {
       if (d2 == null)
           return ctx.dancerCannotPerform(d,name);
       var dist = d.distanceTo(d2);
-      return TamUtils.getMove("Extend Left",scale:[dist / 2, 0.5].v) +
+      return TamUtils.getMove('Extend Left',scale:[dist / 2, 0.5].v) +
           ((d.gender == Gender.BOY)
-              ? TamUtils.getMove("Lead Right",scale:[1.0, 0.5].v)
-              :  TamUtils.getMove("Quarter Left",skew:[1.0, -0.5].v));
+              ? TamUtils.getMove('Lead Right',scale:[1.0, 0.5].v)
+              :  TamUtils.getMove('Quarter Left',skew:[1.0, -0.5].v));
     }
 
   }

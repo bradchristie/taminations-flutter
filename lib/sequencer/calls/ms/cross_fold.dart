@@ -24,21 +24,21 @@ class CrossFold extends Action {
 
   @override
   var level = LevelData.MS;
-  CrossFold() : super("Cross Fold");
+  CrossFold() : super('Cross Fold');
 
   @override
   Future<void> perform(CallContext ctx, [int stackIndex=0]) async {
     //  Centers and ends cannot both cross fold
     if (ctx.actives.any((d) => d.data.center) &&
         ctx.actives.any((d) => d.data.end))
-      throw CallError("Centers and ends cannot both Cross Fold");
+      throw CallError('Centers and ends cannot both Cross Fold');
     for (var d in ctx.actives) {
       //  Must be in a 4-dancer wave or line
       if (!d.data.center && !d.data.end)
-        throw CallError("General line required for Cross Fold");
+        throw CallError('General line required for Cross Fold');
       //  Center beaus and end belles fold left
       var isRight = d.data.beau ^ d.data.center;
-      var m = (isRight) ? "Fold Right" : "Fold Left";
+      var m = (isRight) ? 'Fold Right' : 'Fold Left';
       var d2 = d.data.partner;
       var dist = d.distanceTo(d2);
       var dxscale = 0.75;
@@ -57,9 +57,9 @@ class CrossFold extends Action {
 
       //  Also set path for partner
       //  This is an adjustment to shift the dancers into a standard formation
-      var m2 = "Stand";
-      if (d.isRightOf(d2)) m2 = "Dodge Right";
-      else if (d.isLeftOf(d2)) m2 = "Dodge Left";
+      var m2 = 'Stand';
+      if (d.isRightOf(d2)) m2 = 'Dodge Right';
+      else if (d.isLeftOf(d2)) m2 = 'Dodge Left';
       var myScale = 0.25;
       if (ctx.isTidal()) myScale = 0.25;
       else if (d2.data.end) myScale = 0.5;

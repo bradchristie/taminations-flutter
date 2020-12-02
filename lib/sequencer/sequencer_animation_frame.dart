@@ -18,61 +18,61 @@
 
 */
 
-import 'package:flutter/material.dart' as FM;
-import 'package:provider/provider.dart' as PP;
+import 'package:flutter/material.dart' as fm;
+import 'package:provider/provider.dart' as pp;
 
 import '../button.dart';
 import '../pages/animation_page.dart';
 import 'sequencer_model.dart';
 
-class SequencerAnimationFrame extends FM.StatefulWidget {
+class SequencerAnimationFrame extends fm.StatefulWidget {
 
   @override
   _SequencerAnimationFrameState createState() => _SequencerAnimationFrameState();
 
 }
 
-class _SequencerAnimationFrameState extends FM.State<SequencerAnimationFrame> {
+class _SequencerAnimationFrameState extends fm.State<SequencerAnimationFrame> {
 
   @override
-  FM.Widget build(FM.BuildContext context) {
-    return FM.Column(
+  fm.Widget build(fm.BuildContext context) {
+    return fm.Column(
       children: [
-        FM.Expanded(
-            child:PP.Consumer<SequencerModel>(
+        fm.Expanded(
+            child:pp.Consumer<SequencerModel>(
                 builder: (context, settings, child) {
-                  return AnimationFrame(startFormation: "Static Square");
+                  return AnimationFrame(startFormation: 'Static Square');
                 })
         ),
-        FM.Row(
+        fm.Row(
           children: [
-            FM.Expanded(
-                child: Button("Undo")
+            fm.Expanded(
+                child: Button('Undo')
             ),
-            FM.Expanded(
-                child: Button("Reset")
+            fm.Expanded(
+                child: Button('Reset')
             ),
-            FM.Expanded(
-                child: Button("Copy")
+            fm.Expanded(
+                child: Button('Copy')
             ),
-            FM.Expanded(
-                child: Button("Paste")
+            fm.Expanded(
+                child: Button('Paste')
             ),
           ],
         ),
-        FM.Row(
+        fm.Row(
           children: [
-            FM.Expanded(
-                child: Button("Help")
+            fm.Expanded(
+                child: Button('Help')
             ),
-            FM.Expanded(
-                child: Button("Settings")
+            fm.Expanded(
+                child: Button('Settings')
             ),
-            FM.Expanded(
-                child: Button("Abbrev")
+            fm.Expanded(
+                child: Button('Abbrev')
             ),
-            FM.Expanded(
-                child: Button("Calls")
+            fm.Expanded(
+                child: Button('Calls')
             ),
           ],
         ),

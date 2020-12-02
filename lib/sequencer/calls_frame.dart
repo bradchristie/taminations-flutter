@@ -18,27 +18,29 @@
 
 */
 
-import 'package:flutter/material.dart' as FM;
-import 'package:provider/provider.dart' as PP;
+import 'package:flutter/material.dart' as fm;
+import 'package:provider/provider.dart' as pp;
 import 'package:taminations/sequencer/sequencer_model.dart';
 
 import '../color.dart';
 
-class SequencerCallsFrame extends FM.StatefulWidget {
+class SequencerCallsFrame extends fm.StatefulWidget {
   @override
   _SequencerCallsFrameState createState() => _SequencerCallsFrameState();
 }
 
-class _SequencerCallsFrameState extends FM.State<SequencerCallsFrame> {
+class _SequencerCallsFrameState extends fm.State<SequencerCallsFrame> {
 
-  FM.TextEditingController textFieldController;
-  var focusNode = FM.FocusNode();
+  fm.TextEditingController textFieldController;
+  var focusNode = fm.FocusNode();
 
+  @override
   void initState() {
     super.initState();
-    textFieldController = FM.TextEditingController();
+    textFieldController = fm.TextEditingController();
   }
 
+  @override
   void dispose() {
     textFieldController.dispose();
     super.dispose();
@@ -48,9 +50,9 @@ class _SequencerCallsFrameState extends FM.State<SequencerCallsFrame> {
     var value = textFieldController.value.text;
     setState(() {
       //  Process the call
-      if (value.toLowerCase().trim() == "undo")
+      if (value.toLowerCase().trim() == 'undo')
         model.undoLastCall();
-      else if (value.toLowerCase().trim() == "reset")
+      else if (value.toLowerCase().trim() == 'reset')
         model.reset();
       else
         model.loadOneCall(value);
@@ -62,44 +64,44 @@ class _SequencerCallsFrameState extends FM.State<SequencerCallsFrame> {
   }
 
   @override
-  FM.Widget build(FM.BuildContext context) {
-    return PP.Consumer<SequencerModel>(
+  fm.Widget build(fm.BuildContext context) {
+    return pp.Consumer<SequencerModel>(
        builder: (context, model, child) {
-         return FM.Column(
+         return fm.Column(
            children: [
-             FM.TextField(
-               key: FM.Key("Sequencer Input"),
+             fm.TextField(
+               key: fm.Key('Sequencer Input'),
                autofocus: true,
                focusNode: focusNode,
                controller: textFieldController,
-               decoration: FM.InputDecoration.collapsed(
-                   hintText: "Enter calls"),
+               decoration: fm.InputDecoration.collapsed(
+                   hintText: 'Enter calls'),
                enableSuggestions: false,
-               style: FM.TextStyle(fontSize: 24),
+               style: fm.TextStyle(fontSize: 24),
                //  Code to run when user presses Enter
                onSubmitted: (value) {
                  _sendOneCall(model);
                },
              ),
-             FM.Expanded(
-                 child: FM.ListView.builder(
+             fm.Expanded(
+                 child: fm.ListView.builder(
                    itemCount: model.callNames.length,
                    itemBuilder: itemBuilder,
                  )
              ),
           //   if (model.errorString.isNotEmpty)
-               FM.Align(
-                 alignment: FM.Alignment.centerLeft,
-                 child: FM.Text(model.errorString,
-                     key: FM.Key("Error text"),
-                     style: FM.TextStyle(color:Color.RED,fontSize:30)),
+               fm.Align(
+                 alignment: fm.Alignment.centerLeft,
+                 child: fm.Text(model.errorString,
+                     key: fm.Key('Error text'),
+                     style: fm.TextStyle(color:Color.RED,fontSize:30)),
                ),
              //  For testing - a very tiny spot to tap
              //  since the tester cannot simulate keyboard Enter
-               FM.Container(
-                 key: FM.Key("Submit Call"),
-                 child: FM.GestureDetector(
-                   child: FM.Text(" ",style: FM.TextStyle(fontSize:1),),
+               fm.Container(
+                 key: fm.Key('Submit Call'),
+                 child: fm.GestureDetector(
+                   child: fm.Text(' ',style: fm.TextStyle(fontSize:1),),
                    onTap: () { _sendOneCall(model); },
                  ),
                ),
@@ -110,20 +112,20 @@ class _SequencerCallsFrameState extends FM.State<SequencerCallsFrame> {
   }
 
   //  Builder for one item of the list
-  FM.Widget itemBuilder(FM.BuildContext context, int index) {
-    return PP.Consumer<SequencerModel>(
+  fm.Widget itemBuilder(fm.BuildContext context, int index) {
+    return pp.Consumer<SequencerModel>(
         builder: (context, model, child) {
-          return FM.GestureDetector(
+          return fm.GestureDetector(
               onTap: () {},
-              child: FM.Container(
-                  decoration: FM.BoxDecoration(
+              child: fm.Container(
+                  decoration: fm.BoxDecoration(
                     //  Color the item according the the level
                       color: Color.WHITE, // TODO level color
-                      border: FM.Border(
-                          top: FM.BorderSide(width: 1, color: Color.BLACK))),
-                  padding: FM.EdgeInsets.only(left: 20.0, top: 4, bottom: 4),
-                  child: FM.Text(
-                      model.callNames[index], style: FM.TextStyle(fontSize: 20))
+                      border: fm.Border(
+                          top: fm.BorderSide(width: 1, color: Color.BLACK))),
+                  padding: fm.EdgeInsets.only(left: 20.0, top: 4, bottom: 4),
+                  child: fm.Text(
+                      model.callNames[index], style: fm.TextStyle(fontSize: 20))
               )
           );
         });

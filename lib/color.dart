@@ -19,10 +19,10 @@
 */
 
 
-import 'package:flutter/material.dart' as FM;
+import 'package:flutter/material.dart' as fm;
 import 'extensions.dart';
 
-class Color extends FM.Color {
+class Color extends fm.Color {
 
   const Color(int value) : super(value);
   const Color.fromARGB(int alpha, int red, int green, int blue) :
@@ -30,16 +30,16 @@ class Color extends FM.Color {
 
   static Color fromName(String name) {
     switch (name.toLowerCase()) {
-      case "black" : return BLACK;
-      case "blue" : return BLUE;
-      case "cyan" : return CYAN;
-      case "gray" : return GRAY;
-      case "green" : return GREEN;
-      case "magenta" : return MAGENTA;
-      case "orange" : return ORANGE;
-      case "red" : return RED;
-      case "white" : return WHITE;
-      case "yellow" : return YELLOW;
+      case 'black' : return BLACK;
+      case 'blue' : return BLUE;
+      case 'cyan' : return CYAN;
+      case 'gray' : return GRAY;
+      case 'green' : return GREEN;
+      case 'magenta' : return MAGENTA;
+      case 'orange' : return ORANGE;
+      case 'red' : return RED;
+      case 'white' : return WHITE;
+      case 'yellow' : return YELLOW;
       default : return WHITE;
     }
   }

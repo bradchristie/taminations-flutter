@@ -28,8 +28,8 @@ class HalfTag extends Action {
 
   @override
   Future<void> perform(CallContext ctx, [int i = 0]) async {
-    var dir = name.startsWith("Left") ? "Left" : "";
-    await ctx.applyCalls("$dir Quarter Tag","Extend");
+    var dir = name.startsWith('Left') ? 'Left' : '';
+    await ctx.applyCalls('$dir Quarter Tag','Extend');
   }
 
 }

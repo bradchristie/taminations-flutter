@@ -63,115 +63,115 @@ class BestMapping {
 class CallContext {
 
   //  XML files that have been loaded
-  static var loadedMXL = Map<String,XmlDocument>();
+  static var loadedMXL = <String,XmlDocument>{};
 
   //  Index into files for specific calls
   //  Supplements looking up calls in TamUtils.calldata
   //  Keys are normalized call name
   //  Values are file names
-  static var callindex = Map<String,Set<String>>();
+  static var callindex = <String,Set<String>>{};
 
   static const callindexinitfiles = [
-    "c1/block_formation",
-    "b1/circle",
-    "a1/clover_and_anything",
-    "a1/cross_clover_and_anything",
-    "c1/cross_your_neighbor",
-    "c2/criss_cross_your_neighbor",
-    "plus/explode_the_wave",
-    "a1/explode_the_line",
-    "b1/sashay",
-    "b1/ladies_chain",
-    "a1/any_hand_concept",
-    "a1/split_square_thru",
-    "b2/sweep_a_quarter",
-    "b1/circulate",
-    "b1/face",
-    "c1/butterfly_formation",
-    "a2/all_4_all_8",
-    "a1/as_couples",
-    "b1/veer",
-    "b1/circle",
-    "b1/grand_square",
-    "b1/lead_right",
-    "b2/first_couple_go",
-    "a1/as_couples",
-    "c1/stretch_concept",
-    "c1/butterfly_formation",
-    "c1/concentric_concept",
-    "c1/o_formation",
-    "c1/box_split_recycle",
-    "c1/magic_column_formation",
-    "c1/phantom_formation",
-    "plus/single_circle_to_a_wave",
-    "c1/tandem_concept",
-    "c1/track_n",
-    "c1/triple_box_concept",
-    "b2/ocean_wave",
-    "c1/wheel_and_anything",
-    "plus/chase_right",
-    "a1/fractional_tops",
-    "a1/quarter_thru",
-    "a1/three_quarter_thru",
-    "b1/split_the_outside_couple",
-    "c2/anything_the_k",
-    "a2/transfer_and_anything",
-    "ms/eight_chain_thru",
-    "b1/separate",
-    "c1/anything_the_windmill",
-    "c1/anything_to_a_wave",
-    "c1/tagging_calls_back_to_a_wave",
-    "plus/grand_swing_thru",
-    "c2/anything_and_circle",
-    "b1/star",
-    "b2/alamo_style",
-    "c2/once_removed_concept",
-    "c1/split_square_thru_variations",
-    "c2/unwrap",
-    "c2/stretched_concept"
+    'c1/block_formation',
+    'b1/circle',
+    'a1/clover_and_anything',
+    'a1/cross_clover_and_anything',
+    'c1/cross_your_neighbor',
+    'c2/criss_cross_your_neighbor',
+    'plus/explode_the_wave',
+    'a1/explode_the_line',
+    'b1/sashay',
+    'b1/ladies_chain',
+    'a1/any_hand_concept',
+    'a1/split_square_thru',
+    'b2/sweep_a_quarter',
+    'b1/circulate',
+    'b1/face',
+    'c1/butterfly_formation',
+    'a2/all_4_all_8',
+    'a1/as_couples',
+    'b1/veer',
+    'b1/circle',
+    'b1/grand_square',
+    'b1/lead_right',
+    'b2/first_couple_go',
+    'a1/as_couples',
+    'c1/stretch_concept',
+    'c1/butterfly_formation',
+    'c1/concentric_concept',
+    'c1/o_formation',
+    'c1/box_split_recycle',
+    'c1/magic_column_formation',
+    'c1/phantom_formation',
+    'plus/single_circle_to_a_wave',
+    'c1/tandem_concept',
+    'c1/track_n',
+    'c1/triple_box_concept',
+    'b2/ocean_wave',
+    'c1/wheel_and_anything',
+    'plus/chase_right',
+    'a1/fractional_tops',
+    'a1/quarter_thru',
+    'a1/three_quarter_thru',
+    'b1/split_the_outside_couple',
+    'c2/anything_the_k',
+    'a2/transfer_and_anything',
+    'ms/eight_chain_thru',
+    'b1/separate',
+    'c1/anything_the_windmill',
+    'c1/anything_to_a_wave',
+    'c1/tagging_calls_back_to_a_wave',
+    'plus/grand_swing_thru',
+    'c2/anything_and_circle',
+    'b1/star',
+    'b2/alamo_style',
+    'c2/once_removed_concept',
+    'c1/split_square_thru_variations',
+    'c2/unwrap',
+    'c2/stretched_concept'
   ];
 
   static const standardFormations = {
-    "Normal Lines Compact" : 1.0,
-    "Normal Lines" : 1.0,
-    "Double Pass Thru" : 1.0,
-    "Quarter Tag" : 1.5,
-    "Tidal Line RH" : 1.0,
-    "Tidal Wave of 6" : 2.0,
-    "I-Beam" : 2.0,
-    "Diamonds RH Girl Points" : 2.0,
-    "Diamonds RH PTP Girl Points" : 3.0,
-    "Hourglass RH BP" : 3.0,
-    "Galaxy RH GP" : 3.0,
-    "Butterfly RH" : 3.0,
-    "O RH" : 3.0,
-    "Thar RH Boys" : 3.0,
-    "Sausage RH" : 3.0,
-    "Static Square" : 2.0,
-    //"Alamo Wave"
-    "Right-Hand Zs" : 2.0,
-    "Left-Hand Zs" : 2.0,
+    'Normal Lines Compact' : 1.0,
+    'Normal Lines' : 1.0,
+    'Double Pass Thru' : 1.0,
+    'Quarter Tag' : 1.5,
+    'Tidal Line RH' : 1.0,
+    'Tidal Wave of 6' : 2.0,
+    'I-Beam' : 2.0,
+    'Diamonds RH Girl Points' : 2.0,
+    'Diamonds RH PTP Girl Points' : 3.0,
+    'Hourglass RH BP' : 3.0,
+    'Galaxy RH GP' : 3.0,
+    'Butterfly RH' : 3.0,
+    'O RH' : 3.0,
+    'Thar RH Boys' : 3.0,
+    'Sausage RH' : 3.0,
+    'Static Square' : 2.0,
+    //'Alamo Wave'
+    'Right-Hand Zs' : 2.0,
+    'Left-Hand Zs' : 2.0,
     //  Siamese formations
     //  This also covers C-1 Phantom formations
-    "Siamese Box 1" : 2.0,
-    "Siamese Box 2" : 2.0,
-    "Siamese Wave" : 2.0,
+    'Siamese Box 1' : 2.0,
+    'Siamese Box 2' : 2.0,
+    'Siamese Wave' : 2.0,
     //  Blocks
-    "Facing Blocks Right" : 2.0,
-    "Facing Blocks Left" : 2.0,
-    "Concentric Diamonds RH" : 2.0,
-    "Quarter Z RH" : 4.0,
-    "Quarter Z LH" : 4.0
+    'Facing Blocks Right' : 2.0,
+    'Facing Blocks Left' : 2.0,
+    'Concentric Diamonds RH' : 2.0,
+    'Quarter Z RH' : 4.0,
+    'Quarter Z LH' : 4.0
   };
 
   static const twoCoupleFormations = {
-    "Facing Couples Compact" : 1.0,
-    "Facing Couples" : 1.0,
-    "Two-Faced Line RH" : 1.0,
-    "Diamond RH" : 1.0,
-    "Single Eight Chain Thru" : 1.0,
-    "Single Quarter Tag" : 1.0,
-    "Square RH" : 1.0
+    'Facing Couples Compact' : 1.0,
+    'Facing Couples' : 1.0,
+    'Two-Faced Line RH' : 1.0,
+    'Diamond RH' : 1.0,
+    'Single Eight Chain Thru' : 1.0,
+    'Single Quarter Tag' : 1.0,
+    'Square RH' : 1.0
   };
 
   static Future<XmlDocument> loadOneFile(String link) async {
@@ -179,10 +179,10 @@ class CallContext {
       return loadedMXL[link];
     var doc = await TamUtils.getXMLAsset(link);
     //  Add all the calls to the index
-    doc.findAllElements("tam").forEach((tam) {
-      var norm = TamUtils.normalizeCall(tam("title"));
+    doc.findAllElements('tam').forEach((tam) {
+      var norm = TamUtils.normalizeCall(tam('title'));
       if (!callindex.containsKey(norm))
-        callindex[norm] = Set<String>();
+        callindex[norm] = <String>{};
       callindex[norm].add(link);
     });
     //  TODO ??? look for xrefs and load
@@ -192,9 +192,9 @@ class CallContext {
 
   static Set<String> _xmlFilesForCall(String norm) {
     var callfiles1 = TamUtils.callmap.containsKey(norm)
-        ? TamUtils.callmap[norm].map((e) => e.link) : List<String>();
+        ? TamUtils.callmap[norm].map((e) => e.link) : <String>[];
     var callfiles2 = callindex.containsKey(norm)
-        ? callindex[norm] : Set<String>();
+        ? callindex[norm] : <String>{};
     callfiles2.addAll(callfiles1);
     return callfiles2;
   }
@@ -211,7 +211,7 @@ class CallContext {
   }
 
   static Future<void> init() {
-    if (callindex.length == 0) {
+    if (callindex.isEmpty) {
       return Future.wait(callindexinitfiles.map((file) => loadOneFile(file)));
     }
     return Future<void>.value();
@@ -220,8 +220,8 @@ class CallContext {
   /////// end of static code ///////
 
   List<Dancer> dancers;
-  String callname = "";
-  LevelData level = LevelData.find("b1");
+  String callname = '';
+  LevelData level = LevelData.find('b1');
   List<Call> callstack = [];
   List<List<Dancer>> groups = [];
   String get groupstr => groups.map((e) => e.length).join();
@@ -229,9 +229,9 @@ class CallContext {
   bool _snap = true;
   bool _thoseWhoCan = false;
   var genderMap = {
-    "boy": Gender.BOY,
-    "girl": Gender.GIRL,
-    "phantom": Gender.PHANTOM
+    'boy': Gender.BOY,
+    'girl': Gender.GIRL,
+    'phantom': Gender.PHANTOM
   };
 
   //  Create a context from an array of Dancer
@@ -247,8 +247,7 @@ class CallContext {
         List<Dancer> dancers,
         double beat = double.maxFinite
       }) {
-    if (dancers == null)
-      dancers = source.dancers;
+    dancers ??= source.dancers;
     dancers.forEach((d) { d.animate(beat); });
     this.dancers = dancers.map((d) => Dancer.clone(d)).toList();
     if (!dancers.areDancersOrdered())
@@ -258,17 +257,17 @@ class CallContext {
   }
 
   //  Create a context from a formation defined in XML
-  //  The element passed in can be either a "tam" from
+  //  The element passed in can be either a 'tam' from
   //  an animation, or a formation
   CallContext.fromXML(XmlElement tam, [bool loadPaths=false]) {
     var numberArray = TamUtils.getNumbers(tam);
     var coupleArray = TamUtils.getCouples(tam);
-    List<XmlElement> paths = loadPaths ? tam.childrenNamed("path") : [];
-    var fname = tam("formation");
+    var paths = loadPaths ? tam.childrenNamed('path') : [];
+    var fname = tam('formation');
     var f = fname != null
         ? TamUtils.getFormation(fname)
-        : (tam.childrenNamed("formation").firstOrNull ?? tam);
-    var dancerElements = f.childrenNamed("dancer");
+        : (tam.childrenNamed('formation').firstOrNull ?? tam);
+    var dancerElements = f.childrenNamed('dancer');
     dancers = [];
     for (var i=0; i<dancerElements.length; i++) {
       var element = dancerElements[i];
@@ -277,19 +276,19 @@ class CallContext {
       //  diagonal opposite.  Required for mapping.
       dancers.add(Dancer(
         numberArray[i*2], coupleArray[i*2],
-          genderMap[element("gender")],
+          genderMap[element('gender')],
         Color.WHITE,  // not used
-        Matrix.getTranslation(element("x").d,element("y").d) *
-          Matrix.getRotation(element("angle").d.toRadians),
+        Matrix.getTranslation(element('x').d,element('y').d) *
+          Matrix.getRotation(element('angle').d.toRadians),
         Geometry.getGeometry(Geometry.SQUARE).first,
         paths.length > i ? TamUtils.translatePath(paths[i]) : []
       ));
       dancers.add(Dancer(
           numberArray[i*2+1], coupleArray[i*2+1],
-          genderMap[element("gender")],
+          genderMap[element('gender')],
           Color.WHITE,  // not used
-          Matrix.getTranslation(element("x").d,element("y").d) *
-              Matrix.getRotation(element("angle").d.toRadians),
+          Matrix.getTranslation(element('x').d,element('y').d) *
+              Matrix.getRotation(element('angle').d.toRadians),
           Geometry.getGeometry(Geometry.SQUARE)[1],
           paths.length > i ? TamUtils.translatePath(paths[i]) : []
       ));
@@ -298,7 +297,7 @@ class CallContext {
 
   void noSnap() { _snap = false; }
 
-  //  Get the active dancers, e.g. for "Boys Trade" the boys are active
+  //  Get the active dancers, e.g. for 'Boys Trade' the boys are active
   List<Dancer> get actives => dancers.where( (d) => d.data.active ).toList();
   List<Dancer> get inActives => dancers.where( (d) => !d.data.active ).toList();
 
@@ -338,8 +337,7 @@ class CallContext {
   //  Then transfer any new calls from the created CallContext to this CallContext.
   //  Return true if anything new was added.
   Future<bool> subContext(List<Dancer> dancers, Future<void> Function(CallContext) block) async {
-    if (dancers == null)
-      dancers = this.dancers;
+    dancers ??= this.dancers;
     var ctx = CallContext.fromDancers(dancers.inOrder());
     await block(ctx);
     return ctx._appendTo(this);
@@ -368,12 +366,12 @@ class CallContext {
   Path dancerCannotPerform(Dancer d, String call) {
     if (_thoseWhoCan)
       return Path();
-    throw CallError("Dancer $d cannot $call.");
+    throw CallError('Dancer $d cannot $call.');
   }
 
   void _checkForAction(String calltext) {
     if (callstack.none((c) => c is Action || c is XMLCall))
-      throw CallError("$calltext does nothing.");
+      throw CallError('$calltext does nothing.');
   }
 
   void applySpecifier(String calltext) {
@@ -420,12 +418,12 @@ class CallContext {
 
   String _cleanupCall(String calltext) {
     //  Clean up any whitespace
-    return calltext.replaceAll("\\s+".r, " ")
+    return calltext.replaceAll('\\s+'.r, ' ')
     //  Standardize capitalization
         .capWords()
     //  Make sure Trade Circulate is not read as Trade and Circulate
     //  TODO do this someplace better
-        .replaceAll("trade circulate".ri, "tradecirculate");
+        .replaceAll('trade circulate'.ri, 'tradecirculate');
   }
 
 
@@ -440,7 +438,7 @@ class CallContext {
     for (var d in dancers) {
       d.path = Path();
     }
-    callname = "";
+    callname = '';
     //  If a partial interpretation is found (like 'boys' of 'boys run')
     //  it gets popped off the front and this loop interprets the rest
     while (calltext.isNotEmpty) {
@@ -465,7 +463,7 @@ class CallContext {
         if (foundOneCall) {
           //  Remove the words we matched, break out of
           //  the chopped loop, and continue if any words left
-          calltext = calltext.replaceFirst(onecall, "").trim();
+          calltext = calltext.replaceFirst(onecall, '').trim();
           break;
         }
       }
@@ -485,13 +483,14 @@ class CallContext {
     var ctx1 = this;
     //  If there are precursors, run them first so the result
     //  will be used to match formations
-    //  Needed for calls like "Explode And ..."
+    //  Needed for calls like 'Explode And ...'
     if (callstack.isNotEmpty) {
       ctx1 = CallContext.fromContext(this);
       ctx1.callstack = callstack;
       //  Ignore any errors, some precursors (like Half) expect to find more on the stack
       try {
         await ctx1.performCall();
+      // ignore: empty_catches
       } on CallError { }
     }
     //  If actives != dancers, create another call context with just the actives
@@ -515,24 +514,24 @@ class CallContext {
     var found = callfiles.isNotEmpty;
     var bestOffset = double.maxFinite;
     XMLCall xmlCall;
-    var title = "";
+    var title = '';
 
     for (var link in callfiles) {
       var file = await loadOneFile(link);
-      var tamlist = file.rootElement.findAllElements("tam").where((tam) =>
-      tam("sequencer") != "no" &&
+      var tamlist = file.rootElement.findAllElements('tam').where((tam) =>
+      tam('sequencer') != 'no' &&
           //  Check for calls that must go around the centers
-          (!perimeter || tam("sequencer","").contains("perimeter")) &&
+          (!perimeter || tam('sequencer','').contains('perimeter')) &&
           //  Check for 4-dancer calls that do not work for 8 dancers
-          (exact || !tam("sequencer","").contains("exact")) &&
-          TamUtils.normalizeCall(tam("title")) == callnorm);
+          (exact || !tam('sequencer','').contains('exact')) &&
+          TamUtils.normalizeCall(tam('title')) == callnorm);
       for (var tam in tamlist) {
         //  Calls that are gender-specific, e.g. Star Thru,
         //  are specifically flagged in XML
-        var sexy = tam("sequencer","").contains("gender-specific");
+        var sexy = tam('sequencer','').contains('gender-specific');
         //  Make sure we don't mismatch heads and sides
         //  on calls that specifically refer to them
-        var headsMatchSides = !tam("title").contains("Heads?|Sides".r);
+        var headsMatchSides = !tam('title').contains('Heads?|Sides'.r);
         //  Try to match the formation to the current dancer positions
         var ctx2 = CallContext.fromXML(tam);
         var mm = ctx1.matchFormations(ctx2,sexy: sexy, fuzzy: fuzzy,
@@ -543,21 +542,21 @@ class CallContext {
           if (totOffset < bestOffset) {
             xmlCall = XMLCall(tam,mm,ctx2);
             bestOffset = totOffset;
-            title = tam("title");
+            title = tam('title');
           }
         }
       }
       if (xmlCall != null) {
-        if (["Allemande Left",
-             "Dixie Grand",
-             "Right and Left Grand"].contains(xmlCall.name)) {
+        if (['Allemande Left',
+             'Dixie Grand',
+             'Right and Left Grand'].contains(xmlCall.name)) {
           if (!_checkResolution(xmlCall.ctx2, xmlCall.xmlmap)) {
             //  TODO resolution warning
           }
         }
         // add XMLCall object to the call stack
         ctx0.callstack.add(xmlCall);
-        ctx0.callname = callname + title.replaceAll("\\(.*\\)".r, "") + " ";
+        ctx0.callname = callname + title.replaceAll('\\(.*\\)'.r, '') + ' ';
         var thislevel = LevelData.find(link);
         if (thislevel > ctx0.level)
           ctx0.level = thislevel;
@@ -588,7 +587,7 @@ class CallContext {
   //  this finds the best rotation to fit one onto the other
   //  and computes the difference between the two.
   FormationMatchResult computeFormationOffsets(CallContext ctx2, List<int>mapping, {double delta=0.1}) {
-    var dvbest = List<Vector>();
+    var dvbest = <Vector>[];
     //  We don't know how the XML formation needs to be turned to overlap
     //  the current formation.  So do an RMS fit to find the best match.
     var bxa = [ [ 0.0, 0.0], [0.0,0.0] ];
@@ -736,7 +735,7 @@ class CallContext {
     if (sexy && (ctx1.dancers[i].gender != ctx2.dancers[mapping[i]].gender))
       return false;
 
-    //  Special check for calls with "Heads" or "Sides"
+    //  Special check for calls with 'Heads' or 'Sides'
     if (!headsmatchsides) {
       //  If dancers are in squared set, check that the dancers are in the same
       //  absolute location
@@ -787,7 +786,7 @@ class CallContext {
     var call = CodedCall.fromName(callname);
     if (call != null) {
       callstack.add(call);
-      this.callname += call.name + " ";
+      this.callname += call.name + ' ';
       return true;
     }
     return false;
@@ -831,7 +830,7 @@ class CallContext {
     for (var f in formations.keys) {
       var ctx2 = CallContext.fromXML(TamUtils.getFormation(f));
       //  See if this formation matches
-      var rot = (f.contains("Lines") || f.contains("Couples")) ? 180 : 90;
+      var rot = (f.contains('Lines') || f.contains('Couples')) ? 180 : 90;
       var mapping = ctx1.matchFormations(ctx2,sexy:false,fuzzy:true,rotate:rot,handholds:false);
       if (mapping != null) {
         //  If it does, get the offsets
@@ -845,8 +844,8 @@ class CallContext {
         var favoring = formations[f];
         //  Special hack to favor lines over boxes
         var specialHack =
-        ((bestMapping?.name?.startsWith("Normal Lines") ?? false) &&
-            f == "Double Pass Thru");
+        ((bestMapping?.name?.startsWith('Normal Lines') ?? false) &&
+            f == 'Double Pass Thru');
         if (totOffset < 9.0 && angsnap.isApproxInt(delta : 0.05) && !specialHack) {
           if (bestMapping == null || totOffset*favoring + 0.2 < bestMapping.totalOffset)
             bestMapping = BestMapping(
@@ -877,10 +876,10 @@ class CallContext {
       if (match.offsets[i].length > 0.01) {
         //  Get the last movement
         Movement m;
-        if (d.path.movelist.length > 0)
+        if (d.path.movelist.isNotEmpty)
           m = d.path.pop();
         else
-          m = (TamUtils.getMove("Stand")..notFromCall()).pop();
+          m = (TamUtils.getMove('Stand')..notFromCall()).pop();
         //  Transform the offset to the dancer's angle
         d.animateToEnd();
         var vd = match.offsets[i].rotate(-d.tx.angle);
@@ -954,7 +953,7 @@ class CallContext {
   CallContext fillFormation(String fname) {
     //  Use letters for phantom numbers so there's no way they can
     //  match the real dancers
-    var letters = "ABCDEFGH";
+    var letters = 'ABCDEFGH';
     var nextPhantom = 0;
     var ctx2 = CallContext.fromXML(TamUtils.getFormation(fname));
     var mapping = matchFormations(ctx2,sexy:false,fuzzy:true,rotate:0,handholds:false, subformation : true);
@@ -965,7 +964,7 @@ class CallContext {
     var unmapped = ctx2.dancers.asMap().keys
         .where((i) => !mapping.contains(i)).map((i) => ctx2.dancers[i]);
     var phantoms = unmapped.map((d) {
-      var ph = Dancer(letters[nextPhantom],"0",Gender.PHANTOM,Color.GRAY,
+      var ph = Dancer(letters[nextPhantom],'0',Gender.PHANTOM,Color.GRAY,
           rotmat * d.starttx,
           Geometry.getGeometry(Geometry.SQUARE).first,[]);
       nextPhantom += 1;
@@ -982,11 +981,11 @@ class CallContext {
 
   //  Return all dancers, ordered by distance from another dancer,
   //  that satisfies a conditional
-  List<Dancer> dancersInOrder(Dancer d, bool f(Dancer d)) =>
+  List<Dancer> dancersInOrder(Dancer d, bool Function(Dancer d) f) =>
       (dancers - d).where(f).toList().sortedBy((d2) => d.distanceTo(d2) );
 
   //  Return closest dancer that satisfies a given conditional
-  Dancer dancerClosest(Dancer d, bool f(Dancer d2)) =>
+  Dancer dancerClosest(Dancer d, bool Function(Dancer d2) f) =>
       dancersInOrder(d,f).firstOrNull;
 
   //  Return dancer directly in front of given dancer
@@ -1048,7 +1047,7 @@ class CallContext {
   //  Return pair of boxes for dancers in a 2x4 formation
   List<List<Dancer>> boxes() {
     if (!isTBone())
-      throw CallError("Attempt to find boxes from non 2x4 formation.");
+      throw CallError('Attempt to find boxes from non 2x4 formation.');
     var farout = outer(4).first;
     var isX = farout.location.x.abs() > farout.location.y.abs();
     return dancers.partition(
@@ -1058,8 +1057,7 @@ class CallContext {
 
   //  Return true if this dancer is in a wave or mini-wave
   bool isInWave(Dancer d, [Dancer d2]) {
-    if (d2 == null)
-      d2 = d.data.partner;
+    d2 ??= d.data.partner;
     return d2 != null && d.angleToDancer(d2).isAround(d2.angleToDancer(d)) &&
         d.distanceTo(d2) < 2.0;
   }
@@ -1070,8 +1068,7 @@ class CallContext {
   //  TODO merge these two functions
   //  Return true if this dancer is part of a couple facing same direction
   bool isInCouple(Dancer d, [Dancer d2]) {
-    if (d2 == null)
-      d2 = d.data.partner;
+    d2 ??= d.data.partner;
     return d2 != null && d.angleFacing.isAround(d2.angleFacing);
   }
 
@@ -1162,15 +1159,15 @@ class CallContext {
   //  Direction dancer would turn to Tag the Line
   String tagDirection(Dancer d) {
     if (dancerToRight(d)?.data?.center == true)
-      return "Right";
+      return 'Right';
     else if (dancerToLeft(d)?.data?.center == true)
-      return "Left";
-    return "";
+      return 'Left';
+    return '';
   }
 
   //  Is there a dancer at a specific spot?
   Dancer dancerAt(Vector spot) =>
-      dancers.firstWhere((d) => d.location == spot, orElse: null);
+      dancers.firstWhere((d) => d.location == spot, orElse: () => null);
 
   //  Are two dancers on the same spot?
   bool isCollision() => dancers.any((d) =>
@@ -1181,12 +1178,12 @@ class CallContext {
 
   //  Get direction dancer would Roll
   String roll(Dancer d) {
-    var move = d.path.movelist.lastWhere((m) => m.fromCall, orElse: null);
+    var move = d.path.movelist.lastWhere((m) => m.fromCall, orElse: () => null);
     if (move?.brotate?.rolling() ?? 0.0 > 0.1)
-      return "Left";
+      return 'Left';
     else if (move?.brotate?.rolling() ?? 0.0 < -0.1)
-      return "Right";
-    return "";
+      return 'Right';
+    return '';
   }
 
   void extendPaths() {
@@ -1194,11 +1191,11 @@ class CallContext {
     contractPaths();
     //  get the longest number of beats
     var maxb = maxBeats();
-    //  add that number as needed by using the "Stand" move
+    //  add that number as needed by using the 'Stand' move
     for (var d in dancers) {
       var b = maxb - d.path.beats;
       if (b > 0)
-        d.path.add(TamUtils.getMove("Stand")..changebeats(b)..notFromCall());
+        d.path.add(TamUtils.getMove('Stand')..changebeats(b)..notFromCall());
     }
   }
 
@@ -1229,21 +1226,21 @@ class CallContext {
   Path moveToPosition(Dancer d, Vector location, double angle) {
     var tohome = (location - d.location).rotate(-d.tx.angle);
     var adiff = angle.angleDiff(d.tx.angle);
-    var turn = "Stand";
-    if (adiff.isAround(pi/4)) turn = "Eighth Left";
-    if (adiff.isAround(pi/2)) turn = "Quarter Left";
-    if (adiff.isAround(3*pi/4)) turn = "3/8 Left";
-    if (adiff.isAround(pi)) turn = "U-Turn Right";
-    if (adiff.isAround(-3*pi/4)) turn = "3/8 Right";
-    if (adiff.isAround(-pi/2)) turn = "Quarter Right";
-    if (adiff.isAround(-pi/4)) turn = "Eighth Right";
+    var turn = 'Stand';
+    if (adiff.isAround(pi/4)) turn = 'Eighth Left';
+    if (adiff.isAround(pi/2)) turn = 'Quarter Left';
+    if (adiff.isAround(3*pi/4)) turn = '3/8 Left';
+    if (adiff.isAround(pi)) turn = 'U-Turn Right';
+    if (adiff.isAround(-3*pi/4)) turn = '3/8 Right';
+    if (adiff.isAround(-pi/2)) turn = 'Quarter Right';
+    if (adiff.isAround(-pi/4)) turn = 'Eighth Right';
     return TamUtils.getMove(turn)
       ..changebeats(2.0)
       ..skew(tohome.x, tohome.y);
   }
 
   //  This is useful for calls that depend on re-defining dancer types
-  //  for subgroups, e.g. "Centers Zoom"
+  //  for subgroups, e.g. 'Centers Zoom'
   void analyzeActives() {
     //  If all dancers are active then the usual call to analyze() will suffice
     if (actives.length != dancers.length) {
@@ -1257,7 +1254,8 @@ class CallContext {
         d.data.trailer = d2.data.trailer;
         d.data.center = d2.data.center;
         d.data.end = d2.data.end;
-        d.data.partner = dancers.firstWhere((it) => it == d2.data.partner, orElse: null);
+        d.data.partner = dancers.firstWhere((it) => it == d2.data.partner,
+            orElse: () => null);
       }
     }
   }

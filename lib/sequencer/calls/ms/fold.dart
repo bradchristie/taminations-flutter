@@ -24,20 +24,21 @@ class Fold extends Action {
 
   @override
   var level = LevelData.MS;
-  Fold() : super("Fold");
+  Fold() : super('Fold');
 
   //  We need to work with all the dancers, not just actives
   //  because partners of the folders need to adjust
   //  so we get a standard formation that can be used for more calls
+  @override
   Future<void> perform(CallContext ctx, [int stackIndex=0]) async {
     for (var d in ctx.actives) {
       //  Find dancer to fold in front of
       //  Usually it's the partner
       var d2 = d.data.partner
-          ?? thrower(CallError("Dancer ${d.number} has nobody to Fold in front"));
+          ?? thrower(CallError('Dancer ${d.number} has nobody to Fold in front'));
       if (d2.data.active || d2.data.partner != d)
-        throw CallError("Dancer ${d.number} has nobody to Fold in front");
-      var m = d2.isRightOf(d) ? "Fold Right" : "Fold Left";
+        throw CallError('Dancer ${d.number} has nobody to Fold in front');
+      var m = d2.isRightOf(d) ? 'Fold Right' : 'Fold Left';
       var dist = d.distanceTo(d2);
       var dxscale = 0.75;
       var dyoffset = 1.0;
@@ -50,9 +51,9 @@ class Fold extends Action {
           skew:[0.0,dyoffset].v);
 
       //  Also set path for partner
-      var m2 = "Stand";
-      if (d.isRightOf(d2)) m2 = "Dodge Right";
-      else if (d.isLeftOf(d2)) m2 = "Dodge Left";
+      var m2 = 'Stand';
+      if (d.isRightOf(d2)) m2 = 'Dodge Right';
+      else if (d.isLeftOf(d2)) m2 = 'Dodge Left';
       var myScale = 0.25;
       if (ctx.isTidal()) myScale = 0.25;
       else if (d.data.end) myScale = 0.5;

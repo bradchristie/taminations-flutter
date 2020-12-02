@@ -18,7 +18,7 @@
 
 */
 
-import 'package:flutter/material.dart' as FM;
+import 'package:flutter/material.dart' as fm;
 
 enum Action {
 
@@ -66,19 +66,19 @@ enum Action {
 class Request {
 
   Action action;
-  Map<String,String> _params;
-  Request({ @FM.required this.action, params }) :
-      this._params = params ?? { };
+  final Map<String,String> _params;
+  Request({ @fm.required this.action, params }) :
+      _params = params ?? { };
   String call(String param) => _params[param];
 
 }
 
-class RequestHandler extends FM.InheritedWidget  {
+class RequestHandler extends fm.InheritedWidget  {
 
   final void Function(Request request) handler;
   RequestHandler({
-    @FM.required FM.Widget child,
-    @FM.required this.handler
+    @fm.required fm.Widget child,
+    @fm.required this.handler
   }) : super(child:child);
 
   void processRequest(Request request) {
@@ -86,9 +86,9 @@ class RequestHandler extends FM.InheritedWidget  {
   }
 
   @override
-  bool updateShouldNotify(covariant FM.InheritedWidget oldWidget) => false;
+  bool updateShouldNotify(covariant fm.InheritedWidget oldWidget) => false;
 
-  static RequestHandler of(FM.BuildContext context) {
+  static RequestHandler of(fm.BuildContext context) {
     return context.dependOnInheritedWidgetOfExactType<RequestHandler>();
   }
 

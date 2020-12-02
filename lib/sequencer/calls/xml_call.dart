@@ -34,11 +34,11 @@ class XMLCall extends Call {
   final CallContext ctx2;
 
   XMLCall(this.xelem, this.xmlmap, this.ctx2)
-      : super(xelem.getAttribute("title"));
+      : super(xelem.getAttribute('title'));
 
   @override
   Future<void> performCall(CallContext ctx, [int stackIndex = 0]) async {
-    var allPaths = xelem.childrenNamed("path").map(
+    var allPaths = xelem.childrenNamed('path').map(
             (element) => Path(TamUtils.translatePath(element))).toList();
     //  If moving just some of the dancers,
     //  see if we can keep them in the same shape
@@ -62,7 +62,7 @@ class XMLCall extends Call {
       var m = xmlmap[i3];
       var p = Path.fromPath(allPaths[m >> 1]);
       if (p.movelist.isEmpty)
-        p.add(TamUtils.getMove("Stand"));
+        p.add(TamUtils.getMove('Stand'));
       //  Scale active dancers to fit the space they are in
       //  Compute difference between current formation and XML formation
       var vd = matchResult.offsets[i3].rotate(-ctx.actives[i3].tx.angle);
@@ -81,7 +81,7 @@ class XMLCall extends Call {
     var inactives = <Dancer>[];
     for (var i4 = 0; i4 < xmlmap.length; i4++) {
       var m = xmlmap[i4];
-      if (allPaths[m >> 1].movelist.length == 0)
+      if (allPaths[m >> 1].movelist.isEmpty)
         inactives.add(ctx.actives[i4]);
     }
     inactives.forEach((d) {
