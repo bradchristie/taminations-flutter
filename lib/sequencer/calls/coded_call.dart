@@ -18,6 +18,8 @@
 
 */
 
+import 'package:taminations/sequencer/calls/a1/pass_in_out.dart';
+
 import '../../extensions.dart';
 import '../../tam_utils.dart';
 import 'a1/as_couples.dart';
@@ -27,6 +29,12 @@ import 'a1/brace_thru.dart';
 import 'a1/cast_a_shadow.dart';
 import 'a1/clover_and.dart';
 import 'a1/cross.dart';
+import 'a1/cross_over_circulate.dart';
+import 'a1/double_star_thru.dart';
+import 'a1/horseshoe_turn.dart';
+import 'a1/partner_tag.dart';
+import 'a1/quarter_in_out.dart';
+import 'a1/roll_to_a_wave.dart';
 import 'b1/around_to_a_line.dart';
 import 'b1/bend_the_line.dart';
 import 'b1/california_twirl.dart';
@@ -136,10 +144,12 @@ abstract class CodedCall extends Call {
     'courtesyturn'.r: (_) => CourtesyTurn(),
     'cross'.r: (_) => Cross(),
     'crossfold'.r: (_) => CrossFold(),
+    'crossovercirculate'.r: (_) => CrossOverCirculate(),
     '.*crossrun'.r: (name) => CrossRun(name),
 
     'diamondcirculate'.r: (_) => DiamondCirculate(),
     '(left)?dosado'.r: (name) => Dosado(name),
+    'doublestarthru'.r: (_) => DoubleStarThru(),
 
     'end'.r: (_) => Ends(),
     'every(one|body)'.r: (name) => Everyone(name),
@@ -157,6 +167,7 @@ abstract class CodedCall extends Call {
     '(left)?12tag'.r: (name) => HalfTag(name),
     '(reverse)?12sashay'.r: (name) => HalfSashay(name),
     'head'.r: (name) => Heads(name),
+    'horseshoeturn'.r: (_) => HorseshoeTurn(),
 
     'center(2|4|6)'.r: (name) => Insides(name),
     'in(ner|sides?)(2|4|6)?'.r: (name) => Insides(name),
@@ -168,16 +179,21 @@ abstract class CodedCall extends Call {
     '112'.r: (name) => OneAndaHalf(name),
     'out(er|sides?)(2|4|6)?'.r: (name) => Outsides(name),
 
+    'partnertag'.r: (_) => PartnerTag(),
+    'pass(in|out)'.r: (name) => PassInOut(name),
     '(left)?passthru'.r: (name) => PassThru(name),
     'point'.r: (_) => Points(),
     'promenadehome'.r: (name) => PromenadeHome(name),
     'swing(your)?corner(and)?promenade(home)?'.r: (name) => PromenadeHome(name),
     '(left)?pullby'.r: (name) => PullBy(name),
 
+    'quarter(in|out)'.r: (name) => QuarterInOut(name),
     'and14more'.r: (_) => QuarterMore(),
     '(left)?14tag'.r: (name) => QuarterTag(name),
 
     '(and)?roll'.r: (name) => Roll(name),
+    '(left|right)_rollto'.r: (name) => RollTo(name),
+    '(left_right)rolltoawave'.r: (name) => RollToAWave(name),
     'run(left|right)?'.r: (name) => Run(name),
 
     'samesex(es)?'.r: (name) => SameSex(name),

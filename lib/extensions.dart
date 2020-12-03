@@ -122,10 +122,13 @@ extension TamString on String {
 
 }
 
+extension TamIterable<E> on Iterable<E> {
+  E get firstOrNull => isNotEmpty ? first : null;
+}
+
 extension TamList<E> on List<E> {
 
   List<int> get indices => asMap().keys.toList();
-  E get firstOrNull => isNotEmpty ? first : null;
   E get second => this[1];
   E get secondOrNull => length > 1 ? second : null;
   E getOrNull(int i) => (i >= 0 && i < length) ? this[i] : null;
