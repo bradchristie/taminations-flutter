@@ -18,7 +18,7 @@
 
 */
 
-import 'package:flutter/material.dart' as FM;
+import 'package:flutter/material.dart' as fm;
 import '../level_data.dart';
 import '../main.dart';
 import '../tam_utils.dart';
@@ -27,14 +27,14 @@ import '../color.dart';
 
 //  CallsPage contains title bar and frame
 //  Only used in portrait mode
-class CallsPage extends FM.StatefulWidget {
+class CallsPage extends fm.StatefulWidget {
 
   @override
   _CallsPageState createState() => _CallsPageState();
 
 }
 
-class _CallsPageState extends FM.State<CallsPage> {
+class _CallsPageState extends fm.State<CallsPage> {
 
   LevelData levelDatum;
 
@@ -42,17 +42,17 @@ class _CallsPageState extends FM.State<CallsPage> {
   //  Get the info needed to select what calls to show, save for build
   void didChangeDependencies() {
     super.didChangeDependencies();
-    var router = FM.Router.of(context).routerDelegate as TaminationsRouterDelegate;
+    var router = fm.Router.of(context).routerDelegate as TaminationsRouterDelegate;
     var path = router.currentPath;
     levelDatum = LevelData.find(path.level);
   }
 
   @override
   //  Build title bar and frame, sending info on the calls to the frame
-  FM.Widget build(FM.BuildContext context) {
-    return FM.Scaffold(
-            appBar: FM.PreferredSize(
-                preferredSize: FM.Size.fromHeight(56.0),
+  fm.Widget build(fm.BuildContext context) {
+    return fm.Scaffold(
+            appBar: fm.PreferredSize(
+                preferredSize: fm.Size.fromHeight(56.0),
                 child: TitleBar(title:levelDatum.name)
             ),
             body: CallsFrame(levelDatum.name)
@@ -64,22 +64,23 @@ class _CallsPageState extends FM.State<CallsPage> {
 
 //  CallsFrame contains a list or grid of calls
 //  and a search entry above to filter the calls
-class CallsFrame extends FM.StatefulWidget {
+class CallsFrame extends fm.StatefulWidget {
 
   final String level;
-  CallsFrame(this.level) : super(key:FM.ValueKey(level));
+  CallsFrame(this.level) : super(key:fm.ValueKey(level));
+  @override
   _CallsState createState() => _CallsState(level);
 
 }
 
-class _CallsState extends FM.State<CallsFrame> {
+class _CallsState extends fm.State<CallsFrame> {
 
   final String level;
   List<CallListDatum> calls = [];
   List<CallListDatum> callsSearched = [];
   LevelData levelDatum;
   _CallsState(this.level);
-  String search = "";
+  String search = '';
 
   @override
   //  Get the initial list of calls to show
@@ -93,31 +94,31 @@ class _CallsState extends FM.State<CallsFrame> {
 
   @override
   //  Build list or grid of calls
-  FM.Widget build(FM.BuildContext context) {
+  fm.Widget build(fm.BuildContext context) {
     //  First do any search to filter the calls
     callsSearched = calls.where((call) => call.title.toLowerCase().contains(search)).toList();
     //  Return column of 2 items, search field and list/grid of calls
-    return FM.Column(
+    return fm.Column(
         children: [
-          FM.TextField(
-            decoration: FM.InputDecoration.collapsed(hintText: "Search calls"),
+          fm.TextField(
+            decoration: fm.InputDecoration.collapsed(hintText: 'Search calls'),
             enableSuggestions: false,
-            style: FM.TextStyle(fontSize: 24),
+            style: fm.TextStyle(fontSize: 24),
             onChanged: (value) {
               setState(() {
                 search = value.toLowerCase();
               });
             },
           ),
-          FM.Expanded(
+          fm.Expanded(
             //  Test to see if we are landscape or portrait
             //  Landscape gets a grid, portrait gets a list
-              child: FM.OrientationBuilder(
+              child: fm.OrientationBuilder(
                   builder: (context, orientation) {
-                    if (orientation == FM.Orientation.landscape) {
-                      return FM.GridView.builder(
-                          scrollDirection: FM.Axis.horizontal,
-                          gridDelegate: FM.SliverGridDelegateWithMaxCrossAxisExtent(
+                    if (orientation == fm.Orientation.landscape) {
+                      return fm.GridView.builder(
+                          scrollDirection: fm.Axis.horizontal,
+                          gridDelegate: fm.SliverGridDelegateWithMaxCrossAxisExtent(
                               maxCrossAxisExtent: 40,
                               mainAxisSpacing: 1,
                               childAspectRatio: 0.1
@@ -127,7 +128,7 @@ class _CallsState extends FM.State<CallsFrame> {
                       );
                     }
                     else {
-                      return FM.ListView.builder(
+                      return fm.ListView.builder(
                         itemCount: callsSearched.length,
                         itemBuilder: itemBuilder,
                       );
@@ -138,21 +139,21 @@ class _CallsState extends FM.State<CallsFrame> {
   }
 
   //  Builder for one item of the list or grid
-  FM.Widget itemBuilder(FM.BuildContext context, int index) {
+  fm.Widget itemBuilder(fm.BuildContext context, int index) {
 
-    return FM.Container(
-      decoration: FM.BoxDecoration(
-          border: FM.Border(top: FM.BorderSide(width: 1, color: Color.BLACK))),
+    return fm.Container(
+      decoration: fm.BoxDecoration(
+          border: fm.Border(top: fm.BorderSide(width: 1, color: Color.BLACK))),
      // padding: FM.EdgeInsets.only(left: 20.0, top:4, bottom:4),
-      child: FM.Material(
+      child: fm.Material(
         //  Color the item according the the level
         color: LevelData.find(callsSearched[index].link).color,
-        child: FM.InkWell(
+        child: fm.InkWell(
           highlightColor: LevelData.find(callsSearched[index].link).color.darker(),
             onTap: () {
               //  Selection goes to another page regardless of landscape or portrait
               //  So no need to get fancy, just set the new page here
-              FM.Router.of(context).routerDelegate
+              fm.Router.of(context).routerDelegate
                   .setNewRoutePath(TaminationsRoute(
                   level: levelDatum.dir,
                   link: callsSearched[index].link,
@@ -160,10 +161,10 @@ class _CallsState extends FM.State<CallsFrame> {
                   name: callsSearched[index].title
               ));
             },
-            child:FM.Container(
-                alignment: FM.Alignment.centerLeft,
-                padding: FM.EdgeInsets.only(left: 10.0),
-                child: FM.Text(callsSearched[index].title,style: FM.TextStyle(fontSize: 20)))
+            child:fm.Container(
+                alignment: fm.Alignment.centerLeft,
+                padding: fm.EdgeInsets.only(left: 10.0),
+                child: fm.Text(callsSearched[index].title,style: fm.TextStyle(fontSize: 20)))
         ),
       )
     );

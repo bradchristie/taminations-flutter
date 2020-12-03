@@ -46,7 +46,7 @@ class _SequencerPageState extends fm.State<SequencerPage> {
   void didChangeDependencies() {
     super.didChangeDependencies();
     model = SequencerModel();
-    abbreviationsModel = AbbreviationsModel();
+    abbreviationsModel = model.abbreviations;
     rightChild ??= WebFrame('info/sequencer.html');
   }
 

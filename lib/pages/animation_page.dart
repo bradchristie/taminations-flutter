@@ -20,8 +20,8 @@
 
 import 'dart:math';
 
-import 'package:flutter/material.dart' as FM;
-import 'package:provider/provider.dart' as PP;
+import 'package:flutter/material.dart' as fm;
+import 'package:provider/provider.dart' as pp;
 import '../dance_animation_painter.dart';
 import '../main.dart';
 import '../tam_utils.dart';
@@ -36,7 +36,7 @@ import '../math/vector.dart';
 import '../dancer.dart';
 import '../geometry.dart';
 
-class AnimationState extends FM.ChangeNotifier {
+class AnimationState extends fm.ChangeNotifier {
 
   int _part;
   String title;
@@ -49,13 +49,13 @@ class AnimationState extends FM.ChangeNotifier {
 
 }
 
-class AnimationPage extends FM.StatefulWidget {
+class AnimationPage extends fm.StatefulWidget {
   @override
   _AnimationPageState createState() => _AnimationPageState();
 }
 
-class _AnimationPageState extends FM.State<AnimationPage>
-    with FM.SingleTickerProviderStateMixin {
+class _AnimationPageState extends fm.State<AnimationPage>
+    with fm.SingleTickerProviderStateMixin {
 
   String link;
   int animnum;
@@ -65,7 +65,7 @@ class _AnimationPageState extends FM.State<AnimationPage>
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
-    var router = FM.Router.of(context).routerDelegate as TaminationsRouterDelegate;
+    var router = fm.Router.of(context).routerDelegate as TaminationsRouterDelegate;
     var path = router.currentPath;
     link = path.link;
     animnum = path.animnum;
@@ -74,7 +74,7 @@ class _AnimationPageState extends FM.State<AnimationPage>
     painter = DanceAnimationPainter();
     TamUtils.getXMLAsset(link).then((doc) {
       var tam = TamUtils.tamList(doc)
-          .where((it) => !(it("display","").startsWith("n")))
+          .where((it) => !(it('display','').startsWith('n')))
           .toList()[max(0, animnum)];
       painter.setAnimation(tam);
     });
@@ -82,26 +82,26 @@ class _AnimationPageState extends FM.State<AnimationPage>
   }
 
   @override
-  FM.Widget build(FM.BuildContext context) {
-    return PP.ChangeNotifierProvider.value(
+  fm.Widget build(fm.BuildContext context) {
+    return pp.ChangeNotifierProvider.value(
         value: painter,
-        child: FM.Scaffold(
-          appBar: FM.PreferredSize(
-              preferredSize: FM.Size.fromHeight(56.0),
+        child: fm.Scaffold(
+          appBar: fm.PreferredSize(
+              preferredSize: fm.Size.fromHeight(56.0),
               child: TitleBar(title: name, level: LevelData.find(link).name)
           ),
           body: RequestHandler(
             handler: (request) {
             },
-            child: FM.Column(
+            child: fm.Column(
               children: [
-                FM.Expanded(child: AnimationFrame(link:link,animnum:animnum)),
-                FM.Row(
+                fm.Expanded(child: AnimationFrame(link:link,animnum:animnum)),
+                fm.Row(
                   children: [
-                    FM.Expanded(
-                        child: Button("Definition")),
-                    FM.Expanded(
-                        child: Button("Settings"))
+                    fm.Expanded(
+                        child: Button('Definition')),
+                    fm.Expanded(
+                        child: Button('Settings'))
                   ],
                 )
               ],
@@ -113,26 +113,26 @@ class _AnimationPageState extends FM.State<AnimationPage>
 }
 
 
-class AnimationFrame extends FM.StatefulWidget {
+class AnimationFrame extends fm.StatefulWidget {
 
   final String link;
   final int animnum;
   final String startFormation;
   AnimationFrame({this.link,this.animnum,this.startFormation})
-      : super(key:FM.ValueKey("$link $animnum"));
+      : super(key:fm.ValueKey('$link $animnum'));
 
   @override
   _AnimationFrameState createState() => _AnimationFrameState(link,animnum,startFormation);
 }
 
-class _AnimationFrameState extends FM.State<AnimationFrame>
-    with FM.SingleTickerProviderStateMixin {
+class _AnimationFrameState extends fm.State<AnimationFrame>
+    with fm.SingleTickerProviderStateMixin {
 
   String link;
   int animnum;
   Vector locationTapped;
   Dancer dancerTapped;
-  String partstr = "";
+  String partstr = '';
   bool hasParts = false;
   List<double> partsValues;
   int currentPart = 0;
@@ -141,51 +141,51 @@ class _AnimationFrameState extends FM.State<AnimationFrame>
   //  Constructor
   _AnimationFrameState(this.link,this.animnum,this.startFormation);
 
-  FM.PopupMenuItem<String> oneItem(String colorName) =>
-      FM.PopupMenuItem(
-        child:FM.Container(
-            padding: FM.EdgeInsets.all(10),
+  fm.PopupMenuItem<String> oneItem(String colorName) =>
+      fm.PopupMenuItem(
+        child:fm.Container(
+            padding: fm.EdgeInsets.all(10),
             width: 120,
-            decoration: colorName == "default"
-                ?  FM.BoxDecoration(color: Color.WHITE)
-                : FM.BoxDecoration(color: Color.fromName(colorName), border:FM.Border.all(color:Color.BLACK)),
-            child:FM.Text(colorName, style: FM.TextStyle(color: colorName.startsWith("B") ? Color.WHITE : Color.BLACK))
+            decoration: colorName == 'default'
+                ?  fm.BoxDecoration(color: Color.WHITE)
+                : fm.BoxDecoration(color: Color.fromName(colorName), border:fm.Border.all(color:Color.BLACK)),
+            child:fm.Text(colorName, style: fm.TextStyle(color: colorName.startsWith('B') ? Color.WHITE : Color.BLACK))
         ),
         value: colorName
       );
 
-  Future<String> _showColorPopup(FM.BuildContext context, String currentColor) {
-    Vector screenSize = FM.MediaQuery.of(context).size.v;
-    return FM.showMenu<String>(
+  Future<String> _showColorPopup(fm.BuildContext context, String currentColor) {
+    var screenSize = fm.MediaQuery.of(context).size.v;
+    return fm.showMenu<String>(
         context: context,
-        position: FM.RelativeRect.fromLTRB(locationTapped.x, locationTapped.y,
+        position: fm.RelativeRect.fromLTRB(locationTapped.x, locationTapped.y,
           screenSize.x, screenSize.y),
         initialValue: currentColor,
         items: [
-          oneItem("Black"),
-          oneItem("Blue"),
-          oneItem("Cyan"),
-          oneItem("Gray"),
-          oneItem("Green"),
-          oneItem("Magenta"),
-          oneItem("Orange"),
-          oneItem("Red"),
-          oneItem("White"),
-          oneItem("Yellow"),
-          oneItem("default")
+          oneItem('Black'),
+          oneItem('Blue'),
+          oneItem('Cyan'),
+          oneItem('Gray'),
+          oneItem('Green'),
+          oneItem('Magenta'),
+          oneItem('Orange'),
+          oneItem('Red'),
+          oneItem('White'),
+          oneItem('Yellow'),
+          oneItem('default')
         ]
     );
   }
 
 
   @override
-  FM.Widget build(FM.BuildContext context) {
+  fm.Widget build(fm.BuildContext context) {
 
-    return PP.Consumer<DanceAnimationPainter>(
-      builder: (context,painter,child) => FM.Column(children: [
+    return pp.Consumer<DanceAnimationPainter>(
+      builder: (context,painter,child) => fm.Column(children: [
 
         //  Dance area with animations
-        FM.Expanded(child: PP.Consumer<Settings>(
+        fm.Expanded(child: pp.Consumer<Settings>(
             builder: (context, settings, child) {
 
               //  Send current settings to the painter
@@ -204,12 +204,12 @@ class _AnimationFrameState extends FM.State<AnimationFrame>
               //  Now values set for any individual dancers
               for (var i=1; i<=12; i++) {
                 var cname = settings.dancerColor(i);
-                if (cname != "default")
+                if (cname != 'default')
                   painter.setDancerColor(i, Color.fromName(cname));
               }
 
               //  Routines to handle pointer events
-              var tapDownHandler = (FM.TapDownDetails details) {
+              var tapDownHandler = (fm.TapDownDetails details) {
                 locationTapped = details.globalPosition.v;
                 dancerTapped = painter.dancerAt(
                     painter.mouse2dance(details.localPosition.v));
@@ -226,7 +226,7 @@ class _AnimationFrameState extends FM.State<AnimationFrame>
               };
 
               //  Wrap dance area with widget to detect pointer events
-              return FM.GestureDetector(
+              return fm.GestureDetector(
                   onTapDown: tapDownHandler,
                   onSecondaryTapDown: tapDownHandler,
                   onTap: () {
@@ -237,29 +237,29 @@ class _AnimationFrameState extends FM.State<AnimationFrame>
                   onLongPress: longPressHandler,
                   onSecondaryTap: longPressHandler,
                   //  Stack to show info on animation
-                  child: FM.Stack(
+                  child: fm.Stack(
                       children: [
                         //  Finally here is the dance area widget
-                        FM.CustomPaint(
+                        fm.CustomPaint(
                           painter: painter,
-                          child: FM.Center(), // so CustomPaint gets sized correctly
+                          child: fm.Center(), // so CustomPaint gets sized correctly
                         ),
                         //  Note that fades out as animation starts
-                        FM.Opacity(
+                        fm.Opacity(
                           opacity: ((-painter.beat)/2.0).coerceIn(0.0, 1.0),
-                            child:FM.Container(
+                            child:fm.Container(
                                 color: Color.WHITE,
-                                child:FM.Text(painter.animationNote,
-                                    style:FM.TextStyle(fontSize:20))
+                                child:fm.Text(painter.animationNote,
+                                    style:fm.TextStyle(fontSize:20))
                             )),
                         //  Show if Loop or Speed are set other than default
-                        FM.Positioned(
+                        fm.Positioned(
                           bottom: 0.0,
                           right: 0.0,
-                          child: FM.Text(
-                              settings.speed.replaceFirst("Normal","") +
-                                  (settings.loop ? " Loop" : ""),
-                              style:FM.TextStyle(fontSize:24)
+                          child: fm.Text(
+                              settings.speed.replaceFirst('Normal','') +
+                                  (settings.loop ? ' Loop' : ''),
+                              style:fm.TextStyle(fontSize:24)
                           )
                         )
                       ])
@@ -267,7 +267,7 @@ class _AnimationFrameState extends FM.State<AnimationFrame>
             })),
 
         //  Slider to show current animation position
-        FM.Slider(
+        fm.Slider(
           activeColor: Color.HIGHLIGHT,
           inactiveColor: Color.HIGHLIGHT.veryBright(),
           value: painter.totalBeats > 2.0
@@ -284,41 +284,41 @@ class _AnimationFrameState extends FM.State<AnimationFrame>
         ),
 
         //  Painter to show animation start, end, beats, and parts
-        FM.CustomPaint(
+        fm.CustomPaint(
           painter: _SliderTicsPainter(
             beats: painter.totalBeats,
             parts: partstr,
             isParts: hasParts
           ),
-          size: FM.Size.fromHeight(40.0),
+          size: fm.Size.fromHeight(40.0),
         ),
 
         //  Buttons to control the animation
-        FM.Row(
+        fm.Row(
             children: [
-              FM.Expanded(
-                  child: Button("Start",
-                      child: FM.Icon(FM.Icons.skip_previous),
+              fm.Expanded(
+                  child: Button('Start',
+                      child: fm.Icon(fm.Icons.skip_previous),
                       onPressed: () {
                         setState(() {
                           painter.goToStart();
                         });
                       })),
-              FM.Expanded(
+              fm.Expanded(
                   child:
-                  Button("Back",
-                      child: FM.Icon(FM.Icons.navigate_before),
+                  Button('Back',
+                      child: fm.Icon(fm.Icons.navigate_before),
                       onPressed: () {
                         setState(() {
                           painter.stepBack();
                         });
                       })),
-              FM.Expanded(
+              fm.Expanded(
                 //  Play / Pause button
-                  child: Button("Play",
-                      child: FM.Icon(painter.isRunning
-                          ? FM.Icons.pause
-                          : FM.Icons.play_arrow),
+                  child: Button('Play',
+                      child: fm.Icon(painter.isRunning
+                          ? fm.Icons.pause
+                          : fm.Icons.play_arrow),
                       onPressed: () {
                         setState(() {
                           //  If running, turn it off
@@ -331,16 +331,16 @@ class _AnimationFrameState extends FM.State<AnimationFrame>
                         });
                       }
                   )),
-              FM.Expanded(
-                  child: Button("Forward",
-                      child: FM.Icon(FM.Icons.navigate_next),
+              fm.Expanded(
+                  child: Button('Forward',
+                      child: fm.Icon(fm.Icons.navigate_next),
                       onPressed: () {
                         setState(() {
                           painter.stepForward();
                         });
                       })),
-              FM.Expanded(child: Button("End",
-                  child: FM.Icon(FM.Icons.skip_next),
+              fm.Expanded(child: Button('End',
+                  child: fm.Icon(fm.Icons.skip_next),
                   onPressed: () {
                     setState(() {
                       painter.goToEnd();
@@ -352,7 +352,7 @@ class _AnimationFrameState extends FM.State<AnimationFrame>
   }
 }
 
-class _SliderTicsPainter extends FM.CustomPainter {
+class _SliderTicsPainter extends fm.CustomPainter {
 
   double beats;
   var isParts;
@@ -360,8 +360,8 @@ class _SliderTicsPainter extends FM.CustomPainter {
   List<double> partValues = [];
 
   _SliderTicsPainter({
-    @FM.required this.beats,
-    @FM.required String parts,
+    @fm.required this.beats,
+    @fm.required String parts,
     this.isParts=false,
     this.isCalls=false
   }) {
@@ -369,7 +369,7 @@ class _SliderTicsPainter extends FM.CustomPainter {
     //  separated by semi-colons.
     //  Convert these to a list of doubles, of the beat where each part starts.
     if (parts.isNotEmpty) {
-      var partsList = parts.split(";");
+      var partsList = parts.split(';');
       var partSum = 0.0;
       for (var i=0; i<partsList.length; i++) {
         var partValue = partsList[i].d;
@@ -380,19 +380,19 @@ class _SliderTicsPainter extends FM.CustomPainter {
   }
 
   @override
-  void paint(FM.Canvas ctx, FM.Size size) {
+  void paint(fm.Canvas ctx, fm.Size size) {
 
     //  There's a lot to do to just draw one item of text
     //  and it has to be repeated for each text item.
     //  Thus this function.
     void drawCenteredTextAt(String text, double x, double y) {
-      var span = FM.TextSpan(text: text,
-          style:FM.TextStyle(fontSize: size.height / 3.0, color:FM.Colors.white));
-      var tp = FM.TextPainter(text: span,
-          textDirection: FM.TextDirection.ltr)..layout();
+      var span = fm.TextSpan(text: text,
+          style:fm.TextStyle(fontSize: size.height / 3.0, color:fm.Colors.white));
+      var tp = fm.TextPainter(text: span,
+          textDirection: fm.TextDirection.ltr)..layout();
       //  TextSpan center doesn't seem to work, but we can calculate it
       var textOffset = tp.width / 2.0;
-      tp.paint(ctx, FM.Offset(x-textOffset,y));
+      tp.paint(ctx, fm.Offset(x-textOffset,y));
     }
 
     //  Adjustment for slider ends
@@ -401,17 +401,17 @@ class _SliderTicsPainter extends FM.CustomPainter {
     var myWidth = size.width - adjust*2;
 
     //  Draw background
-    ctx.drawRect(FM.Rect.fromLTWH(0,0,size.width,size.height),
-        FM.Paint()..color = Color.TICS);
+    ctx.drawRect(fm.Rect.fromLTWH(0,0,size.width,size.height),
+        fm.Paint()..color = Color.TICS);
 
     //  Draw tic marks
-    var p = FM.Paint()
-      ..style = FM.PaintingStyle.stroke
+    var p = fm.Paint()
+      ..style = fm.PaintingStyle.stroke
       ..strokeWidth = 1.0
       ..color = Color.WHITE;
     for (var i=0; i <= beats; i++) {
       var x = myLeft + myWidth * i / beats;
-      ctx.drawLine(FM.Offset(x,0), FM.Offset(x,size.height/4.0), p);
+      ctx.drawLine(fm.Offset(x,0), fm.Offset(x,size.height/4.0), p);
     }
 
     //  Draw tic labels
@@ -419,27 +419,27 @@ class _SliderTicsPainter extends FM.CustomPainter {
       var y = size.height * 3.0 / 8.0;
       //  This assumes leadin and leadout are both 2 beats
 
-      //  Draw "Start" and "End"
+      //  Draw 'Start' and 'End'
       var x1 = myLeft + myWidth * 2.0 / beats;
-      drawCenteredTextAt("Start",x1,y);
+      drawCenteredTextAt('Start',x1,y);
       var x2 = myLeft + myWidth * (beats - 2.0) / beats;
-      drawCenteredTextAt("End", x2, y);
+      drawCenteredTextAt('End', x2, y);
 
       //  Draw parts or fractions labels
       if (partValues.isNotEmpty) {
-        // If fractions will write as "a/b"
+        // If fractions will write as 'a/b'
         var denominator = (partValues.length + 1).s;
         for (var i=0; i<partValues.length; i++) {
           if (partValues[i] < beats-4) {  // sanity check
             var x = myLeft + myWidth * (2.0+partValues[i]) / beats;
             //  Text for fractions
-            var text = (i+1).s + "/" + denominator;
+            var text = (i+1).s + '/' + denominator;
             //  If parts then show part number instead of fraction
             if (isParts||isCalls)
               text = (i+2).s;
-            //  Text is "Part 2" to show that call has parts
+            //  Text is 'Part 2' to show that call has parts
             if (isParts && i == 0)
-              text = "Part 2";
+              text = 'Part 2';
             drawCenteredTextAt(text, x, y);
           }
         }
@@ -450,7 +450,7 @@ class _SliderTicsPainter extends FM.CustomPainter {
   }
 
   @override
-  bool shouldRepaint(covariant FM.CustomPainter oldDelegate) {
+  bool shouldRepaint(covariant fm.CustomPainter oldDelegate) {
     return true;  // ???
   }
 

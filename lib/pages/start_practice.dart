@@ -18,8 +18,8 @@
 
 */
 
-import 'package:flutter/material.dart' as FM;
-import 'package:provider/provider.dart' as PP;
+import 'package:flutter/material.dart' as fm;
+import 'package:provider/provider.dart' as pp;
 import 'package:flutter/services.dart';
 import 'package:taminations/color.dart';
 
@@ -28,25 +28,25 @@ import '../request.dart';
 import '../title_bar.dart';
 import '../settings.dart';
 
-class StartPracticePage extends FM.StatelessWidget {
+class StartPracticePage extends fm.StatelessWidget {
 
   @override
-  FM.Widget build(FM.BuildContext context) {
+  fm.Widget build(fm.BuildContext context) {
     SystemChrome.setPreferredOrientations([
       DeviceOrientation.landscapeLeft,
       DeviceOrientation.landscapeRight,
     ]);
-    return FM.Scaffold(
-        appBar: FM.PreferredSize(
-            preferredSize: FM.Size.fromHeight(56.0),
+    return fm.Scaffold(
+        appBar: fm.PreferredSize(
+            preferredSize: fm.Size.fromHeight(56.0),
             child: TitleBar(
-                title: "Practice"
+                title: 'Practice'
             )
         ),
         body: RequestHandler(
             handler: (request) {
-              var route = TaminationsRoute(practice:true,level:request("level"));
-              FM.Router.of(context).routerDelegate.setNewRoutePath(route);
+              var route = TaminationsRoute(practice:true,level:request('level'));
+              fm.Router.of(context).routerDelegate.setNewRoutePath(route);
             },
             child: StartPracticeFrame()
         )
@@ -56,16 +56,16 @@ class StartPracticePage extends FM.StatelessWidget {
 }
 
 //  Wrapper widget to handle taps
-class _TapDetector extends FM.StatelessWidget {
+class _TapDetector extends fm.StatelessWidget {
   final String text;
-  final FM.StatelessWidget child;
+  final fm.StatelessWidget child;
   _TapDetector({this.text,this.child});
 
   @override
-  FM.Widget build(FM.BuildContext context) =>
-      FM.GestureDetector(
+  fm.Widget build(fm.BuildContext context) =>
+      fm.GestureDetector(
           onTap: () {
-            var request = Request(action:Action.PRACTICE,params:{"level":text});
+            var request = Request(action:Action.PRACTICE,params:{'level':text});
             RequestHandler.of(context).processRequest(request);
           },
           child:child
@@ -74,103 +74,103 @@ class _TapDetector extends FM.StatelessWidget {
 }
 
 //  Wrapper widget to style level text
-class _StartPracticeItem extends FM.StatelessWidget {
+class _StartPracticeItem extends fm.StatelessWidget {
   final String text;
   final Color color;
-  _StartPracticeItem({@FM.required this.text, @FM.required this.color});
+  _StartPracticeItem({@fm.required this.text, @fm.required this.color});
 
   @override
-  FM.Widget build(FM.BuildContext context) =>
-      FM.Expanded(
+  fm.Widget build(fm.BuildContext context) =>
+      fm.Expanded(
         child: _TapDetector(
           text: text,
-          child: FM.Container(
-            decoration: FM.BoxDecoration(
+          child: fm.Container(
+            decoration: fm.BoxDecoration(
                 color: color,
-                border: FM.Border(
-                    top: FM.BorderSide(width: 1, color: FM.Colors.black),
-                    left: FM.BorderSide(width: 1, color: FM.Colors.black)
+                border: fm.Border(
+                    top: fm.BorderSide(width: 1, color: fm.Colors.black),
+                    left: fm.BorderSide(width: 1, color: fm.Colors.black)
                 )),
-            child: FM.Align(
-                alignment: FM.Alignment.center,
-                child: FM.Text(text, style: FM.TextStyle(fontWeight: FM.FontWeight.bold, fontSize: 20))),
+            child: fm.Align(
+                alignment: fm.Alignment.center,
+                child: fm.Text(text, style: fm.TextStyle(fontWeight: fm.FontWeight.bold, fontSize: 20))),
           ),
         ),
       );
 }
 
-class _StartPracticeRadioGroup extends FM.StatelessWidget {
+class _StartPracticeRadioGroup extends fm.StatelessWidget {
 
   final String groupValue;
   final List<String> values;
   final void Function(String value) onChanged;
-  _StartPracticeRadioGroup({@FM.required this.groupValue,
-    @FM.required this.values,
-    @FM.required this.onChanged});
+  _StartPracticeRadioGroup({@fm.required this.groupValue,
+    @fm.required this.values,
+    @fm.required this.onChanged});
 
   @override
-  FM.Widget build(FM.BuildContext context) {
-    return FM.Container(
+  fm.Widget build(fm.BuildContext context) {
+    return fm.Container(
         color: Color.FLOOR,
-        margin: FM.EdgeInsets.only(bottom:3),
-        child: FM.Row (
+        margin: fm.EdgeInsets.only(bottom:3),
+        child: fm.Row (
             children: values.map((v) => [
-              FM.Radio<String>(
+              fm.Radio<String>(
                   value: v,
                   groupValue: groupValue,
                   onChanged: onChanged
               ),
-              FM.Text(v)
+              fm.Text(v)
             ]).expand((e) => e).toList()
         ));
   }
 }
 
-class StartPracticeFrame extends FM.StatefulWidget {
+class StartPracticeFrame extends fm.StatefulWidget {
   @override
   _StartPracticeFrameState createState() => _StartPracticeFrameState();
 }
 
-class _StartPracticeFrameState extends FM.State<StartPracticeFrame> {
+class _StartPracticeFrameState extends fm.State<StartPracticeFrame> {
 
   @override
-  FM.Widget build(FM.BuildContext context) {
-    return PP.Consumer<Settings>(
+  fm.Widget build(fm.BuildContext context) {
+    return pp.Consumer<Settings>(
         builder: (context, settings, child) {
-          return FM.Row(
-            crossAxisAlignment: FM.CrossAxisAlignment.stretch,
+          return fm.Row(
+            crossAxisAlignment: fm.CrossAxisAlignment.stretch,
             children: [
-              FM.Expanded(
-                child: FM.Container(
+              fm.Expanded(
+                child: fm.Container(
                   color: Color.FLOOR,
-                  child: FM.Column(
-                    crossAxisAlignment: FM.CrossAxisAlignment.stretch,
+                  child: fm.Column(
+                    crossAxisAlignment: fm.CrossAxisAlignment.stretch,
                     children: [
-                      FM.Text(
-                          "Choose a Gender", style: FM.TextStyle(fontSize: 20)),
+                      fm.Text(
+                          'Choose a Gender', style: fm.TextStyle(fontSize: 20)),
                       _StartPracticeRadioGroup(
                           groupValue: settings.practiceGender,
-                          values: ["Boy", "Girl"],
+                          values: ['Boy', 'Girl'],
                           onChanged: (value) {
                             setState(() {
                               settings.practiceGender = value;
                             });
                           }),
-                      FM.Text("Speed for Practice",
-                          style: FM.TextStyle(fontSize: 20)),
+                      fm.Text('Speed for Practice',
+                          style: fm.TextStyle(fontSize: 20)),
                       _StartPracticeRadioGroup(
                           groupValue: settings.practiceSpeed,
-                          values: ["Slow", "Moderate", "Normal"],
+                          values: ['Slow', 'Moderate', 'Normal'],
                           onChanged: (value) {
                             setState(() {
                               settings.practiceSpeed = value;
                             });
                           }),
-                      FM.Text(
-                          "Primary Control", style: FM.TextStyle(fontSize: 20)),
+                      fm.Text(
+                          'Primary Control', style: fm.TextStyle(fontSize: 20)),
                       _StartPracticeRadioGroup(
                           groupValue: settings.primaryControl,
-                          values: ["Left Finger", "Right Finger"],
+                          values: ['Left Finger', 'Right Finger'],
                           onChanged: (value) {
                             setState(() {
                               settings.primaryControl = value;
@@ -180,55 +180,55 @@ class _StartPracticeFrameState extends FM.State<StartPracticeFrame> {
                   ),
                 ),
               ),
-              FM.Expanded(
-                child: FM.Column(
-                  crossAxisAlignment: FM.CrossAxisAlignment.stretch,
+              fm.Expanded(
+                child: fm.Column(
+                  crossAxisAlignment: fm.CrossAxisAlignment.stretch,
                   children: [
                     _StartPracticeItem(
-                        text: "Tutorial", color: Color.LIGHTGREY),
-                    FM.Expanded(
-                      child: FM.Row(
-                        crossAxisAlignment: FM.CrossAxisAlignment.stretch,
+                        text: 'Tutorial', color: Color.LIGHTGREY),
+                    fm.Expanded(
+                      child: fm.Row(
+                        crossAxisAlignment: fm.CrossAxisAlignment.stretch,
                         children: [
-                          _StartPracticeItem(text: "Basic 1", color: Color.B1),
-                          _StartPracticeItem(text: "Basic 2", color: Color.B2)
+                          _StartPracticeItem(text: 'Basic 1', color: Color.B1),
+                          _StartPracticeItem(text: 'Basic 2', color: Color.B2)
                         ],
                       ),
                     ),
-                    FM.Expanded(
-                      child: FM.Row(
-                        crossAxisAlignment: FM.CrossAxisAlignment.stretch,
+                    fm.Expanded(
+                      child: fm.Row(
+                        crossAxisAlignment: fm.CrossAxisAlignment.stretch,
                         children: [
                           _StartPracticeItem(
-                              text: "Mainstream", color: Color.MS),
-                          _StartPracticeItem(text: "Plus", color: Color.PLUS)
+                              text: 'Mainstream', color: Color.MS),
+                          _StartPracticeItem(text: 'Plus', color: Color.PLUS)
                         ],
                       ),
                     ),
-                    FM.Expanded(
-                      child: FM.Row(
-                        crossAxisAlignment: FM.CrossAxisAlignment.stretch,
+                    fm.Expanded(
+                      child: fm.Row(
+                        crossAxisAlignment: fm.CrossAxisAlignment.stretch,
                         children: [
-                          _StartPracticeItem(text: "A-1", color: Color.A1),
-                          _StartPracticeItem(text: "A-2", color: Color.A2)
+                          _StartPracticeItem(text: 'A-1', color: Color.A1),
+                          _StartPracticeItem(text: 'A-2', color: Color.A2)
                         ],
                       ),
                     ),
-                    FM.Expanded(
-                      child: FM.Row(
-                        crossAxisAlignment: FM.CrossAxisAlignment.stretch,
+                    fm.Expanded(
+                      child: fm.Row(
+                        crossAxisAlignment: fm.CrossAxisAlignment.stretch,
                         children: [
-                          _StartPracticeItem(text: "C-1", color: Color.C1),
-                          _StartPracticeItem(text: "C-2", color: Color.C2)
+                          _StartPracticeItem(text: 'C-1', color: Color.C1),
+                          _StartPracticeItem(text: 'C-2', color: Color.C2)
                         ],
                       ),
                     ),
-                    FM.Expanded(
-                      child: FM.Row(
-                        crossAxisAlignment: FM.CrossAxisAlignment.stretch,
+                    fm.Expanded(
+                      child: fm.Row(
+                        crossAxisAlignment: fm.CrossAxisAlignment.stretch,
                         children: [
-                          _StartPracticeItem(text: "C-3A", color: Color.C3A),
-                          _StartPracticeItem(text: "C-3B", color: Color.C3B)
+                          _StartPracticeItem(text: 'C-3A', color: Color.C3A),
+                          _StartPracticeItem(text: 'C-3B', color: Color.C3B)
                         ],
                       ),
                     ),

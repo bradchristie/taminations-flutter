@@ -26,7 +26,7 @@ class Path {
   List<Movement> movelist;
   List<Matrix> _transformlist;
 
-  bool get isEmpty => movelist.length  == 0;
+  bool get isEmpty => movelist.isEmpty;
 
   Path([List<Movement> moves]) {
     movelist = moves == null ? [] : moves.toList();

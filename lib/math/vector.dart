@@ -31,7 +31,7 @@ class Vector {
   const Vector([this.x=0.0,this.y=0.0]);
 
   @override
-  String toString() => "(${x.s} ${y.s})";
+  String toString() => '(${x.s} ${y.s})';
 
   bool isAbout(Vector v2) => x.isAbout(v2.x) && y.isAbout(v2.y);
   double get angle => atan2(y,x);
@@ -52,7 +52,7 @@ class Vector {
   Vector vectorTo(Vector v) => v - this;
   //  Return Z-coordinate of the cross product between two vectors
   double crossZ(Vector v) => x * v.y - y * v.x;
-  String get str => "(${x.s},${y.s})";
+  String get str => '(${x.s},${y.s})';
 
   //  Operators
   Vector operator +(Vector v2) => Vector(x+v2.x,y+v2.y);
@@ -60,6 +60,7 @@ class Vector {
   Vector operator *(double s) => scale(s,s);
   Vector operator -() => Vector(-x,-y);
   Vector operator /(double s) => scale(1/s,1/s);
+  @override
   bool operator ==(Object v2) => v2 is Vector &&
       (v2.x.isAbout(x) && v2.y.isAbout(y));
 
@@ -81,11 +82,11 @@ extension Vector2Extension on Vector2 {
 }
 
 extension Vector2ListExtension on List<Vector2> {
-  List<Vector> get v => this.map((e) => e.v).toList();
+  List<Vector> get v => map((e) => e.v).toList();
 }
 
 extension VectorListExtension on List<Vector> {
-  List<Vector2> get v2 => this.map((e) => Vector2(e.x,e.y)).toList();
+  List<Vector2> get v2 => map((e) => Vector2(e.x,e.y)).toList();
 }
 
 extension Size2Vector on Size {

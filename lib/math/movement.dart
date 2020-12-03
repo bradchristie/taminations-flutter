@@ -35,15 +35,15 @@ class Hands {
 
   static int getHands(String h) {
     switch (h) {
-      case "none" : return NOHANDS;
-      case "nohands" : return NOHANDS;
-      case "left" : return LEFTHAND;
-      case "right" : return RIGHTHAND;
-      case "both" : return BOTHHANDS;
-      case "anygrip" : return 4;
-      case "gripleft" : return GRIPLEFT;
-      case "gripright" : return GRIPRIGHT;
-      case "gripboth" : return 7;
+      case 'none' : return NOHANDS;
+      case 'nohands' : return NOHANDS;
+      case 'left' : return LEFTHAND;
+      case 'right' : return RIGHTHAND;
+      case 'both' : return BOTHHANDS;
+      case 'anygrip' : return 4;
+      case 'gripleft' : return GRIPLEFT;
+      case 'gripright' : return GRIPRIGHT;
+      case 'gripboth' : return 7;
       default : return 0;
     }
   }
@@ -71,21 +71,21 @@ class Movement {
   /// Construct a Movement from the attributes of an XML movement
   /// @param elem from xml
   factory Movement.fromElement(XmlElement elem) {
-    var beats = elem.getAttribute("beats").d;
-    var hands = Hands.getHands(elem.getAttribute("hands") ?? "");
+    var beats = elem.getAttribute('beats').d;
+    var hands = Hands.getHands(elem.getAttribute('hands') ?? '');
     var bt = Bezier([
       Vector(0,0),
-      Vector(elem.getAttribute("cx1").d,elem.getAttribute("cy1").d),
-      Vector(elem.getAttribute("cx2").d,elem.getAttribute("cy2").d),
-      Vector(elem.getAttribute("x2").d,elem.getAttribute("y2").d)
+      Vector(elem.getAttribute('cx1').d,elem.getAttribute('cy1').d),
+      Vector(elem.getAttribute('cx2').d,elem.getAttribute('cy2').d),
+      Vector(elem.getAttribute('x2').d,elem.getAttribute('y2').d)
     ]);
     var br = bt;
-    if (elem.getAttribute("cx3") != null) {
+    if (elem.getAttribute('cx3') != null) {
       br = Bezier([
         Vector(0,0),
-        Vector(elem.getAttribute("cx3").d,0.0),
-        Vector(elem.getAttribute("cx4").d,elem.getAttribute("cy4").d),
-        Vector(elem.getAttribute("x4").d,elem.getAttribute("y4").d)
+        Vector(elem.getAttribute('cx3').d,0.0),
+        Vector(elem.getAttribute('cx4').d,elem.getAttribute('cy4').d),
+        Vector(elem.getAttribute('x4').d,elem.getAttribute('y4').d)
       ]);
     }
     return Movement(beats,hands,bt,br);
@@ -143,7 +143,7 @@ class Movement {
 
   Movement clip(double b) {
     if (b <= 0.0 || b > beats)
-      throw ArgumentError("Invalid clip beats");
+      throw ArgumentError('Invalid clip beats');
     var fraction = b / beats;
     return Movement(b,hands,btranslate.clip(fraction),brotate.clip(fraction));
   }

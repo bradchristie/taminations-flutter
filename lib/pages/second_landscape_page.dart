@@ -20,8 +20,8 @@
 
 import 'dart:math';
 
-import 'package:flutter/material.dart' as FM;
-import 'package:provider/provider.dart' as PP;
+import 'package:flutter/material.dart' as fm;
+import 'package:provider/provider.dart' as pp;
 import 'package:xml/xml.dart';
 
 import '../button.dart';
@@ -38,18 +38,18 @@ import 'animation_page.dart';
 import 'settings_page.dart';
 import 'web_page.dart';
 
-class SecondLandscapePage extends FM.StatefulWidget {
+class SecondLandscapePage extends fm.StatefulWidget {
   @override
   _SecondLandscapePageState createState() => _SecondLandscapePageState();
 }
 
-class _SecondLandscapePageState extends FM.State<SecondLandscapePage> {
+class _SecondLandscapePageState extends fm.State<SecondLandscapePage> {
   LevelData levelDatum;
   String link;
   int animnum;
-  FM.Widget leftChild;
-  FM.Widget centerChild;
-  FM.Widget rightChild;
+  fm.Widget leftChild;
+  fm.Widget centerChild;
+  fm.Widget rightChild;
   DanceAnimationPainter painter;
   XmlDocument doc;
 
@@ -57,16 +57,15 @@ class _SecondLandscapePageState extends FM.State<SecondLandscapePage> {
   void didChangeDependencies() {
     super.didChangeDependencies();
     var router =
-        FM.Router.of(context).routerDelegate as TaminationsRouterDelegate;
+        fm.Router.of(context).routerDelegate as TaminationsRouterDelegate;
     var path = router.currentPath;
     link = path.link;
     animnum = path.animnum;
     levelDatum = LevelData.find(path.level);
     leftChild = AnimListFrame(link);
     centerChild = AnimationFrame(link:link, animnum:animnum);
-    var settings = PP.Provider.of<Settings>(context);
-    if (rightChild == null)
-      rightChild = WebFrame(settings.getLanguageLink(link) + ".html");
+    var settings = pp.Provider.of<Settings>(context);
+    rightChild ??= WebFrame(settings.getLanguageLink(link) + '.html');
 
     painter = DanceAnimationPainter();
     TamUtils.getXMLAsset(link).then((doc) {
@@ -76,45 +75,45 @@ class _SecondLandscapePageState extends FM.State<SecondLandscapePage> {
   }
 
   XmlElement tamFromAnimnum() => TamUtils.tamList(doc)
-      .where((it) => !(it("display","").startsWith("n")))
+      .where((it) => !(it('display','').startsWith('n')))
       .toList()[max(0, animnum)];
 
   @override
-  FM.Widget build(FM.BuildContext context) {
+  fm.Widget build(fm.BuildContext context) {
     return  RequestHandler(
       handler: (request) {
         if (request.action == Action.ANIMATION) {
-          animnum = request("animnum").i;
+          animnum = request('animnum').i;
           painter.setAnimation(tamFromAnimnum());
         }
       },
-      child: PP.ChangeNotifierProvider.value(
+      child: pp.ChangeNotifierProvider.value(
         value: painter,
-        child: FM.Scaffold(
-            appBar: FM.PreferredSize(
-                preferredSize: FM.Size.fromHeight(56.0),
-                child: PP.Consumer<DanceAnimationPainter>(
+        child: fm.Scaffold(
+            appBar: fm.PreferredSize(
+                preferredSize: fm.Size.fromHeight(56.0),
+                child: pp.Consumer<DanceAnimationPainter>(
                     builder: (context,painter2,child) =>
                         TitleBar(title: painter2.title, level: levelDatum.name)
                 )),
-            body: PP.Consumer<Settings>(
+            body: pp.Consumer<Settings>(
               builder: (context, settings, child) {
                 return  SecondLandscapeFrame(
                         leftChild: leftChild,
-                        centerChild: FM.Column(
+                        centerChild: fm.Column(
                           children: [
-                            FM.Expanded(child: centerChild),
-                            FM.Row(
+                            fm.Expanded(child: centerChild),
+                            fm.Row(
                               children: [
-                                FM.Expanded(
-                                    child: Button("Definition",
+                                fm.Expanded(
+                                    child: Button('Definition',
                                         onPressed: () {
                                           setState(() {
-                                            rightChild = WebFrame(settings.getLanguageLink(link) + ".html");
+                                            rightChild = WebFrame(settings.getLanguageLink(link) + '.html');
                                           });
                                         })),
-                                FM.Expanded(
-                                    child: Button("Settings",
+                                fm.Expanded(
+                                    child: Button('Settings',
                                         onPressed: () {
                                           setState(() {
                                             rightChild = SettingsFrame();
@@ -132,24 +131,24 @@ class _SecondLandscapePageState extends FM.State<SecondLandscapePage> {
   }
 }
 
-class SecondLandscapeFrame extends FM.StatelessWidget {
-  final FM.Widget leftChild;
-  final FM.Widget centerChild;
-  final FM.Widget rightChild;
+class SecondLandscapeFrame extends fm.StatelessWidget {
+  final fm.Widget leftChild;
+  final fm.Widget centerChild;
+  final fm.Widget rightChild;
 
   SecondLandscapeFrame(
-      {@FM.required this.leftChild,
-      @FM.required this.centerChild,
-      @FM.required this.rightChild});
+      {@fm.required this.leftChild,
+      @fm.required this.centerChild,
+      @fm.required this.rightChild});
 
   @override
-  FM.Widget build(FM.BuildContext context) {
-    return FM.Row(
-      crossAxisAlignment: FM.CrossAxisAlignment.stretch,
+  fm.Widget build(fm.BuildContext context) {
+    return fm.Row(
+      crossAxisAlignment: fm.CrossAxisAlignment.stretch,
       children: [
-        FM.Expanded(child: leftChild, flex: 1),
-        FM.Expanded(child: centerChild, flex: 1),
-        FM.Expanded(child: rightChild, flex: 1)
+        fm.Expanded(child: leftChild, flex: 1),
+        fm.Expanded(child: centerChild, flex: 1),
+        fm.Expanded(child: rightChild, flex: 1)
       ],
     );
   }

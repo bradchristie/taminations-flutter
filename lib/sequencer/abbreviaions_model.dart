@@ -87,6 +87,7 @@ class AbbreviationsModel extends fm.ChangeNotifier {
         await prefs.setString('abbrev $k',initialAbbreviations[k]);
       await prefs.setString('+abbrev stored', 'true');
     }
+    currentAbbreviations = [];
     for (var k in prefs.getKeys()) {
       if (k.startsWith('abbrev '))
         currentAbbreviations.add(
@@ -101,54 +102,63 @@ class AbbreviationsModel extends fm.ChangeNotifier {
   void setAbbreviation(int index, String abbr) {
     print(abbr);
     currentAbbreviations[index] = currentAbbreviations[index].withItem1(abbr);
-    checkForErrors();
+    _save();
   }
 
   void setExpansion(int index, String expan) {
     currentAbbreviations[index] = currentAbbreviations[index].withItem2(expan);
-    checkForErrors();
+    _save();
   }
 
-  void clear() {
+  void _clearStorage() {
     for (var k in prefs.getKeys()) {
       if (k.startsWith('abbrev '))
         prefs.remove(k);
     }
-    notifyListeners();
   }
-
-  void reset() {
-    clear();
-    currentAbbreviations = [];
-    for (var k in initialAbbreviations.keys) {
-      currentAbbreviations.add(Tuple2(k,initialAbbreviations[k]));
-    }
-    currentAbbreviations.add(Tuple2('',''));
-    _save();
+  void clear() {
+    _clearStorage();
+    currentAbbreviations = [Tuple2('','')];
     notifyListeners();
   }
 
   void _save() {
-    clear();
-    for (var p in currentAbbreviations) {
-      if (p.item1.isNotBlank)
-        prefs.setString('abbrev ${p.item1.trim()}',p.item2);
+    if (!checkForErrors()) {
+      _clearStorage();
+      for (var p in currentAbbreviations) {
+        if (p.item1.isNotBlank)
+          prefs.setString('abbrev ${p.item1.trim()}', p.item2);
+      }
     }
   }
 
   bool checkForErrors() {
+    final errorCount = errors.where((e) => e).length;
     for (var i=0; i<currentAbbreviations.length; i++) {
       errors[i] = false;
       var p = currentAbbreviations[i];
+      //  Check for invalid entries
       if (p.item1.isNotBlank && p.item2.isNotBlank) {
         if (p.item1.isBlank || p.item2.isBlank)
           errors[i] = true;
         if(p.item1.trim().contains(' '))
           errors[i] = true;
       }
+      //  Check for words used in calling
+      if (TamUtils.words.contains(p.item1))
+        errors[i] = true;
+      //  Check for duplicates
+      //  Assumes abbreviations have already been lowercased
+      for (var j=0; j<i; j++) {
+        if (currentAbbreviations[j].item1 == p.item1) {
+          errors[i] = true;
+          errors[j] = true;
+        }
+      }
     }
-  //  notifyListeners();
-    return true;
+    if (errors.where((e) => e).length != errorCount)
+      notifyListeners();
+    return errors.any((element) => element);
   }
 
   void copy() {
@@ -166,7 +176,7 @@ class AbbreviationsModel extends fm.ChangeNotifier {
   }
 
   void defaultAbbreviations() {
-    clear();
+    _clearStorage();
     for (var k in initialAbbreviations.keys)
       prefs.setString('abbrev $k',initialAbbreviations[k]);
     _load();

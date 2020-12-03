@@ -71,7 +71,7 @@ class _SequencerCallsFrameState extends fm.State<SequencerCallsFrame> {
            children: [
              fm.TextField(
                key: fm.Key('Sequencer Input'),
-               autofocus: true,
+              // autofocus: true,
                focusNode: focusNode,
                controller: textFieldController,
                decoration: fm.InputDecoration.collapsed(

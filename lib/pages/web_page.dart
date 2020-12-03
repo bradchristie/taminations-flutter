@@ -20,10 +20,10 @@
 
 import 'dart:convert';
 
-import 'package:flutter/material.dart' as FM;
+import 'package:flutter/material.dart' as fm;
 import 'package:flutter/services.dart' show rootBundle;
-import 'package:provider/provider.dart' as PP;
-import 'package:easy_web_view/easy_web_view.dart' as EWV;
+import 'package:provider/provider.dart' as pp;
+import 'package:easy_web_view/easy_web_view.dart' as ewv;
 
 import '../extensions.dart';
 import '../level_data.dart';
@@ -33,19 +33,19 @@ import '../title_bar.dart';
 import 'animation_page.dart';
 
 //  Classes to display both About and Definition
-class WebPage extends FM.StatelessWidget {
+class WebPage extends fm.StatelessWidget {
 
   final String assetName;
   WebPage(this.assetName);
 
   @override
-  FM.Widget build(FM.BuildContext context) {
-    return FM.Scaffold(
-        appBar: FM.PreferredSize(
-            preferredSize: FM.Size.fromHeight(56.0),
+  fm.Widget build(fm.BuildContext context) {
+    return fm.Scaffold(
+        appBar: fm.PreferredSize(
+            preferredSize: fm.Size.fromHeight(56.0),
             child: TitleBar(
-                title: assetName.contains("about") ? "Taminations" : "Definition",
-                level: LevelData.find(assetName)?.name ?? ""
+                title: assetName.contains('about') ? 'Taminations' : 'Definition',
+                level: LevelData.find(assetName)?.name ?? ''
             )
         ),
         body: WebFrame(assetName)
@@ -54,7 +54,7 @@ class WebPage extends FM.StatelessWidget {
 
 }
 
-class WebFrame extends FM.StatefulWidget {
+class WebFrame extends fm.StatefulWidget {
 
   final String assetName;
   WebFrame(this.assetName);
@@ -65,11 +65,11 @@ class WebFrame extends FM.StatefulWidget {
 }
 
 
-class _WebFrameState extends FM.State<WebFrame> {
+class _WebFrameState extends fm.State<WebFrame> {
 
   String assetName;
   _WebFrameState(this.assetName);
-  //String _html = "";
+  //String _html = '';
   String get _dir => assetName.replaceFirst(r'/.*'.r,'');
   bool isAbbrev = true;
   bool hasAbbrev = false;
@@ -82,29 +82,29 @@ class _WebFrameState extends FM.State<WebFrame> {
   }
 
   @override
-  FM.Widget build(FM.BuildContext context) {
-    return PP.Consumer<Settings>(
+  fm.Widget build(fm.BuildContext context) {
+    return pp.Consumer<Settings>(
         builder: (context, settings, child) {
           isAbbrev = settings.isAbbrev;
-          return FM.Column(
+          return fm.Column(
               children: [
-                FM.Expanded(
-                    child:PP.Consumer<AnimationState>(
+                fm.Expanded(
+                    child:pp.Consumer<AnimationState>(
                         builder: (context, settings, child) {
                           //  TODO highlight current part in definition
                           return child;
                         },
-                        child: FM.FutureBuilder(
+                        child: fm.FutureBuilder(
                             future: htmlFuture,
-                            builder:  (FM.BuildContext context,
-                                FM.AsyncSnapshot<String> snapshot) {
+                            builder:  (fm.BuildContext context,
+                                fm.AsyncSnapshot<String> snapshot) {
                               if (snapshot.hasData) {
-                                return EWV.EasyWebView(
+                                return ewv.EasyWebView(
                                     src: snapshot.data,
                                     isHtml: true,
                                     onLoaded: () { });
                               }
-                              return FM.Container();
+                              return fm.Container();
                             }
                         )
                     )
@@ -113,34 +113,34 @@ class _WebFrameState extends FM.State<WebFrame> {
             //  Row of radio buttons at bottom to switch between
             //  Abbreviated and Full definition
             //  Only show if the definition has both versions
-            if (hasAbbrev) FM.Row(
+            if (hasAbbrev) fm.Row(
               children: [
-                FM.Container(
-                  child: FM.Radio<bool>(
+                fm.Container(
+                  child: fm.Radio<bool>(
                     value: true,
                     groupValue: isAbbrev,
                     onChanged: (value) {
                       setState(() {
                         settings.isAbbrev = true;
-                      //  _controller.evaluateJavascript("setAbbrev(true)");
+                      //  _controller.evaluateJavascript('setAbbrev(true)');
                       });
                     },
                   ),
                 ),
-                FM.Text("Abbreviated", style: FM.TextStyle(fontSize: 20)),
-                FM.Container(
-                  child: FM.Radio<bool>(
+                fm.Text('Abbreviated', style: fm.TextStyle(fontSize: 20)),
+                fm.Container(
+                  child: fm.Radio<bool>(
                     value: false,
                     groupValue: isAbbrev,
                     onChanged: (value) {
                       setState(() {
                         settings.isAbbrev = false;
-                     //   _controller.evaluateJavascript("setAbbrev(false)");
+                     //   _controller.evaluateJavascript('setAbbrev(false)');
                       });
                     },
                   ),
                 ),
-                FM.Text("Full", style: FM.TextStyle(fontSize: 20))
+                fm.Text('Full', style: fm.TextStyle(fontSize: 20))
               ]
             )
           ]);
@@ -159,7 +159,7 @@ class _WebFrameState extends FM.State<WebFrame> {
     html.replaceFirst(r'<script type="text/javascript" src="../src/framecode.js"></script>',
         //  Can't run the javascript until the page has been read and digested
         //  so insert first call in the body onLoad callback
-    "<script>" + TamUtils.framecode + "</script>")
+    '<script>' + TamUtils.framecode + '</script>')
         .replaceFirst('<body>', '<body onLoad="setAbbrev($isAbbrev)">');
 
   //  Get an image asset and base64 encode it
@@ -180,7 +180,7 @@ class _WebFrameState extends FM.State<WebFrame> {
       var filename = match.group(1);
       var imagetag = match.group(0);
       myFuture = myFuture.then((morehtml) {
-        return _imageToBase64("$_dir/$filename").then((base64str) {
+        return _imageToBase64('$_dir/$filename').then((base64str) {
            return morehtml.replaceFirst(
               imagetag, r'<img src="data:image/png;base64,' + base64str + r'"/>');
         });

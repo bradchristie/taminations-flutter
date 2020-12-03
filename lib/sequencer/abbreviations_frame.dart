@@ -20,9 +20,10 @@
 
 import 'package:flutter/material.dart' as fm;
 import 'package:provider/provider.dart' as pm;
-import 'sequencer_model.dart';
+import 'abbreviaions_model.dart';
 import '../color.dart';
 import '../button.dart';
+import '../extensions.dart';
 
 class AbbreviationsFrame extends fm.StatefulWidget {
   @override
@@ -30,11 +31,88 @@ class AbbreviationsFrame extends fm.StatefulWidget {
 }
 
 class _AbbreviationsFrameState extends fm.State<AbbreviationsFrame> {
+
+  var editRow = -1;
+  var editExpansion = false;
+  fm.TextEditingController textEditController;
+  void Function() processTextChange;
+
+  @override
+  void initState() {
+    super.initState();
+    textEditController = fm.TextEditingController()
+      ..addListener(_onTextChanged);
+  }
+
+  @override
+  void dispose() {
+    textEditController.dispose();
+    super.dispose();
+  }
+
+  void _onTextChanged() {
+    print(textEditController.text);
+    processTextChange();
+  }
+
+  fm.Widget _oneTextItem(int row, bool isExpansion) =>
+      fm.Expanded(
+        flex:1,
+        child: fm.InkWell(
+          onTap: () {
+            fm.WidgetsBinding.instance.addPostFrameCallback((_) {
+              setState(() {
+                editRow = row;
+                editExpansion = isExpansion;
+              });
+            });
+          },
+          child: pm.Consumer<AbbreviationsModel>(
+              builder: (context,model,child) {
+                processTextChange = () {
+                  print('new text: ${textEditController.value.text}');
+                  //  For abbreviations, ignore invalid characters
+                  if (!editExpansion) {
+                    final value = textEditController.value;
+                    final text = value.text.toLowerCase().replaceAll('\\W'.r, '');
+                    final diff = value.text.length - text.length;
+                    final selection = value.selection.copyWith(
+                      baseOffset: value.selection.baseOffset - diff,
+                      extentOffset: value.selection.extentOffset - diff
+                    );
+                    textEditController.value = value.copyWith(text: text, selection: selection);
+                    model.setAbbreviation(editRow, text);
+                  } else
+                    model.setExpansion(editRow, textEditController.text);
+                };
+                return fm.Container(
+                 //   key: fm.ValueKey('${model.currentAbbreviations[row]} ${model.errors[row]}'),
+                    color: model.errors[row] ? Color.RED.veryBright() : Color.WHITE,
+                    child: (row == editRow && editExpansion == isExpansion)
+                        ? fm.TextField(
+                      decoration: null,
+                      autofocus: true,
+                      autocorrect: false,
+                      style: fm.TextStyle(fontSize: 24),
+                      controller: textEditController
+                        ..text = isExpansion
+                            ? model.currentAbbreviations[row].item2
+                            : model.currentAbbreviations[row].item1,
+                    )
+                        : fm.Text(isExpansion
+                            ? model.currentAbbreviations[row].item2
+                            : model.currentAbbreviations[row].item1,
+                        style: fm.TextStyle(fontSize: 24))
+                );
+              }),
+        ),
+      );
+
+
   @override
   fm.Widget build(fm.BuildContext context) {
-    return pm.Consumer<SequencerModel>(
-        builder: (context,seqmodel,child) {
-          var model = seqmodel.abbreviations;
+    return pm.Consumer<AbbreviationsModel>(
+        builder: (context,model,child) {
           return fm.Column(
               children: [
                 fm.Expanded(
@@ -43,22 +121,9 @@ class _AbbreviationsFrameState extends fm.State<AbbreviationsFrame> {
                       itemBuilder: (context,index) =>
                           fm.Row(
                             children: [
-                              fm.Expanded(
-                                flex:1,
-                                child: fm.Container(
-                                  color: model.errors[index] ? Color.RED : Color.WHITE,
-                                    child: fm.Text(model.currentAbbreviations[index].item1,
-                                    style: fm.TextStyle(fontSize: 24),)
-                                ),
-                              ),
-                              fm.Expanded(
-                                flex: 5,
-                                child: fm.Container(
-                                    child: fm.Text(model.currentAbbreviations[index].item2,
-                                    style: fm.TextStyle(fontSize: 24),)
-                                ),
-                              )
-                            ],
+                              _oneTextItem(index, false),
+                              _oneTextItem(index, true)
+                            ]
                           )
                     )
                 ),
@@ -70,7 +135,7 @@ class _AbbreviationsFrameState extends fm.State<AbbreviationsFrame> {
                           fm.ScaffoldMessenger.of(context).showSnackBar(fm.SnackBar(
                               backgroundColor: Color.BLUE,
                               duration: Duration(seconds: 2),
-                              content: fm.Text('Abbreviations Copied.')
+                              content: fm.Text('Abbreviations Copied.',style: fm.TextStyle(fontSize: 20))
                           ));
                         })
                     ),
@@ -127,7 +192,7 @@ class _AbbreviationsFrameState extends fm.State<AbbreviationsFrame> {
                                 actions: [
                                   fm.TextButton(child:fm.Text('OK'),onPressed: () {
                                     fm.Navigator.of(context).pop();
-                                    model.reset();
+                                    model.defaultAbbreviations();
                                   }),
                                   fm.TextButton(child:fm.Text('Cancel'),onPressed: () {
                                     fm.Navigator.of(context).pop();

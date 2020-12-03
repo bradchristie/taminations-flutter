@@ -18,30 +18,30 @@
 
 */
 
-import 'package:flutter/material.dart' as FM;
+import 'package:flutter/material.dart' as fm;
 import '../title_bar.dart';
 import '../color.dart';
 import '../main.dart';
 import '../request.dart';
 
-class LevelPage extends FM.StatelessWidget {
+class LevelPage extends fm.StatelessWidget {
 
   @override
-  FM.Widget build(FM.BuildContext context) {
-    return FM.Scaffold(
-        appBar: FM.PreferredSize(
-            preferredSize: FM.Size.fromHeight(56.0),
-            child: TitleBar(title:"Taminations")
+  fm.Widget build(fm.BuildContext context) {
+    return fm.Scaffold(
+        appBar: fm.PreferredSize(
+            preferredSize: fm.Size.fromHeight(56.0),
+            child: TitleBar(title:'Taminations' )
         ),
         body: RequestHandler(
           child: LevelFrame(),
           handler: (request) {
-            var route = TaminationsRoute(level:request("level"));
+            var route = TaminationsRoute(level:request('level' ));
             if (request.action == Action.PRACTICE) route = TaminationsRoute(practice: true);
             else if (request.action == Action.SETTINGS) route = TaminationsRoute(settings: true);
             else if (request.action == Action.SEQUENCER) route = TaminationsRoute(sequencer: true);
             else if (request.action == Action.ABOUT) route = TaminationsRoute(about: true);
-            FM.Router.of(context).routerDelegate.setNewRoutePath(route);
+            fm.Router.of(context).routerDelegate.setNewRoutePath(route);
           }
         )
     );
@@ -50,27 +50,27 @@ class LevelPage extends FM.StatelessWidget {
 }
 
 //  Wrapper widget to handle taps
-class _TapDetector extends FM.StatelessWidget {
+class _TapDetector extends fm.StatelessWidget {
   final String text;
   final Color color;
-  final FM.StatelessWidget child;
-  _TapDetector({FM.Key key,
-    @FM.required this.text,
-    @FM.required this.color,
-    @FM.required this.child}) : super(key:key);
+  final fm.StatelessWidget child;
+  _TapDetector({fm.Key key,
+    @fm.required this.text,
+    @fm.required this.color,
+    @fm.required this.child}) : super(key:key);
 
   @override
-  FM.Widget build(FM.BuildContext context) =>
-      FM.Material(
+  fm.Widget build(fm.BuildContext context) =>
+      fm.Material(
         color: color,
-        child: FM.InkWell(
+        child: fm.InkWell(
             highlightColor: color.darker(),
             onTap: () {
-              var request = Request(action:Action.LEVEL,params:{"level":text});
-              if (text == "Practice") request = Request(action:Action.PRACTICE);
-              else if (text == "Sequencer") request = Request(action:Action.SEQUENCER);
-              else if (text == "Settings") request = Request(action:Action.SETTINGS);
-              else if (text == "About") request = Request(action:Action.ABOUT);
+              var request = Request(action:Action.LEVEL,params:{'level' :text});
+              if (text == 'Practice' ) request = Request(action:Action.PRACTICE);
+              else if (text == 'Sequencer' ) request = Request(action:Action.SEQUENCER);
+              else if (text == 'Settings' ) request = Request(action:Action.SETTINGS);
+              else if (text == 'About' ) request = Request(action:Action.ABOUT);
               RequestHandler.of(context).processRequest(request);
             },
             child:child
@@ -80,60 +80,60 @@ class _TapDetector extends FM.StatelessWidget {
 }
 
 //  Wrapper widget to style level text
-class _LevelTextWidget extends FM.StatelessWidget {
+class _LevelTextWidget extends fm.StatelessWidget {
   final String text;
   _LevelTextWidget({this.text});
 
   @override
-  FM.Widget build(FM.BuildContext context) =>
-      FM.Align(
-        alignment: FM.Alignment.centerLeft,
-        child: FM.Text(text, style: FM.TextStyle(fontWeight: FM.FontWeight.bold, fontSize: 20)));
+  fm.Widget build(fm.BuildContext context) =>
+      fm.Align(
+        alignment: fm.Alignment.centerLeft,
+        child: fm.Text(text, style: fm.TextStyle(fontWeight: fm.FontWeight.bold, fontSize: 20)));
 }
 
 //  Widget for level that completely spans a horizontal line
-class _FullLineWidget extends FM.StatelessWidget {
+class _FullLineWidget extends fm.StatelessWidget {
   final String text;
-  final FM.Color background;
+  final fm.Color background;
   _FullLineWidget({this.text,this.background});
 
   @override
-  FM.Widget build(FM.BuildContext context) =>
-      FM.Expanded(
+  fm.Widget build(fm.BuildContext context) =>
+      fm.Expanded(
           child: _TapDetector(text:text,
-              key: FM.Key(text),
+              key: fm.Key(text),
               color: background,
-              child: FM.Container(
-                  decoration: FM.BoxDecoration(
-                      border: FM.Border(top: FM.BorderSide(width: 1, color: FM.Colors.black))),
-                  padding: FM.EdgeInsets.only(left: 20.0),
+              child: fm.Container(
+                  decoration: fm.BoxDecoration(
+                      border: fm.Border(top: fm.BorderSide(width: 1, color: fm.Colors.black))),
+                  padding: fm.EdgeInsets.only(left: 20.0),
                   child: _LevelTextWidget(text:text))));
 
 }
 
 //  Widget for level that's indented below a parent level
-class _IndentedLineWidget extends FM.StatelessWidget {
+class _IndentedLineWidget extends fm.StatelessWidget {
   final String text;
-  final FM.Color background;
-  final FM.Color indented;
+  final fm.Color background;
+  final fm.Color indented;
   _IndentedLineWidget({this.text,this.background,this.indented});
 
   @override
-  FM.Widget build(FM.BuildContext context) =>
-      FM.Expanded(
-          child: FM.Row(children: <FM.Widget>[
-            FM.Flexible(flex: 1, child: FM.Container(color: indented)),
-            FM.Flexible(
+  fm.Widget build(fm.BuildContext context) =>
+      fm.Expanded(
+          child: fm.Row(children: <fm.Widget>[
+            fm.Flexible(flex: 1, child: fm.Container(color: indented)),
+            fm.Flexible(
                 flex: 9,
                 child: _TapDetector(text:text,
-                    key: FM.Key(text),
+                    key: fm.Key(text),
                     color: background,
-                    child:FM.Container(
-                        decoration: FM.BoxDecoration(
-                            border: FM.Border(
-                                top: FM.BorderSide(width: 1, color: FM.Colors.black),
-                                left: FM.BorderSide(width: 1, color: FM.Colors.black))),
-                        padding: FM.EdgeInsets.only(left: 20.0),
+                    child:fm.Container(
+                        decoration: fm.BoxDecoration(
+                            border: fm.Border(
+                                top: fm.BorderSide(width: 1, color: fm.Colors.black),
+                                left: fm.BorderSide(width: 1, color: fm.Colors.black))),
+                        padding: fm.EdgeInsets.only(left: 20.0),
                         child: _LevelTextWidget(text:text)))
             )]));
 
@@ -141,107 +141,107 @@ class _IndentedLineWidget extends FM.StatelessWidget {
 
 
 //  Widget for two levels combined on one horizontal line
-class _TwoItemLineWidget extends FM.StatelessWidget {
+class _TwoItemLineWidget extends fm.StatelessWidget {
   final String text1;
   final String text2;
   _TwoItemLineWidget({this.text1,this.text2});
 
   @override
-  FM.Widget build(FM.BuildContext context) =>
-      FM.Expanded(
-          child: FM.Row(children: <FM.Widget>[
-            FM.Flexible(
+  fm.Widget build(fm.BuildContext context) =>
+      fm.Expanded(
+          child: fm.Row(children: <fm.Widget>[
+            fm.Flexible(
                 flex: 1,
                 child: _TapDetector(
                   color:Color.LIGHTGREY,
                     text: text1,
-                    key: FM.Key(text1),
-                    child:FM.Container(
-                        decoration: FM.BoxDecoration(
-                            border: FM.Border(
-                                top: FM.BorderSide(width: 1, color: FM.Colors.black))),
-                        padding: FM.EdgeInsets.only(left: 20.0),
+                    key: fm.Key(text1),
+                    child:fm.Container(
+                        decoration: fm.BoxDecoration(
+                            border: fm.Border(
+                                top: fm.BorderSide(width: 1, color: fm.Colors.black))),
+                        padding: fm.EdgeInsets.only(left: 20.0),
                         child: _LevelTextWidget(text:text1)))),
-            FM.Flexible(
+            fm.Flexible(
                 flex: 1,
                 child: _TapDetector(
                     text: text2,
                     color: Color.LIGHTGREY,
-                    key: FM.Key(text2),
-                    child:FM.Container(
-                        decoration: FM.BoxDecoration(
-                            border: FM.Border(
-                                top: FM.BorderSide(width: 1, color: FM.Colors.black),
-                                left: FM.BorderSide(width: 1, color: FM.Colors.black))),
-                        padding: FM.EdgeInsets.only(left: 20.0),
+                    key: fm.Key(text2),
+                    child:fm.Container(
+                        decoration: fm.BoxDecoration(
+                            border: fm.Border(
+                                top: fm.BorderSide(width: 1, color: fm.Colors.black),
+                                left: fm.BorderSide(width: 1, color: fm.Colors.black))),
+                        padding: fm.EdgeInsets.only(left: 20.0),
                         child: _LevelTextWidget(text:text2)))
             )]));
 
 }
 
-class LevelFrame extends FM.StatelessWidget {
+class LevelFrame extends fm.StatelessWidget {
 
   @override
-  FM.Widget build(FM.BuildContext context) {
-    return FM.Column(
-          crossAxisAlignment: FM.CrossAxisAlignment.stretch,
-          children: <FM.Widget>[
+  fm.Widget build(fm.BuildContext context) {
+    return fm.Column(
+          crossAxisAlignment: fm.CrossAxisAlignment.stretch,
+          children: <fm.Widget>[
             _FullLineWidget(
-                text:"Basic and Mainstream",
+                text:'Basic and Mainstream' ,
                 background:Color.BMS),
             _IndentedLineWidget(
-                text:"Basic 1",
+                text:'Basic 1' ,
                 background:Color.B1,
                 indented:Color.BMS),
             _IndentedLineWidget(
-                text:"Basic 2",
+                text:'Basic 2' ,
                 background:Color.B2,
                 indented:Color.BMS),
             _IndentedLineWidget(
-                text:"Mainstream",
+                text:'Mainstream' ,
                 background:Color.MS,
                 indented:Color.BMS),
-            _FullLineWidget(text:"Plus",
+            _FullLineWidget(text:'Plus' ,
                 background:Color.PLUS),
             _FullLineWidget(
-                text:"Advanced",
+                text:'Advanced' ,
                 background:Color.ADV),
             _IndentedLineWidget(
-                text:"A-1",
+                text:'A-1' ,
                 background:Color.A1,
                 indented:Color.ADV),
             _IndentedLineWidget(
-                text:"A-2",
+                text:'A-2' ,
                 background:Color.A2,
                 indented:Color.ADV),
             _FullLineWidget(
-                text:"Challenge",
+                text:'Challenge' ,
                 background:Color.CHALLENGE),
             _IndentedLineWidget(
-                text:"C-1",
+                text:'C-1' ,
                 background:Color.C1,
                 indented:Color.CHALLENGE),
             _IndentedLineWidget(
-                text:"C-2",
+                text:'C-2' ,
                 background:Color.C2,
                 indented:Color.CHALLENGE),
             _IndentedLineWidget(
-                text:"C-3A",
+                text:'C-3A' ,
                 background:Color.C3A,
                 indented:Color.CHALLENGE),
             _IndentedLineWidget(
-                text:"C-3B",
+                text:'C-3B' ,
                 background:Color.C3B,
                 indented:Color.CHALLENGE),
             _FullLineWidget(
-                text:"Index of All Calls",
+                text:'Index of All Calls' ,
                 background:Color.LIGHTGREY),
             _TwoItemLineWidget(
-                text1:"Practice",
-                text2:"Sequencer"),
+                text1:'Practice' ,
+                text2:'Sequencer' ),
             _TwoItemLineWidget(
-                text1:"About",
-                text2:"Settings")
+                text1:'About' ,
+                text2:'Settings' )
           ],
         );
   }

@@ -18,21 +18,21 @@
 
 */
 
-import 'package:flutter/material.dart' as FM;
-import 'package:provider/provider.dart' as PP;
+import 'package:flutter/material.dart' as fm;
+import 'package:provider/provider.dart' as pp;
 import '../title_bar.dart';
 import '../settings.dart';
 import '../color.dart';
 
 //  Settings page, only used in Portrait
-class SettingsPage extends FM.StatelessWidget {
+class SettingsPage extends fm.StatelessWidget {
 
   @override
-  FM.Widget build(FM.BuildContext context) {
-    return FM.Scaffold(
-        appBar: FM.PreferredSize(
-            preferredSize: FM.Size.fromHeight(56.0),
-            child: TitleBar(title:"Settings")
+  fm.Widget build(fm.BuildContext context) {
+    return fm.Scaffold(
+        appBar: fm.PreferredSize(
+            preferredSize: fm.Size.fromHeight(56.0),
+            child: TitleBar(title:'Settings')
         ),
         body: SettingsFrame()
     );
@@ -41,169 +41,169 @@ class SettingsPage extends FM.StatelessWidget {
 }
 
 //  Settings frame, part of both first and second landscape pages
-class SettingsFrame extends FM.StatefulWidget {
+class SettingsFrame extends fm.StatefulWidget {
 
   @override
-  FM.State<FM.StatefulWidget> createState() => _SettingsState();
+  fm.State<fm.StatefulWidget> createState() => _SettingsState();
 
 }
 
 //  Class for title above radio buttons
-class _SettingTitle extends FM.StatelessWidget {
+class _SettingTitle extends fm.StatelessWidget {
 
   final String _text;
   _SettingTitle(this._text);
 
   @override
-  FM.Widget build(FM.BuildContext context) {
-    return FM.Container(
-        alignment: FM.Alignment.centerLeft,
-        color: FM.Colors.white,
-        padding: FM.EdgeInsets.only(top: 4, left: 12),
-        child: FM.Text(_text, style: FM.TextStyle(fontWeight: FM.FontWeight.bold, fontSize: 20)));
+  fm.Widget build(fm.BuildContext context) {
+    return fm.Container(
+        alignment: fm.Alignment.centerLeft,
+        color: fm.Colors.white,
+        padding: fm.EdgeInsets.only(top: 4, left: 12),
+        child: fm.Text(_text, style: fm.TextStyle(fontWeight: fm.FontWeight.bold, fontSize: 20)));
   }
 
 }
 
 //  Class for checkbox setting
 typedef _boolChanger = void Function(bool value);
-class _SettingCheckbox extends FM.StatelessWidget {
+class _SettingCheckbox extends fm.StatelessWidget {
 
   final String name;
   final bool value;
   final _boolChanger onChanged;
 
-  _SettingCheckbox({@FM.required this.name,
-    @FM.required this.value, @FM.required this.onChanged});
+  _SettingCheckbox({@fm.required this.name,
+    @fm.required this.value, @fm.required this.onChanged});
 
   @override
-  FM.Widget build(FM.BuildContext context) {
-    return FM.Container(
-        color: FM.Colors.white,
-        margin: FM.EdgeInsets.only(bottom:3),
-        child: FM.Row (
-            children: [FM.Checkbox(
+  fm.Widget build(fm.BuildContext context) {
+    return fm.Container(
+        color: fm.Colors.white,
+        margin: fm.EdgeInsets.only(bottom:3),
+        child: fm.Row (
+            children: [fm.Checkbox(
                 value: value,
                 onChanged: onChanged
             ),
-              FM.Text(this.name,style: FM.TextStyle(fontWeight: FM.FontWeight.bold, fontSize: 20))
+              fm.Text(name,style: fm.TextStyle(fontWeight: fm.FontWeight.bold, fontSize: 20))
             ]));
   }
 
 }
 
 //  Class for radio button setting
-class _SettingRadioGroup extends FM.StatelessWidget {
+class _SettingRadioGroup extends fm.StatelessWidget {
 
   final String groupValue;
   final List<String> values;
   final void Function(String value) onChanged;
-  _SettingRadioGroup({@FM.required this.groupValue,
-    @FM.required this.values,
-    @FM.required this.onChanged});
+  _SettingRadioGroup({@fm.required this.groupValue,
+    @fm.required this.values,
+    @fm.required this.onChanged});
 
   @override
-  FM.Widget build(FM.BuildContext context) {
-    return FM.Container(
-        color: FM.Colors.white,
-        margin: FM.EdgeInsets.only(bottom:3),
-        child: FM.Row (
+  fm.Widget build(fm.BuildContext context) {
+    return fm.Container(
+        color: fm.Colors.white,
+        margin: fm.EdgeInsets.only(bottom:3),
+        child: fm.Row (
             children: values.map((v) => [
-              FM.Radio<String>(
+              fm.Radio<String>(
                   value: v,
                   groupValue: groupValue,
                   onChanged: onChanged
               ),
-              FM.Text(v)
+              fm.Text(v)
             ]).expand((e) => e).toList()
         ));
   }
 }
 
 //  Class for one dancer color drop-down
-class _SettingsColorDropDown extends FM.StatefulWidget {
+class _SettingsColorDropDown extends fm.StatefulWidget {
 
   final void Function(String value) onChanged;
   final String currentValue;
   _SettingsColorDropDown({
-    @FM.required this.onChanged,
-    @FM.required this.currentValue
+    @fm.required this.onChanged,
+    @fm.required this.currentValue
   });
   @override
-  FM.State<FM.StatefulWidget> createState() =>
+  fm.State<fm.StatefulWidget> createState() =>
       _SettingsColorDropDownState(onChanged,currentValue);
 }
 
-class _SettingsColorDropDownState extends FM.State<_SettingsColorDropDown> {
+class _SettingsColorDropDownState extends fm.State<_SettingsColorDropDown> {
 
   final void Function(String value) onChanged;
   String dropdownValue;
   _SettingsColorDropDownState(this.onChanged,this.dropdownValue);
 
-  FM.DropdownMenuItem oneItem(String name, Color c) =>
-      FM.DropdownMenuItem<String>(
+  fm.DropdownMenuItem oneItem(String name, Color c) =>
+      fm.DropdownMenuItem<String>(
           value: name,
-          child: FM.Container(
+          child: fm.Container(
             width: 100,
-              padding: FM.EdgeInsets.all(8),
+              padding: fm.EdgeInsets.all(8),
               color: c,
-              child: FM.Text(name,
-                  style: FM.TextStyle(color: name.startsWith("B") ? Color.WHITE : Color.BLACK))
+              child: fm.Text(name,
+                  style: fm.TextStyle(color: name.startsWith('B') ? Color.WHITE : Color.BLACK))
           )
       );
 
 
   @override
-  FM.Widget build(FM.BuildContext context) {
-    return FM.DropdownButton<String>(
+  fm.Widget build(fm.BuildContext context) {
+    return fm.DropdownButton<String>(
       onChanged: (String c) {
         setState(() {
           dropdownValue = c;
           onChanged(c);
         });
       },
-      underline: FM.Container( height: 0, width:0 ),
-      hint: FM.Container( height: 0, width:0 ),
-      disabledHint: FM.Container( height: 0, width:0 ),
-      icon: FM.Container( height: 0, width:0 ),
+      underline: fm.Container( height: 0, width:0 ),
+      hint: fm.Container( height: 0, width:0 ),
+      disabledHint: fm.Container( height: 0, width:0 ),
+      icon: fm.Container( height: 0, width:0 ),
       dropdownColor: Color(0),
       value: dropdownValue,
       items: [
-        oneItem("Black",Color.BLACK),
-        oneItem("Blue",Color.BLUE),
-        oneItem("Cyan",Color.CYAN),
-        oneItem("Gray",Color.GRAY),
-        oneItem("Green",Color.GREEN),
-        oneItem("Magenta",Color.MAGENTA),
-        oneItem("Orange",Color.ORANGE),
-        oneItem("Red",Color.RED),
-        oneItem("White",Color.WHITE),
-        oneItem("Yellow",Color.YELLOW)
+        oneItem('Black',Color.BLACK),
+        oneItem('Blue',Color.BLUE),
+        oneItem('Cyan',Color.CYAN),
+        oneItem('Gray',Color.GRAY),
+        oneItem('Green',Color.GREEN),
+        oneItem('Magenta',Color.MAGENTA),
+        oneItem('Orange',Color.ORANGE),
+        oneItem('Red',Color.RED),
+        oneItem('White',Color.WHITE),
+        oneItem('Yellow',Color.YELLOW)
       ],
     );
   }
 
 }
 
-class _SettingsState extends FM.State<SettingsFrame> {
+class _SettingsState extends fm.State<SettingsFrame> {
 
   @override
-  FM.Widget build(FM.BuildContext context) {
-    return PP.Consumer<Settings>(
+  fm.Widget build(fm.BuildContext context) {
+    return pp.Consumer<Settings>(
         builder: (context, settings, child) {
-          return FM.Container(
+          return fm.Container(
             color: Color.LIGHTGREY,
-              child:FM.ListView(children: [
-            _SettingTitle("Dancer Speed"),
+              child:fm.ListView(children: [
+            _SettingTitle('Dancer Speed'),
             _SettingRadioGroup(
                 groupValue: settings.speed,
-                values: ["Slow", "Normal", "Fast"],
+                values: ['Slow', 'Normal', 'Fast'],
                 onChanged: (value) {
                   setState(() { settings.speed = value; });
                 }),
 
             _SettingCheckbox(
-              name:"Loop",
+              name:'Loop',
               value: settings.loop,
               onChanged: (value) {
                 setState(() {
@@ -213,7 +213,7 @@ class _SettingsState extends FM.State<SettingsFrame> {
             ),
 
             _SettingCheckbox(
-              name:"Grid",
+              name:'Grid',
               value: settings.grid,
               onChanged: (value) {
                 setState(() {
@@ -223,7 +223,7 @@ class _SettingsState extends FM.State<SettingsFrame> {
             ),
 
             _SettingCheckbox(
-              name:"Paths",
+              name:'Paths',
               value: settings.paths,
               onChanged: (value) {
                 setState(() {
@@ -232,24 +232,24 @@ class _SettingsState extends FM.State<SettingsFrame> {
               },
             ),
 
-            _SettingTitle("Numbers"),
+            _SettingTitle('Numbers'),
             _SettingRadioGroup(
                 groupValue: settings.numbers,
-                values: ["None", "1-8", "1-4"],
+                values: ['None', '1-8', '1-4'],
                 onChanged: (value) {
                   setState(() { settings.numbers = value; });
                 }),
 
-                _SettingTitle("Dancer Colors"),
-                FM.Container(
-                    color: FM.Colors.white,
-                    margin: FM.EdgeInsets.only(bottom:3),
-                    alignment: FM.Alignment(-1.0,0.0),
-                    child: FM.Wrap (
+                _SettingTitle('Dancer Colors'),
+                fm.Container(
+                    color: fm.Colors.white,
+                    margin: fm.EdgeInsets.only(bottom:3),
+                    alignment: fm.Alignment(-1.0,0.0),
+                    child: fm.Wrap (
                       children: [
                         for (var i in [1,2,3,4])
-                          FM.Container(
-                              margin: FM.EdgeInsets.fromLTRB(10, 2, 10, 2),
+                          fm.Container(
+                              margin: fm.EdgeInsets.fromLTRB(10, 2, 10, 2),
                               child:_SettingsColorDropDown(
                                 currentValue: settings.coupleColor(i),
                                 onChanged: (String value) {
@@ -263,7 +263,7 @@ class _SettingsState extends FM.State<SettingsFrame> {
                     )),
 
             _SettingCheckbox(
-              name:"Phantoms",
+              name:'Phantoms',
               value: settings.phantoms,
               onChanged: (value) {
                 setState(() {
@@ -272,18 +272,18 @@ class _SettingsState extends FM.State<SettingsFrame> {
               },
             ),
 
-            _SettingTitle("Special Geometry"),
+            _SettingTitle('Special Geometry'),
             _SettingRadioGroup(
                 groupValue: settings.geometry,
-                values: ["None","Hexagon","Bi-Gon"],
+                values: ['None','Hexagon','Bi-Gon'],
                 onChanged: (value) {
                   setState(() { settings.geometry = value; });
                 }),
 
-            _SettingTitle("Language for Definitions"),
+            _SettingTitle('Language for Definitions'),
             _SettingRadioGroup(
                 groupValue: settings.language,
-                values: ["System","English","German","Japanese"],
+                values: ['System','English','German','Japanese'],
                 onChanged: (value) {
                   setState(() { settings.language = value; });
                 }),

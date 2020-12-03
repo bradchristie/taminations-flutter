@@ -18,8 +18,8 @@
 
 */
 
-import 'package:flutter/material.dart' as FM;
-import 'package:provider/provider.dart' as PP;
+import 'package:flutter/material.dart' as fm;
+import 'package:provider/provider.dart' as pp;
 import 'package:xml/xml.dart';
 
 import '../button.dart';
@@ -60,12 +60,12 @@ class AnimListItem {
       this.difficulty = Difficulty.NONE});
 }
 
-class AnimListPage extends FM.StatefulWidget {
+class AnimListPage extends fm.StatefulWidget {
   @override
   _AnimListPageState createState() => _AnimListPageState();
 }
 
-class _AnimListPageState extends FM.State<AnimListPage> {
+class _AnimListPageState extends fm.State<AnimListPage> {
   LevelData levelDatum;
   Future<XmlDocument> docFuture;
   Future<bool> hasDifficulty;
@@ -75,7 +75,7 @@ class _AnimListPageState extends FM.State<AnimListPage> {
   void didChangeDependencies() {
     super.didChangeDependencies();
     var router =
-        FM.Router.of(context).routerDelegate as TaminationsRouterDelegate;
+        fm.Router.of(context).routerDelegate as TaminationsRouterDelegate;
     var path = router.currentPath;
     link = path.link;
     levelDatum = LevelData.find(path.link);
@@ -83,14 +83,14 @@ class _AnimListPageState extends FM.State<AnimListPage> {
   }
 
   @override
-  FM.Widget build(FM.BuildContext context) {
-    return FM.Scaffold(
-        appBar: FM.PreferredSize(
-            preferredSize: FM.Size.fromHeight(56.0),
-            child: FM.FutureBuilder<XmlDocument>(
+  fm.Widget build(fm.BuildContext context) {
+    return fm.Scaffold(
+        appBar: fm.PreferredSize(
+            preferredSize: fm.Size.fromHeight(56.0),
+            child: fm.FutureBuilder<XmlDocument>(
                 future: docFuture,
-                builder: (FM.BuildContext context,
-                    FM.AsyncSnapshot<XmlDocument> snapshot) {
+                builder: (fm.BuildContext context,
+                    fm.AsyncSnapshot<XmlDocument> snapshot) {
                   if (snapshot.hasData) {
                     var doc = snapshot.data;
                     var title = doc
@@ -104,7 +104,7 @@ class _AnimListPageState extends FM.State<AnimListPage> {
         body: RequestHandler(
             handler: (request) {
               if (request.action == Action.ANIMATION) {
-                FM.Router.of(context).routerDelegate.setNewRoutePath(
+                fm.Router.of(context).routerDelegate.setNewRoutePath(
                     TaminationsRoute(
                         level: request("level"),
                         link: request("link"),
@@ -114,41 +114,41 @@ class _AnimListPageState extends FM.State<AnimListPage> {
               }
               if (request.action == Action.BUTTON_PRESS) {
                 if (request("button") == "Definition") {
-                  FM.Router.of(context).routerDelegate.setNewRoutePath(
+                  fm.Router.of(context).routerDelegate.setNewRoutePath(
                       TaminationsRoute(link: link, definition: true));
                 }
                 if (request("button") == "Settings") {
-                  FM.Router.of(context).routerDelegate.setNewRoutePath(
+                  fm.Router.of(context).routerDelegate.setNewRoutePath(
                       TaminationsRoute(settings: true));
                 }
               }
             },
-            child: FM.Column(
+            child: fm.Column(
                 children: [
-                  FM.Expanded(
+                  fm.Expanded(
                     child:AnimListFrame(link),
                   ),
-                  FM.Row(children: [
-                    FM.Expanded(
+                  fm.Row(children: [
+                    fm.Expanded(
                       child: Button("Definition"),
                     ),
-                    FM.Expanded(child: Button("Settings"))
+                    fm.Expanded(child: Button("Settings"))
                   ]),
                 ])
         ));
   }
 }
 
-class AnimListFrame extends FM.StatefulWidget {
+class AnimListFrame extends fm.StatefulWidget {
   final String link;
 
-  AnimListFrame(this.link) : super(key: FM.ValueKey(link));
+  AnimListFrame(this.link) : super(key: fm.ValueKey(link));
 
   @override
-  FM.State<FM.StatefulWidget> createState() => _AnimListState(link);
+  fm.State<fm.StatefulWidget> createState() => _AnimListState(link);
 }
 
-class _AnimListState extends FM.State<AnimListFrame> {
+class _AnimListState extends fm.State<AnimListFrame> {
 
   String link;
   List<AnimListItem> animListItems = [];
@@ -163,11 +163,11 @@ class _AnimListState extends FM.State<AnimListFrame> {
     docFuture = TamUtils.getXMLAsset(link);
   }
 
-  FM.Widget oneLegendWidget(String text, Color c) =>
-      FM.Expanded(
-          child: FM.Container(
-              color: c, child: FM.Center(
-              child: FM.Text(text, style: FM.TextStyle(fontSize: 20))
+  fm.Widget oneLegendWidget(String text, Color c) =>
+      fm.Expanded(
+          child: fm.Container(
+              color: c, child: fm.Center(
+              child: fm.Text(text, style: fm.TextStyle(fontSize: 20))
           )
           )
       );
@@ -227,23 +227,23 @@ class _AnimListState extends FM.State<AnimListFrame> {
   }
 
   @override
-  FM.Widget build(FM.BuildContext context) {
+  fm.Widget build(fm.BuildContext context) {
     var router =
-        FM.Router.of(context).routerDelegate as TaminationsRouterDelegate;
+        fm.Router.of(context).routerDelegate as TaminationsRouterDelegate;
     var path = router.currentPath;
-    return FM.FutureBuilder<XmlDocument>(
+    return fm.FutureBuilder<XmlDocument>(
         future: docFuture,
         builder:
-            (FM.BuildContext context, FM.AsyncSnapshot<XmlDocument> snapshot) {
+            (fm.BuildContext context, fm.AsyncSnapshot<XmlDocument> snapshot) {
           if (snapshot.hasData) {
             _loadList(snapshot.data);
-            PP.Provider.of<AnimationState>(context, listen:false).title =
+            pp.Provider.of<AnimationState>(context, listen:false).title =
                 animListItems.firstWhere((item) => item.title.isNotEmpty).title;
-            return FM.Column(children: [
-              FM.Expanded(
-                  child: FM.ListView.builder(
+            return fm.Column(children: [
+              fm.Expanded(
+                  child: fm.ListView.builder(
                       itemCount: animListItems.length,
-                      itemBuilder: (FM.BuildContext context, int index) {
+                      itemBuilder: (fm.BuildContext context, int index) {
                         var item = animListItems[index];
                         var backColor = Color.WHITE;
                         switch (item.difficulty) {
@@ -259,35 +259,35 @@ class _AnimListState extends FM.State<AnimListFrame> {
                         }
                         switch (item.celltype) {
                           case CellType.Header:
-                            return FM.Container(
-                                decoration: FM.BoxDecoration(
-                                    color: FM.Color(0xff804080),
-                                    border: FM.Border(
-                                        bottom: FM.BorderSide(
-                                            width: 1, color: FM.Colors.black))),
-                                padding: FM.EdgeInsets.only(
+                            return fm.Container(
+                                decoration: fm.BoxDecoration(
+                                    color: fm.Color(0xff804080),
+                                    border: fm.Border(
+                                        bottom: fm.BorderSide(
+                                            width: 1, color: fm.Colors.black))),
+                                padding: fm.EdgeInsets.only(
                                     left: 20.0, top: 4, bottom: 4),
-                                child: FM.Text(item.name,
-                                    style: FM.TextStyle(
-                                        fontSize: 20, color: FM.Colors.white)));
+                                child: fm.Text(item.name,
+                                    style: fm.TextStyle(
+                                        fontSize: 20, color: fm.Colors.white)));
                           case CellType.Separator:
-                            return FM.Container(
-                                decoration: FM.BoxDecoration(
-                                    color: FM.Color(0xff804080),
-                                    border: FM.Border(
-                                        bottom: FM.BorderSide(
-                                            width: 1, color: FM.Colors.black))),
-                                padding: FM.EdgeInsets.only(
+                            return fm.Container(
+                                decoration: fm.BoxDecoration(
+                                    color: fm.Color(0xff804080),
+                                    border: fm.Border(
+                                        bottom: fm.BorderSide(
+                                            width: 1, color: fm.Colors.black))),
+                                padding: fm.EdgeInsets.only(
                                     left: 20.0, top: 4, bottom: 4),
-                                child: FM.Text(item.title,
-                                    style: FM.TextStyle(
+                                child: fm.Text(item.title,
+                                    style: fm.TextStyle(
                                         color: Color.WHITE, fontSize: 20)));
                           case CellType.Indented:
                           case CellType.Plain:
-                            return  FM.Container(
-                                    child: FM.Material(
+                            return  fm.Container(
+                                    child: fm.Material(
                                       color: backColor,
-                                      child: FM.InkWell(
+                                      child: fm.InkWell(
                                         highlightColor: backColor.darker(),
                                         onTap: () {
                                           RequestHandler.of(context).processRequest(
@@ -300,29 +300,29 @@ class _AnimListState extends FM.State<AnimListFrame> {
                                                     "name": item.title,
                                                     "animnum": item.animnumber.s
                                                   }));
-                                          PP.Provider.of<AnimationState>(context, listen:false).title = item.title;
+                                          pp.Provider.of<AnimationState>(context, listen:false).title = item.title;
                                         },
-                                        child: FM.Container(
-                                          decoration: FM.BoxDecoration(
-                                              border: FM.Border(
-                                                  bottom: FM.BorderSide(
+                                        child: fm.Container(
+                                          decoration: fm.BoxDecoration(
+                                              border: fm.Border(
+                                                  bottom: fm.BorderSide(
                                                       width: 1,
-                                                      color: FM.Colors.black))),
-                                          padding: FM.EdgeInsets.only(
+                                                      color: fm.Colors.black))),
+                                          padding: fm.EdgeInsets.only(
                                               left: item.celltype == CellType.Indented
                                                   ? 40.0
                                                   : 20.0,
                                               top: 4,
                                               bottom: 4),
-                                          child: FM.Text(item.name,
-                                              style: FM.TextStyle(fontSize: 20)),
+                                          child: fm.Text(item.name,
+                                              style: fm.TextStyle(fontSize: 20)),
                                         ),
                                       ),
                                     ));
                         }
-                        return FM.Text("Dummy text for ListView.builder");
+                        return fm.Text("Dummy text for ListView.builder");
                       })),
-              if (hasDifficulty) FM.Row(
+              if (hasDifficulty) fm.Row(
                 children: [
                   oneLegendWidget("Common", Color.COMMON),
                   oneLegendWidget("Harder", Color.HARDER),
@@ -331,7 +331,7 @@ class _AnimListState extends FM.State<AnimListFrame> {
               )
             ]);
           }
-          return FM.Text("Loading...");
+          return fm.Text("Loading...");
         });
   }
 }

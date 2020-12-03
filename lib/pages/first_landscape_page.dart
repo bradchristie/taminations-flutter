@@ -18,7 +18,7 @@
 
 */
 
-import 'package:flutter/material.dart' as FM;
+import 'package:flutter/material.dart' as fm;
 import '../main.dart';
 import 'web_page.dart';
 import 'level_page.dart';
@@ -28,23 +28,23 @@ import 'calls_page.dart';
 import '../title_bar.dart';
 import '../request.dart';
 
-class FirstLandscapePage extends FM.StatefulWidget {
+class FirstLandscapePage extends fm.StatefulWidget {
 
   @override
   _FirstLandscapePageState createState() => _FirstLandscapePageState();
 
 }
 
-class _FirstLandscapePageState extends FM.State<FirstLandscapePage> {
+class _FirstLandscapePageState extends fm.State<FirstLandscapePage> {
 
-  FM.Widget rightChild = WebFrame("info/about.html");
-  String title = "Taminations";
+  fm.Widget rightChild = WebFrame('info/about.html');
+  String title = 'Taminations';
 
   @override
-  FM.Widget build(FM.BuildContext context) {
-    return FM.Scaffold(
-        appBar: FM.PreferredSize(
-            preferredSize: FM.Size.fromHeight(56.0),
+  fm.Widget build(fm.BuildContext context) {
+    return fm.Scaffold(
+        appBar: fm.PreferredSize(
+            preferredSize: fm.Size.fromHeight(56.0),
             child: TitleBar(title:title)
         ),
         body: RequestHandler(
@@ -52,11 +52,11 @@ class _FirstLandscapePageState extends FM.State<FirstLandscapePage> {
           handler: (request) {
             if (request.action == Action.PRACTICE) {
               var route = TaminationsRoute(practice: true);
-              FM.Router.of(context).routerDelegate.setNewRoutePath(route);
+              fm.Router.of(context).routerDelegate.setNewRoutePath(route);
             }
             else if (request.action == Action.SEQUENCER) {
               var route = TaminationsRoute(sequencer: true);
-              FM.Router.of(context).routerDelegate.setNewRoutePath(route);
+              fm.Router.of(context).routerDelegate.setNewRoutePath(route);
             }
             else if (request.action == Action.SETTINGS) {
               showSettingsFrame();
@@ -65,7 +65,7 @@ class _FirstLandscapePageState extends FM.State<FirstLandscapePage> {
               showAboutFrame();
             }
             else if (request.action == Action.LEVEL) {
-              showCallsFrame(request("level"));
+              showCallsFrame(request('level'));
             }
             //FM.Router.of(context).routerDelegate.setNewRoutePath(route);
           }
@@ -75,15 +75,15 @@ class _FirstLandscapePageState extends FM.State<FirstLandscapePage> {
 
   void showAboutFrame() {
     setState(() {
-      rightChild = WebFrame("info/about.html");
-      title = "Taminations";
+      rightChild = WebFrame('info/about.html');
+      title = 'Taminations';
     });
   }
 
   void showSettingsFrame() {
     setState(() {
       rightChild = SettingsFrame();
-      title = "Settings";
+      title = 'Settings';
     });
   }
 
@@ -96,18 +96,18 @@ class _FirstLandscapePageState extends FM.State<FirstLandscapePage> {
 
 }
 
-class FirstLandscapeFrame extends FM.StatelessWidget {
+class FirstLandscapeFrame extends fm.StatelessWidget {
 
-  final FM.Widget rightChild;
-  FirstLandscapeFrame({@FM.required this.rightChild});
+  final fm.Widget rightChild;
+  FirstLandscapeFrame({@fm.required this.rightChild});
 
   @override
-  FM.Widget build(FM.BuildContext context) {
-    return FM.Row(
-      crossAxisAlignment: FM.CrossAxisAlignment.stretch,
+  fm.Widget build(fm.BuildContext context) {
+    return fm.Row(
+      crossAxisAlignment: fm.CrossAxisAlignment.stretch,
       children: [
-        FM.Expanded(child:LevelFrame(), flex: 1),
-        FM.Expanded(child:rightChild, flex: 3)
+        fm.Expanded(child:LevelFrame(), flex: 1),
+        fm.Expanded(child:rightChild, flex: 3)
       ],
     );
   }

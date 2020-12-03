@@ -20,7 +20,7 @@
 
 import 'dart:math';
 
-import "package:bezier/bezier.dart" hide Bezier;
+import 'package:bezier/bezier.dart' hide Bezier;
 
 import '../extensions.dart';
 import 'matrix.dart';

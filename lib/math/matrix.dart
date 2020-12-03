@@ -86,10 +86,11 @@ class Matrix extends Matrix3 {
   }
 
     @override
-  String toString() => "[${m11.s}, ${m12.s}, ${m21.s}, ${m22.s}, ${m31.s}, ${m32.s}]";
+  String toString() => '[${m11.s}, ${m12.s}, ${m21.s}, ${m22.s}, ${m31.s}, ${m32.s}]';
 
   //  This is for rotation transforms only,
   //  or when using as a 2x2 matrix (as in SVD)
+  @override
   Matrix transpose() => Matrix(m11,m12,0,m21,m22,0);
 
   Matrix inverse() {
