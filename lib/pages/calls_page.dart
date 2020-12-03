@@ -83,6 +83,7 @@ class _CallsState extends fm.State<CallsFrame> {
   LevelData levelDatum;
   _CallsState(this.level);
   String search = '';
+  bool get showLevel => RegExp('(bms|adv|cha|all)').hasMatch(levelDatum.dir);
 
   @override
   //  Get the initial list of calls to show
@@ -103,7 +104,10 @@ class _CallsState extends fm.State<CallsFrame> {
     return fm.Column(
         children: [
           fm.TextField(
-            decoration: fm.InputDecoration.collapsed(hintText: 'Search calls'),
+            decoration: fm.InputDecoration.collapsed(
+                filled: true,
+                fillColor: Color.WHITE,
+                hintText: 'Search calls'),
             enableSuggestions: false,
             style: fm.TextStyle(fontSize: 24),
             onChanged: (value) {
@@ -163,10 +167,23 @@ class _CallsState extends fm.State<CallsFrame> {
                   name: callsSearched[index].title
               ));
             },
-            child:fm.Container(
-                alignment: fm.Alignment.centerLeft,
-                padding: fm.EdgeInsets.only(left: 10.0),
-                child: AutoSizeText(callsSearched[index].title,style: fm.TextStyle(fontSize: 20)))
+            child:fm.Row(
+              children: [
+                fm.Flexible(
+                  child: fm.Container(
+                      alignment: fm.Alignment.centerLeft,
+                      padding: fm.EdgeInsets.only(left: 10.0),
+                      child: AutoSizeText(callsSearched[index].title,style: fm.TextStyle(fontSize:
+                          20))),
+                ),
+                if (showLevel)
+                  fm.Container(
+                      alignment: fm.Alignment.topRight,
+                      padding: fm.EdgeInsets.only(top:2,right:2),
+                      child: fm.Text(LevelData.find(callsSearched[index].link).name)
+                )
+              ],
+            )
         ),
       )
     );

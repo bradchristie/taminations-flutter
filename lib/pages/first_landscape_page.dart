@@ -27,6 +27,7 @@ import 'settings_page.dart';
 import 'calls_page.dart';
 import '../title_bar.dart';
 import '../request.dart';
+import '../color.dart';
 
 class FirstLandscapePage extends fm.StatefulWidget {
 
@@ -43,6 +44,7 @@ class _FirstLandscapePageState extends fm.State<FirstLandscapePage> {
   @override
   fm.Widget build(fm.BuildContext context) {
     return fm.Scaffold(
+      backgroundColor: Color.GRAY,
         appBar: fm.PreferredSize(
             preferredSize: fm.Size.fromHeight(56.0),
             child: TitleBar(title:title)

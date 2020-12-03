@@ -38,6 +38,7 @@ import '../geometry.dart';
 
 class AnimationState extends fm.ChangeNotifier {
 
+  double beat;
   int _part;
   String title;
 

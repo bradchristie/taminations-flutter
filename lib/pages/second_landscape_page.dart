@@ -33,6 +33,7 @@ import '../request.dart';
 import '../tam_utils.dart';
 import '../title_bar.dart';
 import '../settings.dart';
+import '../color.dart';
 import 'anim_list.dart';
 import 'animation_page.dart';
 import 'settings_page.dart';
@@ -90,6 +91,7 @@ class _SecondLandscapePageState extends fm.State<SecondLandscapePage> {
       child: pp.ChangeNotifierProvider.value(
         value: painter,
         child: fm.Scaffold(
+          backgroundColor: Color.LIGHTGRAY,
             appBar: fm.PreferredSize(
                 preferredSize: fm.Size.fromHeight(56.0),
                 child: pp.Consumer<DanceAnimationPainter>(
