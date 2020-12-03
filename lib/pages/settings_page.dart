@@ -81,13 +81,16 @@ class _SettingCheckbox extends fm.StatelessWidget {
     return fm.Container(
         color: fm.Colors.white,
         margin: fm.EdgeInsets.only(bottom:3),
-        child: fm.Row (
-            children: [fm.Checkbox(
-                value: value,
-                onChanged: onChanged
-            ),
-              fm.Text(name,style: fm.TextStyle(fontWeight: fm.FontWeight.bold, fontSize: 20))
-            ]));
+        child: fm.InkWell(
+          onTap: () { onChanged(!value); },
+          child: fm.Row (
+              children: [fm.Checkbox(
+                  value: value,
+                  onChanged: onChanged
+              ),
+                fm.Text(name,style: fm.TextStyle(fontWeight: fm.FontWeight.bold, fontSize: 20))
+              ]),
+        ));
   }
 
 }
@@ -107,15 +110,21 @@ class _SettingRadioGroup extends fm.StatelessWidget {
     return fm.Container(
         color: fm.Colors.white,
         margin: fm.EdgeInsets.only(bottom:3),
-        child: fm.Row (
-            children: values.map((v) => [
-              fm.Radio<String>(
-                  value: v,
-                  groupValue: groupValue,
-                  onChanged: onChanged
-              ),
-              fm.Text(v)
-            ]).expand((e) => e).toList()
+        child: fm.Wrap (
+            children: values.map((v) =>
+                fm.InkWell(
+                  onTap: () { onChanged(v); },
+                  child: fm.Row(
+                      mainAxisSize: fm.MainAxisSize.min,
+                      children:[
+                        fm.Radio<String>(
+                            value: v,
+                            groupValue: groupValue,
+                            onChanged: onChanged
+                        ),
+                        fm.Text(v,style: fm.TextStyle(fontSize: 18))
+                      ]),
+                )).toList()
         ));
   }
 }
@@ -144,9 +153,12 @@ class _SettingsColorDropDownState extends fm.State<_SettingsColorDropDown> {
       fm.DropdownMenuItem<String>(
           value: name,
           child: fm.Container(
-            width: 100,
+            decoration: fm.BoxDecoration(
+                color: c,
+                border:fm.Border.all(color:c.darker(0.5), width: 2)),
+              width: 100,
               padding: fm.EdgeInsets.all(8),
-              color: c,
+             // color: c,
               child: fm.Text(name,
                   style: fm.TextStyle(color: name.startsWith('B') ? Color.WHITE : Color.BLACK))
           )

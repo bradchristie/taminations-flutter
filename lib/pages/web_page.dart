@@ -115,30 +115,34 @@ class _WebFrameState extends fm.State<WebFrame> {
             //  Only show if the definition has both versions
             if (hasAbbrev) fm.Row(
               children: [
-                fm.Container(
-                  child: fm.Radio<bool>(
-                    value: true,
-                    groupValue: isAbbrev,
-                    onChanged: (value) {
-                      _setAbbrev(settings, true);
-                    },
-                  ),
-                ),
                 fm.InkWell(
                     onTap: () { _setAbbrev(settings, true); },
-                    child: fm.Text('Abbreviated', style: fm.TextStyle(fontSize: 20))),
-                fm.Container(
-                  child: fm.Radio<bool>(
-                    value: false,
-                    groupValue: isAbbrev,
-                    onChanged: (value) {
-                      _setAbbrev(settings, false);
-                    },
-                  ),
-                ),
+                    child: fm.Row(
+                      children: [
+                        fm.Radio<bool>(
+                          value: true,
+                          groupValue: isAbbrev,
+                          onChanged: (value) {
+                            _setAbbrev(settings, true);
+                          },
+                        ),
+                        fm.Text('Abbreviated', style: fm.TextStyle(fontSize: 20)),
+                      ],
+                    )),
                 fm.InkWell(
                     onTap: () { _setAbbrev(settings, false); },
-                    child: fm.Text('Full', style: fm.TextStyle(fontSize: 20)))
+                    child: fm.Row(
+                      children: [
+                        fm.Radio<bool>(
+                          value: false,
+                          groupValue: isAbbrev,
+                          onChanged: (value) {
+                            _setAbbrev(settings, false);
+                          },
+                        ),
+                        fm.Text('Full', style: fm.TextStyle(fontSize: 20)),
+                      ],
+                    )),
               ]
             )
           ]);
