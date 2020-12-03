@@ -19,6 +19,8 @@
 */
 
 import 'package:flutter/material.dart' as fm;
+import 'package:auto_size_text/auto_size_text.dart';
+
 import '../level_data.dart';
 import '../main.dart';
 import '../tam_utils.dart';
@@ -164,7 +166,7 @@ class _CallsState extends fm.State<CallsFrame> {
             child:fm.Container(
                 alignment: fm.Alignment.centerLeft,
                 padding: fm.EdgeInsets.only(left: 10.0),
-                child: fm.Text(callsSearched[index].title,style: fm.TextStyle(fontSize: 20)))
+                child: AutoSizeText(callsSearched[index].title,style: fm.TextStyle(fontSize: 20)))
         ),
       )
     );

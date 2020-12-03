@@ -82,6 +82,10 @@ class Color extends fm.Color {
       Color.fromARGB(alpha, (red*f).i, (green*f).i, (blue*f).i);
   Color brighter([double f = 0.7]) => invert().darker().invert();
   Color veryBright() => brighter().brighter().brighter().brighter();
+  Color vivid() => Color.fromARGB(alpha,
+      red > 127 ? 255 : red,
+      green > 127 ? 255 : green,
+      blue > 127 ? 255 : blue);
 
 
 }

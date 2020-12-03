@@ -52,11 +52,11 @@ class AnimListItem {
 
   AnimListItem(
       {this.celltype,
-      this.title = "",
-      this.name = "",
-      this.group = "",
+      this.title = '',
+      this.name = '',
+      this.group = '',
       this.animnumber = (-1),
-      this.fullname = "",
+      this.fullname = '',
       this.difficulty = Difficulty.NONE});
 }
 
@@ -94,30 +94,30 @@ class _AnimListPageState extends fm.State<AnimListPage> {
                   if (snapshot.hasData) {
                     var doc = snapshot.data;
                     var title = doc
-                        .findAllElements("tamination")
+                        .findAllElements('tamination')
                         .first
-                        .getAttribute("title");
+                        .getAttribute('title');
                     return TitleBar(title: title, level: levelDatum.name);
                   }
-                  return TitleBar(title: "");
+                  return TitleBar(title: '');
                 })),
         body: RequestHandler(
             handler: (request) {
               if (request.action == Action.ANIMATION) {
                 fm.Router.of(context).routerDelegate.setNewRoutePath(
                     TaminationsRoute(
-                        level: request("level"),
-                        link: request("link"),
-                        call: request("title"),
-                        name: request("name"),
-                        animnum: request("animnum").i));
+                        level: request('level'),
+                        link: request('link'),
+                        call: request('title'),
+                        name: request('name'),
+                        animnum: request('animnum').i));
               }
               if (request.action == Action.BUTTON_PRESS) {
-                if (request("button") == "Definition") {
+                if (request('button') == 'Definition') {
                   fm.Router.of(context).routerDelegate.setNewRoutePath(
                       TaminationsRoute(link: link, definition: true));
                 }
-                if (request("button") == "Settings") {
+                if (request('button') == 'Settings') {
                   fm.Router.of(context).routerDelegate.setNewRoutePath(
                       TaminationsRoute(settings: true));
                 }
@@ -130,9 +130,9 @@ class _AnimListPageState extends fm.State<AnimListPage> {
                   ),
                   fm.Row(children: [
                     fm.Expanded(
-                      child: Button("Definition"),
+                      child: Button('Definition'),
                     ),
-                    fm.Expanded(child: Button("Settings"))
+                    fm.Expanded(child: Button('Settings'))
                   ]),
                 ])
         ));
@@ -154,6 +154,7 @@ class _AnimListState extends fm.State<AnimListFrame> {
   List<AnimListItem> animListItems = [];
   Future<XmlDocument> docFuture;
   var hasDifficulty = false;
+  var selectedItem = -1;
 
   _AnimListState(this.link);
 
@@ -174,16 +175,16 @@ class _AnimListState extends fm.State<AnimListFrame> {
 
   void _loadList(XmlDocument doc) async {
     animListItems = [];
-    var prevTitle = "";
-    var prevGroup = "";
+    var prevTitle = '';
+    var prevGroup = '';
     var animationsAdded = 0;
     TamUtils.tamList(doc)
-        .where((it) => !(it("display","")).startsWith("n"))
+        .where((it) => !(it('display','')).startsWith('n'))
         .forEach((tam) {
-      var tamTitle = tam("title");
-      var from = "from"; // updated later after tamxref is loaded
-      var group = tam("group","");
-      if (tam("difficulty") != null)
+      var tamTitle = tam('title');
+      var from = 'from'; // updated later after tamxref is loaded
+      var group = tam('group','');
+      if (tam('difficulty') != null)
         hasDifficulty = true;
       if (group.isNotEmpty) {
         //  Add header for new group as needed
@@ -191,38 +192,40 @@ class _AnimListState extends fm.State<AnimListFrame> {
           if (group.isBlank) {
             // Blank group, for calls with no common starting phrase
             // Add a separator unless it's the first group
-            if (animListItems.length > 0) {
+            if (animListItems.isNotEmpty) {
               animListItems.add(AnimListItem(celltype: CellType.Separator));
             }
           } else {
-            // Named group e.g. "As Couples.."
+            // Named group e.g. 'As Couples..'
             // Add a header with the group name, which starts
             // each call in the group
             animListItems
                 .add(AnimListItem(celltype: CellType.Separator, title: group));
           }
         }
-        from = tamTitle.replaceFirst(group, " ").trim();
+        from = tamTitle.replaceFirst(group, ' ').trim();
       } else if (tamTitle != prevTitle) {
         // Not a group but a different call
         // Put out a header with this call
         animListItems.add(
-            AnimListItem(celltype: CellType.Header, name: "$tamTitle from"));
+            AnimListItem(celltype: CellType.Header, name: '$tamTitle from'));
       }
       //  Build list item for this animation
       prevTitle = tamTitle;
       prevGroup = group;
-      if (from == "from") from = tam("from");
+      if (from == 'from') from = tam('from');
       animListItems.add(AnimListItem(
           celltype: group.isBlank && group.isNotEmpty
               ? CellType.Plain
               : CellType.Indented,
           title: tamTitle,
           name: from,
-          group: group.isEmpty ? "$tamTitle from" : group,
+          group: group.isEmpty ? '$tamTitle from' : group,
           animnumber: animationsAdded,
-          difficulty: tam("difficulty","0").i));
+          difficulty: tam('difficulty','0').i));
       animationsAdded += 1;
+      if (selectedItem < 0)
+        selectedItem = animListItems.length - 1;
     });
   }
 
@@ -285,20 +288,25 @@ class _AnimListState extends fm.State<AnimListFrame> {
                           case CellType.Indented:
                           case CellType.Plain:
                             return  fm.Container(
-                                    child: fm.Material(
-                                      color: backColor,
+                                child: fm.Material(
+                                      color: selectedItem == index
+                                          ? backColor.darker(0.55).vivid().darker(0.5)
+                                          : backColor,
                                       child: fm.InkWell(
                                         highlightColor: backColor.darker(),
                                         onTap: () {
+                                          setState(() {
+                                            selectedItem = index;
+                                          });
                                           RequestHandler.of(context).processRequest(
                                               Request(
                                                   action: Action.ANIMATION,
                                                   params: {
-                                                    "level": path.level,
-                                                    "link": path.link,
-                                                    "call": item.title,
-                                                    "name": item.title,
-                                                    "animnum": item.animnumber.s
+                                                    'level': path.level,
+                                                    'link': path.link,
+                                                    'call': item.title,
+                                                    'name': item.title,
+                                                    'animnum': item.animnumber.s
                                                   }));
                                           pp.Provider.of<AnimationState>(context, listen:false).title = item.title;
                                         },
@@ -315,23 +323,26 @@ class _AnimListState extends fm.State<AnimListFrame> {
                                               top: 4,
                                               bottom: 4),
                                           child: fm.Text(item.name,
-                                              style: fm.TextStyle(fontSize: 20)),
+                                              style: fm.TextStyle(
+                                                color: selectedItem == index ? Color.WHITE : Color.BLACK,
+                                                  fontSize: 20
+                                              )),
                                         ),
                                       ),
                                     ));
                         }
-                        return fm.Text("Dummy text for ListView.builder");
+                        return fm.Text('Dummy text for ListView.builder');
                       })),
               if (hasDifficulty) fm.Row(
                 children: [
-                  oneLegendWidget("Common", Color.COMMON),
-                  oneLegendWidget("Harder", Color.HARDER),
-                  oneLegendWidget("Expert", Color.EXPERT)
+                  oneLegendWidget('Common', Color.COMMON),
+                  oneLegendWidget('Harder', Color.HARDER),
+                  oneLegendWidget('Expert', Color.EXPERT)
                 ]
               )
             ]);
           }
-          return fm.Text("Loading...");
+          return fm.Text('Loading...');
         });
   }
 }

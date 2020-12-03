@@ -120,31 +120,37 @@ class _WebFrameState extends fm.State<WebFrame> {
                     value: true,
                     groupValue: isAbbrev,
                     onChanged: (value) {
-                      setState(() {
-                        settings.isAbbrev = true;
-                      //  _controller.evaluateJavascript('setAbbrev(true)');
-                      });
+                      _setAbbrev(settings, true);
                     },
                   ),
                 ),
-                fm.Text('Abbreviated', style: fm.TextStyle(fontSize: 20)),
+                fm.InkWell(
+                    onTap: () { _setAbbrev(settings, true); },
+                    child: fm.Text('Abbreviated', style: fm.TextStyle(fontSize: 20))),
                 fm.Container(
                   child: fm.Radio<bool>(
                     value: false,
                     groupValue: isAbbrev,
                     onChanged: (value) {
-                      setState(() {
-                        settings.isAbbrev = false;
-                     //   _controller.evaluateJavascript('setAbbrev(false)');
-                      });
+                      _setAbbrev(settings, false);
                     },
                   ),
                 ),
-                fm.Text('Full', style: fm.TextStyle(fontSize: 20))
+                fm.InkWell(
+                    onTap: () { _setAbbrev(settings, false); },
+                    child: fm.Text('Full', style: fm.TextStyle(fontSize: 20)))
               ]
             )
           ]);
         });
+  }
+
+  void _setAbbrev(Settings settings, bool newValue) {
+    setState(() {
+      settings.isAbbrev = newValue;
+      isAbbrev = newValue;
+      htmlFuture = _loadHtmlFromAssets();
+    });
   }
 
   //  The web page does not know how to load relative links from the assets
