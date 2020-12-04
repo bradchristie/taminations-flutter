@@ -105,23 +105,26 @@ class _SecondLandscapePageState extends fm.State<SecondLandscapePage> {
                         centerChild: fm.Column(
                           children: [
                             fm.Expanded(child: centerChild),
-                            fm.Row(
-                              children: [
-                                fm.Expanded(
-                                    child: Button('Definition',
-                                        onPressed: () {
-                                          setState(() {
-                                            rightChild = WebFrame(settings.getLanguageLink(link) + '.html');
-                                          });
-                                        })),
-                                fm.Expanded(
-                                    child: Button('Settings',
-                                        onPressed: () {
-                                          setState(() {
-                                            rightChild = SettingsFrame();
-                                          });
-                                        })),
-                              ],
+                            fm.Container(
+                              color: Color.FLOOR,
+                              child: fm.Row(
+                                children: [
+                                  fm.Expanded(
+                                      child: Button('Definition',
+                                          onPressed: () {
+                                            setState(() {
+                                              rightChild = WebFrame(settings.getLanguageLink(link) + '.html');
+                                            });
+                                          })),
+                                  fm.Expanded(
+                                      child: Button('Settings',
+                                          onPressed: () {
+                                            setState(() {
+                                              rightChild = SettingsFrame();
+                                            });
+                                          })),
+                                ],
+                              ),
                             )
                           ],
                         ),

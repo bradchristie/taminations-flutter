@@ -24,6 +24,7 @@ import 'package:provider/provider.dart' as pp;
 import '../button.dart';
 import '../pages/animation_page.dart';
 import 'sequencer_model.dart';
+import '../color.dart';
 
 class SequencerAnimationFrame extends fm.StatefulWidget {
 
@@ -44,37 +45,24 @@ class _SequencerAnimationFrameState extends fm.State<SequencerAnimationFrame> {
                   return AnimationFrame(startFormation: 'Static Square');
                 })
         ),
-        fm.Row(
-          children: [
-            fm.Expanded(
-                child: Button('Undo')
-            ),
-            fm.Expanded(
-                child: Button('Reset')
-            ),
-            fm.Expanded(
-                child: Button('Copy')
-            ),
-            fm.Expanded(
-                child: Button('Paste')
-            ),
-          ],
-        ),
-        fm.Row(
-          children: [
-            fm.Expanded(
-                child: Button('Help')
-            ),
-            fm.Expanded(
-                child: Button('Settings')
-            ),
-            fm.Expanded(
-                child: Button('Abbrev')
-            ),
-            fm.Expanded(
-                child: Button('Calls')
-            ),
-          ],
+        fm.Container(
+          color: Color.FLOOR,
+          child: fm.Row(
+            children: [
+              fm.Expanded(
+                  child: Button('Help')
+              ),
+              fm.Expanded(
+                  child: Button('Settings')
+              ),
+              fm.Expanded(
+                  child: Button('Abbrev')
+              ),
+              fm.Expanded(
+                  child: Button('Calls')
+              ),
+            ],
+          ),
         ),
       ],
     );

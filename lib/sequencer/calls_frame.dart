@@ -21,6 +21,7 @@
 import 'package:flutter/material.dart' as fm;
 import 'package:provider/provider.dart' as pp;
 import 'package:taminations/sequencer/sequencer_model.dart';
+import '../button.dart';
 
 import '../color.dart';
 
@@ -96,6 +97,25 @@ class _SequencerCallsFrameState extends fm.State<SequencerCallsFrame> {
                      key: fm.Key('Error text'),
                      style: fm.TextStyle(color:Color.RED,fontSize:30)),
                ),
+             fm.Container(
+               color: Color.FLOOR,
+               child: fm.Row(
+                 children: [
+                   fm.Expanded(
+                       child: Button('Undo')
+                   ),
+                   fm.Expanded(
+                       child: Button('Reset')
+                   ),
+                   fm.Expanded(
+                       child: Button('Copy')
+                   ),
+                   fm.Expanded(
+                       child: Button('Paste')
+                   ),
+                 ],
+               ),
+             ),
              //  For testing - a very tiny spot to tap
              //  since the tester cannot simulate keyboard Enter
                fm.Container(

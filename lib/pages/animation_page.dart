@@ -295,59 +295,62 @@ class _AnimationFrameState extends fm.State<AnimationFrame>
         ),
 
         //  Buttons to control the animation
-        fm.Row(
-            children: [
-              fm.Expanded(
-                  child: Button('Start',
-                      child: fm.Icon(fm.Icons.skip_previous),
-                      onPressed: () {
-                        setState(() {
-                          painter.goToStart();
-                        });
-                      })),
-              fm.Expanded(
-                  child:
-                  Button('Back',
-                      child: fm.Icon(fm.Icons.navigate_before),
-                      onPressed: () {
-                        setState(() {
-                          painter.stepBack();
-                        });
-                      })),
-              fm.Expanded(
-                //  Play / Pause button
-                  child: Button('Play',
-                      child: fm.Icon(painter.isRunning
-                          ? fm.Icons.pause
-                          : fm.Icons.play_arrow),
-                      onPressed: () {
-                        setState(() {
-                          //  If running, turn it off
-                          if (painter.isRunning) {
-                            painter.doPause();
-                          } else {
-                            //  Not running - start animation
-                            painter.doPlay();
-                          }
-                        });
-                      }
-                  )),
-              fm.Expanded(
-                  child: Button('Forward',
-                      child: fm.Icon(fm.Icons.navigate_next),
-                      onPressed: () {
-                        setState(() {
-                          painter.stepForward();
-                        });
-                      })),
-              fm.Expanded(child: Button('End',
-                  child: fm.Icon(fm.Icons.skip_next),
-                  onPressed: () {
-                    setState(() {
-                      painter.goToEnd();
-                    });
-                  })),
-            ])
+        fm.Container(
+          color: Color.FLOOR,
+          child: fm.Row(
+              children: [
+                fm.Expanded(
+                    child: Button('Start',
+                        child: fm.Icon(fm.Icons.skip_previous),
+                        onPressed: () {
+                          setState(() {
+                            painter.goToStart();
+                          });
+                        })),
+                fm.Expanded(
+                    child:
+                    Button('Back',
+                        child: fm.Icon(fm.Icons.navigate_before),
+                        onPressed: () {
+                          setState(() {
+                            painter.stepBack();
+                          });
+                        })),
+                fm.Expanded(
+                  //  Play / Pause button
+                    child: Button('Play',
+                        child: fm.Icon(painter.isRunning
+                            ? fm.Icons.pause
+                            : fm.Icons.play_arrow),
+                        onPressed: () {
+                          setState(() {
+                            //  If running, turn it off
+                            if (painter.isRunning) {
+                              painter.doPause();
+                            } else {
+                              //  Not running - start animation
+                              painter.doPlay();
+                            }
+                          });
+                        }
+                    )),
+                fm.Expanded(
+                    child: Button('Forward',
+                        child: fm.Icon(fm.Icons.navigate_next),
+                        onPressed: () {
+                          setState(() {
+                            painter.stepForward();
+                          });
+                        })),
+                fm.Expanded(child: Button('End',
+                    child: fm.Icon(fm.Icons.skip_next),
+                    onPressed: () {
+                      setState(() {
+                        painter.goToEnd();
+                      });
+                    })),
+              ]),
+        )
       ]),
     );
   }
