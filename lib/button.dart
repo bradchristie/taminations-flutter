@@ -39,24 +39,39 @@ class Button extends fm.StatelessWidget {
   @override
   fm.Widget build(fm.BuildContext context) =>
     fm.Padding(padding:fm.EdgeInsets.all( 4.0),
-            child:fm.ElevatedButton(child:child,
-                style: fm.ElevatedButton.styleFrom(
-                  primary: Color.HIGHLIGHT,
-                  onPrimary: fm.Colors.black,
-                  shadowColor: fm.Colors.black,
-                  elevation: 6.0,
-                  side: fm.BorderSide(color:fm.Colors.grey, width: 1),
-                ),
-                onPressed: () {
-                  if (onPressed != null) {
-                    onPressed();
-                  } else {
-                    var request = Request(
-                        action:Action.BUTTON_PRESS,
-                        params:{'button':name}
-                    );
-                    RequestHandler.of(context).processRequest(request);
-                  }
-                }));
+        child:fm.Material(
+          elevation: 4.0,
+          color: Color(0),
+          shadowColor: Color.BLACK,
+          child:fm.InkWell(
+              child:fm.Container(
+                  decoration: fm.ShapeDecoration(
+                      shape: fm.RoundedRectangleBorder(
+                        side: fm.BorderSide(color: Color.GRAY.darker()),
+                        borderRadius: fm.BorderRadius.circular(10)
+                      ),
+                      gradient: fm.LinearGradient(
+                          begin: fm.Alignment.topCenter,
+                          end: fm.Alignment.bottomCenter,
+                          colors: [Color(0xffffffff), Color(0xffa0a0a0)]
+                      )
+                  ),
+                  padding: fm.EdgeInsets.all(6.0),
+                  child: fm.Center(child: child)
+              ),
+              onTap: () {
+                if (onPressed != null) {
+                  onPressed();
+                } else {
+                  var request = Request(
+                      action:Action.BUTTON_PRESS,
+                      params:{'button':name}
+                  );
+                  RequestHandler.of(context).processRequest(request);
+                }
+              }
+          )
+        )
+  );
 
 }
