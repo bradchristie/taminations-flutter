@@ -149,7 +149,9 @@ class SecondLandscapeFrame extends fm.StatelessWidget {
       crossAxisAlignment: fm.CrossAxisAlignment.stretch,
       children: [
         fm.Expanded(child: leftChild, flex: 1),
+        fm.VerticalDivider(color: Color.BLACK, width: 2.0,),
         fm.Expanded(child: centerChild, flex: 1),
+        fm.VerticalDivider(color: Color.BLACK, width: 2.0,),
         fm.Expanded(child: rightChild, flex: 1)
       ],
     );

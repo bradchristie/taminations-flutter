@@ -109,6 +109,7 @@ class FirstLandscapeFrame extends fm.StatelessWidget {
       crossAxisAlignment: fm.CrossAxisAlignment.stretch,
       children: [
         fm.Expanded(child:LevelFrame(), flex: 1),
+        fm.VerticalDivider(color: Color.BLACK, width: 2.0,),
         fm.Expanded(child:rightChild, flex: 3)
       ],
     );
