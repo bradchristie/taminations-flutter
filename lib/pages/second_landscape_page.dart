@@ -32,7 +32,6 @@ import '../main.dart';
 import '../request.dart';
 import '../tam_utils.dart';
 import '../title_bar.dart';
-import '../settings.dart';
 import '../color.dart';
 import 'anim_list.dart';
 import 'animation_page.dart';
@@ -65,8 +64,7 @@ class _SecondLandscapePageState extends fm.State<SecondLandscapePage> {
     levelDatum = LevelData.find(path.level);
     leftChild = AnimListFrame(link);
     centerChild = AnimationFrame(link:link, animnum:animnum);
-    var settings = pp.Provider.of<Settings>(context);
-    rightChild ??= WebFrame(settings.getLanguageLink(link) + '.html');
+    rightChild ??= WebFrame(link);
 
     painter = DanceAnimationPainter();
     TamUtils.getXMLAsset(link).then((doc) {
@@ -91,46 +89,43 @@ class _SecondLandscapePageState extends fm.State<SecondLandscapePage> {
       child: pp.ChangeNotifierProvider.value(
         value: painter,
         child: fm.Scaffold(
-          backgroundColor: Color.LIGHTGRAY,
+            backgroundColor: Color.LIGHTGRAY,
             appBar: fm.PreferredSize(
                 preferredSize: fm.Size.fromHeight(56.0),
                 child: pp.Consumer<DanceAnimationPainter>(
                     builder: (context,painter2,child) =>
                         TitleBar(title: painter2.title, level: levelDatum.name)
                 )),
-            body: pp.Consumer<Settings>(
-              builder: (context, settings, child) {
-                return  SecondLandscapeFrame(
-                        leftChild: leftChild,
-                        centerChild: fm.Column(
-                          children: [
-                            fm.Expanded(child: centerChild),
-                            fm.Container(
-                              color: Color.FLOOR,
-                              child: fm.Row(
-                                children: [
-                                  fm.Expanded(
-                                      child: Button('Definition',
-                                          onPressed: () {
-                                            setState(() {
-                                              rightChild = WebFrame(settings.getLanguageLink(link) + '.html');
-                                            });
-                                          })),
-                                  fm.Expanded(
-                                      child: Button('Settings',
-                                          onPressed: () {
-                                            setState(() {
-                                              rightChild = SettingsFrame();
-                                            });
-                                          })),
-                                ],
-                              ),
-                            )
-                          ],
-                        ),
-                        rightChild: rightChild);
-              },
-            )),
+            body: SecondLandscapeFrame(
+                leftChild: leftChild,
+                centerChild: fm.Column(
+                  children: [
+                    fm.Expanded(child: centerChild),
+                    fm.Container(
+                      color: Color.FLOOR,
+                      child: fm.Row(
+                        children: [
+                          fm.Expanded(
+                              child: Button('Definition',
+                                  onPressed: () {
+                                    setState(() {
+                                      rightChild = WebFrame(link);
+                                    });
+                                  })),
+                          fm.Expanded(
+                              child: Button('Settings',
+                                  onPressed: () {
+                                    setState(() {
+                                      rightChild = SettingsFrame();
+                                    });
+                                  })),
+                        ],
+                      ),
+                    )
+                  ],
+                ),
+                rightChild: rightChild)
+        ),
       ),
     );
   }

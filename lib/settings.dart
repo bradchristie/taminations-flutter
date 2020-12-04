@@ -42,6 +42,10 @@ class Settings extends fm.ChangeNotifier {
 
   SharedPreferences prefs;
 
+  Settings() {
+    getSettings();
+  }
+
   Future<bool> getSettings() async {
     if (!_preferencesRead)
       return _getPreferences().then( (b) => true);
@@ -154,7 +158,6 @@ class Settings extends fm.ChangeNotifier {
   //  Get a language-specific link for retreiving the definition
   String getLanguageLink(String link) {
     var languageSetting = _language;
-    print('Language setting: $languageSetting');
     if (languageSetting == 'English')
       languageSetting = 'en';
     else if (languageSetting == 'German')
@@ -163,11 +166,8 @@ class Settings extends fm.ChangeNotifier {
       languageSetting = 'ja';
     else  //  System language
       languageSetting = fm.WidgetsBinding.instance.window.locale.languageCode;
-    print('link: $link   looking for definition in $languageSetting');
     if (languageSetting != 'en') {
       if (TamUtils.calldata.firstWhere((item) {
-        if (item.link == link)
-          print('Languages available: ${item.languages}');
         return item.link == link && item.languages.contains(languageSetting);
       }, orElse: () => null) != null) {
         link += '.lang-$languageSetting';

@@ -142,23 +142,21 @@ class _TaminationsAppState extends fm.State<TaminationsApp> {
   @override
   fm.Widget build(fm.BuildContext context) {
     //  Read initialization files
-//    TamUtils.init();
-    return fm.FutureBuilder<bool>(
-      future: TamUtils.init(),
-      builder: (context,snapshot) =>
-      snapshot.hasData ?
-          pp.MultiProvider(
-        providers: [
-          pp.ChangeNotifierProvider(create: (context) => Settings()),
-          pp.ChangeNotifierProvider(create: (context) => AnimationState())
-        ],
-        child: fm.MaterialApp.router(
-          title: 'Taminations',
-          routerDelegate: _routerDelegate,
-          routeInformationParser: _routeInformationParser,
-        ),
-      ) : fm.Container(),
-    );
+    return pp.MultiProvider(
+      providers: [
+        pp.ChangeNotifierProvider(create: (context) => Settings()),
+        pp.ChangeNotifierProvider(create: (context) => AnimationState())
+      ],
+      child: fm.FutureBuilder<bool>(
+        future: TamUtils.init(),
+        builder: (context,snapshot) =>
+        snapshot.hasData ?
+          fm.MaterialApp.router(
+            title: 'Taminations',
+            routerDelegate: _routerDelegate,
+            routeInformationParser: _routeInformationParser,
+          ) : fm.Container(),
+    ));
   }
 
   void setPath(TaminationsRoute path) {
@@ -184,14 +182,7 @@ class TaminationsRouterDelegate extends fm.RouterDelegate<TaminationsRoute>
 
   @override
   fm.Widget build(fm.BuildContext context) {
-    return pp.Consumer<Settings>(
-        builder: (context, settings, child) {
-          return fm.FutureBuilder<bool>(
-              future: settings.getSettings(),
-              builder: (fm.BuildContext context, fm.AsyncSnapshot<bool> snapshot) {
-                if (!snapshot.hasData)
-                  return fm.Container();
-                return fm.OrientationBuilder(
+    return fm.OrientationBuilder(
                     builder: (context, orientation) {
                       return fm.Navigator(
                           key: navigatorKey,
@@ -255,7 +246,7 @@ class TaminationsRouterDelegate extends fm.RouterDelegate<TaminationsRoute>
                             if (currentPath.definition)
                               fm.MaterialPage(
                                 key: fm.ValueKey(currentPath.link + ' definition'),
-                                child: WebPage(settings.getLanguageLink(currentPath.link) + '.html')
+                                child: WebPage(currentPath.link)
                               ),
                             if (currentPath.settings)
                               fm.MaterialPage(
@@ -276,8 +267,6 @@ class TaminationsRouterDelegate extends fm.RouterDelegate<TaminationsRoute>
                             }
                             return true;
                           });
-                    });
-              });
         });
 
   }

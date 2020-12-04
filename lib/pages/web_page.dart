@@ -31,12 +31,13 @@ import '../settings.dart';
 import '../tam_utils.dart';
 import '../title_bar.dart';
 import 'animation_page.dart';
+import '../color.dart';
 
 //  Classes to display both About and Definition
 class WebPage extends fm.StatelessWidget {
 
-  final String assetName;
-  WebPage(this.assetName);
+  final String link;
+  WebPage(this.link);
 
   @override
   fm.Widget build(fm.BuildContext context) {
@@ -44,11 +45,11 @@ class WebPage extends fm.StatelessWidget {
         appBar: fm.PreferredSize(
             preferredSize: fm.Size.fromHeight(56.0),
             child: TitleBar(
-                title: assetName.contains('about') ? 'Taminations' : 'Definition',
-                level: LevelData.find(assetName)?.name ?? ''
+                title: link.contains('about') ? 'Taminations' : 'Definition',
+                level: LevelData.find(link)?.name ?? ''
             )
         ),
-        body: WebFrame(assetName)
+        body: WebFrame(link)
     );
   }
 
@@ -56,21 +57,21 @@ class WebPage extends fm.StatelessWidget {
 
 class WebFrame extends fm.StatefulWidget {
 
-  final String assetName;
-  WebFrame(this.assetName);
+  final String link;
+  WebFrame(this.link);
 
   @override
-  _WebFrameState createState() => _WebFrameState(assetName);
+  _WebFrameState createState() => _WebFrameState(link);
 
 }
 
 
 class _WebFrameState extends fm.State<WebFrame> {
 
-  String assetName;
-  _WebFrameState(this.assetName);
-  //String _html = '';
-  String get _dir => assetName.replaceFirst(r'/.*'.r,'');
+  String link;
+  String localizedAssetName;
+  _WebFrameState(this.link);
+  String get _dir => link.replaceFirst(r'/.*'.r,'');
   bool isAbbrev = true;
   bool hasAbbrev = false;
   Future<String> htmlFuture;
@@ -78,6 +79,8 @@ class _WebFrameState extends fm.State<WebFrame> {
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
+    var settings  = pp.Provider.of<Settings>(context);
+    localizedAssetName = settings.getLanguageLink(link.replaceFirst('.html', '')) + '.html';
     htmlFuture = _loadHtmlFromAssets();
   }
 
@@ -86,66 +89,67 @@ class _WebFrameState extends fm.State<WebFrame> {
     return pp.Consumer<Settings>(
         builder: (context, settings, child) {
           isAbbrev = settings.isAbbrev;
-          return fm.Column(
-              children: [
-                fm.Expanded(
-                    child:pp.Consumer<AnimationState>(
-                        builder: (context, settings, child) {
-                          //  TODO highlight current part in definition
-                          return child;
-                        },
-                        child: fm.FutureBuilder(
-                            future: htmlFuture,
-                            builder:  (fm.BuildContext context,
-                                fm.AsyncSnapshot<String> snapshot) {
-                              if (snapshot.hasData) {
-                                return ewv.EasyWebView(
-                                    src: snapshot.data,
-                                    isHtml: true,
-                                    onLoaded: () { });
-                              }
-                              return fm.Container();
-                            }
+          return fm.FutureBuilder(
+              future:  htmlFuture,
+              builder: (context,snapshot) =>
+              snapshot.hasData ?
+              fm.Column(
+                  children: [
+                    fm.Expanded(
+                        child:pp.Consumer<AnimationState>(
+                            builder: (context, settings, child) {
+                              //  TODO highlight current part in definition
+                              return child;
+                            },
+                            child: ewv.EasyWebView(
+                                src: snapshot.data,
+                                isHtml: true,
+                                onLoaded: () { })
                         )
-                    )
-                ),
+                    ),
 
-            //  Row of radio buttons at bottom to switch between
-            //  Abbreviated and Full definition
-            //  Only show if the definition has both versions
-            if (hasAbbrev) fm.Row(
-              children: [
-                fm.InkWell(
-                    onTap: () { _setAbbrev(settings, true); },
-                    child: fm.Row(
-                      children: [
-                        fm.Radio<bool>(
-                          value: true,
-                          groupValue: isAbbrev,
-                          onChanged: (value) {
-                            _setAbbrev(settings, true);
-                          },
-                        ),
-                        fm.Text('Abbreviated', style: fm.TextStyle(fontSize: 20)),
-                      ],
-                    )),
-                fm.InkWell(
-                    onTap: () { _setAbbrev(settings, false); },
-                    child: fm.Row(
-                      children: [
-                        fm.Radio<bool>(
-                          value: false,
-                          groupValue: isAbbrev,
-                          onChanged: (value) {
-                            _setAbbrev(settings, false);
-                          },
-                        ),
-                        fm.Text('Full', style: fm.TextStyle(fontSize: 20)),
-                      ],
-                    )),
-              ]
-            )
-          ]);
+              //  Row of radio buttons at bottom to switch between
+              //  Abbreviated and Full definition
+              //  Only show if the definition has both versions
+              if (hasAbbrev) fm.Container(
+                decoration: fm.BoxDecoration(
+                    color: Color.FLOOR,
+                    border: fm.Border(top: fm.BorderSide(width: 1, color: fm.Colors.black))),                child: fm.Row(
+                  children: [
+                    fm.InkWell(
+                        onTap: () { _setAbbrev(settings, true); },
+                        child: fm.Row(
+                          children: [
+                            fm.Radio<bool>(
+                              value: true,
+                              groupValue: isAbbrev,
+                              onChanged: (value) {
+                                _setAbbrev(settings, true);
+                              },
+                            ),
+                            fm.Text('Abbreviated', style: fm.TextStyle(fontSize: 20)),
+                          ],
+                        )),
+                    fm.InkWell(
+                        onTap: () { _setAbbrev(settings, false); },
+                        child: fm.Row(
+                          children: [
+                            fm.Radio<bool>(
+                              value: false,
+                              groupValue: isAbbrev,
+                              onChanged: (value) {
+                                _setAbbrev(settings, false);
+                              },
+                            ),
+                            fm.Text('Full', style: fm.TextStyle(fontSize: 20)),
+                          ],
+                        )),
+                  ]
+                ),
+              )
+            ])
+                : fm.Container()
+          );
         });
   }
 
@@ -199,19 +203,9 @@ class _WebFrameState extends fm.State<WebFrame> {
     return myFuture; //.whenComplete(() => loadMyHTML() );
   }
 
-
-
-  //  Return a future to perform more work on the HTML once loaded
-  //  Future<void> loadMyHTML() => Future<void>.value();
-    //_controller.loadUrl( Uri.dataFromString(
-    //    _html,
-    //    mimeType: 'text/html',
-    //    encoding: Encoding.getByName('utf-8')
-    //).toString());
-
   //  Load the original HTML, then call all the routines to fix it up
   Future<String> _loadHtmlFromAssets() async {
-    var fileText = await rootBundle.loadString('assets/$assetName');
+    var fileText = await rootBundle.loadString('assets/$localizedAssetName');
     fileText = hackCSS(fileText);
     fileText = await hackImages(fileText);
     fileText = hackJavascript(fileText);

@@ -197,6 +197,7 @@ class _AnimationFrameState extends fm.State<AnimationFrame>
               painter.setLoop(settings.loop);
               painter.setPhantoms(settings.phantoms);
               painter.setGeometry(Geometry.fromString(settings.geometry).geometry);
+              painter.redraw();
               //  Dancer colors - first set values for couples
               for (var i=1; i<=6; i++) {
                 painter.setDancerColor(i * 2 - 1, Color.fromName(settings.coupleColor(i)));

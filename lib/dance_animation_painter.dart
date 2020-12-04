@@ -95,9 +95,14 @@ class DanceAnimationPainter extends fm.ChangeNotifier implements fm.CustomPainte
     addListener(() { _onDraw(); });
   }
 
+  void redraw() {
+    fm.WidgetsBinding.instance.addPostFrameCallback((_) {
+      notifyListeners();
+    });
+  }
+
   void setGridVisibility(bool show) {
     _showGrid = show;
-
   }
 
   void setNumbers(String value) {
