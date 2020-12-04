@@ -35,6 +35,10 @@ import 'a1/horseshoe_turn.dart';
 import 'a1/partner_tag.dart';
 import 'a1/quarter_in_out.dart';
 import 'a1/roll_to_a_wave.dart';
+import 'a1/split_square_thru.dart';
+import 'a1/triple_star_thru.dart';
+import 'a1/triple_trade.dart';
+import 'a1/turn_and_deal.dart';
 import 'b1/around_to_a_line.dart';
 import 'b1/bend_the_line.dart';
 import 'b1/california_twirl.dart';
@@ -167,6 +171,8 @@ abstract class CodedCall extends Call {
     '(left)?12tag'.r: (name) => HalfTag(name),
     '(reverse)?12sashay'.r: (name) => HalfSashay(name),
     'head'.r: (name) => Heads(name),
+    //  Heads Start, be careful not to match Heads Star Thru
+    '(head|side)start(?!hr).*'.r: (name) => HeadsSidesStart(name),
     'horseshoeturn'.r: (_) => HorseshoeTurn(),
 
     'center(2|4|6)'.r: (name) => Insides(name),
@@ -202,6 +208,7 @@ abstract class CodedCall extends Call {
     'slide(in|out|left|right)'.r: (name) => SlideDir(name),
     'slidethru'.r: (_) => SlideThru(),
     'splitcirculate'.r: (_) => SplitCirculate(),
+    '(left)?splitsquarethru[2-7]'.r: (name) => SplitSquareThru(name),
     '(and)?spread'.r: (name) => Spread(name),
     'squaretheset'.r: (_) => SquareTheSet(),
     '(left)?squarethru(1|2|3|4|5|6|7)?(toawave)?'.r: (name) => SquareThru(name),
@@ -214,9 +221,11 @@ abstract class CodedCall extends Call {
     '(left)?touch14'.r: (name) => TouchAQuarter(name),
     'trade'.r: (_) => Trade(),
     'trail'.r: (name) => Trailers(name),
+    'triplestarthru'.r: (_) => TripleStarThru(),
+    'tripletrade'.r: (_) => TripleTrade(),
     '(left)turnthru'.r: (name) => TurnThru(name),
     '(go)?twice'.r: (name) => Twice(name),
-
+    '(left)?turnanddeal'.r: (name) => TurnAndDeal(name),
     'u?turnback'.r: (_) => TurnBack(),
 
     'verycenters'.r: (_) => VeryCenters(),

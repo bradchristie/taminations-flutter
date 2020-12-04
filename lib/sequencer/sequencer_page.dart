@@ -20,9 +20,10 @@
 
 import 'package:flutter/material.dart' as fm;
 import 'package:provider/provider.dart' as pp;
-import 'package:taminations/pages/web_page.dart';
 
+import '../color.dart';
 import '../pages/settings_page.dart';
+import '../pages/web_page.dart';
 import '../request.dart';
 import '../title_bar.dart';
 import 'abbreviaions_model.dart';
@@ -87,7 +88,9 @@ class _SequencerPageState extends fm.State<SequencerPage> {
             child: fm.Row(
               children: [
                 fm.Expanded(child: SequencerCallsFrame()),
+                fm.VerticalDivider(color: Color.BLACK, width: 2.0,),
                 fm.Expanded(child: SequencerAnimationFrame()),
+                fm.VerticalDivider(color: Color.BLACK, width: 2.0,),
                 fm.Expanded(child: rightChild)
               ],
             ),

@@ -127,82 +127,85 @@ class _AbbreviationsFrameState extends fm.State<AbbreviationsFrame> {
                           )
                     )
                 ),
-                fm.Row(
-                  children: [
-                    fm.Expanded(
-                        child: Button('Copy', onPressed: () {
-                          model.copy();
-                          fm.ScaffoldMessenger.of(context).showSnackBar(fm.SnackBar(
-                              backgroundColor: Color.BLUE,
-                              duration: Duration(seconds: 2),
-                              content: fm.Text('Abbreviations Copied.',style: fm.TextStyle(fontSize: 20))
-                          ));
-                        })
-                    ),
-                    fm.Expanded(
-                        child: Button('Paste', onPressed: () {
-                          fm.showDialog(
-                            context: context,
-                            barrierDismissible: false,
-                            builder: (context) => fm.AlertDialog(
-                              title: fm.Text('Confirm Paste'),
-                              content: fm.Text('This will REPLACE ALL your abbreviations!'),
-                              actions: [
-                                fm.TextButton(child:fm.Text('OK'),onPressed: () {
-                                  fm.Navigator.of(context).pop();
-                                  model.paste();
-                                }),
-                                fm.TextButton(child:fm.Text('Cancel'),onPressed: () {
-                                  fm.Navigator.of(context).pop();
-                                })
-                              ],
-                            )
-                          );
-                        })
-                    ),
-                    fm.Expanded(
-                        child: Button('Clear', onPressed: () {
-                          fm.showDialog(
+                fm.Container(
+                  color: Color.FLOOR,
+                  child: fm.Row(
+                    children: [
+                      fm.Expanded(
+                          child: Button('Copy', onPressed: () {
+                            model.copy();
+                            fm.ScaffoldMessenger.of(context).showSnackBar(fm.SnackBar(
+                                backgroundColor: Color.BLUE,
+                                duration: Duration(seconds: 2),
+                                content: fm.Text('Abbreviations Copied.',style: fm.TextStyle(fontSize: 20))
+                            ));
+                          })
+                      ),
+                      fm.Expanded(
+                          child: Button('Paste', onPressed: () {
+                            fm.showDialog(
                               context: context,
                               barrierDismissible: false,
                               builder: (context) => fm.AlertDialog(
-                                title: fm.Text('Confirm Erase'),
-                                content: fm.Text('This will ERASE ALL your abbreviations!'),
-                                actions: [
-                                  fm.TextButton(child:fm.Text('OK'),onPressed: () {
-                                    fm.Navigator.of(context).pop();
-                                    model.clear();
-                                  }),
-                                  fm.TextButton(child:fm.Text('Cancel'),onPressed: () {
-                                    fm.Navigator.of(context).pop();
-                                  })
-                                ],
-                              )
-                          );
-                        })
-                    ),
-                    fm.Expanded(
-                        child: Button('Reset', onPressed: () {
-                          fm.showDialog(
-                              context: context,
-                              barrierDismissible: false,
-                              builder: (context) => fm.AlertDialog(
-                                title: fm.Text('Confirm Reset'),
+                                title: fm.Text('Confirm Paste'),
                                 content: fm.Text('This will REPLACE ALL your abbreviations!'),
                                 actions: [
                                   fm.TextButton(child:fm.Text('OK'),onPressed: () {
                                     fm.Navigator.of(context).pop();
-                                    model.defaultAbbreviations();
+                                    model.paste();
                                   }),
                                   fm.TextButton(child:fm.Text('Cancel'),onPressed: () {
                                     fm.Navigator.of(context).pop();
                                   })
                                 ],
                               )
-                          );
-                        })
-                    ),
-                  ],
+                            );
+                          })
+                      ),
+                      fm.Expanded(
+                          child: Button('Clear', onPressed: () {
+                            fm.showDialog(
+                                context: context,
+                                barrierDismissible: false,
+                                builder: (context) => fm.AlertDialog(
+                                  title: fm.Text('Confirm Erase'),
+                                  content: fm.Text('This will ERASE ALL your abbreviations!'),
+                                  actions: [
+                                    fm.TextButton(child:fm.Text('OK'),onPressed: () {
+                                      fm.Navigator.of(context).pop();
+                                      model.clear();
+                                    }),
+                                    fm.TextButton(child:fm.Text('Cancel'),onPressed: () {
+                                      fm.Navigator.of(context).pop();
+                                    })
+                                  ],
+                                )
+                            );
+                          })
+                      ),
+                      fm.Expanded(
+                          child: Button('Reset', onPressed: () {
+                            fm.showDialog(
+                                context: context,
+                                barrierDismissible: false,
+                                builder: (context) => fm.AlertDialog(
+                                  title: fm.Text('Confirm Reset'),
+                                  content: fm.Text('This will REPLACE ALL your abbreviations!'),
+                                  actions: [
+                                    fm.TextButton(child:fm.Text('OK'),onPressed: () {
+                                      fm.Navigator.of(context).pop();
+                                      model.defaultAbbreviations();
+                                    }),
+                                    fm.TextButton(child:fm.Text('Cancel'),onPressed: () {
+                                      fm.Navigator.of(context).pop();
+                                    })
+                                  ],
+                                )
+                            );
+                          })
+                      ),
+                    ],
+                  ),
                 )
               ]
           );
