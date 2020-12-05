@@ -184,11 +184,9 @@ class _AnimationFrameState extends fm.State<AnimationFrame>
 
     return pp.Consumer<DanceAnimationPainter>(
       builder: (context,painter,child) => fm.Column(children: [
-
         //  Dance area with animations
         fm.Expanded(child: pp.Consumer<Settings>(
             builder: (context, settings, child) {
-
               //  Send current settings to the painter
               painter.setGridVisibility(settings.grid);
               painter.setNumbers(settings.numbers);
@@ -197,17 +195,15 @@ class _AnimationFrameState extends fm.State<AnimationFrame>
               painter.setLoop(settings.loop);
               painter.setPhantoms(settings.phantoms);
               painter.setGeometry(Geometry.fromString(settings.geometry).geometry);
-              painter.redraw();
-              //  Dancer colors - first set values for couples
-              for (var i=1; i<=6; i++) {
-                painter.setDancerColor(i * 2 - 1, Color.fromName(settings.coupleColor(i)));
-                painter.setDancerColor(i * 2, Color.fromName(settings.coupleColor(i)));
-              }
-              //  Now values set for any individual dancers
+              //  Dancer colors - first check individual color, then couple color
               for (var i=1; i<=12; i++) {
-                var cname = settings.dancerColor(i);
-                if (cname != 'default')
-                  painter.setDancerColor(i, Color.fromName(cname));
+                final individualColor = settings.dancerColor(i);
+                if (individualColor != 'default')
+                  painter.setDancerColor(i, Color.fromName(individualColor));
+                else {
+                  final coupleColor = settings.coupleColor((i-1) ~/ 2 + 1);
+                  painter.setDancerColor(i,Color.fromName(coupleColor));
+                }
               }
 
               //  Routines to handle pointer events
@@ -269,28 +265,31 @@ class _AnimationFrameState extends fm.State<AnimationFrame>
             })),
 
         //  Slider to show current animation position
-        fm.Slider(
-          activeColor: Color.HIGHLIGHT,
-          inactiveColor: Color.HIGHLIGHT.veryBright(),
-          value: painter.totalBeats > 2.0
-              ? min(100,(painter.beat + painter.leadin) * 100.0 / painter.totalBeats)
-              : 0.0,
-          min: 0,
-          max: 100,
-          onChanged: (double value) {
-            setState(() {
-              painter.beat =
-                  (value * painter.totalBeats / 100.0) - painter.leadin;
-            });
-          },
+        fm.SliderTheme(
+          data: fm.SliderThemeData(),
+          child: fm.Slider(
+            activeColor: Color.HIGHLIGHT,
+            inactiveColor: Color.GRAY,
+            value: painter.totalBeats > 2.0
+                ? min(100,(painter.beat + painter.leadin) * 100.0 / painter.totalBeats)
+                : 0.0,
+            min: 0,
+            max: 100,
+            onChanged: (double value) {
+              setState(() {
+                painter.beat =
+                    (value * painter.totalBeats / 100.0) - painter.leadin;
+              });
+            },
+          ),
         ),
 
         //  Painter to show animation start, end, beats, and parts
         fm.CustomPaint(
           painter: _SliderTicsPainter(
             beats: painter.totalBeats,
-            parts: partstr,
-            isParts: hasParts
+            parts: painter.partstr ?? '',
+            isParts: painter.hasParts ?? false
           ),
           size: fm.Size.fromHeight(40.0),
         ),

@@ -95,14 +95,17 @@ class DanceAnimationPainter extends fm.ChangeNotifier implements fm.CustomPainte
     addListener(() { _onDraw(); });
   }
 
-  void redraw() {
+  void _redraw() {
     fm.WidgetsBinding.instance.addPostFrameCallback((_) {
       notifyListeners();
     });
   }
 
   void setGridVisibility(bool show) {
-    _showGrid = show;
+    if (show != _showGrid) {
+      _showGrid = show;
+      _redraw();
+    }
   }
 
   void setNumbers(String value) {
@@ -110,43 +113,59 @@ class DanceAnimationPainter extends fm.ChangeNotifier implements fm.CustomPainte
     _showNumbers = Dancer.NUMBERS_OFF;
     if (value == '1-8') _showNumbers = Dancer.NUMBERS_DANCERS;
     if (value == '1-4') _showNumbers = Dancer.NUMBERS_COUPLES;
-    dancers.forEach( (d) => d.showNumber = _showNumbers );
+    for (var d in dancers) {
+      if (d.showNumber != _showNumbers) {
+        d.showNumber = _showNumbers;
+        _redraw();
+      }
+    }
   }
 
   void setDancerColor(int dancerNum, Color c) {
     dancers.where((d) => (int.tryParse(d.number) ?? -1) == dancerNum).forEach((d) {
-      d.fillColor = c;
+      if (d.fillColor != c) {
+        d.fillColor = c;
+        _redraw();
+      }
     });
   }
 
   void setSpeed(String speed) {
-    switch (speed) {
-      case 'Slow' : _speed = SLOWSPEED; break;
-      case 'Moderate' : _speed = MODERATESPEED; break;
-      case 'Fast' : _speed = FASTSPEED; break;
-      default : _speed = NORMALSPEED; break;
+    final newSpeed = {'Slow':SLOWSPEED,'Moderate':MODERATESPEED,'Fast':FASTSPEED}[speed] ?? NORMALSPEED;
+    if (_speed != newSpeed) {
+      _speed = newSpeed;
+      _redraw();
     }
   }
 
   void setPaths(bool show) {
-    _showPaths = show;
+    if (_showPaths !=show) {
+      _showPaths = show;
+      _redraw();
+    }
   }
 
   void togglePath(Dancer d) {
     d.showPath = !d.showPath;
     print('Dancer $d showPath ${d.showPath}');
-    notifyListeners();
+    _redraw();
   }
 
   void setLoop(bool loop) {
-    _looping = loop;
+    if (_looping != loop) {
+      _looping = loop;
+      _redraw();
+    }
   }
 
   void setPhantoms(bool show) {
-    _showPhantoms = show;
-    dancers.forEach((d) {
-      d.hidden = d.isPhantom && !show;
-    });
+    if (_showPhantoms != show) {
+      _showPhantoms = show;
+      for (final d in dancers) {
+        d.hidden = d.isPhantom && !show;
+      }
+      _redraw();
+    }
   }
 
   void setGeometry(int g) {
