@@ -60,6 +60,7 @@ class _SequencerPageState extends fm.State<SequencerPage> {
         pp.ChangeNotifierProvider.value(value: abbreviationsModel)
       ],
       child: fm.Scaffold(
+        backgroundColor: Color.LIGHTGRAY,
           appBar: fm.PreferredSize(
               preferredSize: fm.Size.fromHeight(56.0),
               child: TitleBar(title: 'Sequencer')

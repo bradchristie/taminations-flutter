@@ -19,6 +19,7 @@
 */
 
 import 'package:taminations/sequencer/calls/a1/pass_in_out.dart';
+import 'package:taminations/sequencer/calls/a2/transfer_and.dart';
 
 import '../../extensions.dart';
 import '../../tam_utils.dart';
@@ -39,6 +40,15 @@ import 'a1/split_square_thru.dart';
 import 'a1/triple_star_thru.dart';
 import 'a1/triple_trade.dart';
 import 'a1/turn_and_deal.dart';
+import 'a2/box_counter_rotate.dart';
+import 'a2/single_wheel.dart';
+import 'a2/slide.dart';
+import 'a2/slip.dart';
+import 'a2/slither.dart';
+import 'a2/spin_the_windmill.dart';
+import 'a2/swing.dart';
+import 'a2/zig.dart';
+import 'a2/zig_zag.dart';
 import 'b1/around_to_a_line.dart';
 import 'b1/bend_the_line.dart';
 import 'b1/california_twirl.dart';
@@ -132,6 +142,7 @@ abstract class CodedCall extends Call {
     'beau'.r: (_) => Beaus(),
     'belle'.r: (_) => Belles(),
     'bendtheline'.r: (_) => BendTheLine(),
+    'boxcounterrotate'.r: (_) => BoxCounterRotate(),
     'boy'.r: (_) => Boys(),
     'boxthegnat'.r: (_) => BoxTheGnat(),
     'bracethru'.r: (_) => BraceThru(),
@@ -205,8 +216,13 @@ abstract class CodedCall extends Call {
     'samesex(es)?'.r: (name) => SameSex(name),
     'separate'.r: (_) => Separate(),
     'side'.r: (name) => Sides(name),
+    '(left)?singlewheel'.r: (name) => SingleWheel(name),
+    'slide'.r: (_) => Slide(),
     'slide(in|out|left|right)'.r: (name) => SlideDir(name),
     'slidethru'.r: (_) => SlideThru(),
+    'slip'.r: (_) => Slip(),
+    'slither'.r: (_) => Slither(),
+    '(left)?spinthewindmill(left|right|in|out|forward)'.r: (name) => SpinTheWindmill(name),
     'splitcirculate'.r: (_) => SplitCirculate(),
     '(left)?splitsquarethru[2-7]'.r: (name) => SplitSquareThru(name),
     '(and)?spread'.r: (name) => Spread(name),
@@ -214,6 +230,7 @@ abstract class CodedCall extends Call {
     '(left)?squarethru(1|2|3|4|5|6|7)?(toawave)?'.r: (name) => SquareThru(name),
     'step'.r: (_) => Step(),
     'sweep14'.r: (_) => SweepAQuarter(),
+    'swing'.r: (_) => Swing(),
 
     'tagtheline'.r: (_) => TagTheLine(),
     '(left)?34tag(theline)?'.r : (name) => ThreeQuartersTag(name),
@@ -221,6 +238,7 @@ abstract class CodedCall extends Call {
     '(left)?touch14'.r: (name) => TouchAQuarter(name),
     'trade'.r: (_) => Trade(),
     'trail'.r: (name) => Trailers(name),
+    'transferand(.+)'.r: (name) => TransferAnd(name),
     'triplestarthru'.r: (_) => TripleStarThru(),
     'tripletrade'.r: (_) => TripleTrade(),
     '(left)turnthru'.r: (name) => TurnThru(name),
@@ -238,8 +256,11 @@ abstract class CodedCall extends Call {
     '(reverse)?wheelaround'.r: (name) => WheelAround(name),
     '(and)?(the)?other?.+'.r: (name) => While(name),
     'while(the)?(others?)?.+'.r: (name) => While(name),
+    '_windmill(in|out|left|right|forward)'.r: (name) => WindmillX(name),
 
-    'zing|zoom'.r:(name) => Zoom(name)
+    'z[ai]g'.r: (name) => Zig(name),
+    'z[ai]gz[ai]g'.r: (name) => ZigZag(name),
+    'zing|zoom'.r: (name) => Zoom(name)
 
   };
 
