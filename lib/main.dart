@@ -22,13 +22,13 @@ import 'package:flutter/foundation.dart' as ff;
 import 'package:flutter/material.dart' as fm;
 import 'package:provider/provider.dart' as pp;
 import 'package:taminations/pages/practice_page.dart';
-import 'package:taminations/pages/start_practice.dart';
+import 'package:taminations/pages/start_practice_page.dart';
 
 import 'pages/calls_page.dart';
 import 'extensions.dart';
 import 'pages/level_page.dart';
 import 'level_data.dart';
-import 'pages/anim_list.dart';
+import 'pages/anim_list_page.dart';
 import 'pages/animation_page.dart';
 import 'pages/first_landscape_page.dart';
 import 'pages/settings_page.dart';

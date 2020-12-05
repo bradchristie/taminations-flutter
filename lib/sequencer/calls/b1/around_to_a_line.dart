@@ -30,7 +30,7 @@ class AroundToALine extends Action {
       ctx.matchStandardFormation();
       for (var d in ctx.dancers)
         d.data.active = true;
-      var norm = TamUtils.normalizeCall(name);
+      final norm = TamUtils.normalizeCall(name);
       if (norm.contains('1andcomeintothemiddle' ))
         await ctx.applyCalls('Around One and Come Into the Middle' );
       else if (norm.contains('1toaline' ))

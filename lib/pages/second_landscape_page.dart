@@ -33,7 +33,7 @@ import '../request.dart';
 import '../tam_utils.dart';
 import '../title_bar.dart';
 import '../color.dart';
-import 'anim_list.dart';
+import 'anim_list_page.dart';
 import 'animation_page.dart';
 import 'settings_page.dart';
 import 'web_page.dart';

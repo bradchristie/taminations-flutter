@@ -22,17 +22,15 @@ import '../common.dart';
 
 class AsCouples extends FourDancerConcept {
 
-  @override
-  var level = LevelData.A1;
-  @override
-  var conceptName = 'As Couples';
+  @override var level = LevelData.A1;
+  @override var conceptName = 'As Couples';
   AsCouples(String name) : super(name);
 
   @override
   List<List<Dancer>> dancerGroups(CallContext ctx) =>
       ctx.dancers.where((d) => d.data.beau)
       .map((d) {
-        var d2 = d.data.partner ?? thrower(CallError('No partner for $d'));
+        final d2 = d.data.partner ?? thrower(CallError('No partner for $d'));
         if (!ctx.isInCouple(d,d2))
           throw CallError('$d and $d2 are not a Couple');
         return [d,d2];
@@ -40,8 +38,8 @@ class AsCouples extends FourDancerConcept {
 
   @override
   Vector startPosition(List<Dancer> group) {
-    var d = group.first;
-    var d2 = group.second;
+    final d = group.first;
+    final d2 = group.second;
     if (d.location.length.isAbout(d2.location.length))
       return (d.location+d2.location).scale(0.5, 0.5);
     //  If couple is on axis, probably tidal formation
