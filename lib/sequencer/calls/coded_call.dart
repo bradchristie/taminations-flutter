@@ -72,6 +72,10 @@ import 'b2/touch_a_quarter.dart';
 import 'b2/trade.dart';
 import 'b2/wheel_around.dart';
 import 'b2/zoom.dart';
+import 'c1/anything_chain_thru.dart';
+import 'c1/butterfly.dart';
+import 'c1/cast_back.dart';
+import 'c1/circle_by.dart';
 import 'c1/counter_rotate.dart';
 import 'call.dart';
 import 'common/adjust.dart';
@@ -132,6 +136,9 @@ abstract class CodedCall extends Call {
     'aceydeucey'.r: (_) => AceyDeucey(),
     'adjustto.*'.r: (name) => Adjust(name),
     'and'.r: (_) => And(),
+    //  Anything Chain Thru should not match Square Chain Thru or others
+    '*.(?<!(cross|eight|peel|scatter|spin|square|swing|tag))chainthru'.r:
+        (name) => AnythingChainThru(name),
     'around1andcomeintothemiddle'.r: (_) =>
         AroundToALine('Around One and Come Into the Middle'),
     'around1toaline'.r: (_) => AroundToALine('Around One to a Line'),
@@ -146,12 +153,15 @@ abstract class CodedCall extends Call {
     'boy'.r: (_) => Boys(),
     'boxthegnat'.r: (_) => BoxTheGnat(),
     'bracethru'.r: (_) => BraceThru(),
+    'butterfly.*'.r: (name) => Butterfly(name),
 
     'californiatwirl'.r: (_) => CaliforniaTwirl(),
     'castashadowcenter(go|cast)?34'.r: (name) => CastAShadow(name),
+    '(cross)castback'.r: (name) => CastBack(name),
     'castoff34'.r: (_) => CastOffThreeQuarters(),
     'center'.r: (_) => Centers(),
     'center6'.r: (_) => CenterSix(),
+    'circleby.*'.r: (name) => CircleBy(name),
     'circulate'.r: (_) => Circulate(),
     '(cross)?cloverand(\\w.*)'.r: (name) => CloverAnd(name),
     'cloverleaf'.r: (_) => Cloverleaf(),
