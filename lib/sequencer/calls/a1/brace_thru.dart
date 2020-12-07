@@ -23,7 +23,7 @@ import '../common.dart';
 class BraceThru extends Action {
 
   @override
-  var level = LevelData.A1;
+  final level = LevelData.A1;
   BraceThru() : super('Brace Thru');
 
   @override
@@ -34,14 +34,14 @@ class BraceThru extends Action {
       await ctx2.applyCalls('Pass Thru');
       //  Do some checking that we can finish Brace Thru from here
       ctx2.analyze();
-      for (var d in ctx2.dancers) {
-        var partner = d.data.partner ?? thrower(CallError('Dancer $d cannot Brace Thru'));
+      for (final d in ctx2.dancers) {
+        final partner = d.data.partner ?? thrower(CallError('Dancer $d cannot Brace Thru'));
         if (d.gender == partner.gender)
           throw CallError('Same-sex dancers cannot Brace Thru');
       }
       //  Finish the call
-      var normal = ctx2.dancers.where((d) => d.data.beau ^ (d.gender == Gender.GIRL));
-      var sashay = ctx2.dancers.where((d) => d.data.beau ^ (d.gender == Gender.BOY));
+      final normal = ctx2.dancers.where((d) => d.data.beau ^ (d.gender == Gender.GIRL));
+      final sashay = ctx2.dancers.where((d) => d.data.beau ^ (d.gender == Gender.BOY));
       if (normal.isNotEmpty) {
         await ctx2.subContext(normal, (ctx3) async {
           await ctx3.applyCalls('Courtesy Turn');

@@ -40,8 +40,6 @@ import 'sequencer/sequencer_page.dart';
 
 ///  Main routine
 void main() {
-  //  Wrap the Settings around the top of the program
-  //  so everybody has access to them
   fm.runApp(TaminationsApp());
 }
 
@@ -141,12 +139,14 @@ class _TaminationsAppState extends fm.State<TaminationsApp> {
 
   @override
   fm.Widget build(fm.BuildContext context) {
-    //  Read initialization files
+    //  Wrap the Settings around the top of the program
+    //  so everybody has access to them
     return pp.MultiProvider(
       providers: [
         pp.ChangeNotifierProvider(create: (context) => Settings()),
         pp.ChangeNotifierProvider(create: (context) => AnimationState())
       ],
+        //  Read initialization files
       child: fm.FutureBuilder<bool>(
         future: TamUtils.init(),
         builder: (context,snapshot) =>

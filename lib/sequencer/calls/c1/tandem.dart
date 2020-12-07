@@ -20,31 +20,32 @@
 
 import '../common.dart';
 
-class AsCouples extends FourDancerConcept {
+class Tandem extends FourDancerConcept {
 
-  @override final level = LevelData.A1;
-  @override final conceptName = 'As Couples';
-  AsCouples(String name) : super(name);
+  @override final level = LevelData.C1;
+  @override final conceptName = 'Tandem';
+  Tandem(String name) : super(name);
 
+  //  Build list of (leader, trailer) tandems
   @override
   List<List<Dancer>> dancerGroups(CallContext ctx) =>
-      ctx.dancers.where((d) => d.data.beau)
-      .map((d) {
-        final d2 = d.data.partner ?? thrower(CallError('No partner for $d'));
-        if (!ctx.isInCouple(d,d2))
-          throw CallError('$d and $d2 are not a Couple');
+      ctx.dancers.where((d) => d.data.leader).map((d) {
+        final d2 = ctx.dancerInBack(d) ?? thrower(CallError('No tandem for dancer $d'));
+        if (!d2.data.trailer)
+          throw CallError('Dancers $d and $d2 are not a Tandem');
         return [d,d2];
       });
 
   @override
   Vector startPosition(List<Dancer> group) {
-    final d = group.first;
-    final d2 = group.second;
+    final d = group[0];
+    final d2 = group[1];
     if (d.location.length.isAbout(d2.location.length))
-      return (d.location+d2.location).scale(0.5, 0.5);
-    //  If couple is on axis, probably tidal formation
+      //  If tandem is straddling an axis, put single dancer on axis
+      return (d.location + d2.location).scale(0.5, 0.5);
+    //  If tandem is on an axis (uncommon), probably tight column formation
     //  put single dancer in between
-    else if (d.isTidal && d2.isTidal)
+    else if (d.isOnAxis && d2.isOnAxis)
       return (d.location + d2.location).scale(0.5, 0.5);
     //  Otherwise set to position of the two dancers nearest origin
     else if (d.location.length < d2.location.length)
@@ -56,19 +57,25 @@ class AsCouples extends FourDancerConcept {
 
   @override
   Vector computeLocation(Dancer d, Movement m, int mi, double beat, int groupIndex) {
-    //  Position individual dancers 0.5 units left and right of the concept dancer
-    final pos = m.translate(beat).location;
+    //  Position tandem dancers 0.5 units in front and behind concept dancer
     final offset = 0.5;
-    final isBeau = groupIndex == 0;
+    final isLeader = groupIndex == 0;
+    final pos = m.translate(beat).location;
     final ang = m.rotate(beat).angle;
-    final v = Vector(offset,0.0).rotate(ang).rotate(isBeau ? pi/2.0 : -pi/2.0);
+    final v = Vector(offset,0.0).rotate(ang).rotate(isLeader ? 0.0 : pi);
     return pos + v;
   }
 
   @override
   void postAdjustment(CallContext ctx, Dancer cd, List<Dancer> group) {
-    group.first.path.addhands(Hands.GRIPRIGHT);
-    group.second.path.addhands(Hands.GRIPLEFT);
+    //  If there is space, spread out the tandem a bit
+    final leader = group[0];
+    final trailer = group[1];
+    if ((ctx.dancerInFront(leader)?.distanceTo(leader) ?? 2.0) > 1.0 &&
+        (ctx.dancerInBack(trailer)?.distanceTo(trailer) ?? 2.0) > 1.0) {
+      leader.path.skewFromEnd(0.5, 0.0);
+      trailer.path.skewFromEnd(-0.5, 0.0);
+    }
   }
 
 }

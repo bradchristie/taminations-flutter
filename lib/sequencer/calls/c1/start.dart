@@ -20,14 +20,25 @@
 
 import '../common.dart';
 
-class HorseshoeTurn extends Action {
+class Start extends Action {
 
-  @override final level = LevelData.A1;
-  HorseshoeTurn() : super('Horseshoe Turn');
+  @override final level = LevelData.C1;
+  Start(String name) : super(name);
 
   @override
   Future<void> perform(CallContext ctx, [int stackIndex = 0]) async {
-    await ctx.applyCalls('Clover and Partner Tag');
+    final finishCall = name.replaceFirst('^start\\s+'.ri,'');
+    //  There has to be a subset of dancers selected to Start
+    if (ctx.actives.length >= ctx.dancers.length)
+      throw CallError('Who is supposed to start?');
+    //  If the actives are facing, assume that the first part is Pass Thru
+    final startCall = ctx.actives.every((d) => ctx.dancerFacing(d)?.isActive ?? false)
+    //  Otherwise for now we will try a Trade
+        ? 'Pass Thru' : 'Trade';
+    await ctx.applyCalls(startCall);
+    for (final d in ctx.dancers)
+      d.data.active = true;
+    await ctx.applyCalls('Finish $finishCall');
   }
 
 }

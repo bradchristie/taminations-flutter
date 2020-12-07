@@ -290,7 +290,7 @@ class _AnimListState extends fm.State<AnimListFrame> {
                             return  fm.Container(
                                 child: fm.Material(
                                       color: selectedItem == index
-                                          ? backColor.darker(0.55).vivid().darker(0.5)
+                                          ? Color.BLUE
                                           : backColor,
                                       child: fm.InkWell(
                                         highlightColor: backColor.darker(),
@@ -324,7 +324,9 @@ class _AnimListState extends fm.State<AnimListFrame> {
                                               bottom: 4),
                                           child: fm.Text(item.name,
                                               style: fm.TextStyle(
-                                                color: selectedItem == index ? Color.WHITE : Color.BLACK,
+                                                color: selectedItem == index
+                                                    ? backColor
+                                                    : Color.BLACK,
                                                   fontSize: 20
                                               )),
                                         ),

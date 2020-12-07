@@ -20,20 +20,25 @@
 
 import '../common.dart';
 
-class TurnAndDeal extends Action {
+class ToAWave extends Action {
 
-  @override final level = LevelData.A1;
-  TurnAndDeal(String name) : super(name);
+  @override final level = LevelData.C1;
+  ToAWave() : super('to a Wave');
 
   @override
-  Path performOne(Dancer d, CallContext ctx) {
-    final dir = ctx.tagDirection(d);
-    final amount = ctx.isTidal() ? 1.5 : 1.0;
-    final dist = !ctx.isTidal() ? 2.0 :
-    d.data.center ? 1.5 : 0.5;
-    final sign = (dir=='Left') ? 1.0 : -1.0;
-    return TamUtils.getMove('U-Turn $dir',
-        skew:[sign*(name.startsWith('Left') ? amount : -amount),dist*sign].v);
+  Future<void> perform(CallContext ctx, [int stackIndex = 0]) async {
+    if (ctx.callstack.length < 2)
+      throw CallError('What to a Wave?');
+    //  Assume the last move is an Extend from a wave
+    for (final d in ctx.actives)
+      d.path.pop();
+    //  Now let's see if they are in waves
+    ctx.analyze();
+    for (final d in ctx.actives) {
+      if (!ctx.isInWave(d))
+        throw CallError('Unable to end in Wave');
+    }
   }
+
 
 }

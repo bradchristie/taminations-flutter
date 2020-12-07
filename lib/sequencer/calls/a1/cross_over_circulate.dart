@@ -22,8 +22,7 @@ import '../common.dart';
 
 class CrossOverCirculate extends Action {
 
-  @override
-  final level = LevelData.A1;
+  @override final level = LevelData.A1;
   CrossOverCirculate() : super('Cross Over Circulate');
 
   //  All 8-dancer versions are coded in XML

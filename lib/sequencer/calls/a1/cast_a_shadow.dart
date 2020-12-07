@@ -24,19 +24,19 @@ import '../common.dart';
 //  All the normal Cast a Shadow formations are handled in the xml animations
 class CastAShadow extends Action {
 
-  @override var level = LevelData.A1;
+  @override final level = LevelData.A1;
   CastAShadow(String name) : super(name);
 
   @override
   Future<void> perform(CallContext ctx, [int stackIndex = 0]) async {
     if (ctx.actives.length == 8 &&
         TamUtils.normalizeCall(name).matches('castashadowcenter.*34'.r)) {
-      var inCenters = ctx.dancers.where((d) => d.data.center && d.data.trailer);
+      final inCenters = ctx.dancers.where((d) => d.data.center && d.data.trailer);
       if (inCenters.length != 2)
         throw CallError('Need exactly 2 trailing centers to go 3/4.');
       await ctx.applyCalls('Cast a Shadow');
-      var castDir = inCenters.first.isCenterLeft ? 'Left' : 'Right';
-      for (var d in inCenters) {
+      final castDir = inCenters.first.isCenterLeft ? 'Left' : 'Right';
+      for (final d in inCenters) {
         d.path =  TamUtils.getMove('Forward 2') +
             TamUtils.getMove('Cast $castDir') +
             TamUtils.getMove('Forward 2');

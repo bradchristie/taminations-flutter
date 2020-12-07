@@ -75,7 +75,7 @@ import 'c1/anything_chain_thru.dart';
 import 'c1/butterfly.dart';
 import 'c1/cast_back.dart';
 import 'c1/circle_by.dart';
-import 'c1/concentric_concept.dart';
+import 'c1/concentric.dart';
 import 'c1/counter_rotate.dart';
 import 'c1/finish.dart';
 import 'c1/ignore.dart';
@@ -84,8 +84,21 @@ import 'c1/little.dart';
 import 'c1/make_magic.dart';
 import 'c1/mini_busy_but.dart';
 import 'c1/o_formation.dart';
+import 'c1/phantom.dart';
 import 'c1/ramble.dart';
 import 'c1/scoot_and_ramble.dart';
+import 'c1/siamese.dart';
+import 'c1/squeeze.dart';
+import 'c1/squeeze_the_galaxy.dart';
+import 'c1/squeeze_the_hourglass.dart';
+import 'c1/start.dart';
+import 'c1/stretch.dart';
+import 'c1/swing_and_circle.dart';
+import 'c1/switch_the_line.dart';
+import 'c1/tag_back.dart';
+import 'c1/tandem.dart';
+import 'c1/three_by_two_acey_deucey.dart';
+import 'c1/to_a_wave.dart';
 import 'call.dart';
 import 'common/adjust.dart';
 import 'common/and.dart';
@@ -174,7 +187,7 @@ abstract class CodedCall extends Call {
     'circulate'.ri: (_) => Circulate(),
     '(cross)?cloverand(\\w.*)'.ri: (name) => CloverAnd(name),
     'cloverleaf'.ri: (_) => Cloverleaf(),
-    'concentric.+'.ri: (name) => ConcentricConcept(name),
+    'concentric.+'.ri: (name) => Concentric(name),
     'counterrotate'.ri: (_) => CounterRotate(),
     'courtesyturn'.ri: (_) => CourtesyTurn(),
     'cross'.ri: (_) => Cross(),
@@ -233,6 +246,7 @@ abstract class CodedCall extends Call {
     'partnertag'.ri: (_) => PartnerTag(),
     'pass(in|out)'.ri: (name) => PassInOut(name),
     '(left)?passthru'.ri: (name) => PassThru(name),
+    'phantom.+'.ri: (name) => Phantom(name),
     'point'.ri: (_) => Points(),
     'promenadehome'.ri: (name) => PromenadeHome(name),
     'swing(your)?corner(and)?promenade(home)?'.ri: (name) => PromenadeHome(name),
@@ -251,6 +265,7 @@ abstract class CodedCall extends Call {
     'samesex(es)?'.ri: (name) => SameSex(name),
     'scootandramble'.ri: (_) => ScootAndRamble(),
     'separate'.ri: (_) => Separate(),
+    'siamese.+'.ri: (name) => Siamese(name),
     'side'.ri: (name) => Sides(name),
     '(left)?singlewheel'.ri: (name) => SingleWheel(name),
     'slide'.ri: (_) => Slide(),
@@ -263,13 +278,26 @@ abstract class CodedCall extends Call {
     '(left)?splitsquarethru[2-7]'.ri: (name) => SplitSquareThru(name),
     '(and)?spread'.ri: (name) => Spread(name),
     'squaretheset'.ri: (_) => SquareTheSet(),
+    'squeeze'.ri: (_) => Squeeze(),
+    'squeezethegalaxy'.ri: (_) => SqueezeTheGalaxy(),
+    'squeezethehourglass'.ri: (_) => SqueezeTheHourglass(),
     '(left)?squarethru(1|2|3|4|5|6|7)?(toawave)?'.ri: (name) => SquareThru(name),
+    //  Make sure Start does not match Star
+    'Start.+'.r: (name) => Start(name),
     'step'.ri: (_) => Step(),
+    //  Stretch not Stretched
+    'stretch(?!ed).+'.ri: (name) => Stretch(name),
     'sweep14'.ri: (_) => SweepAQuarter(),
     'swing'.ri: (_) => Swing(),
+    'swingandcircle(12|34)'.ri: (name) => SwingAndCircle(name),
+    'switchtheline'.ri: (_) => SwitchTheLine(),
 
+    '(left)?tagback(toawave)?'.r: (name) => TagBack(name),
     'tagtheline'.ri: (_) => TagTheLine(),
+    'tandem.+'.ri: (name) => Tandem(name),
+    '32aceydeucey'.ri: (_) => ThreeByTwoAceyDeucey(),
     '(left)?34tag(theline)?'.r : (name) => ThreeQuartersTag(name),
+    'toawave'.ri: (_) => ToAWave(),
     '(left)?touch'.ri: (name) => Touch(name),
     '(left)?touch14'.ri: (name) => TouchAQuarter(name),
     'trade'.ri: (_) => Trade(),

@@ -22,8 +22,7 @@ import '../common.dart';
 
 class DoubleStarThru extends Action {
 
-  @override
-  final level = LevelData.A1;
+  @override final level = LevelData.A1;
   DoubleStarThru() : super('Double Star Thru');
 
   @override

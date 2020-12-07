@@ -22,8 +22,7 @@ import '../common.dart';
 
 class TripleTrade extends Action {
 
-  @override
-  final level = LevelData.A1;
+  @override final level = LevelData.A1;
   TripleTrade() : super('Triple Trade');
 
   @override

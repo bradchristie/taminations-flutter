@@ -190,9 +190,11 @@ extension TamList<E> on List<E> {
 }
 
 extension TamDoubleList on List<double> {
-
   double sum() => fold(0.0, (a, b) => a+b);
+}
 
+extension TamListList<E> on List<List<E>> {
+  List<E> flatten() => fold([], (previousValue, element) => previousValue + element);
 }
 
 extension TamXmlElement on XmlElement {

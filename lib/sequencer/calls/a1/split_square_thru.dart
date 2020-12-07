@@ -22,8 +22,7 @@ import '../common.dart';
 
 class SplitSquareThru extends Action {
 
-  @override
-  final level = LevelData.A1;
+  @override final level = LevelData.A1;
   SplitSquareThru(String name) : super(name);
 
   @override

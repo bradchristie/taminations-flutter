@@ -36,8 +36,7 @@ class RollTo extends Action {
 
 class RollToAWave extends Action {
 
-  @override
-  final level = LevelData.A1;
+  @override final level = LevelData.A1;
   RollToAWave(String name) : super(name);
 
   @override

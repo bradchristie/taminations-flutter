@@ -20,14 +20,14 @@
 
 import '../common.dart';
 
-class ConcentricConcept extends FourDancerConcept {
+class Concentric extends FourDancerConcept {
 
   @override final level = LevelData.C1;
   @override final conceptName = 'Concentric';
   final _dancerLocations = <String,List<Vector>>{};
   final _dancerShifts = <String,List<Vector>>{};
   var _minDistance = 10.0;
-  ConcentricConcept(String name) : super(name);
+  Concentric(String name) : super(name);
 
   @override
   List<List<Dancer>> dancerGroups(CallContext ctx) =>

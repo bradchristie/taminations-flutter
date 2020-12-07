@@ -22,8 +22,7 @@ import '../common.dart';
 
 class Cross extends Action {
 
-  @override
-  var level = LevelData.A1;
+  @override final level = LevelData.A1;
   Cross() : super('Cross');
 
   var crossCount  = 0;
@@ -50,7 +49,7 @@ class Cross extends Action {
     for (var it in ctx.actives) {
       //  Dancers must be facing opposite directions
       //  and facing diagonal to each other
-      var a = d.angleToDancer(it).abs();
+      final a = d.angleToDancer(it).abs();
       if (d.tx.angle.angleDiff(it.tx.angle).abs().isAbout(pi) &&
           !a.isAround(0.0) &&
           !a.isAround(pi/2) &&
@@ -68,10 +67,10 @@ class Cross extends Action {
       return Path();
     //  Now compute the X and Y values to travel
     //  The standard has x distance = 2 and y distance = 2
-    var a = d.angleToDancer(d2);
-    var dist = d.distanceTo(d2);
-    var x = dist * cos(a);
-    var y = dist * sin(a.abs());
+    final a = d.angleToDancer(d2);
+    final dist = d.distanceTo(d2);
+    final x = dist * cos(a);
+    final y = dist * sin(a.abs());
     crossCount += 1;
     return TamUtils.getMove((a > 0) ? 'Cross Left' : 'Cross Right',scale:[x/2.0,y/2.0].v);
   }

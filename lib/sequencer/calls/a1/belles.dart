@@ -23,8 +23,7 @@ import '../common.dart';
 
 class Belles extends FilterActives {
 
-  @override
-  var level = LevelData.A1;
+  @override final level = LevelData.A1;
   Belles() : super('Belles');
 
   @override

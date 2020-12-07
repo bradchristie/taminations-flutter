@@ -20,20 +20,15 @@
 
 import '../common.dart';
 
-class TurnAndDeal extends Action {
+class TagBack extends Action {
 
-  @override final level = LevelData.A1;
-  TurnAndDeal(String name) : super(name);
+  @override final level = LevelData.C1;
+  TagBack(String name) : super(name);
 
   @override
-  Path performOne(Dancer d, CallContext ctx) {
-    final dir = ctx.tagDirection(d);
-    final amount = ctx.isTidal() ? 1.5 : 1.0;
-    final dist = !ctx.isTidal() ? 2.0 :
-    d.data.center ? 1.5 : 0.5;
-    final sign = (dir=='Left') ? 1.0 : -1.0;
-    return TamUtils.getMove('U-Turn $dir',
-        skew:[sign*(name.startsWith('Left') ? amount : -amount),dist*sign].v);
+  Future<void> perform(CallContext ctx, [int stackIndex = 0]) async {
+    final left = name.startsWith('Left') ? 'Left' : '';
+    await ctx.applyCalls('$left Half Tag','Scoot Back');
   }
 
 }

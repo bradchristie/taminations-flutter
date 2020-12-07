@@ -20,20 +20,14 @@
 
 import '../common.dart';
 
-class TurnAndDeal extends Action {
+class ThreeByTwoAceyDeucey extends Action {
 
-  @override final level = LevelData.A1;
-  TurnAndDeal(String name) : super(name);
+  @override final level = LevelData.C1;
+  ThreeByTwoAceyDeucey() : super('Three By Two Acey Deucey');
 
   @override
-  Path performOne(Dancer d, CallContext ctx) {
-    final dir = ctx.tagDirection(d);
-    final amount = ctx.isTidal() ? 1.5 : 1.0;
-    final dist = !ctx.isTidal() ? 2.0 :
-    d.data.center ? 1.5 : 0.5;
-    final sign = (dir=='Left') ? 1.0 : -1.0;
-    return TamUtils.getMove('U-Turn $dir',
-        skew:[sign*(name.startsWith('Left') ? amount : -amount),dist*sign].v);
+  Future<void> perform(CallContext ctx, [int stackIndex = 0]) async {
+    await ctx.applyCalls('Outside Triangle Circulate While Very Centers Trade');
   }
 
 }

@@ -20,14 +20,28 @@
 
 import '../common.dart';
 
-class HorseshoeTurn extends Action {
+class SwingAndCircle extends Action {
 
-  @override final level = LevelData.A1;
-  HorseshoeTurn() : super('Horseshoe Turn');
+  @override final level = LevelData.C1;
+  SwingAndCircle(String name) : super(name);
 
   @override
   Future<void> perform(CallContext ctx, [int stackIndex = 0]) async {
-    await ctx.applyCalls('Clover and Partner Tag');
+    final norm = TamUtils.normalizeCall(name);
+    //  Swing and Circle 1/4 is an XML animation
+    //  So just repeat that as requested
+    if (norm.endsWith('12'))
+      await ctx.applyCalls('Swing and Circle 1/4',
+          'Swing and Circle 1/4');
+    else if (norm.endsWith('34'))
+      await ctx.applyCalls('Swing and Circle 1/4',
+          'Swing and Circle 1/4',
+          'Swing and Circle 1/4');
+    else
+      await ctx.applyCalls('Swing and Circle 1/4',
+          'Swing and Circle 1/4',
+          'Swing and Circle 1/4',
+          'Swing and Circle 1/4');
   }
 
 }

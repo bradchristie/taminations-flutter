@@ -22,8 +22,7 @@ import '../common.dart';
 
 class PassInOut extends Action {
 
-  @override
-  final level = LevelData.A1;
+  @override final level = LevelData.A1;
   PassInOut(String name) : super(name);
 
   @override

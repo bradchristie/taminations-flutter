@@ -22,8 +22,7 @@ import '../common.dart';
 
 class QuarterInOut extends Action {
 
-  @override
-  final level = LevelData.A1;
+  @override final level = LevelData.A1;
   QuarterInOut(String name) : super(name);
 
   @override

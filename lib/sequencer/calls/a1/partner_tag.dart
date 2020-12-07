@@ -22,8 +22,7 @@ import '../common.dart';
 
 class PartnerTag extends Action {
 
-  @override
-  final level = LevelData.A1;
+  @override final level = LevelData.A1;
   PartnerTag() : super('Partner Tag');
 
   @override

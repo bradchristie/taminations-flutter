@@ -20,20 +20,25 @@
 
 import '../common.dart';
 
-class TurnAndDeal extends Action {
+class SwitchTheLine extends Action {
 
-  @override final level = LevelData.A1;
-  TurnAndDeal(String name) : super(name);
+  @override final level = LevelData.C1;
+  SwitchTheLine() : super('Switch the Line');
 
   @override
-  Path performOne(Dancer d, CallContext ctx) {
-    final dir = ctx.tagDirection(d);
-    final amount = ctx.isTidal() ? 1.5 : 1.0;
-    final dist = !ctx.isTidal() ? 2.0 :
-    d.data.center ? 1.5 : 0.5;
-    final sign = (dir=='Left') ? 1.0 : -1.0;
-    return TamUtils.getMove('U-Turn $dir',
-        skew:[sign*(name.startsWith('Left') ? amount : -amount),dist*sign].v);
+  Future<void> perform(CallContext ctx, [int stackIndex = 0]) async {
+    //  Start with Ends Cross Run
+    await ctx.applyCalls('Ends Cross Run');
+    //  And now make tne centers Run instead of Dodge
+    for (final d in ctx.dancers)
+      d.animate(0.0);
+    for (final d in ctx.dancers.where((it) => it.data.center)) {
+      final d2 = d.data.partner;
+      if (d2 != null)  // better not be
+        d.path = TamUtils.getMove(d.data.beau ? 'Flip Right' : 'Flip Left',
+            scale:[1.0,d.distanceTo(d2)/2.0].v);
+    }
   }
+
 
 }

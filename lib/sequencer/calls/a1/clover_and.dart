@@ -22,8 +22,7 @@ import '../common.dart';
 
 class Cloverleaf extends Action {
 
-  @override
-  var level = LevelData.MS;
+  @override final level = LevelData.MS;
   Cloverleaf() : super('Cloverleaf');
 
   //  We get here only if standard Cloverleaf with all 8 dancers active fails.
@@ -49,9 +48,9 @@ class CloverAnd extends Action {
   Future<void> perform(CallContext ctx, [int stackIndex = 0]) async {
     //  Find the 4 dancers to Cloverleaf
     //  First check the outer 4
-    var outer4 = ctx.dancers.sortedBy((d) => d.location.length).drop(4).toList();
+    final outer4 = ctx.dancers.sortedBy((d) => d.location.length).drop(4).toList();
     //  If that fails will try for 4 dancers facing out
-    var facingOut = ctx.dancers.where((d) => d.isFacingOut).toList();
+    final facingOut = ctx.dancers.where((d) => d.isFacingOut).toList();
     List<Dancer> clovers;
     //  Don't use outer4 directly, instead filter facingOut
     //  This preserves the original order, required for mapping
@@ -62,9 +61,9 @@ class CloverAnd extends Action {
     else
       throw CallError('Unable to find dancers to Cloverleaf');
     //  Make those 4 dancers Cloverleaf
-    var call2 = name.split('and');
-    var cloverCall = call2.first;
-    var andCall = call2.drop(1).join('and');
+    final call2 = name.split('and');
+    final cloverCall = call2.first;
+    final andCall = call2.drop(1).join('and');
     await ctx.subContext(clovers, (ctx2) async {
       await ctx2.applyCalls('$cloverCall and');
       //  "Clover and <nothing>" is stored in A-1 but is really Mainstream
@@ -72,7 +71,7 @@ class CloverAnd extends Action {
     });
     //  And the other 4 do the next call at the same time
     await ctx.subContext(ctx.dancers.where((d) => !clovers.contains(d)), (ctx2) async {
-      for (var d in ctx2.dancers)
+      for (final d in ctx2.dancers)
         d.data.active = true;
       await ctx2.applyCalls(andCall);
     });

@@ -207,12 +207,12 @@ class _AnimationFrameState extends fm.State<AnimationFrame>
               }
 
               //  Routines to handle pointer events
-              var tapDownHandler = (fm.TapDownDetails details) {
+              final tapDownHandler = (fm.TapDownDetails details) {
                 locationTapped = details.globalPosition.v;
                 dancerTapped = painter.dancerAt(
                     painter.mouse2dance(details.localPosition.v));
               };
-              var longPressHandler = () {
+              final longPressHandler = () {
                 if (dancerTapped != null) {
                   _showColorPopup(
                       context, settings.dancerColor(dancerTapped.number.i))

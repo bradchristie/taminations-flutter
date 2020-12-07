@@ -20,20 +20,21 @@
 
 import '../common.dart';
 
-class TurnAndDeal extends Action {
+class SqueezeTheHourglass extends Action {
 
-  @override final level = LevelData.A1;
-  TurnAndDeal(String name) : super(name);
+  @override final level = LevelData.C1;
+  SqueezeTheHourglass() : super('Squeeze the Hourglass');
 
   @override
-  Path performOne(Dancer d, CallContext ctx) {
-    final dir = ctx.tagDirection(d);
-    final amount = ctx.isTidal() ? 1.5 : 1.0;
-    final dist = !ctx.isTidal() ? 2.0 :
-    d.data.center ? 1.5 : 0.5;
-    final sign = (dir=='Left') ? 1.0 : -1.0;
-    return TamUtils.getMove('U-Turn $dir',
-        skew:[sign*(name.startsWith('Left') ? amount : -amount),dist*sign].v);
+  Future<void> perform(CallContext ctx, [int stackIndex = 0]) async {
+    //  Match to any hourglass
+    final hourglass = CallContext.fromXML(TamUtils.getFormation('Hourglass RH BP'));
+    final mm = hourglass.matchFormations(ctx,rotate:180) ??
+    thrower(CallError('Not an Hourglass formation'));
+    //  All but two of the dancers squeeze
+    ctx.dancers[mm[2]].data.active = false;
+    ctx.dancers[mm[3]].data.active = false;
+    await ctx.applyCalls('Squeeze');
   }
 
 }
