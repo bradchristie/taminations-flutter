@@ -18,11 +18,14 @@
 
 */
 
-export '../../common.dart';
-export '../call_context.dart';
-export '../call_error.dart';
-export 'action.dart';
-export 'common/actives_only_action.dart';
-export 'common/fliter_actives.dart';
-export 'common/four_dancer_concept.dart';
-export 'common/modified_formation_concept.dart';
+import '../common.dart';
+
+class OFormation extends ModifiedFormationConcept {
+
+  @override final level = LevelData.C1;
+  @override final conceptName = 'O';
+  @override final modifiedFormationName = 'Double Pass Thru';
+  @override final formationName = 'O RH';
+  OFormation(String name) : super(name);
+
+}

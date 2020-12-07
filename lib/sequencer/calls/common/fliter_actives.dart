@@ -36,7 +36,7 @@ abstract class FilterActives extends CodedCall {
 
   @override
   Future<void> performCall(CallContext ctx, [int stackIndex = 0]) async {
-    var actives = ctx.actives.clone();
+    var actives = ctx.actives.copy();
     for (var d in actives) {
       d.data.active = isActive(d,ctx);
     }

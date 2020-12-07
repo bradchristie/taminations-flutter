@@ -147,7 +147,6 @@ class DanceAnimationPainter extends fm.ChangeNotifier implements fm.CustomPainte
 
   void togglePath(Dancer d) {
     d.showPath = !d.showPath;
-    print('Dancer $d showPath ${d.showPath}');
     _redraw();
   }
 

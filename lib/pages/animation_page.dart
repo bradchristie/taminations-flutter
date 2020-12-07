@@ -229,7 +229,9 @@ class _AnimationFrameState extends fm.State<AnimationFrame>
                   onSecondaryTapDown: tapDownHandler,
                   onTap: () {
                     if (dancerTapped != null) {
+                      setState(() {
                         painter.togglePath(dancerTapped);
+                      });
                     }
                   },
                   onLongPress: longPressHandler,

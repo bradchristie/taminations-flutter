@@ -18,11 +18,20 @@
 
 */
 
-export '../../common.dart';
-export '../call_context.dart';
-export '../call_error.dart';
-export 'action.dart';
-export 'common/actives_only_action.dart';
-export 'common/fliter_actives.dart';
-export 'common/four_dancer_concept.dart';
-export 'common/modified_formation_concept.dart';
+import '../common.dart';
+
+class Ramble extends Action {
+
+  @override final level = LevelData.C1;
+  Ramble() : super('Ramble');
+
+  @override
+  Future<void> perform(CallContext ctx, [int stackIndex = 0]) async {
+    final ctx2 = CallContext.fromContext(ctx,beat:0.0);
+    ctx2.noSnap();
+    await ctx2.applyCalls('Center 4 Single Wheel and Slide Thru');
+    await ctx2.applyCalls('Outer 4 Separate and Slide Thru');
+    ctx2.appendToSource();
+  }
+
+}

@@ -137,14 +137,17 @@ extension TamList<E> on List<E> {
   E get secondOrNull => length > 1 ? second : null;
   E getOrNull(int i) => (i >= 0 && i < length) ? this[i] : null;
   List<E> operator -(E e) => where((element) => element != e).toList();
-  List<E> clone() => toList();
+  List<E> copy() => toList();
+  List<T> mapIndexed<T>(T Function(int index, E item) mapFun) =>
+      List.generate(length,(i)=>i).map((i) => mapFun(i,this[i]));
+  bool containsAll(List<E> list2) => list2.every((element) => contains(element));
   List<E> sortedWith(int Function(E e1, E e2) compare) {
-    var list2 = clone();
+    var list2 = copy();
     list2.sort(compare);
     return list2;
   }
   List<E> sortedBy(Comparable Function(E e) cf) {
-    var list2 = clone();
+    var list2 = copy();
     list2.sort((E e1, E e2) => cf(e1).compareTo(cf(e2)));
     return list2;
   }

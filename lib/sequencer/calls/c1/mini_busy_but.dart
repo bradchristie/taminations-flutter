@@ -18,11 +18,16 @@
 
 */
 
-export '../../common.dart';
-export '../call_context.dart';
-export '../call_error.dart';
-export 'action.dart';
-export 'common/actives_only_action.dart';
-export 'common/fliter_actives.dart';
-export 'common/four_dancer_concept.dart';
-export 'common/modified_formation_concept.dart';
+import '../common.dart';
+
+class MiniBusyBut extends Action {
+
+  @override final level = LevelData.C1;
+  MiniBusyBut(String name) : super(name);
+
+  @override
+  Future<void> perform(CallContext ctx, [int stackIndex = 0]) async {
+    await  ctx.applyCalls('_Mini-Busy But','Center 4 '+name.replaceFirst('.*But'.r,''));
+  }
+
+}

@@ -190,7 +190,7 @@ class CallContext {
     return doc;
   }
 
-  static Set<String> _xmlFilesForCall(String norm) {
+  static Set<String> xmlFilesForCall(String norm) {
     var callfiles1 = TamUtils.callmap.containsKey(norm)
         ? TamUtils.callmap[norm].map((e) => e.link) : <String>[];
     var callfiles2 = callindex.containsKey(norm)
@@ -259,7 +259,7 @@ class CallContext {
   //  Create a context from a formation defined in XML
   //  The element passed in can be either a 'tam' from
   //  an animation, or a formation
-  CallContext.fromXML(XmlElement tam, [bool loadPaths=false]) {
+  CallContext.fromXML(XmlElement tam, {bool loadPaths=false}) {
     var numberArray = TamUtils.getNumbers(tam);
     var coupleArray = TamUtils.getCouples(tam);
     var paths = loadPaths ? tam.childrenNamed('path') : [];
@@ -509,7 +509,7 @@ class CallContext {
     //  Try to find a match in the xml animations
 
     var callnorm = TamUtils.normalizeCall(calltext);
-    var callfiles = _xmlFilesForCall(callnorm);
+    var callfiles = xmlFilesForCall(callnorm);
     //  Found xml file with call, now look through each animation
     var found = callfiles.isNotEmpty;
     var bestOffset = double.maxFinite;
@@ -717,7 +717,7 @@ class CallContext {
           if (maxOffset.length < maxError && angsnap.isApproxInt(delta : 0.2)) {
             var totOffset = matchResult.offsets.fold(0.0, (s, v) => s + v.length);
             if (bestmapping == null || totOffset < bestOffset) {
-              bestmapping = mapping.clone();
+              bestmapping = mapping.copy();
               bestOffset = totOffset;
             }
           }

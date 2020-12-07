@@ -18,9 +18,6 @@
 
 */
 
-import 'package:taminations/sequencer/calls/a1/pass_in_out.dart';
-import 'package:taminations/sequencer/calls/a2/transfer_and.dart';
-
 import '../../extensions.dart';
 import '../../tam_utils.dart';
 import 'a1/as_couples.dart';
@@ -34,6 +31,7 @@ import 'a1/cross_over_circulate.dart';
 import 'a1/double_star_thru.dart';
 import 'a1/horseshoe_turn.dart';
 import 'a1/partner_tag.dart';
+import 'a1/pass_in_out.dart';
 import 'a1/quarter_in_out.dart';
 import 'a1/roll_to_a_wave.dart';
 import 'a1/split_square_thru.dart';
@@ -47,6 +45,7 @@ import 'a2/slip.dart';
 import 'a2/slither.dart';
 import 'a2/spin_the_windmill.dart';
 import 'a2/swing.dart';
+import 'a2/transfer_and.dart';
 import 'a2/zig.dart';
 import 'a2/zig_zag.dart';
 import 'b1/around_to_a_line.dart';
@@ -76,7 +75,17 @@ import 'c1/anything_chain_thru.dart';
 import 'c1/butterfly.dart';
 import 'c1/cast_back.dart';
 import 'c1/circle_by.dart';
+import 'c1/concentric_concept.dart';
 import 'c1/counter_rotate.dart';
+import 'c1/finish.dart';
+import 'c1/ignore.dart';
+import 'c1/jaywalk.dart';
+import 'c1/little.dart';
+import 'c1/make_magic.dart';
+import 'c1/mini_busy_but.dart';
+import 'c1/o_formation.dart';
+import 'c1/ramble.dart';
+import 'c1/scoot_and_ramble.dart';
 import 'call.dart';
 import 'common/adjust.dart';
 import 'common/and.dart';
@@ -133,144 +142,161 @@ abstract class CodedCall extends Call {
 
   static final Map<RegExp, CodedCall Function(String norm)> normCallMap = {
 
-    'aceydeucey'.r: (_) => AceyDeucey(),
-    'adjustto.*'.r: (name) => Adjust(name),
-    'and'.r: (_) => And(),
+    'aceydeucey'.ri: (_) => AceyDeucey(),
+    'adjustto.*'.ri: (name) => Adjust(name),
+    'and'.ri: (_) => And(),
     //  Anything Chain Thru should not match Square Chain Thru or others
-    '*.(?<!(cross|eight|peel|scatter|spin|square|swing|tag))chainthru'.r:
+    '*.(?<!(cross|eight|peel|scatter|spin|square|swing|tag))chainthru'.ri:
         (name) => AnythingChainThru(name),
-    'around1andcomeintothemiddle'.r: (_) =>
+    'around1andcomeintothemiddle'.ri: (_) =>
         AroundToALine('Around One and Come Into the Middle'),
-    'around1toaline'.r: (_) => AroundToALine('Around One to a Line'),
-    'around2toaline'.r: (_) => AroundToALine('Around Two to a Line'),
-    'ascouples.*'.r: (name) => AsCouples(name),
+    'around1toaline'.ri: (_) => AroundToALine('Around One to a Line'),
+    'around2toaline'.ri: (_) => AroundToALine('Around Two to a Line'),
+    'ascouples.*'.ri: (name) => AsCouples(name),
 
-    'backaway'.r: (_) => BackAway(),
-    'beau'.r: (_) => Beaus(),
-    'belle'.r: (_) => Belles(),
-    'bendtheline'.r: (_) => BendTheLine(),
-    'boxcounterrotate'.r: (_) => BoxCounterRotate(),
-    'boy'.r: (_) => Boys(),
-    'boxthegnat'.r: (_) => BoxTheGnat(),
-    'bracethru'.r: (_) => BraceThru(),
-    'butterfly.*'.r: (name) => Butterfly(name),
+    'backaway'.ri: (_) => BackAway(),
+    'beau'.ri: (_) => Beaus(),
+    'belle'.ri: (_) => Belles(),
+    'bendtheline'.ri: (_) => BendTheLine(),
+    'boxcounterrotate'.ri: (_) => BoxCounterRotate(),
+    'boy'.ri: (_) => Boys(),
+    'boxthegnat'.ri: (_) => BoxTheGnat(),
+    'bracethru'.ri: (_) => BraceThru(),
+    'butterfly.*'.ri: (name) => Butterfly(name),
 
-    'californiatwirl'.r: (_) => CaliforniaTwirl(),
-    'castashadowcenter(go|cast)?34'.r: (name) => CastAShadow(name),
-    '(cross)castback'.r: (name) => CastBack(name),
-    'castoff34'.r: (_) => CastOffThreeQuarters(),
-    'center'.r: (_) => Centers(),
-    'center6'.r: (_) => CenterSix(),
-    'circleby.*'.r: (name) => CircleBy(name),
-    'circulate'.r: (_) => Circulate(),
-    '(cross)?cloverand(\\w.*)'.r: (name) => CloverAnd(name),
-    'cloverleaf'.r: (_) => Cloverleaf(),
-    'counterrotate'.r: (_) => CounterRotate(),
-    'courtesyturn'.r: (_) => CourtesyTurn(),
-    'cross'.r: (_) => Cross(),
-    'crossfold'.r: (_) => CrossFold(),
-    'crossovercirculate'.r: (_) => CrossOverCirculate(),
-    '.*crossrun'.r: (name) => CrossRun(name),
+    'californiatwirl'.ri: (_) => CaliforniaTwirl(),
+    'castashadowcenter(go|cast)?34'.ri: (name) => CastAShadow(name),
+    '(cross)castback'.ri: (name) => CastBack(name),
+    'castoff34'.ri: (_) => CastOffThreeQuarters(),
+    'center'.ri: (_) => Centers(),
+    'center6'.ri: (_) => CenterSix(),
+    'circleby.*'.ri: (name) => CircleBy(name),
+    'circulate'.ri: (_) => Circulate(),
+    '(cross)?cloverand(\\w.*)'.ri: (name) => CloverAnd(name),
+    'cloverleaf'.ri: (_) => Cloverleaf(),
+    'concentric.+'.ri: (name) => ConcentricConcept(name),
+    'counterrotate'.ri: (_) => CounterRotate(),
+    'courtesyturn'.ri: (_) => CourtesyTurn(),
+    'cross'.ri: (_) => Cross(),
+    'crossfold'.ri: (_) => CrossFold(),
+    'crossovercirculate'.ri: (_) => CrossOverCirculate(),
+    '.*crossrun'.ri: (name) => CrossRun(name),
 
-    'diamondcirculate'.r: (_) => DiamondCirculate(),
-    '(left)?dosado'.r: (name) => Dosado(name),
-    'doublestarthru'.r: (_) => DoubleStarThru(),
+    'diamondcirculate'.ri: (_) => DiamondCirculate(),
+    '(left)?dosado'.ri: (name) => Dosado(name),
+    'doublestarthru'.ri: (_) => DoubleStarThru(),
 
-    'end'.r: (_) => Ends(),
-    'every(one|body)'.r: (name) => Everyone(name),
-    'explode'.r: (_) => Explode(),
+    'end'.ri: (_) => Ends(),
+    'every(one|body)'.ri: (name) => Everyone(name),
+    'explode'.ri: (_) => Explode(),
 
-    'face(in|out|left|right)'.r: (name) => Face(name),
-    'facing'.r: (_) => FacingDancers(),
-    'fold'.r: (_) => Fold(),
-    '\\d\\d'.r: (name) => Fraction(name),
+    'face(in|out|left|right)'.ri: (name) => Face(name),
+    'facing'.ri: (_) => FacingDancers(),
+    'finish.+'.ri: (name) => Finish(name),
+    'fold'.ri: (_) => Fold(),
+    '\\d\\d'.ri: (name) => Fraction(name),
 
-    'girl'.r: (_) => Girls(),
-    'grand(left)?swingthru'.r: (name) => GrandSwingThru(name),
-    '_grandswing(left|right)?'.r: (name) => GrandSwingX(name),
+    'girl'.ri: (_) => Girls(),
+    'grand(left)?swingthru'.ri: (name) => GrandSwingThru(name),
+    '_grandswing(left|right)?'.ri: (name) => GrandSwingX(name),
 
-    '(left)?12tag'.r: (name) => HalfTag(name),
-    '(reverse)?12sashay'.r: (name) => HalfSashay(name),
-    'head'.r: (name) => Heads(name),
+    '(left)?12tag'.ri: (name) => HalfTag(name),
+    '(reverse)?12sashay'.ri: (name) => HalfSashay(name),
+    'head'.ri: (name) => Heads(name),
     //  Heads Start, be careful not to match Heads Star Thru
-    '(head|side)start(?!hr).*'.r: (name) => HeadsSidesStart(name),
-    'horseshoeturn'.r: (_) => HorseshoeTurn(),
+    '(head|side)start(?!hr).*'.ri: (name) => HeadsSidesStart(name),
+    'horseshoeturn'.ri: (_) => HorseshoeTurn(),
 
-    'center(2|4|6)'.r: (name) => Insides(name),
-    'in(ner|sides?)(2|4|6)?'.r: (name) => Insides(name),
+    'ignore.+'.ri: (name) => Ignore(name),
+    'center(2|4|6)'.ri: (name) => Insides(name),
+    'in(ner|sides?)(2|4|6)?'.ri: (name) => Insides(name),
 
-    'lead'.r: (name) => Leaders(name),
+    'jaywalk'.ri: (_) => Jaywalk(),
 
-    'nothing'.r: (_) => Nothing(),
+    'lead'.ri: (name) => Leaders(name),
+    //  Little needs two regexes
+    //  to handle both <something> Little and Little <something>
+    '(scootand)?(outside|point)?(out|in|left|right|(go)?(forward|asyouare))?little'.ri:
+        (name) => Little(name),
+    '(scootand)?little(outside|point)(in|out|left|right|(go)?(forward|asyouare))?'.ri:
+        (name) => Little(name),
 
-    '112'.r: (name) => OneAndaHalf(name),
-    'out(er|sides?)(2|4|6)?'.r: (name) => Outsides(name),
+    'makemagic'.ri: (_) => MakeMagic(),
+    'minibusybut.+'.ri: (name) => MiniBusyBut(name),
 
-    'partnertag'.r: (_) => PartnerTag(),
-    'pass(in|out)'.r: (name) => PassInOut(name),
-    '(left)?passthru'.r: (name) => PassThru(name),
-    'point'.r: (_) => Points(),
-    'promenadehome'.r: (name) => PromenadeHome(name),
-    'swing(your)?corner(and)?promenade(home)?'.r: (name) => PromenadeHome(name),
-    '(left)?pullby'.r: (name) => PullBy(name),
+    'nothing'.ri: (_) => Nothing(),
 
-    'quarter(in|out)'.r: (name) => QuarterInOut(name),
-    'and14more'.r: (_) => QuarterMore(),
-    '(left)?14tag'.r: (name) => QuarterTag(name),
+    'O[A-Z0-9].+'.r: (name) => OFormation(name),
+    '112'.ri: (name) => OneAndaHalf(name),
+    'out(er|sides?)(2|4|6)?'.ri: (name) => Outsides(name),
 
-    '(and)?roll'.r: (name) => Roll(name),
-    '(left|right)_rollto'.r: (name) => RollTo(name),
-    '(left_right)rolltoawave'.r: (name) => RollToAWave(name),
-    'run(left|right)?'.r: (name) => Run(name),
+    'partnertag'.ri: (_) => PartnerTag(),
+    'pass(in|out)'.ri: (name) => PassInOut(name),
+    '(left)?passthru'.ri: (name) => PassThru(name),
+    'point'.ri: (_) => Points(),
+    'promenadehome'.ri: (name) => PromenadeHome(name),
+    'swing(your)?corner(and)?promenade(home)?'.ri: (name) => PromenadeHome(name),
+    '(left)?pullby'.ri: (name) => PullBy(name),
 
-    'samesex(es)?'.r: (name) => SameSex(name),
-    'separate'.r: (_) => Separate(),
-    'side'.r: (name) => Sides(name),
-    '(left)?singlewheel'.r: (name) => SingleWheel(name),
-    'slide'.r: (_) => Slide(),
-    'slide(in|out|left|right)'.r: (name) => SlideDir(name),
-    'slidethru'.r: (_) => SlideThru(),
-    'slip'.r: (_) => Slip(),
-    'slither'.r: (_) => Slither(),
-    '(left)?spinthewindmill(left|right|in|out|forward)'.r: (name) => SpinTheWindmill(name),
-    'splitcirculate'.r: (_) => SplitCirculate(),
-    '(left)?splitsquarethru[2-7]'.r: (name) => SplitSquareThru(name),
-    '(and)?spread'.r: (name) => Spread(name),
-    'squaretheset'.r: (_) => SquareTheSet(),
-    '(left)?squarethru(1|2|3|4|5|6|7)?(toawave)?'.r: (name) => SquareThru(name),
-    'step'.r: (_) => Step(),
-    'sweep14'.r: (_) => SweepAQuarter(),
-    'swing'.r: (_) => Swing(),
+    'quarter(in|out)'.ri: (name) => QuarterInOut(name),
+    'and14more'.ri: (_) => QuarterMore(),
+    '(left)?14tag'.ri: (name) => QuarterTag(name),
 
-    'tagtheline'.r: (_) => TagTheLine(),
+    'ramble'.ri: (_) => Ramble(),
+    '(and)?roll'.ri: (name) => Roll(name),
+    '(left|right)_rollto'.ri: (name) => RollTo(name),
+    '(left_right)rolltoawave'.ri: (name) => RollToAWave(name),
+    'run(left|right)?'.ri: (name) => Run(name),
+
+    'samesex(es)?'.ri: (name) => SameSex(name),
+    'scootandramble'.ri: (_) => ScootAndRamble(),
+    'separate'.ri: (_) => Separate(),
+    'side'.ri: (name) => Sides(name),
+    '(left)?singlewheel'.ri: (name) => SingleWheel(name),
+    'slide'.ri: (_) => Slide(),
+    'slide(in|out|left|right)'.ri: (name) => SlideDir(name),
+    'slidethru'.ri: (_) => SlideThru(),
+    'slip'.ri: (_) => Slip(),
+    'slither'.ri: (_) => Slither(),
+    '(left)?spinthewindmill(left|right|in|out|forward)'.ri: (name) => SpinTheWindmill(name),
+    'splitcirculate'.ri: (_) => SplitCirculate(),
+    '(left)?splitsquarethru[2-7]'.ri: (name) => SplitSquareThru(name),
+    '(and)?spread'.ri: (name) => Spread(name),
+    'squaretheset'.ri: (_) => SquareTheSet(),
+    '(left)?squarethru(1|2|3|4|5|6|7)?(toawave)?'.ri: (name) => SquareThru(name),
+    'step'.ri: (_) => Step(),
+    'sweep14'.ri: (_) => SweepAQuarter(),
+    'swing'.ri: (_) => Swing(),
+
+    'tagtheline'.ri: (_) => TagTheLine(),
     '(left)?34tag(theline)?'.r : (name) => ThreeQuartersTag(name),
-    '(left)?touch'.r: (name) => Touch(name),
-    '(left)?touch14'.r: (name) => TouchAQuarter(name),
-    'trade'.r: (_) => Trade(),
-    'trail'.r: (name) => Trailers(name),
-    'transferand(.+)'.r: (name) => TransferAnd(name),
-    'triplestarthru'.r: (_) => TripleStarThru(),
-    'tripletrade'.r: (_) => TripleTrade(),
-    '(left)turnthru'.r: (name) => TurnThru(name),
-    '(go)?twice'.r: (name) => Twice(name),
-    '(left)?turnanddeal'.r: (name) => TurnAndDeal(name),
-    'u?turnback'.r: (_) => TurnBack(),
+    '(left)?touch'.ri: (name) => Touch(name),
+    '(left)?touch14'.ri: (name) => TouchAQuarter(name),
+    'trade'.ri: (_) => Trade(),
+    'trail'.ri: (name) => Trailers(name),
+    'transferand(.+)'.ri: (name) => TransferAnd(name),
+    'triplestarthru'.ri: (_) => TripleStarThru(),
+    'tripletrade'.ri: (_) => TripleTrade(),
+    '(left)turnthru'.ri: (name) => TurnThru(name),
+    '(go)?twice'.ri: (name) => Twice(name),
+    '(left)?turnanddeal'.ri: (name) => TurnAndDeal(name),
+    'u?turnback'.ri: (_) => TurnBack(),
 
-    'verycenters'.r: (_) => VeryCenters(),
-    'veryends'.r: (_) => VeryEnds(),
+    'verycenters'.ri: (_) => VeryCenters(),
+    'veryends'.ri: (_) => VeryEnds(),
 
-    'walkanddodge'.r: (_) => WalkAndDodge('Walk and Dodge'),
-    '${specifier}walk(and)?${specifier}dodge'.r: (name) => WalkAndDodge(name),
-    '$specifier${specifier}walk(and)?$specifier${specifier}dodge'.r:
+    'walkanddodge'.ri: (_) => WalkAndDodge('Walk and Dodge'),
+    '${specifier}walk(and)?${specifier}dodge'.ri: (name) => WalkAndDodge(name),
+    '$specifier${specifier}walk(and)?$specifier${specifier}dodge'.ri:
         (name) => WalkAndDodge(name),
-    '(reverse)?wheelaround'.r: (name) => WheelAround(name),
-    '(and)?(the)?other?.+'.r: (name) => While(name),
-    'while(the)?(others?)?.+'.r: (name) => While(name),
-    '_windmill(in|out|left|right|forward)'.r: (name) => WindmillX(name),
+    '(reverse)?wheelaround'.ri: (name) => WheelAround(name),
+    '(and)?(the)?other?.+'.ri: (name) => While(name),
+    'while(the)?(others?)?.+'.ri: (name) => While(name),
+    '_windmill(in|out|left|right|forward)'.ri: (name) => WindmillX(name),
 
-    'z[ai]g'.r: (name) => Zig(name),
-    'z[ai]gz[ai]g'.r: (name) => ZigZag(name),
-    'zing|zoom'.r: (name) => Zoom(name)
+    'z[ai]g'.ri: (name) => Zig(name),
+    'z[ai]gz[ai]g'.ri: (name) => ZigZag(name),
+    'zing|zoom'.ri: (name) => Zoom(name)
 
   };
 
