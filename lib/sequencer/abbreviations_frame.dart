@@ -51,13 +51,12 @@ class _AbbreviationsFrameState extends fm.State<AbbreviationsFrame> {
   }
 
   void _onTextChanged() {
-    print(textEditController.text);
     processTextChange();
   }
 
   fm.Widget _oneTextItem(int row, bool isExpansion) =>
       fm.Expanded(
-        flex:1,
+        flex: isExpansion ? 4 : 1,
         child: fm.InkWell(
           onTap: () {
             fm.WidgetsBinding.instance.addPostFrameCallback((_) {
@@ -67,52 +66,57 @@ class _AbbreviationsFrameState extends fm.State<AbbreviationsFrame> {
               });
             });
           },
-          child: pm.Consumer<AbbreviationsModel>(
-              builder: (context,model,child) {
-                processTextChange = () {
-                  print('new text: ${textEditController.value.text}');
-                  //  For abbreviations, ignore invalid characters
-                  if (!editExpansion) {
-                    final value = textEditController.value;
-                    final text = value.text.toLowerCase().replaceAll('\\W'.r, '');
-                    final diff = value.text.length - text.length;
-                    final selection = value.selection.copyWith(
-                      baseOffset: value.selection.baseOffset - diff,
-                      extentOffset: value.selection.extentOffset - diff
-                    );
-                    textEditController.value = value.copyWith(text: text, selection: selection);
-                    model.setAbbreviation(editRow, text);
-                  } else
-                    model.setExpansion(editRow, textEditController.text);
-                };
-                return fm.Container(
-                 //   key: fm.ValueKey('${model.currentAbbreviations[row]} ${model.errors[row]}'),
-                    color: model.errors[row] ? Color.RED.veryBright() : Color.WHITE,
-                    child: (row == editRow && editExpansion == isExpansion)
-                        ? fm.TextField(
-                      decoration: null,
-                      autofocus: true,
-                      autocorrect: false,
-                      style: fm.TextStyle(fontSize: 24),
-                      controller: textEditController
-                        ..text = isExpansion
-                            ? model.currentAbbreviations[row].item2
-                            : model.currentAbbreviations[row].item1,
-                    )
-                        : fm.Text(isExpansion
-                            ? model.currentAbbreviations[row].item2
-                            : model.currentAbbreviations[row].item1,
-                        style: fm.TextStyle(fontSize: 24))
-                );
-              }),
+          child: fm.Container(
+            child: pm.Consumer<AbbreviationsModel>(
+                builder: (context,model,child) {
+                  processTextChange = () {
+                    //  For abbreviations, ignore invalid characters
+                    if (!editExpansion) {
+                      final value = textEditController.value;
+                      final text = value.text.toLowerCase().replaceAll('\\W'.r, '');
+                      final diff = value.text.length - text.length;
+                      final selection = value.selection.copyWith(
+                        baseOffset: value.selection.baseOffset - diff,
+                        extentOffset: value.selection.extentOffset - diff
+                      );
+                      textEditController.value = value.copyWith(text: text, selection: selection);
+                      model.setAbbreviation(editRow, text);
+                    } else
+                      model.setExpansion(editRow, textEditController.text);
+                  };
+                  return fm.Container(
+                    child:child,
+                    decoration: fm.BoxDecoration(
+                        color: model.errors[row] ? Color.RED.veryBright() : Color.WHITE,
+                        border: fm.Border(
+                            bottom: fm.BorderSide(width: 1, color: fm.Colors.black),
+                            left: fm.BorderSide(width: 1, color: fm.Colors.black))),
+                  );
+                },
+                child: (row == editRow && editExpansion == isExpansion)
+                    ? fm.TextField(
+                  decoration: null,
+                  autofocus: true,
+                  autocorrect: false,
+                  style: fm.TextStyle(fontSize: 24),
+                  controller: textEditController
+                    ..text = isExpansion
+                        ? pm.Provider.of<AbbreviationsModel>(context, listen: false).currentAbbreviations[row].item2
+                        : pm.Provider.of<AbbreviationsModel>(context, listen: false).currentAbbreviations[row].item1,
+                )
+                    : fm.Text(isExpansion
+                    ? pm.Provider.of<AbbreviationsModel>(context, listen: false).currentAbbreviations[row].item2
+                    : pm.Provider.of<AbbreviationsModel>(context, listen: false).currentAbbreviations[row].item1,
+                    style: fm.TextStyle(fontSize: 24))
+            ),
+          ),
         ),
       );
 
 
   @override
   fm.Widget build(fm.BuildContext context) {
-    return pm.Consumer<AbbreviationsModel>(
-        builder: (context,model,child) {
+    final model = pm.Provider.of<AbbreviationsModel>(context, listen: false);
           return fm.Column(
               children: [
                 fm.Expanded(
@@ -209,6 +213,5 @@ class _AbbreviationsFrameState extends fm.State<AbbreviationsFrame> {
                 )
               ]
           );
-        });
   }
 }

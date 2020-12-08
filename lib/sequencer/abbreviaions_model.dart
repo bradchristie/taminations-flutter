@@ -100,7 +100,6 @@ class AbbreviationsModel extends fm.ChangeNotifier {
   }
 
   void setAbbreviation(int index, String abbr) {
-    print(abbr);
     currentAbbreviations[index] = currentAbbreviations[index].withItem1(abbr);
     _save();
   }

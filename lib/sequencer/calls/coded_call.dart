@@ -161,7 +161,7 @@ abstract class CodedCall extends Call {
     'adjustto.*'.ri: (name) => Adjust(name),
     'and'.ri: (_) => And(),
     //  Anything Chain Thru should not match Square Chain Thru or others
-    '*.(?<!(cross|eight|peel|scatter|spin|square|swing|tag))chainthru'.ri:
+    '.*(?<!(cross|eight|peel|scatter|spin|square|swing|tag))chainthru'.ri:
         (name) => AnythingChainThru(name),
     'around1andcomeintothemiddle'.ri: (_) =>
         AroundToALine('Around One and Come Into the Middle'),
