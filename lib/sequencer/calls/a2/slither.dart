@@ -22,8 +22,7 @@ import '../common.dart';
 
 class Slither extends Action {
 
-  @override
-  final level = LevelData.A2;
+  @override final level = LevelData.A2;
   Slither() : super('Slither');
 
   @override

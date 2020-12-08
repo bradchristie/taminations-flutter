@@ -23,8 +23,7 @@ import '../common.dart';
 //  This is the A-2 call Swing
 class Swing extends Action {
 
-  @override
-  final level = LevelData.A2;
+  @override final level = LevelData.A2;
   Swing() : super('Swing');
 
   @override

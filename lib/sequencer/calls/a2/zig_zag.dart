@@ -22,8 +22,7 @@ import '../common.dart';
 
 class ZigZag extends Action {
 
-  @override
-  final level = LevelData.A2;
+  @override final level = LevelData.A2;
   ZigZag(String name) : super(name);
 
   @override

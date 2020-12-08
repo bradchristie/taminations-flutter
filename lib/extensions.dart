@@ -166,6 +166,7 @@ extension TamList<E> on List<E> {
   bool none(bool Function(E element) test) => every((e) => !test(e));
   List<E> whereNotNull() => where((element) => element != null).toList();
   double maxOf(double Function(E e) of) => fold(-double.maxFinite, (a, b) => max(a,of(b)));
+  double minOf(double Function(E e) of) => fold(double.maxFinite, (a, b) => min(a,of(b)));
 
   E firstBy(Comparable Function(E) selector) {
     if (isEmpty) return null;
@@ -180,6 +181,16 @@ extension TamList<E> on List<E> {
       }
     }
     return best;
+  }
+
+  Map<K,List<E>> groupBy<K>(K Function(E e) selector) {
+    final map = <K,List<E>>{};
+    for (final e in this) {
+      final k = selector(e);
+      if (map[k] == null) map[k] = <E>[];
+      map[k].add(e);
+    }
+    return map;
   }
 
   void forEachIndexed(void Function(int i,E item) f) {

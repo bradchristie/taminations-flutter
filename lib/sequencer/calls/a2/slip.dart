@@ -22,8 +22,7 @@ import '../common.dart';
 
 class Slip extends Action {
 
-  @override
-  final level = LevelData.A2;
+  @override final level = LevelData.A2;
   Slip() : super('Slip');
 
   @override

@@ -99,6 +99,8 @@ import 'c1/tag_back.dart';
 import 'c1/tandem.dart';
 import 'c1/three_by_two_acey_deucey.dart';
 import 'c1/to_a_wave.dart';
+import 'c1/triangle_circulate.dart';
+import 'c1/triple_formation.dart';
 import 'call.dart';
 import 'common/adjust.dart';
 import 'common/and.dart';
@@ -303,6 +305,10 @@ abstract class CodedCall extends Call {
     'trade'.ri: (_) => Trade(),
     'trail'.ri: (name) => Trailers(name),
     'transferand(.+)'.ri: (name) => TransferAnd(name),
+    '(inside|outside|inpoint|outpoint|tandembased|wavebased)?trianglecirculate'.ri:
+        (name) => TriangleCirculate(name),
+    'triplebox.+'.ri: (name) => TripleBox(name),
+    'triple(lines?|waves?|columns?).+'.ri: (name) => TripleLine(name),
     'triplestarthru'.ri: (_) => TripleStarThru(),
     'tripletrade'.ri: (_) => TripleTrade(),
     '(left)turnthru'.ri: (name) => TurnThru(name),

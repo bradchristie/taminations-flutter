@@ -23,8 +23,7 @@ import '../../../math/bezier.dart';
 
 class BoxCounterRotate extends Action {
 
-  @override
-  final level = LevelData.A2;
+  @override final level = LevelData.A2;
   BoxCounterRotate() : super('Box Counter Rotate');
 
   @override

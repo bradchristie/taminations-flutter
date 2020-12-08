@@ -22,8 +22,7 @@ import '../common.dart';
 
 class Slide extends Action {
 
-  @override
-  final level = LevelData.A2;
+  @override final level = LevelData.A2;
   Slide() : super('Slide');
 
   @override

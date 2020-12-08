@@ -981,8 +981,8 @@ class CallContext {
 
   //  Return all dancers, ordered by distance from another dancer,
   //  that satisfies a conditional
-  List<Dancer> dancersInOrder(Dancer d, bool Function(Dancer d) f) =>
-      (dancers - d).where(f).toList().sortedBy((d2) => d.distanceTo(d2) );
+  List<Dancer> dancersInOrder(Dancer d, [bool Function(Dancer d) f]) =>
+      (dancers - d).where(f ?? true).toList().sortedBy((d2) => d.distanceTo(d2) );
 
   //  Return closest dancer that satisfies a given conditional
   Dancer dancerClosest(Dancer d, bool Function(Dancer d2) f) =>
