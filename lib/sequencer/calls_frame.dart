@@ -70,19 +70,22 @@ class _SequencerCallsFrameState extends fm.State<SequencerCallsFrame> {
        builder: (context, model, child) {
          return fm.Column(
            children: [
-             fm.TextField(
-               key: fm.Key('Sequencer Input'),
-              // autofocus: true,
-               focusNode: focusNode,
-               controller: textFieldController,
-               decoration: fm.InputDecoration.collapsed(
-                   hintText: 'Enter calls'),
-               enableSuggestions: false,
-               style: fm.TextStyle(fontSize: 24),
-               //  Code to run when user presses Enter
-               onSubmitted: (value) {
-                 _sendOneCall(model);
-               },
+             fm.Container(
+               color: Color.WHITE,
+               child: fm.TextField(
+                 key: fm.Key('Sequencer Input'),
+                // autofocus: true,
+                 focusNode: focusNode,
+                 controller: textFieldController,
+                 decoration: fm.InputDecoration.collapsed(
+                     hintText: 'Enter calls'),
+                 enableSuggestions: false,
+                 style: fm.TextStyle(fontSize: 24),
+                 //  Code to run when user presses Enter
+                 onSubmitted: (value) {
+                   _sendOneCall(model);
+                 },
+               ),
              ),
              fm.Expanded(
                  child: fm.ListView.builder(

@@ -20,19 +20,15 @@
 
 import '../common.dart';
 
-class AnythingChainThru extends Action {
+class VerticalTagBack extends Action {
 
   @override final level = LevelData.C1;
-  AnythingChainThru(String name) : super(name);
+  VerticalTagBack(String name) : super(name);
 
   @override
   Future<void> perform(CallContext ctx, [int stackIndex = 0]) async {
-    final norm = TamUtils.normalizeCall(name);
-    final firstCall = norm.replaceFirst('chainthru','')
-        .replaceFirst('triangle','trianglecirculate')
-        .replaceFirst('interlockeddiamond'.r,'interlockeddiamondcirculate');
-    await ctx.applyCalls(firstCall,'very centers trade','centers cast off 34');
+    final left = name.contains('Left') ? 'Left' : '';
+    await ctx.applyCalls('$left Vertical 1/2 Tag','Scoot Back');
   }
-
 
 }

@@ -38,17 +38,19 @@ class Button extends fm.StatelessWidget {
 
   @override
   fm.Widget build(fm.BuildContext context) =>
-    fm.Padding(padding:fm.EdgeInsets.all( 4.0),
+    fm.Padding(padding:fm.EdgeInsets.all(4.0),
         child:fm.Material(
-          elevation: 4.0,
-          color: Color(0),
-          shadowColor: Color.BLACK,
+            elevation: 4.0,
+            color: Color(0),
+            shadowColor: Color.BLACK,
+            shape: fm.RoundedRectangleBorder(
+                borderRadius: fm.BorderRadius.circular(10)),
           child:fm.InkWell(
               child:fm.Container(
                   decoration: fm.ShapeDecoration(
                       shape: fm.RoundedRectangleBorder(
-                        side: fm.BorderSide(color: Color.GRAY.darker()),
-                        borderRadius: fm.BorderRadius.circular(10)
+                          side: fm.BorderSide(color: Color.GRAY.darker()),
+                          borderRadius: fm.BorderRadius.circular(10)
                       ),
                       gradient: fm.LinearGradient(
                           begin: fm.Alignment.topCenter,

@@ -1177,6 +1177,7 @@ class CallContext {
   );
 
   //  Get direction dancer would Roll
+  //  TODO use an enum instead of returning strings
   String roll(Dancer d) {
     var move = d.path.movelist.lastWhere((m) => m.fromCall, orElse: () => null);
     if (move?.brotate?.rolling() ?? 0.0 > 0.1)

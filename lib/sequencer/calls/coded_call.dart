@@ -101,6 +101,11 @@ import 'c1/three_by_two_acey_deucey.dart';
 import 'c1/to_a_wave.dart';
 import 'c1/triangle_circulate.dart';
 import 'c1/triple_formation.dart';
+import 'c1/twist_anything.dart';
+import 'c1/vertical_tag.dart';
+import 'c1/vertical_tag_back.dart';
+import 'c1/wheel_and.dart';
+import 'c1/with_the_flow.dart';
 import 'call.dart';
 import 'common/adjust.dart';
 import 'common/and.dart';
@@ -315,7 +320,10 @@ abstract class CodedCall extends Call {
     '(go)?twice'.ri: (name) => Twice(name),
     '(left)?turnanddeal'.ri: (name) => TurnAndDeal(name),
     'u?turnback'.ri: (_) => TurnBack(),
+    'twist(theline|and.+)'.ri: (name) => TwistAnything(name),
 
+    '(left)?vertical(left)?(14|12|34)?tag'.ri: (name) => VerticalTag(name),
+    '(left)?verticaltagback(toawave)?'.ri: (name) => VerticalTagBack(name),
     'verycenters'.ri: (_) => VeryCenters(),
     'veryends'.ri: (_) => VeryEnds(),
 
@@ -323,10 +331,12 @@ abstract class CodedCall extends Call {
     '${specifier}walk(and)?${specifier}dodge'.ri: (name) => WalkAndDodge(name),
     '$specifier${specifier}walk(and)?$specifier${specifier}dodge'.ri:
         (name) => WalkAndDodge(name),
+    '(reverse)?wheeland(?!deal)(\\w.*)'.ri: (name) => WheelAnd(name),
     '(reverse)?wheelaround'.ri: (name) => WheelAround(name),
     '(and)?(the)?other?.+'.ri: (name) => While(name),
     'while(the)?(others?)?.+'.ri: (name) => While(name),
     '_windmill(in|out|left|right|forward)'.ri: (name) => WindmillX(name),
+    'withtheflow'.ri: (_) => WithTheFlow(),
 
     'z[ai]g'.ri: (name) => Zig(name),
     'z[ai]gz[ai]g'.ri: (name) => ZigZag(name),

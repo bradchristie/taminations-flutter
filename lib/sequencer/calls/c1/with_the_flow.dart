@@ -20,19 +20,31 @@
 
 import '../common.dart';
 
-class AnythingChainThru extends Action {
+class WithTheFlow extends Action {
 
   @override final level = LevelData.C1;
-  AnythingChainThru(String name) : super(name);
+  WithTheFlow() : super('With the Flow');
 
   @override
   Future<void> perform(CallContext ctx, [int stackIndex = 0]) async {
-    final norm = TamUtils.normalizeCall(name);
-    final firstCall = norm.replaceFirst('chainthru','')
-        .replaceFirst('triangle','trianglecirculate')
-        .replaceFirst('interlockeddiamond'.r,'interlockeddiamondcirculate');
-    await ctx.applyCalls(firstCall,'very centers trade','centers cast off 34');
+    if (ctx.actives.any((d) => !ctx.isInCouple(d)))
+      throw CallError('Only couples can do With the Flow');
+    var isLeft = true;
+    var isRight = true;
+    for (final d in ctx.actives) {
+      final roll = ctx.roll(d);
+      if (roll != 'Left')
+        isLeft = false;
+      if (roll != 'Right')
+        isRight = false;
+    }
+    //  Rolling direction determines who walks and who dodges
+    if (isRight)
+      await ctx.applyCalls('Beau Walk Belle Dodge');
+    else if (isLeft)
+      await ctx.applyCalls('Belle Walk Beau Dodge');
+    else
+      throw CallError('All dancers must be moving the same direction for With the Flow');
   }
-
 
 }
