@@ -18,6 +18,7 @@
 
 */
 
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart' as fm;
 import 'package:provider/provider.dart' as pp;
 import 'package:taminations/sequencer/sequencer_model.dart';
@@ -89,7 +90,7 @@ class _SequencerCallsFrameState extends fm.State<SequencerCallsFrame> {
              ),
              fm.Expanded(
                  child: fm.ListView.builder(
-                   itemCount: model.callNames.length,
+                   itemCount: model.calls.length,
                    itemBuilder: itemBuilder,
                  )
              ),
@@ -135,21 +136,37 @@ class _SequencerCallsFrameState extends fm.State<SequencerCallsFrame> {
   }
 
   //  Builder for one item of the list
+  //  TODO combine with calls_frame into one widget class
   fm.Widget itemBuilder(fm.BuildContext context, int index) {
     return pp.Consumer<SequencerModel>(
         builder: (context, model, child) {
-          return fm.GestureDetector(
-              onTap: () {},
-              child: fm.Container(
-                  decoration: fm.BoxDecoration(
-                    //  Color the item according the the level
-                      color: Color.WHITE, // TODO level color
-                      border: fm.Border(
-                          top: fm.BorderSide(width: 1, color: Color.BLACK))),
-                  padding: fm.EdgeInsets.only(left: 20.0, top: 4, bottom: 4),
-                  child: fm.Text(
-                      model.callNames[index], style: fm.TextStyle(fontSize: 20))
-              )
+          return fm.Container(
+            decoration: fm.BoxDecoration(
+                border: fm.Border(top: fm.BorderSide(width: 1, color: Color.BLACK))),
+            child: fm.Material(
+              color: model.calls[index].level.color,
+              child: fm.InkWell(
+                  highlightColor: model.calls[index].level.color.darker(),
+                  onTap: () {},
+                  child: fm.Row(
+                    children: [
+                      fm.Flexible(
+                        child: fm.Container(
+                            alignment: fm.Alignment.centerLeft,
+                            padding: fm.EdgeInsets.only(left: 20.0),
+                            child: AutoSizeText(
+                                model.calls[index].name, style: fm.TextStyle(fontSize: 20))
+                        ),
+                      ),
+                      fm.Container(
+                          alignment: fm.Alignment.topRight,
+                          padding: fm.EdgeInsets.only(top:2,right:2),
+                          child: fm.Text(model.calls[index].level.name)
+                      )
+                    ],
+                  )
+              ),
+            ),
           );
         });
   }

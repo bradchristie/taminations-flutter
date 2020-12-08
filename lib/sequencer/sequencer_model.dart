@@ -20,18 +20,23 @@
 
 import 'package:flutter/material.dart' as fm;
 
+import '../common.dart';
 import '../dance_animation_painter.dart';
-import '../extensions.dart';
-import '../tam_utils.dart';
 import 'calls/coded_call.dart';
 import 'call_context.dart';
 import 'call_error.dart';
 import 'abbreviaions_model.dart';
 
+class SequencerCall {
+  final String name;
+  final double beats;
+  final LevelData level;
+  SequencerCall(this.name,{this.beats,this.level});
+}
+
 class SequencerModel extends fm.ChangeNotifier {
 
-  List<String> callNames = [];
-  List<double> callBeats = [];
+  List<SequencerCall> calls;
   String startingFormation = 'Static Square';  // TODO get from settings somehow
   String partString = '';
   String errorString = '';
@@ -45,8 +50,7 @@ class SequencerModel extends fm.ChangeNotifier {
 
   void reset() {
     animation.doPause();
-    callNames = [];
-    callBeats = [];
+    calls = [];
     _startSequence();
     notifyListeners();
   }
@@ -65,12 +69,11 @@ class SequencerModel extends fm.ChangeNotifier {
   }
 
   void undoLastCall() {
-    if (callNames.isNotEmpty) {
-      var lastCall = callNames.last;
-      callNames.removeLast();
-      callBeats.removeLast();
-      if (!_isComment(lastCall)) {
-        var totalBeats = callBeats.sum();
+    if (calls.isNotEmpty) {
+      var lastCall = calls.last;
+      calls.removeLast();
+      if (!_isComment(lastCall.name)) {
+        var totalBeats = calls.fold(0.0,(a,b) => a + b.beats);
         for (var d in animation.dancers) {
           while (d.path.beats > totalBeats)
             d.path.pop();
@@ -84,8 +87,7 @@ class SequencerModel extends fm.ChangeNotifier {
 
   Future<void> _interpretOneCall(String call) async {
     if (_isComment(call)) {
-      callNames.add(call);
-      callBeats.add(0.0);
+      calls.add(SequencerCall(call,beats:0.0,level:LevelData.INDEX));
       return Future<void>.value();
     }
     //  Remove any underscores, which are reserved for internal calls only
@@ -110,8 +112,7 @@ class SequencerModel extends fm.ChangeNotifier {
     var newbeats = animation.beats;
     if (newbeats > prevbeats) {
       //  Call worked, add it to the list
-      callNames.add(cctx.callname);
-      callBeats.add(newbeats - prevbeats);
+      calls.add(SequencerCall(cctx.callname,beats:(newbeats-prevbeats),level:cctx.level));
       animation.beat = prevbeats;
       animation.doPlay();
     }
