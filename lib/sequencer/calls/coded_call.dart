@@ -106,6 +106,7 @@ import 'c1/vertical_tag.dart';
 import 'c1/vertical_tag_back.dart';
 import 'c1/wheel_and.dart';
 import 'c1/with_the_flow.dart';
+import 'c2/anything.dart';
 import 'call.dart';
 import 'common/adjust.dart';
 import 'common/and.dart';
@@ -165,6 +166,7 @@ abstract class CodedCall extends Call {
     'aceydeucey'.ri: (_) => AceyDeucey(),
     'adjustto.*'.ri: (name) => Adjust(name),
     'and'.ri: (_) => And(),
+    '.*(motivate|coordinate|percolate|perkup)'.ri: (name) => Anything(name),
     //  Anything Chain Thru should not match Square Chain Thru or others
     '.*(?<!(cross|eight|peel|scatter|spin|square|swing|tag))chainthru'.ri:
         (name) => AnythingChainThru(name),

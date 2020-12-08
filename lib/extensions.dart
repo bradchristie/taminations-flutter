@@ -101,6 +101,14 @@ extension TamString on String {
   String get last => this[length-1];
   int toIntOrNull() => int.tryParse(this);
 
+  String replaceMatch(RegExp regExp,String subst) {
+    var match = regExp.firstMatch(this);
+    var result = replaceFirst(regExp,subst);
+    for (var i=1; i<=match.groupCount; i++)
+      result = result.replaceAll('\\$i', match.group(i));
+    return result;
+  }
+
   //  Returns an array of strings, starting with the entire string,
   //  and each subsequent string chopping one word off the end
   List<String> chopped() {

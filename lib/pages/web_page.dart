@@ -200,7 +200,7 @@ class _WebFrameState extends fm.State<WebFrame> {
         });
       });
     });
-    return myFuture; //.whenComplete(() => loadMyHTML() );
+    return myFuture;
   }
 
   //  Load the original HTML, then call all the routines to fix it up
