@@ -161,7 +161,7 @@ class _CallsState extends fm.State<CallsFrame> {
               //  So no need to get fancy, just set the new page here
               fm.Router.of(context).routerDelegate
                   .setNewRoutePath(TaminationsRoute(
-                  level: levelDatum.dir,
+                  level: LevelData.find(callsSearched[index].link).name,
                   link: callsSearched[index].link,
                   call: callsSearched[index].title,
                   name: callsSearched[index].title
