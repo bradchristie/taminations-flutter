@@ -18,6 +18,7 @@
 
 */
 
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart' as fm;
 import '../title_bar.dart';
 import '../color.dart';
@@ -88,7 +89,7 @@ class _LevelTextWidget extends fm.StatelessWidget {
   fm.Widget build(fm.BuildContext context) =>
       fm.Align(
         alignment: fm.Alignment.centerLeft,
-        child: fm.Text(text, style: fm.TextStyle(fontWeight: fm.FontWeight.bold, fontSize: 20)));
+        child: AutoSizeText(text, style: fm.TextStyle(fontWeight: fm.FontWeight.bold, fontSize: 20)));
 }
 
 //  Widget for level that completely spans a horizontal line

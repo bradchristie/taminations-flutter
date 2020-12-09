@@ -18,10 +18,14 @@ flutter upgrade
 flutter config --enable-web
 flutter pub get
 ```
-- For iOS, build with these commands
+- For iOS, build and run with these commands
 ```
 cd ios
 pod install
 cd ..
 flutter build ios
+flutter run
 ```
+Check out [this link](https://cloud-trends.medium.com/how-to-fix-flutter-idevice-id-running-errors-in-mac-osx-catalina-7aa1f89f61aa)
+if you have a security problem with the Mac Gatekeeper
+refusing to run flutter utility programs.

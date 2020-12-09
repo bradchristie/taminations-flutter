@@ -18,6 +18,7 @@
 
 */
 
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart' as fm;
 import 'package:provider/provider.dart' as pp;
 import 'package:xml/xml.dart';
@@ -168,7 +169,7 @@ class _AnimListState extends fm.State<AnimListFrame> {
       fm.Expanded(
           child: fm.Container(
               color: c, child: fm.Center(
-              child: fm.Text(text, style: fm.TextStyle(fontSize: 20))
+              child: AutoSizeText(text, maxLines: 1, style: fm.TextStyle(fontSize: 20))
           )
           )
       );
