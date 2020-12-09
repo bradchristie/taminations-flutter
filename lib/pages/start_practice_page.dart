@@ -37,6 +37,7 @@ class StartPracticePage extends fm.StatelessWidget {
       DeviceOrientation.landscapeRight,
     ]);
     return fm.Scaffold(
+        backgroundColor: Color.FLOOR,
         appBar: fm.PreferredSize(
             preferredSize: fm.Size.fromHeight(56.0),
             child: TitleBar(
@@ -112,7 +113,7 @@ class _StartPracticeRadioGroup extends fm.StatelessWidget {
   fm.Widget build(fm.BuildContext context) {
     return fm.Container(
         color: Color.FLOOR,
-        margin: fm.EdgeInsets.only(bottom:3),
+        margin: fm.EdgeInsets.only(left:20, bottom:10),
         child: fm.Row (
             children: values.map((v) => [
               fm.Radio<String>(
@@ -143,6 +144,7 @@ class _StartPracticeFrameState extends fm.State<StartPracticeFrame> {
               fm.Expanded(
                 child: fm.Container(
                   color: Color.FLOOR,
+                  margin: fm.EdgeInsets.only(left:20,top:20),
                   child: fm.Column(
                     crossAxisAlignment: fm.CrossAxisAlignment.stretch,
                     children: [
