@@ -18,10 +18,11 @@
 
 */
 import 'dart:math';
+
 import 'dancer.dart';
-import 'math/movement.dart';
-import 'geometry.dart';
 import 'extensions.dart';
+import 'geometry.dart';
+import 'math/movement.dart';
 
 class Handhold {
 
@@ -54,36 +55,36 @@ class Handhold {
         d2.leftGrip = null;
 
       //  Check distance
-      var x1 = d1.tx.m31;
-      var y1 = d1.tx.m32;
-      var x2 = d2.tx.m31;
-      var y2 = d2.tx.m32;
-      var dx = x2 - x1;
-      var dy = y2 - y1;
-      var dfactor1 = 0.1;  // for distance up to 2.0
-      var dfactor2 = 2.0;  // for distance past 2.0
+      final x1 = d1.tx.m31;
+      final y1 = d1.tx.m32;
+      final x2 = d2.tx.m31;
+      final y2 = d2.tx.m32;
+      final dx = x2 - x1;
+      final dy = y2 - y1;
+      final dfactor1 = 0.1;  // for distance up to 2.0
+      final dfactor2 = 2.0;  // for distance past 2.0
       var cutover = 2.0;
       if (geometry == Geometry.HEXAGON) cutover = 2.5;
       if (geometry == Geometry.BIGON) cutover = 3.7;
-      var d = sqrt(dx * dx + dy * dy);
-      var dfactor0 = (geometry == Geometry.HEXAGON) ? 1.15 : 1.0;
-      var d0 = d * dfactor0;
+      final d = sqrt(dx * dx + dy * dy);
+      final dfactor0 = (geometry == Geometry.HEXAGON) ? 1.15 : 1.0;
+      final d0 = d * dfactor0;
       var score1 = (d0 > cutover)
           ? (d0 - cutover) * dfactor2 + 2 * dfactor1
           : d0 * dfactor1;
       var score2 = score1;
       //  Angle between dancers
-      var a0 = atan2(dy, dx);
+      final a0 = atan2(dy, dx);
       //  Angle each dancer is facing
-      var a1 = atan2(d1.tx.m12, d1.tx.m22);
-      var a2 = atan2(d2.tx.m12, d2.tx.m22);
+      final a1 = atan2(d1.tx.m12, d1.tx.m22);
+      final a2 = atan2(d2.tx.m12, d2.tx.m22);
       //  For each dancer, try left and right hands
       var h1 = 0;
       var h2 = 0;
       var ah1 = 0.0;
       var ah2 = 0.0;
-      var afactor1 = (geometry == Geometry.SQUARE) ? 0.8 : 0.2;
-      var afactor2 = (geometry == Geometry.BIGON) ? 0.6 : 1.0;
+      final afactor1 = (geometry == Geometry.SQUARE) ? 0.8 : 0.2;
+      final afactor2 = (geometry == Geometry.BIGON) ? 0.6 : 1.0;
 
       //  Dancer 1
       var a = (a1 - a0 + pi * 3.0 / 2.0).abs().IEEErem(pi * 2.0).abs();

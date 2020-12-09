@@ -24,7 +24,7 @@ import 'package:xml/xml.dart';
 
 //  Not an extension but useful for
 //  var xx = somethingMightBeNull() ?? thrower(Exception("xx would be null")
-T thrower<T>(Exception e) {
+T thrower<T>(Object e) {
   throw e;
 }
 
@@ -144,7 +144,11 @@ extension TamList<E> on List<E> {
   E get second => this[1];
   E get secondOrNull => length > 1 ? second : null;
   E getOrNull(int i) => (i >= 0 && i < length) ? this[i] : null;
-  List<E> operator -(E e) => where((element) => element != e).toList();
+  List<E> operator -(dynamic e) => (e is E)
+      ? where((element) => element != e).toList()
+      : (e is List<E>)
+      ? where((element) => !e.contains(element)).toList()
+      : thrower(ArgumentError(e));
   List<E> copy() => toList();
   List<T> mapIndexed<T>(T Function(int index, E item) mapFun) =>
       List.generate(length,(i)=>i).map((i) => mapFun(i,this[i]));

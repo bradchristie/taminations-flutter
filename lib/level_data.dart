@@ -19,8 +19,9 @@
 */
 
 import 'package:flutter/material.dart';
-import 'package:taminations/color.dart';
-import 'package:taminations/extensions.dart';
+
+import 'color.dart';
+import 'extensions.dart';
 
 class LevelData implements Comparable<LevelData> {
   final String name;

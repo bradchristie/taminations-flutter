@@ -107,6 +107,11 @@ import 'c1/vertical_tag_back.dart';
 import 'c1/wheel_and.dart';
 import 'c1/with_the_flow.dart';
 import 'c2/anything.dart';
+import 'c2/bounce.dart';
+import 'c2/catch.dart';
+import 'c2/checkpoint.dart';
+import 'c2/crazy.dart';
+import 'c2/cross_and_wheel.dart';
 import 'call.dart';
 import 'common/adjust.dart';
 import 'common/and.dart';
@@ -154,6 +159,8 @@ import 'plus/grand_swing_thru.dart';
 import 'plus/points.dart';
 import 'plus/roll.dart';
 import 'plus/spread.dart';
+import 'c2/cross_ramble.dart';
+import 'c2/cross_trade_and_wheel.dart';
 
 abstract class CodedCall extends Call {
 
@@ -180,6 +187,7 @@ abstract class CodedCall extends Call {
     'beau'.ri: (_) => Beaus(),
     'belle'.ri: (_) => Belles(),
     'bendtheline'.ri: (_) => BendTheLine(),
+    'bounce(the)?$specifier'.ri: (name) => Bounce(name),
     'boxcounterrotate'.ri: (_) => BoxCounterRotate(),
     'boy'.ri: (_) => Boys(),
     'boxthegnat'.ri: (_) => BoxTheGnat(),
@@ -190,8 +198,10 @@ abstract class CodedCall extends Call {
     'castashadowcenter(go|cast)?34'.ri: (name) => CastAShadow(name),
     '(cross)castback'.ri: (name) => CastBack(name),
     'castoff34'.ri: (_) => CastOffThreeQuarters(),
+    '(left)?(split)?catch(1|2|3|4)'.ri: (name) => Catch(name),
     'center'.ri: (_) => Centers(),
     'center6'.ri: (_) => CenterSix(),
+    'checkpoint(.+)by(.*)'.ri: (name) => Checkpoint(name),
     'circleby.*'.ri: (name) => CircleBy(name),
     'circulate'.ri: (_) => Circulate(),
     '(cross)?cloverand(\\w.*)'.ri: (name) => CloverAnd(name),
@@ -199,10 +209,14 @@ abstract class CodedCall extends Call {
     'concentric.+'.ri: (name) => Concentric(name),
     'counterrotate'.ri: (_) => CounterRotate(),
     'courtesyturn'.ri: (_) => CourtesyTurn(),
+    '(12|34)?(reverse)?crazy.*'.ri: (name) => Crazy(name),
     'cross'.ri: (_) => Cross(),
+    'crossandwheel'.ri: (_) => CrossAndWheel(),
     'crossfold'.ri: (_) => CrossFold(),
     'crossovercirculate'.ri: (_) => CrossOverCirculate(),
+    'crossramble'.ri: (_) => CrossRamble(),
     '.*crossrun'.ri: (name) => CrossRun(name),
+    'crosstradeandwheel'.ri: (_) => CrossTradeAndWheel(),
 
     'diamondcirculate'.ri: (_) => DiamondCirculate(),
     '(left)?dosado'.ri: (name) => Dosado(name),

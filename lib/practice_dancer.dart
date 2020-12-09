@@ -20,12 +20,11 @@
 
 import 'dart:math';
 
-import 'package:taminations/color.dart';
-import 'package:taminations/dancer.dart';
-import 'package:taminations/geometry.dart';
-import 'package:taminations/math/matrix.dart';
-import 'package:taminations/math/movement.dart';
-
+import 'color.dart';
+import 'dancer.dart';
+import 'geometry.dart';
+import 'math/matrix.dart';
+import 'math/movement.dart';
 import 'math/vector.dart';
 
 class PracticeDancer extends Dancer {
@@ -64,9 +63,9 @@ class PracticeDancer extends Dancer {
   Color get drawColor => _onTrackColor.darker();
 
   Matrix computeMatrix(double beat) {
-    var savetx = tx.copy();
+    final savetx = tx.copy();
     super.animate(beat);
-    var computetx = tx.copy();
+    final computetx = tx.copy();
     tx = savetx;
     return computetx;
   }
@@ -84,7 +83,7 @@ class PracticeDancer extends Dancer {
 
       //  Process primary move, which generally moves the dancer
       if (_primaryMove != NOPOINT) {
-        var d = (_primaryMove - _primaryTouch) * MOVESENSITIVITY;
+        final d = (_primaryMove - _primaryTouch) * MOVESENSITIVITY;
         if (!_ctlDown) {
           tx = Matrix.getTranslation(d.x, d.y) * tx;
           if (!_shiftDown && _secondaryMove == NOPOINT) {
@@ -92,7 +91,7 @@ class PracticeDancer extends Dancer {
             if (_primaryDirection == Vector())
               _primaryDirection = d;
             else {
-              var dd = Vector(
+              final dd = Vector(
                 //  this smooths the rotation
                   DIRECTIONALPHA * _primaryDirection.x + (1 - DIRECTIONALPHA) * d.x,
                   DIRECTIONALPHA * _primaryDirection.y + (1 - DIRECTIONALPHA) * d.y);
@@ -106,8 +105,8 @@ class PracticeDancer extends Dancer {
           }
         } else {
           //  Control key pressed - mouse controls rotation only
-          var a = _primaryMove - tx.location;
-          var z = a.crossZ(d);
+          final a = _primaryMove - tx.location;
+          final z = a.crossZ(d);
           tx = tx * Matrix.getRotation(z* ANGLESENSITIVITY / a.length);
         }
         _primaryTouch = _primaryMove;
@@ -117,17 +116,16 @@ class PracticeDancer extends Dancer {
       if (_secondaryMove != NOPOINT) {
         //  Rotation follow right finger
         //  Get the vector of the user's finger
-        var dx = -(_secondaryMove.x - _secondaryTouch.x) * ANGLESENSITIVITY;
-        var dy = (_secondaryMove.y - _secondaryTouch.y) * ANGLESENSITIVITY;
-        var vf = Vector(dx,dy);
+        final dx = -(_secondaryMove.x - _secondaryTouch.x) * ANGLESENSITIVITY;
+        final dy = (_secondaryMove.y - _secondaryTouch.y) * ANGLESENSITIVITY;
+        final vf = Vector(dx,dy);
         //  Get the vector the dancer is facing
-        var vu = tx.direction;
+        final vu = tx.direction;
         //  Amount of rotation is z of the cross product of the two
-        var da = vu.crossZ(vf);
+        final da = vu.crossZ(vf);
         tx = tx * Matrix.getRotation(da);
         _secondaryTouch = _secondaryMove;
       }
-
 
     }
   }
