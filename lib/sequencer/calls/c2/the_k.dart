@@ -18,19 +18,20 @@
 
 */
 
-export 'dart:math';
+import '../common.dart';
 
-export 'package:xml/xml.dart';
+class TheK extends Action {
 
-export 'color.dart';
-export 'dance_animation_painter.dart';
-export 'dancer.dart';
-export 'extensions.dart';
-export 'geometry.dart';
-export 'level_data.dart';
-export 'math/matrix.dart';
-export 'math/movement.dart';
-export 'math/path.dart';
-export 'math/vector.dart';
-export 'tam_utils.dart';
-export 'title_bar.dart';
+  @override final level = LevelData.C2;
+  TheK() : super('The K');
+
+  @override
+  Future<void> perform(CallContext ctx, [int stackIndex = 0]) async {
+    if (ctx.dancers.where((d) => d.data.center).length == 4 &&
+        ctx.dancers.where((d) => d.data.end).length == 4)
+      await ctx.applyCalls('Centers Trade While Ends Quarter Out and Roll');
+    else
+      await ctx.applyCalls('Center 4 Trade while Outer 4 1/4 Out and Roll');
+  }
+
+}

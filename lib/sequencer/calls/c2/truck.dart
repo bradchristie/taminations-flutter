@@ -18,19 +18,20 @@
 
 */
 
-export 'dart:math';
+import '../common.dart';
 
-export 'package:xml/xml.dart';
+class Truck extends Action {
 
-export 'color.dart';
-export 'dance_animation_painter.dart';
-export 'dancer.dart';
-export 'extensions.dart';
-export 'geometry.dart';
-export 'level_data.dart';
-export 'math/matrix.dart';
-export 'math/movement.dart';
-export 'math/path.dart';
-export 'math/vector.dart';
-export 'tam_utils.dart';
-export 'title_bar.dart';
+  @override final level = LevelData.C2;
+  Truck(String name) : super(name);
+
+  @override
+  Path performOne(Dancer d, CallContext ctx) {
+    final direction = [
+      if (d.gender == Gender.BOY) name.startsWith('Reverse') ? 'Right' : 'Left',
+      if (d.gender == Gender.GIRL) name.startsWith('Reverse') ? 'Left' : 'Right',
+    ].firstOrNull;
+    return TamUtils.getMove('Dodge $direction');
+  }
+
+}

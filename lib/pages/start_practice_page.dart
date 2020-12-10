@@ -66,7 +66,9 @@ class _TapDetector extends fm.StatelessWidget {
   fm.Widget build(fm.BuildContext context) =>
       fm.GestureDetector(
           onTap: () {
-            var request = Request(action:Action.PRACTICE,params:{'level':text});
+            var request = text == 'Tutorial'
+                ? Request(action:Action.TUTORIAL)
+                : Request(action:Action.PRACTICE,params:{'level':text});
             RequestHandler.of(context).processRequest(request);
           },
           child:child

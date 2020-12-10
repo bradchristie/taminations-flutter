@@ -18,19 +18,21 @@
 
 */
 
-export 'dart:math';
+import '../common.dart';
 
-export 'package:xml/xml.dart';
+class SnapTheLock extends Action {
 
-export 'color.dart';
-export 'dance_animation_painter.dart';
-export 'dancer.dart';
-export 'extensions.dart';
-export 'geometry.dart';
-export 'level_data.dart';
-export 'math/matrix.dart';
-export 'math/movement.dart';
-export 'math/path.dart';
-export 'math/vector.dart';
-export 'tam_utils.dart';
-export 'title_bar.dart';
+  @override final level = LevelData.C3A;
+  SnapTheLock() : super('Snap the Lock');
+
+  @override
+  Future<void> perform(CallContext ctx, [int stackIndex = 0]) async {
+    try {
+      await ctx.applyCalls('Partner Tag',
+          'Outsides Partner Tag While Centers Step to a Wave Lockit Step Thru');
+    } on CallError {
+      throw CallError('Cannot Snap the Lock from this formation.');
+    }
+  }
+
+}

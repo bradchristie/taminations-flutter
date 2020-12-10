@@ -24,15 +24,15 @@ import 'dart:ui';
 import 'package:flutter/material.dart' as fm;
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart' as pp;
-import 'package:taminations/button.dart';
-import 'package:taminations/dancer.dart';
-import 'package:taminations/request.dart';
 import 'package:xml/xml.dart';
 
+import '../button.dart';
 import '../dance_animation_painter.dart';
+import '../dancer.dart';
 import '../level_data.dart';
 import '../main.dart';
 import '../math/vector.dart';
+import '../request.dart';
 import '../settings.dart';
 import '../tam_utils.dart';
 import '../title_bar.dart';
@@ -91,7 +91,6 @@ class _PracticePageState extends fm.State<PracticePage> {
 
   @override
   fm.Widget build(fm.BuildContext context) {
-
     return pp.ChangeNotifierProvider.value(
       value: painter,
       child: fm.Scaffold(

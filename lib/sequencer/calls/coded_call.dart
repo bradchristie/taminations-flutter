@@ -132,6 +132,10 @@ import 'c2/single_cross_and_wheel.dart';
 import 'c2/single_cross_trade_and_wheel.dart';
 import 'c2/stagger.dart';
 import 'c2/tag_your_neighbor.dart';
+import 'c2/the_k.dart';
+import 'c2/truck.dart';
+import 'c2/zip_code.dart';
+import 'c3a/snap_the_lock.dart';
 import 'call.dart';
 import 'common/adjust.dart';
 import 'common/and.dart';
@@ -331,6 +335,7 @@ abstract class CodedCall extends Call {
     'slidethru'.ri: (_) => SlideThru(),
     'slip'.ri: (_) => Slip(),
     'slither'.ri: (_) => Slither(),
+    'snapthelock'.ri: (_) => SnapTheLock(),
     '(left)?spinthewindmill(left|right|in|out|forward)'.ri: (name) => SpinTheWindmill(name),
     'splitcirculate'.ri: (_) => SplitCirculate(),
     '(left)?splitsquarethru[2-7]'.ri: (name) => SplitSquareThru(name),
@@ -356,6 +361,7 @@ abstract class CodedCall extends Call {
     '(left|vertical){0,2}tagyour((criss)?cross)?neighbor'.ri:
         (name) => TagYourNeighbor(name),
     'tandem.+'.ri: (name) => Tandem(name),
+    'thek'.ri: (_) => TheK(),
     '32aceydeucey'.ri: (_) => ThreeByTwoAceyDeucey(),
     '(left)?34tag(theline)?'.r : (name) => ThreeQuartersTag(name),
     'toawave'.ri: (_) => ToAWave(),
@@ -370,6 +376,7 @@ abstract class CodedCall extends Call {
     'triple(lines?|waves?|columns?).+'.ri: (name) => TripleLine(name),
     'triplestarthru'.ri: (_) => TripleStarThru(),
     'tripletrade'.ri: (_) => TripleTrade(),
+    '(reverse)?truck'.ri: (name) => Truck(name),
     '(left)turnthru'.ri: (name) => TurnThru(name),
     '(go)?twice'.ri: (name) => Twice(name),
     '(left)?turnanddeal'.ri: (name) => TurnAndDeal(name),
@@ -394,6 +401,7 @@ abstract class CodedCall extends Call {
 
     'z[ai]g'.ri: (name) => Zig(name),
     'z[ai]gz[ai]g'.ri: (name) => ZigZag(name),
+    'zipcode\\d'.ri: (name) => ZipCode(name),
     'zing|zoom'.ri: (name) => Zoom(name)
 
   };
