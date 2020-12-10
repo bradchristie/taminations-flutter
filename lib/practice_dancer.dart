@@ -55,7 +55,7 @@ class PracticeDancer extends Dancer {
   var _primaryMove = NOPOINT;
   var _secondaryTouch = NOPOINT;
   var _secondaryMove = NOPOINT;
-  final _primaryIsLeft = true ; //Setting("PrimaryControl").s == "Left"
+  final _primaryIsLeft = true ; // TODO Setting("PrimaryControl").s == "Left"
 
   //  Need a val for original fill color, as we change it
   Color _onTrackColor;

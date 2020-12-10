@@ -20,6 +20,7 @@
 
 import 'dart:math';
 
+import 'package:tuple/tuple.dart';
 import 'package:xml/xml.dart';
 
 //  Not an extension but useful for
@@ -27,6 +28,17 @@ import 'package:xml/xml.dart';
 T thrower<T>(Object e) {
   throw e;
 }
+
+//  Can also use this construct
+/*
+final a = [
+  if (name == 'one') 'alpha'
+  else if (name == 'two') 'beta'
+  else if (name == 'three') 'gamma'
+].first;
+*/
+T when<T>(List<Map<bool Function(),T>> exprs) =>
+  exprs.firstWhere((item) => item.keys.first()).values.first;
 
 extension TamInt on int {
 

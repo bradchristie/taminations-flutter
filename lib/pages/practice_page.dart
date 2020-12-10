@@ -73,16 +73,13 @@ class _PracticePageState extends fm.State<PracticePage> {
     //  Choose a random call from the selected level
     var levelCalls = TamUtils.calldata.where((element) =>
         levelDatum.selector(element.link)).toList();
-    print('Can choose from ${levelCalls.length} calls.');
     var randomCall = levelCalls[Random().nextInt(levelCalls.length)];
-    print('Will try ${randomCall.title}');
 
     //  Load that call and choose a random animation
     randomLink = randomCall.link;
     tam = TamUtils.getXMLAsset(randomLink).then((doc) {
       var tams = TamUtils.tamList(doc).where((element) =>
       element.name.toString() == 'tam').toList();
-      print('Found ${tams.length} animations');
       randomAnim = Random().nextInt(tams.length);
       var randomTam = tams[randomAnim];
       painter.setAnimation(randomTam,Gender.BOY).whenComplete(() {
@@ -154,11 +151,14 @@ class _PracticeFrameState extends fm.State<PracticeFrame>
   var animationFinished = false;
   var score = 0;
   var maxScore = 0;
-  var congrats = 'Poor';
+  String congrats(double fraction) =>
+      fraction >= 0.9 ? 'Excellent!'
+          : fraction >= 0.7 ? 'Very Good!' : 'Poor';
 
   void _reset() {
     score = 0;
     animationFinished = false;
+    pp.Provider.of<DanceAnimationPainter>(context,listen: false).doPlay();
   }
 
   @override
@@ -203,8 +203,10 @@ class _PracticeFrameState extends fm.State<PracticeFrame>
                           children: [
                             _AnimationCompleteText('Animation Complete'),
                             _AnimationCompleteText('Your Score'),
-                            _AnimationCompleteText('$score / $maxScore'),
-                            _AnimationCompleteText(congrats),
+                            _AnimationCompleteText('${painter.practiceScore.ceil()} / ${(painter.movingBeats*10).ceil()}'),
+                            _AnimationCompleteText(
+                                congrats(painter.practiceScore/(painter.movingBeats*10))
+                            ),
                             fm.Row(
                               children: [
                                 Button('Repeat', onPressed: () {

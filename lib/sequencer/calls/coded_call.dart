@@ -112,6 +112,26 @@ import 'c2/catch.dart';
 import 'c2/checkpoint.dart';
 import 'c2/crazy.dart';
 import 'c2/cross_and_wheel.dart';
+import 'c2/cross_ramble.dart';
+import 'c2/cross_trade_and_wheel.dart';
+import 'c2/detour.dart';
+import 'c2/flip_your_neighbor.dart';
+import 'c2/grand_cross_trade_and_wheel.dart';
+import 'c2/half_the_k.dart';
+import 'c2/hocus_pocus.dart';
+import 'c2/kick_off.dart';
+import 'c2/loop.dart';
+import 'c2/peel_to_a_diamond.dart';
+import 'c2/relocate.dart';
+import 'c2/ripple.dart';
+import 'c2/rotary.dart';
+import 'c2/rotate.dart';
+import 'c2/scoot_and_cross_ramble.dart';
+import 'c2/shazam.dart';
+import 'c2/single_cross_and_wheel.dart';
+import 'c2/single_cross_trade_and_wheel.dart';
+import 'c2/stagger.dart';
+import 'c2/tag_your_neighbor.dart';
 import 'call.dart';
 import 'common/adjust.dart';
 import 'common/and.dart';
@@ -159,8 +179,6 @@ import 'plus/grand_swing_thru.dart';
 import 'plus/points.dart';
 import 'plus/roll.dart';
 import 'plus/spread.dart';
-import 'c2/cross_ramble.dart';
-import 'c2/cross_trade_and_wheel.dart';
 
 abstract class CodedCall extends Call {
 
@@ -218,6 +236,7 @@ abstract class CodedCall extends Call {
     '.*crossrun'.ri: (name) => CrossRun(name),
     'crosstradeandwheel'.ri: (_) => CrossTradeAndWheel(),
 
+    'detour'.ri: (_) => Detour(),
     'diamondcirculate'.ri: (_) => DiamondCirculate(),
     '(left)?dosado'.ri: (name) => Dosado(name),
     'doublestarthru'.ri: (_) => DoubleStarThru(),
@@ -229,18 +248,22 @@ abstract class CodedCall extends Call {
     'face(in|out|left|right)'.ri: (name) => Face(name),
     'facing'.ri: (_) => FacingDancers(),
     'finish.+'.ri: (name) => Finish(name),
+    'flipyour(criss)?(cross)?neighbor'.ri: (name) => FlipYourNeighbor(name),
     'fold'.ri: (_) => Fold(),
     '\\d\\d'.ri: (name) => Fraction(name),
 
     'girl'.ri: (_) => Girls(),
+    'grandcrosstradeandwheel'.ri: (_) => GrandCrossTradeAndWheel(),
     'grand(left)?swingthru'.ri: (name) => GrandSwingThru(name),
     '_grandswing(left|right)?'.ri: (name) => GrandSwingX(name),
 
-    '(left)?12tag'.ri: (name) => HalfTag(name),
     '(reverse)?12sashay'.ri: (name) => HalfSashay(name),
+    '(left)?12tag'.ri: (name) => HalfTag(name),
+    'halfthek'.ri: (_) => HalfTheK(),
     'head'.ri: (name) => Heads(name),
     //  Heads Start, be careful not to match Heads Star Thru
     '(head|side)start(?!hr).*'.ri: (name) => HeadsSidesStart(name),
+    'hocuspocus'.ri: (_) => HocusPocus(),
     'horseshoeturn'.ri: (_) => HorseshoeTurn(),
 
     'ignore.+'.ri: (name) => Ignore(name),
@@ -249,6 +272,8 @@ abstract class CodedCall extends Call {
 
     'jaywalk'.ri: (_) => Jaywalk(),
 
+    '(cross)?kickoff'.ri: (name) => KickOff(name),
+
     'lead'.ri: (name) => Leaders(name),
     //  Little needs two regexes
     //  to handle both <something> Little and Little <something>
@@ -256,6 +281,7 @@ abstract class CodedCall extends Call {
         (name) => Little(name),
     '(scootand)?little(outside|point)(in|out|left|right|(go)?(forward|asyouare))?'.ri:
         (name) => Little(name),
+    '(left|right|in|out)loop(1|2|3)'.ri: (name) => Loop(name),
 
     'makemagic'.ri: (_) => MakeMagic(),
     'minibusybut.+'.ri: (name) => MiniBusyBut(name),
@@ -269,6 +295,7 @@ abstract class CodedCall extends Call {
     'partnertag'.ri: (_) => PartnerTag(),
     'pass(in|out)'.ri: (name) => PassInOut(name),
     '(left)?passthru'.ri: (name) => PassThru(name),
+    'peeltoadiamond'.ri: (_) => PeelToADiamond(),
     'phantom.+'.ri: (name) => Phantom(name),
     'point'.ri: (_) => Points(),
     'promenadehome'.ri: (name) => PromenadeHome(name),
@@ -280,16 +307,24 @@ abstract class CodedCall extends Call {
     '(left)?14tag'.ri: (name) => QuarterTag(name),
 
     'ramble'.ri: (_) => Ramble(),
+    'relocate(.*)'.ri: (name) => Relocate(name),
+    '(left|right)?ripple.*'.ri: (name) => Ripple(name),
     '(and)?roll'.ri: (name) => Roll(name),
     '(left|right)_rollto'.ri: (name) => RollTo(name),
     '(left_right)rolltoawave'.ri: (name) => RollToAWave(name),
+    'rotary.*'.ri: (name) => Rotary(name),
+    'rotate(14|12|34)'.ri: (name) => Rotate(name),
     'run(left|right)?'.ri: (name) => Run(name),
 
     'samesex(es)?'.ri: (name) => SameSex(name),
+    'scootandcrossramble'.ri: (_) => ScootAndCrossRamble(),
     'scootandramble'.ri: (_) => ScootAndRamble(),
     'separate'.ri: (_) => Separate(),
+    'shazam'.ri: (_) => Shazam(),
     'siamese.+'.ri: (name) => Siamese(name),
     'side'.ri: (name) => Sides(name),
+    'singlecrossandwheel'.ri: (_) => SingleCrossAndWheel(),
+    'singlecrosstradeandwheel'.ri: (_) => SingleCrossTradeAndWheel(),
     '(left)?singlewheel'.ri: (name) => SingleWheel(name),
     'slide'.ri: (_) => Slide(),
     'slide(in|out|left|right)'.ri: (name) => SlideDir(name),
@@ -305,6 +340,7 @@ abstract class CodedCall extends Call {
     'squeezethegalaxy'.ri: (_) => SqueezeTheGalaxy(),
     'squeezethehourglass'.ri: (_) => SqueezeTheHourglass(),
     '(left)?squarethru(1|2|3|4|5|6|7)?(toawave)?'.ri: (name) => SquareThru(name),
+    'stagger.+'.ri: (name) => Stagger(name),
     //  Make sure Start does not match Star
     'Start.+'.r: (name) => Start(name),
     'step'.ri: (_) => Step(),
@@ -317,6 +353,8 @@ abstract class CodedCall extends Call {
 
     '(left)?tagback(toawave)?'.r: (name) => TagBack(name),
     'tagtheline'.ri: (_) => TagTheLine(),
+    '(left|vertical){0,2}tagyour((criss)?cross)?neighbor'.ri:
+        (name) => TagYourNeighbor(name),
     'tandem.+'.ri: (name) => Tandem(name),
     '32aceydeucey'.ri: (_) => ThreeByTwoAceyDeucey(),
     '(left)?34tag(theline)?'.r : (name) => ThreeQuartersTag(name),

@@ -200,8 +200,10 @@ class DanceAnimationPainter extends fm.ChangeNotifier implements fm.CustomPainte
   void doPlay() {
     if (!isRunning) {
       _lastTime = DateTime.now();
-      if (beat > _beats)
+      if (beat > _beats) {
         beat = -leadin;
+        isFinished = false;
+      }
       isRunning = true;
       _practiceScore = 0.0;
       _ticker.start();
