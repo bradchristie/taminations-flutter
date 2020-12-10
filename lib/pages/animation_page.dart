@@ -70,7 +70,6 @@ class _AnimationPageState extends fm.State<AnimationPage>
     var path = router.currentPath;
     link = path.link;
     animnum = path.animnum;
-    name = path.name;
 
     painter = DanceAnimationPainter();
     TamUtils.getXMLAsset(link).then((doc) {

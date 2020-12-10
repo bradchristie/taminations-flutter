@@ -162,9 +162,7 @@ class _CallsState extends fm.State<CallsFrame> {
               fm.Router.of(context).routerDelegate
                   .setNewRoutePath(TaminationsRoute(
                   level: LevelData.find(callsSearched[index].link).name,
-                  link: callsSearched[index].link,
-                  call: callsSearched[index].title,
-                  name: callsSearched[index].title
+                  link: callsSearched[index].link
               ));
             },
             child:fm.Row(

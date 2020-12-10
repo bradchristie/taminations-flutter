@@ -34,10 +34,9 @@ class CallListDatum {
   final String title;
   final String norm;
   final String link;
-  final String sublevel;
   final String languages;
   final String audio;
-  CallListDatum(this.title,this.norm,this.link,this.sublevel,this.languages,this.audio);
+  CallListDatum(this.title,this.norm,this.link,this.languages,this.audio);
 }
 
 //  Class of static methods and data, this class is not instantiated
@@ -87,7 +86,6 @@ class TamUtils {
             e('title'),
             normalizeCall(e('title')),
             e('link'),
-            e('sublevel'),
             e('languages'),
             e('audio'))
     ).toList();
@@ -104,6 +102,9 @@ class TamUtils {
     }
     return true;
   }
+
+  static String callNameFromLink(String link) =>
+      calldata.firstWhere((datum) => datum.link == link).title;
 
   ///  Get all tam and tamxref elements from an animation XML document
   static List<XmlElement> tamList(XmlDocument doc) => doc.firstElementChild

@@ -47,38 +47,30 @@ void main() {
 //  generate the current layout
 class TaminationsRoute {
 
-  static const separator = '\t';
-
   final String level;  //  if not null, generate Calls page
-  final String call;   //  if not null, generate AnimList page
+  final String link;  //  if not null, generate AnimList page
   final int animnum;   //  if >= 0, generate Animation page
 
+  final bool startPractice;  //  show Practice options page
   final bool practice;   //  show Practice page
   final bool sequencer;  //  show Sequencer page
   final bool about;      //  show About page
   final bool settings;   //  show Settings page
   final bool definition; //  show Definition page
 
-  //  Extra info to help pages fetch the info they need
-  final String link;
-  final String name;
-  final String title;
-
   //  Default parameters generate the layout for the main menu
   TaminationsRoute({
     this.level,
-    this.call,
     this.animnum = -1,
+    this.link,
 
+    this.startPractice = false,
     this.practice = false,
     this.sequencer = false,
     this.about = false,
     this.settings = false,
     this.definition = false,
 
-    this.link,
-    this.name,
-    this.title,
   });
 
   //  Convenience methods to create a new route by
@@ -86,37 +78,33 @@ class TaminationsRoute {
   TaminationsRoute addFrom(TaminationsRoute from) =>
       TaminationsRoute(
           level:from.level ?? level,
-          call:from.call ?? call,
           animnum: (from.animnum >= 0) ? from.animnum : animnum,
+          startPractice: from.startPractice || startPractice,
           practice: from.practice || practice,
           sequencer: from.sequencer || sequencer,
           definition: from.definition || definition,
           about: from.about || about,
           settings: from.settings || settings,
-          link: from.link ?? link,
-          name: from.name ?? name,
-          title: from.title ?? title);
+          link: from.link ?? link);
 
   TaminationsRoute operator +(TaminationsRoute other) => addFrom(other);
 
   bool get isLevelPage => level.isEmpty;
-  bool get isCallsPage => level.isNotEmpty && call.isEmpty;
+  bool get isCallsPage => level.isNotEmpty && link.isEmpty;
 
-  //  For debugging
+  //  For URL generation
   @override
   String toString() => <String>[
     if (level != null && level.isNotEmpty) 'level=$level',
-    if (call != null && call.isNotEmpty) 'call=$call',
     if (animnum >= 0) 'animnum=${animnum.d}',
     if (link != null && link.isNotEmpty) 'link=$link',
-    if (name != null && name.isNotEmpty) 'name=$name',
-    if (title != null && title.isNotEmpty) 'title=$title',
+    if (startPractice) 'startPractice',
     if (practice) 'practice',
     if (sequencer) 'sequencer',
     if (about) 'about',
     if (settings) 'settings',
     if (definition) 'definition'
-  ].join(separator);
+  ].join('&');
 
 }
 
@@ -309,17 +297,14 @@ class TaminationsRouteInformationParser extends fm.RouteInformationParser<Tamina
   parseRouteInformation(fm.RouteInformation routeInformation) async {
     final params = Uri.parse(routeInformation.location).queryParameters;
     var level = params['level'] ?? '';
-    var call = params['call'] ?? '';
     var link = params['link'] ?? '';
-    var name = params['name'] ?? '';
-    var title = params['title'] ?? '';
     var animnum = int.tryParse(params['animnum'] ?? '-1') ?? -1;
-    return TaminationsRoute(level:level,call:call,link:link,name:name,title:title,animnum:animnum);
+    return TaminationsRoute(level:level,link:link,animnum:animnum);
   }
 
   @override
   fm.RouteInformation restoreRouteInformation(TaminationsRoute path) {
-    var location = path.toString().replaceAll(TaminationsRoute.separator, '&');
+    var location = path.toString();
     return fm.RouteInformation(location: '/$location');
   }
 

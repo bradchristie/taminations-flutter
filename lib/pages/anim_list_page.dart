@@ -109,8 +109,6 @@ class _AnimListPageState extends fm.State<AnimListPage> {
                     TaminationsRoute(
                         level: request('level'),
                         link: request('link'),
-                        call: request('title'),
-                        name: request('name'),
                         animnum: request('animnum').i));
               }
               if (request.action == Action.BUTTON_PRESS) {
