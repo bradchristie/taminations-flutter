@@ -22,7 +22,6 @@ import 'package:flutter/material.dart' as fm;
 import '../main.dart';
 import 'web_page.dart';
 import 'level_page.dart';
-import '../level_data.dart';
 import 'settings_page.dart';
 import 'calls_page.dart';
 import '../title_bar.dart';
@@ -38,11 +37,12 @@ class FirstLandscapePage extends fm.StatefulWidget {
 
 class _FirstLandscapePageState extends fm.State<FirstLandscapePage> {
 
-  fm.Widget rightChild = WebFrame('info/about.html');
   String title = 'Taminations';
 
   @override
   fm.Widget build(fm.BuildContext context) {
+    var router = fm.Router.of(context).routerDelegate as TaminationsRouterDelegate;
+    var path = router.currentConfiguration;
     return fm.Scaffold(
       backgroundColor: Color.GRAY,
         appBar: fm.PreferredSize(
@@ -50,50 +50,31 @@ class _FirstLandscapePageState extends fm.State<FirstLandscapePage> {
             child: TitleBar(title:title)
         ),
         body: RequestHandler(
-            child:FirstLandscapeFrame(rightChild:rightChild),
+            child:FirstLandscapeFrame(rightChild:
+                path.settings
+                    ? SettingsFrame()
+                    :path.level?.isNotEmpty ?? false
+                    ? CallsFrame(path.level)
+                    : WebFrame('info/about.html')),
           handler: (request) {
             if (request.action == Action.PRACTICE) {
-              var route = TaminationsRoute(practice: true);
-              fm.Router.of(context).routerDelegate.setNewRoutePath(route);
+              router.setNewRoutePath(TaminationsRoute(practice: true, newPage: true));
             }
             else if (request.action == Action.SEQUENCER) {
-              var route = TaminationsRoute(sequencer: true);
-              fm.Router.of(context).routerDelegate.setNewRoutePath(route);
+              router.setNewRoutePath(TaminationsRoute(sequencer: true, newPage: true));
             }
             else if (request.action == Action.SETTINGS) {
-              showSettingsFrame();
+              router.setNewRoutePath(TaminationsRoute(settings: true));
             }
             else if (request.action == Action.ABOUT) {
-              showAboutFrame();
+              router.setNewRoutePath(TaminationsRoute(about: true));
             }
             else if (request.action == Action.LEVEL) {
-              showCallsFrame(request('level'));
+              router.setNewRoutePath(TaminationsRoute(level: request('level')));
             }
-            //FM.Router.of(context).routerDelegate.setNewRoutePath(route);
           }
         )
     );
-  }
-
-  void showAboutFrame() {
-    setState(() {
-      rightChild = WebFrame('info/about.html');
-      title = 'Taminations';
-    });
-  }
-
-  void showSettingsFrame() {
-    setState(() {
-      rightChild = SettingsFrame();
-      title = 'Settings';
-    });
-  }
-
-  void showCallsFrame(String level) {
-    setState(() {
-      rightChild = CallsFrame(level);
-      title = LevelData.find(level).name;
-    });
   }
 
 }

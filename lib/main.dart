@@ -57,11 +57,13 @@ class TaminationsRoute {
   final bool settings;   //  show Settings page
   final bool definition; //  show Definition page
 
+  final bool newPage;   // only used by setNewRoutePath
+
   //  Default parameters generate the layout for the main menu
   TaminationsRoute({
     this.level,
-    this.animnum = -1,
     this.link,
+    this.animnum = -1,
 
     this.startPractice = false,
     this.practice = false,
@@ -70,6 +72,8 @@ class TaminationsRoute {
     this.settings = false,
     this.definition = false,
 
+    this.newPage = false
+
   });
 
   //  Convenience methods to create a new route by
@@ -77,19 +81,17 @@ class TaminationsRoute {
   TaminationsRoute addFrom(TaminationsRoute from) =>
       TaminationsRoute(
           level:from.level ?? level,
+          link: from.link ?? link,
           animnum: (from.animnum >= 0) ? from.animnum : animnum,
+
           startPractice: from.startPractice || startPractice,
           practice: from.practice || practice,
           sequencer: from.sequencer || sequencer,
           definition: from.definition || definition,
           about: from.about || about,
-          settings: from.settings || settings,
-          link: from.link ?? link);
+          settings: from.settings || settings);
 
   TaminationsRoute operator +(TaminationsRoute other) => addFrom(other);
-
-  bool get isLevelPage => level.isEmpty;
-  bool get isCallsPage => level.isNotEmpty && link.isEmpty;
 
   //  For URL generation
   @override
@@ -104,6 +106,8 @@ class TaminationsRoute {
     if (settings) 'settings',
     if (definition) 'definition'
   ].join('&');
+
+  bool get isBlank => toString().isBlank;
 
 }
 
@@ -168,6 +172,9 @@ class TaminationsRouterDelegate extends fm.RouterDelegate<TaminationsRoute>
   //  this is necessary for the web URL and back button to work
   @override
   TaminationsRoute get currentConfiguration => paths.last;
+  set currentConfiguration(value) {
+    paths[paths.length-1] = value;
+  }
 
   @override
   fm.Widget build(fm.BuildContext context) {
@@ -258,10 +265,19 @@ class TaminationsRouterDelegate extends fm.RouterDelegate<TaminationsRoute>
         });
   }
 
+  void showPaths(String fromWhere) {
+    print('$fromWhere:');
+    for (var i=0; i<paths.length; i++) {
+      print('    $i ${paths[i]}');
+    }
+  }
+
   @override
   Future<bool> popRoute() async {
     if (paths.length > 1) {
       paths.removeLast();
+      showPaths('popRoute');
+      notifyListeners();
       return true;
    }
     else
@@ -276,8 +292,17 @@ class TaminationsRouterDelegate extends fm.RouterDelegate<TaminationsRoute>
   @override
   Future<void> setNewRoutePath(TaminationsRoute configuration) async {
     if (configuration != null) {
-      paths.add(currentConfiguration + configuration);
+      print('New configuration: $configuration');
+      if (configuration.isBlank)
+        popRoute();
+      else {
+        if (configuration.newPage)
+          paths.add(configuration);
+        else
+          currentConfiguration = configuration;
+      }
       notifyListeners();
+      showPaths('setNewRoutePath');
     }
     return;
   }

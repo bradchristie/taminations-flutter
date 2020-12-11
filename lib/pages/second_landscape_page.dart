@@ -44,12 +44,8 @@ class SecondLandscapePage extends fm.StatefulWidget {
 }
 
 class _SecondLandscapePageState extends fm.State<SecondLandscapePage> {
-  LevelData levelDatum;
   String link;
   int animnum;
-  fm.Widget leftChild;
-  fm.Widget centerChild;
-  fm.Widget rightChild;
   DanceAnimationPainter painter;
   XmlDocument doc;
 
@@ -61,29 +57,28 @@ class _SecondLandscapePageState extends fm.State<SecondLandscapePage> {
     var path = router.currentConfiguration;
     link = path.link;
     animnum = path.animnum;
-    levelDatum = LevelData.find(path.level);
-    leftChild = AnimListFrame(link);
-    centerChild = AnimationFrame(link:link, animnum:animnum);
-    rightChild ??= WebFrame(link);
 
     painter = DanceAnimationPainter();
     TamUtils.getXMLAsset(link).then((doc) {
       this.doc = doc;
-      painter.setAnimation(tamFromAnimnum());
+      painter.setAnimation(tamFromAnimnum(path.animnum));
     });
   }
 
-  XmlElement tamFromAnimnum() => TamUtils.tamList(doc)
+  XmlElement tamFromAnimnum(int animnum) => TamUtils.tamList(doc)
       .where((it) => !(it('display','').startsWith('n')))
       .toList()[max(0, animnum)];
 
   @override
   fm.Widget build(fm.BuildContext context) {
+    var router = fm.Router.of(context).routerDelegate as TaminationsRouterDelegate;
+    var path = router.currentConfiguration;
     return  RequestHandler(
       handler: (request) {
         if (request.action == Action.ANIMATION) {
-          animnum = request('animnum').i;
-          painter.setAnimation(tamFromAnimnum());
+          router.setNewRoutePath(path+TaminationsRoute(animnum: request('animnum').i));
+          //  TODO might be better to set this as a reaction to the new path
+          painter.setAnimation(tamFromAnimnum(request('animnum').i));
         }
       },
       child: pp.ChangeNotifierProvider.value(
@@ -94,13 +89,14 @@ class _SecondLandscapePageState extends fm.State<SecondLandscapePage> {
                 preferredSize: fm.Size.fromHeight(56.0),
                 child: pp.Consumer<DanceAnimationPainter>(
                     builder: (context,painter2,child) =>
-                        TitleBar(title: painter2.title, level: levelDatum.name)
+                        TitleBar(title: painter2.title,
+                            level: LevelData.find(path.level).name)
                 )),
             body: SecondLandscapeFrame(
-                leftChild: leftChild,
+                leftChild: AnimListFrame(path.link),
                 centerChild: fm.Column(
                   children: [
-                    fm.Expanded(child: centerChild),
+                    fm.Expanded(child: AnimationFrame(link:path.link, animnum:path.animnum)),
                     fm.Container(
                       color: Color.FLOOR,
                       child: fm.Row(
@@ -108,23 +104,33 @@ class _SecondLandscapePageState extends fm.State<SecondLandscapePage> {
                           fm.Expanded(
                               child: Button('Definition',
                                   onPressed: () {
-                                    setState(() {
-                                      rightChild = WebFrame(link);
-                                    });
+                                    router.setNewRoutePath(TaminationsRoute(
+                                        level: path.level,
+                                        link: path.link,
+                                        animnum:  path.animnum,
+                                        definition: true
+                                    ));
                                   })),
                           fm.Expanded(
                               child: Button('Settings',
                                   onPressed: () {
-                                    setState(() {
-                                      rightChild = SettingsFrame();
-                                    });
+                                    router.setNewRoutePath(path+TaminationsRoute(
+                                        level: path.level,
+                                        link: path.link,
+                                        animnum:  path.animnum,
+                                        settings: true
+                                    ));
+
                                   })),
                         ],
                       ),
                     )
                   ],
                 ),
-                rightChild: rightChild)
+                rightChild: path.settings
+                    ? SettingsFrame()
+                    : WebFrame(path.link)
+            )
         ),
       ),
     );
