@@ -18,7 +18,6 @@
 
 */
 
-import 'package:flutter/foundation.dart' as ff;
 import 'package:flutter/material.dart' as fm;
 import 'package:provider/provider.dart' as pp;
 import 'package:taminations/pages/practice_page.dart';
@@ -166,110 +165,107 @@ class TaminationsRouterDelegate extends fm.RouterDelegate<TaminationsRoute>
 
   //  History for back navigation
   List<TaminationsRoute> paths = [TaminationsRoute()];
-  TaminationsRoute get currentPath => paths.last;
-
-  @override
-  fm.Widget build(fm.BuildContext context) {
-    return fm.OrientationBuilder(
-                    builder: (context, orientation) {
-                      return fm.Navigator(
-                          key: navigatorKey,
-
-                          //  Pages for landscape - first and second, Sequencer, Practice
-                          pages: (orientation == fm.Orientation.landscape)
-                              ? [ fm.MaterialPage(
-                              key: fm.ValueKey('Landscape Page'),
-                              child: FirstLandscapePage()
-                          ),
-                            if (currentPath?.link?.isNotEmpty ?? false)
-                              fm.MaterialPage(
-                                  key: fm.ValueKey('Landscape Page ' + currentPath.link),
-                                  child: SecondLandscapePage()
-                              ),
-                            if (currentPath.practice)
-                              fm.MaterialPage(
-                                  key: fm.ValueKey('Start Practice'),
-                                  child: StartPracticePage()
-                              ),
-                            if (currentPath.practice && currentPath.level != null)
-                              fm.MaterialPage(
-                                  key: fm.ValueKey('Practice'),
-                                  child: PracticePage()
-                              ),
-                            if (currentPath.sequencer)
-                              fm.MaterialPage(
-                                  key: fm.ValueKey('Sequencer'),
-                                  child: SequencerPage()
-                              ),
-
-                          ]
-
-                          //  Pages for portrait - Level, Animlist, Animation, Settings, etc
-                              : [
-                            fm.MaterialPage(
-                                key: fm.ValueKey('LevelPage'),
-                                child: LevelPage()
-                            ),
-                            if (currentPath.level != null &&
-                                LevelData.find(currentPath.level) != null)
-                              fm.MaterialPage(
-                                  key: fm.ValueKey(currentPath.level),
-                                  child: CallsPage()
-                              ),
-                            if (currentPath.link?.isNotEmpty ?? false)
-                              fm.MaterialPage(
-                                  key: fm.ValueKey(currentPath.link),
-                                  child: AnimListPage()
-                              ),
-                            if (currentPath.animnum >= 0 )
-                              fm.MaterialPage(
-                                  key: fm.ValueKey(currentPath.link + ' animation'),
-                                  child: AnimationPage()
-                              ),
-                            if (currentPath.about)
-                              fm.MaterialPage(
-                                  key: fm.ValueKey('About'),
-                                  child: WebPage('info/about.html')
-                              ),
-                            if (currentPath.definition)
-                              fm.MaterialPage(
-                                key: fm.ValueKey(currentPath.link + ' definition'),
-                                child: WebPage(currentPath.link)
-                              ),
-                            if (currentPath.settings)
-                              fm.MaterialPage(
-                                  key: fm.ValueKey('Settings'),
-                                  child: SettingsPage()
-                              ),
-                            if (currentPath.practice)
-                              fm.MaterialPage(
-                                  key: fm.ValueKey('Practice'),
-                                  child: StartPracticePage()
-                              ),
-                          ],
-
-                          //  Standard onPopPage method, required
-                          onPopPage: (route, result) {
-                            if (!route.didPop(result)) {
-                              return false;
-                            }
-                            return true;
-                          });
-        });
-
-  }
-
   //  this is necessary for the web URL and back button to work
   @override
   TaminationsRoute get currentConfiguration => paths.last;
 
   @override
-  Future<bool> popRoute() {
+  fm.Widget build(fm.BuildContext context) {
+    return fm.OrientationBuilder(
+        builder: (context, orientation) {
+          return fm.Navigator(
+              key: navigatorKey,
+
+              //  Pages for landscape - first and second, Sequencer, Practice
+              pages: (orientation == fm.Orientation.landscape)
+                  ? [ fm.MaterialPage(
+                  key: fm.ValueKey('Landscape Page'),
+                  child: FirstLandscapePage()
+              ),
+                if (currentConfiguration?.link?.isNotEmpty ?? false)
+                  fm.MaterialPage(
+                      key: fm.ValueKey('Landscape Page ' + currentConfiguration.link),
+                      child: SecondLandscapePage()
+                  ),
+                if (currentConfiguration.practice)
+                  fm.MaterialPage(
+                      key: fm.ValueKey('Start Practice'),
+                      child: StartPracticePage()
+                  ),
+                if (currentConfiguration.practice && currentConfiguration.level != null)
+                  fm.MaterialPage(
+                      key: fm.ValueKey('Practice'),
+                      child: PracticePage()
+                  ),
+                if (currentConfiguration.sequencer)
+                  fm.MaterialPage(
+                      key: fm.ValueKey('Sequencer'),
+                      child: SequencerPage()
+                  ),
+              ]
+
+              //  Pages for portrait - Level, Animlist, Animation, Settings, etc
+                  : [
+                fm.MaterialPage(
+                    key: fm.ValueKey('LevelPage'),
+                    child: LevelPage()
+                ),
+                if (currentConfiguration.level != null &&
+                    LevelData.find(currentConfiguration.level) != null)
+                  fm.MaterialPage(
+                      key: fm.ValueKey(currentConfiguration.level),
+                      child: CallsPage()
+                  ),
+                if (currentConfiguration.link?.isNotEmpty ?? false)
+                  fm.MaterialPage(
+                      key: fm.ValueKey(currentConfiguration.link),
+                      child: AnimListPage()
+                  ),
+                if (currentConfiguration.animnum >= 0 )
+                  fm.MaterialPage(
+                      key: fm.ValueKey(currentConfiguration.link + ' animation'),
+                      child: AnimationPage()
+                  ),
+                if (currentConfiguration.about)
+                  fm.MaterialPage(
+                      key: fm.ValueKey('About'),
+                      child: WebPage('info/about.html')
+                  ),
+                if (currentConfiguration.definition)
+                  fm.MaterialPage(
+                      key: fm.ValueKey(currentConfiguration.link + ' definition'),
+                      child: WebPage(currentConfiguration.link)
+                  ),
+                if (currentConfiguration.settings)
+                  fm.MaterialPage(
+                      key: fm.ValueKey('Settings'),
+                      child: SettingsPage()
+                  ),
+                if (currentConfiguration.practice)
+                  fm.MaterialPage(
+                      key: fm.ValueKey('Practice'),
+                      child: StartPracticePage()
+                  ),
+              ],
+
+              //  Standard onPopPage method, required
+              onPopPage: (route, result) {
+                if (!route.didPop(result)) {
+                  return false;
+                }
+                return true;
+              });
+        });
+  }
+
+  @override
+  Future<bool> popRoute() async {
     if (paths.length > 1) {
       paths.removeLast();
-      return ff.SynchronousFuture(true);
-    }
-    else return ff.SynchronousFuture(false);
+      return true;
+   }
+    else
+      return false;
   }
 
   @override
@@ -280,7 +276,7 @@ class TaminationsRouterDelegate extends fm.RouterDelegate<TaminationsRoute>
   @override
   Future<void> setNewRoutePath(TaminationsRoute configuration) async {
     if (configuration != null) {
-      paths.add(currentPath + configuration);
+      paths.add(currentConfiguration + configuration);
       notifyListeners();
     }
     return;

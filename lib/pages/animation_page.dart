@@ -67,7 +67,7 @@ class _AnimationPageState extends fm.State<AnimationPage>
   void didChangeDependencies() {
     super.didChangeDependencies();
     var router = fm.Router.of(context).routerDelegate as TaminationsRouterDelegate;
-    var path = router.currentPath;
+    var path = router.currentConfiguration;
     link = path.link;
     animnum = path.animnum;
 

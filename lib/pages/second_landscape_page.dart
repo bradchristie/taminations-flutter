@@ -58,7 +58,7 @@ class _SecondLandscapePageState extends fm.State<SecondLandscapePage> {
     super.didChangeDependencies();
     var router =
         fm.Router.of(context).routerDelegate as TaminationsRouterDelegate;
-    var path = router.currentPath;
+    var path = router.currentConfiguration;
     link = path.link;
     animnum = path.animnum;
     levelDatum = LevelData.find(path.level);

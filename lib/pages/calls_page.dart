@@ -45,7 +45,7 @@ class _CallsPageState extends fm.State<CallsPage> {
   void didChangeDependencies() {
     super.didChangeDependencies();
     var router = fm.Router.of(context).routerDelegate as TaminationsRouterDelegate;
-    var path = router.currentPath;
+    var path = router.currentConfiguration;
     levelDatum = LevelData.find(path.level);
   }
 

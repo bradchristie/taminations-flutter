@@ -61,7 +61,7 @@ class _PracticePageState extends fm.State<PracticePage> {
       DeviceOrientation.landscapeRight,
     ]);
     var router = fm.Router.of(context).routerDelegate as TaminationsRouterDelegate;
-    var path = router.currentPath;
+    var path = router.currentConfiguration;
     levelDatum = LevelData.find(path.level);
     _reset();
 

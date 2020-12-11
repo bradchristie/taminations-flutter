@@ -77,7 +77,7 @@ class _AnimListPageState extends fm.State<AnimListPage> {
     super.didChangeDependencies();
     var router =
         fm.Router.of(context).routerDelegate as TaminationsRouterDelegate;
-    var path = router.currentPath;
+    var path = router.currentConfiguration;
     link = path.link;
     levelDatum = LevelData.find(path.link);
     docFuture = TamUtils.getXMLAsset(path.link);
@@ -232,7 +232,7 @@ class _AnimListState extends fm.State<AnimListFrame> {
   fm.Widget build(fm.BuildContext context) {
     var router =
         fm.Router.of(context).routerDelegate as TaminationsRouterDelegate;
-    var path = router.currentPath;
+    var path = router.currentConfiguration;
     return fm.FutureBuilder<XmlDocument>(
         future: docFuture,
         builder:
