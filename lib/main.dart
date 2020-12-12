@@ -20,22 +20,23 @@
 
 import 'package:flutter/material.dart' as fm;
 import 'package:provider/provider.dart' as pp;
-import 'package:taminations/pages/practice_page.dart';
-import 'package:taminations/pages/start_practice_page.dart';
 
-import 'pages/calls_page.dart';
 import 'extensions.dart';
-import 'pages/level_page.dart';
 import 'level_data.dart';
 import 'pages/anim_list_page.dart';
 import 'pages/animation_page.dart';
+import 'pages/calls_page.dart';
 import 'pages/first_landscape_page.dart';
-import 'pages/settings_page.dart';
+import 'pages/level_page.dart';
+import 'pages/practice_page.dart';
 import 'pages/second_landscape_page.dart';
-import 'settings.dart';
-import 'tam_utils.dart';
+import 'pages/settings_page.dart';
+import 'pages/start_practice_page.dart';
+import 'pages/tutorial_page.dart';
 import 'pages/web_page.dart';
 import 'sequencer/sequencer_page.dart';
+import 'settings.dart';
+import 'tam_utils.dart';
 
 ///  Main routine
 void main() {
@@ -52,6 +53,7 @@ class TaminationsRoute {
 
   final bool startPractice;  //  show Practice options page
   final bool practice;   //  show Practice page
+  final bool tutorial;   //  show Practice Tutorial
   final bool sequencer;  //  show Sequencer page
   final bool about;      //  show About page
   final bool settings;   //  show Settings page
@@ -67,6 +69,7 @@ class TaminationsRoute {
 
     this.startPractice = false,
     this.practice = false,
+    this.tutorial = false,
     this.sequencer = false,
     this.about = false,
     this.settings = false,
@@ -86,6 +89,7 @@ class TaminationsRoute {
 
           startPractice: from.startPractice || startPractice,
           practice: from.practice || practice,
+          tutorial: from.tutorial || tutorial,
           sequencer: from.sequencer || sequencer,
           definition: from.definition || definition,
           about: from.about || about,
@@ -101,6 +105,7 @@ class TaminationsRoute {
     if (link != null && link.isNotEmpty) 'link=$link',
     if (startPractice) 'startPractice',
     if (practice) 'practice',
+    if (tutorial) 'tutorial',
     if (sequencer) 'sequencer',
     if (about) 'about',
     if (settings) 'settings',
@@ -199,6 +204,11 @@ class TaminationsRouterDelegate extends fm.RouterDelegate<TaminationsRoute>
                       key: fm.ValueKey('Start Practice'),
                       child: StartPracticePage()
                   ),
+                if (currentConfiguration.tutorial)
+                  fm.MaterialPage(
+                      key: fm.ValueKey('Tutorial'),
+                      child: TutorialPage()
+                  ),
                 if (currentConfiguration.practice && currentConfiguration.level != null)
                   fm.MaterialPage(
                       key: fm.ValueKey('Practice'),
@@ -294,7 +304,7 @@ class TaminationsRouterDelegate extends fm.RouterDelegate<TaminationsRoute>
     if (configuration != null) {
       print('New configuration: $configuration');
       if (configuration.isBlank)
-        popRoute();
+        await popRoute();
       else {
         if (configuration.newPage)
           paths.add(configuration);

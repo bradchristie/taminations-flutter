@@ -46,7 +46,6 @@ class PracticePage extends fm.StatefulWidget {
 class _PracticePageState extends fm.State<PracticePage> {
 
   LevelData levelDatum;
-  Future<XmlDocument> tamdoc;
   Future<XmlElement> tam;
   int randomAnim;
   String randomLink;
@@ -127,7 +126,7 @@ class _PracticePageState extends fm.State<PracticePage> {
                 builder:  (fm.BuildContext context,
                     fm.AsyncSnapshot<XmlElement> snapshot) {
                   if (snapshot.hasData)
-                    return PracticeFrame(snapshot.data);
+                    return PracticeFrame();
                   else
                     return fm.Container();
                 }),
@@ -138,8 +137,7 @@ class _PracticePageState extends fm.State<PracticePage> {
 }
 
 class PracticeFrame extends fm.StatefulWidget {
-  final XmlElement tam;
-  PracticeFrame(this.tam);
+  PracticeFrame();
   @override
   _PracticeFrameState createState() => _PracticeFrameState();
 }

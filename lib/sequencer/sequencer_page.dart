@@ -26,7 +26,7 @@ import '../pages/settings_page.dart';
 import '../pages/web_page.dart';
 import '../request.dart';
 import '../title_bar.dart';
-import 'abbreviaions_model.dart';
+import 'abbreviations_model.dart';
 import 'abbreviations_frame.dart';
 import 'calls_frame.dart';
 import 'sequencer_animation_frame.dart';

@@ -46,7 +46,9 @@ class StartPracticePage extends fm.StatelessWidget {
         ),
         body: RequestHandler(
             handler: (request) {
-              var route = TaminationsRoute(practice:true,level:request('level'));
+              var route = request.action == Action.TUTORIAL
+              ? TaminationsRoute(tutorial:true,level:request('level'))
+              : TaminationsRoute(practice:true,level:request('level'));
               fm.Router.of(context).routerDelegate.setNewRoutePath(route);
             },
             child: StartPracticeFrame()

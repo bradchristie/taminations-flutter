@@ -34,14 +34,45 @@ class _TutorialPageState extends fm.State<TutorialPage> {
 
   //  painter is where all the drawing and animation is done
   DanceAnimationPainter painter;
-  Future<XmlElement> tam;
+  Future<XmlDocument> tam;
+  var lessonNumber = 0;
 
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
+    //  Read the xml file with the tutorial animations
+    tam = TamUtils.getXMLAsset('src/tutorial');
     //  Set up painter
     painter = DanceAnimationPainter();
   }
+
+  static final touchHints = [
+    'Use your %1 finger on the %1 side of the screen. '
+        'Do not put your finger on the dancer. '
+        'Slide your finger forward to move the dancer forward. '
+        'Try to keep pace with the adjacent dancer.',
+
+    'Use your %1 finger to follow the turning path. '
+        'Try to keep pace with the adjacent dancer.',
+
+    'Normally your dancer faces the direction you are moving. '
+        'But you can use your %2 finger to hold or change the facing direction. '
+        'Press and hold your %2 finger on the %2 side '
+        'of the screen.  This will keep your dancer facing forward. '
+        'Then use your %1 finger on the %1 side '
+        'of the screen to slide your dancer horizontally.',
+
+    'Use your %2 finger to turn in place. '
+        "To U-Turn Left, make a 'C' movement with your %2 finger."
+  ];
+
+  static final mouseHints = [
+    'Use your mouse to move the dancer forward',
+    'Now use your mouse to follow a turning path',
+    'Normally your dancer turns to face the direction you are moving. '
+        'Hold down the Shift key to keep your dancer from turning.',
+    'Hold the Control key to turn your dancer in place without moving'
+  ];
 
   void _nextAnimation() {
 
@@ -55,19 +86,7 @@ class _TutorialPageState extends fm.State<TutorialPage> {
       child: fm.Scaffold(
           appBar: fm.PreferredSize(
               preferredSize: fm.Size.fromHeight(56.0),
-              child: fm.FutureBuilder(
-                  future: tam,
-                  builder: (fm.BuildContext context,
-                      fm.AsyncSnapshot<XmlElement> snapshot) {
-                    if (snapshot.hasData) {
-                      return TitleBar(
-                          title: snapshot.data.getAttribute('title')
-                      );
-                    }
-                    else
-                      return TitleBar(title: ' ');
-                  }
-              )
+              child: TitleBar(title: 'Tutorial')
           ),
           body: RequestHandler(
             handler: (request) {
@@ -82,9 +101,30 @@ class _TutorialPageState extends fm.State<TutorialPage> {
             child: fm.FutureBuilder(
                 future: tam,
                 builder: (fm.BuildContext context,
-                    fm.AsyncSnapshot<XmlElement> snapshot) {
-                  if (snapshot.hasData)
-                    return PracticeFrame(snapshot.data);
+                    fm.AsyncSnapshot<XmlDocument> snapshot) {
+                  if (snapshot.hasData) {
+
+                    fm.WidgetsBinding.instance.addPostFrameCallback((_) {
+                      fm.showDialog(
+                          context: context,
+                          barrierDismissible: false,
+                          builder: (context) =>
+                              fm.AlertDialog(
+                                title: fm.Text('Tutorial ${lessonNumber+1}'),
+                                content: fm.Text(
+                                    mouseHints[lessonNumber]),
+                                actions: [
+                                  fm.TextButton(
+                                      child: fm.Text('Continue'), onPressed: () {
+                                    fm.Navigator.of(context).pop();
+                                  }),
+                                ],
+                              )
+                      );
+                    });
+                    painter.setAnimation(TamUtils.tamList(snapshot.data)[lessonNumber]);
+                    return PracticeFrame();
+                  }
                   else
                     return fm.Container();
                 }),

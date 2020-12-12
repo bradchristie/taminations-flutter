@@ -25,7 +25,7 @@ import '../dance_animation_painter.dart';
 import 'calls/coded_call.dart';
 import 'call_context.dart';
 import 'call_error.dart';
-import 'abbreviaions_model.dart';
+import 'abbreviations_model.dart';
 
 class SequencerCall {
   final String name;

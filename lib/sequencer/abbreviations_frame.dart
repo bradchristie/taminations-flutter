@@ -20,7 +20,7 @@
 
 import 'package:flutter/material.dart' as fm;
 import 'package:provider/provider.dart' as pm;
-import 'abbreviaions_model.dart';
+import 'abbreviations_model.dart';
 import '../color.dart';
 import '../button.dart';
 import '../extensions.dart';
