@@ -24,6 +24,7 @@ import 'package:provider/provider.dart' as pp;
 import '../button.dart';
 import '../pages/animation_page.dart';
 import 'sequencer_model.dart';
+import '../main.dart';
 import '../color.dart';
 
 class SequencerAnimationFrame extends fm.StatefulWidget {
@@ -40,28 +41,36 @@ class _SequencerAnimationFrameState extends fm.State<SequencerAnimationFrame> {
     return fm.Column(
       children: [
         fm.Expanded(
-            child:pp.Consumer<SequencerModel>(
-                builder: (context, settings, child) {
-                  return AnimationFrame(startFormation: 'Static Square');
-                })
+            child: AnimationFrame()
         ),
         fm.Container(
           color: Color.FLOOR,
-          child: fm.Row(
-            children: [
-              fm.Expanded(
-                  child: Button('Help')
-              ),
-              fm.Expanded(
-                  child: Button('Settings')
-              ),
-              fm.Expanded(
-                  child: Button('Abbrev')
-              ),
-              fm.Expanded(
-                  child: Button('Calls')
-              ),
-            ],
+          child: pp.Consumer<fm.ValueNotifier<TamState>>(
+            builder: (context,appState,_) => fm.Row(
+              children: [
+                fm.Expanded(
+                    child: Button('Help',onPressed: () {
+                      appState.value =
+                          TamState(mainPage:MainPage.SEQUENCER ,detailPage:DetailPage.HELP);
+                    },)
+                ),
+                fm.Expanded(
+                    child: Button('Settings',onPressed: () {
+                      appState.value =
+                          TamState(mainPage:MainPage.SEQUENCER ,detailPage:DetailPage.SETTINGS);
+                    })
+                ),
+                fm.Expanded(
+                    child: Button('Abbrev',onPressed: () {
+                      appState.value =
+                          TamState(mainPage:MainPage.SEQUENCER ,detailPage:DetailPage.ABBREVIATIONS);
+                    })
+                ),
+                fm.Expanded(
+                    child: Button('Calls')
+                ),
+              ],
+            ),
           ),
         ),
       ],

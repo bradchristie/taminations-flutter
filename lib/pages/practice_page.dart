@@ -62,13 +62,13 @@ class _PracticePageState extends fm.State<PracticePage> {
     var router = fm.Router.of(context).routerDelegate as TaminationsRouterDelegate;
     var path = router.currentConfiguration;
     levelDatum = LevelData.find(path.level);
-    _reset();
+    nextAnimation();
 
     //  Set up painter
     painter = DanceAnimationPainter();
   }
 
-  void _reset() {
+  void nextAnimation() {
     //  Choose a random call from the selected level
     var levelCalls = TamUtils.calldata.where((element) =>
         levelDatum.selector(element.link)).toList();
@@ -115,7 +115,7 @@ class _PracticePageState extends fm.State<PracticePage> {
               if (request.action == Action.BUTTON_PRESS) {
                 if (request('button') == 'Continue') {
                   setState(() {
-                    _reset();
+                    nextAnimation();
                   });
                 }
               }
@@ -211,17 +211,16 @@ class _PracticeFrameState extends fm.State<PracticeFrame>
                                     _reset();
                                   });
                                 }),
-                                Button('Continue'),
+                                Button('Continue', onPressed: () {
+
+                                }),
                                 Button('Return', onPressed: () {
                                   fm.Navigator.maybePop(context);
-                                  fm.Router
-                                      .of(context)
-                                      .routerDelegate
-                                      .popRoute();
+                                  fm.Router.of(context).routerDelegate.popRoute();
                                 })
                               ],
                             ),
-                            Button('Definition')
+                            Button('Definition')  // TODO
                           ],
                         )
                     )

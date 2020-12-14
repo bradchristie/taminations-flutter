@@ -18,14 +18,15 @@
 
 */
 
-import 'package:flutter/material.dart' as fm;
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:flutter/material.dart' as fm;
+import 'package:provider/provider.dart' as pp;
 
+import '../color.dart';
 import '../level_data.dart';
 import '../main.dart';
 import '../tam_utils.dart';
 import '../title_bar.dart';
-import '../color.dart';
 
 //  CallsPage contains title bar and frame
 //  Only used in portrait mode
@@ -146,43 +147,42 @@ class _CallsState extends fm.State<CallsFrame> {
 
   //  Builder for one item of the list or grid
   fm.Widget itemBuilder(fm.BuildContext context, int index) {
-
     return fm.Container(
       decoration: fm.BoxDecoration(
           border: fm.Border(top: fm.BorderSide(width: 1, color: Color.BLACK))),
      // padding: FM.EdgeInsets.only(left: 20.0, top:4, bottom:4),
-      child: fm.Material(
-        //  Color the item according the the level
-        color: LevelData.find(callsSearched[index].link).color,
-        child: fm.InkWell(
-          highlightColor: LevelData.find(callsSearched[index].link).color.darker(),
-            onTap: () {
-              //  Selection goes to another page regardless of landscape or portrait
-              //  So no need to get fancy, just set the new page here
-              fm.Router.of(context).routerDelegate
-                  .setNewRoutePath(TaminationsRoute(
-                  level: LevelData.find(callsSearched[index].link).name,
-                  link: callsSearched[index].link,
-                  newPage: true
-              ));
-            },
-            child:fm.Row(
-              children: [
-                fm.Flexible(
-                  child: fm.Container(
-                      alignment: fm.Alignment.centerLeft,
-                      padding: fm.EdgeInsets.only(left: 10.0),
-                      child: AutoSizeText(callsSearched[index].title,style: fm.TextStyle(fontSize:
-                          20))),
-                ),
-                if (showLevel)
-                  fm.Container(
-                      alignment: fm.Alignment.topRight,
-                      padding: fm.EdgeInsets.only(top:2,right:2),
-                      child: fm.Text(LevelData.find(callsSearched[index].link).name)
-                )
-              ],
-            )
+      child: pp.Consumer<fm.ValueNotifier<TamState>>(
+        builder: (context,tamState,_) =>
+         fm.Material(
+          //  Color the item according the the level
+          color: LevelData.find(callsSearched[index].link).color,
+          child: fm.InkWell(
+            highlightColor: LevelData.find(callsSearched[index].link).color.darker(),
+              onTap: () {
+                tamState.value = TamState(
+                    mainPage: MainPage.ANIMATIONS,
+                    level: LevelData.find(callsSearched[index].link).name,
+                    link: callsSearched[index].link
+                );
+              },
+              child:fm.Row(
+                children: [
+                  fm.Flexible(
+                    child: fm.Container(
+                        alignment: fm.Alignment.centerLeft,
+                        padding: fm.EdgeInsets.only(left: 10.0),
+                        child: AutoSizeText(callsSearched[index].title,style: fm.TextStyle(fontSize:
+                            20))),
+                  ),
+                  if (showLevel)
+                    fm.Container(
+                        alignment: fm.Alignment.topRight,
+                        padding: fm.EdgeInsets.only(top:2,right:2),
+                        child: fm.Text(LevelData.find(callsSearched[index].link).name)
+                  )
+                ],
+              )
+          ),
         ),
       )
     );

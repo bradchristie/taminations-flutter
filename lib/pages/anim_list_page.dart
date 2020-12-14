@@ -28,7 +28,6 @@ import '../color.dart';
 import '../extensions.dart';
 import '../level_data.dart';
 import '../main.dart';
-import '../request.dart';
 import '../tam_utils.dart';
 import '../title_bar.dart';
 import 'animation_page.dart';
@@ -102,39 +101,25 @@ class _AnimListPageState extends fm.State<AnimListPage> {
                   }
                   return TitleBar(title: '');
                 })),
-        body: RequestHandler(
-            handler: (request) {
-              if (request.action == Action.ANIMATION) {
-                fm.Router.of(context).routerDelegate.setNewRoutePath(
-                    TaminationsRoute(
-                        level: request('level'),
-                        link: request('link'),
-                        animnum: request('animnum').i));
-              }
-              if (request.action == Action.BUTTON_PRESS) {
-                if (request('button') == 'Definition') {
-                  fm.Router.of(context).routerDelegate.setNewRoutePath(
-                      TaminationsRoute(link: link, definition: true));
-                }
-                if (request('button') == 'Settings') {
-                  fm.Router.of(context).routerDelegate.setNewRoutePath(
-                      TaminationsRoute(settings: true));
-                }
-              }
-            },
-            child: fm.Column(
-                children: [
-                  fm.Expanded(
-                    child:AnimListFrame(link),
-                  ),
-                  fm.Row(children: [
+        body: pp.Consumer<fm.ValueNotifier<TamState>>(
+          builder: (context,tamState,_) => fm.Column(
+                  children: [
                     fm.Expanded(
-                      child: Button('Definition'),
+                      child:AnimListFrame(link),
                     ),
-                    fm.Expanded(child: Button('Settings'))
+                    fm.Row(children: [
+                      fm.Expanded(
+                        child: Button('Definition',onPressed: () {
+                          tamState.value = tamState.value.modify(detailPage: DetailPage.DEFINITION);
+                        }),
+                      ),
+                      fm.Expanded(child: Button('Settings',onPressed: () {
+                        tamState.value = tamState.value.modify(detailPage: DetailPage.SETTINGS);
+                      },))
+                    ]),
                   ]),
-                ])
-        ));
+        )
+        );
   }
 }
 
@@ -230,9 +215,6 @@ class _AnimListState extends fm.State<AnimListFrame> {
 
   @override
   fm.Widget build(fm.BuildContext context) {
-    var router =
-        fm.Router.of(context).routerDelegate as TaminationsRouterDelegate;
-    var path = router.currentConfiguration;
     return fm.FutureBuilder<XmlDocument>(
         future: docFuture,
         builder:
@@ -287,50 +269,43 @@ class _AnimListState extends fm.State<AnimListFrame> {
                           case CellType.Indented:
                           case CellType.Plain:
                             return  fm.Container(
-                                child: fm.Material(
-                                      color: selectedItem == index
-                                          ? Color.BLUE
-                                          : backColor,
-                                      child: fm.InkWell(
-                                        highlightColor: backColor.darker(),
-                                        onTap: () {
-                                          setState(() {
-                                            selectedItem = index;
-                                          });
-                                          RequestHandler.of(context).processRequest(
-                                              Request(
-                                                  action: Action.ANIMATION,
-                                                  params: {
-                                                    'level': path.level,
-                                                    'link': path.link,
-                                                    'call': item.title,
-                                                    'name': item.title,
-                                                    'animnum': item.animnumber.s
-                                                  }));
-                                          pp.Provider.of<AnimationState>(context, listen:false).title = item.title;
-                                        },
-                                        child: fm.Container(
-                                          decoration: fm.BoxDecoration(
-                                              border: fm.Border(
-                                                  bottom: fm.BorderSide(
-                                                      width: 1,
-                                                      color: fm.Colors.black))),
-                                          padding: fm.EdgeInsets.only(
-                                              left: item.celltype == CellType.Indented
-                                                  ? 40.0
-                                                  : 20.0,
-                                              top: 4,
-                                              bottom: 4),
-                                          child: fm.Text(item.name,
-                                              style: fm.TextStyle(
-                                                color: selectedItem == index
-                                                    ? backColor
-                                                    : Color.BLACK,
-                                                  fontSize: 20
-                                              )),
+                                child: pp.Consumer<fm.ValueNotifier<TamState>>(
+                                  builder: (context,tamState,_) => fm.Material(
+                                        color: selectedItem == index
+                                            ? Color.BLUE
+                                            : backColor,
+                                        child: fm.InkWell(
+                                          highlightColor: backColor.darker(),
+                                          onTap: () {
+                                            setState(() {
+                                              selectedItem = index;
+                                            });
+                                            tamState.value = tamState.value.modify(animnum: item.animnumber);
+                                            pp.Provider.of<AnimationState>(context, listen:false).title = item.title;
+                                          },
+                                          child: fm.Container(
+                                            decoration: fm.BoxDecoration(
+                                                border: fm.Border(
+                                                    bottom: fm.BorderSide(
+                                                        width: 1,
+                                                        color: fm.Colors.black))),
+                                            padding: fm.EdgeInsets.only(
+                                                left: item.celltype == CellType.Indented
+                                                    ? 40.0
+                                                    : 20.0,
+                                                top: 4,
+                                                bottom: 4),
+                                            child: fm.Text(item.name,
+                                                style: fm.TextStyle(
+                                                  color: selectedItem == index
+                                                      ? backColor
+                                                      : Color.BLACK,
+                                                    fontSize: 20
+                                                )),
+                                          ),
                                         ),
                                       ),
-                                    ));
+                                ));
                         }
                         return fm.Text('Dummy text for ListView.builder');
                       })),

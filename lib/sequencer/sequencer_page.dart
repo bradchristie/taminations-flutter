@@ -20,17 +20,17 @@
 
 import 'package:flutter/material.dart' as fm;
 import 'package:provider/provider.dart' as pp;
+import 'package:taminations/pages/settings_page.dart';
+import 'package:taminations/sequencer/abbreviations_frame.dart';
 
 import '../color.dart';
-import '../pages/settings_page.dart';
 import '../pages/web_page.dart';
-import '../request.dart';
 import '../title_bar.dart';
 import 'abbreviations_model.dart';
-import 'abbreviations_frame.dart';
 import 'calls_frame.dart';
 import 'sequencer_animation_frame.dart';
 import 'sequencer_model.dart';
+import '../main.dart';
 
 class SequencerPage extends fm.StatefulWidget {
   @override
@@ -65,37 +65,26 @@ class _SequencerPageState extends fm.State<SequencerPage> {
               preferredSize: fm.Size.fromHeight(56.0),
               child: TitleBar(title: 'Sequencer')
           ),
-          body: RequestHandler(
-            handler: (Request request) {
-              if (request('button') == 'Undo')
-                setState(() {
-                  model.undoLastCall();
-                });
-              if (request('button') == 'Reset')
-                model.reset();
-              if (request('button') == 'Help')
-                setState(() {
-                  rightChild = WebFrame('info/sequencer.html');
-                });
-              if (request('button') == 'Settings')
-                setState(() {
-                  rightChild = SettingsFrame();
-                });
-              if (request('button') == 'Abbrev')
-                setState(() {
-                  rightChild = AbbreviationsFrame();
-                });
-            },
-            child: fm.Row(
+          body: fm.Row(
               children: [
                 fm.Expanded(child: SequencerCallsFrame()),
                 fm.VerticalDivider(color: Color.BLACK, width: 2.0,),
                 fm.Expanded(child: SequencerAnimationFrame()),
                 fm.VerticalDivider(color: Color.BLACK, width: 2.0,),
-                fm.Expanded(child: rightChild)
+                fm.Expanded(child: pp.Consumer<fm.ValueNotifier<TamState>>(
+                    builder: (context,tamState,_) {
+                      if (tamState.value.detailPage == DetailPage.CALLS)
+                        return fm.Container();  // TODO
+                      else if (tamState.value.detailPage == DetailPage.ABBREVIATIONS)
+                        return AbbreviationsFrame();
+                      else if (tamState.value.detailPage == DetailPage.SETTINGS)
+                        return SettingsFrame();  // TODO customized for Sequencer
+                      else
+                        return WebFrame('info/sequencer.html');
+                    }
+                ))
               ],
             ),
-          )
       ),
     );
   }

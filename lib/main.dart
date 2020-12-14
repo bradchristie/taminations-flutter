@@ -43,59 +43,62 @@ void main() {
   fm.runApp(TaminationsApp());
 }
 
+enum MainPage {
+  LEVELS,
+  ANIMATIONS,
+  SEQUENCER,
+  STARTPRACTICE,
+  PRACTICE,
+  TUTORIAL
+}
+
+enum DetailPage {
+  NONE,  // portrait only
+  CALLS,
+  SETTINGS,
+  DEFINITION,
+  HELP,
+  ABBREVIATIONS
+}
+
 //  This class holds state information used to
 //  generate the current layout
-class TaminationsRoute {
+class TamState {
 
   final String level;  //  if not null, generate Calls page
   final String link;  //  if not null, generate AnimList page
   final int animnum;   //  if >= 0, generate Animation page
+  final MainPage mainPage;
+  final DetailPage detailPage;
 
-  final bool startPractice;  //  show Practice options page
-  final bool practice;   //  show Practice page
-  final bool tutorial;   //  show Practice Tutorial
-  final bool sequencer;  //  show Sequencer page
-  final bool about;      //  show About page
-  final bool settings;   //  show Settings page
-  final bool definition; //  show Definition page
-
-  final bool newPage;   // only used by setNewRoutePath
+  @override
+  bool operator ==(Object other) =>
+      (other is TamState)
+          && other.level == level
+          && other.link == link
+          && other.animnum == animnum
+          && other.mainPage == mainPage
+          && other.detailPage == detailPage;
 
   //  Default parameters generate the layout for the main menu
-  TaminationsRoute({
+  TamState({
     this.level,
     this.link,
     this.animnum = -1,
-
-    this.startPractice = false,
-    this.practice = false,
-    this.tutorial = false,
-    this.sequencer = false,
-    this.about = false,
-    this.settings = false,
-    this.definition = false,
-
-    this.newPage = false
-
+    this.mainPage = MainPage.LEVELS,
+    this.detailPage = DetailPage.NONE
   });
 
   //  Convenience methods to create a new route by
   //  adding onto a previous route
-  TaminationsRoute addFrom(TaminationsRoute from) =>
-      TaminationsRoute(
-          level:from.level ?? level,
-          link: from.link ?? link,
-          animnum: (from.animnum >= 0) ? from.animnum : animnum,
-
-          startPractice: from.startPractice || startPractice,
-          practice: from.practice || practice,
-          tutorial: from.tutorial || tutorial,
-          sequencer: from.sequencer || sequencer,
-          definition: from.definition || definition,
-          about: from.about || about,
-          settings: from.settings || settings);
-
-  TaminationsRoute operator +(TaminationsRoute other) => addFrom(other);
+  TamState modify({String level, String link, int animnum,
+  MainPage mainPage, DetailPage detailPage}) =>
+      TamState(
+          level:level ?? this.level,
+          link: link ?? this.link,
+          animnum: animnum ?? this.animnum,
+          mainPage: mainPage ?? this.mainPage,
+          detailPage: detailPage ?? this.detailPage);
 
   //  For URL generation
   @override
@@ -103,13 +106,8 @@ class TaminationsRoute {
     if (level != null && level.isNotEmpty) 'level=$level',
     if (animnum >= 0) 'animnum=${animnum.d}',
     if (link != null && link.isNotEmpty) 'link=$link',
-    if (startPractice) 'startPractice',
-    if (practice) 'practice',
-    if (tutorial) 'tutorial',
-    if (sequencer) 'sequencer',
-    if (about) 'about',
-    if (settings) 'settings',
-    if (definition) 'definition'
+    mainPage.toString(),
+    if (detailPage!=DetailPage.NONE) detailPage.toString()
   ].join('&');
 
   bool get isBlank => toString().isBlank;
@@ -120,6 +118,7 @@ class TaminationsRoute {
 //  TaminationsApp is the top-level widget.
 //  Here it is just a wrapper for the router and its delegate (below),
 //  which does all the work
+//  Also holds global state and initialization futures
 class TaminationsApp extends fm.StatefulWidget {
 
   @override
@@ -155,124 +154,132 @@ class _TaminationsAppState extends fm.State<TaminationsApp> {
     ));
   }
 
-  void setPath(TaminationsRoute path) {
-    setState(() {
-      _routerDelegate.setNewRoutePath(path);
-    });
-  }
-
 }
 
 //  Router Delegate
 //  Handles all requests to change the layout
-class TaminationsRouterDelegate extends fm.RouterDelegate<TaminationsRoute>
-    with fm.ChangeNotifier, fm.PopNavigatorRouterDelegateMixin<TaminationsRoute> {
+class TaminationsRouterDelegate extends fm.RouterDelegate<TamState>
+    with fm.ChangeNotifier, fm.PopNavigatorRouterDelegateMixin<TamState> {
 
   @override
   final fm.GlobalKey<fm.NavigatorState> navigatorKey;
   TaminationsRouterDelegate() : navigatorKey = fm.GlobalKey<fm.NavigatorState>();
 
+  var appState = fm.ValueNotifier(TamState());
+  var _orientation = fm.Orientation.landscape;
   //  History for back navigation
-  List<TaminationsRoute> paths = [TaminationsRoute()];
+  List<TamState> paths = [TamState()];
   //  this is necessary for the web URL and back button to work
   @override
-  TaminationsRoute get currentConfiguration => paths.last;
-  set currentConfiguration(value) {
-    paths[paths.length-1] = value;
-  }
+  TamState get currentConfiguration => appState.value;
 
   @override
   fm.Widget build(fm.BuildContext context) {
-    return fm.OrientationBuilder(
-        builder: (context, orientation) {
-          return fm.Navigator(
-              key: navigatorKey,
+    return pp.ChangeNotifierProvider.value(
+      value: appState,
+      child: fm.OrientationBuilder(
+          builder: (context, orientation) {
+            _orientation = orientation;
+            return pp.Consumer<fm.ValueNotifier<TamState>>(
+                builder: (context,appState,_) {
+                  final config = appState.value;
+                  print('config: $config');
+                  return fm.Navigator(
+                      key: navigatorKey,
 
-              //  Pages for landscape - first and second, Sequencer, Practice
-              pages: (orientation == fm.Orientation.landscape)
-                  ? [ fm.MaterialPage(
-                  key: fm.ValueKey('Landscape Page'),
-                  child: FirstLandscapePage()
-              ),
-                if (currentConfiguration?.link?.isNotEmpty ?? false)
-                  fm.MaterialPage(
-                      key: fm.ValueKey('Landscape Page ' + currentConfiguration.link),
-                      child: SecondLandscapePage()
-                  ),
-                if (currentConfiguration.practice)
-                  fm.MaterialPage(
-                      key: fm.ValueKey('Start Practice'),
-                      child: StartPracticePage()
-                  ),
-                if (currentConfiguration.tutorial)
-                  fm.MaterialPage(
-                      key: fm.ValueKey('Tutorial'),
-                      child: TutorialPage()
-                  ),
-                if (currentConfiguration.practice && currentConfiguration.level != null)
-                  fm.MaterialPage(
-                      key: fm.ValueKey('Practice'),
-                      child: PracticePage()
-                  ),
-                if (currentConfiguration.sequencer)
-                  fm.MaterialPage(
-                      key: fm.ValueKey('Sequencer'),
-                      child: SequencerPage()
-                  ),
-              ]
+                      //  Pages for landscape - first and second, Sequencer, Practice
+                      pages: (orientation == fm.Orientation.landscape)
+                          ? [ fm.MaterialPage(
+                          key: fm.ValueKey('Landscape Page'),
+                          child: FirstLandscapePage()
+                      ),
+                        if (config?.link?.isNotEmpty ?? false)
+                          fm.MaterialPage(
+                              key: fm.ValueKey('Landscape Page ' +
+                                  config.link),
+                              child: SecondLandscapePage()
+                          ),
+                        if (config.mainPage == MainPage.PRACTICE)
+                          fm.MaterialPage(
+                              key: fm.ValueKey('Start Practice'),
+                              child: StartPracticePage()
+                          ),
+                        if (config.mainPage == MainPage.TUTORIAL)
+                          fm.MaterialPage(
+                              key: fm.ValueKey('Tutorial'),
+                              child: TutorialPage()
+                          ),
+                        if (config.mainPage == MainPage.PRACTICE)
+                          fm.MaterialPage(
+                              key: fm.ValueKey('Practice'),
+                              child: PracticePage()
+                          ),
+                        if (config.mainPage == MainPage.SEQUENCER)
+                          fm.MaterialPage(
+                              key: fm.ValueKey('Sequencer'),
+                              child: SequencerPage()
+                          ),
+                      ]
 
-              //  Pages for portrait - Level, Animlist, Animation, Settings, etc
-                  : [
-                fm.MaterialPage(
-                    key: fm.ValueKey('LevelPage'),
-                    child: LevelPage()
-                ),
-                if (currentConfiguration.level != null &&
-                    LevelData.find(currentConfiguration.level) != null)
-                  fm.MaterialPage(
-                      key: fm.ValueKey(currentConfiguration.level),
-                      child: CallsPage()
-                  ),
-                if (currentConfiguration.link?.isNotEmpty ?? false)
-                  fm.MaterialPage(
-                      key: fm.ValueKey(currentConfiguration.link),
-                      child: AnimListPage()
-                  ),
-                if (currentConfiguration.animnum >= 0 )
-                  fm.MaterialPage(
-                      key: fm.ValueKey(currentConfiguration.link + ' animation'),
-                      child: AnimationPage()
-                  ),
-                if (currentConfiguration.about)
-                  fm.MaterialPage(
-                      key: fm.ValueKey('About'),
-                      child: WebPage('info/about.html')
-                  ),
-                if (currentConfiguration.definition)
-                  fm.MaterialPage(
-                      key: fm.ValueKey(currentConfiguration.link + ' definition'),
-                      child: WebPage(currentConfiguration.link)
-                  ),
-                if (currentConfiguration.settings)
-                  fm.MaterialPage(
-                      key: fm.ValueKey('Settings'),
-                      child: SettingsPage()
-                  ),
-                if (currentConfiguration.practice)
-                  fm.MaterialPage(
-                      key: fm.ValueKey('Practice'),
-                      child: StartPracticePage()
-                  ),
-              ],
+                      //  Pages for portrait - Level, Animlist, Animation, Settings, etc
+                          : [
+                        fm.MaterialPage(
+                            key: fm.ValueKey('LevelPage'),
+                            child: LevelPage()
+                        ),
+                        if (config.level != null &&
+                            LevelData.find(config.level) != null)
+                          fm.MaterialPage(
+                              key: fm.ValueKey(config.level),
+                              child: CallsPage()
+                          ),
+                        if (config.link?.isNotEmpty ?? false)
+                          fm.MaterialPage(
+                              key: fm.ValueKey(config.link),
+                              child: AnimListPage()
+                          ),
+                        if (config.animnum >= 0 )
+                          fm.MaterialPage(
+                              key: fm.ValueKey(
+                                  config.link + ' animation'),
+                              child: AnimationPage()
+                          ),
+                        if (config.detailPage == DetailPage.HELP)
+                          fm.MaterialPage(
+                              key: fm.ValueKey('About'),
+                              child: WebPage('info/about.html')
+                          ),
+                        if (config.detailPage ==
+                            DetailPage.DEFINITION)
+                          fm.MaterialPage(
+                              key: fm.ValueKey(
+                                  config.link + ' definition'),
+                              child: WebPage(config.link)
+                          ),
+                        if (config.detailPage ==
+                            DetailPage.SETTINGS)
+                          fm.MaterialPage(
+                              key: fm.ValueKey('Settings'),
+                              child: SettingsPage()
+                          ),
+                        //  TODO more pages to add here
+                        if (config.mainPage == MainPage.PRACTICE)
+                          fm.MaterialPage(
+                              key: fm.ValueKey('Practice'),
+                              child: StartPracticePage()
+                          ),
+                      ],
 
-              //  Standard onPopPage method, required
-              onPopPage: (route, result) {
-                if (!route.didPop(result)) {
-                  return false;
-                }
-                return true;
-              });
-        });
+                      //  Standard onPopPage method, required
+                      onPopPage: (route, result) {
+                        if (!route.didPop(result)) {
+                          return false;
+                        }
+                        return true;
+                      });
+                });
+          }),
+    );
   }
 
   void showPaths(String fromWhere) {
@@ -295,23 +302,29 @@ class TaminationsRouterDelegate extends fm.RouterDelegate<TaminationsRoute>
   }
 
   @override
-  Future<void> setInitialRoutePath(TaminationsRoute configuration) async {
-    paths = [TaminationsRoute()];
+  Future<void> setInitialRoutePath(TamState configuration) async {
+    paths = [TamState()];
+    appState.addListener(() {
+      setNewRoutePath(appState.value);
+    });
+  }
+
+  bool _isNewPage(TamState configuration) {
+    if (_orientation == fm.Orientation.portrait)
+      return configuration.detailPage != paths.last.detailPage;
+      return configuration.mainPage != paths.last.mainPage;
   }
 
   @override
-  Future<void> setNewRoutePath(TaminationsRoute configuration) async {
+  Future<void> setNewRoutePath(TamState configuration) async {
     if (configuration != null) {
       print('New configuration: $configuration');
       if (configuration.isBlank)
         await popRoute();
       else {
-        if (configuration.newPage)
+        if (_isNewPage(configuration))
           paths.add(configuration);
-        else
-          currentConfiguration = configuration;
       }
-      notifyListeners();
       showPaths('setNewRoutePath');
     }
     return;
@@ -321,20 +334,20 @@ class TaminationsRouterDelegate extends fm.RouterDelegate<TaminationsRoute>
 //  This class converts an URL to/from the fields in
 //  TaminationsRoutePath
 //  Used by web browser implementation
-class TaminationsRouteInformationParser extends fm.RouteInformationParser<TaminationsRoute> {
+class TaminationsRouteInformationParser extends fm.RouteInformationParser<TamState> {
 
   @override
-  Future<TaminationsRoute>
+  Future<TamState>
   parseRouteInformation(fm.RouteInformation routeInformation) async {
     final params = Uri.parse(routeInformation.location).queryParameters;
     var level = params['level'] ?? '';
     var link = params['link'] ?? '';
     var animnum = int.tryParse(params['animnum'] ?? '-1') ?? -1;
-    return TaminationsRoute(level:level,link:link,animnum:animnum);
+    return TamState(level:level,link:link,animnum:animnum);
   }
 
   @override
-  fm.RouteInformation restoreRouteInformation(TaminationsRoute path) {
+  fm.RouteInformation restoreRouteInformation(TamState path) {
     var location = path.toString();
     return fm.RouteInformation(location: '/$location');
   }

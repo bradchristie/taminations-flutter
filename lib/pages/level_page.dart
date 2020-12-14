@@ -20,10 +20,12 @@
 
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart' as fm;
-import '../title_bar.dart';
+import 'package:provider/provider.dart' as pp;
+
+
 import '../color.dart';
 import '../main.dart';
-import '../request.dart';
+import '../title_bar.dart';
 
 class LevelPage extends fm.StatelessWidget {
 
@@ -34,17 +36,7 @@ class LevelPage extends fm.StatelessWidget {
             preferredSize: fm.Size.fromHeight(56.0),
             child: TitleBar(title:'Taminations' )
         ),
-        body: RequestHandler(
-          child: LevelFrame(),
-          handler: (request) {
-            var route = TaminationsRoute(level:request('level' ));
-            if (request.action == Action.PRACTICE) route = TaminationsRoute(practice: true);
-            else if (request.action == Action.SETTINGS) route = TaminationsRoute(settings: true);
-            else if (request.action == Action.SEQUENCER) route = TaminationsRoute(sequencer: true);
-            else if (request.action == Action.ABOUT) route = TaminationsRoute(about: true);
-            fm.Router.of(context).routerDelegate.setNewRoutePath(route);
-          }
-        )
+        body: LevelFrame()
     );
   }
 
@@ -62,21 +54,28 @@ class _TapDetector extends fm.StatelessWidget {
 
   @override
   fm.Widget build(fm.BuildContext context) =>
-      fm.Material(
-        color: color,
-        child: fm.InkWell(
-            highlightColor: color.darker(),
-            onTap: () {
-              var request = Request(action:Action.LEVEL,params:{'level' :text});
-              if (text == 'Practice' ) request = Request(action:Action.PRACTICE);
-              else if (text == 'Sequencer' ) request = Request(action:Action.SEQUENCER);
-              else if (text == 'Settings' ) request = Request(action:Action.SETTINGS);
-              else if (text == 'About' ) request = Request(action:Action.ABOUT);
-              RequestHandler.of(context).processRequest(request);
-            },
-            child:child
-        ),
-      );
+      pp.Consumer<fm.ValueNotifier<TamState>>(
+          builder: (context,appState,_) {
+            return fm.Material(
+              color: color,
+              child: fm.InkWell(
+                  highlightColor: color.darker(),
+                  onTap: () {
+                    if (text == 'Practice')
+                      appState.value = TamState(mainPage: MainPage.TUTORIAL);
+                    else if (text == 'Sequencer')
+                      appState.value = TamState(mainPage: MainPage.SEQUENCER);
+                    else if (text == 'Settings')
+                      appState.value = TamState(detailPage: DetailPage.SETTINGS);
+                    else if (text == 'About')
+                      appState.value = TamState(detailPage: DetailPage.HELP);
+                    else
+                      appState.value = TamState(detailPage: DetailPage.CALLS, level: text);
+                  },
+                  child:child
+              ),
+            );
+          });
 
 }
 

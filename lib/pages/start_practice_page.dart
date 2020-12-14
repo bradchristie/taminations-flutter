@@ -22,9 +22,9 @@ import 'package:flutter/material.dart' as fm;
 import 'package:provider/provider.dart' as pp;
 import 'package:flutter/services.dart';
 import 'package:taminations/color.dart';
+import 'package:taminations/common.dart';
 
 import '../main.dart';
-import '../request.dart';
 import '../title_bar.dart';
 import '../settings.dart';
 
@@ -44,15 +44,7 @@ class StartPracticePage extends fm.StatelessWidget {
                 title: 'Practice'
             )
         ),
-        body: RequestHandler(
-            handler: (request) {
-              var route = request.action == Action.TUTORIAL
-              ? TaminationsRoute(tutorial:true,level:request('level'))
-              : TaminationsRoute(practice:true,level:request('level'));
-              fm.Router.of(context).routerDelegate.setNewRoutePath(route);
-            },
-            child: StartPracticeFrame()
-        )
+        body: StartPracticeFrame()
     );
   }
 
@@ -66,16 +58,18 @@ class _TapDetector extends fm.StatelessWidget {
 
   @override
   fm.Widget build(fm.BuildContext context) =>
-      fm.GestureDetector(
-          onTap: () {
-            var request = text == 'Tutorial'
-                ? Request(action:Action.TUTORIAL)
-                : Request(action:Action.PRACTICE,params:{'level':text});
-            RequestHandler.of(context).processRequest(request);
-          },
-          child:child
-      );
-
+      pp.Consumer<fm.ValueNotifier<TamState>>(
+          builder: (context,appState,_) {
+            return fm.GestureDetector(
+                onTap: () {
+                  if (text == 'Tutorial')
+                    appState.value = TamState(mainPage: MainPage.TUTORIAL);
+                  else
+                    appState.value = TamState(mainPage: MainPage.PRACTICE, level: text);
+                },
+                child:child
+            );
+          });
 }
 
 //  Wrapper widget to style level text

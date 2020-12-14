@@ -29,7 +29,6 @@ import '../dance_animation_painter.dart';
 import '../extensions.dart';
 import '../level_data.dart';
 import '../main.dart';
-import '../request.dart';
 import '../tam_utils.dart';
 import '../title_bar.dart';
 import '../color.dart';
@@ -46,7 +45,6 @@ class SecondLandscapePage extends fm.StatefulWidget {
 class _SecondLandscapePageState extends fm.State<SecondLandscapePage> {
   String link;
   int animnum;
-  DanceAnimationPainter painter;
   XmlDocument doc;
 
   @override
@@ -58,11 +56,6 @@ class _SecondLandscapePageState extends fm.State<SecondLandscapePage> {
     link = path.link;
     animnum = path.animnum;
 
-    painter = DanceAnimationPainter();
-    TamUtils.getXMLAsset(link).then((doc) {
-      this.doc = doc;
-      painter.setAnimation(tamFromAnimnum(path.animnum));
-    });
   }
 
   XmlElement tamFromAnimnum(int animnum) => TamUtils.tamList(doc)
@@ -71,67 +64,54 @@ class _SecondLandscapePageState extends fm.State<SecondLandscapePage> {
 
   @override
   fm.Widget build(fm.BuildContext context) {
-    var router = fm.Router.of(context).routerDelegate as TaminationsRouterDelegate;
+    var router = fm.Router
+        .of(context)
+        .routerDelegate as TaminationsRouterDelegate;
     var path = router.currentConfiguration;
-    return  RequestHandler(
-      handler: (request) {
-        if (request.action == Action.ANIMATION) {
-          router.setNewRoutePath(path+TaminationsRoute(animnum: request('animnum').i));
-          //  TODO might be better to set this as a reaction to the new path
-          painter.setAnimation(tamFromAnimnum(request('animnum').i));
-        }
-      },
-      child: pp.ChangeNotifierProvider.value(
-        value: painter,
-        child: fm.Scaffold(
-            backgroundColor: Color.LIGHTGRAY,
-            appBar: fm.PreferredSize(
-                preferredSize: fm.Size.fromHeight(56.0),
-                child: pp.Consumer<DanceAnimationPainter>(
-                    builder: (context,painter2,child) =>
-                        TitleBar(title: painter2.title,
-                            level: LevelData.find(path.level).name)
-                )),
-            body: SecondLandscapeFrame(
-                leftChild: AnimListFrame(path.link),
-                centerChild: fm.Column(
-                  children: [
-                    fm.Expanded(child: AnimationFrame(link:path.link, animnum:path.animnum)),
-                    fm.Container(
-                      color: Color.FLOOR,
-                      child: fm.Row(
-                        children: [
-                          fm.Expanded(
-                              child: Button('Definition',
-                                  onPressed: () {
-                                    router.setNewRoutePath(TaminationsRoute(
-                                        level: path.level,
-                                        link: path.link,
-                                        animnum:  path.animnum,
-                                        definition: true
-                                    ));
+    return pp.ChangeNotifierProvider<DanceAnimationPainter>(
+      create: (_) => DanceAnimationPainter(),
+      child: fm.Scaffold(
+          backgroundColor: Color.LIGHTGRAY,
+          appBar: fm.PreferredSize(
+              preferredSize: fm.Size.fromHeight(56.0),
+              child: pp.Consumer<DanceAnimationPainter>(
+                  builder: (context, painter, child) =>
+                      TitleBar(title: painter.title,
+                          level: LevelData
+                              .find(path.level)
+                              .name)
+              )),
+          body: pp.Consumer<fm.ValueNotifier<TamState>>(
+            builder: (context, tamState, _) =>
+                SecondLandscapeFrame(
+                    leftChild: AnimListFrame(path.link),
+                    centerChild: fm.Column(
+                      children: [
+                        fm.Expanded(child: AnimationFrame()),
+                        fm.Container(
+                          color: Color.FLOOR,
+                          child: fm.Row(
+                            children: [
+                              fm.Expanded(
+                                  child: Button('Definition', onPressed: () {
+                                    tamState.value = tamState.value.modify(
+                                        detailPage: DetailPage.DEFINITION);
                                   })),
-                          fm.Expanded(
-                              child: Button('Settings',
-                                  onPressed: () {
-                                    router.setNewRoutePath(path+TaminationsRoute(
-                                        level: path.level,
-                                        link: path.link,
-                                        animnum:  path.animnum,
-                                        settings: true
-                                    ));
-
+                              fm.Expanded(
+                                  child: Button('Settings', onPressed: () {
+                                    tamState.value = tamState.value.modify(
+                                        detailPage: DetailPage.SETTINGS);
                                   })),
-                        ],
-                      ),
-                    )
-                  ],
+                            ],
+                          ),
+                        )
+                      ],
+                    ),
+                    rightChild: path.detailPage == DetailPage.SETTINGS
+                        ? SettingsFrame()
+                        : WebFrame(path.link)
                 ),
-                rightChild: path.settings
-                    ? SettingsFrame()
-                    : WebFrame(path.link)
-            )
-        ),
+          )
       ),
     );
   }

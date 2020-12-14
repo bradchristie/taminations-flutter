@@ -22,19 +22,19 @@ import 'dart:math';
 
 import 'package:flutter/material.dart' as fm;
 import 'package:provider/provider.dart' as pp;
-import '../dance_animation_painter.dart';
-import '../main.dart';
-import '../tam_utils.dart';
+
 import '../button.dart';
-import '../settings.dart';
 import '../color.dart';
-import '../extensions.dart';
-import '../request.dart';
-import '../title_bar.dart';
-import '../level_data.dart';
-import '../math/vector.dart';
+import '../dance_animation_painter.dart';
 import '../dancer.dart';
+import '../extensions.dart';
 import '../geometry.dart';
+import '../level_data.dart';
+import '../main.dart';
+import '../math/vector.dart';
+import '../settings.dart';
+import '../tam_utils.dart';
+import '../title_bar.dart';
 
 class AnimationState extends fm.ChangeNotifier {
 
@@ -61,7 +61,6 @@ class _AnimationPageState extends fm.State<AnimationPage>
   String link;
   int animnum;
   String name;
-  DanceAnimationPainter painter;
 
   @override
   void didChangeDependencies() {
@@ -71,43 +70,31 @@ class _AnimationPageState extends fm.State<AnimationPage>
     link = path.link;
     animnum = path.animnum;
 
-    painter = DanceAnimationPainter();
-    TamUtils.getXMLAsset(link).then((doc) {
-      var tam = TamUtils.tamList(doc)
-          .where((it) => !(it('display','').startsWith('n')))
-          .toList()[max(0, animnum)];
-      painter.setAnimation(tam);
-    });
-
   }
 
   @override
   fm.Widget build(fm.BuildContext context) {
-    return pp.ChangeNotifierProvider.value(
-        value: painter,
-        child: fm.Scaffold(
-          appBar: fm.PreferredSize(
-              preferredSize: fm.Size.fromHeight(56.0),
-              child: TitleBar(title: name, level: LevelData.find(link).name)
-          ),
-          body: RequestHandler(
-            handler: (request) {
-            },
-            child: fm.Column(
+    return pp.Provider<DanceAnimationPainter>(
+      create: (_) => DanceAnimationPainter(),
+      child: fm.Scaffold(
+        appBar: fm.PreferredSize(
+            preferredSize: fm.Size.fromHeight(56.0),
+            child: TitleBar(title: name, level: LevelData.find(link).name)
+        ),
+        body: fm.Column(
+          children: [
+            fm.Expanded(child: AnimationFrame()),
+            fm.Row(
               children: [
-                fm.Expanded(child: AnimationFrame(link:link,animnum:animnum)),
-                fm.Row(
-                  children: [
-                    fm.Expanded(
-                        child: Button('Definition')),
-                    fm.Expanded(
-                        child: Button('Settings'))
-                  ],
-                )
+                fm.Expanded(
+                    child: Button('Definition')),
+                fm.Expanded(
+                    child: Button('Settings'))
               ],
-            ),
-          ),
-        )
+            )
+          ],
+        ),
+      ),
     );
   }
 }
@@ -115,14 +102,8 @@ class _AnimationPageState extends fm.State<AnimationPage>
 
 class AnimationFrame extends fm.StatefulWidget {
 
-  final String link;
-  final int animnum;
-  final String startFormation;
-  AnimationFrame({this.link,this.animnum,this.startFormation})
-      : super(key:fm.ValueKey('$link $animnum'));
-
   @override
-  _AnimationFrameState createState() => _AnimationFrameState(link,animnum,startFormation);
+  _AnimationFrameState createState() => _AnimationFrameState();
 }
 
 class _AnimationFrameState extends fm.State<AnimationFrame>
@@ -139,7 +120,7 @@ class _AnimationFrameState extends fm.State<AnimationFrame>
   String startFormation;  // for sequencer
 
   //  Constructor
-  _AnimationFrameState(this.link,this.animnum,this.startFormation);
+  _AnimationFrameState();
 
   fm.PopupMenuItem<String> oneItem(String colorName) =>
       fm.PopupMenuItem(
@@ -180,179 +161,185 @@ class _AnimationFrameState extends fm.State<AnimationFrame>
 
   @override
   fm.Widget build(fm.BuildContext context) {
-
-    return pp.Consumer<DanceAnimationPainter>(
-      builder: (context,painter,child) => fm.Column(children: [
-        //  Dance area with animations
-        fm.Expanded(child: pp.Consumer<Settings>(
-            builder: (context, settings, child) {
-              //  Send current settings to the painter
-              painter.setGridVisibility(settings.grid);
-              painter.setNumbers(settings.numbers);
-              painter.setSpeed(settings.speed);
-              painter.setPaths(settings.paths);
-              painter.setLoop(settings.loop);
-              painter.setPhantoms(settings.phantoms);
-              painter.setGeometry(Geometry.fromString(settings.geometry).geometry);
-              //  Dancer colors - first check individual color, then couple color
-              for (var i=1; i<=12; i++) {
-                final individualColor = settings.dancerColor(i);
-                if (individualColor != 'default')
-                  painter.setDancerColor(i, Color.fromName(individualColor));
-                else {
-                  final coupleColor = settings.coupleColor((i-1) ~/ 2 + 1);
-                  painter.setDancerColor(i,Color.fromName(coupleColor));
-                }
-              }
-
-              //  Routines to handle pointer events
-              final tapDownHandler = (fm.TapDownDetails details) {
-                locationTapped = details.globalPosition.v;
-                dancerTapped = painter.dancerAt(
-                    painter.mouse2dance(details.localPosition.v));
-              };
-              final longPressHandler = () {
-                if (dancerTapped != null) {
-                  _showColorPopup(
-                      context, settings.dancerColor(dancerTapped.number.i))
-                      .then((value) {
-                    if (value != null)
-                      settings.setDancerColor(dancerTapped.number.i, value);
-                  });
-                }
-              };
-
-              //  Wrap dance area with widget to detect pointer events
-              return fm.GestureDetector(
-                  onTapDown: tapDownHandler,
-                  onSecondaryTapDown: tapDownHandler,
-                  onTap: () {
-                    if (dancerTapped != null) {
-                      setState(() {
-                        painter.togglePath(dancerTapped);
-                      });
+    //  We don't want the painter to reload the animation
+    //  every time the painter changes.  So first get the painter
+    //  without listening to it...
+    final quietPainter = pp.Provider.of<DanceAnimationPainter>(context,listen:false);
+    //  Now load the animation
+    return pp.Consumer<fm.ValueNotifier<TamState>>(
+      builder: (context,appState,_) => fm.FutureBuilder<void>(
+        future: appState.value.mainPage == MainPage.SEQUENCER
+            ? quietPainter.setAnimation(TamUtils.getFormation('Static Square'))
+            : TamUtils.getXMLAsset(appState.value.link).then((doc) {
+          var tam = TamUtils.tamList(doc)
+              .where((it) => !(it('display','').startsWith('n')))
+              .toList()[max(0, appState.value.animnum)];
+          return quietPainter.setAnimation(tam);
+        }),
+        //  And now we can listen for animation changes
+        //  which will trigger a rebuild from here down
+        builder: (context,snapshot) => pp.Consumer<DanceAnimationPainter>(
+          builder: (context,painter,_) => fm.Column(children: [
+              //  Dance area with animations
+              fm.Expanded(child: pp.Consumer<Settings>(
+                  builder: (context, settings, child) {
+                    //  Send current settings to the painter
+                    painter.setGridVisibility(settings.grid);
+                    painter.setNumbers(settings.numbers);
+                    painter.setSpeed(settings.speed);
+                    painter.setPaths(settings.paths);
+                    painter.setLoop(settings.loop);
+                    painter.setPhantoms(settings.phantoms);
+                    painter.setGeometry(Geometry.fromString(settings.geometry).geometry);
+                    //  Dancer colors - first check individual color, then couple color
+                    for (var i=1; i<=12; i++) {
+                      final individualColor = settings.dancerColor(i);
+                      if (individualColor != 'default')
+                        painter.setDancerColor(i, Color.fromName(individualColor));
+                      else {
+                        final coupleColor = settings.coupleColor((i-1) ~/ 2 + 1);
+                        painter.setDancerColor(i,Color.fromName(coupleColor));
+                      }
                     }
-                  },
-                  onLongPress: longPressHandler,
-                  onSecondaryTap: longPressHandler,
-                  //  Stack to show info on animation
-                  child: fm.Stack(
-                      children: [
-                        //  Finally here is the dance area widget
-                        fm.CustomPaint(
-                          painter: painter,
-                          child: fm.Center(), // so CustomPaint gets sized correctly
-                        ),
-                        //  Note that fades out as animation starts
-                        fm.Opacity(
-                          opacity: ((-painter.beat)/2.0).coerceIn(0.0, 1.0),
-                            child:fm.Container(
-                                color: Color.WHITE,
-                                child:fm.Text(painter.animationNote,
-                                    style:fm.TextStyle(fontSize:20))
-                            )),
-                        //  Show if Loop or Speed are set other than default
-                        fm.Positioned(
-                          bottom: 0.0,
-                          right: 0.0,
-                          child: fm.Text(
-                              settings.speed.replaceFirst('Normal','') +
-                                  (settings.loop ? ' Loop' : ''),
-                              style:fm.TextStyle(fontSize:24)
-                          )
-                        )
-                      ])
-              );
-            })),
 
-        //  Slider to show current animation position
-        fm.SliderTheme(
-          data: fm.SliderThemeData(),
-          child: fm.Slider(
-            activeColor: Color.HIGHLIGHT,
-            inactiveColor: Color.GRAY,
-            value: painter.totalBeats > 2.0
-                ? min(100,(painter.beat + painter.leadin) * 100.0 / painter.totalBeats)
-                : 0.0,
-            min: 0,
-            max: 100,
-            onChanged: (double value) {
-              setState(() {
-                painter.beat =
-                    (value * painter.totalBeats / 100.0) - painter.leadin;
-              });
-            },
-          ),
+                    //  Routines to handle pointer events
+                    final tapDownHandler = (fm.TapDownDetails details) {
+                      locationTapped = details.globalPosition.v;
+                      dancerTapped = painter.dancerAt(
+                          painter.mouse2dance(details.localPosition.v));
+                    };
+                    final longPressHandler = () {
+                      if (dancerTapped != null) {
+                        _showColorPopup(
+                            context, settings.dancerColor(dancerTapped.number.i))
+                            .then((value) {
+                          if (value != null)
+                            settings.setDancerColor(dancerTapped.number.i, value);
+                        });
+                      }
+                    };
+
+                    //  Wrap dance area with widget to detect pointer events
+                    return fm.GestureDetector(
+                        onTapDown: tapDownHandler,
+                        onSecondaryTapDown: tapDownHandler,
+                        onTap: () {
+                          if (dancerTapped != null) {
+                            setState(() {
+                              painter.togglePath(dancerTapped);
+                            });
+                          }
+                        },
+                        onLongPress: longPressHandler,
+                        onSecondaryTap: longPressHandler,
+                        //  Stack to show info on animation
+                        child: fm.Stack(
+                            children: [
+                              //  Finally here is the dance area widget
+                              fm.CustomPaint(
+                                painter: painter,
+                                child: fm.Center(), // so CustomPaint gets sized correctly
+                              ),
+                              //  Note that fades out as animation starts
+                              fm.Opacity(
+                                opacity: ((-painter.beat)/2.0).coerceIn(0.0, 1.0),
+                                  child:fm.Container(
+                                      color: Color.WHITE,
+                                      child:fm.Text(painter.animationNote,
+                                          style:fm.TextStyle(fontSize:20))
+                                  )),
+                              //  Show if Loop or Speed are set other than default
+                              fm.Positioned(
+                                bottom: 0.0,
+                                right: 0.0,
+                                child: fm.Text(
+                                    settings.speed.replaceFirst('Normal','') +
+                                        (settings.loop ? ' Loop' : ''),
+                                    style:fm.TextStyle(fontSize:24)
+                                )
+                              )
+                            ])
+                    );
+                  })),
+
+              //  Slider to show current animation position
+              fm.SliderTheme(
+                data: fm.SliderThemeData(),
+                child: fm.Slider(
+                    activeColor: Color.HIGHLIGHT,
+                    inactiveColor: Color.GRAY,
+                    value: painter.totalBeats > 2.0
+                        ? min(100,(painter.beat + painter.leadin) * 100.0 / painter.totalBeats)
+                        : 0.0,
+                    min: 0,
+                    max: 100,
+                    onChanged: (double value) {
+                      painter.beat =
+                          (value * painter.totalBeats / 100.0) - painter.leadin;
+                    },
+                  ),
+              ),
+
+              //  Painter to show animation start, end, beats, and parts
+              fm.CustomPaint(
+                painter: _SliderTicsPainter(
+                  beats: painter.totalBeats,
+                  parts: painter.partstr ?? '',
+                  isParts: painter.hasParts ?? false
+                ),
+                size: fm.Size.fromHeight(40.0),
+              ),
+
+              //  Buttons to control the animation
+              fm.Container(
+                color: Color.FLOOR,
+                child: fm.Row(
+                    children: [
+                      fm.Expanded(
+                          child: Button('Start',
+                              child: fm.Icon(fm.Icons.skip_previous),
+                              onPressed: () {
+                                painter.goToStart();
+                              })),
+                      fm.Expanded(
+                          child:
+                          Button('Back',
+                              child: fm.Icon(fm.Icons.navigate_before),
+                              onPressed: () {
+                                painter.stepBack();
+                              })),
+                      fm.Expanded(
+                        //  Play / Pause button
+                          child: Button('Play',
+                              child: fm.Icon(painter.isRunning
+                                  ? fm.Icons.pause
+                                  : fm.Icons.play_arrow),
+                              onPressed: () {
+                                  //  If running, turn it off
+                                  if (painter.isRunning) {
+                                    painter.doPause();
+                                  } else {
+                                    //  Not running - start animation
+                                    painter.doPlay();
+                                  }
+                              }
+                          )),
+                      fm.Expanded(
+                          child: Button('Forward',
+                              child: fm.Icon(fm.Icons.navigate_next),
+                              onPressed: () {
+                                painter.stepForward();
+                              })),
+                      fm.Expanded(child: Button('End',
+                          child: fm.Icon(fm.Icons.skip_next),
+                          onPressed: () {
+                            painter.goToEnd();
+                          })),
+                    ]),
+              )
+            ]),
         ),
-
-        //  Painter to show animation start, end, beats, and parts
-        fm.CustomPaint(
-          painter: _SliderTicsPainter(
-            beats: painter.totalBeats,
-            parts: painter.partstr ?? '',
-            isParts: painter.hasParts ?? false
-          ),
-          size: fm.Size.fromHeight(40.0),
-        ),
-
-        //  Buttons to control the animation
-        fm.Container(
-          color: Color.FLOOR,
-          child: fm.Row(
-              children: [
-                fm.Expanded(
-                    child: Button('Start',
-                        child: fm.Icon(fm.Icons.skip_previous),
-                        onPressed: () {
-                          setState(() {
-                            painter.goToStart();
-                          });
-                        })),
-                fm.Expanded(
-                    child:
-                    Button('Back',
-                        child: fm.Icon(fm.Icons.navigate_before),
-                        onPressed: () {
-                          setState(() {
-                            painter.stepBack();
-                          });
-                        })),
-                fm.Expanded(
-                  //  Play / Pause button
-                    child: Button('Play',
-                        child: fm.Icon(painter.isRunning
-                            ? fm.Icons.pause
-                            : fm.Icons.play_arrow),
-                        onPressed: () {
-                          setState(() {
-                            //  If running, turn it off
-                            if (painter.isRunning) {
-                              painter.doPause();
-                            } else {
-                              //  Not running - start animation
-                              painter.doPlay();
-                            }
-                          });
-                        }
-                    )),
-                fm.Expanded(
-                    child: Button('Forward',
-                        child: fm.Icon(fm.Icons.navigate_next),
-                        onPressed: () {
-                          setState(() {
-                            painter.stepForward();
-                          });
-                        })),
-                fm.Expanded(child: Button('End',
-                    child: fm.Icon(fm.Icons.skip_next),
-                    onPressed: () {
-                      setState(() {
-                        painter.goToEnd();
-                      });
-                    })),
-              ]),
-        )
-      ]),
+      ),
     );
   }
 }

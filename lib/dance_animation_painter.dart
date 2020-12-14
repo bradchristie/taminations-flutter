@@ -62,7 +62,12 @@ class DanceAnimationPainter extends fm.ChangeNotifier implements fm.CustomPainte
   double get movingBeats => _beats - leadout;
   double get totalBeats => leadin + _beats;
   double get practiceScore => _practiceScore;
-  var beat = 0.0;
+  var _beat = 0.0;
+  double get beat => _beat;
+  set beat(value) {
+    _beat = value;
+    notifyListeners();
+  }
   var _showPhantoms = false;
   var isRunning = false;
   DateTime _lastTime = DateTime(2000);
@@ -92,7 +97,10 @@ class DanceAnimationPainter extends fm.ChangeNotifier implements fm.CustomPainte
   DanceAnimationPainter()  {
     dancers = [ ];
     _ticker = Ticker((_) { notifyListeners(); });
-    addListener(() { _onDraw(); });
+    //  Don't need to listen to ticker to redraw, rather the enclosing
+    //  widget listens and rebuilds, which makes this redraw.
+    //  Also adding this listener makes Provider<DanceAnimationPainter>() unhappy.
+    //addListener(() { _onDraw(); });
   }
 
   void _redraw() {
@@ -217,22 +225,18 @@ class DanceAnimationPainter extends fm.ChangeNotifier implements fm.CustomPainte
 
   void goToStart() {
     beat = -leadin;
-    notifyListeners();
   }
 
   void goToEnd() {
     beat = beats;
-    notifyListeners();
   }
 
   void stepForward() {
     beat = min(beat+0.1,beats);
-    notifyListeners();
   }
 
   void stepBack() {
     beat = max(beat-0.1,-leadin);
-    notifyListeners();
   }
 
   bool _isInteractiveDancerOnTrack() {
@@ -271,7 +275,9 @@ class DanceAnimationPainter extends fm.ChangeNotifier implements fm.CustomPainte
       var now = DateTime.now();
       var diff = now.difference(_lastTime).inMilliseconds;
       if (isRunning)
-        beat += diff / _speed;
+        //  Be careful not to call notifyListeners() which this routine
+        //  is called by (i.e. update _beat not beat)
+        _beat += diff / _speed;
       _lastTime = now;
     }
 
@@ -283,7 +289,7 @@ class DanceAnimationPainter extends fm.ChangeNotifier implements fm.CustomPainte
     if (beat >= beats) {
       if (_looping && isRunning) {
         _prevbeat = -leadin;
-        beat = -leadin;
+        _beat = -leadin;
       } else if (isRunning) {
         isRunning = false;
         isFinished = true;

@@ -19,10 +19,10 @@
 */
 
 import 'package:flutter/material.dart' as fm;
+import 'package:provider/provider.dart' as pp;
 
 import '../color.dart';
 import '../main.dart';
-import '../request.dart';
 import '../title_bar.dart';
 import 'calls_page.dart';
 import 'level_page.dart';
@@ -42,39 +42,21 @@ class _FirstLandscapePageState extends fm.State<FirstLandscapePage> {
 
   @override
   fm.Widget build(fm.BuildContext context) {
-    var router = fm.Router.of(context).routerDelegate as TaminationsRouterDelegate;
-    var path = router.currentConfiguration;
-    return fm.Scaffold(
-      backgroundColor: Color.GRAY,
-        appBar: fm.PreferredSize(
-            preferredSize: fm.Size.fromHeight(56.0),
-            child: TitleBar(title:title)
-        ),
-        body: RequestHandler(
-            child:FirstLandscapeFrame(rightChild:
-                path.settings
-                    ? SettingsFrame()
-                    :path.level?.isNotEmpty ?? false
-                    ? CallsFrame(path.level)
-                    : WebFrame('info/about.html')),
-          handler: (request) {
-            if (request.action == Action.PRACTICE) {
-              router.setNewRoutePath(TaminationsRoute(practice: true, newPage: true));
-            }
-            else if (request.action == Action.SEQUENCER) {
-              router.setNewRoutePath(TaminationsRoute(sequencer: true, newPage: true));
-            }
-            else if (request.action == Action.SETTINGS) {
-              router.setNewRoutePath(TaminationsRoute(settings: true));
-            }
-            else if (request.action == Action.ABOUT) {
-              router.setNewRoutePath(TaminationsRoute(about: true));
-            }
-            else if (request.action == Action.LEVEL) {
-              router.setNewRoutePath(TaminationsRoute(level: request('level')));
-            }
-          }
-        )
+    return pp.Consumer<fm.ValueNotifier<TamState>>(
+      builder: (context,appState,_) => fm.Scaffold(
+        backgroundColor: Color.GRAY,
+          appBar: fm.PreferredSize(
+              preferredSize: fm.Size.fromHeight(56.0),
+              child: TitleBar(title:title)
+          ),
+          body: FirstLandscapeFrame(rightChild:
+                  appState.value.detailPage==DetailPage.SETTINGS
+                      ? SettingsFrame()
+                      : appState.value.level?.isNotEmpty ?? false
+                      ? CallsFrame(appState.value.level)
+                      : WebFrame('info/about.html')),
+
+      ),
     );
   }
 
