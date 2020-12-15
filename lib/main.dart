@@ -74,11 +74,7 @@ class TamState {
   @override
   bool operator ==(Object other) =>
       (other is TamState)
-          && other.level == level
-          && other.link == link
-          && other.animnum == animnum
-          && other.mainPage == mainPage
-          && other.detailPage == detailPage;
+      && other.toString() == toString();
 
   //  Default parameters generate the layout for the main menu
   TamState({
@@ -293,6 +289,7 @@ class TaminationsRouterDelegate extends fm.RouterDelegate<TamState>
   Future<bool> popRoute() async {
     if (paths.length > 1) {
       paths.removeLast();
+      appState.value = paths.last;
       showPaths('popRoute');
       notifyListeners();
       return true;
@@ -319,11 +316,20 @@ class TaminationsRouterDelegate extends fm.RouterDelegate<TamState>
   Future<void> setNewRoutePath(TamState configuration) async {
     if (configuration != null) {
       print('New configuration: $configuration');
-      if (configuration.isBlank)
+      if (configuration.isBlank)  // not sure if this happens any more
+        await popRoute();
+      //  When the back arrow on a browser is tapped, instead of
+      //  calling popRoute it calls this routine with the previous config.
+      //  So look for that and call popRoute if so.
+      else if (paths.length > 1 && configuration == paths[paths.length-2])
         await popRoute();
       else {
-        if (_isNewPage(configuration))
+        //  Don't generate a new page if just switching detail pages
+        //  in landscape mode.
+        if (_isNewPage(configuration)) {
           paths.add(configuration);
+          notifyListeners();
+        }
       }
       showPaths('setNewRoutePath');
     }

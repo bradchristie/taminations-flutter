@@ -20,17 +20,17 @@
 
 import 'package:flutter/material.dart' as fm;
 import 'package:provider/provider.dart' as pp;
-import 'package:taminations/pages/settings_page.dart';
-import 'package:taminations/sequencer/abbreviations_frame.dart';
 
 import '../color.dart';
+import '../main.dart';
+import '../pages/settings_page.dart';
 import '../pages/web_page.dart';
 import '../title_bar.dart';
+import 'abbreviations_frame.dart';
 import 'abbreviations_model.dart';
 import 'calls_frame.dart';
 import 'sequencer_animation_frame.dart';
 import 'sequencer_model.dart';
-import '../main.dart';
 
 class SequencerPage extends fm.StatefulWidget {
   @override

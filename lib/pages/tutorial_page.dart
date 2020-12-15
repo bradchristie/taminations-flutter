@@ -22,7 +22,6 @@ import 'package:flutter/material.dart' as fm;
 import 'package:provider/provider.dart' as pp;
 
 import '../common.dart';
-import '../request.dart';
 import 'practice_page.dart';
 
 class TutorialPage extends fm.StatefulWidget {
@@ -84,51 +83,39 @@ class _TutorialPageState extends fm.State<TutorialPage> {
     return pp.ChangeNotifierProvider.value(
       value: painter,
       child: fm.Scaffold(
-          appBar: fm.PreferredSize(
-              preferredSize: fm.Size.fromHeight(56.0),
-              child: TitleBar(title: 'Tutorial')
+        appBar: fm.PreferredSize(
+            preferredSize: fm.Size.fromHeight(56.0),
+            child: TitleBar(title: 'Tutorial')
           ),
-          body: RequestHandler(
-            handler: (request) {
-              if (request.action == Action.BUTTON_PRESS) {
-                if (request('button') == 'Continue') {
-                  setState(() {
-                    _nextAnimation();
-                  });
-                }
+        body: fm.FutureBuilder(
+            future: tam,
+            builder: (fm.BuildContext context,
+                fm.AsyncSnapshot<XmlDocument> snapshot) {
+              if (snapshot.hasData) {
+                fm.WidgetsBinding.instance.addPostFrameCallback((_) {
+                  fm.showDialog(
+                      context: context,
+                      barrierDismissible: false,
+                      builder: (context) =>
+                          fm.AlertDialog(
+                            title: fm.Text('Tutorial ${lessonNumber+1}'),
+                            content: fm.Text(
+                                mouseHints[lessonNumber]),
+                            actions: [
+                              fm.TextButton(
+                                  child: fm.Text('Continue'), onPressed: () {
+                                fm.Navigator.of(context).pop();
+                              }),
+                            ],
+                          )
+                  );
+                });
+                painter.setAnimation(TamUtils.tamList(snapshot.data)[lessonNumber]);
+                return PracticeFrame();
               }
-            },
-            child: fm.FutureBuilder(
-                future: tam,
-                builder: (fm.BuildContext context,
-                    fm.AsyncSnapshot<XmlDocument> snapshot) {
-                  if (snapshot.hasData) {
-
-                    fm.WidgetsBinding.instance.addPostFrameCallback((_) {
-                      fm.showDialog(
-                          context: context,
-                          barrierDismissible: false,
-                          builder: (context) =>
-                              fm.AlertDialog(
-                                title: fm.Text('Tutorial ${lessonNumber+1}'),
-                                content: fm.Text(
-                                    mouseHints[lessonNumber]),
-                                actions: [
-                                  fm.TextButton(
-                                      child: fm.Text('Continue'), onPressed: () {
-                                    fm.Navigator.of(context).pop();
-                                  }),
-                                ],
-                              )
-                      );
-                    });
-                    painter.setAnimation(TamUtils.tamList(snapshot.data)[lessonNumber]);
-                    return PracticeFrame();
-                  }
-                  else
-                    return fm.Container();
-                }),
-          )
+              else
+                return fm.Container();
+            }),
       ),
     );
   }

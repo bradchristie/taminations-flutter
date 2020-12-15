@@ -32,7 +32,6 @@ import '../dancer.dart';
 import '../level_data.dart';
 import '../main.dart';
 import '../math/vector.dart';
-import '../request.dart';
 import '../settings.dart';
 import '../tam_utils.dart';
 import '../title_bar.dart';
@@ -110,17 +109,7 @@ class _PracticePageState extends fm.State<PracticePage> {
                   }
               )
           ),
-          body:  RequestHandler(
-            handler: (request) {
-              if (request.action == Action.BUTTON_PRESS) {
-                if (request('button') == 'Continue') {
-                  setState(() {
-                    nextAnimation();
-                  });
-                }
-              }
-            },
-            child: fm.FutureBuilder(
+          body: fm.FutureBuilder(
                 key: fm.ValueKey('$randomLink $randomAnim'),
                 future: tam,
                 builder:  (fm.BuildContext context,
@@ -130,7 +119,6 @@ class _PracticePageState extends fm.State<PracticePage> {
                   else
                     return fm.Container();
                 }),
-          )
       ),
     );
   }

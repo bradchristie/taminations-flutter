@@ -60,7 +60,6 @@ class _AnimationPageState extends fm.State<AnimationPage>
 
   String link;
   int animnum;
-  String name;
 
   @override
   void didChangeDependencies() {
@@ -74,25 +73,40 @@ class _AnimationPageState extends fm.State<AnimationPage>
 
   @override
   fm.Widget build(fm.BuildContext context) {
-    return pp.Provider<DanceAnimationPainter>(
+    return pp.ChangeNotifierProvider<DanceAnimationPainter>(
       create: (_) => DanceAnimationPainter(),
       child: fm.Scaffold(
+        backgroundColor: Color.LIGHTGRAY,
         appBar: fm.PreferredSize(
             preferredSize: fm.Size.fromHeight(56.0),
-            child: TitleBar(title: name, level: LevelData.find(link).name)
+            child: pp.Consumer<DanceAnimationPainter>(
+                builder: (context, painter, child) =>
+                    TitleBar(title:painter.title,
+                        level: LevelData.find(link).name))
         ),
-        body: fm.Column(
-          children: [
-            fm.Expanded(child: AnimationFrame()),
-            fm.Row(
-              children: [
-                fm.Expanded(
-                    child: Button('Definition')),
-                fm.Expanded(
-                    child: Button('Settings'))
-              ],
-            )
-          ],
+        body: pp.Consumer<fm.ValueNotifier<TamState>>(
+          builder: (context, tamState, _) => fm.Column(
+            children: [
+              fm.Expanded(child: AnimationFrame()),
+              fm.Container(
+                color: Color.FLOOR,
+                child: fm.Row(
+                  children: [
+                    fm.Expanded(
+                        child: Button('Definition',onPressed: () {
+                          tamState.value =
+                              tamState.value.modify(detailPage: DetailPage.DEFINITION);
+                        })),
+                    fm.Expanded(
+                        child: Button('Settings',onPressed: () {
+                          tamState.value =
+                              tamState.value.modify(detailPage: DetailPage.SETTINGS);
+                    }))
+                  ],
+                ),
+              )
+            ],
+          ),
         ),
       ),
     );
