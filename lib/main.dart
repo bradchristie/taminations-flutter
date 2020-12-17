@@ -18,6 +18,7 @@
 
 */
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart' as fm;
 import 'package:provider/provider.dart' as pp;
 
@@ -51,6 +52,9 @@ enum MainPage {
   PRACTICE,
   TUTORIAL
 }
+extension MainPageEx on String {
+  MainPage toMainPage() => MainPage.values.firstWhere((d) => describeEnum(d) == this);
+}
 
 enum DetailPage {
   NONE,  // portrait only
@@ -59,6 +63,9 @@ enum DetailPage {
   DEFINITION,
   HELP,
   ABBREVIATIONS
+}
+extension DetailPageEx on String {
+  DetailPage toDetailPage() => DetailPage.values.firstWhere((d) => describeEnum(d) == this);
 }
 
 //  This class holds state information used to
@@ -102,8 +109,9 @@ class TamState {
     if (level != null && level.isNotEmpty) 'level=$level',
     if (animnum >= 0) 'animnum=${animnum.d}',
     if (link != null && link.isNotEmpty) 'link=$link',
-    mainPage.toString(),
-    if (detailPage!=DetailPage.NONE) detailPage.toString()
+    'main=${describeEnum(mainPage)}',
+    if (detailPage!=DetailPage.NONE)
+      'detail=${describeEnum(detailPage)}'
   ].join('&');
 
   bool get isBlank => toString().isBlank;
@@ -163,8 +171,6 @@ class TaminationsRouterDelegate extends fm.RouterDelegate<TamState>
 
   var appState = fm.ValueNotifier(TamState());
   var _orientation = fm.Orientation.landscape;
-  //  History for back navigation
-  List<TamState> paths = [TamState()];
   //  this is necessary for the web URL and back button to work
   @override
   TamState get currentConfiguration => appState.value;
@@ -179,7 +185,6 @@ class TaminationsRouterDelegate extends fm.RouterDelegate<TamState>
             return pp.Consumer<fm.ValueNotifier<TamState>>(
                 builder: (context,appState,_) {
                   final config = appState.value;
-                  print('config: $config');
                   return fm.Navigator(
                       key: navigatorKey,
 
@@ -278,61 +283,18 @@ class TaminationsRouterDelegate extends fm.RouterDelegate<TamState>
     );
   }
 
-  void showPaths(String fromWhere) {
-    print('$fromWhere:');
-    for (var i=0; i<paths.length; i++) {
-      print('    $i ${paths[i]}');
-    }
-  }
-
-  @override
-  Future<bool> popRoute() async {
-    if (paths.length > 1) {
-      paths.removeLast();
-      appState.value = paths.last;
-      showPaths('popRoute');
-      notifyListeners();
-      return true;
-   }
-    else
-      return false;
-  }
-
   @override
   Future<void> setInitialRoutePath(TamState configuration) async {
-    paths = [TamState()];
     appState.addListener(() {
       setNewRoutePath(appState.value);
     });
   }
 
-  bool _isNewPage(TamState configuration) {
-    if (_orientation == fm.Orientation.portrait)
-      return configuration.detailPage != paths.last.detailPage;
-      return configuration.mainPage != paths.last.mainPage;
-  }
-
   @override
   Future<void> setNewRoutePath(TamState configuration) async {
     if (configuration != null) {
-      print('New configuration: $configuration');
-      if (configuration.isBlank)  // not sure if this happens any more
-        await popRoute();
-      //  When the back arrow on a browser is tapped, instead of
-      //  calling popRoute it calls this routine with the previous config.
-      //  So look for that and call popRoute if so.
-      else if (paths.length > 1 && configuration == paths[paths.length-2])
-        await popRoute();
-      else {
-        //  Don't generate a new page if just switching detail pages
-        //  in landscape mode.
-        if (_isNewPage(configuration)) {
-          paths.add(configuration);
-        } else
-          paths[paths.length-1] = configuration;
-        notifyListeners();
-      }
-      showPaths('setNewRoutePath');
+      appState.value = configuration;
+      notifyListeners();
     }
     return;
   }
@@ -347,20 +309,18 @@ class TaminationsRouteInformationParser extends fm.RouteInformationParser<TamSta
   Future<TamState>
   parseRouteInformation(fm.RouteInformation routeInformation) async {
     final params = Uri.parse(routeInformation.location).queryParameters;
+    var mainPage = params['main']?.toMainPage();
+    var detailPage = params['detail']?.toDetailPage();
     var level = params['level'] ?? '';
     var link = params['link'] ?? '';
     var animnum = int.tryParse(params['animnum'] ?? '-1') ?? -1;
-    return TamState(level:level,link:link,animnum:animnum);
+    return TamState(mainPage: mainPage, detailPage: detailPage, level:level,link:link,animnum:animnum);
   }
 
   @override
   fm.RouteInformation restoreRouteInformation(TamState path) {
     var location = path.toString();
-    return fm.RouteInformation(location: '/$location');
+    return fm.RouteInformation(location: '?$location');
   }
 
 }
-
-
-
-
