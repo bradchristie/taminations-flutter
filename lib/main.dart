@@ -274,7 +274,7 @@ class TaminationsRouterDelegate extends fm.RouterDelegate<TamState>
                         return true;
                       });
                 });
-          }),
+          })
     );
   }
 
@@ -328,8 +328,9 @@ class TaminationsRouterDelegate extends fm.RouterDelegate<TamState>
         //  in landscape mode.
         if (_isNewPage(configuration)) {
           paths.add(configuration);
-          notifyListeners();
-        }
+        } else
+          paths[paths.length-1] = configuration;
+        notifyListeners();
       }
       showPaths('setNewRoutePath');
     }

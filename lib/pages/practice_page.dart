@@ -91,34 +91,39 @@ class _PracticePageState extends fm.State<PracticePage> {
   fm.Widget build(fm.BuildContext context) {
     return pp.ChangeNotifierProvider.value(
       value: painter,
-      child: fm.Scaffold(
-          appBar: fm.PreferredSize(
-              preferredSize: fm.Size.fromHeight(56.0),
-              child: fm.FutureBuilder(
-                  future: tam,
-                  builder:  (fm.BuildContext context,
-                      fm.AsyncSnapshot<XmlElement> snapshot) {
-                    if (snapshot.hasData) {
-                      return TitleBar(
-                        title: snapshot.data.getAttribute('title'),
-                        level: levelDatum.name,
-                      );
-                    }
-                    else
-                      return TitleBar(title:' ');
-                  }
-              )
-          ),
-          body: fm.FutureBuilder(
-                key: fm.ValueKey('$randomLink $randomAnim'),
-                future: tam,
-                builder:  (fm.BuildContext context,
-                    fm.AsyncSnapshot<XmlElement> snapshot) {
-                  if (snapshot.hasData)
-                    return PracticeFrame();
-                  else
-                    return fm.Container();
-                }),
+      child: pp.ChangeNotifierProvider<TitleModel>(
+        create: (_) => TitleModel(),
+        child: pp.Consumer<TitleModel>(
+          builder: (context,titleModel,_) {
+            return fm.Scaffold(
+              appBar: fm.PreferredSize(
+                  preferredSize: fm.Size.fromHeight(56.0),
+                  child: fm.FutureBuilder(
+                      future: tam,
+                      builder:  (fm.BuildContext context,
+                          fm.AsyncSnapshot<XmlElement> snapshot) {
+                        if (snapshot.hasData) {
+                          titleModel.title = snapshot.data.getAttribute('title');
+                          titleModel.level = levelDatum.name;
+                          return TitleBar();
+                        }
+                        else
+                          return TitleBar();
+                      }
+                  )
+              ),
+              body: fm.FutureBuilder(
+                    key: fm.ValueKey('$randomLink $randomAnim'),
+                    future: tam,
+                    builder:  (fm.BuildContext context,
+                        fm.AsyncSnapshot<XmlElement> snapshot) {
+                      if (snapshot.hasData)
+                        return PracticeFrame();
+                      else
+                        return fm.Container();
+                    }),
+          );},
+        ),
       ),
     );
   }

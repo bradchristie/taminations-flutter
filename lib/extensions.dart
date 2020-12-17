@@ -20,10 +20,13 @@
 
 import 'dart:math';
 
-import 'package:tuple/tuple.dart';
+import 'package:flutter/material.dart' as fm;
 import 'package:xml/xml.dart';
 
-//  Not an extension but useful for
+void later(void Function() f) {
+  fm.WidgetsBinding.instance.addPostFrameCallback((_) { f(); });
+}
+//  Useful for
 //  var xx = somethingMightBeNull() ?? thrower(Exception("xx would be null")
 T thrower<T>(Object e) {
   throw e;

@@ -73,16 +73,21 @@ class _AnimationPageState extends fm.State<AnimationPage>
 
   @override
   fm.Widget build(fm.BuildContext context) {
-    return pp.ChangeNotifierProvider<DanceAnimationPainter>(
-      create: (_) => DanceAnimationPainter(),
+    return pp.MultiProvider(
+      providers:[
+        pp.ChangeNotifierProvider(create:(_) => TitleModel()),
+        pp.ChangeNotifierProvider(create: (_) => DanceAnimationPainter())
+      ],
       child: fm.Scaffold(
         backgroundColor: Color.LIGHTGRAY,
         appBar: fm.PreferredSize(
             preferredSize: fm.Size.fromHeight(56.0),
-            child: pp.Consumer<DanceAnimationPainter>(
-                builder: (context, painter, child) =>
-                    TitleBar(title:painter.title,
-                        level: LevelData.find(link).name))
+            child: pp.Consumer2<DanceAnimationPainter,TitleModel>(
+                builder: (context, painter, titleModel, _) {
+                  titleModel.title = painter.title;
+                  titleModel.level = LevelData.find(link).name;
+                  return TitleBar();
+                })
         ),
         body: pp.Consumer<fm.ValueNotifier<TamState>>(
           builder: (context, tamState, _) => fm.Column(

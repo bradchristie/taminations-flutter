@@ -43,19 +43,22 @@ class _FirstLandscapePageState extends fm.State<FirstLandscapePage> {
   @override
   fm.Widget build(fm.BuildContext context) {
     return pp.Consumer<fm.ValueNotifier<TamState>>(
-      builder: (context,appState,_) => fm.Scaffold(
-        backgroundColor: Color.GRAY,
-          appBar: fm.PreferredSize(
-              preferredSize: fm.Size.fromHeight(56.0),
-              child: TitleBar(title:title)
-          ),
-          body: FirstLandscapeFrame(rightChild:
-                  appState.value.detailPage==DetailPage.SETTINGS
-                      ? SettingsFrame()
-                      : appState.value.level?.isNotEmpty ?? false
-                      ? CallsFrame(appState.value.level)
-                      : WebFrame('info/about.html')),
+      builder: (context,appState,_) => pp.ChangeNotifierProvider(
+        create: (_) => TitleModel(),
+        child: fm.Scaffold(
+          backgroundColor: Color.GRAY,
+            appBar: fm.PreferredSize(
+                preferredSize: fm.Size.fromHeight(56.0),
+                child: TitleBar()
+            ),
+            body: FirstLandscapeFrame(rightChild:
+                    appState.value.detailPage==DetailPage.SETTINGS
+                        ? SettingsFrame()
+                        : appState.value.level?.isNotEmpty ?? false
+                        ? CallsFrame(appState.value.level)
+                        : WebFrame('info/about.html')),
 
+        ),
       ),
     );
   }

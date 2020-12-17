@@ -82,40 +82,43 @@ class _TutorialPageState extends fm.State<TutorialPage> {
   fm.Widget build(fm.BuildContext context) {
     return pp.ChangeNotifierProvider.value(
       value: painter,
-      child: fm.Scaffold(
-        appBar: fm.PreferredSize(
-            preferredSize: fm.Size.fromHeight(56.0),
-            child: TitleBar(title: 'Tutorial')
-          ),
-        body: fm.FutureBuilder(
-            future: tam,
-            builder: (fm.BuildContext context,
-                fm.AsyncSnapshot<XmlDocument> snapshot) {
-              if (snapshot.hasData) {
-                fm.WidgetsBinding.instance.addPostFrameCallback((_) {
-                  fm.showDialog(
-                      context: context,
-                      barrierDismissible: false,
-                      builder: (context) =>
-                          fm.AlertDialog(
-                            title: fm.Text('Tutorial ${lessonNumber+1}'),
-                            content: fm.Text(
-                                mouseHints[lessonNumber]),
-                            actions: [
-                              fm.TextButton(
-                                  child: fm.Text('Continue'), onPressed: () {
-                                fm.Navigator.of(context).pop();
-                              }),
-                            ],
-                          )
-                  );
-                });
-                painter.setAnimation(TamUtils.tamList(snapshot.data)[lessonNumber]);
-                return PracticeFrame();
-              }
-              else
-                return fm.Container();
-            }),
+      child: pp.ChangeNotifierProvider(
+        create: (_) => TitleModel(),
+        child: fm.Scaffold(
+          appBar: fm.PreferredSize(
+              preferredSize: fm.Size.fromHeight(56.0),
+              child: TitleBar()
+            ),
+          body: fm.FutureBuilder(
+              future: tam,
+              builder: (fm.BuildContext context,
+                  fm.AsyncSnapshot<XmlDocument> snapshot) {
+                if (snapshot.hasData) {
+                  fm.WidgetsBinding.instance.addPostFrameCallback((_) {
+                    fm.showDialog(
+                        context: context,
+                        barrierDismissible: false,
+                        builder: (context) =>
+                            fm.AlertDialog(
+                              title: fm.Text('Tutorial ${lessonNumber+1}'),
+                              content: fm.Text(
+                                  mouseHints[lessonNumber]),
+                              actions: [
+                                fm.TextButton(
+                                    child: fm.Text('Continue'), onPressed: () {
+                                  fm.Navigator.of(context).pop();
+                                }),
+                              ],
+                            )
+                    );
+                  });
+                  painter.setAnimation(TamUtils.tamList(snapshot.data)[lessonNumber]);
+                  return PracticeFrame();
+                }
+                else
+                  return fm.Container();
+              }),
+        ),
       ),
     );
   }

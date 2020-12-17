@@ -27,7 +27,6 @@ import 'package:xml/xml.dart';
 import '../button.dart';
 import '../dance_animation_painter.dart';
 import '../extensions.dart';
-import '../level_data.dart';
 import '../main.dart';
 import '../tam_utils.dart';
 import '../title_bar.dart';
@@ -70,48 +69,50 @@ class _SecondLandscapePageState extends fm.State<SecondLandscapePage> {
     var path = router.currentConfiguration;
     return pp.ChangeNotifierProvider<DanceAnimationPainter>(
       create: (_) => DanceAnimationPainter(),
-      child: fm.Scaffold(
-          backgroundColor: Color.LIGHTGRAY,
-          appBar: fm.PreferredSize(
-              preferredSize: fm.Size.fromHeight(56.0),
-              child: pp.Consumer<DanceAnimationPainter>(
-                  builder: (context, painter, child) =>
-                      TitleBar(title: painter.title,
-                          level: LevelData
-                              .find(path.level)
-                              .name)
-              )),
-          body: pp.Consumer<fm.ValueNotifier<TamState>>(
-            builder: (context, tamState, _) =>
-                SecondLandscapeFrame(
-                    leftChild: AnimListFrame(path.link),
-                    centerChild: fm.Column(
-                      children: [
-                        fm.Expanded(child: AnimationFrame()),
-                        fm.Container(
-                          color: Color.FLOOR,
-                          child: fm.Row(
-                            children: [
-                              fm.Expanded(
-                                  child: Button('Definition', onPressed: () {
-                                    tamState.value = tamState.value.modify(
-                                        detailPage: DetailPage.DEFINITION);
-                                  })),
-                              fm.Expanded(
-                                  child: Button('Settings', onPressed: () {
-                                    tamState.value = tamState.value.modify(
-                                        detailPage: DetailPage.SETTINGS);
-                                  })),
-                            ],
-                          ),
-                        )
-                      ],
-                    ),
-                    rightChild: path.detailPage == DetailPage.SETTINGS
-                        ? SettingsFrame()
-                        : WebFrame(path.link)
-                ),
-          )
+      child: pp.ChangeNotifierProvider<TitleModel>(
+        create: (_) => TitleModel(),
+        child: fm.Scaffold(
+            backgroundColor: Color.LIGHTGRAY,
+            appBar: fm.PreferredSize(
+                preferredSize: fm.Size.fromHeight(56.0),
+                child: pp.Consumer<DanceAnimationPainter>(
+                    builder: (context, painter, child) =>
+                        TitleBar()
+                 //   title: painter.title,
+                 //   level: LevelData.find(path.level).name)
+                )),
+            body: pp.Consumer<fm.ValueNotifier<TamState>>(
+              builder: (context, tamState, _) =>
+                  SecondLandscapeFrame(
+                      leftChild: AnimListFrame(path.link),
+                      centerChild: fm.Column(
+                        children: [
+                          fm.Expanded(child: AnimationFrame()),
+                          fm.Container(
+                            color: Color.FLOOR,
+                            child: fm.Row(
+                              children: [
+                                fm.Expanded(
+                                    child: Button('Definition', onPressed: () {
+                                      tamState.value = tamState.value.modify(
+                                          detailPage: DetailPage.DEFINITION);
+                                    })),
+                                fm.Expanded(
+                                    child: Button('Settings', onPressed: () {
+                                      tamState.value = tamState.value.modify(
+                                          detailPage: DetailPage.SETTINGS);
+                                    })),
+                              ],
+                            ),
+                          )
+                        ],
+                      ),
+                      rightChild: path.detailPage == DetailPage.SETTINGS
+                          ? SettingsFrame()
+                          : WebFrame(path.link)
+                  ),
+            )
+        ),
       ),
     );
   }
@@ -134,9 +135,15 @@ class SecondLandscapeFrame extends fm.StatelessWidget {
       children: [
         fm.Expanded(child: leftChild, flex: 1),
         fm.VerticalDivider(color: Color.BLACK, width: 2.0,),
+        //  We want the animation list (which is the left child)
+        //  to control the title.  So add dummy titles
+        //  to intercept consumers from center and right children
         fm.Expanded(child: centerChild, flex: 1),
         fm.VerticalDivider(color: Color.BLACK, width: 2.0,),
-        fm.Expanded(child: rightChild, flex: 1)
+        pp.ChangeNotifierProvider(
+            create: (_) => TitleModel(),
+            child: fm.Expanded(child: rightChild, flex: 1)
+        )
       ],
     );
   }

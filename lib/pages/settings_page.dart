@@ -29,12 +29,15 @@ class SettingsPage extends fm.StatelessWidget {
 
   @override
   fm.Widget build(fm.BuildContext context) {
-    return fm.Scaffold(
-        appBar: fm.PreferredSize(
-            preferredSize: fm.Size.fromHeight(56.0),
-            child: TitleBar(title:'Settings')
-        ),
-        body: SettingsFrame()
+    return pp.ChangeNotifierProvider<TitleModel>(
+      create: (_) => TitleModel(),
+      child: fm.Scaffold(
+          appBar: fm.PreferredSize(
+              preferredSize: fm.Size.fromHeight(56.0),
+              child: TitleBar()
+          ),
+          body: SettingsFrame()
+      ),
     );
   }
 
@@ -201,8 +204,9 @@ class _SettingsState extends fm.State<SettingsFrame> {
 
   @override
   fm.Widget build(fm.BuildContext context) {
-    return pp.Consumer<Settings>(
-        builder: (context, settings, child) {
+    return pp.Consumer2<Settings,TitleModel>(
+        builder: (context, settings, titleModel, child) {
+          titleModel.title = 'Settings';
           return fm.Container(
             color: Color.LIGHTGREY,
               child:fm.ListView(children: [

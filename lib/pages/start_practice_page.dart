@@ -36,15 +36,16 @@ class StartPracticePage extends fm.StatelessWidget {
       DeviceOrientation.landscapeLeft,
       DeviceOrientation.landscapeRight,
     ]);
-    return fm.Scaffold(
-        backgroundColor: Color.FLOOR,
-        appBar: fm.PreferredSize(
-            preferredSize: fm.Size.fromHeight(56.0),
-            child: TitleBar(
-                title: 'Practice'
-            )
-        ),
-        body: StartPracticeFrame()
+    return pp.ChangeNotifierProvider<TitleModel>(
+      create: (_) => TitleModel(),
+      child: fm.Scaffold(
+          backgroundColor: Color.FLOOR,
+          appBar: fm.PreferredSize(
+              preferredSize: fm.Size.fromHeight(56.0),
+              child: TitleBar()
+          ),
+          body: StartPracticeFrame()
+      ),
     );
   }
 

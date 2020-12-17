@@ -53,14 +53,21 @@ class _CallsPageState extends fm.State<CallsPage> {
   @override
   //  Build title bar and frame, sending info on the calls to the frame
   fm.Widget build(fm.BuildContext context) {
-    return fm.Scaffold(
-            appBar: fm.PreferredSize(
-                preferredSize: fm.Size.fromHeight(56.0),
-                child: TitleBar(title:levelDatum.name)
-            ),
-            body: CallsFrame(levelDatum.name)
-        );
-
+    return pp.ChangeNotifierProvider<TitleModel>(
+      create: (_) => TitleModel(),
+      child: pp.Consumer<TitleModel>(
+        builder:(context,titleModel,_) {
+          titleModel.title = levelDatum.name;
+          return fm.Scaffold(
+              appBar: fm.PreferredSize(
+                  preferredSize: fm.Size.fromHeight(56.0),
+                  child: TitleBar()
+              ),
+              body: CallsFrame(levelDatum.name)
+          );
+        }
+      ),
+    );
   }
 
 }
@@ -94,6 +101,7 @@ class _CallsState extends fm.State<CallsFrame> {
     levelDatum = LevelData.find(level);
     calls = TamUtils.calldata.where((element) =>
         levelDatum.selector(element.link)).toList();
+    pp.Provider.of<TitleModel>(context,listen:false).title = levelDatum.name;
   }
 
   @override

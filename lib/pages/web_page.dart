@@ -41,15 +41,15 @@ class WebPage extends fm.StatelessWidget {
 
   @override
   fm.Widget build(fm.BuildContext context) {
-    return fm.Scaffold(
-        appBar: fm.PreferredSize(
-            preferredSize: fm.Size.fromHeight(56.0),
-            child: TitleBar(
-                title: link.contains('about') ? 'Taminations' : 'Definition',
-                level: LevelData.find(link)?.name ?? ''
-            )
-        ),
-        body: WebFrame(link)
+    return pp.ChangeNotifierProvider<TitleModel>(
+      create: (_) => TitleModel(),
+      child: fm.Scaffold(
+          appBar: fm.PreferredSize(
+              preferredSize: fm.Size.fromHeight(56.0),
+              child: TitleBar()
+          ),
+          body: WebFrame(link)
+      ),
     );
   }
 
@@ -86,8 +86,14 @@ class _WebFrameState extends fm.State<WebFrame> {
 
   @override
   fm.Widget build(fm.BuildContext context) {
-    return pp.Consumer<Settings>(
-        builder: (context, settings, child) {
+    return pp.Consumer2<Settings,TitleModel>(
+        builder: (context, settings, titleModel, child) {
+          if (link.contains('about'))
+            titleModel.title = 'Taminations';
+          else {
+            titleModel.title = 'Definition';
+            titleModel.level = LevelData.find(link).name;
+          }
           isAbbrev = settings.isAbbrev;
           return fm.FutureBuilder(
               future:  htmlFuture,

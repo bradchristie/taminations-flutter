@@ -18,33 +18,42 @@
 
 */
 
-import 'package:flutter/material.dart' as fm;
 import 'package:assets_audio_player/assets_audio_player.dart';
 import 'package:auto_size_text/auto_size_text.dart';
-import 'tam_utils.dart';
-import 'color.dart';
+import 'package:flutter/material.dart' as fm;
+import 'package:provider/provider.dart' as pp;
 
+import 'color.dart';
+import 'extensions.dart';
+import 'tam_utils.dart';
+
+class TitleModel extends fm.ChangeNotifier {
+  String _title = 'Taminations';
+  String _level = '';
+
+  String get title => _title;
+  set title(String value) {
+    if (value != _title) {
+      _title = value;
+      later(() => notifyListeners());
+    }
+  }
+  String get level => _level;
+  set level(String value) {
+    if (value != _level) {
+      _level = value;
+      later(() => notifyListeners());
+    }
+  }
+
+}
 
 class TitleBar extends fm.StatelessWidget {
 
-  final String title;
-  final String level;
-  final bool canShare;
-
-  TitleBar({
-    this.title='Taminations',
-    this.level='',
-    this.canShare=false});
+  final bool canShare = false;  //  TODO we can alway share?
 
   @override
   fm.Widget build(fm.BuildContext context) {
-    //  See if we have audio for this title
-    var audioAsset = '';
-    TamUtils.calldata.where((item) => item.title == title).forEach((call) {
-      if (call.audio!= null) {
-        audioAsset = call.audio;
-      }
-    });
     //  Don't overlap notification area at top
     return fm.SafeArea(
         bottom: false,
@@ -60,61 +69,72 @@ class TitleBar extends fm.StatelessWidget {
             ),
 
             //  Row of items in the title bar
-            child: fm.Row(children: [
+            child: pp.Consumer<TitleModel>(
+              builder: (context,titleModel,_) {
+                //  See if we have audio for this title
+                var audioAsset = '';
+                TamUtils.calldata.where((item) => item.title == titleModel.title).forEach((call) {
+                  if (call.audio!= null) {
+                    audioAsset = call.audio;
+                  }
+                });
 
-              //  Back button
-              fm.BackButton(color: fm.Colors.white,
+                return fm.Row(children: [
+
+                //  Back button
+                fm.BackButton(color: fm.Colors.white,
+                    onPressed: () {
+                      fm.Navigator.maybePop(context);
+                      fm.Router
+                          .of(context)
+                          .routerDelegate
+                          .popRoute();
+                    }),
+
+                //  Title, gets an Expanded so it uses all excess space
+                fm.Expanded(
+                    child: fm.Center(
+                        child: AutoSizeText(titleModel.title,
+                            style: fm.TextStyle(
+                                color: Color.WHITE,
+                                fontWeight: fm.FontWeight.bold,
+                                fontSize: 30,
+                                shadows: <fm.Shadow>[
+                                  fm.Shadow(offset: fm.Offset(1.0, 1.0))
+                                ]
+                            )
+                        )
+                    )
+                ),
+
+                //  Share button
+                if (canShare) fm.TextButton(child: fm.Icon(
+                    fm.Icons.share,
+                    color: Color.WHITE,
+                    size: 32
+                ),
+                    onPressed: () => {}),
+
+                //  Audio button to say the title
+                if (audioAsset.isNotEmpty) fm.TextButton(child: fm.Icon(
+                    fm.Icons.volume_up_sharp,
+                    color: Color.WHITE,
+                    size: 32
+                ),
                   onPressed: () {
-                    fm.Navigator.maybePop(context);
-                    fm.Router
-                        .of(context)
-                        .routerDelegate
-                        .popRoute();
-                  }),
+                    AssetsAudioPlayer.playAndForget(
+                      Audio('assets/$audioAsset')
+                    );
+                 },
+                ),
 
-              //  Title, gets an Expanded so it uses all excess space
-              fm.Expanded(
-                  child: fm.Center(
-                      child: AutoSizeText(title,
-                          style: fm.TextStyle(
-                              color: Color.WHITE,
-                              fontWeight: fm.FontWeight.bold,
-                              fontSize: 30,
-                              shadows: <fm.Shadow>[
-                                fm.Shadow(offset: fm.Offset(1.0, 1.0))
-                              ]
-                          )
-                      )
-                  )
-              ),
-
-              //  Share button
-              if (canShare) fm.TextButton(child: fm.Icon(
-                  fm.Icons.share,
-                  color: Color.WHITE,
-                  size: 32
-              ),
-                  onPressed: () => {}),
-
-              //  Audio button to say the title
-              if (audioAsset.isNotEmpty) fm.TextButton(child: fm.Icon(
-                  fm.Icons.volume_up_sharp,
-                  color: Color.WHITE,
-                  size: 32
-              ),
-                onPressed: () {
-                  AssetsAudioPlayer.playAndForget(
-                    Audio('assets/$audioAsset')
-                  );
-               },
-              ),
-
-              //  Level text (button?)
-              if (level.isNotEmpty)
-                fm.TextButton(child: fm.Text(level,
-                    style: fm.TextStyle(color: Color.WHITE, fontSize: 20)),
-                    onPressed: () => {})
-            ])
+                //  Level text (button?)
+                if (titleModel.level.isNotEmpty)
+                  fm.TextButton(child: fm.Text(titleModel.level,
+                      style: fm.TextStyle(color: Color.WHITE, fontSize: 20)),
+                      onPressed: () => {})
+              ]);},
+            )
         )
     );
   }

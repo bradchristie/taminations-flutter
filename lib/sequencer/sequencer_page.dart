@@ -55,6 +55,7 @@ class _SequencerPageState extends fm.State<SequencerPage> {
   fm.Widget build(fm.BuildContext context) {
     return pp.MultiProvider(
       providers: [
+        pp.ChangeNotifierProvider(create: (_) => TitleModel()),
         pp.ChangeNotifierProvider.value(value: model),
         pp.ChangeNotifierProvider.value(value: model.animation),
         pp.ChangeNotifierProvider.value(value: abbreviationsModel)
@@ -63,7 +64,7 @@ class _SequencerPageState extends fm.State<SequencerPage> {
         backgroundColor: Color.LIGHTGRAY,
           appBar: fm.PreferredSize(
               preferredSize: fm.Size.fromHeight(56.0),
-              child: TitleBar(title: 'Sequencer')
+              child: TitleBar()
           ),
           body: fm.Row(
               children: [

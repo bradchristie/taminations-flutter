@@ -31,12 +31,15 @@ class LevelPage extends fm.StatelessWidget {
 
   @override
   fm.Widget build(fm.BuildContext context) {
-    return fm.Scaffold(
-        appBar: fm.PreferredSize(
-            preferredSize: fm.Size.fromHeight(56.0),
-            child: TitleBar(title:'Taminations' )
-        ),
-        body: LevelFrame()
+    return pp.ChangeNotifierProvider<TitleModel>(
+      create: (_) => TitleModel(),
+      child: fm.Scaffold(
+          appBar: fm.PreferredSize(
+              preferredSize: fm.Size.fromHeight(56.0),
+              child: TitleBar()
+          ),
+          body: LevelFrame()
+      ),
     );
   }
 
