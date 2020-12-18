@@ -487,10 +487,10 @@ class DanceAnimationPainter extends fm.ChangeNotifier implements fm.CustomPainte
   }
 
   Future<void> setAnimation(XmlElement xtam,
-      [int intdan = -1, bool intrand = true]) async {
+      {int practiceGender = -1, bool practiceIsRandom = true}) async {
     _tam = await TamUtils.tamXref(xtam);
-    _interactiveDancer = intdan;
-    _interactiveRandom = intrand;
+    _interactiveDancer = practiceGender;
+    _interactiveRandom = practiceIsRandom;
     _resetAnimation();
     partstr = _tam('parts','') + _tam('fractions','');
     hasParts = _tam('parts') != null;
@@ -504,6 +504,7 @@ class DanceAnimationPainter extends fm.ChangeNotifier implements fm.CustomPainte
       if (isRunning) {
         isRunning = false;
       }
+      isFinished = false;
       var tform = _tam.getElement('formation');
       var aform = _tam('formation');
       var formation = _tam;

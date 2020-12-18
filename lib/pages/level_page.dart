@@ -65,7 +65,7 @@ class _TapDetector extends fm.StatelessWidget {
                   highlightColor: color.darker(),
                   onTap: () {
                     if (text == 'Practice')
-                      appState.value = TamState(mainPage: MainPage.TUTORIAL);
+                      appState.value = TamState(mainPage: MainPage.STARTPRACTICE);
                     else if (text == 'Sequencer')
                       appState.value = TamState(mainPage: MainPage.SEQUENCER);
                     else if (text == 'Settings')

@@ -109,8 +109,8 @@ class TamState {
     if (level != null && level.isNotEmpty) 'level=$level',
     if (animnum >= 0) 'animnum=${animnum.d}',
     if (link != null && link.isNotEmpty) 'link=$link',
-    'main=${describeEnum(mainPage)}',
-    if (detailPage!=DetailPage.NONE)
+    if (mainPage != null) 'main=${describeEnum(mainPage)}',
+    if (detailPage != null && detailPage!=DetailPage.NONE)
       'detail=${describeEnum(detailPage)}'
   ].join('&');
 
@@ -210,6 +210,11 @@ class TaminationsRouterDelegate extends fm.RouterDelegate<TamState>
                               key: fm.ValueKey('Tutorial'),
                               child: TutorialPage()
                           ),
+                        if (config.mainPage == MainPage.STARTPRACTICE)
+                          fm.MaterialPage(
+                              key: fm.ValueKey('Start Practice'),
+                              child: StartPracticePage()
+                          ),
                         if (config.mainPage == MainPage.PRACTICE)
                           fm.MaterialPage(
                               key: fm.ValueKey('Practice'),
@@ -273,6 +278,7 @@ class TaminationsRouterDelegate extends fm.RouterDelegate<TamState>
 
                       //  Standard onPopPage method, required
                       onPopPage: (route, result) {
+                        print('Pop Navigator: ${route.currentResult}');
                         if (!route.didPop(result)) {
                           return false;
                         }
@@ -293,6 +299,7 @@ class TaminationsRouterDelegate extends fm.RouterDelegate<TamState>
   @override
   Future<void> setNewRoutePath(TamState configuration) async {
     if (configuration != null) {
+      print('New Route Path: $configuration');
       appState.value = configuration;
       notifyListeners();
     }

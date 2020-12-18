@@ -54,21 +54,29 @@ class StartPracticePage extends fm.StatelessWidget {
 //  Wrapper widget to handle taps
 class _TapDetector extends fm.StatelessWidget {
   final String text;
+  final Color color;
   final fm.StatelessWidget child;
-  _TapDetector({this.text,this.child});
+  _TapDetector({
+    @fm.required this.text,
+    @fm.required this.color,
+    @fm.required this.child});
 
   @override
   fm.Widget build(fm.BuildContext context) =>
       pp.Consumer<fm.ValueNotifier<TamState>>(
           builder: (context,appState,_) {
-            return fm.GestureDetector(
-                onTap: () {
-                  if (text == 'Tutorial')
-                    appState.value = TamState(mainPage: MainPage.TUTORIAL);
-                  else
-                    appState.value = TamState(mainPage: MainPage.PRACTICE, level: text);
-                },
-                child:child
+            return fm.Material(
+              color: color,
+              child: fm.InkWell(
+                highlightColor: color.darker(),
+                  onTap: () {
+                    if (text == 'Tutorial')
+                      appState.value = TamState(mainPage: MainPage.TUTORIAL);
+                    else
+                      appState.value = TamState(mainPage: MainPage.PRACTICE, level: text);
+                  },
+                  child:child
+              ),
             );
           });
 }
@@ -84,9 +92,9 @@ class _StartPracticeItem extends fm.StatelessWidget {
       fm.Expanded(
         child: _TapDetector(
           text: text,
+          color: color,
           child: fm.Container(
             decoration: fm.BoxDecoration(
-                color: color,
                 border: fm.Border(
                     top: fm.BorderSide(width: 1, color: fm.Colors.black),
                     left: fm.BorderSide(width: 1, color: fm.Colors.black)

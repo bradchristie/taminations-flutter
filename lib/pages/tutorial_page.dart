@@ -22,28 +22,28 @@ import 'package:flutter/material.dart' as fm;
 import 'package:provider/provider.dart' as pp;
 
 import '../common.dart';
+import '../settings.dart';
 import 'practice_page.dart';
 
-class TutorialPage extends fm.StatefulWidget {
+class TutorialPage extends fm.StatelessWidget {
+
   @override
-  _TutorialPageState createState() => _TutorialPageState();
+  fm.Widget build(fm.BuildContext context) {
+    return pp.ChangeNotifierProvider<TitleModel>(
+        create: (_) => TitleModel(),
+        child: fm.Scaffold(
+            appBar: fm.PreferredSize(
+                preferredSize: fm.Size.fromHeight(56.0),
+                child: TitleBar()
+            ),
+            body: PracticeFrame(TutorialModel())
+        )
+    );
+  }
+
 }
 
-class _TutorialPageState extends fm.State<TutorialPage> {
-
-  //  painter is where all the drawing and animation is done
-  DanceAnimationPainter painter;
-  Future<XmlDocument> tam;
-  var lessonNumber = 0;
-
-  @override
-  void didChangeDependencies() {
-    super.didChangeDependencies();
-    //  Read the xml file with the tutorial animations
-    tam = TamUtils.getXMLAsset('src/tutorial');
-    //  Set up painter
-    painter = DanceAnimationPainter();
-  }
+class TutorialModel extends PracticeModel {
 
   static final touchHints = [
     'Use your %1 finger on the %1 side of the screen. '
@@ -73,54 +73,41 @@ class _TutorialPageState extends fm.State<TutorialPage> {
     'Hold the Control key to turn your dancer in place without moving'
   ];
 
-  void _nextAnimation() {
-
-  }
+  var lessonNumber = 0;
 
 
   @override
-  fm.Widget build(fm.BuildContext context) {
-    return pp.ChangeNotifierProvider.value(
-      value: painter,
-      child: pp.ChangeNotifierProvider(
-        create: (_) => TitleModel(),
-        child: fm.Scaffold(
-          appBar: fm.PreferredSize(
-              preferredSize: fm.Size.fromHeight(56.0),
-              child: TitleBar()
-            ),
-          body: fm.FutureBuilder(
-              future: tam,
-              builder: (fm.BuildContext context,
-                  fm.AsyncSnapshot<XmlDocument> snapshot) {
-                if (snapshot.hasData) {
-                  fm.WidgetsBinding.instance.addPostFrameCallback((_) {
-                    fm.showDialog(
-                        context: context,
-                        barrierDismissible: false,
-                        builder: (context) =>
-                            fm.AlertDialog(
-                              title: fm.Text('Tutorial ${lessonNumber+1}'),
-                              content: fm.Text(
-                                  mouseHints[lessonNumber]),
-                              actions: [
-                                fm.TextButton(
-                                    child: fm.Text('Continue'), onPressed: () {
-                                  fm.Navigator.of(context).pop();
-                                }),
-                              ],
-                            )
-                    );
-                  });
-                  painter.setAnimation(TamUtils.tamList(snapshot.data)[lessonNumber]);
-                  return PracticeFrame();
-                }
-                else
-                  return fm.Container();
-              }),
-        ),
-      ),
-    );
+  void nextDialog(fm.BuildContext context) {
+    fm.WidgetsBinding.instance.addPostFrameCallback((_) {
+      fm.showDialog(
+          context: context,
+          barrierDismissible: false,
+          builder: (context) =>
+              fm.AlertDialog(
+                title: fm.Text('Tutorial ${lessonNumber+1}'),
+                content: fm.Text(
+                    mouseHints[lessonNumber]),
+                actions: [
+                  fm.TextButton(
+                      child: fm.Text('Continue'), onPressed: () {
+                    fm.Navigator.of(context).pop();
+                  }),
+                ],
+              )
+      );
+    });
+  }
+
+  @override
+  void nextAnimation(fm.BuildContext context, DanceAnimationPainter painter) {
+    TamUtils.getXMLAsset('src/tutorial').then((doc) {
+      final tams = TamUtils.tamList(doc);
+      painter.setAnimation(
+          tams[lessonNumber],
+          practiceGender: Gender.BOY,practiceIsRandom: false
+      ).whenComplete(() => painter.doPlay());
+    });
+    lessonNumber += 1;
   }
 
 }
