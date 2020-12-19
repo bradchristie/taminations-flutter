@@ -55,7 +55,7 @@ class PracticeDancer extends Dancer {
   var _primaryMove = NOPOINT;
   var _secondaryTouch = NOPOINT;
   var _secondaryMove = NOPOINT;
-  final _primaryIsLeft = true ; // TODO Setting("PrimaryControl").s == "Left"
+  var primaryIsLeft = true;
 
   //  Need a val for original fill color, as we change it
   Color _onTrackColor;
@@ -141,7 +141,7 @@ class PracticeDancer extends Dancer {
     //  Figure out if touching left or right side, and remember the point
     //  Also need to remember the "id" to correlate future move events
     //  Point has already been transformed to dancer coords
-    if ((pos.y < 0) ^ _primaryIsLeft || isMouse) {
+    if ((pos.y < 0) ^ primaryIsLeft || isMouse) {
       _primaryTouch = pos;
       _primaryMove = _primaryTouch;
       _primaryid = id;

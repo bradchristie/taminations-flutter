@@ -179,6 +179,8 @@ class _PracticeFrameState extends fm.State<PracticeFrame>
                 titleModel.title = painter.title;
                 painter.setGridVisibility(true);
                 painter.setSpeed(settings.practiceSpeed);
+                painter.practiceDancer.primaryIsLeft =
+                    settings.primaryControl == 'Left Finger';
                 return fm.Listener(
                   onPointerDown: (event) {
                     painter.practiceDancer.touchDown(
