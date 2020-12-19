@@ -126,11 +126,13 @@ class TutorialModel extends PracticeModel {
 
   @override
   Future<bool> firstAnimation(fm.BuildContext context, DanceAnimationPainter painter) async {
+    final settings = pp.Provider.of<Settings>(context,listen: false);
     final doc = await TamUtils.getXMLAsset('src/tutorial');
     final tams = TamUtils.tamList(doc);
     await painter.setAnimation(
         tams[lessonNumber],
-        practiceGender: Gender.BOY,practiceIsRandom: false
+        practiceGender: settings.practiceGender=='Boy' ? Gender.BOY : Gender.GIRL,
+        practiceIsRandom: false
     );
     return true;
   }

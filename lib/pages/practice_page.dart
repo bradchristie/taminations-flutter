@@ -80,6 +80,7 @@ class PracticeModel {
     //  Choose a random call from the selected level
     final appState = pp.Provider.of<fm.ValueNotifier<TamState>>(context,listen: false);
     final titleModel = pp.Provider.of<TitleModel>(context,listen: false);
+    final settings = pp.Provider.of<Settings>(context,listen: false);
     final levelDatum = LevelData.find(appState.value.level);
     final levelCalls = TamUtils.calldata.where((element) =>
         levelDatum.selector(element.link)).toList();
@@ -94,7 +95,8 @@ class PracticeModel {
     final randomTam = tams[randomAnim];
     titleModel.title = randomTam.getAttribute('title');
     titleModel.level = levelDatum.name;
-    await painter.setAnimation(randomTam,practiceGender:Gender.BOY);
+    await painter.setAnimation(randomTam,
+        practiceGender: settings.practiceGender=='Boy' ? Gender.BOY : Gender.GIRL);
     painter.doPlay();
     return true;
   }
