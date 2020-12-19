@@ -44,8 +44,8 @@ class PracticeDancer extends Dancer {
   var onTrack = true;
 
   //  For moving dancer with mouse and keys
-  final _shiftDown = false;
-  final _ctlDown = false;
+  var shiftDown = false;
+  var ctlDown = false;
   var _primaryDirection = NODIRECTION;
 
   //  For moving dancer with fingers
@@ -84,11 +84,11 @@ class PracticeDancer extends Dancer {
       //  Process primary move, which generally moves the dancer
       if (_primaryMove != NOPOINT) {
         final d = (_primaryMove - _primaryTouch) * MOVESENSITIVITY;
-        if (!_ctlDown) {
+        if (!ctlDown) {
           tx = Matrix.getTranslation(d.x, d.y) * tx;
-          if (!_shiftDown && _secondaryMove == NOPOINT) {
+          if (!shiftDown && _secondaryMove == NOPOINT) {
             //  Rotation follow movement
-            if (_primaryDirection == Vector())
+            if (_primaryDirection.x == 0.0 && _primaryDirection.y == 0.0)
               _primaryDirection = d;
             else {
               final dd = Vector(

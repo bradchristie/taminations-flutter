@@ -498,7 +498,7 @@ class DanceAnimationPainter extends fm.ChangeNotifier implements fm.CustomPainte
   void _resetAnimation() {
     if (_tam != null) {
       leadin = _interactiveDancer < 0 ? 2.0 : 3.0;
-      leadout = _interactiveDancer < 0 ? 2.0 : 1.0;
+      leadout = _interactiveDancer < 0 ? 2.0 : 0.2;
       if (isRunning) {
         isRunning = false;
       }

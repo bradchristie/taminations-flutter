@@ -85,14 +85,18 @@ class TutorialModel extends PracticeModel {
 
   @override
   void nextDialog(fm.BuildContext context, DanceAnimationPainter painter) {
-    final platform = LocalPlatform();
+    var hints = mouseHints;
+    try {
+      final platform = LocalPlatform();
+      if (platform.isIOS || platform.isAndroid)
+        hints = touchHints;
+      //  Currently web doesn't even have a platform, LocalPlatform is not supported
+    } on UnsupportedError catch (_) { }
     final settings = pp.Provider.of<Settings>(context,listen: false);
     final fingers = [
       (settings.primaryControl=='Left Finger') ? 'Left' : 'Right',
       (settings.primaryControl=='Left Finger') ? 'Right' : 'Left',
     ];
-    final hints = platform.isAndroid || platform.isIOS
-        ? touchHints : mouseHints;
     final hint = hints[lessonNumber]
         .replaceAll('%1', fingers[0])
         .replaceAll('%2', fingers[1]);

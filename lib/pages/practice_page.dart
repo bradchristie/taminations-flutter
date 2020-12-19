@@ -122,6 +122,14 @@ class _PracticeFrameState extends fm.State<PracticeFrame>
       fraction >= 0.9 ? 'Excellent!'
           : fraction >= 0.7 ? 'Very Good!' : 'Poor';
   Future<bool> waitForAnimation;
+  final _focusNode = fm.FocusNode();
+
+  // Focus nodes need to be disposed.
+  @override
+  void dispose() {
+    _focusNode.dispose();
+    super.dispose();
+  }
 
   void _reset() {
     score = 0;
@@ -137,101 +145,122 @@ class _PracticeFrameState extends fm.State<PracticeFrame>
 
   @override
   fm.Widget build(fm.BuildContext context) {
-    return fm.FutureBuilder(
-      future: waitForAnimation,
-      builder: (context,snapshot) {
-        if (!snapshot.hasData) return fm.Container();
-        widget.practiceModel.nextDialog(context, painter);
-        return pp.ChangeNotifierProvider.value(
-        value: painter,
-        child: pp.Consumer3<DanceAnimationPainter, TitleModel, Settings>(
-          //  Even though we know the painter, get it via Consumer
-          //  so it triggers a rebuild when finished
-            builder: (context, painter, titleModel, settings, child) {
-              titleModel.title = painter.title;
-              painter.setGridVisibility(true);
-              painter.setSpeed(settings.practiceSpeed);
-              return fm.Listener(
-                onPointerDown: (event) {
-                  painter.practiceDancer.touchDown(
-                      event.pointer,
-                      painter.mouse2dance(event.position.v),
-                      isMouse: event.kind == PointerDeviceKind.mouse
-                  );
-                },
-                onPointerUp: (event) {
-                  painter.practiceDancer.touchUp(
-                      event.pointer,
-                      painter.mouse2dance(event.position.v),
-                      isMouse: event.kind == PointerDeviceKind.mouse
-                  );
-                },
-                onPointerMove: (event) {
-                  painter.practiceDancer.touchMove(
-                      event.pointer,
-                      painter.mouse2dance(event.position.v)
-                  );
-                },
-                child: fm.Stack(
-                  children: [
-                    fm.CustomPaint(
-                      painter: painter,
-                      child: fm.Center(), // so CustomPaint gets sized correctly
-                    ),
-                    if (painter.beat < 0.2)
-                    fm.Positioned(
-                        bottom: 10,
-                        left: 300,
-                        child: fm.Text('${-painter.beat.floor()}',
-                            style: fm.TextStyle(color: Color.GRAY, fontSize: 180))
-                    ),
-                    if (painter.isFinished) fm.Positioned(
-                        top: 100.0,
-                        left: 20.0,
-                        child: fm.Column(
-                          children: [
-                            _AnimationCompleteText('Animation Complete'),
-                            _AnimationCompleteText('Your Score'),
-                            _AnimationCompleteText(
-                                '${painter.practiceScore.ceil()} / ${(painter
-                                    .movingBeats * 10).ceil()}'),
-                            _AnimationCompleteText(
-                                congrats(painter.practiceScore /
-                                    (painter.movingBeats * 10))
-                            ),
-                            fm.Row(
-                              children: [
-                                Button('Repeat', onPressed: () {
-                                  setState(() {
-                                    _reset();
-                                  });
-                                }),
-                                if (widget.practiceModel.canContinue(painter.practiceScore /
-                                    (painter.movingBeats * 10)))
-                                  Button('Continue', onPressed: () {
+    _focusNode.requestFocus();
+    return fm.RawKeyboardListener(
+      onKey: (event) {
+        if (event.physicalKey == PhysicalKeyboardKey.shiftLeft ||
+            event.physicalKey == PhysicalKeyboardKey.shiftRight) {
+          if (event is RawKeyDownEvent)
+            painter.practiceDancer.shiftDown = true;
+          else if (event is RawKeyUpEvent)
+            painter.practiceDancer.shiftDown = false;
+        }
+        if (event.physicalKey == PhysicalKeyboardKey.controlLeft ||
+            event.physicalKey == PhysicalKeyboardKey.controlRight) {
+          if (event is RawKeyDownEvent)
+            painter.practiceDancer.ctlDown = true;
+          else if (event is RawKeyUpEvent)
+            painter.practiceDancer.ctlDown = false;
+        }
+
+      },
+      focusNode: _focusNode,
+      child: fm.FutureBuilder(
+        future: waitForAnimation,
+        builder: (context,snapshot) {
+          if (!snapshot.hasData) return fm.Container();
+          widget.practiceModel.nextDialog(context, painter);
+          return pp.ChangeNotifierProvider.value(
+          value: painter,
+          child: pp.Consumer3<DanceAnimationPainter, TitleModel, Settings>(
+            //  Even though we know the painter, get it via Consumer
+            //  so it triggers a rebuild when finished
+              builder: (context, painter, titleModel, settings, child) {
+                titleModel.title = painter.title;
+                painter.setGridVisibility(true);
+                painter.setSpeed(settings.practiceSpeed);
+                return fm.Listener(
+                  onPointerDown: (event) {
+                    painter.practiceDancer.touchDown(
+                        event.pointer,
+                        painter.mouse2dance(event.position.v),
+                        isMouse: event.kind == PointerDeviceKind.mouse
+                    );
+                  },
+                  onPointerUp: (event) {
+                    painter.practiceDancer.touchUp(
+                        event.pointer,
+                        painter.mouse2dance(event.position.v),
+                        isMouse: event.kind == PointerDeviceKind.mouse
+                    );
+                  },
+                  onPointerMove: (event) {
+                    painter.practiceDancer.touchMove(
+                        event.pointer,
+                        painter.mouse2dance(event.position.v)
+                    );
+                  },
+                  child: fm.Stack(
+                    children: [
+                      fm.CustomPaint(
+                        painter: painter,
+                        child: fm.Center(), // so CustomPaint gets sized correctly
+                      ),
+                      if (painter.beat < 0.2)
+                      fm.Positioned(
+                          bottom: 10,
+                          left: 300,
+                          child: fm.Text('${painter.beat.floor().abs()}',
+                              style: fm.TextStyle(color: Color.GRAY, fontSize: 180))
+                      ),
+                      if (painter.isFinished) fm.Positioned(
+                          top: 100.0,
+                          left: 20.0,
+                          child: fm.Column(
+                            children: [
+                              _AnimationCompleteText('Animation Complete'),
+                              _AnimationCompleteText('Your Score'),
+                              _AnimationCompleteText(
+                                  '${painter.practiceScore.ceil()} / ${(painter
+                                      .movingBeats * 10).ceil()}'),
+                              _AnimationCompleteText(
+                                  congrats(painter.practiceScore /
+                                      (painter.movingBeats * 10))
+                              ),
+                              fm.Row(
+                                children: [
+                                  Button('Repeat', onPressed: () {
                                     setState(() {
-                                      waitForAnimation = widget.practiceModel.nextAnimation(context,painter);
+                                      _reset();
                                     });
                                   }),
-                                Button('Return', onPressed: () {
-                                  //fm.Navigator.maybePop(context);
-                                  fm.Router
-                                      .of(context)
-                                      .routerDelegate
-                                      .popRoute();
-                                })
-                              ],
-                            ),
-                            Button('Definition') // TODO
-                          ],
-                        )
-                    )
-                  ],
-                ),
-              );
-            }
-        ),
-      );}
+                                  if (widget.practiceModel.canContinue(painter.practiceScore /
+                                      (painter.movingBeats * 10)))
+                                    Button('Continue', onPressed: () {
+                                      setState(() {
+                                        waitForAnimation = widget.practiceModel.nextAnimation(context,painter);
+                                      });
+                                    }),
+                                  Button('Return', onPressed: () {
+                                    //fm.Navigator.maybePop(context);
+                                    fm.Router
+                                        .of(context)
+                                        .routerDelegate
+                                        .popRoute();
+                                  })
+                                ],
+                              ),
+                              Button('Definition') // TODO
+                            ],
+                          )
+                      )
+                    ],
+                  ),
+                );
+              }
+          ),
+        );}
+      ),
     );
   }
 
