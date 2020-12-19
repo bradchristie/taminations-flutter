@@ -106,16 +106,35 @@ class _SequencerCallsFrameState extends fm.State<SequencerCallsFrame> {
                child: fm.Row(
                  children: [
                    fm.Expanded(
-                       child: Button('Undo')
+                       child: Button('Undo',onPressed: () {
+                         setState(() {
+                           model.undoLastCall();
+                         });
+                       })
                    ),
                    fm.Expanded(
-                       child: Button('Reset')
+                       child: Button('Reset',onPressed: () {
+                         setState(() {
+                           model.reset();
+                         });
+                       })
                    ),
                    fm.Expanded(
-                       child: Button('Copy')
+                       child: Button('Copy',onPressed: () {
+                         model.copy();
+                         fm.ScaffoldMessenger.of(context).showSnackBar(fm.SnackBar(
+                             backgroundColor: Color.BLUE,
+                             duration: Duration(seconds: 2),
+                             content: fm.Text('Calls Copied.',style: fm.TextStyle(fontSize: 20))
+                         ));
+                       })
                    ),
                    fm.Expanded(
-                       child: Button('Paste')
+                       child: Button('Paste',onPressed: () {
+                         setState(() {
+                           model.paste();
+                         });
+                       })
                    ),
                  ],
                ),

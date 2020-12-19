@@ -92,7 +92,7 @@ class _WebFrameState extends fm.State<WebFrame> {
             titleModel.title = 'Taminations';
           else {
             titleModel.title = 'Definition';
-            titleModel.level = LevelData.find(link).name;
+            titleModel.level = LevelData.find(link)?.name ?? '';
           }
           isAbbrev = settings.isAbbrev;
           return fm.FutureBuilder(

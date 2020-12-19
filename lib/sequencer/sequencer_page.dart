@@ -66,26 +66,34 @@ class _SequencerPageState extends fm.State<SequencerPage> {
               preferredSize: fm.Size.fromHeight(56.0),
               child: TitleBar()
           ),
-          body: fm.Row(
-              children: [
-                fm.Expanded(child: SequencerCallsFrame()),
-                fm.VerticalDivider(color: Color.BLACK, width: 2.0,),
-                fm.Expanded(child: SequencerAnimationFrame()),
-                fm.VerticalDivider(color: Color.BLACK, width: 2.0,),
-                fm.Expanded(child: pp.Consumer<fm.ValueNotifier<TamState>>(
-                    builder: (context,tamState,_) {
-                      if (tamState.value.detailPage == DetailPage.CALLS)
-                        return fm.Container();  // TODO
-                      else if (tamState.value.detailPage == DetailPage.ABBREVIATIONS)
-                        return AbbreviationsFrame();
-                      else if (tamState.value.detailPage == DetailPage.SETTINGS)
-                        return SettingsFrame();  // TODO customized for Sequencer
-                      else
-                        return WebFrame('info/sequencer.html');
-                    }
-                ))
-              ],
-            ),
+          body: pp.Consumer<TitleModel>(
+            builder: (context,titleModel,_) {
+              titleModel.title = 'Sequencer';
+              return fm.Row(
+                children: [
+                  fm.Expanded(child: SequencerCallsFrame()),
+                  fm.VerticalDivider(color: Color.BLACK, width: 2.0,),
+                  fm.Expanded(child: SequencerAnimationFrame()),
+                  fm.VerticalDivider(color: Color.BLACK, width: 2.0,),
+                  //  Dummy title model to intercept titles we don't want to show
+                  pp.ChangeNotifierProvider(
+                    create: (_) => TitleModel(),
+                    child: fm.Expanded(child: pp.Consumer<fm.ValueNotifier<TamState>>(
+                        builder: (context,tamState,_) {
+                          if (tamState.value.detailPage == DetailPage.CALLS)
+                            return fm.Container();  // TODO
+                          else if (tamState.value.detailPage == DetailPage.ABBREVIATIONS)
+                            return AbbreviationsFrame();
+                          else if (tamState.value.detailPage == DetailPage.SETTINGS)
+                            return SettingsFrame();  // TODO customized for Sequencer
+                          else
+                            return WebFrame('info/sequencer.html');
+                        }
+                    )),
+                  )
+                ],
+              );}
+          ),
       ),
     );
   }

@@ -19,6 +19,7 @@
 */
 
 import 'package:flutter/material.dart' as fm;
+import 'package:flutter/services.dart' as fs;
 
 import '../common.dart';
 import '../dance_animation_painter.dart';
@@ -55,7 +56,7 @@ class SequencerModel extends fm.ChangeNotifier {
     notifyListeners();
   }
 
-  void loadOneCall(String call) async {
+  Future<bool> loadOneCall(String call) async {
     errorString = '';
     try {
       await _interpretOneCall(_replaceAbbreviations(call));
@@ -65,7 +66,9 @@ class SequencerModel extends fm.ChangeNotifier {
       errorString = e.toString();
       print('errorString: $errorString');
       notifyListeners();
+      return false;
     }
+    return true;
   }
 
   void undoLastCall() {
@@ -121,10 +124,10 @@ class SequencerModel extends fm.ChangeNotifier {
   //  Replace any abbreviations with their expanded equivalents
   //  and return the new string
   String _replaceAbbreviations(String text) =>
-  text.split('\\s+'.r)
-      .map((word) => abbreviations.currentAbbreviations
-      .firstWhere((e) => e.item1 == word.toLowerCase(), orElse: () => null)?.item2 ?? word)
-      .join(' ');
+      text.split('\\s+'.r)
+          .map((word) => abbreviations.currentAbbreviations
+          .firstWhere((e) => e.item1 == word.toLowerCase(), orElse: () => null)?.item2 ?? word)
+          .join(' ');
 
   bool _isComment(String text) =>
       text.trim().startsWith('[^\\[a-zA-Z0-9]'.r);
@@ -135,8 +138,24 @@ class SequencerModel extends fm.ChangeNotifier {
   }
 
   void _updateParts() {
-
+    //  TODO
   }
 
+  void copy() {
+    final text = calls.map((call) => call.name).join('\n');
+    final clip = fs.ClipboardData(text:text);
+    fs.Clipboard.setData(clip);
+  }
+
+  void paste() {
+    fs.Clipboard.getData('text/plain').then((value) async {
+      if (value is fs.ClipboardData) {
+        for (final line in value.text.split('\n')) {
+          if (!await loadOneCall(line))
+            break;
+        }
+      }
+    });
+  }
 
 }

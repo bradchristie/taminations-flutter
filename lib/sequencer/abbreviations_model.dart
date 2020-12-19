@@ -161,16 +161,16 @@ class AbbreviationsModel extends fm.ChangeNotifier {
   }
 
   void copy() {
-    var text = currentAbbreviations
+    final text = currentAbbreviations
         .where((e) => e.item1.isNotBlank).map((e) => '${e.item1} ${e.item2}').join('\n');
-    var clip = fs.ClipboardData(text:text);
+    final clip = fs.ClipboardData(text:text);
     fs.Clipboard.setData(clip);
   }
 
   void paste() {
     fs.Clipboard.getData('text/plain').then((value) {
       if (value is fs.ClipboardData)
-        print(value.text);
+        print(value.text);  //  TODO set abbreviations
     });
   }
 
