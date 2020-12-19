@@ -34,6 +34,7 @@ import '../math/vector.dart';
 import '../settings.dart';
 import '../tam_utils.dart';
 import '../title_bar.dart';
+import '../color.dart';
 
 class PracticePage extends fm.StatefulWidget {
 
@@ -70,7 +71,11 @@ class _PracticePageState extends fm.State<PracticePage> {
 
 class PracticeModel {
 
-  void nextDialog(fm.BuildContext context) { }
+  void nextDialog(fm.BuildContext context, DanceAnimationPainter painter) { }
+
+  void firstAnimation(fm.BuildContext context, DanceAnimationPainter painter) {
+    nextAnimation(context, painter);
+  }
 
   void nextAnimation(fm.BuildContext context, DanceAnimationPainter painter) {
     //  Choose a random call from the selected level
@@ -97,6 +102,8 @@ class PracticeModel {
       return randomTam;
     });
   }
+
+  bool canContinue(double fractionalScore) => true;
 
 }
 
@@ -128,18 +135,20 @@ class _PracticeFrameState extends fm.State<PracticeFrame>
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
-    widget.practiceModel.nextAnimation(context,painter);
+    print('didChangeDependencies');
+    widget.practiceModel.firstAnimation(context,painter);
   }
 
   @override
   fm.Widget build(fm.BuildContext context) {
-    widget.practiceModel.nextDialog(context);
+    widget.practiceModel.nextDialog(context,painter);
     return pp.ChangeNotifierProvider.value(
       value: painter,
-      child: pp.Consumer2<DanceAnimationPainter, Settings>(
+      child: pp.Consumer3<DanceAnimationPainter, TitleModel, Settings>(
         //  Even though we know the painter, get it via Consumer
         //  so it triggers a rebuild when finished
-          builder: (context, painter, settings, child) {
+          builder: (context, painter, titleModel, settings, child) {
+            titleModel.title = painter.title;
             painter.setGridVisibility(true);
             painter.setSpeed(settings.practiceSpeed);
             return fm.Listener(
@@ -169,6 +178,13 @@ class _PracticeFrameState extends fm.State<PracticeFrame>
                     painter: painter,
                     child: fm.Center(), // so CustomPaint gets sized correctly
                   ),
+                  if (painter.beat < 0.2)
+                  fm.Positioned(
+                      bottom: 10,
+                      left: 300,
+                      child: fm.Text('${-painter.beat.floor()}',
+                          style: fm.TextStyle(color: Color.GRAY, fontSize: 180))
+                  ),
                   if (painter.isFinished) fm.Positioned(
                       top: 100.0,
                       left: 20.0,
@@ -190,13 +206,15 @@ class _PracticeFrameState extends fm.State<PracticeFrame>
                                   _reset();
                                 });
                               }),
-                              Button('Continue', onPressed: () {
-                                setState(() {
-                                  widget.practiceModel.nextAnimation(context,painter);
-                                });
-                              }),
+                              if (widget.practiceModel.canContinue(painter.practiceScore /
+                                  (painter.movingBeats * 10)))
+                                Button('Continue', onPressed: () {
+                                  setState(() {
+                                    widget.practiceModel.nextAnimation(context,painter);
+                                  });
+                                }),
                               Button('Return', onPressed: () {
-                                fm.Navigator.maybePop(context);
+                                //fm.Navigator.maybePop(context);
                                 fm.Router
                                     .of(context)
                                     .routerDelegate

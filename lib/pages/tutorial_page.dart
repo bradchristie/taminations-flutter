@@ -74,40 +74,55 @@ class TutorialModel extends PracticeModel {
   ];
 
   var lessonNumber = 0;
-
+  var showNextDialog = true;
 
   @override
-  void nextDialog(fm.BuildContext context) {
-    fm.WidgetsBinding.instance.addPostFrameCallback((_) {
-      fm.showDialog(
-          context: context,
-          barrierDismissible: false,
-          builder: (context) =>
-              fm.AlertDialog(
-                title: fm.Text('Tutorial ${lessonNumber+1}'),
-                content: fm.Text(
-                    mouseHints[lessonNumber]),
-                actions: [
-                  fm.TextButton(
-                      child: fm.Text('Continue'), onPressed: () {
-                    fm.Navigator.of(context).pop();
-                  }),
-                ],
-              )
+  bool canContinue(double fractionalScore) {
+    return lessonNumber < 3 && fractionalScore >= 0.7;
+  }
+
+  @override
+  void nextDialog(fm.BuildContext context, DanceAnimationPainter painter) {
+    if (showNextDialog) {
+      fm.WidgetsBinding.instance.addPostFrameCallback((_) {
+        fm.showDialog(
+            context: context,
+            barrierDismissible: false,
+            builder: (context) =>
+                fm.AlertDialog(
+                  title: fm.Text('Tutorial ${lessonNumber + 1}'),
+                  content: fm.Text(
+                      mouseHints[lessonNumber]),
+                  actions: [
+                    fm.TextButton(
+                        child: fm.Text('Continue'), onPressed: () {
+                      fm.Navigator.of(context).pop();
+                      painter.doPlay();
+                      showNextDialog = false;
+                    }),
+                  ],
+                )
+        );
+      });
+    }
+  }
+
+  @override
+  void firstAnimation(fm.BuildContext context, DanceAnimationPainter painter) {
+    TamUtils.getXMLAsset('src/tutorial').then((doc) {
+      final tams = TamUtils.tamList(doc);
+      painter.setAnimation(
+          tams[lessonNumber],
+          practiceGender: Gender.BOY,practiceIsRandom: false
       );
     });
   }
 
   @override
   void nextAnimation(fm.BuildContext context, DanceAnimationPainter painter) {
-    TamUtils.getXMLAsset('src/tutorial').then((doc) {
-      final tams = TamUtils.tamList(doc);
-      painter.setAnimation(
-          tams[lessonNumber],
-          practiceGender: Gender.BOY,practiceIsRandom: false
-      ).whenComplete(() => painter.doPlay());
-    });
     lessonNumber += 1;
+    showNextDialog = true;
+    firstAnimation(context, painter);
   }
 
 }

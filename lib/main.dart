@@ -200,7 +200,9 @@ class TaminationsRouterDelegate extends fm.RouterDelegate<TamState>
                                   config.link),
                               child: SecondLandscapePage()
                           ),
-                        if (config.mainPage == MainPage.PRACTICE)
+                        if (config.mainPage == MainPage.PRACTICE ||
+                            config.mainPage == MainPage.TUTORIAL ||
+                            config.mainPage == MainPage.STARTPRACTICE)
                           fm.MaterialPage(
                               key: fm.ValueKey('Start Practice'),
                               child: StartPracticePage()
@@ -209,11 +211,6 @@ class TaminationsRouterDelegate extends fm.RouterDelegate<TamState>
                           fm.MaterialPage(
                               key: fm.ValueKey('Tutorial'),
                               child: TutorialPage()
-                          ),
-                        if (config.mainPage == MainPage.STARTPRACTICE)
-                          fm.MaterialPage(
-                              key: fm.ValueKey('Start Practice'),
-                              child: StartPracticePage()
                           ),
                         if (config.mainPage == MainPage.PRACTICE)
                           fm.MaterialPage(

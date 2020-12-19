@@ -79,7 +79,6 @@ class DanceAnimationPainter extends fm.ChangeNotifier implements fm.CustomPainte
   String get animationNote =>
       _tam?.childrenNamed('taminator')?.firstOrNull
       ?.text?.trim()?.replaceAll(r'\s+'.r, ' ') ?? '';
-  //AnimationController controller;
   Ticker _ticker;
   String get title => _tam?.getAttribute('title')
       ?.replaceAll(' \\(.*?\\) '.r, ' ') ?? '';
@@ -417,7 +416,6 @@ class DanceAnimationPainter extends fm.ChangeNotifier implements fm.CustomPainte
         fm.Paint()..color = Color.FLOOR);
     _size = size.v;
     var range = min(size.width,size.height);
-    //  For interactive leadin, show countdown  TODO
     //  Scale coordinate system to dancer's size
     ctx.translate(size.width/2, size.height/2);
     ctx.clipRect(fm.Rect.fromCenter(center:fm.Offset(0,0),width: size.width, height: size.height));
