@@ -20,6 +20,7 @@
 
 import 'package:flutter/material.dart' as fm;
 import 'package:provider/provider.dart' as pp;
+import 'package:platform/platform.dart';
 
 import '../common.dart';
 import '../settings.dart';
@@ -76,6 +77,7 @@ class TutorialModel extends PracticeModel {
   var lessonNumber = 0;
   var showNextDialog = true;
 
+
   @override
   bool canContinue(double fractionalScore) {
     return lessonNumber < 3 && fractionalScore >= 0.7;
@@ -83,46 +85,58 @@ class TutorialModel extends PracticeModel {
 
   @override
   void nextDialog(fm.BuildContext context, DanceAnimationPainter painter) {
+    final platform = LocalPlatform();
+    final settings = pp.Provider.of<Settings>(context,listen: false);
+    final fingers = [
+      (settings.primaryControl=='Left Finger') ? 'Left' : 'Right',
+      (settings.primaryControl=='Left Finger') ? 'Right' : 'Left',
+    ];
+    final hints = platform.isAndroid || platform.isIOS
+        ? touchHints : mouseHints;
+    final hint = hints[lessonNumber]
+        .replaceAll('%1', fingers[0])
+        .replaceAll('%2', fingers[1]);
     if (showNextDialog) {
+      showNextDialog = false;
       fm.WidgetsBinding.instance.addPostFrameCallback((_) {
         fm.showDialog(
             context: context,
             barrierDismissible: false,
-            builder: (context) =>
-                fm.AlertDialog(
-                  title: fm.Text('Tutorial ${lessonNumber + 1}'),
-                  content: fm.Text(
-                      mouseHints[lessonNumber]),
-                  actions: [
-                    fm.TextButton(
-                        child: fm.Text('Continue'), onPressed: () {
-                      fm.Navigator.of(context).pop();
-                      painter.doPlay();
-                      showNextDialog = false;
-                    }),
-                  ],
-                )
+            builder: (context) {
+              return fm.AlertDialog(
+                title: fm.Text('Tutorial ${lessonNumber + 1}'),
+                content: fm.Text(hint,style: fm.TextStyle(fontSize: 20)),
+                actions: [
+                  fm.TextButton(
+                      child: fm.Text('Continue'), onPressed: () {
+                    fm.Navigator.of(context).pop();
+                    painter.doPlay();
+                  }),
+                ],
+              );
+            }
         );
       });
     }
   }
 
   @override
-  void firstAnimation(fm.BuildContext context, DanceAnimationPainter painter) {
-    TamUtils.getXMLAsset('src/tutorial').then((doc) {
-      final tams = TamUtils.tamList(doc);
-      painter.setAnimation(
-          tams[lessonNumber],
-          practiceGender: Gender.BOY,practiceIsRandom: false
-      );
-    });
+  Future<bool> firstAnimation(fm.BuildContext context, DanceAnimationPainter painter) async {
+    final doc = await TamUtils.getXMLAsset('src/tutorial');
+    final tams = TamUtils.tamList(doc);
+    await painter.setAnimation(
+        tams[lessonNumber],
+        practiceGender: Gender.BOY,practiceIsRandom: false
+    );
+    return true;
   }
 
   @override
-  void nextAnimation(fm.BuildContext context, DanceAnimationPainter painter) {
+  Future<bool> nextAnimation(fm.BuildContext context, DanceAnimationPainter painter) async {
     lessonNumber += 1;
     showNextDialog = true;
-    firstAnimation(context, painter);
+    await firstAnimation(context, painter);
+    return true;
   }
 
 }
