@@ -512,6 +512,7 @@ class DanceAnimationPainter extends fm.ChangeNotifier implements fm.CustomPainte
         formation = TamUtils.getFormation(aform);
       var flist = formation.childrenNamed('dancer');
       dancers = [];
+      _beats = 0.0;
 
       //  Get numbers for dancers and couples
       //  This fetches any custom numbers that might be defined in

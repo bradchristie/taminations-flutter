@@ -166,7 +166,9 @@ class _SequencerCallsFrameState extends fm.State<SequencerCallsFrame> {
               color: model.calls[index].level.color,
               child: fm.InkWell(
                   highlightColor: model.calls[index].level.color.darker(),
-                  onTap: () {},
+                  onTap: () {
+                    //  TODO move animation to this call of the sequence
+                  },
                   child: fm.Row(
                     children: [
                       fm.Flexible(
