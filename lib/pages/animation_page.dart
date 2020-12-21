@@ -304,7 +304,8 @@ class _AnimationFrameState extends fm.State<AnimationFrame>
                 painter: _SliderTicsPainter(
                   beats: painter.totalBeats,
                   parts: painter.partstr ?? '',
-                  isParts: painter.hasParts ?? false
+                  isParts: painter.hasParts ?? false,
+                  isCalls: painter.hasCalls ?? false
                 ),
                 size: fm.Size.fromHeight(40.0),
               ),

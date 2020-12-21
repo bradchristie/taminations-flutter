@@ -321,7 +321,7 @@ class CallContext {
   bool _appendTo(CallContext ctx) {
     var retval = false;
     ctx.dancers.forEach((d) {
-      var d2 = dancers.firstOrNull;
+      var d2 = dancers.firstWhere((it) => it == d, orElse: () => null);
       if (d2 != null) {
         retval = retval || d2.path.movelist.isNotEmpty;
         d.path.add(d2.path);

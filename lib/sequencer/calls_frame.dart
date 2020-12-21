@@ -21,10 +21,10 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart' as fm;
 import 'package:provider/provider.dart' as pp;
-import 'package:taminations/sequencer/sequencer_model.dart';
-import '../button.dart';
 
+import '../button.dart';
 import '../color.dart';
+import 'sequencer_model.dart';
 
 class SequencerCallsFrame extends fm.StatefulWidget {
   @override
@@ -40,6 +40,7 @@ class _SequencerCallsFrameState extends fm.State<SequencerCallsFrame> {
   void initState() {
     super.initState();
     textFieldController = fm.TextEditingController();
+    focusNode.requestFocus();
   }
 
   @override
@@ -78,8 +79,11 @@ class _SequencerCallsFrameState extends fm.State<SequencerCallsFrame> {
                 // autofocus: true,
                  focusNode: focusNode,
                  controller: textFieldController,
-                 decoration: fm.InputDecoration.collapsed(
-                     hintText: 'Enter calls'),
+                 decoration: fm.InputDecoration(
+                     hintText: 'Enter calls',
+                     errorStyle:fm.TextStyle(fontSize: 20),
+                     errorMaxLines: 10,
+                     errorText: model.errorString.isEmpty ? null : model.errorString),
                  enableSuggestions: false,
                  style: fm.TextStyle(fontSize: 24),
                  //  Code to run when user presses Enter
@@ -95,12 +99,6 @@ class _SequencerCallsFrameState extends fm.State<SequencerCallsFrame> {
                  )
              ),
           //   if (model.errorString.isNotEmpty)
-               fm.Align(
-                 alignment: fm.Alignment.centerLeft,
-                 child: fm.Text(model.errorString,
-                     key: fm.Key('Error text'),
-                     style: fm.TextStyle(color:Color.RED,fontSize:30)),
-               ),
              fm.Container(
                color: Color.FLOOR,
                child: fm.Row(
@@ -155,7 +153,7 @@ class _SequencerCallsFrameState extends fm.State<SequencerCallsFrame> {
   }
 
   //  Builder for one item of the list
-  //  TODO combine with calls_frame into one widget class
+  //  TODO combine with calls_frame into one widget class?
   fm.Widget itemBuilder(fm.BuildContext context, int index) {
     return pp.Consumer<SequencerModel>(
         builder: (context, model, child) {
@@ -163,11 +161,12 @@ class _SequencerCallsFrameState extends fm.State<SequencerCallsFrame> {
             decoration: fm.BoxDecoration(
                 border: fm.Border(top: fm.BorderSide(width: 1, color: Color.BLACK))),
             child: fm.Material(
-              color: model.calls[index].level.color,
+              color: model.calls[index].level?.color ?? Color.WHITE,
+              //  TODO no tap on comments
               child: fm.InkWell(
-                  highlightColor: model.calls[index].level.color.darker(),
+                  highlightColor: model.calls[index].level?.color?.darker() ?? Color.WHITE,
                   onTap: () {
-                    //  TODO move animation to this call of the sequence
+                    model.animateAtCall(index);
                   },
                   child: fm.Row(
                     children: [
@@ -182,7 +181,7 @@ class _SequencerCallsFrameState extends fm.State<SequencerCallsFrame> {
                       fm.Container(
                           alignment: fm.Alignment.topRight,
                           padding: fm.EdgeInsets.only(top:2,right:2),
-                          child: fm.Text(model.calls[index].level.name)
+                          child: fm.Text(model.calls[index].level?.name ?? '')
                       )
                     ],
                   )

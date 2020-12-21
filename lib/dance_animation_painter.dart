@@ -74,6 +74,7 @@ class DanceAnimationPainter extends fm.ChangeNotifier implements fm.CustomPainte
   var _practiceScore = 0.0;
   var _prevbeat = -2.0;
   var hasParts = false;
+  var hasCalls = false;
   bool isFinished = false;
   String partstr;
   String get animationNote =>

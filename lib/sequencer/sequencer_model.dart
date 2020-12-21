@@ -64,7 +64,6 @@ class SequencerModel extends fm.ChangeNotifier {
       notifyListeners();
     } on CallError catch(e) {
       errorString = e.toString();
-      print('errorString: $errorString');
       notifyListeners();
       return false;
     }
@@ -90,13 +89,18 @@ class SequencerModel extends fm.ChangeNotifier {
 
   Future<void> _interpretOneCall(String call) async {
     if (_isComment(call)) {
-      calls.add(SequencerCall(call,beats:0.0,level:LevelData.INDEX));
+      calls.add(SequencerCall(call,beats:0.0,level:null));
       return Future<void>.value();
     }
     //  Remove any underscores, which are reserved for internal calls only
     call = call.replaceAll('_', '');
     //  Remove any [user annotations]
-    call = call.replaceAll('\\[.*?\\]'.r,'');
+    var comment = '';
+    if (call.contains('\\[.*\\]'.r)) {
+      comment = ' ' + call.replaceMatch('.*(\\[.*\\]).*'.r,'\\1');
+      call = call.replaceFirst('\\[.*?\\]'.r,'');
+    }
+
     var prevbeats = animation.beats;
     var cctx = CallContext.fromDancers(animation.dancers);
 
@@ -115,8 +119,9 @@ class SequencerModel extends fm.ChangeNotifier {
     var newbeats = animation.beats;
     if (newbeats > prevbeats) {
       //  Call worked, add it to the list
-      calls.add(SequencerCall(cctx.callname,beats:(newbeats-prevbeats),level:cctx.level));
-      animation.beat = prevbeats;
+      calls.add(SequencerCall(cctx.callname + comment,beats:(newbeats-prevbeats),level:cctx.level));
+      animation.beat = prevbeats - animation.leadout;
+      _updateParts();
       animation.doPlay();
     }
   }
@@ -137,8 +142,18 @@ class SequencerModel extends fm.ChangeNotifier {
     _updateParts();
   }
 
+  void animateAtCall(int index) {
+    var beat = calls.take(index).fold(0.0, (b, c) => b + c.beats);
+    animation.beat = beat;
+  }
+
   void _updateParts() {
-    //  TODO
+    if (calls.length > 1) {
+      final partstr = calls.take(calls.length-1).map((e) => e.beats.s).join(';');
+      animation.partstr = partstr;
+      animation.hasCalls = true;
+    } else
+      animation.partstr = '';
   }
 
   void copy() {
