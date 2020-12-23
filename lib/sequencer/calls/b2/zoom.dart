@@ -87,10 +87,9 @@ class Zoom extends Action {
           scale:[dist-1,1.0].v) +
           TamUtils.getMove(c3,
               beats:2.0,
-              skew:[0.0,0.0].v);
+              skew:[1.0,0.0].v);
     } else
       throw CallError('Dancer $d cannot $name' );
   }
-
 
 }

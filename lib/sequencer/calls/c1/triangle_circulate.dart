@@ -51,7 +51,7 @@ class TriangleCirculate extends Action {
   @override
   Future<void> perform(CallContext ctx, [int stackIndex = 0]) async {
     //  Find the 6 dancers to circulate
-    final triangleType = name.replaceFirst('Triangle Circulate', '');
+    final triangleType = name.replaceFirst('Triangle Circulate', '').trim();
     final points = ctx.points();
     switch (triangleType) {
       case 'Inside' :
@@ -104,7 +104,6 @@ class TriangleCirculate extends Action {
         }
         break;
     }
-
     if (ctx.actives.length != 6)
       throw CallError('Unable to find dancers to circulate');
     //  Should be able to split the square to 2 3-dancer triangles

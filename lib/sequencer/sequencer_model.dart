@@ -23,9 +23,10 @@ import 'package:flutter/services.dart' as fs;
 
 import '../common.dart';
 import '../dance_animation_painter.dart';
+import 'abbreviations_model.dart';
 import 'call_context.dart';
 import 'call_error.dart';
-import 'abbreviations_model.dart';
+import 'calls/coded_call.dart';
 
 class SequencerCall {
   final String name;
@@ -58,15 +59,15 @@ class SequencerModel extends fm.ChangeNotifier {
     errorString = '';
     currentCall = -1;
     _startSequence();
-    notifyListeners();
+    later(() {
+      notifyListeners();
+    });
   }
 
   Future<bool> loadOneCall(String call) async {
     errorString = '';
     try {
       await _interpretOneCall(_replaceAbbreviations(call));
-      //  TODO Highlight new call and start its animation
-      //  TODO make sure call list scrolls to current call
       notifyListeners();
     } on CallError catch(e) {
       errorString = e.toString();
@@ -90,7 +91,9 @@ class SequencerModel extends fm.ChangeNotifier {
       errorString = '';
       animation.recalculate();
       _updateParts();
-      notifyListeners();
+      later(() {
+        notifyListeners();
+      });
     }
   }
 
@@ -117,10 +120,10 @@ class SequencerModel extends fm.ChangeNotifier {
     cctx.extendPaths();
     //  Snap to a standard formation so subsequent calls will work
     //  But not if just one XML call, as it knows how it should end
-   // if (cctx.callstack.length > 1 || cctx.callstack[0] is CodedCall)
-   //   cctx.matchStandardFormation();
-   // if (cctx.isCollision())
-   //   throw CallError('Unable to calculate valid animation.');
+    if (cctx.callstack.length > 1 || cctx.callstack[0] is CodedCall)
+      cctx.matchStandardFormation();
+    if (cctx.isCollision())
+      throw CallError('Unable to calculate valid animation.');
     cctx.appendToSource();
     animation.recalculate();
     var newbeats = animation.beats;

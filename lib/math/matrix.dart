@@ -113,37 +113,47 @@ class Matrix extends Matrix3 {
   //  SVD simple and fast for 2x2 arrays
   //  for matching 2d formations
   Tuple3<Matrix,List<double>,Matrix> svd22() {
-    var a = m11;
-    var b = m12;
-    var c = m21;
-    var d = m22;
+    final a = m11;
+    final b = m12;
+    final c = m21;
+    final d = m22;
     //  Check for trivial case
     var epsilon = 0.0001;
+    final atanarg1 = 2 * a * c + 2 * b * d;
+    final atanarg2 = a * a + b * b - c * c - d * d;
     if (b.abs() < epsilon && c.abs() < epsilon) {
-      var v = Matrix(a < 0 ? -1 : 1, 0,0,0, d < 0 ? -1 : 1, 0);
-      var sigma = [ a.abs(), d.abs() ];
-      var u = Matrix.getIdentity();
-      return Tuple3(u,sigma,v);
+      final v = Matrix(a < 0 ? -1 : 1, 0, 0, 0, d < 0 ? -1 : 1, 0);
+      final sigma = [ a.abs(), d.abs() ];
+      final u = Matrix.getIdentity();
+      return Tuple3(u, sigma, v);
+      //  Check for 90 degree case
+    } else if (atanarg1.abs() < epsilon && atanarg2.abs() < epsilon) {
+      final j = a*a + b*b;
+      final k = c*c + d*d;
+      final s1 = sqrt(j);
+      final s2 = (j-k).abs() < epsilon ? s1 :sqrt(k);
+      final sigma = [ s1, s2 ];
+      final u = Matrix.getIdentity();
+      final v = Matrix(a/s1, c/s2, 0.0, b/s1, d/s2, 0.0);
+      return Tuple3(u, sigma, v);
     } else {   //  Otherwise, solve quadratic for eigenvalues
-      var atanarg1 = 2 * a * c + 2 * b * d;
-      var atanarg2 = a * a + b * b - c * c - d * d;
-      var theta = 0.5 * atan2(atanarg1, atanarg2);
-      var u = Matrix(
+      final theta = 0.5 * atan2(atanarg1, atanarg2);
+      final u = Matrix(
           cos(theta), -sin(theta), 0.0,
           sin(theta), cos(theta), 0.0
       );
 
-      var phi = 0.5 * atan2(2 * a * b + 2 * c * d, a.sq - b.sq + c.sq - d.sq);
-      var s11 = (a * cos(theta) + c * sin(theta)) * cos(phi) +
+      final phi = 0.5 * atan2(2 * a * b + 2 * c * d, a.sq - b.sq + c.sq - d.sq);
+      final s11 = (a * cos(theta) + c * sin(theta)) * cos(phi) +
           (b * cos(theta) + d * sin(theta)) * sin(phi);
-      var s22 = (a * sin(theta) - c * cos(theta)) * sin(phi) +
+      final s22 = (a * sin(theta) - c * cos(theta)) * sin(phi) +
           (-b * sin(theta) + d * cos(theta)) * cos(phi);
 
-      var s1 = a.sq + b.sq + c.sq + d.sq;
-      var s2 = sqrt((a.sq + b.sq - c.sq - d.sq).sq + 4 * (a * c + b * d).sq);
-      var sigma = [ sqrt(s1 + s2) / 2, sqrt(s1 - s2) / 2 ];
+      final s1 = a.sq + b.sq + c.sq + d.sq;
+      final s2 = sqrt((a.sq + b.sq - c.sq - d.sq).sq + 4 * (a * c + b * d).sq);
+      final sigma = [ sqrt(s1 + s2) / 2, sqrt(s1 - s2) / 2 ];
 
-      var v = Matrix(
+      final v = Matrix(
           s11.sign * cos(phi), -s22.sign * sin(phi), 0.0,
           s11.sign * sin(phi), s22.sign * cos(phi), 0.0
       );

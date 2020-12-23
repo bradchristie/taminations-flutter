@@ -22,7 +22,7 @@
 import 'package:flutter_driver/flutter_driver.dart';
 import 'package:test/test.dart';
 
-var testSequences = {
+final testSequences = {
 
   'Back Away':
   '''Heads Right and Left Thru and Back Away
@@ -1936,8 +1936,8 @@ void main() {
     final sequencerSubmit = find.byValueKey('Submit Call');
     final sequencerReset = find.byValueKey('Reset');
     final errorText = find.byValueKey('Error text');
-    var testsFinished = <String>[];
-    var testsFailed = testSequences.keys.toSet();
+    final testsFinished = <String>[];
+    final testsFailed = testSequences.keys.toSet();
 
     // Connect to the Flutter driver before running any tests.
     setUpAll(() async {
@@ -1951,11 +1951,11 @@ void main() {
       }
       print('All sequencer tests complete.');
       print('These tests ran to completion:');
-      for (var testName in testsFinished)
+      for (final testName in testsFinished)
         print('    $testName');
       print('Total ${testsFinished.length} tests.');
       print('These tests failed:');
-      for (var testName in testsFailed)
+      for (final testName in testsFailed)
         print('    $testName');
       print('Total ${testsFailed.length} tests.');
     });
@@ -1965,7 +1965,6 @@ void main() {
       await driver.tap(settingsTapper);
       await driver.waitFor(fastTapper);
       await driver.tap(fastTapper);
-      //await driver.waitFor(sequencerTapper);
       await driver.tap(sequencerTapper);
       await driver.waitFor(sequencerInput);
     });
