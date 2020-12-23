@@ -27,12 +27,10 @@ class AnythingChainThru extends Action {
 
   @override
   Future<void> perform(CallContext ctx, [int stackIndex = 0]) async {
-    final norm = TamUtils.normalizeCall(name);
-    final firstCall = norm.replaceFirst('chainthru','')
-        .replaceFirst('triangle','trianglecirculate')
-        .replaceFirst('interlockeddiamond'.r,'interlockeddiamondcirculate');
+    final firstCall = name.replaceFirst('Chain Thru','')
+        .replaceFirst('Triangle','Triangle Circulate')
+        .replaceFirst('Interlocked Diamond'.r,'Interlocked Diamond Circulate');
     await ctx.applyCalls(firstCall,'very centers trade','centers cast off 34');
   }
-
 
 }

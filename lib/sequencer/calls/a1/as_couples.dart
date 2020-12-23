@@ -34,7 +34,7 @@ class AsCouples extends FourDancerConcept {
         if (!ctx.isInCouple(d,d2))
           throw CallError('$d and $d2 are not a Couple');
         return [d,d2];
-      });
+      }).toList();
 
   @override
   Vector startPosition(List<Dancer> group) {

@@ -61,6 +61,7 @@ import 'b1/pull_by.dart';
 import 'b1/separate.dart';
 import 'b1/split_circulate.dart';
 import 'b1/square_thru.dart';
+import 'b1/star_thru.dart';
 import 'b1/turn_back.dart';
 import 'b2/box_the_gnat.dart';
 import 'b2/cross_run.dart';
@@ -170,6 +171,7 @@ import 'ms/cast_off_three_quarters.dart';
 import 'ms/cross_fold.dart';
 import 'ms/fold.dart';
 import 'ms/half_tag.dart';
+import 'ms/hinge.dart';
 import 'ms/quarter_tag.dart';
 import 'ms/slide_thru.dart';
 import 'ms/tag_the_line.dart';
@@ -237,7 +239,7 @@ abstract class CodedCall extends Call {
     'crossfold'.ri: (_) => CrossFold(),
     'crossovercirculate'.ri: (_) => CrossOverCirculate(),
     'crossramble'.ri: (_) => CrossRamble(),
-    '.*crossrun'.ri: (name) => CrossRun(name),
+    '${specifier}crossrun'.ri: (name) => CrossRun(name),
     'crosstradeandwheel'.ri: (_) => CrossTradeAndWheel(),
 
     'detour'.ri: (_) => Detour(),
@@ -266,7 +268,8 @@ abstract class CodedCall extends Call {
     'halfthek'.ri: (_) => HalfTheK(),
     'head'.ri: (name) => Heads(name),
     //  Heads Start, be careful not to match Heads Star Thru
-    '(head|side)start(?!hr).*'.ri: (name) => HeadsSidesStart(name),
+    '(Head|Side)Start.*'.r: (name) => HeadsSidesStart(name),
+    '(left)?(single|partner)?hinge'.ri: (name) => Hinge(name),
     'hocuspocus'.ri: (_) => HocusPocus(),
     'horseshoeturn'.ri: (_) => HorseshoeTurn(),
 
@@ -306,7 +309,7 @@ abstract class CodedCall extends Call {
     'swing(your)?corner(and)?promenade(home)?'.ri: (name) => PromenadeHome(name),
     '(left)?pullby'.ri: (name) => PullBy(name),
 
-    'quarter(in|out)'.ri: (name) => QuarterInOut(name),
+    '14(in|out)'.ri: (name) => QuarterInOut(name),
     'and14more'.ri: (_) => QuarterMore(),
     '(left)?14tag'.ri: (name) => QuarterTag(name),
 
@@ -338,7 +341,7 @@ abstract class CodedCall extends Call {
     'snapthelock'.ri: (_) => SnapTheLock(),
     '(left)?spinthewindmill(left|right|in|out|forward)'.ri: (name) => SpinTheWindmill(name),
     'splitcirculate'.ri: (_) => SplitCirculate(),
-    '(left)?splitsquarethru[2-7]'.ri: (name) => SplitSquareThru(name),
+    '(left)?splitsquarethru[2-7]?'.ri: (name) => SplitSquareThru(name),
     '(and)?spread'.ri: (name) => Spread(name),
     'squaretheset'.ri: (_) => SquareTheSet(),
     'squeeze'.ri: (_) => Squeeze(),
@@ -348,7 +351,9 @@ abstract class CodedCall extends Call {
     'stagger.+'.ri: (name) => Stagger(name),
     //  Make sure Start does not match Star
     'Start.+'.r: (name) => Start(name),
+    '(_left)?starthru'.ri: (name) => StarThru(name),
     'step'.ri: (_) => Step(),
+    'steptoacompact(lefthand)?wave'.ri: (name) => StepToACompactWave(name),
     //  Stretch not Stretched
     'stretch(?!ed).+'.ri: (name) => Stretch(name),
     'sweep14'.ri: (_) => SweepAQuarter(),
@@ -377,7 +382,7 @@ abstract class CodedCall extends Call {
     'triplestarthru'.ri: (_) => TripleStarThru(),
     'tripletrade'.ri: (_) => TripleTrade(),
     '(reverse)?truck'.ri: (name) => Truck(name),
-    '(left)turnthru'.ri: (name) => TurnThru(name),
+    '(left)?turnthru'.ri: (name) => TurnThru(name),
     '(go)?twice'.ri: (name) => Twice(name),
     '(left)?turnanddeal'.ri: (name) => TurnAndDeal(name),
     'u?turnback'.ri: (_) => TurnBack(),
@@ -385,8 +390,8 @@ abstract class CodedCall extends Call {
 
     '(left)?vertical(left)?(14|12|34)?tag'.ri: (name) => VerticalTag(name),
     '(left)?verticaltagback(toawave)?'.ri: (name) => VerticalTagBack(name),
-    'verycenters'.ri: (_) => VeryCenters(),
-    'veryends'.ri: (_) => VeryEnds(),
+    'verycenter'.ri: (_) => VeryCenters(),
+    'veryend'.ri: (_) => VeryEnds(),
 
     'walkanddodge'.ri: (_) => WalkAndDodge('Walk and Dodge'),
     '${specifier}walk(and)?${specifier}dodge'.ri: (name) => WalkAndDodge(name),

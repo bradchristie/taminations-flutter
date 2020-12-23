@@ -374,9 +374,9 @@ class CallContext {
       throw CallError('$calltext does nothing.');
   }
 
-  void applySpecifier(String calltext) {
-    interpretCall(calltext,noAction: true);
-    performCall();
+  Future<void> applySpecifier(String calltext) async {
+    await interpretCall(calltext,noAction: true);
+    await performCall();
   }
 
   Future<void> _applyCall(String call) async {
@@ -418,12 +418,12 @@ class CallContext {
 
   String _cleanupCall(String calltext) {
     //  Clean up any whitespace
-    return calltext.replaceAll('\\s+'.r, ' ')
+    return calltext.replaceAll('\\s+'.r, ' ').trim()
     //  Standardize capitalization
-        .capWords()
+        .capWords();
     //  Make sure Trade Circulate is not read as Trade and Circulate
     //  TODO do this someplace better
-        .replaceAll('trade circulate'.ri, 'tradecirculate');
+    //    .replaceAll('trade circulate'.ri, 'tradecirculate');
   }
 
 
@@ -1037,7 +1037,7 @@ class CallContext {
   //  Return center 2, 4 , 6 dancers
   List<Dancer> center(int num) =>
       dancers.sortedWith((d1, d2) => d1.location.length.compareTo(d2.location.length))
-          .take(num);
+          .take(num).toList();
 
   //  Returns points of a diamond formations
   //  Formation to match must have girl points
@@ -1059,7 +1059,7 @@ class CallContext {
   bool isInWave(Dancer d, [Dancer d2]) {
     d2 ??= d.data.partner;
     return d2 != null && d.angleToDancer(d2).isAround(d2.angleToDancer(d)) &&
-        d.distanceTo(d2) < 2.0;
+        d.distanceTo(d2) < 2.1;
   }
 
   //  Return true if two dancers are facing the same direction
@@ -1180,9 +1180,9 @@ class CallContext {
   //  TODO use an enum instead of returning strings
   String roll(Dancer d) {
     var move = d.path.movelist.lastWhere((m) => m.fromCall, orElse: () => null);
-    if (move?.brotate?.rolling() ?? 0.0 > 0.1)
+    if ((move?.brotate?.rolling() ?? 0.0) > 0.1)
       return 'Left';
-    else if (move?.brotate?.rolling() ?? 0.0 < -0.1)
+    else if ((move?.brotate?.rolling() ?? 0.0) < -0.1)
       return 'Right';
     return '';
   }

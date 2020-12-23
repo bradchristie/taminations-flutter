@@ -56,7 +56,7 @@ class CrossRun extends ActivesOnlyAction {
     //  Get runners and dodgers
     var spec = name.replaceFirst('Cross Run' , '' );
     var specCtx = CallContext.fromContext(ctx);
-    specCtx.applySpecifier(spec);
+    await specCtx.applySpecifier(spec);
     var runners = ctx.actives.where((d) => specCtx.actives.contains(d));
     var dodgers = ctx.actives.where((d) => !runners.contains(d));
     //  Loop through runners and figure out where they are going

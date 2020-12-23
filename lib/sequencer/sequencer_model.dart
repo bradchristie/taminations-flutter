@@ -23,7 +23,6 @@ import 'package:flutter/services.dart' as fs;
 
 import '../common.dart';
 import '../dance_animation_painter.dart';
-import 'calls/coded_call.dart';
 import 'call_context.dart';
 import 'call_error.dart';
 import 'abbreviations_model.dart';
@@ -43,15 +42,21 @@ class SequencerModel extends fm.ChangeNotifier {
   String errorString = '';
   DanceAnimationPainter animation = DanceAnimationPainter();
   AbbreviationsModel abbreviations = AbbreviationsModel();
+  int currentCall;
 
   SequencerModel() {
     CallContext.init();
+    animation.addListener(() {
+      _updateCurrentCall();
+    });
     reset();
   }
 
   void reset() {
     animation.doPause();
     calls = [];
+    errorString = '';
+    currentCall = -1;
     _startSequence();
     notifyListeners();
   }
@@ -61,6 +66,7 @@ class SequencerModel extends fm.ChangeNotifier {
     try {
       await _interpretOneCall(_replaceAbbreviations(call));
       //  TODO Highlight new call and start its animation
+      //  TODO make sure call list scrolls to current call
       notifyListeners();
     } on CallError catch(e) {
       errorString = e.toString();
@@ -81,6 +87,7 @@ class SequencerModel extends fm.ChangeNotifier {
             d.path.pop();
         }
       }
+      errorString = '';
       animation.recalculate();
       _updateParts();
       notifyListeners();
@@ -110,10 +117,10 @@ class SequencerModel extends fm.ChangeNotifier {
     cctx.extendPaths();
     //  Snap to a standard formation so subsequent calls will work
     //  But not if just one XML call, as it knows how it should end
-    if (cctx.callstack.length > 1 || cctx.callstack[0] is CodedCall)
-      cctx.matchStandardFormation();
-    if (cctx.isCollision())
-      throw CallError('Unable to calculate valid animation.');
+   // if (cctx.callstack.length > 1 || cctx.callstack[0] is CodedCall)
+   //   cctx.matchStandardFormation();
+   // if (cctx.isCollision())
+   //   throw CallError('Unable to calculate valid animation.');
     cctx.appendToSource();
     animation.recalculate();
     var newbeats = animation.beats;
@@ -154,6 +161,26 @@ class SequencerModel extends fm.ChangeNotifier {
       animation.hasCalls = true;
     } else
       animation.partstr = '';
+  }
+
+  void _updateCurrentCall() {
+    final updatedCall = _callNumberAtBeat(animation.beat);
+    if (updatedCall != currentCall) {
+      currentCall = updatedCall;
+      notifyListeners();
+    }
+  }
+
+  int _callNumberAtBeat(double beat) {
+    if (beat < 0)
+      return -1;
+    var beatSum = 0.0;
+    for (var i=0; i<calls.length; i++) {
+      beatSum += calls[i].beats;
+      if (beatSum > beat)
+        return i;
+    }
+    return -1;
   }
 
   void copy() {

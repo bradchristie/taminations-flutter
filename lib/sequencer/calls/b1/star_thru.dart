@@ -22,7 +22,7 @@ import '../common.dart';
 
 class StarThru extends Action {
 
-  StarThru(String name) : super(name);
+  StarThru(name) : super(name);
 
   @override
   Path performOne(Dancer d, CallContext ctx) {
@@ -37,7 +37,8 @@ class StarThru extends Action {
     move += d.gender == Gender.BOY
         ? (TamUtils.getMove('Lead Right' )..scale(1.0,0.5))
         : (TamUtils.getMove('Quarter Left' )..skew(1.0,-.5));
-    if (name.toLowerCase().startsWith('left' ))
+    //  Double and Triple Star Thru use "Left Star Thru"
+    if (name.toLowerCase().contains('left' ))
       move.reflect();
     return move;
   }

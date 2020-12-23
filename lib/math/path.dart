@@ -104,7 +104,7 @@ class Path {
   }
 
   void addhands(int hands) {
-    movelist = movelist.map((it) => it.useHands(it.hands | hands));
+    movelist = movelist.map((it) => it.useHands(it.hands | hands)).toList();
   }
 
   void scale(double x, double y) {

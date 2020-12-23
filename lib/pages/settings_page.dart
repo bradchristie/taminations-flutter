@@ -121,6 +121,7 @@ class _SettingRadioGroup extends fm.StatelessWidget {
                       mainAxisSize: fm.MainAxisSize.min,
                       children:[
                         fm.Radio<String>(
+                            key: fm.Key(v),
                             value: v,
                             groupValue: groupValue,
                             onChanged: onChanged

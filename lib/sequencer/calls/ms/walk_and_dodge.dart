@@ -47,7 +47,7 @@ class WalkAndDodge extends ActivesOnlyAction {
     dodgectx = CallContext.fromContext(ctx);
     dodgectx.analyze();
     var walkers = 'trailers';
-    var dodgers = 'leadrs';
+    var dodgers = 'leaders';
     if (name != 'Walk and Dodge') {
       var match = RegExp('(.+) walk(?: and)? (.+) dodge').firstMatch(name.toLowerCase());
       walkers = match.group(1);
@@ -56,8 +56,9 @@ class WalkAndDodge extends ActivesOnlyAction {
     for (var call in walkers.split('\\s+'.r)) {
       await CodedCall.fromName(call).performCall(walkctx);
     }
-    for (var call in dodgers.split('\\s+'.r))
+    for (var call in dodgers.split('\\s+'.r)) {
       await CodedCall.fromName(call).performCall(dodgectx);
+    }
     //  If dancer is not in either set then it is inactive
     for (var d in ctx.dancers)
       d.data.active = isWalker(d) || isDodger(d);

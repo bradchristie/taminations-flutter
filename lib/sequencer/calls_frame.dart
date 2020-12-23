@@ -21,6 +21,8 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart' as fm;
 import 'package:provider/provider.dart' as pp;
+import 'package:taminations/common.dart';
+import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
 
 import '../button.dart';
 import '../color.dart';
@@ -35,6 +37,8 @@ class _SequencerCallsFrameState extends fm.State<SequencerCallsFrame> {
 
   fm.TextEditingController textFieldController;
   var focusNode = fm.FocusNode();
+  final ItemScrollController itemScrollController = ItemScrollController();
+  final ItemPositionsListener itemPositionsListener = ItemPositionsListener.create();
 
   @override
   void initState() {
@@ -93,7 +97,9 @@ class _SequencerCallsFrameState extends fm.State<SequencerCallsFrame> {
                ),
              ),
              fm.Expanded(
-                 child: fm.ListView.builder(
+                 child: ScrollablePositionedList.builder(
+                   itemScrollController: itemScrollController,
+                   itemPositionsListener: itemPositionsListener,
                    itemCount: model.calls.length,
                    itemBuilder: itemBuilder,
                  )
@@ -146,6 +152,7 @@ class _SequencerCallsFrameState extends fm.State<SequencerCallsFrame> {
                    onTap: () { _sendOneCall(model); },
                  ),
                ),
+             fm.Text(model.errorString,key: fm.Key('Error text'),style: fm.TextStyle(fontSize: 0.01))
            ],
          );
        },
@@ -153,15 +160,25 @@ class _SequencerCallsFrameState extends fm.State<SequencerCallsFrame> {
   }
 
   //  Builder for one item of the list
-  //  TODO combine with calls_frame into one widget class?
   fm.Widget itemBuilder(fm.BuildContext context, int index) {
     return pp.Consumer<SequencerModel>(
         builder: (context, model, child) {
+          final currentCall = model.currentCall;
+          if (currentCall == index) {
+            later(() {
+              itemScrollController.scrollTo(
+                  index: max(index-5, 0),
+                  duration: Duration(seconds: 1),
+                  curve: fm.Curves.easeInOutCubic);
+            });
+          }
           return fm.Container(
             decoration: fm.BoxDecoration(
                 border: fm.Border(top: fm.BorderSide(width: 1, color: Color.BLACK))),
             child: fm.Material(
-              color: model.calls[index].level?.color ?? Color.WHITE,
+              color: (index == currentCall)
+                  ? Color.YELLOW
+                  : (model.calls[index].level?.color ?? Color.WHITE),
               //  TODO no tap on comments
               child: fm.InkWell(
                   highlightColor: model.calls[index].level?.color?.darker() ?? Color.WHITE,

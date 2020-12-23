@@ -79,7 +79,7 @@ class _Case1 extends Action {
           m = 'Dodge Left';
         else
           throw CallError('Can not figure out how to Spread');
-        d.path = TamUtils.getMove(m,beats: 2.0);
+        d.path += TamUtils.getMove(m,beats: 2.0);
       } else {
         //  Inactive dancers move forward
         var d2 = ctx.dancerInFront(d);

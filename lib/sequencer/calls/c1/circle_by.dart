@@ -31,8 +31,8 @@ class CircleBy extends Action {
     final a = name.replaceFirst('Circle By','').divide('and');
     if (a.length != 2)
       throw CallError('Circle By <fraction> and <fraction or call>');
-    final frac1 = a[0];
-    final frac2 = a[1];
+    final frac1 = TamUtils.normalizeCall(a[0]);
+    final frac2 = TamUtils.normalizeCall(a[1]);
     //  Do the first fraction
     if (frac1.matches('(14|12|34)'.r))
       await ctx.applyCalls('Circle Four Left $frac1');
@@ -40,7 +40,7 @@ class CircleBy extends Action {
       throw CallError('Circle by what?');
     //  Step to a Wave
     //  be careful not to collide with any outer inactive dancers
-    final compact = (ctx.dancers.length==8 && ctx.actives.length==4) ? "Compact" : "";
+    final compact = (ctx.dancers.length==8 && ctx.actives.length==4) ? 'Compact' : '';
     await ctx.applyCalls('Step to a $compact Wave');
     //  Do the second fraction or call
     if (frac2 == '14')

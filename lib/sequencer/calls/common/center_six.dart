@@ -45,7 +45,7 @@ class CenterSix extends CodedCall {
       if (lessFarOut.length == 2 &&
           farOut[0].location.length - lessFarOut[0].location.length < 0.5) {
         lessFarOut[0].data.active = false;
-        lessFarOut[0].data.active = false;
+        lessFarOut[1].data.active = false;
       }
       else  //  Could not separate 6 dancers from other 2
         throw CallError('Cannot find 6 dancers in center');

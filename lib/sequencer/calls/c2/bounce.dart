@@ -41,7 +41,7 @@ class Bounce extends Action {
     final who = name.replaceFirst('Bounce( the)?'.r,'');
     final whoctx = CallContext.fromContext(ctx,dancers:ctx.actives);
     if (!who.matches('No\\s*(body|one)'.ri))
-      whoctx.applySpecifier(who);
+      await whoctx.applySpecifier(who);
     //  Do the veer
     await ctx.applyCalls('Veer $direction');
     //  Do the bounce

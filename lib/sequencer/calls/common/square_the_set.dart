@@ -38,25 +38,25 @@ class SquareTheSet extends Action {
     var xhome = 0.0;
     if (ctx.dancers.length == 4)
       xhome = (d.numberCouple == '1' ) ? -2.0 : 2.0;
-    else if ('12' .contains(d.numberCouple))
+    else if ('12' .contains(d.number))
       xhome = -3.0;
-    else if ('38' .contains(d.numberCouple))
+    else if ('38' .contains(d.number))
       xhome = -1.0;
-    else if ('47' .contains(d.numberCouple))
+    else if ('47' .contains(d.number))
       xhome = 1.0;
-    else if ('56' .contains(d.numberCouple))
+    else if ('56' .contains(d.number))
       xhome = 3.0;
 
     var yhome = 0.0;
     if (ctx.dancers.length == 4)
       yhome = ((d.numberCouple=='1' ) ^ (d.gender==Gender.GIRL)) ? 1.0 : -1.0;
-    else if ('16' .contains(d.numberCouple))
+    else if ('16' .contains(d.number))
       yhome = 1.0;
-    else if ('25' .contains(d.numberCouple))
+    else if ('25' .contains(d.number))
       yhome = -1.0;
-    else if ('34' .contains(d.numberCouple))
+    else if ('34' .contains(d.number))
       yhome = -3.0;
-    else if ('78' .contains(d.numberCouple))
+    else if ('78' .contains(d.number))
       yhome = 3.0;
 
     //  And the angle dancer faces when standing at home

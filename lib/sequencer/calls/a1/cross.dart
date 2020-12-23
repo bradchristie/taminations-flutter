@@ -30,7 +30,7 @@ class Cross extends Action {
   @override
   Future<void> perform(CallContext ctx, [int stackIndex = 0]) async {
     //  If dancers are not specified, then the trailers cross
-    if (ctx.actives.length == ctx.actives.length) {
+    if (ctx.actives.length == ctx.dancers.length) {
       for (var d in ctx.dancers)
         d.data.active = d.data.trailer;
     }

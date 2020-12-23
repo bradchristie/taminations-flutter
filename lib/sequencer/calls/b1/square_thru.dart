@@ -64,7 +64,7 @@ class SquareThru extends Action {
 
 class StepToACompactWave extends Action {
 
-  StepToACompactWave() : super('Step to a Compact Wave' );
+  StepToACompactWave(String name) : super(name);
 
   @override
   Path performOne(Dancer d, CallContext ctx) {

@@ -47,10 +47,14 @@ class CrossFold extends Action {
       //  for various formations.  The dyoffset value computed is
       //  subtracted from the default 2.0 to get the final y offset.
       var dyoffset = 0.0;
-      if (ctx.isTidal() && d.data.end) dyoffset = -0.5;
-      else if (ctx.isTidal() && d.data.center) dyoffset = 0.5;
-      else if (d.data.end) dyoffset = 2.0 - dist*2;  // which wll generally be -2.0
-      if (!isRight) dyoffset = -dyoffset;
+      if (ctx.isTidal() && d.data.end)
+        dyoffset = -0.5;
+      else if (ctx.isTidal() && d.data.center)
+        dyoffset = 0.5;
+      else if (d.data.end)
+        dyoffset = 2.0 - dist*2;  // which wll generally be -2.0
+      if (!isRight)
+        dyoffset = -dyoffset;
       d.path = TamUtils.getMove(m,
           scale: [dxscale,1.0].v,
           skew: [0.0,dyoffset].v);
@@ -58,12 +62,17 @@ class CrossFold extends Action {
       //  Also set path for partner
       //  This is an adjustment to shift the dancers into a standard formation
       var m2 = 'Stand';
-      if (d.isRightOf(d2)) m2 = 'Dodge Right';
-      else if (d.isLeftOf(d2)) m2 = 'Dodge Left';
+      if (d.isRightOf(d2))
+        m2 = 'Dodge Right';
+      else if (d.isLeftOf(d2))
+        m2 = 'Dodge Left';
       var myScale = 0.25;
-      if (ctx.isTidal()) myScale = 0.25;
-      else if (d2.data.end) myScale = 0.5;
-      else if (d2.data.center) myScale = 0.0;
+      if (ctx.isTidal())
+        myScale = 0.25;
+      else if (d2.data.end)
+        myScale = 0.5;
+      else if (d2.data.center)
+        myScale = 0.0;
       d2.path = TamUtils.getMove(m2,
           scale: [1.0,dist*myScale].v);
     }

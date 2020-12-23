@@ -89,7 +89,7 @@ abstract class FourDancerConcept extends Action {
       var newpos = startPosition(group);
       dsingle.setStartPosition(newpos);
       return dsingle;
-    });
+    }).toList();
 
     //  Create context for concept dancers
     var conceptctx = CallContext.fromDancers(singles);

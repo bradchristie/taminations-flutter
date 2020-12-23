@@ -39,7 +39,7 @@ class TouchAQuarter extends Action {
     if (d2 == null)
       return ctx.dancerCannotPerform(d,name);
     return TamUtils.getMove('Extend Left',
-      scale:[d.distanceTo(d2),1.0].v,
+      scale:[d.distanceTo(d2)/2.0,1.0].v,
         reflect: name.startsWith('Left')) +
     TamUtils.getMove('Hinge Right',
         reflect: name.startsWith('Left'));

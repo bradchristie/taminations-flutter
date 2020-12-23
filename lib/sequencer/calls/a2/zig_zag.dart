@@ -28,13 +28,13 @@ class ZigZag extends Action {
   @override
   Path performOne(Dancer d, CallContext ctx) {
     var move = 'Stand';
-    if (d.data.leader && name.matches('zigz[ai]g'.ri))
+    if (d.data.leader && name.matches('zig z[ai]g'.ri))
       move = 'Quarter Right';
-    if (d.data.leader && name.matches('zagz[ai]g'.ri))
+    if (d.data.leader && name.matches('zag z[ai]g'.ri))
       move = 'Quarter Left';
-    if (d.data.trailer && name.matches('z[ai]gzig'.r))
+    if (d.data.trailer && name.matches('z[ai]g zig'.ri))
       move = 'Quarter Right';
-    if (d.data.trailer && name.matches('z[ai]gzag'.r))
+    if (d.data.trailer && name.matches('z[ai]g zag'.ri))
       move = 'Quarter Left';
     return TamUtils.getMove(move);
   }

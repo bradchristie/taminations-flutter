@@ -54,7 +54,7 @@ class CloverAnd extends Action {
     List<Dancer> clovers;
     //  Don't use outer4 directly, instead filter facingOut
     //  This preserves the original order, required for mapping
-    if (outer4.every((d) => outer4.contains(d)))
+    if (outer4.every((d) => facingOut.contains(d)))
       clovers = facingOut.where((d) => outer4.contains(d)).toList();
     else if (facingOut.length == 4)
       clovers = facingOut;
@@ -70,7 +70,7 @@ class CloverAnd extends Action {
       level = LevelData.MS;
     });
     //  And the other 4 do the next call at the same time
-    await ctx.subContext(ctx.dancers.where((d) => !clovers.contains(d)), (ctx2) async {
+    await ctx.subContext(ctx.dancers.where((d) => !clovers.contains(d)).toList(), (ctx2) async {
       for (final d in ctx2.dancers)
         d.data.active = true;
       await ctx2.applyCalls(andCall);

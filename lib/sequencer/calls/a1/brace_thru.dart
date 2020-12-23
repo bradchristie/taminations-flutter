@@ -40,8 +40,8 @@ class BraceThru extends Action {
           throw CallError('Same-sex dancers cannot Brace Thru');
       }
       //  Finish the call
-      final normal = ctx2.dancers.where((d) => d.data.beau ^ (d.gender == Gender.GIRL));
-      final sashay = ctx2.dancers.where((d) => d.data.beau ^ (d.gender == Gender.BOY));
+      final normal = ctx2.dancers.where((d) => d.data.beau ^ (d.gender == Gender.GIRL)).toList();
+      final sashay = ctx2.dancers.where((d) => d.data.beau ^ (d.gender == Gender.BOY)).toList();
       if (normal.isNotEmpty) {
         await ctx2.subContext(normal, (ctx3) async {
           await ctx3.applyCalls('Courtesy Turn');
