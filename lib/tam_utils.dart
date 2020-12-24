@@ -84,7 +84,7 @@ class TamUtils {
     calldata = callsDoc.findAllElements('call').map((e) =>
         CallListDatum(
             e('title'),
-            normalizeCall(e('title')),
+            normalizeCall(e('title')).toLowerCase(),
             e('link'),
             e('languages'),
             e('audio'))
@@ -272,8 +272,8 @@ class TamUtils {
   callname.capWords().trim()
       .replaceAll('\\(.*\\)'.ri,'')
       .replaceAll('&','and')
-      .replaceAll('\\s+'.ri,' ')
       .replaceAll('[^a-zA-Z0-9_ ]'.ri,'')
+      .replaceAll('\\s+'.ri,' ')
   //  Through => Thru
       .replaceAll('\\bthrou?g?h?\\b'.ri,'thru')
   //  One and a half

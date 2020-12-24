@@ -34,7 +34,7 @@ class Tandem extends FourDancerConcept {
         if (!d2.data.trailer)
           throw CallError('Dancers $d and $d2 are not a Tandem');
         return [d,d2];
-      });
+      }).toList();
 
   @override
   Vector startPosition(List<Dancer> group) {

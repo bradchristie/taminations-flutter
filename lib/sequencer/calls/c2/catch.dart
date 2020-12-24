@@ -29,7 +29,7 @@ class Catch extends Action {
   Future<void> perform(CallContext ctx, [int stackIndex = 0]) async {
     final direction = name.contains('Left') ? 'Left' : '';
     final split = name.contains('Split') ? 'Split' : '';
-    final count = name.last.toIntOrNull()
+    final count = TamUtils.normalizeCall(name).last.toIntOrNull()
         ?? thrower(CallError('Catch how much?'));
     await ctx.applyCalls('$direction $split Square Thru $count to a Wave',
         'Centers Trade','Step and Fold');

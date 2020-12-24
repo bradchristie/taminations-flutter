@@ -32,11 +32,11 @@ class VerticalTag extends Action {
     await super.perform(ctx, stackIndex);
     //  Now extend as requested
     final norm = TamUtils.normalizeCall(name);
-    if (norm.endsWith('12'))
+    if (norm.contains('12'))
       await ctx.applyCalls('Extend');
-    else if (norm.endsWith('34'))
+    else if (norm.contains('34'))
       await ctx.applyCalls('Extend','Extend');
-    else if (!norm.endsWith('14'))
+    else if (!norm.contains('14'))
       await ctx.applyCalls('Extend','Extend','Extend');
   }
 

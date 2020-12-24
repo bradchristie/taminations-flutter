@@ -31,17 +31,17 @@ class Finish extends Action {
     final finishNorm = TamUtils.normalizeCall(finishCall);
     //  For now we just work with XML calls
     //  Find matching XML call
-    final files = CallContext.xmlFilesForCall(finishNorm);
+    final files = CallContext.xmlFilesForCall(finishNorm.toLowerCase());
     for (final link in files) {
       final file = await CallContext.loadOneFile(link);
       for (final tam in file.rootElement.childrenNamed('tam')
           .where((tam) => tam('sequencer')!='no' &&
-          TamUtils.normalizeCall(tam('titie'))==finishNorm)) {
+          TamUtils.normalizeCall(tam('title')).toLowerCase()==finishNorm.toLowerCase())) {
         //  Should be divided into parts, will also accept fractions
-        final parts = tam('parts') + tam('fractions');
-        final sexy = tam('sequencer').contains('gender');
+        final parts = tam('parts','') + tam('fractions','');
+        final sexy = tam('sequencer','').contains('gender');
         final allp = tam.childrenNamed('path').map((it) => Path(TamUtils.translatePath(it))).toList();
-        final firstPart = parts.split(';').firstOrNull?.d ?? 0.0;
+        final firstPart = parts.isBlank ? 0.0 : (parts.split(';').firstOrNull?.d ?? 0.0);
         if (firstPart > 0) {
           //  Load the call and animate past the first part
           final ctx2 = CallContext.fromXML(tam,loadPaths: true);
@@ -58,8 +58,8 @@ class Finish extends Action {
                 firstBeats += p.shift()?.beats ?? firstPart;
               ctx.dancers[i].path.add(p);
             }
+            return;
           }
-          return;
         }
       }
     }

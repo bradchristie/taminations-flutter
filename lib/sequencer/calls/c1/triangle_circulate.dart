@@ -51,30 +51,32 @@ class TriangleCirculate extends Action {
   @override
   Future<void> perform(CallContext ctx, [int stackIndex = 0]) async {
     //  Find the 6 dancers to circulate
-    final triangleType = name.replaceFirst('Triangle Circulate', '').trim();
+    final triangleType = name.replaceFirst('Triangle Circulate', '')
+        .toLowerCase()
+        .replaceAll('\\W'.r, '');
     final points = ctx.points();
     switch (triangleType) {
-      case 'Inside' :
+      case 'inside' :
         for (final d in ctx.outer(2))
           d.data.active = false;
         break;
-      case 'Outside' :
+      case 'outside' :
         for (final d in ctx.center(2))
           d.data.active = false;
         break;
-      case 'Inpoint' :
+      case 'inpoint' :
         for (final d in points) {
           if (d.data.leader)
             d.data.active = false;
         }
         break;
-      case 'Outpoint' :
+      case 'outpoint' :
         for (final d in points) {
           if (d.data.trailer)
             d.data.active = false;
         }
         break;
-      case 'Tandem Based' :
+      case 'tandembased' :
         for (final d in ctx.dancers) {
           //  Dancer must either be in a tandem...
           if (!ctx.isInTandem(d)) {
@@ -85,7 +87,7 @@ class TriangleCirculate extends Action {
           }
         }
         break;
-      case 'Wave Based':
+      case 'wavebased':
       case '':
         if (points.isNotEmpty) {
           for (final d in points) {
@@ -127,7 +129,7 @@ class TriangleCirculate extends Action {
             triangle.where((dd) => dd != d
                 && d.angleToDancer(dd).abs().isAround(pi/2)).firstOrNull ??
             triangle.where((dd) => dd != d
-                && !d.angleToDancer(dd).abs().isAround(pi));
+                && !d.angleToDancer(dd).abs().isAround(pi)).firstOrNull;
         if (d2 != null)
           d.path = _oneCirculatePath(d,d2);
         else

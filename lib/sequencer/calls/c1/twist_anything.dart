@@ -27,58 +27,37 @@ class TwistAnything extends Action {
 
   @override
   Future<void> perform(CallContext ctx, [int stackIndex = 0]) async {
-
     //  Get "Anything" call
     final anyCall = (name == 'the Line')
         ? 'Star Thru'
-        : name.replaceFirst('.*? and ','');
+        : name.replaceFirst('.*? and '.r, '');
 
-    //  Centers facing out
-    //  TODO refactor these two sections into one
-    if (ctx.center(4).every((d) => d.isFacingOut)) {
-      //  First try original centers do the any call
-      try {
-        await ctx.subContext(ctx.dancers, (ctx2) async {
-          await ctx2. applyCalls(
-              'Outer 4 Face In and Step while Center 4 Step Ahead',
-              'Outer 4 Trade while Center 4 $anyCall'
-          );
-        });
-      } on CallError catch(_) {
-        //  If that didn't work, try everybody do the any call
-        await ctx.applyCalls(
-            'Outer 4 Face In and Step while Center 4 Step Ahead',
-            'Outer 4 Trade'
-        );
-        ctx.matchStandardFormation();
-        await ctx.applyCalls(anyCall);
-      }
-    }
-
-    //  Centers facing in
-    else if (ctx.center(4).every((d) => d.isFacingIn)) {
-      //  Again, first try centers only, then all 8 do the Anything call
-      try {
-        await ctx.subContext(ctx.dancers, (ctx2) async {
-          await ctx2. applyCalls(
-              'Outer 4 Face In and Step while Center 4 Half Step Ahead',
-              'Center 4 Trade while Outer 4 $anyCall'
-          );
-        });
-      } on CallError catch(_) {
-        //  If that didn't work, try everybody do the any call
-        await ctx.applyCalls(
-            'Outer 4 Face In and Step while Center 4 Half Step Ahead',
-            'Center 4 Trade'
-        );
-        ctx.matchStandardFormation();
-        await ctx.applyCalls(anyCall);
-      }
-    }
-
-    else
+    final isOut = ctx.center(4).every((d) => d.isFacingOut);
+    final isIn = ctx.center(4).every((d) => d.isFacingIn);
+    if (!isOut && !isIn)
       throw CallError('Centers must face the same direction');
+    //  First try original centers do the any call
+    try {
+      await ctx.subContext(ctx.dancers, (ctx2) async {
+        await ctx2.applyCalls(
+            'Outer 4 Face In and Step while '
+                'Center 4 ${isIn ? 'Half' : ''} Step Ahead',
+            '${isIn ? 'Center' : 'Outer'} 4 Trade while '
+                '${isIn ? 'Outer' : 'Center'} 4 $anyCall'
+        );
+      });
+    } on CallError catch (_) {
+      //  If that didn't work, try everybody do the any call
+      await ctx.applyCalls(
+          'Outer 4 Face In and Step while '
+              'Center 4 ${isIn ? 'Half' : ''} Step Ahead',
+          '${isOut ? 'Outer' : 'Center'} 4 Trade'
+      );
+      ctx.matchStandardFormation();
+      await ctx.applyCalls(anyCall);
+    }
   }
+
 
 
 }

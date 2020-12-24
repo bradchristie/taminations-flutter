@@ -41,8 +41,8 @@ abstract class FourDancerConcept extends Action {
   String get extraCall => name.toLowerCase().split('individually' ).getOrNull(1);
 
   String get realCall =>
-      name.replaceFirst('$conceptName ' .ri, '' )
-          .replaceFirst('individually.*' .ri, '' );
+      name.replaceFirst('$conceptName' .ri, '' )
+          .replaceFirst('individually.*' .ri, '' ).trim();
 
   //  Return list of groups of dancers
   //  List must have 4 sub-lists

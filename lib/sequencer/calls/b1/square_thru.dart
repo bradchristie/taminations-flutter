@@ -34,8 +34,12 @@ class SquareThru extends Action {
       right = 'Left-Hand' ;
     }
     //  Find out how many hands
-    var count = name.toLowerCase().replaceAll('to a wave' , '' )
-        .last.toIntOrNull() ?? 4;
+    var count = TamUtils.normalizeCall(name)
+        .toLowerCase()
+        .replaceAll('toawave' , '')
+        .trim()
+        .last
+        .toIntOrNull() ?? 4;
     //  First hand is step to a wave if not already there
     if (ctx.actives.any((d) => ctx.isInCouple(d))) {
       await  ctx.applyCalls('Facing Dancers Step to a Compact $right Wave' );

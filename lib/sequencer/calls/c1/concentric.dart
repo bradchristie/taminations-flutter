@@ -31,7 +31,7 @@ class Concentric extends FourDancerConcept {
 
   @override
   List<List<Dancer>> dancerGroups(CallContext ctx) =>
-      ctx.actives.map((d) => [d]);
+      ctx.actives.map((d) => [d]).toList();
 
 
   //  Compute location of "normal" dancer from position of

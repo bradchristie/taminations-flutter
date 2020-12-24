@@ -164,6 +164,10 @@ class _SequencerCallsFrameState extends fm.State<SequencerCallsFrame> {
     return pp.Consumer<SequencerModel>(
         builder: (context, model, child) {
           final currentCall = model.currentCall;
+          SequencerCall call;
+          try {
+            call = model.calls[index];
+          } on Error { call = null; };
           if (currentCall == index) {
             later(() {
               itemScrollController.scrollTo(
@@ -178,10 +182,10 @@ class _SequencerCallsFrameState extends fm.State<SequencerCallsFrame> {
             child: fm.Material(
               color: (index == currentCall)
                   ? Color.YELLOW
-                  : (model.calls[index].level?.color ?? Color.WHITE),
+                  : (call?.level?.color ?? Color.WHITE),
               //  TODO no tap on comments
               child: fm.InkWell(
-                  highlightColor: model.calls[index].level?.color?.darker() ?? Color.WHITE,
+                  highlightColor: call?.level?.color?.darker() ?? Color.WHITE,
                   onTap: () {
                     model.animateAtCall(index);
                   },
@@ -192,13 +196,13 @@ class _SequencerCallsFrameState extends fm.State<SequencerCallsFrame> {
                             alignment: fm.Alignment.centerLeft,
                             padding: fm.EdgeInsets.only(left: 20.0),
                             child: AutoSizeText(
-                                model.calls[index].name, style: fm.TextStyle(fontSize: 20))
+                                call?.name ?? '', style: fm.TextStyle(fontSize: 20))
                         ),
                       ),
                       fm.Container(
                           alignment: fm.Alignment.topRight,
                           padding: fm.EdgeInsets.only(top:2,right:2),
-                          child: fm.Text(model.calls[index].level?.name ?? '')
+                          child: fm.Text(call?.level?.name ?? '')
                       )
                     ],
                   )

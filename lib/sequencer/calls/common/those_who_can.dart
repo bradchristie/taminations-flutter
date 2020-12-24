@@ -30,5 +30,4 @@ class ThoseWhoCan extends CodedCall {
     ctx.thoseWhoCanOnly();
   }
 
-
 }

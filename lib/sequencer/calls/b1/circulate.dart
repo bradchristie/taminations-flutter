@@ -122,6 +122,15 @@ class Circulate extends Action {
             ..scale(v.x,-v.y);
         else
           throw CallError('Unable to calculate Circulate path.' );
+      } else {
+        //  Otherwise look for a dancer to the side
+        final d3 = ctx.dancerClosest(d, (d2) => d2.isActive && d2.isRightOf(d)) ??
+            ctx.dancerClosest(d, (d2) => d2.isActive && d2.isLeftOf(d));
+        if (d3 != null) {
+          final v = d.vectorToDancer(d3);
+          return TamUtils.getMove('Run Left',scale: [1.0,v.y/2.0].v);
+        } else
+          throw CallError('Unable to calculate Circulate for dancer $d.');
       }
     }
 
@@ -176,7 +185,7 @@ class Circulate extends Action {
 
     }
 
-    throw CallError('Cannot figure out how to Circulate.' );
+    throw CallError('Cannot figure out how dancer $d can Circulate.' );
   }
 
 }

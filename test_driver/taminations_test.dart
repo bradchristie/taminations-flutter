@@ -1588,7 +1588,7 @@ Centers Run
 Boys Wheel Around 
 Circulate 
 Bend the Line 
-Pass Thru 
+Pass Thru ce
 Bend the Line 
 Star Thru 
 Zoom 

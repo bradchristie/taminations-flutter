@@ -128,7 +128,8 @@ class CallContext {
     'c2/once_removed_concept',
     'c1/split_square_thru_variations',
     'c2/unwrap',
-    'c2/stretched_concept'
+    'c2/stretched_concept',
+    'c1/finish'
   ];
 
   static const standardFormations = {
@@ -180,7 +181,7 @@ class CallContext {
     var doc = await TamUtils.getXMLAsset(link);
     //  Add all the calls to the index
     doc.findAllElements('tam').forEach((tam) {
-      var norm = TamUtils.normalizeCall(tam('title'));
+      var norm = TamUtils.normalizeCall(tam('title')).toLowerCase();
       if (!callindex.containsKey(norm))
         callindex[norm] = <String>{};
       callindex[norm].add(link);
@@ -509,7 +510,7 @@ class CallContext {
     //  Try to find a match in the xml animations
 
     var callnorm = TamUtils.normalizeCall(calltext);
-    var callfiles = xmlFilesForCall(callnorm);
+    var callfiles = xmlFilesForCall(callnorm.toLowerCase());
     //  Found xml file with call, now look through each animation
     var found = callfiles.isNotEmpty;
     var bestOffset = double.maxFinite;
@@ -524,7 +525,8 @@ class CallContext {
           (!perimeter || tam('sequencer','').contains('perimeter')) &&
           //  Check for 4-dancer calls that do not work for 8 dancers
           (exact || !tam('sequencer','').contains('exact')) &&
-          TamUtils.normalizeCall(tam('title')) == callnorm);
+          TamUtils.normalizeCall(tam('title')).toLowerCase() ==
+              callnorm.toLowerCase());
       for (var tam in tamlist) {
         //  Calls that are gender-specific, e.g. Star Thru,
         //  are specifically flagged in XML
@@ -899,6 +901,7 @@ class CallContext {
       //  If it does, get the offsets
       var matchResult = ctx1.computeFormationOffsets(ctx2, mapping, delta : 0.5);
       adjustToFormationMatch(matchResult);
+      print('Adjust to $fname worked');
       return true;
     }
     return false;

@@ -47,7 +47,7 @@ class GrandSwingThru extends Action {
       throw CallError('Unable to Grand Swing Thru from this formation.');
 
     //  All ok, do each part
-    if (name.startsWith('Left'))
+    if (name.contains('Left'))
       await ctx.applyCalls('_Grand Swing Left','_Grand Swing Right');
     else
       await ctx.applyCalls('_Grand Swing Right','_Grand Swing Left');

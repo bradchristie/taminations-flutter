@@ -162,6 +162,7 @@ import 'common/sides.dart';
 import 'common/slide_dir.dart';
 import 'common/square_the_set.dart';
 import 'common/step.dart';
+import 'common/those_who_can.dart';
 import 'common/trailers.dart';
 import 'common/twice.dart';
 import 'common/very_centers.dart';
@@ -197,7 +198,8 @@ abstract class CodedCall extends Call {
     'aceydeucey'.ri: (_) => AceyDeucey(),
     'adjustto.*'.ri: (name) => Adjust(name),
     'and'.ri: (_) => And(),
-    '.*(motivate|coordinate|percolate|perkup)'.ri: (name) => Anything(name),
+    //  Anything Motivate does not include Finish Motivate
+    '.*(?<!finish)(motivate|coordinate|percolate|perkup)'.ri: (name) => Anything(name),
     //  Anything Chain Thru should not match Square Chain Thru or others
     '.*(?<!(cross|eight|peel|scatter|spin|square|swing|tag))chainthru'.ri:
         (name) => AnythingChainThru(name),
@@ -352,7 +354,7 @@ abstract class CodedCall extends Call {
     //  Make sure Start does not match Star
     'Start.+'.r: (name) => Start(name),
     '(_left)?starthru'.ri: (name) => StarThru(name),
-    'step'.ri: (_) => Step(),
+    'step(ahead)?'.ri: (_) => Step(),
     'steptoacompact(lefthand)?wave'.ri: (name) => StepToACompactWave(name),
     //  Stretch not Stretched
     'stretch(?!ed).+'.ri: (name) => Stretch(name),
@@ -365,8 +367,10 @@ abstract class CodedCall extends Call {
     'tagtheline'.ri: (_) => TagTheLine(),
     '(left|vertical){0,2}tagyour((criss)?cross)?neighbor'.ri:
         (name) => TagYourNeighbor(name),
-    'tandem.+'.ri: (name) => Tandem(name),
+    //  Tandem concept not tandem-based triangle
+    'tandem(?!based).+'.ri: (name) => Tandem(name),
     'thek'.ri: (_) => TheK(),
+    'thosewhocan'.ri: (_) => ThoseWhoCan(),
     '32aceydeucey'.ri: (_) => ThreeByTwoAceyDeucey(),
     '(left)?34tag(theline)?'.r : (name) => ThreeQuartersTag(name),
     'toawave'.ri: (_) => ToAWave(),

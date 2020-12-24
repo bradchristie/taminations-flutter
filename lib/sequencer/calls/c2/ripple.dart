@@ -38,7 +38,7 @@ class Ripple extends Action {
         traders.remove(d);
       }
     }
-    actives -= ended;
+    actives.removeWhere((d) => ended.contains(d));
     return traders;
   }
 
@@ -48,15 +48,15 @@ class Ripple extends Action {
     if (actives.length == ctx.dancers.length)
       throw CallError('Who is going to Ripple?');
     final norm = TamUtils.normalizeCall(name);
-    final countstr = norm.replaceFirst("(right|left)?ripple".r,"")
-        .replaceFirst('the(line|wave)'.r,'9');
+    final countstr = norm.replaceFirst('(Right|Left)?Ripple'.r,'')
+        .replaceFirst('the(Line|Wave)'.r,'9');
     final half = countstr.endsWith('12');
     final count = countstr.replaceFirst('12','').toIntOrNull()
         ?? thrower(CallError('Ripple how much?'));
     _isRight = { for (final d in actives) d :
-    norm.contains('right')
+    norm.contains('Right')
         ? true
-        : norm.contains('left')
+        : norm.contains('Left')
         ? false
         : d.isCenterRight };
 
