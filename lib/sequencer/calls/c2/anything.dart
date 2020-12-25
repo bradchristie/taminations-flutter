@@ -29,17 +29,18 @@ class Anything extends Action {
 
   @override
   Future<void> perform(CallContext ctx, [int stackIndex = 0]) async {
+    var norm = TamUtils.normalizeCall(name);
     var firstCall =
-    name.replaceMatch('(.*)(motivate|coordinate|percolate|perkup)'.r,'\\1');
+    norm.replaceMatch('(.*)(motivate|coordinate|percolate|perkup)'.ri,'\\1');
     final secondCall =
-    name.replaceMatch('(.*)(motivate|coordinate|percolate|perkup)'.r,'\\2');
+    norm.replaceMatch('(.*)(motivate|coordinate|percolate|perkup)'.ri,'\\2');
     //  If the first call is Counter Rotate or Split Counter Rotate
     //  the word Rotate is generally omitted
-    if (firstCall.matches('(split)?counter'.r))
+    if (firstCall.matches('(split)?counter'.ri))
       firstCall += 'rotate';
     //  If the first call is any type of Circulate
     //  the word Circulate is generally omitted
-    else if (firstCall.matches('split|trade|splittrade|inroll|outroll|crossover|scatter'.r))
+    else if (firstCall.matches('split|trade|splittrade|inroll|outroll|crossover|scatter'.ri))
       firstCall += 'circulate';
     await ctx.applyCalls(firstCall,'Finish $secondCall');
   }

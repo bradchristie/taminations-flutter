@@ -70,7 +70,7 @@ class _SettingTitle extends fm.StatelessWidget {
 
 //  Class for checkbox setting
 typedef _boolChanger = void Function(bool value);
-class _SettingCheckbox extends fm.StatelessWidget {
+class _SettingCheckbox extends fm.StatefulWidget {
 
   final String name;
   final bool value;
@@ -80,26 +80,34 @@ class _SettingCheckbox extends fm.StatelessWidget {
     @fm.required this.value, @fm.required this.onChanged});
 
   @override
+  __SettingCheckboxState createState() => __SettingCheckboxState();
+}
+
+class __SettingCheckboxState extends fm.State<_SettingCheckbox> {
+  @override
   fm.Widget build(fm.BuildContext context) {
     return fm.Container(
         color: fm.Colors.white,
         margin: fm.EdgeInsets.only(bottom:3),
         child: fm.InkWell(
-          onTap: () { onChanged(!value); },
+          onTap: () { widget.onChanged(!widget.value); },
           child: fm.Row (
               children: [fm.Checkbox(
-                  value: value,
-                  onChanged: onChanged
+                  value: widget.value,
+                  onChanged: (value) {
+                    setState(() {
+                      widget.onChanged(value);
+                    });
+                  }
               ),
-                fm.Text(name,style: fm.TextStyle(fontWeight: fm.FontWeight.bold, fontSize: 20))
+                fm.Text(widget.name,style: fm.TextStyle(fontWeight: fm.FontWeight.bold, fontSize: 20))
               ]),
         ));
   }
-
 }
 
 //  Class for radio button setting
-class _SettingRadioGroup extends fm.StatelessWidget {
+class _SettingRadioGroup extends fm.StatefulWidget {
 
   final String groupValue;
   final List<String> values;
@@ -109,22 +117,35 @@ class _SettingRadioGroup extends fm.StatelessWidget {
     @fm.required this.onChanged});
 
   @override
+  __SettingRadioGroupState createState() => __SettingRadioGroupState();
+}
+
+class __SettingRadioGroupState extends fm.State<_SettingRadioGroup> {
+  @override
   fm.Widget build(fm.BuildContext context) {
     return fm.Container(
         color: fm.Colors.white,
         margin: fm.EdgeInsets.only(bottom:3),
         child: fm.Wrap (
-            children: values.map((v) =>
+            children: widget.values.map((v) =>
                 fm.InkWell(
-                  onTap: () { onChanged(v); },
+                  onTap: () {
+                    setState(() {
+                      widget.onChanged(v);
+                    });
+                  },
                   child: fm.Row(
                       mainAxisSize: fm.MainAxisSize.min,
                       children:[
                         fm.Radio<String>(
                             key: fm.Key(v),
                             value: v,
-                            groupValue: groupValue,
-                            onChanged: onChanged
+                            groupValue: widget.groupValue,
+                            onChanged: (value) {
+                              setState(() {
+                                widget.onChanged(value);
+                              });
+                            }
                         ),
                         fm.Text(v,style: fm.TextStyle(fontSize: 18))
                       ]),
@@ -201,6 +222,182 @@ class _SettingsColorDropDownState extends fm.State<_SettingsColorDropDown> {
 
 }
 
+class DancerSpeedSettingWidget extends fm.StatelessWidget {
+  @override
+  fm.Widget build(fm.BuildContext context) {
+    return pp.Consumer<Settings>(
+      builder: (context,settings,child) => fm.Column(
+          crossAxisAlignment: fm.CrossAxisAlignment.stretch,
+          children: [
+        _SettingTitle('Dancer Speed'),
+        _SettingRadioGroup(
+            groupValue: settings.speed,
+            values: ['Slow', 'Normal', 'Fast'],
+            onChanged: (value) {
+              settings.speed = value;
+            }),
+      ]),
+    );
+  }
+}
+
+class LoopSettingWidget extends fm.StatelessWidget {
+  @override
+  fm.Widget build(fm.BuildContext context) {
+    return pp.Consumer<Settings>(
+      builder: (context,settings,child) => _SettingCheckbox(
+        name:'Loop',
+        value: settings.loop,
+        onChanged: (value) {
+          settings.loop = value;
+        },
+      ),
+    );
+  }
+}
+
+class GridSettingWidget extends fm.StatelessWidget {
+  @override
+  fm.Widget build(fm.BuildContext context) {
+    return pp.Consumer<Settings>(
+      builder: (context,settings,child) => _SettingCheckbox(
+        name:'Grid',
+        value: settings.grid,
+        onChanged: (value) {
+          settings.grid = value;
+        },
+      ),
+    );
+  }
+}
+
+class PathsSettingWidget extends fm.StatelessWidget {
+  @override
+  fm.Widget build(fm.BuildContext context) {
+    return pp.Consumer<Settings>(
+      builder: (context,settings,child) => _SettingCheckbox(
+        name:'Paths',
+        value: settings.paths,
+        onChanged: (value) {
+          settings.paths = value;
+        },
+      ),
+    );
+  }
+}
+
+class PhantomsSettingWidget extends fm.StatelessWidget {
+  @override
+  fm.Widget build(fm.BuildContext context) {
+    return pp.Consumer<Settings>(
+      builder: (context,settings,child) => _SettingCheckbox(
+        name:'Phantoms',
+        value: settings.phantoms,
+        onChanged: (value) {
+          settings.phantoms = value;
+        },
+      ),
+    );
+  }
+}
+
+class NumbersSettingWidget extends fm.StatelessWidget {
+  @override
+  fm.Widget build(fm.BuildContext context) {
+    return pp.Consumer<Settings>(
+      builder: (context,settings,child) => fm.Column(
+          crossAxisAlignment: fm.CrossAxisAlignment.stretch,
+          children: [
+            _SettingTitle('Numbers'),
+            _SettingRadioGroup(
+                groupValue: settings.numbers,
+                values: ['None', '1-8', '1-4'],
+                onChanged: (value) {
+                  settings.numbers = value;
+                }),
+          ]),
+    );
+  }
+}
+
+class GeometrySettingWidget extends fm.StatelessWidget {
+  @override
+  fm.Widget build(fm.BuildContext context) {
+    return pp.Consumer<Settings>(
+      builder: (context,settings,child) => fm.Column(
+          crossAxisAlignment: fm.CrossAxisAlignment.stretch,
+          children: [
+            _SettingTitle('Special Geometry'),
+            _SettingRadioGroup(
+                groupValue: settings.geometry,
+                values: ['None', 'Hexagon', 'Bi-Gon'],
+                onChanged: (value) {
+                  settings.geometry = value;
+                }),
+          ]),
+    );
+  }
+}
+
+class LanguageSettingWidget extends fm.StatelessWidget {
+  @override
+  fm.Widget build(fm.BuildContext context) {
+    return pp.Consumer<Settings>(
+      builder: (context,settings,child) => fm.Column(
+          crossAxisAlignment: fm.CrossAxisAlignment.stretch,
+          children: [
+            _SettingTitle('Language for Definitions'),
+            _SettingRadioGroup(
+                groupValue: settings.language,
+                values: ['System', 'English', 'German', 'Japanese'],
+                onChanged: (value) {
+                  settings.language = value;
+                }),
+          ]),
+    );
+  }
+}
+
+
+class DancerColorsSettingWidget extends fm.StatefulWidget {
+  @override
+  _DancerColorsSettingWidgetState createState() => _DancerColorsSettingWidgetState();
+}
+
+class _DancerColorsSettingWidgetState extends fm.State<DancerColorsSettingWidget> {
+  @override
+  fm.Widget build(fm.BuildContext context) {
+    return pp.Consumer<Settings>(
+      builder: (context,settings,child) => fm.Column(
+          crossAxisAlignment: fm.CrossAxisAlignment.stretch,
+          children: [
+            _SettingTitle('Dancer Colors'),
+            fm.Container(
+                color: fm.Colors.white,
+                margin: fm.EdgeInsets.only(bottom:3),
+                alignment: fm.Alignment(-1.0,0.0),
+                child: fm.Wrap (
+                  children: [
+                    for (var i in [1,2,3,4])
+                      fm.Container(
+                          margin: fm.EdgeInsets.fromLTRB(10, 2, 10, 2),
+                          child:_SettingsColorDropDown(
+                            currentValue: settings.coupleColor(i),
+                            onChanged: (String value) {
+                              setState(() {
+                                settings.setCoupleColor(i, value);
+                              });
+                            },
+                          )
+                      ),
+                  ],
+                )),
+          ]),
+    );
+  }
+}
+
+
 class _SettingsState extends fm.State<SettingsFrame> {
 
   @override
@@ -211,100 +408,15 @@ class _SettingsState extends fm.State<SettingsFrame> {
           return fm.Container(
             color: Color.LIGHTGREY,
               child:fm.ListView(children: [
-            _SettingTitle('Dancer Speed'),
-            _SettingRadioGroup(
-                groupValue: settings.speed,
-                values: ['Slow', 'Normal', 'Fast'],
-                onChanged: (value) {
-                  setState(() { settings.speed = value; });
-                }),
-
-            _SettingCheckbox(
-              name:'Loop',
-              value: settings.loop,
-              onChanged: (value) {
-                setState(() {
-                  settings.loop = value;
-                });
-              },
-            ),
-
-            _SettingCheckbox(
-              name:'Grid',
-              value: settings.grid,
-              onChanged: (value) {
-                setState(() {
-                  settings.grid = value;
-                });
-              },
-            ),
-
-            _SettingCheckbox(
-              name:'Paths',
-              value: settings.paths,
-              onChanged: (value) {
-                setState(() {
-                  settings.paths = value;
-                });
-              },
-            ),
-
-            _SettingTitle('Numbers'),
-            _SettingRadioGroup(
-                groupValue: settings.numbers,
-                values: ['None', '1-8', '1-4'],
-                onChanged: (value) {
-                  setState(() { settings.numbers = value; });
-                }),
-
-                _SettingTitle('Dancer Colors'),
-                fm.Container(
-                    color: fm.Colors.white,
-                    margin: fm.EdgeInsets.only(bottom:3),
-                    alignment: fm.Alignment(-1.0,0.0),
-                    child: fm.Wrap (
-                      children: [
-                        for (var i in [1,2,3,4])
-                          fm.Container(
-                              margin: fm.EdgeInsets.fromLTRB(10, 2, 10, 2),
-                              child:_SettingsColorDropDown(
-                                currentValue: settings.coupleColor(i),
-                                onChanged: (String value) {
-                                  setState(() {
-                                    settings.setCoupleColor(i, value);
-                                  });
-                                },
-                              )
-                          ),
-                      ],
-                    )),
-
-            _SettingCheckbox(
-              name:'Phantoms',
-              value: settings.phantoms,
-              onChanged: (value) {
-                setState(() {
-                  settings.phantoms = value;
-                });
-              },
-            ),
-
-            _SettingTitle('Special Geometry'),
-            _SettingRadioGroup(
-                groupValue: settings.geometry,
-                values: ['None','Hexagon','Bi-Gon'],
-                onChanged: (value) {
-                  setState(() { settings.geometry = value; });
-                }),
-
-            _SettingTitle('Language for Definitions'),
-            _SettingRadioGroup(
-                groupValue: settings.language,
-                values: ['System','English','German','Japanese'],
-                onChanged: (value) {
-                  setState(() { settings.language = value; });
-                }),
-
+                DancerSpeedSettingWidget(),
+                LoopSettingWidget(),
+                GridSettingWidget(),
+                PathsSettingWidget(),
+                NumbersSettingWidget(),
+                DancerColorsSettingWidget(),
+                PhantomsSettingWidget(),
+                GeometrySettingWidget(),
+                LanguageSettingWidget()
           ]));
         });
   }

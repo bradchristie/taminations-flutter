@@ -104,7 +104,7 @@ class DanceAnimationPainter extends fm.ChangeNotifier implements fm.CustomPainte
   }
 
   void _redraw() {
-    fm.WidgetsBinding.instance.addPostFrameCallback((_) {
+    later(() {
       notifyListeners();
     });
   }
@@ -178,7 +178,9 @@ class DanceAnimationPainter extends fm.ChangeNotifier implements fm.CustomPainte
   void setGeometry(int g) {
     if (g != _geometry) {
       _geometry = g;
-      _resetAnimation();
+      later(() {
+        _resetAnimation();
+      });
     }
   }
 
@@ -605,7 +607,9 @@ class DanceAnimationPainter extends fm.ChangeNotifier implements fm.CustomPainte
       beat = -leadin;
       _prevbeat = -leadin;
       updateDancers();
-      notifyListeners();
+      later(() {
+        notifyListeners();
+      });
     }
   }
 
