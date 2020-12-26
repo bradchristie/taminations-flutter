@@ -36,13 +36,13 @@ abstract class FourDancerConcept extends Action {
 
   FourDancerConcept(String name) : super(name);
 
-  var conceptName = '' ;
+  var conceptName = '';
 
   String get extraCall => name.toLowerCase().split('individually' ).getOrNull(1);
 
   String get realCall =>
-      name.replaceFirst('$conceptName' .ri, '' )
-          .replaceFirst('individually.*' .ri, '' ).trim();
+      name.replaceFirst('$conceptName'.ri, '' )
+          .replaceFirst('individually.*'.ri, '' ).trim();
 
   //  Return list of groups of dancers
   //  List must have 4 sub-lists

@@ -93,7 +93,7 @@ extension DancerList on List<Dancer> {
       [
         d,
         firstWhere((it) => it.location.isAbout(-d.location))
-      ]);
+      ]).toList();
     } catch (_) {
       return this;
     }

@@ -71,7 +71,7 @@ abstract class TripleFormation extends Action {
       if (box.dancers.length != 4)
         throw CallError('Error splitting into groups - group has ${box.dancers.length} dancers.');
       box.analyze();
-      final rotatedBox = await box.rotatePhantoms(subCall,rotate: 90, asym: true)
+      final rotatedBox = await box.rotatePhantoms(subCall,rotate: 180, asym: true)
           ?? thrower(CallError('Unable to do $subCall with these Triple Boxes'));
       await rotatedBox.applyCalls(subCall);
       //  If it ends in a bax, make it a compact box in major direction
@@ -89,6 +89,7 @@ abstract class TripleFormation extends Action {
     for (final boxd in tripleBoxCtx.dancers.where((d) => d.gender != Gender.PHANTOM)) {
       ctx.dancers.firstWhere((d) => d == boxd).path = boxd.path;
     }
+    ctx.noSnap();
   }
 
 }

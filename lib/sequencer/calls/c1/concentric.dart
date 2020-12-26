@@ -94,7 +94,7 @@ class Concentric extends FourDancerConcept {
         }
         shiftList.add(Vector(xshift,yshift));
 
-        //  If it ends an axis, then real dancer is on same axis further out
+        //  If it ends on an axis, then real dancer is on same axis further out
         var dx = 0.0;
         var dy = 0.0;
         if (cd.isOnXAxis) {
@@ -156,7 +156,7 @@ class Concentric extends FourDancerConcept {
     final pos = m.translate(beat).location;
     final shift = (f.isGreaterThan(0.0) && f.isLessThan(1.0))
         ? _dancerShifts[d.number][mi].rotate(-d.angleFacing)
-        :Vector();
+        : Vector();
     //  And add it to the concept dancer location
     return pos + vnow + shift;
   }

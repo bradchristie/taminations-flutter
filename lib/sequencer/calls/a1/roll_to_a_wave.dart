@@ -29,7 +29,7 @@ class RollTo extends Action {
   @override
   Path performOne(Dancer d, CallContext ctx) {
     final move = name.startsWith('Left') ? 'Flip Left' : 'Flip Right';
-    return TamUtils.getMove(move,scale:[1.0,0.25].v,skew:[-0.5,-.0].v);
+    return TamUtils.getMove(move,scale:[1.0,0.25].v,skew:[-0.5,0.0].v);
   }
 
 }
