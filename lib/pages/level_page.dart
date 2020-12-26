@@ -57,7 +57,7 @@ class _TapDetector extends fm.StatelessWidget {
 
   @override
   fm.Widget build(fm.BuildContext context) =>
-      pp.Consumer<fm.ValueNotifier<TamState>>(
+      pp.Consumer<TamState>(
           builder: (context,appState,_) {
             return fm.Material(
               color: color,
@@ -65,15 +65,15 @@ class _TapDetector extends fm.StatelessWidget {
                   highlightColor: color.darker(),
                   onTap: () {
                     if (text == 'Practice')
-                      appState.value = TamState(mainPage: MainPage.STARTPRACTICE);
+                      appState.change(mainPage: MainPage.STARTPRACTICE);
                     else if (text == 'Sequencer')
-                      appState.value = TamState(mainPage: MainPage.SEQUENCER);
+                      appState.change(mainPage: MainPage.SEQUENCER);
                     else if (text == 'Settings')
-                      appState.value = TamState(detailPage: DetailPage.SETTINGS);
+                      appState.change(detailPage: DetailPage.SETTINGS);
                     else if (text == 'About')
-                      appState.value = TamState(detailPage: DetailPage.HELP);
+                      appState.change(detailPage: DetailPage.HELP);
                     else
-                      appState.value = TamState(detailPage: DetailPage.CALLS, level: text);
+                      appState.change(detailPage: DetailPage.CALLS, level: text);
                   },
                   child:child
               ),

@@ -159,7 +159,7 @@ class _CallsState extends fm.State<CallsFrame> {
       decoration: fm.BoxDecoration(
           border: fm.Border(top: fm.BorderSide(width: 1, color: Color.BLACK))),
      // padding: FM.EdgeInsets.only(left: 20.0, top:4, bottom:4),
-      child: pp.Consumer<fm.ValueNotifier<TamState>>(
+      child: pp.Consumer<TamState>(
         builder: (context,tamState,_) =>
          fm.Material(
           //  Color the item according the the level
@@ -167,9 +167,8 @@ class _CallsState extends fm.State<CallsFrame> {
           child: fm.InkWell(
             highlightColor: LevelData.find(callsSearched[index].link).color.darker(),
               onTap: () {
-                tamState.value = TamState(
+                tamState.change(
                     mainPage: MainPage.ANIMATIONS,
-                    level: LevelData.find(callsSearched[index].link).name,
                     link: callsSearched[index].link
                 );
               },

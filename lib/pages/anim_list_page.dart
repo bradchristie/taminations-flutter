@@ -92,7 +92,7 @@ class _AnimListPageState extends fm.State<AnimListPage> {
                 preferredSize: fm.Size.fromHeight(56.0),
                 child: TitleBar()
             ),
-            body: pp.Consumer<fm.ValueNotifier<TamState>>(
+            body: pp.Consumer<TamState>(
               builder: (context,tamState,_) => fm.Column(
                       children: [
                         fm.Expanded(
@@ -101,11 +101,11 @@ class _AnimListPageState extends fm.State<AnimListPage> {
                         fm.Row(children: [
                           fm.Expanded(
                             child: Button('Definition',onPressed: () {
-                              tamState.value = tamState.value.modify(detailPage: DetailPage.DEFINITION);
+                              tamState.change(detailPage: DetailPage.DEFINITION);
                             }),
                           ),
                           fm.Expanded(child: Button('Settings',onPressed: () {
-                            tamState.value = tamState.value.modify(detailPage: DetailPage.SETTINGS);
+                            tamState.change(detailPage: DetailPage.SETTINGS);
                           },))
                         ]),
                       ]),
@@ -207,13 +207,13 @@ class _AnimListState extends fm.State<AnimListFrame> {
 
   @override
   fm.Widget build(fm.BuildContext context) {
-    return pp.Consumer2<TitleModel,fm.ValueNotifier<TamState>>(
+    return pp.Consumer2<TitleModel,TamState>(
       builder: (context,titleModel,tamState,_) => fm.FutureBuilder<XmlDocument>(
           future: docFuture,
           builder: (fm.BuildContext context, fm.AsyncSnapshot<XmlDocument> snapshot) {
             if (snapshot.hasData) {
               _loadList(snapshot.data);
-              final num = max(0,tamState.value.animnum);
+              final num = max(0,tamState.animnum);
               final title = animListItems.where((item) =>
               item.title.isNotEmpty).toList()[num].title;
               pp.Provider.of<AnimationState>(context, listen:false).title = title;
@@ -264,7 +264,7 @@ class _AnimListState extends fm.State<AnimListFrame> {
                             case CellType.Indented:
                             case CellType.Plain:
                               return  fm.Container(
-                                  child: pp.Consumer<fm.ValueNotifier<TamState>>(
+                                  child: pp.Consumer<TamState>(
                                     builder: (context,tamState,_) => fm.Material(
                                           color: selectedItem == index
                                               ? Color.BLUE
@@ -275,7 +275,7 @@ class _AnimListState extends fm.State<AnimListFrame> {
                                               setState(() {
                                                 selectedItem = index;
                                               });
-                                              tamState.value = tamState.value.modify(animnum: item.animnumber);
+                                              tamState.change(animnum: item.animnumber);
                                               pp.Provider.of<AnimationState>(context, listen:false).title = item.title;
                                               titleModel.title = item.title;
                                             },

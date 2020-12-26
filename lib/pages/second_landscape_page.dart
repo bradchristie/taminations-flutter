@@ -81,7 +81,7 @@ class _SecondLandscapePageState extends fm.State<SecondLandscapePage> {
                  //   title: painter.title,
                  //   level: LevelData.find(path.level).name)
                 )),
-            body: pp.Consumer<fm.ValueNotifier<TamState>>(
+            body: pp.Consumer<TamState>(
               builder: (context, tamState, _) =>
                   SecondLandscapeFrame(
                       leftChild: AnimListFrame(path.link),
@@ -94,13 +94,11 @@ class _SecondLandscapePageState extends fm.State<SecondLandscapePage> {
                               children: [
                                 fm.Expanded(
                                     child: Button('Definition', onPressed: () {
-                                      tamState.value = tamState.value.modify(
-                                          detailPage: DetailPage.DEFINITION);
+                                      tamState.change(detailPage: DetailPage.DEFINITION);
                                     })),
                                 fm.Expanded(
                                     child: Button('Settings', onPressed: () {
-                                      tamState.value = tamState.value.modify(
-                                          detailPage: DetailPage.SETTINGS);
+                                      tamState.change(detailPage: DetailPage.SETTINGS);
                                     })),
                               ],
                             ),

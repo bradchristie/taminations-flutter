@@ -78,10 +78,10 @@ class PracticeModel {
 
   Future<bool> nextAnimation(fm.BuildContext context, DanceAnimationPainter painter) async {
     //  Choose a random call from the selected level
-    final appState = pp.Provider.of<fm.ValueNotifier<TamState>>(context,listen: false);
+    final appState = pp.Provider.of<TamState>(context,listen: false);
     final titleModel = pp.Provider.of<TitleModel>(context,listen: false);
     final settings = pp.Provider.of<Settings>(context,listen: false);
-    final levelDatum = LevelData.find(appState.value.level);
+    final levelDatum = LevelData.find(appState.level);
     final levelCalls = TamUtils.calldata.where((element) =>
         levelDatum.selector(element.link)).toList();
     final randomCall = levelCalls[Random().nextInt(levelCalls.length)];

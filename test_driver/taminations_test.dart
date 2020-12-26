@@ -1927,9 +1927,7 @@ Promenade Home'''
 };
 
 void main() {
-
   group('Sequence Test Runner', () {
-
     FlutterDriver driver;
     final settingsTapper = find.byValueKey('Settings');
     final fastTapper = find.byValueKey('Fast');
@@ -1952,17 +1950,13 @@ void main() {
         await driver.close();
       }
       print('All sequencer tests complete.');
-      print('These tests ran to completion:');
-      for (final testName in testsFinished)
-        print('    $testName');
-      print('Total ${testsFinished.length} tests.');
       print('These tests failed:');
       for (final testName in testsFailed)
         print('    $testName');
       print('Total ${testsFailed.length} tests.');
     });
 
-    test('setup',() async {
+    test('setup', () async {
       await driver.waitFor(settingsTapper);
       await driver.tap(settingsTapper);
       await driver.waitFor(fastTapper);
@@ -1972,23 +1966,21 @@ void main() {
     });
 
     for (var testName in testSequences.keys) {
-      test(testName,() async {
+      test(testName, () async {
         await driver.runUnsynchronized(() async {
-        await driver.tap(sequencerReset);
-        for (var call in testSequences[testName].split('\n')) {
-          await driver.tap(sequencerInput);
-          await driver.enterText(call);
-          await driver.tap(sequencerSubmit);
-          expect(await driver.getText(errorText), '');
-        }
-        await driver.waitUntilNoTransientCallbacks();
-        testsFinished.add(testName);
-        testsFailed.remove(testName);
+          await driver.tap(sequencerReset);
+          for (var call in testSequences[testName].split('\n')) {
+            await driver.tap(sequencerInput);
+            await driver.enterText(call);
+            await driver.tap(sequencerSubmit);
+            expect(await driver.getText(errorText), '');
+          }
+          await driver.waitUntilNoTransientCallbacks();
+          testsFinished.add(testName);
+          testsFailed.remove(testName);
         });
       });
     }
-
   });
-
 
 }

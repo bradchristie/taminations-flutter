@@ -89,7 +89,7 @@ class _AnimationPageState extends fm.State<AnimationPage>
                   return TitleBar();
                 })
         ),
-        body: pp.Consumer<fm.ValueNotifier<TamState>>(
+        body: pp.Consumer<TamState>(
           builder: (context, tamState, _) => fm.Column(
             children: [
               fm.Expanded(child: AnimationFrame()),
@@ -99,13 +99,11 @@ class _AnimationPageState extends fm.State<AnimationPage>
                   children: [
                     fm.Expanded(
                         child: Button('Definition',onPressed: () {
-                          tamState.value =
-                              tamState.value.modify(detailPage: DetailPage.DEFINITION);
+                          tamState.change(detailPage: DetailPage.DEFINITION);
                         })),
                     fm.Expanded(
                         child: Button('Settings',onPressed: () {
-                          tamState.value =
-                              tamState.value.modify(detailPage: DetailPage.SETTINGS);
+                          tamState.change(detailPage: DetailPage.SETTINGS);
                     }))
                   ],
                 ),
@@ -185,14 +183,14 @@ class _AnimationFrameState extends fm.State<AnimationFrame>
     //  without listening to it...
     final quietPainter = pp.Provider.of<DanceAnimationPainter>(context,listen:false);
     //  Now load the animation
-    return pp.Consumer<fm.ValueNotifier<TamState>>(
+    return pp.Consumer<TamState>(
       builder: (context,appState,_) => fm.FutureBuilder<void>(
-        future: appState.value.mainPage == MainPage.SEQUENCER
+        future: appState.mainPage == MainPage.SEQUENCER
             ? quietPainter.setAnimation(TamUtils.getFormation('Static Square'))
-            : TamUtils.getXMLAsset(appState.value.link).then((doc) {
+            : TamUtils.getXMLAsset(appState.link).then((doc) {
           var tam = TamUtils.tamList(doc)
               .where((it) => !(it('display','').startsWith('n')))
-              .toList()[max(0, appState.value.animnum)];
+              .toList()[max(0, appState.animnum)];
           return quietPainter.setAnimation(tam);
         }),
         //  And now we can listen for animation changes
@@ -205,23 +203,23 @@ class _AnimationFrameState extends fm.State<AnimationFrame>
 
                     //  Send current settings to the painter
                     painter.setGridVisibility(settings.grid);
-                    painter.setNumbers(appState.value.mainPage == MainPage.SEQUENCER  ? settings.dancerIdentification : settings.numbers);
+                    painter.setNumbers(appState.mainPage == MainPage.SEQUENCER  ? settings.dancerIdentification : settings.numbers);
                     painter.setSpeed(settings.speed);
                     painter.setPaths(settings.paths);
-                    painter.setLoop(appState.value.mainPage == MainPage.SEQUENCER ? false : settings.loop);
-                    painter.setShapes(appState.value.mainPage == MainPage.SEQUENCER
-                        ? settings.dancerShapes : false);
+                    painter.setLoop(appState.mainPage == MainPage.SEQUENCER ? false : settings.loop);
+                    painter.setShapes(appState.mainPage == MainPage.SEQUENCER
+                        ? settings.dancerShapes : true);
                     painter.setPhantoms(settings.phantoms);
-                    painter.setGeometry(appState.value.mainPage == MainPage.SEQUENCER ? Geometry.SQUARE : Geometry.fromString(settings.geometry).geometry);
+                    painter.setGeometry(appState.mainPage == MainPage.SEQUENCER ? Geometry.SQUARE : Geometry.fromString(settings.geometry).geometry);
                     //  Dancer colors - first check individual color, then couple color
-                    painter.setColors(appState.value.mainPage == MainPage.SEQUENCER
-                        ? settings.showDancerColors!='None' : false);
-                    if (appState.value.mainPage == MainPage.SEQUENCER && settings.showDancerColors == 'Random')
+                    painter.setColors(appState.mainPage == MainPage.SEQUENCER
+                        ? settings.showDancerColors!='None' : true);
+                    if (appState.mainPage == MainPage.SEQUENCER && settings.showDancerColors == 'Random')
                       painter.setRandomColors(true);
                     else {
                       painter.setRandomColors(false);
                     }
-                    if (appState.value.mainPage != MainPage.SEQUENCER ||
+                    if (appState.mainPage != MainPage.SEQUENCER ||
                         settings.showDancerColors == 'By Couple') {
                       for (var i = 1; i <= 12; i++) {
                         final individualColor = settings.dancerColor(i);

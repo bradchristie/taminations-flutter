@@ -70,13 +70,18 @@ extension DetailPageEx on String {
 
 //  This class holds state information used to
 //  generate the current layout
-class TamState {
+class TamState extends fm.ChangeNotifier {
 
-  final String level;  //  if not null, generate Calls page
-  final String link;  //  if not null, generate AnimList page
-  final int animnum;   //  if >= 0, generate Animation page
-  final MainPage mainPage;
-  final DetailPage detailPage;
+  String _level;  //  if not null, generate Calls page
+  String get level => _level;
+  String _link;  //  if not null, generate AnimList page
+  String get link => _link;
+  int _animnum;   //  if >= 0, generate Animation page
+  int get animnum => _animnum;
+  MainPage _mainPage;
+  MainPage get mainPage => _mainPage;
+  DetailPage _detailPage;
+  DetailPage get detailPage => _detailPage;
 
   @override
   bool operator ==(Object other) =>
@@ -85,23 +90,25 @@ class TamState {
 
   //  Default parameters generate the layout for the main menu
   TamState({
-    this.level,
-    this.link,
-    this.animnum = -1,
-    this.mainPage = MainPage.LEVELS,
-    this.detailPage = DetailPage.NONE
-  });
+    level,
+    link,
+    animnum = -1,
+    mainPage = MainPage.LEVELS,
+    detailPage = DetailPage.NONE
+  }) : _level=level, _link=link, _animnum=animnum,
+        _mainPage=mainPage, _detailPage=detailPage;
 
-  //  Convenience methods to create a new route by
-  //  adding onto a previous route
-  TamState modify({String level, String link, int animnum,
-  MainPage mainPage, DetailPage detailPage}) =>
-      TamState(
-          level:level ?? this.level,
-          link: link ?? this.link,
-          animnum: animnum ?? this.animnum,
-          mainPage: mainPage ?? this.mainPage,
-          detailPage: detailPage ?? this.detailPage);
+  void change({String level, String link, int animnum,
+    MainPage mainPage, DetailPage detailPage}) {
+    final before = toString();
+    _level = level ?? _level;
+    _link = link ?? _link;
+    _animnum = animnum ?? _animnum;
+    _mainPage = mainPage ?? _mainPage;
+    _detailPage = detailPage ?? _detailPage;
+    if (toString() != before)
+      notifyListeners();
+  }
 
   //  For URL generation
   @override
@@ -169,11 +176,11 @@ class TaminationsRouterDelegate extends fm.RouterDelegate<TamState>
   final fm.GlobalKey<fm.NavigatorState> navigatorKey;
   TaminationsRouterDelegate() : navigatorKey = fm.GlobalKey<fm.NavigatorState>();
 
-  var appState = fm.ValueNotifier(TamState());
+  final appState = TamState();
   var _orientation = fm.Orientation.landscape;
   //  this is necessary for the web URL and back button to work
   @override
-  TamState get currentConfiguration => appState.value;
+  TamState get currentConfiguration => appState;
 
   @override
   fm.Widget build(fm.BuildContext context) {
@@ -182,15 +189,16 @@ class TaminationsRouterDelegate extends fm.RouterDelegate<TamState>
       child: fm.OrientationBuilder(
           builder: (context, orientation) {
             _orientation = orientation;
-            return pp.Consumer<fm.ValueNotifier<TamState>>(
+            return pp.Consumer<TamState>(
                 builder: (context,appState,_) {
-                  final config = appState.value;
+                  final config = appState;
                   return fm.Navigator(
                       key: navigatorKey,
 
                       //  Pages for landscape - first and second, Sequencer, Practice
                       pages: (orientation == fm.Orientation.landscape)
-                          ? [ fm.MaterialPage(
+                          ? [
+                            fm.MaterialPage(
                           key: fm.ValueKey('Landscape Page'),
                           child: FirstLandscapePage()
                       ),
@@ -273,12 +281,29 @@ class TaminationsRouterDelegate extends fm.RouterDelegate<TamState>
                           ),
                       ],
 
-                      //  Standard onPopPage method, required
+                      //  onPopPage
+                      //  Calculate popped config based on current config
                       onPopPage: (route, result) {
                         print('Pop Navigator: ${route.currentResult}');
+                        //  route.didPop returns false if the navigator
+                        //  has only one page in its list of pages
                         if (!route.didPop(result)) {
                           return false;
                         }
+                        if (_orientation == fm.Orientation.landscape) {
+                          //  Pop landscape page
+                          if (appState.mainPage == MainPage.SEQUENCER)
+                            appState.change(mainPage: MainPage.LEVELS);
+                          else if (appState.mainPage == MainPage.ANIMATIONS)
+                            appState.change(mainPage: MainPage.LEVELS, link:'');
+                          else if (appState.mainPage == MainPage.STARTPRACTICE)
+                            appState.change(mainPage: MainPage.LEVELS);
+                          else if (appState.mainPage == MainPage.PRACTICE ||
+                          appState.mainPage == MainPage.TUTORIAL)
+                            appState.change(mainPage:MainPage.STARTPRACTICE);
+                        }
+
+                        notifyListeners();
                         return true;
                       });
                 });
@@ -289,7 +314,7 @@ class TaminationsRouterDelegate extends fm.RouterDelegate<TamState>
   @override
   Future<void> setInitialRoutePath(TamState configuration) async {
     appState.addListener(() {
-      setNewRoutePath(appState.value);
+      setNewRoutePath(appState);
     });
   }
 
@@ -297,7 +322,13 @@ class TaminationsRouterDelegate extends fm.RouterDelegate<TamState>
   Future<void> setNewRoutePath(TamState configuration) async {
     if (configuration != null) {
       print('New Route Path: $configuration');
-      appState.value = configuration;
+      appState.change(
+          level: configuration.level,
+          link: configuration.link,
+          animnum: configuration.animnum,
+          mainPage:configuration.mainPage,
+          detailPage: configuration.detailPage
+      );
       notifyListeners();
     }
     return;
