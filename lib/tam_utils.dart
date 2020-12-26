@@ -24,6 +24,7 @@ import 'dart:typed_data';
 
 import 'package:flutter/services.dart' show rootBundle;
 import 'package:xml/xml.dart';
+import 'package:platform/platform.dart';
 
 import 'extensions.dart';
 import 'math/movement.dart';
@@ -332,5 +333,15 @@ class TamUtils {
   //  Finally remove non-alphanums and strip spaces
       .replaceAll('\\W'.ri,'')
       .replaceAll('\\s'.ri,'');
+
+  static bool isTouchDevice() {
+    try {
+      final platform = LocalPlatform();
+      if (platform.isIOS || platform.isAndroid)
+        return true;
+      //  Currently web doesn't even have a platform, LocalPlatform is not supported
+    } on UnsupportedError catch (_) { }
+    return false;
+  }
 
 }

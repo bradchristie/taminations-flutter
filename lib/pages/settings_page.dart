@@ -23,6 +23,7 @@ import 'package:provider/provider.dart' as pp;
 import '../title_bar.dart';
 import '../settings.dart';
 import '../color.dart';
+import '../tam_utils.dart';
 
 //  Settings page, only used in Portrait
 class SettingsPage extends fm.StatelessWidget {
@@ -44,11 +45,69 @@ class SettingsPage extends fm.StatelessWidget {
 }
 
 //  Settings frame, part of both first and second landscape pages
-class SettingsFrame extends fm.StatefulWidget {
+class SettingsFrame extends fm.StatelessWidget {
 
   @override
-  fm.State<fm.StatefulWidget> createState() => _SettingsState();
+  fm.Widget build(fm.BuildContext context) {
+    return pp.Consumer2<Settings,TitleModel>(
+        builder: (context, settings, titleModel, child) {
+          titleModel.title = 'Settings';
+          return fm.Container(
+              color: Color.LIGHTGREY,
+              child:fm.ListView(children: [
+                DancerSpeedSettingWidget(),
+                LoopSettingWidget(),
+                GridSettingWidget(),
+                PathsSettingWidget(),
+                NumbersSettingWidget(),
+                DancerColorsSettingWidget(),
+                PhantomsSettingWidget(),
+                GeometrySettingWidget(),
+                LanguageSettingWidget()
+              ]));
+        });
+  }
+}
 
+class SequencerSettingsPage extends fm.StatelessWidget {
+
+  @override
+  fm.Widget build(fm.BuildContext context) {
+    return pp.ChangeNotifierProvider<TitleModel>(
+      create: (_) => TitleModel(),
+      child: fm.Scaffold(
+          appBar: fm.PreferredSize(
+              preferredSize: fm.Size.fromHeight(56.0),
+              child: TitleBar()
+          ),
+          body: SequencerSettingsFrame()
+      ),
+    );
+  }
+
+}
+
+class SequencerSettingsFrame extends fm.StatelessWidget {
+
+  @override
+  fm.Widget build(fm.BuildContext context) {
+    return pp.Consumer2<Settings,TitleModel>(
+        builder: (context, settings, titleModel, child) {
+          titleModel.title = 'Settings';
+          return fm.Container(
+              color: Color.LIGHTGREY,
+              child:fm.ListView(children: [
+                StartingFormationWidget(),
+                DancerSpeedSettingWidget(),
+                GridSettingWidget(),
+                PathsSettingWidget(),
+                SequencerDancerColorsWidget(),
+                DancerShapesWidget(),
+                DancerIdentificationWidget()
+                //  GeometrySettingWidget(),   //  TODO
+              ]));
+        });
+  }
 }
 
 //  Class for title above radio buttons
@@ -64,6 +123,22 @@ class _SettingTitle extends fm.StatelessWidget {
         color: fm.Colors.white,
         padding: fm.EdgeInsets.only(top: 4, left: 12),
         child: fm.Text(_text, style: fm.TextStyle(fontWeight: fm.FontWeight.bold, fontSize: 20)));
+  }
+
+}
+
+class _SettingText extends fm.StatelessWidget {
+
+  final String _text;
+  _SettingText(this._text);
+
+  @override
+  fm.Widget build(fm.BuildContext context) {
+    return fm.Container(
+        alignment: fm.Alignment.centerLeft,
+        color: fm.Colors.white,
+        padding: fm.EdgeInsets.only(top: 4, left: 12),
+        child: fm.Text(_text, style: fm.TextStyle(fontSize: 20)));
   }
 
 }
@@ -112,9 +187,13 @@ class _SettingRadioGroup extends fm.StatefulWidget {
   final String groupValue;
   final List<String> values;
   final void Function(String value) onChanged;
-  _SettingRadioGroup({@fm.required this.groupValue,
+  final double bottomMargin;
+  _SettingRadioGroup({
+    @fm.required this.groupValue,
     @fm.required this.values,
-    @fm.required this.onChanged});
+    @fm.required this.onChanged,
+    this.bottomMargin=3
+  });
 
   @override
   __SettingRadioGroupState createState() => __SettingRadioGroupState();
@@ -125,7 +204,7 @@ class __SettingRadioGroupState extends fm.State<_SettingRadioGroup> {
   fm.Widget build(fm.BuildContext context) {
     return fm.Container(
         color: fm.Colors.white,
-        margin: fm.EdgeInsets.only(bottom:3),
+        margin: fm.EdgeInsets.only(bottom:widget.bottomMargin),
         child: fm.Wrap (
             children: widget.values.map((v) =>
                 fm.InkWell(
@@ -358,6 +437,60 @@ class LanguageSettingWidget extends fm.StatelessWidget {
   }
 }
 
+class StartingFormationWidget extends fm.StatelessWidget {
+  @override
+  fm.Widget build(fm.BuildContext context) {
+    return pp.Consumer<Settings>(
+      builder: (context,settings,child) => fm.Column(
+          crossAxisAlignment: fm.CrossAxisAlignment.stretch,
+          children: [
+            _SettingTitle('Starting Formation'),
+            _SettingRadioGroup(
+                groupValue: settings.startingFormation,
+                values: ['Facing Couples', 'Squared Set', 'Normal Lines'],
+                onChanged: (value) {
+                  settings.startingFormation = value;
+                }),
+            //  TODO text edit to enter other formations
+          ]),
+    );
+  }
+}
+
+class DancerIdentificationWidget extends fm.StatelessWidget {
+  @override
+  fm.Widget build(fm.BuildContext context) {
+    return pp.Consumer<Settings>(
+      builder: (context,settings,child) => fm.Column(
+          crossAxisAlignment: fm.CrossAxisAlignment.stretch,
+          children: [
+            _SettingTitle('Dancer Identification'),
+            _SettingRadioGroup(
+                groupValue: settings.dancerIdentification,
+                values: ['None', 'Dancer Numbers', 'Couple Numbers', 'Names'],
+                onChanged: (value) {
+                  settings.dancerIdentification = value;
+                }),
+          ]),
+    );
+  }
+}
+
+class DancerShapesWidget extends fm.StatelessWidget {
+  @override
+  fm.Widget build(fm.BuildContext context) {
+    return pp.Consumer<Settings>(
+      builder: (context,settings,child) => _SettingCheckbox(
+        name:'Dancer Shapes',
+        value: settings.dancerShapes,
+        onChanged: (value) {
+          settings.dancerShapes = value;
+        },
+      ),
+    );
+  }
+}
+
 
 class DancerColorsSettingWidget extends fm.StatefulWidget {
   @override
@@ -397,28 +530,56 @@ class _DancerColorsSettingWidgetState extends fm.State<DancerColorsSettingWidget
   }
 }
 
+class SequencerDancerColorsWidget extends fm.StatefulWidget {
+  @override
+  _SequencerDancerColorsWidgetState createState() => _SequencerDancerColorsWidgetState();
+}
 
-class _SettingsState extends fm.State<SettingsFrame> {
-
+class _SequencerDancerColorsWidgetState extends fm.State<SequencerDancerColorsWidget> {
   @override
   fm.Widget build(fm.BuildContext context) {
-    return pp.Consumer2<Settings,TitleModel>(
-        builder: (context, settings, titleModel, child) {
-          titleModel.title = 'Settings';
-          return fm.Container(
-            color: Color.LIGHTGREY,
-              child:fm.ListView(children: [
-                DancerSpeedSettingWidget(),
-                LoopSettingWidget(),
-                GridSettingWidget(),
-                PathsSettingWidget(),
-                NumbersSettingWidget(),
-                DancerColorsSettingWidget(),
-                PhantomsSettingWidget(),
-                GeometrySettingWidget(),
-                LanguageSettingWidget()
-          ]));
-        });
+    return pp.Consumer<Settings>(
+      builder: (context,settings,child) => fm.Column(
+          crossAxisAlignment: fm.CrossAxisAlignment.stretch,
+          children: [
+            _SettingTitle('Dancer Colors'),
+            _SettingRadioGroup(
+              bottomMargin: 0,
+              groupValue: settings.showDancerColors,
+              values: ['By Couple','Random','None'],
+              onChanged: (value) {
+                settings.showDancerColors = value;
+              },
+            ),
+            if (settings.showDancerColors == 'By Couple')
+            fm.Container(
+                color: fm.Colors.white,
+                alignment: fm.Alignment(-1.0,0.0),
+                child: fm.Wrap (
+                  children: [
+                    for (var i in [1,2,3,4])
+                      fm.Container(
+                          margin: fm.EdgeInsets.fromLTRB(10, 2, 10, 2),
+                          child:_SettingsColorDropDown(
+                            currentValue: settings.coupleColor(i),
+                            onChanged: (String value) {
+                              setState(() {
+                                settings.setCoupleColor(i, value);
+                              });
+                            },
+                          )
+                      ),
+                  ],
+                )),
+            if (settings.showDancerColors == 'By Couple')
+                _SettingText('You can also set a single dancer color by ' +
+                    (TamUtils.isTouchDevice() ? 'long-pressing' : 'right-clicking') +
+                    ' on the dancer.'),
+            fm.Container(
+              height: 3,
+              color: Color.LIGHTGRAY,
+            )
+          ]),
+    );
   }
-
 }

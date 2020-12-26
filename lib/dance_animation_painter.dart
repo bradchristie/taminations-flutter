@@ -48,7 +48,7 @@ class DanceAnimationPainter extends fm.ChangeNotifier implements fm.CustomPainte
   var _showPaths = false;
   var _showNumbers = Dancer.NUMBERS_OFF;
   var _geometry = Geometry.SQUARE;
-  //  randomColors  TODO
+  var _randomColors = false;
   XmlElement _tam;
   List<Dancer> dancers = [];
   var _interactiveDancer = -1;
@@ -94,6 +94,27 @@ class DanceAnimationPainter extends fm.ChangeNotifier implements fm.CustomPainte
       : [Color.LIGHTGRAY, Color.RED, Color.GREEN, Color.BLUE, Color.YELLOW,
         Color.LIGHTGRAY, Color.LIGHTGRAY, Color.LIGHTGRAY, Color.LIGHTGRAY];
 
+  final _boyNames = ['Adam','Brad','Carl','David',
+    'Eric','Frank',
+    'Gary','Hank',
+    'John','Kevin','Larry',
+    'Mark','Paul','Ray','Scott','Tim','Wally'];
+  final _girlNames = ['Alice','Barb','Carol','Donna',
+    'Helen', 'Karen','Irene','Janet','Linda','Mary','Nancy',
+    'Pam','Ruth','Susan','Tina','Wanda'];
+  final _randomColorList = [
+    Color.BLACK,
+    Color.BLUE,
+    Color.CYAN,
+    Color.GRAY,
+    Color.GREEN,
+    Color.MAGENTA,
+    Color.ORANGE,
+    Color.RED,
+    Color.WHITE,
+    Color.YELLOW
+  ];
+
   DanceAnimationPainter()  {
     dancers = [ ];
     _ticker = Ticker((_) { notifyListeners(); });
@@ -117,10 +138,25 @@ class DanceAnimationPainter extends fm.ChangeNotifier implements fm.CustomPainte
   }
 
   void setNumbers(String value) {
-    if (_interactiveDancer >= 0) value = 'None';
-    _showNumbers = Dancer.NUMBERS_OFF;
-    if (value == '1-8') _showNumbers = Dancer.NUMBERS_DANCERS;
-    if (value == '1-4') _showNumbers = Dancer.NUMBERS_COUPLES;
+    if (_interactiveDancer >= 0) {
+      value = 'None';
+      _showNumbers = Dancer.NUMBERS_OFF;
+    }
+    else if (value == 'None')
+      _showNumbers = Dancer.NUMBERS_OFF;
+    else if (value == '1-8' || value == 'Dancer Numbers')
+      _showNumbers = Dancer.NUMBERS_DANCERS;
+    else if (value == '1-4' || value == 'Couple Numbers')
+      _showNumbers = Dancer.NUMBERS_COUPLES;
+    else if (value == 'Names') {
+      _showNumbers = Dancer.NUMBERS_NAMES;
+      _boyNames.shuffle();
+      _girlNames.shuffle();
+      for (var i=0; i<dancers.length; i++) {
+        final d = dancers[i];
+        d.name = d.gender == Gender.BOY ? _boyNames[i] : _girlNames[i];
+      }
+    }
     for (var d in dancers) {
       if (d.showNumber != _showNumbers) {
         d.showNumber = _showNumbers;
@@ -129,13 +165,55 @@ class DanceAnimationPainter extends fm.ChangeNotifier implements fm.CustomPainte
     }
   }
 
-  void setDancerColor(int dancerNum, Color c) {
-    dancers.where((d) => (int.tryParse(d.number) ?? -1) == dancerNum).forEach((d) {
-      if (d.fillColor != c) {
-        d.fillColor = c;
-        _redraw();
+  void setColors(bool isOn) {
+    var needsRedraw = false;
+    for (final d in dancers) {
+      if (d.showColor != isOn) {
+        d.showColor = isOn;
+        needsRedraw = true;
       }
-    });
+    }
+    if (needsRedraw)
+      _redraw();
+  }
+
+  void setRandomColors(bool value) {
+    if (value != _randomColors) {
+      _randomColors = value;
+      _randomColorList.shuffle();
+      for (var i=0; i<dancers.length; i++) {
+        final d = dancers[i];
+        d.showColor = true;
+        d.fillColor = d.gender == Gender.PHANTOM
+            ? Color.LIGHTGRAY
+            : _randomColorList[i];
+      }
+      _redraw();
+    }
+  }
+
+  void setDancerColor(int dancerNum, Color c) {
+    if (!_randomColors) {
+      dancers.where((d) => (int.tryParse(d.number) ?? -1) == dancerNum)
+          .forEach((d) {
+        if (d.fillColor != c) {
+          d.fillColor = c;
+          _redraw();
+        }
+      });
+    }
+  }
+
+  void setShapes(bool value) {
+    var needRedraw = false;
+    for (final d in dancers) {
+      if (d.showShape != value) {
+        d.showShape = value;
+        needRedraw = true;
+      }
+    }
+    if (needRedraw)
+      _redraw();
   }
 
   void setSpeed(String speed) {

@@ -20,7 +20,6 @@
 
 import 'package:flutter/material.dart' as fm;
 import 'package:provider/provider.dart' as pp;
-import 'package:platform/platform.dart';
 
 import '../common.dart';
 import '../settings.dart';
@@ -85,13 +84,7 @@ class TutorialModel extends PracticeModel {
 
   @override
   void nextDialog(fm.BuildContext context, DanceAnimationPainter painter) {
-    var hints = mouseHints;
-    try {
-      final platform = LocalPlatform();
-      if (platform.isIOS || platform.isAndroid)
-        hints = touchHints;
-      //  Currently web doesn't even have a platform, LocalPlatform is not supported
-    } on UnsupportedError catch (_) { }
+    final hints = TamUtils.isTouchDevice() ? touchHints : mouseHints;
     final settings = pp.Provider.of<Settings>(context,listen: false);
     final fingers = [
       (settings.primaryControl=='Left Finger') ? 'Left' : 'Right',

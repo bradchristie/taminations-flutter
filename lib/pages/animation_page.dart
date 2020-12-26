@@ -202,22 +202,38 @@ class _AnimationFrameState extends fm.State<AnimationFrame>
               //  Dance area with animations
               fm.Expanded(child: pp.Consumer<Settings>(
                   builder: (context, settings, child) {
+
                     //  Send current settings to the painter
                     painter.setGridVisibility(settings.grid);
-                    painter.setNumbers(settings.numbers);
+                    painter.setNumbers(appState.value.mainPage == MainPage.SEQUENCER  ? settings.dancerIdentification : settings.numbers);
                     painter.setSpeed(settings.speed);
                     painter.setPaths(settings.paths);
-                    painter.setLoop(settings.loop);
+                    painter.setLoop(appState.value.mainPage == MainPage.SEQUENCER ? false : settings.loop);
+                    painter.setShapes(appState.value.mainPage == MainPage.SEQUENCER
+                        ? settings.dancerShapes : false);
                     painter.setPhantoms(settings.phantoms);
-                    painter.setGeometry(Geometry.fromString(settings.geometry).geometry);
+                    painter.setGeometry(appState.value.mainPage == MainPage.SEQUENCER ? Geometry.SQUARE : Geometry.fromString(settings.geometry).geometry);
                     //  Dancer colors - first check individual color, then couple color
-                    for (var i=1; i<=12; i++) {
-                      final individualColor = settings.dancerColor(i);
-                      if (individualColor != 'default')
-                        painter.setDancerColor(i, Color.fromName(individualColor));
-                      else {
-                        final coupleColor = settings.coupleColor((i-1) ~/ 2 + 1);
-                        painter.setDancerColor(i,Color.fromName(coupleColor));
+                    painter.setColors(appState.value.mainPage == MainPage.SEQUENCER
+                        ? settings.showDancerColors!='None' : false);
+                    if (appState.value.mainPage == MainPage.SEQUENCER && settings.showDancerColors == 'Random')
+                      painter.setRandomColors(true);
+                    else {
+                      painter.setRandomColors(false);
+                    }
+                    if (appState.value.mainPage != MainPage.SEQUENCER ||
+                        settings.showDancerColors == 'By Couple') {
+                      for (var i = 1; i <= 12; i++) {
+                        final individualColor = settings.dancerColor(i);
+                        if (individualColor != 'default')
+                          painter.setDancerColor(
+                              i, Color.fromName(individualColor));
+                        else {
+                          final coupleColor = settings.coupleColor(
+                              (i - 1) ~/ 2 + 1);
+                          painter.setDancerColor(
+                              i, Color.fromName(coupleColor));
+                        }
                       }
                     }
 

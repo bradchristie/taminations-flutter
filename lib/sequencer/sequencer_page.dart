@@ -85,7 +85,7 @@ class _SequencerPageState extends fm.State<SequencerPage> {
                           else if (tamState.value.detailPage == DetailPage.ABBREVIATIONS)
                             return AbbreviationsFrame();
                           else if (tamState.value.detailPage == DetailPage.SETTINGS)
-                            return SettingsFrame();  // TODO customized for Sequencer
+                            return SequencerSettingsFrame();
                           else
                             return WebFrame('info/sequencer.html');
                         }

@@ -39,6 +39,10 @@ class Settings extends fm.ChangeNotifier {
   String _practiceGender = 'Boy';
   String _practiceSpeed = 'Slow';
   String _primaryControl = 'Left Finger';
+  String _startingFormation = 'Squared Set';
+  bool _dancerShapes = true;
+  String _dancerIdentification = 'None';
+  String _showDancerColors = 'By Couple';
 
   SharedPreferences prefs;
 
@@ -73,6 +77,10 @@ class Settings extends fm.ChangeNotifier {
     _practiceGender = prefs.getString('PracticeGender') ?? 'Boy';
     _practiceSpeed = prefs.getString('PracticeSpeed') ?? 'Slow';
     _primaryControl = prefs.getString('PrimaryControl') ?? 'Left Finger';
+    _startingFormation = prefs.getString('Starting Formation') ?? 'Static Square';
+    _dancerShapes = prefs.getBool('Dancer Shapes') ?? true;
+    _dancerIdentification = prefs.getString('Dancer Identification') ?? 'None';
+    _showDancerColors = prefs.getString('Dancer Colors') ?? 'By Couple';
     notifyListeners();
     return true;
   }
@@ -194,6 +202,34 @@ class Settings extends fm.ChangeNotifier {
   set primaryControl(String value) {
     _primaryControl = value;
     prefs.setString('PrimaryControl',value);
+    notifyListeners();
+  }
+
+  String get startingFormation => _startingFormation;
+  set startingFormation(String value) {
+    _startingFormation = value;
+    prefs.setString('Starting Formation',value);
+    notifyListeners();
+  }
+
+  bool get dancerShapes => _dancerShapes;
+  set dancerShapes(bool value) {
+    _dancerShapes = value;
+    prefs.setBool('Dancer Shapes', value);
+    notifyListeners();
+  }
+
+  String get dancerIdentification => _dancerIdentification;
+  set dancerIdentification(String value) {
+    _dancerIdentification = value;
+    prefs.setString('Dancer Identification',value);
+    notifyListeners();
+  }
+
+  String get showDancerColors => _showDancerColors;
+  set showDancerColors(String value) {
+    _showDancerColors = value;
+    prefs.setString('Dancer Colors',value);
     notifyListeners();
   }
 
