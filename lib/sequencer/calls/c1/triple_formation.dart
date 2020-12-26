@@ -110,11 +110,11 @@ class TripleBox extends TripleFormation {
   List<CallContext> tripleFormations(CallContext ctx) =>
       [
         CallContext.fromContext(ctx,dancers:ctx.dancers
-            .where((d) => major(d.location).isGreaterThan(1.0))),
+            .where((d) => major(d.location).isGreaterThan(1.0)).toList()),
         CallContext.fromContext(ctx,dancers:ctx.dancers
-            .where((d) => major(d.location).abs().isLessThan(3.0))),
+            .where((d) => major(d.location).abs().isLessThan(3.0)).toList()),
         CallContext.fromContext(ctx,dancers:ctx.dancers
-            .where((d) => major(d.location).isLessThan(-1.0)))
+            .where((d) => major(d.location).isLessThan(-1.0)).toList())
       ];
 
 
@@ -149,11 +149,11 @@ class TripleLine extends TripleFormation {
     final xVal = ctx.dancers.maxOf((d) => major(d.location));
     return [
       CallContext.fromContext(ctx, dancers:ctx.dancers
-          .where((d) => major(d.location).isAbout(-xVal))),
+          .where((d) => major(d.location).isAbout(-xVal)).toList()),
       CallContext.fromContext(ctx, dancers:ctx.dancers
-          .where((d) => major(d.location).isAbout(0))),
+          .where((d) => major(d.location).isAbout(0)).toList()),
       CallContext.fromContext(ctx, dancers:ctx.dancers
-          .where((d) => major(d.location).isAbout(xVal))),
+          .where((d) => major(d.location).isAbout(xVal)).toList()),
     ];
   }
 

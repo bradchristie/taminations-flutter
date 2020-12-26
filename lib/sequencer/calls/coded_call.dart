@@ -222,7 +222,7 @@ abstract class CodedCall extends Call {
 
     'californiatwirl'.ri: (_) => CaliforniaTwirl(),
     'castashadowcenter(go|cast)?34'.ri: (name) => CastAShadow(name),
-    '(cross)castback'.ri: (name) => CastBack(name),
+    '(cross)?castback'.ri: (name) => CastBack(name),
     'castoff34'.ri: (_) => CastOffThreeQuarters(),
     '(left)?(split)?catch(1|2|3|4)'.ri: (name) => Catch(name),
     'center'.ri: (_) => Centers(),
