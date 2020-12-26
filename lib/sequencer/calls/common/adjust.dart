@@ -27,25 +27,25 @@ import '../../../tam_utils.dart';
 class Adjust extends Action {
 
   static Map<RegExp,String> formationMap = {
-  '.*lines?' .r : 'Normal Lines' ,
-  '.*thar' .r : 'Thar RH Boys' ,
-  '.*square(d)?set' .r : 'Squared Set' ,
-  '.*boxes?' .r : 'Eight Chain Thru' ,
-  '.*columns?' .r : 'Eight Chain Thru' ,
-  '.*14tag' .r : 'Quarter Tag' ,
-  '.*diamonds?' .r : 'Diamonds RH Girl Points' ,
-  '.*tidal(wave|line)?' .r : 'Tidal Line RH' ,
-  '.*hourglass' .r : 'Hourglass RH BP' ,
-  '.*galaxy' .r : 'Galaxy RH GP' ,
-  '.*butterfly' .r : 'Butterfly RH' ,
-  '.*o' .r : 'O RH'
+  '.*lines?'.ri : 'Normal Lines' ,
+  '.*thar'.ri : 'Thar RH Boys' ,
+  '.*square(d)?set'.ri : 'Squared Set' ,
+  '.*boxes?'.ri : 'Eight Chain Thru' ,
+  '.*columns?'.ri : 'Eight Chain Thru' ,
+  '.*14tag'.ri : 'Quarter Tag' ,
+  '.*diamonds?'.ri : 'Diamonds RH Girl Points' ,
+  '.*tidal(wave|line)?'.ri : 'Tidal Line RH' ,
+  '.*hourglass'.ri : 'Hourglass RH BP' ,
+  '.*galaxy'.ri : 'Galaxy RH GP' ,
+  '.*butterfly'.ri : 'Butterfly RH' ,
+  '.*o'.ri : 'O RH'
   };
 
   Adjust(String name) : super(name);
 
   @override
   Future<void> perform(CallContext ctx, [int stackIndex=0]) async {
-    var fname = name.replaceFirst('Adjust to (an?)? ' .r, '' );
+    var fname = TamUtils.normalizeCall(name.replaceFirst('Adjust to (an?)? '.ri, '' ));
     String formation;
     for (var r in formationMap.keys) {
       if (fname.matches(r))
