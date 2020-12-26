@@ -203,7 +203,7 @@ class CallContext {
   //  Load all XML files that might be used to interpret a call
   static Future<void> _loadAllFilesForCall(String call) async {
     for (var item in call.minced()) {
-      var norm = TamUtils.normalizeCall(item);
+      var norm = TamUtils.normalizeCall(item).toLowerCase();
       var callitems = TamUtils.callmap[norm] ?? <CallListDatum>[];
       for (var callitem in callitems) {
         await loadOneFile(callitem.link);

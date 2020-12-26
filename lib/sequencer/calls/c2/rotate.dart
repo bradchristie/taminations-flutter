@@ -29,8 +29,8 @@ class Rotate extends Action {
   Future<void> perform(CallContext ctx, [int stackIndex = 0]) async {
     if (!ctx.isLines() || !ctx.dancers.every((d) => ctx.isInCouple(d)))
       throw CallError('Unable to Rotate from this formation');
-    final leaders = ctx.dancers.where((d) => d.data.leader);
-    final trailers = ctx.dancers.where((d) => d.data.trailer);
+    final leaders = ctx.dancers.where((d) => d.data.leader).toList();
+    final trailers = ctx.dancers.where((d) => d.data.trailer).toList();
     if (leaders.isNotEmpty) {
       await ctx.subContext(leaders, (ctx2) async {
         await ctx2.applyCalls('Half Wheel Around');
