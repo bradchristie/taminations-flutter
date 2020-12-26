@@ -28,7 +28,7 @@ class Phantom extends Action {
     _subcall = name.replaceFirst('Phantom ', '');
   }
 
-  CallContext _addPhantoms(CallContext ctx) {
+  Future<CallContext> _addPhantoms(CallContext ctx) async {
     //  Add all the phantoms
     //  This assumes lines, will not work
     //  for phantom column formations
@@ -58,7 +58,7 @@ class Phantom extends Action {
     final phantomctx = CallContext.fromContext(ctx,dancers: ctx.dancers+phantoms);
     //  Find good rotation
     phantomctx.analyze();
-    return phantomctx.rotatePhantoms(_subcall)
+    return await phantomctx.rotatePhantoms(_subcall)
         ?? thrower(CallError('Unable to find phantom formation for $_subcall'));
   }
 
@@ -72,7 +72,7 @@ class Phantom extends Action {
       //  Make a call context for this group
       final groupctx = CallContext.fromContext(ctx,dancers: group);
       //  Add phantoms to make 8 dancers
-      final phantomctx = _addPhantoms(groupctx);
+      final phantomctx = await _addPhantoms(groupctx);
       //  Perform 8-dancer call
       await phantomctx.applyCalls(_subcall);
       //  Append the results
