@@ -137,6 +137,7 @@ class Path {
     if (movelist.isNotEmpty) {
       var first = movelist.removeAt(0);
       movelist.insert(0, first.skew(x,y));
+      recalculate();
     }
   }
 

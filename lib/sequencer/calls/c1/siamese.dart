@@ -39,7 +39,7 @@ class Siamese extends FourDancerConcept {
     tandems = ctx.dancers.where((d) {
       final d2 = ctx.dancerInBack(d);
       return d2 != null && ctx.dancersInBack(d).length % 2 == 1
-          && couples.flatten().none((it) => it == d && it == d2);
+          && couples.flatten().none((it) => it == d || it == d2);
       }).map((d) => [d,ctx.dancerInBack(d)]).toList();
     //  Better be all the dancers
     if ((couples+tandems).flatten().length == ctx.dancers.length)

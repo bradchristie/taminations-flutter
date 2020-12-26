@@ -53,7 +53,7 @@ abstract class ModifiedFormationConcept extends Action {
     if (!ctx.adjustToFormation(modifiedFormationName,rotate:180) &&
         !ctx.adjustToFormation(modifiedFormationName,rotate:90))
       throw CallError('Unable to adjust $formationName to $modifiedFormationName' );
-    var adjusted = ctx.dancers.where((d) => d.path.movelist.isNotEmpty);
+    var adjusted = ctx.dancers.where((d) => d.path.movelist.isNotEmpty).toList();
 
     //  Perform the call
     await ctx.applyCalls(realCall);

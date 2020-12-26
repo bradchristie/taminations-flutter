@@ -901,7 +901,6 @@ class CallContext {
       //  If it does, get the offsets
       var matchResult = ctx1.computeFormationOffsets(ctx2, mapping, delta : 0.5);
       adjustToFormationMatch(matchResult);
-      print('Adjust to $fname worked');
       return true;
     }
     return false;
