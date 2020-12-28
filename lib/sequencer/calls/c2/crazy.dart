@@ -29,7 +29,7 @@ class Crazy extends Action {
   Future<void> perform(CallContext ctx, [int stackIndex = 0]) async {
     final crazyCall = name.replaceFirst('.*Crazy '.r, '');
     var crazy8 = crazyCall;
-    if (crazyCall.matches('counter rotate'.ri) ||
+    if (crazyCall.matches('counter rotate.*'.ri) ||
         crazyCall.matches('circulate.*'.ri))
       crazy8 = 'Split $crazyCall';
     final crazy4 = crazyCall.matches('counter rotate.*'.ri)
