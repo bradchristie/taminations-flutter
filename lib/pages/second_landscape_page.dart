@@ -25,12 +25,13 @@ import 'package:provider/provider.dart' as pp;
 import 'package:xml/xml.dart';
 
 import '../button.dart';
+import '../color.dart';
 import '../dance_animation_painter.dart';
 import '../extensions.dart';
+import '../level_data.dart';
 import '../main.dart';
 import '../tam_utils.dart';
 import '../title_bar.dart';
-import '../color.dart';
 import 'anim_list_page.dart';
 import 'animation_page.dart';
 import 'settings_page.dart';
@@ -63,56 +64,64 @@ class _SecondLandscapePageState extends fm.State<SecondLandscapePage> {
 
   @override
   fm.Widget build(fm.BuildContext context) {
-    var router = fm.Router
-        .of(context)
-        .routerDelegate as TaminationsRouterDelegate;
-    var path = router.currentConfiguration;
-    return pp.ChangeNotifierProvider<DanceAnimationPainter>(
-      create: (_) => DanceAnimationPainter(),
-      child: pp.ChangeNotifierProvider<TitleModel>(
-        create: (_) => TitleModel(),
-        child: fm.Scaffold(
-            backgroundColor: Color.LIGHTGRAY,
-            appBar: fm.PreferredSize(
-                preferredSize: fm.Size.fromHeight(56.0),
-                child: pp.Consumer<DanceAnimationPainter>(
-                    builder: (context, painter, child) =>
-                        TitleBar()
-                 //   title: painter.title,
-                 //   level: LevelData.find(path.level).name)
-                )),
-            body: pp.Consumer<TamState>(
-              builder: (context, tamState, _) =>
-                  SecondLandscapeFrame(
-                      leftChild: AnimListFrame(path.link),
-                      centerChild: fm.Column(
-                        children: [
-                          fm.Expanded(child: AnimationFrame()),
-                          fm.Container(
-                            color: Color.FLOOR,
-                            child: fm.Row(
-                              children: [
-                                fm.Expanded(
-                                    child: Button('Definition', onPressed: () {
-                                      tamState.change(detailPage: DetailPage.DEFINITION);
-                                    })),
-                                fm.Expanded(
-                                    child: Button('Settings', onPressed: () {
-                                      tamState.change(detailPage: DetailPage.SETTINGS);
-                                    })),
-                              ],
-                            ),
-                          )
-                        ],
+    return pp.MultiProvider(
+          providers: [
+            pp.ChangeNotifierProvider(create: (_) => DanceAnimationPainter()),
+            pp.ChangeNotifierProvider(create: (_) => TitleModel())
+          ],
+          child: pp.Consumer<TamState>(
+            builder: (context,tamState,_) {
+              final painter = pp.Provider.of<DanceAnimationPainter>(context,listen:false);
+              TamUtils.getXMLAsset(tamState.link).then((doc) {
+                var tam = TamUtils.tamList(doc)
+                    .where((it) => !(it('display','').startsWith('n')))
+                    .toList()[max(0, tamState.animnum)];
+                painter.setAnimation(tam);
+              });
+              final title = pp.Provider.of<TitleModel>(context,listen: false);
+              title.level = LevelData.find(tamState.link).name;
+              return fm.Scaffold(
+                backgroundColor: Color.LIGHTGRAY,
+                appBar: fm.PreferredSize(
+                    preferredSize: fm.Size.fromHeight(56.0),
+                    child: pp.Consumer<DanceAnimationPainter>(
+                        builder: (context, painter, child) =>
+                            TitleBar()
+                      //   title: painter.title,
+                      //   level: LevelData.find(path.level).name)
+                    )),
+                body:
+                      SecondLandscapeFrame(
+                          leftChild: AnimListFrame(tamState.link),
+                          centerChild: fm.Column(
+                            children: [
+                              fm.Expanded(child: AnimationFrame()),
+                              fm.Container(
+                                color: Color.FLOOR,
+                                child: fm.Row(
+                                  children: [
+                                    fm.Expanded(
+                                        child: Button('Definition', onPressed: () {
+                                          tamState.change(
+                                              detailPage: DetailPage.DEFINITION);
+                                        })),
+                                    fm.Expanded(
+                                        child: Button('Settings', onPressed: () {
+                                          tamState.change(
+                                              detailPage: DetailPage.SETTINGS);
+                                        })),
+                                  ],
+                                ),
+                              )
+                            ],
+                          ),
+                          rightChild: tamState.detailPage == DetailPage.SETTINGS
+                              ? SettingsFrame()
+                              : WebFrame(tamState.link)
                       ),
-                      rightChild: path.detailPage == DetailPage.SETTINGS
-                          ? SettingsFrame()
-                          : WebFrame(path.link)
-                  ),
-            )
-        ),
-      ),
-    );
+            ); }
+          )
+      );
   }
 }
 

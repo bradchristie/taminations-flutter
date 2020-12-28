@@ -33,7 +33,6 @@ import '../level_data.dart';
 import '../main.dart';
 import '../math/vector.dart';
 import '../settings.dart';
-import '../tam_utils.dart';
 import '../title_bar.dart';
 
 class AnimationState extends fm.ChangeNotifier {
@@ -178,24 +177,8 @@ class _AnimationFrameState extends fm.State<AnimationFrame>
 
   @override
   fm.Widget build(fm.BuildContext context) {
-    //  We don't want the painter to reload the animation
-    //  every time the painter changes.  So first get the painter
-    //  without listening to it...
-    final quietPainter = pp.Provider.of<DanceAnimationPainter>(context,listen:false);
-    //  Now load the animation
     return pp.Consumer<TamState>(
-      builder: (context,appState,_) => fm.FutureBuilder<void>(
-        future: appState.mainPage == MainPage.SEQUENCER
-            ? quietPainter.setAnimation(TamUtils.getFormation('Static Square'))
-            : TamUtils.getXMLAsset(appState.link).then((doc) {
-          var tam = TamUtils.tamList(doc)
-              .where((it) => !(it('display','').startsWith('n')))
-              .toList()[max(0, appState.animnum)];
-          return quietPainter.setAnimation(tam);
-        }),
-        //  And now we can listen for animation changes
-        //  which will trigger a rebuild from here down
-        builder: (context,snapshot) => pp.Consumer<DanceAnimationPainter>(
+      builder: (context,appState,_) => pp.Consumer<DanceAnimationPainter>(
           builder: (context,painter,_) => fm.Column(children: [
               //  Dance area with animations
               fm.Expanded(child: pp.Consumer<Settings>(
@@ -372,7 +355,6 @@ class _AnimationFrameState extends fm.State<AnimationFrame>
                     ]),
               )
             ]),
-        ),
       ),
     );
   }

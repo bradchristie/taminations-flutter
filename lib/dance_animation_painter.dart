@@ -573,6 +573,7 @@ class DanceAnimationPainter extends fm.ChangeNotifier implements fm.CustomPainte
     _resetAnimation();
     partstr = _tam('parts','') + _tam('fractions','');
     hasParts = _tam('parts') != null;
+    print('setAnimation');
     notifyListeners();
   }
 

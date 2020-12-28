@@ -23,11 +23,12 @@ import 'package:provider/provider.dart' as pp;
 
 import '../button.dart';
 import '../pages/animation_page.dart';
-import 'sequencer_model.dart';
 import '../main.dart';
 import '../color.dart';
 
 class SequencerAnimationFrame extends fm.StatefulWidget {
+
+  SequencerAnimationFrame() : super(key: fm.ValueKey('Sequencer Animation Frame'));
 
   @override
   _SequencerAnimationFrameState createState() => _SequencerAnimationFrameState();
@@ -38,6 +39,7 @@ class _SequencerAnimationFrameState extends fm.State<SequencerAnimationFrame> {
 
   @override
   fm.Widget build(fm.BuildContext context) {
+    final appState = pp.Provider.of<TamState>(context,listen: false);
     return fm.Column(
       children: [
         fm.Expanded(
@@ -45,32 +47,29 @@ class _SequencerAnimationFrameState extends fm.State<SequencerAnimationFrame> {
         ),
         fm.Container(
           color: Color.FLOOR,
-          child: pp.Consumer<fm.ValueNotifier<TamState>>(
-            builder: (context,appState,_) => fm.Row(
-              children: [
-                fm.Expanded(
-                    child: Button('Help',onPressed: () {
-                      appState.value =
-                          TamState(mainPage:MainPage.SEQUENCER ,detailPage:DetailPage.HELP);
-                    },)
-                ),
-                fm.Expanded(
-                    child: Button('Settings',onPressed: () {
-                      appState.value =
-                          TamState(mainPage:MainPage.SEQUENCER ,detailPage:DetailPage.SETTINGS);
-                    })
-                ),
-                fm.Expanded(
-                    child: Button('Abbrev',onPressed: () {
-                      appState.value =
-                          TamState(mainPage:MainPage.SEQUENCER ,detailPage:DetailPage.ABBREVIATIONS);
-                    })
-                ),
-                fm.Expanded(
-                    child: Button('Calls')
-                ),
-              ],
-            ),
+          child: fm.Row(
+            children: [
+              fm.Expanded(
+                  child: Button('Help',onPressed: () {
+                    appState.change(detailPage:DetailPage.HELP);
+                  },)
+              ),
+              fm.Expanded(
+                  child: Button('Settings',onPressed: () {
+                    appState.change(detailPage:DetailPage.SETTINGS);
+                  })
+              ),
+              fm.Expanded(
+                  child: Button('Abbrev',onPressed: () {
+                    appState.change(detailPage:DetailPage.ABBREVIATIONS);
+                  })
+              ),
+              fm.Expanded(
+                  child: Button('Calls',onPressed: () {
+                    appState.change(detailPage:DetailPage.CALLS);
+                  })
+              ),
+            ],
           ),
         ),
       ],

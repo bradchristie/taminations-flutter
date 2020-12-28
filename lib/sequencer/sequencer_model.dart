@@ -38,7 +38,14 @@ class SequencerCall {
 class SequencerModel extends fm.ChangeNotifier {
 
   List<SequencerCall> calls;
-  String startingFormation = 'Static Square';  // TODO get from settings somehow
+  String _startingFormation = 'Static Square';  // TODO get from settings somehow
+  String get startingFormation => _startingFormation;
+  set startingFormation(String value) {
+    if (value != _startingFormation) {
+      _startingFormation = value;
+      reset();
+    }
+  }
   String partString = '';
   String errorString = '';
   DanceAnimationPainter animation = DanceAnimationPainter();

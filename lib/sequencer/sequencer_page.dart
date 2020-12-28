@@ -31,6 +31,7 @@ import 'abbreviations_model.dart';
 import 'calls_frame.dart';
 import 'sequencer_animation_frame.dart';
 import 'sequencer_model.dart';
+import '../settings.dart';
 
 class SequencerPage extends fm.StatefulWidget {
   @override
@@ -46,7 +47,9 @@ class _SequencerPageState extends fm.State<SequencerPage> {
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
+    final settings = pp.Provider.of<Settings>(context,listen: false);
     model = SequencerModel();
+    model.startingFormation = settings.startingFormation;
     abbreviationsModel = model.abbreviations;
     rightChild ??= WebFrame('info/sequencer.html');
   }
@@ -66,9 +69,10 @@ class _SequencerPageState extends fm.State<SequencerPage> {
               preferredSize: fm.Size.fromHeight(56.0),
               child: TitleBar()
           ),
-          body: pp.Consumer<TitleModel>(
-            builder: (context,titleModel,_) {
+          body: pp.Consumer2<TitleModel,Settings>(
+            builder: (context,titleModel,settings,_) {
               titleModel.title = 'Sequencer';
+              model.startingFormation = settings.startingFormation;
               return fm.Row(
                 children: [
                   fm.Expanded(child: SequencerCallsFrame()),
@@ -78,13 +82,13 @@ class _SequencerPageState extends fm.State<SequencerPage> {
                   //  Dummy title model to intercept titles we don't want to show
                   pp.ChangeNotifierProvider(
                     create: (_) => TitleModel(),
-                    child: fm.Expanded(child: pp.Consumer<fm.ValueNotifier<TamState>>(
+                    child: fm.Expanded(child: pp.Consumer<TamState>(
                         builder: (context,tamState,_) {
-                          if (tamState.value.detailPage == DetailPage.CALLS)
+                          if (tamState.detailPage == DetailPage.CALLS)
                             return fm.Container();  // TODO
-                          else if (tamState.value.detailPage == DetailPage.ABBREVIATIONS)
+                          else if (tamState.detailPage == DetailPage.ABBREVIATIONS)
                             return AbbreviationsFrame();
-                          else if (tamState.value.detailPage == DetailPage.SETTINGS)
+                          else if (tamState.detailPage == DetailPage.SETTINGS)
                             return SequencerSettingsFrame();
                           else
                             return WebFrame('info/sequencer.html');

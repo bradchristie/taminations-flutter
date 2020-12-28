@@ -295,7 +295,7 @@ class TaminationsRouterDelegate extends fm.RouterDelegate<TamState>
                           if (appState.mainPage == MainPage.SEQUENCER)
                             appState.change(mainPage: MainPage.LEVELS);
                           else if (appState.mainPage == MainPage.ANIMATIONS)
-                            appState.change(mainPage: MainPage.LEVELS, link:'');
+                            appState.change(mainPage: MainPage.LEVELS, detailPage: DetailPage.NONE, link:'');
                           else if (appState.mainPage == MainPage.STARTPRACTICE)
                             appState.change(mainPage: MainPage.LEVELS);
                           else if (appState.mainPage == MainPage.PRACTICE ||
