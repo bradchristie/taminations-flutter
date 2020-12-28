@@ -97,7 +97,7 @@ class SequencerSettingsFrame extends fm.StatelessWidget {
           return fm.Container(
               color: Color.LIGHTGREY,
               child:fm.ListView(children: [
-                StartingFormationWidget(),
+                StartingFormationDropdownWidget(),
                 DancerSpeedSettingWidget(),
                 GridSettingWidget(),
                 PathsSettingWidget(),
@@ -437,7 +437,7 @@ class LanguageSettingWidget extends fm.StatelessWidget {
   }
 }
 
-class StartingFormationWidget extends fm.StatelessWidget {
+class StartingFormationDropdownWidget extends fm.StatelessWidget {
   @override
   fm.Widget build(fm.BuildContext context) {
     return pp.Consumer<Settings>(
@@ -445,13 +445,33 @@ class StartingFormationWidget extends fm.StatelessWidget {
           crossAxisAlignment: fm.CrossAxisAlignment.stretch,
           children: [
             _SettingTitle('Starting Formation'),
-            _SettingRadioGroup(
-                groupValue: settings.startingFormation,
-                values: ['Facing Couples', 'Squared Set', 'Normal Lines'],
-                onChanged: (value) {
-                  settings.startingFormation = value;
-                }),
-            //  TODO text edit to enter other formations
+            fm.Container(
+              color: Color.WHITE,
+              padding: fm.EdgeInsets.only(left: 20),
+              margin: fm.EdgeInsets.only(bottom:3),
+              child: fm.DropdownButton<String>(
+                value: settings.startingFormation,
+                style: fm.TextStyle(fontSize: 20,color: Color.BLACK),
+                underline: fm.Container( height: 0, width:0 ),
+                onChanged: (newValue) {
+                  settings.startingFormation = newValue;
+                },
+                items: [
+                  'Facing Couples',
+                  'Squared Set',
+                  'Normal Lines',
+                  'Eight Chain Thru',
+                  'Double Pass Thru',
+                  'Ocean Waves',
+                  'Two-Faced Lines',
+                  'Diamonds',
+                  'Quarter Tag',
+                  'Columns',
+                  'Tidal Wave',
+                  'Blocks'
+                ].map((v) => fm.DropdownMenuItem(value:v, child:fm.Text(v))).toList(),
+              ),
+            )
           ]),
     );
   }
@@ -583,3 +603,4 @@ class _SequencerDancerColorsWidgetState extends fm.State<SequencerDancerColorsWi
     );
   }
 }
+

@@ -229,6 +229,7 @@ class CallContext {
   CallContext _source;
   bool _snap = true;
   bool _thoseWhoCan = false;
+  bool resolutionError = false;
   var genderMap = {
     'boy': Gender.BOY,
     'girl': Gender.GIRL,
@@ -553,7 +554,7 @@ class CallContext {
              'Dixie Grand',
              'Right and Left Grand'].contains(xmlCall.name)) {
           if (!_checkResolution(xmlCall.ctx2, xmlCall.xmlmap)) {
-            //  TODO resolution warning
+            resolutionError = true;
           }
         }
         // add XMLCall object to the call stack

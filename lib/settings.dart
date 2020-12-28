@@ -77,7 +77,7 @@ class Settings extends fm.ChangeNotifier {
     _practiceGender = prefs.getString('PracticeGender') ?? 'Boy';
     _practiceSpeed = prefs.getString('PracticeSpeed') ?? 'Slow';
     _primaryControl = prefs.getString('PrimaryControl') ?? 'Left Finger';
-    _startingFormation = prefs.getString('Starting Formation') ?? 'Static Square';
+    _startingFormation = prefs.getString('Starting Formation') ?? 'Squared Set';
     _dancerShapes = prefs.getBool('Dancer Shapes') ?? true;
     _dancerIdentification = prefs.getString('Dancer Identification') ?? 'None';
     _showDancerColors = prefs.getString('Dancer Colors') ?? 'By Couple';

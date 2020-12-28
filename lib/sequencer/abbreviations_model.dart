@@ -21,8 +21,14 @@
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:flutter/material.dart' as fm;
 import 'package:flutter/services.dart' as fs;
-import 'package:tuple/tuple.dart';
 import '../common.dart';
+
+class Abbreviation {
+  String abbr;
+  String expa;
+  bool isError=false;
+  Abbreviation(this.abbr,this.expa);
+}
 
 class AbbreviationsModel extends fm.ChangeNotifier {
 
@@ -73,8 +79,8 @@ class AbbreviationsModel extends fm.ChangeNotifier {
     'wad' : 'Walk and Dodge'
   };
 
-  List<Tuple2<String,String>> currentAbbreviations = [];
-  List<bool> errors = [];
+
+  List<Abbreviation> currentAbbreviations = [];
 
   AbbreviationsModel() {
     _load();
@@ -91,21 +97,20 @@ class AbbreviationsModel extends fm.ChangeNotifier {
     for (var k in prefs.getKeys()) {
       if (k.startsWith('abbrev '))
         currentAbbreviations.add(
-            Tuple2(k.replaceFirst('abbrev ',''),
+            Abbreviation(k.replaceFirst('abbrev ',''),
             prefs.getString(k)));
     }
-    currentAbbreviations = currentAbbreviations.sortedBy((e) => e.item1);
-    currentAbbreviations.add(Tuple2('',''));
-    errors = List.filled(currentAbbreviations.length,false);
+    currentAbbreviations = currentAbbreviations.sortedBy((e) => e.abbr);
+    currentAbbreviations.add(Abbreviation('',''));
   }
 
   void setAbbreviation(int index, String abbr) {
-    currentAbbreviations[index] = currentAbbreviations[index].withItem1(abbr);
+    currentAbbreviations[index].abbr = abbr;
     _save();
   }
 
   void setExpansion(int index, String expan) {
-    currentAbbreviations[index] = currentAbbreviations[index].withItem2(expan);
+    currentAbbreviations[index].expa = expan;
     _save();
   }
 
@@ -117,7 +122,7 @@ class AbbreviationsModel extends fm.ChangeNotifier {
   }
   void clear() {
     _clearStorage();
-    currentAbbreviations = [Tuple2('','')];
+    currentAbbreviations = [Abbreviation('','')];
     notifyListeners();
   }
 
@@ -125,44 +130,49 @@ class AbbreviationsModel extends fm.ChangeNotifier {
     if (!checkForErrors()) {
       _clearStorage();
       for (var p in currentAbbreviations) {
-        if (p.item1.isNotBlank)
-          prefs.setString('abbrev ${p.item1.trim()}', p.item2);
+        if (p.abbr.isNotBlank && !p.isError)
+          prefs.setString('abbrev ${p.abbr.trim()}', p.expa);
       }
     }
   }
 
   bool checkForErrors() {
-    final errorCount = errors.where((e) => e).length;
+    final errorCount = currentAbbreviations.where((e) => e.isError).length;
     for (var i=0; i<currentAbbreviations.length; i++) {
-      errors[i] = false;
       var p = currentAbbreviations[i];
+      p.isError = false;
       //  Check for invalid entries
-      if (p.item1.isNotBlank && p.item2.isNotBlank) {
-        if (p.item1.isBlank || p.item2.isBlank)
-          errors[i] = true;
-        if(p.item1.trim().contains(' '))
-          errors[i] = true;
+      if (p.abbr.isNotBlank && p.expa.isNotBlank) {
+        if (p.abbr.isBlank || p.expa.isBlank)
+          p.isError = true;
+        if(p.abbr.trim().contains(' '))
+          p.isError = true;
       }
       //  Check for words used in calling
-      if (TamUtils.words.contains(p.item1))
-        errors[i] = true;
+      if (TamUtils.words.contains(p.abbr))
+        p.isError = true;
       //  Check for duplicates
       //  Assumes abbreviations have already been lowercased
       for (var j=0; j<i; j++) {
-        if (currentAbbreviations[j].item1 == p.item1) {
-          errors[i] = true;
-          errors[j] = true;
+        if (currentAbbreviations[j].abbr == p.abbr) {
+          p.isError = true;
+          currentAbbreviations[j].isError = true;
         }
       }
     }
-    if (errors.where((e) => e).length != errorCount)
+    //  Add blank entry at end if it's not already there
+    if (currentAbbreviations.last.abbr.isNotBlank ||
+        currentAbbreviations.last.expa.isNotBlank)
+      currentAbbreviations.add(Abbreviation('',''));
+
+    if (currentAbbreviations.where((e) => e.isError).length != errorCount)
       notifyListeners();
-    return errors.any((element) => element);
+    return currentAbbreviations.any((item) => item.isError);
   }
 
   void copy() {
     final text = currentAbbreviations
-        .where((e) => e.item1.isNotBlank).map((e) => '${e.item1} ${e.item2}').join('\n');
+        .where((e) => e.abbr.isNotBlank).map((e) => '${e.abbr} ${e.expa}').join('\n');
     final clip = fs.ClipboardData(text:text);
     fs.Clipboard.setData(clip);
   }
@@ -170,7 +180,30 @@ class AbbreviationsModel extends fm.ChangeNotifier {
   void paste() {
     fs.Clipboard.getData('text/plain').then((value) {
       if (value is fs.ClipboardData)
-        print(value.text);  //  TODO set abbreviations
+        //  Process each line of pasted abbreviations
+        for (final line in value.text.split('\\n')) {
+          final breakup = line.divide('\\s+'.r);
+          if (breakup.length != 2)
+            continue;
+          final abbr = breakup[0].replaceAll('\\W'.r,'').trim();
+          final expansion = breakup[1].trim();
+          //  Check for valid abbreviation
+          if (abbr.isBlank || expansion.isBlank)
+            continue;
+          if (TamUtils.words.contains(abbr.toLowerCase()))
+            continue;
+          //  Look for and replace existing abbreviation
+          var found = false;
+          for (var i=0; i<currentAbbreviations.length; i++) {
+            if (currentAbbreviations[i].abbr == abbr.toLowerCase()) {
+              currentAbbreviations[i] = Abbreviation(abbr,expansion);
+              found = true;
+            }
+          }
+          //  Add a new abbreviation
+          if (!found)
+            currentAbbreviations.add(Abbreviation(abbr,expansion));
+        }
     });
   }
 

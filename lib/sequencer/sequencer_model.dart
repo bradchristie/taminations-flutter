@@ -38,7 +38,7 @@ class SequencerCall {
 class SequencerModel extends fm.ChangeNotifier {
 
   List<SequencerCall> calls;
-  String _startingFormation = 'Static Square';  // TODO get from settings somehow
+  String _startingFormation = 'Squared Set'; // overriden by Settings
   String get startingFormation => _startingFormation;
   set startingFormation(String value) {
     if (value != _startingFormation) {
@@ -88,7 +88,7 @@ class SequencerModel extends fm.ChangeNotifier {
     if (calls.isNotEmpty) {
       var lastCall = calls.last;
       calls.removeLast();
-      if (!_isComment(lastCall.name)) {
+      if (!isComment(lastCall.name)) {
         var totalBeats = calls.fold(0.0,(a,b) => a + b.beats);
         for (var d in animation.dancers) {
           while (d.path.beats > totalBeats)
@@ -105,7 +105,7 @@ class SequencerModel extends fm.ChangeNotifier {
   }
 
   Future<void> _interpretOneCall(String call) async {
-    if (_isComment(call)) {
+    if (isComment(call)) {
       calls.add(SequencerCall(call,beats:0.0,level:null));
       return Future<void>.value();
     }
@@ -131,6 +131,8 @@ class SequencerModel extends fm.ChangeNotifier {
       cctx.matchStandardFormation();
     if (cctx.isCollision())
       throw CallError('Unable to calculate valid animation.');
+    if (cctx.resolutionError)
+      errorString = 'Warning: Dancers are not resolved';
     cctx.appendToSource();
     animation.recalculate();
     var newbeats = animation.beats;
@@ -148,10 +150,10 @@ class SequencerModel extends fm.ChangeNotifier {
   String _replaceAbbreviations(String text) =>
       text.split('\\s+'.r)
           .map((word) => abbreviations.currentAbbreviations
-          .firstWhere((e) => e.item1 == word.toLowerCase(), orElse: () => null)?.item2 ?? word)
+          .firstWhere((e) => e.abbr == word.toLowerCase(), orElse: () => null)?.expa ?? word)
           .join(' ');
 
-  bool _isComment(String text) =>
+  bool isComment(String text) =>
       text.trim().startsWith('[^\\[a-zA-Z0-9]'.r);
 
   void _startSequence() {

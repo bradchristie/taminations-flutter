@@ -184,32 +184,42 @@ class _SequencerCallsFrameState extends fm.State<SequencerCallsFrame> {
                   ? Color.YELLOW
                   : (call?.level?.color ?? Color.WHITE),
               //  TODO no tap on comments
-              child: fm.InkWell(
-                  highlightColor: call?.level?.color?.darker() ?? Color.WHITE,
-                  onTap: () {
-                    model.animateAtCall(index);
-                  },
-                  child: fm.Row(
-                    children: [
-                      fm.Flexible(
-                        child: fm.Container(
-                            alignment: fm.Alignment.centerLeft,
-                            padding: fm.EdgeInsets.only(left: 20.0),
-                            child: AutoSizeText(
-                                call?.name ?? '', style: fm.TextStyle(fontSize: 20))
-                        ),
-                      ),
-                      fm.Container(
-                          alignment: fm.Alignment.topRight,
-                          padding: fm.EdgeInsets.only(top:2,right:2),
-                          child: fm.Text(call?.level?.name ?? '')
-                      )
-                    ],
-                  )
-              ),
-            ),
+              child:
+                  model.isComment(call?.name ?? '#')
+                      ? _OneLine(call?.name ?? '','')
+                      : fm.InkWell(
+                      highlightColor: call?.level?.color?.darker() ?? Color.WHITE,
+                      onTap: () {
+                        model.animateAtCall(index);
+                      },
+                      child: _OneLine(call?.name ?? '',call?.level?.name ?? ''))
+            )
           );
         });
   }
 
+}
+
+class _OneLine extends fm.StatelessWidget {
+  final String name;
+  final String level;
+  _OneLine(this.name,[this.level='']);
+
+  @override
+  fm.Widget build(fm.BuildContext context) => fm.Row(
+    children: [
+      fm.Flexible(
+        child: fm.Container(
+            alignment: fm.Alignment.centerLeft,
+            padding: fm.EdgeInsets.only(left: 20.0),
+            child: AutoSizeText(name, style: fm.TextStyle(fontSize: 20))
+        ),
+      ),
+      fm.Container(
+          alignment: fm.Alignment.topRight,
+          padding: fm.EdgeInsets.only(top:2,right:2),
+          child: fm.Text(level)
+      )
+    ],
+  );
 }

@@ -87,7 +87,7 @@ class _AbbreviationsFrameState extends fm.State<AbbreviationsFrame> {
                   return fm.Container(
                     child:child,
                     decoration: fm.BoxDecoration(
-                        color: model.errors[row] ? Color.RED.veryBright() : Color.WHITE,
+                        color: model.currentAbbreviations[row].isError ? Color.RED.veryBright() : Color.WHITE,
                         border: fm.Border(
                             bottom: fm.BorderSide(width: 1, color: fm.Colors.black),
                             left: fm.BorderSide(width: 1, color: fm.Colors.black))),
@@ -101,12 +101,12 @@ class _AbbreviationsFrameState extends fm.State<AbbreviationsFrame> {
                   style: fm.TextStyle(fontSize: 24),
                   controller: textEditController
                     ..text = isExpansion
-                        ? pm.Provider.of<AbbreviationsModel>(context, listen: false).currentAbbreviations[row].item2
-                        : pm.Provider.of<AbbreviationsModel>(context, listen: false).currentAbbreviations[row].item1,
+                        ? pm.Provider.of<AbbreviationsModel>(context, listen: false).currentAbbreviations[row].expa
+                        : pm.Provider.of<AbbreviationsModel>(context, listen: false).currentAbbreviations[row].abbr,
                 )
                     : fm.Text(isExpansion
-                    ? pm.Provider.of<AbbreviationsModel>(context, listen: false).currentAbbreviations[row].item2
-                    : pm.Provider.of<AbbreviationsModel>(context, listen: false).currentAbbreviations[row].item1,
+                    ? pm.Provider.of<AbbreviationsModel>(context, listen: false).currentAbbreviations[row].expa
+                    : pm.Provider.of<AbbreviationsModel>(context, listen: false).currentAbbreviations[row].abbr,
                     style: fm.TextStyle(fontSize: 24))
             ),
           ),

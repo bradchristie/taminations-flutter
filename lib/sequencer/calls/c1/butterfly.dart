@@ -35,7 +35,6 @@ class Butterfly extends ModifiedFormationConcept {
     if (!super.reformFormation(ctx)) {
       //  That didn't work, we are too far off from a butterfly
       //  So first just concentrate on the centers
-      print('Trying to adjust the centers: ${ctx.center(4)}');
       for (final d in ctx.dancers) {
         print('$d ${d.location}');
       }

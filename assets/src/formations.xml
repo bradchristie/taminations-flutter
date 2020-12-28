@@ -386,6 +386,13 @@
     <dancer gender="girl" x="0" y="1" angle="180"/>
   </formation>
 
+  <formation name="Ocean Waves"> <!-- for sequencer formation select -->
+    <dancer gender="boy" x="-2" y="3" angle="0"/>
+    <dancer gender="girl" x="-2" y="1" angle="180"/>
+    <dancer gender="girl" x="-2" y="-1" angle="0"/>
+    <dancer gender="boy" x="-2" y="-3" angle="180"/>
+  </formation>
+
   <formation name="Ocean Waves RH BGGB">
     <dancer gender="boy" x="-2" y="3" angle="0"/>
     <dancer gender="girl" x="-2" y="1" angle="180"/>
@@ -463,6 +470,13 @@
     <dancer gender="girl" x="-1" y="2.414" angle="112.5"/>
   </formation>
 
+  <formation name="Two-Faced Lines">
+    <dancer gender="boy" x="-2" y="3" angle="0"/>
+    <dancer gender="girl" x="-2" y="1" angle="0"/>
+    <dancer gender="girl" x="-2" y="-1" angle="180"/>
+    <dancer gender="boy" x="-2" y="-3" angle="180"/>
+  </formation>
+
   <formation name="Two-Faced Lines RH">
     <dancer gender="boy" x="-2" y="3" angle="0"/>
     <dancer gender="girl" x="-2" y="1" angle="0"/>
@@ -512,6 +526,12 @@
     <dancer gender="boy" x="0" y="-3" angle="0"/>
   </formation>
 
+  <formation name="Diamonds">
+    <dancer gender="boy" x="0" y="-3" angle="180"/>
+    <dancer gender="girl" x="-3" y="-2" angle="90"/>
+    <dancer gender="boy" x="0" y="-1" angle="0"/>
+    <dancer gender="girl" x="3" y="-2" angle="270"/>
+  </formation>
   <formation name="Diamonds RH Girl Points">
     <dancer gender="boy" x="0" y="-3" angle="180"/>
     <dancer gender="girl" x="-3" y="-2" angle="90"/>
@@ -866,6 +886,12 @@
     <dancer gender="boy" x="-1" y="1" angle="0"/>
   </formation>
 
+  <formation name="Columns">
+    <dancer gender="girl" x="-3" y="-1" angle="180"/>
+    <dancer gender="boy" x="-1" y="-1" angle="180"/>
+    <dancer gender="girl" x="1" y="-1" angle="180"/>
+    <dancer gender="boy" x="3" y="-1" angle="180"/>
+  </formation>
   <formation name="Column RH GBGB">
     <dancer gender="girl" x="-3" y="-1" angle="180"/>
     <dancer gender="boy" x="-1" y="-1" angle="180"/>
@@ -993,6 +1019,12 @@
     <dancer gender="girl" x="0" y="-1.5" angle="0"/>
   </formation>
 
+  <formation name="Tidal Wave">
+    <dancer gender="boy" x="0" y="-3.5" angle="180"/>
+    <dancer gender="girl" x="0" y="-2.5" angle="0"/>
+    <dancer gender="girl" x="0" y="-1.5" angle="180"/>
+    <dancer gender="boy" x="0" y="-.5" angle="0"/>
+  </formation>
   <formation name="Tidal Wave RH BGGB">
     <dancer gender="boy" x="0" y="-3.5" angle="180"/>
     <dancer gender="girl" x="0" y="-2.5" angle="0"/>
@@ -1184,6 +1216,12 @@
   </formation>
 
   <!-- Block diagonal lower left to upper right  -->
+  <formation name="Blocks">
+    <dancer gender="boy" x="-3" y="3" angle="0"/>
+    <dancer gender="girl" x="-3" y="-1" angle="0"/>
+    <dancer gender="boy" x="-1" y="1" angle="0"/>
+    <dancer gender="girl" x="-1" y="-3" angle="0"/>
+  </formation>
   <formation name="Facing Blocks Right">
     <dancer gender="boy" x="-3" y="3" angle="0"/>
     <dancer gender="girl" x="-3" y="-1" angle="0"/>
