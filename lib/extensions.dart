@@ -194,6 +194,7 @@ extension TamList<E> on List<E> {
   List<E> whereNotNull() => where((element) => element != null).toList();
   double maxOf(double Function(E e) of) => fold(-double.maxFinite, (a, b) => max(a,of(b)));
   double minOf(double Function(E e) of) => fold(double.maxFinite, (a, b) => min(a,of(b)));
+  List<E> unique() => toSet().toList();
 
   E firstBy(Comparable Function(E) selector) {
     if (isEmpty) return null;

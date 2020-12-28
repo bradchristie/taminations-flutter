@@ -183,7 +183,6 @@ class _SequencerCallsFrameState extends fm.State<SequencerCallsFrame> {
               color: (index == currentCall)
                   ? Color.YELLOW
                   : (call?.level?.color ?? Color.WHITE),
-              //  TODO no tap on comments
               child:
                   model.isComment(call?.name ?? '#')
                       ? _OneLine(call?.name ?? '','')

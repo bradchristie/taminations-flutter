@@ -1950,10 +1950,12 @@ void main() {
         await driver.close();
       }
       print('All sequencer tests complete.');
-      print('These tests failed:');
-      for (final testName in testsFailed)
-        print('    $testName');
-      print('Total ${testsFailed.length} tests.');
+      if (testsFailed.isNotEmpty) {
+        print('These tests failed:');
+        for (final testName in testsFailed)
+          print('    $testName');
+        print('Total ${testsFailed.length} tests.');
+      }
     });
 
     test('setup', () async {

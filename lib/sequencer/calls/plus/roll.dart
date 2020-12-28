@@ -27,15 +27,19 @@ class Roll extends Action {
 
   @override
   Future<void> perform(CallContext ctx, [int stackIndex=0]) async {
-    if (stackIndex == 0)  // TODO check that there's a previous action
+    if (stackIndex == 0)
       throw CallError('"and Roll" must follow another call.');
     await super.perform(ctx, stackIndex);
   }
 
   @override
   Path performOne(Dancer d, CallContext ctx) {
-    var roll = ctx.roll(d);
-    var move = roll.isEmpty ? 'Stand' : 'Quarter $roll';
+    final roll = ctx.roll(d);
+    final move = {
+      Rolling.LEFT : 'Quarter Left',
+      Rolling.RIGHT : 'Quarter Right',
+      Rolling.NONE : 'Stand'
+    }[roll];
     return TamUtils.getMove(move);
   }
 

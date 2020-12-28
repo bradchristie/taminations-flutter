@@ -39,7 +39,7 @@ class Ripple extends Action {
       }
     }
     actives.removeWhere((d) => ended.contains(d));
-    return traders;
+    return traders.unique();
   }
 
   @override

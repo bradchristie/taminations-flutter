@@ -35,9 +35,6 @@ class Butterfly extends ModifiedFormationConcept {
     if (!super.reformFormation(ctx)) {
       //  That didn't work, we are too far off from a butterfly
       //  So first just concentrate on the centers
-      for (final d in ctx.dancers) {
-        print('$d ${d.location}');
-      }
       final centers = CallContext.fromContext(ctx,dancers:ctx.center(4));
       if (centers.adjustToFormation('Facing Couples Close',rotate: 180)) {
         //  And now use the base method to fix the outer 4

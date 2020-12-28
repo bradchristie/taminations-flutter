@@ -42,4 +42,16 @@ class Slide extends Action {
     }
   }
 
+  @override
+  Path performOne(Dancer d, CallContext ctx) {
+    final d2 = d.data.partner ?? thrower(CallError('Unable to calculate Slide'));
+    final dist = d.distanceTo(d2);
+    if (d.data.beau)
+      return TamUtils.getMove('BackSashay Right',scale:[1.0,dist/2].v);
+    else if (d.data.belle)
+      return TamUtils.getMove('BackSashay Left',scale:[1.0,dist/2].v);
+    else
+      throw CallError('Unable to calculate Slide');
+  }
+
 }

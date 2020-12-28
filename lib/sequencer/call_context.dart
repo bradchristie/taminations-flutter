@@ -39,6 +39,12 @@ import '../extensions.dart';
 import '../level_data.dart';
 import '../tam_utils.dart';
 
+enum Rolling {
+  LEFT,
+  RIGHT,
+  NONE
+}
+
 class FormationMatchResult {
 
   final Matrix transform;
@@ -186,7 +192,6 @@ class CallContext {
         callindex[norm] = <String>{};
       callindex[norm].add(link);
     });
-    //  TODO ??? look for xrefs and load
     loadedMXL[link] = doc;
     return doc;
   }
@@ -305,32 +310,22 @@ class CallContext {
 
   /// Append the result of processing this CallContext to it source.
   /// The CallContext must have been previously cloned from the source.
-  void appendToSource() {
+  //  Return true if anything new was added.
+  bool appendToSource() {
+    var didSomething = false;
     dancers.forEach((clone) {
       var original = clone.clonedFrom;
       //  Phantoms might have been rotated in clone,
       //  so set start angle in original to match
       if (clone.gender == Gender.PHANTOM && original.path.movelist.isEmpty)
         original.setStartAngle(clone.starttx.angle);
+      didSomething |= clone.path.movelist.isNotEmpty;
       original.path.add(clone.path);
       original.animateToEnd();
     });
     if (_source != null && _source.level < level)
       _source.level = level;
-  }
-
-  //  TODO combine with appendToSource
-  bool _appendTo(CallContext ctx) {
-    var retval = false;
-    ctx.dancers.forEach((d) {
-      var d2 = dancers.firstWhere((it) => it == d, orElse: () => null);
-      if (d2 != null) {
-        retval = retval || d2.path.movelist.isNotEmpty;
-        d.path.add(d2.path);
-        d.animateToEnd();
-      }
-    });
-    return retval;
+    return didSomething;
   }
 
   //  Create a new CallContext from a list of dancers
@@ -340,9 +335,9 @@ class CallContext {
   //  Return true if anything new was added.
   Future<bool> subContext(List<Dancer> dancers, Future<void> Function(CallContext) block) async {
     dancers ??= this.dancers;
-    var ctx = CallContext.fromDancers(dancers.inOrder());
+    var ctx = CallContext.fromContext(this,dancers:dancers.inOrder());
     await block(ctx);
-    return ctx._appendTo(this);
+    return ctx.appendToSource();
   }
 
   //  For now this just checks for collisions in a tidal formation
@@ -423,9 +418,6 @@ class CallContext {
     return calltext.replaceAll('\\s+'.r, ' ').trim()
     //  Standardize capitalization
         .capWords();
-    //  Make sure Trade Circulate is not read as Trade and Circulate
-    //  TODO do this someplace better
-    //    .replaceAll('trade circulate'.ri, 'tradecirculate');
   }
 
 
@@ -1197,14 +1189,13 @@ class CallContext {
   );
 
   //  Get direction dancer would Roll
-  //  TODO use an enum instead of returning strings
-  String roll(Dancer d) {
+  Rolling roll(Dancer d) {
     var move = d.path.movelist.lastWhere((m) => m.fromCall, orElse: () => null);
     if ((move?.brotate?.rolling() ?? 0.0) > 0.1)
-      return 'Left';
+      return Rolling.LEFT;
     else if ((move?.brotate?.rolling() ?? 0.0) < -0.1)
-      return 'Right';
-    return '';
+      return Rolling.RIGHT;
+    return Rolling.NONE;
   }
 
   void extendPaths() {

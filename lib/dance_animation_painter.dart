@@ -294,7 +294,8 @@ class DanceAnimationPainter extends fm.ChangeNotifier implements fm.CustomPainte
       }
       isRunning = true;
       _practiceScore = 0.0;
-      _ticker.start();
+      if (!_ticker.isTicking)
+        _ticker.start();
     }
   }
 
@@ -660,7 +661,6 @@ class DanceAnimationPainter extends fm.ChangeNotifier implements fm.CustomPainte
           var cstr = (g == Gender.PHANTOM) ? ' ' : couples[dnum];
           var colorstr = (g == Gender.PHANTOM) ? ' ' : couples[dnum];
           var color = Color.LIGHTGREY;
-          //  TODO random color
           if (g != Gender.PHANTOM)
             color = _dancerColor[colorstr.i];
 

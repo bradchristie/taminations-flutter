@@ -18,10 +18,10 @@
 
 */
 
-import '../action.dart';
 import '../../../level_data.dart';
 import '../../call_context.dart';
 import '../../call_error.dart';
+import '../action.dart';
 
 class SweepAQuarter extends Action {
 
@@ -37,8 +37,8 @@ class SweepAQuarter extends Action {
     var isRight = true;
     for (var d in ctx.actives) {
       var roll = ctx.roll(d);
-      isLeft &= roll == 'Left' ;
-      isRight &= roll == 'Right' ;
+      isLeft &= roll == Rolling.LEFT;
+      isRight &= roll == Rolling.RIGHT;
     }
     //  Sweeping direction is opposite rolling direction
     if (isRight)
