@@ -55,7 +55,12 @@ class TamUtils {
   //  Keep a set of all words used in calls.
   //  Used to check sequencer abbreviations - don't let the use make
   //  an abbreviation for a real word.
-  static Set<String> words = {};
+  //  Start out with a few that are commonly returned by normalizeCall
+  //  to help with the sequencer voice recognition.
+  static Set<String> words = {
+    'head', 'side', 'leader', 'trailer', 'boy', 'girl',
+    'center', 'end', 'very', 'couple', 'home'
+  };
 
   //  Read an XML file or other from the assets
   static Future<String> getAsset(String filename) async =>

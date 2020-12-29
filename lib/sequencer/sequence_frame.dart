@@ -23,6 +23,8 @@ import 'package:flutter/material.dart' as fm;
 import 'package:provider/provider.dart' as pp;
 import 'package:taminations/common.dart';
 import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
+import 'package:speech_to_text/speech_to_text_provider.dart';
+import 'package:speech_to_text/speech_to_text.dart';
 
 import '../button.dart';
 import '../color.dart';
@@ -39,12 +41,21 @@ class _SequenceFrameState extends fm.State<SequenceFrame> {
   var focusNode = fm.FocusNode();
   final ItemScrollController itemScrollController = ItemScrollController();
   final ItemPositionsListener itemPositionsListener = ItemPositionsListener.create();
+  Future<bool> listenAvailable = Future.value(false);
+  SpeechToTextProvider speechProvider;
 
   @override
   void initState() {
     super.initState();
     textFieldController = fm.TextEditingController();
     focusNode.requestFocus();
+    speechProvider = SpeechToTextProvider( SpeechToText());
+    listenAvailable = speechProvider.initialize();
+  }
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
   }
 
   @override
@@ -53,8 +64,7 @@ class _SequenceFrameState extends fm.State<SequenceFrame> {
     super.dispose();
   }
 
-  void _sendOneCall(SequencerModel model) {
-    var value = textFieldController.value.text;
+  void _sendOneCall(SequencerModel model, String value) {
     setState(() {
       //  Process the call
       if (value.toLowerCase().trim() == 'undo')
@@ -72,90 +82,149 @@ class _SequenceFrameState extends fm.State<SequenceFrame> {
 
   @override
   fm.Widget build(fm.BuildContext context) {
-    return pp.Consumer<SequencerModel>(
-       builder: (context, model, child) {
-         return fm.Column(
-           children: [
-             fm.Container(
-               color: Color.WHITE,
-               child: fm.TextField(
-                 key: fm.Key('Sequencer Input'),
-                // autofocus: true,
-                 focusNode: focusNode,
-                 controller: textFieldController,
-                 decoration: fm.InputDecoration(
-                     hintText: 'Enter calls',
-                     errorStyle:fm.TextStyle(fontSize: 20),
-                     errorMaxLines: 10,
-                     errorText: model.errorString.isEmpty ? null : model.errorString),
-                 enableSuggestions: false,
-                 style: fm.TextStyle(fontSize: 24),
-                 //  Code to run when user presses Enter
-                 onSubmitted: (value) {
-                   _sendOneCall(model);
-                 },
-               ),
-             ),
-             fm.Expanded(
-                 child: ScrollablePositionedList.builder(
-                   itemScrollController: itemScrollController,
-                   itemPositionsListener: itemPositionsListener,
-                   itemCount: model.calls.length,
-                   itemBuilder: itemBuilder,
-                 )
-             ),
-          //   if (model.errorString.isNotEmpty)
-             fm.Container(
-               color: Color.FLOOR,
-               child: fm.Row(
-                 children: [
-                   fm.Expanded(
-                       child: Button('Undo',onPressed: () {
-                         setState(() {
-                           model.undoLastCall();
-                         });
-                       })
-                   ),
-                   fm.Expanded(
-                       child: Button('Reset',onPressed: () {
-                         setState(() {
-                           model.reset();
-                         });
-                       })
-                   ),
-                   fm.Expanded(
-                       child: Button('Copy',onPressed: () {
-                         model.copy();
-                         fm.ScaffoldMessenger.of(context).showSnackBar(fm.SnackBar(
-                             backgroundColor: Color.BLUE,
-                             duration: Duration(seconds: 2),
-                             content: fm.Text('Calls Copied.',style: fm.TextStyle(fontSize: 20))
-                         ));
-                       })
-                   ),
-                   fm.Expanded(
-                       child: Button('Paste',onPressed: () {
-                         setState(() {
-                           model.paste();
-                         });
-                       })
-                   ),
-                 ],
-               ),
-             ),
-             //  For testing - a very tiny spot to tap
-             //  since the tester cannot simulate keyboard Enter
+    return pp.ChangeNotifierProvider.value(
+      value: speechProvider,
+      child: pp.Consumer2<SequencerModel,SpeechToTextProvider>(
+         builder: (context, model, speech, child) {
+
+           //  Process any results from the speech recognizer
+           if (speech.hasResults) {
+             //print('Looking for ${speech.lastResult.recognizedWords}');
+             for (var i=0; i<speech.lastResult.alternates.length; i++) {
+               //  Look through all the alternatives for one that has
+               //  all square dance words
+               var call = speech.lastResult.alternates[i].recognizedWords.replaceAll('\\W'.r, ' ');
+               var words = call.split('\\s+'.r)
+                   .map((w) => TamUtils.normalizeCall(w).toLowerCase());
+               //print('Testing $words');
+               if (words.every((word) => TamUtils.words.contains(word))) {
+                 //print('Found call in alternative $i: $call');
+                 later( () {
+                   _sendOneCall(model, call);
+                 });
+                 break;
+               }
+             }
+             speech.listen(
+                 partialResults: false,
+                 listenFor: Duration(seconds: 5),
+                 pauseFor: Duration(seconds: 5)
+             );
+           }
+
+
+           return fm.Column(
+             children: [
                fm.Container(
-                 key: fm.Key('Submit Call'),
-                 child: fm.GestureDetector(
-                   child: fm.Text(' ',style: fm.TextStyle(fontSize:1),),
-                   onTap: () { _sendOneCall(model); },
+                 color: Color.WHITE,
+                 child: fm.Row(
+                   children: [
+                     fm.Expanded(
+                       child: fm.TextField(
+                         key: fm.Key('Sequencer Input'),
+                        // autofocus: true,
+                         focusNode: focusNode,
+                         controller: textFieldController,
+                         decoration: fm.InputDecoration(
+                             hintText: 'Enter calls',
+                             errorStyle:fm.TextStyle(fontSize: 20),
+                             errorMaxLines: 10,
+                             errorText: model.errorString.isEmpty ? null : model.errorString),
+                         enableSuggestions: false,
+                         style: fm.TextStyle(fontSize: 24),
+                         //  Code to run when user presses Enter
+                         onSubmitted: (value) {
+                           _sendOneCall(model,value);
+                         },
+                       ),
+                     ),
+                     fm.FutureBuilder(
+                         future: listenAvailable,
+                         builder: (context,snapshot) {
+                           return fm.TextButton(child: fm.Icon(
+                               fm.Icons.mic,
+                               color: speechProvider.isListening ? Color.RED :
+                               snapshot.hasData && snapshot.data
+                                   ? Color.BLACK
+                                   : Color.LIGHTGRAY,
+                               size: 32
+                           ),
+                             onPressed: () {
+                             setState(() {
+                               speechProvider.listen(
+                                 partialResults: false,
+                                 listenFor: Duration(seconds: 5),
+                                 pauseFor: Duration(seconds: 5)
+                               );
+                             });
+                             },
+                           );
+                         }
+                     )
+                   ],
                  ),
                ),
-             fm.Text(model.errorString,key: fm.Key('Error text'),style: fm.TextStyle(fontSize: 0.01))
-           ],
-         );
-       },
+               fm.Expanded(
+                   child: ScrollablePositionedList.builder(
+                     itemScrollController: itemScrollController,
+                     itemPositionsListener: itemPositionsListener,
+                     itemCount: model.calls.length,
+                     itemBuilder: itemBuilder,
+                   )
+               ),
+            //   if (model.errorString.isNotEmpty)
+               fm.Container(
+                 color: Color.FLOOR,
+                 child: fm.Row(
+                   children: [
+                     fm.Expanded(
+                         child: Button('Undo',onPressed: () {
+                           setState(() {
+                             model.undoLastCall();
+                           });
+                         })
+                     ),
+                     fm.Expanded(
+                         child: Button('Reset',onPressed: () {
+                           setState(() {
+                             model.reset();
+                           });
+                         })
+                     ),
+                     fm.Expanded(
+                         child: Button('Copy',onPressed: () {
+                           model.copy();
+                           fm.ScaffoldMessenger.of(context).showSnackBar(fm.SnackBar(
+                               backgroundColor: Color.BLUE,
+                               duration: Duration(seconds: 2),
+                               content: fm.Text('Calls Copied.',style: fm.TextStyle(fontSize: 20))
+                           ));
+                         })
+                     ),
+                     fm.Expanded(
+                         child: Button('Paste',onPressed: () {
+                           setState(() {
+                             model.paste();
+                           });
+                         })
+                     ),
+                   ],
+                 ),
+               ),
+               //  For testing - a very tiny spot to tap
+               //  since the tester cannot simulate keyboard Enter
+                 fm.Container(
+                   key: fm.Key('Submit Call'),
+                   child: fm.GestureDetector(
+                     child: fm.Text(' ',style: fm.TextStyle(fontSize:1),),
+                     onTap: () { _sendOneCall(model,textFieldController.value.text); },
+                   ),
+                 ),
+               fm.Text(model.errorString,key: fm.Key('Error text'),style: fm.TextStyle(fontSize: 0.01))
+             ],
+           );
+         },
+      ),
     );
   }
 
