@@ -150,14 +150,16 @@ class _SequenceFrameState extends fm.State<SequenceFrame> {
                                size: 32
                            ),
                              onPressed: () {
-                             setState(() {
-                               speechProvider.listen(
-                                 partialResults: false,
-                                 listenFor: Duration(seconds: 5),
-                                 pauseFor: Duration(seconds: 5)
-                               );
-                             });
-                             },
+                               if (speechProvider.isAvailable) {
+                                 setState(() {
+                                   speechProvider.listen(
+                                       partialResults: false,
+                                       listenFor: Duration(seconds: 5),
+                                       pauseFor: Duration(seconds: 5)
+                                   );
+                                 });
+                               }
+                             }
                            );
                          }
                      )
