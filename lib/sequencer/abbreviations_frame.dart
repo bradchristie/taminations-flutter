@@ -35,6 +35,7 @@ class _AbbreviationsFrameState extends fm.State<AbbreviationsFrame> {
   var editRow = -1;
   var editExpansion = false;
   fm.TextEditingController textEditController;
+  var focusNode = fm.FocusNode();
   void Function() processTextChange;
 
   @override
@@ -42,6 +43,13 @@ class _AbbreviationsFrameState extends fm.State<AbbreviationsFrame> {
     super.initState();
     textEditController = fm.TextEditingController()
       ..addListener(_onTextChanged);
+    focusNode.addListener(() {
+      if (!focusNode.hasFocus) {
+        setState(() {
+          editRow = -1;
+        });
+      }
+    });
   }
 
   @override
@@ -57,37 +65,50 @@ class _AbbreviationsFrameState extends fm.State<AbbreviationsFrame> {
   fm.Widget _oneTextItem(int row, bool isExpansion) =>
       fm.Expanded(
         flex: isExpansion ? 4 : 1,
-        child: fm.InkWell(
+        child: fm.GestureDetector(
           onTap: () {
-            fm.WidgetsBinding.instance.addPostFrameCallback((_) {
+         //   later(() {
               setState(() {
                 editRow = row;
                 editExpansion = isExpansion;
+                focusNode.requestFocus();
+                later(() {
+
+                });
               });
-            });
+         //   });
           },
           child: fm.Container(
             child: pm.Consumer<AbbreviationsModel>(
                 builder: (context,model,child) {
                   processTextChange = () {
-                    //  For abbreviations, ignore invalid characters
-                    if (!editExpansion) {
-                      final value = textEditController.value;
-                      final text = value.text.toLowerCase().replaceAll('\\W'.r, '');
-                      final diff = value.text.length - text.length;
-                      final selection = value.selection.copyWith(
-                        baseOffset: value.selection.baseOffset - diff,
-                        extentOffset: value.selection.extentOffset - diff
-                      );
-                      textEditController.value = value.copyWith(text: text, selection: selection);
-                      model.setAbbreviation(editRow, text);
-                    } else
-                      model.setExpansion(editRow, textEditController.text);
+                    if (editRow >= 0) {
+                      //  For abbreviations, ignore invalid characters
+                      if (!editExpansion) {
+                        final value = textEditController.value;
+                        final text = value.text.toLowerCase().replaceAll(
+                            '\\W'.r, '');
+                        final diff = value.text.length - text.length;
+                        final selection = value.selection.copyWith(
+                            baseOffset: value.selection.baseOffset - diff,
+                            extentOffset: value.selection.extentOffset - diff
+                        );
+                        textEditController.value =
+                            value.copyWith(text: text, selection: selection);
+                        model.setAbbreviation(editRow, text);
+                      } else
+                        model.setExpansion(editRow, textEditController.text);
+                    }
                   };
+
                   return fm.Container(
                     child:child,
                     decoration: fm.BoxDecoration(
-                        color: model.currentAbbreviations[row].isError ? Color.RED.veryBright() : Color.WHITE,
+                        color:
+                        model.currentAbbreviations[row].isError ? Color.RED.veryBright()
+                        : row == editRow && editExpansion == isExpansion
+                         ? Color.WHITE
+                         : Color.LIGHTGRAY.veryBright(),
                         border: fm.Border(
                             bottom: fm.BorderSide(width: 1, color: fm.Colors.black),
                             left: fm.BorderSide(width: 1, color: fm.Colors.black))),
@@ -98,7 +119,9 @@ class _AbbreviationsFrameState extends fm.State<AbbreviationsFrame> {
                   decoration: null,
                   autofocus: true,
                   autocorrect: false,
+                  enableSuggestions: false,
                   style: fm.TextStyle(fontSize: 24),
+                  focusNode: focusNode,
                   controller: textEditController
                     ..text = isExpansion
                         ? pm.Provider.of<AbbreviationsModel>(context, listen: false).currentAbbreviations[row].expa

@@ -28,12 +28,12 @@ import '../button.dart';
 import '../color.dart';
 import 'sequencer_model.dart';
 
-class SequencerCallsFrame extends fm.StatefulWidget {
+class SequenceFrame extends fm.StatefulWidget {
   @override
-  _SequencerCallsFrameState createState() => _SequencerCallsFrameState();
+  _SequenceFrameState createState() => _SequenceFrameState();
 }
 
-class _SequencerCallsFrameState extends fm.State<SequencerCallsFrame> {
+class _SequenceFrameState extends fm.State<SequenceFrame> {
 
   fm.TextEditingController textFieldController;
   var focusNode = fm.FocusNode();

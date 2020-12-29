@@ -25,13 +25,14 @@ import '../color.dart';
 import '../main.dart';
 import '../pages/settings_page.dart';
 import '../pages/web_page.dart';
+import '../settings.dart';
 import '../title_bar.dart';
 import 'abbreviations_frame.dart';
 import 'abbreviations_model.dart';
-import 'calls_frame.dart';
+import 'sequence_frame.dart';
 import 'sequencer_animation_frame.dart';
+import 'sequencer_calls_page.dart';
 import 'sequencer_model.dart';
-import '../settings.dart';
 
 class SequencerPage extends fm.StatefulWidget {
   @override
@@ -75,7 +76,7 @@ class _SequencerPageState extends fm.State<SequencerPage> {
               model.startingFormation = settings.startingFormation;
               return fm.Row(
                 children: [
-                  fm.Expanded(child: SequencerCallsFrame()),
+                  fm.Expanded(child: SequenceFrame()),
                   fm.VerticalDivider(color: Color.BLACK, width: 2.0,),
                   fm.Expanded(child: SequencerAnimationFrame()),
                   fm.VerticalDivider(color: Color.BLACK, width: 2.0,),
@@ -85,7 +86,7 @@ class _SequencerPageState extends fm.State<SequencerPage> {
                     child: fm.Expanded(child: pp.Consumer<TamState>(
                         builder: (context,tamState,_) {
                           if (tamState.detailPage == DetailPage.CALLS)
-                            return fm.Container();  // TODO
+                            return SequencerCallsFrame();
                           else if (tamState.detailPage == DetailPage.ABBREVIATIONS)
                             return AbbreviationsFrame();
                           else if (tamState.detailPage == DetailPage.SETTINGS)

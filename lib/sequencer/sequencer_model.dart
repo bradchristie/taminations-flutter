@@ -120,7 +120,6 @@ class SequencerModel extends fm.ChangeNotifier {
 
     var prevbeats = animation.beats;
     var cctx = CallContext.fromDancers(animation.dancers);
-
     await cctx.interpretCall(call);
     await cctx.performCall();
     cctx.checkForCollisions();
