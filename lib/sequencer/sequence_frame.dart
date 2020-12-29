@@ -106,12 +106,12 @@ class _SequenceFrameState extends fm.State<SequenceFrame> {
                }
              }
              speech.listen(
+                 localeId: 'en_US',
                  partialResults: false,
                  listenFor: Duration(seconds: 5),
                  pauseFor: Duration(seconds: 5)
              );
            }
-
 
            return fm.Column(
              children: [
@@ -153,6 +153,7 @@ class _SequenceFrameState extends fm.State<SequenceFrame> {
                                if (speechProvider.isAvailable) {
                                  setState(() {
                                    speechProvider.listen(
+                                       localeId: 'en_US',
                                        partialResults: false,
                                        listenFor: Duration(seconds: 5),
                                        pauseFor: Duration(seconds: 5)
