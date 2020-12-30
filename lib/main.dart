@@ -23,7 +23,6 @@ import 'package:flutter/material.dart' as fm;
 import 'package:provider/provider.dart' as pp;
 
 import 'extensions.dart';
-import 'level_data.dart';
 import 'pages/anim_list_page.dart';
 import 'pages/animation_page.dart';
 import 'pages/calls_page.dart';
@@ -46,6 +45,7 @@ void main() {
 
 enum MainPage {
   LEVELS,
+  ANIMLIST,   // portrait only
   ANIMATIONS,
   SEQUENCER,
   STARTPRACTICE,
@@ -72,11 +72,11 @@ extension DetailPageEx on String {
 //  generate the current layout
 class TamState extends fm.ChangeNotifier {
 
-  String _level;  //  if not null, generate Calls page
+  String _level;
   String get level => _level;
-  String _link;  //  if not null, generate AnimList page
+  String _link;
   String get link => _link;
-  int _animnum;   //  if >= 0, generate Animation page
+  int _animnum;
   int get animnum => _animnum;
   MainPage _mainPage;
   MainPage get mainPage => _mainPage;
@@ -234,46 +234,60 @@ class TaminationsRouterDelegate extends fm.RouterDelegate<TamState>
 
                       //  Pages for portrait - Level, Animlist, Animation, Settings, etc
                           : [
+                        //  Root of all portrait pages shows the levels
                         fm.MaterialPage(
                             key: fm.ValueKey('LevelPage'),
                             child: LevelPage()
                         ),
-                        if (config.level != null &&
-                            LevelData.find(config.level) != null)
-                          fm.MaterialPage(
-                              key: fm.ValueKey(config.level),
-                              child: CallsPage()
-                          ),
-                        if (config.link?.isNotEmpty ?? false)
-                          fm.MaterialPage(
-                              key: fm.ValueKey(config.link),
-                              child: AnimListPage()
-                          ),
-                        if (config.animnum >= 0 )
-                          fm.MaterialPage(
-                              key: fm.ValueKey(
-                                  config.link + ' animation'),
-                              child: AnimationPage()
-                          ),
-                        if (config.detailPage == DetailPage.HELP)
+                        //  Settings, Help single pages just below the main page
+                        if (config.mainPage == MainPage.LEVELS &&
+                            config.detailPage == DetailPage.HELP)
                           fm.MaterialPage(
                               key: fm.ValueKey('About'),
                               child: WebPage('info/about.html')
                           ),
-                        if (config.detailPage ==
-                            DetailPage.DEFINITION)
+                        if (config.mainPage == MainPage.LEVELS &&
+                            config.detailPage == DetailPage.SETTINGS)
+                          fm.MaterialPage(
+                              key: fm.ValueKey('Settings'),
+                              child: SettingsPage()
+                          ),
+
+                        //  Pages leading to animations
+                        if ((config.mainPage == MainPage.LEVELS &&
+                            config.detailPage == DetailPage.CALLS) ||
+                            config.mainPage == MainPage.ANIMLIST ||
+                            config.mainPage == MainPage.ANIMATIONS)
+                          fm.MaterialPage(
+                              key: fm.ValueKey(config.level),
+                              child: CallsPage()
+                          ),
+                        if (config.mainPage == MainPage.ANIMLIST ||
+                            config.mainPage == MainPage.ANIMATIONS)
+                          fm.MaterialPage(
+                              key: fm.ValueKey(config.link),
+                              child: AnimListPage()
+                          ),
+                        if (config.mainPage == MainPage.ANIMATIONS)
+                          fm.MaterialPage(
+                              key: fm.ValueKey(config.link + ' animation'),
+                              child: AnimationPage()
+                          ),
+                        if (config.detailPage == DetailPage.DEFINITION)
                           fm.MaterialPage(
                               key: fm.ValueKey(
                                   config.link + ' definition'),
                               child: WebPage(config.link)
                           ),
-                        if (config.detailPage ==
-                            DetailPage.SETTINGS)
+                        if (config.mainPage != MainPage.LEVELS &&
+                            config.detailPage == DetailPage.SETTINGS)
                           fm.MaterialPage(
                               key: fm.ValueKey('Settings'),
                               child: SettingsPage()
                           ),
-                        //  TODO more pages to add here
+
+                        //  Should Practice be here?  Not sure how
+                        //  this list iteracts with device rotation
                         if (config.mainPage == MainPage.PRACTICE)
                           fm.MaterialPage(
                               key: fm.ValueKey('Practice'),
@@ -301,6 +315,31 @@ class TaminationsRouterDelegate extends fm.RouterDelegate<TamState>
                           else if (appState.mainPage == MainPage.PRACTICE ||
                           appState.mainPage == MainPage.TUTORIAL)
                             appState.change(mainPage:MainPage.STARTPRACTICE);
+                        }
+
+                        else {  // portrait
+                          if (appState.mainPage == MainPage.LEVELS) {
+                            if (appState.detailPage == DetailPage.SETTINGS ||
+                                appState.detailPage == DetailPage.HELP ||
+                                appState.detailPage == DetailPage.CALLS)
+                              appState.change(detailPage: DetailPage.NONE);
+                          }
+                          else if (appState.mainPage == MainPage.ANIMLIST) {
+                            if (appState.detailPage == DetailPage.SETTINGS ||
+                                appState.detailPage == DetailPage.DEFINITION)
+                              appState.change(detailPage: DetailPage.NONE);
+                            else
+                              appState.change(mainPage: MainPage.LEVELS,
+                                  detailPage: DetailPage.CALLS);
+                          }
+
+                          else if (appState.mainPage == MainPage.ANIMATIONS) {
+                            if (appState.detailPage == DetailPage.SETTINGS ||
+                                appState.detailPage == DetailPage.DEFINITION)
+                              appState.change(detailPage: DetailPage.NONE);
+                            else
+                              appState.change(mainPage: MainPage.ANIMLIST);
+                          }
                         }
 
                         notifyListeners();

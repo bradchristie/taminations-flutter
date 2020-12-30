@@ -96,7 +96,7 @@ class _AnimListPageState extends fm.State<AnimListPage> {
               builder: (context,tamState,_) => fm.Column(
                       children: [
                         fm.Expanded(
-                          child:AnimListFrame(link),
+                          child:AnimListFrame(link,highlightSelected: false),
                         ),
                         fm.Row(children: [
                           fm.Expanded(
@@ -117,8 +117,8 @@ class _AnimListPageState extends fm.State<AnimListPage> {
 
 class AnimListFrame extends fm.StatefulWidget {
   final String link;
-
-  AnimListFrame(this.link) : super(key: fm.ValueKey(link));
+  final bool highlightSelected;
+  AnimListFrame(this.link,{this.highlightSelected=true}) : super(key: fm.ValueKey(link));
 
   @override
   fm.State<fm.StatefulWidget> createState() => _AnimListState(link);
@@ -266,7 +266,7 @@ class _AnimListState extends fm.State<AnimListFrame> {
                               return  fm.Container(
                                   child: pp.Consumer<TamState>(
                                     builder: (context,tamState,_) => fm.Material(
-                                          color: selectedItem == index
+                                          color: widget.highlightSelected && selectedItem == index
                                               ? Color.BLUE
                                               : backColor,
                                           child: fm.InkWell(
@@ -275,7 +275,10 @@ class _AnimListState extends fm.State<AnimListFrame> {
                                               setState(() {
                                                 selectedItem = index;
                                               });
-                                              tamState.change(animnum: item.animnumber);
+                                              tamState.change(
+                                                  mainPage: MainPage.ANIMATIONS,
+                                                  animnum: item.animnumber
+                                              );
                                               pp.Provider.of<AnimationState>(context, listen:false).title = item.title;
                                               titleModel.title = item.title;
                                             },
@@ -293,7 +296,7 @@ class _AnimListState extends fm.State<AnimListFrame> {
                                                   bottom: 4),
                                               child: fm.Text(item.name,
                                                   style: fm.TextStyle(
-                                                    color: selectedItem == index
+                                                    color: widget.highlightSelected && selectedItem == index
                                                         ? backColor
                                                         : Color.BLACK,
                                                       fontSize: 20

@@ -168,7 +168,7 @@ class _CallsState extends fm.State<CallsFrame> {
             highlightColor: LevelData.find(callsSearched[index].link).color.darker(),
               onTap: () {
                 tamState.change(
-                    mainPage: MainPage.ANIMATIONS,
+                    mainPage: MainPage.ANIMLIST,
                     link: callsSearched[index].link
                 );
               },

@@ -34,6 +34,7 @@ import '../main.dart';
 import '../math/vector.dart';
 import '../settings.dart';
 import '../title_bar.dart';
+import '../tam_utils.dart';
 
 class AnimationState extends fm.ChangeNotifier {
 
@@ -89,7 +90,15 @@ class _AnimationPageState extends fm.State<AnimationPage>
                 })
         ),
         body: pp.Consumer<TamState>(
-          builder: (context, tamState, _) => fm.Column(
+          builder: (context, tamState, _) {
+            final painter = pp.Provider.of<DanceAnimationPainter>(context,listen:false);
+            TamUtils.getXMLAsset(tamState.link).then((doc) {
+              var tam = TamUtils.tamList(doc)
+                  .where((it) => !(it('display','').startsWith('n')))
+                  .toList()[max(0, tamState.animnum)];
+              painter.setAnimation(tam);
+            });
+            return fm.Column(
             children: [
               fm.Expanded(child: AnimationFrame()),
               fm.Container(
@@ -108,7 +117,7 @@ class _AnimationPageState extends fm.State<AnimationPage>
                 ),
               )
             ],
-          ),
+          );}
         ),
       ),
     );
