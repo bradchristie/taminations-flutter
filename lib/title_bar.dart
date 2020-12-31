@@ -23,9 +23,7 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart' as fm;
 import 'package:provider/provider.dart' as pp;
 
-import 'color.dart';
-import 'extensions.dart';
-import 'tam_utils.dart';
+import 'common.dart';
 
 class TitleModel extends fm.ChangeNotifier {
   String _title = 'Taminations';

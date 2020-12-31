@@ -24,16 +24,8 @@ import 'package:flutter/material.dart' as fm;
 import 'package:flutter/scheduler.dart';
 import 'package:xml/xml.dart';
 
-import 'color.dart';
-import 'dancer.dart';
-import 'extensions.dart';
-import 'geometry.dart';
-import 'handhold.dart';
-import 'math/matrix.dart';
-import 'math/movement.dart';
-import 'math/vector.dart';
+import 'common.dart';
 import 'practice_dancer.dart';
-import 'tam_utils.dart';
 
 class DanceAnimationPainter extends fm.ChangeNotifier implements fm.CustomPainter  {
 

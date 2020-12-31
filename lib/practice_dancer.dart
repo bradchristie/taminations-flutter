@@ -20,12 +20,7 @@
 
 import 'dart:math';
 
-import 'color.dart';
-import 'dancer.dart';
-import 'geometry.dart';
-import 'math/matrix.dart';
-import 'math/movement.dart';
-import 'math/vector.dart';
+import 'common.dart';
 
 class PracticeDancer extends Dancer {
   PracticeDancer(String number, String numberCouple, int gender, Color fillColor, Matrix mat, Geometry geom, List<Movement> moves) : super(number, numberCouple, gender, fillColor, mat, geom, moves) {

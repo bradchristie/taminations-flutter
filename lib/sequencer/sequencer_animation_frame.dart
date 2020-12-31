@@ -22,9 +22,10 @@ import 'package:flutter/material.dart' as fm;
 import 'package:provider/provider.dart' as pp;
 
 import '../button.dart';
-import '../pages/animation_page.dart';
-import '../main.dart';
 import '../color.dart';
+import '../main.dart';
+import '../pages/animation_page.dart';
+import 'sequencer_model.dart';
 
 class SequencerAnimationFrame extends fm.StatefulWidget {
 
@@ -43,7 +44,20 @@ class _SequencerAnimationFrameState extends fm.State<SequencerAnimationFrame> {
     return fm.Column(
       children: [
         fm.Expanded(
-            child: AnimationFrame()
+            child: fm.Stack(
+                children: [
+                  AnimationFrame(),
+                  fm.Positioned(
+                      top: 6, left:12, right:12,
+                      child: pp.Consumer<SequencerModel>(
+                          builder: (context,model,_) =>
+                              fm.Text(model.currentCall < 0 ? ''
+                                  : model.calls[model.currentCall].name,
+                                  style: fm.TextStyle(fontSize: 28))
+                      )
+                  )
+                ]
+            )
         ),
         fm.Container(
           color: Color.FLOOR,

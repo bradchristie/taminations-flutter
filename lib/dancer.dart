@@ -22,13 +22,7 @@ import 'dart:math';
 import 'package:flutter/material.dart' as fm;
 import 'package:flutter/painting.dart';
 
-import 'color.dart';
-import 'extensions.dart';
-import 'geometry.dart';
-import 'math/matrix.dart';
-import 'math/movement.dart';
-import 'math/path.dart';
-import 'math/vector.dart';
+import 'common.dart';
 
 class Gender {
   static const BOY = 1;

@@ -22,7 +22,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart' as fm;
 import 'package:provider/provider.dart' as pp;
 
-import 'extensions.dart';
+import 'common.dart';
 import 'pages/anim_list_page.dart';
 import 'pages/animation_page.dart';
 import 'pages/calls_page.dart';
@@ -35,8 +35,6 @@ import 'pages/start_practice_page.dart';
 import 'pages/tutorial_page.dart';
 import 'pages/web_page.dart';
 import 'sequencer/sequencer_page.dart';
-import 'settings.dart';
-import 'tam_utils.dart';
 
 ///  Main routine
 void main() {
