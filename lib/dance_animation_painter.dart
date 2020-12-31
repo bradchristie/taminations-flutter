@@ -294,6 +294,7 @@ class DanceAnimationPainter extends fm.ChangeNotifier implements fm.CustomPainte
   void doPause() {
     isRunning = false;
     _ticker.stop();
+    _redraw();
   }
 
   void goToStart() {
