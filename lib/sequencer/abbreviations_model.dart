@@ -153,7 +153,7 @@ class AbbreviationsModel extends fm.ChangeNotifier {
         p.isError = true;
       //  Check for duplicates
       //  Assumes abbreviations have already been lowercased
-      if (!p.isError) {
+      if (!p.isError && p.abbr.isNotBlank) {
         for (var j = 0; j < i; j++) {
           if (currentAbbreviations[j].abbr == p.abbr) {
             p.isError = true;

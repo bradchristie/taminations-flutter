@@ -52,11 +52,6 @@ class _SequenceFrameState extends fm.State<SequenceFrame> {
   }
 
   @override
-  void didChangeDependencies() {
-    super.didChangeDependencies();
-  }
-
-  @override
   void dispose() {
     textFieldController.dispose();
     super.dispose();

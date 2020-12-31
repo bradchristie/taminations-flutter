@@ -19,7 +19,7 @@
 */
 
 import 'package:flutter/material.dart' as fm;
-import 'package:provider/provider.dart' as pm;
+import 'package:provider/provider.dart' as pp;
 import 'abbreviations_model.dart';
 import '../color.dart';
 import '../button.dart';
@@ -44,9 +44,24 @@ class _AbbreviationsFrameState extends fm.State<AbbreviationsFrame> {
     textEditController = fm.TextEditingController()
       ..addListener(_onTextChanged);
     focusNode.addListener(() {
+      //  When the user is finished editing an abbreviation, we want to
+      //  automatically go to editing the expansion.
       if (!focusNode.hasFocus) {
         setState(() {
-          editRow = -1;
+          //  This sequence of events is important
+          //  First set up the edit control
+          if (editRow >= 0 && !editExpansion) {
+            editExpansion = true;
+            final text = pp.Provider
+                .of<AbbreviationsModel>(context, listen: false)
+                .currentAbbreviations[editRow].expa;
+            textEditController.text = text;
+            //  Then tell Flutter to give it focus
+            later(() {
+              focusNode.requestFocus();
+            });
+          } else
+            editRow = -1;
         });
       }
     });
@@ -67,19 +82,17 @@ class _AbbreviationsFrameState extends fm.State<AbbreviationsFrame> {
         flex: isExpansion ? 4 : 1,
         child: fm.GestureDetector(
           onTap: () {
-         //   later(() {
               setState(() {
                 editRow = row;
                 editExpansion = isExpansion;
                 focusNode.requestFocus();
                 later(() {
-
                 });
               });
          //   });
           },
           child: fm.Container(
-            child: pm.Consumer<AbbreviationsModel>(
+            child: pp.Consumer<AbbreviationsModel>(
                 builder: (context,model,child) {
                   processTextChange = () {
                     if (editRow >= 0) {
@@ -124,12 +137,12 @@ class _AbbreviationsFrameState extends fm.State<AbbreviationsFrame> {
                   focusNode: focusNode,
                   controller: textEditController
                     ..text = isExpansion
-                        ? pm.Provider.of<AbbreviationsModel>(context, listen: false).currentAbbreviations[row].expa
-                        : pm.Provider.of<AbbreviationsModel>(context, listen: false).currentAbbreviations[row].abbr,
+                        ? pp.Provider.of<AbbreviationsModel>(context, listen: false).currentAbbreviations[row].expa
+                        : pp.Provider.of<AbbreviationsModel>(context, listen: false).currentAbbreviations[row].abbr
                 )
                     : fm.Text(isExpansion
-                    ? pm.Provider.of<AbbreviationsModel>(context, listen: false).currentAbbreviations[row].expa
-                    : pm.Provider.of<AbbreviationsModel>(context, listen: false).currentAbbreviations[row].abbr,
+                    ? pp.Provider.of<AbbreviationsModel>(context, listen: false).currentAbbreviations[row].expa
+                    : pp.Provider.of<AbbreviationsModel>(context, listen: false).currentAbbreviations[row].abbr,
                     style: fm.TextStyle(fontSize: 24))
             ),
           ),
@@ -139,7 +152,7 @@ class _AbbreviationsFrameState extends fm.State<AbbreviationsFrame> {
 
   @override
   fm.Widget build(fm.BuildContext context) {
-    final model = pm.Provider.of<AbbreviationsModel>(context, listen: false);
+    final model = pp.Provider.of<AbbreviationsModel>(context, listen: false);
           return fm.Column(
               children: [
                 fm.Expanded(
