@@ -59,7 +59,7 @@ class TamUtils {
   //  to help with the sequencer voice recognition.
   static Set<String> words = {
     'head', 'side', 'leader', 'trailer', 'boy', 'girl',
-    'center', 'end', 'very', 'couple', 'home'
+    'center', 'end', 'very', 'couple', 'home', 'undo', 'reset'
   };
 
   //  Read an XML file or other from the assets

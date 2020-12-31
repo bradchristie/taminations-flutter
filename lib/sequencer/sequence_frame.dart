@@ -21,10 +21,10 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart' as fm;
 import 'package:provider/provider.dart' as pp;
-import 'package:taminations/common.dart';
 import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
-import 'package:speech_to_text/speech_to_text_provider.dart';
 import 'package:speech_to_text/speech_to_text.dart';
+import 'package:speech_to_text/speech_to_text_provider.dart';
+import 'package:taminations/common.dart';
 
 import '../button.dart';
 import '../color.dart';
@@ -41,7 +41,6 @@ class _SequenceFrameState extends fm.State<SequenceFrame> {
   var focusNode = fm.FocusNode();
   final ItemScrollController itemScrollController = ItemScrollController();
   final ItemPositionsListener itemPositionsListener = ItemPositionsListener.create();
-  Future<bool> listenAvailable = Future.value(false);
   SpeechToTextProvider speechProvider;
 
   @override
@@ -50,7 +49,6 @@ class _SequenceFrameState extends fm.State<SequenceFrame> {
     textFieldController = fm.TextEditingController();
     focusNode.requestFocus();
     speechProvider = SpeechToTextProvider( SpeechToText());
-    listenAvailable = speechProvider.initialize();
   }
 
   @override
@@ -138,32 +136,33 @@ class _SequenceFrameState extends fm.State<SequenceFrame> {
                          },
                        ),
                      ),
-                     fm.FutureBuilder(
-                         future: listenAvailable,
-                         builder: (context,snapshot) {
-                           return fm.TextButton(child: fm.Icon(
-                               fm.Icons.mic,
-                               color: speechProvider.isListening ? Color.RED :
-                               snapshot.hasData && snapshot.data
-                                   ? Color.BLACK
-                                   : Color.LIGHTGRAY,
-                               size: 32
-                           ),
-                             onPressed: () {
-                               if (speechProvider.isAvailable) {
-                                 setState(() {
-                                   speechProvider.listen(
-                                       localeId: 'en_US',
-                                       partialResults: false,
-                                       listenFor: Duration(seconds: 5),
-                                       pauseFor: Duration(seconds: 5)
-                                   );
-                                 });
-                               }
-                             }
-                           );
-                         }
-                     )
+                     if (TamUtils.isTouchDevice())
+                       fm.FutureBuilder(
+                           future: speechProvider.initialize(),
+                           builder: (context,snapshot) {
+                             return fm.TextButton(child: fm.Icon(
+                                 fm.Icons.mic,
+                                 color: speechProvider.isListening ? Color.RED :
+                                 snapshot.hasData && snapshot.data
+                                     ? Color.BLACK
+                                     : Color.LIGHTGRAY,
+                                 size: 32
+                             ),
+                                 onPressed: () {
+                                   if (speechProvider.isAvailable) {
+                                     setState(() {
+                                       speechProvider.listen(
+                                           localeId: 'en_US',
+                                           partialResults: false,
+                                           listenFor: Duration(seconds: 5),
+                                           pauseFor: Duration(seconds: 5)
+                                       );
+                                     });
+                                   }
+                                 }
+                             );
+                           }
+                       )
                    ],
                  ),
                ),
