@@ -286,9 +286,9 @@ class TaminationsRouterDelegate extends fm.RouterDelegate<TamState>
 
                         //  Should Practice be here?  Not sure how
                         //  this list iteracts with device rotation
-                        if (config.mainPage == MainPage.PRACTICE)
+                        if (config.mainPage == MainPage.STARTPRACTICE)
                           fm.MaterialPage(
-                              key: fm.ValueKey('Practice'),
+                              key: fm.ValueKey('Start Practice'),
                               child: StartPracticePage()
                           ),
                       ],

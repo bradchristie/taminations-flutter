@@ -27,88 +27,39 @@ import '../level_data.dart';
 import '../main.dart';
 import '../tam_utils.dart';
 import '../title_bar.dart';
+import 'screen.dart';
 
-//  CallsPage contains title bar and frame
-//  Only used in portrait mode
-class CallsPage extends fm.StatefulWidget {
-
+class CallsPage extends fm.StatelessWidget {
   @override
-  _CallsPageState createState() => _CallsPageState();
-
-}
-
-class _CallsPageState extends fm.State<CallsPage> {
-
-  LevelData levelDatum;
-
-  @override
-  //  Get the info needed to select what calls to show, save for build
-  void didChangeDependencies() {
-    super.didChangeDependencies();
-    var router = fm.Router.of(context).routerDelegate as TaminationsRouterDelegate;
-    var path = router.currentConfiguration;
-    levelDatum = LevelData.find(path.level);
-  }
-
-  @override
-  //  Build title bar and frame, sending info on the calls to the frame
   fm.Widget build(fm.BuildContext context) {
-    return pp.ChangeNotifierProvider<TitleModel>(
-      create: (_) => TitleModel(),
-      child: pp.Consumer<TitleModel>(
-        builder:(context,titleModel,_) {
-          titleModel.title = levelDatum.name;
-          return fm.Scaffold(
-              appBar: fm.PreferredSize(
-                  preferredSize: fm.Size.fromHeight(56.0),
-                  child: TitleBar()
-              ),
-              body: CallsFrame(levelDatum.name)
-          );
+    return Screen(
+      child: pp.Consumer2<TitleModel,TamState>(
+        builder: (context,titleModel,tamState,_) {
+          titleModel.title = LevelData.find(tamState.level).name;
+          return CallsFrame();
         }
       ),
     );
   }
-
 }
+
 
 //  CallsFrame contains a list or grid of calls
 //  and a search entry above to filter the calls
 class CallsFrame extends fm.StatefulWidget {
 
-  final String level;
-  CallsFrame(this.level) : super(key:fm.ValueKey(level));
   @override
-  _CallsState createState() => _CallsState(level);
+  _CallsFrameState createState() => _CallsFrameState();
 
 }
 
-class _CallsState extends fm.State<CallsFrame> {
+class _CallsFrameState extends fm.State<CallsFrame> {
 
-  final String level;
-  List<CallListDatum> calls = [];
-  List<CallListDatum> callsSearched = [];
-  LevelData levelDatum;
-  _CallsState(this.level);
   String search = '';
-  bool get showLevel => RegExp('(bms|adv|cha|all)').hasMatch(levelDatum.dir);
-
-  @override
-  //  Get the initial list of calls to show
-  //  Might be filtered later if the user enters a search
-  void didChangeDependencies() {
-    super.didChangeDependencies();
-    levelDatum = LevelData.find(level);
-    calls = TamUtils.calldata.where((element) =>
-        levelDatum.selector(element.link)).toList();
-    pp.Provider.of<TitleModel>(context,listen:false).title = levelDatum.name;
-  }
 
   @override
   //  Build list or grid of calls
   fm.Widget build(fm.BuildContext context) {
-    //  First do any search to filter the calls
-    callsSearched = calls.where((call) => call.title.toLowerCase().contains(search)).toList();
     //  Return column of 2 items, search field and list/grid of calls
     return fm.Column(
         children: [
@@ -128,33 +79,46 @@ class _CallsState extends fm.State<CallsFrame> {
           fm.Expanded(
             //  Test to see if we are landscape or portrait
             //  Landscape gets a grid, portrait gets a list
-              child: fm.OrientationBuilder(
-                  builder: (context, orientation) {
-                    if (orientation == fm.Orientation.landscape) {
-                      return fm.GridView.builder(
-                          scrollDirection: fm.Axis.horizontal,
-                          gridDelegate: fm.SliverGridDelegateWithMaxCrossAxisExtent(
-                              maxCrossAxisExtent: 40,
-                              mainAxisSpacing: 1,
-                              childAspectRatio: 0.1
-                          ),
+              child: pp.Consumer<TamState>(
+                builder: (context,tamState,_) {
+                  //  Get the initial list of calls to show
+                  final levelDatum = LevelData.find(tamState.level);
+                  final showLevel = RegExp('(bms|adv|cha|all)').hasMatch(levelDatum.dir);
+                  final calls = TamUtils.calldata.where((element) =>
+                      levelDatum.selector(element.link)).toList();
+                  //  Do any search to filter the calls
+                  final callsSearched = calls.where((call) => call.title.toLowerCase().contains(search)).toList();
+                  print('Calls searched has ${callsSearched.length} calls');
+                  return fm.OrientationBuilder(
+                    builder: (context, orientation) {
+                      if (orientation == fm.Orientation.landscape) {
+                        return fm.GridView.builder(
+                            scrollDirection: fm.Axis.horizontal,
+                            gridDelegate: fm.SliverGridDelegateWithMaxCrossAxisExtent(
+                                maxCrossAxisExtent: 40,
+                                mainAxisSpacing: 1,
+                                childAspectRatio: 0.1
+                            ),
+                            itemCount: callsSearched.length,
+                            itemBuilder:
+                            (context,index) => itemBuilder(context,index,callsSearched,showLevel),
+                        );
+                      }
+                      else {
+                        return fm.ListView.builder(
                           itemCount: callsSearched.length,
-                          itemBuilder: itemBuilder
-                      );
+                           itemBuilder: (context,index) => itemBuilder(context,index,callsSearched,showLevel),
+                        );
+                      }
                     }
-                    else {
-                      return fm.ListView.builder(
-                        itemCount: callsSearched.length,
-                        itemBuilder: itemBuilder,
-                      );
-                    }
-                  }
-          ))
+                  );
+                }
+              ))
         ]);
   }
 
   //  Builder for one item of the list or grid
-  fm.Widget itemBuilder(fm.BuildContext context, int index) {
+  fm.Widget itemBuilder(fm.BuildContext context, int index, List<CallListDatum> callsSearched, bool showLevel) {
     return fm.Container(
       decoration: fm.BoxDecoration(
           border: fm.Border(top: fm.BorderSide(width: 1, color: Color.BLACK))),

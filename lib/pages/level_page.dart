@@ -22,7 +22,6 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart' as fm;
 import 'package:provider/provider.dart' as pp;
 
-
 import '../color.dart';
 import '../main.dart';
 import '../title_bar.dart';

@@ -1077,11 +1077,11 @@ class CallContext {
   //  Return true if two dancers are facing the same direction
   bool isFacingSameDirection(Dancer d, Dancer d2) =>
       d.angleFacing.isAround(d2.angleFacing);
-  //  TODO merge these two functions
+
   //  Return true if this dancer is part of a couple facing same direction
   bool isInCouple(Dancer d, [Dancer d2]) {
     d2 ??= d.data.partner;
-    return d2 != null && d.angleFacing.isAround(d2.angleFacing);
+    return d2 != null && isFacingSameDirection(d,d2);
   }
 
   //  Return true if this dancer is in tandem with another dancer

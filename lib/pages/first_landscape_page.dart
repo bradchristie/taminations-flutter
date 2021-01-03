@@ -21,44 +21,26 @@
 import 'package:flutter/material.dart' as fm;
 import 'package:provider/provider.dart' as pp;
 
-import '../color.dart';
+import '../common.dart';
 import '../main.dart';
-import '../title_bar.dart';
+import 'screen.dart';
 import 'calls_page.dart';
 import 'level_page.dart';
 import 'settings_page.dart';
 import 'web_page.dart';
 
-class FirstLandscapePage extends fm.StatefulWidget {
-
-  @override
-  _FirstLandscapePageState createState() => _FirstLandscapePageState();
-
-}
-
-class _FirstLandscapePageState extends fm.State<FirstLandscapePage> {
-
-  String title = 'Taminations';
+class FirstLandscapePage extends fm.StatelessWidget {
 
   @override
   fm.Widget build(fm.BuildContext context) {
-    return pp.Consumer<TamState>(
-      builder: (context,appState,_) => pp.ChangeNotifierProvider(
-        create: (_) => TitleModel(),
-        child: fm.Scaffold(
-          backgroundColor: Color.GRAY,
-            appBar: fm.PreferredSize(
-                preferredSize: fm.Size.fromHeight(56.0),
-                child: TitleBar()
-            ),
-            body: FirstLandscapeFrame(rightChild:
-                    appState.detailPage==DetailPage.SETTINGS
-                        ? SettingsFrame()
-                        : appState.level?.isNotEmpty ?? false
-                        ? CallsFrame(appState.level)
-                        : WebFrame('info/about.html')),
-
-        ),
+    return Screen(
+      child: pp.Consumer<TamState>(
+        builder: (context,appState,_) => FirstLandscapeFrame(rightChild:
+        appState.detailPage==DetailPage.SETTINGS
+            ? SettingsFrame()
+            : appState.level?.isNotEmpty ?? false
+            ? CallsFrame()
+            : WebFrame('info/about.html')),
       ),
     );
   }

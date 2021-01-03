@@ -20,10 +20,11 @@
 
 import 'package:flutter/material.dart' as fm;
 import 'package:provider/provider.dart' as pp;
-import 'abbreviations_model.dart';
-import '../color.dart';
+
 import '../button.dart';
+import '../color.dart';
 import '../extensions.dart';
+import 'abbreviations_model.dart';
 
 class AbbreviationsFrame extends fm.StatefulWidget {
   @override
@@ -86,10 +87,7 @@ class _AbbreviationsFrameState extends fm.State<AbbreviationsFrame> {
                 editRow = row;
                 editExpansion = isExpansion;
                 focusNode.requestFocus();
-                later(() {
-                });
               });
-         //   });
           },
           child: fm.Container(
             child: pp.Consumer<AbbreviationsModel>(

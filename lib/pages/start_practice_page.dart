@@ -20,31 +20,29 @@
 
 import 'package:flutter/material.dart' as fm;
 import 'package:provider/provider.dart' as pp;
-import 'package:flutter/services.dart';
 import 'package:taminations/color.dart';
 import 'package:taminations/common.dart';
 
 import '../main.dart';
 import '../title_bar.dart';
 import '../settings.dart';
+import 'landscape.dart';
 
 class StartPracticePage extends fm.StatelessWidget {
 
   @override
   fm.Widget build(fm.BuildContext context) {
-    SystemChrome.setPreferredOrientations([
-      DeviceOrientation.landscapeLeft,
-      DeviceOrientation.landscapeRight,
-    ]);
-    return pp.ChangeNotifierProvider<TitleModel>(
-      create: (_) => TitleModel(),
-      child: fm.Scaffold(
-          backgroundColor: Color.FLOOR,
-          appBar: fm.PreferredSize(
-              preferredSize: fm.Size.fromHeight(56.0),
-              child: TitleBar()
-          ),
-          body: StartPracticeFrame()
+    return LandscapeOnly(
+      child: pp.ChangeNotifierProvider<TitleModel>(
+        create: (_) => TitleModel(),
+        child: fm.Scaffold(
+            backgroundColor: Color.FLOOR,
+            appBar: fm.PreferredSize(
+                preferredSize: fm.Size.fromHeight(56.0),
+                child: TitleBar()
+            ),
+            body: StartPracticeFrame()
+        ),
       ),
     );
   }
