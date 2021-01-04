@@ -21,6 +21,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart' as fm;
 import 'package:provider/provider.dart' as pp;
+import 'package:flutter/services.dart';
 
 import 'common.dart';
 import 'pages/anim_list_page.dart';
@@ -182,169 +183,171 @@ class TaminationsRouterDelegate extends fm.RouterDelegate<TamState>
 
   @override
   fm.Widget build(fm.BuildContext context) {
-    return pp.ChangeNotifierProvider.value(
-      value: appState,
-      child: fm.OrientationBuilder(
-          builder: (context, orientation) {
-            _orientation = orientation;
-            return pp.Consumer<TamState>(
-                builder: (context,appState,_) {
-                  final config = appState;
-                  return fm.Navigator(
-                      key: navigatorKey,
+    return _PortraitForSmallDevices(
+      child: pp.ChangeNotifierProvider.value(
+        value: appState,
+        child: fm.OrientationBuilder(
+            builder: (context, orientation) {
+              _orientation = orientation;
+              return pp.Consumer<TamState>(
+                  builder: (context,appState,_) {
+                    final config = appState;
+                    return fm.Navigator(
+                        key: navigatorKey,
 
-                      //  Pages for landscape - first and second, Sequencer, Practice
-                      pages: (orientation == fm.Orientation.landscape)
-                          ? [
-                            fm.MaterialPage(
-                          key: fm.ValueKey('Landscape Page'),
-                          child: FirstLandscapePage()
-                      ),
-                        if (config?.link?.isNotEmpty ?? false)
-                          fm.MaterialPage(
-                              key: fm.ValueKey('Landscape Page ' +
-                                  config.link),
-                              child: SecondLandscapePage()
-                          ),
-                        if (config.mainPage == MainPage.PRACTICE ||
-                            config.mainPage == MainPage.TUTORIAL ||
-                            config.mainPage == MainPage.STARTPRACTICE)
-                          fm.MaterialPage(
-                              key: fm.ValueKey('Start Practice'),
-                              child: StartPracticePage()
-                          ),
-                        if (config.mainPage == MainPage.TUTORIAL)
-                          fm.MaterialPage(
-                              key: fm.ValueKey('Tutorial'),
-                              child: TutorialPage()
-                          ),
-                        if (config.mainPage == MainPage.PRACTICE)
-                          fm.MaterialPage(
-                              key: fm.ValueKey('Practice'),
-                              child: PracticePage()
-                          ),
-                        if (config.mainPage == MainPage.SEQUENCER)
-                          fm.MaterialPage(
-                              key: fm.ValueKey('Sequencer'),
-                              child: SequencerPage()
-                          ),
-                      ]
-
-                      //  Pages for portrait - Level, Animlist, Animation, Settings, etc
-                          : [
-                        //  Root of all portrait pages shows the levels
-                        fm.MaterialPage(
-                            key: fm.ValueKey('LevelPage'),
-                            child: LevelPage()
+                        //  Pages for landscape - first and second, Sequencer, Practice
+                        pages: (orientation == fm.Orientation.landscape)
+                            ? [
+                              fm.MaterialPage(
+                            key: fm.ValueKey('Landscape Page'),
+                            child: FirstLandscapePage()
                         ),
-                        //  Settings, Help single pages just below the main page
-                        if (config.mainPage == MainPage.LEVELS &&
-                            config.detailPage == DetailPage.HELP)
-                          fm.MaterialPage(
-                              key: fm.ValueKey('About'),
-                              child: WebPage('info/about.html')
-                          ),
-                        if (config.mainPage == MainPage.LEVELS &&
-                            config.detailPage == DetailPage.SETTINGS)
-                          fm.MaterialPage(
-                              key: fm.ValueKey('Settings'),
-                              child: SettingsPage()
-                          ),
+                          if (config?.link?.isNotEmpty ?? false)
+                            fm.MaterialPage(
+                                key: fm.ValueKey('Landscape Page ' +
+                                    config.link),
+                                child: SecondLandscapePage()
+                            ),
+                          if (config.mainPage == MainPage.PRACTICE ||
+                              config.mainPage == MainPage.TUTORIAL ||
+                              config.mainPage == MainPage.STARTPRACTICE)
+                            fm.MaterialPage(
+                                key: fm.ValueKey('Start Practice'),
+                                child: StartPracticePage()
+                            ),
+                          if (config.mainPage == MainPage.TUTORIAL)
+                            fm.MaterialPage(
+                                key: fm.ValueKey('Tutorial'),
+                                child: TutorialPage()
+                            ),
+                          if (config.mainPage == MainPage.PRACTICE)
+                            fm.MaterialPage(
+                                key: fm.ValueKey('Practice'),
+                                child: PracticePage()
+                            ),
+                          if (config.mainPage == MainPage.SEQUENCER)
+                            fm.MaterialPage(
+                                key: fm.ValueKey('Sequencer'),
+                                child: SequencerPage()
+                            ),
+                        ]
 
-                        //  Pages leading to animations
-                        if ((config.mainPage == MainPage.LEVELS &&
-                            config.detailPage == DetailPage.CALLS) ||
-                            config.mainPage == MainPage.ANIMLIST ||
-                            config.mainPage == MainPage.ANIMATIONS)
+                        //  Pages for portrait - Level, Animlist, Animation, Settings, etc
+                            : [
+                          //  Root of all portrait pages shows the levels
                           fm.MaterialPage(
-                              key: fm.ValueKey(config.level),
-                              child: CallsPage()
+                              key: fm.ValueKey('LevelPage'),
+                              child: LevelPage()
                           ),
-                        if (config.mainPage == MainPage.ANIMLIST ||
-                            config.mainPage == MainPage.ANIMATIONS)
-                          fm.MaterialPage(
-                              key: fm.ValueKey(config.link),
-                              child: AnimListPage()
-                          ),
-                        if (config.mainPage == MainPage.ANIMATIONS)
-                          fm.MaterialPage(
-                              key: fm.ValueKey(config.link + ' animation'),
-                              child: AnimationPage()
-                          ),
-                        if (config.detailPage == DetailPage.DEFINITION)
-                          fm.MaterialPage(
-                              key: fm.ValueKey(
-                                  config.link + ' definition'),
-                              child: WebPage(config.link)
-                          ),
-                        if (config.mainPage != MainPage.LEVELS &&
-                            config.detailPage == DetailPage.SETTINGS)
-                          fm.MaterialPage(
-                              key: fm.ValueKey('Settings'),
-                              child: SettingsPage()
-                          ),
+                          //  Settings, Help single pages just below the main page
+                          if (config.mainPage == MainPage.LEVELS &&
+                              config.detailPage == DetailPage.HELP)
+                            fm.MaterialPage(
+                                key: fm.ValueKey('About'),
+                                child: WebPage('info/about.html')
+                            ),
+                          if (config.mainPage == MainPage.LEVELS &&
+                              config.detailPage == DetailPage.SETTINGS)
+                            fm.MaterialPage(
+                                key: fm.ValueKey('Settings'),
+                                child: SettingsPage()
+                            ),
 
-                        //  Should Practice be here?  Not sure how
-                        //  this list iteracts with device rotation
-                        if (config.mainPage == MainPage.STARTPRACTICE)
-                          fm.MaterialPage(
-                              key: fm.ValueKey('Start Practice'),
-                              child: StartPracticePage()
-                          ),
-                      ],
+                          //  Pages leading to animations
+                          if ((config.mainPage == MainPage.LEVELS &&
+                              config.detailPage == DetailPage.CALLS) ||
+                              config.mainPage == MainPage.ANIMLIST ||
+                              config.mainPage == MainPage.ANIMATIONS)
+                            fm.MaterialPage(
+                                key: fm.ValueKey(config.level),
+                                child: CallsPage()
+                            ),
+                          if (config.mainPage == MainPage.ANIMLIST ||
+                              config.mainPage == MainPage.ANIMATIONS)
+                            fm.MaterialPage(
+                                key: fm.ValueKey(config.link),
+                                child: AnimListPage()
+                            ),
+                          if (config.mainPage == MainPage.ANIMATIONS)
+                            fm.MaterialPage(
+                                key: fm.ValueKey(config.link + ' animation'),
+                                child: AnimationPage()
+                            ),
+                          if (config.detailPage == DetailPage.DEFINITION)
+                            fm.MaterialPage(
+                                key: fm.ValueKey(
+                                    config.link + ' definition'),
+                                child: WebPage(config.link)
+                            ),
+                          if (config.mainPage != MainPage.LEVELS &&
+                              config.detailPage == DetailPage.SETTINGS)
+                            fm.MaterialPage(
+                                key: fm.ValueKey('Settings'),
+                                child: SettingsPage()
+                            ),
 
-                      //  onPopPage
-                      //  Calculate popped config based on current config
-                      onPopPage: (route, result) {
-                        print('Pop Navigator: ${route.currentResult}');
-                        //  route.didPop returns false if the navigator
-                        //  has only one page in its list of pages
-                        if (!route.didPop(result)) {
-                          return false;
-                        }
-                        if (_orientation == fm.Orientation.landscape) {
-                          //  Pop landscape page
-                          if (appState.mainPage == MainPage.SEQUENCER)
-                            appState.change(mainPage: MainPage.LEVELS);
-                          else if (appState.mainPage == MainPage.ANIMATIONS)
-                            appState.change(mainPage: MainPage.LEVELS, detailPage: DetailPage.NONE, link:'');
-                          else if (appState.mainPage == MainPage.STARTPRACTICE)
-                            appState.change(mainPage: MainPage.LEVELS);
-                          else if (appState.mainPage == MainPage.PRACTICE ||
-                          appState.mainPage == MainPage.TUTORIAL)
-                            appState.change(mainPage:MainPage.STARTPRACTICE);
-                        }
+                          //  Should Practice be here?  Not sure how
+                          //  this list iteracts with device rotation
+                          if (config.mainPage == MainPage.STARTPRACTICE)
+                            fm.MaterialPage(
+                                key: fm.ValueKey('Start Practice'),
+                                child: StartPracticePage()
+                            ),
+                        ],
 
-                        else {  // portrait
-                          if (appState.mainPage == MainPage.LEVELS) {
-                            if (appState.detailPage == DetailPage.SETTINGS ||
-                                appState.detailPage == DetailPage.HELP ||
-                                appState.detailPage == DetailPage.CALLS)
-                              appState.change(detailPage: DetailPage.NONE);
+                        //  onPopPage
+                        //  Calculate popped config based on current config
+                        onPopPage: (route, result) {
+                          print('Pop Navigator: ${route.currentResult}');
+                          //  route.didPop returns false if the navigator
+                          //  has only one page in its list of pages
+                          if (!route.didPop(result)) {
+                            return false;
                           }
-                          else if (appState.mainPage == MainPage.ANIMLIST) {
-                            if (appState.detailPage == DetailPage.SETTINGS ||
-                                appState.detailPage == DetailPage.DEFINITION)
-                              appState.change(detailPage: DetailPage.NONE);
-                            else
-                              appState.change(mainPage: MainPage.LEVELS,
-                                  detailPage: DetailPage.CALLS);
+                          if (_orientation == fm.Orientation.landscape) {
+                            //  Pop landscape page
+                            if (appState.mainPage == MainPage.SEQUENCER)
+                              appState.change(mainPage: MainPage.LEVELS);
+                            else if (appState.mainPage == MainPage.ANIMATIONS)
+                              appState.change(mainPage: MainPage.LEVELS, detailPage: DetailPage.NONE, link:'');
+                            else if (appState.mainPage == MainPage.STARTPRACTICE)
+                              appState.change(mainPage: MainPage.LEVELS);
+                            else if (appState.mainPage == MainPage.PRACTICE ||
+                            appState.mainPage == MainPage.TUTORIAL)
+                              appState.change(mainPage:MainPage.STARTPRACTICE);
                           }
 
-                          else if (appState.mainPage == MainPage.ANIMATIONS) {
-                            if (appState.detailPage == DetailPage.SETTINGS ||
-                                appState.detailPage == DetailPage.DEFINITION)
-                              appState.change(detailPage: DetailPage.NONE);
-                            else
-                              appState.change(mainPage: MainPage.ANIMLIST);
-                          }
-                        }
+                          else {  // portrait
+                            if (appState.mainPage == MainPage.LEVELS) {
+                              if (appState.detailPage == DetailPage.SETTINGS ||
+                                  appState.detailPage == DetailPage.HELP ||
+                                  appState.detailPage == DetailPage.CALLS)
+                                appState.change(detailPage: DetailPage.NONE);
+                            }
+                            else if (appState.mainPage == MainPage.ANIMLIST) {
+                              if (appState.detailPage == DetailPage.SETTINGS ||
+                                  appState.detailPage == DetailPage.DEFINITION)
+                                appState.change(detailPage: DetailPage.NONE);
+                              else
+                                appState.change(mainPage: MainPage.LEVELS,
+                                    detailPage: DetailPage.CALLS);
+                            }
 
-                        notifyListeners();
-                        return true;
-                      });
-                });
-          })
+                            else if (appState.mainPage == MainPage.ANIMATIONS) {
+                              if (appState.detailPage == DetailPage.SETTINGS ||
+                                  appState.detailPage == DetailPage.DEFINITION)
+                                appState.change(detailPage: DetailPage.NONE);
+                              else
+                                appState.change(mainPage: MainPage.ANIMLIST);
+                            }
+                          }
+
+                          notifyListeners();
+                          return true;
+                        });
+                  });
+            })
+      ),
     );
   }
 
@@ -395,4 +398,32 @@ class TaminationsRouteInformationParser extends fm.RouteInformationParser<TamSta
     return fm.RouteInformation(location: '?$location');
   }
 
+}
+
+class _PortraitForSmallDevices extends fm.StatefulWidget {
+  final fm.Widget child;
+  _PortraitForSmallDevices({@fm.required this.child});
+  @override
+  __PortraitForSmallDevicesState createState() => __PortraitForSmallDevicesState();
+}
+
+class __PortraitForSmallDevicesState extends fm.State<_PortraitForSmallDevices> {
+
+  @override
+  void initState() {
+    super.initState();
+    later(() {
+      if (TamUtils.isSmallDevice(context)) {
+        SystemChrome.setPreferredOrientations([
+          DeviceOrientation.portraitUp,
+          DeviceOrientation.portraitDown
+        ]);
+      }
+    });
+  }
+
+  @override
+  fm.Widget build(fm.BuildContext context) {
+    return widget.child;
+  }
 }

@@ -19,34 +19,64 @@
 */
 
 import 'package:flutter/material.dart' as fm;
+import 'package:flutter/services.dart';
 import 'package:provider/provider.dart' as pp;
 import 'package:taminations/color.dart';
 import 'package:taminations/common.dart';
 
 import '../main.dart';
-import '../title_bar.dart';
 import '../settings.dart';
-import 'landscape.dart';
+import '../title_bar.dart';
+import '../tam_utils.dart';
 
-class StartPracticePage extends fm.StatelessWidget {
+class StartPracticePage extends fm.StatefulWidget {
+
+  @override
+  _StartPracticePageState createState() => _StartPracticePageState();
+}
+
+class _StartPracticePageState extends fm.State<StartPracticePage> {
+
+  @override
+  void initState() {
+    super.initState();
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.landscapeRight,
+      DeviceOrientation.landscapeLeft
+    ]);
+  }
+
+  @override
+  void dispose() {
+    if (TamUtils.isSmallDevice(context))
+      SystemChrome.setPreferredOrientations([
+        DeviceOrientation.portraitUp,
+        DeviceOrientation.portraitDown
+      ]);
+    else
+      SystemChrome.setPreferredOrientations([
+        DeviceOrientation.portraitUp,
+        DeviceOrientation.portraitDown,
+        DeviceOrientation.landscapeLeft,
+        DeviceOrientation.landscapeRight
+      ]);
+    super.dispose();
+  }
 
   @override
   fm.Widget build(fm.BuildContext context) {
-    return LandscapeOnly(
-      child: pp.ChangeNotifierProvider<TitleModel>(
-        create: (_) => TitleModel(),
-        child: fm.Scaffold(
-            backgroundColor: Color.FLOOR,
-            appBar: fm.PreferredSize(
-                preferredSize: fm.Size.fromHeight(56.0),
-                child: TitleBar()
-            ),
-            body: StartPracticeFrame()
-        ),
+    return pp.ChangeNotifierProvider<TitleModel>(
+      create: (_) => TitleModel(),
+      child: fm.Scaffold(
+          backgroundColor: Color.FLOOR,
+          appBar: fm.PreferredSize(
+              preferredSize: fm.Size.fromHeight(56.0),
+              child: TitleBar()
+          ),
+          body: StartPracticeFrame()
       ),
     );
   }
-
 }
 
 //  Wrapper widget to handle taps
