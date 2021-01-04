@@ -75,6 +75,7 @@ class DanceAnimationPainter extends fm.ChangeNotifier implements fm.CustomPainte
   Ticker _ticker;
   String get title => _tam?.getAttribute('title')
       ?.replaceAll(' \\(.*?\\) '.r, ' ') ?? '';
+  bool _isDisposed = false;
 
   //  Except for the phantoms, these are the standard colors
   //  used for teaching callers
@@ -116,9 +117,16 @@ class DanceAnimationPainter extends fm.ChangeNotifier implements fm.CustomPainte
     //addListener(() { _onDraw(); });
   }
 
+  @override
+  void dispose() {
+    _isDisposed = true;
+    super.dispose();
+  }
+
   void _redraw() {
     later(() {
-      notifyListeners();
+      if (!_isDisposed)
+        notifyListeners();
     });
   }
 
@@ -567,7 +575,7 @@ class DanceAnimationPainter extends fm.ChangeNotifier implements fm.CustomPainte
     _resetAnimation();
     partstr = _tam('parts','') + _tam('fractions','');
     hasParts = _tam('parts') != null;
-    notifyListeners();
+    _redraw();
   }
 
   void _resetAnimation() {
@@ -678,9 +686,7 @@ class DanceAnimationPainter extends fm.ChangeNotifier implements fm.CustomPainte
       beat = -leadin;
       _prevbeat = -leadin;
       updateDancers();
-      later(() {
-        notifyListeners();
-      });
+      _redraw();
     }
   }
 
@@ -691,7 +697,7 @@ class DanceAnimationPainter extends fm.ChangeNotifier implements fm.CustomPainte
       d.animate(beat);  // current position clobbered by computePath
       _beats = max(_beats, d.beats + leadout);
     }
-    notifyListeners();
+    _redraw();
   }
 
   @override

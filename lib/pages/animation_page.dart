@@ -23,24 +23,14 @@ import 'dart:math';
 import 'package:flutter/material.dart' as fm;
 import 'package:provider/provider.dart' as pp;
 
-import '../button.dart';
-import '../color.dart';
-import '../dance_animation_painter.dart';
-import '../dancer.dart';
-import '../extensions.dart';
-import '../geometry.dart';
-import '../level_data.dart';
+import '../common.dart';
 import '../main.dart';
-import '../math/vector.dart';
-import '../settings.dart';
-import '../title_bar.dart';
-import '../tam_utils.dart';
+import 'page.dart';
 
 class AnimationState extends fm.ChangeNotifier {
 
   double beat;
   int _part;
-  String title;
 
   int get part => _part;
   set part(int value) {
@@ -50,74 +40,44 @@ class AnimationState extends fm.ChangeNotifier {
 
 }
 
-class AnimationPage extends fm.StatefulWidget {
-  @override
-  _AnimationPageState createState() => _AnimationPageState();
-}
-
-class _AnimationPageState extends fm.State<AnimationPage>
-    with fm.SingleTickerProviderStateMixin {
-
-  String link;
-  int animnum;
-
-  @override
-  void didChangeDependencies() {
-    super.didChangeDependencies();
-    var router = fm.Router.of(context).routerDelegate as TaminationsRouterDelegate;
-    var path = router.currentConfiguration;
-    link = path.link;
-    animnum = path.animnum;
-
-  }
+class AnimationPage extends fm.StatelessWidget {
 
   @override
   fm.Widget build(fm.BuildContext context) {
-    return pp.MultiProvider(
-      providers:[
-        pp.ChangeNotifierProvider(create:(_) => TitleModel()),
-        pp.ChangeNotifierProvider(create: (_) => DanceAnimationPainter())
-      ],
-      child: fm.Scaffold(
-        backgroundColor: Color.LIGHTGRAY,
-        appBar: fm.PreferredSize(
-            preferredSize: fm.Size.fromHeight(56.0),
-            child: pp.Consumer2<DanceAnimationPainter,TitleModel>(
-                builder: (context, painter, titleModel, _) {
-                  titleModel.title = painter.title;
-                  titleModel.level = LevelData.find(link).name;
-                  return TitleBar();
-                })
-        ),
-        body: pp.Consumer<TamState>(
-          builder: (context, tamState, _) {
-            final painter = pp.Provider.of<DanceAnimationPainter>(context,listen:false);
-            TamUtils.getXMLAsset(tamState.link).then((doc) {
-              var tam = TamUtils.tamList(doc)
-                  .where((it) => !(it('display','').startsWith('n')))
-                  .toList()[max(0, tamState.animnum)];
-              painter.setAnimation(tam);
-            });
-            return fm.Column(
-            children: [
-              fm.Expanded(child: AnimationFrame()),
-              fm.Container(
-                color: Color.FLOOR,
-                child: fm.Row(
-                  children: [
-                    fm.Expanded(
-                        child: Button('Definition',onPressed: () {
-                          tamState.change(detailPage: DetailPage.DEFINITION);
-                        })),
-                    fm.Expanded(
-                        child: Button('Settings',onPressed: () {
-                          tamState.change(detailPage: DetailPage.SETTINGS);
-                    }))
-                  ],
-                ),
-              )
-            ],
-          );}
+    return  Page(
+      child: pp.ChangeNotifierProvider(
+        create: (_) => DanceAnimationPainter(),
+        child: pp.Consumer2<TamState,TitleModel>(
+            builder: (context, tamState, titleModel, _) {
+              final painter = pp.Provider.of<DanceAnimationPainter>(context,listen:false);
+              TamUtils.getXMLAsset(tamState.link).then((doc) {
+                var tam = TamUtils.tamList(doc)
+                    .where((it) => !(it('display','').startsWith('n')))
+                    .toList()[max(0, tamState.animnum)];
+                painter.setAnimation(tam);
+                titleModel.title = tam.getAttribute('title');
+              });
+              return fm.Column(
+                children: [
+                  fm.Expanded(child: AnimationFrame()),
+                  fm.Container(
+                    color: Color.FLOOR,
+                    child: fm.Row(
+                      children: [
+                        fm.Expanded(
+                            child: Button('Definition',onPressed: () {
+                              tamState.change(detailPage: DetailPage.DEFINITION);
+                            })),
+                        fm.Expanded(
+                            child: Button('Settings',onPressed: () {
+                              tamState.change(detailPage: DetailPage.SETTINGS);
+                            }))
+                      ],
+                    ),
+                  )
+                ],
+              );
+            }
         ),
       ),
     );
@@ -288,21 +248,24 @@ class _AnimationFrameState extends fm.State<AnimationFrame>
                   })),
 
               //  Slider to show current animation position
-              fm.SliderTheme(
-                data: fm.SliderThemeData(),
-                child: fm.Slider(
-                    activeColor: Color.HIGHLIGHT,
-                    inactiveColor: Color.GRAY,
-                    value: painter.totalBeats > 2.0
-                        ? min(100,(painter.beat + painter.leadin) * 100.0 / painter.totalBeats)
-                        : 0.0,
-                    min: 0,
-                    max: 100,
-                    onChanged: (double value) {
-                      painter.beat =
-                          (value * painter.totalBeats / 100.0) - painter.leadin;
-                    },
-                  ),
+              fm.Container(
+                color: Color.LIGHTGRAY,
+                child: fm.SliderTheme(
+                  data: fm.SliderThemeData(),
+                  child: fm.Slider(
+                      activeColor: Color.HIGHLIGHT,
+                      inactiveColor: Color.GRAY,
+                      value: painter.totalBeats > 2.0
+                          ? min(100,(painter.beat + painter.leadin) * 100.0 / painter.totalBeats)
+                          : 0.0,
+                      min: 0,
+                      max: 100,
+                      onChanged: (double value) {
+                        painter.beat =
+                            (value * painter.totalBeats / 100.0) - painter.leadin;
+                      },
+                    ),
+                ),
               ),
 
               //  Painter to show animation start, end, beats, and parts

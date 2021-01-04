@@ -191,7 +191,6 @@ class TaminationsRouterDelegate extends fm.RouterDelegate<TamState>
               _orientation = orientation;
               return pp.Consumer<TamState>(
                   builder: (context,appState,_) {
-                    final config = appState;
                     return fm.Navigator(
                         key: navigatorKey,
 
@@ -202,30 +201,30 @@ class TaminationsRouterDelegate extends fm.RouterDelegate<TamState>
                             key: fm.ValueKey('Landscape Page'),
                             child: FirstLandscapePage()
                         ),
-                          if (config?.link?.isNotEmpty ?? false)
+                          if (appState.mainPage != MainPage.LEVELS)
                             fm.MaterialPage(
                                 key: fm.ValueKey('Landscape Page ' +
-                                    config.link),
+                                    appState.link),
                                 child: SecondLandscapePage()
                             ),
-                          if (config.mainPage == MainPage.PRACTICE ||
-                              config.mainPage == MainPage.TUTORIAL ||
-                              config.mainPage == MainPage.STARTPRACTICE)
+                          if (appState.mainPage == MainPage.PRACTICE ||
+                              appState.mainPage == MainPage.TUTORIAL ||
+                              appState.mainPage == MainPage.STARTPRACTICE)
                             fm.MaterialPage(
                                 key: fm.ValueKey('Start Practice'),
                                 child: StartPracticePage()
                             ),
-                          if (config.mainPage == MainPage.TUTORIAL)
+                          if (appState.mainPage == MainPage.TUTORIAL)
                             fm.MaterialPage(
                                 key: fm.ValueKey('Tutorial'),
                                 child: TutorialPage()
                             ),
-                          if (config.mainPage == MainPage.PRACTICE)
+                          if (appState.mainPage == MainPage.PRACTICE)
                             fm.MaterialPage(
                                 key: fm.ValueKey('Practice'),
                                 child: PracticePage()
                             ),
-                          if (config.mainPage == MainPage.SEQUENCER)
+                          if (appState.mainPage == MainPage.SEQUENCER)
                             fm.MaterialPage(
                                 key: fm.ValueKey('Sequencer'),
                                 child: SequencerPage()
@@ -240,47 +239,47 @@ class TaminationsRouterDelegate extends fm.RouterDelegate<TamState>
                               child: LevelPage()
                           ),
                           //  Settings, Help single pages just below the main page
-                          if (config.mainPage == MainPage.LEVELS &&
-                              config.detailPage == DetailPage.HELP)
+                          if (appState.mainPage == MainPage.LEVELS &&
+                              appState.detailPage == DetailPage.HELP)
                             fm.MaterialPage(
                                 key: fm.ValueKey('About'),
                                 child: WebPage('info/about.html')
                             ),
-                          if (config.mainPage == MainPage.LEVELS &&
-                              config.detailPage == DetailPage.SETTINGS)
+                          if (appState.mainPage == MainPage.LEVELS &&
+                              appState.detailPage == DetailPage.SETTINGS)
                             fm.MaterialPage(
                                 key: fm.ValueKey('Settings'),
                                 child: SettingsPage()
                             ),
 
                           //  Pages leading to animations
-                          if ((config.mainPage == MainPage.LEVELS &&
-                              config.detailPage == DetailPage.CALLS) ||
-                              config.mainPage == MainPage.ANIMLIST ||
-                              config.mainPage == MainPage.ANIMATIONS)
+                          if ((appState.mainPage == MainPage.LEVELS &&
+                              appState.detailPage == DetailPage.CALLS) ||
+                              appState.mainPage == MainPage.ANIMLIST ||
+                              appState.mainPage == MainPage.ANIMATIONS)
                             fm.MaterialPage(
-                                key: fm.ValueKey(config.level),
+                                key: fm.ValueKey(appState.level),
                                 child: CallsPage()
                             ),
-                          if (config.mainPage == MainPage.ANIMLIST ||
-                              config.mainPage == MainPage.ANIMATIONS)
+                          if (appState.mainPage == MainPage.ANIMLIST ||
+                              appState.mainPage == MainPage.ANIMATIONS)
                             fm.MaterialPage(
-                                key: fm.ValueKey(config.link),
+                                key: fm.ValueKey(appState.link),
                                 child: AnimListPage()
                             ),
-                          if (config.mainPage == MainPage.ANIMATIONS)
+                          if (appState.mainPage == MainPage.ANIMATIONS)
                             fm.MaterialPage(
-                                key: fm.ValueKey(config.link + ' animation'),
+                                key: fm.ValueKey(appState.link + ' animation'),
                                 child: AnimationPage()
                             ),
-                          if (config.detailPage == DetailPage.DEFINITION)
+                          if (appState.detailPage == DetailPage.DEFINITION)
                             fm.MaterialPage(
                                 key: fm.ValueKey(
-                                    config.link + ' definition'),
-                                child: WebPage(config.link)
+                                    appState.link + ' definition'),
+                                child: WebPage(appState.link)
                             ),
-                          if (config.mainPage != MainPage.LEVELS &&
-                              config.detailPage == DetailPage.SETTINGS)
+                          if (appState.mainPage != MainPage.LEVELS &&
+                              appState.detailPage == DetailPage.SETTINGS)
                             fm.MaterialPage(
                                 key: fm.ValueKey('Settings'),
                                 child: SettingsPage()
@@ -288,7 +287,7 @@ class TaminationsRouterDelegate extends fm.RouterDelegate<TamState>
 
                           //  Should Practice be here?  Not sure how
                           //  this list iteracts with device rotation
-                          if (config.mainPage == MainPage.STARTPRACTICE)
+                          if (appState.mainPage == MainPage.STARTPRACTICE)
                             fm.MaterialPage(
                                 key: fm.ValueKey('Start Practice'),
                                 child: StartPracticePage()
@@ -308,8 +307,9 @@ class TaminationsRouterDelegate extends fm.RouterDelegate<TamState>
                             //  Pop landscape page
                             if (appState.mainPage == MainPage.SEQUENCER)
                               appState.change(mainPage: MainPage.LEVELS);
-                            else if (appState.mainPage == MainPage.ANIMATIONS)
-                              appState.change(mainPage: MainPage.LEVELS, detailPage: DetailPage.NONE, link:'');
+                            else if (appState.mainPage == MainPage.ANIMATIONS ||
+                                appState.mainPage == MainPage.ANIMLIST)
+                              appState.change(mainPage: MainPage.LEVELS, detailPage: DetailPage.NONE);
                             else if (appState.mainPage == MainPage.STARTPRACTICE)
                               appState.change(mainPage: MainPage.LEVELS);
                             else if (appState.mainPage == MainPage.PRACTICE ||

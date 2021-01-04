@@ -23,7 +23,7 @@ import 'package:provider/provider.dart' as pp;
 
 import '../common.dart';
 import '../main.dart';
-import 'screen.dart';
+import 'page.dart';
 import 'calls_page.dart';
 import 'level_page.dart';
 import 'settings_page.dart';
@@ -33,7 +33,7 @@ class FirstLandscapePage extends fm.StatelessWidget {
 
   @override
   fm.Widget build(fm.BuildContext context) {
-    return Screen(
+    return Page(
       child: pp.Consumer<TamState>(
         builder: (context,appState,_) => FirstLandscapeFrame(rightChild:
         appState.detailPage==DetailPage.SETTINGS

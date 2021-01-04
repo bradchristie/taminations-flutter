@@ -24,21 +24,14 @@ import 'package:provider/provider.dart' as pp;
 
 import '../color.dart';
 import '../main.dart';
-import '../title_bar.dart';
+import 'page.dart';
 
 class LevelPage extends fm.StatelessWidget {
 
   @override
   fm.Widget build(fm.BuildContext context) {
-    return pp.ChangeNotifierProvider<TitleModel>(
-      create: (_) => TitleModel(),
-      child: fm.Scaffold(
-          appBar: fm.PreferredSize(
-              preferredSize: fm.Size.fromHeight(56.0),
-              child: TitleBar()
-          ),
-          body: LevelFrame()
-      ),
+    return Page(
+        child: LevelFrame()
     );
   }
 

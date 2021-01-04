@@ -20,26 +20,16 @@
 
 import 'package:flutter/material.dart' as fm;
 import 'package:provider/provider.dart' as pp;
-import '../title_bar.dart';
-import '../settings.dart';
-import '../color.dart';
-import '../tam_utils.dart';
+
+import '../common.dart';
+import 'page.dart';
 
 //  Settings page, only used in Portrait
 class SettingsPage extends fm.StatelessWidget {
 
   @override
   fm.Widget build(fm.BuildContext context) {
-    return pp.ChangeNotifierProvider<TitleModel>(
-      create: (_) => TitleModel(),
-      child: fm.Scaffold(
-          appBar: fm.PreferredSize(
-              preferredSize: fm.Size.fromHeight(56.0),
-              child: TitleBar()
-          ),
-          body: SettingsFrame()
-      ),
-    );
+    return Page(child: SettingsFrame());
   }
 
 }

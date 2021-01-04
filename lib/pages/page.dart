@@ -20,12 +20,15 @@
 
 import 'package:flutter/material.dart' as fm;
 import 'package:provider/provider.dart' as pp;
+
 import '../common.dart';
 
-class Screen extends fm.StatelessWidget {
+//  Widget for one full-screen display
+//  Not related to the Flutter Material Page class
+class Page extends fm.StatelessWidget {
 
   final fm.Widget child;
-  Screen({@fm.required this.child});
+  Page({@fm.required this.child});
 
   @override
   fm.Widget build(fm.BuildContext context) {

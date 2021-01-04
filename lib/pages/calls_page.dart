@@ -27,12 +27,12 @@ import '../level_data.dart';
 import '../main.dart';
 import '../tam_utils.dart';
 import '../title_bar.dart';
-import 'screen.dart';
+import 'page.dart';
 
 class CallsPage extends fm.StatelessWidget {
   @override
   fm.Widget build(fm.BuildContext context) {
-    return Screen(
+    return Page(
       child: pp.Consumer2<TitleModel,TamState>(
         builder: (context,titleModel,tamState,_) {
           titleModel.title = LevelData.find(tamState.level).name;
@@ -88,7 +88,6 @@ class _CallsFrameState extends fm.State<CallsFrame> {
                       levelDatum.selector(element.link)).toList();
                   //  Do any search to filter the calls
                   final callsSearched = calls.where((call) => call.title.toLowerCase().contains(search)).toList();
-                  print('Calls searched has ${callsSearched.length} calls');
                   return fm.OrientationBuilder(
                     builder: (context, orientation) {
                       if (orientation == fm.Orientation.landscape) {

@@ -71,15 +71,21 @@ class _SecondLandscapePageState extends fm.State<SecondLandscapePage> {
           ],
           child: pp.Consumer<TamState>(
             builder: (context,tamState,_) {
-              final painter = pp.Provider.of<DanceAnimationPainter>(context,listen:false);
+              final title = pp.Provider.of<TitleModel>(
+                  context, listen: false);
+              final painter = pp.Provider.of<DanceAnimationPainter>(
+                  context, listen: false);
               TamUtils.getXMLAsset(tamState.link).then((doc) {
                 var tam = TamUtils.tamList(doc)
-                    .where((it) => !(it('display','').startsWith('n')))
+                    .where((it) => !(it('display', '').startsWith('n')))
                     .toList()[max(0, tamState.animnum)];
                 painter.setAnimation(tam);
+                if (tamState.animnum >= 0)
+                  title.title = tam.getAttribute('title');
+                else
+                  title.title = doc.rootElement.getAttribute('title');
               });
-              final title = pp.Provider.of<TitleModel>(context,listen: false);
-              title.level = LevelData.find(tamState.link).name;
+              title.level = LevelData.find(tamState.link)?.name ?? '';
               return fm.Scaffold(
                 backgroundColor: Color.LIGHTGRAY,
                 appBar: fm.PreferredSize(
@@ -87,8 +93,6 @@ class _SecondLandscapePageState extends fm.State<SecondLandscapePage> {
                     child: pp.Consumer<DanceAnimationPainter>(
                         builder: (context, painter, child) =>
                             TitleBar()
-                      //   title: painter.title,
-                      //   level: LevelData.find(path.level).name)
                     )),
                 body:
                       SecondLandscapeFrame(

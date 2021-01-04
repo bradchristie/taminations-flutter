@@ -22,6 +22,7 @@ export 'dart:math';
 
 export 'package:xml/xml.dart';
 
+export 'button.dart';
 export 'color.dart';
 export 'dance_animation_painter.dart';
 export 'dancer.dart';
