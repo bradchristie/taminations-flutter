@@ -25,45 +25,16 @@ import 'package:flutter/material.dart' as fm;
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart' as pp;
 
-import '../button.dart';
-import '../dance_animation_painter.dart';
-import '../dancer.dart';
-import '../level_data.dart';
+import '../common.dart';
 import '../main.dart';
-import '../math/vector.dart';
-import '../settings.dart';
-import '../tam_utils.dart';
-import '../title_bar.dart';
-import '../color.dart';
+import 'page.dart';
 
-class PracticePage extends fm.StatefulWidget {
-
-  @override
-  _PracticePageState createState() => _PracticePageState();
-}
-
-class _PracticePageState extends fm.State<PracticePage> {
-
-  @override
-  void didChangeDependencies() {
-    super.didChangeDependencies();
-    SystemChrome.setPreferredOrientations([
-      DeviceOrientation.landscapeLeft,
-      DeviceOrientation.landscapeRight,
-    ]);
-  }
+class PracticePage extends fm.StatelessWidget {
 
   @override
   fm.Widget build(fm.BuildContext context) {
-    return pp.ChangeNotifierProvider<TitleModel>(
-        create: (_) => TitleModel(),
-        child: fm.Scaffold(
-            appBar: fm.PreferredSize(
-                preferredSize: fm.Size.fromHeight(56.0),
-                child: TitleBar()
-            ),
-            body: PracticeFrame(PracticeModel())
-        )
+    return Page(
+        child: PracticeFrame(PracticeModel())
     );
   }
 

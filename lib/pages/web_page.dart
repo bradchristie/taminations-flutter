@@ -25,13 +25,9 @@ import 'package:flutter/services.dart' show rootBundle;
 import 'package:provider/provider.dart' as pp;
 import 'package:easy_web_view/easy_web_view.dart' as ewv;
 
-import '../extensions.dart';
-import '../level_data.dart';
-import '../settings.dart';
-import '../tam_utils.dart';
-import '../title_bar.dart';
+import '../common.dart';
 import 'animation_page.dart';
-import '../color.dart';
+import 'page.dart';
 
 //  Classes to display both About and Definition
 class WebPage extends fm.StatelessWidget {
@@ -41,15 +37,8 @@ class WebPage extends fm.StatelessWidget {
 
   @override
   fm.Widget build(fm.BuildContext context) {
-    return pp.ChangeNotifierProvider<TitleModel>(
-      create: (_) => TitleModel(),
-      child: fm.Scaffold(
-          appBar: fm.PreferredSize(
-              preferredSize: fm.Size.fromHeight(56.0),
-              child: TitleBar()
-          ),
-          body: WebFrame(link)
-      ),
+    return Page(
+        child: WebFrame(link)
     );
   }
 

@@ -24,10 +24,9 @@ import 'package:provider/provider.dart' as pp;
 import 'package:taminations/color.dart';
 import 'package:taminations/common.dart';
 
+import '../common.dart';
 import '../main.dart';
-import '../settings.dart';
-import '../title_bar.dart';
-import '../tam_utils.dart';
+import 'page.dart';
 
 class StartPracticePage extends fm.StatefulWidget {
 
@@ -65,16 +64,8 @@ class _StartPracticePageState extends fm.State<StartPracticePage> {
 
   @override
   fm.Widget build(fm.BuildContext context) {
-    return pp.ChangeNotifierProvider<TitleModel>(
-      create: (_) => TitleModel(),
-      child: fm.Scaffold(
-          backgroundColor: Color.FLOOR,
-          appBar: fm.PreferredSize(
-              preferredSize: fm.Size.fromHeight(56.0),
-              child: TitleBar()
-          ),
-          body: StartPracticeFrame()
-      ),
+    return  Page(
+        child: StartPracticeFrame()
     );
   }
 }

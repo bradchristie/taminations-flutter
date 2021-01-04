@@ -22,22 +22,15 @@ import 'package:flutter/material.dart' as fm;
 import 'package:provider/provider.dart' as pp;
 
 import '../common.dart';
-import '../settings.dart';
+import 'page.dart';
 import 'practice_page.dart';
 
 class TutorialPage extends fm.StatelessWidget {
 
   @override
   fm.Widget build(fm.BuildContext context) {
-    return pp.ChangeNotifierProvider<TitleModel>(
-        create: (_) => TitleModel(),
-        child: fm.Scaffold(
-            appBar: fm.PreferredSize(
-                preferredSize: fm.Size.fromHeight(56.0),
-                child: TitleBar()
-            ),
-            body: PracticeFrame(TutorialModel())
-        )
+    return Page(
+        child: PracticeFrame(TutorialModel())
     );
   }
 
