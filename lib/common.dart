@@ -1,7 +1,7 @@
 /*
 
   Taminations Square Dance Animations
-  Copyright (C) 2020 Brad Christie
+  Copyright (C) 2021 Brad Christie
 
   This program is free software: you can redistribute it and/or modify
   it under the terms of the GNU General Public License as published by
@@ -37,3 +37,4 @@ export 'math/vector.dart';
 export 'settings.dart';
 export 'tam_utils.dart';
 export 'title_bar.dart';
+export 'tam_state.dart';

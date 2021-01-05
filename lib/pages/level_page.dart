@@ -1,7 +1,7 @@
 /*
 
   Taminations Square Dance Animations
-  Copyright (C) 2020 Brad Christie
+  Copyright (C) 2021 Brad Christie
 
   This program is free software: you can redistribute it and/or modify
   it under the terms of the GNU General Public License as published by
@@ -22,8 +22,7 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart' as fm;
 import 'package:provider/provider.dart' as pp;
 
-import '../color.dart';
-import '../main.dart';
+import '../common.dart';
 import 'page.dart';
 
 class LevelPage extends fm.StatelessWidget {
