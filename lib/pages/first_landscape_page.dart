@@ -22,7 +22,6 @@ import 'package:flutter/material.dart' as fm;
 import 'package:provider/provider.dart' as pp;
 
 import '../common.dart';
-import '../main.dart';
 import 'page.dart';
 import 'calls_page.dart';
 import 'level_page.dart';

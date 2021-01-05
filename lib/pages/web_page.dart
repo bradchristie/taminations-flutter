@@ -47,7 +47,7 @@ class WebPage extends fm.StatelessWidget {
 class WebFrame extends fm.StatefulWidget {
 
   final String link;
-  WebFrame(this.link);
+  WebFrame(this.link) : super(key: fm.ValueKey(link));
 
   @override
   _WebFrameState createState() => _WebFrameState(link);
@@ -200,6 +200,7 @@ class _WebFrameState extends fm.State<WebFrame> {
 
   //  Load the original HTML, then call all the routines to fix it up
   Future<String> _loadHtmlFromAssets() async {
+    print('Loading $localizedAssetName');
     var fileText = await rootBundle.loadString('assets/$localizedAssetName');
     fileText = hackCSS(fileText);
     fileText = await hackImages(fileText);

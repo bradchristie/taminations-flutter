@@ -24,7 +24,6 @@ import 'package:flutter/material.dart' as fm;
 import 'package:provider/provider.dart' as pp;
 
 import '../common.dart';
-import '../main.dart';
 import 'page.dart';
 
 class AnimationState extends fm.ChangeNotifier {

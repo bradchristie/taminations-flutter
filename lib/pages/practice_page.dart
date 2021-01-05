@@ -26,7 +26,6 @@ import 'package:flutter/services.dart';
 import 'package:provider/provider.dart' as pp;
 
 import '../common.dart';
-import '../main.dart';
 import 'page.dart';
 
 class PracticePage extends fm.StatelessWidget {

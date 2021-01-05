@@ -25,7 +25,6 @@ import 'package:provider/provider.dart' as pp;
 import 'package:xml/xml.dart';
 
 import '../common.dart';
-import '../main.dart';
 import '../title_bar.dart';
 import 'page.dart';
 

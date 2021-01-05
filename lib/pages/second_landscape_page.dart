@@ -22,39 +22,14 @@ import 'dart:math';
 
 import 'package:flutter/material.dart' as fm;
 import 'package:provider/provider.dart' as pp;
-import 'package:xml/xml.dart';
 
 import '../common.dart';
-import '../main.dart';
 import 'anim_list_page.dart';
 import 'animation_page.dart';
 import 'settings_page.dart';
 import 'web_page.dart';
 
-class SecondLandscapePage extends fm.StatefulWidget {
-  @override
-  _SecondLandscapePageState createState() => _SecondLandscapePageState();
-}
-
-class _SecondLandscapePageState extends fm.State<SecondLandscapePage> {
-  String link;
-  int animnum;
-  XmlDocument doc;
-
-  @override
-  void didChangeDependencies() {
-    super.didChangeDependencies();
-    var router =
-        fm.Router.of(context).routerDelegate as TaminationsRouterDelegate;
-    var path = router.currentConfiguration;
-    link = path.link;
-    animnum = path.animnum;
-
-  }
-
-  XmlElement tamFromAnimnum(int animnum) => TamUtils.tamList(doc)
-      .where((it) => !(it('display','').startsWith('n')))
-      .toList()[max(0, animnum)];
+class SecondLandscapePage extends fm.StatelessWidget {
 
   @override
   fm.Widget build(fm.BuildContext context) {
