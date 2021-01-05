@@ -35,9 +35,9 @@ class FirstLandscapePage extends fm.StatelessWidget {
     return Page(
       child: pp.Consumer<TamState>(
         builder: (context,appState,_) => FirstLandscapeFrame(rightChild:
-        appState.detailPage==DetailPage.SETTINGS
+        appState.detailPage == DetailPage.SETTINGS
             ? SettingsFrame()
-            : appState.level?.isNotEmpty ?? false
+            : appState.detailPage == DetailPage.CALLS
             ? CallsFrame()
             : WebFrame('info/about.html')),
       ),

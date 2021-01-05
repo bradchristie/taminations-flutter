@@ -115,13 +115,13 @@ class TaminationsRouterDelegate extends fm.RouterDelegate<TamState>
                         pages: (orientation == fm.Orientation.landscape)
                             ? [
                               fm.MaterialPage(
-                            key: fm.ValueKey('Landscape Page'),
+                            key: fm.ValueKey('First Landscape Page'),
                             child: FirstLandscapePage()
                         ),
-                          if (appState.mainPage != MainPage.LEVELS)
+                          if (appState.mainPage == MainPage.ANIMLIST ||
+                              appState.mainPage == MainPage.ANIMATIONS)
                             fm.MaterialPage(
-                                key: fm.ValueKey('Landscape Page ' +
-                                    appState.link),
+                                key: fm.ValueKey('Second Landscape Page'),
                                 child: SecondLandscapePage()
                             ),
                           if (appState.mainPage == MainPage.PRACTICE ||
@@ -214,7 +214,7 @@ class TaminationsRouterDelegate extends fm.RouterDelegate<TamState>
                         //  onPopPage
                         //  Calculate popped config based on current config
                         onPopPage: (route, result) {
-                          print('Pop Navigator: ${route.currentResult}');
+                        //  print('Pop Navigator: ${route.currentResult}');
                           //  route.didPop returns false if the navigator
                           //  has only one page in its list of pages
                           if (!route.didPop(result)) {
@@ -222,15 +222,13 @@ class TaminationsRouterDelegate extends fm.RouterDelegate<TamState>
                           }
                           if (_orientation == fm.Orientation.landscape) {
                             //  Pop landscape page
-                            if (appState.mainPage == MainPage.SEQUENCER)
-                              appState.change(mainPage: MainPage.LEVELS);
-                            else if (appState.mainPage == MainPage.ANIMATIONS ||
+                            if (appState.mainPage == MainPage.SEQUENCER ||
+                                appState.mainPage == MainPage.STARTPRACTICE ||
+                                appState.mainPage == MainPage.ANIMATIONS ||
                                 appState.mainPage == MainPage.ANIMLIST)
                               appState.change(mainPage: MainPage.LEVELS, detailPage: DetailPage.NONE);
-                            else if (appState.mainPage == MainPage.STARTPRACTICE)
-                              appState.change(mainPage: MainPage.LEVELS);
                             else if (appState.mainPage == MainPage.PRACTICE ||
-                            appState.mainPage == MainPage.TUTORIAL)
+                                appState.mainPage == MainPage.TUTORIAL)
                               appState.change(mainPage:MainPage.STARTPRACTICE);
                           }
 
@@ -278,7 +276,7 @@ class TaminationsRouterDelegate extends fm.RouterDelegate<TamState>
   @override
   Future<void> setNewRoutePath(TamState configuration) async {
     if (configuration != null) {
-      print('New Route Path: $configuration');
+    //  print('New Route Path: $configuration');
       appState.change(
           level: configuration.level,
           link: configuration.link,
