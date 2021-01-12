@@ -23,7 +23,6 @@ import 'package:flutter/services.dart' as fs;
 
 import '../common.dart';
 import '../dance_animation_painter.dart';
-import 'abbreviations_model.dart';
 import 'call_context.dart';
 import 'call_error.dart';
 import 'calls/coded_call.dart';
@@ -49,7 +48,6 @@ class SequencerModel extends fm.ChangeNotifier {
   String partString = '';
   String errorString = '';
   DanceAnimationPainter animation = DanceAnimationPainter();
-  AbbreviationsModel abbreviations = AbbreviationsModel();
   int currentCall;
 
   SequencerModel() {
@@ -74,7 +72,7 @@ class SequencerModel extends fm.ChangeNotifier {
   Future<bool> loadOneCall(String call) async {
     errorString = '';
     try {
-      await _interpretOneCall(_replaceAbbreviations(call));
+      await _interpretOneCall(call);
       notifyListeners();
     } on CallError catch(e) {
       errorString = e.toString();
@@ -143,14 +141,6 @@ class SequencerModel extends fm.ChangeNotifier {
       animation.doPlay();
     }
   }
-
-  //  Replace any abbreviations with their expanded equivalents
-  //  and return the new string
-  String _replaceAbbreviations(String text) =>
-      text.split('\\s+'.r)
-          .map((word) => abbreviations.currentAbbreviations
-          .firstWhere((e) => e.abbr == word.toLowerCase(), orElse: () => null)?.expa ?? word)
-          .join(' ');
 
   bool isComment(String text) =>
       text.trim().startsWith('[^\\[a-zA-Z0-9]'.r);

@@ -209,6 +209,15 @@ class AbbreviationsModel extends fm.ChangeNotifier {
     });
   }
 
+  //  Replace any abbreviations with their expanded equivalents
+  //  and return the new string
+  String replaceAbbreviations(String text) =>
+      text.split('\\s+'.r)
+          .map((word) => currentAbbreviations
+          .firstWhere((e) => e.abbr == word.toLowerCase(), orElse: () => null)?.expa ?? word)
+          .join(' ');
+
+
   void defaultAbbreviations() {
     _clearStorage();
     for (var k in initialAbbreviations.keys)

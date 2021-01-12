@@ -26,6 +26,11 @@ import 'package:xml/xml.dart';
 void later(void Function() f) {
   fm.WidgetsBinding.instance.addPostFrameCallback((_) { f(); });
 }
+
+Future<T> afterDelay<T>(T Function()f, [Duration when]) async {
+  return Future<T>.delayed(when,f);
+}
+
 //  Useful for
 //  var xx = somethingMightBeNull() ?? thrower(Exception("xx would be null")
 T thrower<T>(Object e) {

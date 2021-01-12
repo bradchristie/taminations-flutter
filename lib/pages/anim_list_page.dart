@@ -64,7 +64,6 @@ class AnimListPage extends fm.StatelessWidget {
       child: pp.Consumer<TamState>(
         builder: (context, tamState, _) {
           TamUtils.getXMLAsset(tamState.link).then((doc) {
-            print('Title: ${doc.rootElement.getAttribute('title')}');
             pp.Provider.of<TitleModel>(context,listen: false).title =
                 doc.rootElement.getAttribute('title');
           });
@@ -74,16 +73,19 @@ class AnimListPage extends fm.StatelessWidget {
                   child: AnimListFrame(
                       tamState.link, highlightSelected: false),
                 ),
-                fm.Row(children: [
-                  fm.Expanded(
-                    child: Button('Definition', onPressed: () {
-                      tamState.change(detailPage: DetailPage.DEFINITION);
-                    }),
-                  ),
-                  fm.Expanded(child: Button('Settings', onPressed: () {
-                    tamState.change(detailPage: DetailPage.SETTINGS);
-                  },))
-                ]),
+                fm.Container(
+                  color: Color.FLOOR,
+                  child: fm.Row(children: [
+                    fm.Expanded(
+                      child: Button('Definition', onPressed: () {
+                        tamState.change(detailPage: DetailPage.DEFINITION);
+                      }),
+                    ),
+                    fm.Expanded(child: Button('Settings', onPressed: () {
+                      tamState.change(detailPage: DetailPage.SETTINGS);
+                    },))
+                  ]),
+                ),
               ]); }
       ),
     );
@@ -230,7 +232,8 @@ class _AnimListState extends fm.State<AnimListFrame> {
                                     left: 20.0, top: 4, bottom: 4),
                                 child: fm.Text(item.title,
                                     style: fm.TextStyle(
-                                        color: Color.WHITE, fontSize: 20)));
+                                        color: Color.WHITE,
+                                        fontSize: item.title.isBlank ? 2 : 20)));
                           case CellType.Indented:
                           case CellType.Plain:
                             return fm.Container(
@@ -281,12 +284,18 @@ class _AnimListState extends fm.State<AnimListFrame> {
                         }
                         return fm.Text('Dummy text for ListView.builder');
                       })),
-              if (hasDifficulty) fm.Row(
-                  children: [
-                    oneLegendWidget('Common', Color.COMMON),
-                    oneLegendWidget('Harder', Color.HARDER),
-                    oneLegendWidget('Expert', Color.EXPERT)
-                  ]
+              if (hasDifficulty) fm.Container(
+                  decoration: fm.BoxDecoration(
+                      border: fm.Border.all(
+                              width: 1,
+                              color: Color.GRAY)),
+                  child: fm.Row(
+                    children: [
+                      oneLegendWidget('Common', Color.COMMON),
+                      oneLegendWidget('Harder', Color.HARDER),
+                      oneLegendWidget('Expert', Color.EXPERT)
+                    ]
+                ),
               )
             ]);
           }

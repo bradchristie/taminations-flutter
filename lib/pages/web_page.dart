@@ -79,6 +79,8 @@ class _WebFrameState extends fm.State<WebFrame> {
         builder: (context, settings, titleModel, child) {
           if (link.contains('about'))
             titleModel.title = 'Taminations';
+          else if (link.contains('sequencer'))
+            titleModel.title = 'Sequencer';
           else {
             titleModel.title = 'Definition';
             titleModel.level = LevelData.find(link)?.name ?? '';

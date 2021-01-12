@@ -17,10 +17,21 @@
   along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 */
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart' as fm;
 import 'package:provider/provider.dart' as pp;
-import 'package:auto_size_text/auto_size_text.dart';
+
 import '../common.dart';
+import '../pages/page.dart';
+
+class SequencerCallsPage extends fm.StatelessWidget {
+
+  @override
+  fm.Widget build(fm.BuildContext context) {
+    return Page(child: SequencerCallsFrame());
+  }
+
+}
 
 class SequencerCallsFrame extends fm.StatefulWidget {
   @override

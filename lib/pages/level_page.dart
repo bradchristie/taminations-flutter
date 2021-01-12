@@ -59,7 +59,7 @@ class _TapDetector extends fm.StatelessWidget {
                       appState.change(mainPage: MainPage.STARTPRACTICE);
                     else if (text == 'Sequencer')
                       appState.change(mainPage: MainPage.SEQUENCER,
-                          detailPage: DetailPage.HELP);
+                          detailPage: DetailPage.NONE);
                     else if (text == 'Settings')
                       appState.change(detailPage: DetailPage.SETTINGS);
                     else if (text == 'About')

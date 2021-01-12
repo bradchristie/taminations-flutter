@@ -18,7 +18,6 @@
 
 */
 
-import 'package:flutter/material.dart' as fm;
 import 'dart:async' show Future;
 import 'dart:math';
 import 'dart:typed_data';
@@ -345,16 +344,6 @@ class TamUtils {
       //  Currently web doesn't even have a platform, LocalPlatform is not supported
     } on UnsupportedError catch (_) { }
     return false;
-  }
-
-  static bool _isSmallDevice;
-  static bool isSmallDevice(fm.BuildContext context) {
-    if (_isSmallDevice == null) {
-      final w = fm.MediaQuery.of(context).size.width;
-      final h = fm.MediaQuery.of(context).size.height;
-      _isSmallDevice = min(w, h) < 600;
-    }
-    return _isSmallDevice;
   }
 
 }

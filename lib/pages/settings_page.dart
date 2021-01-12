@@ -59,20 +59,13 @@ class SettingsFrame extends fm.StatelessWidget {
   }
 }
 
+
+
 class SequencerSettingsPage extends fm.StatelessWidget {
 
   @override
   fm.Widget build(fm.BuildContext context) {
-    return pp.ChangeNotifierProvider<TitleModel>(
-      create: (_) => TitleModel(),
-      child: fm.Scaffold(
-          appBar: fm.PreferredSize(
-              preferredSize: fm.Size.fromHeight(56.0),
-              child: TitleBar()
-          ),
-          body: SequencerSettingsFrame()
-      ),
-    );
+    return Page(child: SequencerSettingsFrame());
   }
 
 }

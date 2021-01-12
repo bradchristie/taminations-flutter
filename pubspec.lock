@@ -424,7 +424,7 @@ packages:
       name: provider
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "4.3.2+2"
+    version: "4.3.2+3"
   pub_semver:
     dependency: transitive
     description:
@@ -515,7 +515,7 @@ packages:
       name: shelf_static
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.2.8"
+    version: "0.2.9+1"
   shelf_web_socket:
     dependency: transitive
     description:
@@ -604,7 +604,7 @@ packages:
       name: test
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.16.0-nullsafety.12"
+    version: "1.16.0-nullsafety.13"
   test_api:
     dependency: transitive
     description:
@@ -618,7 +618,7 @@ packages:
       name: test_core
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.3.12-nullsafety.11"
+    version: "0.3.12-nullsafety.12"
   tuple:
     dependency: "direct main"
     description:

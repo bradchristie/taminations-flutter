@@ -136,7 +136,7 @@ class _CallsFrameState extends fm.State<CallsFrame> {
                   fm.Flexible(
                     child: fm.Container(
                         alignment: fm.Alignment.centerLeft,
-                        padding: fm.EdgeInsets.only(left: 10.0),
+                        padding: fm.EdgeInsets.only(bottom:4,top:4,left: 10.0),
                         child: AutoSizeText(callsSearched[index].title,style: fm.TextStyle(fontSize:
                             20))),
                   ),

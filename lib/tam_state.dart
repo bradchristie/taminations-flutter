@@ -22,6 +22,10 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart' as fm;
 import 'extensions.dart';
 
+class VirtualKeyboardVisible {
+  bool isVisible = false;
+}
+
 enum MainPage {
   LEVELS,
   ANIMLIST,   // portrait only

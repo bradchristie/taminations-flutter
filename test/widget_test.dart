@@ -20,10 +20,10 @@ void main() {
       await TamUtils.init();
       await tester.pumpWidget(TaminationsApp());
       await tester.pumpAndSettle();
-      expect(find.byKey(Key("Sequencer")),findsOneWidget);
-      await tester.tap(find.byKey(Key("Sequencer")));
+      expect(find.byKey(Key('Sequencer')),findsOneWidget);
+      await tester.tap(find.byKey(Key('Sequencer')));
       await tester.pumpAndSettle();
-      await tester.tap(find.byKey(Key("Sequencer Input")));
+      await tester.tap(find.byKey(Key('Sequencer Input')));
     });
 
     /*

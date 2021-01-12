@@ -33,9 +33,9 @@ class WithTheFlow extends Action {
     var isRight = true;
     for (final d in ctx.actives) {
       final roll = ctx.roll(d);
-      if (roll != 'Left')
+      if (roll != Rolling.LEFT)
         isLeft = false;
-      if (roll != 'Right')
+      if (roll != Rolling.RIGHT)
         isRight = false;
     }
     //  Rolling direction determines who walks and who dodges

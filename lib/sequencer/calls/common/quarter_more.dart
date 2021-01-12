@@ -34,9 +34,9 @@ class QuarterMore extends Action {
     var isRight = true;
     for (var d in ctx.actives) {
       var roll = ctx.roll(d);
-      if (roll != 'Left' )
+      if (roll != Rolling.LEFT)
         isLeft = false;
-      if (roll != 'Right' )
+      if (roll != Rolling.RIGHT)
         isRight = false;
     }
     //  Rolling direction determines rotation

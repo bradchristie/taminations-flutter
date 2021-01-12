@@ -25,7 +25,6 @@ import 'package:taminations/color.dart';
 import 'package:taminations/common.dart';
 
 import '../common.dart';
-import '../main.dart';
 import 'page.dart';
 
 class StartPracticePage extends fm.StatefulWidget {
@@ -47,7 +46,7 @@ class _StartPracticePageState extends fm.State<StartPracticePage> {
 
   @override
   void dispose() {
-    if (TamUtils.isSmallDevice(context))
+    if (isSmallDevice(context))
       SystemChrome.setPreferredOrientations([
         DeviceOrientation.portraitUp,
         DeviceOrientation.portraitDown

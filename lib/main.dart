@@ -34,7 +34,11 @@ import 'pages/settings_page.dart';
 import 'pages/start_practice_page.dart';
 import 'pages/tutorial_page.dart';
 import 'pages/web_page.dart';
+import 'pages/page.dart';
 import 'sequencer/sequencer_page.dart';
+import 'sequencer/abbreviations_frame.dart';
+import 'sequencer/sequencer_calls_page.dart';
+import 'sequencer/abbreviations_model.dart';
 
 ///  Main routine
 void main() {
@@ -66,7 +70,9 @@ class _TaminationsAppState extends fm.State<TaminationsApp> {
     return pp.MultiProvider(
       providers: [
         pp.ChangeNotifierProvider(create: (context) => Settings()),
-        pp.ChangeNotifierProvider(create: (context) => AnimationState())
+        pp.ChangeNotifierProvider(create: (context) => AnimationState()),
+        pp.ChangeNotifierProvider(create: (context) => AbbreviationsModel()),
+        pp.Provider(create: (_) => VirtualKeyboardVisible())
       ],
         //  Read initialization files
       child: fm.FutureBuilder<bool>(
@@ -77,7 +83,10 @@ class _TaminationsAppState extends fm.State<TaminationsApp> {
             title: 'Taminations',
             routerDelegate: _routerDelegate,
             routeInformationParser: _routeInformationParser,
-          ) : fm.Container(),
+          ) : fm.Container(
+          color: Color.FLOOR,
+          child: fm.Center(child: fm.Image.asset('assets/src/tam87.png')),
+        ),
     ));
   }
 
@@ -202,8 +211,39 @@ class TaminationsRouterDelegate extends fm.RouterDelegate<TamState>
                                 child: SettingsPage()
                             ),
 
-                          //  Should Practice be here?  Not sure how
-                          //  this list iteracts with device rotation
+                          if (appState.mainPage == MainPage.SEQUENCER)
+                            fm.MaterialPage(
+                                key: fm.ValueKey('Sequencer'),
+                                child: SequencerPage()
+                            ),
+                          if (appState.mainPage == MainPage.SEQUENCER &&
+                              appState.detailPage == DetailPage.HELP)
+                            fm.MaterialPage(
+                                key: fm.ValueKey('About'),
+                                child: WebPage('info/sequencer.html')
+                            ),
+                          if (appState.mainPage == MainPage.SEQUENCER &&
+                              appState.detailPage == DetailPage.ABBREVIATIONS)
+                            fm.MaterialPage(
+                                key: fm.ValueKey('About'),
+                                child: AbbreviationsPage()
+                            ),
+                          if (appState.mainPage == MainPage.SEQUENCER &&
+                              appState.detailPage == DetailPage.SETTINGS)
+                            fm.MaterialPage(
+                                key: fm.ValueKey('About'),
+                                child: SequencerSettingsPage()
+                            ),
+                          if (appState.mainPage == MainPage.SEQUENCER &&
+                              appState.detailPage == DetailPage.CALLS)
+                            fm.MaterialPage(
+                                key: fm.ValueKey('About'),
+                                child: SequencerCallsPage()
+                            ),
+
+
+                          //  Displaying the StartPractice page will trigger
+                          //  a rotation to landscape
                           if (appState.mainPage == MainPage.STARTPRACTICE)
                             fm.MaterialPage(
                                 key: fm.ValueKey('Start Practice'),
@@ -220,6 +260,8 @@ class TaminationsRouterDelegate extends fm.RouterDelegate<TamState>
                           if (!route.didPop(result)) {
                             return false;
                           }
+                          pp.Provider.of<VirtualKeyboardVisible>(context,listen: false)
+                              .isVisible = false;
                           if (_orientation == fm.Orientation.landscape) {
                             //  Pop landscape page
                             if (appState.mainPage == MainPage.SEQUENCER ||
@@ -254,6 +296,18 @@ class TaminationsRouterDelegate extends fm.RouterDelegate<TamState>
                                 appState.change(detailPage: DetailPage.NONE);
                               else
                                 appState.change(mainPage: MainPage.ANIMLIST);
+                            }
+
+                            else if (appState.mainPage == MainPage.SEQUENCER) {
+                              if (appState.detailPage == DetailPage.HELP ||
+                              appState.detailPage == DetailPage.ABBREVIATIONS ||
+                              appState.detailPage == DetailPage.SETTINGS ||
+                              appState.detailPage == DetailPage.CALLS)
+                                appState.change(mainPage:MainPage.SEQUENCER,
+                                    detailPage: DetailPage.NONE);
+                              else
+                                appState.change(mainPage: MainPage.LEVELS,
+                                    detailPage: DetailPage.NONE);
                             }
                           }
 
@@ -328,7 +382,7 @@ class __PortraitForSmallDevicesState extends fm.State<_PortraitForSmallDevices> 
   void initState() {
     super.initState();
     later(() {
-      if (TamUtils.isSmallDevice(context)) {
+      if (isSmallDevice(context)) {
         SystemChrome.setPreferredOrientations([
           DeviceOrientation.portraitUp,
           DeviceOrientation.portraitDown

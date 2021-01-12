@@ -18,13 +18,25 @@
 
 */
 
+import 'package:meta/meta.dart';
 import 'package:flutter/material.dart' as fm;
 import 'package:provider/provider.dart' as pp;
+import 'package:flutter/services.dart';
 
 import '../button.dart';
 import '../color.dart';
 import '../extensions.dart';
+import '../pages/page.dart';
 import 'abbreviations_model.dart';
+import '../tam_state.dart';
+
+class AbbreviationsPage extends fm.StatelessWidget {
+  @override
+  fm.Widget build(fm.BuildContext context) {
+    return Page(child: AbbreviationsFrame());
+  }
+}
+
 
 class AbbreviationsFrame extends fm.StatefulWidget {
   @override
@@ -37,16 +49,21 @@ class _AbbreviationsFrameState extends fm.State<AbbreviationsFrame> {
   var editExpansion = false;
   fm.TextEditingController textEditController;
   var focusNode = fm.FocusNode();
-  void Function() processTextChange;
 
   @override
   void initState() {
     super.initState();
     textEditController = fm.TextEditingController()
       ..addListener(_onTextChanged);
+    final virtualKeyboard = pp.Provider.of<VirtualKeyboardVisible>(context,listen: false);
+    virtualKeyboard.isVisible = false;
+
     focusNode.addListener(() {
       //  When the user is finished editing an abbreviation, we want to
       //  automatically go to editing the expansion.
+      //  Doesn't work - we don't know if focus was lost because user hit
+      //  tab or return, or user clicked on another box
+/*
       if (!focusNode.hasFocus) {
         setState(() {
           //  This sequence of events is important
@@ -61,191 +78,223 @@ class _AbbreviationsFrameState extends fm.State<AbbreviationsFrame> {
             later(() {
               focusNode.requestFocus();
             });
-          } else
+          } else {
             editRow = -1;
+            virtualKeyboard.isVisible = false;
+          }
         });
       }
+*/
     });
+  }
+
+  @override
+  void didChangeDependencies() {
+    later(() {
+      _checkFocus();
+    });
+    super.didChangeDependencies();
+  }
+
+  void _checkFocus() {
+    final virtualKeyboard = pp.Provider.of<VirtualKeyboardVisible>(context,listen: false);
+    if (virtualKeyboard.isVisible) {
+      focusNode.requestFocus();
+    }
   }
 
   @override
   void dispose() {
     textEditController.dispose();
+    SystemChannels.textInput.invokeMethod('TextInput.hide');
     super.dispose();
   }
 
   void _onTextChanged() {
-    processTextChange();
+    if (editRow >= 0) {
+      final model = pp.Provider.of<AbbreviationsModel>(context,listen: false);
+      //  For abbreviations, ignore invalid characters
+      if (!editExpansion) {
+        final value = textEditController.value;
+        final text = value.text.toLowerCase().replaceAll(
+            '\\W'.r, '');
+        final diff = value.text.length - text.length;
+        final selection = value.selection.copyWith(
+            baseOffset: value.selection.baseOffset - diff,
+            extentOffset: value.selection.extentOffset - diff
+        );
+        textEditController.value =
+            value.copyWith(text: text, selection: selection);
+        model.setAbbreviation(editRow, text);
+      } else
+        model.setExpansion(editRow, textEditController.text);
+    }
   }
 
-  fm.Widget _oneTextItem(int row, bool isExpansion) =>
-      fm.Expanded(
+  fm.Widget _oneTextItem(int row, bool isExpansion) {
+    final virtualKeyboard = pp.Provider.of<VirtualKeyboardVisible>(context,listen: false);
+      return fm.Expanded(
         flex: isExpansion ? 4 : 1,
         child: fm.GestureDetector(
-          onTap: () {
+            onTap: () {
               setState(() {
                 editRow = row;
                 editExpansion = isExpansion;
-                focusNode.requestFocus();
+                virtualKeyboard.isVisible = true;
+                afterDelay(() {
+                  focusNode.unfocus();
+                },Duration(milliseconds: 10));
+                afterDelay(() {
+                  focusNode.requestFocus();
+                },Duration(milliseconds: 20));
               });
-          },
-          child: fm.Container(
-            child: pp.Consumer<AbbreviationsModel>(
-                builder: (context,model,child) {
-                  processTextChange = () {
-                    if (editRow >= 0) {
-                      //  For abbreviations, ignore invalid characters
-                      if (!editExpansion) {
-                        final value = textEditController.value;
-                        final text = value.text.toLowerCase().replaceAll(
-                            '\\W'.r, '');
-                        final diff = value.text.length - text.length;
-                        final selection = value.selection.copyWith(
-                            baseOffset: value.selection.baseOffset - diff,
-                            extentOffset: value.selection.extentOffset - diff
-                        );
-                        textEditController.value =
-                            value.copyWith(text: text, selection: selection);
-                        model.setAbbreviation(editRow, text);
-                      } else
-                        model.setExpansion(editRow, textEditController.text);
-                    }
-                  };
-
-                  return fm.Container(
-                    child:child,
-                    decoration: fm.BoxDecoration(
-                        color:
-                        model.currentAbbreviations[row].isError ? Color.RED.veryBright()
-                        : row == editRow && editExpansion == isExpansion
-                         ? Color.WHITE
-                         : Color.LIGHTGRAY.veryBright(),
-                        border: fm.Border(
-                            bottom: fm.BorderSide(width: 1, color: fm.Colors.black),
-                            left: fm.BorderSide(width: 1, color: fm.Colors.black))),
-                  );
-                },
-                child: (row == editRow && editExpansion == isExpansion)
-                    ? fm.TextField(
-                  decoration: null,
-                  autofocus: true,
-                  autocorrect: false,
-                  enableSuggestions: false,
-                  style: fm.TextStyle(fontSize: 24),
-                  focusNode: focusNode,
-                  controller: textEditController
-                    ..text = isExpansion
-                        ? pp.Provider.of<AbbreviationsModel>(context, listen: false).currentAbbreviations[row].expa
-                        : pp.Provider.of<AbbreviationsModel>(context, listen: false).currentAbbreviations[row].abbr
-                )
-                    : fm.Text(isExpansion
-                    ? pp.Provider.of<AbbreviationsModel>(context, listen: false).currentAbbreviations[row].expa
-                    : pp.Provider.of<AbbreviationsModel>(context, listen: false).currentAbbreviations[row].abbr,
-                    style: fm.TextStyle(fontSize: 24))
+            },
+            child: fm.Container(
+              child: pp.Consumer<AbbreviationsModel>(
+                  builder: (context,model,child) {
+                    return fm.Container(
+                      child:child,
+                      decoration: fm.BoxDecoration(
+                          color:
+                          model.currentAbbreviations[row].isError ? Color.RED.veryBright()
+                          : row == editRow && editExpansion == isExpansion
+                           ? Color.WHITE
+                           : Color.LIGHTGRAY.veryBright(),
+                          border: fm.Border(
+                              bottom: fm.BorderSide(width: 1, color: fm.Colors.black),
+                              left: fm.BorderSide(width: 1, color: fm.Colors.black))),
+                    );
+                  },
+                  child: (row == editRow && editExpansion == isExpansion)
+                      ? fm.TextField(
+                    decoration: null,
+                    autofocus: true,
+                    autocorrect: false,
+                    enableSuggestions: false,
+                    style: fm.TextStyle(fontSize: 24),
+                    focusNode: focusNode,
+                    controller: textEditController
+                      ..text = isExpansion
+                          ? pp.Provider.of<AbbreviationsModel>(context, listen: false).currentAbbreviations[row].expa
+                          : pp.Provider.of<AbbreviationsModel>(context, listen: false).currentAbbreviations[row].abbr,
+                  )
+                      : fm.Text(isExpansion
+                      ? pp.Provider.of<AbbreviationsModel>(context, listen: false).currentAbbreviations[row].expa
+                      : pp.Provider.of<AbbreviationsModel>(context, listen: false).currentAbbreviations[row].abbr,
+                      style: fm.TextStyle(fontSize: 24))
+              ),
             ),
           ),
-        ),
       );
-
+  }
 
   @override
   fm.Widget build(fm.BuildContext context) {
     final model = pp.Provider.of<AbbreviationsModel>(context, listen: false);
-          return fm.Column(
-              children: [
-                fm.Expanded(
-                    child: fm.ListView.builder(
-                      itemCount: model.currentAbbreviations.length,
-                      itemBuilder: (context,index) =>
-                          fm.Row(
-                            children: [
-                              _oneTextItem(index, false),
-                              _oneTextItem(index, true)
-                            ]
-                          )
-                    )
-                ),
-                fm.Container(
-                  color: Color.FLOOR,
-                  child: fm.Row(
-                    children: [
-                      fm.Expanded(
-                          child: Button('Copy', onPressed: () {
-                            model.copy();
-                            fm.ScaffoldMessenger.of(context).showSnackBar(fm.SnackBar(
-                                backgroundColor: Color.BLUE,
-                                duration: Duration(seconds: 2),
-                                content: fm.Text('Abbreviations Copied.',style: fm.TextStyle(fontSize: 20))
-                            ));
-                          })
-                      ),
-                      fm.Expanded(
-                          child: Button('Paste', onPressed: () {
-                            fm.showDialog(
-                              context: context,
-                              barrierDismissible: false,
-                              builder: (context) => fm.AlertDialog(
-                                title: fm.Text('Confirm Paste'),
-                                content: fm.Text('This will REPLACE ALL your abbreviations!'),
-                                actions: [
-                                  fm.TextButton(child:fm.Text('OK'),onPressed: () {
-                                    fm.Navigator.of(context).pop();
-                                    model.paste();
-                                  }),
-                                  fm.TextButton(child:fm.Text('Cancel'),onPressed: () {
-                                    fm.Navigator.of(context).pop();
-                                  })
-                                ],
-                              )
-                            );
-                          })
-                      ),
-                      fm.Expanded(
-                          child: Button('Clear', onPressed: () {
-                            fm.showDialog(
-                                context: context,
-                                barrierDismissible: false,
-                                builder: (context) => fm.AlertDialog(
-                                  title: fm.Text('Confirm Erase'),
-                                  content: fm.Text('This will ERASE ALL your abbreviations!'),
-                                  actions: [
-                                    fm.TextButton(child:fm.Text('OK'),onPressed: () {
-                                      fm.Navigator.of(context).pop();
-                                      model.clear();
-                                    }),
-                                    fm.TextButton(child:fm.Text('Cancel'),onPressed: () {
-                                      fm.Navigator.of(context).pop();
-                                    })
-                                  ],
-                                )
-                            );
-                          })
-                      ),
-                      fm.Expanded(
-                          child: Button('Reset', onPressed: () {
-                            fm.showDialog(
-                                context: context,
-                                barrierDismissible: false,
-                                builder: (context) => fm.AlertDialog(
-                                  title: fm.Text('Confirm Reset'),
-                                  content: fm.Text('This will REPLACE ALL your abbreviations!'),
-                                  actions: [
-                                    fm.TextButton(child:fm.Text('OK'),onPressed: () {
-                                      fm.Navigator.of(context).pop();
-                                      model.defaultAbbreviations();
-                                    }),
-                                    fm.TextButton(child:fm.Text('Cancel'),onPressed: () {
-                                      fm.Navigator.of(context).pop();
-                                    })
-                                  ],
-                                )
-                            );
-                          })
-                      ),
-                    ],
-                  ),
-                )
-              ]
+    return fm.Column(
+        children: [
+          fm.Expanded(
+              child: fm.ListView.builder(
+                  itemCount: model.currentAbbreviations.length,
+                  itemBuilder: (context,index) =>
+                      fm.Row(
+                          children: [
+                            _oneTextItem(index, false),
+                            _oneTextItem(index, true)
+                          ]
+                      )
+              )
+          ),
+          fm.Container(
+              color: Color.FLOOR,
+              child: fm.Row(
+                  children: [
+                    _AbbreviationsCopyButton(),
+                    _AbbreviationsWarningButton(
+                        name: 'Paste',
+                        title: 'Confirm Paste',
+                        message: 'This will REPLACE ALL your abbreviations!',
+                        action: () {
+                          setState(() {
+                            model.paste();
+                          });
+                        }),
+                    _AbbreviationsWarningButton(
+                        name: 'Clear',
+                        title: 'Confirm Erase',
+                        message: 'This will ERASE ALL your abbreviations!',
+                        action: () {
+                          setState(() {
+                            model.clear();
+                          });
+                        }),
+                    _AbbreviationsWarningButton(
+                        name: 'Reset',
+                        title: 'Confirm Reset',
+                        message: 'This will REPLACE ALL your abbreviations!',
+                        action: () {
+                          setState(() {
+                            model.defaultAbbreviations();
+                          });
+                        })
+                  ]
+              )
+          )
+        ]
+    );
+  }
+}
+
+class _AbbreviationsCopyButton extends fm.StatelessWidget {
+  @override
+  fm.Widget build(fm.BuildContext context) {
+    final model = pp.Provider.of<AbbreviationsModel>(context, listen: false);
+    return fm.Expanded(
+        child: Button('Copy', onPressed: () {
+          model.copy();
+          fm.ScaffoldMessenger.of(context).showSnackBar(fm.SnackBar(
+              backgroundColor: Color.BLUE,
+              duration: Duration(seconds: 2),
+              content: fm.Text('Abbreviations Copied.',style: fm.TextStyle(fontSize: 20))
+          ));
+        })
+    );
+  }
+}
+
+class _AbbreviationsWarningButton extends fm.StatelessWidget {
+  final String name;
+  final String title;
+  final String message;
+  final void Function() action;
+  _AbbreviationsWarningButton({
+    @required this.name,
+    @required this.title,
+    @required this.message,
+    @required this.action});
+  @override
+  fm.Widget build(fm.BuildContext context) {
+    return fm.Expanded(
+        child: Button(name, onPressed: () {
+          fm.showDialog(
+              context: context,
+              barrierDismissible: false,
+              builder: (context) => fm.AlertDialog(
+                title: fm.Text(title),
+                content: fm.Text(message),
+                actions: [
+                  fm.TextButton(child:fm.Text('OK'),onPressed: () {
+                    fm.Navigator.of(context).pop();
+                    action();
+                  }),
+                  fm.TextButton(child:fm.Text('Cancel'),onPressed: () {
+                    fm.Navigator.of(context).pop();
+                  })
+                ],
+              )
           );
+        })
+    );
+
   }
 }
