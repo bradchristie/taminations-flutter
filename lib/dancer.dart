@@ -93,6 +93,25 @@ extension DancerList on List<Dancer> {
     }
   }
 
+  String show() {
+    var outstr = '';
+    for (var iy=50; iy>=(-50); iy -= 5) {
+      for (var ix=(-100); ix<=100; ix += 5) {
+        var char = (ix==0 && iy==0) ? '+'
+            : (ix==0) ? '|'
+            : (iy==0) ? '-'
+            : ' ';
+        for (final d in this) {
+          if (d.location.isAbout(Vector(ix/20.0,iy/10.0)))
+            char = d.number;
+        }
+        outstr += char;
+      }
+      outstr += '\n';
+    }
+    return outstr;
+  }
+
 }
 
 class Dancer implements Comparable<Dancer> {
