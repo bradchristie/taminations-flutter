@@ -60,19 +60,8 @@ class _SequenceFrameState extends fm.State<SequenceFrame> {
                        itemBuilder: itemBuilder,
                      )
                  ),
-              //   if (model.errorString.isNotEmpty)
                  if (constraints.maxHeight > 300)
-                 fm.Container(
-                   color: Color.FLOOR,
-                   child: fm.Row(
-                     children: [
-                       SequencerUndoButton(),
-                       SequencerResetButton(),
-                       SequencerCopyButton(),
-                       SequencerPasteButton()
-                     ],
-                   ),
-                 ),
+                   SequenceEditButtons(),
                  fm.Text(model.errorString,key: fm.Key('Error text'),style: fm.TextStyle(fontSize: 0.01))
                ],
              ),
@@ -120,6 +109,24 @@ class _SequenceFrameState extends fm.State<SequenceFrame> {
   }
 
 }
+
+class SequenceEditButtons extends fm.StatelessWidget {
+  @override
+  fm.Widget build(fm.BuildContext context) {
+    return fm.Container(
+      color: Color.FLOOR,
+      child: fm.Row(
+        children: [
+          SequencerUndoButton(),
+          SequencerResetButton(),
+          SequencerCopyButton(),
+          SequencerPasteButton()
+        ]
+      )
+    );
+  }
+}
+
 
 class SequencerEditLine extends fm.StatefulWidget {
   @override
@@ -237,7 +244,8 @@ class _SequencerEditLineState extends fm.State<SequencerEditLine> {
                 child:fm.Material(
                   color: Color.WHITE,
                   child: fm.InkWell(
-                      child: fm.Text('Tap mic or this space',
+                    key: fm.ValueKey('Tap to start Sequence'),
+                    child: fm.Text('Tap mic or this space',
                           style: fm.TextStyle(fontSize: 20)),
                     onTap: () {
                         setState(() {
@@ -280,11 +288,17 @@ class _SequencerEditLineState extends fm.State<SequencerEditLine> {
 
             //  For testing - a very tiny spot to tap
             //  since the tester cannot simulate keyboard Enter
+            //  Will also use this to pass errors back to the tester
             fm.Container(
               key: fm.Key('Submit Call'),
               child: fm.GestureDetector(
-                child: fm.Text(' ',style: fm.TextStyle(fontSize:1),),
-                onTap: () { _sendOneCall(model,
+                //  Tester seems to be unable to fetch text if it's a blank string
+                //  so add a space
+                child: fm.Text(model.errorString + ' ',
+                    key:fm.ValueKey('Test Error Text'),
+                    style: fm.TextStyle(fontSize:30)),
+                onTap: () {
+                  _sendOneCall(model,
                    abbreviations.replaceAbbreviations(textFieldController.value.text));
                 },
               ),

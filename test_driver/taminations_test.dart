@@ -1932,10 +1932,11 @@ void main() {
     final settingsTapper = find.byValueKey('Settings');
     final fastTapper = find.byValueKey('Fast');
     final sequencerTapper = find.byValueKey('Sequencer');
+    final sequencerInputTapper = find.byValueKey('Tap to start Sequence');
     final sequencerInput = find.byValueKey('Sequencer Input');
     final sequencerSubmit = find.byValueKey('Submit Call');
+    final errorText = find.byValueKey('Test Error Text');
     final sequencerReset = find.byValueKey('Reset');
-    final errorText = find.byValueKey('Error text');
     final testsFinished = <String>[];
     final testsFailed = testSequences.keys.toSet();
 
@@ -1964,6 +1965,8 @@ void main() {
       await driver.waitFor(fastTapper);
       await driver.tap(fastTapper);
       await driver.tap(sequencerTapper);
+      await driver.waitFor(sequencerInputTapper);
+      await driver.tap(sequencerInputTapper);
       await driver.waitFor(sequencerInput);
     });
 
@@ -1975,7 +1978,7 @@ void main() {
             await driver.tap(sequencerInput);
             await driver.enterText(call);
             await driver.tap(sequencerSubmit);
-            expect(await driver.getText(errorText), '');
+            expect(await driver.getText(errorText), ' ');
           }
           await driver.waitUntilNoTransientCallbacks();
           testsFinished.add(testName);

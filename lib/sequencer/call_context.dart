@@ -311,17 +311,21 @@ class CallContext {
   /// Append the result of processing this CallContext to it source.
   /// The CallContext must have been previously cloned from the source.
   //  Return true if anything new was added.
-  bool appendToSource() {
+  bool appendToSource([CallContext ctx]) {
     var didSomething = false;
     dancers.forEach((clone) {
-      var original = clone.clonedFrom;
-      //  Phantoms might have been rotated in clone,
-      //  so set start angle in original to match
-      if (clone.gender == Gender.PHANTOM && original.path.movelist.isEmpty)
-        original.setStartAngle(clone.starttx.angle);
-      didSomething |= clone.path.movelist.isNotEmpty;
-      original.path.add(clone.path);
-      original.animateToEnd();
+      var original = ctx == null
+          ? clone.clonedFrom
+          : ctx.dancers.firstWhere((d) => d == clone, orElse: ()=>null);
+      if (original != null) {
+        //  Phantoms might have been rotated in clone,
+        //  so set start angle in original to match
+        if (clone.gender == Gender.PHANTOM && original.path.movelist.isEmpty)
+          original.setStartAngle(clone.starttx.angle);
+        didSomething |= clone.path.movelist.isNotEmpty;
+        original.path.add(clone.path);
+        original.animateToEnd();
+      }
     });
     if (_source != null && _source.level < level)
       _source.level = level;
@@ -337,7 +341,7 @@ class CallContext {
     dancers ??= this.dancers;
     var ctx = CallContext.fromContext(this,dancers:dancers.inOrder());
     await block(ctx);
-    return ctx.appendToSource();
+    return ctx.appendToSource(this);
   }
 
   //  For now this just checks for collisions in a tidal formation
@@ -957,18 +961,16 @@ class CallContext {
     var matchResult = computeFormationOffsets(ctx2, mapping);
     var rotmat = Matrix.getRotation(-matchResult.transform.angle);
     var unmapped = ctx2.dancers.asMap().keys
-        .where((i) => !mapping.contains(i)).map((i) => ctx2.dancers[i]);
+        .where((i) => !mapping.contains(i)).map((i) => ctx2.dancers[i]).toList();
     var phantoms = unmapped.map((d) {
       var ph = Dancer(letters[nextPhantom],'0',Gender.PHANTOM,Color.GRAY,
           rotmat * d.starttx,
           Geometry.getGeometry(Geometry.SQUARE).first,[]);
       nextPhantom += 1;
       return ph;
-    });
+    }).toList();
     return CallContext.fromContext(this,dancers:dancers + phantoms);
   }
-
-
 
 
   //  Return max number of beats among all the dancers
