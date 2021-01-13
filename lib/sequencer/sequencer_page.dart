@@ -83,7 +83,12 @@ class _SequencerPageState extends fm.State<SequencerPage> {
                 //  landscape
                 return fm.Row(
                   children: [
-                    fm.Expanded(child: SequenceFrame()),
+                    fm.Expanded(child: fm.Column(
+                      children: [
+                        fm.Expanded(child: SequenceFrame()),
+                        SequenceEditButtons(),
+                      ],
+                    )),
                     fm.VerticalDivider(color: Color.BLACK, width: 2.0,),
                     fm.Expanded(child: SequencerAnimationFrame()),
                     fm.VerticalDivider(color: Color.BLACK, width: 2.0,),

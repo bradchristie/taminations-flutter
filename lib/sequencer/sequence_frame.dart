@@ -51,7 +51,6 @@ class _SequenceFrameState extends fm.State<SequenceFrame> {
              builder: (context,constraints) => fm.Column(
                children: [
                  SequencerEditLine(),
-                 if (constraints.maxHeight > 300)
                  fm.Expanded(
                      child: ScrollablePositionedList.builder(
                        itemScrollController: itemScrollController,
@@ -60,8 +59,6 @@ class _SequenceFrameState extends fm.State<SequenceFrame> {
                        itemBuilder: itemBuilder,
                      )
                  ),
-                 if (constraints.maxHeight > 300)
-                   SequenceEditButtons(),
                  fm.Text(model.errorString,key: fm.Key('Error text'),style: fm.TextStyle(fontSize: 0.01))
                ],
              ),
@@ -217,75 +214,68 @@ class _SequencerEditLineState extends fm.State<SequencerEditLine> {
             //   Accept keyboard input if web site
             //  or if user has tapped box on a device
             if (virtualKeyboard.isVisible || !TamUtils.isTouchDevice())
-            fm.Expanded(
-              child: fm.TextField(
-                key: fm.Key('Sequencer Input'),
-                // autofocus: true,
-                focusNode: focusNode,
-                controller: textFieldController,
-                decoration: fm.InputDecoration(
-                    hintText: 'Enter calls',
-                    errorStyle: fm.TextStyle(fontSize: 20),
-                    errorMaxLines: 10,
-                    errorText: model.errorString.isEmpty ? null : model.errorString),
-                enableSuggestions: false,
-                style: fm.TextStyle(fontSize: 24),
-                //  Code to run when user presses Enter
-                onSubmitted: (value) {
-                  _sendOneCall(model, abbreviations.replaceAbbreviations(value));
-                },
-              ),
-            )
+              fm.Expanded(
+                child: fm.TextField(
+                  key: fm.Key('Sequencer Input'),
+                  // autofocus: true,
+                  focusNode: focusNode,
+                  controller: textFieldController,
+                  decoration: fm.InputDecoration(
+                      hintText: 'Enter calls',
+                      errorStyle: fm.TextStyle(fontSize: 20),
+                      errorMaxLines: 10,
+                      errorText: model.errorString.isEmpty ? null : model.errorString),
+                  enableSuggestions: false,
+                  style: fm.TextStyle(fontSize: 24),
+                  //  Code to run when user presses Enter
+                  onSubmitted: (value) {
+                    _sendOneCall(model, abbreviations.replaceAbbreviations(value));
+                  },
+                ),
+              )
 
             //  Touch device - don't show keyboard until user
             //  taps the input line
             else
               fm.Expanded(
-                child:fm.Material(
-                  color: Color.WHITE,
-                  child: fm.InkWell(
-                    key: fm.ValueKey('Tap to start Sequence'),
-                    child: fm.Text('Tap mic or this space',
+                  child:fm.Material(
+                    color: Color.WHITE,
+                    child: fm.InkWell(
+                      key: fm.ValueKey('Tap to start Sequence'),
+                      child: fm.Text('Tap mic or this space',
                           style: fm.TextStyle(fontSize: 20)),
-                    onTap: () {
+                      onTap: () {
                         setState(() {
                           virtualKeyboard.isVisible = true;
                           focusNode.requestFocus();
                         });
-                    },
-                  ),
-                )
+                      },
+                    ),
+                  )
               ),
 
             //  Mic icon for touch devices to do voice input
             if (TamUtils.isTouchDevice())
-              fm.FutureBuilder(
-                  future: speechProvider.initialize(),
-                  builder: (context, snapshot) {
-                    return fm.TextButton(child: fm.Icon(
-                        fm.Icons.mic,
-                        color: speechProvider.isListening ? Color.RED :
-                        snapshot.hasData && snapshot.data
-                            ? Color.BLACK
-                            : Color.LIGHTGRAY,
-                        size: 32
-                    ),
-                        onPressed: () {
-                          if (speechProvider.isAvailable) {
-                            setState(() {
-                              speechProvider.listen(
-                                  localeId: 'en_US',
-                                  partialResults: false,
-                                  listenFor: Duration(seconds: 5),
-                                  pauseFor: Duration(seconds: 5)
-                              );
-                            });
-                          }
-                        }
-                    );
+              fm.TextButton(child: fm.Icon(
+                  fm.Icons.mic,
+                  color: speechProvider.isListening ? Color.RED : Color.BLACK,
+                  size: 32
+              ),
+                  onPressed: () {
+                    speechProvider.initialize().whenComplete(() {
+                      if (speechProvider.isAvailable) {
+                        setState(() {
+                          speechProvider.listen(
+                              localeId: 'en_US',
+                              partialResults: false,
+                              listenFor: Duration(seconds: 5),
+                              pauseFor: Duration(seconds: 5)
+                          );
+                        });
+                      }
+                    } );
                   }
               ),
-
             //  For testing - a very tiny spot to tap
             //  since the tester cannot simulate keyboard Enter
             //  Will also use this to pass errors back to the tester
@@ -296,10 +286,10 @@ class _SequencerEditLineState extends fm.State<SequencerEditLine> {
                 //  so add a space
                 child: fm.Text(model.errorString + ' ',
                     key:fm.ValueKey('Test Error Text'),
-                    style: fm.TextStyle(fontSize:30)),
+                    style: fm.TextStyle(fontSize:0.01)),
                 onTap: () {
                   _sendOneCall(model,
-                   abbreviations.replaceAbbreviations(textFieldController.value.text));
+                      abbreviations.replaceAbbreviations(textFieldController.value.text));
                 },
               ),
             ),
