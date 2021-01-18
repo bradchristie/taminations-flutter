@@ -143,7 +143,9 @@ class _SequencerEditLineState extends fm.State<SequencerEditLine> {
     super.initState();
     textFieldController = fm.TextEditingController();
     later(() {
-      _checkFocus();
+      if (!TamUtils.isTouchDevice())
+        focusNode.requestFocus();
+      //_checkFocus();
     });
     speechProvider = SpeechToTextProvider(SpeechToText());
   }

@@ -41,7 +41,8 @@
         .then((registration) => {
             if (registration.installing) {
               console.log('service worker installing');
-              location.reload();
+              if (location.href.indexOf('tamtwirlers.org') >= 0)
+                location.reload();
             }
             else if (registration.waiting)
               console.log('service worker waiting');
