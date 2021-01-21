@@ -145,6 +145,15 @@ Star Thru
 Pass Thru
 Allemande Left''',
 
+  'Cloverleaf':
+'''Heads Pair Off and Spread 
+Circulate 
+Cloverleaf 
+Centers Pass Thru and Cloverleaf 
+Centers Pass Thru 
+Allemande Left 
+Promenade Home''',
+
   'Clover And':
   '''Heads Pass Thru
 Clover and Touch 1/4

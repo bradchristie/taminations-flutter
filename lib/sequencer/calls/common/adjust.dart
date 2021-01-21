@@ -27,18 +27,20 @@ import '../../../tam_utils.dart';
 class Adjust extends Action {
 
   static Map<RegExp,String> formationMap = {
-  '.*lines?'.ri : 'Normal Lines' ,
-  '.*thar'.ri : 'Thar RH Boys' ,
-  '.*square(d)?set'.ri : 'Squared Set' ,
-  '.*boxes?'.ri : 'Eight Chain Thru' ,
-  '.*columns?'.ri : 'Eight Chain Thru' ,
-  '.*14tag'.ri : 'Quarter Tag' ,
-  '.*diamonds?'.ri : 'Diamonds RH Girl Points' ,
-  '.*tidal(wave|line)?'.ri : 'Tidal Line RH' ,
-  '.*hourglass'.ri : 'Hourglass RH BP' ,
-  '.*galaxy'.ri : 'Galaxy RH GP' ,
-  '.*butterfly'.ri : 'Butterfly RH' ,
-  '.*o'.ri : 'O RH'
+    '.*lines?'.ri : 'Normal Lines' ,
+    '.*thar'.ri : 'Thar RH Boys' ,
+    '.*square(d)?set'.ri : 'Squared Set' ,
+    '.*boxes'.ri : 'Eight Chain Thru' ,
+    '.*columns?'.ri : 'Eight Chain Thru' ,
+    '.*14tag'.ri : 'Quarter Tag' ,
+    '.*diamonds?'.ri : 'Diamonds RH Girl Points' ,
+    '.*tidal(wave|line)?'.ri : 'Tidal Line RH' ,
+    '.*hourglass'.ri : 'Hourglass RH BP' ,
+    '.*galaxy'.ri : 'Galaxy RH GP' ,
+    '.*butterfly'.ri : 'Butterfly RH' ,
+    '.*o'.ri : 'O RH',
+     //  two couples
+    '.*box'.ri : 'Facing Couples'
   };
 
   Adjust(String name) : super(name);

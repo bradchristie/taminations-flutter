@@ -29,10 +29,7 @@ class Cloverleaf extends Action {
   //  So do a 4-dancer cloverleaf
   @override
   Future<void> perform(CallContext ctx, [int stackIndex = 0]) async {
-    if (ctx.outer(4).every((d) => d.isActive))
-      await ctx.applyCalls('Clover and Nothing');
-    else
-      await ctx.applyCalls('Clover and Step');
+    await ctx.applyCalls('Clover and Adjust to a Box');
   }
 
 }
