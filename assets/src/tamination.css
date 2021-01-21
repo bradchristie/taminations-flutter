@@ -165,7 +165,7 @@ p.timing {
 .definition-highlight { background-color: yellow; }
 
 /* Platform-specific text, turned on by each platform */
-.android, .ios, .dom {
+.android, .ios, .web {
   display: none;
 }
 

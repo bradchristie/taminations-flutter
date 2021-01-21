@@ -336,14 +336,20 @@ class TamUtils {
       .replaceAll('\\W'.ri,'')
       .replaceAll('\\s'.ri,'');
 
-  static bool isTouchDevice() {
+  static String platform() {
     try {
       final platform = LocalPlatform();
-      if (platform.isIOS || platform.isAndroid)
-        return true;
+      if (platform.isIOS)
+        return 'ios';
+      else if (platform.isAndroid)
+        return 'android';
+      else
+        return 'unknown';
       //  Currently web doesn't even have a platform, LocalPlatform is not supported
     } on UnsupportedError catch (_) { }
-    return false;
+    return 'web';
   }
+
+  static bool isTouchDevice() => platform() != 'web';
 
 }

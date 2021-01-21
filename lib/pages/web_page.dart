@@ -166,12 +166,14 @@ class _WebFrameState extends fm.State<WebFrame> {
   String hackCSS(String html) => html.replaceFirst(r'<link href="../src/tamination.css" type="text/css" rel="stylesheet" />', TamUtils.css);
 
   //  Replace link to javascript with inline javascript code
+  final platform = TamUtils.platform();
   String hackJavascript(String html) =>
     html.replaceFirst(r'<script type="text/javascript" src="../src/framecode.js"></script>',
         //  Can't run the javascript until the page has been read and digested
         //  so insert first call in the body onLoad callback
     '<script>' + TamUtils.framecode + '</script>')
-        .replaceFirst('<body>', '<body onLoad="setAbbrev($isAbbrev)">');
+        .replaceFirst('<body>',
+        '<body onLoad="setAbbrev($isAbbrev); showPlatformElements(\'$platform\');">');
 
   //  Get an image asset and base64 encode it
   Future<String> _imageToBase64(String imageName) {
