@@ -39,16 +39,24 @@ class Spread extends Action {
    * 3. If the (Anything) call finishes in tandem couples
    *  (e.g., Wheel & Deal from a line of four), the lead dancers slide apart sideways,
    *  while the trailing dancers step forward between them.
+   *
+   * 4. (C-1) If specific dancers are directed to Spread (e.g., Everyone Trade, Boys
+   *  Spread), they slide away from the adjacent dancer one position. The inactive
+   *  dancers do not move.
    */
 
   @override
   Future<void> perform(CallContext ctx, [int stackIndex = 0]) async {
     //  Is this spread from waves, tandem, actives?
     Action spreader;
+    ctx.analyze();
     if (ctx.actives.length == ctx.dancers.length / 2) {
       spreader = CallContext.fromContext(ctx,dancers:ctx.actives).isLines()
           ? _Case2()   //  Case 2: Active dancers in line or wave spread among themselves
-          : _Case1();  //  Case 1: Active dancers spread and let in the others
+          : ctx.inActives.every((d) => ctx.dancerClosest(d, (d2) =>
+      d.angleToDancer(d2).abs().isLessThan(pi/2))?.isActive ?? false)
+          ? _Case1()  //  Case 1: Active dancers spread and let in the others
+          : _Case4();
     } else if (ctx.isLines() || ctx.isTidal()) {
       spreader = _Case2();
     } else if (ctx.dancers.every((d) => ctx.isInTandem(d))) {
@@ -58,7 +66,6 @@ class Spread extends Action {
       await spreader.perform(ctx);
     else
       throw CallError('Can not figure out how to Spread');
-
   }
 
 }
@@ -97,6 +104,12 @@ class _Case2 extends Action {
   _Case2() : super('and Spread');
 
   @override
+  Future<void> perform(CallContext ctx, [int stackIndex = 0]) async {
+    ctx.extendPaths();
+    await super.perform(ctx,stackIndex);
+  }
+
+  @override
   Path performOne(Dancer d, CallContext ctx) {
     var p = d.path;
     //  This is for waves only
@@ -127,6 +140,30 @@ class _Case3 extends _Case1 {
       d.data.active = d.data.leader;
     //  And forward to Case1, actives spread
     await super.perform(ctx,stackIndex);
+  }
+
+}
+
+class _Case4 extends Action {
+  _Case4() : super('and Spread');
+
+  @override
+  Future<void> perform(CallContext ctx, [int stackIndex = 0]) async {
+    ctx.extendPaths();
+    for (var d in ctx.dancers) {
+      if (d.isActive) {
+        //  Active dancers spread apart
+        String m;
+        if (ctx.dancersToRight(d).isEmpty)
+          m = 'Dodge Right';
+        else if (ctx.dancersToLeft(d).isEmpty)
+          m = 'Dodge Left';
+        else
+          throw CallError('Can not figure out how to Spread');
+        d.path += TamUtils.getMove(m,beats: 2.0);
+      }
+      //  Inactive dancers do not move
+    }
   }
 
 }
