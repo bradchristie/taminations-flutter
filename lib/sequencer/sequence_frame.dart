@@ -25,10 +25,10 @@ import 'package:provider/provider.dart' as pp;
 import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
 import 'package:speech_to_text/speech_to_text.dart';
 import 'package:speech_to_text/speech_to_text_provider.dart';
-import 'package:taminations/common.dart';
 
 import '../button.dart';
 import '../color.dart';
+import '../common.dart';
 import 'abbreviations_model.dart';
 import 'sequencer_model.dart';
 
@@ -210,6 +210,7 @@ class _SequencerEditLineState extends fm.State<SequencerEditLine> {
 
       return fm.Container(
         color: Color.WHITE,
+        padding: fm.EdgeInsets.only(left: 10),
         child: fm.Row(
           children: [
 
@@ -219,7 +220,6 @@ class _SequencerEditLineState extends fm.State<SequencerEditLine> {
               fm.Expanded(
                 child: fm.TextField(
                   key: fm.Key('Sequencer Input'),
-                  // autofocus: true,
                   focusNode: focusNode,
                   controller: textFieldController,
                   decoration: fm.InputDecoration(

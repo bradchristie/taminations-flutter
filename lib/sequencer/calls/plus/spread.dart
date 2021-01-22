@@ -71,7 +71,7 @@ class _Case1 extends Action {
     ctx.extendPaths();
     for (var d in ctx.dancers) {
       if (d.isActive) {
-        //  Active dancers sxpread apart
+        //  Active dancers spread apart
         String m;
         if (ctx.dancersToRight(d).isEmpty)
           m = 'Dodge Right';
@@ -84,7 +84,7 @@ class _Case1 extends Action {
         //  Inactive dancers move forward
         var d2 = ctx.dancerInFront(d);
         if (d2 != null) {
-          var dist = d.distanceTo(d2);
+          var dist = min(d.distanceTo(d2),2.0);
           d.path += TamUtils.getMove('Forward',scale:[dist,1.0].v,beats: 2.0);
         }
       }

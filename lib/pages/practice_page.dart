@@ -86,7 +86,7 @@ class _PracticeFrameState extends fm.State<PracticeFrame>
     with fm.SingleTickerProviderStateMixin {
 
   //  painter is where all the drawing and animation is done
-  DanceAnimationPainter painter = DanceAnimationPainter();
+  final painter = DanceAnimationPainter();
   var animationFinished = false;
   var score = 0;
   var maxScore = 0;
