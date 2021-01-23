@@ -48,11 +48,6 @@ class CrossRun extends ActivesOnlyAction {
 
   @override
   Future<void> perform(CallContext ctx, [int stackIndex=0]) async {
-    //  so ActivesOnlyAction works properly
-    if (ctx.actives.length < ctx.dancers.length) {
-      await super.perform(ctx,stackIndex);
-      return;
-    }
     //  Get runners and dodgers
     var spec = name.replaceFirst('Cross Run' , '' );
     var specCtx = CallContext.fromContext(ctx);

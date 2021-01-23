@@ -20,7 +20,7 @@
 
 import '../common.dart';
 
-class Bounce extends Action {
+class Bounce extends ActivesOnlyAction {
 
   @override final level = LevelData.C2;
   Bounce(String name) : super(name);
