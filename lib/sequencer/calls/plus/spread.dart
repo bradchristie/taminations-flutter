@@ -62,8 +62,10 @@ class Spread extends Action {
     } else if (ctx.dancers.every((d) => ctx.isInTandem(d))) {
       spreader = _Case3();
     }
-    if (spreader != null)
+    if (spreader != null) {
+      level = spreader.level;
       await spreader.perform(ctx);
+    }
     else
       throw CallError('Can not figure out how to Spread');
   }
@@ -145,6 +147,9 @@ class _Case3 extends _Case1 {
 }
 
 class _Case4 extends Action {
+
+  @override
+  var level = LevelData.C1;
   _Case4() : super('and Spread');
 
   @override
