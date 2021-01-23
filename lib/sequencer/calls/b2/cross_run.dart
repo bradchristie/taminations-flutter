@@ -75,7 +75,20 @@ class CrossRun extends ActivesOnlyAction {
       var d2 = (dir == 'Right'  ? dright : dleft) ??
           thrower(CallError('Dancer $d cannot Cross Run' ));
       var dist = d.distanceTo(d2);
-      d.path += TamUtils.getMove('Run $dir' ,scale:[1.5, dist/2].v);
+      //  If centers are running and facing same direction,
+      //  dancer on right goes in front (half-sashay action)
+      if (d.data.center && runners.contains(ctx.dancerToRight(d)) &&
+          ctx.dancerToRight(d).angleFacing.isAround(d.angleFacing))
+        d.path =
+            TamUtils.getMove('Dodge Right',scale:[1.0,0.5].v,beats: 1.0) +
+            TamUtils.getMove('Run $dir',scale:[1.0, dist/2].v,skew:[0.0,1.0].v);
+      //  If ends are running and facing same direction,
+      //  dancers pass right shoulders
+      else if (d.data.end && dir == 'Right' &&
+          ctx.dancersToRight(d)[2].angleFacing.isAround(d.angleFacing))
+        d.path = TamUtils.getMove('Run $dir' ,scale:[2.0, dist/2].v);
+      else
+        d.path = TamUtils.getMove('Run $dir' ,scale:[1.0, dist/2].v);
     }
     //  Loop through each dodger and figure out which way they are moving
     for (var d in dodgers) {

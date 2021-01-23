@@ -94,22 +94,40 @@ extension DancerList on List<Dancer> {
   }
 
   String show() {
-    var outstr = '';
-    for (var iy=50; iy>=(-50); iy -= 5) {
-      for (var ix=(-100); ix<=100; ix += 5) {
-        var char = (ix==0 && iy==0) ? '+'
-            : (ix==0) ? '|'
-            : (iy==0) ? '-'
-            : ' ';
-        for (final d in this) {
-          if (d.location.isAbout(Vector(ix/20.0,iy/10.0)))
-            char = d.number;
-        }
-        outstr += char;
+    final charMatrix = [for (var i=0; i<11; i++) [ for (var j=0; j<21; j++) ' ']];
+    for (var i=0; i<21; i++)
+      charMatrix[5][i] = '-';
+    for (var i=0; i<11; i++)
+      charMatrix[i][10] = '|';
+    charMatrix[5][10] = '+';
+    charMatrix[5][0] = 'Y';
+    charMatrix[0][10] = 'X';
+    for (final d in this) {
+      var dx = d.location.x.round();
+      var dy = (d.location.y*2.0).round();
+      if (dx.abs() <= 5 && dy.abs() <= 10)
+        charMatrix[-dx+5][-dy+10] = d.number.substring(0,1);
+      var dsym = '';
+      if (d.angleFacing.isAround(0)) {
+        dx += 1;
+        dsym = '^';
+      } else if (d.angleFacing.isAround(pi)) {
+        dx -= 1;
+        dsym = 'v';
+      } else if (d.angleFacing.isAround(pi/2)) {
+        dy += 1;
+        dsym = '<';
+      } else if (d.angleFacing.isAround(-pi/2)) {
+        dy -= 1;
+        dsym = '>';
       }
-      outstr += '\n';
+      if (dsym.length == 1 && dx.abs() <= 5 && dy.abs() <= 10) {
+        final oldChar = charMatrix[-dx + 5][-dy + 10];
+        if (oldChar == ' ' || oldChar == '-' || oldChar == '|')
+          charMatrix[-dx + 5][-dy + 10] = dsym;
+      }
     }
-    return outstr;
+    return charMatrix.map((e) => e.join('')).join('\n') + '\n';
   }
 
 }
