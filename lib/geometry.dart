@@ -31,6 +31,7 @@ abstract class Geometry {
   static const int BIGON = 1;
   static const int SQUARE = 2;
   static const int HEXAGON = 3;
+  static const int HASHTAG = 4;
 
   var rotnum = 0;
   var geometry = 0;
@@ -47,19 +48,28 @@ abstract class Geometry {
     if (g == BIGON) return BigonGeometry(r);
     else if (g == SQUARE) return SquareGeometry(r);
     else if (g == HEXAGON) return HexagonGeometry(r);
+    else if (g == HASHTAG) return HashtagGeometry(r);
     else throw ArgumentError();
   }
 
   factory Geometry.fromString(String gstr) {
-    if (gstr.toLowerCase() == 'bi-gon') return BigonGeometry(0);
-    else if (gstr.toLowerCase() == 'hexagon') return HexagonGeometry(0);
-    else return SquareGeometry(0);
+    if (gstr.toLowerCase() == 'bi-gon')
+      return BigonGeometry(0);
+    else if (gstr.toLowerCase() == 'hexagon')
+      return HexagonGeometry(0);
+    else if (gstr.toLowerCase() == 'hashtag')
+      return HashtagGeometry(0);
+    else
+      return SquareGeometry(0);
   }
 
   static List<Geometry> getGeometry(int sym) {
     if (sym == BIGON) return [BigonGeometry(0)];
     else if (sym == HEXAGON)
       return [HexagonGeometry(0),HexagonGeometry(1),HexagonGeometry(2)];
+    else if (sym == HASHTAG)
+      return [HashtagGeometry(0),HashtagGeometry(1),
+        HashtagGeometry(2),HashtagGeometry(3)];
     else return [SquareGeometry(0),SquareGeometry(1)];
   }
 
@@ -257,5 +267,45 @@ class HexagonGeometry extends Geometry {
     return Matrix.getTranslation(x2,y2) *
         Matrix.getRotation(startangle2);
   }
+
+}
+
+///////////////////////////////////////////////////////////////////////////
+class HashtagGeometry extends Geometry {
+
+  HashtagGeometry(int rotnum) : super.create(rotnum);
+
+  @override
+  var geometry = Geometry.HASHTAG;
+
+  @override
+  Geometry clone() => HashtagGeometry(rotnum);
+
+  //  Same as sqaure geometry
+  @override
+  void drawGrid(fm.Canvas ctx,{double lineWidth=0.0}) {
+    var p = gridPaint(lineWidth);
+    for (var x = -75; x <= 75; x += 10) {
+      var path = fm.Path();
+      path.moveTo(x/10.0, -7.5);
+      path.lineTo(x/10.0, 7.5);
+      ctx.drawPath(path,p);
+    }
+    for (var y = -75; y <= 75; y += 10) {
+      var path = fm.Path();
+      path.moveTo(-7.5, y/10.0);
+      path.lineTo(7.5, y/10.0);
+      ctx.drawPath(path,p);
+    }
+  }
+
+  //  Paths the same as square geometry
+  @override
+  Matrix pathMatrix(Matrix starttx, Matrix tx, double beat) =>
+    Matrix.getIdentity();
+
+  @override
+  Matrix startMatrix(Matrix mat) =>
+      Matrix.getRotation(pi * rotnum / 2.0) * mat;
 
 }

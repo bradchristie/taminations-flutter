@@ -392,7 +392,7 @@ class GeometrySettingWidget extends fm.StatelessWidget {
             _SettingTitle('Special Geometry'),
             _SettingRadioGroup(
                 groupValue: settings.geometry,
-                values: ['None', 'Hexagon', 'Bi-Gon'],
+                values: ['None', 'Hexagon', 'Bi-Gon', 'Hashtag'],
                 onChanged: (value) {
                   settings.geometry = value;
                 }),

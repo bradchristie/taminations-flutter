@@ -610,6 +610,8 @@ class DanceAnimationPainter extends fm.ChangeNotifier implements fm.CustomPainte
           'U', 'V', 'W', 'X', 'Y', 'Z'];
       else if (_geometry == Geometry.BIGON)
         numbers = ['1', '2', '3', '4', '5', '6', '7', '8'];
+      else if (_geometry == Geometry.HASHTAG)
+        numbers = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
       else if (paths.isEmpty)
         numbers = ['1', '5', '2', '6', '3', '7', '4', '8'];
       else
@@ -621,6 +623,13 @@ class DanceAnimationPainter extends fm.ChangeNotifier implements fm.CustomPainte
           '7', '8', '7', '8', '7', '8'];
       else if (_geometry == Geometry.BIGON)
         couples = [ '1', '2', '3', '4', '5', '6', '7', '8' ];
+      else if (_geometry == Geometry.HASHTAG)
+        couples = ['1','3','1','3',
+          '1','3','1','3',
+          '1','3','1','3',
+          '1','3','1','3',
+          '1','3','1','3',
+          '1','3','1','3'];
       else
         couples = TamUtils.getCouples(_tam);
 
