@@ -93,8 +93,6 @@ class AnimationFrame extends fm.StatefulWidget {
 class _AnimationFrameState extends fm.State<AnimationFrame>
     with fm.SingleTickerProviderStateMixin {
 
-  String link;
-  int animnum;
   Vector locationTapped;
   Dancer dancerTapped;
   String partstr = '';

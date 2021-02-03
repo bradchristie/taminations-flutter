@@ -265,10 +265,15 @@ class TaminationsRouterDelegate extends fm.RouterDelegate<TamState>
                           if (_orientation == fm.Orientation.landscape) {
                             //  Pop landscape page
                             if (appState.mainPage == MainPage.SEQUENCER ||
-                                appState.mainPage == MainPage.STARTPRACTICE ||
-                                appState.mainPage == MainPage.ANIMATIONS ||
+                                appState.mainPage == MainPage.STARTPRACTICE)
+                              appState.change(mainPage: MainPage.LEVELS,
+                                  animnum: -1,
+                                  detailPage: DetailPage.NONE);
+                            else if (appState.mainPage == MainPage.ANIMATIONS ||
                                 appState.mainPage == MainPage.ANIMLIST)
-                              appState.change(mainPage: MainPage.LEVELS, detailPage: DetailPage.NONE);
+                              appState.change(mainPage: MainPage.LEVELS,
+                                  animnum: -1,
+                                  detailPage: DetailPage.CALLS);
                             else if (appState.mainPage == MainPage.PRACTICE ||
                                 appState.mainPage == MainPage.TUTORIAL)
                               appState.change(mainPage:MainPage.STARTPRACTICE);
