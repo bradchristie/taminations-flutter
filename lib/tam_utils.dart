@@ -325,7 +325,11 @@ class TamUtils {
           (m) => '${m[1]} the interlocked')
   //  'Dixie Style' -> 'Dixie Style to a Wave'
       .replaceAll('\\bdixie style(?! to)'.ri,'dixie style to a wave')
+  //  Accept both Left Chase and Chase Left
       .replaceAll('\\bchase left\\b'.ri,'left chase')
+  //  Change (fraction) Circle Left/Right to Circle Left/Right (fraction)
+      .replaceAllMapped('(14|12|34) circle (left|right)'.ri,
+          (m) => 'circle ${m[2]} ${m[1]}')
   //  Accept optional 'dancers' e.g. 'head dancers' == 'heads'
       .replaceAll('\\bdancers?\\b'.ri,'')
   //  Also handle 'Lead Couples' as 'Leads'

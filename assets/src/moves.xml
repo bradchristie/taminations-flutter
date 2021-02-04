@@ -582,7 +582,7 @@
 
   <!--   For circle left and circle right    -->
   <path name="cl">
-    <movement hands="both" beats="1" cx1="0.27" cy1="0.64" cx2="0.77" cy2="1.14" x2="1.41" y2="1.41"
+    <movement hands="gripboth" beats="1" cx1="0.27" cy1="0.64" cx2="0.77" cy2="1.14" x2="1.41" y2="1.41"
                                      cx3="0.265" cx4="0.52" cy4="-0.105" x4="0.707" y4="-0.293" />
   </path>
 
