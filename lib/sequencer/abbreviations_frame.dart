@@ -18,17 +18,18 @@
 
 */
 
-import 'package:meta/meta.dart';
 import 'package:flutter/material.dart' as fm;
-import 'package:provider/provider.dart' as pp;
 import 'package:flutter/services.dart';
+import 'package:meta/meta.dart';
+import 'package:provider/provider.dart' as pp;
 
 import '../button.dart';
 import '../color.dart';
 import '../extensions.dart';
 import '../pages/page.dart';
-import 'abbreviations_model.dart';
 import '../tam_state.dart';
+import '../tam_utils.dart';
+import 'abbreviations_model.dart';
 
 class AbbreviationsPage extends fm.StatelessWidget {
   @override
@@ -194,15 +195,19 @@ class _AbbreviationsFrameState extends fm.State<AbbreviationsFrame> {
     return fm.Column(
         children: [
           fm.Expanded(
-              child: fm.ListView.builder(
-                  itemCount: model.currentAbbreviations.length,
-                  itemBuilder: (context,index) =>
-                      fm.Row(
-                          children: [
-                            _oneTextItem(index, false),
-                            _oneTextItem(index, true)
-                          ]
-                      )
+              child: fm.Scrollbar(
+                isAlwaysShown: TamUtils.platform() == 'web',
+                thickness: 16,
+                child: fm.ListView.builder(
+                    itemCount: model.currentAbbreviations.length,
+                    itemBuilder: (context,index) =>
+                        fm.Row(
+                            children: [
+                              _oneTextItem(index, false),
+                              _oneTextItem(index, true)
+                            ]
+                        )
+                ),
               )
           ),
           fm.Container(

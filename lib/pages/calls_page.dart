@@ -87,22 +87,30 @@ class _CallsFrameState extends fm.State<CallsFrame> {
                   return fm.OrientationBuilder(
                     builder: (context, orientation) {
                       if (orientation == fm.Orientation.landscape) {
-                        return fm.GridView.builder(
-                            scrollDirection: fm.Axis.horizontal,
-                            gridDelegate: fm.SliverGridDelegateWithMaxCrossAxisExtent(
-                                maxCrossAxisExtent: 40,
-                                mainAxisSpacing: 1,
-                                childAspectRatio: 0.1
-                            ),
-                            itemCount: callsSearched.length,
-                            itemBuilder:
-                            (context,index) => itemBuilder(context,index,callsSearched,showLevel),
+                        return /*fm.Scrollbar(
+                          isAlwaysShown: TamUtils.platform() == 'web',
+                          thickness: 16,
+                          child: **/ fm.GridView.builder(
+                              scrollDirection: fm.Axis.horizontal,
+                              gridDelegate: fm.SliverGridDelegateWithMaxCrossAxisExtent(
+                                  maxCrossAxisExtent: 40,
+                                  mainAxisSpacing: 1,
+                                  childAspectRatio: 0.1
+                              ),
+                              itemCount: callsSearched.length,
+                              itemBuilder:
+                              (context,index) => itemBuilder(context,index,callsSearched,showLevel),
+                          //),
                         );
                       }
                       else {
-                        return fm.ListView.builder(
-                          itemCount: callsSearched.length,
-                           itemBuilder: (context,index) => itemBuilder(context,index,callsSearched,showLevel),
+                        return fm.Scrollbar(
+                          isAlwaysShown: TamUtils.platform() == 'web',
+                          thickness: 16,
+                          child: fm.ListView.builder(
+                            itemCount: callsSearched.length,
+                             itemBuilder: (context,index) => itemBuilder(context,index,callsSearched,showLevel),
+                          ),
                         );
                       }
                     }

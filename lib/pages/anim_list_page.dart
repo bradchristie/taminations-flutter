@@ -192,98 +192,102 @@ class _AnimListState extends fm.State<AnimListFrame> {
             _loadList(snapshot.data);
             return fm.Column(children: [
               fm.Expanded(
-                  child: fm.ListView.builder(
-                      itemCount: animListItems.length,
-                      itemBuilder: (fm.BuildContext context, int index) {
-                        var item = animListItems[index];
-                        var backColor = Color.WHITE;
-                        switch (item.difficulty) {
-                          case Difficulty.COMMON:
-                            backColor = Color.COMMON;
-                            break;
-                          case Difficulty.HARDER:
-                            backColor = Color.HARDER;
-                            break;
-                          case Difficulty.EXPERT:
-                            backColor = Color.EXPERT;
-                            break;
-                        }
-                        switch (item.celltype) {
-                          case CellType.Header:
-                            return fm.Container(
-                                decoration: fm.BoxDecoration(
-                                    color: fm.Color(0xff804080),
-                                    border: fm.Border(
-                                        bottom: fm.BorderSide(
-                                            width: 1, color: fm.Colors.black))),
-                                padding: fm.EdgeInsets.only(
-                                    left: 20.0, top: 4, bottom: 4),
-                                child: fm.Text(item.name,
-                                    style: fm.TextStyle(
-                                        fontSize: 20, color: fm.Colors.white)));
-                          case CellType.Separator:
-                            return fm.Container(
-                                decoration: fm.BoxDecoration(
-                                    color: fm.Color(0xff804080),
-                                    border: fm.Border(
-                                        bottom: fm.BorderSide(
-                                            width: 1, color: fm.Colors.black))),
-                                padding: fm.EdgeInsets.only(
-                                    left: 20.0, top: 4, bottom: 4),
-                                child: fm.Text(item.title,
-                                    style: fm.TextStyle(
-                                        color: Color.WHITE,
-                                        fontSize: item.title.isBlank ? 2 : 20)));
-                          case CellType.Indented:
-                          case CellType.Plain:
-                            return fm.Container(
-                                child: pp.Consumer<TamState>(
-                                  builder: (context, tamState, _) =>
-                                      fm.Material(
-                                        color: widget.highlightSelected &&
-                                            selectedItem == index
-                                            ? Color.BLUE
-                                            : backColor,
-                                        child: fm.InkWell(
-                                          highlightColor: backColor.darker(),
-                                          onTap: () {
-                                            setState(() {
-                                              selectedItem = index;
-                                            });
-                                            tamState.change(
-                                                mainPage: MainPage.ANIMATIONS,
-                                                animnum: item.animnumber
-                                            );
-                                          },
-                                          child: fm.Container(
-                                            decoration: fm.BoxDecoration(
-                                                border: fm.Border(
-                                                    bottom: fm.BorderSide(
-                                                        width: 1,
-                                                        color: fm.Colors.black))),
-                                            padding: fm.EdgeInsets.only(
-                                                left: item.celltype ==
-                                                    CellType.Indented
-                                                    ? 40.0
-                                                    : 20.0,
-                                                top: 4,
-                                                bottom: 4),
-                                            child: fm.Text(item.name,
-                                                style: fm.TextStyle(
-                                                    color: widget
-                                                        .highlightSelected &&
-                                                        selectedItem == index
-                                                        ? backColor
-                                                        : Color.BLACK,
-                                                    fontSize: 20
-                                                )),
+                  child: fm.Scrollbar(
+                    isAlwaysShown: TamUtils.platform() == 'web',
+                    thickness: 16,
+                    child: fm.ListView.builder(
+                        itemCount: animListItems.length,
+                        itemBuilder: (fm.BuildContext context, int index) {
+                          var item = animListItems[index];
+                          var backColor = Color.WHITE;
+                          switch (item.difficulty) {
+                            case Difficulty.COMMON:
+                              backColor = Color.COMMON;
+                              break;
+                            case Difficulty.HARDER:
+                              backColor = Color.HARDER;
+                              break;
+                            case Difficulty.EXPERT:
+                              backColor = Color.EXPERT;
+                              break;
+                          }
+                          switch (item.celltype) {
+                            case CellType.Header:
+                              return fm.Container(
+                                  decoration: fm.BoxDecoration(
+                                      color: fm.Color(0xff804080),
+                                      border: fm.Border(
+                                          bottom: fm.BorderSide(
+                                              width: 1, color: fm.Colors.black))),
+                                  padding: fm.EdgeInsets.only(
+                                      left: 20.0, top: 4, bottom: 4),
+                                  child: fm.Text(item.name,
+                                      style: fm.TextStyle(
+                                          fontSize: 20, color: fm.Colors.white)));
+                            case CellType.Separator:
+                              return fm.Container(
+                                  decoration: fm.BoxDecoration(
+                                      color: fm.Color(0xff804080),
+                                      border: fm.Border(
+                                          bottom: fm.BorderSide(
+                                              width: 1, color: fm.Colors.black))),
+                                  padding: fm.EdgeInsets.only(
+                                      left: 20.0, top: 4, bottom: 4),
+                                  child: fm.Text(item.title,
+                                      style: fm.TextStyle(
+                                          color: Color.WHITE,
+                                          fontSize: item.title.isBlank ? 2 : 20)));
+                            case CellType.Indented:
+                            case CellType.Plain:
+                              return fm.Container(
+                                  child: pp.Consumer<TamState>(
+                                    builder: (context, tamState, _) =>
+                                        fm.Material(
+                                          color: widget.highlightSelected &&
+                                              selectedItem == index
+                                              ? Color.BLUE
+                                              : backColor,
+                                          child: fm.InkWell(
+                                            highlightColor: backColor.darker(),
+                                            onTap: () {
+                                              setState(() {
+                                                selectedItem = index;
+                                              });
+                                              tamState.change(
+                                                  mainPage: MainPage.ANIMATIONS,
+                                                  animnum: item.animnumber
+                                              );
+                                            },
+                                            child: fm.Container(
+                                              decoration: fm.BoxDecoration(
+                                                  border: fm.Border(
+                                                      bottom: fm.BorderSide(
+                                                          width: 1,
+                                                          color: fm.Colors.black))),
+                                              padding: fm.EdgeInsets.only(
+                                                  left: item.celltype ==
+                                                      CellType.Indented
+                                                      ? 40.0
+                                                      : 20.0,
+                                                  top: 4,
+                                                  bottom: 4),
+                                              child: fm.Text(item.name,
+                                                  style: fm.TextStyle(
+                                                      color: widget
+                                                          .highlightSelected &&
+                                                          selectedItem == index
+                                                          ? backColor
+                                                          : Color.BLACK,
+                                                      fontSize: 20
+                                                  )),
+                                            ),
                                           ),
                                         ),
-                                      ),
-                                ));
-                        }
-                        return fm.Text('Dummy text for ListView.builder');
-                      })),
+                                  ));
+                          }
+                          return fm.Text('Dummy text for ListView.builder');
+                        }),
+                  )),
               if (hasDifficulty) fm.Container(
                   decoration: fm.BoxDecoration(
                       border: fm.Border.all(

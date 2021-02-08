@@ -80,6 +80,13 @@ class _TaminationsAppState extends fm.State<TaminationsApp> {
         builder: (context,snapshot) =>
         snapshot.hasData ?
           fm.MaterialApp.router(
+            theme: fm.ThemeData(
+              scrollbarTheme: fm.ScrollbarThemeData(
+                thumbColor: fm.MaterialStateColor.resolveWith((states) =>
+                TamUtils.platform() == 'web' ? Color.LIGHTGRAY : Color.TRANSPARENTGREY),
+              ),
+            ),
+
             title: 'Taminations',
             routerDelegate: _routerDelegate,
             routeInformationParser: _routeInformationParser,

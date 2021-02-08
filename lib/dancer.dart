@@ -370,6 +370,7 @@ class Dancer implements Comparable<Dancer> {
       //  So the number needs to be transformed back
       var angle = atan2(tx.m12,tx.m22);
       var txtext = Matrix.getRotation(-angle + pi/2);
+    //  c.save();
       c.translate(txtext.location.x,txtext.location.y);
       c.rotate(txtext.angle);
       c.scale(-0.1,0.1);
@@ -384,6 +385,7 @@ class Dancer implements Comparable<Dancer> {
           textAlign: TextAlign.center,
           textDirection: fm.TextDirection.ltr)..layout();
       tp.paint(c, Offset(-textSize*0.35,-textSize*0.55));
+    //  c.restore();
     }
   }
 
