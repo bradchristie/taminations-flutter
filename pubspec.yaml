@@ -23,16 +23,16 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  xml: ^5.0.0-nullsafety
-  bezier: any
-  shared_preferences: '>=0.5.0 <2.0.0'
-  provider: ^4.3.2+2
   assets_audio_player: ^2.0.12
   auto_size_text: ^2.1.0
-  tuple: ^1.0.3
+  bezier: any
   easy_web_view: ^1.3.1
+  provider: ^4.3.2+2
   scrollable_positioned_list: ^0.1.8
+  shared_preferences: '>=0.5.0 <2.0.0'
   speech_to_text: ^3.1.0
+  tuple: ^1.0.3
+  xml: ^5.0.0-nullsafety
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
