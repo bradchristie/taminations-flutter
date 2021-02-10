@@ -29,12 +29,7 @@ class CallsPage extends fm.StatelessWidget {
   @override
   fm.Widget build(fm.BuildContext context) {
     return Page(
-      child: pp.Consumer2<TitleModel,TamState>(
-        builder: (context,titleModel,tamState,_) {
-          titleModel.title = LevelData.find(tamState.level).name;
-          return CallsFrame();
-        }
-      ),
+        child: CallsFrame()
     );
   }
 }
@@ -76,8 +71,9 @@ class _CallsFrameState extends fm.State<CallsFrame> {
           fm.Expanded(
             //  Test to see if we are landscape or portrait
             //  Landscape gets a grid, portrait gets a list
-              child: pp.Consumer<TamState>(
-                builder: (context,tamState,_) {
+              child: pp.Consumer2<TitleModel,TamState>(
+                builder: (context,titleModel,tamState,_) {
+                  titleModel.title = LevelData.find(tamState.level).name;
                   //  Get the initial list of calls to show
                   final levelDatum = LevelData.find(tamState.level);
                   final showLevel = RegExp('(bms|adv|cha|all)').hasMatch(levelDatum.dir);
