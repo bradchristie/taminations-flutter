@@ -52,6 +52,7 @@ class CallsFrame extends fm.StatefulWidget {
 class _CallsFrameState extends fm.State<CallsFrame> {
 
   String search = '';
+  final scrollController = fm.ScrollController();
 
   @override
   //  Build list or grid of calls
@@ -87,20 +88,22 @@ class _CallsFrameState extends fm.State<CallsFrame> {
                   return fm.OrientationBuilder(
                     builder: (context, orientation) {
                       if (orientation == fm.Orientation.landscape) {
-                        return /*fm.Scrollbar(
+                        return fm.Scrollbar(
+                          controller: scrollController,
                           isAlwaysShown: TamUtils.platform() == 'web',
                           thickness: 16,
-                          child: **/ fm.GridView.builder(
-                              scrollDirection: fm.Axis.horizontal,
-                              gridDelegate: fm.SliverGridDelegateWithMaxCrossAxisExtent(
-                                  maxCrossAxisExtent: 40,
-                                  mainAxisSpacing: 1,
-                                  childAspectRatio: 0.1
-                              ),
-                              itemCount: callsSearched.length,
-                              itemBuilder:
-                              (context,index) => itemBuilder(context,index,callsSearched,showLevel),
-                          //),
+                          child: fm.GridView.builder(
+                            controller: scrollController,
+                            scrollDirection: fm.Axis.horizontal,
+                            gridDelegate: fm.SliverGridDelegateWithMaxCrossAxisExtent(
+                                maxCrossAxisExtent: 40,
+                                mainAxisSpacing: 1,
+                                childAspectRatio: 0.1
+                            ),
+                            itemCount: callsSearched.length,
+                            itemBuilder:
+                                (context,index) => itemBuilder(context,index,callsSearched,showLevel),
+                          ),
                         );
                       }
                       else {
