@@ -83,7 +83,7 @@ class _TaminationsAppState extends fm.State<TaminationsApp> {
             theme: fm.ThemeData(
               scrollbarTheme: fm.ScrollbarThemeData(
                 thumbColor: fm.MaterialStateColor.resolveWith((states) =>
-                TamUtils.platform() == 'web' ? Color.LIGHTGRAY : Color.TRANSPARENTGREY),
+                Color.TRANSPARENTGREY),
               ),
             ),
 

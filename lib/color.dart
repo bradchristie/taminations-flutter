@@ -64,7 +64,7 @@ class Color extends fm.Color {
   static const Color FLOOR = Color(0xfffff0e0);
   static const Color TICS = Color(0xff008000);
   static const Color LIGHTGREY = Color(0xffc0c0c0);
-  static const Color TRANSPARENTGREY = Color(0x80c0c0c0);
+  static const Color TRANSPARENTGREY = Color(0x80808080);
   static const Color HIGHLIGHT = Color(0xffffff00);
 
   static const Color WHITE = Color(0xffffffff);

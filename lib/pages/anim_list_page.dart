@@ -19,6 +19,8 @@
 */
 
 
+import 'dart:ui';
+
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart' as fm;
 import 'package:provider/provider.dart' as pp;
@@ -108,6 +110,7 @@ class _AnimListState extends fm.State<AnimListFrame> {
   Future<XmlDocument> docFuture;
   var hasDifficulty = false;
   var selectedItem = -1;
+  final scrollController = fm.ScrollController();
 
   _AnimListState(this.link);
 
@@ -195,7 +198,9 @@ class _AnimListState extends fm.State<AnimListFrame> {
                   child: fm.Scrollbar(
                     isAlwaysShown: TamUtils.platform() == 'web',
                     thickness: 16,
+                    controller: scrollController,
                     child: fm.ListView.builder(
+                        controller: scrollController,
                         itemCount: animListItems.length,
                         itemBuilder: (fm.BuildContext context, int index) {
                           var item = animListItems[index];

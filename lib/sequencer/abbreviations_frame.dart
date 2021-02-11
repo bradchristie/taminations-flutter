@@ -50,6 +50,7 @@ class _AbbreviationsFrameState extends fm.State<AbbreviationsFrame> {
   var editExpansion = false;
   fm.TextEditingController textEditController;
   var focusNode = fm.FocusNode();
+  final scrollController = fm.ScrollController();
 
   @override
   void initState() {
@@ -198,7 +199,9 @@ class _AbbreviationsFrameState extends fm.State<AbbreviationsFrame> {
               child: fm.Scrollbar(
                 isAlwaysShown: TamUtils.platform() == 'web',
                 thickness: 16,
+                controller: scrollController,
                 child: fm.ListView.builder(
+                    controller: scrollController,
                     itemCount: model.currentAbbreviations.length,
                     itemBuilder: (context,index) =>
                         fm.Row(
