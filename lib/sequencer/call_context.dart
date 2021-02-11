@@ -1038,7 +1038,7 @@ class CallContext {
 
   //  Returns points of a diamond formations
   //  Formation to match must have girl points
-  List<Dancer> _tryOneDiamondFormation(String f) {
+  List<Dancer> pointsOfDiamondFormation(String f) {
     final ctx2 = CallContext.fromXML(TamUtils.getFormation(f));
     final points = <Dancer>[];
     final mapping = matchFormations(ctx2,rotate: 180);
@@ -1052,11 +1052,11 @@ class CallContext {
   }
 
   List<Dancer> points() =>
-      _tryOneDiamondFormation('Diamond LH Boys Center') +
-          _tryOneDiamondFormation('Diamonds RH Girl Points') +
-          _tryOneDiamondFormation('Diamonds RH PTP Girl Points') +
-          _tryOneDiamondFormation('Hourglass RH GP') +
-          _tryOneDiamondFormation('Galaxy RH GP');
+      pointsOfDiamondFormation('Diamond LH Boys Center') +
+          pointsOfDiamondFormation('Diamonds RH Girl Points') +
+          pointsOfDiamondFormation('Diamonds RH PTP Girl Points') +
+          pointsOfDiamondFormation('Hourglass RH GP') +
+          pointsOfDiamondFormation('Galaxy RH GP');
 
   //  Return pair of boxes for dancers in a 2x4 formation
   List<List<Dancer>> boxes() {

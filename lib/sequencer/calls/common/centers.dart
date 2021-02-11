@@ -20,6 +20,7 @@
 
 import '../../../dancer.dart';
 import '../../call_context.dart';
+import '../../call_error.dart';
 import 'fliter_actives.dart';
 
 class Centers extends FilterActives {
@@ -28,5 +29,22 @@ class Centers extends FilterActives {
 
   @override
   bool isActive(Dancer d, [CallContext ctx]) => d.data.center;
+
+  @override
+  Future<void> performCall(CallContext ctx, [int stackIndex = 0]) async {
+    final saveActives = ctx.actives.toList();
+    try {
+      await super.performCall(ctx, stackIndex);
+    } on CallError {
+      //  Check for centers of PTP diamonds
+      for (final d in ctx.dancers)
+        d.data.active = true;  // otherwise formation matching doesn't work
+      final points = ctx.pointsOfDiamondFormation('Diamonds RH PTP Girl Points');
+      if (points.isEmpty)
+        rethrow;
+      for (final d in ctx.dancers)
+        d.data.active = saveActives.contains(d) && !points.contains(d);
+    }
+  }
 
 }
