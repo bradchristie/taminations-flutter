@@ -188,7 +188,7 @@
   <call audio="b1/do_paso.mp3" languages="lang-de lang-ja" link="b1/do_paso" title="Do Paso"/>
   <call link="c2/dodge_anything" title="Dodge Anything"/>
   <call audio="b1/dosado.mp3" languages="lang-de lang-ja" link="b1/dosado" title="Dosado"/>
-  <call link="a1/triple_cross" title="Double Cross"/>
+  <call link="a1/double_cross" title="Double Cross"/>
   <call audio="b2/double_pass_thru.mp3" languages="lang-ja" link="b2/double_pass_thru" title="Double Pass Thru"/>
   <call audio="a1/double_star_thru.mp3" link="a1/double_star_thru" title="Double Star Thru"/>
   <call link="c3a/drift_apart" title="Drift Apart"/>
