@@ -334,6 +334,13 @@ class TaminationsRouterDelegate extends fm.RouterDelegate<TamState>
 
   @override
   Future<void> setInitialRoutePath(TamState configuration) async {
+    appState.change(
+        level: configuration.level,
+        link: configuration.link,
+        animnum: configuration.animnum,
+        mainPage:configuration.mainPage,
+        detailPage: configuration.detailPage
+    );
     appState.addListener(() {
       setNewRoutePath(appState);
     });
@@ -342,7 +349,6 @@ class TaminationsRouterDelegate extends fm.RouterDelegate<TamState>
   @override
   Future<void> setNewRoutePath(TamState configuration) async {
     if (configuration != null) {
-    //  print('New Route Path: $configuration');
       appState.change(
           level: configuration.level,
           link: configuration.link,
@@ -370,6 +376,12 @@ class TaminationsRouteInformationParser extends fm.RouteInformationParser<TamSta
     var level = params['level'] ?? '';
     var link = params['link'] ?? '';
     var animnum = int.tryParse(params['animnum'] ?? '-1') ?? -1;
+    //  For backwards compatibility
+    if (params['action'] == 'ANIMLIST') {
+      mainPage = MainPage.ANIMLIST;
+      detailPage = DetailPage.DEFINITION;
+      level = LevelData.find(link).dir;
+    }
     return TamState(mainPage: mainPage, detailPage: detailPage, level:level,link:link,animnum:animnum);
   }
 

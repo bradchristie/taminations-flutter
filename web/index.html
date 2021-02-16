@@ -35,24 +35,28 @@ t
        application. For more information, see:
        https://developers.google.com/web/fundamentals/primers/service-workers    -->
   <script type="text/javascript">
+    //  For backward compatibility with Kotlin Taminations
+    var locstr = location + '';
+    if (locstr.match(/#[^?]/) != null)
+      location = locstr.replace(/#/,'#?');
     if ('serviceWorker' in navigator) {
       window.addEventListener('flutter-first-frame', function () {
         navigator.serviceWorker.register('flutter_service_worker.js')
         .then((registration) => {
             if (registration.installing) {
               console.log('service worker installing');
-              if (location.href.indexOf('tamtwirlers.org') >= 0)
-                location.reload();
+              // if (location.href.indexOf('tamtwirlers.org') >= 0)
+              //   location.reload();
             }
             else if (registration.waiting)
               console.log('service worker waiting');
             else if (registration.active)
               console.log('service worker active');
 
-            if (registration.active)
-              registration.active.postMessage('downloadOffline');
-            else
-              console.log("Service worker is not active.");
+            // if (registration.active)
+            //  registration.active.postMessage('downloadOffline');
+            //else
+            //  console.log("Service worker is not active.");
         });
       });
     }

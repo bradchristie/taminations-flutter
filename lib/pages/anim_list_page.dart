@@ -180,8 +180,6 @@ class _AnimListState extends fm.State<AnimListFrame> {
           animnumber: animationsAdded,
           difficulty: tam('difficulty','0').i));
       animationsAdded += 1;
-      if (selectedItem < 0)
-        selectedItem = animListItems.length - 1;
     });
   }
 
@@ -244,51 +242,55 @@ class _AnimListState extends fm.State<AnimListFrame> {
                                           fontSize: item.title.isBlank ? 2 : 20)));
                             case CellType.Indented:
                             case CellType.Plain:
-                              return fm.Container(
-                                  child: pp.Consumer<TamState>(
-                                    builder: (context, tamState, _) =>
-                                        fm.Material(
-                                          color: widget.highlightSelected &&
-                                              selectedItem == index
-                                              ? Color.BLUE
-                                              : backColor,
-                                          child: fm.InkWell(
-                                            highlightColor: backColor.darker(),
-                                            onTap: () {
-                                              setState(() {
-                                                selectedItem = index;
-                                              });
-                                              tamState.change(
-                                                  mainPage: MainPage.ANIMATIONS,
-                                                  animnum: item.animnumber
-                                              );
-                                            },
-                                            child: fm.Container(
-                                              decoration: fm.BoxDecoration(
-                                                  border: fm.Border(
-                                                      bottom: fm.BorderSide(
-                                                          width: 1,
-                                                          color: fm.Colors.black))),
-                                              padding: fm.EdgeInsets.only(
-                                                  left: item.celltype ==
-                                                      CellType.Indented
-                                                      ? 40.0
-                                                      : 20.0,
-                                                  top: 4,
-                                                  bottom: 4),
-                                              child: fm.Text(item.name,
-                                                  style: fm.TextStyle(
-                                                      color: widget
-                                                          .highlightSelected &&
-                                                          selectedItem == index
-                                                          ? backColor
-                                                          : Color.BLACK,
-                                                      fontSize: 20
-                                                  )),
-                                            ),
+                            return fm.Container(
+                                child: pp.Consumer<TamState>(
+                                    builder: (context, tamState, _) {
+                                      if (item.animnumber == tamState.animnum ||
+                                          (item.animnumber==0 && tamState.animnum < 0))
+                                        selectedItem = index;
+                                      return fm.Material(
+                                        color: widget.highlightSelected &&
+                                            selectedItem == index
+                                            ? Color.BLUE
+                                            : backColor,
+                                        child: fm.InkWell(
+                                          highlightColor: backColor.darker(),
+                                          onTap: () {
+                                            setState(() {
+                                              selectedItem = index;
+                                            });
+                                            tamState.change(
+                                                mainPage: MainPage.ANIMATIONS,
+                                                animnum: item.animnumber
+                                            );
+                                          },
+                                          child: fm.Container(
+                                            decoration: fm.BoxDecoration(
+                                                border: fm.Border(
+                                                    bottom: fm.BorderSide(
+                                                        width: 1,
+                                                        color: fm.Colors.black))),
+                                            padding: fm.EdgeInsets.only(
+                                                left: item.celltype ==
+                                                    CellType.Indented
+                                                    ? 40.0
+                                                    : 20.0,
+                                                top: 4,
+                                                bottom: 4),
+                                            child: fm.Text(item.name,
+                                                style: fm.TextStyle(
+                                                    color: widget
+                                                        .highlightSelected &&
+                                                        selectedItem == index
+                                                        ? backColor
+                                                        : Color.BLACK,
+                                                    fontSize: 20
+                                                )),
                                           ),
                                         ),
-                                  ));
+                                      );
+                                    }
+                                ));
                           }
                           return fm.Text('Dummy text for ListView.builder');
                         }),

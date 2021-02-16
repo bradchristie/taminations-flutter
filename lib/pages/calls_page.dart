@@ -47,11 +47,12 @@ class CallsFrame extends fm.StatefulWidget {
 class _CallsFrameState extends fm.State<CallsFrame> {
 
   String search = '';
-  final scrollController = fm.ScrollController();
+  var scrollController = fm.ScrollController();
 
   @override
   //  Build list or grid of calls
   fm.Widget build(fm.BuildContext context) {
+    scrollController = fm.ScrollController();
     //  Return column of 2 items, search field and list/grid of calls
     return fm.Column(
         children: [
@@ -106,7 +107,9 @@ class _CallsFrameState extends fm.State<CallsFrame> {
                         return fm.Scrollbar(
                           isAlwaysShown: TamUtils.platform() == 'web',
                           thickness: 16,
+                          controller: scrollController,
                           child: fm.ListView.builder(
+                            controller: scrollController,
                             itemCount: callsSearched.length,
                              itemBuilder: (context,index) => itemBuilder(context,index,callsSearched,showLevel),
                           ),
