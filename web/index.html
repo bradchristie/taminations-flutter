@@ -10,8 +10,8 @@
 t
     Fore more details:
     * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base
-  -->
   <base href="/taminations-1.6/">
+  -->
 
   <meta charset="UTF-8">
   <meta content="IE=Edge" http-equiv="X-UA-Compatible">
@@ -39,25 +39,10 @@ t
     var locstr = location + '';
     if (locstr.match(/#[^?]/) != null)
       location = locstr.replace(/#/,'#?');
+    //  Install the service worker
     if ('serviceWorker' in navigator) {
       window.addEventListener('flutter-first-frame', function () {
-        navigator.serviceWorker.register('flutter_service_worker.js')
-        .then((registration) => {
-            if (registration.installing) {
-              console.log('service worker installing');
-              // if (location.href.indexOf('tamtwirlers.org') >= 0)
-              //   location.reload();
-            }
-            else if (registration.waiting)
-              console.log('service worker waiting');
-            else if (registration.active)
-              console.log('service worker active');
-
-            // if (registration.active)
-            //  registration.active.postMessage('downloadOffline');
-            //else
-            //  console.log("Service worker is not active.");
-        });
+        navigator.serviceWorker.register('flutter_service_worker.js');
       });
     }
   </script>

@@ -1,5 +1,6 @@
 // The application shell files that are downloaded before a service worker can
-// start.
+// start.\
+const ORIGIN = 'https://www.tamtwirlers.org/taminations-1.6';
 const CORE = [
   "/",
 "main.dart.js",
@@ -42,9 +43,8 @@ self.addEventListener("activate", function(event) {
         return;
       }
       var oldManifest = await manifest.json();
-      var origin = self.location.origin;
       for (var request of await contentCache.keys()) {
-        var key = request.url.substring(origin.length + 1);
+        var key = request.url.substring(ORIGIN.length + 1);
         if (key == "") {
           key = "/";
         }
@@ -64,6 +64,11 @@ self.addEventListener("activate", function(event) {
       await caches.delete(TEMP);
       // Save the manifest to make future upgrades efficient.
       await manifestCache.put('manifest', new Response(JSON.stringify(RESOURCES)));
+      //  If most files are already in the cache, the user must have
+      //  previously done a complete download.  Update any new files.
+      var cacheKeys = await contentCache.keys();
+      if (cacheKeys.length > 2000)
+        downloadOfflineSequentially();
       return;
     } catch (err) {
       // On an unhandled exception the state of the cache cannot be guaranteed.
@@ -78,18 +83,19 @@ self.addEventListener("activate", function(event) {
 // The fetch handler redirects requests for RESOURCE files to the service
 // worker cache.
 self.addEventListener("fetch", (event) => {
+  console.log('fetch request: '+event.request.url);
   if (event.request.method !== 'GET') {
     return;
   }
-  var origin = self.location.origin;
-  var key = event.request.url.substring(origin.length + 1);
+  var key = event.request.url.substring(ORIGIN.length + 1);
   // Redirect URLs to the index.html
   if (key.indexOf('?v=') != -1) {
     key = key.split('?v=')[0];
   }
-  if (event.request.url == origin || event.request.url.startsWith(origin + '/#') || key == '') {
+  if (event.request.url == ORIGIN || event.request.url.startsWith(ORIGIN + '/#') || key == '') {
     key = '/';
   }
+  console.log('fetch key: '+key);
   // If the URL is not the RESOURCE list then return to signal that the
   // browser should take over.
   if (!RESOURCES[key]) {
@@ -104,6 +110,8 @@ self.addEventListener("fetch", (event) => {
       return cache.match(event.request).then((response) => {
         // Either respond with the cached resource, or perform a fetch and
         // lazily populate the cache.
+        if (response)
+          console.log('    -- found in cache');
         return response || fetch(event.request).then((response) => {
           cache.put(event.request, response.clone());
           return response;
@@ -113,6 +121,7 @@ self.addEventListener("fetch", (event) => {
   );
 });
 
+var communicationPort = 0;
 self.addEventListener('message', (event) => {
   // SkipWaiting can be used to immediately activate a waiting service worker.
   // This will also require a page refresh triggered by the main worker.
@@ -124,7 +133,21 @@ self.addEventListener('message', (event) => {
     downloadOfflineSequentially();
     return;
   }
+  if (event.data && event.data.type === 'PORT_INITIALIZATION') {
+    communicationPort = event.ports[0];
+    console.log('Ready to send messages to communications port.');
+    communicationPort.postMessage('Communications established');
+  }
+  if (event.data == 'query cache count') {
+    sendCacheSize();
+  }
 });
+
+async function sendCacheSize() {
+  var contentCache = await caches.open(CACHE_NAME);
+  var cacheKeys = await contentCache.keys();
+  communicationPort.postMessage('Cache size: '+cacheKeys.length);
+}
 
 // Download offline will check the RESOURCES for all files not in the cache
 // and populate them.
@@ -133,7 +156,7 @@ async function downloadOffline() {
   var contentCache = await caches.open(CACHE_NAME);
   var currentContent = {};
   for (var request of await contentCache.keys()) {
-    var key = request.url.substring(origin.length + 1);
+    var key = request.url.substring(ORIGIN.length + 1);
     if (key == "") {
       key = "/";
     }
@@ -148,12 +171,14 @@ async function downloadOffline() {
 }
 
 //  Just like downloadOffline but request files one at a time
+var totalResourceCount = 0;
 async function downloadOfflineSequentially() {
   var resources = [];
   var contentCache = await caches.open(CACHE_NAME);
   var currentContent = {};
+  console.log('Download Sequentially');
   for (var request of await contentCache.keys()) {
-    var key = request.url.substring(origin.length + 1);
+    var key = request.url.substring(ORIGIN.length + 1);
     if (key == "") {
       key = "/";
     }
@@ -164,31 +189,34 @@ async function downloadOfflineSequentially() {
       resources.push(resourceKey);
     }
   }
-  downloadOneOfflineSequentially(contentCache,resources);
-}
-
-//  Add one file to the cache and recurse if there are more
-async function downloadOneOfflineSequentially(contentCache,resources) {
-  if (resources.length > 0) {
+  totalResourceCount = resources.length;
+  while (resources.length > 0) {
     var oneFile = resources.pop();
+    var completed = totalResourceCount - resources.length;
+    if (communicationPort)
+      communicationPort.postMessage('Downloading ' + completed + ' of ' + totalResourceCount);
     await contentCache.add(oneFile);
-    downloadOneOfflineSequentially(contentCache,resources);
   }
+  communicationPort.postMessage('All files downloaded');
 }
 
 // Attempt to download the resource online before falling back to
 // the offline cache.
 function onlineFirst(event) {
+  console.log('onlineFirst: '+event.request);
   return event.respondWith(
     fetch(event.request).then((response) => {
+      console.log('  -- found online, saving in cache');
       return caches.open(CACHE_NAME).then((cache) => {
         cache.put(event.request, response.clone());
         return response;
       });
     }).catch((error) => {
+      console.log('  -- not found online, trying cache');
       return caches.open(CACHE_NAME).then((cache) => {
         return cache.match(event.request).then((response) => {
           if (response != null) {
+            console.log('  -- found in cache');
             return response;
           }
           throw error;

@@ -7,7 +7,7 @@
   <script type="text/javascript" src="../src/framecode.js"></script>
   <title>About Taminations</title>
 </head>
-<body>
+<body onload="showPlatformElements('web'); checkServiceWorker();">
 
 <div class="definition">
   <h2>Welcome to Taminations</h2>
@@ -77,11 +77,48 @@
 
   <hr/>
 
+    <h3>Download Taminations for Offline Use</h3>
+    <p>
+    You can load all Taminations files now for access later when offline.<br/>
+    <span class="service-worker-not-supported">
+      Your browser does not support downloading Taminations.
+    </span>
+      <div class="firefox-only" style="display:none">
+    <h4>Special instructions for Firefox</h4>
+    <p>
+      Firefox by default times out the download process after 30 seconds.
+      Unless you have a really fast connection this needs to be changed.
+      In another tab, navigate to about:config.  You will need to "Accept the Risk"
+      and "Show All" to get to the actual settings.
+      Go to the setting <code>dom.serviceWorkers.idle_timeout</code>
+      and change the value from 30000 to something much larger, like
+      86400000 (1 day).
+    </p>
+      </div>
+      <p class="service-worker-installing">
+        <b>Reload</b> this page for information on downloading Taminations.
+    </p>
+    <div class="before-load-x">Taminations is available for download.<br/>
+      Click this button to load all the files for offline use.<br/>
+      <div style="background-color: #e0e0e0; border: 1px solid black; padding: 4px; margin: 8px; float: left">
+      <a href="#" style="color:black; text-decoration:none"
+         onclick="downloadFiles()">Load Files</a></div><br/>
+      </div>
+      <span class="during-load" id="during-load"><br/>Downloading file 0 of 0.</span>
+    <p><span class="after-load"><b>You have now downloaded Taminations.</b><br/>
+    Now the Taminations web site will work the same both online and offline.
+      When offline the browser will fetch the stored files automatically.
+      When online the browser will check for any changes.<br/>
+      Note: The downloaded files are stored in the browser's cache storage, not the
+      download area, and are not accessible outside the browser.<br/>
+    </span>
+    </p>
+    <hr style="clear:left"/>
 
   <h3>More Information</h3>
   <p><a href="embed.html">How to put Taminations on your web site</a></p>
-  </div>
   <hr/>
+  </div>
 </div>
 
   <p>Call definitions Copyright by <a href="http://www.callerlab.org/" target="_blank">CALLERLAB Inc.</a>,

@@ -100,7 +100,7 @@ class _WebFrameState extends fm.State<WebFrame> {
                             },
                             child: ewv.EasyWebView(
                                 src: snapshot.data,
-                                isHtml: true,
+                                isHtml: !snapshot.data.toString().endsWith('html'),
                                 onLoaded: () { })
                         )
                     ),
@@ -204,6 +204,9 @@ class _WebFrameState extends fm.State<WebFrame> {
 
   //  Load the original HTML, then call all the routines to fix it up
   Future<String> _loadHtmlFromAssets() async {
+    if (localizedAssetName == 'info/about.html') {
+      return 'https://www.tamtwirlers.org/taminations-1.6/assets/assets/info/about.html';
+    }
     var fileText = await rootBundle.loadString('assets/$localizedAssetName');
     fileText = hackCSS(fileText);
     fileText = await hackImages(fileText);

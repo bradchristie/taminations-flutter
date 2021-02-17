@@ -494,7 +494,7 @@ class DanceAnimationPainter extends fm.ChangeNotifier implements fm.CustomPainte
   void paint(fm.Canvas ctx, fm.Size size) {
 
     _onDraw();
-
+    ctx.save();
     ctx.drawRect(fm.Rect.fromLTWH(0,0,size.width,size.height),
         fm.Paint()..color = Color.FLOOR);
     _size = size.v;
@@ -565,6 +565,7 @@ class DanceAnimationPainter extends fm.ChangeNotifier implements fm.CustomPainte
       d.draw(ctx);
       ctx.restore();
     });
+    ctx.restore();
   }
 
   Future<void> setAnimation(XmlElement xtam,
