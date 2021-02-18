@@ -65,7 +65,11 @@ class TamState extends fm.ChangeNotifier {
   MainPage? get mainPage => _mainPage;
   DetailPage? _detailPage;
   DetailPage? get detailPage => _detailPage;
-
+  //  More fields for embed feature
+  bool embed;
+  bool play;
+  bool loop;
+  bool grid;
   @override
   bool operator ==(Object other) =>
       (other is TamState)
@@ -77,18 +81,27 @@ class TamState extends fm.ChangeNotifier {
     link,
     animnum = -1,
     mainPage = MainPage.LEVELS,
-    detailPage = DetailPage.NONE
+    detailPage = DetailPage.NONE,
+    this.embed = false,
+    this.play = false,
+    this.loop = false,
+    this.grid = false
   }) : _level=level, _link=link, _animnum=animnum,
         _mainPage=mainPage, _detailPage=detailPage;
 
   void change({String? level, String? link, int? animnum,
-    MainPage? mainPage, DetailPage? detailPage}) {
+    MainPage? mainPage, DetailPage? detailPage,
+    bool? embed, bool? play, bool? loop, bool? grid}) {
     final before = toString();
     _level = level ?? _level;
     _link = link ?? _link;
     _animnum = animnum ?? _animnum;
     _mainPage = mainPage ?? _mainPage;
     _detailPage = detailPage ?? _detailPage;
+    this.embed = embed ?? this.embed;
+    this.play = play ?? this.play;
+    this.loop = loop ?? this.loop;
+    this.grid = grid ?? this.grid;
     if (toString() != before)
       notifyListeners();
   }
@@ -101,7 +114,11 @@ class TamState extends fm.ChangeNotifier {
     if (link != null && link!.isNotEmpty) 'link=$link',
     if (mainPage != null) 'main=${describeEnum(mainPage!)}',
     if (detailPage != null && detailPage!=DetailPage.NONE)
-      'detail=${describeEnum(detailPage!)}'
+      'detail=${describeEnum(detailPage!)}',
+    if (embed) 'embed',
+    if (play) 'play',
+    if (loop) 'loop',
+    if (grid) 'grid'
   ].join('&');
 
   bool get isBlank => toString().isBlank;

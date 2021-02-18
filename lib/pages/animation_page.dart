@@ -39,23 +39,29 @@ class AnimationState extends fm.ChangeNotifier {
 
 }
 
+void _startPainter(fm.BuildContext context, TamState tamState, TitleModel? titleModel) {
+  final painter = pp.Provider.of<DanceAnimationPainter>(context,listen:false);
+  TamUtils.getXMLAsset(tamState.link!).then((doc) {
+    var tam = TamUtils.tamList(doc)
+        .where((it) => !(it('display','').startsWith('n')))
+        .toList()[max(0, tamState.animnum)];
+    painter.setAnimation(tam);
+    if (titleModel != null)
+      titleModel.title = tam('title');
+  });
+}
+
+
 class AnimationPage extends fm.StatelessWidget {
 
   @override
   fm.Widget build(fm.BuildContext context) {
-    return  Page(
+    return Page(
       child: pp.ChangeNotifierProvider(
         create: (_) => DanceAnimationPainter(),
         child: pp.Consumer2<TamState,TitleModel>(
             builder: (context, tamState, titleModel, _) {
-              final painter = pp.Provider.of<DanceAnimationPainter>(context,listen:false);
-              TamUtils.getXMLAsset(tamState.link!).then((doc) {
-                var tam = TamUtils.tamList(doc)
-                    .where((it) => !(it('display','').startsWith('n')))
-                    .toList()[max(0, tamState.animnum)];
-                painter.setAnimation(tam);
-                titleModel.title = tam('title');
-              });
+              _startPainter(context,tamState,titleModel);
               return fm.Column(
                 children: [
                   fm.Expanded(child: AnimationFrame()),
@@ -83,6 +89,22 @@ class AnimationPage extends fm.StatelessWidget {
   }
 }
 
+
+class AnimationForEmbed extends fm.StatelessWidget {
+
+  @override
+  fm.Widget build(fm.BuildContext context) {
+    return pp.ChangeNotifierProvider(
+        create: (_) => DanceAnimationPainter(),
+        child: pp.Consumer<TamState>(
+            builder: (context, tamState, _) {
+              _startPainter(context,tamState,null);
+              return fm.Card(child: AnimationFrame());
+            }
+        ),
+    );
+  }
+}
 
 class AnimationFrame extends fm.StatefulWidget {
 

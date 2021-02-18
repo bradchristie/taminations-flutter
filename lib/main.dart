@@ -116,6 +116,12 @@ class TaminationsRouterDelegate extends fm.RouterDelegate<TamState>
 
   @override
   fm.Widget build(fm.BuildContext context) {
+    if (appState.embed) {
+      return pp.ChangeNotifierProvider.value(
+          value: appState,
+          child: AnimationForEmbed()
+      );
+    }
     return _PortraitForSmallDevices(
       child: pp.ChangeNotifierProvider.value(
         value: appState,
@@ -348,12 +354,17 @@ class TaminationsRouterDelegate extends fm.RouterDelegate<TamState>
 
   @override
   Future<void> setNewRoutePath(TamState configuration) async {
+    print('$configuration');
     appState.change(
         level: configuration.level,
         link: configuration.link,
         animnum: configuration.animnum,
         mainPage:configuration.mainPage,
-        detailPage: configuration.detailPage
+        detailPage: configuration.detailPage,
+        embed: configuration.embed,
+        play: configuration.play,
+        loop: configuration.loop,
+        grid: configuration.grid
     );
     notifyListeners();
   }
@@ -373,13 +384,22 @@ class TaminationsRouteInformationParser extends fm.RouteInformationParser<TamSta
     var level = params['level'] ?? '';
     var link = params['link'] ?? '';
     var animnum = int.tryParse(params['animnum'] ?? '-1') ?? -1;
+    //  Extra embed params
+    var embed = params['embed'] != null;
+    var play = params['play'] != null;
+    var loop = params['loop'] != null;
+    var grid = params['grid'] != null;
+    print('$embed $play $loop $grid');
     //  For backwards compatibility
     if (params['action'] == 'ANIMLIST') {
       mainPage = MainPage.ANIMLIST;
       detailPage = DetailPage.DEFINITION;
       level = LevelData.find(link)!.dir;
     }
-    return TamState(mainPage: mainPage, detailPage: detailPage, level:level,link:link,animnum:animnum);
+    return TamState(mainPage: mainPage, detailPage: detailPage, level:level,
+      link:link,animnum:animnum,
+      embed:embed, play:play, loop:loop, grid:grid
+    );
   }
 
   @override
