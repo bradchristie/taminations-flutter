@@ -176,11 +176,11 @@ class _AnimationFrameState extends fm.State<AnimationFrame>
                     builder: (context, settings, child) {
 
                       //  Send current settings to the painter
-                      painter.setGridVisibility(settings.grid);
+                      painter.setGridVisibility(settings.grid || appState.grid);
                       painter.setNumbers(appState.mainPage == MainPage.SEQUENCER  ? settings.dancerIdentification : settings.numbers);
                       painter.setSpeed(settings.speed);
                       painter.setPaths(settings.paths);
-                      painter.setLoop(appState.mainPage == MainPage.SEQUENCER ? false : settings.loop);
+                      painter.setLoop(appState.mainPage == MainPage.SEQUENCER ? false : (settings.loop || appState.loop));
                       painter.setShapes(appState.mainPage == MainPage.SEQUENCER
                           ? settings.dancerShapes : true);
                       painter.setPhantoms(settings.phantoms);
@@ -208,6 +208,8 @@ class _AnimationFrameState extends fm.State<AnimationFrame>
                           }
                         }
                       }
+                      if (appState.play)
+                        painter.doPlay();
 
                       //  Routines to handle pointer events
                       final tapDownHandler = (fm.TapDownDetails details) {
@@ -331,6 +333,7 @@ class _AnimationFrameState extends fm.State<AnimationFrame>
                                     //  If running, turn it off
                                     if (painter.isRunning) {
                                       painter.doPause();
+                                      appState.change(play:false);
                                     } else {
                                       //  Not running - start animation
                                       painter.doPlay();
