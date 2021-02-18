@@ -30,7 +30,7 @@ class Tandem extends FourDancerConcept {
   @override
   List<List<Dancer>> dancerGroups(CallContext ctx) =>
       ctx.dancers.where((d) => d.data.leader).map((d) {
-        final d2 = ctx.dancerInBack(d) ?? thrower(CallError('No tandem for dancer $d'));
+        final d2 = ctx.dancerInBack(d).throwIfNull(CallError('No tandem for dancer $d'));
         if (!d2.data.trailer)
           throw CallError('Dancers $d and $d2 are not a Tandem');
         return [d,d2];

@@ -27,8 +27,9 @@ class ZipCode extends Action {
 
   @override
   Future<void> perform(CallContext ctx, [int stackIndex = 0]) async {
-    final count = TamUtils.normalizeCall(name).last.toIntOrNull()
-        ?? thrower(CallError('Zip Code how much?'));
+    final count = TamUtils.normalizeCall(name).last.toIntOrNull();
+    if (count == null)
+      throw CallError('Zip Code how much?');
     await ctx.applyCalls('Centers Face Out');
     ctx.analyze();
     await ctx.applyCalls('Centers Run');

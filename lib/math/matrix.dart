@@ -60,7 +60,7 @@ class Matrix extends Matrix3 {
   factory Matrix.getRotation(double angle) =>
       Matrix(cos(angle),-sin(angle),0.0,sin(angle),cos(angle),0.0);
 
-  factory Matrix.getTranslation(dynamic x, [double y]) {
+  factory Matrix.getTranslation(dynamic x, [double? y]) {
     if (x is double && y is double)
       return Matrix(1, 0, x, 0, 1, y);
     else if (x is Vector)

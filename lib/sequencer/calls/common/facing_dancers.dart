@@ -27,6 +27,6 @@ class FacingDancers extends FilterActives {
   FacingDancers() : super('Facing Dancers');
 
   @override
-  bool isActive(Dancer d, [CallContext ctx]) => ctx.dancerFacing(d) != null;
+  bool isActive(Dancer d, CallContext ctx) => ctx.dancerFacing(d) != null;
 
 }

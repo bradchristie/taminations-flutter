@@ -72,8 +72,7 @@ class StepToACompactWave extends Action {
 
   @override
   Path performOne(Dancer d, CallContext ctx) {
-    var d2 = ctx.dancerFacing(d) ??
-    thrower(CallError('Cannot find dancer facing $d' ));
+    var d2 = ctx.dancerFacing(d).throwIfNull(CallError('Cannot find dancer facing $d' ));
     var dist = d.distanceTo(d2);
     var dir = (name.toLowerCase().contains('left' )) ? 'Right'  : 'Left' ;
     return TamUtils.getMove('Extend $dir' )..scale(dist/2,0.5);

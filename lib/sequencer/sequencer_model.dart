@@ -30,13 +30,13 @@ import 'calls/coded_call.dart';
 class SequencerCall {
   final String name;
   final double beats;
-  final LevelData level;
-  SequencerCall(this.name,{this.beats,this.level});
+  final LevelData? level;
+  SequencerCall(this.name,{required this.beats, required this.level});
 }
 
 class SequencerModel extends fm.ChangeNotifier {
 
-  List<SequencerCall> calls;
+  List<SequencerCall> calls = [];
   String _startingFormation = 'Squared Set'; // overriden by Settings
   String get startingFormation => _startingFormation;
   set startingFormation(String value) {
@@ -48,7 +48,7 @@ class SequencerModel extends fm.ChangeNotifier {
   String partString = '';
   String errorString = '';
   DanceAnimationPainter animation = DanceAnimationPainter();
-  int currentCall;
+  int currentCall = 0;
 
   SequencerModel() {
     CallContext.init();
@@ -87,7 +87,7 @@ class SequencerModel extends fm.ChangeNotifier {
       var lastCall = calls.last;
       calls.removeLast();
       if (!isComment(lastCall.name)) {
-        var totalBeats = calls.fold(0.0,(a,b) => a + b.beats);
+        var totalBeats = calls.fold<double>(0.0,(a,b) => a + b.beats);
         for (var d in animation.dancers) {
           while (d.path.beats > totalBeats)
             d.path.pop();
@@ -151,7 +151,7 @@ class SequencerModel extends fm.ChangeNotifier {
   }
 
   void animateAtCall(int index) {
-    var beat = calls.take(index).fold(0.0, (b, c) => b + c.beats);
+    var beat = calls.take(index).fold<double>(0.0, (b, c) => b + c.beats);
     animation.beat = beat;
   }
 
@@ -193,7 +193,7 @@ class SequencerModel extends fm.ChangeNotifier {
   void paste() {
     fs.Clipboard.getData('text/plain').then((value) async {
       if (value is fs.ClipboardData) {
-        for (final line in value.text.split('\n')) {
+        for (final line in value.text!.split('\n')) {
           if (!await loadOneCall(line))
             break;
         }

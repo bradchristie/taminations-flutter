@@ -23,10 +23,11 @@ import '../common.dart';
 class Phantom extends Action {
 
   @override final level = LevelData.C1;
-  String _subcall;
-  Phantom(String name) : super(name) {
-    _subcall = name.replaceFirst('Phantom ', '');
-  }
+  final String _subcall;
+  Phantom(String name) :
+        _subcall = name.replaceFirst('Phantom ', ''),
+        super(name);
+
 
   Future<CallContext> _addPhantoms(CallContext ctx) async {
     //  Add all the phantoms
@@ -58,8 +59,10 @@ class Phantom extends Action {
     final phantomctx = CallContext.fromContext(ctx,dancers: ctx.dancers+phantoms);
     //  Find good rotation
     phantomctx.analyze();
-    return await phantomctx.rotatePhantoms(_subcall)
-        ?? thrower(CallError('Unable to find phantom formation for $_subcall'));
+    final retval = await phantomctx.rotatePhantoms(_subcall);
+    if (retval == null)
+      throw CallError('Unable to find phantom formation for $_subcall');
+    return retval;
   }
 
   @override

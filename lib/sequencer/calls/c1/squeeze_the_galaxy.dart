@@ -29,8 +29,9 @@ class SqueezeTheGalaxy extends Action {
   Future<void> perform(CallContext ctx, [int stackIndex = 0]) async {
     //  Match to any galaxy
     final galaxy = CallContext.fromXML(TamUtils.getFormation('Galaxy RH GP'));
-    final mm = galaxy.matchFormations(ctx,rotate:180) ??
-        thrower(CallError('Not a Galaxy formation'));
+    final mm = galaxy.matchFormations(ctx,rotate:180);
+    if (mm == null)
+      throw CallError('Not a Galaxy formation');
     //  All but two of the dancers squeeze
     ctx.dancers[mm[2]].data.active = false;
     ctx.dancers[mm[3]].data.active = false;

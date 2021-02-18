@@ -18,15 +18,7 @@
 
 */
 
-import '../../../dancer.dart';
-import '../../../level_data.dart';
-import '../../../math/movement.dart';
-import '../../../math/path.dart';
-import '../../../math/vector.dart';
-import '../../../tam_utils.dart';
-import '../../call_context.dart';
-import '../../call_error.dart';
-import '../action.dart';
+import '../common.dart';
 
 class Trade extends Action {
 
@@ -38,17 +30,17 @@ class Trade extends Action {
   Path performOne(Dancer d, CallContext ctx) {
     //  Figure out what dancer we're trading with
     var leftcount = 0;
-    Dancer bestleft;
+    Dancer? bestleft;
     var rightcount = 0;
-    Dancer bestright;
+    Dancer? bestright;
     for (var d2 in ctx.actives) {
       if (d2 != d) {
         if (d2.isLeftOf(d)) {
-          if (leftcount==0 || d.distanceTo(d2) < d.distanceTo(bestleft))
+          if (leftcount==0 || d.distanceTo(d2) < d.distanceTo(bestleft!))
             bestleft = d2;
           leftcount += 1;
         } else if (d2.isRightOf(d)) {
-          if (rightcount==0 || d.distanceTo(d2) < d.distanceTo(bestright))
+          if (rightcount==0 || d.distanceTo(d2) < d.distanceTo(bestright!))
             bestright = d2;
           rightcount += 1;
         }

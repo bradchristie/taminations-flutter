@@ -41,12 +41,12 @@ class DanceAnimationPainter extends fm.ChangeNotifier implements fm.CustomPainte
   var _showNumbers = Dancer.NUMBERS_OFF;
   var _geometry = Geometry.SQUARE;
   var _randomColors = false;
-  XmlElement _tam;
+  XmlElement? _tam;
   List<Dancer> dancers = [];
   var _interactiveDancer = -1;
   var _interactiveRandom = true;
-  PracticeDancer practiceDancer;
-  Vector _size;
+  PracticeDancer? practiceDancer;
+  Vector _size = Vector();
   var leadin = 2.0;
   var leadout = 2.0;
   var _beats = 0.0;
@@ -68,11 +68,11 @@ class DanceAnimationPainter extends fm.ChangeNotifier implements fm.CustomPainte
   var hasParts = false;
   var hasCalls = false;
   bool isFinished = false;
-  String partstr;
+  String partstr = '';
   String get animationNote =>
-      _tam?.childrenNamed('taminator')?.firstOrNull
-      ?.text?.trim()?.replaceAll(r'\s+'.r, ' ') ?? '';
-  Ticker _ticker;
+      _tam?.childrenNamed('taminator').firstOrNull
+      ?.text.trim().replaceAll(r'\s+'.r, ' ') ?? '';
+  late Ticker _ticker;
   String get title => _tam?.getAttribute('title')
       ?.replaceAll(' \\(.*?\\) '.r, ' ') ?? '';
   bool _isDisposed = false;
@@ -272,8 +272,13 @@ class DanceAnimationPainter extends fm.ChangeNotifier implements fm.CustomPainte
   }
 
   //  Find dancer at floor coordinates
-  Dancer dancerAt(Vector p) =>
-      dancers.firstWhere((d) =>  (d.location - p).length < 0.5, orElse:()=>null);
+  Dancer? dancerAt(Vector p) {
+    try {
+      return dancers.firstWhere((d) => (d.location - p).length < 0.5);
+    } on Error {
+      return null;
+    }
+  }
 
   //  Check that there isn't another dancer in the middle of
   //  a computed handhold.  Can happen when dancers are in
@@ -323,13 +328,13 @@ class DanceAnimationPainter extends fm.ChangeNotifier implements fm.CustomPainte
 
   bool _isInteractiveDancerOnTrack() {
     //  Get where the dancer should be
-    var computetx = practiceDancer.computeMatrix(beat);
+    var computetx = practiceDancer!.computeMatrix(beat);
     //  Get computed and actual location vectors
-    var ivu = practiceDancer.tx.location;
+    var ivu = practiceDancer!.tx.location;
     var ivc = computetx.location;
 
     //  Check dancer's location and facing direction
-    var au = practiceDancer.tx.angle;
+    var au = practiceDancer!.tx.angle;
     var ac = computetx.angle;
     //  Cannot be way off correct spot
     if ((ivu-ivc).length >= 2.0)
@@ -482,8 +487,8 @@ class DanceAnimationPainter extends fm.ChangeNotifier implements fm.CustomPainte
 
     //  Update interactive dancer score
     if (practiceDancer != null && beat > 0.0 && beat < beats-leadout) {
-      practiceDancer.onTrack = _isInteractiveDancerOnTrack();
-      if (practiceDancer.onTrack)
+      practiceDancer!.onTrack = _isInteractiveDancerOnTrack();
+      if (practiceDancer!.onTrack)
         _practiceScore += (beat - max(_prevbeat,0.0)) * 10.0;
     }
 
@@ -534,8 +539,8 @@ class DanceAnimationPainter extends fm.ChangeNotifier implements fm.CustomPainte
         if (d.rightDancer == null) {  // hexagon center
           ctx.drawLine(fm.Offset(loc.x,loc.y), fm.Offset(0,0), hline);
           ctx.drawCircle(fm.Offset(0,0), 0.125, hline);
-        } else if (d.rightDancer < d) {
-          var loc2 = d.rightDancer.location;
+        } else if (d.rightDancer! < d) {
+          var loc2 = d.rightDancer!.location;
           ctx.drawLine(fm.Offset(loc.x,loc.y), fm.Offset(loc2.x,loc2.y), hline);
           ctx.drawCircle(
             fm.Offset((loc.x+loc2.x)/2, (loc.y+loc2.y)/2),
@@ -546,8 +551,8 @@ class DanceAnimationPainter extends fm.ChangeNotifier implements fm.CustomPainte
         if (d.leftDancer == null) { // hexagon center
           ctx.drawLine(fm.Offset(loc.x, loc.y), fm.Offset(0, 0), hline);
           ctx.drawCircle(fm.Offset(0, 0), 0.125, hline);
-        } else if (d.leftDancer < d) {
-          var loc2 = d.leftDancer.location;
+        } else if (d.leftDancer! < d) {
+          var loc2 = d.leftDancer!.location;
           ctx.drawLine(fm.Offset(loc.x,loc.y), fm.Offset(loc2.x,loc2.y), hline);
           ctx.drawCircle(
               fm.Offset((loc.x+loc2.x)/2, (loc.y+loc2.y)/2),
@@ -574,8 +579,8 @@ class DanceAnimationPainter extends fm.ChangeNotifier implements fm.CustomPainte
     _interactiveDancer = practiceGender;
     _interactiveRandom = practiceIsRandom;
     _resetAnimation();
-    partstr = _tam('parts','') + _tam('fractions','');
-    hasParts = _tam('parts') != null;
+    partstr = _tam!('parts','') + _tam!('fractions','');
+    hasParts = _tam!('parts').isNotBlank;
     _redraw();
   }
 
@@ -587,12 +592,12 @@ class DanceAnimationPainter extends fm.ChangeNotifier implements fm.CustomPainte
         isRunning = false;
       }
       isFinished = false;
-      var tform = _tam.getElement('formation');
-      var aform = _tam('formation');
-      var formation = _tam;
+      var tform = _tam!.getElement('formation');
+      var aform = _tam!('formation');
+      var formation = _tam!;
       if (tform != null)
         formation = tform;
-      if (aform != null)
+      if (aform.isNotBlank)
         formation = TamUtils.getFormation(aform);
       var flist = formation.childrenNamed('dancer');
       dancers = [];
@@ -601,7 +606,7 @@ class DanceAnimationPainter extends fm.ChangeNotifier implements fm.CustomPainte
       //  Get numbers for dancers and couples
       //  This fetches any custom numbers that might be defined in
       //  the animation to match a Callerlab or Ceder Chest illustration
-      var paths = _tam.childrenNamed('path');
+      var paths = _tam!.childrenNamed('path');
       var numbers = <String>[];
       if (_geometry == Geometry.HEXAGON)
         numbers = ['A', 'E', 'I',
@@ -616,7 +621,7 @@ class DanceAnimationPainter extends fm.ChangeNotifier implements fm.CustomPainte
       else if (paths.isEmpty)
         numbers = ['1', '5', '2', '6', '3', '7', '4', '8'];
       else
-        numbers = TamUtils.getNumbers(_tam);
+        numbers = TamUtils.getNumbers(_tam!);
       var couples = <String>[];
       if (_geometry == Geometry.HEXAGON)
         couples = ['1', '3', '5', '1', '3', '5',
@@ -632,7 +637,7 @@ class DanceAnimationPainter extends fm.ChangeNotifier implements fm.CustomPainte
           '1','3','1','3',
           '1','3','1','3'];
       else
-        couples = TamUtils.getCouples(_tam);
+        couples = TamUtils.getCouples(_tam!);
 
       var geoms = Geometry.getGeometry(_geometry);
 
@@ -679,7 +684,7 @@ class DanceAnimationPainter extends fm.ChangeNotifier implements fm.CustomPainte
           //  practice dancer?
           if (g == _interactiveDancer  && --icount == 0) {
             practiceDancer = PracticeDancer(nstr,cstr,g,color,m,geom.clone(),movelist);
-            dancers.add(practiceDancer);
+            dancers.add(practiceDancer!);
           } else  // not the practice dancer
             dancers.add(Dancer(nstr,cstr,g,color,m,geom.clone(),movelist));
           if (g == Gender.PHANTOM && !_showPhantoms)
@@ -716,9 +721,9 @@ class DanceAnimationPainter extends fm.ChangeNotifier implements fm.CustomPainte
   }
 
   @override
-  bool hitTest(fm.Offset position) => null;
+  bool? hitTest(fm.Offset position) => null;
   @override
-  fm.SemanticsBuilderCallback get semanticsBuilder => null;
+  fm.SemanticsBuilderCallback? get semanticsBuilder => null;
 
   @override
   bool shouldRebuildSemantics(covariant fm.CustomPainter oldDelegate) => shouldRepaint(oldDelegate);

@@ -24,13 +24,13 @@ class Ripple extends Action {
 
   @override final level = LevelData.C2;
   Ripple(String name) : super(name);
-  Map<Dancer,bool> _isRight;
+  late Map<Dancer,bool> _isRight;
 
   List<Dancer> _findTraders(CallContext ctx, List<Dancer> actives) {
     final traders = actives.copy();
     final ended = <Dancer>[];
     for (final d in actives) {
-      final d2 = _isRight[d] ? ctx.dancerToRight(d) : ctx.dancerToLeft(d);
+      final d2 = _isRight[d]! ? ctx.dancerToRight(d) : ctx.dancerToLeft(d);
       if (d2 != null)
         traders.add(d2);
       else {
@@ -51,8 +51,9 @@ class Ripple extends Action {
     final countstr = norm.replaceFirst('(Right|Left)?Ripple'.r,'')
         .replaceFirst('the(Line|Wave)'.r,'9');
     final half = countstr.endsWith('12');
-    final count = countstr.replaceFirst('12','').toIntOrNull()
-        ?? thrower(CallError('Ripple how much?'));
+    final count = countstr.replaceFirst('12','').toIntOrNull();
+    if (count == null)
+        throw CallError('Ripple how much?');
     _isRight = { for (final d in actives) d :
     norm.contains('Right')
         ? true
@@ -68,7 +69,7 @@ class Ripple extends Action {
         await ctx2.applyCalls('Trade');
       });
       ctx.extendPaths();
-      _isRight = { for (final d in actives) d : !_isRight[d] };
+      _isRight = { for (final d in actives) d : !_isRight[d]! };
     }
     if (half) {
       final traders = _findTraders(ctx, actives);

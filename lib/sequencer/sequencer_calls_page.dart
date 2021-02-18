@@ -52,7 +52,7 @@ class SequencerCallsModel extends fm.ChangeNotifier {
     LevelData.C2 : false,
     LevelData.C3A : false
   };
-  bool levelSelected(LevelData level) => _levelsSelected[level];
+  bool levelSelected(LevelData level) => _levelsSelected[level]!;
 
   void setSelected(LevelData level, bool value) {
     if (_levelsSelected[level] != value) {
@@ -70,7 +70,6 @@ class SequencerCallsModel extends fm.ChangeNotifier {
 class _SequencerCallsFrameState extends fm.State<SequencerCallsFrame> {
 
   final callsModel = SequencerCallsModel();
-  Future<int>computer;
 
   @override
   fm.Widget build(fm.BuildContext context) {
@@ -90,7 +89,7 @@ class _SequencerCallsFrameState extends fm.State<SequencerCallsFrame> {
                 fm.Container(
                 child: fm.Material(
                 //  Color the item according the the level
-                color: LevelData.find(callsModel.callsSelected[index].link).color,
+                color: LevelData.find(callsModel.callsSelected[index].link)!.color,
                 child: fm.Text(callsModel.callsSelected[index].title,
                     style: fm.TextStyle(fontSize: 16))
                 )
@@ -148,7 +147,7 @@ class _LevelCheckboxState extends fm.State<_LevelCheckbox> {
                       value: callsModel.levelSelected(widget.level),
                       onChanged: (value) {
                         setState(() {
-                          callsModel.setSelected(widget.level,value);
+                          callsModel.setSelected(widget.level,value!);
                         });
                       }
                   ),

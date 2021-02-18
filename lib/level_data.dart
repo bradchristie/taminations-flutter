@@ -64,12 +64,15 @@ class LevelData implements Comparable<LevelData> {
     LevelData.INDEX
   ];
 
-  static LevelData find(String s) {
-    return _data.firstWhere((element) =>
-    element.name.toLowerCase() == s.toLowerCase() ||
-        s.startsWith(element.dir),
-        orElse: () => null
-    );
+  static LevelData? find(String s) {
+    try {
+      return _data.firstWhere((element) =>
+      element.name.toLowerCase() == s.toLowerCase() ||
+          s.startsWith(element.dir));
+    } on Error {
+      //  not found
+      return null;
+    }
   }
 
   //  Comparison of levels - Basic 1 is smallest, C-3A is largest

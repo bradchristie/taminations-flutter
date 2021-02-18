@@ -35,7 +35,7 @@ class BraceThru extends Action {
       //  Do some checking that we can finish Brace Thru from here
       ctx2.analyze();
       for (final d in ctx2.dancers) {
-        final partner = d.data.partner ?? thrower(CallError('Dancer $d cannot Brace Thru'));
+        final partner = d.data.partner.throwIfNull(CallError('Dancer $d cannot Brace Thru'));
         if (d.gender == partner.gender)
           throw CallError('Same-sex dancers cannot Brace Thru');
       }

@@ -34,7 +34,7 @@ class Separate extends Action {
     //  Case 1 - Outer 4 Separate
     if (ctx.outer(4).every((it) => it.data.active)) {
       for (var d in ctx.actives) {
-        var d2 = ctx.dancerClosest(d, (it) => it.data.active);
+        var d2 = ctx.dancerClosest(d, (it) => it.data.active)!;
         if (d2.isRightOf(d) && d.isFacingIn)
           d.path += TamUtils.getMove('Quarter Left' ) +
               (TamUtils.getMove('Lead Right' )
@@ -66,7 +66,7 @@ class Separate extends Action {
         var d2 = ctx.dancerClosest(d, (it) =>
         it.data.active && (it.isRightOf(d) || it.isLeftOf(d))
         ) ?? thrower(CallError('Unable to figure out how to Separate' ));
-        if (d2.isRightOf(d))
+        if (d2!.isRightOf(d))
           d.path += TamUtils.getMove('Run Left' );
         else
           d.path += TamUtils.getMove('Run Right' );
@@ -77,7 +77,7 @@ class Separate extends Action {
         var d2 = ctx.dancerClosest(
             d, (it) => !it.data.active && it.isInFrontOf(d));
         //  Space the dancers 2 units apart
-        var dist = d.distanceTo(d2) / 2 - 1;
+        var dist = d.distanceTo(d2!) / 2 - 1;
         d.path += TamUtils.getMove('Forward' )
           ..scale(dist, 1.0)
           ..changebeats(3.0);

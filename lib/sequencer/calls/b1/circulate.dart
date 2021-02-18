@@ -146,7 +146,7 @@ class Circulate extends Action {
             return TamUtils.getMove('Forward 2' )..changebeats(4);
         }
         else if (ctx.dancersToLeft(d).length == 1 &&
-            ctx.isFacingSameDirection(d, ctx.dancerToLeft(d)))
+            ctx.isFacingSameDirection(d, ctx.dancerToLeft(d)!))
           return TamUtils.getMove('Flip Left' )..changebeats(4);
         else if (ctx.dancersToLeft(d).length == 1)
           return TamUtils.getMove('Run Left' )..changebeats(4);
@@ -173,7 +173,7 @@ class Circulate extends Action {
           case 1:
             return TamUtils.getMove('Run Right' )..changebeats(4.0);
           case 2:
-            if (ctx.isFacingSameDirection(d,ctx.dancerToLeft(d)))
+            if (ctx.isFacingSameDirection(d,ctx.dancerToLeft(d)!))
               return TamUtils.getMove('Flip Left' )..changebeats(4.0);
             return TamUtils.getMove('Run Left' )..changebeats(4.0);
           case 3:

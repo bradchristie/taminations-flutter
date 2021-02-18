@@ -39,8 +39,8 @@ class SequencerPage extends fm.StatefulWidget {
 
 class _SequencerPageState extends fm.State<SequencerPage> {
 
-  SequencerModel model;
-  AbbreviationsModel abbreviationsModel;
+  late SequencerModel model;
+  late AbbreviationsModel abbreviationsModel;
 
   @override
   void didChangeDependencies() {

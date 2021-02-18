@@ -33,9 +33,9 @@ class Hinge extends Action {
     var rightCount = ctx.dancersToRight(d).where((it) => it.isActive).length;
     Dancer d2;
     if (leftCount.isOdd && rightCount.isEven)
-      d2 = ctx.dancerToLeft(d);
+      d2 = ctx.dancerToLeft(d)!;
     else if (leftCount.isEven && rightCount.isOdd)
-      d2 = ctx.dancerToRight(d);
+      d2 = ctx.dancerToRight(d)!;
     else
       return ctx.dancerCannotPerform(d, name);
 

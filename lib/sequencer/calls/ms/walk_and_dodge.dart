@@ -30,12 +30,12 @@ class WalkAndDodge extends ActivesOnlyAction {
   var level = LevelData.MS;
   WalkAndDodge(String name) : super(name);
 
-  CallContext walkctx;
-  CallContext dodgectx;
+  late CallContext walkctx;
+  late CallContext dodgectx;
 
-  bool isWalker(Dancer d) =>
+  bool isWalker(Dancer? d) =>
       d != null && walkctx.actives.map((wd) => wd.number).contains(d.number);
-  bool isDodger(Dancer d) =>
+  bool isDodger(Dancer? d) =>
       d != null && dodgectx.actives.map((dd) => dd.number).contains(d.number);
 
   @override
@@ -50,14 +50,22 @@ class WalkAndDodge extends ActivesOnlyAction {
     var dodgers = 'leaders';
     if (name != 'Walk and Dodge') {
       var match = RegExp('(.+) walk(?: and)? (.+) dodge').firstMatch(name.toLowerCase());
-      walkers = match.group(1);
-      dodgers = match.group(2);
+      if (match == null)
+        throw CallError('Error parsing Walk and Dodge');
+      walkers = match.group(1)!;
+      dodgers = match.group(2)!;
     }
     for (var call in walkers.split('\\s+'.r)) {
-      await CodedCall.fromName(call).performCall(walkctx);
+      var codedCall = CodedCall.fromName(call);
+      if (codedCall == null)
+        throw CallError('Error parsing Walk and Dodge');
+      await codedCall.performCall(walkctx);
     }
     for (var call in dodgers.split('\\s+'.r)) {
-      await CodedCall.fromName(call).performCall(dodgectx);
+      var codedCall = CodedCall.fromName(call);
+      if (codedCall == null)
+        throw CallError('Error parsing Walk and Dodge');
+      await codedCall.performCall(dodgectx);
     }
     //  If dancer is not in either set then it is inactive
     for (var d in ctx.dancers)

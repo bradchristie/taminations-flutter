@@ -61,13 +61,10 @@ class Spread extends Action {
       spreader = _Case2();
     } else if (ctx.dancers.every((d) => ctx.isInTandem(d))) {
       spreader = _Case3();
-    }
-    if (spreader != null) {
-      level = spreader.level;
-      await spreader.perform(ctx);
-    }
-    else
-      throw CallError('Can not figure out how to Spread');
+    } else
+      throw CallError('Unable to find case for Spread');
+    level = spreader.level;
+    await spreader.perform(ctx);
   }
 
 }
@@ -118,9 +115,9 @@ class _Case2 extends Action {
     //  Compute offset for spread
     var v = Vector();
     if (d.data.belle)
-      v = Vector(0.0, ctx.dancerToLeft(d).distanceTo(d));
+      v = Vector(0.0, ctx.dancerToLeft(d)!.distanceTo(d));
     else if (d.data.beau)
-      v = Vector(0.0, -ctx.dancerToRight(d).distanceTo(d));
+      v = Vector(0.0, -ctx.dancerToRight(d)!.distanceTo(d));
     //  Pop off the last movement and shift it by that offset
     var m = (p.movelist.isNotEmpty)
         ? p.pop()

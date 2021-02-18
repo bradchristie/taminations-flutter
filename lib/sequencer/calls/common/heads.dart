@@ -28,7 +28,7 @@ class Heads extends FilterActives {
   Heads(String name) : super(name);
 
   @override
-  bool isActive(Dancer d, [CallContext ctx]) =>
+  bool isActive(Dancer d, CallContext ctx) =>
       ctx.isSquare()
           ? d.location.x.abs().isAbout(3.0)
           : d.numberCouple=='1' || d.numberCouple=='3';

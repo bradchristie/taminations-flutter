@@ -75,9 +75,9 @@ class _TapDetector extends fm.StatelessWidget {
   final Color color;
   final fm.StatelessWidget child;
   _TapDetector({
-    @fm.required this.text,
-    @fm.required this.color,
-    @fm.required this.child});
+    required this.text,
+    required this.color,
+    required this.child});
 
   @override
   fm.Widget build(fm.BuildContext context) =>
@@ -103,7 +103,7 @@ class _TapDetector extends fm.StatelessWidget {
 class _StartPracticeItem extends fm.StatelessWidget {
   final String text;
   final Color color;
-  _StartPracticeItem({@fm.required this.text, @fm.required this.color});
+  _StartPracticeItem({required this.text, required this.color});
 
   @override
   fm.Widget build(fm.BuildContext context) =>
@@ -129,10 +129,11 @@ class _StartPracticeRadioGroup extends fm.StatelessWidget {
 
   final String groupValue;
   final List<String> values;
-  final void Function(String value) onChanged;
-  _StartPracticeRadioGroup({@fm.required this.groupValue,
-    @fm.required this.values,
-    @fm.required this.onChanged});
+  final void Function(String? value) onChanged;
+  _StartPracticeRadioGroup({
+    required this.groupValue,
+    required this.values,
+    required this.onChanged});
 
   @override
   fm.Widget build(fm.BuildContext context) {
@@ -180,7 +181,7 @@ class _StartPracticeFrameState extends fm.State<StartPracticeFrame> {
                           values: ['Boy', 'Girl'],
                           onChanged: (value) {
                             setState(() {
-                              settings.practiceGender = value;
+                              settings.practiceGender = value ?? 'Boy';
                             });
                           }),
                       fm.Text('Speed for Practice',
@@ -190,7 +191,7 @@ class _StartPracticeFrameState extends fm.State<StartPracticeFrame> {
                           values: ['Slow', 'Moderate', 'Normal'],
                           onChanged: (value) {
                             setState(() {
-                              settings.practiceSpeed = value;
+                              settings.practiceSpeed = value ?? 'Slow';
                             });
                           }),
                       fm.Text(
@@ -200,7 +201,7 @@ class _StartPracticeFrameState extends fm.State<StartPracticeFrame> {
                           values: ['Left Finger', 'Right Finger'],
                           onChanged: (value) {
                             setState(() {
-                              settings.primaryControl = value;
+                              settings.primaryControl = value ?? 'Right Finger';
                             });
                           }),
                     ],

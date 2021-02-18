@@ -17,15 +17,7 @@
   along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 */
-
-import '../../../dancer.dart';
-import '../../../extensions.dart';
-import '../../../level_data.dart';
-import '../../../math/vector.dart';
-import '../../../tam_utils.dart';
-import '../../call_context.dart';
-import '../../call_error.dart';
-import '../action.dart';
+import '../common.dart';
 
 class Run extends Action {
 
@@ -65,7 +57,7 @@ class Run extends Action {
         else if (!isLeft ||
             (usePartner && dright!=null && dright == d.data.partner)) {
           //  Run Right
-          var d2 = dright ?? thrower(CallError('Dancer $d unable to Run' ));
+          var d2 = dright.throwIfNull(CallError('Dancer $d unable to Run' ));
           _runOne(d, d2, 'Right' );
           runnersRunned.add(d);
           dancersToWalk.remove(d2);
@@ -75,7 +67,7 @@ class Run extends Action {
         else if (!isRight ||
             (usePartner && dleft!=null && dleft == d.data.partner)) {
           //  Run Left
-          var d2 = dleft ?? thrower( CallError('Dancer $d unable to Run' ));
+          var d2 = dleft.throwIfNull(CallError('Dancer $d unable to Run' ));
           _runOne(d,d2,'Left' );
           runnersRunned.add(d);
           dancersToWalk.remove(d2);

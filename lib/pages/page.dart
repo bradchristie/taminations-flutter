@@ -18,7 +18,6 @@
 
 */
 import 'package:flutter/material.dart' as fm;
-import 'package:meta/meta.dart';
 import 'package:provider/provider.dart' as pp;
 
 import '../common.dart';
@@ -28,7 +27,7 @@ import '../common.dart';
 class Page extends fm.StatelessWidget {
 
   final fm.Widget child;
-  Page({@required this.child});
+  Page({required this.child});
 
   @override
   fm.Widget build(fm.BuildContext context) {
@@ -50,14 +49,13 @@ class Page extends fm.StatelessWidget {
 class AppLayoutSize extends fm.InheritedWidget {
   final fm.BoxConstraints constraints;
   const AppLayoutSize({
-    fm.Key key,
-    @required this.constraints,
-    @required fm.Widget child,
-  })  : assert(child != null),
-        super(key: key, child: child);
+    fm.Key? key,
+    required this.constraints,
+    required fm.Widget child,
+  })  : super(key: key, child: child);
 
   static AppLayoutSize of(fm.BuildContext context) {
-    return context.dependOnInheritedWidgetOfExactType<AppLayoutSize>();
+    return context.dependOnInheritedWidgetOfExactType<AppLayoutSize>()!;
   }
 
   @override
@@ -68,7 +66,7 @@ class AppLayoutSize extends fm.InheritedWidget {
 
 //  Return true if this is a phone-sized device rather than a tablet
 //  We can save the result because the device never changes
-bool _isSmallDevice;
+bool? _isSmallDevice;
 bool isSmallDevice(fm.BuildContext context) {
   if (_isSmallDevice == null) {
     final w = fm.MediaQuery.of(context).size.width;
@@ -76,7 +74,7 @@ bool isSmallDevice(fm.BuildContext context) {
      //  This seems to be the consensus on the phone/tablet boundary
     _isSmallDevice = min(w, h) < 600;
   }
-  return _isSmallDevice;
+  return _isSmallDevice!;
 }
 
 //  Return true if this is a phone-size device with the on-screen keyboard shown

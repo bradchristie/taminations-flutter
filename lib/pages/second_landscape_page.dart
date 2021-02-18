@@ -44,17 +44,17 @@ class SecondLandscapePage extends fm.StatelessWidget {
                   context, listen: false);
               final painter = pp.Provider.of<DanceAnimationPainter>(
                   context, listen: false);
-              TamUtils.getXMLAsset(tamState.link).then((doc) {
+              TamUtils.getXMLAsset(tamState.link!).then((doc) {
                 var tam = TamUtils.tamList(doc)
                     .where((it) => !(it('display', '').startsWith('n')))
                     .toList()[max(0, tamState.animnum)];
                 painter.setAnimation(tam);
                 if (tamState.animnum >= 0)
-                  title.title = tam.getAttribute('title');
+                  title.title = tam('title');
                 else
-                  title.title = doc.rootElement.getAttribute('title');
+                  title.title = doc.rootElement('title');
               });
-              title.level = LevelData.find(tamState.link)?.name ?? '';
+              title.level = LevelData.find(tamState.link!)?.name ?? '';
               return fm.Scaffold(
                 backgroundColor: Color.LIGHTGRAY,
                 appBar: fm.PreferredSize(
@@ -65,7 +65,7 @@ class SecondLandscapePage extends fm.StatelessWidget {
                     )),
                 body:
                       SecondLandscapeFrame(
-                          leftChild: AnimListFrame(tamState.link),
+                          leftChild: AnimListFrame(tamState.link!),
                           centerChild: fm.Column(
                             children: [
                               fm.Expanded(child: AnimationFrame()),
@@ -90,7 +90,7 @@ class SecondLandscapePage extends fm.StatelessWidget {
                           ),
                           rightChild: tamState.detailPage == DetailPage.SETTINGS
                               ? SettingsFrame()
-                              : WebFrame(tamState.link)
+                              : WebFrame(tamState.link!)
                       ),
             ); }
           )
@@ -104,9 +104,9 @@ class SecondLandscapeFrame extends fm.StatelessWidget {
   final fm.Widget rightChild;
 
   SecondLandscapeFrame(
-      {@fm.required this.leftChild,
-      @fm.required this.centerChild,
-      @fm.required this.rightChild});
+      {required this.leftChild,
+      required this.centerChild,
+      required this.rightChild});
 
   @override
   fm.Widget build(fm.BuildContext context) {

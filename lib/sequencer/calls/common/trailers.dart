@@ -27,6 +27,6 @@ class Trailers extends FilterActives {
   Trailers(name) : super(name);
 
   @override
-  bool isActive(Dancer d, [CallContext ctx]) => d.data.trailer;
+  bool isActive(Dancer d, CallContext ctx) => d.data.trailer;
 
 }

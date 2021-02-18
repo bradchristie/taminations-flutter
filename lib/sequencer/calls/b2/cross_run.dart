@@ -18,13 +18,7 @@
 
 */
 
-import '../../../extensions.dart';
-import '../../../level_data.dart';
-import '../../../math/vector.dart';
-import '../../../tam_utils.dart';
-import '../../call_context.dart';
-import '../../call_error.dart';
-import '../common/actives_only_action.dart';
+import '../common.dart';
 
 class CrossRun extends ActivesOnlyAction {
 
@@ -60,20 +54,21 @@ class CrossRun extends ActivesOnlyAction {
       var dright = ctx.dancersToRight(d).getOrNull(1);
       var dleft = ctx.dancersToLeft(d).getOrNull(1);
       var dir = '' ;
-      if (dright?.isNotActive ?? true) dir = 'Left' ;
-      else if (dleft?.isNotActive ?? true) dir = 'Right' ;
+      if (dright?.isNotActive ?? true)
+        dir = 'Left' ;
+      else if (dleft?.isNotActive ?? true)
+        dir = 'Right' ;
       //  If 2 dancers away both left and right are active,
       //  choose dancer furthest from the center,
       //    as it must be a tidal formation and runners should not cross center
-      else if (dright.location.length > dleft.location.length) dir = 'Right' ;
+      else if (dright!.location.length > dleft!.location.length) dir = 'Right' ;
       else dir = 'Left' ;
-      var d2 = (dir == 'Right'  ? dright : dleft) ??
-          thrower(CallError('Dancer $d cannot Cross Run' ));
+      Dancer? d2 = (dir == 'Right'  ? dright : dleft).throwIfNull(CallError('Dancer $d cannot Cross Run' ));
       var dist = d.distanceTo(d2);
       //  If centers are running and facing same direction,
       //  dancer on right goes in front (half-sashay action)
       if (d.data.center && runners.contains(ctx.dancerToRight(d)) &&
-          ctx.dancerToRight(d).angleFacing.isAround(d.angleFacing))
+          ctx.dancerToRight(d)!.angleFacing.isAround(d.angleFacing))
         d.path =
             TamUtils.getMove('Dodge Right',scale:[1.0,0.5].v,beats: 1.0) +
             TamUtils.getMove('Run $dir',scale:[1.0, dist/2].v,skew:[0.0,1.0].v);
@@ -96,17 +91,17 @@ class CrossRun extends ActivesOnlyAction {
       var dback = ctx.dancerInBack(d);
       //  Dodge or move forward/back to that spot
       if (runners.contains(dright))
-        d.path = TamUtils.getMove('Dodge Right' , scale:[1.0,d.distanceTo(dright)/2].v);
+        d.path = TamUtils.getMove('Dodge Right' , scale:[1.0,d.distanceTo(dright!)/2].v);
       else if (runners.contains(dleft))
-        d.path = TamUtils.getMove('Dodge Left' , scale:[1.0,d.distanceTo(dleft)/2].v);
+        d.path = TamUtils.getMove('Dodge Left' , scale:[1.0,d.distanceTo(dleft!)/2].v);
       else if (runners.contains(dfront))
         d.path = TamUtils.getMove('Forward' ,
             beats: 3.0,
-            scale:[d.distanceTo(dfront),1.0].v);
+            scale:[d.distanceTo(dfront!),1.0].v);
       else if (runners.contains(dback))
         d.path = TamUtils.getMove('Back' ,
             beats: 3.0,
-            scale:[d.distanceTo(dfront),1.0].v);
+            scale:[d.distanceTo(dback!),1.0].v);
       else
         throw CallError('Unable to calculate Cross Run action for dancer $d' );
     }

@@ -45,7 +45,7 @@ class Cross extends Action {
   @override
   Path performOne(Dancer d, CallContext ctx) {
     //  Find the other dancer to cross with
-    Dancer d2;
+    Dancer? d2;
     for (var it in ctx.actives) {
       //  Dancers must be facing opposite directions
       //  and facing diagonal to each other

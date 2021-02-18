@@ -27,6 +27,6 @@ class VeryCenters extends FilterActives {
   VeryCenters() : super('Very Centers');
 
   @override
-  bool isActive(Dancer d, [CallContext ctx]) => d.data.verycenter;
+  bool isActive(Dancer d, CallContext ctx) => d.data.verycenter;
 
 }

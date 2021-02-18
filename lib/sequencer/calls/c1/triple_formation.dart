@@ -24,9 +24,9 @@ import '../common.dart';
 abstract class TripleFormation extends Action {
 
   @override final level = LevelData.C1;
-  TripleFormation(String name) : super(name) {
-    subCall = name.replaceFirst('Triple (Box|Lines?|Waves?|Columns?) '.r,'');
-  }
+  TripleFormation(String name) :
+        subCall = name.replaceFirst('Triple (Box|Lines?|Waves?|Columns?) '.r,''),
+        super(name);
 
   static const tripleBoxFormations = {
     'Triple Boxes' : 1.0,
@@ -71,8 +71,9 @@ abstract class TripleFormation extends Action {
       if (box.dancers.length != 4)
         throw CallError('Error splitting into groups - group has ${box.dancers.length} dancers.');
       box.analyze();
-      final rotatedBox = await box.rotatePhantoms(subCall,rotate: 180, asym: true)
-          ?? thrower(CallError('Unable to do $subCall with these Triple Boxes'));
+      final rotatedBox = await box.rotatePhantoms(subCall,rotate: 180, asym: true);
+      if (rotatedBox == null)
+        throw CallError('Unable to do $subCall with these Triple Boxes');
       await rotatedBox.applyCalls(subCall);
       //  If it ends in a bax, make it a compact box in major direction
       //  so it will fit with others to make a triple box

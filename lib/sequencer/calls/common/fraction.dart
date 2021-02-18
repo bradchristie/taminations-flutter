@@ -39,9 +39,9 @@ class Fraction extends Action {
 
   var _prevBeats = 0.0;
   var _partBeats = 0.0;
-  int _numerator;
-  int _denominator;
-  Call _call;
+  int _numerator = 0;
+  int _denominator = 1;
+  late Call _call;
 
   @override
   Future<void> perform(CallContext ctx, [int stackIndex=0]) async {
@@ -83,7 +83,7 @@ class Fraction extends Action {
 
     //  Chop off the excess fraction
     for (var d in ctx.dancers) {
-      Movement mo;
+      Movement? mo;
       while (d.path.beats > _prevBeats + _partBeats)
         mo = d.path.pop();
       //  OK if there's no movement, part of nothing is nothing

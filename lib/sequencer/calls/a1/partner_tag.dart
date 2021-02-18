@@ -30,7 +30,7 @@ class PartnerTag extends Action {
     //  Generally Partner Tag is with partner, but there can be exceptions
     final d2 = [d.data.partner, ctx.dancerToRight(d), ctx.dancerToLeft(d)]
     .where((it) => it != null && it.isActive).firstOrNull
-     ?? thrower(CallError('Dancer $d cannnot Partner Tag'));
+     .throwIfNull(CallError('Dancer $d cannnot Partner Tag'));
     final dist = d.distanceTo(d2);
     if (d2.isRightOf(d))
       return TamUtils.getMove('Lead Right',scale:[0.5,dist/2].v) +

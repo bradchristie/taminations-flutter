@@ -143,8 +143,8 @@ class Concentric extends FourDancerConcept {
   @override
   Vector computeLocation(Dancer d, Movement m, int mi, double beat, int groupIndex) {
     //  Get the offset vectors for the start and end of this movement
-    final v1 = _dancerLocations[d.number][mi];
-    final v2 = _dancerLocations[d.number][mi+1];
+    final v1 = _dancerLocations[d.number]![mi];
+    final v2 = _dancerLocations[d.number]![mi+1];
     //  Convert to dancer space
     final v1d = v1.rotate(-d.angleFacing);
     final v2d = v2.rotate(-d.angleFacing);
@@ -155,7 +155,7 @@ class Concentric extends FourDancerConcept {
     final vnow = (v2d - v1d) * f + ((mi==0) ? v1d : Vector());
     final pos = m.translate(beat).location;
     final shift = (f.isGreaterThan(0.0) && f.isLessThan(1.0))
-        ? _dancerShifts[d.number][mi].rotate(-d.angleFacing)
+        ? _dancerShifts[d.number]![mi].rotate(-d.angleFacing)
         : Vector();
     //  And add it to the concept dancer location
     return pos + vnow + shift;

@@ -29,7 +29,7 @@ class And extends FilterActives {
 
   And() : super('and' );
 
-  int _index;
+  int _index = 0;
 
   @override
   Future<void> performCall(CallContext ctx, [int stackIndex=0]) async {
@@ -42,7 +42,7 @@ class And extends FilterActives {
   //  If the previous call was retrieved from XML and has a selector
   //  such as Boys or Heads then we need to filter the actives here
   @override
-  bool isActive(Dancer d, [CallContext ctx]) {
+  bool isActive(Dancer d, CallContext ctx) {
     var retval = d.isActive;
     for (var call in ctx.callstack.take(_index)) {
       var normWords = TamUtils.normalizeCall(call.name).split(' ' );

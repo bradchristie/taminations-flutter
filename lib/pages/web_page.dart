@@ -58,12 +58,12 @@ class WebFrame extends fm.StatefulWidget {
 class _WebFrameState extends fm.State<WebFrame> {
 
   String link;
-  String localizedAssetName;
+  String localizedAssetName = '';
   _WebFrameState(this.link);
   String get _dir => link.replaceFirst(r'/.*'.r,'');
   bool isAbbrev = true;
   bool hasAbbrev = false;
-  Future<String> htmlFuture;
+  Future<String>? htmlFuture;
 
   @override
   void didChangeDependencies() {
@@ -96,10 +96,10 @@ class _WebFrameState extends fm.State<WebFrame> {
                         child:pp.Consumer<AnimationState>(
                             builder: (context, settings, child) {
                               //  TODO highlight current part in definition
-                              return child;
+                              return child!;
                             },
                             child: ewv.EasyWebView(
-                                src: snapshot.data,
+                                src: snapshot.data!.toString(),
                                 isHtml: !snapshot.data.toString().endsWith('html'),
                                 onLoaded: () { })
                         )
@@ -195,7 +195,7 @@ class _WebFrameState extends fm.State<WebFrame> {
       myFuture = myFuture.then((morehtml) {
         return _imageToBase64('$_dir/$filename').then((base64str) {
            return morehtml.replaceFirst(
-              imagetag, r'<img src="data:image/png;base64,' + base64str + r'"/>');
+              imagetag!, r'<img src="data:image/png;base64,' + base64str + r'"/>');
         });
       });
     });

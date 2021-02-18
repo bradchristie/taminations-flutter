@@ -45,7 +45,9 @@ class ThreeQuartersTag extends Action {
 
   @override
   Path performOne(Dancer d, CallContext ctx) {
-    var dist = d.distanceTo(ctx.dancerInBack(d) ?? ctx.dancerInFront(d))/2.0;
+    var d2 = (ctx.dancerInBack(d) ?? ctx.dancerInFront(d))
+        .throwIfNull(CallError('Error calculating movement for dancer $d'));
+    var dist = d.distanceTo(d2)/2.0;
     var tagtype = ctx.dancersToRight(d).length + (d.isFacingOut ? 4  : 0);
     switch (tagtype) {
       case 0 : return TamUtils.getMove('Quarter Left',skew:[dist-3, 1.0].v) +

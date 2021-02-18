@@ -27,6 +27,6 @@ class Leaders extends FilterActives {
   Leaders(name) : super(name);
 
   @override
-  bool isActive(Dancer d, [CallContext ctx]) => d.data.leader;
+  bool isActive(Dancer d, CallContext ctx) => d.data.leader;
 
 }

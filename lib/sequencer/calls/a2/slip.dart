@@ -35,7 +35,7 @@ class Slip extends Action {
     else {
       //  Otherwise, all centers trade
       //  Check that it's not a partner trade
-      final ctxc = CallContext.fromContext(ctx,dancers:ctx.dancers.where((it) => it.data.center));
+      final ctxc = CallContext.fromContext(ctx,dancers:ctx.dancers.where((it) => it.data.center).toList());
       if (!ctxc.isWaves())
         throw CallError('Centers must be in a mini-wave.');
       await ctx.applyCalls('Centers Trade');

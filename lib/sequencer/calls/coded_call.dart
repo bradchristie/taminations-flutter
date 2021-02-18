@@ -415,11 +415,11 @@ abstract class CodedCall extends Call {
   };
 
 
-  factory CodedCall.fromName(String name) {
+  static CodedCall? fromName(String name) {
     var norm = TamUtils.normalizeCall(name);
     for (var r in normCallMap.keys) {
       if (norm.matches(r)) {
-        return normCallMap[r].call(name);
+        return normCallMap[r]!.call(name);
       }
     }
     return null;

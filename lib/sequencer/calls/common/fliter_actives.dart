@@ -32,7 +32,7 @@ abstract class FilterActives extends CodedCall {
 
   ///  Child classes need to override the isActive method
   ///  according to which dancers should be selected
-  bool isActive(Dancer d, [CallContext ctx]);
+  bool isActive(Dancer d, CallContext ctx);
 
   @override
   Future<void> performCall(CallContext ctx, [int stackIndex = 0]) async {

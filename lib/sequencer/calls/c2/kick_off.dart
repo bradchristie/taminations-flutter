@@ -33,7 +33,7 @@ class KickOff extends Action {
     //  Inactive dancers that moved do a Partner Tag
     ctx.dancers.where((d) => !d.isActive && d.path.movelist.isNotEmpty)
         .forEach((d) {
-      final m = d.path.shift();
+      final m = d.path.shift()!;
       final dy = m.btranslate.endPoint.y;
       if (dy > 0)
         d.path = TamUtils.getMove('Quarter Left',beats:3.0,skew:[0.0,dy].v);

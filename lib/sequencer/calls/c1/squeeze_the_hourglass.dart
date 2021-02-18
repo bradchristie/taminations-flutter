@@ -29,8 +29,9 @@ class SqueezeTheHourglass extends Action {
   Future<void> perform(CallContext ctx, [int stackIndex = 0]) async {
     //  Match to any hourglass
     final hourglass = CallContext.fromXML(TamUtils.getFormation('Hourglass RH BP'));
-    final mm = hourglass.matchFormations(ctx,rotate:180) ??
-    thrower(CallError('Not an Hourglass formation'));
+    final mm = hourglass.matchFormations(ctx,rotate:180);
+    if (mm == null)
+      throw CallError('Not an Hourglass formation');
     //  All but two of the dancers squeeze
     ctx.dancers[mm[2]].data.active = false;
     ctx.dancers[mm[3]].data.active = false;

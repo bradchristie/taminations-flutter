@@ -31,8 +31,9 @@ class HocusPocus extends Action {
     final outerO = outer4.fillFormation('O RH')
         ?? outer4.fillFormation('O LH')
         ?? outer4.fillFormation('O Eight Chain Thru')
-        ?? outer4.fillFormation('O Trade By')
-        ?? thrower(CallError('Cannot determine how outer dancers can circulate.'));
+        ?? outer4.fillFormation('O Trade By');
+    if (outerO == null)
+      throw CallError('Cannot determine how outer dancers can circulate.');
     await ctx.subContext(outerO.dancers, (ctx2) async {
       await ctx2.applyCalls('O Circulate','O Circulate');
     });

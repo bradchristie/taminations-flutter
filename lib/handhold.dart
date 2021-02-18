@@ -40,8 +40,8 @@ class Handhold {
 
   bool get inCenter => dancer1.inCenter && dancer2.inCenter;
 
-  factory Handhold.create(Dancer d1, Dancer d2, int geometry) {
-    Handhold retval;
+  static Handhold? create(Dancer d1, Dancer d2, int geometry) {
+    Handhold? retval;
     if (!d1.hidden && !d2.hidden) {
 
       //  Turn off grips if not specified in current movement

@@ -35,7 +35,7 @@ class BoxTheGnat extends ActivesOnlyAction {
 
   BoxTheGnat() : super('Box the Gnat');
 
-  Dancer _checkOtherDancer(Dancer d, Dancer d2) {
+  Dancer? _checkOtherDancer(Dancer d, Dancer? d2) {
     if (d2 == null)
       return null;
     if (!d2.data.active)

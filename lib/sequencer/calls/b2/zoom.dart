@@ -18,25 +18,16 @@
 
 */
 
-
-import '../action.dart';
-import '../../../level_data.dart';
-import '../../../math/path.dart';
-import '../../../dancer.dart';
-import '../../call_context.dart';
-import '../../call_error.dart';
-import '../../../tam_utils.dart';
-import '../../../math/vector.dart';
-import '../../../extensions.dart';
+import '../common.dart';
 
 //  This class implements both Zoom and Zing
 class Zoom extends Action {
 
   @override
   LevelData level;
-  Zoom(String name) : super(name) {
-    level = name == 'Zing'  ? LevelData.C1 : LevelData.B2;
-  }
+  Zoom(String name) :
+        level = name == 'Zing'  ? LevelData.C1 : LevelData.B2,
+        super(name);
 
   @override
   Path performOne(Dancer d, CallContext ctx) {
@@ -57,7 +48,7 @@ class Zoom extends Action {
     }
     var s = centerLeft || centerRight ? 0.25 : 1.0;
     if (d.data.leader) {
-      var d2 = ctx.dancerInBack(d) ?? thrower(CallError('Dancer $d cannot $name' ));
+      var d2 = ctx.dancerInBack(d).throwIfNull(CallError('Dancer $d cannot $name'));
       if (!d2.data.active)
         throw CallError('Trailer of dancer $d is not active' );
       var dist = d.distanceTo(d2);
@@ -74,7 +65,7 @@ class Zoom extends Action {
               beats:2.0,
               scale:[dist/2.0,2.0*s].v));
     } else if (d.data.trailer) {
-      var d2 = ctx.dancerInFront(d) ?? thrower(CallError('Dancer $d cannot $name' ));
+      var d2 = ctx.dancerInFront(d).throwIfNull(CallError('Dancer $d cannot $name'));
       if (!d2.data.active)
         throw CallError('Leader of dancer $d is not active' );
       var dist = d.distanceTo(d2);

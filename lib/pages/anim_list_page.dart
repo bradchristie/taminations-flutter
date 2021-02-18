@@ -49,7 +49,7 @@ class AnimListItem {
   final int difficulty;
 
   AnimListItem(
-      {this.celltype,
+      {this.celltype = CellType.Plain,
       this.title = '',
       this.name = '',
       this.group = '',
@@ -65,15 +65,15 @@ class AnimListPage extends fm.StatelessWidget {
     return Page(
       child: pp.Consumer<TamState>(
         builder: (context, tamState, _) {
-          TamUtils.getXMLAsset(tamState.link).then((doc) {
+          TamUtils.getXMLAsset(tamState.link!).then((doc) {
             pp.Provider.of<TitleModel>(context,listen: false).title =
-                doc.rootElement.getAttribute('title');
+                doc.rootElement('title');
           });
           return fm.Column(
               children: [
                 fm.Expanded(
                   child: AnimListFrame(
-                      tamState.link, highlightSelected: false),
+                      tamState.link!, highlightSelected: false),
                 ),
                 fm.Container(
                   color: Color.FLOOR,
@@ -107,7 +107,7 @@ class _AnimListState extends fm.State<AnimListFrame> {
 
   String link;
   List<AnimListItem> animListItems = [];
-  Future<XmlDocument> docFuture;
+  Future<XmlDocument>? docFuture;
   var hasDifficulty = false;
   var selectedItem = -1;
   final scrollController = fm.ScrollController();
@@ -140,7 +140,7 @@ class _AnimListState extends fm.State<AnimListFrame> {
       var tamTitle = tam('title');
       var from = 'from'; // updated later after tamxref is loaded
       var group = tam('group','');
-      if (tam('difficulty') != null)
+      if (tam('difficulty').isNotBlank)
         hasDifficulty = true;
       if (group.isNotEmpty) {
         //  Add header for new group as needed
@@ -190,7 +190,7 @@ class _AnimListState extends fm.State<AnimListFrame> {
         builder: (fm.BuildContext context,
             fm.AsyncSnapshot<XmlDocument> snapshot) {
           if (snapshot.hasData) {
-            _loadList(snapshot.data);
+            _loadList(snapshot.data!);
             return fm.Column(children: [
               fm.Expanded(
                   child: fm.Scrollbar(
@@ -292,7 +292,6 @@ class _AnimListState extends fm.State<AnimListFrame> {
                                     }
                                 ));
                           }
-                          return fm.Text('Dummy text for ListView.builder');
                         }),
                   )),
               if (hasDifficulty) fm.Container(

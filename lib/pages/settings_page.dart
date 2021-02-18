@@ -134,8 +134,10 @@ class _SettingCheckbox extends fm.StatefulWidget {
   final bool value;
   final _boolChanger onChanged;
 
-  _SettingCheckbox({@fm.required this.name,
-    @fm.required this.value, @fm.required this.onChanged});
+  _SettingCheckbox({
+    required this.name,
+    required this.value,
+    required this.onChanged});
 
   @override
   __SettingCheckboxState createState() => __SettingCheckboxState();
@@ -154,7 +156,7 @@ class __SettingCheckboxState extends fm.State<_SettingCheckbox> {
                   value: widget.value,
                   onChanged: (value) {
                     setState(() {
-                      widget.onChanged(value);
+                      widget.onChanged(value ?? false);
                     });
                   }
               ),
@@ -172,9 +174,9 @@ class _SettingRadioGroup extends fm.StatefulWidget {
   final void Function(String value) onChanged;
   final double bottomMargin;
   _SettingRadioGroup({
-    @fm.required this.groupValue,
-    @fm.required this.values,
-    @fm.required this.onChanged,
+    required this.groupValue,
+    required this.values,
+    required this.onChanged,
     this.bottomMargin=3
   });
 
@@ -205,7 +207,7 @@ class __SettingRadioGroupState extends fm.State<_SettingRadioGroup> {
                             groupValue: widget.groupValue,
                             onChanged: (value) {
                               setState(() {
-                                widget.onChanged(value);
+                                widget.onChanged(value ?? '');
                               });
                             }
                         ),
@@ -222,8 +224,8 @@ class _SettingsColorDropDown extends fm.StatefulWidget {
   final void Function(String value) onChanged;
   final String currentValue;
   _SettingsColorDropDown({
-    @fm.required this.onChanged,
-    @fm.required this.currentValue
+    required this.onChanged,
+    required this.currentValue
   });
   @override
   fm.State<fm.StatefulWidget> createState() =>
@@ -236,7 +238,7 @@ class _SettingsColorDropDownState extends fm.State<_SettingsColorDropDown> {
   String dropdownValue;
   _SettingsColorDropDownState(this.onChanged,this.dropdownValue);
 
-  fm.DropdownMenuItem oneItem(String name, Color c) =>
+  fm.DropdownMenuItem<String> oneItem(String name, Color c) =>
       fm.DropdownMenuItem<String>(
           value: name,
           child: fm.Container(
@@ -255,10 +257,10 @@ class _SettingsColorDropDownState extends fm.State<_SettingsColorDropDown> {
   @override
   fm.Widget build(fm.BuildContext context) {
     return fm.DropdownButton<String>(
-      onChanged: (String c) {
+      onChanged: (String? c) {
         setState(() {
-          dropdownValue = c;
-          onChanged(c);
+          dropdownValue = c ?? '';
+          onChanged(c ?? '');
         });
       },
       underline: fm.Container( height: 0, width:0 ),
@@ -437,7 +439,7 @@ class StartingFormationDropdownWidget extends fm.StatelessWidget {
                 style: fm.TextStyle(fontSize: 20,color: Color.BLACK),
                 underline: fm.Container( height: 0, width:0 ),
                 onChanged: (newValue) {
-                  settings.startingFormation = newValue;
+                  settings.startingFormation = newValue ?? '';
                 },
                 items: [
                   'Facing Couples',

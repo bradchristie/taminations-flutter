@@ -29,8 +29,8 @@ class SlideThru extends Action {
   @override
   Path performOne(Dancer d, CallContext ctx) {
     //  Check if in wave, slide thru with adj dancer
-    if (ctx.isInWave(d) && d.data.beau && ctx.dancerToRight(d).data.active) {
-      var dist = d.distanceTo(ctx.dancerToRight(d));
+    if (ctx.isInWave(d) && d.data.beau && ctx.dancerToRight(d)!.data.active) {
+      var dist = d.distanceTo(ctx.dancerToRight(d)!);
       if (d.gender == Gender.BOY)
         return TamUtils.getMove('Lead Right',scale:[1.0,dist/2.0].v);
       else

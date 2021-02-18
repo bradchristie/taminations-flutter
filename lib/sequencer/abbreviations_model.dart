@@ -32,7 +32,7 @@ class Abbreviation {
 
 class AbbreviationsModel extends fm.ChangeNotifier {
 
-  static SharedPreferences prefs;
+  static late SharedPreferences prefs;
 
   static final initialAbbreviations = {
     'g' : 'Girls',
@@ -87,10 +87,10 @@ class AbbreviationsModel extends fm.ChangeNotifier {
   }
 
   Future<void> _load() async {
-    prefs ??= await SharedPreferences.getInstance();
+    prefs = await SharedPreferences.getInstance();
     if (prefs.getString('+abbrev stored') == null) {
       for (var k in initialAbbreviations.keys)
-        await prefs.setString('abbrev $k',initialAbbreviations[k]);
+        await prefs.setString('abbrev $k',initialAbbreviations[k]!);
       await prefs.setString('+abbrev stored', 'true');
     }
     currentAbbreviations = [];
@@ -98,7 +98,7 @@ class AbbreviationsModel extends fm.ChangeNotifier {
       if (k.startsWith('abbrev '))
         currentAbbreviations.add(
             Abbreviation(k.replaceFirst('abbrev ',''),
-            prefs.getString(k)));
+            prefs.getString(k)!));
     }
     currentAbbreviations = currentAbbreviations.sortedBy((e) => e.abbr);
     currentAbbreviations.add(Abbreviation('',''));
@@ -183,7 +183,7 @@ class AbbreviationsModel extends fm.ChangeNotifier {
     fs.Clipboard.getData('text/plain').then((value) {
       if (value is fs.ClipboardData)
         //  Process each line of pasted abbreviations
-        for (final line in value.text.split('\\n')) {
+        for (final line in value.text!.split('\\n')) {
           final breakup = line.divide('\\s+'.r);
           if (breakup.length != 2)
             continue;
@@ -214,14 +214,14 @@ class AbbreviationsModel extends fm.ChangeNotifier {
   String replaceAbbreviations(String text) =>
       text.split('\\s+'.r)
           .map((word) => currentAbbreviations
-          .firstWhere((e) => e.abbr == word.toLowerCase(), orElse: () => null)?.expa ?? word)
+          .where((e) => e.abbr == word.toLowerCase()).firstOrNull?.expa ?? word)
           .join(' ');
 
 
   void defaultAbbreviations() {
     _clearStorage();
     for (var k in initialAbbreviations.keys)
-      prefs.setString('abbrev $k',initialAbbreviations[k]);
+      prefs.setString('abbrev $k',initialAbbreviations[k]!);
     _load();
     notifyListeners();
   }

@@ -202,14 +202,14 @@ class TaminationsRouterDelegate extends fm.RouterDelegate<TamState>
                             ),
                           if (appState.mainPage == MainPage.ANIMATIONS)
                             fm.MaterialPage(
-                                key: fm.ValueKey(appState.link + ' animation'),
+                                key: fm.ValueKey(appState.link! + ' animation'),
                                 child: AnimationPage()
                             ),
                           if (appState.detailPage == DetailPage.DEFINITION)
                             fm.MaterialPage(
                                 key: fm.ValueKey(
-                                    appState.link + ' definition'),
-                                child: WebPage(appState.link)
+                                    appState.link! + ' definition'),
+                                child: WebPage(appState.link!)
                             ),
                           if (appState.mainPage != MainPage.LEVELS &&
                               appState.detailPage == DetailPage.SETTINGS)
@@ -348,17 +348,14 @@ class TaminationsRouterDelegate extends fm.RouterDelegate<TamState>
 
   @override
   Future<void> setNewRoutePath(TamState configuration) async {
-    if (configuration != null) {
-      appState.change(
-          level: configuration.level,
-          link: configuration.link,
-          animnum: configuration.animnum,
-          mainPage:configuration.mainPage,
-          detailPage: configuration.detailPage
-      );
-      notifyListeners();
-    }
-    return;
+    appState.change(
+        level: configuration.level,
+        link: configuration.link,
+        animnum: configuration.animnum,
+        mainPage:configuration.mainPage,
+        detailPage: configuration.detailPage
+    );
+    notifyListeners();
   }
 }
 
@@ -370,7 +367,7 @@ class TaminationsRouteInformationParser extends fm.RouteInformationParser<TamSta
   @override
   Future<TamState>
   parseRouteInformation(fm.RouteInformation routeInformation) async {
-    final params = Uri.parse(routeInformation.location).queryParameters;
+    final params = Uri.parse(routeInformation.location!).queryParameters;
     var mainPage = params['main']?.toMainPage();
     var detailPage = params['detail']?.toDetailPage();
     var level = params['level'] ?? '';
@@ -380,7 +377,7 @@ class TaminationsRouteInformationParser extends fm.RouteInformationParser<TamSta
     if (params['action'] == 'ANIMLIST') {
       mainPage = MainPage.ANIMLIST;
       detailPage = DetailPage.DEFINITION;
-      level = LevelData.find(link).dir;
+      level = LevelData.find(link)!.dir;
     }
     return TamState(mainPage: mainPage, detailPage: detailPage, level:level,link:link,animnum:animnum);
   }
@@ -395,7 +392,7 @@ class TaminationsRouteInformationParser extends fm.RouteInformationParser<TamSta
 
 class _PortraitForSmallDevices extends fm.StatefulWidget {
   final fm.Widget child;
-  _PortraitForSmallDevices({@fm.required this.child});
+  _PortraitForSmallDevices({required this.child});
   @override
   __PortraitForSmallDevicesState createState() => __PortraitForSmallDevicesState();
 }

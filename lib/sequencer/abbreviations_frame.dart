@@ -20,7 +20,6 @@
 
 import 'package:flutter/material.dart' as fm;
 import 'package:flutter/services.dart';
-import 'package:meta/meta.dart';
 import 'package:provider/provider.dart' as pp;
 
 import '../button.dart';
@@ -48,7 +47,7 @@ class _AbbreviationsFrameState extends fm.State<AbbreviationsFrame> {
 
   var editRow = -1;
   var editExpansion = false;
-  fm.TextEditingController textEditController;
+  late fm.TextEditingController textEditController;
   var focusNode = fm.FocusNode();
   final scrollController = fm.ScrollController();
 
@@ -276,10 +275,10 @@ class _AbbreviationsWarningButton extends fm.StatelessWidget {
   final String message;
   final void Function() action;
   _AbbreviationsWarningButton({
-    @required this.name,
-    @required this.title,
-    @required this.message,
-    @required this.action});
+    required this.name,
+    required this.title,
+    required this.message,
+    required this.action});
   @override
   fm.Widget build(fm.BuildContext context) {
     return fm.Expanded(

@@ -47,9 +47,9 @@ class VerticalTag extends Action {
     if (!d.data.leader && !d.data.trailer)
       throw CallError('Dancer $d is not in a box');
     final dp = d.data.partner
-        ?? thrower(CallError('Cannot find partner for $d'));
+        .throwIfNull(CallError('Cannot find partner for $d'));
     final dt = (d.data.leader ? ctx.dancerInBack(d) : ctx.dancerInFront(d))
-        ?? thrower(CallError('Cannot find dancer in front or behind $d'));
+        .throwIfNull(CallError('Cannot find dancer in front or behind $d'));
     //  Distance from this dancer to center point of box
     final w = d.distanceTo(dp) / 2.0;
     final h = d.distanceTo(dt) / 2.0;

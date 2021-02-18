@@ -29,7 +29,7 @@ class VeryEnds extends FilterActives {
   VeryEnds() : super('Very Ends');
 
   @override
-  bool isActive(Dancer d, [CallContext ctx]) {
+  bool isActive(Dancer d, CallContext ctx) {
     var leftCount = ctx.dancersToLeft(d).length;
     var rightCount = ctx.dancersToRight(d).length;
     return min(leftCount,rightCount) == 0 &&

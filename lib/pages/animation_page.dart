@@ -28,8 +28,8 @@ import 'page.dart';
 
 class AnimationState extends fm.ChangeNotifier {
 
-  double beat;
-  int _part;
+  double beat = 0.0;
+  int _part = 0;
 
   int get part => _part;
   set part(int value) {
@@ -49,12 +49,12 @@ class AnimationPage extends fm.StatelessWidget {
         child: pp.Consumer2<TamState,TitleModel>(
             builder: (context, tamState, titleModel, _) {
               final painter = pp.Provider.of<DanceAnimationPainter>(context,listen:false);
-              TamUtils.getXMLAsset(tamState.link).then((doc) {
+              TamUtils.getXMLAsset(tamState.link!).then((doc) {
                 var tam = TamUtils.tamList(doc)
                     .where((it) => !(it('display','').startsWith('n')))
                     .toList()[max(0, tamState.animnum)];
                 painter.setAnimation(tam);
-                titleModel.title = tam.getAttribute('title');
+                titleModel.title = tam('title');
               });
               return fm.Column(
                 children: [
@@ -93,13 +93,13 @@ class AnimationFrame extends fm.StatefulWidget {
 class _AnimationFrameState extends fm.State<AnimationFrame>
     with fm.SingleTickerProviderStateMixin {
 
-  Vector locationTapped;
-  Dancer dancerTapped;
+  Vector locationTapped = Vector();
+  Dancer? dancerTapped;
   String partstr = '';
   bool hasParts = false;
-  List<double> partsValues;
+  List<double> partsValues = [];
   int currentPart = 0;
-  String startFormation;  // for sequencer
+  String startFormation = '';  // for sequencer
 
   //  Constructor
   _AnimationFrameState();
@@ -117,7 +117,7 @@ class _AnimationFrameState extends fm.State<AnimationFrame>
         value: colorName
       );
 
-  Future<String> _showColorPopup(fm.BuildContext context, String currentColor) {
+  Future<String?> _showColorPopup(fm.BuildContext context, String currentColor) {
     var screenSize = fm.MediaQuery.of(context).size.v;
     return fm.showMenu<String>(
         context: context,
@@ -196,10 +196,10 @@ class _AnimationFrameState extends fm.State<AnimationFrame>
                       final longPressHandler = () {
                         if (dancerTapped != null) {
                           _showColorPopup(
-                              context, settings.dancerColor(dancerTapped.number.i))
+                              context, settings.dancerColor(dancerTapped!.number.i))
                               .then((value) {
                             if (value != null)
-                              settings.setDancerColor(dancerTapped.number.i, value);
+                              settings.setDancerColor(dancerTapped!.number.i, value);
                           });
                         }
                       };
@@ -211,7 +211,7 @@ class _AnimationFrameState extends fm.State<AnimationFrame>
                           onTap: () {
                             if (dancerTapped != null) {
                               setState(() {
-                                painter.togglePath(dancerTapped);
+                                painter.togglePath(dancerTapped!);
                               });
                             }
                           },
@@ -273,9 +273,9 @@ class _AnimationFrameState extends fm.State<AnimationFrame>
               fm.CustomPaint(
                 painter: _SliderTicsPainter(
                     beats: painter.totalBeats,
-                    parts: painter.partstr ?? '',
-                    isParts: painter.hasParts ?? false,
-                    isCalls: painter.hasCalls ?? false
+                    parts: painter.partstr,
+                    isParts: painter.hasParts,
+                    isCalls: painter.hasCalls
                 ),
                 size: fm.Size.fromHeight(40.0),
                 ),
@@ -336,14 +336,14 @@ class _AnimationFrameState extends fm.State<AnimationFrame>
 
 class _SliderTicsPainter extends fm.CustomPainter {
 
-  double beats;
-  var isParts;
-  var isCalls;
+  double beats = 0.0;
+  var isParts = false;
+  var isCalls = false;
   List<double> partValues = [];
 
   _SliderTicsPainter({
-    @fm.required this.beats,
-    @fm.required String parts,
+    required this.beats,
+    required String parts,
     this.isParts=false,
     this.isCalls=false
   }) {

@@ -29,7 +29,7 @@ class CastOffThreeQuarters extends Action {
   @override
   Future<void> perform(CallContext ctx, [int stackIndex=0]) async {
     //  Dancers in mini-waves hinge three times
-    var waveDancers = ctx.actives.where((d) => ctx.isInWave(d));
+    var waveDancers = ctx.actives.where((d) => ctx.isInWave(d)).toList();
     if (waveDancers.isNotEmpty) {
       await ctx.subContext(waveDancers, (ctx2) async {
         await ctx2.applyCalls('Hinge','Hinge','Hinge');
@@ -39,7 +39,7 @@ class CastOffThreeQuarters extends Action {
     //  reverse wheel around 1.5
     var couplesLeft = ctx.actives.where((d) =>
     ctx.isInCouple(d) && d.isCenterLeft &&
-        d.data.partner.isActive && d.data.partner.isCenterLeft);
+        d.data.partner!.isActive && d.data.partner!.isCenterLeft).toList();
     if (couplesLeft.isNotEmpty) {
       await ctx.subContext(couplesLeft, (ctx2) async =>
           await ctx2.applyCalls('Reverse Wheel Around 1.5'));
@@ -47,7 +47,7 @@ class CastOffThreeQuarters extends Action {
     //  Couples left of center wheel around 1.5
     var couplesRight = ctx.actives.where((d) =>
     ctx.isInCouple(d) && d.isCenterRight &&
-        d.data.partner.isActive && d.data.partner.isCenterRight);
+        d.data.partner!.isActive && d.data.partner!.isCenterRight).toList();
     if (couplesLeft.isNotEmpty) {
       await ctx.subContext(couplesRight, (ctx2) async =>
       await ctx2.applyCalls('Wheel Around 1.5'));

@@ -31,8 +31,10 @@ class Ignore extends Action {
     //  Who should we ignore?
     final regex = 'ignore (?:the )?((?:${CodedCall.specifier} )+)(?:and )?(?:for a )?(.+)'.ri;
     final match = regex.firstMatch(name);
-    final who = match.group(1);
-    final call = match.group(2);
+    if (match == null)
+      throw CallError('Error parsing Ignore');
+    final who = match.group(1)!;
+    final call = match.group(2)!;
     await ctx.subContext(ctx.dancers, (ctx2) async {
       //  Remember the dancers that we will ignore
       await ctx2.interpretCall(who,noAction: true);

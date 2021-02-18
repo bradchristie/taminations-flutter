@@ -29,14 +29,14 @@ class RollToAWave extends Action {
     final dir = name.startsWith('Left') ? 'Left' : 'Right';
     final otherDir = name.startsWith('Left') ? 'Right' : 'Left';
     if (d.data.leader) {
-      final d2 = ctx.dancerInBack(d) ?? thrower('Error for dancer $d');
+      final d2 = ctx.dancerInBack(d).throwIfNull('Error for dancer $d');
       final dist = d.distanceTo(d2);
       return TamUtils.getMove('Flip $dir',
           beats: 4.0,
           scale: [1.0,0.25].v,
           skew: [-dist/2.0,0.0].v);
     } else if (d.data.trailer) {
-      final d2 = ctx.dancerInFront(d) ?? thrower('Error for dancer $d');
+      final d2 = ctx.dancerInFront(d).throwIfNull('Error for dancer $d');
       final dist = d.distanceTo(d2);
       return TamUtils.getMove('Extend $otherDir',
         beats: 4.0,

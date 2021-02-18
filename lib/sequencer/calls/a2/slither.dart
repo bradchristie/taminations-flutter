@@ -34,7 +34,7 @@ class Slither extends Action {
     else {
       //  Otherwise, all centers slither
       //  Check that it's not a partner trade
-      final ctxc = CallContext.fromContext(ctx,dancers:ctx.dancers.where((it) => it.data.center));
+      final ctxc = CallContext.fromContext(ctx,dancers:ctx.dancers.where((it) => it.data.center).toList());
       if (!ctxc.isWaves())
         throw CallError('Centers must be in a mini-wave.');
       ctx.dancers.where((it) => !it.data.center).forEach((it) { it.data.active = false; });
@@ -46,10 +46,10 @@ class Slither extends Action {
   Path performOne(Dancer d, CallContext ctx) {
     if (ctx.dancerToRight(d)?.isActive ?? false)
       return TamUtils.getMove('BackSashay Right',
-          scale:[1.0,d.distanceTo(ctx.dancerToRight(d))/2.0].v);
+          scale:[1.0,d.distanceTo(ctx.dancerToRight(d)!)/2.0].v);
     else if (ctx.dancerToLeft(d)?.isActive ?? false)
       return TamUtils.getMove('BackSashay Left',
-          scale:[1.0,d.distanceTo(ctx.dancerToLeft(d))/2.0].v);
+          scale:[1.0,d.distanceTo(ctx.dancerToLeft(d)!)/2.0].v);
     else
       throw CallError('Unable to calculate Sither.');
   }

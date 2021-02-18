@@ -28,7 +28,7 @@ class Centers extends FilterActives {
   Centers() : super('Centers');
 
   @override
-  bool isActive(Dancer d, [CallContext ctx]) => d.data.center;
+  bool isActive(Dancer d, CallContext ctx) => d.data.center;
 
   @override
   Future<void> performCall(CallContext ctx, [int stackIndex = 0]) async {

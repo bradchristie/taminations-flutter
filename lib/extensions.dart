@@ -24,11 +24,11 @@ import 'package:flutter/material.dart' as fm;
 import 'package:xml/xml.dart';
 
 void later(void Function() f) {
-  fm.WidgetsBinding.instance.addPostFrameCallback((_) { f(); });
+  fm.WidgetsBinding.instance!.addPostFrameCallback((_) { f(); });
 }
 
-Future<T> afterDelay<T>(T Function()f, [Duration when]) async {
-  return Future<T>.delayed(when,f);
+Future<T> afterDelay<T>(T Function()f, [Duration? when]) async {
+  return Future<T>.delayed(when ?? Duration(),f);
 }
 
 //  Useful for
@@ -112,20 +112,22 @@ extension TamString on String {
       substring(0,1).toUpperCase() + substring(1).toLowerCase();
   //  Capitalize words except for common small words
   String capWords() => split('\\s+'.r).map((s) => s.capitalize()).join(' ')
-      .replaceAllMapped('\\b(A|An|At|And|To|The)\\b'.r, (m) => m[1].toLowerCase());
+      .replaceAllMapped('\\b(A|An|At|And|To|The)\\b'.r, (m) => m[1]!.toLowerCase());
   //  Matches is true if the regexp matches the entire string
   bool matches(RegExp e) => (e.stringMatch(this)?.length ?? -1) == length;
   //  Divide is split with a limit of 2
   List<String> divide(Pattern p) =>
       replaceFirst(p,'\t').split('\t').map((e)=>e.trim()).toList();
   String get last => this[length-1];
-  int toIntOrNull() => int.tryParse(this);
+  int? toIntOrNull() => int.tryParse(this);
 
   String replaceMatch(RegExp regExp,String subst) {
     var match = regExp.firstMatch(this);
     var result = replaceFirst(regExp,subst);
-    for (var i=1; i<=match.groupCount; i++)
-      result = result.replaceAll('\\$i', match.group(i));
+    if (match != null) {
+      for (var i = 1; i <= match.groupCount; i++)
+        result = result.replaceAll('\\$i', match.group(i)!);
+    }
     return result;
   }
 
@@ -155,15 +157,16 @@ extension TamString on String {
 }
 
 extension TamIterable<E> on Iterable<E> {
-  E get firstOrNull => isNotEmpty ? first : null;
+  E? get firstOrNull => isNotEmpty ? first : null;
+  E? get lastOrNull => isNotEmpty ? last : null;
 }
 
 extension TamList<E> on List<E> {
 
   List<int> get indices => asMap().keys.toList();
   E get second => this[1];
-  E get secondOrNull => length > 1 ? second : null;
-  E getOrNull(int i) => (i >= 0 && i < length) ? this[i] : null;
+  E? get secondOrNull => length > 1 ? second : null;
+  E? getOrNull(int i) => (i >= 0 && i < length) ? this[i] : null;
   List<E> operator -(dynamic e) => (e is E)
       ? where((element) => element != e).toList()
       : (e is List<E>)
@@ -196,12 +199,11 @@ extension TamList<E> on List<E> {
     return [first,second];
   }
   bool none(bool Function(E element) test) => every((e) => !test(e));
-  List<E> whereNotNull() => where((element) => element != null).toList();
   double maxOf(double Function(E e) of) => fold(-double.maxFinite, (a, b) => max(a,of(b)));
   double minOf(double Function(E e) of) => fold(double.maxFinite, (a, b) => min(a,of(b)));
   List<E> unique() => toSet().toList();
 
-  E firstBy(Comparable Function(E) selector) {
+  E? firstBy(Comparable Function(E) selector) {
     if (isEmpty) return null;
     if (length == 1) return first;
     var best = first;
@@ -220,8 +222,9 @@ extension TamList<E> on List<E> {
     final map = <K,List<E>>{};
     for (final e in this) {
       final k = selector(e);
-      if (map[k] == null) map[k] = <E>[];
-      map[k].add(e);
+      if (map[k] == null)
+        map[k] = <E>[];
+      map[k]!.add(e);
     }
     return map;
   }
@@ -243,7 +246,7 @@ extension TamListList<E> on List<List<E>> {
 
 extension TamXmlElement on XmlElement {
 
-  String call(String name, [String dfault]) => getAttribute(name) ?? dfault;
+  String call(String name, [String? dfault]) => getAttribute(name) ?? dfault ?? '';
   List<XmlElement> childrenNamed(String name) {
     var a = children.toList();
     var b = a.whereType<XmlElement>();

@@ -72,7 +72,7 @@ class _SequenceFrameState extends fm.State<SequenceFrame> {
     return pp.Consumer<SequencerModel>(
         builder: (context, model, child) {
           final currentCall = model.currentCall;
-          SequencerCall call;
+          SequencerCall? call;
           try {
             call = model.calls[index];
           } on Error { call = null; };
@@ -95,7 +95,7 @@ class _SequenceFrameState extends fm.State<SequenceFrame> {
                   model.isComment(call?.name ?? '#')
                       ? _OneLine(call?.name ?? '','')
                       : fm.InkWell(
-                      highlightColor: call?.level?.color?.darker() ?? Color.WHITE,
+                      highlightColor: call?.level?.color.darker() ?? Color.WHITE,
                       onTap: () {
                         model.animateAtCall(index);
                       },
@@ -132,16 +132,15 @@ class SequencerEditLine extends fm.StatefulWidget {
 
 class _SequencerEditLineState extends fm.State<SequencerEditLine> {
 
-  fm.TextEditingController textFieldController;
+  fm.TextEditingController textFieldController = fm.TextEditingController();
   var focusNode = fm.FocusNode();
   final ItemScrollController itemScrollController = ItemScrollController();
   final ItemPositionsListener itemPositionsListener = ItemPositionsListener.create();
-  SpeechToTextProvider speechProvider;
+  late SpeechToTextProvider speechProvider;
 
   @override
   void initState() {
     super.initState();
-    textFieldController = fm.TextEditingController();
     later(() {
       if (!TamUtils.isTouchDevice())
         focusNode.requestFocus();

@@ -28,7 +28,7 @@ class Sides extends FilterActives {
   Sides(String name) : super(name);
 
   @override
-  bool isActive(Dancer d, [CallContext ctx]) =>
+  bool isActive(Dancer d, CallContext ctx) =>
       ctx.isSquare()
           ? d.location.y.abs().isAbout(3.0)
           : d.numberCouple=='2' || d.numberCouple=='4';

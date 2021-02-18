@@ -30,7 +30,7 @@ class AsCouples extends FourDancerConcept {
   List<List<Dancer>> dancerGroups(CallContext ctx) =>
       ctx.dancers.where((d) => d.data.beau)
       .map((d) {
-        final d2 = d.data.partner ?? thrower(CallError('No partner for $d'));
+        final d2 = d.data.partner.throwIfNull(CallError('No partner for $d'));
         if (!ctx.isInCouple(d,d2))
           throw CallError('$d and $d2 are not a Couple');
         return [d,d2];

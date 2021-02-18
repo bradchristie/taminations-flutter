@@ -23,12 +23,12 @@ import 'movement.dart';
 
 class Path {
 
-  List<Movement> movelist;
-  List<Matrix> _transformlist;
+  List<Movement> movelist = [];
+  List<Matrix> _transformlist = [];
 
   bool get isEmpty => movelist.isEmpty;
 
-  Path([List<Movement> moves]) {
+  Path([List<Movement>? moves]) {
     movelist = moves == null ? [] : moves.toList();
     recalculate();
   }
@@ -77,7 +77,7 @@ class Path {
     return m;
   }
 
-  Movement shift() {
+  Movement? shift() {
     if (movelist.isNotEmpty) {
       var m = movelist.removeAt(0);
       recalculate();
@@ -150,7 +150,7 @@ class Path {
     var bv = b;
     var tx = Matrix.getIdentity();
     //  Apply all completed movements
-    Movement m;
+    Movement? m;
     for (var i=0; i<movelist.length; i++) {
       m = movelist[i];
       if (bv > m.beats) {

@@ -18,15 +18,7 @@
 
 */
 
-import '../common/actives_only_action.dart';
-import '../../../level_data.dart';
-import '../../../math/path.dart';
-import '../../../dancer.dart';
-import '../../call_context.dart';
-import '../../call_error.dart';
-import '../../../extensions.dart';
-import '../../../tam_utils.dart';
-import '../../../math/vector.dart';
+import '../common.dart';
 
 class WheelAround extends ActivesOnlyAction {
 
@@ -36,8 +28,7 @@ class WheelAround extends ActivesOnlyAction {
 
   @override
   Path performOne(Dancer d, CallContext ctx) {
-    var d2 = d.data.partner
-        ?? thrower(CallError('Dancer $d must Wheel Around with partner'));
+    var d2 = d.data.partner.throwIfNull(CallError('Dancer $d must Wheel Around with partner'));
     var dist = d.distanceTo(d2);
     String move;
     if (name.startsWith('Reverse'))

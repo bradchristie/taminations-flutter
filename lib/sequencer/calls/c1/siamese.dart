@@ -24,23 +24,23 @@ class Siamese extends FourDancerConcept {
 
   @override final level = LevelData.C1;
   @override final conceptName = 'Siamese';
-  List<List<Dancer>> couples;
-  List<List<Dancer>> tandems;
+  late List<List<Dancer>> couples;
+  late List<List<Dancer>> tandems;
   Siamese(String name) : super(name);
 
   @override
   List<List<Dancer>> dancerGroups(CallContext ctx) {
     //  First find couples
     couples = ctx.dancers.where((d) =>
-        d.data.beau && (d.data.partner?.data?.belle ?? false) &&
-            (d.data.partner?.data?.partner == d))
-        .map((d) => [d,d.data.partner]).toList();
+        d.data.beau && (d.data.partner?.data.belle ?? false) &&
+            (d.data.partner?.data.partner == d))
+        .map((d) => [d,d.data.partner!]).toList();
     //  Remaining dancers are tandems
     tandems = ctx.dancers.where((d) {
       final d2 = ctx.dancerInBack(d);
       return d2 != null && ctx.dancersInBack(d).length % 2 == 1
           && couples.flatten().none((it) => it == d || it == d2);
-      }).map((d) => [d,ctx.dancerInBack(d)]).toList();
+      }).map((d) => [d,ctx.dancerInBack(d)!]).toList();
     //  Better be all the dancers
     if ((couples+tandems).flatten().length == ctx.dancers.length)
       return couples + tandems;

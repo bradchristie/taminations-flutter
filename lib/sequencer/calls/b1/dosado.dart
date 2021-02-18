@@ -28,7 +28,7 @@ class Dosado extends Action {
   Path performOne(Dancer d, CallContext ctx) {
     var d2 = ctx.dancerFacing(d) ??
         thrower(CallError('Dancer $d has no one to Dosado with.' ));
-    var dist = d.distanceTo(d2);
+    var dist = d.distanceTo(d2!);
     var dir1 = 'Left' ;
     var dir2 = 'Right' ;
     if (name.toLowerCase().startsWith('left' )) {

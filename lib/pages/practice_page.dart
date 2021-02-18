@@ -51,7 +51,7 @@ class PracticeModel {
     final appState = pp.Provider.of<TamState>(context,listen: false);
     final titleModel = pp.Provider.of<TitleModel>(context,listen: false);
     final settings = pp.Provider.of<Settings>(context,listen: false);
-    final levelDatum = LevelData.find(appState.level);
+    final levelDatum = LevelData.find(appState.level!)!;
     final levelCalls = TamUtils.calldata.where((element) =>
         levelDatum.selector(element.link)).toList();
     final randomCall = levelCalls[Random().nextInt(levelCalls.length)];
@@ -63,7 +63,7 @@ class PracticeModel {
         .where((element) => element.name.toString() == 'tam').toList();
     final randomAnim = Random().nextInt(tams.length);
     final randomTam = tams[randomAnim];
-    titleModel.title = randomTam.getAttribute('title');
+    titleModel.title = randomTam('title');
     titleModel.level = levelDatum.name;
     await painter.setAnimation(randomTam,
         practiceGender: settings.practiceGender=='Boy' ? Gender.BOY : Gender.GIRL);
@@ -93,7 +93,7 @@ class _PracticeFrameState extends fm.State<PracticeFrame>
   String congrats(double fraction) =>
       fraction >= 0.9 ? 'Excellent!'
           : fraction >= 0.7 ? 'Very Good!' : 'Poor';
-  Future<bool> waitForAnimation;
+  Future<bool>? waitForAnimation;
   final _focusNode = fm.FocusNode();
 
   // Focus nodes need to be disposed.
@@ -123,16 +123,16 @@ class _PracticeFrameState extends fm.State<PracticeFrame>
         if (event.physicalKey == PhysicalKeyboardKey.shiftLeft ||
             event.physicalKey == PhysicalKeyboardKey.shiftRight) {
           if (event is RawKeyDownEvent)
-            painter.practiceDancer.shiftDown = true;
+            painter.practiceDancer!.shiftDown = true;
           else if (event is RawKeyUpEvent)
-            painter.practiceDancer.shiftDown = false;
+            painter.practiceDancer!.shiftDown = false;
         }
         if (event.physicalKey == PhysicalKeyboardKey.controlLeft ||
             event.physicalKey == PhysicalKeyboardKey.controlRight) {
           if (event is RawKeyDownEvent)
-            painter.practiceDancer.ctlDown = true;
+            painter.practiceDancer!.ctlDown = true;
           else if (event is RawKeyUpEvent)
-            painter.practiceDancer.ctlDown = false;
+            painter.practiceDancer!.ctlDown = false;
         }
 
       },
@@ -151,25 +151,25 @@ class _PracticeFrameState extends fm.State<PracticeFrame>
                 titleModel.title = painter.title;
                 painter.setGridVisibility(true);
                 painter.setSpeed(settings.practiceSpeed);
-                painter.practiceDancer.primaryIsLeft =
+                painter.practiceDancer!.primaryIsLeft =
                     settings.primaryControl == 'Left Finger';
                 return fm.Listener(
                   onPointerDown: (event) {
-                    painter.practiceDancer.touchDown(
+                    painter.practiceDancer!.touchDown(
                         event.pointer,
                         painter.mouse2dance(event.position.v),
                         isMouse: event.kind == PointerDeviceKind.mouse
                     );
                   },
                   onPointerUp: (event) {
-                    painter.practiceDancer.touchUp(
+                    painter.practiceDancer!.touchUp(
                         event.pointer,
                         painter.mouse2dance(event.position.v),
                         isMouse: event.kind == PointerDeviceKind.mouse
                     );
                   },
                   onPointerMove: (event) {
-                    painter.practiceDancer.touchMove(
+                    painter.practiceDancer!.touchMove(
                         event.pointer,
                         painter.mouse2dance(event.position.v)
                     );

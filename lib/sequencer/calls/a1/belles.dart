@@ -27,6 +27,6 @@ class Belles extends FilterActives {
   Belles() : super('Belles');
 
   @override
-  bool isActive(Dancer d, [CallContext ctx]) => d.data.belle;
+  bool isActive(Dancer d, CallContext ctx) => d.data.belle;
 
 }

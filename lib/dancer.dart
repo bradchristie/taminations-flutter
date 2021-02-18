@@ -41,7 +41,7 @@ class DancerData {
   var center = false;
   var verycenter = false;
   var end = false;
-  Dancer partner;
+  Dancer? partner;
 }
 
 //  Dancer Space is a coordinate system where the dancer
@@ -50,6 +50,14 @@ class DancerData {
 //  based on the dancer's current location.
 extension DancerVector on Vector {
   Vector ds(Dancer d) => d.tx.inverse() * this;
+}
+
+extension DancerQ on Dancer? {
+  Dancer throwIfNull(Object e) {
+    if (this == null)
+      throw e;
+    return this!;
+  }
 }
 
 extension DancerList on List<Dancer> {
@@ -65,7 +73,7 @@ extension DancerList on List<Dancer> {
   //  Assumes dancers are distributed evenly around a central point
   List<Dancer> center() {
     if (length > 0) {
-      var vs = fold(Vector(0.0,0.0), (v, d) => v + d.location);
+      var vs = fold<Vector>(Vector(0.0,0.0), (v, d) => v + d.location);
       var va = vs / length.d;
       forEach((d) {
         d.setStartPosition(d.location - va);
@@ -150,7 +158,7 @@ class Dancer implements Comparable<Dancer> {
   Color fillColor;
   Geometry _geom;
   List<Movement> moves;
-  Dancer clonedFrom;
+  Dancer? clonedFrom;
 
   //  Computed
   Color get drawColor => fillColor.darker();
@@ -163,13 +171,13 @@ class Dancer implements Comparable<Dancer> {
   bool showPath = false;
   int hands = Hands.NOHANDS;
   Matrix tx = Matrix.getIdentity();
-  fm.Path _pathPath;
+  fm.Path? _pathPath;
   double get beats => path.beats;
   //  Other vars for computing handholds
-  Dancer leftDancer;
-  Dancer rightDancer;
-  Dancer rightGrip;
-  Dancer leftGrip;
+  Dancer? leftDancer;
+  Dancer? rightDancer;
+  Dancer? rightGrip;
+  Dancer? leftGrip;
   bool rightHandVisibility = false;
   bool leftHandVisibility = false;
   bool rightHandNewVisibility = false;
@@ -178,17 +186,19 @@ class Dancer implements Comparable<Dancer> {
   var name = '';  // for sequencer
 
   Dancer(this.number,this.numberCouple, this.gender,
-      this.fillColor, Matrix mat, this._geom, this.moves, [this.clonedFrom]) {
-    starttx = _geom.startMatrix(mat);
-    path = Path(moves);
-    if (clonedFrom != null) data.active = clonedFrom.data.active;
+      this.fillColor, Matrix mat, this._geom, this.moves, [this.clonedFrom])
+      : path = Path(moves),
+        starttx = _geom.startMatrix(mat)
+  {
+    if (clonedFrom != null)
+      data.active = clonedFrom!.data.active;
     // Compute points of path for drawing path
     computePath();
     //  Restore dancer to start position
     _animateComputed(-2.0);
   }
 
-  Dancer.clone(Dancer from,{String number, String numberCouple, int gender}) :
+  Dancer.clone(Dancer from,{String? number, String? numberCouple, int? gender}) :
       this(
           number ?? from.number,
           numberCouple ?? from.numberCouple,
@@ -315,11 +325,11 @@ class Dancer implements Comparable<Dancer> {
     _animateComputed(0);
     var loc = location;
     _pathPath = fm.Path();
-    _pathPath.moveTo(loc.x, loc.y);
+    _pathPath!.moveTo(loc.x, loc.y);
     for (var beat = 0.1; beat <= beats; beat += 0.1) {
       _animateComputed(beat);
       loc = location;
-      _pathPath.lineTo(loc.x, loc.y);
+      _pathPath!.lineTo(loc.x, loc.y);
     }
   }
 
@@ -331,7 +341,7 @@ class Dancer implements Comparable<Dancer> {
       ..color = drawColor.withAlpha(128)
       ..style = fm.PaintingStyle.stroke
       ..strokeWidth = 0.1;
-    c.drawPath(_pathPath, p);
+    c.drawPath(_pathPath!, p);
   }
 
   //  Draw the dancer at its current position

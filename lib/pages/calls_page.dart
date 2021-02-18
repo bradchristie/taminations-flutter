@@ -74,9 +74,9 @@ class _CallsFrameState extends fm.State<CallsFrame> {
             //  Landscape gets a grid, portrait gets a list
               child: pp.Consumer2<TitleModel,TamState>(
                 builder: (context,titleModel,tamState,_) {
-                  titleModel.title = LevelData.find(tamState.level).name;
+                  titleModel.title = LevelData.find(tamState.level!)!.name;
                   //  Get the initial list of calls to show
-                  final levelDatum = LevelData.find(tamState.level);
+                  final levelDatum = LevelData.find(tamState.level!)!;
                   final showLevel = RegExp('(bms|adv|cha|all)').hasMatch(levelDatum.dir);
                   final calls = TamUtils.calldata.where((element) =>
                       levelDatum.selector(element.link)).toList();
@@ -132,9 +132,9 @@ class _CallsFrameState extends fm.State<CallsFrame> {
         builder: (context,tamState,_) =>
          fm.Material(
           //  Color the item according the the level
-          color: LevelData.find(callsSearched[index].link).color,
+          color: LevelData.find(callsSearched[index].link)!.color,
           child: fm.InkWell(
-            highlightColor: LevelData.find(callsSearched[index].link).color.darker(),
+            highlightColor: LevelData.find(callsSearched[index].link)!.color.darker(),
               onTap: () {
                 tamState.change(
                     mainPage: MainPage.ANIMLIST,
@@ -154,7 +154,7 @@ class _CallsFrameState extends fm.State<CallsFrame> {
                     fm.Container(
                         alignment: fm.Alignment.topRight,
                         padding: fm.EdgeInsets.only(top:2,right:2),
-                        child: fm.Text(LevelData.find(callsSearched[index].link).name)
+                        child: fm.Text(LevelData.find(callsSearched[index].link)!.name)
                   )
                 ],
               )

@@ -183,14 +183,14 @@ class CallContext {
 
   static Future<XmlDocument> loadOneFile(String link) async {
     if (loadedMXL.containsKey(link))
-      return loadedMXL[link];
+      return loadedMXL[link]!;
     var doc = await TamUtils.getXMLAsset(link);
     //  Add all the calls to the index
     doc.findAllElements('tam').forEach((tam) {
       var norm = TamUtils.normalizeCall(tam('title')).toLowerCase();
       if (!callindex.containsKey(norm))
         callindex[norm] = <String>{};
-      callindex[norm].add(link);
+      callindex[norm]!.add(link);
     });
     loadedMXL[link] = doc;
     return doc;
@@ -198,9 +198,9 @@ class CallContext {
 
   static Set<String> xmlFilesForCall(String norm) {
     var callfiles1 = TamUtils.callmap.containsKey(norm)
-        ? TamUtils.callmap[norm].map((e) => e.link) : <String>[];
+        ? TamUtils.callmap[norm]!.map((e) => e.link) : <String>[];
     var callfiles2 = callindex.containsKey(norm)
-        ? callindex[norm] : <String>{};
+        ? callindex[norm]! : <String>{};
     callfiles2.addAll(callfiles1);
     return callfiles2;
   }
@@ -225,13 +225,13 @@ class CallContext {
 
   /////// end of static code ///////
 
-  List<Dancer> dancers;
+  late List<Dancer> dancers;
   String callname = '';
-  LevelData level = LevelData.find('b1');
+  LevelData level = LevelData.find('b1')!;
   List<Call> callstack = [];
   List<List<Dancer>> groups = [];
   String get groupstr => groups.map((e) => e.length).join();
-  CallContext _source;
+  CallContext? _source;
   bool _snap = true;
   bool _thoseWhoCan = false;
   bool resolutionError = false;
@@ -251,7 +251,7 @@ class CallContext {
 
   CallContext.fromContext(
       CallContext source, {
-        List<Dancer> dancers,
+        List<Dancer>? dancers,
         double beat = double.maxFinite
       }) {
     dancers ??= source.dancers;
@@ -271,7 +271,7 @@ class CallContext {
     var coupleArray = TamUtils.getCouples(tam);
     var paths = loadPaths ? tam.childrenNamed('path') : [];
     var fname = tam('formation');
-    var f = fname != null
+    var f = fname.isNotBlank
         ? TamUtils.getFormation(fname)
         : (tam.childrenNamed('formation').firstOrNull ?? tam);
     var dancerElements = f.childrenNamed('dancer');
@@ -283,7 +283,7 @@ class CallContext {
       //  diagonal opposite.  Required for mapping.
       dancers.add(Dancer(
         numberArray[i*2], coupleArray[i*2],
-          genderMap[element('gender')],
+          genderMap[element('gender')]!,
         Color.WHITE,  // not used
         Matrix.getTranslation(element('x').d,element('y').d) *
           Matrix.getRotation(element('angle').d.toRadians),
@@ -292,7 +292,7 @@ class CallContext {
       ));
       dancers.add(Dancer(
           numberArray[i*2+1], coupleArray[i*2+1],
-          genderMap[element('gender')],
+          genderMap[element('gender')]!,
           Color.WHITE,  // not used
           Matrix.getTranslation(element('x').d,element('y').d) *
               Matrix.getRotation(element('angle').d.toRadians),
@@ -311,12 +311,12 @@ class CallContext {
   /// Append the result of processing this CallContext to it source.
   /// The CallContext must have been previously cloned from the source.
   //  Return true if anything new was added.
-  bool appendToSource([CallContext ctx]) {
+  bool appendToSource([CallContext? ctx]) {
     var didSomething = false;
     dancers.forEach((clone) {
       var original = ctx == null
           ? clone.clonedFrom
-          : ctx.dancers.firstWhere((d) => d == clone, orElse: ()=>null);
+          : ctx.dancers.where((d) => d == clone).firstOrNull;
       if (original != null) {
         //  Phantoms might have been rotated in clone,
         //  so set start angle in original to match
@@ -327,8 +327,8 @@ class CallContext {
         original.animateToEnd();
       }
     });
-    if (_source != null && _source.level < level)
-      _source.level = level;
+    if (_source != null && _source!.level < level)
+      _source!.level = level;
     return didSomething;
   }
 
@@ -338,7 +338,6 @@ class CallContext {
   //  Then transfer any new calls from the created CallContext to this CallContext.
   //  Return true if anything new was added.
   Future<bool> subContext(List<Dancer> dancers, Future<void> Function(CallContext) block) async {
-    dancers ??= this.dancers;
     var ctx = CallContext.fromContext(this,dancers:dancers.inOrder());
     await block(ctx);
     return ctx.appendToSource(this);
@@ -387,8 +386,8 @@ class CallContext {
     ctx2.appendToSource();
   }
 
-  Future<void> applyCalls(String call1, [String call2, String call3, String call4]) async {
-    var calls = [call1,call2,call3,call4].whereNotNull();
+  Future<void> applyCalls(String call1, [String? call2, String? call3, String? call4]) async {
+    var calls = [call1,call2,call3,call4].whereType<String>();
     for (var call in calls) {
       await _applyCall(call);
     }
@@ -511,7 +510,7 @@ class CallContext {
     //  Found xml file with call, now look through each animation
     var found = callfiles.isNotEmpty;
     var bestOffset = double.maxFinite;
-    XMLCall xmlCall;
+    XMLCall? xmlCall;
     var title = '';
 
     for (var link in callfiles) {
@@ -537,7 +536,7 @@ class CallContext {
             handholds: !fuzzy, headsMatchSides: headsMatchSides);
         if (mm != null) {
           var matchResult = ctx1.computeFormationOffsets(ctx2, mm,delta: 0.2);
-          var totOffset = matchResult.offsets.fold(0.0, (s, v) => s + v.length);
+          var totOffset = matchResult.offsets.fold<double>(0.0, (s, v) => s + v.length);
           if (totOffset < bestOffset) {
             xmlCall = XMLCall(tam,mm,ctx2);
             bestOffset = totOffset;
@@ -556,7 +555,7 @@ class CallContext {
         // add XMLCall object to the call stack
         ctx0.callstack.add(xmlCall);
         ctx0.callname = callname + title.replaceAll('\\(.*\\)'.r, '') + ' ';
-        var thislevel = LevelData.find(link);
+        var thislevel = LevelData.find(link)!;
         if (thislevel > ctx0.level)
           ctx0.level = thislevel;
         return true;
@@ -652,7 +651,7 @@ class CallContext {
   //  Most often ctx2 is a defined formation.
   //  Returns a mapping from ctx1 to ctx2
   //  or null if no mapping.
-  List<int> matchFormations(CallContext ctx2,{
+  List<int>? matchFormations(CallContext ctx2,{
     bool sexy=false, // don't match girls with boys
     bool fuzzy=false,  // dancers can be somewhat offset
     int rotate=0, // rotate dancers by 90s or 180 degrees to match
@@ -667,7 +666,7 @@ class CallContext {
       return null;
     //  Find mapping using DFS
     var mapping = List.filled(dancers.length, -1);
-    List<int> bestmapping;
+    List<int>? bestmapping;
     var bestOffset = 0.0;
     var rotated = List.filled(dancers.length, 0);
     var mapindex = 0;
@@ -710,11 +709,11 @@ class CallContext {
           //  Rate the mapping and save if best
           var matchResult = computeFormationOffsets(ctx2,mapping);
           //  Don't match if some dancers are too far from their mapped location
-          var maxOffset = matchResult.offsets.firstBy((it) => -it.length);
+          var maxOffset = matchResult.offsets.firstBy((it) => -it.length)!;
           //  Don't match if rotation is not multiple of 90 degrees
           var angsnap = matchResult.transform.angle / (pi / 2);
           if (maxOffset.length < maxError && angsnap.isApproxInt(delta : 0.2)) {
-            var totOffset = matchResult.offsets.fold(0.0, (s, v) => s + v.length);
+            var totOffset = matchResult.offsets.fold<double>(0.0, (s, v) => s + v.length);
             if (bestmapping == null || totOffset < bestOffset) {
               bestmapping = mapping.copy();
               bestOffset = totOffset;
@@ -825,7 +824,7 @@ class CallContext {
     var ctx1 = CallContext.fromContext(this);
     for (var d in ctx1.dancers)
       d.data.active = true;
-    BestMapping bestMapping;
+    BestMapping? bestMapping;
     for (var f in formations.keys) {
       var ctx2 = CallContext.fromXML(TamUtils.getFormation(f));
       //  See if this formation matches
@@ -837,13 +836,13 @@ class CallContext {
         //  If the match is at some odd angle (not a multiple of 90 degrees)
         //  then consider it bogus
         var angsnap = matchResult.transform.angle / (pi / 2);
-        var totOffset = matchResult.offsets.fold(0.0, (s, v) => s + v.length );
+        var totOffset = matchResult.offsets.fold<double>(0.0, (s, v) => s + v.length );
         //  Favor formations closer to the top of the list
         //  Especially favor lines
-        var favoring = formations[f];
+        var favoring = formations[f]!;
         //  Special hack to favor lines over boxes
         var specialHack =
-        ((bestMapping?.name?.startsWith('Normal Lines') ?? false) &&
+        ((bestMapping?.name.startsWith('Normal Lines') ?? false) &&
             f == 'Double Pass Thru');
         if (totOffset < 9.0 && angsnap.isApproxInt(delta : 0.05) && !specialHack) {
           if (bestMapping == null || totOffset*favoring + 0.2 < bestMapping.totalOffset)
@@ -909,7 +908,7 @@ class CallContext {
   ///  which are rotated together
   ///  unless asym is set
   ///  as this is required for XML mapping to work
-  Future<CallContext> rotatePhantoms(String call,
+  Future<CallContext>? rotatePhantoms(String call,
       {int rotate=180, bool asym=false}) async {
     var phantoms = dancers.where((it) => it.gender == Gender.PHANTOM).toList();
     //  Compute number of possibilities
@@ -944,12 +943,12 @@ class CallContext {
       }
       //  This rotation does not work
     }
-    return null;
+    return Future.value(null);
   }
 
   //  Use phantoms to fill in a formation starting from the dancers
   //  in the current context
-  CallContext fillFormation(String fname) {
+  CallContext? fillFormation(String fname) {
     //  Use letters for phantom numbers so there's no way they can
     //  match the real dancers
     var letters = 'ABCDEFGH';
@@ -978,28 +977,28 @@ class CallContext {
 
   //  Return all dancers, ordered by distance from another dancer,
   //  that satisfies a conditional
-  List<Dancer> dancersInOrder(Dancer d, [bool Function(Dancer d) f]) =>
-      (dancers - d).where(f ?? true).toList().sortedBy((d2) => d.distanceTo(d2) );
+  List<Dancer> dancersInOrder(Dancer d, [bool Function(Dancer d)? f]) =>
+      (dancers - d).where(f ?? (d)=>true).toList().sortedBy((d2) => d.distanceTo(d2) );
 
   //  Return closest dancer that satisfies a given conditional
-  Dancer dancerClosest(Dancer d, bool Function(Dancer d2) f) =>
+  Dancer? dancerClosest(Dancer d, bool Function(Dancer d2) f) =>
       dancersInOrder(d,f).firstOrNull;
 
   //  Return dancer directly in front of given dancer
-  Dancer dancerInFront(Dancer d) =>
+  Dancer? dancerInFront(Dancer d) =>
       dancerClosest(d, (d2) => d2.isInFrontOf(d));
   //  Return dancer directly in back of given dancer
-  Dancer dancerInBack(Dancer d) =>
+  Dancer? dancerInBack(Dancer d) =>
       dancerClosest(d, (d2) => d2.isInBackOf(d));
   //  Return dancer directly to the right of given dancer
-  Dancer dancerToRight(Dancer d) =>
+  Dancer? dancerToRight(Dancer d) =>
       dancerClosest(d, (d2) => d2.isRightOf(d));
   //  Return dancer directly to the left of given dancer
-  Dancer dancerToLeft(Dancer d) =>
+  Dancer? dancerToLeft(Dancer d) =>
       dancerClosest(d, (d2) => d2.isLeftOf(d));
 
   //  Return dancer that is facing the front of this dancer
-  Dancer dancerFacing(Dancer d) {
+  Dancer? dancerFacing(Dancer d) {
     var d2 = dancerInFront(d);
     return d2 != null && dancerInFront(d2) == d ? d2 : null;
   }
@@ -1070,7 +1069,7 @@ class CallContext {
   }
 
   //  Return true if this dancer is in a wave or mini-wave
-  bool isInWave(Dancer d, [Dancer d2]) {
+  bool isInWave(Dancer d, [Dancer? d2]) {
     d2 ??= d.data.partner;
     return d2 != null && d.angleToDancer(d2).isAround(d2.angleToDancer(d)) &&
         d.distanceTo(d2) < 2.1;
@@ -1081,7 +1080,7 @@ class CallContext {
       d.angleFacing.isAround(d2.angleFacing);
 
   //  Return true if this dancer is part of a couple facing same direction
-  bool isInCouple(Dancer d, [Dancer d2]) {
+  bool isInCouple(Dancer d, [Dancer? d2]) {
     d2 ??= d.data.partner;
     return d2 != null && isFacingSameDirection(d,d2);
   }
@@ -1089,9 +1088,9 @@ class CallContext {
   //  Return true if this dancer is in tandem with another dancer
   bool isInTandem(Dancer d) {
     if (d.data.trailer)
-      return dancerInFront(d)?.data?.leader ?? false;
+      return dancerInFront(d)?.data.leader ?? false;
     else if (d.data.leader)
-      return dancerInBack(d)?.data?.trailer ?? false;
+      return dancerInBack(d)?.data.trailer ?? false;
     else
       return false;
   }
@@ -1172,16 +1171,16 @@ class CallContext {
 
   //  Direction dancer would turn to Tag the Line
   String tagDirection(Dancer d) {
-    if (dancerToRight(d)?.data?.center == true)
+    if (dancerToRight(d)?.data.center == true)
       return 'Right';
-    else if (dancerToLeft(d)?.data?.center == true)
+    else if (dancerToLeft(d)?.data.center == true)
       return 'Left';
     return '';
   }
 
   //  Is there a dancer at a specific spot?
-  Dancer dancerAt(Vector spot) =>
-      dancers.firstWhere((d) => d.location == spot, orElse: () => null);
+  Dancer? dancerAt(Vector spot) =>
+      dancers.where((d) => d.location == spot).firstOrNull;
 
   //  Are two dancers on the same spot?
   bool isCollision() => dancers.any((d) =>
@@ -1192,10 +1191,10 @@ class CallContext {
 
   //  Get direction dancer would Roll
   Rolling roll(Dancer d) {
-    var move = d.path.movelist.lastWhere((m) => m.fromCall, orElse: () => null);
-    if ((move?.brotate?.rolling() ?? 0.0) > 0.1)
+    var move = d.path.movelist.where((m) => m.fromCall).lastOrNull;
+    if ((move?.brotate.rolling() ?? 0.0) > 0.1)
       return Rolling.LEFT;
-    else if ((move?.brotate?.rolling() ?? 0.0) < -0.1)
+    else if ((move?.brotate.rolling() ?? 0.0) < -0.1)
       return Rolling.RIGHT;
     return Rolling.NONE;
   }
@@ -1268,8 +1267,7 @@ class CallContext {
         d.data.trailer = d2.data.trailer;
         d.data.center = d2.data.center;
         d.data.end = d2.data.end;
-        d.data.partner = dancers.firstWhere((it) => it == d2.data.partner,
-            orElse: () => null);
+        d.data.partner = dancers.where((it) => it == d2.data.partner).firstOrNull;
       }
     }
   }
@@ -1301,12 +1299,12 @@ class CallContext {
       var bestRightMismatch = bestright != null &&
           !isInWave(d1,bestright) && !isInCouple(d1,bestright);
       if (leftcount % 2 == 1 && rightcount % 2 == 0 && !bestleftMismatch &&
-          d1.distanceTo(bestleft) < 3 || (bestleft != null && bestRightMismatch)) {
+          d1.distanceTo(bestleft!) < 3 || (bestleft != null && bestRightMismatch)) {
         d1.data.partner = bestleft;
         d1.data.belle = true;
       }
       else if (rightcount % 2 == 1 && leftcount % 2 == 0 && !bestRightMismatch &&
-          d1.distanceTo(bestright) < 3 || (bestright != null && bestleftMismatch)) {
+          d1.distanceTo(bestright!) < 3 || (bestright != null && bestleftMismatch)) {
         d1.data.partner = bestright;
         d1.data.beau = true;
       }

@@ -46,9 +46,9 @@ class TamUtils {
   static final Map<String,XmlElement> _formations = {};
   static final Map<String,XmlElement> _moves = {};
   //  CSS to be injected in web pages
-  static String css;
+  static String css = '';
   //  Javascript to be injected in web pages
-  static String framecode;
+  static String framecode = '';
   //  Keep a set of all words used in calls.
   //  Used to check sequencer abbreviations - don't let the use make
   //  an abbreviation for a real word.
@@ -99,7 +99,7 @@ class TamUtils {
       //  Index link to this call by its normalized name
       var norm = data.norm;
       if (callmap.containsKey(norm))
-        callmap[norm].add(data);
+        callmap[norm]!.add(data);
       else
         callmap[norm] = [ data ];
     }
@@ -110,7 +110,7 @@ class TamUtils {
       calldata.firstWhere((datum) => datum.link == link).title;
 
   ///  Get all tam and tamxref elements from an animation XML document
-  static List<XmlElement> tamList(XmlDocument doc) => doc.firstElementChild
+  static List<XmlElement> tamList(XmlDocument doc) => doc.firstElementChild!
       .children.toList()
       .whereType<XmlElement>().cast<XmlElement>()
       .where((element) =>
@@ -126,9 +126,9 @@ class TamUtils {
       var futureTam = getXMLAsset(link).then((doc) {
         var tams = doc.findAllElements('tam');
         var first = tams.firstWhere((it) =>
-            (title == null || it('title') == title) &&
-            (from == null || it('from') == from) &&
-            (formation == null || it('formation') == formation));
+            (title.isBlank || it('title') == title) &&
+            (from.isBlank || it('from') == from) &&
+            (formation.isBlank || it('formation') == formation));
         return first;
       });
       return futureTam;
@@ -156,7 +156,7 @@ class TamUtils {
     for (var i=0; i<paths.length; i++) {
       var p = paths[i];
       var n = p('numbers');
-      if (n != null) {  //  numbers supplied in animation XML
+      if (n.isNotBlank) {  //  numbers supplied in animation XML
         retval[i*2] = n.substring(0,1);
         retval[i*2+1] = n.substring(2,3);
       } else if (i > 3) {  //  phantoms
@@ -181,7 +181,7 @@ class TamUtils {
     for (var i=0; i<paths.length; i++) {
       var p = paths[i];
       var c = p('couples');
-      if (c != null) {
+      if (c.isNotBlank) {
         retval[i*2] = c.substring(0,1);
         retval[i*2+1] = c.substring(2,3);
       }
@@ -223,24 +223,24 @@ class TamUtils {
   static List<Movement> _translateMove(XmlElement move) {
     //  First retrieve the requested path
     var moveName = move('select');
-    var pathElem = _moves[moveName];
+    var pathElem = _moves[moveName]!;
     //  Get the list of movements
     var movements = translatePath(pathElem);
     //  Get any modifications
     var scaleX = move('scaleX','1').d;
     var scaleY = move('scaleY','1').d *
-        (move('reflect')==null ? 1 : -1);
+        (move('reflect').isBlank ? 1 : -1);
     var offsetX = move('offsetX','0').d;
     var offsetY = move('offsetY','0').d;
     var hands = move('hands');
     //  Sum up the total beats so if beats is given as a modification
     //  we know how much to change each movement
-    var oldBeats = movements.fold(0.0, (b, m) => b + m.beats);
-    var beatFactor = (move('beats')?.d ?? oldBeats) / oldBeats;
+    var oldBeats = movements.fold<double>(0.0, (b, m) => b + m.beats);
+    var beatFactor = move('beats').isBlank ? 1.0 : move('beats').d / oldBeats;
     //  Now go through the movements applying the modifications
     //  The resulting list is the return value
     return movements.map((m) =>
-        m.useHands(hands != null ? Hands.getHands(hands) : m.hands)
+        m.useHands(hands.isNotBlank ? Hands.getHands(hands) : m.hands)
         .scale(scaleX,scaleY)
         .skew(offsetX,offsetY)
         .time(m.beats * beatFactor)).toList();
@@ -248,13 +248,13 @@ class TamUtils {
 
   ///   Gets a named path (move) from the file of moves
   static Path getMove(String name, {
-    Vector scale,
-    Vector skew,
-    int hands,
-    double beats,
-    bool reflect
+    Vector? scale,
+    Vector? skew,
+    int? hands,
+    double? beats,
+    bool? reflect
   }) {
-    var path = Path(_translate(_moves[name]));
+    var path = Path(_translate(_moves[name]!));
     if (scale != null)
       path.scale(scale.x,scale.y);
     if (skew != null)
@@ -309,7 +309,7 @@ class TamUtils {
   //  'Column' of Magic Column is optional
       .replaceAll('magic (?!column)(?!o)(?!expand)'.ri,'magic column ')
   //  Use singular form
-      .replaceAllMapped('\\b(boy|girl|beau|belle|center|end|point|head|(out)?side)s\\b'.ri, (m) => m[1])
+      .replaceAllMapped('\\b(boy|girl|beau|belle|center|end|point|head|(out)?side)s\\b'.ri, (m) => m[1]!)
   //  Misc other variations
       .replaceAll('\\bswap(\\s+around)?\\b'.ri,'swap')
       .replaceAll('\\bmen\\b'.ri,'boy')
@@ -335,7 +335,7 @@ class TamUtils {
   //  Also handle 'Lead Couples' as 'Leads'
   //  but make sure not to clobber 'As Couples' or 'Couples Hinge'
       .replaceAllMapped('((head|side|lead|trail|center|end).)couple'.ri,
-          (m) => m[1])
+          (m) => m[1]!)
   //  Finally remove non-alphanums and strip spaces
       .replaceAll('\\W'.ri,'')
       .replaceAll('\\s'.ri,'');

@@ -37,17 +37,17 @@ class Stretch extends Action {
     ctx.analyze();
     for (final d in ctx.dancers.where((d) => d.data.center)) {
       Vector shift;
-      if (ctx.dancerInFront(d)?.data?.end ?? false) {
-        final d2 = ctx.dancerInBack(d) ?? thrower(CallError('Unable to calculate Stretch'));
+      if (ctx.dancerInFront(d)?.data.end ?? false) {
+        final d2 = ctx.dancerInBack(d).throwIfNull(CallError('Unable to calculate Stretch'));
         shift = Vector(-d.distanceTo(d2),0.0);
-      } else if (ctx.dancerInBack(d)?.data?.end ?? false) {
-        final d2 = ctx.dancerInFront(d) ?? thrower(CallError('Unable to calculate Stretch'));
+      } else if (ctx.dancerInBack(d)?.data.end ?? false) {
+        final d2 = ctx.dancerInFront(d).throwIfNull(CallError('Unable to calculate Stretch'));
         shift = Vector(d.distanceTo(d2),0.0);
-      } else if (ctx.dancerToLeft(d)?.data?.end ?? false) {
-        final d2 = ctx.dancerToRight(d) ?? thrower(CallError('Unable to calculate Stretch'));
+      } else if (ctx.dancerToLeft(d)?.data.end ?? false) {
+        final d2 = ctx.dancerToRight(d).throwIfNull(CallError('Unable to calculate Stretch'));
         shift = Vector(0.0,-d.distanceTo(d2));
-      } else if (ctx.dancerToRight(d)?.data?.end ?? false) {
-        final d2 = ctx.dancerToLeft(d) ?? thrower(CallError('Unable to calculate Stretch'));
+      } else if (ctx.dancerToRight(d)?.data.end ?? false) {
+        final d2 = ctx.dancerToLeft(d).throwIfNull(CallError('Unable to calculate Stretch'));
         shift = Vector(0.0,d.distanceTo(d2));
       } else
         throw CallError('Unable to find direction to Stretch');

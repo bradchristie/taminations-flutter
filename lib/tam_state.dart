@@ -55,16 +55,16 @@ extension DetailPageEx on String {
 //  generate the current layout
 class TamState extends fm.ChangeNotifier {
 
-  String _level;
-  String get level => _level;
-  String _link;
-  String get link => _link;
+  String? _level;
+  String? get level => _level;
+  String? _link;
+  String? get link => _link;
   int _animnum;
   int get animnum => _animnum;
-  MainPage _mainPage;
-  MainPage get mainPage => _mainPage;
-  DetailPage _detailPage;
-  DetailPage get detailPage => _detailPage;
+  MainPage? _mainPage;
+  MainPage? get mainPage => _mainPage;
+  DetailPage? _detailPage;
+  DetailPage? get detailPage => _detailPage;
 
   @override
   bool operator ==(Object other) =>
@@ -81,8 +81,8 @@ class TamState extends fm.ChangeNotifier {
   }) : _level=level, _link=link, _animnum=animnum,
         _mainPage=mainPage, _detailPage=detailPage;
 
-  void change({String level, String link, int animnum,
-    MainPage mainPage, DetailPage detailPage}) {
+  void change({String? level, String? link, int? animnum,
+    MainPage? mainPage, DetailPage? detailPage}) {
     final before = toString();
     _level = level ?? _level;
     _link = link ?? _link;
@@ -96,12 +96,12 @@ class TamState extends fm.ChangeNotifier {
   //  For URL generation
   @override
   String toString() => <String>[
-    if (level != null && level.isNotEmpty) 'level=$level',
+    if (level != null && level!.isNotEmpty) 'level=$level',
     if (animnum >= 0) 'animnum=${animnum.d}',
-    if (link != null && link.isNotEmpty) 'link=$link',
-    if (mainPage != null) 'main=${describeEnum(mainPage)}',
+    if (link != null && link!.isNotEmpty) 'link=$link',
+    if (mainPage != null) 'main=${describeEnum(mainPage!)}',
     if (detailPage != null && detailPage!=DetailPage.NONE)
-      'detail=${describeEnum(detailPage)}'
+      'detail=${describeEnum(detailPage!)}'
   ].join('&');
 
   bool get isBlank => toString().isBlank;

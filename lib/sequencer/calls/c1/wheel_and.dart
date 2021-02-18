@@ -32,7 +32,7 @@ class WheelAnd extends Action {
     final andCall = divided[1];
     final reverse = wheelCall.contains('Reverse') ? 'Reverse' : '';
     //  Find the 4 dancers to Wheel
-    final facingOut = ctx.dancers.where((d) => d.isFacingOut);
+    final facingOut = ctx.dancers.where((d) => d.isFacingOut).toList();
     //  Check for t-bones, center 4 facing out, outer 4 facing their shoulders
     if (ctx.center(4).containsAll(facingOut))
       await ctx.applyCalls('As Couples Step');

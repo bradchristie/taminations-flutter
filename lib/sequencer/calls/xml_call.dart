@@ -34,7 +34,7 @@ class XMLCall extends Call {
   final CallContext ctx2;
 
   XMLCall(this.xelem, this.xmlmap, this.ctx2)
-      : super(xelem.getAttribute('title'));
+      : super(xelem('title'));
 
   @override
   Future<void> performCall(CallContext ctx, [int stackIndex = 0]) async {

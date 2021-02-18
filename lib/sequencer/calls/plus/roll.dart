@@ -39,7 +39,7 @@ class Roll extends Action {
       Rolling.LEFT : 'Quarter Left',
       Rolling.RIGHT : 'Quarter Right',
       Rolling.NONE : 'Stand'
-    }[roll];
+    }[roll]!;
     return TamUtils.getMove(move);
   }
 

@@ -29,11 +29,11 @@ class HalfSashay extends Action {
     //  Figure out who we sashay with
     Dancer d2;
     if (ctx.actives.contains(d.data.partner) && (d.data.beau || d.data.belle))
-      d2 = d.data.partner;
-    else if (ctx.dancerToRight(d)?.data?.active ?? false)
-      d2 = ctx.dancerToRight(d);
-    else if (ctx.dancerToLeft(d)?.data?.active ?? false)
-      d2 = ctx.dancerToLeft(d);
+      d2 = d.data.partner!;
+    else if (ctx.dancerToRight(d)?.data.active ?? false)
+      d2 = ctx.dancerToRight(d)!;
+    else if (ctx.dancerToLeft(d)?.data.active ?? false)
+      d2 = ctx.dancerToLeft(d)!;
     else
       throw CallError('Dancer $d has nobody to Sashay with' );
     var move = 'BackSashay Right' ;

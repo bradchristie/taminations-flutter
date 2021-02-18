@@ -30,7 +30,7 @@ class TripleTrade extends Action {
     //  Check to see if there's a line of 6
     //  If so, do it with those dancers
     final lineOf6 = ctx.dancers.where((d) =>
-    ctx.dancersToRight(d).length + ctx.dancersToLeft(d).length == 5);
+    ctx.dancersToRight(d).length + ctx.dancersToLeft(d).length == 5).toList();
     if (lineOf6.length == 6) {
       await ctx.subContext(lineOf6, (ctx2) async =>
       await ctx2.applyCalls('Trade')

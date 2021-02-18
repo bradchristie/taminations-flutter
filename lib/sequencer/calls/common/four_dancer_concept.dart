@@ -38,7 +38,7 @@ abstract class FourDancerConcept extends Action {
 
   var conceptName = '';
 
-  String get extraCall => name.toLowerCase().split('individually' ).getOrNull(1);
+  String? get extraCall => name.toLowerCase().split('individually' ).getOrNull(1);
 
   String get realCall =>
       name.replaceFirst('$conceptName'.ri, '' )
@@ -136,7 +136,7 @@ abstract class FourDancerConcept extends Action {
     });
     //  Perform any calls for single dancers (e.g. 'individually roll' )
     if (extraCall != null) {
-      if (extraCall.trim().matches('roll' .ri))
+      if (extraCall!.trim().matches('roll' .ri))
         await Roll('' ).perform(ctx,1);
       else
         throw CallError('Don''t know how to Individually $extraCall' );

@@ -65,7 +65,7 @@ class PromenadeHome extends Action {
     }).toList();
 
     //  Should be one couple at each axis point
-    if (_startPoints.fold(Vector(), (a, b) => a+b) != Vector())
+    if (_startPoints.fold<Vector>(Vector(), (a, b) => a+b) != Vector())
       throw CallError('Dancers not positioned properly for Promenade.');
     //  Check that dancers are in sequence
     for (var i2=0; i2<_startPoints.length; i2++) {

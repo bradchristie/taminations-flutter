@@ -41,10 +41,10 @@ class _TapDetector extends fm.StatelessWidget {
   final String text;
   final Color color;
   final fm.StatelessWidget child;
-  _TapDetector({fm.Key key,
-    @fm.required this.text,
-    @fm.required this.color,
-    @fm.required this.child}) : super(key:key);
+  _TapDetector({fm.Key? key,
+    required this.text,
+    required this.color,
+    required this.child}) : super(key:key);
 
   @override
   fm.Widget build(fm.BuildContext context) =>
@@ -77,7 +77,7 @@ class _TapDetector extends fm.StatelessWidget {
 //  Wrapper widget to style level text
 class _LevelTextWidget extends fm.StatelessWidget {
   final String text;
-  _LevelTextWidget({this.text});
+  _LevelTextWidget({required this.text});
 
   @override
   fm.Widget build(fm.BuildContext context) =>
@@ -89,8 +89,8 @@ class _LevelTextWidget extends fm.StatelessWidget {
 //  Widget for level that completely spans a horizontal line
 class _FullLineWidget extends fm.StatelessWidget {
   final String text;
-  final fm.Color background;
-  _FullLineWidget({this.text,this.background});
+  final Color background;
+  _FullLineWidget({required this.text, required this.background});
 
   @override
   fm.Widget build(fm.BuildContext context) =>
@@ -109,9 +109,12 @@ class _FullLineWidget extends fm.StatelessWidget {
 //  Widget for level that's indented below a parent level
 class _IndentedLineWidget extends fm.StatelessWidget {
   final String text;
-  final fm.Color background;
-  final fm.Color indented;
-  _IndentedLineWidget({this.text,this.background,this.indented});
+  final Color background;
+  final Color indented;
+  _IndentedLineWidget({
+    required this.text,
+    required this.background,
+    required this.indented});
 
   @override
   fm.Widget build(fm.BuildContext context) =>
@@ -139,7 +142,9 @@ class _IndentedLineWidget extends fm.StatelessWidget {
 class _TwoItemLineWidget extends fm.StatelessWidget {
   final String text1;
   final String text2;
-  _TwoItemLineWidget({this.text1,this.text2});
+  _TwoItemLineWidget({
+    required this.text1,
+    required this.text2});
 
   @override
   fm.Widget build(fm.BuildContext context) =>

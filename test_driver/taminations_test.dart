@@ -1937,7 +1937,7 @@ Promenade Home'''
 
 void main() {
   group('Sequence Test Runner', () {
-    FlutterDriver driver;
+    FlutterDriver? driver;
     final settingsTapper = find.byValueKey('Settings');
     final fastTapper = find.byValueKey('Fast');
     final sequencerTapper = find.byValueKey('Sequencer');
@@ -1957,7 +1957,7 @@ void main() {
     // Close the connection to the driver after the tests have completed.
     tearDownAll(() async {
       if (driver != null) {
-        await driver.close();
+        await driver!.close();
       }
       print('All sequencer tests complete.');
       if (testsFailed.isNotEmpty) {
@@ -1969,27 +1969,27 @@ void main() {
     });
 
     test('setup', () async {
-      await driver.waitFor(settingsTapper);
-      await driver.tap(settingsTapper);
-      await driver.waitFor(fastTapper);
-      await driver.tap(fastTapper);
-      await driver.tap(sequencerTapper);
-      await driver.waitFor(sequencerInputTapper);
-      await driver.tap(sequencerInputTapper);
-      await driver.waitFor(sequencerInput);
+      await driver!.waitFor(settingsTapper);
+      await driver!.tap(settingsTapper);
+      await driver!.waitFor(fastTapper);
+      await driver!.tap(fastTapper);
+      await driver!.tap(sequencerTapper);
+      await driver!.waitFor(sequencerInputTapper);
+      await driver!.tap(sequencerInputTapper);
+      await driver!.waitFor(sequencerInput);
     });
 
     for (var testName in testSequences.keys) {
       test(testName, () async {
-        await driver.runUnsynchronized(() async {
-          await driver.tap(sequencerReset);
-          for (var call in testSequences[testName].split('\n')) {
-            await driver.tap(sequencerInput);
-            await driver.enterText(call);
-            await driver.tap(sequencerSubmit);
-            expect(await driver.getText(errorText), ' ');
+        await driver!.runUnsynchronized(() async {
+          await driver!.tap(sequencerReset);
+          for (var call in testSequences[testName]!.split('\n')) {
+            await driver!.tap(sequencerInput);
+            await driver!.enterText(call);
+            await driver!.tap(sequencerSubmit);
+            expect(await driver!.getText(errorText), ' ');
           }
-          await driver.waitUntilNoTransientCallbacks();
+          await driver!.waitUntilNoTransientCallbacks();
           testsFinished.add(testName);
           testsFailed.remove(testName);
         });

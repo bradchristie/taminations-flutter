@@ -45,7 +45,7 @@ class Settings extends fm.ChangeNotifier {
   String _dancerIdentification = 'None';
   String _showDancerColors = 'By Couple';
 
-  SharedPreferences prefs;
+  late SharedPreferences prefs;
 
   Settings() {
     getSettings();
@@ -174,11 +174,11 @@ class Settings extends fm.ChangeNotifier {
     else if (languageSetting == 'Japanese')
       languageSetting = 'ja';
     else  //  System language
-      languageSetting = fm.WidgetsBinding.instance.window.locale.languageCode;
+      languageSetting = fm.WidgetsBinding.instance!.window.locale!.languageCode;
     if (languageSetting != 'en') {
-      if (TamUtils.calldata.firstWhere((item) {
+      if (TamUtils.calldata.indexWhere((item) {
         return item.link == link && item.languages.contains(languageSetting);
-      }, orElse: () => null) != null) {
+      }) >= 0) {
         link += '.lang-$languageSetting';
       }
     }

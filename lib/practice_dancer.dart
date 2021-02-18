@@ -23,9 +23,6 @@ import 'dart:math';
 import 'common.dart';
 
 class PracticeDancer extends Dancer {
-  PracticeDancer(String number, String numberCouple, int gender, Color fillColor, Matrix mat, Geometry geom, List<Movement> moves) : super(number, numberCouple, gender, fillColor, mat, geom, moves) {
-    _onTrackColor = fillColor;
-  }
 
   static const ANGLESENSITIVITY = 0.5;
   static const MOVESENSITIVITY = 1.0;
@@ -53,9 +50,15 @@ class PracticeDancer extends Dancer {
   var primaryIsLeft = true;
 
   //  Need a val for original fill color, as we change it
-  Color _onTrackColor;
+  final Color _onTrackColor;
   @override
   Color get drawColor => _onTrackColor.darker();
+
+  PracticeDancer(String number, String numberCouple, int gender, Color fillColor, Matrix mat, Geometry geom, List<Movement> moves) :
+        _onTrackColor = fillColor,
+        super(number, numberCouple, gender, fillColor, mat, geom, moves);
+
+
 
   Matrix computeMatrix(double beat) {
     final savetx = tx.copy();
@@ -125,14 +128,14 @@ class PracticeDancer extends Dancer {
     }
   }
 
-  void touchDown(int id, Vector pos, {bool isMouse}) {
+  void touchDown(int id, Vector pos, {required bool isMouse}) {
     if (practiceMousePressed || !isMouse)
       _touchDownAction(id, pos, isMouse: isMouse);
     else
       _touchUpAction(id);
   }
 
-  void _touchDownAction(int id, Vector pos, {bool isMouse}) {
+  void _touchDownAction(int id, Vector pos, {required bool isMouse}) {
     //  Figure out if touching left or right side, and remember the point
     //  Also need to remember the "id" to correlate future move events
     //  Point has already been transformed to dancer coords
@@ -155,7 +158,7 @@ class PracticeDancer extends Dancer {
       _secondaryMove = pos;
   }
 
-  void touchUp(int id, Vector pos, {bool isMouse}) {
+  void touchUp(int id, Vector pos, {required bool isMouse}) {
     if (practiceMousePressed || !isMouse)
       _touchUpAction(id);
     else

@@ -41,7 +41,7 @@ class CrossOverCirculate extends Action {
       //  Find another active dancer in this line
       final d2 = ctx.actives.where((dd) =>
       dd.isRightOf(d) || dd.isLeftOf(d)).firstOrNull
-          ??  thrower(CallError('Unable to calculate Cross Over Circulate for dancer $d'));;
+          .throwIfNull(CallError('Unable to calculate Cross Over Circulate for dancer $d'));;
     //  Centers <-> Ends
     if (!(d.data.center ^ d2.data.center))
       throw CallError('Incorrect circulate path for Cross Over Circulate');
@@ -55,7 +55,7 @@ class CrossOverCirculate extends Action {
       //  Find the dancer in the other line to move to
       final d2 = ctx.actives.where((dd) =>
     dd != d && !dd.isOpposite(d) && !dd.isLeftOf(d) && !dd.isRightOf(d)).firstOrNull
-     ?? thrower(CallError('Unable to calculate Cross Over Circulate for dancer $d'));
+     .throwIfNull(CallError('Unable to calculate Cross Over Circulate for dancer $d'));
     //  Centers <-> Ends
     if (!(d.data.center ^ d2.data.center))
       throw CallError('Incorrect circulate path for Cross Over Circulate');

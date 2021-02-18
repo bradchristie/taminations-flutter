@@ -27,9 +27,9 @@ class Button extends fm.StatelessWidget {
 
   final String name;
   final fm.Widget child;
-  final fm.VoidCallback onPressed;
+  final fm.VoidCallback? onPressed;
 
-  Button(this.name, { fm.Widget child, this.onPressed}) :
+  Button(this.name, {fm.Widget? child, this.onPressed}) :
     child = child ?? AutoSizeText(name, maxLines: 1, style: fm.TextStyle(
       fontWeight: fm.FontWeight.bold,
       fontSize: 20,
@@ -63,7 +63,7 @@ class Button extends fm.StatelessWidget {
               ),
               onTap: () {
                 if (onPressed != null) {
-                  onPressed();
+                  onPressed!();
                 }
               }
           )

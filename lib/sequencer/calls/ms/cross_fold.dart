@@ -39,7 +39,7 @@ class CrossFold extends Action {
       //  Center beaus and end belles fold left
       var isRight = d.data.beau ^ d.data.center;
       var m = (isRight) ? 'Fold Right' : 'Fold Left';
-      var d2 = d.data.partner;
+      var d2 = d.data.partner.throwIfNull(CallError('No partner for dancer $d'));
       var dist = d.distanceTo(d2);
       var dxscale = 0.75;
 

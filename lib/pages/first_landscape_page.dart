@@ -49,7 +49,7 @@ class FirstLandscapePage extends fm.StatelessWidget {
 class FirstLandscapeFrame extends fm.StatelessWidget {
 
   final fm.Widget rightChild;
-  FirstLandscapeFrame({@fm.required this.rightChild});
+  FirstLandscapeFrame({required this.rightChild});
 
   @override
   fm.Widget build(fm.BuildContext context) {
