@@ -313,7 +313,7 @@ class _AnimationFrameState extends fm.State<AnimationFrame>
                             child: Button('Start',
                                 child: fm.Icon(fm.Icons.skip_previous,size:iconSize),
                                 onPressed: () {
-                                  painter.goToStart();
+                                  painter.goToPreviousPart();
                                 })),
                         fm.Expanded(
                             child:
@@ -349,7 +349,7 @@ class _AnimationFrameState extends fm.State<AnimationFrame>
                         fm.Expanded(child: Button('End',
                             child: fm.Icon(fm.Icons.skip_next,size:iconSize),
                             onPressed: () {
-                              painter.goToEnd();
+                              painter.goToNextPart();
                             })),
                       ]),
                 )

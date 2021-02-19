@@ -22,9 +22,10 @@
 -->
 <tamination title="Explode the Top">
 
-
-
-  <tam title="Explode the Top" from="Lines Facing Out" formation="Lines Facing Out" fractions="2;5;4.5;1.5">
+  <tam title="Explode the Top"
+       from="Lines Facing Out"
+       formation="Lines Facing Out"
+       parts="2;9.5;1.5">
     <path>
       <move select="Quarter Left" beats="2" offsetX="-1" offsetY="1"/>
       <move select="Extend Left" beats="2" scaleX="2" scaleY=".5"/>
@@ -55,6 +56,92 @@
     <path>
       <move select="Quarter Right" beats="2" offsetX="-1" offsetY="-1"/>
       <move select="Extend Left" beats="2" scaleX="2" scaleY=".5"/>
+      <move select="Swing Right" scaleX=".5" scaleY=".5"/>
+      <move select="Swing Left" scaleX=".5" scaleY=".5"/>
+      <move select="Hinge Left" scaleY=".5"/>
+      <move select="Hinge Right"/>
+      <move select="Hinge Right"/>
+      <move select="Lead Right"/>
+    </path>
+  </tam>
+
+  <tam title="Explode the Top"
+       from="Right-Hand Waves"
+       formation="Ocean Waves RH BGGB"
+       parts="2;9.5;1.5">
+    <path numbers="1 8">
+      <move select="Lead Right" beats="2" scaleY="2"/>
+      <move select="Extend Left" beats="1" scaleY=".5"/>
+      <move select="Swing Right" scaleX=".5" scaleY=".5"/>
+      <move select="Extend Right" beats="4.5" scaleX="2" scaleY=".5"/>
+      <move select="Hinge Right"/>
+      <move select="Forward 2"/>
+      <move select="Lead Right"/>
+    </path>
+    <path numbers="2 7">
+      <move select="Quarter Left" beats="2" offsetX="1"/>
+      <move select="Extend Left" beats="1" scaleY=".5"/>
+      <move select="Run Left" beats="7.5" offsetX="2" scaleY=".75"/>
+      <move select="Hinge Right"/>
+      <move select="Hinge Right"/>
+      <move select="U-Turn Right"/>
+    </path>
+    <path numbers="3 6">
+      <move select="Quarter Left" beats="2" offsetX="1"/>
+      <move select="Extend Left" beats="1" scaleY=".5"/>
+      <move select="Swing Right" scaleX=".5" scaleY=".5"/>
+      <move select="Swing Left" scaleX=".5" scaleY=".5"/>
+      <move select="Hinge Left" scaleY=".5"/>
+      <move select="Hinge Right"/>
+      <move select="Hinge Right"/>
+      <move select="Lead Right"/>
+    </path>
+    <path numbers="4 5">
+      <move select="Lead Right" beats="2" scaleY="2"/>
+      <move select="Extend Left" beats="1" scaleY=".5"/>
+      <move select="Lead Right" beats="7.5" scaleX="3" scaleY="3.5"/>
+      <move select="Hinge Right"/>
+      <move select="Hinge Right"/>
+      <move select="Forward 2"/>
+      <move select="Run Right" scaleX=".5" scaleY=".5" offsetX="1"/>
+      <move select="Quarter Right"/>
+    </path>
+  </tam>
+
+  <tam title="Explode the Top"
+       from="Left-Hand Waves"
+       formation="Ocean Waves LH BGGB"
+       parts="2;9.5;1.5">
+    <path>
+      <move select="Lead Left" beats="2" scaleY="2"/>
+      <move select="Extend Left" beats="1" scaleY=".5"/>
+      <move select="Run Left" beats="7.5" offsetX="2" scaleY=".75"/>
+      <move select="Hinge Right"/>
+      <move select="Hinge Right"/>
+      <move select="U-Turn Right"/>
+    </path>
+    <path>
+      <move select="Quarter Right" beats="2" offsetX="1"/>
+      <move select="Extend Left" beats="1" scaleY=".5"/>
+      <move select="Swing Right" scaleX=".5" scaleY=".5"/>
+      <move select="Extend Right" beats="4.5" scaleX="2" scaleY=".5"/>
+      <move select="Hinge Right"/>
+      <move select="Forward 2"/>
+      <move select="Lead Right"/>
+    </path>
+    <path>
+      <move select="Quarter Right" beats="2" offsetX="1"/>
+      <move select="Extend Left" beats="1" scaleY=".5"/>
+      <move select="Lead Right" beats="7.5" scaleX="3" scaleY="3.5"/>
+      <move select="Hinge Right"/>
+      <move select="Hinge Right"/>
+      <move select="Forward 2"/>
+      <move select="Run Right" scaleX=".5" scaleY=".5" offsetX="1"/>
+      <move select="Quarter Right"/>
+    </path>
+    <path>
+      <move select="Lead Left" beats="2" scaleY="2"/>
+      <move select="Extend Left" beats="1" scaleY=".5"/>
       <move select="Swing Right" scaleX=".5" scaleY=".5"/>
       <move select="Swing Left" scaleX=".5" scaleY=".5"/>
       <move select="Hinge Left" scaleY=".5"/>

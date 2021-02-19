@@ -318,6 +318,27 @@ class DanceAnimationPainter extends fm.ChangeNotifier implements fm.CustomPainte
     beat = beats;
   }
 
+  List<double> _partsValues() {
+    if (partstr.isBlank)
+      return [-leadin,0.0];
+    final values = [-leadin,0.0];
+    var b = 0.0;
+    final t = partstr.split(';');
+    for (var i=0; i<t.length; i++) {
+      b += t[i].d;
+      values.add(b);
+    }
+    return values;
+  }
+
+  void goToNextPart() {
+    beat = (_partsValues().where((part) => part > beat).firstOrNull ?? totalBeats) + 0.01;
+  }
+
+  void goToPreviousPart() {
+    beat = _partsValues().where((part) => part < beat).lastOrNull ?? -leadin;
+  }
+
   void stepForward() {
     beat = min(beat+0.1,beats);
   }
@@ -325,6 +346,8 @@ class DanceAnimationPainter extends fm.ChangeNotifier implements fm.CustomPainte
   void stepBack() {
     beat = max(beat-0.1,-leadin);
   }
+
+
 
   bool _isInteractiveDancerOnTrack() {
     //  Get where the dancer should be

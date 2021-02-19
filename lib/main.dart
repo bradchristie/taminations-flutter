@@ -354,7 +354,6 @@ class TaminationsRouterDelegate extends fm.RouterDelegate<TamState>
 
   @override
   Future<void> setNewRoutePath(TamState configuration) async {
-    print('$configuration');
     appState.change(
         level: configuration.level,
         link: configuration.link,
