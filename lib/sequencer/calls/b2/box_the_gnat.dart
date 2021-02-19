@@ -18,15 +18,8 @@
 
 */
 
-import '../../../dancer.dart';
-import '../../../level_data.dart';
+import '../common.dart';
 import '../../../math/bezier.dart';
-import '../../../math/movement.dart';
-import '../../../math/path.dart';
-import '../../../math/vector.dart';
-import '../../../tam_utils.dart';
-import '../../call_context.dart';
-import '../common/actives_only_action.dart';
 
 class BoxTheGnat extends ActivesOnlyAction {
 

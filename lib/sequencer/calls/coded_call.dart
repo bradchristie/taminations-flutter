@@ -63,6 +63,7 @@ import 'b1/split_circulate.dart';
 import 'b1/square_thru.dart';
 import 'b1/star_thru.dart';
 import 'b1/turn_back.dart';
+import 'b2/balance.dart';
 import 'b2/box_the_gnat.dart';
 import 'b2/cross_run.dart';
 import 'b2/run.dart';
@@ -210,6 +211,7 @@ abstract class CodedCall extends Call {
     'ascouples.*'.ri: (name) => AsCouples(name),
 
     'backaway'.ri: (_) => BackAway(),
+    'balance'.ri: (_) => Balance(),
     'beau'.ri: (_) => Beaus(),
     'belle'.ri: (_) => Belles(),
     'bendtheline'.ri: (_) => BendTheLine(),

@@ -389,7 +389,6 @@ class TaminationsRouteInformationParser extends fm.RouteInformationParser<TamSta
     var play = params['play'] != null;
     var loop = params['loop'] != null;
     var grid = params['grid'] != null;
-    print('$embed $play $loop $grid');
     //  For backwards compatibility
     if (params['action'] == 'ANIMLIST') {
       mainPage = MainPage.ANIMLIST;

@@ -32,6 +32,7 @@ class Hands {
   static const int BOTHHANDS = 3;
   static const int GRIPLEFT = 5;
   static const int GRIPRIGHT = 6;
+  static const int GRIPBOTH = 7;
 
   static int getHands(String h) {
     switch (h) {
