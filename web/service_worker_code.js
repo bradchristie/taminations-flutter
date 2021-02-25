@@ -83,7 +83,6 @@ self.addEventListener("activate", function(event) {
 // The fetch handler redirects requests for RESOURCE files to the service
 // worker cache.
 self.addEventListener("fetch", (event) => {
-  console.log('fetch request: '+event.request.url);
   if (event.request.method !== 'GET') {
     return;
   }
@@ -95,7 +94,6 @@ self.addEventListener("fetch", (event) => {
   if (event.request.url == ORIGIN || event.request.url.startsWith(ORIGIN + '/#') || key == '') {
     key = '/';
   }
-  console.log('fetch key: '+key);
   // If the URL is not the RESOURCE list then return to signal that the
   // browser should take over.
   if (!RESOURCES[key]) {
@@ -110,8 +108,6 @@ self.addEventListener("fetch", (event) => {
       return cache.match(event.request).then((response) => {
         // Either respond with the cached resource, or perform a fetch and
         // lazily populate the cache.
-        if (response)
-          console.log('    -- found in cache');
         return response || fetch(event.request).then((response) => {
           cache.put(event.request, response.clone());
           return response;
@@ -176,7 +172,6 @@ async function downloadOfflineSequentially() {
   var resources = [];
   var contentCache = await caches.open(CACHE_NAME);
   var currentContent = {};
-  console.log('Download Sequentially');
   for (var request of await contentCache.keys()) {
     var key = request.url.substring(ORIGIN.length + 1);
     if (key == "") {
@@ -203,20 +198,16 @@ async function downloadOfflineSequentially() {
 // Attempt to download the resource online before falling back to
 // the offline cache.
 function onlineFirst(event) {
-  console.log('onlineFirst: '+event.request);
   return event.respondWith(
     fetch(event.request).then((response) => {
-      console.log('  -- found online, saving in cache');
       return caches.open(CACHE_NAME).then((cache) => {
         cache.put(event.request, response.clone());
         return response;
       });
     }).catch((error) => {
-      console.log('  -- not found online, trying cache');
       return caches.open(CACHE_NAME).then((cache) => {
         return cache.match(event.request).then((response) => {
           if (response != null) {
-            console.log('  -- found in cache');
             return response;
           }
           throw error;
