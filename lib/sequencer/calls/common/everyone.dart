@@ -19,14 +19,18 @@
 */
 
 import '../../call_context.dart';
+import '../action.dart';
 import '../coded_call.dart';
 
-class Everyone extends CodedCall {
+class Everyone extends Action {
 
   Everyone(String name) : super(name);
 
   @override
   Future<void> performCall(CallContext ctx, [int stackIndex=0]) async {
+    //  Make sure the previous call is completed
+    ctx.extendPaths();
+    //  Then everyone can do the next call
     for (var d in ctx.dancers)
       d.data.active = true;
   }

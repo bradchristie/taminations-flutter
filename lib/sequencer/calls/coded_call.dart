@@ -252,7 +252,7 @@ abstract class CodedCall extends Call {
     'doublestarthru'.ri: (_) => DoubleStarThru(),
 
     'end'.ri: (_) => Ends(),
-    'every(one|body)'.ri: (name) => Everyone(name),
+    '(then)?every(one|body)'.ri: (name) => Everyone(name),
     'explode'.ri: (_) => Explode(),
 
     'face(in|out|left|right)'.ri: (name) => Face(name),
