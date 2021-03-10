@@ -22,6 +22,7 @@ import 'dart:math';
 
 import 'package:flutter/material.dart' as fm;
 import 'package:provider/provider.dart' as pp;
+import 'package:taminations/sequencer/sequencer_model.dart';
 
 import '../common.dart';
 import 'page.dart';
@@ -172,8 +173,8 @@ class _AnimationFrameState extends fm.State<AnimationFrame>
           final iconSize = isSmall ? 16.0 : 24.0;
           return fm.Column(children: [
                 //  Dance area with animations
-                fm.Expanded(child: pp.Consumer<Settings>(
-                    builder: (context, settings, child) {
+                fm.Expanded(child: pp.Consumer2<Settings,SequencerModel>(
+                    builder: (context, settings, model, child) {
 
                       //  Send current settings to the painter
                       painter.setGridVisibility(settings.grid || appState.grid);
@@ -229,6 +230,7 @@ class _AnimationFrameState extends fm.State<AnimationFrame>
                       };
 
                       //  Wrap dance area with widget to detect pointer events
+                      final beats = model.calls.isNotEmpty ? model.totalBeats().s : '';
                       return fm.GestureDetector(
                           onTapDown: tapDownHandler,
                           onSecondaryTapDown: tapDownHandler,
@@ -262,6 +264,7 @@ class _AnimationFrameState extends fm.State<AnimationFrame>
                                   bottom: 0.0,
                                   right: 0.0,
                                   child: fm.Text(
+                                      beats + ' ' +
                                       settings.speed.replaceFirst('Normal','') +
                                           (settings.loop ? ' Loop' : ''),
                                       style:fm.TextStyle(fontSize:24)

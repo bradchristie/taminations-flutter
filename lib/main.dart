@@ -21,6 +21,7 @@
 import 'package:flutter/material.dart' as fm;
 import 'package:provider/provider.dart' as pp;
 import 'package:flutter/services.dart';
+import 'package:taminations/sequencer/sequencer_model.dart';
 
 import 'common.dart';
 import 'pages/anim_list_page.dart';
@@ -72,6 +73,7 @@ class _TaminationsAppState extends fm.State<TaminationsApp> {
         pp.ChangeNotifierProvider(create: (context) => Settings()),
         pp.ChangeNotifierProvider(create: (context) => AnimationState()),
         pp.ChangeNotifierProvider(create: (context) => AbbreviationsModel()),
+        pp.ChangeNotifierProvider(create: (context) => SequencerModel()),
         pp.Provider(create: (_) => VirtualKeyboardVisible())
       ],
         //  Read initialization files

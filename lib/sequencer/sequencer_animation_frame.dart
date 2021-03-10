@@ -94,6 +94,7 @@ class BasicSequencerAnimation extends fm.StatelessWidget {
         child: fm.Stack(
             children: [
               AnimationFrame(),
+              //  Show current call at top
               fm.Positioned(
                   top: 6, left:12, right:12,
                   child: pp.Consumer<SequencerModel>(

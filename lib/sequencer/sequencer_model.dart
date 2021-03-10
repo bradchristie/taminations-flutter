@@ -172,6 +172,8 @@ class SequencerModel extends fm.ChangeNotifier {
     }
   }
 
+  double totalBeats() => calls.fold(0.0, (p, e) => p + e.beats);
+
   int _callNumberAtBeat(double beat) {
     if (beat < 0)
       return -1;
