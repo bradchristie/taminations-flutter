@@ -1,6 +1,6 @@
 // The application shell files that are downloaded before a service worker can
 // start.\
-const ORIGIN = 'https://www.tamtwirlers.org/taminations-1.6';
+const ORIGIN = 'https://www.tamtwirlers.org/taminations';
 const CORE = [
   "/",
 "main.dart.js",
@@ -51,6 +51,10 @@ self.addEventListener("activate", function(event) {
         // If a resource from the old manifest is not in the new cache, or if
         // the MD5 sum has changed, delete it. Otherwise the resource is left
         // in the cache and can be reused by the new service worker.
+        if (key == 'assets/assets/info/about.html') {
+          console.log('info.html old = '+oldManifest[key]);
+          console.log('          new = '+RESOURCES[key]);
+        }
         if (!RESOURCES[key] || RESOURCES[key] != oldManifest[key]) {
           await contentCache.delete(request);
         }
@@ -67,8 +71,10 @@ self.addEventListener("activate", function(event) {
       //  If most files are already in the cache, the user must have
       //  previously done a complete download.  Update any new files.
       var cacheKeys = await contentCache.keys();
-      if (cacheKeys.length > 2000)
+      if (cacheKeys.length > 2000) {
+        console.log('Updating with new files from web');
         downloadOfflineSequentially();
+      }
       return;
     } catch (err) {
       // On an unhandled exception the state of the cache cannot be guaranteed.
@@ -188,11 +194,13 @@ async function downloadOfflineSequentially() {
   while (resources.length > 0) {
     var oneFile = resources.pop();
     var completed = totalResourceCount - resources.length;
+    console.log('Updating '+oneFile);
     if (communicationPort)
       communicationPort.postMessage('Downloading ' + completed + ' of ' + totalResourceCount);
     await contentCache.add(oneFile);
   }
-  communicationPort.postMessage('All files downloaded');
+  if (communicationPort)
+    communicationPort.postMessage('All files downloaded');
 }
 
 // Attempt to download the resource online before falling back to

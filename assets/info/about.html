@@ -32,7 +32,7 @@
 
   <hr/>
 
-  <p>Taminations version 1.6.0-2 built 2021-02-17<br/>
+  <p>Taminations version 1.6.1 built 2021-03-09<br/>
     Copyright 2021 by Brad Christie.<br/>
     This is free software, and you are welcome to modify and redistribute it
     under the terms of the <a href="http://www.gnu.org/licenses/gpl.html" target="_blank">GNU GPL license</a>.<br/>
@@ -41,10 +41,11 @@
   <hr/><h3>What's New</h3>
   <ul>
     <li>All code re-written in Dart and user interface re-implemented in Flutter.</li>
+    <!--
     <li>Speech recognition for apps now done by serivces provided by each app platform.
-      Internet access now required, but performance is better.</li>
+      Internet access now required, but performance is better.</li>  -->
     <li>Improved download for offsite access, now works with all
-         major browsers (with a small caveat for Firefox).</li>
+         major browsers.</li>
     <li>PWA ability added, web site can be &quot;installed&quot; like an application.</li>
     <li>Hashtag addeed as special geometry.</li>
   </ul>
@@ -80,36 +81,27 @@
 
     <h3>Download Taminations for Offline Use</h3>
     <p>
-    You can load all Taminations files now for access later when offline.<br/>
     <span class="service-worker-not-supported">
       Your browser does not support downloading Taminations.
     </span>
-      <div class="firefox-only" style="display:none">
-    <h4>Special instructions for Firefox</h4>
-    <p>
-      Firefox by default times out the download process after 30 seconds.
-      Unless you have a really fast connection this needs to be changed.
-      In another tab, navigate to about:config.  You will need to "Accept the Risk"
-      and "Show All" to get to the actual settings.
-      Go to the setting <code>dom.serviceWorkers.idle_timeout</code>
-      and change the value from 30000 to something much larger, like
-      86400000 (1 day).
-    </p>
-      </div>
       <p class="service-worker-installing">
         <b>Reload</b> this page for information on downloading Taminations.
     </p>
-    <div class="before-load-x">Taminations is available for download.<br/>
+    <div class="before-load">
+      You can load all Taminations files now for access later when offline.<br/>
+      Taminations version 1.6.1 is available for download.<br/>
       Click this button to load all the files for offline use.<br/>
       <div style="background-color: #e0e0e0; border: 1px solid black; padding: 4px; margin: 8px; float: left">
       <a href="#" style="color:black; text-decoration:none"
          onclick="downloadFiles()">Load Files</a></div><br/>
       </div>
-      <span class="during-load" id="during-load"><br/>Downloading file 0 of 0.</span>
+      <p class="during-load" id="during-load"><br/><b>Downloading file 0 of 0.</b><br/></p>
+      <p class="during-load">If the download should fail or lock up, just reload this page and start the download
+        again.  It will resume and download the remaining files.</p>
     <p><span class="after-load"><b>You have now downloaded Taminations.</b><br/>
-    Now the Taminations web site will work the same both online and offline.
-      When offline the browser will fetch the stored files automatically.
-      When online the browser will check for any changes.<br/>
+    Now the Taminations web site will work the same both online and offline.<br/>
+      When offline the browser will fetch the stored files automatically.<br/>
+      When online the browser will check for any updates.<br/>
       Note: The downloaded files are stored in the browser's cache storage, not the
       download area, and are not accessible outside the browser.<br/>
     </span>

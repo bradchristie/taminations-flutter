@@ -224,7 +224,7 @@ class _PracticeFrameState extends fm.State<PracticeFrame>
                                   })
                                 ],
                               ),
-                              Button('Definition') // TODO
+                             // Button('Definition') // TODO
                             ],
                           )
                       )

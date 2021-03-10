@@ -56,10 +56,6 @@ function showPlatformElements(platform) {
   }
 }
 
-function isFirefox() {
-  return navigator.userAgent.toLowerCase().indexOf('firefox') > -1;
-}
-
 
 function checkServiceWorker() {
   changeStyleByClass('service-worker-not-supported','display','none');
@@ -68,8 +64,6 @@ function checkServiceWorker() {
   changeStyleByClass('before-load','display','none');
   changeStyleByClass('after-load','display','none');
   changeStyleByClass('during-load','display','none');
-  if (isFirefox())
-    changeStyleByClass('firefox-only','display','');
 
   // Init port
   const messageChannel = new MessageChannel();
@@ -85,9 +79,15 @@ function checkServiceWorker() {
       // Listen to messages
       messageChannel.port1.onmessage = (event) => {
         var msg = event.data.toString();
+        console.log('Message from service worker: '+msg);
         if (msg.startsWith('Downloading')) {
           var elem = document.getElementById('during-load');
           elem.innerHTML = msg;
+          //  Every 10 files downloaded fetch a small file
+          //  to keep the browser from timing out the service worker
+          if (msg.indexOf('0 of') > 0) {
+            fetch('../src/smallfile.txt');
+          }
         }
         else if (msg == 'All files downloaded') {
           changeStyleByClass('during-load','display','none');
@@ -102,6 +102,9 @@ function checkServiceWorker() {
           changeStyleByClass('during-load','display','none');
           changeStyleByClass('after-load','display','');
           }
+        }
+        else if (msg.indexOf('established') > 0) {
+          navigator.serviceWorker.controller.postMessage('query cache count');
         }
       };
       navigator.serviceWorker.controller.postMessage('query cache count');
