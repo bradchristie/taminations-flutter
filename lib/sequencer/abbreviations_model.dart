@@ -181,13 +181,13 @@ class AbbreviationsModel extends fm.ChangeNotifier {
 
   void paste() {
     fs.Clipboard.getData('text/plain').then((value) {
-      if (value is fs.ClipboardData)
+      if (value is fs.ClipboardData) {
         //  Process each line of pasted abbreviations
-        for (final line in value.text!.split('\\n')) {
+        for (final line in value.text!.split('\\n'.r)) {
           final breakup = line.divide('\\s+'.r);
           if (breakup.length != 2)
             continue;
-          final abbr = breakup[0].replaceAll('\\W'.r,'').trim();
+          final abbr = breakup[0].replaceAll('\\W'.r, '').trim();
           final expansion = breakup[1].trim();
           //  Check for valid abbreviation
           if (abbr.isBlank || expansion.isBlank)
@@ -196,16 +196,20 @@ class AbbreviationsModel extends fm.ChangeNotifier {
             continue;
           //  Look for and replace existing abbreviation
           var found = false;
-          for (var i=0; i<currentAbbreviations.length; i++) {
+          for (var i = 0; i < currentAbbreviations.length; i++) {
             if (currentAbbreviations[i].abbr == abbr.toLowerCase()) {
-              currentAbbreviations[i] = Abbreviation(abbr,expansion);
+              currentAbbreviations[i] = Abbreviation(abbr, expansion);
               found = true;
             }
           }
           //  Add a new abbreviation
-          if (!found)
-            currentAbbreviations.add(Abbreviation(abbr,expansion));
+          if (!found) {
+            final insertPoint = max(currentAbbreviations.length - 1,0);
+            currentAbbreviations.insert(insertPoint,Abbreviation(abbr, expansion));
+          }
         }
+        notifyListeners();
+      }
     });
   }
 

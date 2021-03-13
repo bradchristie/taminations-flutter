@@ -349,7 +349,8 @@ class TamUtils {
         return 'android';
       else
         return 'unknown';
-      //  Currently web doesn't even have a platform, LocalPlatform is not supported
+      //  Currently web returns LocalPlatform but does not have
+      //  an operating system so isXX throws UnsupportedError
     } on UnsupportedError catch (_) { }
     return 'web';
   }

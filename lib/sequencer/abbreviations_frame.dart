@@ -220,7 +220,7 @@ class _AbbreviationsFrameState extends fm.State<AbbreviationsFrame> {
                     _AbbreviationsWarningButton(
                         name: 'Paste',
                         title: 'Confirm Paste',
-                        message: 'This will REPLACE ALL your abbreviations!',
+                        message: 'This will APPEND to your current abbreviations!',
                         action: () {
                           setState(() {
                             model.paste();

@@ -69,10 +69,10 @@ class AppLayoutSize extends fm.InheritedWidget {
 bool? _isSmallDevice;
 bool isSmallDevice(fm.BuildContext context) {
   if (_isSmallDevice == null) {
-    final w = fm.MediaQuery.of(context).size.width;
     final h = fm.MediaQuery.of(context).size.height;
+    final w = fm.MediaQuery.of(context).size.width;
      //  This seems to be the consensus on the phone/tablet boundary
-    _isSmallDevice = min(w, h) < 600;
+    _isSmallDevice = TamUtils.platform() != 'web' && min(w, h) < 600;
   }
   return _isSmallDevice!;
 }
@@ -83,5 +83,5 @@ bool isSmallAndCompact(fm.BuildContext context) {
   final constraints = AppLayoutSize.of(context).constraints;
   final h = constraints.maxHeight;
   final w = constraints.maxWidth;
-  return max(w, h) < 600;
+  return TamUtils.platform() != 'web' && max(w, h) < 600;
 }
