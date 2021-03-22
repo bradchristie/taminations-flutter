@@ -355,10 +355,12 @@ class SequencerCopyButton extends fm.StatelessWidget {
     return fm.Expanded(
         child: Button('Copy',onPressed: () {
           model.copy();
+          final count = model.calls.length;
+          final countText = count == 1 ? '1 call' : '$count calls';
           fm.ScaffoldMessenger.of(context).showSnackBar(fm.SnackBar(
               backgroundColor: Color.BLUE,
               duration: Duration(seconds: 2),
-              content: fm.Text('Calls Copied.',style: fm.TextStyle(fontSize: 20))
+              content: fm.Text('$countText copied to Clipboard.',style: fm.TextStyle(fontSize: 20))
           ));
         })
     );
