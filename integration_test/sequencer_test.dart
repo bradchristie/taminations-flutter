@@ -1953,7 +1953,23 @@ Bend the Line
 Touch a Quarter 
 Circulate 
 Boys Run 
-Allemande Left'''
+Allemande Left''',
+
+  'Flutterwheel and Sweep 1/4' :
+'''Heads Lead Right 
+Flutterwheel and and Sweep a Quarter 
+Pass Thru 
+Wheel and Deal 
+Centers Flutterwheel and Sweep a Quarter 
+Split Square Thru 3 
+Bend the Line 
+Touch a Quarter 
+Boys Run 
+Girls Zoom 
+Centers Pass Thru 
+Right and Left Thru 
+Veer Right 
+Promenade Home'''
 
 };
 

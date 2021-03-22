@@ -31,6 +31,7 @@ class SweepAQuarter extends Action {
 
   @override
   Future<void> perform(CallContext ctx, [int stackIndex=0]) async {
+    ctx.analyze();
     if (ctx.actives.any((d) => !ctx.isInCouple(d)))
       throw CallError('Only couples can Sweep a Quarter' );
     var isLeft = true;
