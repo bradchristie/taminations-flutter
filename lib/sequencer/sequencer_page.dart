@@ -22,6 +22,7 @@ import 'package:flutter/material.dart' as fm;
 import 'package:provider/provider.dart' as pp;
 
 import '../common.dart';
+import '../pages/animation_page.dart';
 import '../pages/settings_page.dart';
 import '../pages/web_page.dart';
 import '../pages/page.dart';
@@ -32,7 +33,28 @@ import 'sequencer_animation_frame.dart';
 import 'sequencer_calls_page.dart';
 import 'sequencer_model.dart';
 
+class SequencerTestPage extends fm.StatefulWidget {
+  @override
+  fm.State<fm.StatefulWidget> createState() => _SequencerTestPageState();
+}
+class _SequencerTestPageState extends fm.State<SequencerTestPage> {
+  @override
+  fm.Widget build(fm.BuildContext context) {
+    return pp.MultiProvider(
+        providers: [
+          pp.ChangeNotifierProvider(create: (_) => TamState()),
+          pp.ChangeNotifierProvider(create: (_) => Settings()),
+          pp.ChangeNotifierProvider(create: (_) => AbbreviationsModel()),
+          pp.ChangeNotifierProvider(create: (_) => AnimationState()),
+          pp.Provider(create: (_) => VirtualKeyboardVisible())
+        ],
+        //  Read initialization files
+        child: fm.MaterialApp(home: SequencerPage()));
+  }
+}
+
 class SequencerPage extends fm.StatefulWidget {
+
   @override
   _SequencerPageState createState() => _SequencerPageState();
 }
@@ -56,61 +78,62 @@ class _SequencerPageState extends fm.State<SequencerPage> {
       providers: [
         pp.ChangeNotifierProvider(create: (_) => TitleModel()),
         pp.ChangeNotifierProvider.value(value: model),
-        pp.ChangeNotifierProvider.value(value: model.animation)
+        pp.ChangeNotifierProvider.value(value: model.animation),
       ],
       child: Page(
         child: pp.Consumer2<TitleModel,Settings>(
-              builder: (context,titleModel,settings,_) {
-                titleModel.title = 'Sequencer';
-                model.startingFormation = settings.startingFormation;
-                if (isSmallDevice(context)) {
-                  return  fm.Column(
-                    children: [
-                      fm.Expanded(
-                          flex: 3,
-                          child:PortraitSequencerAnimationFrame()
-                      ),
-                      if (isSmallAndCompact(context))
-                        SequencerEditLine()
-                      else
-                        fm.Expanded(
-                            flex: 2,
-                            child: SequenceFrame()
-                        )
-                    ],
-                  );
-                }
-                //  landscape
-                return fm.Row(
+            builder: (context,titleModel,settings,_) {
+              titleModel.title = 'Sequencer';
+              model.startingFormation = settings.startingFormation;
+              if (isSmallDevice(context)) {
+                return  fm.Column(
                   children: [
-                    fm.Expanded(child: fm.Column(
-                      children: [
-                        fm.Expanded(child: SequenceFrame()),
-                        SequenceEditButtons(),
-                      ],
-                    )),
-                    fm.VerticalDivider(color: Color.BLACK, width: 2.0,),
-                    fm.Expanded(child: SequencerAnimationFrame()),
-                    fm.VerticalDivider(color: Color.BLACK, width: 2.0,),
-                    //  Dummy title model to intercept titles we don't want to show
-                    pp.ChangeNotifierProvider(
-                      create: (_) => TitleModel(),
-                      child: fm.Expanded(child: pp.Consumer<TamState>(
-                          builder: (context,tamState,_) {
-                            if (tamState.detailPage == DetailPage.CALLS)
-                              return SequencerCallsFrame();
-                            else if (tamState.detailPage == DetailPage.ABBREVIATIONS)
-                              return AbbreviationsFrame();
-                            else if (tamState.detailPage == DetailPage.SETTINGS)
-                              return SequencerSettingsFrame();
-                            else
-                              return WebFrame('info/sequencer.html');
-                          }
-                      )),
-                    )
+                    fm.Expanded(
+                        flex: 3,
+                        child:PortraitSequencerAnimationFrame()
+                    ),
+                    if (isSmallAndCompact(context))
+                      SequencerEditLine()
+                    else
+                      fm.Expanded(
+                          flex: 2,
+                          child: SequenceFrame()
+                      )
                   ],
-                );}
-            ),
+                );
+              }
+              //  landscape
+              return fm.Row(
+                children: [
+                  fm.Expanded(child: fm.Column(
+                    children: [
+                      fm.Expanded(child: SequenceFrame()),
+                      SequenceEditButtons(),
+                    ],
+                  )),
+                  fm.VerticalDivider(color: Color.BLACK, width: 2.0,),
+                  fm.Expanded(child: SequencerAnimationFrame()),
+                  fm.VerticalDivider(color: Color.BLACK, width: 2.0,),
+                  //  Dummy title model to intercept titles we don't want to show
+                  pp.ChangeNotifierProvider(
+                    create: (_) => TitleModel(),
+                    child: fm.Expanded(child: pp.Consumer<TamState>(
+                        builder: (context,tamState,_) {
+                          if (tamState.detailPage == DetailPage.CALLS)
+                            return SequencerCallsFrame();
+                          else if (tamState.detailPage == DetailPage.ABBREVIATIONS)
+                            return AbbreviationsFrame();
+                          else if (tamState.detailPage == DetailPage.SETTINGS)
+                            return SequencerSettingsFrame();
+                          else
+                            return WebFrame('info/sequencer.html');
+                        }
+                    )),
+                  )
+                ],
+              );
+            }
+        ),
       ),
     );
   }

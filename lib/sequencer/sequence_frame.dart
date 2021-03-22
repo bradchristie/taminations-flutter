@@ -285,7 +285,7 @@ class _SequencerEditLineState extends fm.State<SequencerEditLine> {
               child: fm.GestureDetector(
                 //  Tester seems to be unable to fetch text if it's a blank string
                 //  so add a space
-                child: fm.Text(model.errorString.isEmpty ? ' ' : model.errorString[0],
+                child: fm.Text(model.errorString.isEmpty ? ' ' : model.errorString,
                     key:fm.ValueKey('Test Error Text'),
                     style: fm.TextStyle(color: Color.WHITE, fontSize:1)),
                 onTap: () {

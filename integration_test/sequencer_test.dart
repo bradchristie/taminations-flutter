@@ -25,6 +25,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:integration_test/integration_test.dart';
 import 'package:taminations/main.dart' as app;
+import 'package:taminations/sequencer/sequencer_page.dart';
 
 final testSequences = {
 
@@ -1934,14 +1935,30 @@ Wheel and Deal
 Centers Flutterwheel 
 Centers Pass Thru 
 Allemande Left 
-Promenade Home'''
+Promenade Home''',
 
+  'Cross 3' :
+'''Heads Lead Right 
+Touch a Quarter and Cross 
+Wheel and Deal 
+Centers Pass Thru 
+Left Touch a Quarter and Cross 
+Bend the Line 
+Touch a Quarter and Cross 
+Trade By 
+Veer Left 
+Turn and Deal 
+Veer Left 
+Bend the Line 
+Touch a Quarter 
+Circulate 
+Boys Run 
+Allemande Left'''
 
 };
 
 void main() {
   IntegrationTestWidgetsFlutterBinding.ensureInitialized();
-
   final testsFinished = <String>[];
   final testsFailed = testSequences.keys.toSet();
 
@@ -1957,43 +1974,39 @@ void main() {
   });
 
   final fastTapper = find.byKey(Key('Fast'));
-  final settingsTapper = find.byKey(Key('Settings'));
-  final sequencerTapper = find.byKey(Key('Sequencer'));
   final sequencerInputTapper = find.byKey(Key('Tap to start Sequence'));
   final sequencerInput = find.byKey(Key('Sequencer Input'));
   final sequencerSubmit = find.byKey(Key('Submit Call'));
   final errorText = find.byKey(Key('Test Error Text'));
+  final settingsTapper = find.byKey(Key('Settings'));
 
   group('Sequence Test Runner', () {
-
     testWidgets('setup', (tester) async {
-      app.main();
-      await tester.pumpAndSettle();
+      print('Starting test');
+      await tester.pumpWidget(app.TaminationsApp());
+      await tester.pumpAndSettle(Duration(seconds: 5));
+
       await tester.tap(settingsTapper);
       await tester.pumpAndSettle();
       await tester.tap(fastTapper);
-      await tester.tap(sequencerTapper);
-      await tester.pumpAndSettle();
-      await tester.tap(sequencerInputTapper);
-      await tester.pumpAndSettle();
+    });
 
-    for (var testName in testSequences.keys) {
-    //  testWidgets(testName, (tester) async {
-        await tester.runAsync(() async {
-          final sequencerReset = find.byKey(Key('Reset'));
-          await tester.tap(sequencerReset);
+      for (var testName in testSequences.keys) {
+        testWidgets(testName, (tester) async {
+          await tester.pumpWidget(SequencerTestPage());
+          await tester.pumpAndSettle();
+          await tester.tap(sequencerInputTapper);
+          await tester.pumpAndSettle();
           for (var call in testSequences[testName].split('\n')) {
             await tester.enterText(sequencerInput,call);
             await tester.tap(sequencerSubmit);
-            expect(await (tester.widget(errorText) as TextField).decoration?.errorText,' ');
+            await tester.pump();
+            expect(await (tester.widget(errorText) as Text).data,' ');
           }
           await tester.pumpAndSettle();
-          //await driver!.waitUntilNoTransientCallbacks();
           testsFinished.add(testName);
           testsFailed.remove(testName);
         });
-     // });
-    }
+      }
     });
-  });
 }

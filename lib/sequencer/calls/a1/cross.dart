@@ -30,6 +30,7 @@ class Cross extends Action {
   @override
   Future<void> perform(CallContext ctx, [int stackIndex = 0]) async {
     //  If dancers are not specified, then the trailers cross
+    ctx.analyze();
     if (ctx.actives.length == ctx.dancers.length) {
       for (var d in ctx.dancers)
         d.data.active = d.data.trailer;
@@ -56,9 +57,11 @@ class Cross extends Action {
           a < pi/2) {
         if (d2 == null)
           d2 = it;
-        else if (d.distanceTo(d2).isAbout(d.distanceTo(it)))
+        //  Prefer closer dancer
+        else if (d.distanceTo(it).isLessThan(d.distanceTo(d2)))
           d2 = it;
-        else if (d.distanceTo(it) < d.distanceTo(d2))
+        //  Prefer not to cross across center
+        else if (d.location.isAbout(-d2.location))
           d2 = it;
       }
     }

@@ -34,12 +34,14 @@ class FirstLandscapePage extends fm.StatelessWidget {
   fm.Widget build(fm.BuildContext context) {
     return Page(
       child: pp.Consumer<TamState>(
-        builder: (context,appState,_) => FirstLandscapeFrame(rightChild:
-        appState.detailPage == DetailPage.SETTINGS
-            ? SettingsFrame()
-            : appState.detailPage == DetailPage.CALLS
-            ? CallsFrame()
-            : WebFrame('info/about.html')),
+          builder: (context,appState,_) {
+            return FirstLandscapeFrame(rightChild:
+            appState.detailPage == DetailPage.SETTINGS
+                ? SettingsFrame()
+                : appState.detailPage == DetailPage.CALLS
+                ? CallsFrame()
+                : WebFrame('info/about.html'));
+          }
       ),
     );
   }

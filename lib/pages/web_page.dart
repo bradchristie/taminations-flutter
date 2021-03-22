@@ -87,7 +87,7 @@ class _WebFrameState extends fm.State<WebFrame> {
           }
           isAbbrev = settings.isAbbrev;
           return fm.FutureBuilder(
-              future:  htmlFuture,
+              future:  _loadHtmlFromAssets(),
               builder: (context,snapshot) =>
               snapshot.hasData ?
               fm.Column(
@@ -96,11 +96,12 @@ class _WebFrameState extends fm.State<WebFrame> {
                         child:pp.Consumer<AnimationState>(
                             builder: (context, settings, child) {
                               //  TODO highlight current part in definition
-                              return child!;
+                              return child;
                             },
                             child: ewv.EasyWebView(
+                                key: fm.ValueKey(link),
                                 src: snapshot.data!.toString(),
-                                isHtml: !snapshot.data.toString().endsWith('html'),
+                                isHtml: !snapshot.data.toString().endsWith('.html'),
                                 onLoaded: () { })
                         )
                     ),
@@ -204,7 +205,9 @@ class _WebFrameState extends fm.State<WebFrame> {
 
   //  Load the original HTML, then call all the routines to fix it up
   Future<String> _loadHtmlFromAssets() async {
-    if (localizedAssetName == 'info/about.html') {
+    //  Need to load about.html directly from the web site
+    //  so the service worker is active
+    if (localizedAssetName == 'info/about.html' && TamUtils.platform() == 'web') {
       return 'https://www.tamtwirlers.org/taminations/assets/assets/info/about.html';
     }
     var fileText = await rootBundle.loadString('assets/$localizedAssetName');
