@@ -20,7 +20,7 @@
 
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart' as fm;
-import 'package:flutter/services.dart';
+import 'package:flutter/services.dart' as fs;
 import 'package:provider/provider.dart' as pp;
 import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
 import 'package:speech_to_text/speech_to_text.dart';
@@ -152,7 +152,7 @@ class _SequencerEditLineState extends fm.State<SequencerEditLine> {
   @override
   void dispose() {
     textFieldController.dispose();
-    SystemChannels.textInput.invokeMethod('TextInput.hide');
+    fs.SystemChannels.textInput.invokeMethod('TextInput.hide');
     super.dispose();
   }
 
@@ -368,12 +368,36 @@ class SequencerCopyButton extends fm.StatelessWidget {
 }
 
 class SequencerPasteButton extends fm.StatelessWidget {
+  final controller = fm.TextEditingController();
   @override
   fm.Widget build(fm.BuildContext context) {
     final model = pp.Provider.of<SequencerModel>(context,listen: false);
     return fm.Expanded(
         child: Button('Paste',onPressed: () {
-            model.paste();
+          //  Show the calls to paste
+          //  and let the user confirm and edit
+          fs.Clipboard.getData('text/plain').then((value) async {
+            if (value is fs.ClipboardData) {
+              controller.text = value.text ?? '';
+              await fm.showDialog(context: context, builder: (ctx) =>
+                  fm.AlertDialog(
+                    title: fm.Text('Paste Sequence'),
+                    content: fm.TextField(
+                      controller: controller,
+                      maxLines: null,
+                    ),
+                    actions: [
+                      fm.TextButton(child: fm.Text('OK'), onPressed: () {
+                        fm.Navigator.of(context).pop();
+                        model.paste(controller.text);
+                      }),
+                      fm.TextButton(child: fm.Text('Cancel'), onPressed: () {
+                        fm.Navigator.of(context).pop();
+                      })
+                    ],
+                  ));
+            }
+          });
         })
     );
   }

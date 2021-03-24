@@ -192,15 +192,15 @@ class SequencerModel extends fm.ChangeNotifier {
     fs.Clipboard.setData(clip);
   }
 
-  void paste() {
-    fs.Clipboard.getData('text/plain').then((value) async {
-      if (value is fs.ClipboardData) {
-        for (final line in value.text!.split('\n')) {
-          if (!await loadOneCall(line))
-            break;
-        }
+  void paste(String calltext) async {
+    for (final line in calltext.split('\n')) {
+      if (line.isBlank) {
+        continue;
       }
-    });
+      if (!await loadOneCall(line)) {
+        break;
+      }
+    }
   }
 
 }
