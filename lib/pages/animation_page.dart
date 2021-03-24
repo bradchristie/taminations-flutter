@@ -230,7 +230,7 @@ class _AnimationFrameState extends fm.State<AnimationFrame>
                       };
 
                       //  Wrap dance area with widget to detect pointer events
-                      final beats = model.calls.isNotEmpty ? model.totalBeats().s : '';
+                      final beats = model.calls.isNotEmpty ? model.totalBeats().i.s : '';
                       return fm.GestureDetector(
                           onTapDown: tapDownHandler,
                           onSecondaryTapDown: tapDownHandler,
