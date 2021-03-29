@@ -42,7 +42,7 @@
   </tam>
 
   <tam title="Outfacing Points Like a Ripple Jaywalk, Swing, Slip, Cast Off 3/4"
-       formation="Diamonds Facing Girl Points" group=" " fractions="3;3;3">
+       group=" " fractions="3;3;3">
     <formation>
       <dancer gender="boy" x="0" y="-3" angle="180"/>
       <dancer gender="girl" x="-3" y="-2" angle="270"/>

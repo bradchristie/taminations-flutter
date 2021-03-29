@@ -48,8 +48,7 @@
   </tam>
 
   <tam title="Cross Ramble" from="3/4 Tag, Boys in Center"
-       formation="3/4 Tag" parts="4"
-       sequencer="gender-specific">
+       parts="4" sequencer="gender-specific">
     <formation>
       <dancer gender="girl" x="-3" y="1" angle="180"/>
       <dancer gender="boy" x="0" y="-3" angle="180"/>
@@ -80,8 +79,7 @@
   </tam>
 
   <tam title="Cross Ramble" from="3/4 Tag, Girls in Center"
-       formation="3/4 Tag" parts="4"
-       sequencer="gender-specific">
+       parts="4" sequencer="gender-specific">
     <formation>
       <dancer gender="boy" x="-3" y="1" angle="180"/>
       <dancer gender="girl" x="0" y="-3" angle="180"/>
