@@ -354,8 +354,11 @@ class Dancer implements Comparable<Dancer> {
     var p = fm.Paint()..color = dc;
     c.drawCircle(fm.Offset(0.5,0.0), 0.33, p);
     //  Draw the body
-    p.color = (showNumber == NUMBERS_OFF || gender == Gender.PHANTOM)
-          ? fc : fc.veryBright();
+    final reallyShowNumbers =
+        showNumber != NUMBERS_OFF &&
+        gender != Gender.PHANTOM &&
+        fillColor != Color.GRAY;
+    p.color = reallyShowNumbers ? fc.veryBright() : fc;
     var g = showShape ? gender : Gender.PHANTOM;
     if (g == Gender.BOY)
       c.drawRect(rect, p);
@@ -374,7 +377,7 @@ class Dancer implements Comparable<Dancer> {
     else
       c.drawRRect(rrect, p);
     //  Draw number if on
-    if (showNumber != Dancer.NUMBERS_OFF) {
+    if (reallyShowNumbers) {
       //  The dancer is rotated relative to the display, but of course
       //  the dancer number should not be rotated.
       //  So the number needs to be transformed back
