@@ -1969,7 +1969,19 @@ Girls Zoom
 Centers Pass Thru 
 Right and Left Thru 
 Veer Right 
-Promenade Home'''
+Promenade Home''',
+
+  'Saparate Go Around' :
+'''Heads Turn Thru 
+Centers Separate Around One to a Line 
+Pass Thru 
+Tag the Line Zag Zig 
+Left Swing Thru 
+Split Circulate 
+Girls Run 
+Ferris Wheel 
+Centers Pass Thru 
+Allemande Left'''
 
 };
 

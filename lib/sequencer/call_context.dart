@@ -798,7 +798,7 @@ class CallContext {
     for (var i=0; i<callstack.length; i++) {
       var c = callstack[i];
       await c.performCall(this,i);
-      if (c is Action && i < callstack.length-1)
+      if (i < callstack.length-1)
         analyze();
       //  A few calls (e.g. Hinge) don't know their level until the call is performed
       if (c.level > level)
