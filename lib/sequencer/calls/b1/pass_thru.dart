@@ -28,7 +28,9 @@ class PassThru extends Action {
   Path performOne(Dancer d, CallContext ctx) {
     //  If in wave then maybe Ocean Wave rule applies
     var isFacing = ctx.dancerFacing(d)?.data.active ?? false;
-    if (!isFacing && ctx.isInWave(d) && d.data.partner != null) {
+    if (!isFacing && ctx.isInWave(d) && d.data.partner != null &&
+        //  extra logic for Those Who Can Pass Thru
+        !(ctx.dancerFacing(d.data.partner!)?.data.active ?? false)) {
       var d2 = d.data.partner!;
       if (!d2.data.active) {
         var d3 = (d2.isRightOf(d)) ? ctx.dancerToLeft(d) : ctx.dancerToRight(d);
