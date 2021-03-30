@@ -1402,6 +1402,25 @@
     </path>
   </tam>
 
+  <tam title="All 8 (A-1) Left Quarter Thru" group="All 8 (A-1)"
+       formation="Static MiniWaves LH"
+       fractions="1.5" >
+    <path>
+      <move select="Quarter Left" hands="left" offsetY="1"/>
+    </path>
+    <path>
+      <move select="Hinge Left" offsetX="1" />
+      <move select="Swing Right" />
+    </path>
+    <path>
+      <move select="Quarter Left" hands="left" offsetY="1"/>
+    </path>
+    <path>
+      <move select="Hinge Left" offsetX="1" />
+      <move select="Swing Right" />
+    </path>
+  </tam>
+
   <tam title="All 8 (A-1) Left Roll to a Wave"
        from="Couples Facing Out"
        formation="Static Facing Out" group="All 8 (A-1)">

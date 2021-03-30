@@ -1981,6 +1981,18 @@ Split Circulate
 Girls Run 
 Ferris Wheel 
 Centers Pass Thru 
+Allemande Left''',
+
+  'Those Who Can Pass Thru' :
+'''Heads Touch 1/4 
+Those Who Can Pass Thru 
+Centers Step to a Wave 
+Chain Reaction 
+Left Turn and Deal 
+Star Thru 
+Wheel and Deal 
+Zoom 
+Centers Square Thru 3 
 Allemande Left'''
 
 };

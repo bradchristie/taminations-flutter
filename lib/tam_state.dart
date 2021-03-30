@@ -70,6 +70,9 @@ class TamState extends fm.ChangeNotifier {
   bool play;
   bool loop;
   bool grid;
+  //  Fields for sequencer URL
+  String? formation;
+  String? calls;
   @override
   bool operator ==(Object other) =>
       (other is TamState)
@@ -85,13 +88,15 @@ class TamState extends fm.ChangeNotifier {
     this.embed = false,
     this.play = false,
     this.loop = false,
-    this.grid = false
+    this.grid = false,
+    this.formation,
+    this.calls
   }) : _level=level, _link=link, _animnum=animnum,
         _mainPage=mainPage, _detailPage=detailPage;
 
   void change({String? level, String? link, int? animnum,
     MainPage? mainPage, DetailPage? detailPage,
-    bool? embed, bool? play, bool? loop, bool? grid}) {
+    bool? embed, bool? play, bool? loop, bool? grid, String? calls}) {
     final before = toString();
     _level = level ?? _level;
     _link = link ?? _link;
@@ -102,6 +107,7 @@ class TamState extends fm.ChangeNotifier {
     this.play = play ?? this.play;
     this.loop = loop ?? this.loop;
     this.grid = grid ?? this.grid;
+    this.calls = calls ?? this.calls;
     if (toString() != before)
       notifyListeners();
   }
@@ -118,7 +124,9 @@ class TamState extends fm.ChangeNotifier {
     if (embed) 'embed',
     if (play) 'play',
     if (loop) 'loop',
-    if (grid) 'grid'
+    if (grid) 'grid',
+    if (calls != null && calls!.isNotBlank)
+      'calls=$calls'
   ].join('&');
 
   bool get isBlank => toString().isBlank;

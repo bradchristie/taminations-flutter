@@ -68,7 +68,12 @@ class _SequencerPageState extends fm.State<SequencerPage> {
   void didChangeDependencies() {
     super.didChangeDependencies();
     final settings = pp.Provider.of<Settings>(context,listen: false);
+    final tamState = pp.Provider.of<TamState>(context,listen: false);
+    print('Sequencer state = $tamState');
     model = SequencerModel();
+    if (tamState.calls != null && tamState.calls!.isNotBlank) {
+      model.paste(tamState.calls!);
+    }
     model.startingFormation = settings.startingFormation;
   }
 
@@ -81,10 +86,16 @@ class _SequencerPageState extends fm.State<SequencerPage> {
         pp.ChangeNotifierProvider.value(value: model.animation),
       ],
       child: Page(
-        child: pp.Consumer2<TitleModel,Settings>(
-            builder: (context,titleModel,settings,_) {
+        child: pp.Consumer3<TitleModel,Settings,TamState>(
+            builder: (context,titleModel,settings,tamState,_) {
               titleModel.title = 'Sequencer';
+              print('Building sequencer page');
+              if (tamState.calls != null && tamState.calls!.isNotBlank) {
+                model.reset();
+                model.paste(tamState.calls!);
+              }
               model.startingFormation = settings.startingFormation;
+              //  Portrait only for small devices
               if (isSmallDevice(context)) {
                 return  fm.Column(
                   children: [

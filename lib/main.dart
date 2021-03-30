@@ -132,6 +132,7 @@ class TaminationsRouterDelegate extends fm.RouterDelegate<TamState>
               _orientation = orientation;
               return pp.Consumer<TamState>(
                   builder: (context,appState,_) {
+                    print('Router state: $appState');
                     return fm.Navigator(
                         key: navigatorKey,
 
@@ -365,7 +366,8 @@ class TaminationsRouterDelegate extends fm.RouterDelegate<TamState>
         embed: configuration.embed,
         play: configuration.play,
         loop: configuration.loop,
-        grid: configuration.grid
+        grid: configuration.grid,
+        calls: configuration.calls
     );
     notifyListeners();
   }
@@ -390,6 +392,14 @@ class TaminationsRouteInformationParser extends fm.RouteInformationParser<TamSta
     var play = params['play'] != null;
     var loop = params['loop'] != null;
     var grid = params['grid'] != null;
+    //  For sequencer
+    if (params['action'] == 'SEQUENCER') {
+      mainPage = MainPage.SEQUENCER;
+    }
+    var formation = params['formation'];
+    var calls = params['calls'];
+    if (calls != null)
+      print('calls: $calls');
     //  For backwards compatibility
     if (params['action'] == 'ANIMLIST') {
       mainPage = MainPage.ANIMLIST;
@@ -398,7 +408,8 @@ class TaminationsRouteInformationParser extends fm.RouteInformationParser<TamSta
     }
     return TamState(mainPage: mainPage, detailPage: detailPage, level:level,
       link:link,animnum:animnum,
-      embed:embed, play:play, loop:loop, grid:grid
+      embed:embed, play:play, loop:loop, grid:grid,
+      formation: formation, calls: calls
     );
   }
 
