@@ -40,6 +40,8 @@ class SecondLandscapePage extends fm.StatelessWidget {
           ],
           child: pp.Consumer<TamState>(
             builder: (context,tamState,_) {
+              if (tamState.link == null)  // sanity check
+                return fm.Container();
               final title = pp.Provider.of<TitleModel>(
                   context, listen: false);
               final painter = pp.Provider.of<DanceAnimationPainter>(

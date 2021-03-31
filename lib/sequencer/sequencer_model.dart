@@ -58,12 +58,12 @@ class SequencerModel extends fm.ChangeNotifier {
     reset();
   }
 
-  void reset() {
+  Future<void> reset() async {
     animation.doPause();
     calls = [];
     errorString = '';
     currentCall = -1;
-    _startSequence();
+    await _startSequence();
     later(() {
       notifyListeners();
     });
@@ -135,7 +135,7 @@ class SequencerModel extends fm.ChangeNotifier {
     var newbeats = animation.beats;
     if (newbeats > prevbeats) {
       //  Call worked, add it to the list
-      calls.add(SequencerCall(cctx.callname + comment,beats:(newbeats-prevbeats),level:cctx.level));
+      calls.add(SequencerCall((cctx.callname + comment).trim(),beats:(newbeats-prevbeats),level:cctx.level));
       animation.beat = prevbeats - animation.leadout;
       _updateParts();
       animation.doPlay();
@@ -145,8 +145,8 @@ class SequencerModel extends fm.ChangeNotifier {
   bool isComment(String text) =>
       text.trim().startsWith('[^\\[a-zA-Z0-9]'.r);
 
-  void _startSequence() {
-    animation.setAnimation(TamUtils.getFormation(startingFormation));
+  Future<void> _startSequence() async {
+    await animation.setAnimation(TamUtils.getFormation(startingFormation));
     _updateParts();
   }
 

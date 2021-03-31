@@ -96,10 +96,13 @@ class TamState extends fm.ChangeNotifier {
 
   void change({String? level, String? link, int? animnum,
     MainPage? mainPage, DetailPage? detailPage,
-    bool? embed, bool? play, bool? loop, bool? grid, String? calls}) {
+    bool? embed, bool? play, bool? loop, bool? grid,
+    String? formation, String? calls}) {
     final before = toString();
     _level = level ?? _level;
     _link = link ?? _link;
+    if (link?.isBlank ?? false)
+      _link = null;
     _animnum = animnum ?? _animnum;
     _mainPage = mainPage ?? _mainPage;
     _detailPage = detailPage ?? _detailPage;
@@ -107,6 +110,7 @@ class TamState extends fm.ChangeNotifier {
     this.play = play ?? this.play;
     this.loop = loop ?? this.loop;
     this.grid = grid ?? this.grid;
+    this.formation = formation ?? this.formation;
     this.calls = calls ?? this.calls;
     if (toString() != before)
       notifyListeners();
@@ -125,6 +129,8 @@ class TamState extends fm.ChangeNotifier {
     if (play) 'play',
     if (loop) 'loop',
     if (grid) 'grid',
+    if (formation != null && formation!.isNotBlank)
+      'formation=$formation',
     if (calls != null && calls!.isNotBlank)
       'calls=$calls'
   ].join('&');

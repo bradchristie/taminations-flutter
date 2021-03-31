@@ -69,12 +69,20 @@ class _SequencerPageState extends fm.State<SequencerPage> {
     super.didChangeDependencies();
     final settings = pp.Provider.of<Settings>(context,listen: false);
     final tamState = pp.Provider.of<TamState>(context,listen: false);
-    print('Sequencer state = $tamState');
     model = SequencerModel();
-    if (tamState.calls != null && tamState.calls!.isNotBlank) {
-      model.paste(tamState.calls!);
+    if (tamState.formation != null && tamState.formation!.isNotBlank) {
+      model.startingFormation = tamState.formation!;
+      model.reset().whenComplete(() {
+        if (tamState.calls != null && tamState.calls!.isNotBlank)
+          model.paste(tamState.calls!.replaceAll(';', '\n'));
+      });
     }
-    model.startingFormation = settings.startingFormation;
+    else
+      model.startingFormation = settings.startingFormation;
+    model.addListener(() {
+      tamState.change(formation:model.startingFormation,
+          calls : model.calls.map((e) => e.name).join(';'));
+    });
   }
 
   @override
@@ -89,11 +97,6 @@ class _SequencerPageState extends fm.State<SequencerPage> {
         child: pp.Consumer3<TitleModel,Settings,TamState>(
             builder: (context,titleModel,settings,tamState,_) {
               titleModel.title = 'Sequencer';
-              print('Building sequencer page');
-              if (tamState.calls != null && tamState.calls!.isNotBlank) {
-                model.reset();
-                model.paste(tamState.calls!);
-              }
               model.startingFormation = settings.startingFormation;
               //  Portrait only for small devices
               if (isSmallDevice(context)) {

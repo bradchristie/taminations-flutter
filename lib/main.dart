@@ -132,7 +132,6 @@ class TaminationsRouterDelegate extends fm.RouterDelegate<TamState>
               _orientation = orientation;
               return pp.Consumer<TamState>(
                   builder: (context,appState,_) {
-                    print('Router state: $appState');
                     return fm.Navigator(
                         key: navigatorKey,
 
@@ -270,9 +269,6 @@ class TaminationsRouterDelegate extends fm.RouterDelegate<TamState>
                         //  onPopPage
                         //  Calculate popped config based on current config
                         onPopPage: (route, result) {
-                        //  print('Pop Navigator: ${route.currentResult}');
-                          //  route.didPop returns false if the navigator
-                          //  has only one page in its list of pages
                           if (!route.didPop(result)) {
                             return false;
                           }
@@ -284,12 +280,16 @@ class TaminationsRouterDelegate extends fm.RouterDelegate<TamState>
                                 appState.mainPage == MainPage.STARTPRACTICE)
                               appState.change(mainPage: MainPage.LEVELS,
                                   animnum: -1,
-                                  detailPage: DetailPage.NONE);
+                                  detailPage: DetailPage.NONE,
+                                  formation: '',
+                                  calls: '');
                             else if (appState.mainPage == MainPage.ANIMATIONS ||
-                                appState.mainPage == MainPage.ANIMLIST)
+                                appState.mainPage == MainPage.ANIMLIST) {
                               appState.change(mainPage: MainPage.LEVELS,
                                   animnum: -1,
+                                  link: '',
                                   detailPage: DetailPage.CALLS);
+                            }
                             else if (appState.mainPage == MainPage.PRACTICE ||
                                 appState.mainPage == MainPage.TUTORIAL)
                               appState.change(mainPage:MainPage.STARTPRACTICE);
@@ -351,7 +351,8 @@ class TaminationsRouterDelegate extends fm.RouterDelegate<TamState>
         detailPage: configuration.detailPage
     );
     appState.addListener(() {
-      setNewRoutePath(appState);
+      //setNewRoutePath(appState);
+      notifyListeners();
     });
   }
 
@@ -367,6 +368,7 @@ class TaminationsRouterDelegate extends fm.RouterDelegate<TamState>
         play: configuration.play,
         loop: configuration.loop,
         grid: configuration.grid,
+        formation: configuration.formation,
         calls: configuration.calls
     );
     notifyListeners();
@@ -398,8 +400,6 @@ class TaminationsRouteInformationParser extends fm.RouteInformationParser<TamSta
     }
     var formation = params['formation'];
     var calls = params['calls'];
-    if (calls != null)
-      print('calls: $calls');
     //  For backwards compatibility
     if (params['action'] == 'ANIMLIST') {
       mainPage = MainPage.ANIMLIST;
