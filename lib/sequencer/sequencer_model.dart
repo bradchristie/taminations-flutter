@@ -42,7 +42,6 @@ class SequencerModel extends fm.ChangeNotifier {
   set startingFormation(String value) {
     if (value != _startingFormation) {
       _startingFormation = value;
-      reset();
     }
   }
   String partString = '';

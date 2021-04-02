@@ -77,8 +77,10 @@ class _SequencerPageState extends fm.State<SequencerPage> {
           model.paste(tamState.calls!.replaceAll(';', '\n'));
       });
     }
-    else
+    else {
       model.startingFormation = settings.startingFormation;
+      model.reset();
+    }
     model.addListener(() {
       tamState.change(formation:model.startingFormation,
           calls : model.calls.map((e) => e.name).join(';'));
@@ -97,7 +99,6 @@ class _SequencerPageState extends fm.State<SequencerPage> {
         child: pp.Consumer3<TitleModel,Settings,TamState>(
             builder: (context,titleModel,settings,tamState,_) {
               titleModel.title = 'Sequencer';
-              model.startingFormation = settings.startingFormation;
               //  Portrait only for small devices
               if (isSmallDevice(context)) {
                 return  fm.Column(

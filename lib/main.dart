@@ -348,7 +348,9 @@ class TaminationsRouterDelegate extends fm.RouterDelegate<TamState>
         link: configuration.link,
         animnum: configuration.animnum,
         mainPage:configuration.mainPage,
-        detailPage: configuration.detailPage
+        detailPage: configuration.detailPage,
+        formation: configuration.formation,
+        calls: configuration.calls
     );
     appState.addListener(() {
       //setNewRoutePath(appState);
