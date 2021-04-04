@@ -1,0 +1,1 @@
+.\gradlew app:connectedAndroidTest -Ptarget=`pwd`/../integration_test/sequencer_test.dart

@@ -1117,9 +1117,9 @@ class CallContext {
     var dl = dancerToLeft(d);
     if (dr == null && dl == null)
       return false;
-    if (dr != null && (d.distanceTo(dr) > 2.0 || !isInWave(d,dr)))
+    if (dr != null && d.distanceTo(dr) < 2.1 && !isInWave(d,dr))
       return false;
-    if (dl != null && (d.distanceTo(dl) > 2.0 || !isInWave(d,dl)))
+    if (dl != null && d.distanceTo(dl) < 2.1 && !isInWave(d,dl))
       return false;
     return true;
   });
