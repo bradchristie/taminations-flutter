@@ -1993,6 +1993,19 @@ Star Thru
 Wheel and Deal 
 Zoom 
 Centers Square Thru 3 
+Allemande Left''',
+
+  'Cast a Shadow 3/4 Slip' :
+'''Heads Lead Right
+Veer Left
+Cast a Shadow Centers Go 3/4
+Boys Run
+Fan the Top
+Slip
+Turn and Deal
+Touch a Quarter
+Circulate
+Boys Run
 Allemande Left'''
 
 };

@@ -45,30 +45,30 @@ class And extends FilterActives {
   bool isActive(Dancer d, CallContext ctx) {
     var retval = d.isActive;
     for (var call in ctx.callstack.take(_index)) {
-      var normWords = TamUtils.normalizeCall(call.name).split(' ' );
-      if (normWords.contains('boy' ))
+      var normWords = TamUtils.normalizeCall(call.name).toLowerCase().split(' ');
+      if (normWords.contains('boy'))
         retval &= d.gender == Gender.BOY;
       if (normWords.contains('girl' ))
         retval &= d.gender == Gender.GIRL;
-      if (normWords.contains('head' ))
+      if (normWords.contains('head'))
         retval &= d.numberCouple.i % 2 == 1;
-      if (normWords.contains('side' ))
+      if (normWords.contains('side'))
         retval &= d.numberCouple.i % 2 == 0;
-      if (normWords.contains('beau' ))
+      if (normWords.contains('beau'))
         retval &= d.data.beau;
-      if (normWords.contains('belle' ))
+      if (normWords.contains('belle'))
         retval &= d.data.belle;
-      if (normWords.contains('lead' ))
+      if (normWords.contains('lead'))
         retval &= d.data.leader;
-      if (normWords.contains('trail' ))
+      if (normWords.contains('trail'))
         retval &= d.data.trailer;
-      if (normWords.contains('center' )) {
-        if (normWords.contains('very' ))
+      if (normWords.contains('center')) {
+        if (normWords.contains('very'))
           retval &= d.data.verycenter;
         else
           retval &= d.data.center;
       }
-      if (normWords.contains('end' ))
+      if (normWords.contains('end'))
         retval &= d.data.end;
     }
     return retval;
