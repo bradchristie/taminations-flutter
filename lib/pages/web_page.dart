@@ -28,6 +28,7 @@ import 'package:easy_web_view/easy_web_view.dart' as ewv;
 import '../common.dart';
 import 'animation_page.dart';
 import 'page.dart';
+import '../version.dart';
 
 //  Classes to display both About and Definition
 class WebPage extends fm.StatelessWidget {
@@ -101,7 +102,7 @@ class _WebFrameState extends fm.State<WebFrame> {
                             child: ewv.EasyWebView(
                                 key: fm.ValueKey(link),
                                 src: snapshot.data!.toString(),
-                                isHtml: !snapshot.data.toString().endsWith('.html'),
+                                isHtml: !snapshot.data.toString().startsWith('http'),
                                 onLoaded: () { })
                         )
                     ),
@@ -208,7 +209,7 @@ class _WebFrameState extends fm.State<WebFrame> {
     //  Need to load about.html directly from the web site
     //  so the service worker is active
     if (localizedAssetName == 'info/about.html' && TamUtils.platform() == 'web') {
-      return 'https://www.tamtwirlers.org/taminations/assets/assets/info/about.html';
+      return 'https://www.tamtwirlers.org/taminations/assets/assets/info/about.html?version=$version';
     }
     var fileText = await rootBundle.loadString('assets/$localizedAssetName');
     fileText = hackCSS(fileText);
