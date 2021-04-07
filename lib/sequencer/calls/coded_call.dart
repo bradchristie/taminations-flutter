@@ -262,7 +262,7 @@ abstract class CodedCall extends Call {
     'fold'.ri: (_) => Fold(),
     '\\d\\d'.ri: (name) => Fraction(name),
 
-    'girl'.ri: (_) => Girls(),
+    'girl|ladies|lady'.ri: (_) => Girls(),
     'grandcrosstradeandwheel'.ri: (_) => GrandCrossTradeAndWheel(),
     'grand(left)?swingthru'.ri: (name) => GrandSwingThru(name),
     '_grandswing(left|right)?'.ri: (name) => GrandSwingX(name),
