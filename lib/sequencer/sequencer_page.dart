@@ -98,6 +98,7 @@ class _SequencerPageState extends fm.State<SequencerPage> {
       child: Page(
         child: pp.Consumer3<TitleModel,Settings,TamState>(
             builder: (context,titleModel,settings,tamState,_) {
+              model.startingFormation = settings.startingFormation;
               titleModel.title = 'Sequencer';
               //  Portrait only for small devices
               if (isSmallDevice(context)) {
