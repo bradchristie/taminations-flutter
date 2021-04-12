@@ -52,7 +52,8 @@ class WindmillX extends Action {
   @override
   Future<void> perform(CallContext ctx, [int stackIndex = 0]) async {
     //  Get the direction
-    final dir = name.replaceFirst('_windmill'.ri,'');
+    final dir = name.replaceFirst('_windmill'.ri,'').trim().toLowerCase();
+    print('dir: $dir');
     //  Face that way and do two circulates
     if (dir == 'forward')
       await ctx.applyCalls('Circulate','Circulate');
