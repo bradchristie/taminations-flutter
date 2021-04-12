@@ -127,7 +127,7 @@ class AbbreviationsModel extends fm.ChangeNotifier {
   }
 
   void _save() {
-    if (!checkForErrors()) {
+    if (!_checkForErrors()) {
       _clearStorage();
       for (var p in currentAbbreviations) {
         if (p.abbr.isNotBlank && !p.isError)
@@ -136,7 +136,7 @@ class AbbreviationsModel extends fm.ChangeNotifier {
     }
   }
 
-  bool checkForErrors() {
+  bool _checkForErrors() {
     final errorCount = currentAbbreviations.where((e) => e.isError).length;
     for (var i=0; i<currentAbbreviations.length; i++) {
       var p = currentAbbreviations[i];
@@ -167,7 +167,7 @@ class AbbreviationsModel extends fm.ChangeNotifier {
         currentAbbreviations.last.expa.isNotBlank)
       currentAbbreviations.add(Abbreviation('',''));
 
-    if (currentAbbreviations.where((e) => e.isError).length != errorCount)
+    if (currentAbbreviations.where((e) => e.isError).isNotEmpty || errorCount > 0)
       notifyListeners();
     return currentAbbreviations.any((item) => item.isError);
   }

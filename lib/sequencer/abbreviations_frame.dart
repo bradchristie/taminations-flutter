@@ -126,9 +126,12 @@ class _AbbreviationsFrameState extends fm.State<AbbreviationsFrame> {
         );
         textEditController.value =
             value.copyWith(text: text, selection: selection);
-        model.setAbbreviation(editRow, text);
-      } else
-        model.setExpansion(editRow, textEditController.text);
+        if (text != model.currentAbbreviations[editRow].abbr)
+          model.setAbbreviation(editRow, text);
+      } else {
+        if (textEditController.text != model.currentAbbreviations[editRow].expa)
+          model.setExpansion(editRow, textEditController.text);
+      }
     }
   }
 
@@ -191,64 +194,74 @@ class _AbbreviationsFrameState extends fm.State<AbbreviationsFrame> {
 
   @override
   fm.Widget build(fm.BuildContext context) {
-    final model = pp.Provider.of<AbbreviationsModel>(context, listen: false);
-    return fm.Column(
-        children: [
-          fm.Expanded(
-              child: fm.Scrollbar(
-                isAlwaysShown: TamUtils.platform() == 'web',
-                thickness: 16,
-                controller: scrollController,
-                child: fm.ListView.builder(
-                    controller: scrollController,
-                    itemCount: model.currentAbbreviations.length,
-                    itemBuilder: (context,index) =>
-                        fm.Row(
-                            children: [
-                              _oneTextItem(index, false),
-                              _oneTextItem(index, true)
-                            ]
-                        )
-                ),
-              )
-          ),
-          fm.Container(
-              color: Color.FLOOR,
-              child: fm.Row(
-                  children: [
-                    _AbbreviationsCopyButton(),
-                    _AbbreviationsWarningButton(
-                        name: 'Paste',
-                        title: 'Confirm Paste',
-                        message: 'This will APPEND to your current abbreviations!',
-                        action: () {
-                          setState(() {
-                            model.paste();
-                          });
-                        }),
-                    _AbbreviationsWarningButton(
-                        name: 'Clear',
-                        title: 'Confirm Erase',
-                        message: 'This will ERASE ALL your abbreviations!',
-                        action: () {
-                          setState(() {
-                            model.clear();
-                          });
-                        }),
-                    _AbbreviationsWarningButton(
-                        name: 'Reset',
-                        title: 'Confirm Reset',
-                        message: 'This will REPLACE ALL your abbreviations!',
-                        action: () {
-                          setState(() {
-                            model.defaultAbbreviations();
-                          });
-                        })
-                  ]
-              )
-          )
-        ]
-    );
+    return pp.Consumer<AbbreviationsModel>(
+      builder: (context,model,child) {
+        //  Building destroys the current cursor position
+        //  So every time an error is detected or cleared, the cursor
+        //  would reset to the start of the text
+        //  To prevent that, save the selections and restore after the build
+        final saveSelection = textEditController.selection;
+        later(() {
+          textEditController.selection = saveSelection;
+        });
+        return fm.Column(
+          children: [
+            fm.Expanded(
+                child: fm.Scrollbar(
+                  isAlwaysShown: TamUtils.platform() == 'web',
+                  thickness: 16,
+                  controller: scrollController,
+                  child: fm.ListView.builder(
+                      controller: scrollController,
+                      itemCount: model.currentAbbreviations.length,
+                      itemBuilder: (context, index) =>
+                          fm.Row(
+                              children: [
+                                _oneTextItem(index, false),
+                                _oneTextItem(index, true)
+                              ]
+                          )
+                  ),
+                )
+            ),
+            fm.Container(
+                color: Color.FLOOR,
+                child: fm.Row(
+                    children: [
+                      _AbbreviationsCopyButton(),
+                      _AbbreviationsWarningButton(
+                          name: 'Paste',
+                          title: 'Confirm Paste',
+                          message: 'This will APPEND to your current abbreviations!',
+                          action: () {
+                            setState(() {
+                              model.paste();
+                            });
+                          }),
+                      _AbbreviationsWarningButton(
+                          name: 'Clear',
+                          title: 'Confirm Erase',
+                          message: 'This will ERASE ALL your abbreviations!',
+                          action: () {
+                            setState(() {
+                              model.clear();
+                            });
+                          }),
+                      _AbbreviationsWarningButton(
+                          name: 'Reset',
+                          title: 'Confirm Reset',
+                          message: 'This will REPLACE ALL your abbreviations!',
+                          action: () {
+                            setState(() {
+                              model.defaultAbbreviations();
+                            });
+                          })
+                    ]
+                )
+            )
+          ]
+      );
+    });
   }
 }
 
