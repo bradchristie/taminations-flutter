@@ -190,6 +190,10 @@ class LevelFrame extends fm.StatelessWidget {
                 text:'Basic and Mainstream' ,
                 background:Color.BMS),
             _IndentedLineWidget(
+                text:'SSD' ,
+                background:Color.MS,
+                indented:Color.BMS),
+            _IndentedLineWidget(
                 text:'Basic 1' ,
                 background:Color.B1,
                 indented:Color.BMS),

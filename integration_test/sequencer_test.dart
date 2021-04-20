@@ -92,32 +92,32 @@ Trade By
 Allemande Left''',
 
   'Brace Thru 2':
-  '''Heads Star Thru and Spread 
-Pass the Ocean 
-Brace Thru 
-Veer Left 
-Ferris Wheel 
-Centers Square Thru 3 
+  '''Heads Star Thru and Spread
+Pass the Ocean
+Brace Thru
+Veer Left
+Ferris Wheel
+Centers Square Thru 3
 Allemande Left''',
 
   'Brace Thru 3':
-  '''Heads Star Thru and Spread 
-Pass the Ocean 
-Recycle 
-Centers In 
-Boys Run 
-Step to a Wave 
-Brace Thru 
-Centers Pass Thru 
-Centers Run 
-Touch a Quarter 
-Circulate 
-Face In 
-Fan the Top 
-Brace Thru 
-Pass Thru 
-Trade By 
-Pass Thru 
+  '''Heads Star Thru and Spread
+Pass the Ocean
+Recycle
+Centers In
+Boys Run
+Step to a Wave
+Brace Thru
+Centers Pass Thru
+Centers Run
+Touch a Quarter
+Circulate
+Face In
+Fan the Top
+Brace Thru
+Pass Thru
+Trade By
+Pass Thru
 Allemande Left ''',
 
   'California Twirl':
@@ -151,12 +151,12 @@ Pass Thru
 Allemande Left''',
 
   'Cloverleaf':
-'''Heads Pair Off and Spread 
-Circulate 
-Cloverleaf 
-Centers Pass Thru and Cloverleaf 
-Centers Pass Thru 
-Allemande Left 
+'''Heads Pair Off and Spread
+Circulate
+Cloverleaf
+Centers Pass Thru and Cloverleaf
+Centers Pass Thru
+Allemande Left
 Promenade Home''',
 
   'Clover And':
@@ -193,15 +193,15 @@ Bend the Line
 Centers Girls Cross''',
 
   'Cross 2':
-  '''Heads Touch a Quarter and Cross 
-Slide Thru 
-Step and Slide 
-Cloverleaf 
-Split Square Thru 
-Trade By 
-Veer Left 
-Bend the Line 
-Square Thru 2 
+  '''Heads Touch a Quarter and Cross
+Slide Thru
+Step and Slide
+Cloverleaf
+Split Square Thru
+Trade By
+Veer Left
+Bend the Line
+Square Thru 2
 Allemande Left''',
 
   'Cross Fold':
@@ -224,34 +224,34 @@ Quarter In
 Right and Left Grand''',
 
   'Cross Run':
-  '''Sides Touch a Quarter and Spread 
-Circulate 
-Centers Cross Run 
-Centers Cross Run 
-Acey Deucey and Spread 
-Centers Run 
-Centers Cross Run 
-Trade and Roll 
-Right and Left Thru 
-Pass Thru 
-Trade By 
-Allemande Left 
+  '''Sides Touch a Quarter and Spread
+Circulate
+Centers Cross Run
+Centers Cross Run
+Acey Deucey and Spread
+Centers Run
+Centers Cross Run
+Trade and Roll
+Right and Left Thru
+Pass Thru
+Trade By
+Allemande Left
 Promenade Home''',
 
   'Cross Run 2':
-  '''Heads Pass the Ocean 
-Extend 
-Spin the Top 
-Boys Cross Run 
-Center 4 Centers Cross Run 
-Ends Cross Run 
-As Couples Wheel and Deal 
-Right and Left Thru 
-Star Thru 
-Centers Pass Thru 
-Right and Left Thru 
-Pass Thru 
-Allemande Left 
+  '''Heads Pass the Ocean
+Extend
+Spin the Top
+Boys Cross Run
+Center 4 Centers Cross Run
+Ends Cross Run
+As Couples Wheel and Deal
+Right and Left Thru
+Star Thru
+Centers Pass Thru
+Right and Left Thru
+Pass Thru
+Allemande Left
 Promenade Home''',
 
   'Double Star Thru' :
@@ -340,15 +340,15 @@ Boys Run
 Allemande Left''',
 
   'Half 2' :
-  '''Sides Pass the Ocean 
-Extend 
-Centers Half Circulate 
-Hourglass Circulate 
-Cut the Hourglass 
-Boys Run 
-Circulate 
-Ferris Wheel 
-Centers Square Thru 3 
+  '''Sides Pass the Ocean
+Extend
+Centers Half Circulate
+Hourglass Circulate
+Cut the Hourglass
+Boys Run
+Circulate
+Ferris Wheel
+Centers Square Thru 3
 Allemande Left''',
 
   'Half Sashay' :
@@ -506,14 +506,14 @@ Centers Square Thru 3
 Allemande Left''',
 
   'Run 2' :
-  '''Head Couples Pass Thru, Separate Around 2 to a Line 
-Pass Thru 
-Ends Cross Fold 
-Pass Thru 
-Ends Trade and Roll 
-Touch a Quarter 
-Boys Run 
-Centers Face Out 
+  '''Head Couples Pass Thru, Separate Around 2 to a Line
+Pass Thru
+Ends Cross Fold
+Pass Thru
+Ends Trade and Roll
+Touch a Quarter
+Boys Run
+Centers Face Out
 Allemande Left''',
 
   'Separate' :
@@ -726,25 +726,25 @@ Right and Left Thru
 Allemande Left''',
 
   'ZigZag' :
-  '''Sides Star Thru and Spread 
-Touch a Quarter 
-Zig Zig 
-Left Touch a Quarter 
-Zag Zag 
-Pass Thru 
-Wheel and Deal 
-Zig 
-Girls Run 
-Boys Touch a Quarter 
-Zag 
-Zag Zig 
-Zig 
-Zig Zag 
-Boys Face Out 
-Heads Slide Thru 
-Centers Chase Right 
-Ferris Wheel 
-Centers Cross Trail Thru 
+  '''Sides Star Thru and Spread
+Touch a Quarter
+Zig Zig
+Left Touch a Quarter
+Zag Zag
+Pass Thru
+Wheel and Deal
+Zig
+Girls Run
+Boys Touch a Quarter
+Zag
+Zag Zig
+Zig
+Zig Zag
+Boys Face Out
+Heads Slide Thru
+Centers Chase Right
+Ferris Wheel
+Centers Cross Trail Thru
 Allemande Left''',
 
   'Zoom' :
@@ -779,16 +779,16 @@ Centers Pass Thru
 Allemande Left''',
 
   'Split Square Thru 2' :
-  '''Sides Pass the Ocean 
-Centers Lockit 
-Split Square Thru 2 
-Trade By and Roll 
-Outer 4 Left Touch 
-Left Split Square Thru 3 
-Cast Off Three Quarters 
-Pass Thru 
-Bend the Line 
-Star Thru 
+  '''Sides Pass the Ocean
+Centers Lockit
+Split Square Thru 2
+Trade By and Roll
+Outer 4 Left Touch
+Left Split Square Thru 3
+Cast Off Three Quarters
+Pass Thru
+Bend the Line
+Star Thru
 Allemande Left''',
 
   'Left Split Square Thru' :
@@ -855,12 +855,12 @@ Slide
 Right and Left Grand ''',
 
   'Peel to a Diamond Chain Thru' :
-  '''Heads Lead Right 
-Girls Cross 
-Peel to a Diamond Chain Thru 
-Girls Run 
-Ferris Wheel 
-Centers Square Thru 3 
+  '''Heads Lead Right
+Girls Cross
+Peel to a Diamond Chain Thru
+Girls Run
+Ferris Wheel
+Centers Square Thru 3
 Allemande Left
 Promenade Home''',
 
@@ -960,565 +960,565 @@ Centers Pass Thru
 Allemande Left''',
 
   'Zing 2' :
-  '''Heads Lead Right 
-Veer Left 
-Zing 
-Veer Right 
-Zing 
-Beaus Cross 
-Boys Zig Zag 
-Boys Zing 
-Girls Right Roll to a Wave 
-Ping Pong Circulate 
-Girls Face Right 
-Girls Zing 
-Extend 
-Circulate 
-Boys Run 
-Bend the Line 
-Pass Thru 
+  '''Heads Lead Right
+Veer Left
+Zing
+Veer Right
+Zing
+Beaus Cross
+Boys Zig Zag
+Boys Zing
+Girls Right Roll to a Wave
+Ping Pong Circulate
+Girls Face Right
+Girls Zing
+Extend
+Circulate
+Boys Run
+Bend the Line
+Pass Thru
 Promenade Home''',
 
   'Squeeze the Hourglass' :
-  '''Heads Lead Right 
-Veer Left 
-Switch to an Hourglass 
-Squeeze the Hourglass 
-Boys Turn Back 
-Flip the Galaxy 
-All 8 Left Swing Thru 
-Boys Run 
-All 8 Crossfire 
-Boys Run 
+  '''Heads Lead Right
+Veer Left
+Switch to an Hourglass
+Squeeze the Hourglass
+Boys Turn Back
+Flip the Galaxy
+All 8 Left Swing Thru
+Boys Run
+All 8 Crossfire
+Boys Run
 All 4 Couples Right and Left Thru''',
 
   'Squeeze the Galaxy' :
-  '''Heads Lead Right 
-Veer Left 
-Switch to an Hourglass 
-Squeeze the Hourglass 
-Squeeze the Galaxy 
-Flip the Hourglass 
-Girls Trade 
-Circulate 
-Ferris Wheel 
-Centers Pass Thru 
-Allemande Left 
+  '''Heads Lead Right
+Veer Left
+Switch to an Hourglass
+Squeeze the Hourglass
+Squeeze the Galaxy
+Flip the Hourglass
+Girls Trade
+Circulate
+Ferris Wheel
+Centers Pass Thru
+Allemande Left
 Right and Left Grand''',
 
   'Butterfly' :
-  '''Heads Lead Right 
-Pass Thru 
-Outer 4 Squeeze 
-Centers Pass Thru 
-Butterfly Pass Out 
-Butterfly Clover and Left Chase 
-Butterfly Centers Box Counter Rotate 
-Butterfly Trade 
-Butterfly Center Boys Run 
-Butterfly Left Roll to a Wave 
-Butterfly Magic Column Circulate 
-Butterfly Boys Run 
-Butterfly Belles Zoom 
-Butterfly Double Pass Thru 
-Boys Squeeze 
-Pass Thru 
-Trade By 
-Star Thru 
-Bend the Line 
-Star Thru 
-Pass Thru 
+  '''Heads Lead Right
+Pass Thru
+Outer 4 Squeeze
+Centers Pass Thru
+Butterfly Pass Out
+Butterfly Clover and Left Chase
+Butterfly Centers Box Counter Rotate
+Butterfly Trade
+Butterfly Center Boys Run
+Butterfly Left Roll to a Wave
+Butterfly Magic Column Circulate
+Butterfly Boys Run
+Butterfly Belles Zoom
+Butterfly Double Pass Thru
+Boys Squeeze
+Pass Thru
+Trade By
+Star Thru
+Bend the Line
+Star Thru
+Pass Thru
 Allemande Left''',
 
   'O' :
-  '''Sides Face Out 
-O Pass Out 
-O Centers Trade 
-O Left Chase 
-O Trade and Roll 
-O Left Roll to a Wave 
-O Magic Column Circulate 
-O Facing Dancers Pass Thru 
-Facing Dancers Slide In 
-Trade By 
-Touch a Quarter 
-Acey Deucey 
-Swing Thru 
-Hinge 
-Boys Run 
-Ferris Wheel 
-Centers Pass Thru 
+  '''Sides Face Out
+O Pass Out
+O Centers Trade
+O Left Chase
+O Trade and Roll
+O Left Roll to a Wave
+O Magic Column Circulate
+O Facing Dancers Pass Thru
+Facing Dancers Slide In
+Trade By
+Touch a Quarter
+Acey Deucey
+Swing Thru
+Hinge
+Boys Run
+Ferris Wheel
+Centers Pass Thru
 Allemande Left''',
 
   'Pass Thru' :
-  '''Sides Pass the Ocean 
-Extend 
-Pass Thru 
-Centers Pass the Ocean 
-Clover and Pass Thru 
+  '''Sides Pass the Ocean
+Extend
+Pass Thru
+Centers Pass the Ocean
+Clover and Pass Thru
 Allemande Left''',
 
   'Pass Thru 2' :
-  '''Side Ladies Chain 
-Sides Dixie Style to a Wave 
-Heads Half Sashay 
-Boys Pass Thru 
-Centers Crossfire 
-Facing Dancers Pass Thru 
-Right Roll to a Wave 
-Extend 
-Boys Pass Thru 
-Horseshoe Turn 
-Star Thru 
-Ferris Wheel 
-Centers Square Thru 3 
+  '''Side Ladies Chain
+Sides Dixie Style to a Wave
+Heads Half Sashay
+Boys Pass Thru
+Centers Crossfire
+Facing Dancers Pass Thru
+Right Roll to a Wave
+Extend
+Boys Pass Thru
+Horseshoe Turn
+Star Thru
+Ferris Wheel
+Centers Square Thru 3
 Allemande Left''',
 
   'To A Wave' :
-  '''Heads Square Chain Thru to a Wave 
-Extend 
-Recycle 
-Square Chain the Top to a Wave 
-Hinge 
-Boys Run 
-Load the Boat Centers to a Wave 
-Ping Pong Circulate 
-Centers Recycle 
-Half Sashay 
-Centers Square Thru 3 
+  '''Heads Square Chain Thru to a Wave
+Extend
+Recycle
+Square Chain the Top to a Wave
+Hinge
+Boys Run
+Load the Boat Centers to a Wave
+Ping Pong Circulate
+Centers Recycle
+Half Sashay
+Centers Square Thru 3
 Allemande Left''',
 
   'Kick Off' :
-  '''Heads Lead Right 
-Boys Kick Off 
-Centers Kick Off 
-Double Pass Thru 
-Lead Boys Kick Off 
-Centers Right Roll to a Wave 
-Cut the Diamond 
-Mini-Busy 
-Head Boys Kick Off 
-Flip the Diamond 
-Wheel and Deal 
-Pass Thru 
-Trade By 
-Touch a Quarter 
-Hinge 
-Acey Deucey 
-Swing Thru 
-Boys Run 
-Circulate 
-Wheel and Deal 
+  '''Heads Lead Right
+Boys Kick Off
+Centers Kick Off
+Double Pass Thru
+Lead Boys Kick Off
+Centers Right Roll to a Wave
+Cut the Diamond
+Mini-Busy
+Head Boys Kick Off
+Flip the Diamond
+Wheel and Deal
+Pass Thru
+Trade By
+Touch a Quarter
+Hinge
+Acey Deucey
+Swing Thru
+Boys Run
+Circulate
+Wheel and Deal
 Allemande Left''',
 
   'Twist And' :
-  '''Heads Lead Right 
-Star Thru 
-Twist and Pass Out 
-Centers In 
-Twist and Right and Left Thru 
-Split Square Thru 3 
-Twist and Left Touch 1/4 
-Girls Cross 
-Hinge 
-Grand Swing Thru 
-Recycle 
-Bend the Line 
-Pass Thru 
-Wheel and Deal 
-Centers Pass Thru 
+  '''Heads Lead Right
+Star Thru
+Twist and Pass Out
+Centers In
+Twist and Right and Left Thru
+Split Square Thru 3
+Twist and Left Touch 1/4
+Girls Cross
+Hinge
+Grand Swing Thru
+Recycle
+Bend the Line
+Pass Thru
+Wheel and Deal
+Centers Pass Thru
 Allemande Left''',
 
   'Twist And 2' :
-  '''Heads Lead Right 
-Veer Left 
-Bend the Line 
-Twist and Split Dixie Sashay 
-Boys Trade 
-Twist and Split Square Thru 3 
-Twist and Split Dixie Diamond 
-Flip the Diamond 
-Hinge 
-Swing Thru 
-Acey Deucey 
-Boys Run 
-Ferris Wheel 
-Centers Square Thru 3 
+  '''Heads Lead Right
+Veer Left
+Bend the Line
+Twist and Split Dixie Sashay
+Boys Trade
+Twist and Split Square Thru 3
+Twist and Split Dixie Diamond
+Flip the Diamond
+Hinge
+Swing Thru
+Acey Deucey
+Boys Run
+Ferris Wheel
+Centers Square Thru 3
 Allemande Left''',
 
   'As Couples' :
-  '''Heads Star Thru and Spread 
-As Couples Left Square Chain Thru to a Wave  
-As Couples Switch the Wave and Roll 
-As Couples Reverse Dixie Style to a Wave 
-As Couples Alter the Wave 
-As Couples Recycle 
-Star Thru 
-Leaders Trade 
+  '''Heads Star Thru and Spread
+As Couples Left Square Chain Thru to a Wave
+As Couples Switch the Wave and Roll
+As Couples Reverse Dixie Style to a Wave
+As Couples Alter the Wave
+As Couples Recycle
+Star Thru
+Leaders Trade
 Allemande Left''',
 
   'Crazy' :
-  '''Heads Lead Right 
-Touch a Quarter 
-Crazy Counter Rotate Twice 
-Crazy Circulate 
-1/2 Crazy Circulate 
-1/2 Crazy Counter Rotate Twice 
-Boys Run 
-Bend the Line 
-3/4 Crazy Flutterwheel 
-Pass the Ocean 
-Acey Deucey 
-Swing Thru 
-Boys Run 
-Circulate 
-Ferris Wheel 
-Centers Square Thru 3 
+  '''Heads Lead Right
+Touch a Quarter
+Crazy Counter Rotate Twice
+Crazy Circulate
+1/2 Crazy Circulate
+1/2 Crazy Counter Rotate Twice
+Boys Run
+Bend the Line
+3/4 Crazy Flutterwheel
+Pass the Ocean
+Acey Deucey
+Swing Thru
+Boys Run
+Circulate
+Ferris Wheel
+Centers Square Thru 3
 Allemande Left''',
 
   'Catch' :
-  '''Heads Lead Right 
-Catch 2 
-Boys Run 
-Left Catch 3 
-In-Roll Circulate 
-Boys Run 
-Wheel and Deal 
-Centers Pass Thru 
+  '''Heads Lead Right
+Catch 2
+Boys Run
+Left Catch 3
+In-Roll Circulate
+Boys Run
+Wheel and Deal
+Centers Pass Thru
 Allemande Left''',
 
   'Split Catch' :
-  '''Heads Right and Left Thru 
-Left Split Catch 3 
-Boys Run 
-Circulate 
-Wheel and Deal 
-Ends Quarter In 
-Split Catch 4 
-Coordinate 
-Bend the Line 
-Star Thru 
-Double Pass Thru 
-Right Roll to a Wave 
-Quarter Thru 
-Boys Run 
-Bend the Line 
-Star Thru 
-Pass Thru 
-Centers Reverse Swap Around 
-Ends Trade 
+  '''Heads Right and Left Thru
+Left Split Catch 3
+Boys Run
+Circulate
+Wheel and Deal
+Ends Quarter In
+Split Catch 4
+Coordinate
+Bend the Line
+Star Thru
+Double Pass Thru
+Right Roll to a Wave
+Quarter Thru
+Boys Run
+Bend the Line
+Star Thru
+Pass Thru
+Centers Reverse Swap Around
+Ends Trade
 Allemande Left''',
 
   'Vertical Tag' :
-  '''Heads Lead Right 
-Veer Left 
-Vertical 1/4 Tag 
-Extend 
-Boys Run 
-Vertical 1/2 Tag 
-Girls Run 
-Vertical 3/4 Tag 
-Clover and Hinge 
-Girls Walk and Dodge 
-Star Thru 
-Bend the Line 
-Vertical Left 1/4 Tag 
-Chain Reaction 
-Vertical Left 1/4 Tag 
-Extend 
-Reverse Explode 
-Vertical Left 1/4 Tag 
-Extend 
-Girls Run 
-Wheel and Deal 
-Centers Pass Thru 
+  '''Heads Lead Right
+Veer Left
+Vertical 1/4 Tag
+Extend
+Boys Run
+Vertical 1/2 Tag
+Girls Run
+Vertical 3/4 Tag
+Clover and Hinge
+Girls Walk and Dodge
+Star Thru
+Bend the Line
+Vertical Left 1/4 Tag
+Chain Reaction
+Vertical Left 1/4 Tag
+Extend
+Reverse Explode
+Vertical Left 1/4 Tag
+Extend
+Girls Run
+Wheel and Deal
+Centers Pass Thru
 Allemande Left''',
 
   'Adjust' :
-  '''Heads Pass the Ocean 
-Extend 
-Hinge 
-Scoot Chain Thru Boys to a Wave 
-Adjust to 1/4 Tag 
-Facing Dancers Pass Thru 
-Chain Reaction 
-Centers Pass the Ocean 
-Flip the Diamond 
-Circulate 
-Bend the Line 
-Reverse Flutterwheel 
-Star Thru 
-Cloverleaf 
-Centers Pass Thru 
-Star Thru 
-Pass Thru 
-Wheel and Deal 
-Centers Pass Thru 
-Right and Left Thru 
+  '''Heads Pass the Ocean
+Extend
+Hinge
+Scoot Chain Thru Boys to a Wave
+Adjust to 1/4 Tag
+Facing Dancers Pass Thru
+Chain Reaction
+Centers Pass the Ocean
+Flip the Diamond
+Circulate
+Bend the Line
+Reverse Flutterwheel
+Star Thru
+Cloverleaf
+Centers Pass Thru
+Star Thru
+Pass Thru
+Wheel and Deal
+Centers Pass Thru
+Right and Left Thru
 Allemande Left''',
 
   'Bend the Line' :
-  '''Heads Pass the Ocean 
-Extend 
-Circulate 1.5 
-Boys Run 
-Bend the Line 
-Centers Star Thru 
-Centers Pass Thru 
+  '''Heads Pass the Ocean
+Extend
+Circulate 1.5
+Boys Run
+Bend the Line
+Centers Star Thru
+Centers Pass Thru
 Allemande Left''',
 
   'Diamond Circulate' :
-  '''Sides Pass the Ocean 
-Extend 
-Hinge 
-Acey Deucey Once and a Half 
-Grand Swing Thru 
-Girls Diamond Circulate 
-Center 4 Diamond Circulate 
-Boys Diamond Circulate 
-Girls Mix 
-Half Grand Swing Thru 
-Girls Turn Back 
-Heads Diamond Circulate 
-Boys Turn Back 
-Girls Flip the Diamond 
-Heads Diamond Circulate 
-Sides Diamond Circulate 
-Boys Recycle 
-Girls Hinge 
-Boys Pass Thru 
-Boys Chase Right 
-Circulate 
-Boys Run 
-Centers Pass Thru 
-Veer Left 
-Wheel and Deal 
+  '''Sides Pass the Ocean
+Extend
+Hinge
+Acey Deucey Once and a Half
+Grand Swing Thru
+Girls Diamond Circulate
+Center 4 Diamond Circulate
+Boys Diamond Circulate
+Girls Mix
+Half Grand Swing Thru
+Girls Turn Back
+Heads Diamond Circulate
+Boys Turn Back
+Girls Flip the Diamond
+Heads Diamond Circulate
+Sides Diamond Circulate
+Boys Recycle
+Girls Hinge
+Boys Pass Thru
+Boys Chase Right
+Circulate
+Boys Run
+Centers Pass Thru
+Veer Left
+Wheel and Deal
 Allemande Left''',
 
   'Tandem' :
-  '''Sides Pass the Ocean 
-Extend 
-Tandem Left Swing Thru  
-Tandem Boys Run  
-Tandem Turn Back  
-Tandem Crossfire 
-Tandem Peel and Trail  
-Tandem Single Wheel  
-Tandem Pass Out  
-Tandem Partner Tag  
-Tandem Wheel Around  
-Tandem Pass Thru 
-Tandem Vertical Tag  
-Zig Zag 
-Recycle 
-Centers Pass Thru 
-Quarter In 
+  '''Sides Pass the Ocean
+Extend
+Tandem Left Swing Thru
+Tandem Boys Run
+Tandem Turn Back
+Tandem Crossfire
+Tandem Peel and Trail
+Tandem Single Wheel
+Tandem Pass Out
+Tandem Partner Tag
+Tandem Wheel Around
+Tandem Pass Thru
+Tandem Vertical Tag
+Zig Zag
+Recycle
+Centers Pass Thru
+Quarter In
 Allemande Left''',
 
   'Bounce' :
-  '''Heads Lead Right 
-Veer Left 
-Bounce the Ends 
-Circulate 
-Boys Run 
-Veer Right 
-Bounce the Leaders 
-Centers Pass Thru 
-Veer Left 
-Fan the Top 
-Bounce the Centers 
-Swing Thru 
-Boys Run 
-Wheel and Deal 
-Zoom 
-Centers Pass Thru 
+  '''Heads Lead Right
+Veer Left
+Bounce the Ends
+Circulate
+Boys Run
+Veer Right
+Bounce the Leaders
+Centers Pass Thru
+Veer Left
+Fan the Top
+Bounce the Centers
+Swing Thru
+Boys Run
+Wheel and Deal
+Zoom
+Centers Pass Thru
 Allemande Left
 Promenade Home''',
 
   'Bounce 2' :
-  '''Heads Lead Right 
-Veer Left 
-Bounce the Boys and Roll 
-Split Circulate 
-Centers Girls Run 
-Centers Boys Run 
-Siamese Box Circulate 
-Boys Trade and Roll 
-Center 4 Left Chase 
-Girls Run 
-Centers Pass Thru 
-Veer Right 
-Bounce the Boys and Roll 
-Split Circulate 
-Boys Trade and Roll 
-Center 4 Right Roll to a Wave 
-Chain Reaction 
-Hinge 
-Swing Thru 
-Circulate 
+  '''Heads Lead Right
+Veer Left
+Bounce the Boys and Roll
+Split Circulate
+Centers Girls Run
+Centers Boys Run
+Siamese Box Circulate
+Boys Trade and Roll
+Center 4 Left Chase
+Girls Run
+Centers Pass Thru
+Veer Right
+Bounce the Boys and Roll
+Split Circulate
+Boys Trade and Roll
+Center 4 Right Roll to a Wave
+Chain Reaction
+Hinge
+Swing Thru
+Circulate
 Promenade Home''',
 
   'Siamese' :
-  '''Heads Lead Right 
-Veer Left 
-Fan the Top 
-Girls Trade 
-Sides Single Wheel 
-Sides Turn Back 
-Siamese Swing Thru  
-Siamese Swing Thru  
-Siamese Recycle  
-Siamese Pass Thru  
-Siamese Chase Right  
-Siamese Cross  
-Siamese Right Roll to a Wave  
-Siamese Centers Hinge 
-Siamese Diamond Circulate 
-Siamese Flip the Diamond 
-Siamese Wheel and Deal 
-Siamese Right and Left Thru 
-Siamese Touch 1/4 
-Sides Half Zoom 
-Hinge and Roll 
-Face Out 
-Wheel and Deal 
-Zoom 
-Centers Swap Around 
-Heads Half Sashay 
+  '''Heads Lead Right
+Veer Left
+Fan the Top
+Girls Trade
+Sides Single Wheel
+Sides Turn Back
+Siamese Swing Thru
+Siamese Swing Thru
+Siamese Recycle
+Siamese Pass Thru
+Siamese Chase Right
+Siamese Cross
+Siamese Right Roll to a Wave
+Siamese Centers Hinge
+Siamese Diamond Circulate
+Siamese Flip the Diamond
+Siamese Wheel and Deal
+Siamese Right and Left Thru
+Siamese Touch 1/4
+Sides Half Zoom
+Hinge and Roll
+Face Out
+Wheel and Deal
+Zoom
+Centers Swap Around
+Heads Half Sashay
 Allemande Left''',
 
   'Transfer And' :
-  '''Sides Pair Off 
-Star Thru 
-Left Touch a Quarter 
-Transfer and Walk and Dodge 
-Centers Run and Roll 
-Double Pass Thru 
-Belles Run 
-Transfer and Follow Your Neighbor 
-Extend 
-Split Counter Rotate 
-Head Boys Face In 
-Transfer and Flip the Diamond 
-Centers Girls Run 
-Extend 
-Boys Run 
-Acey Deucey 
-Circulate 
-Ferris Wheel 
-Centers Square Thru 3 
+  '''Sides Pair Off
+Star Thru
+Left Touch a Quarter
+Transfer and Walk and Dodge
+Centers Run and Roll
+Double Pass Thru
+Belles Run
+Transfer and Follow Your Neighbor
+Extend
+Split Counter Rotate
+Head Boys Face In
+Transfer and Flip the Diamond
+Centers Girls Run
+Extend
+Boys Run
+Acey Deucey
+Circulate
+Ferris Wheel
+Centers Square Thru 3
 Allemande Left''',
 
   'Phantom' :
-  '''Heads Star Thru and Spread 
-Boys Bend the Line 
-Phantom Right and Left Thru  
-Phantom Pass the Ocean  
-Phantom Centers Run  
-Phantom Couples Circulate  
-Phantom Cast Off 3/4  
-Phantom Pass Thru  
-Phantom Left Chase  
-Phantom Left 1/4 Thru  
-Phantom Centers Trade 
-Girls Hinge 
-Recycle 
-Star Thru 
-Girls Circulate 
-Ferris Wheel 
-Centers Reverse Swap Around 
+  '''Heads Star Thru and Spread
+Boys Bend the Line
+Phantom Right and Left Thru
+Phantom Pass the Ocean
+Phantom Centers Run
+Phantom Couples Circulate
+Phantom Cast Off 3/4
+Phantom Pass Thru
+Phantom Left Chase
+Phantom Left 1/4 Thru
+Phantom Centers Trade
+Girls Hinge
+Recycle
+Star Thru
+Girls Circulate
+Ferris Wheel
+Centers Reverse Swap Around
 Allemande Left''',
 
   'Center 6 Circulate' :
-  '''Heads Lead Right 
-Star Thru 
-Touch a Quarter 
-Circulate 1.5 
-Center 6 Circulate 
-Center 6 Circulate 1.5 
-Outer 4 Bend the Line 
-Face In 
-Left Touch a Quarter 
-Circulate 1.5 
-Center 6 Circulate 1.5 
-Center 4 Hinge 
-Very Centers Run 
-Wheel and Deal 
-Circulate 
-Turn and Deal 
-Center 4 Right Roll to a Wave 
-Center 4 Step Thru 
+  '''Heads Lead Right
+Star Thru
+Touch a Quarter
+Circulate 1.5
+Center 6 Circulate
+Center 6 Circulate 1.5
+Outer 4 Bend the Line
+Face In
+Left Touch a Quarter
+Circulate 1.5
+Center 6 Circulate 1.5
+Center 4 Hinge
+Very Centers Run
+Wheel and Deal
+Circulate
+Turn and Deal
+Center 4 Right Roll to a Wave
+Center 4 Step Thru
 Allemande Left''',
 
   'Little' :
-  '''Sides Pass the Ocean 
-Little Outsides Out 
-Centers Hinge 
-Little Points As You Are 
-Quarter Tag 
-In Little 
-3/4 Tag the Line 
-Boys Run 
-Very Centers Turn Back 
-Little 
-Tag the Line Face In 
-Touch a Quarter 
-Boys Run 
-Trade 
-Centers Pass Thru 
+  '''Sides Pass the Ocean
+Little Outsides Out
+Centers Hinge
+Little Points As You Are
+Quarter Tag
+In Little
+3/4 Tag the Line
+Boys Run
+Very Centers Turn Back
+Little
+Tag the Line Face In
+Touch a Quarter
+Boys Run
+Trade
+Centers Pass Thru
 Allemande Left''',
 
   'Slip' :
-  '''Sides Pass the Ocean 
-Slip 
-Extend 
-Slip 
-Boys Run 
-Slip 
+  '''Sides Pass the Ocean
+Slip
+Extend
+Slip
+Boys Run
+Slip
 Bend the Line
-Star Thru 
-Pass to the Center 
-Centers Flutterwheel 
-Centers Pass Thru 
+Star Thru
+Pass to the Center
+Centers Flutterwheel
+Centers Pass Thru
 Allemande Left''',
 
   'Turn and Deal' :
-  '''Heads Pass the Ocean 
-Extend 
-Fan the Top 
-Head Boys Turn Back 
-Turn and Deal 
-Left Turn and Deal 
-Head Boys Cross 
-Boys Run 
-Centers Pass Thru 
-Star Thru 
-Touch a Quarter 
-Circulate 
-Boys Run 
+  '''Heads Pass the Ocean
+Extend
+Fan the Top
+Head Boys Turn Back
+Turn and Deal
+Left Turn and Deal
+Head Boys Cross
+Boys Run
+Centers Pass Thru
+Star Thru
+Touch a Quarter
+Circulate
+Boys Run
 Allemande Left''',
 
   'Truck' :
-  '''Heads Star Thru and Spread 
-Touch a Quarter 
-Circulate 
-Boys Truck 
-O Circulate  
-O Circulate  
-Girls Truck 
-Coordinate 
-Bend the Line and Roll 
-Circulate 
-Boys Reverse Truck 
-O Circulate Twice 
-Girls Reverse Truck 
-Cross 
-Trade By 
-Touch a Quarter 
-In-Roll Circulate 
-Boys Run 
-Ferris Wheel 
-Centers Pass Thru 
+  '''Heads Star Thru and Spread
+Touch a Quarter
+Circulate
+Boys Truck
+O Circulate
+O Circulate
+Girls Truck
+Coordinate
+Bend the Line and Roll
+Circulate
+Boys Reverse Truck
+O Circulate Twice
+Girls Reverse Truck
+Cross
+Trade By
+Touch a Quarter
+In-Roll Circulate
+Boys Run
+Ferris Wheel
+Centers Pass Thru
 Allemande Left''',
 
 /*    Does not work, Concentric Right Roll to a Wave fails
@@ -1548,451 +1548,451 @@ Allemande Left''',
  */
 
   'Checkpoint' :
-  '''Heads Pass the Ocean 
-Extend 
-Swing Thru 
-Fan the Top 
-Boys Hinge 
-Checkpoint Walk and Dodge By Explode the Wave  
-Hinge 
-Checkpoint Ah So by Swing Thru 
-Centers Lockit 
-Centers Mix 
-Checkpoint Trade By Triangle Circulate 
-Girls Hinge 
-Checkpoint Recycle By Explode the Wave 
-Centers Run and Roll 
-Face Out 
-Bend the Line 
-Star Thru 
-Pass Thru 
+  '''Heads Pass the Ocean
+Extend
+Swing Thru
+Fan the Top
+Boys Hinge
+Checkpoint Walk and Dodge By Explode the Wave
+Hinge
+Checkpoint Ah So by Swing Thru
+Centers Lockit
+Centers Mix
+Checkpoint Trade By Triangle Circulate
+Girls Hinge
+Checkpoint Recycle By Explode the Wave
+Centers Run and Roll
+Face Out
+Bend the Line
+Star Thru
+Pass Thru
 Allemande Left''',
 
   'Peel to a Diamond' :
-  '''Heads Lead Right 
-Veer Left 
-Peel to a Diamond 
-Very Centers Hinge 
-Checkpoint Box Counter Rotate By Flip the Diamond 
-Center 6 Circulate 
-Boys Run 
-As Couples Extend 
-Bend the Line 
-Pass the Ocean 
-Boys Quarter In 
-Peel to a Diamond 
-Crossfire 
-Circulate 
-Girls Run 
-Bend the Line 
-Star Thru 
-Right and Left Thru 
-Pass Thru 
+  '''Heads Lead Right
+Veer Left
+Peel to a Diamond
+Very Centers Hinge
+Checkpoint Box Counter Rotate By Flip the Diamond
+Center 6 Circulate
+Boys Run
+As Couples Extend
+Bend the Line
+Pass the Ocean
+Boys Quarter In
+Peel to a Diamond
+Crossfire
+Circulate
+Girls Run
+Bend the Line
+Star Thru
+Right and Left Thru
+Pass Thru
 Allemande Left''',
 
   'Wheel Around' :
-  '''Heads Square Thru 4 
-Dixie Style to a Wave 
-Boys Trade 
-Left Swing Thru 
-Girls Run 
-Wheel Around 
-Wheel and Deal 
-Pass Thru 
-Centers Wheel Around 
-Centers Run 
-Boys Wheel Around 
-Circulate 
-Bend the Line 
+  '''Heads Square Thru 4
+Dixie Style to a Wave
+Boys Trade
+Left Swing Thru
+Girls Run
+Wheel Around
+Wheel and Deal
 Pass Thru
-Bend the Line 
-Star Thru 
-Zoom 
-Ends Trade 
+Centers Wheel Around
+Centers Run
+Boys Wheel Around
+Circulate
+Bend the Line
+Pass Thru
+Bend the Line
+Star Thru
+Zoom
+Ends Trade
 Allemande Left''',
 
   'Stagger' :
-  '''Sides Star Thru 
-Centers Pass Thru 
-Boys Truck 
-Stagger Pass Thru  
-Stagger Chase Right  
-Stagger Split Counter Rotate 
-Stagger Trade By 
-Stagger Square Thru 2 
-Stagger Cloverleaf 
-Stagger Centers Pass Thru 
-Stagger Chain the Square 
-Stagger Circulate 
-Stagger Boys Run 
-Stagger Centers Pass Thru 
-Girls Reverse Truck 
-Star Thru 
-Pass Thru 
-Wheel and Deal 
-Centers Pass Thru 
+  '''Sides Star Thru
+Centers Pass Thru
+Boys Truck
+Stagger Pass Thru
+Stagger Chase Right
+Stagger Split Counter Rotate
+Stagger Trade By
+Stagger Square Thru 2
+Stagger Cloverleaf
+Stagger Centers Pass Thru
+Stagger Chain the Square
+Stagger Circulate
+Stagger Boys Run
+Stagger Centers Pass Thru
+Girls Reverse Truck
+Star Thru
+Pass Thru
+Wheel and Deal
+Centers Pass Thru
 Allemande Left''',
 
   'Hocus Pocus' :
-  '''Heads Touch a Quarter and Spread 
-Hocus Pocus 
-Turn Back 
-Hocus Pocus 
-Centers Trade and Roll 
-Hocus Pocus 
-Hocus Pocus 
-Centers Touch a Quarter 
-Left Quarter Thru 
-Girls Run 
-Right and Left Thru 
-Pass Thru 
-Wheel and Deal 
-Centers Square Thru 3 
+  '''Heads Touch a Quarter and Spread
+Hocus Pocus
+Turn Back
+Hocus Pocus
+Centers Trade and Roll
+Hocus Pocus
+Hocus Pocus
+Centers Touch a Quarter
+Left Quarter Thru
+Girls Run
+Right and Left Thru
+Pass Thru
+Wheel and Deal
+Centers Square Thru 3
 Allemande Left''',
 
   'Finish' :
-  '''Sides Lead Right 
-Veer Left 
-Bend the Line 
-Pass Thru 
-Finish Right and Left Thru  
-Pass the Ocean 
-Finish Motivate 
-Girls Run 
-Finish Load the Boat 
-Star Thru 
-Bend the Line 
-Right and Left Thru 
-Pass Thru 
-Wheel and Deal 
-Centers Pass Thru 
+  '''Sides Lead Right
+Veer Left
+Bend the Line
+Pass Thru
+Finish Right and Left Thru
+Pass the Ocean
+Finish Motivate
+Girls Run
+Finish Load the Boat
+Star Thru
+Bend the Line
+Right and Left Thru
+Pass Thru
+Wheel and Deal
+Centers Pass Thru
 Allemande Left''',
 
   'Anything Concept' :
-  '''Heads Lead Right 
-Touch 1/4 Motivate 
-Split Counter Coordinate 
-Bend the Line 
-Pass Thru Percolate 
-Ends Run and Roll 
-Belles Run 
-Split Counter Perk Up 
-Ferris Wheel 
-Centers Square Thru 3 
+  '''Heads Lead Right
+Touch 1/4 Motivate
+Split Counter Coordinate
+Bend the Line
+Pass Thru Percolate
+Ends Run and Roll
+Belles Run
+Split Counter Perk Up
+Ferris Wheel
+Centers Square Thru 3
 Allemande Left''',
 
   'Explode' :
-  '''Heads Lead Right 
-Veer Left 
-Sides Hinge 
-Sides Explode 
-Fan the Top 
-Belles Run 
-Boys Explode 
-Girls Explode the Wave 
-Pass Thru 
-Trade By 
-Star Thru 
-Boys Circulate 
-Ferris Wheel 
-Centers Pass Thru 
+  '''Heads Lead Right
+Veer Left
+Sides Hinge
+Sides Explode
+Fan the Top
+Belles Run
+Boys Explode
+Girls Explode the Wave
+Pass Thru
+Trade By
+Star Thru
+Boys Circulate
+Ferris Wheel
+Centers Pass Thru
 Allemande Left''',
 
   'Triple Box' :
-  '''Heads Lead Right 
-Triple Box Left Chase  
-Triple Box Walk and Dodge  
-Triple Box Right Roll to a Wave  
-Triple Wave Swing Thru  
-Triple Wave 1/4 In  
-Triple Column Pass and Roll  
-Triple Box Hinge 
-Triple Wave Recycle 
-Triple Box Pass Thru 
-Touch a Quarter 
-Quarter Thru 
-Boys Run 
-Bend the Line 
-Touch a Quarter 
-Circulate 
-Boys Run 
+  '''Heads Lead Right
+Triple Box Left Chase
+Triple Box Walk and Dodge
+Triple Box Right Roll to a Wave
+Triple Wave Swing Thru
+Triple Wave 1/4 In
+Triple Column Pass and Roll
+Triple Box Hinge
+Triple Wave Recycle
+Triple Box Pass Thru
+Touch a Quarter
+Quarter Thru
+Boys Run
+Bend the Line
+Touch a Quarter
+Circulate
+Boys Run
 Allemande Left''',
 
   'Start' :
-  '''Heads Lead Right 
-Boys Cross 
-Centers U-turn Back 
-Facing Dancers Start Pass and Roll 
-Centers Trade 
-Girls Start Swing Thru 
-Circulate 
-Heads Trade 
+  '''Heads Lead Right
+Boys Cross
+Centers U-turn Back
+Facing Dancers Start Pass and Roll
+Centers Trade
+Girls Start Swing Thru
+Circulate
+Heads Trade
 Right and Left Grand''',
 
   'Cast Back' :
-  '''Heads Pair Off 
-Pass Thru 
-Outer 4 Cross Cast Back 
-Star Thru 
-Centers Pass Thru 
-Pass Thru 
-Triple Box Pass Thru 
-Outer 4 Cast Back 
-Butterfly Pass Thru 
-Outer 4 Squeeze 
-Checkmate 
-Turn and Deal 
-Centers Pass Thru 
-Star Thru 
-Pass Thru 
-Wheel and Deal 
-Double Pass Thru 
-Outer 4 Trade 
+  '''Heads Pair Off
+Pass Thru
+Outer 4 Cross Cast Back
+Star Thru
+Centers Pass Thru
+Pass Thru
+Triple Box Pass Thru
+Outer 4 Cast Back
+Butterfly Pass Thru
+Outer 4 Squeeze
+Checkmate
+Turn and Deal
+Centers Pass Thru
+Star Thru
+Pass Thru
+Wheel and Deal
+Double Pass Thru
+Outer 4 Trade
 Allemande Left''',
 
   'Individually Roll' :
-  '''Heads As Couples Touch 1/4 
-As Couples Follow Your Neighbor and Individually Roll 
-Girls Pass Thru 
-Touch a Quarter 
-Boys Run 
-As Couples Hinge and Individually Roll 
-Adjust to Boxes 
-Double Pass Thru 
-Tandem Turn Back and Individually Roll 
-Cast Off Three Quarters 
-Pass the Ocean 
-Hinge 
-Centers Run 
-Couples Circulate 
-Girls Trade 
-Bend the Line 
-Star Thru 
-Pass Thru 
+  '''Heads As Couples Touch 1/4
+As Couples Follow Your Neighbor and Individually Roll
+Girls Pass Thru
+Touch a Quarter
+Boys Run
+As Couples Hinge and Individually Roll
+Adjust to Boxes
+Double Pass Thru
+Tandem Turn Back and Individually Roll
+Cast Off Three Quarters
+Pass the Ocean
+Hinge
+Centers Run
+Couples Circulate
+Girls Trade
+Bend the Line
+Star Thru
+Pass Thru
 Allemande Left''',
 
   'Horseshoe Turn' :
-  '''Heads Touch a Quarter 
-Sides Trade 
-Horseshoe Turn 
-Center 4 Face In 
-Outer 4 U-turn Back 
-Horseshoe Turn 
-Centers Run and Roll 
-Double Pass Thru 
-Ends U-turn Back 
+  '''Heads Touch a Quarter
+Sides Trade
+Horseshoe Turn
+Center 4 Face In
+Outer 4 U-turn Back
+Horseshoe Turn
+Centers Run and Roll
+Double Pass Thru
+Ends U-turn Back
 Allemande Left''',
 
   'Rotate (C-2)' :
-  '''Heads Lead Right 
-Veer Left 
-Bend the Line 
-Pass Thru 
-Rotate 1/4 
-Wheel and Deal 
-Rotate 1/2 
-Rotate 3/4 
-Wheel and Deal 
-Touch a Quarter 
-Circulate 
-Boys Run 
+  '''Heads Lead Right
+Veer Left
+Bend the Line
+Pass Thru
+Rotate 1/4
+Wheel and Deal
+Rotate 1/2
+Rotate 3/4
+Wheel and Deal
+Touch a Quarter
+Circulate
+Boys Run
 Allemande Left''',
 
   'Rotary' :
-  '''Heads Lead Right 
-Rotary Explode and Right and Left Thru 
-Cycle and Wheel 
-Rotary Recycle 
-Centers Left Touch a Quarter 
-Quarter Thru 
-Hinge 
-Centers Circulate 
-Boys Run 
-Trade Circulate 
-Boys Run 
+  '''Heads Lead Right
+Rotary Explode and Right and Left Thru
+Cycle and Wheel
+Rotary Recycle
+Centers Left Touch a Quarter
+Quarter Thru
+Hinge
+Centers Circulate
+Boys Run
+Trade Circulate
+Boys Run
 Right and Left Grand''',
 
   'Outer 6 Circulate' :
-  '''Heads Pass the Ocean 
-Extend 
-Switch to an Hourglass 
-Outer 6 Circulate 
-U-turn Back 
-Outer 6 Circulate 
-Cut the Hourglass 
-Mini-Busy 
-Outer Girls Run 
-Outer 6 Circulate 
-Boys Mix While Girls Turn Back 
-Outer 6 Circulate 
-Facing Dancers Pass Thru 
-Clover and Crossfire 
-Girls Run 
-Boys Touch a Quarter 
-Boys Run 
-Left Turn and Deal 
-Right and Left Thru 
+  '''Heads Pass the Ocean
+Extend
+Switch to an Hourglass
+Outer 6 Circulate
+U-turn Back
+Outer 6 Circulate
+Cut the Hourglass
+Mini-Busy
+Outer Girls Run
+Outer 6 Circulate
+Boys Mix While Girls Turn Back
+Outer 6 Circulate
+Facing Dancers Pass Thru
+Clover and Crossfire
+Girls Run
+Boys Touch a Quarter
+Boys Run
+Left Turn and Deal
+Right and Left Thru
 Allemande Left''',
 
   'Ignore' :
-  '''Heads Lead Right 
-Ignore the Head Girls Wheel Thru  
-Boys Trade and Roll 
-Girls U-turn Back 
-Side Boys Run and Roll 
-Outer 4 Counter Rotate 
-Circulate 
-Ignore the Side Boys Turn Back 
-Ignore the Side Girls Tally Ho 
-Girls Fold 
-Side Boys Run 
-Double Pass Thru 
-Right Roll to a Wave 
-Hinge 
-Swing Thru 
-Boys Run 
-Circulate 
-Ferris Wheel 
-Centers Pass Thru 
+  '''Heads Lead Right
+Ignore the Head Girls Wheel Thru
+Boys Trade and Roll
+Girls U-turn Back
+Side Boys Run and Roll
+Outer 4 Counter Rotate
+Circulate
+Ignore the Side Boys Turn Back
+Ignore the Side Girls Tally Ho
+Girls Fold
+Side Boys Run
+Double Pass Thru
+Right Roll to a Wave
+Hinge
+Swing Thru
+Boys Run
+Circulate
+Ferris Wheel
+Centers Pass Thru
 Allemande Left''',
 
   'Split Circulate' :
-  '''Heads Touch a Quarter 
-Girls Touch a Quarter 
-Split Circulate 
-Split Circulate 
-Split Circulate 
-Split Circulate 
-U-turn Back 
-Split Circulate 
-Split Circulate 
-Split Circulate 
-Split Circulate 
-Girls Partner Tag 
-Clover and Left 1/4 Thru 
-Centers Recycle 
-Double Pass Thru 
-Trade and Roll 
-Star Thru 
-Centers Square Thru 3 
+  '''Heads Touch a Quarter
+Girls Touch a Quarter
+Split Circulate
+Split Circulate
+Split Circulate
+Split Circulate
+U-turn Back
+Split Circulate
+Split Circulate
+Split Circulate
+Split Circulate
+Girls Partner Tag
+Clover and Left 1/4 Thru
+Centers Recycle
+Double Pass Thru
+Trade and Roll
+Star Thru
+Centers Square Thru 3
 Allemande Left''',
 
   'Grand Swing Thru' :
-  '''Heads Pass the Ocean 
-Extend 
-Acey Deucey Once and a Half 
-Grand Swing Thru 
-U-turn Back 
-Grand Left Swing Thru 
-Grand Swing Thru 
-Boys Diamond Circulate 
-Those Who Can Hinge 
-Boys Wheel and Deal While Girls Trade and Roll 
-Boys Pass Thru 
-Split Square Thru 2 
-Trade By 
-Star Thru 
-Boys Trade 
-Ferris Wheel 
-Centers Pass Thru 
+  '''Heads Pass the Ocean
+Extend
+Acey Deucey Once and a Half
+Grand Swing Thru
+U-turn Back
+Grand Left Swing Thru
+Grand Swing Thru
+Boys Diamond Circulate
+Those Who Can Hinge
+Boys Wheel and Deal While Girls Trade and Roll
+Boys Pass Thru
+Split Square Thru 2
+Trade By
+Star Thru
+Boys Trade
+Ferris Wheel
+Centers Pass Thru
 Allemande Left''',
 
   'Ripple' :
-  '''Heads Lead Right 
-Veer Left 
-Head Boys Ripple the Line 
-Head Girls Ripple 2 
-Pass the Ocean 
-Fan the Top 
-Very Ends Ripple 5 
-Centers Run 
-Head Boys Right Ripple 2 
-Wheel and Deal 
-Turn and Deal 
-Center 4 U-turn Back and Pass Thru 
-Allemande Left 
+  '''Heads Lead Right
+Veer Left
+Head Boys Ripple the Line
+Head Girls Ripple 2
+Pass the Ocean
+Fan the Top
+Very Ends Ripple 5
+Centers Run
+Head Boys Right Ripple 2
+Wheel and Deal
+Turn and Deal
+Center 4 U-turn Back and Pass Thru
+Allemande Left
 Promenade Home''',
 
   'While Others' :
-  '''Heads Touch a Quarter 
-Facing Dancers Pass Thru While Others Turn Back 
-Boys Run 
-Centers Boys Cross While Others Turn Back 
-Girls Touch a Quarter While Others Zoom 
-Girls Hinge 
-Boys Half Zoom 
-Any Hand Quarter Thru 
-Chase Right 
-Fan the Top 
-Centers Hinge While Others Turn Back 
-Diamond Circulate 
-Flip the Diamond 
-Recycle 
-Pass the Ocean 
-Circulate 
-Boys Run 
-Wheel and Deal 
-Centers Flutterwheel 
-Centers Pass Thru 
-Allemande Left 
+  '''Heads Touch a Quarter
+Facing Dancers Pass Thru While Others Turn Back
+Boys Run
+Centers Boys Cross While Others Turn Back
+Girls Touch a Quarter While Others Zoom
+Girls Hinge
+Boys Half Zoom
+Any Hand Quarter Thru
+Chase Right
+Fan the Top
+Centers Hinge While Others Turn Back
+Diamond Circulate
+Flip the Diamond
+Recycle
+Pass the Ocean
+Circulate
+Boys Run
+Wheel and Deal
+Centers Flutterwheel
+Centers Pass Thru
+Allemande Left
 Promenade Home''',
 
   'Cross 3' :
-'''Heads Lead Right 
-Touch a Quarter and Cross 
-Wheel and Deal 
-Centers Pass Thru 
-Left Touch a Quarter and Cross 
-Bend the Line 
-Touch a Quarter and Cross 
-Trade By 
-Veer Left 
-Turn and Deal 
-Veer Left 
-Bend the Line 
-Touch a Quarter 
-Circulate 
-Boys Run 
+'''Heads Lead Right
+Touch a Quarter and Cross
+Wheel and Deal
+Centers Pass Thru
+Left Touch a Quarter and Cross
+Bend the Line
+Touch a Quarter and Cross
+Trade By
+Veer Left
+Turn and Deal
+Veer Left
+Bend the Line
+Touch a Quarter
+Circulate
+Boys Run
 Allemande Left''',
 
   'Flutterwheel and Sweep 1/4' :
-'''Heads Lead Right 
-Flutterwheel and and Sweep a Quarter 
-Pass Thru 
-Wheel and Deal 
-Centers Flutterwheel and Sweep a Quarter 
-Split Square Thru 3 
-Bend the Line 
-Touch a Quarter 
-Boys Run 
-Girls Zoom 
-Centers Pass Thru 
-Right and Left Thru 
-Veer Right 
+'''Heads Lead Right
+Flutterwheel and and Sweep a Quarter
+Pass Thru
+Wheel and Deal
+Centers Flutterwheel and Sweep a Quarter
+Split Square Thru 3
+Bend the Line
+Touch a Quarter
+Boys Run
+Girls Zoom
+Centers Pass Thru
+Right and Left Thru
+Veer Right
 Promenade Home''',
 
   'Saparate Go Around' :
-'''Heads Turn Thru 
-Centers Separate Around One to a Line 
-Pass Thru 
-Tag the Line Zag Zig 
-Left Swing Thru 
-Split Circulate 
-Girls Run 
-Ferris Wheel 
-Centers Pass Thru 
+'''Heads Turn Thru
+Centers Separate Around One to a Line
+Pass Thru
+Tag the Line Zag Zig
+Left Swing Thru
+Split Circulate
+Girls Run
+Ferris Wheel
+Centers Pass Thru
 Allemande Left''',
 
   'Those Who Can Pass Thru' :
-'''Heads Touch 1/4 
-Those Who Can Pass Thru 
-Centers Step to a Wave 
-Chain Reaction 
-Left Turn and Deal 
-Star Thru 
-Wheel and Deal 
-Zoom 
-Centers Square Thru 3 
+'''Heads Touch 1/4
+Those Who Can Pass Thru
+Centers Step to a Wave
+Chain Reaction
+Left Turn and Deal
+Star Thru
+Wheel and Deal
+Zoom
+Centers Square Thru 3
 Allemande Left''',
 
   'Cast a Shadow 3/4 Slip' :
@@ -2006,6 +2006,27 @@ Turn and Deal
 Touch a Quarter
 Circulate
 Boys Run
+Allemande Left''',
+
+  'Spin the Windmill' :
+'''Heads Pass the Sea
+Spin the Windmill Out
+Centers Left Quarter Thru
+Spin the Windmill Forward
+Circulate
+Girls Trade
+Cycle and Wheel
+Pass Thru
+Spin the Windmill Left
+Recycle
+Pass Thru
+Left Spin the Windmill Right
+Split Circulate
+Boys Run
+Girls Circulate
+Bend the Line
+Star Thru
+Pass Thru
 Allemande Left'''
 
 };
@@ -2044,22 +2065,26 @@ void main() {
       await tester.tap(fastTapper);
     });
 
-      for (var testName in testSequences.keys) {
-        testWidgets(testName, (tester) async {
-          await tester.pumpWidget(SequencerTestPage());
-          await tester.pumpAndSettle();
-          await tester.tap(sequencerInputTapper);
-          await tester.pumpAndSettle();
-          for (var call in testSequences[testName].split('\n')) {
-            await tester.enterText(sequencerInput,call);
-            await tester.tap(sequencerSubmit);
-            await tester.pump();
-            expect(await (tester.widget(errorText) as Text).data,' ');
-          }
-          await tester.pumpAndSettle();
-          testsFinished.add(testName);
-          testsFailed.remove(testName);
-        });
-      }
-    });
+    for (var testName in testSequences.keys) {
+      testWidgets(testName, (tester) async {
+        await tester.pumpWidget(SequencerTestPage());
+        await tester.pumpAndSettle();
+        await tester.tap(sequencerInputTapper);
+        await tester.pumpAndSettle();
+        await tester.enterText(sequencerInput,'# $testName');
+        await tester.tap(sequencerSubmit);
+        await tester.pump();
+        for (var call in testSequences[testName].split('\n')) {
+          await tester.enterText(sequencerInput,call);
+          await tester.tap(sequencerSubmit);
+          await tester.pump();
+          //expect(await (tester.widget(errorText) as Text).data,' ');
+        }
+        await tester.pumpAndSettle();
+        expect(await (tester.widget(errorText) as Text).data,' ');
+        testsFinished.add(testName);
+        testsFailed.remove(testName);
+      });
+    }
+  });
 }

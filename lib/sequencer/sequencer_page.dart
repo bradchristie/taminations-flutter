@@ -46,6 +46,7 @@ class _SequencerTestPageState extends fm.State<SequencerTestPage> {
           pp.ChangeNotifierProvider(create: (_) => Settings()),
           pp.ChangeNotifierProvider(create: (_) => AbbreviationsModel()),
           pp.ChangeNotifierProvider(create: (_) => AnimationState()),
+          pp.ChangeNotifierProvider(create: (_) => SequencerModel()),
           pp.Provider(create: (_) => VirtualKeyboardVisible())
         ],
         //  Read initialization files
@@ -63,22 +64,23 @@ class _SequencerPageState extends fm.State<SequencerPage> {
 
   late SequencerModel model;
   late AbbreviationsModel abbreviationsModel;
+  var formationSetByState = false;
 
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
     final settings = pp.Provider.of<Settings>(context,listen: false);
     final tamState = pp.Provider.of<TamState>(context,listen: false);
-    model = SequencerModel();
+    model = pp.Provider.of<SequencerModel>(context,listen: false);
     if (tamState.formation != null && tamState.formation!.isNotBlank) {
-      model.startingFormation = tamState.formation!;
-      model.reset().whenComplete(() {
+      formationSetByState = true;
+      model.setStartingFormation(tamState.formation!).whenComplete(() {
         if (tamState.calls != null && tamState.calls!.isNotBlank)
           model.paste(tamState.calls!.replaceAll(';', '\n'));
       });
     }
     else {
-      model.startingFormation = settings.startingFormation;
+      model.setStartingFormation(settings.startingFormation);
       model.reset();
     }
     model.addListener(() {
@@ -98,7 +100,10 @@ class _SequencerPageState extends fm.State<SequencerPage> {
       child: Page(
         child: pp.Consumer3<TitleModel,Settings,TamState>(
             builder: (context,titleModel,settings,tamState,_) {
-              model.startingFormation = settings.startingFormation;
+              //  Setting the formation here if also set above
+              //  can clobber calls passed in by the URL
+              if (!formationSetByState)
+                model.setStartingFormation(settings.startingFormation);
               titleModel.title = 'Sequencer';
               //  Portrait only for small devices
               if (isSmallDevice(context)) {

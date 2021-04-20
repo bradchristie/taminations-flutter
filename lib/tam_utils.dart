@@ -278,7 +278,7 @@ class TamUtils {
       .replaceAll('[^a-zA-Z0-9_ ]'.ri,'')
       .replaceAll('\\s+'.ri,' ')
   //  Through => Thru
-      .replaceAll('\\bthrou?g?h?\\b'.ri,'thru')
+      .replaceAll('\\bthrou?g?h?\\b'.ri,'Thru')
   //  One and a half
       .replaceAll('(onc?e and a half)|(1 12)|(15)'.ri,'112')
   //  Process fractions 1/2 3/4 1/4 2/3
@@ -307,29 +307,29 @@ class TamUtils {
       .replaceAll('(six|6)\\s*(by)?x?-?\\s*(two|2)'.ri,'62')
       .replaceAll('(three|3)\\s*(by)?x?-?\\s*(two|2)'.ri,'32')
   //  'Column' of Magic Column is optional
-      .replaceAll('magic (?!column)(?!o)(?!expand)'.ri,'magic column ')
+      .replaceAll('magic (?!column)(?!o)(?!expand)'.ri,'Magic Column ')
   //  Use singular form
       .replaceAllMapped('\\b(boy|girl|beau|belle|center|end|point|head|(out)?side)s\\b'.ri, (m) => m[1]!)
   //  Misc other variations
-      .replaceAll('\\bswap(\\s+around)?\\b'.ri,'swap')
-      .replaceAll('\\bmen\\b'.ri,'boy')
-      .replaceAll('\\bwomen\\b'.ri,'girl')
-      .replaceAll('\\blead(er)?(ing)?s?\\b'.ri,'lead')
-      .replaceAll('\\btrail(er)?(ing)?s?\\b'.ri,'trail')
-      .replaceAll('\\bcentres?\\b'.ri,'center')
+      .replaceAll('\\bswap(\\s+around)?\\b'.ri,'Swap')
+      .replaceAll('\\bmen\\b'.ri,'Boy')
+      .replaceAll('\\bwomen\\b'.ri,'Girl')
+      .replaceAll('\\blead(er)?(ing)?s?\\b'.ri,'Lead')
+      .replaceAll('\\btrail(er)?(ing)?s?\\b'.ri,'Trail')
+      .replaceAll('\\bcentres?\\b'.ri,'Center')
       .replaceAllMapped('\\b(1|3)4 tag the line\\b'.ri,
-          (m) => '${m[1]}4 tag')
-      .replaceAll('\\b12 square thru\\b'.ri,'square thru 2')
-      .replaceAll('\\bbox recycle\\b'.ri,'recycle')
+          (m) => '${m[1]}4 Tag')
+      .replaceAll('\\b12 square thru\\b'.ri,'Square Thru 2')
+      .replaceAll('\\bbox recycle\\b'.ri,'Recycle')
       .replaceAllMapped('interlocked (flip|cut) the'.ri,
-          (m) => '${m[1]} the interlocked')
+          (m) => '${m[1]} the Interlocked')
   //  'Dixie Style' -> 'Dixie Style to a Wave'
-      .replaceAll('\\bdixie style(?! to)'.ri,'dixie style to a wave')
+      .replaceAll('\\bdixie style(?! to)'.ri,'Dixie Style to a Wave')
   //  Accept both Left Chase and Chase Left
-      .replaceAll('\\bchase left\\b'.ri,'left chase')
+      .replaceAll('\\bchase left\\b'.ri,'Left Chase')
   //  Change (fraction) Circle Left/Right to Circle Left/Right (fraction)
       .replaceAllMapped('(14|12|34) circle (left|right)'.ri,
-          (m) => 'circle ${m[2]} ${m[1]}')
+          (m) => 'Circle ${m[2]} ${m[1]}')
   //  Accept optional 'dancers' e.g. 'head dancers' == 'heads'
       .replaceAll('\\bdancers?\\b'.ri,'')
   //  Also handle 'Lead Couples' as 'Leads'

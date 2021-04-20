@@ -139,56 +139,61 @@ class _AbbreviationsFrameState extends fm.State<AbbreviationsFrame> {
     final virtualKeyboard = pp.Provider.of<VirtualKeyboardVisible>(context,listen: false);
       return fm.Expanded(
         flex: isExpansion ? 4 : 1,
-        child: fm.GestureDetector(
-            onTap: () {
-              setState(() {
-                editRow = row;
-                editExpansion = isExpansion;
-                virtualKeyboard.isVisible = true;
-                afterDelay(() {
-                  focusNode.unfocus();
-                },Duration(milliseconds: 10));
-                afterDelay(() {
-                  focusNode.requestFocus();
-                },Duration(milliseconds: 20));
-              });
-            },
-            child: fm.Container(
-              child: pp.Consumer<AbbreviationsModel>(
-                  builder: (context,model,child) {
-                    return fm.Container(
-                      child:child,
-                      decoration: fm.BoxDecoration(
-                          color:
-                          model.currentAbbreviations[row].isError ? Color.RED.veryBright()
-                          : row == editRow && editExpansion == isExpansion
-                           ? Color.WHITE
-                           : Color.LIGHTGRAY.veryBright(),
-                          border: fm.Border(
-                              bottom: fm.BorderSide(width: 1, color: fm.Colors.black),
-                              left: fm.BorderSide(width: 1, color: fm.Colors.black))),
-                    );
-                  },
-                  child: (row == editRow && editExpansion == isExpansion)
-                      ? fm.TextField(
-                    decoration: null,
-                    autofocus: true,
-                    autocorrect: false,
-                    enableSuggestions: false,
-                    style: fm.TextStyle(fontSize: 24),
-                    focusNode: focusNode,
-                    controller: textEditController
-                      ..text = isExpansion
-                          ? pp.Provider.of<AbbreviationsModel>(context, listen: false).currentAbbreviations[row].expa
-                          : pp.Provider.of<AbbreviationsModel>(context, listen: false).currentAbbreviations[row].abbr,
-                  )
-                      : fm.Text(isExpansion
-                      ? pp.Provider.of<AbbreviationsModel>(context, listen: false).currentAbbreviations[row].expa
-                      : pp.Provider.of<AbbreviationsModel>(context, listen: false).currentAbbreviations[row].abbr,
-                      style: fm.TextStyle(fontSize: 24))
+        child: pp.Consumer<AbbreviationsModel>(
+          builder: (context,modelForEdit,child) => fm.GestureDetector(
+              onTap: () {
+                setState(() {
+                  editRow = row;
+                  editExpansion = isExpansion;
+                  textEditController.text = isExpansion
+                  ? modelForEdit.currentAbbreviations[row].expa
+                  : modelForEdit.currentAbbreviations[row].abbr;
+                  virtualKeyboard.isVisible = true;
+                  afterDelay(() {
+                    focusNode.unfocus();
+                  },Duration(milliseconds: 10));
+                  afterDelay(() {
+                    focusNode.requestFocus();
+                  },Duration(milliseconds: 20));
+                });
+              },
+              child: fm.Container(
+                child: pp.Consumer<AbbreviationsModel>(
+                    builder: (context,model,child) {
+                      return fm.Container(
+                        child:child,
+                        decoration: fm.BoxDecoration(
+                            color:
+                            model.currentAbbreviations[row].isError ? Color.RED.veryBright()
+                            : row == editRow && editExpansion == isExpansion
+                             ? Color.WHITE
+                             : Color.LIGHTGRAY.veryBright(),
+                            border: fm.Border(
+                                bottom: fm.BorderSide(width: 1, color: fm.Colors.black),
+                                left: fm.BorderSide(width: 1, color: fm.Colors.black))),
+                      );
+                    },
+                    child: (row == editRow && editExpansion == isExpansion)
+                        ? fm.TextField(
+                      decoration: null,
+                      autofocus: true,
+                      autocorrect: false,
+                      enableSuggestions: false,
+                      style: fm.TextStyle(fontSize: 24),
+                      focusNode: focusNode,
+                      controller: textEditController
+                        ..text = isExpansion
+                            ? pp.Provider.of<AbbreviationsModel>(context, listen: false).currentAbbreviations[row].expa
+                            : pp.Provider.of<AbbreviationsModel>(context, listen: false).currentAbbreviations[row].abbr,
+                    )
+                        : fm.Text(isExpansion
+                        ? pp.Provider.of<AbbreviationsModel>(context, listen: false).currentAbbreviations[row].expa
+                        : pp.Provider.of<AbbreviationsModel>(context, listen: false).currentAbbreviations[row].abbr,
+                        style: fm.TextStyle(fontSize: 24))
+                ),
               ),
             ),
-          ),
+        ),
       );
   }
 

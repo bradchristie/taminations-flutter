@@ -36,6 +36,7 @@ class LevelData implements Comparable<LevelData> {
   static final B1 = LevelData('Basic 1', 'b1', Color.B1,'b1'.r);
   static final B2 = LevelData('Basic 2', 'b2', Color.B2,'b2'.r);
   static final MS = LevelData('Mainstream', 'ms', Color.MS,'ms'.r);
+  static final SSD = LevelData('SSD', 'ssd', Color.MS,'ssd'.r);
   static final PLUS = LevelData('Plus', 'plus', Color.PLUS,'plus'.r);
   static final ADV = LevelData('Advanced', 'adv', Color.ADV,'a'.r);
   static final A1 = LevelData('A-1', 'a1', Color.A1,'a1'.r);
@@ -45,13 +46,14 @@ class LevelData implements Comparable<LevelData> {
   static final C2 = LevelData('C-2', 'c2', Color.C2,'c2'.r);
   static final C3A = LevelData('C-3A', 'c3a', Color.C3A, 'c3a'.r);
   static final C3B = LevelData('C-3B', 'c3b', Color.C3B,'c3b'.r);
-  static final INDEX = LevelData('Index of All Calls', 'all', Color.LIGHTGREY,''.r);
+  static final INDEX = LevelData('Index of All Calls', 'all', Color.LIGHTGREY,'[^s]'.r);
 
   static final List<LevelData> _data = [
     LevelData.BMS,
     LevelData.B1,
     LevelData.B2,
     LevelData.MS,
+    LevelData.SSD,
     LevelData.PLUS,
     LevelData.ADV,
     LevelData.A1,

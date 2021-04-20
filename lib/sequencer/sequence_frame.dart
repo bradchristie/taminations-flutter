@@ -137,6 +137,8 @@ class _SequencerEditLineState extends fm.State<SequencerEditLine> {
   final ItemScrollController itemScrollController = ItemScrollController();
   final ItemPositionsListener itemPositionsListener = ItemPositionsListener.create();
   late SpeechToTextProvider speechProvider;
+  var _lastError = '';
+  var _isVoiceCall = false;
 
   @override
   void initState() {
@@ -180,10 +182,27 @@ class _SequencerEditLineState extends fm.State<SequencerEditLine> {
             SpeechToTextProvider,
             VirtualKeyboardVisible>(
     builder: (context, model, abbreviations, speech, virtualKeyboard, child) {
-
+      //  If doing voice input, show errors in the snack bar
+      //  because the error text of the EditText is not visible
+      if (_isVoiceCall && model.errorString.isNotBlank && model.errorString != _lastError) {
+        //print('Error: ${model.errorString}');
+        _lastError = model.errorString;
+        model.errorString = '';
+        later(() {
+          fm.ScaffoldMessenger.of(context).showSnackBar(fm.SnackBar(
+              backgroundColor: Color.RED,
+              duration: Duration(seconds: 2),
+              content: fm.Text(_lastError,style: fm.TextStyle(fontSize: 20))
+          ));
+        });
+        //  After the same duration as the SnackBar reset the last error
+        //  so the user will see another messoage on repeating the same error
+        afterDelay(() { _lastError = ''; },Duration(seconds:2));
+      }
       //  Process any results from the speech recognizer
       if (speech.hasResults) {
         //print('Looking for ${speech.lastResult.recognizedWords}');
+        var found = false;
         for (var i=0; i<speech.lastResult.alternates.length; i++) {
           //  Look through all the alternatives for one that has
           //  all square dance words
@@ -193,18 +212,35 @@ class _SequencerEditLineState extends fm.State<SequencerEditLine> {
           if (words.every((word) => TamUtils.words.contains(word))) {
             //print('Found call in alternative $i: $call');
             later( () {
+              _isVoiceCall = true;
               _sendOneCall(model, abbreviations.replaceAbbreviations(call));
             });
+            found = true;
             break;
           }
         }
-        speech.listen(
-            localeId: 'en_US',
-            partialResults: false,
-            soundLevel: true,
-            listenFor: Duration(seconds: 5),
-            pauseFor: Duration(seconds: 5)
-        );
+        if (!found) {
+          final message = speech.lastResult.alternates.isNotEmpty
+              ? 'Unable to parse, best guess is ${speech.lastResult.alternates.first.recognizedWords}.'
+              : 'Sorry, not able to recognize that.';
+          later(() {
+            fm.ScaffoldMessenger.of(context).showSnackBar(fm.SnackBar(
+                backgroundColor: Color.RED,
+                duration: Duration(seconds: 2),
+                content: fm.Text(message,style: fm.TextStyle(fontSize: 20))
+            ));
+          });
+        }
+        later((){
+          speech.stop();
+          speech.listen(
+              localeId: 'en_US',
+              partialResults: false,
+              soundLevel: true,
+              listenFor: Duration(seconds: 10),
+              pauseFor: Duration(seconds: 5)
+          );
+        });
       }
 
       return fm.Container(
@@ -230,6 +266,7 @@ class _SequencerEditLineState extends fm.State<SequencerEditLine> {
                   style: fm.TextStyle(fontSize: 24),
                   //  Code to run when user presses Enter
                   onSubmitted: (value) {
+                    _isVoiceCall = false;
                     _sendOneCall(model, abbreviations.replaceAbbreviations(value));
                   },
                 ),
@@ -269,7 +306,7 @@ class _SequencerEditLineState extends fm.State<SequencerEditLine> {
                           speechProvider.listen(
                               localeId: 'en_US',
                               partialResults: false,
-                              listenFor: Duration(seconds: 5),
+                              listenFor: Duration(seconds: 10),
                               pauseFor: Duration(seconds: 5)
                           );
                         });
@@ -289,6 +326,7 @@ class _SequencerEditLineState extends fm.State<SequencerEditLine> {
                     key:fm.ValueKey('Test Error Text'),
                     style: fm.TextStyle(color: Color.WHITE, fontSize:1)),
                 onTap: () {
+                  _isVoiceCall = false;
                   _sendOneCall(model,
                       abbreviations.replaceAbbreviations(textFieldController.value.text));
                 },

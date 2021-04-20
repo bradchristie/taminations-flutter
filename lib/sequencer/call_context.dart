@@ -135,7 +135,8 @@ class CallContext {
     'c1/split_square_thru_variations',
     'c2/unwrap',
     'c2/stretched_concept',
-    'c1/finish'
+    'c1/finish',
+    'ms/fraction_tag'
   ];
 
   static const standardFormations = {

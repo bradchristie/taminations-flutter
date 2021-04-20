@@ -39,12 +39,6 @@ class SequencerModel extends fm.ChangeNotifier {
   List<SequencerCall> calls = [];
   String _startingFormation = 'Squared Set'; // overriden by Settings
   String get startingFormation => _startingFormation;
-  set startingFormation(String value) {
-    if (value != _startingFormation) {
-      _startingFormation = value;
-      reset();
-    }
-  }
   String partString = '';
   String errorString = '';
   DanceAnimationPainter animation = DanceAnimationPainter();
@@ -55,8 +49,15 @@ class SequencerModel extends fm.ChangeNotifier {
     animation.addListener(() {
       _updateCurrentCall();
     });
-    reset();
   }
+
+  Future<void> setStartingFormation(String formation) async {
+    if (formation != _startingFormation) {
+      _startingFormation = formation;
+      await reset();
+    }
+  }
+
 
   Future<void> reset() async {
     animation.doPause();

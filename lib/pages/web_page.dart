@@ -174,8 +174,8 @@ class _WebFrameState extends fm.State<WebFrame> {
         //  Can't run the javascript until the page has been read and digested
         //  so insert first call in the body onLoad callback
     '<script>' + TamUtils.framecode + '</script>')
-        .replaceFirst('<body>',
-        '<body onLoad="setAbbrev($isAbbrev); showPlatformElements(\'$platform\');">');
+        .replaceFirst('<body>','<body onLoad="setAbbrev($isAbbrev);">')
+        .replaceFirst('showPlatformElements(\'web\')','showPlatformElements(\'$platform\')');
 
   //  Get an image asset and base64 encode it
   Future<String> _imageToBase64(String imageName) {
