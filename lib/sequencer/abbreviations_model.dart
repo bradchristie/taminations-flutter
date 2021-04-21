@@ -208,6 +208,7 @@ class AbbreviationsModel extends fm.ChangeNotifier {
             currentAbbreviations.insert(insertPoint,Abbreviation(abbr, expansion));
           }
         }
+        _save();
         notifyListeners();
       }
     });
