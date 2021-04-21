@@ -123,6 +123,7 @@ class AbbreviationsModel extends fm.ChangeNotifier {
   void clear() {
     _clearStorage();
     currentAbbreviations = [Abbreviation('','')];
+    _save();
     notifyListeners();
   }
 
