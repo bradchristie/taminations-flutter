@@ -234,25 +234,25 @@ class TaminationsRouterDelegate extends fm.RouterDelegate<TamState>
                           if (appState.mainPage == MainPage.SEQUENCER &&
                               appState.detailPage == DetailPage.HELP)
                             fm.MaterialPage(
-                                key: fm.ValueKey('About'),
+                                key: fm.ValueKey('Sequencer Help'),
                                 child: WebPage('info/sequencer.html')
                             ),
                           if (appState.mainPage == MainPage.SEQUENCER &&
                               appState.detailPage == DetailPage.ABBREVIATIONS)
                             fm.MaterialPage(
-                                key: fm.ValueKey('About'),
+                                key: fm.ValueKey('Sequencer Abbreviations'),
                                 child: AbbreviationsPage()
                             ),
                           if (appState.mainPage == MainPage.SEQUENCER &&
                               appState.detailPage == DetailPage.SETTINGS)
                             fm.MaterialPage(
-                                key: fm.ValueKey('About'),
+                                key: fm.ValueKey('Sequencer Settings'),
                                 child: SequencerSettingsPage()
                             ),
                           if (appState.mainPage == MainPage.SEQUENCER &&
                               appState.detailPage == DetailPage.CALLS)
                             fm.MaterialPage(
-                                key: fm.ValueKey('About'),
+                                key: fm.ValueKey('Sequencer Calls'),
                                 child: SequencerCallsPage()
                             ),
 

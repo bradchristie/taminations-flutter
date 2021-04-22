@@ -31,6 +31,7 @@ import '../color.dart';
 import '../common.dart';
 import 'abbreviations_model.dart';
 import 'sequencer_model.dart';
+import '../pages/page.dart';
 
 class SequenceFrame extends fm.StatefulWidget {
   @override
@@ -51,14 +52,15 @@ class _SequenceFrameState extends fm.State<SequenceFrame> {
              builder: (context,constraints) => fm.Column(
                children: [
                  SequencerEditLine(),
-                 fm.Expanded(
-                     child: ScrollablePositionedList.builder(
-                       itemScrollController: itemScrollController,
-                       itemPositionsListener: itemPositionsListener,
-                       itemCount: model.calls.length,
-                       itemBuilder: itemBuilder,
-                     )
-                 ),
+                 if (!isSmallAndCompact(context))
+                   fm.Expanded(
+                       child: ScrollablePositionedList.builder(
+                         itemScrollController: itemScrollController,
+                         itemPositionsListener: itemPositionsListener,
+                         itemCount: model.calls.length,
+                         itemBuilder: itemBuilder,
+                       )
+                   ),
                  fm.Text(model.errorString,key: fm.Key('Error text'),style: fm.TextStyle(fontSize: 0.01))
                ],
              ),
@@ -146,7 +148,6 @@ class _SequencerEditLineState extends fm.State<SequencerEditLine> {
     later(() {
       if (!TamUtils.isTouchDevice())
         focusNode.requestFocus();
-      //_checkFocus();
     });
     speechProvider = SpeechToTextProvider(SpeechToText());
   }
@@ -155,22 +156,8 @@ class _SequencerEditLineState extends fm.State<SequencerEditLine> {
   void dispose() {
     textFieldController.dispose();
     fs.SystemChannels.textInput.invokeMethod('TextInput.hide');
+    focusNode.dispose();
     super.dispose();
-  }
-
-  @override
-  void didChangeDependencies() {
-    later(() {
-      _checkFocus();
-    });
-    super.didChangeDependencies();
-  }
-
-  void _checkFocus() {
-    final virtualKeyboard = pp.Provider.of<VirtualKeyboardVisible>(context,listen: false);
-    if (virtualKeyboard.isVisible) {
-      focusNode.requestFocus();
-    }
   }
 
   @override

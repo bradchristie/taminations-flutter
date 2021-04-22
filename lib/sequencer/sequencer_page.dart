@@ -113,13 +113,10 @@ class _SequencerPageState extends fm.State<SequencerPage> {
                         flex: 3,
                         child:PortraitSequencerAnimationFrame()
                     ),
-                    if (isSmallAndCompact(context))
-                      SequencerEditLine()
-                    else
-                      fm.Expanded(
-                          flex: 2,
-                          child: SequenceFrame()
-                      )
+                    fm.Expanded(
+                        flex: isSmallAndCompact(context) ? 0 : 2,
+                        child: SequenceFrame()
+                    )
                   ],
                 );
               }
