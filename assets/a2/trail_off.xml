@@ -43,7 +43,7 @@
     </path>
   </tam>
 
-  <tam title="Trail Off" from="Z Facing Out">
+  <tam title="Trail Off" from="Right-Hand Z Facing Out">
     <formation>
       <dancer gender="boy" x="0" y="1" angle="0"/>
       <dancer gender="girl" x="2" y="1" angle="0"/>
@@ -56,7 +56,20 @@
     </path>
   </tam>
 
-  <tam title="Trail Off" from="Z Facing In">
+  <tam title="Trail Off" from="Left-Hand Z Facing Out">
+    <formation>
+      <dancer gender="boy" x="0" y="-1" angle="0"/>
+      <dancer gender="girl" x="2" y="-1" angle="0"/>
+    </formation>
+    <path>
+      <move select="Swing Left"/>
+    </path>
+    <path>
+      <move select="Run Left" scaleY="2" offsetX="-2"/>
+    </path>
+  </tam>
+
+  <tam title="Trail Off" from="Right-Hand Z Facing In">
     <formation>
       <dancer gender="boy" x="0" y="1" angle="0"/>
       <dancer gender="girl" x="2" y="-1" angle="180"/>
@@ -67,6 +80,20 @@
     <path numbers="4 1">
       <move select="Forward 2"/>
       <move select="Swing Right"/>
+    </path>
+  </tam>
+
+  <tam title="Trail Off" from="Left-Hand Z Facing In">
+    <formation>
+      <dancer gender="boy" x="0" y="-1" angle="0"/>
+      <dancer gender="girl" x="2" y="1" angle="180"/>
+    </formation>
+    <path>
+      <move select="Run Left" scaleX="2" scaleY="2"/>
+    </path>
+    <path>
+      <move select="Forward 2"/>
+      <move select="Swing Left"/>
     </path>
   </tam>
 

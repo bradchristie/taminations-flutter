@@ -219,7 +219,7 @@
     </path>
   </tam>
 
-  <tam title="Peel and Trail" from="Z Facing Out">
+  <tam title="Peel and Trail" from="Right-Hand Z Facing Out">
     <formation>
       <dancer gender="boy" x="0" y="1" angle="0"/>
       <dancer gender="girl" x="2" y="1" angle="0"/>
@@ -232,7 +232,20 @@
     </path>
   </tam>
 
-  <tam title="Peel and Trail" from="Z Facing In">
+  <tam title="Peel and Trail" from="Left-Hand Z Facing Out">
+    <formation>
+      <dancer gender="boy" x="0" y="-1" angle="0"/>
+      <dancer gender="girl" x="2" y="-1" angle="0"/>
+    </formation>
+    <path>
+      <move select="Swing Left"/>
+    </path>
+    <path>
+      <move select="Run Right" offsetX="-2"/>
+    </path>
+  </tam>
+
+  <tam title="Peel and Trail" from="Right-Hand Z Facing In">
     <formation>
       <dancer gender="boy" x="0" y="1" angle="0"/>
       <dancer gender="girl" x="2" y="-1" angle="180"/>
@@ -243,6 +256,20 @@
     <path numbers="4 1">
       <move select="Forward 2"/>
       <move select="Swing Right"/>
+    </path>
+  </tam>
+
+  <tam title="Peel and Trail" from="Left-Hand Z Facing In">
+    <formation>
+      <dancer gender="boy" x="0" y="-1" angle="0"/>
+      <dancer gender="girl" x="2" y="1" angle="180"/>
+    </formation>
+    <path>
+      <move select="Run Right"/>
+    </path>
+    <path>
+      <move select="Forward 2"/>
+      <move select="Swing Left"/>
     </path>
   </tam>
 
