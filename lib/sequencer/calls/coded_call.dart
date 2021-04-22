@@ -376,6 +376,7 @@ abstract class CodedCall extends Call {
     '(left)?34tag(theline)?'.ri : (name) => ThreeQuartersTag(name),
     'toawave'.ri: (_) => ToAWave(),
     '(left)?touch'.ri: (name) => Touch(name),
+    'steptoa(lefthand)?wave'.ri: (name) => Touch(name),
     '(left)?touch14'.ri: (name) => TouchAQuarter(name),
     'trade'.ri: (_) => Trade(),
     'trail'.ri: (name) => Trailers(name),

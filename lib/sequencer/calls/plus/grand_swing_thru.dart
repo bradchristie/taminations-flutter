@@ -22,7 +22,7 @@ import '../common.dart';
 
 //  Tidal waves of 8 dancers are covered by xml animations.
 //  This class handles formations of 6 dancers, with 2 others inactive.
-class GrandSwingThru extends Action {
+class GrandSwingThru extends ActivesOnlyAction {
 
   @override
   var level = LevelData.PLUS;
@@ -30,8 +30,14 @@ class GrandSwingThru extends Action {
 
   @override
   Future<void> perform(CallContext ctx, [int stackIndex = 0]) async {
+    //  If some dancers are facing then they need to step to a wave
+    if (ctx.dancers.any((d) => ctx.dancerFacing(d) != null )) {
+      await ctx.applyCalls('Facing Dancers Touch');
+      ctx.analyze();
+    }
+
     //  Check that we have 6 dancers in a tidal wave
-    for (var d in ctx.actives) {
+    for (var d in ctx.dancers) {
       if (ctx.dancersToLeft(d).length+ctx.dancersToRight(d).length == 5) {
         [ctx.dancerToLeft(d),ctx.dancerToRight(d)]
             .where((d2) => d2!=null)
