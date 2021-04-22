@@ -20,7 +20,7 @@
 
 import '../common.dart';
 
-class QuarterTag extends Action {
+class QuarterTag extends ActivesOnlyAction {
 
   @override
   var level = LevelData.MS;
@@ -28,11 +28,11 @@ class QuarterTag extends Action {
 
   bool _centersHoldLeftHands(CallContext ctx) =>
       ctx.actives.where((d) => d.data.center)
-          .every((d) => ctx.dancerToLeft(d)?.data?.center ?? false);
+          .every((d) => ctx.dancerToLeft(d)?.data.center ?? false);
 
   bool _centersHoldRightHands(CallContext ctx) =>
       ctx.actives.where((d) => d.data.center)
-          .every((d) => ctx.dancerToRight(d)?.data?.center ?? false);
+          .every((d) => ctx.dancerToRight(d)?.data.center ?? false);
 
   @override
   Future<void> perform(CallContext ctx, [int i = 0]) async {
