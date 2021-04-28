@@ -24,7 +24,7 @@ class Trade extends Action {
 
   @override
   var level = LevelData.B2;
-  Trade() : super('Trade' );
+  Trade(String name) : super(name);
 
   @override
   Path performOne(Dancer d, CallContext ctx) {
