@@ -443,7 +443,11 @@ class CallContext {
       //  Try chopping off each word from the end of the call until
       //  we find something we know
       var foundOneCall = false;
-      for (var onecall in calltext.chopped()) {
+      //  Hack to make sure Trade Circulate is not split up
+      //  Needed for Phantom Trade Circulate
+      var chopped = calltext.matches('trade circulate'.ri)
+          ? ['Trade Circulate'] : calltext.chopped();
+      for (var onecall in chopped) {
         //  First try to find a snapshot match
         try {
           foundOneCall = await matchXMLcall(onecall);
