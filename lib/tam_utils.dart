@@ -321,6 +321,7 @@ class TamUtils {
           (m) => '${m[1]}4 Tag')
       .replaceAll('\\b12 square thru\\b'.ri,'Square Thru 2')
       .replaceAll('\\bbox recycle\\b'.ri,'Recycle')
+      .replaceAll('\\ballamande?\\b'.ri,'Allemande')
       .replaceAllMapped('interlocked (flip|cut) the'.ri,
           (m) => '${m[1]} the Interlocked')
   //  'Dixie Style' -> 'Dixie Style to a Wave'

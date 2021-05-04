@@ -24,8 +24,8 @@ The web site code will be found in taminations/build/web.  If you want the servi
 cd ios
 pod install
 cd ..
-flutter build ios
-flutter run
+flutter build ios --no-sound-null-safety
+flutter run --no-sound-null-safety
 ```
 Check out [this link](https://cloud-trends.medium.com/how-to-fix-flutter-idevice-id-running-errors-in-mac-osx-catalina-7aa1f89f61aa)
 if you have a security problem with the Mac Gatekeeper

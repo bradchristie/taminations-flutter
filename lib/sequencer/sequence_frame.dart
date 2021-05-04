@@ -47,7 +47,6 @@ class _SequenceFrameState extends fm.State<SequenceFrame> {
   fm.Widget build(fm.BuildContext context) {
     return pp.Consumer<SequencerModel>(
          builder: (context, model, child) {
-
            return fm.LayoutBuilder(
              builder: (context,constraints) => fm.Column(
                children: [
@@ -297,6 +296,11 @@ class _SequencerEditLineState extends fm.State<SequencerEditLine> {
                               pauseFor: Duration(seconds: 5)
                           );
                         });
+                      } else {
+                        fm.ScaffoldMessenger.of(context).showSnackBar(fm.SnackBar(
+                            backgroundColor: Color.BLUE,
+                            duration: Duration(seconds: 2),
+                            content: fm.Text('Sorry, speech recognition not available on this device.',style: fm.TextStyle(fontSize: 20))));
                       }
                     } );
                   }
