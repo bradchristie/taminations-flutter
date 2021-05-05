@@ -418,14 +418,17 @@ class CallContext {
   }
 
   String _cleanupCall(String calltext) {
-    //  Remove any non-alphanums
-    return calltext.replaceAll('\\W'.r,' ')
+    //  Remove any non-alphanums except some used in calls
+    //  Underscore is used for hidden calls used internally by the sequencer
+    //  Dot for fractions (Swing Thru 1.5)
+    //  Slash also for fractions (Swing Thru 1 1/2)
+    //  Dash for Mini-Busy, Out-Roll Circulate e.g.
+    return calltext.replaceAll('[^a-zA-Z0-9_./-]'.r,' ')
     //  Clean up any whitespace
         .replaceAll('\\s+'.r, ' ').trim()
     //  Standardize capitalization
         .capWords();
   }
-
 
   /// This is the main loop for interpreting a call
   ///  [calltxt]  One complete call, lower case, words separated by single spaces
