@@ -418,8 +418,10 @@ class CallContext {
   }
 
   String _cleanupCall(String calltext) {
+    //  Remove any non-alphanums
+    return calltext.replaceAll('\\W'.r,' ')
     //  Clean up any whitespace
-    return calltext.replaceAll('\\s+'.r, ' ').trim()
+        .replaceAll('\\s+'.r, ' ').trim()
     //  Standardize capitalization
         .capWords();
   }
