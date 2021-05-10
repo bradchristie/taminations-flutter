@@ -58,13 +58,40 @@ class SequencerModel extends fm.ChangeNotifier {
     }
   }
 
-
   Future<void> reset() async {
     animation.doPause();
     calls = [];
     errorString = '';
     currentCall = -1;
     await _startSequence();
+    later(() {
+      notifyListeners();
+    });
+  }
+
+  void setColor(String c, Settings settings) {
+    errorString = '';
+    final command = c.toLowerCase();
+    final match = 'color (dancer|couple) ([1-8]) (.*)'.r.firstMatch(command);
+    if (match == null)
+      errorString = 'Color what?';
+    else {
+      final isCouple = match[1]!.startsWith('c');
+      final num = match[2]!.toIntOrNull()!;
+      final color = match[3]!.toLowerCase();
+      if (!color.matches(
+          '(black|blue|cyan|gr[ae]y|green|magenta|orange|red|white|yellow)'.r))
+        errorString = 'Invalid color: $color';
+      else {
+        if (isCouple) {
+          settings.setDancerColor(num*2-1, 'default');
+          settings.setDancerColor(num*2, 'default');
+          settings.setCoupleColor(num, color);
+        }
+        else
+          settings.setDancerColor(num, color);
+      }
+    }
     later(() {
       notifyListeners();
     });
@@ -187,14 +214,15 @@ class SequencerModel extends fm.ChangeNotifier {
     return -1;
   }
 
-  void copy() {
-    final text = calls.map((call) => call.name).join('\n');
+  void copy(Settings settings) {
+    final joiner = settings.joinCallsWith == 'Semi-Colon' ? ';' : '\n';
+    final text = calls.map((call) => call.name).join(joiner);
     final clip = fs.ClipboardData(text:text);
     fs.Clipboard.setData(clip);
   }
 
   void paste(String calltext) async {
-    for (final line in calltext.split('\n')) {
+    for (final line in calltext.split('[\n;]'.r)) {
       if (line.isBlank) {
         continue;
       }

@@ -86,8 +86,9 @@ class SequencerSettingsFrame extends fm.StatelessWidget {
                 PathsSettingWidget(),
                 SequencerDancerColorsWidget(),
                 DancerShapesWidget(),
-                DancerIdentificationWidget()
+                DancerIdentificationWidget(),
                 //  GeometrySettingWidget(),   //  TODO
+                JoinCallsWithWidget()
               ]));
         });
   }
@@ -589,3 +590,21 @@ class _SequencerDancerColorsWidgetState extends fm.State<SequencerDancerColorsWi
   }
 }
 
+class JoinCallsWithWidget extends fm.StatelessWidget {
+  @override
+  fm.Widget build(fm.BuildContext context) {
+    return pp.Consumer<Settings>(
+      builder: (context,settings,child) => fm.Column(
+          crossAxisAlignment: fm.CrossAxisAlignment.stretch,
+          children: [
+            _SettingTitle('On Copy, Join Calls With'),
+            _SettingRadioGroup(
+                groupValue: settings.joinCallsWith,
+                values: ['New Line','Semi-Colon'],
+                onChanged: (value) {
+                  settings.joinCallsWith = value;
+                }),
+          ]),
+    );
+  }
+}

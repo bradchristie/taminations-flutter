@@ -199,7 +199,7 @@ class _SequencerEditLineState extends fm.State<SequencerEditLine> {
             //print('Found call in alternative $i: $call');
             later( () {
               _isVoiceCall = true;
-              _sendOneCall(model, abbreviations.replaceAbbreviations(call));
+              _sendOneLine(model, abbreviations.replaceAbbreviations(call));
             });
             found = true;
             break;
@@ -253,7 +253,7 @@ class _SequencerEditLineState extends fm.State<SequencerEditLine> {
                   //  Code to run when user presses Enter
                   onSubmitted: (value) {
                     _isVoiceCall = false;
-                    _sendOneCall(model, abbreviations.replaceAbbreviations(value));
+                    _sendOneLine(model, abbreviations.replaceAbbreviations(value));
                   },
                 ),
               )
@@ -266,14 +266,14 @@ class _SequencerEditLineState extends fm.State<SequencerEditLine> {
                     color: Color.WHITE,
                     child: fm.InkWell(
                       key: fm.ValueKey('Tap to start Sequence'),
-                      child: fm.Text('Tap mic or this space',
-                          style: fm.TextStyle(fontSize: 20)),
                       onTap: () {
                         setState(() {
                           virtualKeyboard.isVisible = true;
                           focusNode.requestFocus();
                         });
                       },
+                      child: fm.Text('Tap mic or this space',
+                          style: fm.TextStyle(fontSize: 20)),
                     ),
                   )
               ),
@@ -311,16 +311,16 @@ class _SequencerEditLineState extends fm.State<SequencerEditLine> {
             fm.Container(
               key: fm.Key('Submit Call'),
               child: fm.GestureDetector(
+                onTap: () {
+                  _isVoiceCall = false;
+                  _sendOneLine(model,
+                      abbreviations.replaceAbbreviations(textFieldController.value.text));
+                },
                 //  Tester seems to be unable to fetch text if it's a blank string
                 //  so add a space
                 child: fm.Text(model.errorString.isEmpty ? ' ' : model.errorString,
                     key:fm.ValueKey('Test Error Text'),
                     style: fm.TextStyle(color: Color.WHITE, fontSize:1)),
-                onTap: () {
-                  _isVoiceCall = false;
-                  _sendOneCall(model,
-                      abbreviations.replaceAbbreviations(textFieldController.value.text));
-                },
               ),
             ),
           ],
@@ -331,25 +331,30 @@ class _SequencerEditLineState extends fm.State<SequencerEditLine> {
     );
   }
 
-  void _sendOneCall(SequencerModel model, String value) {
-    setState(() {
-      //  Process the call
-      if (value.toLowerCase().trim() == 'undo')
-        model.undoLastCall();
-      else if (value.toLowerCase().trim() == 'reset')
-        model.reset();
-      else
-        model.loadOneCall(value);
+  void _sendOneLine(SequencerModel model, String value) async {
+    final settings = pp.Provider.of<Settings>(context,listen: false);
+  //  setState(() {
+      //  Accept more than one call separated by semi colons
+      for (final call in value.split(';')) {
+        //  Process the call
+        if (call.toLowerCase().trim() == 'undo')
+          model.undoLastCall();
+        else if (call.toLowerCase().trim() == 'reset')
+          await model.reset();
+        else if (call.toLowerCase().trim().startsWith('color'))
+          model.setColor(call, settings);
+        else
+          if (!(await model.loadOneCall(call)))
+            break;
+      }
       //  Erase it from the the text field
       textFieldController.clear();
       //  And get the focus back for the next call
       focusNode.requestFocus();
-    });
+ //   });
   }
 
 }
-
-
 
 
 class SequencerUndoButton extends fm.StatelessWidget {
@@ -381,9 +386,10 @@ class SequencerCopyButton extends fm.StatelessWidget {
   @override
   fm.Widget build(fm.BuildContext context) {
     final model = pp.Provider.of<SequencerModel>(context,listen: false);
+    final settings = pp.Provider.of<Settings>(context,listen: false);
     return fm.Expanded(
         child: Button('Copy',onPressed: () {
-          model.copy();
+          model.copy(settings);
           final count = model.calls.length;
           final countText = count == 1 ? '1 call' : '$count calls';
           fm.ScaffoldMessenger.of(context).showSnackBar(fm.SnackBar(

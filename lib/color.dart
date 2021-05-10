@@ -35,6 +35,7 @@ class Color extends fm.Color {
       case 'blue' : return BLUE;
       case 'cyan' : return CYAN;
       case 'gray' : return GRAY;
+      case 'grey' : return GRAY;
       case 'green' : return GREEN;
       case 'magenta' : return MAGENTA;
       case 'orange' : return ORANGE;

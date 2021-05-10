@@ -56,7 +56,9 @@ class TamUtils {
   //  to help with the sequencer voice recognition.
   static Set<String> words = {
     'head', 'side', 'leader', 'trailer', 'boy', 'girl',
-    'center', 'end', 'very', 'couple', 'home', 'undo', 'reset'
+    'center', 'end', 'very', 'couple', 'home', 'undo', 'reset',
+    'color', 'dancer', 'black', 'blue', 'cyan', 'gray', 'grey',
+    'green', 'magenta', 'orange', 'red', 'white', 'yellow'
   };
 
   //  Read an XML file or other from the assets

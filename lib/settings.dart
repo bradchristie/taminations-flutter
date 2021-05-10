@@ -44,6 +44,7 @@ class Settings extends fm.ChangeNotifier {
   bool _dancerShapes = true;
   String _dancerIdentification = 'None';
   String _showDancerColors = 'By Couple';
+  String _joinCallsWith = 'New Line';
 
   late SharedPreferences prefs;
 
@@ -82,6 +83,7 @@ class Settings extends fm.ChangeNotifier {
     _dancerShapes = prefs.getBool('Dancer Shapes') ?? true;
     _dancerIdentification = prefs.getString('Dancer Identification') ?? 'None';
     _showDancerColors = prefs.getString('Dancer Colors') ?? 'By Couple';
+    _joinCallsWith = prefs.getString('Join Calls With') ?? 'New Line';
     notifyListeners();
     return true;
   }
@@ -233,5 +235,13 @@ class Settings extends fm.ChangeNotifier {
     prefs.setString('Dancer Colors',value);
     notifyListeners();
   }
+
+  String get joinCallsWith => _joinCallsWith;
+  set joinCallsWith(String value) {
+    _joinCallsWith = value;
+    prefs.setString('Join Calls With', value);
+    notifyListeners();
+  }
+
 
 }
