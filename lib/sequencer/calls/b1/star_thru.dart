@@ -40,6 +40,7 @@ class StarThru extends Action {
     //  Double and Triple Star Thru use "Left Star Thru"
     if (name.toLowerCase().contains('left' ))
       move.reflect();
+    move.changebeats(4.0);
     return move;
   }
 
