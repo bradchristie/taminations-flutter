@@ -131,6 +131,8 @@ class SequencerModel extends fm.ChangeNotifier {
   }
 
   Future<void> _interpretOneCall(String call) async {
+    if (call.isBlank)
+      return Future<void>.value();
     if (isComment(call)) {
       calls.add(SequencerCall(call,beats:0.0,level:null));
       return Future<void>.value();
