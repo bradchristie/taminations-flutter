@@ -314,7 +314,7 @@ abstract class CodedCall extends Call {
     '(left)?pullby'.ri: (name) => PullBy(name),
 
     '14(in|out)'.ri: (name) => QuarterInOut(name),
-    'and14more'.ri: (_) => QuarterMore(),
+    'anda?14more'.ri: (_) => QuarterMore(),
     '(left)?14tag'.ri: (name) => QuarterTag(name),
 
     'ramble'.ri: (_) => Ramble(),
