@@ -52,35 +52,29 @@
   </tam>
 
   <tam title="Peel Chain Thru" from="Three Quarter Tag" formation="3/4 Tag" fractions="4;4">
-    <formation>
-      <dancer gender="boy" x="0" y="3" angle="0"/>
-      <dancer gender="girl" x="0" y="1" angle="180"/>
-      <dancer gender="boy" x="-3" y="1" angle="180"/>
-      <dancer gender="girl" x="-3" y="-1" angle="180"/>
-    </formation>
-    <path>
-      <move select="Swing Right" beats="4" scaleX=".5" scaleY=".5" offsetY="-1.5"/>
-      <move select="Swing Left" beats="4" scaleX=".5" scaleY=".5"/>
-      <move select="Lead Right" beats="4.5" scaleX="3" scaleY="1.5"/>
-    </path>
-    <path>
-      <move select="Swing Right" beats="4" scaleX=".5" scaleY=".5" offsetY=".5"/>
-      <move select="Stand" beats="4"/>
-      <move select="Swing Left" scaleX=".5" scaleY=".5"/>
-      <move select="Hinge Left" scaleY=".5"/>
-    </path>
-    <path>
+    <path numbers="1 8">
       <move select="Run Right" beats="4" offsetX="-2"/>
       <move select="Extend Left" scaleY=".5"/>
       <move select="Swing Right" scaleX=".5" scaleY=".5"/>
       <move select="Swing Left" scaleX=".5" scaleY=".5"/>
       <move select="Hinge Left" scaleY=".5"/>
     </path>
-    <path>
+    <path numbers="2 7">
       <move select="Run Left" beats="4" offsetX="-2"/>
       <move select="Extend Left" scaleY=".5"/>
       <move select="Swing Right" scaleX=".5" scaleY=".5"/>
       <move select="Lead Right" beats="4.5" scaleX="3" scaleY="1.5"/>
+    </path>
+    <path numbers="6 3">
+      <move select="Swing Right" beats="4" scaleX=".5" scaleY=".5" offsetY="-1.5"/>
+      <move select="Swing Left" beats="4" scaleX=".5" scaleY=".5"/>
+      <move select="Lead Right" beats="4.5" scaleX="3" scaleY="1.5"/>
+    </path>
+    <path numbers="5 4">
+      <move select="Swing Right" beats="4" scaleX=".5" scaleY=".5" offsetY=".5"/>
+      <move select="Stand" beats="4"/>
+      <move select="Swing Left" scaleX=".5" scaleY=".5"/>
+      <move select="Hinge Left" scaleY=".5"/>
     </path>
   </tam>
 
