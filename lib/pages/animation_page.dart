@@ -20,6 +20,7 @@
 
 import 'dart:math';
 
+import 'package:flutter/gestures.dart' as fg;
 import 'package:flutter/material.dart' as fm;
 import 'package:provider/provider.dart' as pp;
 import 'package:taminations/sequencer/sequencer_model.dart';
@@ -231,46 +232,61 @@ class _AnimationFrameState extends fm.State<AnimationFrame>
 
                       //  Wrap dance area with widget to detect pointer events
                       final beats = model.calls.isNotEmpty ? model.totalBeats().i.s : '';
-                      return fm.GestureDetector(
-                          onTapDown: tapDownHandler,
-                          onSecondaryTapDown: tapDownHandler,
-                          onTap: () {
-                            if (dancerTapped != null) {
-                              setState(() {
-                                painter.togglePath(dancerTapped!);
-                              });
-                            }
-                          },
-                          onLongPress: longPressHandler,
-                          onSecondaryTap: longPressHandler,
-                          //  Stack to show info on animation
-                          child: fm.Stack(
-                              children: [
-                                //  Finally here is the dance area widget
-                                fm.CustomPaint(
-                                  painter: painter,
-                                  child: fm.Center(), // so CustomPaint gets sized correctly
-                                ),
-                                //  Note that fades out as animation starts
-                                fm.Opacity(
-                                  opacity: ((-painter.beat)/2.0).coerceIn(0.0, 1.0),
-                                    child:fm.Container(
-                                        color: Color.WHITE,
-                                        child:fm.Text(painter.animationNote,
-                                            style:fm.TextStyle(fontSize:20))
-                                    )),
-                                //  Show if Loop or Speed are set other than default
-                                fm.Positioned(
-                                  bottom: 0.0,
-                                  right: 0.0,
-                                  child: fm.Text(
-                                      beats + ' ' +
-                                      settings.speed.replaceFirst('Normal','') +
-                                          (settings.loop ? ' Loop' : ''),
-                                      style:fm.TextStyle(fontSize:24)
+                      //  Hook up mouse wheel
+                      //  Need separate widget as GestureDetector doesn't handle it
+                      return fm.Listener(
+                        onPointerSignal: (fg.PointerSignalEvent event) {
+                          if (event is fg.PointerScrollEvent) {
+                            print('x: ${event.position.dx}, y: ${event.position.dy}');
+                            print('scroll delta: ${event.scrollDelta}');
+                            if (event.scrollDelta.dy < 0)
+                              painter.stepBack();
+                            else if (event.scrollDelta.dy > 0)
+                              painter.stepForward();
+                          }
+                        },
+                        //  Set up other mouse / tap actions
+                        child: fm.GestureDetector(
+                            onTapDown: tapDownHandler,
+                            onSecondaryTapDown: tapDownHandler,
+                            onTap: () {
+                              if (dancerTapped != null) {
+                                setState(() {
+                                  painter.togglePath(dancerTapped!);
+                                });
+                              }
+                            },
+                            onLongPress: longPressHandler,
+                            onSecondaryTap: longPressHandler,
+                            //  Stack to show info on animation
+                            child: fm.Stack(
+                                children: [
+                                  //  Finally here is the dance area widget
+                                  fm.CustomPaint(
+                                    painter: painter,
+                                    child: fm.Center(), // so CustomPaint gets sized correctly
+                                  ),
+                                  //  Note that fades out as animation starts
+                                  fm.Opacity(
+                                    opacity: ((-painter.beat)/2.0).coerceIn(0.0, 1.0),
+                                      child:fm.Container(
+                                          color: Color.WHITE,
+                                          child:fm.Text(painter.animationNote,
+                                              style:fm.TextStyle(fontSize:20))
+                                      )),
+                                  //  Show if Loop or Speed are set other than default
+                                  fm.Positioned(
+                                    bottom: 0.0,
+                                    right: 0.0,
+                                    child: fm.Text(
+                                        beats + ' ' +
+                                        settings.speed.replaceFirst('Normal','') +
+                                            (settings.loop ? ' Loop' : ''),
+                                        style:fm.TextStyle(fontSize:24)
+                                    )
                                   )
-                                )
-                              ])
+                                ])
+                        ),
                       );
                     })),
 
