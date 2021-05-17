@@ -217,14 +217,18 @@ class SequencerModel extends fm.ChangeNotifier {
   }
 
   void copy(Settings settings) {
-    final joiner = settings.joinCallsWith == 'Semi-Colon' ? ';' : '\n';
+    var joiner = '\n';
+    if (settings.joinCallsWith == 'Semi-Colon')
+      joiner = '; ';
+    if (settings.joinCallsWith == 'Comma')
+      joiner = ', ';
     final text = calls.map((call) => call.name).join(joiner);
     final clip = fs.ClipboardData(text:text);
     fs.Clipboard.setData(clip);
   }
 
   void paste(String calltext) async {
-    for (final line in calltext.split('[\n;]'.r)) {
+    for (final line in calltext.split('[\n;,]'.r)) {
       if (line.isBlank) {
         continue;
       }

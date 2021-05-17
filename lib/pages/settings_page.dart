@@ -600,7 +600,7 @@ class JoinCallsWithWidget extends fm.StatelessWidget {
             _SettingTitle('On Copy, Join Calls With'),
             _SettingRadioGroup(
                 groupValue: settings.joinCallsWith,
-                values: ['New Line','Semi-Colon'],
+                values: ['New Line','Semi-Colon','Comma'],
                 onChanged: (value) {
                   settings.joinCallsWith = value;
                 }),
