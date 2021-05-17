@@ -1169,6 +1169,43 @@
     </path>
   </tam>
 
+
+  <tam title="All 4 Couples (A-1) Brace Thru" group="All 4 Couples (A-1)"
+       sequencer="gender-specific">
+    <formation name="Static Square">
+      <dancer gender="boy" x="-3" y="1" angle="0"/>
+      <dancer gender="girl" x="-3" y="-1" angle="0"/>
+      <dancer gender="girl" x="-1" y="-3" angle="90"/>
+      <dancer gender="boy" x="1" y="-3" angle="90"/>
+    </formation>
+    <path>
+      <move select="Extend Left" beats="2" scaleX="2" scaleY="2" />
+      <move select="Forward" />
+      <move select="Lead Right" />
+      <move select="Lead Left" beats="2" scaleY="2" />
+      <move select="Beau Wheel" />
+    </path>
+    <path>
+      <move select="Extend Right" beats="3.5" scaleX="3" />
+      <move select="Forward 2" />
+      <move select="Extend Left" />
+      <move select="Belle Wheel" />
+    </path>
+    <path>
+      <move select="Extend Left" beats="2" scaleX="2" scaleY="2" />
+      <move select="Forward" />
+      <move select="Lead Right" />
+      <move select="Lead Left" beats="2" scaleY="2" />
+      <move select="U-Turn Right"/>
+    </path>
+    <path>
+      <move select="Extend Right" beats="3.5" scaleX="3" />
+      <move select="Forward 2" />
+      <move select="Extend Left" />
+      <move select="U-Turn Left"/>
+    </path>
+  </tam>
+
   <tam title="All 4 Couples (A-1) Cross Trail Thru" group="All 4 Couples (A-1)"
        formation="Static Square">
     <path>
