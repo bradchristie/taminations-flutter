@@ -86,10 +86,10 @@ class SequencerModel extends fm.ChangeNotifier {
         if (isCouple) {
           settings.setDancerColor(num*2-1, 'default');
           settings.setDancerColor(num*2, 'default');
-          settings.setCoupleColor(num, color);
+          settings.setCoupleColor(num, color.capitalize());
         }
         else
-          settings.setDancerColor(num, color);
+          settings.setDancerColor(num, color.capitalize());
       }
     }
     later(() {
