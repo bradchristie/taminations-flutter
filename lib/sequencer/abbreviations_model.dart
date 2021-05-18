@@ -217,12 +217,13 @@ class AbbreviationsModel extends fm.ChangeNotifier {
 
   //  Replace any abbreviations with their expanded equivalents
   //  and return the new string
-  String replaceAbbreviations(String text) =>
-      text.split('\\s+'.r)
-          .map((word) => currentAbbreviations
-          .where((e) => e.abbr == word.toLowerCase()).firstOrNull?.expa ?? word)
-          .join(' ');
-
+  String replaceAbbreviations(String text) {
+    var replaced = text;
+    for (final a in currentAbbreviations) {
+      replaced = replaced.replaceAll('\\b${a.abbr}\\b'.r, a.expa);
+    }
+    return replaced;
+  }
 
   void defaultAbbreviations() {
     _clearStorage();
