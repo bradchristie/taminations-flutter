@@ -18,8 +18,6 @@
 
 */
 
-import 'package:flutter/material.dart';
-
 import 'color.dart';
 import 'extensions.dart';
 

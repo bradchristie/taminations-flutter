@@ -176,7 +176,7 @@ class Settings extends fm.ChangeNotifier {
     else if (languageSetting == 'Japanese')
       languageSetting = 'ja';
     else  //  System language
-      languageSetting = fm.WidgetsBinding.instance!.window.locale!.languageCode;
+      languageSetting = fm.WidgetsBinding.instance!.window.locale.languageCode;
     if (languageSetting != 'en') {
       if (TamUtils.calldata.indexWhere((item) {
         return item.link == link && item.languages.contains(languageSetting);
