@@ -101,7 +101,7 @@ class SequencerModel extends fm.ChangeNotifier {
     errorString = '';
     try {
       await _interpretOneCall(call);
-      notifyListeners();
+     // notifyListeners();
     } on CallError catch(e) {
       errorString = e.toString();
       notifyListeners();
@@ -166,9 +166,7 @@ class SequencerModel extends fm.ChangeNotifier {
     if (newbeats > prevbeats) {
       //  Call worked, add it to the list
       calls.add(SequencerCall((cctx.callname + comment).trim(),beats:(newbeats-prevbeats),level:cctx.level));
-      animation.beat = prevbeats - animation.leadout;
       _updateParts();
-      animation.doPlay();
     }
   }
 

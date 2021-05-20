@@ -189,10 +189,10 @@ class _SequencerEditLineState extends fm.State<SequencerEditLine> {
       if (speech.hasResults) {
         //print('Looking for ${speech.lastResult.recognizedWords}');
         var found = false;
-        for (var i=0; i<speech.lastResult.alternates.length; i++) {
+        for (var i=0; i<speech.lastResult!.alternates.length; i++) {
           //  Look through all the alternatives for one that has
           //  all square dance words
-          var call = speech.lastResult.alternates[i].recognizedWords.replaceAll('\\W'.r, ' ');
+          var call = speech.lastResult!.alternates[i].recognizedWords.replaceAll('\\W'.r, ' ');
           var words = call.split('\\s+'.r)
               .map((w) => TamUtils.normalizeCall(w).toLowerCase());
           if (words.every((word) => TamUtils.words.contains(word))) {
@@ -206,8 +206,8 @@ class _SequencerEditLineState extends fm.State<SequencerEditLine> {
           }
         }
         if (!found) {
-          final message = speech.lastResult.alternates.isNotEmpty
-              ? 'Unable to parse, best guess is ${speech.lastResult.alternates.first.recognizedWords}.'
+          final message = speech.lastResult!.alternates.isNotEmpty
+              ? 'Unable to parse, best guess is ${speech.lastResult!.alternates.first.recognizedWords}.'
               : 'Sorry, not able to recognize that.';
           later(() {
             fm.ScaffoldMessenger.of(context).showSnackBar(fm.SnackBar(
@@ -333,25 +333,29 @@ class _SequencerEditLineState extends fm.State<SequencerEditLine> {
 
   void _sendOneLine(SequencerModel model, String value) async {
     final settings = pp.Provider.of<Settings>(context,listen: false);
-  //  setState(() {
-      //  Accept more than one call separated by semi colons
-      for (final call in value.split(';')) {
-        //  Process the call
-        if (call.toLowerCase().trim() == 'undo')
-          model.undoLastCall();
-        else if (call.toLowerCase().trim() == 'reset')
-          await model.reset();
-        else if (call.toLowerCase().trim().startsWith('color'))
-          model.setColor(call, settings);
-        else
-          if (!(await model.loadOneCall(call)))
-            break;
-      }
-      //  Erase it from the the text field
-      textFieldController.clear();
-      //  And get the focus back for the next call
-      focusNode.requestFocus();
- //   });
+    final oldbeats = model.animation.movingBeats;
+    //  Accept more than one call separated by semi colons
+    for (final call in value.split(';')) {
+      //  Process the call
+      if (call.toLowerCase().trim() == 'undo')
+        model.undoLastCall();
+      else if (call.toLowerCase().trim() == 'reset')
+        await model.reset();
+      else if (call.toLowerCase().trim().startsWith('color'))
+        model.setColor(call, settings);
+      else
+      if (!(await model.loadOneCall(call)))
+        break;
+    }
+    //  Animate from the previous position
+    if (model.animation.movingBeats > oldbeats) {
+      model.animation.beat = oldbeats;
+      model.animation.doPlay();
+    }
+    //  Erase it from the the text field
+    textFieldController.clear();
+    //  And get the focus back for the next call
+    focusNode.requestFocus();
   }
 
 }
