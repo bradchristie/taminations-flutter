@@ -74,6 +74,24 @@
   </tam>
 
   <tam title="Six-Two Acey Deucey"
+       from="Left-Hand Point-to-Point Diamonds"
+       formation="Diamonds LH PTP Girl Points">
+    <path>
+      <move select="Lead Left" beats="3" scaleX="2" />
+    </path>
+    <path>
+      <move select="Swing Right" scaleX=".5" />
+    </path>
+    <path>
+      <move select="Extend Right" beats="2" scaleX="3" scaleY=".5" />
+      <move select="Extend Left" beats="2" scaleX="3" scaleY=".5" />
+    </path>
+    <path>
+      <move select="Lead Left" beats="3" scaleY="2" />
+    </path>
+  </tam>
+
+  <tam title="Six-Two Acey Deucey"
        from="Hourglass"
        formation="Hourglass RH BP">
     <path>
