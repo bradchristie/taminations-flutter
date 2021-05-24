@@ -18,9 +18,6 @@
 
 */
 
-
-import 'dart:ui';
-
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart' as fm;
 import 'package:provider/provider.dart' as pp;
@@ -129,16 +126,15 @@ class _AnimListState extends fm.State<AnimListFrame> {
           )
       );
 
-  void _loadList(XmlDocument doc) async {
+  void _loadList(XmlDocument doc) {
     animListItems = [];
     var prevTitle = '';
     var prevGroup = '';
     var animationsAdded = 0;
-    TamUtils.tamList(doc)
-        .where((it) => !(it('display','')).startsWith('n'))
-        .forEach((tam) {
+    for (final tam in TamUtils.tamList(doc)
+        .where((it) => !(it('display','')).startsWith('n'))) {
       var tamTitle = tam('title');
-      var from = 'from'; // updated later after tamxref is loaded
+      var from = tam('from');
       var group = tam('group','');
       if (tam('difficulty').isNotBlank)
         hasDifficulty = true;
@@ -169,7 +165,6 @@ class _AnimListState extends fm.State<AnimListFrame> {
       //  Build list item for this animation
       prevTitle = tamTitle;
       prevGroup = group;
-      if (from == 'from') from = tam('from');
       animListItems.add(AnimListItem(
           celltype: group.isBlank && group.isNotEmpty
               ? CellType.Plain
@@ -180,7 +175,7 @@ class _AnimListState extends fm.State<AnimListFrame> {
           animnumber: animationsAdded,
           difficulty: tam('difficulty','0').i));
       animationsAdded += 1;
-    });
+    };
   }
 
   @override

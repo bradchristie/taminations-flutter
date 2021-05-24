@@ -97,7 +97,7 @@ class _WebFrameState extends fm.State<WebFrame> {
                         child:pp.Consumer<AnimationState>(
                             builder: (context, settings, child) {
                               //  TODO highlight current part in definition
-                              return child;
+                              return child!;
                             },
                             child: ewv.EasyWebView(
                                 key: fm.ValueKey(link),
@@ -207,9 +207,9 @@ class _WebFrameState extends fm.State<WebFrame> {
   //  Load the original HTML, then call all the routines to fix it up
   Future<String> _loadHtmlFromAssets() async {
     //  Need to load about.html directly from the web site
-    //  so the service worker is active
+    //  to communicate with the service worker
     if (localizedAssetName == 'info/about.html' && TamUtils.platform() == 'web') {
-      return 'https://www.tamtwirlers.org/taminations/assets/assets/info/about.html?version=$version';
+      return 'https://www.tamtwirlers.org/taminations/assets/assets/info/about.html?v=$version';
     }
     var fileText = await rootBundle.loadString('assets/$localizedAssetName');
     fileText = hackCSS(fileText);
