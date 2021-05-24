@@ -23,8 +23,8 @@ import '../common.dart';
 class AsCouples extends FourDancerConcept {
 
   @override final level = LevelData.A1;
-  @override final conceptName = 'As Couples';
-  AsCouples(String name) : super(name);
+  @override final conceptName = 'As Couples?';
+  AsCouples(String name) : super(name.replaceAll('As Couples?'.ri, 'As Couples'));
 
   @override
   List<List<Dancer>> dancerGroups(CallContext ctx) =>
