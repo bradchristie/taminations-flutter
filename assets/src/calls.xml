@@ -536,6 +536,7 @@
   <call audio="ssd/scoot_back.mp3" languages="lang-ja" link="ssd/scoot_back" title="Scoot Back"/>
   <call audio="a2/scoot_chain_thru.mp3" link="a2/scoot_chain_thru" title="Scoot Chain Thru"/>
   <call link="c3a/scoot_the_diamond" title="Scoot the Diamond"/>
+  <call link="c3a/anything_reaction" title="Scoot Reaction"/>
   <call link="c3b/scramble" title="Scramble"/>
   <call link="c3b/secondly_thirdly_fourthly" title="Secondly"/>
   <call audio="b1/see_saw.mp3" languages="lang-de lang-ja" link="b1/see_saw" title="See Saw"/>
