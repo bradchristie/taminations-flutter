@@ -59,7 +59,7 @@ function showPlatformElements(platform) {
 //  Check that the version listed in about.html is the same
 //  as the code version
 function checkVersion() {
-  var sourceVersion = window.location.search.replace('?version=','');
+  var sourceVersion = window.location.search.replace('?v=','');
   console.log('checkVersion: '+sourceVersion);
   var aboutVersion = document.getElementById('version').innerHTML;
   if (sourceVersion.length > 0 && aboutVersion != sourceVersion) {
