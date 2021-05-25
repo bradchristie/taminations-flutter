@@ -31,8 +31,9 @@ class TitleModel extends fm.ChangeNotifier {
 
   String get title => _title;
   set title(String value) {
-    if (value != _title) {
-      _title = value;
+    final newTitle = value.replaceAll(r'\s*\(.*?\)\s*'.r, ' ');
+    if (newTitle != _title) {
+      _title = newTitle;
       later(() => notifyListeners());
     }
   }
