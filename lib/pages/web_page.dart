@@ -28,7 +28,7 @@ import 'package:easy_web_view/easy_web_view.dart' as ewv;
 import '../common.dart';
 import 'animation_page.dart';
 import 'page.dart';
-import '../version.dart';
+// import '../version.dart';
 
 //  Classes to display both About and Definition
 class WebPage extends fm.StatelessWidget {
@@ -188,7 +188,7 @@ class _WebFrameState extends fm.State<WebFrame> {
   //  Find all links to images, replace with inline base64 src
   //  Return a future that completes after all the images have been
   //  retrieved and displayed
-  Future<String> hackImages(String html) {
+  Future<String> _hackImages(String html) {
     var myhtml = html;
     var myFuture = Future<String>.value(myhtml);
     r'<img.*?src="(.*?)".*?/>'.r.allMatches(myhtml).forEach((match) {
@@ -204,16 +204,24 @@ class _WebFrameState extends fm.State<WebFrame> {
     return myFuture;
   }
 
+  //  We currently have no way to intercept links to redirect to the
+  //  appropriate asset.  So disable links in definitions for now.
+  String _stripAnchors(String html) =>
+      html.replaceAllMapped('<a href=".*?">(.*?)</a>'.rd, (m) => '${m[1]}');
+
   //  Load the original HTML, then call all the routines to fix it up
   Future<String> _loadHtmlFromAssets() async {
     //  Need to load about.html directly from the web site
     //  to communicate with the service worker
-    if (localizedAssetName == 'info/about.html' && TamUtils.platform() == 'web') {
-      return 'https://www.tamtwirlers.org/taminations/assets/assets/info/about.html?v=$version';
-    }
+    //if (localizedAssetName == 'info/about.html' && TamUtils.platform() == 'web') {
+      //return 'https://www.tamtwirlers.org/taminations/assets/assets/info/about.html?v=$version';
+    //}
     var fileText = await rootBundle.loadString('assets/$localizedAssetName');
     fileText = hackCSS(fileText);
-    fileText = await hackImages(fileText);
+    if (localizedAssetName != 'info/about.html') {
+      fileText = await _hackImages(fileText);
+      fileText = _stripAnchors(fileText);
+    }
     fileText = hackJavascript(fileText);
     if (fileText.contains(r'class="abbrev"')) {
       setState(() {

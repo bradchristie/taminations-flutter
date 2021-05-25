@@ -130,6 +130,7 @@ class _AnimationFrameState extends fm.State<AnimationFrame>
 
   fm.PopupMenuItem<String> oneItem(String colorName) =>
       fm.PopupMenuItem(
+        value: colorName,
         child:fm.Container(
             padding: fm.EdgeInsets.all(10),
             width: 120,
@@ -138,7 +139,6 @@ class _AnimationFrameState extends fm.State<AnimationFrame>
                 : fm.BoxDecoration(color: Color.fromName(colorName), border:fm.Border.all(color:Color.BLACK)),
             child:fm.Text(colorName, style: fm.TextStyle(color: colorName.startsWith('B') ? Color.WHITE : Color.BLACK))
         ),
-        value: colorName
       );
 
   Future<String?> _showColorPopup(fm.BuildContext context, String currentColor) {
@@ -237,8 +237,6 @@ class _AnimationFrameState extends fm.State<AnimationFrame>
                       return fm.Listener(
                         onPointerSignal: (fg.PointerSignalEvent event) {
                           if (event is fg.PointerScrollEvent) {
-                            print('x: ${event.position.dx}, y: ${event.position.dy}');
-                            print('scroll delta: ${event.scrollDelta}');
                             if (event.scrollDelta.dy < 0)
                               painter.stepBack();
                             else if (event.scrollDelta.dy > 0)

@@ -17,4 +17,4 @@
  *     along with Taminations.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-final version = '1.6.11';
+final version = '1.6.12';
