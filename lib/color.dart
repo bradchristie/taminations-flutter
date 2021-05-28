@@ -79,6 +79,7 @@ class Color extends fm.Color {
   static const Color ORANGE = Color(0xffffc800);
   static const Color GRAY = Color(0xff808080);
   static const Color LIGHTGRAY = Color(0xffc0c0c0);
+  static const Color MAROON = Color(0xff800000);
 
   Color invert() => Color.fromARGB(alpha,255-red,255-green,255-blue);
   Color darker([double f = 0.7]) =>

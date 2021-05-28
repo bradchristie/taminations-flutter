@@ -34,7 +34,7 @@ import 'pages/second_landscape_page.dart';
 import 'pages/settings_page.dart';
 import 'pages/start_practice_page.dart';
 import 'pages/tutorial_page.dart';
-import 'pages/web_page.dart';
+import 'pages/markdown_page.dart';
 import 'pages/page.dart';
 import 'sequencer/sequencer_page.dart';
 import 'sequencer/abbreviations_frame.dart';
@@ -70,10 +70,11 @@ class _TaminationsAppState extends fm.State<TaminationsApp> {
     //  so everybody has access to them
     return pp.MultiProvider(
       providers: [
-        pp.ChangeNotifierProvider(create: (context) => Settings()),
-        pp.ChangeNotifierProvider(create: (context) => AnimationState()),
-        pp.ChangeNotifierProvider(create: (context) => AbbreviationsModel()),
-        pp.ChangeNotifierProvider(create: (context) => SequencerModel()),
+        pp.ChangeNotifierProvider(create: (_) => Settings()),
+        pp.ChangeNotifierProvider(create: (_) => AnimationState()),
+        pp.ChangeNotifierProvider(create: (_) => AbbreviationsModel()),
+        pp.ChangeNotifierProvider(create: (_) => SequencerModel()),
+        pp.ChangeNotifierProvider(create: (_) => HighlightState(),),
         pp.Provider(create: (_) => VirtualKeyboardVisible())
       ],
         //  Read initialization files
@@ -184,7 +185,7 @@ class TaminationsRouterDelegate extends fm.RouterDelegate<TamState>
                               appState.detailPage == DetailPage.HELP)
                             fm.MaterialPage(
                                 key: fm.ValueKey('About'),
-                                child: WebPage('info/about.html')
+                                child: MarkdownPage('info/about.html')
                             ),
                           if (appState.mainPage == MainPage.LEVELS &&
                               appState.detailPage == DetailPage.SETTINGS)
@@ -217,7 +218,7 @@ class TaminationsRouterDelegate extends fm.RouterDelegate<TamState>
                             fm.MaterialPage(
                                 key: fm.ValueKey(
                                     appState.link! + ' definition'),
-                                child: WebPage(appState.link!)
+                                child: MarkdownPage(appState.link!)
                             ),
                           if (appState.mainPage != MainPage.LEVELS &&
                               appState.detailPage == DetailPage.SETTINGS)
@@ -235,7 +236,7 @@ class TaminationsRouterDelegate extends fm.RouterDelegate<TamState>
                               appState.detailPage == DetailPage.HELP)
                             fm.MaterialPage(
                                 key: fm.ValueKey('Sequencer Help'),
-                                child: WebPage('info/sequencer.html')
+                                child: MarkdownPage('info/sequencer.html')
                             ),
                           if (appState.mainPage == MainPage.SEQUENCER &&
                               appState.detailPage == DetailPage.ABBREVIATIONS)

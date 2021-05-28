@@ -60,6 +60,8 @@ class DanceAnimationPainter extends fm.ChangeNotifier implements fm.CustomPainte
     _beat = value;
     notifyListeners();
   }
+  //  currentPart is 0 if not in animation, 1 to n otherwise
+  var currentPart = 0;
   var _showPhantoms = false;
   var isRunning = false;
   DateTime _lastTime = DateTime(2000);
@@ -423,6 +425,13 @@ class DanceAnimationPainter extends fm.ChangeNotifier implements fm.CustomPainte
       dancers.forEach((d) {
         d.animate(_prevbeat + j * delta / incs);
       });
+
+    //  Update current part
+    if (beat < 0 || beat > beats)
+      currentPart = 0;
+    else {
+      currentPart = _partsValues().lastIndexWhere((b) => b < beat);
+    }
 
     //  Compute handholds
     var hhlist = <Handhold>[];

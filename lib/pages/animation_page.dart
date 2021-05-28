@@ -167,11 +167,15 @@ class _AnimationFrameState extends fm.State<AnimationFrame>
 
   @override
   fm.Widget build(fm.BuildContext context) {
-    return pp.Consumer2<TamState,DanceAnimationPainter>(
-      builder: (context,appState,painter,_) => fm.LayoutBuilder(
+    return pp.Consumer3<TamState,HighlightState,DanceAnimationPainter>(
+      builder: (context,appState,highlightState,painter,_) => fm.LayoutBuilder(
         builder: (context, constraints) {
           final isSmall = constraints.maxHeight < 350;
           final iconSize = isSmall ? 16.0 : 24.0;
+          //  Update current part which will notify definition to change highlights
+          later(() {
+            highlightState.currentPart = painter.currentPart;
+          });
           return fm.Column(children: [
                 //  Dance area with animations
                 fm.Expanded(child: pp.Consumer2<Settings,SequencerModel>(

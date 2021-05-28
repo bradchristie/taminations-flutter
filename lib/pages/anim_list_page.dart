@@ -238,8 +238,8 @@ class _AnimListState extends fm.State<AnimListFrame> {
                             case CellType.Indented:
                             case CellType.Plain:
                             return fm.Container(
-                                child: pp.Consumer<TamState>(
-                                    builder: (context, tamState, _) {
+                                child: pp.Consumer2<TamState,HighlightState>(
+                                    builder: (context, tamState,highlightState, _) {
                                       if (item.animnumber == tamState.animnum ||
                                           (item.animnumber==0 && tamState.animnum < 0))
                                         selectedItem = index;
@@ -258,6 +258,7 @@ class _AnimListState extends fm.State<AnimListFrame> {
                                                 mainPage: MainPage.ANIMATIONS,
                                                 animnum: item.animnumber
                                             );
+                                            highlightState.currentCall = item.title.replaceAll(' ', '');
                                           },
                                           child: fm.Container(
                                             decoration: fm.BoxDecoration(

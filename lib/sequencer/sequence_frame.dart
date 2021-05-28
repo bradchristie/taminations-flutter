@@ -280,12 +280,7 @@ class _SequencerEditLineState extends fm.State<SequencerEditLine> {
 
             //  Mic icon for touch devices to do voice input
             if (TamUtils.isTouchDevice())
-              fm.TextButton(child: fm.Icon(
-                  fm.Icons.mic,
-                  color: speechProvider.isListening ? Color.RED : Color.BLACK,
-                  size: 32
-              ),
-                  onPressed: () {
+              fm.TextButton(onPressed: () {
                     speechProvider.initialize().whenComplete(() {
                       if (speechProvider.isAvailable) {
                         setState(() {
@@ -303,7 +298,11 @@ class _SequencerEditLineState extends fm.State<SequencerEditLine> {
                             content: fm.Text('Sorry, speech recognition not available on this device.',style: fm.TextStyle(fontSize: 20))));
                       }
                     } );
-                  }
+                  }, child: fm.Icon(
+                  fm.Icons.mic,
+                  color: speechProvider.isListening ? Color.RED : Color.BLACK,
+                  size: 32
+              )
               ),
             //  For testing - a very tiny spot to tap
             //  since the tester cannot simulate keyboard Enter
@@ -426,16 +425,20 @@ class SequencerPasteButton extends fm.StatelessWidget {
                       maxLines: null,
                     ),
                     actions: [
-                      fm.TextButton(child: fm.Text('OK'), onPressed: () {
+                      fm.TextButton(onPressed: () {
                         fm.Navigator.of(context).pop();
                         model.paste(controller.text);
-                      }),
-                      fm.TextButton(child: fm.Text('Cancel'), onPressed: () {
+                      }, child: fm.Text('OK')),
+                      fm.TextButton(onPressed: () {
                         fm.Navigator.of(context).pop();
-                      })
+                      }, child: fm.Text('Cancel'))
                     ],
                   ));
             }
+          },
+              //  Firefox does not support Clipboard, so let the user paste with ^V
+              onError: (Object obj) {
+                print('You must be using Firefox!');
           });
         })
     );

@@ -139,3 +139,29 @@ class TamState extends fm.ChangeNotifier {
 
 }
 
+//  Info needed for highlighting current part in definition
+class HighlightState extends fm.ChangeNotifier {
+
+  var _currentCall = '';
+  String get currentCall => _currentCall;
+  set currentCall(String value) {
+    if (value != _currentCall) {
+      _currentCall = value;
+      notifyListeners();
+    }
+  }
+
+  var _currentPart = -1;
+  int get currentPart => _currentPart;
+  set currentPart(int value) {
+    if (value != _currentPart) {
+      _currentPart = value;
+      notifyListeners();
+    }
+  }
+
+  @override
+  String toString() => '$_currentCall$_currentPart';
+
+}
+

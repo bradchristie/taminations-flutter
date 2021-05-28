@@ -26,8 +26,8 @@ import 'package:provider/provider.dart' as pp;
 import '../common.dart';
 import 'anim_list_page.dart';
 import 'animation_page.dart';
+import 'markdown_page.dart';
 import 'settings_page.dart';
-import 'web_page.dart';
 
 class SecondLandscapePage extends fm.StatelessWidget {
 
@@ -92,7 +92,7 @@ class SecondLandscapePage extends fm.StatelessWidget {
                           ),
                           rightChild: tamState.detailPage == DetailPage.SETTINGS
                               ? SettingsFrame()
-                              : WebFrame(tamState.link!)
+                              : MarkdownFrame(tamState.link!)
                       ),
             ); }
           )
