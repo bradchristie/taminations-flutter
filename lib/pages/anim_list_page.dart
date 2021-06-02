@@ -241,8 +241,13 @@ class _AnimListState extends fm.State<AnimListFrame> {
                                 child: pp.Consumer2<TamState,HighlightState>(
                                     builder: (context, tamState,highlightState, _) {
                                       if (item.animnumber == tamState.animnum ||
-                                          (item.animnumber==0 && tamState.animnum < 0))
+                                          (item.animnumber==0 && tamState.animnum < 0)) {
                                         selectedItem = index;
+                                        later(() {
+                                          highlightState.currentCall =
+                                              item.title.replaceAll(' ', '');
+                                        });
+                                      }
                                       return fm.Material(
                                         color: widget.highlightSelected &&
                                             selectedItem == index
@@ -258,7 +263,6 @@ class _AnimListState extends fm.State<AnimListFrame> {
                                                 mainPage: MainPage.ANIMATIONS,
                                                 animnum: item.animnumber
                                             );
-                                            highlightState.currentCall = item.title.replaceAll(' ', '');
                                           },
                                           child: fm.Container(
                                             decoration: fm.BoxDecoration(

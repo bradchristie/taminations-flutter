@@ -24,7 +24,7 @@ import 'package:provider/provider.dart' as pp;
 import '../common.dart';
 import '../pages/animation_page.dart';
 import '../pages/settings_page.dart';
-import '../pages/web_page.dart';
+import '../pages/markdown_page.dart';
 import '../pages/page.dart';
 import 'abbreviations_frame.dart';
 import 'abbreviations_model.dart';
@@ -144,7 +144,7 @@ class _SequencerPageState extends fm.State<SequencerPage> {
                           else if (tamState.detailPage == DetailPage.SETTINGS)
                             return SequencerSettingsFrame();
                           else
-                            return WebFrame('info/sequencer.html');
+                            return MarkdownFrame('info/sequencer.html');
                         }
                     )),
                   )

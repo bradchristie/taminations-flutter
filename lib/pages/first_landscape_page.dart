@@ -22,11 +22,11 @@ import 'package:flutter/material.dart' as fm;
 import 'package:provider/provider.dart' as pp;
 
 import '../common.dart';
+import 'markdown_page.dart';
 import 'page.dart';
 import 'calls_page.dart';
 import 'level_page.dart';
 import 'settings_page.dart';
-import 'web_page.dart';
 
 class FirstLandscapePage extends fm.StatelessWidget {
 
@@ -40,7 +40,7 @@ class FirstLandscapePage extends fm.StatelessWidget {
                 ? SettingsFrame()
                 : appState.detailPage == DetailPage.CALLS
                 ? CallsFrame()
-                : WebFrame('info/about.html'));
+                : MarkdownFrame('info/about.html'));
           }
       ),
     );
