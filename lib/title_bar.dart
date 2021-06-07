@@ -73,9 +73,7 @@ class TitleBar extends fm.StatelessWidget {
                 //  See if we have audio for this title
                 var audioAsset = '';
                 TamUtils.calldata.where((item) => item.title == titleModel.title).forEach((call) {
-                  if (call.audio!= null) {
-                    audioAsset = call.audio;
-                  }
+                  audioAsset = call.audio;
                 });
 
                 return fm.Row(children: [
@@ -107,29 +105,26 @@ class TitleBar extends fm.StatelessWidget {
                 ),
 
                 //  Share button
-                if (canShare) fm.TextButton(child: fm.Icon(
+                if (canShare) fm.TextButton(onPressed: () => {}, child: fm.Icon(
                     fm.Icons.share,
                     color: Color.WHITE,
                     size: 32
-                ),
-                    onPressed: () => {}),
+                )),
 
                 //  Audio button to say the title
-                if (audioAsset.isNotEmpty) fm.TextButton(child: fm.Icon(
+                if (audioAsset.isNotEmpty) fm.TextButton(onPressed: () {
+                    playCall('assets/$audioAsset');
+                 },child: fm.Icon(
                     fm.Icons.volume_up_sharp,
                     color: Color.WHITE,
                     size: 32
                 ),
-                  onPressed: () {
-                    playCall('assets/$audioAsset');
-                 },
                 ),
 
                 //  Level text (button?)
                 if (titleModel.level.isNotEmpty)
-                  fm.TextButton(child: fm.Text(titleModel.level,
-                      style: fm.TextStyle(color: Color.WHITE, fontSize: 20)),
-                      onPressed: () => {})
+                  fm.TextButton(onPressed: () => {}, child: fm.Text(titleModel.level,
+                      style: fm.TextStyle(color: Color.WHITE, fontSize: 20)))
               ]);},
             )
         )
