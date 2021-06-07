@@ -19,7 +19,7 @@
 */
 
 import 'package:flutter/material.dart' as fm;
-import 'package:flutter/services.dart';
+import 'package:flutter/services.dart' as fs;
 import 'package:provider/provider.dart' as pp;
 
 import '../button.dart';
@@ -107,7 +107,7 @@ class _AbbreviationsFrameState extends fm.State<AbbreviationsFrame> {
   @override
   void dispose() {
     textEditController.dispose();
-    SystemChannels.textInput.invokeMethod('TextInput.hide');
+    fs.SystemChannels.textInput.invokeMethod('TextInput.hide');
     super.dispose();
   }
 
@@ -161,7 +161,6 @@ class _AbbreviationsFrameState extends fm.State<AbbreviationsFrame> {
                 child: pp.Consumer<AbbreviationsModel>(
                     builder: (context,model,child) {
                       return fm.Container(
-                        child:child,
                         decoration: fm.BoxDecoration(
                             color:
                             model.currentAbbreviations[row].isError ? Color.RED.veryBright()
@@ -171,6 +170,7 @@ class _AbbreviationsFrameState extends fm.State<AbbreviationsFrame> {
                             border: fm.Border(
                                 bottom: fm.BorderSide(width: 1, color: fm.Colors.black),
                                 left: fm.BorderSide(width: 1, color: fm.Colors.black))),
+                        child:child,
                       );
                     },
                     child: (row == editRow && editExpansion == isExpansion)
@@ -195,6 +195,29 @@ class _AbbreviationsFrameState extends fm.State<AbbreviationsFrame> {
             ),
         ),
       );
+  }
+
+  Future<void> pasteDialog(fm.BuildContext context, String text) async {
+    final model = pp.Provider.of<AbbreviationsModel>(context,listen: false);
+    final controller = fm.TextEditingController()..text = text;
+    final here = text.isBlank ? ' Here' :  '';
+    await fm.showDialog(context: context, builder: (ctx) =>
+        fm.AlertDialog(
+          title: fm.Text('Paste Abbreviations$here'),
+          content: fm.TextField(
+            controller: controller,
+            maxLines: null,
+          ),
+          actions: [
+            fm.TextButton(onPressed: () {
+              fm.Navigator.of(context).pop();
+              model.paste(controller.text);
+            }, child: fm.Text('OK')),
+            fm.TextButton(onPressed: () {
+              fm.Navigator.of(context).pop();
+            }, child: fm.Text('Cancel'))
+          ],
+        ));
   }
 
   @override
@@ -240,7 +263,18 @@ class _AbbreviationsFrameState extends fm.State<AbbreviationsFrame> {
                           message: 'This will APPEND to your current abbreviations!',
                           action: () {
                             setState(() {
-                              model.paste();
+                              //  Show the abbreviations to paste
+                              //  and let the user confirm and edit
+                              fs.Clipboard.getData('text/plain').then((value) async {
+                                if (value is fs.ClipboardData) {
+                                  await pasteDialog(context, value.text ?? '');
+                                }
+                              },
+                                  //  Firefox does not support Clipboard, so let the user paste with ^V
+                                  onError: (Object obj) async {
+                                    await pasteDialog(context, '');
+                                  }
+                              );
                             });
                           }),
                       _AbbreviationsWarningButton(
@@ -308,13 +342,13 @@ class _AbbreviationsWarningButton extends fm.StatelessWidget {
                 title: fm.Text(title),
                 content: fm.Text(message),
                 actions: [
-                  fm.TextButton(child:fm.Text('OK'),onPressed: () {
+                  fm.TextButton(onPressed: () {
                     fm.Navigator.of(context).pop();
                     action();
-                  }),
-                  fm.TextButton(child:fm.Text('Cancel'),onPressed: () {
+                  }, child:fm.Text('OK')),
+                  fm.TextButton(onPressed: () {
                     fm.Navigator.of(context).pop();
-                  })
+                  }, child:fm.Text('Cancel'))
                 ],
               )
           );

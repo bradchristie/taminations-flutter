@@ -406,40 +406,46 @@ class SequencerCopyButton extends fm.StatelessWidget {
 }
 
 class SequencerPasteButton extends fm.StatelessWidget {
-  final controller = fm.TextEditingController();
+
+  Future<void> pasteDialog(fm.BuildContext context, String text) async {
+    final model = pp.Provider.of<SequencerModel>(context,listen: false);
+    final controller = fm.TextEditingController()..text = text;
+    final here = text.isBlank ? ' Here' :  '';
+    await fm.showDialog(context: context, builder: (ctx) =>
+        fm.AlertDialog(
+          title: fm.Text('Paste Sequence$here'),
+          content: fm.TextField(
+            controller: controller,
+            maxLines: null,
+          ),
+          actions: [
+            fm.TextButton(onPressed: () {
+              fm.Navigator.of(context).pop();
+              model.paste(controller.text);
+            }, child: fm.Text('OK')),
+            fm.TextButton(onPressed: () {
+              fm.Navigator.of(context).pop();
+            }, child: fm.Text('Cancel'))
+          ],
+        ));
+  }
+
   @override
   fm.Widget build(fm.BuildContext context) {
-    final model = pp.Provider.of<SequencerModel>(context,listen: false);
     return fm.Expanded(
         child: Button('Paste',onPressed: () {
           //  Show the calls to paste
           //  and let the user confirm and edit
           fs.Clipboard.getData('text/plain').then((value) async {
             if (value is fs.ClipboardData) {
-              controller.text = value.text ?? '';
-              await fm.showDialog(context: context, builder: (ctx) =>
-                  fm.AlertDialog(
-                    title: fm.Text('Paste Sequence'),
-                    content: fm.TextField(
-                      controller: controller,
-                      maxLines: null,
-                    ),
-                    actions: [
-                      fm.TextButton(onPressed: () {
-                        fm.Navigator.of(context).pop();
-                        model.paste(controller.text);
-                      }, child: fm.Text('OK')),
-                      fm.TextButton(onPressed: () {
-                        fm.Navigator.of(context).pop();
-                      }, child: fm.Text('Cancel'))
-                    ],
-                  ));
+              await pasteDialog(context, value.text ?? '');
             }
           },
               //  Firefox does not support Clipboard, so let the user paste with ^V
-              onError: (Object obj) {
-                print('You must be using Firefox!');
-          });
+              onError: (Object obj) async {
+                await pasteDialog(context, '');
+              }
+          );
         })
     );
   }
