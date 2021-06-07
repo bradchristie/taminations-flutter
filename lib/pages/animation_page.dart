@@ -332,24 +332,20 @@ class _AnimationFrameState extends fm.State<AnimationFrame>
                       children: [
                         fm.Expanded(
                             child: Button('Start',
-                                child: fm.Icon(fm.Icons.skip_previous,size:iconSize),
                                 onPressed: () {
                                   painter.goToPreviousPart();
-                                })),
+                                },
+                                child: fm.Icon(fm.Icons.skip_previous,size:iconSize))),
                         fm.Expanded(
                             child:
                             Button('Back',
-                                child: fm.Icon(fm.Icons.navigate_before,size:iconSize),
                                 onPressed: () {
                                   painter.stepBack();
-                                })),
+                                },
+                                child: fm.Icon(fm.Icons.navigate_before,size:iconSize))),
                         fm.Expanded(
                           //  Play / Pause button
                             child: Button('Play',
-                                child: fm.Icon(painter.isRunning
-                                    ? fm.Icons.pause
-                                    : fm.Icons.play_arrow,
-                                    size:iconSize),
                                 onPressed: () {
                                     //  If running, turn it off
                                     if (painter.isRunning) {
@@ -359,19 +355,23 @@ class _AnimationFrameState extends fm.State<AnimationFrame>
                                       //  Not running - start animation
                                       painter.doPlay();
                                     }
-                                }
+                                },
+                                child: fm.Icon(painter.isRunning
+                                    ? fm.Icons.pause
+                                    : fm.Icons.play_arrow,
+                                    size:iconSize)
                             )),
                         fm.Expanded(
                             child: Button('Forward',
-                                child: fm.Icon(fm.Icons.navigate_next,size:iconSize),
                                 onPressed: () {
                                   painter.stepForward();
-                                })),
+                                },
+                                child: fm.Icon(fm.Icons.navigate_next,size:iconSize))),
                         fm.Expanded(child: Button('End',
-                            child: fm.Icon(fm.Icons.skip_next,size:iconSize),
                             onPressed: () {
                               painter.goToNextPart();
-                            })),
+                            },
+                            child: fm.Icon(fm.Icons.skip_next,size:iconSize))),
                       ]),
                 )
               ]); }

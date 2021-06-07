@@ -98,10 +98,11 @@ class TutorialModel extends PracticeModel {
                 content: fm.Text(hint,style: fm.TextStyle(fontSize: 20)),
                 actions: [
                   fm.TextButton(
-                      child: fm.Text('Continue'), onPressed: () {
+                      onPressed: () {
                     fm.Navigator.of(context).pop();
                     painter.doPlay();
-                  }),
+                  },
+                      child: fm.Text('Continue')),
                 ],
               );
             }

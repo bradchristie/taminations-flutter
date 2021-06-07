@@ -115,16 +115,16 @@ class SecondLandscapeFrame extends fm.StatelessWidget {
     return fm.Row(
       crossAxisAlignment: fm.CrossAxisAlignment.stretch,
       children: [
-        fm.Expanded(child: leftChild, flex: 1),
+        fm.Expanded(flex: 1, child: leftChild),
         fm.VerticalDivider(color: Color.BLACK, width: 2.0,),
         //  We want the animation list (which is the left child)
         //  to control the title.  So add dummy titles
         //  to intercept consumers from center and right children
-        fm.Expanded(child: centerChild, flex: 1),
+        fm.Expanded(flex: 1, child: centerChild),
         fm.VerticalDivider(color: Color.BLACK, width: 2.0,),
         pp.ChangeNotifierProvider(
             create: (_) => TitleModel(),
-            child: fm.Expanded(child: rightChild, flex: 1)
+            child: fm.Expanded(flex: 1, child: rightChild)
         )
       ],
     );
