@@ -98,8 +98,8 @@ class _SequencerPageState extends fm.State<SequencerPage> {
         pp.ChangeNotifierProvider.value(value: model.animation),
       ],
       child: Page(
-        child: pp.Consumer3<TitleModel,Settings,TamState>(
-            builder: (context,titleModel,settings,tamState,_) {
+        child: pp.Consumer2<TitleModel,Settings>(
+            builder: (context,titleModel,settings,_) {
               //  Setting the formation here if also set above
               //  can clobber calls passed in by the URL
               if (!formationSetByState)
