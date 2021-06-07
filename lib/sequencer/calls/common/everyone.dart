@@ -20,7 +20,6 @@
 
 import '../../call_context.dart';
 import '../action.dart';
-import '../coded_call.dart';
 
 class Everyone extends Action {
 
