@@ -71,8 +71,8 @@ class _MarkdownFrameState extends fm.State<MarkdownFrame> {
     final markdownStyle = MarkdownStyleSheet(
       textScaleFactor: 1.2,
       blockSpacing: 4.0,
-      h2: fm.TextStyle(fontSize:24,color: Color.RED,
-            shadows:[fm.Shadow(color:Color.LIGHTGRAY,offset: fm.Offset(2,2))]),
+      h2: fm.TextStyle(fontSize:20,color: Color.RED, fontWeight: fm.FontWeight.bold,
+            shadows:[fm.Shadow(color:Color(0xffe0e0e0),offset: fm.Offset(2,2))]),
       h3: fm.TextStyle(fontSize:16,color: Color.RED, fontWeight: fm.FontWeight.bold),
       h4: fm.TextStyle(color:Color.BLUE),
       //  h5 for centered text/images
@@ -232,7 +232,7 @@ class _MarkdownFrameState extends fm.State<MarkdownFrame> {
     'timing',
     'styling',
     'comments',
-    'teaching-tip'
+    'teaching-tip',
   ];
 
   String _htmlToMarkdown(String html, bool isAbbrev, HighlightState highlightState) {
@@ -264,6 +264,9 @@ class _MarkdownFrameState extends fm.State<MarkdownFrame> {
     //  Process all other sections
         .replaceAllMapped('<div class="($regSections).*?">\\s*<b>(.*?)</b>(.*?)</div>'.rd,
             (m) => '# \n# \n#### ${m[2]}\n${m[3]}')
+    //  Parts section in C-3
+        .replaceAllMapped('<div class="parts"><b>(.*?)</b>(.*?)</div>'.rd,
+            (m) => '# \n# \n**${m[1]!.trim()}** ${m[2]}  \n')
     //  Remove other abbrev/full text not selected
         .replaceAll(isAbbrev
         ? r'<(\w+) class="full">.*?</\1>'.rd
@@ -305,10 +308,12 @@ class _MarkdownFrameState extends fm.State<MarkdownFrame> {
     //  Make sure paragraphs are preceeded by a blank line so
     //  markdown will recognize them
         .replaceAll('<p ', '\n<p ')
+    //  Line breaks - presumes all uses of <br/> are at the end of the line
+        .replaceAll('<br/>','  ')
     //  Centered text - use H5
                  //        <p style="text-align:center">
         .replaceAllMapped('<p style="text-align:center">(.*?)</p>'.rd,
-            (m) => '##### >>' + m[1]!.replaceAll('\n', ' '))
+            (m) => '##### ' + m[1]!.replaceAll('\n', ' '))
     //  A little more space after each paragraph
         .replaceAll('</p>', '\n# \n')
     //  Highlight current part
@@ -318,8 +323,8 @@ class _MarkdownFrameState extends fm.State<MarkdownFrame> {
     //  strip all other tags
         .replaceAll('<.*?>'.r, '')
     //  Now we can replace special characters < and >
-        .replaceAll('&lt;','<')
-        .replaceAll('&gt;', '>')
+        .replaceAll('&lt;'.ri,'<')
+        .replaceAll('&gt;'.ri, '>')
     ;
   }
 
