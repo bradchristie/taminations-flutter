@@ -233,6 +233,7 @@ class SequencerModel extends fm.ChangeNotifier {
       if (!await loadOneCall(line)) {
         break;
       }
+      notifyListeners();
     }
   }
 
