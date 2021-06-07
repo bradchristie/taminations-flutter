@@ -22,8 +22,7 @@
 -->
 <tamination title="&lt;anything&gt; Choice">
 
-  <tam title="Cut the Diamonder's Choice" formation="Diamonds LH PTP Girl Points"
-       group=" " parts="5">
+  <tam title="Cut the Diamonder's Choice" group=" " parts="5">
 	  <formation>
 	    <dancer gender="boy" x="-1" y="-2.5" angle="90"/>
 	    <dancer gender="girl" x="0" y="-.5" angle="180"/>
