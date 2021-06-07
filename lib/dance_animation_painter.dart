@@ -77,7 +77,7 @@ class DanceAnimationPainter extends fm.ChangeNotifier implements fm.CustomPainte
   late Ticker _ticker;
   String get title => _tam?.getAttribute('title')
       ?.replaceAll(' \\(.*?\\) '.r, ' ') ?? '';
-  bool _isDisposed = false;
+  var _isDisposed = false;
 
   //  Except for the phantoms, these are the standard colors
   //  used for teaching callers
@@ -595,12 +595,7 @@ class DanceAnimationPainter extends fm.ChangeNotifier implements fm.CustomPainte
 
     //  Draw dancers
     dancers.where((d) => !d.hidden).forEach((d) {
-      ctx.save();
-      //ctx.transform(d.tx);  not available on Flutter
-      ctx.translate(d.location.x,d.location.y);
-      ctx.rotate(d.tx.angle);
       d.draw(ctx);
-      ctx.restore();
     });
     ctx.restore();
   }
@@ -629,7 +624,7 @@ class DanceAnimationPainter extends fm.ChangeNotifier implements fm.CustomPainte
       var formation = _tam!;
       if (tform != null)
         formation = tform;
-      if (aform.isNotBlank)
+      else if (aform.isNotBlank)
         formation = TamUtils.getFormation(aform);
       var flist = formation.childrenNamed('dancer');
       dancers = [];
