@@ -2081,7 +2081,7 @@ void main() {
           //expect(await (tester.widget(errorText) as Text).data,' ');
         }
         await tester.pumpAndSettle();
-        expect(await (tester.widget(errorText) as Text).data,' ');
+        expect((tester.widget(errorText) as Text).data,' ');
         testsFinished.add(testName);
         testsFailed.remove(testName);
       });
