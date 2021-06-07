@@ -350,6 +350,10 @@ class Dancer implements Comparable<Dancer> {
   void draw(fm.Canvas c) {
     var dc = showColor ? drawColor : Color.GRAY;
     var fc = showColor ? fillColor : Color.LIGHTGREY;
+    c.save();
+    //ctx.transform(d.tx);  not available on Flutter
+    c.translate(location.x,location.y);
+    c.rotate(tx.angle);
     //  Draw the head
     var p = fm.Paint()..color = dc;
     c.drawCircle(fm.Offset(0.5,0.0), 0.33, p);
@@ -377,13 +381,13 @@ class Dancer implements Comparable<Dancer> {
     else
       c.drawRRect(rrect, p);
     //  Draw number if on
+
     if (reallyShowNumbers) {
       //  The dancer is rotated relative to the display, but of course
       //  the dancer number should not be rotated.
       //  So the number needs to be transformed back
       var angle = atan2(tx.m12,tx.m22);
       var txtext = Matrix.getRotation(-angle + pi/2);
-      c.save();
       c.translate(txtext.location.x,txtext.location.y);
       c.rotate(txtext.angle);
       c.scale(-0.1,0.1);
@@ -398,9 +402,8 @@ class Dancer implements Comparable<Dancer> {
           textAlign: TextAlign.center,
           textDirection: fm.TextDirection.ltr)..layout();
       tp.paint(c, Offset(-textSize*0.35,-textSize*0.55));
-      c.scale(-10.0,10.0);
-      c.restore();
     }
+    c.restore();
   }
 
 }
