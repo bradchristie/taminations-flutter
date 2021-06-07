@@ -294,7 +294,7 @@ class _AnimListState extends fm.State<AnimListFrame> {
                           }
                         }),
                   )),
-              if (hasDifficulty) fm.Container(
+              /* if (hasDifficulty) fm.Container(
                   decoration: fm.BoxDecoration(
                       border: fm.Border.all(
                               width: 1,
@@ -306,7 +306,7 @@ class _AnimListState extends fm.State<AnimListFrame> {
                       oneLegendWidget('Expert', Color.EXPERT)
                     ]
                 ),
-              )
+              )  */
             ]);
           }
           return fm.Text('Loading...');
