@@ -46,6 +46,11 @@ class Button extends fm.StatelessWidget {
             shape: fm.RoundedRectangleBorder(
                 borderRadius: fm.BorderRadius.circular(10)),
           child:fm.InkWell(
+              onTap: () {
+                if (onPressed != null) {
+                  onPressed!();
+                }
+              },
               child:fm.Container(
                   decoration: fm.ShapeDecoration(
                       shape: fm.RoundedRectangleBorder(
@@ -60,12 +65,7 @@ class Button extends fm.StatelessWidget {
                   ),
                   padding: fm.EdgeInsets.all(6.0),
                   child: fm.Center(child: child)
-              ),
-              onTap: () {
-                if (onPressed != null) {
-                  onPressed!();
-                }
-              }
+              )
           )
         )
   );
