@@ -126,6 +126,7 @@ class _MarkdownFrameState extends fm.State<MarkdownFrame> {
                                 child: Markdown(
                                   data: _htmlToMarkdown(snapshot.data!
                                       .toString(), isAbbrev, highlightState),
+                                  selectable: true,
                                   styleSheet: markdownStyle,
                                   onTapLink: (text, newlink, _) {
                                     if (newlink != null) {
@@ -301,8 +302,9 @@ class _MarkdownFrameState extends fm.State<MarkdownFrame> {
             (m) => m[1]!.replaceAll('<li>'.r, '- '))
         .replaceAllMapped('<ol.*?>(.*)</ol>'.rd,
             (m) => m[1]!.replaceAll('\\s'.rd, ' ').replaceAll('<li>', '\n1. '))
-    //  Hack for nested list on About page
+    //  Hack for nested lists
         .replaceAll('\n+','\n\t*')
+        .replaceAll('\n\$','\n\t1')
     //  Horizontal lines (only used in the About page)
         .replaceAll('<hr/>','***')
     //  Make sure paragraphs are preceeded by a blank line so
