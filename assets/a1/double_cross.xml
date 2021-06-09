@@ -52,4 +52,36 @@
     </path>
   </tam>
 
+  <tam title="Double Cross" from="Quarter Lines"
+       formation="Quarter Lines RH" display="no">
+    <path>
+      <move select="Cross Right" scaleX="1.5" beats="3"/>
+    </path>
+    <path>
+      <move select="Stand" hands="none" beats="3"/>
+    </path>
+    <path>
+      <move select="Cross Right" scaleX="1.5" beats="3"/>
+    </path>
+    <path>
+      <move select="Stand" hands="none" beats="3"/>
+    </path>
+  </tam>
+
+  <tam title="Double Cross" from="Quarter Lines LH"
+       formation="Quarter Lines LH" display="no">
+    <path>
+      <move select="Stand" hands="none" beats="3"/>
+    </path>
+    <path>
+      <move select="Cross Left" scaleX="1.5" beats="3"/>
+    </path>
+    <path>
+      <move select="Cross Left" scaleX="1.5" beats="3"/>
+    </path>
+    <path>
+      <move select="Stand" hands="none" beats="3"/>
+    </path>
+  </tam>
+
 </tamination>
