@@ -32,25 +32,30 @@ import 'sequence_frame.dart';
 import 'sequencer_animation_frame.dart';
 import 'sequencer_calls_page.dart';
 import 'sequencer_model.dart';
+import 'package:taminations/beat_notifier.dart';
 
 class SequencerTestPage extends fm.StatefulWidget {
   @override
   fm.State<fm.StatefulWidget> createState() => _SequencerTestPageState();
 }
+
 class _SequencerTestPageState extends fm.State<SequencerTestPage> {
   @override
   fm.Widget build(fm.BuildContext context) {
-    return pp.MultiProvider(
-        providers: [
-          pp.ChangeNotifierProvider(create: (_) => TamState()),
-          pp.ChangeNotifierProvider(create: (_) => Settings()),
-          pp.ChangeNotifierProvider(create: (_) => AbbreviationsModel()),
-          pp.ChangeNotifierProvider(create: (_) => AnimationState()),
-          pp.ChangeNotifierProvider(create: (_) => SequencerModel()),
-          pp.Provider(create: (_) => VirtualKeyboardVisible())
-        ],
-        //  Read initialization files
-        child: fm.MaterialApp(home: SequencerPage()));
+    return pp.ChangeNotifierProvider(
+        create: (_) => BeatNotifier(), // needed for some of the below
+        child: pp.MultiProvider(
+            providers: [
+              pp.ChangeNotifierProvider(create: (_) => TamState()),
+              pp.ChangeNotifierProvider(create: (_) => Settings()),
+              pp.ChangeNotifierProvider(create: (_) => AbbreviationsModel()),
+              pp.ChangeNotifierProvider(create: (_) => AnimationState()),
+              pp.ChangeNotifierProvider(create: (context) => SequencerModel(context)),
+              pp.ChangeNotifierProvider(create: (_) => HighlightState()),
+              pp.Provider(create: (_) => VirtualKeyboardVisible())
+            ],
+            //  Read initialization files
+            child: fm.MaterialApp(home: SequencerPage())));
   }
 }
 

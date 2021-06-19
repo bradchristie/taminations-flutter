@@ -21,6 +21,7 @@
 import 'package:flutter/material.dart' as fm;
 import 'package:provider/provider.dart' as pp;
 import 'package:flutter/services.dart';
+import 'package:taminations/beat_notifier.dart';
 import 'package:taminations/sequencer/sequencer_model.dart';
 
 import 'common.dart';
@@ -68,36 +69,38 @@ class _TaminationsAppState extends fm.State<TaminationsApp> {
   fm.Widget build(fm.BuildContext context) {
     //  Wrap the Settings around the top of the program
     //  so everybody has access to them
-    return pp.MultiProvider(
-      providers: [
-        pp.ChangeNotifierProvider(create: (_) => Settings()),
-        pp.ChangeNotifierProvider(create: (_) => AnimationState()),
-        pp.ChangeNotifierProvider(create: (_) => AbbreviationsModel()),
-        pp.ChangeNotifierProvider(create: (_) => SequencerModel()),
-        pp.ChangeNotifierProvider(create: (_) => HighlightState(),),
-        pp.Provider(create: (_) => VirtualKeyboardVisible())
-      ],
-        //  Read initialization files
-      child: fm.FutureBuilder<bool>(
-        future: TamUtils.init(),
-        builder: (context,snapshot) =>
-        snapshot.hasData ?
-          fm.MaterialApp.router(
-            theme: fm.ThemeData(
-              scrollbarTheme: fm.ScrollbarThemeData(
-                thumbColor: fm.MaterialStateColor.resolveWith((states) =>
-                Color.TRANSPARENTGREY),
-              ),
-            ),
+    return pp.ChangeNotifierProvider(
+        create: (_) => BeatNotifier(),  // needed for some of the below
+        child: pp.MultiProvider(
+            providers: [
+              pp.ChangeNotifierProvider(create: (_) => Settings()),
+              pp.ChangeNotifierProvider(create: (_) => AnimationState()),
+              pp.ChangeNotifierProvider(create: (_) => AbbreviationsModel()),
+              pp.ChangeNotifierProvider(create: (context) => SequencerModel(context)),
+              pp.ChangeNotifierProvider(create: (_) => HighlightState()),
+              pp.Provider(create: (_) => VirtualKeyboardVisible())
+            ],
+            //  Read initialization files
+            child: fm.FutureBuilder<bool>(
+              future: TamUtils.init(),
+              builder: (context,snapshot) =>
+              snapshot.hasData ?
+              fm.MaterialApp.router(
+                theme: fm.ThemeData(
+                  scrollbarTheme: fm.ScrollbarThemeData(
+                    thumbColor: fm.MaterialStateColor.resolveWith((states) =>
+                    Color.TRANSPARENTGREY),
+                  ),
+                ),
 
-            title: 'Taminations',
-            routerDelegate: _routerDelegate,
-            routeInformationParser: _routeInformationParser,
-          ) : fm.Container(
-          color: Color.FLOOR,
-          child: fm.Center(child: fm.Image.asset('assets/src/tam87.png')),
-        ),
-    ));
+                title: 'Taminations',
+                routerDelegate: _routerDelegate,
+                routeInformationParser: _routeInformationParser,
+              ) : fm.Container(
+                color: Color.FLOOR,
+                child: fm.Center(child: fm.Image.asset('assets/src/tam87.png')),
+              ),
+            )));
   }
 
 }

@@ -22,8 +22,10 @@ import 'dart:math';
 
 import 'package:flutter/material.dart' as fm;
 import 'package:provider/provider.dart' as pp;
+import 'package:taminations/beat_notifier.dart';
 
 import '../common.dart';
+import '../dance_model.dart';
 import 'anim_list_page.dart';
 import 'animation_page.dart';
 import 'markdown_page.dart';
@@ -35,7 +37,7 @@ class SecondLandscapePage extends fm.StatelessWidget {
   fm.Widget build(fm.BuildContext context) {
     return pp.MultiProvider(
           providers: [
-            pp.ChangeNotifierProvider(create: (_) => DanceAnimationPainter()),
+            pp.ChangeNotifierProvider(create: (context) => DanceModel(context)),
             pp.ChangeNotifierProvider(create: (_) => TitleModel())
           ],
           child: pp.Consumer<TamState>(
@@ -44,13 +46,12 @@ class SecondLandscapePage extends fm.StatelessWidget {
                 return fm.Container();
               final title = pp.Provider.of<TitleModel>(
                   context, listen: false);
-              final painter = pp.Provider.of<DanceAnimationPainter>(
-                  context, listen: false);
+              final model = pp.Provider.of<DanceModel>(context, listen: false);
               TamUtils.getXMLAsset(tamState.link!).then((doc) {
                 var tam = TamUtils.tamList(doc)
                     .where((it) => !(it('display', '').startsWith('n')))
                     .toList()[max(0, tamState.animnum)];
-                painter.setAnimation(tam);
+                model.setAnimation(tam);
                 if (tamState.animnum >= 0)
                   title.title = tam('title');
                 else
@@ -61,10 +62,7 @@ class SecondLandscapePage extends fm.StatelessWidget {
                 backgroundColor: Color.LIGHTGRAY,
                 appBar: fm.PreferredSize(
                     preferredSize: fm.Size.fromHeight(56.0),
-                    child: pp.Consumer<DanceAnimationPainter>(
-                        builder: (context, painter, child) =>
-                            TitleBar()
-                    )),
+                    child: TitleBar()),
                 body:
                       SecondLandscapeFrame(
                           leftChild: AnimListFrame(tamState.link!),

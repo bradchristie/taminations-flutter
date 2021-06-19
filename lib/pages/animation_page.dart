@@ -25,7 +25,9 @@ import 'package:flutter/material.dart' as fm;
 import 'package:provider/provider.dart' as pp;
 import 'package:taminations/sequencer/sequencer_model.dart';
 
+import '../beat_notifier.dart';
 import '../common.dart';
+import '../dance_model.dart';
 import 'page.dart';
 
 class AnimationState extends fm.ChangeNotifier {
@@ -41,13 +43,13 @@ class AnimationState extends fm.ChangeNotifier {
 
 }
 
-void _startPainter(fm.BuildContext context, TamState tamState, TitleModel? titleModel) {
-  final painter = pp.Provider.of<DanceAnimationPainter>(context,listen:false);
+void _startModel(fm.BuildContext context, TamState tamState, TitleModel? titleModel) {
+  final model = pp.Provider.of<DanceModel>(context,listen:false);
   TamUtils.getXMLAsset(tamState.link!).then((doc) {
     var tam = TamUtils.tamList(doc)
         .where((it) => !(it('display','').startsWith('n')))
         .toList()[max(0, tamState.animnum)];
-    painter.setAnimation(tam);
+    model.setAnimation(tam);
     if (titleModel != null)
       titleModel.title = tam('title');
   });
@@ -60,10 +62,10 @@ class AnimationPage extends fm.StatelessWidget {
   fm.Widget build(fm.BuildContext context) {
     return Page(
       child: pp.ChangeNotifierProvider(
-        create: (_) => DanceAnimationPainter(),
+        create: (_) => DanceModel(context),
         child: pp.Consumer2<TamState,TitleModel>(
             builder: (context, tamState, titleModel, _) {
-              _startPainter(context,tamState,titleModel);
+              _startModel(context,tamState,titleModel);
               return fm.Column(
                 children: [
                   fm.Expanded(child: AnimationFrame()),
@@ -97,10 +99,10 @@ class AnimationForEmbed extends fm.StatelessWidget {
   @override
   fm.Widget build(fm.BuildContext context) {
     return pp.ChangeNotifierProvider(
-        create: (_) => DanceAnimationPainter(),
+        create: (_) => DanceModel(context),
         child: pp.Consumer<TamState>(
             builder: (context, tamState, _) {
-              _startPainter(context,tamState,null);
+              _startModel(context,tamState,null);
               return fm.Card(child: AnimationFrame());
             }
         ),
@@ -167,55 +169,57 @@ class _AnimationFrameState extends fm.State<AnimationFrame>
 
   @override
   fm.Widget build(fm.BuildContext context) {
-    return pp.Consumer3<TamState,HighlightState,DanceAnimationPainter>(
-      builder: (context,appState,highlightState,painter,_) => fm.LayoutBuilder(
+    return pp.Consumer3<TamState,HighlightState,DanceModel>(
+      builder: (context,appState,highlightState,danceModel,_) => fm.LayoutBuilder(
         builder: (context, constraints) {
           final isSmall = constraints.maxHeight < 350;
           final iconSize = isSmall ? 16.0 : 24.0;
+          final beater = pp.Provider.of<BeatNotifier>(context,listen: false);
+          final painter = DancePainter(danceModel);
           //  Update current part which will notify definition to change highlights
           later(() {
-            highlightState.currentPart = painter.currentPart;
+            highlightState.currentPart = danceModel.currentPart;
           });
           return fm.Column(children: [
                 //  Dance area with animations
                 fm.Expanded(child: pp.Consumer2<Settings,SequencerModel>(
-                    builder: (context, settings, model, child) {
+                    builder: (context, settings, sequencerModel, child) {
 
-                      //  Send current settings to the painter
-                      painter.setGridVisibility(settings.grid || appState.grid);
-                      painter.setNumbers(appState.mainPage == MainPage.SEQUENCER  ? settings.dancerIdentification : settings.numbers);
-                      painter.setSpeed(settings.speed);
-                      painter.setPaths(settings.paths);
-                      painter.setLoop(appState.mainPage == MainPage.SEQUENCER ? false : (settings.loop || appState.loop));
-                      painter.setShapes(appState.mainPage == MainPage.SEQUENCER
+                      //  Send current settings to the dance model
+                      danceModel.gridVisibility = settings.grid || appState.grid;
+                      danceModel.setNumbers(appState.mainPage == MainPage.SEQUENCER  ? settings.dancerIdentification : settings.numbers);
+                      danceModel.setSpeed(settings.speed);
+                      danceModel.showPaths =settings.paths;
+                      danceModel.looping = appState.mainPage == MainPage.SEQUENCER ? false : (settings.loop || appState.loop);
+                      danceModel.setShapes(appState.mainPage == MainPage.SEQUENCER
                           ? settings.dancerShapes : true);
-                      painter.setPhantoms(settings.phantoms);
-                      painter.setGeometry(appState.mainPage == MainPage.SEQUENCER ? Geometry.SQUARE : Geometry.fromString(settings.geometry).geometry);
+                      danceModel.showPhantoms = settings.phantoms;
+                      danceModel.geometry = appState.mainPage == MainPage.SEQUENCER ? Geometry.SQUARE : Geometry.fromString(settings.geometry).geometry;
                       //  Dancer colors - first check individual color, then couple color
-                      painter.setColors(appState.mainPage == MainPage.SEQUENCER
+                      danceModel.setColors(appState.mainPage == MainPage.SEQUENCER
                           ? settings.showDancerColors!='None' : true);
                       if (appState.mainPage == MainPage.SEQUENCER && settings.showDancerColors == 'Random')
-                        painter.setRandomColors(true);
+                        danceModel.setRandomColors(true);
                       else {
-                        painter.setRandomColors(false);
+                        danceModel.setRandomColors(false);
                       }
                       if (appState.mainPage != MainPage.SEQUENCER ||
                           settings.showDancerColors == 'By Couple') {
                         for (var i = 1; i <= 12; i++) {
                           final individualColor = settings.dancerColor(i);
                           if (individualColor != 'default')
-                            painter.setDancerColor(
+                            danceModel.setDancerColor(
                                 i, Color.fromName(individualColor));
                           else {
                             final coupleColor = settings.coupleColor(
                                 (i - 1) ~/ 2 + 1);
-                            painter.setDancerColor(
+                            danceModel.setDancerColor(
                                 i, Color.fromName(coupleColor));
                           }
                         }
                       }
                       if (appState.play)
-                        painter.doPlay();
+                        danceModel.doPlay();
 
                       //  Routines to handle pointer events
                       final tapDownHandler = (fm.TapDownDetails details) {
@@ -235,16 +239,16 @@ class _AnimationFrameState extends fm.State<AnimationFrame>
                       };
 
                       //  Wrap dance area with widget to detect pointer events
-                      final beats = model.calls.isNotEmpty ? model.totalBeats().i.s : '';
+                      final beats = sequencerModel.calls.isNotEmpty ? sequencerModel.totalBeats().i.s : '';
                       //  Hook up mouse wheel
                       //  Need separate widget as GestureDetector doesn't handle it
                       return fm.Listener(
                         onPointerSignal: (fg.PointerSignalEvent event) {
                           if (event is fg.PointerScrollEvent) {
                             if (event.scrollDelta.dy < 0)
-                              painter.stepBack();
+                              danceModel.stepBack();
                             else if (event.scrollDelta.dy > 0)
-                              painter.stepForward();
+                              danceModel.stepForward();
                           }
                         },
                         //  Set up other mouse / tap actions
@@ -254,7 +258,7 @@ class _AnimationFrameState extends fm.State<AnimationFrame>
                             onTap: () {
                               if (dancerTapped != null) {
                                 setState(() {
-                                  painter.togglePath(dancerTapped!);
+                                  danceModel.togglePath(dancerTapped!);
                                 });
                               }
                             },
@@ -270,10 +274,10 @@ class _AnimationFrameState extends fm.State<AnimationFrame>
                                   ),
                                   //  Note that fades out as animation starts
                                   fm.Opacity(
-                                    opacity: ((-painter.beat)/2.0).coerceIn(0.0, 1.0),
+                                    opacity: ((-beater.beat)/2.0).coerceIn(0.0, 1.0),
                                       child:fm.Container(
                                           color: Color.WHITE,
-                                          child:fm.Text(painter.animationNote,
+                                          child:fm.Text(danceModel.animationNote,
                                               style:fm.TextStyle(fontSize:20))
                                       )),
                                   //  Show if Loop or Speed are set other than default
@@ -297,19 +301,21 @@ class _AnimationFrameState extends fm.State<AnimationFrame>
                   color: Color.LIGHTGRAY,
                   child: fm.SliderTheme(
                     data: fm.SliderThemeData(),
-                    child: fm.Slider(
-                        activeColor: Color.HIGHLIGHT,
-                        inactiveColor: Color.GRAY,
-                        value: painter.totalBeats > 2.0
-                            ? min(100,(painter.beat + painter.leadin) * 100.0 / painter.totalBeats)
-                            : 0.0,
-                        min: 0,
-                        max: 100,
-                        onChanged: (double value) {
-                          painter.beat =
-                              (value * painter.totalBeats / 100.0) - painter.leadin;
-                        },
-                      ),
+                    child: pp.Consumer<BeatNotifier>(
+                      builder:(context,beater,child) => fm.Slider(
+                          activeColor: Color.HIGHLIGHT,
+                          inactiveColor: Color.GRAY,
+                          value: danceModel.totalBeats > 2.0
+                              ? min(100,(beater.beat + danceModel.leadin) * 100.0 / danceModel.totalBeats)
+                              : 0.0,
+                          min: 0,
+                          max: 100,
+                          onChanged: (double value) {
+                            beater.beat =
+                                (value * danceModel.totalBeats / 100.0) - danceModel.leadin;
+                          },
+                        ),
+                    ),
                   ),
                 ),
 
@@ -317,10 +323,10 @@ class _AnimationFrameState extends fm.State<AnimationFrame>
             if (!isSmall)
               fm.CustomPaint(
                 painter: _SliderTicsPainter(
-                    beats: painter.totalBeats,
-                    parts: painter.partstr,
-                    isParts: painter.hasParts,
-                    isCalls: painter.hasCalls
+                    beats: danceModel.totalBeats,
+                    parts: danceModel.partstr,
+                    isParts: danceModel.hasParts,
+                    isCalls: danceModel.hasCalls
                 ),
                 size: fm.Size.fromHeight(40.0),
                 ),
@@ -333,14 +339,14 @@ class _AnimationFrameState extends fm.State<AnimationFrame>
                         fm.Expanded(
                             child: Button('Start',
                                 onPressed: () {
-                                  painter.goToPreviousPart();
+                                  danceModel.goToPreviousPart();
                                 },
                                 child: fm.Icon(fm.Icons.skip_previous,size:iconSize))),
                         fm.Expanded(
                             child:
                             Button('Back',
                                 onPressed: () {
-                                  painter.stepBack();
+                                  danceModel.stepBack();
                                 },
                                 child: fm.Icon(fm.Icons.navigate_before,size:iconSize))),
                         fm.Expanded(
@@ -348,15 +354,15 @@ class _AnimationFrameState extends fm.State<AnimationFrame>
                             child: Button('Play',
                                 onPressed: () {
                                     //  If running, turn it off
-                                    if (painter.isRunning) {
-                                      painter.doPause();
+                                    if (beater.isRunning) {
+                                      danceModel.doPause();
                                       appState.change(play:false);
                                     } else {
                                       //  Not running - start animation
-                                      painter.doPlay();
+                                      danceModel.doPlay();
                                     }
                                 },
-                                child: fm.Icon(painter.isRunning
+                                child: fm.Icon(beater.isRunning
                                     ? fm.Icons.pause
                                     : fm.Icons.play_arrow,
                                     size:iconSize)
@@ -364,12 +370,12 @@ class _AnimationFrameState extends fm.State<AnimationFrame>
                         fm.Expanded(
                             child: Button('Forward',
                                 onPressed: () {
-                                  painter.stepForward();
+                                  danceModel.stepForward();
                                 },
                                 child: fm.Icon(fm.Icons.navigate_next,size:iconSize))),
                         fm.Expanded(child: Button('End',
                             onPressed: () {
-                              painter.goToNextPart();
+                              danceModel.goToNextPart();
                             },
                             child: fm.Icon(fm.Icons.skip_next,size:iconSize))),
                       ]),
@@ -410,6 +416,8 @@ class _SliderTicsPainter extends fm.CustomPainter {
   @override
   void paint(fm.Canvas ctx, fm.Size size) {
 
+    if (beats <= 0.0)  // sanity check
+      return;
     //  There's a lot to do to just draw one item of text
     //  and it has to be repeated for each text item.
     //  Thus this function.

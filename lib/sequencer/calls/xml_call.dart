@@ -33,6 +33,8 @@ class XMLCall extends Call {
   final List<int> xmlmap;
   final CallContext ctx2;
 
+  static const noInactiveCalls = ['slip','slither'];
+
   XMLCall(this.xelem, this.xmlmap, this.ctx2)
       : super(xelem('title'));
 
@@ -78,15 +80,17 @@ class XMLCall extends Call {
 
     //  Mark dancers that had no XML move as inactive
     //  Needed for post-call modifications e.g. spread
-    var inactives = <Dancer>[];
-    for (var i4 = 0; i4 < xmlmap.length; i4++) {
-      var m = xmlmap[i4];
-      if (allPaths[m >> 1].movelist.isEmpty)
-        inactives.add(ctx.actives[i4]);
+    if (!noInactiveCalls.contains(name.toLowerCase())) {
+      var inactives = <Dancer>[];
+      for (var i4 = 0; i4 < xmlmap.length; i4++) {
+        var m = xmlmap[i4];
+        if (allPaths[m >> 1].movelist.isEmpty)
+          inactives.add(ctx.actives[i4]);
+      }
+      inactives.forEach((d) {
+        d.data.active = false;
+      });
     }
-    inactives.forEach((d) {
-      d.data.active = false;
-    });
   }
 
 

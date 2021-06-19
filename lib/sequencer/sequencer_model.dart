@@ -22,7 +22,7 @@ import 'package:flutter/material.dart' as fm;
 import 'package:flutter/services.dart' as fs;
 
 import '../common.dart';
-import '../dance_animation_painter.dart';
+import '../dance_model.dart';
 import 'call_context.dart';
 import 'call_error.dart';
 import 'calls/coded_call.dart';
@@ -41,10 +41,11 @@ class SequencerModel extends fm.ChangeNotifier {
   String get startingFormation => _startingFormation;
   String partString = '';
   String errorString = '';
-  DanceAnimationPainter animation = DanceAnimationPainter();
+  DanceModel animation;
   int currentCall = 0;
 
-  SequencerModel() {
+  SequencerModel(fm.BuildContext context) :
+        animation = DanceModel(context) {
     CallContext.init();
     animation.addListener(() {
       _updateCurrentCall();
@@ -180,7 +181,8 @@ class SequencerModel extends fm.ChangeNotifier {
 
   void animateAtCall(int index) {
     var beat = calls.take(index).fold<double>(0.0, (b, c) => b + c.beats);
-    animation.beat = beat;
+    print('Animating at beat $beat');
+    animation.beater.beat = beat;
   }
 
   void _updateParts() {
@@ -193,10 +195,12 @@ class SequencerModel extends fm.ChangeNotifier {
   }
 
   void _updateCurrentCall() {
-    final updatedCall = _callNumberAtBeat(animation.beat);
+    final updatedCall = _callNumberAtBeat(animation.beater.beat);
     if (updatedCall != currentCall) {
       currentCall = updatedCall;
-      notifyListeners();
+      later(() {
+        notifyListeners();
+      });
     }
   }
 

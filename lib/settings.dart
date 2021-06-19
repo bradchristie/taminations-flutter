@@ -40,6 +40,7 @@ class Settings extends fm.ChangeNotifier {
   String _practiceGender = 'Boy';
   String _practiceSpeed = 'Slow';
   String _primaryControl = 'Left Finger';
+  String _mouseControl = 'Pressed';
   String _startingFormation = 'Squared Set';
   bool _dancerShapes = true;
   String _dancerIdentification = 'None';
@@ -79,6 +80,7 @@ class Settings extends fm.ChangeNotifier {
     _practiceGender = prefs.getString('PracticeGender') ?? 'Boy';
     _practiceSpeed = prefs.getString('PracticeSpeed') ?? 'Slow';
     _primaryControl = prefs.getString('PrimaryControl') ?? 'Left Finger';
+    _mouseControl = prefs.getString('MouseControl') ?? 'Dancer moves only when mouse button is pressed';
     _startingFormation = prefs.getString('Starting Formation') ?? 'Squared Set';
     _dancerShapes = prefs.getBool('Dancer Shapes') ?? true;
     _dancerIdentification = prefs.getString('Dancer Identification') ?? 'None';
@@ -205,6 +207,13 @@ class Settings extends fm.ChangeNotifier {
   set primaryControl(String value) {
     _primaryControl = value;
     prefs.setString('PrimaryControl',value);
+    notifyListeners();
+  }
+
+  String get mouseControl => _mouseControl;
+  set mouseControl(String value) {
+    _mouseControl = value;
+    prefs.setString('MouseControl',value);
     notifyListeners();
   }
 

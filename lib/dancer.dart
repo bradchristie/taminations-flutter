@@ -162,7 +162,7 @@ class Dancer implements Comparable<Dancer> {
 
   //  Computed
   Color get drawColor => fillColor.darker();
-  int showNumber = NUMBERS_DANCERS;
+  int _showNumber = NUMBERS_DANCERS;
   bool showColor = true;
   bool showShape = true;
   bool hidden = false;
@@ -184,6 +184,23 @@ class Dancer implements Comparable<Dancer> {
   bool leftHandNewVisibility = false;
   var data = DancerData();
   var name = '';  // for sequencer
+  var _span = fm.TextSpan();
+  var _tp = fm.TextPainter();
+
+  int get showNumber => _showNumber;
+      set showNumber(int value) {
+        _showNumber = value;
+        var t = '';
+        if (showNumber == NUMBERS_DANCERS) t = number;
+        if (showNumber == NUMBERS_COUPLES) t = numberCouple;
+        if (showNumber == NUMBERS_NAMES) t = name;
+        _span = TextSpan(text: t,
+            style:TextStyle(fontSize: 8, color:fm.Colors.black));
+        _tp = TextPainter(text: _span,
+            textAlign: TextAlign.center,
+            textDirection: fm.TextDirection.ltr)..layout();
+
+      }
 
   Dancer(this.number,this.numberCouple, this.gender,
       this.fillColor, Matrix mat, this._geom, this.moves, [this.clonedFrom])
@@ -391,17 +408,8 @@ class Dancer implements Comparable<Dancer> {
       c.translate(txtext.location.x,txtext.location.y);
       c.rotate(txtext.angle);
       c.scale(-0.1,0.1);
-      var t = '';
       var textSize = 7.0;
-      if (showNumber == NUMBERS_DANCERS) t = number;
-      if (showNumber == NUMBERS_COUPLES) t = numberCouple;
-      if (showNumber == NUMBERS_NAMES) t = name;
-      var span = TextSpan(text: t,
-          style:TextStyle(fontSize: 8, color:fm.Colors.black));
-      var tp = TextPainter(text: span,
-          textAlign: TextAlign.center,
-          textDirection: fm.TextDirection.ltr)..layout();
-      tp.paint(c, Offset(-textSize*0.35,-textSize*0.55));
+      _tp.paint(c, Offset(-textSize*0.35,-textSize*0.55));
     }
     c.restore();
   }

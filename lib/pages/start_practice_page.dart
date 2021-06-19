@@ -195,16 +195,31 @@ class _StartPracticeFrameState extends fm.State<StartPracticeFrame> {
                                 settings.practiceSpeed = value ?? 'Slow';
                               });
                             }),
-                        fm.Text(
-                            'Primary Control', style: fm.TextStyle(fontSize: 20)),
-                        _StartPracticeRadioGroup(
-                            groupValue: settings.primaryControl,
-                            values: ['Left Finger', 'Right Finger'],
-                            onChanged: (value) {
-                              setState(() {
-                                settings.primaryControl = value ?? 'Right Finger';
-                              });
-                            }),
+                        if (TamUtils.isTouchDevice())
+                          fm.Text(
+                              'Primary Control', style: fm.TextStyle(fontSize: 20)),
+                        if (TamUtils.isTouchDevice())
+                          _StartPracticeRadioGroup(
+                              groupValue: settings.primaryControl,
+                              values: ['Left Finger', 'Right Finger'],
+                              onChanged: (value) {
+                                setState(() {
+                                  settings.primaryControl = value ?? 'Right Finger';
+                                });
+                              }),
+                        if (!TamUtils.isTouchDevice())
+                          fm.Text(
+                              'Mouse Control', style: fm.TextStyle(fontSize: 20)),
+                        if (!TamUtils.isTouchDevice())
+                          _StartPracticeRadioGroup(
+                              groupValue: settings.mouseControl,
+                              values: ['Dancer moves only when mouse button is pressed',
+                                'Dancer moves only when mouse button is released'],
+                              onChanged: (value) {
+                                setState(() {
+                                  settings.primaryControl = value ?? 'Dancer moves only when mouse button is pressed';
+                                });
+                              }),
                       ],
                     ),
                   ),

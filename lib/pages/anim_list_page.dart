@@ -21,6 +21,7 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart' as fm;
 import 'package:provider/provider.dart' as pp;
+import 'package:taminations/beat_notifier.dart';
 import 'package:xml/xml.dart';
 
 import '../common.dart';
@@ -263,6 +264,7 @@ class _AnimListState extends fm.State<AnimListFrame> {
                                                 mainPage: MainPage.ANIMATIONS,
                                                 animnum: item.animnumber
                                             );
+                                            pp.Provider.of<BeatNotifier>(context,listen: false).beat = 0.0;
                                           },
                                           child: fm.Container(
                                             decoration: fm.BoxDecoration(

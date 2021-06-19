@@ -24,8 +24,10 @@ import 'dart:ui';
 import 'package:flutter/material.dart' as fm;
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart' as pp;
+import 'package:taminations/beat_notifier.dart';
 
 import '../common.dart';
+import '../dance_model.dart';
 import 'page.dart';
 
 class PracticePage extends fm.StatelessWidget {
@@ -41,12 +43,12 @@ class PracticePage extends fm.StatelessWidget {
 
 class PracticeModel {
 
-  void nextDialog(fm.BuildContext context, DanceAnimationPainter painter) { }
+  void nextDialog(fm.BuildContext context, DanceModel danceModel) { }
 
-  Future<bool> firstAnimation(fm.BuildContext context, DanceAnimationPainter painter) async =>
-    nextAnimation(context, painter);
+  Future<bool> firstAnimation(fm.BuildContext context, DanceModel danceModel) async =>
+    nextAnimation(context, danceModel);
 
-  Future<bool> nextAnimation(fm.BuildContext context, DanceAnimationPainter painter) async {
+  Future<bool> nextAnimation(fm.BuildContext context, DanceModel danceModel) async {
     //  Choose a random call from the selected level
     final appState = pp.Provider.of<TamState>(context,listen: false);
     final titleModel = pp.Provider.of<TitleModel>(context,listen: false);
@@ -65,9 +67,9 @@ class PracticeModel {
     final randomTam = tams[randomAnim];
     titleModel.title = randomTam('title');
     titleModel.level = levelDatum.name;
-    await painter.setAnimation(randomTam,
+    await danceModel.setAnimation(randomTam,
         practiceGender: settings.practiceGender=='Boy' ? Gender.BOY : Gender.GIRL);
-    painter.doPlay();
+    danceModel.doPlay();
     return true;
   }
 
@@ -86,7 +88,7 @@ class _PracticeFrameState extends fm.State<PracticeFrame>
     with fm.SingleTickerProviderStateMixin {
 
   //  painter is where all the drawing and animation is done
-  final painter = DanceAnimationPainter();
+  late DanceModel danceModel;
   var animationFinished = false;
   var score = 0;
   var maxScore = 0;
@@ -106,33 +108,40 @@ class _PracticeFrameState extends fm.State<PracticeFrame>
   void _reset() {
     score = 0;
     animationFinished = false;
-    painter.doPlay();
+    danceModel.doPlay();
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    danceModel = DanceModel(context);
   }
 
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
-    waitForAnimation = widget.practiceModel.firstAnimation(context,painter);
+    waitForAnimation = widget.practiceModel.firstAnimation(context,danceModel);
   }
 
   @override
   fm.Widget build(fm.BuildContext context) {
+    final dancePainter = DancePainter(danceModel);
     _focusNode.requestFocus();
     return fm.RawKeyboardListener(
       onKey: (event) {
         if (event.physicalKey == PhysicalKeyboardKey.shiftLeft ||
             event.physicalKey == PhysicalKeyboardKey.shiftRight) {
           if (event is RawKeyDownEvent)
-            painter.practiceDancer!.shiftDown = true;
+            danceModel.practiceDancer!.shiftDown = true;
           else if (event is RawKeyUpEvent)
-            painter.practiceDancer!.shiftDown = false;
+            danceModel.practiceDancer!.shiftDown = false;
         }
         if (event.physicalKey == PhysicalKeyboardKey.controlLeft ||
             event.physicalKey == PhysicalKeyboardKey.controlRight) {
           if (event is RawKeyDownEvent)
-            painter.practiceDancer!.ctlDown = true;
+            danceModel.practiceDancer!.ctlDown = true;
           else if (event is RawKeyUpEvent)
-            painter.practiceDancer!.ctlDown = false;
+            danceModel.practiceDancer!.ctlDown = false;
         }
 
       },
@@ -140,100 +149,110 @@ class _PracticeFrameState extends fm.State<PracticeFrame>
       child: fm.FutureBuilder(
         future: waitForAnimation,
         builder: (context,snapshot) {
-          if (!snapshot.hasData) return fm.Container();
-          widget.practiceModel.nextDialog(context, painter);
-          return pp.ChangeNotifierProvider.value(
-          value: painter,
-          child: pp.Consumer3<DanceAnimationPainter, TitleModel, Settings>(
-            //  Even though we know the painter, get it via Consumer
-            //  so it triggers a rebuild when finished
-              builder: (context, painter, titleModel, settings, child) {
-                titleModel.title = painter.title;
-                painter.setGridVisibility(true);
-                painter.setSpeed(settings.practiceSpeed);
-                painter.practiceDancer!.primaryIsLeft =
+          if (!snapshot.hasData)
+            return fm.Container();
+          widget.practiceModel.nextDialog(context, danceModel);
+          return pp.Consumer2<TitleModel, Settings>(
+              builder: (context, titleModel, settings, _) {
+                titleModel.title = danceModel.title;
+                danceModel.gridVisibility = true;
+                danceModel.looping = false;
+                danceModel.setSpeed(settings.practiceSpeed);
+                danceModel.practiceDancer!.primaryIsLeft =
                     settings.primaryControl == 'Left Finger';
+                danceModel.practiceDancer!.practiceMousePressed =
+                    settings.mouseControl.contains('pressed');
                 return fm.Listener(
                   onPointerDown: (event) {
-                    painter.practiceDancer!.touchDown(
+                    danceModel.practiceDancer!.touchDown(
                         event.pointer,
-                        painter.mouse2dance(event.position.v),
+                        dancePainter.mouse2dance(event.position.v),
                         isMouse: event.kind == PointerDeviceKind.mouse
                     );
                   },
                   onPointerUp: (event) {
-                    painter.practiceDancer!.touchUp(
+                    danceModel.practiceDancer!.touchUp(
                         event.pointer,
-                        painter.mouse2dance(event.position.v),
+                        dancePainter.mouse2dance(event.position.v),
                         isMouse: event.kind == PointerDeviceKind.mouse
                     );
                   },
                   onPointerMove: (event) {
-                    painter.practiceDancer!.touchMove(
+                    danceModel.practiceDancer!.touchMove(
                         event.pointer,
-                        painter.mouse2dance(event.position.v)
+                        dancePainter.mouse2dance(event.position.v)
                     );
                   },
-                  child: fm.Stack(
-                    children: [
-                      fm.CustomPaint(
-                        painter: painter,
-                        child: fm.Center(), // so CustomPaint gets sized correctly
-                      ),
-                      if (painter.beat < 0.2)
-                      fm.Positioned(
-                          bottom: 10,
-                          left: 300,
-                          child: fm.Text('${painter.beat.floor().abs()}',
-                              style: fm.TextStyle(color: Color.GRAY, fontSize: 180))
-                      ),
-                      if (painter.isFinished) fm.Positioned(
-                          top: 100.0,
-                          left: 20.0,
-                          child: fm.Column(
-                            children: [
-                              _AnimationCompleteText('Animation Complete'),
-                              _AnimationCompleteText('Your Score'),
-                              _AnimationCompleteText(
-                                  '${painter.practiceScore.ceil()} / ${(painter
-                                      .movingBeats * 10).ceil()}'),
-                              _AnimationCompleteText(
-                                  congrats(painter.practiceScore /
-                                      (painter.movingBeats * 10))
-                              ),
-                              fm.Row(
+                  child: pp.Consumer<BeatNotifier>(
+                    builder: (context, beater, _) {
+                      return fm.Stack(
+                        children: [
+                          fm.CustomPaint(
+                            painter: dancePainter,
+                            child: fm
+                                .Center(), // so CustomPaint gets sized correctly
+                          ),
+                          if (beater.beat < 0.2)
+                            fm.Positioned(
+                                bottom: 10,
+                                left: 300,
+                                child: fm.Text('${beater.beat.floor().abs()}',
+                                    style: fm.TextStyle(
+                                        color: Color.GRAY, fontSize: 180))
+                            ),
+                          if (beater.isFinished) fm.Positioned(
+                              top: 100.0,
+                              left: 20.0,
+                              child: fm.Column(
                                 children: [
-                                  Button('Repeat', onPressed: () {
-                                    setState(() {
-                                      _reset();
-                                    });
-                                  }),
-                                  if (widget.practiceModel.canContinue(painter.practiceScore /
-                                      (painter.movingBeats * 10)))
-                                    Button('Continue', onPressed: () {
-                                      setState(() {
-                                        waitForAnimation = widget.practiceModel.nextAnimation(context,painter);
-                                      });
-                                    }),
-                                  Button('Return', onPressed: () {
-                                    //fm.Navigator.maybePop(context);
-                                    fm.Router
-                                        .of(context)
-                                        .routerDelegate
-                                        .popRoute();
-                                  })
+                                  _AnimationCompleteText('Animation Complete'),
+                                  _AnimationCompleteText('Your Score'),
+                                  _AnimationCompleteText(
+                                      '${danceModel.practiceScore
+                                          .ceil()} / ${(danceModel
+                                          .movingBeats * 10).ceil()}'),
+                                  _AnimationCompleteText(
+                                      congrats(danceModel.practiceScore /
+                                          (danceModel.movingBeats * 10))
+                                  ),
+                                  fm.Row(
+                                    children: [
+                                      Button('Repeat', onPressed: () {
+                                        setState(() {
+                                          _reset();
+                                        });
+                                      }),
+                                      if (widget.practiceModel.canContinue(
+                                          danceModel.practiceScore /
+                                              (danceModel.movingBeats * 10)))
+                                        Button('Continue', onPressed: () {
+                                          setState(() {
+                                            waitForAnimation =
+                                                widget.practiceModel
+                                                    .nextAnimation(
+                                                    context, danceModel);
+                                          });
+                                        }),
+                                      Button('Return', onPressed: () {
+                                        //fm.Navigator.maybePop(context);
+                                        fm.Router
+                                            .of(context)
+                                            .routerDelegate
+                                            .popRoute();
+                                      })
+                                    ],
+                                  ),
+                                  // Button('Definition') // TODO
                                 ],
-                              ),
-                             // Button('Definition') // TODO
-                            ],
+                              )
                           )
-                      )
-                    ],
-                  ),
+                        ],
+                      );
+                    })
                 );
               }
-          ),
-        );}
+          );
+        }
       ),
     );
   }

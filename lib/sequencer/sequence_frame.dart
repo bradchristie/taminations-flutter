@@ -348,7 +348,7 @@ class _SequencerEditLineState extends fm.State<SequencerEditLine> {
     }
     //  Animate from the previous position
     if (model.animation.movingBeats > oldbeats) {
-      model.animation.beat = oldbeats;
+      model.animation.beater.beat = oldbeats;
       model.animation.doPlay();
     }
     //  Erase it from the the text field

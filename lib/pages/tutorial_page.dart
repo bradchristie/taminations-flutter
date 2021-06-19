@@ -22,6 +22,7 @@ import 'package:flutter/material.dart' as fm;
 import 'package:provider/provider.dart' as pp;
 
 import '../common.dart';
+import '../dance_model.dart';
 import 'page.dart';
 import 'practice_page.dart';
 
@@ -76,7 +77,7 @@ class TutorialModel extends PracticeModel {
   }
 
   @override
-  void nextDialog(fm.BuildContext context, DanceAnimationPainter painter) {
+  void nextDialog(fm.BuildContext context, DanceModel danceModel) {
     final hints = TamUtils.isTouchDevice() ? touchHints : mouseHints;
     final settings = pp.Provider.of<Settings>(context,listen: false);
     final fingers = [
@@ -100,7 +101,7 @@ class TutorialModel extends PracticeModel {
                   fm.TextButton(
                       onPressed: () {
                     fm.Navigator.of(context).pop();
-                    painter.doPlay();
+                    danceModel.doPlay();
                   },
                       child: fm.Text('Continue')),
                 ],
@@ -112,11 +113,11 @@ class TutorialModel extends PracticeModel {
   }
 
   @override
-  Future<bool> firstAnimation(fm.BuildContext context, DanceAnimationPainter painter) async {
+  Future<bool> firstAnimation(fm.BuildContext context, DanceModel danceModel) async {
     final settings = pp.Provider.of<Settings>(context,listen: false);
     final doc = await TamUtils.getXMLAsset('src/tutorial');
     final tams = TamUtils.tamList(doc);
-    await painter.setAnimation(
+    await danceModel.setAnimation(
         tams[lessonNumber],
         practiceGender: settings.practiceGender=='Boy' ? Gender.BOY : Gender.GIRL,
         practiceIsRandom: false
@@ -125,10 +126,10 @@ class TutorialModel extends PracticeModel {
   }
 
   @override
-  Future<bool> nextAnimation(fm.BuildContext context, DanceAnimationPainter painter) async {
+  Future<bool> nextAnimation(fm.BuildContext context, DanceModel danceModel) async {
     lessonNumber += 1;
     showNextDialog = true;
-    await firstAnimation(context, painter);
+    await firstAnimation(context, danceModel);
     return true;
   }
 
