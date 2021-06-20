@@ -292,6 +292,8 @@ class Dancer implements Comparable<Dancer> {
   bool get isOnAxis => isOnXAxis || isOnYAxis;
   bool get isTidal =>
       (isOnXAxis || isOnYAxis) && (isCenterLeft || isCenterRight);
+  bool get isHead => numberCouple == '1' || numberCouple == '3';
+  bool get isSide => numberCouple == '2' || numberCouple == '4';
 
   bool isInFrontOf(Dancer d2) =>
       this != d2 && d2.angleToDancer(this).isAround(0);

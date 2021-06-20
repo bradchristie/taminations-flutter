@@ -24,8 +24,8 @@ import 'dart:ui';
 import 'package:flutter/material.dart' as fm;
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart' as pp;
-import 'package:taminations/beat_notifier.dart';
 
+import '../beat_notifier.dart';
 import '../common.dart';
 import '../dance_model.dart';
 import 'page.dart';

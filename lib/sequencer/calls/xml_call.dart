@@ -91,6 +91,13 @@ class XMLCall extends Call {
         d.data.active = false;
       });
     }
+
+    //  Check for "Heads ..." or "Sides ..." from static square, others
+    //  will move into the middle but are not active
+    if (name.toLowerCase().startsWith('heads'))
+      ctx.dancers.where((d) => d.isSide).forEach((d) => d.data.active = false);
+    if (name.toLowerCase().startsWith('sides'))
+      ctx.dancers.where((d) => d.isHead).forEach((d) => d.data.active = false);
   }
 
 
