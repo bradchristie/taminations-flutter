@@ -125,6 +125,7 @@ class SequencerModel extends fm.ChangeNotifier {
       errorString = '';
       animation.recalculate();
       _updateParts();
+      animation.goToEnd();
       later(() {
         notifyListeners();
       });
