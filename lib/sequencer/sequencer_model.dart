@@ -169,6 +169,7 @@ class SequencerModel extends fm.ChangeNotifier {
       calls.add(SequencerCall((cctx.callname + comment).trim(),beats:(newbeats-prevbeats),level:cctx.level));
       _updateParts();
     }
+    notifyListeners();
   }
 
   bool isComment(String text) =>
@@ -237,7 +238,6 @@ class SequencerModel extends fm.ChangeNotifier {
       if (!await loadOneCall(line)) {
         break;
       }
-      notifyListeners();
     }
   }
 
