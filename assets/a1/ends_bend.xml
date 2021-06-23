@@ -38,7 +38,7 @@
 
   <tam title="Ends Bend"
        from="Lines Facing Out"
-       formation="Lines Facing Out">
+       formation="Lines Facing Out" actives="Ends">
     <path numbers="1  ">
       <move select="Lead Left" beats="2" scaleY="2" />
     </path>
@@ -54,7 +54,7 @@
   </tam>
 
   <tam title="Ends Bend"
-       from="Inverted Lines, Ends Facing Out">
+       from="Inverted Lines, Ends Facing Out" actives="Ends">
     <formation>
       <dancer gender="girl" x="-2" y="3" angle="180"/>
       <dancer gender="boy" x="-2" y="1" angle="0"/>
@@ -76,7 +76,7 @@
   </tam>
 
   <tam title="Ends Bend" from="Facing Lines"
-       formation="Normal Lines">
+       formation="Normal Lines" actives="Ends">
     <path>
       <move select="Lead Right" beats="2" scaleY="2"/>
     </path>
@@ -92,7 +92,7 @@
   </tam>
 
   <tam title="Ends Bend" from="Inverted Lines, Ends Facing In"
-       formation="Inverted Lines Ends Facing In">
+       formation="Inverted Lines Ends Facing In" actives="Ends">
     <path>
       <move select="Lead Right" beats="2" scaleY="2"/>
     </path>

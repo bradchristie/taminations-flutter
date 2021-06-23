@@ -102,7 +102,6 @@ class SequencerModel extends fm.ChangeNotifier {
     errorString = '';
     try {
       await _interpretOneCall(call);
-     // notifyListeners();
     } on CallError catch(e) {
       errorString = e.toString();
       notifyListeners();

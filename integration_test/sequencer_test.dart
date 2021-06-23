@@ -2027,6 +2027,25 @@ Girls Circulate
 Bend the Line
 Star Thru
 Pass Thru
+Allemande Left''',
+
+  'Actives Actions' :
+'''Heads Separate and Star Thru
+Double Pass Thru
+Horseshoe Turn
+Veer Left
+Slither Slide Slip Swing
+Boys Run
+Circulate
+Bend the Line
+Pass Thru
+Ends Bend and Slide Thru
+Right Roll to a Wave
+Split Circulate
+Boys Run
+Circulate
+Ferris Wheel
+Centers Square Thru 3
 Allemande Left'''
 
 };

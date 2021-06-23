@@ -22,13 +22,10 @@
 -->
 <tamination title="Slither">
 
-
-
-
   <tam title="Slither"
        from="Right-Hand Waves"
        formation="Ocean Waves RH BGBG"
-       fractions="1.5" >
+       fractions="1.5" actives="All">
     <path>
     </path>
     <path>
@@ -44,7 +41,7 @@
   <tam title="Slither"
        from="Left-Hand Waves"
        formation="Ocean Waves LH BGGB"
-       fractions="1.5" >
+       fractions="1.5" actives="All">
     <path>
     </path>
     <path>
@@ -60,7 +57,7 @@
   <tam title="Slither"
        from="Right-Hand Two-Faced Line"
        formation="Two-Faced Lines RH"
-       fractions="1.5" >
+       fractions="1.5" actives="All">
     <path>
     </path>
     <path>
@@ -76,7 +73,7 @@
   <tam title="Slither"
        from="Left-Hand Two-Faced Line"
        formation="Two-Faced Lines LH"
-       fractions="1.5" >
+       fractions="1.5" actives="All">
     <path>
     </path>
     <path>
@@ -92,7 +89,7 @@
   <tam title="Slither"
        from="Right-Hand Tidal Wave"
        formation="Tidal Wave RH BGGB"
-       fractions="1.5" >
+       fractions="1.5" actives="All">
     <path>
     </path>
     <path>
@@ -108,7 +105,7 @@
   <tam title="Slither"
        from="Left-Hand Tidal Wave"
        formation="Tidal Wave LH BGGB"
-       fractions="1.5" >
+       fractions="1.5" actives="All">
     <path>
     </path>
     <path>
@@ -124,7 +121,7 @@
   <tam title="As Couples Slither"
        from="Two-Faced Tidal Line"
        formation="Two-Faced Tidal Line RH"
-       fractions="2" group=" ">
+       fractions="2" group=" " actives="All">
     <path>
     </path>
     <path>
@@ -140,7 +137,7 @@
   <tam title="All 8 Slither"
        from="Thar"
        formation="Thar LH Boys"
-       fractions="1.5" group=" ">
+       fractions="1.5" group=" " actives="All">
     <path>
       <move select="BackSashay Left" scaleX="2" />
     </path>
@@ -152,4 +149,5 @@
     <path>
     </path>
   </tam>
+
 </tamination>

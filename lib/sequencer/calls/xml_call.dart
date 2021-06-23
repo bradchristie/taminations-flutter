@@ -80,24 +80,34 @@ class XMLCall extends Call {
 
     //  Mark dancers that had no XML move as inactive
     //  Needed for post-call modifications e.g. spread
-    if (!noInactiveCalls.contains(name.toLowerCase())) {
-      var inactives = <Dancer>[];
-      for (var i4 = 0; i4 < xmlmap.length; i4++) {
-        var m = xmlmap[i4];
-        if (allPaths[m >> 1].movelist.isEmpty)
-          inactives.add(ctx.actives[i4]);
-      }
-      inactives.forEach((d) {
-        d.data.active = false;
-      });
+    //  But first check if actives are specifically flagged in the animation
+    var inactives = <Dancer>[];
+    switch (xelem('actives')) {
+      case 'Heads' :
+        inactives = ctx.dancers.where((d) => d.isSide).toList();
+        break;
+      case 'Sides' :
+        inactives = ctx.dancers.where((d) => d.isHead).toList();
+        break;
+      case 'Centers' :
+        inactives = ctx.dancers.where((d) => !d.data.center).toList();
+        break;
+      case 'Ends' :
+        inactives = ctx.dancers.where((d) => !d.data.end).toList();
+        break;
+      case 'All' :
+        break;
+      default :
+        for (var i4 = 0; i4 < xmlmap.length; i4++) {
+          var m = xmlmap[i4];
+          if (allPaths[m >> 1].movelist.isEmpty)
+            inactives.add(ctx.actives[i4]);
+        }
     }
+    inactives.forEach((d) {
+      d.data.active = false;
+    });
 
-    //  Check for "Heads ..." or "Sides ..." from static square, others
-    //  will move into the middle but are not active
-    if (name.toLowerCase().startsWith('heads'))
-      ctx.dancers.where((d) => d.isSide).forEach((d) => d.data.active = false);
-    if (name.toLowerCase().startsWith('sides'))
-      ctx.dancers.where((d) => d.isHead).forEach((d) => d.data.active = false);
   }
 
 

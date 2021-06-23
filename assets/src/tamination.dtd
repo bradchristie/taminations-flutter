@@ -39,6 +39,7 @@
               fractions CDATA #IMPLIED
               difficulty CDATA #IMPLIED
               display CDATA #IMPLIED
+              actives CDATA #IMPLIED
               sequencer CDATA #IMPLIED >
 
 <!ELEMENT tamxref EMPTY>

@@ -23,7 +23,7 @@
 <tamination title="Separate">
 
   <tam title="Heads Separate" group=" "
-       formation="Static Square">
+       formation="Static Square" actives="Heads">
     <path>
       <move select="Extend Left" beats="3" scaleX="2" scaleY="2"/>
     </path>
@@ -39,7 +39,7 @@
   </tam>
 
   <tam title="Sides Separate" group=" "
-       formation="Static Square">
+       formation="Static Square" actives="Sides">
     <path>
       <move select="Forward 2" hands="right" beats="3"/>
     </path>
@@ -55,7 +55,7 @@
   </tam>
 
   <tam title="Head Couples Separate And Star Thru"
-       formation="Static Square" group=" ">
+       formation="Static Square" group=" " actives="Heads">
     <path>
       <move select="Extend Left" beats="3" scaleX="2" scaleY="2.5"/>
       <move select="Forward"/>
