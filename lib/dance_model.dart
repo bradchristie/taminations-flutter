@@ -307,7 +307,7 @@ class DanceModel extends fm.ChangeNotifier {
   //  by the beater
   void _updateCurrentPart() {
     final previousPart = _currentPart;
-    if (beater.beat < 0 || beater.beat > beats)
+    if (beater.beat < 0 || beater.beat > beats || partstr.isBlank)
       _currentPart = 0;
     else {
       _currentPart = _partsValues().lastIndexWhere((b) => b < beater.beat);

@@ -18,6 +18,8 @@
 
 */
 
+import 'package:taminations/sequencer/calls/a1/linear_cycle.dart';
+
 import '../../extensions.dart';
 import '../../tam_utils.dart';
 import 'a1/as_couples.dart';
@@ -286,6 +288,7 @@ abstract class CodedCall extends Call {
     '(cross)?kickoff'.ri: (name) => KickOff(name),
 
     'lead'.ri: (name) => Leaders(name),
+    '(left)?linearcycle'.ri: (name) => LinearCycle(name),
     //  Little needs two regexes
     //  to handle both <something> Little and Little <something>
     '(scootand)?(outside|point)?(out|in|left|right|(go)?(forward|asyouare))?little'.ri:

@@ -2046,6 +2046,27 @@ Boys Run
 Circulate
 Ferris Wheel
 Centers Square Thru 3
+Allemande Left''',
+
+  'Linear Cycle' :
+'''Heads Touch 1/4 and Spread
+Circulate
+Linear Cycle
+Spin the Top
+Fan the Top
+Boys Run
+Linear Cycle
+Veer Left
+Fan the Top
+Head Boys Ripple 2
+Very Centers Turn Back
+Left Linear Cycle
+Veer Left
+Bend the Line
+Brace Thru
+Touch a Quarter
+Circulate
+Boys Run
 Allemande Left'''
 
 };

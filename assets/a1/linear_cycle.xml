@@ -52,7 +52,8 @@
     </path>
   </tam>
 
-  <tam title="Linear Cycle" from="Lines Facing Out" formation="Lines Facing Out">
+  <tam title="Linear Cycle" from="Lines Facing Out"
+       formation="Lines Facing Out" parts="1.5;4">
     <path>
       <move select="Quarter Left" offsetX="-1" offsetY="1"/>
       <move select="Forward 4" />
@@ -130,7 +131,7 @@
   </tam>
 
   <tam title="Linear Cycle" from="Inverted Lines, Ends Facing In"
-       formation="Inverted Lines Ends Facing In">
+       formation="Inverted Lines Ends Facing In" parts="1.5;4">
     <path>
       <move select="Hinge Right"/>
       <move select="Extend Left" beats="2" scaleX="2" scaleY=".5"/>
@@ -158,7 +159,7 @@
   </tam>
 
   <tam title="Linear Cycle" from="Inverted Lines, Ends Facing Out"
-       formation="Inverted Lines Ends Facing Out">
+       formation="Inverted Lines Ends Facing Out" parts="1.5;4">
     <path>
       <move select="Hinge Left"/>
       <move select="Extend Left" beats="2" scaleX="2" scaleY=".5"/>
@@ -185,8 +186,36 @@
     </path>
   </tam>
 
+  <tam title="Linear Cycle" from="3 and 1 Lines" formation="3 and 1 lines #5">
+    <path>
+      <move select="Hinge Right"/>
+      <move select="Forward 4" />
+      <move select="Run Right" />
+    </path>
+    <path>
+      <move select="Hinge Right" />
+      <move select="Run Right" />
+      <move select="Forward 2" />
+      <move select="U-Turn Right" offsetX="2" />
+    </path>
+    <path>
+      <move select="Quarter Left" offsetX="-1" offsetY="1"/>
+      <move select="Run Right" />
+      <move select="Forward 2" />
+      <move select="U-Turn Right" offsetX="2" />
+    </path>
+    <path>
+      <move select="Hinge Right" />
+      <move select="Forward 4" />
+      <move select="Run Right" />
+    </path>
+  </tam>
+
+
+
+
   <tam title="Linear Cycle" from="Right-Hand Two-Faced Tidal Line"
-       formation="Two-Faced Tidal Line RH">
+       formation="Two-Faced Tidal Line RH" parts="1.5;4">
     <path>
       <move select="Hinge Right" scaleY=".5"/>
       <move select="Forward 2" />
@@ -210,7 +239,7 @@
   </tam>
 
   <tam title="Linear Cycle" from="Left-Hand Two-Faced Tidal Line"
-       formation="Two-Faced Tidal Line LH">
+       formation="Two-Faced Tidal Line LH" parts="1.5;4">
     <path>
       <move select="Quarter Left" offsetX="-1" offsetY=".5"/>
       <move select="Forward 2" />
@@ -234,7 +263,7 @@
   </tam>
 
   <tam title="Linear Cycle" from="Right-Hand Tidal Line"
-       formation="Tidal Line RH">
+       formation="Tidal Line RH" parts="1.5;4">
     <path>
       <move select="Hinge Right" scaleY=".5"/>
       <move select="Forward 2" />
@@ -258,7 +287,7 @@
   </tam>
 
   <tam title="Linear Cycle" from="Left-Hand Tidal Line"
-       formation="Tidal Line LH">
+       formation="Tidal Line LH" parts="1.5;4">
     <path>
       <move select="Hinge Right" scaleY=".5"/>
       <move select="Run Right" />
@@ -278,6 +307,62 @@
       <move select="Quarter Left" offsetX="-1" offsetY=".5"/>
       <move select="Run Right" scaleX=".5" />
       <move select="U-Turn Right" offsetX="2" />
+    </path>
+  </tam>
+
+  <tam title="Linear Cycle" from="Right-Hand Tidal Inverted Line"
+       formation="Tidal Inverted Line RH" parts="1.5;4">
+    <path>
+      <move select="Hinge Right" scaleY=".5"/>
+      <move select="Extend Left" beats="2" scaleY=".5"/>
+      <move select="Forward"/>
+      <move select="Run Right" scaleX=".5" scaleY="1.25"/>
+    </path>
+    <path>
+      <move select="Hinge Right" scaleY=".5"/>
+      <move select="Run Right" scaleY="1.25"/>
+      <move select="Forward" />
+      <move select="U-Turn Right" beats="2" offsetX="1" offsetY="-.5"/>
+    </path>
+    <path>
+      <move select="Hinge Left" scaleY=".5"/>
+      <move select="Run Left" scaleX=".5" scaleY="0.75"/>
+      <move select="Forward"/>
+      <move select="U-Turn Left" beats="2" offsetX="1" offsetY="-.5"/>
+    </path>
+    <path>
+      <move select="Hinge Left" scaleY=".5"/>
+      <move select="Extend Left" beats="2" scaleY=".5"/>
+      <move select="Forward"/>
+      <move select="Run Left" scaleY="0.75"/>
+    </path>
+  </tam>
+
+  <tam title="Linear Cycle" from="Left-Hand Tidal Inverted Line"
+       formation="Tidal Inverted Line LH" parts="1.5;4">
+    <path>
+      <move select="Hinge Left" scaleY=".5"/>
+      <move select="Extend Left" beats="2" scaleY=".5"/>
+      <move select="Forward"/>
+      <move select="Run Left" scaleX=".5" scaleY="0.75"/>
+    </path>
+    <path>
+      <move select="Hinge Left" scaleY=".5"/>
+      <move select="Run Left" scaleX=".5" scaleY="0.75"/>
+      <move select="Forward"/>
+      <move select="U-Turn Left" beats="2" offsetX="1" offsetY="-.5"/>
+    </path>
+    <path>
+      <move select="Hinge Right" scaleY=".5"/>
+      <move select="Run Right" scaleX=".5" scaleY="1.25"/>
+      <move select="Forward" />
+      <move select="U-Turn Right" beats="2" offsetX="1" offsetY="-.5"/>
+    </path>
+    <path>
+      <move select="Hinge Right" scaleY=".5"/>
+      <move select="Extend Left" beats="2" scaleY=".5"/>
+      <move select="Forward"/>
+      <move select="Run Right" scaleX=".5" scaleY="1.25"/>
     </path>
   </tam>
 
@@ -312,7 +397,8 @@
     </path>
   </tam>
 
-  <tam title="Left Linear Cycle" from="Lines Facing Out" formation="Lines Facing Out">
+  <tam title="Left Linear Cycle" from="Lines Facing Out"
+       formation="Lines Facing Out" parts="1.5;4">
     <path>
       <move select="Hinge Left" />
       <move select="Forward 4" />
@@ -338,7 +424,7 @@
   </tam>
 
   <tam title="Left Linear Cycle" from="Right-Hand Two-Faced Tidal Line"
-       formation="Two-Faced Tidal Line RH">
+       formation="Two-Faced Tidal Line RH" parts="1.5;4">
     <path>
       <move select="Quarter Right" offsetX="-1" offsetY="-.5"/>
       <move select="Forward 2" />
@@ -362,7 +448,7 @@
   </tam>
 
   <tam title="Left Linear Cycle" from="Left-Hand Two-Faced Tidal Line"
-       formation="Two-Faced Tidal Line LH">
+       formation="Two-Faced Tidal Line LH" parts="1.5;4">
     <path>
       <move select="Hinge Left" scaleY=".5"/>
       <move select="Forward 2" />
@@ -386,7 +472,7 @@
   </tam>
 
   <tam title="Left Linear Cycle" from="Right-Hand Tidal Line"
-       formation="Tidal Line RH">
+       formation="Tidal Line RH" parts="1.5;4">
     <path>
       <move select="Quarter Right" offsetX="-1" offsetY="-.5"/>
       <move select="Forward 2" />
@@ -410,7 +496,7 @@
   </tam>
 
   <tam title="Left Linear Cycle" from="Left-Hand Tidal Line"
-       formation="Tidal Line LH">
+       formation="Tidal Line LH" parts="1.5;4">
     <path>
       <move select="Quarter Right" offsetX="-1" offsetY="-.5"/>
       <move select="Run Left" />
