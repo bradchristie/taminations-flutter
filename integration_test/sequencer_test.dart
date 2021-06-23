@@ -2067,6 +2067,29 @@ Brace Thru
 Touch a Quarter
 Circulate
 Boys Run
+Allemande Left''',
+
+  'Couples' :
+'''Heads Touch 1/4 and Spread
+Couples Partner Trade
+Centers Trade
+Centers Run
+Circulate
+Centers Pass the Ocean
+Diamond Circulate
+Flip the Diamond
+Fan the Top
+Very Centers Run
+Couples Fan the Top
+Boys Hinge
+Couples Partner Trade
+Chain Reaction
+Couples Partner Tag While Others Trade and Roll
+Magic Column Circulate
+Boys Run
+Trade By
+Brace Thru
+Pass Thru
 Allemande Left'''
 
 };

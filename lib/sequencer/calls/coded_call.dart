@@ -147,6 +147,7 @@ import 'common/back_away.dart';
 import 'common/boys.dart';
 import 'common/center_six.dart';
 import 'common/centers.dart';
+import 'common/couples.dart';
 import 'common/ends.dart';
 import 'common/everyone.dart';
 import 'common/facing_dancers.dart';
@@ -238,6 +239,7 @@ abstract class CodedCall extends Call {
     'cloverleaf'.ri: (_) => Cloverleaf(),
     'concentric.+'.ri: (name) => Concentric(name),
     'counterrotate'.ri: (_) => CounterRotate(),
+    '(dancersin)?couples'.ri: (name) => Couples(name),
     'courtesyturn'.ri: (_) => CourtesyTurn(),
     '(12|34)?(reverse)?crazy.*'.ri: (name) => Crazy(name),
     'cross'.ri: (_) => Cross(),
