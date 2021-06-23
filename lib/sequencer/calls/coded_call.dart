@@ -18,8 +18,6 @@
 
 */
 
-import 'package:taminations/sequencer/calls/a1/linear_cycle.dart';
-
 import '../../extensions.dart';
 import '../../tam_utils.dart';
 import 'a1/as_couples.dart';
@@ -32,6 +30,7 @@ import 'a1/cross.dart';
 import 'a1/cross_over_circulate.dart';
 import 'a1/double_star_thru.dart';
 import 'a1/horseshoe_turn.dart';
+import 'a1/linear_cycle.dart';
 import 'a1/partner_tag.dart';
 import 'a1/pass_in_out.dart';
 import 'a1/quarter_in_out.dart';
@@ -171,6 +170,7 @@ import 'common/trailers.dart';
 import 'common/twice.dart';
 import 'common/very_centers.dart';
 import 'common/very_ends.dart';
+import 'common/waves.dart';
 import 'common/while.dart';
 import 'ms/cast_off_three_quarters.dart';
 import 'ms/cross_fold.dart';
@@ -408,6 +408,7 @@ abstract class CodedCall extends Call {
     '${specifier}walk(and)?${specifier}dodge'.ri: (name) => WalkAndDodge(name),
     '$specifier${specifier}walk(and)?$specifier${specifier}dodge'.ri:
         (name) => WalkAndDodge(name),
+    '(dancersin)?waves?(dancers)?'.ri: (name) => Waves(name),
     '(reverse)?wheeland(?!deal)(\\w.*)'.ri: (name) => WheelAnd(name),
     '(reverse)?wheelaround'.ri: (name) => WheelAround(name),
     '(and)?(the)?other?.+'.ri: (name) => While(name),

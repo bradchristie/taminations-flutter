@@ -2090,6 +2090,26 @@ Boys Run
 Trade By
 Brace Thru
 Pass Thru
+Allemande Left''',
+
+  'Waves' :
+'''Heads Touch 1/4 and Spread
+Wave Dancers Trade
+Centers Pass the Ocean
+Adjust to Diamonds
+Diamond Circulate
+Flip the Diamond
+Fan the Top
+Very Centers Run
+Wave Dancers Trade and Roll
+Center 4 Wheel and Deal
+Heads Touch
+Centers 4 Pass the Ocean
+Boys Run
+As Couples Extend
+Circulate
+Ferris Wheel
+Centers Square Thru 3
 Allemande Left'''
 
 };
