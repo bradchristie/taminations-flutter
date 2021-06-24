@@ -34,7 +34,7 @@ class Twice extends CodedCall {
     //  Make sure everyone waits to finish the first time
     ctx.extendPaths();
     //  So just do it again
-    var prevCall = ctx.callstack.take(ctx.callstack.length-1)
+    var prevCall = ctx.callstack.take(stackIndex)
         .map((it) => it.name).join(' ');
     await ctx.applyCalls(prevCall);
   }

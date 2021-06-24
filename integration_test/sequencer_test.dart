@@ -2110,6 +2110,19 @@ As Couples Extend
 Circulate
 Ferris Wheel
 Centers Square Thru 3
+Allemande Left''',
+
+  'Recycle Twicd and Roll' :
+'''Heads Lead Right
+Recycle Twice and Roll
+Left Swing Thru
+Split Circulate
+Girls Run
+Bend the Line
+Right and Left Thru
+Touch a Quarter
+Circulate
+Boys Run
 Allemande Left'''
 
 };
