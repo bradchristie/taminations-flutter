@@ -1073,6 +1073,22 @@
     </path>
 	</tam>
 
+  <tam title="All 8 Recycle" group="All 8" formation="Thar RH Girls" display="no">
+    <path>
+      <move select="Run Left" beats="2" scaleX=".5" scaleY=".5" offsetX="-1.5" />
+      <move select="Run Left" beats="2" scaleX=".5" scaleY=".5" offsetX="1.5" />
+    </path>
+    <path>
+      <move select="Run Left" beats="4" offsetX="3" offsetY="2" />
+    </path>
+    <path>
+      <move select="Run Left" beats="2" scaleX=".5" scaleY=".5" offsetX="-1.5" />
+      <move select="Run Left" beats="2" scaleX=".5" scaleY=".5" offsetX="1.5" />
+    </path>
+    <path>
+      <move select="Run Left" beats="4" offsetX="3" offsetY="2" />
+    </path>
+  </tam>
 
   <tam title="All 8 Scoot Back" group="All 8"
        formation="Static MiniWaves RH">
