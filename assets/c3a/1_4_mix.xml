@@ -194,6 +194,28 @@
     </path>
   </tam>
 
+  <tam title="Left 1/4 Mix" from="Left-Hand Columns" formation="Column LH GBGB"
+       parts="1.5;3">
+    <path>
+      <move select="Hinge Left" scaleX=".5"/>
+      <move select="Run Right"/>
+    </path>
+    <path>
+      <move select="Hinge Left" scaleX=".5"/>
+      <move select="Dodge Left" scaleY=".5"/>
+      <move select="Swing Left" scaleX=".5" scaleY=".5"/>
+    </path>
+    <path>
+      <move select="Hinge Left" scaleX=".5"/>
+      <move select="Run Right"/>
+    </path>
+    <path>
+      <move select="Hinge Left" scaleX=".5"/>
+      <move select="Dodge Left" scaleY=".5"/>
+      <move select="Swing Left" scaleX=".5" scaleY=".5"/>
+    </path>
+  </tam>
+
   <tam title="Left 1/4 Mix" from="Left-Hand Diamonds"
        formation="Diamonds LH Girl Points" parts="1.5;4">
     <path>
@@ -212,6 +234,31 @@
     <path>
       <move select="Stand" beats="1.5"/>
       <move select="Dodge Left" beats="4"/>
+      <move select="Swing Left"/>
+    </path>
+  </tam>
+
+  <tam title="Left 1/4 Mix" from="Alamo Ring" formation="Alamo Wave" parts="1.5;4">
+    <path>
+      <move select="Sxtnth Right" />
+      <move select="Hinge Left"/>
+      <move select="Run Right" beats="4" scaleY="2.25"/>
+    </path>
+    <path>
+      <move select="Sxtnth Left" />
+      <move select="Hinge Left"/>
+      <move select="Dodge Left" beats="4" scaleY="1.2"/>
+      <move select="Swing Left"/>
+    </path>
+    <path>
+      <move select="Sxtnth Right" />
+      <move select="Hinge Left"/>
+      <move select="Run Right" beats="4" scaleY="2.25"/>
+    </path>
+    <path>
+      <move select="Sxtnth Left" />
+      <move select="Hinge Left"/>
+      <move select="Dodge Left" beats="4" scaleY="1.2"/>
       <move select="Swing Left"/>
     </path>
   </tam>
