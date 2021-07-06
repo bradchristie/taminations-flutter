@@ -77,21 +77,17 @@ class WalkAndDodge extends ActivesOnlyAction {
   Path performOne(Dancer d, CallContext ctx) {
     if (isDodger(d)) {
       //  A Dodger.  Figure out which way to dodge.
+      final dRight = ctx.dancerToRight(d);
+      final dLeft = ctx.dancerToLeft(d);
       String dir;
-      if (d.data.beau && isWalker(ctx.dancerToRight(d)))
-        dir = 'Right';
-      else if (d.data.belle && isWalker(ctx.dancerToLeft(d)))
-        dir = 'Left';
-      else if (isWalker(ctx.dancerToRight(d)))
-        dir = 'Right';
-      else if (isWalker(ctx.dancerToLeft(d)))
-        dir = 'Left';
-      else if (d.data.beau)
-        dir = 'Right';
-      else if (d.data.belle)
-        dir = 'Left';
-      else
+      if (dRight == null && dLeft == null)
         throw CallError('Dancer $d does not know which way to Dodge');
+      else if (dRight == null)
+        dir = 'Left';
+      else if (dLeft == null)
+        dir = 'Right';
+      else
+        dir = (dRight.location.length > dLeft.location.length) ? 'Right' : 'Left';
       if (ctx.isInCouple(d) && isDodger(d.data.partner))
         throw CallError('Dodgers would cross each other');
       var d2 = (dir == 'Right')

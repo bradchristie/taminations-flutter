@@ -26,7 +26,33 @@ class QuarterInOut extends Action {
   QuarterInOut(String name) : super(name);
 
   @override
+  Future<void> perform(CallContext ctx, [int stackIndex = 0]) async {
+    if (ctx.dancers.length == 4)
+      await super.perform(ctx);
+    final boxes = ctx.boxes();
+    if (boxes != null) {
+      for (final box in boxes) {
+        await ctx.subContext(box, (ctx2) async {
+          await super.perform(ctx2);
+        });
+      }
+    } else {
+      await super.perform(ctx);
+    }
+  }
+
+  @override
   Path performOne(Dancer d, CallContext ctx) {
+    final isOut = name.matches('.*out'.ri);
+    if (ctx.isBox()) {
+      if (d.isCenterLeft)
+        return TamUtils.getMove(isOut ? 'Quarter Right' : 'Quarter Left');
+      else if (d.isCenterRight)
+        return TamUtils.getMove(isOut ? 'Quarter Left' : 'Quarter Right');
+      else
+        //  should never happen because we know dancer is in a box
+        throw CallError('Unable to calculate $name for dancer $d');
+    }
     String move;
     if (!d.data.beau && !d.data.belle) {
       //  No partner - Face In

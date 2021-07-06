@@ -1068,9 +1068,9 @@ class CallContext {
           pointsOfDiamondFormation('Galaxy RH GP');
 
   //  Return pair of boxes for dancers in a 2x4 formation
-  List<List<Dancer>> boxes() {
+  List<List<Dancer>>? boxes() {
     if (!isTBone())
-      throw CallError('Attempt to find boxes from non 2x4 formation.');
+      return null;
     var farout = outer(4).first;
     var isX = farout.location.x.abs() > farout.location.y.abs();
     return dancers.partition(
