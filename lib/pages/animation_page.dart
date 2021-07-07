@@ -392,6 +392,7 @@ class _SliderTicsPainter extends fm.CustomPainter {
   var isParts = false;
   var isCalls = false;
   List<double> partValues = [];
+  Map<String,fm.TextPainter> textPainters = {};
 
   _SliderTicsPainter({
     required this.beats,
@@ -422,12 +423,17 @@ class _SliderTicsPainter extends fm.CustomPainter {
     //  and it has to be repeated for each text item.
     //  Thus this function.
     void drawCenteredTextAt(String text, double x, double y) {
-      var span = fm.TextSpan(text: text,
-          style:fm.TextStyle(fontSize: size.height / 3.0, color:fm.Colors.white));
-      var tp = fm.TextPainter(text: span,
-          textDirection: fm.TextDirection.ltr)..layout();
+      if (textPainters[text] == null) {
+        var span = fm.TextSpan(text: text,
+            style: fm.TextStyle(
+                fontSize: size.height / 3.0, color: fm.Colors.white));
+        textPainters[text] = fm.TextPainter(text: span,
+            textDirection: fm.TextDirection.ltr)
+          ..layout();
+      }
+      final tp = textPainters[text]!;
       //  TextSpan center doesn't seem to work, but we can calculate it
-      var textOffset = tp.width / 2.0;
+      final textOffset = tp.width / 2.0;
       tp.paint(ctx, fm.Offset(x-textOffset,y));
     }
 
