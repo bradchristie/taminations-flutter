@@ -233,7 +233,6 @@
   <call audio="plus/explode_the_wave.mp3" languages="lang-ja" link="plus/explode_the_wave" title="Explode the Wave"/>
   <call audio="b2/extend.mp3" languages="lang-ja" link="b2/extend" title="Extend"/>
   <call audio="ssd/extend.mp3" languages="lang-ja" link="ssd/extend" title="Extend"/>
-  <call languages="lang-ja" link="plus/extend" title="Extend"/>
 
   <call link="b1/face" title="Face Left / Right / In / Out"/>
   <call languages="lang-de lang-ja" link="b2/facing_couples_rule" title="Facing Couples Rule"/>
