@@ -2112,7 +2112,7 @@ Ferris Wheel
 Centers Square Thru 3
 Allemande Left''',
 
-  'Recycle Twicd and Roll' :
+  'Recycle Twice and Roll' :
 '''Heads Lead Right
 Recycle Twice and Roll
 Left Swing Thru

@@ -88,7 +88,7 @@ extension DancerList on List<Dancer> {
   //  rather than null or crashing
   List<Dancer> inOrder() {
     try {
-      return where((it) =>
+      final inOrderList = where((it) =>
       it.location.x.isGreaterThan(0) ||
           it.location.x.isAbout(0) && it.location.y.isGreaterThan(0))
           .expand((d) =>
@@ -96,6 +96,7 @@ extension DancerList on List<Dancer> {
         d,
         firstWhere((it) => it.location.isAbout(-d.location))
       ]).toList();
+      return inOrderList.length == length ? inOrderList : this;
     } catch (_) {
       return this;
     }
