@@ -34,6 +34,30 @@
     </path>
   </tam>
 
+  <tam title="3/4 Mix" from="Right-Hand Diamond" formation="Diamond RH" parts="4.5;4">
+    <path>
+      <move select="Stand" beats="4.5"/>
+      <move select="Dodge Right" beats="4"/>
+      <move select="Swing Right"/>
+    </path>
+    <path>
+      <move select="Cast Right"/>
+      <move select="Run Right" beats="4" scaleY="2"/>
+    </path>
+  </tam>
+
+  <tam title="3/4 Mix" from="Facing Diamond" formation="Diamond Facing RH" parts="4.5;4">
+    <path>
+      <move select="Stand" beats="4.5"/>
+      <move select="Dodge Left" beats="4"/>
+      <move select="Swing Left"/>
+    </path>
+    <path>
+      <move select="Cast Right"/>
+      <move select="Run Right" beats="4" scaleY="2"/>
+    </path>
+  </tam>
+
   <tam title="3/4 Mix" from="Right-Hand Waves" formation="Ocean Waves RH BGBG"
        parts="4.5;4">
     <path>
@@ -121,6 +145,50 @@
     </path>
   </tam>
 
+  <tam title="3/4 Mix" from="Facing Diamonds"
+       formation="Diamonds Facing Girl Points" parts="4.5;4">
+    <path>
+      <move select="Cast Right"/>
+      <move select="Run Right" beats="4" scaleY="2"/>
+    </path>
+    <path>
+      <move select="Stand" beats="4.5"/>
+      <move select="Dodge Left" beats="4"/>
+      <move select="Swing Left"/>
+    </path>
+    <path>
+      <move select="Cast Right"/>
+      <move select="Run Right" beats="4" scaleY="2"/>
+    </path>
+    <path>
+      <move select="Stand" beats="4.5"/>
+      <move select="Dodge Left" beats="4"/>
+      <move select="Swing Left"/>
+    </path>
+  </tam>
+
+  <tam title="3/4 Mix" from="Point-to-Point Diamonds"
+       formation="Diamonds RH PTP Girl Points" parts="4.5;4">
+    <path>
+      <move select="Cast Right"/>
+      <move select="Run Right" beats="4" scaleY="1.75"/>
+    </path>
+    <path>
+      <move select="Stand" beats="4.5"/>
+      <move select="Dodge Right" beats="4" scaleY=".25"/>
+      <move select="Swing Right" scaleX=".5" scaleY=".5"/>
+    </path>
+    <path>
+      <move select="Cast Right"/>
+      <move select="Run Right" beats="4" scaleY=".75"/>
+    </path>
+    <path>
+      <move select="Stand" beats="4.5"/>
+      <move select="Dodge Right" beats="4" scaleY="1.25"/>
+      <move select="Swing Right" scaleX=".5" scaleY=".5"/>
+    </path>
+  </tam>
+
   <tam title="3/4 Mix" from="Alamo Ring"
        formation="Alamo Wave" parts="4.5;4">
     <path>
@@ -160,6 +228,30 @@
     </path>
   </tam>
 
+  <tam title="Left 3/4 Mix" from="Left-Hand Diamond" formation="Diamond LH" parts="4.5;4">
+    <path>
+      <move select="Stand" beats="4.5"/>
+      <move select="Dodge Left" beats="4"/>
+      <move select="Swing Left"/>
+    </path>
+    <path>
+      <move select="Cast Left"/>
+      <move select="Run Left" beats="4" scaleY="2"/>
+    </path>
+  </tam>
+
+  <tam title="Left 3/4 Mix" from="Facing Diamond" formation="Diamond Facing" parts="4.5;4">
+    <path>
+      <move select="Stand" beats="4.5"/>
+      <move select="Dodge Right" beats="4"/>
+      <move select="Swing Right"/>
+    </path>
+    <path>
+      <move select="Cast Left"/>
+      <move select="Run Left" beats="4" scaleY="2"/>
+    </path>
+  </tam>
+
   <tam title="Left 3/4 Mix" from="Right-Hand Waves" formation="Ocean Waves RH BGGB"
        parts="4.5;4">
     <path>
@@ -196,6 +288,124 @@
       <move select="Cast Left"/>
       <move select="Dodge Left" beats="4"/>
       <move select="Swing Left"/>
+    </path>
+  </tam>
+
+  <tam title="Left 3/4 Mix" from="Left-Hand Columns"
+       formation="Column LH GBGB" parts="4.5;3">
+    <path>
+      <move select="Hinge Left" scaleX=".5"/>
+      <move select="Swing Left" scaleX=".5" scaleY=".5"/>
+      <move select="Dodge Left" scaleY=".5"/>
+      <move select="Swing Left" scaleX=".5" scaleY=".5"/>
+    </path>
+    <path>
+      <move select="Hinge Left" scaleX=".5"/>
+      <move select="Swing Left" scaleX=".5" scaleY=".5"/>
+      <move select="Run Right"/>
+    </path>
+    <path>
+      <move select="Hinge Left" scaleX=".5"/>
+      <move select="Swing Left" scaleX=".5" scaleY=".5"/>
+      <move select="Dodge Left" scaleY=".5"/>
+      <move select="Swing Left" scaleX=".5" scaleY=".5"/>
+    </path>
+    <path>
+      <move select="Hinge Left" scaleX=".5"/>
+      <move select="Swing Left" scaleX=".5" scaleY=".5"/>
+      <move select="Run Right"/>
+    </path>
+  </tam>
+
+  <tam title="Left 3/4 Mix" from="Left-Hand Diamonds"
+       formation="Diamonds LH Girl Points" parts="4.5;4">
+    <path>
+      <move select="Cast Left"/>
+      <move select="Run Left" beats="4" scaleY="2"/>
+    </path>
+    <path>
+      <move select="Stand" beats="4.5"/>
+      <move select="Dodge Left" beats="4"/>
+      <move select="Swing Left"/>
+    </path>
+    <path>
+      <move select="Cast Left"/>
+      <move select="Run Left" beats="4" scaleY="2"/>
+    </path>
+    <path>
+      <move select="Stand" beats="4.5"/>
+      <move select="Dodge Left" beats="4"/>
+      <move select="Swing Left"/>
+    </path>
+  </tam>
+
+  <tam title="Left 3/4 Mix" from="Facing Diamonds"
+       formation="Diamonds Facing LH Girl Points" parts="4.5;4">
+    <path>
+      <move select="Cast Left"/>
+      <move select="Run Left" beats="4" scaleY="2"/>
+    </path>
+    <path>
+      <move select="Stand" beats="4.5"/>
+      <move select="Dodge Right" beats="4"/>
+      <move select="Swing Right"/>
+    </path>
+    <path>
+      <move select="Cast Left"/>
+      <move select="Run Left" beats="4" scaleY="2"/>
+    </path>
+    <path>
+      <move select="Stand" beats="4.5"/>
+      <move select="Dodge Right" beats="4"/>
+      <move select="Swing Right"/>
+    </path>
+  </tam>
+
+  <tam title="Left 3/4 Mix" from="Point-to-Point Diamonds"
+       formation="Diamonds LH PTP Girl Points" parts="4.5;4">
+    <path>
+      <move select="Cast Left"/>
+      <move select="Run Left" beats="4" scaleY=".75"/>
+    </path>
+    <path>
+      <move select="Stand" beats="4.5"/>
+      <move select="Dodge Left" beats="4" scaleY=".25"/>
+      <move select="Swing Left" scaleX=".5" scaleY=".5"/>
+    </path>
+    <path>
+      <move select="Cast Left"/>
+      <move select="Run Left" beats="4" scaleY="1.75"/>
+    </path>
+    <path>
+      <move select="Stand" beats="4.5"/>
+      <move select="Dodge Left" beats="4" scaleY="1.25"/>
+      <move select="Swing Left" scaleX=".5" scaleY=".5"/>
+    </path>
+  </tam>
+
+  <tam title="Left 3/4 Mix" from="Alamo Ring"
+       formation="Alamo Wave" parts="4.5;4">
+    <path>
+      <move select="Sxtnth Right" />
+      <move select="Cast Left"/>
+      <move select="Dodge Left" beats="4" scaleY="1.2"/>
+      <move select="Swing Left"/>
+    </path>
+    <path>
+      <move select="Sxtnth Left" />
+      <move select="Cast Left"/>
+      <move select="Run Right" beats="4" scaleY="2.25"/>
+    </path>
+    <path>
+      <move select="Sxtnth Right" />
+      <move select="Cast Left"/>
+      <move select="Dodge Left" beats="4" scaleY="1.2"/>
+      <move select="Swing Left"/>
+    </path>
+    <path>
+      <move select="Sxtnth Left" />
+      <move select="Cast Left"/>
+      <move select="Run Right" beats="4" scaleY="2.25"/>
     </path>
   </tam>
 

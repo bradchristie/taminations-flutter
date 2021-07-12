@@ -34,6 +34,30 @@
     </path>
   </tam>
 
+  <tam title="1/4 Mix" from="Right-Hand Diamond" formation="Diamond RH" parts="1.5;4">
+    <path>
+      <move select="Stand" beats="1.5"/>
+      <move select="Dodge Right" beats="4"/>
+      <move select="Swing Right"/>
+    </path>
+    <path>
+      <move select="Hinge Right"/>
+      <move select="Run Right" beats="4" scaleY="2"/>
+    </path>
+  </tam>
+
+  <tam title="1/4 Mix" from="Facing Diamond" formation="Diamond Facing RH" parts="1.5;4">
+    <path>
+      <move select="Stand" beats="1.5"/>
+      <move select="Dodge Left" beats="4"/>
+      <move select="Swing Left"/>
+    </path>
+    <path>
+      <move select="Hinge Right"/>
+      <move select="Run Right" beats="4" scaleY="2"/>
+    </path>
+  </tam>
+
   <tam title="1/4 Mix" from="Right-Hand Waves" formation="Ocean Waves RH BGBG"
        parts="1.5;4">
     <path>
@@ -114,6 +138,50 @@
       <move select="Stand" beats="1.5"/>
       <move select="Dodge Right" beats="4"/>
       <move select="Swing Right"/>
+    </path>
+  </tam>
+
+  <tam title="1/4 Mix" from="Facing Diamonds"
+       formation="Diamonds Facing Girl Points" parts="1.5;4">
+    <path>
+      <move select="Hinge Right"/>
+      <move select="Run Right" beats="4" scaleY="2"/>
+    </path>
+    <path>
+      <move select="Stand" beats="1.5"/>
+      <move select="Dodge Left" beats="4"/>
+      <move select="Swing Left"/>
+    </path>
+    <path>
+      <move select="Hinge Right"/>
+      <move select="Run Right" beats="4" scaleY="2"/>
+    </path>
+    <path>
+      <move select="Stand" beats="1.5"/>
+      <move select="Dodge Left" beats="4"/>
+      <move select="Swing Left"/>
+    </path>
+  </tam>
+
+  <tam title="1/4 Mix" from="Point-to-Point Diamonds"
+       formation="Diamonds RH PTP Girl Points" parts="4.5;4">
+    <path>
+      <move select="Hinge Right"/>
+      <move select="Run Right" beats="4" scaleY=".75"/>
+    </path>
+    <path>
+      <move select="Stand" beats="1.5"/>
+      <move select="Dodge Right" beats="4" scaleY=".25"/>
+      <move select="Swing Right" scaleX=".5" scaleY=".5"/>
+    </path>
+    <path>
+      <move select="Hinge Right"/>
+      <move select="Run Right" beats="4" scaleY="1.75"/>
+    </path>
+    <path>
+      <move select="Stand" beats="1.5"/>
+      <move select="Dodge Right" beats="4" scaleY="1.25"/>
+      <move select="Swing Right" scaleX=".5" scaleY=".5"/>
     </path>
   </tam>
 

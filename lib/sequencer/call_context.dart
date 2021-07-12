@@ -918,7 +918,7 @@ class CallContext {
   ///  which are rotated together
   ///  unless asym is set
   ///  as this is required for XML mapping to work
-  Future<CallContext>? rotatePhantoms(String call,
+  Future<CallContext?> rotatePhantoms(String call,
       {int rotate=180, bool asym=false}) async {
     var phantoms = dancers.where((it) => it.gender == Gender.PHANTOM).toList();
     //  Compute number of possibilities
