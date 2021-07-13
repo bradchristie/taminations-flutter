@@ -411,8 +411,7 @@ class Dancer implements Comparable<Dancer> {
       c.translate(txtext.location.x,txtext.location.y);
       c.rotate(txtext.angle);
       c.scale(-0.1,0.1);
-      var textSize = 7.0;
-      _tp.paint(c, Offset(-textSize*0.35,-textSize*0.55));
+      _tp.paint(c, Offset(-_tp.width/2,-_tp.height/2));
     }
     c.restore();
   }
