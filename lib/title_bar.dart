@@ -112,7 +112,7 @@ class TitleBar extends fm.StatelessWidget {
                 )),
 
                 //  Audio button to say the title
-                if (audioAsset.isNotEmpty) fm.TextButton(onPressed: () {
+                if (audioAsset.isNotEmpty && TamUtils.canSpeak) fm.TextButton(onPressed: () {
                     playCall('assets/$audioAsset');
                  },child: fm.Icon(
                     fm.Icons.volume_up_sharp,

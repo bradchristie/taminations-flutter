@@ -195,10 +195,10 @@ class _StartPracticeFrameState extends fm.State<StartPracticeFrame> {
                                 settings.practiceSpeed = value ?? 'Slow';
                               });
                             }),
-                        if (TamUtils.isTouchDevice())
+                        if (TamUtils.isTouchDevice)
                           fm.Text(
                               'Primary Control', style: fm.TextStyle(fontSize: 20)),
-                        if (TamUtils.isTouchDevice())
+                        if (TamUtils.isTouchDevice)
                           _StartPracticeRadioGroup(
                               groupValue: settings.primaryControl,
                               values: ['Left Finger', 'Right Finger'],
@@ -207,10 +207,10 @@ class _StartPracticeFrameState extends fm.State<StartPracticeFrame> {
                                   settings.primaryControl = value ?? 'Right Finger';
                                 });
                               }),
-                        if (!TamUtils.isTouchDevice())
+                        if (!TamUtils.isTouchDevice)
                           fm.Text(
                               'Mouse Control', style: fm.TextStyle(fontSize: 20)),
-                        if (!TamUtils.isTouchDevice())
+                        if (!TamUtils.isTouchDevice)
                           _StartPracticeRadioGroup(
                               groupValue: settings.mouseControl,
                               values: ['Dancer moves only when mouse button is pressed',

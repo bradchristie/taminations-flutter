@@ -579,7 +579,7 @@ class _SequencerDancerColorsWidgetState extends fm.State<SequencerDancerColorsWi
                 )),
             if (settings.showDancerColors == 'By Couple')
                 _SettingText('You can also set a single dancer color by ' +
-                    (TamUtils.isTouchDevice() ? 'long-pressing' : 'right-clicking') +
+                    (TamUtils.isTouchDevice ? 'long-pressing' : 'right-clicking') +
                     ' on the dancer.'),
             fm.Container(
               height: 3,

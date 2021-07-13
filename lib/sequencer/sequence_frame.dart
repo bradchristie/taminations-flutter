@@ -145,7 +145,7 @@ class _SequencerEditLineState extends fm.State<SequencerEditLine> {
   void initState() {
     super.initState();
     later(() {
-      if (!TamUtils.isTouchDevice())
+      if (!TamUtils.isTouchDevice)
         focusNode.requestFocus();
     });
     speechProvider = SpeechToTextProvider(SpeechToText());
@@ -237,7 +237,7 @@ class _SequencerEditLineState extends fm.State<SequencerEditLine> {
 
             //   Accept keyboard input if web site
             //  or if user has tapped box on a device
-            if (virtualKeyboard.isVisible || !TamUtils.isTouchDevice())
+            if (virtualKeyboard.isVisible || !TamUtils.isTouchDevice)
               fm.Expanded(
                 child: fm.TextField(
                   key: fm.Key('Sequencer Input'),
@@ -279,7 +279,7 @@ class _SequencerEditLineState extends fm.State<SequencerEditLine> {
               ),
 
             //  Mic icon for touch devices to do voice input
-            if (TamUtils.isTouchDevice())
+            if (TamUtils.canListen)
               fm.TextButton(onPressed: () {
                     speechProvider.initialize().whenComplete(() {
                       if (speechProvider.isAvailable) {

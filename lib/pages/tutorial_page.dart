@@ -78,7 +78,7 @@ class TutorialModel extends PracticeModel {
 
   @override
   void nextDialog(fm.BuildContext context, DanceModel danceModel) {
-    final hints = TamUtils.isTouchDevice() ? touchHints : mouseHints;
+    final hints = TamUtils.isTouchDevice ? touchHints : mouseHints;
     final settings = pp.Provider.of<Settings>(context,listen: false);
     final fingers = [
       (settings.primaryControl=='Left Finger') ? 'Left' : 'Right',

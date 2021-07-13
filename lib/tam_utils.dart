@@ -346,18 +346,16 @@ class TamUtils {
   static String platform() {
     try {
       final platform = LocalPlatform();
-      if (platform.isIOS)
-        return 'ios';
-      else if (platform.isAndroid)
-        return 'android';
-      else
-        return 'unknown';
+      return platform.operatingSystem;
       //  Currently web returns LocalPlatform but does not have
-      //  an operating system so isXX throws UnsupportedError
+      //  an operating system so .operatingSystem throws UnsupportedError
     } on UnsupportedError catch (_) { }
     return 'web';
   }
 
-  static bool isTouchDevice() => platform() != 'web';
+  static bool get isTouchDevice => platform().matches('(android|ios)'.r);
+  static bool get canListen => platform().matches('(android|ios)'.r);
+  static bool get canSpeak => platform().matches('(android|ios|web)'.r);
+
 
 }
