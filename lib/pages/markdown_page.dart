@@ -18,7 +18,6 @@
  */
 
 import 'package:flutter/material.dart' as fm;
-import 'package:flutter/services.dart' show rootBundle;
 import 'package:provider/provider.dart' as pp;
 import 'package:flutter_markdown/flutter_markdown.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -219,7 +218,7 @@ class _MarkdownFrameState extends fm.State<MarkdownFrame> {
   void _loadHtmlFromAssets(Settings settings,String htmllink) async {
     final localizedAssetName = settings.getLanguageLink(htmllink.replaceFirst('.html', '')) + '.html';
     setState(() {
-      _htmlFuture = rootBundle.loadString('assets/$localizedAssetName');
+      _htmlFuture = TamUtils.getAsset(localizedAssetName);
       currentLink = htmllink;
     });
   }
@@ -296,7 +295,7 @@ class _MarkdownFrameState extends fm.State<MarkdownFrame> {
         .replaceAllMapped('<img.*?src="(http.*?)".*?/>'.rd,
             (m) => '![alt](${m[1]})')
         .replaceAllMapped('<img.*?src="(.*?)".*?/>'.rd,
-            (m) => '![alt](resource:assets/$_dir/${m[1]})')
+            (m) => '![alt](resource:assets/${TamUtils.linkSSD(_dir+'/'+m[1]!)})')
     //  lists
         .replaceAllMapped('<ul.*?>(.*)</ul>'.rd,
             (m) => m[1]!.replaceAll('<li>'.r, '- '))
