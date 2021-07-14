@@ -40,7 +40,8 @@
     </path>
   </tam>
 
-  <tam title="Reverse Half Sashay" group="Reverse" formation="Facing Couples">
+  <tam title="Reverse Half Sashay" group="Reverse"
+       formation="Facing Couples" sequencer="no">
     <path>
       <move select="Sashay Right" beats="4" />
     </path>

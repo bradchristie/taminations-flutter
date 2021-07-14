@@ -133,7 +133,8 @@
     </path>
   </tam>
 
-  <tam title="Rollaway" from="Facing Couples" formation="Facing Couples">
+  <tam title="Rollaway" from="Facing Couples"
+       formation="Facing Couples" sequencer="no">
     <path>
       <move select="Dodge Right" hands="gripright" />
     </path>
