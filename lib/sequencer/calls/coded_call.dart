@@ -59,6 +59,7 @@ import 'b1/face.dart';
 import 'b1/half_sashay.dart';
 import 'b1/pass_thru.dart';
 import 'b1/pull_by.dart';
+import 'b1/rollaway.dart';
 import 'b1/separate.dart';
 import 'b1/split_circulate.dart';
 import 'b1/square_thru.dart';
@@ -326,6 +327,7 @@ abstract class CodedCall extends Call {
     'relocate(.*)'.ri: (name) => Relocate(name),
     '(left|right)?ripple.*'.ri: (name) => Ripple(name),
     '(and)?roll'.ri: (name) => Roll(name),
+    '(reverse)?rollaway'.ri : (name) => Rollaway(name),
     '(left|right)rolltoawave'.ri: (name) => RollToAWave(name),
     'rotary.*'.ri: (name) => Rotary(name),
     'rotate(14|12|34)'.ri: (name) => Rotate(name),

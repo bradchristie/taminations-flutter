@@ -33,8 +33,7 @@
 
   <tam title="California Twirl"
        from="Couples Facing Out"
-       formation="Couples Facing Out" sequencer="gender-specific"
-       fractions="" >
+       formation="Couples Facing Out" sequencer="no">
     <path>
       <move select="Flip Left" hands="gripleft" />
     </path>
@@ -45,8 +44,7 @@
 
   <tam title="California Twirl"
        from="Lines Facing Out"
-       formation="Lines Facing Out" sequencer="gender-specific"
-       fractions="" >
+       formation="Lines Facing Out" sequencer="gender-specific">
     <path>
       <move select="Flip Left" hands="gripleft" />
     </path>
@@ -63,8 +61,7 @@
 
   <tam title="California Twirl"
        from="Completed Double Pass Thru"
-       formation="Completed Double Pass Thru" sequencer="gender-specific"
-       fractions="" >
+       formation="Completed Double Pass Thru" sequencer="gender-specific">
     <path>
       <move select="Flip Left" hands="gripleft" />
     </path>
