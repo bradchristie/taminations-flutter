@@ -407,7 +407,7 @@
   <tam title="Partner Trade"
        from="Facing Couples"
        formation="Facing Couples"
-       difficulty="2">
+       difficulty="2" sequencer="no">
     <path>
       <move select="Run Right" />
     </path>

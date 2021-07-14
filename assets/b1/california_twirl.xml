@@ -22,7 +22,7 @@
 -->
 <tamination title="California Twirl">
 
-  <tam title="California Twirl" from="Facing Couples" formation="Facing Couples" sequencer="gender-specific">
+  <tam title="California Twirl" from="Facing Couples" formation="Facing Couples" sequencer="no">
     <path>
       <move select="Run Right" hands="gripright" />
     </path>
