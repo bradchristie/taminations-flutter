@@ -17,6 +17,7 @@
   along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 */
+import 'package:taminations/sequencer/calls/a1/six_two_acey_deucey.dart';
 
 import '../../extensions.dart';
 import '../../tam_utils.dart';
@@ -343,6 +344,7 @@ abstract class CodedCall extends Call {
     'singlecrossandwheel'.ri: (_) => SingleCrossAndWheel(),
     'singlecrosstradeandwheel'.ri: (_) => SingleCrossTradeAndWheel(),
     '(left)?singlewheel'.ri: (name) => SingleWheel(name),
+    '62aceydeucey'.ri: (_) => SixTwoAceyDeucey(),
     'slide'.ri: (_) => Slide(),
     'slide(in|out|left|right)'.ri: (name) => SlideDir(name),
     'slidethru'.ri: (_) => SlideThru(),
