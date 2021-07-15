@@ -50,6 +50,8 @@ class Fraction extends Action {
     //  Steal the next call off the stack
     _call = ctx.callstack[stackIndex+1];
     //  For XML calls there should be an explicit number of parts
+    if (_numerator < 1 || _numerator >= _denominator)
+      throw CallError('Use fractions between 0 and 1.');
     if (_call is XMLCall) {
       //  Figure out how many beats are in the fractional call
       //  Calls could have either "parts" or "fractions"
@@ -60,8 +62,7 @@ class Fraction extends Action {
         var numParts = partnums.length + 1;
         if (numParts % _denominator != 0)
           throw CallError('Unable to divide ${_call.name} into $_denominator parts.' );
-        if (_numerator < 1 || _numerator >= _denominator)
-          throw CallError('Don''t know how to $name.');
+        print('Numerator: $_numerator   Denominator: $_denominator');
         var partsToDo = numParts * _numerator ~/ _denominator;
         _partBeats = partnums.take(partsToDo).map((it) => it.d).toList().sum();
       }
