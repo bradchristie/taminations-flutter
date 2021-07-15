@@ -273,13 +273,16 @@ class _AnimationFrameState extends fm.State<AnimationFrame>
                                     child: fm.Center(), // so CustomPaint gets sized correctly
                                   ),
                                   //  Note that fades out as animation starts
-                                  fm.Opacity(
-                                    opacity: ((-beater.beat)/2.0).coerceIn(0.0, 1.0),
-                                      child:fm.Container(
-                                          color: Color.WHITE,
-                                          child:fm.Text(danceModel.animationNote,
-                                              style:fm.TextStyle(fontSize:20))
-                                      )),
+                                  if (danceModel.animationNote.isNotBlank)
+                                    pp.Consumer<BeatNotifier>(
+                                      builder: (context,beater2,_) =>
+                                    fm.Opacity(
+                                        opacity: ((-beater2.beat)/2.0).coerceIn(0.0, 1.0),
+                                        child:fm.Container(
+                                            color: Color.WHITE,
+                                            child:fm.Text(danceModel.animationNote,
+                                                style:fm.TextStyle(fontSize:20))
+                                        ))),
                                   //  Show if Loop or Speed are set other than default
                                   fm.Positioned(
                                     bottom: 0.0,
