@@ -42,7 +42,7 @@ class SequencerModel extends fm.ChangeNotifier {
   String partString = '';
   String errorString = '';
   DanceModel animation;
-  int currentCall = 0;
+  int currentCall = -1;
 
   SequencerModel(fm.BuildContext context) :
         animation = DanceModel(context) {

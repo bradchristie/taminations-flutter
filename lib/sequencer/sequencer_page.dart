@@ -80,6 +80,7 @@ class _SequencerPageState extends fm.State<SequencerPage> {
     if (tamState.formation != null && tamState.formation!.isNotBlank) {
       formationSetByState = true;
       model.setStartingFormation(tamState.formation!).whenComplete(() {
+        model.reset();
         if (tamState.calls != null && tamState.calls!.isNotBlank)
           model.paste(tamState.calls!.replaceAll(';', '\n'));
       });
