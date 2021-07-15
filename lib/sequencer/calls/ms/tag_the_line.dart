@@ -24,11 +24,12 @@ class TagTheLine extends Action {
 
   @override
   var level = LevelData.MS;
-  TagTheLine() : super('Tag the Line');
+  TagTheLine(name) : super(name);
 
   @override
   Future<void> perform(CallContext ctx, [int i = 0]) async {
-    await ctx.applyCalls('34tag');
+    final left = name.startsWith('Left') ? 'Left' : '';
+    await ctx.applyCalls('$left 34tag');
     ctx.contractPaths();
     await ctx.applyCalls('extend');
   }

@@ -374,7 +374,7 @@ abstract class CodedCall extends Call {
     'switchtheline'.ri: (_) => SwitchTheLine(),
 
     '(left)?tagback(toawave)?'.r: (name) => TagBack(name),
-    'tagtheline'.ri: (_) => TagTheLine(),
+    '(left)?tagtheline'.ri: (name) => TagTheLine(name),
     '(left|vertical){0,2}tagyour((criss)?cross)?neighbor'.ri:
         (name) => TagYourNeighbor(name),
     //  Tandem concept not tandem-based triangle
