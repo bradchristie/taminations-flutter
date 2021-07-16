@@ -359,6 +359,39 @@
   </tam>
 
   <tam title="Step and Slide"
+       from="Tidal Two-Faced Line" formation="Two-Faced Tidal Line RH">
+    <path>
+      <move select="Dodge Right"  offsetY="1.5" />
+    </path>
+    <path>
+      <move select="Extend Left" beats="3" scaleX="3" scaleY=".5" />
+    </path>
+    <path>
+      <move select="Extend Left" beats="3" scaleX="3" scaleY=".5" />
+    </path>
+    <path>
+      <move select="Dodge Right"  offsetY="1.5" />
+    </path>
+  </tam>
+
+  <tam title="Step and Slide"
+       from="Tidal Two-Faced Line"
+       formation="Two-Faced Tidal Line LH" display="no">
+    <path>
+      <move select="Dodge Left"  offsetY="-1.5" />
+    </path>
+    <path>
+      <move select="Extend Right" beats="3" scaleX="3" scaleY=".5" />
+    </path>
+    <path>
+      <move select="Extend Right" beats="3" scaleX="3" scaleY=".5" />
+    </path>
+    <path>
+      <move select="Dodge Left"  offsetY="-1.5" />
+    </path>
+  </tam>
+
+  <tam title="Step and Slide"
        from="Tidal Inverted Line"
        formation="Tidal Inverted Line RH">
     <path>
@@ -391,5 +424,7 @@
       <move select="Dodge Right"  offsetY="1.5" />
     </path>
   </tam>
+
+
 
 </tamination>
