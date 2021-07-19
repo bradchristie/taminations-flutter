@@ -318,6 +318,7 @@ abstract class CodedCall extends Call {
     'point'.ri: (_) => Points(),
     'promenadehome'.ri: (name) => PromenadeHome(name),
     'swing(your)?corner(and)?promenade(home)?'.ri: (name) => PromenadeHome(name),
+    'promenade(with)?(your)?corner'.ri: (name) => PromenadeHome(name),
     '(left)?pullby'.ri: (name) => PullBy(name),
 
     '14(in|out)'.ri: (name) => QuarterInOut(name),

@@ -97,15 +97,16 @@ class PromenadeHome extends Action {
     var startCouple = _startPoints[num-1];
     var startLocation = startCouple * (d.gender == Gender.BOY ? 1.0 : 1.5);
     var startAngle = startCouple.angle + pi/2;
-    if (name.contains('Corner'))
+    var extraMoves = Path();
+    if (name.contains('Corner') && name.contains('Swing')) {
       startAngle = d.gender == Gender.BOY
           ? startCouple.angle
           : startCouple.angle + pi;
-    var extraMoves = Path();
-    if (name.contains('Corner'))
       extraMoves = TamUtils.getMove('ssqtr') + TamUtils.getMove('ssqtr') +
           TamUtils.getMove('ssqtr') + TamUtils.getMove('ssqtr') +
-          TamUtils.getMove(d.gender == Gender.BOY ? 'Quarter Left' : 'Quarter Right');
+          TamUtils.getMove(
+              d.gender == Gender.BOY ? 'Quarter Left' : 'Quarter Right');
+    }
     return ctx.moveToPosition(d, startLocation, startAngle) + extraMoves;
   }
 
