@@ -162,6 +162,108 @@
     </path>
   </tam>
 
+  <tam title="Single Wheel"
+       from="Right-Hand Tidal Wave"
+       formation="Tidal Wave RH BGGB">
+    <path>
+      <move select="U-Turn Right" beats="4" offsetX="1.5" offsetY="-.5"/>
+    </path>
+    <path>
+      <move select="U-Turn Right" beats="4" offsetX="1.5" offsetY="-.5"/>
+    </path>
+    <path>
+      <move select="U-Turn Right" beats="4" offsetX="1.5" offsetY="-.5"/>
+    </path>
+    <path>
+      <move select="U-Turn Right" beats="4" offsetX="1.5" offsetY="-.5"/>
+    </path>
+  </tam>
+
+  <tam title="Single Wheel"
+       from="Left-Hand Tidal Wave"
+       formation="Tidal Wave LH BGGB">
+    <path>
+      <move select="U-Turn Left" beats="4" offsetX="1.5" offsetY=".5"/>
+    </path>
+    <path>
+      <move select="U-Turn Left" beats="4" offsetX="1.5" offsetY=".5"/>
+    </path>
+    <path>
+      <move select="U-Turn Left" beats="4" offsetX="1.5" offsetY=".5"/>
+    </path>
+    <path>
+      <move select="U-Turn Left" beats="4" offsetX="1.5" offsetY=".5"/>
+    </path>
+  </tam>
+
+  <tam title="Single Wheel"
+       from="Right-Hand Tidal Two-Faced Line"
+       formation="Two-Faced Tidal Line RH">
+    <path>
+      <move select="U-Turn Right" beats="4" offsetX="1.5" offsetY="-.5"/>
+    </path>
+    <path>
+      <move select="U-Turn Left" beats="4" offsetX="-1.5" offsetY=".5"/>
+    </path>
+    <path>
+      <move select="U-Turn Left" beats="4" offsetX="-1.5" offsetY=".5"/>
+    </path>
+    <path>
+      <move select="U-Turn Right" beats="4" offsetX="1.5" offsetY="-.5"/>
+    </path>
+  </tam>
+
+  <tam title="Single Wheel"
+       from="Left-Hand Tidal Two-Faced Line"
+       formation="Two-Faced Tidal Line LH">
+    <path>
+      <move select="U-Turn Left" beats="4" offsetX="-1.5" offsetY=".5"/>
+    </path>
+    <path>
+      <move select="U-Turn Right" beats="4" offsetX="1.5" offsetY="-.5"/>
+    </path>
+    <path>
+      <move select="U-Turn Right" beats="4" offsetX="1.5" offsetY="-.5"/>
+    </path>
+    <path>
+      <move select="U-Turn Left" beats="4" offsetX="-1.5" offsetY=".5"/>
+    </path>
+  </tam>
+
+  <tam title="Single Wheel"
+       from="Right-Hand Tidal Line"
+       formation="Tidal Line RH">
+    <path>
+      <move select="U-Turn Right" beats="4" offsetX="1.5" offsetY="-.5"/>
+    </path>
+    <path>
+      <move select="U-Turn Left" beats="4" offsetX="-1.5" offsetY=".5"/>
+    </path>
+    <path>
+      <move select="U-Turn Right" beats="4" offsetX="1.5" offsetY="-.5"/>
+    </path>
+    <path>
+      <move select="U-Turn Left" beats="4" offsetX="-1.5" offsetY=".5"/>
+    </path>
+  </tam>
+
+  <tam title="Single Wheel"
+       from="Left-Hand Tidal Line"
+       formation="Tidal Line LH">
+    <path>
+      <move select="U-Turn Right" beats="4" offsetX="1.5" offsetY="-.5"/>
+    </path>
+    <path>
+      <move select="U-Turn Left" beats="4" offsetX="-1.5" offsetY=".5"/>
+    </path>
+    <path>
+      <move select="U-Turn Right" beats="4" offsetX="1.5" offsetY="-.5"/>
+    </path>
+    <path>
+      <move select="U-Turn Left" beats="4" offsetX="-1.5" offsetY=".5"/>
+    </path>
+  </tam>
+
   <tam title="Single Wheel 3 Times"
        from="Tidal Wave"
        formation="Tidal Wave RH BGGB"
