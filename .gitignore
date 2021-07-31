@@ -32,6 +32,7 @@
 /build/
 /out/
 /gen/
+/google_fonts/
 pubspec.lock
 
 # Web related

@@ -147,6 +147,7 @@ class Dancer implements Comparable<Dancer> {
   static const NUMBERS_DANCERS = 1;
   static const NUMBERS_COUPLES = 2;
   static const NUMBERS_NAMES = 3;   //  sequencer only
+  static const NUMBER_HEIGHT = 8.0;
 
   static const rect = fm.Rect.fromLTWH(-0.5, -0.5, 1.0, 1.0);
   static var rrect = fm.RRect.fromRectAndRadius(rect,
@@ -196,7 +197,8 @@ class Dancer implements Comparable<Dancer> {
         if (showNumber == NUMBERS_COUPLES) t = numberCouple;
         if (showNumber == NUMBERS_NAMES) t = name;
         _span = TextSpan(text: t,
-            style:TextStyle(fontSize: 8, color:fm.Colors.black));
+            //style:GoogleFonts.roboto(fontSize: NUMBER_HEIGHT, color: fm.Colors.black));
+            style:TextStyle(fontSize: NUMBER_HEIGHT, color:fm.Colors.black));
         _tp = TextPainter(text: _span,
             textAlign: TextAlign.center,
             textDirection: fm.TextDirection.ltr)..layout();
@@ -401,7 +403,6 @@ class Dancer implements Comparable<Dancer> {
     else
       c.drawRRect(rrect, p);
     //  Draw number if on
-
     if (reallyShowNumbers) {
       //  The dancer is rotated relative to the display, but of course
       //  the dancer number should not be rotated.

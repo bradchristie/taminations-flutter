@@ -19,6 +19,7 @@
 */
 
 import 'package:flutter/material.dart' as fm;
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart' as pp;
 import 'package:flutter/services.dart';
 import 'package:taminations/beat_notifier.dart';
@@ -87,6 +88,8 @@ class _TaminationsAppState extends fm.State<TaminationsApp> {
               snapshot.hasData ?
               fm.MaterialApp.router(
                 theme: fm.ThemeData(
+                  fontFamily: 'Roboto',
+                  textTheme: GoogleFonts.robotoTextTheme(),
                   scrollbarTheme: fm.ScrollbarThemeData(
                     thumbColor: fm.MaterialStateColor.resolveWith((states) =>
                     Color.TRANSPARENTGREY),
