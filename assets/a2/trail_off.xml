@@ -322,7 +322,7 @@
 
   <tam title="Trail Off" from="T-Bones 2" formation="T-Bone RDRD">
     <path>
-      <move select="Run Right" beats="4" offsetX="-1" scaleY="2"/>
+      <move select="Run Right" beats="6" offsetX="-1"/>
     </path>
     <path>
       <move select="Forward" beats="2"/>
@@ -339,7 +339,7 @@
 
   <tam title="Trail Off" from="T-Bones 3" formation="T-Bone DLDL">
     <path>
-      <move select="Run Left" beats="4" offsetX="-1" scaleY="2"/>
+      <move select="Run Left" beats="6" offsetX="-1"/>
     </path>
     <path>
       <move select="Forward" beats="2"/>
