@@ -73,6 +73,30 @@
     </path>
   </tam>
 
+  <tam title="All 4 Couples Left Chase" group="All 4 Couples"
+       formation="Static Facing Out">
+    <path>
+      <move select="Run Left" scaleY=".5" offsetX="-2" />
+      <move select="Forward 3" />
+      <move select="Run Left" beats="4" scaleY="1.5" offsetX="1" />
+    </path>
+    <path>
+      <move select="Run Left" beats="4" scaleY="1.5" offsetX="-1" />
+      <move select="Forward 3" />
+      <move select="Extend Left" beats="3" scaleX="2"/>
+    </path>
+    <path>
+      <move select="Run Left" scaleY=".5" offsetX="-2" />
+      <move select="Forward 3" />
+      <move select="Run Left" beats="4" scaleY="1.5" offsetX="1" />
+    </path>
+    <path>
+      <move select="Run Left" beats="4" scaleY="1.5" offsetX="-1" />
+      <move select="Forward 3" />
+      <move select="Extend Left" beats="3" scaleX="2"/>
+    </path>
+  </tam>
+
   <tam title="All 4 Couples Left Touch a Quarter" group="All 4 Couples"
        formation="Static Square">
     <path>
@@ -692,6 +716,57 @@
       <move select="Beau Wheel" offsetX="1"/>
     </path>
   </tam>
+
+  <!-- All 8 Chase Right / Left Chase for sequencer
+       as it could be entered that way instead of All 4 Couples -->
+  <tam title="All 8 Chase Right" group="All 8"
+       formation="Static Facing Out" display="no">
+    <path numbers="2 7">
+      <move select="Run Right" beats="4" scaleY="1.5" offsetX="-1" />
+      <move select="Forward 3" />
+      <move select="Extend Right" beats="3" scaleX="2"/>
+    </path>
+    <path numbers="1 8">
+      <move select="Run Right" scaleY=".5" offsetX="-2" />
+      <move select="Forward 3" />
+      <move select="Run Right" beats="4" scaleY="1.5" offsetX="1" />
+    </path>
+    <path numbers="6 3">
+      <move select="Run Right" beats="4" scaleY="1.5" offsetX="-1" />
+      <move select="Forward 3" />
+      <move select="Extend Right" beats="3" scaleX="2"/>
+    </path>
+    <path numbers="4 5">
+      <move select="Run Right" scaleY=".5" offsetX="-2" />
+      <move select="Forward 3" />
+      <move select="Run Right" beats="4" scaleY="1.5" offsetX="1" />
+    </path>
+  </tam>
+
+  <tam title="All 8 Left Chase" group="All 8"
+       formation="Static Facing Out" display="no">
+    <path>
+      <move select="Run Left" scaleY=".5" offsetX="-2" />
+      <move select="Forward 3" />
+      <move select="Run Left" beats="4" scaleY="1.5" offsetX="1" />
+    </path>
+    <path>
+      <move select="Run Left" beats="4" scaleY="1.5" offsetX="-1" />
+      <move select="Forward 3" />
+      <move select="Extend Left" beats="3" scaleX="2"/>
+    </path>
+    <path>
+      <move select="Run Left" scaleY=".5" offsetX="-2" />
+      <move select="Forward 3" />
+      <move select="Run Left" beats="4" scaleY="1.5" offsetX="1" />
+    </path>
+    <path>
+      <move select="Run Left" beats="4" scaleY="1.5" offsetX="-1" />
+      <move select="Forward 3" />
+      <move select="Extend Left" beats="3" scaleX="2"/>
+    </path>
+  </tam>
+
 
   <tam title="All 8 Crossfire" group="All 8">
     <formation>
