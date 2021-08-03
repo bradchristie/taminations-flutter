@@ -223,7 +223,7 @@
     </taminator>
   </tam>
 
-  <tam title="Alamo Swing Thru"
+  <tam title="Swing Thru"
        from="Alamo Wave"
        formation="Alamo Wave"
        parts="3.2" difficulty="1">
@@ -461,7 +461,7 @@
     </path>
   </tam>
 
-  <tam title="Alamo Left Swing Thru"
+  <tam title="Left Swing Thru"
        from="Alamo Wave"
        formation="Alamo Wave"
        parts="3.2" difficulty="2">
