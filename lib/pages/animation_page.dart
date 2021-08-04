@@ -176,6 +176,7 @@ class _AnimationFrameState extends fm.State<AnimationFrame>
           final iconSize = isSmall ? 16.0 : 24.0;
           final beater = pp.Provider.of<BeatNotifier>(context,listen: false);
           final painter = DancePainter(danceModel);
+          final isSequencer = appState.mainPage == MainPage.SEQUENCER;
           //  Update current part which will notify definition to change highlights
           later(() {
             highlightState.currentPart = danceModel.currentPart;
@@ -198,7 +199,7 @@ class _AnimationFrameState extends fm.State<AnimationFrame>
                       //  Dancer colors - first check individual color, then couple color
                       danceModel.setColors(appState.mainPage == MainPage.SEQUENCER
                           ? settings.showDancerColors!='None' : true);
-                      if (appState.mainPage == MainPage.SEQUENCER && settings.showDancerColors == 'Random')
+                      if (isSequencer && settings.showDancerColors == 'Random')
                         danceModel.setRandomColors(true);
                       else {
                         danceModel.setRandomColors(false);
@@ -239,7 +240,9 @@ class _AnimationFrameState extends fm.State<AnimationFrame>
                       };
 
                       //  Wrap dance area with widget to detect pointer events
-                      final beats = sequencerModel.calls.isNotEmpty ? sequencerModel.totalBeats().i.s : '';
+                      final beats = isSequencer && sequencerModel.calls.isNotEmpty
+                          ? sequencerModel.totalBeats().i.s
+                          : '';
                       //  Hook up mouse wheel
                       //  Need separate widget as GestureDetector doesn't handle it
                       return fm.Listener(
