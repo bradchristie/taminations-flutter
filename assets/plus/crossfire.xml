@@ -216,7 +216,7 @@
   </tam>
 
   <tam title="Crossfire"
-       from="Tidal Lines"
+       from="Tidal Line"
        formation="Tidal Line RH"
        difficulty="3">
     <path>
@@ -234,7 +234,7 @@
   </tam>
 
   <tam title="Crossfire"
-       from="Tidal Lines"
+       from="Tidal Line"
        formation="Tidal Line LH"
        difficulty="3" display="none">
     <path>
@@ -248,6 +248,42 @@
     </path>
     <path>
       <move select="Flip Right" beats="5" offsetX="-2" offsetY=".5" />
+    </path>
+  </tam>
+
+  <tam title="Crossfire"
+       from="Tidal Inverted Line"
+       formation="Tidal Inverted Line RH"
+       difficulty="3">
+    <path>
+      <move select="Run Right" beats="5" scaleX="2" offsetX="1.5" offsetY="-1"/>
+    </path>
+    <path>
+      <move select="Flip Left" beats="5" offsetX="-1.5" offsetY="-1" />
+    </path>
+    <path>
+      <move select="Run Right" beats="5" offsetX="-1.5"/>
+    </path>
+    <path>
+      <move select="Run Left" beats="5" offsetX="1.5"/>
+    </path>
+  </tam>
+
+  <tam title="Crossfire"
+       from="Tidal Inverted Line"
+       formation="Tidal Inverted Line LH"
+       difficulty="3" display="no">
+    <path>
+      <move select="Run Left" beats="5" offsetX="1.5"/>
+    </path>
+    <path>
+      <move select="Run Right" beats="5" offsetX="-1.5"/>
+    </path>
+    <path>
+      <move select="Flip Left" beats="5" offsetX="-1.5" offsetY="-1" />
+    </path>
+    <path>
+      <move select="Run Right" beats="5" scaleX="2" offsetX="1.5" offsetY="-1"/>
     </path>
   </tam>
 
