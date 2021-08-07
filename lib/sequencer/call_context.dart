@@ -1246,20 +1246,15 @@ class CallContext {
   }
 
   //  Move a dancer to a specific position (location and angle)
+  //  Location and angle are in the dance floor space
   Path moveToPosition(Dancer d, Vector location, double angle) {
-    var tohome = (location - d.location).rotate(-d.tx.angle);
-    var adiff = angle.angleDiff(d.tx.angle);
-    var turn = 'Stand';
-    if (adiff.isAround(pi/4)) turn = 'Eighth Left';
-    if (adiff.isAround(pi/2)) turn = 'Quarter Left';
-    if (adiff.isAround(3*pi/4)) turn = '3/8 Left';
-    if (adiff.isAround(pi)) turn = 'U-Turn Right';
-    if (adiff.isAround(-3*pi/4)) turn = '3/8 Right';
-    if (adiff.isAround(-pi/2)) turn = 'Quarter Right';
-    if (adiff.isAround(-pi/4)) turn = 'Eighth Right';
-    return TamUtils.getMove(turn)
-      ..changebeats(2.0)
-      ..skew(tohome.x, tohome.y);
+    //  Compute transform matrix to new location
+    final tohome = (location - d.location).rotate(-d.tx.angle);
+    final adiff = angle.angleDiff(d.tx.angle);
+    final t = Matrix.getTranslation(tohome) * Matrix.getRotation(adiff);
+    //  Get movement and path from transform
+    final fracMove = Movement.fromTransform(t,beats: 2.0);
+    return Path.fromMovement(fracMove);
   }
 
   //  This is useful for calls that depend on re-defining dancer types

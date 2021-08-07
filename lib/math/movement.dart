@@ -19,6 +19,7 @@
 */
 
 import 'dart:math';
+import 'package:taminations/common.dart';
 import 'package:xml/xml.dart';
 import 'bezier.dart';
 import '../extensions.dart';
@@ -89,6 +90,23 @@ class Movement {
         Vector(elem('x4').d,elem('y4').d)
       ]);
     }
+    return Movement(beats,hands,bt,br);
+  }
+
+  //  Construct a Movement that can move from one point to another
+  //  point along a straight line, and can turn a specific angle,
+  //  as given by a transform
+  factory Movement.fromTransform(Matrix t,
+      {double beats=2.0, int hands=Hands.NOHANDS}) {
+    //  Construct the translation bezier
+    final dist = t.location;
+    final bt = Bezier.fromPoints(Vector(0,0),dist/3.0,dist*2.0/3.0,dist);
+    //  Construct the rotation bezier
+    final angle = t.angle;
+    final dx = angle.abs() / 3.0;
+    final br = Bezier([Vector(0,0),Vector(dx,0),
+        Vector(sin(angle)-dx*cos(angle),1-(cos(angle)+dx*sin(angle))),
+        Vector(sin(angle),1-cos(angle))]);
     return Movement(beats,hands,bt,br);
   }
 
