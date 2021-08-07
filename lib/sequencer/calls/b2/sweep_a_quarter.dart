@@ -27,7 +27,7 @@ class SweepAQuarter extends Action {
 
   @override
   var level = LevelData.B2;
-  SweepAQuarter() : super('and Sweep a Quarter' );
+  SweepAQuarter(String name) : super(name);
 
   @override
   Future<void> perform(CallContext ctx, [int stackIndex=0]) async {
