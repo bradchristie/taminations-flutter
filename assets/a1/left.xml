@@ -39,6 +39,24 @@
     </path>
   </tam>
 
+  <tam title="Left Pass to the Center" group="Left"
+       formation="Ocean Waves LH GBBG">
+    <path>
+      <move select="Extend Left" beats="2" scaleY="2"/>
+      <move select="Belle Wheel" beats="4" scaleX="0.75"/>
+    </path>
+    <path>
+      <move select="Forward" beats="2"/>
+    </path>
+    <path>
+      <move select="Forward" beats="2"/>
+      <move select="Beau Wheel" beats="4" scaleX="0.5"/>
+    </path>
+    <path>
+      <move select="Extend Left" beats="2" scaleY="2"/>
+    </path>
+  </tam>
+
   <tamxref title="Left Swing Thru" group="Left"
            xref-link="b2/swing_thru"
            xref-title="Left Swing Thru"
