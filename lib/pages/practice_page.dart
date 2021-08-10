@@ -201,7 +201,7 @@ class _PracticeFrameState extends fm.State<PracticeFrame>
                                         color: Color.GRAY, fontSize: 180))
                             ),
                           if (beater.isFinished) fm.Positioned(
-                              top: 100.0,
+                              top: 20.0,
                               left: 20.0,
                               child: fm.Column(
                                 children: [
