@@ -405,7 +405,7 @@
   <call audio="a1/partner_tag.mp3" link="a1/partner_tag" title="Partner Tag"/>
   <call audio="a2/pass_and_roll.mp3" link="a2/pass_and_roll" title="Pass and Roll"/>
   <call link="c2/criss_cross_your_neighbor" title="Pass and Roll Your Criss Cross Neighbor"/>
-  <call link="c2/criss_cross_your_neighbor" title="Pass and Roll Your Cross Neighbor"/>
+  <call link="c1/cross_your_neighbor" title="Pass and Roll Your Cross Neighbor"/>
   <call audio="a2/pass_and_roll_your_neighbor.mp3" link="a2/pass_and_roll_your_neighbor"
         title="Pass and Roll Your Neighbor"/>
   <call audio="a1/pass_in.mp3" link="a1/pass_in" title="Pass In"/>
