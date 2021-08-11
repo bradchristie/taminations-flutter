@@ -28,7 +28,7 @@ class TwistAnything extends Action {
   @override
   Future<void> perform(CallContext ctx, [int stackIndex = 0]) async {
     //  Get "Anything" call
-    final anyCall = (name == 'the Line')
+    final anyCall = (name == 'Twist the Line')
         ? 'Star Thru'
         : name.replaceFirst('.*? and '.r, '');
 
