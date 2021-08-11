@@ -47,10 +47,11 @@ class Adjust extends Action {
 
   @override
   Future<void> perform(CallContext ctx, [int stackIndex=0]) async {
-    var fname = TamUtils.normalizeCall(name.replaceFirst('Adjust to (an?)? '.ri, '' ));
+    var fname = name.replaceFirst('Adjust to (an?)? '.ri, '' );
+    var fnorm = TamUtils.normalizeCall(fname);
     String? formation;
     for (var r in formationMap.keys) {
-      if (fname.matches(r))
+      if (fnorm.matches(r))
         formation = formationMap[r]!;
     }
     if (formation == null)
@@ -59,7 +60,8 @@ class Adjust extends Action {
     var mapping = ctx.matchFormations(ctx2,sexy:false,fuzzy:true,rotate:180,handholds:false, maxError : 3.0)
         ?? thrower(CallError('Unable to match formation to $fname'));
     var matchResult = ctx.computeFormationOffsets(ctx2,mapping!,delta:0.3);
-    ctx.adjustToFormationMatch(matchResult);
+    if (!ctx.adjustToFormationMatch(matchResult))
+      throw CallError('No adjustment to $fname needed.');
     ctx.noSnap();
   }
 

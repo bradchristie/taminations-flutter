@@ -876,12 +876,17 @@ class CallContext {
     }
   }
 
-  void adjustToFormationMatch(FormationMatchResult match) {
+  //  Given a match to a formation, adjust the dancer's last move
+  //  so it ends with that formation.
+  //  Returns true if any adjustment was made.
+  bool adjustToFormationMatch(FormationMatchResult match) {
+    var retval = false;
     for (var d in dancers)
       d.data.active = true;
     for (var i=0; i<dancers.length; i++) {
       var d = dancers[i];
       if (match.offsets[i].length > 0.01) {
+        retval = true;  // adjustment made
         //  Get the last movement
         Movement m;
         if (d.path.movelist.isNotEmpty)
@@ -896,6 +901,7 @@ class CallContext {
         d.animateToEnd();
       }
     }
+    return retval;
   }
 
   bool adjustToFormation(String fname, {int rotate = 180}) {
