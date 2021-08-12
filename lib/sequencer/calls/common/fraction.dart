@@ -62,7 +62,6 @@ class Fraction extends Action {
         var numParts = partnums.length + 1;
         if (numParts % _denominator != 0)
           throw CallError('Unable to divide ${_call.name} into $_denominator parts.' );
-        print('Numerator: $_numerator   Denominator: $_denominator');
         var partsToDo = numParts * _numerator ~/ _denominator;
         _partBeats = partnums.take(partsToDo).map((it) => it.d).toList().sum();
       }

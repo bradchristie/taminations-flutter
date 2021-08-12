@@ -647,6 +647,43 @@
     </path>
   </tam>
 
+  <tam title="Split Circulate" from="Eight Chain Thru"
+       formation="Eight Chain Thru" difficulty="2" fractions="2">
+    <path>
+      <move select="Extend Left" beats="2" scaleY="0.5"/>
+      <move select="Extend Right" beats="2" scaleY="0.5"/>
+    </path>
+    <path>
+      <move select="Extend Left" beats="2" scaleY="0.5"/>
+      <move select="Extend Right" beats="2" scaleY="0.5"/>
+    </path>
+    <path>
+      <move select="Extend Left" beats="2" scaleY="0.5"/>
+      <move select="Extend Right" beats="2" scaleY="0.5"/>
+    </path>
+    <path>
+      <move select="Extend Left" beats="2" scaleY="0.5"/>
+      <move select="Extend Right" beats="2" scaleY="0.5"/>
+    </path>
+  </tam>
+
+  <tam title="Split Circulate" from="Trade By" fractions="2"
+       formation="Trade By" difficulty="2">
+    <path>
+      <move select="Flip Left" beats="4"/>
+    </path>
+    <path>
+      <move select="Run Right" beats="4"/>
+    </path>
+    <path>
+      <move select="Quarter Left" beats="2" offsetX="-0.5" offsetY="1"/>
+      <move select="Quarter Left" beats="2" offsetX="1" offsetY="-0.5"/>
+    </path>
+    <path>
+      <move select="Run Right" beats="4" scaleX="0.5"/>
+    </path>
+  </tam>
+
   <tam title="Split Circulate"
        from="T-Bones"
        formation="T-Bone DLDL"
