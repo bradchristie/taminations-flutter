@@ -149,8 +149,7 @@
       <move select="Swing Left" scaleX=".75" scaleY=".5" hands="gripleft"/>
     </path>
     <taminator>
-       Many dancers will do a Grand Swing Thru if not
-       explicitly warned first.
+       Be careful not to do Grand Swing Thru
     </taminator>
   </tam>
 
@@ -258,6 +257,30 @@
       <move select="Sxtnth Right" hands="left"/>
       <move select="Swing Left" />
       <move select="Sxtnth Right" hands="left"/>
+    </path>
+  </tam>
+
+  <tam title="Swing Thru"
+       from="Facing Lines"
+       formation="Normal Lines"
+       parts="5" difficulty="2">
+    <path>
+      <move select="Extend Left" beats="2" scaleX="2" scaleY="0.5"/>
+      <move select="Swing Right" scaleX="0.5" scaleY="0.5"/>
+      <move select="Swing Left" scaleX="0.5" scaleY="0.5"/>
+    </path>
+    <path>
+      <move select="Extend Left" beats="2" scaleX="2" scaleY="0.5"/>
+      <move select="Swing Right" scaleX="0.5" scaleY="0.5"/>
+    </path>
+    <path>
+      <move select="Extend Left" beats="2" scaleX="2" scaleY="0.5"/>
+      <move select="Swing Right" scaleX="0.5" scaleY="0.5"/>
+      <move select="Swing Left" scaleX="0.5" scaleY="0.5"/>
+    </path>
+    <path>
+      <move select="Extend Left" beats="2" scaleX="2" scaleY="0.5"/>
+      <move select="Swing Right" scaleX="0.5" scaleY="0.5"/>
     </path>
   </tam>
 
@@ -498,5 +521,30 @@
       <move select="Sxtnth Left" hands="right"/>
     </path>
   </tam>
+
+  <tam title="Left Swing Thru"
+       from="Facing Lines"
+       formation="Normal Lines"
+       parts="5" difficulty="2">
+    <path>
+      <move select="Extend Right" beats="2" scaleX="2" scaleY="0.5"/>
+      <move select="Swing Left" scaleX="0.5" scaleY="0.5"/>
+    </path>
+    <path>
+      <move select="Extend Right" beats="2" scaleX="2" scaleY="0.5"/>
+      <move select="Swing Left" scaleX="0.5" scaleY="0.5"/>
+      <move select="Swing Right" scaleX="0.5" scaleY="0.5"/>
+    </path>
+    <path>
+      <move select="Extend Right" beats="2" scaleX="2" scaleY="0.5"/>
+      <move select="Swing Left" scaleX="0.5" scaleY="0.5"/>
+    </path>
+    <path>
+      <move select="Extend Right" beats="2" scaleX="2" scaleY="0.5"/>
+      <move select="Swing Left" scaleX="0.5" scaleY="0.5"/>
+      <move select="Swing Right" scaleX="0.5" scaleY="0.5"/>
+    </path>
+  </tam>
+
 
 </tamination>
