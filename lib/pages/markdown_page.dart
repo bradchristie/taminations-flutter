@@ -254,7 +254,7 @@ class _MarkdownFrameState extends fm.State<MarkdownFrame> {
     //  Remove abbrev/full sections not selected
         .replaceAll('<div class="($regSections) $notSelected">.*?</div>'.rd,'')
     //  Command examples get special treatment
-        .replaceAllMapped('<div class="command-examples.*?">.*?<b>(Command examples?)</b>(.*?)</div>'.rid,
+        .replaceAllMapped('<div class="command-examples.*?">.*?<b>(.*?)</b>(.*?)</div>'.rid,
         //  First the section header
             (m) => '# \n# \n#### ${m[1]}\n${m[2]}'
             //  Now each example
