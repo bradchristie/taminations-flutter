@@ -95,19 +95,16 @@
     </path>
   </tam>
 
-
   <tam title="Star Thru"
        from="Eight Chain Thru"
        formation="Eight Chain Thru" sequencer="gender-specific">
     <path>
       <move select="Extend Left" hands="gripright" scaleY=".5" />
       <move select="Quarter Right" hands="gripright" offsetX="1" offsetY=".5" />
-      <move select="Stand" hands="nohands" />
     </path>
     <path>
       <move select="Extend Left" hands="gripright" scaleY=".5" />
       <move select="Quarter Left" hands="gripright" offsetX="1" offsetY="-1.5" />
-      <move select="Stand" hands="nohands" />
     </path>
     <path>
       <move select="Extend Left" hands="gripright" scaleY=".5" />
