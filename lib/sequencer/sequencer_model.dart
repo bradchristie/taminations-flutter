@@ -73,25 +73,58 @@ class SequencerModel extends fm.ChangeNotifier {
   void setColor(String c, Settings settings) {
     errorString = '';
     final command = c.toLowerCase();
-    final match = 'color (dancer|couple) ([1-8]) (.*)'.r.firstMatch(command);
-    if (match == null)
-      errorString = 'Color what?';
-    else {
-      final isCouple = match[1]!.startsWith('c');
-      final num = match[2]!.toIntOrNull()!;
-      final color = match[3]!.toLowerCase();
-      if (!color.matches(
-          '(black|blue|cyan|gr[ae]y|green|magenta|orange|red|white|yellow)'.r))
-        errorString = 'Invalid color: $color';
+    if (command.matches('color (off|none)'.r)) {
+      settings.showDancerColors = 'None';
+    }
+    else if (command.matches('color random'.r)) {
+      settings.showDancerColors = 'Random';
+    }
+    else if (command.matches('color on'.r)) {
+      settings.showDancerColors = 'By Couple';
+    } else {
+      final match = 'color (dancer|couple) ([1-8]) (.*)'.r.firstMatch(command);
+      if (match == null)
+        errorString = 'Color what?';
       else {
-        if (isCouple) {
-          settings.setDancerColor(num*2-1, 'default');
-          settings.setDancerColor(num*2, 'default');
-          settings.setCoupleColor(num, color.capitalize());
+        final isCouple = match[1]!.startsWith('c');
+        final num = match[2]!.toIntOrNull()!;
+        final color = match[3]!.toLowerCase();
+        if (!color.matches(
+            '(black|blue|cyan|gr[ae]y|green|magenta|orange|red|white|yellow)'
+                .r))
+          errorString = 'Invalid color: $color';
+        else {
+          if (isCouple) {
+            settings.setDancerColor(num * 2 - 1, 'default');
+            settings.setDancerColor(num * 2, 'default');
+            settings.setCoupleColor(num, color.capitalize());
+          }
+          else
+            settings.setDancerColor(num, color.capitalize());
         }
-        else
-          settings.setDancerColor(num, color.capitalize());
       }
+    }
+    later(() {
+      notifyListeners();
+    });
+  }
+
+  void setId(String c, Settings settings) {
+    final command = c.toLowerCase();
+    if (command.matches('id none'.r)) {
+      settings.dancerIdentification = 'None';
+    }
+    else if (command.matches('id dancer.*'.r)) {
+      settings.dancerIdentification = 'Dancer Numbers';
+    }
+    else if (command.matches('id couple.*'.r)) {
+      settings.dancerIdentification = 'Couple Numbers';
+    }
+    else if (command.matches('id name.*'.r)) {
+      settings.dancerIdentification = 'Names';
+    }
+    else {
+      errorString = 'Invalid Id: $c';
     }
     later(() {
       notifyListeners();

@@ -342,6 +342,8 @@ class _SequencerEditLineState extends fm.State<SequencerEditLine> {
         await model.reset();
       else if (call.toLowerCase().trim().startsWith('color'))
         model.setColor(call, settings);
+      else if (call.toLowerCase().trim().startsWith('id '))
+        model.setId(call, settings);
       else
       if (!(await model.loadOneCall(call)))
         break;

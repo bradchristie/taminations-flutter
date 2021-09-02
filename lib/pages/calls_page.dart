@@ -74,9 +74,9 @@ class _CallsFrameState extends fm.State<CallsFrame> {
             //  Landscape gets a grid, portrait gets a list
               child: pp.Consumer2<TitleModel,TamState>(
                 builder: (context,titleModel,tamState,_) {
-                  titleModel.title = LevelData.find(tamState.level!)!.name;
+                  final levelDatum = LevelData.find(tamState.level ?? 'ssd') ?? LevelData.SSD;
+                  titleModel.title = levelDatum.name;
                   //  Get the initial list of calls to show
-                  final levelDatum = LevelData.find(tamState.level!)!;
                   final showLevel = RegExp('(bms|adv|cha|all)').hasMatch(levelDatum.dir);
                   final calls = TamUtils.calldata.where((element) =>
                       levelDatum.selector(element.link)).toList();
@@ -87,7 +87,7 @@ class _CallsFrameState extends fm.State<CallsFrame> {
                       if (orientation == fm.Orientation.landscape) {
                         return fm.Scrollbar(
                           controller: scrollController,
-                          isAlwaysShown: TamUtils.platform() == 'web',
+                          //isAlwaysShown: TamUtils.platform().matches('web|windows'.r),
                           thickness: 16,
                           child: fm.GridView.builder(
                             controller: scrollController,
@@ -105,7 +105,7 @@ class _CallsFrameState extends fm.State<CallsFrame> {
                       }
                       else {
                         return fm.Scrollbar(
-                          isAlwaysShown: TamUtils.platform() == 'web',
+                          //isAlwaysShown: TamUtils.platform().matches('web|windows'.r),
                           thickness: 16,
                           controller: scrollController,
                           child: fm.ListView.builder(
