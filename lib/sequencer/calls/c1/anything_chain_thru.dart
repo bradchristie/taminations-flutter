@@ -30,7 +30,7 @@ class AnythingChainThru extends Action {
     final firstCall = name.replaceFirst('Chain Thru','')
         .replaceFirst('Triangle','Triangle Circulate')
         .replaceFirst('Interlocked Diamond'.r,'Interlocked Diamond Circulate');
-    await ctx.applyCalls(firstCall,'very centers trade','centers cast off 34');
+    await ctx.applyCalls(firstCall,'very centers trade','center 4 cast off 34');
   }
 
 }
