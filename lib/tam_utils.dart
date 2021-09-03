@@ -419,13 +419,15 @@ class TamUtils {
   }
 
 
-
   /// Standardize a call name to match against other names  */
   static String normalizeCall(String callname) =>
   callname.capWords().trim()
       .replaceAll('\\(.*\\)'.ri,'')
       .replaceAll('&','and')
-      .replaceAll('[^a-zA-Z0-9_ ]'.ri,'')
+  //  Strip all non-alphanums
+  //  But keep underscores, used for hidden calls
+  //  and dots, used for decimal fractions
+      .replaceAll('[^a-zA-Z0-9_. ]'.ri,'')
       .replaceAll('\\s+'.ri,' ')
   //  Through => Thru
       .replaceAll('\\bthrou?g?h?\\b'.ri,'Thru')
@@ -450,9 +452,11 @@ class TamUtils {
       .replaceAll('\\b(7|seven)\\b'.ri,'7')
       .replaceAll('\\b(8|eight)\\b'.ri,'8')
       .replaceAll('\\b(9|nine)\\b'.ri,'9')
-  //  2.5, 3.5 etc
-      .replaceAllMapped('\\b([1-9])5'.ri,
+  //  Decimal fractions 2.5, 3.5 etc
+      .replaceAllMapped('\\b([1-9])\\.5'.ri,
           (m) => '${m[1]}12')
+  //  Now we can strip all other dots
+      .replaceAll('\\.'.r,'')
   //  Standardize 6 by 2, 6-2, 6 2 Acey Deucey
       .replaceAll('(six|6)\\s*(by)?x?-?\\s*(two|2)'.ri,'62')
       .replaceAll('(three|3)\\s*(by)?x?-?\\s*(two|2)'.ri,'32')
