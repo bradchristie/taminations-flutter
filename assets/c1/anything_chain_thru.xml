@@ -22,6 +22,10 @@
 -->
 <tamination title="Anything Chain Thru">
 
+  <tamxref title="Diamond Chain Thru" group=" "
+           xref-link="a2/diamond_chain_thru"
+           xref-from="Right-Hand Diamonds" />
+
   <tam title="Inside Triangle Chain Thru" parts="5;3" group=" "
        from="" formation="Diamonds RH Girl Points">
     <path>
@@ -61,6 +65,90 @@
       <move select="Stand" beats="3"/>
       <move select="Beau Wheel"/>
       <move select="BackHinge Right"/>
+    </path>
+  </tam>
+
+  <tam title="Ping Pong Chain Thru"
+       from="Quarter Tag" formation="Quarter Tag" group=" ">
+    <path>
+      <move select="Extend Left" beats="3" scaleX="2" scaleY="2" />
+      <move select="Forward" />
+      <move select="Stand" beats="2"/>
+      <move select="Swing Right"/>
+      <move select="Hinge Right" offsetY="1"/>
+    </path>
+    <path>
+      <move select="Forward" beats="3" scaleX="3" scaleY="3" />
+      <move select="Swing Left"/>
+      <move select="Swing Right"/>
+      <move select="Hinge Right" offsetY="-1"/>
+    </path>
+    <path>
+      <move select="Lead Right" beats="4" scaleX="4" scaleY="3" />
+      <move select="Lead Right" />
+    </path>
+    <path>
+      <move select="Lead Left" beats="4" scaleX="3" />
+      <move select="Quarter Left" beats="2" offsetX="1" />
+    </path>
+  </tam>
+
+
+  <tam title="Single Circle to a Wave Chain Thru"
+       from="Lines" group=" "
+       formation="Normal Lines">
+    <path>
+      <move select="Forward" scaleX="1.3" scaleY=".3" />
+      <move select="ssqtr" />
+      <move select="ssqtr" />
+      <move select="Extend Left" scaleX=".7" scaleY=".5" />
+    </path>
+    <path>
+      <move select="Forward" scaleX="1.3" scaleY=".3" />
+      <move select="ssqtr" />
+      <move select="ssqtr" />
+      <move select="Extend Left" scaleX=".7" scaleY=".5" />
+      <move select="Swing Left" scaleX=".5" scaleY=".5"/>
+      <move select="Swing Right" scaleX=".5" scaleY=".5"/>
+      <move select="Hinge Right" scaleY=".5"/>
+    </path>
+    <path>
+      <move select="Forward" scaleX="1.3" scaleY=".3" />
+      <move select="ssqtr" />
+      <move select="ssqtr" />
+      <move select="Extend Left" scaleX=".7" scaleY=".5" />
+      <move select="Stand" beats="3"/>
+      <move select="Swing Right" scaleX=".5" scaleY=".5"/>
+      <move select="Hinge Right" scaleY=".5"/>
+    </path>
+    <path>
+      <move select="Forward" scaleX="1.3" scaleY=".3" />
+      <move select="ssqtr" />
+      <move select="ssqtr" />
+      <move select="Extend Left" scaleX=".7" scaleY=".5" />
+    </path>
+  </tam>
+
+  <tam title="Split Recycle Chain Thru"
+       from="Right-Hand Waves" group=" "
+       formation="Ocean Waves RH BGBG">
+    <path>
+      <move select="U-Turn Right" beats="4" hands="gripright" offsetX="2" offsetY="-.5" />
+    </path>
+    <path>
+      <move select="Run Right" beats="4" hands="gripright" scaleX="1.5" scaleY="2" offsetX="-2" offsetY="1.5" />
+    </path>
+    <path>
+      <move select="U-Turn Right" beats="4" hands="gripright" offsetX="2" offsetY="-.5" />
+      <move select="Stand" beats="3"/>
+      <move select="Swing Right" scaleX=".5" scaleY=".5"/>
+      <move select="Hinge Right" scaleY=".5"/>
+    </path>
+    <path>
+      <move select="Run Right" beats="4" hands="gripright" scaleX="1.5" scaleY="2" offsetX="-2" offsetY="1.5" />
+      <move select="Swing Left" scaleX=".5" scaleY=".5"/>
+      <move select="Swing Right" scaleX=".5" scaleY=".5"/>
+      <move select="Hinge Right" scaleY=".5"/>
     </path>
   </tam>
 
