@@ -22,6 +22,52 @@
 -->
 <tamination title="Anything Chain Thru">
 
+  <tam title="All Eight Recycle Chain Thru"
+       from="Quarter Tag" group=" "
+       formation="Quarter Tag" >
+    <path>
+      <move select="U-Turn Right" beats="3" offsetX="3" />
+      <move select="Swing Left"/>
+      <move select="Swing Right"/>
+      <move select="Hinge Right" offsetY="-1"/>
+    </path>
+    <path>
+      <move select="Extend Left" beats="6" scaleX="3" scaleY="4" />
+      <move select="Swing Right"/>
+      <move select="Hinge Right" offsetY="1"/>
+    </path>
+    <path>
+      <move select="Cross Fold Right" beats="6" scaleX="1.5" />
+    </path>
+    <path>
+      <move select="Run Right" offsetX="-1.5" scaleY=".5"/>
+      <move select="Run Right" offsetX="1.5" scaleY=".5"/>
+    </path>
+  </tam>
+
+  <tam title="Cross Extend Chain Thru"
+       from="Right-Hand Waves" group=" "
+       formation="Ocean Waves RH BGBG">
+    <path>
+      <move select="Extend Right" beats="2" scaleX="2" scaleY="2"/>
+      <move select="Swing Right"/>
+      <move select="Swing Left"/>
+      <move select="Hinge Left" offsetY="1"/>
+    </path>
+    <path>
+      <move select="Forward" beats="2"/>
+    </path>
+    <path>
+      <move select="Extend Right" beats="2" scaleX="2" scaleY="2"/>
+      <move select="Stand" beats="3"/>
+      <move select="Swing Left"/>
+      <move select="Hinge Left" offsetY="-1"/>
+    </path>
+    <path>
+      <move select="Extend Right" beats="2" scaleY="2"/>
+    </path>
+  </tam>
+
   <tamxref title="Diamond Chain Thru" group=" "
            xref-link="a2/diamond_chain_thru"
            xref-from="Right-Hand Diamonds" />
@@ -44,6 +90,30 @@
       <move select="Flip Right" beats="5" scaleY="3"/>
     </path>
   </tam>
+
+  <tam title="Follow Thru Chain Thru"
+       from="Right-Hand Columns" group=" "
+       formation="Column RH GBGB">
+    <path>
+      <move select="Lead Right" beats="2" scaleX=".5" />
+    </path>
+    <path>
+      <move select="Lead Right" beats="2" scaleX="1.5" />
+    </path>
+    <path>
+      <move select="Lead Right" beats="2" scaleX=".5" />
+      <move select="Swing Left" scaleX=".5" scaleY=".5"/>
+      <move select="Swing Right" scaleX=".5" scaleY=".5"/>
+      <move select="Hinge Right" scaleY=".5"/>
+    </path>
+    <path>
+      <move select="Lead Right" beats="2" scaleX="1.5" />
+      <move select="Stand" beats="3"/>
+      <move select="Belle Reverse Wheel" scaleX=".5" scaleY=".5"/>
+      <move select="BackHinge Left" scaleY=".5"/>
+    </path>
+  </tam>
+
 
   <tam title="Interlocked Diamond Chain Thru" parts="4;3" group=" "
        from="Interlocked Diamonds" formation="Interlocked Diamonds RH Girl Points">
