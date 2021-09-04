@@ -30,6 +30,7 @@ class ToAWave extends Action {
     if (ctx.callstack.length < 2)
       throw CallError('What to a Wave?');
     //  Assume the last move is an Extend from a wave
+    ctx.contractPaths();
     for (final d in ctx.actives)
       d.path.pop();
     //  Now let's see if they are in waves
@@ -39,6 +40,5 @@ class ToAWave extends Action {
         throw CallError('Unable to end in Wave');
     }
   }
-
 
 }
