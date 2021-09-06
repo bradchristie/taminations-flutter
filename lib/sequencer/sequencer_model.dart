@@ -73,8 +73,16 @@ class SequencerModel extends fm.ChangeNotifier {
   void setColor(String c, Settings settings) {
     errorString = '';
     final command = c.toLowerCase();
+    final coupleColors = <String>[ 'Red', 'Green', 'Blue', 'Yellow', 'Magenta', 'Cyan' ];
     if (command.matches('color (off|none)'.r)) {
       settings.showDancerColors = 'None';
+    }
+    else if (command.matches('color reset'.r)) {
+      settings.showDancerColors = 'By Couple';
+      for (var i=1; i<=12; i++)
+        settings.setDancerColor(i, 'default');
+      for (var i=1; i<=6; i++)
+        settings.setCoupleColor(i, coupleColors[i-1]);
     }
     else if (command.matches('color random'.r)) {
       settings.showDancerColors = 'Random';
