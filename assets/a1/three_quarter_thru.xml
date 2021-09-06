@@ -75,6 +75,32 @@
     </path>
   </tam>
 
+  <tam title="3/4 Thru" from="Alamo Ring"
+       formation="Alamo Wave" parts="4.6">
+    <path>
+      <move select="Sxtnth Left" hands="right"/>
+      <move select="Hinge Right" offsetX="0.45"/>
+      <move select="Swing Right"/>
+    </path>
+    <path>
+      <move select="Sxtnth Right" hands="right"/>
+      <move select="Hinge Right" offsetX="-0.45"/>
+      <move select="Swing Right"/>
+      <move select="Swing Left"/>
+    </path>
+    <path>
+      <move select="Sxtnth Left" hands="right"/>
+      <move select="Hinge Right" offsetX="0.45"/>
+      <move select="Swing Right"/>
+    </path>
+    <path>
+      <move select="Sxtnth Right" hands="right"/>
+      <move select="Hinge Right" offsetX="-0.45"/>
+      <move select="Swing Right"/>
+      <move select="Swing Left"/>
+    </path>
+  </tam>
+
   <tam title="3/4 Thru"
        from="Facing Diamonds"
        formation="Diamonds Facing Girl Points"
@@ -164,6 +190,32 @@
     <path>
       <move select="Cast Left" scaleX=".5" />
       <move select="Swing Right" scaleX=".5" scaleY=".5" />
+    </path>
+  </tam>
+
+  <tam title="Left 3/4 Thru" from="Alamo Ring"
+       formation="Alamo Wave" parts="1.6">
+    <path>
+      <move select="Sxtnth Right" hands="left"/>
+      <move select="Hinge Left" offsetX="0.45"/>
+      <move select="Swing Left"/>
+    </path>
+    <path>
+      <move select="Sxtnth Left" hands="left"/>
+      <move select="Hinge Left" offsetX="-0.45"/>
+      <move select="Swing Left"/>
+      <move select="Swing Right"/>
+    </path>
+    <path>
+      <move select="Sxtnth Right" hands="left"/>
+      <move select="Hinge Left" offsetX="0.45"/>
+      <move select="Swing Left"/>
+    </path>
+    <path>
+      <move select="Sxtnth Left" hands="left"/>
+      <move select="Hinge Left" offsetX="-0.45"/>
+      <move select="Swing Left"/>
+      <move select="Swing Right"/>
     </path>
   </tam>
 
