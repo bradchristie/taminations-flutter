@@ -400,6 +400,60 @@
     </path>
   </tam>
 
+  <tam title="Right and Left Grand" from="Static Back-to-Back"
+       sequencer="gender-specific" display="none">
+    <formation name="Static BackToBack">
+      <dancer gender="boy" x="-3" y="-1" angle="270"/>
+      <dancer gender="girl" x="-1" y="-3" angle="180"/>
+      <dancer gender="boy" x="1" y="-3" angle="0"/>
+      <dancer gender="girl" x="3" y="-1" angle="270"/>
+    </formation>
+    <path>
+      <move select="Eighth Left" beats="0.2"/>
+      <move select="Extend Left" beats="1.5" scaleX="1.414" scaleY="0.5"/>
+      <move select="Eighth Left" beats="1.5" offsetX="1.414" offsetY="-.5"/>
+      <move select="Extend Right" offsetY="0.5"/>
+      <move select="Eighth Left" offsetX="1" offsetY=".5"/>
+      <move select="Extend Left" beats="1.5" scaleX="1.414" scaleY="0.5"/>
+      <move select="Eighth Left" beats="1.5" offsetX="1.414" offsetY="-.5"/>
+      <move select="Extend Right" offsetY="0.5"/>
+      <move select="Eighth Left" offsetX="1" offsetY=".5"/>
+    </path>
+    <path>
+      <move select="Eighth Right" beats="0.2"/>
+      <move select="Extend Left" beats="1.5" scaleX="1.414" scaleY="0.5"/>
+      <move select="Eighth Right" beats="1.5" offsetX="1.414" offsetY="-.5"/>
+      <move select="Extend Right" offsetY="0.5"/>
+      <move select="Eighth Right" offsetX="1" offsetY=".5"/>
+      <move select="Extend Left" beats="1.5" scaleX="1.414" scaleY="0.5"/>
+      <move select="Eighth Right" beats="1.5" offsetX="1.414" offsetY="-.5"/>
+      <move select="Extend Right" offsetY="0.5"/>
+      <move select="Eighth Right" offsetX="1" offsetY=".5"/>
+    </path>
+    <path>
+      <move select="Eighth Left" beats="0.2"/>
+      <move select="Extend Left" beats="1.5" scaleX="1.414" scaleY="0.5"/>
+      <move select="Eighth Left" beats="1.5" offsetX="1.414" offsetY="-.5"/>
+      <move select="Extend Right" offsetY="0.5"/>
+      <move select="Eighth Left" offsetX="1" offsetY=".5"/>
+      <move select="Extend Left" beats="1.5" scaleX="1.414" scaleY="0.5"/>
+      <move select="Eighth Left" beats="1.5" offsetX="1.414" offsetY="-.5"/>
+      <move select="Extend Right" offsetY="0.5"/>
+      <move select="Eighth Left" offsetX="1" offsetY=".5"/>
+    </path>
+    <path>
+      <move select="Eighth Right" beats="0.2"/>
+      <move select="Extend Left" beats="1.5" scaleX="1.414" scaleY="0.5"/>
+      <move select="Eighth Right" beats="1.5" offsetX="1.414" offsetY="-.5"/>
+      <move select="Extend Right" offsetY="0.5"/>
+      <move select="Eighth Right" offsetX="1" offsetY=".5"/>
+      <move select="Extend Left" beats="1.5" scaleX="1.414" scaleY="0.5"/>
+      <move select="Eighth Right" beats="1.5" offsetX="1.414" offsetY="-.5"/>
+      <move select="Extend Right" offsetY="0.5"/>
+      <move select="Eighth Right" offsetX="1" offsetY=".5"/>
+    </path>
+  </tam>
+
   <tam title="Weave the Ring" group=" " sequencer="gender-specific">
      <formation>
       <dancer gender="boy" x="-1" y="-3" angle="0"/>
