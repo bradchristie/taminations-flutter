@@ -22,8 +22,7 @@
 -->
 <tamination title="Do Paso">
 
-  <tam title="Do Paso"
-       from="Static Square"
+  <tam title="Do Paso" group=" "
        formation="Static Square">
     <path>
       <move select="Quarter Right" />
@@ -66,6 +65,46 @@
       <move select="Lead Right" beats="3" scaleX=".25" scaleY="3" />
       <move select="Hinge Left" scaleX=".75" scaleY=".75" />
       <move select="Belle Wheel" hands="gripleft" scaleY=".75" />
+    </path>
+  </tam>
+
+  <tam title="Do Paso to an Allemande Thar" group=" "
+       formation="Static Square">
+    <path>
+      <move select="Quarter Right" />
+      <move select="Extend Right" scaleY=".75" />
+      <move select="Swing Left" scaleX=".75" scaleY=".75" />
+      <move select="Extend Left" beats="2" scaleX="2" scaleY=".75" />
+      <move select="Swing Right" scaleX=".75" scaleY=".75" />
+      <move select="Extend Right" beats="3" scaleX="2" scaleY="2.25"/>
+      <move select="Swing Left" scaleX=".75" scaleY="1.375" />
+    </path>
+    <path>
+      <move select="Quarter Left" />
+      <move select="Extend Right" scaleY=".75" />
+      <move select="Swing Left" scaleX=".75" scaleY=".75" />
+      <move select="Lead Left" beats="2" scaleX="1.5" scaleY="1.75" />
+      <move select="Swing Right" scaleX=".75" scaleY=".75" />
+      <move select="Lead Right" beats="3" scaleX=".25" scaleY="3" />
+      <move select="Swing Left" scaleX=".75" scaleY=".375" />
+    </path>
+    <path>
+      <move select="Quarter Right" />
+      <move select="Extend Right" scaleY=".75" />
+      <move select="Swing Left" scaleX=".75" scaleY=".75" />
+      <move select="Extend Left" beats="2" scaleX="2" scaleY=".75" />
+      <move select="Swing Right" scaleX=".75" scaleY=".75" />
+      <move select="Extend Right" beats="3" scaleX="2" scaleY="2.25"/>
+      <move select="Swing Left" scaleX=".75" scaleY="1.375" />
+    </path>
+    <path>
+      <move select="Quarter Left" />
+      <move select="Extend Right" scaleY=".75" />
+      <move select="Swing Left" scaleX=".75" scaleY=".75" />
+      <move select="Lead Left" beats="2" scaleX="1.5" scaleY="1.75" />
+      <move select="Swing Right" scaleX=".75" scaleY=".75" />
+      <move select="Lead Right" beats="3" scaleX=".25" scaleY="3" />
+      <move select="Swing Left" scaleX=".75" scaleY=".375" />
     </path>
   </tam>
 
