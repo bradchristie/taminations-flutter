@@ -46,9 +46,12 @@ class Hinge extends Action {
     var dist = d.distanceTo(d2);
 
     //  Hinge from mini-wave, left or right handed
-    if (ctx.isInWave(d,d2))
+    if (ctx.isInWave(d,d2)) {
+      if (name.startsWith('Left'))
+        throw CallError('Just use Hinge from left-hand waves, not Left Hinge.');
       return TamUtils.getMove(d2.isRightOf(d) ? 'Hinge Right' : 'Hinge Left',
-          scale: [1.0,dist/2].v);
+          scale: [1.0, dist / 2].v);
+    }
     //  Left Partner Hinge
     else if (ctx.isInCouple(d,d2) && d2.isRightOf(d) && name.startsWith('Left'))
       return TamUtils.getMove('Quarter Right', skew: [-1.0,-dist/2].v);
