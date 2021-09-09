@@ -27,9 +27,9 @@ class AnythingChainThru extends Action {
 
   @override
   Future<void> perform(CallContext ctx, [int stackIndex = 0]) async {
-    final firstCall = name.replaceFirst('Chain Thru','')
-        .replaceFirst('Triangle','Triangle Circulate')
-        .replaceFirst('Interlocked Diamond'.r,'Interlocked Diamond Circulate');
+    final firstCall = name.replaceFirst('Chain\\s*Thru'.ri,'')
+        .replaceFirst('Triangle'.ri,'Triangle Circulate')
+        .replaceFirst('Interlocked\s*Diamond'.ri,'Interlocked Diamond Circulate');
     await ctx.applyCalls(firstCall,'very centers trade','center 4 cast off 34');
   }
 

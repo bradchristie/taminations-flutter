@@ -137,4 +137,91 @@
       <move select="Forward" />
     </path>
   </tam>
+
+  <tam title="Half Scoot Chain Thru" from="Right-Hand Waves"
+       formation="Ocean Waves RH BGBG" display="none">
+    <path numbers="1 8">
+      <move select="Forward 2" />
+      <move select="Swing Right" />
+      <move select="Hinge Left" />
+    </path>
+    <path numbers="2 7" couples="4 2">
+      <move select="Stand" beats="2"/>
+      <move select="Lead Right" />
+    </path>
+    <path numbers="3 6">
+      <move select="Forward 2" />
+      <move select="Swing Right" />
+    </path>
+    <path numbers="4 5" couples="1 3">
+      <move select="Stand" beats="2"/>
+      <move select="Lead Right" />
+    </path>
+  </tam>
+
+  <tam title="Half Scoot Chain Thru" from="Left-Hand Waves"
+       formation="Ocean Waves LH BGBG" display="none">
+    <path>
+      <move select="Stand" beats="2"/>
+      <move select="Lead Left" />
+    </path>
+    <path>
+      <move select="Forward 2" />
+      <move select="Swing Left" />
+    </path>
+    <path>
+      <move select="Stand" beats="2"/>
+      <move select="Lead Left" />
+    </path>
+    <path>
+      <move select="Forward 2" />
+      <move select="Swing Left" />
+      <move select="Hinge Right" />
+    </path>
+  </tam>
+
+  <tam title="Half Scoot Chain Thru" from="Quarter Tag"
+       formation="Quarter Tag" display="none">
+    <path numbers="1 8">
+      <move select="Extend Left" scaleY="2" beats="2" />
+      <move select="Swing Right" />
+      <move select="Hinge Left" />
+    </path>
+    <path numbers="2 7">
+      <move select="Forward" beats="2" />
+      <move select="Swing Right" />
+    </path>
+    <path numbers="6 3" couples="4 2">
+      <move select="Forward 2" />
+      <move select="Swing Right" />
+      <move select="Hinge Left" />
+    </path>
+    <path numbers="5 4" couples="4 2">
+      <move select="Forward 2" />
+      <move select="Swing Right" />
+    </path>
+  </tam>
+
+  <tam title="Half Scoot Chain Thru" from="Left-Handed Quarter Tag"
+       formation="Quarter Tag LH" display="none">
+    <path numbers="1 8">
+      <move select="Forward" beats="2" />
+      <move select="Swing Left" />
+    </path>
+    <path numbers="2 7">
+      <move select="Extend Right" beats="2" scaleY="2" />
+      <move select="Swing Left" />
+      <move select="Hinge Right" />
+    </path>
+    <path numbers="6 3">
+      <move select="Forward 2" />
+      <move select="Swing Left" />
+      <move select="Hinge Right" />
+    </path>
+    <path numbers="5 4">
+      <move select="Forward 2" />
+      <move select="Swing Left" />
+    </path>
+  </tam>
+
 </tamination>

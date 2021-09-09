@@ -207,7 +207,7 @@ abstract class CodedCall extends Call {
     //  Anything Motivate does not include Finish Motivate
     '.*(?<!finish)(motivate|coordinate|percolate|perkup)'.ri: (name) => Anything(name),
     //  Anything Chain Thru should not match Square Chain Thru or others
-    '.*(?<!(cross|eight|peel|scatter|spin|square|swing|tag))chainthru'.ri:
+    '.*(?<!(cross|diamond|eight|peel|scatter|scoot|spin|square|swing|tag))chainthru'.ri:
         (name) => AnythingChainThru(name),
     'around1andcomeintothemiddle'.ri: (_) =>
         AroundToALine('Around One and Come Into the Middle'),
