@@ -153,6 +153,33 @@
     </path>
   </tam>
 
+  <tam title="Percolate" from="Lines Facing Out"
+       formation="Lines Facing Out" parts="4;2">
+    <path>
+      <move select="Run Left" beats="4" scaleX="2" scaleY="3"/>
+      <move select="Extend Left" beats="2" scaleX="2" scaleY=".5"/>
+      <move select="Swing Right" scaleX=".5" scaleY=".5"/>
+      <move select="Extend Right" scaleY=".5"/>
+    </path>
+    <path>
+      <move select="Flip Left" beats="4"/>
+      <move select="Extend Left" beats="2" scaleX="2" scaleY=".5"/>
+      <move select="Hinge Right" scaleY=".5"/>
+    </path>
+    <path>
+      <move select="Run Right" beats="4"/>
+      <move select="Extend Left" beats="2" scaleX="2" scaleY=".5"/>
+      <move select="Hinge Right" scaleY=".5"/>
+      <movement hands="left" beats="2" cx1="1" cy1="0" cx2="-.5" cy2="-2" x2="2" y2="-2" cx3="1" cx4="1" cy4="-.4" x4="2" y4="-.4" />
+    </path>
+    <path>
+      <move select="Run Right" beats="4" scaleX="3" scaleY="3"/>
+      <move select="Extend Left" beats="2" scaleX="2" scaleY=".5"/>
+      <move select="Swing Right" scaleX=".5" scaleY=".5"/>
+      <move select="Extend Right" scaleY=".5"/>
+    </path>
+  </tam>
+
   <tam title="Percolate" from="T-Bones" parts="3;1.5">
     <formation>
       <dancer gender="boy" x="1" y="3" angle="270"/>
