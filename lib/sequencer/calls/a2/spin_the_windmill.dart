@@ -27,6 +27,7 @@ class SpinTheWindmill extends Action {
 
   @override
   Future<void> perform(CallContext ctx, [int stackIndex = 0]) async {
+    var anycall = name.replaceFirst('the Windmill.*'.r,'');
     var prefix = '';
     //  Get the center 4 dancers
     //  Note that if tidal it's not the same as the "centers"
@@ -38,7 +39,9 @@ class SpinTheWindmill extends Action {
     if (ctxCenters.dancers.every((d) => ctxCenters.isInCouple(d)))
       prefix = 'Step to a $wave';
     //  Then Swing, Slip, Cast
-    final centerPart = 'Center 4 $prefix Trade Slip Cast Off 3/4';
+    final centerPart = anycall.matches('(Left)? Spin'.r)
+        ? 'Center 4 $prefix Trade Slip Cast Off 3/4'
+        : 'Center 4 $anycall Cast Off 3/4';
     final outerPart = 'Outer 4 _Windmill '+name.replaceFirst('.*windmill'.ri,'');
     await ctx.applyCalls('$outerPart while $centerPart');
   }

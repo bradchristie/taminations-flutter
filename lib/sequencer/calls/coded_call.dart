@@ -352,7 +352,7 @@ abstract class CodedCall extends Call {
     'slip'.ri: (_) => Slip(),
     'slither'.ri: (_) => Slither(),
     'snapthelock'.ri: (_) => SnapTheLock(),
-    '(left)?spinthewindmill(left|right|in|out|forward)'.ri: (name) => SpinTheWindmill(name),
+    '(.+)thewindmill(left|right|in|out|forward)'.ri: (name) => SpinTheWindmill(name),
     'splitcirculate'.ri: (_) => SplitCirculate(),
     '(left)?splitsquarethru[2-7]?'.ri: (name) => SplitSquareThru(name),
     '(and)?spread'.ri: (name) => Spread(name),

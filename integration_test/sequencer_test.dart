@@ -2123,7 +2123,21 @@ Right and Left Thru
 Touch a Quarter
 Circulate
 Boys Run
-Allemande Left'''
+Allemande Left''',
+
+  'Anything the Windmill' :
+'''Sides Pass the Ocean
+Very Centers Hinge
+Side Boys Face In
+Extend the Windmill Right
+Cut the Diamond
+Zig Zag
+Boys Run
+Trade By
+Veer Left
+Bend the Line
+Quarter In
+Right and Left Grand'''
 
 };
 
