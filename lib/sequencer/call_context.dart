@@ -1344,7 +1344,7 @@ class CallContext {
     //  Sort and group dancers by distance from center
     var dorder = dancers.sortedBy((d) => d.location.length);
     groups.clear();
-    var dist = 0.0;
+    var dist = -1.0;
     for (var d in dorder) {
       if (d.location.length.isGreaterThan(dist))
         groups.add([]);

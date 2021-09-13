@@ -47,8 +47,8 @@ class Hinge extends Action {
 
     //  Hinge from mini-wave, left or right handed
     if (ctx.isInWave(d,d2)) {
-      if (name.startsWith('Left'))
-        throw CallError('Just use Hinge from left-hand waves, not Left Hinge.');
+      if (name.startsWith('Left') && d2.isRightOf(d))
+        throw CallError('Cannot Left Hinge with right hands');
       return TamUtils.getMove(d2.isRightOf(d) ? 'Hinge Right' : 'Hinge Left',
           scale: [1.0, dist / 2].v);
     }

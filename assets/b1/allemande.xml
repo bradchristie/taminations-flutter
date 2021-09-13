@@ -59,7 +59,7 @@
       <move select="Swing Left" scaleX=".5" scaleY=".5"/>
       <move select="Extend Left" beats="2" scaleY=".5"/>
     </path>
-    <path couples="4 2">
+    <path>
       <move select="Extend Right"/>
       <move select="Swing Left" scaleX=".5" scaleY=".5"/>
       <move select="Extend Left" beats="2" scaleY=".5"/>
