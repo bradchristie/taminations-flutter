@@ -36,8 +36,14 @@
     </path>
   </tam>
 
-  <tam title="Allemande Left" from="Eight Chain Thru" formation="Eight Chain Thru"
+  <tam title="Allemande Left" from="Eight Chain Thru"
        sequencer="gender-specific">
+    <formation>
+      <dancer gender="boy" x="-3" y="1" angle="0"/>
+      <dancer gender="girl" x="-3" y="-1" angle="0"/>
+      <dancer gender="boy" x="-1" y="-1" angle="180"/>
+      <dancer gender="girl" x="1" y="-1" angle="0"/>
+    </formation>
     <path>
       <move select="Forward"/>
       <move select="Swing Left" scaleX=".5" scaleY=".5"/>
@@ -66,7 +72,7 @@
       <dancer gender="boy" x="-3" y="1" angle="0"/>
       <dancer gender="girl" x="-3" y="-1" angle="0"/>
       <dancer gender="boy" x="-1" y="-2" angle="180"/>
-      <dancer gender="girl" x="-1" y="2" angle="180"/>
+      <dancer gender="girl" x="1" y="-2" angle="0"/>
     </formation>
     <path>
       <move select="Forward"/>
@@ -90,27 +96,32 @@
     </path>
   </tam>
 
-  <tam title="Allemande Left" sequencer="gender-specific"
-       from="Trade By" formation="Trade By">
-    <path couples="1 3">
-      <move select="Lead Left" beats="1.5"/>
-      <move select="Swing Left" scaleX=".5" scaleY=".5"/>
-      <move select="Eighth Right" beats="1.5" offsetX="1.1"/>
-    </path>
-    <path couples="2 4">
+  <tam title="Allemande Left" sequencer="gender-specific" from="Trade By">
+    <formation>
+      <dancer gender="boy" x="-3" y="-1" angle="180"/>
+      <dancer gender="girl" x="-1" y="-1" angle="0"/>
+      <dancer gender="boy" x="1" y="-1" angle="180"/>
+      <dancer gender="girl" x="3" y="-1" angle="0"/>
+    </formation>
+    <path>
       <move select="Quarter Right" offsetY="-1"/>
       <move select="Swing Left" scaleX=".5" scaleY=".5"/>
       <move select="Eighth Left" beats="1.5" offsetX="1.1" offsetY="1"/>
     </path>
-    <path couples="2 4">
+    <path>
       <move select="Extend Right" scaleY=".5" beats="1.5"/>
       <move select="Swing Left" scaleX=".5" scaleY=".5"/>
       <move select="Extend Left" beats="1.5"/>
     </path>
-    <path couples="1 3">
+    <path>
       <move select="Extend Right" scaleY=".5" beats="1.5"/>
       <move select="Swing Left" scaleX=".5" scaleY=".5"/>
       <move select="Forward" beats="1.5"/>
+    </path>
+    <path>
+      <move select="Lead Left" beats="1.5"/>
+      <move select="Swing Left" scaleX=".5" scaleY=".5"/>
+      <move select="Eighth Right" beats="1.5" offsetX="1.1"/>
     </path>
   </tam>
 
@@ -139,28 +150,63 @@
     </path>
   </tam>
 
-  <tam title="Allemande Left" sequencer="gender-specific"
-       from="Left-Hand Waves"
-       formation="Ocean Waves LH GBBG">
-    <path couples="4 2">
-      <move select="Hinge Left" scaleX=".75"/>
-      <move select="Hinge Left" scaleX=".75" scaleY=".75"/>
-      <move select="Extend Left" beats="1.5" scaleY=".75"/>
+  <tam title="Allemande Left" from="Lines Facing Out"
+       sequencer="gender-specific">
+    <formation>
+      <dancer gender="boy" x="-2" y="1" angle="180"/>
+      <dancer gender="girl" x="-2" y="-1" angle="180"/>
+      <dancer gender="boy" x="-2" y="-3" angle="180"/>
+      <dancer gender="girl" x="2" y="-3" angle="0"/>
+    </formation>
+    <path>
+      <move select="Quarter Right" beats="1" offsetX="-.5" offsetY="-1"/>
+      <move select="Swing Left" scaleX=".5" scaleY=".5"/>
+      <move select="Extend Left" scaleY=".5"/>
     </path>
-    <path couples="1 3">
+    <path>
+      <move select="Lead Left" beats="1" scaleX=".5"/>
+      <move select="Swing Left" scaleX=".5" scaleY=".5"/>
+      <move select="Extend Left" scaleY=".5"/>
+    </path>
+    <path>
+      <move select="Quarter Right" beats="1" offsetX="-.5" offsetY="-1"/>
+      <move select="Swing Left" scaleX=".5" scaleY=".5"/>
+      <move select="Eighth Left" beats="1.5" offsetX="1" offsetY="1.5"/>
+    </path>
+    <path>
+      <move select="Lead Left" beats="1" scaleX=".5"/>
+      <move select="Swing Left" scaleX=".5" scaleY=".5"/>
+      <move select="Eighth Right" beats="1.5" offsetX="1" offsetY="-.5"/>
+    </path>
+  </tam>
+
+  <tam title="Allemande Left" sequencer="gender-specific"
+       from="Left-Hand Waves">
+    <formation>
+      <dancer gender="boy" x="-2" y="1" angle="0"/>
+      <dancer gender="girl" x="-2" y="-3" angle="0"/>
+      <dancer gender="boy" x="-2" y="-1" angle="180"/>
+      <dancer gender="girl" x="2" y="-3" angle="0"/>
+    </formation>
+    <path>
       <move select="Hinge Left" scaleX=".75"/>
       <move select="Hinge Left" scaleX=".75" scaleY=".75"/>
       <move select="Eighth Left" beats="1.5" offsetX="1" offsetY="1.75"/>
     </path>
-    <path couples="2 4">
+    <path>
+      <move select="Hinge Left" scaleX=".75"/>
+      <move select="Hinge Left" scaleX=".75" scaleY=".75"/>
+      <move select="Eighth Right" beats="1.5" offsetX="1" offsetY="-.25"/>
+    </path>
+    <path>
       <move select="Hinge Left" scaleX=".75"/>
       <move select="Hinge Left" scaleX=".75" scaleY=".75"/>
       <move select="Extend Left" beats="1.5" scaleY=".75"/>
     </path>
-    <path couples="1 3">
+    <path>
       <move select="Hinge Left" scaleX=".75"/>
       <move select="Hinge Left" scaleX=".75" scaleY=".75"/>
-      <move select="Eighth Right" beats="1.5" offsetX="1" offsetY="-.25"/>
+      <move select="Extend Left" beats="1.5" scaleY=".75"/>
     </path>
   </tam>
 
