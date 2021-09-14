@@ -49,8 +49,15 @@ class Hinge extends Action {
     if (ctx.isInWave(d,d2)) {
       if (name.startsWith('Left') && d2.isRightOf(d))
         throw CallError('Cannot Left Hinge with right hands');
+      var xScale = 1.0;
+      final df = ctx.dancerInFront(d);
+      if (df != null && !df.distanceTo(d).isGreaterThan(2.0))
+        xScale = 0.5;
+      final db = ctx.dancerInBack(d);
+      if (db != null && !db.distanceTo(d).isGreaterThan(2.0))
+        xScale = 0.5;
       return TamUtils.getMove(d2.isRightOf(d) ? 'Hinge Right' : 'Hinge Left',
-          scale: [1.0, dist / 2].v);
+          scale: [xScale, dist/2].v);
     }
     //  Left Partner Hinge
     else if (ctx.isInCouple(d,d2) && d2.isRightOf(d) && name.startsWith('Left'))
