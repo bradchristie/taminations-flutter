@@ -134,7 +134,7 @@ class SequencerEditLine extends fm.StatefulWidget {
 class _SequencerEditLineState extends fm.State<SequencerEditLine> {
 
   fm.TextEditingController textFieldController = fm.TextEditingController();
-  var focusNode = fm.FocusNode();
+  final focusNode = fm.FocusNode();
   final ItemScrollController itemScrollController = ItemScrollController();
   final ItemPositionsListener itemPositionsListener = ItemPositionsListener.create();
   late SpeechToTextProvider speechProvider;

@@ -85,11 +85,13 @@ class _CallsFrameState extends fm.State<CallsFrame> {
                   return fm.OrientationBuilder(
                     builder: (context, orientation) {
                       if (orientation == fm.Orientation.landscape) {
-                        return fm.Scrollbar(
+                        return
+                          fm.Scrollbar(
                           controller: scrollController,
-                          //isAlwaysShown: TamUtils.platform().matches('web|windows'.r),
+                          isAlwaysShown: TamUtils.platform().matches('web|windows'.r),
                           thickness: 16,
-                          child: fm.GridView.builder(
+                          child:
+                          fm.GridView.builder(
                             controller: scrollController,
                             scrollDirection: fm.Axis.horizontal,
                             gridDelegate: fm.SliverGridDelegateWithMaxCrossAxisExtent(
@@ -104,8 +106,9 @@ class _CallsFrameState extends fm.State<CallsFrame> {
                         );
                       }
                       else {
-                        return fm.Scrollbar(
-                          //isAlwaysShown: TamUtils.platform().matches('web|windows'.r),
+                        return
+                          fm.Scrollbar(
+                          isAlwaysShown: TamUtils.platform().matches('web|windows'.r),
                           thickness: 16,
                           controller: scrollController,
                           child: fm.ListView.builder(
