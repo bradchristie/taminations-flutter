@@ -206,17 +206,16 @@ class _AnimationFrameState extends fm.State<AnimationFrame>
                       }
                       if (appState.mainPage != MainPage.SEQUENCER ||
                           settings.showDancerColors == 'By Couple') {
+                        for (var i=1; i <= 6; i++) {
+                          final coupleColor = settings.coupleColor(i);
+                          danceModel.setDancerColor(
+                              i, Color.fromName(coupleColor), byCouple: true);
+                        }
                         for (var i = 1; i <= 12; i++) {
                           final individualColor = settings.dancerColor(i);
                           if (individualColor != 'default')
                             danceModel.setDancerColor(
                                 i, Color.fromName(individualColor));
-                          else {
-                            final coupleColor = settings.coupleColor(
-                                (i - 1) ~/ 2 + 1);
-                            danceModel.setDancerColor(
-                                i, Color.fromName(coupleColor));
-                          }
                         }
                       }
                       if (appState.play)

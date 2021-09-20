@@ -43,7 +43,28 @@
     </path>
   </tam>
 
-  <tam title="Press Ahead" from="Two-Faced Lines">
+  <tam title="Press Ahead" from="Left-Hand Waves">
+    <formation>
+      <dancer gender="boy" x="-1" y="3" angle="180"/>
+      <dancer gender="girl" x="-1" y="1" angle="0"/>
+      <dancer gender="girl" x="-1" y="-1" angle="180"/>
+      <dancer gender="boy" x="-1" y="-3" angle="0"/>
+    </formation>
+    <path>
+      <move select="Forward 2"/>
+    </path>
+    <path>
+      <move select="Forward 2"/>
+    </path>
+    <path>
+      <move select="Forward 2"/>
+    </path>
+    <path>
+      <move select="Forward 2"/>
+    </path>
+  </tam>
+
+  <tam title="Press Ahead" from="Right-Hand Two-Faced Lines">
     <formation>
       <dancer gender="boy" x="-1" y="3" angle="0"/>
       <dancer gender="girl" x="-1" y="1" angle="0"/>
@@ -63,8 +84,29 @@
       <move select="Forward 2" hands="right"/>
     </path>
     <taminator>
-    Be sure to go one full position and not stop at 1/2 Press Ahead.
+      Be sure to go one full position and not stop at 1/2 Press Ahead.
     </taminator>
+  </tam>
+
+  <tam title="Press Ahead" from="Left-Hand Two-Faced Lines">
+    <formation>
+      <dancer gender="girl" x="-1" y="3" angle="180"/>
+      <dancer gender="boy" x="-1" y="1" angle="180"/>
+      <dancer gender="boy" x="-1" y="-1" angle="0"/>
+      <dancer gender="girl" x="-1" y="-3" angle="0"/>
+    </formation>
+    <path>
+      <move select="Forward 2" hands="left"/>
+    </path>
+    <path>
+      <move select="Forward 2" hands="right"/>
+    </path>
+    <path>
+      <move select="Forward 2" hands="right"/>
+    </path>
+    <path>
+      <move select="Forward 2" hands="left"/>
+    </path>
   </tam>
 
   <tam title="Ends Press Ahead" group=" "
@@ -126,7 +168,23 @@
     </taminator>
   </tam>
 
-  <tam title="1/2 Press Ahead" from="Two-Faced Lines"
+  <tam title="1/2 Press Ahead" from="Left-Hand Waves"
+       formation="Ocean Waves LH BGBG">
+    <path>
+      <move select="Forward" beats="2"/>
+    </path>
+    <path>
+      <move select="Forward 2"/>
+    </path>
+    <path>
+      <move select="Forward" beats="2"/>
+    </path>
+    <path>
+      <move select="Forward 2"/>
+    </path>
+  </tam>
+
+  <tam title="1/2 Press Ahead" from="Right-Hand Two-Faced Lines"
        formation="Two-Faced Lines RH">
     <path>
       <move select="Forward 2" hands="right"/>
@@ -139,6 +197,22 @@
     </path>
     <path>
       <move select="Forward" beats="2" hands="right"/>
+    </path>
+  </tam>
+
+  <tam title="1/2 Press Ahead" from="Left-Hand Two-Faced Lines"
+       formation="Two-Faced Lines LH">
+    <path>
+      <move select="Forward" beats="2" hands="right"/>
+    </path>
+    <path>
+      <move select="Forward" beats="2" hands="left"/>
+    </path>
+    <path>
+      <move select="Forward 2" hands="left"/>
+    </path>
+    <path>
+      <move select="Forward 2" hands="right"/>
     </path>
   </tam>
 
