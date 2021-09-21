@@ -25,9 +25,8 @@ class Phantom extends Action {
   @override final level = LevelData.C1;
   final String _subcall;
   Phantom(String name) :
-        _subcall = name.replaceFirst('Phantom ', ''),
+        _subcall = name.replaceFirst('Phantom'.ri, '').trim(),
         super(name);
-
 
   Future<CallContext> _addPhantoms(CallContext ctx) async {
     //  Add all the phantoms
