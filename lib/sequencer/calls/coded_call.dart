@@ -366,7 +366,8 @@ abstract class CodedCall extends Call {
     //  Make sure Start does not match Star
     'Start.+'.r: (name) => Start(name),
     '(_left)?starthru'.ri: (name) => StarThru(name),
-    'step(ahead)?'.ri: (_) => Step(),
+    'step(ahead)?'.ri: (name) => Step(name),
+    'pressahead'.ri: (name) => Step(name),
     'steptoacompact(lefthand)?wave'.ri: (name) => StepToACompactWave(name),
     //  Stretch not Stretched
     'stretch(?!ed).+'.ri: (name) => Stretch(name),

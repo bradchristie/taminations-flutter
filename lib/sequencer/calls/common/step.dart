@@ -26,7 +26,7 @@ import '../../../tam_utils.dart';
 
 class Step extends Action {
 
-  Step() : super('Step');
+  Step(String name) : super(name);
 
   @override
   Path performOne(Dancer d, CallContext ctx) {
