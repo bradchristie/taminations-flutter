@@ -165,7 +165,7 @@ class DanceModel extends fm.ChangeNotifier {
     }
   }
 
-  void setDancerColor(int dancerNum, Color c, {bool byCouple: false}) {
+  void setDancerColor(int dancerNum, Color c, {bool byCouple=false}) {
     if (!_randomColors) {
       dancers.where((d) => (int.tryParse(byCouple ? d.numberCouple : d.number) ?? -1) == dancerNum)
           .forEach((d) {

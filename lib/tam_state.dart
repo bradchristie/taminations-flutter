@@ -20,7 +20,6 @@
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart' as fm;
-import 'package:flutter/scheduler.dart';
 import 'package:taminations/common.dart';
 import 'extensions.dart';
 
