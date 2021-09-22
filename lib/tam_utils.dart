@@ -478,6 +478,7 @@ class TamUtils {
       .replaceAll('\\ballamande?\\b'.ri,'Allemande')
       .replaceAllMapped('interlocked (flip|cut) the'.ri,
           (m) => '${m[1]} the Interlocked')
+      .replaceAll('walk around your corner'.ri,'WalkAround the Corner')
   //  'Dixie Style' -> 'Dixie Style to a Wave'
       .replaceAll('\\bdixie style(?! to)'.ri,'Dixie Style to a Wave')
   //  Accept both Left Chase and Chase Left
