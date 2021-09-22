@@ -108,4 +108,45 @@
     </path>
   </tam>
 
+  <tam title="Do Paso to an Allemande Thar" group=" " display="no">
+    <formation>
+      <dancer gender="boy" x="-3" y="1" angle="270"/>
+      <dancer gender="girl" x="-3" y="-1" angle="90"/>
+      <dancer gender="boy" x="-1" y="-3" angle="0"/>
+      <dancer gender="girl" x="1" y="-3" angle="180"/>
+    </formation>
+    <path>
+      <move select="Extend Right" scaleY=".75" />
+      <move select="Swing Left" scaleX=".75" scaleY=".75" />
+      <move select="Extend Left" beats="2" scaleX="2" scaleY=".75" />
+      <move select="Swing Right" scaleX=".75" scaleY=".75" />
+      <move select="Extend Right" beats="3" scaleX="2" scaleY="2.25"/>
+      <move select="Swing Left" scaleX=".75" scaleY="1.375" />
+    </path>
+    <path>
+      <move select="Extend Right" scaleY=".75" />
+      <move select="Swing Left" scaleX=".75" scaleY=".75" />
+      <move select="Lead Left" beats="2" scaleX="1.5" scaleY="1.75" />
+      <move select="Swing Right" scaleX=".75" scaleY=".75" />
+      <move select="Lead Right" beats="3" scaleX=".25" scaleY="3" />
+      <move select="Swing Left" scaleX=".75" scaleY=".375" />
+    </path>
+    <path>
+      <move select="Extend Right" scaleY=".75" />
+      <move select="Swing Left" scaleX=".75" scaleY=".75" />
+      <move select="Extend Left" beats="2" scaleX="2" scaleY=".75" />
+      <move select="Swing Right" scaleX=".75" scaleY=".75" />
+      <move select="Extend Right" beats="3" scaleX="2" scaleY="2.25"/>
+      <move select="Swing Left" scaleX=".75" scaleY="1.375" />
+    </path>
+    <path>
+      <move select="Extend Right" scaleY=".75" />
+      <move select="Swing Left" scaleX=".75" scaleY=".75" />
+      <move select="Lead Left" beats="2" scaleX="1.5" scaleY="1.75" />
+      <move select="Swing Right" scaleX=".75" scaleY=".75" />
+      <move select="Lead Right" beats="3" scaleX=".25" scaleY="3" />
+      <move select="Swing Left" scaleX=".75" scaleY=".375" />
+    </path>
+  </tam>
+
 </tamination>
