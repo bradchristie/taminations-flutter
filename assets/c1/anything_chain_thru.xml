@@ -114,6 +114,35 @@
     </path>
   </tam>
 
+  <tam title="Follow Your Neighbor Chain Thru"
+       from="Right-Hand Columns" group=" "
+       formation="Column RH GBGB">
+    <path>
+      <move select="Lead Right" beats="2" scaleX="1.5" />
+      <move select="Run Right" scaleX=".5" scaleY=".5" />
+    </path>
+    <path>
+      <move select="Extend Right" scaleY=".5" />
+      <move select="Swing Right" scaleX=".5" scaleY=".5" />
+      <move select="Hinge Right" scaleX=".5" scaleY=".5" />
+      <move select="Stand" beats="3"/>
+      <move select="Swing Left" scaleX=".5" scaleY=".5"/>
+      <move select="Hinge Left" scaleY=".5"/>
+    </path>
+    <path>
+      <move select="Lead Right" beats="2" scaleX=".5" />
+      <move select="U-Turn Right" />
+      <move select="Stand" beats=".5"/>
+      <move select="Swing Right" scaleX=".5" scaleY=".5"/>
+      <move select="Swing Left" scaleX=".5" scaleY=".5"/>
+      <move select="Hinge Left" scaleY=".5"/>
+    </path>
+    <path>
+      <move select="Extend Right" scaleY=".5" />
+      <move select="Swing Right" scaleX=".5" scaleY=".5" />
+      <move select="Hinge Right" scaleX=".5" scaleY=".5" />
+    </path>
+  </tam>
 
   <tam title="Interlocked Diamond Chain Thru" parts="4;3" group=" "
        from="Interlocked Diamonds" formation="Interlocked Diamonds RH Girl Points">
