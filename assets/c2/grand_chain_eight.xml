@@ -124,6 +124,28 @@
     </path>
   </tam>
 
+  <tam title="Grand Chain Eight" from="Tidal Wave" formation="Tidal Wave">
+    <path>
+      <move select="Lead Right" beats="3" scaleX="2.5" scaleY="2.5"/>
+      <move select="Quarter Left" offsetX="1"/>
+      <move select="Quarter Left"/>
+      <move select="BackHinge Right" scaleY=".5"/>
+    </path>
+    <path>
+      <move select="Lead Left" beats="4.5" scaleX="3.5" scaleY="2.5"/>
+      <move select="Hinge Left" beats="3" scaleY=".5"/>
+    </path>
+    <path>
+      <move select="Lead Right" beats="4" scaleX=".5" scaleY="1.5"/>
+      <move select="Hinge Left" beats="3" scaleY=".5"/>
+    </path>
+    <path>
+      <move select="Flip Left" beats="4" offsetX="1.5" scaleY=".25"/>
+      <move select="Quarter Left"/>
+      <move select="BackHinge Right" scaleY=".5"/>
+    </path>
+  </tam>
+
   <tam title="Split Grand Chain Eight"
        from="T-Bones, Ends Facing"
        formation="T-Bone ULRU">
