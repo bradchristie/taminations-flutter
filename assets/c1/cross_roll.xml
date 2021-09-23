@@ -644,7 +644,7 @@
   </tam>
 
 
-  <tam title="All Eight Cross Roll" group=" " from="" formation="Thar LH Boys">
+  <tam title="All Eight Cross Roll" group=" " formation="Thar LH Boys">
     <path>
       <move select="Hinge Left"/>
       <move select="Forward 2"/>
@@ -660,6 +660,25 @@
     </path>
     <path>
       <move select="Flip Right" beats="5"/>
+    </path>
+  </tam>
+
+  <tam title="All Eight Cross Roll" group=" " formation="Thar RH Boys" display="no">
+    <path>
+      <move select="Hinge Right"/>
+      <move select="Forward 2"/>
+      <move select="Lead Right"/>
+    </path>
+    <path>
+      <move select="Flip Left" beats="5"/>
+    </path>
+    <path>
+      <move select="Hinge Right"/>
+      <move select="Forward 2"/>
+      <move select="Lead Right"/>
+    </path>
+    <path>
+      <move select="Flip Left" beats="5"/>
     </path>
   </tam>
 
