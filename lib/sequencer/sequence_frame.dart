@@ -442,6 +442,8 @@ class SequencerPasteButton extends fm.StatelessWidget {
             if (value is fs.ClipboardData) {
               await pasteDialog(context, value.text ?? '');
             }
+            else  //  Sometimes Firefox goes here
+              await pasteDialog(context, '');
           },
               //  Firefox does not support Clipboard, so let the user paste with ^V
               onError: (Object obj) async {
