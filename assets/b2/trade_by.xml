@@ -25,12 +25,12 @@
   <tam title="Trade By"
        from="Trade By"
        formation="Trade By"
-       fractions="" difficulty="1">
+       difficulty="1">
     <path>
-      <move select="Flip Left" />
+      <move select="Flip Left" beats="4"/>
     </path>
     <path>
-      <move select="Run Right" />
+      <move select="Run Right" beats="4"/>
     </path>
     <path>
       <move select="Extend Left" beats="2" scaleY=".5" />
@@ -45,7 +45,7 @@
   <tam title="Trade By"
        from="3/4 Tag"
        formation="3/4 Tag"
-       fractions="" difficulty="2">
+       difficulty="2">
     <path>
       <move select="Flip Left" beats="4" />
     </path>
@@ -63,20 +63,21 @@
   <tam title="Trade By"
        from="T-Bones"
        formation="T-Bone LUUR"
-       fractions="" difficulty="2">
+       difficulty="2">
     <path>
-      <move select="Run Right" />
+      <move select="Run Right" beats="4"/>
     </path>
     <path>
-      <move select="Flip Left" />
+      <move select="Flip Left" beats="4"/>
     </path>
     <path>
-      <move select="Extend Left" scaleY=".5" />
-      <move select="Extend Right" scaleY=".5" />
+      <move select="Extend Left" beats="2" scaleY=".5" />
+      <move select="Extend Right" beats="2" scaleY=".5" />
     </path>
     <path>
-      <move select="Extend Left" scaleY=".5" />
-      <move select="Extend Right" scaleY=".5" />
+      <move select="Extend Left" beats="2" scaleY=".5" />
+      <move select="Extend Right" beats="2" scaleY=".5" />
     </path>
   </tam>
+
 </tamination>
