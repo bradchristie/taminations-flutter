@@ -82,7 +82,7 @@
     </path>
   </tam>
 
-  <tam title="Left Split Square Thru" group=" "
+  <tam title="Left Split Square Thru" group=" " sequencer="no"
        formation="T-Bone ULRU">
     <path>
       <move select="Extend Right" scaleY=".5"/>
@@ -114,7 +114,7 @@
     </path>
   </tam>
 
-  <tam title="Heads Start Split Square Thru" group=" "
+  <tam title="Heads Start Split Square Thru" group=" " sequencer="no"
        formation="Static Square" >
     <path>
       <move select="Forward 2" />
@@ -148,7 +148,7 @@
     </path>
   </tam>
 
-  <tam title="Sides Start Split Square Thru" group=" "
+  <tam title="Sides Start Split Square Thru" group=" " sequencer="no"
        formation="Static Square" >
     <path>
       <move select="Stand" beats="3.5" />
@@ -183,7 +183,7 @@
   </tam>
 
   <!--  for sequencer, so it can do all variations -->
-  <tam title="Heads Start" formation="Static Square" display="none">
+  <tam title="Heads Start" formation="Static Square" actives="All" display="none">
     <path>
       <move select="Forward 2"/>
     </path>
@@ -196,7 +196,7 @@
     </path>
   </tam>
 
-  <tam title="Sides Start" formation="Static Square" display="none">
+  <tam title="Sides Start" formation="Static Square" actives="All" display="none">
     <path>
     </path>
     <path>
