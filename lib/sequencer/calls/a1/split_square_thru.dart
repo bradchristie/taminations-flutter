@@ -59,18 +59,3 @@ class SplitSquareThru extends Action {
   }
 
 }
-
-class HeadsSidesStart extends Action {
-
-  HeadsSidesStart(String name) : super(name);
-
-  @override
-  Future<void> perform(CallContext ctx, [int stackIndex = 0]) async {
-    if (name.startsWith('Head'))
-      await ctx.applyCalls('Heads Start');
-    else
-      await ctx.applyCalls('Sides Start');
-    await ctx.applyCalls(name.replaceFirst('(head|side)(s)?\\s+start(a)?\\s+'.ri,''));
-  }
-
-}

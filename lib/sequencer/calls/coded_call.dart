@@ -280,8 +280,6 @@ abstract class CodedCall extends Call {
     '(left)?12tag'.ri: (name) => HalfTag(name),
     'halfthek'.ri: (_) => HalfTheK(),
     'head'.ri: (name) => Heads(name),
-    //  Heads Start, be careful not to match Heads Star Thru
-    //'(Head|Side)Start.*'.r: (name) => HeadsSidesStart(name),
     '(left)?(single|partner)?hinge'.ri: (name) => Hinge(name),
     'hocuspocus'.ri: (_) => HocusPocus(),
     'horseshoeturn'.ri: (_) => HorseshoeTurn(),
