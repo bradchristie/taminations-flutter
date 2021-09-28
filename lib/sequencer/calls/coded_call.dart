@@ -18,6 +18,7 @@
 
 */
 import 'package:taminations/sequencer/calls/a1/six_two_acey_deucey.dart';
+import 'package:taminations/sequencer/calls/c1/block_formation.dart';
 
 import '../../extensions.dart';
 import '../../tam_utils.dart';
@@ -221,6 +222,7 @@ abstract class CodedCall extends Call {
     'beau'.ri: (_) => Beaus(),
     'belle'.ri: (_) => Belles(),
     'bendtheline'.ri: (_) => BendTheLine(),
+    'inyourblock.*'.ri: (name) => BlockFormation(name),
     'bounce(the)?$specifier'.ri: (name) => Bounce(name),
     'boxcounterrotate'.ri: (_) => BoxCounterRotate(),
     'boy'.ri: (_) => Boys(),
@@ -279,7 +281,7 @@ abstract class CodedCall extends Call {
     'halfthek'.ri: (_) => HalfTheK(),
     'head'.ri: (name) => Heads(name),
     //  Heads Start, be careful not to match Heads Star Thru
-    '(Head|Side)Start.*'.r: (name) => HeadsSidesStart(name),
+    //'(Head|Side)Start.*'.r: (name) => HeadsSidesStart(name),
     '(left)?(single|partner)?hinge'.ri: (name) => Hinge(name),
     'hocuspocus'.ri: (_) => HocusPocus(),
     'horseshoeturn'.ri: (_) => HorseshoeTurn(),

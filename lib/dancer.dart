@@ -102,7 +102,7 @@ extension DancerList on List<Dancer> {
     }
   }
 
-  String show() {
+  String show({bool arrayNumbers:false}) {
     final charMatrix = [for (var i=0; i<11; i++) [ for (var j=0; j<21; j++) ' ']];
     for (var i=0; i<21; i++)
       charMatrix[5][i] = '-';
@@ -111,11 +111,12 @@ extension DancerList on List<Dancer> {
     charMatrix[5][10] = '+';
     charMatrix[5][0] = 'Y';
     charMatrix[0][10] = 'X';
+    var i = 0;
     for (final d in this) {
       var dx = d.location.x.round();
       var dy = (d.location.y*2.0).round();
       if (dx.abs() <= 5 && dy.abs() <= 10)
-        charMatrix[-dx+5][-dy+10] = d.number.substring(0,1);
+        charMatrix[-dx+5][-dy+10] = arrayNumbers ? i.s : d.number.substring(0,1);
       var dsym = '';
       if (d.angleFacing.isAround(0)) {
         dx += 1;
@@ -135,8 +136,9 @@ extension DancerList on List<Dancer> {
         if (oldChar == ' ' || oldChar == '-' || oldChar == '|')
           charMatrix[-dx + 5][-dy + 10] = dsym;
       }
+      i += 1;
     }
-    return charMatrix.map((e) => e.join('')).join('\n') + '\n';
+    return '\n' + charMatrix.map((e) => e.join('')).join('\n') + '\n';
   }
 
 }
@@ -332,6 +334,7 @@ class Dancer implements Comparable<Dancer> {
 
   Dancer setStartAngle(double a) {
     starttx = Matrix.getTranslation(starttx.location) * Matrix.getRotation(a);
+    tx = starttx.copy();
     return this;
   }
 

@@ -858,6 +858,13 @@
     <dancer gender="girl" x="-1" y="-1" angle="0"/>
   </formation>
 
+  <formation name="Double Pass Thru for Blocks">
+    <dancer gender="boy" x="-3" y="1" angle="0"/>
+    <dancer gender="girl" x="-3" y="-1" angle="0"/>
+    <dancer gender="boy" x="1" y="1" angle="180"/>
+    <dancer gender="girl" x="1" y="-1" angle="180"/>
+  </formation>
+
   <formation name="Completed Double Pass Thru">
     <dancer gender="girl" x="-3" y="1" angle="180"/>
     <dancer gender="boy" x="-3" y="-1" angle="180"/>
