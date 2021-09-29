@@ -170,6 +170,44 @@
     </path>
   </tam>
 
+  <tam title="Split Square Chain the Top"
+       from="Center Wave">
+    <formation>
+      <dancer gender="boy" x="-1" y="3" angle="270"/>
+      <dancer gender="girl" x="1" y="3" angle="270"/>
+      <dancer gender="boy" x="0" y="1.5" angle="0"/>
+      <dancer gender="girl" x="0" y=".5" angle="180"/>
+    </formation>
+    <path>
+      <move select="Extend Right" beats="1.5" scaleY=".5" />
+      <move select="Swing Left" scaleX=".5" scaleY=".5" />
+      <move select="Cast Right" scaleX=".5" scaleY=".5" />
+      <move select="Swing Left" scaleX=".5" scaleY=".5" />
+      <move select="Extend Left" beats="2" scaleX="2" scaleY=".5" />
+    </path>
+    <path>
+      <move select="Extend Right" beats="1.5" scaleY=".5" />
+      <move select="Swing Left" scaleX=".5" scaleY=".5" />
+      <move select="Lead Left" beats="4.5" scaleX="1.5" scaleY="1.5" />
+      <move select="Swing Left" scaleX=".5" scaleY=".5" />
+      <move select="Extend Left" beats="2" scaleX="2" scaleY=".5" />
+    </path>
+    <path>
+      <move select="Lead Left" scaleX="1.5" scaleY=".5" />
+      <move select="Swing Left" scaleX=".5" scaleY=".5" />
+      <move select="Cast Right" scaleX=".5" scaleY=".5" />
+      <move select="Swing Left" scaleX=".5" scaleY=".5" />
+      <move select="Extend Left" beats="2" scaleX="2" scaleY=".5" />
+    </path>
+    <path>
+      <move select="Lead Right" scaleX=".5" scaleY="1.5" />
+      <move select="Swing Left" scaleX=".5" scaleY=".5" />
+      <move select="Lead Left" beats="4.5" scaleX="1.5" scaleY="1.5" />
+      <move select="Swing Left" scaleX=".5" scaleY=".5" />
+      <move select="Extend Left" beats="2" scaleX="2" scaleY=".5" />
+    </path>
+  </tam>
+
   <tam title="Split Dixie Style to a Wave"
        from="Ends Facing"
        formation="T-Bone ULRU" parts="2.5">
