@@ -175,8 +175,11 @@ class SequencerModel extends fm.ChangeNotifier {
   Future<void> _interpretOneCall(String call) async {
     if (call.isBlank)
       return Future<void>.value();
+    print('is $call a comment?');
     if (isComment(call)) {
+      print('Call is just a comment');
       calls.add(SequencerCall(call,beats:0.0,level:null));
+      notifyListeners();
       return Future<void>.value();
     }
     //  Remove any underscores, which are reserved for internal calls only
@@ -214,7 +217,7 @@ class SequencerModel extends fm.ChangeNotifier {
   }
 
   bool isComment(String text) =>
-      text.trim().startsWith('[^\\[a-zA-Z0-9]'.r);
+      text.trim().startsWith('[^\\a-zA-Z0-9]'.r);
 
   Future<void> _startSequence() async {
     await animation.setAnimation(TamUtils.getFormation(startingFormation));
