@@ -99,6 +99,7 @@ import 'c1/squeeze_the_galaxy.dart';
 import 'c1/squeeze_the_hourglass.dart';
 import 'c1/start.dart';
 import 'c1/stretch.dart';
+import 'c1/substitute.dart';
 import 'c1/swing_and_circle.dart';
 import 'c1/switch_the_line.dart';
 import 'c1/tag_back.dart';
@@ -371,6 +372,7 @@ abstract class CodedCall extends Call {
     'steptoacompact(lefthand)?wave'.ri: (name) => StepToACompactWave(name),
     //  Stretch not Stretched
     'stretch(?!ed).+'.ri: (name) => Stretch(name),
+    'substitute'.ri: (_) => Substitute(),
     'sweep14'.ri: (name) => SweepAQuarter(name),
     'swing'.ri: (_) => Swing(),
     'swingandcircle(12|34)'.ri: (name) => SwingAndCircle(name),

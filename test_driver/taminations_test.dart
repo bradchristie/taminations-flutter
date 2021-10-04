@@ -1930,8 +1930,20 @@ Wheel and Deal
 Centers Flutterwheel 
 Centers Pass Thru 
 Allemande Left 
-Promenade Home'''
+Promenade Home''',
 
+  'Substitute' :
+'''Heads Touch 1/4
+Substitute
+Center Boy Walk Center Girl Dodge
+Circulate
+Boys Run
+Star Thru
+Right and Left Thru
+Pass Thru
+Wheel and Deal
+Centers Square Thru 3
+Allemande Left'''
 
 };
 
