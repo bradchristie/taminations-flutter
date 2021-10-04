@@ -88,4 +88,71 @@
     </path>
   </tam>
 
+  <tam title="All 8 Cycle and Wheel" from="Quarter Lines"
+       formation="Quarter Lines RH">
+    <path>
+      <move select="U-Turn Right" beats="3" offsetX="3" />
+    </path>
+    <path>
+      <move select="Extend Left" beats="6" scaleX="3" scaleY="4" />
+    </path>
+    <path>
+      <move select="U-Turn Right" beats="6" hands="gripleft" offsetX="3" />
+    </path>
+    <path>
+      <move select="Run Right" beats="6" hands="gripright" scaleX="2" scaleY="2" offsetX="3" />
+    </path>
+  </tam>
+
+  <tam title="All 8 Cycle and Wheel" from="Left-Hand Quarter Lines"
+       formation="Quarter Lines LH">
+    <path>
+      <move select="U-Turn Right" beats="3" offsetX="3" />
+    </path>
+    <path>
+      <move select="Extend Left" beats="6" scaleX="3" scaleY="4" />
+    </path>
+    <path>
+      <move select="Quarter Left" beats="1.5" hands="gripright"
+            offsetX="1.5" offsetY="-1"/>
+      <move select="Quarter Left" beats="1.5" hands="gripright"
+            offsetX="1" offsetY="-1.5"/>
+    </path>
+    <path>
+      <move select="Run Left" beats="4" hands="gripleft" scaleX="2" scaleY="2" offsetX="3" />
+    </path>
+  </tam>
+
+  <tam title="All 8 Cycle and Wheel" from="Mixed Quarter Tag 1"
+       formation="Mixed Quarter Tag #3">
+    <path>
+      <move select="U-Turn Right" hands="gripright" beats="6" offsetX="3" />
+    </path>
+    <path>
+      <move select="Run Right" hands="gripright" beats="6" offsetX="-3" offsetY="-2" />
+    </path>
+    <path>
+      <move select="Run Right" beats="6" hands="gripright" scaleX="2" scaleY="2" offsetX="3" />
+    </path>
+    <path>
+      <move select="U-Turn Right" beats="6" hands="gripleft" offsetX="3" />
+    </path>
+  </tam>
+
+  <tam title="All 8 Cycle and Wheel" from="Mixed Quarter Tag 2"
+       formation="Mixed Quarter Tag #8">
+    <path>
+      <move select="Run Left" hands="gripleft" beats="6" offsetX="-3" offsetY="2" />
+    </path>
+    <path>
+      <move select="U-Turn Left" hands="gripleft" beats="6" offsetX="3" />
+    </path>
+    <path>
+      <move select="Run Left" beats="6" hands="gripleft" scaleX="2" scaleY="2" offsetX="3" />
+    </path>
+    <path>
+      <move select="U-Turn Left" beats="6" hands="gripright" offsetX="3" />
+    </path>
+  </tam>
+
 </tamination>
