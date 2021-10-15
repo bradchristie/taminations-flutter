@@ -52,6 +52,7 @@ class BlockFormation extends Action {
             ctx.dancers[blockMatch[i]].angleFacing
                 + ctxBlock.dancers[i].anglePosition
                 - ctx.dancers[blockMatch[i]].anglePosition);
+        ctxDPT.dancers[i].gender = ctx.dancers[blockMatch[i]].gender;
       }
       await ctxDPT.applyCalls(blockCall);
       ctxDPT.adjustToFormation('Double Pass Thru for Blocks',rotate: 90);
