@@ -219,12 +219,12 @@ class SequencerModel extends fm.ChangeNotifier {
 
   Future<void> _startSequence() async {
     await animation.setAnimation(TamUtils.getFormation(startingFormation));
+    animation.recalculate();
     _updateParts();
   }
 
   void animateAtCall(int index) {
     var beat = calls.take(index).fold<double>(0.0, (b, c) => b + c.beats);
-    print('Animating at beat $beat');
     animation.beater.beat = beat;
   }
 
