@@ -565,9 +565,7 @@ class CallContext {
         // add XMLCall object to the call stack
         ctx0.callstack.add(xmlCall);
         ctx0.callname = callname + title.replaceAll('\\(.*\\)'.r, '') + ' ';
-        var thislevel = LevelData.find(link)!;
-        if (thislevel > ctx0.level)
-          ctx0.level = thislevel;
+        xmlCall.level = LevelData.find(link)!;
         return true;
       }
     }

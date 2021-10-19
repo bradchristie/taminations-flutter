@@ -75,6 +75,9 @@ class LevelData implements Comparable<LevelData> {
     }
   }
 
+  @override
+  String toString() => name;
+
   //  Comparison of levels - Basic 1 is smallest, C-3A is largest
   @override
   int compareTo(LevelData other) =>

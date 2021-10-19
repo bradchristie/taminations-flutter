@@ -452,6 +452,13 @@ class TamUtils {
       .replaceAll('\\b(7|seven)\\b'.ri,'7')
       .replaceAll('\\b(8|eight)\\b'.ri,'8')
       .replaceAll('\\b(9|nine)\\b'.ri,'9')
+  //  Ordinals
+      .replaceAll('2nd'.ri,'second')
+      .replaceAll('3rd'.ri,'third')
+      .replaceAll('4th'.ri,'fourth')
+      .replaceAll('\\bforth\\b'.ri,'fourth')
+      .replaceAll('5th'.ri,'fifth')
+      .replaceAll('6th'.ri,'sixth')
   //  Decimal fractions 2.5, 3.5 etc
       .replaceAllMapped('\\b([1-9])\\.5'.ri,
           (m) => '${m[1]}12')

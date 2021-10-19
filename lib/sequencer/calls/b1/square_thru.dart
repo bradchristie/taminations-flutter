@@ -34,12 +34,21 @@ class SquareThru extends Action {
       right = 'Left-Hand' ;
     }
     //  Find out how many hands
-    var count = TamUtils.normalizeCall(name)
-        .toLowerCase()
-        .replaceAll('toawave' , '')
+    var norm = TamUtils.normalizeCall(name).toLowerCase();
+    var count = norm.replaceAll('toawave' , '')
         .trim()
         .last
         .toIntOrNull() ?? 4;
+    if (norm.endsWith('onthefourthhand'))
+      count = 4;
+    if (norm.endsWith('onthethirdhand'))
+      count = 3;
+    if (norm.endsWith('onthesecondhand'))
+      count = 2;
+    if (norm.endsWith('onthefifthhand'))  //  really?
+      count = 5;
+    if (norm.endsWith('onthesixthhand'))  //  now, honestly ...
+      count = 6;
     //  First hand is step to a wave if not already there
     if (ctx.actives.any((d) => ctx.isInCouple(d))) {
       await  ctx.applyCalls('Facing Dancers Step to a Compact $right Wave' );
@@ -58,9 +67,9 @@ class SquareThru extends Action {
       ctx.level = LevelData.B1;  // override Explode (Plus)
     }
     //  Finish back-to-back unless C-1 concept 'to a Wave'  added
-    if (name.toLowerCase().endsWith('to a wave' ))
+    if (norm.endsWith('toawave' ))
       level = LevelData.C1;
-    else
+    else if (!norm.endsWith('hand'))  //  on the nth hand ...
       await ctx.applyCalls('Step Thru' );
   }
 
