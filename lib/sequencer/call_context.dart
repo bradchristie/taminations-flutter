@@ -1183,6 +1183,13 @@ class CallContext {
         ((xCount==4 && yCount==0) || (xCount==0 && yCount==4));
   }
 
+  //  Sometimes we have to work with an asymmetric context
+  bool isAsym() =>
+  !dancers.every((d) => !dancers.none((d2) =>
+      d2.location.isAbout(-d.location) &&
+      d2.angleFacing.isAround(d.angleFacing + pi)
+  ));
+
   //  Direction dancer would turn to Tag the Line
   String tagDirection(Dancer d) {
     if (dancerToRight(d)?.data.center == true)

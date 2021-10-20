@@ -30,7 +30,7 @@ class ThreeQuartersTag extends Action {
   Future<void> perform(CallContext ctx, [int i = 0]) async {
     var dir = (name.startsWith('Left')) ? 'Left' : '';
     //  All the 4-dancer formations are in Taminations
-    if (ctx.actives.length < 8)
+    if (ctx.actives.length < 8 && !ctx.isAsym())
       await ctx.applyCalls('$dir 3/4 Tag the Line');
     else if (ctx.isTidal())
       await ctx.applyCalls('$dir Quarter Tag','Extend','Extend');
@@ -38,9 +38,10 @@ class ThreeQuartersTag extends Action {
       throw CallError('Dancers must be in lines');
     else if (dir == 'Left')
       await ctx.applyCalls('Face In','Centers Step to a Left-Hand Wave','Extend','Extend');
+    else if (ctx.isAsym())
+      await ctx.applyCalls('Face In','Centers Step to a Wave','Extend','Extend');
     else
       await super.perform(ctx, i);
-
   }
 
   @override
