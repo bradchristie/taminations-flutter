@@ -226,6 +226,130 @@
     </path>
   </tam>
 
+  <tam title="All 4 Couples Promenade 1/4"
+       from="Static Square" group=" "
+       formation="Static Square">
+    <path>
+      <move select="Hinge Right" beats="2" scaleX="2" scaleY="2"/>
+      <move select="Lead Left" beats="2" hands="right" scaleX=".5"/>
+      <move select="BackHinge Right" beats="2" offsetY="-.5"/>
+    </path>
+    <path>
+      <move select="Quarter Right" beats="2" hands="left" offsetX="1"/>
+      <move select="Lead Left" beats="2" hands="left" scaleX="1.5" scaleY="2"/>
+      <move select="Hinge Left" beats="2" offsetY="-1.5"/>
+    </path>
+    <path>
+      <move select="Hinge Right" beats="2" scaleX="2" scaleY="2"/>
+      <move select="Lead Left" beats="2" hands="right" scaleX=".5"/>
+      <move select="BackHinge Right" beats="2" offsetY="-.5"/>
+    </path>
+    <path>
+      <move select="Quarter Right" beats="2" hands="left" offsetX="1"/>
+      <move select="Lead Left" beats="2" hands="left" scaleX="1.5" scaleY="2"/>
+      <move select="Hinge Left" beats="2" offsetY="-1.5"/>
+    </path>
+  </tam>
+
+  <tam title="All 4 Couples Promenade 1/2"
+       from="Static Square" group=" "
+       formation="Static Square">
+    <path>
+      <move select="Hinge Right" beats="2" scaleX="2" scaleY="2"/>
+      <move select="Lead Left" beats="2" hands="right" scaleX=".5"/>
+      <move select="Lead Left" beats="2" hands="right" scaleX="1.5" scaleY="1.5"/>
+      <move select="BackHinge Right" beats="2" offsetY="-.5"/>
+    </path>
+    <path>
+      <move select="Quarter Right" beats="2" hands="left" offsetX="1"/>
+      <move select="Lead Left" beats="2" hands="left" scaleX="1.5" scaleY="2"/>
+      <move select="Lead Left" beats="2" hands="left" scaleX="2.5" scaleY="2.5"/>
+      <move select="Hinge Left" beats="2" offsetY="-1.5"/>
+    </path>
+    <path>
+      <move select="Hinge Right" beats="2" scaleX="2" scaleY="2"/>
+      <move select="Lead Left" beats="2" hands="right" scaleX=".5"/>
+      <move select="Lead Left" beats="2" hands="right" scaleX="1.5" scaleY="1.5"/>
+      <move select="BackHinge Right" beats="2" offsetY="-.5"/>
+    </path>
+    <path>
+      <move select="Quarter Right" beats="2" hands="left" offsetX="1"/>
+      <move select="Lead Left" beats="2" hands="left" scaleX="1.5" scaleY="2"/>
+      <move select="Lead Left" beats="2" hands="left" scaleX="2.5" scaleY="2.5"/>
+      <move select="Hinge Left" beats="2" offsetY="-1.5"/>
+    </path>
+  </tam>
+
+  <tam title="All 4 Couples Promenade 3/4"
+       from="Static Square" group=" "
+       formation="Static Square">
+    <path>
+      <move select="Hinge Right" beats="2" scaleX="2" scaleY="2"/>
+      <move select="Lead Left" beats="2" hands="right" scaleX=".5"/>
+      <move select="Lead Left" beats="2" hands="right" scaleX="1.5" scaleY="1.5"/>
+      <move select="Lead Left" beats="2" hands="right" scaleX="1.5" scaleY="1.5"/>
+      <move select="BackHinge Right" beats="2" offsetY="-.5"/>
+    </path>
+    <path>
+      <move select="Quarter Right" beats="2" hands="left" offsetX="1"/>
+      <move select="Lead Left" beats="2" hands="left" scaleX="1.5" scaleY="2"/>
+      <move select="Lead Left" beats="2" hands="left" scaleX="2.5" scaleY="2.5"/>
+      <move select="Lead Left" beats="2" hands="left" scaleX="2.5" scaleY="2.5"/>
+      <move select="Hinge Left" beats="2" offsetY="-1.5"/>
+    </path>
+    <path>
+      <move select="Hinge Right" beats="2" scaleX="2" scaleY="2"/>
+      <move select="Lead Left" beats="2" hands="right" scaleX=".5"/>
+      <move select="Lead Left" beats="2" hands="right" scaleX="1.5" scaleY="1.5"/>
+      <move select="Lead Left" beats="2" hands="right" scaleX="1.5" scaleY="1.5"/>
+      <move select="BackHinge Right" beats="2" offsetY="-.5"/>
+    </path>
+    <path>
+      <move select="Quarter Right" beats="2" hands="left" offsetX="1"/>
+      <move select="Lead Left" beats="2" hands="left" scaleX="1.5" scaleY="2"/>
+      <move select="Lead Left" beats="2" hands="left" scaleX="2.5" scaleY="2.5"/>
+      <move select="Lead Left" beats="2" hands="left" scaleX="2.5" scaleY="2.5"/>
+      <move select="Hinge Left" beats="2" offsetY="-1.5"/>
+    </path>
+  </tam>
+
+  <tam title="All 4 Couples Promenade Full"
+       from="Static Square" group=" "
+       formation="Static Square">
+    <path>
+      <move select="Hinge Right" beats="2" scaleX="2" scaleY="2"/>
+      <move select="Lead Left" beats="2" hands="right" scaleX=".5"/>
+      <move select="Lead Left" beats="2" hands="right" scaleX="1.5" scaleY="1.5"/>
+      <move select="Lead Left" beats="2" hands="right" scaleX="1.5" scaleY="1.5"/>
+      <move select="Lead Left" beats="2" hands="right" scaleX="1.5" scaleY="1.5"/>
+      <move select="BackHinge Right" beats="2" offsetY="-.5"/>
+    </path>
+    <path>
+      <move select="Quarter Right" beats="2" hands="left" offsetX="1"/>
+      <move select="Lead Left" beats="2" hands="left" scaleX="1.5" scaleY="2"/>
+      <move select="Lead Left" beats="2" hands="left" scaleX="2.5" scaleY="2.5"/>
+      <move select="Lead Left" beats="2" hands="left" scaleX="2.5" scaleY="2.5"/>
+      <move select="Lead Left" beats="2" hands="left" scaleX="2.5" scaleY="2.5"/>
+      <move select="Hinge Left" beats="2" offsetY="-1.5"/>
+    </path>
+    <path>
+      <move select="Hinge Right" beats="2" scaleX="2" scaleY="2"/>
+      <move select="Lead Left" beats="2" hands="right" scaleX=".5"/>
+      <move select="Lead Left" beats="2" hands="right" scaleX="1.5" scaleY="1.5"/>
+      <move select="Lead Left" beats="2" hands="right" scaleX="1.5" scaleY="1.5"/>
+      <move select="Lead Left" beats="2" hands="right" scaleX="1.5" scaleY="1.5"/>
+      <move select="BackHinge Right" beats="2" offsetY="-.5"/>
+    </path>
+    <path>
+      <move select="Quarter Right" beats="2" hands="left" offsetX="1"/>
+      <move select="Lead Left" beats="2" hands="left" scaleX="1.5" scaleY="2"/>
+      <move select="Lead Left" beats="2" hands="left" scaleX="2.5" scaleY="2.5"/>
+      <move select="Lead Left" beats="2" hands="left" scaleX="2.5" scaleY="2.5"/>
+      <move select="Lead Left" beats="2" hands="left" scaleX="2.5" scaleY="2.5"/>
+      <move select="Hinge Left" beats="2" offsetY="-1.5"/>
+    </path>
+  </tam>
+
   <tam title="Four Boys Promenade"
        from="Static Square" sequencer="gender-specific" group=" "
        formation="Static Square">
@@ -554,6 +678,130 @@
       <move select="Lead Right" hands="gripleft" beats="2" offsetX="1" />
       <move select="Forward 3" hands="left" beats="2"/>
       <move select="Run Right" hands="gripleft" beats="3" offsetX="2" />
+    </path>
+  </tam>
+
+  <tam title="All 4 Couples Wrong Way Promenade 1/4"
+       from="Static Square" group=" "
+       formation="Static Square">
+    <path>
+      <move select="Quarter Left" beats="2" hands="left" offsetX="1"/>
+      <move select="Lead Right" beats="2" hands="left" scaleX="1.5" scaleY="2"/>
+      <move select="Hinge Right" beats="2" offsetY="1.5"/>
+    </path>
+    <path>
+      <move select="Hinge Left" beats="2" scaleX="2" scaleY="2"/>
+      <move select="Lead Right" beats="2" hands="right" scaleX=".5"/>
+      <move select="BackHinge Left" beats="2" offsetY=".5"/>
+    </path>
+    <path>
+      <move select="Quarter Left" beats="2" hands="left" offsetX="1"/>
+      <move select="Lead Right" beats="2" hands="left" scaleX="1.5" scaleY="2"/>
+      <move select="Hinge Right" beats="2" offsetY="1.5"/>
+    </path>
+    <path>
+      <move select="Hinge Left" beats="2" scaleX="2" scaleY="2"/>
+      <move select="Lead Right" beats="2" hands="right" scaleX=".5"/>
+      <move select="BackHinge Left" beats="2" offsetY=".5"/>
+    </path>
+  </tam>
+
+  <tam title="All 4 Couples Wrong Way Promenade 1/2"
+       from="Static Square" group=" "
+       formation="Static Square">
+    <path>
+      <move select="Quarter Left" beats="2" hands="left" offsetX="1"/>
+      <move select="Lead Right" beats="2" hands="left" scaleX="1.5" scaleY="2"/>
+      <move select="Lead Right" beats="2" hands="left" scaleX="2.5" scaleY="2.5"/>
+      <move select="Hinge Right" beats="2" offsetY="1.5"/>
+    </path>
+    <path>
+      <move select="Hinge Left" beats="2" scaleX="2" scaleY="2"/>
+      <move select="Lead Right" beats="2" hands="right" scaleX=".5"/>
+      <move select="Lead Right" beats="2" hands="right" scaleX="1.5" scaleY="1.5"/>
+      <move select="BackHinge Left" beats="2" offsetY=".5"/>
+    </path>
+    <path>
+      <move select="Quarter Left" beats="2" hands="left" offsetX="1"/>
+      <move select="Lead Right" beats="2" hands="left" scaleX="1.5" scaleY="2"/>
+      <move select="Lead Right" beats="2" hands="left" scaleX="2.5" scaleY="2.5"/>
+      <move select="Hinge Right" beats="2" offsetY="1.5"/>
+    </path>
+    <path>
+      <move select="Hinge Left" beats="2" scaleX="2" scaleY="2"/>
+      <move select="Lead Right" beats="2" hands="right" scaleX=".5"/>
+      <move select="Lead Right" beats="2" hands="right" scaleX="1.5" scaleY="1.5"/>
+      <move select="BackHinge Left" beats="2" offsetY=".5"/>
+    </path>
+  </tam>
+
+  <tam title="All 4 Couples Wrong Way Promenade 3/4"
+       from="Static Square" group=" "
+       formation="Static Square">
+    <path>
+      <move select="Quarter Left" beats="2" hands="left" offsetX="1"/>
+      <move select="Lead Right" beats="2" hands="left" scaleX="1.5" scaleY="2"/>
+      <move select="Lead Right" beats="2" hands="left" scaleX="2.5" scaleY="2.5"/>
+      <move select="Lead Right" beats="2" hands="left" scaleX="2.5" scaleY="2.5"/>
+      <move select="Hinge Right" beats="2" offsetY="1.5"/>
+    </path>
+    <path>
+      <move select="Hinge Left" beats="2" scaleX="2" scaleY="2"/>
+      <move select="Lead Right" beats="2" hands="right" scaleX=".5"/>
+      <move select="Lead Right" beats="2" hands="right" scaleX="1.5" scaleY="1.5"/>
+      <move select="Lead Right" beats="2" hands="right" scaleX="1.5" scaleY="1.5"/>
+      <move select="BackHinge Left" beats="2" offsetY=".5"/>
+    </path>
+    <path>
+      <move select="Quarter Left" beats="2" hands="left" offsetX="1"/>
+      <move select="Lead Right" beats="2" hands="left" scaleX="1.5" scaleY="2"/>
+      <move select="Lead Right" beats="2" hands="left" scaleX="2.5" scaleY="2.5"/>
+      <move select="Lead Right" beats="2" hands="left" scaleX="2.5" scaleY="2.5"/>
+      <move select="Hinge Right" beats="2" offsetY="1.5"/>
+    </path>
+    <path>
+      <move select="Hinge Left" beats="2" scaleX="2" scaleY="2"/>
+      <move select="Lead Right" beats="2" hands="right" scaleX=".5"/>
+      <move select="Lead Right" beats="2" hands="right" scaleX="1.5" scaleY="1.5"/>
+      <move select="Lead Right" beats="2" hands="right" scaleX="1.5" scaleY="1.5"/>
+      <move select="BackHinge Left" beats="2" offsetY=".5"/>
+    </path>
+  </tam>
+
+  <tam title="All 4 Couples Wrong Way Promenade Full"
+       from="Static Square" group=" "
+       formation="Static Square">
+    <path>
+      <move select="Quarter Left" beats="2" hands="left" offsetX="1"/>
+      <move select="Lead Right" beats="2" hands="left" scaleX="1.5" scaleY="2"/>
+      <move select="Lead Right" beats="2" hands="left" scaleX="2.5" scaleY="2.5"/>
+      <move select="Lead Right" beats="2" hands="left" scaleX="2.5" scaleY="2.5"/>
+      <move select="Lead Right" beats="2" hands="left" scaleX="2.5" scaleY="2.5"/>
+      <move select="Hinge Right" beats="2" offsetY="1.5"/>
+    </path>
+    <path>
+      <move select="Hinge Left" beats="2" scaleX="2" scaleY="2"/>
+      <move select="Lead Right" beats="2" hands="right" scaleX=".5"/>
+      <move select="Lead Right" beats="2" hands="right" scaleX="1.5" scaleY="1.5"/>
+      <move select="Lead Right" beats="2" hands="right" scaleX="1.5" scaleY="1.5"/>
+      <move select="Lead Right" beats="2" hands="right" scaleX="1.5" scaleY="1.5"/>
+      <move select="BackHinge Left" beats="2" offsetY=".5"/>
+    </path>
+    <path>
+      <move select="Quarter Left" beats="2" hands="left" offsetX="1"/>
+      <move select="Lead Right" beats="2" hands="left" scaleX="1.5" scaleY="2"/>
+      <move select="Lead Right" beats="2" hands="left" scaleX="2.5" scaleY="2.5"/>
+      <move select="Lead Right" beats="2" hands="left" scaleX="2.5" scaleY="2.5"/>
+      <move select="Lead Right" beats="2" hands="left" scaleX="2.5" scaleY="2.5"/>
+      <move select="Hinge Right" beats="2" offsetY="1.5"/>
+    </path>
+    <path>
+      <move select="Hinge Left" beats="2" scaleX="2" scaleY="2"/>
+      <move select="Lead Right" beats="2" hands="right" scaleX=".5"/>
+      <move select="Lead Right" beats="2" hands="right" scaleX="1.5" scaleY="1.5"/>
+      <move select="Lead Right" beats="2" hands="right" scaleX="1.5" scaleY="1.5"/>
+      <move select="Lead Right" beats="2" hands="right" scaleX="1.5" scaleY="1.5"/>
+      <move select="BackHinge Left" beats="2" offsetY=".5"/>
     </path>
   </tam>
 
