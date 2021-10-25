@@ -41,6 +41,7 @@ import 'a1/split_square_thru.dart';
 import 'a1/triple_star_thru.dart';
 import 'a1/triple_trade.dart';
 import 'a1/turn_and_deal.dart';
+import 'a2/all_eight.dart';
 import 'a2/box_counter_rotate.dart';
 import 'a2/single_wheel.dart';
 import 'a2/slide.dart';
@@ -205,6 +206,8 @@ abstract class CodedCall extends Call {
 
     'aceydeucey'.ri: (_) => AceyDeucey(),
     'adjustto.*'.ri: (name) => Adjust(name),
+    'all8fanthetop'.ri: (_) => AllEightFanTheTop(),
+    'all8slip'.ri: (_) => AllEightSlip(),
     'and'.ri: (_) => And(),
     //  Anything Motivate does not include Finish Motivate
     '.*(?<!finish)(motivate|coordinate|percolate|perkup)'.ri: (name) => Anything(name),

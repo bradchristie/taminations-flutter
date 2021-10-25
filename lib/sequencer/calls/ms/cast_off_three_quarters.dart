@@ -20,7 +20,7 @@
 
 import '../common.dart';
 
-class CastOffThreeQuarters extends Action {
+class CastOffThreeQuarters extends ActivesOnlyAction {
 
   @override
   var level = LevelData.MS;
