@@ -82,6 +82,22 @@
     </path>
   </tam>
 
+  <tam title="Half Swap Around" display="no"
+       from="Eight Chain Thru"
+       formation="Eight Chain Thru">
+    <path>
+      <move select="Quarter Right" beats="2" offsetX="-2" offsetY="-1"/>
+    </path>
+    <path>
+    </path>
+    <path>
+      <move select="Quarter Right" beats="2" offsetY="-1"/>
+    </path>
+    <path>
+      <move select="Forward 2"/>
+    </path>
+  </tam>
+
   <tam title="As Couples Swap Around"
        from="Normal Lines"
        formation="Normal Lines"
