@@ -366,7 +366,7 @@ abstract class CodedCall extends Call {
     'squeezethegalaxy'.ri: (_) => SqueezeTheGalaxy(),
     'squeezethehourglass'.ri: (_) => SqueezeTheHourglass(),
     '(left)?squarethru(1|2|3|4|5|6|7)?(toawave)?'.ri: (name) => SquareThru(name),
-    '(left)?squarethruonthe(second|third|fourth|fifth|sixth)hand'.ri: (name) => SquareThru(name),
+    '(left)?squarethruon(2|3|4|5|6)(.+)'.ri: (name) => SquareThru(name),
     'stagger.+'.ri: (name) => Stagger(name),
     //  Make sure Start does not match Star
     'Start.+'.r: (name) => Start(name),

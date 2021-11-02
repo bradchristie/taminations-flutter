@@ -486,6 +486,11 @@ class TamUtils {
       .replaceAllMapped('interlocked (flip|cut) the'.ri,
           (m) => '${m[1]} the Interlocked')
       .replaceAll('walk around your corner'.ri,'WalkAround the Corner')
+      .replaceAll('on the second hand'.ri,'on 2')
+      .replaceAll('on the third hand'.ri,'on 3')
+      .replaceAll('on the fou?rth hand'.ri,'on 4')
+      .replaceAll('on the fifth hand'.ri,'on 5')
+      .replaceAll('on the sixth hand'.ri,'on 6')
   //  'Dixie Style' -> 'Dixie Style to a Wave'
       .replaceAll('\\bdixie style(?! to)'.ri,'Dixie Style to a Wave')
   //  Accept both Left Chase and Chase Left

@@ -35,19 +35,27 @@ class SquareThru extends Action {
     }
     //  Find out how many hands
     var norm = TamUtils.normalizeCall(name).toLowerCase();
+    var extra = '';
+    var onHand = norm.indexOf('on(2|3|4|5|6)'.r);
+    if (onHand > 0) {
+      extra = norm.substring(onHand+3);
+      norm = norm.substring(0,onHand+3);
+      if (extra.matches('(left)?touch14'.r))
+        extra = 'Hinge';
+    }
     var count = norm.replaceAll('toawave' , '')
         .trim()
         .last
         .toIntOrNull() ?? 4;
-    if (norm.endsWith('onthefourthhand'))
+    if (norm.endsWith('on4'))
       count = 4;
-    if (norm.endsWith('onthethirdhand'))
+    if (norm.endsWith('on3'))
       count = 3;
-    if (norm.endsWith('onthesecondhand'))
+    if (norm.endsWith('on2'))
       count = 2;
-    if (norm.endsWith('onthefifthhand'))  //  really?
+    if (norm.endsWith('on5'))  //  really?
       count = 5;
-    if (norm.endsWith('onthesixthhand'))  //  now, honestly ...
+    if (norm.endsWith('on6'))  //  now, honestly ...
       count = 6;
     //  First hand is step to a wave if not already there
     if (ctx.actives.any((d) => ctx.isInCouple(d))) {
@@ -69,8 +77,10 @@ class SquareThru extends Action {
     //  Finish back-to-back unless C-1 concept 'to a Wave'  added
     if (norm.endsWith('toawave' ))
       level = LevelData.C1;
-    else if (!norm.endsWith('hand'))  //  on the nth hand ...
+    else if (onHand <= 0)  //  on the nth hand ...
       await ctx.applyCalls('Step Thru' );
+    if (extra.isNotBlank)
+      await ctx.applyCalls(extra);
   }
 
 }
