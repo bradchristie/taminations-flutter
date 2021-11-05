@@ -681,7 +681,7 @@
   <call audio="ssd/touch_a_quarter.mp3" languages="lang-ja" link="ssd/touch_a_quarter" title="Touch a Quarter"/>
   <call link="c3a/touch_by" title="Touch By"/>
   <call link="c1/track_n" title="Track n"/>
-  <call audio="plus/track_two.mp3" languages="lang-ja" link="plus/track_ii" title="Track Two"/>
+  <call audio="plus/track_two.mp3" languages="lang-ja" link="plus/track_ii" title="Track 2"/>
   <call languages="lang-ja lang-ja" link="b2/trade" title="Trade"/>
   <call languages="lang-ja lang-ja" link="ssd/trade" title="Trade"/>
   <call audio="b2/trade_by.mp3" languages="lang-ja" link="b2/trade_by" title="Trade By"/>

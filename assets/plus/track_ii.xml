@@ -20,12 +20,12 @@
     along with Taminations.  If not, see <http://www.gnu.org/licenses/>.
 
 -->
-<tamination title="Track Two">
+<tamination title="Track 2">
 
-  <tam title="Track Two"
-       from="Completed Double Pass Thru"
+  <tam title="Track 2"
+       from="Completed Double Pass Thru" group=" "
        formation="Completed Double Pass Thru"
-       fractions="" difficulty="1">
+       difficulty="1">
     <path>
       <move select="Run Left" beats="2" scaleX=".5" scaleY=".5" />
       <move select="Extend Right" beats="4" scaleX="5" />
@@ -45,10 +45,10 @@
     </path>
   </tam>
 
-  <tam title="Left Track Two"
-       from="Completed Double Pass Thru"
+  <tam title="Left Track 2"
+       from="Completed Double Pass Thru" group=" "
        formation="Completed Double Pass Thru"
-       fractions="" difficulty="3">
+       difficulty="3">
     <path>
       <move select="Run Left" beats="5" scaleX="2" scaleY="2" />
       <move select="Forward 5" beats="3" />
