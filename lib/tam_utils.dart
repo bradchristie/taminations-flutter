@@ -412,7 +412,7 @@ class TamUtils {
     if (hands != null)
       path.changehands(hands);
     if (beats != null)
-      path.changebeats(beats);
+      path.changeBeats(beats);
     if ((reflect ?? false))
       path.reflect();
     return path;

@@ -35,7 +35,7 @@ class Dosado extends Action {
       dir1 = 'Right' ;
       dir2 = 'Left' ;
     }
-    return (TamUtils.getMove('Extend $dir1' )..scale(dist/2.0,0.5)..changebeats(dist/2.0)) +
+    return (TamUtils.getMove('Extend $dir1' )..scale(dist/2.0,0.5)..changeBeats(dist/2.0)) +
         (TamUtils.getMove('Extend $dir2' )..scale(1.0,0.5)) +
         (TamUtils.getMove('Retreat $dir2' )..scale(1.0,0.5)) +
         (TamUtils.getMove('Retreat $dir1' )..scale(1.0,0.5));

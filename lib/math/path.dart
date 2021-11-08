@@ -93,7 +93,7 @@ class Path {
 
   double get beats => movelist.map((it) => it.beats).fold(0.0, (previousValue, element) => previousValue + element);
 
-  void changebeats(double newbeats) {
+  void changeBeats(double newbeats) {
     var factor = newbeats / beats;
     movelist = movelist.map((it) => it.time(it.beats * factor)).toList();
     //  no need to recalculate, transformlist doesn't depend on beats

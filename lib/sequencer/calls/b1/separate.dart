@@ -38,22 +38,22 @@ class Separate extends Action {
         if (d2.isRightOf(d) && d.isFacingIn)
           d.path += TamUtils.getMove('Quarter Left' ) +
               (TamUtils.getMove('Lead Right' )
-                ..changebeats(2.0)
+                ..changeBeats(2.0)
                 ..scale(2.0, 2.0));
         else if (d2.isRightOf(d) && d.isFacingOut)
           d.path += TamUtils.getMove('Quarter Left' ) +
               (TamUtils.getMove('Lead Left' )
-                ..changebeats(2.0)
+                ..changeBeats(2.0)
                 ..scale(2.0, 2.0));
         else if (d2.isLeftOf(d) && d.isFacingIn)
           d.path += TamUtils.getMove('Quarter Right' ) +
               (TamUtils.getMove('Lead Left' )
-                ..changebeats(2.0)
+                ..changeBeats(2.0)
                 ..scale(2.0, 2.0));
         else if (d2.isLeftOf(d) && d.isFacingOut)
           d.path += TamUtils.getMove('Quarter Right' ) +
               (TamUtils.getMove('Lead Right' )
-                ..changebeats(2.0)
+                ..changeBeats(2.0)
                 ..scale(2.0, 2.0));
         else
           throw CallError('Unable to figure out how to Separate' );
@@ -80,7 +80,7 @@ class Separate extends Action {
         var dist = d.distanceTo(d2!) / 2 - 1;
         d.path += TamUtils.getMove('Forward' )
           ..scale(dist, 1.0)
-          ..changebeats(3.0);
+          ..changeBeats(3.0);
       }
     }
 

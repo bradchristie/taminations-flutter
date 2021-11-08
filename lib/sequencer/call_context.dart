@@ -1230,7 +1230,7 @@ class CallContext {
     for (var d in dancers) {
       var b = maxb - d.path.beats;
       if (b > 0)
-        d.path.add(TamUtils.getMove('Stand')..changebeats(b)..notFromCall());
+        d.path.add(TamUtils.getMove('Stand')..changeBeats(b)..notFromCall());
     }
   }
 
@@ -1241,6 +1241,13 @@ class CallContext {
         d.path.pop();
       }
     }
+  }
+
+  //  Make all dancers dance their part in a specific number of beats
+  void changeBeats(double newbeats) {
+    contractPaths();
+    for (var d in dancers)
+      d.path.changeBeats(newbeats);
   }
 
   //  Center dancers around the origin
