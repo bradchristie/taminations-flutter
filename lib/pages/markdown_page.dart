@@ -57,6 +57,7 @@ class _MarkdownFrameState extends fm.State<MarkdownFrame> {
   bool hasAbbrev = false;
   Future<String>? _htmlFuture;
   String get _dir => currentLink.replaceFirst(r'/.*'.r,'');
+  final scrollController = fm.ScrollController();
 
   @override
   void didChangeDependencies() {
@@ -122,35 +123,41 @@ class _MarkdownFrameState extends fm.State<MarkdownFrame> {
                         fm.Expanded(
                             child: fm.Container(
                                 color: Color(0xfffff8f0),
-                                child: Markdown(
-                                  data: _htmlToMarkdown(snapshot.data!
-                                      .toString(), isAbbrev, highlightState),
-                                  selectable: true,
-                                  styleSheet: markdownStyle,
-                                  onTapLink: (text, newlink, _) {
-                                    if (newlink != null) {
-                                      //  Open external links, including mail links,
-                                      //  with external browser
-                                      if (newlink.startsWith('http|mailto'.r)) {
-                                        launch(newlink);
-                                      } else {
-                                        //  Internal link (another definition)
-                                        //  Replace current definition
-                                        linkStack.add(currentLink);
-                                        titleStack.add(title);
-                                        //  Need to convert link from relative to current dir
-                                        //  to relative to parent dir
-                                        var abslink = newlink.replaceFirst(
-                                            '../', '');
-                                        if (!abslink.contains('/'))
-                                          abslink = '$_dir/$abslink';
-                                        setState(() {
-                                          _loadHtmlFromAssets(
-                                              settings, abslink);
-                                        });
+                                child: fm.Scrollbar(
+                                  isAlwaysShown: TamUtils.platform().matches('web|windows'.r),
+                                  thickness: 16,
+                                  controller: scrollController,
+                                  child: Markdown(
+                                    data: _htmlToMarkdown(snapshot.data!
+                                        .toString(), isAbbrev, highlightState),
+                                    selectable: true,
+                                    styleSheet: markdownStyle,
+                                    controller: scrollController,
+                                    onTapLink: (text, newlink, _) {
+                                      if (newlink != null) {
+                                        //  Open external links, including mail links,
+                                        //  with external browser
+                                        if (newlink.startsWith('http|mailto'.r)) {
+                                          launch(newlink);
+                                        } else {
+                                          //  Internal link (another definition)
+                                          //  Replace current definition
+                                          linkStack.add(currentLink);
+                                          titleStack.add(title);
+                                          //  Need to convert link from relative to current dir
+                                          //  to relative to parent dir
+                                          var abslink = newlink.replaceFirst(
+                                              '../', '');
+                                          if (!abslink.contains('/'))
+                                            abslink = '$_dir/$abslink';
+                                          setState(() {
+                                            _loadHtmlFromAssets(
+                                                settings, abslink);
+                                          });
+                                        }
                                       }
-                                    }
-                                  },
+                                    },
+                                  ),
                                 ))
                         ),
 
