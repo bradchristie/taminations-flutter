@@ -482,9 +482,9 @@
   <call audio="b2/reverseflutterwheel.mp3" languages="lang-ja" link="b2/flutterwheel" title="Reverse Flutterwheel"/>
   <call audio="ssd/reverseflutterwheel.mp3" languages="lang-ja" link="ssd/flutterwheel" title="Reverse Flutterwheel"/>
   <call link="c3b/reverse_order" title="Reverse Order Concept"/>
-  <call link="c1/reverse_rotate" title="Reverse Rotate"/>
+  <call link="c1/rotate" title="Reverse Rotate"/>
   <call link="c2/reverse_rotate" title="Reverse Rotate"/>
-  <call link="c1/reverse_single_rotate" title="Reverse Single Rotate"/>
+  <call link="c1/rotate" title="Reverse Single Rotate"/>
   <call link="c2/reverse_single_rotate" title="Reverse Single Rotate"/>
   <call link="c2/reverse_split_swap_around" title="Reverse Split Swap Around"/>
   <call audio="a1/reverse_swap_around.mp3" link="a1/reverse_swap_around" title="Reverse Swap Around"/>
@@ -558,7 +558,7 @@
   <call link="c2/single_cross_trade_and_wheel" title="Single Cross Trade and Wheel"/>
   <call link="c3a/single_file_recoil" title="Single File Recoil"/>
   <call link="c3a/single_file_recycle" title="Single File Recycle"/>
-  <call link="c1/single_rotate" title="Single Rotate"/>
+  <call link="c1/rotate" title="Single Rotate"/>
   <call link="c2/single_rotate" title="Single Rotate"/>
   <call audio="a2/single_wheel.mp3" link="a2/single_wheel" title="Single Wheel"/>
   <call link="a1/six_two_acey_deucey" title="Six-Two Acey Deucey"/>
@@ -680,7 +680,7 @@
   <call audio="b2/touch_a_quarter.mp3" languages="lang-ja" link="b2/touch_a_quarter" title="Touch a Quarter"/>
   <call audio="ssd/touch_a_quarter.mp3" languages="lang-ja" link="ssd/touch_a_quarter" title="Touch a Quarter"/>
   <call link="c3a/touch_by" title="Touch By"/>
-  <call link="c1/track_n" title="Track n"/>
+  <call link="c1/track_n" title="Track (0,1,2,3,4)"/>
   <call audio="plus/track_two.mp3" languages="lang-ja" link="plus/track_ii" title="Track 2"/>
   <call languages="lang-ja lang-ja" link="b2/trade" title="Trade"/>
   <call languages="lang-ja lang-ja" link="ssd/trade" title="Trade"/>
