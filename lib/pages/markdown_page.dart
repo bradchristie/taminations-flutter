@@ -292,6 +292,8 @@ class _MarkdownFrameState extends fm.State<MarkdownFrame> {
     //  other bold text
         .replaceAllMapped('<b>(.*?)</b>'.rd,(m) => '**${m[1]}**')
         .replaceAllMapped('<strong>(.*?)</strong>'.rd,(m) => '**${m[1]}**')
+    //  italics
+        .replaceAllMapped('<i>(.*?)</i>'.rd,(m) => '*${m[1]}*')
     //  H2
         .replaceAllMapped('<h2>(.*?)</h2>'.r, (m) => '## ${m[1]!.toUpperCase()}')
     //  H3

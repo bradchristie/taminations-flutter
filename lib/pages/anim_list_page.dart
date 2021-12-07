@@ -135,7 +135,7 @@ class _AnimListState extends fm.State<AnimListFrame> {
     for (final tam in TamUtils.tamList(doc)
         .where((it) => !(it('display','')).startsWith('n'))) {
       var tamTitle = tam('title');
-      var from = tam('from');
+      var from = tam('from') + tam('xref-from');
       var group = tam('group','');
       if (tam('difficulty').isNotBlank)
         hasDifficulty = true;
