@@ -227,4 +227,119 @@
     </path>
   </tam>
 
+  <tam title="Tag Your Neighbor" group=" "
+       formation="Two-Faced Line RH" parts="2">
+    <path>
+      <!-- 1/2 tag the line -->
+      <move select="Lead Right" beats="2" scaleY="2"/>
+      <!-- follow your neighbor -->
+      <move select="Forward" beats="1.5" offsetY="-.25" />
+      <move select="Swing Right" scaleX=".75" scaleY=".75" />
+      <move select="Hinge Right" offsetY=".25" />
+    </path>
+    <path>
+      <!-- 1/2 tag the line -->
+      <move select="Lead Right" beats="2" scaleY="2"/>
+      <!-- follow your neighbor -->
+      <move select="Lead Right" beats="3" scaleX="3" />
+      <move select="Run Right" scaleY=".5" />
+    </path>
+  </tam>
+
+  <tam title="Tag Your Cross Neighbor" group=" "
+       formation="Two-Faced Line RH" parts="2">
+    <path>
+      <move select="Lead Right" beats="2" scaleY="2"/>
+      <move select="Extend Right" beats="1.5" scaleY="1.75"/>
+      <move select="Swing Left" scaleX=".75" scaleY=".75" />
+      <move select="Hinge Left" offsetY="-.25" />
+    </path>
+    <path>
+      <move select="Lead Right" beats="2" scaleY="2"/>
+      <move select="Lead Right" beats="3" scaleX="3" />
+      <move select="Run Right" scaleY=".5" />
+    </path>
+  </tam>
+
+  <tam title="Tag Your Criss Cross Neighbor" group=" "
+       formation="Two-Faced Line RH" parts="2">
+    <path>
+      <move select="Lead Right" beats="2" scaleY="2"/>
+      <move select="Extend Right" beats="1.5" scaleY="1.75"/>
+      <move select="Swing Left" scaleX=".75" scaleY=".75" />
+      <move select="Lead Left" beats="3" scaleX="3" offsetY="-.25" />
+    </path>
+    <path>
+      <move select="Lead Right" beats="2" scaleY="2"/>
+      <move select="Lead Right" beats="3" scaleX="3" />
+      <move select="Run Right" beats="5" scaleX="2" scaleY="2.5" />
+    </path>
+  </tam>
+
+  <tam title="Vertical Tag Your Neighbor" group=" "
+       formation="Couples Facing Out"
+       fractions="4.5" >
+    <path>
+      <!-- vertical 1/2 tag -->
+      <move select="U-Turn Left" offsetX="-1.5"/>
+      <move select="Forward" beats="1.5" scaleX="1.5"/>
+      <!--  follow your neighbor -->
+      <move select="Lead Right" beats="3" scaleX="3" />
+      <move select="Run Right" scaleY=".5" />
+    </path>
+    <path>
+      <!-- vertical 1/2 tag -->
+      <move select="Flip Right" offsetX=".5"/>
+      <move select="Forward" beats="1.5" scaleX="1.5"/>
+      <!-- follow your neighbor -->
+      <move select="Forward" beats="1.5" offsetY="-.25" />
+      <move select="Swing Right" scaleX=".75" scaleY=".75" />
+      <move select="Hinge Right" offsetY=".25" />
+    </path>
+  </tam>
+
+  <tam title="Vertical Tag Your Cross Neighbor" group=" "
+       formation="Couples Facing Out"
+       fractions="4.5" >
+    <path>
+      <!-- vertical 1/2 tag -->
+      <move select="U-Turn Left" offsetX="-1.5"/>
+      <move select="Forward" beats="1.5" scaleX="1.5"/>
+      <!--  follow your neighbor -->
+      <move select="Lead Right" beats="3" scaleX="3" />
+      <move select="Run Right" scaleY=".5" />
+    </path>
+    <path>
+      <!-- vertical 1/2 tag -->
+      <move select="Flip Right" offsetX=".5"/>
+      <move select="Forward" beats="1.5" scaleX="1.5"/>
+      <!-- cross your neighbor -->
+      <move select="Extend Right" beats="1.5" scaleY="1.75" />
+      <move select="Swing Left" scaleX=".75" scaleY=".75" />
+      <move select="Hinge Left" offsetY="-.25" />
+    </path>
+  </tam>
+
+  <tam title="Vertical Tag Your Criss Cross Neighbor" group=" "
+       formation="Couples Facing Out"
+       fractions="4.5" >
+    <path>
+      <!-- vertical 1/2 tag -->
+      <move select="U-Turn Left" offsetX="-1.5"/>
+      <move select="Forward" beats="1.5" scaleX="1.5"/>
+      <!--  criss -->
+      <move select="Lead Right" />
+      <move select="Run Right" beats="6" scaleX="2" scaleY="1.5" />
+    </path>
+    <path>
+      <!-- vertical 1/2 tag -->
+      <move select="Flip Right" offsetX=".5"/>
+      <move select="Forward" beats="1.5" scaleX="1.5"/>
+      <!-- cross your neighbor -->
+      <move select="Extend Right" beats="1.5" scaleY="1.75" />
+      <move select="Swing Left" scaleX=".75" scaleY=".75" />
+      <move select="Lead Left" beats="3" scaleX="3" scaleY=".75" />
+    </path>
+  </tam>
+
 </tamination>
