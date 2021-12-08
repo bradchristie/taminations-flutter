@@ -18,6 +18,7 @@
 
 */
 import 'package:taminations/sequencer/calls/a1/six_two_acey_deucey.dart';
+import 'package:taminations/sequencer/calls/a2/split_counter_rotate.dart';
 import 'package:taminations/sequencer/calls/c1/block_formation.dart';
 
 import '../../extensions.dart';
@@ -359,6 +360,7 @@ abstract class CodedCall extends Call {
     'snapthelock'.ri: (_) => SnapTheLock(),
     '(.+)thewindmill(left|right|in|out|forward)'.ri: (name) => SpinTheWindmill(name),
     'splitcirculate'.ri: (_) => SplitCirculate(),
+    'splitcounterrotate'.ri: (_) => SplitCounterRotate(),
     '(left)?splitsquarethru[2-7]?'.ri: (name) => SplitSquareThru(name),
     '(and)?spread'.ri: (name) => Spread(name),
     'squaretheset'.ri: (_) => SquareTheSet(),

@@ -309,9 +309,11 @@ class TamUtils {
       if (n.isNotBlank) {  //  numbers supplied in animation XML
         retval[i*2] = n.substring(0,1);
         retval[i*2+1] = n.substring(2,3);
-      } else if (i > 3) {  //  phantoms
-        retval[i*2] = ' ';
-        retval[i*2+1] = ' ';
+      } else if (i > 3) { //  phantoms
+        retval[i * 2] = ' ';
+        retval[i * 2 + 1] = ' ';
+      } else if (tam('asymmetric').isNotBlank) {
+        retval[i] = '${i + 1}';
       } else {  // default numbers
         retval[i * 2] = '${i + 1}';
         retval[i * 2 + 1] = '${i + 1 + np}';
@@ -327,6 +329,8 @@ class TamUtils {
       '2','4','2','4',
       '5','6','5','6',
       ' ',' ',' ',' '];
+    if (tam('asymmetric').isNotBlank)
+      retval = ['1','1','3','3','2','2','4','4'];
     var paths = tam.childrenNamed('path');
     for (var i=0; i<paths.length; i++) {
       var p = paths[i];

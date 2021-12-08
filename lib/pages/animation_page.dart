@@ -195,7 +195,12 @@ class _AnimationFrameState extends fm.State<AnimationFrame>
                       danceModel.setShapes(appState.mainPage == MainPage.SEQUENCER
                           ? settings.dancerShapes : true);
                       danceModel.showPhantoms = settings.phantoms;
-                      danceModel.geometry = appState.mainPage == MainPage.SEQUENCER ? Geometry.SQUARE : Geometry.fromString(settings.geometry).geometry;
+                      var note = danceModel.animationNote;
+                      final setGeometry = appState.mainPage == MainPage.SEQUENCER ? Geometry.SQUARE : Geometry.fromString(settings.geometry).geometry;
+                      if (setGeometry != Geometry.SQUARE && danceModel.asymmetric)
+                        note = 'Special Geometry not available for asymmetric animations';
+                      else
+                        danceModel.geometry =  setGeometry;
                       //  Dancer colors - first check individual color, then couple color
                       danceModel.setColors(appState.mainPage == MainPage.SEQUENCER
                           ? settings.showDancerColors!='None' : true);
@@ -275,14 +280,14 @@ class _AnimationFrameState extends fm.State<AnimationFrame>
                                     child: fm.Center(), // so CustomPaint gets sized correctly
                                   ),
                                   //  Note that fades out as animation starts
-                                  if (danceModel.animationNote.isNotBlank)
+                                  if (note.isNotBlank)
                                     pp.Consumer<BeatNotifier>(
                                       builder: (context,beater2,_) =>
                                     fm.Opacity(
                                         opacity: ((-beater2.beat)/2.0).coerceIn(0.0, 1.0),
                                         child:fm.Container(
                                             color: Color.WHITE,
-                                            child:fm.Text(danceModel.animationNote,
+                                            child:fm.Text(note,
                                                 style:fm.TextStyle(fontSize:20))
                                         ))),
                                   //  Show if Loop or Speed are set other than default

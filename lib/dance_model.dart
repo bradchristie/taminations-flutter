@@ -58,6 +58,7 @@ class DanceModel extends fm.ChangeNotifier {
   var _showNumbers = Dancer.NUMBERS_OFF;
   var _showPhantoms = false;
   var _geometry = Geometry.SQUARE;
+  var _asymmetric = false;
   var _randomColors = false;
   var _practiceScore = 0.0;
   String get animationNote =>
@@ -216,13 +217,14 @@ class DanceModel extends fm.ChangeNotifier {
 
   int get geometry => _geometry;
   set geometry(int g) {
-    if (g != _geometry) {
+    if (!_asymmetric && g != _geometry) {
       _geometry = g;
       later(() {
         _resetAnimation();
       });
     }
   }
+  bool get asymmetric => _asymmetric;
 
   void doPlay() {
     if (!beater.isRunning) {
@@ -361,6 +363,9 @@ class DanceModel extends fm.ChangeNotifier {
       //  the animation to match a Callerlab or Ceder Chest illustration
       var paths = _tam!.childrenNamed('path');
       var numbers = <String>[];
+      _asymmetric = _tam!('asymmetric').isNotBlank;
+      if (_asymmetric)
+        _geometry = Geometry.ASYMMETRIC;
       if (_geometry == Geometry.HEXAGON)
         numbers = ['A', 'E', 'I',
           'B', 'F', 'J',

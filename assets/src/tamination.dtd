@@ -35,6 +35,7 @@
               group CDATA #IMPLIED
               from CDATA #IMPLIED
               formation CDATA #IMPLIED
+              asymmetric CDATA #IMPLIED
               parts CDATA #IMPLIED
               fractions CDATA #IMPLIED
               difficulty CDATA #IMPLIED

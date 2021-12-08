@@ -237,6 +237,7 @@ class CallContext {
   bool _snap = true;
   bool _thoseWhoCan = false;
   bool resolutionError = false;
+  bool asymmetric = false;
   var genderMap = {
     'boy': Gender.BOY,
     'girl': Gender.GIRL,
@@ -278,11 +279,12 @@ class CallContext {
         : (tam.childrenNamed('formation').firstOrNull ?? tam);
     var dancerElements = f.childrenNamed('dancer');
     dancers = [];
+    asymmetric = tam('asymmetric').isNotBlank;
     for (var i=0; i<dancerElements.length; i++) {
       var element = dancerElements[i];
       //  This assumes square geometry
       //  Make sure each dancer in the list is immediately followed by its
-      //  diagonal opposite.  Required for mapping.
+      //  diagonal opposite, if not asymmetric.  Required for mapping.
       dancers.add(Dancer(
         numberArray[i*2], coupleArray[i*2],
           genderMap[element('gender')]!,
@@ -292,15 +294,16 @@ class CallContext {
         Geometry.getGeometry(Geometry.SQUARE).first,
         paths.length > i ? TamUtils.translatePath(paths[i]) : []
       ));
-      dancers.add(Dancer(
-          numberArray[i*2+1], coupleArray[i*2+1],
-          genderMap[element('gender')]!,
-          Color.WHITE,  // not used
-          Matrix.getTranslation(element('x').d,element('y').d) *
-              Matrix.getRotation(element('angle').d.toRadians),
-          Geometry.getGeometry(Geometry.SQUARE)[1],
-          paths.length > i ? TamUtils.translatePath(paths[i]) : []
-      ));
+      if (!asymmetric)
+        dancers.add(Dancer(
+            numberArray[i*2+1], coupleArray[i*2+1],
+            genderMap[element('gender')]!,
+            Color.WHITE,  // not used
+            Matrix.getTranslation(element('x').d,element('y').d) *
+                Matrix.getRotation(element('angle').d.toRadians),
+            Geometry.getGeometry(Geometry.SQUARE)[1],
+            paths.length > i ? TamUtils.translatePath(paths[i]) : []
+        ));
     }
   }
 
@@ -684,9 +687,11 @@ class CallContext {
       var found = false;
       while (!found && nextmapping < ctx2.dancers.length) {
         //  Dancers in both contexts must be pairs of diagonal opposites
+        //  unless asymmetric is specified
         //  Makes mapping much more efficient
         mapping[mapindex] = nextmapping;
-        mapping[mapindex + 1] = nextmapping ^ 1;
+        if (!asymmetric && !ctx2.asymmetric)
+          mapping[mapindex + 1] = nextmapping ^ 1;
         if (_testMapping(this, ctx2, mapping, mapindex, sexy:sexy, fuzzy:fuzzy, handholds:handholds, headsmatchsides:headsMatchSides))
           found = true;
         else
@@ -695,24 +700,27 @@ class CallContext {
       if (nextmapping >= ctx2.dancers.length) {
         //  No more mappings for this dancer
         mapping[mapindex] = -1;
-        mapping[mapindex + 1] = -1;
+        if (!asymmetric && !ctx2.asymmetric)
+          mapping[mapindex + 1] = -1;
         //  If requested, try rotating this dancer
         if (rotate > 0 && rotated[mapindex] + rotate < 360) {
           dancers[mapindex].rotateStartAngle(rotate.d);
-          dancers[mapindex+1].rotateStartAngle(rotate.d);
+          if (!asymmetric && !ctx2.asymmetric)
+            dancers[mapindex+1].rotateStartAngle(rotate.d);
           rotated[mapindex] += rotate;
         } else {
           if (rotated[mapindex]+rotate == 360) {
             //  Restore to original
             dancers[mapindex].rotateStartAngle(rotate.d);
-            dancers[mapindex+1].rotateStartAngle(rotate.d);
+            if (!asymmetric && !ctx2.asymmetric)
+              dancers[mapindex+1].rotateStartAngle(rotate.d);
           }
           rotated[mapindex] = 0;
-          mapindex -= 2;
+          mapindex -= asymmetric || ctx2.asymmetric ? 1 : 2;
         }
       } else {
         //  Mapping for this dancer found
-        mapindex += 2;
+        mapindex += asymmetric || ctx2.asymmetric ? 1 : 2;
         if (mapindex >= dancers.length) {
           //  All dancers mapped
           //  Rate the mapping and save if best
@@ -729,7 +737,7 @@ class CallContext {
             }
           }
           // continue to look for more mappings
-          mapindex -= 2;
+          mapindex -= asymmetric || ctx2.asymmetric ? 1 : 2;
         }
       }
     }

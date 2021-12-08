@@ -40,8 +40,9 @@ class XMLCall extends Call {
 
   @override
   Future<void> performCall(CallContext ctx, [int stackIndex = 0]) async {
-    var allPaths = xelem.childrenNamed('path').map(
+    final allPaths = xelem.childrenNamed('path').map(
             (element) => Path(TamUtils.translatePath(element))).toList();
+    final asymmetric = xelem('asymmetric').isNotBlank;
     //  If moving just some of the dancers,
     //  see if we can keep them in the same shape
     if (ctx.actives.length < ctx.dancers.length) {
@@ -51,7 +52,8 @@ class XMLCall extends Call {
       //  So ctx3 is a copy of the start point
       //  Now add the paths
       for (var ii = 0; ii < ctx3.dancers.length; ii++) {
-        ctx3.dancers[ii].path.add(allPaths[ii >> 1]);
+        final path = asymmetric ? allPaths[ii] : allPaths[ii >> 1];
+        ctx3.dancers[ii].path.add(path);
       }
       //  And move it to the end point
       ctx3.extendPaths();
@@ -62,7 +64,7 @@ class XMLCall extends Call {
 
     for (var i3 = 0; i3 < xmlmap.length; i3++) {
       var m = xmlmap[i3];
-      var p = Path.fromPath(allPaths[m >> 1]);
+      var p = Path.fromPath(asymmetric ? allPaths[m] : allPaths[m >> 1]);
       if (p.movelist.isEmpty)
         p.add(TamUtils.getMove('Stand'));
       //  Scale active dancers to fit the space they are in
@@ -100,7 +102,8 @@ class XMLCall extends Call {
       default :
         for (var i4 = 0; i4 < xmlmap.length; i4++) {
           var m = xmlmap[i4];
-          if (allPaths[m >> 1].movelist.isEmpty)
+          var path = asymmetric ? allPaths[m] : allPaths[m >> 1];
+          if (path.movelist.isEmpty)
             inactives.add(ctx.actives[i4]);
         }
     }

@@ -32,6 +32,7 @@ abstract class Geometry {
   static const int SQUARE = 2;
   static const int HEXAGON = 3;
   static const int HASHTAG = 4;
+  static const int ASYMMETRIC = 5;
 
   var rotnum = 0;
   var geometry = 0;
@@ -46,7 +47,7 @@ abstract class Geometry {
 
   factory Geometry(int g, [int r = 0]) {
     if (g == BIGON) return BigonGeometry(r);
-    else if (g == SQUARE) return SquareGeometry(r);
+    else if (g == SQUARE || g == ASYMMETRIC) return SquareGeometry(r);
     else if (g == HEXAGON) return HexagonGeometry(r);
     else if (g == HASHTAG) return HashtagGeometry(r);
     else throw ArgumentError();
@@ -64,12 +65,15 @@ abstract class Geometry {
   }
 
   static List<Geometry> getGeometry(int sym) {
-    if (sym == BIGON) return [BigonGeometry(0)];
+    if (sym == BIGON)
+      return [BigonGeometry(0)];
     else if (sym == HEXAGON)
       return [HexagonGeometry(0),HexagonGeometry(1),HexagonGeometry(2)];
     else if (sym == HASHTAG)
       return [HashtagGeometry(0),HashtagGeometry(1),
         HashtagGeometry(2),HashtagGeometry(3)];
+    else if (sym == ASYMMETRIC)
+      return [SquareGeometry(0)];
     else return [SquareGeometry(0),SquareGeometry(1)];
   }
 

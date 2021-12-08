@@ -35,6 +35,7 @@
   <call link="c3a/3_4_the_deucey" title="3/4 the Deucey"/>
   <call link="c3a/3_4_wheel_the_ocean" title="3/4 Wheel the Ocean"/>
   <call link="c3a/3_4_wheel_the_sea" title="3/4 Wheel the Sea"/>
+
   <call audio="plus/acey_deucey.mp3" languages="lang-ja" link="plus/acey_deucey" title="Acey Deucey"/>
   <call link="c1/ah_so" title="Ah So"/>
   <call audio="b2/alamo_style.mp3" languages="lang-ja" link="b2/alamo_style" title="Alamo Style"/>
@@ -51,6 +52,7 @@
   <call link="c1/alter_the_wave" title="Alter the Wave"/>
   <call link="a1/any_hand_concept" title="Any Hand Concept"/>
   <call link="c3b/anything_and_scatter" title="Any Tagging Call and Scatter"/>
+  <call link="c2/any_tagging_call_your_neighbor" title="&lt;any tagging call&gt; Your Neighbor"/>
   <call link="c3a/anyone_hop" title="Anyone Hop"/>
   <call link="c2/anything_and_circle" title="Anything and Circle"/>
   <call link="a1/anything_and_cross" title="Anything and Cross"/>
@@ -258,7 +260,7 @@
   <call link="c1/flip_the_interlocked_diamond" title="Flip the Interlocked Diamond"/>
   <call link="c1/flip_the_line" title="Flip the Line"/>
   <call link="c3b/flip_your_lid" title="Flip Your Lid"/>
-  <call link="c2/flip_your_neighbor" title="Flip Your Neighbor"/>
+  <call link="c2/any_tagging_call_your_neighbor" title="Flip Your Neighbor"/>
   <call audio="b2/flutterwheel.mp3" languages="lang-ja" link="b2/flutterwheel" title="Flutterwheel"/>
   <call audio="ssd/flutterwheel.mp3" languages="lang-ja" link="ssd/flutterwheel" title="Flutterwheel"/>
   <call audio="ms/fold.mp3" languages="lang-de lang-ja" link="ms/fold" title="Fold"/>
@@ -307,6 +309,7 @@
   <call audio="ms/hinge.mp3" languages="lang-de lang-ja" link="ms/hinge" title="Hinge"/>
   <call audio="ssd/hinge.mp3" languages="lang-de lang-ja" link="ssd/hinge" title="Hinge"/>
   <call link="c3a/lock_the_hinge" title="Hinge the Lock"/>
+  <call link="c3a/lock_the_hinge" title="Hinge the Top"/>
   <call link="c2/hocus_pocus" title="Hocus Pocus"/>
   <call audio="a1/horseshoe_turn.mp3" link="a1/horseshoe_turn" title="Horseshoe Turn"/>
   <call audio="a2/hourglass_circulate.mp3" link="a2/hourglass_circulate" title="Hourglass Circulate"/>
@@ -531,6 +534,7 @@
   <call link="c1/scoot_and_little" title="Scoot and Little"/>
   <call link="c2/scoot_and_little_more" title="Scoot and Little More"/>
   <call link="c1/scoot_and_plenty" title="Scoot and Plenty"/>
+  <call link="c3a/rally" title="Scoot and Rally"/>
   <call link="c1/scoot_and_ramble" title="Scoot and Ramble"/>
   <call audio="a2/scoot_and_weave.mp3" link="a2/scoot_and_weave" title="Scoot and Weave"/>
   <call audio="ms/scoot_back.mp3" languages="lang-de lang-ja" link="ms/scoot_back" title="Scoot Back"/>
@@ -581,6 +585,7 @@
         title="Spin Chain the Gears"/>
   <call link="c3a/spin_chain_the_line" title="Spin Chain the Line"/>
   <call audio="ms/spin_chain_thru.mp3" languages="lang-de lang-ja" link="ms/spin_chain_thru" title="Spin Chain Thru"/>
+  <call link="c3a/spin_the_pulley" title="Spin the Pulley"/>
   <call audio="ms/spin_the_top.mp3" languages="lang-de lang-ja" link="ms/spin_the_top" title="Spin the Top"/>
   <call link="a2/spin_the_windmill" title="Spin the Windmill"/>
   <call languages="lang-de lang-ja" link="b1/circulate" title="Split Circulate"/>
@@ -662,7 +667,7 @@
   <call audio="ms/tag_the_line.mp3" languages="lang-de lang-ja" link="ms/tag" title="Tag the Line"/>
   <call audio="ssd/tag_the_line.mp3" languages="lang-de lang-ja" link="ssd/tag" title="Tag the Line"/>
   <call link="c3b/anything_the_top" title="Tag the Top"/>
-  <call link="c2/tag_your_neighbor" title="Tag Your Neighbor"/>
+  <call link="c2/any_tagging_call_your_neighbor" title="Tag Your Neighbor"/>
   <call link="c3b/take_n" title="Take {n}"/>
   <call link="c1/tally_ho" title="Tally Ho"/>
   <call link="c1/tandem_concept" title="Tandem Concept"/>
@@ -727,7 +732,7 @@
   <call link="c2/vertical_anything" title="Vertical"/>
   <call link="c1/vertical_tag" title="Vertical Tag"/>
   <call link="c1/tagging_calls_back_to_a_wave" title="Vertical Tag Back to a Wave"/>
-  <call link="c2/vertical_tag_your_neighbor" title="Vertical Tag Your Neighbor"/>
+  <call link="c2/any_tagging_call_your_neighbor" title="Vertical Tag Your Neighbor"/>
 
   <call audio="ms/walk_and_dodge.mp3" languages="lang-de lang-ja" link="ms/walk_and_dodge" title="Walk and Dodge"/>
   <call audio="b1/walk_around_the_corner.mp3" languages="lang-de lang-ja" link="b1/all_around_the_corner"
