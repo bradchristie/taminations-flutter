@@ -22,25 +22,25 @@
 -->
 <tamination title="Zing">
 
-  <tam title="Zing" from="Right-Hand Box" formation="Box RH">
+  <tam title="Zing" from="Right-Hand Box" formation="Box RH Compact">
     <path numbers="1 4">
       <move select="Forward 2" beats="2.5"/>
-      <move select="Quarter Right" beats="2" offsetX="1" offsetY="1"/>
+      <move select="Quarter Right" beats="2" offsetX=".5" offsetY=".5"/>
     </path>
     <path numbers="2 3">
-      <move select="Run Left" offsetX="-2"/>
-      <move select="Lead Left"/>
+      <move select="Run Left" offsetX="-1.5"/>
+      <move select="Lead Left" scaleY="1.5"/>
     </path>
   </tam>
 
-  <tam title="Zing" from="Left-Hand Box" formation="Box LH">
+  <tam title="Zing" from="Left-Hand Box" formation="Box LH Compact">
     <path>
-      <move select="Run Right" offsetX="-2"/>
-      <move select="Lead Right"/>
+      <move select="Run Right" offsetX="-1.5"/>
+      <move select="Lead Right" scaleY="1.5"/>
     </path>
     <path>
       <move select="Forward 2" beats="2.5"/>
-      <move select="Quarter Left" beats="2" offsetX="1" offsetY="-1"/>
+      <move select="Quarter Left" beats="2" offsetX=".5" offsetY="-.5"/>
     </path>
   </tam>
 
@@ -143,21 +143,21 @@
   <tam title="As Couples Zing" from="" formation="Two-Faced Lines RH" group=" ">
     <path>
       <move select="Extend Right" beats="4" hands="right" scaleX="2"/>
-      <move select="Quarter Right" beats="4" hands="gripright" offsetX="3" offsetY="1"/>
+      <move select="Quarter Right" beats="4" hands="gripright" offsetX="3"/>
     </path>
     <path>
       <move select="Forward 2" hands="left" beats="4"/>
-      <move select="Quarter Right" beats="4" hands="gripleft" offsetX="1" offsetY="2"/>
+      <move select="Quarter Right" beats="4" hands="gripleft" offsetX="1" offsetY="1"/>
     </path>
     <path>
       <move select="Run Left" hands="left" scaleY="1.5"/>
       <move select="Forward 3" hands="left"/>
-      <move select="Lead Left" beats="2" scaleX="2" hands="gripleft"/>
+      <move select="Lead Left" beats="2" scaleX="2" scaleY="2" hands="gripleft"/>
     </path>
     <path>
       <move select="U-Turn Left" hands="right"/>
       <move select="Forward 3" hands="right"/>
-      <move select="Quarter Left" beats="2" hands="gripright"/>
+      <move select="Quarter Left" beats="2" hands="gripright" offsetY="1"/>
     </path>
   </tam>
 
