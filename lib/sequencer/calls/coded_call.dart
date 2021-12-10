@@ -20,6 +20,7 @@
 import 'package:taminations/sequencer/calls/a1/six_two_acey_deucey.dart';
 import 'package:taminations/sequencer/calls/a2/split_counter_rotate.dart';
 import 'package:taminations/sequencer/calls/c1/block_formation.dart';
+import 'package:taminations/sequencer/calls/c1/magic_transfer_and.dart';
 
 import '../../extensions.dart';
 import '../../tam_utils.dart';
@@ -307,6 +308,7 @@ abstract class CodedCall extends Call {
         (name) => Little(name),
     '(left|right|in|out)loop(1|2|3)'.ri: (name) => Loop(name),
 
+    'magiccolumntransferand.+'.ri: (name) => MagicTransferAnd(name),
     'makemagic'.ri: (_) => MakeMagic(),
     'minibusybut.+'.ri: (name) => MiniBusyBut(name),
 
@@ -400,7 +402,7 @@ abstract class CodedCall extends Call {
     '(left)?touch14'.ri: (name) => TouchAQuarter(name),
     '(partner)?trade'.ri: (name) => Trade(name),
     'trail'.ri: (name) => Trailers(name),
-    'transferand(.+)'.ri: (name) => TransferAnd(name),
+    'transferand.+'.ri: (name) => TransferAnd(name),
     '(inside|outside|inpoint|outpoint|tandembased|wavebased)?trianglecirculate'.ri:
         (name) => TriangleCirculate(name),
     'triplebox.+'.ri: (name) => TripleBox(name),

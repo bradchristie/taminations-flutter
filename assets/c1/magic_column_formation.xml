@@ -146,6 +146,28 @@
     </path>
   </tam>
 
+  <tam title="Magic Column Transfer and" group="(Right-Hand Centers)"
+       formation="Magic Column RH" display="no">
+    <path>
+      <move select="Forward" beats="2" />
+      <move select="Extend Left" beats="2" scaleY="2" />
+    </path>
+    <path>
+      <move select="Extend Right" beats="2" scaleY="2" />
+      <move select="Forward" />
+      <move select="Run Left" beats="4.5" scaleY="2.5" offsetX="-1"/>
+      <move select="Lead Left" beats="3" />
+    </path>
+    <path>
+      <move select="Forward 2" beats="4" />
+    </path>
+    <path>
+      <move select="Run Left" beats="4" scaleY="2.5" />
+      <move select="Forward 2" beats="3" />
+      <move select="Lead Left" beats="3.5" scaleX="2" />
+    </path>
+  </tam>
+
   <tam title="Magic Column Walk and Dodge" group="(Right-Hand Centers)"
        formation="Magic Column RH">
     <path>
@@ -315,6 +337,33 @@
       <move select="Swing Left" scaleX=".5" />
       <move select="Hinge Left" scaleX=".5" />
       <move select="Extend Right" beats="2" scaleX="2" scaleY="1.5" />
+    </path>
+  </tam>
+
+  <tam title="Magic Column Transfer and" group="(Left-Hand Centers)" display="no">
+    <formation>
+      <dancer gender="girl" y="1" x="-1" angle="270"/>
+      <dancer gender="boy" y="1" x="1" angle="90"/>
+      <dancer gender="girl" y="3" x="-1" angle="90"/>
+      <dancer gender="boy" y="3" x="1" angle="270"/>
+    </formation>
+    <path>
+      <move select="Forward 2" beats="4" />
+    </path>
+    <path>
+      <move select="Extend Left" scaleY="2" />
+      <move select="Forward" beats=".5" />
+      <move select="Run Right" beats="5" scaleY="2.5" offsetX="-1"/>
+      <move select="Lead Right" beats="3" />
+    </path>
+    <path>
+      <move select="Run Right" beats="4" scaleY="2.5" />
+      <move select="Forward 2" />
+      <move select="Lead Right" beats="3.5" scaleX="2" />
+    </path>
+    <path>
+      <move select="Forward" beats="2" />
+      <move select="Extend Right" beats="2" scaleY="2" />
     </path>
   </tam>
 

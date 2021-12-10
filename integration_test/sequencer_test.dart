@@ -2137,6 +2137,18 @@ Trade By
 Veer Left
 Bend the Line
 Quarter In
+Right and Left Grand''',
+
+  'Magic Transfer and' :
+'''Heads Touch 1/4
+Make Magic
+Magic Transfer and Left 1/4 Thru
+Centers Left Swing Thru
+Centers Recycle
+Centers Square Thru 3
+Box the Gnat
+Right and Left Thru
+Allemande Left
 Right and Left Grand'''
 
 };
