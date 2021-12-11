@@ -28,6 +28,8 @@ class TurnAndDeal extends Action {
   @override
   Path performOne(Dancer d, CallContext ctx) {
     final dir = ctx.tagDirection(d);
+    if (dir.isBlank)
+      throw CallError('Unable to calculate Turn and Deal');
     final amount = ctx.isTidal() ? 1.5 : 1.0;
     final dist = !ctx.isTidal() ? 2.0 :
     d.data.center ? 1.5 : 0.5;
