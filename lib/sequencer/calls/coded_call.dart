@@ -386,7 +386,7 @@ abstract class CodedCall extends Call {
     'swingandcircle(12|34)'.ri: (name) => SwingAndCircle(name),
     'switchtheline'.ri: (_) => SwitchTheLine(),
 
-    '(left)?tagback(toawave)?'.r: (name) => TagBack(name),
+    '(left)?tagback(toawave)?'.ri: (name) => TagBack(name),
     '(left)?tagtheline'.ri: (name) => TagTheLine(name),
     '(left|vertical){0,2}tagyour((criss)?cross)?neighbor'.ri:
         (name) => TagYourNeighbor(name),
