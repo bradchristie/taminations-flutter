@@ -1191,6 +1191,7 @@ class CallContext {
     return centerCount == 4 &&
         ((xCount==4 && yCount==0) || (xCount==0 && yCount==4));
   }
+  bool is2x4() => isTBone();
 
   //  Sometimes we have to work with an asymmetric context
   bool isAsym() =>
@@ -1331,12 +1332,13 @@ class CallContext {
       var bestRightMismatch = bestright != null &&
           !isInWave(d1,bestright) && !isInCouple(d1,bestright);
       if (leftcount % 2 == 1 && rightcount % 2 == 0 && !bestleftMismatch &&
-          d1.distanceTo(bestleft!) < 3 || (bestleft != null && bestRightMismatch)) {
+          //  Allow a wide distance so concepts like siamese work
+          d1.distanceTo(bestleft!) < 5 || (bestleft != null && bestRightMismatch)) {
         d1.data.partner = bestleft;
         d1.data.belle = true;
       }
       else if (rightcount % 2 == 1 && leftcount % 2 == 0 && !bestRightMismatch &&
-          d1.distanceTo(bestright!) < 3 || (bestright != null && bestleftMismatch)) {
+          d1.distanceTo(bestright!) < 5 || (bestright != null && bestleftMismatch)) {
         d1.data.partner = bestright;
         d1.data.beau = true;
       }
