@@ -31,7 +31,7 @@ class Little extends Action {
     //  Do the Scoot Back of Scoot and Little
     if (name.startsWith('Scoot and'))
       await ctx.applyCalls('Scoot Back');
-    final namePart2 = name.replaceFirst('Scoot and','');
+    final namePart2 = name.replaceFirst('Scoot and','').trim();
 
     //  Figure out which way the outside dancers turn
     var turn = 'Face Right';
@@ -45,6 +45,7 @@ class Little extends Action {
       turn = 'Face Out';
     else if (namePart2.endsWith('Forward') || namePart2.endsWith('As You Are'))
       turn = '';
+    print('turn: $turn');
 
     //  Do the call, catch any errors triggered by bad counter rotates
     try {
