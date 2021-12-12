@@ -2149,6 +2149,13 @@ Centers Square Thru 3
 Box the Gnat
 Right and Left Thru
 Allemande Left
+Right and Left Grand''',
+
+  'Tag Back to a Wave' :
+'''Heads Star Thru and Spread
+Pass Thru
+Tag Back to a Wave
+Extend
 Right and Left Grand'''
 
 };
