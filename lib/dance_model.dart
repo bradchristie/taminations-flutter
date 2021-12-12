@@ -235,7 +235,9 @@ class DanceModel extends fm.ChangeNotifier {
 
   void doPause() {
     beater.stop();
-    notifyListeners();
+    later(() {
+      notifyListeners();
+    });
   }
 
   void goToStart() {
