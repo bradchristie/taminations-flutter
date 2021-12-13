@@ -40,6 +40,25 @@ class BoxTheGnat extends ActivesOnlyAction {
 
   @override
   Path performOne(Dancer d, CallContext ctx) {
+
+    //  First try facing dancers
+    var d2 = _checkOtherDancer(d, ctx.dancerFacing(d));
+    if (d2 != null) {
+      var dist = d.distanceTo(d2);
+      var cy1 = (d.gender == Gender.BOY) ? 1.0 : 0.1;
+      var y4 = (d.gender == Gender.BOY) ? -2.0 : 2.0;
+      var hands = (d.gender == Gender.BOY) ? Hands.GRIPLEFT : Hands.GRIPRIGHT;
+      var m = Movement(
+          4.0, hands,
+          Bezier([Vector(0.0, 0.0), Vector(1.0, cy1),
+            Vector(dist / 2, cy1), Vector(dist / 2 + 1, 0.0)]),
+          Bezier([Vector(0.0, 0.0), Vector(1.3, 0.0),
+            Vector(1.3, y4), Vector(0.0, y4)]
+          ));
+      return Path([m]);
+    }
+
+    //  Next look for Ocean Wave Rule
     if (ctx.isInWave(d)) {
       var d2  = _checkOtherDancer(d, ctx.dancerToRight(d));
       if (d2 == null)
@@ -51,23 +70,8 @@ class BoxTheGnat extends ActivesOnlyAction {
       return TamUtils.getMove((d.gender==Gender.BOY) ? 'U-Turn Right' : 'U-Turn Left')
         ..skew(1.0,offset)
         ..changehands(Hands.GRIPRIGHT);
-    } else {
-      var d2 = _checkOtherDancer(d, ctx.dancerFacing(d));
-      if (d2 == null)
-        return ctx.dancerCannotPerform(d, name);
-      var dist = d.distanceTo(d2);
-      var cy1 = (d.gender == Gender.BOY) ? 1.0 : 0.1;
-      var y4 = (d.gender == Gender.BOY) ? -2.0 : 2.0;
-      var hands = (d.gender == Gender.BOY) ? Hands.GRIPLEFT : Hands.GRIPRIGHT;
-      var m = Movement(
-          4.0, hands,
-          Bezier([Vector(0.0, 0.0), Vector(1.0, cy1),
-                  Vector(dist / 2, cy1), Vector(dist / 2 + 1, 0.0)]),
-          Bezier([Vector(0.0, 0.0), Vector(1.3, 0.0),
-                  Vector(1.3, y4), Vector(0.0, y4)]
-      ));
-      return Path([m]);
     }
+    return ctx.dancerCannotPerform(d, name);
   }
 
 }
