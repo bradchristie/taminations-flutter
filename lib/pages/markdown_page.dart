@@ -323,7 +323,7 @@ class _MarkdownFrameState extends fm.State<MarkdownFrame> {
     //  Centered text - use H5
                  //        <p style="text-align:center">
         .replaceAllMapped('<p style="text-align:center">(.*?)</p>'.rd,
-            (m) => '##### ' + m[1]!.replaceAll('\n', ' '))
+            (m) => '##### ' + m[1]!.replaceAll('\\s'.rd, ' '))
     //  A little more space after each paragraph
         .replaceAll('</p>', '\n# \n')
     //  Highlight current part
