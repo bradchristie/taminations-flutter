@@ -21,6 +21,7 @@
 import 'package:flutter/material.dart' as fm;
 import 'package:shared_preferences/shared_preferences.dart';
 
+import 'extensions.dart';
 import 'tam_utils.dart';
 
 class Settings extends fm.ChangeNotifier {
@@ -168,24 +169,39 @@ class Settings extends fm.ChangeNotifier {
     notifyListeners();
   }
 
+  String get languageCode {
+    if (language == 'English')
+      return 'en';
+    else if (language == 'German')
+      return 'de';
+    else if (language == 'Japanese')
+      return 'ja';
+    else  //  System language
+      return fm.WidgetsBinding.instance!.window.locale.languageCode;
+  }
+
+  //  Languages and levels that have abbrev definitions
+  static Map<String,String> abbrevDefs = {
+    'en' : 'b1 b2 ms',
+    'ja' : 'b1 b2 m2'
+  };
+  bool hasAbbrevDefinition(String link) {
+    final dir = link.replaceFirst(r'/.*'.r,'');
+    return (abbrevDefs[languageCode] ?? '').contains(dir);
+  }
+
   //  Get a language-specific link for retreiving the definition
   String getLanguageLink(String link) {
-    var languageSetting = _language;
-    if (languageSetting == 'English')
-      languageSetting = 'en';
-    else if (languageSetting == 'German')
-      languageSetting = 'de';
-    else if (languageSetting == 'Japanese')
-      languageSetting = 'ja';
-    else  //  System language
-      languageSetting = fm.WidgetsBinding.instance!.window.locale.languageCode;
-    if (languageSetting != 'en') {
+    var code = languageCode;
+    if (code != 'en') {
       if (TamUtils.calldata.indexWhere((item) {
-        return item.link == link && item.languages.contains(languageSetting);
+        return item.link == link && item.languages.contains(code);
       }) >= 0) {
-        link += '.lang-$languageSetting';
+        link += '.lang-$code';
       }
     }
+    if (isAbbrev && hasAbbrevDefinition(link))
+      link += '-abbrev';
     return link;
   }
 

@@ -55,7 +55,7 @@ class _MarkdownFrameState extends fm.State<MarkdownFrame> {
   List<String> titleStack = [];
   _MarkdownFrameState(this.currentLink);
   bool hasAbbrev = false;
-  Future<String>? _htmlFuture;
+  Future<String>? _mdFuture;
   String get _dir => currentLink.replaceFirst(r'/.*'.r,'');
   final scrollController = fm.ScrollController();
 
@@ -63,25 +63,36 @@ class _MarkdownFrameState extends fm.State<MarkdownFrame> {
   void didChangeDependencies() {
     super.didChangeDependencies();
     var settings  = pp.Provider.of<Settings>(context);
-    _loadHtmlFromAssets(settings,currentLink);
+    hasAbbrev = settings.hasAbbrevDefinition(currentLink);
+    _loadMdFromAssets(settings,currentLink);
   }
 
   @override
   fm.Widget build(fm.BuildContext context) {
     final markdownStyle = MarkdownStyleSheet(
       textScaleFactor: 1.2,
-      blockSpacing: 4.0,
-      h2: fm.TextStyle(fontSize:20,color: Color.RED, fontWeight: fm.FontWeight.bold,
+      blockSpacing: 0,
+      //  H1 used for main headings
+      h1: fm.TextStyle(fontSize:20,color: Color.RED, fontWeight: fm.FontWeight.bold,
             shadows:[fm.Shadow(color:Color(0xffe0e0e0),offset: fm.Offset(2,2))]),
-      h3: fm.TextStyle(fontSize:16,color: Color.RED, fontWeight: fm.FontWeight.bold),
-      h4: fm.TextStyle(color:Color.BLUE),
-      //  h5 for centered text/images
-      h5Align: fm.WrapAlignment.center,
+      h1Padding: fm.EdgeInsets.only(top:8.0,bottom:8.0),
+      //  H2 used for sub-headings
+      h2: fm.TextStyle(fontSize:16,color: Color.RED, fontWeight: fm.FontWeight.bold),
+      //  H3 for section headers
+      h3: fm.TextStyle(color:Color.BLUE),
+      h3Padding: fm.EdgeInsets.only(top:12.0),
+      //  H4 used for command examples
+      h4: fm.TextStyle(fontStyle: fm.FontStyle.italic),
       //  h6 used for copyright boilerplate
       h6: fm.TextStyle(fontSize:10,color:Color.MAROON,fontWeight: fm.FontWeight.normal),
+      //  Links
       a: fm.TextStyle(color:Color.BLUE),
       //  del is used for highlighting the current part
       del: fm.TextStyle(backgroundColor: Color.YELLOW,decoration: fm.TextDecoration.none),
+      //  Blockquote used for centered text and images
+      blockquoteDecoration: fm.BoxDecoration(color: Color(0xfffff8f0)),
+      blockquoteAlign: fm.WrapAlignment.center,
+      pPadding: fm.EdgeInsets.only(bottom:10.0)
     );
     return pp.Consumer3<Settings,TitleModel,HighlightState>(
         builder: (context, settings, titleModel, highlightState, child) {
@@ -95,11 +106,11 @@ class _MarkdownFrameState extends fm.State<MarkdownFrame> {
           }
           var isAbbrev = settings.isAbbrev;
           return fm.FutureBuilder(
-              future:  _htmlFuture,   // _loadHtmlFromAssets(),
+              future:  _mdFuture,   // _loadHtmlFromAssets(),
               builder: (context,snapshot) {
                 if (snapshot.hasData) {
-                  final html = snapshot.data!.toString();
-                  hasAbbrev = html.contains(r'class=".*abbrev"'.r);
+                  final md = snapshot.data!.toString();
+                  title = md.replaceMatch('# (.+?)\\n.*'.rd, '\\1').trim();
                   return fm.Column(
                       children: [
                         if (linkStack.isNotEmpty)
@@ -113,7 +124,7 @@ class _MarkdownFrameState extends fm.State<MarkdownFrame> {
                                 Button('Back', onPressed: () {
                                   var link = linkStack.removeLast();
                                   titleStack.removeLast();
-                                  _loadHtmlFromAssets(settings, link);
+                                  _loadMdFromAssets(settings, link);
                                 }),
                                 fm.Text(' to ${titleStack.lastOrNull ?? ''}',
                                     style: fm.TextStyle(fontSize: 20))
@@ -128,8 +139,9 @@ class _MarkdownFrameState extends fm.State<MarkdownFrame> {
                                   thickness: 16,
                                   controller: scrollController,
                                   child: Markdown(
-                                    data: _htmlToMarkdown(snapshot.data!
-                                        .toString(), isAbbrev, highlightState),
+                                    data: adjustMarkdown(snapshot.data!.toString(), highlightState),
+                                    //data: _htmlToMarkdown(snapshot.data!
+                                    //    .toString(), isAbbrev, highlightState),
                                     selectable: true,
                                     styleSheet: markdownStyle,
                                     controller: scrollController,
@@ -151,7 +163,7 @@ class _MarkdownFrameState extends fm.State<MarkdownFrame> {
                                           if (!abslink.contains('/'))
                                             abslink = '$_dir/$abslink';
                                           setState(() {
-                                            _loadHtmlFromAssets(
+                                            _loadMdFromAssets(
                                                 settings, abslink);
                                           });
                                         }
@@ -219,13 +231,13 @@ class _MarkdownFrameState extends fm.State<MarkdownFrame> {
 
   void _setAbbrev(Settings settings, bool newValue) {
     settings.isAbbrev = newValue;
-    _loadHtmlFromAssets(settings,currentLink);
+    _loadMdFromAssets(settings,currentLink);
   }
 
-  void _loadHtmlFromAssets(Settings settings,String htmllink) async {
-    final localizedAssetName = settings.getLanguageLink(htmllink.replaceFirst('.html', '')) + '.html';
+  void _loadMdFromAssets(Settings settings,String htmllink) async {
+    final localizedAssetName = settings.getLanguageLink(htmllink.replaceFirst('.html', '')) + '.md';
     setState(() {
-      _htmlFuture = TamUtils.getAsset(localizedAssetName);
+      _mdFuture = TamUtils.getAsset(localizedAssetName);
       currentLink = htmllink;
     });
   }
@@ -242,17 +254,33 @@ class _MarkdownFrameState extends fm.State<MarkdownFrame> {
     'teaching-tip',
   ];
 
+  String adjustMarkdown(String md, HighlightState highlightState) {
+    return md
+    //  Title is uppercase
+        .replaceAllMapped('^# (.*)'.rm,(m) => '# ${m[1]!.toUpperCase()}')
+    //  Fix image links
+        .replaceAll('![alt](','![alt](resource:assets/$_dir/')
+    //  Highlight current part
+        .replaceAllMapped('{high:($highlightState|Part${highlightState.currentPart})}(.*?){/high}'.rd,(m) => '~~${m[2]}~~')
+    //  Remove other part markers
+        .replaceAll('{/?high.*?}'.r,'')
+    ;
+
+  }
+
   String _htmlToMarkdown(String html, bool isAbbrev, HighlightState highlightState) {
     final regSections = sections.join('|');
     final notSelected = isAbbrev ? 'full' : 'abbrev';
     title = html.replaceMatch('.*<title>(.*)</title>.*'.rd, '\\1');
-    return html
+    var md = html
     //  Just work on the body
         .replaceAllMapped('.*<body.*?>(.*)</body>.*'.rd, (m)=>'${m[1]}')
     //  Tabs to spaces
         .replaceAll('\\t'.r, ' ')
     //  Remove any indentation so Markdown doesn't interpret it as 'code'
         .replaceAll('\n *'.r, '\n')
+    //  Remove blank lines
+        .replaceAll('[\r\n]+'.r,'\n')
     //  Remove HTML comments
         .replaceAll('<!--.*?-->'.rd,'')
     //  Remove web-specific text if not on web (About page only)
@@ -263,17 +291,19 @@ class _MarkdownFrameState extends fm.State<MarkdownFrame> {
     //  Command examples get special treatment
         .replaceAllMapped('<div class="command-examples.*?">.*?<b>(.*?)</b>(.*?)</div>'.rid,
         //  First the section header
-            (m) => '# \n# \n#### ${m[1]}\n${m[2]}'
+            (m) => '### ${m[1]}\n${m[2]}'
             //  Now each example
                 .replaceAllMapped('<p>(.*?)</p>'.rd,
-                //  italics on one line (wrapped as needed)
-                    (m) => '*${m[1]}*'.replaceAll('\\s+'.r, ' ') + '\n' ))
+                //  H4 to format each example
+                    (m) => '#### ${m[1]}'.replaceAll('\\s+'.r, ' ') + '\n' ));
     //  Process all other sections
+    md = md
         .replaceAllMapped('<div class="($regSections).*?">\\s*<b>(.*?)</b>(.*?)</div>'.rd,
-            (m) => '# \n# \n#### ${m[2]}\n${m[3]}')
+            (m) => '### ${m[2]}\n${m[3]}');
+    md = md
     //  Parts section in C-3
         .replaceAllMapped('<div class="parts"><b>(.*?)</b>(.*?)</div>'.rd,
-            (m) => '# \n# \n**${m[1]!.trim()}** ${m[2]}  \n')
+            (m) => '**${m[1]!.trim()}** ${m[2]}  \n')
     //  Remove other abbrev/full text not selected
         .replaceAll(isAbbrev
         ? r'<(\w+) class="full">.*?</\1>'.rd
@@ -289,15 +319,16 @@ class _MarkdownFrameState extends fm.State<MarkdownFrame> {
         .replaceAll('&frac12;','½')
         .replaceAll('&frac34;','¾')
         .replaceAll('&amp;','&')
+        .replaceAll('&mdash;','—')
     //  other bold text
         .replaceAllMapped('<b>(.*?)</b>'.rd,(m) => '**${m[1]}**')
         .replaceAllMapped('<strong>(.*?)</strong>'.rd,(m) => '**${m[1]}**')
     //  italics
         .replaceAllMapped('<i>(.*?)</i>'.rd,(m) => '*${m[1]}*')
     //  H2
-        .replaceAllMapped('<h2>(.*?)</h2>'.r, (m) => '## ${m[1]!.toUpperCase()}')
+        .replaceAllMapped('<h2>(.*?)</h2>'.r, (m) => '# ${m[1]!.toUpperCase()}')
     //  H3
-        .replaceAllMapped('<h3.*?>(.*?)</h3>'.r, (m) => '# \n# \n### ${m[1]}')
+        .replaceAllMapped('<h3.*?>(.*?)</h3>'.r, (m) => '# \n# \n## ${m[1]}')
     //  anchors
         .replaceAllMapped('<a href="(.*?)">(.*?)</a>'.rd, (m) => '[${m[2]}](${m[1]})')
     //  images
@@ -317,25 +348,22 @@ class _MarkdownFrameState extends fm.State<MarkdownFrame> {
         .replaceAll('<hr/>','***')
     //  Make sure paragraphs are preceeded by a blank line so
     //  markdown will recognize them
-        .replaceAll('<p ', '\n<p ')
+        .replaceAll('<p\\b'.r, '\n<p')
     //  Line breaks - presumes all uses of <br/> are at the end of the line
         .replaceAll('<br/>','  ')
-    //  Centered text - use H5
-                 //        <p style="text-align:center">
+    //  Centered text - use blockquote
         .replaceAllMapped('<p style="text-align:center">(.*?)</p>'.rd,
-            (m) => '##### ' + m[1]!.replaceAll('\\s'.rd, ' '))
-    //  A little more space after each paragraph
-        .replaceAll('</p>', '\n# \n')
+            (m) => m[1]!.replaceAll('^'.rm, '> '))
     //  Highlight current part
     //  Markup doesn't want any spaces between ~~ and the highlighted text
     //  so rearrange whitespace as needed
-        .replaceAllMapped('<span id="($highlightState|Part${highlightState.currentPart})">(\\s*)(.*?)(\\s*)</span>'.rd, (m) => '${m[2]}~~${m[3]}~~${m[4]}')
+        .replaceAllMapped('<span (id|class)="($highlightState|Part${highlightState.currentPart})">(\\s*)(.*?)(\\s*)</span>'.rd, (m) => '${m[3]}~~${m[4]}~~${m[5]}')
     //  strip all other tags
         .replaceAll('<.*?>'.r, '')
     //  Now we can replace special characters < and >
         .replaceAll('&lt;'.ri,'<')
-        .replaceAll('&gt;'.ri, '>')
-    ;
+        .replaceAll('&gt;'.ri, '>');
+    return md;
   }
 
 }

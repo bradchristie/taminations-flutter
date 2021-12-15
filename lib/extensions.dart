@@ -106,6 +106,7 @@ extension TamString on String {
   RegExp get ri => RegExp(this, caseSensitive: false);
   RegExp get rd => RegExp(this, dotAll: true);
   RegExp get rid => RegExp(this, dotAll: true, caseSensitive: false);
+  RegExp get rm => RegExp(this, multiLine: true);
   String get lc => toLowerCase();
   bool get isBlank => trim().isEmpty;
   bool get isNotBlank => !isBlank;
