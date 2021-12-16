@@ -983,6 +983,10 @@
     </path>
   </tam>
 
+  <tamxref title="All 8 Flutterwheel" group="All 8"
+           xref-link="b2/flutterwheel"
+           xref-title="All 4 Ladies Lead Flutterwheel"/>
+
   <tam title="All 8 Follow Your Neighbor" group="All 8"
        formation="Static MiniWaves RH">
     <path>
@@ -1184,6 +1188,10 @@
       <move select="Run Left" beats="4" offsetX="3" offsetY="2" />
     </path>
   </tam>
+
+  <tamxref title="All 8 Reverse Flutterwheel" group="All 8"
+           xref-link="b2/flutterwheel"
+           xref-title="All 4 Men Lead Reverse Flutterwheel"/>
 
   <tam title="All 8 Scoot Back" group="All 8"
        formation="Static MiniWaves RH">
