@@ -54,7 +54,6 @@ class _MarkdownFrameState extends fm.State<MarkdownFrame> {
   List<String> linkStack = [];
   List<String> titleStack = [];
   _MarkdownFrameState(this.currentLink);
-  bool hasAbbrev = false;
   Future<String>? _mdFuture;
   String get _dir => currentLink.replaceFirst(r'/.*'.r,'');
   final scrollController = fm.ScrollController();
@@ -63,7 +62,6 @@ class _MarkdownFrameState extends fm.State<MarkdownFrame> {
   void didChangeDependencies() {
     super.didChangeDependencies();
     var settings  = pp.Provider.of<Settings>(context);
-    hasAbbrev = settings.hasAbbrevDefinition(currentLink);
     _loadMdFromAssets(settings,currentLink);
   }
 
@@ -78,11 +76,13 @@ class _MarkdownFrameState extends fm.State<MarkdownFrame> {
       h1Padding: fm.EdgeInsets.only(top:8.0,bottom:8.0),
       //  H2 used for sub-headings
       h2: fm.TextStyle(fontSize:16,color: Color.RED, fontWeight: fm.FontWeight.bold),
+      h2Padding: fm.EdgeInsets.only(top:8.0,bottom:2.0),
       //  H3 for section headers
       h3: fm.TextStyle(color:Color.BLUE),
-      h3Padding: fm.EdgeInsets.only(top:12.0),
+      h3Padding: fm.EdgeInsets.only(top:8.0),
       //  H4 used for command examples
       h4: fm.TextStyle(fontStyle: fm.FontStyle.italic),
+      h4Padding: fm.EdgeInsets.only(top:6.0),
       //  h6 used for copyright boilerplate
       h6: fm.TextStyle(fontSize:10,color:Color.MAROON,fontWeight: fm.FontWeight.normal),
       //  Links
@@ -92,6 +92,12 @@ class _MarkdownFrameState extends fm.State<MarkdownFrame> {
       //  Blockquote used for centered text and images
       blockquoteDecoration: fm.BoxDecoration(color: Color(0xfffff8f0)),
       blockquoteAlign: fm.WrapAlignment.center,
+      horizontalRuleDecoration: fm.BoxDecoration(
+          border: fm.Border.all(color: Color(0xffc0c0c0), width: 1.0),
+      ),
+      //  Table style
+      tableHead: fm.TextStyle(fontWeight: fm.FontWeight.normal),
+      //  Padding at end of each paragraph
       pPadding: fm.EdgeInsets.only(bottom:10.0)
     );
     return pp.Consumer3<Settings,TitleModel,HighlightState>(
@@ -104,7 +110,6 @@ class _MarkdownFrameState extends fm.State<MarkdownFrame> {
             titleModel.title = 'Definition';
             titleModel.level = LevelData.find(currentLink)?.name ?? '';
           }
-          var isAbbrev = settings.isAbbrev;
           return fm.FutureBuilder(
               future:  _mdFuture,   // _loadHtmlFromAssets(),
               builder: (context,snapshot) {
@@ -140,8 +145,6 @@ class _MarkdownFrameState extends fm.State<MarkdownFrame> {
                                   controller: scrollController,
                                   child: Markdown(
                                     data: adjustMarkdown(snapshot.data!.toString(), highlightState),
-                                    //data: _htmlToMarkdown(snapshot.data!
-                                    //    .toString(), isAbbrev, highlightState),
                                     selectable: true,
                                     styleSheet: markdownStyle,
                                     controller: scrollController,
@@ -172,54 +175,6 @@ class _MarkdownFrameState extends fm.State<MarkdownFrame> {
                                   ),
                                 ))
                         ),
-
-                        //  Row of radio buttons at bottom to switch between
-                        //  Abbreviated and Full definition
-                        //  Only show if the definition has both versions
-                        if (hasAbbrev) fm.Container(
-                          decoration: fm.BoxDecoration(
-                              color: Color.FLOOR,
-                              border: fm.Border(top: fm.BorderSide(
-                                  width: 1, color: fm.Colors.black))),
-                          child: fm.Row(
-                              children: [
-                                fm.InkWell(
-                                    onTap: () {
-                                      _setAbbrev(settings, true);
-                                    },
-                                    child: fm.Row(
-                                      children: [
-                                        fm.Radio<bool>(
-                                          value: true,
-                                          groupValue: isAbbrev,
-                                          onChanged: (value) {
-                                            _setAbbrev(settings, true);
-                                          },
-                                        ),
-                                        fm.Text('Abbreviated',
-                                            style: fm.TextStyle(fontSize: 20)),
-                                      ],
-                                    )),
-                                fm.InkWell(
-                                    onTap: () {
-                                      _setAbbrev(settings, false);
-                                    },
-                                    child: fm.Row(
-                                      children: [
-                                        fm.Radio<bool>(
-                                          value: false,
-                                          groupValue: isAbbrev,
-                                          onChanged: (value) {
-                                            _setAbbrev(settings, false);
-                                          },
-                                        ),
-                                        fm.Text('Full',
-                                            style: fm.TextStyle(fontSize: 20)),
-                                      ],
-                                    )),
-                              ]
-                          ),
-                        )
                       ]);
                 }  // if snapshot.hasData (future is resolved)
                 else
@@ -229,13 +184,8 @@ class _MarkdownFrameState extends fm.State<MarkdownFrame> {
         });
   }
 
-  void _setAbbrev(Settings settings, bool newValue) {
-    settings.isAbbrev = newValue;
-    _loadMdFromAssets(settings,currentLink);
-  }
-
   void _loadMdFromAssets(Settings settings,String htmllink) async {
-    final localizedAssetName = settings.getLanguageLink(htmllink.replaceFirst('.html', '')) + '.md';
+    final localizedAssetName = settings.getLanguageLink(htmllink.replaceFirst('\\.(html|md)'.r, '')) + '.md';
     setState(() {
       _mdFuture = TamUtils.getAsset(localizedAssetName);
       currentLink = htmllink;
@@ -255,115 +205,33 @@ class _MarkdownFrameState extends fm.State<MarkdownFrame> {
   ];
 
   String adjustMarkdown(String md, HighlightState highlightState) {
+    var part = highlightState.currentPart;
+    var partCount = 0;
+    var partsMap = <String>[];
+    if (md.contains('<!-- Parts')) {
+      partsMap = md.replaceFirst('.+<!-- Parts\n'.rd,'').split('\n'.r);
+      partsMap.removeLast();
+    }
     return md
     //  Title is uppercase
         .replaceAllMapped('^# (.*)'.rm,(m) => '# ${m[1]!.toUpperCase()}')
     //  Fix image links
         .replaceAll('![alt](','![alt](resource:assets/$_dir/')
     //  Highlight current part
+        .replaceAllMapped(r'\*\*\*(.*?)\*\*\*'.r, (m) {
+              partCount += 1;
+              if (partsMap.isNotEmpty)
+                return partCount-1 < partsMap.length &&
+                    highlightState.toString() == partsMap[partCount-1]
+                    ? '~~${m[1]}~~' : m[1]!;
+              else
+                return (partCount == part) ? '~~${m[1]}~~' : m[1]!;
+            })
         .replaceAllMapped('{high:($highlightState|Part${highlightState.currentPart})}(.*?){/high}'.rd,(m) => '~~${m[2]}~~')
     //  Remove other part markers
         .replaceAll('{/?high.*?}'.r,'')
     ;
 
-  }
-
-  String _htmlToMarkdown(String html, bool isAbbrev, HighlightState highlightState) {
-    final regSections = sections.join('|');
-    final notSelected = isAbbrev ? 'full' : 'abbrev';
-    title = html.replaceMatch('.*<title>(.*)</title>.*'.rd, '\\1');
-    var md = html
-    //  Just work on the body
-        .replaceAllMapped('.*<body.*?>(.*)</body>.*'.rd, (m)=>'${m[1]}')
-    //  Tabs to spaces
-        .replaceAll('\\t'.r, ' ')
-    //  Remove any indentation so Markdown doesn't interpret it as 'code'
-        .replaceAll('\n *'.r, '\n')
-    //  Remove blank lines
-        .replaceAll('[\r\n]+'.r,'\n')
-    //  Remove HTML comments
-        .replaceAll('<!--.*?-->'.rd,'')
-    //  Remove web-specific text if not on web (About page only)
-        .replaceAllMapped('(<div class="web">.*?</div>)'.rd,
-            (m) => TamUtils.platform() == 'web' ? m[1]! : '')
-    //  Remove abbrev/full sections not selected
-        .replaceAll('<div class="($regSections) $notSelected">.*?</div>'.rd,'')
-    //  Command examples get special treatment
-        .replaceAllMapped('<div class="command-examples.*?">.*?<b>(.*?)</b>(.*?)</div>'.rid,
-        //  First the section header
-            (m) => '### ${m[1]}\n${m[2]}'
-            //  Now each example
-                .replaceAllMapped('<p>(.*?)</p>'.rd,
-                //  H4 to format each example
-                    (m) => '#### ${m[1]}'.replaceAll('\\s+'.r, ' ') + '\n' ));
-    //  Process all other sections
-    md = md
-        .replaceAllMapped('<div class="($regSections).*?">\\s*<b>(.*?)</b>(.*?)</div>'.rd,
-            (m) => '### ${m[2]}\n${m[3]}');
-    md = md
-    //  Parts section in C-3
-        .replaceAllMapped('<div class="parts"><b>(.*?)</b>(.*?)</div>'.rd,
-            (m) => '**${m[1]!.trim()}** ${m[2]}  \n')
-    //  Remove other abbrev/full text not selected
-        .replaceAll(isAbbrev
-        ? r'<(\w+) class="full">.*?</\1>'.rd
-        : r'<(\w+) class="abbrev">.*?</\1>'.rd,
-        '')
-    //  Copyright marked as H6
-        .replaceAllMapped('<p class="copyright">&copy;(.*?)\\s*</p>'.rd,
-            (m) => '# \n###### @${m[1]!.replaceAll(r'\s'.rd,' ')}')
-    //  other special characters
-        .replaceAll('&deg;', '°')
-        .replaceAll('&quot;','"')
-        .replaceAll('&frac14;','¼')
-        .replaceAll('&frac12;','½')
-        .replaceAll('&frac34;','¾')
-        .replaceAll('&amp;','&')
-        .replaceAll('&mdash;','—')
-    //  other bold text
-        .replaceAllMapped('<b>(.*?)</b>'.rd,(m) => '**${m[1]}**')
-        .replaceAllMapped('<strong>(.*?)</strong>'.rd,(m) => '**${m[1]}**')
-    //  italics
-        .replaceAllMapped('<i>(.*?)</i>'.rd,(m) => '*${m[1]}*')
-    //  H2
-        .replaceAllMapped('<h2>(.*?)</h2>'.r, (m) => '# ${m[1]!.toUpperCase()}')
-    //  H3
-        .replaceAllMapped('<h3.*?>(.*?)</h3>'.r, (m) => '# \n# \n## ${m[1]}')
-    //  anchors
-        .replaceAllMapped('<a href="(.*?)">(.*?)</a>'.rd, (m) => '[${m[2]}](${m[1]})')
-    //  images
-        .replaceAllMapped('<img.*?src="(http.*?)".*?/>'.rd,
-            (m) => '![alt](${m[1]})')
-        .replaceAllMapped('<img.*?src="(.*?)".*?/>'.rd,
-            (m) => '![alt](resource:assets/${TamUtils.linkSSD(_dir+'/'+m[1]!)})')
-    //  lists
-        .replaceAllMapped('<ul.*?>(.*)</ul>'.rd,
-            (m) => m[1]!.replaceAll('<li>'.r, '- '))
-        .replaceAllMapped('<ol.*?>(.*)</ol>'.rd,
-            (m) => m[1]!.replaceAll('\\s'.rd, ' ').replaceAll('<li>', '\n1. '))
-    //  Hack for nested lists
-        .replaceAll('\n+','\n\t*')
-        .replaceAll('\n\$','\n\t1')
-    //  Horizontal lines (only used in the About page)
-        .replaceAll('<hr/>','***')
-    //  Make sure paragraphs are preceeded by a blank line so
-    //  markdown will recognize them
-        .replaceAll('<p\\b'.r, '\n<p')
-    //  Line breaks - presumes all uses of <br/> are at the end of the line
-        .replaceAll('<br/>','  ')
-    //  Centered text - use blockquote
-        .replaceAllMapped('<p style="text-align:center">(.*?)</p>'.rd,
-            (m) => m[1]!.replaceAll('^'.rm, '> '))
-    //  Highlight current part
-    //  Markup doesn't want any spaces between ~~ and the highlighted text
-    //  so rearrange whitespace as needed
-        .replaceAllMapped('<span (id|class)="($highlightState|Part${highlightState.currentPart})">(\\s*)(.*?)(\\s*)</span>'.rd, (m) => '${m[3]}~~${m[4]}~~${m[5]}')
-    //  strip all other tags
-        .replaceAll('<.*?>'.r, '')
-    //  Now we can replace special characters < and >
-        .replaceAll('&lt;'.ri,'<')
-        .replaceAll('&gt;'.ri, '>');
-    return md;
   }
 
 }

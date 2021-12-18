@@ -21,7 +21,6 @@
 import 'package:flutter/material.dart' as fm;
 import 'package:shared_preferences/shared_preferences.dart';
 
-import 'extensions.dart';
 import 'tam_utils.dart';
 
 class Settings extends fm.ChangeNotifier {
@@ -180,16 +179,6 @@ class Settings extends fm.ChangeNotifier {
       return fm.WidgetsBinding.instance!.window.locale.languageCode;
   }
 
-  //  Languages and levels that have abbrev definitions
-  static Map<String,String> abbrevDefs = {
-    'en' : 'b1 b2 ms',
-    'ja' : 'b1 b2 m2'
-  };
-  bool hasAbbrevDefinition(String link) {
-    final dir = link.replaceFirst(r'/.*'.r,'');
-    return (abbrevDefs[languageCode] ?? '').contains(dir);
-  }
-
   //  Get a language-specific link for retreiving the definition
   String getLanguageLink(String link) {
     var code = languageCode;
@@ -200,8 +189,6 @@ class Settings extends fm.ChangeNotifier {
         link += '.lang-$code';
       }
     }
-    if (isAbbrev && hasAbbrevDefinition(link))
-      link += '-abbrev';
     return link;
   }
 
