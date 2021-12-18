@@ -58,10 +58,11 @@
        from="Right-Hand Wave"
        formation="Wave RH">
     <path numbers="1 4">
-      <move select="Lead Right" beats="4.5" scaleY="5" />
+      <move select="Lead Right" beats="4.5" scaleY="4.5" />
     </path>
     <path numbers="2 3">
-      <move select="Cast Right" />
+      <move select="Hinge Right"/>
+      <move select="Run Right" offsetX="-.5"/>
     </path>
   </tam>
 
@@ -69,10 +70,11 @@
        from="Left-Hand Wave"
        formation="Wave LH">
     <path numbers="4 1">
-      <move select="Lead Left" beats="4.5" scaleY="5" />
+      <move select="Lead Left" beats="4.5" scaleY="4.5" />
     </path>
     <path numbers="3 2">
-      <move select="Cast Left" />
+      <move select="Hinge Left"/>
+      <move select="Run Left" offsetX="-0.5"/>
     </path>
   </tam>
 

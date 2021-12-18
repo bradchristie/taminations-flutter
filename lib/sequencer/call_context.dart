@@ -1191,7 +1191,7 @@ class CallContext {
     return centerCount == 4 &&
         ((xCount==4 && yCount==0) || (xCount==0 && yCount==4));
   }
-  bool is2x4() => isTBone();
+  bool is2x4() => dancers.length == 8 && (isLines() || isTBone());
 
   //  Sometimes we have to work with an asymmetric context
   bool isAsym() =>
