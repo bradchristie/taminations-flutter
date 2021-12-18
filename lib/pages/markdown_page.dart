@@ -209,7 +209,7 @@ class _MarkdownFrameState extends fm.State<MarkdownFrame> {
     var partCount = 0;
     var partsMap = <String>[];
     if (md.contains('<!-- Parts')) {
-      partsMap = md.replaceFirst('.+<!-- Parts\n'.rd,'').split('\n'.r);
+      partsMap = md.replaceFirst('.+<!-- Parts'.rd,'').trim().split('\\s+'.r);
       partsMap.removeLast();
     }
     return md

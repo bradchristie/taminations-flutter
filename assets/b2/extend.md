@@ -10,8 +10,7 @@ formations, which, in order, are as follows:
 1. 3/4 Tag 
 1. Completed Double Pass Thru (Full Tag) 
 
-Eight-dancer Tagging Formations
-
+> Eight-dancer Tagging Formations
 > 
 > ![alt](extend-1.png)
 > ![alt](extend-2.png)
@@ -78,13 +77,13 @@ Lines of 3 Touch 1/4, All Extend (to a Column).
 Extend is improper from Facing Lines or a Tidal Wave. From these formations, callers should use Step To A
 Wave or Step Thru (or Pass Thru, if a Right-Hand Tidal Wave) to have all dancers step forward.
 
-Using Extend as a four-dancer call: Although Extend is usually called to all eight dancers, it is actually a fourdancer
+**Using Extend as a four-dancer call:** Although Extend is usually called to all eight dancers, it is actually a fourdancer
 call related to the position of dancers as they Tag the Line. The dance action, timing, styling, and
 comments also apply to these four-dancer tagging formations. Such applications are rarely encountered at
 Mainstream and would probably require a workshop.
 
-Four-dancer Tagging Formations
-
+>
+> Four-dancer Tagging Formations
 >
 > ![alt](extend-41.png)
 > ![alt](extend-42.png)

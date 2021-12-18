@@ -3,7 +3,7 @@
 
 ### Starting formation
 
-Same as Allemande Left
+Same as [Allemande Left](../b1/allemande.md)
 
 ### Command examples
 

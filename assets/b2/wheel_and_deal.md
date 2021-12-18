@@ -44,8 +44,8 @@ To assist in understanding this call, here are some helpful facts:
 - Dancers turn toward the center of the line (like Bend the Line, but unlike Wheel Around, which is always toward the left)
 - Each couple ends facing the opposite direction from which they started
 - From a One-Faced Line
-- The couple on the right ends in front
-- The couples pass right shoulders (of the right-hand dancers)
+  - The couple on the right ends in front
+  - The couples pass right shoulders (of the right-hand dancers)
 
 From a One-Faced Line, a more accurate dance action for the couple on the right
 would be to step forward after the turn. So from a Tidal Line, Wheel And Deal ends

@@ -3,7 +3,7 @@
 
 ### 動作を始める隊形
 
-Allemande Left（アレマンド レフト）に同じ。
+[Allemande Left](../b1/allemande.md)（アレマンド レフト）に同じ。
 
 ### コール例
 
