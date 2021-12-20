@@ -11,8 +11,8 @@ Spin Chain Thru
 
 ### Dance Action
 
-Each end and adjacent center Turn 1/2. New centers Turn 3/4 to form a center Ocean Wave. Very
-Centers Turn 1/2. In the center Ocean Wave, each end and adjacent center Turn 3/4.
+***Each end and adjacent center Turn 1/2***. ***New centers Turn 3/4 to form a center Ocean Wave***. 
+***Very Centers Turn 1/2***. ***In the center Ocean Wave, each end and adjacent center Turn 3/4***.
 
 ### Ending formation
 

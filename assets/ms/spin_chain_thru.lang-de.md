@@ -11,11 +11,11 @@ Spin Chain Thru
 
 ### Tanzaktion
 
-Jeder End-Tänzer führt mit seinem benachbarten Center eine 1/2 Drehung um die Handverbindung
-aus. Die neuen Centers führen anschließend eine 3/4 Drehung um ihre Handverbindung aus und bilden am
-Ende eine zentrale Ocean Wave. Die „Very Centers“ machen eine 1/2 Drehung um ihre Handverbindung. In
-der zentralen Ocean Wave führt jeder End-Tänzer mit seinem benachbarten Center eine 3/4 Drehung um die
-Handverbindung aus. 
+***Jeder End-Tänzer führt mit seinem benachbarten Center eine 1/2 Drehung um die Handverbindung aus***. 
+***Die neuen Centers führen anschließend eine 3/4 Drehung um ihre Handverbindung aus und bilden am
+Ende eine zentrale Ocean Wave***. ***Die „Very Centers“ machen eine 1/2 Drehung um ihre Handverbindung.*** 
+***In der zentralen Ocean Wave führt jeder End-Tänzer mit seinem benachbarten Center eine 3/4 Drehung um die
+Handverbindung aus***. 
 
 ### Schlussformation
 

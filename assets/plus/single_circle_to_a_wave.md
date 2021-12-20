@@ -3,12 +3,12 @@
 
 Starting formation - Facing dancers. 
 
-Facing dancers join both hands with each other and [ Circle Left](../b1/circle.html) halfway. Without
+Facing dancers join both hands with each other and [ Circle Left](../b1/circle.md) halfway. Without
 stopping, they drop hands with each other and individually [ Veer
-Left](../b1/veer.html), blending into a
+Left](../b1/veer.md), blending into a
 right-hand mini-wave. If the caller directs "Single Circle 3/4 to a Wave",
 facing dancers join both hands with each other and [Circle
-Left](../b1/circle.html) 3/4, then continue to
+Left](../b1/circle.md) 3/4, then continue to
 execute the rest of the call as above. 
 
 STYLING: In circling, the two dancers are slightly offset to the left so that their

@@ -218,7 +218,7 @@ class _MarkdownFrameState extends fm.State<MarkdownFrame> {
     //  Fix image links
         .replaceAll('![alt](','![alt](resource:assets/$_dir/')
     //  Highlight current part
-        .replaceAllMapped(r'\*\*\*(.*?)\*\*\*'.r, (m) {
+        .replaceAllMapped(r'\*\*\*(.*?)\*\*\*'.rd, (m) {
               partCount += 1;
               if (partsMap.isNotEmpty)
                 return partCount-1 < partsMap.length &&

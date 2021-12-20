@@ -3,27 +3,24 @@
 
 Starting formation: Ocean Waves. 
 
-
-{high:SpinChaintheGears1}Each end and the adjacent center Turn 1/2.{/high}
-{high:SpinChaintheGears2}New centers Turn 3/4 to form a center Ocean Wave
-and the ends Flip In (180 degree inward turn similar to Ends Run).{/high} 
-{high:SpinChaintheGears3}Very Centers Turn 1/2.{/high} 
-{high:SpinChaintheGears4}Each half of the square forms a four-hand Star (a “gear”)
-and turns it 3/4.{/high}
-{high:SpinChaintheGears5}Very Centers Turn 1/2{/high}
- {high:SpinChaintheGears6}Those in the center Ocean Wave Turn 3/4
+***Each end and the adjacent center Turn 1/2.***
+***New centers Turn 3/4 to form a center Ocean Wave
+and the ends Flip In (180 degree inward turn similar to Ends Run).*** 
+***Very Centers Turn 1/2.*** 
+***Each half of the square forms a four-hand Star (a “gear”)
+and turns it 3/4.***
+***Very Centers Turn 1/2***
+***Those in the center Ocean Wave Turn 3/4
 while the other four dancers Flip Out
-(180 degree outward turn similar to Centers Run).{/high}
+(180 degree outward turn similar to Centers Run).***
 The call ends in waves with the same handedness and in
 the same location as the original waves.
-
 
 STYLING: Ocean wave and star turns use standard styling.
 
 As the Centers Turn 3/4 at the beginning of the call,
 the other dancers pause slightly and then,
 as they Flip In, they bring the other hand up to immediately join the forming star.
-
 
 TIMING: 24
 

@@ -16,8 +16,13 @@ it is possible for only those on the outside path (dancers numbered 1, 2, 3, 4 i
 > 
 > ![alt](ping_pong_1.png)
 > ![alt](ping_pong_2.png)
+>
 
-STYLING: Styling is the same as previously described for the basics  pass thru and  partner trade. Dancers in center use basic ocean wave styling. Outside dancers join hands in  couple handhold.
+STYLING: Styling is the same as previously described for the basics 
+[pass thru](../b1/pass_thru.md) and  [partner trade](../b2/trade.md). 
+Dancers in center use basic ocean wave styling. 
+Outside dancers join hands in  couple handhold.
 
 Timing: 6
+
 ###### @ Copyright 1997, 2001-2021 by CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed nor revised in any derivation or publication.
