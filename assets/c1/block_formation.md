@@ -16,7 +16,6 @@ block; all block calls start and end on the same 4 spots on
 the floor.
 e.g., In Your Block, [Walk and Dodge](../ms/walk_and_dodge.md):
 
-
 > 
 > ![alt](block_formation_1a.png)
 > ![alt](block_formation_1b.png)

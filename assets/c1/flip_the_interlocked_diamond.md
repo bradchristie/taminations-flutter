@@ -5,7 +5,6 @@ From interlocked diamonds (twin): The points
 [Flip the Diamond](../plus/flip_the_diamond.md), while the centers 
 [Interlocked Diamond Circulate](interlocked_diamond_circulate.md).
 
-
 > 
 > ![alt](flip_the_interlocked_diamond.png)
 > 

@@ -5,7 +5,7 @@ From Box Circulate, Facing Couples, etc.:
 
 - Dancers in a trailing couple have the belle step in front of the beau, forming a tandem
 - Dancers in a leading couple [Single Wheel](../a2/single_wheel.md)
-- Dancers in a mini-wave have the leads [ Fold](../ms/fold.md)
+- Dancers in a mini-wave have the leads [Fold](../ms/fold.md)
 
 After the appropriate beginning, dancers continue in one smooth motion
 to finish a Tag the Line

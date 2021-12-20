@@ -3,7 +3,7 @@
 
 From Eight Chain Thru: All [Right Pull By](../b1/pull_by.md). The outsides
 [Courtesy Turn](../b1/courtesy_turn.md) and 
-[ Roll](../plus/anything_and_roll.md) while the centers
+[Roll](../plus/anything_and_roll.md) while the centers
 [Left Hand Star 1/2](../b1/star.md), to end in parallel waves.
 
 > 

@@ -2,14 +2,14 @@
 # Relay the Shadow
 
 From a tidal wave:
-{high:Part1}All [Swing](../a2/swing.md){/high}.
-{high:Part2}The center six [Cast 3/4](../ms/cast_off_three_quarters.md),
+***All [Swing](../a2/swing.md)***.
+***The center six [Cast 3/4](../ms/cast_off_three_quarters.md),
 while the ends [Counter Rotate 1/4](../a2/box_counter_rotate.md),
-meet the very centers,{/high}
-{high:Part3}Single [Hinge](../ms/hinge.md) &
+meet the very centers,***
+***Single [Hinge](../ms/hinge.md) &
 [Spread](../plus/anything_and_spread.md).
 The other four do the centers' part
-of a [Cast a Shadow](relay_the_shadow.md){/high} (i.e., leaders "shadow", trailers
+of a [Cast a Shadow](relay_the_shadow.md)*** (i.e., leaders "shadow", trailers
 [Extend](../b2/extend.md), [Hinge](../ms/hinge.md), and
 [Extend](../b2/extend.md)).
 

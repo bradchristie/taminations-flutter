@@ -1,9 +1,9 @@
 
 # (Anything) Chain Thru
 
-{high:Part1}All do the "anything" call{/high}, then
-{high:Part2}the very centers [Trade](../b2/trade.md){/high}
-and {high:Part3}the center 4 [Cast Off 3/4](../ms/cast_off_three_quarters.md){/high}. 
+***All do the "anything" call***, then
+***the very centers [Trade](../b2/trade.md)***
+and ***the center 4 [Cast Off 3/4](../ms/cast_off_three_quarters.md)***. 
 If the “anything” call is a Triangle or Diamond
 Circulate, the word “Circulate” is conventionally omitted (e.g., Inpoint
 Triangle Chain Thru, Interlocked Diamond Chain Thru).

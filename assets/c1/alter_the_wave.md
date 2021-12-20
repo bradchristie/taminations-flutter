@@ -1,13 +1,12 @@
 
 # Alter the Wave
 
-From a wave: {high:Part1}All [Swing](../a2/swing.md){/high},
-then {high:Part2}the centers [Cast Off 3/4](../ms/cast_off_three_quarters.md)
-while the ends [ U-Turn Back](../b1/turn_back.md){/high}.
-{high:Part3}All [ Counter Rotate](counter_rotate.md) the
-diamond 1/2 (formerly called "turning the star 1/2"){/high}, and
-{high:Part4}[
-Flip the Diamond](../plus/flip_the_diamond.md){/high}. Ends in a wave.
+From a wave: ***All [Swing](../a2/swing.md)***,
+then ***the centers [Cast Off 3/4](../ms/cast_off_three_quarters.md)
+while the ends [ U-Turn Back](../b1/turn_back.md)***.
+***All [ Counter Rotate](counter_rotate.md) the
+diamond 1/2 (formerly called "turning the star 1/2")***, and
+***[Flip the Diamond](../plus/flip_the_diamond.md)***. Ends in a wave.
 
 > 
 > ![alt](alter_the_wave_1.png)

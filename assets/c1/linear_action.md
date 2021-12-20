@@ -3,12 +3,12 @@
 
 From quarter or three-quarter tag, wave between parallel
 mini-waves, quarter or three-quarter line, or two-faced line
-between parallel mini-waves: {high:Part1}All [Hinge](../ms/hinge.md){/high}.
-{high:Part2}[Centers Box Circulate](../b1/circulate.md) 1½,
-as outsides [Trade](../b2/trade.md){/high}.
-{high:Part3}Those who meet
+between parallel mini-waves: ***All [Hinge](../ms/hinge.md)***.
+***[Centers Box Circulate](../b1/circulate.md) 1½,
+as outsides [Trade](../b2/trade.md)***.
+***Those who meet
 [Cast Off 3/4](../ms/cast_off_three_quarters.md), as others move up (as in 
-[Hourglass Circulate](../a2/hourglass_circulate.md)){/high} to
+[Hourglass Circulate](../a2/hourglass_circulate.md))*** to
 form parallel waves or lines.
 
 > 

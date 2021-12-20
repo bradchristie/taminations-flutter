@@ -2,11 +2,11 @@
 # Swing the Fractions
 
 From Parallel Waves, or other appropriate formations:
-{high:SwingtheFractions1}Those who can Turn 1/4 by the Right{/high},
-{high:SwingtheFractions2}those who can Turn 1/2 by the Left{/high},
-{high:SwingtheFractions3}those who can Turn 3/4 by the Right{/high},
-{high:SwingtheFractions4}those who can Turn 1/2 by the Left{/high},
-{high:SwingtheFractions5}and those who can Turn 1/4 by the Right{/high}.
+***Those who can Turn 1/4 by the Right***,
+***those who can Turn 1/2 by the Left***,
+***those who can Turn 3/4 by the Right***,
+***those who can Turn 1/2 by the Left***,
+***and those who can Turn 1/4 by the Right***.
 
 For example,
 

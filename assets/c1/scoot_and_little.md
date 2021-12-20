@@ -2,8 +2,8 @@
 # Scoot and Little
 
 From quarter tag:
-{high:Part1}[Scoot Back](../ms/scoot_back.md),{/high} then
-{high:Part2}[Little](little.md) or Left Little{/high},
+***[Scoot Back](../ms/scoot_back.md),*** then
+***[Little](little.md) or Left Little***,
 according to the hand with which
 the Scoot Back was done, or outsides go as directed, as in
 "Scoot and Little, Out on the outside".
