@@ -3,10 +3,10 @@
 
 From parallel lines or waves, a tidal wave, etc.: This concept can apply to
 1-, 2-, 3-, or 4-dancer calls only.
-{high:Part1}Each half of the square does the call{/high},
-{high:Part2}then centers only do the call{/high},
-{high:Part3}then each half does the call{/high},
-{high:Part4}then centers only do the call{/high}.
+***Each half of the square does the call***,
+***then centers only do the call***,
+***then each half does the call***,
+***then centers only do the call***.
 For example: **Crazy Flutter Wheel**--From lines of
 four facing: All [Flutter Wheel](../b2/flutterwheel.md), center four
 [Flutter Wheel](../b2/flutterwheel.md), 

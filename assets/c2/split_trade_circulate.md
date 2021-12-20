@@ -2,7 +2,7 @@
 # Split Trade Circulate
 
 From an inverted box: Leaders [Box Circulate](../b1/circulate.md) as the trailers
-[ Cross Over Circulate](../a1/cross_over_circulate.md) (passing right shoulders).
+[Cross Over Circulate](../a1/cross_over_circulate.md) (passing right shoulders).
 
 > 
 > ![alt](split_trade_circulate.png)

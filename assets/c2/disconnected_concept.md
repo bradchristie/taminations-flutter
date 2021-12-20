@@ -7,7 +7,7 @@ If the call changes the formation, stay near the original centers' spots.
 Dancers adjust to close up any gaps that were created (as in the Disconnected 
 [Crossfire](../plus/crossfire.md), below). 
 
-For example: Girls Disconnected [ Cross Roll to a Wave](../c1/cross_roll.md): 
+For example: Girls Disconnected [Cross Roll to a Wave](../c1/cross_roll.md): 
 
 > 
 > ![alt](disconnected_concept_1a.png)

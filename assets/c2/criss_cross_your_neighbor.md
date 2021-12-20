@@ -4,7 +4,7 @@
 From a mini-wave box: Trailers Cross Extend, [Cast 3/4](../ms/cast_off_three_quarters.md) and
 [Spread](../plus/anything_and_spread.md) (becoming
 ends of a new wave), while leaders, as one smooth motion, 
-1/2 [ Box Circulate](../b1/circulate.md) and
+1/2 [Box Circulate](../b1/circulate.md) and
 [Cross Run](../b2/run.md) (working outside the others) to become the centers of a new
 wave.
 

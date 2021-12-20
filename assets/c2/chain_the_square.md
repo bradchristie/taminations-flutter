@@ -2,7 +2,7 @@
 # Chain the Square
 
 From eight chain thru: All Right [Pull By](../b1/pull_by.md); outsides
-[ Courtesy Turn](../b1/courtesy_turn.md) and 
+[Courtesy Turn](../b1/courtesy_turn.md) and 
 [Veer Left](../b1/veer.md); centers Left Touch, and the centers 
 [Courtesy Turn](../b1/courtesy_turn.md) the ends to finish
 facing the same way the centers were originally facing, then

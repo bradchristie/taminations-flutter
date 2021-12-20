@@ -217,6 +217,8 @@ class _MarkdownFrameState extends fm.State<MarkdownFrame> {
         .replaceAllMapped('^# (.*)'.rm,(m) => '# ${m[1]!.toUpperCase()}')
     //  Fix image links
         .replaceAll('![alt](','![alt](resource:assets/$_dir/')
+    //  Interpret encodings
+        .replaceAll('\\<','<')
     //  Highlight current part
         .replaceAllMapped(r'\*\*\*(.*?)\*\*\*'.rd, (m) {
               partCount += 1;

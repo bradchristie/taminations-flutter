@@ -1,10 +1,10 @@
 
 # Rotary (Anything)
 
-From an eight chain thru: {high:Rotary1}All Right Pull By{/high};
-{high:Rotary2}ends [Courtesy Turn](../b1/courtesy_turn.md) and
+From an eight chain thru: ***All Right Pull By***;
+***ends [Courtesy Turn](../b1/courtesy_turn.md) and
 [Roll](../plus/anything_and_roll.md) as
-the centers step to a left-hand wave and do the (Anything) call{/high}.
+the centers step to a left-hand wave and do the (Anything) call***.
 Common applications include Rotary Explode the Wave, Rotary Mix, and
 Rotary Trade the Wave.
 

@@ -2,11 +2,11 @@
 # Bounce the (Anyone)
 
 From a two-faced line only:
-{high:Part1}[Veer Left](../b1/veer.md) or [Veer Right](../b1/veer.md){/high}
+***[Veer Left](../b1/veer.md) or [Veer Right](../b1/veer.md)***
 (whichever is toward the center of the line).
-Then the {high:Part2}designated dancers do a 
+Then the ***designated dancers do a 
 [U-Turn Back](../b1/turn_back.md), turning in
-the direction of the Veer{/high}. i.e. Bounce the Centers:
+the direction of the Veer***. i.e. Bounce the Centers:
 
 > 
 > ![alt](bounce_the_anyone.png)

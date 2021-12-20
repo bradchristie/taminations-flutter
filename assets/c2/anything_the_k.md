@@ -1,9 +1,9 @@
 
 # (Anything) the K
 
-{high:CrossTrailThrutheK1}Do the (Anything) call{/high}, then
-{high:CrossTrailThrutheK2}centers Trade as ends U-Turn Back
-**away from the center**{/high} (as in [Cross the K](cross_the_k.md)).
+Do the (Anything) call, then
+centers Trade as ends U-Turn Back
+**away from the center** (as in [Cross the K](cross_the_k.md)).
 If the (Anything) call ends in a tidal setup: The centers of
 each line Trade, and the ends of each line turn back away from the center of
 their side. 

@@ -24,7 +24,7 @@
 
   <tam title="Perk Up"
        from="Right-Hand Waves"
-       fractions="4;2;2;3" >
+       fractions="4;2" >
     <formation>
       <dancer gender="girl" y="2" x="3" angle="270"/>
       <dancer gender="boy" y="2" x="1" angle="90"/>
@@ -62,7 +62,7 @@
   <tam title="Perk Up"
        from="Left-Hand Waves"
        formation="Ocean Waves LH BGBG"
-       fractions="4;2;2;3" >
+       fractions="4;2" >
     <path>
       <move select="Run Left" beats="4" scaleX="2" scaleY="3" />
       <move select="Forward 2" />

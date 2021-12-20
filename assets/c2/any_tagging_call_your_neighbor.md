@@ -1,5 +1,5 @@
 
-## &lt;any tagging call> Your Neighbor
+## \<any tagging call> Your Neighbor
 
 Do the tagging call to the 1/2 Tag position; Follow Your Neighbor.
 
@@ -7,14 +7,14 @@ Example: Flip Your Neighbor. From a wave:
 {high:Part1}[Flip the Line 1/2](../c1/flip_the_line.md){/high},
 then {high:Part2}[Follow Your Neighbor](../plus/follow_your_neighbor.md){/high}.
 
-## &lt;any tagging call> Your Cross Neighbor
+## \<any tagging call> Your Cross Neighbor
 
 Do the tagging call to the 1/2 Tag position; Cross Your Neighbor.
 
 Example: Tag Your Cross Neighbor.
 From a Line or Wave: 1/2 Tag, then Cross Your Neighbor.
 
-## &lt;any tagging call> Your Criss Cross Neighbor
+## \<any tagging call> Your Criss Cross Neighbor
 
 Do the tagging call to the 1/2 Tag position; Criss Cross Your Neighbor.
 

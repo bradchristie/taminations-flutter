@@ -5,13 +5,13 @@ Funny is a "Those Who Can" concept. On each part of the call being done,
 as many people as possible do that part, as long as no two people finish on the
 same spot. 
 
-For example: Funny [ Box Circulate](../b1/circulate.md) 2:
+For example: Funny [Box Circulate](../b1/circulate.md) 2:
 
 > 
 > ![alt](funny1.png)
 > 
 
-Funny [ Diamond Circulate](../plus/diamond_circulate.md):
+Funny [Diamond Circulate](../plus/diamond_circulate.md):
 
 > 
 > ![alt](funny2.png)
