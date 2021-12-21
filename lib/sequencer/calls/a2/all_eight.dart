@@ -20,26 +20,26 @@
 
 import '../common.dart';
 
-class AllEightSlip extends Action {
+class AllEight extends Action {
 
   @override final level = LevelData.A2;
-  AllEightSlip() : super('All 8 Slip');
+  AllEight(String name) : super(name);
 
   @override
   Future<void> perform(CallContext ctx, [int stackIndex = 0]) async {
-    await  ctx.applyCalls('Slip');
+    if (ctx.isThar()) {
+      final all8call = name.replaceAll('All (8|Eight)'.ri, '').trim();
+      final xDancers = ctx.dancers.where((d) => d.isOnXAxis).toList();
+      final yDancers = ctx.dancers.where((d) => d.isOnYAxis).toList();
+      await ctx.subContext(xDancers, (xctx) =>
+          xctx.applyCalls(all8call)
+      );
+      await ctx.subContext(yDancers, (yctx) =>
+          yctx.applyCalls(all8call)
+      );
+    } else
+      throw CallError('All 8 calls only supported from thar formations');
   }
 
-}
-
-class AllEightFanTheTop extends Action {
-
-  @override final level = LevelData.A2;
-  AllEightFanTheTop() : super('All 8 Fan the Top');
-
-  @override
-  Future<void> perform(CallContext ctx, [int stackIndex = 0]) async {
-    await  ctx.applyCalls('Outer 4 Counter Rotate While Center 4 Cast Off 3/4');
-  }
 
 }

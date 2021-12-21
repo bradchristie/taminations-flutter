@@ -208,8 +208,7 @@ abstract class CodedCall extends Call {
 
     'aceydeucey'.ri: (_) => AceyDeucey(),
     'adjustto.*'.ri: (name) => Adjust(name),
-    'all8fanthetop'.ri: (_) => AllEightFanTheTop(),
-    'all8slip'.ri: (_) => AllEightSlip(),
+    'all8.*'.ri: (name) => AllEight(name),
     'and'.ri: (_) => And(),
     //  Anything Motivate does not include Finish Motivate
     '.*(?<!finish)(motivate|coordinate|percolate|perkup)'.ri: (name) => Anything(name),

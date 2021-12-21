@@ -1177,6 +1177,11 @@ class CallContext {
   bool isOnYAxis() => dancers.every((d) => d.isOnYAxis);
   bool isOnAxis() => isOnXAxis() || isOnYAxis();
 
+  //  Dancers in any kind of thar
+  bool isThar() => isLines() &&
+      dancers.where((d) => d.isOnXAxis).length == 4 &&
+      dancers.where((d) => d.isOnYAxis).length == 4;
+
   //  Return true if dancers are in any type of 2x4 formation
   bool isTBone() {
     var centerCount = dancers.where((d) =>

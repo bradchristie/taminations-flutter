@@ -2156,7 +2156,19 @@ Right and Left Grand''',
 Pass Thru
 Tag Back to a Wave
 Extend
-Right and Left Grand'''
+Right and Left Grand''',
+
+  'All 8' :
+'''Hinge
+Adjust to Thar
+All 8 Slip
+All Eight Fan the Top
+All Eight Boys Run
+All 8 Cross Roll
+All 8 Swing Thru 1.5
+All 8 Switch the Wave
+Trade
+Promenade Home'''
 
 };
 
