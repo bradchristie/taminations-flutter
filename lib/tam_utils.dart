@@ -506,7 +506,7 @@ class TamUtils {
       .replaceAll('\\bdancers?\\b'.ri,'')
   //  Also handle 'Lead Couples' as 'Leads'
   //  but make sure not to clobber 'As Couples' or 'Couples Hinge'
-      .replaceAllMapped('((head|side|lead|trail|center|end).)couple'.ri,
+      .replaceAllMapped('((head|side|lead|trail|center|end).)couples?'.ri,
           (m) => m[1]!)
   //  Finally remove non-alphanums and strip spaces
       .replaceAll('\\W'.ri,'')
