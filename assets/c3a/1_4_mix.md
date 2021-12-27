@@ -1,13 +1,13 @@
 
-# 1/4 Mix
+# 1/4 (or 3/4) Mix
 
 **Parts:** 3  
 
 From a R-H Mini-Wave Box, a Diamond with the Centers in a R-H Mini-Wave,
 or other applicable formations:
-{high:Part1}Those who can, [Right Arm Turn 1/4](../b1/allemande.md){/high};
-in the resulting Line or Wave the {high:Part2}centers [Cross Run](../b2/run.md){/high};
-then {high:Part3}the new centers [Trade](../b2/trade.md){/high}.
+***Those who can, [Right Arm Turn 1/4](../b1/allemande.md) (or 3/4)***;
+in the resulting Line or Wave the ***centers [Cross Run](../b2/run.md)***;
+then ***the new centers [Trade](../b2/trade.md)***.
 Ends in a Line or Wave.
 
 > 

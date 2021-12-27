@@ -62,6 +62,8 @@ class TamState extends fm.ChangeNotifier {
   String? get link => _link;
   int _animnum;
   int get animnum => _animnum;
+  String? _animname;
+  String? get animname => _animname;
   MainPage? _mainPage;
   MainPage? get mainPage => _mainPage;
   DetailPage? _detailPage;
@@ -84,6 +86,7 @@ class TamState extends fm.ChangeNotifier {
     level,
     link,
     animnum = -1,
+    animname,
     mainPage = MainPage.LEVELS,
     detailPage = DetailPage.NONE,
     this.embed = false,
@@ -95,16 +98,24 @@ class TamState extends fm.ChangeNotifier {
   }) : _level=level, _link=link, _animnum=animnum,
         _mainPage=mainPage, _detailPage=detailPage;
 
-  void change({String? level, String? link, int? animnum,
+  void change({String? level, String? link, int? animnum, String? animname,
     MainPage? mainPage, DetailPage? detailPage,
     bool? embed, bool? play, bool? loop, bool? grid,
     String? formation, String? calls}) {
     final before = toString();
+    final params = Uri.parse(link ?? '').queryParameters;
     _level = level ?? _level;
-    _link = link ?? _link;
-    if (link?.isBlank ?? false)
-      _link = null;
-    _animnum = animnum ?? _animnum;
+    if (!(link ?? '').isBlank) {
+      _link = Uri.parse(link!).path;
+    }
+    if (animnum != null) {
+      _animnum = animnum;
+      _animname = null;
+    }
+    animname = params['animname'] ?? animname;
+    if (!(animname ?? '').isBlank) {
+      _animname = animname;
+    }
     _mainPage = mainPage ?? _mainPage;
     _detailPage = detailPage ?? _detailPage;
     this.embed = embed ?? this.embed;
@@ -122,6 +133,7 @@ class TamState extends fm.ChangeNotifier {
   String toString() => <String>[
     if (level != null && level!.isNotEmpty) 'level=$level',
     if (animnum >= 0) 'animnum=${animnum.d}',
+    if ((animname ?? '').isNotBlank) 'animname=$animname',
     if (link != null && link!.isNotEmpty) 'link=$link',
     if (mainPage != null) 'main=${describeEnum(mainPage!)}',
     if (detailPage != null && detailPage!=DetailPage.NONE)

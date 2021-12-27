@@ -20,7 +20,7 @@
     along with Taminations.  If not, see <http://www.gnu.org/licenses/>.
 
 -->
-<tamination title="1/4 Wheel the Ocean">
+<tamination title="1/4 or 3/4 Wheel the Ocean / Sea">
 
   <tam title="1/4 Wheel the Ocean" from="Left-Hand Two-Faced Line"
        formation="Two-Faced Line LH" parts="1.5">
@@ -78,6 +78,211 @@
       <move select="Hinge Left" scaleY=".5" />
       <move select="Extend Left" hands="right" beats="2" scaleY="2" />
       <move select="Forward" />
+    </path>
+  </tam>
+
+  <tam title="3/4 Wheel the Ocean"
+       from="Right-Hand Two-Faced Line"
+       formation="Two-Faced Line RH"
+       parts="6" >
+    <path numbers="1 4">
+      <move beats="2" select="Quarter Left" hands="right" offsetX=".33" offsetY="-.33" />
+      <move beats="2" select="Quarter Left" hands="right" offsetX="-.33" offsetY="-.33" />
+      <move beats="2" select="Quarter Left" hands="right" offsetX="-.33" offsetY=".33" />
+      <move select="Stand" hands="none" beats="4"/>
+    </path>
+    <path numbers="2 3">
+      <move beats="2" select="Hinge Left" scaleX="2" scaleY="2" offsetX=".33" offsetY="-.33" />
+      <move beats="2" select="Hinge Left" scaleX="2" scaleY="2" offsetX="-.33" offsetY="-.33" />
+      <move beats="2" select="Hinge Left" scaleX="2" scaleY="2" offsetX="-.33" offsetY=".33" />
+      <move select="Extend Left" hands="right" beats="3" scaleX="3" scaleY="2" />
+      <move select="Forward" />
+    </path>
+  </tam>
+
+  <tam title="3/4 Wheel the Ocean"
+       from="Right-Hand Two-Faced Lines"
+       formation="Two-Faced Lines RH"
+       parts="6" >
+    <path>
+      <move beats="2" select="Quarter Left" hands="right" offsetX=".33" offsetY="-.33" />
+      <move beats="2" select="Quarter Left" hands="right" offsetX="-.33" offsetY="-.33" />
+      <move beats="2" select="Quarter Left" hands="right" offsetX="-.33" offsetY=".33" />
+      <move select="Stand" hands="none" beats="4"/>
+    </path>
+    <path>
+      <move beats="2" select="Hinge Left" scaleX="2" scaleY="2" offsetX=".33" offsetY="-.33" />
+      <move beats="2" select="Hinge Left" scaleX="2" scaleY="2" offsetX="-.33" offsetY="-.33" />
+      <move beats="2" select="Hinge Left" scaleX="2" scaleY="2" offsetX="-.33" offsetY=".33" />
+      <move select="Extend Left" hands="right" beats="3" scaleX="3" scaleY="2" />
+      <move select="Forward" />
+    </path>
+    <path>
+      <move beats="2" select="Hinge Left" scaleX="2" scaleY="2" offsetX=".33" offsetY="-.33" />
+      <move beats="2" select="Hinge Left" scaleX="2" scaleY="2" offsetX="-.33" offsetY="-.33" />
+      <move beats="2" select="Hinge Left" scaleX="2" scaleY="2" offsetX="-.33" offsetY=".33" />
+      <move select="Extend Left" hands="right" beats="3" scaleX="3" scaleY="2" />
+      <move select="Forward" />
+    </path>
+    <path>
+      <move beats="2" select="Quarter Left" hands="right" offsetX=".33" offsetY="-.33" />
+      <move beats="2" select="Quarter Left" hands="right" offsetX="-.33" offsetY="-.33" />
+      <move beats="2" select="Quarter Left" hands="right" offsetX="-.33" offsetY=".33" />
+      <move select="Stand" hands="none" beats="4"/>
+    </path>
+  </tam>
+
+  <tam title="3/4 Wheel the Ocean" from="Right-Hand Two-Faced Tidal Line"
+       formation="Two-Faced Tidal Line RH" parts="6">
+    <path>
+      <move beats="2" select="Quarter Left" hands="right" offsetX=".33" offsetY="-.17" />
+      <move beats="2" select="Quarter Left" hands="right" offsetX="-.17" offsetY="-.33" />
+      <move beats="2" select="Quarter Left" hands="right" offsetX="-.33" offsetY=".17" />
+      <move select="Stand" hands="none" beats="4"/>
+    </path>
+    <path>
+      <move beats="2" select="Hinge Left" offsetX=".33" offsetY="-.17" />
+      <move beats="2" select="Hinge Left" offsetX="-.17" offsetY="-.33" />
+      <move beats="2" select="Hinge Left" offsetX="-.33" offsetY=".17" />
+      <move select="Extend Left" hands="right" scaleX="2" beats="3" />
+    </path>
+    <path>
+      <move beats="2" select="Hinge Left" offsetX=".33" offsetY="-.17" />
+      <move beats="2" select="Hinge Left" offsetX="-.17" offsetY="-.33" />
+      <move beats="2" select="Hinge Left" offsetX="-.33" offsetY=".17" />
+      <move select="Extend Left" hands="right" scaleX="2" beats="3" />
+    </path>
+    <path>
+      <move beats="2" select="Quarter Left" hands="right" offsetX=".33" offsetY="-.17" />
+      <move beats="2" select="Quarter Left" hands="right" offsetX="-.17" offsetY="-.33" />
+      <move beats="2" select="Quarter Left" hands="right" offsetX="-.33" offsetY=".17" />
+      <move select="Stand" hands="none" beats="4"/>
+    </path>
+  </tam>
+
+  <tam title="1/4 Wheel the Sea" from="Left-Hand Two-Faced Line"
+       formation="Two-Faced Line LH" parts="1.5">
+    <path numbers="3 2" couples="3 1">
+      <move select="BackHinge Right" />
+      <move select="Dodge Right" beats="4" />
+    </path>
+    <path numbers="4 1" couples="3 1">
+      <move select="Hinge Left" />
+      <move select="Forward 4" />
+    </path>
+  </tam>
+
+  <tam title="1/4 Wheel the Sea"
+       from="Left-Hand Two-Faced Lines"
+       formation="Two-Faced Lines LH"
+       parts="1.5" >
+    <path>
+      <move select="Hinge Left" />
+      <move select="Forward 4" />
+    </path>
+    <path>
+      <move select="BackHinge Right" />
+      <move select="Dodge Right" beats="4" />
+    </path>
+    <path>
+      <move select="BackHinge Right" />
+      <move select="Dodge Right" beats="4" />
+    </path>
+    <path>
+      <move select="Hinge Left" />
+      <move select="Forward 4" />
+    </path>
+  </tam>
+
+  <tam title="1/4 Wheel the Sea" from="Left-Hand Two-Faced Tidal Line"
+       formation="Two-Faced Tidal Line LH" parts="1.5">
+    <path>
+      <move select="Hinge Left" scaleY=".5"/>
+      <move select="Forward 2" beats="3"/>
+    </path>
+    <path>
+      <move select="BackHinge Right" scaleY=".5"/>
+      <move select="Dodge Right" />
+    </path>
+    <path>
+      <move select="BackHinge Right" scaleY=".5"/>
+      <move select="Dodge Right"/>
+    </path>
+    <path>
+      <move select="Hinge Left" scaleY=".5"/>
+      <move select="Forward 2" beats="3"/>
+    </path>
+  </tam>
+
+  <tam title="3/4 Wheel the Sea" from="Right-Hand Two-Faced Line"
+       formation="Two-Faced Line RH" parts="4.5" >
+    <path numbers="1 4">
+      <move select="Quarter Left" hands="right" offsetX=".33" offsetY="-.33" />
+      <move select="Quarter Left" hands="right" offsetX="-.33" offsetY="-.33" />
+      <move select="Quarter Left" hands="right" offsetX="-.33" offsetY=".33" />
+      <move select="Dodge Right" beats="4"/>
+    </path>
+    <path numbers="2 3">
+      <move select="Hinge Left" scaleX="2" scaleY="2" offsetX=".33" offsetY="-.33" />
+      <move select="Hinge Left" scaleX="2" scaleY="2" offsetX="-.33" offsetY="-.33" />
+      <move select="Hinge Left" scaleX="2" scaleY="2" offsetX="-.33" offsetY=".33" />
+      <move select="Forward 4"/>
+    </path>
+  </tam>
+
+  <tam title="3/4 Wheel the Sea" from="Right-Hand Two-Faced Lines"
+       formation="Two-Faced Lines RH" parts="4.5" >
+    <path>
+      <move select="Quarter Left" hands="right" offsetX=".33" offsetY="-.33" />
+      <move select="Quarter Left" hands="right" offsetX="-.33" offsetY="-.33" />
+      <move select="Quarter Left" hands="right" offsetX="-.33" offsetY=".33" />
+      <move select="Dodge Right" beats="4"/>
+    </path>
+    <path>
+      <move select="Hinge Left" scaleX="2" scaleY="2" offsetX=".33" offsetY="-.33" />
+      <move select="Hinge Left" scaleX="2" scaleY="2" offsetX="-.33" offsetY="-.33" />
+      <move select="Hinge Left" scaleX="2" scaleY="2" offsetX="-.33" offsetY=".33" />
+      <move select="Forward 4"/>
+    </path>
+    <path>
+      <move select="Hinge Left" scaleX="2" scaleY="2" offsetX=".33" offsetY="-.33" />
+      <move select="Hinge Left" scaleX="2" scaleY="2" offsetX="-.33" offsetY="-.33" />
+      <move select="Hinge Left" scaleX="2" scaleY="2" offsetX="-.33" offsetY=".33" />
+      <move select="Forward 4"/>
+    </path>
+    <path>
+      <move select="Quarter Left" hands="right" offsetX=".33" offsetY="-.33" />
+      <move select="Quarter Left" hands="right" offsetX="-.33" offsetY="-.33" />
+      <move select="Quarter Left" hands="right" offsetX="-.33" offsetY=".33" />
+      <move select="Dodge Right" beats="4"/>
+    </path>
+  </tam>
+
+  <tam title="3/4 Wheel the Sea" from="Right-Hand Two-Faced Tidal Line"
+       formation="Two-Faced Tidal Line RH" parts="6">
+    <path>
+      <move beats="2" select="Quarter Left" hands="right" offsetX=".33" offsetY="-.17" />
+      <move beats="2" select="Quarter Left" hands="right" offsetX="-.17" offsetY="-.33" />
+      <move beats="2" select="Quarter Left" hands="right" offsetX="-.33" offsetY=".17" />
+      <move select="Dodge Right"/>
+    </path>
+    <path>
+      <move beats="2" select="Hinge Left" offsetX=".33" offsetY="-.17" />
+      <move beats="2" select="Hinge Left" offsetX="-.17" offsetY="-.33" />
+      <move beats="2" select="Hinge Left" scaleX="2" offsetX="-.33" offsetY=".17" />
+      <move select="Forward 2" beats="3"/>
+    </path>
+    <path>
+      <move beats="2" select="Hinge Left" offsetX=".33" offsetY="-.17" />
+      <move beats="2" select="Hinge Left" offsetX="-.17" offsetY="-.33" />
+      <move beats="2" select="Hinge Left" scaleX="2" offsetX="-.33" offsetY=".17" />
+      <move select="Forward 2" beats="3"/>
+    </path>
+    <path>
+      <move beats="2" select="Quarter Left" hands="right" offsetX=".33" offsetY="-.17" />
+      <move beats="2" select="Quarter Left" hands="right" offsetX="-.17" offsetY="-.33" />
+      <move beats="2" select="Quarter Left" hands="right" offsetX="-.33" offsetY=".17" />
+      <move select="Dodge Right"/>
     </path>
   </tam>
 

@@ -26,15 +26,18 @@
   <call link="c3a/1_4_mix" title="1/4 Mix"/>
   <call link="c3a/1_4_the_deucey" title="1/4 the Deucey"/>
   <call link="c3a/1_4_wheel_the_ocean" title="1/4 Wheel the Ocean"/>
-  <call link="c3a/1_4_wheel_the_sea" title="1/4 Wheel the Sea"/>
+  <call link="c3a/1_4_wheel_the_ocean?animname=14WheeltheSeafromLeftHandTwoFacedLine"
+        title="1/4 Wheel the Sea"/>
   <call link="c1/2_3_recycle" title="2/3 Recycle"/>
   <call link="c2/3_by_1_checkmate_the_column" title="3 by 1 Checkmate the Column"/>
   <call link="c2/3_by_1_transfer_the_column" title="3 by 1 Transfer The Column"/>
   <call link="c2/3_by_1_triangle_formation" title="3 by 1 Triangle Formation"/>
-  <call link="c3a/3_4_mix" title="3/4 Mix"/>
-  <call link="c3a/3_4_the_deucey" title="3/4 the Deucey"/>
-  <call link="c3a/3_4_wheel_the_ocean" title="3/4 Wheel the Ocean"/>
-  <call link="c3a/3_4_wheel_the_sea" title="3/4 Wheel the Sea"/>
+  <call link="c3a/1_4_mix?animname=34MixfromRightHandBox" title="3/4 Mix"/>
+  <call link="c3a/1_4_the_deucey?animname=34theDeuceyfromRightHandWaves" title="3/4 the Deucey"/>
+  <call link="c3a/1_4_wheel_the_ocean?animname=34WheeltheOceanfromRightHandTwoFacedLine"
+        title="3/4 Wheel the Ocean"/>
+  <call link="c3a/1_4_wheel_the_ocean?animname=34WheeltheSeafromRightHandTwoFacedLine"
+        title="3/4 Wheel the Sea"/>
 
   <call audio="plus/acey_deucey.mp3" languages="lang-ja" link="plus/acey_deucey" title="Acey Deucey"/>
   <call link="c1/ah_so" title="Ah So"/>

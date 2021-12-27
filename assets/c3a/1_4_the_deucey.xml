@@ -20,7 +20,7 @@
     along with Taminations.  If not, see <http://www.gnu.org/licenses/>.
 
 -->
-<tamination title="1/4 the Deucey">
+<tamination title="1/4 (or 3/4) the Deucey">
 
   <tam title="1/4 the Deucey" from="Right-Hand Waves"
        formation="Ocean Waves RH GBGB" fractions="2;2;2">
@@ -71,6 +71,58 @@
       <move select="Hinge Right" beats="2"/>
       <move select="Hinge Left" beats="2"/>
       <move select="Extend Right" beats="2" scaleX="2" scaleY="2"/>
+    </path>
+  </tam>
+
+  <tam title="3/4 the Deucey" from="Right-Hand Waves"
+       formation="Ocean Waves RH BGGB" fractions="4.5;4.5;4.5">
+    <path>
+      <move select="Cast Right"/>
+      <move select="Run Right" beats="13.5" scaleX="2" scaleY="3"/>
+    </path>
+    <path>
+      <move select="Cast Right"/>
+      <move select="Cast Left"/>
+      <move select="Stand" beats="4.5"/>
+      <move select="Cast Left"/>
+    </path>
+    <path>
+      <move select="Cast Right"/>
+      <move select="Extend Right" beats="4.5" scaleX="2" scaleY="2"/>
+      <move select="Cast Right"/>
+      <move select="Cast Left"/>
+    </path>
+    <path>
+      <move select="Cast Right"/>
+      <move select="Cast Left"/>
+      <move select="Cast Right"/>
+      <move select="Extend Left" beats="4.5" scaleX="2" scaleY="2"/>
+    </path>
+  </tam>
+
+  <tam title="3/4 the Deucey" from="Left-Hand Waves"
+       formation="Ocean Waves LH BGGB" fractions="4.5;4.5;4.5">
+    <path>
+      <move select="Cast Left"/>
+      <move select="Cast Right"/>
+      <move select="Cast Left"/>
+      <move select="Extend Right" beats="4.5" scaleX="2" scaleY="2"/>
+    </path>
+    <path>
+      <move select="Cast Left"/>
+      <move select="Extend Left" beats="4.5" scaleX="2" scaleY="2"/>
+      <move select="Cast Left"/>
+      <move select="Cast Right"/>
+    </path>
+    <path>
+      <move select="Cast Left"/>
+      <move select="Cast Right"/>
+      <move select="Stand" beats="4.5"/>
+      <move select="Cast Right"/>
+    </path>
+    <path>
+      <move select="Cast Left"/>
+      <move select="Run Left" beats="13.5" scaleX="2" scaleY="3"/>
     </path>
   </tam>
 

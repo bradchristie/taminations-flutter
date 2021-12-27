@@ -22,10 +22,8 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart' as fm;
 import 'package:provider/provider.dart' as pp;
 import 'package:taminations/beat_notifier.dart';
-import 'package:xml/xml.dart';
 
 import '../common.dart';
-import '../title_bar.dart';
 import 'page.dart';
 
 enum CellType { Header, Separator, Indented, Plain }
@@ -64,6 +62,7 @@ class AnimListPage extends fm.StatelessWidget {
       child: pp.Consumer<TamState>(
         builder: (context, tamState, _) {
           TamUtils.getXMLAsset(tamState.link!).then((doc) {
+            print('animlist title: ${doc.rootElement('title')}');
             pp.Provider.of<TitleModel>(context,listen: false).title =
                 doc.rootElement('title');
           });
@@ -166,12 +165,15 @@ class _AnimListState extends fm.State<AnimListFrame> {
       //  Build list item for this animation
       prevTitle = tamTitle;
       prevGroup = group;
+      final fullname = (tamTitle + (from.isNotBlank ? 'from':'') + from)
+          .replaceAll('[^a-zA-Z0-9]'.r, '');
       animListItems.add(AnimListItem(
           celltype: group.isBlank && group.isNotEmpty
               ? CellType.Plain
               : CellType.Indented,
           title: tamTitle,
           name: from,
+          fullname: fullname,
           group: group.isEmpty ? '$tamTitle from' : group,
           animnumber: animationsAdded,
           difficulty: tam('difficulty','0').i));
@@ -240,14 +242,19 @@ class _AnimListState extends fm.State<AnimListFrame> {
                             case CellType.Plain:
                             return fm.Container(
                                 child: pp.Consumer2<TamState,HighlightState>(
-                                    builder: (context, tamState,highlightState, _) {
-                                      if (item.animnumber == tamState.animnum ||
-                                          (item.animnumber==0 && tamState.animnum < 0)) {
-                                        selectedItem = index;
-                                        later(() {
-                                          highlightState.currentCall =
-                                              item.title.replaceAll(' ', '');
-                                        });
+                                    builder: (context, tamState,highlightState,_) {
+                                      if (selectedItem != index) {
+                                        if (item.animnumber == tamState.animnum ||
+                                            item.fullname == tamState.animname ||
+                                            (item.animnumber == 0 && tamState.animnum < 0 && (tamState.animname ?? '').isBlank)) {
+                                          selectedItem = index;
+                                          later(() {
+                                            highlightState.currentCall =
+                                                item.title.replaceAll(' ', '');
+                                            //  this syncs the title
+                                            tamState.change(animnum: item.animnumber);
+                                          });
+                                        }
                                       }
                                       return fm.Material(
                                         color: widget.highlightSelected &&
@@ -296,7 +303,7 @@ class _AnimListState extends fm.State<AnimListFrame> {
                           }
                         }),
                   )),
-              /* if (hasDifficulty) fm.Container(
+              if (hasDifficulty) fm.Container(
                   decoration: fm.BoxDecoration(
                       border: fm.Border.all(
                               width: 1,
@@ -308,7 +315,7 @@ class _AnimListState extends fm.State<AnimListFrame> {
                       oneLegendWidget('Expert', Color.EXPERT)
                     ]
                 ),
-              )  */
+              )
             ]);
           }
           return fm.Text('Loading...');
