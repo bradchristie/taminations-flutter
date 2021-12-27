@@ -54,7 +54,7 @@
     </path>
   </tam>
 
-  <tam title="Head Couples Separate And Star Thru"
+  <tam title="Heads Separate And Star Thru"
        formation="Static Square" group=" " actives="Heads">
     <path>
       <move select="Extend Left" beats="3" scaleX="2" scaleY="2.5"/>
@@ -74,8 +74,8 @@
     </path>
   </tam>
 
-  <tam title="Head Couples Pass Thru, Separate Around 1 to a Line"
-       formation="Static Square" group="Head Couples Pass Thru, Separate">
+  <tam title="Heads Pass Thru, Separate Around 1 to a Line"
+       formation="Static Square" group="Heads Pass Thru, Separate">
     <path>
       <move select="Extend Left" beats="3" scaleX="3" scaleY=".5"/>
       <move select="Extend Right" beats="3" scaleX="3" scaleY=".5"/>
@@ -98,8 +98,8 @@
     </path>
   </tam>
 
-  <tam title="Head Couples Pass Thru, Separate Around 1 and Come Into the Middle"
-       formation="Static Square" group="Head Couples Pass Thru, Separate">
+  <tam title="Heads Pass Thru, Separate Around 1 and Come Into the Middle"
+       formation="Static Square" group="Heads Pass Thru, Separate">
     <path>
       <move select="Extend Left" beats="3" scaleX="3" scaleY=".5"/>
       <move select="Extend Right" beats="3" scaleX="3" scaleY=".5"/>
@@ -128,8 +128,8 @@
     </path>
   </tam>
 
-  <tam title="Head Couples Pass Thru, Separate Around 2 and Come Into the Middle"
-       formation="Static Square" group="Head Couples Pass Thru, Separate">
+  <tam title="Heads Pass Thru, Separate Around 2 and Come Into the Middle"
+       formation="Static Square" group="Heads Pass Thru, Separate">
     <path>
       <move select="Extend Left" beats="3" scaleX="3" scaleY=".5"/>
       <move select="Extend Right" beats="3" scaleX="3" scaleY=".5"/>
@@ -160,8 +160,8 @@
     </path>
   </tam>
 
-  <tam title="Head Couples Pass Thru, Separate Around 2 to a Line"
-       formation="Static Square" group="Head Couples Pass Thru, Separate">
+  <tam title="Heads Pass Thru, Separate Around 2 to a Line"
+       formation="Static Square" group="Heads Pass Thru, Separate">
     <path>
       <move select="Extend Left" beats="3" scaleX="3" scaleY=".5"/>
       <move select="Extend Right" beats="3" scaleX="3" scaleY=".5"/>
@@ -186,8 +186,8 @@
     </path>
   </tam>
 
-  <tam title="Head Couples Pass Thru, Separate Around 2; Meet Your Partner and Dosado"
-       formation="Static Square" group="Head Couples Pass Thru, Separate">
+  <tam title="Heads Pass Thru, Separate Around 2; Meet Your Partner and Dosado"
+       formation="Static Square" group="Heads Pass Thru, Separate">
     <path>
       <move select="Extend Left" beats="3" scaleX="3" scaleY=".5"/>
       <move select="Extend Right" beats="3" scaleX="3" scaleY=".5"/>
