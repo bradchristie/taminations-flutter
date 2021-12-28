@@ -111,7 +111,7 @@ class _MarkdownFrameState extends fm.State<MarkdownFrame> {
             titleModel.level = LevelData.find(currentLink)?.name ?? '';
           }
           return fm.FutureBuilder(
-              future:  _mdFuture,   // _loadHtmlFromAssets(),
+              future:  _mdFuture,
               builder: (context,snapshot) {
                 if (snapshot.hasData) {
                   final md = snapshot.data!.toString();

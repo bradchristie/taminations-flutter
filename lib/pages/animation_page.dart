@@ -18,8 +18,6 @@
 
 */
 
-import 'dart:math';
-
 import 'package:flutter/gestures.dart' as fg;
 import 'package:flutter/material.dart' as fm;
 import 'package:provider/provider.dart' as pp;

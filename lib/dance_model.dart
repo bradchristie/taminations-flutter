@@ -230,6 +230,9 @@ class DanceModel extends fm.ChangeNotifier {
     if (!beater.isRunning) {
       _practiceScore = 0.0;
       beater.start();
+      later(() {
+        notifyListeners();
+      });
     }
   }
 
@@ -316,7 +319,9 @@ class DanceModel extends fm.ChangeNotifier {
     else {
       _currentPart = _partsValues().lastIndexWhere((b) => b < beater.beat);
     }
-    if (currentPart != previousPart)
+    //  Notifiy if part changes to update definition highlight
+    //  Notify if at end to update play/pause button
+    if (currentPart != previousPart || beater.isFinished)
       notifyListeners();
 
     //  Update interactive dancer score
