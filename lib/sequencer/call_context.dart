@@ -137,7 +137,8 @@ class CallContext {
     'c2/unwrap',
     'c2/stretched_concept',
     'c1/finish',
-    'ms/fraction_tag'
+    'ms/fraction_tag',
+    'c3a/big_block_concept'
   ];
 
   static const standardFormations = {
