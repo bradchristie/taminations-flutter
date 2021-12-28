@@ -133,8 +133,8 @@ class _AnimListState extends fm.State<AnimListFrame> {
     for (final tam in TamUtils.tamList(doc)
         .where((it) => !(it('display','')).startsWith('n'))) {
       var tamTitle = tam('title');
-      var from = tam('from') + tam('xref-from');
       var group = tam('group','');
+      var from = group.isNotEmpty ? '' : tam('from') + tam('xref-from');
       if (tam('difficulty').isNotBlank)
         hasDifficulty = true;
       if (group.isNotEmpty) {
@@ -152,9 +152,10 @@ class _AnimListState extends fm.State<AnimListFrame> {
             // each call in the group
             animListItems
                 .add(AnimListItem(celltype: CellType.Separator, title: group));
-            from = tamTitle.replaceFirst(group, ' ').trim();
           }
         }
+        if (group.isNotBlank)
+          from = tamTitle.replaceFirst(group, ' ').trim();
       } else if (tamTitle != prevTitle) {
         // Not a group but a different call
         // Put out a header with this call
