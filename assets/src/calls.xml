@@ -63,7 +63,7 @@
   <call languages="lang-ja" link="plus/anything_and_spread" title="Anything and Spread"/>
   <call link="c1/anything_and_spread" title="Anything and Spread"/>
   <call link="c1/anything_chain_thru" title="Anything Chain Thru"/>
-  <call link="c3a/anything_choice" title="&lt;anything&gt; Choice"/>
+  <call link="c3a/choice?animname=CuttheDiamondersChoice" title="&lt;anything&gt; Choice"/>
   <call link="c2/anything_concept" title="Anything Concept"/>
   <call link="c3a/anything_reaction" title="Anything Reaction"/>
   <call link="c2/anything_the_k" title="Anything the K"/>
@@ -376,7 +376,7 @@
   <call audio="plus/load_the_boat.mp3" languages="lang-ja" link="plus/load_the_boat" title="Load the Boat"/>
   <call link="c3b/lock_em_up" title="Lock 'Em Up"/>
   <call link="c3a/lock_the_hinge" title="Lock the Hinge"/>
-  <call link="c3a/lockers_choice" title="Lockers Choice"/>
+  <call link="c3a/choice?animname=LockersChoicefromRightHandWaves" title="Lockers Choice"/>
   <call link="a1/lock_it" title="Lockit"/>
   <call link="c2/loop" title="Loop"/>
   <call link="c3b/loop_and_tag" title="Loop and Tag"/>

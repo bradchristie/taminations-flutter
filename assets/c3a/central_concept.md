@@ -1,7 +1,7 @@
 
-# Central &lt;anything>
+# Central <anything>
 
-Do the Centers’ part of the &lt;anything> call. This concept applies only to calls where
+Do the Centers’ part of the <anything> call. This concept applies only to calls where
 original Centers remain in the center and do not interact with the Outsides.
 
 Typical examples include “Central Load the Boat”, “Central Spin the Windmill”, “Central

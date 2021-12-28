@@ -62,7 +62,6 @@ class AnimListPage extends fm.StatelessWidget {
       child: pp.Consumer<TamState>(
         builder: (context, tamState, _) {
           TamUtils.getXMLAsset(tamState.link!).then((doc) {
-            print('animlist title: ${doc.rootElement('title')}');
             pp.Provider.of<TitleModel>(context,listen: false).title =
                 doc.rootElement('title');
           });
@@ -153,9 +152,9 @@ class _AnimListState extends fm.State<AnimListFrame> {
             // each call in the group
             animListItems
                 .add(AnimListItem(celltype: CellType.Separator, title: group));
+            from = tamTitle.replaceFirst(group, ' ').trim();
           }
         }
-        from = tamTitle.replaceFirst(group, ' ').trim();
       } else if (tamTitle != prevTitle) {
         // Not a group but a different call
         // Put out a header with this call
@@ -172,7 +171,7 @@ class _AnimListState extends fm.State<AnimListFrame> {
               ? CellType.Plain
               : CellType.Indented,
           title: tamTitle,
-          name: from,
+          name: from.isNotBlank ? from : tamTitle,
           fullname: fullname,
           group: group.isEmpty ? '$tamTitle from' : group,
           animnumber: animationsAdded,
