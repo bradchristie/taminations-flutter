@@ -247,6 +247,7 @@ class _AnimListState extends fm.State<AnimListFrame> {
                                         if (item.animnumber == tamState.animnum ||
                                             item.fullname == tamState.animname ||
                                             (item.animnumber == 0 && tamState.animnum < 0 && (tamState.animname ?? '').isBlank)) {
+                                          // TODO cleanup - combine with onTap code below
                                           selectedItem = index;
                                           later(() {
                                             highlightState.currentCall =
@@ -271,6 +272,8 @@ class _AnimListState extends fm.State<AnimListFrame> {
                                                 mainPage: MainPage.ANIMATIONS,
                                                 animnum: item.animnumber
                                             );
+                                            highlightState.currentCall =
+                                                item.title.replaceAll(' ', '');
                                             pp.Provider.of<BeatNotifier>(context,listen: false).beat = 0.0;
                                           },
                                           child: fm.Container(

@@ -4,8 +4,8 @@
 
 From Facing Couples, a R-H
 Wave, or other applicable formations:
-{high:Part1}[Pass Thru](../ms/pass_thru.hmtl){/high};
-{high:Part2}[As Couples](../a1/as_couples.md) 1/4 Right{/high}.
+***[Pass Thru](../b1/pass_thru.md)***;
+***[As Couples](../a1/as_couples.md) 1/4 Right***.
 Ends in a R-H Two-Faced Line.
 
 > 

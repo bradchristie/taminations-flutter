@@ -22,12 +22,9 @@
 -->
 <tamination title="Scoot the Diamond">
 
-
-
     <tam title="Scoot the Diamond"
        from="Quarter Tag"
-       formation="Quarter Tag"
-       fractions="5.5" >
+       formation="Quarter Tag">
     <path>
       <move select="Extend Left" scaleX="1.5" scaleY="1.5" />
       <move select="Swing Right" scaleX=".75" scaleY=".75" />
@@ -56,8 +53,7 @@
 
     <tam title="Scoot the Diamond"
        from="Left-Hand Quarter Tag"
-       formation="Quarter Tag LH"
-       fractions="5.5" >
+       formation="Quarter Tag LH">
     <path>
       <move select="Forward" scaleX="1.5" />
       <move select="Swing Left" scaleX=".75" scaleY=".75" />

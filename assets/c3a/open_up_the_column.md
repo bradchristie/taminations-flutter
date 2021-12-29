@@ -7,9 +7,9 @@ From Columns: #1 dancers [Trail Off](../a2/trail_off.md) &
 as #2 dancers [Circulate](../b1/circulate.md),
 [Peel Off](../plus/peel_off.md)
 and [Roll](../plus/anything_and_roll.md)
-as #3 and #4 dancers {high:Part1}[Circulate](../b1/circulate.md){/high};
-{high:Part2}Centers [Cast Off 3/4](../ms/cast_off_three_quarters.md){/high};
-{high:Part3}all [Extend](../plus/extend.md){/high}.
+as #3 and #4 dancers [Circulate](../b1/circulate.md);
+Centers [Cast Off 3/4](../ms/cast_off_three_quarters.md);
+all [Extend](../plus/extend.md).
 Ends in Parallel Waves.
 
 > 

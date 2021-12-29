@@ -4,9 +4,8 @@
 **Parts:** 2  
 
 From any applicable non T-Bone 2x2 (usually Facing Couples):
-{high:Part1}Designated dancers Walk as others Dodge{/high};
-{high:Part2}all Hinge{/high}. Ends in a Wave or
-Inverted Line.
+***Designated dancers Walk as others Dodge***;
+***all Hinge***. Ends in a Wave or Inverted Line.
 
 > 
 > ![alt](anyone_hop-1.png)

@@ -73,7 +73,7 @@
   </tam>
 
   <tam title="Scoot and Fancy" from="Right-Hand Columns" formation="Column RH GBGB"
-       parts="6;3;1">
+       parts="6">
     <path>
       <move select="Run Right" beats="6" />
       <move select="Extend Left" beats="3" scaleX="2" scaleY="2"/>

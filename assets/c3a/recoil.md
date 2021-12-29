@@ -3,8 +3,8 @@
 **Parts:** 2  
 
 From an applicable non T-Bone 2 x 2:
-{high:Part1}[Box Recycle](../c1/box_split_recycle.md){/high};
-{high:Part2}[Step & Fold](../c1/step_and_fold.md){/high}.
+***[Box Recycle](../c1/box_split_recycle.md)***;
+***[Step & Fold](../c1/step_and_fold.md)***.
 Ends in a Mini-Wave Box.
 
 > 

@@ -4,11 +4,11 @@
 
 From Parallel Two-Faced Lines:
 Leaders [Couples Circulate](../b1/circulate.md)
-[With The Flow](../c2/with_the_flow.md)
-as Trailers {high:Part1}[1/2 Circulate](../ms/circulate.hmtl){/high},
-{high:Part2}Very Centers [Hinge](../ms/hinge.md){/high},
-{high:Part3}[Flip The Diamond](../plus/flip_the_diamond.md){/high},
-{high:Part4}[Step & Fold](../c1/step_and_fold.md){/high}.
+[With The Flow](../c1/with_the_flow.md)
+as Trailers ***[1/2 Circulate](../b1/circulate.md)***,
+***Very Centers [Hinge](../ms/hinge.md)***,
+***[Flip The Diamond](../plus/flip_the_diamond.md)***,
+***[Step & Fold](../c1/step_and_fold.md)***.
 Ends in Parallel Waves.
 
 > 

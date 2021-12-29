@@ -3,9 +3,9 @@
 **Parts:** 3
 
 From a Single 1/4 Tag:
-{high:Part1}[Scoot Back](../ms/scoot_back.md);
-Outsides 1/4 to the handhold{/high};
-{high:Part2}all [Diamond Circulate](../plus/diamond_circulate.md){/high}.
+[Scoot Back](../ms/scoot_back.md);
+Outsides 1/4 to the handhold;
+all [Diamond Circulate](../plus/diamond_circulate.md).
 Ends in a Diamond.
 
 > 

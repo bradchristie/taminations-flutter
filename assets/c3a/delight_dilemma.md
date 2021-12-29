@@ -9,10 +9,10 @@ Outsides 1/4 Right (if Delight) or 1/4 Left (if Dilemma) and
 [Circulate](../b1/circulate.md)
 twice as the Centers
 (stepping to a wave if necessary)
-{high:Part1}[Swing](../a2/swing.md){/high},
-{high:Part2}[Slip](../a2/slip.md){/high},
-{high:Part3}Slip{/high}, and
-{high:Part4}[Cast Off 3/4](../ms/cast_off_three_quarters.md){/high}.
+***[Swing](../a2/swing.md)***,
+***[Slip](../a2/slip.md)***,
+***Slip***, and
+***[Cast Off 3/4](../ms/cast_off_three_quarters.md)***.
 Usually ends in Parallel Lines.
 ## <tag>er's Delight / Dilemma
 

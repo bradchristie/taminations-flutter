@@ -5,7 +5,7 @@
 
 From Parallel Lines with the centers in a Mini-Wave Box:
 Ends [Circulate](../b1/circulate.md) twice
-as the Centers {high:Part1}Any Hand 3/4 Thru
+as the Centers Any Hand 3/4 Thru
 and [Trade The Wave](../plus/trade_the_wave.md);
 all [Cut The Diamond](../plus/cut_the_diamond.md).
 Ends in Parallel Lines.
