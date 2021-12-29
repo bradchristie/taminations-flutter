@@ -15,10 +15,11 @@ and Step Ahead (to become Leaders in Parallel Lines).
 > ![alt](polly_wally-2.png)
 > 
 
-A Reverse Polly Wally is the mirror image of Polly Wally.
+A **Reverse Polly Wally** is the mirror image of Polly Wally.
 Everyone starts by turning 1/4 to Wrong Way Promenade.
 
-Teaching Notes For Polly Wally, the action for the Ends is
+### Teaching Notes
+For Polly Wally, the action for the Ends is
 equivalent to Reverse Turn to a Line. For Reverse Polly Wally, the
 action for the Ends is equivalent to Turn to a Line.
 

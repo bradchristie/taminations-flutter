@@ -1,10 +1,10 @@
 
-# &lt;anything> (Cross) Reaction
+# <anything> (Cross) Reaction
 
-The &lt;anything> call is one where the modifier "(Centers) to a
-Wave" would result in a 1/4 Tag. The dancers do the &lt;anything>
+The <anything> call is one where the modifier "(Centers) to a
+Wave" would result in a 1/4 Tag. The dancers do the <anything>
 call to that point, and then do a full Chain Reaction (or Cross Chain
-Reaction). Conventions for how the &lt;anything> call is
+Reaction). Conventions for how the <anything> call is
 named in this context are explained in the subsections below.
 
 ## Scoot (Chain Thru) (Cross) Reaction
@@ -20,10 +20,10 @@ Back, the word "Back" is not spoken.
 > ![alt](anything_reaction-3.png)
 > 
 
-## &lt;tag> (Cross) Reaction
+## <tag> (Cross) Reaction
 
 The starting formation depends on the
-&lt;tag> action. Do the Scoot Back variation of that tagging
+<tag> action. Do the Scoot Back variation of that tagging
 action (i.e. get to the 1/2 Tag position and then Scoot Back) leaving
 off the final Extend, then do a full Chain Reaction (or Cross Chain
 Reaction).
@@ -39,7 +39,7 @@ case, e.g., Tag Reaction means Tag Back Reaction. The center wave
 always does the trading action of the Scoot Back before starting the
 Chain Reaction.
 
-## &lt;anything> (Cross) Reaction
+## <anything> (Cross) Reaction
 
 For any other applicable call, do that call (Centers) to a
 Wave, then do a full Chain Reaction (or Cross Chain Reaction). This

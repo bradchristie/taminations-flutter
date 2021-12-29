@@ -1,15 +1,15 @@
 
 # Stampede
-**Parts for Centers:** 3  **Parts for Ends: **2  
+**Parts for Centers: 3  Parts for Ends: 2**  
 
 
 From a 3/4 Tag or other applicable formations:
-{high:Part1}Centers [Trade The Wave](../plus/trade_the_wave.md){/high},
-{high:Part2}[Hinge](../ms/hinge.md){/high} &
-{high:Part3}[Cross](../a1/anything_and_cross.md){/high} (Trailers diagonal
+Centers [Trade The Wave](../plus/trade_the_wave.md),
+[Hinge](../ms/hinge.md), and
+[Cross](../a1/anything_and_cross.md) (Trailers diagonal
 Pull By using the outside hand) as the Ends
-{high:Part1}[Cross Cast Back](../c1/cross_cast_back.md){/high} and
-{high:Part3}[Pass In](../a1/pass_in.md){/high}.
+[Cross Cast Back](../c1/cross_cast_back.md) and
+[Pass In](../a1/pass_in.md).
 A 3/4 Tag ends in an Eight Chain Thru.
 
 > 

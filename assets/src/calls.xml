@@ -570,8 +570,7 @@
   <call audio="a2/single_wheel.mp3" link="a2/single_wheel" title="Single Wheel"/>
   <call link="a1/six_two_acey_deucey" title="Six-Two Acey Deucey"/>
   <call link="c1/replace" title="Skip"/>
-  <call link="c3a/slant_anything_by_anything" title="Slant Anything By Anything"/>
-  <call link="c3a/slant_touch_and_wheel" title="Slant Touch and Wheel"/>
+  <call link="c3a/slant" title="Slant"/>
   <call audio="a2/slide.mp3" link="a2/slide" title="Slide"/>
   <call audio="ms/slide_thru.mp3" languages="lang-de lang-ja" link="ms/slide_thru" title="Slide Thru"/>
   <call audio="ssd/slide_thru.mp3" languages="lang-de lang-ja" link="ssd/slide_thru" title="Slide Thru"/>

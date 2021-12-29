@@ -2,7 +2,6 @@
 # (Couples / Tandem / Siamese) Twosome <anything>
 **CONCEPT**   
 
-
 From formations with pairs of adjacent dancers facing the same
 direction: Do the given call with each pair of dancers acting as a
 unit, as in As Couples, Tandem, or Siamese, but with the members of
@@ -28,8 +27,9 @@ become a tandem, and vice versa.
 > ![alt](twosome-6.png)
 > ![alt](twosome-7.png)
 > 
+
 ### Teaching Notes
- While this is not the
+While this is not the
 definition, the basic action of Twosome Hinge is just a Follow Thru
 (Tandem Twosome) or a right- or left-handed 1/2 Tag (Couples
 Twosome). Many calls can be danced as combinations of this action.

@@ -14,6 +14,7 @@ word "Single" that do not relate to another call in the same way
 (e.g., "Single Circle to a Wave"). Refer to the definition of each
 individual call to find out its meaning. Also note that the two-word
 combination "Single File" has a different meaning.
+
 ## Single Checkmate
 
 From a 2x2 formation: Leaders Box Circulate twice and 1/4 In
@@ -24,6 +25,7 @@ Circulate. Ends in a 2x2. This call cannot be fractionalized.
 > ![alt](single-1.png)
 > ![alt](single-2.png)
 > 
+
 ## Single Ferris Wheel
 
 From a Mini-Wave Box or applicable 2x2 T-Bone: Leaders Single
@@ -34,6 +36,7 @@ Facing Tandems. This can be thought of as a Follow Thru and Roll.
 > ![alt](single-3.png)
 > ![alt](single-4.png)
 > 
+
 ## Single Polly Wally
 
 From a General Column of 4: Ends turn 1/4 to put their left
@@ -50,11 +53,12 @@ the center, and Step Ahead to become Lead Belles in a 2x2 formation.
 > ![alt](single-6.png)
 > 
 
-A Reverse Single Polly Wally is the mirror image of Single
+A **Reverse Single Polly Wally** is the mirror image of Single
 Polly Wally. Everyone starts by putting their right shoulder toward
 the center of the column.
+
 ### Teaching Notes
- For Single Polly
+For Single Polly
 Wally, the action for the Ends is equivalent to Reverse Single Turn
 to a Line. For Reverse Single Polly Wally, the action for the Ends is
 equiva- lent to Single Turn to a Line.
@@ -68,6 +72,7 @@ of a turn). Ends in a R-H Ocean Wave.
 > ![alt](single-7.png)
 > ![alt](single-8.png)
 > 
+
 ## Single Shakedown
 
 From dancers back-to-back only: In one smooth motion, Quarter Right, two-person
@@ -80,6 +85,7 @@ Shakedown.
 > 
 > ![alt](single-11.png)
 > 
+
 ## Single Turn and Deal
 
 From a Couple or Mini-Wave: In one smooth motion, Partner Half Tag, and turn
@@ -92,6 +98,7 @@ wording emphasizes the relationship to Turn and Deal.
 > 
 > ![alt](single-12.png)
 > 
+
 ## Single Turn to a Line
 
 From a General Tandem (Column of 2): Leaders face right,
@@ -108,4 +115,5 @@ fractionalized.
 A **Reverse Single Turn to a Line** is the mirror image of Single
 Turn to a Line. The Leaders start by facing left, the Trailers start
 by facing right.
+
 ###### @ Copyright 2004-2021 Vic Ceder and CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed nor revised in any derivation or publication.

@@ -2,8 +2,6 @@
 # Keep Busy
 **Parts for Trailers:** 4  
 
-
-
 From Parallel Two-Faced Lines:
 Leaders [Couples Circulate](../b1/circulate.md)
 [With The Flow](../c2/with_the_flow.md)
@@ -17,6 +15,7 @@ Ends in Parallel Waves.
 > ![alt](keep_busy-1.png)
 > ![alt](keep_busy-2.png)
 > 
+
 ### Teaching Notes
  Unlike Mini Busy, where the Leaders turn
 individually, in Keep Busy they start moving together as a couple.
