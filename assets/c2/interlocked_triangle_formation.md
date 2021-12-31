@@ -17,10 +17,24 @@ received much use even at C-3 or C-4. While the entire “family” was added an
 (e.g., Outside Interlocked Triangles) are very difficult to see and don’t necessarily dance well. Caller
 judgment needs to be exercised.
 
-**Inpoint/Inside/Outpoint/Outside Interlocked Triangles**  
 Various formations, including Twin Diamonds and Point-to-Point Diamonds, contain Interlocked
 Triangles.
 
+**Inpoint Interlocked Triangles**  
+Each point facing in is an apex.
+
+>
+> ![alt](interlocked_triangle_6a.png)
+> ![alt](interlocked_triangle_6b.png)
+>
+
+**Outpoint Interlocked Triangles**  
+Each point facing out is an apex.
+
+>
+> ![alt](interlocked_triangle_7a.png)
+> ![alt](interlocked_triangle_7b.png)
+>
 
 **Inside Interlocked Triangles**  
 The Center 6 form the Triangles.
@@ -31,10 +45,11 @@ The Center 6 form the Triangles.
 > ![alt](interlocked_triangle_2c.png)
 > 
 
+Inside Interlocked Triangle Circulate
+
 > 
 > ![alt](interlocked_triangle_3a.png)
-> ![alt](interlocked_triangle_3b.png)  
-> ![alt](interlocked_triangle_3c.png)
+> ![alt](interlocked_triangle_3b.png)
 > 
 
 **Outside Interlocked Triangles**  
@@ -47,21 +62,5 @@ The Outside 6 form the Triangles.
 
 Note: These triangles may be easier for the dancers to identify with the phrase “Ignore the center 2,
 Interlocked Triangle …”.
-
-**Inpoint Interlocked Triangles**  
-Each point facing in is an apex.
-
-> 
-> ![alt](interlocked_triangle_6a.png)
-> ![alt](interlocked_triangle_6b.png)
-> 
-
-**Outpoint Interlocked Triangles**  
-Each point facing out is an apex.
-
-> 
-> ![alt](interlocked_triangle_7a.png)
-> ![alt](interlocked_triangle_7b.png)
-> 
 
 ###### @ Copyright 1983, 1986-1988, 1995-2021 Bill Davis, John Sybalsky and CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed nor revised in any derivation or publication.

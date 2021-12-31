@@ -1,8 +1,8 @@
 
 # Stagger Concept
 
-From blocks: Any call which can be done from parallel general columns
-(columns, double pass thru, etc.), and which ends in general lines or columns,
+From Blocks: Any call which can be done from Parallel General Columns
+(Columns, Double Pass Thru, etc.), and which ends in General Lines or Columns,
 can be done "Staggered." The dancers act as though all dancers were
 close together side-by-side; however, they end on the original 8 spots on the
 floor. For example: Stagger [Double Pass Thru](../b2/double_pass_thru.md),
@@ -11,14 +11,16 @@ floor. For example: Stagger [Double Pass Thru](../b2/double_pass_thru.md),
 > ![alt](stagger_1.png)
 > 
 
-Stagger [Circulate](../b1/circulate.md) From blocks: All move forward along the
+## Stagger Circulate
+From Blocks: All move forward along the
 circulate path below. 
 
 > 
 > ![alt](stagger_2.png)
 > 
 
-Stagger [Split Circulate](../b1/circulate.md) From blocks: All Circulate along the
+## Stagger Split Circulate
+From Blocks: All Circulate along the
 path
 
 > 

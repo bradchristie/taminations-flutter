@@ -145,5 +145,35 @@
       This is a drill that reportedly was created by Lee Kopman.
     </taminator>
   </tam>
+  <tam title="Funny Square Thru 3" group="Funny" from="Funny Lines" parts="4;2.5">
+    <formation>
+      <dancer gender="boy" x="3" y="2" angle="270"/>
+      <dancer gender="girl" x="1" y="2" angle="270"/>
+      <dancer gender="girl" x="-1" y="2" angle="180"/>
+      <dancer gender="boy" x="-3" y="2" angle="270"/>
+    </formation>
+    <path numbers="7 2">
+      <move select="Extend Left" beats="2" scaleX="2" scaleY=".5"/>
+      <move select="Lead Right" beats="2" scaleX="2" scaleY=".5"/>
+      <move select="Extend Right" scaleY=".5"/>
+      <move select="Quarter Right" offsetX="1" offsetY=".5"/>
+      <move select="Extend Left" beats="2" scaleX="2" scaleY=".5"/>
+      <move select="Extend Right" beats="2" scaleX="2" scaleY=".5"/>
+    </path>
+    <path numbers="5 4">
+      <move select="Stand" beats="6.5"/>
+      <move select="Extend Left" beats="2" scaleX="2" scaleY=".5"/>
+      <move select="Extend Right" beats="2" scaleX="2" scaleY=".5"/>
+    </path>
+    <path numbers="3 6">
+      <move select="Stand" beats="4"/>
+      <move select="Extend Right" scaleY=".5"/>
+      <move select="Lead Left" scaleY=".5"/>
+    </path>
+    <path numbers="1 8">
+      <move select="Extend Left" beats="2" scaleX="2" scaleY=".5"/>
+      <move select="Quarter Left" beats="2" offsetX="2" offsetY="-.5"/>
+    </path>
+  </tam>
 
 </tamination>

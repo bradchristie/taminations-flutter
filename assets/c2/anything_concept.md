@@ -1,5 +1,5 @@
 
-# Anything Concept
+# \<anything> Concept
 
 Any call that begins with everyone doing a
 [Circulate](../b1/circulate.md) can be
@@ -8,7 +8,9 @@ example, [Chase Right](../plus/chase_right.md)
 [Perk Up](../c2/perk_up.md) means Chase Right then complete the
 remainder of Perk Up following the initial Circulate. A caller may add
 "-er's" to the first call to emphasize it is all one call, e.g. Chase
-Right-er's Perk Up. When the first call is some type of Circulate, the
+Right-er's Perk Up.
+
+When the first call is some type of Circulate, the
 word "Circulate" is conventionally omitted. For example,
 "Trade Motivate" means
 [Trade Circulate](../a2/trade_circulate.md)
@@ -19,13 +21,16 @@ following the initial Circulate. If the first call is
 the "Rotate" is conventionally omitted. For
 example, "Split Counter Coordinate" means Split Counter Rotate then
 complete the remainder of Coordinate following the initial Circulate.
+
+
 Calls modified in this way have the same number of parts as the base
-call, with the entire (Anything) call replacing the first circulate.
+call, with the entire \<anything> call replacing the first circulate.
 This concept may be applied to any call that begins with a circulate
 action, even if Circulate is not formally defined as the first part of
 the call.
 
-Calls that this concept is used with at C-2 are:
+At C-2, this concept is used with the following calls:
+
 [Motivate](../a2/motivate.md),
 [Coordinate](../plus/coordinate.md),
 [Percolate](../c1/percolate.md),

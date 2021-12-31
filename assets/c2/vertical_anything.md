@@ -1,9 +1,9 @@
 
-# Vertical (Anything)
+# Vertical \<anything>
 
-From various formations: Do a Vertical 0/4 Tag (i.e., get into double pass
-thru or single double pass thru formation, as appropriate) then do the
-(Anything) call. In counting fractions, the Vertical is counted as a single
+From various formations: Do a Vertical 0/4 Tag (that is, get into Double Pass
+Thru or Single Double Pass Thru formation, as appropriate) then do the
+\<anything> call. In counting fractions, the Vertical is counted as a single
 part. 
 
 Vertical [Dixie Style to a Wave](../ms/dixie_style.md): 

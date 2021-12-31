@@ -328,4 +328,96 @@
     </path>
   </tam>
 
+  <tam title="Scoot and Counter"
+       from="Quarter Tag"
+       formation="Quarter Tag"
+       fractions="5" >
+    <path>
+      <!-- Scoot Back -->
+      <move select="Extend Left" scaleX="1.5" scaleY="1.5" />
+      <move select="Swing Right" scaleX=".75" scaleY=".75" />
+      <move select="Forward" scaleX="1.5" />
+      <!-- Counter -->
+      <move select="Run Right" beats="4" offsetX="-3" scaleY="1.5"/>
+      <move select="Swing Right" scaleX=".5" scaleY=".5" />
+      <move select="Forward 2" />
+    </path>
+    <path>
+      <!-- Scoot Back -->
+      <move select="Forward" scaleX="1.5" />
+      <move select="Swing Right" scaleX=".75" scaleY=".75" />
+      <move select="Extend Right" scaleX="1.5" scaleY="1.5" />
+      <!-- Counter -->
+      <move select="Run Left" beats="4" offsetX="-3"/>
+      <move select="Swing Right" scaleX=".5" scaleY=".5" />
+      <move select="Run Right" beats="2" offsetX="2" offsetY="1" />
+    </path>
+    <path>
+      <!-- Scoot Back -->
+      <move select="Extend Right" scaleX="1.5" scaleY=".5" />
+      <move select="Swing Right" scaleX=".75" scaleY=".75" />
+      <move select="Forward" scaleX="1.5" />
+      <!-- Counter -->
+      <move select="Hinge Right" />
+      <move select="Swing Right" offsetX="-1" />
+      <move select="Quarter Right" beats="3" hands="gripright" offsetX="2" offsetY="1" />
+    </path>
+    <path>
+      <!-- Scoot Back -->
+      <move select="Forward" scaleX="1.5" />
+      <move select="Swing Right" scaleX=".75" scaleY=".75" />
+      <move select="Extend Left" scaleX="1.5" scaleY=".5" />
+      <!-- Counter -->
+      <move select="Hinge Right" />
+      <move select="Swing Right" offsetX="1" />
+      <move select="Quarter Right" beats="3" hands="gripright" offsetY="-3" />
+    </path>
+  </tam>
+
+  <tam title="Left Scoot and Counter"
+       from="Left-Hand Quarter Tag"
+       formation="Quarter Tag LH"
+       fractions="5" >
+    <path>
+      <!-- Scoot Back -->
+      <move select="Forward" scaleX="1.5" />
+      <move select="Swing Left" scaleX=".75" scaleY=".75" />
+      <move select="Extend Left" scaleX="1.5" scaleY="1.5" />
+      <!-- Counter -->
+      <move select="Run Right" beats="4" offsetX="-3"/>
+      <move select="Swing Left" scaleX=".5" scaleY=".5" />
+      <move select="Run Left" beats="2" offsetX="2" offsetY="-1" />
+    </path>
+    <path>
+      <!-- Scoot Back -->
+      <move select="Extend Right" scaleX="1.5" scaleY="1.5" />
+      <move select="Swing Left" scaleX=".75" scaleY=".75" />
+      <move select="Forward" scaleX="1.5" />
+      <!-- Counter -->
+      <move select="Run Left" beats="4" offsetX="-3" scaleY="1.5"/>
+      <move select="Swing Left" scaleX=".5" scaleY=".5" />
+      <move select="Forward 2" />
+    </path>
+    <path>
+      <!-- Scoot Back -->
+      <move select="Extend Left" scaleX="1.5" scaleY=".5" />
+      <move select="Swing Left" scaleX=".75" scaleY=".75" />
+      <move select="Forward" scaleX="1.5" />
+      <!-- Counter -->
+      <move select="Hinge Left" />
+      <move select="Swing Left" offsetX="-1" />
+      <move select="Quarter Left" beats="3" hands="gripleft" offsetX="2" offsetY="-1" />
+    </path>
+    <path>
+      <!-- Scoot Back -->
+      <move select="Forward" scaleX="1.5" />
+      <move select="Swing Left" scaleX=".75" scaleY=".75" />
+      <move select="Extend Right" scaleX="1.5" scaleY=".5" />
+      <!-- Counter -->
+      <move select="Hinge Left" />
+      <move select="Swing Left" offsetX="1" />
+      <move select="Quarter Left" beats="3" hands="gripleft" offsetY="3" />
+    </path>
+  </tam>
+
 </tamination>

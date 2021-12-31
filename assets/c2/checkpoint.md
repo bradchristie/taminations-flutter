@@ -1,5 +1,5 @@
 
-# Checkpoint (Anything) by (Anything)
+# Checkpoint \<anything> by \<anything>
 
 From any appropriate formation: The centers of each side (shown in black
 below) do Call #1, and, if it ends in a box, there is a mandatory axis change.

@@ -1,12 +1,12 @@
 
 # Stack the Line
 
-From tandem couples, box circulate, and some T-bone boxes (there are usually
+From Tandem Couples, Box Circulate, and some T-Bone Boxes (there are usually
 2 leads and 2 trailers): All [1/4 In](../a1/quarter_in.md), and the original lead dancers
 [Pass Thru](../b1/pass_thru.md) (on the diagonal, if necessary) 
-to form a right-hand mini-wave with the others. The
-original trailers slide sideways if necessary. Finishes in a right-hand
-mini-wave, except for some T-bone boxes.
+to form a Right-Hand Mini-Wave with the others. The
+original trailers slide sideways if necessary. Finishes in a Right-Hand
+Mini-Wave, except for some T-Bone Boxes.
 
 > 
 > ![alt](stack_the_line.png)

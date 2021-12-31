@@ -1,9 +1,11 @@
 
-# Peel to a Diamond
+# Peel / Trail to a Diamond
+
+## Peel to a Diamond
 
 Starting Formations: Box Circulate, Tandem Couples, or Tandem
-Dancers in a Z (e.g., after Ends Fold from a wave, or after Step and
-Slide from a two-faced line)
+Dancers in a Z (e.g., after Ends Fold from a Wave, or after Step and
+Slide from a Two-Faced Line)
 
 Lead dancers do their part of a [Peel Off](../plus/peel_off.md).
 Trailing dancers step
@@ -22,6 +24,13 @@ after a Peel to a Diamond.
 > ![alt](peel_to_a_diamond_1.png)
 > ![alt](peel_to_a_diamond_2.png)
 > ![alt](peel_to_a_diamond_3.png)
-> 
+>
+
+## Trail to a Diamond
+
+Peel To A Diamond,
+but lead dancers replace [Peel Off](../plus/peel_off.md)
+with [Trail Off](../a2/trail_off.md), with appropriately changed
+ending formations. 
 
 ###### @ Copyright 1983, 1986-1988, 1995-2021 Bill Davis, John Sybalsky and CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed nor revised in any derivation or publication.

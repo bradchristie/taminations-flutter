@@ -22,8 +22,6 @@
 -->
 <tamination title="Rims Trade Back">
 
-
-
   <tam title="Rims Trade Back"
        from="Right-Hand Waves"
        formation="Ocean Waves RH BGGB"
@@ -83,4 +81,65 @@
       <move select="Hinge Left" />
     </path>
   </tam>
+
+  <tam title="Hubs Trade Back"
+       from="Right-Hand Waves"
+       formation="Ocean Waves RH BGGB"
+       parts="3" >
+    <path>
+      <move select="Swing Right" />
+    </path>
+    <path>
+      <move select="Swing Right" />
+      <move select="Forward 4" />
+    </path>
+    <path>
+      <move select="Swing Right" />
+      <move select="Run Right" beats="4" scaleX="2" scaleY="3" />
+    </path>
+    <path>
+      <move select="Swing Right" />
+    </path>
+  </tam>
+
+  <tam title="Hubs Trade Back"
+       from="Left-Hand Waves"
+       formation="Ocean Waves LH BGGB"
+       parts="3" >
+    <path>
+      <move select="Swing Left" />
+    </path>
+    <path>
+      <move select="Swing Left" />
+      <move select="Run Left" beats="4" scaleX="2" scaleY="3" />
+    </path>
+    <path>
+      <move select="Swing Left" />
+      <move select="Forward 4" />
+    </path>
+    <path>
+      <move select="Swing Left" />
+    </path>
+  </tam>
+
+  <tam title="Hubs Trade Back"
+       from="Thar"
+       formation="Thar LH Boys"
+       parts="3" >
+    <path>
+      <move select="Swing Right" />
+      <move select="Lead Right" beats="4" scaleX="3" scaleY="3" />
+    </path>
+    <path>
+      <move select="Swing Right" />
+    </path>
+    <path>
+      <move select="Swing Right" />
+      <move select="Lead Right" beats="4" scaleX="3" scaleY="3" />
+    </path>
+    <path>
+      <move select="Swing Right" />
+    </path>
+  </tam>
+
 </tamination>

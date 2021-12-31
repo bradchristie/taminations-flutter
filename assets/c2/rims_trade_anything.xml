@@ -22,10 +22,7 @@
 -->
 <tamination title="Rims Trade">
 
-
-
   <tam title="Rims Trade Chase Right" group="Rims Trade"
-       from=""
        formation="Normal Lines"
        fractions="3" >
     <path>
@@ -48,7 +45,6 @@
   </tam>
 
   <tam title="Rims Trade Follow Your Neighbor" group="Rims Trade"
-       from=""
        formation="Ocean Waves RH BGGB"
        fractions="3" >
     <path>
@@ -71,7 +67,6 @@
   </tam>
 
   <tam title="Rims Trade Pass the Ocean" group="Rims Trade"
-       from=""
        formation="Lines Facing Out"
        fractions="3" >
     <path>
@@ -94,7 +89,6 @@
   </tam>
 
   <tam title="Rims Trade Pass Thru" group="Rims Trade"
-       from=""
        formation="Lines Facing Out"
        fractions="3" >
     <path>
@@ -114,4 +108,24 @@
       <move select="Extend Right" beats="2" scaleX="2" scaleY=".5" />
     </path>
   </tam>
+
+  <tam title="Hubs Trade Zoom" group="Hubs Trade"
+       formation="Ocean Waves RH BGGB" fractions="3">
+    <path>
+      <move select="Swing Right"/>
+    </path>
+    <path>
+      <move select="Swing Right"/>
+      <move select="Forward 4" beats="6"/>
+    </path>
+    <path>
+      <move select="Swing Right"/>
+      <move select="Run Left" offsetX="-2" />
+      <move select="Run Left" offsetX="2" />
+    </path>
+    <path>
+      <move select="Swing Right"/>
+    </path>
+  </tam>
+
 </tamination>

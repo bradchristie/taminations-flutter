@@ -80,7 +80,6 @@
     </path>
   </tam>
 
-
   <tam title="As Couples Split Swap Around"
        from="Normal Lines"
        formation="Normal Lines"
@@ -113,6 +112,113 @@
     </path>
     <path>
       <move select="Quarter Right" beats="5" offsetX="2" offsetY="-2"/>
+    </path>
+  </tam>
+
+  <tam title="Reverse Split Swap Around"
+       from="Facing Couples"
+       formation="Facing Couples">
+    <path>
+      <move select="Quarter Left" beats="3" offsetX="3" offsetY="1" />
+    </path>
+    <path>
+      <move select="Quarter Left" beats="3" offsetX="1" offsetY="3" />
+    </path>
+  </tam>
+
+  <tam title="Reverse Split Swap Around"
+       from="Normal Lines"
+       formation="Normal Lines">
+    <path>
+      <move select="Quarter Left" beats="3" offsetX="3" />
+    </path>
+    <path>
+      <move select="Quarter Left" beats="3" offsetX="1" offsetY="2" />
+    </path>
+    <path>
+      <move select="Quarter Left" beats="3" offsetX="3" />
+    </path>
+    <path>
+      <move select="Quarter Left" beats="3" offsetX="1" offsetY="2" />
+    </path>
+  </tam>
+
+  <tam title="Reverse Split Swap Around"
+       from="Eight Chain Thru"
+       formation="Eight Chain Thru">
+    <path>
+      <move select="Quarter Left" beats="3" offsetX="2" offsetY="1" />
+    </path>
+    <path>
+      <move select="Quarter Left" beats="3" offsetY="3" />
+    </path>
+    <path>
+      <move select="Quarter Left" beats="3" offsetX="2" offsetY="1" />
+    </path>
+    <path>
+      <move select="Quarter Left" beats="3" offsetY="3" />
+    </path>
+  </tam>
+
+  <tam title="Heads Reverse Split Swap Around" formation="Static Square" group=" ">
+    <path>
+      <move select="Quarter Left" beats="3" offsetX="4" />
+    </path>
+    <path>
+      <move select="Quarter Left" beats="3" offsetX="2" offsetY="2" />
+    </path>
+    <path>
+    </path>
+    <path>
+    </path>
+  </tam>
+
+  <tam title="As Couples Reverse Split Swap Around"
+       from="Normal Lines"
+       formation="Normal Lines"
+       group=" " >
+    <path>
+      <move select="BackHinge Right" beats="4" offsetX="4" />
+    </path>
+    <path>
+      <move select="Hinge Left" beats="4" offsetX="4" />
+    </path>
+    <path>
+      <move select="BackHinge Right" beats="4" offsetY="4" />
+    </path>
+    <path>
+      <move select="Hinge Left" beats="4" offsetY="4" />
+    </path>
+  </tam>
+
+  <tam title="Tandem Reverse Split Swap Around" formation="Double Pass Thru" group=" ">
+    <path>
+      <move select="Quarter Left" beats="5" offsetX="4"/>
+    </path>
+    <path>
+      <move select="Stand" beats="1"/>
+      <move select="Quarter Left" beats="4" offsetX="2" offsetY="2"/>
+    </path>
+    <path>
+      <move select="Quarter Left" beats="5" offsetX="2" offsetY="2"/>
+    </path>
+    <path>
+      <move select="Stand" beats="1"/>
+      <move select="Quarter Left" beats="4" offsetY="4"/>
+    </path>
+  </tam>
+
+  <tam title="Sides Reverse Split Swap Around" formation="Static Square"
+       group=" " display="none">
+    <path>
+    </path>
+    <path>
+    </path>
+    <path>
+      <move select="Quarter Left" beats="3" offsetX="4" />
+    </path>
+    <path>
+      <move select="Quarter Left" beats="3" offsetX="2" offsetY="2" />
     </path>
   </tam>
 

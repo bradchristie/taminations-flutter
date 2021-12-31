@@ -224,7 +224,7 @@ class _MarkdownFrameState extends fm.State<MarkdownFrame> {
               partCount += 1;
               if (partsMap.isNotEmpty)
                 return partCount-1 < partsMap.length &&
-                    highlightState.toString() == partsMap[partCount-1]
+                    highlightState.toString().matches(partsMap[partCount-1].ri)
                     ? '~~${m[1]}~~' : m[1]!;
               else
                 return (partCount == part) ? '~~${m[1]}~~' : m[1]!;

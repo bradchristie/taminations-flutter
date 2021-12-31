@@ -1,10 +1,10 @@
 
-# Unwrap Family
+# Unwrap the \<formation>
 
-From diamonds, an hourglass, interlocked diamonds, etc.: The trailing point
+From Diamonds, an Hourglass, Interlocked Diamonds, etc.: The trailing point
 walks straight ahead to become #1 in a column; 
 others [Circulate](../b1/circulate.md) their formation
-and follow that person into columns. (Note: The caller may also designate the
+and follow that person into Columns. (Note: The caller may also designate the
 leader.) 
 
 Unwrap the Diamond:

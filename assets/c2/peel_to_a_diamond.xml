@@ -24,8 +24,7 @@
 
   <tam title="Peel to a Diamond"
        from="Right-Hand Box"
-       formation="Box RH"
-       fractions="" >
+       formation="Box RH">
     <path>
       <move select="Forward 2" />
       <move select="Hinge Right" />
@@ -37,8 +36,7 @@
 
   <tam title="Peel to a Diamond"
        from="Left-Hand Box"
-       formation="Box LH"
-       fractions="" >
+       formation="Box LH">
     <path>
       <move select="Run Right" beats="4" offsetX="-2" />
     </path>
@@ -50,8 +48,7 @@
 
   <tam title="Peel to a Diamond"
        from="Right-Hand Columns"
-       formation="Column RH GBGB"
-       fractions="" >
+       formation="Column RH GBGB">
     <path>
       <move select="Run Left" offsetX="-1" />
     </path>
@@ -70,8 +67,7 @@
 
   <tam title="Peel to a Diamond"
        from="Left-Hand Columns"
-       formation="Column LH GBGB"
-       fractions="" >
+       formation="Column LH GBGB">
     <path>
       <move select="Forward" />
       <move select="Hinge Left" />
@@ -90,8 +86,7 @@
 
   <tam title="Peel to a Diamond"
        from="Right-Hand Waves"
-       formation="Ocean Waves RH BGBG"
-       fractions="" >
+       formation="Ocean Waves RH BGBG">
     <path>
       <move select="Extend Right" beats="2" scaleX="2" scaleY=".5" />
       <move select="Hinge Right" hands="gripright" scaleY=".5" />
@@ -110,8 +105,7 @@
 
   <tam title="Peel to a Diamond"
        from="Left-Hand Waves"
-       formation="Ocean Waves LH BGBG"
-       fractions="" >
+       formation="Ocean Waves LH BGBG">
     <path>
       <move select="Flip Right" beats="3" offsetX="-2" offsetY="1.5" />
     </path>
@@ -147,8 +141,7 @@
   </tam>
 
   <tam title="As Couples Peel to a Diamond" group=" "
-       formation="Two-Faced Lines RH"
-       fractions="" >
+       formation="Two-Faced Lines RH">
     <path>
       <move select="Extend Right" beats="2" scaleX="2" scaleY="1.5" />
       <move select="Hinge Right" scaleX="3" scaleY="1.5" />
@@ -203,5 +196,180 @@
     </path>
   </tam>
 
+  <tam title="Trail to a Diamond"
+       from="Right-Hand Box"
+       formation="Box RH">
+    <path>
+      <move select="Forward 2" />
+      <move select="Hinge Right" />
+    </path>
+    <path>
+      <move select="Run Right" scaleY="2" offsetX="-2" />
+    </path>
+  </tam>
+
+  <tam title="Trail to a Diamond"
+       from="Left-Hand Box"
+       formation="Box LH Girls Lead">
+    <path couples="3 1">
+      <move select="Forward 2" />
+      <move select="Hinge Left" />
+    </path>
+    <path>
+      <move select="Run Left" scaleY="2" offsetX="-2" />
+    </path>
+  </tam>
+
+  <tam title="Trail to a Diamond"
+       from="Right-Hand Columns"
+       formation="Column RH GBGB">
+    <path>
+      <move select="Run Right" scaleY="2" offsetX="-1" />
+    </path>
+    <path>
+      <move select="Forward" />
+      <move select="Hinge Right" />
+    </path>
+    <path>
+      <move select="Run Right" scaleY="2" offsetX="-1" />
+    </path>
+    <path>
+      <move select="Forward" />
+      <move select="Hinge Right" />
+    </path>
+  </tam>
+
+  <tam title="Trail to a Diamond"
+       from="Left-Hand Columns"
+       formation="Column LH GBGB">
+    <path>
+      <move select="Forward" />
+      <move select="Hinge Left" />
+    </path>
+    <path>
+      <move select="Run Left" scaleY="2" offsetX="-1" />
+    </path>
+    <path>
+      <move select="Forward" />
+      <move select="Hinge Left" />
+    </path>
+    <path>
+      <move select="Run Left" scaleY="2" offsetX="-1" />
+    </path>
+  </tam>
+
+  <tam title="Trail to a Diamond"
+       from="Right-Hand Waves"
+       formation="Ocean Waves RH BGBG">
+    <path>
+      <move select="Extend Right" beats="2" scaleX="2" scaleY=".5" />
+      <move select="Hinge Right" hands="gripright" scaleY=".5" />
+    </path>
+    <path>
+      <move select="Run Right" scaleY="1.25" offsetX="-2" />
+    </path>
+    <path>
+      <move select="Extend Right" beats="2" scaleX="2" scaleY=".5" />
+      <move select="Hinge Right" hands="gripright" scaleY=".5" />
+    </path>
+    <path>
+      <move select="Run Right" scaleY="1.25" offsetX="-2" />
+    </path>
+  </tam>
+
+  <tam title="Trail to a Diamond"
+       from="Left-Hand Waves"
+       formation="Ocean Waves LH BGBG">
+    <path>
+      <move select="Run Left" scaleY="1.25" offsetX="-2" />
+    </path>
+    <path>
+      <move select="Extend Left" beats="2" scaleX="2" scaleY=".5" />
+      <move select="Hinge Left" hands="gripleft" scaleY=".5" />
+    </path>
+    <path>
+      <move select="Run Left" scaleY="1.25" offsetX="-2" />
+    </path>
+    <path>
+      <move select="Extend Left" beats="2" scaleX="2" scaleY=".5" />
+      <move select="Hinge Left" hands="gripleft" scaleY=".5" />
+    </path>
+  </tam>
+
+  <tam title="All 8 Trail to a Diamond" group=" "
+       formation="Static MiniWaves RH">
+    <path>
+      <move select="Forward 3"/>
+      <move select="Hinge Right"/>
+    </path>
+    <path>
+      <move select="Run Right" beats="4.5" offsetX="-3" scaleY="2"/>
+    </path>
+    <path>
+      <move select="Forward 3"/>
+      <move select="Hinge Right"/>
+    </path>
+    <path>
+      <move select="Run Right" beats="4.5" offsetX="-3" scaleY="2"/>
+    </path>
+  </tam>
+
+  <tam title="As Couples Trail to a Diamond" group=" "
+       formation="Two-Faced Lines RH">
+    <path>
+      <move select="Forward 2" hands="right"/>
+      <move select="Lead Right" beats="4" scaleX="3" scaleY="3" hands="right"/>
+    </path>
+    <path>
+      <move select="Forward 2" hands="left"/>
+      <move select="Hinge Right" hands="both" beats="4"/>
+    </path>
+    <path>
+      <move select="Lead Right" beats="2" hands="left"/>
+      <move select="Lead Right" beats="4" hands="left" scaleX="2" scaleY="3"/>
+    </path>
+    <path>
+      <move select="Lead Right" beats="2" hands="right" scaleX="3" scaleY="3"/>
+      <move select="Lead Right" beats="4" hands="right" scaleX="4" scaleY="5"/>
+    </path>
+  </tam>
+
+  <tam title="Concentric Trail to a Diamond" group="  "
+       formation="Two-Faced Lines RH">
+    <path>
+      <move select="Forward 3"/>
+      <move select="Lead Right" beats="3" scaleX="2" scaleY="3"/>
+    </path>
+    <path>
+      <move select="Forward 2"/>
+      <move select="Hinge Right"/>
+    </path>
+    <path>
+      <move select="Run Right" beats="3.5" offsetX="-2" scaleY="1.5"/>
+    </path>
+    <path>
+      <move select="Run Right" beats="6" scaleX="2" offsetX="-2" scaleY="3.5"/>
+    </path>
+  </tam>
+
+  <tam title="Tandem Trail to a Diamond" group="  "
+       formation="Column RH GBGB">
+    <path>
+      <move select="Run Right" beats="4" offsetX="-2" scaleY="2"/>
+      <move select="Forward 2"/>
+    </path>
+    <path>
+      <move select="Forward 2"/>
+      <move select="Run Right" beats="4" offsetX="-2" scaleY="2"/>
+    </path>
+    <path>
+      <move select="Forward 2"/>
+      <move select="Counter Rotate Right 0 -2" hands="right"/>
+    </path>
+    <path>
+      <move select="Forward 2"/>
+      <move select="Counter Rotate Right 2 0" hands="right"/>
+    </path>
+  </tam>
 
 </tamination>

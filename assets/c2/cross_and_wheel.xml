@@ -99,4 +99,1066 @@
     </path>
   </tam>
 
+  <tam title="Cross Trade and Wheel"
+       from="Right-Hand Two-Faced Lines"
+       formation="Two-Faced Lines RH"
+       parts="3;3" >
+    <path>
+      <move select="Hinge Right" beats="3" scaleX="1.5" scaleY="3" />
+      <move select="Swing Left" scaleX=".5" scaleY=".5" />
+      <move select="Extend Right" beats="3" hands="right" scaleX="2" scaleY=".5" />
+    </path>
+    <path>
+      <move select="Hinge Right" beats="3" hands="both" scaleX=".5" />
+      <move select="Stand" beats="3" />
+      <move select="Extend Right" beats="3" hands="left" scaleX="2" scaleY="1.5" />
+    </path>
+    <path>
+      <move select="Hinge Right" beats="3" hands="both" scaleX=".5" />
+      <move select="Stand" beats="3" />
+      <move select="Forward"/>
+      <move select="BackRun Left" hands="left" offsetX="1" offsetY="-1.5" />
+    </path>
+    <path>
+      <move select="Hinge Right" beats="3" scaleX="1.5" scaleY="3" />
+      <move select="Stand" beats="3" />
+      <move select="Forward"/>
+      <move select="Run Right" hands="right" offsetX="1" offsetY="-.5" />
+    </path>
+  </tam>
+
+  <tam title="Cross Trade and Wheel"
+       from="Left-Hand Two-Faced Lines"
+       formation="Two-Faced Lines LH"
+       parts="3;3" >
+    <path>
+      <move select="Hinge Left" beats="3" scaleX="1.5" scaleY="3" />
+      <move select="Stand" beats="3" />
+      <move select="Forward"/>
+      <move select="Run Left" hands="left" offsetX="1" offsetY=".5" />
+    </path>
+    <path>
+      <move select="Hinge Left" beats="3" hands="both" scaleX=".5" />
+      <move select="Stand" beats="3" />
+      <move select="Forward"/>
+      <move select="BackRun Right" hands="right" offsetX="1" offsetY="1.5" />
+    </path>
+    <path>
+      <move select="Hinge Left" beats="3" hands="both" scaleX=".5" />
+      <move select="Stand" beats="3" />
+      <move select="Extend Left" beats="3" hands="right" scaleX="2" scaleY="1.5" />
+    </path>
+    <path>
+      <move select="Hinge Left" beats="3" scaleX="1.5" scaleY="3" />
+      <move select="Swing Right" scaleX=".5" scaleY=".5" />
+      <move select="Extend Left" beats="3" hands="left" scaleX="2" scaleY=".5" />
+    </path>
+  </tam>
+
+  <tam title="Cross Trade and Wheel"
+       from="Lines Facing Out"
+       formation="Lines Facing Out"
+       parts="3;3" >
+    <path>
+      <move select="Quarter Left" beats="3" hands="left" offsetX="-.5" offsetY="3"/>
+      <move select="Stand" beats="3" />
+      <move select="Extend Right" beats="3" hands="left" scaleX="2" scaleY="1.5" />
+    </path>
+    <path>
+      <move select="Quarter Left" beats="3" hands="right"  offsetX="-1.5" offsetY="1" />
+      <move select="Swing Left" scaleX=".5" scaleY=".5" />
+      <move select="Extend Right" beats="3" hands="right" scaleX="2" scaleY=".5" />
+    </path>
+    <path>
+      <move select="Lead Right" beats="3" hands="left" scaleX=".5" />
+      <move select="Stand" beats="3" />
+      <move select="Forward"/>
+      <move select="BackRun Left" hands="left" offsetX="1" offsetY="-1.5" />
+    </path>
+    <path>
+      <move select="Lead Right" beats="3" hands="right" scaleX="1.5" scaleY="3" />
+      <move select="Stand" beats="3" />
+      <move select="Forward"/>
+      <move select="Run Right" hands="right" offsetX="1" offsetY="-.5" />
+    </path>
+  </tam>
+
+  <tam title="Grand Cross Trade and Wheel" from="Right-Hand Two-Faced Lines"
+       formation="Two-Faced Lines RH" parts="3;3">
+    <path>
+      <move select="Hinge Right" beats="3" hands="gripright" scaleX="1.5" scaleY="3"/>
+      <move select="Swing Left" scaleX=".5" scaleY=".5"/>
+      <move select="Extend Right" beats="3" hands="right" scaleX="2" scaleY=".5"/>
+    </path>
+    <path>
+      <move select="Hinge Right" beats="3" hands="gripboth" scaleX=".5"/>
+      <move select="Swing Right" scaleX=".5" scaleY=".5"/>
+      <move select="BackRun Left" hands="gripleft" offsetX="2" offsetY="-1.5"/>
+    </path>
+    <path>
+      <move select="Hinge Right" beats="3" hands="gripboth" scaleX=".5"/>
+      <move select="Swing Right" scaleX=".5" scaleY=".5"/>
+      <move select="Extend Right" beats="3" hands="left" scaleX="2" scaleY="1.5"/>
+    </path>
+    <path>
+      <move select="Hinge Right" beats="3" hands="gripright" scaleX="1.5" scaleY="3"/>
+      <move select="Stand" beats="3"/>
+      <move select="Run Right" hands="gripright" offsetX="2" offsetY="-.5"/>
+    </path>
+  </tam>
+
+  <tam title="Single Cross and Wheel" from="Right-Hand Box"
+       formation="Box RH" parts="1.5">
+    <path>
+      <move select="Hinge Right"/>
+      <move select="Forward 2" beats="3"/>
+    </path>
+    <path>
+      <move select="Hinge Right"/>
+      <move select="Run Right" beats="3" offsetX="2"/>
+    </path>
+  </tam>
+
+  <tam title="Single Cross and Wheel" from="Left-Hand Box"
+       formation="Box LH" parts="1.5">
+    <path>
+      <move select="Hinge Left"/>
+      <move select="Run Left" beats="3" offsetX="2"/>
+    </path>
+    <path>
+      <move select="Hinge Left"/>
+      <move select="Forward 2" beats="3"/>
+    </path>
+  </tam>
+
+  <tam title="Single Cross and Wheel" from="Facing Couples"
+       formation="Facing Couples" parts="1.5">
+    <path>
+      <move select="Hinge Right"/>
+      <move select="Forward 2" beats="3"/>
+    </path>
+    <path>
+      <move select="Quarter Left" offsetX="-1" offsetY="1"/>
+      <move select="Run Right" beats="3" offsetX="2"/>
+    </path>
+  </tam>
+
+  <tam title="Single Cross and Wheel" from="Couples Facing Out"
+       formation="Couples Facing Out" parts="1.5">
+    <path>
+      <move select="Quarter Left" offsetX="-1" offsetY="1"/>
+      <move select="Forward 2" beats="3"/>
+    </path>
+    <path>
+      <move select="Hinge Right"/>
+      <move select="Run Right" beats="3" offsetX="2"/>
+    </path>
+  </tam>
+
+  <tam title="Single Cross Trade and Wheel"
+       from="Right-Hand Box"
+       formation="Box RH" parts="1.5;3">
+    <path>
+      <move select="Hinge Right"/>
+      <move select="Swing Left"/>
+      <move select="Forward 2"/>
+    </path>
+    <path>
+      <move select="Hinge Right"/>
+      <move select="Stand" beats="3"/>
+      <move select="Run Right" beats="5" offsetX="2"/>
+    </path>
+  </tam>
+
+  <tam title="Single Cross Trade and Wheel"
+       from="Left-Hand Box"
+       formation="Box LH" parts="1.5;3">
+    <path>
+      <move select="Hinge Left"/>
+      <move select="Stand" beats="3"/>
+      <move select="Run Left" beats="5" offsetX="2"/>
+    </path>
+    <path>
+      <move select="Hinge Left"/>
+      <move select="Swing Right"/>
+      <move select="Forward 2"/>
+    </path>
+  </tam>
+
+  <tam title="Single Cross Trade and Wheel"
+       from="Facing Couples"
+       formation="Facing Couples" parts="1.5;3">
+    <path>
+      <move select="Lead Right"/>
+      <move select="Swing Left"/>
+      <move select="Forward 2"/>
+    </path>
+    <path>
+      <move select="Quarter Left" offsetX="-1" offsetY="1"/>
+      <move select="Stand" beats="3"/>
+      <move select="Run Right" beats="5" offsetX="2"/>
+    </path>
+  </tam>
+
+  <tam title="Single Cross Trade and Wheel"
+       from="Couples Facing Out"
+       formation="Couples Facing Out" parts="1.5;3">
+    <path>
+      <move select="Quarter Left" offsetX="-1" offsetY="1"/>
+      <move select="Swing Left"/>
+      <move select="Forward 2"/>
+    </path>
+    <path>
+      <move select="Lead Right"/>
+      <move select="Stand" beats="3"/>
+      <move select="Run Right" beats="5" offsetX="2"/>
+    </path>
+  </tam>
+
+  <tam title="Single Cross Trade and Wheel" from="Right-Hand Waves"
+       formation="Ocean Waves RH BGGB" parts="1.5;3">
+    <path>
+      <move select="Hinge Right"/>
+      <move select="Swing Left"/>
+      <move select="Forward"/>
+    </path>
+    <path>
+      <move select="Hinge Right"/>
+      <move select="Stand" beats="3"/>
+      <move select="Run Right" beats="5" offsetX="1"/>
+    </path>
+    <path>
+      <move select="Hinge Right"/>
+      <move select="Swing Left"/>
+      <move select="Forward"/>
+    </path>
+    <path>
+      <move select="Hinge Right"/>
+      <move select="Stand" beats="3"/>
+      <move select="Run Right" beats="5" offsetX="1"/>
+    </path>
+  </tam>
+
+  <tam title="Single Cross Trade and Wheel" from="Left-Hand Waves"
+       formation="Ocean Waves LH BGGB" parts="1.5;3">
+    <path>
+      <move select="Hinge Left"/>
+      <move select="Stand" beats="3"/>
+      <move select="Run Left" beats="5" offsetX="1"/>
+    </path>
+    <path>
+      <move select="Hinge Left"/>
+      <move select="Swing Right"/>
+      <move select="Forward"/>
+    </path>
+    <path>
+      <move select="Hinge Left"/>
+      <move select="Stand" beats="3"/>
+      <move select="Run Left" beats="5" offsetX="1"/>
+    </path>
+    <path>
+      <move select="Hinge Left"/>
+      <move select="Swing Right"/>
+      <move select="Forward"/>
+    </path>
+  </tam>
+
+  <tam title="Single Cross Trade and Wheel" from="Right-Hand Columns"
+       formation="Column RH GBGB" parts="1.5;3">
+    <path>
+      <move select="Hinge Right" scaleX=".5"/>
+      <move select="Stand" beats="3"/>
+      <move select="Run Right" beats="5" offsetX="2" scaleY=".25"/>
+    </path>
+    <path>
+      <move select="Hinge Right" scaleX=".5"/>
+      <move select="Swing Left" scaleX=".5" scaleY=".5"/>
+      <move select="Extend Right" beats="2" scaleX="2" scaleY=".5"/>
+    </path>
+    <path>
+      <move select="Hinge Right" scaleX=".5"/>
+      <move select="Stand" beats="3"/>
+      <move select="Run Right" beats="5" offsetX="2" scaleY=".25"/>
+    </path>
+    <path>
+      <move select="Hinge Right" scaleX=".5"/>
+      <move select="Swing Left" scaleX=".5" scaleY=".5"/>
+      <move select="Extend Right" beats="2" scaleX="2" scaleY=".5"/>
+    </path>
+  </tam>
+
+  <tam title="Single Cross Trade and Wheel" from="Left-Hand Columns"
+       formation="Column LH GBGB" parts="1.5;3">
+    <path>
+      <move select="Hinge Left" scaleX=".5"/>
+      <move select="Swing Right" scaleX=".5" scaleY=".5"/>
+      <move select="Extend Left" beats="2" scaleX="2" scaleY=".5"/>
+    </path>
+    <path>
+      <move select="Hinge Left" scaleX=".5"/>
+      <move select="Stand" beats="3"/>
+      <move select="Run Left" beats="5" offsetX="2" scaleY=".25"/>
+    </path>
+    <path>
+      <move select="Hinge Left" scaleX=".5"/>
+      <move select="Swing Right" scaleX=".5" scaleY=".5"/>
+      <move select="Extend Left" beats="2" scaleX="2" scaleY=".5"/>
+    </path>
+    <path>
+      <move select="Hinge Left" scaleX=".5"/>
+      <move select="Stand" beats="3"/>
+      <move select="Run Left" beats="5" offsetX="2" scaleY=".25"/>
+    </path>
+  </tam>
+
+  <tam title="Grand Single Cross and Wheel" from="Right-Hand Columns"
+       formation="Column RH GBGB" parts="1.5">
+    <path>
+      <move select="Hinge Right" scaleX=".5"/>
+      <move select="U-Turn Right" beats="2" offsetX="2" offsetY="-.5"/>
+    </path>
+    <path>
+      <move select="Hinge Right" scaleX=".5"/>
+      <move select="Extend Right" beats="2" scaleX="2" scaleY=".5"/>
+    </path>
+    <path>
+      <move select="Hinge Right" scaleX=".5"/>
+      <move select="Extend Right" beats="2" scaleX="2" scaleY=".5"/>
+    </path>
+    <path>
+      <move select="Hinge Right" scaleX=".5"/>
+      <move select="Extend Right" beats="2" scaleX="2" scaleY=".5"/>
+    </path>
+  </tam>
+
+  <tam title="Grand Single Cross and Wheel" from="Left-Hand Columns"
+       formation="Column LH GBGB" parts="1.5">
+    <path>
+      <move select="Hinge Left" scaleX=".5"/>
+      <move select="Extend Left" beats="2" scaleX="2" scaleY=".5"/>
+    </path>
+    <path>
+      <move select="Hinge Left" scaleX=".5"/>
+      <move select="Extend Left" beats="2" scaleX="2" scaleY=".5"/>
+    </path>
+    <path>
+      <move select="Hinge Left" scaleX=".5"/>
+      <move select="Extend Left" beats="2" scaleX="2" scaleY=".5"/>
+    </path>
+    <path>
+      <move select="Hinge Left" scaleX=".5"/>
+      <move select="U-Turn Left" beats="2" offsetX="2" offsetY=".5"/>
+    </path>
+  </tam>
+
+  <tam title="Grand Single Cross and Wheel"
+       from="Double Pass Thru"
+       formation="Double Pass Thru">
+    <path>
+      <move select="Lead Right" scaleX=".5"/>
+      <move select="Extend Right" beats="2" scaleX="2" scaleY=".5"/>
+    </path>
+    <path>
+      <move select="Quarter Left" offsetX="-.5" offsetY="1"/>
+      <move select="U-Turn Right" beats="2" offsetX="2" offsetY="-.5"/>
+    </path>
+    <path>
+      <move select="Lead Right" scaleX=".5"/>
+      <move select="Extend Right" beats="2" scaleX="2" scaleY=".5"/>
+    </path>
+    <path>
+      <move select="Quarter Left" offsetX="-.5" offsetY="1"/>
+      <move select="Extend Right" beats="2" scaleX="2" scaleY=".5"/>
+    </path>
+  </tam>
+
+  <tam title="Grand Single Cross and Wheel"
+       from="Completed Double Pass Thru"
+       formation="Completed Double Pass Thru">
+    <path>
+      <move select="Quarter Left" offsetX="-.5" offsetY="1"/>
+      <move select="Extend Right" beats="2" scaleX="2" scaleY=".5"/>
+    </path>
+    <path>
+      <move select="Lead Right" scaleX=".5"/>
+      <move select="U-Turn Right" beats="2" offsetX="2" offsetY="-.5"/>
+    </path>
+    <path>
+      <move select="Quarter Left" offsetX="-.5" offsetY="1"/>
+      <move select="Extend Right" beats="2" scaleX="2" scaleY=".5"/>
+    </path>
+    <path>
+      <move select="Lead Right" scaleX=".5"/>
+      <move select="Extend Right" beats="2" scaleX="2" scaleY=".5"/>
+    </path>
+  </tam>
+
+  <tam title="Grand Single Cross and Wheel"
+       from="Eight Chain Thru"
+       formation="Eight Chain Thru">
+    <path>
+      <move select="Lead Right" scaleX=".5"/>
+      <move select="Extend Right" beats="2" scaleX="2" scaleY=".5"/>
+    </path>
+    <path>
+      <move select="Quarter Left" offsetX="-.5" offsetY="1"/>
+      <move select="U-Turn Right" beats="2" offsetX="2" offsetY="-.5"/>
+    </path>
+    <path>
+      <move select="Lead Right" scaleX=".5"/>
+      <move select="Extend Right" beats="2" scaleX="2" scaleY=".5"/>
+    </path>
+    <path>
+      <move select="Quarter Left" offsetX="-.5" offsetY="1"/>
+      <move select="Extend Right" beats="2" scaleX="2" scaleY=".5"/>
+    </path>
+  </tam>
+
+  <tam title="Grand Single Cross and Wheel"
+       from="Trade By"
+       formation="Trade By">
+    <path>
+      <move select="Quarter Left" offsetX="-.5" offsetY="1"/>
+      <move select="Extend Right" beats="2" scaleX="2" scaleY=".5"/>
+    </path>
+    <path>
+      <move select="Lead Right" scaleX=".5"/>
+      <move select="U-Turn Right" beats="2" offsetX="2" offsetY="-.5"/>
+    </path>
+    <path>
+      <move select="Quarter Left" offsetX="-.5" offsetY="1"/>
+      <move select="Extend Right" beats="2" scaleX="2" scaleY=".5"/>
+    </path>
+    <path>
+      <move select="Lead Right" scaleX=".5"/>
+      <move select="Extend Right" beats="2" scaleX="2" scaleY=".5"/>
+    </path>
+  </tam>
+
+  <tam title="Grand Single Cross and Wheel"
+       from="Magic Columns, Right-Hand Centers"
+       formation="Magic Column RH">
+    <path>
+      <move select="Hinge Left" scaleX=".5"/>
+      <move select="Extend Left" beats="2" scaleX="2" scaleY=".5"/>
+    </path>
+    <path>
+      <move select="Hinge Right" scaleX=".5"/>
+      <move select="Extend Right" beats="2" scaleX="2" scaleY=".5"/>
+    </path>
+    <path>
+      <move select="Hinge Right" scaleX=".5"/>
+      <move select="Extend Right" beats="2" scaleX="2" scaleY=".5"/>
+    </path>
+    <path>
+      <move select="Hinge Left" scaleX=".5"/>
+      <move select="U-Turn Left" beats="2" offsetX="2" offsetY=".5"/>
+    </path>
+  </tam>
+
+  <tam title="Grand Single Cross and Wheel"
+       from="Magic Columns, Left-Hand Centers"
+       formation="Magic Column LH">
+    <path>
+      <move select="Hinge Right" scaleX=".5"/>
+      <move select="U-Turn Right" beats="2" offsetX="2" offsetY="-.5"/>
+    </path>
+    <path>
+      <move select="Hinge Left" scaleX=".5"/>
+      <move select="Extend Left" beats="2" scaleX="2" scaleY=".5"/>
+    </path>
+    <path>
+      <move select="Hinge Left" scaleX=".5"/>
+      <move select="Extend Left" beats="2" scaleX="2" scaleY=".5"/>
+    </path>
+    <path>
+      <move select="Hinge Right" scaleX=".5"/>
+      <move select="Extend Right" beats="2" scaleX="2" scaleY=".5"/>
+    </path>
+  </tam>
+
+  <tam title="Grand Single Cross and Wheel"
+       from="Mixed Columns #1"
+       formation="Mixed Columns RH Ends In">
+    <path>
+      <move select="Lead Right" scaleX=".5"/>
+      <move select="Extend Right" beats="2" scaleX="2" scaleY=".5"/>
+    </path>
+    <path>
+      <move select="Quarter Left" offsetX="-.5" offsetY="1"/>
+      <move select="U-Turn Right" beats="2" offsetX="2" offsetY="-.5"/>
+    </path>
+    <path>
+      <move select="Hinge Right" scaleX=".5"/>
+      <move select="Extend Right" beats="2" scaleX="2" scaleY=".5"/>
+    </path>
+    <path>
+      <move select="Hinge Right" scaleX=".5"/>
+      <move select="Extend Right" beats="2" scaleX="2" scaleY=".5"/>
+    </path>
+  </tam>
+
+  <tam title="Grand Single Cross and Wheel"
+       from="Mixed Columns #2"
+       formation="Mixed Columns LH Ends In">
+    <path>
+      <move select="Lead Right" scaleX=".5"/>
+      <move select="Extend Right" beats="2" scaleX="2" scaleY=".5"/>
+    </path>
+    <path>
+      <move select="Quarter Left" offsetX="-.5" offsetY="1"/>
+      <move select="U-Turn Right" beats="2" offsetX="2" offsetY="-.5"/>
+    </path>
+    <path>
+      <move select="Hinge Left" scaleX=".5"/>
+      <move select="Extend Left" beats="2" scaleX="2" scaleY=".5"/>
+    </path>
+    <path>
+      <move select="Hinge Left" scaleX=".5"/>
+      <move select="Extend Left" beats="2" scaleX="2" scaleY=".5"/>
+    </path>
+  </tam>
+
+  <tam title="Grand Single Cross and Wheel"
+       from="Mixed Columns #3"
+       formation="Mixed Columns RH Ends Out">
+    <path>
+      <move select="Quarter Left" offsetX="-.5" offsetY="1"/>
+      <move select="Extend Right" beats="2" scaleX="2" scaleY=".5"/>
+    </path>
+    <path>
+      <move select="Lead Right" scaleX=".5"/>
+      <move select="U-Turn Right" beats="2" offsetX="2" offsetY="-.5"/>
+    </path>
+    <path>
+      <move select="Hinge Right" scaleX=".5"/>
+      <move select="Extend Right" beats="2" scaleX="2" scaleY=".5"/>
+    </path>
+    <path>
+      <move select="Hinge Right" scaleX=".5"/>
+      <move select="Extend Right" beats="2" scaleX="2" scaleY=".5"/>
+    </path>
+  </tam>
+
+  <tam title="Grand Single Cross and Wheel"
+       from="Mixed Columns #4"
+       formation="Mixed Columns LH Ends Out">
+    <path>
+      <move select="Quarter Left" offsetX="-.5" offsetY="1"/>
+      <move select="Extend Right" beats="2" scaleX="2" scaleY=".5"/>
+    </path>
+    <path>
+      <move select="Lead Right" scaleX=".5"/>
+      <move select="U-Turn Right" beats="2" offsetX="2" offsetY="-.5"/>
+    </path>
+    <path>
+      <move select="Hinge Left" scaleX=".5"/>
+      <move select="Extend Left" beats="2" scaleX="2" scaleY=".5"/>
+    </path>
+    <path>
+      <move select="Hinge Left" scaleX=".5"/>
+      <move select="Extend Left" beats="2" scaleX="2" scaleY=".5"/>
+    </path>
+  </tam>
+
+  <tam title="Grand Single Cross and Wheel"
+       from="Mixed Columns #5"
+       formation="Mixed Columns RH Centers In">
+    <path>
+      <move select="Hinge Right" scaleX=".5"/>
+      <move select="Extend Right" beats="2" scaleX="2" scaleY=".5"/>
+    </path>
+    <path>
+      <move select="Hinge Right" scaleX=".5"/>
+      <move select="U-Turn Right" beats="2" offsetX="2" offsetY="-.5"/>
+    </path>
+    <path>
+      <move select="Lead Right" scaleX=".5"/>
+      <move select="Extend Right" beats="2" scaleX="2" scaleY=".5"/>
+    </path>
+    <path>
+      <move select="Quarter Left" offsetX="-.5" offsetY="1"/>
+      <move select="Extend Right" beats="2" scaleX="2" scaleY=".5"/>
+    </path>
+  </tam>
+
+  <tam title="Grand Single Cross and Wheel"
+       from="Mixed Columns #6"
+       formation="Mixed Columns LH Centers In">
+    <path>
+      <move select="Hinge Left" scaleX=".5"/>
+      <move select="U-Turn Left" beats="2" offsetX="2" offsetY=".5"/>
+    </path>
+    <path>
+      <move select="Hinge Left" scaleX=".5"/>
+      <move select="Extend Left" beats="2" scaleX="2" scaleY=".5"/>
+    </path>
+    <path>
+      <move select="Lead Right" scaleX=".5"/>
+      <move select="Extend Right" beats="2" scaleX="2" scaleY=".5"/>
+    </path>
+    <path>
+      <move select="Quarter Left" offsetX="-.5" offsetY="1"/>
+      <move select="Extend Right" beats="2" scaleX="2" scaleY=".5"/>
+    </path>
+  </tam>
+
+  <tam title="Grand Single Cross and Wheel"
+       from="Mixed Columns #7"
+       formation="Mixed Columns RH Centers Out">
+    <path>
+      <move select="Hinge Right" scaleX=".5"/>
+      <move select="Extend Right" beats="2" scaleX="2" scaleY=".5"/>
+    </path>
+    <path>
+      <move select="Hinge Right" scaleX=".5"/>
+      <move select="U-Turn Right" beats="2" offsetX="2" offsetY="-.5"/>
+    </path>
+    <path>
+      <move select="Quarter Left" offsetX="-.5" offsetY="1"/>
+      <move select="Extend Right" beats="2" scaleX="2" scaleY=".5"/>
+    </path>
+    <path>
+      <move select="Lead Right" scaleX=".5"/>
+      <move select="Extend Right" beats="2" scaleX="2" scaleY=".5"/>
+    </path>
+  </tam>
+
+  <tam title="Grand Single Cross and Wheel"
+       from="Mixed Columns #8"
+       formation="Mixed Columns LH Centers Out">
+    <path>
+      <move select="Hinge Left" scaleX=".5"/>
+      <move select="U-Turn Left" beats="2" offsetX="2" offsetY=".5"/>
+    </path>
+    <path>
+      <move select="Hinge Left" scaleX=".5"/>
+      <move select="Extend Left" beats="2" scaleX="2" scaleY=".5"/>
+    </path>
+    <path>
+      <move select="Quarter Left" offsetX="-.5" offsetY="1"/>
+      <move select="Extend Right" beats="2" scaleX="2" scaleY=".5"/>
+    </path>
+    <path>
+      <move select="Lead Right" scaleX=".5"/>
+      <move select="Extend Right" beats="2" scaleX="2" scaleY=".5"/>
+    </path>
+  </tam>
+
+  <tam title="Grand Single Cross Trade and Wheel"
+       from="Right-Hand Columns" parts="1.5;3">
+    <formation>
+      <dancer gender="girl" y="3" x="-1" angle="90"/>
+      <dancer gender="boy" y="1" x="-1" angle="90"/>
+      <dancer gender="girl" y="-1" x="-1" angle="90"/>
+      <dancer gender="boy" y="-3" x="-1" angle="90"/>
+    </formation>
+    <path couples="2 4">
+      <move select="Hinge Right" scaleX=".5"/>
+      <move select="Stand" beats="3"/>
+      <move select="Flip Right" beats="2" offsetX="2" offsetY="1.5"/>
+    </path>
+    <path couples="2 4">
+      <move select="Hinge Right" scaleX=".5"/>
+      <move select="Swing Left" scaleX=".5" scaleY=".5"/>
+      <move select="Extend Right" beats="2" scaleX="2" scaleY=".5"/>
+    </path>
+    <path couples="3 1">
+      <move select="Hinge Right" scaleX=".5"/>
+      <move select="Swing Left" scaleX=".5" scaleY=".5"/>
+      <move select="Extend Right" beats="2" scaleX="2" scaleY=".5"/>
+    </path>
+    <path couples="3 1">
+      <move select="Hinge Right" scaleX=".5"/>
+      <move select="Swing Left" scaleX=".5" scaleY=".5"/>
+      <move select="Extend Right" beats="2" scaleX="2" scaleY=".5"/>
+    </path>
+  </tam>
+
+  <tam title="Grand Single Cross Trade and Wheel" from="Left-Hand Columns"
+       formation="Column LH GBGB" parts="1.5;3">
+    <path>
+      <move select="Hinge Left" scaleX=".5"/>
+      <move select="Swing Right" scaleX=".5" scaleY=".5"/>
+      <move select="Extend Left" beats="2" scaleX="2" scaleY=".5"/>
+    </path>
+    <path>
+      <move select="Hinge Left" scaleX=".5"/>
+      <move select="Swing Right" scaleX=".5" scaleY=".5"/>
+      <move select="Extend Left" beats="2" scaleX="2" scaleY=".5"/>
+    </path>
+    <path>
+      <move select="Hinge Left" scaleX=".5"/>
+      <move select="Swing Right" scaleX=".5" scaleY=".5"/>
+      <move select="Extend Left" beats="2" scaleX="2" scaleY=".5"/>
+    </path>
+    <path>
+      <move select="Hinge Left" scaleX=".5"/>
+      <move select="Stand" beats="3"/>
+      <move select="Flip Left" beats="2" offsetX="2" offsetY="-1.5"/>
+    </path>
+  </tam>
+
+  <tam title="Grand Single Cross Trade and Wheel"
+       from="Eight Chain Thru"
+       formation="Eight Chain Thru"
+       parts="1.5;3">
+    <path>
+      <move select="Lead Right" scaleX=".5"/>
+      <move select="Swing Left" scaleX=".5" scaleY=".5"/>
+      <move select="Extend Right" beats="2" scaleX="2" scaleY=".5"/>
+    </path>
+    <path>
+      <move select="Quarter Left" offsetX="-.5" offsetY="1"/>
+      <move select="Stand" beats="3"/>
+      <move select="Flip Right" beats="2" offsetX="2" offsetY="1.5"/>
+    </path>
+    <path>
+      <move select="Lead Right" scaleX=".5"/>
+      <move select="Swing Left" scaleX=".5" scaleY=".5"/>
+      <move select="Extend Right" beats="2" scaleX="2" scaleY=".5"/>
+    </path>
+    <path>
+      <move select="Quarter Left" offsetX="-.5" offsetY="1"/>
+      <move select="Swing Left" scaleX=".5" scaleY=".5"/>
+      <move select="Extend Right" beats="2" scaleX="2" scaleY=".5"/>
+    </path>
+  </tam>
+
+  <tam title="Grand Single Cross Trade and Wheel"
+       from="Trade By"
+       formation="Trade By"
+       parts="1.5;3">
+    <path>
+      <move select="Quarter Left" offsetX="-.5" offsetY="1"/>
+      <move select="Swing Left" scaleX=".5" scaleY=".5"/>
+      <move select="Extend Right" beats="2" scaleX="2" scaleY=".5"/>
+    </path>
+    <path>
+      <move select="Lead Right" scaleX=".5"/>
+      <move select="Stand" beats="3"/>
+      <move select="Flip Right" beats="2" offsetX="2" offsetY="1.5"/>
+    </path>
+    <path>
+      <move select="Quarter Left" offsetX="-.5" offsetY="1"/>
+      <move select="Swing Left" scaleX=".5" scaleY=".5"/>
+      <move select="Extend Right" beats="2" scaleX="2" scaleY=".5"/>
+    </path>
+    <path>
+      <move select="Lead Right" scaleX=".5"/>
+      <move select="Swing Left" scaleX=".5" scaleY=".5"/>
+      <move select="Extend Right" beats="2" scaleX="2" scaleY=".5"/>
+    </path>
+  </tam>
+
+  <tam title="Grand Single Cross Trade and Wheel"
+       from="Double Pass Thru"
+       formation="Double Pass Thru"
+       parts="1.5;3">
+    <path>
+      <move select="Lead Right" scaleX=".5"/>
+      <move select="Swing Left" scaleX=".5" scaleY=".5"/>
+      <move select="Extend Right" beats="2" scaleX="2" scaleY=".5"/>
+    </path>
+    <path>
+      <move select="Quarter Left" offsetX="-.5" offsetY="1"/>
+      <move select="Stand" beats="3"/>
+      <move select="Flip Right" beats="2" offsetX="2" offsetY="1.5"/>
+    </path>
+    <path>
+      <move select="Lead Right" scaleX=".5"/>
+      <move select="Swing Left" scaleX=".5" scaleY=".5"/>
+      <move select="Extend Right" beats="2" scaleX="2" scaleY=".5"/>
+    </path>
+    <path>
+      <move select="Quarter Left" offsetX="-.5" offsetY="1"/>
+      <move select="Swing Left" scaleX=".5" scaleY=".5"/>
+      <move select="Extend Right" beats="2" scaleX="2" scaleY=".5"/>
+    </path>
+  </tam>
+
+  <tam title="Grand Single Cross Trade and Wheel"
+       from="Completed Double Pass Thru"
+       formation="Completed Double Pass Thru"
+       parts="1.5;3">
+    <path>
+      <move select="Quarter Left" offsetX="-.5" offsetY="1"/>
+      <move select="Swing Left" scaleX=".5" scaleY=".5"/>
+      <move select="Extend Right" beats="2" scaleX="2" scaleY=".5"/>
+    </path>
+    <path>
+      <move select="Lead Right" scaleX=".5"/>
+      <move select="Stand" beats="3"/>
+      <move select="Flip Right" beats="2" offsetX="2" offsetY="1.5"/>
+    </path>
+    <path>
+      <move select="Quarter Left" offsetX="-.5" offsetY="1"/>
+      <move select="Swing Left" scaleX=".5" scaleY=".5"/>
+      <move select="Extend Right" beats="2" scaleX="2" scaleY=".5"/>
+    </path>
+    <path>
+      <move select="Lead Right" scaleX=".5"/>
+      <move select="Swing Left" scaleX=".5" scaleY=".5"/>
+      <move select="Extend Right" beats="2" scaleX="2" scaleY=".5"/>
+    </path>
+  </tam>
+
+  <tam title="Grand Single Cross Trade and Wheel"
+       from="Magic Columns, Right-Hand Centers"
+       formation="Magic Column RH">
+    <path>
+      <move select="Hinge Left" scaleX=".5"/>
+      <move select="Run Right" scaleY=".5"/>
+      <move select="Extend Left" beats="2" scaleX="2" scaleY="2.5"/>
+    </path>
+    <path>
+      <move select="Hinge Right" scaleX=".5"/>
+      <move select="Flip Left" scaleY=".5"/>
+      <move select="Extend Left" beats="2" scaleX="2" scaleY="1.5"/>
+    </path>
+    <path>
+      <move select="Hinge Right" scaleX=".5"/>
+      <move select="Swing Left" scaleX=".5" scaleY=".5"/>
+      <move select="Extend Left" beats="2" scaleX="2" scaleY="3.5"/>
+    </path>
+    <path>
+      <move select="Hinge Left" scaleX=".5"/>
+      <move select="Stand" beats="3"/>
+      <move select="Flip Left" beats="2" offsetX="2" offsetY="-1.5"/>
+    </path>
+  </tam>
+
+  <tam title="Grand Single Cross Trade and Wheel"
+       from="Magic Columns, Left-Hand Centers"
+       formation="Magic Column LH" parts="1.5;3">
+    <path>
+      <move select="Hinge Right" scaleX=".5"/>
+      <move select="Stand" beats="3"/>
+      <move select="Flip Right" beats="2" offsetX="2" offsetY="1.5"/>
+    </path>
+    <path>
+      <move select="Hinge Left" scaleX=".5"/>
+      <move select="Swing Right" scaleX=".5" scaleY=".5"/>
+      <move select="Extend Right" beats="2" scaleX="2" scaleY="3.5"/>
+    </path>
+    <path>
+      <move select="Hinge Left" scaleX=".5"/>
+      <move select="Run Right" scaleY=".5"/>
+      <move select="Extend Right" beats="2" scaleX="2" scaleY="1.5"/>
+    </path>
+    <path>
+      <move select="Hinge Right" scaleX=".5"/>
+      <move select="Flip Left" scaleY=".5"/>
+      <move select="Extend Right" beats="2" scaleX="2" scaleY="2.5"/>
+    </path>
+  </tam>
+
+  <tam title="Grand Single Cross Trade and Wheel" display="none"
+       from="Mixed Columns #1"
+       formation="Mixed Columns RH Ends In"
+       parts="1.5;3">
+    <path>
+      <move select="Lead Right" scaleX=".5"/>
+      <move select="Swing Left" scaleX=".5" scaleY=".5"/>
+      <move select="Extend Right" beats="2" scaleX="2" scaleY=".5"/>
+    </path>
+    <path>
+      <move select="Quarter Left" offsetX="-.5" offsetY="1"/>
+      <move select="Stand" beats="3"/>
+      <move select="Flip Right" beats="2" offsetX="2" offsetY="1.5"/>
+    </path>
+    <path>
+      <move select="Hinge Right" scaleX=".5"/>
+      <move select="Swing Left" scaleX=".5" scaleY=".5"/>
+      <move select="Extend Right" beats="2" scaleX="2" scaleY=".5"/>
+    </path>
+    <path>
+      <move select="Hinge Right" scaleX=".5"/>
+      <move select="Swing Left" scaleX=".5" scaleY=".5"/>
+      <move select="Extend Right" beats="2" scaleX="2" scaleY=".5"/>
+    </path>
+  </tam>
+
+  <tam title="Grand Single Cross Trade and Wheel" display="none"
+       from="Mixed Columns #2"
+       formation="Mixed Columns LH Ends In"
+       parts="1.5;3">
+    <path>
+      <move select="Lead Right" scaleX=".5"/>
+      <move select="Flip Left" scaleY=".5"/>
+      <move select="Extend Right" beats="2" scaleX="2" scaleY="2.5"/>
+    </path>
+    <path>
+      <move select="Quarter Left" offsetX="-.5" offsetY="1"/>
+      <move select="Stand" beats="3"/>
+      <move select="Flip Right" beats="2" offsetX="2" offsetY="1.5"/>
+    </path>
+    <path>
+      <move select="Hinge Left" scaleX=".5"/>
+      <move select="Run Right" scaleY=".5"/>
+      <move select="Extend Right" beats="2" scaleX="2" scaleY="1.5"/>
+    </path>
+    <path>
+      <move select="Hinge Left" scaleX=".5"/>
+      <move select="Swing Right" scaleX=".5" scaleY=".5"/>
+      <move select="Extend Right" beats="2" scaleX="2" scaleY="3.5"/>
+    </path>
+  </tam>
+
+  <tam title="Grand Single Cross Trade and Wheel" display="none"
+       from="Mixed Columns #3"
+       formation="Mixed Columns RH Ends Out"
+       parts="1.5;3">
+    <path>
+      <move select="Quarter Left" offsetX="-.5" offsetY="1"/>
+      <move select="Swing Left" scaleX=".5" scaleY=".5"/>
+      <move select="Extend Right" beats="2" scaleX="2" scaleY=".5"/>
+    </path>
+    <path>
+      <move select="Lead Right" scaleX=".5"/>
+      <move select="Stand" beats="3"/>
+      <move select="Flip Right" beats="2" offsetX="2" offsetY="1.5"/>
+    </path>
+    <path>
+      <move select="Hinge Right" scaleX=".5"/>
+      <move select="Swing Left" scaleX=".5" scaleY=".5"/>
+      <move select="Extend Right" beats="2" scaleX="2" scaleY=".5"/>
+    </path>
+    <path>
+      <move select="Hinge Right" scaleX=".5"/>
+      <move select="Swing Left" scaleX=".5" scaleY=".5"/>
+      <move select="Extend Right" beats="2" scaleX="2" scaleY=".5"/>
+    </path>
+  </tam>
+
+  <tam title="Grand Single Cross Trade and Wheel" display="none"
+       from="Mixed Columns #4"
+       formation="Mixed Columns LH Ends Out"
+       parts="1.5;3">
+    <path>
+      <move select="Quarter Left" offsetX="-.5" offsetY="1"/>
+      <move select="Flip Left" scaleY=".5"/>
+      <move select="Extend Right" beats="2" scaleX="2" scaleY="2.5"/>
+    </path>
+    <path>
+      <move select="Lead Right" scaleX=".5"/>
+      <move select="Stand" beats="3"/>
+      <move select="Flip Right" beats="2" offsetX="2" offsetY="1.5"/>
+    </path>
+    <path>
+      <move select="Hinge Left" scaleX=".5"/>
+      <move select="Run Right" scaleY=".5"/>
+      <move select="Extend Right" beats="2" scaleX="2" scaleY="1.5"/>
+    </path>
+    <path>
+      <move select="Hinge Left" scaleX=".5"/>
+      <move select="Swing Right" scaleX=".5" scaleY=".5"/>
+      <move select="Extend Right" beats="2" scaleX="2" scaleY="3.5"/>
+    </path>
+  </tam>
+
+  <tam title="Grand Single Cross Trade and Wheel" display="none"
+       from="Mixed Columns #5"
+       formation="Mixed Columns RH Centers In"
+       parts="1.5;3">
+    <path>
+      <move select="Hinge Right" scaleX=".5"/>
+      <move select="Swing Left" scaleX=".5" scaleY=".5"/>
+      <move select="Extend Right" beats="2" scaleX="2" scaleY=".5"/>
+    </path>
+    <path>
+      <move select="Hinge Right" scaleX=".5"/>
+      <move select="Stand" beats="3"/>
+      <move select="Flip Right" beats="2" offsetX="2" offsetY="1.5"/>
+    </path>
+    <path>
+      <move select="Lead Right" scaleX=".5"/>
+      <move select="Swing Left" scaleX=".5" scaleY=".5"/>
+      <move select="Extend Right" beats="2" scaleX="2" scaleY=".5"/>
+    </path>
+    <path>
+      <move select="Quarter Left" offsetX="-.5" offsetY="1"/>
+      <move select="Swing Left" scaleX=".5" scaleY=".5"/>
+      <move select="Extend Right" beats="2" scaleX="2" scaleY=".5"/>
+    </path>
+  </tam>
+
+  <tam title="Grand Single Cross Trade and Wheel" display="none"
+       from="Mixed Columns #6"
+       formation="Mixed Columns LH Centers In"
+       parts="1.5;3">
+    <path>
+      <move select="Hinge Left" scaleX=".5"/>
+      <move select="Stand" beats="3"/>
+      <move select="Flip Left" beats="2" offsetX="2" offsetY="-1.5"/>
+    </path>
+    <path>
+      <move select="Hinge Left" scaleX=".5"/>
+      <move select="Run Right" scaleY=".5"/>
+      <move select="Extend Left" beats="2" scaleX="2" scaleY="2.5"/>
+    </path>
+    <path>
+      <move select="Lead Right" scaleX=".5"/>
+      <move select="Swing Left" scaleX=".5" scaleY=".5"/>
+      <move select="Extend Left" beats="2" scaleX="2" scaleY="3.5"/>
+    </path>
+    <path>
+      <move select="Quarter Left" offsetX="-.5" offsetY="1"/>
+      <move select="Flip Left" scaleY=".5"/>
+      <move select="Extend Left" beats="2" scaleX="2" scaleY="1.5"/>
+    </path>
+  </tam>
+
+  <tam title="Grand Single Cross Trade and Wheel" display="none"
+       from="Mixed Columns #7"
+       formation="Mixed Columns RH Centers Out"
+       parts="1.5;3">
+    <path>
+      <move select="Hinge Right" scaleX=".5"/>
+      <move select="Swing Left" scaleX=".5" scaleY=".5"/>
+      <move select="Extend Right" beats="2" scaleX="2" scaleY=".5"/>
+    </path>
+    <path>
+      <move select="Hinge Right" scaleX=".5"/>
+      <move select="Stand" beats="3"/>
+      <move select="Flip Right" beats="2" offsetX="2" offsetY="1.5"/>
+    </path>
+    <path>
+      <move select="Quarter Left" offsetX="-.5" offsetY="1"/>
+      <move select="Swing Left" scaleX=".5" scaleY=".5"/>
+      <move select="Extend Right" beats="2" scaleX="2" scaleY=".5"/>
+    </path>
+    <path>
+      <move select="Lead Right" scaleX=".5"/>
+      <move select="Swing Left" scaleX=".5" scaleY=".5"/>
+      <move select="Extend Right" beats="2" scaleX="2" scaleY=".5"/>
+    </path>
+  </tam>
+
+  <tam title="Grand Single Cross Trade and Wheel" display="none"
+       from="Mixed Columns #8"
+       formation="Mixed Columns LH Centers Out"
+       parts="1.5;3">
+    <path>
+      <move select="Hinge Left" scaleX=".5"/>
+      <move select="Stand" beats="3"/>
+      <move select="Flip Left" beats="2" offsetX="2" offsetY="-1.5"/>
+    </path>
+    <path>
+      <move select="Hinge Left" scaleX=".5"/>
+      <move select="Run Right" scaleY=".5"/>
+      <move select="Extend Left" beats="2" scaleX="2" scaleY="2.5"/>
+    </path>
+    <path>
+      <move select="Quarter Left" offsetX="-.5" offsetY="1"/>
+      <move select="Swing Left" scaleX=".5" scaleY=".5"/>
+      <move select="Extend Left" beats="2" scaleX="2" scaleY="3.5"/>
+    </path>
+    <path>
+      <move select="Lead Right" scaleX=".5"/>
+      <move select="Flip Left" scaleY=".5"/>
+      <move select="Extend Left" beats="2" scaleX="2" scaleY="1.5"/>
+    </path>
+  </tam>
+
 </tamination>

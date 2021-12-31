@@ -1,8 +1,8 @@
 
 # Detour
 
-From any 2x4 formation with ends in tandem (or equivalent formations, like
-diamonds): Center four [Counter Rotate 1/4](../a2/box_counter_rotate.md), 
+From any 2x4 formation with ends in Tandem (or equivalent formations, like
+Diamonds): Center four [Counter Rotate 1/4](../a2/box_counter_rotate.md), 
 while ends 1/2 [Zoom](../b2/zoom.md) & [Hinge](../ms/hinge.md).
 
 > 

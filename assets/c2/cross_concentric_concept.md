@@ -17,11 +17,11 @@ when the caller says "Cross-Concentric Diamond..." or when the
 Cross-Concentric call can only be done from diamonds (e.g. Cross-Concentric
 Diamond Circulate). 
 
-If the Cross-Concentric call is being done from general lines or general
-columns, and the call starts and ends in a 2x2 box (e.g. Cross-Concentric Star
-Thru), the following rule applies: If the centers begin as though in columns,
-they finish as though the ends of columns; if they begin in lines, they finish
-as the ends of lines.
+If the Cross-Concentric call is being done from General Lines or General
+Columns, and the call starts and ends in a 2x2 Box (e.g. Cross-Concentric Star
+Thru), the following rule applies: If the centers begin as though in Columns,
+they finish as though the ends of Columns; if they begin in Lines, they finish
+as the ends of Lines.
 
 Cross-Concentric [Star Thru](../b1/star_thru.md):
 
@@ -29,13 +29,13 @@ Cross-Concentric [Star Thru](../b1/star_thru.md):
 > ![alt](cross_concentric_concept_2.png)
 > 
 
-If the Cross-Concentric call ends in a 2x2 box but starts
-elsewhere (e.g. Cross-Concentric [ Recycle](../ms/recycle.md) from a tidal wave), the following rule
+If the Cross-Concentric call ends in a 2x2 Box but starts
+elsewhere (e.g. Cross-Concentric [ Recycle](../ms/recycle.md) from a Tidal Wave), the following rule
 applies: The new outside dancers (the original centers!) adjust so that the long
 axis of the ending formation is at right angles to the long axis of the starting
 formation.
 
-For example: Cross-Concentric [Wheel and Deal](../b2/wheel_and_deal.md):
+Cross-Concentric [Wheel and Deal](../b2/wheel_and_deal.md):
 
 > 
 > ![alt](cross_concentric_concept_3.png)

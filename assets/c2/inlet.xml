@@ -80,4 +80,90 @@
       <move select="Run Right" beats="4" offsetX="1" offsetY="-2" />
     </path>
   </tam>
+
+  <tam title="Outlet"
+       from="Quarter Tag"
+       formation="Quarter Tag">
+    <path couples="2 4">
+      <move select="U-Turn Right" beats="4" offsetX="1" />
+    </path>
+    <path couples="2 4">
+      <movement hands="none" beats="4" cx1="-1" cy1="2" cx2="1" cy2="4" x2="1" y2="4" cx3="1" cx4="2" cy4="2" x4="3" y4="2" />
+    </path>
+    <path couples="3 1">
+      <move select="Run Right" beats="4" hands="gripright" offsetX="2" />
+    </path>
+    <path couples="3 1">
+      <move select="Run Right" beats="4" hands="gripright" offsetX="-2" />
+    </path>
+  </tam>
+
+  <tam title="Outlet"
+       from="Quarter Lines"
+       formation="Quarter Lines RH">
+    <path>
+      <move select="U-Turn Right" beats="4" offsetX="1" />
+    </path>
+    <path>
+      <movement hands="none" beats="4" cx1="-1" cy1="2" cx2="1" cy2="4" x2="1" y2="4" cx3="1" cx4="2" cy4="2" x4="3" y4="2" />
+    </path>
+    <path>
+      <movement hands="none" beats="4" cx1="-1" cy1="2" cx2="2" cy2="2" x2="2" y2="2" cx3="1" cx4="2" cy4="2" x4="3" y4="2" />
+    </path>
+    <path>
+      <move select="U-Turn Right" beats="4" offsetX="2" offsetY="-2" />
+    </path>
+  </tam>
+
+  <tam title="Outlet"
+       from="Mixed Quarter Tag 1"
+       formation="Mixed Quarter Tag #1">
+    <path>
+      <move select="U-Turn Right" beats="4" hands="gripright" offsetX="1" />
+    </path>
+    <path>
+      <move select="Run Right" beats="4" hands="gripright" offsetX="-1" offsetY="-2" />
+    </path>
+    <path>
+      <move select="Run Right" beats="4" hands="gripright" offsetX="2" />
+    </path>
+    <path>
+      <move select="Run Right" beats="4" hands="gripright" offsetX="-2" />
+    </path>
+  </tam>
+
+  <tam title="Outlet"
+       from="Mixed Quarter Tag 2"
+       formation="Mixed Quarter Tag #3">
+    <path>
+      <move select="U-Turn Right" beats="4" hands="gripright" offsetX="1" />
+    </path>
+    <path>
+      <move select="Run Right" beats="4" hands="gripright" offsetX="-1" offsetY="-2" />
+    </path>
+    <path>
+      <move select="U-Turn Right" beats="4" offsetX="2" offsetY="-2" />
+    </path>
+    <path>
+      <movement hands="none" beats="4" cx1="-1" cy1="2" cx2="2" cy2="2" x2="2" y2="2" cx3="1" cx4="2" cy4="2" x4="3" y4="2" />
+    </path>
+  </tam>
+
+  <tam title="Outlet"
+       from="Mixed Quarter Tag 3"
+       formation="Mixed Quarter Tag #6">
+    <path>
+      <move select="Run Left" beats="4" hands="gripleft" offsetX="-1" offsetY="2" />
+    </path>
+    <path>
+      <move select="U-Turn Left" beats="4" hands="gripleft" offsetX="1" />
+    </path>
+    <path>
+      <move select="Run Left" beats="4" hands="gripleft" offsetX="2" />
+    </path>
+    <path>
+      <move select="Run Left" beats="4" hands="gripleft" offsetX="-2" />
+    </path>
+  </tam>
+
 </tamination>

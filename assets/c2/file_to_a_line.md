@@ -1,10 +1,10 @@
 
 # File to a Line
 
-From general columns: Ends slide apart to become ends of parallel lines;
-centers [Column Circulate](../b1/circulate.md) two spots, to become centers of the lines.
+From General Columns: Ends slide apart to become ends of Parallel Lines;
+centers [Column Circulate](../b1/circulate.md) two spots, to become centers of the Lines.
 
-**Notes**: The lines are close together after this call--there
+Note: The Lines are close together after this call--there
 is an implicit adjustment here.
 
 > 

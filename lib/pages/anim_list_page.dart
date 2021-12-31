@@ -165,7 +165,7 @@ class _AnimListState extends fm.State<AnimListFrame> {
       //  Build list item for this animation
       prevTitle = tamTitle;
       prevGroup = group;
-      final fullname = (tamTitle + (from.isNotBlank ? 'from':'') + from)
+      final fullname = (tamTitle + (group.isNotBlank ? '' : (from.isNotBlank ? 'from':'') + from))
           .replaceAll('[^a-zA-Z0-9]'.r, '');
       animListItems.add(AnimListItem(
           celltype: group.isBlank && group.isNotEmpty
@@ -181,6 +181,16 @@ class _AnimListState extends fm.State<AnimListFrame> {
     };
   }
 
+  void _selectAnimListItem(int index, TamState tamState, HighlightState highlightState) {
+    selectedItem = index;
+    final item = animListItems[index];
+    later(() {
+      highlightState.currentCall = item.title.replaceAll('[^a-zA-Z0-9]'.r, '');
+      //  this syncs the title
+      tamState.change(animnum: item.animnumber);
+    });
+  }
+
   @override
   fm.Widget build(fm.BuildContext context) {
     return fm.FutureBuilder<XmlDocument>(
@@ -189,6 +199,7 @@ class _AnimListState extends fm.State<AnimListFrame> {
             fm.AsyncSnapshot<XmlDocument> snapshot) {
           if (snapshot.hasData) {
             _loadList(snapshot.data!);
+            var foundLink = false;
             return fm.Column(children: [
               fm.Expanded(
                   child: fm.Scrollbar(
@@ -243,18 +254,22 @@ class _AnimListState extends fm.State<AnimListFrame> {
                             return fm.Container(
                                 child: pp.Consumer2<TamState,HighlightState>(
                                     builder: (context, tamState,highlightState,_) {
+                                      var animRegex = ('.*' + (tamState.animname??'!') + '.*').ri;
                                       if (selectedItem != index) {
-                                        if (item.animnumber == tamState.animnum ||
-                                            item.fullname == tamState.animname ||
-                                            (item.animnumber == 0 && tamState.animnum < 0 && (tamState.animname ?? '').isBlank)) {
-                                          // TODO cleanup - combine with onTap code below
-                                          selectedItem = index;
-                                          later(() {
-                                            highlightState.currentCall =
-                                                item.title.replaceAll(' ', '');
-                                            //  this syncs the title
-                                            tamState.change(animnum: item.animnumber);
-                                          });
+                                        //  Check for animation selected by name in link
+                                        if (!foundLink && item.fullname.matches(animRegex)) {
+                                          _selectAnimListItem(index, tamState, highlightState);
+                                          foundLink = true;
+                                        }
+                                        //  In case of link by number instead of name
+                                        else if (item.animnumber == tamState.animnum) {
+                                          _selectAnimListItem(index, tamState, highlightState);
+                                        }
+                                        //  Otherwise select first animation
+                                        else if (tamState.animnum < 0 &&
+                                            tamState.animname == null &&
+                                            item.animnumber == 0) {
+                                          _selectAnimListItem(index, tamState, highlightState);
                                         }
                                       }
                                       return fm.Material(
@@ -266,14 +281,12 @@ class _AnimListState extends fm.State<AnimListFrame> {
                                           highlightColor: backColor.darker(),
                                           onTap: () {
                                             setState(() {
-                                              selectedItem = index;
+                                              _selectAnimListItem(index, tamState, highlightState);
                                             });
                                             tamState.change(
                                                 mainPage: MainPage.ANIMATIONS,
                                                 animnum: item.animnumber
                                             );
-                                            highlightState.currentCall =
-                                                item.title.replaceAll(' ', '');
                                             pp.Provider.of<BeatNotifier>(context,listen: false).beat = 0.0;
                                           },
                                           child: fm.Container(

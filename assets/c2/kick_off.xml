@@ -48,4 +48,220 @@
     </path>
   </tam>
 
+  <tam title="Centers Cross Kick Off"
+       from="Right-Hand Two-Faced Line"
+       formation="Two-Faced Line RH" >
+    <path numbers="1 4">
+      <move select="Quarter Right" beats="3" offsetY="-2" />
+    </path>
+    <path numbers="2 3">
+      <move select="Lead Right" beats="2" scaleX="2" scaleY="2" />
+      <move select="Run Right" beats="3" offsetX="2" />
+    </path>
+  </tam>
+
+  <tam title="Centers Cross Kick Off"
+       from="Right-Hand Waves"
+       formation="Ocean Waves RH BGGB">
+    <path>
+      <move select="Lead Right" beats="3" scaleY="2" />
+    </path>
+    <path>
+      <move select="Lead Left" beats="2" scaleY="2" />
+      <move select="Run Left" beats="3" offsetX="2" />
+    </path>
+    <path>
+      <move select="Lead Left" beats="2" scaleX="2" scaleY="2" />
+      <move select="Run Left" beats="3" offsetX="2" offsetY="-1" />
+    </path>
+    <path>
+      <move select="Quarter Right" beats="3" offsetX="-1" offsetY="-2" />
+    </path>
+  </tam>
+
+  <tam title="Centers Cross Kick Off"
+       from="Left-Hand Waves"
+       formation="Ocean Waves LH BGGB">
+    <path>
+      <move select="Quarter Left" beats="3" offsetX="-1" offsetY="2" />
+    </path>
+    <path>
+      <move select="Lead Right" beats="2" scaleX="2" scaleY="2" />
+      <move select="Run Right" beats="3" offsetX="2" offsetY="1" />
+    </path>
+    <path>
+      <move select="Lead Right" beats="2" scaleY="2" />
+      <move select="Run Right" beats="3" offsetX="2" />
+    </path>
+    <path>
+      <move select="Lead Left" beats="3" scaleY="2" />
+    </path>
+  </tam>
+
+  <tam title="Centers Cross Kick Off"
+       from="Right-Hand Two-Faced Lines"
+       formation="Two-Faced Lines RH">
+    <path>
+      <move select="Lead Right" beats="3" scaleY="2" />
+    </path>
+    <path>
+      <move select="Lead Right" beats="2" scaleX="2" scaleY="2" />
+      <move select="Run Right" beats="3" offsetX="2" offsetY="1" />
+    </path>
+    <path>
+      <move select="Lead Right" beats="2" scaleY="2" />
+      <move select="Run Right" beats="3" offsetX="2" />
+    </path>
+    <path>
+      <move select="Quarter Right" beats="3" offsetX="-1" offsetY="-2" />
+    </path>
+  </tam>
+
+  <tam title="Centers Cross Kick Off"
+       from="Left-Hand Two-Faced Lines"
+       formation="Two-Faced Lines LH">
+    <path>
+      <move select="Quarter Left" beats="3" offsetX="-1" offsetY="2" />
+    </path>
+    <path>
+      <move select="Lead Left" beats="2" scaleY="2" />
+      <move select="Run Left" beats="3" offsetX="2" />
+    </path>
+    <path>
+      <move select="Lead Left" beats="2" scaleX="2" scaleY="2" />
+      <move select="Run Left" beats="3" offsetX="2" offsetY="-1" />
+    </path>
+    <path>
+      <move select="Lead Left" beats="3" scaleY="2" />
+    </path>
+  </tam>
+
+  <tam title="Centers Cross Kick Off"
+       from="Lines Facing Out"
+       formation="Lines Facing Out">
+    <path>
+      <move select="Quarter Left" beats="3" offsetX="-1" offsetY="2" />
+    </path>
+    <path>
+      <move select="Lead Left" scaleX=".5" />
+      <move select="Run Left" beats="3" offsetX="3" offsetY="-.5" />
+    </path>
+    <path>
+      <move select="Lead Right" scaleX="1.5" />
+      <move select="Run Right" beats="3" offsetX="3" offsetY="-.5" />
+    </path>
+    <path>
+      <move select="Quarter Right" beats="3" offsetX="-1" offsetY="-2" />
+    </path>
+  </tam>
+
+
+  <tam title="Ends Cross Kick Off"
+       from="Right-Hand Two-Faced Line"
+       formation="Two-Faced Line RH">
+    <path numbers="1 4">
+      <move select="Lead Right" beats="2" scaleX="2" scaleY="2" />
+      <move select="Run Right" beats="3" offsetX="2" />
+    </path>
+    <path numbers="2 3">
+      <move select="Quarter Left" beats="3" offsetY="2" />
+    </path>
+  </tam>
+
+
+  <tam title="Ends Cross Kick Off"
+       from="Right-Hand Waves"
+       formation="Ocean Waves RH BGGB">
+    <path>
+      <move select="Lead Right" beats="2" scaleX="1.5" scaleY="2" />
+      <move select="Run Right" beats="3" offsetX="2" offsetY="1.5" />
+    </path>
+    <path>
+      <move select="Quarter Right" beats="3" offsetX="-1" offsetY="-2" />
+    </path>
+    <path>
+      <move select="Lead Right" beats="3" scaleY="2" />
+    </path>
+    <path>
+      <move select="Lead Right" beats="2" scaleY="2" />
+      <move select="Run Right" beats="3" offsetX="2" />
+    </path>
+  </tam>
+
+  <tam title="Ends Cross Kick Off"
+       from="Left-Hand Waves"
+       formation="Ocean Waves LH BGGB">
+    <path>
+      <move select="Lead Left" beats="2" scaleY="2" />
+      <move select="Run Left" beats="3" offsetX="2" />
+    </path>
+    <path>
+      <move select="Lead Left" beats="3" scaleY="2" />
+    </path>
+    <path>
+      <move select="Quarter Left" beats="3" offsetX="-1" offsetY="2" />
+    </path>
+    <path>
+      <move select="Lead Left" beats="2" scaleX="1.5" scaleY="2" />
+      <move select="Run Left" beats="3" offsetX="2" offsetY="-1.5" />
+    </path>
+  </tam>
+
+  <tam title="Ends Cross Kick Off"
+       from="Right-Hand Two-Faced Lines"
+       formation="Two-Faced Lines RH">
+    <path>
+      <move select="Lead Right" beats="2" scaleX="1.5" scaleY="2" />
+      <move select="Run Right" beats="3" offsetX="2" offsetY="1.5" />
+    </path>
+    <path>
+      <move select="Lead Left" beats="3" scaleY="2" />
+    </path>
+    <path>
+      <move select="Quarter Left" beats="3" offsetX="-1" offsetY="2" />
+    </path>
+    <path>
+      <move select="Lead Right" beats="2" scaleY="2" />
+      <move select="Run Right" beats="3" offsetX="2" />
+    </path>
+  </tam>
+
+  <tam title="Ends Cross Kick Off"
+       from="Left-Hand Two-Faced Lines"
+       formation="Two-Faced Lines LH">
+    <path>
+      <move select="Lead Left" beats="2" scaleY="2" />
+      <move select="Run Left" beats="3" offsetX="2" />
+    </path>
+    <path>
+      <move select="Quarter Right" beats="3" offsetX="-1" offsetY="-2" />
+    </path>
+    <path>
+      <move select="Lead Right" beats="3" scaleY="2" />
+    </path>
+    <path>
+      <move select="Lead Left" beats="2" scaleX="1.5" scaleY="2" />
+      <move select="Run Left" beats="3" offsetX="2" offsetY="-1.5" />
+    </path>
+  </tam>
+
+  <tam title="Ends Cross Kick Off"
+       from="Lines Facing Out"
+       formation="Lines Facing Out">
+    <path>
+      <move select="Lead Left" beats="3" scaleX=".5" scaleY="3" />
+      <move select="Run Left" offsetX="1" offsetY="-.5" />
+    </path>
+    <path>
+      <move select="Quarter Right" beats="3" offsetX="-1" offsetY="-2" />
+    </path>
+    <path>
+      <move select="Quarter Left" beats="3" offsetX="-1" offsetY="2" />
+    </path>
+    <path>
+      <move select="Lead Right" beats="3" scaleX="1.5" scaleY="3" />
+      <move select="Run Right" offsetX="1" offsetY="-.5" />
+    </path>
+  </tam>
+
 </tamination>

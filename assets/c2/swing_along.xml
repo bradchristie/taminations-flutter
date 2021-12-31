@@ -22,6 +22,53 @@
 -->
 <tamination title="Swing Along">
 
+  <tam title="Along"
+       from="Right-Hand Tidal Wave"
+       formation="Tidal Wave RH BGBG">
+    <path couples="3 1">
+      <move select="Forward" />
+      <move select="Lead Right" beats="6" scaleX="2" scaleY="5.5" />
+    </path>
+    <path couples="3 1">
+      <move select="Hinge Left" scaleY=".5" />
+      <move select="Forward 4" />
+      <move select="Swing Left" />
+    </path>
+    <path couples="4 2">
+      <move select="Hinge Left" scaleY=".5" />
+      <move select="Flip Left" beats="4" />
+      <move select="Swing Left" />
+    </path>
+    <path couples="4 2">
+      <move select="Hinge Left" scaleY=".5" />
+      <move select="Forward 2" />
+      <move select="Flip Right" />
+    </path>
+  </tam>
+
+  <tam title="Along"
+       from="Left-Hand Tidal Wave"
+       formation="Tidal Wave LH BGGB">
+    <path>
+      <move select="Forward" />
+      <move select="Lead Left" beats="6" scaleX="2" scaleY="5.5" />
+    </path>
+    <path>
+      <move select="Hinge Right" scaleY=".5" />
+      <move select="Forward 4" />
+      <move select="Swing Right" />
+    </path>
+    <path>
+      <move select="Hinge Right" scaleY=".5" />
+      <move select="Flip Right" beats="4" />
+      <move select="Swing Right" />
+    </path>
+    <path>
+      <move select="Hinge Right" scaleY=".5" />
+      <move select="Forward 2" />
+      <move select="Flip Left" />
+    </path>
+  </tam>
 
 
   <tam title="Swing Along" from="Right-Hand Tidal Wave"

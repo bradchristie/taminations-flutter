@@ -1,10 +1,10 @@
 
 # Turn to a Line
 
-From any non-T-bone box of four: Leaders face right, trailers face left; all 
+From any non-T-Bone Box of four: Leaders face right, trailers face left; all 
 [Extend](../b2/extend.md) twice; all face again in their initial turning direction (as in 
 [Turn and Deal](../a1/turn_and_deal.md)) to end facing opposite 
-to their initial direction in a line or wave. This
+to their initial direction in a Line or Wave. This
 call cannot be fractionalized.
 
 > 

@@ -157,4 +157,141 @@
       <move select="Run Right" beats="6" scaleX="2" scaleY="3" />
     </path>
   </tam>
+
+  <tam title="Here Comes the Judge"
+       from="Lines Facing In"
+       formation="Normal Lines">
+    <path>
+      <move select="Flip Right" beats="6" />
+    </path>
+    <path>
+      <move select="Flip Right" beats="6" />
+    </path>
+    <path>
+      <move select="Flip Right" beats="6" />
+    </path>
+    <path>
+      <move select="Run Left" beats="6" scaleX="1.5" scaleY="3" />
+    </path>
+  </tam>
+
+  <tam title="Here Comes the Judge"
+       from="Lines Facing Out"
+       formation="Lines Facing Out">
+    <path numbers="5 4">
+      <move select="Run Left" beats="6" scaleX="2" scaleY="3" />
+    </path>
+    <path numbers="6 3">
+      <move select="Flip Right" beats="6" />
+    </path>
+    <path numbers="7 2">
+      <move select="Flip Right" beats="6" />
+    </path>
+    <path numbers="8 1">
+      <move select="Flip Right" beats="6" />
+    </path>
+  </tam>
+
+  <tam title="Here Comes the Judge"
+       from="Inverted Lines, Ends Facing In"
+       formation="Inverted Lines Ends Facing In">
+    <path>
+      <move select="Flip Right" beats="6" />
+    </path>
+    <path>
+      <move select="Flip Left" beats="6" />
+    </path>
+    <path>
+      <move select="Flip Left" beats="6" />
+    </path>
+    <path>
+      <move select="Run Left" beats="6" scaleX="1.5" scaleY="3" />
+    </path>
+  </tam>
+
+  <tam title="Here Comes the Judge"
+       from="Inverted Lines, Ends Facing Out"
+       formation="Inverted Lines Ends Facing Out">
+    <path>
+      <move select="Run Left" beats="6" scaleX="2" scaleY="3" />
+    </path>
+    <path>
+      <move select="Flip Left" beats="6" />
+    </path>
+    <path>
+      <move select="Flip Left" beats="6" />
+    </path>
+    <path>
+      <move select="Flip Right" beats="6" />
+    </path>
+  </tam>
+
+  <tam title="Here Comes the Judge"
+       from="3 and 1 Lines #2"
+       formation="3 and 1 lines #2">
+    <path>
+      <move select="Flip Right" beats="6" />
+    </path>
+    <path>
+      <move select="Flip Left" beats="6" />
+    </path>
+    <path>
+      <move select="Flip Right" beats="6" />
+    </path>
+    <path>
+      <move select="Run Left" beats="6" scaleX="1.5" scaleY="3" />
+    </path>
+  </tam>
+
+  <tam title="Here Comes the Judge"
+       from="3 and 1 Lines #3"
+       formation="3 and 1 lines #3">
+    <path>
+      <move select="Flip Right" beats="6" />
+    </path>
+    <path>
+      <move select="Flip Right" beats="6" />
+    </path>
+    <path>
+      <move select="Flip Left" beats="6" />
+    </path>
+    <path>
+      <move select="Run Left" beats="6" scaleX="1.5" scaleY="3" />
+    </path>
+  </tam>
+
+  <tam title="Here Comes the Judge"
+       from="3 and 1 Lines #6"
+       formation="3 and 1 lines #6">
+    <path>
+      <move select="Run Left" beats="6" scaleX="2" scaleY="3" />
+    </path>
+    <path>
+      <move select="Flip Left" beats="6" />
+    </path>
+    <path>
+      <move select="Flip Right" beats="6" />
+    </path>
+    <path>
+      <move select="Flip Right" beats="6" />
+    </path>
+  </tam>
+
+  <tam title="Here Comes the Judge"
+       from="3 and 1 Lines #7"
+       formation="3 and 1 lines #7">
+    <path>
+      <move select="Run Left" beats="6" scaleX="2" scaleY="3" />
+    </path>
+    <path>
+      <move select="Flip Right" beats="6" />
+    </path>
+    <path>
+      <move select="Flip Left" beats="6" />
+    </path>
+    <path>
+      <move select="Flip Right" beats="6" />
+    </path>
+  </tam>
+
 </tamination>

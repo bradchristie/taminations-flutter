@@ -1,8 +1,8 @@
 
 # Offset Waves/Lines/Columns Concept
 
-Dancers arranged as shown on the left act as though they are in columns or
-lines and do the call, ending back on the same offset spots. 
+Dancers arranged as shown on the left act as though they are in Columns or
+Lines and do the call, ending back on the same offset spots. 
 
 Offset Lines, [Couples Circulate](../b1/circulate.md): 
 
@@ -11,8 +11,8 @@ Offset Lines, [Couples Circulate](../b1/circulate.md):
 > 
 
 From the 3x4 style of Offset Lines, a call that rotates the 2x4 formation
-(e.g. [Bend The Line](../b1/bend_the_line.md)), finishes in a parallelogram. For example: Offset
-Lines, [Bend the Line](../b1/bend_the_line.md):
+(for example, [Bend The Line](../b1/bend_the_line.md)), finishes in a Parallelogram. 
+For example: Offset Lines, [Bend the Line](../b1/bend_the_line.md):
 
 > 
 > ![alt](offset_concept_2.png)

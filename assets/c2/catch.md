@@ -1,7 +1,7 @@
 
 # Catch 1, 2, 3, 4
 
-From facing couples: [Square Thru](../b1/square_thru.md) *n* to a wave,
+From Facing Couples: [Square Thru](../b1/square_thru.md) *n* to a wave,
 Centers [Trade](../b2/trade.md), [Step and Fold](../c1/step_and_fold.md).
 The [Ocean Wave Rule](../b2/ocean_wave_rule.md) applies to this call.
 For example: Catch 3:

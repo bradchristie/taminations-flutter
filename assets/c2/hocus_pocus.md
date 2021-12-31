@@ -1,7 +1,7 @@
 
 # Hocus Pocus
 
-From parallel lines, waves, columns, and other applicable formations: The
+From Parallel Lines, Waves, Columns, and other applicable formations: The
 centers [Trade](../b2/trade.md) while the others [Phantom](../c1/phantom_formation.md)
 [O Circulate](../c1/o_formation.md) twice.
 

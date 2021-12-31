@@ -52,4 +52,26 @@
 	</path>
   </tam>
 
+  <tam title="Reverse Truck" from="Double Pass Thru, Girls in Center"
+       sequencer="gender-specific">
+    <formation>
+      <dancer gender="boy" x="-3" y="1" angle="0"/>
+      <dancer gender="girl" x="-1" y="1" angle="0"/>
+      <dancer gender="boy" x="-3" y="-1" angle="0"/>
+      <dancer gender="girl" x="-1" y="-1" angle="0"/>
+    </formation>
+    <path>
+      <move select="Dodge Right" hands="right"/>
+    </path>
+    <path>
+      <move select="Dodge Left" hands="right"/>
+    </path>
+    <path>
+      <move select="Dodge Right" hands="left"/>
+    </path>
+    <path>
+      <move select="Dodge Left" hands="left"/>
+    </path>
+  </tam>
+
 </tamination>

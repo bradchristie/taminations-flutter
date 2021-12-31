@@ -1,5 +1,5 @@
 
-# Press In/Out/Left/Right
+# Press In / Out / Left / Right
 
 From any appropriate formation: Those designated move
 one dancer position forward and in the direction

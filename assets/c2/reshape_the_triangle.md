@@ -2,12 +2,12 @@
 # Reshape the Triangle
 
 From a Triangle: [Triangle Circulate](../c1/triangle_formation.md)
-while changing the nature of the triangle from wave-based to
-tandem-based, or vice versa, and preserving handedness.
+while changing the nature of the triangle from Wave-Based to
+Tandem-Based, or vice versa, and preserving handedness.
 Those circulating to a base position
 increase or decrease their turning amounts by 90 degrees, as described below.
 
-From a Wave-based Triangle: the dancer going to the apex circulates as usual,
+From a Wave-Based Triangle: the dancer going to the apex circulates as usual,
 the apex circulates while turning 180 degrees,
 and the other dancer circulates while turning only 90 degrees.
 
@@ -16,7 +16,7 @@ and the other dancer circulates while turning only 90 degrees.
 > ![alt](reshape_the_triangle_2.png)
 > 
 
-From a Tandem-based Triangle: the dancer going to the apex circulates as usual,
+From a Tandem-Based Triangle: the dancer going to the apex circulates as usual,
 the apex circulates while turning only 90 degrees,
 and the other dancer circulates while turning 90 degrees
 to face toward the apex.
@@ -26,14 +26,14 @@ to face toward the apex.
 > ![alt](reshape_the_triangle_4.png)
 > 
 
-Notes:
+Notes about Reshape the Triangle:
 
 Because most setups with triangles actually contain multiple triangles,
 it is common practice to first identify the triangles,
 and then call “Reshape the Triangle” or simply “Reshape”. For example,
 "Inside Triangles, Reshape".
 
-3 by 2 Reshape is an extension of 3 by 2 Acey Deucey
+**3 by 2 Reshape** is an extension of 3 by 2 Acey Deucey
 in which dancers replace Triangle Circulate by Reshape the Triangle.
 
 The command 3x1 Triangle, Reshape (or Reshape the 3x1 Triangle) is proper
@@ -45,9 +45,9 @@ for Tandem-based Triangles above.
 > ![alt](reshape_the_triangle_6.png)
 > 
 
-Some callers use Reshape the Triangle from T-boned triangles.
+Some callers use Reshape the Triangle from T-Boned triangles.
 Dancers complete the call after individually determining
-whether to treat the Triangle as Wave-based or Tandem-based, as in
+whether to treat the Triangle as Wave-Based or Tandem-Based, as in
 Triangle Circulate (base dancers make this determination
 by using their own facing direction and
 apex dancers by using the facing direction of the position

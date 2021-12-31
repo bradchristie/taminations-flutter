@@ -1,12 +1,14 @@
 
-# Tandem-Based Triangle Formation
+# Tandem-Based Triangle Calls
 
 In a Tandem-based Triangle, the apex is the trailer. Mentally add a phantom
 in front of the apex to make a box of four. Now such calls as 
 [Peel Off](../plus/peel_off.md), 
 [Peel and Trail](../a2/peel_and_trail.md), 
 and [Trail Off](../a2/trail_off.md) can be done treating the 
-Tandem-Based Triangle as a box of four. Tandem-Based Triangle Peel & Trail:
+Tandem-Based Triangle as a box of four. 
+
+Tandem-Based Triangle Peel & Trail:
 
 > 
 > ![alt](tandem_based_triangle.png)

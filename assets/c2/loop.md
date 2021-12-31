@@ -1,5 +1,5 @@
 
-# (Right/Left) Loop 1, 2, 3
+# Right / Left Loop 1, 2, 3
 
 From anywhere a [Run](../b2/run.md) is possible, or from a single dancer: The designated
 dancer does a [Run](../b2/run.md) around the adjacent vacant spot or dancer, who does not

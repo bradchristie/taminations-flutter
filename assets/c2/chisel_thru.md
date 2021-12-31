@@ -1,10 +1,10 @@
 
 # Chisel Thru
 
-From facing lines: [Concentric Pass In](../c1/concentric_concept.md). 
+From Facing Lines: [Concentric Pass In](../c1/concentric_concept.md). 
 Then the ends [Pass In](../a1/pass_in.md) as the centers 
 [Pass Out](../a1/pass_out.md). Then all [Pass In](../a1/pass_in.md). 
-Finishes in facing lines. This is a 3-part call.
+Finishes in Facing Lines. This is a 3-part call.
 
 > 
 > ![alt](chisel_thru_1a.png)
