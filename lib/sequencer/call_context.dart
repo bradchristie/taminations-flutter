@@ -102,7 +102,7 @@ class CallContext {
     'b1/lead_right',
     'b2/first_couple_go',
     'a1/as_couples',
-    'c1/all_eight_recycle',
+    'c1/recycle',
     'c1/stretch_concept',
     'c1/butterfly_formation',
     'c1/concentric_concept',

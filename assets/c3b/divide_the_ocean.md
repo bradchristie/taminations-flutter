@@ -1,5 +1,5 @@
 
-# Divide The Ocean | Sea direction | anything
+# Divide The Ocean | Sea *direction* | *anything*
 
 From a Generalized Tidal Line.
 
@@ -10,7 +10,7 @@ Outside 4 Cast Off 3/4 and
 (if Sea) as the others Hinge,
 [Partner Tag](../a1/partner_tag.md),
 [Press Ahead](../c1/press.md),
-and individually turn 1/4 toward the given direction or do the anything call.
+and individually turn 1/4 toward the given *direction* or do the *anything* call.
 
 Usually ends in Parallel Lines.
 

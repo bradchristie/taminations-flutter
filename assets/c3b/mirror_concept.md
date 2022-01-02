@@ -1,7 +1,7 @@
 
 # Mirror Concept
 
-The **Mirror Concept** is accomplished by executing the definition of the given call and replacing:
+The **Mirror** CONCEPT is accomplished by executing the definition of the given call and replacing:
 - Right with Left and vice-versa; and
 - Beau with Belle and vice-versa.
 

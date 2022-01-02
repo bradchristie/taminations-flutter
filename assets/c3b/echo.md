@@ -1,7 +1,7 @@
 
-# Echo any Concept anything
+# Echo CONCEPT
  
-1. {high:Part1}Do any Concept anything{/high}; then 
-1. {high:Part2}Do anything{/high}. 
+1. ***Do *{any Concept}* _{anything}_***; then
+2. ***do _{anything}_***. 
 
 ###### @ Vic Ceder. All Rights Reserved.  Used with permission.

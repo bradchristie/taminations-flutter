@@ -4,9 +4,9 @@
 From a Mini-Wave Box (or other applicable 2 x 2 if fractionalized).
 
 1. 1/2 Zoom; 
-1. Hinge; 
-1. 1/2 Zoom; 
-1. Hinge.
+2. Hinge; 
+3. 1/2 Zoom; 
+4. Hinge.
 
 Ends in a Mini-Wave Box. **Reset** is a 4-part call.
 

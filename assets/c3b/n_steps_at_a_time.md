@@ -3,15 +3,24 @@
 
 From Columns.
 
-The First n dancers
-{high:Part1}[Peel Off](../plus/peel_off.md){/high}
-to end in a Line of n,
-{high:Part2}Step Ahead as necessary to form a Concentric Line of 2n{/high} and
-{high:Part3}Bend The Line of 2n{/high}
-as the other dancers {high:Part1}Extend{/high} (using Circulates)
+The First *n* dancers
+***[Peel Off](../plus/peel_off.md)***
+to end in a Line of *n*,
+***Step Ahead as necessary to form a Concentric Line of 2n*** and
+***Bend The Line of 2n***
+as the other dancers ***Extend*** (using Circulates)
 to form a compact formation,
-{high:Part2}Trade{/high}, and {high:Part3}Roll{/high}.
+***Trade***, and ***Roll***.
 
-**n Step(s) At A Time** can be fractionalized into thirds.
+**_n_ Step(s) At A Time** can be fractionalized into thirds.
 
 ###### @ Vic Ceder. All Rights Reserved.  Used with permission.
+
+<!-- Parts
+.Steps?ataTime1
+.Steps?ataTime2
+.Steps?ataTime3
+.Steps?ataTime1
+.Steps?ataTime2
+.Steps?ataTime3
+-->

@@ -117,8 +117,7 @@
   <call link="c1/chain_reaction" title="Chain Reaction"/>
   <call link="c2/chain_the_square" title="Chain the Square"/>
   <call link="c3b/change_lanes" title="Change Lanes"/>
-  <call link="c3b/change_the_centers" title="Change the Centers"/>
-  <call link="c3b/change_the_centers" title="Change the Wave"/>
+  <call link="c3b/change_the_centers" title="Change the Centers / Wave"/>
   <call link="c3b/change_your_image" title="Change Your Image"/>
   <call audio="plus/chase_right.mp3" languages="lang-ja" link="plus/chase_right" title="Chase Right"/>
   <call link="c3b/chase_the_fraction_tag" title="Chase the fraction Tag"/>

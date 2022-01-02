@@ -4,7 +4,7 @@
 From Facing Couples.
 
 
-**Swap The Top** [C3A]:  
+**Swap The Top** [[C3A](../c3a/swap_the_top.md)]:  
 Belles Extend (L-H) and Cast Off 3/4 as Beaus Run once and a half.  
 Ends in a R-H Wave.
 
@@ -12,14 +12,14 @@ Ends in a R-H Wave.
 Belles Cross Extend (R-H) and Cast Off 3/4 as Beaus Run once and a half.  
 Ends in a R-H Two-Faced Line.
 
-**Mirror Swap The Top**:  
+**Reverse Swap The Top** [C3A]:  
 Beaus Extend (R-H) and Cast Off 3/4 as Belles Run once and a half.  
-Ends in a L-H Wave.
-Historically known as **Reverse Swap The Top**.
+Ends in a L-H Wave.  
+At C3B and above, callers many instead say **Mirror Swap The Top**.
 
-**Mirror Cross Swap The Top**:  
+**Reverse Cross Swap The Top**:  
 Beaus Cross Extend (L-H) and Cast Off 3/4 as Belles Run once and a half.  
 Ends in a L-H Two-Faced Line.  
-Historically known as **Reverse Cross Swap The Top**.
+At C3B and above, callers many instead say **Mirror Cross Swap The Top**.
 
 ###### @ Vic Ceder. All Rights Reserved.  Used with permission.

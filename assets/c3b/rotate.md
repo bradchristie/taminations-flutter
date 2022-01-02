@@ -13,6 +13,8 @@ Rotates can also be called from Parallel Lines or from a 2 x 2 (e.g., In Your Bl
 At C3B,  
 Rotates can also be called from Columns.
 
+---
+
 ## Procedure for dancing Rotates:
 0. Identify the center point of your setup. The center point of your setup is the very center point of the square (commonly called the "flagpole center") except in the following cases:
     * If you are in a 2 x 4 formation and are in Lines, the center point is the Center of each Box (i.e., work Split). If you are in a 2 x 4 T-Bone, the center point for the Column dancers is the flagpole center, whereas the Line dancers are working Split.
@@ -40,7 +42,7 @@ Turn 1/4 so that your left shoulder is toward the Center of your formation.
 Turn 1/4 so that your right shoulder is toward the Center of your formation.
 
 2. [Counter Rotate](../c1/counter_rotate.md)
-the given fraction around that center point.
+the given fraction around that center point.  
 From a Squared Set, active dancers work around the outside of the set. The inactive dancers should move into the center of the set.
 
 ###### @ Vic Ceder. All Rights Reserved.  Used with permission.

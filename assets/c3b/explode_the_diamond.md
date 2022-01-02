@@ -3,7 +3,7 @@
 
 From Twin Diamonds, a 3/4 Tag, or other applicable formations.
 
-Centers Explode The Wave as Ends Circulate and the Lead End U-Turn Back.
+Centers [Explode The Wave](../plus/explode_the_wave.md) as Ends Circulate and the Lead End U-Turn Back.
 
 Twin Diamonds end in Parallel Inverted Lines.
 

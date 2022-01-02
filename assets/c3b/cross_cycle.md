@@ -3,9 +3,9 @@
 
 **From a Two-Faced Line**:
 
-1. {high:CrossCycle3distinctparts1 CrossCycle1}Centers Cross Fold and all adjust to a Box{/high} ([Bounce The Centers](../c2/bounce.md)); 
-1. {high:CrossCycle3distinctparts2 CrossCycle1}Box Counter Rotate 1/4{/high}; 
-1. {high:CrossCycle3distinctparts3 CrossCycle2}Roll{/high}. 
+1. ***Centers Cross Fold and all adjust to a Box*** ([Bounce The Centers](../c2/bounce.md)); 
+2. ***Box Counter Rotate 1/4***;
+3. ***Roll***. 
 
 Ends in Facing Couples.
 

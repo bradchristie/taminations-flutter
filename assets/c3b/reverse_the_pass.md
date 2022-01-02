@@ -4,8 +4,8 @@
 From Tandem Couples.
 
 1. Leaders Trade; 
-1. all Pass Thru; 
-1. Original Trailers Trade.
+2. all Pass Thru; 
+3. Original Trailers Trade.
 
 Ends in Tandem Couples.
 

@@ -1,10 +1,10 @@
 
-# Stingy | Generous anything
+# Generous / Stingy CONCEPT
 
-**Stingy** Do the anything
+**Stingy** Do the *{anything}*
 call, but subtract a 1/4 turn from the first Arm Turn of the call.
 
-**Generous** Do the anything
+**Generous** Do *{athe anything}*
 call, but add a 1/4 turn from the first Arm Turn of the call.
 
 For the purposes of Stingy and Generous, an Arm Turn is limited to the following movements as defined in the
