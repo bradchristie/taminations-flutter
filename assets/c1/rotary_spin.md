@@ -1,13 +1,13 @@
 
 # Rotary Spin
 
-From eight chain thru:
+From Eight Chain Thru:
 ***Everyone does a Right [Pull By](../b1/pull_by.md)***,
 then ***the centers step to a left-hand wave and 
 [Cast Off 3/4](../ms/cast_off_three_quarters.md) 
 while the ends [Courtesy Turn](../b1/courtesy_turn.md) and
 [Roll](../plus/anything_and_roll.md)***. Ends in
-parallel right-hand waves.
+Parallel Right-Hand Waves.
 
 > 
 > ![alt](rotary_spin.png)

@@ -3,11 +3,11 @@
 
 At C-1, the restrictions from the Advanced Program on the
 formations from which you may call [Chain Reaction](../a1/chain_reaction.md) are
-removed. In effect, this adds quarter lines and a two-faced
-line or a wave between parallel mini-waves to the list of
-starting formations. For example:
+removed. In effect, this adds 1/4 Lines and a Two-Faced
+Line or a Wave between Parallel Mini-Waves to the list of
+starting formations. Examples:
 
-- Two-faced line:
+Right-Hand 1/4 Line:
 > 
 > ![alt](chain_reaction_1a.png)
 > ![alt](chain_reaction_1b.png)
@@ -17,7 +17,7 @@ starting formations. For example:
 >
 
 
-- Two-faced line between mini-waves:  
+- Two-Faced Line between Mini-Waves:  
 >
 > ![alt](chain_reaction_2a.png)
 > ![alt](chain_reaction_2b.png)

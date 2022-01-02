@@ -1,7 +1,7 @@
 
 # Wheel Fan Thru
 
-From facing couples: Start a [Wheel Thru](../a1/wheel_thru.md), but as the beaus
+From Facing Couples: Start a [Wheel Thru](../a1/wheel_thru.md), but as the beaus
 meet, they [Trade](../b2/trade.md) (by the right) and then all complete the
 [Wheel Thru](../a1/wheel_thru.md).
 

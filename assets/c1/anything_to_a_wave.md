@@ -1,11 +1,12 @@
 
-# (Anything) to a Wave
+# \<anything> to a Wave
 
-From wherever is appropriate for the "Anything" call:
-The "Anything" call must have as its final action
+From wherever is appropriate for the \<anything> call:
+The \<anything> call must have as its final action
 a Step Thru or Extend.
-Do all of the "Anything" call, except for the final Step Thru or Extend. For
-example, in [Square Chain Thru to a Wave](../a1/square_chain_thru.md), the dancers
+Do the \<anything> call, except for the final Step Thru or Extend. 
+
+For example, in [Square Chain Thru to a Wave](../a1/square_chain_thru.md), the dancers
 would do all of the call except for stepping forward on the
 final Turn Thru:
 

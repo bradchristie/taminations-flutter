@@ -26,11 +26,9 @@ all Left [Turn Thru](../ms/turn_thru.md).
 Ends in Back-to-Back Couples.
 
 **Split Dixie Style to a Wave**. From an appropriate T-Bone Box:
-{high:SplitDixieStyletoaWave1}Those facing Right
-[Pull By](../b1/pull_by.md) and
-[Quarter In](../a1/quarter_in.md){/high};
-{high:SplitDixieStyletoaWave2}all Left
-[Touch 1/4](../b2/touch_a_quarter.md){/high}.
+Those facing Right [Pull By](../b1/pull_by.md) and
+[Quarter In](../a1/quarter_in.md);
+all Left [Touch 1/4](../b2/touch_a_quarter.md). 
 Ends in a Left-Hand Box.
 
 **Split Dixie Diamond**. From appropriate T-Bone Boxes:

@@ -2,7 +2,7 @@
 <!DOCTYPE calls SYSTEM "calls.dtd">
 <!--
 
-    Copyright 2022 Brad Christie
+    Copyright 2021 Brad Christie
 
     This file is part of Taminations.
 
@@ -28,7 +28,7 @@
   <call link="c3a/1_4_wheel_the_ocean" title="1/4 Wheel the Ocean"/>
   <call link="c3a/1_4_wheel_the_ocean?animname=14WheeltheSeafromLeftHandTwoFacedLine"
         title="1/4 Wheel the Sea"/>
-  <call link="c1/2_3_recycle" title="2/3 Recycle"/>
+  <call link="c1/recycle?animname=23Recycle" title="2/3 Recycle"/>
   <call link="c2/3_by_1_checkmate_the_column" title="3 by 1 Checkmate the Column"/>
   <call link="c2/3_by_1_transfer_the_column" title="3 by 1 Transfer The Column"/>
   <call link="c2/3_by_1_triangle_formation" title="3 by 1 Triangle Formation"/>
@@ -46,7 +46,7 @@
   <call link="a2/all_4_all_8" title="All 4 Couples / All 8 concepts"/>
   <call audio="plus/all_8_spin_the_top.mp3" languages="lang-ja" link="plus/all_8_spin_the_top"
         title="All 8 Spin the Top"/>
-  <call link="c1/all_eight_recycle" title="All Eight Recycle"/>
+  <call link="c1/recycle?animname=AllEightRecycle" title="All Eight Recycle"/>
   <call languages="lang-de lang-ja" link="b1/allemande" title="Allemande Left"/>
   <call languages="lang-de lang-ja" link="ssd/allemande" title="Allemande Left"/>
   <call languages="lang-de lang-ja" link="ms/thar" title="Allemande Thar"/>
@@ -86,7 +86,7 @@
   <call link="c3b/boomerang" title="Boomerang"/>
   <call link="c2/bounce_the_anyone" title="Bounce the Anyone"/>
   <call audio="a2/box_counter_rotate.mp3" link="a2/box_counter_rotate" title="Box Counter Rotate"/>
-  <call link="c1/box_split_recycle" title="Box Recycle" />
+  <call link="c1/recycle?animname=BoxRecycle" title="Box Recycle" />
   <call audio="b2/box_the_gnat.mp3" languages="lang-ja lang-de" link="b2/box_the_gnat" title="Box the Gnat"/>
   <call audio="ssd/box_the_gnat.mp3" languages="lang-ja lang-de" link="ssd/box_the_gnat" title="Box the Gnat"/>
   <call audio="a2/box_transfer.mp3" link="a2/box_transfer" title="Box Transfer"/>
@@ -99,6 +99,7 @@
   <call audio="b1/california_twirl.mp3" languages="lang-de lang-ja" link="b1/california_twirl" title="California Twirl"/>
   <call audio="ssd/california_twirl.mp3" languages="lang-de lang-ja" link="ssd/california_twirl" title="California Twirl"/>
   <call audio="a1/cast_a_shadow.mp3" link="a1/cast_a_shadow" title="Cast a Shadow"/>
+  <call audio="a1/cast_a_shadow.mp3" link="c1/cast_a_shadow" title="Cast a Shadow"/>
   <call link="c3b/fraction_cast_and_relay" title="Cast and Relay"/>
   <call link="c1/cast_back" title="Cast Back"/>
   <call audio="ms/cast_off_three_quarters.mp3" languages="lang-de lang-ja" link="ms/cast_off_three_quarters"
@@ -158,8 +159,8 @@
   <call link="c2/cross_and_wheel" title="Cross and Wheel"/>
   <call link="c2/cross_back" title="Cross Back"/>
   <call link="c1/cross_by" title="Cross By"/>
-  <call link="c1/cross_cast_back" title="Cross Cast Back"/>
-  <call link="c1/cross_chain_and_roll" title="Cross Chain And Roll"/>
+  <call link="c1/cast_back?animname=CrossCastBack" title="Cross Cast Back"/>
+  <call link="c1/cross_chain_thru?animname=CrossChainandRoll" title="Cross Chain And Roll"/>
   <call link="c3a/cross_chain_reaction" title="Cross Chain Reaction"/>
   <call link="c1/cross_chain_thru" title="Cross Chain Thru"/>
   <call link="c3b/chuck_a_luck" title="Cross Chuck-A-Luck"/>
@@ -187,9 +188,9 @@
   <call link="c1/cross_your_neighbor" title="Cross Your Neighbor"/>
   <call audio="plus/crossfire.mp3" languages="lang-ja" link="plus/crossfire" title="Crossfire"/>
   <call audio="plus/cut_the_diamond.mp3" languages="lang-ja" link="plus/cut_the_diamond" title="Cut the Diamond"/>
-  <call link="c1/cut_the_galaxy" title="Cut the Galaxy"/>
+  <call link="c1/galaxy_formation?animname=CuttheGalaxy" title="Cut the Galaxy"/>
   <call audio="a2/cut_the_hourglass.mp3" link="a2/cut_the_hourglass" title="Cut the Hourglass"/>
-  <call link="c1/cut_the_interlocked_diamond" title="Cut the Interlocked Diamond"/>
+  <call link="c1/interlocked_diamond_circulate?animname=CuttheInterlockedDiamond" title="Cut the Interlocked Diamond"/>
   <call audio="a1/cycle_and_wheel.mp3" link="a1/cycle_and_wheel" title="Cycle and Wheel"/>
 
   <call link="c1/replace" title="Delete"/>
@@ -256,9 +257,9 @@
   <call link="c3a/flare_out_to_a_line" title="Flare Out to a Line"/>
   <call link="c1/tagging_calls_back_to_a_wave" title="Flip Back"/>
   <call audio="plus/flip_the_diamond.mp3" languages="lang-ja" link="plus/flip_the_diamond" title="Flip the Diamond"/>
-  <call link="c1/flip_the_galaxy" title="Flip the Galaxy"/>
+  <call link="c1/galaxy_formation?animname=FliptheGalaxy" title="Flip the Galaxy"/>
   <call audio="a2/flip_the_hourglass.mp3" link="a2/flip_the_hourglass" title="Flip the Hourglass"/>
-  <call link="c1/flip_the_interlocked_diamond" title="Flip the Interlocked Diamond"/>
+  <call link="c1/interlocked_diamond_circulate?animname=FliptheInterlockedDiamond" title="Flip the Interlocked Diamond"/>
   <call link="c1/flip_the_line" title="Flip the Line"/>
   <call link="c3b/flip_your_lid" title="Flip Your Lid"/>
   <call link="c2/any_tagging_call_your_neighbor" title="Flip Your Neighbor"/>
@@ -279,7 +280,7 @@
   <call link="a1/fractional_tops" title="Fractional Tops"/>
   <call link="c2/funny_concept" title="Funny Concept"/>
 
-  <call link="c1/galaxy_circulate" title="Galaxy Circulate"/>
+  <call link="c1/galaxy_formation?animname=GalaxyCirculate" title="Galaxy Circulate"/>
   <call link="c1/galaxy_formation" title="Galaxy Formation"/>
   <call link="c3b/gee_whiz" title="Gee Whiz"/>
   <call link="c3b/stingy_generous" title="Generous"/>
@@ -348,7 +349,6 @@
   <call audio="b1/lead_right.mp3" languages="lang-de lang-ja" link="b1/lead_right" title="Lead Right / Left"/>
   <call audio="ssd/lead_right.mp3" languages="lang-de lang-ja" link="ssd/lead_right" title="Lead Right Left"/>
   <call link="a1/left" title="Left"/>
-  <call link="c1/left" title="Left"/>
   <call languages="lang-de" link="b1/arm_turns" title="Left Arm Turn"/>
   <call languages="lang-de" link="ssd/arm_turns" title="Left Arm Turn"/>
   <call audio="plus/chase_right.mp3" languages="lang-ja" link="plus/chase_right" title="Left Chase"/>
@@ -408,7 +408,7 @@
   <call audio="a1/partner_tag.mp3" link="a1/partner_tag" title="Partner Tag"/>
   <call audio="a2/pass_and_roll.mp3" link="a2/pass_and_roll" title="Pass and Roll"/>
   <call link="c2/criss_cross_your_neighbor" title="Pass and Roll Your Criss Cross Neighbor"/>
-  <call link="c1/cross_your_neighbor" title="Pass and Roll Your Cross Neighbor"/>
+  <call link="c1/cross_your_neighbor?animname=PassandRollYourCrossNeighbor" title="Pass and Roll Your Cross Neighbor"/>
   <call audio="a2/pass_and_roll_your_neighbor.mp3" link="a2/pass_and_roll_your_neighbor"
         title="Pass and Roll Your Neighbor"/>
   <call audio="a1/pass_in.mp3" link="a1/pass_in" title="Pass In"/>
@@ -452,14 +452,14 @@
   <call link="c3a/quick" title="Quick"/>
 
   <call link="c3a/rally" title="Rally"/>
-  <call link="c1/ramble" title="Ramble"/>
+  <call link="c1/scoot_and_ramble" title="Ramble"/>
   <call link="c3a/reach_out" title="Reach Out"/>
   <call link="c3b/reactivate" title="Reactivate"/>
   <call link="c3a/recoil" title="Recoil"/>
   <call audio="ms/recycle.mp3" languages="lang-de lang-ja" link="ms/recycle" title="Recycle"/>
   <call audio="ssd/recycle.mp3" languages="lang-de lang-ja" link="ssd/recycle" title="Recycle"/>
   <call audio="a2/recycle.mp3" link="a2/recycle" title="Recycle"/>
-  <call link="c1/2_3_recycle" title="Recycle"/>
+  <call link="c1/recycle" title="Recycle"/>
   <call link="c3b/reflected_concept" title="Reflected Concept"/>
   <call link="c1/regroup" title="Regroup"/>
   <call audio="plus/relay_the_deucey.mp3" languages="lang-ja" link="plus/relay_the_deucey" title="Relay the Deucey"/>
@@ -475,23 +475,23 @@
   <call link="a1/reverse" title="Reverse"/>
   <call link="c3b/reverse_checkpoint" title="Reverse Checkpoint anything By anything"/>
   <call link="c2/reverse_crazy_concept" title="Reverse Crazy Concept"/>
-  <call link="c1/reverse_cross_and_turn" title="Reverse Cross and Turn"/>
+  <call link="c1/cross_and_turn?animname=ReverseCrossandTurn" title="Reverse Cross and Turn"/>
   <call link="c2/reverse_cut_the_diamond" title="Reverse Cut/Flip the Diamond"/>
   <call link="c2/reverse_cut_the_galaxy" title="Reverse Cut/Flip the Galaxy"/>
   <call link="c1/reverse_explode" title="Reverse Explode"/>
   <call audio="b2/reverseflutterwheel.mp3" languages="lang-ja" link="b2/flutterwheel" title="Reverse Flutterwheel"/>
   <call audio="ssd/reverseflutterwheel.mp3" languages="lang-ja" link="ssd/flutterwheel" title="Reverse Flutterwheel"/>
   <call link="c3b/reverse_order" title="Reverse Order Concept"/>
-  <call link="c1/rotate" title="Reverse Rotate"/>
+  <call link="c1/rotate?animname=ReverseRotate" title="Reverse Rotate"/>
   <call link="c2/rotate?animname=ReverseRotate" title="Reverse Rotate"/>
-  <call link="c1/rotate" title="Reverse Single Rotate"/>
+  <call link="c1/rotate?animname=ReverseSingleRotate" title="Reverse Single Rotate"/>
   <call link="c2/rotate?animname=ReverseSingleRotate" title="Reverse Single Rotate"/>
   <call link="c2/split_swap_around?animname=ReverseSplitSwapAround" title="Reverse Split Swap Around"/>
   <call audio="a1/reverse_swap_around.mp3" link="a1/reverse_swap_around" title="Reverse Swap Around"/>
   <call link="c3b/reverse_the_pass" title="Reverse The Pass"/>
   <call link="c3b/reverse_the_top" title="Reverse The Top"/>
   <call link="c2/truck?animname=ReverseTruck" title="Reverse Truck"/>
-  <call link="c1/reverse_wheel_and_anything" title="Reverse Wheel and Anything"/>
+  <call link="c1/wheel_and_anything?animname=ReverseWheeland" title="Reverse Wheel and Anything"/>
   <call link="c3b/revolve_to_a_wave" title="Revolve To A Wave"/>
   <call audio="b1/right_and_left_grand.mp3" languages="lang-de lang-ja" link="b1/right_and_left_grand"
         title="Right and Left Grand"/>
@@ -523,15 +523,15 @@
   <call languages="lang-de lang-ja" link="b1/same_position_rule" title="Same Position Rule"/>
   <call link="c3a/scatter_circulate" title="Scatter Circulate"/>
   <call link="c1/scatter_scoot" title="Scatter Scoot"/>
-  <call link="c1/scatter_scoot_chain_thru" title="Scatter Scoot Chain Thru"/>
+  <call link="c1/scatter_scoot?animname=ScatterScootChainThru" title="Scatter Scoot Chain Thru"/>
   <call link="c2/counter?animname=ScootandCounter" title="Scoot and Counter"/>
   <call link="c2/cross_ramble?animname=ScootandCrossRamble" title="Scoot and Cross Ramble"/>
   <call audio="a1/scoot_and_dodge.mp3" link="a1/scoot_and_dodge" title="Scoot and Dodge"/>
-  <call link="c1/scoot_and_little" title="Scoot and Little"/>
+  <call link="c1/scoot_and_little?animname=ScootandLittle" title="Scoot and Little"/>
   <call link="c2/little_more?animname=ScootandLittleMore" title="Scoot and Little More"/>
-  <call link="c1/scoot_and_plenty" title="Scoot and Plenty"/>
+  <call link="c1/scoot_and_plenty?animname=ScootandPlenty" title="Scoot and Plenty"/>
   <call link="c3a/rally" title="Scoot and Rally"/>
-  <call link="c1/scoot_and_ramble" title="Scoot and Ramble"/>
+  <call link="c1/scoot_and_ramble?animname=ScootandRamble" title="Scoot and Ramble"/>
   <call audio="a2/scoot_and_weave.mp3" link="a2/scoot_and_weave" title="Scoot and Weave"/>
   <call audio="ms/scoot_back.mp3" languages="lang-de lang-ja" link="ms/scoot_back" title="Scoot Back"/>
   <call audio="ssd/scoot_back.mp3" languages="lang-de lang-ja" link="ssd/scoot_back" title="Scoot Back"/>
@@ -558,7 +558,7 @@
   <call link="c2/single_cross_trade_and_wheel" title="Single Cross Trade and Wheel"/>
   <call link="c3a/single_file_recoil" title="Single File Recoil"/>
   <call link="c3a/single_file_recycle" title="Single File Recycle"/>
-  <call link="c1/rotate" title="Single Rotate"/>
+  <call link="c1/rotate?animname=SingleRotate" title="Single Rotate"/>
   <call link="c2/rotate?animname=SingleRotate" title="Single Rotate"/>
   <call audio="a2/single_wheel.mp3" link="a2/single_wheel" title="Single Wheel"/>
   <call link="a1/six_two_acey_deucey" title="Six-Two Acey Deucey"/>
@@ -591,7 +591,7 @@
   <call link="c1/split_square_thru_variations" title="Split Dixie Style to a Wave"/>
   <call link="c3b/split_phantom_boxes" title="Split Phantom Boxes Concept"/>
   <call link="c3a/split_phantom_columns_lines_waves_concept" title="Split Phantom Columns / Lines / Waves Concept"/>
-  <call link="c1/box_split_recycle" title="Split Recycle"/>
+  <call link="c1/recycle?animname=SplitRecycle" title="Split Recycle"/>
   <call link="c1/split_square_thru_variations" title="Split Square Chain the Top"/>
   <call audio="a1/split_square_chain_thru.mp3" link="a1/split_square_chain_thru" title="Split Square Chain Thru"/>
   <call audio="a1/split_square_thru.mp3" link="a1/split_square_thru" title="Split Square Thru"/>
@@ -606,8 +606,8 @@
   <call languages="lang-de lang-ja" link="b1/square_thru" title="Square Thru"/>
   <call languages="lang-de lang-ja" link="ssd/square_thru" title="Square Thru"/>
   <call link="c1/squeeze" title="Squeeze"/>
-  <call link="c1/squeeze_the_hourglass" title="Squeeze the Galaxy"/>
-  <call link="c1/squeeze_the_hourglass" title="Squeeze the Hourglass"/>
+  <call link="c1/squeeze?animname=SqueezetheGalaxy" title="Squeeze the Galaxy"/>
+  <call link="c1/squeeze?animname=SqueezetheHourglass" title="Squeeze the Hourglass"/>
   <call link="c3a/stable_concept" title="Stable Concept"/>
   <call link="c2/stack_the_line" title="Stack the Line"/>
   <call link="c2/stagger_concept" title="Stagger Concept"/>
@@ -670,7 +670,7 @@
   <call audio="plus/teacup_chain.mp3" languages="lang-ja" link="plus/teacup_chain" title="Teacup Chain"/>
   <call link="c3a/team_up" title="Team Up"/>
   <call languages="lang-de lang-ja" link="ms/thar" title="Thar Family"/>
-  <call link="c1/the_axle" title="The Axle"/>
+  <call link="c1/pass_the_axle?animname=^TheAxle" title="The Axle"/>
   <call link="c3a/the_gamut" title="The Gamut"/>
   <call link="c3a/spin_the_pulley" title="The Pulley"/>
   <call link="c3b/secondly_thirdly_fourthly" title="Thirdly"/>
@@ -714,10 +714,10 @@
   <call audio="ms/turn_thru.mp3" languages="lang-de lang-ja" link="ms/turn_thru" title="Turn Thru"/>
   <call link="c2/turn_to_a_line" title="Turn to a Line"/>
   <call link="c3b/turnstyle" title="Turnstyle"/>
-  <call link="c1/twist_and_anything" title="Twist and Anything"/>
+  <call link="c1/twist_the_line?animname=Twistand" title="Twist and Anything"/>
   <call link="c1/twist_the_line" title="Twist the Line"/>
   <call link="c3b/two_faced_concept" title="Two-Faced Concept"/>
-  <call link="c1/2_3_recycle" title="Two-Thirds Recycle"/>
+  <call link="c1/recycle?animname=23Recycle" title="Two-Thirds Recycle"/>
   <call link="c3a/twosome_concept" title="Twosome Concept"/>
 
   <call link="c2/unwrap" title="Unwrap Family"/>

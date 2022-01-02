@@ -1,12 +1,12 @@
 
 # Alter the Wave
 
-From a wave: ***All [Swing](../a2/swing.md)***,
+From a Wave: ***All [Swing](../a2/swing.md)***,
 then ***the centers [Cast Off 3/4](../ms/cast_off_three_quarters.md)
 while the ends [ U-Turn Back](../b1/turn_back.md)***.
 ***All [ Counter Rotate](counter_rotate.md) the
 diamond 1/2 (formerly called "turning the star 1/2")***, and
-***[Flip the Diamond](../plus/flip_the_diamond.md)***. Ends in a wave.
+***[Flip the Diamond](../plus/flip_the_diamond.md)***. Ends in a Wave.
 
 > 
 > ![alt](alter_the_wave_1.png)
@@ -20,7 +20,7 @@ Counter Rotate the Diamond 3/4:
 > ![alt](alter_the_wave_2.png)
 > 
 
-Teaching Hint: One can think of the Counter Rotate as two 
+*Teaching Hint:* One can think of the Counter Rotate as two 
 [Diamond Circulates](../plus/diamond_circulate.md) (except that the centers of the diamond
 remain centers throughout).
 

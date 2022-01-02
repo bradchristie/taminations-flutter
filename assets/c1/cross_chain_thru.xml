@@ -53,4 +53,39 @@
       <move select="Belle Wheel" />
     </path>
   </tam>
+
+  <tam title="Cross Chain And Roll"
+       from="Eight Chain Thru" parts="2">
+    <formation>
+      <dancer gender="boy" x="1" y="3" angle="270"/>
+      <dancer gender="girl" x="-1" y="3" angle="270"/>
+      <dancer gender="boy" x="-1" y="1" angle="90"/>
+      <dancer gender="girl" x="1" y="1" angle="90"/>
+    </formation>
+    <path numbers="5 4">
+      <move select="Pull Left" scaleY=".5" />
+      <move select="Lead Right" beats="2" scaleY="1.5" />
+      <move select="Hinge Left" />
+      <move select="Quarter Left" offsetX="1" />
+    </path>
+    <path numbers="1 8">
+      <move select="Pull Left" scaleY=".5" />
+      <move select="Extend Right" beats="2" scaleX="2" scaleY=".5" />
+      <move select="Hinge Left" />
+      <move select="Forward" />
+    </path>
+    <path numbers="2 7">
+      <move select="Pull Left" scaleY=".5" />
+      <move select="Extend Right" scaleY=".5" />
+      <move select="Beau Wheel" />
+      <move select="Quarter Left" />
+    </path>
+    <path numbers="6 3">
+      <move select="Pull Left" scaleY=".5" />
+      <move select="Extend Right" scaleY=".5" />
+      <move select="Belle Wheel" />
+      <move select="Quarter Left" />
+    </path>
+  </tam>
+
 </tamination>

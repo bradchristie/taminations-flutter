@@ -1,7 +1,7 @@
 
 # Square the Bases
 
-From facing lines: The centers [Square Thru 3](../b1/square_thru.md) while the
+From Facing Lines: The centers [Square Thru 3](../b1/square_thru.md) while the
 ends [Pass Thru](../b1/pass_thru.md), [Ends Bend](../a1/ends_bend.md) and start a
 [Split Square Thru 2](../a1/split_square_thru.md) (finishing with the centers).
 Now, all [Trade By](../b2/trade_by.md).

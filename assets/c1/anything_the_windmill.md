@@ -1,8 +1,10 @@
 
-# (Anything) the Windmill
+# Spin the Windmill variation
+
+## \<anything> the Windmill
 
 From any appropriate formation: The centers (or
-everyone, if the call is an 8-person call) do the "Anything"
+everyone, if the call is an 8-person call) do the \<anything>
 call. Then the centers [Cast Off 3/4](../ms/cast_off_three_quarters.md) while the ends face as
 directed and [Circulate](../b1/circulate.md) twice (or as directed).
 For example, Mix the Windmill In.

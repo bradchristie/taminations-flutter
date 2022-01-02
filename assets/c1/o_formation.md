@@ -7,20 +7,22 @@ from General Columns (Columns, Double Pass Thru,
 etc.), and which ends in General Lines or General Columns,
 can be done from "O" Formation.
 
-**O Circulate**  
+## O Circulate
 From an O: Each dancer moves forward one spot along the circulate path shown below:
 
 > 
 > ![alt](o_formation_1.png)
 > 
 
-**Other O Calls**  
+## Other O Calls  
 Any call which can be done from
 General Columns (Columns, Double Pass Thru, etc.), and which ends in
 General Lines or General Columns, can be
 done from an O. The dancers act as though the centers
 were close together; however, they end on the same 8 spots
-on the floor. For example, "O [Double Pass Thru](../b2/double_pass_thru.md)":
+on the floor. 
+
+For example, "O [Double Pass Thru](../b2/double_pass_thru.md)":
 
 > 
 > ![alt](o_formation_2.png)

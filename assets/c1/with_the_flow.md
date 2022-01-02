@@ -1,7 +1,7 @@
 
 # With the Flow
 
-From facing couples, with each couple having sideways body flow--as a
+From Facing Couples, with each couple having sideways body flow--as a
 couple--resulting from the previous call or with exactly one dancer in each
 couple moving forward: This is a flowing 
 [Walk and Dodge](../ms/walk_and_dodge.md). The leading dancer in

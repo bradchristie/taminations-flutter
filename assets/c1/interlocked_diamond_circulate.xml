@@ -180,4 +180,355 @@
     </path>
   </tam>
 
+  <tam title="Cut the Interlocked Diamond"
+       from="Right-Hand Interlocked Diamonds"
+       formation="Interlocked Diamonds RH Girl Points">
+    <path numbers="6 3" couples="3 1">
+      <move select="Lead Right" beats="4" scaleX="3" />
+    </path>
+    <path numbers="2 7" couples="3 1">
+      <move select="Dodge Right" />
+      <move select="Swing Right" />
+    </path>
+    <path numbers="5 4" couples="4 2">
+      <move select="Lead Right" beats="4" scaleX="3" scaleY="3" />
+    </path>
+    <path numbers="8 1" couples="2 4">
+      <move select="Dodge Right" />
+      <move select="Swing Right" />
+    </path>
+  </tam>
+
+  <tam title="Cut the Interlocked Diamond"
+       from="Left-Hand Interlocked Diamonds"
+       formation="Interlocked Diamonds LH Girl Points">
+    <path>
+      <move select="Lead Left" beats="4" scaleX="3" />
+    </path>
+    <path>
+      <move select="Dodge Left" />
+      <move select="Swing Left" />
+    </path>
+    <path>
+      <move select="Lead Left" beats="4" scaleX="3" scaleY="3" />
+    </path>
+    <path>
+      <move select="Dodge Left" />
+      <move select="Swing Left" />
+    </path>
+  </tam>
+
+  <tam title="Cut the Interlocked Diamond"
+       from="Left-Hand Points, Right-Hand Centers">
+    <formation>
+      <dancer gender="boy" x="0" y="-3" angle="180"/>
+      <dancer gender="girl" x="-3" y="-2" angle="270"/>
+      <dancer gender="boy" x="0" y="-1" angle="180"/>
+      <dancer gender="girl" x="3" y="-2" angle="90"/>
+    </formation>
+    <path>
+      <move select="Forward 2" />
+      <move select="Lead Right" />
+    </path>
+    <path>
+      <move select="Dodge Left"/>
+      <move select="Swing Left"/>
+    </path>
+    <path>
+      <move select="Lead Right" beats="4" scaleX="3" scaleY="3"/>
+    </path>
+    <path>
+      <move select="Dodge Left"/>
+      <move select="Swing Left"/>
+    </path>
+  </tam>
+
+  <tam title="Cut the Interlocked Diamond"
+       from="Points Facing In, Right-Hand Centers">
+    <formation>
+      <dancer gender="boy" x="0" y="-3" angle="180"/>
+      <dancer gender="girl" x="-3" y="-2" angle="90"/>
+      <dancer gender="boy" x="0" y="-1" angle="180"/>
+      <dancer gender="girl" x="3" y="-2" angle="90"/>
+    </formation>
+    <path>
+      <move select="Forward 2" />
+      <move select="Lead Right" />
+    </path>
+    <path>
+      <move select="Dodge Right"/>
+      <move select="Run Right"/>
+    </path>
+    <path>
+      <move select="Lead Right" beats="4" scaleX="3" scaleY="3"/>
+    </path>
+    <path>
+      <move select="Dodge Left"/>
+      <move select="Flip Left"/>
+    </path>
+  </tam>
+
+  <tam title="Cut the Interlocked Diamond"
+       from="Points Facing Out, Right-Hand Centers">
+    <formation>
+      <dancer gender="boy" x="0" y="-3" angle="180"/>
+      <dancer gender="girl" x="-3" y="-2" angle="270"/>
+      <dancer gender="boy" x="0" y="-1" angle="180"/>
+      <dancer gender="girl" x="3" y="-2" angle="270"/>
+    </formation>
+    <path>
+      <move select="Forward 2" />
+      <move select="Lead Right" />
+    </path>
+    <path>
+      <move select="Dodge Left"/>
+      <move select="Flip Left"/>
+    </path>
+    <path>
+      <move select="Lead Right" beats="4" scaleX="3" scaleY="3"/>
+    </path>
+    <path>
+      <move select="Dodge Right"/>
+      <move select="Run Right"/>
+    </path>
+  </tam>
+
+  <tam title="Cut the Interlocked Diamond"
+       from="Right-Hand Points, Left-Hand Centers">
+    <formation>
+      <dancer gender="boy" x="0" y="-3" angle="0"/>
+      <dancer gender="girl" x="-3" y="-2" angle="90"/>
+      <dancer gender="boy" x="0" y="-1" angle="0"/>
+      <dancer gender="girl" x="3" y="-2" angle="270"/>
+    </formation>
+    <path>
+      <move select="Lead Left" beats="3" scaleX="3" />
+    </path>
+    <path>
+      <move select="Dodge Right"/>
+      <move select="Swing Right"/>
+    </path>
+    <path>
+      <move select="Lead Left" beats="4" scaleX="3" scaleY="3"/>
+    </path>
+    <path>
+      <move select="Dodge Right"/>
+      <move select="Swing Right"/>
+    </path>
+  </tam>
+
+  <tam title="Cut the Interlocked Diamond"
+       from="Points Facing In, Left-Hand Centers">
+    <formation>
+      <dancer gender="boy" x="0" y="-3" angle="0"/>
+      <dancer gender="girl" x="-3" y="-2" angle="90"/>
+      <dancer gender="boy" x="0" y="-1" angle="0"/>
+      <dancer gender="girl" x="3" y="-2" angle="90"/>
+    </formation>
+    <path>
+      <move select="Lead Left" beats="3" scaleX="3" />
+    </path>
+    <path>
+      <move select="Dodge Right"/>
+      <move select="Run Right"/>
+    </path>
+    <path>
+      <move select="Lead Left" beats="4" scaleX="3" scaleY="3"/>
+    </path>
+    <path>
+      <move select="Dodge Left"/>
+      <move select="Flip Left"/>
+    </path>
+  </tam>
+
+  <tam title="Cut the Interlocked Diamond"
+       from="Points Facing Out, Left-Hand Centers">
+    <formation>
+      <dancer gender="boy" x="0" y="-3" angle="0"/>
+      <dancer gender="girl" x="-3" y="-2" angle="270"/>
+      <dancer gender="boy" x="0" y="-1" angle="0"/>
+      <dancer gender="girl" x="3" y="-2" angle="270"/>
+    </formation>
+    <path>
+      <move select="Lead Left" beats="3" scaleX="3" />
+    </path>
+    <path>
+      <move select="Dodge Left"/>
+      <move select="Flip Left"/>
+    </path>
+    <path>
+      <move select="Lead Left" beats="4" scaleX="3" scaleY="3"/>
+    </path>
+    <path>
+      <move select="Dodge Right"/>
+      <move select="Run Right"/>
+    </path>
+  </tam>
+
+  <tam title="Flip the Interlocked Diamond"
+       from="Right-Hand Interlocked Diamonds"
+       formation="Interlocked Diamonds RH Girl Points">
+    <path numbers="6 3">
+      <move select="Lead Right" beats="2" scaleX="3" />
+    </path>
+    <path numbers="2 7">
+      <move select="Flip Right" />
+    </path>
+    <path numbers="5 4">
+      <move select="Lead Right" beats="3" scaleX="3" scaleY="3" />
+    </path>
+    <path numbers="8 1">
+      <move select="Flip Right" />
+    </path>
+  </tam>
+
+  <tam title="Flip the Interlocked Diamond"
+       from="Left-Hand Interlocked Diamonds"
+       formation="Interlocked Diamonds LH Girl Points">
+    <path>
+      <move select="Lead Left" beats="2" scaleX="3" />
+    </path>
+    <path>
+      <move select="Flip Left" />
+    </path>
+    <path>
+      <move select="Lead Left" beats="3" scaleX="3" scaleY="3" />
+    </path>
+    <path>
+      <move select="Flip Left" />
+    </path>
+  </tam>
+
+  <tam title="Flip the Interlocked Diamond"
+       from="Left-Hand Points, Right-Hand Centers">
+    <formation>
+      <dancer gender="boy" x="0" y="-3" angle="180"/>
+      <dancer gender="girl" x="-3" y="-2" angle="270"/>
+      <dancer gender="boy" x="0" y="-1" angle="180"/>
+      <dancer gender="girl" x="3" y="-2" angle="90"/>
+    </formation>
+    <path>
+      <move select="Lead Right Passing" beats="3" scaleX="3"/>
+    </path>
+    <path>
+      <move select="Flip Left"/>
+    </path>
+    <path>
+      <move select="Lead Right" beats="3" scaleX="3" scaleY="3"/>
+    </path>
+    <path>
+      <move select="Flip Left"/>
+    </path>
+  </tam>
+
+  <tam title="Flip the Interlocked Diamond"
+       from="Points Facing In, Right-Hand Centers">
+    <formation>
+      <dancer gender="boy" x="0" y="-3" angle="180"/>
+      <dancer gender="girl" x="-3" y="-2" angle="90"/>
+      <dancer gender="boy" x="0" y="-1" angle="180"/>
+      <dancer gender="girl" x="3" y="-2" angle="90"/>
+    </formation>
+    <path>
+      <move select="Lead Right Passing" beats="3" scaleX="3"/>
+    </path>
+    <path>
+      <move select="Flip Right"/>
+    </path>
+    <path>
+      <move select="Lead Right" beats="3" scaleX="3" scaleY="3"/>
+    </path>
+    <path>
+      <move select="Flip Left"/>
+    </path>
+  </tam>
+
+  <tam title="Flip the Interlocked Diamond"
+       from="Points Facing Out, Right-Hand Centers">
+    <formation>
+      <dancer gender="boy" x="0" y="-3" angle="180"/>
+      <dancer gender="girl" x="-3" y="-2" angle="270"/>
+      <dancer gender="boy" x="0" y="-1" angle="180"/>
+      <dancer gender="girl" x="3" y="-2" angle="270"/>
+    </formation>
+    <path>
+      <move select="Lead Right Passing" beats="3" scaleX="3"/>
+    </path>
+    <path>
+      <move select="Flip Left"/>
+    </path>
+    <path>
+      <move select="Lead Right" beats="3" scaleX="3" scaleY="3"/>
+    </path>
+    <path>
+      <move select="Flip Right"/>
+    </path>
+  </tam>
+
+  <tam title="Flip the Interlocked Diamond"
+       from="Right-Hand Points, Left-Hand Centers">
+    <formation>
+      <dancer gender="boy" x="0" y="-3" angle="0"/>
+      <dancer gender="girl" x="-3" y="-2" angle="90"/>
+      <dancer gender="boy" x="0" y="-1" angle="0"/>
+      <dancer gender="girl" x="3" y="-2" angle="270"/>
+    </formation>
+    <path>
+      <move select="Lead Left" beats="3" scaleX="3" />
+    </path>
+    <path>
+      <move select="Flip Right"/>
+    </path>
+    <path>
+      <move select="Lead Left" beats="3" scaleX="3" scaleY="3"/>
+    </path>
+    <path>
+      <move select="Flip Right"/>
+    </path>
+  </tam>
+
+  <tam title="Flip the Interlocked Diamond"
+       from="Points Facing In, Left-Hand Centers">
+    <formation>
+      <dancer gender="boy" x="0" y="-3" angle="0"/>
+      <dancer gender="girl" x="-3" y="-2" angle="90"/>
+      <dancer gender="boy" x="0" y="-1" angle="0"/>
+      <dancer gender="girl" x="3" y="-2" angle="90"/>
+    </formation>
+    <path>
+      <move select="Lead Left" beats="3" scaleX="3" />
+    </path>
+    <path>
+      <move select="Flip Right"/>
+    </path>
+    <path>
+      <move select="Lead Left" beats="3" scaleX="3" scaleY="3"/>
+    </path>
+    <path>
+      <move select="Flip Left"/>
+    </path>
+  </tam>
+
+  <tam title="Flip the Interlocked Diamond"
+       from="Points Facing Out, Left-Hand Centers">
+    <formation>
+      <dancer gender="boy" x="0" y="-3" angle="0"/>
+      <dancer gender="girl" x="-3" y="-2" angle="270"/>
+      <dancer gender="boy" x="0" y="-1" angle="0"/>
+      <dancer gender="girl" x="3" y="-2" angle="270"/>
+    </formation>
+    <path>
+      <move select="Lead Left" beats="3" scaleX="3" />
+    </path>
+    <path>
+      <move select="Flip Left"/>
+    </path>
+    <path>
+      <move select="Lead Left" beats="3" scaleX="3" scaleY="3"/>
+    </path>
+    <path>
+      <move select="Flip Right"/>
+    </path>
+  </tam>
+
 </tamination>

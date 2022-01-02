@@ -1,7 +1,7 @@
 
 # Switch the Line
 
-From a general line: Centers [Run](../b2/run.md), while the ends
+From a General Line: Centers [Run](../b2/run.md), while the ends
 [Cross Run](../b2/run.md). In cases where dancers would collide, those doing the
 Cross Run move outside of those doing the Run; otherwise,
 all the usual shoulder passing rules apply.

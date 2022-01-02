@@ -1,10 +1,10 @@
 
-# Three by Two Acey Deucey
+# 3 by 2 Acey Deucey
 
 From anywhere there are two groups of three that can 
 [Triangle Circulate](triangle_formation.md), 
-and a center two that can [Trade](../b2/trade.md) (e.g.,
-twin diamonds, or an hourglass): The very center two
+and a center two that can [Trade](../b2/trade.md) (for example,
+Twin Diamonds, or an Hourglass): The very center two
 dancers Trade while the two triangles Circulate.
 
 > 

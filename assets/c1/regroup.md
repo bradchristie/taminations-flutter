@@ -1,12 +1,12 @@
 
 # Regroup
 
-From parallel lines, waves, or T-bones with the ends in
+From Parallel Lines, Waves, or T-Bones with the ends in
 lines, only: The centers [Trade](../b2/trade.md) and
 [Roll](../plus/anything_and_roll.md) while the ends
 [Quarter Out](../a1/quarter_out.md), [Trade](../b2/trade.md) with each other, and
 ["O" Circulate](o_formation.md) to
-become the ends of lines facing.
+become the ends of Facing Lines.
 
 > 
 > ![alt](regroup.png)

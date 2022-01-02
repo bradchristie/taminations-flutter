@@ -16,9 +16,8 @@ square, while the other dancers step forward into the
 middle. This is a restricted definition for C-1, using only
 the permitted formation of a static square.
 
-In this diagram, dancers #1, 2, 7, and 8 are the ones
-designated to Rotate.
-
+> In this diagram, dancers #1, 2, 7, and 8 are the ones
+> designated to Rotate.
 > 
 > ![alt](rotate.png)
 > 
@@ -41,9 +40,8 @@ the designated fraction (or 1/4, if none is
 specified) around the outside of the square, while the
 other dancers step forward into the middle.
 
-In this diagram, dancers #1, 2, 7, and 8 are the ones
-designated to Single Rotate.
-
+> In this diagram, dancers #1, 2, 7, and 8 are the ones
+> designated to Single Rotate.
 > 
 > ![alt](single_rotate.png)
 > 

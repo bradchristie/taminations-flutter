@@ -2,7 +2,7 @@
 # Jaywalk
 
 From dancers facing directly or on an angle:
-Like a [Pass Thru](../b1/pass_thru.md), except the dancers don't have to be
+Like a [Pass Thru](../b1/pass_thru.md), except the dancers don not have to be
 facing directly. Each dancer finishes on the other dancer's
 starting spot, facing opposite the way that dancer was
 facing.

@@ -1,20 +1,20 @@
 
 # Butterfly Formation / Concept
 
-A butterfly is a column formation with the ends of the column separated by 2 positions.
+A Butterfly is a column formation with the ends of the column separated by 2 positions.
 
 **Butterfly Circulate**  
-From a butterfly: All dancers move
-forward one position along the path below:
+From a Butterfly: All dancers move
+forward one position along the path as shown:
 
 > 
 > ![alt](butterfly_formation_1.png)
 > 
 
 **Other Butterfly calls, such as Split Circulate, Walk and Dodge**  
-Any call which can be done from parallel general
-columns (columns, double pass thru, etc.), and which ends
-in general lines or columns, can be done from a butterfly.
+Any call which can be done from General
+Columns (columns, double pass thru, etc.), and which ends
+in General Lines or Columns, can be done from a Butterfly.
 The dancers act as though the ends were close together;
 however, they end on the original 8 spots on the floor. For
 example, "Butterfly [ Double Pass Thru](../b2/double_pass_thru.md)":

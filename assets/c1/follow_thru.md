@@ -1,8 +1,8 @@
 
 # Follow Thru
 
-From a box circulate, T-bone, or single quarter tag: All 1/2 [Scoot Back](../ms/scoot_back.md).
-Ends in a wave, 2-faced line or diamond.
+From a Box Circulate, T-Bone, or Single Quarter Tag: All 1/2 [Scoot Back](../ms/scoot_back.md).
+Ends in a Wave, Two-Faced Line, or Diamond.
 
 > 
 > ![alt](follow_thru.png)

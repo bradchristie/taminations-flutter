@@ -102,4 +102,33 @@
       <move select="Hinge Right" scaleY=".5"/>
     </path>
   </tam>
+
+  <tam title="Reverse Wheel and Touch a Quarter" group="Reverse Wheel and"
+       from="Trade By">
+    <formation>
+      <dancer gender="girl" x="1" y="3" angle="90"/>
+      <dancer gender="boy" x="-1" y="3" angle="90"/>
+      <dancer gender="girl" x="-1" y="1" angle="270"/>
+      <dancer gender="boy" x="1" y="1" angle="270"/>
+    </formation>
+    <path numbers="5 4">
+      <move select="Quarter Right" hands="left" beats="3" offsetY="-1" />
+      <move select="Lead Right" beats="3" />
+      <move select="Quarter Right" hands="left" beats="3" offsetX="1" />
+    </path>
+    <path numbers="1 8">
+      <move select="Lead Right" hands="right" beats="3" scaleY="3" />
+      <move select="Lead Right" beats="3" scaleX="2" scaleY="2" />
+      <move select="Lead Right" hands="right" beats="3" scaleX="3" />
+    </path>
+    <path numbers="2 7">
+      <move select="Extend Left" scaleY=".5"/>
+      <move select="Hinge Right" scaleY=".5"/>
+    </path>
+    <path numbers="6 3">
+      <move select="Extend Left" scaleY=".5"/>
+      <move select="Hinge Right" scaleY=".5"/>
+    </path>
+  </tam>
+
 </tamination>

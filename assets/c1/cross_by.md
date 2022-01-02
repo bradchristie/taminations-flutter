@@ -1,8 +1,7 @@
 
 # Cross By
 
-
-From a thar, wrong-way thar, or parallel waves:
+From a Thar, Wrong-Way Thar, or Parallel Waves:
 1/2 [Circulate](../b1/circulate.md),
 [Sashaying](../b1/sashay.md) as you go, and joining opposite
 hands from initial handhold. Ends in a Wrong-Way Thar,

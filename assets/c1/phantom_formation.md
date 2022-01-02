@@ -1,14 +1,14 @@
 
-# Phantom Formation
+# Phantom Formation / Concept
 
 A Phantom is a non-existent dancer with whom you may
-be asked to work. A Phantom formation (e.g., after
+be asked to work. A Phantom formation (for example, after
 Heads [Wheel Thru](../a1/wheel_thru.md), 
 [Swing Thru](../b2/swing_thru.md), Heads [Hinge](../ms/hinge.md)) has the
 dancers arranged as shown below. Some of the dancers
-are in lines at the head, and some are in lines at the
+are in Lines at the head, and some are in Lines at the
 side. Each dancer acts as though he or she were in
-parallel waves or lines with all the Phantom positions
+Parallel Waves or Lines with all the Phantom positions
 occupied by real dancers.
 
 > 
@@ -18,7 +18,7 @@ occupied by real dancers.
 > 
 
 It is also possible to have a phantom formation where some
-of the dancers feel like they're in columns (as below).
+of the dancers feel like they're in Columns (as below).
 However, this variation is not appropriate for use at C-1.
 
 > 

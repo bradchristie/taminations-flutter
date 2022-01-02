@@ -10,7 +10,7 @@ Thru formation:
 and [Cross](../a1/anything_and_cross.md)***
 while ***the ends [Turn Thru](../ms/turn_thru.md) 
 or Left Turn Thru*** as appropriate. From
-most places (for example, waves) this ends in lines Back-to-Back.
+most places (for example, waves) this ends in Lines Back-to-Back.
 It can be done from anywhere the Circulate, 1/2 Circulate gives
 a definite center Wave.
 

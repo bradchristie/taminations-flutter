@@ -158,4 +158,144 @@
     </path>
   </tam>
 
+  <tam title="Reverse Cross and Turn" from="Facing Couples"
+       formation="Facing Couples Compact">
+    <path>
+      <move select="U-Turn Right" />
+    </path>
+    <path>
+      <move select="Forward" />
+      <move select="Extend Left" hands="left" beats="2" scaleX="2" scaleY="2" />
+    </path>
+  </tam>
+
+  <tam title="Reverse Cross and Turn"
+       from="Lines"
+       formation="Normal Lines">
+    <path>
+      <move select="U-Turn Right" />
+    </path>
+    <path>
+      <move select="Forward" />
+      <move select="Extend Left" hands="left" beats="2" scaleX="3" scaleY="2" />
+    </path>
+    <path>
+      <move select="U-Turn Right" />
+    </path>
+    <path>
+      <move select="Forward" />
+      <move select="Extend Left" hands="left" beats="2" scaleX="3" scaleY="2" />
+    </path>
+  </tam>
+
+  <tam title="Reverse Cross and Turn"
+       from="Eight Chain Thru"
+       formation="Eight Chain Thru">
+    <path>
+      <move select="U-Turn Right" />
+    </path>
+    <path>
+      <move select="Forward" beats=".5" scaleX=".5" scaleY=".5" />
+      <move select="Extend Left" hands="left" beats="2" scaleX="1.5" scaleY="2" />
+    </path>
+    <path>
+      <move select="U-Turn Right" />
+    </path>
+    <path>
+      <move select="Forward" beats=".5" scaleX=".5" scaleY=".5" />
+      <move select="Extend Left" hands="left" beats="2" scaleX="1.5" scaleY="2" />
+    </path>
+  </tam>
+
+  <tam title="As Couples Reverse Cross and Turn"
+       from="" formation="Normal Lines" group=" ">
+    <path>
+      <move select="Beau Reverse Wheel"/>
+    </path>
+    <path>
+      <move select="Belle Reverse Wheel"/>
+    </path>
+    <path>
+      <move select="Extend Left" beats="2" hands="right" scaleX="2" scaleY=".5"/>
+      <move select="Extend Left" hands="right" beats="4" scaleX="2" scaleY="3.5"/>
+    </path>
+    <path>
+      <move select="Extend Left" beats="2" hands="left" scaleX="2" scaleY="1.5"/>
+      <move select="Extend Left" hands="left" beats="4" scaleX="2" scaleY="2.5"/>
+    </path>
+  </tam>
+
+  <tam title="All 8 Reverse Cross and Turn" group=" "
+       from="Static Square" formation="Static Square">
+    <path>
+      <move select="U-Turn Right"/>
+    </path>
+    <path>
+      <move select="Forward 3"/>
+      <move select="Hinge Left"/>
+      <move select="Lead Right" beats="3" scaleY="2"/>
+    </path>
+    <path>
+      <move select="U-Turn Right"/>
+    </path>
+    <path>
+      <move select="Forward 3"/>
+      <move select="Hinge Left"/>
+      <move select="Lead Right" beats="3" scaleY="2"/>
+    </path>
+  </tam>
+
+  <tam title="Butterfly Reverse Cross and Turn" group=" " from="" formation="Butterfly Chain Thru">
+    <path>
+      <move select="U-Turn Right" />
+    </path>
+    <path>
+      <move select="Forward" beats=".5" scaleX=".5" scaleY=".5" />
+      <move select="Extend Left" hands="left" beats="4" scaleX="1.5" scaleY="4" />
+    </path>
+    <path>
+      <move select="U-Turn Right" />
+    </path>
+    <path>
+      <move select="Forward" beats=".5" scaleX=".5" scaleY=".5" />
+      <move select="Extend Left" hands="left" beats="4" scaleX="1.5" scaleY="4" />
+    </path>
+  </tam>
+
+  <tam title="Concentric Reverse Cross and Turn" group=" "
+       from="Double Pass Thru" formation="Double Pass Thru">
+    <path>
+      <move select="U-Turn Right" />
+    </path>
+    <path>
+      <move select="Extend Right" beats="2" scaleX="2"/>
+      <move select="Forward 2"/>
+      <move select="Extend Left" beats="3" scaleX="2" scaleY="3"/>
+    </path>
+    <path>
+      <move select="U-Turn Right" />
+    </path>
+    <path>
+      <move select="Forward" beats=".5" scaleX=".5" scaleY=".5" />
+      <move select="Extend Left" hands="left" beats="2" scaleX="1.5" scaleY="2" />
+    </path>
+  </tam>
+
+  <tam title="&quot;O&quot; Reverse Cross and Turn" group=" " from="" formation="O Eight Chain Thru">
+    <path>
+      <move select="U-Turn Right" />
+    </path>
+    <path>
+      <move select="Forward" beats=".5" scaleX=".5" scaleY=".5" />
+      <move select="Extend Left" hands="left" beats="4" scaleX="1.5" scaleY="4" />
+    </path>
+    <path>
+      <move select="U-Turn Right" />
+    </path>
+    <path>
+      <move select="Forward" beats=".5" scaleX=".5" scaleY=".5" />
+      <move select="Extend Left" hands="left" beats="4" scaleX="1.5" scaleY="4" />
+    </path>
+  </tam>
+
 </tamination>

@@ -1,5 +1,5 @@
 
-# Vertical Tag
+# Vertical Tag (1/4, 1/2, 3/4, Full)
 
 From Box Circulate, Facing Couples, etc.:
 
@@ -12,7 +12,7 @@ to finish a Tag the Line
 (that is, walk forward for as many tag positions as indicated).
 This call cannot be fractionalized.
 
-Vertical Tag:
+Vertical Tag the Line:
 
 > 
 > ![alt](vertical_tag_1a.png)

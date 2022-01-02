@@ -1,7 +1,7 @@
 
 # Make Magic
 
-From general columns: Any center and outside dancers
+From General Columns: Any center and outside dancers
 who are facing each other do a [Pass Thru](../b1/pass_thru.md), as any center
 who is facing in, does a pull by with the diagonally opposite
 dancer, using outside hands. If all four centers are facing

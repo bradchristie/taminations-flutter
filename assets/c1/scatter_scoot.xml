@@ -106,5 +106,56 @@
     </path>
   </tam>
 
+  <tam title="Scatter Scoot Chain Thru"
+       from="Right-Hand Waves"
+       formation="Ocean Waves RH BGBG"
+       parts="2;3;3;3" >
+    <path>
+      <move select="Forward 2" />
+      <move select="Swing Right" />
+      <move select="Swing Left" />
+      <move select="Swing Right" />
+      <move select="Forward 2" />
+    </path>
+    <path>
+      <move select="Flip Left" />
+    </path>
+    <path>
+      <move select="Forward 2" />
+      <move select="Swing Right" />
+      <move select="Stand" beats="3" />
+      <move select="Swing Right" />
+      <move select="Forward 2" />
+    </path>
+    <path>
+      <move select="Run Right" beats="6" scaleX="2" scaleY="3" />
+    </path>
+  </tam>
+
+  <tam title="Scatter Scoot Chain Thru"
+       from="Left-Hand Waves"
+       formation="Ocean Waves LH BGBG"
+       parts="2;3;3;3" >
+    <path>
+      <move select="Run Left" beats="6" scaleX="2" scaleY="3" />
+    </path>
+    <path>
+      <move select="Forward 2" />
+      <move select="Swing Left" />
+      <move select="Stand" beats="3" />
+      <move select="Swing Left" />
+      <move select="Forward 2" />
+    </path>
+    <path>
+      <move select="Flip Right" />
+    </path>
+    <path>
+      <move select="Forward 2" />
+      <move select="Swing Left" />
+      <move select="Swing Right" />
+      <move select="Swing Left" />
+      <move select="Forward 2" />
+    </path>
+  </tam>
 
 </tamination>

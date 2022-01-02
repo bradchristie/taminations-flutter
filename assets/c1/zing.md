@@ -1,11 +1,9 @@
 
 # Zing
 
-From a box circulate or tandem couples: Leaders Zoom but only turn
-3/4 (270°) as they go (similar to Quarter Out and Run). Trailers
-Circulate and Quarter In.
-
-NOTE: Zing is also proper from various 3 & 1 boxes, T-Bone boxes,
+From a Box Circulate or Tandem Couples: Leaders Zoom but only turn
+3/4 (270 degrees) as they go (similar to Quarter Out and Run). Trailers
+Circulate and Quarter In. Zing is also proper from various 3-and-1 Boxes, T-Bone Boxes,
 and from an isolated Tandem.
 
 > 

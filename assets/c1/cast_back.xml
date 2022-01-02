@@ -75,4 +75,23 @@
     </path>
   </tam>
 
+  <tam title="Cross Cast Back"
+       from="Completed Double Pass Thru"
+       formation="Completed Double Pass Thru">
+    <path numbers="5 4">
+      <move select="Run Left" beats="5" scaleX="2" scaleY="2" offsetX="-1" />
+      <move select="Forward"/>
+    </path>
+    <path numbers="6 3">
+      <move select="Run Right" beats="5" scaleY="2" offsetX="-1" />
+      <move select="Forward"/>
+    </path>
+    <path numbers="7 2">
+      <move select="Stand" beats="6" />
+    </path>
+    <path numbers="8 1">
+      <move select="Stand" beats="6" />
+    </path>
+  </tam>
+
 </tamination>

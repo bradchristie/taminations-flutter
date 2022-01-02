@@ -1,10 +1,10 @@
 
-# (Anything) and Weave
+# Weave
 
-From box circulate: The leads do 1/2 a [Box Circulate](../b1/circulate.md) while
+From Box Circulate: The leads do 1/2 a [Box Circulate](../b1/circulate.md) while
 the trailers walk forward on a slight diagonal to meet each other with their original
 outside hands (thought of by some as Cross Extend) and Hinge. From
-single eight chain thru: All Pass Thru, and the ends Quarter Right while
+Single Eight Chain Thru: All Pass Thru, and the ends Quarter Right while
 the centers Left Touch 1/4 (this is like Touch and Weave).
 
 > 

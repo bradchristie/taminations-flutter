@@ -12,7 +12,7 @@ long axis of the formation). For example, Stretch [Recycle](../ms/recycle.md):
 > ![alt](stretch_concept_1.png)
 > 
 
-or Stretch [Shake Down](shakedown.md)
+or Stretch [Shakedown](shakedown.md)
 
 > 
 > ![alt](stretch_concept_2.png)
@@ -37,7 +37,7 @@ or Stretch Touch:
 > 
 
 If the centers cannot move along the long axis of the
-formation to get away from the ends they'd been working
+formation to get away from the ends they had been working
 with, then the call is improper. For example, Stretch
 Swing Thru is not proper from here:
 
@@ -62,10 +62,12 @@ the Touch 1/4.
 Note: The examples above are here only to clarify the
 definition. They don't necessarily represent good usage--
 particularly Stretch Turn and Deal from left-hand
-two-faced lines. Common applications include
-Recycle, Ah So, and Turn and Deal (from right-hand two-faced lines).
+two-faced lines. 
 
-Teaching Hint: This call is usually danced with those
+Common applications include
+Recycle, Ah So, and Turn and Deal (from Right-Hand Two-Faced Lines).
+
+*Teaching Hint:* This call is usually danced with those
 coming to the center actually going to the far center spots,
 rather than first completing the move on their own side.
 

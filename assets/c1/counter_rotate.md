@@ -8,7 +8,7 @@ unless otherwise specified) around the flagpole center of
 the formation, staying the same distance from that
 center as though he were on a wheel turning about that
 center. With each quarter he Counter Rotates, the
-dancer faces a new wall (i.e., he turns 90°).
+dancer faces a new wall (that is, he turns 90°).
 
 > 
 > ![alt](counter_rotate_1a.png)
@@ -26,7 +26,7 @@ original centers always finish as centers. For example,
 > ![alt](counter_rotate_2b.png)
 > 
 
-Teaching Hint: From parallel waves, people tend to try to 
+*Teaching Hint:* From parallel waves, people tend to try to 
 [Split Counter Rotate](../a2/split_counter_rotate.md). Describing the action, from that
 formation only, as "[Concentric](concentric_concept.md) 
 [Box Counter Rotate](../a2/box_counter_rotate.md)" helps a great deal.

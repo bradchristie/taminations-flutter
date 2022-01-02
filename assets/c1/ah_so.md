@@ -1,9 +1,9 @@
 
 # Ah So
 
-From a wave or line: With each half of the wave/line working as a unit, the ends
+From a Wave or Line: With each half of the Wave/Line working as a unit, the ends
 [Cross Fold](../ms/fold.md) and the centers
-follow along so as to keep each mini-wave or couple intact. 
+follow along so as to keep each Mini-Wave or Couple intact. 
 If the ends start out facing the same way, they pass right
 shoulders as they go.
 
@@ -11,7 +11,7 @@ shoulders as they go.
 > ![alt](ah_so.png)
 > 
 
-Teaching Hint: This call is a more general version of
+*Teaching Hint:* This call is a more general version of
 [Wheel and Deal](../b2/wheel_and_deal.md)—the
 centers are just turned around.
 

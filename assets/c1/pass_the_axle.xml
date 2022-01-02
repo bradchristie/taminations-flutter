@@ -56,4 +56,60 @@
       <move select="Run Right" />
     </path>
   </tam>
+
+  <tam title="The Axle"
+       from="Trade By"
+       parts="4;3" >
+    <formation name="Trade By">
+      <dancer gender="girl" y="3" x="1" angle="90"/>
+      <dancer gender="boy" y="3" x="-1" angle="90"/>
+      <dancer gender="girl" y="1" x="-1" angle="270"/>
+      <dancer gender="boy" y="1" x="1" angle="270"/>
+    </formation>
+    <path>
+      <move select="Run Left" beats="4" scaleX="2" scaleY="2" offsetX="-1" />
+      <move select="Swing Left" />
+      <move select="Run Right" />
+    </path>
+    <path>
+      <move select="Run Right" beats="4" scaleY="2" offsetX="-1" />
+      <move select="Swing Right" />
+      <move select="Flip Left" />
+    </path>
+    <path>
+      <move select="Extend Left" beats="1.5" scaleY=".5" />
+      <move select="Forward" />
+      <move select="Extend Right" beats="1.5" scaleY=".5" />
+      <move select="Swing Right" />
+    </path>
+    <path>
+      <move select="Extend Left" beats="1.5" scaleY=".5" />
+      <move select="Forward" />
+      <move select="Extend Right" beats="1.5" scaleY=".5" />
+      <move select="Swing Left" />
+    </path>
+  </tam>
+
+  <tam title="The Axle" from="Completed Double Pass Thru"
+       formation="Completed Double Pass Thru" parts="4;3">
+    <path>
+      <move select="Run Left" beats="4" scaleX="2" scaleY="2" offsetX="-1" />
+      <move select="Swing Left" />
+      <move select="Run Right" />
+    </path>
+    <path>
+      <move select="Run Right" beats="4" scaleY="2" offsetX="-1" />
+      <move select="Swing Right" />
+      <move select="Flip Left" />
+    </path>
+    <path>
+      <move select="Forward" beats="4"/>
+      <move select="Swing Right" />
+    </path>
+    <path>
+      <move select="Forward" beats="4"/>
+      <move select="Swing Left" />
+    </path>
+  </tam>
+
 </tamination>

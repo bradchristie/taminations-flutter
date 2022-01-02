@@ -6,9 +6,7 @@ From Parallel Waves, or other appropriate formations:
 ***those who can Turn 1/2 by the Left***,
 ***those who can Turn 3/4 by the Right***,
 ***those who can Turn 1/2 by the Left***,
-***and those who can Turn 1/4 by the Right***.
-
-For example,
+***and those who can Turn 1/4 by the Right***. For example,
 
 from Right-Hand Waves:
 
