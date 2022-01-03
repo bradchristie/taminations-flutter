@@ -1,6 +1,8 @@
 
 # Split Square Thru
 
+Timing: 6-8-10, SS 8-10-12
+
 From a static square, or T-bone. (From a static square, those designated step forward,
 to form two side-by-side T-bones.): Those facing Right [Pull By](../b1/pull_by.md), 
 [Quarter In](quarter_in.md) (to face those who didn't pull by), 
@@ -10,7 +12,5 @@ Can also be done fractionally, or for a given number of hands. In these cases, t
 fraction applies to those who start the call, e.g., for a Split Square Thru 3/4, the
 dancers who start facing do a total of 3 Pull Bys, and the other two dancers do 2 Pull
 Bys.
-
-Timing: 6-8-10, SS 8-10-12
 
 ###### @ Copyright 1982, 1986-1988, 1995, 2001-2020. Bill Davis, John Sybalsky, and CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed nor revised in any derivation or publication.

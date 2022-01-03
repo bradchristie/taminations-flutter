@@ -1,29 +1,46 @@
 
-# Quarter Thru
+# Quarter Thru / Three Quarter Thru
+
+## Quarter Thru
+
+Timing: 6
 
 From any appropriate 4-dancer formation
 (e.g., right-hand box circulate, left-hand
 facing diamonds):
-{high:Part1}Those who can
-[Cast Off 1/4](../ms/cast_off_three_quarters.md)
-by the Right,{/high}
-{high:Part2}then those who can
-[Trade](../b2/trade.md) by the Left.{/high}
+***Those who can Turn 1/4 by the Right,***
+***then those who can Turn 1/2 by the Left.***
 
-There must be dancers who can do each part--the call is not legal from
+There must be dancers who can do each part. The call is not legal from
 an Inverted Box.
 
 If there are two side-by-side formations each of which can do the call,
-dancers don't
-move from one to the other.
+dancers don't move from one to the other.
 From right-hand columns, for example, each of the two box
 circulate formations does the call independently.
 
 > 
 > ![alt](quarter_thru_1a.png)![alt](quarter_thru_1b.png)![alt](quarter_thru_1c.png)  
 > ![alt](quarter_thru_1d.png)![alt](quarter_thru_1e.png)![alt](quarter_thru_1f.png)
-> 
+>
 
-Timing: 6
+## Three-Quarter Thru
+
+Timing: 8
+
+From any appropriate 4-dancer formation
+(e.g., right-hand box circulate, left-hand facing diamond):
+***Those who can Turn 3/4 by the Right***,
+***then those who can Turn 1/2 by the Left.***
+As with [Quarter Thru](quarter_thru.md), there must be people doing each part of the call.
+
+See the notes under Quarter Thru.
 
 ###### @ Copyright 1982, 1986-1988, 1995, 2001-2020. Bill Davis, John Sybalsky, and CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed nor revised in any derivation or publication.
+
+<!-- Parts
+QuarterThru1
+QuarterThru2
+34Thru1
+34Thru2
+-->

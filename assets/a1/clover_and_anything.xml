@@ -214,4 +214,38 @@
     </path>
 	</tam>
 
+  <tam title="Cross Clover and" group=" " display="none"
+       formation="Couples Facing Out">
+    <path>
+      <move select="Lead Left" beats="3" scaleX="2" scaleY="3.5" />
+      <move select="Lead Left" scaleX="1.5" scaleY="1.5" />
+      <move select="Lead Left" scaleX="1.5" />
+    </path>
+    <path>
+      <move select="Lead Right" beats="3" scaleX=".5" scaleY="3.5" />
+      <move select="Lead Right" scaleX="1.5" scaleY=".5" />
+      <move select="Lead Right"/>
+    </path>
+  </tam>
+
+  <tam title="Cross Clover and Swap Around" group=" "
+       formation="Trade By">
+    <path>
+      <move select="Lead Left" beats="3" scaleX="2" scaleY="3.5" />
+      <move select="Lead Left" scaleX="1.5" scaleY="2.5" />
+      <move select="Lead Left" scaleX="1.5" />
+    </path>
+    <path>
+      <move select="Lead Right" beats="3" scaleX=".5" scaleY="3.5" />
+      <move select="Lead Right" scaleX="1.5" />
+      <move select="Lead Right" scaleX="1.5" />
+    </path>
+    <path>
+      <move select="Forward 2" />
+    </path>
+    <path>
+      <move select="Flip Right" />
+    </path>
+  </tam>
+
 </tamination>

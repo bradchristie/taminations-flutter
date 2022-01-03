@@ -58,7 +58,6 @@
   <call link="c2/any_tagging_call_your_neighbor" title="&lt;any tagging call&gt; Your Neighbor"/>
   <call link="c3a/anyone_hop" title="Anyone Hop"/>
   <call link="c2/anything_and_circle" title="Anything and Circle"/>
-  <call link="a1/anything_and_cross" title="Anything and Cross"/>
   <call languages="lang-ja" link="plus/anything_and_roll" title="Anything and Roll"/>
   <call languages="lang-ja" link="plus/anything_and_spread" title="Anything and Spread"/>
   <call link="c1/anything_and_spread" title="Anything and Spread"/>
@@ -153,7 +152,7 @@
   <call link="c3b/criss_cross_the_deucey" title="Criss Cross The Deucey"/>
   <call link="c2/criss_cross_the_shadow" title="Criss Cross the Shadow"/>
   <call link="c2/criss_cross_your_neighbor" title="Criss Cross Your Neighbor"/>
-  <call link="a1/named_dancers_cross" title="Cross"/>
+  <call link="a1/anything_and_cross" title="Cross"/>
   <call link="c1/cross_and_turn" title="Cross and Turn"/>
   <call link="c2/cross_and_wheel" title="Cross and Wheel"/>
   <call link="c2/cross_back" title="Cross Back"/>
@@ -163,7 +162,7 @@
   <call link="c3a/cross_chain_reaction" title="Cross Chain Reaction"/>
   <call link="c1/cross_chain_thru" title="Cross Chain Thru"/>
   <call link="c3b/chuck_a_luck" title="Cross Chuck-A-Luck"/>
-  <call link="a1/cross_clover_and_anything" title="Cross Clover and Anything"/>
+  <call link="a1/clover_and_anything?animname=CrossClover" title="Cross Clover and Anything"/>
   <call link="c2/cross_concentric_concept" title="Cross Concentric Concept"/>
   <call link="c3a/cross_counter" title="Cross Counter"/>
   <call link="c3b/cross_cycle" title="Cross Cycle"/>
@@ -213,7 +212,7 @@
   <call link="c2/dodge_anything" title="Dodge Anything"/>
   <call audio="b1/dosado.mp3" languages="lang-de lang-ja" link="b1/dosado" title="Dosado"/>
   <call audio="ssd/dosado.mp3" languages="lang-de lang-ja" link="ssd/dosado" title="Dosado"/>
-  <call link="a1/double_cross" title="Double Cross"/>
+  <call link="a1/triple_cross?animname=DoubleCross" title="Double Cross"/>
   <call audio="b2/double_pass_thru.mp3" languages="lang-ja" link="b2/double_pass_thru" title="Double Pass Thru"/>
   <call audio="ssd/double_pass_thru.mp3" languages="lang-ja" link="ssd/double_pass_thru" title="Double Pass Thru"/>
   <call audio="a1/double_star_thru.mp3" link="a1/double_star_thru" title="Double Star Thru"/>
@@ -298,7 +297,7 @@
   <call audio="b1/grand_square.mp3" languages="lang-de lang-ja" link="b1/grand_square" title="Grand Square"/>
   <call audio="ssd/grand_square.mp3" languages="lang-de lang-ja" link="ssd/grand_square" title="Grand Square"/>
   <call audio="plus/grand_swing_thru.mp3" languages="lang-ja" link="plus/grand_swing_thru" title="Grand Swing Thru"/>
-  <call link="a1/grand_three_quarter_thru" title="Grand Three Quarter Thru"/>
+  <call link="a1/grand_quarter_thru?animname=Grand34Thru" title="Grand Three Quarter Thru"/>
 
   <call languages="lang-de lang-ja" link="b1/sashay" title="Half Sashay"/>
   <call languages="lang-de lang-ja" link="ssd/sashay" title="Half Sashay"/>
@@ -351,12 +350,11 @@
   <call languages="lang-de" link="b1/arm_turns" title="Left Arm Turn"/>
   <call languages="lang-de" link="ssd/arm_turns" title="Left Arm Turn"/>
   <call audio="plus/chase_right.mp3" languages="lang-ja" link="plus/chase_right" title="Left Chase"/>
-  <call audio="a1/left_roll_to_a_wave.mp3" link="a1/left_roll_to_a_wave" title="Left Roll to a Wave"/>
+  <call audio="a1/left_roll_to_a_wave.mp3" link="a1/right_roll_to_a_wave?animname=LeftRolltoaWave" title="Left Roll to a Wave"/>
   <call link="c2/counter?animname=LeftScootandCounter" title="Left Scoot and Counter"/>
-  <call audio="a1/left_square_chain_thru.mp3" link="a1/left_square_chain_thru" title="Left Square Chain Thru"/>
   <call languages="lang-ja lang-de" link="b2/swing_thru" title="Left Swing Thru"/>
   <call languages="lang-ja lang-de" link="ssd/swing_thru" title="Left Swing Thru"/>
-  <call audio="a1/left_wheel_thru.mp3" link="a1/left_wheel_thru" title="Left Wheel Thru"/>
+  <call audio="a1/left_wheel_thru.mp3" link="a1/wheel_thru?animname=LeftWheelThru" title="Left Wheel Thru"/>
   <call link="c3b/lickety_split" title="Lickety Split"/>
   <call link="c3b/lift_off" title="Lift Off"/>
   <call link="c3a/like_a_couple_up" title="Like a Couple Up"/>
@@ -411,7 +409,7 @@
   <call audio="a2/pass_and_roll_your_neighbor.mp3" link="a2/pass_and_roll_your_neighbor"
         title="Pass and Roll Your Neighbor"/>
   <call audio="a1/pass_in.mp3" link="a1/pass_in" title="Pass In"/>
-  <call audio="a1/pass_out.mp3" link="a1/pass_out" title="Pass Out"/>
+  <call audio="a1/pass_out.mp3" link="a1/pass_in?animname=PassOut" title="Pass Out"/>
   <call link="c1/pass_the_axle" title="Pass the Axle"/>
   <call audio="b2/pass_the_ocean.mp3" languages="lang-ja lang-de" link="b2/pass_the_ocean" title="Pass the Ocean"/>
   <call audio="ssd/pass_the_ocean.mp3" languages="lang-ja lang-de" link="ssd/pass_the_ocean" title="Pass the Ocean"/>
@@ -445,7 +443,7 @@
 
   <call link="c3b/quadruple_formation" title="Quadruple Formation Concept"/>
   <call audio="a1/quarter_in.mp3" link="a1/quarter_in" title="Quarter In"/>
-  <call audio="a1/quarter_out.mp3" link="a1/quarter_out" title="Quarter Out"/>
+  <call audio="a1/quarter_out.mp3" link="a1/quarter_in?animname=QuarterOut" title="Quarter Out"/>
   <call languages="lang-de lang-ja" link="ms/fraction_tag" title="Quarter Tag"/>
   <call audio="a1/quarter_thru.mp3" link="a1/quarter_thru" title="Quarter Thru"/>
   <call link="c3a/quick" title="Quick"/>
@@ -486,7 +484,7 @@
   <call link="c1/rotate?animname=ReverseSingleRotate" title="Reverse Single Rotate"/>
   <call link="c2/rotate?animname=ReverseSingleRotate" title="Reverse Single Rotate"/>
   <call link="c2/split_swap_around?animname=ReverseSplitSwapAround" title="Reverse Split Swap Around"/>
-  <call audio="a1/reverse_swap_around.mp3" link="a1/reverse_swap_around" title="Reverse Swap Around"/>
+  <call audio="a1/reverse_swap_around.mp3" link="a1/swap_around?animname=ReverseSwapAround" title="Reverse Swap Around"/>
   <call link="c3b/reverse_the_pass" title="Reverse The Pass"/>
   <call link="c3b/reverse_the_top" title="Reverse The Top"/>
   <call link="c2/truck?animname=ReverseTruck" title="Reverse Truck"/>
@@ -675,7 +673,7 @@
   <call link="c3b/secondly_thirdly_fourthly" title="Thirdly"/>
   <call link="c1/three_by_two_acey_deucey" title="Three by Two Acey Deucey"/>
   <call languages="lang-de lang-ja" link="ms/fraction_tag" title="Three Quarter Tag"/>
-  <call link="a1/three_quarter_thru" title="Three Quarter Thru"/>
+  <call link="a1/quarter_thru?animname=34Thru" title="Three Quarter Thru"/>
   <call audio="b2/touch_a_quarter.mp3" languages="lang-ja lang-de" link="b2/touch_a_quarter" title="Touch a Quarter"/>
   <call audio="ssd/touch_a_quarter.mp3" languages="lang-ja lang-de" link="ssd/touch_a_quarter" title="Touch a Quarter"/>
   <call link="c3a/touch_by" title="Touch By"/>
@@ -703,7 +701,7 @@
   <call link="c3b/triple_formations" title="Triple Formations"/>
   <call link="c3a/triple_play" title="Triple Play"/>
   <call audio="plus/triple_scoot.mp3" link="plus/triple_scoot" title="Triple Scoot"/>
-  <call audio="a1/triple_star_thru.mp3" link="a1/triple_star_thru" title="Triple Star Thru"/>
+  <call audio="a1/triple_star_thru.mp3" link="a1/double_star_thru?animname=TripleStarThru" title="Triple Star Thru"/>
   <call audio="a1/triple_trade.mp3" link="a1/triple_trade" title="Triple Trade"/>
   <call link="c2/truck" title="Truck"/>
   <call audio="a1/turn_and_deal.mp3" link="a1/turn_and_deal" title="Turn and Deal"/>

@@ -105,4 +105,80 @@
            xref-link="a2/all_4_all_8"
            xref-title="All 4 Couples (A-1) Double Star Thru"/>
 
+  <tam title="Triple Star Thru"
+       from="Double Pass Thru"
+       parts="3;3" sequencer="gender-specific">
+    <formation>
+      <dancer gender="boy" x="-3" y="-1" angle="0"/>
+      <dancer gender="girl" x="-3" y="1" angle="0"/>
+      <dancer gender="boy" x="-1" y="1" angle="0"/>
+      <dancer gender="girl" x="-1" y="-1" angle="0"/>
+    </formation>
+    <path>
+      <move select="Stand" beats="6" />
+      <move select="Extend Left" hands="right" beats="1.5" scaleY=".5" />
+      <move select="Quarter Right" beats="1.5" offsetX="1" offsetY="-1.5" />
+    </path>
+    <path>
+      <move select="Stand" beats="6" />
+      <move select="Extend Left" hands="right" beats="1.5" scaleY=".5" />
+      <move select="Quarter Left" beats="1.5" offsetX="1" offsetY=".5" />
+    </path>
+    <path>
+      <move select="Extend Left" hands="right" beats="1.5" scaleY=".5" />
+      <move select="Quarter Right" beats="1.5" offsetX="1" offsetY="-.5" />
+      <move select="Extend Right" hands="left" beats="1.5" scaleY=".5" />
+      <move select="Quarter Left" beats="1.5" offsetX="1" offsetY=".5" />
+      <move select="Extend Left" hands="right" beats="1.5" scaleY=".5" />
+      <move select="Quarter Right" beats="1.5" offsetX="1" offsetY="-1.5" />
+    </path>
+    <path>
+      <move select="Extend Left" hands="right" beats="1.5" scaleY=".5" />
+      <move select="Quarter Left" beats="1.5" offsetX="1" offsetY="-.5" />
+      <move select="Extend Right" hands="left" beats="1.5" scaleY=".5" />
+      <move select="Quarter Right" beats="1.5" offsetX="1" offsetY=".5" />
+      <move select="Extend Left" hands="right" beats="1.5" scaleY=".5" />
+      <move select="Quarter Left" beats="1.5" offsetX="1" offsetY=".5" />
+    </path>
+  </tam>
+
+  <tam title="Triple Star Thru"
+       from="Eight Chain Thru"
+       parts="3;3" sequencer="gender-specific">
+    <formation>
+      <dancer gender="boy" x="-3" y="1" angle="0"/>
+      <dancer gender="girl" x="-3" y="-1" angle="0"/>
+      <dancer gender="boy" x="-1" y="-1" angle="180"/>
+      <dancer gender="girl" x="-1" y="1" angle="180"/>
+    </formation>
+    <path>
+      <move select="Extend Left" hands="right" beats="1.5" scaleY=".5" />
+      <move select="Quarter Right" beats="1.5" offsetX="1" offsetY="-.5" />
+      <move select="Extend Right" hands="left" beats="1.5" scaleY=".5" />
+      <move select="Quarter Left" beats="1.5" offsetX="1" offsetY=".5" />
+      <move select="Extend Left" hands="right" beats="1.5" scaleY=".5" />
+      <move select="Quarter Right" beats="1.5" offsetX="1" offsetY="-.5" />
+    </path>
+    <path>
+      <move select="Extend Left" hands="right" beats="1.5" scaleY=".5" />
+      <move select="Quarter Left" beats="1.5" offsetX="1" offsetY="-.5" />
+      <move select="Extend Right" hands="left" beats="1.5" scaleY=".5" />
+      <move select="Quarter Right" beats="1.5" offsetX="1" offsetY=".5" />
+      <move select="Extend Left" hands="right" beats="1.5" scaleY=".5" />
+      <move select="Quarter Left" beats="1.5" offsetX="1" offsetY="-.5" />
+    </path>
+    <path>
+      <move select="Extend Left" hands="right" beats="1.5" scaleY=".5" />
+      <move select="Quarter Right" beats="1.5" offsetX="1" offsetY="-.5" />
+      <move select="Extend Right" hands="left" beats="1.5" scaleY=".5" />
+      <move select="Quarter Left" beats="1.5" offsetX="1" offsetY=".5" />
+    </path>
+    <path>
+      <move select="Extend Left" hands="right" beats="1.5" scaleY=".5" />
+      <move select="Quarter Left" beats="1.5" offsetX="1" offsetY="-.5" />
+      <move select="Extend Right" hands="left" beats="1.5" scaleY=".5" />
+      <move select="Quarter Right" beats="1.5" offsetX="1" offsetY=".5" />
+    </path>
+  </tam>
+
 </tamination>

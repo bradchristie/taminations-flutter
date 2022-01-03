@@ -107,7 +107,6 @@ class CallContext {
     'c1/butterfly_formation',
     'c1/concentric_concept',
     'c1/o_formation',
-    'c1/box_split_recycle',
     'c1/magic_column_formation',
     'c1/phantom_formation',
     'plus/single_circle_to_a_wave',
@@ -121,7 +120,7 @@ class CallContext {
     'a1/quarter_thru',
     'a1/three_quarter_thru',
     'b1/split_the_outside_couple',
-    'c2/anything_the_k',
+    'c2/cross_the_k',
     'a2/transfer_and_anything',
     'ms/eight_chain_thru',
     'b1/separate',
@@ -201,7 +200,7 @@ class CallContext {
 
   static Set<String> xmlFilesForCall(String norm) {
     var callfiles1 = TamUtils.callmap.containsKey(norm)
-        ? TamUtils.callmap[norm]!.map((e) => e.link) : <String>[];
+        ? TamUtils.callmap[norm]!.map((e) => Uri.parse(e.link).path) : <String>[];
     var callfiles2 = callindex.containsKey(norm)
         ? callindex[norm]! : <String>{};
     callfiles2.addAll(callfiles1);
@@ -214,7 +213,7 @@ class CallContext {
       var norm = TamUtils.normalizeCall(item).toLowerCase();
       var callitems = TamUtils.callmap[norm] ?? <CallListDatum>[];
       for (var callitem in callitems) {
-        await loadOneFile(callitem.link);
+        await loadOneFile(Uri.parse(callitem.link).path);
       }
     }
   }

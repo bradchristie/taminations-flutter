@@ -1,5 +1,5 @@
 
-# Beaus and Belles naming convention
+# Belles and Beaus
 
 Dancers whose partners are on their left are Belles,
 and dancers whose partners are on their right are Beaus.

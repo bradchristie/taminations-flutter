@@ -1,6 +1,8 @@
 
 # Cross Over Circulate
 
+Timing: 6
+
 From general lines only: Each dancer moves forward one spot along the circulate path
 shown below: A lead end [ Circulates](../b1/circulate.md) 
 to the far center spot in the same line; a lead center
@@ -29,7 +31,5 @@ Leads [ Cross Run](../b2/run.md) as trailers (do their part of)
 as they go. However, it is far more effective to
 re-introduce the idea of circulate paths (already used at Basic), and use it to describe
 the call.
-
-Timing: 6
 
 ###### @ Copyright 1982, 1986-1988, 1995, 2001-2020. Bill Davis, John Sybalsky, and CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed nor revised in any derivation or publication.

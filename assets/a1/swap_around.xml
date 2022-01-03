@@ -120,4 +120,102 @@
            xref-link="a2/all_4_all_8"
            xref-title="All 8 (A-1) Swap Around"/>
 
+  <tam title="Reverse Swap Around"
+       from="Facing Couples"
+       formation="Facing Couples"
+       fractions="2" >
+    <path>
+      <move select="Forward 4" />
+    </path>
+    <path>
+      <move select="Flip Left" beats="4" />
+    </path>
+  </tam>
+
+  <tam title="Reverse Swap Around"
+       from="Facing Couples Close"
+       formation="Facing Couples Close"
+       fractions="2" display="none">
+    <path>
+      <move select="Forward 2" beats="4"/>
+    </path>
+    <path>
+      <move select="Flip Left" beats="4" />
+    </path>
+  </tam>
+
+  <tam title="Reverse Swap Around"
+       from="Normal Lines"
+       formation="Normal Lines"
+       fractions="2" >
+    <path>
+      <move select="Forward 4" />
+    </path>
+    <path>
+      <move select="Flip Left" beats="4" />
+    </path>
+    <path>
+      <move select="Forward 4" />
+    </path>
+    <path>
+      <move select="Flip Left" beats="4" />
+    </path>
+  </tam>
+
+  <tam title="Reverse Swap Around"
+       from="Eight Chain Thru"
+       formation="Eight Chain Thru"
+       fractions="2" >
+    <path>
+      <move select="Forward 2" beats="4" />
+    </path>
+    <path>
+      <move select="Flip Left" beats="4" />
+    </path>
+    <path>
+      <move select="Forward 2" beats="4" />
+    </path>
+    <path>
+      <move select="Flip Left" beats="4" />
+    </path>
+  </tam>
+
+  <tam title="Half Reverse Swap Around" display="no"
+       from="Eight Chain Thru"
+       formation="Eight Chain Thru">
+    <path>
+    </path>
+    <path>
+      <move select="Quarter Left" beats="2" offsetX="-2" offsetY="1"/>
+    </path>
+    <path>
+      <move select="Forward 2"/>
+    </path>
+    <path>
+      <move select="Quarter Left" beats="2" offsetY="1"/>
+    </path>
+  </tam>
+
+  <tam title="As Couples Reverse Swap Around"
+       from="Normal Lines"
+       formation="Normal Lines"
+       fractions="2" group=" " >
+    <path>
+      <move select="Forward 4" hands="right" />
+    </path>
+    <path>
+      <move select="Forward 4" hands="left" />
+    </path>
+    <path>
+      <move select="Flip Left" beats="4" hands="gripright" />
+    </path>
+    <path>
+      <move select="Run Left" beats="4" hands="gripleft" scaleY="3" />
+    </path>
+  </tam>
+
+  <tamxref title="All 8 Reverse Swap Around" group=" "
+           xref-link="a2/all_4_all_8"
+           xref-title="All 8 (A-1) Reverse Swap Around"/>
+
 </tamination>

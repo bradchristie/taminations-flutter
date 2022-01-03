@@ -7,13 +7,13 @@ and are defined as a series of turns (e.g.,
 [1/4 Thru](quarter_thru.md),
 [Remake](../a2/remake.md)).
 
+Starting formation: Inverted Line or Inverted Box;
+**every pair** of dancers must be in a right or lefthand
+mini-wave.
+
 > 
 > ![alt](any_hand_concept_1a.png)![alt](any_hand_concept_1b.png)
 > 
-
-Starting formation: Inverted Line or Inverted Box; 
-every pair of dancers must be in a right or lefthand
-mini-wave.
 
 Dance action: Dancers start by having everyone in a mini-wave (pair) 
 turn by either the right or left
@@ -29,6 +29,9 @@ the call Any Hand Swing Thru would have all
 dancers turn half (some by the right and some by the left)
 and the new centers Partner Trade to end
 in Facing Lines.
+
+The [Facing Couples Rule](../b2/facing_couples_rule.md)
+does not apply with this concept.
 
 Example #1: Any Hand Swing Thru
 
@@ -54,6 +57,4 @@ Example #4: Any Hand Remake
 > ![alt](any_hand_concept_5a.png)![alt](any_hand_concept_5b.png)![alt](any_hand_concept_5c.png)![alt](any_hand_concept_5d.png)
 > 
 
-The [Facing Couples Rule](../b2/facing_couples_rule.md)
-does not apply with this concept.
 ###### @ Copyright 1982, 1986-1988, 1995, 2001-2020. Bill Davis, John Sybalsky, and CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed nor revised in any derivation or publication.

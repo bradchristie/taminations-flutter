@@ -281,6 +281,7 @@ class SequencerModel extends fm.ChangeNotifier {
         break;
       }
     }
+    animation.goToEnd();
   }
 
 }

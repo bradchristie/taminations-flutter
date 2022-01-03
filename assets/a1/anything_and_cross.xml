@@ -97,4 +97,82 @@
     </path>
   </tam>
 
+  <tam title="Beaus Cross"
+       from="Facing Couples"
+       formation="Facing Couples"
+       fractions="" >
+    <path>
+      <movement hands="left" beats="2" cx1="1" cy1="0" cx2=".8" cy2="-2" x2="4" y2="-2"
+                cx3="1" cx4="1" cy4="-.4" x4="2" y4="-.4" />
+    </path>
+    <path>
+      <move select="Stand" beats="2" hands="none"/>
+    </path>
+  </tam>
+
+  <tam title="Beaus Cross"
+       from="Normal Lines"
+       formation="Normal Lines"
+       fractions="" >
+    <path>
+      <movement hands="left" beats="2" cx1="1" cy1="0" cx2=".8" cy2="-2" x2="4" y2="-2"
+                cx3="1" cx4="1" cy4="-.4" x4="2" y4="-.4" />
+    </path>
+    <path>
+      <move select="Stand" beats="2" hands="none"/>
+    </path>
+    <path>
+      <movement hands="left" beats="2" cx1="1" cy1="0" cx2=".8" cy2="-2" x2="4" y2="-2"
+                cx3="1" cx4="1" cy4="-.4" x4="2" y4="-.4" />
+    </path>
+    <path>
+      <move select="Stand" beats="2" hands="none"/>
+    </path>
+  </tam>
+
+  <tam title="Belles Cross"
+       from="Facing Couples"
+       formation="Facing Couples"
+       fractions="" >
+    <path>
+      <move select="Stand" beats="2" hands="none"/>
+    </path>
+    <path>
+      <movement hands="right" beats="2" cx1="1" cy1="0" cx2=".8" cy2="2" x2="4" y2="2"
+                cx3="1" cx4="1" cy4=".4" x4="2" y4=".4" />
+    </path>
+  </tam>
+
+  <tam title="Belles Cross"
+       from="Normal Lines"
+       formation="Normal Lines"
+       fractions="" >
+    <path>
+      <move select="Stand" beats="2" hands="none"/>
+    </path>
+    <path>
+      <movement hands="right" beats="2" cx1="1" cy1="0" cx2=".8" cy2="2" x2="4" y2="2"
+                cx3="1" cx4="1" cy4=".4" x4="2" y4=".4" />
+    </path>
+    <path>
+      <move select="Stand" beats="2" hands="none"/>
+    </path>
+    <path>
+      <movement hands="right" beats="2" cx1="1" cy1="0" cx2=".8" cy2="2" x2="4" y2="2"
+                cx3="1" cx4="1" cy4=".4" x4="2" y4=".4" />
+    </path>
+  </tam>
+
+  <tam title="Wheel and Deal, Beaus Cross" formation="Two-Faced Line RH" group=" ">
+    <path numbers="1 4">
+      <move select="Run Right" beats="4" hands="right" scaleX="2" scaleY="2" offsetX="2" />
+      <movement hands="left" beats="2" cx1="1" cy1="0" cx2=".8" cy2="-2" x2="4" y2="-2"
+                cx3="1" cx4="1" cy4="-.4" x4="2" y4="-.4" />
+    </path>
+    <path numbers="2 3">
+      <move select="U-Turn Right" beats="4" hands="left" offsetX="2" />
+      <move select="Stand" beats="2" hands="none"/>
+    </path>
+  </tam>
+
 </tamination>
