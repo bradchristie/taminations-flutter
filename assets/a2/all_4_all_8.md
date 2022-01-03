@@ -72,7 +72,7 @@ Touch 1/4. Ends in a Thar Star.
 
 From a Thar or Wrong Way Thar, the centers cross run, by turning their star 1/2 and
 sliding nose-to-nose with the outsides (Slide). The new centers trade, by turning their
-star ½. Ends in a Thar or Wrong Way Thar.
+star 1/2. Ends in a Thar or Wrong Way Thar.
 
 **All 8 Swing Thru** Timing: 8
 
@@ -89,7 +89,7 @@ From a static square with everyone in a mini-wave, those facing in walk forward 
 the set to take the place of the dancer who was directly in front of him. Those facing out
 step sideways into the position vacated by the "walker". Ends in a static square
 with everyone facing out. If all the "walkers" move at the same rate, there will
-be a momentary star ½ way through the call.
+be a momentary star 1/2 way through the call.
 
 > 
 > ![alt](all_4_all_8_6a.png)![alt](all_4_all_8_6b.png)

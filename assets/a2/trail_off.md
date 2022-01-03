@@ -1,6 +1,8 @@
 
 # Trail Off
 
+Timing: 6
+
 Starting Formation: Tandem Couples, Box Circulate, or Tandem Dancers in a Z (e.g. from a wave after
 the Ends Fold)
 
@@ -17,7 +19,7 @@ around the other trailer. Each trailer moves forward as necessary to the centerl
 the other trailer (using the same hand as the handedness of the formation).
 
 The four dancers in each of the given starting formations always adjust to end in the same four-dancer
-line. Each dancer will have turned half (180°) to end facing the opposite direction from which
+line. Each dancer will have turned half (180 degrees) to end facing the opposite direction from which
 they started. Trail Off, including all necessary adjustments, is danced as one continuous motion that
 cannot be fractionalized.
 
@@ -25,6 +27,13 @@ Trail Off from Tandem Couples will end in a One-Faced line.
 
 Trail Off from a Box Circulate or from a Right- or Left-Hand Z will end in a like-handed Two-Faced
 Line.
+
+>
+> ![alt](trail_off_1a.png)
+> ![alt](trail_off_1b.png)  
+> ![alt](trail_off_1c.png)
+> ![alt](trail_off_1d.png)
+>
 
 Notes:
 
@@ -35,15 +44,5 @@ formation; however, square breathing adjustments may reposition the whole line.
 dance action.
 - When the trailers start facing in the same direction, their dance action feels like a Left Shoulder
 Partner Trade.
-
-
-> 
-> ![alt](trail_off_1a.png)
-> ![alt](trail_off_1b.png)  
-> ![alt](trail_off_1c.png)
-> ![alt](trail_off_1d.png)
-> 
-
-Timing: 6
 
 ###### @ Copyright 1982, 1986-1988, 1995, 2001-2020. Bill Davis, John Sybalsky, and CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed nor revised in any derivation or publication.

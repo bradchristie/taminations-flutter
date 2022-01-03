@@ -187,7 +187,7 @@
   <call audio="plus/crossfire.mp3" languages="lang-ja" link="plus/crossfire" title="Crossfire"/>
   <call audio="plus/cut_the_diamond.mp3" languages="lang-ja" link="plus/cut_the_diamond" title="Cut the Diamond"/>
   <call link="c1/galaxy_formation?animname=CuttheGalaxy" title="Cut the Galaxy"/>
-  <call audio="a2/cut_the_hourglass.mp3" link="a2/cut_the_hourglass" title="Cut the Hourglass"/>
+  <call audio="a2/cut_the_hourglass.mp3" link="a2/hourglass_circulate?animname=CuttheHourglass" title="Cut the Hourglass"/>
   <call link="c1/interlocked_diamond_circulate?animname=CuttheInterlockedDiamond" title="Cut the Interlocked Diamond"/>
   <call audio="a1/cycle_and_wheel.mp3" link="a1/cycle_and_wheel" title="Cycle and Wheel"/>
 
@@ -256,7 +256,7 @@
   <call link="c1/tagging_calls_back_to_a_wave" title="Flip Back"/>
   <call audio="plus/flip_the_diamond.mp3" languages="lang-ja" link="plus/flip_the_diamond" title="Flip the Diamond"/>
   <call link="c1/galaxy_formation?animname=FliptheGalaxy" title="Flip the Galaxy"/>
-  <call audio="a2/flip_the_hourglass.mp3" link="a2/flip_the_hourglass" title="Flip the Hourglass"/>
+  <call audio="a2/flip_the_hourglass.mp3" link="a2/hourglass_circulate?animname=FliptheHourglass" title="Flip the Hourglass"/>
   <call link="c1/interlocked_diamond_circulate?animname=FliptheInterlockedDiamond" title="Flip the Interlocked Diamond"/>
   <call link="c1/flip_the_line" title="Flip the Line"/>
   <call link="c3b/flip_your_lid" title="Flip Your Lid"/>
@@ -291,7 +291,7 @@
         title="Grand Follow Your Neighbor"/>
   <call link="c3a/grand_mix" title="Grand Mix"/>
   <call audio="a1/grand_quarter_thru.mp3" link="a1/grand_quarter_thru" title="Grand Quarter Thru"/>
-  <call audio="a2/grand_remake.mp3" link="a2/grand_remake" title="Grand Remake"/>
+  <call audio="a2/grand_remake.mp3" link="a2/remake?animname=GrandRemake" title="Grand Remake"/>
   <call link="c2/grand_single_cross_and_wheel" title="Grand Single Cross and Wheel"/>
   <call link="c2/grand_single_cross_trade_and_wheel" title="Grand Single Cross Trade and Wheel"/>
   <call audio="b1/grand_square.mp3" languages="lang-de lang-ja" link="b1/grand_square" title="Grand Square"/>
@@ -395,7 +395,7 @@
   <call link="c2/offset_concept" title="Offset Concept"/>
   <call link="c2/once_removed_concept" title="Once Removed Concept"/>
   <call link="c3a/open_up_the_column" title="Open Up"/>
-  <call link="a2/out_roll_circulate" title="Out-Roll Circulate"/>
+  <call link="a2/in_roll_circulate?animname=OutRollCirculate" title="Out-Roll Circulate"/>
   <call link="c2/inlet?animname=Outlet" title="Outlet"/>
   <call link="c3a/own_the_anyone_anything_by_anything" title="Own the Anyone Anything By Anything"/>
 
@@ -465,7 +465,7 @@
   <call link="c3a/release_anything" title="Release Anything"/>
   <call link="c2/relocate_the_setup" title="Relocate the formation"/>
   <call audio="a2/remake.mp3" link="a2/remake" title="Remake"/>
-  <call audio="a2/remake_the_thar.mp3" link="a2/remake_the_thar" title="Remake The Thar"/>
+  <call audio="a2/remake_the_thar.mp3" link="a2/remake?animname=RemaketheThar" title="Remake The Thar"/>
   <call link="c1/replace" title="Replace"/>
   <call link="c3b/reset" title="Reset"/>
   <call link="c2/reshape_the_triangle" title="Reshape the Triangle"/>
@@ -561,12 +561,12 @@
   <call link="a1/six_two_acey_deucey" title="Six-Two Acey Deucey"/>
   <call link="c1/replace" title="Skip"/>
   <call link="c3a/slant" title="Slant"/>
-  <call audio="a2/slide.mp3" link="a2/slide" title="Slide"/>
+  <call audio="a2/slide.mp3" link="a2/slip?animname=Slide" title="Slide"/>
   <call audio="ms/slide_thru.mp3" languages="lang-de lang-ja" link="ms/slide_thru" title="Slide Thru"/>
   <call audio="ssd/slide_thru.mp3" languages="lang-de lang-ja" link="ssd/slide_thru" title="Slide Thru"/>
   <call audio="a2/slip.mp3" link="a2/slip" title="Slip"/>
   <call audio="ms/slip_the_clutch.mp3" languages="lang-de lang-ja" link="ms/slip_the_clutch" title="Slip the Clutch"/>
-  <call audio="a2/slither.mp3" link="a2/slither" title="Slither"/>
+  <call audio="a2/slither.mp3" link="a2/slip?animname=Slither" title="Slither"/>
   <call link="c3a/snap_the_lock" title="Snap the Lock"/>
   <call link="c2/sock_it_to_me" title="Sock It To Me"/>
   <call link="c2/solid_concept" title="Solid Concept"/>
@@ -581,7 +581,7 @@
   <call audio="ms/spin_the_top.mp3" languages="lang-de lang-ja" link="ms/spin_the_top" title="Spin the Top"/>
   <call link="a2/spin_the_windmill" title="Spin the Windmill"/>
   <call languages="lang-de lang-ja" link="b1/circulate" title="Split Circulate"/>
-  <call audio="a2/split_counter_rotate.mp3" link="a2/split_counter_rotate" title="Split Counter Rotate"/>
+  <call audio="a2/split_counter_rotate.mp3" link="a2/box_counter_rotate?animname=SplitCounterRotate" title="Split Counter Rotate"/>
   <call link="c1/split_counter_rotate" title="Split Counter Rotate"/>
   <call link="c1/split_square_thru_variations" title="Split Dixie Diamond"/>
   <call link="c1/split_square_thru_variations" title="Split Dixie Sashay"/>
@@ -594,7 +594,7 @@
   <call audio="a1/split_square_thru.mp3" link="a1/split_square_thru" title="Split Square Thru"/>
   <call link="c2/split_swap_around" title="Split Swap Around"/>
   <call link="c2/split_trade_circulate" title="Split Trade Circulate"/>
-  <call audio="a2/split_transfer.mp3" link="a2/split_transfer" title="Split Transfer"/>
+  <call audio="a2/split_transfer.mp3" link="a2/box_transfer?animname=SplitTransfer" title="Split Transfer"/>
   <call audio="b1/split_two.mp3" languages="lang-de lang-ja" link="b1/split_the_outside_couple" title="Split Two"/>
   <call audio="ssd/split_two.mp3" languages="lang-de lang-ja" link="ssd/split_the_outside_couple" title="Split Two"/>
   <call link="c1/square_chain_the_top" title="Square Chain the Top"/>
@@ -636,7 +636,7 @@
   <call audio="ssd/sweep_a_quarter.mp3" languages="lang-ja lang-de" link="ssd/sweep_a_quarter" title="Sweep a Quarter"/>
   <call audio="b1/swing.mp3" languages="lang-de lang-ja" link="b1/swing" title="Swing"/>
   <call audio="ssd/swing.mp3" languages="lang-de lang-ja" link="ssd/swing" title="Swing"/>
-  <call audio="a2/swing.mp3" link="a2/swing" title="Swing"/>
+  <call audio="a2/swing.mp3" link="a2/slip?animname=Swing" title="Swing"/>
   <call link="c2/swing_along?animname=SwingAlong" title="Swing Along"/>
   <call link="c1/swing_and_circle" title="Swing and Circle"/>
   <call audio="a2/swing_and_mix.mp3" link="a2/swing_and_mix" title="Swing and Mix"/>
@@ -649,7 +649,7 @@
   <call audio="a2/switch_the_wave.mp3" link="a2/switch_the_wave" title="Switch the Wave"/>
   <call audio="a2/switch_to_a_diamond.mp3" link="a2/switch_to_a_diamond" title="Switch to a Diamond"/>
   <call link="c1/switch_to_a_diamond" title="Switch to a Diamond"/>
-  <call audio="a2/switch_to_an_hourglass.mp3" link="a2/switch_to_an_hourglass" title="Switch to an Hourglass"/>
+  <call audio="a2/switch_to_an_hourglass.mp3" link="a2/switch_to_a_diamond?animname=SwitchtoanHourglass" title="Switch to an Hourglass"/>
   <call link="c1/switch_to_an_hourglass" title="Switch to an Hourglass"/>
   <call link="c1/switch_to_an_interlocked_diamond" title="Switch to an Interlocked Diamond"/>
 

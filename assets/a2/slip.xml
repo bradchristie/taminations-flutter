@@ -150,4 +150,384 @@
     </path>
   </tam>
 
+  <tam title="Slide"
+       from="Right-Hand Waves"
+       formation="Ocean Waves RH BGBG"
+       fractions="1.5" >
+    <path>
+      <move select="BackSashay Right" scaleX="2" />
+    </path>
+    <path>
+      <move select="BackSashay Right" scaleX="2" />
+    </path>
+    <path>
+      <move select="BackSashay Right" scaleX="2" />
+    </path>
+    <path>
+      <move select="BackSashay Right" scaleX="2" />
+    </path>
+  </tam>
+
+  <tam title="Slide"
+       from="Left-Hand Waves"
+       formation="Ocean Waves LH BGBG"
+       fractions="1.5" >
+    <path>
+      <move select="BackSashay Left" scaleX="2" />
+    </path>
+    <path>
+      <move select="BackSashay Left" scaleX="2" />
+    </path>
+    <path>
+      <move select="BackSashay Left" scaleX="2" />
+    </path>
+    <path>
+      <move select="BackSashay Left" scaleX="2" />
+    </path>
+  </tam>
+
+  <tam title="Slide"
+       from="Inverted Lines"
+       formation="Inverted Lines Ends Facing Out"
+       fractions="1.5" >
+    <path>
+      <move select="BackSashay Left" scaleX="2" />
+    </path>
+    <path>
+      <move select="BackSashay Left" scaleX="2" />
+    </path>
+    <path>
+      <move select="BackSashay Right" scaleX="2" />
+    </path>
+    <path>
+      <move select="BackSashay Right" scaleX="2" />
+    </path>
+  </tam>
+
+  <tam title="Slide"
+       from="Right-Hand Tidal Wave"
+       formation="Tidal Wave RH BGGB"
+       fractions="1.5" >
+    <path>
+      <move select="BackSashay Right" scaleX="1.5" scaleY=".5" />
+    </path>
+    <path>
+      <move select="BackSashay Right" scaleX="1.5" scaleY=".5" />
+    </path>
+    <path>
+      <move select="BackSashay Right" scaleX="1.5" scaleY=".5" />
+    </path>
+    <path>
+      <move select="BackSashay Right" scaleX="1.5" scaleY=".5" />
+    </path>
+  </tam>
+
+  <tam title="Slide"
+       from="Left-Hand Tidal Wave"
+       formation="Tidal Wave LH BGGB"
+       fractions="1.5" >
+    <path>
+      <move select="BackSashay Left" scaleX="1.5" scaleY=".5" />
+    </path>
+    <path>
+      <move select="BackSashay Left" scaleX="1.5" scaleY=".5" />
+    </path>
+    <path>
+      <move select="BackSashay Left" scaleX="1.5" scaleY=".5" />
+    </path>
+    <path>
+      <move select="BackSashay Left" scaleX="1.5" scaleY=".5" />
+    </path>
+  </tam>
+
+  <tam title="As Couples Slide"
+       from="Two-Faced Tidal Line"
+       formation="Two-Faced Tidal Line RH"
+       fractions="2" group=" ">
+    <path>
+      <move select="BackSashay Right" beats="4" scaleX="2" />
+    </path>
+    <path>
+      <move select="BackSashay Right" beats="4" scaleX="2" />
+    </path>
+    <path>
+      <move select="BackSashay Right" beats="4" scaleX="2" />
+    </path>
+    <path>
+      <move select="BackSashay Right" beats="4" scaleX="2" />
+    </path>
+  </tam>
+
+  <tam title="All 8 Slide"
+       from="Thar"
+       formation="Thar LH Boys"
+       fractions="1.5" group=" ">
+    <path>
+      <move select="BackSashay Right" scaleX="1.5" />
+    </path>
+    <path>
+      <move select="BackSashay Right" scaleX="1.5" />
+    </path>
+    <path>
+      <move select="BackSashay Right" scaleX="1.5" />
+    </path>
+    <path>
+      <move select="BackSashay Right" scaleX="1.5" />
+    </path>
+  </tam>
+
+  <tam title="Swing"
+       from="Right-Hand Waves"
+       formation="Ocean Waves RH BGBG"
+       fractions="1.5" >
+    <path>
+      <move select="Swing Right" />
+    </path>
+    <path>
+      <move select="Swing Right" />
+    </path>
+    <path>
+      <move select="Swing Right" />
+    </path>
+    <path>
+      <move select="Swing Right" />
+    </path>
+  </tam>
+
+  <tam title="Swing"
+       from="Left-Hand Waves"
+       formation="Ocean Waves LH BGBG"
+       fractions="1.5" >
+    <path>
+      <move select="Swing Left" />
+    </path>
+    <path>
+      <move select="Swing Left" />
+    </path>
+    <path>
+      <move select="Swing Left" />
+    </path>
+    <path>
+      <move select="Swing Left" />
+    </path>
+  </tam>
+
+  <tam title="Swing"
+       from="Inverted Lines"
+       formation="Inverted Lines Ends Facing Out"
+       fractions="1.5" >
+    <path>
+      <move select="Swing Left" />
+    </path>
+    <path>
+      <move select="Swing Left" />
+    </path>
+    <path>
+      <move select="Swing Right" />
+    </path>
+    <path>
+      <move select="Swing Right" />
+    </path>
+  </tam>
+
+  <tam title="Swing"
+       from="Right-Hand Tidal Wave"
+       formation="Tidal Wave RH BGGB"
+       fractions="1.5" >
+    <path>
+      <move select="Swing Right" scaleX=".75" scaleY=".5" />
+    </path>
+    <path>
+      <move select="Swing Right" scaleX=".75" scaleY=".5" />
+    </path>
+    <path>
+      <move select="Swing Right" scaleX=".75" scaleY=".5" />
+    </path>
+    <path>
+      <move select="Swing Right" scaleX=".75" scaleY=".5" />
+    </path>
+  </tam>
+
+  <tam title="Swing"
+       from="Left-Hand Tidal Wave"
+       formation="Tidal Wave LH BGGB"
+       fractions="1.5" >
+    <path>
+      <move select="Swing Left" scaleX=".75" scaleY=".5" />
+    </path>
+    <path>
+      <move select="Swing Left" scaleX=".75" scaleY=".5" />
+    </path>
+    <path>
+      <move select="Swing Left" scaleX=".75" scaleY=".5" />
+    </path>
+    <path>
+      <move select="Swing Left" scaleX=".75" scaleY=".5" />
+    </path>
+  </tam>
+
+  <tam title="As Couples Swing"
+       from="Two-Faced Tidal Line"
+       formation="Two-Faced Tidal Line RH"
+       fractions="2" group=" ">
+    <path>
+      <move select="Swing Right" beats="4" scaleX="1.5" scaleY="1.5" />
+    </path>
+    <path>
+      <move select="Swing Right" beats="4" scaleX=".5" scaleY=".5" />
+    </path>
+    <path>
+      <move select="Swing Right" beats="4" scaleX=".5" scaleY=".5" />
+    </path>
+    <path>
+      <move select="Swing Right" beats="4" scaleX="1.5" scaleY="1.5" />
+    </path>
+  </tam>
+
+  <tam title="All 8 Swing"
+       from="Thar"
+       formation="Thar LH Boys"
+       fractions="1.5" group=" ">
+    <path>
+      <move select="Swing Right" />
+    </path>
+    <path>
+      <move select="Swing Right" />
+    </path>
+    <path>
+      <move select="Swing Right" />
+    </path>
+    <path>
+      <move select="Swing Right" />
+    </path>
+  </tam>
+
+  <tam title="Slither"
+       from="Right-Hand Waves"
+       formation="Ocean Waves RH BGBG"
+       fractions="1.5" actives="All">
+    <path>
+    </path>
+    <path>
+      <move select="BackSashay Left" scaleX="2" />
+    </path>
+    <path>
+      <move select="BackSashay Left" scaleX="2" />
+    </path>
+    <path>
+    </path>
+  </tam>
+
+  <tam title="Slither"
+       from="Left-Hand Waves"
+       formation="Ocean Waves LH BGGB"
+       fractions="1.5" actives="All">
+    <path>
+    </path>
+    <path>
+      <move select="BackSashay Right" scaleX="2" />
+    </path>
+    <path>
+      <move select="BackSashay Right" scaleX="2" />
+    </path>
+    <path>
+    </path>
+  </tam>
+
+  <tam title="Slither"
+       from="Right-Hand Two-Faced Line"
+       formation="Two-Faced Lines RH"
+       fractions="1.5" actives="All">
+    <path>
+    </path>
+    <path>
+      <move select="BackSashay Right" scaleX="2" />
+    </path>
+    <path>
+      <move select="BackSashay Right" scaleX="2" />
+    </path>
+    <path>
+    </path>
+  </tam>
+
+  <tam title="Slither"
+       from="Left-Hand Two-Faced Line"
+       formation="Two-Faced Lines LH"
+       fractions="1.5" actives="All">
+    <path>
+    </path>
+    <path>
+      <move select="BackSashay Left" scaleX="2" />
+    </path>
+    <path>
+      <move select="BackSashay Left" scaleX="2" />
+    </path>
+    <path>
+    </path>
+  </tam>
+
+  <tam title="Slither"
+       from="Right-Hand Tidal Wave"
+       formation="Tidal Wave RH BGGB"
+       fractions="1.5" actives="All">
+    <path>
+    </path>
+    <path>
+      <move select="BackSashay Left" scaleX="1.5" scaleY=".5" />
+    </path>
+    <path>
+      <move select="BackSashay Left" scaleX="1.5" scaleY=".5" />
+    </path>
+    <path>
+    </path>
+  </tam>
+
+  <tam title="Slither"
+       from="Left-Hand Tidal Wave"
+       formation="Tidal Wave LH BGGB"
+       fractions="1.5" actives="All">
+    <path>
+    </path>
+    <path>
+      <move select="BackSashay Right" scaleX="1.5" scaleY=".5" />
+    </path>
+    <path>
+      <move select="BackSashay Right" scaleX="1.5" scaleY=".5" />
+    </path>
+    <path>
+    </path>
+  </tam>
+
+  <tam title="As Couples Slither"
+       from="Two-Faced Tidal Line"
+       formation="Two-Faced Tidal Line RH"
+       fractions="2" group=" " actives="All">
+    <path>
+    </path>
+    <path>
+    </path>
+    <path>
+      <move select="BackSashay Left" beats="4" scaleX="2" />
+    </path>
+    <path>
+      <move select="BackSashay Left" beats="4" scaleX="2" />
+    </path>
+  </tam>
+
+  <tam title="All 8 Slither"
+       from="Thar"
+       formation="Thar LH Boys"
+       fractions="1.5" group=" " actives="All">
+    <path>
+      <move select="BackSashay Left" scaleX="2" />
+    </path>
+    <path>
+    </path>
+    <path>
+      <move select="BackSashay Left" scaleX="2" />
+    </path>
+    <path>
+    </path>
+  </tam>
+
 </tamination>

@@ -1,6 +1,8 @@
 
 # Peel and Trail
 
+Timing: Tandem Couples - 4, Box Circulate or Z - 6
+
 Starting formation: Tandem Couples, Box Circulate, or Tandem Dancers in a Z (e.g. from a wave after
 the Ends Fold)
 
@@ -19,21 +21,19 @@ continuous motion that cannot be fractionalized.
 Peel and Trail from Tandem Couples will end in a One-Faced line. Peel and Trail from a Box Circulate
 or from a Right or Left Hand Z will end in an opposite-handed Wave.
 
-Notes:
-
-- Everyone can Roll after a Peel and Trail.
-- For the four dancers, the center of the ending formation is the same as the center of the starting
-formation; however, square breathing adjustments may reposition the whole line or wave.
-- When the trailers start facing in the same direction, their dance action feels like a Left Shoulder
-Partner Trade.
-
 > 
 > ![alt](peel_and_trail_1a.png)
 > ![alt](peel_and_trail_1b.png)
 > ![alt](peel_and_trail_1c.png)
 > ![alt](peel_and_trail_1d.png)
-> 
+>
 
-Timing: Tandem Couples - 4, Box Circulate or Z - 6
+Notes:
+
+- Everyone can Roll after a Peel and Trail.
+- For the four dancers, the center of the ending formation is the same as the center of the starting
+  formation; however, square breathing adjustments may reposition the whole line or wave.
+- When the trailers start facing in the same direction, their dance action feels like a Left Shoulder
+  Partner Trade.
 
 ###### @ Copyright 1982, 1986-1988, 1995, 2001-2020. Bill Davis, John Sybalsky, and CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed nor revised in any derivation or publication.
