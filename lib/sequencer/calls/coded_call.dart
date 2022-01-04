@@ -17,11 +17,6 @@
   along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 */
-import 'package:taminations/sequencer/calls/a1/six_two_acey_deucey.dart';
-import 'package:taminations/sequencer/calls/a2/split_counter_rotate.dart';
-import 'package:taminations/sequencer/calls/c1/block_formation.dart';
-import 'package:taminations/sequencer/calls/c1/magic_transfer_and.dart';
-
 import '../../extensions.dart';
 import '../../tam_utils.dart';
 import 'a1/as_couples.dart';
@@ -39,17 +34,20 @@ import 'a1/partner_tag.dart';
 import 'a1/pass_in_out.dart';
 import 'a1/quarter_in_out.dart';
 import 'a1/roll_to_a_wave.dart';
+import 'a1/six_two_acey_deucey.dart';
 import 'a1/split_square_thru.dart';
 import 'a1/triple_star_thru.dart';
 import 'a1/triple_trade.dart';
 import 'a1/turn_and_deal.dart';
 import 'a2/all_eight.dart';
 import 'a2/box_counter_rotate.dart';
+import 'a2/remake.dart';
 import 'a2/single_wheel.dart';
 import 'a2/slide.dart';
 import 'a2/slip.dart';
 import 'a2/slither.dart';
 import 'a2/spin_the_windmill.dart';
+import 'a2/split_counter_rotate.dart';
 import 'a2/swing.dart';
 import 'a2/transfer_and.dart';
 import 'a2/zig.dart';
@@ -75,12 +73,14 @@ import 'b2/box_the_gnat.dart';
 import 'b2/cross_run.dart';
 import 'b2/run.dart';
 import 'b2/sweep_a_quarter.dart';
+import 'b2/swing_thru.dart';
 import 'b2/touch.dart';
 import 'b2/touch_a_quarter.dart';
 import 'b2/trade.dart';
 import 'b2/wheel_around.dart';
 import 'b2/zoom.dart';
 import 'c1/anything_chain_thru.dart';
+import 'c1/block_formation.dart';
 import 'c1/butterfly.dart';
 import 'c1/cast_back.dart';
 import 'c1/circle_by.dart';
@@ -90,6 +90,7 @@ import 'c1/finish.dart';
 import 'c1/ignore.dart';
 import 'c1/jaywalk.dart';
 import 'c1/little.dart';
+import 'c1/magic_transfer_and.dart';
 import 'c1/make_magic.dart';
 import 'c1/mini_busy_but.dart';
 import 'c1/o_formation.dart';
@@ -146,6 +147,7 @@ import 'c2/the_k.dart';
 import 'c2/truck.dart';
 import 'c2/zip_code.dart';
 import 'c3a/snap_the_lock.dart';
+import 'c3b/reverse_order.dart';
 import 'call.dart';
 import 'common/adjust.dart';
 import 'common/and.dart';
@@ -186,6 +188,8 @@ import 'ms/half_tag.dart';
 import 'ms/hinge.dart';
 import 'ms/quarter_tag.dart';
 import 'ms/slide_thru.dart';
+import 'ms/spin_chain_thru.dart';
+import 'ms/spin_the_top.dart';
 import 'ms/tag_the_line.dart';
 import 'ms/three_quarters_tag.dart';
 import 'ms/turn_thru.dart';
@@ -194,6 +198,7 @@ import 'plus/acey_deucey.dart';
 import 'plus/diamond_circulate.dart';
 import 'plus/explode.dart';
 import 'plus/grand_swing_thru.dart';
+import 'plus/load_the_boat.dart';
 import 'plus/points.dart';
 import 'plus/roll.dart';
 import 'plus/spread.dart';
@@ -305,6 +310,7 @@ abstract class CodedCall extends Call {
         (name) => Little(name),
     '(scootand)?little(outside|point)(in|out|left|right|(go)?(forward|asyouare))?'.ri:
         (name) => Little(name),
+    'loadtheboat'.ri: (_) => LoadTheBoat(),
     '(left|right|in|out)loop(1|2|3)'.ri: (name) => Loop(name),
 
     'magiccolumntransferand.+'.ri: (name) => MagicTransferAnd(name),
@@ -334,6 +340,8 @@ abstract class CodedCall extends Call {
 
     'ramble'.ri: (_) => Ramble(),
     'relocate(.*)'.ri: (name) => Relocate(name),
+    '(left)?(grand)?remake'.ri: (name) => Remake(name),
+    'reverseorder.*'.ri: (name) => ReverseOrder(name),
     '(left|right)?ripple.*'.ri: (name) => Ripple(name),
     '(and)?roll'.ri: (name) => Roll(name),
     '(reverse)?rollaway'.ri : (name) => Rollaway(name),
@@ -359,6 +367,8 @@ abstract class CodedCall extends Call {
     'slip'.ri: (_) => Slip(),
     'slither'.ri: (_) => Slither(),
     'snapthelock'.ri: (_) => SnapTheLock(),
+    'spinchainthru'.ri: (_) => SpinChainThru(),
+    'spinthetop'.ri: (_) => SpinTheTop(),
     '(.+)thewindmill(left|right|in|out|forward)'.ri: (name) => SpinTheWindmill(name),
     'splitcirculate'.ri: (_) => SplitCirculate(),
     'splitcounterrotate'.ri: (_) => SplitCounterRotate(),
@@ -383,6 +393,7 @@ abstract class CodedCall extends Call {
     'sweep14'.ri: (name) => SweepAQuarter(name),
     'swing'.ri: (_) => Swing(),
     'swingandcircle(12|34)'.ri: (name) => SwingAndCircle(name),
+    '(grand)?(left)?swingthru'.ri: (name) => SwingThru(name),
     'switchtheline'.ri: (_) => SwitchTheLine(),
 
     '(left)?tagback(toawave)?'.ri: (name) => TagBack(name),

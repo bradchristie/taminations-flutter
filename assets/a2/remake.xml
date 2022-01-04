@@ -159,7 +159,8 @@
   </tam>
 
 
-  <tam title="Left Remake" from="Left-Hand Waves" formation="Ocean Waves LH BGGB">
+  <tam title="Left Remake" from="Left-Hand Waves"
+       formation="Ocean Waves LH BGGB" parts="1.5;3">
     <path>
       <move select="Hinge Left"/>
       <move select="Stand" beats="3"/>

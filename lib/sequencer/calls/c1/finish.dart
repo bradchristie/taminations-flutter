@@ -18,6 +18,7 @@
 
 */
 
+import '../coded_call.dart';
 import '../common.dart';
 
 class Finish extends Action {
@@ -63,6 +64,15 @@ class Finish extends Action {
         }
       }
     }
+
+    //  If that didn't work, try a coded call
+    final codedCall = CodedCall.fromName(finishCall);
+    if (codedCall is CallWithParts) {
+      await (codedCall as CallWithParts).finish(ctx);
+      return;
+    }
+
+    //  Nothing worked
     throw CallError('Could not figure out how to Finish $finishCall');
   }
 

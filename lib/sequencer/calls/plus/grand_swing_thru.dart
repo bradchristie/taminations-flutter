@@ -22,10 +22,9 @@ import '../common.dart';
 
 //  Tidal waves of 8 dancers are covered by xml animations.
 //  This class handles formations of 6 dancers, with 2 others inactive.
-class GrandSwingThru extends ActivesOnlyAction {
+class GrandSwingThru extends TwoPartCall {
 
-  @override
-  var level = LevelData.PLUS;
+  @override var level = LevelData.PLUS;
   GrandSwingThru(String name) : super(name);
 
   @override
@@ -53,11 +52,25 @@ class GrandSwingThru extends ActivesOnlyAction {
       throw CallError('Unable to Grand Swing Thru from this formation.');
 
     //  All ok, do each part
-    if (name.contains('Left'))
-      await ctx.applyCalls('_Grand Swing Left','_Grand Swing Right');
-    else
-      await ctx.applyCalls('_Grand Swing Right','_Grand Swing Left');
+    await super.perform(ctx);
   }
+
+  @override
+  Future<void> performPart1(CallContext ctx) async {
+    if (name.contains('Left'))
+      await ctx.applyCalls('_Grand Swing Left');
+    else
+      await ctx.applyCalls('_Grand Swing Right');
+  }
+
+  @override
+  Future<void> performPart2(CallContext ctx) async {
+    if (name.contains('Left'))
+      await ctx.applyCalls('_Grand Swing Right');
+    else
+      await ctx.applyCalls('_Grand Swing Left');
+  }
+
 
 }
 

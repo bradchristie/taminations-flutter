@@ -37,7 +37,7 @@
   </tam>
 
   <tam title="Ends Bend"
-       from="Lines Facing Out"
+       from="Lines Facing Out" sequencer="no"
        formation="Lines Facing Out" actives="Ends">
     <path numbers="1  ">
       <move select="Lead Left" beats="2" scaleY="2" />
@@ -53,7 +53,7 @@
     </path>
   </tam>
 
-  <tam title="Ends Bend"
+  <tam title="Ends Bend" sequencer="no"
        from="Inverted Lines, Ends Facing Out" actives="Ends">
     <formation>
       <dancer gender="girl" x="-2" y="3" angle="180"/>

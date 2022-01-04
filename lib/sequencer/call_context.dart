@@ -81,7 +81,7 @@ class CallContext {
     'c1/block_formation',
     'b1/circle',
     'a1/clover_and_anything',
-    'a1/cross_clover_and_anything',
+    'a1/clover_and_anything',
     'c1/cross_your_neighbor',
     'c2/criss_cross_your_neighbor',
     'plus/explode_the_wave',
@@ -118,7 +118,6 @@ class CallContext {
     'plus/chase_right',
     'a1/fractional_tops',
     'a1/quarter_thru',
-    'a1/three_quarter_thru',
     'b1/split_the_outside_couple',
     'c2/cross_the_k',
     'a2/transfer_and_anything',
@@ -1090,6 +1089,26 @@ class CallContext {
             (d) => isX ? d.location.x < 0 : d.location.y < 0
     );
   }
+
+  List<Dancer> dancersHoldingRightHands({bool isGrand=true}) =>
+      dancers.where((d) {
+        final d2 = dancerToRight(d);
+        return d2 != null && d.distanceTo(d2) < 2.5 &&
+            dancerToRight(d2) == d &&
+            (isGrand || !d.data.verycenter || !d2.data.verycenter);
+      }).toList();
+
+  List<Dancer> dancersHoldingLeftHands({bool isGrand=true}) =>
+      dancers.where((d) {
+        final d2 = dancerToLeft(d);
+        return d2 != null && d.distanceTo(d2) < 2.5 &&
+            dancerToLeft(d2) == d &&
+            (isGrand || !d.data.verycenter || !d2.data.verycenter);
+      }).toList();
+
+  List<Dancer> dancersHoldingSameHands({ required bool isRight, bool isGrand=true}) =>
+      isRight ? dancersHoldingRightHands(isGrand:isGrand)
+              : dancersHoldingLeftHands(isGrand:isGrand);
 
   //  Return true if this dancer is in a wave or mini-wave
   bool isInWave(Dancer d, [Dancer? d2]) {
