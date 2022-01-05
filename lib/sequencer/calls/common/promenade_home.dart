@@ -79,10 +79,9 @@ class PromenadeHome extends Action {
     //  Now get each dancer to move to the calculated promenade position
     await super.perform(ctx, stackIndex);
     //  Promenade to home
-
     do {
       await ctx.applyCalls('Counter Rotate');
-    } while (ctx.dancers[0].path.movelist.length < 10 && // sanity check
+    } while (ctx.dancers[0].path.movelist.length < 100 && // sanity check
         !ctx.dancers[0].anglePosition.isAround(pi));
     //  Adjust from promenade to squared set
     await ctx.applyCalls('Half Wheel Around');
