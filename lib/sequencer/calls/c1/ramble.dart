@@ -20,18 +20,20 @@
 
 import '../common.dart';
 
-class Ramble extends Action {
+class Ramble extends TwoPartCall {
 
   @override final level = LevelData.C1;
   Ramble() : super('Ramble');
 
   @override
-  Future<void> perform(CallContext ctx, [int stackIndex = 0]) async {
-    final ctx2 = CallContext.fromContext(ctx,beat:0.0);
-    ctx2.noSnap();
-    await ctx2.applyCalls('Center 4 Single Wheel and Slide Thru');
-    await ctx2.applyCalls('Outer 4 Separate and Slide Thru');
-    ctx2.appendToSource();
+  Future<void> performPart1(CallContext ctx) async {
+    await ctx.applyCalls('Center 4 Single Wheel While Outer 4 Separate');
+    ctx.matchStandardFormation(); // So "I" formations work
+  }
+
+  @override
+  Future<void> performPart2(CallContext ctx) async {
+    await ctx.applyCalls('Slide Thru');
   }
 
 }
