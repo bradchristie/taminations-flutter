@@ -41,6 +41,7 @@ import 'a1/triple_trade.dart';
 import 'a1/turn_and_deal.dart';
 import 'a2/all_eight.dart';
 import 'a2/box_counter_rotate.dart';
+import 'a2/pass_and_roll.dart';
 import 'a2/remake.dart';
 import 'a2/single_wheel.dart';
 import 'a2/slide.dart';
@@ -324,6 +325,7 @@ abstract class CodedCall extends Call {
     'out(er|sides?)(2|4|6)?'.ri: (name) => Outsides(name),
 
     'partnertag'.ri: (_) => PartnerTag(),
+    '(left)?passandroll(your(cross)?neighbor)?'.ri: (name) => PassAndRoll(name),
     'pass(in|out)'.ri: (name) => PassInOut(name),
     '(left)?passthru'.ri: (name) => PassThru(name),
     'peeltoadiamond'.ri: (_) => PeelToADiamond(),
