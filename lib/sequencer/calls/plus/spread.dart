@@ -134,8 +134,8 @@ class _Case3 extends _Case1 {
 
   @override
   Future<void> perform(CallContext ctx, [int stackIndex = 0]) async {
-    //  Leaders must be couples
-    if (ctx.dancers.any((d) => !(d.data.partner?.data.leader ?? false)))
+    //  Must be tandem couples
+    if (ctx.dancers.any((d) => !ctx.isInTandem(d) || !ctx.isInCouple(d)))
       throw CallError('Invalid formation for Spread');
     //  Mark the leaders as active
     for (var d in ctx.dancers)
