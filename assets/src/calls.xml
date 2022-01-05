@@ -364,7 +364,7 @@
   <call audio="a1/linear_cycle.mp3" link="a1/linear_cycle" title="Linear Cycle"/>
   <call link="c2/lines_anything_thru" title="Lines Anything Thru"/>
   <call link="c3a/link_up" title="Link Up"/>
-  <call link="c1/little" title="Little"/>
+  <call link="c1/scoot_and_little" title="Little"/>
   <call link="c2/little_more" title="Little More"/>
   <call audio="plus/load_the_boat.mp3" languages="lang-ja" link="plus/load_the_boat" title="Load the Boat"/>
   <call link="c3b/lock_em_up" title="Lock 'Em Up"/>

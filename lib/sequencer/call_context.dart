@@ -136,7 +136,8 @@ class CallContext {
     'c2/stretched_concept',
     'c1/finish',
     'ms/fraction_tag',
-    'c3a/big_block_concept'
+    'c3a/big_block_concept',
+    'c1/scoot_and_little'
   ];
 
   static const standardFormations = {
@@ -1093,7 +1094,7 @@ class CallContext {
   List<Dancer> dancersHoldingRightHands({bool isGrand=true}) =>
       dancers.where((d) {
         final d2 = dancerToRight(d);
-        return d2 != null && d.distanceTo(d2) < 2.5 &&
+        return d2 != null && d.distanceTo(d2) < 3.5 &&
             dancerToRight(d2) == d &&
             (isGrand || !d.data.verycenter || !d2.data.verycenter);
       }).toList();
@@ -1101,7 +1102,7 @@ class CallContext {
   List<Dancer> dancersHoldingLeftHands({bool isGrand=true}) =>
       dancers.where((d) {
         final d2 = dancerToLeft(d);
-        return d2 != null && d.distanceTo(d2) < 2.5 &&
+        return d2 != null && d.distanceTo(d2) < 3.5 &&
             dancerToLeft(d2) == d &&
             (isGrand || !d.data.verycenter || !d2.data.verycenter);
       }).toList();
