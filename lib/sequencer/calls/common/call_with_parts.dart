@@ -131,3 +131,52 @@ abstract class FourPartCall extends Action implements CallWithParts {
   }
 
 }
+
+abstract class FivePartCall extends Action implements CallWithParts {
+
+  FivePartCall(String name) : super(name);
+
+  Future<void> performPart1(CallContext ctx);
+  Future<void> performPart2(CallContext ctx);
+  Future<void> performPart3(CallContext ctx);
+  Future<void> performPart4(CallContext ctx);
+  Future<void> performPart5(CallContext ctx);
+
+  @override
+  Future<void> perform(CallContext ctx, [int stackIndex=0]) async {
+    await performPart1(ctx);
+    ctx.extendPaths();
+    await performPart2(ctx);
+    ctx.extendPaths();
+    await performPart3(ctx);
+    ctx.extendPaths();
+    await performPart4(ctx);
+    ctx.extendPaths();
+    await performPart5(ctx);
+  }
+
+  @override
+  Future<void> finish(CallContext ctx) async {
+    await performPart2(ctx);
+    ctx.extendPaths();
+    await performPart3(ctx);
+    ctx.extendPaths();
+    await performPart4(ctx);
+    ctx.extendPaths();
+    await performPart5(ctx);
+  }
+
+  @override
+  Future<void> reverseOrder(CallContext ctx) async {
+    await performPart5(ctx);
+    ctx.extendPaths();
+    await performPart4(ctx);
+    ctx.extendPaths();
+    await performPart3(ctx);
+    ctx.extendPaths();
+    await performPart2(ctx);
+    ctx.extendPaths();
+    await performPart1(ctx);
+  }
+
+}
