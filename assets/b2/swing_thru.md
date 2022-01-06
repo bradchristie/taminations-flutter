@@ -18,6 +18,7 @@ then ***those who can turn 1/2 (180 degrees) by the left***.
 
 Left Swing Thru: ***Those who can turn 1/2 (180 degrees) by the left***;
 then ***those who can turn 1/2 (180 degrees) by the right***.
+
 Dancers must work in their group:
 
 - From an Alamo Ring, all dancers form one group.
