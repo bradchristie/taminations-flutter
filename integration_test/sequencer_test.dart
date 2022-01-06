@@ -20,7 +20,6 @@
 
 // @dart=2.9
 
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:integration_test/integration_test.dart';
@@ -2176,6 +2175,7 @@ void main() {
   IntegrationTestWidgetsFlutterBinding.ensureInitialized();
   final testsFinished = <String>[];
   final testsFailed = testSequences.keys.toSet();
+  var isFirst = true;
 
   // Close the connection to the driver after the tests have completed.
   tearDownAll(() async {
@@ -2212,9 +2212,15 @@ void main() {
         await tester.pumpAndSettle();
         await tester.tap(sequencerInputTapper);
         await tester.pumpAndSettle();
+        if (isFirst) {
+          await tester.enterText(sequencerInput,'Speed Ludicrous');
+          await tester.tap(sequencerSubmit);
+          await tester.pumpAndSettle();
+          isFirst = false;
+        }
         await tester.enterText(sequencerInput,'# $testName');
         await tester.tap(sequencerSubmit);
-        await tester.pump();
+        await tester.pumpAndSettle();
         for (var call in testSequences[testName].split('\n')) {
           await tester.enterText(sequencerInput,call);
           await tester.tap(sequencerSubmit);

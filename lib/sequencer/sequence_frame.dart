@@ -344,8 +344,9 @@ class _SequencerEditLineState extends fm.State<SequencerEditLine> {
         model.setColor(call, settings);
       else if (call.toLowerCase().trim().startsWith('id '))
         model.setId(call, settings);
-      else
-      if (!(await model.loadOneCall(call)))
+      else if (call.toLowerCase().trim().startsWith('speed '))
+        model.setSpeed(call, settings);
+      else if (!(await model.loadOneCall(call)))
         break;
     }
     //  Animate from the previous position

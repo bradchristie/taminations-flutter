@@ -139,6 +139,27 @@ class SequencerModel extends fm.ChangeNotifier {
     });
   }
 
+  void setSpeed(String c, Settings settings) {
+    final command = c.toLowerCase().replaceAll('speed','').trim();
+    switch (command) {
+      case 'slow' :
+        settings.speed = 'Slow';
+        break;
+      case 'normal' :
+        settings.speed = 'Normal';
+        break;
+      case 'fast' :
+        settings.speed = 'Fast';
+        break;
+      case 'ludicrous' :
+        settings.speed = 'Ludicrous';
+        break;
+      default :
+        errorString = 'Invalid speed';
+        break;
+    }
+  }
+
   Future<bool> loadOneCall(String call) async {
     errorString = '';
     try {

@@ -30,6 +30,7 @@ class DanceModel extends fm.ChangeNotifier {
   static const MODERATESPEED = 1000.0;
   static const NORMALSPEED = 500.0;
   static const FASTSPEED = 200.0;
+  static const LUDICROUSSPEED = 10.0;
 
   XmlElement? _tam;
   BeatNotifier beater;
@@ -183,7 +184,12 @@ class DanceModel extends fm.ChangeNotifier {
   }
 
   void setSpeed(String speed) {
-    final newSpeed = {'Slow':SLOWSPEED,'Moderate':MODERATESPEED,'Fast':FASTSPEED}[speed] ?? NORMALSPEED;
+    final newSpeed = {
+      'Slow':SLOWSPEED,
+      'Moderate':MODERATESPEED,
+      'Fast':FASTSPEED,
+      'Ludicrous':LUDICROUSSPEED
+    }[speed] ?? NORMALSPEED;
     _speed = newSpeed;
     beater.speed = _speed;
   }
