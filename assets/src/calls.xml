@@ -583,9 +583,12 @@
   <call languages="lang-de lang-ja" link="b1/circulate" title="Split Circulate"/>
   <call audio="a2/split_counter_rotate.mp3" link="a2/box_counter_rotate?animname=SplitCounterRotate" title="Split Counter Rotate"/>
   <call link="c1/split_counter_rotate" title="Split Counter Rotate"/>
-  <call link="c1/split_square_thru_variations" title="Split Dixie Diamond"/>
-  <call link="c1/split_square_thru_variations" title="Split Dixie Sashay"/>
-  <call link="c1/split_square_thru_variations" title="Split Dixie Style to a Wave"/>
+  <call link="c1/split_square_thru_variations?animname=SplitDixieDiamond"
+        title="Split Dixie Diamond"/>
+  <call link="c1/split_square_thru_variations?animname=SplitDixieSashay"
+        title="Split Dixie Sashay"/>
+  <call link="c1/split_square_thru_variations?animname=SplitDixieStyletoaWave"
+        title="Split Dixie Style to a Wave"/>
   <call link="c3b/split_phantom_boxes" title="Split Phantom Boxes Concept"/>
   <call link="c3a/split_phantom_columns_lines_waves_concept" title="Split Phantom Columns / Lines / Waves Concept"/>
   <call link="c1/recycle?animname=SplitRecycle" title="Split Recycle"/>
@@ -654,7 +657,8 @@
   <call link="c1/switch_to_an_interlocked_diamond" title="Switch to an Interlocked Diamond"/>
 
   <call link="c1/t_bone_formation" title="T-Bone Formation"/>
-  <call link="c1/tagging_calls_back_to_a_wave" title="Tag Back to a Wave"/>
+  <call link="c1/tagging_calls_back_to_a_wave?animname=TagBacktoaWave"
+        title="Tag Back to a Wave"/>
   <call link="c3a/any_tagging_call_chain_thru" title="Tag Chain Thru"/>
   <call audio="ms/tag_the_line.mp3" languages="lang-de lang-ja" link="ms/tag" title="Tag the Line"/>
   <call audio="ssd/tag_the_line.mp3" languages="lang-de lang-ja" link="ssd/tag" title="Tag the Line"/>
@@ -723,7 +727,8 @@
   <call languages="lang-de lang-ja" link="ssd/veer" title="Veer Left / Right"/>
   <call link="c2/vertical_anything" title="Vertical"/>
   <call link="c1/vertical_tag" title="Vertical Tag"/>
-  <call link="c1/tagging_calls_back_to_a_wave" title="Vertical Tag Back to a Wave"/>
+  <call link="c1/tagging_calls_back_to_a_wave?animname=VerticalTagBacktoaWave"
+        title="Vertical Tag Back to a Wave"/>
   <call link="c2/any_tagging_call_your_neighbor" title="Vertical Tag Your Neighbor"/>
 
   <call audio="ms/walk_and_dodge.mp3" languages="lang-de lang-ja" link="ms/walk_and_dodge" title="Walk and Dodge"/>
