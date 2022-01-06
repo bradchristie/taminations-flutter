@@ -24,6 +24,7 @@ class SwingThru extends TwoPartCall {
   @override var level = LevelData.B2;
   bool isGrand;
   bool isLeft;
+  List<Dancer>? part1dancers;
   SwingThru(String name) :
         isGrand=name.contains('Grand'),
         isLeft=name.contains('Left'),
@@ -36,16 +37,25 @@ class SwingThru extends TwoPartCall {
   Future<void> performPart1(CallContext ctx) async {
     ctx.analyze();
     await ctx.subContext(ctx.dancersHoldingSameHands(isRight: !isLeft, isGrand: isGrand),
-            (ctx2) async => await ctx2.applyCalls('Trade')
-    );
+            (ctx2) async {
+              if (ctx2.actives.isEmpty)
+                throw CallError('Noone to do part 1 of Swing Thru');
+              part1dancers = ctx2.actives;
+              await ctx2.applyCalls('Trade');
+    });
   }
 
   @override
   Future<void> performPart2(CallContext ctx) async {
     ctx.analyze();
     await ctx.subContext(ctx.dancersHoldingSameHands(isRight: isLeft, isGrand: isGrand),
-            (ctx2) async => await ctx2.applyCalls('Trade')
-    );
+            (ctx2) async {
+              if (ctx2.actives.isEmpty)
+                throw CallError('Noone to do part 2 of Swing Thru');
+              if (part1dancers != null && !part1dancers!.any((d) => ctx2.actives.contains(d)))
+                throw CallError('No dancers doing both parts of Swing Thru');
+              await ctx2.applyCalls('Trade');
+    });
   }
 
 
