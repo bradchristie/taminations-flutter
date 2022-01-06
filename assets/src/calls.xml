@@ -431,7 +431,7 @@
   <call audio="plus/ping_pong_circulate.mp3" languages="lang-ja" link="plus/ping_pong_circulate"
         title="Ping Pong Circulate"/>
   <call link="c3a/plan_ahead" title="Plan Ahead"/>
-  <call link="c1/plenty" title="Plenty"/>
+  <call link="c1/scoot_and_plenty?animname=Plenty" title="Plenty"/>
   <call link="c3a/polly_wally" title="Polly Wally"/>
   <call link="c1/prefer" title="Prefer"/>
   <call link="c1/press" title="Press Ahead"/>

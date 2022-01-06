@@ -19,10 +19,10 @@
 
 import '../common.dart';
 
-class SpinChainThru extends FourPartCall {
+class AlterTheWave extends FourPartCall implements CallWithStars {
 
-  @override var level = LevelData.MS;
-  SpinChainThru() : super('Spin Chain Thru');
+  int turnAmount = 2;
+  AlterTheWave(String name) : super(name);
 
   @override
   Future<void> performPart1(CallContext ctx) async {
@@ -31,17 +31,23 @@ class SpinChainThru extends FourPartCall {
 
   @override
   Future<void> performPart2(CallContext ctx) async {
-    await ctx.applyCalls('Centers Cast Off 3/4');
+    await ctx.applyCalls('Centers Cast Off 3/4 While Ends Turn Back');
   }
 
   @override
   Future<void> performPart3(CallContext ctx) async {
-    await ctx.applyCalls('Very Centers Trade');
+    for (var i=0; i<turnAmount; i++)
+      await ctx.applyCalls('Split Counter Rotate');
   }
 
   @override
   Future<void> performPart4(CallContext ctx) async {
-    await ctx.applyCalls('Centers Cast Off 3/4');
+    await ctx.applyCalls('Flip the Diamond');
+  }
+
+  @override
+  void turnTheStar(int amount) {
+    turnAmount = amount;
   }
 
 }

@@ -464,7 +464,7 @@ class CallContext {
           err = err2;
         }
         //  Then look for a code match
-        foundOneCall = foundOneCall || _matchCodedCall(onecall);
+        foundOneCall = foundOneCall || matchCodedCall(onecall);
         //  Finally try a fuzzier snapshot match
         try {
           foundOneCall = foundOneCall || await matchXMLcall(onecall,fuzzy:true);
@@ -797,7 +797,7 @@ class CallContext {
 
   }
 
-  bool _matchCodedCall(String callname) {
+  bool matchCodedCall(String callname) {
     var call = CodedCall.fromName(callname);
     if (call != null) {
       callstack.add(call);

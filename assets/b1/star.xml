@@ -101,4 +101,53 @@
       <move select="Swing Left" />
     </path>
   </tam>
+
+  <tam title="Turn the Star" from="Right-Hand Star" formation="Star RH">
+    <path>
+      <move select="Hinge Right"/>
+    </path>
+    <path>
+      <move select="Hinge Right"/>
+    </path>
+  </tam>
+
+  <tam title="Turn the Star" from="Left-Hand Star" formation="Star LH">
+    <path>
+      <move select="Hinge Left"/>
+    </path>
+    <path>
+      <move select="Hinge Left"/>
+    </path>
+  </tam>
+
+  <tam title="Turn the Stars" from="Right-Hand Stars" formation="Stars RH">
+    <path>
+      <move select="Hinge Right"/>
+    </path>
+    <path>
+      <move select="Hinge Right"/>
+    </path>
+    <path>
+      <move select="Hinge Right"/>
+    </path>
+    <path>
+      <move select="Hinge Right"/>
+    </path>
+  </tam>
+
+  <tam title="Turn the Stars" from="Left-Hand Stars" formation="Stars LH">
+    <path>
+      <move select="Hinge Left"/>
+    </path>
+    <path>
+      <move select="Hinge Left"/>
+    </path>
+    <path>
+      <move select="Hinge Left"/>
+    </path>
+    <path>
+      <move select="Hinge Left"/>
+    </path>
+  </tam>
+
 </tamination>

@@ -31,7 +31,7 @@ class SwingTheFractions extends FivePartCall {
   Future<void> performPart1(CallContext ctx) async {
     ctx.analyze();
     await ctx.subContext(ctx.dancersHoldingSameHands(isRight: !isLeft),
-            (ctx2) async => await ctx2.applyCalls('Trade')
+            (ctx2) async => await ctx2.applyCalls('Hinge')
     );
   }
 
@@ -64,7 +64,7 @@ class SwingTheFractions extends FivePartCall {
   Future<void> performPart5(CallContext ctx) async {
     ctx.analyze();
     await ctx.subContext(ctx.dancersHoldingSameHands(isRight: !isLeft),
-            (ctx2) async => await ctx2.applyCalls('Trade')
+            (ctx2) async => await ctx2.applyCalls('Hinge')
     );
   }
 

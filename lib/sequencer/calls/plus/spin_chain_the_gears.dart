@@ -17,12 +17,16 @@
  *     along with Taminations.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+import 'package:flutter/material.dart';
+
 import '../common.dart';
 
-class SpinChainThru extends FourPartCall {
+class SpinChainTheGears extends SixPartCall implements CallWithStars {
 
-  @override var level = LevelData.MS;
-  SpinChainThru() : super('Spin Chain Thru');
+  @override final level = LevelData.PLUS;
+  var dir = 'Right';
+  var turnAmount = 3;
+  SpinChainTheGears(String name) : super(name);
 
   @override
   Future<void> performPart1(CallContext ctx) async {
@@ -31,17 +35,34 @@ class SpinChainThru extends FourPartCall {
 
   @override
   Future<void> performPart2(CallContext ctx) async {
-    await ctx.applyCalls('Centers Cast Off 3/4');
+    await ctx.applyCalls('Spin Chain the Gears Part 2');
   }
 
   @override
   Future<void> performPart3(CallContext ctx) async {
-    await ctx.applyCalls('Very Centers Trade');
+    for (var i=0; i<turnAmount; i++)
+      await ctx.applyCalls('Turn the Stars');
   }
 
   @override
   Future<void> performPart4(CallContext ctx) async {
-    await ctx.applyCalls('Centers Cast Off 3/4');
+    await ctx.applyCalls('Very Centers Trade');
+  }
+
+  @override
+  Future<void> performPart5(CallContext ctx) async {
+    for (var i=0; i<turnAmount; i++)
+      await ctx.applyCalls('Turn the Stars');
+  }
+
+  @override
+  Future<void> performPart6(CallContext ctx) async {
+    await ctx.applyCalls('Spin Chain the Gears Part 6');
+  }
+
+  @override
+  void turnTheStar(int amount) {
+    turnAmount = amount;
   }
 
 }

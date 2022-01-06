@@ -231,6 +231,16 @@
     <dancer gender="girl" x="-1" y="-1" angle="180"/>
   </formation>
 
+  <formation name="Star RH">
+    <dancer gender="boy" x="1" y="0" angle="270"/>
+    <dancer gender="girl" x="0" y="1" angle="0"/>
+  </formation>
+
+  <formation name="Star LH">
+    <dancer gender="boy" x="1" y="0" angle="90"/>
+    <dancer gender="girl" x="0" y="1" angle="180"/>
+  </formation>
+
   <!-- Four Couple Formations    -->
   <formation name="Static Square">
     <dancer gender="boy" x="-3" y="1" angle="0"/>
@@ -328,6 +338,20 @@
     <dancer gender="girl" x="1" y="0" angle="270"/>
     <dancer gender="boy" x="0" y="3" angle="0"/>
     <dancer gender="girl" x="0" y="1" angle="0"/>
+  </formation>
+
+  <formation name="Stars RH">
+    <dancer gender="boy" x="3" y="0" angle="270"/>
+    <dancer gender="girl" x="2" y="1" angle="0"/>
+    <dancer gender="boy" x="-1" y="0" angle="270"/>
+    <dancer gender="girl" x="-2" y="1" angle="0"/>
+  </formation>
+
+  <formation name="Stars LH">
+    <dancer gender="boy" x="3" y="0" angle="90"/>
+    <dancer gender="girl" x="2" y="1" angle="180"/>
+    <dancer gender="boy" x="-1" y="0" angle="90"/>
+    <dancer gender="girl" x="-2" y="1" angle="180"/>
   </formation>
 
   <formation name="Normal Lines">

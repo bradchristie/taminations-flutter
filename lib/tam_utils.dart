@@ -457,6 +457,7 @@ class TamUtils {
       .replaceAll('\\b(8|eight)\\b'.ri,'8')
       .replaceAll('\\b(9|nine)\\b'.ri,'9')
   //  Ordinals
+      .replaceAll('1st'.ri,'first')
       .replaceAll('2nd'.ri,'second')
       .replaceAll('3rd'.ri,'third')
       .replaceAll('4th'.ri,'fourth')

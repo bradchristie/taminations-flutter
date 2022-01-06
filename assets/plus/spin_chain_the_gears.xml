@@ -174,4 +174,72 @@
     </path>
   </tam>
 
+  <tam title="Spin Chain the Gears Part 2" display="no"
+       from="Right-Hand Waves"
+       formation="Ocean Waves RH BGGB">
+    <path>
+      <move select="Flip Right" beats="4.5"/>
+    </path>
+    <path>
+      <move select="Cast Left"/>
+    </path>
+    <path>
+      <move select="Cast Left"/>
+    </path>
+    <path>
+      <move select="Flip Right" beats="4.5"/>
+    </path>
+  </tam>
+
+  <tam title="Spin Chain the Gears Part 2" display="no"
+       from="Left-Hand Waves"
+       formation="Ocean Waves LH BGGB">
+    <path>
+      <move select="Flip Left" beats="4.5"/>
+    </path>
+    <path>
+      <move select="Cast Right"/>
+    </path>
+    <path>
+      <move select="Cast Right"/>
+    </path>
+    <path>
+      <move select="Flip Left" beats="4.5"/>
+    </path>
+  </tam>
+
+  <tam title="Spin Chain the Gears Part 6" display="no"
+       from="Left-Hand Stars"
+       formation="Stars LH">
+    <path>
+      <move select="Cast Left"/>
+    </path>
+    <path>
+      <move select="Flip Right" beats="4.5"/>
+    </path>
+    <path>
+      <move select="Cast Left"/>
+    </path>
+    <path>
+      <move select="Flip Right" beats="4.5"/>
+    </path>
+  </tam>
+
+  <tam title="Spin Chain the Gears Part 6" display="no"
+       from="Right-Hand Stars"
+       formation="Stars RH">
+    <path>
+      <move select="Cast Right"/>
+    </path>
+    <path>
+      <move select="Flip Left" beats="4.5"/>
+    </path>
+    <path>
+      <move select="Cast Right"/>
+    </path>
+    <path>
+      <move select="Flip Left" beats="4.5"/>
+    </path>
+  </tam>
+
 </tamination>

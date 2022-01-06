@@ -2218,8 +2218,8 @@ void main() {
         for (var call in testSequences[testName].split('\n')) {
           await tester.enterText(sequencerInput,call);
           await tester.tap(sequencerSubmit);
-          await tester.pump();
-          //expect(await (tester.widget(errorText) as Text).data,' ');
+          await tester.pumpAndSettle();
+          //expect((tester.widget(errorText) as Text).data,' ');
         }
         await tester.pumpAndSettle();
         expect((tester.widget(errorText) as Text).data,' ');

@@ -19,29 +19,33 @@
 
 import '../common.dart';
 
-class SpinChainThru extends FourPartCall {
+class Plenty extends ThreePartCall implements CallWithStars {
 
-  @override var level = LevelData.MS;
-  SpinChainThru() : super('Spin Chain Thru');
+  @override final level = LevelData.C1;
+  int turnAmount = 2;
+  Plenty(String name) : super(name);
 
   @override
   Future<void> performPart1(CallContext ctx) async {
-    await ctx.applyCalls('Swing');
+    await ctx.applyCalls('Center 4 Step and Fold While Outer 4 Face Right and Counter Rotate');
+    ctx.adjustToFormation('Normal Lines Compact');
   }
 
   @override
   Future<void> performPart2(CallContext ctx) async {
-    await ctx.applyCalls('Centers Cast Off 3/4');
+    for (var i=0; i<turnAmount; i++)
+      await ctx.applyCalls('Split Circulate');
   }
 
   @override
   Future<void> performPart3(CallContext ctx) async {
-    await ctx.applyCalls('Very Centers Trade');
+    await ctx.applyCalls('Outer 4 Counter Rotate and Roll While Center 4 1/2 Zoom');
+    ctx.adjustToFormation('Quarter Tag');
   }
 
   @override
-  Future<void> performPart4(CallContext ctx) async {
-    await ctx.applyCalls('Centers Cast Off 3/4');
+  void turnTheStar(int amount) {
+    turnAmount = amount;
   }
 
 }

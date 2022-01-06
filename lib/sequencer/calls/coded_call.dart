@@ -17,6 +17,7 @@
   along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 */
+
 import '../../extensions.dart';
 import '../../tam_utils.dart';
 import 'a1/as_couples.dart';
@@ -80,6 +81,7 @@ import 'b2/touch_a_quarter.dart';
 import 'b2/trade.dart';
 import 'b2/wheel_around.dart';
 import 'b2/zoom.dart';
+import 'c1/alter_the_wave.dart';
 import 'c1/anything_chain_thru.dart';
 import 'c1/block_formation.dart';
 import 'c1/butterfly.dart';
@@ -96,9 +98,13 @@ import 'c1/make_magic.dart';
 import 'c1/mini_busy_but.dart';
 import 'c1/o_formation.dart';
 import 'c1/phantom.dart';
+import 'c1/plenty.dart';
 import 'c1/ramble.dart';
+import 'c1/replace.dart';
+import 'c1/scoot_and_plenty.dart';
 import 'c1/scoot_and_ramble.dart';
 import 'c1/siamese.dart';
+import 'c1/skip.dart';
 import 'c1/squeeze.dart';
 import 'c1/squeeze_the_galaxy.dart';
 import 'c1/squeeze_the_hourglass.dart';
@@ -106,6 +112,7 @@ import 'c1/start.dart';
 import 'c1/stretch.dart';
 import 'c1/substitute.dart';
 import 'c1/swing_and_circle.dart';
+import 'c1/swing_the_fractions.dart';
 import 'c1/switch_the_line.dart';
 import 'c1/tag_back.dart';
 import 'c1/tandem.dart';
@@ -177,6 +184,7 @@ import 'common/square_the_set.dart';
 import 'common/step.dart';
 import 'common/those_who_can.dart';
 import 'common/trailers.dart';
+import 'common/turn_the_star.dart';
 import 'common/twice.dart';
 import 'common/very_centers.dart';
 import 'common/very_ends.dart';
@@ -202,6 +210,7 @@ import 'plus/grand_swing_thru.dart';
 import 'plus/load_the_boat.dart';
 import 'plus/points.dart';
 import 'plus/roll.dart';
+import 'plus/spin_chain_the_gears.dart';
 import 'plus/spread.dart';
 
 abstract class CodedCall extends Call {
@@ -215,6 +224,7 @@ abstract class CodedCall extends Call {
     'aceydeucey'.ri: (_) => AceyDeucey(),
     'adjustto.*'.ri: (name) => Adjust(name),
     'all8.*'.ri: (name) => AllEight(name),
+    'alterthewave'.ri: (name) => AlterTheWave(name),
     'and'.ri: (_) => And(),
     //  Anything Motivate does not include Finish Motivate
     '.*(?<!finish)(motivate|coordinate|percolate|perkup)'.ri: (name) => Anything(name),
@@ -330,6 +340,7 @@ abstract class CodedCall extends Call {
     '(left)?passthru'.ri: (name) => PassThru(name),
     'peeltoadiamond'.ri: (_) => PeelToADiamond(),
     'phantom.+'.ri: (name) => Phantom(name),
+    'plenty'.ri: (name) => Plenty(name),
     'point'.ri: (_) => Points(),
     'promenadehome'.ri: (name) => PromenadeHome(name),
     'swing(your)?corner(and)?promenade(home)?'.ri: (name) => PromenadeHome(name),
@@ -343,6 +354,7 @@ abstract class CodedCall extends Call {
     'ramble'.ri: (_) => Ramble(),
     'relocate(.*)'.ri: (name) => Relocate(name),
     '(left)?(grand)?remake'.ri: (name) => Remake(name),
+    '.+(but)?replace.+'.ri: (name) => Replace(name),
     'reverseorder.*'.ri: (name) => ReverseOrder(name),
     '(left|right)?ripple.*'.ri: (name) => Ripple(name),
     '(and)?roll'.ri: (name) => Roll(name),
@@ -354,6 +366,7 @@ abstract class CodedCall extends Call {
 
     'samesex(es)?'.ri: (name) => SameSex(name),
     'scootandcrossramble'.ri: (_) => ScootAndCrossRamble(),
+    'scootandplenty'.ri: (name) => ScootAndPlenty(name),
     'scootandramble'.ri: (_) => ScootAndRamble(),
     'separate'.ri: (_) => Separate(),
     'shazam'.ri: (_) => Shazam(),
@@ -363,11 +376,13 @@ abstract class CodedCall extends Call {
     'singlecrosstradeandwheel'.ri: (_) => SingleCrossTradeAndWheel(),
     '(left)?singlewheel'.ri: (name) => SingleWheel(name),
     '62aceydeucey'.ri: (_) => SixTwoAceyDeucey(),
+    '.*skipthe(first|second|third|fourth|fifth|last)part.+'.ri: (name) => Skip(name),
     'slide'.ri: (_) => Slide(),
     'slide(in|out|left|right)'.ri: (name) => SlideDir(name),
     'slidethru'.ri: (_) => SlideThru(),
     'slip'.ri: (_) => Slip(),
     'slither'.ri: (_) => Slither(),
+    'spinchainthegears'.ri: (name) => SpinChainTheGears(name),
     'snapthelock'.ri: (_) => SnapTheLock(),
     'spinchainthru'.ri: (_) => SpinChainThru(),
     'spinthetop'.ri: (_) => SpinTheTop(),
@@ -395,6 +410,7 @@ abstract class CodedCall extends Call {
     'sweep14'.ri: (name) => SweepAQuarter(name),
     'swing'.ri: (_) => Swing(),
     'swingandcircle(12|34)'.ri: (name) => SwingAndCircle(name),
+    'swingthefractions'.ri: (name) => SwingTheFractions(name),
     '(grand)?(left)?swingthru'.ri: (name) => SwingThru(name),
     'switchtheline'.ri: (_) => SwitchTheLine(),
 
@@ -426,6 +442,7 @@ abstract class CodedCall extends Call {
     '(go)?twice'.ri: (name) => Twice(name),
     '(left)?turnanddeal'.ri: (name) => TurnAndDeal(name),
     'u?turnback'.ri: (_) => TurnBack(),
+    '.*(donot)?turnthestars?(14|12|34)'.ri: (name) => TurnTheStar(name),
     'twist(theline|and.+)'.ri: (name) => TwistAnything(name),
 
     '(left)?vertical(left)?(14|12|34)?tag'.ri: (name) => VerticalTag(name),
