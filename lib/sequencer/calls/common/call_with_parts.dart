@@ -17,8 +17,7 @@
  *     along with Taminations.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import '../../call_context.dart';
-import '../../calls/action.dart';
+import '../common.dart';
 
 mixin CallWithParts {
 
@@ -70,9 +69,66 @@ mixin CallWithParts {
     await (replacePart1??performPart1)(ctx);
   }
 
+  Future<void> performOnePart(CallContext ctx, String name, int partNum) async {
+    final norm = TamUtils.normalizeCall(name);
+    //  Find matching XML call
+    final files = CallContext.xmlFilesForCall(norm.toLowerCase());
+    for (final link in files) {
+      final file = await CallContext.loadOneFile(link);
+      for (final tam in file.rootElement.childrenNamed('tam')
+          .where((tam) =>
+      tam('sequencer') != 'no' &&
+          TamUtils.normalizeCall(tam('title')).toLowerCase() ==
+              norm.toLowerCase())) {
+        print('Looking at ${tam('title')} from ${tam('from')}');
+        //  Should be divided into parts, will also accept fractions
+        final parts = tam('parts', '') + tam('fractions', '');
+        final sexy = tam('sequencer', '').contains('gender');
+        final allp = tam.childrenNamed('path').map((it) =>
+            Path(TamUtils.translatePath(it))).toList();
+        final partTimes = parts.isBlank ? <double>[] :
+            parts.split(';').map((e) => e.d).toList();
+        if (partTimes.length+1 >= partNum) {
+          //  Load the call and calculate the beats where to splice into the sequence
+          final ctx2 = CallContext.fromXML(tam, loadPaths: true);
+          final startBeat = partTimes.take(partNum-1).fold<double>(0.0, (a, b) => a+b);
+          final endBeat = partNum == partTimes.length + 1
+              ? ctx2.maxBeats()
+              : partTimes.take(partNum).fold<double>(0.0, (a, b) => a+b);
+          //  Animate call to the start point and try to match it to the current sequence
+          print('  animating to beat $startBeat');
+          ctx2.animate(startBeat);
+          final mapping = ctx.matchFormations(ctx2, sexy: sexy);
+          if (mapping != null) {
+            //  Adjust sequence dancers as needed to match call
+            final matchResult = ctx.computeFormationOffsets(ctx2, mapping);
+            ctx.adjustToFormationMatch(matchResult);
+            //  Copy path movements from call to sequence
+            for (var i = 0; i < mapping.length; i++) {
+              final m = mapping[i];
+              // TODO check for esymmetric call!
+              var b = 0.0;
+              for (final move in allp[m >> 1].movelist) {
+                if (b+0.1 >= startBeat && b-0.1 < endBeat)
+                  ctx.dancers[i].path.add(move);
+                b += move.beats;
+              }
+            }
+            print('Part $partNum of $name successfully added');
+            return;
+          }
+        }
+      }
+    }
+
+    //  failure ends up here
+    throw CallError('Could not find Part $partNum of $name');
+
+  }
+
 }
 
-class TwoPartCall extends Action with CallWithParts {
+abstract class TwoPartCall extends Action with CallWithParts {
 
   TwoPartCall(String name) : super(name);
   @override

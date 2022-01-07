@@ -19,8 +19,8 @@ Ocean Wave and the ends Flip In (180 degree inward turn similar to Ends Run).***
 ***Each Very Center dancer (one is #1 in the diagram)
 leads those following them in their star (#2, #3 and #4)
 along a circular path around the outside of the other star
-(the “exchange”).***
-***When #1 has gone 3/4 around and #3 has gone 1/4 around,
+(the “exchange”).
+When #1 has gone 3/4 around and #3 has gone 1/4 around,
 dancers #1 and #3 Flip In to join hands and become centers of a wave
 while dancers #2 and #4 continue to move forward along the circular path
 to join their inside hand with the dancer ahead to become ends of the wave.***

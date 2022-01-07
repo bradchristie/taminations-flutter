@@ -210,6 +210,7 @@ import 'plus/grand_swing_thru.dart';
 import 'plus/load_the_boat.dart';
 import 'plus/points.dart';
 import 'plus/roll.dart';
+import 'plus/spin_chain_and_exchange_the_gears.dart';
 import 'plus/spin_chain_the_gears.dart';
 import 'plus/spread.dart';
 
@@ -384,6 +385,7 @@ abstract class CodedCall extends Call {
     'slither'.ri: (_) => Slither(),
     'spinchainthegears'.ri: (name) => SpinChainTheGears(name),
     'snapthelock'.ri: (_) => SnapTheLock(),
+    'spinchainandexchangethegears'.ri: (name) => SpinChainAndExchangeTheGears(name),
     'spinchainthru'.ri: (_) => SpinChainThru(),
     'spinthetop'.ri: (_) => SpinTheTop(),
     '(.+)thewindmill(left|right|in|out|forward)'.ri: (name) => SpinTheWindmill(name),

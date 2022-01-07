@@ -19,7 +19,7 @@
 
 import '../common.dart';
 
-abstract class CallWithStars {
+mixin CallWithStars {
   void turnTheStar(int amount);
 }
 

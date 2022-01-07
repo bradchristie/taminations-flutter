@@ -17,15 +17,18 @@
  *     along with Taminations.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import 'package:flutter/material.dart';
-
 import '../common.dart';
 
-class SpinChainTheGears extends SixPartCall implements CallWithStars {
+class SpinChainAndExchangeTheGears extends FivePartCall with CallWithStars {
 
   @override final level = LevelData.PLUS;
   var turnAmount = 3;
-  SpinChainTheGears(String name) : super(name);
+  SpinChainAndExchangeTheGears(String name) : super(name);
+
+  @override
+  void turnTheStar(int amount) {
+    turnAmount = amount;
+  }
 
   @override
   Future<void> performPart1(CallContext ctx) async {
@@ -48,19 +51,11 @@ class SpinChainTheGears extends SixPartCall implements CallWithStars {
       await ctx.applyCalls('Turn the Stars');
   }
 
+
   @override
   Future<void> performPart5(CallContext ctx) async {
-    await ctx.applyCalls('Very Centers Trade');
-  }
-
-  @override
-  Future<void> performPart6(CallContext ctx) async {
-    await ctx.applyCalls('Spin Chain the Gears Part 6');
-  }
-
-  @override
-  void turnTheStar(int amount) {
-    turnAmount = amount;
+    await performOnePart(ctx,'Spin Chain and Exchange the Gears',5);
+  //  await performOnePart(ctx,'Spin Chain and Exchange the Gears',6);
   }
 
 }

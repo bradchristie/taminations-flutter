@@ -1,7 +1,5 @@
 
-
 # Welcome to Taminations
-
 
 Here you will find animations for square dance calls from Basic through C-3B.
 Most calls have several animations from different starting positions.
@@ -18,27 +16,24 @@ For Challenge definitions, the web site and books by
 are another important reference.
 
 Call pronunciations provided by
-[Eric Henerlau.](http://www.erichenerlau.com/)
+[Eric Henerlau](http://www.erichenerlau.com/).
 
 ***
 
-## Taminations version 1.6.29 built 2021-12-13  
-Copyright 2021 by Brad Christie.  
+## Taminations version 1.6.30 built 2022-01-06  
+Copyright 2022 by Brad Christie.  
 This is free software, and you are welcome to modify and redistribute it
 under the terms of the [GNU GPL license](http://www.gnu.org/licenses/gpl.html).  
 
 ## What's New
-* Update definitions from Callerlab for challenge levels
-* Concentric Pass the Sea from lines
+* Update definitions to match Callerlab
+* Add German translations for Basic 2 calls
+* Better names for some Flutterwheel, Separate animations
+* Enable deep linking into Android app
+* Fix graphic for Play/Pause button at end of animation
 * Sequencer changes:
-	* Enable Ping Pong Chain Thru
-	* Split Counter Rotate from any appropriate 2x4
-	* Magic Transfer and <anything>
-	* Fix As Couples Zing
-	* Fix Stretch for calls that end with tidal formations
-	* Fix for Scoot and Left Little
-	* Fix for Tag Back to a Wave
-	* Fix for Box the Gnat from Z formations
+    * Enable Finish, Skip, Replace, Reverse Order for some calls with parts
+    * Enable Turn the Star <fraction> for a few calls with stars (Alter the Wave, [Scoot and] Plenty, Spin Chain the Gears)
 
 ***
 ## Recommended Browsers
@@ -54,12 +49,9 @@ from the Microsoft Store.
 Just run Microsoft Store from the Start menu, or use
 [this link.](https://www.microsoft.com/en-us/p/taminations/9nblggh5gghh)
 
-
-
 ## More Information
 
 [How to put Taminations on your web site](embed.html)
-
 
 ***
 
