@@ -41,7 +41,7 @@ class TurnThru extends Action {
       var d2 = (name.startsWith('Left')) ? ctx.dancerToLeft(d) : ctx.dancerToRight(d);
       if (d2 != null && d2.data.active) {
         var dist = d.distanceTo(d2);
-        return TamUtils.getMove('Swing $dir2',scale:[dist / 2, 0.5].v) +
+        return TamUtils.getMove('Swing $dir2',scale:[0.5,dist/4+0.25].v) +
                TamUtils.getMove('Extend $dir2',scale:[1.0, 0.5].v);
       }
     }
