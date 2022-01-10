@@ -19,41 +19,28 @@
 
 import '../common.dart';
 
-class SpinChainTheGears extends SixPartCall with CallWithStars {
+class Percolate extends ThreePartCall with ButCall {
 
-  @override final level = LevelData.PLUS;
-  @override var turnStarAmount = 3;
-  SpinChainTheGears(String name) : super(name);
+  @override final level = LevelData.C1;
+  @override var butCall = 'Hinge and Cross';
+  Percolate() : super('Percolate');
 
   @override
   Future<void> performPart1(CallContext ctx) async {
-    await ctx.applyCalls('Swing');
+    await ctx.applyCalls('Circulate');
   }
 
   @override
   Future<void> performPart2(CallContext ctx) async {
-    await ctx.applyCalls('Spin Chain the Gears Part 2');
+    await ctx.applyCalls('Half Circulate');
   }
 
   @override
   Future<void> performPart3(CallContext ctx) async {
-    await ctx.applyCalls('Very Centers Trade');
-  }
-
-  @override
-  Future<void> performPart4(CallContext ctx) async {
-    for (var i=0; i<turnStarAmount; i++)
-      await ctx.applyCalls('Turn the Stars');
-  }
-
-  @override
-  Future<void> performPart5(CallContext ctx) async {
-    await ctx.applyCalls('Very Centers Trade');
-  }
-
-  @override
-  Future<void> performPart6(CallContext ctx) async {
-    await ctx.applyCalls('Spin Chain the Gears Part 6');
+    ctx.analyze();
+    final turnCall = ctx.outer(4).every((d) => d.data.belle)
+        ? 'Left Turn Thru' : 'Turn Thru';
+    await ctx.applyCalls('Center Wave of 4 $butCall While Others $turnCall');
   }
 
 }

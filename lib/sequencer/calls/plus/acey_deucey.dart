@@ -22,8 +22,7 @@ import '../common.dart';
 
 class AceyDeucey extends Action {
 
-  @override
-  var level = LevelData.PLUS;
+  @override var level = LevelData.PLUS;
   AceyDeucey() : super('Acey Deucey');
 
   @override

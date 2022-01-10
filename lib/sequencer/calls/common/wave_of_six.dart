@@ -17,33 +17,23 @@
  *     along with Taminations.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+import '../coded_call.dart';
 import '../common.dart';
 
-class AlterTheWave extends FourPartCall with CallWithStars {
+class WaveOfSix extends CodedCall {
 
-  @override final level = LevelData.C1;
-  @override var turnStarAmount = 2;
-  AlterTheWave(String name) : super(name);
+  WaveOfSix() : super('Wave of Six');
 
   @override
-  Future<void> performPart1(CallContext ctx) async {
-    await ctx.applyCalls('Swing');
-  }
-
-  @override
-  Future<void> performPart2(CallContext ctx) async {
-    await ctx.applyCalls('Centers Cast Off 3/4 While Ends Turn Back');
-  }
-
-  @override
-  Future<void> performPart3(CallContext ctx) async {
-    for (var i=0; i<turnStarAmount; i++)
-      await ctx.applyCalls('Split Counter Rotate');
-  }
-
-  @override
-  Future<void> performPart4(CallContext ctx) async {
-    await ctx.applyCalls('Flip the Diamond');
+  Future<void> performCall(CallContext ctx, [int stackIndex = 0]) async {
+    final xDancers = ctx.dancers.where((d) => d.isOnXAxis);
+    final yDancers = ctx.dancers.where((d) => d.isOnYAxis);
+    if (xDancers.length == 6)
+      ctx.dancers.forEach((d) { d.data.active = xDancers.contains(d); });
+    else if (yDancers.length == 6)
+      ctx.dancers.forEach((d) { d.data.active = yDancers.contains(d); });
+    else
+      throw CallError('Unable to identify Wave of Six');
   }
 
 }

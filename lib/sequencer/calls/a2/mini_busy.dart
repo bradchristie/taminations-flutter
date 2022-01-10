@@ -19,41 +19,27 @@
 
 import '../common.dart';
 
-class SpinChainTheGears extends SixPartCall with CallWithStars {
+class MiniBusy extends ThreePartCall with ButCall {
 
-  @override final level = LevelData.PLUS;
-  @override var turnStarAmount = 3;
-  SpinChainTheGears(String name) : super(name);
+
+  @override final level = LevelData.A2;
+  @override var butCall = 'Flip the Diamond';
+  MiniBusy() : super('Mini-Busy');
 
   @override
   Future<void> performPart1(CallContext ctx) async {
-    await ctx.applyCalls('Swing');
+    await performOnePart(ctx, 'Mini-Busy', 1);
   }
 
   @override
   Future<void> performPart2(CallContext ctx) async {
-    await ctx.applyCalls('Spin Chain the Gears Part 2');
+    await ctx.applyCalls('Very Centers Hinge While Outer 4 Step');
   }
 
   @override
   Future<void> performPart3(CallContext ctx) async {
-    await ctx.applyCalls('Very Centers Trade');
+    await ctx.applyCalls('Center 4 $butCall While Outer 4 Face In');
   }
 
-  @override
-  Future<void> performPart4(CallContext ctx) async {
-    for (var i=0; i<turnStarAmount; i++)
-      await ctx.applyCalls('Turn the Stars');
-  }
-
-  @override
-  Future<void> performPart5(CallContext ctx) async {
-    await ctx.applyCalls('Very Centers Trade');
-  }
-
-  @override
-  Future<void> performPart6(CallContext ctx) async {
-    await ctx.applyCalls('Spin Chain the Gears Part 6');
-  }
 
 }

@@ -19,33 +19,30 @@
 
 import '../common.dart';
 
-class Plenty extends ThreePartCall implements CallWithStars {
+class Plenty extends ThreePartCall with CallWithStars {
 
   @override final level = LevelData.C1;
-  int turnAmount = 2;
+  @override var turnStarAmount = 2;
   Plenty(String name) : super(name);
 
   @override
   Future<void> performPart1(CallContext ctx) async {
-    await ctx.applyCalls('Center 4 Step and Fold While Outer 4 Face Right and Counter Rotate');
+    await ctx.applyCalls('Center 4 Step and Fold '
+        'While Outer 4 Face Right and Counter Rotate');
     ctx.adjustToFormation('Normal Lines Compact');
   }
 
   @override
   Future<void> performPart2(CallContext ctx) async {
-    for (var i=0; i<turnAmount; i++)
+    for (var i=0; i<turnStarAmount; i++)
       await ctx.applyCalls('Split Circulate');
   }
 
   @override
   Future<void> performPart3(CallContext ctx) async {
-    await ctx.applyCalls('Outer 4 Counter Rotate and Roll While Center 4 1/2 Zoom');
+    await ctx.applyCalls('Outer 4 Counter Rotate and Roll '
+        'While Center 4 1/2 Zoom');
     ctx.adjustToFormation('Quarter Tag');
-  }
-
-  @override
-  void turnTheStar(int amount) {
-    turnAmount = amount;
   }
 
 }

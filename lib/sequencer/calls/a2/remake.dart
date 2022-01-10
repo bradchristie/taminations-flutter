@@ -24,6 +24,8 @@ class Remake extends ThreePartCall {
   @override final level = LevelData.A2;
   bool isGrand;
   bool isLeft;
+  List<Dancer>? part1dancers;
+  List<Dancer>? part2dancers;
   Remake(String name) :
         isGrand=name.contains('Grand'),
         isLeft=name.contains('Left'),
@@ -32,24 +34,39 @@ class Remake extends ThreePartCall {
   @override
   Future<void> performPart1(CallContext ctx) async {
     ctx.analyze();
-    await ctx.subContext(ctx.dancersHoldingSameHands(isRight: !isLeft, isGrand: isGrand),
-            (ctx2) async => await ctx2.applyCalls('Hinge')
+    await ctx.subContext(ctx.dancersHoldingSameHands(isRight: !isLeft, isGrand: isGrand), (ctx2) async {
+      if (ctx2.dancers.isEmpty)
+        throw CallError('No dancers able to do Part 1 of Remake');
+      part1dancers = ctx2.dancers;
+      await ctx2.applyCalls('Hinge');
+    }
     );
   }
 
   @override
   Future<void> performPart2(CallContext ctx) async {
     ctx.analyze();
-    await ctx.subContext(ctx.dancersHoldingSameHands(isRight: isLeft, isGrand: isGrand),
-            (ctx2) async => await ctx2.applyCalls('Trade')
+    await ctx.subContext(ctx.dancersHoldingSameHands(isRight: isLeft, isGrand: isGrand), (ctx2) async {
+      if (ctx2.dancers.isEmpty)
+        throw CallError('No dancers able to do Part 2 of Remake');
+      if (part1dancers != null && !part1dancers!.any((d) => ctx2.actives.contains(d)))
+        throw CallError('No dancers doing both Parts 1 and 2 of Remake');
+      part2dancers = ctx2.dancers;
+      await ctx2.applyCalls('Trade');
+    }
     );
   }
 
   @override
   Future<void> performPart3(CallContext ctx) async {
     ctx.analyze();
-    await ctx.subContext(ctx.dancersHoldingSameHands(isRight: !isLeft, isGrand: isGrand),
-            (ctx2) async => await ctx2.applyCalls('Cast Off 3/4')
+    await ctx.subContext(ctx.dancersHoldingSameHands(isRight: !isLeft, isGrand: isGrand), (ctx2) async {
+      if (ctx2.dancers.isEmpty)
+        throw CallError('No dancers able to do Part 3 of Remake');
+      if (part2dancers != null && !part2dancers!.any((d) => ctx2.actives.contains(d)))
+        throw CallError('No dancers doing both Parts 2 and 3 of Remake');
+      await ctx2.applyCalls('Cast Off 3/4');
+    }
     );
   }
 

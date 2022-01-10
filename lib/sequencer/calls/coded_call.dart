@@ -25,6 +25,7 @@ import 'a1/beaus.dart';
 import 'a1/belles.dart';
 import 'a1/brace_thru.dart';
 import 'a1/cast_a_shadow.dart';
+import 'a1/chain_reaction.dart';
 import 'a1/clover_and.dart';
 import 'a1/cross.dart';
 import 'a1/cross_over_circulate.dart';
@@ -42,6 +43,8 @@ import 'a1/triple_trade.dart';
 import 'a1/turn_and_deal.dart';
 import 'a2/all_eight.dart';
 import 'a2/box_counter_rotate.dart';
+import 'a2/mini_busy.dart';
+import 'a2/motivate.dart';
 import 'a2/pass_and_roll.dart';
 import 'a2/remake.dart';
 import 'a2/single_wheel.dart';
@@ -84,6 +87,7 @@ import 'b2/zoom.dart';
 import 'c1/alter_the_wave.dart';
 import 'c1/anything_chain_thru.dart';
 import 'c1/block_formation.dart';
+import 'c1/but.dart';
 import 'c1/butterfly.dart';
 import 'c1/cast_back.dart';
 import 'c1/circle_by.dart';
@@ -92,11 +96,13 @@ import 'c1/counter_rotate.dart';
 import 'c1/finish.dart';
 import 'c1/ignore.dart';
 import 'c1/jaywalk.dart';
+import 'c1/linear_action.dart';
 import 'c1/little.dart';
 import 'c1/magic_transfer_and.dart';
 import 'c1/make_magic.dart';
-import 'c1/mini_busy_but.dart';
 import 'c1/o_formation.dart';
+import 'c1/pass_the_axle.dart';
+import 'c1/percolate.dart';
 import 'c1/phantom.dart';
 import 'c1/plenty.dart';
 import 'c1/ramble.dart';
@@ -115,6 +121,7 @@ import 'c1/swing_and_circle.dart';
 import 'c1/swing_the_fractions.dart';
 import 'c1/switch_the_line.dart';
 import 'c1/tag_back.dart';
+import 'c1/tally_ho.dart';
 import 'c1/tandem.dart';
 import 'c1/three_by_two_acey_deucey.dart';
 import 'c1/to_a_wave.dart';
@@ -125,10 +132,12 @@ import 'c1/vertical_tag.dart';
 import 'c1/vertical_tag_back.dart';
 import 'c1/wheel_and.dart';
 import 'c1/with_the_flow.dart';
+import 'c2/alter_and_circulate.dart';
 import 'c2/anything.dart';
 import 'c2/bounce.dart';
 import 'c2/catch.dart';
 import 'c2/checkpoint.dart';
+import 'c2/chisel_thru.dart';
 import 'c2/crazy.dart';
 import 'c2/cross_and_wheel.dart';
 import 'c2/cross_ramble.dart';
@@ -162,10 +171,13 @@ import 'common/and.dart';
 import 'common/back_away.dart';
 import 'common/boys.dart';
 import 'common/center_six.dart';
+import 'common/center_wave_of_four.dart';
 import 'common/centers.dart';
 import 'common/couples.dart';
+import 'common/do_your_part.dart';
 import 'common/ends.dart';
 import 'common/everyone.dart';
+import 'common/except.dart';
 import 'common/facing_dancers.dart';
 import 'common/fraction.dart';
 import 'common/girls.dart';
@@ -188,6 +200,7 @@ import 'common/turn_the_star.dart';
 import 'common/twice.dart';
 import 'common/very_centers.dart';
 import 'common/very_ends.dart';
+import 'common/wave_of_six.dart';
 import 'common/waves.dart';
 import 'common/while.dart';
 import 'ms/cast_off_three_quarters.dart';
@@ -204,6 +217,7 @@ import 'ms/three_quarters_tag.dart';
 import 'ms/turn_thru.dart';
 import 'ms/walk_and_dodge.dart';
 import 'plus/acey_deucey.dart';
+import 'plus/coordinate.dart';
 import 'plus/diamond_circulate.dart';
 import 'plus/explode.dart';
 import 'plus/grand_swing_thru.dart';
@@ -225,10 +239,11 @@ abstract class CodedCall extends Call {
     'aceydeucey'.ri: (_) => AceyDeucey(),
     'adjustto.*'.ri: (name) => Adjust(name),
     'all8.*'.ri: (name) => AllEight(name),
+    'alterandcirculate'.ri: (_) => AlterAndCirculate(),
     'alterthewave'.ri: (name) => AlterTheWave(name),
     'and'.ri: (_) => And(),
     //  Anything Motivate does not include Finish Motivate
-    '.*(?<!finish)(motivate|coordinate|percolate|perkup)'.ri: (name) => Anything(name),
+    '.+(?<!finish)(motivate|coordinate|percolate|perkup)'.ri: (name) => Anything(name),
     //  Anything Chain Thru should not match Square Chain Thru or others
     '.*(?<!(cross|eight|peel|scatter|scoot|spin|square|swing|tag))chainthru'.ri:
         (name) => AnythingChainThru(name),
@@ -250,21 +265,26 @@ abstract class CodedCall extends Call {
     'boy'.ri: (_) => Boys(),
     'boxthegnat'.ri: (_) => BoxTheGnat(),
     'bracethru'.ri: (_) => BraceThru(),
+    '.+But[A-Z1-9].+'.r: (name) => But(name),
     'butterfly.*'.ri: (name) => Butterfly(name),
 
     'californiatwirl'.ri: (_) => CaliforniaTwirl(),
     'castashadowcenter(go|cast)?34'.ri: (name) => CastAShadow(name),
     '(cross)?castback'.ri: (name) => CastBack(name),
     'castoff34'.ri: (_) => CastOffThreeQuarters(),
-    '(left)?(split)?catch(1|2|3|4)'.ri: (name) => Catch(name),
+    '(left)?(split)?catch.*?(1|2|3|4)'.ri: (name) => Catch(name),
     'center'.ri: (_) => Centers(),
     'center6'.ri: (_) => CenterSix(),
+    'centerwaveof4'.ri: (_) => CenterWaveOfFour(),
+    'chainreaction'.ri: (_) => ChainReaction(),
     'checkpoint(.+)by(.*)'.ri: (name) => Checkpoint(name),
+    'chiselthru'.ri: (_) => ChiselThru(),
     'circleby.*'.ri: (name) => CircleBy(name),
     'circulate'.ri: (_) => Circulate(),
     '(cross)?cloverand(\\w.*)'.ri: (name) => CloverAnd(name),
     'cloverleaf'.ri: (_) => Cloverleaf(),
     'concentric.+'.ri: (name) => Concentric(name),
+    'coordinate'.ri: (_) => Coordinate(),
     'counterrotate'.ri: (_) => CounterRotate(),
     '(dancersin)?couples'.ri: (name) => Couples(name),
     'courtesyturn'.ri: (_) => CourtesyTurn(),
@@ -281,9 +301,11 @@ abstract class CodedCall extends Call {
     'diamondcirculate'.ri: (_) => DiamondCirculate(),
     '(left)?dosado'.ri: (name) => Dosado(name),
     'doublestarthru'.ri: (_) => DoubleStarThru(),
+    'doyourpart.+'.ri: (name) => DoYourPart(name),
 
     'end'.ri: (_) => Ends(),
     '(then)?every(one|body)'.ri: (name) => Everyone(name),
+    'except(the)?$specifier'.ri: (name) => Except(name),
     'explode'.ri: (_) => Explode(),
 
     'face(in|out|left|right)'.ri: (name) => Face(name),
@@ -315,6 +337,7 @@ abstract class CodedCall extends Call {
     '(cross)?kickoff'.ri: (name) => KickOff(name),
 
     'lead'.ri: (name) => Leaders(name),
+    'linearaction'.ri: (_) => LinearAction(),
     '(left)?linearcycle'.ri: (name) => LinearCycle(name),
     //  Little needs two regexes
     //  to handle both <something> Little and Little <something>
@@ -327,7 +350,9 @@ abstract class CodedCall extends Call {
 
     'magiccolumntransferand.+'.ri: (name) => MagicTransferAnd(name),
     'makemagic'.ri: (_) => MakeMagic(),
-    'minibusybut.+'.ri: (name) => MiniBusyBut(name),
+    //'minibusybut.+'.ri: (name) => MiniBusyBut(name),
+    'minibusy'.ri: (_) => MiniBusy(),
+    'motivate'.ri: (_) => Motivate(),
 
     'nothing'.ri: (_) => Nothing(),
 
@@ -338,8 +363,10 @@ abstract class CodedCall extends Call {
     'partnertag'.ri: (_) => PartnerTag(),
     '(left)?passandroll(your(cross)?neighbor)?'.ri: (name) => PassAndRoll(name),
     'pass(in|out)'.ri: (name) => PassInOut(name),
+    'passtheaxle'.ri: (_) => PassTheAxle(),
     '(left)?passthru'.ri: (name) => PassThru(name),
     'peeltoadiamond'.ri: (_) => PeelToADiamond(),
+    'percolate'.ri: (_) => Percolate(),
     'phantom.+'.ri: (name) => Phantom(name),
     'plenty'.ri: (name) => Plenty(name),
     'point'.ri: (_) => Points(),
@@ -377,7 +404,7 @@ abstract class CodedCall extends Call {
     'singlecrosstradeandwheel'.ri: (_) => SingleCrossTradeAndWheel(),
     '(left)?singlewheel'.ri: (name) => SingleWheel(name),
     '62aceydeucey'.ri: (_) => SixTwoAceyDeucey(),
-    '.*skipthe(first|second|third|fourth|fifth|last)part.+'.ri: (name) => Skip(name),
+    '.*(skip|delete)the(first|second|third|fourth|fifth|last)part.*'.ri: (name) => Skip(name),
     'slide'.ri: (_) => Slide(),
     'slide(in|out|left|right)'.ri: (name) => SlideDir(name),
     'slidethru'.ri: (_) => SlideThru(),
@@ -420,6 +447,7 @@ abstract class CodedCall extends Call {
     '(left)?tagtheline'.ri: (name) => TagTheLine(name),
     '(left|vertical){0,2}tagyour((criss)?cross)?neighbor'.ri:
         (name) => TagYourNeighbor(name),
+    'tallyho'.ri: (_) => TallyHo(),
     //  Tandem concept not tandem-based triangle
     'tandem(?!based).+'.ri: (name) => Tandem(name),
     'thek'.ri: (_) => TheK(),
@@ -444,7 +472,7 @@ abstract class CodedCall extends Call {
     '(go)?twice'.ri: (name) => Twice(name),
     '(left)?turnanddeal'.ri: (name) => TurnAndDeal(name),
     'u?turnback'.ri: (_) => TurnBack(),
-    '.*(donot)?turnthestars?(14|12|34)'.ri: (name) => TurnTheStar(name),
+    '.*(donot)?turnthestars?(14|12|34|afullturn)'.ri: (name) => TurnTheStar(name),
     'twist(theline|and.+)'.ri: (name) => TwistAnything(name),
 
     '(left)?vertical(left)?(14|12|34)?tag'.ri: (name) => VerticalTag(name),
@@ -456,6 +484,7 @@ abstract class CodedCall extends Call {
     '${specifier}walk(and)?${specifier}dodge'.ri: (name) => WalkAndDodge(name),
     '$specifier${specifier}walk(and)?$specifier${specifier}dodge'.ri:
         (name) => WalkAndDodge(name),
+    'waveof6'.ri: (_) => WaveOfSix(),
     '(dancersin)?waves?(dancers)?'.ri: (name) => Waves(name),
     '(reverse)?wheeland(?!deal)(\\w.*)'.ri: (name) => WheelAnd(name),
     '(reverse)?wheelaround'.ri: (name) => WheelAround(name),

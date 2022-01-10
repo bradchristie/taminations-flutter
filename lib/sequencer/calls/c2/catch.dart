@@ -20,19 +20,36 @@
 
 import '../common.dart';
 
-class Catch extends Action {
+class Catch extends ThreePartCall {
 
   @override final level = LevelData.C2;
   Catch(String name) : super(name);
+  late String direction = name.contains('Left') ? 'Left' : '';
+  late String split = name.contains('Split') ? 'Split' : '';
+  late int count = TamUtils.normalizeCall(name).last.toIntOrNull()
+      ?? thrower(CallError('Catch how much?'));
 
   @override
   Future<void> perform(CallContext ctx, [int stackIndex = 0]) async {
-    final direction = name.contains('Left') ? 'Left' : '';
-    final split = name.contains('Split') ? 'Split' : '';
-    final count = TamUtils.normalizeCall(name).last.toIntOrNull()
-        ?? thrower(CallError('Catch how much?'));
-    await ctx.applyCalls('$direction $split Square Thru $count to a Wave',
-        'Centers Trade','Step and Fold');
+    await super.perform(ctx);
+  }
+
+  @override
+  Future<void> performPart1(CallContext ctx) async {
+    await ctx.applyCalls('$direction $split Square Thru $count to a Wave');
+  }
+
+  @override
+  Future<void> performPart2(CallContext ctx) async {
+    var part2 = 'catch(.*)[1234]'.ri.firstMatch(name)![1]!;
+    if (part2.isBlank)
+      part2 = 'Centers Trade';
+    await ctx.applyCalls(part2);
+  }
+
+  @override
+  Future<void> performPart3(CallContext ctx) async {
+    await ctx.applyCalls('Step and Fold');
   }
 
 }

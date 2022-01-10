@@ -496,6 +496,8 @@ class TamUtils {
       .replaceAll('on the fou?rth hand'.ri,'on 4')
       .replaceAll('on the fifth hand'.ri,'on 5')
       .replaceAll('on the sixth hand'.ri,'on 6')
+  //  Remove superfluous Buts, so not to confuse the real But
+      .replaceAllMapped('but (skip|replace|delete|interrupt)'.ri, (m) => m[1]!)
   //  'Dixie Style' -> 'Dixie Style to a Wave'
       .replaceAll('\\bdixie style(?! to)'.ri,'Dixie Style to a Wave')
   //  Accept both Left Chase and Chase Left

@@ -19,11 +19,10 @@
 
 import '../common.dart';
 
-class SpinChainTheGears extends SixPartCall with CallWithStars {
+class AlterAndCirculate extends FivePartCall with CallWithStars {
 
-  @override final level = LevelData.PLUS;
-  @override var turnStarAmount = 3;
-  SpinChainTheGears(String name) : super(name);
+  @override var turnStarAmount = 2;
+  AlterAndCirculate() : super('Alter and Circulate');
 
   @override
   Future<void> performPart1(CallContext ctx) async {
@@ -32,28 +31,23 @@ class SpinChainTheGears extends SixPartCall with CallWithStars {
 
   @override
   Future<void> performPart2(CallContext ctx) async {
-    await ctx.applyCalls('Spin Chain the Gears Part 2');
+    await ctx.applyCalls('Centers Cast Off 3/4 While Ends Turn Back');
   }
 
   @override
   Future<void> performPart3(CallContext ctx) async {
-    await ctx.applyCalls('Very Centers Trade');
+    await ctx.applyCalls('Outer 4 Circulate While Very Centers Trade');
   }
 
   @override
   Future<void> performPart4(CallContext ctx) async {
     for (var i=0; i<turnStarAmount; i++)
-      await ctx.applyCalls('Turn the Stars');
+      await ctx.applyCalls('Split Counter Rotate');
   }
 
   @override
   Future<void> performPart5(CallContext ctx) async {
-    await ctx.applyCalls('Very Centers Trade');
-  }
-
-  @override
-  Future<void> performPart6(CallContext ctx) async {
-    await ctx.applyCalls('Spin Chain the Gears Part 6');
+    await ctx.applyCalls('Flip the Diamond');
   }
 
 }

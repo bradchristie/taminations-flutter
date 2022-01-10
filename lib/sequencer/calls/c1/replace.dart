@@ -28,7 +28,6 @@ class Replace extends Action {
   Future<void> perform(CallContext ctx, [int stackIndex = 0]) async {
     final callName = name.replaceFirst('(but )?replace .*'.ri,'').trim();
     final replacementName = name.replaceFirst('.* with'.ri, '').trim();
-    print('call: $callName   replace: $replacementName');
     await ctx.subContext(ctx.dancers, (ctx2) async {
       if (!ctx2.matchCodedCall(callName))
         throw CallError('Unable to find $callName as a Call with Parts');

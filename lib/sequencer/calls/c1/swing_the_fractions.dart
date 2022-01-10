@@ -17,12 +17,17 @@
  *     along with Taminations.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+import '../coded_call.dart';
 import '../common.dart';
 
 class SwingTheFractions extends FivePartCall {
 
   @override var level = LevelData.C1;
   bool isLeft;
+  List<Dancer>? part1dancers;
+  List<Dancer>? part2dancers;
+  List<Dancer>? part3dancers;
+  List<Dancer>? part4dancers;
   SwingTheFractions(String name) :
         isLeft=name.contains('Left'),
         super(name);
@@ -30,16 +35,25 @@ class SwingTheFractions extends FivePartCall {
   @override
   Future<void> performPart1(CallContext ctx) async {
     ctx.analyze();
-    await ctx.subContext(ctx.dancersHoldingSameHands(isRight: !isLeft),
-            (ctx2) async => await ctx2.applyCalls('Hinge')
+    await ctx.subContext(ctx.dancersHoldingSameHands(isRight: !isLeft), (ctx2) async {
+      part1dancers = ctx2.dancers;
+      await CodedCall.fromName('Hinge')!.performCall(ctx2);
+      //await ctx2.applyCalls('Hinge');
+    }
     );
   }
 
   @override
   Future<void> performPart2(CallContext ctx) async {
     ctx.analyze();
-    await ctx.subContext(ctx.dancersHoldingSameHands(isRight: isLeft),
-            (ctx2) async => await ctx2.applyCalls('Trade')
+    await ctx.subContext(ctx.dancersHoldingSameHands(isRight: isLeft), (ctx2) async {
+      print('Part1 dancers: $part1dancers');
+      print('Part2 dancers: ${ctx2.actives}');
+      if (part1dancers != null && !part1dancers!.any((d) => ctx2.actives.contains(d)))
+        throw CallError('No dancers doing both Parts 1 and 2 of Swing the Fractions');
+      part2dancers = ctx2.dancers;
+      await ctx2.applyCalls('Trade');
+    }
     );
   }
 
@@ -47,24 +61,35 @@ class SwingTheFractions extends FivePartCall {
   @override
   Future<void> performPart3(CallContext ctx) async {
     ctx.analyze();
-    await ctx.subContext(ctx.dancersHoldingSameHands(isRight: !isLeft),
-            (ctx2) async => await ctx2.applyCalls('Cast Off 3/4')
+    await ctx.subContext(ctx.dancersHoldingSameHands(isRight: !isLeft), (ctx2) async {
+      if (part2dancers != null && !part2dancers!.any((d) => ctx2.actives.contains(d)))
+        throw CallError('No dancers doing both Parts 2 and 3 of Swing the Fractions');
+      part3dancers = ctx2.dancers;
+      await ctx2.applyCalls('Cast Off 3/4');
+    }
     );
   }
 
   @override
   Future<void> performPart4(CallContext ctx) async {
     ctx.analyze();
-    await ctx.subContext(ctx.dancersHoldingSameHands(isRight: isLeft),
-            (ctx2) async => await ctx2.applyCalls('Trade')
+    await ctx.subContext(ctx.dancersHoldingSameHands(isRight: isLeft), (ctx2) async {
+      if (part3dancers != null && !part3dancers!.any((d) => ctx2.actives.contains(d)))
+        throw CallError('No dancers doing both Parts 3 and 4 of Swing the Fractions');
+      part4dancers = ctx2.dancers;
+      await ctx2.applyCalls('Trade');
+    }
     );
   }
 
   @override
   Future<void> performPart5(CallContext ctx) async {
     ctx.analyze();
-    await ctx.subContext(ctx.dancersHoldingSameHands(isRight: !isLeft),
-            (ctx2) async => await ctx2.applyCalls('Hinge')
+    await ctx.subContext(ctx.dancersHoldingSameHands(isRight: !isLeft), (ctx2) async {
+      if (part4dancers != null && !part4dancers!.any((d) => ctx2.actives.contains(d)))
+        throw CallError('No dancers doing both Parts 4 and 5 of Swing the Fractions');
+      await ctx2.applyCalls('Hinge');
+    }
     );
   }
 

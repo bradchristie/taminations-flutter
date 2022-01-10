@@ -55,7 +55,6 @@ class SpinChainAndExchangeTheGears extends FivePartCall with CallWithStars {
   @override
   Future<void> performPart5(CallContext ctx) async {
     await performOnePart(ctx,'Spin Chain and Exchange the Gears',5);
-  //  await performOnePart(ctx,'Spin Chain and Exchange the Gears',6);
   }
 
 }

@@ -19,41 +19,27 @@
 
 import '../common.dart';
 
-class SpinChainTheGears extends SixPartCall with CallWithStars {
+class TallyHo extends ThreePartCall with ButCall {
 
-  @override final level = LevelData.PLUS;
-  @override var turnStarAmount = 3;
-  SpinChainTheGears(String name) : super(name);
+  @override final level = LevelData.C1;
+  @override var butCall = 'Cast Off 3/4';
+  TallyHo() : super('Tally Ho');
 
   @override
   Future<void> performPart1(CallContext ctx) async {
-    await ctx.applyCalls('Swing');
+    await ctx.applyCalls('1/2 Circulate');
+    ctx.matchStandardFormation();
   }
 
   @override
   Future<void> performPart2(CallContext ctx) async {
-    await ctx.applyCalls('Spin Chain the Gears Part 2');
+    await ctx.applyCalls('Center Wave Of Four Hinge and 1/2 Circulate While Others Trade');
   }
 
   @override
   Future<void> performPart3(CallContext ctx) async {
-    await ctx.applyCalls('Very Centers Trade');
-  }
-
-  @override
-  Future<void> performPart4(CallContext ctx) async {
-    for (var i=0; i<turnStarAmount; i++)
-      await ctx.applyCalls('Turn the Stars');
-  }
-
-  @override
-  Future<void> performPart5(CallContext ctx) async {
-    await ctx.applyCalls('Very Centers Trade');
-  }
-
-  @override
-  Future<void> performPart6(CallContext ctx) async {
-    await ctx.applyCalls('Spin Chain the Gears Part 6');
+    await ctx.applyCalls('Center Wave Of Four $butCall '
+        'While Others Do Your Part Hourglass Circulate');
   }
 
 }

@@ -33,15 +33,15 @@ class Skip extends Action {
         throw CallError('Unable to find $callName as a Call with Parts');
       if (ctx2.callstack.last is CallWithParts) {
         final call = ctx2.callstack.last as CallWithParts;
-        if (name.contains('First|1st'.ri))
+        if (name.contains('(First|1st)'.ri))
           call.replacePart1 = (CallContext ctx) async { };
-        else if (name.contains('Second|2nd'.ri))
+        else if (name.contains('(Second|2nd)'.ri))
           call.replacePart2 = (CallContext ctx) async { };
-        else if (name.contains('Third|3rd'.ri))
+        else if (name.contains('(Third|3rd)'.ri))
           call.replacePart3 = (CallContext ctx) async { };
-        else if (name.contains('Fourth|4th'.ri))
+        else if (name.contains('(Fourth|4th)'.ri))
           call.replacePart4 = (CallContext ctx) async { };
-        else if (name.contains('Fifth|5th'.ri))
+        else if (name.contains('(Fifth|5th)'.ri))
           call.replacePart5 = (CallContext ctx) async { };
         else if (name.contains('Last'.ri))
           call.lastPart = (CallContext ctx) async { };

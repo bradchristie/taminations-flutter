@@ -1222,6 +1222,7 @@ Girls Walk and Dodge
 Star Thru
 Bend the Line
 Vertical Left 1/4 Tag
+Adjust to 1/4 Tag
 Chain Reaction
 Vertical Left 1/4 Tag
 Extend

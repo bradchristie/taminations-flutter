@@ -16,7 +16,8 @@ finish the Plenty".
 
 ## But
 
- - For some calls, the definition specifies a stopping point for some (or all) dancers when "But" is used. In this case those dancers replace the rest of their part of the call with the designated action. Calls which end with the centers casting off 3/4, while the ends do something else traditionally have the "But" mean for the centers to replace the final Cast Off 3/4 with the indicated call. Examples: "Tally Ho, But Explode the Wave", "Chain Reaction, But 2/3 Recycle". - Used to obtain the dancers' attention. In this case it is followed by one of the other modifying terms. Example: "Pass the Axle, But skip the third part", "Motivate, But, Replace the star with a U-Turn Back". 
+1. For some calls, the definition specifies a stopping point for some (or all) dancers when "But" is used. In this case those dancers replace the rest of their part of the call with the designated action. Calls which end with the centers casting off 3/4, while the ends do something else traditionally have the "But" mean for the centers to replace the final Cast Off 3/4 with the indicated call. Examples: "Tally Ho, But Explode the Wave", "Chain Reaction, But 2/3 Recycle".
+2. Used to obtain the dancers' attention. In this case it is followed by one of the other modifying terms. Example: "Pass the Axle, But skip the third part", "Motivate, But, Replace the star with a U-Turn Back". 
 
 ## Skip
 

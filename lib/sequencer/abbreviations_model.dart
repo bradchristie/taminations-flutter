@@ -76,7 +76,8 @@ class AbbreviationsModel extends fm.ChangeNotifier {
     'sb' : 'Scoot Back',
     'stt' : 'Spin the Top',
     'ttl' : 'Tag the Line',
-    'wad' : 'Walk and Dodge'
+    'wad' : 'Walk and Dodge',
+    'dyp' : 'Do Your Part'
   };
 
 

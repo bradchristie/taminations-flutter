@@ -19,41 +19,37 @@
 
 import '../common.dart';
 
-class SpinChainTheGears extends SixPartCall with CallWithStars {
+class Motivate extends FourPartCall with CallWithStars, ButCall {
 
-  @override final level = LevelData.PLUS;
-  @override var turnStarAmount = 3;
-  SpinChainTheGears(String name) : super(name);
+  @override final level = LevelData.A2;
+  @override var turnStarAmount = 2;
+  Motivate() : super('Motivate');
 
   @override
   Future<void> performPart1(CallContext ctx) async {
-    await ctx.applyCalls('Swing');
+    await ctx.applyCalls('Circulate');
   }
 
   @override
   Future<void> performPart2(CallContext ctx) async {
-    await ctx.applyCalls('Spin Chain the Gears Part 2');
+    await performOnePart(ctx, 'Motivate', 2);
   }
 
   @override
   Future<void> performPart3(CallContext ctx) async {
-    await ctx.applyCalls('Very Centers Trade');
+    final turns = [
+      for (var i=0; i<turnStarAmount; i++)
+        'Turn the Star'
+    ].join(' ');
+    await ctx.applyCalls('Outer 4 Trade '
+        'While Center 4 $turns');
   }
 
   @override
   Future<void> performPart4(CallContext ctx) async {
-    for (var i=0; i<turnStarAmount; i++)
-      await ctx.applyCalls('Turn the Stars');
-  }
-
-  @override
-  Future<void> performPart5(CallContext ctx) async {
-    await ctx.applyCalls('Very Centers Trade');
-  }
-
-  @override
-  Future<void> performPart6(CallContext ctx) async {
-    await ctx.applyCalls('Spin Chain the Gears Part 6');
+    final cast = butCall ?? 'Cast Off 3/4';
+    await ctx.applyCalls('Wave of 6 Center 4 $cast '
+        'While Others Do Your Part Hourglass Circulate');
   }
 
 }

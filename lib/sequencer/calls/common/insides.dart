@@ -34,7 +34,7 @@ class Insides extends Action {
     var num = 4;
     if (norm.endsWith('2')) num = 2;
     if (norm.endsWith('6')) num = 6;
-    ctx.dancers.sortedBy((d) => d.location.length).drop(num).forEach((d) {
+    ctx.actives.sortedBy((d) => d.location.length).drop(num).forEach((d) {
       d.data.active =  false;
     });
   }

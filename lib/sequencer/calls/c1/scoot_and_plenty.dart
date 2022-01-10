@@ -19,10 +19,10 @@
 
 import '../common.dart';
 
-class ScootAndPlenty extends FourPartCall implements CallWithStars {
+class ScootAndPlenty extends FourPartCall with CallWithStars {
 
   @override final level = LevelData.C1;
-  int turnAmount = 2;
+  @override var turnStarAmount = 2;
   String dir = 'Right';
   ScootAndPlenty(String name) : super(name);
 
@@ -30,31 +30,27 @@ class ScootAndPlenty extends FourPartCall implements CallWithStars {
   Future<void> performPart1(CallContext ctx) async {
     if (ctx.dancersHoldingLeftHands(isGrand: false).isNotEmpty)
       dir = 'Left';
-    for (var i=0; i<turnAmount; i++)
-      await ctx.applyCalls('Scoot Back');
+    await ctx.applyCalls('Scoot Back');
   }
 
   @override
   Future<void> performPart2(CallContext ctx) async {
-    await ctx.applyCalls('Center 4 Step and Fold While Outer 4 Face $dir and Counter Rotate');
+    await ctx.applyCalls('Center 4 Step and Fold '
+        'While Outer 4 Face $dir and Counter Rotate');
     ctx.adjustToFormation('Normal Lines Compact');
   }
 
   @override
   Future<void> performPart3(CallContext ctx) async {
-    for (var i=0; i<turnAmount; i++)
+    for (var i=0; i<turnStarAmount; i++)
       await ctx.applyCalls('Split Circulate');
   }
 
   @override
   Future<void> performPart4(CallContext ctx) async {
-    await ctx.applyCalls('Outer 4 Counter Rotate and Roll While Center 4 1/2 Zoom');
+    await ctx.applyCalls('Outer 4 Counter Rotate and Roll '
+        'While Center 4 1/2 Zoom');
     ctx.adjustToFormation('Quarter Tag');
-  }
-
-  @override
-  void turnTheStar(int amount) {
-    turnAmount = amount;
   }
 
 }

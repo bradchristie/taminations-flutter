@@ -19,37 +19,28 @@
 
 import '../common.dart';
 
-mixin CallWithStars {
-  var turnStarAmount = 1;
+mixin ButCall {
+  String? butCall;
 }
 
-class TurnTheStar extends Action {
+class But extends Action {
 
-  TurnTheStar(String name) : super(name);
+  @override final level = LevelData.C1;
+  But(String name) : super(name);
 
   @override
-  Future<void> perform(CallContext ctx, [int stackIndex=0]) async {
-    final callName = name.replaceFirst('(do not )?turn the star.*'.ri, '').trim();
+  Future<void> perform(CallContext ctx, [int stackIndex = 0]) async {
+    final callName = name.replaceFirst(' but .*'.ri, '').trim();
     await ctx.subContext(ctx.dancers, (ctx2) async {
       if (!ctx2.matchCodedCall(callName))
         throw CallError('Unable to find $callName as a Call with Parts');
-      if (ctx2.callstack.last is CallWithStars) {
-        final call = ctx2.callstack.last as CallWithStars;
-        final amountText = TamUtils.normalizeCall(name.replaceFirst(callName,''));
-        if (amountText.contains('donot'))
-          call.turnStarAmount = 0;
-        else if (amountText.contains('14'))
-          call.turnStarAmount = 1;
-        else if (amountText.contains('12'))
-          call.turnStarAmount = 2;
-        else if (amountText.contains('34'))
-          call.turnStarAmount = 3;
-        else if (amountText.contains('full'))
-          call.turnStarAmount = 4;
+      if (ctx2.callstack.last is ButCall) {
+        final call = ctx2.callstack.last as ButCall;
+        call.butCall = name.replaceFirst('.* but '.ri, '');
         await ctx2.performCall();
-      } else {
-        throw CallError('$callName not recognized as a call with stars');
       }
+      else
+        throw CallError('$callName does not recognize But');
     });
   }
 

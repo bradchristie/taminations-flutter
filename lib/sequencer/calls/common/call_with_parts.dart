@@ -80,7 +80,6 @@ mixin CallWithParts {
       tam('sequencer') != 'no' &&
           TamUtils.normalizeCall(tam('title')).toLowerCase() ==
               norm.toLowerCase())) {
-        print('Looking at ${tam('title')} from ${tam('from')}');
         //  Should be divided into parts, will also accept fractions
         final parts = tam('parts', '') + tam('fractions', '');
         final sexy = tam('sequencer', '').contains('gender');
@@ -96,7 +95,6 @@ mixin CallWithParts {
               ? ctx2.maxBeats()
               : partTimes.take(partNum).fold<double>(0.0, (a, b) => a+b);
           //  Animate call to the start point and try to match it to the current sequence
-          print('  animating to beat $startBeat');
           ctx2.animate(startBeat);
           final mapping = ctx.matchFormations(ctx2, sexy: sexy);
           if (mapping != null) {
@@ -106,15 +104,14 @@ mixin CallWithParts {
             //  Copy path movements from call to sequence
             for (var i = 0; i < mapping.length; i++) {
               final m = mapping[i];
-              // TODO check for esymmetric call!
+              // TODO check for asymmetric call!
               var b = 0.0;
               for (final move in allp[m >> 1].movelist) {
-                if (b+0.1 >= startBeat && b-0.1 < endBeat)
+                if (!b.isLessThan(startBeat) && b.isLessThan(endBeat))
                   ctx.dancers[i].path.add(move);
                 b += move.beats;
               }
             }
-            print('Part $partNum of $name successfully added');
             return;
           }
         }
@@ -122,7 +119,7 @@ mixin CallWithParts {
     }
 
     //  failure ends up here
-    throw CallError('Could not find Part $partNum of $name');
+    throw CallError('Unable to perform Part $partNum of $name');
 
   }
 

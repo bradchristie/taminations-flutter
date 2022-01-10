@@ -17,33 +17,31 @@
  *     along with Taminations.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+import 'package:flutter/cupertino.dart';
+
+import '../coded_call.dart';
 import '../common.dart';
 
-class AlterTheWave extends FourPartCall with CallWithStars {
+class CenterWaveOfFour extends CodedCall {
 
-  @override final level = LevelData.C1;
-  @override var turnStarAmount = 2;
-  AlterTheWave(String name) : super(name);
+  CenterWaveOfFour() : super('Center Wave of Four');
 
   @override
-  Future<void> performPart1(CallContext ctx) async {
-    await ctx.applyCalls('Swing');
-  }
-
-  @override
-  Future<void> performPart2(CallContext ctx) async {
-    await ctx.applyCalls('Centers Cast Off 3/4 While Ends Turn Back');
-  }
-
-  @override
-  Future<void> performPart3(CallContext ctx) async {
-    for (var i=0; i<turnStarAmount; i++)
-      await ctx.applyCalls('Split Counter Rotate');
-  }
-
-  @override
-  Future<void> performPart4(CallContext ctx) async {
-    await ctx.applyCalls('Flip the Diamond');
+  Future<void> performCall(CallContext ctx, [int stackIndex = 0]) async {
+    final vc = ctx.dancers.where((d) => d.data.verycenter).toList();
+    if (vc.length == 2) {
+      final waveOf4 = [
+        ctx.dancerToRight(vc.first),
+        ctx.dancerToLeft(vc.first),
+        ctx.dancerToRight(vc.second),
+        ctx.dancerToLeft(vc.second)
+      ].whereType<Dancer>().toList();
+      if (waveOf4.length == 4) {
+        ctx.dancers.forEach((d) { d.data.active = waveOf4.contains(d); });
+        return;
+      }
+    }
+    throw CallError('Unable to identify Center Wave of Four');
   }
 
 }

@@ -17,33 +17,27 @@
  *     along with Taminations.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+import '../coded_call.dart';
 import '../common.dart';
 
-class AlterTheWave extends FourPartCall with CallWithStars {
+class Except extends CodedCall {
 
-  @override final level = LevelData.C1;
-  @override var turnStarAmount = 2;
-  AlterTheWave(String name) : super(name);
+  Except(String name) : super(name);
 
   @override
-  Future<void> performPart1(CallContext ctx) async {
-    await ctx.applyCalls('Swing');
-  }
-
-  @override
-  Future<void> performPart2(CallContext ctx) async {
-    await ctx.applyCalls('Centers Cast Off 3/4 While Ends Turn Back');
-  }
-
-  @override
-  Future<void> performPart3(CallContext ctx) async {
-    for (var i=0; i<turnStarAmount; i++)
-      await ctx.applyCalls('Split Counter Rotate');
-  }
-
-  @override
-  Future<void> performPart4(CallContext ctx) async {
-    await ctx.applyCalls('Flip the Diamond');
+  Future<void> performCall(CallContext ctx, [int stackIndex = 0]) async {
+    //  Get who we want to exclude
+    final who = name.replaceFirst('except( the)?'.ri,'').trim();
+    //  Make another context where those are the selected dancers
+    await ctx.subContext(ctx.dancers, (ctx2) async {
+      //  Anyone selected in that context is now de-selected in the current context
+      ctx2.analyze();
+      await CodedCall.fromName(who)?.performCall(ctx2);
+      ctx.dancers.forEach((d) {
+        if (ctx2.actives.contains(d))
+          d.data.active = false;
+      });
+    });
   }
 
 }
