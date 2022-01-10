@@ -20,7 +20,7 @@ Call pronunciations provided by
 
 ***
 
-## Taminations version 1.6.30 built 2022-01-06  
+## Taminations version 1.6.30 built 2022-01-10
 Copyright 2022 by Brad Christie.  
 This is free software, and you are welcome to modify and redistribute it
 under the terms of the [GNU GPL license](http://www.gnu.org/licenses/gpl.html).  
@@ -33,7 +33,9 @@ under the terms of the [GNU GPL license](http://www.gnu.org/licenses/gpl.html).
 * Fix graphic for Play/Pause button at end of animation
 * Sequencer changes:
     * Enable Finish, Skip, Replace, Reverse Order for some calls with parts
-    * Enable Turn the Star <fraction> for a few calls with stars (Alter the Wave, [Scoot and] Plenty, Spin Chain the Gears)
+    * Enable Turn the Star <fraction> for some calls with stars
+(Alter the Wave, Alter and Circulate, Chain Reaction, Motivate [Scoot and] Plenty, Spin Chain [and Exchange] the Gears)
+    * Add Do Your Part, for selected dancers that match a subset of an appropriate formation.
 
 ***
 ## Recommended Browsers
