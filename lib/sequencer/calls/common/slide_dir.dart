@@ -18,12 +18,7 @@
 
 */
 
-import '../action.dart';
-import '../../../math/path.dart';
-import '../../../dancer.dart';
-import '../../call_context.dart';
-import '../../call_error.dart';
-import '../../../tam_utils.dart';
+import '../common.dart';
 
 class SlideDir extends Action {
 

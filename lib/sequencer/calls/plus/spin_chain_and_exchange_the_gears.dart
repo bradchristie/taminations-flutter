@@ -19,8 +19,9 @@
 
 import '../common.dart';
 
-class SpinChainAndExchangeTheGears extends FivePartCall with CallWithStars {
+class SpinChainAndExchangeTheGears extends Action with CallWithParts, CallWithStars {
 
+  @override int numberOfParts = 5;
   @override final level = LevelData.PLUS;
   var turnAmount = 3;
   SpinChainAndExchangeTheGears(String name) : super(name);

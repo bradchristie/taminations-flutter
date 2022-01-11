@@ -19,8 +19,9 @@
 
 import '../common.dart';
 
-class Plenty extends ThreePartCall with CallWithStars {
+class Plenty extends Action with CallWithParts, CallWithStars {
 
+  @override int numberOfParts = 3;
   @override final level = LevelData.C1;
   @override var turnStarAmount = 2;
   Plenty(String name) : super(name);

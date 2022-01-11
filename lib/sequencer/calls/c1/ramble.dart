@@ -20,8 +20,9 @@
 
 import '../common.dart';
 
-class Ramble extends TwoPartCall {
+class Ramble extends Action with CallWithParts {
 
+  @override int numberOfParts = 2;
   @override final level = LevelData.C1;
   Ramble() : super('Ramble');
 

@@ -22,8 +22,9 @@ import '../common.dart';
 
 //  Tidal waves of 8 dancers are covered by xml animations.
 //  This class handles formations of 6 dancers, with 2 others inactive.
-class GrandSwingThru extends TwoPartCall {
+class GrandSwingThru extends Action with CallWithParts {
 
+  @override int numberOfParts = 2;
   @override var level = LevelData.PLUS;
   GrandSwingThru(String name) : super(name);
 

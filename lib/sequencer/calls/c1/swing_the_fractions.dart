@@ -20,8 +20,9 @@
 import '../coded_call.dart';
 import '../common.dart';
 
-class SwingTheFractions extends FivePartCall {
+class SwingTheFractions extends Action with CallWithParts {
 
+  @override int numberOfParts = 5;
   @override var level = LevelData.C1;
   bool isLeft;
   List<Dancer>? part1dancers;
@@ -47,8 +48,6 @@ class SwingTheFractions extends FivePartCall {
   Future<void> performPart2(CallContext ctx) async {
     ctx.analyze();
     await ctx.subContext(ctx.dancersHoldingSameHands(isRight: isLeft), (ctx2) async {
-      print('Part1 dancers: $part1dancers');
-      print('Part2 dancers: ${ctx2.actives}');
       if (part1dancers != null && !part1dancers!.any((d) => ctx2.actives.contains(d)))
         throw CallError('No dancers doing both Parts 1 and 2 of Swing the Fractions');
       part2dancers = ctx2.dancers;

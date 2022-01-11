@@ -19,8 +19,9 @@
 
 import '../common.dart';
 
-class AlterTheWave extends FourPartCall with CallWithStars {
+class AlterTheWave extends Action with CallWithParts, CallWithStars {
 
+  @override int numberOfParts = 4;
   @override final level = LevelData.C1;
   @override var turnStarAmount = 2;
   AlterTheWave(String name) : super(name);

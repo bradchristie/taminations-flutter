@@ -95,6 +95,7 @@ import 'c1/concentric.dart';
 import 'c1/counter_rotate.dart';
 import 'c1/finish.dart';
 import 'c1/ignore.dart';
+import 'c1/interrupt.dart';
 import 'c1/jaywalk.dart';
 import 'c1/linear_action.dart';
 import 'c1/little.dart';
@@ -179,6 +180,7 @@ import 'common/ends.dart';
 import 'common/everyone.dart';
 import 'common/except.dart';
 import 'common/facing_dancers.dart';
+import 'common/flip.dart';
 import 'common/fraction.dart';
 import 'common/girls.dart';
 import 'common/heads.dart';
@@ -311,6 +313,7 @@ abstract class CodedCall extends Call {
     'face(in|out|left|right)'.ri: (name) => Face(name),
     'facing'.ri: (_) => FacingDancers(),
     'finish.+'.ri: (name) => Finish(name),
+    'flip(in|out|left|right)'.ri: (name) => Flip(name),
     'flipyour(criss)?(cross)?neighbor'.ri: (name) => FlipYourNeighbor(name),
     'fold'.ri: (_) => Fold(),
     '\\d\\d'.ri: (name) => Fraction(name),
@@ -331,6 +334,7 @@ abstract class CodedCall extends Call {
     'ignore.+'.ri: (name) => Ignore(name),
     'center(2|4|6)'.ri: (name) => Insides(name),
     'in(ner|sides?)(2|4|6)?'.ri: (name) => Insides(name),
+    '.*interrupt.*'.ri: (name) => Interrupt(name),
 
     'jaywalk'.ri: (_) => Jaywalk(),
 
@@ -404,7 +408,7 @@ abstract class CodedCall extends Call {
     'singlecrosstradeandwheel'.ri: (_) => SingleCrossTradeAndWheel(),
     '(left)?singlewheel'.ri: (name) => SingleWheel(name),
     '62aceydeucey'.ri: (_) => SixTwoAceyDeucey(),
-    '.*(skip|delete)the(first|second|third|fourth|fifth|last)part.*'.ri: (name) => Skip(name),
+    '.*(skip|delete).*'.ri: (name) => Skip(name),
     'slide'.ri: (_) => Slide(),
     'slide(in|out|left|right)'.ri: (name) => SlideDir(name),
     'slidethru'.ri: (_) => SlideThru(),

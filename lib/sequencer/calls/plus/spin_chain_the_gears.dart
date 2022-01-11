@@ -19,11 +19,19 @@
 
 import '../common.dart';
 
-class SpinChainTheGears extends SixPartCall with CallWithStars {
+class SpinChainTheGears extends Action with CallWithParts, CallWithStars {
 
+  @override int numberOfParts = 6;
   @override final level = LevelData.PLUS;
   @override var turnStarAmount = 3;
   SpinChainTheGears(String name) : super(name);
+
+  @override
+  int partNumberForName(String name) {
+    if (name.contains('(turn(ing)? )?the stars?'.ri))
+      return 4;
+    return super.partNumberForName(name);
+  }
 
   @override
   Future<void> performPart1(CallContext ctx) async {
@@ -32,7 +40,7 @@ class SpinChainTheGears extends SixPartCall with CallWithStars {
 
   @override
   Future<void> performPart2(CallContext ctx) async {
-    await ctx.applyCalls('Spin Chain the Gears Part 2');
+    await ctx.applyCalls('Centers Cast Off 3/4 While Ends Flip In');
   }
 
   @override
@@ -53,7 +61,7 @@ class SpinChainTheGears extends SixPartCall with CallWithStars {
 
   @override
   Future<void> performPart6(CallContext ctx) async {
-    await ctx.applyCalls('Spin Chain the Gears Part 6');
+    await ctx.applyCalls('Center Wave of 4 Cast Off 3/4 While Others Flip Out');
   }
 
 }

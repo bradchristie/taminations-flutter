@@ -19,8 +19,9 @@
 
 import '../common.dart';
 
-class Remake extends ThreePartCall {
+class Remake extends Action with CallWithParts {
 
+  @override int numberOfParts = 3;
   @override final level = LevelData.A2;
   bool isGrand;
   bool isLeft;

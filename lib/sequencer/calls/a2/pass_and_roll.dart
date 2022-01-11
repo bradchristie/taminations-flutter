@@ -19,8 +19,9 @@
 
 import '../common.dart';
 
-class PassAndRoll extends FourPartCall {
+class PassAndRoll extends Action with CallWithParts {
 
+  @override int numberOfParts = 4;
   @override var level = LevelData.A2;
   final bool isNeighbor;
   final String dir;

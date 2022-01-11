@@ -19,8 +19,9 @@
 
 import '../common.dart';
 
-class ScootAndPlenty extends FourPartCall with CallWithStars {
+class ScootAndPlenty extends Action with CallWithParts, CallWithStars {
 
+  @override int numberOfParts = 4;
   @override final level = LevelData.C1;
   @override var turnStarAmount = 2;
   String dir = 'Right';

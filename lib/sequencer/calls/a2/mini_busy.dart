@@ -19,9 +19,9 @@
 
 import '../common.dart';
 
-class MiniBusy extends ThreePartCall with ButCall {
+class MiniBusy extends Action with CallWithParts, ButCall {
 
-
+  @override int numberOfParts = 3;
   @override final level = LevelData.A2;
   @override var butCall = 'Flip the Diamond';
   MiniBusy() : super('Mini-Busy');

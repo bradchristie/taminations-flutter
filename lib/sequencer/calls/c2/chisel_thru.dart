@@ -19,8 +19,9 @@
 
 import '../common.dart';
 
-class ChiselThru extends ThreePartCall {
+class ChiselThru extends Action with CallWithParts {
 
+  @override int numberOfParts = 3;
   @override final level = LevelData.C2;
   ChiselThru() : super('Chisel Thru');
 

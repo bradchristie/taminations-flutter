@@ -19,8 +19,9 @@
 
 import '../common.dart';
 
-class PassTheAxle extends FourPartCall with ButCall {
+class PassTheAxle extends Action with CallWithParts, ButCall {
 
+  @override int numberOfParts = 4;
   @override final level = LevelData.C1;
   @override var butCall = 'Trade';
   PassTheAxle() : super('Pass the Axle');

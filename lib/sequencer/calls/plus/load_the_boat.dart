@@ -19,8 +19,9 @@
 
 import '../common.dart';
 
-class LoadTheBoat extends FourPartCall {
+class LoadTheBoat extends Action with CallWithParts {
 
+  @override int numberOfParts = 4;
   @override var level = LevelData.PLUS;
   LoadTheBoat() : super('Load the Boat');
 

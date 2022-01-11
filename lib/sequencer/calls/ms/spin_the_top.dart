@@ -19,8 +19,9 @@
 
 import '../common.dart';
 
-class SpinTheTop extends TwoPartCall {
+class SpinTheTop extends Action with CallWithParts {
 
+  @override int numberOfParts = 2;
   @override var level = LevelData.MS;
   SpinTheTop() : super('Spin the Top');
 

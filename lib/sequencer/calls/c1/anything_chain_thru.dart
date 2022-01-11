@@ -20,19 +20,32 @@
 
 import '../common.dart';
 
-class AnythingChainThru extends Action {
+class AnythingChainThru extends Action with CallWithParts {
 
+  @override int numberOfParts = 3;
   @override final level = LevelData.C1;
-  AnythingChainThru(String name) : super(name);
-
-  @override
-  Future<void> perform(CallContext ctx, [int stackIndex = 0]) async {
-    final firstCall = name.replaceFirst('Chain\\s*Thru'.ri,'')
+  final String firstCall;
+  AnythingChainThru(String name) :
+    firstCall = name.replaceFirst('Chain\\s*Thru'.ri,'')
         .replaceFirst('Triangle'.ri,'Triangle Circulate')
         .replaceFirst('Ping\\s*Pong'.ri,'Ping Pong Circulate')
-        .replaceFirst('Interlocked\\s*Diamond'.ri,'Interlocked Diamond Circulate');
-    print('firstCall: $firstCall');
-    await ctx.applyCalls(firstCall,'very centers trade','center 4 cast off 34');
+        .replaceFirst('Diamond'.ri,'Diamond Circulate'),
+        super(name);
+
+  @override
+  Future<void> performPart1(CallContext ctx) async {
+    await ctx.applyCalls(firstCall);
   }
+
+  @override
+  Future<void> performPart2(CallContext ctx) async {
+    await ctx.applyCalls('Very Centers Trade');
+  }
+
+  @override
+  Future<void> performPart3(CallContext ctx) async {
+    await ctx.applyCalls('Center 4 Cast Off 3/4');
+  }
+
 
 }

@@ -19,8 +19,9 @@
 
 import '../common.dart';
 
-class SwingThru extends TwoPartCall {
+class SwingThru extends Action with CallWithParts {
 
+  @override int numberOfParts = 2;
   @override var level = LevelData.B2;
   bool isGrand;
   bool isLeft;

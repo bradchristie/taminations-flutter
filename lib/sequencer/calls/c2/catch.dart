@@ -20,8 +20,9 @@
 
 import '../common.dart';
 
-class Catch extends ThreePartCall {
+class Catch extends Action with CallWithParts {
 
+  @override int numberOfParts = 3;
   @override final level = LevelData.C2;
   Catch(String name) : super(name);
   late String direction = name.contains('Left') ? 'Left' : '';

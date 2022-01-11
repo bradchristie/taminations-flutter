@@ -19,8 +19,9 @@
 
 import '../common.dart';
 
-class Motivate extends FourPartCall with CallWithStars, ButCall {
+class Motivate extends Action with CallWithParts, CallWithStars, ButCall {
 
+  @override int numberOfParts = 4;
   @override final level = LevelData.A2;
   @override var turnStarAmount = 2;
   Motivate() : super('Motivate');

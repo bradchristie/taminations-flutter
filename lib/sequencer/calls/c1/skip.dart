@@ -26,27 +26,16 @@ class Skip extends Action {
 
   @override
   Future<void> perform(CallContext ctx, [int stackIndex = 0]) async {
-    final ordinals = '(first|second|third|fourth|fifth|1st|2nd|3rd|4th|5th|last)';
-    final callName = name.replaceFirst('(but )?skip the $ordinals part'.ri,'').trim();
+    final callName = name.replaceFirst('(but )?skip .+'.ri,'').trim();
     await ctx.subContext(ctx.dancers, (ctx2) async {
       if (!ctx2.matchCodedCall(callName))
         throw CallError('Unable to find $callName as a Call with Parts');
       if (ctx2.callstack.last is CallWithParts) {
         final call = ctx2.callstack.last as CallWithParts;
-        if (name.contains('(First|1st)'.ri))
-          call.replacePart1 = (CallContext ctx) async { };
-        else if (name.contains('(Second|2nd)'.ri))
-          call.replacePart2 = (CallContext ctx) async { };
-        else if (name.contains('(Third|3rd)'.ri))
-          call.replacePart3 = (CallContext ctx) async { };
-        else if (name.contains('(Fourth|4th)'.ri))
-          call.replacePart4 = (CallContext ctx) async { };
-        else if (name.contains('(Fifth|5th)'.ri))
-          call.replacePart5 = (CallContext ctx) async { };
-        else if (name.contains('Last'.ri))
-          call.lastPart = (CallContext ctx) async { };
-        else
+        final partNumber = CallWithParts.partNumberFromCall(call, name);
+        if (partNumber == 0)
           throw CallError('Unable to figure out what to Skip');
+        call.replacePart[partNumber] = (ctx) async { };
       }
       else
         throw CallError('Can only Skip in a call with Parts');

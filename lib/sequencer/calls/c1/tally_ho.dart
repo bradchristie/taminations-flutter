@@ -19,8 +19,9 @@
 
 import '../common.dart';
 
-class TallyHo extends ThreePartCall with ButCall {
+class TallyHo extends Action with CallWithParts, ButCall {
 
+  @override int numberOfParts = 3;
   @override final level = LevelData.C1;
   @override var butCall = 'Cast Off 3/4';
   TallyHo() : super('Tally Ho');

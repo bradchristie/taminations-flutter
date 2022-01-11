@@ -19,8 +19,9 @@
 
 import '../common.dart';
 
-class ChainReaction extends FourPartCall with CallWithStars, ButCall {
+class ChainReaction extends Action with CallWithParts, CallWithStars, ButCall {
 
+  @override int numberOfParts = 4;
   @override final level = LevelData.A1;
   ChainReaction() : super('Chain Reaction');
 

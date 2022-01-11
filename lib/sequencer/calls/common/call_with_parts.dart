@@ -21,54 +21,122 @@ import '../common.dart';
 
 mixin CallWithParts {
 
+  //  Classes with parts will override this
+  int numberOfParts = 1;
+
+  //  and implement with overrides how ever many of these it has
   Future<void> performPart1(CallContext ctx) async { }
   Future<void> performPart2(CallContext ctx) async { }
   Future<void> performPart3(CallContext ctx) async { }
   Future<void> performPart4(CallContext ctx) async { }
   Future<void> performPart5(CallContext ctx) async { }
   Future<void> performPart6(CallContext ctx) async { }
+  Future<void> performPart7(CallContext ctx) async { }
+  Future<void> performPart8(CallContext ctx) async { }
+  //  The call with the most parts is Eight Chain Thru, with 8 parts.
+  //  But more parts can be added esp. with 'Interrupt Each Part..'
+  //  So make space for a lot more
+  //  These are not actually overriden anywhere
+  //  but the corresponding replacePart might be used
+  Future<void> performPart9(CallContext ctx) async { }
+  Future<void> performPart10(CallContext ctx) async { }
+  Future<void> performPart11(CallContext ctx) async { }
+  Future<void> performPart12(CallContext ctx) async { }
+  Future<void> performPart13(CallContext ctx) async { }
+  Future<void> performPart14(CallContext ctx) async { }
+  Future<void> performPart15(CallContext ctx) async { }
+  Future<void> performPart16(CallContext ctx) async { }
+  Future<void> performPart17(CallContext ctx) async { }
+  Future<void> performPart18(CallContext ctx) async { }
+  Future<void> performPart19(CallContext ctx) async { }
+  Future<void> performPart20(CallContext ctx) async { }
 
-  Future<void> Function(CallContext ctx)? replacePart1;
-  Future<void> Function(CallContext ctx)? replacePart2;
-  Future<void> Function(CallContext ctx)? replacePart3;
-  Future<void> Function(CallContext ctx)? replacePart4;
-  Future<void> Function(CallContext ctx)? replacePart5;
-  Future<void> Function(CallContext ctx)? replacePart6;
-  Future<void> Function(CallContext ctx)? lastPart;
+  Future<void> Function(CallContext ctx) performPart(int i) {
+    switch (i) {
+      case 1 : return performPart1;
+      case 2 : return performPart2;
+      case 3 : return performPart3;
+      case 4 : return performPart4;
+      case 5 : return performPart5;
+      case 6 : return performPart6;
+      case 7 : return performPart7;
+      case 8 : return performPart8;
+      case 9 : return performPart9;
+      case 10 : return performPart10;
+      case 11 : return performPart11;
+      case 12 : return performPart12;
+      case 13 : return performPart13;
+      case 14 : return performPart14;
+      case 15 : return performPart15;
+      case 16 : return performPart16;
+      case 17 : return performPart17;
+      case 18 : return performPart18;
+      case 19 : return performPart19;
+      case 20 : return performPart20;
+      default: throw CallError('Invalid argument');
+    }
+  }
+
+  //  When a call with parts is modified with Replace, But, Interrupt etc.
+  //  the modification is placed in this array.
+  final List<Future<void> Function(CallContext ctx)?> replacePart =
+  [null,null,null,null,null,null,null,null,null,null,null,
+   null,null,null,null,null,null,null,null,null,null,null];
+
+  Future<void> Function(CallContext ctx)? get lastPart => replacePart[numberOfParts];
+  set lastPart(value) { replacePart[numberOfParts] = value; }
 
   Future<void> perform(CallContext ctx, [int stackIndex=0]) async {
-    await (replacePart1??performPart1)(ctx);
-    ctx.extendPaths();
-    await (replacePart2??performPart2)(ctx);
-    ctx.extendPaths();
-    await (replacePart3??performPart3)(ctx);
-    ctx.extendPaths();
-    await (replacePart4??performPart4)(ctx);
-    ctx.extendPaths();
-    await (replacePart5??performPart5)(ctx);
-    ctx.extendPaths();
-    await (replacePart6??performPart6)(ctx);
+    for (var part=1; part<=numberOfParts; part++) {
+      ctx.extendPaths();
+      await (replacePart[part]??performPart(part))(ctx);
+    }
   }
 
   Future<void> finish(CallContext ctx) async {
-    replacePart1 = (ctx) async { };
+    replacePart[1] = (ctx) async { };
     return perform(ctx);
   }
 
   Future<void> reverseOrder(CallContext ctx) async {
-    await (replacePart6??performPart6)(ctx);
-    ctx.extendPaths();
-    await (replacePart5??performPart5)(ctx);
-    ctx.extendPaths();
-    await (replacePart4??performPart4)(ctx);
-    ctx.extendPaths();
-    await (replacePart3??performPart3)(ctx);
-    ctx.extendPaths();
-    await (replacePart2??performPart2)(ctx);
-    ctx.extendPaths();
-    await (replacePart1??performPart1)(ctx);
+    for (var part=numberOfParts; part>=1; part--) {
+      ctx.extendPaths();
+      await (replacePart[part]??performPart(part))(ctx);
+    }
   }
 
+  //  Classes override this to provide a part number for a named
+  //  call part, like "stars" or "circulates"
+  int partNumberForName(String name) => 0;
+
+  //  Utility to parse out a part number from a call
+  static final partMap = {
+    'First|1st'.ri : 1,
+    'Second|2nd'.ri : 2,
+    'Third|3rd'.ri : 3,
+    'Fourth|4th'.ri : 4,
+    'Fifth|5th'.ri : 5,
+    'Sixth|6th'.ri : 6,
+    'Seventh|7th'.ri : 7,
+    'Eighth|8th'.ri : 8,
+    'Last'.ri : -1
+  };
+  static int partNumberFromCall(CallWithParts call, String name) {
+    var partNumber = 0;
+    for (var r in partMap.keys) {
+      if (name.contains(r)) {
+        partNumber = partMap[r]!;
+      }
+    }
+    if (partNumber < 0)
+      partNumber = call.numberOfParts;
+    if (partNumber == 0)
+      partNumber = call.partNumberForName(name);
+    return partNumber;
+  }
+
+  //  This function is for looking up and performing one part of an XML call.
+  //  Useful for calls that have a part that's not easily coded.
   Future<void> performOnePart(CallContext ctx, String name, int partNum) async {
     final norm = TamUtils.normalizeCall(name);
     //  Find matching XML call
@@ -122,55 +190,5 @@ mixin CallWithParts {
     throw CallError('Unable to perform Part $partNum of $name');
 
   }
-
-}
-
-abstract class TwoPartCall extends Action with CallWithParts {
-
-  TwoPartCall(String name) : super(name);
-  @override
-  Future<void> Function(CallContext ctx)? get lastPart => replacePart2;
-  @override
-  set lastPart(value) { replacePart2 = value; }
-
-}
-
-abstract class ThreePartCall extends Action with CallWithParts {
-
-  ThreePartCall(String name) : super(name);
-  @override
-  Future<void> Function(CallContext ctx)? get lastPart => replacePart3;
-  @override
-  set lastPart(value) { replacePart3 = value; }
-
-}
-
-abstract class FourPartCall extends Action with CallWithParts {
-
-  FourPartCall(String name) : super(name);
-  @override
-  Future<void> Function(CallContext ctx)? get lastPart => replacePart4;
-  @override
-  set lastPart(value) { replacePart4 = value; }
-
-}
-
-abstract class FivePartCall extends Action with CallWithParts {
-
-  FivePartCall(String name) : super(name);
-  @override
-  Future<void> Function(CallContext ctx)? get lastPart => replacePart5;
-  @override
-  set lastPart(value) { replacePart5 = value; }
-
-}
-
-abstract class SixPartCall extends Action with CallWithParts {
-
-  SixPartCall(String name) : super(name);
-  @override
-  Future<void> Function(CallContext ctx)? get lastPart => replacePart6;
-  @override
-  set lastPart(value) { replacePart6 = value; }
 
 }

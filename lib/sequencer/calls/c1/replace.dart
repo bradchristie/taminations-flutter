@@ -31,25 +31,15 @@ class Replace extends Action {
     await ctx.subContext(ctx.dancers, (ctx2) async {
       if (!ctx2.matchCodedCall(callName))
         throw CallError('Unable to find $callName as a Call with Parts');
-      final replacement = (CallContext ctx) async {
-        await ctx.applyCalls(replacementName);
+      final replacement = (CallContext ctx3) async {
+        await ctx3.applyCalls(replacementName);
       };
       if (ctx2.callstack.last is CallWithParts) {
         final call = ctx2.callstack.last as CallWithParts;
-        if (name.contains('First|1st'.ri))
-          call.replacePart1 = replacement;
-        else if (name.contains('Second|2nd'.ri))
-          call.replacePart2 = replacement;
-        else if (name.contains('Third|3rd'.ri))
-          call.replacePart3 = replacement;
-        else if (name.contains('Fourth|4th'.ri))
-          call.replacePart4 = replacement;
-        else if (name.contains('Fifth|5th'.ri))
-          call.replacePart5 = replacement;
-        else if (name.contains('last'.ri))
-          call.lastPart = replacement;
-        else
+        final partNumber = CallWithParts.partNumberFromCall(call, name);
+        if (partNumber == 0)
           throw CallError('Unable to figure out what to Replace');
+        call.replacePart[partNumber] = replacement;
       }
       else
         throw CallError('Can only Replace in a call with Parts');

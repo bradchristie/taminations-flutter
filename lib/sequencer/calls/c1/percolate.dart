@@ -19,8 +19,9 @@
 
 import '../common.dart';
 
-class Percolate extends ThreePartCall with ButCall {
+class Percolate extends Action with CallWithParts, ButCall {
 
+  @override int numberOfParts = 3;
   @override final level = LevelData.C1;
   @override var butCall = 'Hinge and Cross';
   Percolate() : super('Percolate');

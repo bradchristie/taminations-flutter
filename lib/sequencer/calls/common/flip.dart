@@ -19,30 +19,24 @@
 
 import '../common.dart';
 
-class SpinChainThru extends Action with CallWithParts {
+class Flip extends Action {
 
-  @override int numberOfParts = 4;
-  @override var level = LevelData.MS;
-  SpinChainThru() : super('Spin Chain Thru');
+  Flip(String name) : super(name);
 
   @override
-  Future<void> performPart1(CallContext ctx) async {
-    await ctx.applyCalls('Swing');
-  }
-
-  @override
-  Future<void> performPart2(CallContext ctx) async {
-    await ctx.applyCalls('Centers Cast Off 3/4');
-  }
-
-  @override
-  Future<void> performPart3(CallContext ctx) async {
-    await ctx.applyCalls('Very Centers Trade');
-  }
-
-  @override
-  Future<void> performPart4(CallContext ctx) async {
-    await ctx.applyCalls('Centers Cast Off 3/4');
+  Path performOne(Dancer d, CallContext ctx) {
+    String dir;
+    if (name == 'Flip Left' )
+      dir = 'Left' ;
+    else if (name == 'Flip Right' )
+      dir = 'Right' ;
+    else if (name == 'Flip In' )
+      dir = d.isCenterLeft ? 'Left'  : 'Right' ;
+    else if (name == 'Flip Out' )
+      dir = d.isCenterLeft ? 'Right'  : 'Left' ;
+    else
+      throw CallError('Flip how?' );
+    return TamUtils.getMove('Flip $dir' );
   }
 
 }

@@ -19,8 +19,9 @@
 
 import '../common.dart';
 
-class Coordinate extends FourPartCall {
+class Coordinate extends Action with CallWithParts {
 
+  @override int numberOfParts = 4;
   @override var level = LevelData.PLUS;
   Coordinate() : super('Coordinate');
 

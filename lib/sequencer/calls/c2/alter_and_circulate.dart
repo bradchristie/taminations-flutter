@@ -19,8 +19,9 @@
 
 import '../common.dart';
 
-class AlterAndCirculate extends FivePartCall with CallWithStars {
+class AlterAndCirculate extends Action with CallWithParts, CallWithStars {
 
+  @override int numberOfParts = 5;
   @override var turnStarAmount = 2;
   AlterAndCirculate() : super('Alter and Circulate');
 
