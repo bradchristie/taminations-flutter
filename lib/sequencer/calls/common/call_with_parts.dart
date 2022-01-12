@@ -137,7 +137,7 @@ mixin CallWithParts {
 
   //  This function is for looking up and performing one part of an XML call.
   //  Useful for calls that have a part that's not easily coded.
-  Future<void> performOnePart(CallContext ctx, String name, int partNum) async {
+  static Future<void> performOnePart(CallContext ctx, String name, int partNum) async {
     final norm = TamUtils.normalizeCall(name);
     //  Find matching XML call
     final files = CallContext.xmlFilesForCall(norm.toLowerCase());

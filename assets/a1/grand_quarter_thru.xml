@@ -67,7 +67,7 @@
     </path>
   </tam>
 
-  <tam title="Left Grand Quarter Thru"
+  <tam title="Grand Left Quarter Thru"
        from="Left-Hand Columns"
        formation="Column LH GBGB"
        parts="2" >
@@ -88,7 +88,7 @@
     </path>
   </tam>
 
-  <tam title="Left Grand Quarter Thru" from="Left-Hand Columns of 6">
+  <tam title="Grand Left Quarter Thru" from="Left-Hand Columns of 6">
     <formation>
       <dancer gender="girl" x="1" y="-3" angle="90"/>
       <dancer gender="boy" x="1" y="0" angle="90"/>
@@ -154,7 +154,7 @@
     </path>
   </tam>
 
-  <tam title="Left Grand 3/4 Thru"
+  <tam title="Grand Left 3/4 Thru"
        from="Left-Hand Columns"
        formation="Column LH GBGB"
        parts="4.5" >
@@ -179,7 +179,7 @@
     </path>
   </tam>
 
-  <tam title="Left Grand 3/4 Thru" from="Left-Hand Columns of 6" parts="4.5">
+  <tam title="Grand Left 3/4 Thru" from="Left-Hand Columns of 6" parts="4.5">
     <formation>
       <dancer gender="girl" x="1" y="-3" angle="90"/>
       <dancer gender="boy" x="1" y="0" angle="90"/>

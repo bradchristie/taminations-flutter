@@ -1,8 +1,6 @@
 
 
-# C-2 Calls Coded for the Sequencer
-These are the C-2 calls that are programmed for the sequencer, and should work
-with any appropriate formation and calls.
+# Details for C-2 Calls
 
 - Bounce <anyone>
 - (Left) (Split) Catch <number>

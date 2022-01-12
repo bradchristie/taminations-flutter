@@ -33,7 +33,7 @@ class Motivate extends Action with CallWithParts, CallWithStars, ButCall {
 
   @override
   Future<void> performPart2(CallContext ctx) async {
-    await performOnePart(ctx, 'Motivate', 2);
+    await CallWithParts.performOnePart(ctx, 'Motivate', 2);
   }
 
   @override

@@ -29,12 +29,13 @@ import 'a1/chain_reaction.dart';
 import 'a1/clover_and.dart';
 import 'a1/cross.dart';
 import 'a1/cross_over_circulate.dart';
-import 'a1/double_star_thru.dart';
 import 'a1/horseshoe_turn.dart';
 import 'a1/linear_cycle.dart';
+import 'a1/mix.dart';
 import 'a1/partner_tag.dart';
 import 'a1/pass_in_out.dart';
 import 'a1/quarter_in_out.dart';
+import 'a1/quarter_thru.dart';
 import 'a1/roll_to_a_wave.dart';
 import 'a1/six_two_acey_deucey.dart';
 import 'a1/split_square_thru.dart';
@@ -67,6 +68,7 @@ import 'b1/face.dart';
 import 'b1/half_sashay.dart';
 import 'b1/pass_thru.dart';
 import 'b1/pull_by.dart';
+import 'b1/right_and_left_thru.dart';
 import 'b1/rollaway.dart';
 import 'b1/separate.dart';
 import 'b1/split_circulate.dart';
@@ -175,6 +177,7 @@ import 'common/center_six.dart';
 import 'common/center_wave_of_four.dart';
 import 'common/centers.dart';
 import 'common/couples.dart';
+import 'common/do_one_part.dart';
 import 'common/do_your_part.dart';
 import 'common/ends.dart';
 import 'common/everyone.dart';
@@ -207,6 +210,7 @@ import 'common/waves.dart';
 import 'common/while.dart';
 import 'ms/cast_off_three_quarters.dart';
 import 'ms/cross_fold.dart';
+import 'ms/eight_chain.dart';
 import 'ms/fold.dart';
 import 'ms/half_tag.dart';
 import 'ms/hinge.dart';
@@ -247,7 +251,7 @@ abstract class CodedCall extends Call {
     //  Anything Motivate does not include Finish Motivate
     '.+(?<!finish)(motivate|coordinate|percolate|perkup)'.ri: (name) => Anything(name),
     //  Anything Chain Thru should not match Square Chain Thru or others
-    '.*(?<!(cross|eight|peel|scatter|scoot|spin|square|swing|tag))chainthru'.ri:
+    '.*(?<!(cross|8|peel|scatter|scoot|spin|square|swing|tag))chainthru'.ri:
         (name) => AnythingChainThru(name),
     'InterlockedDiamondChainThru'.r: (name) => AnythingChainThru(name),
     'around1andcomeintothemiddle'.ri: (_) =>
@@ -301,10 +305,11 @@ abstract class CodedCall extends Call {
 
     'detour'.ri: (_) => Detour(),
     'diamondcirculate'.ri: (_) => DiamondCirculate(),
+    'dothe.+part.+'.ri: (name) => DoOnePart(name),
     '(left)?dosado'.ri: (name) => Dosado(name),
-    'doublestarthru'.ri: (_) => DoubleStarThru(),
     'doyourpart.+'.ri: (name) => DoYourPart(name),
 
+    '8chain(1|2|3|4|5|6|7|thru)'.ri: (name) => EightChain(name),
     'end'.ri: (_) => Ends(),
     '(then)?every(one|body)'.ri: (name) => Everyone(name),
     'except(the)?$specifier'.ri: (name) => Except(name),
@@ -354,8 +359,8 @@ abstract class CodedCall extends Call {
 
     'magiccolumntransferand.+'.ri: (name) => MagicTransferAnd(name),
     'makemagic'.ri: (_) => MakeMagic(),
-    //'minibusybut.+'.ri: (name) => MiniBusyBut(name),
     'minibusy'.ri: (_) => MiniBusy(),
+    'mix'.ri: (_) => Mix(),
     'motivate'.ri: (_) => Motivate(),
 
     'nothing'.ri: (_) => Nothing(),
@@ -382,12 +387,14 @@ abstract class CodedCall extends Call {
     '14(in|out)'.ri: (name) => QuarterInOut(name),
     'anda?14more'.ri: (_) => QuarterMore(),
     '(left)?14tag'.ri: (name) => QuarterTag(name),
+    '(grand)?(left)?(14|34)thru'.ri: (name) => QuarterThru(name),
 
     'ramble'.ri: (_) => Ramble(),
     'relocate(.*)'.ri: (name) => Relocate(name),
     '(left)?(grand)?remake'.ri: (name) => Remake(name),
     '.+(but)?replace.+'.ri: (name) => Replace(name),
     'reverseorder.*'.ri: (name) => ReverseOrder(name),
+    'rightandleftthru'.ri: (_) => RightAndLeftThru(),
     '(left|right)?ripple.*'.ri: (name) => Ripple(name),
     '(and)?roll'.ri: (name) => Roll(name),
     '(reverse)?rollaway'.ri : (name) => Rollaway(name),
@@ -469,7 +476,7 @@ abstract class CodedCall extends Call {
         (name) => TriangleCirculate(name),
     'triplebox.+'.ri: (name) => TripleBox(name),
     'triple(lines?|waves?|columns?).+'.ri: (name) => TripleLine(name),
-    'triplestarthru'.ri: (_) => TripleStarThru(),
+    '(double|triple)starthru'.ri: (name) => TripleStarThru(name),
     'tripletrade'.ri: (_) => TripleTrade(),
     '(reverse)?truck'.ri: (name) => Truck(name),
     '(left)?turnthru'.ri: (name) => TurnThru(name),

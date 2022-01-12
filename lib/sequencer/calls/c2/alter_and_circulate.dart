@@ -21,6 +21,7 @@ import '../common.dart';
 
 class AlterAndCirculate extends Action with CallWithParts, CallWithStars {
 
+  @override final level = LevelData.C2;
   @override int numberOfParts = 5;
   @override var turnStarAmount = 2;
   AlterAndCirculate() : super('Alter and Circulate');

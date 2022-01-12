@@ -19,27 +19,26 @@
 
 import '../common.dart';
 
-class MiniBusy extends Action with CallWithParts, ButCall {
+class DoOnePart extends Action {
 
-  @override int numberOfParts = 3;
-  @override final level = LevelData.A2;
-  @override var butCall = 'Flip the Diamond';
-  MiniBusy() : super('Mini-Busy');
+  DoOnePart(String name) : super(name);
 
   @override
-  Future<void> performPart1(CallContext ctx) async {
-    await CallWithParts.performOnePart(ctx, 'Mini-Busy', 1);
+  Future<void> perform(CallContext ctx, [int stackIndex=0]) async {
+    final callName = name.replaceFirst('do the .* part (of)?'.ri, '').trim();
+    await ctx.subContext(ctx.dancers, (ctx2) async {
+      if (!ctx2.matchCodedCall(callName))
+        throw CallError('Unable to find $callName as a Call with Parts');
+      if (ctx2.callstack.last is CallWithParts) {
+        final call = ctx2.callstack.last as CallWithParts;
+        final partNumber = CallWithParts.partNumberFromCall(call, name);
+        if (partNumber == 0)
+          throw CallError('Unable to figure out what Part to do');
+        await call.performPart(partNumber)(ctx2);
+      }
+      else
+        throw CallError('Can only Do a Part of a call with Parts');
+    });
   }
-
-  @override
-  Future<void> performPart2(CallContext ctx) async {
-    await ctx.applyCalls('Very Centers Hinge While Outer 4 Step');
-  }
-
-  @override
-  Future<void> performPart3(CallContext ctx) async {
-    await ctx.applyCalls('Center 4 $butCall While Outer 4 Face In');
-  }
-
 
 }

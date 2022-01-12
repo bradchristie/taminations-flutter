@@ -20,16 +20,26 @@
 
 import '../common.dart';
 
-class TripleStarThru extends Action {
+class TripleStarThru extends Action with CallWithParts {
 
   @override final level = LevelData.A1;
-  TripleStarThru() : super('Triple Star Thru');
+  TripleStarThru(String name) : super(name) {
+    numberOfParts = name.contains('Triple') ? 3 : 2;
+  }
 
   @override
-  Future<void> perform(CallContext ctx, [int stackIndex = 0]) async {
-    await ctx.applyCalls('Facing Dancers Star Thru',
-                         'Facing Dancers _Left Star Thru',
-                         'Facing Dancers Star Thru');
+  Future<void> performPart1(CallContext ctx) async {
+    await ctx.applyCalls('Facing Dancers Star Thru');
+  }
+
+  @override
+  Future<void> performPart2(CallContext ctx) async {
+    await ctx.applyCalls('Facing Dancers _Left Star Thru');
+  }
+
+  @override
+  Future<void> performPart3(CallContext ctx) async {
+    await ctx.applyCalls('Facing Dancers Star Thru');
   }
 
 }

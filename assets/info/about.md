@@ -53,7 +53,7 @@ Just run Microsoft Store from the Start menu, or use
 
 ## More Information
 
-[How to put Taminations on your web site](embed.html)
+[How to put Taminations on your web site](embed.md)
 
 ***
 

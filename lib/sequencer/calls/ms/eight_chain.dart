@@ -19,38 +19,54 @@
 
 import '../common.dart';
 
-class SpinChainAndExchangeTheGears extends Action with CallWithParts, CallWithStars {
+class EightChain extends Action with CallWithParts {
 
-  @override int numberOfParts = 5;
-  @override final level = LevelData.PLUS;
-  var turnAmount = 3;
-  SpinChainAndExchangeTheGears(String name) : super(name);
+  @override final level = LevelData.MS;
+  EightChain(String name) : super(name) {
+    var howMuch = TamUtils.normalizeCall(name.replaceFirst('Eight Chain '.ri, ''));
+    numberOfParts = howMuch == 'Thru' ? 8 : int.tryParse(howMuch) ?? 0;
+    if (numberOfParts <= 0)
+      throw CallError('Eight Chain how much?');
+  }
 
   @override
   Future<void> performPart1(CallContext ctx) async {
-    await ctx.applyCalls('Swing');
+    await ctx.applyCalls('Pass Thru');
   }
 
   @override
   Future<void> performPart2(CallContext ctx) async {
-    await ctx.applyCalls('Spin Chain the Gears Part 2');
+    await ctx.applyCalls('Center Pass Thru While Outsides Courtesy Turn');
   }
 
   @override
   Future<void> performPart3(CallContext ctx) async {
-    await ctx.applyCalls('Very Centers Trade');
+    await ctx.applyCalls('Pass Thru');
   }
 
   @override
   Future<void> performPart4(CallContext ctx) async {
-    for (var i=0; i<turnAmount; i++)
-      await ctx.applyCalls('Turn the Stars');
+    await ctx.applyCalls('Center Pass Thru While Outsides Courtesy Turn');
   }
-
 
   @override
   Future<void> performPart5(CallContext ctx) async {
-    await CallWithParts.performOnePart(ctx,'Spin Chain and Exchange the Gears',5);
+    await ctx.applyCalls('Pass Thru');
+  }
+
+  @override
+  Future<void> performPart6(CallContext ctx) async {
+    await ctx.applyCalls('Center Pass Thru While Outsides Courtesy Turn');
+  }
+
+  @override
+  Future<void> performPart7(CallContext ctx) async {
+    await ctx.applyCalls('Pass Thru');
+  }
+
+  @override
+  Future<void> performPart8(CallContext ctx) async {
+    await ctx.applyCalls('Center Pass Thru While Outsides Courtesy Turn');
   }
 
 }

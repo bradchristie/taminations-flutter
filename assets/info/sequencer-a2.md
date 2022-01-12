@@ -1,16 +1,8 @@
 
 
-# A-2 Calls Coded for the Sequencer
-These are the A-2 calls that are programmed for the sequencer, and should work
-from any appropriate formation.
+# Details for A-2 Calls
 
-- Box Counter Rotate
-- Single Wheel
-- Slip, Slide, Swing, Slither
-- Spin the Windmill In/Out/Left/Right. You can also use formations where
-the centers are facing couples, and with Left Spin the Windmill they will
-step to a left-hand wave.
-- Transfer and <anything>
-- Zig Zag family
-
-
+* **Mini-Busy** - is a 3-Part Call with But
+* **Motivate** - is a 4-Part Call with Stars and But
+* **Pass and Roll** - is a 4-Part Call
+* **Remake** - is a 3-Part Call

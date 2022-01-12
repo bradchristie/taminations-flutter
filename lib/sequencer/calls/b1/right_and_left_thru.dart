@@ -19,38 +19,19 @@
 
 import '../common.dart';
 
-class SpinChainAndExchangeTheGears extends Action with CallWithParts, CallWithStars {
+class RightAndLeftThru extends ActivesOnlyAction with CallWithParts {
 
-  @override int numberOfParts = 5;
-  @override final level = LevelData.PLUS;
-  var turnAmount = 3;
-  SpinChainAndExchangeTheGears(String name) : super(name);
+  @override int numberOfParts = 2;
+  RightAndLeftThru() : super('Right and Left Thru');
 
   @override
   Future<void> performPart1(CallContext ctx) async {
-    await ctx.applyCalls('Swing');
+    await ctx.applyCalls('Pull By');
   }
 
   @override
   Future<void> performPart2(CallContext ctx) async {
-    await ctx.applyCalls('Spin Chain the Gears Part 2');
-  }
-
-  @override
-  Future<void> performPart3(CallContext ctx) async {
-    await ctx.applyCalls('Very Centers Trade');
-  }
-
-  @override
-  Future<void> performPart4(CallContext ctx) async {
-    for (var i=0; i<turnAmount; i++)
-      await ctx.applyCalls('Turn the Stars');
-  }
-
-
-  @override
-  Future<void> performPart5(CallContext ctx) async {
-    await CallWithParts.performOnePart(ctx,'Spin Chain and Exchange the Gears',5);
+    await ctx.applyCalls('Courtesy Turn');
   }
 
 }
