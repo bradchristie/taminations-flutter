@@ -203,7 +203,10 @@ class DancePainter extends fm.CustomPainter  {
     ctx.rotate(pi/2);
     //  Draw grid if on
     if (model.gridVisibility) {
-      Geometry(model.geometry,0).drawGrid(ctx,lineWidth:1.0/s);
+      Geometry(model.geometry,0).drawGrid(ctx);
+    }
+    if (model.axesVisibility) {
+      Geometry(model.geometry,0).drawAxes(ctx);
     }
     //  Always show bigon center mark
     if (model.geometry == Geometry.BIGON) {

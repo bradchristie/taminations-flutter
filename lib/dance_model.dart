@@ -55,6 +55,7 @@ class DanceModel extends fm.ChangeNotifier {
   var _looping = false;
   var _speed = NORMALSPEED;
   var _showGrid = false;
+  var _showAxes = false;
   var _showPaths = false;
   var _showNumbers = Dancer.NUMBERS_OFF;
   var _showPhantoms = false;
@@ -115,6 +116,13 @@ class DanceModel extends fm.ChangeNotifier {
   set gridVisibility(bool show) {
     if (show != _showGrid) {
       _showGrid = show;
+    }
+  }
+
+  bool get axesVisibility => _showAxes;
+  set axesVisibility(bool show) {
+    if (show != _showAxes) {
+      _showAxes = show;
     }
   }
 

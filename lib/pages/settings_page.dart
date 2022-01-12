@@ -325,12 +325,27 @@ class GridSettingWidget extends fm.StatelessWidget {
   @override
   fm.Widget build(fm.BuildContext context) {
     return pp.Consumer<Settings>(
-      builder: (context,settings,child) => _SettingCheckbox(
-        name:'Grid',
-        value: settings.grid,
-        onChanged: (value) {
-          settings.grid = value;
-        },
+      builder: (context,settings,child) => fm.Container(
+        color: fm.Colors.white,
+        child: fm.Row(
+          children: [
+            _SettingCheckbox(
+              name:'Grid',
+              value: settings.grid,
+              onChanged: (value) {
+                settings.grid = value;
+              },
+            ),
+            fm.Container(width: 40),
+            _SettingCheckbox(
+              name:'Axes',
+              value: settings.axes,
+              onChanged: (value) {
+                settings.axes = value;
+              },
+            ),
+          ],
+        ),
       ),
     );
   }

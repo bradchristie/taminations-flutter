@@ -186,6 +186,7 @@ class _AnimationFrameState extends fm.State<AnimationFrame>
 
                       //  Send current settings to the dance model
                       danceModel.gridVisibility = settings.grid || appState.grid;
+                      danceModel.axesVisibility = settings.axes || appState.axes;
                       danceModel.setNumbers(appState.mainPage == MainPage.SEQUENCER  ? settings.dancerIdentification : settings.numbers);
                       danceModel.setSpeed(settings.speed);
                       danceModel.showPaths =settings.paths;

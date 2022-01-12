@@ -40,10 +40,10 @@ abstract class Geometry {
 
   Geometry.create(this.rotnum);
 
-  fm.Paint gridPaint(double lineWidth) => fm.Paint()
+  fm.Paint gridPaint() => fm.Paint()
       ..color = Color.LIGHTGREY
       ..style = fm.PaintingStyle.stroke
-      ..strokeWidth = lineWidth;  // 0 for 1 pixel fails on web
+      ..strokeWidth = 0;  // 0 for 1 pixel fails on web
 
   factory Geometry(int g, [int r = 0]) {
     if (g == BIGON) return BigonGeometry(r);
@@ -85,7 +85,9 @@ abstract class Geometry {
 
   /// Draw a dancer-sized grid of the specific geometry
   /// @param ctx  Canvas to draw grid on
-  void drawGrid(fm.Canvas ctx,{double lineWidth=0.0});
+  void drawGrid(fm.Canvas ctx);
+  void drawAxes(fm.Canvas ctx);
+
 
   Geometry clone();
 }
@@ -103,8 +105,8 @@ class BigonGeometry extends Geometry {
   Geometry clone() => BigonGeometry(rotnum);
 
   @override
-  void drawGrid(fm.Canvas ctx,{double lineWidth=0.0}) {
-    var p = gridPaint(lineWidth);
+  void drawGrid(fm.Canvas ctx) {
+    var p = gridPaint();
     for (var xs = -1; xs <= 1; xs += 2) {
       ctx.save();
       ctx.scale(xs.d,1.0);
@@ -124,6 +126,15 @@ class BigonGeometry extends Geometry {
       }
       ctx.restore();
     }
+  }
+
+  @override
+  void drawAxes(fm.Canvas ctx) {
+    var p = gridPaint();
+    p.color = Color.RED;
+    ctx.drawLine(fm.Offset(0.0,0.0), fm.Offset(-7.5,0.0), p);
+    p.color = Color.BLUE;
+    ctx.drawLine(fm.Offset(0.0,0.0), fm.Offset(7.5,0.0), p);
   }
 
   @override
@@ -171,8 +182,8 @@ class SquareGeometry extends Geometry {
   Geometry clone() => SquareGeometry(rotnum);
 
   @override
-  void drawGrid(fm.Canvas ctx,{double lineWidth=0.0}) {
-    var p = gridPaint(lineWidth);
+  void drawGrid(fm.Canvas ctx) {
+    var p = gridPaint();
     for (var x = -75; x <= 75; x += 10) {
       var path = fm.Path();
       path.moveTo(x/10.0, -7.5);
@@ -185,6 +196,15 @@ class SquareGeometry extends Geometry {
       path.lineTo(7.5, y/10.0);
       ctx.drawPath(path,p);
     }
+  }
+
+  @override
+  void drawAxes(fm.Canvas ctx) {
+    var p = gridPaint();
+    p.color = Color.RED;
+    ctx.drawLine(fm.Offset(-7.5,0.0), fm.Offset(7.5,0.0), p);
+    p.color = Color.BLUE;
+    ctx.drawLine(fm.Offset(0.0,-7.5), fm.Offset(0.0,7.5), p);
   }
 
   @override
@@ -209,8 +229,8 @@ class HexagonGeometry extends Geometry {
   Geometry clone() => HexagonGeometry(rotnum);
 
   @override
-  void drawGrid(fm.Canvas ctx,{double lineWidth=0.0}) {
-    var p = gridPaint(lineWidth);
+  void drawGrid(fm.Canvas ctx) {
+    var p = gridPaint();
     for (var yscale = -1; yscale <= 1; yscale += 2) {
       for (var a=0; a<=6; a++) {
         ctx.save();
@@ -233,6 +253,19 @@ class HexagonGeometry extends Geometry {
         ctx.restore();
       }
     }
+  }
+
+  @override
+  void drawAxes(fm.Canvas ctx) {
+    var p = gridPaint();
+    p.color = Color.RED;
+    ctx.drawLine(fm.Offset(0.0,0.0), fm.Offset(-7.5,0.0), p);
+    ctx.drawLine(fm.Offset(0.0,0.0), fm.Offset(4.33,7.5), p);
+    ctx.drawLine(fm.Offset(0.0,0.0), fm.Offset(4.33,-7.5), p);
+    p.color = Color.BLUE;
+    ctx.drawLine(fm.Offset(0.0,0.0), fm.Offset(7.5,0.0), p);
+    ctx.drawLine(fm.Offset(0.0,0.0), fm.Offset(-4.33,7.5), p);
+    ctx.drawLine(fm.Offset(0.0,0.0), fm.Offset(-4.33,-7.5), p);
   }
 
   /// Convert transform for a dancer's current position
@@ -287,8 +320,8 @@ class HashtagGeometry extends Geometry {
 
   //  Same as sqaure geometry
   @override
-  void drawGrid(fm.Canvas ctx,{double lineWidth=0.0}) {
-    var p = gridPaint(lineWidth);
+  void drawGrid(fm.Canvas ctx) {
+    var p = gridPaint();
     for (var x = -75; x <= 75; x += 10) {
       var path = fm.Path();
       path.moveTo(x/10.0, -7.5);
@@ -301,6 +334,15 @@ class HashtagGeometry extends Geometry {
       path.lineTo(7.5, y/10.0);
       ctx.drawPath(path,p);
     }
+  }
+
+  @override
+  void drawAxes(fm.Canvas ctx) {
+    var p = gridPaint();
+    p.color = Color.RED;
+    ctx.drawLine(fm.Offset(-7.5,0.0), fm.Offset(7.5,0.0), p);
+    p.color = Color.BLUE;
+    ctx.drawLine(fm.Offset(0.0,-7.5), fm.Offset(0.0,7.5), p);
   }
 
   //  Paths the same as square geometry
