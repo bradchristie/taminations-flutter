@@ -215,6 +215,7 @@ import 'ms/eight_chain.dart';
 import 'ms/fold.dart';
 import 'ms/half_tag.dart';
 import 'ms/hinge.dart';
+import 'ms/pass_to_the_center.dart';
 import 'ms/quarter_tag.dart';
 import 'ms/slide_thru.dart';
 import 'ms/spin_chain_thru.dart';
@@ -376,6 +377,7 @@ abstract class CodedCall extends Call {
     'passtheaxle'.ri: (_) => PassTheAxle(),
     'passtheocean'.ri: (_) => PassTheOcean(),
     '(left)?passthru'.ri: (name) => PassThru(name),
+    'passtothecenter'.ri: (_) => PassToTheCenter(),
     'peeltoadiamond'.ri: (_) => PeelToADiamond(),
     'percolate'.ri: (_) => Percolate(),
     'phantom.+'.ri: (name) => Phantom(name),
