@@ -20,39 +20,37 @@
 
 import '../common.dart';
 
-class BraceThru extends Action {
+class BraceThru extends ActivesOnlyAction with CallWithParts {
 
-  @override
-  final level = LevelData.A1;
+  @override final level = LevelData.A1;
+  @override int numberOfParts = 2;
   BraceThru() : super('Brace Thru');
 
   @override
-  Future<void> perform(CallContext ctx, [int stackIndex = 0]) async {
-    //  TODO check is this necessary or should BraceThru inherit from ActivesOnly?
-    await ctx.subContext(ctx.actives, (ctx2) async {
-      //  Perform Pass Thru which will work from waves or facing couples
-      await ctx2.applyCalls('Pass Thru');
-      //  Do some checking that we can finish Brace Thru from here
-      ctx2.analyze();
-      for (final d in ctx2.dancers) {
-        final partner = d.data.partner.throwIfNull(CallError('Dancer $d cannot Brace Thru'));
-        if (d.gender == partner.gender)
-          throw CallError('Same-sex dancers cannot Brace Thru');
-      }
-      //  Finish the call
-      final normal = ctx2.dancers.where((d) => d.data.beau ^ (d.gender == Gender.GIRL)).toList();
-      final sashay = ctx2.dancers.where((d) => d.data.beau ^ (d.gender == Gender.BOY)).toList();
-      if (normal.isNotEmpty) {
-        await ctx2.subContext(normal, (ctx3) async {
-          await ctx3.applyCalls('Courtesy Turn');
-        });
-      }
-      if (sashay.isNotEmpty) {
-        await ctx2.subContext(sashay, (ctx3) async {
-          await ctx3.applyCalls('Turn Back');
-        });
-      }
-    });
+  Future<void> performPart1(CallContext ctx) async {
+    await ctx.applyCalls('Pass Thru');
+  }
+
+  @override
+  Future<void> performPart2(CallContext ctx) async {
+    ctx.analyze();
+    for (final d in ctx.dancers) {
+      final partner = d.data.partner.throwIfNull(CallError('Dancer $d cannot Brace Thru'));
+      if (d.gender == partner.gender)
+        throw CallError('Same-sex dancers cannot Brace Thru');
+    }
+    final normal = ctx.dancers.where((d) => d.data.beau ^ (d.gender == Gender.GIRL)).toList();
+    final sashay = ctx.dancers.where((d) => d.data.beau ^ (d.gender == Gender.BOY)).toList();
+    if (normal.isNotEmpty) {
+      await ctx.subContext(normal, (ctx3) async {
+        await ctx3.applyCalls('Courtesy Turn');
+      });
+    }
+    if (sashay.isNotEmpty) {
+      await ctx.subContext(sashay, (ctx3) async {
+        await ctx3.applyCalls('Turn Back');
+      });
+    }
   }
 
 }

@@ -39,6 +39,7 @@ import 'a1/quarter_thru.dart';
 import 'a1/roll_to_a_wave.dart';
 import 'a1/six_two_acey_deucey.dart';
 import 'a1/split_square_thru.dart';
+import 'a1/swing_and_mix.dart';
 import 'a1/triple_star_thru.dart';
 import 'a1/triple_trade.dart';
 import 'a1/turn_and_deal.dart';
@@ -96,6 +97,7 @@ import 'c1/cast_back.dart';
 import 'c1/circle_by.dart';
 import 'c1/concentric.dart';
 import 'c1/counter_rotate.dart';
+import 'c1/dixie_diamond.dart';
 import 'c1/finish.dart';
 import 'c1/ignore.dart';
 import 'c1/interrupt.dart';
@@ -149,6 +151,8 @@ import 'c2/cross_trade_and_wheel.dart';
 import 'c2/detour.dart';
 import 'c2/flip_your_neighbor.dart';
 import 'c2/grand_cross_trade_and_wheel.dart';
+import 'c2/grand_single_cross_and_wheel.dart';
+import 'c2/grand_single_cross_trade_and_wheel.dart';
 import 'c2/half_the_k.dart';
 import 'c2/hocus_pocus.dart';
 import 'c2/kick_off.dart';
@@ -298,15 +302,16 @@ abstract class CodedCall extends Call {
     'courtesyturn'.ri: (_) => CourtesyTurn(),
     '(12|34)?(reverse)?crazy.*'.ri: (name) => Crazy(name),
     'cross'.ri: (_) => Cross(),
-    'crossandwheel'.ri: (_) => CrossAndWheel(),
+    '(left)?crossandwheel'.ri: (name) => CrossAndWheel(name),
     'crossfold'.ri: (_) => CrossFold(),
     'crossovercirculate'.ri: (_) => CrossOverCirculate(),
     'crossramble'.ri: (_) => CrossRamble(),
     '${specifier}crossrun'.ri: (name) => CrossRun(name),
-    'crosstradeandwheel'.ri: (_) => CrossTradeAndWheel(),
+    '(left)?crosstradeandwheel'.ri: (name) => CrossTradeAndWheel(name),
 
     'detour'.ri: (_) => Detour(),
     'diamondcirculate'.ri: (_) => DiamondCirculate(),
+    '(reverse)?dixiediamond'.ri: (name) => DixieDiamond(name),
     'dothe.+part.+'.ri: (name) => DoOnePart(name),
     '(left)?dosado'.ri: (name) => Dosado(name),
     'doyourpart.+'.ri: (name) => DoYourPart(name),
@@ -326,7 +331,10 @@ abstract class CodedCall extends Call {
     '\\d\\d'.ri: (name) => Fraction(name),
 
     'girl|ladies|lady'.ri: (_) => Girls(),
-    'grandcrosstradeandwheel'.ri: (_) => GrandCrossTradeAndWheel(),
+    '(left)?grandcrosstradeandwheel'.ri: (name) => GrandCrossTradeAndWheel(name),
+    '(left)?grandsinglecrossandwheel'.ri: (name) => GrandSingleCrossAndWheel(name),
+    '(left)?grandsinglecrosstradeandwheel'.ri:
+        (name) => GrandSingleCrossTradeAndWheel(name),
     'grand(left)?swingthru'.ri: (name) => GrandSwingThru(name),
     '_grandswing(left|right)?'.ri: (name) => GrandSwingX(name),
 
@@ -415,8 +423,8 @@ abstract class CodedCall extends Call {
     'shazam'.ri: (_) => Shazam(),
     'siamese.+'.ri: (name) => Siamese(name),
     'side'.ri: (name) => Sides(name),
-    'singlecrossandwheel'.ri: (_) => SingleCrossAndWheel(),
-    'singlecrosstradeandwheel'.ri: (_) => SingleCrossTradeAndWheel(),
+    '(left)?singlecrossandwheel'.ri: (name) => SingleCrossAndWheel(name),
+    '(left)?singlecrosstradeandwheel'.ri: (name) => SingleCrossTradeAndWheel(name),
     '(left)?singlewheel'.ri: (name) => SingleWheel(name),
     '62aceydeucey'.ri: (_) => SixTwoAceyDeucey(),
     '.*(skip|delete).*'.ri: (name) => Skip(name),
@@ -454,6 +462,7 @@ abstract class CodedCall extends Call {
     'sweep14'.ri: (name) => SweepAQuarter(name),
     'swing'.ri: (_) => Swing(),
     'swingandcircle(12|34)'.ri: (name) => SwingAndCircle(name),
+    'swingandmix'.ri: (_) => SwingAndMix(),
     'swingthefractions'.ri: (name) => SwingTheFractions(name),
     '(grand)?(left)?swingthru'.ri: (name) => SwingThru(name),
     'switchtheline'.ri: (_) => SwitchTheLine(),

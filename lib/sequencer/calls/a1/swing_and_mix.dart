@@ -19,44 +19,26 @@
 
 import '../common.dart';
 
-class LoadTheBoat extends Action with CallWithParts {
+class SwingAndMix extends Action with CallWithParts {
 
-  @override int numberOfParts = 4;
-  @override var level = LevelData.PLUS;
-  LoadTheBoat() : super('Load the Boat');
-
-  String _endsPart(CallContext ctx) {
-    if (ctx.outer(4).every((d) => d.isFacingIn))
-      return 'Pass Thru';
-    else if (ctx.outer(4).every((d) => d.isFacingOut))
-      return 'Bend and Pass Thru';
-    else
-      throw CallError('Cannot Load the Boat from this formation');
-  }
+  @override var level = LevelData.A1;
+  @override var numberOfParts = 3;
+  SwingAndMix() : super('Mix');
 
   @override
   Future<void> performPart1(CallContext ctx) async {
-    await ctx.applyCalls('Ends ${_endsPart(ctx)} While Center 4 Pass Thru');
+    await ctx.applyCalls('Swing');
   }
 
   @override
   Future<void> performPart2(CallContext ctx) async {
-    ctx.analyze();
-    await ctx.applyCalls('Ends ${_endsPart(ctx)} While Center 4 Face Out');
+    await ctx.applyCalls('Centers Cross Run');
   }
 
   @override
   Future<void> performPart3(CallContext ctx) async {
-    //  Center 4 might be off a bit, snap to boxes so Ends Bend works
-    ctx.adjustToFormation('Eight Chain Thru',rotate: 90);
     ctx.analyze();
-    await ctx.applyCalls('Ends ${_endsPart(ctx)} While Center 4 Trade');
-  }
-
-  @override
-  Future<void> performPart4(CallContext ctx) async {
-    ctx.analyze();
-    await ctx.applyCalls('Ends Face In While Center 4 Pass Thru');
+    await ctx.applyCalls('Centers Trade');
   }
 
 }

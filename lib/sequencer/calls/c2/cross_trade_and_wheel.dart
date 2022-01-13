@@ -20,14 +20,26 @@
 
 import '../common.dart';
 
-class CrossTradeAndWheel extends Action {
+class CrossTradeAndWheel extends Action with CallWithParts {
 
   @override final level = LevelData.C2;
-  CrossTradeAndWheel() : super('Cross Trade and Wheel');
+  @override int numberOfParts = 3;
+  CrossTradeAndWheel(String name) : super(name);
 
   @override
-  Future<void> perform(CallContext ctx, [int stackIndex = 0]) async {
-    await ctx.applyCalls('Couples Hinge','Very Centers Trade','As Couples Step and Fold');
+  Future<void> performPart1(CallContext ctx, [int stackIndex = 0]) async {
+    final left = name.startsWith('Left') ? 'Left' : '';
+    await ctx.applyCalls('As Couples $left Hinge');
+  }
+
+  @override
+  Future<void> performPart2(CallContext ctx, [int stackIndex = 0]) async {
+    await ctx.applyCalls('Very Centers Trade');
+  }
+
+  @override
+  Future<void> performPart3(CallContext ctx, [int stackIndex = 0]) async {
+    await ctx.applyCalls('As Couples Step and Fold');
   }
 
 }
