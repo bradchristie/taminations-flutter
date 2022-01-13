@@ -43,7 +43,7 @@ abstract class Geometry {
   fm.Paint gridPaint() => fm.Paint()
       ..color = Color.LIGHTGREY
       ..style = fm.PaintingStyle.stroke
-      ..strokeWidth = 0;  // 0 for 1 pixel fails on web
+      ..strokeWidth = 0;
 
   factory Geometry(int g, [int r = 0]) {
     if (g == BIGON) return BigonGeometry(r);
