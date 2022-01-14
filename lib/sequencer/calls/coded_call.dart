@@ -302,7 +302,7 @@ abstract class CodedCall extends Call {
     'counterrotate'.ri: (_) => CounterRotate(),
     '(dancersin)?couples'.ri: (name) => Couples(name),
     'courtesyturn'.ri: (_) => CourtesyTurn(),
-    '(12|34)?(reverse)?crazy.*'.ri: (name) => Crazy(name),
+    '(14|12|34)?(reverse)?crazy.*'.ri: (name) => Crazy(name),
     'cross'.ri: (_) => Cross(),
     '(left)?crossandwheel'.ri: (name) => CrossAndWheel(name),
     'crossfold'.ri: (_) => CrossFold(),

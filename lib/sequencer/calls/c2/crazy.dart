@@ -20,34 +20,55 @@
 
 import '../common.dart';
 
-class Crazy extends Action {
+class Crazy extends Action with CallWithParts {
 
   @override final level = LevelData.C2;
-  Crazy(String name) : super(name);
+  //  Make any adjustments needed to apply the crazy call to
+  //  8 dancers or 4 dancers
+  String get crazy4 => crazyCall.matches('counter rotate.*'.ri)
+      ? 'Center 4 Box $crazyCall'
+      : 'Center 4 $crazyCall';
+  String get crazy8 => (crazyCall.matches('counter rotate.*'.ri) ||
+      crazyCall.matches('circulate.*'.ri)) ? 'Split $crazyCall' : crazyCall;
 
-  @override
-  Future<void> perform(CallContext ctx, [int stackIndex = 0]) async {
-    final crazyCall = name.replaceFirst('.*Crazy '.r, '');
-    var crazy8 = crazyCall;
-    if (crazyCall.matches('counter rotate.*'.ri) ||
-        crazyCall.matches('circulate.*'.ri))
-      crazy8 = 'Split $crazyCall';
-    final crazy4 = crazyCall.matches('counter rotate.*'.ri)
-        ? 'Center 4 Box $crazyCall'
-        : 'Center 4 $crazyCall';
-    final isReverse = name.contains('Reverse Crazy');
+  bool isReverse;
+  String crazyCall;
+  Crazy(String name) :
+        isReverse = name.contains('Reverse Crazy'),
+        crazyCall = name.replaceFirst('.*Crazy '.r, ''),
+        super(name) {
+    //  Find out how crazy we are
     final norm = TamUtils.normalizeCall(name);
-    await ctx.applyCalls(isReverse ? crazy4 : crazy8);
-    ctx.matchStandardFormation();
-    await ctx.applyCalls(isReverse ? crazy8 : crazy4);
-    if (!norm.startsWith('12')) {
-      ctx.matchStandardFormation();
-      await ctx.applyCalls(isReverse ? crazy4 : crazy8);
-      if (!norm.startsWith('34')) {
-        ctx.matchStandardFormation();
-        await ctx.applyCalls(isReverse ? crazy8 : crazy4);
-      }
-    }
+    if (norm.startsWith('14'))
+      numberOfParts = 1;  //  really?
+    else if (norm.startsWith('12'))
+      numberOfParts = 2;
+    else if (norm.startsWith('34'))
+      numberOfParts = 3;
+    else
+      numberOfParts = 4;
   }
 
+  @override
+  Future<void> performPart1(CallContext ctx) async {
+    await ctx.applyCalls(isReverse ? crazy4 : crazy8);
+  }
+
+  @override
+  Future<void> performPart2(CallContext ctx) async {
+    ctx.matchStandardFormation();
+    await ctx.applyCalls(isReverse ? crazy8 : crazy4);
+  }
+
+  @override
+  Future<void> performPart3(CallContext ctx) async {
+    ctx.matchStandardFormation();
+    await ctx.applyCalls(isReverse ? crazy4 : crazy8);
+  }
+
+  @override
+  Future<void> performPart4(CallContext ctx) async {
+    ctx.matchStandardFormation();
+    await ctx.applyCalls(isReverse ? crazy8 : crazy4);
+  }
 }
