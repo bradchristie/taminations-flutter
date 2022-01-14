@@ -22,7 +22,7 @@ two-faced line). That new line does a Couples Hinge once
 for each 1/4 in the fraction the caller gives (caller must
 give a fraction).
 
-## Snigle Rotate / Reverse Single Rotate
+## Single Rotate / Reverse Single Rotate
 
 ### Single Rotate 1/4, 1/2, 3/4
 
