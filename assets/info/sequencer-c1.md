@@ -8,6 +8,7 @@
 - Circle By
 - Concentric Concept, for all dancers or outer 4
 - Counter Rotate
+- Dixie Diamond - is a 2-Part Call
 - Ignore - only if the call could also be done with all dancers
 - Jaywalk
 - Little - can be entered as

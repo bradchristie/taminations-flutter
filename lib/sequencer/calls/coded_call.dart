@@ -155,6 +155,7 @@ import 'c2/grand_single_cross_and_wheel.dart';
 import 'c2/grand_single_cross_trade_and_wheel.dart';
 import 'c2/half_the_k.dart';
 import 'c2/hocus_pocus.dart';
+import 'c2/hubs_trade.dart';
 import 'c2/kick_off.dart';
 import 'c2/loop.dart';
 import 'c2/peel_to_a_diamond.dart';
@@ -345,6 +346,7 @@ abstract class CodedCall extends Call {
     '(left)?(single|partner)?hinge'.ri: (name) => Hinge(name),
     'hocuspocus'.ri: (_) => HocusPocus(),
     'horseshoeturn'.ri: (_) => HorseshoeTurn(),
+    '(hubs|rims)trade.+'.ri: (name) => HubsTrade(name),
 
     'ignore.+'.ri: (name) => Ignore(name),
     'center(2|4|6)'.ri: (name) => Insides(name),
