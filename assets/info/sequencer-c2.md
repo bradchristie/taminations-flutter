@@ -11,7 +11,7 @@
 - Relocate
 - Rotary
 - Rotate
-- Shazam
+- **Shazam** - is a 2-Part Call
 - (Left) Tag Your (Criss) (Cross) Neighbor
 - \<anyone> (Reverse) Truck
 - Zip Code \<number>
