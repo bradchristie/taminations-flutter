@@ -25,7 +25,14 @@ class TurnBack extends Action {
   TurnBack() : super('Turn Back');
 
   @override
-  Path performOne(Dancer d, CallContext ctx) =>
-      TamUtils.getMove(d.data.beau ? 'U-Turn Right' : 'U-Turn Left');
+  Path performOne(Dancer d, CallContext ctx) {
+    final roll = ctx.roll(d);
+    final move = {
+      Rolling.LEFT : 'U-Turn Left',
+      Rolling.RIGHT : 'U-Turn Right',
+      Rolling.NONE : d.data.beau ? 'U-Turn Right' : 'U-Turn Left'
+    }[roll]!;
+    return TamUtils.getMove(move);;
+  }
 
 }
