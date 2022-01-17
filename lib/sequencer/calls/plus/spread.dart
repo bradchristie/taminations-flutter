@@ -51,12 +51,14 @@ class Spread extends Action {
     Action spreader;
     ctx.analyze();
     if (ctx.actives.length == ctx.dancers.length / 2) {
-      spreader = CallContext.fromContext(ctx,dancers:ctx.actives).isLines()
-          ? _Case2()   //  Case 2: Active dancers in line or wave spread among themselves
-          : ctx.inActives.every((d) => ctx.dancerClosest(d, (d2) =>
-      d.angleToDancer(d2).abs().isLessThan(pi/2))?.isActive ?? false)
-          ? _Case1()  //  Case 1: Active dancers spread and let in the others
-          : _Case4();
+      if (CallContext.fromContext(ctx,dancers:ctx.actives).isLines())
+        //  Case 2: Active dancers in line or wave spread among themselves
+        spreader = _Case2();
+      if (ctx.actives.every((d) => d.data.partner?.isActive ?? false))
+        //  Case 1: Active dancers spread and let in the others
+        spreader = _Case1();
+      else
+        spreader = _Case4();
     } else if (ctx.isLines() || ctx.isTidal()) {
       spreader = _Case2();
     } else if (ctx.dancers.every((d) => ctx.isInTandem(d))) {
