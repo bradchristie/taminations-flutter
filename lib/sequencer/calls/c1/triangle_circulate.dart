@@ -80,7 +80,13 @@ class TriangleCirculate extends Action {
         for (final d in ctx.dancers) {
           //  Dancer must either be in a tandem...
           if (!ctx.isInTandem(d)) {
-            //  .. or two nearby dancers must form a tandem
+            final tandems = ctx.dancers.where((d2) => ctx.isInTandem(d2));
+            //  Find the dancer closest to each tandem
+            //  We don't want dancers further out to get involved
+            final closest = tandems.map((d2) => ctx.dancersInOrder(d2,(d3) => !ctx.isInTandem(d3)).firstOrNull).whereType<Dancer>().toSet();
+            if (!closest.contains(d))
+              d.data.active = false;
+            //  If not in a tandem, two nearby dancers must form a tandem
             final others = ctx.dancersInOrder(d,(d2) => ctx.isInTandem(d2));
             if (!others[0].isInFrontOf(others[1]) && !others[1].isInFrontOf(others[0]))
               d.data.active = false;
