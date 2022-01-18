@@ -86,10 +86,6 @@ class TriangleCirculate extends Action {
             final closest = tandems.map((d2) => ctx.dancersInOrder(d2,(d3) => !ctx.isInTandem(d3)).firstOrNull).whereType<Dancer>().toSet();
             if (!closest.contains(d))
               d.data.active = false;
-            //  If not in a tandem, two nearby dancers must form a tandem
-            final others = ctx.dancersInOrder(d,(d2) => ctx.isInTandem(d2));
-            if (!others[0].isInFrontOf(others[1]) && !others[1].isInFrontOf(others[0]))
-              d.data.active = false;
           }
         }
         break;
@@ -112,6 +108,7 @@ class TriangleCirculate extends Action {
         }
         break;
     }
+    print(ctx.actives);
     if (ctx.actives.length != 6)
       throw CallError('Unable to find dancers to circulate');
     //  Should be able to split the square to 2 3-dancer triangles
