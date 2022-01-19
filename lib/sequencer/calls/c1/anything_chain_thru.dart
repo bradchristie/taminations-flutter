@@ -24,13 +24,16 @@ class AnythingChainThru extends Action with CallWithParts {
 
   @override int numberOfParts = 3;
   @override final level = LevelData.C1;
-  final String firstCall;
+  String firstCall;
   AnythingChainThru(String name) :
-    firstCall = name.replaceFirst('Chain\\s*Thru'.ri,'')
-        .replaceFirst('Triangle'.ri,'Triangle Circulate')
-        .replaceFirst('Ping\\s*Pong'.ri,'Ping Pong Circulate')
-        .replaceFirst('Diamond'.ri,'Diamond Circulate'),
-        super(name);
+        firstCall = name.replaceFirst('Chain\\s*Thru'.ri,'').trim(),
+        super(name) {
+    if (firstCall.endsWith('Triangle') ||
+        firstCall == 'Ping Pong' ||
+        firstCall == 'Diamond' ||
+        firstCall == 'Interlocked Diamond')
+      firstCall += ' Circulate';
+  }
 
   @override
   Future<void> performPart1(CallContext ctx) async {

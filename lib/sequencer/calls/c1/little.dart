@@ -45,7 +45,6 @@ class Little extends Action {
       turn = 'Face Out';
     else if (namePart2.endsWith('Forward') || namePart2.endsWith('As You Are'))
       turn = '';
-    print('turn: $turn');
 
     //  Do the call, catch any errors triggered by bad counter rotates
     try {
