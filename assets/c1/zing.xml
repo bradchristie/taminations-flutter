@@ -119,7 +119,7 @@
     </path>
   </tam>
 
-  <tam title="All 8 Zing" from="" formation="Static MiniWaves RH" group=" ">
+  <tam title="All 4 Couples Zing" from="" formation="Static MiniWaves RH" group=" ">
     <path>
       <move select="Extend Left" beats="4" scaleX="3" scaleY="2"/>
       <move select="Quarter Right" offsetX="1"/>

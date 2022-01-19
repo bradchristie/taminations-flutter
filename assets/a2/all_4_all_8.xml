@@ -2063,6 +2063,10 @@
            xref-link="c1/square_chain_the_top"
            xref-title="All 4 Couples Square Chain the Top" />
 
+  <tamxref title="All 4 Couples (C-1) Zing" group="All 4 Couples (C-1)"
+           xref-link="c1/zing"
+           xref-title="All 4 Couples Zing"/>
+
   <tamxref title="All 8 (C-1) Alter the Wave" group="All 8 (C-1)"
            xref-link="c1/alter_the_wave"
            xref-title="All 8 Alter the Wave"/>
@@ -2132,10 +2136,6 @@
   <tamxref title="All 8 (C-1) Left Wheel Fan Thru" group="All 8 (C-1)"
            xref-link="c1/wheel_fan_thru"
            xref-title="All 8 Left Wheel Fan Thru"/>
-
-  <tamxref title="All 8 (C-1) Zing" group="All 8 (C-1)"
-           xref-link="c1/zing"
-           xref-title="All 8 Zing"/>
 
   <tamxref title="All 4 Couples (C-2) Rotate 1/2" group="All 4 Couples (C-2)"
            xref-link="c2/rotate"
