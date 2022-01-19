@@ -19,11 +19,9 @@
 */
 
 import 'dart:async' show Future;
-import 'dart:math';
 import 'dart:typed_data';
 
 import 'package:flutter/services.dart' show rootBundle;
-import 'package:xml/xml.dart';
 import 'package:platform/platform.dart';
 
 import 'common.dart';

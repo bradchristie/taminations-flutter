@@ -101,8 +101,8 @@ class DanceModel extends fm.ChangeNotifier {
     'Helen', 'Karen','Irene','Janet','Linda','Mary','Nancy',
     'Pam','Ruth','Susan','Tina','Wanda'];
 
-  DanceModel(fm.BuildContext context)
-      : beater = pp.Provider.of<BeatNotifier>(context,listen: false) {
+  DanceModel([fm.BuildContext? context])
+      : beater = context == null ? BeatNotifier() : pp.Provider.of<BeatNotifier>(context,listen: false) {
     beater.addListener(_updateCurrentPart);
   }
 

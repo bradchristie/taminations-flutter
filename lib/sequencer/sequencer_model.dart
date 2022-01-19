@@ -44,7 +44,7 @@ class SequencerModel extends fm.ChangeNotifier {
   DanceModel animation;
   int currentCall = -1;
 
-  SequencerModel(fm.BuildContext context) :
+  SequencerModel([fm.BuildContext? context]) :
         animation = DanceModel(context) {
     CallContext.init();
     animation.addListener(() {
@@ -293,7 +293,7 @@ class SequencerModel extends fm.ChangeNotifier {
     fs.Clipboard.setData(clip);
   }
 
-  void paste(String calltext) async {
+  Future<void> paste(String calltext) async {
     for (final line in calltext.split('[\n;,]'.r)) {
       if (line.isBlank) {
         continue;

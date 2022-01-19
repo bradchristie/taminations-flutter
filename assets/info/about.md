@@ -45,11 +45,12 @@ You may have problems with Safari.
 ***
 ## Download Taminations for Offline Use
 
+For Windows and Mac users, you can download and install Taminations.
+Just go to the Windows Store or the App Store and look for Taminations.
+Or you can use these links
+[for the Windows program](https://www.microsoft.com/en-us/p/taminations/9nblggh5gghh)
+and [for the Mac program](https://apps.apple.com/us/app/taminations/id613793359).
 
-For Windows users, you can download and install Taminations
-from the Microsoft Store.
-Just run Microsoft Store from the Start menu, or use
-[this link.](https://www.microsoft.com/en-us/p/taminations/9nblggh5gghh)
 
 ## More Information
 

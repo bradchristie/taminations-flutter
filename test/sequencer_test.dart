@@ -1,30 +1,35 @@
-/*
+// This is a basic Flutter widget test.
+//
+// To perform an interaction with a widget in your test, use the WidgetTester
+// utility that Flutter provides. For example, you can send tap and scroll
+// gestures. You can also use WidgetTester to find child widgets in the widget
+// tree, read text, and verify that the values of widget properties are correct.
 
-  Taminations Square Dance Animations
-  Copyright (C) 2020 Brad Christie
-
-  This program is free software: you can redistribute it and/or modify
-  it under the terms of the GNU General Public License as published by
-  the Free Software Foundation, either version 3 of the License, or
-  (at your option) any later version.
-
-  This program is distributed in the hope that it will be useful,
-  but WITHOUT ANY WARRANTY; without even the implied warranty of
-  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-  GNU General Public License for more details.
-
-  You should have received a copy of the GNU General Public License
-  along with this program.  If not, see <http://www.gnu.org/licenses/>.
-
-*/
-
-// @dart=2.9
-
-import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:integration_test/integration_test.dart';
-import 'package:taminations/main.dart' as app;
-import 'package:taminations/sequencer/sequencer_page.dart';
+
+import 'package:taminations/sequencer/call_context.dart';
+import 'package:taminations/sequencer/sequencer_model.dart';
+import 'package:taminations/tam_utils.dart';
+
+
+
+void main() async {
+
+  for (var testName in testSequences.keys) {
+    testWidgets(testName, (WidgetTester tester) async {
+      await tester.runAsync(() async {
+        await TamUtils.init();
+        await CallContext.init();
+        final model = SequencerModel();
+        await model.setStartingFormation('Static Square');
+        await model.paste(testSequences[testName]!);
+        expect(model.errorString.trim(), '');
+      });
+    });
+  }
+  print('All Tests Completed');
+
+}
 
 final testSequences = {
 
@@ -150,7 +155,7 @@ Pass Thru
 Allemande Left''',
 
   'Cloverleaf':
-'''Heads Pair Off and Spread
+  '''Heads Pair Off and Spread
 Circulate
 Cloverleaf
 Centers Pass Thru and Cloverleaf
@@ -505,7 +510,7 @@ Centers Square Thru 3
 Allemande Left''',
 
   'Run 2' :
-  '''Head Couples Pass Thru, Separate Around 2 to a Line
+  '''Head Couples Pass Thru Separate Around 2 to a Line
 Pass Thru
 Ends Cross Fold
 Pass Thru
@@ -1938,7 +1943,7 @@ Allemande Left
 Promenade Home''',
 
   'Cross 3' :
-'''Heads Lead Right
+  '''Heads Lead Right
 Touch a Quarter and Cross
 Wheel and Deal
 Centers Pass Thru
@@ -1956,7 +1961,7 @@ Boys Run
 Allemande Left''',
 
   'Flutterwheel and Sweep 1/4' :
-'''Heads Lead Right
+  '''Heads Lead Right
 Flutterwheel and and Sweep a Quarter
 Pass Thru
 Wheel and Deal
@@ -1972,7 +1977,7 @@ Veer Right
 Promenade Home''',
 
   'Saparate Go Around' :
-'''Heads Turn Thru
+  '''Heads Turn Thru
 Centers Separate Around One to a Line
 Pass Thru
 Tag the Line Zag Zig
@@ -1984,7 +1989,7 @@ Centers Pass Thru
 Allemande Left''',
 
   'Those Who Can Pass Thru' :
-'''Heads Touch 1/4
+  '''Heads Touch 1/4
 Those Who Can Pass Thru
 Centers Step to a Wave
 Chain Reaction
@@ -1996,7 +2001,7 @@ Centers Square Thru 3
 Allemande Left''',
 
   'Cast a Shadow 3/4 Slip' :
-'''Heads Lead Right
+  '''Heads Lead Right
 Veer Left
 Cast a Shadow Centers Go 3/4
 Boys Run
@@ -2009,7 +2014,7 @@ Boys Run
 Allemande Left''',
 
   'Spin the Windmill' :
-'''Heads Pass the Sea
+  '''Heads Pass the Sea
 Spin the Windmill Out
 Centers Left Quarter Thru
 Spin the Windmill Forward
@@ -2030,7 +2035,7 @@ Pass Thru
 Allemande Left''',
 
   'Actives Actions' :
-'''Heads Separate and Star Thru
+  '''Heads Separate and Star Thru
 Double Pass Thru
 Horseshoe Turn
 Veer Left
@@ -2049,7 +2054,7 @@ Centers Square Thru 3
 Allemande Left''',
 
   'Linear Cycle' :
-'''Heads Touch 1/4 and Spread
+  '''Heads Touch 1/4 and Spread
 Circulate
 Linear Cycle
 Spin the Top
@@ -2070,7 +2075,7 @@ Boys Run
 Allemande Left''',
 
   'Couples' :
-'''Heads Touch 1/4 and Spread
+  '''Heads Touch 1/4 and Spread
 Couples Partner Trade
 Centers Trade
 Centers Run
@@ -2093,7 +2098,7 @@ Pass Thru
 Allemande Left''',
 
   'Waves' :
-'''Heads Touch 1/4 and Spread
+  '''Heads Touch 1/4 and Spread
 Wave Dancers Trade
 Centers Pass the Ocean
 Adjust to Diamonds
@@ -2113,7 +2118,7 @@ Centers Square Thru 3
 Allemande Left''',
 
   'Recycle Twice and Roll' :
-'''Heads Lead Right
+  '''Heads Lead Right
 Recycle Twice and Roll
 Left Swing Thru
 Split Circulate
@@ -2126,7 +2131,7 @@ Boys Run
 Allemande Left''',
 
   'Anything the Windmill' :
-'''Sides Pass the Ocean
+  '''Sides Pass the Ocean
 Very Centers Hinge
 Side Boys Face In
 Extend the Windmill Right
@@ -2140,7 +2145,7 @@ Quarter In
 Right and Left Grand''',
 
   'Magic Transfer and' :
-'''Heads Touch 1/4
+  '''Heads Touch 1/4
 Make Magic
 Magic Transfer and Left 1/4 Thru
 Centers Left Swing Thru
@@ -2152,14 +2157,14 @@ Allemande Left
 Right and Left Grand''',
 
   'Tag Back to a Wave' :
-'''Heads Star Thru and Spread
+  '''Heads Star Thru and Spread
 Pass Thru
 Tag Back to a Wave
 Extend
 Right and Left Grand''',
 
   'All 8' :
-'''Hinge
+  '''Hinge
 Adjust to Thar
 All 8 Slip
 All Eight Fan the Top
@@ -2171,68 +2176,3 @@ Trade
 Promenade Home'''
 
 };
-
-void main() {
-  IntegrationTestWidgetsFlutterBinding.ensureInitialized();
-  final testsFinished = <String>[];
-  final testsFailed = testSequences.keys.toSet();
-  var isFirst = true;
-
-  // Close the connection to the driver after the tests have completed.
-  tearDownAll(() async {
-    print('All sequencer tests complete.');
-    if (testsFailed.isNotEmpty) {
-      print('These tests failed:');
-      for (final testName in testsFailed)
-        print('    $testName');
-      print('Total ${testsFailed.length} tests.');
-    }
-  });
-
-  final fastTapper = find.byKey(Key('Fast'));
-  final sequencerInputTapper = find.byKey(Key('Tap to start Sequence'));
-  final sequencerInput = find.byKey(Key('Sequencer Input'));
-  final sequencerSubmit = find.byKey(Key('Submit Call'));
-  final errorText = find.byKey(Key('Test Error Text'));
-  final settingsTapper = find.byKey(Key('Settings'));
-
-  group('Sequence Test Runner', () {
-    testWidgets('setup', (tester) async {
-      print('Starting test');
-      await tester.pumpWidget(app.TaminationsApp());
-      await tester.pumpAndSettle(Duration(seconds: 5));
-
-      await tester.tap(settingsTapper);
-      await tester.pumpAndSettle();
-      await tester.tap(fastTapper);
-    });
-
-    for (var testName in testSequences.keys) {
-      testWidgets(testName, (tester) async {
-        await tester.pumpWidget(SequencerTestPage());
-        await tester.pumpAndSettle();
-        await tester.tap(sequencerInputTapper);
-        await tester.pumpAndSettle();
-        if (isFirst) {
-          await tester.enterText(sequencerInput,'Speed Ludicrous');
-          await tester.tap(sequencerSubmit);
-          await tester.pumpAndSettle();
-          isFirst = false;
-        }
-        await tester.enterText(sequencerInput,'# $testName');
-        await tester.tap(sequencerSubmit);
-        await tester.pumpAndSettle();
-        for (var call in testSequences[testName].split('\n')) {
-          await tester.enterText(sequencerInput,call);
-          await tester.tap(sequencerSubmit);
-          await tester.pumpAndSettle();
-          //expect((tester.widget(errorText) as Text).data,' ');
-        }
-        await tester.pumpAndSettle();
-        expect((tester.widget(errorText) as Text).data,' ');
-        testsFinished.add(testName);
-        testsFailed.remove(testName);
-      });
-    }
-  });
-}
