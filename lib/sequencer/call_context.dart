@@ -137,7 +137,8 @@ class CallContext {
     'c1/finish',
     'ms/fraction_tag',
     'c3a/big_block_concept',
-    'c1/scoot_and_little'
+    'c1/scoot_and_little',
+    'a2/hourglass_circulate'
   ];
 
   static const standardFormations = {

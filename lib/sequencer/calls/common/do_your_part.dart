@@ -47,12 +47,14 @@ class DoYourPart extends Action {
           final sexy = tam('sequencer', '').contains('gender');
           final allp = tam.childrenNamed('path').map((it) =>
               Path(TamUtils.translatePath(it))).toList();
-          final ctx2 = CallContext.fromXML(tam, loadPaths: true);
+          final ctx2 = CallContext.fromXML(tam, loadPaths: false);
           final mapping = dypctx.matchFormations(ctx2, sexy: sexy,
               subformation: true, handholds: false, maxError: 2.9);
           if (mapping != null) {
             //  Adjust sequence dancers as needed to match call
             final matchResult = dypctx.computeFormationOffsets(ctx2, mapping);
+            //  Perform the call
+            await ctx2.applyCalls(callName);
             //  Copy path movements from call to sequence
             for (var i = 0; i < mapping.length; i++) {
               final m = mapping[i];
@@ -65,6 +67,8 @@ class DoYourPart extends Action {
 
         }
       }
+      //  Unable to find call
+      throw CallError('Unable to find $callName to match requested dancers');
 
     });
 

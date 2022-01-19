@@ -108,7 +108,6 @@ class TriangleCirculate extends Action {
         }
         break;
     }
-    print(ctx.actives);
     if (ctx.actives.length != 6)
       throw CallError('Unable to find dancers to circulate');
     //  Should be able to split the square to 2 3-dancer triangles

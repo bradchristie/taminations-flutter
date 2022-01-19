@@ -112,6 +112,7 @@ import 'c1/percolate.dart';
 import 'c1/phantom.dart';
 import 'c1/plenty.dart';
 import 'c1/ramble.dart';
+import 'c1/relay_the_top.dart';
 import 'c1/replace.dart';
 import 'c1/scoot_and_plenty.dart';
 import 'c1/scoot_and_ramble.dart';
@@ -406,6 +407,7 @@ abstract class CodedCall extends Call {
 
     'ramble'.ri: (_) => Ramble(),
     'relocate(.*)'.ri: (name) => Relocate(name),
+    'relaythetop'.ri: (name) => RelayTheTop(name),
     '(left)?(grand)?remake'.ri: (name) => Remake(name),
     '.+(but)?replace.+'.ri: (name) => Replace(name),
     'reverseorder.*'.ri: (name) => ReverseOrder(name),
