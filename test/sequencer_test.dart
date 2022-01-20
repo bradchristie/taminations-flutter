@@ -2236,5 +2236,36 @@ Pass Thru
 Wheel and Deal
 Zoom
 Centers Square Thru 3
+Allemande Left''',
+
+  'Mini-Busy' :
+'''Sides Lead Right
+Veer Left
+Mini Busy But Cut the Diamond
+Chain Reaction
+Tag the Line
+Zoom
+Ends Turn Back
+Right and Left Grand''',
+
+  'Motivate' :
+'''Sides Pass the Ocean
+Extend
+Motivate Turn the Star a Full Turn
+Quarter Thru
+Boys Run
+Promenade Home''',
+
+  'Remake' :
+'''Sides Pass the Ocean
+Extend
+Centers Reverse Order Left Remake
+Reverse Order Remake
+Split Counter Rotate
+Reverse Order Grand Remake
+Boys Run
+Track 2
+Recycle
+Right and Left Thru
 Allemande Left'''
 };

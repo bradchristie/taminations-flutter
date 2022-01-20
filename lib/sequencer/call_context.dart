@@ -1097,7 +1097,8 @@ class CallContext {
         final d2 = dancerToRight(d);
         return d2 != null && d.distanceTo(d2) < 3.5 &&
             dancerToRight(d2) == d &&
-            (isGrand || !d.data.verycenter || !d2.data.verycenter);
+            (isGrand || dancers.length < 8 ||
+                !d.data.verycenter || !d2.data.verycenter);
       }).toList();
 
   List<Dancer> dancersHoldingLeftHands({bool isGrand=true}) =>
@@ -1105,7 +1106,8 @@ class CallContext {
         final d2 = dancerToLeft(d);
         return d2 != null && d.distanceTo(d2) < 3.5 &&
             dancerToLeft(d2) == d &&
-            (isGrand || !d.data.verycenter || !d2.data.verycenter);
+            (isGrand || dancers.length < 8 ||
+                !d.data.verycenter || !d2.data.verycenter);
       }).toList();
 
   List<Dancer> dancersHoldingSameHands({ required bool isRight, bool isGrand=true}) =>

@@ -20,7 +20,7 @@
 import '../coded_call.dart';
 import '../common.dart';
 
-class ReverseOrder extends Action {
+class ReverseOrder extends ActivesOnlyAction {
 
   @override final level = LevelData.C3B;
   ReverseOrder(String name) : super(name);
