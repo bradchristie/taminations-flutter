@@ -2267,5 +2267,144 @@ Boys Run
 Track 2
 Recycle
 Right and Left Thru
-Allemande Left'''
+Allemande Left''',
+
+  'Slide' :
+'''Sides Pass the Ocean
+Slide
+Slide
+Extend
+Hinge
+Girls Run
+Centers Pass Thru
+Slide
+Centers Pass Thru
+Cast Off Three Quarters
+Right and Left Thru
+Star Thru
+Pass Thru
+Trade By
+Allemande Left''',
+
+  'Slither' :
+'''Sides Pass the Sea
+Slither
+Slither
+Extend
+Slither
+Centers Hinge
+Slither
+Centers Cast Off Three Quarters
+In-Roll Circulate
+Slither
+Boys Trade
+Cycle and Wheel
+Veer Right
+Centers Trade
+Wheel and Deal
+Star Thru
+Boys Trade
+Wheel and Deal
+Allemande Left''',
+
+  'Split Counter Rotate' :
+'''Sides Pass Out
+Split Counter Rotate
+Centers Pass Thru While Ends Face In
+Split Counter Rotate
+Ends Trade While Centers Pass Out
+Allemande Left''',
+
+  'Swing' :
+'''Sides Pass the Ocean
+Swing
+Extend
+Girls Turn Back
+Swing
+Centers Run
+Pass Thru
+Wheel and Deal
+Double Pass Thru
+Face Left
+Ferris Wheel
+Centers Square Thru 3
+Allemande Left''',
+
+  'Center Wave of 4' :
+'''Sides Pass In and Spread
+Swing Thru
+Center Wave Of Four Recycle
+Center 4 Pass the Ocean
+Center Wave Of Four Swing Thru While Others Cast Off 3/4
+Chain Reaction
+Wheel and Deal
+Star Thru
+Boys Circulate
+Cast Off Three Quarters
+Split Counter Rotate
+Box the Gnat
+Right and Left Grand''',
+
+  'Centers of PTP Diamonds' :
+'''Heads Lead Right
+Veer Left
+Girls Hinge
+Split Counter Rotate
+Centers Trade
+Cut the Diamond
+Wheel and Deal
+Star Thru
+Trade By
+Veer Left
+Trade
+Promenade Home''',
+
+  'Do One Part' :
+'''Sides Pass the Ocean
+Extend
+Boys Run
+Do the 1st Part Mini Busy
+Do the 2nd Part Mini Busy
+Cut the Hourglass
+Circulate
+Ferris Wheel
+Centers Turn Back
+Allemande Left''',
+
+  'Spin Chain the Gears' :
+'''Sides Pass the Ocean
+Extend
+Spin Chain the Gears Turn the Star a Full Turn
+Swing Thru
+Boys Run
+Ferris Wheel
+Centers Square Thru 3
+Allemande Left''',
+
+  'Same Sexes' :
+'''Sides Pass the Ocean
+Extend
+Hinge
+Same Sexes Trade
+Hinge
+Same Sexes Trade
+Hinge
+Centers Trade
+Same Sexes Trade
+Split Circulate
+Girls Run
+Circulate
+Wheel and Deal
+Allemande Left''',
+
+  'And 1/4 More' :
+'''Heads Lead Right
+Veer Left
+Chain Down the Line and a Quarter More
+Circulate
+Reverse Wheel Around and a Quarter More
+Ends Bend and Star Thru
+Veer Left
+Wheel Around
+Promenade Home'''
 };

@@ -418,7 +418,7 @@ abstract class CodedCall extends Call {
     'rotate(14|12|34)'.ri: (name) => Rotate(name),
     'run(left|right)?'.ri: (name) => Run(name),
 
-    'samesex(es)?'.ri: (name) => SameSex(name),
+    'samesex(es)?.+'.ri: (name) => SameSex(name),
     'scootandcrossramble'.ri: (_) => ScootAndCrossRamble(),
     'scootandplenty'.ri: (name) => ScootAndPlenty(name),
     'scootandramble'.ri: (_) => ScootAndRamble(),

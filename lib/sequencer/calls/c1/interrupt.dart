@@ -38,7 +38,6 @@ class Interrupt extends Action {
         throw CallError('Unable to find $callName as a Call with Parts');
       if (ctx2.callstack.last is CallWithParts) {
         final call = ctx2.callstack.last as CallWithParts;
-        print('$callName starts with ${call.numberOfParts} parts');
         //  Find out where we are interrupting
         //  Special cases - after/between each part
         if (name.contains('(after|between) (each|every) part'.ri)) {
@@ -51,10 +50,8 @@ class Interrupt extends Action {
             };
           }
           call.numberOfParts = call.numberOfParts * 2 - 1;
-          print('$callName now has ${call.numberOfParts} parts');
           //  Add one more if 'after'
           if (name.contains('\\bafter\\b'.ri)) {
-            print('Interrupt After');
             call.replacePart[call.numberOfParts+1] = (ctx) async {
               await ctx.applyCalls(interruptName);
             };
@@ -76,7 +73,6 @@ class Interrupt extends Action {
           };
           call.numberOfParts += 1;
         }
-        print('$callName ends with ${call.numberOfParts} parts');
       }
       else
         throw CallError('Can only Interrupt in a call with Parts');
