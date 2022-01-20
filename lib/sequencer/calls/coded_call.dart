@@ -44,7 +44,6 @@ import 'a1/triple_star_thru.dart';
 import 'a1/triple_trade.dart';
 import 'a1/turn_and_deal.dart';
 import 'a2/all_eight.dart';
-import 'a2/box_counter_rotate.dart';
 import 'a2/mini_busy.dart';
 import 'a2/motivate.dart';
 import 'a2/pass_and_roll.dart';
@@ -275,7 +274,6 @@ abstract class CodedCall extends Call {
     'bendtheline'.ri: (_) => BendTheLine(),
     'inyourblock.*'.ri: (name) => BlockFormation(name),
     'bounce(the)?$specifier'.ri: (name) => Bounce(name),
-    'boxcounterrotate'.ri: (_) => BoxCounterRotate(),
     'boy'.ri: (_) => Boys(),
     'boxthegnat'.ri: (_) => BoxTheGnat(),
     'bracethru'.ri: (_) => BraceThru(),

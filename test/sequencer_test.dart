@@ -712,6 +712,20 @@ Spin the Top
 Mix
 Triple Trade''',
 
+  'Triple Trade 2' :
+'''Sides Pass the Ocean
+Extend
+Acey Deucey Once and a Half
+Triple Trade
+Center 4 Cut the Diamond While Others Hinge
+Boys Run
+Extend
+Centers Circulate
+Boys Run
+Pass Thru
+Quarter In
+Right and Left Grand''',
+
   'Turn Thru' :
   '''Heads Lead Right
 Veer Left
@@ -2173,6 +2187,54 @@ All 8 Cross Roll
 All 8 Swing Thru 1.5
 All 8 Switch the Wave
 Trade
-Promenade Home'''
+Promenade Home''',
 
+  'Chain Reaction' :
+'''Sides Pass the Ocean
+Girls Run
+Chain Reaction Turn the Star 3/4
+Centers Pass the Ocean
+Cut the Diamond
+Acey Deucey
+Recycle
+Star Thru
+Circulate
+Ferris Wheel
+Centers Square Thru 3
+Allemande Left''',
+
+  'Mix' :
+'''Sides Lead Right
+Veer Left
+Reverse Order Mix
+Bend the Line
+Pass Thru
+Quarter In
+Right and Left Grand''',
+
+  '6x2 Acey Deucey' :
+'''Heads Lead Right
+Veer Left
+Girls Hinge
+Split Counter Rotate
+Very Centers Hinge
+Six-two Acey Deucey
+Outer 2 Counter Rotate
+Chain Reaction
+Left Tag the Line
+Centers Turn Back
+Allemande Left''',
+
+  'Swing and Mix' :
+'''Sides Pass the Ocean
+Extend
+Reverse Order Swing and Mix
+Girls Run
+Wheel and Deal
+Star Thru
+Pass Thru
+Wheel and Deal
+Zoom
+Centers Square Thru 3
+Allemande Left'''
 };
