@@ -2406,5 +2406,16 @@ Reverse Wheel Around and a Quarter More
 Ends Bend and Star Thru
 Veer Left
 Wheel Around
-Promenade Home'''
+Promenade Home''',
+
+  'Everyone' :
+'''Sides Pass the Ocean
+Extend
+Hinge
+Girls Run and Everyone Pass Thru
+Tag the Line Face In
+Star Thru
+Pass Thru
+Trade By
+Allemande Left'''
 };

@@ -44,8 +44,10 @@ class TurnTheStar extends Action {
           call.turnStarAmount = 2;
         else if (amountText.contains('34'))
           call.turnStarAmount = 3;
-        else if (amountText.contains('full'))
+        else if (amountText.contains('Full'))
           call.turnStarAmount = 4;
+        else
+          throw CallError('Turn the Star how much?');
         await ctx2.performCall();
       } else {
         throw CallError('$callName not recognized as a call with stars');

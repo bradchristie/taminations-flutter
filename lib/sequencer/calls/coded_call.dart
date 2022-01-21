@@ -248,18 +248,12 @@ abstract class CodedCall extends Call {
   static const specifier = '\\s*(?:boys?|girls?|beaus?|belles?|centers?|ends?|lead(?:er)?s?|trail(?:er)?s?|heads?|sides?|very ?centers?)\\s*';
 
   static final Map<RegExp, CodedCall Function(String norm)> normCallMap = {
-
     'aceydeucey'.ri: (_) => AceyDeucey(),
     'adjustto.*'.ri: (name) => Adjust(name),
     'all8.*'.ri: (name) => AllEight(name),
     'alterandcirculate'.ri: (_) => AlterAndCirculate(),
     'alterthewave'.ri: (name) => AlterTheWave(name),
     'and'.ri: (_) => And(),
-    //  Anything Motivate does not include Start or Finish Motivate
-    '.+(?<!(start|finish))(motivate|coordinate|percolate|perkup)'.ri: (name) => Anything(name),
-    //  Anything Chain Thru should not match Square Chain Thru or others
-    '.*(?<!(cross|8|peel|scatter|scoot|spin|square|swing|tag))chainthru'.ri:
-        (name) => AnythingChainThru(name),
     'InterlockedDiamondChainThru'.r: (name) => AnythingChainThru(name),
     'around1andcomeintothemiddle'.ri: (_) =>
         AroundToALine('Around One and Come Into the Middle'),
@@ -527,12 +521,24 @@ abstract class CodedCall extends Call {
 
   };
 
+  static final Map<RegExp, CodedCall Function(String norm)> normCallMap2 = {
+    //  Anything Motivate does not include Start or Finish Motivate
+    '.+(?<!(start|finish))(motivate|coordinate|percolate|perkup)'.ri: (name) => Anything(name),
+    //  Anything Chain Thru should not match Square Chain Thru or others
+    '.*(?<!(cross|8|peel|scatter|scoot|spin|square|swing|tag))chainthru'.ri:
+        (name) => AnythingChainThru(name),
+  };
 
   static CodedCall? fromName(String name) {
     var norm = TamUtils.normalizeCall(name);
     for (var r in normCallMap.keys) {
       if (norm.matches(r)) {
         return normCallMap[r]!.call(name);
+      }
+    }
+    for (var r in normCallMap2.keys) {
+      if (norm.matches(r)) {
+        return normCallMap2[r]!.call(name);
       }
     }
     return null;
