@@ -983,9 +983,36 @@
     </path>
   </tam>
 
-  <tamxref title="All 8 Flutterwheel" group="All 8"
-           xref-link="b2/flutterwheel"
-           xref-title="All 4 Ladies Lead Flutterwheel"/>
+  <tam title="All 8 Flutterwheel" group="All 8"
+       from="Static Square"
+       formation="Static Square">
+    <path>
+      <move select="Quarter Left" beats="4.5" offsetY="-1" />
+      <move select="Hinge Right" beats="3" scaleX="3" scaleY="3" />
+      <move select="Hinge Right" beats="3" scaleX="3" scaleY="2" />
+      <move select="Quarter Right" beats="3" hands="right" offsetX="2" />
+    </path>
+    <path>
+      <move select="Extend Left" beats="3" scaleX="3" scaleY="2" />
+      <move select="Hinge Right" />
+      <move select="Hinge Right" beats="3" hands="both" />
+      <move select="Quarter Right" beats="3" hands="left" offsetX="1.5" />
+      <move select="Quarter Right" beats="3" hands="left" offsetY="1.5" />
+    </path>
+    <path>
+      <move select="Quarter Left" beats="4.5" offsetY="-1" />
+      <move select="Hinge Right" beats="3" scaleX="3" scaleY="3" />
+      <move select="Hinge Right" beats="3" scaleX="3" scaleY="2" />
+      <move select="Quarter Right" beats="3" hands="right" offsetX="2" />
+    </path>
+    <path>
+      <move select="Extend Left" beats="3" scaleX="3" scaleY="2" />
+      <move select="Hinge Right" />
+      <move select="Hinge Right" beats="3" hands="both" />
+      <move select="Quarter Right" beats="3" hands="left" offsetX="1.5" />
+      <move select="Quarter Right" beats="3" hands="left" offsetY="1.5" />
+    </path>
+  </tam>
 
   <tam title="All 8 Follow Your Neighbor" group="All 8"
        formation="Static MiniWaves RH">
@@ -1192,6 +1219,37 @@
   <tamxref title="All 8 Reverse Flutterwheel" group="All 8"
            xref-link="b2/flutterwheel"
            xref-title="All 4 Men Lead Reverse Flutterwheel"/>
+
+  <tam title="All 8 Reverse Flutterwheel" group="All 8"
+       from="Static Square"
+       formation="Static Square">
+    <path>
+      <move select="Extend Right" beats="3" scaleX="3" scaleY="2" />
+      <move select="Hinge Left" />
+      <move select="Hinge Left" beats="3" hands="both" />
+      <move select="Quarter Left" beats="3" hands="right" offsetX="1.5" />
+      <move select="Quarter Left" beats="3" hands="right" offsetY="-1.5" />
+    </path>
+    <path>
+      <move select="Quarter Right" beats="4.5" offsetY="1" />
+      <move select="Hinge Left" beats="3" scaleX="3" scaleY="3" />
+      <move select="Hinge Left" beats="3" scaleX="3" scaleY="2" />
+      <move select="Quarter Left" beats="3" hands="left" offsetX="2" />
+    </path>
+    <path>
+      <move select="Extend Right" beats="3" scaleX="3" scaleY="2" />
+      <move select="Hinge Left" />
+      <move select="Hinge Left" beats="3" hands="both" />
+      <move select="Quarter Left" beats="3" hands="right" offsetX="1.5" />
+      <move select="Quarter Left" beats="3" hands="right" offsetY="-1.5" />
+    </path>
+    <path>
+      <move select="Quarter Right" beats="4.5" offsetY="1" />
+      <move select="Hinge Left" beats="3" scaleX="3" scaleY="3" />
+      <move select="Hinge Left" beats="3" scaleX="3" scaleY="2" />
+      <move select="Quarter Left" beats="3" hands="left" offsetX="2" />
+    </path>
+  </tam>
 
   <tam title="All 8 Scoot Back" group="All 8"
        formation="Static MiniWaves RH">
