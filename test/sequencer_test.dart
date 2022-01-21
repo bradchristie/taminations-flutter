@@ -2251,10 +2251,15 @@ Right and Left Grand''',
   'Motivate' :
 '''Sides Pass the Ocean
 Extend
+Motivate
 Motivate Turn the Star a Full Turn
-Quarter Thru
+Circulate
+Swing Thru
 Boys Run
-Promenade Home''',
+Circulate
+Ferris Wheel
+Centers Square Thru 3
+Allemande Left''',
 
   'Remake' :
 '''Sides Pass the Ocean
@@ -2375,7 +2380,6 @@ Allemande Left''',
 '''Sides Pass the Ocean
 Extend
 Spin Chain the Gears Turn the Star a Full Turn
-Swing Thru
 Boys Run
 Ferris Wheel
 Centers Square Thru 3
@@ -2417,5 +2421,133 @@ Tag the Line Face In
 Star Thru
 Pass Thru
 Trade By
+Allemande Left''',
+
+  'Alter the Wave' :
+'''Sides Pass the Ocean
+Extend
+Alter the Wave Turn the Star 1/4
+Recycle
+Star Thru
+Trade By
+Right and Left Thru
+Allemande Left''',
+
+  'Block' :
+'''Heads Lead Right
+Boys Spread
+In Your Block Zoom
+In Your Block Leads Trade
+In Your Block Partner Tag
+In Your Block Left Chase
+In Your Block Trade and Roll
+Heads Half Step
+Star Thru
+Centers Pass Thru
+Right and Left Thru
+Box the Gnat
+Right and Left Grand''',
+
+  'Dixie Diamond' :
+'''Sides Star Thru and Spread
+Reverse Dixie Diamond
+Diamond Chain Thru
+Wheel and Deal
+Right and Left Thru
+Star Thru
+Trade
+Promenade Home''',
+
+  'Interrupt' :
+'''Sides Lead Right
+Pass and Roll Interrupt Between Each Part With Half Sashay
+Remake Interrupt After Each Part With Split Circulate
+Spin Chain Thru Interrupt After the 2nd Part With Diamond Circulate
+Circulate
+Boys Run
+Turn and Deal
+Allemande Left''',
+
+  'Linear Action' :
+'''Sides Pass the Ocean
+Linear Action But Trade the Wave
+Diamond Chain Thru
+Crossfire
+Boys Run
+Veer Right
+Promenade Home''',
+
+  'Pass the Axle' :
+'''Sides Lead Right
+Pass the Axle But Cast Off 3/4
+Chase Right
+Split Circulate
+Boys Run
+Circulate
+Bend the Line
+Star Thru
+Pass Thru
+Allemande Left''',
+
+  'Ramble' :
+'''Heads Star Thru and Spread
+Pass Thru
+Wheel and Deal
+Girls Touch 1/4 While Boys Trade
+Ramble
+Girls Hinge
+Magic Column Transfer the Column
+Left Quarter Thru
+Girls Run
+Star Thru
+Pass Thru
+Trade By
+Allemande Left''',
+
+  'Replace' :
+'''Sides Pass the Ocean
+Extend
+Remake Replace the 2nd Part With Split Circulate
+Boys Run
+Ferris Wheel
+Centers Square Thru 3
+Allemande Left''',
+
+  'Snap the Lock' :
+'''Sides Touch 1/4 and Spread
+Snap the Lock
+Bend the Line
+Star Thru
+Allemande Left''',
+
+  'Acey Deucey' :
+'''Heads Star Thru
+Double Pass Thru
+Centers Chase Right
+Centers Box Counter Rotate
+Acey Deucey
+Centers Run
+Centers Touch 1/4
+Left Quarter Thru
+Circulate
+Girls Run
+Wheel and Deal
+Centers Pass Thru
+Veer Right
+Promenade Home''',
+
+  'Coordinate' :
+'''Heads Pair Off
+Boys Run
+Coordinate Replace the 3rd Part With Very Centers Trade
+Boys Trade
+Bend the Line
+Touch a Quarter
+Coordinate Skip the Last Part
+Boys Squeeze
+Flip the Hourglass
+Boys Run
+Circulate
+Wheel and Deal
 Allemande Left'''
 };
