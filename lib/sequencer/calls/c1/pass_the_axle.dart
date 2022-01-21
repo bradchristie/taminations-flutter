@@ -39,7 +39,7 @@ class PassTheAxle extends Action with CallWithParts, ButCall {
 
   @override
   Future<void> performPart3(CallContext ctx) async {
-    await ctx.applyCalls(butCall!);
+    await ctx.applyCalls(butCall);
   }
 
   @override

@@ -27,9 +27,12 @@ class ChainReaction extends Action with CallWithParts, CallWithStars, ButCall {
 
   @override
   Future<void> performPart1(CallContext ctx) async {
+    final level = ctx.outer(4).every((d) => ctx.isInCouple(d)) &&
+        ctx.center(4).every((d) => ctx.isInWave(d))
+        ? LevelData.A1 : LevelData.C1;
     await ctx.applyCalls('Facing Dancers Pass Thru While Ends Counter Rotate');
-    ctx.level = LevelData.A1;
     ctx.matchStandardFormation();
+    ctx.level = level;
   }
 
   @override
@@ -39,17 +42,12 @@ class ChainReaction extends Action with CallWithParts, CallWithStars, ButCall {
 
   @override
   Future<void> performPart3(CallContext ctx) async {
-    final turns = [
-      for (var i=0; i<turnStarAmount; i++)
-        'Turn the Star'
-    ].join(' ');
     await ctx.applyCalls('Outer 4 Trade While Center 4 $turns');
   }
 
   @override
   Future<void> performPart4(CallContext ctx) async {
-    final cast = butCall ?? 'Cast Off 3/4';
-    await ctx.applyCalls('Wave of 6 Center 4 $cast '
+    await ctx.applyCalls('Wave of 6 Center 4 $butCall '
         'While Others Do Your Part Hourglass Circulate');
   }
 

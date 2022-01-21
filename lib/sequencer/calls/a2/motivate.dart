@@ -49,8 +49,7 @@ class Motivate extends Action with CallWithParts, CallWithStars, ButCall {
 
   @override
   Future<void> performPart4(CallContext ctx) async {
-    final cast = butCall ?? 'Cast Off 3/4';
-    await ctx.applyCalls('Wave of 6 Center 4 $cast '
+    await ctx.applyCalls('Wave of 6 Center 4 $butCall '
         'While Others Do Your Part Hourglass Circulate');
   }
 

@@ -23,7 +23,6 @@ class LinearAction extends Action with CallWithParts, ButCall {
 
   @override int numberOfParts = 3;
   @override final level = LevelData.C1;
-  @override var butCall = 'Cast Off 3/4';
   List<Dancer> centerDancers = [];
   List<Dancer> outerDancers = [];
   LinearAction() : super('Linear Cycle');

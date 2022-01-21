@@ -20,7 +20,7 @@
 import '../common.dart';
 
 mixin ButCall {
-  String? butCall;
+  var butCall = 'Cast Off 3/4';
 }
 
 class But extends Action {
