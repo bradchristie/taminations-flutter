@@ -42,7 +42,7 @@ class ChainReaction extends Action with CallWithParts, CallWithStars, ButCall {
 
   @override
   Future<void> performPart3(CallContext ctx) async {
-    await ctx.applyCalls('Outer 4 Trade While Center 4 $turns');
+    await ctx.applyCalls('Outer 4 Trade While Center 4 $starTurns');
   }
 
   @override

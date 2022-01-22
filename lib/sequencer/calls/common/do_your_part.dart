@@ -32,7 +32,8 @@ class DoYourPart extends Action {
       throw CallError('Who is going to Do Your Part?');
 
     await ctx.subContext(ctx.actives, (dypctx) async {
-      //  Currently just works with XML calls
+      //  Currently just works with formations that match
+      //  an XML animation for the call
       //  Find the call to do
       final norm = TamUtils.normalizeCall(callName);
       final files = CallContext.xmlFilesForCall(norm.toLowerCase());
@@ -45,8 +46,6 @@ class DoYourPart extends Action {
                 norm.toLowerCase())) {
           //  See if this is a subset match to the DYP dancers
           final sexy = tam('sequencer', '').contains('gender');
-          final allp = tam.childrenNamed('path').map((it) =>
-              Path(TamUtils.translatePath(it))).toList();
           final ctx2 = CallContext.fromXML(tam, loadPaths: false);
           final mapping = dypctx.matchFormations(ctx2, sexy: sexy,
               subformation: true, handholds: false, maxError: 2.9);
@@ -59,7 +58,7 @@ class DoYourPart extends Action {
             for (var i = 0; i < mapping.length; i++) {
               final m = mapping[i];
               // TODO check for esymmetric call!
-              dypctx.dancers[i].path.add(allp[m>>1]);
+              dypctx.dancers[i].path.add(ctx2.dancers[m].path);
             }
             dypctx.adjustToFormationMatch(matchResult);
             return;

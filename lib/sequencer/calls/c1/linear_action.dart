@@ -50,6 +50,4 @@ class LinearAction extends Action with CallWithParts, ButCall {
         'While Others Do Your Part Hourglass Circulate');
   }
 
-
-
 }

@@ -24,6 +24,7 @@ class ScootAndPlenty extends Action with CallWithParts, CallWithStars {
   @override int numberOfParts = 4;
   @override final level = LevelData.C1;
   @override var turnStarAmount = 2;
+  @override var turnStarCall = 'Split Circulate';
   String dir = 'Right';
   ScootAndPlenty(String name) : super(name);
 
@@ -43,8 +44,7 @@ class ScootAndPlenty extends Action with CallWithParts, CallWithStars {
 
   @override
   Future<void> performPart3(CallContext ctx) async {
-    for (var i=0; i<turnStarAmount; i++)
-      await ctx.applyCalls('Split Circulate');
+    await ctx.applyCalls(starTurns);
   }
 
   @override

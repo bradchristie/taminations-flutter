@@ -23,6 +23,7 @@ class Plenty extends Action with CallWithParts, CallWithStars {
 
   @override int numberOfParts = 3;
   @override final level = LevelData.C1;
+  @override var turnStarCall = 'Split Circulate';
   @override var turnStarAmount = 2;
   Plenty(String name) : super(name);
 
@@ -35,8 +36,7 @@ class Plenty extends Action with CallWithParts, CallWithStars {
 
   @override
   Future<void> performPart2(CallContext ctx) async {
-    for (var i=0; i<turnStarAmount; i++)
-      await ctx.applyCalls('Split Circulate');
+    await ctx.applyCalls(starTurns);
   }
 
   @override

@@ -21,10 +21,9 @@ import '../common.dart';
 
 mixin CallWithStars {
   var turnStarAmount = 1;
-  var turnCall = 'Turn the Star';
-  String get turns =>
-      [ for (var i=0; i<turnStarAmount; i++) turnCall ].join(' ');
-
+  var turnStarCall = 'Turn the Star';
+  String get starTurns =>
+      [ for (var i=0; i<turnStarAmount; i++) turnStarCall ].join(' ');
 }
 
 class TurnTheStar extends Action {

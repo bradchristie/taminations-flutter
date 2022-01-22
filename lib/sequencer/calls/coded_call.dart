@@ -307,7 +307,7 @@ abstract class CodedCall extends Call {
     'detour'.ri: (_) => Detour(),
     'diamondcirculate'.ri: (_) => DiamondCirculate(),
     '(reverse)?dixiediamond'.ri: (name) => DixieDiamond(name),
-    'dothe.+part.+'.ri: (name) => DoOnePart(name),
+    'dothe.+?part.+'.ri: (name) => DoOnePart(name),
     '(left)?dosado'.ri: (name) => Dosado(name),
     'doyourpart.+'.ri: (name) => DoYourPart(name),
 
@@ -460,7 +460,7 @@ abstract class CodedCall extends Call {
     'swing'.ri: (_) => Swing(),
     'swingandcircle(12|34)'.ri: (name) => SwingAndCircle(name),
     'swingandmix'.ri: (_) => SwingAndMix(),
-    'swingthefractions'.ri: (name) => SwingTheFractions(name),
+    '(left)?swingthefractions'.ri: (name) => SwingTheFractions(name),
     '(grand)?(left)?swingthru'.ri: (name) => SwingThru(name),
     'switchtheline'.ri: (_) => SwitchTheLine(),
 

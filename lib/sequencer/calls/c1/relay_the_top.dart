@@ -39,11 +39,7 @@ class RelayTheTop extends Action with CallWithParts, CallWithStars, ButCall {
 
   @override
   Future<void> performPart3(CallContext ctx) async {
-    final turns = [
-      for (var i=0; i<turnStarAmount; i++)
-        'Turn the Star'
-    ].join(' ');
-    await ctx.applyCalls('Outer 4 Trade While Center 4 $turns');
+    await ctx.applyCalls('Outer 4 Trade While Center 4 $starTurns');
   }
 
   @override

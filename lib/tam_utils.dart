@@ -476,8 +476,9 @@ class TamUtils {
       .replaceAllMapped('\\b(boy|girl|beau|belle|center|end|point|head|(out)?side)s\\b'.ri, (m) => m[1]!)
   //  Misc other variations
       .replaceAll('\\bswap(\\s+around)?\\b'.ri,'Swap')
-      .replaceAll('\\bmen\\b'.ri,'Boy')
-      .replaceAll('\\bwomen\\b'.ri,'Girl')
+      .replaceAll('\\bm[ea]n\\b'.ri,'Boy')
+      .replaceAll('\\bwom[ea]n\\b'.ri,'Girl')
+      .replaceAll('\\blad(y|ies)\\b'.ri,'Girl')
       .replaceAll('\\blead(er)?(ing)?s?\\b'.ri,'Lead')
       .replaceAll('\\btrail(er)?(ing)?s?\\b'.ri,'Trail')
       .replaceAll('\\bcentres?\\b'.ri,'Center')

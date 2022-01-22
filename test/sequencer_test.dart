@@ -2549,5 +2549,79 @@ Flip the Hourglass
 Boys Run
 Circulate
 Wheel and Deal
+Allemande Left''',
+
+  'Load the Boat' :
+'''Heads Lead Right
+Veer Left
+Bend the Line
+Load the Boat Skip the 2nd Part
+Centers Chase Right While Ends Separate
+Finish Load the Boat
+Centers Run and Roll
+Right Roll to a Wave
+Out-Roll Circulate
+Boys Run
+Wheel Around
+Promenade Home''',
+
+  'Plenty' :
+'''Sides Pass the Ocean
+Extend
+Extend
+Plenty Turn the Star 1/4
+Centers Recycle and Pass Thru
+Right and Left Thru
+Pass Thru
+Allemande Left''',
+
+  'Relay the Top' :
+'''Sides Pass the Ocean
+Cross Extend
+Relay the Top Turn the Star a Full Turn
+Girls Run
+Bend the Line
+Star Thru
+Veer Left
+Wheel Around
+Promenade Home''',
+
+  'Swing the Fractions' :
+'''Sides Pass the Ocean
+Extend
+Swing the Fractions Interrupt Between Each Part With Split Circulate
+Left Swing the Fractions Interrupt After the 2nd Part With Cut the Diamond
+Girls Run
+Quarter In
+Right and Left Grand''',
+
+  'Tally Ho' :
+'''Sides Pass the Ocean
+Extend
+Tally Ho But Recycle
+Boys Pass Thru
+Girls Run and Roll
+Right Roll to a Wave
+Quarter Thru
+Boys Run
+Circulate
+Ferris Wheel
+Centers Square Thru 3
+Allemande Left''',
+
+  'With the Flow' :
+'''Heads Lead Right
+Veer Left
+Cast Off Three Quarters With the Flow
+Mix
+Recycle With the Flow
+Circulate
+Peel Off
+Centers Run
+Swing Thru
+Boys Run
+Bend the Line
+Right and Left Thru
+Star Thru
 Allemande Left'''
 };
