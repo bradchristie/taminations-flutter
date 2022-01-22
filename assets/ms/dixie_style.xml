@@ -170,6 +170,37 @@
     </path>
   </tam>
 
+  <tam title="Dixie Style to a Wave"
+       from="Tidal Column"
+       difficulty="3">
+    <formation>
+      <dancer gender="boy" x="0" y="-3.5" angle="90"/>
+      <dancer gender="girl" x="0" y="-2.5" angle="90"/>
+      <dancer gender="boy" x="0" y="-0.5" angle="270"/>
+      <dancer gender="girl" x="0" y="-1.5" angle="270"/>
+    </formation>
+    <path>
+      <move select="Stand" beats="2" />
+      <move select="Extend Right" scaleX=".5" scaleY=".5" />
+      <move select="Hinge Left" scaleX=".5" scaleY=".5" />
+    </path>
+    <path>
+      <move select="Extend Left" scaleX=".5" scaleY=".5" />
+      <move select="Extend Right" beats="2" scaleX="1" />
+      <move select="Hinge Left" scaleX=".5" scaleY=".5" />
+    </path>
+    <path>
+      <move select="Stand" beats="2" />
+      <move select="Extend Right" scaleX=".5" scaleY=".5" />
+      <move select="Hinge Left" scaleX=".5" scaleY=".5" />
+    </path>
+    <path>
+      <move select="Extend Left" scaleX=".5" scaleY=".5" />
+      <move select="Extend Right" beats="2" scaleX="1" />
+      <move select="Hinge Left" scaleX=".5" scaleY=".5" />
+    </path>
+  </tam>
+
   <tam title="Reverse Dixie Style to a Wave"
        from="Facing Couples"
        formation="Facing Couples"
@@ -315,6 +346,37 @@
     <path>
       <move select="Extend Left" beats="3" scaleX="2" scaleY=".5" />
       <move select="Hinge Right" scaleY=".5" />
+    </path>
+  </tam>
+
+  <tam title="Reverse Dixie Style to a Wave"
+       from="Tidal Column"
+       difficulty="3">
+    <formation>
+      <dancer gender="boy" x="0" y="-3.5" angle="90"/>
+      <dancer gender="girl" x="0" y="-2.5" angle="90"/>
+      <dancer gender="boy" x="0" y="-0.5" angle="270"/>
+      <dancer gender="girl" x="0" y="-1.5" angle="270"/>
+    </formation>
+    <path>
+      <move select="Stand" beats="2" />
+      <move select="Extend Left" scaleX=".5" scaleY=".5" />
+      <move select="Hinge Right" scaleX=".5" scaleY=".5" />
+    </path>
+    <path>
+      <move select="Extend Right" scaleX=".5" scaleY=".5" />
+      <move select="Extend Left" beats="2" scaleX="1" />
+      <move select="Hinge Right" scaleX=".5" scaleY=".5" />
+    </path>
+    <path>
+      <move select="Stand" beats="2" />
+      <move select="Extend Left" scaleX=".5" scaleY=".5" />
+      <move select="Hinge Right" scaleX=".5" scaleY=".5" />
+    </path>
+    <path>
+      <move select="Extend Right" scaleX=".5" scaleY=".5" />
+      <move select="Extend Left" beats="2" scaleX="1" />
+      <move select="Hinge Right" scaleX=".5" scaleY=".5" />
     </path>
   </tam>
 
