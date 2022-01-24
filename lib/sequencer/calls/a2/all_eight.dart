@@ -38,8 +38,7 @@ class AllEight extends Action {
           yctx.applyCalls(all8call)
       );
     } else
-      throw CallError('All 8 calls only supported from thar formations');
+      throw CallError('Unable to do $name from this formation.');
   }
-
 
 }
