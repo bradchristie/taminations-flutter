@@ -188,7 +188,7 @@ class AbbreviationsModel extends fm.ChangeNotifier {
       if (breakup.length != 2)
         continue;
       final abbr = breakup[0].replaceAll('\\W'.r, '').trim();
-      final expansion = breakup[1].trim();
+      final expansion = breakup[1].replaceAll('\\s'.r, ' ').trim();
       //  Check for valid abbreviation
       if (abbr.isBlank || expansion.isBlank)
         continue;

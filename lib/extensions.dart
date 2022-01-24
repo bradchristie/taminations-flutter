@@ -118,8 +118,15 @@ extension TamString on String {
   //  Matches is true if the regexp matches the entire string
   bool matches(RegExp e) => (e.stringMatch(this)?.length ?? -1) == length;
   //  Divide is split with a limit of 2
-  List<String> divide(Pattern p) =>
-      replaceFirst(p,'\t').split('\t').map((e)=>e.trim()).toList();
+  List<String> divide(Pattern p) {
+    final i = indexOf(p);
+    if (i > 0)
+      return [ substring(0,i), substring(i).replaceFirst(p, '') ];
+    else
+      return [this];
+  }
+    //[ replaceFirst('$p.*'.r,''), replaceFirst('.*?$p'.r,'') ];
+      // replaceFirst(p,'\t').split('\t').map((e)=>e.trim()).toList();
   String get last => this[length-1];
   int? toIntOrNull() => int.tryParse(this);
 
