@@ -18,6 +18,7 @@
 
 */
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart' as fm;
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart' as pp;
@@ -45,6 +46,10 @@ import 'sequencer/abbreviations_model.dart';
 
 ///  Main routine
 void main() {
+  LicenseRegistry.addLicense(() async* {
+    final license = await rootBundle.loadString('google_fonts/LICENSE.txt');
+    yield LicenseEntryWithLineBreaks(['google_fonts'], license);
+  });
   fm.runApp(TaminationsApp());
 }
 
