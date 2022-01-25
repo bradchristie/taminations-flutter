@@ -1,7 +1,7 @@
 
 # Flip the Line (1/4, 1/2, 3/4, Full)
 
-From @aves only: Centers [Run](../b2/run.md) and all any-shoulder
+From waves only: Centers [Run](../b2/run.md) and all any-shoulder
 [Tag the Line](../ms/tag.md) the given fraction (1/4, 1/2, 3/4, Full). Any-shoulder
 means: From Right-Hand Waves, use a right
 shoulder pass; from Left-Hand Waves use a left shoulder
