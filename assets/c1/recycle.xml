@@ -509,6 +509,21 @@
     </path>
   </tam>
 
+  <tam title="All 8 Box Recycle" from="" formation="Static MiniWaves LH" group=" " display="no">
+    <path>
+      <move select="Run Left" beats="4" hands="gripleft" scaleX="2" scaleY="2" offsetX="-3" />
+    </path>
+    <path>
+      <move select="U-Turn Left" beats="4" hands="gripleft" offsetX="3" />
+    </path>
+    <path>
+      <move select="Run Left" beats="4" hands="gripleft" scaleX="2" scaleY="2" offsetX="-3" />
+    </path>
+    <path>
+      <move select="U-Turn Left" beats="4" hands="gripleft" offsetX="3" />
+    </path>
+  </tam>
+
   <tam title="Concentric Box Recycle" from="" formation="Column RH GBGB" group=" ">
     <path>
       <move select="Run Right" beats="4" hands="gripright" scaleX="2" scaleY="2.25" offsetX="-3" />
