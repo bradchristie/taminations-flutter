@@ -172,6 +172,7 @@ import 'c2/tag_your_neighbor.dart';
 import 'c2/the_k.dart';
 import 'c2/truck.dart';
 import 'c2/zip_code.dart';
+import 'c3a/couple_up.dart';
 import 'c3a/snap_the_lock.dart';
 import 'c3b/reverse_order.dart';
 import 'call.dart';
@@ -294,6 +295,7 @@ abstract class CodedCall extends Call {
     'coordinate'.ri: (_) => Coordinate(),
     'counterrotate'.ri: (_) => CounterRotate(),
     '(dancersin)?couples'.ri: (name) => Couples(name),
+    'coupleup'.ri : (_) => CoupleUp(),
     'courtesyturn'.ri: (_) => CourtesyTurn(),
     '(14|12|34)?(reverse)?crazy.*'.ri: (name) => Crazy(name),
     'cross'.ri: (_) => Cross(),
@@ -352,6 +354,7 @@ abstract class CodedCall extends Call {
     '(cross)?kickoff'.ri: (name) => KickOff(name),
 
     'lead'.ri: (name) => Leaders(name),
+    'likeacoupleup'.ri: (_) => LikeACoupleUp(),
     'linearaction'.ri: (_) => LinearAction(),
     '(left)?linearcycle'.ri: (name) => LinearCycle(name),
     //  Little needs two regexes
@@ -523,7 +526,8 @@ abstract class CodedCall extends Call {
 
   static final Map<RegExp, CodedCall Function(String norm)> normCallMap2 = {
     //  Anything Motivate does not include Start or Finish Motivate
-    '.+(?<!(start|finish))(motivate|coordinate|percolate|perkup)'.ri: (name) => Anything(name),
+    //  Anything Couple Up does not include Like A Couple Up
+    '.+(?<!(start|finish|likea))(motivate|coordinate|coupleup|percolate|perkup)'.ri: (name) => Anything(name),
     //  Anything Chain Thru should not match Square Chain Thru or others
     '.*(?<!(cross|8|peel|scatter|scoot|spin|square|swing|tag))chainthru'.ri:
         (name) => AnythingChainThru(name),

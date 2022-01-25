@@ -33,7 +33,6 @@
 /out/
 /gen/
 /coverage/
-/google_fonts/
 pubspec.lock
 
 # Web related
