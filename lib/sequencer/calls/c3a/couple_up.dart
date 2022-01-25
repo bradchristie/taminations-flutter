@@ -19,37 +19,36 @@
 
 import '../common.dart';
 
-class AlterAndCirculate extends Action with CallWithParts, CallWithStars {
+class CoupleUp extends ActivesOnlyAction with CallWithParts {
 
-  @override final level = LevelData.C2;
-  @override int numberOfParts = 5;
-  @override var turnStarAmount = 2;
-  @override var turnStarCall = 'Split Counter Rotate';
-  AlterAndCirculate() : super('Alter and Circulate');
+  @override final level = LevelData.C3A;
+  @override var numberOfParts = 2;
+  CoupleUp() : super('Couple Up');
 
   @override
   Future<void> performPart1(CallContext ctx) async {
-    await ctx.applyCalls('Swing');
+    if (ctx.dancers.length == 8)
+      await ctx.applyCalls('Split Circulate');
+    else
+      await ctx.applyCalls('Box Circulate');
   }
 
   @override
   Future<void> performPart2(CallContext ctx) async {
-    await ctx.applyCalls('Centers Cast Off 3/4 While Ends Turn Back');
+    ctx.analyze();
+    await ctx.applyCalls('Leaders Turn Back');
   }
 
-  @override
-  Future<void> performPart3(CallContext ctx) async {
-    await ctx.applyCalls('Outer 4 Circulate While Very Centers Trade');
-  }
+}
+
+class LikeACoupleUp extends ActivesOnlyAction {
+
+  @override final level = LevelData.C3A;
+  LikeACoupleUp() : super('Like A Couple Up');
 
   @override
-  Future<void> performPart4(CallContext ctx) async {
-    await ctx.applyCalls(starTurns);
-  }
-
-  @override
-  Future<void> performPart5(CallContext ctx) async {
-    await ctx.applyCalls('Flip the Diamond');
+  Future<void> perform(CallContext ctx, [int stackIndex = 0]) async {
+    await ctx.applyCalls('Finish Couple Up');
   }
 
 }

@@ -2623,5 +2623,30 @@ Boys Run
 Bend the Line
 Right and Left Thru
 Star Thru
+Allemande Left''',
+
+  'Alter and Circulate' :
+'''Sides Pass the Ocean
+Extend
+Alter and Circulate Turn the Star 1/4
+Recycle
+Cross Trail Thru
+Wheel and Deal
+Centers Pass Thru
+Allemande Left''',
+
+  'Couple Up' :
+'''Sides Pass the Ocean
+Extend
+Trade Couple Up
+Pass the Sea
+Trade Couple Up
+Touch a Quarter
+Trade Like a Couple Up
+Veer Left
+As Couples Couple Up
+Pass Thru
+Turn and Deal
+Centers Square Thru 3
 Allemande Left'''
 };

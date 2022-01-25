@@ -26,7 +26,7 @@ than can be presented on one page.  So it's broken up into these topics.
   - [A-2](sequencer-a2.md)
   - [C-1](sequencer-c1.md)
   - [C-2](sequencer-c2.md)
-  - C-3A (nothing yet)
+  - [C-3A](sequencer-c3a.md)
   - C-3B (nothing yet)
 
 ## The Sequencer is Continuously In Development
