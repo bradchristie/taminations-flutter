@@ -150,4 +150,116 @@
     </path>
   </tam>
 
+  <tam title="Right-Hand Star 1/4" group=" "
+       formation="Facing Couples Compact">
+    <path>
+      <move select="Forward" hands="right" scaleX="1.5"/>
+      <move select="Forward" hands="right" scaleX="1.5"/>
+    </path>
+    <path>
+      <move select="Lead Left" beats="1" hands="right" scaleX=".5"/>
+      <move select="Lead Left" beats="1" hands="right" scaleY=".5"/>
+    </path>
+  </tam>
+
+  <tam title="Right-Hand Star 1/2" group=" "
+       formation="Facing Couples Compact">
+    <path>
+      <move select="Forward" hands="right" scaleX="1.5"/>
+      <move select="Hinge Right" beats="2"/>
+      <move select="Lead Left" beats="1" hands="right" scaleY=".5"/>
+    </path>
+    <path>
+      <move select="Lead Left" beats="1" hands="right" scaleX=".5"/>
+      <move select="Hinge Right" beats="2"/>
+      <move select="Forward" hands="right" scaleX="1.5"/>
+    </path>
+  </tam>
+
+  <tam title="Right-Hand Star 3/4" group=" "
+       formation="Facing Couples Compact">
+    <path>
+      <move select="Forward" hands="right" scaleX="1.5"/>
+      <move select="Swing Right" beats="4"/>
+      <move select="Forward" hands="right" scaleX="1.5"/>
+    </path>
+    <path>
+      <move select="Lead Left" beats="1" hands="right" scaleX=".5"/>
+      <move select="Swing Right" beats="4"/>
+      <move select="Lead Left" beats="1" hands="right" scaleY=".5"/>
+    </path>
+  </tam>
+
+  <tam title="Right-Hand Star a Full Turn" group=" "
+       formation="Facing Couples Compact">
+    <path>
+      <move select="Forward" hands="right" scaleX="1.5"/>
+      <move select="Hinge Right" beats="2"/>
+      <move select="Swing Right" beats="4"/>
+      <move select="Lead Left" beats="1" hands="right" scaleY=".5"/>
+    </path>
+    <path>
+      <move select="Lead Left" beats="1" hands="right" scaleX=".5"/>
+      <move select="Hinge Right" beats="2"/>
+      <move select="Swing Right" beats="4"/>
+      <move select="Forward" hands="right" scaleX="1.5"/>
+    </path>
+  </tam>
+
+  <tam title="Left-Hand Star 1/4" group=" "
+       formation="Facing Couples Compact">
+    <path>
+      <move select="Lead Right" beats="1" hands="left" scaleX=".5"/>
+      <move select="Lead Right" beats="1" hands="left" scaleY=".5"/>
+    </path>
+    <path>
+      <move select="Forward" hands="left" scaleX="1.5"/>
+      <move select="Forward" hands="left" scaleX="1.5"/>
+    </path>
+  </tam>
+
+  <tam title="Left-Hand Star 1/2" group=" "
+       formation="Facing Couples Compact">
+    <path>
+      <move select="Lead Right" beats="1" hands="left" scaleX=".5"/>
+      <move select="Hinge Left" beats="2"/>
+      <move select="Forward" hands="left" scaleX="1.5"/>
+    </path>
+    <path>
+      <move select="Forward" hands="left" scaleX="1.5"/>
+      <move select="Hinge Left" beats="2"/>
+      <move select="Lead Right" beats="1" hands="left" scaleY=".5"/>
+    </path>
+  </tam>
+
+  <tam title="Left-Hand Star 3/4" group=" "
+       formation="Facing Couples Compact">
+    <path>
+      <move select="Lead Right" beats="1" hands="left" scaleX=".5"/>
+      <move select="Swing Left" beats="4"/>
+      <move select="Lead Right" beats="1" hands="left" scaleY=".5"/>
+    </path>
+    <path>
+      <move select="Forward" hands="left" scaleX="1.5"/>
+      <move select="Swing Left" beats="4"/>
+      <move select="Forward" hands="left" scaleX="1.5"/>
+    </path>
+  </tam>
+
+  <tam title="Left-Hand Star a Full Turn" group=" "
+       formation="Facing Couples Compact">
+    <path>
+      <move select="Lead Right" beats="1" hands="left" scaleX=".5"/>
+      <move select="Hinge Left" beats="2"/>
+      <move select="Swing Left" beats="4"/>
+      <move select="Forward" hands="left" scaleX="1.5"/>
+    </path>
+    <path>
+      <move select="Forward" hands="left" scaleX="1.5"/>
+      <move select="Hinge Left" beats="2"/>
+      <move select="Swing Left" beats="4"/>
+      <move select="Lead Right" beats="1" hands="left" scaleY=".5"/>
+    </path>
+  </tam>
+
 </tamination>

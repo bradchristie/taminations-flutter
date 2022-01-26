@@ -96,6 +96,7 @@ import 'c1/cast_back.dart';
 import 'c1/circle_by.dart';
 import 'c1/concentric.dart';
 import 'c1/counter_rotate.dart';
+import 'c1/cross_chain_thru.dart';
 import 'c1/dixie_diamond.dart';
 import 'c1/finish.dart';
 import 'c1/ignore.dart';
@@ -300,6 +301,7 @@ abstract class CodedCall extends Call {
     '(14|12|34)?(reverse)?crazy.*'.ri: (name) => Crazy(name),
     'cross'.ri: (_) => Cross(),
     '(left)?crossandwheel'.ri: (name) => CrossAndWheel(name),
+    'crosschainthru'.ri: (_) => CrossChainThru(),
     'crossfold'.ri: (_) => CrossFold(),
     'crossovercirculate'.ri: (_) => CrossOverCirculate(),
     'crossramble'.ri: (_) => CrossRamble(),

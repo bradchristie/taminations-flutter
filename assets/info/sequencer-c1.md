@@ -7,6 +7,7 @@
 - **Circle By** - You can do both Circle By \<fraction> and \<fraction>,
 and Circle By \<fraction> and \<any other call>
 - **Concentric Concept** - can be used for all dancers or outer 4
+- **Cross Chain Thru** - is a 2-Part Call with Star
 - **Dixie Diamond** - is a 2-Part Call
 - **Ignore** - only if the call could also be done with all dancers
 - **Little** - can be entered as
@@ -27,5 +28,3 @@ and Circle By \<fraction> and \<any other call>
   - Tandem-Based
   - Wave-Based
 - **Triple Box Concept** - for 3 x 4 and 2 x 6 formations
-
-
