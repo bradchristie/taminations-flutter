@@ -89,6 +89,7 @@ mixin CallWithParts {
   Future<void> perform(CallContext ctx, [int stackIndex=0]) async {
     for (var part=1; part<=numberOfParts; part++) {
       ctx.extendPaths();
+      ctx.analyze();
       await (replacePart[part]??performPart(part))(ctx);
     }
   }

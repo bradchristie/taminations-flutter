@@ -20,30 +20,51 @@
 
 import '../common.dart';
 
-class ZipCode extends Action {
+class ZipCode extends Action with CallWithParts {
 
   @override final level = LevelData.C2;
-  ZipCode(String name) : super(name);
-
-  @override
-  Future<void> perform(CallContext ctx, [int stackIndex = 0]) async {
+  ZipCode(String name) : super(name) {
     final count = TamUtils.normalizeCall(name).last.toIntOrNull();
     if (count == null)
       throw CallError('Zip Code how much?');
+    if (count >= 1 && count <= 6)
+      numberOfParts = count;
+    else
+      throw CallError('Cannot handle Zip Code $count');
+  }
+
+  @override
+  Future<void> performPart1(CallContext ctx) async {
     await ctx.applyCalls('Centers Face Out');
     ctx.analyze();
     await ctx.applyCalls('Centers Run');
-    if (count >= 2)
-      await ctx.applyCalls('Ends Pass Thru');
-    if (count >= 3)
-      await ctx.applyCalls('Ends Bend');
-    if (count >= 4)
-      await ctx.applyCalls('Ends Pass Thru');
-    if (count >= 5)
-      await ctx.applyCalls('Ends Bend');
-    if (count >= 6)
-      await ctx.applyCalls('Ends Pass Thru');
+  }
 
+  @override
+  Future<void> performPart2(CallContext ctx) async {
+    ctx.analyze();
+    await ctx.applyCalls('Ends Pass Thru');
+  }
+
+  @override
+  Future<void> performPart3(CallContext ctx) async {
+    ctx.analyze();
+    await ctx.applyCalls('Ends Bend');
+  }
+
+  @override
+  Future<void> performPart4(CallContext ctx) async {
+    await ctx.applyCalls('Ends Pass Thru');
+  }
+
+  @override
+  Future<void> performPart5(CallContext ctx) async {
+    await ctx.applyCalls('Ends Bend');
+  }
+
+  @override
+  Future<void> performPart6(CallContext ctx) async {
+    await ctx.applyCalls('Ends Pass Thru');
   }
 
 }

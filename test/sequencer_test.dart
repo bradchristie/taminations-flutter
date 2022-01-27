@@ -2648,5 +2648,19 @@ As Couples Couple Up
 Pass Thru
 Turn and Deal
 Centers Square Thru 3
+Allemande Left''',
+
+  'Zip Code' :
+'''Heads Star Thru
+Zip Code 3
+Star Thru
+Zip Code 6
+Centers Shakedown
+Ends Run
+Pass the Ocean
+Girls Circulate
+Boys Run
+Ferris Wheel
+Centers Square Thru 3
 Allemande Left'''
 };

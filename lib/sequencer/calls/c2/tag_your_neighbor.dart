@@ -21,15 +21,21 @@
 import '../common.dart';
 
 //  This class covers all the variations of Tag Your Neighbor
-class TagYourNeighbor extends Action {
+class TagYourNeighbor extends Action with CallWithParts {
 
   @override final level = LevelData.C2;
+  @override var numberOfParts = 2;
   TagYourNeighbor(String name) : super(name);
 
   @override
-  Future<void> perform(CallContext ctx, [int stackIndex = 0]) async {
+  Future<void> performPart1(CallContext ctx) async {
     final left = name.contains('Left') ? 'Left' : '';
     final vertical = name.contains('Vertical') ? 'Vertical' : '';
+    await ctx.applyCalls('$vertical $left Half Tag');
+  }
+
+  @override
+  Future<void> performPart2(CallContext ctx, [int stackIndex = 0]) async {
     final base = name.replaceFirst('Left ', '')
         .replaceFirst('Vertical ', '')
         .replaceFirst('Tag Your ', '');
@@ -37,9 +43,8 @@ class TagYourNeighbor extends Action {
       if (base == 'Neighbor') 'Follow Your Neighbor'
       else if (base == 'Cross Neighbor') 'Cross Your Neighbor'
       else if (base == 'Criss Cross Neighbor') 'Criss Cross Your Neighbor'
-    ].firstOrNull ?? thrower(CallError('Tag what?'));
-    await ctx.applyCalls('$vertical $left Half Tag',baseCall);
+    ].firstOrNull ?? thrower(CallError('Tag what?'))!;
+    await ctx.applyCalls(baseCall);
   }
-
 
 }

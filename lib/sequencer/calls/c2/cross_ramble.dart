@@ -20,14 +20,21 @@
 
 import '../common.dart';
 
-class CrossRamble extends Action {
+class CrossRamble extends Action with CallWithParts {
 
   @override final level = LevelData.C2;
+  @override var numberOfParts = 2;
   CrossRamble() : super('Cross Ramble');
 
   @override
-  Future<void> perform(CallContext ctx, [int stackIndex = 0]) async {
-    await ctx.applyCalls('_Cross Ramble Part 1','Slide Thru');
+  Future<void> performPart1(CallContext ctx, [int stackIndex = 0]) async {
+    await ctx.applyCalls('Outer 4 Cross Cast Back '
+        'While Others Extend and Trade');
+  }
+
+  @override
+  Future<void> performPart2(CallContext ctx, [int stackIndex = 0]) async {
+    await ctx.applyCalls('Slide Thru');
   }
 
 }
