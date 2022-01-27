@@ -18,15 +18,8 @@
 
 */
 
-import '../action.dart';
-import '../../../extensions.dart';
-import '../../call_context.dart';
-import '../../../math/vector.dart';
-import '../../../dancer.dart';
-import '../../../math/movement.dart';
 import '../../../math/bezier.dart';
-import '../plus/roll.dart';
-import '../../call_error.dart';
+import '../common.dart';
 
 //  This is a base class for concept calls that group or select
 //  dancers in a way that they perform a 4-dancer call.
@@ -37,8 +30,6 @@ abstract class FourDancerConcept extends Action {
   FourDancerConcept(String name) : super(name);
 
   var conceptName = '';
-
-  String? get extraCall => name.toLowerCase().split('individually' ).getOrNull(1);
 
   String get realCall =>
       name.replaceFirst('$conceptName'.ri, '' )
@@ -134,13 +125,6 @@ abstract class FourDancerConcept extends Action {
     conceptctx.dancers.forEachIndexed((ci, cd) {
       postAdjustment(ctx,cd,groups[ci]);
     });
-    //  Perform any calls for single dancers (e.g. 'individually roll' )
-    if (extraCall != null) {
-      if (extraCall!.trim().matches('roll' .ri))
-        await Roll('' ).perform(ctx);
-      else
-        throw CallError('Don''t know how to Individually $extraCall' );
-    }
 
   }
 

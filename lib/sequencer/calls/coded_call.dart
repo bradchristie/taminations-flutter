@@ -347,6 +347,7 @@ abstract class CodedCall extends Call {
     '(hubs|rims)trade.+'.ri: (name) => HubsTrade(name),
 
     'ignore.+'.ri: (name) => Ignore(name),
+    'individually'.ri: (_) => Nothing('Individually'),
     'center(2|4|6)'.ri: (name) => Insides(name),
     'in(ner|sides?)(2|4|6)?'.ri: (name) => Insides(name),
     '.*interrupt.*'.ri: (name) => Interrupt(name),
@@ -374,7 +375,7 @@ abstract class CodedCall extends Call {
     'mix'.ri: (_) => Mix(),
     'motivate'.ri: (_) => Motivate(),
 
-    'nothing'.ri: (_) => Nothing(),
+    'nothing'.ri: (_) => Nothing('Nothing'),
 
     'O[A-Z0-9].+'.r: (name) => OFormation(name),
     '112'.ri: (name) => OneAndaHalf(name),
@@ -514,7 +515,7 @@ abstract class CodedCall extends Call {
     '(dancersin)?waves?(dancers)?'.ri: (name) => Waves(name),
     '(reverse)?wheeland(?!deal)(\\w.*)'.ri: (name) => WheelAnd(name),
     '(reverse)?wheelaround'.ri: (name) => WheelAround(name),
-    '(and)?(the)?other?.+'.ri: (name) => While(name),
+    '(and)?(the)?others?.+'.ri: (name) => While(name),
     'while(the)?(others?)?.+'.ri: (name) => While(name),
     '_windmill(in|out|left|right|forward)'.ri: (name) => WindmillX(name),
     'withtheflow'.ri: (_) => WithTheFlow(),
@@ -537,6 +538,13 @@ abstract class CodedCall extends Call {
 
   static CodedCall? fromName(String name) {
     var norm = TamUtils.normalizeCall(name);
+
+    //  Some words are high-level splitters
+    //  Don't accept any calls with these words in the middle
+    if (norm.matches('.+(Individually|While).*'.r)) {
+      return null;
+    }
+
     for (var r in normCallMap.keys) {
       if (norm.matches(r)) {
         return normCallMap[r]!.call(name);
