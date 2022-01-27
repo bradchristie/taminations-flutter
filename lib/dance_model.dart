@@ -55,7 +55,7 @@ class DanceModel extends fm.ChangeNotifier {
   var _looping = false;
   var _speed = NORMALSPEED;
   var _showGrid = false;
-  var _showAxes = false;
+  var _showAxes = 'None';
   var _showPaths = false;
   var _showNumbers = Dancer.NUMBERS_OFF;
   var _showPhantoms = false;
@@ -119,8 +119,8 @@ class DanceModel extends fm.ChangeNotifier {
     }
   }
 
-  bool get axesVisibility => _showAxes;
-  set axesVisibility(bool show) {
+  String get axesVisibility => _showAxes;
+  set axesVisibility(String show) {
     if (show != _showAxes) {
       _showAxes = show;
     }

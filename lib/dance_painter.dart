@@ -205,8 +205,8 @@ class DancePainter extends fm.CustomPainter  {
     if (model.gridVisibility) {
       Geometry(model.geometry,0).drawGrid(ctx);
     }
-    if (model.axesVisibility) {
-      Geometry(model.geometry,0).drawAxes(ctx);
+    if (model.axesVisibility!='None') {
+      Geometry(model.geometry,0).drawAxes(ctx,short:(model.axesVisibility=='Short'));
     }
     //  Always show bigon center mark
     if (model.geometry == Geometry.BIGON) {

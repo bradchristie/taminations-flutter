@@ -48,7 +48,7 @@ class SettingsFrame extends fm.StatelessWidget {
                 DancerSpeedSettingWidget(),
                 LoopSettingWidget(),
                 GridSettingWidget(),
-                PathsSettingWidget(),
+                AxesSettingWidget(),
                 NumbersSettingWidget(),
                 DancerColorsSettingWidget(),
                 PhantomsSettingWidget(),
@@ -83,7 +83,7 @@ class SequencerSettingsFrame extends fm.StatelessWidget {
                 StartingFormationDropdownWidget(),
                 DancerSpeedSettingWidget(),
                 GridSettingWidget(),
-                PathsSettingWidget(),
+                AxesSettingWidget(),
                 SequencerDancerColorsWidget(),
                 DancerShapesWidget(),
                 DancerIdentificationWidget(),
@@ -338,30 +338,34 @@ class GridSettingWidget extends fm.StatelessWidget {
             ),
             fm.Container(width: 40),
             _SettingCheckbox(
-              name:'Axes',
-              value: settings.axes,
+              name:'Paths',
+              value: settings.paths,
               onChanged: (value) {
-                settings.axes = value;
-              },
-            ),
-          ],
-        ),
-      ),
+                settings.paths = value;
+              }
+            )
+          ]
+        )
+      )
     );
   }
 }
 
-class PathsSettingWidget extends fm.StatelessWidget {
+class AxesSettingWidget extends fm.StatelessWidget {
   @override
   fm.Widget build(fm.BuildContext context) {
     return pp.Consumer<Settings>(
-      builder: (context,settings,child) => _SettingCheckbox(
-        name:'Paths',
-        value: settings.paths,
-        onChanged: (value) {
-          settings.paths = value;
-        },
-      ),
+      builder: (context,settings,child) => fm.Column(
+          crossAxisAlignment: fm.CrossAxisAlignment.stretch,
+          children: [
+            _SettingTitle('Axes'),
+            _SettingRadioGroup(
+                groupValue: settings.axes,
+                values: ['None', 'Short', 'Long'],
+                onChanged: (value) {
+                  settings.axes = value;
+                }),
+          ]),
     );
   }
 }

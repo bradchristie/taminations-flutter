@@ -86,7 +86,7 @@ abstract class Geometry {
   /// Draw a dancer-sized grid of the specific geometry
   /// @param ctx  Canvas to draw grid on
   void drawGrid(fm.Canvas ctx);
-  void drawAxes(fm.Canvas ctx);
+  void drawAxes(fm.Canvas ctx, {bool short=false});
 
 
   Geometry clone();
@@ -129,12 +129,13 @@ class BigonGeometry extends Geometry {
   }
 
   @override
-  void drawAxes(fm.Canvas ctx) {
+  void drawAxes(fm.Canvas ctx, {bool short = false}) {
+    final length = short ? 2.0 : 7.5;
     var p = gridPaint();
     p.color = Color.RED;
-    ctx.drawLine(fm.Offset(0.0,0.0), fm.Offset(-7.5,0.0), p);
+    ctx.drawLine(fm.Offset(0.0,0.0), fm.Offset(-length,0.0), p);
     p.color = Color.BLUE;
-    ctx.drawLine(fm.Offset(0.0,0.0), fm.Offset(7.5,0.0), p);
+    ctx.drawLine(fm.Offset(0.0,0.0), fm.Offset(length,0.0), p);
   }
 
   @override
@@ -199,12 +200,13 @@ class SquareGeometry extends Geometry {
   }
 
   @override
-  void drawAxes(fm.Canvas ctx) {
+  void drawAxes(fm.Canvas ctx, {bool short = false}) {
+    final length = short ? 2.0 : 7.5;
     var p = gridPaint();
     p.color = Color.RED;
-    ctx.drawLine(fm.Offset(-7.5,0.0), fm.Offset(7.5,0.0), p);
+    ctx.drawLine(fm.Offset(-length,0.0), fm.Offset(length,0.0), p);
     p.color = Color.BLUE;
-    ctx.drawLine(fm.Offset(0.0,-7.5), fm.Offset(0.0,7.5), p);
+    ctx.drawLine(fm.Offset(0.0,-length), fm.Offset(0.0,length), p);
   }
 
   @override
@@ -256,16 +258,18 @@ class HexagonGeometry extends Geometry {
   }
 
   @override
-  void drawAxes(fm.Canvas ctx) {
+  void drawAxes(fm.Canvas ctx, {bool short = false}) {
+    final length = short ? 2.0 : 7.5;
+    final tanlength = length * tan(pi/6);
     var p = gridPaint();
     p.color = Color.RED;
-    ctx.drawLine(fm.Offset(0.0,0.0), fm.Offset(-7.5,0.0), p);
-    ctx.drawLine(fm.Offset(0.0,0.0), fm.Offset(4.33,7.5), p);
-    ctx.drawLine(fm.Offset(0.0,0.0), fm.Offset(4.33,-7.5), p);
+    ctx.drawLine(fm.Offset(0.0,0.0), fm.Offset(-length,0.0), p);
+    ctx.drawLine(fm.Offset(0.0,0.0), fm.Offset(tanlength,length), p);
+    ctx.drawLine(fm.Offset(0.0,0.0), fm.Offset(tanlength,-length), p);
     p.color = Color.BLUE;
-    ctx.drawLine(fm.Offset(0.0,0.0), fm.Offset(7.5,0.0), p);
-    ctx.drawLine(fm.Offset(0.0,0.0), fm.Offset(-4.33,7.5), p);
-    ctx.drawLine(fm.Offset(0.0,0.0), fm.Offset(-4.33,-7.5), p);
+    ctx.drawLine(fm.Offset(0.0,0.0), fm.Offset(length,0.0), p);
+    ctx.drawLine(fm.Offset(0.0,0.0), fm.Offset(-tanlength,length), p);
+    ctx.drawLine(fm.Offset(0.0,0.0), fm.Offset(-tanlength,-length), p);
   }
 
   /// Convert transform for a dancer's current position
@@ -337,12 +341,13 @@ class HashtagGeometry extends Geometry {
   }
 
   @override
-  void drawAxes(fm.Canvas ctx) {
+  void drawAxes(fm.Canvas ctx, {bool short = false}) {
+    final length = short ? 2.0 : 7.5;
     var p = gridPaint();
     p.color = Color.RED;
-    ctx.drawLine(fm.Offset(-7.5,0.0), fm.Offset(7.5,0.0), p);
+    ctx.drawLine(fm.Offset(-length,0.0), fm.Offset(length,0.0), p);
     p.color = Color.BLUE;
-    ctx.drawLine(fm.Offset(0.0,-7.5), fm.Offset(0.0,7.5), p);
+    ctx.drawLine(fm.Offset(0.0,-length), fm.Offset(0.0,length), p);
   }
 
   //  Paths the same as square geometry

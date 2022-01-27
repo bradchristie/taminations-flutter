@@ -29,7 +29,7 @@ class Settings extends fm.ChangeNotifier {
   String _speed = 'Normal';
   bool _loop = false;
   bool _grid = false;
-  bool _axes = false;
+  String _axes = 'None';
   bool _paths = false;
   String _numbers = 'None';
   final List<String> _coupleColors = [ 'Red', 'Green', 'Blue', 'Yellow', 'Magenta', 'Cyan' ];
@@ -65,7 +65,7 @@ class Settings extends fm.ChangeNotifier {
     _speed = prefs.getString('Dancer Speed') ?? 'Normal';
     _loop = prefs.getBool('Loop') ?? false;
     _grid = prefs.getBool('Grid') ?? false;
-    _axes = prefs.getBool('Axes') ?? false;
+    _axes = prefs.getString('Axes') ?? 'None';
     _paths = prefs.getBool('Paths') ?? false;
     _numbers = prefs.getString('Numbers') ?? 'None';
     for (var i = 1; i <= 6; i++) {
@@ -113,10 +113,10 @@ class Settings extends fm.ChangeNotifier {
     notifyListeners();
   }
 
-  bool get axes => _axes;
-  set axes(bool value) {
+  String get axes => _axes;
+  set axes(String value) {
     _axes = value;
-    prefs.setBool('Axes', value);
+    prefs.setString('Axes', value);
     notifyListeners();
   }
 
