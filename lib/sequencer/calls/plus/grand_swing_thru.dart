@@ -29,7 +29,7 @@ class GrandSwingThru extends Action with CallWithParts {
   GrandSwingThru(String name) : super(name);
 
   @override
-  Future<void> perform(CallContext ctx, [int stackIndex = 0]) async {
+  Future<void> perform(CallContext ctx) async {
     //  If some dancers are facing then they need to step to a wave
     if (ctx.dancers.any((d) => ctx.dancerFacing(d) != null )) {
       await ctx.applyCalls('Facing Dancers Touch');

@@ -24,7 +24,7 @@ class DoYourPart extends Action {
   DoYourPart(String name) : super(name);
 
   @override
-  Future<void> perform(CallContext ctx, [int stackIndex=0]) async {
+  Future<void> perform(CallContext ctx) async {
     final callName = name.replaceFirst('Do Your Part'.ri,'').trim();
     if (callName.isBlank)
       throw CallError('Do Your Part of what?');

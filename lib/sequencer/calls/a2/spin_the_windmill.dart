@@ -26,7 +26,7 @@ class SpinTheWindmill extends Action {
   SpinTheWindmill(String name) : super(name);
 
   @override
-  Future<void> perform(CallContext ctx, [int stackIndex = 0]) async {
+  Future<void> perform(CallContext ctx) async {
     var anycall = name.replaceFirst('the Windmill.*'.r,'').trim();
     var prefix = '';
     //  Get the center 4 dancers
@@ -53,7 +53,7 @@ class WindmillX extends Action {
   WindmillX(String name) : super(name);
 
   @override
-  Future<void> perform(CallContext ctx, [int stackIndex = 0]) async {
+  Future<void> perform(CallContext ctx) async {
     //  Get the direction
     final dir = name.replaceFirst('_windmill'.ri,'').trim().toLowerCase();
     //  Face that way and do two circulates

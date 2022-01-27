@@ -25,7 +25,7 @@ class Except extends CodedCall {
   Except(String name) : super(name);
 
   @override
-  Future<void> performCall(CallContext ctx, [int stackIndex = 0]) async {
+  Future<void> performCall(CallContext ctx) async {
     //  Get who we want to exclude
     final who = name.replaceFirst('except( the)?'.ri,'').trim();
     //  Make another context where those are the selected dancers

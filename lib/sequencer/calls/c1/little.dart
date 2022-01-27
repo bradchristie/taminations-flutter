@@ -26,7 +26,7 @@ class Little extends Action {
   Little(String name) : super(name);
 
   @override
-  Future<void> perform(CallContext ctx, [int stackIndex = 0]) async {
+  Future<void> perform(CallContext ctx) async {
 
     //  Do the Scoot Back of Scoot and Little
     if (name.startsWith('Scoot and'))

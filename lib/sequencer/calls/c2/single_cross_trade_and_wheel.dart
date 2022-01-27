@@ -27,19 +27,19 @@ class SingleCrossTradeAndWheel extends Action with CallWithParts {
   SingleCrossTradeAndWheel(name) : super(name);
 
   @override
-  Future<void> performPart1(CallContext ctx, [int stackIndex = 0]) async {
+  Future<void> performPart1(CallContext ctx) async {
     final left = name.startsWith('Left') ? 'Left' : '';
     await ctx.applyCalls('$left Hinge');
   }
 
   @override
-  Future<void> performPart2(CallContext ctx, [int stackIndex = 0]) async {
+  Future<void> performPart2(CallContext ctx) async {
     ctx.analyze();
     await ctx.applyCalls('Centers Trade');
   }
 
   @override
-  Future<void> performPart3(CallContext ctx, [int stackIndex = 0]) async {
+  Future<void> performPart3(CallContext ctx) async {
     await ctx.applyCalls('Step and Fold');
   }
 

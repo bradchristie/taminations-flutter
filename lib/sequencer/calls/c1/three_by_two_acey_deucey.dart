@@ -26,7 +26,7 @@ class ThreeByTwoAceyDeucey extends Action {
   ThreeByTwoAceyDeucey() : super('Three By Two Acey Deucey');
 
   @override
-  Future<void> perform(CallContext ctx, [int stackIndex = 0]) async {
+  Future<void> perform(CallContext ctx) async {
     await ctx.applyCalls('Outside Triangle Circulate While Very Centers Trade');
   }
 

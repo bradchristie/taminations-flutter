@@ -25,7 +25,7 @@ class WaveOfSix extends CodedCall {
   WaveOfSix() : super('Wave of Six');
 
   @override
-  Future<void> performCall(CallContext ctx, [int stackIndex = 0]) async {
+  Future<void> performCall(CallContext ctx) async {
     final xDancers = ctx.dancers.where((d) => d.isOnXAxis);
     final yDancers = ctx.dancers.where((d) => d.isOnYAxis);
     if (xDancers.length == 6)

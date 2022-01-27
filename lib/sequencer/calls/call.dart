@@ -27,7 +27,7 @@ abstract class Call {
   var level = LevelData.B1;
 
   Call(this.name);
-  Future<void> performCall(CallContext ctx, [int stackIndex=0]) => Future<void>.value();
-  void postProcess(CallContext ctx, [int stackIndex=0]) { }
+  Future<void> performCall(CallContext ctx) => Future<void>.value();
+  void postProcess(CallContext ctx) { }
 
 }

@@ -27,7 +27,7 @@ class CenterWaveOfFour extends CodedCall {
   CenterWaveOfFour() : super('Center Wave of Four');
 
   @override
-  Future<void> performCall(CallContext ctx, [int stackIndex = 0]) async {
+  Future<void> performCall(CallContext ctx) async {
     final vc = ctx.dancers.where((d) => d.data.verycenter).toList();
     if (vc.length == 2) {
       final waveOf4 = [

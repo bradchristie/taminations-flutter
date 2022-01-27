@@ -162,14 +162,14 @@ class Concentric extends FourDancerConcept {
   }
 
   @override
-  Future<void> perform(CallContext ctx, [int stackIndex = 0]) async {
+  Future<void> perform(CallContext ctx) async {
     if (ctx.actives.length == 8)
       await ctx.applyCalls('Center 4 $realCall While Outer 4 $name');
     else if (ctx.dancers.length == 8)
       await ctx.subContext(ctx.actives, (ctx2) async => await ctx2.applyCalls(name));
     else {
       _minDistance = ctx.dancers.fold(10.0, (x, d) => min(x,d.location.length));
-      await super.perform(ctx,stackIndex);
+      await super.perform(ctx);
     }
   }
 

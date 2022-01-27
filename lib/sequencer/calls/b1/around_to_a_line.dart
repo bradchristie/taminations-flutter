@@ -25,7 +25,7 @@ class AroundToALine extends Action {
   AroundToALine(String name) : super(name);
 
   @override
-  Future<void> perform(CallContext ctx, [int stackIndex=0]) async {
+  Future<void> perform(CallContext ctx) async {
     if (ctx.actives.length < ctx.dancers.length) {
       ctx.matchStandardFormation();
       for (var d in ctx.dancers)

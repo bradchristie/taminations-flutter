@@ -26,7 +26,7 @@ class SwingAndCircle extends Action {
   SwingAndCircle(String name) : super(name);
 
   @override
-  Future<void> perform(CallContext ctx, [int stackIndex = 0]) async {
+  Future<void> perform(CallContext ctx) async {
     final norm = TamUtils.normalizeCall(name);
     //  Swing and Circle 1/4 is an XML animation
     //  So just repeat that as requested

@@ -26,7 +26,7 @@ class Slither extends Action {
   Slither() : super('Slither');
 
   @override
-  Future<void> perform(CallContext ctx, [int stackIndex = 0]) async {
+  Future<void> perform(CallContext ctx) async {
     //  If single wave in center, then very centers slither
     final ctx4 = CallContext.fromContext(ctx,dancers: ctx.center(4));
     if (ctx.dancers.length == 8 && ctx4.isLines() && !ctx.isTidal())
@@ -39,7 +39,7 @@ class Slither extends Action {
         throw CallError('Centers must be in a mini-wave.');
       ctx.dancers.where((it) => !it.data.center).forEach((it) { it.data.active = false; });
     }
-    await super.perform(ctx,stackIndex);
+    await super.perform(ctx);
   }
 
   @override

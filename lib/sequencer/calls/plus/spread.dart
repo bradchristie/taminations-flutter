@@ -46,7 +46,7 @@ class Spread extends Action {
    */
 
   @override
-  Future<void> perform(CallContext ctx, [int stackIndex = 0]) async {
+  Future<void> perform(CallContext ctx) async {
     //  Is this spread from waves, tandem, actives?
     Action spreader;
     ctx.analyze();
@@ -75,7 +75,7 @@ class _Case1 extends Action {
   _Case1() : super('and Spread');
 
   @override
-  Future<void> perform(CallContext ctx, [int stackIndex = 0]) async {
+  Future<void> perform(CallContext ctx) async {
     ctx.extendPaths();
     for (var d in ctx.dancers) {
       if (d.isActive) {
@@ -105,9 +105,9 @@ class _Case2 extends Action {
   _Case2() : super('and Spread');
 
   @override
-  Future<void> perform(CallContext ctx, [int stackIndex = 0]) async {
+  Future<void> perform(CallContext ctx) async {
     ctx.extendPaths();
-    await super.perform(ctx,stackIndex);
+    await super.perform(ctx);
   }
 
   @override
@@ -135,7 +135,7 @@ class _Case2 extends Action {
 class _Case3 extends _Case1 {
 
   @override
-  Future<void> perform(CallContext ctx, [int stackIndex = 0]) async {
+  Future<void> perform(CallContext ctx) async {
     //  Must be tandem couples
     if (ctx.dancers.any((d) => !ctx.isInTandem(d) || !ctx.isInCouple(d)))
       throw CallError('Invalid formation for Spread');
@@ -143,7 +143,7 @@ class _Case3 extends _Case1 {
     for (var d in ctx.dancers)
       d.data.active = d.data.leader;
     //  And forward to Case1, actives spread
-    await super.perform(ctx,stackIndex);
+    await super.perform(ctx);
   }
 
 }
@@ -155,7 +155,7 @@ class _Case4 extends Action {
   _Case4() : super('and Spread');
 
   @override
-  Future<void> perform(CallContext ctx, [int stackIndex = 0]) async {
+  Future<void> perform(CallContext ctx) async {
     ctx.extendPaths();
     for (var d in ctx.dancers) {
       if (d.isActive) {

@@ -28,7 +28,7 @@ class Anything extends Action {
   Anything(String name) : super(name);
 
   @override
-  Future<void> perform(CallContext ctx, [int stackIndex = 0]) async {
+  Future<void> perform(CallContext ctx) async {
     var firstCall =
     name.replaceMatch('(.*)(motivate|coordinate|couple up|percolate|perk up)'.ri,'\\1').trim();
     final secondCall =

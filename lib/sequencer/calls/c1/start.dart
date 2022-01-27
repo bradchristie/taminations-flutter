@@ -26,7 +26,7 @@ class Start extends Action {
   Start(String name) : super(name);
 
   @override
-  Future<void> perform(CallContext ctx, [int stackIndex = 0]) async {
+  Future<void> perform(CallContext ctx) async {
     final finishCall = name.replaceFirst('^start\\s+'.ri,'');
     //  There has to be a subset of dancers selected to Start
     if (ctx.actives.length >= ctx.dancers.length)

@@ -30,7 +30,7 @@ class Bounce extends ActivesOnlyAction with CallWithParts {
   Bounce(String name) : super(name);
 
   @override
-  Future<void> perform(CallContext ctx, [int stackIndex = 0]) async {
+  Future<void> perform(CallContext ctx) async {
     //  Figure out which way to veer
     final centerBelles = ctx.actives.where((d) => d.data.center && d.data.belle);
     final centerBeaus = ctx.actives.where((d) => d.data.center && d.data.beau);

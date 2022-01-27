@@ -26,7 +26,7 @@ class AllEight extends Action {
   AllEight(String name) : super(name);
 
   @override
-  Future<void> perform(CallContext ctx, [int stackIndex = 0]) async {
+  Future<void> perform(CallContext ctx) async {
     if (ctx.isThar()) {
       final all8call = name.replaceAll('All (8|Eight)'.ri, '').trim();
       final xDancers = ctx.dancers.where((d) => d.isOnXAxis).toList();

@@ -35,7 +35,7 @@ abstract class FilterActives extends CodedCall {
   bool isActive(Dancer d, CallContext ctx);
 
   @override
-  Future<void> performCall(CallContext ctx, [int stackIndex = 0]) async {
+  Future<void> performCall(CallContext ctx) async {
     var actives = ctx.actives.copy();
     for (var d in actives) {
       d.data.active = isActive(d,ctx);

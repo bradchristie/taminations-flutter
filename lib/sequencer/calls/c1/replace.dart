@@ -25,7 +25,7 @@ class Replace extends Action {
   Replace(String name) : super(name);
 
   @override
-  Future<void> perform(CallContext ctx, [int stackIndex = 0]) async {
+  Future<void> perform(CallContext ctx) async {
     final callName = name.replaceFirst('(but )?replace .*'.ri,'').trim();
     final replacementName = name.replaceFirst('.* with'.ri, '').trim();
     await ctx.subContext(ctx.dancers, (ctx2) async {

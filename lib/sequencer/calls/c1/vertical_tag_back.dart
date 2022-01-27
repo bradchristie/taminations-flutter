@@ -26,7 +26,7 @@ class VerticalTagBack extends Action {
   VerticalTagBack(String name) : super(name);
 
   @override
-  Future<void> perform(CallContext ctx, [int stackIndex = 0]) async {
+  Future<void> perform(CallContext ctx) async {
     final left = name.contains('Left') ? 'Left' : '';
     await ctx.applyCalls('$left Vertical 1/2 Tag','Scoot Back');
   }

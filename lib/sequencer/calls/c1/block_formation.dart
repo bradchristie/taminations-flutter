@@ -39,7 +39,7 @@ class BlockFormation extends Action {
   //      Add ending movements to shift back to block
 
   @override
-  Future<void> perform(CallContext ctx, [int stackIndex = 0]) async {
+  Future<void> perform(CallContext ctx) async {
     final blockCall = name.replaceFirst('In Your Block'.ri, '').trim();
     final ctxBlock = CallContext.fromXML(TamUtils.getFormation('Facing Blocks Right'));
     final blockMatch = ctxBlock.matchFormations(ctx,sexy:false,fuzzy:false,rotate:90,handholds:false);

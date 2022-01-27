@@ -27,8 +27,9 @@ class Twice extends CodedCall {
   Twice(String name) : super(name);
 
   @override
-  Future<void> performCall(CallContext ctx, [int stackIndex=0]) async {
-    if (ctx.callstack.length < 2)
+  Future<void> performCall(CallContext ctx) async {
+    final stackIndex = ctx.callstack.indexOf(this);
+    if (stackIndex < 1)
       throw CallError('Twice what?');
     //  At this point the call has already been done once
     //  Make sure everyone waits to finish the first time

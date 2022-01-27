@@ -41,7 +41,7 @@ class CrossRun extends ActivesOnlyAction {
    */
 
   @override
-  Future<void> perform(CallContext ctx, [int stackIndex=0]) async {
+  Future<void> perform(CallContext ctx) async {
     var spec = name.replaceFirst('Cross Run' , '' );
     var specCtx = CallContext.fromContext(ctx);
     await specCtx.applySpecifier(spec);
@@ -115,7 +115,7 @@ class CrossRun extends ActivesOnlyAction {
   }
 
   //@override
-  Future<void> perform_old(CallContext ctx, [int stackIndex=0]) async {
+  Future<void> perform_old(CallContext ctx) async {
     //  Get runners and dodgers
     var spec = name.replaceFirst('Cross Run' , '' );
     var specCtx = CallContext.fromContext(ctx);

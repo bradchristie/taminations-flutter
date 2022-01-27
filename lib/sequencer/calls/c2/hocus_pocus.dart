@@ -26,7 +26,7 @@ class HocusPocus extends Action {
   HocusPocus() : super('Hocus Pocus');
 
   @override
-  Future<void> perform(CallContext ctx, [int stackIndex = 0]) async {
+  Future<void> perform(CallContext ctx) async {
     final outer4 = CallContext.fromContext(ctx,dancers: ctx.outer(4).inOrder());
     final outerO = outer4.fillFormation('O RH')
         ?? outer4.fillFormation('O LH')

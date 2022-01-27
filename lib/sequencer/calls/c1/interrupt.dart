@@ -25,7 +25,7 @@ class Interrupt extends Action {
   Interrupt(String name) : super(name);
 
   @override
-  Future<void> perform(CallContext ctx, [int stackIndex = 0]) async {
+  Future<void> perform(CallContext ctx) async {
 
     //  Parse out the call with parts we are interrupting
     final callName = name.replaceFirst('interrupt .+'.ri,'').trim();

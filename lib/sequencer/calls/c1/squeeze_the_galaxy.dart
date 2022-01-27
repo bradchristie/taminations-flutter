@@ -26,7 +26,7 @@ class SqueezeTheGalaxy extends Action {
   SqueezeTheGalaxy() : super('Squeeze the Galaxy');
 
   @override
-  Future<void> perform(CallContext ctx, [int stackIndex = 0]) async {
+  Future<void> perform(CallContext ctx) async {
     //  Match to any galaxy
     final galaxy = CallContext.fromXML(TamUtils.getFormation('Galaxy RH GP'));
     final mm = galaxy.matchFormations(ctx,rotate:180);

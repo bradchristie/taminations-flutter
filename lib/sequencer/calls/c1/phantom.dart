@@ -65,7 +65,7 @@ class Phantom extends Action {
   }
 
   @override
-  Future<void> perform(CallContext ctx, [int stackIndex = 0]) async {
+  Future<void> perform(CallContext ctx) async {
     //  Split the dancers into two groups
     //  by the axis the dancers are facing
     final groups = ctx.dancers.partition((item) =>

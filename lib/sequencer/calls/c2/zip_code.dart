@@ -42,13 +42,11 @@ class ZipCode extends Action with CallWithParts {
 
   @override
   Future<void> performPart2(CallContext ctx) async {
-    ctx.analyze();
     await ctx.applyCalls('Ends Pass Thru');
   }
 
   @override
   Future<void> performPart3(CallContext ctx) async {
-    ctx.analyze();
     await ctx.applyCalls('Ends Bend');
   }
 

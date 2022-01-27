@@ -27,13 +27,13 @@ class CrossRamble extends Action with CallWithParts {
   CrossRamble() : super('Cross Ramble');
 
   @override
-  Future<void> performPart1(CallContext ctx, [int stackIndex = 0]) async {
+  Future<void> performPart1(CallContext ctx) async {
     await ctx.applyCalls('Outer 4 Cross Cast Back '
         'While Others Extend and Trade');
   }
 
   @override
-  Future<void> performPart2(CallContext ctx, [int stackIndex = 0]) async {
+  Future<void> performPart2(CallContext ctx) async {
     await ctx.applyCalls('Slide Thru');
   }
 

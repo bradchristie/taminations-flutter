@@ -24,7 +24,7 @@ class DoOnePart extends Action {
   DoOnePart(String name) : super(name);
 
   @override
-  Future<void> perform(CallContext ctx, [int stackIndex=0]) async {
+  Future<void> perform(CallContext ctx) async {
     final callName = name.replaceFirst('do the .* part (of)?'.ri, '').trim();
     await ctx.subContext(ctx.dancers, (ctx2) async {
       if (!ctx2.matchCodedCall(callName))

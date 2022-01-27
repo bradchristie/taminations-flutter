@@ -26,7 +26,7 @@ class SplitSquareThru extends Action {
   SplitSquareThru(String name) : super(name);
 
   @override
-  Future<void> perform(CallContext ctx, [int stackIndex = 0]) async {
+  Future<void> perform(CallContext ctx) async {
     if (ctx.actives.length < 8)
       throw CallError('Use Heads Start or Sides Start Split Square Thru');
     var left = 'Left';

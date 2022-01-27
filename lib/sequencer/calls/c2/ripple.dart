@@ -43,7 +43,7 @@ class Ripple extends Action {
   }
 
   @override
-  Future<void> perform(CallContext ctx, [int stackIndex = 0]) async {
+  Future<void> perform(CallContext ctx) async {
     final actives = ctx.actives.copy();
     if (actives.length == ctx.dancers.length)
       throw CallError('Who is going to Ripple?');

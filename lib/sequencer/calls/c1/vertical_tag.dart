@@ -26,10 +26,10 @@ class VerticalTag extends Action {
   VerticalTag(String name) : super(name);
 
   @override
-  Future<void> perform(CallContext ctx, [int stackIndex = 0]) async {
+  Future<void> perform(CallContext ctx) async {
     ctx.analyzeActives();
     //  This calls performOne below, which performs Vertical 1/4 Tag
-    await super.perform(ctx, stackIndex);
+    await super.perform(ctx);
     //  Now extend as requested
     final norm = TamUtils.normalizeCall(name);
     if (norm.contains('12'))

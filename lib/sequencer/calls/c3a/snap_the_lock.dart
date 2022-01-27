@@ -26,7 +26,7 @@ class SnapTheLock extends Action {
   SnapTheLock() : super('Snap the Lock');
 
   @override
-  Future<void> perform(CallContext ctx, [int stackIndex = 0]) async {
+  Future<void> perform(CallContext ctx) async {
     try {
       await ctx.applyCalls('Partner Tag',
           'Outsides Partner Tag While Centers Step to a Wave Lockit Step Thru');

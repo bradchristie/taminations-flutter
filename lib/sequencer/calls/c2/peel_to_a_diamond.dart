@@ -26,7 +26,7 @@ class PeelToADiamond extends Action {
   PeelToADiamond() : super('Peel to a Diamond');
 
   @override
-  Future<void> perform(CallContext ctx, [int stackIndex = 0]) async {
+  Future<void> perform(CallContext ctx) async {
     final trailers = ctx.dancers.where((d) => d.data.trailer).toList();
     await ctx.applyCalls('Half Zoom');
     await ctx.subContext(trailers, (ctx2) async {

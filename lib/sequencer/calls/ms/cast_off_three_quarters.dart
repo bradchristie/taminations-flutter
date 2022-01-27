@@ -27,7 +27,7 @@ class CastOffThreeQuarters extends ActivesOnlyAction {
   CastOffThreeQuarters() : super('Cast Off Three Quarters');
 
   @override
-  Future<void> perform(CallContext ctx, [int stackIndex=0]) async {
+  Future<void> perform(CallContext ctx) async {
     //  Dancers in mini-waves hinge three times
     var waveDancers = ctx.actives.where((d) => ctx.isInWave(d)).toList();
     if (waveDancers.isNotEmpty) {

@@ -26,10 +26,10 @@ class Roll extends Action {
   Roll(String name) : super(name);
 
   @override
-  Future<void> perform(CallContext ctx, [int stackIndex=0]) async {
-    if (stackIndex == 0)
+  Future<void> perform(CallContext ctx) async {
+    if (ctx.callstack.indexOf(this) <= 0)
       throw CallError('"and Roll" must follow another call.');
-    await super.perform(ctx, stackIndex);
+    await super.perform(ctx);
   }
 
   @override

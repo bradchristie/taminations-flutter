@@ -26,7 +26,7 @@ class WithTheFlow extends Action {
   WithTheFlow() : super('With the Flow');
 
   @override
-  Future<void> perform(CallContext ctx, [int stackIndex = 0]) async {
+  Future<void> perform(CallContext ctx) async {
     if (ctx.actives.any((d) => !ctx.isInCouple(d)))
       throw CallError('Only couples can do With the Flow');
     var isLeft = true;

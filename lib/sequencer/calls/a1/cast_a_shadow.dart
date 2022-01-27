@@ -28,7 +28,7 @@ class CastAShadow extends Action {
   CastAShadow(String name) : super(name);
 
   @override
-  Future<void> perform(CallContext ctx, [int stackIndex = 0]) async {
+  Future<void> perform(CallContext ctx) async {
     if (ctx.actives.length == 8 &&
         TamUtils.normalizeCall(name).matches('CastaShadowCenter.*34'.r)) {
       final inCenters = ctx.dancers.where((d) => d.data.center && d.data.trailer);

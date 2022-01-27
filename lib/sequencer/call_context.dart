@@ -815,7 +815,7 @@ class CallContext {
     analyze();
     for (var i=0; i<callstack.length; i++) {
       var c = callstack[i];
-      await c.performCall(this,i);
+      await c.performCall(this);
       if (i < callstack.length-1)
         analyze();
       //  A few calls (e.g. Hinge) don't know their level until the call is performed
@@ -825,7 +825,7 @@ class CallContext {
     }
     for (var i=0; i<callstack.length; i++) {
       var c = callstack[i];
-      c.postProcess(this,i);
+      c.postProcess(this);
     }
   }
 

@@ -26,7 +26,7 @@ class WheelAnd extends Action {
   WheelAnd(String name) : super(name);
 
   @override
-  Future<void> perform(CallContext ctx, [int stackIndex = 0]) async {
+  Future<void> perform(CallContext ctx) async {
     final divided = name.divide(' and '.r);
     final wheelCall = divided[0];
     final andCall = divided[1];

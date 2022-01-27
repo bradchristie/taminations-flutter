@@ -35,7 +35,7 @@ class TagYourNeighbor extends Action with CallWithParts {
   }
 
   @override
-  Future<void> performPart2(CallContext ctx, [int stackIndex = 0]) async {
+  Future<void> performPart2(CallContext ctx) async {
     final base = name.replaceFirst('Left ', '')
         .replaceFirst('Vertical ', '')
         .replaceFirst('Tag Your ', '');

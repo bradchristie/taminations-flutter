@@ -27,7 +27,7 @@ class Finish extends Action {
   Finish(String name) : super(name);
 
   @override
-  Future<void> perform(CallContext ctx, [int stackIndex = 0]) async {
+  Future<void> perform(CallContext ctx) async {
     final finishCall = name.replaceFirst('Finish\\s+'.ri,' ');
     final finishNorm = TamUtils.normalizeCall(finishCall);
     //  For now we just work with XML calls

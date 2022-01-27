@@ -26,7 +26,7 @@ class Rotate extends Action {
   Rotate(String name) : super(name);
 
   @override
-  Future<void> perform(CallContext ctx, [int stackIndex = 0]) async {
+  Future<void> perform(CallContext ctx) async {
     if (!ctx.isLines() || !ctx.dancers.every((d) => ctx.isInCouple(d)))
       throw CallError('Unable to Rotate from this formation');
     final leaders = ctx.dancers.where((d) => d.data.leader).toList();

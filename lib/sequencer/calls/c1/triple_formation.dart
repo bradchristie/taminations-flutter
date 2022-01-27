@@ -47,7 +47,7 @@ abstract class TripleFormation extends Action {
   String subCall;
 
   @override
-  Future<void> perform(CallContext ctx, [int stackIndex = 0]) async {
+  Future<void> perform(CallContext ctx) async {
     isXaxis = findAxis(ctx);
     //  Add phantoms in spots not occupied by dancers
     final phantoms = <Dancer>[];

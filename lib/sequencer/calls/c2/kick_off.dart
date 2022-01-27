@@ -26,7 +26,7 @@ class KickOff extends Action {
   KickOff(String name) : super(name);
 
   @override
-  Future<void> perform(CallContext ctx, [int stackIndex = 0]) async {
+  Future<void> perform(CallContext ctx) async {
     //  Active dancers [Cross] Run and Roll
     final cross = name.startsWith('Cross') ? 'Cross' : '';
     await ctx.applyCalls('$cross Run and Roll');

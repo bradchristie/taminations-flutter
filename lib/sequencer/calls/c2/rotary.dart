@@ -26,7 +26,7 @@ class Rotary extends Action {
   Rotary(String name) : super(name);
 
   @override
-  Future<void> perform(CallContext ctx, [int stackIndex = 0]) async {
+  Future<void> perform(CallContext ctx) async {
     final anyCall = name.replaceFirst('rotary\\s*'.ri,'');
     await ctx.applyCalls('Pull By');
     ctx.analyze();

@@ -38,7 +38,7 @@ class PromenadeHome extends Action {
   var _startPoints = <Vector>[];
 
   @override
-  Future<void> perform(CallContext ctx, [int stackIndex=0]) async {
+  Future<void> perform(CallContext ctx) async {
     if (ctx.dancers.length != 8)
       throw CallError('Only for 4 couples at this point.');
     //   Compute the center point of each couple
@@ -77,7 +77,7 @@ class PromenadeHome extends Action {
         throw CallError('Dancers are not resolved, cannot promenade home.');
     }
     //  Now get each dancer to move to the calculated promenade position
-    await super.perform(ctx, stackIndex);
+    await super.perform(ctx);
     //  Promenade to home
     do {
       await ctx.applyCalls('Counter Rotate');

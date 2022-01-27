@@ -27,7 +27,7 @@ class CenterSix extends CodedCall {
   CenterSix() : super('Center 6');
 
   @override
-  Future<void> performCall(CallContext ctx, [int stackIndex=0]) async {
+  Future<void> performCall(CallContext ctx) async {
     if (ctx.dancers.length != 8)
       throw CallError('Not enough dancers.');
     if (ctx.groups.length < 2)

@@ -65,7 +65,7 @@ abstract class FourDancerConcept extends Action {
   void postAdjustment(CallContext ctx, Dancer cd, List<Dancer> group) { }
 
   @override
-  Future<void> perform(CallContext ctx, [int stackIndex=0]) async {
+  Future<void> perform(CallContext ctx) async {
     //  Get dancer groups
     var groups = dancerGroups(ctx);
     //  Create a concept dancer for each group dancer
@@ -137,7 +137,7 @@ abstract class FourDancerConcept extends Action {
     //  Perform any calls for single dancers (e.g. 'individually roll' )
     if (extraCall != null) {
       if (extraCall!.trim().matches('roll' .ri))
-        await Roll('' ).perform(ctx,1);
+        await Roll('' ).perform(ctx);
       else
         throw CallError('Don''t know how to Individually $extraCall' );
     }

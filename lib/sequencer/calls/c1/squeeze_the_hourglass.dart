@@ -26,7 +26,7 @@ class SqueezeTheHourglass extends Action {
   SqueezeTheHourglass() : super('Squeeze the Hourglass');
 
   @override
-  Future<void> perform(CallContext ctx, [int stackIndex = 0]) async {
+  Future<void> perform(CallContext ctx) async {
     //  Match to any hourglass
     final hourglass = CallContext.fromXML(TamUtils.getFormation('Hourglass RH BP'));
     final mm = hourglass.matchFormations(ctx,rotate:180);

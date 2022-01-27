@@ -26,13 +26,13 @@ class MakeMagic extends Action {
   MakeMagic() : super('Make Magic');
 
   @override
-  Future<void> perform(CallContext ctx, [int stackIndex = 0]) async {
+  Future<void> perform(CallContext ctx) async {
     //  If center 4 dancers are facing each other, they do a Cross Trail Thru
     if (ctx.center(4).every((d) => d.isFacingIn))
       await ctx.applyCalls('Center 4 Cross Trail Thru');
     else {
       //  Otherwise, process each dancer
-      await super.perform(ctx,stackIndex);
+      await super.perform(ctx);
       if (ctx.dancers.every((d) => d.path.movelist.isEmpty))
         throw CallError('Make Magic does nothing');
     }

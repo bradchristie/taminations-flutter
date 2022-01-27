@@ -27,7 +27,7 @@ class ThreeQuartersTag extends Action {
   ThreeQuartersTag(String name) : super(name);
 
   @override
-  Future<void> perform(CallContext ctx, [int i = 0]) async {
+  Future<void> perform(CallContext ctx) async {
     var dir = (name.startsWith('Left')) ? 'Left' : '';
     //  All the 4-dancer formations are in Taminations
     if (ctx.actives.length < 8 && !ctx.isAsym())
@@ -41,7 +41,7 @@ class ThreeQuartersTag extends Action {
     else if (ctx.isAsym())
       await ctx.applyCalls('Face In','Centers Step to a Wave','Extend','Extend');
     else
-      await super.perform(ctx, i);
+      await super.perform(ctx);
   }
 
   @override

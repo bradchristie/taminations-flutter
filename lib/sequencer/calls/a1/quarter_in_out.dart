@@ -26,7 +26,7 @@ class QuarterInOut extends Action {
   QuarterInOut(String name) : super(name);
 
   @override
-  Future<void> perform(CallContext ctx, [int stackIndex = 0]) async {
+  Future<void> perform(CallContext ctx) async {
     if (ctx.dancers.length == 4)
       return await super.perform(ctx);
     final boxes = ctx.boxes();

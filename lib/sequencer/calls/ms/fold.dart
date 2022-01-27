@@ -30,7 +30,7 @@ class Fold extends Action {
   //  because partners of the folders need to adjust
   //  so we get a standard formation that can be used for more calls
   @override
-  Future<void> perform(CallContext ctx, [int stackIndex=0]) async {
+  Future<void> perform(CallContext ctx) async {
     for (var d in ctx.actives) {
       //  Find dancer to fold in front of
       //  Usually it's the partner

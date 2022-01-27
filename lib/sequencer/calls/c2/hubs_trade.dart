@@ -26,12 +26,12 @@ class HubsTrade extends ActivesOnlyAction with CallWithParts {
   HubsTrade(String name) : super(name);
 
   @override
-  Future<void> perform(CallContext ctx, [int stackIndex = 0]) async {
+  Future<void> perform(CallContext ctx) async {
     print(ctx.dancers.show());
     print('$name: isLines: ${ctx.isLines()}');
     if (!ctx.isLines() && !ctx.isThar())
       throw CallError('Cannot do $name from here');
-    await super.perform(ctx, stackIndex);
+    await super.perform(ctx);
   }
 
   @override

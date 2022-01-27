@@ -45,7 +45,7 @@ abstract class ModifiedFormationConcept extends Action {
       ctx.adjustToFormation(formationName,rotate:90);
 
   @override
-  Future<void> perform(CallContext ctx, [int stackIndex=0]) async {
+  Future<void> perform(CallContext ctx) async {
     //  Check that the formation matches
     if (!checkFormation(ctx))
       throw CallError('Not $conceptName formation' );

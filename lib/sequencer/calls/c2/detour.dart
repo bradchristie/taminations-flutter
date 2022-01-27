@@ -26,7 +26,7 @@ class Detour extends Action {
   Detour() : super('Detour');
 
   @override
-  Future<void> perform(CallContext ctx, [int stackIndex = 0]) async {
+  Future<void> perform(CallContext ctx) async {
     await ctx.subContext(ctx.center(4), (ctx2) async {
       await ctx2.applyCalls('Box Counter Rotate');
     });

@@ -39,7 +39,7 @@ class XMLCall extends Call {
       : super(xelem('title'));
 
   @override
-  Future<void> performCall(CallContext ctx, [int stackIndex = 0]) async {
+  Future<void> performCall(CallContext ctx) async {
     final allPaths = xelem.childrenNamed('path').map(
             (element) => Path(TamUtils.translatePath(element))).toList();
     final asymmetric = xelem('asymmetric').isNotBlank;

@@ -26,7 +26,7 @@ class Slip extends Action {
   Slip() : super('Slip');
 
   @override
-  Future<void> perform(CallContext ctx, [int stackIndex = 0]) async {
+  Future<void> perform(CallContext ctx) async {
     //  If single wave in center, then very centers trade
     final ctx4 = CallContext.fromContext(ctx,dancers: ctx.center(4));
     ctx4.analyze();

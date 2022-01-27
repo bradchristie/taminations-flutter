@@ -27,7 +27,7 @@ class OneAndaHalf extends CodedCall {
   OneAndaHalf(String name) : super(name);
 
   @override
-  Future<void> performCall(CallContext ctx, [int stackIndex=0]) async {
+  Future<void> performCall(CallContext ctx) async {
     if (ctx.callstack.length < 2)
       throw CallError('One and a half of what?');
     //  At this point the call has already been done once

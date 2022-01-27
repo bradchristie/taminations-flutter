@@ -26,7 +26,7 @@ class Checkpoint extends Action {
   Checkpoint(String name) : super(name);
 
   @override
-  Future<void> perform(CallContext ctx, [int stackIndex = 0]) async {
+  Future<void> perform(CallContext ctx) async {
     //  Parse out the two calls
     final firstCall = name.replaceMatch('Checkpoint (.+) by (.+)'.ri,'\\1');
     final secondCall = name.replaceMatch('Checkpoint (.+) by (.+)'.ri,'\\2');

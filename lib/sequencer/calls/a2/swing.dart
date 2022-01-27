@@ -27,7 +27,7 @@ class Swing extends Action {
   Swing() : super('Swing');
 
   @override
-  Future<void> perform(CallContext ctx, [int stackIndex = 0]) async {
+  Future<void> perform(CallContext ctx) async {
     //  If single wave in center, just those 4 Swing
     if (!await ctx.subContext(ctx.center(4), (ctx2) async {
       if (ctx.dancers.length > 4 && ctx2.isLines() && ctx2.isWaves() && !ctx.isTidal()) {

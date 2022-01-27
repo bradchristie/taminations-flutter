@@ -26,7 +26,7 @@ class Stretch extends Action {
   Stretch(String name) : super(name);
 
   @override
-  Future<void> perform(CallContext ctx, [int stackIndex = 0]) async {
+  Future<void> perform(CallContext ctx) async {
     //  First perform the call normally
     final normalCall = name.replaceFirst('stretch '.ri, '');
     await ctx.applyCalls(normalCall);

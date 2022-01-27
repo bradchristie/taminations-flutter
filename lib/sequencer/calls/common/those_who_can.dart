@@ -26,7 +26,7 @@ class ThoseWhoCan extends CodedCall {
   ThoseWhoCan() : super('Those Who Can');
 
   @override
-  Future<void> performCall(CallContext ctx, [int stackIndex=0]) async {
+  Future<void> performCall(CallContext ctx) async {
     ctx.thoseWhoCanOnly();
   }
 

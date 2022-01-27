@@ -49,7 +49,7 @@ class TriangleCirculate extends Action {
   }
 
   @override
-  Future<void> perform(CallContext ctx, [int stackIndex = 0]) async {
+  Future<void> perform(CallContext ctx) async {
     //  Find the 6 dancers to circulate
     final triangleType = name.replaceFirst('Triangle Circulate', '')
         .toLowerCase()

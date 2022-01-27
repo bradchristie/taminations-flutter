@@ -28,7 +28,7 @@ class Cloverleaf extends Action {
   //  We get here only if standard Cloverleaf with all 8 dancers active fails.
   //  So do a 4-dancer cloverleaf
   @override
-  Future<void> perform(CallContext ctx, [int stackIndex = 0]) async {
+  Future<void> perform(CallContext ctx) async {
     await ctx.applyCalls('Clover and Adjust to a Box');
   }
 
@@ -42,7 +42,7 @@ class CloverAnd extends Action {
   CloverAnd(String name) : super(name);
 
   @override
-  Future<void> perform(CallContext ctx, [int stackIndex = 0]) async {
+  Future<void> perform(CallContext ctx) async {
     //  Find the 4 dancers to Cloverleaf
     //  First check the outer 4
     final outer4 = ctx.dancers.sortedBy((d) => d.location.length).drop(4).toList();

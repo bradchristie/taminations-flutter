@@ -26,7 +26,7 @@ class TagBack extends Action {
   TagBack(String name) : super(name);
 
   @override
-  Future<void> perform(CallContext ctx, [int stackIndex = 0]) async {
+  Future<void> perform(CallContext ctx) async {
     final left = name.startsWith('Left') ? 'Left' : '';
     await ctx.applyCalls('$left Half Tag','Scoot Back');
   }

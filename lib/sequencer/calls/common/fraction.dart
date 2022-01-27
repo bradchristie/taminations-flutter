@@ -44,7 +44,8 @@ class Fraction extends Action {
   late Call _call;
 
   @override
-  Future<void> perform(CallContext ctx, [int stackIndex=0]) async {
+  Future<void> perform(CallContext ctx) async {
+    final stackIndex = ctx.callstack.indexOf(this);
     if (stackIndex >= ctx.callstack.length - 1)
       throw CallError('$name of what?' );
     //  Steal the next call off the stack
@@ -74,7 +75,7 @@ class Fraction extends Action {
   //  Call is performed between these two methods
 
   @override
-  void postProcess(CallContext ctx, [int stackIndex = 0]) {
+  void postProcess(CallContext ctx) {
     //  Coded calls so far do not have explicit parts
     //  so just divide them by the given fraction
     //  Also if an XML call does not have parts just divide the beats
@@ -92,7 +93,7 @@ class Fraction extends Action {
           d.path.add(mo.clip(_prevBeats + _partBeats - d.path.beats));
       }
     }
-    super.postProcess(ctx,stackIndex);
+    super.postProcess(ctx);
   }
 
 }

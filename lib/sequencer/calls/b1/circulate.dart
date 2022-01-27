@@ -26,7 +26,7 @@ class Circulate extends Action {
   Circulate() : super('Circulate' );
 
   @override
-  Future<void> perform(CallContext ctx, [int stackIndex=0]) async {
+  Future<void> perform(CallContext ctx) async {
     //  If just 4 dancers, try Box Circulate
     if (ctx.actives.length == 4) {
       if (ctx.actives.every((d) => d.data.center)) {
@@ -34,11 +34,11 @@ class Circulate extends Action {
           await ctx.applyCalls('Box Circulate' );
         } on CallError {
           //  That didn't work, try to find a circulate path for each dancer
-          await super.perform(ctx, stackIndex);
+          await super.perform(ctx);
         }
       } else {
         //  Dancers not in center, go on and try to calculate the circulate
-        await super.perform(ctx, stackIndex);
+        await super.perform(ctx);
       }
     }
 
@@ -54,7 +54,7 @@ class Circulate extends Action {
       await ctx.applyCalls('Column Circulate' );
     //  If none of these, but t-bones or 6 dancers, calculate paths
     else if (ctx.actives.length == 6 || ctx.isTBone()) {
-      await super.perform(ctx,stackIndex);
+      await super.perform(ctx);
       if (ctx.isCollision())
         throw CallError('Cannot handle dancer collision here.' );
     }

@@ -33,7 +33,7 @@ class FlipYourNeighbor extends Action {
   };
 
   @override
-  Future<void> perform(CallContext ctx, [int stackIndex = 0]) async {
+  Future<void> perform(CallContext ctx) async {
     final secondCall = flipTypes[name] ?? thrower(CallError('Incorrect Flip call'));
     await ctx.applyCalls('Flip the Line 1/2',secondCall);
   }

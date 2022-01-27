@@ -27,7 +27,7 @@ class QuarterMore extends Action {
   QuarterMore() : super('and a Quarter More' );
 
   @override
-  Future<void> performCall(CallContext ctx, [int stackIndex=0]) async {
+  Future<void> performCall(CallContext ctx) async {
     if (ctx.actives.any((d) => !ctx.isInCouple(d)))
       throw CallError('Only couples can go a Quarter More' );
     var isLeft = true;

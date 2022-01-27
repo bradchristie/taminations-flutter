@@ -26,7 +26,7 @@ class TwistAnything extends Action {
   TwistAnything(String name) : super(name);
 
   @override
-  Future<void> perform(CallContext ctx, [int stackIndex = 0]) async {
+  Future<void> perform(CallContext ctx) async {
     //  Get "Anything" call
     final anyCall = (name == 'Twist the Line')
         ? 'Star Thru'

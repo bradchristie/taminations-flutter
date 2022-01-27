@@ -47,7 +47,7 @@ class LikeACoupleUp extends ActivesOnlyAction {
   LikeACoupleUp() : super('Like A Couple Up');
 
   @override
-  Future<void> perform(CallContext ctx, [int stackIndex = 0]) async {
+  Future<void> perform(CallContext ctx) async {
     await ctx.applyCalls('Finish Couple Up');
   }
 

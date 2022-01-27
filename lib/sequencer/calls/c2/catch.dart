@@ -31,7 +31,7 @@ class Catch extends Action with CallWithParts {
       ?? thrower(CallError('Catch how much?'));
 
   @override
-  Future<void> perform(CallContext ctx, [int stackIndex = 0]) async {
+  Future<void> perform(CallContext ctx) async {
     await super.perform(ctx);
   }
 

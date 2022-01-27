@@ -32,11 +32,9 @@ class And extends FilterActives {
   int _index = 0;
 
   @override
-  Future<void> performCall(CallContext ctx, [int stackIndex=0]) async {
-    if (stackIndex < 1)
-      throw CallError('Use "and"  to combine calls');
-    _index = stackIndex;
-    await super.performCall(ctx, stackIndex);
+  Future<void> performCall(CallContext ctx) async {
+    _index = ctx.callstack.indexOf(this);
+    await super.performCall(ctx);
   }
 
   //  If the previous call was retrieved from XML and has a selector

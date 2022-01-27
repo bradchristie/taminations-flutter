@@ -28,10 +28,10 @@ class CrossOverCirculate extends Action {
   //  All 8-dancer versions are coded in XML
   //  This code just handles 4 dancers
   @override
-  Future<void> perform(CallContext ctx, [int stackIndex = 0]) async {
+  Future<void> perform(CallContext ctx) async {
     if (ctx.actives.length != 4)
       throw CallError('No animation for Cross Over Circulate from this formation');
-    await super.perform(ctx,stackIndex);
+    await super.perform(ctx);
   }
 
   @override

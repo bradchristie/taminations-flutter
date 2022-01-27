@@ -27,7 +27,7 @@ class Ignore extends Action {
   Ignore(String name) : super(name);
 
   @override
-  Future<void> perform(CallContext ctx, [int stackIndex = 0]) async {
+  Future<void> perform(CallContext ctx) async {
     //  Who should we ignore?
     final regex = 'ignore (?:the )?((?:${CodedCall.specifier} )+)(?:and )?(?:for a )?(.+)'.ri;
     final match = regex.firstMatch(name);

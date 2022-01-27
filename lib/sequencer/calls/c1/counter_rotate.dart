@@ -28,8 +28,8 @@ class CounterRotate extends Action {
   CounterRotate() : super('Counter Rotate');
 
   @override
-  Future<void> perform(CallContext ctx, [int i = 0]) async {
-    await super.perform(ctx, i);
+  Future<void> perform(CallContext ctx) async {
+    await super.perform(ctx);
     //  Looks much better if dancers all take the same time
     var maxBeats = ctx.dancers.maxOf((d) => d.path.beats);
     for (var d in ctx.dancers) {

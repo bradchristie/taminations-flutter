@@ -26,7 +26,7 @@ class TransferAnd extends Action {
   TransferAnd(String name) : super(name);
 
   @override
-  Future<void> perform(CallContext ctx, [int stackIndex = 0]) async {
+  Future<void> perform(CallContext ctx) async {
     final othercall = name.replaceFirst('Transfer\\s+and\\s+'.ri,'');
     await ctx.applyCalls('Transfer and');
     ctx.contractPaths();

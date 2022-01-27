@@ -26,7 +26,7 @@ class CircleBy extends Action {
   CircleBy(String name) : super(name);
 
   @override
-  Future<void> perform(CallContext ctx, [int stackIndex = 0]) async {
+  Future<void> perform(CallContext ctx) async {
     //  Make sure we have "Circle By <fraction> and <something>"
     final a = name.replaceFirst('Circle By','').divide('and');
     if (a.length != 2)

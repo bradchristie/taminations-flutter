@@ -26,7 +26,7 @@ class Everyone extends Action {
   Everyone(String name) : super(name);
 
   @override
-  Future<void> performCall(CallContext ctx, [int stackIndex=0]) async {
+  Future<void> performCall(CallContext ctx) async {
     //  Make sure the previous call is completed
     ctx.extendPaths();
     //  Then everyone can do the next call

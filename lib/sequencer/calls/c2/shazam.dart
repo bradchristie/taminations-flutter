@@ -27,7 +27,7 @@ class Shazam extends ActivesOnlyAction with CallWithParts {
   Shazam() : super('Shazam');
 
   @override
-  Future<void> perform(CallContext ctx, [int stackIndex = 0]) async {
+  Future<void> perform(CallContext ctx) async {
     if (ctx.dancers.any((d) => !ctx.isInWave(d)))
       throw CallError('All dancers must be in a Wave');
     await super.perform(ctx);

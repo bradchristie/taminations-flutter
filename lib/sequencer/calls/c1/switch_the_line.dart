@@ -26,7 +26,7 @@ class SwitchTheLine extends Action {
   SwitchTheLine() : super('Switch the Line');
 
   @override
-  Future<void> perform(CallContext ctx, [int stackIndex = 0]) async {
+  Future<void> perform(CallContext ctx) async {
     //  Start with Ends Cross Run
     await ctx.applyCalls('Ends Cross Run');
     //  And now make tne centers Run instead of Dodge

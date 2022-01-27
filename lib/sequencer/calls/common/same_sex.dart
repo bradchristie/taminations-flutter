@@ -27,7 +27,7 @@ class SameSex extends Action {
   SameSex(String name) : super(name);
 
   @override
-  Future<void> performCall(CallContext ctx, [int stackIndex=0]) async {
+  Future<void> performCall(CallContext ctx) async {
     var call = name.replaceFirst('Same Sex(es)?'.r, '');
     await ctx.applyCalls('Boys $call While Girls $call');
   }

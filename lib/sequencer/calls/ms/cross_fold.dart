@@ -27,7 +27,7 @@ class CrossFold extends Action {
   CrossFold() : super('Cross Fold');
 
   @override
-  Future<void> perform(CallContext ctx, [int stackIndex=0]) async {
+  Future<void> perform(CallContext ctx) async {
     //  Centers and ends cannot both cross fold
     if (ctx.actives.any((d) => d.data.center) &&
         ctx.actives.any((d) => d.data.end))

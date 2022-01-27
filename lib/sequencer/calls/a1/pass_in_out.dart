@@ -26,7 +26,7 @@ class PassInOut extends Action {
   PassInOut(String name) : super(name);
 
   @override
-  Future<void> perform(CallContext ctx, [int stackIndex = 0]) async {
+  Future<void> perform(CallContext ctx) async {
     await ctx.applyCalls('Pass Thru',name.replaceFirst('Pass', 'Face'));
   }
 

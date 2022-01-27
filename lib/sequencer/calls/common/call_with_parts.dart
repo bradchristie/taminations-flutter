@@ -86,7 +86,7 @@ mixin CallWithParts {
   Future<void> Function(CallContext ctx)? get lastPart => replacePart[numberOfParts];
   set lastPart(value) { replacePart[numberOfParts] = value; }
 
-  Future<void> perform(CallContext ctx, [int stackIndex=0]) async {
+  Future<void> perform(CallContext ctx) async {
     for (var part=1; part<=numberOfParts; part++) {
       ctx.extendPaths();
       ctx.analyze();

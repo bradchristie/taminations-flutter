@@ -26,7 +26,7 @@ class TripleTrade extends Action {
   TripleTrade() : super('Triple Trade');
 
   @override
-  Future<void> perform(CallContext ctx, [int stackIndex = 0]) async {
+  Future<void> perform(CallContext ctx) async {
     //  Check to see if there's a line of 6
     //  If so, do it with those dancers
     final lineOf6 = ctx.dancers.where((d) =>
