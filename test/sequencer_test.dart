@@ -2662,5 +2662,24 @@ Girls Circulate
 Boys Run
 Ferris Wheel
 Centers Square Thru 3
+Allemande Left''',
+
+  'Scoot and Weave' :
+'''Sides Pass the Ocean
+Extend
+Reverse Order Scoot and Weave
+Quarter Thru
+Boys Run
+Pass Thru
+Wheel and Deal
+Centers Square Thru 3
+Allemande Left''',
+
+  'Square the Bases' :
+'''Heads Star Thru and Spread
+Square the Bases Interrupt Between Each Part With Centers Half Sashay
+Star Thru
+Bend the Line
+Slide Thru
 Allemande Left'''
 };

@@ -25,6 +25,7 @@
 + **[Scoot and Ramble](../c1/scoot_and_ramble.md)** - is a 2-Part Call
 + (selected dancers) **[Start](../c1/start.md)** -
   currently limited to some multi-part calls that start with a Pass Thru or Trade.
++ **[Square the Bases](../c1/square_the_bases.md)** - is a 3-Part Call
 + **[Tandem Concept](../c1/tandem_concept.md)** -
   Works with 4-dancer calls with all 8 dancers as tandems
 + **[Triangle Circulate](../c1/triangle_formation.md)** - use one of these modifiers to identify the triangle:

@@ -48,6 +48,7 @@ import 'a2/mini_busy.dart';
 import 'a2/motivate.dart';
 import 'a2/pass_and_roll.dart';
 import 'a2/remake.dart';
+import 'a2/scoot_and_weave.dart';
 import 'a2/single_wheel.dart';
 import 'a2/slide.dart';
 import 'a2/slip.dart';
@@ -118,6 +119,7 @@ import 'c1/scoot_and_plenty.dart';
 import 'c1/scoot_and_ramble.dart';
 import 'c1/siamese.dart';
 import 'c1/skip.dart';
+import 'c1/square_the_bases.dart';
 import 'c1/squeeze.dart';
 import 'c1/squeeze_the_galaxy.dart';
 import 'c1/squeeze_the_hourglass.dart';
@@ -422,6 +424,7 @@ abstract class CodedCall extends Call {
     'scootandcrossramble'.ri: (_) => ScootAndCrossRamble(),
     'scootandplenty'.ri: (name) => ScootAndPlenty(name),
     'scootandramble'.ri: (_) => ScootAndRamble(),
+    'scootandweave'.ri: (_) => ScootAndWeave(),
     'separate'.ri: (_) => Separate(),
     'shazam'.ri: (_) => Shazam(),
     'siamese.+'.ri: (name) => Siamese(name),
@@ -446,6 +449,7 @@ abstract class CodedCall extends Call {
     'splitcounterrotate'.ri: (_) => SplitCounterRotate(),
     '(left)?splitsquarethru[2-7]?'.ri: (name) => SplitSquareThru(name),
     '(and)?spread'.ri: (name) => Spread(name),
+    'squarethebases'.ri: (_) => SquareTheBases(),
     'squaretheset'.ri: (_) => SquareTheSet(),
     'squeeze'.ri: (_) => Squeeze(),
     'squeezethegalaxy'.ri: (_) => SqueezeTheGalaxy(),
