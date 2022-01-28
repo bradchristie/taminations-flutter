@@ -51,6 +51,8 @@ class Zoom extends Action {
       var d2 = ctx.dancerInBack(d).throwIfNull(CallError('Dancer $d cannot $name'));
       if (!d2.data.active)
         throw CallError('Trailer of dancer $d is not active' );
+      if (ctx.dancerInBack(d2) == d)
+        throw CallError('Cannot call $name from back-to-back dancers');
       var dist = d.distanceTo(d2);
       return TamUtils.getMove(c,
           beats:2.0,
@@ -69,16 +71,23 @@ class Zoom extends Action {
       if (!d2.data.active)
         throw CallError('Leader of dancer $d is not active' );
       var dist = d.distanceTo(d2);
+      var offset = ctx.dancerInFront(d2) == d ? 0.5 : 0.0;
       return (name == 'Zoom' )
           ? TamUtils.getMove('Forward' ,
-          beats:4.0,
-          scale:[dist,1.0].v)
+          beats:2.0,
+          scale:[dist/2.0,1.0].v,
+          skew: [0.0,offset].v) +
+          TamUtils.getMove('Forward' ,
+              beats:2.0,
+              scale:[dist/2.0,1.0].v,
+              skew: [0.0,-offset].v)
           : TamUtils.getMove('Forward' ,
           beats:2.0,
-          scale:[dist-1,1.0].v) +
+          scale:[dist-1,1.0].v,
+          skew: [0.0,offset].v) +
           TamUtils.getMove(c3,
               beats:2.0,
-              skew:[1.0,0.0].v);
+              skew:[1.0,-offset].v);
     } else
       throw CallError('Dancer $d cannot $name' );
   }
