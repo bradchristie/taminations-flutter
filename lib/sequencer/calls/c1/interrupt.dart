@@ -30,7 +30,7 @@ class Interrupt extends Action {
     //  Parse out the call with parts we are interrupting
     final callName = name.replaceFirst('interrupt .+'.ri,'').trim();
     //  Parse out what to interrupt it with
-    final interruptName = name.replaceFirst('.+interrupt .+? with a?n?'.ri,'').trim();
+    final interruptName = name.replaceFirst('.+interrupt .+? with a?n?\\b'.ri,'').trim();
 
     await ctx.subContext(ctx.dancers, (ctx2) async {
       //  Get the call with parts

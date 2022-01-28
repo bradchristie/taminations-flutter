@@ -2681,5 +2681,16 @@ Square the Bases Interrupt Between Each Part With Centers Half Sashay
 Star Thru
 Bend the Line
 Slide Thru
+Allemande Left''',
+
+  'Quarter Mix' :
+'''Sides Pass the Ocean
+Extend
+1/4 Mix Interrupt Between Each Part With Split Circulate
+Left 1/4 Mix Interrupt Between Each Part With Acey Deucey
+Fan the Top
+Reverse Order Grand Left 3/4 Mix
+Girls Run
+Centers Pass Thru
 Allemande Left'''
 };

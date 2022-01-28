@@ -176,6 +176,7 @@ import 'c2/the_k.dart';
 import 'c2/truck.dart';
 import 'c2/zip_code.dart';
 import 'c3a/couple_up.dart';
+import 'c3a/quarter_mix.dart';
 import 'c3a/snap_the_lock.dart';
 import 'c3b/reverse_order.dart';
 import 'call.dart';
@@ -403,6 +404,7 @@ abstract class CodedCall extends Call {
     '14(in|out)'.ri: (name) => QuarterInOut(name),
     'anda?14more'.ri: (_) => QuarterMore(),
     '(left)?14tag'.ri: (name) => QuarterTag(name),
+    '(grand)?(left)?(14|34)mix'.ri: (name) => QuarterMix(name),
     '(grand)?(left)?(14|34)thru'.ri: (name) => QuarterThru(name),
 
     'ramble'.ri: (_) => Ramble(),

@@ -19,15 +19,14 @@
 
 import '../common.dart';
 
-class QuarterThru extends Action with CallWithParts {
+class QuarterMix extends Action with CallWithParts {
 
-  @override var level = LevelData.A1;
-  @override var numberOfParts = 2;
-  List<Dancer>? part1dancers;
+  @override var level = LevelData.C3A;
+  @override var numberOfParts = 3;
   bool isGrand;
   bool isLeft;
   bool isThree;
-  QuarterThru(String name) :
+  QuarterMix(name) :
         isGrand=name.contains('Grand'),
         isLeft=name.contains('Left'),
         isThree=TamUtils.normalizeCall(name).contains('34'),
@@ -38,7 +37,6 @@ class QuarterThru extends Action with CallWithParts {
     await ctx.subContext(ctx.dancersHoldingSameHands(isRight: !isLeft, isGrand: isGrand), (ctx2) async {
       if (ctx2.dancers.isEmpty)
         throw CallError('No dancers able to do Part 1 of $name');
-      part1dancers = ctx2.dancers;
       await ctx2.applyCalls(isThree ? 'Cast Off 3/4' : 'Hinge');
     }
     );
@@ -46,14 +44,12 @@ class QuarterThru extends Action with CallWithParts {
 
   @override
   Future<void> performPart2(CallContext ctx) async {
-    await ctx.subContext(ctx.dancersHoldingSameHands(isRight: isLeft, isGrand: isGrand), (ctx2) async {
-      if (ctx2.dancers.isEmpty)
-        throw CallError('No dancers able to do Part 2 of $name');
-      if (part1dancers != null && !part1dancers!.any((d) => ctx2.actives.contains(d)))
-        throw CallError('No dancers doing both Parts 1 and 2 of $name');
-      await ctx2.applyCalls('Trade');
-    }
-    );
+    await ctx.applyCalls('Centers Cross Run');
+  }
+
+  @override
+  Future<void> performPart3(CallContext ctx) async {
+    await ctx.applyCalls('Centers Trade');
   }
 
 }
