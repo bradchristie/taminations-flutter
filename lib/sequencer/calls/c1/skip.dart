@@ -26,7 +26,7 @@ class Skip extends Action {
 
   @override
   Future<void> perform(CallContext ctx) async {
-    final callName = name.replaceFirst('(but )?skip .+'.ri,'').trim();
+    final callName = name.replaceFirst('(but )?(skip|delete) .+'.ri,'').trim();
     await ctx.subContext(ctx.dancers, (ctx2) async {
       if (!ctx2.matchCodedCall(callName))
         throw CallError('Unable to find $callName as a Call with Parts');
