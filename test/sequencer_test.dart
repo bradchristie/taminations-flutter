@@ -2158,6 +2158,19 @@ Bend the Line
 Quarter In
 Right and Left Grand''',
 
+  'Anything the Windmill 2' :
+'''Heads Pass the Ocean
+Extend
+Extend the Windmill Left
+Recycle
+Ends Half Sashay
+Star Thru
+Right and Left Thru
+Pass Thru
+Wheel and Deal
+Centers Pass Thru
+Allemande Left''',
+
   'Magic Transfer and' :
   '''Heads Touch 1/4
 Make Magic
@@ -2742,5 +2755,7 @@ Spin Chain Thru
 Recycle
 Pass Thru
 Centers Turn Thru While Outsides Trade
-Allemande Left'''
+Allemande Left''',
+
+
 };
