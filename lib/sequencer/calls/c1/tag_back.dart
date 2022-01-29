@@ -20,15 +20,21 @@
 
 import '../common.dart';
 
-class TagBack extends Action {
+class TagBack extends Action with CallWithParts {
 
   @override final level = LevelData.C1;
+  @override var numberOfParts = 2;
   TagBack(String name) : super(name);
 
   @override
-  Future<void> perform(CallContext ctx) async {
+  Future<void> performPart1(CallContext ctx) async {
     final left = name.startsWith('Left') ? 'Left' : '';
-    await ctx.applyCalls('$left Half Tag','Scoot Back');
+    await ctx.applyCalls('$left Half Tag');
+  }
+
+  @override
+  Future<void> performPart2(CallContext ctx) async {
+    await ctx.applyCalls('Scoot Back');
   }
 
 }

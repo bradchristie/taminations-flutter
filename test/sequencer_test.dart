@@ -2702,5 +2702,13 @@ Centers Walk and Dodge
 Vertical Tag Back
 Quarter Thru
 Circulate
+Right and Left Grand''',
+
+  'Tag Back' :
+'''Sides Pass the Ocean
+Extend
+Reverse Order Tag Back
+Centers Walk and Dodge
+Tag Back
 Right and Left Grand'''
 };
