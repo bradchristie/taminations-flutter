@@ -2720,5 +2720,17 @@ Flip Back Interrupt Between Each Part With Split Circulate
 Boys Run
 Ferris Wheel
 Centers Square Thru 3
+Allemande Left''',
+
+  'Wheel the Ocean' :
+'''Pass Thru
+Wheel the Ocean Interrupt After the 1st Part With Half Sashay
+Centers Run
+3/4 Wheel the Sea Interrupt After the 1st Part With Half Sashay
+Left Swing Thru
+Girls Run
+Bend the Line
+Star Thru
+Pass Thru
 Allemande Left'''
 };

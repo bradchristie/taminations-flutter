@@ -102,8 +102,10 @@ class WalkAndDodge extends ActivesOnlyAction {
     } else if (isWalker(d)) {
       //  A Walker.  Check formation and distance.
       var d2 = ctx.dancerInFront(d);
-      if (d2 == null || (ctx.dancerFacing(d) == d2 && isWalker(d2)))
-        throw CallError('Walkers cannot face each other');
+      if (d2 == null)
+        throw CallError('Walker $d must be facing another dancer');
+      if (ctx.dancerFacing(d) == d2 && isWalker(d2))
+        throw CallError('Walkers ($d and $d2) cannot face each other');
       else {
         var dist = d.distanceTo(d2);
         return TamUtils.getMove('Forward',scale:[dist,1.0].v,beats:3.0);

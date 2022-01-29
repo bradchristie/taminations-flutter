@@ -21,9 +21,10 @@
 import '../common.dart';
 
 //  This class handles all the variations of Flip Your Neighbor
-class FlipYourNeighbor extends Action {
+class FlipYourNeighbor extends Action with CallWithParts {
 
   @override final level = LevelData.C2;
+  @override var numberOfParts = 2;
   FlipYourNeighbor(String name) : super(name);
 
   static const flipTypes = {
@@ -33,9 +34,14 @@ class FlipYourNeighbor extends Action {
   };
 
   @override
-  Future<void> perform(CallContext ctx) async {
-    final secondCall = flipTypes[name] ?? thrower(CallError('Incorrect Flip call'));
-    await ctx.applyCalls('Flip the Line 1/2',secondCall);
+  Future<void> performPart1(CallContext ctx) async {
+    await ctx.applyCalls('Flip the Line 1/2');
+  }
+
+  @override
+  Future<void> performPart2(CallContext ctx) async {
+    final secondCall = flipTypes[name] ?? thrower(CallError('Incorrect Flip call'))!;
+    await ctx.applyCalls(secondCall);
   }
 
 }

@@ -175,6 +175,7 @@ import 'c2/stagger.dart';
 import 'c2/tag_your_neighbor.dart';
 import 'c2/the_k.dart';
 import 'c2/truck.dart';
+import 'c2/wheel_the_ocean.dart';
 import 'c2/zip_code.dart';
 import 'c3a/couple_up.dart';
 import 'c3a/quarter_mix.dart';
@@ -523,6 +524,7 @@ abstract class CodedCall extends Call {
     '(dancersin)?waves?(dancers)?'.ri: (name) => Waves(name),
     '(reverse)?wheeland(?!deal)(\\w.*)'.ri: (name) => WheelAnd(name),
     '(reverse)?wheelaround'.ri: (name) => WheelAround(name),
+    '(14|34)?wheelthe(ocean|sea)'.ri: (name) => WheelTheOcean(name),
     '(and)?(the)?others?.+'.ri: (name) => While(name),
     'while(the)?(others?)?.+'.ri: (name) => While(name),
     '_windmill(in|out|left|right|forward)'.ri: (name) => WindmillX(name),
