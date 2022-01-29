@@ -2692,5 +2692,15 @@ Fan the Top
 Reverse Order Grand Left 3/4 Mix
 Girls Run
 Centers Pass Thru
-Allemande Left'''
+Allemande Left''',
+
+  'Vertical Tag Back' :
+'''Sides Pass the Ocean
+Extend
+Reverse Order Vertical Tag Back
+Centers Walk and Dodge
+Vertical Tag Back
+Quarter Thru
+Circulate
+Right and Left Grand'''
 };
