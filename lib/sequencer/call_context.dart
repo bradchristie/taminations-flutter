@@ -1097,7 +1097,7 @@ class CallContext {
         final d2 = dancerToRight(d);
         return d2 != null && d.distanceTo(d2) < 3.5 &&
             dancerToRight(d2) == d &&
-            (isGrand || dancers.length < 8 ||
+            (isGrand || !isTidal() ||
                 !d.data.verycenter || !d2.data.verycenter);
       }).toList();
 
@@ -1106,7 +1106,7 @@ class CallContext {
         final d2 = dancerToLeft(d);
         return d2 != null && d.distanceTo(d2) < 3.5 &&
             dancerToLeft(d2) == d &&
-            (isGrand || dancers.length < 8 ||
+            (isGrand || !isTidal() ||
                 !d.data.verycenter || !d2.data.verycenter);
       }).toList();
 
