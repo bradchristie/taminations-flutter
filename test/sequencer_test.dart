@@ -2732,5 +2732,15 @@ Girls Run
 Bend the Line
 Star Thru
 Pass Thru
+Allemande Left''',
+
+  'Left Swing Thru' :
+'''Heads Pass the Ocean
+Left Swing Thru
+Extend
+Spin Chain Thru
+Recycle
+Pass Thru
+Centers Turn Thru While Outsides Trade
 Allemande Left'''
 };

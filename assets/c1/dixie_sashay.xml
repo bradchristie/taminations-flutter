@@ -123,4 +123,28 @@
     </path>
   </tam>
 
+  <tam title="All 8 Dixie Sashay" group=" "
+       formation="Static Square">
+    <path>
+      <move select="Extend Right" beats="5" scaleY="1.75"/>
+      <move select="Forward 2" hands="left" offsetY="-.25"/>
+      <move select="Hinge Left"/>
+    </path>
+    <path>
+      <move select="Extend Left" hands="right" beats="3" scaleX="3" scaleY="2" />
+      <move select="Extend Right" hands="right" beats="2" scaleX="2" scaleY="1.75"/>
+      <move select="Hinge Left" scaleY=".75" />
+    </path>
+    <path>
+      <move select="Extend Right" beats="5" scaleY="1.75"/>
+      <move select="Forward 2" hands="left" offsetY="-.25"/>
+      <move select="Hinge Left"/>
+    </path>
+    <path>
+      <move select="Extend Left" hands="right" beats="3" scaleX="3" scaleY="2" />
+      <move select="Extend Right" hands="right" beats="2" scaleX="2" scaleY="1.75"/>
+      <move select="Hinge Left" scaleY=".75" />
+    </path>
+  </tam>
+
 </tamination>

@@ -19,6 +19,7 @@ but are useful shortcuts or fixes.
 - **Back Away** - use this after calls like Heads Right and Left Thru if you do not want the dancers to stay in the center
 - **Step Ahead**
 - **Slide In/Out/Left/Right**
+- **Flip In/OUt**
 - **While** - Combines 2 calls to be done simultaneously by 2 groups of dancers.
 You can use **While the Others** for the 2nd group to be all the dancers not in the
 1st group.
