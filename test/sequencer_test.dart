@@ -2710,5 +2710,15 @@ Extend
 Reverse Order Tag Back
 Centers Walk and Dodge
 Tag Back
-Right and Left Grand'''
+Right and Left Grand''',
+
+  'Flip Back' :
+'''Sides Pass the Ocean
+Extend
+Reverse Order Flip Back
+Flip Back Interrupt Between Each Part With Split Circulate
+Boys Run
+Ferris Wheel
+Centers Square Thru 3
+Allemande Left'''
 };

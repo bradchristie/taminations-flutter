@@ -100,6 +100,7 @@ import 'c1/counter_rotate.dart';
 import 'c1/cross_chain_thru.dart';
 import 'c1/dixie_diamond.dart';
 import 'c1/finish.dart';
+import 'c1/flip_back.dart';
 import 'c1/ignore.dart';
 import 'c1/interrupt.dart';
 import 'c1/jaywalk.dart';
@@ -328,6 +329,7 @@ abstract class CodedCall extends Call {
     'facing'.ri: (_) => FacingDancers(),
     'finish.+'.ri: (name) => Finish(name),
     'flip(in|out|left|right)'.ri: (name) => Flip(name),
+    'flipback'.ri: (_) => FlipBack(),
     'flipyour(criss)?(cross)?neighbor'.ri: (name) => FlipYourNeighbor(name),
     'fold'.ri: (_) => Fold(),
     '\\d\\d'.ri: (name) => Fraction(name),
