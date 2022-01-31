@@ -20,19 +20,17 @@ Call pronunciations provided by
 
 ***
 
-## Taminations version 1.6.31 built 2022-01-24
+## Taminations version 1.6.32 built 2022-01-31
 Copyright 2022 by Brad Christie.  
 This is free software, and you are welcome to modify and redistribute it
 under the terms of the [GNU GPL license](http://www.gnu.org/licenses/gpl.html).  
 
 ## What's New
 * New setting to draw axes
+* Add fonts to package to fix weird characters on some systems
+* Fix a couple broken animations
 * Sequencer changes:
-    * Interrupt coded, now you can use "Interrupt before/after the nth Part with ..."
-or "Interrupt between/after each Part with ..."
-    * More documentation on using specific calls
-    * More calls coded as Calls with Parts
-    * Turn Back following another call now uses body flow for turn direction
+  * More calls coded as Calls with Parts
 
 For a detailed history of changes, view the
 [Git log](https://github.com/bradchristie/taminations-flutter/commits/main)
