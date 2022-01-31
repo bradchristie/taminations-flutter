@@ -34,6 +34,10 @@ or "Interrupt between/after each Part with ..."
     * More calls coded as Calls with Parts
     * Turn Back following another call now uses body flow for turn direction
 
+For a detailed history of changes, view the
+[Git log](https://github.com/bradchristie/taminations-flutter/commits/main)
+
+
 ***
 ## Recommended Browsers
 
