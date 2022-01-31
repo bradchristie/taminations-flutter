@@ -25,6 +25,7 @@ class Bounce extends ActivesOnlyAction with CallWithParts {
   @override final level = LevelData.C2;
   @override int numberOfParts = 2;
   var direction = 'Right';
+  var whodancers = <Dancer>[];
   Bounce(String name) : super(name);
 
   @override
@@ -44,17 +45,17 @@ class Bounce extends ActivesOnlyAction with CallWithParts {
         : (centerBeaus.isNotEmpty && centerBelles.isEmpty)
         ? 'Left'
         : thrower(CallError('Unable to calculate Bounce'));
-    await ctx.applyCalls('Veer $direction');
-  }
-
-  @override
-  Future<void> performPart2(CallContext ctx) async {
     //  Remember who to bounce
     final who = name.replaceFirst('Bounce( the)?'.r,'');
     final whoctx = CallContext.fromContext(ctx,dancers:ctx.actives);
     if (!who.matches('No\\s*(body|one)'.ri))
       await whoctx.applySpecifier(who);
-    final whodancers = ctx.dancers.where((d) => whoctx.actives.contains(d)).toList();
+    whodancers = ctx.dancers.where((d) => whoctx.actives.contains(d)).toList();
+    await ctx.applyCalls('Veer $direction');
+  }
+
+  @override
+  Future<void> performPart2(CallContext ctx) async {
     await ctx.subContext(whodancers, (ctx2) async {
       await ctx2.applyCalls('Face $direction', 'Face $direction');
     });
