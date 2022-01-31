@@ -20,19 +20,23 @@
 
 import '../common.dart';
 
-class CircleBy extends Action {
+class CircleBy extends Action with CallWithParts {
 
   @override final level = LevelData.C1;
-  CircleBy(String name) : super(name);
-
-  @override
-  Future<void> perform(CallContext ctx) async {
+  @override var numberOfParts = 2;
+  late String frac1;
+  late String frac2;
+  CircleBy(String name) : super(name) {
     //  Make sure we have "Circle By <fraction> and <something>"
     final a = name.replaceFirst('Circle By','').divide('and');
     if (a.length != 2)
       throw CallError('Circle By <fraction> and <fraction or call>');
-    final frac1 = TamUtils.normalizeCall(a[0]);
-    final frac2 = TamUtils.normalizeCall(a[1]);
+    frac1 = TamUtils.normalizeCall(a[0]);
+    frac2 = TamUtils.normalizeCall(a[1]);
+  }
+
+  @override
+  Future<void> performPart1(CallContext ctx) async {
     //  Do the first fraction
     if (frac1.matches('(14|12|34)'.r))
       await ctx.applyCalls('Circle Four Left $frac1');
@@ -40,8 +44,14 @@ class CircleBy extends Action {
       throw CallError('Circle by what?');
     //  Step to a Wave
     //  be careful not to collide with any outer inactive dancers
-    final compact = (ctx.dancers.length==8 && ctx.actives.length==4) ? 'Compact' : '';
+    final compact = (ctx.dancers.length == 8 && ctx.actives.length == 4)
+        ? 'Compact'
+        : '';
     await ctx.applyCalls('Step to a $compact Wave');
+  }
+
+  @override
+  Future<void> performPart2(CallContext ctx) async {
     //  Do the second fraction or call
     if (frac2 == '14')
       await ctx.applyCalls('Hinge');
