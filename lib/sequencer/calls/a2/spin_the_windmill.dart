@@ -45,12 +45,10 @@ class SpinTheWindmill extends Action {
     final outerPart = 'Outer 4 _Windmill '+name.replaceFirst('.*windmill'.ri,'');
     //  If there's an 'any' call, first try it with the center 4
     try {
-      print('$outerPart while $centerPart');
       await ctx.applyCalls('$outerPart while $centerPart');
     } on CallError catch (e) {
       //  If that failed, try the 'any' call with all 8 dancers
       try {
-        print('$anycall; $outerPart While Centers Cast Off 3/4');
         await ctx.applyCalls(anycall, '$outerPart While Centers Cast Off 3/4');
       } on CallError catch(_) {
         throw(e);
