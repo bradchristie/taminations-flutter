@@ -199,7 +199,6 @@ class Dancer implements Comparable<Dancer> {
         if (showNumber == NUMBERS_NAMES) t = name;
         _span = TextSpan(text: t,
             style:GoogleFonts.roboto(fontSize: NUMBER_HEIGHT, color: fm.Colors.black));
-            //style:TextStyle(fontSize: NUMBER_HEIGHT, color:fm.Colors.black));
         _tp = TextPainter(text: _span,
             textAlign: TextAlign.center,
             textDirection: fm.TextDirection.ltr)..layout();

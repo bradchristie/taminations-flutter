@@ -20,6 +20,7 @@
 
 import 'package:flutter/material.dart' as fm;
 import 'package:flutter/services.dart' as fs;
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart' as pp;
 
 import '../button.dart';
@@ -314,7 +315,8 @@ class _AbbreviationsCopyButton extends fm.StatelessWidget {
           fm.ScaffoldMessenger.of(context).showSnackBar(fm.SnackBar(
               backgroundColor: Color.BLUE,
               duration: Duration(seconds: 2),
-              content: fm.Text('Abbreviations Copied.',style: fm.TextStyle(fontSize: 20))
+              content: fm.Text('Abbreviations Copied.',
+                  style: GoogleFonts.roboto(fontSize: 20))
           ));
         })
     );

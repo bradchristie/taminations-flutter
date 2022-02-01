@@ -21,6 +21,7 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart' as fm;
 import 'package:flutter/services.dart' as fs;
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart' as pp;
 import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
 import 'package:speech_to_text/speech_to_text.dart';
@@ -178,7 +179,8 @@ class _SequencerEditLineState extends fm.State<SequencerEditLine> {
           fm.ScaffoldMessenger.of(context).showSnackBar(fm.SnackBar(
               backgroundColor: Color.RED,
               duration: Duration(seconds: 2),
-              content: fm.Text(_lastError,style: fm.TextStyle(fontSize: 20))
+              content: fm.Text(_lastError,
+                  style: GoogleFonts.roboto(fontSize: 20))
           ));
         });
         //  After the same duration as the SnackBar reset the last error
@@ -213,7 +215,8 @@ class _SequencerEditLineState extends fm.State<SequencerEditLine> {
             fm.ScaffoldMessenger.of(context).showSnackBar(fm.SnackBar(
                 backgroundColor: Color.RED,
                 duration: Duration(seconds: 2),
-                content: fm.Text(message,style: fm.TextStyle(fontSize: 20))
+                content: fm.Text(message,
+                    style: GoogleFonts.roboto(fontSize: 20))
             ));
           });
         }
@@ -295,7 +298,8 @@ class _SequencerEditLineState extends fm.State<SequencerEditLine> {
                         fm.ScaffoldMessenger.of(context).showSnackBar(fm.SnackBar(
                             backgroundColor: Color.BLUE,
                             duration: Duration(seconds: 2),
-                            content: fm.Text('Sorry, speech recognition not available on this device.',style: fm.TextStyle(fontSize: 20))));
+                            content: fm.Text('Sorry, speech recognition not available on this device.',
+                                style: GoogleFonts.roboto(fontSize: 20))));
                       }
                     } );
                   }, child: fm.Icon(
@@ -401,7 +405,8 @@ class SequencerCopyButton extends fm.StatelessWidget {
           fm.ScaffoldMessenger.of(context).showSnackBar(fm.SnackBar(
               backgroundColor: Color.BLUE,
               duration: Duration(seconds: 2),
-              content: fm.Text('$countText copied to Clipboard.',style: fm.TextStyle(fontSize: 20))
+              content: fm.Text('$countText copied to Clipboard.',
+                  style: GoogleFonts.roboto(fontSize: 20))
           ));
         })
     );
