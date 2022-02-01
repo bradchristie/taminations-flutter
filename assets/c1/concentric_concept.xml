@@ -1355,11 +1355,11 @@
   </tam>
 
   <tamxref title="Concentric (C-1) 2/3 Recycle" group="Concentric (C-1)"
-           xref-link="c1/2_3_recycle"
+           xref-link="c1/recycle"
            xref-title="Concentric 2/3 Recycle"/>
 
   <tamxref title="Concentric (C-1) Box Recycle" group="Concentric (C-1)"
-           xref-link="c1/box_split_recycle"
+           xref-link="c1/recycle"
            xref-title="Concentric Box Recycle"/>
 
   <tamxref title="Concentric (C-1) Chase Your Neighbor" group="Concentric (C-1)"
@@ -1407,7 +1407,7 @@
            xref-title="Concentric Zing"/>
 
   <tamxref title="Concentric (C-2) Bounce the Boys" group="Concentric (C-2)"
-           xref-link="c2/bounce_the_anyone"
+           xref-link="c2/bounce"
            xref-title="Concentric Bounce the Boys"/>
 
   <tamxref title="Concentric (C-2) Circle to a Wave" group="Concentric (C-2)"

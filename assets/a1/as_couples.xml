@@ -963,7 +963,7 @@
            xref-title="As Couples Trail Off" />
 
   <tamxref title="As Couples (C-1) 2/3 Recycle" group="As Couples (C-1)"
-           xref-link="c1/2_3_recycle"
+           xref-link="c1/recycle"
            xref-title="As Couples 2/3 Recycle"/>
 
   <tamxref title="As Couples (C-1) Ah So" group="As Couples (C-1)"
@@ -975,7 +975,7 @@
            xref-title="As Couples Alter the Wave" />
 
   <tamxref title="As Couples (C-1) Box Recycle" group="As Couples (C-1)"
-           xref-link="c1/box_split_recycle"
+           xref-link="c1/recycle"
            xref-title="As Couples Box Recycle" />
 
   <tamxref title="As Couples (C-1) Chase Your Neighbor" group="As Couples (C-1)"
@@ -1055,7 +1055,7 @@
            xref-title="As Couples Zing" />
 
   <tamxref title="As Couples (C-2) Bounce the Ends" group="As Couples (C-2)"
-           xref-link="c2/bounce_the_anyone"
+           xref-link="c2/bounce"
            xref-title="As Couples Bounce the Ends" />
 
   <tamxref title="As Couples (C-2) Criss Cross Your Neighbor" group="As Couples (C-2)"
@@ -1070,8 +1070,9 @@
            xref-link="c2/peel_to_a_diamond"
            xref-title="As Couples Peel to a Diamond" />
 
-  <tamxref title="As Couples (C-2) Reverse Split Swap Around" group="As Couples (C-2)"
-           xref-link="c2/reverse_split_swap_around"
+  <tamxref title="As Couples (C-2) Reverse Split Swap Around"
+           group="As Couples (C-2)"
+           xref-link="c2/split_swap_around"
            xref-title="As Couples Reverse Split Swap Around" />
 
   <tamxref title="As Couples (C-2) Split Swap Around" group="As Couples (C-2)"
@@ -1079,7 +1080,7 @@
            xref-title="As Couples Split Swap Around" />
 
   <tamxref title="As Couples (C-2) The K" group="As Couples (C-2)"
-           xref-link="c2/crpss_the_k"
+           xref-link="c2/cross_the_k"
            xref-title="As Couples the K" />
 
   <tamxref title="As Couples (C-2) Trail to a Diamond" group="As Couples (C-2)"

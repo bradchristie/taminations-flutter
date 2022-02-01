@@ -925,7 +925,7 @@
   </tam>
 
   <tamxref title="Tandem (C-1) 2/3 Recycle" group="Tandem (C-1)"
-           xref-link="c1/2_3_recycle"
+           xref-link="c1/recycle"
            xref-title="Tandem 2/3 Recycle"/>
 
   <tamxref title="Tandem (C-1) Ah So" group="Tandem (C-1)"
@@ -937,7 +937,7 @@
            xref-title="Tandem Alter the Wave"/>
 
   <tamxref title="Tandem (C-1) Box Recycle" group="Tandem (C-1)"
-           xref-link="c1/box_split_recycle"
+           xref-link="c1/recycle"
            xref-title="Tandem Box Recycle"/>
 
   <tamxref title="Tandem (C-1) Chase Your Neighbor" group="Tandem (C-1)"
@@ -993,7 +993,7 @@
            xref-title="Tandem Zing"/>
 
   <tamxref title="Tandem (C-2) Bounce the Centers" group="Tandem (C-2)"
-           xref-link="c2/bounce_the_anyone"
+           xref-link="c2/bounce"
            xref-title="Tandem Bounce the Centers"/>
 
   <tamxref title="Tandem (C-2) Criss Cross Your Neighbor" group="Tandem (C-2)"
@@ -1009,7 +1009,7 @@
            xref-title="Tandem Peel to a Diamond"/>
 
   <tamxref title="Tandem (C-2) Reverse Split Swap Around" group="Tandem (C-2)"
-           xref-link="c2/reverse_split_swap_around"
+           xref-link="c2/split_swap_around"
            xref-title="Tandem Reverse Split Swap Around"/>
 
   <tamxref title="Tandem (C-2) Split Swap Around" group="Tandem (C-2)"
