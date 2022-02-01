@@ -17,10 +17,9 @@
   along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 */
-import 'dart:math';
-
 import 'package:flutter/material.dart' as fm;
 import 'package:flutter/painting.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import 'common.dart';
 
@@ -102,7 +101,7 @@ extension DancerList on List<Dancer> {
     }
   }
 
-  String show({bool arrayNumbers:false}) {
+  String show({bool arrayNumbers=false}) {
     final charMatrix = [for (var i=0; i<11; i++) [ for (var j=0; j<21; j++) ' ']];
     for (var i=0; i<21; i++)
       charMatrix[5][i] = '-';
@@ -199,8 +198,8 @@ class Dancer implements Comparable<Dancer> {
         if (showNumber == NUMBERS_COUPLES) t = numberCouple;
         if (showNumber == NUMBERS_NAMES) t = name;
         _span = TextSpan(text: t,
-            //style:GoogleFonts.roboto(fontSize: NUMBER_HEIGHT, color: fm.Colors.black));
-            style:TextStyle(fontSize: NUMBER_HEIGHT, color:fm.Colors.black));
+            style:GoogleFonts.roboto(fontSize: NUMBER_HEIGHT, color: fm.Colors.black));
+            //style:TextStyle(fontSize: NUMBER_HEIGHT, color:fm.Colors.black));
         _tp = TextPainter(text: _span,
             textAlign: TextAlign.center,
             textDirection: fm.TextDirection.ltr)..layout();
