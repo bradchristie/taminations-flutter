@@ -2736,15 +2736,17 @@ Centers Square Thru 3
 Allemande Left''',
 
   'Wheel the Ocean' :
-'''Pass Thru
+'''Heads Star Thru and Spread
+Pass Thru
 Wheel the Ocean Interrupt After the 1st Part With Half Sashay
 Centers Run
 3/4 Wheel the Sea Interrupt After the 1st Part With Half Sashay
 Left Swing Thru
+Left Quarter Thru
 Girls Run
-Bend the Line
-Star Thru
-Pass Thru
+Wheel and Deal
+Zoom
+Centers Pass Thru
 Allemande Left''',
 
   'Left Swing Thru' :

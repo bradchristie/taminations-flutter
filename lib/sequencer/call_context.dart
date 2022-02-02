@@ -227,6 +227,12 @@ class CallContext {
     return Future<void>.value();
   }
 
+  static final genderMap = {
+    'boy': Gender.BOY,
+    'girl': Gender.GIRL,
+    'phantom': Gender.PHANTOM
+  };
+
   /////// end of static code ///////
 
   late List<Dancer> dancers;
@@ -240,11 +246,6 @@ class CallContext {
   bool _thoseWhoCan = false;
   bool resolutionError = false;
   bool asymmetric = false;
-  var genderMap = {
-    'boy': Gender.BOY,
-    'girl': Gender.GIRL,
-    'phantom': Gender.PHANTOM
-  };
 
   //  Create a context from an array of Dancer
   CallContext.fromDancers(List<Dancer> dancers) {
@@ -348,6 +349,26 @@ class CallContext {
     var ctx = CallContext.fromContext(this,dancers:dancers.inOrder());
     await block(ctx);
     return ctx.appendToSource(this);
+  }
+
+  void insertAfterNextAction(Call thisCall, Call insertCall) {
+    //  Find out where we are
+    final i = callstack.indexOf(thisCall);
+    if (i < 0)
+      throw CallError('Unable to find $thisCall in call stack');
+    //  Make sure it's not already inserted
+    for (var j=i+1; j<callstack.length; j += 1) {
+      if (insertCall.name == callstack[j].name)
+        return;
+    }
+    //  Find the next action and insert the call
+    for (var j=i+1; j<callstack.length; j += 1) {
+      if (callstack[j] is Action) {
+        callstack.insert(j, insertCall);
+        return;
+      }
+    }
+    throw CallError('Unable to find Action to insert $insertCall');
   }
 
   //  For now this just checks for collisions in a tidal formation
@@ -499,7 +520,7 @@ class CallContext {
     //  Needed for calls like 'Explode And ...'
     if (callstack.isNotEmpty) {
       ctx1 = CallContext.fromContext(this);
-      ctx1.callstack = callstack;
+      ctx1.callstack = callstack.copy();
       //  Ignore any errors, some precursors (like Half) expect to find more on the stack
       try {
         await ctx1.performCall();
@@ -813,6 +834,10 @@ class CallContext {
   //  This doesn't run an animation, rather it takes the stack of calls
   //  and builds the dancer movements.
   Future<void> performCall() async {
+    final saveCallstack = callstack.copy();
+    for (final d in dancers) {
+      d.path.clear();
+    }
     analyze();
     for (var i=0; i<callstack.length; i++) {
       var c = callstack[i];
@@ -824,10 +849,7 @@ class CallContext {
         level = c.level;
       extendPaths();
     }
-    for (var i=0; i<callstack.length; i++) {
-      var c = callstack[i];
-      c.postProcess(this);
-    }
+    callstack = saveCallstack;
   }
 
 

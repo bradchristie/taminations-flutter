@@ -28,6 +28,5 @@ abstract class Call {
 
   Call(this.name);
   Future<void> performCall(CallContext ctx) => Future<void>.value();
-  void postProcess(CallContext ctx) { }
 
 }

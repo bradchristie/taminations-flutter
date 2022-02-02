@@ -18,82 +18,96 @@
 
 */
 
-import '../action.dart';
-import '../call.dart';
-import '../../../extensions.dart';
-import '../../call_context.dart';
-import '../../call_error.dart';
-import '../../../tam_utils.dart';
-import '../xml_call.dart';
-import '../../../math/movement.dart';
+import 'package:taminations/sequencer/calls/coded_call.dart';
 
+import '../call.dart';
+import '../common.dart';
+import '../xml_call.dart';
+
+//  This class is for a fraction before a call
+//  such as "3/4 Load the Boat"
 class Fraction extends Action {
 
+  var _partBeats = 0.0;
+  int _numerator = 0;
+  int _denominator = 1;
+
   Fraction(String name) : super(name) {
-    _call = this;
     //  Convert "half", "quarter", "3/5" etc into "12","14","35"
     var norm = TamUtils.normalizeCall(name);
     _numerator = norm[0].i;
     _denominator = norm[1].i;
+    if (_numerator < 1 || _numerator >= _denominator)
+      throw CallError('Use fractions between 0 and 1.');
   }
-
-  var _prevBeats = 0.0;
-  var _partBeats = 0.0;
-  int _numerator = 0;
-  int _denominator = 1;
-  late Call _call;
 
   @override
   Future<void> perform(CallContext ctx) async {
     final stackIndex = ctx.callstack.indexOf(this);
-    if (stackIndex >= ctx.callstack.length - 1)
-      throw CallError('$name of what?' );
-    //  Steal the next call off the stack
-    _call = ctx.callstack[stackIndex+1];
-    //  For XML calls there should be an explicit number of parts
-    if (_numerator < 1 || _numerator >= _denominator)
-      throw CallError('Use fractions between 0 and 1.');
-    if (_call is XMLCall) {
-      //  Figure out how many beats are in the fractional call
-      //  Calls could have either "parts" or "fractions"
-      var xmlCall = _call as XMLCall;
-      var parts = xmlCall.xelem('parts' ,'' ) + xmlCall.xelem('fractions' ,'' );
-      if (parts.isNotEmpty) {
-        var partnums = parts.split(';' );
-        var numParts = partnums.length + 1;
-        if (numParts % _denominator != 0)
-          throw CallError('Unable to divide ${_call.name} into $_denominator parts.' );
-        var partsToDo = numParts * _numerator ~/ _denominator;
-        _partBeats = partnums.take(partsToDo).map((it) => it.d).toList().sum();
-      }
-      //  If parts is empty, will calculate fraction below
-      //  in postProcess
+    final fracctx = CallContext.fromContext(ctx);
+    //  Look for the call to fractionalilze
+    //  Must be a subsequent action on the stack
+    var found = false;
+    var call = ctx.callstack[stackIndex];
+    while (!found && stackIndex+1 < ctx.callstack.length) {
+      call = ctx.callstack.removeAt(stackIndex+1);
+      found = call is Action || call is XMLCall;
+      fracctx.callstack.add(call);
     }
-    _prevBeats = ctx.maxBeats();
-  }
+    if (!found)
+      throw CallError('Not able to find call for fraction $name');
 
-  //  Call is performed between these two methods
-
-  @override
-  void postProcess(CallContext ctx) {
-    //  Coded calls so far do not have explicit parts
-    //  so just divide them by the given fraction
-    //  Also if an XML call does not have parts just divide the beats
-    if (_call is Action || _partBeats == 0.0)
-      _partBeats = (ctx.maxBeats() - _prevBeats) * _numerator / _denominator;
-
-    //  Chop off the excess fraction
-    for (var d in ctx.dancers) {
-      Movement? mo;
-      while (d.path.beats > _prevBeats + _partBeats)
-        mo = d.path.pop();
-      //  OK if there's no movement, part of nothing is nothing
-      if (mo != null) {
-        if (d.path.beats < _prevBeats + _partBeats)
-          d.path.add(mo.clip(_prevBeats + _partBeats - d.path.beats));
+    //  If an XML call, see if we can replace it with a Call with Parts
+    if (call is XMLCall) {
+      final codedCall = CodedCall.fromName(call.name);
+      if (codedCall is CallWithParts) {
+        call = codedCall!;
+        fracctx.callstack.last = codedCall;
       }
     }
-    super.postProcess(ctx);
+
+    if (call is CallWithParts) {
+      final cwp = call as CallWithParts;
+      if (cwp.numberOfParts % _denominator != 0)
+        throw CallError('Unable to divide ${call.name} into $_denominator parts.' );
+      cwp.numberOfParts = cwp.numberOfParts * _numerator ~/ _denominator;
+      await fracctx.performCall();
+
+    } else {
+      _partBeats = 0.0;
+      await fracctx.performCall();
+      if (call is XMLCall) {
+        //  Figure out how many beats are in the fractional call
+        //  Calls could have either "parts" or "fractions"
+        var parts = call.xelem('parts', '') + call.xelem('fractions', '');
+        if (parts.isNotEmpty) {
+          var partnums = parts.split(';');
+          var numParts = partnums.length + 1;
+          if (numParts % _denominator != 0)
+            throw CallError(
+                'Unable to divide ${call.name} into $_denominator parts.');
+          var partsToDo = numParts * _numerator ~/ _denominator;
+          _partBeats =
+              partnums.take(partsToDo).map((it) => it.d).toList().sum();
+        }
+      }
+      if (_partBeats == 0.0)
+        //  No parts or fractions - just take the fractional number of beats
+        _partBeats = fracctx.maxBeats() * _numerator / _denominator;
+
+      //  Chop off the excess fraction
+      for (var d in fracctx.dancers) {
+        Movement? mo;
+        while (d.path.beats > _partBeats)
+          mo = d.path.pop();
+        //  OK if there's no movement, part of nothing is nothing
+        if (mo != null) {
+          if (d.path.beats < _partBeats)
+            d.path.add(mo.clip(_partBeats - d.path.beats));
+        }
+      }
+    }
+    fracctx.appendToSource();
   }
 
 }
