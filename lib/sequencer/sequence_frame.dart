@@ -27,12 +27,10 @@ import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
 import 'package:speech_to_text/speech_to_text.dart';
 import 'package:speech_to_text/speech_to_text_provider.dart';
 
-import '../button.dart';
-import '../color.dart';
 import '../common.dart';
+import '../pages/page.dart';
 import 'abbreviations_model.dart';
 import 'sequencer_model.dart';
-import '../pages/page.dart';
 
 class SequenceFrame extends fm.StatefulWidget {
   @override
@@ -361,7 +359,9 @@ class _SequencerEditLineState extends fm.State<SequencerEditLine> {
     //  Erase it from the the text field
     textFieldController.clear();
     //  And get the focus back for the next call
-    focusNode.requestFocus();
+    later(() {
+      focusNode.requestFocus();
+    });
   }
 
 }
