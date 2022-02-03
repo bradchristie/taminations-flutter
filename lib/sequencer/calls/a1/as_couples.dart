@@ -42,9 +42,9 @@ class AsCouples extends FourDancerConcept {
     final d2 = group.second;
     if (d.location.length.isAbout(d2.location.length))
       return (d.location+d2.location).scale(0.5, 0.5);
-    //  If couple is on axis, probably tidal formation
+    //  If couple is on axis and tight, probably tidal formation
     //  put single dancer in between
-    else if (d.isTidal && d2.isTidal)
+    else if (d.isTidal && d2.isTidal && d.distanceTo(d2) < 1.5)
       return (d.location + d2.location).scale(0.5, 0.5);
     //  Otherwise set to position of the two dancers nearest origin
     else if (d.location.length < d2.location.length)

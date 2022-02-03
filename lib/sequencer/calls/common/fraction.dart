@@ -20,7 +20,6 @@
 
 import 'package:taminations/sequencer/calls/coded_call.dart';
 
-import '../call.dart';
 import '../common.dart';
 import '../xml_call.dart';
 
