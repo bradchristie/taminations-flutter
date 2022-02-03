@@ -799,11 +799,11 @@ class CallContext {
         //  If dancers are side-by-side, make sure handholding matches by checking distance
         if (handholds && (relq1 == 2 || relq1 == 6) && (relq2 == 2 || relq2 == 6)) {
           var d1 = ctx1.dancers[i].distanceTo(ctx1.dancers[j]);
-          var hold1 = d1 < 2.1 &&
+          var hold1 = d1 < 2.4 &&
               (ctx1.dancerToLeft(ctx1.dancers[i]) == ctx1.dancers[j] ||
                   ctx1.dancerToRight(ctx1.dancers[i]) == ctx1.dancers[j] );
           var d2 = ctx2.dancers[mapping[i]].distanceTo(ctx2.dancers[mapping[j]]);
-          var hold2 = d2 < 2.1 &&
+          var hold2 = d2 < 2.4 &&
               (ctx2.dancerToLeft(ctx2.dancers[mapping[i]]) == ctx2.dancers[mapping[j]] ||
                ctx2.dancerToRight(ctx2.dancers[mapping[i]]) == ctx2.dancers[mapping[j]] );
           return relq1 == relt1 && relq2 == relt2 && hold1 == hold2;
