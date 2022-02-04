@@ -33,6 +33,7 @@
 + **[Scoot and Ramble](../c1/scoot_and_ramble.md)** - is a 2-Part Call
 + (selected dancers) **[Start](../c1/start.md)** -
   currently limited to some multi-part calls that start with a Pass Thru or Trade.
++ **[Split Dixie Style](../c1/split_square_thru_variations.md)** - is a 2-Part Call
 + **[Square the Bases](../c1/square_the_bases.md)** - is a 3-Part Call
 + **[Swing the Fractions](../c1/swing_the_fractions.md)** - is a 5-Part Call
 + **[Tag Back](../c1/tagging_calls_back_to_a_wave.md)** - is a 2-Part Call

@@ -1141,7 +1141,7 @@ class CallContext {
   bool isInWave(Dancer d, [Dancer? d2]) {
     d2 ??= d.data.partner;
     return d2 != null && d.angleToDancer(d2).isAround(d2.angleToDancer(d)) &&
-        d.distanceTo(d2) < 2.1;
+        d.distanceTo(d2) < 2.4;
   }
 
   //  Return true if two dancers are facing the same direction

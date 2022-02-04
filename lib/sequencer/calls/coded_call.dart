@@ -120,6 +120,7 @@ import 'c1/scoot_and_plenty.dart';
 import 'c1/scoot_and_ramble.dart';
 import 'c1/siamese.dart';
 import 'c1/skip.dart';
+import 'c1/split_dixie_style.dart';
 import 'c1/square_the_bases.dart';
 import 'c1/squeeze.dart';
 import 'c1/squeeze_the_galaxy.dart';
@@ -180,6 +181,8 @@ import 'c2/zip_code.dart';
 import 'c3a/couple_up.dart';
 import 'c3a/quarter_mix.dart';
 import 'c3a/snap_the_lock.dart';
+import 'c3b/cast_and_relay.dart';
+import 'c3b/change_the_centers.dart';
 import 'c3b/reverse_order.dart';
 import 'call.dart';
 import 'common/adjust.dart';
@@ -240,7 +243,6 @@ import 'plus/acey_deucey.dart';
 import 'plus/coordinate.dart';
 import 'plus/diamond_circulate.dart';
 import 'plus/explode.dart';
-import 'plus/grand_swing_thru.dart';
 import 'plus/load_the_boat.dart';
 import 'plus/points.dart';
 import 'plus/roll.dart';
@@ -282,6 +284,7 @@ abstract class CodedCall extends Call {
     'butterfly.*'.ri: (name) => Butterfly(name),
 
     'californiatwirl'.ri: (_) => CaliforniaTwirl(),
+    '(14|12|34)castandrelay'.ri: (name) => CastAndRelay(name),
     'castashadowcenter(go|cast)?34'.ri: (name) => CastAShadow(name),
     '(cross)?castback'.ri: (name) => CastBack(name),
     'castoff34'.ri: (_) => CastOffThreeQuarters(),
@@ -291,6 +294,7 @@ abstract class CodedCall extends Call {
     'centerwaveof4'.ri: (_) => CenterWaveOfFour(),
     'chainreaction'.ri: (_) => ChainReaction(),
     'checkpoint(.+)by(.*)'.ri: (name) => Checkpoint(name),
+    'changethe(centers?|wave)'.ri: (name) => ChangeTheCenters(name),
     'chiselthru'.ri: (_) => ChiselThru(),
     'circleby(14|12|34|nothing)and(14|12|34|nothing)'.ri: (name) => CircleBy(name),
     'circleby(14|12|34|nothing)and(?!(14|12|34|nothing)).*'.ri: (name) => CircleBy(name),
@@ -340,8 +344,6 @@ abstract class CodedCall extends Call {
     '(left)?grandsinglecrossandwheel'.ri: (name) => GrandSingleCrossAndWheel(name),
     '(left)?grandsinglecrosstradeandwheel'.ri:
         (name) => GrandSingleCrossTradeAndWheel(name),
-    'grand(left)?swingthru'.ri: (name) => GrandSwingThru(name),
-    '_grandswing(left|right)?'.ri: (name) => GrandSwingX(name),
 
     '(reverse)?12sashay'.ri: (name) => HalfSashay(name),
     '(left)?12tag'.ri: (name) => HalfTag(name),
@@ -452,6 +454,7 @@ abstract class CodedCall extends Call {
     '(.+)thewindmill(left|right|in|out|forward)'.ri: (name) => SpinTheWindmill(name),
     'splitcirculate'.ri: (_) => SplitCirculate(),
     'splitcounterrotate'.ri: (_) => SplitCounterRotate(),
+    'splitdixiestyle(toawave)?'.ri: (name) => SplitDixieStyle(name),
     '(left)?splitsquarethru[2-7]?'.ri: (name) => SplitSquareThru(name),
     '(and)?spread'.ri: (name) => Spread(name),
     'squarethebases'.ri: (_) => SquareTheBases(),

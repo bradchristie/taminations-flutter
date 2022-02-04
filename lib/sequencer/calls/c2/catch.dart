@@ -23,7 +23,7 @@ import '../common.dart';
 class Catch extends Action with CallWithParts {
 
   @override int numberOfParts = 3;
-  @override final level = LevelData.C2;
+  @override var level = LevelData.C2;
   Catch(String name) : super(name);
   late String direction = name.contains('Left') ? 'Left' : '';
   late String split = name.contains('Split') ? 'Split' : '';
@@ -45,6 +45,8 @@ class Catch extends Action with CallWithParts {
     var part2 = 'catch(.*)[1234]'.ri.firstMatch(name)![1]!;
     if (part2.isBlank)
       part2 = 'Centers Trade';
+    else
+      level = LevelData.C3A;
     await ctx.applyCalls(part2);
   }
 

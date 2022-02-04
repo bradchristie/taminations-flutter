@@ -5,7 +5,7 @@
 * **[As Couples](../a1/as_couples.md)** - You cannot limit As Couples to just some dancers: "Boys As Couples Run" will not work.
 * **[Beaus and Belles](../a1/belles_and_beaus.md)** - follows the A-1 definition
 * **[Cast a Shadow](../a1/cast_a_shadow.md)** - you can tell the Centers to Go 3/4
-* **[Chain Reaction](../a1/cast_a_shadow.md)** - is a 4-Part Call with Stars and But
+* **[Chain Reaction](../a1/cast_a_shadow.md)** - is a 4-Part Call with a Star and But
 * **[(Cross) Clover and Anything](../a1/clover_and_anything.md)** - 
 the Anything call must apply to the center 4 dancers only.
 * **[Cross](../a1/anything_and_cross.md)** -

@@ -19,34 +19,27 @@
 
 import '../common.dart';
 
-class Motivate extends Action with CallWithParts, CallWithStars, ButCall {
+class SplitDixieStyle extends Action with CallWithParts {
 
-  @override int numberOfParts = 4;
-  @override final level = LevelData.A2;
-  @override var turnStarAmount = 2;
-  Motivate() : super('Motivate');
+  @override var level = LevelData.C1;
+  @override var numberOfParts = 2;
+  SplitDixieStyle(String name) : super(name);
 
   @override
   Future<void> performPart1(CallContext ctx) async {
-    await ctx.applyCalls('Circulate');
+    if (ctx.dancers.any((d) => ctx.isInWave(d))) {
+      final face = ctx.dancers.where((d) => ctx.isInWave(d)).every((d) => d.data.center)
+      ? 'Face Out' : 'Face In';
+      await ctx.applyCalls('Wave Dancers Pull By and $face');
+    } else {
+      await ctx.applyCalls('Facing Dancers Pull By and 1/4 In');
+    }
   }
 
   @override
   Future<void> performPart2(CallContext ctx) async {
-    await ctx.applyCalls('Center 4 Cast Off 3/4 '
-        'While Others Do Your Part Big Hourglass Circulate');
+    await ctx.applyCalls('Left Touch 1/4');
   }
 
-  @override
-  Future<void> performPart3(CallContext ctx) async {
-    await ctx.applyCalls('Outer 4 Trade '
-        'While Center 4 $starTurns');
-  }
-
-  @override
-  Future<void> performPart4(CallContext ctx) async {
-    await ctx.applyCalls('Wave of 6 Center 4 $butCall '
-        'While Others Do Your Part Hourglass Circulate');
-  }
 
 }

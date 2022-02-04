@@ -19,28 +19,42 @@
 
 import '../common.dart';
 
-class Motivate extends Action with CallWithParts, CallWithStars, ButCall {
+class CastAndRelay extends Action with CallWithParts, ButCall, CallWithStars {
 
-  @override int numberOfParts = 4;
-  @override final level = LevelData.A2;
-  @override var turnStarAmount = 2;
-  Motivate() : super('Motivate');
+  @override var level = LevelData.C3B;
+  @override var numberOfParts = 4;
+  @override var turnStarAmount = 0;
+  String fraction;
+  static final fractionCall = {
+    '14' : 'Hinge',
+    '12' : 'Trade',
+    '34' : 'Cast Off 3/4'
+  };
+  static final fractionTurn = {
+    '14' : 1,
+    '12' : 2,
+    '34' : 3
+  };
+  CastAndRelay(String name) :
+        fraction=TamUtils.normalizeCall(name).substring(0,2),
+        super(name);
 
   @override
   Future<void> performPart1(CallContext ctx) async {
-    await ctx.applyCalls('Circulate');
+    await ctx.applyCalls(fractionCall[fraction]!);
   }
 
   @override
   Future<void> performPart2(CallContext ctx) async {
-    await ctx.applyCalls('Center 4 Cast Off 3/4 '
-        'While Others Do Your Part Big Hourglass Circulate');
+    await ctx.applyCalls('Centers Cast Off 3/4 '
+        'While Ends Do Your Part Big Hourglass Circulate');
   }
 
   @override
   Future<void> performPart3(CallContext ctx) async {
-    await ctx.applyCalls('Outer 4 Trade '
-        'While Center 4 $starTurns');
+    if (turnStarAmount == 0)
+      turnStarAmount = fractionTurn[fraction]!;
+    await ctx.applyCalls('Center 4 $starTurns While Others Trade');
   }
 
   @override
@@ -48,5 +62,4 @@ class Motivate extends Action with CallWithParts, CallWithStars, ButCall {
     await ctx.applyCalls('Wave of 6 Center 4 $butCall '
         'While Others Do Your Part Hourglass Circulate');
   }
-
 }

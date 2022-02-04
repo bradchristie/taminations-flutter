@@ -47,7 +47,7 @@ class Adjust extends Action {
 
   @override
   Future<void> perform(CallContext ctx) async {
-    var fname = name.replaceFirst('Adjust to (an?)? '.ri, '' );
+    var fname = name.replaceFirst('Adjust to( an?)? '.ri, '' );
     var fnorm = TamUtils.normalizeCall(fname);
     String? formation;
     for (var r in formationMap.keys) {

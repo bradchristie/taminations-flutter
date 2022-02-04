@@ -2759,5 +2759,54 @@ Pass Thru
 Centers Turn Thru While Outsides Trade
 Allemande Left''',
 
+  'Swing Thru 2' :
+'''Sides Pass the Ocean
+Left Swing Thru
+Heads Separate
+Swing Thru
+Boys Run
+Wheel and Deal
+Pass the Ocean
+Boys Circulate
+Boys Run
+Circulate
+Wheel and Deal
+Allemande Left''',
 
+  'Cast and Relay' :
+'''Sides Pass the Ocean
+Extend
+1/4 Cast and Relay Turn the Star 1/2
+1/2 Cast and Relay But Hinge
+Quarter Thru
+Stretch Recycle
+Centers Turn Back
+Allemande Left''',
+
+  'Change the Centers' :
+'''Sides Pass the Ocean
+Extend
+Change the Centers Interrupt After Each Part With Split Circulate
+Change the Wave Interrupt After the 3rd Part With Acey Deucey
+Centers Circulate
+Boys Run
+Pass Thru
+Wheel and Deal
+Centers Square Thru 3
+Allemande Left''',
+
+  'Split Dixie Style' :
+'''Heads Step to a Wave
+Split Dixie Style
+Leaders Run
+Girls Hinge
+Split Dixie Style
+Circulate Twice
+Boys Run
+Center 4 Trade
+Star Thru
+Wheel and Deal
+Zoom
+Centers Square Thru 3
+Allemande Left'''
 };

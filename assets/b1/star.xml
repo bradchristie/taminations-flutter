@@ -120,6 +120,17 @@
     </path>
   </tam>
 
+  <tam title="Turn the Star" from="Facing Star" formation="Star Facing">
+    <path>
+      <move select="Eighth Left" beats="1.5" hands="left" offsetX=".353" offsetY=".647" />
+      <move select="Eighth Left" beats="1.5" hands="left" offsetX=".707" offsetY="-.207" />
+    </path>
+    <path>
+      <move select="Eighth Right" beats="1.5" offsetX="1.06" offsetY=".06" />
+      <move select="Eighth Right" beats="1.5" offsetX=".707" offsetY="-.793" />
+    </path>
+  </tam>
+
   <tam title="Turn the Stars" from="Right-Hand Stars" formation="Stars RH">
     <path>
       <move select="Hinge Right"/>
@@ -147,6 +158,56 @@
     </path>
     <path>
       <move select="Hinge Left"/>
+    </path>
+  </tam>
+
+  <tam title="Turn the Stars" from="Facing Stars 1" display="no">
+    <formation>
+      <dancer gender="boy" x="3" y="0" angle="90"/>
+      <dancer gender="girl" x="2" y="1" angle="0"/>
+      <dancer gender="boy" x="-1" y="0" angle="90"/>
+      <dancer gender="girl" x="-2" y="1" angle="0"/>
+    </formation>
+    <path>
+      <move select="Eighth Left" beats="1.5" hands="left" offsetX=".353" offsetY=".647" />
+      <move select="Eighth Left" beats="1.5" hands="left" offsetX=".707" offsetY="-.207" />
+    </path>
+    <path>
+      <move select="Eighth Right" beats="1.5" offsetX="1.06" offsetY=".06" />
+      <move select="Eighth Right" beats="1.5" offsetX=".707" offsetY="-.793" />
+    </path>
+    <path>
+      <move select="Eighth Left" beats="1.5" hands="left" offsetX=".353" offsetY=".647" />
+      <move select="Eighth Left" beats="1.5" hands="left" offsetX=".707" offsetY="-.207" />
+    </path>
+    <path>
+      <move select="Eighth Right" beats="1.5" offsetX="1.06" offsetY=".06" />
+      <move select="Eighth Right" beats="1.5" offsetX=".707" offsetY="-.793" />
+    </path>
+  </tam>
+
+  <tam title="Turn the Stars" from="Facing Stars 2" display="no">
+    <formation>
+      <dancer gender="boy" x="3" y="0" angle="270"/>
+      <dancer gender="girl" x="2" y="1" angle="180"/>
+      <dancer gender="boy" x="-1" y="0" angle="270"/>
+      <dancer gender="girl" x="-2" y="1" angle="180"/>
+    </formation>
+    <path>
+      <move select="Eighth Right" beats="1.5" offsetX="1.06" offsetY=".06" />
+      <move select="Eighth Right" beats="1.5" offsetX=".707" offsetY="-.793" />
+    </path>
+    <path>
+      <move select="Eighth Left" beats="1.5" hands="left" offsetX=".353" offsetY=".647" />
+      <move select="Eighth Left" beats="1.5" hands="left" offsetX=".707" offsetY="-.207" />
+    </path>
+    <path>
+      <move select="Eighth Right" beats="1.5" offsetX="1.06" offsetY=".06" />
+      <move select="Eighth Right" beats="1.5" offsetX=".707" offsetY="-.793" />
+    </path>
+    <path>
+      <move select="Eighth Left" beats="1.5" hands="left" offsetX=".353" offsetY=".647" />
+      <move select="Eighth Left" beats="1.5" hands="left" offsetX=".707" offsetY="-.207" />
     </path>
   </tam>
 

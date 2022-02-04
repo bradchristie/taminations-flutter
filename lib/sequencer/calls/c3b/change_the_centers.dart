@@ -19,20 +19,12 @@
 
 import '../common.dart';
 
-class SwingThru extends ActivesOnlyAction with CallWithParts {
+//  Also handles Change the Wave
+class ChangeTheCenters extends ActivesOnlyAction with CallWithParts {
 
-  @override int numberOfParts = 2;
-  @override var level = LevelData.B2;
-  bool isGrand;
-  bool isLeft;
-  List<Dancer>? part1dancers;
-  SwingThru(String name) :
-        isGrand=name.contains('Grand'),
-        isLeft=name.contains('Left'),
-        super(name) {
-    if (isGrand)
-      level = LevelData.PLUS;
-  }
+  @override var level = LevelData.C3B;
+  @override var numberOfParts = 4;
+  ChangeTheCenters(String name) : super(name);
 
   @override
   Future<void> performPart1(CallContext ctx) async {
@@ -42,26 +34,25 @@ class SwingThru extends ActivesOnlyAction with CallWithParts {
       } on CallError catch(_) { }
       ctx.analyze();
     }
-    await ctx.subContext(ctx.dancersHoldingSameHands(isRight: !isLeft, isGrand: isGrand),
-            (ctx2) async {
-              if (ctx2.actives.isEmpty)
-                throw CallError('Noone to do part 1 of Swing Thru');
-              part1dancers = ctx2.actives;
-              await ctx2.applyCalls('Trade');
-    });
+    await ctx.applyCalls('Trade');
   }
 
   @override
   Future<void> performPart2(CallContext ctx) async {
-    await ctx.subContext(ctx.dancersHoldingSameHands(isRight: isLeft, isGrand: isGrand),
-            (ctx2) async {
-              if (ctx2.actives.isEmpty)
-                throw CallError('Noone to do part 2 of Swing Thru');
-              if (part1dancers != null && !part1dancers!.any((d) => ctx2.actives.contains(d)))
-                throw CallError('No dancers doing both parts of Swing Thru');
-              await ctx2.applyCalls('Trade');
-    });
+    await ctx.applyCalls('Slip');
   }
 
+  @override
+  Future<void> performPart3(CallContext ctx) async {
+    await ctx.applyCalls('Centers Cross Run');
+  }
+
+  @override
+  Future<void> performPart4(CallContext ctx) async {
+    if (name.contains('Centers'.ri))
+      await ctx.applyCalls('Slip');
+    else
+      await ctx.applyCalls('Swing');
+  }
 
 }

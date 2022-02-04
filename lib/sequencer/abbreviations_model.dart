@@ -176,7 +176,7 @@ class AbbreviationsModel extends fm.ChangeNotifier {
 
   void copy() {
     final text = currentAbbreviations
-        .where((e) => e.abbr.isNotBlank).map((e) => '${e.abbr} ${e.expa}').join('\n');
+        .where((e) => e.abbr.isNotBlank).map((e) => '${e.abbr}\t${e.expa}').join('\n');
     final clip = fs.ClipboardData(text:text);
     fs.Clipboard.setData(clip);
   }
