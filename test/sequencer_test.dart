@@ -2808,5 +2808,22 @@ Star Thru
 Wheel and Deal
 Zoom
 Centers Square Thru 3
+Allemande Left''',
+
+  'Split Dixie Diamond' :
+'''Heads Step to a Wave
+Split Dixie Diamond
+Flip the Diamond
+Mix
+Ends Half Zoom
+Centers Zing and Pass Thru
+Split Dixie Diamond
+Cut the Diamond
+Bend the Line
+Pass the Ocean
+Out-Roll Circulate
+Boys Run
+Ferris Wheel
+Centers Square Thru 3
 Allemande Left'''
 };

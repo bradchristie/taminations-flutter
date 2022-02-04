@@ -120,6 +120,7 @@ import 'c1/scoot_and_plenty.dart';
 import 'c1/scoot_and_ramble.dart';
 import 'c1/siamese.dart';
 import 'c1/skip.dart';
+import 'c1/split_dixie_diamond.dart';
 import 'c1/split_dixie_style.dart';
 import 'c1/square_the_bases.dart';
 import 'c1/squeeze.dart';
@@ -454,6 +455,7 @@ abstract class CodedCall extends Call {
     '(.+)thewindmill(left|right|in|out|forward)'.ri: (name) => SpinTheWindmill(name),
     'splitcirculate'.ri: (_) => SplitCirculate(),
     'splitcounterrotate'.ri: (_) => SplitCounterRotate(),
+    'splitdixiediamond'.ri: (name) => SplitDixieDiamond(name),
     'splitdixiestyle(toawave)?'.ri: (name) => SplitDixieStyle(name),
     '(left)?splitsquarethru[2-7]?'.ri: (name) => SplitSquareThru(name),
     '(and)?spread'.ri: (name) => Spread(name),
