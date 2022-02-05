@@ -2825,5 +2825,19 @@ Out-Roll Circulate
 Boys Run
 Ferris Wheel
 Centers Square Thru 3
+Allemande Left''',
+
+  'Sidetrack' :
+'''Sides Pass the Ocean
+Extend
+Sidetrack
+Split Sidetrack
+Single Sidetrack
+Zig Zag
+Recycle
+Brace Thru
+Pass Thru
+Wheel and Deal
+Centers Pass Thru
 Allemande Left'''
 };

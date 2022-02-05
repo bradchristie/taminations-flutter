@@ -185,6 +185,7 @@ import 'c3a/snap_the_lock.dart';
 import 'c3b/cast_and_relay.dart';
 import 'c3b/change_the_centers.dart';
 import 'c3b/reverse_order.dart';
+import 'c3b/sidetrack.dart';
 import 'call.dart';
 import 'common/adjust.dart';
 import 'common/and.dart';
@@ -437,6 +438,7 @@ abstract class CodedCall extends Call {
     'shazam'.ri: (_) => Shazam(),
     'siamese.+'.ri: (name) => Siamese(name),
     'side'.ri: (name) => Sides(name),
+    '(single)?(split)?sidetrack'.ri: (name) => Sidetrack(name),
     '(left)?singlecrossandwheel'.ri: (name) => SingleCrossAndWheel(name),
     '(left)?singlecrosstradeandwheel'.ri: (name) => SingleCrossTradeAndWheel(name),
     '(left)?singlewheel'.ri: (name) => SingleWheel(name),

@@ -19,28 +19,31 @@
 
 import '../common.dart';
 
-class SplitDixieStyle extends Action with CallWithParts {
+class Sidetrack extends ActivesOnlyAction with CallWithParts {
 
-  @override var level = LevelData.C1;
-  @override var numberOfParts = 2;
-  SplitDixieStyle(String name) : super(name);
+  @override var level = LevelData.C3B;
+  @override var numberOfParts = 3;
+  Sidetrack(String name) : super(name);
 
   @override
   Future<void> performPart1(CallContext ctx) async {
-    if (ctx.dancers.any((d) => ctx.isInWave(d))) {
-      final face = ctx.dancers.where((d) => ctx.isInWave(d)).every((d) => d.data.center)
-      ? 'Face Out' : 'Face In';
-      await ctx.applyCalls('Wave Dancers Pull By and $face');
-    } else {
-      final face = ctx.dancers.where((d) => ctx.dancerFacing(d)!=null).every((d) => d.data.center)
-          ? 'Face Out' : 'Face In';
-      await ctx.applyCalls('Facing Dancers Pull By and $face');
-    }
+    await ctx.applyCalls('Zig Zag');
+    ctx.matchStandardFormation();
   }
 
   @override
   Future<void> performPart2(CallContext ctx) async {
-    await ctx.applyCalls('Left Touch 1/4');
+    if (name.contains('single'.ri))
+      await ctx.applyCalls('Lockit');
+    else if (name.contains('split'.ri))
+      await ctx.applyCalls('Split Counter Rotate');
+    else
+      await ctx.applyCalls('Counter Rotate');
+  }
+
+  @override
+  Future<void> performPart3(CallContext ctx) async {
+    await ctx.applyCalls('Roll');
   }
 
 }

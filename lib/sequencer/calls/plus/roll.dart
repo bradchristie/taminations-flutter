@@ -27,7 +27,7 @@ class Roll extends Action {
 
   @override
   Future<void> perform(CallContext ctx) async {
-    if (ctx.callstack.indexOf(this) <= 0)
+    if (ctx.callstack.indexOf(this) <= 0 && ctx.parent == null)
       throw CallError('"and Roll" must follow another call.');
     await super.perform(ctx);
   }

@@ -242,6 +242,7 @@ class CallContext {
   List<List<Dancer>> groups = [];
   String get groupstr => groups.map((e) => e.length).join();
   CallContext? _source;
+  CallContext? get parent => _source;
   bool _snap = true;
   bool _thoseWhoCan = false;
   bool resolutionError = false;
@@ -1272,7 +1273,10 @@ class CallContext {
   );
 
   //  Get direction dancer would Roll
-  Rolling roll(Dancer d) {
+  Rolling roll(Dancer dv) {
+    var d = dv;
+    if (d.path.movelist.isEmpty && _source != null)
+      d = _source!.dancers.firstWhere((d2) => d2 == dv);
     var move = d.path.movelist.where((m) => m.fromCall).lastOrNull;
     if ((move?.brotate.rolling() ?? 0.0) > 0.1)
       return Rolling.LEFT;
