@@ -338,16 +338,18 @@ class _SequencerEditLineState extends fm.State<SequencerEditLine> {
     //  Accept more than one call separated by semi colons
     for (final call in value.split(';')) {
       //  Process the call
-      if (call.toLowerCase().trim() == 'undo')
+      if (call.lc.trim() == 'undo')
         model.undoLastCall();
-      else if (call.toLowerCase().trim() == 'reset')
+      else if (call.lc.trim() == 'reset')
         await model.reset();
-      else if (call.toLowerCase().trim().startsWith('color'))
+      else if (call.lc.trim().startsWith('color'))
         model.setColor(call, settings);
-      else if (call.toLowerCase().trim().startsWith('id '))
+      else if (call.lc.trim().startsWith('id '))
         model.setId(call, settings);
-      else if (call.toLowerCase().trim().startsWith('speed '))
+      else if (call.lc.trim().startsWith('speed '))
         model.setSpeed(call, settings);
+      else if (call.lc.trim().startsWith('axes'))
+        model.setAxes(call, settings);
       else if (!(await model.loadOneCall(call)))
         break;
     }

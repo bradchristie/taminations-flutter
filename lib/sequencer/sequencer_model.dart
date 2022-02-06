@@ -160,6 +160,25 @@ class SequencerModel extends fm.ChangeNotifier {
     }
   }
 
+  void setAxes(String c, Settings settings) {
+    final command = c.toLowerCase().replaceAll('axes', '').trim();
+    switch (command) {
+      case 'off' :
+      case 'none' :
+        settings.axes = 'None';
+        break;
+      case 'short' :
+        settings.axes = 'Short';
+        break;
+      case 'long' :
+        settings.axes = 'Long';
+        break;
+      default:
+        errorString = 'Invalid axes setting';
+        break;
+    }
+  }
+
   Future<bool> loadOneCall(String call) async {
     errorString = '';
     try {
