@@ -182,6 +182,7 @@ import 'c2/zip_code.dart';
 import 'c3a/couple_up.dart';
 import 'c3a/quarter_mix.dart';
 import 'c3a/snap_the_lock.dart';
+import 'c3a/spin_the_pulley.dart';
 import 'c3b/cast_and_relay.dart';
 import 'c3b/change_the_centers.dart';
 import 'c3b/reverse_order.dart';
@@ -453,6 +454,7 @@ abstract class CodedCall extends Call {
     'snapthelock'.ri: (_) => SnapTheLock(),
     'spinchainandexchangethegears'.ri: (name) => SpinChainAndExchangeTheGears(name),
     'spinchainthru'.ri: (_) => SpinChainThru(),
+    '(spin)?thepulley'.ri: (name) => SpinThePulley(name),
     'spinthetop'.ri: (_) => SpinTheTop(),
     '(.+)thewindmill(left|right|in|out|forward)'.ri: (name) => SpinTheWindmill(name),
     'splitcirculate'.ri: (_) => SplitCirculate(),

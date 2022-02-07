@@ -2839,5 +2839,12 @@ Brace Thru
 Pass Thru
 Wheel and Deal
 Centers Pass Thru
-Allemande Left'''
+Allemande Left''',
+
+  'Spin the Pulley' :
+'''Heads Right and Left Thru
+Spin the Pulley But Trail Off
+Left Turn and Deal
+Veer Right
+Promenade Home'''
 };

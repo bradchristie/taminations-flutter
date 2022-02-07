@@ -305,27 +305,9 @@ class _SequencerEditLineState extends fm.State<SequencerEditLine> {
                   color: speechProvider.isListening ? Color.RED : Color.BLACK,
                   size: 32
               )
-              ),
-            //  For testing - a very tiny spot to tap
-            //  since the tester cannot simulate keyboard Enter
-            //  Will also use this to pass errors back to the tester
-            fm.Container(
-              key: fm.Key('Submit Call'),
-              child: fm.GestureDetector(
-                onTap: () {
-                  _isVoiceCall = false;
-                  _sendOneLine(model,
-                      abbreviations.replaceAbbreviations(textFieldController.value.text));
-                },
-                //  Tester seems to be unable to fetch text if it's a blank string
-                //  so add a space
-                child: fm.Text(model.errorString.isEmpty ? ' ' : model.errorString,
-                    key:fm.ValueKey('Test Error Text'),
-                    style: fm.TextStyle(color: Color.WHITE, fontSize:1)),
-              ),
-            ),
-          ],
-        ),
+              )
+          ]
+        )
       );
     }
         )
