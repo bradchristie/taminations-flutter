@@ -20,17 +20,21 @@ Call pronunciations provided by
 
 ***
 
-## Taminations version 1.6.32 built 2022-01-31
+## Taminations version 1.6.33 built 2022-02-07
 Copyright 2022 by Brad Christie.  
 This is free software, and you are welcome to modify and redistribute it
 under the terms of the [GNU GPL license](http://www.gnu.org/licenses/gpl.html).  
 
 ## What's New
-* New setting to draw axes
-* Add fonts to package to fix weird characters on some systems
+* More fixes for font display problems
 * Fix a couple broken animations
 * Sequencer changes:
-  * More calls coded as Calls with Parts
+  * Fix loss of focus after typing Undo on some platforms
+  * Improve handling of fractions, now calls like Ends Half Zoom and Cast Off 3/4 works
+  * Fix Centers Tandem Trade and similar calls
+  * Add command to set axes display
+  * Fix Box the Gnat from 1/4 tag after ends face in
+  * More calls with parts added
 
 For a detailed history of changes, view the
 [Git log](https://github.com/bradchristie/taminations-flutter/commits/main)
