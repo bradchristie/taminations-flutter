@@ -42,7 +42,7 @@
   <call audio="plus/acey_deucey.mp3" languages="lang-ja" link="plus/acey_deucey" title="Acey Deucey"/>
   <call link="c1/ah_so" title="Ah So"/>
   <call audio="b2/alamo_style.mp3" languages="lang-ja lang-de" link="b2/alamo_style" title="Alamo Style"/>
-  <call audio="ssd/alamo_style.mp3" languages="lang-ja lang-de" link="ssd/alamo_style" title="Alamo Style"/>
+  <call languages="lang-ja lang-de" link="ssd/alamo_style" title="Alamo Style"/>
   <call link="a2/all_4_all_8" title="All 4 Couples / All 8 concepts"/>
   <call audio="plus/all_8_spin_the_top.mp3" languages="lang-ja" link="plus/all_8_spin_the_top"
         title="All 8 Spin the Top"/>
@@ -77,7 +77,7 @@
   <call link="ssd/turn_back" title="Backtrack"/>
   <call link="a1/belles_and_beaus" title="Belles and Beaus"/>
   <call audio="b1/bend_the_line.mp3" languages="lang-de lang-ja" link="b1/bend_the_line" title="Bend the Line"/>
-  <call audio="ssd/bend_the_line.mp3" languages="lang-de lang-ja" link="ssd/bend_the_line" title="Bend the Line"/>
+  <call languages="lang-de lang-ja" link="ssd/bend_the_line" title="Bend the Line"/>
   <call link="c3a/bias_circulate" title="Bias Circulate"/>
   <call link="c3a/big_block_concept" title="Big Block Concept"/>
   <call link="c3b/bingo" title="Bingo"/>
@@ -87,7 +87,7 @@
   <call audio="a2/box_counter_rotate.mp3" link="a2/box_counter_rotate" title="Box Counter Rotate"/>
   <call link="c1/recycle?animname=BoxRecycle" title="Box Recycle" />
   <call audio="b2/box_the_gnat.mp3" languages="lang-ja lang-de" link="b2/box_the_gnat" title="Box the Gnat"/>
-  <call audio="ssd/box_the_gnat.mp3" languages="lang-ja lang-de" link="ssd/box_the_gnat" title="Box the Gnat"/>
+  <call languages="lang-ja lang-de" link="ssd/box_the_gnat" title="Box the Gnat"/>
   <call audio="a2/box_transfer.mp3" link="a2/box_transfer" title="Box Transfer"/>
   <call audio="a1/brace_thru.mp3" link="a1/brace_thru" title="Brace Thru"/>
   <call link="c3a/breaker_anything" title="Breaker Anything"/>
@@ -96,19 +96,19 @@
   <call link="c1/butterfly_formation" title="Butterfly Formation / Concept"/>
 
   <call audio="b1/california_twirl.mp3" languages="lang-de lang-ja" link="b1/california_twirl" title="California Twirl"/>
-  <call audio="ssd/california_twirl.mp3" languages="lang-de lang-ja" link="ssd/california_twirl" title="California Twirl"/>
+  <call languages="lang-de lang-ja" link="ssd/california_twirl" title="California Twirl"/>
   <call audio="a1/cast_a_shadow.mp3" link="a1/cast_a_shadow" title="Cast a Shadow"/>
   <call audio="a1/cast_a_shadow.mp3" link="c1/cast_a_shadow" title="Cast a Shadow"/>
   <call link="c3b/fraction_cast_and_relay" title="Cast and Relay"/>
   <call link="c1/cast_back" title="Cast Back"/>
   <call audio="ms/cast_off_three_quarters.mp3" languages="lang-de lang-ja" link="ms/cast_off_three_quarters"
         title="Cast Off Three Quarters"/>
-  <call audio="ssd/cast_off_three_quarters.mp3" languages="lang-de lang-ja" link="ssd/cast_off_three_quarters"
+  <call languages="lang-de lang-ja" link="ssd/cast_off_three_quarters"
         title="Cast Off Three Quarters"/>
   <call link="c2/catch" title="Catch 1, 2, 3, 4"/>
   <call link="c3a/catch_anything_n" title="Catch Anything N"/>
   <call audio="ms/centers_in.mp3" languages="lang-de lang-ja" link="ms/centers_in" title="Centers In"/>
-  <call audio="ssd/centers_in.mp3" languages="lang-de lang-ja" link="ssd/centers_in" title="Centers In"/>
+  <call languages="lang-de lang-ja" link="ssd/centers_in" title="Centers In"/>
   <call link="c3a/central_concept" title="Central Concept"/>
   <call link="b1/ladies_chain" title="Chain Down the Line"/>
   <call link="ssd/ladies_chain" title="Chain Down the Line"/>
@@ -133,7 +133,7 @@
   <call languages="lang-de lang-ja lang-de lang-ja" link="ssd/circle" title="Circle Left / Right"/>
   <call audio="b1/circle_to_a_line.mp3" languages="lang-de lang-ja" link="b1/circle_to_a_line"
         title="Circle to a Line"/>
-  <call audio="ssd/circle_to_a_line.mp3" languages="lang-de lang-ja" link="ssd/circle_to_a_line"
+  <call languages="lang-de lang-ja" link="ssd/circle_to_a_line"
         title="Circle to a Line"/>
   <call link="c2/circle_to_a_wave" title="Circle to a Wave"/>
   <call languages="lang-de lang-ja" link="b1/circulate" title="Circulate"/>
@@ -147,7 +147,7 @@
   <call link="c1/counter_rotate" title="Counter Rotate"/>
   <call link="c3a/couple_up" title="Couple Up"/>
   <call audio="b1/courtesy_turn.mp3" languages="lang-de lang-ja" link="b1/courtesy_turn" title="Courtesy Turn"/>
-  <call audio="ssd/courtesy_turn.mp3" languages="lang-de lang-ja" link="ssd/courtesy_turn" title="Courtesy Turn"/>
+  <call languages="lang-de lang-ja" link="ssd/courtesy_turn" title="Courtesy Turn"/>
   <call link="c2/crazy_concept" title="Crazy Concept"/>
   <call link="c3b/criss_cross_the_deucey" title="Criss Cross The Deucey"/>
   <call link="c2/criss_cross_the_shadow" title="Criss Cross the Shadow"/>
@@ -169,7 +169,7 @@
   <call link="c1/cross_extend" title="Cross Extend"/>
   <call link="c3b/cross_flip_the_line" title="Cross Flip The Line"/>
   <call audio="ms/cross_fold.mp3" languages="lang-ja" link="ms/fold" title="Cross Fold"/>
-  <call audio="ssd/cross_fold.mp3" languages="lang-ja" link="ssd/fold" title="Cross Fold"/>
+  <call languages="lang-ja" link="ssd/fold" title="Cross Fold"/>
   <call link="c2/invert_the_column?animname=CrossInverttheColumn" title="Cross Invert the Column"/>
   <call link="c2/kick_off?animname=CrossKickOff" title="Cross Kick Off"/>
   <call link="c3b/cross_lockit" title="Cross Lockit"/>
@@ -178,7 +178,7 @@
   <call link="c2/cross_ramble" title="Cross Ramble"/>
   <call link="c1/cross_roll" title="Cross Roll"/>
   <call audio="b2/cross_run.mp3" languages="lang-ja" link="b2/run" title="Cross Run"/>
-  <call audio="ssd/cross_run.mp3" languages="lang-ja" link="ssd/run" title="Cross Run"/>
+  <call languages="lang-ja" link="ssd/run" title="Cross Run"/>
   <call link="c3b/swap_the_top" title="Cross Swap The Top"/>
   <call link="c2/cross_the_k" title="Cross the K"/>
   <call link="c2/cross_and_wheel?animname=CrossTradeandWheel"
@@ -202,7 +202,7 @@
   <call link="c3b/disband" title="Disband"/>
   <call link="c2/disconnected_concept" title="Disconnected Concept"/>
   <call audio="b1/dive_thru.mp3" languages="lang-de lang-ja" link="b1/dive_thru" title="Dive Thru"/>
-  <call audio="ssd/dive_thru.mp3" languages="lang-de lang-ja" link="ssd/dive_thru" title="Dive Thru"/>
+  <call languages="lang-de lang-ja" link="ssd/dive_thru" title="Dive Thru"/>
   <call link="c3b/divide_the_ocean" title="Divide The Ocean | Sea direction | anything"/>
   <call link="c1/dixie_diamond" title="Dixie Diamond"/>
   <call audio="plus/dixie_grand.mp3" languages="lang-ja" link="plus/dixie_grand" title="Dixie Grand"/>
@@ -212,10 +212,10 @@
   <call audio="b1/do_paso.mp3" languages="lang-de lang-ja" link="b1/do_paso" title="Do Paso"/>
   <call link="c2/dodge_anything" title="Dodge Anything"/>
   <call audio="b1/dosado.mp3" languages="lang-de lang-ja" link="b1/dosado" title="Dosado"/>
-  <call audio="ssd/dosado.mp3" languages="lang-de lang-ja" link="ssd/dosado" title="Dosado"/>
+  <call languages="lang-de lang-ja" link="ssd/dosado" title="Dosado"/>
   <call link="a1/triple_cross?animname=DoubleCross" title="Double Cross"/>
   <call audio="b2/double_pass_thru.mp3" languages="lang-ja" link="b2/double_pass_thru" title="Double Pass Thru"/>
-  <call audio="ssd/double_pass_thru.mp3" languages="lang-ja" link="ssd/double_pass_thru" title="Double Pass Thru"/>
+  <call languages="lang-ja" link="ssd/double_pass_thru" title="Double Pass Thru"/>
   <call audio="a1/double_star_thru.mp3" link="a1/double_star_thru" title="Double Star Thru"/>
   <call link="c3a/drift_apart" title="Drift Apart"/>
   <call link="c2/drop_in" title="Drop In/Out/Right/Left"/>
@@ -236,7 +236,7 @@
   <call link="c3a/explode_the_top" title="Explode the Top"/>
   <call audio="plus/explode_the_wave.mp3" languages="lang-ja" link="plus/explode_the_wave" title="Explode the Wave"/>
   <call audio="b2/extend.mp3" languages="lang-ja lang-de" link="b2/extend" title="Extend"/>
-  <call audio="ssd/extend.mp3" languages="lang-ja lang-de" link="ssd/extend" title="Extend"/>
+  <call languages="lang-ja lang-de" link="ssd/extend" title="Extend"/>
 
   <call link="b1/face" languages="lang-de" title="Face Left / Right / In / Out"/>
   <call link="ssd/face" languages="lang-de" title="Face Left / Right / In / Out"/>
@@ -247,7 +247,7 @@
   <call link="c3a/fancy" title="Fancy"/>
   <call link="c2/fascinate" title="Fascinate/Facinating"/>
   <call audio="b2/ferris_wheel.mp3" languages="lang-ja lang-de" link="b2/ferris_wheel" title="Ferris Wheel"/>
-  <call audio="ssd/ferris_wheel.mp3" languages="lang-ja lang-de" link="ssd/ferris_wheel" title="Ferris Wheel"/>
+  <call languages="lang-ja lang-de" link="ssd/ferris_wheel" title="Ferris Wheel"/>
   <call link="c2/file_to_a_line" title="File to a Line"/>
   <call link="c3a/finally_concept" title="Finally Concept"/>
   <call link="c1/finish" title="Finish"/>
@@ -263,9 +263,9 @@
   <call link="c3b/flip_your_lid" title="Flip Your Lid"/>
   <call link="c2/any_tagging_call_your_neighbor" title="Flip Your Neighbor"/>
   <call audio="b2/flutterwheel.mp3" languages="lang-ja lang-de" link="b2/flutterwheel" title="Flutterwheel"/>
-  <call audio="ssd/flutterwheel.mp3" languages="lang-ja lang-de" link="ssd/flutterwheel" title="Flutterwheel"/>
+  <call languages="lang-ja lang-de" link="ssd/flutterwheel" title="Flutterwheel"/>
   <call audio="ms/fold.mp3" languages="lang-de lang-ja" link="ms/fold" title="Fold"/>
-  <call audio="ssd/fold.mp3" languages="lang-de lang-ja" link="ssd/fold" title="Fold"/>
+  <call languages="lang-de lang-ja" link="ssd/fold" title="Fold"/>
   <call link="c1/follow_thru" title="Follow Thru"/>
   <call link="c3a/follow_to_a_diamond" title="Follow to a Diamond"/>
   <call link="c3a/follow_your_leader" title="Follow Your Leader"/>
@@ -273,7 +273,7 @@
         title="Follow Your Neighbor"/>
   <call audio="b1/forward_and_back.mp3" languages="lang-de lang-ja" link="b1/forward_and_back"
         title="Forward and Back"/>
-  <call audio="ssd/forward_and_back.mp3" languages="lang-de lang-ja" link="ssd/forward_and_back"
+  <call languages="lang-de lang-ja" link="ssd/forward_and_back"
         title="Forward and Back"/>
   <call link="c3b/secondly_thirdly_fourthly" title="Fourthly"/>
   <call link="a1/fractional_tops" title="Fractional Tops"/>
@@ -298,17 +298,17 @@
   <call link="c2/cross_and_wheel?animname=GrandSingleCrossTradeandWheel"
         title="Grand Single Cross Trade and Wheel"/>
   <call audio="b1/grand_square.mp3" languages="lang-de lang-ja" link="b1/grand_square" title="Grand Square"/>
-  <call audio="ssd/grand_square.mp3" languages="lang-de lang-ja" link="ssd/grand_square" title="Grand Square"/>
+  <call languages="lang-de lang-ja" link="ssd/grand_square" title="Grand Square"/>
   <call audio="plus/grand_swing_thru.mp3" languages="lang-ja" link="plus/grand_swing_thru" title="Grand Swing Thru"/>
   <call link="a1/grand_quarter_thru?animname=Grand34Thru" title="Grand Three Quarter Thru"/>
 
   <call languages="lang-de lang-ja" link="b1/sashay" title="Half Sashay"/>
   <call languages="lang-de lang-ja" link="ssd/sashay" title="Half Sashay"/>
   <call audio="ms/half_tag.mp3" languages="lang-de lang-ja" link="ms/fraction_tag" title="Half Tag"/>
-  <call audio="ssd/half_tag.mp3" languages="lang-de lang-ja" link="ssd/fraction_tag" title="Half Tag"/>
+  <call languages="lang-de lang-ja" link="ssd/fraction_tag" title="Half Tag"/>
   <call link="c2/sock_it_to_me?animname=HereComestheJudge" title="Here Comes the Judge"/>
   <call audio="ms/hinge.mp3" languages="lang-de lang-ja" link="ms/hinge" title="Hinge"/>
-  <call audio="ssd/hinge.mp3" languages="lang-de lang-ja" link="ssd/hinge" title="Hinge"/>
+  <call languages="lang-de lang-ja" link="ssd/hinge" title="Hinge"/>
   <call link="c3a/lock_the_hinge?animname=HingetheLock" title="Hinge the Lock"/>
   <call link="c3a/lock_the_hinge?animname=HingetheTop" title="Hinge the Top"/>
   <call link="c2/hocus_pocus" title="Hocus Pocus"/>
@@ -348,7 +348,7 @@
   <call link="c3a/latch_on" title="Latch On"/>
   <call link="c2/lateral_substitute" title="Lateral Substitute"/>
   <call audio="b1/lead_right.mp3" languages="lang-de lang-ja" link="b1/lead_right" title="Lead Right / Left"/>
-  <call audio="ssd/lead_right.mp3" languages="lang-de lang-ja" link="ssd/lead_right" title="Lead Right Left"/>
+  <call languages="lang-de lang-ja" link="ssd/lead_right" title="Lead Right Left"/>
   <call link="a1/left" title="Left"/>
   <call languages="lang-de" link="b1/arm_turns" title="Left Arm Turn"/>
   <call languages="lang-de" link="ssd/arm_turns" title="Left Arm Turn"/>
@@ -415,10 +415,10 @@
   <call audio="a1/pass_out.mp3" link="a1/pass_in?animname=PassOut" title="Pass Out"/>
   <call link="c1/pass_the_axle" title="Pass the Axle"/>
   <call audio="b2/pass_the_ocean.mp3" languages="lang-ja lang-de" link="b2/pass_the_ocean" title="Pass the Ocean"/>
-  <call audio="ssd/pass_the_ocean.mp3" languages="lang-ja lang-de" link="ssd/pass_the_ocean" title="Pass the Ocean"/>
+  <call languages="lang-ja lang-de" link="ssd/pass_the_ocean" title="Pass the Ocean"/>
   <call audio="a1/pass_the_sea.mp3" link="a1/pass_the_sea" title="Pass the Sea"/>
   <call audio="b1/pass_thru.mp3" languages="lang-de lang-ja" link="b1/pass_thru" title="Pass Thru"/>
-  <call audio="ssd/pass_thru.mp3" languages="lang-de lang-ja" link="ssd/pass_thru" title="Pass Thru"/>
+  <call languages="lang-de lang-ja" link="ssd/pass_thru" title="Pass Thru"/>
   <call audio="ms/pass_to_the_center.mp3" languages="lang-de lang-ja" link="ms/pass_to_the_center" title="Pass to the Center"/>
   <call languages="lang-de lang-ja" link="b1/passing_rule" title="Passing Rule"/>
   <call link="c3a/patch_anyone" title="Patch Anyone"/>
@@ -457,7 +457,7 @@
   <call link="c3b/reactivate" title="Reactivate"/>
   <call link="c3a/recoil" title="Recoil"/>
   <call audio="ms/recycle.mp3" languages="lang-de lang-ja" link="ms/recycle" title="Recycle"/>
-  <call audio="ssd/recycle.mp3" languages="lang-de lang-ja" link="ssd/recycle" title="Recycle"/>
+  <call languages="lang-de lang-ja" link="ssd/recycle" title="Recycle"/>
   <call audio="a2/recycle.mp3" link="a2/recycle" title="Recycle"/>
   <call link="c1/recycle" title="Recycle"/>
   <call link="c3b/reflected_concept" title="Reflected Concept"/>
@@ -480,7 +480,7 @@
   <call link="c2/reverse_cut_the_galaxy" title="Reverse Cut/Flip the Galaxy"/>
   <call link="c1/reverse_explode" title="Reverse Explode"/>
   <call audio="b2/reverseflutterwheel.mp3" languages="lang-ja" link="b2/flutterwheel" title="Reverse Flutterwheel"/>
-  <call audio="ssd/reverseflutterwheel.mp3" languages="lang-ja" link="ssd/flutterwheel" title="Reverse Flutterwheel"/>
+  <call languages="lang-ja" link="ssd/flutterwheel" title="Reverse Flutterwheel"/>
   <call link="c3b/reverse_order" title="Reverse Order Concept"/>
   <call link="c1/rotate?animname=ReverseRotate" title="Reverse Rotate"/>
   <call link="c2/rotate?animname=ReverseRotate" title="Reverse Rotate"/>
@@ -495,11 +495,11 @@
   <call link="c3b/revolve_to_a_wave" title="Revolve To A Wave"/>
   <call audio="b1/right_and_left_grand.mp3" languages="lang-de lang-ja" link="b1/right_and_left_grand"
         title="Right and Left Grand"/>
-  <call audio="ssd/right_and_left_grand.mp3" languages="lang-de lang-ja" link="ssd/right_and_left_grand"
+  <call languages="lang-de lang-ja" link="ssd/right_and_left_grand"
         title="Right and Left Grand"/>
   <call audio="b1/right_and_left_thru.mp3" languages="lang-de lang-ja" link="b1/right_and_left_thru"
         title="Right and Left Thru"/>
-  <call audio="ssd/right_and_left_thru.mp3" languages="lang-de lang-ja" link="ssd/right_and_left_thru"
+  <call languages="lang-de lang-ja" link="ssd/right_and_left_thru"
         title="Right and Left Thru"/>
   <call languages="lang-de" link="b1/arm_turns" title="Right Arm Turn"/>
   <call languages="lang-de" link="ssd/arm_turns" title="Right Arm Turn"/>
@@ -518,7 +518,7 @@
   <call link="c3b/rotate" title="Rotate"/>
   <call link="c2/rotate" title="Rotate"/>
   <call audio="b2/run.mp3" languages="lang-ja lang-de" link="b2/run" title="Run"/>
-  <call audio="ssd/run.mp3" languages="lang-ja lang-de" link="ssd/run" title="Run"/>
+  <call languages="lang-ja lang-de" link="ssd/run" title="Run"/>
 
   <call languages="lang-de lang-ja" link="b1/same_position_rule" title="Same Position Rule"/>
   <call link="c3a/scatter_circulate" title="Scatter Circulate"/>
@@ -534,7 +534,7 @@
   <call link="c1/scoot_and_ramble?animname=ScootandRamble" title="Scoot and Ramble"/>
   <call audio="a2/scoot_and_weave.mp3" link="a2/scoot_and_weave" title="Scoot and Weave"/>
   <call audio="ms/scoot_back.mp3" languages="lang-de lang-ja" link="ms/scoot_back" title="Scoot Back"/>
-  <call audio="ssd/scoot_back.mp3" languages="lang-de lang-ja" link="ssd/scoot_back" title="Scoot Back"/>
+  <call languages="lang-de lang-ja" link="ssd/scoot_back" title="Scoot Back"/>
   <call audio="a2/scoot_chain_thru.mp3" link="a2/scoot_chain_thru" title="Scoot Chain Thru"/>
   <call link="c3a/scoot_the_diamond" title="Scoot the Diamond"/>
   <call link="c3a/anything_reaction?animname=ScootReaction" title="Scoot Reaction"/>
@@ -542,7 +542,7 @@
   <call link="c3b/secondly_thirdly_fourthly" title="Secondly"/>
   <call audio="b1/see_saw.mp3" languages="lang-de lang-ja" link="b1/see_saw" title="See Saw"/>
   <call audio="b1/separate.mp3" languages="lang-de lang-ja" link="b1/separate" title="Separate"/>
-  <call audio="ssd/separate.mp3" languages="lang-de lang-ja" link="ssd/separate" title="Separate"/>
+  <call languages="lang-de lang-ja" link="ssd/separate" title="Separate"/>
   <call link="c2/sets_in_motion" title="Sets in Motion"/>
   <call link="c3b/shake_and_rattle" title="Shake and Rattle"/>
   <call link="c1/shakedown" title="Shakedown"/>
@@ -566,7 +566,7 @@
   <call link="c3a/slant" title="Slant"/>
   <call audio="a2/slide.mp3" link="a2/slip?animname=Slide" title="Slide"/>
   <call audio="ms/slide_thru.mp3" languages="lang-de lang-ja" link="ms/slide_thru" title="Slide Thru"/>
-  <call audio="ssd/slide_thru.mp3" languages="lang-de lang-ja" link="ssd/slide_thru" title="Slide Thru"/>
+  <call languages="lang-de lang-ja" link="ssd/slide_thru" title="Slide Thru"/>
   <call audio="a2/slip.mp3" link="a2/slip" title="Slip"/>
   <call audio="ms/slip_the_clutch.mp3" languages="lang-de lang-ja" link="ms/slip_the_clutch" title="Slip the Clutch"/>
   <call audio="a2/slither.mp3" link="a2/slip?animname=Slither" title="Slither"/>
@@ -602,7 +602,7 @@
   <call link="c2/split_trade_circulate" title="Split Trade Circulate"/>
   <call audio="a2/split_transfer.mp3" link="a2/box_transfer?animname=SplitTransfer" title="Split Transfer"/>
   <call audio="b1/split_two.mp3" languages="lang-de lang-ja" link="b1/split_the_outside_couple" title="Split Two"/>
-  <call audio="ssd/split_two.mp3" languages="lang-de lang-ja" link="ssd/split_the_outside_couple" title="Split Two"/>
+  <call languages="lang-de lang-ja" link="ssd/split_the_outside_couple" title="Split Two"/>
   <call link="c1/square_chain_the_top" title="Square Chain the Top"/>
   <call audio="a1/square_chain_thru.mp3" link="a1/square_chain_thru" title="Square Chain Thru"/>
   <call link="c1/square_the_bases" title="Square the Bases"/>
@@ -618,7 +618,7 @@
   <call languages="lang-de lang-ja" link="b1/promenade" title="Star Promenade"/>
   <call languages="lang-de lang-ja" link="ssd/promenade" title="Star Promenade"/>
   <call audio="b1/star_thru.mp3" languages="lang-de lang-ja" link="b1/star_thru" title="Star Thru"/>
-  <call audio="ssd/star_thru.mp3" languages="lang-de lang-ja" link="ssd/star_thru" title="Star Thru"/>
+  <call languages="lang-de lang-ja" link="ssd/star_thru" title="Star Thru"/>
   <call link="c1/start" title="Start"/>
   <call link="c1/step_and_flip" title="Step and Flip"/>
   <call link="c1/step_and_fold" title="Step and Fold"/>
@@ -639,9 +639,9 @@
   <call link="c3a/swap_the_top" title="Swap the Top"/>
   <call link="c2/swap_the_wave" title="Swap the Wave"/>
   <call audio="b2/sweep_a_quarter.mp3" languages="lang-ja lang-de" link="b2/sweep_a_quarter" title="Sweep a Quarter"/>
-  <call audio="ssd/sweep_a_quarter.mp3" languages="lang-ja lang-de" link="ssd/sweep_a_quarter" title="Sweep a Quarter"/>
+  <call languages="lang-ja lang-de" link="ssd/sweep_a_quarter" title="Sweep a Quarter"/>
   <call audio="b1/swing.mp3" languages="lang-de lang-ja" link="b1/swing" title="Swing"/>
-  <call audio="ssd/swing.mp3" languages="lang-de lang-ja" link="ssd/swing" title="Swing"/>
+  <call languages="lang-de lang-ja" link="ssd/swing" title="Swing"/>
   <call audio="a2/swing.mp3" link="a2/slip?animname=Swing" title="Swing"/>
   <call link="c2/swing_along?animname=SwingAlong" title="Swing Along"/>
   <call link="c1/swing_and_circle" title="Swing and Circle"/>
@@ -649,7 +649,7 @@
   <call link="c3a/swing_chain_thru" title="Swing Chain Thru"/>
   <call link="c1/swing_the_fractions" title="Swing the Fractions"/>
   <call audio="b2/swing_thru.mp3" languages="lang-ja lang-de" link="b2/swing_thru" title="Swing Thru"/>
-  <call audio="ssd/swing_thru.mp3" languages="lang-ja lang-de" link="ssd/swing_thru" title="Swing Thru"/>
+  <call languages="lang-ja lang-de" link="ssd/swing_thru" title="Swing Thru"/>
   <call link="c3b/swing_o_late" title="Swing-O-Late"/>
   <call link="c1/switch_the_line" title="Switch the Line"/>
   <call audio="a2/switch_the_wave.mp3" link="a2/switch_the_wave" title="Switch the Wave"/>
@@ -664,7 +664,7 @@
         title="Tag Back to a Wave"/>
   <call link="c3a/any_tagging_call_chain_thru" title="Tag Chain Thru"/>
   <call audio="ms/tag_the_line.mp3" languages="lang-de lang-ja" link="ms/tag" title="Tag the Line"/>
-  <call audio="ssd/tag_the_line.mp3" languages="lang-de lang-ja" link="ssd/tag" title="Tag the Line"/>
+  <call languages="lang-de lang-ja" link="ssd/tag" title="Tag the Line"/>
   <call link="c3b/anything_the_top" title="Tag the Top"/>
   <call link="c2/any_tagging_call_your_neighbor" title="Tag Your Neighbor"/>
   <call link="c3b/take_n" title="Take {n}"/>
@@ -682,14 +682,14 @@
   <call languages="lang-de lang-ja" link="ms/fraction_tag" title="Three Quarter Tag"/>
   <call link="a1/quarter_thru?animname=34Thru" title="Three Quarter Thru"/>
   <call audio="b2/touch_a_quarter.mp3" languages="lang-ja lang-de" link="b2/touch_a_quarter" title="Touch a Quarter"/>
-  <call audio="ssd/touch_a_quarter.mp3" languages="lang-ja lang-de" link="ssd/touch_a_quarter" title="Touch a Quarter"/>
+  <call languages="lang-ja lang-de" link="ssd/touch_a_quarter" title="Touch a Quarter"/>
   <call link="c3a/touch_by" title="Touch By"/>
   <call link="c1/track_n" title="Track (0,1,2,3,4)"/>
   <call audio="plus/track_two.mp3" languages="lang-ja" link="plus/track_ii" title="Track 2"/>
   <call languages="lang-ja lang-de" link="b2/trade" title="Trade"/>
   <call languages="lang-ja lang-de" link="ssd/trade" title="Trade"/>
   <call audio="b2/trade_by.mp3" languages="lang-ja lang-de" link="b2/trade_by" title="Trade By"/>
-  <call audio="ssd/trade_by.mp3" languages="lang-ja lang-de" link="ssd/trade_by" title="Trade By"/>
+  <call languages="lang-ja lang-de" link="ssd/trade_by" title="Trade By"/>
   <call audio="a2/trade_circulate.mp3" link="a2/trade_circulate" title="Trade Circulate"/>
   <call link="c3a/trade_the_deucey" title="Trade the Deucey"/>
   <call link="c3b/trade_the_diamond" title="Trade The Diamond"/>
@@ -742,13 +742,13 @@
   <call link="c1/anything_and_weave" title="Weave"/>
   <call audio="b1/weave_the_ring.mp3" languages="lang-de lang-ja" link="b1/right_and_left_grand"
         title="Weave the Ring"/>
-  <call audio="ssd/weave_the_ring.mp3" languages="lang-de lang-ja" link="ssd/right_and_left_grand"
+  <call languages="lang-de lang-ja" link="ssd/right_and_left_grand"
         title="Weave the Ring"/>
   <call link="c1/wheel_and_anything" title="Wheel and Anything"/>
   <call languages="lang-ja lang-de" link="b2/wheel_and_deal" title="Wheel and Deal"/>
   <call languages="lang-ja lang-de" link="ssd/wheel_and_deal" title="Wheel and Deal"/>
   <call audio="b2/wheel_around.mp3" languages="lang-ja lang-de" link="b2/wheel_around" title="Wheel Around"/>
-  <call audio="ssd/wheel_around.mp3" languages="lang-ja lang-de" link="ssd/wheel_around" title="Wheel Around"/>
+  <call languages="lang-ja lang-de" link="ssd/wheel_around" title="Wheel Around"/>
   <call link="c1/wheel_fan_thru" title="Wheel Fan Thru"/>
   <call link="c2/wheel_the_ocean" title="Wheel the Ocean"/>
   <call link="c2/wheel_the_ocean?animname=WheeltheSea" title="Wheel the Sea"/>
@@ -759,7 +759,7 @@
   <call link="c3a/wrap_to_a_formation" title="Wrap To a Formation"/>
   <call audio="b1/wrong_way_grand.mp3" languages="lang-de lang-ja" link="b1/right_and_left_grand"
         title="Wrong Way Grand"/>
-  <call audio="ssd/wrong_way_grand.mp3" languages="lang-de lang-ja" link="ssd/right_and_left_grand"
+  <call languages="lang-de lang-ja" link="ssd/right_and_left_grand"
         title="Wrong Way Grand"/>
   <call languages="lang-de lang-ja" link="ms/thar" title="Wrong Way Thar"/>
 
@@ -769,6 +769,6 @@
   <call link="c1/zing" title="Zing"/>
   <call link="c2/zip_code" title="Zip Code"/>
   <call audio="b2/zoom.mp3" languages="lang-ja lang-de" link="b2/zoom" title="Zoom"/>
-  <call audio="ssd/zoom.mp3" languages="lang-ja lang-de" link="ssd/zoom" title="Zoom"/>
+  <call languages="lang-ja lang-de" link="ssd/zoom" title="Zoom"/>
 
 </calls>

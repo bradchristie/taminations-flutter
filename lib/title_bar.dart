@@ -73,7 +73,8 @@ class TitleBar extends fm.StatelessWidget {
                 //  See if we have audio for this title
                 var audioAsset = '';
                 TamUtils.calldata.where((item) => item.title == titleModel.title).forEach((call) {
-                  audioAsset = call.audio;
+                  if (call.audio.isNotBlank)
+                    audioAsset = call.audio;
                 });
 
                 return fm.Row(children: [
@@ -132,7 +133,6 @@ class TitleBar extends fm.StatelessWidget {
   }
 
   void playCall(String assetName) async {
-    print('Playing $assetName');
     final player = AudioPlayer();
     await player.setAsset(assetName);
     await player.play();
