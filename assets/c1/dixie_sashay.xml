@@ -24,17 +24,33 @@
 
   <tam title="Dixie Sashay" from="Facing Couples">
     <formation>
-      <dancer gender="boy" x="1" y="2" angle="270"/>
-      <dancer gender="girl" x="-1" y="2" angle="270"/>
+      <dancer gender="boy" x="1" y="1.5" angle="270"/>
+      <dancer gender="girl" x="-1" y="1.5" angle="270"/>
     </formation>
     <path numbers="3 2">
       <move select="Dodge Right" beats="4" scaleY="0.875"/>
-      <move select="Hinge Left" beats="3" scaleX="3" scaleY=".75"/>
+      <move select="Hinge Left" beats="3" scaleX="2.5" scaleY=".75"/>
     </path>
     <path numbers="1 4">
-      <move select="Extend Left" beats="2" hands="right" offsetX="1" offsetY=".5" />
-      <move select="Extend Right" beats="2" scaleX="2" scaleY="1.25" />
-      <move select="Hinge Left" scaleY=".75"/>
+      <move select="Extend Left" beats="2" hands="right" offsetX=".5" offsetY=".5" />
+      <move select="Extend Right" beats="2" scaleX="1.5" scaleY="1.25" />
+      <move select="Hinge Left" scaleX="1.5" scaleY=".75"/>
+    </path>
+  </tam>
+
+  <tam title="Dixie Sashay" from="Facing Couples Close" display="no">
+    <formation>
+      <dancer gender="boy" x="1" y="1" angle="270"/>
+      <dancer gender="girl" x="-1" y="1" angle="270"/>
+    </formation>
+    <path>
+      <move select="Dodge Right" beats="4" scaleY="0.875"/>
+      <move select="Hinge Left" beats="3" scaleX="1.5" scaleY=".75"/>
+    </path>
+    <path>
+      <move select="Extend Left" beats="2" hands="right" offsetY=".5" />
+      <move select="Extend Right" beats="2" scaleY="1.25" />
+      <move select="Hinge Left" scaleX=".5" scaleY=".75"/>
     </path>
   </tam>
 
