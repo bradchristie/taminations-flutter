@@ -19,15 +19,9 @@
 */
 
 
-import '../action.dart';
-import '../../../level_data.dart';
-import '../../../math/path.dart';
-import '../../../dancer.dart';
-import '../../call_context.dart';
-import '../../../tam_utils.dart';
-import '../../../math/vector.dart';
+import '../common.dart';
 
-class TouchAQuarter extends Action {
+class TouchAQuarter extends ActivesOnlyAction {
 
   @override
   var level = LevelData.B2;
