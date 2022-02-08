@@ -47,9 +47,9 @@
   <call audio="plus/all_8_spin_the_top.mp3" languages="lang-ja" link="plus/all_8_spin_the_top"
         title="All 8 Spin the Top"/>
   <call link="c1/recycle?animname=AllEightRecycle" title="All Eight Recycle"/>
-  <call languages="lang-de lang-ja" link="b1/allemande" title="Allemande Left"/>
+  <call languages="lang-de lang-ja" link="b1/allemande" audio="b1/allemande.mp3" title="Allemande Left"/>
   <call languages="lang-de lang-ja" link="ssd/allemande" title="Allemande Left"/>
-  <call languages="lang-de lang-ja" link="ms/thar" title="Allemande Thar"/>
+  <call languages="lang-de lang-ja" link="ms/thar" audio="ms/allemande_thar.mp3" title="Allemande Thar"/>
   <call link="c2/swing_along?animname=Along" title="Along"/>
   <call link="c2/alter_and_circulate" title="Alter and Circulate"/>
   <call link="c1/alter_the_wave" title="Alter the Wave"/>
