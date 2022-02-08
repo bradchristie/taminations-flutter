@@ -22,8 +22,8 @@ Dancers join hands with adjacent
 dancers to form a circle and move the circle in the
 indicated direction, or to the left if no direction was given.
 The amount to circle may be a specified
-distance (e.g., Circle Left ½ Way) or until the next command is given
-(e.g., Circle Left &#8230; Circle Right).
+distance (e.g., Circle Left 1/2 Way) or until the next command is given
+(e.g., Circle Left ... Circle Right).
 
 ### Ending formation
 
