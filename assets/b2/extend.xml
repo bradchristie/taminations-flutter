@@ -22,24 +22,6 @@
 -->
 <tamination title="Extend">
 
-  <tam title="Extend" from="Right-Hand Wave" formation="Wave RH" difficulty="1">
-    <path>
-      <move select="Extend Right" beats="2" scaleX="2" scaleY="2"/>
-    </path>
-    <path>
-      <move select="Forward 2"/>
-    </path>
-  </tam>
-
-  <tam title="Extend" from="Left-Hand Wave" formation="Wave LH" difficulty="2">
-    <path>
-      <move select="Extend Left" beats="2" scaleX="2" scaleY="2"/>
-    </path>
-    <path>
-      <move select="Forward 2"/>
-    </path>
-  </tam>
-
   <tam title="Extend" from="Single Quarter Tag"
        formation="Single Quarter Tag" difficulty="2">
     <path>
