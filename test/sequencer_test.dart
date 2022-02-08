@@ -2846,5 +2846,14 @@ Allemande Left''',
 Spin the Pulley But Trail Off
 Left Turn and Deal
 Veer Right
-Promenade Home'''
+Promenade Home''',
+
+  'Scoot and Plenty' :
+'''Sides Pass the Ocean
+Scoot and Plenty Turn the Star 3/4
+Extend
+Boys Run
+Ferris Wheel
+Centers Square Thru 3
+Allemande Left'''
 };

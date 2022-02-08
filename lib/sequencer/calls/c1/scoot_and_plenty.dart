@@ -30,7 +30,7 @@ class ScootAndPlenty extends Action with CallWithParts, CallWithStars {
 
   @override
   Future<void> performPart1(CallContext ctx) async {
-    if (ctx.dancersHoldingLeftHands(isGrand: false).isNotEmpty)
+    if (ctx.dancersHoldingLeftHands(isGrand: false).length > 2)
       dir = 'Left';
     await ctx.applyCalls('Scoot Back');
   }
