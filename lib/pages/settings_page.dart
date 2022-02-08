@@ -19,6 +19,7 @@
 */
 
 import 'package:flutter/material.dart' as fm;
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart' as pp;
 
 import '../common.dart';
@@ -456,7 +457,7 @@ class StartingFormationDropdownWidget extends fm.StatelessWidget {
               margin: fm.EdgeInsets.only(bottom:3),
               child: fm.DropdownButton<String>(
                 value: settings.startingFormation,
-                style: fm.TextStyle(fontSize: 20,color: Color.BLACK),
+                style: GoogleFonts.roboto(fontSize: 20, color: Color.BLACK),
                 underline: fm.Container( height: 0, width:0 ),
                 onChanged: (newValue) {
                   settings.startingFormation = newValue ?? '';
