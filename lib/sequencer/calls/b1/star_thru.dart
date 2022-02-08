@@ -20,7 +20,7 @@
 
 import '../common.dart';
 
-class StarThru extends Action {
+class StarThru extends ActivesOnlyAction {
 
   StarThru(name) : super(name);
 

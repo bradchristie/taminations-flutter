@@ -19,7 +19,7 @@
 
 import '../common.dart';
 
-class SpinTheTop extends Action with CallWithParts {
+class SpinTheTop extends ActivesOnlyAction with CallWithParts {
 
   @override int numberOfParts = 2;
   @override var level = LevelData.MS;
@@ -27,7 +27,12 @@ class SpinTheTop extends Action with CallWithParts {
 
   @override
   Future<void> performPart1(CallContext ctx) async {
-    await ctx.applyCalls('Trade');
+    if (ctx.dancers.any((d) => ctx.dancerFacing(d) != null))
+      await ctx.applyCalls('Facing Dancers Step to a Wave');
+    if (ctx.actives.every((it) => ctx.isInWave(it)))
+      await ctx.applyCalls('Swing');
+    else
+      throw CallError('Unable to Spin the Top from this formation');
   }
 
   @override

@@ -20,7 +20,7 @@
 
 import '../common.dart';
 
-class SlideThru extends Action {
+class SlideThru extends ActivesOnlyAction {
 
   @override
   var level = LevelData.MS;
