@@ -199,6 +199,96 @@
     </path>
   </tam>
 
+  <tam title="Step and Flip"
+       from="Right-Hand Two-Faced Line"
+       formation="Two-Faced Line RH">
+    <path>
+      <move select="Flip Right"/>
+    </path>
+    <path>
+      <move select="Forward 2"/>
+    </path>
+  </tam>
+
+  <tam title="Step and Flip"
+       from="Left-Hand Two-Faced Line"
+       formation="Two-Faced Line LH">
+    <path>
+      <move select="Forward 2"/>
+    </path>
+    <path>
+      <move select="Flip Left"/>
+    </path>
+  </tam>
+
+  <tam title="Step and Flip"
+       from="Right-Hand Two-Faced Lines"
+       formation="Two-Faced Lines RH">
+    <path>
+      <move select="Flip Right"/>
+    </path>
+    <path>
+      <move select="Forward 2"/>
+    </path>
+    <path>
+      <move select="Forward 2"/>
+    </path>
+    <path>
+      <move select="Flip Right"/>
+    </path>
+  </tam>
+
+  <tam title="Step and Flip"
+       from="Left-Hand Two-Faced Lines"
+       formation="Two-Faced Lines LH">
+    <path>
+      <move select="Flip Left"/>
+    </path>
+    <path>
+      <move select="Forward 2"/>
+    </path>
+    <path>
+      <move select="Forward 2"/>
+    </path>
+    <path>
+      <move select="Flip Left"/>
+    </path>
+  </tam>
+
+  <tam title="Step and Flip"
+       from="Right-Hand Two-Faced Tidal Line"
+       formation="Two-Faced Tidal Line RH">
+    <path>
+      <move select="Flip Right" scaleY=".25"/>
+    </path>
+    <path>
+      <move select="Forward 2" offsetY=".5"/>
+    </path>
+    <path>
+      <move select="Forward 2" offsetY=".5"/>
+    </path>
+    <path>
+      <move select="Flip Right" scaleY=".25"/>
+    </path>
+  </tam>
+
+  <tam title="Step and Flip"
+       from="Left-Hand Two-Faced Tidal Line"
+       formation="Two-Faced Tidal Line LH">
+    <path>
+      <move select="Flip Left" scaleY=".25"/>
+    </path>
+    <path>
+      <move select="Forward 2" offsetY="-.5"/>
+    </path>
+    <path>
+      <move select="Forward 2" offsetY="-.5"/>
+    </path>
+    <path>
+      <move select="Flip Left" scaleY=".25"/>
+    </path>
+  </tam>
+
   <tam title="Step and Flip and Roll" group=" "
        from="Lines Facing Out"
        formation="Lines Facing Out" >
