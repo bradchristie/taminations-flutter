@@ -101,36 +101,4 @@
     </taminator>
   </tam>
 
-  <tam title="Heads Pass Thru" group=" " display="none"
-       formation="Static Square">
-    <path>
-      <move select="Extend Left" beats="3" scaleX="3" scaleY=".5" />
-      <move select="Extend Right" scaleY=".5" />
-    </path>
-    <path>
-      <move select="Extend Left" beats="3" scaleX="3" scaleY=".5" />
-      <move select="Extend Right" scaleY=".5" />
-    </path>
-    <path>
-    </path>
-    <path>
-    </path>
-  </tam>
-
-  <tam title="Sides Pass Thru" group=" " display="none"
-       formation="Static Square">
-    <path>
-    </path>
-    <path>
-    </path>
-    <path>
-      <move select="Extend Left" beats="3" scaleX="3" scaleY=".5" />
-      <move select="Extend Right" scaleY=".5" />
-    </path>
-    <path>
-      <move select="Extend Left" beats="3" scaleX="3" scaleY=".5" />
-      <move select="Extend Right" scaleY=".5" />
-    </path>
-  </tam>
-
 </tamination>

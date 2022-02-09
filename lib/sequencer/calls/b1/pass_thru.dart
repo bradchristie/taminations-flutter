@@ -55,6 +55,9 @@ class PassThru extends Action {
     if (!d2.data.active)
       throw CallError('Dancers must Pass Thru with each other' );
     var dist = d.distanceTo(d2);
+    //  If both dancers are on squared set spots, pass thru and stay in the center
+    if (d.isOnSSSpot && d2.isOnSSSpot)
+      dist = 4.0;
     if (name.toLowerCase().startsWith('left' ))
       return TamUtils.getMove('Extend Right' ,scale:[dist/2,0.5].v) +
              TamUtils.getMove('Extend Left' ,scale:[dist/2,0.5].v);

@@ -287,6 +287,9 @@ class Dancer implements Comparable<Dancer> {
     return !a.isAbout(pi/2) && a > pi/2;
   }
 
+  bool get isOnSSSpot =>
+      {location.x.abs().round(), location.y.abs().round()}.containsAll({1,3});
+
   //  Dancer turns to the left to look at center of the square
   bool get isCenterLeft => angleToOrigin > 0;
   bool get isCenterRight => angleToOrigin < 0;
