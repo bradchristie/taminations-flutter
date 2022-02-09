@@ -18,15 +18,14 @@
 
 */
 
-import '../action.dart';
-import '../../../math/path.dart';
-import '../../../dancer.dart';
-import '../../call_context.dart';
-import '../../../tam_utils.dart';
+import '../common.dart';
 
 class Step extends Action {
 
-  Step(String name) : super(name);
+  Step(String name) : super(name) {
+    if (name.contains('Press'))
+      level = LevelData.C1;
+  }
 
   @override
   Path performOne(Dancer d, CallContext ctx) {
