@@ -242,10 +242,15 @@ class _AnimationFrameState extends fm.State<AnimationFrame>
                         }
                       };
 
+                      //  For sequencer show beats
+                      var beatStr = '';
+                      if (isSequencer && sequencerModel.calls.isNotEmpty) {
+                        final tb = sequencerModel.totalBeats().i;
+                        final bb = danceModel.beater.beat.i.clamp(0, tb);
+                        beatStr = '$bb of $tb';
+                      }
+
                       //  Wrap dance area with widget to detect pointer events
-                      final beats = isSequencer && sequencerModel.calls.isNotEmpty
-                          ? sequencerModel.totalBeats().i.s
-                          : '';
                       //  Hook up mouse wheel
                       //  Need separate widget as GestureDetector doesn't handle it
                       return fm.Listener(
@@ -294,7 +299,7 @@ class _AnimationFrameState extends fm.State<AnimationFrame>
                                     bottom: 0.0,
                                     right: 0.0,
                                     child: fm.Text(
-                                        beats + ' ' +
+                                        beatStr + ' ' +
                                         settings.speed.replaceFirst('Normal','') +
                                             (danceModel.looping ? ' Loop' : ''),
                                         style:fm.TextStyle(fontSize:24)
