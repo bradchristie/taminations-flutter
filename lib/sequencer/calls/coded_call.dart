@@ -180,6 +180,7 @@ import 'c2/truck.dart';
 import 'c2/wheel_the_ocean.dart';
 import 'c2/zip_code.dart';
 import 'c3a/couple_up.dart';
+import 'c3a/own_the_dancers.dart';
 import 'c3a/quarter_mix.dart';
 import 'c3a/snap_the_lock.dart';
 import 'c3a/spin_the_pulley.dart';
@@ -391,6 +392,7 @@ abstract class CodedCall extends Call {
     'O[A-Z0-9].+'.r: (name) => OFormation(name),
     '112'.ri: (name) => OneAndaHalf(name),
     'out(er|sides?)(2|4|6)?'.ri: (name) => Outsides(name),
+    'ownthe.*'.ri: (name) => OwnTheDancers(name),
 
     'partnertag'.ri: (_) => PartnerTag(),
     '(left)?passandroll(your(cross)?neighbor)?'.ri: (name) => PassAndRoll(name),
@@ -476,6 +478,7 @@ abstract class CodedCall extends Call {
     '(_left)?starthru'.ri: (name) => StarThru(name),
     'step(ahead)?'.ri: (name) => Step(name),
     'pressahead'.ri: (name) => Step(name),
+    'movein(tothecenter)?'.ri: (name) => Step(name),
     'steptoacompact(lefthand)?wave'.ri: (name) => StepToACompactWave(name),
     //  Stretch not Stretched
     'stretch(?!ed).+'.ri: (name) => Stretch(name),

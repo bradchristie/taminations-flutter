@@ -2855,5 +2855,16 @@ Extend
 Boys Run
 Ferris Wheel
 Centers Square Thru 3
-Allemande Left'''
+Allemande Left''',
+
+  'Own the Dancers' :
+'''Heads Pass Out
+Own the Boys Pass In By Pass Out
+Own the Girls Chase Right By Couples Circulate
+Ends Bend
+Own the Ends Load the Boat By Box Recycle
+Chain Reaction But Hinge
+Trade the Wave
+Boys Run
+Promenade Home'''
 };

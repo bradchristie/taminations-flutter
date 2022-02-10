@@ -47,6 +47,18 @@
   </tam>
 
   <tam title="Swap Around"
+       from="Facing Couples"
+       formation="Facing Couples Far"
+       fractions="2" display="no">
+    <path>
+      <move select="Flip Right" beats="4" />
+    </path>
+    <path>
+      <move select="Forward 6" beats="4" />
+    </path>
+  </tam>
+
+  <tam title="Swap Around"
        from="Normal Lines"
        formation="Normal Lines"
        fractions="2" >
@@ -138,6 +150,18 @@
        fractions="2" display="none">
     <path>
       <move select="Forward 2" beats="4"/>
+    </path>
+    <path>
+      <move select="Flip Left" beats="4" />
+    </path>
+  </tam>
+
+  <tam title="Reverse Swap Around"
+       from="Facing Couples Far"
+       formation="Facing Couples Far"
+       fractions="2" display="no">
+    <path>
+      <move select="Forward 6" beats="4" />
     </path>
     <path>
       <move select="Flip Left" beats="4" />

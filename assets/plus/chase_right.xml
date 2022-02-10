@@ -38,6 +38,21 @@
   </tam>
 
   <tam title="Chase Right"
+       from="Couples Facing Out Far"
+       formation="Couples Facing Out Far"
+       difficulty="1" display="no">
+    <path>
+      <move select="U-Turn Right" beats="1.5" offsetX="-1" />
+      <move select="Forward 4" />
+      <move select="Run Right" beats="2.5" offsetX="1" />
+    </path>
+    <path>
+      <move select="Run Right" beats="2.5" />
+      <move select="Forward 6" beats="5.5" />
+    </path>
+  </tam>
+
+  <tam title="Chase Right"
        from="Lines Facing Out"
        formation="Lines Facing Out"
        difficulty="1">
@@ -177,6 +192,21 @@
     <path>
       <move select="U-Turn Left" beats="1.5" />
       <move select="Forward 4" beats="3" />
+      <move select="Flip Left" beats="1.5" />
+    </path>
+  </tam>
+
+  <tam title="Left Chase"
+       from="Couples Facing Out Far"
+       formation="Couples Facing Out Far"
+       difficulty="2" display="no">
+    <path>
+      <move select="Run Left" />
+      <move select="Forward 6" beats="5" />
+    </path>
+    <path>
+      <move select="U-Turn Left" beats="1.5" />
+      <move select="Forward 6" beats="5" />
       <move select="Flip Left" beats="1.5" />
     </path>
   </tam>

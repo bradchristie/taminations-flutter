@@ -24,7 +24,7 @@
 
   <tam title="Courtesy Turn"
        from="Couples Facing Out"
-       formation="Couples Facing Out">
+       formation="Couples Facing Out" sequencer="no">
     <path>
       <move select="Belle Wheel" scaleX="0.67" />
     </path>

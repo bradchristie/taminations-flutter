@@ -25,7 +25,7 @@
   <tam title="Right and Left Thru"
        from="Facing Couples"
        formation="Facing Couples"
-       parts="3" difficulty="1">
+       parts="3" difficulty="1" sequencer="no">
     <path>
       <move select="Pull Left" beats="1.5" scaleX="2" scaleY=".5" />
       <move select="Extend Right" beats="1.5" scaleX="2" scaleY=".5" />

@@ -36,6 +36,11 @@
     <dancer gender="girl" x="-1" y="-1" angle="0" />
   </formation>
 
+  <formation name="Facing Couples Far">
+    <dancer gender="boy" x="-3" y="1" angle="0" />
+    <dancer gender="girl" x="-3" y="-1" angle="0" />
+  </formation>
+
   <formation name="Couples Facing Out">
     <dancer gender="girl" x="-2" y="1" angle="180" />
     <dancer gender="boy" x="-2" y="-1" angle="180" />
@@ -44,6 +49,11 @@
   <formation name="Couples Facing Out Compact">
     <dancer gender="girl" x="-1.5" y="1" angle="180" />
     <dancer gender="boy" x="-1.5" y="-1" angle="180" />
+  </formation>
+
+  <formation name="Couples Facing Out Far">
+    <dancer gender="girl" x="-3" y="1" angle="180" />
+    <dancer gender="boy" x="-3" y="-1" angle="180" />
   </formation>
 
   <formation name="Couples Facing Out Close">
