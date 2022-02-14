@@ -24,44 +24,28 @@ class BlockFormation extends Action {
   @override final level = LevelData.C1;
   BlockFormation(String name) : super(name);
 
-  //  Match context against block formation
-  //  Map dancers of blocks to dancers of corresponding DPT formation
-  //    Perform the call on the DPT formatino
-  //    Error if call does not end in 2x4 formation
-  //    Adjust ending 2x4 formation to size 3x7
-
-  //    If the call has only 1 (or 2?) movements
-  //      Scale all movements by x2
-  //      Map back to original block
-  //    Else
-  //      Add initial movements to shift block to small 2x2 in corner of formation
-  //      Add call movements
-  //      Add ending movements to shift back to block
-
   @override
   Future<void> perform(CallContext ctx) async {
-    final blockCall = name.replaceFirst('In Your Block'.ri, '').trim();
-    final ctxBlock = CallContext.fromXML(TamUtils.getFormation('Facing Blocks Right'));
-    final blockMatch = ctxBlock.matchFormations(ctx,sexy:false,fuzzy:false,rotate:90,handholds:false);
-    final ctxDPT = CallContext.fromXML(
-        TamUtils.getFormation('Double Pass Thru for Blocks'));
-    if (blockMatch != null) {
-      //  Formation dancers set to line up just the way we want
-      for (var i=0; i<8; i++) {
-        ctxDPT.dancers[i].setStartAngle(
-            ctx.dancers[blockMatch[i]].angleFacing
-                + ctxBlock.dancers[i].anglePosition
-                - ctx.dancers[blockMatch[i]].anglePosition);
-        ctxDPT.dancers[i].gender = ctx.dancers[blockMatch[i]].gender;
-      }
-      await ctxDPT.applyCalls(blockCall);
-      ctxDPT.adjustToFormation('Double Pass Thru for Blocks',rotate: 90);
-      for (var i=0; i<8; i++) {
-        ctx.dancers[blockMatch[i]].path = ctxDPT.dancers[i].path;
-        ctx.dancers[blockMatch[i]].path.scale(2.0, 2.0);
-      }
-    } else
-      throw CallError('Dancers are not in blocks.');
+    final blockCall = name.replaceAll('in your block'.ri, '').trim();
+    final blockFormation = CallContext.fromXML(TamUtils.getFormation('Blocks'));
+    final match = blockFormation.matchFormations(ctx,rotate:90);
+    if (match == null)
+      throw CallError('Dancers are not in Blocks');
+    final ctx1 = CallContext.fromContext(ctx,
+      dancers:[ ctx.dancers[match[0]],ctx.dancers[match[5]],
+                ctx.dancers[match[2]],ctx.dancers[match[7]]]);
+    final ctx2 = CallContext.fromContext(ctx,
+        dancers:[ ctx.dancers[match[1]],ctx.dancers[match[4]],
+                  ctx.dancers[match[3]],ctx.dancers[match[6]]]);
+    //try {
+      await ctx1.applyCalls(blockCall);
+      ctx1.appendToSource();
+      await ctx2.applyCalls(blockCall);
+      ctx2.appendToSource();
+      ctx.adjustToFormation('Blocks',rotate: 90);
+    //} on CallError catch (e) {
+    //  print(e);
+    //}
   }
 
 }

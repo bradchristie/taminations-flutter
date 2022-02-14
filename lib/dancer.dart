@@ -61,6 +61,9 @@ extension DancerQ on Dancer? {
 
 extension DancerList on List<Dancer> {
 
+  //  Return dancer with a specific number
+  Dancer find(int i) => firstWhere((d) => d.number.i == i);
+
   //  Check to see if dancers are in diagonal-opposite order
   //  That is, dancer 1 is the diagonal opposite of dancer 0, etc.
   bool areDancersOrdered() =>
