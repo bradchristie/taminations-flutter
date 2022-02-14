@@ -70,7 +70,7 @@ Boys Run
 Allemande Left''',
 
   'Box Counter Rotate':
-  '''Heads Right and Left Thru
+  '''Heads Move In and Right and Left Thru
 Centers Box Counter Rotate
 Double Pass Thru ''',
 
@@ -175,7 +175,7 @@ Centers Square Thru 3
 Allemande Left''',
 
   'Courtesy Turn':
-  '''Heads Pass Thru
+  '''Heads Move In and Pass Thru
 Centers Courtesy Turn and Back Away
 Sides Star Thru
 Double Pass Thru
@@ -259,7 +259,7 @@ Allemande Left
 Promenade Home''',
 
   'Double Star Thru' :
-  '''Heads Pass Thru
+  '''Heads Move In and Pass Thru
 Sides Separate
 Double Star Thru
 Bend the Line
@@ -1206,7 +1206,7 @@ Centers Pass Thru
 Allemande Left''',
 
   'Split Catch' :
-  '''Heads Right and Left Thru
+  '''Heads Move In and Right and Left Thru
 Left Split Catch 3
 Boys Run
 Circulate
@@ -2842,7 +2842,7 @@ Centers Pass Thru
 Allemande Left''',
 
   'Spin the Pulley' :
-'''Heads Right and Left Thru
+'''Heads Move In and Right and Left Thru
 Spin the Pulley But Trail Off
 Left Turn and Deal
 Veer Right
