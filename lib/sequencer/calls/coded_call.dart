@@ -80,6 +80,7 @@ import 'b2/balance.dart';
 import 'b2/box_the_gnat.dart';
 import 'b2/cross_run.dart';
 import 'b2/pass_the_ocean.dart';
+import 'b2/pass_the_sea.dart';
 import 'b2/run.dart';
 import 'b2/sweep_a_quarter.dart';
 import 'b2/swing_thru.dart';
@@ -399,6 +400,7 @@ abstract class CodedCall extends Call {
     'pass(in|out)'.ri: (name) => PassInOut(name),
     'passtheaxle'.ri: (_) => PassTheAxle(),
     'passtheocean'.ri: (_) => PassTheOcean(),
+    'passthesea'.ri: (_) => PassTheSea(),
     '(left)?passthru'.ri: (name) => PassThru(name),
     'passtothecenter'.ri: (_) => PassToTheCenter(),
     'peeltoadiamond'.ri: (_) => PeelToADiamond(),

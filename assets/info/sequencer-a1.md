@@ -16,5 +16,6 @@ By default the trailers Cross or you can designate the dancers to Cross.
 in addition to any general line, can also be applied to 4 selected dancers. 
 Of course these dancers need to form a Cross Over Circulate path.
 * **[Mix](../a1/mix.md)** - is a 2-Part Call
+* **[Pass the Sea](../a1/pass_the_sea.md)** - is a 3-Part Call
 * **[(Grand) (Left) (Three) Quarter Thru](../a1/quarter_thru.md)** -
 is a 2-Part Call

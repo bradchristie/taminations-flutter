@@ -2866,5 +2866,17 @@ Own the Ends Load the Boat By Box Recycle
 Chain Reaction But Hinge
 Trade the Wave
 Boys Run
-Promenade Home'''
+Promenade Home''',
+
+  'Pass the Sea' :
+'''Heads Pair Off
+Pass Thru
+Finish Pass the Sea
+Hinge
+Left Remake
+Partner Tag
+Left Turn and Deal
+Centers Pass Thru
+Right and Left Thru
+Allemande Left'''
 };
