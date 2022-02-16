@@ -19,10 +19,11 @@
 
 import '../common.dart';
 
-class LoadTheBoat extends Action with CallWithParts {
+class LoadTheBoat extends Action with CallWithParts, ButCall {
 
   @override int numberOfParts = 4;
   @override var level = LevelData.PLUS;
+  @override var butCall = 'Pass Thru';
   LoadTheBoat() : super('Load the Boat');
 
   String _endsPart(CallContext ctx) {
@@ -56,7 +57,7 @@ class LoadTheBoat extends Action with CallWithParts {
   @override
   Future<void> performPart4(CallContext ctx) async {
     ctx.analyze();
-    await ctx.applyCalls('Ends Face In While Center 4 Pass Thru');
+    await ctx.applyCalls('Ends Face In While Center 4 $butCall');
   }
 
 }
