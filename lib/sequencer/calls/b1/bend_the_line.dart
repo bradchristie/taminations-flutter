@@ -26,7 +26,7 @@ class BendTheLine extends Action {
 
   @override
   Path performOne(Dancer d, CallContext ctx) {
-    if (!ctx.isInCouple(d))
+    if (!ctx.isInCouple(d) || !d.data.partner!.data.active)
       throw CallError('Only couples can Bend the Line' );
     if (d.data.beau) {
       if (d.isCenterRight)
