@@ -217,7 +217,7 @@ class AbbreviationsModel extends fm.ChangeNotifier {
   String replaceAbbreviations(String text) {
     var replaced = text;
     for (final a in currentAbbreviations) {
-      replaced = replaced.replaceAll('\\b${a.abbr}\\b'.r, a.expa);
+      replaced = replaced.replaceAll('\\b${a.abbr}\\b'.ri, a.expa);
     }
     return replaced;
   }
