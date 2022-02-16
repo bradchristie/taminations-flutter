@@ -573,7 +573,6 @@ class CallContext {
         var mm = ctx1.matchFormations(ctx2,sexy: sexy, fuzzy: fuzzy,
             handholds: !fuzzy, headsMatchSides: headsMatchSides);
         if (mm != null) {
-          print('${tam('title')}  $headsMatchSides');
           var matchResult = ctx1.computeFormationOffsets(ctx2, mm,delta: 0.2);
           var totOffset = matchResult.offsets.fold<double>(0.0, (s, v) => s + v.length);
           if (totOffset < bestOffset) {

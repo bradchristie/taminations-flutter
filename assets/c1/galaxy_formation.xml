@@ -22,36 +22,6 @@
 -->
 <tamination title="Galaxy Formation">
 
-  <tam title="Right-Hand Galaxy" group=" "
-       from="Right-Hand Galaxy"
-       formation="Galaxy RH GP"
-       fractions="" >
-    <path>
-      <move select="Stand"/>
-    </path>
-    <path>
-    </path>
-    <path>
-    </path>
-    <path>
-    </path>
-  </tam>
-
-  <tam title="Left-Hand Galaxy" group=" "
-       from="Left-Hand Galaxy"
-       formation="Galaxy LH GP"
-       fractions="" >
-    <path>
-      <move select="Stand"/>
-    </path>
-    <path>
-    </path>
-    <path>
-    </path>
-    <path>
-    </path>
-  </tam>
-
   <tam title="Galaxy Circulate"
        from="Right-Hand Galaxy">
     <formation>
@@ -170,6 +140,44 @@
     <path>
       <move select="Dodge Left" />
       <move select="Swing Left" />
+    </path>
+  </tam>
+
+  <tam title="Cut the Galaxy"
+       from="Facing Galaxy, Right-Hand Centers"
+       formation="Galaxy Facing RH Box">
+    <path>
+      <move select="Lead Right" beats="3" scaleX="2" />
+    </path>
+    <path>
+      <move select="Dodge Left" />
+      <move select="Swing Left" />
+    </path>
+    <path>
+      <move select="Extend Left" beats="3" scaleY="2" />
+    </path>
+    <path>
+      <move select="Dodge Left" />
+      <move select="Swing Left" />
+    </path>
+  </tam>
+
+  <tam title="Cut the Galaxy"
+       from="Facing Galaxy, Left-Hand Centers"
+       formation="Galaxy Facing LH Box">
+    <path>
+      <move select="Extend Right" beats="3" scaleY="2" />
+    </path>
+    <path>
+      <move select="Dodge Right" />
+      <move select="Swing Right" />
+    </path>
+    <path>
+      <move select="Lead Left" beats="3" scaleX="2" />
+    </path>
+    <path>
+      <move select="Dodge Right" />
+      <move select="Swing Right" />
     </path>
   </tam>
 
