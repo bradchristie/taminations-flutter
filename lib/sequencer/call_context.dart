@@ -567,12 +567,13 @@ class CallContext {
         var sexy = tam('sequencer','').contains('gender-specific');
         //  Make sure we don't mismatch heads and sides
         //  on calls that specifically refer to them
-        var headsMatchSides = !tam('title').contains('Heads?|Sides'.r);
+        var headsMatchSides = !tam('title').contains('Heads?|Sides?'.r);
         //  Try to match the formation to the current dancer positions
         var ctx2 = CallContext.fromXML(tam);
         var mm = ctx1.matchFormations(ctx2,sexy: sexy, fuzzy: fuzzy,
             handholds: !fuzzy, headsMatchSides: headsMatchSides);
         if (mm != null) {
+          print('${tam('title')}  $headsMatchSides');
           var matchResult = ctx1.computeFormationOffsets(ctx2, mm,delta: 0.2);
           var totOffset = matchResult.offsets.fold<double>(0.0, (s, v) => s + v.length);
           if (totOffset < bestOffset) {
