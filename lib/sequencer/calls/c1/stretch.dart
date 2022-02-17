@@ -19,6 +19,7 @@
 */
 
 import '../common.dart';
+import '../xml_call.dart';
 
 class Stretch extends Action {
 
@@ -27,49 +28,65 @@ class Stretch extends Action {
 
   @override
   Future<void> perform(CallContext ctx) async {
+
+    final stackIndex = ctx.callstack.indexOf(this);
+    final fracctx = CallContext.fromContext(ctx);
+    //  Look for the call to stretch
+    //  Must be a subsequent action on the stack
+    var found = false;
+    var call = ctx.callstack[stackIndex];
+    while (!found && stackIndex+1 < ctx.callstack.length) {
+      call = ctx.callstack.removeAt(stackIndex+1);
+      found = call is Action || call is XMLCall;
+      fracctx.callstack.add(call);
+    }
+    if (!found)
+      throw CallError('Not able to find call for fraction $name');
+
     //  First perform the call normally
-    final normalCall = name.replaceFirst('stretch '.ri, '');
-    await ctx.applyCalls(normalCall);
+    await fracctx.performCall();
 
     //  Now shift the new centers to their stretch positions
-    ctx.animateToEnd();
-    ctx.analyze();
-    if (ctx.is2x4()) {
-      for (final d in ctx.dancers.where((d) => d.data.center)) {
+    fracctx.animateToEnd();
+    fracctx.analyze();
+    if (fracctx.is2x4()) {
+      for (final d in fracctx.dancers.where((d) => d.data.center)) {
         Vector shift;
-        if (ctx.dancerInFront(d) ?.data.end ?? false) {
-          final d2 = ctx.dancerInBack(d).throwIfNull(
+        if (fracctx.dancerInFront(d) ?.data.end ?? false) {
+          final d2 = fracctx.dancerInBack(d).throwIfNull(
               CallError('Unable to calculate Stretch'));
           shift = Vector(-d.distanceTo(d2), 0.0);
-        } else if (ctx.dancerInBack(d) ?.data.end ?? false) {
-          final d2 = ctx.dancerInFront(d).throwIfNull(
+        } else if (fracctx.dancerInBack(d) ?.data.end ?? false) {
+          final d2 = fracctx.dancerInFront(d).throwIfNull(
               CallError('Unable to calculate Stretch'));
           shift = Vector(d.distanceTo(d2), 0.0);
-        } else if (ctx.dancerToLeft(d) ?.data.end ?? false) {
-          final d2 = ctx.dancerToRight(d).throwIfNull(
+        } else if (fracctx.dancerToLeft(d) ?.data.end ?? false) {
+          final d2 = fracctx.dancerToRight(d).throwIfNull(
               CallError('Unable to calculate Stretch'));
           shift = Vector(0.0, -d.distanceTo(d2));
-        } else if (ctx.dancerToRight(d) ?.data.end ?? false) {
-          final d2 = ctx.dancerToLeft(d).throwIfNull(
+        } else if (fracctx.dancerToRight(d) ?.data.end ?? false) {
+          final d2 = fracctx.dancerToLeft(d).throwIfNull(
               CallError('Unable to calculate Stretch'));
           shift = Vector(0.0, d.distanceTo(d2));
         } else
           throw CallError('Unable to find direction to Stretch');
         d.path.skewFromEnd(shift.x, shift.y);
       }
-    } else if (ctx.isOnAxis()) {
-      for (final d in ctx.center(4)) {
+    } else if (fracctx.isOnAxis()) {
+      for (final d in fracctx.center(4)) {
         final dancerList =
-        [ ctx.dancersInFront(d),
-          ctx.dancersInBack(d),
-          ctx.dancersToLeft(d),
-          ctx.dancersToRight(d) ]
+        [ fracctx.dancersInFront(d),
+          fracctx.dancersInBack(d),
+          fracctx.dancersToLeft(d),
+          fracctx.dancersToRight(d) ]
             .reduce((list1, list2) => list1.length > list2.length ? list1 : list2);
         final shift = d.vectorToDancer(dancerList[1]);
         d.path.skewFromEnd(shift.x,shift.y);
       }
     } else
       throw CallError('Unable to calculate Stretch');
+
+    fracctx.appendToSource();
 
   }
 

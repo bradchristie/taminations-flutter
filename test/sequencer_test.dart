@@ -2878,5 +2878,18 @@ Partner Tag
 Left Turn and Deal
 Centers Pass Thru
 Right and Left Thru
+Allemande Left''',
+
+  'Stretch' :
+'''Sides Pair Off
+Circle to a Line
+Pass Thru
+Stretch Left Shakedown  Centers With the Flow
+Ends Separate and Left Touch 1/4 While Others Box Counter Rotate
+Checkover
+Stretch Left Turn and Deal and Roll
+Circulate
+Ferris Wheel
+Centers Pass Thru While Ends Half Sashay
 Allemande Left'''
 };

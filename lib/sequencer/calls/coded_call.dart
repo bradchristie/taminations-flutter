@@ -483,7 +483,7 @@ abstract class CodedCall extends Call {
     'movein(tothecenter)?'.ri: (name) => Step(name),
     'steptoacompact(lefthand)?wave'.ri: (name) => StepToACompactWave(name),
     //  Stretch not Stretched
-    'stretch(?!ed).+'.ri: (name) => Stretch(name),
+    'stretch(?!ed)'.ri: (name) => Stretch(name),
     'substitute'.ri: (_) => Substitute(),
     'sweep14'.ri: (name) => SweepAQuarter(name),
     'swing'.ri: (_) => Swing(),
