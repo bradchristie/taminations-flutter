@@ -26,13 +26,15 @@ class CircleBy extends Action with CallWithParts {
   @override var numberOfParts = 2;
   late String frac1;
   late String frac2;
+  late String name2;
   CircleBy(String name) : super(name) {
     //  Make sure we have "Circle By <fraction> and <something>"
     final a = name.replaceFirst('Circle By','').divide('and');
     if (a.length != 2)
       throw CallError('Circle By <fraction> and <fraction or call>');
     frac1 = TamUtils.normalizeCall(a[0]);
-    frac2 = TamUtils.normalizeCall(a[1]);
+    name2 = a[1];
+    frac2 = TamUtils.normalizeCall(name2);
   }
 
   @override
@@ -60,7 +62,7 @@ class CircleBy extends Action with CallWithParts {
     else if (frac2 == '34')
       await ctx.applyCalls('Cast Off 3/4');
     else if (frac2 != 'Nothing')
-      await ctx.applyCalls(frac2);
+      await ctx.applyCalls(name2);
   }
 
 }
