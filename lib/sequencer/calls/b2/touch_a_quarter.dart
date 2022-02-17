@@ -29,13 +29,14 @@ class TouchAQuarter extends ActivesOnlyAction {
 
   @override
   Path performOne(Dancer d, CallContext ctx) {
-    var d2 = ctx.dancerFacing(d);
+    final amount = TamUtils.normalizeCall(name).endsWith('2') ? 'Swing' : 'Hinge';
+    final d2 = ctx.dancerFacing(d);
     if (d2 == null)
       return ctx.dancerCannotPerform(d,name);
     return TamUtils.getMove('Extend Left',
       scale:[d.distanceTo(d2)/2.0,1.0].v,
         reflect: name.startsWith('Left')) +
-    TamUtils.getMove('Hinge Right',
+    TamUtils.getMove('$amount Right',
         reflect: name.startsWith('Left'));
   }
 
