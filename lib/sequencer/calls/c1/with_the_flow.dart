@@ -20,14 +20,14 @@
 
 import '../common.dart';
 
-class WithTheFlow extends Action {
+class WithTheFlow extends ActivesOnlyAction {
 
   @override final level = LevelData.C1;
   WithTheFlow() : super('With the Flow');
 
   @override
   Future<void> perform(CallContext ctx) async {
-    if (ctx.actives.any((d) => !ctx.isInCouple(d)))
+    if (ctx.dancers.any((d) => !ctx.isInCouple(d)))
       throw CallError('Only couples can do With the Flow');
     var isLeft = true;
     var isRight = true;
