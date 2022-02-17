@@ -223,4 +223,19 @@
     </path>
   </tam>
 
+  <tam title="All 8 Vertical 1/2 Tag" formation="Static Square" group=" ">
+    <path>
+    </path>
+    <path>
+      <move select="Extend Left" beats="3" scaleX="3" scaleY="2" />
+      <move select="Forward 3"/>
+    </path>
+    <path>
+    </path>
+    <path>
+      <move select="Extend Left" beats="3" scaleX="3" scaleY="2" />
+      <move select="Forward 3"/>
+    </path>
+  </tam>
+
 </tamination>

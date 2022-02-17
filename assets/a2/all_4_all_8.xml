@@ -2183,6 +2183,10 @@
            xref-title="All 8 Switch the Line"
            xref-formation="Reverse Star Promenade"/>
 
+  <tamxref title="All 8 (C-1) Vertical 1/2 Tag" group="All 8 (C-1)"
+           xref-link="c1/vertical_tag"
+           xref-title="All 8 Vertical 1/2 Tag"/>
+
   <tamxref title="All 8 (C-1) Vertical Tag Back to a Wave" group="All 8 (C-1)"
            xref-link="c1/tagging_calls_back_to_a_wave"
            xref-title="All 8 Vertical Tag Back to a Wave"/>

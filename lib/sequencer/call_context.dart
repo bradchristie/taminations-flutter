@@ -139,7 +139,8 @@ class CallContext {
     'c3a/big_block_concept',
     'c1/scoot_and_little',
     'a2/hourglass_circulate',
-    'c2/reverse_cut_the_diamond'
+    'c2/reverse_cut_the_diamond',
+    'c1/vertical_tag'
   ];
 
   static const standardFormations = {
