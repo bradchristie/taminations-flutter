@@ -2891,5 +2891,21 @@ Stretch Left Turn and Deal and Roll
 Circulate
 Ferris Wheel
 Centers Pass Thru While Ends Half Sashay
+Allemande Left''',
+
+  'Reverse Explode' :
+'''Sides Pass the Ocean
+Extend
+Quarter Thru
+Boys Reverse Explode While Girls Explode
+1/2 Circulate
+Center 4 Run
+Boys Reverse Explode
+Left Plenty
+Extend
+Out-Roll Circulate
+Girls Run
+Star Thru
+Pass Thru
 Allemande Left'''
 };

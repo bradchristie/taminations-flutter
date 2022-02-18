@@ -117,6 +117,7 @@ import 'c1/plenty.dart';
 import 'c1/ramble.dart';
 import 'c1/relay_the_top.dart';
 import 'c1/replace.dart';
+import 'c1/reverse_explode.dart';
 import 'c1/scoot_and_plenty.dart';
 import 'c1/scoot_and_ramble.dart';
 import 'c1/siamese.dart';
@@ -424,6 +425,7 @@ abstract class CodedCall extends Call {
     'relaythetop'.ri: (name) => RelayTheTop(name),
     '(left)?(grand)?remake'.ri: (name) => Remake(name),
     '.+(but)?replace.+'.ri: (name) => Replace(name),
+    'reverseexplode'.ri: (_) => ReverseExplode(),
     'reverseorder.*'.ri: (name) => ReverseOrder(name),
     'rightandleftthru'.ri: (_) => RightAndLeftThru(),
     '(left|right)?ripple.*'.ri: (name) => Ripple(name),
