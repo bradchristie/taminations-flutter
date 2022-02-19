@@ -244,22 +244,94 @@
        formation="Diamonds 3 and 1"
        difficulty="3">
     <path>
-      <move select="Extend Left" beats="2" scaleX="2" scaleY=".5" />
-      <move select="Lead Right" beats="2" scaleX="2" scaleY="1.5" />
+      <move select="Extend Left" beats="1.5" scaleX="2" scaleY=".5" />
+      <move select="Lead Right" beats="1.5" scaleX="2" scaleY="1.5" />
     </path>
     <path>
-      <move select="Lead Left" beats="4" scaleY="3" />
+      <move select="Lead Left" beats="3" scaleY="3" />
     </path>
     <path>
-      <move select="Lead Left" beats="4" scaleX="2" />
+      <move select="Lead Left" beats="3" scaleX="2" />
     </path>
     <path>
-      <move select="Lead Left" beats="4" scaleY="3" />
+      <move select="Lead Left" beats="3" scaleY="3" />
     </path>
     <taminator>
     In this case two dancers are circulating to the same spot.
     So the Same Position Rule applies and they join right hands.
     </taminator>
+  </tam>
+
+  <tam title="Diamond Circulate"
+       from="Diamonds with Center Two-Faced Line 2"
+       difficulty="3" display="no">
+    <formation>
+      <dancer gender="boy" x="0" y="-3" angle="0"/>
+      <dancer gender="girl" x="-3" y="-2" angle="270"/>
+      <dancer gender="boy" x="0" y="-1" angle="0"/>
+      <dancer gender="girl" x="3" y="-2" angle="90"/>
+    </formation>
+    <path>
+      <move select="Lead Left" beats="3" scaleX="2" />
+    </path>
+    <path>
+      <move select="Lead Left" beats="3" scaleY="3" />
+    </path>
+    <path>
+      <move select="Extend Left" beats="1.5" scaleX="2" scaleY=".5" />
+      <move select="Lead Right" beats="1.5" scaleX="2" scaleY="1.5" />
+    </path>
+    <path>
+      <move select="Lead Left" beats="3" scaleY="3" />
+    </path>
+  </tam>
+
+  <tam title="Diamond Circulate"
+       from="Diamonds with Center Two-Faced Line 3"
+       difficulty="3" display="no">
+    <formation>
+      <dancer gender="boy" x="0" y="-3" angle="180"/>
+      <dancer gender="girl" x="-3" y="-2" angle="90"/>
+      <dancer gender="boy" x="0" y="-1" angle="180"/>
+      <dancer gender="girl" x="3" y="-2" angle="270"/>
+    </formation>
+    <path>
+      <move select="Forward 2" beats="1.5"/>
+      <move select="Lead Right" beats="1.5" scaleX="2"/>
+    </path>
+    <path>
+      <move select="Lead Right Passing" scaleY="3" beats="3"/>
+    </path>
+    <path>
+      <move select="Lead Left Passing" scaleX="2" beats="3"/>
+    </path>
+    <path>
+      <move select="Lead Right" beats="3" scaleY="3" />
+    </path>
+  </tam>
+
+  <tam title="Diamond Circulate"
+       from="Diamonds with Center Two-Faced Line 4"
+       difficulty="3" display="no">
+    <formation>
+      <dancer gender="boy" x="0" y="-3" angle="0"/>
+      <dancer gender="girl" x="-3" y="-2" angle="90"/>
+      <dancer gender="boy" x="0" y="-1" angle="0"/>
+      <dancer gender="girl" x="3" y="-2" angle="270"/>
+    </formation>
+    <path>
+      <move select="Lead Left Passing" scaleX="2" beats="3"/>
+    </path>
+    <path>
+      <move select="Lead Right Passing" scaleY="3" beats="3"/>
+    </path>
+    <path>
+      <move select="Forward 2" beats="1.5"/>
+      <move select="Lead Right" beats="1.5" scaleX="2"/>
+    </path>
+    <path>
+      <move select="Lead Right" beats="3" scaleY="3" />
+    </path>
   </tam>
 
   <tam title="Diamond Circulate"
