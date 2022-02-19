@@ -2907,5 +2907,20 @@ Out-Roll Circulate
 Girls Run
 Star Thru
 Pass Thru
+Allemande Left''',
+
+  'Spread 2' :
+'''Heads Star Thru and Spread
+Ends Touch 1/4 and Spread
+Butterfly Center 4 Touch 1/4
+Butterfly Circulate
+Girls Squeeze
+Circulate
+Boys Run
+Centers Pass Thru
+Star Thru
+Pass Thru
+Wheel and Deal
+Centers Pass Thru
 Allemande Left'''
 };
