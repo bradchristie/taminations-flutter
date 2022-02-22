@@ -471,7 +471,7 @@ abstract class CodedCall extends Call {
     '(and)?spread'.ri: (name) => Spread(name),
     'squarethebases'.ri: (_) => SquareTheBases(),
     'squaretheset'.ri: (_) => SquareTheSet(),
-    'squeeze'.ri: (_) => Squeeze(),
+    'squeeze(the(butterfly|o))?'.ri: (name) => Squeeze(name),
     'squeezethegalaxy'.ri: (_) => SqueezeTheGalaxy(),
     'squeezethehourglass'.ri: (_) => SqueezeTheHourglass(),
     '(left)?squarethru(1|2|3|4|5|6|7)?(toawave)?'.ri: (name) => SquareThru(name),

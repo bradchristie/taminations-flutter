@@ -23,7 +23,22 @@ import '../common.dart';
 class Squeeze extends Action {
 
   @override final level = LevelData.C1;
-  Squeeze() : super('Squeeze');
+  Squeeze(String name) : super(name);
+
+  @override
+  Future<void> perform(CallContext ctx) async {
+    if (name.lc.endsWith('butterfly')) {
+      final ctx2 = CallContext.fromXML(TamUtils.getFormation('Butterfly RH'));
+      if (ctx.matchFormations(ctx2,rotate: 180) == null)
+        throw CallError('Formation is not a Butterfly');
+    }
+    else if (name.lc.endsWith('o')) {
+      final ctx2 = CallContext.fromXML(TamUtils.getFormation('O RH'));
+      if (ctx.matchFormations(ctx2,rotate: 180) == null)
+        throw CallError('Formation is not an O');
+    }
+    return super.perform(ctx);
+  }
 
   @override
   Path performOne(Dancer d, CallContext ctx) {
