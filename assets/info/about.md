@@ -20,21 +20,22 @@ Call pronunciations provided by
 
 ***
 
-## Taminations version 1.6.33 built 2022-02-07
+## Taminations version 1.6.34 built 2022-02-21
 Copyright 2022 by Brad Christie.  
 This is free software, and you are welcome to modify and redistribute it
 under the terms of the [GNU GPL license](http://www.gnu.org/licenses/gpl.html).  
 
 ## What's New
-* More fixes for font display problems
-* Fix a couple broken animations
+* More animations for Step and Flip
+* Remove incorrect animation for Extend
 * Sequencer changes:
-  * Fix loss of focus after typing Undo on some platforms
-  * Improve handling of fractions, now calls like Ends Half Zoom and Cast Off 3/4 works
-  * Fix Centers Tandem Trade and similar calls
-  * Add command to set axes display
-  * Fix Box the Gnat from 1/4 tag after ends face in
-  * More calls with parts added
+  * Fix parts for Scoot and Plenty
+  * Better checking for improper Star Thru, Slide Thru, Spin the Top
+  * Adhere to Static Square convention, use Move In to stay in the center
+  * Add current beat number to display
+  * Add code for Own the (anyone)
+  * Fixes for Block calls
+
 
 For a detailed history of changes, view the
 [Git log](https://github.com/bradchristie/taminations-flutter/commits/main)
