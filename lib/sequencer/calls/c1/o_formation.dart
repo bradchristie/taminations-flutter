@@ -26,6 +26,26 @@ class OFormation extends ModifiedFormationConcept {
   @override final conceptName = 'O';
   @override final modifiedFormationName = 'Double Pass Thru';
   @override final formationName = 'O RH';
+  @override String get realCall {
+    final getReal = super.realCall;
+    if (getReal.lc.endsWith('a wave') || getReal.lc.endsWith('a line'))
+      return getReal;
+    else
+      return getReal.replaceAllMapped('(.*) to .*'.ri, (m) => m[1]!);
+  }
   OFormation(String name) : super(name);
+
+  @override
+  bool reformFormation(CallContext ctx) {
+    //  If a different ending formation was given, use that
+    if (name.matches('.* to (?!a (line|wave))(a )?.*'.ri)) {
+      final formation = CallContext.formationName(norm);
+      if (!ctx.adjustToFormation(formation))
+        throw CallError('Unable to form ending formation');
+      return true;
+    }
+    else
+      return super.reformFormation(ctx);
+  }
 
 }

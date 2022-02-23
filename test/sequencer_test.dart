@@ -2922,5 +2922,18 @@ Star Thru
 Pass Thru
 Wheel and Deal
 Centers Pass Thru
+Allemande Left''',
+
+  'Butterfly To Lines' :
+'''Sides Face In
+O Double Pass Thru
+O Track 2 to Waves
+Recycle
+Girls Squeeze
+Butterfly Zing to Lines
+Brace Thru
+Star Thru
+Pass Thru
+Trade By
 Allemande Left'''
 };

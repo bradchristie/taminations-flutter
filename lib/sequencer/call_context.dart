@@ -186,6 +186,24 @@ class CallContext {
     'Square RH' : 1.0
   };
 
+  static Map<RegExp,String> formationMap = {
+    '.*lines?'.ri : 'Normal Lines' ,
+    '.*waves?'.ri : 'Normal Lines' ,
+    '.*thar'.ri : 'Thar RH Boys' ,
+    '.*square(d)?set'.ri : 'Squared Set' ,
+    '.*boxes'.ri : 'Eight Chain Thru' ,
+    '.*columns?'.ri : 'Eight Chain Thru' ,
+    '.*(1|3)4tag'.ri : 'Quarter Tag' ,
+    '.*diamonds?'.ri : 'Diamonds RH Girl Points' ,
+    '.*tidal(wave|line)?'.ri : 'Tidal Line RH' ,
+    '.*hourglass'.ri : 'Hourglass RH BP' ,
+    '.*galaxy'.ri : 'Galaxy RH GP' ,
+    '.*butterfly'.ri : 'Butterfly RH' ,
+    '.*o'.ri : 'O RH',
+    //  two couples
+    '.*box'.ri : 'Facing Couples'
+  };
+
   static Future<XmlDocument> loadOneFile(String link) async {
     if (loadedMXL.containsKey(link))
       return loadedMXL[link]!;
@@ -311,6 +329,27 @@ class CallContext {
         ));
     }
   }
+
+  //  Get a loadable formation name given a more generic name
+  static String formationName(String request) {
+    for (var e in formationMap.entries) {
+      if (request.matches(e.key))
+        return e.value;
+    }
+    throw CallError('Unable to find formation $request');
+  }
+
+  //  Load a formation from any sort of name
+  static XmlElement _xmlFromName(String name) {
+    try {
+      return TamUtils.getFormation(name);
+    } on Error {
+      return TamUtils.getFormation(formationName(name));
+    }
+  }
+
+  //  Create a CallContext from any sort of formation name
+  CallContext.fromName(String name) : this.fromXML(_xmlFromName(name));
 
   void noSnap() { _snap = false; }
 
@@ -593,7 +632,10 @@ class CallContext {
         }
         // add XMLCall object to the call stack
         ctx0.callstack.add(xmlCall);
-        ctx0.callname = callname + title.replaceAll('\\(.*\\)'.r, '') + ' ';
+        // Remove stuff like (C-1) from title
+        // Also remove quotes as used for "O" calls
+        ctx0.callname = callname + title.replaceAll('\\(.*\\)'.r, '')
+            .replaceAll('"', '') + ' ';
         xmlCall.level = LevelData.find(link)!;
         return true;
       }

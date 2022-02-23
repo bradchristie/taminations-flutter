@@ -4,7 +4,8 @@
 + **[Alter the Wave](../c1/alter_the_wave.md)** - is a 4-Part Call with a Star
 + **[\<anything> Chain Thru](../c1/anything_chain_thru.md)** - is a 3-Part Call
 + **[Butterfly Concept](../c1/butterfly_formation.md)** -
-  Any call that can be done from columns can be done from a Butterfly
+  Any call that can be done from columns can be done from a Butterfly.
+  To end a call in a formation other than a Butterfly, append "to a \<formation\>"
 + **[Circle By](../c1/circle_by.md)** -
   You can do both Circle By \<fraction> and \<fraction>,
   and Circle By \<fraction> and \<any other call>
@@ -22,6 +23,7 @@
   + Little Outsides/Points (Go) Forward/As You Are
 + **["O" Concept](../c1/o_formation.md)** -
   Any call that can be done from columns can be done from an "O"
+  To end a call in a formation other than an O, append "to a \<formation\>"
 + **[Pass the Axle](../c1/pass_the_axle.md)** - is a 4-Part Call with But
 + **[Percolate](../c1/percolate.md)** - is a 3-Part Call with But
 + **[Phantom Concept](../c1/phantom_formation.md)** -

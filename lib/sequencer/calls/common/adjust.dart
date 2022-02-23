@@ -28,11 +28,12 @@ class Adjust extends Action {
 
   static Map<RegExp,String> formationMap = {
     '.*lines?'.ri : 'Normal Lines' ,
+    '.*waves?'.ri : 'Normal Lines' ,
     '.*thar'.ri : 'Thar RH Boys' ,
     '.*square(d)?set'.ri : 'Squared Set' ,
     '.*boxes'.ri : 'Eight Chain Thru' ,
     '.*columns?'.ri : 'Eight Chain Thru' ,
-    '.*14tag'.ri : 'Quarter Tag' ,
+    '.*(1|3)4tag'.ri : 'Quarter Tag' ,
     '.*diamonds?'.ri : 'Diamonds RH Girl Points' ,
     '.*tidal(wave|line)?'.ri : 'Tidal Line RH' ,
     '.*hourglass'.ri : 'Hourglass RH BP' ,

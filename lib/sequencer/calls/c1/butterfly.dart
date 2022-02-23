@@ -19,7 +19,6 @@
 */
 
 import '../common.dart';
-import '../common/modified_formation_concept.dart';
 
 class Butterfly extends ModifiedFormationConcept {
 
@@ -27,12 +26,25 @@ class Butterfly extends ModifiedFormationConcept {
   @override final conceptName = 'Butterfly';
   @override final modifiedFormationName = 'Double Pass Thru';
   @override final formationName = 'Butterfly RH';
+  @override String get realCall {
+    final getReal = super.realCall;
+    if (getReal.lc.endsWith('a wave') || getReal.lc.endsWith('a line'))
+      return getReal;
+    else
+      return getReal.replaceAllMapped('(.*) to .*'.ri, (m) => m[1]!);
+  }
   Butterfly(String name) : super(name);
 
   @override
   bool reformFormation(CallContext ctx) {
+    //  If a different ending formation was given, use that
+    if (name.matches('.* to (?!a (line|wave))(a )?.*'.ri)) {
+      final formation = CallContext.formationName(norm);
+      if (!ctx.adjustToFormation(formation))
+        throw CallError('Unable to form ending formation');
+    }
     //  First try the usual way
-    if (!super.reformFormation(ctx)) {
+    else if (!super.reformFormation(ctx)) {
       //  That didn't work, we are too far off from a butterfly
       //  So first just concentrate on the centers
       final centers = CallContext.fromContext(ctx,dancers:ctx.center(4));
