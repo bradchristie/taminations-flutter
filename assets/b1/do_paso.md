@@ -63,7 +63,6 @@ While primarily a circle-type figure, Do Paso may also be started from 8 Chain T
 and Left-Hand Ocean Waves (boys on end).
 
 Do Paso may also be used from circles of 4 and 6 dancers. These applications have received insufficient
-use in recent years and will probably require a quick walkthru.
+use in recent years and will probably require a quick walk through.
 
-
-###### @ Copyright 1994, 2000-2017 by CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed nor revised in any derivation or publication.
+###### @ Copyright 1994, 2000-2021 by CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed nor revised in any derivation or publication.

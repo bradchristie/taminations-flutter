@@ -22,7 +22,7 @@ done from an O. The dancers act as though the centers
 were close together; however, they end on the same 8 spots
 on the floor. 
 
-For example, "O [Double Pass Thru](../b2/double_pass_thru.md)":
+For example, "O [Double Pass Thru](../b1/double_pass_thru.md)":
 
 > 
 > ![alt](o_formation_2.png)

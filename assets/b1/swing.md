@@ -57,7 +57,8 @@ lightly for balance -- too much tension here makes the swing less fluid, and get
 
 Differences in height may require modifications to the above styling. For example, when the man is
 significantly taller than the woman, her left hand can be a flat palm on the outside of his right bicep.
-Footwork for the Walking Swing: Short walking steps clockwise around the central pivot point between
+
+*Footwork for the Walking Swing:* Short walking steps clockwise around the central pivot point between
 the two dancers.
 
 *Footwork for the Buzz Step Swing:* Right foot moves forward in small clockwise circle around the pivot
@@ -117,4 +118,4 @@ From a Squared Set, the command "Heads (or Sides) Swing"
 has the designated dancers face and Swing.
 That is, they Swing the dancer close to them, not the one they are facing across the square.
 
-###### @ Copyright 1994, 2000-2017 by CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed nor revised in any derivation or publication.
+###### @ Copyright 1994, 2000-2021 by CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed nor revised in any derivation or publication.

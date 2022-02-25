@@ -78,7 +78,7 @@ when to stop the final arm turn.
 
 Square dancing has had a long history of occasionally requiring dancers to search out and locate their
 corner (often by individually turning in place in flow direction, or continuing the last command a little
-longer) before doing the Allemande Left. See "Part 4: Additional Detail: Commands: Gimmicks".
+longer) before doing the Allemande Left. See "Additional Detail: Commands: Gimmicks".
 
 Allemande Lefts that require other than a 180-degree arm turn are less frequently used and are moving
 towards the Gimmick category. Callers may assist on an Allemande Left that requires some or all of
@@ -105,4 +105,4 @@ As a gimmick, some callers will call "Allemande Left; Right And Left Grand ... O
 Promenade". This causes the dancers to first believe the caller has made a mistake (wrong corner) and
 then be surprised by the quick fix.
 
-###### @ Copyright 1994, 2000-2017 by CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed nor revised in any derivation or publication.
+###### @ Copyright 1994, 2000-2021 by CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed nor revised in any derivation or publication.

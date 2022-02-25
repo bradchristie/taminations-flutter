@@ -65,6 +65,6 @@ ending in a Right-Hand Two-Faced Line.
 
 Calls that end in a Squared Set with a Courtesy Turn (e.g., 4 Ladies Chain or Do Paso) can easily blend
 into a left arm turn or into an Allemande Thar. For example, "4 Ladies Chain; Chain Them Back with
-a Do Paso". See "Part 4: Additional Detail: Blending one call into another".
+a Do Paso". See "Additional Detail: Blending one call into another".
 
-###### @ Copyright 1994, 2000-2017 by CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed nor revised in any derivation or publication.
+###### @ Copyright 1994, 2000-2021 by CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed nor revised in any derivation or publication.

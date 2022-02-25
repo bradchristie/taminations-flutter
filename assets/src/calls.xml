@@ -214,7 +214,7 @@
   <call audio="b1/dosado.mp3" languages="lang-de lang-ja" link="b1/dosado" title="Dosado"/>
   <call languages="lang-de lang-ja" link="ssd/dosado" title="Dosado"/>
   <call link="a1/triple_cross?animname=DoubleCross" title="Double Cross"/>
-  <call audio="b2/double_pass_thru.mp3" languages="lang-ja" link="b2/double_pass_thru" title="Double Pass Thru"/>
+  <call audio="b1/double_pass_thru.mp3" languages="lang-ja" link="b1/double_pass_thru" title="Double Pass Thru"/>
   <call languages="lang-ja" link="ssd/double_pass_thru" title="Double Pass Thru"/>
   <call audio="a1/double_star_thru.mp3" link="a1/double_star_thru" title="Double Star Thru"/>
   <call link="c3a/drift_apart" title="Drift Apart"/>
@@ -251,7 +251,7 @@
   <call link="c2/file_to_a_line" title="File to a Line"/>
   <call link="c3a/finally_concept" title="Finally Concept"/>
   <call link="c1/finish" title="Finish"/>
-  <call languages="lang-ja" link="b2/first_couple_go" title="First Couple Go Left/Right, Next Couple Go Left/Right"/>
+  <call languages="lang-ja" link="b1/first_couple_go" title="First Couple Go Left/Right, Next Couple Go Left/Right"/>
   <call languages="lang-ja" link="ssd/first_couple_go" title="First Couple Go Left/Right, Next Couple Go Left/Right"/>
   <call link="c3a/flare_out_to_a_line" title="Flare Out to a Line"/>
   <call link="c1/tagging_calls_back_to_a_wave" title="Flip Back"/>

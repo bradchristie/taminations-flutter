@@ -5,7 +5,7 @@ From Blocks: Any call which can be done from Parallel General Columns
 (Columns, Double Pass Thru, etc.), and which ends in General Lines or Columns,
 can be done "Staggered." The dancers act as though all dancers were
 close together side-by-side; however, they end on the original 8 spots on the
-floor. For example: Stagger [Double Pass Thru](../b2/double_pass_thru.md),
+floor. For example: Stagger [Double Pass Thru](../b1/double_pass_thru.md),
 
 > 
 > ![alt](stagger_1.png)

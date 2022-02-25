@@ -18,7 +18,7 @@ generalized to include Mini-Wave (Facing Dancers) and Tidal Wave
 (Facing Lines), etc. Examples include [Pass Thru](../b1/pass_thru.md),
 [Slide Thru](../ms/slide_thru.md),
 [Box The Gnat](box_the_gnat.md),
-and [Double Pass Thru](double_pass_thru.md) (from a Right-Hand 1/4 Tag), and
+and [Double Pass Thru](../b1/double_pass_thru.md) (from a Right-Hand 1/4 Tag), and
 [Pass To The Center](../ms/pass_to_the_center.md) (from Right-Hand Ocean Waves).
 
 In order for the Ocean Wave Rule to apply, the initial dance

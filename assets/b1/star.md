@@ -36,10 +36,11 @@ star turned, and adjusts his facing direction as appropriate for the next call.
 
 ### Styling
 
-Palm star (see Styling section). Men's outside arms in natural dance position, women's outside
-hands work skirt.
+Palm star (see “Additional Detail: Styling: Arms and hands”). Men's outside arms in natural dance
+position, women's outside hands work skirt.
 
-Some areas dance any stars containing men with a Pack-saddle Star (see Styling section).
+Some areas dance any stars containing men with a Pack-saddle Star (see “Additional Detail: Styling: Arms and
+hands”).
 
 ### Comments
 
@@ -51,4 +52,4 @@ in Ocean Waves, and having one less call to teach. While this is acceptable in a
 may be a logical way to understand stars (i.e., 2 or more dancers), 2-dancer stars are not commonly
 encountered at dances.
 
-###### @ Copyright 1994, 2000-2017 by CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed nor revised in any derivation or publication.
+###### @ Copyright 1994, 2000-2021 by CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed nor revised in any derivation or publication.
