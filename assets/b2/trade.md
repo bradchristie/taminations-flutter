@@ -60,7 +60,7 @@ from an Alamo Ring, Trade by the Right) or designate dancers (e.g.,
 from an Inverted Line, Those Who Can Trade by the Left). Callers
 should be aware that sometimes (principally outside English-speaking
 countries) dancers may mistake "Trade by the Right" for the call
-Trade By (#49). In such a situation, "Trade with the right hand" may
+[Trade By](trade_by.md). In such a situation, "Trade with the right hand" may
 be more successful.
 
 For this call, when there are exactly four dancers who are
@@ -161,4 +161,4 @@ outside Couple with the nearby inside Couple.
 Callers may use helping words, e.g. "Couples Trade by the
 right". See the comments for Trade.
 
-###### @ Copyright 1994, 2000-2017 by CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed nor revised in any derivation or publication.
+###### @ Copyright 1994, 2000-2021 by CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed nor revised in any derivation or publication.

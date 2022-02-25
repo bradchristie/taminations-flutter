@@ -15,12 +15,20 @@ Couple
 #### Pass Thru; Wheel and Deal; Centers Wheel Around
 #### Heads Slide Thru and Square Thru 3; Left Touch 1/4; Walk and Dodge; Wheel Around
 #### Sides Star Thru; Double Pass Thru; Centers In; Boys Wheel Around; Couples Circulate
+#### (from Right-Hand Two-Faced Line) Ferris Wheel; Centers Reverse Wheel Around
+#### Heads Pass Thru and Reverse Wheel Around and Lead Right
+#### Heads Pass Thru and Reverse Wheel Around and Reverse Flutterwheel
+#### Sides Star Thru; Double Pass Thru; Centers In; Girls Reverse Wheel Around; Couples Circulate
 
 ### Dance action
 
-The couple, working as a unit, turns around to the left (180 degrees).
-The left-side dancer backs up while the right-side dancer moves forward.
+For Wheel Around, the couple, working as a unit, turns around to the left (180 degrees). 
+The leftside dancer backs up while the right-side dancer moves forward. 
 The pivot point is the handhold between the two dancers.
+
+For Reverse Wheel Around, the couple, working as a unit, turns around to the right (180 degrees). 
+The rightside dancer backs up while the left-side dancer moves forward. 
+Again, the pivot point is the handhold between the two dancers.
 
 ### Ending formation
 
@@ -47,20 +55,7 @@ teach that Sides stop promenading when facing Head or Side walls
 so that the final formation faces those walls squarely without
 further adjustment.
 
-See "Preface: Ways Of Naming Dancers: Heads / Sides" for more
+See "General: Ways Of Naming Dancers: Heads / Sides" for more
 details about naming dancers to Wheel Around from a promenade.
 
-The variation of this call in which dancers turn in the other
-direction is called Reverse Wheel Around. See "Additional Detail:
-Commands: Extensions like Reverse Wheel Around".
-
-### Calling Tip
-
-Wheel Around can be easier and more successful for the dancers if the
-preceding call produces appropriate body flow.
-
-### Teaching Tip
-
-Wheel Around is like a Courtesy Turn without using the Courtesy Turn handhold.
-
-###### @ Copyright 1994, 2000-2017 by CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed nor revised in any derivation or publication.
+###### @ Copyright 1994, 2000-2021 by CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed nor revised in any derivation or publication.

@@ -79,7 +79,7 @@ non-runner or not move at all. To be proper, the caller could
 use Do Your Part (see Additional Detail: Commands: Do Your
 Part).
 
-At Mainstream, the runner and non-runner will almost
+At Basic, the runner and non-runner will almost
 always begin as a Mini-Wave or Couple. A workshop should
 precede other applications, such as when the non-runner is
 initially facing the shoulder of the runner (e.g., from a
@@ -139,7 +139,7 @@ If the cross-runners are ends facing the same way, they pass right shoulders wit
 From a General Line, Everyone Cross Run is a gimmick.
 See the second to last comment of Run, above.
 
-At Mainstream, Cross Run will almost always be called from a General Line.
+At Basic, Cross Run will almost always be called from a General Line.
 For other applications, see the final comment of Run, above.
 
-###### @ Copyright 1994, 2000-2017 by CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed nor revised in any derivation or publication.
+###### @ Copyright 1994, 2000-2021 by CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed nor revised in any derivation or publication.
