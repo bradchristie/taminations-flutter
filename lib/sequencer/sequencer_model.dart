@@ -235,6 +235,8 @@ class SequencerModel extends fm.ChangeNotifier {
     await cctx.performCall();
     cctx.checkForCollisions();
     cctx.extendPaths();
+    if (!cctx.callname.contains('move in'.ri))
+      cctx.adjustForSquaredSetCovention();
     //  Snap to a standard formation so subsequent calls will work
     //  But not if just one XML call, as it knows how it should end
     if (cctx.callstack.length > 1 || cctx.callstack[0] is CodedCall)

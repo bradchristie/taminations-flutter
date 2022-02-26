@@ -19,6 +19,8 @@
 */
 
 import '../common.dart';
+import '../common/do_your_part.dart';
+import '../common/do_one_part.dart';
 
 class Start extends Action {
 
@@ -31,13 +33,31 @@ class Start extends Action {
     //  There has to be a subset of dancers selected to Start
     if (ctx.actives.length >= ctx.dancers.length)
       throw CallError('Who is supposed to start?');
-    //  If the actives are facing, assume that the first part is Pass Thru
-    final startCall = ctx.actives.every((d) => ctx.dancerFacing(d)?.isActive ?? false)
-    //  Otherwise for now we will try a Trade
-        ? 'Pass Thru' : 'Trade';
-    await ctx.applyCalls(startCall);
-    for (final d in ctx.dancers)
+
+    await ctx.subContext(ctx.actives, (dypctx) async {
+      //  Run DYP for the call, but save the intermediate context,
+      //    which will be a XMLCall.
+      final p = await DoYourPart(finishCall).findYourPart(dypctx);
+      //  Run Do the 1st Part (which is a CodedCall)
+      //  of the call on the starting formation
+      //  of the intermediate context.
+      final pctx = p.firstValue;
+      final mapping = p.secondValue;
+      await DoOnePart('Do the First Part of $finishCall').perform(pctx);
+      //  Copy path movements from call to sequence
+      for (var i = 0; i < mapping.length; i++) {
+        final m = mapping[i];
+        // TODO check for esymmetric call!
+        dypctx.dancers[i].path.add(pctx.dancers[m].path);
+      }
+    });
+    //  Extend paths of all dancers so others don' start
+    //  until the selected dancers have finished the 1st part
+    ctx.extendPaths();
+    //  Now everyone is active
+    for (var d in ctx.dancers)
       d.data.active = true;
+    //  And finish the call
     await ctx.applyCalls('Finish $finishCall');
   }
 

@@ -100,7 +100,7 @@ class CallContext {
     'b1/circle',
     'b1/grand_square',
     'b1/lead_right',
-    'b2/first_couple_go',
+    'b1/first_couple_go',
     'a1/as_couples',
     'c1/recycle',
     'c1/stretch_concept',
@@ -531,7 +531,10 @@ class CallContext {
         foundOneCall = foundOneCall || matchCodedCall(onecall);
         //  Finally try a fuzzier snapshot match
         try {
+          //final lostOneCall = foundOneCall;
           foundOneCall = foundOneCall || await matchXMLcall(onecall,fuzzy:true);
+          //if (!lostOneCall && foundOneCall)
+          //  print('Found with fuzzy match: $calltext');
         } on CallError catch (err3) {
           err = err3;
         }
@@ -940,8 +943,9 @@ class CallContext {
         }
       }
     }
-    if (bestMapping != null)
+    if (bestMapping != null) {
       adjustToFormationMatch(bestMapping.match);
+    }
   }
 
   void matchStandardFormation() {
@@ -982,6 +986,8 @@ class CallContext {
   bool adjustToFormation(String fname, {int rotate = 180}) {
     //  Work on a copy with all dancers active, mapping only uses active dancers???
     var ctx1 = CallContext.fromContext(this);
+    for (var d in ctx1.dancers)
+      d.data.active = true;
     var ctx2 = CallContext.fromXML(TamUtils.getFormation(fname));
     var mapping = ctx1.matchFormations(ctx2,sexy:false,fuzzy:true,rotate:rotate,handholds:false, maxError : 2.9);
     if (mapping != null) {
@@ -991,6 +997,18 @@ class CallContext {
       return true;
     }
     return false;
+  }
+
+  //  Follow the Squared Set convention
+  void adjustForSquaredSetCovention() {
+    //  First see if we are starting from a squared set
+    animate(0.0);
+    final ss = CallContext.fromName('Squared Set');
+    if (matchFormations(ss,rotate: 180, maxError: 2.9) != null) {
+      animateToEnd();
+      //  So now adjust back to squared set if possible
+      adjustToFormation('Squared Set',rotate: 180);
+    }
   }
 
   ///  Rotate phantoms until a match is found

@@ -154,6 +154,7 @@ Star Thru
 Pass Thru
 Allemande Left''',
 
+/*
   'Cloverleaf':
   '''Heads Pair Off and Spread
 Circulate
@@ -162,9 +163,9 @@ Centers Pass Thru and Cloverleaf
 Centers Pass Thru
 Allemande Left
 Promenade Home''',
-
+*/
   'Clover And':
-  '''Heads Pass Thru
+  '''Heads Move In and Pass Thru
 Clover and Touch 1/4
 Centers Run
 Centers Touch a Quarter
@@ -439,7 +440,7 @@ Boys Run
 Allemande Left''',
 
   'Partner Tag' :
-  '''Heads Touch a Quarter and Roll
+  '''Heads Move In Touch a Quarter and Roll
 Sides Partner Tag
 Any Hand Swing Thru
 Partner Tag
@@ -474,7 +475,7 @@ Wheel and Deal
 Allemande Left''',
 
   'Roll' :
-  '''Heads Lead Right and Roll
+  '''Heads Move In Lead Right and Roll
 Sides Separate and Touch 1/4
 Split Circulate and Roll
 Scoot Back
@@ -596,6 +597,7 @@ Allemande Left''',
   'Spread' :
   '''Heads Touch a Quarter and Spread
 Centers Pass the Ocean
+Adjust to Diamonds
 Flip the Diamond
 In-Roll Circulate and Spread
 Split Circulate
@@ -1113,9 +1115,11 @@ Centers Kick Off
 Double Pass Thru
 Lead Boys Kick Off
 Centers Right Roll to a Wave
+Adjust to Diamonds
 Cut the Diamond
 Mini-Busy
 Head Boys Kick Off
+Adjust to Diamonds
 Flip the Diamond
 Wheel and Deal
 Pass Thru
@@ -1231,6 +1235,7 @@ Allemande Left''',
   '''Heads Lead Right
 Veer Left
 Vertical 1/4 Tag
+Adjust to 1/4 Tag
 Extend
 Boys Run
 Vertical 1/2 Tag
@@ -1991,7 +1996,7 @@ Veer Right
 Promenade Home''',
 
   'Saparate Go Around' :
-  '''Heads Turn Thru
+  '''Heads Move In and Turn Thru
 Centers Separate Around One to a Line
 Pass Thru
 Tag the Line Zag Zig
@@ -2935,5 +2940,25 @@ Brace Thru
 Star Thru
 Pass Thru
 Trade By
+Allemande Left''',
+
+  'Squared Set Convention' :
+'''Heads Pass Thru
+Heads Left Chase
+Sides Pass Thru
+Sides Left Chase
+All 8  Left Quarter Thru
+Boys Run
+Cast Off Three Quarters
+Adjust to Squared Set
+Heads Pair Off
+Star Thru
+Cast Off Three Quarters
+Pass the Ocean
+Boys Circulate
+Boys Run
+Cast Off Three Quarters
+Star Thru
+Pass Thru
 Allemande Left'''
 };

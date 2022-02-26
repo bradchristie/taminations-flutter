@@ -17,11 +17,36 @@
  *     along with Taminations.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+import '../../../math/pair.dart';
 import '../common.dart';
 
 class DoYourPart extends Action {
 
   DoYourPart(String name) : super(name);
+
+  Future<Pair<CallContext,List<int>>> findYourPart(CallContext dypctx) async {
+    final callName = name.replaceFirst('Do Your Part'.ri,'').trim();
+    final norm = TamUtils.normalizeCall(callName);
+    final files = CallContext.xmlFilesForCall(norm.toLowerCase());
+    for (final link in files) {
+      final file = await CallContext.loadOneFile(link);
+      for (final tam in file.rootElement.childrenNamed('tam')
+          .where((tam) =>
+      tam('sequencer') != 'no' &&
+          TamUtils.normalizeCall(tam('title')).toLowerCase() ==
+              norm.toLowerCase())) {
+        //  See if this is a subset match to the DYP dancers
+        final sexy = tam('sequencer', '').contains('gender');
+        final ctx2 = CallContext.fromXML(tam, loadPaths: false);
+        final mapping = dypctx.matchFormations(ctx2, sexy: sexy,
+            subformation: true, handholds: false, maxError: 2.9);
+        if (mapping != null)
+          return Pair(ctx2,mapping);
+      }
+    }
+    //  Unable to find call
+    throw CallError('Unable to find $callName to match requested dancers');
+  }
 
   @override
   Future<void> perform(CallContext ctx) async {
