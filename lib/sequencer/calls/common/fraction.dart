@@ -42,19 +42,10 @@ class Fraction extends Action {
 
   @override
   Future<void> perform(CallContext ctx) async {
-    final stackIndex = ctx.callstack.indexOf(this);
-    final fracctx = CallContext.fromContext(ctx);
-    //  Look for the call to fractionalilze
-    //  Must be a subsequent action on the stack
-    var found = false;
-    var call = ctx.callstack[stackIndex];
-    while (!found && stackIndex+1 < ctx.callstack.length) {
-      call = ctx.callstack.removeAt(stackIndex+1);
-      found = call is Action || call is XMLCall;
-      fracctx.callstack.add(call);
-    }
-    if (!found)
-      throw CallError('Not able to find call for fraction $name');
+
+    final fracctx = ctx.nextActionContext(this) ??
+        thrower(CallError('Not able to find call for fraction $name'))!;
+    var call = fracctx.callstack.last;
 
     //  If an XML call, see if we can replace it with a Call with Parts
     if (call is XMLCall) {

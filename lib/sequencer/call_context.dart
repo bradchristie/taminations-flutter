@@ -392,6 +392,24 @@ class CallContext {
     return ctx.appendToSource(this);
   }
 
+  //  Build a CallContext from the next calls on the stack
+  //  up to and including the next Action.
+  //  Used for concepts and modifications.
+  CallContext? nextActionContext(Call thisCall) {
+    final stackIndex = callstack.indexOf(thisCall);
+    final fracctx = CallContext.fromContext(this);
+    //  Look for the call to fractionalilze
+    //  Must be a subsequent action on the stack
+    var call = callstack[stackIndex];
+    while (stackIndex+1 < callstack.length) {
+      call = callstack.removeAt(stackIndex+1);
+      fracctx.callstack.add(call);
+      if (call is Action || call is XMLCall)
+        return fracctx;
+    }
+    return null;
+  }
+
   void insertAfterNextAction(Call thisCall, Call insertCall) {
     //  Find out where we are
     final i = callstack.indexOf(thisCall);
@@ -531,10 +549,7 @@ class CallContext {
         foundOneCall = foundOneCall || matchCodedCall(onecall);
         //  Finally try a fuzzier snapshot match
         try {
-          //final lostOneCall = foundOneCall;
           foundOneCall = foundOneCall || await matchXMLcall(onecall,fuzzy:true);
-          //if (!lostOneCall && foundOneCall)
-          //  print('Found with fuzzy match: $calltext');
         } on CallError catch (err3) {
           err = err3;
         }

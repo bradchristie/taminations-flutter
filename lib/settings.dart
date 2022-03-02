@@ -84,6 +84,8 @@ class Settings extends fm.ChangeNotifier {
     _primaryControl = prefs.getString('PrimaryControl') ?? 'Left Finger';
     _mouseControl = prefs.getString('MouseControl') ?? 'Dancer moves only when mouse button is pressed';
     _startingFormation = prefs.getString('Starting Formation') ?? 'Squared Set';
+    if (_startingFormation == 'Eight Chain Thru')
+      _startingFormation = 'Zero Box';
     _dancerShapes = prefs.getBool('Dancer Shapes') ?? true;
     _dancerIdentification = prefs.getString('Dancer Identification') ?? 'None';
     _showDancerColors = prefs.getString('Dancer Colors') ?? 'By Couple';
