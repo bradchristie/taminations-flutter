@@ -466,7 +466,7 @@ class StartingFormationDropdownWidget extends fm.StatelessWidget {
                   'Facing Couples',
                   'Squared Set',
                   'Normal Lines',
-                  'Eight Chain Thru',
+                  'Zero Box',
                   'Double Pass Thru',
                   'Ocean Waves',
                   'Two-Faced Lines',
