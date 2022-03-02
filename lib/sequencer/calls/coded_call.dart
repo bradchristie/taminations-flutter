@@ -293,7 +293,7 @@ abstract class CodedCall extends Call {
     '(14|12|34)castandrelay'.ri: (name) => CastAndRelay(name),
     'castashadowcenter(go|cast)?34'.ri: (name) => CastAShadow(name),
     '(cross)?castback'.ri: (name) => CastBack(name),
-    'castoff34'.ri: (_) => CastOffThreeQuarters(),
+    'castoff(14|12|34)'.ri: (name) => CastOffThreeQuarters(name),
     '(left)?(split)?catch.*?(1|2|3|4)'.ri: (name) => Catch(name),
     'center'.ri: (_) => Centers(),
     'center6'.ri: (_) => CenterSix(),

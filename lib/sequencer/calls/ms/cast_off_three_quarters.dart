@@ -24,33 +24,53 @@ class CastOffThreeQuarters extends ActivesOnlyAction {
 
   @override
   var level = LevelData.MS;
-  CastOffThreeQuarters() : super('Cast Off Three Quarters');
+  CastOffThreeQuarters(String name) : super(name);
 
   @override
   Future<void> perform(CallContext ctx) async {
-    //  Dancers in mini-waves hinge three times
     var waveDancers = ctx.actives.where((d) => ctx.isInWave(d)).toList();
-    if (waveDancers.isNotEmpty) {
-      await ctx.subContext(waveDancers, (ctx2) async {
-        await ctx2.applyCalls('Hinge','Hinge','Hinge');
-      });
-    }
-    //  Couples right of center (they look left to view center)
-    //  reverse wheel around 1.5
     var couplesLeft = ctx.actives.where((d) =>
     ctx.isInCouple(d) && d.isCenterLeft &&
         d.data.partner!.isActive && d.data.partner!.isCenterLeft).toList();
-    if (couplesLeft.isNotEmpty) {
-      await ctx.subContext(couplesLeft, (ctx2) async =>
-          await ctx2.applyCalls('Reverse Wheel Around 1.5'));
-    }
-    //  Couples left of center wheel around 1.5
     var couplesRight = ctx.actives.where((d) =>
     ctx.isInCouple(d) && d.isCenterRight &&
         d.data.partner!.isActive && d.data.partner!.isCenterRight).toList();
+
+    //  Dancers in mini-waves hinge three times
+    if (waveDancers.isNotEmpty) {
+      await ctx.subContext(waveDancers, (ctx2) async {
+        if (norm.endsWith('14'))
+          await ctx2.applyCalls('Hinge');
+        else if (norm.endsWith('12'))
+          await ctx2.applyCalls('Hinge','Hinge');
+        else
+          await ctx2.applyCalls('Hinge','Hinge','Hinge');
+      });
+    }
+
+    //  Couples right of center (they look left to view center)
+    //  reverse wheel around 1.5
     if (couplesLeft.isNotEmpty) {
-      await ctx.subContext(couplesRight, (ctx2) async =>
-      await ctx2.applyCalls('Wheel Around 1.5'));
+      await ctx.subContext(couplesLeft, (ctx2) async {
+        if (norm.endsWith('14'))
+          await ctx2.applyCalls('Half Reverse Wheel Around');
+        else if (norm.endsWith('12'))
+          await ctx2.applyCalls('Reverse Wheel Around');
+        else
+          await ctx2.applyCalls('Reverse Wheel Around 1.5');
+      });
+    }
+
+    //  Couples left of center wheel around 1.5
+    if (couplesRight.isNotEmpty) {
+      await ctx.subContext(couplesRight, (ctx2) async {
+        if (norm.endsWith('14'))
+          await ctx2.applyCalls('Half Wheel Around');
+        else if (norm.endsWith('12'))
+          await ctx2.applyCalls('Wheel Around');
+        else
+          await ctx2.applyCalls('Wheel Around 1.5');
+      });
     }
     //  If nobody fell in any of these three categories then something's wrong
     if (waveDancers.isEmpty && couplesLeft.isEmpty && couplesRight.isEmpty)
