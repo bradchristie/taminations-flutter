@@ -29,6 +29,7 @@ class CrossChainThru extends Action with CallWithParts, CallWithStars {
   @override
   Future<void> performPart1(CallContext ctx) async {
     await ctx.applyCalls('Pull By');
+    ctx.adjustToFormation('Eight Chain Thru');
   }
 
   @override
