@@ -51,7 +51,7 @@ class PassThru extends Action {
     //  who is also facing this dancer
     var d2 = ctx.dancerFacing(d);
     if (d2 == null)
-      return ctx.dancerCannotPerform(d,'Pass Thru' );
+      return ctx.dancerCannotPerform(d,name);
     if (!d2.data.active)
       throw CallError('Dancers must Pass Thru with each other' );
     var dist = d.distanceTo(d2);

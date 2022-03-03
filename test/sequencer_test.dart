@@ -2960,5 +2960,21 @@ Boys Run
 Cast Off Three Quarters
 Star Thru
 Pass Thru
-Allemande Left'''
+Allemande Left''',
+
+  'Square Chain the Top' :
+'''Heads Pass the Sea
+Extend
+Finish Square Chain the Top
+Centers Right Roll to a Wave
+Outer 4 Separate
+Square Chain the Top
+Bend the Line
+Left Square Chain the Top Skip the Last Part
+Grand Swing Thru
+Recycle
+Star Thru
+Trade By
+Half Sashay
+Right and Left Grand'''
 };
