@@ -104,7 +104,7 @@ extension DancerList on List<Dancer> {
     }
   }
 
-  String show({bool arrayNumbers=false}) {
+  String show({bool arrayNumbers=false, bool coupleNumbers=false}) {
     final charMatrix = [for (var i=0; i<11; i++) [ for (var j=0; j<21; j++) ' ']];
     for (var i=0; i<21; i++)
       charMatrix[5][i] = '-';
@@ -118,7 +118,9 @@ extension DancerList on List<Dancer> {
       var dx = d.location.x.round();
       var dy = (d.location.y*2.0).round();
       if (dx.abs() <= 5 && dy.abs() <= 10)
-        charMatrix[-dx+5][-dy+10] = arrayNumbers ? i.s : d.number.substring(0,1);
+        charMatrix[-dx+5][-dy+10] =
+        coupleNumbers ? d.numberCouple.substring(0,1)
+            : arrayNumbers ? i.s : d.number.substring(0,1);
       var dsym = '';
       if (d.angleFacing.isAround(0)) {
         dx += 1;

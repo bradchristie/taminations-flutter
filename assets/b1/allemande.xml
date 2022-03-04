@@ -67,12 +67,12 @@
   </tam>
 
   <tam title="Allemande Left" from="after Dixie Grand"
-       sequencer="gender-specific" display="none">
+       sequencer="gender-specific" display="no">
     <formation>
       <dancer gender="boy" x="-3" y="1" angle="0"/>
       <dancer gender="girl" x="-3" y="-1" angle="0"/>
       <dancer gender="boy" x="-1" y="-2" angle="180"/>
-      <dancer gender="girl" x="1" y="-2" angle="0"/>
+      <dancer gender="girl" x="-1" y="2" angle="180"/>
     </formation>
     <path>
       <move select="Forward"/>
