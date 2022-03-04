@@ -19,3 +19,5 @@ Of course these dancers need to form a Cross Over Circulate path.
 * **[Pass the Sea](../a1/pass_the_sea.md)** - is a 3-Part Call
 * **[(Grand) (Left) (Three) Quarter Thru](../a1/quarter_thru.md)** -
 is a 2-Part Call
+* **[Square Chain Thru](../a1/square_chain_thru.md)** - is a 3-Part Call:
+  Pass Thru and 1/4 In; Left Swing Thru; Left Turn Thru

@@ -19,11 +19,11 @@
 
 import '../common.dart';
 
-class SquareChainTheTop extends ActivesOnlyAction with CallWithParts {
+class SquareChainThru extends ActivesOnlyAction with CallWithParts {
 
-  @override var level = LevelData.C1;
+  @override var level = LevelData.A1;
   @override var numberOfParts = 3;
-  SquareChainTheTop(String name) : super(name);
+  SquareChainThru(String name) : super(name);
 
   @override
   Future<void> performPart1(CallContext ctx) async {
@@ -34,7 +34,7 @@ class SquareChainTheTop extends ActivesOnlyAction with CallWithParts {
   @override
   Future<void> performPart2(CallContext ctx) async {
     final left = name.contains('Left') ? '' : 'Left';
-    await ctx.applyCalls('$left Spin the Top');
+    await ctx.applyCalls('$left Swing Thru');
   }
 
   @override

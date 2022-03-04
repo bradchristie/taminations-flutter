@@ -39,6 +39,7 @@ import 'a1/quarter_thru.dart';
 import 'a1/roll_to_a_wave.dart';
 import 'a1/six_two_acey_deucey.dart';
 import 'a1/split_square_thru.dart';
+import 'a1/square_chain_thru.dart';
 import 'a1/swing_and_mix.dart';
 import 'a1/triple_star_thru.dart';
 import 'a1/triple_trade.dart';
@@ -471,6 +472,7 @@ abstract class CodedCall extends Call {
     '(left)?splitsquarethru[2-7]?'.ri: (name) => SplitSquareThru(name),
     '(and)?spread'.ri: (name) => Spread(name),
     '(left)?squarechainthetop'.ri: (name) => SquareChainTheTop(name),
+    '(left)?squarechainthru'.ri: (name) => SquareChainThru(name),
     'squarethebases'.ri: (_) => SquareTheBases(),
     'squaretheset'.ri: (_) => SquareTheSet(),
     'squeeze(the(butterfly|o))?'.ri: (name) => Squeeze(name),
