@@ -11,7 +11,7 @@
   and Circle By \<fraction> and \<any other call>
 + **[Concentric Concept](../c1/concentric_concept.md)** -
   can be used for all dancers or outer 4
-+ **[Cross Chain Thru](../c1/cross_chain_thru.md)** -
++ **[Cross Chain Thru / Cross Chain and Roll](../c1/cross_chain_thru.md)** -
   is a 2-Part Call with Star
 + **[Dixie Diamond](../c1/dixie_diamond.md)** - is a 2-Part Call
 + **[Flip Back](../c1/tagging_calls_back_to_a_wave.md)** - is a 2-Part Call

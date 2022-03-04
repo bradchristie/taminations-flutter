@@ -317,7 +317,7 @@ abstract class CodedCall extends Call {
     '(14|12|34)?(reverse)?crazy.*'.ri: (name) => Crazy(name),
     'cross'.ri: (_) => Cross(),
     '(left)?crossandwheel'.ri: (name) => CrossAndWheel(name),
-    'crosschainthru'.ri: (_) => CrossChainThru(),
+    'crosschain(thru|androll)'.ri: (name) => CrossChainThru(name),
     'crossfold'.ri: (_) => CrossFold(),
     'crossovercirculate'.ri: (_) => CrossOverCirculate(),
     'crossramble'.ri: (_) => CrossRamble(),

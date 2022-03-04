@@ -24,7 +24,7 @@ class CrossChainThru extends Action with CallWithParts, CallWithStars {
   @override final level = LevelData.C1;
   @override var numberOfParts = 2;
   @override var turnStarAmount = 2;
-  CrossChainThru() : super('Cross Chain Thru');
+  CrossChainThru(name) : super(name);
 
   @override
   Future<void> performPart1(CallContext ctx) async {
@@ -42,8 +42,9 @@ class CrossChainThru extends Action with CallWithParts, CallWithStars {
       case 4 : turnFraction = 'a Full Turn'; break;
       default : throw CallError('Unable to turn the star that amount');
     }
-    await ctx.applyCalls('Outer 4 Courtesy Turn While '
-        'Center 4 Left-Hand Star $turnFraction');
+    final andRoll = name.endsWith('Roll') ? 'and Roll' : '';
+    await ctx.applyCalls('Outer 4 Courtesy Turn $andRoll While '
+        'Center 4 Left-Hand Star $turnFraction $andRoll');
   }
 
 }
