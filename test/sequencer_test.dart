@@ -2976,5 +2976,14 @@ Recycle
 Star Thru
 Trade By
 Half Sashay
-Right and Left Grand'''
+Right and Left Grand''',
+
+  'Step Thru' :
+'''Heads Pass Out and Spread
+Step Thru
+Left Roll to a Wave
+Step Thru
+Cross Clover and Face Out
+Right and Left Thru
+Allemande Left'''
 };

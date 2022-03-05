@@ -76,6 +76,7 @@ import 'b1/separate.dart';
 import 'b1/split_circulate.dart';
 import 'b1/square_thru.dart';
 import 'b1/star_thru.dart';
+import 'b1/step_thru.dart';
 import 'b1/turn_back.dart';
 import 'b2/balance.dart';
 import 'b2/box_the_gnat.dart';
@@ -487,6 +488,7 @@ abstract class CodedCall extends Call {
     'step(ahead)?'.ri: (name) => Step(name),
     'pressahead'.ri: (name) => Step(name),
     'movein(tothecenter)?'.ri: (name) => Step(name),
+    'stepthru'.ri: (_) => StepThru(),
     'steptoacompact(lefthand)?wave'.ri: (name) => StepToACompactWave(name),
     //  Stretch not Stretched
     'stretch(?!ed)'.ri: (name) => Stretch(name),
