@@ -72,7 +72,7 @@ Allemande Thar is part of circle choreography. It is improper
 from Left Hand Waves to call Turn Partner Left to An Allemande Thar.
 
 "Allemande Left to an Allemande Thar" has a specific meaning
-described below (#32.b). It does not mean to Left Arm Turn with corner
+described below. It does not mean to Left Arm Turn with corner
 and continue to a Thar. For that action "Allemande Left, Hang On To
 Corner, Women Wheel In To An Allemande Thar" could be used.
 
@@ -118,7 +118,7 @@ normally the start of an Arm Turn into a Thar or Wrong Way Thar.
 
 ## Wrong Way Thar
 
-"Wrong Way Thar" is a formation. It also appears on the Basic
+"Wrong Way Thar" is a formation. It also appears on the Mainstream
 list of calls, not as a call by itself, but rather as a collection of
 commands that result in a Wrong Way Thar. The commands function as
 suffixes, making a Right Arm Turn end in a Wrong Way Thar. Descriptive
@@ -159,4 +159,4 @@ Same as Allemande Thar
 
 See Allemande Thar (above).
 
-###### @ Copyright 1994, 2000-2019 by CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed nor revised in any derivation or publication.
+###### @ Copyright 1994, 2000-2020 by CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed nor revised in any derivation or publication.

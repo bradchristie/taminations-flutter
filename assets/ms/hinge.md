@@ -1,5 +1,5 @@
 
-# Hinge Family
+# Single Hinge / Couples Hinge
 
 Hinge is a half Trade of adjacent dancers.
 Below are the two Mainstream versions of Hinge.
@@ -36,6 +36,7 @@ Dancers maintain their handhold
 ### Comments
 
 "Hinge 1/4" is improper, because Hinge is not used with fractions, as opposed to Touch 1/4.
+
 Partner Hinge (starting formation: Couple only)
 was removed from the Mainstream program in 1988.
 The command "Hinge" can be used for either Single Hinge or Partner Hinge,
@@ -72,4 +73,4 @@ Each couple maintains their handholds
 From a Grand One-Faced Line, Couples Hinge ends in Right-Hand Two-Faced Lines
 (i.e., lined up with each other and not offset).
 
-###### @ Copyright 1994, 2000-2019 by CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed nor revised in any derivation or publication.
+###### @ Copyright 1994, 2000-2020 by CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed nor revised in any derivation or publication.

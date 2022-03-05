@@ -33,10 +33,9 @@ None
 ### Comments
 
 Fold can create formations that are very unusual at Mainstream. In such situations, callers generally use implicit adjustments to normalize the formation. For example, Heads Square Thru 4, Touch 1/4, Girls Fold, Double Pass Thru:
-
-1. The Girls Fold creates a formation with Tandems that are not directly facing. 
-1. Double Pass Thru implicitly tells dancers that they should be in the starting formation for that call (facing Tandems). 
-1. The Double Pass Thru is danced as if the tandems were facing, ending normally.
+- The Girls Fold creates a formation with Tandems that are not directly facing. 
+- Double Pass Thru implicitly tells dancers that they should be in the starting formation for that call (facing Tandems). 
+- The Double Pass Thru is danced as if the tandems were facing, ending normally.
 
 This type of implicit adjustment is generally accepted at Mainstream, particularly following Fold or Cross Fold, but may be controversial at other dance programs.
 
@@ -111,4 +110,4 @@ As with Fold, the facing directions of the non-designated dancers do not affect 
 Similar to Everyone Fold (see its comment above), Everyone Cross Fold is a gimmick,
 but one that is even less frequently used.
 
-###### @ Copyright 1994, 2000-2019 by CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed nor revised in any derivation or publication.
+###### @ Copyright 1994, 2000-2020 by CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed nor revised in any derivation or publication.

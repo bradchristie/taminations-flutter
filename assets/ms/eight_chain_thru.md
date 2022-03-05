@@ -37,13 +37,13 @@ Eight Chain 2, 4, 6, etc. ends in Eight Chain Thru
 
 Eight Chain Thru: 20
 
-Eight Chain 1, 2, 3, etc.: each odd-numbered part: 2; each even-numbered part: 3
+Eight Chain 1, 2, 3, etc.: each odd-numbered part: 2; each even-numbered part: 3 (e.g., Eight Chain 3: 2+3+2 = 7)
 
 ### Styling
 
 Same as Right And Left Thru. Dancers doing the Left Pull By in the center move slowly so their action takes the same time as the Courtesy Turn on the outside.
 
-Each part of this call ends in an Eight Chain Thru or Trade By formation. Dancers should not drift into a circular formation as in Wrong Way Grand (#8c).
+Each part of this call ends in an Eight Chain Thru or Trade By formation. Dancers should not drift into a circular formation as in Wrong Way Grand.
 
 ### Comments
 
@@ -51,4 +51,4 @@ The Ocean Wave Rule applies to this call.
 
 At Mainstream, Courtesy Turn (#15) is restricted to a man turning a woman. Therefore, at Mainstream, Eight Chain Thru is improper after Heads Square Thru 4, Sides Half Sashay. However, Eight Chain 3 would be proper.
 
-###### @ Copyright 1994, 2000-2019 by CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed nor revised in any derivation or publication.
+###### @ Copyright 1994, 2000-2020 by CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed nor revised in any derivation or publication.
