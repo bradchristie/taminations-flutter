@@ -18,24 +18,25 @@ are another important reference.
 Call pronunciations provided by
 [Eric Henerlau](http://www.erichenerlau.com/).
 
-***
+---
 
-## Taminations version 1.6.34 built 2022-02-21
+## Taminations version 1.6.35 built 2022-03-07
 Copyright 2022 by Brad Christie.  
 This is free software, and you are welcome to modify and redistribute it
 under the terms of the [GNU GPL license](http://www.gnu.org/licenses/gpl.html).  
 
 ## What's New
-* More animations for Step and Flip
-* Remove incorrect animation for Extend
+* Update Basic and Mainstream definitions
 * Sequencer changes:
-  * Fix parts for Scoot and Plenty
-  * Better checking for improper Star Thru, Slide Thru, Spin the Top
-  * Adhere to Static Square convention, use Move In to stay in the center
-  * Add current beat number to display
-  * Add code for Own the (anyone)
-  * Fixes for Block calls
-
+  * Accept Squeeze the Butterfly / O
+  * Accept different ending formation for Butterfly and O calls
+    e.g., Butterfly Zing to Lines
+  * Improvement for Start concept
+  * Fix Cross Run with center wave
+  * Accept Cast Off 1/4 and 1/2
+  * Fix Step Thru from inverted lines
+  * More Calls with Parts: Square Chain Thru, Square Chain the Top, 
+    Cross Chain Thru, Cross Chain and Roll
 
 For a detailed history of changes, view the
 [Git log](https://github.com/bradchristie/taminations-flutter/commits/main)
