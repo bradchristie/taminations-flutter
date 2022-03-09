@@ -623,6 +623,24 @@
   </tam>
 
   <tam title="Couples Trade"
+       from="Lines Facing In"
+       formation="Normal Lines"
+       difficulty="3">
+    <path>
+      <move select="Run Right" hands="gripright" scaleX="1.5" scaleY="3" beats="6"/>
+    </path>
+    <path>
+      <move select="Run Right" hands="gripleft" scaleX="1" beats="6"/>
+    </path>
+    <path>
+      <move select="Flip Left" hands="gripright" beats="6"/>
+    </path>
+    <path>
+      <move select="Run Left" hands="gripleft" scaleX=".5" scaleY="3" beats="6"/>
+    </path>
+  </tam>
+
+  <tam title="Couples Trade"
        from="Right-Hand Two-Faced Lines"
        formation="Two-Faced Lines RH"
        difficulty="1">
