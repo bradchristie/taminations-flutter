@@ -33,7 +33,7 @@ class While extends Action {
     ctx.contractPaths();
 
     //  Use another context to do the rest of the call
-    var ctx2 = CallContext.fromContext(ctx,beat:0.0)..noSnap();
+    var ctx2 = CallContext.fromContext(ctx,beat:0.0)..noSnap(recurse: false);
     if (name.toLowerCase().contains('others')) {
       for (var d in ctx2.dancers) {
         d.data.active = !d.data.active;

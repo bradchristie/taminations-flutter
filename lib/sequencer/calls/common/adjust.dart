@@ -63,7 +63,7 @@ class Adjust extends Action {
     var matchResult = ctx.computeFormationOffsets(ctx2,mapping!,delta:0.3);
     if (!ctx.adjustToFormationMatch(matchResult))
       throw CallError('No adjustment to $fname needed.');
-    ctx.noSnap();
+    ctx.noSnap(recurse: false);
   }
 
 }

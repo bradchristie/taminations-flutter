@@ -29,14 +29,14 @@ class Except extends CodedCall {
     //  Get who we want to exclude
     final who = name.replaceFirst('except( the)?'.ri,'').trim();
     //  Make another context where those are the selected dancers
-    await ctx.subContext(ctx.dancers, (ctx2) async {
+    final ctx2 = CallContext.fromDancers(ctx.dancers);
       //  Anyone selected in that context is now de-selected in the current context
-      ctx2.analyze();
-      await CodedCall.fromName(who)?.performCall(ctx2);
-      ctx.dancers.forEach((d) {
-        if (ctx2.actives.contains(d))
-          d.data.active = false;
-      });
+    ctx2.analyze();
+    await CodedCall.fromName(who)?.performCall(ctx2);
+    ctx.dancers.forEach((d) {
+      if (ctx2.actives.contains(d)) {
+        d.data.active = false;
+      }
     });
   }
 

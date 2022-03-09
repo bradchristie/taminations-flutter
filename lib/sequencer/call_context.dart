@@ -273,6 +273,7 @@ class CallContext {
       d.animateToEnd();
       return Dancer.clone(d);
     }).toList();
+    allActive();
   }
 
   CallContext.fromContext(
@@ -286,6 +287,7 @@ class CallContext {
     if (!dancers.areDancersOrdered())
       this.dancers = this.dancers.center().inOrder();
     _source = source;
+    _thoseWhoCan = source._thoseWhoCan;
     _snap = source._snap;
   }
 
@@ -351,11 +353,26 @@ class CallContext {
   //  Create a CallContext from any sort of formation name
   CallContext.fromName(String name) : this.fromXML(_xmlFromName(name));
 
-  void noSnap() { _snap = false; }
+  void noSnap({bool recurse:true}) {
+    _snap = false;
+    if (recurse) {
+      for (var s = _source; s != null; s = s._source)
+        s._snap = false;
+    }
+  }
 
   //  Get the active dancers, e.g. for 'Boys Trade' the boys are active
   List<Dancer> get actives => dancers.where( (d) => d.data.active ).toList();
   List<Dancer> get inActives => dancers.where( (d) => !d.data.active ).toList();
+  void allActive() {
+    for (var d in dancers)
+      d.data.active = true;
+  }
+  Set<Dancer> saveActives() => dancers.where((d) => d.data.active).toSet();
+  void restoreActives(Set<Dancer> saved) {
+    for (var d in dancers)
+      d.data.active = saved.contains(d);
+  }
 
   /// Append the result of processing this CallContext to it source.
   /// The CallContext must have been previously cloned from the source.
@@ -374,6 +391,8 @@ class CallContext {
         didSomething |= clone.path.movelist.isNotEmpty;
         original.path.add(clone.path);
         original.animateToEnd();
+        if (!clone.isActive)
+          original.data.active = false;
       }
     });
     if (_source != null && _source!.level < level)
@@ -476,8 +495,17 @@ class CallContext {
   Future<void> applyCalls(String call1, [String? call2, String? call3, String? call4]) async {
     var calls = [call1,call2,call3,call4].whereType<String>();
     for (var call in calls) {
+      final saved = saveActives();
       await _applyCall(call);
+      restoreActives(saved);
     }
+  }
+
+  Future<void> applyCodedCall(String call) async {
+    var ctx2 = CallContext.fromContext(this);
+    await ctx2.interpretCall(call,skipFirstXML: true);
+    await ctx2.performCall();
+    ctx2.appendToSource();
   }
 
   Future<bool> _checkCalls(List<String> calls) async {
@@ -519,7 +547,8 @@ class CallContext {
   /// This is the main loop for interpreting a call
   ///  [calltxt]  One complete call, lower case, words separated by single spaces
   ///  [noAction] set to true if it's ok for this call not to do anything
-  Future<void> interpretCall(String calltext, {bool noAction = false}) async {
+  Future<void> interpretCall(String calltext,
+      {bool noAction = false, bool skipFirstXML = false}) async {
     calltext = _cleanupCall(calltext);
     await _loadAllFilesForCall(calltext);
     CallError err = CallNotFoundError(calltext);
@@ -540,23 +569,29 @@ class CallContext {
           ? ['Trade Circulate'] : calltext.chopped();
       for (var onecall in chopped) {
         //  First try to find a snapshot match
-        try {
-          foundOneCall = await matchXMLcall(onecall);
-        } on CallError catch (err2) {
-          err = err2;
+        if (onecall != calltext || !skipFirstXML) {
+          try {
+            foundOneCall = await matchXMLcall(onecall);
+          } on CallError catch (err2) {
+            err = err2;
+          }
         }
         //  Then look for a code match
         foundOneCall = foundOneCall || matchCodedCall(onecall);
         //  Finally try a fuzzier snapshot match
-        try {
-          foundOneCall = foundOneCall || await matchXMLcall(onecall,fuzzy:true);
-        } on CallError catch (err3) {
-          err = err3;
+        if (onecall != calltext || !skipFirstXML) {
+          try {
+            foundOneCall =
+                foundOneCall || await matchXMLcall(onecall, fuzzy: true);
+          } on CallError catch (err3) {
+            err = err3;
+          }
         }
         if (foundOneCall) {
           //  Remove the words we matched, break out of
           //  the chopped loop, and continue if any words left
           calltext = calltext.replaceFirst(onecall, '').trim();
+          skipFirstXML = false;
           break;
         }
       }
@@ -603,64 +638,26 @@ class CallContext {
 
     var callnorm = TamUtils.normalizeCall(calltext);
     var callfiles = xmlFilesForCall(callnorm.toLowerCase());
-    //  Found xml file with call, now look through each animation
-    var found = callfiles.isNotEmpty;
-    var bestOffset = double.maxFinite;
-    XMLCall? xmlCall;
-    var title = '';
 
     for (var link in callfiles) {
       var file = await loadOneFile(link);
       var tamlist = file.rootElement.findAllElements('tam').where((tam) =>
       tam('sequencer') != 'no' &&
           //  Check for calls that must go around the centers
-          (!perimeter || tam('sequencer','').contains('perimeter')) &&
+          (!perimeter || tam('sequencer', '').contains('perimeter')) &&
           //  Check for 4-dancer calls that do not work for 8 dancers
-          (exact || !tam('sequencer','').contains('exact')) &&
+          (exact || !tam('sequencer', '').contains('exact')) &&
           TamUtils.normalizeCall(tam('title')).toLowerCase() ==
               callnorm.toLowerCase());
-      for (var tam in tamlist) {
-        //  Calls that are gender-specific, e.g. Star Thru,
-        //  are specifically flagged in XML
-        var sexy = tam('sequencer','').contains('gender-specific');
-        //  Make sure we don't mismatch heads and sides
-        //  on calls that specifically refer to them
-        var headsMatchSides = !tam('title').contains('Heads?|Sides?'.r);
-        //  Try to match the formation to the current dancer positions
-        var ctx2 = CallContext.fromXML(tam);
-        var mm = ctx1.matchFormations(ctx2,sexy: sexy, fuzzy: fuzzy,
-            handholds: !fuzzy, headsMatchSides: headsMatchSides);
-        if (mm != null) {
-          var matchResult = ctx1.computeFormationOffsets(ctx2, mm,delta: 0.2);
-          var totOffset = matchResult.offsets.fold<double>(0.0, (s, v) => s + v.length);
-          if (totOffset < bestOffset) {
-            xmlCall = XMLCall(tam,mm,ctx2);
-            bestOffset = totOffset;
-            title = tam('title');
-          }
-        }
-      }
-      if (xmlCall != null) {
-        if (['Allemande Left',
-             'Dixie Grand',
-             'Right and Left Grand'].contains(xmlCall.name)) {
-          if (!_checkResolution(xmlCall.ctx2, xmlCall.xmlmap)) {
-            resolutionError = true;
-          }
-        }
-        // add XMLCall object to the call stack
-        ctx0.callstack.add(xmlCall);
-        // Remove stuff like (C-1) from title
-        // Also remove quotes as used for "O" calls
-        ctx0.callname = callname + title.replaceAll('\\(.*\\)'.r, '')
-            .replaceAll('"', '') + ' ';
+      if (tamlist.isNotEmpty) {
+        final xmlCall = XMLCall(tamlist.first('title').replaceAll('\\(.*\\)'.r, '')
+            .replaceAll('"', ''));
         xmlCall.level = LevelData.find(link)!;
+        ctx0.callstack.add(xmlCall);
+        ctx0.callname += xmlCall.name + ' ';
         return true;
       }
     }
-    if (found)
-      //  Found the call but formations did not match
-      throw FormationNotFoundError(calltext);
     return false;
   }
 
@@ -670,7 +667,7 @@ class CallContext {
   //  Since the XML dancers are resolved, the user's dancers must map
   //  to them in order plus or minus a rotation.
   //  So the mapping of the couples numbering mod 4 must be the same.
-  bool _checkResolution(CallContext ctx2, List<int> mapping) {
+  bool checkResolution(CallContext ctx2, List<int> mapping) {
     var pairings = dancers.indices.map((i) {
       var d = dancers[i];
       return  (d.numberCouple.d - ctx2.dancers[mapping[i]].numberCouple.d + 4) % 4;

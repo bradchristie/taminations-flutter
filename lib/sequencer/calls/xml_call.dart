@@ -18,37 +18,108 @@
 
 */
 
-import 'package:xml/xml.dart';
-
-import '../../dancer.dart';
-import '../../extensions.dart';
-import '../../math/path.dart';
-import '../../tam_utils.dart';
-import '../call_context.dart';
+import 'common.dart';
 import 'call.dart';
 
 class XMLCall extends Call {
 
-  final XmlElement xelem;
-  final List<int> xmlmap;
-  final CallContext ctx2;
+  late XmlElement xelem;
+  late List<int> xmlmap;
+  late CallContext ctx2;
+  bool found = false;
 
   static const noInactiveCalls = ['slip','slither'];
 
-  XMLCall(this.xelem, this.xmlmap, this.ctx2)
-      : super(xelem('title'));
+  XMLCall(String title) : super(title);
 
   @override
   Future<void> performCall(CallContext ctx) async {
+
+    //  If actives != dancers, create another call context with just the actives
+    var dc = ctx.dancers.length;
+    var ac = ctx.actives.length;
+    var perimeter = false;
+    var exact = dc == ac;
+    var ctxwork = ctx;
+    if (!exact) {
+      //  Don't try to match unless the actives are together
+      if (ctx.actives.any((d) =>
+          ctx.inBetween(d, ctx.actives.first).any((it) => !it.data.active)
+      ))
+        perimeter = true;
+      ctxwork = CallContext.fromContext(ctx,dancers:ctx.actives);
+    }
+
+    var callfiles = CallContext.xmlFilesForCall(norm.toLowerCase());
+    //  Found xml file with call, now look through each animation
+    var bestOffset = double.maxFinite;
+    var fuzzy = true;
+
+    for (var link in callfiles) {
+      var file = await CallContext.loadOneFile(link);
+      var tamlist = file.rootElement.findAllElements('tam').where((tam) =>
+      tam('sequencer') != 'no' &&
+          //  Check for calls that must go around the centers
+          (!perimeter || tam('sequencer','').contains('perimeter')) &&
+          //  Check for 4-dancer calls that do not work for 8 dancers
+          (exact || !tam('sequencer','').contains('exact')) &&
+          TamUtils.normalizeCall(tam('title')).toLowerCase() ==
+              norm.toLowerCase());
+      for (var tam in tamlist) {
+        //  Calls that are gender-specific, e.g. Star Thru,
+        //  are specifically flagged in XML
+        var sexy = tam('sequencer','').contains('gender-specific');
+        //  Make sure we don't mismatch heads and sides
+        //  on calls that specifically refer to them
+        var headsMatchSides = !tam('title').contains('Heads?|Sides?'.r);
+        //  Try to match the formation to the current dancer positions
+        var ctx2q = CallContext.fromXML(tam);
+        var mm = ctxwork.matchFormations(ctx2q,sexy: sexy, fuzzy: fuzzy,
+            handholds: !fuzzy, headsMatchSides: headsMatchSides);
+        if (mm != null) {
+          var matchResult = ctxwork.computeFormationOffsets(ctx2q, mm,delta: 0.2);
+          var totOffset = matchResult.offsets.fold<double>(0.0, (s, v) => s + v.length);
+          if (totOffset < bestOffset) {
+            xelem = tam;
+            xmlmap = mm;
+            ctx2 = ctx2q;
+            bestOffset = totOffset;
+            found = true;
+          }
+        }
+      }
+    }
+
+    if (found) {
+      if (['Allemande Left',
+        'Dixie Grand',
+        'Right and Left Grand'].contains(name)) {
+        if (!ctxwork.checkResolution(ctx2, xmlmap)) {
+          ctxwork.resolutionError = true;
+        }
+      }
+    } else {
+      try {
+        await ctx.applyCodedCall(name);
+      } on CallError catch (e) {
+        //  Found the call but formations did not match
+        throw FormationNotFoundError(name);
+      }
+      return;
+    }
+
+
+
+
     final allPaths = xelem.childrenNamed('path').map(
             (element) => Path(TamUtils.translatePath(element))).toList();
     final asymmetric = xelem('asymmetric').isNotBlank;
     //  If moving just some of the dancers,
     //  see if we can keep them in the same shape
     if (ctx.actives.length < ctx.dancers.length) {
-      //  No animations have been done on ctx2,
+      //  No animations have been done on ctxwork,
       //  so dancers are still at the start points
-      var ctx3 = CallContext.fromContext(ctx2);
+      var ctx3 = CallContext.fromContext(ctxwork);
       //  So ctx3 is a copy of the start point
       //  Now add the paths
       for (var ii = 0; ii < ctx3.dancers.length; ii++) {
@@ -60,7 +131,7 @@ class XMLCall extends Call {
       ctx3.analyze();
     }
 
-    var matchResult = ctx.computeFormationOffsets(ctx2, xmlmap, delta: 0.2);
+    var matchResult = ctxwork.computeFormationOffsets(ctx2, xmlmap, delta: 0.2);
 
     for (var i3 = 0; i3 < xmlmap.length; i3++) {
       var m = xmlmap[i3];
@@ -69,15 +140,15 @@ class XMLCall extends Call {
         p.add(TamUtils.getMove('Stand'));
       //  Scale active dancers to fit the space they are in
       //  Compute difference between current formation and XML formation
-      var vd = matchResult.offsets[i3].rotate(-ctx.actives[i3].tx.angle);
+      var vd = matchResult.offsets[i3].rotate(-ctxwork.actives[i3].tx.angle);
       //  Apply formation difference to first movement of XML path
       if (vd.length > 0.1)
         p.skewFirst(-vd.x, -vd.y);
       //  Add XML path to dancer
-      ctx.actives[i3].path.add(p);
+      ctxwork.actives[i3].path.add(p);
       //  Move dancer to end so any subsequent modifications (e.g. roll)
       //  use the new position
-      ctx.actives[i3].animateToEnd();
+      ctxwork.actives[i3].animateToEnd();
     }
 
     //  Mark dancers that had no XML move as inactive
@@ -86,16 +157,16 @@ class XMLCall extends Call {
     var inactives = <Dancer>[];
     switch (xelem('actives')) {
       case 'Heads' :
-        inactives = ctx.dancers.where((d) => d.isSide).toList();
+        inactives = ctxwork.dancers.where((d) => d.isSide).toList();
         break;
       case 'Sides' :
-        inactives = ctx.dancers.where((d) => d.isHead).toList();
+        inactives = ctxwork.dancers.where((d) => d.isHead).toList();
         break;
       case 'Centers' :
-        inactives = ctx.dancers.where((d) => !d.data.center).toList();
+        inactives = ctxwork.dancers.where((d) => !d.data.center).toList();
         break;
       case 'Ends' :
-        inactives = ctx.dancers.where((d) => !d.data.end).toList();
+        inactives = ctxwork.dancers.where((d) => !d.data.end).toList();
         break;
       case 'All' :
         break;
@@ -104,12 +175,16 @@ class XMLCall extends Call {
           var m = xmlmap[i4];
           var path = asymmetric ? allPaths[m] : allPaths[m >> 1];
           if (path.movelist.isEmpty)
-            inactives.add(ctx.actives[i4]);
+            inactives.add(ctxwork.actives[i4]);
         }
     }
     inactives.forEach((d) {
       d.data.active = false;
     });
+
+    if (!exact) {
+      ctxwork.appendToSource();
+    }
 
   }
 

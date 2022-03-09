@@ -21,7 +21,7 @@
 import '../common.dart';
 
 //  This class implements both Zoom and Zing
-class Zoom extends Action {
+class Zoom extends ActivesOnlyAction {
 
   @override
   LevelData level;

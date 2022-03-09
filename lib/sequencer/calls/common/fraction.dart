@@ -66,7 +66,7 @@ class Fraction extends Action {
     } else {
       _partBeats = 0.0;
       await fracctx.performCall();
-      if (call is XMLCall) {
+      if (call is XMLCall && call.found) {
         //  Figure out how many beats are in the fractional call
         //  Calls could have either "parts" or "fractions"
         var parts = call.xelem('parts', '') + call.xelem('fractions', '');

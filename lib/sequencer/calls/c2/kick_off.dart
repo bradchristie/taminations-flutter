@@ -29,10 +29,10 @@ class KickOff extends Action {
   Future<void> perform(CallContext ctx) async {
     //  Active dancers [Cross] Run and Roll
     final cross = name.startsWith('Cross') ? 'Cross' : '';
+    final inactives = ctx.dancers.where((d) => !d.isActive).toList();
     await ctx.applyCalls('$cross Run and Roll');
     //  Inactive dancers that moved do a Partner Tag
-    ctx.dancers.where((d) => !d.isActive && d.path.movelist.isNotEmpty)
-        .forEach((d) {
+    inactives.forEach((d) {
       final m = d.path.shift()!;
       final dy = m.btranslate.endPoint.y;
       if (dy > 0)

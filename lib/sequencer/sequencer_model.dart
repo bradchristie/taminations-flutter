@@ -26,6 +26,7 @@ import '../dance_model.dart';
 import 'call_context.dart';
 import 'call_error.dart';
 import 'calls/coded_call.dart';
+import 'calls/xml_call.dart';
 
 class SequencerCall {
   final String name;
@@ -239,7 +240,10 @@ class SequencerModel extends fm.ChangeNotifier {
       cctx.adjustForSquaredSetCovention();
     //  Snap to a standard formation so subsequent calls will work
     //  But not if just one XML call, as it knows how it should end
-    if (cctx.callstack.length > 1 || cctx.callstack[0] is CodedCall)
+    final firstCall = cctx.callstack.first;
+    if (cctx.callstack.length > 1 ||
+        firstCall is CodedCall ||
+        (firstCall is XMLCall && !firstCall.found))
       cctx.matchStandardFormation();
     if (cctx.isCollision())
       throw CallError('Unable to calculate valid animation.');
