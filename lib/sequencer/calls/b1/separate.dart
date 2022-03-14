@@ -32,7 +32,8 @@ class Separate extends Action {
       throw CallError('Who is going to Separate?' );
 
     //  Case 1 - Outer 4 Separate
-    if (ctx.outer(4).every((it) => it.data.active)) {
+    if (!ctx.isSquare() && ctx.outer(4).every((it) => it.data.active)) {
+      print('Separate: ${ctx.actives}');
       for (var d in ctx.actives) {
         var d2 = ctx.dancerClosest(d, (it) => it.data.active)!;
         if (d2.isRightOf(d) && d.isFacingIn)
