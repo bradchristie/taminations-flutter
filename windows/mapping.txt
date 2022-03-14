@@ -1,0 +1,2 @@
+[Files]
+"p:\FlutterProjects\taminations\build\windows\runner\Release\taminations.msix"	"taminations.msix"
