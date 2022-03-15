@@ -27,7 +27,10 @@ class AceyDeucey extends Action {
 
   @override
   Future<void> perform(CallContext ctx, [int i = 0]) async {
-    await ctx.applyCalls('Center 4 Trade While Outer 4 Circulate');
+    if (CallContext.fromDancers(ctx.outer(4)).isDiamond())
+      await ctx.applyCalls('Center 4 Trade While Outer 4 Diamond Circulate');
+    else
+      await ctx.applyCalls('Center 4 Trade While Outer 4 Circulate');
     ctx.changeBeats(4.0);
   }
 

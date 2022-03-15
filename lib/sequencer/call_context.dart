@@ -353,7 +353,7 @@ class CallContext {
   //  Create a CallContext from any sort of formation name
   CallContext.fromName(String name) : this.fromXML(_xmlFromName(name));
 
-  void noSnap({bool recurse:true}) {
+  void noSnap({bool recurse=true}) {
     _snap = false;
     if (recurse) {
       for (var s = _source; s != null; s = s._source)
@@ -1317,6 +1317,15 @@ class CallContext {
         ((xCount==4 && yCount==0) || (xCount==0 && yCount==4));
   }
   bool is2x4() => dancers.length == 8 && (isLines() || isTBone());
+
+  bool isDiamond() => dancers.every((d) => dancers.where((d2) {
+      if (d2 == d)
+        return false;
+      var a = d.angleToDancer(d2).abs();
+      return !a.isAround(pi / 2) && a < pi / 2;
+    }).length == 1
+  );
+
 
   //  Sometimes we have to work with an asymmetric context
   bool isAsym() =>
