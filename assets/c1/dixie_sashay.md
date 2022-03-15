@@ -3,7 +3,7 @@
 
 From Facing Couples or Facing Tandems:
 [Dixie Style to A Wave](../ms/dixie_style.md);
-[Slither](../a2/slither.md).
+[Slither](../a2/slip.md).
 Ends in a Left-Hand Two-Faced Line. (Dancers
 should anticipate the Slither action and blend smoothly into it from
 the Left Touch 1/4 action that concludes Dixie Style to a Wave.)

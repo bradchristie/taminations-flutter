@@ -3,7 +3,7 @@
 
 From Facing Lines: [Concentric Pass In](../c1/concentric_concept.md). 
 Then the ends [Pass In](../a1/pass_in.md) as the centers 
-[Pass Out](../a1/pass_out.md). Then all [Pass In](../a1/pass_in.md). 
+[Pass Out](../a1/pass_in.md). Then all [Pass In](../a1/pass_in.md). 
 Finishes in Facing Lines. This is a 3-part call.
 
 > 

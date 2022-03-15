@@ -3,13 +3,13 @@
 
 ## Replace
 
-- Dancers can be asked to replace (i.e., substitute) one or more
+- Dancers can be asked to replace (or substitute) one or more
 parts of the call (including the remainder of the call) with a
 different dance action. The part to be replaced can be described by
-its part number (e.g., "the third part") or by its dance action (e.g.,
+its part number (for example, "the third part") or by its dance action (for example,
 "the stars", "the centers trade"). See also,
 But. Examples: "Scoot and
-Plenty, Replace the Box Circulates with a Motivate", "Swing the
+Plenty, Replace the Split Circulates with a Motivate", "Swing the
 Fractions, Replace the third part with a Split Circulate", "Scoot and
 Plenty, Replace the Box Circulates with an Explode the Wave and do not
 finish the Plenty".

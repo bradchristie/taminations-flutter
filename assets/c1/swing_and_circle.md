@@ -3,7 +3,7 @@
 
 From 1/4 tag, 3/4 tag, a Wave Between Parallel Mini-Waves, or Diamonds (but not
 Facing Diamonds):
-The dancers in the wave [Swing](../a2/swing.md). The very center
+The dancers in the wave [Swing](../a2/slip.md). The very center
 dancers [Trade](../b2/trade.md) while the outer six move
 one position, in the direction shown in the
 diagrams below (i.e., as determined by the ends of the wave),

@@ -27,7 +27,7 @@ original centers always finish as centers. For example,
 > 
 
 *Teaching Hint:* From parallel waves, people tend to try to 
-[Split Counter Rotate](../a2/split_counter_rotate.md). Describing the action, from that
+[Split Counter Rotate](../a2/box_counter_rotate.md). Describing the action, from that
 formation only, as "[Concentric](concentric_concept.md) 
 [Box Counter Rotate](../a2/box_counter_rotate.md)" helps a great deal.
 

@@ -1,7 +1,7 @@
 
 # Reverse Explode
 
-From a Wave: All Step Thru and [Quarter Out](../a1/quarter_out.md). Ends in Couples Back-to-Back.
+From a Wave: All Step Thru and [Quarter Out](../a1/quarter_in.md). Ends in Couples Back-to-Back.
 
 > 
 > ![alt](reverse_explode.png)

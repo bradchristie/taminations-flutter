@@ -9,7 +9,7 @@ Outsides 1/4 Right (if Delight) or 1/4 Left (if Dilemma) and
 [Circulate](../b1/circulate.md)
 twice as the Centers
 (stepping to a wave if necessary)
-***[Swing](../a2/swing.md)***,
+***[Swing](../a2/slip.md)***,
 ***[Slip](../a2/slip.md)***,
 ***Slip***, and
 ***[Cast Off 3/4](../ms/cast_off_three_quarters.md)***.

@@ -9,7 +9,7 @@ as #2 dancers [Circulate](../b1/circulate.md),
 and [Roll](../plus/anything_and_roll.md)
 as #3 and #4 dancers [Circulate](../b1/circulate.md);
 Centers [Cast Off 3/4](../ms/cast_off_three_quarters.md);
-all [Extend](../plus/extend.md).
+all [Extend](../b2/extend.md).
 Ends in Parallel Waves.
 
 > 

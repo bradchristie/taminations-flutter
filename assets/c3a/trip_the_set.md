@@ -8,7 +8,7 @@ ends back-to-back, or other applicable formations:
 Ends [Cross Fold](../ms/fold.md)
 and [Roll](../plus/anything_and_roll.md)
 as Centers ([Concentric](../c1/concentric_concept.md))
-[1/4 Out](../a1/quarter_out.md) and [Trade](../b2/trade.md).
+[1/4 Out](../a1/quarter_in.md) and [Trade](../b2/trade.md).
 Parallel Lines end in Facing Lines.
 
 > 

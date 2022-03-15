@@ -5,7 +5,7 @@
 
 From 1/4 Tag or 3/4 Tag: This call has 3 parts:
 
-1. ***[Little](little.md)***
+1. ***[Little](scoot_and_little.md)***
 2. ***[Split Circulate 2](../b1/circulate.md)*** (formerly called "Turn the Star 1/2")
 3. ***Ends [Counter Rotate 1/4](counter_rotate.md) and [Roll](../plus/anything_and_roll.md) while the centers 1/2 [Zoom](../b2/zoom.md) to form a wave***
 

@@ -1,7 +1,7 @@
 
 # Alter the Wave
 
-From a Wave: ***All [Swing](../a2/swing.md)***,
+From a Wave: ***All [Swing](../a2/slip.md)***,
 then ***the centers [Cast Off 3/4](../ms/cast_off_three_quarters.md)
 while the ends [ U-Turn Back](../b1/turn_back.md)***.
 ***All [ Counter Rotate](counter_rotate.md) the

@@ -4,7 +4,7 @@
 ## Cross Ramble
 
 From a 3/4 Tag formation: ***Those in the wave do a [Cross Folding](../ms/fold.md)
-action to face each other as the outsides [Cross Cast Back](../c1/cross_cast_back.md)***, 
+action to face each other as the outsides [Cross Cast Back](../c1/cast_back.md)***, 
 ***then all [Slide Thru](../ms/slide_thru.md)***.
 
 ## Scoot and Cross Ramble

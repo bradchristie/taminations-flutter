@@ -2,7 +2,7 @@
 # Relay the Shadow
 
 From a Tidal Wave:
-***All [Swing](../a2/swing.md)***.
+***All [Swing](../a2/slip.md)***.
 ***The center six [Cast 3/4](../ms/cast_off_three_quarters.md),
 while the ends [Counter Rotate 1/4](../a2/box_counter_rotate.md),
 meet the very centers,***

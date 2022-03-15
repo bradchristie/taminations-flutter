@@ -2,9 +2,9 @@
 # Prefer
 
 Used to designate a dancer or dancers different from those specified
-in the definition. Two common uses are: from general lines with men
+in the definition. Two common uses are: from General Lines with men
 facing on the ends, "Prefer the Head Men, In Roll Circulate". From a
-general line with the men and at least one woman facing the same way,
+General Line with the men and at least one woman facing the same way,
 "Prefer the Men, Explode the Line" (i.e., the men step forward and all
 face and Pull By).
 

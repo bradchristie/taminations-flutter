@@ -3,7 +3,7 @@
 
 From any 2x4 formation with the centers in columns
 (for example, Double Pass Thru or Eight Chain Thru):
-***Centers [Quarter Out](../a1/quarter_out.md) (forming a momentary T-bone) and
+***Centers [Quarter Out](../a1/quarter_in.md) (forming a momentary T-bone) and
 [Run](../b2/run.md)
 around the outsides [=Zip Code 1]***,
 ***[Pass Thru](../b1/pass_thru.md) [=Zip Code 2]***,

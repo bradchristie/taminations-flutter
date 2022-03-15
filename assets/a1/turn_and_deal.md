@@ -1,7 +1,7 @@
 
 # Turn and Deal
 
-From a general line: As one smooth motion, all [Half Tag](../ms/half_tag.md), 
+From a general line: As one smooth motion, all [Half Tag](../ms/fraction_tag.md), 
 then turn individually another
 quarter in the same direction you turned to start the Half Tag. This call is considered to
 have a single part; it cannot be fractionalized.

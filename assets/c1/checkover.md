@@ -3,7 +3,7 @@
 
 From Columns: The #1 and #2 dancers [Checkmate](../a2/checkmate.md) while
 dancers #3 and #4 [Circulate](../b1/circulate.md), 
-[Cast Off 3/4](../ms/cast_off_three_quarters.md), [Slither](../a2/slither.md), 
+[Cast Off 3/4](../ms/cast_off_three_quarters.md), [Slither](../a2/slip.md), 
 and [As Couples](../a1/as_couples.md) [Extend](../b2/extend.md).
 Ends in Parallel Two-Faced Lines.
 

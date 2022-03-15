@@ -3,7 +3,7 @@
 **Parts:** 2  
 
 From an applicable non T-Bone 2 x 2:
-***[Box Recycle](../c1/box_split_recycle.md)***;
+***[Box Recycle](../c1/recycle.md)***;
 ***[Step & Fold](../c1/step_and_fold.md)***.
 Ends in a Mini-Wave Box.
 

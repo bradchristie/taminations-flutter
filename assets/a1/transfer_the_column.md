@@ -8,7 +8,7 @@ working slightly wider than usual to give the centers room,
 and Face In (to become a Couple).
 Meanwhile, the #3 and #4 dancers [Circulate](../b1/circulate.md) and Arm Turn 3/4.
 From the momentary right-hand or left-hand 1/4 Tag,
-all [Extend](../plus/extend.md) to form parallel waves.
+all [Extend](../b2/extend.md) to form parallel waves.
 
 
 > 

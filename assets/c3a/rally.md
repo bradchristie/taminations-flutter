@@ -9,8 +9,8 @@ From a 3/4 Tag, 1/4 Tag, or other applicable formations:
 then ***[Peel &Trail](../a2/peel_and_trail.md)***,
 as Outsides 1/4 Right,
 [Counter Rotate 1/4](../c1/counter_rotate.md),
-and inwardly ([Right](../a1/right_roll_to_a_wave.md)
-or [Left](../a1/left_roll_to_a_wave.md)) Roll To A Wave.
+and inwardly (Right
+or Left) [Roll To A Wave](../a1/right_roll_to_a_wave.md).
 A Generalized 1/4 Tag ends in a Tidal Line.
 
 ## Scoot and Rally

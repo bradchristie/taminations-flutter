@@ -134,7 +134,7 @@ after a Separate
 
 ### Dance action
 
-Initially the same as [Around 1 or 2 to a Line](#toaline), above.
+Initially the same as Around 1 or 2 to a Line, above.
 
 When the active dancers pass their last inactive dancers, they will either squeeze in between and
 through the inactive dancers (who move apart and back together to make room, as in the call Split 2)

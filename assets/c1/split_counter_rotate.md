@@ -1,7 +1,7 @@
 
 # Split Counter Rotate
 
-Split Counter Rotate: At Advanced, [Split Counter Rotate](../a2/split_counter_rotate.md) is proper
+At Advanced, [Split Counter Rotate](../a2/box_counter_rotate.md) is proper
 only from a 2x4 formation (Diamonds are being added in 2021). At C-1, this restriction is removed: each
 half of the square does a Counter Rotate around the center point of
 its side. For example, Split Counter Rotate from a Tidal Wave gives

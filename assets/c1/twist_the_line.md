@@ -31,7 +31,7 @@ Twist and [Split Square Thru 2](../a1/split_square_thru.md):
 > ![alt](twist_and_anything_2c.png)
 >
 
-Twist and [Pass Out](../a1/pass_out.md):
+Twist and [Pass Out](../a1/pass_in.md):
 
 >
 > ![alt](twist_and_anything_3a.png)

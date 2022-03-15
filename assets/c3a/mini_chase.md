@@ -4,7 +4,7 @@
 From Back-to-Back Couples or an
 applicable 2 x 2 T-Bone (all Leaders):
 Belles [Shakedown](../c1/shakedown.md)
-as Beaus [Partner Tag](../adv/partner_tag.md).
+as Beaus [Partner Tag](../a1/partner_tag.md).
 Back-to-Back Couples end in a R-H Mini-Wave Box.
 
 > 

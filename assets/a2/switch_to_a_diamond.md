@@ -13,7 +13,7 @@ Centers [Run](../b2/run.md), while the ends do their part of
 > ![alt](switch_to_a_diamond_1a.png)![alt](switch_to_a_diamond_1b.png)
 >
 
-# Switch to an Hourglass
+## Switch to an Hourglass
 
 Timing: 4
 

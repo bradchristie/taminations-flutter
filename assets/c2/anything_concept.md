@@ -17,7 +17,7 @@ word "Circulate" is conventionally omitted. For example,
 then complete the remainder of [Motivate](../a2/motivate.md)
 following the initial Circulate. If the first call is
 [Counter Rotate](../c1/counter_rotate.md) or
-[Split Counter Rotate](../a2/split_counter_rotate.md),
+[Split Counter Rotate](../a2/box_counter_rotate.md),
 the "Rotate" is conventionally omitted. For
 example, "Split Counter Coordinate" means Split Counter Rotate then
 complete the remainder of Coordinate following the initial Circulate.

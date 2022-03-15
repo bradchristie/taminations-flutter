@@ -12,7 +12,7 @@ dancers [Transfer](../a2/box_transfer.md)
 [Roll](../plus/anything_and_roll.md)) as the others 1/2
 [Circulate](../b1/circulate.md) and
 [Hinge](../ms/hinge.md);
-all [Extend](../plus/extend.md).
+all [Extend](../b2/extend.md).
 Ends in Parallel Waves.
 
 

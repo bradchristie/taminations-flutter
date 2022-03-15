@@ -8,7 +8,7 @@ Timing: call + 2
 From any appropriate formation: Do the "Anything" call.
 Trailers diagonally [Pull By](../b1/pull_by.md) with each other, using their
 outside hands. For
-example, [ Touch 1/4](touchaquarter.md) and Cross:
+example, [Touch 1/4](../b2/touch_a_quarter.md) and Cross:
 
 > 
 > ![alt](anything_and_cross_1a.png)![alt](anything_and_cross_1b.png)![alt](anything_and_cross_1c.png)

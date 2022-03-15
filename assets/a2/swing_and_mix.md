@@ -10,7 +10,7 @@ From an ocean wave or inverted line: ends and adjacent centers Turn
 
 Note: There are two ways in which Swing and
 Mix is not simply the call
-[Swing](swing.md) followed by the call
+[Swing](slip.md) followed by the call
 [Mix](../a1/mix.md). First,
 reflecting historical usage, Swing and Mix is a single call with three
 parts while (Any Call) and Mix are two separate calls. Second, from

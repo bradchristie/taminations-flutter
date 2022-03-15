@@ -1,13 +1,13 @@
 
 # Ripple the Wave
 
-From a Wave: Designated dancers will Any-Hand [Swing](../a2/swing.md) 1/2,
+From a Wave: Designated dancers will Any-Hand [Swing](../a2/slip.md) 1/2,
 toward the center of the wave,
 using alternating hands, until they become the far end of the wave.
 
 ## \<anyone> Ripple 1, 2, 3
 
-From a Wave or Tidal Wave: Those designated will Any-Hand [Swing](../a2/swing.md) 1/2 toward
+From a Wave or Tidal Wave: Those designated will Any-Hand [Swing](../a2/slip.md) 1/2 toward
 the center of the formation, the number of hands given, alternating hands. This
 call can be fractionalized (e.g. Ripple 2 1/2). Designated dancers can do
 [Partner Trades](../b2/trade.md) instead of Swing 1/2s, if the starting formation is not a wave.

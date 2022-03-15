@@ -9,7 +9,7 @@ From a 3/4 Tag or other applicable formations:
 ***Centers [Trade The Wave](../plus/trade_the_wave.md)***,
 ***[Cast Off 3/4](../ms/cast_off_three_quarters.md)*** and
 ***[Counter Rotate](../c1/counter_rotate.md) 1/4***
-as the Outsides ***[Cross Cast Back](../c1/cross_cast_back.md)***,
+as the Outsides ***[Cross Cast Back](../c1/cast_back.md)***,
 ***[Touch](../b2/touch_a_quarter.md) 1/2***, and
 ***[Step & Fold](../c1/step_and_fold.md)***.
 A R-H 3/4 Tag ends in Parallel L-H Two-Faced Lines;

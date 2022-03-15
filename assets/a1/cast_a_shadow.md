@@ -12,7 +12,7 @@ From a 2x4 formation with the ends forming a tandem: ends 1/2
 and [Spread](../plus/anything_and_spread.md),
 to become ends of a 2x4. Meanwhile centers
 facing out [Cloverleaf](../ms/cloverleaf.md) and centers facing in
-[Extend](../plus/extend.md), Arm Turn 1/4,
+[Extend](../b2/extend.md), Arm Turn 1/4,
 and Extend. The centers finish as centers of a 2x4 by stepping in between ends who spread
 apart.  In the case in which all the centers are facing in, 
 they [Pass In](pass_in.md) and [Pass Thru](../b1/pass_thru.md); 

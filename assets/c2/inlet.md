@@ -7,7 +7,7 @@ From Parallel Waves or applicable Parallel 3-and-1 Lines with only the
 left-end dancers facing out: The lead end and adjacent dancer (outer-actives)
 [Recycle](../ms/recycle.md),
 as the trailing end and the adjacent dancer (inner-actives)
-[Split](../c1/box_split_recycle.md) or
+[Split](../c1/recycle.md) or
 [Facing Couples Recycle](../a2/recycle.md), 
 adjusting to end in a center wave. Ends in a quarter tag
 formation. (Note: Applicable Parallel 3-and-1 Lines are those in which both ends
@@ -19,7 +19,7 @@ Mini-Wave.)
 From a Right-Hand 1/4 Tag or Right-Hand Quarter Line formation (outsides
 may also be in Right-Hand Mini-Waves): The end of the wave and adjacent dancer
 work with the outsides toward whom the end is facing. Acting as if in a box of
-four, they [Split](../c1/box_split_recycle.md) or
+four, they [Split](../c1/recycle.md) or
 [Facing Couples Recycle](../a2/recycle.md). Ends in Parallel Waves. (Note: It is
 considered inappropriate to call Outlet from a Left-Hand 1/4 Tag formation
 where the outsides are both facing in.)

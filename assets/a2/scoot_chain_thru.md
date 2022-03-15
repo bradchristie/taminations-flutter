@@ -7,9 +7,9 @@ From waves only: Those facing out do a
 [Scoot Back](../ms/scoot_back.md),
 while those facing in
 [Extend](../b2/extend.md),
-[Swing](swing.md),
+[Swing](slip.md),
 [Slip](slip.md),
-[Swing](swing.md), and
+[Swing](slip.md), and
 [Extend](../b2/extend.md). Ends in waves.
 
 > 
@@ -18,9 +18,9 @@ while those facing in
 
 From quarter tag: All
 [Extend](../b2/extend.md),
-[Swing](swing.md),
+[Swing](slip.md),
 [Slip](slip.md),
-[Swing](swing.md), and
+[Swing](slip.md), and
 [Extend](../b2/extend.md). Ends in three quarter tag.
 
 

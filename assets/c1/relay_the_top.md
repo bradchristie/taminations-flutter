@@ -2,7 +2,7 @@
 # Relay the Top
 
 From Parallel Waves:
-***All [Swing](../a2/swing.md)***.
+***All [Swing](../a2/slip.md)***.
 ***The centers Arm Turn 3/4
 while the ends 1/2 Circulate***, to create a star between two mini-waves.
 ***The star turns 1/4,

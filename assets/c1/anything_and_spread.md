@@ -1,10 +1,10 @@
 
 # (Anything) and Spread
 
-In addition to the three ways Spread is used at
+In addition to the three ways [Spread](../plus/anything_and_spread.md) is used at
 Plus, there is a fourth way:
 
-If specific dancers are directed to Spread (e.g., Everyone Trade, Boys
+If specific dancers are directed to Spread (for example, Everyone Trade, Boys
 Spread), they slide away from the adjacent dancer one position. The
 inactive dancers do not move. This can be used to create an Hourglass
 (From #0 Lines: Touch 1/4, Column Circulate 1 1/2, Center 6 Trade, Girls
