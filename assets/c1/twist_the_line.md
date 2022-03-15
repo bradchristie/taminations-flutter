@@ -13,7 +13,7 @@ Thru).
 
 From a Line, centers facing the
 same way: The centers step forward and [Partner Trade](../b2/trade.md)
-while the ends face, move in, and do the Anything call--which will involve 
+while the ends face, move in, and do the \<anything> call--which will involve 
 only the original ends unless otherwise
 specified For example, "Twist and [Square Thru 2](../b1/square_thru.md)":
 

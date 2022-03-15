@@ -21,8 +21,6 @@ Diamond Circulate to the next position in your Interlocked Diamond.
 > ![alt](interlocked_diamond_circulate_2b.png)
 > 
 
-## Cut / Flip the Interlocked Diamond
-
 ## Cut the Interlocked Diamond
 
 From Interlocked Diamonds (Twin): The points

@@ -1,5 +1,5 @@
 
-# Circle By (m and n)
+# Circle By
 
 From Facing Couples: This call requires that two
 fractions, m and n, be called as part of its name, for example,

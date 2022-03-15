@@ -3,7 +3,8 @@
 
 A Butterfly is a column formation with the ends of the column separated by 2 positions.
 
-**Butterfly Circulate**  
+## Butterfly Circulate
+
 From a Butterfly: All dancers move
 forward one position along the path as shown:
 
@@ -11,7 +12,8 @@ forward one position along the path as shown:
 > ![alt](butterfly_formation_1.png)
 > 
 
-**Other Butterfly calls, such as Split Circulate, Walk and Dodge**  
+## Other Butterfly calls, such as Split Circulate, Walk and Dodge
+
 Any call which can be done from General
 Columns (columns, double pass thru, etc.), and which ends
 in General Lines or Columns, can be done from a Butterfly.

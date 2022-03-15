@@ -63,7 +63,7 @@ these triangles has one point as the apex and two of the center 4 as the base.
 > ![alt](triangle_4b.png)
 > 
 
-## Tandem-based/Wave-based Triangles
+## Tandem-based / Wave-based Triangles
 Various formations, especially a Galaxy, contain triangles that may be
 identified by the formation of their “base”. A Wave-Based Triangle has
 the dancers in the base usually in a Mini-Wave (also possible: a

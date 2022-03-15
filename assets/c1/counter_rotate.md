@@ -8,7 +8,7 @@ unless otherwise specified) around the flagpole center of
 the formation, staying the same distance from that
 center as though he were on a wheel turning about that
 center. With each quarter he Counter Rotates, the
-dancer faces a new wall (that is, he turns 90°).
+dancer faces a new wall (that is, he turns 90 degrees).
 
 > 
 > ![alt](counter_rotate_1a.png)

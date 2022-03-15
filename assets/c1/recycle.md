@@ -14,7 +14,7 @@ The centers do a [Recycle](../ms/recycle.md), working
 wider than normal, and ending on the outside.
 Meanwhile, the outsides move into the center and Recycle
 ([Facing Couples Recycle](../a2/recycle.md) or
-Split Recycle, as appropriate),
+Box Recycle, as appropriate),
 ending in the center. This ends in a 1/4 Tag.
 
 >

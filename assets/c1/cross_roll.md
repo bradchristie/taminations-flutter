@@ -1,5 +1,5 @@
 
-# Cross Roll to a Wave (or Line)
+# Cross Roll to a Wave / Line
 
 From a line or wave: The centers [Cross Run](../b2/run.md) while the
 ends [Run](../b2/run.md). The centers pass outside of the ends as they

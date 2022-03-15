@@ -22,7 +22,7 @@ call can only be done from Diamonds (e.g., Concentric
 
 If the Concentric call is being done from General Lines or
 General Columns, and the call starts and ends in a 2x2
-Box (e.g., Concentric [Star Thru](../b1/star_thru.md)), the following rule
+Box, the following rule
 applies: If the ends begin as though in Columns, they
 finish as though in Columns; if they begin in Lines, they
 finish in Lines.
@@ -96,6 +96,6 @@ Common applications include:
 - From starting Double Pass Thru: Star Thru, Slide Thru, Pass In / Out, Touch 1/4
 - From Completed Double Pass Thru: Chase Right, Shakedown
 - From Tidal Wave: Recycle, Ah So
-- From Tidal Line: Wheel & Deal, Turn and Deal, 1/2 Tag
+- From Tidal Line: Wheel and Deal, Turn and Deal, 1/2 Tag
 
 ###### @ Copyright 1983, 1986-1988, 1995-2021 Bill Davis, John Sybalsky and CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed nor revised in any derivation or publication.

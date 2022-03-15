@@ -1,5 +1,5 @@
 
-# Magic Column Formation/Concept
+# Magic Column Formation / Concept
 
 A Magic Column consists of the ends of one column and the
 centers of the other column. The dancers act as though

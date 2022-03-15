@@ -1,7 +1,7 @@
 
 # Wheel and \<anything>
 
-# Wheel and \<anything>
+## Wheel and \<anything>
 
 From any formation with exactly two couples as outsides
 and facing out: The outside couples Promenade

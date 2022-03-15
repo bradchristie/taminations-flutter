@@ -24,7 +24,7 @@ From a Galaxy: Centers Galaxy Circulate while the points slide together and
 
 ## Flip the Galaxy
 
-From a Galaxy: Centers [Galaxy Circulate](../c1/galaxy_formation.md) while the points
+From a Galaxy: Centers Galaxy Circulate while the points
 [Run](../b2/run.md) to the nearest
 center. Finishes in a Thar Star or Promenade.
 

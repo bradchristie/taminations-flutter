@@ -19,7 +19,7 @@ Ends in a Box Circulate formation. This call has two parts.
 From a Line or Wave:
 ***[1/2 Tag](../ms/tag.md)*** and
 ***[Scoot Back](../ms/scoot_back.md)***.
-Ends in box circulate formation.
+Ends in Box Circulate formation.
 This call has two parts.
 
 ## Vertical Tag Back to a Wave 

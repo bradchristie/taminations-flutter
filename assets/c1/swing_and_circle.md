@@ -1,5 +1,5 @@
 
-# Swing and Circle 1/4, 1/2, 3/4, Full
+# Swing and Circle (1/4, 1/2, 3/4, Full)
 
 From 1/4 tag, 3/4 tag, a Wave Between Parallel Mini-Waves, or Diamonds (but not
 Facing Diamonds):

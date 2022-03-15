@@ -13,7 +13,7 @@ calls) that start and end in a 2x2 formation. e.g. [Partner Trade](../b2/trade.m
 [Wheel Thru](../a1/wheel_thru.md), etc. When doing a call in a
 block, each dancer works only with the dancers in his
 block; all Block calls start and end on the same 4 spots on
-the floor.
+the floor,
 for example, In Your Block, [Walk and Dodge](../ms/walk_and_dodge.md):
 
 > 

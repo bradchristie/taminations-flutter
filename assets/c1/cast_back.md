@@ -8,7 +8,7 @@ facing directly toward or away from the flagpole center:
 Starting in a Tandem, the lead dancer always does the call;
 elsewhere, the caller must designate a dancer. The
 designated dancer does a
-[Peel Off](../plus/peel_off.md) and step forward to stand beside
+[Peel Off](../plus/peel_off.md) and steps forward to stand beside
 the other dancer. The other dancer does not move. This call
 cannot be fractionalized.
 

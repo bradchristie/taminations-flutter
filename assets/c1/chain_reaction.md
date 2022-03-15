@@ -8,6 +8,7 @@ Line or a Wave between Parallel Mini-Waves to the list of
 starting formations. Examples:
 
 Right-Hand 1/4 Line:
+
 > 
 > ![alt](chain_reaction_1a.png)
 > ![alt](chain_reaction_1b.png)
@@ -16,8 +17,8 @@ Right-Hand 1/4 Line:
 > ![alt](chain_reaction_1e.png)
 >
 
+Two-Faced Line between Mini-Waves:
 
-- Two-Faced Line between Mini-Waves:  
 >
 > ![alt](chain_reaction_2a.png)
 > ![alt](chain_reaction_2b.png)

@@ -12,7 +12,7 @@ and ***the new centers [Trade](../b2/trade.md)***.
 
 ## The Axle
 
-From trade-by or completed double pass thru:
+From Trade-By or Completed Double Pass Thru:
 ***The centers [Pass Thru](../b1/pass_thru.md), if they can,
 while the ends [Cross Cast Back](cast_back.md)***.
 ***All [Swing](../a2/slip.md)***,
