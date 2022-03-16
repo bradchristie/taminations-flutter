@@ -27,17 +27,18 @@ class Rotary extends Action {
 
   @override
   Future<void> perform(CallContext ctx) async {
-    final anyCall = name.replaceFirst('rotary\\s*'.ri,'');
     await ctx.applyCalls('Pull By');
     ctx.analyze();
     await ctx.subContext(ctx.outer(4), (ctx2) async {
       await ctx2.applyCalls('Courtesy Turn and Roll');
     });
     await ctx.subContext(ctx.center(4), (ctx2) async {
-      await ctx2.applyCalls('Step to a Left Hand Wave',anyCall);
+      await ctx2.applyCalls('Step to a Left Hand Wave');
+      final otherCallctx = ctx.nextActionContext(this,dancers: ctx2.dancers, greedy: true)
+          ?? thrower(CallError('Not able to find call for Rotary'))!;
+      await otherCallctx.performCall();
+      otherCallctx.appendToSource();
     });
   }
-
-
 
 }

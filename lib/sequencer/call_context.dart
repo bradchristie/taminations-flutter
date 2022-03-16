@@ -414,19 +414,19 @@ class CallContext {
   //  Build a CallContext from the next calls on the stack
   //  up to and including the next Action.
   //  Used for concepts and modifications.
-  CallContext? nextActionContext(Call thisCall) {
+  CallContext? nextActionContext(Call thisCall,
+      { List<Dancer>? dancers, bool greedy=false }) {
     final stackIndex = callstack.indexOf(thisCall);
-    final fracctx = CallContext.fromContext(this);
-    //  Look for the call to fractionalilze
-    //  Must be a subsequent action on the stack
+    final actionctx = CallContext.fromContext(this,dancers:dancers);
+    //  Look for the next action on the stack
     var call = callstack[stackIndex];
     while (stackIndex+1 < callstack.length) {
       call = callstack.removeAt(stackIndex+1);
-      fracctx.callstack.add(call);
-      if (call is Action || call is XMLCall)
-        return fracctx;
+      actionctx.callstack.add(call);
+      if (!greedy && (call is Action || call is XMLCall))
+        return actionctx;
     }
-    return null;
+    return greedy ? actionctx : null;
   }
 
   void insertAfterNextAction(Call thisCall, Call insertCall) {
@@ -568,6 +568,7 @@ class CallContext {
       var chopped = calltext.matches('trade circulate'.ri)
           ? ['Trade Circulate'] : calltext.chopped();
       for (var onecall in chopped) {
+        //print('Trying $onecall');
         //  First try to find a snapshot match
         if (onecall != calltext || !skipFirstXML) {
           try {
@@ -588,6 +589,7 @@ class CallContext {
           }
         }
         if (foundOneCall) {
+          //print('    Found $onecall');
           //  Remove the words we matched, break out of
           //  the chopped loop, and continue if any words left
           calltext = calltext.replaceFirst(onecall, '').trim();
