@@ -54,13 +54,13 @@ should go to the right even though “Scoot and Plenty” would have them go to 
 unfortunate that these two similar-sounding phrases have a different dance action. Callers
 should avoid trying to trick dancers in this way.
 
-On a Left 3/4 Tag and Plenty, dancers will go to the right. Use Left 3/4 Tag and Left Plenty to
+On a Left 3/4 Tag and Plenty, the outside dancers go to the right. Use "Left 3/4 Tag and Left Plenty" to
 have the dancers go to the left.
 
-From a Left-Hand 1/4 Tag, Scoot Chain Thru and Plenty will have the dancers go to the right.
-Use Scoot Chain Thru and Left Plenty to have the dancers go to the left.
+On a "Scoot Chain Thru and Plenty" from a Left-Hand 1/4 Tag, the outside dancers go to the right.
+Use "Scoot Chain Thru and Left Plenty" to have the outside dancers go to the left.
 
-###### @ Copyright 1983, 1986-1988, 1995-2021 Bill Davis, John Sybalsky and CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed nor revised in any derivation or publication.
+###### @ Copyright 1983, 1986-1988, 1995-2022 Bill Davis, John Sybalsky and CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed nor revised in any derivation or publication.
 
 <!-- Parts
 Plenty1

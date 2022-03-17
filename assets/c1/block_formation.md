@@ -6,7 +6,7 @@ real body between them. There is 1 space between all
 bodies in a Block: in front, in back, left and right.
 
 In Blocks you can do only 4-person calls (or sequences of
-calls) that start and end in a 2x2 formation. e.g. [Partner Trade](../b2/trade.md), 
+calls) that start and end in a 2x2 formation. for example, [Partner Trade](../b2/trade.md), 
 [Partner Tag](../a1/partner_tag.md), [Pass Thru](../b1/pass_thru.md),
 [Touch 1/4](../b2/touch_a_quarter.md), 
 [Star Thru](../b1/star_thru.md), [Square Thru](../b1/square_thru.md), 
@@ -33,4 +33,4 @@ e.g., In Your Block, [Square Chain Thru](../a1/square_chain_thru.md):
 > ![alt](block_formation_2c.png)
 > 
 
-###### @ Copyright 1983, 1986-1988, 1995-2021 Bill Davis, John Sybalsky and CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed nor revised in any derivation or publication.
+###### @ Copyright 1983, 1986-1988, 1995-2022 Bill Davis, John Sybalsky and CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed nor revised in any derivation or publication.
