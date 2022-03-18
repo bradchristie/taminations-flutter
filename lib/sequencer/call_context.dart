@@ -137,6 +137,7 @@ class CallContext {
     'c1/finish',
     'ms/fraction_tag',
     'c3a/big_block_concept',
+    'plus/triple_scoot',
     'c1/scoot_and_little',
     'a2/hourglass_circulate',
     'c2/reverse_cut_the_diamond',
