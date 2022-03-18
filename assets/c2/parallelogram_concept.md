@@ -20,7 +20,7 @@ Common applications include
 [Acey Deucey](../plus/acey_deucey.md).
 
  If the call is one that rotates the 2x4 formation
-(e.g. Counter Rotate 1/4), the formation becomes offset lines, waves, or columns
+(for example, Counter Rotate 1/4), the formation becomes offset lines, waves, or columns
 (as appropriate to the call's ending formation), offset the same way the
 Parallelogram was.
 The percentage of offset is preserved, not necessarily the footprints.
@@ -31,4 +31,4 @@ For example: Parallelogram [Bend the Line](../b1/bend_the_line.md):
 > ![alt](parallelogram_concept_2b.png)
 > 
 
-###### @ Copyright 1983, 1986-1988, 1995-2021 Bill Davis, John Sybalsky and CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed nor revised in any derivation or publication.
+###### @ Copyright 1983, 1986-1988, 1995-2022 Bill Davis, John Sybalsky and CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed nor revised in any derivation or publication.

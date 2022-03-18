@@ -16,6 +16,15 @@ wave.
 
 ## Pass and Roll Your Criss Cross Neighbor
 
-[Definition pending]
+From Single Eight Chain Thru: All Pass Thru. The centers Turn Thru while the outsides
+do a right-face U-Turn Back. All begin a Pass Thru, blending smoothly into Criss Cross
+Your Neighbor (equivalent to Pass Thru; Centers Left Touch 3/4 and Spread while
+outsides 1/4 Right and Cross Run (to the far center position)). Ends in a Left-Hand
+Wave.
 
-###### @ Copyright 1983, 1986-1988, 1995-2021 Bill Davis, John Sybalsky and CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed nor revised in any derivation or publication.
+Note: There is no consensus on the parts of this call or on how many parts it has. It does
+have a definite first part (All Pass Thru), so “Finish Pass and Roll Your Criss Cross
+Neighbor” is proper, but fractionalizing this call or referring to any part except the first
+is not proper.
+
+###### @ Copyright 1983, 1986-1988, 1995-2022 Bill Davis, John Sybalsky and CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed nor revised in any derivation or publication.
