@@ -20,23 +20,22 @@ Call pronunciations provided by
 
 ---
 
-## Taminations version 1.6.35 built 2022-03-07
+## Taminations version 1.6.36 built 2022-03-21
 Copyright 2022 by Brad Christie.  
 This is free software, and you are welcome to modify and redistribute it
 under the terms of the [GNU GPL license](http://www.gnu.org/licenses/gpl.html).  
 
 ## What's New
-* Update Basic and Mainstream definitions
+* Update C-1 and C-2 definitions
+* Fix numerous broken links in defintions
+* Add Couples Trade from lines facing in
 * Sequencer changes:
-  * Accept Squeeze the Butterfly / O
-  * Accept different ending formation for Butterfly and O calls
-    e.g., Butterfly Zing to Lines
-  * Improvement for Start concept
-  * Fix Cross Run with center wave
-  * Accept Cast Off 1/4 and 1/2
-  * Fix Step Thru from inverted lines
-  * More Calls with Parts: Square Chain Thru, Square Chain the Top, 
-    Cross Chain Thru, Cross Chain and Roll
+  * Fix Heads/Sides Step Ahead from Squared Set
+  * Fix Heads/Sides Pass Thru and Separate
+  * Add Double Scoot for columns of 6
+  * Allow Acey Deucey from thar formations
+  * Fix for Rotary Spin and Roll
+
 
 For a detailed history of changes, view the
 [Git log](https://github.com/bradchristie/taminations-flutter/commits/main)

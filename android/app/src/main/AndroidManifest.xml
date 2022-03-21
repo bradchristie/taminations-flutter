@@ -1,7 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.bradchristie.taminationsapp"
-          android:versionCode="197"
-          android:versionName="1.6.35">
+          package="com.bradchristie.taminationsapp">
   <uses-permission android:name="android.permission.RECORD_AUDIO" />
   <uses-permission android:name="android.permission.INTERNET" />
    <application
