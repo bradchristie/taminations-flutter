@@ -70,3 +70,6 @@ msix_config:
   logo_path: P:\FlutterProjects\taminations\web\icons\Icon-512.png
   store: true
   #  capabilities: microphone
+
+#  To make a bundle
+#  makeappx.exe bundle  /f mapping.txt /p taminations.msixbundle /bv 1.6.36.0
