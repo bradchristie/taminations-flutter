@@ -84,6 +84,9 @@ class XMLCall extends Call {
             xmlmap = mm;
             ctx2 = ctx2q;
             bestOffset = totOffset;
+            name = tam('title').replaceAll('\\(.*\\)'.r, '').replaceAll('"', '');
+            ctx.callname = name;
+            level = LevelData.find(link)!;
             found = true;
           }
         }
@@ -101,15 +104,12 @@ class XMLCall extends Call {
     } else {
       try {
         await ctx.applyCodedCall(name);
-      } on CallError catch (e) {
+      } on CallError {
         //  Found the call but formations did not match
         throw FormationNotFoundError(name);
       }
       return;
     }
-
-
-
 
     final allPaths = xelem.childrenNamed('path').map(
             (element) => Path(TamUtils.translatePath(element))).toList();
