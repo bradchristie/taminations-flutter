@@ -190,4 +190,46 @@
     </path>
   </tam>
 
+  <tam title="Swing and Circle 1/4"
+       from="Mixed Quarter Tag 1"
+       formation="Mixed Quarter Tag #5">
+    <path>
+      <move select="Stand" beats="3" hands="right" />
+      <move select="Run Right" beats="4" offsetX="-3"/>
+    </path>
+    <path>
+      <move select="Stand" beats="3" hands="left" />
+      <move select="Dodge Left" beats="4" />
+    </path>
+    <path>
+      <move select="Swing Right" />
+      <move select="Swing Left" beats="4" />
+    </path>
+    <path>
+      <move select="Swing Right" />
+      <move select="U-Turn Right" beats="4" offsetX="3" offsetY="-2" />
+    </path>
+  </tam>
+
+  <tam title="Swing and Circle 1/4"
+       from="Mixed Quarter Tag 2"
+       formation="Mixed Quarter Tag #2">
+    <path>
+      <move select="Stand" beats="3" hands="right" />
+      <move select="Dodge Right" beats="4" />
+    </path>
+    <path>
+      <move select="Stand" beats="3" hands="left" />
+      <move select="Run Left" beats="4" offsetX="-3"/>
+    </path>
+    <path>
+      <move select="Swing Left" />
+      <move select="Swing Right" beats="4" />
+    </path>
+    <path>
+      <move select="Swing Left" />
+      <move select="U-Turn Left" beats="4" offsetX="3" offsetY="2" />
+    </path>
+  </tam>
+
 </tamination>
