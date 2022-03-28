@@ -84,8 +84,6 @@ class XMLCall extends Call {
             xmlmap = mm;
             ctx2 = ctx2q;
             bestOffset = totOffset;
-            name = tam('title').replaceAll('\\(.*\\)'.r, '').replaceAll('"', '');
-            ctx.callname = name;
             level = LevelData.find(link)!;
             found = true;
           }
