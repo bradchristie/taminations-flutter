@@ -41,4 +41,60 @@
     </path>
   </tam>
 
+  <tam title="Substitute" from="Right-Hand Two-Faced Lines"
+       formation="Two-Faced Lines RH">
+    <path>
+      <move select="Extend Right" hands="right" beats="1.5" scaleX="2" scaleY=".5" />
+      <move select="Extend Left" hands="right" beats="1.5" scaleX="2" scaleY=".5" />
+    </path>
+    <path>
+      <move select="Extend Left" hands="left" beats="1.5" scaleX="2" scaleY=".5" />
+      <move select="Extend Right" hands="left" beats="1.5" scaleX="2" scaleY=".5" />
+    </path>
+    <path>
+      <move select="Retreat Right" hands="gripleft" beats="1.5" scaleX="2" scaleY=".5" />
+      <move select="Retreat Left" hands="gripleft" beats="1.5" scaleX="2" scaleY=".5" />
+    </path>
+    <path>
+      <move select="Retreat Left" hands="gripright" beats="1.5" scaleX="2" scaleY=".5" />
+      <move select="Retreat Right" hands="gripright" beats="1.5" scaleX="2" scaleY=".5" />
+    </path>
+  </tam>
+
+  <tam title="Substitute" from="Left-Hand Two-Faced Lines"
+       formation="Two-Faced Lines LH">
+    <path>
+      <move select="Retreat Right" hands="gripleft" beats="1.5" scaleX="2" scaleY=".5" />
+      <move select="Retreat Left" hands="gripleft" beats="1.5" scaleX="2" scaleY=".5" />
+    </path>
+    <path>
+      <move select="Retreat Left" hands="gripright" beats="1.5" scaleX="2" scaleY=".5" />
+      <move select="Retreat Right" hands="gripright" beats="1.5" scaleX="2" scaleY=".5" />
+    </path>
+    <path>
+      <move select="Extend Right" hands="right" beats="1.5" scaleX="2" scaleY=".5" />
+      <move select="Extend Left" hands="right" beats="1.5" scaleX="2" scaleY=".5" />
+    </path>
+    <path>
+      <move select="Extend Left" hands="left" beats="1.5" scaleX="2" scaleY=".5" />
+      <move select="Extend Right" hands="left" beats="1.5" scaleX="2" scaleY=".5" />
+    </path>
+  </tam>
+
+  <tam title="Substitute" formation="Galaxy RH GP" from="Galaxy">
+    <path>
+      <move select="Extend Left" hands="gripright" beats="1.5" scaleY=".5" />
+      <move select="Extend Right" hands="gripright" beats="1.5" scaleY=".5" />
+    </path>
+    <path>
+      <move select="Dodge Right"/>
+    </path>
+    <path>
+      <move select="Retreat Left" hands="gripright" beats="1.5" scaleY=".5" />
+      <move select="Retreat Right" hands="gripright" beats="1.5" scaleY=".5" />
+    </path>
+    <path>
+    </path>
+  </tam>
+
 </tamination>
