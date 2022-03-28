@@ -746,7 +746,7 @@ class CallContext {
 
   //  Test two sets of dancers to see if the formations match.
   //  Most often ctx2 is a defined formation.
-  //  Returns a mapping from ctx1 to ctx2
+  //  Returns a mapping from this context to ctx2
   //  or null if no mapping.
   List<int>? matchFormations(CallContext ctx2,{
     bool sexy=false, // don't match girls with boys
@@ -1019,10 +1019,23 @@ class CallContext {
     //  First see if we are starting from a squared set
     animate(0.0);
     final ss = CallContext.fromName('Squared Set');
-    if (matchFormations(ss,rotate: 180, maxError: 2.9) != null) {
-      animateToEnd();
-      //  So now adjust back to squared set if possible
-      adjustToFormation('Squared Set',rotate: 180);
+    final m = matchFormations(ss,rotate: 180, maxError: 2.9);
+    if (m != null) {
+      //  Applies to only heads or only sides, not if all or a mix are active
+      var headsActive = false;
+      var sidesActive = false;
+      for (var i=0; i<actives.length; i++) {
+        final d2 = ss.dancers[m[i]];
+        if (d2.location.x.abs().isAbout(3.0))
+          headsActive = true;
+        else
+          sidesActive = true;
+      }
+      if (!headsActive || !sidesActive) {
+        animateToEnd();
+        //  So now adjust back to squared set if possible
+        adjustToFormation('Squared Set', rotate: 180);
+      }
     }
   }
 
