@@ -18,13 +18,8 @@
 
 */
 
-import 'dart:math';
 import 'package:taminations/common.dart';
-import 'package:xml/xml.dart';
 import 'bezier.dart';
-import '../extensions.dart';
-import 'vector.dart';
-import 'matrix.dart';
 
 class Hands {
   static const int NOHANDS = 0;
@@ -90,6 +85,27 @@ class Movement {
         Vector(elem('x4').d,elem('y4').d)
       ]);
     }
+    return Movement(beats,hands,bt,br);
+  }
+
+  factory Movement.fromData({
+    required double beats,
+    int hands = Hands.NOHANDS,
+    required double cx1,
+    required double cy1,
+    required double cx2,
+    required double cy2,
+    required double x2,
+    required double y2,
+    double cx3 = 0.0,
+    double cx4 = 0.0,
+    double cy4 = 0.0,
+    double x4 = 0.0,
+    double y4 = 0.0
+  }) {
+    final bt = Bezier([[0.0,0.0].v,[cx1,cx2].v,[cx2,cy2].v,[x2,y2].v]);
+    final br = cx3 == 0.0 ? bt :
+        Bezier([[0.0,0.0].v,[cx3,0.0].v,[cx4,cy4].v,[x4,y4].v]);
     return Movement(beats,hands,bt,br);
   }
 
