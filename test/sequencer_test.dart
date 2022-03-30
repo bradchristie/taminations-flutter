@@ -2929,6 +2929,14 @@ Wheel and Deal
 Centers Pass Thru
 Allemande Left''',
 
+  'Spread 3' :
+'''Sides Spin the Top and Spread
+Centers Quarter In
+Centers Pass and Roll Your Neighbor and Spread
+Centers Recycle
+Centers Cross Trail Thru
+Allemande Left''',
+
   'Butterfly To Lines' :
 '''Sides Face In
 O Double Pass Thru

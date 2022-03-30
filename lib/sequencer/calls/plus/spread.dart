@@ -54,7 +54,7 @@ class Spread extends Action {
       if (CallContext.fromContext(ctx,dancers:ctx.actives).isLines())
         //  Case 2: Active dancers in line or wave spread among themselves
         spreader = _Case2();
-      if (ctx.actives.every((d) => d.data.partner?.isActive ?? false) &&
+      else if (ctx.actives.every((d) => d.data.partner?.isActive ?? false) &&
           ctx.dancers.every((d) =>
               d.isActive || (ctx.dancerInFront(d)?.isActive ?? false)))
         //  Case 1: Active dancers spread and let in the others
@@ -88,7 +88,7 @@ class _Case1 extends Action {
         else if (ctx.dancersToLeft(d).isEmpty)
           m = 'Dodge Left';
         else
-          throw CallError('Can not figure out how to Spread');
+          throw CallError('Cannot figure out how to Spread');
         d.path += TamUtils.getMove(m,beats: 2.0);
       } else {
         //  Inactive dancers move forward
@@ -168,7 +168,7 @@ class _Case4 extends Action {
         else if (ctx.dancersToLeft(d).isEmpty)
           m = 'Dodge Left';
         else
-          throw CallError('Can not figure out how to Spread');
+          throw CallError('Cannot figure out how to Spread');
         d.path += TamUtils.getMove(m,beats: 2.0);
       }
       //  Inactive dancers do not move
