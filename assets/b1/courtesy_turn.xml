@@ -53,8 +53,8 @@
   <tam title="Courtesy Turn" from="Girls facing Boys" sequencer="gender-specific">
     <formation>
       <dancer gender="boy" x="1" y="3" angle="270"/>
-      <dancer gender="boy" x="-1" y="3" angle="270"/>
       <dancer gender="girl" x="1" y="1" angle="90"/>
+      <dancer gender="boy" x="-1" y="3" angle="270"/>
       <dancer gender="girl" x="-1" y="1" angle="90"/>
     </formation>
     <path>
@@ -62,12 +62,12 @@
       <move select="Beau Wheel" scaleX="0.5" scaleY="1.25"/>
     </path>
     <path>
-      <move select="U-Turn Left" offsetX="1" offsetY="-0.5"/>
-      <move select="Beau Wheel" scaleX="0.5" scaleY="0.25"/>
-    </path>
-    <path>
       <move select="Extend Right" beats="3" scaleY="0.5"/>
       <move select="Belle Wheel" scaleX="0.5" scaleY="0.25"/>
+    </path>
+    <path>
+      <move select="U-Turn Left" offsetX="1" offsetY="-0.5"/>
+      <move select="Beau Wheel" scaleX="0.5" scaleY="0.25"/>
     </path>
     <path>
       <move select="Extend Right" beats="3" scaleY="0.5"/>
