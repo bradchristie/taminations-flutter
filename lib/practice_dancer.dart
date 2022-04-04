@@ -58,6 +58,18 @@ class PracticeDancer extends Dancer {
         _onTrackColor = fillColor,
         super(number, numberCouple, gender, fillColor, mat, geom, moves);
 
+  factory PracticeDancer.fromData({required int gender,
+    String number='', String couple='',
+    required double x, required double y, required double angle,
+    Color color = Color.WHITE,
+    Geometry? geom,
+    List<Movement> path = const <Movement>[]
+  }) {
+    final mat = Matrix.getTranslation(x,y) *
+        Matrix.getRotation(angle.toRadians);
+    final g = geom ?? SquareGeometry(0);
+    return PracticeDancer(number, couple, gender, color, mat, geom!, path);
+  }
 
 
   Matrix computeMatrix(double beat) {

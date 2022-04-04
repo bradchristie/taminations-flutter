@@ -28,6 +28,12 @@ class Gender {
   static const GIRL = 2;
   static const PHANTOM = 3;
   static const NONE = 4;    // for concepts with abstract dancers
+  static final genderMap = {
+    'boy': Gender.BOY,
+    'girl': Gender.GIRL,
+    'phantom': Gender.PHANTOM
+  };
+  static int fromString(String g) => genderMap[g] ?? NONE;
 }
 
 //  Additional data for each dancer for use by sequencer
@@ -221,6 +227,19 @@ class Dancer implements Comparable<Dancer> {
     computePath();
     //  Restore dancer to start position
     _animateComputed(-2.0);
+  }
+
+  factory Dancer.fromData({required int gender,
+    String number='', String couple='',
+    required double x, required double y, required double angle,
+    Color color = Color.WHITE,
+    Geometry? geom,
+    List<Movement> path = const <Movement>[]
+  }) {
+    final mat = Matrix.getTranslation(x,y) *
+        Matrix.getRotation(angle.toRadians);
+    final g = geom ?? SquareGeometry(0);
+    return Dancer(number,couple,gender,color,mat,g,path);
   }
 
   Dancer.clone(Dancer from,{String? number, String? numberCouple, int? gender}) :

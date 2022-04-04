@@ -465,7 +465,9 @@ class DanceModel extends fm.ChangeNotifier {
             practiceDancer = PracticeDancer(nstr,cstr,g,color,m,geom.clone(),movelist);
             dancers.add(practiceDancer!);
           } else  // not the practice dancer
-            dancers.add(Dancer(nstr,cstr,g,color,m,geom.clone(),movelist));
+            dancers.add(Dancer.fromData(number: nstr, couple: cstr,
+                x: x, y: y, angle: angle,
+                geom: geom.clone(), gender: g, color: color, path: movelist));
           if (g == Gender.PHANTOM && !_showPhantoms)
             dancers.last.hidden = true;
           _beats = max(_beats, dancers.last.beats + leadout);

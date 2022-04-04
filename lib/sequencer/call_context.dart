@@ -18,26 +18,12 @@
 
 */
 
-import 'dart:math';
-
-import 'package:taminations/color.dart';
-import 'package:taminations/geometry.dart';
-import 'package:taminations/level_data.dart';
-import 'package:taminations/math/matrix.dart';
-import 'package:taminations/math/movement.dart';
-import 'package:taminations/math/path.dart';
-import 'package:taminations/math/vector.dart';
-import 'package:taminations/sequencer/call_error.dart';
-import 'package:taminations/sequencer/calls/action.dart';
-import 'package:taminations/sequencer/calls/call.dart';
-import 'package:taminations/sequencer/calls/coded_call.dart';
-import 'package:taminations/sequencer/calls/xml_call.dart';
-import 'package:xml/xml.dart';
-
-import '../dancer.dart';
-import '../extensions.dart';
-import '../level_data.dart';
-import '../tam_utils.dart';
+import '../common.dart';
+import 'call_error.dart';
+import 'calls/action.dart';
+import 'calls/call.dart';
+import 'calls/coded_call.dart';
+import 'calls/xml_call.dart';
 
 enum Rolling {
   LEFT,
@@ -292,6 +278,11 @@ class CallContext {
     _snap = source._snap;
   }
 
+  CallContext.fromFormation(Formation f) {
+    dancers = f.dancers.copy();
+    asymmetric = f.asymmetric;
+  }
+
   //  Create a context from a formation defined in XML
   //  The element passed in can be either a 'tam' from
   //  an animation, or a formation
@@ -311,24 +302,20 @@ class CallContext {
       //  This assumes square geometry
       //  Make sure each dancer in the list is immediately followed by its
       //  diagonal opposite, if not asymmetric.  Required for mapping.
-      dancers.add(Dancer(
-        numberArray[i*2], coupleArray[i*2],
-          genderMap[element('gender')]!,
-        Color.WHITE,  // not used
-        Matrix.getTranslation(element('x').d,element('y').d) *
-          Matrix.getRotation(element('angle').d.toRadians),
-        Geometry.getGeometry(Geometry.SQUARE).first,
-        paths.length > i ? TamUtils.translatePath(paths[i]) : []
+      dancers.add(Dancer.fromData(
+        number:numberArray[i*2], couple:coupleArray[i*2],
+        x:element('x').d,y:element('y').d,angle:element('angle').d,
+        gender: Gender.genderMap[element('gender')]!,
+        geom: Geometry.getGeometry(Geometry.SQUARE)[0],
+        path: paths.length > i ? TamUtils.translatePath(paths[i]) : []
       ));
       if (!asymmetric)
-        dancers.add(Dancer(
-            numberArray[i*2+1], coupleArray[i*2+1],
-            genderMap[element('gender')]!,
-            Color.WHITE,  // not used
-            Matrix.getTranslation(element('x').d,element('y').d) *
-                Matrix.getRotation(element('angle').d.toRadians),
-            Geometry.getGeometry(Geometry.SQUARE)[1],
-            paths.length > i ? TamUtils.translatePath(paths[i]) : []
+        dancers.add(Dancer.fromData(
+            number:numberArray[i*2+1], couple:coupleArray[i*2+1],
+            x:element('x').d,y:element('y').d,angle:element('angle').d,
+            gender: Gender.genderMap[element('gender')]!,
+            geom: Geometry.getGeometry(Geometry.SQUARE)[1],
+            path: paths.length > i ? TamUtils.translatePath(paths[i]) : []
         ));
     }
   }

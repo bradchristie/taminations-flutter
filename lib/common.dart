@@ -27,6 +27,7 @@ export 'color.dart';
 export 'dance_painter.dart';
 export 'dancer.dart';
 export 'extensions.dart';
+export 'formation.dart';
 export 'geometry.dart';
 export 'handhold.dart';
 export 'level_data.dart';
