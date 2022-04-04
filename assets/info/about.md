@@ -20,21 +20,17 @@ Call pronunciations provided by
 
 ---
 
-## Taminations version 1.6.36 built 2022-03-21
+## Taminations version 1.6.37 built 2022-04-04
 Copyright 2022 by Brad Christie.  
 This is free software, and you are welcome to modify and redistribute it
 under the terms of the [GNU GPL license](http://www.gnu.org/licenses/gpl.html).  
 
 ## What's New
-* Update C-1 and C-2 definitions
-* Fix numerous broken links in defintions
-* Add Couples Trade from lines facing in
+* Fix one Courtesy Turn animation
+* A few more animations for Substitute, and Swing and Circle
 * Sequencer changes:
-  * Fix Heads/Sides Step Ahead from Squared Set
-  * Fix Heads/Sides Pass Thru and Separate
-  * Add Double Scoot for columns of 6
-  * Allow Acey Deucey from thar formations
-  * Fix for Rotary Spin and Roll
+  * Fix wrong name/level of Recycle added to sequence
+  * Fix Spread when applied to a center wave
 
 
 For a detailed history of changes, view the

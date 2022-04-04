@@ -3,7 +3,7 @@ description: Taminations in Flutter
 
 publish_to: 'none'
 
-version: 1.6.36+198
+version: 1.6.37+199
 
 environment:
   sdk: ">=2.12.0 <3.0.0"
@@ -66,7 +66,7 @@ msix_config:
   publisher_display_name: Brad Christie
   identity_name: 59302Taminations.Taminations
   publisher: CN=12C8C935-0778-4FF8-82CB-A8FD3E6D2DBC
-  msix_version: 1.6.36.0
+  msix_version: 1.6.37.0
   logo_path: P:\FlutterProjects\taminations\web\icons\Icon-512.png
   store: true
   #  capabilities: microphone
