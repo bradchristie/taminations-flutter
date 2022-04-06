@@ -29,7 +29,9 @@ class Cloverleaf extends Action {
   //  So do a 4-dancer cloverleaf
   @override
   Future<void> perform(CallContext ctx) async {
-    await ctx.applyCalls('Clover and Adjust to a Box');
+    final adjust = ctx.is2x4() && ctx.center(4).every((d) => d.isFacingOut)
+        ? 'Adjust to a Box' : 'Nothing';
+    await ctx.applyCalls('Clover and $adjust');
   }
 
 }
@@ -51,14 +53,10 @@ class CloverAnd extends Action {
     List<Dancer> clovers;
     //  Don't use outer4 directly, instead filter facingOut
     //  This preserves the original order, required for mapping
-    var othersStep = false;
     if (outer4.every((d) => facingOut.contains(d)))
       clovers = facingOut.where((d) => outer4.contains(d)).toList();
     else if (facingOut.length == 4) {
       clovers = facingOut;
-      //  Other dancers need to step ahead to make sure their call works
-      //  and doesn't collide with the clovers.
-      othersStep = true;
     }
     else
       throw CallError('Unable to find dancers to Cloverleaf');
@@ -75,8 +73,6 @@ class CloverAnd extends Action {
     await ctx.subContext(ctx.dancers.where((d) => !clovers.contains(d)).toList(), (ctx2) async {
       for (final d in ctx2.dancers)
         d.data.active = true;
-      if (othersStep)
-        await ctx2.applyCalls('Step');
       await ctx2.applyCalls(andCall);
     });
   }

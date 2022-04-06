@@ -154,7 +154,6 @@ Star Thru
 Pass Thru
 Allemande Left''',
 
-/*
   'Cloverleaf':
   '''Heads Pair Off and Spread
 Circulate
@@ -163,7 +162,15 @@ Centers Pass Thru and Cloverleaf
 Centers Pass Thru
 Allemande Left
 Promenade Home''',
-*/
+
+  'Cloverleaf 2' :
+'''Heads Pass the Ocean While Sides Trade
+Outer 4 Cloverleaf While Centers Fan the Top
+Centers Recycle
+Zoom
+Centers Pass Thru
+Allemande Left''',
+
   'Clover And':
   '''Heads Move In and Pass Thru
 Clover and Touch 1/4
