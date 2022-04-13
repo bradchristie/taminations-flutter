@@ -23,6 +23,7 @@ import 'package:flutter/services.dart' as fs;
 
 import '../common.dart';
 import '../dance_model.dart';
+import 'abbreviations_model.dart';
 import 'call_context.dart';
 import 'call_error.dart';
 import 'calls/coded_call.dart';
@@ -229,6 +230,8 @@ class SequencerModel extends fm.ChangeNotifier {
       comment = ' ' + call.replaceMatch('.*(\\[.*\\]).*'.r,'\\1');
       call = call.replaceFirst('\\[.*?\\]'.r,'');
     }
+    //  Now replace abbreviations
+    call = AbbreviationsModel.replaceAbbreviations(call);
 
     var prevbeats = animation.beats;
     var cctx = CallContext.fromDancers(animation.dancers);

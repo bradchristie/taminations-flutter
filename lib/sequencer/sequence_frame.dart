@@ -199,7 +199,7 @@ class _SequencerEditLineState extends fm.State<SequencerEditLine> {
             //print('Found call in alternative $i: $call');
             later( () {
               _isVoiceCall = true;
-              _sendOneLine(model, abbreviations.replaceAbbreviations(call));
+              _sendOneLine(model, call);
             });
             found = true;
             break;
@@ -254,7 +254,7 @@ class _SequencerEditLineState extends fm.State<SequencerEditLine> {
                   //  Code to run when user presses Enter
                   onSubmitted: (value) {
                     _isVoiceCall = false;
-                    _sendOneLine(model, abbreviations.replaceAbbreviations(value));
+                    _sendOneLine(model, value);
                   },
                 ),
               )

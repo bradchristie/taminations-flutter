@@ -1,7 +1,7 @@
 /*
 
   Taminations Square Dance Animations
-  Copyright (C) 2021 Brad Christie
+  Copyright (C) 2022 Brad Christie
 
   This program is free software: you can redistribute it and/or modify
   it under the terms of the GNU General Public License as published by
@@ -81,7 +81,7 @@ class AbbreviationsModel extends fm.ChangeNotifier {
   };
 
 
-  List<Abbreviation> currentAbbreviations = [];
+  static List<Abbreviation> currentAbbreviations = [];
 
   AbbreviationsModel() {
     _load();
@@ -214,7 +214,7 @@ class AbbreviationsModel extends fm.ChangeNotifier {
 
   //  Replace any abbreviations with their expanded equivalents
   //  and return the new string
-  String replaceAbbreviations(String text) {
+  static String replaceAbbreviations(String text) {
     var replaced = text;
     for (final a in currentAbbreviations) {
       replaced = replaced.replaceAll('\\b${a.abbr}\\b'.ri, a.expa);

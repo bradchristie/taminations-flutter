@@ -127,10 +127,10 @@ class _AbbreviationsFrameState extends fm.State<AbbreviationsFrame> {
         );
         textEditController.value =
             value.copyWith(text: text, selection: selection);
-        if (text != model.currentAbbreviations[editRow].abbr)
+        if (text != AbbreviationsModel.currentAbbreviations[editRow].abbr)
           model.setAbbreviation(editRow, text);
       } else {
-        if (textEditController.text != model.currentAbbreviations[editRow].expa)
+        if (textEditController.text != AbbreviationsModel.currentAbbreviations[editRow].expa)
           model.setExpansion(editRow, textEditController.text);
       }
     }
@@ -147,8 +147,8 @@ class _AbbreviationsFrameState extends fm.State<AbbreviationsFrame> {
                   editRow = row;
                   editExpansion = isExpansion;
                   textEditController.text = isExpansion
-                  ? modelForEdit.currentAbbreviations[row].expa
-                  : modelForEdit.currentAbbreviations[row].abbr;
+                  ? AbbreviationsModel.currentAbbreviations[row].expa
+                  : AbbreviationsModel.currentAbbreviations[row].abbr;
                   virtualKeyboard.isVisible = true;
                   afterDelay(() {
                     focusNode.unfocus();
@@ -164,7 +164,7 @@ class _AbbreviationsFrameState extends fm.State<AbbreviationsFrame> {
                       return fm.Container(
                         decoration: fm.BoxDecoration(
                             color:
-                            model.currentAbbreviations[row].isError ? Color.RED.veryBright()
+                            AbbreviationsModel.currentAbbreviations[row].isError ? Color.RED.veryBright()
                             : row == editRow && editExpansion == isExpansion
                              ? Color.WHITE
                              : Color.LIGHTGRAY.veryBright(),
@@ -184,12 +184,12 @@ class _AbbreviationsFrameState extends fm.State<AbbreviationsFrame> {
                       focusNode: focusNode,
                       controller: textEditController
                         ..text = isExpansion
-                            ? pp.Provider.of<AbbreviationsModel>(context, listen: false).currentAbbreviations[row].expa
-                            : pp.Provider.of<AbbreviationsModel>(context, listen: false).currentAbbreviations[row].abbr,
+                            ? AbbreviationsModel.currentAbbreviations[row].expa
+                            : AbbreviationsModel.currentAbbreviations[row].abbr,
                     )
                         : fm.Text(isExpansion
-                        ? pp.Provider.of<AbbreviationsModel>(context, listen: false).currentAbbreviations[row].expa
-                        : pp.Provider.of<AbbreviationsModel>(context, listen: false).currentAbbreviations[row].abbr,
+                        ? AbbreviationsModel.currentAbbreviations[row].expa
+                        : AbbreviationsModel.currentAbbreviations[row].abbr,
                         style: fm.TextStyle(fontSize: 24))
                 ),
               ),
@@ -242,7 +242,7 @@ class _AbbreviationsFrameState extends fm.State<AbbreviationsFrame> {
                   controller: scrollController,
                   child: fm.ListView.builder(
                       controller: scrollController,
-                      itemCount: model.currentAbbreviations.length,
+                      itemCount: AbbreviationsModel.currentAbbreviations.length,
                       itemBuilder: (context, index) =>
                           fm.Row(
                               children: [
