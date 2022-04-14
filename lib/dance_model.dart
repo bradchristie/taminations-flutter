@@ -423,6 +423,7 @@ class DanceModel extends fm.ChangeNotifier {
       //  Select a random dancer of the correct gender for the interactive dancer
       var icount = -1;
       var im = Matrix.getIdentity();
+      var iangle = 0.0;
       if (_interactiveDancer > 0) {
         var glist = formation.childrenNamed('dancer')
             .where((d) => d('gender') == (_interactiveDancer==Gender.BOY ? 'boy' : 'girl')).toList();
@@ -430,7 +431,7 @@ class DanceModel extends fm.ChangeNotifier {
         icount = _interactiveRandom ? Random().nextInt(glist.length) : 0;
         //  Find the angle the interactive dancer faces at start
         //  We want to rotate the formation so that direction is up
-        var iangle = glist[icount]('angle').d;
+        iangle = glist[icount]('angle').d;
         im = Matrix.getRotation(-iangle.toRadians);
         //  Adjust icount for looping through geometry below
         icount = icount * geoms.length + 1;
@@ -440,9 +441,10 @@ class DanceModel extends fm.ChangeNotifier {
       var dnum = 0;
       for (var i=0; i<flist.length; i++) {
         var fd = flist[i];
-        var x = fd('x').d;
-        var y = fd('y').d;
-        var angle = fd('angle').d;
+        var xy = Vector(fd('x').d, fd('y').d).rotate(iangle.toRadians);
+        var x = xy.x;
+        var y = xy.y;
+        var angle = fd('angle').d + iangle;
         var g = Gender.BOY;
         if (fd('gender') == 'girl') g = Gender.GIRL;
         if (fd('gender') == 'phantom') g = Gender.PHANTOM;
@@ -462,7 +464,7 @@ class DanceModel extends fm.ChangeNotifier {
           //  add one dancer
           //  practice dancer?
           if (g == _interactiveDancer  && --icount == 0) {
-            practiceDancer = PracticeDancer(nstr,cstr,g,color,m,geom.clone(),movelist);
+            practiceDancer = PracticeDancer.fromData(gender: g, x: x, y: y, angle: angle, color: color, geom: geom.clone(), path:movelist);
             dancers.add(practiceDancer!);
           } else  // not the practice dancer
             dancers.add(Dancer.fromData(number: nstr, couple: cstr,

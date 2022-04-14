@@ -68,7 +68,7 @@ class PracticeDancer extends Dancer {
     final mat = Matrix.getTranslation(x,y) *
         Matrix.getRotation(angle.toRadians);
     final g = geom ?? SquareGeometry(0);
-    return PracticeDancer(number, couple, gender, color, mat, geom!, path);
+    return PracticeDancer(number, couple, gender, color, mat, g, path);
   }
 
 
