@@ -285,6 +285,7 @@ abstract class CodedCall extends Call {
     'belle'.ri: (_) => Belles(),
     'bendtheline'.ri: (_) => BendTheLine(),
     '(line|wave)of(6|8)(left)?(12)?tag(theline)?'.ri: (name) => BigLineTagTheLine(name),
+    '(line|wave)of(6|8)(left)?turnanddeal'.ri: (name) => BigLineTurnAndDeal(name),
     'inyourblock.*'.ri: (name) => BlockFormation(name),
     'bounce(the)?$specifier'.ri: (name) => Bounce(name),
     'boy'.ri: (_) => Boys(),

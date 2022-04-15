@@ -3029,5 +3029,22 @@ Circulate
 Boys Run
 Cast Off Three Quarters
 Quarter Out
+Allemande Left''',
+
+  'Big Turn and Deal' :
+'''Sides Pass the Ocean
+Extend
+Fan the Top
+Boys Run
+Line Of 8 Turn and Deal
+Partner Hinge
+Spin the Top
+Girls Run
+Line Of 8 Left Turn and Deal
+Star Thru
+Right and Left Thru
+Pass Thru
+Trade By
 Allemande Left'''
+
 };

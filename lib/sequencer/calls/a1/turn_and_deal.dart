@@ -1,7 +1,7 @@
 /*
 
   Taminations Square Dance Animations
-  Copyright (C) 2021 Brad Christie
+  Copyright (C) 2022 Brad Christie
 
   This program is free software: you can redistribute it and/or modify
   it under the terms of the GNU General Public License as published by
@@ -36,6 +36,34 @@ class TurnAndDeal extends Action {
     final sign = (dir=='Left') ? 1.0 : -1.0;
     return TamUtils.getMove('U-Turn $dir',
         skew:[sign*(name.startsWith('Left') ? amount : -amount),dist*sign].v);
+  }
+
+}
+
+class BigLineTurnAndDeal extends ActivesOnlyAction {
+
+  @override final level = LevelData.A1;
+  BigLineTurnAndDeal(String name) : super(name);
+
+  @override
+  Future<void> perform(CallContext ctx) async {
+    final left = name.contains('Left') ? 'Left' : '';
+    final length = norm.contains('6') ? '6' : '8';
+    if (length == '6' && ctx.dancers.length > 6)
+      await ctx.applyCalls('Wave of 6 $name');
+    else {
+      await ctx.applyCalls('Line of $length $left Half Tag');
+      await super.perform(ctx);
+    }
+  }
+
+  @override
+  Path performOne(Dancer d, CallContext ctx) {
+    d.animate(0.0);
+    if (d.isCenterRight)
+      return TamUtils.getMove('Quarter Right');
+    else
+      return TamUtils.getMove('Quarter Left');
   }
 
 }
