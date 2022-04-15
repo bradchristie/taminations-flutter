@@ -1,7 +1,7 @@
 /*
 
   Taminations Square Dance Animations
-  Copyright (C) 2021 Brad Christie
+  Copyright (C) 2022 Brad Christie
 
   This program is free software: you can redistribute it and/or modify
   it under the terms of the GNU General Public License as published by
@@ -32,6 +32,46 @@ class TagTheLine extends Action {
     await ctx.applyCalls('$left 34tag');
     ctx.contractPaths();
     await ctx.applyCalls('extend');
+  }
+
+}
+
+class BigLineTagTheLine extends ActivesOnlyAction {
+
+  @override
+  var level = LevelData.MS;
+  var isLeft;
+
+  BigLineTagTheLine(String name) : isLeft=name.contains('Left'), super(name) ;
+
+  @override
+  Future<void> perform(CallContext ctx) async {
+    final left = isLeft ? 'Left' : '';
+    final length = norm.contains('6') ? '6' : '8';
+    if (length == '6' && ctx.dancers.length > 6)
+      await ctx.applyCalls('Wave of 6 $name');
+    else {
+      await super.perform(ctx);
+      if (norm.contains('12'))
+        await ctx.applyCalls('_Finish Line of $length $left Half Tag');
+      else
+        await ctx.applyCalls('_Finish Line of $length $left Tag the Line');
+    }
+  }
+
+  @override
+  Path performOne(Dancer d, CallContext ctx) {
+    if (isLeft) {
+      if (d.isCenterRight)
+        return TamUtils.getMove('Quarter Right', skew: [-0.5, 0.0].v);
+      else
+        return TamUtils.getMove('Quarter Left', skew: [0.5, 0.0].v);
+    } else {
+      if (d.isCenterRight)
+        return TamUtils.getMove('Quarter Right', skew: [0.5, 0.0].v);
+      else
+        return TamUtils.getMove('Quarter Left', skew: [-0.5, 0.0].v);
+    }
   }
 
 }

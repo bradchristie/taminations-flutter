@@ -127,7 +127,8 @@ class CallContext {
     'c1/scoot_and_little',
     'a2/hourglass_circulate',
     'c2/reverse_cut_the_diamond',
-    'c1/vertical_tag'
+    'c1/vertical_tag',
+    'ms/tag'
   ];
 
   static const standardFormations = {

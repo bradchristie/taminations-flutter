@@ -3000,5 +3000,34 @@ Left Roll to a Wave
 Step Thru
 Cross Clover and Face Out
 Right and Left Thru
+Allemande Left''',
+
+  'Big Tag the Line' :
+'''Sides Pass the Ocean
+Extend
+Fan the Top
+Line of 8 Tag the Line
+Face Right
+Line Of 8 Half Tag
+Hinge
+Line Of 8 Left Tag the Line
+Face Left
+Line Of 8 Left Half Tag
+1/2 Circulate
+Outer 2 Counter Rotate While Others Hinge
+Line Of 6 Tag the Line
+Face Right
+Line Of 6 Half Tag
+Center 6 Hinge
+Line Of 6 Left Tag the Line
+Face Left
+Line Of 6 Left Half Tag
+Trade the Windmill In
+Star Thru
+Track 2
+Circulate
+Boys Run
+Cast Off Three Quarters
+Quarter Out
 Allemande Left'''
 };

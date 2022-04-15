@@ -422,7 +422,6 @@ class DanceModel extends fm.ChangeNotifier {
 
       //  Select a random dancer of the correct gender for the interactive dancer
       var icount = -1;
-      var im = Matrix.getIdentity();
       var iangle = 0.0;
       if (_interactiveDancer > 0) {
         var glist = formation.childrenNamed('dancer')
@@ -432,7 +431,6 @@ class DanceModel extends fm.ChangeNotifier {
         //  Find the angle the interactive dancer faces at start
         //  We want to rotate the formation so that direction is up
         iangle = glist[icount]('angle').d;
-        im = Matrix.getRotation(-iangle.toRadians);
         //  Adjust icount for looping through geometry below
         icount = icount * geoms.length + 1;
       }
@@ -452,8 +450,6 @@ class DanceModel extends fm.ChangeNotifier {
         //  Each dancer listed in the formation corresponds to
         //  one, two, or three real dancers depending on the geometry
         geoms.forEach((geom) {
-          var m = im * Matrix.getTranslation(x,y) *
-              Matrix.getRotation(angle.toRadians);
           var nstr = (g == Gender.PHANTOM) ? ' ' : numbers[dnum];
           var cstr = (g == Gender.PHANTOM) ? ' ' : couples[dnum];
           var colorstr = (g == Gender.PHANTOM) ? ' ' : couples[dnum];

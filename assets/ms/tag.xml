@@ -223,16 +223,16 @@
     </taminator>
   </tam>
 
-  <tam title="Line of 8, Tag the Line" from="Tidal Line" formation="Tidal Line RH" difficulty="2">
+  <tam title="Line of 8 Tag the Line" from="Tidal Line" formation="Tidal Line RH" difficulty="2">
     <path>
       <move select="Quarter Right" offsetX=".5" />
       <move select="Forward 3" />
-      <move select="Extend Left" scaleY="-.5" />
+      <move select="Extend Right" scaleY=".5" />
     </path>
     <path>
       <move select="Quarter Right" offsetX=".5" />
       <move select="Forward 3" />
-      <move select="Extend Left" scaleY="-.5" />
+      <move select="Extend Right" scaleY=".5" />
     </path>
     <path>
       <move select="Quarter Right" offsetX=".5" />
@@ -248,6 +248,172 @@
     Usually each group of 4 dancers works independently.
     By adding "Line of 8", the caller tells all 8 dancers to work together.
     </taminator>
+  </tam>
+
+  <tam title="_Finish Line of 8 Tag the Line" display="no">
+    <formation>
+      <dancer gender="boy" x="3.5" y="-.5" angle="180"/>
+      <dancer gender="girl" x="2.5" y="-.5" angle="180"/>
+      <dancer gender="boy" x="1.5" y="-.5" angle="180"/>
+      <dancer gender="girl" x=".5" y="-.5" angle="180"/>
+    </formation>
+    <path>
+      <move select="Forward 3" />
+      <move select="Extend Right" scaleY=".5" />
+    </path>
+    <path>
+      <move select="Forward 3" />
+      <move select="Extend Right" scaleY=".5" />
+    </path>
+    <path>
+      <move select="Forward 3" />
+      <move select="Extend Right" scaleY=".5" />
+    </path>
+    <path>
+      <move select="Forward 3" />
+      <move select="Extend Right" scaleY=".5" />
+    </path>
+  </tam>
+
+  <tam title="_Finish Line of 8 Left Tag the Line" display="no">
+    <formation>
+      <dancer gender="boy" x="3.5" y=".5" angle="180"/>
+      <dancer gender="girl" x="2.5" y=".5" angle="180"/>
+      <dancer gender="boy" x="1.5" y=".5" angle="180"/>
+      <dancer gender="girl" x=".5" y=".5" angle="180"/>
+    </formation>
+    <path>
+      <move select="Forward 3" />
+      <move select="Extend Left" scaleY=".5" />
+    </path>
+    <path>
+      <move select="Forward 3" />
+      <move select="Extend Left" scaleY=".5" />
+    </path>
+    <path>
+      <move select="Forward 3" />
+      <move select="Extend Left" scaleY=".5" />
+    </path>
+    <path>
+      <move select="Forward 3" />
+      <move select="Extend Left" scaleY=".5" />
+    </path>
+  </tam>
+
+  <tam title="_Finish Line of 8 Half Tag" display="no">
+    <formation>
+      <dancer gender="boy" x="3.5" y="-.5" angle="180"/>
+      <dancer gender="girl" x="2.5" y="-.5" angle="180"/>
+      <dancer gender="boy" x="1.5" y="-.5" angle="180"/>
+      <dancer gender="girl" x=".5" y="-.5" angle="180"/>
+    </formation>
+    <path>
+      <move select="Extend Left" beats="3" scaleX=".5" scaleY=".5" />
+    </path>
+    <path>
+      <move select="Forward" beats="3" offsetX=".5" offsetY=".5" />
+    </path>
+    <path>
+      <move select="Forward 2" beats="3" offsetX=".5" offsetY=".5" />
+    </path>
+    <path>
+      <move select="Forward 3" offsetX=".5" offsetY=".5" />
+    </path>
+  </tam>
+
+  <tam title="_Finish Line of 8 Left Half Tag" display="no">
+    <formation>
+      <dancer gender="boy" x="3.5" y=".5" angle="180"/>
+      <dancer gender="girl" x="2.5" y=".5" angle="180"/>
+      <dancer gender="boy" x="1.5" y=".5" angle="180"/>
+      <dancer gender="girl" x=".5" y=".5" angle="180"/>
+    </formation>
+    <path>
+      <move select="Extend Right" beats="3" scaleX=".5" scaleY=".5" />
+    </path>
+    <path>
+      <move select="Forward" beats="3" offsetX=".5" offsetY="-.5" />
+    </path>
+    <path>
+      <move select="Forward 2" beats="3" offsetX=".5" offsetY="-.5" />
+    </path>
+    <path>
+      <move select="Forward 3" offsetX=".5" offsetY="-.5" />
+    </path>
+  </tam>
+
+  <tam title="_Finish Line of 6 Tag the Line" display="no">
+    <formation>
+      <dancer gender="boy" x="3.75" y="-.5" angle="180"/>
+      <dancer gender="girl" x="2.25" y="-.5" angle="180"/>
+      <dancer gender="boy" x="0.75" y="-.5" angle="180"/>
+    </formation>
+    <path>
+      <move select="Forward 3" />
+      <move select="Extend Right" offsetX=".5" scaleY=".5" />
+    </path>
+    <path>
+      <move select="Forward 3" />
+      <move select="Extend Right" offsetX=".5" scaleY=".5" />
+    </path>
+    <path>
+      <move select="Forward 3" />
+      <move select="Extend Right" offsetX=".5" scaleY=".5" />
+    </path>
+  </tam>
+
+  <tam title="_Finish Line of 6 Left Tag the Line" display="no">
+    <formation>
+      <dancer gender="boy" x="3.75" y=".5" angle="180"/>
+      <dancer gender="girl" x="2.25" y=".5" angle="180"/>
+      <dancer gender="boy" x="0.75" y=".5" angle="180"/>
+    </formation>
+    <path>
+      <move select="Forward 3" />
+      <move select="Extend Left" offsetX=".5" scaleY=".5" />
+    </path>
+    <path>
+      <move select="Forward 3" />
+      <move select="Extend Left" offsetX=".5" scaleY=".5" />
+    </path>
+    <path>
+      <move select="Forward 3" />
+      <move select="Extend Left" offsetX=".5" scaleY=".5" />
+    </path>
+  </tam>
+
+  <tam title="_Finish Line of 6 Half Tag" display="no">
+    <formation>
+      <dancer gender="boy" x="3.75" y="-.5" angle="180"/>
+      <dancer gender="girl" x="2.25" y="-.5" angle="180"/>
+      <dancer gender="boy" x="0.75" y="-.5" angle="180"/>
+    </formation>
+    <path>
+      <move select="Forward 2" offsetX="-.25" offsetY=".5"/>
+    </path>
+    <path>
+      <move select="Forward 2" offsetX=".25" offsetY=".5"/>
+    </path>
+    <path>
+      <move select="Forward 2" offsetX=".75" offsetY=".5"/>
+    </path>
+  </tam>
+
+  <tam title="_Finish Line of 6 Left Half Tag" display="no">
+    <formation>
+      <dancer gender="boy" x="3.75" y=".5" angle="180"/>
+      <dancer gender="girl" x="2.25" y=".5" angle="180"/>
+      <dancer gender="boy" x="0.75" y=".5" angle="180"/>
+    </formation>
+    <path>
+      <move select="Forward 2" offsetX="-.25" offsetY="-.5"/>
+    </path>
+    <path>
+      <move select="Forward 2" offsetX=".25" offsetY="-.5"/>
+    </path>
+    <path>
+      <move select="Forward 2" offsetX=".75" offsetY="-.5"/>
+    </path>
   </tam>
 
 </tamination>
