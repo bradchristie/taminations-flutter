@@ -44,6 +44,36 @@
     </path>
   </tam>
 
+  <tam title="Zing" from="T-Bone 1">
+    <formation>
+      <dancer gender="boy" x="1" y="1" angle="0"/>
+      <dancer gender="girl" x="1" y="-1" angle="90"/>
+    </formation>
+    <path>
+      <move select="Run Left" scaleY=".5" offsetX="-1"/>
+      <move select="Lead Left" scaleY="1"/>
+    </path>
+    <path>
+      <move select="Forward" beats="2.5"/>
+      <move select="Quarter Left" beats="2" offsetX="1"/>
+    </path>
+  </tam>
+
+  <tam title="Zing" from="T-Bone 2">
+    <formation>
+      <dancer gender="boy" x="1" y="-1" angle="0"/>
+      <dancer gender="girl" x="1" y="1" angle="270"/>
+    </formation>
+    <path>
+      <move select="Run Right" scaleY=".5" offsetX="-1"/>
+      <move select="Lead Right" scaleY="1"/>
+    </path>
+    <path>
+      <move select="Forward" beats="2.5"/>
+      <move select="Quarter Right" beats="2" offsetX="1"/>
+    </path>
+  </tam>
+
   <tam title="Zing" from="Right-Hand Columns"
        formation="Column RH GBGB">
     <path>
@@ -85,6 +115,27 @@
   </tam>
 
   <tam title="Zing"
+       from="Double Pass Thru"
+       formation="Double Pass Thru">
+    <path>
+      <move select="Forward" beats="2"/>
+      <move select="Quarter Right" beats="2.5" offsetX="1" offsetY="1"/>
+    </path>
+    <path>
+      <move select="Forward" beats="2"/>
+      <move select="Quarter Left" beats="2.5" offsetX="1" offsetY="-1"/>
+    </path>
+    <path>
+      <move select="Run Left" offsetX="-1"/>
+      <move select="Lead Left" />
+    </path>
+    <path>
+      <move select="Run Right" offsetX="-1"/>
+      <move select="Lead Right" />
+    </path>
+  </tam>
+
+  <tam title="Zing"
        from="Completed Double Pass Thru"
        formation="Completed Double Pass Thru">
     <path numbers="5 4">
@@ -105,6 +156,85 @@
     </path>
   </tam>
 
+  <tam title="Zing" from="Right-Hand Two-Faced Lines"
+       formation="Two-Faced Lines RH">
+    <path>
+      <move select="Forward 2"/>
+      <move select="Quarter Right" beats="2.5" offsetX="1"/>
+    </path>
+    <path>
+      <move select="Forward 2"/>
+      <move select="Quarter Left" beats="2.5" offsetX="1"/>
+    </path>
+    <path>
+      <move select="Run Right" scaleY=".25" offsetX="-2"/>
+      <move select="Lead Right" scaleY=".5"/>
+    </path>
+    <path>
+      <move select="Run Left" scaleY=".5" offsetX="-2"/>
+      <move select="Lead Left" />
+    </path>
+  </tam>
+
+  <tam title="Zing" from="Left-Hand Two-Faced Lines"
+       formation="Two-Faced Lines LH">
+    <path>
+      <move select="Run Right" scaleY=".5" offsetX="-2"/>
+      <move select="Lead Right" />
+    </path>
+    <path>
+      <move select="Run Left" scaleY=".25" offsetX="-2"/>
+      <move select="Lead Left" scaleY=".5"/>
+    </path>
+    <path>
+      <move select="Forward 2"/>
+      <move select="Quarter Right" beats="2.5" offsetX="1"/>
+    </path>
+    <path>
+      <move select="Forward 2"/>
+      <move select="Quarter Left" beats="2.5" offsetX="1"/>
+    </path>
+  </tam>
+
+  <tam title="Zing" from="Right-Hand Waves" formation="Ocean Waves RH BGGB">
+    <path>
+      <move select="Forward 2"/>
+      <move select="Quarter Right" beats="2.5" offsetX="1"/>
+    </path>
+    <path>
+      <move select="Run Left" scaleY=".25" offsetX="-2"/>
+      <move select="Lead Left" scaleY=".5"/>
+    </path>
+    <path>
+      <move select="Forward 2"/>
+      <move select="Quarter Right" beats="2.5" offsetX="1"/>
+    </path>
+    <path>
+      <move select="Run Left" scaleY=".5" offsetX="-2"/>
+      <move select="Lead Left" />
+    </path>
+  </tam>
+
+  <tam title="Zing" from="Left-Hand Waves" formation="Ocean Waves LH BGGB">
+    <path>
+      <move select="Run Right" scaleY=".5" offsetX="-2"/>
+      <move select="Lead Right" />
+    </path>
+    <path>
+      <move select="Forward 2"/>
+      <move select="Quarter Left" beats="2.5" offsetX="1"/>
+    </path>
+    <path>
+      <move select="Run Right" scaleY=".25" offsetX="-2"/>
+      <move select="Lead Right" scaleY=".5"/>
+    </path>
+    <path>
+      <move select="Forward 2"/>
+      <move select="Quarter Left" beats="2.5" offsetX="1"/>
+    </path>
+  </tam>
+
+
   <tam title="Points Zing" from="Diamonds" formation="Diamonds RH Girl Points">
     <path numbers="6 3">
     </path>
@@ -118,6 +248,7 @@
       <move select="Lead Left"/>
     </path>
   </tam>
+
 
   <tam title="All 4 Couples Zing" from="" formation="Static MiniWaves RH" group=" ">
     <path>
