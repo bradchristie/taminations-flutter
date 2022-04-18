@@ -20,17 +20,19 @@ Call pronunciations provided by
 
 ---
 
-## Taminations version 1.6.37 built 2022-04-04
+## Taminations version 1.6.38 built 2022-04-18
 Copyright 2022 by Brad Christie.  
 This is free software, and you are welcome to modify and redistribute it
 under the terms of the [GNU GPL license](http://www.gnu.org/licenses/gpl.html).  
 
 ## What's New
-* Fix one Courtesy Turn animation
-* A few more animations for Substitute, and Swing and Circle
+* More animations for Zing
+* Fix display problem with Practice
 * Sequencer changes:
-  * Fix wrong name/level of Recycle added to sequence
-  * Fix Spread when applied to a center wave
+  * Don't replace abbreviations inside comments
+  * Turn and Deal, Tag and Half Tag for lines of 6 and 8
+  * Fix for some cases of Trade from tidal formations
+  * Fix for some cases of 4-dancer Cloverleaf
 
 
 For a detailed history of changes, view the
