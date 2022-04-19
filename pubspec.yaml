@@ -1,9 +1,10 @@
 name: taminations
 description: Taminations in Flutter
 
+# Not a shared flutter library
 publish_to: 'none'
 
-# Also change version in msix_config to match
+# Also change version in msix_config (below) to match
 version: 1.6.38+200
 
 environment:
@@ -62,6 +63,10 @@ flutter:
     - assets/info/
     - assets/src/
 
+#  This is for building a Windows release:
+#  flutter pub run msix:create
+#  Then to make a bundle:
+#  makeappx.exe bundle  /f mapping.txt /p taminations.msixbundle /bv 1.6.38.0
 msix_config:
   display_name: Taminations
   publisher_display_name: Brad Christie
@@ -72,5 +77,3 @@ msix_config:
   store: true
   #  capabilities: microphone
 
-#  To make a bundle
-#  makeappx.exe bundle  /f mapping.txt /p taminations.msixbundle /bv 1.6.36.0

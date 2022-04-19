@@ -193,12 +193,11 @@
        formation="Static Square" group="   " >
     <path numbers="1 8">
       <move select="Quarter Right" offsetY="-1" />
-      <move select="Lead Left" beats="3" scaleX="3" />
-      <move select="Forward" />
+      <move select="Counter Rotate Left 4 2" offsetX="-1"/>
     </path>
     <path numbers="2 7">
-      <move select="Extend Right" beats="3" scaleX="2" scaleY="2" />
-      <move select="Forward 2" />
+      <move select="Quarter Right" offsetY="-1" />
+      <move select="Counter Rotate Left 2 4" offsetX="-1"/>
     </path>
     <path numbers="5 4">
       <move select="Forward 2" hands="right" />
@@ -219,12 +218,11 @@
     </path>
     <path>
       <move select="Quarter Right" offsetY="-1" />
-      <move select="Lead Left" beats="3" scaleX="3" />
-      <move select="Forward" />
+      <move select="Counter Rotate Left 4 2" offsetX="-1"/>
     </path>
     <path>
-      <move select="Extend Right" beats="3" scaleX="2" scaleY="2" />
-      <move select="Forward 2" />
+      <move select="Quarter Right" offsetY="-1" />
+      <move select="Counter Rotate Left 2 4" offsetX="-1"/>
     </path>
   </tam>
 
@@ -233,15 +231,13 @@
        formation="Static Square" group="   " >
     <path>
       <move select="Quarter Right" offsetY="-1" />
-      <move select="Lead Left" beats="3" scaleX="3" />
-      <move select="Forward 3" />
-      <move select="Lead Left" beats="2.5" scaleX="2" scaleY="1.5"/>
+      <move select="Counter Rotate Left 4 2" offsetX="-1"/>
+      <move select="Counter Rotate Left 4 2" offsetY="-0.5"/>
     </path>
     <path>
-      <move select="Extend Right" beats="3" scaleX="2" scaleY="2" />
-      <move select="Forward 2" />
-      <move select="Lead Left" beats="3" scaleX="2" scaleY="2"/>
-      <move select="Forward 2" offsetX=".5"/>
+      <move select="Quarter Right" offsetY="-1" />
+      <move select="Counter Rotate Left 2 4" offsetX="-1"/>
+      <move select="Counter Rotate Left 2 4" offsetY="0.5"/>
     </path>
     <path>
       <move select="Forward 2" offsetX="-.5" hands="right" />
@@ -262,15 +258,13 @@
     </path>
     <path>
       <move select="Quarter Right" offsetY="-1" />
-      <move select="Lead Left" beats="3" scaleX="3" />
-      <move select="Forward 3" />
-      <move select="Lead Left" beats="2.5" scaleX="2" scaleY="1.5"/>
+      <move select="Counter Rotate Left 4 2" offsetX="-1"/>
+      <move select="Counter Rotate Left 4 2" offsetY="-0.5"/>
     </path>
     <path>
-      <move select="Extend Right" beats="3" scaleX="2" scaleY="2" />
-      <move select="Forward 2" />
-      <move select="Lead Left" beats="3" scaleX="2" scaleY="2"/>
-      <move select="Forward 2" offsetX=".5"/>
+      <move select="Quarter Right" offsetY="-1" />
+      <move select="Counter Rotate Left 2 4" offsetX="-1"/>
+      <move select="Counter Rotate Left 2 4" offsetY="0.5"/>
     </path>
   </tam>
 
@@ -279,13 +273,12 @@
        from="Static Square"
        formation="Static Square" group="    ">
     <path>
-      <move select="Extend Left" beats="3" scaleX="2" scaleY="2" />
-      <move select="Forward 2" />
+      <move select="Quarter Left" offsetY="1" />
+      <move select="Counter Rotate Right 2 -4" offsetX="-1"/>
     </path>
     <path>
       <move select="Quarter Left" offsetY="1" />
-      <move select="Lead Right" beats="3" scaleX="3" />
-      <move select="Forward" />
+      <move select="Counter Rotate Right 4 -2" offsetX="-1"/>
     </path>
     <path>
       <move select="Forward 2" hands="right" />
@@ -305,13 +298,12 @@
       <move select="Forward 2" hands="left" />
     </path>
     <path>
-      <move select="Extend Left" beats="3" scaleX="2" scaleY="2" />
-      <move select="Forward 2" />
+      <move select="Quarter Left" offsetY="1" />
+      <move select="Counter Rotate Right 2 -4" offsetX="-1"/>
     </path>
     <path>
       <move select="Quarter Left" offsetY="1" />
-      <move select="Lead Right" beats="3" scaleX="3" />
-      <move select="Forward" />
+      <move select="Counter Rotate Right 4 -2" offsetX="-1"/>
     </path>
   </tam>
 
@@ -319,16 +311,14 @@
        from="Static Square"
        formation="Static Square" group="    ">
     <path>
-      <move select="Extend Left" beats="3" scaleX="2" scaleY="2" />
-      <move select="Forward 2" />
-      <move select="Lead Right" beats="3" scaleX="2" scaleY="2"/>
-      <move select="Forward 2" offsetX=".5"/>
+      <move select="Quarter Left" offsetY="1" />
+      <move select="Counter Rotate Right 2 -4" offsetX="-1"/>
+      <move select="Counter Rotate Right 2 -4" offsetY="-0.5"/>
     </path>
     <path>
       <move select="Quarter Left" offsetY="1" />
-      <move select="Lead Right" beats="3" scaleX="3" />
-      <move select="Forward 3" />
-      <move select="Lead Right" beats="2.5" scaleX="2" scaleY="1.5"/>
+      <move select="Counter Rotate Right 4 -2" offsetX="-1"/>
+      <move select="Counter Rotate Right 4 -2" offsetY="0.5"/>
     </path>
     <path>
       <move select="Forward 2" offsetX="-.5" hands="right" />
@@ -348,16 +338,14 @@
       <move select="Forward 2" offsetX="-.5" hands="right" />
     </path>
     <path>
-      <move select="Extend Left" beats="3" scaleX="2" scaleY="2" />
-      <move select="Forward 2" />
-      <move select="Lead Right" beats="3" scaleX="2" scaleY="2"/>
-      <move select="Forward 2" offsetX=".5"/>
+      <move select="Quarter Left" offsetY="1" />
+      <move select="Counter Rotate Right 2 -4" offsetX="-1"/>
+      <move select="Counter Rotate Right 2 -4" offsetY="-0.5"/>
     </path>
     <path>
       <move select="Quarter Left" offsetY="1" />
-      <move select="Lead Right" beats="3" scaleX="3" />
-      <move select="Forward 3" />
-      <move select="Lead Right" beats="2.5" scaleX="2" scaleY="1.5"/>
+      <move select="Counter Rotate Right 4 -2" offsetX="-1"/>
+      <move select="Counter Rotate Right 4 -2" offsetY="0.5"/>
     </path>
   </tam>
 
