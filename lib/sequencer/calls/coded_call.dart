@@ -501,7 +501,7 @@ abstract class CodedCall extends Call {
     'swingandmix'.ri: (_) => SwingAndMix(),
     '(left)?swingthefractions'.ri: (name) => SwingTheFractions(name),
     '(grand)?(left)?swingthru'.ri: (name) => SwingThru(name),
-    'switchtheline'.ri: (_) => SwitchTheLine(),
+    'switch(theline)?'.ri: (_) => SwitchTheLine(),
 
     '(left)?tagback(toawave)?'.ri: (name) => TagBack(name),
     '(left)?tagtheline'.ri: (name) => TagTheLine(name),
