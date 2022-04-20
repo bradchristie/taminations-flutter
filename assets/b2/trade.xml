@@ -79,7 +79,7 @@
   <tam title="Boys Trade"
        from="Lines"
        formation="Normal Lines"
-       difficulty="2" sequencer="gender-specific">
+       difficulty="2" sequencer="no">
     <path>
       <move select="Run Right" scaleX="2" scaleY="2" />
     </path>
@@ -95,7 +95,7 @@
   <tam title="Boys Trade"
        from="Lines Facing Out"
        formation="Lines Facing Out"
-       difficulty="2" sequencer="gender-specific">
+       difficulty="2" sequencer="no">
     <path>
     </path>
     <path>
@@ -109,7 +109,7 @@
   </tam>
 
   <tam title="Boys Trade" from="Right-Hand Two-Faced Lines"
-      formation="Two-Faced Lines RH" difficulty="1" sequencer="gender-specific">
+      formation="Two-Faced Lines RH" difficulty="1" sequencer="no">
     <path>
       <move select="Run Right" beats="4" scaleX="1.5" scaleY="3"/>
     </path>
@@ -123,7 +123,7 @@
   </tam>
 
   <tam title="Boys Trade" from="Left-Hand Two-Faced Lines"
-      formation="Two-Faced Lines LH" difficulty="1" sequencer="gender-specific">
+      formation="Two-Faced Lines LH" difficulty="1" sequencer="no">
     <path>
     </path>
     <path>
@@ -139,7 +139,7 @@
   <tam title="Boys Trade"
        from="Waves, Boys in Center"
        formation="Ocean Waves RH GBBG"
-       difficulty="1" sequencer="gender-specific">
+       difficulty="1" sequencer="no">
     <path>
     </path>
     <path>
@@ -155,7 +155,7 @@
   <tam title="Boys Trade"
        from="Waves, Boys Facing Out"
        formation="Ocean Waves RH GBGB"
-       difficulty="1" sequencer="gender-specific">
+       difficulty="1" sequencer="no">
     <path>
     </path>
     <path>
@@ -225,7 +225,7 @@
   <tam title="Girls Trade"
        from="Lines"
        formation="Normal Lines"
-       difficulty="2" sequencer="gender-specific">
+       difficulty="2" sequencer="no">
     <path>
     </path>
     <path>
@@ -241,7 +241,7 @@
   <tam title="Girls Trade"
        from="Lines Facing Out"
        formation="Lines Facing Out"
-       difficulty="2" sequencer="gender-specific">
+       difficulty="2" sequencer="no">
     <path>
       <move select="Run Left" scaleY="2" />
     </path>
@@ -255,7 +255,7 @@
   </tam>
 
   <tam title="Girls Trade" from="Right-Hand Two-Faced Lines"
-      formation="Two-Faced Lines RH" difficulty="1" sequencer="gender-specific">
+      formation="Two-Faced Lines RH" difficulty="1" sequencer="no">
     <path>
     </path>
     <path>
@@ -269,7 +269,7 @@
   </tam>
 
   <tam title="Girls Trade" from="Left-Hand Two-Faced Lines"
-      formation="Two-Faced Lines LH" difficulty="1" sequencer="gender-specific">
+      formation="Two-Faced Lines LH" difficulty="1" sequencer="no">
     <path>
       <move select="Run Left" beats="4" scaleX="1.5" scaleY="3"/>
     </path>
@@ -285,7 +285,7 @@
   <tam title="Girls Trade"
        from="Waves, Girls Facing Out"
        formation="Ocean Waves RH BGBG"
-       difficulty="1" sequencer="gender-specific">
+       difficulty="1" sequencer="no">
     <path>
     </path>
     <path>
