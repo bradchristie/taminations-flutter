@@ -366,7 +366,7 @@ class CallContext {
   /// Append the result of processing this CallContext to it source.
   /// The CallContext must have been previously cloned from the source.
   //  Return true if anything new was added.
-  bool appendToSource([CallContext? ctx]) {
+  bool appendToSource([CallContext? ctx, bool adjust=false]) {
     var didSomething = false;
     dancers.forEach((clone) {
       var original = ctx == null
@@ -378,7 +378,20 @@ class CallContext {
         if (clone.gender == Gender.PHANTOM && original.path.movelist.isEmpty)
           original.setStartAngle(clone.starttx.angle);
         didSomething |= clone.path.movelist.isNotEmpty;
-        original.path.add(clone.path);
+        if (adjust) {
+          //  Adjust path to match final position of subcontext
+          //  instead of appending moves, like in adjustToFormationMatch
+          original.animateToEnd();
+          clone.animateToEnd();
+          var offset = original.location - clone.location;
+          //print('$original ${original.location}  ${clone.location}  $offset');
+          original.animateToEnd();
+          //  Apply the offset
+          var vd = offset.rotate(-original.angleFacing);
+          original.path.skewFromEnd(-vd.x, -vd.y);
+        } else
+          //  just append clone
+          original.path.add(clone.path);
         original.animateToEnd();
         if (!clone.isActive)
           original.data.active = false;
@@ -388,6 +401,8 @@ class CallContext {
       _source!.level = level;
     return didSomething;
   }
+
+
 
   //  Create a new CallContext from a list of dancers
   //  (usually a subset of this CallContext dancers).
@@ -884,6 +899,7 @@ class CallContext {
   //  This doesn't run an animation, rather it takes the stack of calls
   //  and builds the dancer movements.
   Future<void> performCall() async {
+    //  Some calls alter the callstack, so save and restore
     final saveCallstack = callstack.copy();
     for (final d in dancers) {
       d.path.clear();
@@ -894,7 +910,9 @@ class CallContext {
       await c.performCall(this);
       if (i < callstack.length-1)
         analyze();
-      //  A few calls (e.g. Hinge) don't know their level until the call is performed
+      _checkCenters();
+      //  A few calls (e.g. Hinge) don't know their level
+      //  until the call is performed
       if (c.level > level)
         level = c.level;
       extendPaths();
@@ -902,6 +920,25 @@ class CallContext {
     callstack = saveCallstack;
   }
 
+  //  For calls that just apply to the centers, make sure they
+  //  stay in the center and don't collide with the other dancers
+  void _checkCenters() {
+    animate(0.0);
+    if (actives.length == 4 && center(4).containsAll(actives)) {
+      animateToEnd();
+      if (!center(4).containsAll(actives)) {
+        //print('WARNING centers mix with other dancers!');
+        animate(0.0);
+        final ctx2 = CallContext.fromDancers(center(4));
+        if (ctx2.isLines()) {
+          ctx2.adjustToFormation('Compact Wave RH');
+        } else
+          return;
+        animateToEnd();
+        ctx2.appendToSource(this,true);
+      }
+    }
+  }
 
   //  See if the current dancer positions resemble a standard formation
   //  and, if so, snap to the standard
