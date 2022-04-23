@@ -34,6 +34,7 @@ class ToAWave extends Action {
     for (final d in ctx.actives)
       d.path.pop();
     //  Now let's see if they are in waves
+    ctx.animateToEnd();
     ctx.analyze();
     for (final d in ctx.actives) {
       if (!ctx.isInWave(d))

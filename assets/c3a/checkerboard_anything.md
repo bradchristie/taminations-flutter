@@ -15,10 +15,11 @@ any direction other than the same direction as the dancers designated
 > ![alt](checkerboard-2.png)
 > 
 
-## Checker Board &lt;anything>
+## Checker Board \<anything>
 
 The Leaders in each Line (“L” dancers) Trade with each other
-as the others (“O” dancers) do the &lt;anything> call working in a distorted 1x4. Ends in a 2x4.
+as the others (“O” dancers) do the \<anything> call working in a distorted 1x4. 
+Ends in a 2x4.
 
 > 
 > ![alt](checkerboard-3.png)
@@ -37,15 +38,15 @@ as the others (“O” dancers) do the &lt;anything> call working in a distorted
 
 Note that although the four dancers start in a distorted 1x4, the
 result of the
-&lt;anything> call may be some other four-person formation,
+\<anything> call may be some other four-person formation,
 such as a 2x2 or a Diamond, but they still end in the same four spots
 (e.g., as a distorted 2x2).
 
-## Checker Box &lt;anything>
+## Checker Box \<anything>
 
 The Leaders in each Line ("L" dancers) Trade with each other
 as the others ("O" dancers)
-do the &lt;anything> call working in a distorted 2x2. Ends in a 2x4.
+do the \<anything> call working in a distorted 2x2. Ends in a 2x4.
 
 > 
 > ![alt](checkerboard-11.png)

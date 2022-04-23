@@ -18,9 +18,7 @@
 
 */
 
-import '../../call_context.dart';
-import '../action.dart';
-import '../../../extensions.dart';
+import '../common.dart';
 
 class While extends Action {
 
@@ -49,6 +47,11 @@ class While extends Action {
         .replaceAll('(the )?others? '.r,'');
     await ctx2.applyCalls(whilecall);
     ctx2.appendToSource();
+
+    //  Mark all the dancers active so post-processing doesn't
+    //  think just the non-while dancers are moving
+    for (var d in ctx.dancers)
+      d.data.active = true;
   }
 
 }

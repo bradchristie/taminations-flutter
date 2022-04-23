@@ -39,7 +39,8 @@ class Cloverleaf extends Action {
 class CloverAnd extends Action {
 
   @override
-  LevelData get level => (name == 'Clover and Nothing' || name == 'Clover and Step')
+  LevelData get level => (name == 'Clover and Nothing' ||
+      name == 'Clover and Adjust to a Box')
       ? LevelData.MS : LevelData.A1;
   CloverAnd(String name) : super(name);
 
@@ -53,6 +54,7 @@ class CloverAnd extends Action {
     List<Dancer> clovers;
     //  Don't use outer4 directly, instead filter facingOut
     //  This preserves the original order, required for mapping
+    var othersStep = false;
     if (outer4.every((d) => facingOut.contains(d)))
       clovers = facingOut.where((d) => outer4.contains(d)).toList();
     else if (facingOut.length == 4) {
@@ -60,6 +62,18 @@ class CloverAnd extends Action {
     }
     else
       throw CallError('Unable to find dancers to Cloverleaf');
+    //  Other dancers might need to step ahead to make sure their call works
+    //  and doesn't collide with the clovers.
+    if (ctx.dancers.every((d) => clovers.contains(d) ||
+        (d.location.length > 3.0 && name == 'Clover and Nothing')))
+      othersStep = true;
+
+    final ss = CallContext.fromName('Squared Set');
+    final m = ctx.matchFormations(ss,rotate: 180);
+    if (m != null) {
+      othersStep = true;
+    }
+
     //  Make those 4 dancers Cloverleaf
     final call2 = name.split('and');
     final cloverCall = call2.first;
@@ -73,6 +87,8 @@ class CloverAnd extends Action {
     await ctx.subContext(ctx.dancers.where((d) => !clovers.contains(d)).toList(), (ctx2) async {
       for (final d in ctx2.dancers)
         d.data.active = true;
+      if (othersStep)
+        await ctx2.applyCalls('Step');
       await ctx2.applyCalls(andCall);
     });
   }

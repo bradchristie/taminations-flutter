@@ -241,6 +241,7 @@ class SequencerModel extends fm.ChangeNotifier {
     cctx.extendPaths();
     if (!cctx.callname.contains('(move in|step|gnat)'.ri))
       cctx.adjustForSquaredSetCovention();
+    cctx.checkCenters();
     //  Snap to a standard formation so subsequent calls will work
     //  But not if just one XML call, as it knows how it should end
     final firstCall = cctx.callstack.first;

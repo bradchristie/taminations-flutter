@@ -184,6 +184,7 @@ import 'c2/the_k.dart';
 import 'c2/truck.dart';
 import 'c2/wheel_the_ocean.dart';
 import 'c2/zip_code.dart';
+import 'c3a/breaker.dart';
 import 'c3a/couple_up.dart';
 import 'c3a/own_the_dancers.dart';
 import 'c3a/quarter_mix.dart';
@@ -291,6 +292,7 @@ abstract class CodedCall extends Call {
     'boy'.ri: (_) => Boys(),
     'boxthegnat'.ri: (_) => BoxTheGnat(),
     'bracethru'.ri: (_) => BraceThru(),
+    'breaker(1|2|3)'.ri: (name) => Breaker(name),
     '.+But[A-Z1-9].+'.r: (name) => But(name),
     'butterfly.*'.ri: (name) => Butterfly(name),
 
@@ -302,7 +304,7 @@ abstract class CodedCall extends Call {
     '(left)?(split)?catch.*?(1|2|3|4)'.ri: (name) => Catch(name),
     'center'.ri: (_) => Centers(),
     'center6'.ri: (_) => CenterSix(),
-    'centerwaveof4'.ri: (_) => CenterWaveOfFour(),
+    'center(line|wave)of4'.ri: (name) => CenterWaveOfFour(name),
     'chainreaction'.ri: (_) => ChainReaction(),
     'checkpoint(.+)by(.*)'.ri: (name) => Checkpoint(name),
     'changethe(centers?|wave)'.ri: (name) => ChangeTheCenters(name),

@@ -17,14 +17,12 @@
  *     along with Taminations.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import 'package:flutter/cupertino.dart';
-
 import '../coded_call.dart';
 import '../common.dart';
 
 class CenterWaveOfFour extends CodedCall {
 
-  CenterWaveOfFour() : super('Center Wave of Four');
+  CenterWaveOfFour(name) : super(name);
 
   @override
   Future<void> performCall(CallContext ctx) async {
@@ -41,7 +39,7 @@ class CenterWaveOfFour extends CodedCall {
         return;
       }
     }
-    throw CallError('Unable to identify Center Wave of Four');
+    throw CallError('Unable to identify $name');
   }
 
 }

@@ -67,6 +67,7 @@ class DoYourPart extends Action {
         for (final tam in file.rootElement.childrenNamed('tam')
             .where((tam) =>
         tam('sequencer') != 'no' &&
+
             TamUtils.normalizeCall(tam('title')).toLowerCase() ==
                 norm.toLowerCase())) {
           //  See if this is a subset match to the DYP dancers
@@ -82,7 +83,7 @@ class DoYourPart extends Action {
             //  Copy path movements from call to sequence
             for (var i = 0; i < mapping.length; i++) {
               final m = mapping[i];
-              // TODO check for esymmetric call!
+              // TODO check for asymmetric call!
               dypctx.dancers[i].path.add(ctx2.dancers[m].path);
             }
             dypctx.adjustToFormationMatch(matchResult);

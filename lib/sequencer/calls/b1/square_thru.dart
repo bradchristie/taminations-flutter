@@ -59,7 +59,7 @@ class SquareThru extends Action {
       count = 6;
     //  First hand is step to a wave if not already there
     if (ctx.actives.any((d) => ctx.isInCouple(d))) {
-      await  ctx.applyCalls('Facing Dancers Step to a Compact $right Wave' );
+      await ctx.applyCalls('Facing Dancers Step to a Compact $right Wave' );
       ctx.analyze();
     }
     //  Check that wave is the correct hand

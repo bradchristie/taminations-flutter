@@ -384,7 +384,6 @@ class CallContext {
           original.animateToEnd();
           clone.animateToEnd();
           var offset = original.location - clone.location;
-          //print('$original ${original.location}  ${clone.location}  $offset');
           original.animateToEnd();
           //  Apply the offset
           var vd = offset.rotate(-original.angleFacing);
@@ -910,7 +909,7 @@ class CallContext {
       await c.performCall(this);
       if (i < callstack.length-1)
         analyze();
-      _checkCenters();
+      //checkCenters();
       //  A few calls (e.g. Hinge) don't know their level
       //  until the call is performed
       if (c.level > level)
@@ -922,9 +921,12 @@ class CallContext {
 
   //  For calls that just apply to the centers, make sure they
   //  stay in the center and don't collide with the other dancers
-  void _checkCenters() {
+  void checkCenters() {
     animate(0.0);
-    if (actives.length == 4 && center(4).containsAll(actives)) {
+    analyze();
+    final groupsOK = groups.length > 1 && (groups[0].length == 4 ||
+        (groups[0].length==2 && groups[1].length==2));
+    if (groupsOK && actives.length == 4 && center(4).containsAll(actives)) {
       animateToEnd();
       if (!center(4).containsAll(actives)) {
         //print('WARNING centers mix with other dancers!');
@@ -938,6 +940,7 @@ class CallContext {
         ctx2.appendToSource(this,true);
       }
     }
+    animateToEnd();
   }
 
   //  See if the current dancer positions resemble a standard formation
@@ -1485,7 +1488,7 @@ class CallContext {
 
   void analyze() {
     for (var d in dancers) {
-      d.animateToEnd();
+      //d.animateToEnd();
       d.data.beau = false;
       d.data.belle = false;
       d.data.leader = false;
