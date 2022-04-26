@@ -48,9 +48,15 @@ class Settings extends fm.ChangeNotifier {
   String _showDancerColors = 'By Couple';
   String _joinCallsWith = 'New Line';
 
+  static final Settings _instance = Settings._internal();
+
   late SharedPreferences prefs;
 
-  Settings() {
+  factory Settings() {
+    return _instance;
+  }
+
+  Settings._internal() {
     getSettings();
   }
 

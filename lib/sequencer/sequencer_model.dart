@@ -232,36 +232,54 @@ class SequencerModel extends fm.ChangeNotifier {
     }
     //  Now replace abbreviations
     call = AbbreviationsModel.replaceAbbreviations(call);
+    //  Check for special commands
+    final settings = Settings();
+    if (call.lc.trim() == 'undo')
+      undoLastCall();
+    else if (call.lc.trim() == 'reset')
+      await reset();
+    else if (call.lc.trim().startsWith('color'))
+      setColor(call, settings);
+    else if (call.lc.trim().startsWith('id '))
+      setId(call, settings);
+    else if (call.lc.trim().startsWith('speed '))
+      setSpeed(call, settings);
+    else if (call.lc.trim().startsWith('axes'))
+      setAxes(call, settings);
 
-    var prevbeats = animation.beats;
-    var cctx = CallContext.fromDancers(animation.dancers);
-    await cctx.interpretCall(call);
-    await cctx.performCall();
-    cctx.checkForCollisions();
-    cctx.extendPaths();
-    if (!cctx.callname.contains('(move in|step|gnat)'.ri))
-      cctx.adjustForSquaredSetCovention();
-    cctx.checkCenters();
-    //  Snap to a standard formation so subsequent calls will work
-    //  But not if just one XML call, as it knows how it should end
-    final firstCall = cctx.callstack.first;
-    if (cctx.callstack.length > 1 ||
-        firstCall is CodedCall ||
-        (firstCall is XMLCall && !firstCall.found))
-      cctx.matchStandardFormation();
-    if (cctx.isCollision())
-      throw CallError('Unable to calculate valid animation.');
-    if (cctx.resolutionError)
-      errorString = 'Warning: Dancers are not resolved';
-    cctx.appendToSource();
-    animation.recalculate();
-    var newbeats = animation.beats;
-    if (newbeats > prevbeats) {
-      //  Call worked, add it to the list
-      calls.add(SequencerCall((cctx.callname + comment).trim(),beats:(newbeats-prevbeats),level:cctx.level));
-      _updateParts();
+    else {
+      var prevbeats = animation.beats;
+      var cctx = CallContext.fromDancers(animation.dancers);
+      await cctx.interpretCall(call);
+      await cctx.performCall();
+      cctx.checkForCollisions();
+      cctx.extendPaths();
+      if (!cctx.callname.contains('(move in|step|gnat)'.ri))
+        cctx.adjustForSquaredSetCovention();
+      cctx.checkCenters();
+      //  Snap to a standard formation so subsequent calls will work
+      //  But not if just one XML call, as it knows how it should end
+      final firstCall = cctx.callstack.first;
+      if (cctx.callstack.length > 1 ||
+          firstCall is CodedCall ||
+          (firstCall is XMLCall && !firstCall.found))
+        cctx.matchStandardFormation();
+      if (cctx.isCollision())
+        throw CallError('Unable to calculate valid animation.');
+      if (cctx.resolutionError)
+        errorString = 'Warning: Dancers are not resolved';
+      cctx.appendToSource();
+      animation.recalculate();
+      var newbeats = animation.beats;
+      if (newbeats > prevbeats) {
+        //  Call worked, add it to the list
+        calls.add(SequencerCall(
+            (cctx.callname + comment).trim(), beats: (newbeats - prevbeats),
+            level: cctx.level));
+        _updateParts();
+      }
+      notifyListeners();
     }
-    notifyListeners();
   }
 
   bool isComment(String text) =>
