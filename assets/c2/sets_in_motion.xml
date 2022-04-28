@@ -281,7 +281,7 @@
   <tam title="Sets in Motion" from="3 and 1 Lines #6" formation="3 and 1 lines #6">
     <path numbers="1 8">
       <move select="Run Left" beats="5" scaleX="2" scaleY="3" />
-      <move select="Extend Left" beats="2" scaleX="2"/>
+      <move select="Forward 2"/>
     </path>
     <path numbers="2 7">
       <move select="Hinge Right" />
@@ -289,7 +289,7 @@
       <move select="Quarter Left" />
       <move select="Extend Left" scaleY=".5" />
       <move select="Forward 2" />
-      <move select="Flip Left" scaleY=".25" />
+      <move select="Flip Left" scaleY=".25" offsetX="-0.5"/>
     </path>
     <path numbers="3 6">
       <move select="Hinge Right" />
@@ -297,11 +297,11 @@
       <move select="Stand" beats="3" />
       <move select="Extend Left" scaleY=".5" />
       <move select="Forward 2" />
-      <move select="Flip Right" beats="3" offsetX="2" offsetY=".5" />
+      <move select="Flip Right" beats="3" offsetX="1.5" offsetY=".5" />
     </path>
     <path numbers="4 5">
       <move select="Run Right" beats="5" scaleX="3" scaleY="3" />
-      <move select="Extend Left" beats="2" scaleX="2"/>
+      <move select="Extend Left" beats="2" scaleX="2" scaleY="2"/>
     </path>
   </tam>
 
@@ -309,26 +309,26 @@
        formation="3 and 1 lines #7">
     <path>
       <move select="Run Left" beats="5" scaleX="2" scaleY="3" />
-      <move select="Extend Left" beats="2" scaleX="2"/>
+      <move select="Forward 2"/>
     </path>
     <path>
       <move select="Hinge Left" />
       <move select="Quarter Left" />
       <move select="Stand" beats="2" />
       <move select="Extend Left" beats="2" scaleX="2" scaleY=".5" />
-      <move select="Forward 2" />
-      <move select="Flip Right" beats="3" offsetX="2" offsetY=".5" />
+      <move select="Forward" />
+      <move select="Flip Right" beats="3" offsetX="1.5" offsetY=".5" />
     </path>
     <path>
       <move select="Hinge Left" />
       <move select="Swing Right" />
       <move select="Lead Right" scaleX=".5" />
-      <move select="Forward 3" />
-      <move select="Flip Left" scaleY=".25" />
+      <move select="Forward 2" />
+      <move select="Flip Left" scaleY=".25" offsetX="-0.5"/>
     </path>
     <path>
       <move select="Run Right" beats="5" scaleX="3" scaleY="3" />
-      <move select="Extend Left" beats="2" scaleX="2"/>
+      <move select="Extend Left" beats="2" scaleX="2" scaleY="2"/>
     </path>
   </tam>
 
@@ -381,7 +381,7 @@
       <move select="Stand" beats="3" />
       <move select="Extend Left" scaleY=".5" />
       <move select="Forward" />
-      <move select="Flip Right" beats="3" offsetX="1.5" offsetY=".5" />
+      <move select="Flip Right" beats="3" offsetX="1" offsetY=".5" />
     </path>
     <path>
       <move select="Quarter Left" offsetX="-.5" offsetY="1"/>
@@ -389,7 +389,7 @@
       <move select="Quarter Left" />
       <move select="Extend Left" scaleY=".5" />
       <move select="Forward" />
-      <move select="Flip Left" offsetX=".5" scaleY=".25" />
+      <move select="Flip Left" scaleY=".25" />
     </path>
   </tam>
 
