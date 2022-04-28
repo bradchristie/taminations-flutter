@@ -228,10 +228,10 @@
       <move select="Flip Right"/>
     </path>
     <path>
-      <move select="Forward 2"/>
+      <move select="Forward 2" scaleX="0.67"/>
     </path>
     <path>
-      <move select="Forward 2"/>
+      <move select="Forward 2" scaleX="0.67"/>
     </path>
     <path>
       <move select="Flip Right"/>
@@ -245,10 +245,10 @@
       <move select="Flip Left"/>
     </path>
     <path>
-      <move select="Forward 2"/>
+      <move select="Forward 2" scaleX="0.67"/>
     </path>
     <path>
-      <move select="Forward 2"/>
+      <move select="Forward 2" scaleX="0.67"/>
     </path>
     <path>
       <move select="Flip Left"/>
