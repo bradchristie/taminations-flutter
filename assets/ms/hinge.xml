@@ -25,7 +25,7 @@
   <tam title="Hinge"
        from="Right-Hand Box"
        formation="Box RH"
-       difficulty="1">
+       difficulty="1" sequencer="no">
     <path>
       <move select="Hinge Right" beats="2" />
     </path>
@@ -73,7 +73,7 @@
   <tam title="Hinge"
        from="Right-Hand Wave"
        formation="Wave RH"
-       difficulty="1">
+       difficulty="1" sequencer="no">
     <path>
       <move select="Hinge Right" beats="2" />
     </path>

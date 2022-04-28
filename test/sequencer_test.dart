@@ -604,7 +604,6 @@ Allemande Left''',
   'Spread' :
   '''Heads Touch a Quarter and Spread
 Centers Pass the Ocean
-Adjust to Diamonds
 Flip the Diamond
 In-Roll Circulate and Spread
 Split Circulate
@@ -2127,7 +2126,6 @@ Allemande Left''',
   '''Heads Touch 1/4 and Spread
 Wave Dancers Trade
 Centers Pass the Ocean
-Adjust to Diamonds
 Diamond Circulate
 Flip the Diamond
 Fan the Top
@@ -3045,6 +3043,20 @@ Star Thru
 Right and Left Thru
 Pass Thru
 Trade By
-Allemande Left'''
+Allemande Left''',
+
+  'Wheel And' :
+'''Heads Pass Thru
+Wheel and Cross Trail Thru
+Pass Thru
+Wheel and Star Thru
+Double Pass Thru
+Reverse Wheel and Chase Right
+Centers Run
+Centers Touch a Quarter
+Left Quarter Thru
+Circulate
+Quarter In
+Right and Left Grand'''
 
 };
