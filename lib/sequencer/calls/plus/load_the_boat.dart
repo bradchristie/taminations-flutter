@@ -27,7 +27,8 @@ class LoadTheBoat extends Action with CallWithParts, ButCall {
   LoadTheBoat() : super('Load the Boat');
 
   String _endsPart(CallContext ctx) {
-    if (ctx.outer(4).every((d) => d.isFacingIn))
+    if (ctx.outer(4).every((d) => d.isFacingIn) ||
+        ctx.outer(4).every((d) => d.isOnAxis))
       return 'Pass Thru';
     else if (ctx.outer(4).every((d) => d.isFacingOut))
       return 'Bend and Pass Thru';
