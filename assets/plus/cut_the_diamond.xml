@@ -33,7 +33,6 @@
     <path>
       <move select="Forward 2" />
       <move select="Lead Right" beats="2"/>
-      <move select="Stand" hands="none" beats="2"/>
     </path>
   </tam>
 
@@ -48,7 +47,6 @@
     <path>
       <move select="Forward 2" />
       <move select="Lead Left" beats="2"/>
-      <move select="Stand" hands="none" beats="2"/>
     </path>
   </tam>
 
@@ -63,7 +61,6 @@
     <path>
       <move select="Forward 2" />
       <move select="Lead Right" beats="2"/>
-      <move select="Stand" hands="none" beats="2"/>
     </path>
   </tam>
 
@@ -78,7 +75,6 @@
     <path>
       <move select="Forward 2" />
       <move select="Lead Left" beats="2"/>
-      <move select="Stand" hands="none" beats="2"/>
     </path>
   </tam>
 
@@ -278,7 +274,6 @@
     <path>
       <move select="Forward" beats="2" scaleX="1.5" />
       <move select="Lead Right"  beats="2"/>
-      <move select="Stand" beats="2" hands="none"/>
     </path>
     <path>
       <move select="Dodge Right" scaleX=".25" scaleY=".25" />
@@ -286,7 +281,6 @@
     </path>
     <path>
       <move select="Lead Right" beats="4" scaleX=".5" />
-      <move select="Stand" beats="2" hands="none"/>
     </path>
     <path>
       <move select="Dodge Right" scaleX="1.25" scaleY="1.25" />
