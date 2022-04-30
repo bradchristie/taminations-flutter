@@ -185,6 +185,144 @@
     </path>
   </tam>
 
+  <tam title="2/3 Recycle, by definition,"
+       from="Right-Hand Wave"
+       formation="Wave RH">
+    <path>
+      <move select="Extend Right" scaleX="1.5" scaleY="2" beats="2"/>
+      <move select="Counter Rotate Right 0 -2" hands="right" offsetX="-0.5" scaleY="1.25"/>
+    </path>
+    <path>
+      <move select="U-Turn Right" beats="2" offsetX="1.5"/>
+      <move select="Counter Rotate Right 2 0" hands="right" scaleX="1.25" offsetY=".5"/>
+    </path>
+    <taminator>
+      This explicitly shows both parts,
+      but is not how experienced dancers perform the call.
+    </taminator>
+  </tam>
+
+  <tam title="2/3 Recycle, by definition,"
+       from="Left-Hand Wave"
+       formation="Wave LH">
+    <path>
+      <move select="Extend Left" scaleX="1.5" scaleY="2" beats="2"/>
+      <move select="Counter Rotate Left 0 2" hands="left" offsetX="-0.5" scaleY="1.25"/>
+    </path>
+    <path>
+      <move select="U-Turn Left" beats="2" offsetX="1.5"/>
+      <move select="Counter Rotate Left 2 0" hands="left"
+            scaleX="1.25" offsetY="-0.5"/>
+    </path>
+    <taminator>
+      This explicitly shows both parts,
+      but is not how experienced dancers perform the call.
+    </taminator>
+  </tam>
+
+  <tam title="2/3 Recycle, by definition,"
+       from="Right-Hand Waves"
+       formation="Ocean Waves RH BGGB">
+    <path>
+      <move select="Extend Right" scaleY="2" beats="2"/>
+      <move select="Counter Rotate Right 0 -2" hands="right" scaleY="1.25"/>
+    </path>
+    <path>
+      <move select="U-Turn Right" beats="2" offsetX="1"/>
+      <move select="Counter Rotate Right 2 0" hands="right" offsetY=".5"/>
+    </path>
+    <path>
+      <move select="U-Turn Right" beats="2" offsetX="1"/>
+      <move select="Counter Rotate Right 2 0" hands="right" offsetY=".5"/>
+    </path>
+    <path>
+      <move select="Extend Right" scaleY="2" beats="2"/>
+      <move select="Counter Rotate Right 0 -2" hands="right" scaleY="1.25"/>
+    </path>
+    <taminator>
+      This explicitly shows both parts,
+      but is not how experienced dancers perform the call.
+    </taminator>
+  </tam>
+
+  <tam title="2/3 Recycle, by definition,"
+       from="Left-Hand Waves"
+       formation="Ocean Waves LH BGGB">
+    <path>
+      <move select="Extend Left" scaleY="2" beats="2"/>
+      <move select="Counter Rotate Left 0 2" hands="left" scaleY="1.25"/>
+    </path>
+    <path>
+      <move select="U-Turn Left" beats="2" offsetX="1"/>
+      <move select="Counter Rotate Left 2 0" hands="left" offsetY="-0.5"/>
+    </path>
+    <path>
+      <move select="U-Turn Left" beats="2" offsetX="1"/>
+      <move select="Counter Rotate Left 2 0" hands="left" offsetY="-0.5"/>
+    </path>
+    <path>
+      <move select="Extend Left" scaleY="2" beats="2"/>
+      <move select="Counter Rotate Left 0 2" hands="left" scaleY="1.25"/>
+    </path>
+    <taminator>
+      This explicitly shows both parts,
+      but is not how experienced dancers perform the call.
+    </taminator>
+  </tam>
+
+  <tam title="2/3 Recycle, by definition,"
+       from="Right-Hand Tidal Wave"
+       formation="Tidal Wave RH BGGB">
+    <path>
+      <move select="Extend Right" scaleX="1.5" scaleY="0.5" beats="2"/>
+      <move select="Counter Rotate Right 0 -2" hands="right"
+            offsetX="-0.5"/>
+    </path>
+    <path>
+      <move select="U-Turn Right" beats="2" offsetX="1.5" offsetY="-0.5"/>
+      <move select="Counter Rotate Right 2 0" hands="right"
+            scaleX="1.25"/>
+    </path>
+    <path>
+      <move select="U-Turn Right" beats="2" offsetX="1.5" offsetY="-0.5"/>
+      <move select="Counter Rotate Right 2 0" hands="right" scaleX="1.25"/>
+    </path>
+    <path>
+      <move select="Extend Right" scaleX="1.5" scaleY="0.5" beats="2"/>
+      <move select="Counter Rotate Right 0 -2" hands="right" offsetX="-0.5"/>
+    </path>
+    <taminator>
+      This explicitly shows both parts,
+      but is not how experienced dancers perform the call.
+    </taminator>
+  </tam>
+
+  <tam title="2/3 Recycle, by definition,"
+       from="Left-Hand Tidal Wave"
+       formation="Tidal Wave LH BGGB">
+    <path>
+      <move select="Extend Left" scaleX="1.5" scaleY="0.5" beats="2"/>
+      <move select="Counter Rotate Left 0 2" hands="left"
+            offsetX="-0.5"/>
+    </path>
+    <path>
+      <move select="U-Turn Left" beats="2" offsetX="1.5" offsetY="0.5"/>
+      <move select="Counter Rotate Left 2 0" hands="left" scaleX="1.25"/>
+    </path>
+    <path>
+      <move select="U-Turn Left" beats="2" offsetX="1.5" offsetY="0.5"/>
+      <move select="Counter Rotate Left 2 0" hands="left" scaleX="1.25"/>
+    </path>
+    <path>
+      <move select="Extend Left" scaleX="1.5" scaleY="0.5" beats="2"/>
+      <move select="Counter Rotate Left 0 2" hands="left" offsetX="-0.5"/>
+    </path>
+    <taminator>
+      This explicitly shows both parts,
+      but is not how experienced dancers perform the call.
+    </taminator>
+  </tam>
+
   <tam title="2/3 Recycle"
        from="Right-Hand Wave"
        formation="Wave RH">
@@ -195,6 +333,10 @@
       <move select="Hinge Right"/>
       <move select="Run Right" offsetX="-.5"/>
     </path>
+    <taminator>
+      This is how experienced dancers perform the call,
+      but does not show the call as two parts.
+    </taminator>
   </tam>
 
   <tam title="2/3 Recycle"
@@ -207,6 +349,10 @@
       <move select="Hinge Left"/>
       <move select="Run Left" offsetX="-0.5"/>
     </path>
+    <taminator>
+      This is how experienced dancers perform the call,
+      but does not show the call as two parts.
+    </taminator>
   </tam>
 
   <tam title="2/3 Recycle"
@@ -224,6 +370,10 @@
     <path>
       <move select="Lead Right" beats="4.5" scaleY="5" />
     </path>
+    <taminator>
+      This is how experienced dancers perform the call,
+      but does not show the call as two parts.
+    </taminator>
   </tam>
 
   <tam title="2/3 Recycle"
@@ -241,6 +391,10 @@
     <path>
       <move select="Lead Left" beats="4.5" scaleY="5" />
     </path>
+    <taminator>
+      This is how experienced dancers perform the call,
+      but does not show the call as two parts.
+    </taminator>
   </tam>
 
   <tam title="2/3 Recycle" from="Right-Hand Tidal Wave"
@@ -261,6 +415,10 @@
     <path>
       <move select="Lead Right" beats="4.5" scaleY="2.5" />
     </path>
+    <taminator>
+      This is how experienced dancers perform the call,
+      but does not show the call as two parts.
+    </taminator>
   </tam>
 
   <tam title="2/3 Recycle" from="Left-Hand Tidal Wave"
@@ -281,6 +439,10 @@
     <path>
       <move select="Lead Left" beats="4.5" scaleY="2.5" />
     </path>
+    <taminator>
+      This is how experienced dancers perform the call,
+      but does not show the call as two parts.
+    </taminator>
   </tam>
 
 
