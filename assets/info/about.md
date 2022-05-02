@@ -20,19 +20,20 @@ Call pronunciations provided by
 
 ---
 
-## Taminations version 1.6.38 built 2022-04-18
+## Taminations version 1.6.39 built 2022-05-02
 Copyright 2022 by Brad Christie.  
 This is free software, and you are welcome to modify and redistribute it
 under the terms of the [GNU GPL license](http://www.gnu.org/licenses/gpl.html).  
 
 ## What's New
-* More animations for Zing
-* Fix display problem with Practice
+* Show 2/3 Recycle both smoothly and in 2 parts
+* Better animations for Sets in Motion
+* Fix some animations for Step and Flip, Step and Slide  
 * Sequencer changes:
-  * Don't replace abbreviations inside comments
-  * Turn and Deal, Tag and Half Tag for lines of 6 and 8
-  * Fix for some cases of Trade from tidal formations
-  * Fix for some cases of 4-dancer Cloverleaf
+  * Fix abbreviations of settings and special commands
+  * Fix several cases of center 4 improperly colliding with outer 4
+  * Fix bad animations for Touch 1/2
+  * Fix several cases of dancers not doing Roll when they should
 
 
 For a detailed history of changes, view the
