@@ -92,6 +92,7 @@ class _TaminationsAppState extends fm.State<TaminationsApp> {
               builder: (context,snapshot) =>
               snapshot.hasData ?
               fm.MaterialApp.router(
+                debugShowCheckedModeBanner: false,
                 theme: fm.ThemeData(
                   fontFamily: 'Roboto',
                   textTheme: GoogleFonts.robotoTextTheme(),
