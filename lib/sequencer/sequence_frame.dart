@@ -246,6 +246,10 @@ class _SequencerEditLineState extends fm.State<SequencerEditLine> {
                   controller: textFieldController,
                   decoration: fm.InputDecoration(
                       hintText: 'Enter calls',
+                      suffixIcon: fm.IconButton(
+                          icon:fm.Icon(fm.Icons.clear),
+                        onPressed: () => { textFieldController.clear() },
+                      ),
                       errorStyle: fm.TextStyle(fontSize: 20),
                       errorMaxLines: 10,
                       errorText: model.errorString.isEmpty ? null : model.errorString),
@@ -317,6 +321,7 @@ class _SequencerEditLineState extends fm.State<SequencerEditLine> {
   void _sendOneLine(SequencerModel model, String value) async {
     final settings = pp.Provider.of<Settings>(context,listen: false);
     final oldbeats = model.animation.movingBeats;
+    var hasError = false;
     //  Accept more than one call separated by semi colons
     for (final call in value.split(';')) {
       //  Process the call
@@ -333,6 +338,7 @@ class _SequencerEditLineState extends fm.State<SequencerEditLine> {
       else if (call.lc.trim().startsWith('axes'))
         model.setAxes(call, settings);
       else if (!(await model.loadOneCall(call)))
+        hasError = true;
         break;
     }
     //  Animate from the previous position
@@ -340,8 +346,10 @@ class _SequencerEditLineState extends fm.State<SequencerEditLine> {
       model.animation.beater.beat = oldbeats;
       model.animation.doPlay();
     }
-    //  Erase it from the the text field
-    textFieldController.clear();
+    //  Erase it from the the text field, unless there's an error
+    //  that the user might want to fix
+    if (!hasError)
+      textFieldController.clear();
     //  And get the focus back for the next call
     later(() {
       focusNode.requestFocus();
