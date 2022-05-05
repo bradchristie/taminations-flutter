@@ -81,7 +81,7 @@ class CloverAnd extends Action {
     await ctx.subContext(clovers, (ctx2) async {
       await ctx2.applyCalls('$cloverCall and');
       //  "Clover and <nothing>" is stored in A-1 but is really Mainstream
-      level = LevelData.MS;
+      ctx2.level = LevelData.MS;
     });
     //  And the other 4 do the next call at the same time
     await ctx.subContext(ctx.dancers.where((d) => !clovers.contains(d)).toList(), (ctx2) async {
