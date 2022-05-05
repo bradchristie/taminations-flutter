@@ -573,7 +573,7 @@ class CallContext {
       for (var onecall in chopped) {
         //print('Trying $onecall');
         //  First try to find a snapshot match
-        if (onecall != calltext || !skipFirstXML) {
+        if (onecall.norm.lc != calltext.norm.lc || !skipFirstXML) {
           try {
             foundOneCall = await matchXMLcall(onecall);
           } on CallError catch (err2) {
@@ -583,7 +583,7 @@ class CallContext {
         //  Then look for a code match
         foundOneCall = foundOneCall || matchCodedCall(onecall);
         //  Finally try a fuzzier snapshot match
-        if (onecall != calltext || !skipFirstXML) {
+        if (onecall.norm.lc != calltext.norm.lc || !skipFirstXML) {
           try {
             foundOneCall =
                 foundOneCall || await matchXMLcall(onecall, fuzzy: true);

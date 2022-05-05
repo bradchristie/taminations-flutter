@@ -23,6 +23,8 @@ import 'dart:math';
 import 'package:flutter/material.dart' as fm;
 import 'package:xml/xml.dart';
 
+import 'tam_utils.dart';
+
 void later(void Function() f) {
   fm.WidgetsBinding.instance!.addPostFrameCallback((_) { f(); });
 }
@@ -115,6 +117,7 @@ extension TamString on String {
   //  Capitalize words except for common small words
   String capWords() => split('\\s+'.r).map((s) => s.capitalize()).join(' ')
       .replaceAllMapped('\\b(A|An|At|And|To|The)\\b'.r, (m) => m[1]!.toLowerCase());
+  String get norm => TamUtils.normalizeCall(this);
   //  Matches is true if the regexp matches the entire string
   bool matches(RegExp e) => (e.stringMatch(this)?.length ?? -1) == length;
   //  Divide is split with a limit of 2
