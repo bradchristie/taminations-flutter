@@ -211,6 +211,34 @@
   </tam>
 
   <tam title="Allemande Left" sequencer="gender-specific"
+       from="Left-Hand 3/4 Tag">
+    <formation>
+      <dancer gender="boy" x="-1" y="3" angle="90"/>
+      <dancer gender="girl" x="-3" y="0" angle="270"/>
+      <dancer gender="boy" x="-1" y="0" angle="90"/>
+      <dancer gender="girl" x="-1" y="-3" angle="270"/>
+    </formation>
+    <path>
+      <move select="Quarter Right" offsetX="-0.5" offsetY="-1"/>
+      <move select="Swing Left" scaleX=".5" scaleY=".5"/>
+      <move select="Eighth Left" offsetX="1" offsetY="0.5"/>
+    </path>
+    <path>
+      <move select="Swing Left"/>
+      <move select="Extend Left"/>
+    </path>
+    <path>
+      <move select="Swing Left"/>
+      <move select="Extend Left"/>
+    </path>
+    <path>
+      <move select="Quarter Left" offsetX="0.5" offsetY="1"/>
+      <move select="Swing Left" scaleX=".5" scaleY=".5"/>
+      <move select="Eighth Right" offsetX="1" offsetY="0.5"/>
+    </path>
+  </tam>
+
+  <tam title="Allemande Left" sequencer="gender-specific"
        from="Static Square"
        formation="Static Square" >
     <path>
