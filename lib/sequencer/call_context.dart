@@ -1233,6 +1233,17 @@ class CallContext {
     );
   }
 
+  List<Dancer>? waveOf6() {
+    final xDancers = dancers.where((d) => d.isOnXAxis);
+    final yDancers = dancers.where((d) => d.isOnYAxis);
+    if (xDancers.length == 6)
+      return xDancers.toList();
+    else if (yDancers.length == 6)
+      return yDancers.toList();
+    else
+      return null;
+  }
+
   List<Dancer> dancersHoldingRightHands({bool isGrand=true}) =>
       dancers.where((d) {
         final d2 = dancerToRight(d);

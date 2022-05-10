@@ -160,6 +160,7 @@ import 'c2/cross_and_wheel.dart';
 import 'c2/cross_ramble.dart';
 import 'c2/cross_trade_and_wheel.dart';
 import 'c2/detour.dart';
+import 'c2/fascinating.dart';
 import 'c2/flip_your_neighbor.dart';
 import 'c2/grand_cross_trade_and_wheel.dart';
 import 'c2/grand_single_cross_and_wheel.dart';
@@ -345,6 +346,7 @@ abstract class CodedCall extends Call {
 
     'face(in|out|left|right)'.ri: (name) => Face(name),
     'facing'.ri: (_) => FacingDancers(),
+    'fascinating.*'.ri: (name) => Fascinating(name),
     'finish.+'.ri: (name) => Finish(name),
     'flip(in|out|left|right)'.ri: (name) => Flip(name),
     'flipback'.ri: (_) => FlipBack(),

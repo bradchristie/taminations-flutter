@@ -180,7 +180,9 @@ class Movement {
     if (b <= 0.0 || b > beats)
       throw ArgumentError('Invalid clip beats');
     var fraction = b / beats;
-    return Movement(b,hands,btranslate.clip(fraction),brotate.clip(fraction));
+    return Movement(b,hands,
+        btranslate.clip(fraction),brotate.clip(fraction),
+        fromCall: fromCall);
   }
 
   bool isStand() => btranslate.isIdentity() && brotate.isIdentity();
