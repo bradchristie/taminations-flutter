@@ -3057,6 +3057,16 @@ Centers Touch a Quarter
 Left Quarter Thru
 Circulate
 Quarter In
-Right and Left Grand'''
+Right and Left Grand''',
+
+  'Centers Trade the Wave' :
+'''Sides Pass the Ocean
+Centers Trade the Wave
+Extend
+Boys Trade
+Girls Run
+Ferris Wheel
+Centers Pass Thru
+Allemande Left'''
 
 };

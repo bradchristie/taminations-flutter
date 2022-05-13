@@ -522,7 +522,7 @@ abstract class CodedCall extends Call {
     '(left)?touch'.ri: (name) => Touch(name),
     'steptoa(lefthand)?wave'.ri: (name) => Touch(name),
     '(left)?touch1(4|2)'.ri: (name) => TouchAQuarter(name),
-    '(partner)?trade'.ri: (name) => Trade(name),
+    '(partner)?trade(?!thewave)'.ri: (name) => Trade(name),
     'trail'.ri: (name) => Trailers(name),
     'transferand.+'.ri: (name) => TransferAnd(name),
     '(inside|outside|inpoint|outpoint|tandembased|wavebased)?trianglecirculate'.ri:

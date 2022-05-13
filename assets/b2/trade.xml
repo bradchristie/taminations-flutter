@@ -338,7 +338,7 @@
   <tam title="Centers Trade"
        from="Lines"
        formation="Normal Lines"
-       difficulty="2">
+       difficulty="2" sequencer="no">
     <path>
     </path>
     <path>
@@ -353,7 +353,7 @@
 
   <tam title="Centers Trade"
        from="Lines Facing Out"
-       difficulty="1">
+       difficulty="1" sequencer="no">
     <formation>
       <dancer gender="girl" x="-2" y="3" angle="180"/>
       <dancer gender="girl" x="-2" y="1" angle="180"/>
@@ -375,7 +375,7 @@
   <tam title="Centers Trade"
        from="Waves"
        formation="Ocean Waves RH BGBG"
-       difficulty="1">
+       difficulty="1" sequencer="no">
     <path>
     </path>
     <path>
@@ -391,7 +391,7 @@
   <tam title="Centers Trade"
        from="Eight Chain Thru"
        formation="Eight Chain Thru"
-       difficulty="2">
+       difficulty="2" sequencer="no">
     <path>
     </path>
     <path>
