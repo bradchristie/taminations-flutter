@@ -103,8 +103,7 @@ class Circulate extends Action {
     else if (ctx.actives.length == 6) {
       //  If there is a dancer directly or diagonally in front, go there
       var d2 = ctx.dancerClosest(d, (it) =>
-          it.data.active && d.angleToDancer(it).abs().isLessThan(pi/2) &&
-          !d.angleFacing.isAround(it.angleFacing+pi)
+          it.data.active && d.angleToDancer(it).abs().isLessThan(pi/2)
       );
       if (d2 != null) {
         var v = d.vectorToDancer(d2);
