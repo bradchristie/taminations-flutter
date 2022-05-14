@@ -26,7 +26,7 @@ import 'package:xml/xml.dart';
 import 'tam_utils.dart';
 
 void later(void Function() f) {
-  fm.WidgetsBinding.instance!.addPostFrameCallback((_) { f(); });
+  fm.WidgetsBinding.instance.addPostFrameCallback((_) { f(); });
 }
 
 Future<T> afterDelay<T>(T Function()f, [Duration? when]) async {

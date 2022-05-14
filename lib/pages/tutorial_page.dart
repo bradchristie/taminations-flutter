@@ -89,7 +89,7 @@ class TutorialModel extends PracticeModel {
         .replaceAll('%2', fingers[1]);
     if (showNextDialog) {
       showNextDialog = false;
-      fm.WidgetsBinding.instance!.addPostFrameCallback((_) {
+      later(() {
         fm.showDialog(
             context: context,
             barrierDismissible: false,
