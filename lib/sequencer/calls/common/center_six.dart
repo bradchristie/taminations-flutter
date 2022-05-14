@@ -18,9 +18,8 @@
 
 */
 
-import '../../call_context.dart';
-import '../../call_error.dart';
 import '../coded_call.dart';
+import '../common.dart';
 
 class CenterSix extends CodedCall {
 
@@ -28,29 +27,9 @@ class CenterSix extends CodedCall {
 
   @override
   Future<void> performCall(CallContext ctx) async {
-    if (ctx.dancers.length != 8)
-      throw CallError('Not enough dancers.');
-    if (ctx.groups.length < 2)
-      throw CallError('Cannot find 6 dancers in center');
-    //  Look for the easy case - two dancers obviously further out than the rest
-    var farOut = ctx.groups.last;
-    if (farOut.length == 2) {
-      farOut[0].data.active = false;
-      farOut[1].data.active = false;
-    } else {
-      // That didn't work - look for a 2-2-4 arrangement where the outer 4
-      // are not much further out than the closer in 2 and assume
-      // the user considers those 2 to be on the outside
-      var lessFarOut = ctx.groups[ctx.groups.length-2];
-      if (lessFarOut.length == 2 &&
-          farOut[0].location.length - lessFarOut[0].location.length < 0.5) {
-        lessFarOut[0].data.active = false;
-        lessFarOut[1].data.active = false;
-      }
-      else  //  Could not separate 6 dancers from other 2
-        throw CallError('Cannot find 6 dancers in center');
+    for (var d in ctx.dancers - ctx.center6()) {
+      d.data.active = false;
     }
-
   }
 
 }

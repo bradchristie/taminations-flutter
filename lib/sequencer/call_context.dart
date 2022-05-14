@@ -1200,6 +1200,34 @@ class CallContext {
       dancers.sortedWith((d1, d2) => d1.location.length.compareTo(d2.location.length))
           .take(num).toList();
 
+  //  Smarter code for center 6, works for 1/4 and 3/4 tags
+  //  Requires call to analyze()
+  List<Dancer> center6() {
+    if (dancers.length == 6)
+      return dancers;
+    if (dancers.length != 8)
+      throw CallError('Not enough dancers.');
+    if (groups.length < 2)
+      throw CallError('Cannot find 6 dancers in center');
+    //  Look for the easy case - two dancers obviously further out than the rest
+    var farOut = groups.last;
+    if (farOut.length == 2) {
+      return dancers - farOut;
+    } else {
+      // That didn't work - look for a 2-2-4 arrangement where the outer 4
+      // are not much further out than the closer in 2 and assume
+      // the user considers those 2 to be on the outside
+      var lessFarOut = groups[groups.length-2];
+      if (lessFarOut.length == 2 &&
+          farOut[0].location.length - lessFarOut[0].location.length < 0.5) {
+        return dancers - lessFarOut;
+      }
+      else  //  Could not separate 6 dancers from other 2
+        throw CallError('Cannot find 6 dancers in center');
+    }
+  }
+
+
   //  Returns points of a diamond formations
   //  Formation to match must have girl points
   List<Dancer> pointsOfDiamondFormation(String f) {

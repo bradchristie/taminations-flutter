@@ -29,6 +29,7 @@ import 'a1/chain_reaction.dart';
 import 'a1/clover_and.dart';
 import 'a1/cross.dart';
 import 'a1/cross_over_circulate.dart';
+import 'a1/double_cross.dart';
 import 'a1/horseshoe_turn.dart';
 import 'a1/linear_cycle.dart';
 import 'a1/mix.dart';
@@ -336,6 +337,7 @@ abstract class CodedCall extends Call {
     '(reverse)?dixiediamond'.ri: (name) => DixieDiamond(name),
     'dothe.+?part.+'.ri: (name) => DoOnePart(name),
     '(left)?dosado'.ri: (name) => Dosado(name),
+    'doublecross'.ri: (_) => DoubleCross(),
     'doyourpart.+'.ri: (name) => DoYourPart(name),
 
     '8chain(1|2|3|4|5|6|7|thru)'.ri: (name) => EightChain(name),

@@ -3067,6 +3067,25 @@ Boys Trade
 Girls Run
 Ferris Wheel
 Centers Pass Thru
+Allemande Left''',
+
+  'Double Cross' :
+'''Heads Pass the Sea
+Side Boys Run
+Double Cross
+Boys Trade
+Double Cross
+Double Cross
+Clover and Wheel and Deal
+Centers Star Thru
+Centers Pass Thru
+Touch a Quarter
+Quarter Thru
+Hinge
+Boys Circulate
+Boys Run
+Circulate
+Wheel and Deal
 Allemande Left'''
 
 };
