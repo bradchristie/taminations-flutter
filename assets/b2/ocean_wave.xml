@@ -136,6 +136,66 @@
     </path>
   </tam>
 
+  <tam title="Balance" from="Right-Hand Waves"
+       formation="Ocean Waves RH BGGB" difficulty="1">
+    <path>
+      <move select="Forward" beats="2" hands="gripright" scaleX=".35"/>
+      <move select="Back" beats="2" hands="gripright" scaleX=".35"/>
+    </path>
+    <path>
+      <move select="Forward" beats="2" hands="gripboth" scaleX=".35"/>
+      <move select="Back" beats="2" hands="gripboth" scaleX=".35"/>
+    </path>
+    <path>
+      <move select="Forward" beats="2" hands="gripboth" scaleX=".35"/>
+      <move select="Back" beats="2" hands="gripboth" scaleX=".35"/>
+    </path>
+    <path>
+      <move select="Forward" beats="2" hands="gripright" scaleX=".35"/>
+      <move select="Back" beats="2" hands="gripright" scaleX=".35"/>
+    </path>
+  </tam>
+
+  <tam title="Balance" from="Left-Hand Waves"
+       formation="Ocean Waves LH BGGB" difficulty="1">
+    <path>
+      <move select="Forward" beats="2" hands="gripleft" scaleX=".35"/>
+      <move select="Back" beats="2" hands="gripleft" scaleX=".35"/>
+    </path>
+    <path>
+      <move select="Forward" beats="2" hands="gripboth" scaleX=".35"/>
+      <move select="Back" beats="2" hands="gripboth" scaleX=".35"/>
+    </path>
+    <path>
+      <move select="Forward" beats="2" hands="gripboth" scaleX=".35"/>
+      <move select="Back" beats="2" hands="gripboth" scaleX=".35"/>
+    </path>
+    <path>
+      <move select="Forward" beats="2" hands="gripleft" scaleX=".35"/>
+      <move select="Back" beats="2" hands="gripleft" scaleX=".35"/>
+    </path>
+  </tam>
+
+  <tam title="Balance" from="Alamo Ring"
+       formation="Alamo Wave" difficulty="1">
+    <path>
+      <move select="Forward" beats="2" hands="gripboth" scaleX=".35"/>
+      <move select="Back" beats="2" hands="gripboth" scaleX=".35"/>
+    </path>
+    <path>
+      <move select="Forward" beats="2" hands="gripboth" scaleX=".35"/>
+      <move select="Back" beats="2" hands="gripboth" scaleX=".35"/>
+    </path>
+    <path>
+      <move select="Forward" beats="2" hands="gripboth" scaleX=".35"/>
+      <move select="Back" beats="2" hands="gripboth" scaleX=".35"/>
+    </path>
+    <path>
+      <move select="Forward" beats="2" hands="gripboth" scaleX=".35"/>
+      <move select="Back" beats="2" hands="gripboth" scaleX=".35"/>
+    </path>
+  </tam>
+
   <tam title="Heads Step to a Wave" group=" "
        formation="Static Square"
        difficulty="2">
