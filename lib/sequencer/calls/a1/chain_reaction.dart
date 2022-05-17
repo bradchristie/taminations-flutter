@@ -31,7 +31,7 @@ class ChainReaction extends Action with CallWithParts, CallWithStars, ButCall {
         ctx.center(4).every((d) => ctx.isInWave(d))
         ? LevelData.A1 : LevelData.C1;
     await ctx.applyCalls('Facing Dancers Pass Thru While Ends Counter Rotate');
-    ctx.matchStandardFormation();
+    ctx.adjustToFormation('Sausage RH');
     ctx.level = level;
   }
 

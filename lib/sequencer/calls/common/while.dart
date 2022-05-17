@@ -45,6 +45,7 @@ class While extends Action {
     var whilecall = name.toLowerCase()
         .replaceAll('while (the )?'.r,'')
         .replaceAll('(the )?others? '.r,'');
+    //ctx.checkCenters();
     await ctx2.applyCalls(whilecall);
     ctx2.appendToSource();
 

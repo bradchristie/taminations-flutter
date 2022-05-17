@@ -161,7 +161,8 @@ class CallContext {
     'Facing Blocks Left' : 2.0,
     'Concentric Diamonds RH' : 2.0,
     'Quarter Z RH' : 4.0,
-    'Quarter Z LH' : 4.0
+    'Quarter Z LH' : 4.0,
+    'Diamond Between Kouples' : 4.0
   };
 
   static const twoCoupleFormations = {
@@ -924,16 +925,22 @@ class CallContext {
   void checkCenters() {
     animate(0.0);
     analyze();
+    final movingDancers = dancers.where((d) =>
+        d.path.movelist.any((m) => m.fromCall)).toList();
     final groupsOK = groups.length > 1 && (groups[0].length == 4 ||
         (groups[0].length==2 && groups[1].length==2));
-    if (groupsOK && actives.length == 4 && center(4).containsAll(actives)) {
+    if (groupsOK && movingDancers.length == 4 && center(4).containsAll(movingDancers)) {
       animateToEnd();
-      if (!center(4).containsAll(actives)) {
+      var minDist = actives.minOf((d) =>
+          dancerClosest(d, (d2) => !movingDancers.contains(d2))!.distanceTo(d));
+      if (!center(4).containsAll(movingDancers) || !minDist.isGreaterThan(1.0)) {
         //print('WARNING centers mix with other dancers!');
         animate(0.0);
         final ctx2 = CallContext.fromDancers(center(4));
         if (ctx2.isLines()) {
           ctx2.adjustToFormation('Compact Wave RH');
+        } else if (ctx2.isDiamond()) {
+          ctx2.adjustToFormation('Diamond Compact');
         } else
           return;
         animateToEnd();

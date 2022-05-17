@@ -27,6 +27,8 @@ class AceyDeucey extends Action {
 
   @override
   Future<void> perform(CallContext ctx, [int i = 0]) async {
+    if (ctx.actives.length != 8)
+      throw CallError('Acey Deucey must involve all 8 dancers');
     if (CallContext.fromDancers(ctx.outer(4)).isDiamond())
       await ctx.applyCalls('Center 4 Trade While Outer 4 Diamond Circulate');
     else

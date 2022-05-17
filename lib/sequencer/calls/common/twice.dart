@@ -19,8 +19,8 @@
 */
 
 import '../coded_call.dart';
-import '../../call_context.dart';
-import '../../call_error.dart';
+import '../common.dart';
+import '../xml_call.dart';
 
 class Twice extends CodedCall {
 
@@ -28,16 +28,22 @@ class Twice extends CodedCall {
 
   @override
   Future<void> performCall(CallContext ctx) async {
-    final stackIndex = ctx.callstack.indexOf(this);
-    if (stackIndex < 1)
+    //  Find the previous call that we want to repeat,
+    //  skipping any selectors
+    var stackIndex = ctx.callstack.indexOf(this) - 1;
+    while (stackIndex >= 0 &&
+        !(ctx.callstack[stackIndex] is Action || ctx.callstack[stackIndex] is XMLCall))
+      stackIndex -= 1;
+    if (stackIndex < 0)
       throw CallError('Twice what?');
     //  At this point the call has already been done once
     //  Make sure everyone waits to finish the first time
     ctx.extendPaths();
-    //  So just do it again
-    var prevCall = ctx.callstack.take(stackIndex)
-        .map((it) => it.name).join(' ');
-    await ctx.applyCalls(prevCall);
+    //  So do it again
+    var prevCall = ctx.callstack[stackIndex].name;
+    //  If not all dancers active, assume we mean those selected do your part
+    var dyp = ctx.actives.length < ctx.dancers.length ? 'Do Your Part ' : '';
+    await ctx.applyCalls(dyp + prevCall);
   }
 
 }

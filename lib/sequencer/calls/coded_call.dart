@@ -535,10 +535,10 @@ abstract class CodedCall extends Call {
     'tripletrade'.ri: (_) => TripleTrade(),
     '(reverse)?truck'.ri: (name) => Truck(name),
     '(left)?turnthru'.ri: (name) => TurnThru(name),
-    '(go)?twice'.ri: (name) => Twice(name),
     '(left)?turnanddeal'.ri: (name) => TurnAndDeal(name),
     'u?turnback'.ri: (_) => TurnBack(),
     '.*(donot)?turnthestars?(14|12|34|afullturn)'.ri: (name) => TurnTheStar(name),
+    '(go)?twice'.ri: (name) => Twice(name),
     'twist(theline|and.+)'.ri: (name) => TwistAnything(name),
 
     '(left)?vertical(left)?(14|12|34)?tag'.ri: (name) => VerticalTag(name),
