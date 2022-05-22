@@ -243,7 +243,7 @@
     </path>
   </tam>
 
-  <tam title="Center 6 Walk and Dodge" from="Mixed Quarter Tag 1" formation="Mixed Quarter Tag #3" difficulty="3">
+  <tam title="Center 6 Walk and Dodge" from="Mixed Quarter Tag 1" formation="Mixed Quarter Tag #2" difficulty="3">
     <path>
       <move select="Forward 3" beats="4" />
     </path>
@@ -258,7 +258,35 @@
     </path>
   </tam>
 
-  <tam title="Center 6 Walk and Dodge" from="Mixed Quarter Tag 2" formation="Mixed Quarter Tag #8" difficulty="3">
+  <tam title="Center 6 Walk and Dodge" from="Mixed Quarter Tag 2" formation="Mixed Quarter Tag #3" difficulty="3">
+    <path>
+      <move select="Forward 3" beats="4" />
+    </path>
+    <path>
+      <move select="Dodge Right" beats="4" />
+    </path>
+    <path>
+      <!-- do nothing -->
+    </path>
+    <path>
+      <move select="Forward 3" beats="4" />
+    </path>
+  </tam>
+  <tam title="Center 6 Walk and Dodge" from="Mixed Quarter Tag 3" formation="Mixed Quarter Tag #5" difficulty="3">
+    <path>
+      <move select="Dodge Left" beats="4" />
+    </path>
+    <path>
+      <move select="Forward 3" beats="4" />
+    </path>
+    <path>
+      <!-- do nothing -->
+    </path>
+    <path>
+      <move select="Forward 3" beats="4" />
+    </path>
+  </tam>
+  <tam title="Center 6 Walk and Dodge" from="Mixed Quarter Tag 4" formation="Mixed Quarter Tag #8" difficulty="3">
     <path>
       <move select="Dodge Left" beats="4" />
     </path>
