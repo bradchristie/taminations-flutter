@@ -301,6 +301,65 @@
     </path>
   </tam>
 
+
+  <tam title="Outside 6 Walk and Dodge" from="Mixed Quarter Tag 1" formation="Mixed Quarter Tag #1" sequencer="perimeter" difficulty="3">
+    <path>
+      <move select="Extend Left" beats="4" scaleX="3" scaleY="2"/>
+    </path>
+    <path>
+      <move select="Dodge Right" beats="4" />
+    </path>
+    <path>
+      <move select="Extend Right" beats="4" scaleX="3" scaleY="2"/>
+    </path>
+    <path>
+      <!-- do nothing -->
+    </path>
+  </tam>
+
+  <tam title="Outside 6 Walk and Dodge" from="Mixed Quarter Tag 2" formation="Mixed Quarter Tag #3" sequencer="perimeter" difficulty="3">
+    <path>
+      <move select="Extend Left" beats="4" scaleX="3" scaleY="2"/>
+    </path>
+    <path>
+      <move select="Dodge Right" beats="4" />
+    </path>
+    <path>
+      <move select="Extend Right" beats="4" scaleX="3" scaleY="2"/>
+    </path>
+    <path>
+      <!-- do nothing -->
+    </path>
+  </tam>
+  <tam title="Outside 6 Walk and Dodge" from="Mixed Quarter Tag 3" formation="Mixed Quarter Tag #6" sequencer="perimeter" difficulty="3">
+    <path>
+      <move select="Dodge Left" beats="4" />
+    </path>
+    <path>
+      <move select="Extend Right" beats="4" scaleX="3" scaleY="2"/>
+    </path>
+    <path>
+      <move select="Extend Left" beats="4" scaleX="3" scaleY="2"/>
+    </path>
+    <path>
+      <!-- do nothing -->
+    </path>
+  </tam>
+  <tam title="Outside 6 Walk and Dodge" from="Mixed Quarter Tag 4" formation="Mixed Quarter Tag #8" sequencer="perimeter" difficulty="3">
+    <path>
+      <move select="Dodge Left" beats="4" />
+    </path>
+    <path>
+      <move select="Extend Right" beats="4" scaleX="3" scaleY="2"/>
+    </path>
+    <path>
+      <move select="Extend Left" beats="4" scaleX="3" scaleY="2"/>
+    </path>
+    <path>
+      <!-- do nothing -->
+    </path>
+  </tam>
+
   <tam title="3 by 1 Walk and Dodge" group=" "
        difficulty="3">
      <formation>
