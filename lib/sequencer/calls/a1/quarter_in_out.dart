@@ -54,10 +54,15 @@ class QuarterInOut extends Action {
         throw CallError('Unable to calculate $name for dancer $d');
     }
     String move;
-    if (!d.data.beau && !d.data.belle) {
-      //  No partner - Face In
+    if (d.data.partner == null) {
+      //  No partner - Face In (Out)
       move = ((d.angleToOrigin < 0) ^ name.matches('.*out'.ri))
           ? 'Quarter Right' : 'Quarter Left';
+      //  If it thinks that the very centers are partners,
+      //  as in ptp diamonds, face into (out of) center of each side
+    } else if (d.data.partner!.data.verycenter && d.data.verycenter) {
+      move = ((d.angleToOrigin < 0) ^ name.matches('.*out'.ri))
+          ? 'Quarter Left' : 'Quarter Right';
     } else
       move = (d.data.beau ^ name.matches('.*out'.ri))
           ? 'Quarter Right' : 'Quarter Left';
