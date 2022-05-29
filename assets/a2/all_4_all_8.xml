@@ -1786,6 +1786,30 @@
     </path>
   </tam>
 
+  <tam title="All 8 (A-1) Partner Tag"
+       from="Static Square"
+       formation="Static Square"
+       group="All 8 (A-1)" >
+    <path>
+      <move select="Lead Right"/>
+      <move select="Extend Left" beats="3" scaleX="3"/>
+    </path>
+    <path>
+      <move select="Quarter Left" offsetY="1"/>
+      <move select="Forward"/>
+      <move select="Extend Right" beats="2" scaleX="2" scaleY="2"/>
+    </path>
+    <path>
+      <move select="Lead Right"/>
+      <move select="Extend Left" beats="3" scaleX="3"/>
+    </path>
+    <path>
+      <move select="Quarter Left" offsetY="1"/>
+      <move select="Forward"/>
+      <move select="Extend Right" beats="2" scaleX="2" scaleY="2"/>
+    </path>
+  </tam>
+
   <tam title="All 8 (A-1) Quarter Thru" group="All 8 (A-1)"
        formation="Static MiniWaves RH"
        fractions="1.5" >
