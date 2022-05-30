@@ -216,7 +216,9 @@ class _MarkdownFrameState extends fm.State<MarkdownFrame> {
     //  Title is uppercase
         .replaceAllMapped('^# (.*)'.rm,(m) => '# ${m[1]!.toUpperCase()}')
     //  Fix image links
-        .replaceAll('![alt](','![alt](resource:assets/$_dir/')
+        .replaceAllMapped(
+          r'!\[alt\]\(([^)]*)'.rm,
+          (m) => '![alt](resource:assets/${TamUtils.linkSSD('${_dir}/${m[1]!}')}')
     //  Interpret encodings
         .replaceAll('\\<','<')
     //  Highlight current part
