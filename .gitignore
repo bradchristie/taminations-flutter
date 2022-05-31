@@ -35,6 +35,8 @@
 /gen/
 /coverage/
 pubspec.lock
+/macos/Flutter/ephemeral/
+/macos/Flutter/GeneratedPluginRegistrant.swift
 
 # Web related
 lib/generated_plugin_registrant.dart
