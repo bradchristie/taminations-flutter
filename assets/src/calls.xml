@@ -30,7 +30,7 @@
         title="1/4 Wheel the Sea"/>
   <call link="c1/recycle?animname=23Recycle" title="2/3 Recycle"/>
   <call link="c2/3_by_1_checkmate_the_column" title="3 by 1 Checkmate the Column"/>
-  <call link="c2/3_by_1_transfer_the_column" title="3 by 1 Transfer The Column"/>
+  <call link="c2/3_by_1_transfer_the_column" title="3 by 1 Transfer the Column"/>
   <call link="c2/3_by_1_triangle_formation" title="3 by 1 Triangle Formation"/>
   <call link="c3a/1_4_mix?animname=34MixfromRightHandBox" title="3/4 Mix"/>
   <call link="c3a/1_4_the_deucey?animname=34theDeuceyfromRightHandWaves" title="3/4 the Deucey"/>
@@ -149,7 +149,7 @@
   <call audio="b1/courtesy_turn.mp3" languages="lang-de lang-ja" link="b1/courtesy_turn" title="Courtesy Turn"/>
   <call languages="lang-de lang-ja" link="ssd/courtesy_turn" title="Courtesy Turn"/>
   <call link="c2/crazy_concept" title="Crazy Concept"/>
-  <call link="c3b/criss_cross_the_deucey" title="Criss Cross The Deucey"/>
+  <call link="c3b/criss_cross_the_deucey" title="Criss Cross the Deucey"/>
   <call link="c2/criss_cross_the_shadow" title="Criss Cross the Shadow"/>
   <call link="c2/criss_cross_your_neighbor" title="Criss Cross Your Neighbor"/>
   <call link="a1/anything_and_cross" title="Cross"/>
@@ -167,7 +167,7 @@
   <call link="c3a/cross_counter" title="Cross Counter"/>
   <call link="c3b/cross_cycle" title="Cross Cycle"/>
   <call link="c1/cross_extend" title="Cross Extend"/>
-  <call link="c3b/cross_flip_the_line" title="Cross Flip The Line"/>
+  <call link="c3b/cross_flip_the_line" title="Cross Flip the Line"/>
   <call audio="ms/cross_fold.mp3" languages="lang-ja" link="ms/fold" title="Cross Fold"/>
   <call languages="lang-ja" link="ssd/fold" title="Cross Fold"/>
   <call link="c2/invert_the_column?animname=CrossInverttheColumn" title="Cross Invert the Column"/>
@@ -179,7 +179,7 @@
   <call link="c1/cross_roll" title="Cross Roll"/>
   <call audio="b2/cross_run.mp3" languages="lang-ja" link="b2/run" title="Cross Run"/>
   <call languages="lang-ja" link="ssd/run" title="Cross Run"/>
-  <call link="c3b/swap_the_top" title="Cross Swap The Top"/>
+  <call link="c3b/swap_the_top" title="Cross Swap the Top"/>
   <call link="c2/cross_the_k" title="Cross the K"/>
   <call link="c2/cross_and_wheel?animname=CrossTradeandWheel"
         title="Cross Trade and Wheel"/>
@@ -203,7 +203,7 @@
   <call link="c2/disconnected_concept" title="Disconnected Concept"/>
   <call audio="b1/dive_thru.mp3" languages="lang-de lang-ja" link="b1/dive_thru" title="Dive Thru"/>
   <call languages="lang-de lang-ja" link="ssd/dive_thru" title="Dive Thru"/>
-  <call link="c3b/divide_the_ocean" title="Divide The Ocean | Sea direction | anything"/>
+  <call link="c3b/divide_the_ocean" title="Divide the Ocean | Sea direction | anything"/>
   <call link="c1/dixie_diamond" title="Dixie Diamond"/>
   <call audio="plus/dixie_grand.mp3" languages="lang-ja" link="plus/dixie_grand" title="Dixie Grand"/>
   <call link="c1/dixie_sashay" title="Dixie Sashay"/>
@@ -383,8 +383,8 @@
   <call link="a2/mini_busy" title="Mini-Busy"/>
   <call link="c3a/mini_chase" title="Mini Chase"/>
   <call link="c3b/mirror_concept" title="Mirror Concept"/>
-  <call link="c3b/swap_the_top" title="Mirror Cross Swap The Top"/>
-  <call link="c3b/swap_the_top" title="Mirror Swap The Top"/>
+  <call link="c3b/swap_the_top" title="Mirror Cross Swap the Top"/>
+  <call link="c3b/swap_the_top" title="Mirror Swap the Top"/>
   <call audio="a1/mix.mp3" link="a1/mix" title="Mix"/>
   <call audio="a2/motivate.mp3" link="a2/motivate" title="Motivate"/>
 
@@ -468,7 +468,7 @@
   <call link="c3a/release_anything" title="Release Anything"/>
   <call link="c2/relocate_the_setup" title="Relocate the formation"/>
   <call audio="a2/remake.mp3" link="a2/remake" title="Remake"/>
-  <call audio="a2/remake_the_thar.mp3" link="a2/remake?animname=RemaketheThar" title="Remake The Thar"/>
+  <call audio="a2/remake_the_thar.mp3" link="a2/remake?animname=RemaketheThar" title="Remake the Thar"/>
   <call link="c1/replace" title="Replace"/>
   <call link="c3b/reset" title="Reset"/>
   <call link="c2/reshape_the_triangle" title="Reshape the Triangle"/>
@@ -488,8 +488,8 @@
   <call link="c2/rotate?animname=ReverseSingleRotate" title="Reverse Single Rotate"/>
   <call link="c2/split_swap_around?animname=ReverseSplitSwapAround" title="Reverse Split Swap Around"/>
   <call audio="a1/reverse_swap_around.mp3" link="a1/swap_around?animname=ReverseSwapAround" title="Reverse Swap Around"/>
-  <call link="c3b/reverse_the_pass" title="Reverse The Pass"/>
-  <call link="c3b/reverse_the_top" title="Reverse The Top"/>
+  <call link="c3b/reverse_the_pass" title="Reverse the Pass"/>
+  <call link="c3b/reverse_the_top" title="Reverse the Top"/>
   <call link="c2/truck?animname=ReverseTruck" title="Reverse Truck"/>
   <call link="c1/wheel_and_anything?animname=ReverseWheeland" title="Reverse Wheel and Anything"/>
   <call link="c3b/revolve_to_a_wave" title="Revolve To A Wave"/>
@@ -547,7 +547,7 @@
   <call link="c3b/shake_and_rattle" title="Shake and Rattle"/>
   <call link="c1/shakedown" title="Shakedown"/>
   <call link="c2/shazam" title="Shazam"/>
-  <call audio="ms/shoot_the_star.mp3" languages="lang-de lang-ja" link="ms/shoot_the_star" title="Shoot The Star"/>
+  <call audio="ms/shoot_the_star.mp3" languages="lang-de lang-ja" link="ms/shoot_the_star" title="Shoot the Star"/>
   <call link="c1/siamese_concept" title="Siamese Concept"/>
   <call link="c3b/sidetrack" title="Sidetrack"/>
   <call link="c2/bounce?animname=SingleBounce" title="Single Bounce"/>
@@ -692,7 +692,7 @@
   <call languages="lang-ja lang-de" link="ssd/trade_by" title="Trade By"/>
   <call audio="a2/trade_circulate.mp3" link="a2/trade_circulate" title="Trade Circulate"/>
   <call link="c3a/trade_the_deucey" title="Trade the Deucey"/>
-  <call link="c3b/trade_the_diamond" title="Trade The Diamond"/>
+  <call link="c3b/trade_the_diamond" title="Trade the Diamond"/>
   <call audio="plus/trade_the_wave.mp3" languages="lang-ja" link="plus/trade_the_wave" title="Trade the Wave"/>
   <call audio="a2/trail_off.mp3" link="a2/trail_off" title="Trail Off"/>
   <call link="c2/peel_to_a_diamond?animname=TrailtoaDiamond" title="Trail to a Diamond"/>
@@ -738,7 +738,7 @@
   <call audio="b1/walk_around_the_corner.mp3" languages="lang-de lang-ja" link="b1/all_around_the_corner"
         title="Walk Around the Corner"/>
   <call link="c2/walk_out_to_a_wave" title="Walk Out to a Wave"/>
-  <call link="c3b/wave_the_anyone" title="Wave The anyone"/>
+  <call link="c3b/wave_the_anyone" title="Wave the anyone"/>
   <call link="c1/anything_and_weave" title="Weave"/>
   <call audio="b1/weave_the_ring.mp3" languages="lang-de lang-ja" link="b1/right_and_left_grand"
         title="Weave the Ring"/>
@@ -753,7 +753,7 @@
   <call link="c2/wheel_the_ocean" title="Wheel the Ocean"/>
   <call link="c2/wheel_the_ocean?animname=WheeltheSea" title="Wheel the Sea"/>
   <call audio="a1/wheel_thru.mp3" link="a1/wheel_thru" title="Wheel Thru"/>
-  <call link="c3a/wind_the_bobbin" title="Wind The Bobbin"/>
+  <call link="c3a/wind_the_bobbin" title="Wind the Bobbin"/>
   <call link="c3b/with_confidence" title="With Confidence"/>
   <call link="c1/with_the_flow" title="With the Flow"/>
   <call link="c3a/wrap_to_a_formation" title="Wrap To a Formation"/>
