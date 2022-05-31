@@ -5,7 +5,7 @@ description: Taminations in Flutter
 publish_to: 'none'
 
 # Also change version in msix_config (below) to match
-version: 1.6.39+201
+version: 1.6.40+202
 
 environment:
   sdk: ">=2.12.0 <3.0.0"
@@ -29,7 +29,6 @@ dependencies:
 dev_dependencies:
   pedantic: ^1.9.0
 #  effective_dart: ^1.3.0
-#  integration_test: ^1.0.0
   integration_test:
     sdk: flutter
   flutter_test:
@@ -66,13 +65,13 @@ flutter:
 #  This is for building a Windows release:
 #  flutter pub run msix:create
 #  Then to make a bundle:
-#  makeappx.exe bundle  /f mapping.txt /p taminations.msixbundle /bv 1.6.38.0
+#  makeappx.exe bundle  /f mapping.txt /p taminations.msixbundle /bv 1.6.40.0
 msix_config:
   display_name: Taminations
   publisher_display_name: Brad Christie
   identity_name: 59302Taminations.Taminations
   publisher: CN=12C8C935-0778-4FF8-82CB-A8FD3E6D2DBC
-  msix_version: 1.6.39.0
+  msix_version: 1.6.40.0
   logo_path: P:\FlutterProjects\taminations\web\icons\Icon-512.png
   store: true
   #  capabilities: microphone
