@@ -1,0 +1,46 @@
+PODS:
+  - audio_session (0.0.1):
+    - FlutterMacOS
+  - FlutterMacOS (1.0.0)
+  - just_audio (0.0.1):
+    - FlutterMacOS
+  - path_provider_macos (0.0.1):
+    - FlutterMacOS
+  - shared_preferences_macos (0.0.1):
+    - FlutterMacOS
+  - url_launcher_macos (0.0.1):
+    - FlutterMacOS
+
+DEPENDENCIES:
+  - audio_session (from `Flutter/ephemeral/.symlinks/plugins/audio_session/macos`)
+  - FlutterMacOS (from `Flutter/ephemeral`)
+  - just_audio (from `Flutter/ephemeral/.symlinks/plugins/just_audio/macos`)
+  - path_provider_macos (from `Flutter/ephemeral/.symlinks/plugins/path_provider_macos/macos`)
+  - shared_preferences_macos (from `Flutter/ephemeral/.symlinks/plugins/shared_preferences_macos/macos`)
+  - url_launcher_macos (from `Flutter/ephemeral/.symlinks/plugins/url_launcher_macos/macos`)
+
+EXTERNAL SOURCES:
+  audio_session:
+    :path: Flutter/ephemeral/.symlinks/plugins/audio_session/macos
+  FlutterMacOS:
+    :path: Flutter/ephemeral
+  just_audio:
+    :path: Flutter/ephemeral/.symlinks/plugins/just_audio/macos
+  path_provider_macos:
+    :path: Flutter/ephemeral/.symlinks/plugins/path_provider_macos/macos
+  shared_preferences_macos:
+    :path: Flutter/ephemeral/.symlinks/plugins/shared_preferences_macos/macos
+  url_launcher_macos:
+    :path: Flutter/ephemeral/.symlinks/plugins/url_launcher_macos/macos
+
+SPEC CHECKSUMS:
+  audio_session: dea1f41890dbf1718f04a56f1d6150fd50039b72
+  FlutterMacOS: 57701585bf7de1b3fc2bb61f6378d73bbdea8424
+  just_audio: 9b67ca7b97c61cfc9784ea23cd8cc55eb226d489
+  path_provider_macos: 3c0c3b4b0d4a76d2bf989a913c2de869c5641a19
+  shared_preferences_macos: a64dc611287ed6cbe28fd1297898db1336975727
+  url_launcher_macos: 597e05b8e514239626bcf4a850fcf9ef5c856ec3
+
+PODFILE CHECKSUM: 8d40c19d3cbdb380d870685c3a564c989f1efa52
+
+COCOAPODS: 1.10.0
