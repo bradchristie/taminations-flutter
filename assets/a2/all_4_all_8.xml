@@ -1577,7 +1577,7 @@
   <tam title="All 4 Couples (A-1) Square Chain Thru" group="All 4 Couples (A-1)"
        from="Static Square"
        formation="Static Square"
-       parts="6.5;3;3" >
+       parts="6.5;6" >
     <path>
       <move select="Extend Left" beats="2" scaleX="2" scaleY="2" />
       <move select="Forward" />

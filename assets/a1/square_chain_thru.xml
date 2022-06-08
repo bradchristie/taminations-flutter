@@ -25,7 +25,7 @@
   <tam title="Square Chain Thru"
        from="Facing Couples"
        formation="Facing Couples"
-       parts="3;3;3" >
+       parts="3;6" >
     <path>
       <move select="Pull Left" scaleX="1.5" scaleY=".5" />
       <move select="Lead Right" beats="2" scaleY="1.5" />
@@ -65,7 +65,7 @@
   <tam title="Square Chain Thru"
        from="Lines"
        formation="Normal Lines"
-       parts="3;3;3" >
+       parts="3;6" >
     <path>
       <move select="Pull Left" scaleX="2" scaleY=".5" />
       <move select="Lead Right" beats="2" scaleY="1.5" />
@@ -103,7 +103,7 @@
   <tam title="Square Chain Thru"
        from="Right-Hand Waves"
        formation="Ocean Waves RH BGGB"
-       parts="3;3;3" >
+       parts="3;6" >
     <path>
       <move select="Lead Right" beats="3" scaleX=".5" scaleY="3" />
       <move select="Swing Left" hands="gripleft" scaleX=".5" scaleY=".5" />
@@ -138,7 +138,7 @@
   <tam title="Square Chain Thru"
        from="Eight Chain Thru"
        formation="Eight Chain Thru"
-       parts="3;3;3" >
+       parts="3;6" >
     <path>
       <move select="Pull Left" scaleY=".5" />
       <move select="Lead Right" beats="2" scaleX=".5" scaleY="1.5" />
@@ -176,7 +176,7 @@
   <tam title="Square Chain Thru"
        from="Tidal Wave"
        formation="Tidal Wave RH BGGB"
-       parts="2;3;3" >
+       parts="2;6" >
     <path>
       <move select="Lead Right" beats="2" scaleY="1.5" />
       <move select="Swing Left" />
@@ -210,7 +210,7 @@
   <tam title="As Couples Square Chain Thru" group=" "
        from="Lines"
        formation="Normal Lines"
-       parts="6;4;4" >
+       parts="6;8" >
     <path>
       <move select="Extend Left" beats="2" hands="right" scaleX="2" scaleY=".5" />
       <move select="Lead Right" beats="4" scaleX="1.5" scaleY="3.5" />
@@ -252,7 +252,7 @@
   <tam title="Left Square Chain Thru"
        from="Facing Couples"
        formation="Facing Couples"
-       parts="3;3;3" >
+       parts="3;6" >
     <path>
       <move select="Pull Right" scaleX="2" scaleY=".5" />
       <move select="Lead Right" beats="2" scaleX="3" scaleY=".5" />
@@ -329,7 +329,7 @@
   <tam title="Left Square Chain Thru"
        from="Left-Hand Waves"
        formation="Ocean Waves LH BGGB"
-       parts="3;3;3" >
+       parts="3;6" >
     <path>
       <move select="Lead Left" beats="3" scaleX=".5" scaleY="3" />
       <move select="Swing Right" hands="gripright" scaleX=".5" scaleY=".5" />
@@ -401,7 +401,7 @@
   <tam title="Left Square Chain Thru"
        from="Left-Hand Tidal Wave"
        formation="Tidal Wave LH BGGB"
-       parts="2;3;3" >
+       parts="2;6" >
     <path>
       <move select="Lead Left" beats="2" scaleY="1.5" />
       <move select="Swing Right" />
