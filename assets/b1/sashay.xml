@@ -173,7 +173,8 @@
     </path>
   </tam>
 
-  <tam title="Rollaway" from="Circle Left" formation="Circle" sequencer="gender-specific">
+  <tam title="Rollaway" from="Circle Left" formation="Circle"
+       sequencer="gender-specific">
     <path>
       <move select="Stand" hands="gripright" beats="4.5"/>
       <move select="Stand" hands="both" beats=".1"/>
@@ -198,5 +199,21 @@
     </path>
   </tam>
 
+  <tam title="Rollaway" from="Static Square" formation="Static Square">
+    <path>
+      <move select="Dodge Right" hands="gripright" />
+    </path>
+    <path>
+      <move select="Fold Left" hands="gripleft" beats="1.5" scaleX=".6" scaleY=".5" />
+      <move select="U-Turn Left" hands="gripleft" beats="1.5" offsetX="1.2" offsetY="-1" />
+    </path>
+    <path>
+      <move select="Dodge Right" hands="gripright" />
+    </path>
+    <path>
+      <move select="Fold Left" hands="gripleft" beats="1.5" scaleX=".6" scaleY=".5" />
+      <move select="U-Turn Left" hands="gripleft" beats="1.5" offsetX="1.2" offsetY="-1" />
+    </path>
+  </tam>
 
 </tamination>
