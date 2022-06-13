@@ -470,6 +470,7 @@ class TamUtils {
   //  Standardize 6 by 2, 6-2, 6 2 Acey Deucey
       .replaceAll('(six|6)\\s*(by)?x?-?\\s*(two|2)'.ri,'62')
       .replaceAll('(three|3)\\s*(by)?x?-?\\s*(two|2)'.ri,'32')
+      .replaceAll('(three|3)\\s*(by)?x?-?\\s*(one|1)'.ri,'31')
   //  'Column' of Magic Column is optional
       .replaceAll('magic (?!column)(?!o)(?!expand)'.ri,'Magic Column ')
   //  Use singular form
