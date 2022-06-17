@@ -471,6 +471,7 @@ class TamUtils {
       .replaceAll('(six|6)\\s*(by)?x?-?\\s*(two|2)'.ri,'62')
       .replaceAll('(three|3)\\s*(by)?x?-?\\s*(two|2)'.ri,'32')
       .replaceAll('(three|3)\\s*(by)?x?-?\\s*(one|1)'.ri,'31')
+      .replaceAll('(one|1)\\s*(by)?x?-?\\s*(three|3)'.ri,'13')
   //  'Column' of Magic Column is optional
       .replaceAll('magic (?!column)(?!o)(?!expand)'.ri,'Magic Column ')
   //  Use singular form

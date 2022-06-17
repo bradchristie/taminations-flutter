@@ -361,6 +361,40 @@
   </tam>
 
   <tam title="3 by 1 Walk and Dodge"
+       from="Right-Hand Columns"
+       formation="Column RH GBGB" difficulty="3">
+    <path>
+      <move select="Dodge Right" beats="4" />
+    </path>
+    <path>
+      <move select="Forward 2" beats="4" />
+    </path>
+    <path>
+      <move select="Forward 2" beats="4" />
+    </path>
+    <path>
+      <move select="Forward 2" beats="4" />
+    </path>
+  </tam>
+
+  <tam title="3 by 1 Walk and Dodge"
+       from="Left-Hand Columns"
+       formation="Column LH GBGB" difficulty="3">
+    <path>
+      <move select="Forward 2" beats="4" />
+    </path>
+    <path>
+      <move select="Forward 2" beats="4" />
+    </path>
+    <path>
+      <move select="Forward 2" beats="4" />
+    </path>
+    <path>
+      <move select="Dodge Left" beats="4" />
+    </path>
+  </tam>
+
+  <tam title="1 by 3 Walk and Dodge"
        from="Right-Hand Waves"
        formation="Ocean Waves RH BGGB Compact" difficulty="3">
     <path>
@@ -377,7 +411,7 @@
     </path>
   </tam>
 
-  <tam title="3 by 1 Walk and Dodge"
+  <tam title="1 by 3 Walk and Dodge"
        from="Left-Hand Waves"
        formation="Ocean Waves LH BGGB" difficulty="3">
     <path numbers="1 8">
@@ -394,7 +428,7 @@
     </path>
   </tam>
 
-  <tam title="3 by 1 Walk and Dodge"
+  <tam title="1 by 3 Walk and Dodge"
        from="Right-Hand Two-Faced Lines"
        formation="Two-Faced Lines RH" difficulty="3">
     <path>
@@ -411,7 +445,7 @@
     </path>
   </tam>
 
-  <tam title="3 by 1 Walk and Dodge"
+  <tam title="1 by 3 Walk and Dodge"
        from="Left-Hand Two-Faced Lines"
        formation="Two-Faced Lines LH" difficulty="3">
     <path>
@@ -428,7 +462,7 @@
     </path>
   </tam>
 
-  <tam title="3 by 1 Walk and Dodge" from="3 and 1 Lines #1"
+  <tam title="1 by 3 Walk and Dodge" from="3 and 1 Lines #1"
        formation="3 and 1 lines #1" difficulty="3">
     <path>
       <move select="Dodge Left" beats="4" />
@@ -444,7 +478,7 @@
     </path>
   </tam>
 
-  <tam title="3 by 1 Walk and Dodge" from="3 and 1 Lines #4"
+  <tam title="1 by 3 Walk and Dodge" from="3 and 1 Lines #4"
        formation="3 and 1 lines #4" difficulty="3">
     <path>
       <move select="Forward 4" />
@@ -460,11 +494,11 @@
     </path>
     <taminator>
       There are 8 different 3 and 1 lines, but only half of them
-      have the ends in tandem required for 3 by 1 Walk and Dodge.
+      have the ends in tandem required for 1 by 3 Walk and Dodge.
     </taminator>
   </tam>
 
-  <tam title="3 by 1 Walk and Dodge" from="3 and 1 Lines #5" difficulty="3">
+  <tam title="1 by 3 Walk and Dodge" from="3 and 1 Lines #5" difficulty="3">
     <formation>
       <dancer gender="boy" x="-2" y="3" angle="0"/>
       <dancer gender="girl" x="-2" y="1" angle="180"/>
@@ -488,7 +522,7 @@
     </taminator>
   </tam>
 
-  <tam title="3 by 1 Walk and Dodge" from="3 and 1 Lines #8"
+  <tam title="1 by 3 Walk and Dodge" from="3 and 1 Lines #8"
        formation="3 and 1 lines #8" difficulty="3">
     <path>
       <move select="Dodge Left" beats="4" />
