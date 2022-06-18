@@ -29,36 +29,52 @@ class Start extends Action {
 
   @override
   Future<void> perform(CallContext ctx) async {
-    final finishCall = name.replaceFirst('^start\\s+'.ri,'');
-    //  There has to be a subset of dancers selected to Start
-    if (ctx.actives.length >= ctx.dancers.length)
-      throw CallError('Who is supposed to start?');
+    final finishCall = name.replaceFirst('^start\\s+'.ri, '');
 
-    await ctx.subContext(ctx.actives, (dypctx) async {
-      //  Run DYP for the call, but save the intermediate context,
-      //    which will be a XMLCall.
-      final p = await DoYourPart(finishCall).findYourPart(dypctx);
-      //  Run Do the 1st Part (which is a CodedCall)
-      //  of the call on the starting formation
-      //  of the intermediate context.
-      final pctx = p.firstValue;
-      final mapping = p.secondValue;
-      await DoOnePart('Do the First Part of $finishCall').perform(pctx);
-      //  Copy path movements from call to sequence
-      for (var i = 0; i < mapping.length; i++) {
-        final m = mapping[i];
-        // TODO check for esymmetric call!
-        dypctx.dancers[i].path.add(pctx.dancers[m].path);
-      }
-    });
-    //  Extend paths of all dancers so others don' start
-    //  until the selected dancers have finished the 1st part
-    ctx.extendPaths();
-    //  Now everyone is active
-    for (var d in ctx.dancers)
-      d.data.active = true;
-    //  And finish the call
-    await ctx.applyCalls('Finish $finishCall');
+    //  Special case - Heads or Sides "Start" from a static square
+    //  - they move in and everyone does the call
+    if (ctx.isSquare() && ctx.dancers.every((d) =>
+                  d.isFacingIn && ctx.isInCouple(d))) {
+      await ctx.subContext(ctx.actives, (ctx2) async {
+        await ctx2.applyCalls('Step');
+      });
+      for (var d in ctx.dancers)
+        d.data.active = true;
+      ctx.extendPaths();
+      await ctx.applyCalls(finishCall);
+
+    } else {
+
+      //  There has to be a subset of dancers selected to Start
+      if (ctx.actives.length >= ctx.dancers.length)
+        throw CallError('Who is supposed to start?');
+
+      await ctx.subContext(ctx.actives, (dypctx) async {
+        //  Run DYP for the call, but save the intermediate context,
+        //    which will be a XMLCall.
+        final p = await DoYourPart(finishCall).findYourPart(dypctx);
+        //  Run Do the 1st Part (which is a CodedCall)
+        //  of the call on the starting formation
+        //  of the intermediate context.
+        final pctx = p.firstValue;
+        final mapping = p.secondValue;
+        await DoOnePart('Do the First Part of $finishCall').perform(pctx);
+        //  Copy path movements from call to sequence
+        for (var i = 0; i < mapping.length; i++) {
+          final m = mapping[i];
+          // TODO check for esymmetric call!
+          dypctx.dancers[i].path.add(pctx.dancers[m].path);
+        }
+      });
+      //  Extend paths of all dancers so others don' start
+      //  until the selected dancers have finished the 1st part
+      ctx.extendPaths();
+      //  Now everyone is active
+      for (var d in ctx.dancers)
+        d.data.active = true;
+      //  And finish the call
+      await ctx.applyCalls('Finish $finishCall');
+    }
   }
 
 }
