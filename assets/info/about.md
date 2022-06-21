@@ -20,24 +20,17 @@ Call pronunciations provided by
 
 ---
 
-## Taminations version 1.6.40 built 2022-05-31
+## Taminations version 1.6.41 built 2022-06-21
 Copyright 2022 by Brad Christie.  
 This is free software, and you are welcome to modify and redistribute it
 under the terms of the [GNU GPL license](http://www.gnu.org/licenses/gpl.html).  
 
 ## What's New
-* Animations for Balance
-* Walk and Dodge for Center 6 / Outer 6
-* Fix pictures in definitions when viewing SSD calls
+* Animations 3 by 1, 1 by 3 Walk and Dodge
+* Unwrap the Diamonds from facing diamonds
 * Sequencer changes:
-  * Don't erase line on error, add 'X' to do it manually
-  * Fix lockup on some calls from uncommon formations
-  * Fix level for 2-couple Cloverleaf
-  * Fix Centers Trade the Wave from quarter tags
-  * Code for Double Cross
-  * Fix 1/4 In/Out from PtP diamonds
-  * Code for simple cases of Fascinating
-  * Fix for some cases of Outer 6 Circulate and 6x2 Acey Deucey
+  * Fix multiple calls on one line separated by semi-colons
+  * Accept Heads Start both as a static square opener and as C-1 Start call
 
 For a detailed history of changes, view the
 [Git log](https://github.com/bradchristie/taminations-flutter/commits/main)
