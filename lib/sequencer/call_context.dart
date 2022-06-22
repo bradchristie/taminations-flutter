@@ -364,6 +364,10 @@ class CallContext {
       d.data.active = saved.contains(d);
   }
 
+  List<Dancer> movingDancers() => dancers.where((d) =>
+      d.path.movelist.any((m) => m.fromCall)).toList();
+
+
   /// Append the result of processing this CallContext to it source.
   /// The CallContext must have been previously cloned from the source.
   //  Return true if anything new was added.
@@ -512,18 +516,18 @@ class CallContext {
     ctx2.appendToSource();
   }
 
-  Future<bool> _checkCalls(List<String> calls) async {
+  Future<CallContext?> _checkCalls(List<String> calls) async {
     var testctx = CallContext.fromContext(this);
     try {
       for (var call in calls) {
         await testctx.applyCalls(call);
         if (testctx.isCollision())
-          return false;
+          return null;
       }
     } on CallError catch (_) {
-      return false;
+      return null;
     }
-    return true;
+    return testctx;
   }
 
   void animate(double beat) {
@@ -925,15 +929,14 @@ class CallContext {
   void checkCenters() {
     animate(0.0);
     analyze();
-    final movingDancers = dancers.where((d) =>
-        d.path.movelist.any((m) => m.fromCall)).toList();
+    final moving = movingDancers();
     final groupsOK = groups.length > 1 && (groups[0].length == 4 ||
         (groups[0].length==2 && groups[1].length==2));
-    if (groupsOK && movingDancers.length == 4 && center(4).containsAll(movingDancers)) {
+    if (groupsOK && moving.length == 4 && center(4).containsAll(moving)) {
       animateToEnd();
       var minDist = actives.minOf((d) =>
-          dancerClosest(d, (d2) => !movingDancers.contains(d2))!.distanceTo(d));
-      if (!center(4).containsAll(movingDancers) || !minDist.isGreaterThan(1.0)) {
+          dancerClosest(d, (d2) => !moving.contains(d2))!.distanceTo(d));
+      if (!center(4).containsAll(moving) || !minDist.isGreaterThan(1.0)) {
         //print('WARNING centers mix with other dancers!');
         animate(0.0);
         final ctx2 = CallContext.fromDancers(center(4));
@@ -1074,7 +1077,7 @@ class CallContext {
     }
   }
 
-  ///  Rotate phantoms until a match is found
+  ///  Rotate phantoms and find the best match
   ///  for a given call
   ///  Phantoms must be in diagonally opposite pairs
   ///  which are rotated together
@@ -1087,6 +1090,8 @@ class CallContext {
     var rotnum = 360 ~/ rotate;
     var phanum = (asym) ? phantoms.length : phantoms.length ~/ 2;
     var topindex = rotnum.pow(phanum);
+    CallContext? bestContext;
+    var bestCount = 0;
     //  Loop through each possibility
     for (var mapindex=0; mapindex<topindex; mapindex++) {
       //  Set rotation of each phantom
@@ -1108,14 +1113,19 @@ class CallContext {
         }
       }
       var ctx2 = CallContext.fromContext(this);
-      if (await ctx2._checkCalls([call])) {
+      var testctx = await ctx2._checkCalls([call]);
+      if (testctx != null) {
         //  Good rotation found
-        //  Return with phantoms in current rotation
-        return ctx2;
+        //  See if it's the "Best" rotation
+        var count = testctx.movingDancers().length;
+        if (count > bestCount) {
+          bestContext = ctx2;
+          bestCount = count;
+        }
       }
       //  This rotation does not work
     }
-    return Future.value(null);
+    return bestContext;
   }
 
   //  Use phantoms to fill in a formation starting from the dancers
