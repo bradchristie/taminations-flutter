@@ -18,6 +18,8 @@
 
 */
 
+import 'package:taminations/sequencer/calls/c1/rotary_spin.dart';
+
 import '../../extensions.dart';
 import '../../tam_utils.dart';
 import 'a1/as_couples.dart';
@@ -444,6 +446,7 @@ abstract class CodedCall extends Call {
     '(reverse)?rollaway'.ri : (name) => Rollaway(name),
     '(left|right)rolltoawave'.ri: (name) => RollToAWave(name),
     'rotary'.ri: (name) => Rotary(name),
+    '(left)?rotaryspin'.ri: (name) => RotarySpin(name),
     'rotate(14|12|34)'.ri: (name) => Rotate(name),
     'run(left|right)?'.ri: (name) => Run(name),
 
