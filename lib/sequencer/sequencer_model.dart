@@ -222,6 +222,8 @@ class SequencerModel extends fm.ChangeNotifier {
       notifyListeners();
       return Future<void>.value();
     }
+    //  Replace abbreviations
+    call = AbbreviationsModel.replaceAbbreviations(call);
     //  Remove any underscores, which are reserved for internal calls only
     call = call.replaceAll('_', '');
     //  Remove any [user annotations]
@@ -230,8 +232,6 @@ class SequencerModel extends fm.ChangeNotifier {
       comment = ' ' + call.replaceMatch('.*(\\[.*\\]).*'.r,'\\1');
       call = call.replaceFirst('\\[.*?\\]'.r,'');
     }
-    //  Now replace abbreviations
-    call = AbbreviationsModel.replaceAbbreviations(call);
     //  Check for special commands
     final settings = Settings();
     if (call.lc.trim() == 'undo')
