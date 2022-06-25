@@ -19,6 +19,7 @@
 */
 
 import 'package:taminations/sequencer/calls/c1/rotary_spin.dart';
+import 'package:taminations/sequencer/calls/c2/stack_the_line.dart';
 
 import '../../extensions.dart';
 import '../../tam_utils.dart';
@@ -492,6 +493,7 @@ abstract class CodedCall extends Call {
     'squeezethehourglass'.ri: (_) => SqueezeTheHourglass(),
     '(left)?squarethru(1|2|3|4|5|6|7)?(toawave)?'.ri: (name) => SquareThru(name),
     '(left)?squarethruon(2|3|4|5|6)(.+)'.ri: (name) => SquareThru(name),
+    '(left)?stacktheline'.ri: (name) => StackTheLine(name),
     'stagger.+'.ri: (name) => Stagger(name),
     //  Make sure Start does not match Star
     'Start.+'.r: (name) => Start(name),

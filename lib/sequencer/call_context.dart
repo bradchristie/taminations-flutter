@@ -1002,10 +1002,12 @@ class CallContext {
   }
 
   void matchStandardFormation() {
+/*
     if (_snap) {
       var formations = dancers.length == 4 ? twoCoupleFormations : standardFormations;
       matchFormationList(formations);
     }
+*/
   }
 
   //  Given a match to a formation, adjust the dancer's last move

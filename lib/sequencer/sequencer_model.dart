@@ -264,8 +264,8 @@ class SequencerModel extends fm.ChangeNotifier {
           firstCall is CodedCall ||
           (firstCall is XMLCall && !firstCall.found))
         cctx.matchStandardFormation();
-      if (cctx.isCollision())
-        throw CallError('Unable to calculate valid animation.');
+    //  if (cctx.isCollision())
+    //    throw CallError('Unable to calculate valid animation.');
       if (cctx.resolutionError)
         errorString = 'Warning: Dancers are not resolved';
       cctx.appendToSource();
