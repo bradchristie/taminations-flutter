@@ -35,30 +35,47 @@ class StackTheLine extends ActivesOnlyAction with CallWithParts {
 
   @override
   Future<void> performPart2(CallContext ctx) async {
+    if (ctx.dancers.length == 4)
+      return await performPart2forOneBox(ctx);
+    final boxes = ctx.boxes();
+    if (boxes != null) {
+      for (final box in boxes) {
+        await ctx.subContext(box, (ctx2) async {
+          await performPart2forOneBox(ctx2);
+        });
+      }
+    } else {
+      throw CallError('Can only Stack the Line from boxes');
+    }
+
+  }
+
+  Future<void> performPart2forOneBox(CallContext ctx) async {
     final left = isLeft ? 'Right' : 'Left';
     final right = isLeft ? 'Left' : 'Right';
     if (originalLeads.isEmpty)
       throw CallError('Cannot find original leaders for Stack the Line');
     for (var d in ctx.dancers) {
+      var beauLike = d.isCenterRight;
       if (originalLeads.contains(d)) {
         var d2 = ctx.dancerInFront(d) ??
-            thrower('Unable to calculate 2nd part of Stack the Line')!;
-        if (d.data.beau ^ isLeft)
+            thrower(CallError('Unable to calculate 2nd part of Stack the Line'))!;
+        if (beauLike ^ isLeft)
           d.path += TamUtils.getMove('Forward')
             ..scale(d.distanceTo(d2), 1)
             ..changeBeats(2.0);
         else {
-          var d3 = d2.data.partner ??
-              thrower('Unable to calculate 2nd part of Stack the Line')!;
+          var d3 = (beauLike ? ctx.dancerToRight(d) : ctx.dancerToLeft(d)) ??
+              thrower(CallError('Unable to calculate 2nd part of Stack the Line'))!;
           d.path += TamUtils.getMove('Forward') +
               (TamUtils.getMove('Extend $left')
-            ..scale(d.distanceTo(d2)-1.0, d2.distanceTo(d3))
+            ..scale(d.distanceTo(d2)-1.0, d.distanceTo(d3))
             ..changeBeats(2.0));
         }
       } else {
-        if (d.data.belle ^ isLeft) {
-          var d3 = d.data.partner ??
-              thrower('Unable to calculate 2nd part of Stack the Line')!;
+        if (!beauLike ^ isLeft) {
+          var d3 = (beauLike ? ctx.dancerToRight(d) : ctx.dancerToLeft(d)) ??
+              thrower(CallError('Unable to calculate 2nd part of Stack the Line'))!;
           d.path += TamUtils.getMove('Dodge $left')
             ..scale(1.0,d.distanceTo(d3)/2.0)
             ..changeBeats(2.0);

@@ -162,4 +162,24 @@
     </path>
   </tam>
 
+  <tam title="Stack the Line" from="T-Bones"
+       formation="T-Bone UDLL" parts="1.5">
+    <path>
+      <move select="Quarter Right"/>
+      <move select="Dodge Left" beats="2"/>
+    </path>
+    <path>
+      <move select="Quarter Right"/>
+      <move select="Forward 2"/>
+    </path>
+    <path>
+      <move select="Quarter Right"/>
+      <move select="Forward 2"/>
+    </path>
+    <path>
+      <move select="Quarter Right"/>
+      <move select="Dodge Left" beats="2"/>
+    </path>
+  </tam>
+
 </tamination>
