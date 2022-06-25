@@ -487,6 +487,7 @@ class TamUtils {
       .replaceAllMapped('\\b(1|3)4 tag the line\\b'.ri,
           (m) => '${m[1]}4 Tag')
       .replaceAll('\\b12 square thru\\b'.ri,'Square Thru 2')
+      .replaceAll('\\bsquare thru 4\\b'.ri,'Square Thru')
    //   .replaceAll('\\bbox recycle\\b'.ri,'Recycle')
       .replaceAll('\\ballamande?\\b'.ri,'Allemande')
       .replaceAllMapped('interlocked (flip|cut) the'.ri,

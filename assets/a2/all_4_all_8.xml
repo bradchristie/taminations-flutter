@@ -387,6 +387,42 @@
     </path>
   </tam>
 
+  <tam title="All 4 Couples Square Thru to a Wave" group="All 4 Couples"
+       formation="Static Square" display="none">
+    <path>
+      <move select="Extend Left" beats="2" scaleX="2" scaleY="2" />
+      <move select="Forward" hands="right" />
+      <move select="Lead Right" hands="left" beats="4" scaleX="2" scaleY="3" />
+      <move select="Forward 2" />
+      <move select="Lead Right" hands="right" beats="2" scaleY="2" />
+      <move select="Lead Right" beats="4" scaleY="3" />
+    </path>
+    <path>
+      <move select="Extend Right" hands="right" beats="3" scaleX="3" />
+      <move select="Forward 2" />
+      <move select="Lead Left" hands="left" beats="2" scaleY="2" />
+      <move select="Lead Left" hands="right" beats="4" scaleX="2" scaleY="3" />
+      <move select="Forward 2" />
+      <move select="Lead Left" hands="left" beats="2" scaleY="2" />
+    </path>
+    <path>
+      <move select="Extend Left" beats="2" scaleX="2" scaleY="2" />
+      <move select="Forward" hands="right" />
+      <move select="Lead Right" hands="left" beats="4" scaleX="2" scaleY="3" />
+      <move select="Forward 2" />
+      <move select="Lead Right" hands="right" beats="2" scaleY="2" />
+      <move select="Lead Right" beats="4" scaleY="3" />
+    </path>
+    <path>
+      <move select="Extend Right" hands="right" beats="3" scaleX="3" />
+      <move select="Forward 2" />
+      <move select="Lead Left" hands="left" beats="2" scaleY="2" />
+      <move select="Lead Left" hands="right" beats="4" scaleX="2" scaleY="3" />
+      <move select="Forward 2" />
+      <move select="Lead Left" hands="left" beats="2" scaleY="2" />
+    </path>
+  </tam>
+
   <tam title="All 4 Couples Square Thru 3" group="All 4 Couples"
        formation="Static Square" display="none">
     <path>
@@ -425,6 +461,36 @@
     </path>
   </tam>
 
+  <tam title="All 4 Couples Square Thru 3 to a Wave" group="All 4 Couples"
+       formation="Static Square" display="none">
+    <path>
+      <move select="Extend Left" beats="2" scaleX="2" scaleY="2" />
+      <move select="Forward" hands="right" />
+      <move select="Lead Right" hands="left" beats="4" scaleX="2" scaleY="3" />
+      <move select="Forward 2" />
+      <move select="Lead Right" hands="right" beats="2" scaleY="2" />
+    </path>
+    <path>
+      <move select="Extend Right" hands="right" beats="3" scaleX="3" />
+      <move select="Forward 2" />
+      <move select="Lead Left" hands="left" beats="2" scaleY="2" />
+      <move select="Lead Left" beats="4" scaleY="3" />
+    </path>
+    <path>
+      <move select="Extend Left" beats="2" scaleX="2" scaleY="2" />
+      <move select="Forward" hands="right" />
+      <move select="Lead Right" hands="left" beats="4" scaleX="2" scaleY="3" />
+      <move select="Forward 2" />
+      <move select="Lead Right" hands="right" beats="2" scaleY="2" />
+    </path>
+    <path>
+      <move select="Extend Right" hands="right" beats="3" scaleX="3" />
+      <move select="Forward 2" />
+      <move select="Lead Left" hands="left" beats="2" scaleY="2" />
+      <move select="Lead Left" beats="4" scaleY="3" />
+    </path>
+  </tam>
+
   <tam title="All 4 Couples Square Thru 2" group="All 4 Couples"
        formation="Static Square" display="none">
     <path>
@@ -454,6 +520,30 @@
       <move select="Lead Left" hands="left" beats="2" scaleY="2" />
       <move select="Lead Left" />
       <move select="Lead Right" beats="1.5" scaleY="2" />
+    </path>
+  </tam>
+
+  <tam title="All 4 Couples Square Thru 2 to a Wave" group="All 4 Couples"
+       formation="Static Square" display="none">
+    <path>
+      <move select="Extend Left" beats="2" scaleX="2" scaleY="2" />
+      <move select="Forward" hands="right" />
+      <move select="Lead Right" beats="4" scaleY="3" />
+    </path>
+    <path>
+      <move select="Extend Right" hands="right" beats="3" scaleX="3" />
+      <move select="Forward 2" />
+      <move select="Lead Left" hands="left" beats="2" scaleY="2" />
+    </path>
+    <path>
+      <move select="Extend Left" beats="2" scaleX="2" scaleY="2" />
+      <move select="Forward" hands="right" />
+      <move select="Lead Right" beats="4" scaleY="3" />
+    </path>
+    <path>
+      <move select="Extend Right" hands="right" beats="3" scaleX="3" />
+      <move select="Forward 2" />
+      <move select="Lead Left" hands="left" beats="2" scaleY="2" />
     </path>
   </tam>
 
