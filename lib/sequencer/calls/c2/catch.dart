@@ -27,6 +27,7 @@ class Catch extends ActivesOnlyAction with CallWithParts {
   Catch(String name) : super(name);
   late String direction = name.contains('Left') ? 'Left' : '';
   late String split = name.contains('Split') ? 'Split' : '';
+  late String all4 = norm.contains('All4Couples') ? 'All 4 Couples' : '';
   late int count = TamUtils.normalizeCall(name).last.toIntOrNull()
       ?? thrower(CallError('Catch how much?'));
 
@@ -37,7 +38,7 @@ class Catch extends ActivesOnlyAction with CallWithParts {
 
   @override
   Future<void> performPart1(CallContext ctx) async {
-    await ctx.applyCalls('$direction $split Square Thru $count to a Wave');
+    await ctx.applyCalls('$all4 $direction $split Square Thru $count to a Wave');
   }
 
   @override
@@ -52,7 +53,8 @@ class Catch extends ActivesOnlyAction with CallWithParts {
 
   @override
   Future<void> performPart3(CallContext ctx) async {
-    await ctx.applyCalls('Step and Fold');
+    var all8 = all4.isBlank ? '' : 'All 8';
+    await ctx.applyCalls('$all8 Step and Fold');
   }
 
 }
