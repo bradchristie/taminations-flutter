@@ -3086,6 +3086,20 @@ Boys Circulate
 Boys Run
 Circulate
 Wheel and Deal
+Allemande Left''',
+
+  'Select Diamond' :
+'''Sides Pass the Ocean
+Extend
+Acey Deucey Once and a Half
+Center Diamond Circulate
+Middle Diamond Circulate
+Outside Diamond Circulate
+Boys Flip the Diamond
+Outside Diamond Circulate
+Center Line Of 4 Wheel and Deal
+Outer 4 Bend the Line
+Centers Pass Thru
 Allemande Left'''
 
 };

@@ -29,17 +29,24 @@ class Circulate extends Action {
   Future<void> perform(CallContext ctx) async {
     //  If just 4 dancers, try Box Circulate
     if (ctx.actives.length == 4) {
-      if (ctx.actives.every((d) => d.data.center)) {
-        try {
-          await ctx.applyCalls('Box Circulate' );
-        } on CallError {
-          //  That didn't work, try to find a circulate path for each dancer
+      //  As a convenience, if diamond do a diamond circulate
+      await ctx.subContext(ctx.actives, (ctx2) async {
+        if (ctx2.isDiamond()) {
+          await ctx2.applyCalls('Diamond Circulate');
+          level = LevelData.PLUS;
+        }
+        else if (ctx.actives.every((d) => d.data.center)) {
+          try {
+            await ctx2.applyCalls('Box Circulate' );
+          } on CallError {
+            //  That didn't work, try to find a circulate path for each dancer
+            await super.perform(ctx);
+          }
+        } else {
+          //  Dancers not in center, go on and try to calculate the circulate
           await super.perform(ctx);
         }
-      } else {
-        //  Dancers not in center, go on and try to calculate the circulate
-        await super.perform(ctx);
-      }
+      });
     }
 
     //  All 8 dancers active

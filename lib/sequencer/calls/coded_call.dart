@@ -226,6 +226,7 @@ import 'common/outsides.dart';
 import 'common/promenade_home.dart';
 import 'common/quarter_more.dart';
 import 'common/same_sex.dart';
+import 'common/select_diamond.dart';
 import 'common/sides.dart';
 import 'common/slide_dir.dart';
 import 'common/square_the_set.dart';
@@ -456,6 +457,7 @@ abstract class CodedCall extends Call {
     'scootandplenty'.ri: (name) => ScootAndPlenty(name),
     'scootandramble'.ri: (_) => ScootAndRamble(),
     'scootandweave'.ri: (_) => ScootAndWeave(),
+    '(center|inside|middle|out(er|side))diamond'.ri: (name) => SelectDiamond(name),
     'separate'.ri: (_) => Separate(),
     'shazam'.ri: (_) => Shazam(),
     'siamese.+'.ri: (name) => Siamese(name),
