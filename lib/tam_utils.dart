@@ -439,7 +439,7 @@ class TamUtils {
   //  Non-alphanums are not used in matching
   //  so these fractions become 12 34 14 23
   //  Fortunately two-digit numbers are not used in calls
-      .replaceAll('\\b12|(and.)?((a|one).)?half\\b'.ri,'12')
+      .replaceAll('\\b12|((a|one).)?half\\b'.ri,'12')
       .replaceAll('\\b(three.quarters?|34)\\b'.ri,'34')
       .replaceAll('\\b(((a|one).)?quarter|14)\\b'.ri,'14')
       .replaceAll('\\b23|two.thirds?\\b'.ri,'23')
