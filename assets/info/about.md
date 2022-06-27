@@ -20,17 +20,21 @@ Call pronunciations provided by
 
 ---
 
-## Taminations version 1.6.41 built 2022-06-21
+## Taminations version 1.6.42 built 2022-06-27
 Copyright 2022 by Brad Christie.  
 This is free software, and you are welcome to modify and redistribute it
 under the terms of the [GNU GPL license](http://www.gnu.org/licenses/gpl.html).  
 
 ## What's New
-* Animations 3 by 1, 1 by 3 Walk and Dodge
-* Unwrap the Diamonds from facing diamonds
 * Sequencer changes:
-  * Fix multiple calls on one line separated by semi-colons
-  * Accept Heads Start both as a static square opener and as C-1 Start call
+  * Allow inline comments in abbreviation expansions
+  * Fix Centers Catch
+  * Fix some Triple Box calls and others with phantoms
+  * Stack the Line coded as a 2-part call
+  * Accept All 4 Couples Square Thru [n] to a Wave
+  * Select Center / Middle / Outside Diamond from appropriate formations
+  * Fix Clover and Half Sashay
+  * Enable Drop In / Out
 
 For a detailed history of changes, view the
 [Git log](https://github.com/bradchristie/taminations-flutter/commits/main)
