@@ -128,7 +128,9 @@ class CallContext {
     'a2/hourglass_circulate',
     'c2/reverse_cut_the_diamond',
     'c1/vertical_tag',
-    'ms/tag'
+    'ms/tag',
+    'c2/drop_in',
+    'c2/drop_right'
   ];
 
   static const standardFormations = {
