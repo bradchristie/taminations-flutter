@@ -41,6 +41,9 @@ class Anything extends Action {
     //  the word Circulate is generally omitted
     else if (firstCall.matches('split|box|trade|split trade|in ?roll|out ?roll|crossover|scatter'.ri))
       firstCall += 'circulate';
+    //  Accept Stack Motivate e.g. for Stack the Line Motivate
+    else if (firstCall.matches('stack'.ri))
+      firstCall += 'theline';
     await ctx.applyCalls(firstCall,'Finish $secondCall');
   }
 
