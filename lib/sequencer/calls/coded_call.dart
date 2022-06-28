@@ -164,6 +164,7 @@ import 'c2/cross_and_wheel.dart';
 import 'c2/cross_ramble.dart';
 import 'c2/cross_trade_and_wheel.dart';
 import 'c2/detour.dart';
+import 'c2/dodge.dart';
 import 'c2/fascinating.dart';
 import 'c2/flip_your_neighbor.dart';
 import 'c2/grand_cross_trade_and_wheel.dart';
@@ -339,6 +340,7 @@ abstract class CodedCall extends Call {
     'detour'.ri: (_) => Detour(),
     'diamondcirculate'.ri: (_) => DiamondCirculate(),
     '(reverse)?dixiediamond'.ri: (name) => DixieDiamond(name),
+    'dodge.+'.ri: (name) => Dodge(name),
     'dothe.+?part.+'.ri: (name) => DoOnePart(name),
     '(left)?dosado'.ri: (name) => Dosado(name),
     'doublecross'.ri: (_) => DoubleCross(),

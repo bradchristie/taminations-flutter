@@ -3100,6 +3100,25 @@ Outside Diamond Circulate
 Center Line Of 4 Wheel and Deal
 Outer 4 Bend the Line
 Centers Pass Thru
-Allemande Left'''
+Allemande Left''',
+
+  'Dodge' :
+'''Heads Pass the Ocean
+Extend
+Dodge Face In
+Centers Chase Right
+Dodge Trade
+Clover and Left Chase
+Dodge and Separate
+Centers Shakedown
+Centers Touch a Quarter
+Dodge Load the Boat
+Centers Run and Roll
+Boys Touch a Quarter
+Dodge Separate and Pass In
+Touch a Quarter
+Acey Deucey
+Trade
+Right and Left Grand'''
 
 };
