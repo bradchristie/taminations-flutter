@@ -158,6 +158,137 @@
     </path>
   </tam>
 
+  <tam title="Sock It To Me"
+       from="Right-Hand Tidal Line" formation="Tidal Line RH">
+    <path>
+      <move select="Run Right" beats="6" scaleX="2" scaleY="1.5"/>
+    </path>
+    <path>
+      <move select="Flip Left" beats="6" scaleY=".5"/>
+    </path>
+    <path>
+      <move select="Flip Left" beats="6" scaleY=".5"/>
+    </path>
+    <path>
+      <move select="Flip Left" beats="6" scaleY=".5"/>
+    </path>
+  </tam>
+
+  <tam title="Sock It To Me"
+       from="Left-Hand Tidal Line" formation="Tidal Line LH">
+    <path>
+      <move select="Flip Left" beats="6" scaleY=".5"/>
+    </path>
+    <path>
+      <move select="Flip Left" beats="6" scaleY=".5"/>
+    </path>
+    <path>
+      <move select="Run Right" beats="6" scaleX="2" scaleY="1.5"/>
+    </path>
+    <path>
+      <move select="Flip Left" beats="6" scaleY=".5"/>
+    </path>
+  </tam>
+
+  <tam title="Sock It To Me"
+       from="Right-Hand Inverted Tidal Line" formation="Tidal Inverted Line RH">
+    <path>
+      <move select="Run Right" beats="6" scaleX="2" scaleY="1.5"/>
+    </path>
+    <path>
+      <move select="Flip Right" beats="6" scaleY=".5"/>
+    </path>
+    <path>
+      <move select="Flip Right" beats="6" scaleY=".5"/>
+    </path>
+    <path>
+      <move select="Flip Left" beats="6" scaleY=".5"/>
+    </path>
+  </tam>
+
+  <tam title="Sock It To Me"
+       from="Left-Hand Inverted Tidal Line" formation="Tidal Inverted Line LH">
+    <path>
+      <move select="Flip Left" beats="6" scaleY=".5"/>
+    </path>
+    <path>
+      <move select="Flip Right" beats="6" scaleY=".5"/>
+    </path>
+    <path>
+      <move select="Flip Right" beats="6" scaleY=".5"/>
+    </path>
+    <path>
+      <move select="Run Right" beats="6" scaleX="2" scaleY="1.5"/>
+    </path>
+  </tam>
+
+  <tam title="Sock It To Me"
+       from="Tidal 3 and 1 Line #2" formation="Tidal 3 and 1 Line #2">
+    <path>
+      <move select="Run Right" beats="6" scaleX="2" scaleY="1.5"/>
+    </path>
+    <path>
+      <move select="Flip Left" beats="6" scaleY=".5"/>
+    </path>
+    <path>
+      <move select="Flip Right" beats="6" scaleY=".5"/>
+    </path>
+    <path>
+      <move select="Flip Left" beats="6" scaleY=".5"/>
+    </path>
+  </tam>
+
+  <tam title="Sock It To Me"
+       from="Tidal 3 and 1 Line #3" formation="Tidal 3 and 1 Line #3">
+    <path>
+      <move select="Run Right" beats="6" scaleX="2" scaleY="1.5"/>
+    </path>
+    <path>
+      <move select="Flip Right" beats="6" scaleY=".5"/>
+    </path>
+    <path>
+      <move select="Flip Left" beats="6" scaleY=".5"/>
+    </path>
+    <path>
+      <move select="Flip Left" beats="6" scaleY=".5"/>
+    </path>
+  </tam>
+
+  <tam title="Sock It To Me"
+       from="Tidal 3 and 1 Line #6" formation="Tidal 3 and 1 Line #6">
+    <path>
+      <move select="Flip Left" beats="6" scaleY=".5"/>
+    </path>
+    <path>
+      <move select="Flip Left" beats="6" scaleY=".5"/>
+    </path>
+    <path>
+      <move select="Flip Right" beats="6" scaleY=".5"/>
+    </path>
+    <path>
+      <move select="Run Right" beats="6" scaleX="2" scaleY="1.5"/>
+    </path>
+  </tam>
+
+  <tam title="Sock It To Me"
+       from="Tidal 3 and 1 Line #7" formation="Tidal 3 and 1 Line #7">
+    <path>
+      <move select="Flip Left" beats="6" scaleY=".5"/>
+    </path>
+    <path>
+      <move select="Flip Right" beats="6" scaleY=".5"/>
+    </path>
+    <path>
+      <move select="Flip Left" beats="6" scaleY=".5"/>
+    </path>
+    <path>
+      <move select="Run Right" beats="6" scaleX="2" scaleY="1.5"/>
+    </path>
+  </tam>
+
+
+
+
   <tam title="Here Comes the Judge"
        from="Lines Facing In"
        formation="Normal Lines">
@@ -293,5 +424,134 @@
       <move select="Flip Right" beats="6" />
     </path>
   </tam>
+
+  <tam title="Here Comes the Judge"
+       from="Right-Hand Tidal Line" formation="Tidal Line RH">
+    <path>
+      <move select="Flip Right" beats="6" scaleY=".5"/>
+    </path>
+    <path>
+      <move select="Flip Right" beats="6" scaleY=".5"/>
+    </path>
+    <path>
+      <move select="Flip Right" beats="6" scaleY=".5"/>
+    </path>
+    <path>
+      <move select="Run Left" beats="6" scaleX="2" scaleY="1.5"/>
+    </path>
+  </tam>
+
+  <tam title="Here Comes the Judge"
+       from="Left-Hand Tidal Line" formation="Tidal Line LH">
+    <path>
+      <move select="Flip Right" beats="6" scaleY=".5"/>
+    </path>
+    <path>
+      <move select="Run Left" beats="6" scaleX="2" scaleY="1.5"/>
+    </path>
+    <path>
+      <move select="Flip Right" beats="6" scaleY=".5"/>
+    </path>
+    <path>
+      <move select="Flip Right" beats="6" scaleY=".5"/>
+    </path>
+  </tam>
+
+  <tam title="Here Comes the Judge"
+       from="Right-Hand Inverted Tidal Line" formation="Tidal Inverted Line RH">
+    <path>
+      <move select="Flip Right" beats="6" scaleY=".5"/>
+    </path>
+    <path>
+      <move select="Flip Left" beats="6" scaleY=".5"/>
+    </path>
+    <path>
+      <move select="Flip Left" beats="6" scaleY=".5"/>
+    </path>
+    <path>
+      <move select="Run Left" beats="6" scaleX="2" scaleY="1.5"/>
+    </path>
+  </tam>
+
+  <tam title="Here Comes the Judge"
+       from="Left-Hand Inverted Tidal Line" formation="Tidal Inverted Line LH">
+    <path>
+      <move select="Run Left" beats="6" scaleX="2" scaleY="1.5"/>
+    </path>
+    <path>
+      <move select="Flip Left" beats="6" scaleY=".5"/>
+    </path>
+    <path>
+      <move select="Flip Left" beats="6" scaleY=".5"/>
+    </path>
+    <path>
+      <move select="Flip Right" beats="6" scaleY=".5"/>
+    </path>
+  </tam>
+
+  <tam title="Here Comes the Judge"
+       from="Tidal 3 and 1 Line #2" formation="Tidal 3 and 1 Line #2">
+    <path>
+      <move select="Flip Right" beats="6" scaleY=".5"/>
+    </path>
+    <path>
+      <move select="Flip Right" beats="6" scaleY=".5"/>
+    </path>
+    <path>
+      <move select="Flip Left" beats="6" scaleY=".5"/>
+    </path>
+    <path>
+      <move select="Run Left" beats="6" scaleX="2" scaleY="1.5"/>
+    </path>
+  </tam>
+
+  <tam title="Here Comes the Judge"
+       from="Tidal 3 and 1 Line #3" formation="Tidal 3 and 1 Line #3">
+    <path>
+      <move select="Flip Right" beats="6" scaleY=".5"/>
+    </path>
+    <path>
+      <move select="Flip Left" beats="6" scaleY=".5"/>
+    </path>
+    <path>
+      <move select="Flip Right" beats="6" scaleY=".5"/>
+    </path>
+    <path>
+      <move select="Run Left" beats="6" scaleX="2" scaleY="1.5"/>
+    </path>
+  </tam>
+
+  <tam title="Here Comes the Judge"
+       from="Tidal 3 and 1 Line #6" formation="Tidal 3 and 1 Line #6">
+    <path>
+      <move select="Run Left" beats="6" scaleX="2" scaleY="1.5"/>
+    </path>
+    <path>
+      <move select="Flip Right" beats="6" scaleY=".5"/>
+    </path>
+    <path>
+      <move select="Flip Left" beats="6" scaleY=".5"/>
+    </path>
+    <path>
+      <move select="Flip Right" beats="6" scaleY=".5"/>
+    </path>
+  </tam>
+
+  <tam title="Here Comes the Judge"
+       from="Tidal 3 and 1 Line #7" formation="Tidal 3 and 1 Line #7">
+    <path>
+      <move select="Run Left" beats="6" scaleX="2" scaleY="1.5"/>
+    </path>
+    <path>
+      <move select="Flip Left" beats="6" scaleY=".5"/>
+    </path>
+    <path>
+      <move select="Flip Right" beats="6" scaleY=".5"/>
+    </path>
+    <path>
+      <move select="Flip Right" beats="6" scaleY=".5"/>
+    </path>
+  </tam>
+
 
 </tamination>
