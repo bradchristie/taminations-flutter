@@ -124,6 +124,28 @@
     </path>
   </tam>
 
+  <tam title="Grand Chain Eight"
+       from="Right-Hand Waves"
+       formation="Ocean Waves RH BGGB">
+    <path>
+      <move select="Extend Right" beats="2" scaleX="2" scaleY=".5" />
+      <move select="Quarter Left" hands="left" offsetX="1" />
+      <move select="U-Turn Left" />
+    </path>
+    <path>
+      <move select="Extend Right" scaleY=".5" />
+      <move select="Belle Wheel" />
+    </path>
+    <path>
+      <move select="Extend Right" scaleY=".5" />
+      <move select="Beau Wheel" />
+    </path>
+    <path>
+      <move select="Extend Right" beats="2" scaleX="2" scaleY="2.5" />
+      <move select="Hinge Left" offsetY="1" />
+    </path>
+  </tam>
+
   <tam title="Grand Chain Eight" from="Tidal Wave" formation="Tidal Wave">
     <path>
       <move select="Lead Right" beats="3" scaleX="2.5" scaleY="2.5"/>
