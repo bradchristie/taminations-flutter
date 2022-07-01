@@ -224,6 +224,13 @@ class SequencerModel extends fm.ChangeNotifier {
     }
     //  Replace abbreviations
     call = AbbreviationsModel.replaceAbbreviations(call);
+    //  If call now has multiple lines (separated by semi-colons)
+    //  run each one separately
+    if (call.contains(';')) {
+      for (var oneCall in call.split(';'))
+        await _interpretOneCall(oneCall);
+      return;
+    }
     //  Remove any underscores, which are reserved for internal calls only
     call = call.replaceAll('_', '');
     //  Remove any [user annotations]
