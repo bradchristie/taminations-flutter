@@ -130,7 +130,8 @@ class CallContext {
     'c1/vertical_tag',
     'ms/tag',
     'c2/drop_in',
-    'c2/drop_right'
+    'c2/drop_right',
+    'c2/reverse_cut_the_galaxy'
   ];
 
   static const standardFormations = {
