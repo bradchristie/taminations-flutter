@@ -442,7 +442,7 @@ class TamUtils {
       .replaceAll('\\b12|((a|one).)?half\\b'.ri,'12')
       .replaceAll('\\b(three.quarters?|34)\\b'.ri,'34')
       .replaceAll('\\b(((a|one).)?quarter|14)\\b'.ri,'14')
-      .replaceAll('\\b23|two.thirds?\\b'.ri,'23')
+      .replaceAll('\\b23|two.?thirds?\\b'.ri,'23')
   //  Process any other numbers
       .replaceAll('\\bzero\\b'.ri,'0')
       .replaceAll('\\b(1|onc?e)\\b'.ri,'1')
