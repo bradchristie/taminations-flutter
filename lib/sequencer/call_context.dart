@@ -131,7 +131,8 @@ class CallContext {
     'ms/tag',
     'c2/drop_in',
     'c2/drop_right',
-    'c2/reverse_cut_the_galaxy'
+    'c2/reverse_cut_the_galaxy',
+    'c2/fascinate'
   ];
 
   static const standardFormations = {
