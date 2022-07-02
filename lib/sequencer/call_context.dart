@@ -1253,11 +1253,11 @@ class CallContext {
   List<Dancer> pointsOfDiamondFormation(String f) {
     final ctx2 = CallContext.fromXML(TamUtils.getFormation(f));
     final points = <Dancer>[];
-    final mapping = matchFormations(ctx2,rotate: 180);
+    final mapping = ctx2.matchFormations(this,rotate: 180, subformation: true);
     if (mapping != null) {
-      for (var i=0; i<dancers.length; i++) {
-        if (ctx2.dancers[mapping[i]].gender == Gender.GIRL)
-          points.add(dancers[i]);
+      for (var i=0; i<ctx2.dancers.length; i++) {
+        if (ctx2.dancers[i].gender == Gender.GIRL)
+          points.add(dancers[mapping[i]]);
       }
     }
     return points;
@@ -1266,6 +1266,7 @@ class CallContext {
   List<Dancer> points() =>
       pointsOfDiamondFormation('Diamond LH Boys Center') +
           pointsOfDiamondFormation('Diamonds RH Girl Points') +
+          pointsOfDiamondFormation('Diamond RH Girl Points') +
           pointsOfDiamondFormation('Diamonds RH PTP Girl Points') +
           pointsOfDiamondFormation('Hourglass RH GP') +
           pointsOfDiamondFormation('Galaxy RH GP');

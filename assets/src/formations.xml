@@ -166,6 +166,11 @@
     <dancer gender="girl" x="1" y="0" angle="270"/>
   </formation>
 
+  <formation name="Diamond RH Girl Points">
+    <dancer gender="girl" x="0" y="3" angle="0"/>
+    <dancer gender="boy" x="1" y="0" angle="270"/>
+  </formation>
+
   <formation name="Diamond LH">
     <dancer gender="boy" x="0" y="3" angle="180"/>
     <dancer gender="girl" x="1" y="0" angle="90"/>
