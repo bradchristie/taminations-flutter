@@ -31,7 +31,7 @@ Use same styling as in Swing Thru.
 
 ### Comments
 
-The Facing Couples Rule applies to this call.
+The [Facing Couples Rule](../b2/facing_couples_rule.md) applies to this call.
 
 The combination "Spin The Top, Right and Left Thru"
 must be delivered so that dancers adjust their

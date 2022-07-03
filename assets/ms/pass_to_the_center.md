@@ -27,7 +27,7 @@ Same styling as Pass Thru and Partner Trade.
 
 ### Comments
 
-The Ocean Wave Rule applies to this call.
+The [Ocean Wave Rule](../b2/ocean_wave_rule.md) applies to this call.
 
 On the Pass Thru, some dancers should be coming into the center
 and other dancers should be heading towards the outside.

@@ -30,7 +30,7 @@ Grad) miteinander aus.
 
 ### Bemerkungen
 
-Die Ocean Wave Rule wird für dieses Kommando im Basic und Mainstream Programm nicht
+Die [Ocean Wave Rule](../b2/ocean_wave_rule.md) wird für dieses Kommando im Basic und Mainstream Programm nicht
 angewendet. Sie kann aber in anderen Programmen angewendet werden.
 
 Obwohl das Styling dazu auffordert, die Tanzaktion in einer fließendenden Bewegung zu tanzen, hat die

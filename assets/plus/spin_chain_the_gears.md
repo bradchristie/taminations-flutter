@@ -24,7 +24,7 @@ as they Flip In, they bring the other hand up to immediately join the forming st
 
 TIMING: 24
 
-COMMENTS: The Facing Couples Rule applies to this call.
+COMMENTS: The [Facing Couples Rule](../b2/facing_couples_rule.md) applies to this call.
 
 The 3/4 fraction to turn the star can be modified by the caller,
 in which case different dancers

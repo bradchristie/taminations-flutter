@@ -47,7 +47,7 @@ Each part of this call ends in an Eight Chain Thru or Trade By formation. Dancer
 
 ### Comments
 
-The Ocean Wave Rule applies to this call.
+The [Ocean Wave Rule](../b2/ocean_wave_rule.md) applies to this call.
 
 At Mainstream, Courtesy Turn (#15) is restricted to a man turning a woman. Therefore, at Mainstream, Eight Chain Thru is improper after Heads Square Thru 4, Sides Half Sashay. However, Eight Chain 3 would be proper.
 

@@ -38,7 +38,7 @@ Teil des Kommandos geht fließend in den zweiten Teil über.
 
 ### Bemerkungen
 
-Die Facing Couples Rule gilt für diesen Call.
+Die [Facing Couples Rule](../b2/facing_couples_rule.md) gilt für diesen Call.
 
 In einer Tidal Wave wird Swing Thru in den Ocean Waves einer jeden Hälfte getanzt. Kein Tänzer überquert
 die Mitte der Tidal Wave.
@@ -48,7 +48,7 @@ Durch die Anwendung der Facing Couples Rule, muss die Startformation eine Wave o
 Swing Thru aus einer Inverted Line zu callen.
 
 Als eine erweiterte Anwendung können Tänzer auch in anderen Gruppen zusammenarbeiten, vorausgesetzt,
-dass sie nach der Anwendung der Facing Couples Rule in einer Wave mit drei oder mehr Tänzern stehen. In
+dass sie nach der Anwendung der [Facing Couples Rule](../b2/facing_couples_rule.md) in einer Wave mit drei oder mehr Tänzern stehen. In
 diesem Fall muss der Caller klar Ansagen, dass diese Tänzer zusammenarbeiten sollen. Zum Beispiel Heads
 Pass the Ocean; Extend; Boys Circulate 1 1/2; Girls Cast Off 3/4; In the Wave of 6, Swing Thru. Sollen acht
 Tänzer zusammenarbeiten, so ist das besonders heikel und sollte nur mit großer Vorsicht genutzt werden, da
