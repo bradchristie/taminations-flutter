@@ -784,8 +784,10 @@
     </path>
   </tam>
 
-  <tam title="Square Thru 2 1/2" group="  "
-       formation="Facing Couples" difficulty="2">
+  <tam title="Square Thru 2 1/2"
+       from="Facing Couples"
+       formation="Facing Couples"
+       difficulty="2">
     <path>
       <move select="Forward" />
       <move select="Pull Left" scaleY=".5" />
@@ -797,6 +799,118 @@
       <move select="Pull Left" scaleY=".5" />
       <move select="Lead Left" offsetX=".5" offsetY="-.5" />
       <move select="Lead Left" scaleX=".5" scaleY="1.5" />
+    </path>
+  </tam>
+
+  <tam title="Square Thru 2 1/2"
+       from="Right-Hand Wave"
+       formation="Wave RH"
+       difficulty="2">
+    <path>
+      <move select="Lead Right" beats="3" scaleX=".5" scaleY="3" />
+      <move select="Lead Right" offsetX=".5" offsetY=".5" />
+    </path>
+    <path>
+      <move select="Lead Left" beats="3" offsetX=".5"/>
+      <move select="Lead Left" scaleX=".5" scaleY="1.5" />
+    </path>
+  </tam>
+
+  <tam title="Square Thru 2 1/2"
+       from="Eight Chain Thru"
+       formation="Eight Chain Thru"
+       difficulty="2">
+    <path>
+      <move select="Pull Left" scaleY=".5" />
+      <move select="Lead Right" scaleX=".5" scaleY="1.5" />
+      <move select="Lead Right" offsetX=".5" offsetY=".5" />
+    </path>
+    <path>
+      <move select="Pull Left" scaleY=".5" />
+      <move select="Lead Left" offsetX=".5" offsetY="-.5" />
+      <move select="Lead Left" scaleX=".5" scaleY="1.5" />
+    </path>
+    <path>
+      <move select="Pull Left" scaleY=".5" />
+      <move select="Lead Right" scaleX=".5" scaleY="1.5" />
+      <move select="Lead Right" offsetX=".5" offsetY=".5" />
+    </path>
+    <path>
+      <move select="Pull Left" scaleY=".5" />
+      <move select="Lead Left" offsetX=".5" offsetY="-.5" />
+      <move select="Lead Left" scaleX=".5" scaleY="1.5" />
+    </path>
+  </tam>
+
+  <tam title="Square Thru 2 1/2"
+       from="Lines"
+       formation="Normal Lines"
+       difficulty="2">
+    <path>
+      <move select="Forward" />
+      <move select="Pull Left" scaleY=".5" />
+      <move select="Lead Right" scaleX=".5" scaleY="1.5" />
+      <move select="Lead Right" offsetX=".5" offsetY=".5" />
+    </path>
+    <path>
+      <move select="Forward" />
+      <move select="Pull Left" scaleY=".5" />
+      <move select="Lead Left" offsetX=".5" offsetY="-.5" />
+      <move select="Lead Left" scaleX=".5" scaleY="1.5" />
+    </path>
+    <path>
+      <move select="Forward" />
+      <move select="Pull Left" scaleY=".5" />
+      <move select="Lead Right" scaleX=".5" scaleY="1.5" />
+      <move select="Lead Right" offsetX=".5" offsetY=".5" />
+    </path>
+    <path>
+      <move select="Forward" />
+      <move select="Pull Left" scaleY=".5" />
+      <move select="Lead Left" offsetX=".5" offsetY="-.5" />
+      <move select="Lead Left" scaleX=".5" scaleY="1.5" />
+    </path>
+  </tam>
+
+  <tam title="Square Thru 2 1/2"
+       from="Right-Hand Waves"
+       formation="Ocean Waves RH BGGB"
+       difficulty="2">
+    <path>
+      <move select="Lead Right" beats="3" scaleX=".5" scaleY="3" />
+      <move select="Lead Right" offsetX=".5" offsetY=".5" />
+    </path>
+    <path>
+      <move select="Lead Left" beats="3" offsetX=".5"/>
+      <move select="Lead Left" scaleX=".5" scaleY="1.5" />
+    </path>
+    <path>
+      <move select="Lead Left" beats="3" offsetX=".5"/>
+      <move select="Lead Left" scaleX=".5" scaleY="1.5" />
+    </path>
+    <path>
+      <move select="Lead Right" beats="3" scaleX=".5" scaleY="3" />
+      <move select="Lead Right" offsetX=".5" offsetY=".5" />
+    </path>
+  </tam>
+
+  <tam title="Square Thru 2 1/2" from="Right-Hand Tidal Wave"
+       formation="Tidal Wave RH BGGB" difficulty="2">
+    <path>
+      <move select="Lead Right" beats="2" scaleX=".5" scaleY="1.5" />
+      <move select="Lead Right" offsetX=".5" offsetY=".5" />
+    </path>
+    <path>
+      <move select="Lead Left" beats="2" scaleY=".5" offsetX=".5"/>
+      <move select="Lead Left" scaleX=".5" scaleY="1.5" />
+    </path>
+    <path>
+      <move select="Lead Left" beats="2" scaleY=".5" offsetX=".5"/>
+      <move select="Lead Left" scaleX=".5" scaleY="1.5" />
+    </path>
+    <path>
+      <move select="Lead Right" beats="2" scaleX=".5" scaleY="1.5" />
+      <move select="Lead Right" offsetX=".5" offsetY=".5" />
     </path>
   </tam>
 
