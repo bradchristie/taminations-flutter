@@ -1027,7 +1027,7 @@
   </tam>
 
   <tam title="Square Thru 3 1/2" from="Right-Hand Wave"
-      formation="Wave RH" difficulty="2">
+      formation="Wave RH" difficulty="3">
     <path>
       <move select="Lead Right" beats="3" scaleX=".5" scaleY="3" />
       <move select="Lead Right" offsetX=".5" offsetY=".5" />
@@ -1105,7 +1105,7 @@
   </tam>
 
   <tam title="Square Thru 3 1/2" from="Right-Hand Waves"
-       formation="Ocean Waves RH BGGB" difficulty="2">
+       formation="Ocean Waves RH BGGB" difficulty="3">
     <path>
       <move select="Lead Right" beats="3" scaleX=".5" scaleY="3" />
       <move select="Lead Right" offsetX=".5" offsetY=".5" />
@@ -1129,7 +1129,7 @@
   </tam>
 
   <tam title="Square Thru 3 1/2" from="Right-Hand Tidal Wave"
-       formation="Tidal Wave RH BGGB" difficulty="2">
+       formation="Tidal Wave RH BGGB" difficulty="3">
     <path>
       <move select="Lead Right" beats="2" scaleX=".5" scaleY="1.5" />
       <move select="Lead Right" offsetX=".5" offsetY=".5" />
