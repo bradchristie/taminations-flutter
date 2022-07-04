@@ -29,7 +29,7 @@ Wenn jeder End-Tänzer und der benachbarte Center-Tänzer sich zu drehen beginne
 
 ### Bemerkungen
 
-Die Facing Couples Rule gilt für dieses Kommando nicht. Aus Facing Couples hat das Kommando
+Die [Facing Couples Rule](../b2/facing_couples_rule.md) gilt für dieses Kommando nicht. Aus Facing Couples hat das Kommando
 „Recycle“ eine andere Definition, die nicht Bestandteil des Mainstream Programms ist.
 
 Beim Unterrichten kann es hilfreich sein, die Aktion der Centers als „Fold, follow, face“ („Fold“, folgen, jemanden anschauen) zu veranschaulichen und zu erklären, dass die Centers sich annähernd einmal im Kreis drehen und am Ende, nur ein kleines Stück weiter hinten von der Position wo sie gestartet sind, neben dem Tänzer dem sie gefolgt sind, stehen.

@@ -31,7 +31,7 @@ Same as for Pass Thru
 Double Pass Thru is a four-dancer call, but it is most commonly used from the eight-dancer
 formation of a Double Pass Thru (which is two side-by-side Facing Tandems).
 
-The Ocean Wave Rule applies to this call. That is, it can begin from a Right-Hand 1/4 Tag 
+The [Ocean Wave Rule](../b2/ocean_wave_rule.md) applies to this call. That is, it can begin from a Right-Hand 1/4 Tag 
 (or a Right-Hand Single 1/4 Tag).
 
 Except for applications of the Ocean Wave Rule, dancers must start facing each other, rather than offset. For

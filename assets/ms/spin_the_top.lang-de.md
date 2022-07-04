@@ -32,7 +32,7 @@ Gleiches Styling wie bei Swing Thru
 
 ### Comments
 
-Die Facing Couples Rule gilt für diesen Call.
+Die [Facing Couples Rule](../b2/facing_couples_rule.md) gilt für diesen Call.
 
 Die Kombination „Spin The Top, Right and Left Thru“ muss zeitlich so gecallt werden, dass die Tänzer die für
 den „Right and Left Thru“ erforderlichen Handverbindungen eingehen können ohne zuvor den „Spin The Top“

@@ -29,7 +29,7 @@ When called from Facing Couples, the four dancers do not make a Wave midway thro
 
 From Facing Dancers, the call [Step To A Wave](ocean_wave.md) gives a Right-Hand Mini-Wave.
 
-The Ocean Wave Rule does not apply to this call. Therefore, a combination like
+The [Ocean Wave Rule](../b2/ocean_wave_rule.md) does not apply to this call. Therefore, a combination like
 "Swing Thru, All 8 Circulate, Touch 1/4" is improper.
 
 The left-handed version of this call is Left Touch 1/4. See "Additional Detail: Commands: Extensions like Reverse Wheel Around".

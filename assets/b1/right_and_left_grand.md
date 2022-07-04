@@ -71,7 +71,7 @@ meet each dancer. Attention should be paid to keeping the circle a reasonable si
 Some groups have flourishes which extend the timing to 16 beats requiring a phrased delivery.
 
 Weave The Ring is best danced to a well timed delivery, often preceded by an Allemande Left. Surprise
-or variety in starting formations is not recommended. While the Ocean Wave Rule applies to this call,
+or variety in starting formations is not recommended. While the [Ocean Wave Rule](../b2/ocean_wave_rule.md) applies to this call,
 its application is also not recommended.
 
 ## Wrong Way Grand

@@ -85,7 +85,7 @@ The twirl takes extra time, space, and control. Dancers who twirl must be aware 
 
 ### Comments
 
-The Ocean Wave Rule applies to this call.
+The [Ocean Wave Rule](../b2/ocean_wave_rule.md) applies to this call.
 
 Some dancers get dizzy when swinging. Be aware of your partner's needs.
 

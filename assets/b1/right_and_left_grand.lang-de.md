@@ -60,7 +60,7 @@ Frauen unterstützen die Bewegung ihres Rocks mit beiden Händen auf ihrem Weg u
 
 Einige Gruppen bauen in Weave the Ring Schnörkel ein, welche die Dauer der Figur auf 16 Schritte verlängert. Das bedingt, dass auch die Ansage des nächsten Calls entsprechend angepasst wird.
 
-Weave The Ring ist am schönsten zu tanzen, wenn dieser Call zeitlich rechtzeitig angesagt wird; häufig geht ein Allemande Left voraus. Überraschungen und Sonderformen bezogen auf die Anfangsformationen sind für diese Figur nicht empfohlen. Obwohl die Ocean Wave Rule für dieses Kommando gilt, ist deren Anwendung ebenfalls nicht empfohlen.
+Weave The Ring ist am schönsten zu tanzen, wenn dieser Call zeitlich rechtzeitig angesagt wird; häufig geht ein Allemande Left voraus. Überraschungen und Sonderformen bezogen auf die Anfangsformationen sind für diese Figur nicht empfohlen. Obwohl die [Ocean Wave Rule](../b2/ocean_wave_rule.md) für dieses Kommando gilt, ist deren Anwendung ebenfalls nicht empfohlen.
 
 ## Wrong Way Grand
 

@@ -46,9 +46,9 @@ Usually Step To A Wave is called from Facing Couples, ending in a Right-Hand Oce
 
 Dancers can also be asked to step to a left-hand wave (e.g., Step To A Left-Hand Wave).
 
-The Ocean Wave Rule does not apply to this call.
+The [Ocean Wave Rule](../b2/ocean_wave_rule.md) does not apply to this call.
 
-The Facing Couples Rule requires certain dancers to add Step To A Wave prior to some calls. 
+The [Facing Couples Rule](../b2/facing_couples_rule.md) requires certain dancers to add Step To A Wave prior to some calls. 
 See General: Conventions and Rules: Facing Couples Rule.
 
 ## Balance
@@ -90,6 +90,6 @@ Dancers should go forward no farther than shoulder-to-shoulder.
 
 Usually Balance is called from an Alamo Ring or an Ocean Wave.
 
-The Facing Couples Rule does not apply to this call.
+The [Facing Couples Rule](../b2/facing_couples_rule.md) does not apply to this call.
 
 ###### @ Copyright 1994, 2000-2021 by CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed nor revised in any derivation or publication.

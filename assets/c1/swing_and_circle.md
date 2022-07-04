@@ -20,7 +20,7 @@ Repeat the entire above action, if necessary:
 - twice more, for Swing and Circle 3/4
 - three more times, for a full Swing and circle
 
-The Facing Couples Rule applies to the centers.
+The [Facing Couples Rule](../b2/facing_couples_rule.md) applies to the centers.
 
 Swing and Circle 1/4:
 

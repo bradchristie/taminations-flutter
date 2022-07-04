@@ -53,7 +53,7 @@ that it is started with the left hand and hands are alternating thereafter;
 the word "Left" is required.
 E.g., Heads Lead Right, Circle To A Line, Left Square Thru 4, Left Allemande.
 
-The Ocean Wave Rule applies to this call.
+The [Ocean Wave Rule](../b2/ocean_wave_rule.md) applies to this call.
 
 The movement can be continued beyond 4 hands (e.g., Square Thru 5).
 
@@ -81,8 +81,8 @@ Unless the caller specifies, the call
 does not have a clear ending formation.
 Some believe it ends in facing couples, others in a wave.
 For this reason, the call that follows must be proper and have the same
-effect from both these formations; that is, the Facing Couple Rule or
-Ocean Wave Rule must apply. Historically Touch 1/4 and Left Touch 1/4 are
+effect from both these formations; that is, the [Facing Couples Rule](../b2/facing_couples_rule.md) or
+[Ocean Wave Rule](../b2/ocean_wave_rule.md) must apply. Historically Touch 1/4 and Left Touch 1/4 are
 exceptions that are considered proper, with the Pull By blending into the Touch:
 
 - Square Thru, on the Third Hand Touch 1/4

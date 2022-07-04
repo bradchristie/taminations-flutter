@@ -107,7 +107,7 @@ Concentric [Switch to a Diamond](../a2/switch_to_a_diamond.md):
 > ![alt](concentric_11b.png)
 >
 
-If the Concentric call involves applying the Ocean Wave Rule or Facing Couples Rule, the
+If the Concentric call involves applying the [Ocean Wave Rule](../b2/ocean_wave_rule.md) or Facing Couples Rule, the
 Concentric rules apply to the actual starting setup, not to any adjusted setup that might be
 created or imagined while starting the call.
 

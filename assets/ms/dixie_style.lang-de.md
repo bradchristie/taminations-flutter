@@ -38,7 +38,7 @@ Aus Facing Tandems: Die Trailers rutschen leicht nach rechts um den Left Touch 1
 
 ### Bemerkungen
 
-Die Ocean Wave Rule gilt für dieses Kommando (aus einem Single 1/4 Tag).
+Die [Ocean Wave Rule](../b2/ocean_wave_rule.md) gilt für dieses Kommando (aus einem Single 1/4 Tag).
 
 Aus einer Double Pass Thru Formation ist es verwirrend, wenn man einfach nur Dixie Style to an Ocean Wave callt, weil dies zu der folgenden Zweideutigkeit führt: Die inneren vier Tänzer können das Kommando aus Facing Couples tanzen oder jedes Tandem kann das Kommando mit dem Tandem durchführen, dass sie direkt anschauen. Der Caller sollte dies durch z.B. folgende zusätzliche Angaben klarstellen:
 - Center 4, Dixie Style to a Wave, or

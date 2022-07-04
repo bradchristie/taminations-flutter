@@ -41,7 +41,7 @@ The first part of the call blends smoothly into the second part.
 
 ### Comments
 
-The Facing Couples Rule applies to these calls.
+The [Facing Couples Rule](../b2/facing_couples_rule.md) applies to these calls.
 
 From a Tidal Wave, Swing Thru is danced in the Ocean Wave
 on each half; no dancers cross the center of the Tidal Wave.

@@ -29,7 +29,7 @@ turn 1/4 with each other.
 
 ### Comments
 
-The application of the Ocean Wave Rule to this call is not used at Basic and Mainstream. It
+The application of the [Ocean Wave Rule](../b2/ocean_wave_rule.md) to this call is not used at Basic and Mainstream. It
 may be applied in the other programs.
 
 Even though the styling encourages a smoothed out dance action, the definition of Pass The Ocean has

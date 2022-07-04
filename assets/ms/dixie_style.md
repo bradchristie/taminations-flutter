@@ -38,7 +38,7 @@ From Facing Tandems, the trailers step slightly to the right to prepare for the 
 
 ### Comments
 
-The Ocean Wave Rule applies to this call (from a Single 1/4 Tag).
+The [Ocean Wave Rule](../b2/ocean_wave_rule.md) applies to this call (from a Single 1/4 Tag).
 
 From a Double Pass Thru, it is confusing to simply call Dixie Style to an Ocean Wave because of the following ambiguity: The center 4 could do the call starting from Facing Couples, or each Tandem could do the call with the Tandem they are facing. The caller should clarify by using extra words like:
 - Center 4, Dixie Style to a Wave, or

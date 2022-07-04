@@ -51,7 +51,7 @@ Fussarbeit beim Buzz Step Swing: Der rechte Fuss bewegt sich vorwärts in einem 
 
 ### Bemerkungen
 
-Die Ocean Wave Rule gilt für diesen Call.
+Die [Ocean Wave Rule](../b2/ocean_wave_rule.md) gilt für diesen Call.
 
 Einigen Tänzern wird schwindelig beim Swing. Seid euch den Bedürfnissen eueres Partners bewusst.
 

@@ -27,7 +27,7 @@ Dasselbe Styling wie bei Pass Thru und Partner Trade.
 
 ### Comments
 
-Die Ocean Wave Rule gilt für dieses Kommando.
+Die [Ocean Wave Rule](../b2/ocean_wave_rule.md) gilt für dieses Kommando.
 
 Durch den Pass Thru sollen einige Tänzer in die Mitte kommen und die anderen Tänzer sollen nach außen
 gehen. Aus Facing Lines ist dieses Kommando nicht zulässig. 
