@@ -3119,6 +3119,26 @@ Dodge Separate and Pass In
 Touch a Quarter
 Acey Deucey
 Trade
-Right and Left Grand'''
+Right and Left Grand''',
+
+  'Lines Anything Thru' :
+'''Sides Pass the Ocean
+Extend
+Lines Box Recycle Thru
+Girls Hinge and Roll
+Out-Roll Circulate
+Lines Chase Right Thru
+Cast Off Three Quarters
+Touch a Quarter
+Circulate
+Boys Run
+Cloverleaf
+Centers Pass Thru
+Star Thru
+Right and Left Thru
+Pass Thru
+Wheel and Deal
+Centers Square Thru 3
+Allemande Left'''
 
 };

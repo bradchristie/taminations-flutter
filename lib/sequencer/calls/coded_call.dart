@@ -19,6 +19,7 @@
 */
 
 import 'package:taminations/sequencer/calls/c1/rotary_spin.dart';
+import 'package:taminations/sequencer/calls/c2/lines_anything_thru.dart';
 import 'package:taminations/sequencer/calls/c2/stack_the_line.dart';
 
 import '../../extensions.dart';
@@ -391,6 +392,7 @@ abstract class CodedCall extends Call {
     'likeacoupleup'.ri: (_) => LikeACoupleUp(),
     'linearaction'.ri: (_) => LinearAction(),
     '(left)?linearcycle'.ri: (name) => LinearCycle(name),
+    'Lines.+Thru'.ri: (name) => LinesAnythingThru(name),
     //  Little needs two regexes
     //  to handle both <something> Little and Little <something>
     '(scootand)?(outside|point)?(out|in|left|right|(go)?(forward|asyouare))?little'.ri:

@@ -906,6 +906,14 @@
     <dancer gender="boy" x="0" y="-1" angle="180"/>
   </formation>
 
+  <!-- Outsides spread apart -->
+  <formation name="Quarter H">
+    <dancer gender="girl" x="-2" y="3" angle="0"/>
+    <dancer gender="boy" x="0" y="-3" angle="0"/>
+    <dancer gender="girl" x="-2" y="-3" angle="0"/>
+    <dancer gender="boy" x="0" y="-1" angle="180"/>
+  </formation>
+
   <!-- Column-like formations -->
   <formation name="Double Pass Thru">
     <dancer gender="boy" x="-3" y="1" angle="0"/>
