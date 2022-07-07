@@ -35,7 +35,7 @@ Einige neue Tänzer tanzen Dosado mit vorne gekreuzten Armen, was darauf hindeut
 
 Das Kommando „Dosado Your Corner“ ist die Kurzform von „Face Your Corner; Dosado“. Dasselbe gilt für „Dosado Your Partner“.
 
-Die Ocean Wave Rule gilt für diesen Call. Die Schlussformation bleibt aber Facing Dancers.
+Die [Ocean Wave Rule](../b2/ocean_wave_rule.md) gilt für diesen Call. Die Schlussformation bleibt aber Facing Dancers.
 
 Aus einem Squared Set heraus ist z. B. Head Men Dosado akzeptabel. Sie gehen aufeinander zu, Dosado, und gehen zurück in ihre Ausgangsposition.
 
@@ -72,6 +72,6 @@ Wie „Dosado“ und „Step to a Wave“.
 
 ### Bemerkungen
 
-Die Ocean Wave Rule gilt für diesen Call.
+Die [Ocean Wave Rule](../b2/ocean_wave_rule.md) gilt für diesen Call.
 
 ###### @ Copyright 1994, 2000-2017 by CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed nor revised in any derivation or publication.

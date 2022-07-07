@@ -46,7 +46,7 @@ over one another easily while still providing some degree of security and stabil
 The right hands are still joined at the completion of the action,
 and often the next call will begin with the joined right hands.
 
-The Ocean Wave Rule applies to this call. From a Mini-Wave,
+The [Ocean Wave Rule](../b2/ocean_wave_rule.md) applies to this call. From a Mini-Wave,
 dancers smoothly adjust handholds into the one described above.
 Depending on the handhold used in waves (which can vary regionally),
 this may require dancers initially to back up slightly.

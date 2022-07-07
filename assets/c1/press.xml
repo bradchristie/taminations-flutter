@@ -109,6 +109,36 @@
     </path>
   </tam>
 
+  <tam title="Press Ahead" from="Right-Hand Columns" formation="Columns">
+    <path>
+      <move select="Forward 2" hands="left"/>
+    </path>
+    <path>
+      <move select="Forward 2" hands="right"/>
+    </path>
+    <path>
+      <move select="Forward 2" hands="right"/>
+    </path>
+    <path>
+      <move select="Forward 2" hands="left"/>
+    </path>
+  </tam>
+
+  <tam title="Press Ahead" from="Left-Hand Columns" formation="Column LH GBGB">
+    <path>
+      <move select="Forward 2" hands="left"/>
+    </path>
+    <path>
+      <move select="Forward 2" hands="right"/>
+    </path>
+    <path>
+      <move select="Forward 2" hands="right"/>
+    </path>
+    <path>
+      <move select="Forward 2" hands="left"/>
+    </path>
+  </tam>
+
   <tam title="Ends Press Ahead" group=" "
        from="Lines Facing Out">
      <formation>

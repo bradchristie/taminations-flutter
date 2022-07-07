@@ -45,7 +45,7 @@ werden, dass die Tänzer am Ende wieder die gleiche Handverbindung haben. Dazu s
 ### Bemerkungen
 
 Nach der Tanzaktion sind die rechten Hände weiterhin verbunden und sehr häufig beginnt das
-nächste Kommando mit den bereits verbundenen Händen. Die Ocean Wave Rule gilt für diesen Call. Aus einer
+nächste Kommando mit den bereits verbundenen Händen. Die [Ocean Wave Rule](../b2/ocean_wave_rule.md) gilt für diesen Call. Aus einer
 Mini-Wave ändern die Tänzer ihre Handverbindung, so dass sie der oben beschriebenen entspricht. Abhängig
 von der Handhaltung in einer Ocean Wave (diese kann regional unterschiedlich sein) müssen die Tänzer
 anfangs etwas rückwärtsgehen.

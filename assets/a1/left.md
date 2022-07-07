@@ -14,7 +14,7 @@ with calls that start with one of the following:
 6. Touch (e.g. Left Touch 1/4, Left Spin the Windmill) 
 7. Turn to the right (e.g., Left Wheel Thru, Left Roll to a Wave, Left Chase)
 
-To apply the Facing Couples Rule to a "Left" call, dancers first Step To A Left-Hand Wave (e.g., Left
+To apply the [Facing Couples Rule](../b2/facing_couples_rule.md) to a "Left" call, dancers first Step To A Left-Hand Wave (e.g., Left
 Swing Thru, Left Relay the Deucey, Left 3/4 Top).
 
 If a different modifier can perform the same function as the Left modifier (e.g., Wrong Way

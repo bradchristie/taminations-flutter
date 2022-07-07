@@ -33,7 +33,7 @@ to [Courtesy Turn](courtesy_turn.md).
 
 ### Comments
 
-The Ocean Wave Rule applies to this call.
+The [Ocean Wave Rule](../b2/ocean_wave_rule.md) applies to this call.
 
 At Basic and Mainstream,
 Courtesy Turn is restricted to a man turning a woman.

@@ -31,7 +31,7 @@ freie Hand in natürlicher Tanzposition. Bei Frauen ist Skirt Work mit der freie
 
 ### Comments
 
-Die Ocean Wave Rule gilt für dieses Kommando.
+Die [Ocean Wave Rule](../b2/ocean_wave_rule.md) gilt für dieses Kommando.
 
 Turn Thru ist immer eine 180 Grad Drehung. Wenn man aus einem Alamo-Ring jeden zu seinem Corner
 bringen möchte, wäre das korrekte Kommando ein Arm Turn, kein Turn Thru.

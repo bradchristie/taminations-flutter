@@ -28,7 +28,7 @@ Use same styling as in Swing Thru. The resulting ends stand still as the centers
 
 ### Comments
 
-The Facing Couples Rule applies to this call.
+The [Facing Couples Rule](../b2/facing_couples_rule.md) applies to this call.
 
 While the new centers are finishing the call, the resulting ends may be given another call (e.g., Spin Chain
 Thru; Ends Circulate Twice).

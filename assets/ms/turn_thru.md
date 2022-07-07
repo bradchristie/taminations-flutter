@@ -32,7 +32,7 @@ position. Woman's skirt work desirable for free hand.
 
 ### Comments
 
-The Ocean Wave Rule applies to this call.
+The [Ocean Wave Rule](../b2/ocean_wave_rule.md) applies to this call.
 
 Turn Thru is always a 180 degree turn.
 From an Alamo Ring, if the desired action is to get everyone

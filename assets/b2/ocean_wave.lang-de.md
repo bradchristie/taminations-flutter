@@ -41,9 +41,9 @@ Normalerweise wird Step To A Wave aus Facing Couples gecallt und endet in einer 
 Ocean Wave. Tänzer können aber auch gebeten werden, eine Left-Hand Ocean Wave zu bilden (z.B. Step To A
 Left-Hand Wave).
 
-Die Ocean Wave Rule gilt für diesen Call nicht.
+Die [Ocean Wave Rule](../b2/ocean_wave_rule.md) gilt für diesen Call nicht.
 
-Gemäß der Facing Couples Rule müssen Tänzer vor einigen Kommandos ein Step To A Wave ausführen. Siehe
+Gemäß der [Facing Couples Rule](../b2/facing_couples_rule.md) müssen Tänzer vor einigen Kommandos ein Step To A Wave ausführen. Siehe
 hierzu “Allgemeines: Konventionen und Regeln: Facing Couples Rule“.
 
 ## Balance
@@ -86,6 +86,6 @@ Tänzer sollten niemals weiter als Schulter-an-Schulter nach vorne gehen.
 
 Normalerweise wird Balance aus einem Alamo Ring oder aus einer Ocean Wave gecallt.
 
-Die Facing Couples Rule gilt für diesen Call nicht
+Die [Facing Couples Rule](../b2/facing_couples_rule.md) gilt für diesen Call nicht
 
 ###### @ Copyright 1994, 2000-2017 by CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed nor revised in any derivation or publication.

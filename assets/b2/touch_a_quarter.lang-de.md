@@ -32,7 +32,7 @@ mit der mittleren Handverbindung in eine Wave.
 ### Bemerkungen
 
 Aus Facing Dancers ergibt das Kommando Step To A Wave (#36a) eine Right-Hand Mini-Wave.
-Die Ocean Wave Rule gilt für dieses Kommando nicht. Daher ist eine Kombination wie "Swing Thru, All 8
+Die [Ocean Wave Rule](../b2/ocean_wave_rule.md) gilt für dieses Kommando nicht. Daher ist eine Kombination wie "Swing Thru, All 8
 Circulate, Touch 1/4" unzulässig.
 
 Eine linkshändige Version des Kommandos ist Left Touch 1/4. Siehe "Zusätzliche Angaben: Kommandos:

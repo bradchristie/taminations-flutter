@@ -42,7 +42,7 @@ Wie bei Right and Left Grand sollten Tänzer die jeweils andere Hand für das n�
  
 Left Square Thru (1, 2, 3, 4) ist ähnlich zu Square Thru (1, 2, 3, 4), doch beginnt Left Square Thru mit der linken Hand. Danach wechseln sich rechte und linke Hand wiederum ab. Die Ansage Left ist notwendig. Zum Beispiel: Heads Lead Right, Circle To A Line, Left Square Thru 4, Left Allemande.
 
-Die Ocean Wave Rule kann für diese Figur angewendet werden.
+Die [Ocean Wave Rule](../b2/ocean_wave_rule.md) kann für diese Figur angewendet werden.
 
 Diese Figur kann über 4 Hände hinaus fortgeführt werden (beispielsweise: Square Thru 5).
 
@@ -58,7 +58,7 @@ Eine erweiterte Anwendung von Square Thru ist „Square Thru, on the Third (or o
 - Square Thru, on the Fourth Hand Left Swing Thru
 - Square Thru, on the Fourth Hand Left Allemande
 
-Der Call Square Thru, on the Third (or other) Hand hat ohne eine entsprechende Ansage des Callers keine eindeutige Endformation. Einige glauben, er ende in Facing Couples; andere, in einer Wave. Deshalb muss der nächste Call aus beiden Formationen anwendbar sein und auch das gleiche Ergebnis liefern. Das heisst, Facing Couples Rule und Ocean Wave Rule gelten. Touch 1⁄4 und Left Touch 1⁄4 sind aus historischen Gründen davon ausgenommen und gelten als statthaft. Das Vorbeiziehen geht ansatzlos in die Handhaltung zur Wave über:
+Der Call Square Thru, on the Third (or other) Hand hat ohne eine entsprechende Ansage des Callers keine eindeutige Endformation. Einige glauben, er ende in Facing Couples; andere, in einer Wave. Deshalb muss der nächste Call aus beiden Formationen anwendbar sein und auch das gleiche Ergebnis liefern. Das heisst, [Facing Couples Rule](../b2/facing_couples_rule.md) und [Ocean Wave Rule](../b2/ocean_wave_rule.md) gelten. Touch 1⁄4 und Left Touch 1⁄4 sind aus historischen Gründen davon ausgenommen und gelten als statthaft. Das Vorbeiziehen geht ansatzlos in die Handhaltung zur Wave über:
 - Square Thru, on the Third Hand Touch 1/4
 - Square Thru, on the Fourth Hand Left Touch 1/4
 

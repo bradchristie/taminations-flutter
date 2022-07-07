@@ -38,7 +38,7 @@ next call. Women can continue to use skirt work during the Arm Turn.
 
 ### Comment
 
-The Facing Couples Rule does not apply to this call.
+The [Facing Couples Rule](../b2/facing_couples_rule.md) does not apply to this call.
 
 After Shoot the Star, the caller sometimes indicates that
 dancers are to Pull By one or more times and Arm Turn into another

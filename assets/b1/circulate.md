@@ -9,7 +9,7 @@ The definitions below will refer to the following diagrams.
 > ![alt](circulate_1.png)![alt](circulate_2.png)![alt](circulate_3.png)
 > 
 
-No call in the Circulate Family can be used with the Ocean Wave Rule or the
+No call in the Circulate Family can be used with the [Ocean Wave Rule](../b2/ocean_wave_rule.md) or the
 Facing Couples Rule (see "Part 1: General: Conventions and Rule").
 
 Fractions are proper and occasionally used with calls in the Circulate family.

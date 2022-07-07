@@ -28,7 +28,7 @@ Die gegenüberstehenden Tänzer reichen sich die rechten Hände, führen eine Ar
 
 ### Bemerkungen
  
-Die Ocean Wave Rule gilt für diesen Call.
+Die [Ocean Wave Rule](../b2/ocean_wave_rule.md) gilt für diesen Call.
 
 In Basic und Mainstream ist Courtesy Turn darauf beschränkt, dass ein Mann eine Frau dreht.
 

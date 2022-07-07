@@ -38,7 +38,7 @@ damit fortfahren ihren Rock dekorativ einzusetzen.
 
 ### Bemerkungen
 
-Die Facing Couples Rule gilt für dieses Kommando nicht.
+Die [Facing Couples Rule](../b2/facing_couples_rule.md) gilt für dieses Kommando nicht.
 
 Nach Shoot the Star, gibt der Caller manchmal die Anweisung, dass die Tänzer einen oder weitere Pull-ByKommandos mit anschließendem Arm Turn in einen neuen Thar ausführen sollen. In dem zweiten oben
 aufgeführten Kommandobeispiel, folgt nach den Step Thru ein Right Pull By, die Tänzer gehen weiter

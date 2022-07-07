@@ -32,7 +32,7 @@ verbleiben in dieser Position während die Centers das Kommando beenden.
 
 ### Bemerkungen
 
-Die Facing Couples Rule gilt für dieses Kommando.
+Die [Facing Couples Rule](../b2/facing_couples_rule.md) gilt für dieses Kommando.
 
 Während die neuen Centers das Kommando beenden, kann den neuen End-Tänzern ein weiteres Kommando
 gegeben werden (z. B. „Spin Chain Thru, Ends Circulate Twice“).

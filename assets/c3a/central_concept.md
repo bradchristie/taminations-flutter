@@ -16,10 +16,10 @@ Little More”, “Central Stampede”, “Central Team Up”, and “Central Ea
 because the original Centers remain Centers, and the Cloverleaf paths do not include
 interacting with Ends.
 
-If the starting setup is a 2x4, then Central &lt;anything> is done either in each Box or in each
+If the starting setup is a 2x4, then Central \<anything> is done either in each Box or in each
 1x4. In most cases, only one of these possibilities will work. For example, “Central Cross
 Ramble” starts with a Cross Fold action and thus requires working in each wave. If Central
-&lt;anything> can be done in either a Box or a 1x4, then it should be done in each Box unless
+\<anything> can be done in either a Box or a 1x4, then it should be done in each Box unless
 the caller specifies otherwise. For example, from Parallel Waves, “Central Detour” is the
 same as Split Counter Rotate, but “Each Wave Central Detour” is the same as Lockit.
 
@@ -34,9 +34,9 @@ dancers, the caller should specify the desired 4-person setup explicitly, using 
 > 
 
 *The following section discusses technical details
-about appropriate &lt;anything> calls. This is
+about appropriate \<anything> calls. This is
 primarily intended to clarify the criteria
-that a caller should use in selecting the &lt;anything> call.*
+that a caller should use in selecting the \<anything> call.*
 
 
 It is not proper to apply the Central concept to such calls as Reverse Cut/Flip the Galaxy,
