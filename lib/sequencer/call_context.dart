@@ -727,9 +727,9 @@ class CallContext {
    * Match dancers relative to each other, rather than compare absolute positions
    * Returns integer values for axis and quadrant directions
    *           0
-   *         7 | 1
-   *       6 --+-- 2
-   *         5 | 3
+   *         1 | 7
+   *       2 --+-- 6
+   *         3 | 5
    *           4
    * 2 cases
    *   1.  Dancers facing same or opposite directions
@@ -741,7 +741,7 @@ class CallContext {
    *
    *
    */
-  int _angleBin(double a) {
+  static int _angleBin(double a) {
     if (a.isAround(0.0)) return 0;
     if (a.isAround(pi/2)) return 2;
     if (a.isAround(pi)) return 4;
@@ -753,7 +753,7 @@ class CallContext {
     return -1;
   }
 
-  int _dancerRelation(Dancer d1, Dancer d2) => _angleBin(d1.angleToDancer(d2));
+  static int dancerRelation(Dancer d1, Dancer d2) => _angleBin(d1.angleToDancer(d2));
 
   //  Test two sets of dancers to see if the formations match.
   //  Most often ctx2 is a defined formation.
@@ -865,10 +865,10 @@ class CallContext {
       if (mapping[j] < 0 || i == j)
         return true;
       else {
-        var relq1 = _dancerRelation(ctx1.dancers[i], ctx1.dancers[j]);
-        var relt1 = _dancerRelation(ctx2.dancers[mapping[i]], ctx2.dancers[mapping[j]]);
-        var relq2 = _dancerRelation(ctx1.dancers[j], ctx1.dancers[i]);
-        var relt2 = _dancerRelation(ctx2.dancers[mapping[j]], ctx2.dancers[mapping[i]]);
+        var relq1 = dancerRelation(ctx1.dancers[i], ctx1.dancers[j]);
+        var relt1 = dancerRelation(ctx2.dancers[mapping[i]], ctx2.dancers[mapping[j]]);
+        var relq2 = dancerRelation(ctx1.dancers[j], ctx1.dancers[i]);
+        var relt2 = dancerRelation(ctx2.dancers[mapping[j]], ctx2.dancers[mapping[i]]);
         //  If dancers are side-by-side, make sure handholding matches by checking distance
         if (handholds && (relq1 == 2 || relq1 == 6) && (relq2 == 2 || relq2 == 6)) {
           var d1 = ctx1.dancers[i].distanceTo(ctx1.dancers[j]);

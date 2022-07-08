@@ -3139,6 +3139,27 @@ Right and Left Thru
 Pass Thru
 Wheel and Deal
 Centers Square Thru 3
+Allemande Left''',
+
+  'Reshape' :
+'''Heads Lead Right
+Veer Left
+Boys 1/2 Circulate
+Wave-based Triangle Reshape
+Points Turn Back
+Wave-based Triangle Reshape
+Tandem-based Triangle Reshape
+Galaxy Circulate
+Wave-based Triangle Reshape
+Cut the Galaxy
+Girls Run
+Cast Off Three Quarters
+Half Sashay
+Adjust to Squared Set
+Sides Pair Off
+Pass Thru
+Trade By
+Pass Thru
 Allemande Left'''
 
 };

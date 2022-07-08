@@ -23,10 +23,13 @@ import '../common.dart';
 class TriangleCirculate extends Action {
 
   @override final level = LevelData.C1;
+  var rootName = 'Triangle Circulate'.r;
   TriangleCirculate(String name) : super(name);
 
   //  Calculate circulate path to next triangle dancer
-  Path _oneCirculatePath(Dancer d, Dancer d2) {
+  //  d2 is the spot where dancer d is to circulate
+  //  d3 is the 3rd dancer of the triangle
+  Path oneCirculatePath(Dancer d, Dancer d2, Dancer d3) {
     if (d2.isInFrontOf(d)) {
       //  Path is forward
       final dist = d.distanceTo(d2);
@@ -51,7 +54,7 @@ class TriangleCirculate extends Action {
   @override
   Future<void> perform(CallContext ctx) async {
     //  Find the 6 dancers to circulate
-    final triangleType = name.replaceFirst('Triangle Circulate', '')
+    final triangleType = name.replaceFirst(rootName, '')
         .toLowerCase()
         .replaceAll('\\W'.r, '');
     final points = ctx.points();
@@ -132,8 +135,10 @@ class TriangleCirculate extends Action {
                 && d.angleToDancer(dd).abs().isAround(pi/2)).firstOrNull ??
             triangle.where((dd) => dd != d
                 && !d.angleToDancer(dd).abs().isAround(pi)).firstOrNull;
-        if (d2 != null)
-          d.path = _oneCirculatePath(d,d2);
+        if (d2 != null) {
+          final d3 = triangle.firstWhere((dq) => dq != d && dq != d2);
+          d.path = oneCirculatePath(d, d2, d3);
+        }
         else
           throw CallError('Unable to calculate circulate path for $d');
       }

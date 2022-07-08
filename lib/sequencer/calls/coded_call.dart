@@ -178,6 +178,7 @@ import 'c2/kick_off.dart';
 import 'c2/loop.dart';
 import 'c2/peel_to_a_diamond.dart';
 import 'c2/relocate.dart';
+import 'c2/reshape.dart';
 import 'c2/ripple.dart';
 import 'c2/rotary.dart';
 import 'c2/rotate.dart';
@@ -444,6 +445,8 @@ abstract class CodedCall extends Call {
     'relaythetop'.ri: (name) => RelayTheTop(name),
     '(left)?(grand)?remake'.ri: (name) => Remake(name),
     '.+(but)?replace.+'.ri: (name) => Replace(name),
+    '(inside|outside|inpoint|outpoint|tandembased|wavebased)?trianglereshape(thetriangle)?'.ri:
+        (name) => Reshape(name),
     'reverseexplode'.ri: (_) => ReverseExplode(),
     'reverseorder.*'.ri: (name) => ReverseOrder(name),
     'rightandleftthru'.ri: (_) => RightAndLeftThru(),
