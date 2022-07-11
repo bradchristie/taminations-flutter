@@ -95,7 +95,6 @@ class _SequencerCallsFrameState extends fm.State<SequencerCallsFrame> {
                 )
                 )
 
-
               )),
             fm.Row(children: [
               _LevelCheckbox(LevelData.SSD),
@@ -104,18 +103,16 @@ class _SequencerCallsFrameState extends fm.State<SequencerCallsFrame> {
             ]),
             fm.Row(children: [
               _LevelCheckbox(LevelData.B1),
-              _LevelCheckbox(LevelData.PLUS),
-              _LevelCheckbox(LevelData.C1)
-            ]),
-            fm.Row(children: [
-              _LevelCheckbox(LevelData.B2),
               _LevelCheckbox(LevelData.A1),
               _LevelCheckbox(LevelData.C2)
             ]),
             fm.Row(children: [
-              _LevelCheckbox(LevelData.MS),
+              _LevelCheckbox(LevelData.B2),
               _LevelCheckbox(LevelData.A2),
               _LevelCheckbox(LevelData.C3A)
+            ]),
+            fm.Row(children: [
+              _LevelCheckbox(LevelData.MS),
             ])
           ]);
         } ),

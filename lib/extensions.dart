@@ -116,6 +116,7 @@ extension TamString on String {
       substring(0,1).toUpperCase() + substring(1).toLowerCase();
   //  Capitalize words except for common small words
   String capWords() => split('\\s+'.r).map((s) => s.capitalize()).join(' ')
+      .replaceAllMapped('\\W\\w'.r, (m) => m[0]!.toUpperCase())
       .replaceAllMapped('\\b(A|An|At|And|To|The)\\b'.r, (m) => m[1]!.toLowerCase());
   String get norm => TamUtils.normalizeCall(this);
   //  Matches is true if the regexp matches the entire string
