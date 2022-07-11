@@ -550,7 +550,7 @@ abstract class CodedCall extends Call {
     '(reverse)?truck'.ri: (name) => Truck(name),
     '(left)?turnthru'.ri: (name) => TurnThru(name),
     '(left)?turnanddeal'.ri: (name) => TurnAndDeal(name),
-    'u?turnback'.ri: (_) => TurnBack(),
+    'u?turnback'.ri: (name) => TurnBack(name),
     '.*(donot)?turnthestars?(14|12|34|afullturn)'.ri: (name) => TurnTheStar(name),
     '(go)?twice'.ri: (name) => Twice(name),
     'twist(theline|and.+)'.ri: (name) => TwistAnything(name),

@@ -22,7 +22,7 @@ import '../common.dart';
 
 class TurnBack extends Action {
 
-  TurnBack() : super('Turn Back');
+  TurnBack(name) : super(name);
 
   @override
   Path performOne(Dancer d, CallContext ctx) {
