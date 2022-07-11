@@ -1264,13 +1264,19 @@ class CallContext {
     return points;
   }
 
-  List<Dancer> points() =>
-      pointsOfDiamondFormation('Diamond LH Boys Center') +
-          pointsOfDiamondFormation('Diamonds RH Girl Points') +
-          pointsOfDiamondFormation('Diamond RH Girl Points') +
-          pointsOfDiamondFormation('Diamonds RH PTP Girl Points') +
-          pointsOfDiamondFormation('Hourglass RH GP') +
-          pointsOfDiamondFormation('Galaxy RH GP');
+  List<Dancer> points() {
+    var points =
+        pointsOfDiamondFormation('Diamonds RH Girl Points') +
+        pointsOfDiamondFormation('Diamonds RH PTP Girl Points') +
+        pointsOfDiamondFormation('Hourglass RH GP') +
+        pointsOfDiamondFormation('Galaxy RH GP');
+    //  Only try single diamond if none others found
+    //  Otherwise points of hourglass central diamond
+    //  are incorrectly added
+    if (points.isEmpty)
+      points = pointsOfDiamondFormation('Diamond LH Boys Center');
+    return points;
+  }
 
   //  Return pair of boxes for dancers in a 2x4 formation
   List<List<Dancer>>? boxes() {
