@@ -200,4 +200,58 @@
     </path>
   </tam>
 
+  <tam title="Left Wheel and Deal"
+       from="Lines Facing Out"
+       formation="Lines Facing Out"
+       difficulty="3" display="no">
+    <path>
+      <move select="Run Left" beats="4" hands="left" scaleX="2" scaleY="2" offsetX="1" />
+    </path>
+    <path>
+      <move select="U-Turn Left" beats="4" hands="right" offsetX="1" />
+    </path>
+    <path>
+      <move select="U-Turn Right" beats="4" hands="left" offsetX="-1" />
+    </path>
+    <path>
+      <move select="Run Right" beats="4" hands="right" scaleY="2" offsetX="-1" />
+    </path>
+  </tam>
+
+  <tam title="Left Wheel and Deal"
+       from="Tidal Line"
+       formation="Tidal Line RH"
+       difficulty="3" display="no">
+    <path>
+      <move select="Run Right" beats="4" hands="gripright" scaleY="1.25" offsetX="-2" />
+    </path>
+    <path>
+      <move select="U-Turn Right" beats="4" hands="gripleft" offsetX="-2" offsetY=".5" />
+    </path>
+    <path>
+      <move select="U-Turn Left" beats="4" hands="gripright" offsetX="2" offsetY="-.5" />
+    </path>
+    <path>
+      <move select="Run Left" beats="4" hands="gripleft" scaleY="1.25" offsetX="2" />
+    </path>
+  </tam>
+
+  <tam title="Left Wheel and Deal"
+       from="Left-Hand Tidal Line"
+       formation="Tidal Line LH"
+       difficulty="3" display="no">
+    <path>
+      <move select="U-Turn Left" beats="4" hands="gripright" offsetX="2" offsetY="-.5" />
+    </path>
+    <path>
+      <move select="Run Left" beats="4" hands="gripleft" scaleY="1.25" offsetX="2" />
+    </path>
+    <path>
+      <move select="Run Right" beats="4" hands="gripright" scaleY="1.25" offsetX="-2" />
+    </path>
+    <path>
+      <move select="U-Turn Right" beats="4" hands="gripleft" offsetX="-2" offsetY=".5" />
+    </path>
+  </tam>
+
 </tamination>
