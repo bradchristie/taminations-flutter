@@ -613,6 +613,28 @@
     </path>
   </tam>
 
+  <tam title="Magic &quot;O&quot; (C-1) Circulate"
+       group="Magic &quot;O&quot; (C-1)" display="no">
+    <formation>
+      <dancer gender="boy" x="-3" y="1" angle="180"/>
+      <dancer gender="girl" x="-3" y="-1" angle="0"/>
+      <dancer gender="boy" x="-1" y="3" angle="0"/>
+      <dancer gender="girl" x="-1" y="-3" angle="180"/>
+    </formation>
+    <path>
+      <move select="Run Left" beats="4"/>
+    </path>
+    <path>
+      <move select="Extend Left" beats="4" scaleX="2" scaleY="4"/>
+    </path>
+    <path>
+      <move select="Forward 2" beats="4"/>
+    </path>
+    <path>
+      <move select="Extend Right" beats="4" scaleX="2" scaleY="4"/>
+    </path>
+  </tam>
+
   <tam title="Magic &quot;O&quot; (C-1) Walk and Dodge" group="Magic &quot;O&quot; (C-1)">
     <formation>
       <dancer gender="boy" x="-3" y="1" angle="0"/>

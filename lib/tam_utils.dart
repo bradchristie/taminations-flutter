@@ -473,7 +473,7 @@ class TamUtils {
       .replaceAll('(three|3)\\s*(by)?x?-?\\s*(one|1)'.ri,'31')
       .replaceAll('(one|1)\\s*(by)?x?-?\\s*(three|3)'.ri,'13')
   //  'Column' of Magic Column is optional
-      .replaceAll('magic (?!column)(?!o)(?!expand)'.ri,'Magic Column ')
+      .replaceAll('magic column'.ri,'Magic ')
   //  Use singular form
       .replaceAllMapped('\\b(boy|girl|beau|belle|center|end|point|head|(out)?side)s\\b'.ri, (m) => m[1]!)
   //  Misc other variations

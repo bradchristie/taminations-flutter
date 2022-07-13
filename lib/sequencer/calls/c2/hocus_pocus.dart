@@ -23,19 +23,15 @@ import '../common.dart';
 class HocusPocus extends Action {
 
   @override final level = LevelData.C2;
-  HocusPocus() : super('Hocus Pocus');
+  HocusPocus(name) : super(name);
 
   @override
   Future<void> perform(CallContext ctx) async {
     final outer4 = CallContext.fromContext(ctx,dancers: ctx.outer(4).inOrder());
-    final outerO = outer4.fillFormation('O RH')
-        ?? outer4.fillFormation('O LH')
-        ?? outer4.fillFormation('O Eight Chain Thru')
-        ?? outer4.fillFormation('O Trade By');
-    if (outerO == null)
-      throw CallError('Cannot determine how outer dancers can circulate.');
-    await ctx.subContext(outerO.dancers, (ctx2) async {
-      await ctx2.applyCalls('O Circulate','O Circulate');
+    await ctx.subContext(outer4.dancers, (ctx2) async {
+      final magic = name.contains('Magic') ? 'Magic' : '';
+      final oCall = 'Do Your Part $magic O Circulate';
+      await ctx2.applyCalls(oCall,oCall);
     });
     await ctx.subContext(ctx.center(4), (ctx2) async {
       await ctx2.applyCalls('Trade');

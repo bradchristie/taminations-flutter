@@ -375,7 +375,7 @@ abstract class CodedCall extends Call {
     'halfthek'.ri: (_) => HalfTheK(),
     'head'.ri: (name) => Heads(name),
     '(left)?(single|partner)?hinge'.ri: (name) => Hinge(name),
-    'hocuspocus'.ri: (_) => HocusPocus(),
+    '(magic)?hocuspocus'.ri: (name) => HocusPocus(name),
     'horseshoeturn'.ri: (_) => HorseshoeTurn(),
     '(hubs|rims)trade.+'.ri: (name) => HubsTrade(name),
 

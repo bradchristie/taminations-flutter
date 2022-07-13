@@ -53,8 +53,6 @@ class DoYourPart extends Action {
     final callName = name.replaceFirst('Do Your Part'.ri,'').trim();
     if (callName.isBlank)
       throw CallError('Do Your Part of what?');
-    if (ctx.actives.length == ctx.dancers.length)
-      throw CallError('Who is going to Do Your Part?');
 
     await ctx.subContext(ctx.actives, (dypctx) async {
       //  Currently just works with formations that match
@@ -71,7 +69,6 @@ class DoYourPart extends Action {
         for (final tam in file.rootElement.childrenNamed('tam')
             .where((tam) =>
         tam('sequencer') != 'no' &&
-
             TamUtils.normalizeCall(tam('title')).toLowerCase() ==
                 norm.toLowerCase())) {
           //  See if this is a subset match to the DYP dancers
