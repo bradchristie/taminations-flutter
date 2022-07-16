@@ -261,7 +261,7 @@ class SequencerModel extends fm.ChangeNotifier {
       await cctx.performCall();
       cctx.checkForCollisions();
       cctx.extendPaths();
-      if (!cctx.callname.contains('(move in|step|gnat)'.ri))
+      if (!cctx.callname.contains('(move in|step|gnat|back\\s*(up|away))'.ri))
         cctx.adjustForSquaredSetCovention();
       cctx.checkCenters();
       //  Snap to a standard formation so subsequent calls will work

@@ -64,8 +64,16 @@ class CloverAnd extends Action {
       throw CallError('Unable to find dancers to Cloverleaf');
     //  Other dancers might need to step ahead to make sure their call works
     //  and doesn't collide with the clovers.
-    if (ctx.dancers.every((d) => clovers.contains(d) ||
-        (d.location.length > 3.0 && name == 'Clover and Nothing')))
+    if (ctx.dancers.every((d) {
+      if (clovers.contains(d))
+        return true;
+      if (d.location.length > 3.0) {
+        var d2 = ctx.dancerInFront(d);
+        if (d2 == null || clovers.contains(d2))
+          return true;
+      }
+      return false;
+    }))
       othersStep = true;
 
     final ss = CallContext.fromName('Squared Set');

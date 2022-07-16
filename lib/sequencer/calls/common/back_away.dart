@@ -31,10 +31,8 @@ class BackAway extends Action {
 
   @override
   Path performOne(Dancer d, CallContext ctx) {
-    if (ctx.dancersInBack(d).isEmpty)
-      //  TODO hold hands with partner?
-      return TamUtils.getMove('Back 2');
-    throw CallError('Dancer $d cannot Back Away');
+    //  TODO hold hands with partner?
+    return TamUtils.getMove('Back 2');
   }
 
 }

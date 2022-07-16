@@ -289,7 +289,7 @@ abstract class CodedCall extends Call {
     'around2toaline'.ri: (_) => AroundToALine('Around Two to a Line'),
     'AsCouples?.*'.r: (name) => AsCouples(name),
 
-    'backaway'.ri: (_) => BackAway(),
+    'back(away|up)'.ri: (_) => BackAway(),
     'balance'.ri: (_) => Balance(),
     'beau'.ri: (_) => Beaus(),
     'belle'.ri: (_) => Belles(),

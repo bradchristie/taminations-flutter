@@ -182,6 +182,13 @@ Ferris Wheel
 Centers Square Thru 3
 Allemande Left''',
 
+  'Clover And 2':
+'''Sides Move In and Pass Thru
+Clover and Pass Thru
+Pass Thru
+Trade By
+Allemande Left''',
+
   'Courtesy Turn':
   '''Heads Move In and Pass Thru
 Centers Courtesy Turn and Back Away
