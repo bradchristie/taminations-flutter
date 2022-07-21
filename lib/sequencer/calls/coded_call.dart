@@ -261,6 +261,7 @@ import 'ms/walk_and_dodge.dart';
 import 'plus/acey_deucey.dart';
 import 'plus/coordinate.dart';
 import 'plus/diamond_circulate.dart';
+import 'plus/double_scoot.dart';
 import 'plus/explode.dart';
 import 'plus/load_the_boat.dart';
 import 'plus/points.dart';
@@ -346,6 +347,7 @@ abstract class CodedCall extends Call {
     'dothe.+?part.+'.ri: (name) => DoOnePart(name),
     '(left)?dosado'.ri: (name) => Dosado(name),
     'doublecross'.ri: (_) => DoubleCross(),
+    'doublescoot'.ri: (_) => DoubleScoot(),
     'doyourpart.+'.ri: (name) => DoYourPart(name),
 
     '8chain(1|2|3|4|5|6|7|thru)'.ri: (name) => EightChain(name),
