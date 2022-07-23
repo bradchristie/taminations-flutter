@@ -88,38 +88,6 @@
     </path>
   </tam>
 
-  <tam title="Ladies Chain" from="Double Pass Thru"
-       sequencer="gender-specific" difficulty="2">
-    <formation>
-      <dancer gender="boy" x="-3" y="1" angle="0"/>
-      <dancer gender="boy" x="-3" y="-1" angle="0"/>
-      <dancer gender="girl" x="-1" y="1" angle="0"/>
-      <dancer gender="girl" x="-1" y="-1" angle="0"/>
-    </formation>
-    <path>
-      <move select="Quarter Left" beats="3" offsetX="1" offsetY=".5"/>
-      <move select="U-Turn Left" beats="3" hands="right"/>
-      <move select="Quarter Left" hands="right" beats="2" offsetX="-1.5"/>
-    </path>
-    <path>
-      <move select="Quarter Left" beats="3" offsetX="1" offsetY="-.5"/>
-      <move select="U-Turn Left" beats="3" hands="right"/>
-      <move select="Quarter Left" hands="right" beats="2" offsetX="-.5"/>
-    </path>
-    <path>
-      <move select="Pull Left" scaleY=".5"/>
-      <move select="Quarter Right" beats="2" offsetX="1"/>
-      <move select="Swing Left"/>
-      <move select="Hinge Left" beats="2" scaleX="1.5"/>
-    </path>
-    <path>
-      <move select="Pull Left" scaleY=".5"/>
-      <move select="Lead Right" beats="2"/>
-      <move select="Swing Left"/>
-      <move select="Hinge Left" beats="2" scaleX=".5"/>
-    </path>
-  </tam>
-
   <tam title="Head Ladies Chain" group=" "
        from="Static Square"
        formation="Static Square" sequencer="gender-specific" difficulty="1">
@@ -293,6 +261,38 @@
     <path>
     </path>
     <path>
+    </path>
+  </tam>
+
+  <tam title="On a Double Track, Ladies Chain" from="Double Pass Thru" group=" "
+       sequencer="gender-specific" difficulty="2">
+    <formation>
+      <dancer gender="boy" x="-3" y="1" angle="0"/>
+      <dancer gender="boy" x="-3" y="-1" angle="0"/>
+      <dancer gender="girl" x="-1" y="1" angle="0"/>
+      <dancer gender="girl" x="-1" y="-1" angle="0"/>
+    </formation>
+    <path>
+      <move select="Quarter Left" beats="3" offsetX="1" offsetY=".5"/>
+      <move select="U-Turn Left" beats="3" hands="right"/>
+      <move select="Quarter Left" hands="right" beats="2" offsetX="-1.5"/>
+    </path>
+    <path>
+      <move select="Quarter Left" beats="3" offsetX="1" offsetY="-.5"/>
+      <move select="U-Turn Left" beats="3" hands="right"/>
+      <move select="Quarter Left" hands="right" beats="2" offsetX="-.5"/>
+    </path>
+    <path>
+      <move select="Pull Left" scaleY=".5"/>
+      <move select="Quarter Right" beats="2" offsetX="1"/>
+      <move select="Swing Left"/>
+      <move select="Hinge Left" beats="2" scaleX="1.5"/>
+    </path>
+    <path>
+      <move select="Pull Left" scaleY=".5"/>
+      <move select="Lead Right" beats="2"/>
+      <move select="Swing Left"/>
+      <move select="Hinge Left" beats="2" scaleX=".5"/>
     </path>
   </tam>
 
