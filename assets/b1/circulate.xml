@@ -26,7 +26,7 @@
        from="Right-Hand Box"
        formation="Box RH Compact"
        difficulty="1"
-       fractions="2" >
+       fractions="2" sequencer="no">
     <path>
       <move select="Forward 3" beats="4"/>
     </path>
@@ -38,7 +38,7 @@
   <tam title="Box Circulate"
        from="Left-Hand Box"
        formation="Box LH Compact"
-       fractions="2" difficulty="2">
+       fractions="2" difficulty="2" sequencer="no">
     <path>
       <move select="Run Left" beats="4" />
     </path>

@@ -37,7 +37,7 @@ class Circulate extends Action {
         }
         else if (ctx.actives.every((d) => d.data.center)) {
           try {
-            await ctx2.applyCalls('Box Circulate' );
+            await ctx2.applyCalls('Box Circulate');
           } on CallError {
             //  That didn't work, try to find a circulate path for each dancer
             await super.perform(ctx);

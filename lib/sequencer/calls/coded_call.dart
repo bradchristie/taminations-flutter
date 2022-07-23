@@ -18,10 +18,6 @@
 
 */
 
-import 'package:taminations/sequencer/calls/c1/rotary_spin.dart';
-import 'package:taminations/sequencer/calls/c2/lines_anything_thru.dart';
-import 'package:taminations/sequencer/calls/c2/stack_the_line.dart';
-
 import '../../extensions.dart';
 import '../../tam_utils.dart';
 import 'a1/as_couples.dart';
@@ -125,6 +121,7 @@ import 'c1/ramble.dart';
 import 'c1/relay_the_top.dart';
 import 'c1/replace.dart';
 import 'c1/reverse_explode.dart';
+import 'c1/rotary_spin.dart';
 import 'c1/scoot_and_plenty.dart';
 import 'c1/scoot_and_ramble.dart';
 import 'c1/siamese.dart';
@@ -175,6 +172,7 @@ import 'c2/half_the_k.dart';
 import 'c2/hocus_pocus.dart';
 import 'c2/hubs_trade.dart';
 import 'c2/kick_off.dart';
+import 'c2/lines_anything_thru.dart';
 import 'c2/loop.dart';
 import 'c2/peel_to_a_diamond.dart';
 import 'c2/relocate.dart';
@@ -186,6 +184,7 @@ import 'c2/scoot_and_cross_ramble.dart';
 import 'c2/shazam.dart';
 import 'c2/single_cross_and_wheel.dart';
 import 'c2/single_cross_trade_and_wheel.dart';
+import 'c2/stack_the_line.dart';
 import 'c2/stagger.dart';
 import 'c2/tag_your_neighbor.dart';
 import 'c2/the_k.dart';
@@ -221,6 +220,7 @@ import 'common/flip.dart';
 import 'common/fraction.dart';
 import 'common/girls.dart';
 import 'common/heads.dart';
+import 'common/in_the_center.dart';
 import 'common/insides.dart';
 import 'common/leaders.dart';
 import 'common/nothing.dart';
@@ -321,7 +321,7 @@ abstract class CodedCall extends Call {
     'chiselthru'.ri: (_) => ChiselThru(),
     'circleby(14|12|34|nothing)and(14|12|34|nothing)'.ri: (name) => CircleBy(name),
     'circleby(14|12|34|nothing)and(?!(14|12|34|nothing)).*'.ri: (name) => CircleBy(name),
-    'circulate'.ri: (_) => Circulate(),
+    '(box)?circulate'.ri: (_) => Circulate(),
     '(cross)?cloverand(\\w.*)'.ri: (name) => CloverAnd(name),
     'cloverleaf'.ri: (_) => Cloverleaf(),
     'concentric.+'.ri: (name) => Concentric(name),
@@ -386,6 +386,7 @@ abstract class CodedCall extends Call {
     'center(2|4|6)'.ri: (name) => Insides(name),
     'in(ner|sides?)(2|4|6)?'.ri: (name) => Insides(name),
     '.*interrupt.*'.ri: (name) => Interrupt(name),
+    'inthecenter'.ri: (_) => InTheCenter(),
 
     'jaywalk'.ri: (_) => Jaywalk(),
 

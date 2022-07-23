@@ -54,7 +54,6 @@ class Tandem extends FourDancerConcept {
       return d2.location;
   }
 
-
   @override
   Vector computeLocation(Dancer d, Movement m, int mi, double beat, int groupIndex) {
     //  Position tandem dancers 0.5 units in front and behind concept dancer
@@ -68,14 +67,14 @@ class Tandem extends FourDancerConcept {
 
   @override
   void postAdjustment(CallContext ctx, Dancer cd, List<Dancer> group) {
-    //  If there is space, spread out the tandem a bit
-    final leader = group[0];
-    final trailer = group[1];
-    if ((ctx.dancerInFront(leader)?.distanceTo(leader) ?? 2.0) > 1.0 &&
-        (ctx.dancerInBack(trailer)?.distanceTo(trailer) ?? 2.0) > 1.0) {
-      leader.path.skewFromEnd(0.5, 0.0);
-      trailer.path.skewFromEnd(-0.5, 0.0);
-    }
+    //  This covers most all the formations you get from tandem calls
+    const tandemFormations = {
+      'Normal Lines Compact': 1.0,
+      'Normal Lines': 1.0,
+      'Double Pass Thru': 1.0,
+      'Quarter Tag' : 1.5,
+    };
+    ctx.matchFormationList(tandemFormations,maxOffset: 9.0);
   }
 
 }

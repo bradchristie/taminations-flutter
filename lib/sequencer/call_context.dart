@@ -136,13 +136,16 @@ class CallContext {
   ];
 
   static const standardFormations = {
-    'Normal Lines Compact' : 1.0,
-    'Normal Lines' : 1.0,
-    'Double Pass Thru' : 1.0,
+    'Normal Lines Compact': 1.0,
+    'Normal Lines': 1.0,
+    'Double Pass Thru': 1.0,
     'Quarter Tag' : 1.5,
     'Tidal Line RH' : 1.0,
+    //  Need I-Beam so Heads Swing Thru doesn't collide with the sides
+    //'I-Beam' : 2.0,
+  };
+  /*
     'Tidal Wave of 6' : 2.0,
-    'I-Beam' : 2.0,
     'Diamonds RH Girl Points' : 2.0,
     'Diamonds RH PTP Girl Points' : 3.0,
     'Hourglass RH BP' : 3.0,
@@ -167,7 +170,7 @@ class CallContext {
     'Quarter Z RH' : 4.0,
     'Quarter Z LH' : 4.0,
     'Diamond Between Kouples' : 4.0
-  };
+  };  */
 
   static const twoCoupleFormations = {
     'Facing Couples Compact' : 1.0,
@@ -959,7 +962,7 @@ class CallContext {
 
   //  See if the current dancer positions resemble a standard formation
   //  and, if so, snap to the standard
-  void matchFormationList(Map<String,double> formations) {
+  void matchFormationList(Map<String,double> formations, {double maxOffset = 6.1}) {
     //  Make sure newly added animations are finished
     for (var d in dancers) {
       d.path.recalculate();
@@ -973,7 +976,13 @@ class CallContext {
     for (var f in formations.keys) {
       var ctx2 = CallContext.fromXML(TamUtils.getFormation(f));
       //  See if this formation matches
-      var rot = (f.contains('Lines') || f.contains('Couples')) ? 180 : 90;
+      //var rot = (f.contains('Lines') || f.contains('Couples')) ? 180 : 90;
+      var rot = 180;
+      switch (f) {
+        case 'Double Pass Thru' :
+        case 'I-Beam' :
+        rot = 90; break;
+      }
       var mapping = ctx1.matchFormations(ctx2,sexy:false,fuzzy:true,rotate:rot,handholds:false);
       if (mapping != null) {
         //  If it does, get the offsets
@@ -989,7 +998,7 @@ class CallContext {
         var specialHack =
         ((bestMapping?.name.startsWith('Normal Lines') ?? false) &&
             f == 'Double Pass Thru');
-        if (totOffset < 9.0 && angsnap.isApproxInt(delta : 0.05) && !specialHack) {
+        if (totOffset < maxOffset && angsnap.isApproxInt(delta : 0.05) && !specialHack) {
           if (bestMapping == null || totOffset*favoring + 0.2 < bestMapping.totalOffset)
             bestMapping = BestMapping(
                 f,  // only used for debugging
@@ -1007,8 +1016,37 @@ class CallContext {
 
   void matchStandardFormation() {
     if (_snap) {
-      var formations = dancers.length == 4 ? twoCoupleFormations : standardFormations;
+      var formations = dancers.length == 4
+          ? twoCoupleFormations
+          : standardFormations;
       matchFormationList(formations);
+      //  One more check for bad I-Beam
+      repairFormation('Misshapen I-Beam', 'I-Beam');
+    }
+  }
+
+  void repairFormation(String from, String to) {
+    var ctx1 = CallContext.fromContext(this);
+    for (var d in ctx1.dancers)
+      d.data.active = true;
+    var iBeam = CallContext.fromName(from);
+    var mapping = ctx1.matchFormations(
+        iBeam, sexy: false, fuzzy: true, rotate: 90, handholds: false);
+    if (mapping != null) {
+      var matchResult = ctx1.computeFormationOffsets(iBeam, mapping);
+      var totOffset = matchResult.offsets.fold<double>(
+          0.0, (s, v) => s + v.length);
+      if (totOffset < 5.0) {
+        var fixedBeam = CallContext.fromName(to);
+        var mapping2 = ctx1.matchFormations(fixedBeam, sexy: false,
+            fuzzy: true,
+            rotate: 90,
+            handholds: false);
+        if (mapping2 != null) {
+          var matchResult2 = ctx1.computeFormationOffsets(fixedBeam, mapping2);
+          adjustToFormationMatch(matchResult2);
+        }
+      }
     }
   }
 
@@ -1340,14 +1378,15 @@ class CallContext {
   }
 
   //  Return true if this dancer is in tandem with another dancer
-  bool isInTandem(Dancer d) {
-    if (d.data.trailer)
-      return dancerInFront(d)?.data.leader ?? false;
-    else if (d.data.leader)
-      return dancerInBack(d)?.data.trailer ?? false;
+  Dancer? tandemDancer(Dancer d) {
+    if (d.data.trailer && (dancerInFront(d)?.data.leader ?? false))
+      return dancerInFront(d);
+    else if (d.data.leader && (dancerInBack(d)?.data.trailer ?? false))
+      return dancerInBack(d);
     else
-      return false;
+      return null;
   }
+  bool isInTandem(Dancer d) => tandemDancer(d) != null;
 
   //  Return true if this is 4 dancers in a box
   bool isBox() =>

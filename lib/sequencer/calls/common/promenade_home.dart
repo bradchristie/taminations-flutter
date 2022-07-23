@@ -85,6 +85,7 @@ class PromenadeHome extends Action {
         !ctx.dancers[0].anglePosition.isAround(pi));
     //  Adjust from promenade to squared set
     await ctx.applyCalls('Half Wheel Around');
+    ctx.adjustToFormation('Squared Set');
     ctx.level = LevelData.B1;  // otherwise Counter Rotate would set to C-1
   }
 

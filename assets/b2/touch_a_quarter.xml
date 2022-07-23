@@ -24,15 +24,15 @@
 
   <tam title="Touch a Quarter"
        from="Facing Couples"
-       formation="Facing Couples"
-       difficulty="1" sequencer="no">
+       formation="Facing Couples Compact"
+       difficulty="1">
     <path>
-      <move select="Extend Left" scaleX="2" />
-      <move select="Quarter Right" hands="right" beats="1" offsetX="1" />
+      <move select="Extend Left" scaleX="1.5" />
+      <move select="Hinge Right" beats="1" scaleY=".5"/>
     </path>
     <path>
-      <move select="Extend Left" scaleX="2" scaleY=".5" />
-      <move select="Hinge Right" beats="1" scaleY="1.5" />
+      <move select="Extend Left" scaleX="1.5" scaleY=".5" />
+      <move select="Hinge Right" beats="1" />
     </path>
   </tam>
 

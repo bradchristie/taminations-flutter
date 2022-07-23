@@ -80,17 +80,20 @@ class TriangleCirculate extends Action {
         }
         break;
       case 'tandembased' :
-        for (final d in ctx.dancers) {
-          //  Dancer must either be in a tandem...
-          if (!ctx.isInTandem(d)) {
-            final tandems = ctx.dancers.where((d2) => ctx.isInTandem(d2));
-            //  Find the dancer closest to each tandem
-            //  We don't want dancers further out to get involved
-            final closest = tandems.map((d2) => ctx.dancersInOrder(d2,(d3) => !ctx.isInTandem(d3)).firstOrNull).whereType<Dancer>().toSet();
-            if (!closest.contains(d))
-              d.data.active = false;
-          }
+        final tandems = ctx.dancers.where((d2) => ctx.isInTandem(d2)).toList();
+        //  Find the dancer closest to each tandem
+        //  We don't want dancers further out to get involved
+        final tandemPoints = <Dancer>{};
+        for (final d in tandems) {
+          var d2 = ctx.tandemDancer(d)!;
+          var d3 = ctx.dancers.where((dq) => !tandems.contains(dq) &&
+              dq.distanceTo(d) < 3.0 && dq.distanceTo(d2) < 3.0).firstOrNull;
+          if (d3 != null)
+            tandemPoints.add(d3);
         }
+        for (final d in ctx.dancers)
+          if (!tandems.contains(d) && !tandemPoints.contains(d))
+            d.data.active = false;
         break;
       case 'wavebased':
       case '':

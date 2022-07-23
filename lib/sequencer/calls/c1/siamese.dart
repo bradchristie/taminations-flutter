@@ -69,6 +69,17 @@ class Siamese extends FourDancerConcept {
 
   @override
   void postAdjustment(CallContext ctx, Dancer cd, List<Dancer> group) {
+    //  This covers most all the formations you get from tandem calls
+    const tandemFormations = {
+      'Normal Lines Compact': 1.0,
+      'Normal Lines': 1.0,
+      'Double Pass Thru': 1.0,
+      'Quarter Tag' : 1.5,
+    };
+    ctx.matchFormationList(tandemFormations,maxOffset: 9.0);
+
+/*
+
     if (tandems.contains(group)) {
       //  If there is space, spread out the tandem a bit
       final leader = group[0];
@@ -83,6 +94,7 @@ class Siamese extends FourDancerConcept {
       group[0].path.addhands(Hands.GRIPRIGHT);
       group[1].path.addhands(Hands.GRIPLEFT);
     }
+*/
   }
 
 }

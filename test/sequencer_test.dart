@@ -732,7 +732,7 @@ Triple Trade''',
 Extend
 Acey Deucey Once and a Half
 Triple Trade
-Center 4 Cut the Diamond While Others Hinge
+Center Diamond Cut the Diamond While Others Hinge
 Boys Run
 Extend
 Centers Circulate
@@ -974,7 +974,7 @@ Slide Thru
 Pass Thru
 Wheel and Deal
 Centers Reverse Swap Around
-Allemande Left ''',
+Allemande Left''',
 
   'Zing' :
   '''Heads Pass the Ocean
@@ -1248,7 +1248,6 @@ Allemande Left''',
   '''Heads Lead Right
 Veer Left
 Vertical 1/4 Tag
-Adjust to 1/4 Tag
 Extend
 Boys Run
 Vertical 1/2 Tag
@@ -1259,7 +1258,6 @@ Girls Walk and Dodge
 Star Thru
 Bend the Line
 Vertical Left 1/4 Tag
-Adjust to 1/4 Tag
 Chain Reaction
 Vertical Left 1/4 Tag
 Extend
@@ -2987,7 +2985,7 @@ Allemande Left''',
 Extend
 Finish Square Chain the Top
 Centers Right Roll to a Wave
-Outer 4 Separate
+Outer 4 Turn Back
 Square Chain the Top
 Bend the Line
 Left Square Chain the Top Skip the Last Part
@@ -3152,6 +3150,7 @@ Allemande Left''',
 '''Heads Lead Right
 Veer Left
 Boys 1/2 Circulate
+Adjust to a Galaxy
 Wave-based Triangle Reshape
 Points Turn Back
 Wave-based Triangle Reshape
@@ -3162,7 +3161,6 @@ Cut the Galaxy
 Girls Run
 Cast Off Three Quarters
 Half Sashay
-Adjust to Squared Set
 Sides Pair Off
 Pass Thru
 Trade By
