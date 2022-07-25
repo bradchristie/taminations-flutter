@@ -18,12 +18,7 @@
 
 */
 
-import '../../../dancer.dart';
-import '../../call_context.dart';
-import '../../call_error.dart';
-import 'fliter_actives.dart';
-import '../../../tam_utils.dart';
-import '../../../extensions.dart';
+import '../common.dart';
 
 class And extends FilterActives {
 

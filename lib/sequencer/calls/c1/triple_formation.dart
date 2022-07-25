@@ -86,7 +86,7 @@ abstract class TripleFormation extends Action {
     }
     //  Apply 12-dancer result to original 8 dancers
     tripleBoxCtx.animateToEnd();
-    tripleBoxCtx.matchFormationList(tripleBoxFormations);
+    tripleBoxCtx.matchFormationList(tripleBoxFormations,maxOffset: 9.1);
     for (final boxd in tripleBoxCtx.dancers.where((d) => d.gender != Gender.PHANTOM)) {
       ctx.dancers.firstWhere((d) => d == boxd).path = boxd.path;
     }

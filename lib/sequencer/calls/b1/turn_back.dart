@@ -32,7 +32,7 @@ class TurnBack extends Action {
       Rolling.RIGHT : 'U-Turn Right',
       Rolling.NONE : d.data.beau ? 'U-Turn Right' : 'U-Turn Left'
     }[roll]!;
-    return TamUtils.getMove(move);;
+    return TamUtils.getMove(move);
   }
 
 }

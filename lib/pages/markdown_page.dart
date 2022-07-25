@@ -140,7 +140,7 @@ class _MarkdownFrameState extends fm.State<MarkdownFrame> {
                             child: fm.Container(
                                 color: Color(0xfffff8f0),
                                 child: fm.Scrollbar(
-                                  isAlwaysShown: TamUtils.platform().matches('web|windows'.r),
+                                  thumbVisibility: TamUtils.platform().matches('web|windows'.r),
                                   thickness: 16,
                                   controller: scrollController,
                                   child: Markdown(
@@ -153,7 +153,7 @@ class _MarkdownFrameState extends fm.State<MarkdownFrame> {
                                         //  Open external links, including mail links,
                                         //  with external browser
                                         if (newlink.startsWith('http|mailto'.r)) {
-                                          launch(newlink);
+                                          launchUrl(Uri.parse(newlink));
                                         } else {
                                           //  Internal link (another definition)
                                           //  Replace current definition
@@ -218,7 +218,7 @@ class _MarkdownFrameState extends fm.State<MarkdownFrame> {
     //  Fix image links
         .replaceAllMapped(
           r'!\[alt\]\(([^)]*)'.rm,
-          (m) => '![alt](resource:assets/${TamUtils.linkSSD('${_dir}/${m[1]!}')}')
+          (m) => '![alt](resource:assets/${TamUtils.linkSSD('$_dir/${m[1]!}')}')
     //  Interpret encodings
         .replaceAll('\\<','<')
     //  Highlight current part

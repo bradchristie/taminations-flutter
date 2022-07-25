@@ -203,7 +203,7 @@ class _AnimListState extends fm.State<AnimListFrame> {
             return fm.Column(children: [
               fm.Expanded(
                   child: fm.Scrollbar(
-                    isAlwaysShown: TamUtils.platform() == 'web',
+                    thumbVisibility: TamUtils.platform() == 'web',
                     thickness: 16,
                     controller: scrollController,
                     child: fm.ListView.builder(

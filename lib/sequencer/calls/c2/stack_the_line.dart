@@ -52,7 +52,6 @@ class StackTheLine extends ActivesOnlyAction with CallWithParts {
 
   Future<void> performPart2forOneBox(CallContext ctx) async {
     final left = isLeft ? 'Right' : 'Left';
-    final right = isLeft ? 'Left' : 'Right';
     if (originalLeads.isEmpty)
       throw CallError('Cannot find original leaders for Stack the Line');
     for (var d in ctx.dancers) {

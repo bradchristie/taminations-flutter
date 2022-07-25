@@ -88,7 +88,7 @@ class _CallsFrameState extends fm.State<CallsFrame> {
                         return
                           fm.Scrollbar(
                           controller: scrollController,
-                          isAlwaysShown: TamUtils.platform().matches('web|windows'.r),
+                          thumbVisibility: TamUtils.platform().matches('web|windows'.r),
                           thickness: 16,
                           child:
                           fm.GridView.builder(
@@ -108,7 +108,7 @@ class _CallsFrameState extends fm.State<CallsFrame> {
                       else {
                         return
                           fm.Scrollbar(
-                          isAlwaysShown: TamUtils.platform().matches('web|windows'.r),
+                          thumbVisibility: TamUtils.platform().matches('web|windows'.r),
                           thickness: 16,
                           controller: scrollController,
                           child: fm.ListView.builder(

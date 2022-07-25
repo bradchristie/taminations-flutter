@@ -18,8 +18,6 @@
 
 */
 
-import 'dart:math';
-
 import 'common.dart';
 
 class PracticeDancer extends Dancer {

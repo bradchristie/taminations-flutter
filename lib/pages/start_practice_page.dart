@@ -21,8 +21,6 @@
 import 'package:flutter/material.dart' as fm;
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart' as pp;
-import 'package:taminations/color.dart';
-import 'package:taminations/common.dart';
 
 import '../common.dart';
 import 'page.dart';
