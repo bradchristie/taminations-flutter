@@ -45,14 +45,15 @@ class While extends Action {
     var whilecall = name.toLowerCase()
         .replaceAll('while (the )?'.r,'')
         .replaceAll('(the )?others? '.r,'');
-    //ctx.checkCenters();
     await ctx2.applyCalls(whilecall);
+    //  Check that nobody is active on both sides of while
+    if (ctx.movingDancers().toSet().intersection(ctx2.movingDancers().toSet()).isNotEmpty)
+      throw CallError('Cannot have dancers active on both sides of While');
     ctx2.appendToSource();
 
     //  Mark all the dancers active so post-processing doesn't
     //  think just the non-while dancers are moving
-    for (var d in ctx.dancers)
-      d.data.active = true;
+    ctx.allActive();
   }
 
 }

@@ -135,7 +135,7 @@ class XMLCall extends Call {
       var m = xmlmap[i3];
       var p = Path.fromPath(asymmetric ? allPaths[m] : allPaths[m >> 1]);
       if (p.movelist.isEmpty)
-        p.add(TamUtils.getMove('Stand'));
+        p.add(TamUtils.getMove('Stand')..notFromCall());
       //  Scale active dancers to fit the space they are in
       //  Compute difference between current formation and XML formation
       var vd = matchResult.offsets[i3].rotate(-ctxwork.actives[i3].tx.angle);
