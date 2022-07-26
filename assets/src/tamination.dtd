@@ -47,6 +47,7 @@
 <!ATTLIST tamxref title CDATA #REQUIRED
                   from CDATA #IMPLIED
                   group CDATA #IMPLIED
+                  difficulty CDATA #IMPLIED
                   xref-link CDATA #REQUIRED
                   xref-title CDATA #IMPLIED
                   xref-from CDATA #IMPLIED
