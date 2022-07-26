@@ -66,6 +66,11 @@ class Phantom extends Action {
 
   @override
   Future<void> perform(CallContext ctx) async {
+    final phantomSnapFormations = {
+      'Phantom Snap Formation 1' : 1.0,
+      'Phantom Snap Formation 2' : 1.0
+    };
+    ctx.matchFormationList(phantomSnapFormations);
     //  Split the dancers into two groups
     //  by the axis the dancers are facing
     final groups = ctx.dancers.partition((item) =>
