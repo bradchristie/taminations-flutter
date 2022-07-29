@@ -1236,6 +1236,20 @@
     <dancer gender="girl" x="0" y="-1" angle="0"/>
   </formation>
 
+  <formation name="X-Beam">
+    <dancer gender="boy" x="-1" y="-3.5" angle="90"/>
+    <dancer gender="girl" x="1" y="-3.5" angle="90"/>
+    <dancer gender="boy" x="0" y="-2" angle="180"/>
+    <dancer gender="girl" x=".67" y="0" angle="0"/>
+  </formation>
+
+  <formation name="Misshapen X-Beam">
+    <dancer gender="boy" x="-1" y="-3" angle="90"/>
+    <dancer gender="girl" x="1" y="-3" angle="90"/>
+    <dancer gender="boy" x="0" y="-3" angle="180"/>
+    <dancer gender="girl" x="1" y="0" angle="0"/>
+  </formation>
+
   <formation name="Hourglass RH BP">
     <dancer gender="boy" x="-2" y="-3" angle="180"/>
     <dancer gender="girl" x="-3" y="0" angle="90"/>

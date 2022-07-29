@@ -1022,6 +1022,7 @@ class CallContext {
       matchFormationList(formations);
       //  One more check for bad I-Beam
       repairFormation('Misshapen I-Beam', 'I-Beam');
+      repairFormation('Misshapen X-Beam', 'X-Beam');
     }
   }
 
@@ -1029,21 +1030,21 @@ class CallContext {
     var ctx1 = CallContext.fromContext(this);
     for (var d in ctx1.dancers)
       d.data.active = true;
-    var iBeam = CallContext.fromName(from);
+    var incorrect = CallContext.fromName(from);
     var mapping = ctx1.matchFormations(
-        iBeam, sexy: false, fuzzy: true, rotate: 90, handholds: false);
+        incorrect, sexy: false, fuzzy: true, rotate: 90, handholds: false);
     if (mapping != null) {
-      var matchResult = ctx1.computeFormationOffsets(iBeam, mapping);
+      var matchResult = ctx1.computeFormationOffsets(incorrect, mapping);
       var totOffset = matchResult.offsets.fold<double>(
           0.0, (s, v) => s + v.length);
       if (totOffset < 5.0) {
-        var fixedBeam = CallContext.fromName(to);
-        var mapping2 = ctx1.matchFormations(fixedBeam, sexy: false,
+        var corrected = CallContext.fromName(to);
+        var mapping2 = ctx1.matchFormations(corrected, sexy: false,
             fuzzy: true,
             rotate: 90,
             handholds: false);
         if (mapping2 != null) {
-          var matchResult2 = ctx1.computeFormationOffsets(fixedBeam, mapping2);
+          var matchResult2 = ctx1.computeFormationOffsets(corrected, mapping2);
           adjustToFormationMatch(matchResult2);
         }
       }
