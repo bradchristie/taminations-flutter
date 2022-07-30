@@ -110,6 +110,38 @@
   </tam>
 
   <tam title="Dixie Grand"
+       from="Quarter Tag"
+       formation="Quarter Tag"
+       parts="2;2" difficulty="1">
+    <path couples="3 1" numbers="5 1">
+      <move select="Stand" beats="2" />
+      <move select="Pull Right" scaleY=".5" />
+      <move select="Extend Left" scaleY="1.5" />
+      <move select="Pull Left" scaleY=".5" />
+      <move select="Extend Right" scaleY=".5" />
+    </path>
+    <path>
+      <move select="Stand" beats="2" />
+      <move select="Pull Right" scaleY=".5" />
+      <move select="Extend Right" scaleY=".5" />
+      <move select="Pull Left" scaleY=".5" />
+      <move select="Extend Right" scaleY=".5" />
+    </path>
+    <path couples="4 2" numbers="7 3">
+      <move select="Extend Right" beats="2" scaleY="2" />
+      <move select="Pull Right" scaleY=".5" />
+      <move select="Extend Left" scaleY=".5" />
+      <move select="Run Right" hands="right" />
+    </path>
+    <path>
+      <move select="Forward" beats="2"/>
+      <move select="Pull Right" scaleY=".5" />
+      <move select="Extend Left" scaleY=".5" />
+      <move select="Flip Left" hands="right" />
+    </path>
+  </tam>
+
+  <tam title="Dixie Grand"
        from="Completed Double Pass Thru"
        formation="Completed Double Pass Thru"
        parts="3;3" difficulty="1">
@@ -170,6 +202,36 @@
       <move select="Pull Right" scaleY=".5" />
       <move select="Extend Left" scaleY=".5" />
       <move select="Run Right" hands="right" />
+    </path>
+  </tam>
+
+  <tam title="Dixie Grand" from="3/4 Tag" formation="3/4 Tag"
+       parts="3;2" difficulty="2">
+    <path numbers="2 6">
+      <move select="Flip Left"/>
+      <move select="Pull Right" scaleY=".5" />
+      <move select="Extend Right" scaleY=".5" />
+      <move select="Pull Left" scaleY=".5" />
+      <move select="Extend Right" scaleY=".5" />
+    </path>
+    <path numbers="5 1" couples="3 1">
+      <move select="Run Right"/>
+      <move select="Pull Right" scaleY=".5" />
+      <move select="Extend Left" scaleY="1.5" />
+      <move select="Pull Left" scaleY=".5" />
+      <move select="Extend Right" scaleY=".5" />
+    </path>
+    <path numbers="7 3" couples="4 2">
+      <move select="Extend Right" beats="3" scaleY="2" />
+      <move select="Pull Right" scaleY=".5" />
+      <move select="Extend Left" scaleY=".5" />
+      <move select="Run Right" hands="right" />
+    </path>
+    <path numbers="4 8">
+      <move select="Forward" beats="3"/>
+      <move select="Pull Right" scaleY=".5" />
+      <move select="Extend Left" scaleY=".5" />
+      <move select="Flip Left" hands="right" />
     </path>
   </tam>
 
