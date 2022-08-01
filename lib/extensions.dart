@@ -20,14 +20,7 @@
 
 import 'dart:math';
 
-import 'package:flutter/material.dart' as fm;
 import 'package:xml/xml.dart';
-
-import 'tam_utils.dart';
-
-void later(void Function() f) {
-  fm.WidgetsBinding.instance.addPostFrameCallback((_) { f(); });
-}
 
 Future<T> afterDelay<T>(T Function()f, [Duration? when]) async {
   return Future<T>.delayed(when ?? Duration(),f);
@@ -110,6 +103,7 @@ extension TamString on String {
   RegExp get rid => RegExp(this, dotAll: true, caseSensitive: false);
   RegExp get rm => RegExp(this, multiLine: true);
   String get lc => toLowerCase();
+  XmlName get xml => XmlName(this);
   bool get isBlank => trim().isEmpty;
   bool get isNotBlank => !isBlank;
   String capitalize() => isEmpty ? this :
@@ -118,7 +112,6 @@ extension TamString on String {
   String capWords() => split('\\s+'.r).map((s) => s.capitalize()).join(' ')
       .replaceAllMapped('\\W\\w'.r, (m) => m[0]!.toUpperCase())
       .replaceAllMapped('\\b(A|An|At|And|To|The)\\b'.r, (m) => m[1]!.toLowerCase());
-  String get norm => TamUtils.normalizeCall(this);
   //  Matches is true if the regexp matches the entire string
   bool matches(RegExp e) => (e.stringMatch(this)?.length ?? -1) == length;
   //  Divide is split with a limit of 2
@@ -166,6 +159,12 @@ extension TamString on String {
   //  Return all combinations of words from a string
   List<String> minced() =>
       chopped().map((e) => e.diced()).expand((e) => e).toList();
+
+  //  Convert a string into one that could be used as an identifier
+  String get ident => replaceAll('-','m')
+      .replaceAll('.','p')
+      .replaceFirst('^(?=\\d)'.r,'n')
+      .replaceAll('[\\W ]'.r,'');
 
 }
 

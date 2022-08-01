@@ -227,6 +227,7 @@ class TamUtils {
     movesDoc.findAllElements('path').forEach((m) {
       _moves[m('name')] = m;
     });
+
     var rawCSS = await getAsset('src/tamination.css');
     css = '<style>' + rawCSS.replaceAll(r'/\*.*?\*/'.rd, '') + '</style>';
     framecode = await getAsset('src/framecode.js');
@@ -406,7 +407,7 @@ class TamUtils {
     double? beats,
     bool? reflect
   }) {
-    var path = Path(_translate(_moves[name]!));
+    var path = Path(_translate(_moves[name]!),name);
     if (scale != null)
       path.scale(scale.x,scale.y);
     if (skew != null)
@@ -517,6 +518,7 @@ class TamUtils {
       .replaceAll('\\W'.ri,'')
       .replaceAll('\\s'.ri,'');
 
+
   static String platform() {
     try {
       final platform = LocalPlatform();
@@ -531,5 +533,8 @@ class TamUtils {
   static bool get canListen => platform().matches('(android|ios)'.r);
   static bool get canSpeak => platform().matches('(android|ios|web|macos)'.r);
 
+}
 
+extension TamUtilsString on String {
+  String get norm => TamUtils.normalizeCall(this);
 }

@@ -50,6 +50,16 @@ class Bezier extends CubicBezier {
     ]);
   }
 
+  //  Convenience functions
+  double get x1 => points[0].x;
+  double get y1 => points[0].y;
+  double get cx1 => points[1].x;
+  double get cy1 => points[1].y;
+  double get cx2 => points[2].x;
+  double get cy2 => points[2].y;
+  double get x2 => points[3].x;
+  double get y2 => points[3].y;
+
   double _angle(double t) {
     var v = derivativeAt(t);
     return atan2(v.y,v.x);

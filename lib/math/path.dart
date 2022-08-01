@@ -18,17 +18,17 @@
 
 */
 
-import 'matrix.dart';
-import 'movement.dart';
+import '../common.dart';
 
 class Path {
 
+  String name = '';
   List<Movement> movelist = [];
   List<Matrix> _transformlist = [];
 
   bool get isEmpty => movelist.isEmpty;
 
-  Path([List<Movement>? moves]) {
+  Path([List<Movement>? moves, this.name='']) {
     movelist = moves == null ? [] : moves.toList();
     recalculate();
   }
@@ -183,5 +183,10 @@ class Path {
       }
     });
   }
+
+  XmlElement toXML({String? n})  => XmlElement('path'.xml,
+      [ if ((n??name).isNotBlank) XmlAttribute('name'.xml, n??name)],
+      movelist.map((m) => m.toXML())
+  );
 
 }

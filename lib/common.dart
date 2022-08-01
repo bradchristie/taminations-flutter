@@ -30,6 +30,7 @@ export 'extensions.dart';
 export 'formation.dart';
 export 'geometry.dart';
 export 'handhold.dart';
+export 'later.dart';
 export 'level_data.dart';
 export 'math/matrix.dart';
 export 'math/movement.dart';

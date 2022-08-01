@@ -18,14 +18,19 @@
 
 */
 
-import 'package:taminations/common.dart';
+import '../common.dart';
 import 'bezier.dart';
 
 class Hands {
   static const int NOHANDS = 0;
+  static const int NONE = 0;
   static const int LEFTHAND = 1;
+  static const int LEFT = 1;
   static const int RIGHTHAND = 2;
+  static const int RIGHT = 2;
   static const int BOTHHANDS = 3;
+  static const int BOTH = 3;
+  static const int ANYGRIP = 4;
   static const int GRIPLEFT = 5;
   static const int GRIPRIGHT = 6;
   static const int GRIPBOTH = 7;
@@ -37,13 +42,28 @@ class Hands {
       case 'left' : return LEFTHAND;
       case 'right' : return RIGHTHAND;
       case 'both' : return BOTHHANDS;
-      case 'anygrip' : return 4;
+      case 'anygrip' : return ANYGRIP;
       case 'gripleft' : return GRIPLEFT;
       case 'gripright' : return GRIPRIGHT;
       case 'gripboth' : return 7;
       default : return 0;
     }
   }
+
+  static String getName(int i) {
+    switch (i) {
+      case NOHANDS : return 'none';
+      case LEFTHAND : return 'left';
+      case RIGHTHAND : return 'right';
+      case BOTHHANDS : return 'both';
+      case ANYGRIP : return 'anygrip';  // not used I think
+      case GRIPLEFT : return 'gripleft';
+      case GRIPRIGHT : return 'gripright';
+      case GRIPBOTH : return 'gripboth';
+      default: return 'none';
+    }
+  }
+
 }
 
 class Movement {
@@ -186,5 +206,21 @@ class Movement {
   }
 
   bool isStand() => btranslate.isIdentity() && brotate.isIdentity();
+
+  XmlElement toXML()  => XmlElement('movement'.xml,<XmlAttribute>[
+    XmlAttribute('hands'.xml, Hands.getName(hands)),
+    XmlAttribute('beats'.xml, beats.s),
+    XmlAttribute('cx1'.xml, btranslate.cx1.s),
+    XmlAttribute('cy1'.xml, btranslate.cy1.s),
+    XmlAttribute('cx2'.xml, btranslate.cx2.s),
+    XmlAttribute('cy2'.xml, btranslate.cy2.s),
+    XmlAttribute('x2'.xml, btranslate.x2.s),
+    XmlAttribute('y2'.xml, btranslate.y2.s),
+    XmlAttribute('cx3'.xml, brotate.cx1.s),
+    XmlAttribute('cx4'.xml, brotate.cx2.s),
+    XmlAttribute('cy4'.xml, brotate.cy2.s),
+    XmlAttribute('x4'.xml, brotate.x2.s),
+    XmlAttribute('y4'.xml, brotate.y2.s)
+  ]);
 
 }

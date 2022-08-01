@@ -23,12 +23,8 @@ import 'package:flutter/services.dart' as fs;
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart' as pp;
 
-import '../button.dart';
-import '../color.dart';
-import '../extensions.dart';
+import '../common.dart';
 import '../pages/page.dart';
-import '../tam_state.dart';
-import '../tam_utils.dart';
 import 'abbreviations_model.dart';
 
 class AbbreviationsPage extends fm.StatelessWidget {

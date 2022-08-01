@@ -648,7 +648,7 @@
   </path>
 
   <path name="Forward .5">
-    <move select="Foward" beats="0.5" scaleX="0.5" />
+    <move select="Forward" beats="0.5" scaleX="0.5" />
   </path>
 
   <path name="Forward 1.5">
