@@ -6,7 +6,7 @@ Timing: 2
 From anywhere there are leads and trailers: Zig means Face Right, and Zag means Face
 Left. When given in a pair, as in [Tag the Line](../ms/tag.md) Zig Zag, the call applies to a group of two
 dancers; each leader does the first (Zig in this case), and each trailer does the second
-(Zag in this case). <!-- -->
+(Zag in this case).
 
 > 
 > ![alt](zig_and_zag_1a.png)![alt](zig_and_zag_1b.png)  
