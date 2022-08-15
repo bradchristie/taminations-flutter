@@ -3,8 +3,8 @@
 
 Timing: 6
 
-Starting Formation: Tandem Couples, Box Circulate, or Tandem Dancers in a Z (e.g. from a wave after
-the Ends Fold)
+Starting Formation: Tandem Couples, Box Circulate, or Tandem Dancers in a Z 
+(for example. from a wave after the Ends Fold)
 
 Lead dancers, turning toward the center of the formation, walk in an approximate wide semicircle to
 become the far ends of a four-dancer line. Trailing dancers step forward as necessary and walk in a
@@ -45,4 +45,4 @@ dance action.
 - When the trailers start facing in the same direction, their dance action feels like a Left Shoulder
 Partner Trade.
 
-###### @ Copyright 1982, 1986-1988, 1995, 2001-2020. Bill Davis, John Sybalsky, and CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed nor revised in any derivation or publication.
+###### @ Copyright 1982, 1986-1988, 1995, 2001-2022. Bill Davis, John Sybalsky, and CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed nor revised in any derivation or publication.

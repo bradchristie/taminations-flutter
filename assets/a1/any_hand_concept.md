@@ -2,7 +2,7 @@
 # Any Hand Concept
 
 This concept is used with calls that start with the right hand 
-and are defined as a series of turns (e.g.,
+and are defined as a series of turns (for example,
 [Swing Thru](../b2/swing_thru.md),
 [1/4 Thru](quarter_thru.md),
 [Remake](../a2/remake.md)).
@@ -57,4 +57,4 @@ Example #4: Any Hand Remake
 > ![alt](any_hand_concept_5a.png)![alt](any_hand_concept_5b.png)![alt](any_hand_concept_5c.png)![alt](any_hand_concept_5d.png)
 > 
 
-###### @ Copyright 1982, 1986-1988, 1995, 2001-2020. Bill Davis, John Sybalsky, and CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed nor revised in any derivation or publication.
+###### @ Copyright 1982, 1986-1988, 1995, 2001-2022. Bill Davis, John Sybalsky, and CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed nor revised in any derivation or publication.

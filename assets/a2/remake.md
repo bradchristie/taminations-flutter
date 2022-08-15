@@ -5,7 +5,7 @@
 
 Timing: Alamo 12, others 10
 
-From a right hand mini-wave box, or a left-hand facing diamond:
+From a Right Hand Mini-Wave Box, or a Left-Hand Facing Ciamond:
 ***Those who can Turn 1/4 by the Right,***
 ***those who can Turn 1/2 by the Left,***
 and ***those who can Turn 3/4 by the Right.***
@@ -19,8 +19,8 @@ The name of the formation may be added at the end of the call (e.g., Remake The 
 as a help to the dancers but doing so is optional.
 
 If there are two side-by-side formations, each of which can do the call, dancers don't
-move from one to the other. From right-hand columns, for example, each of the two box
-circulate formations does the call independently.
+move from one to the other. From Right-Hand Columns, for example, each of the two Box
+Circulate formations does the call independently.
 
 The exception to the remake rules is "Remake The Thar", defined below.
 
@@ -28,7 +28,7 @@ The exception to the remake rules is "Remake The Thar", defined below.
 
 Timing: 10
 
-From right-hand columns (of 6 or 8): ***Those who can Turn 1/4 by the Right***, 
+From Right-Hand Columns (of 6 or 8): ***Those who can Turn 1/4 by the Right***, 
 ***those who can Turn 1/2 by the Left***, 
 and ***those who can Turn 3/4 by the Right***.
 
@@ -50,7 +50,7 @@ Without stopping, they release holds at the completion of the half
 turn and, with the other arm, ***turn the next dancer three-quarters
 (270 degrees) to form another Thar or Wrong-Way Thar***.
 
-###### @ Copyright 1982, 1986-1988, 1995, 2001-2020. Bill Davis, John Sybalsky, and CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed nor revised in any derivation or publication.
+###### @ Copyright 1982, 1986-1988, 1995, 2001-2022. Bill Davis, John Sybalsky, and CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed nor revised in any derivation or publication.
 
 <!-- Parts
 Remake1

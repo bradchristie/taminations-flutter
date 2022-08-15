@@ -34,7 +34,6 @@
 /out/
 /gen/
 /coverage/
-pubspec.lock
 /macos/Flutter/ephemeral/
 /macos/Flutter/GeneratedPluginRegistrant.swift
 
