@@ -3165,6 +3165,18 @@ Sides Pair Off
 Pass Thru
 Trade By
 Pass Thru
+Allemande Left''',
+
+  'Side Girls Cross Run' :
+'''Four Ladies Chain 3/4
+Heads Pass the Ocean
+Side Girls Cross Run
+Chain Reaction
+Recycle
+Star Thru
+Wheel and Deal
+Zoom
+Centers Pass Thru
 Allemande Left'''
 
 };

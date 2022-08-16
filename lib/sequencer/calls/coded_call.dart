@@ -337,7 +337,7 @@ abstract class CodedCall extends Call {
     'crossfold'.ri: (_) => CrossFold(),
     'crossovercirculate'.ri: (_) => CrossOverCirculate(),
     'crossramble'.ri: (_) => CrossRamble(),
-    '${specifier}crossrun'.ri: (name) => CrossRun(name),
+    '($specifier)+crossrun'.ri: (name) => CrossRun(name),
     '(left)?crosstradeandwheel'.ri: (name) => CrossTradeAndWheel(name),
 
     'detour'.ri: (_) => Detour(),
