@@ -337,6 +337,8 @@ class _SequencerEditLineState extends fm.State<SequencerEditLine> {
         model.setSpeed(call, settings);
       else if (call.lc.trim().startsWith('axes'))
         model.setAxes(call, settings);
+      else if (call.lc.trim().startsWith('help '))
+        model.showHelp(call);
       else if (!(await model.loadOneCall(call))) {
         hasError = true;
         break;

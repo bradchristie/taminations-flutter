@@ -25,6 +25,7 @@ import '../../tam_utils.dart';
 abstract class Call {
 
   String name;
+  String get help => 'Sorry, no help for $name';
   String get norm => TamUtils.normalizeCall(name);
   var level = LevelData.B1;
 

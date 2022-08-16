@@ -181,6 +181,16 @@ class SequencerModel extends fm.ChangeNotifier {
     }
   }
 
+  void showHelp(String c) {
+    final callName = c.replaceFirst('help '.ri, '');
+    final call = CodedCall.fromName(callName);
+    if (call != null) {
+      errorString = call.help;
+    } else
+      errorString = 'Could not find $callName';
+    notifyListeners();
+  }
+
   Future<bool> loadOneCall(String call) async {
     errorString = '';
     try {

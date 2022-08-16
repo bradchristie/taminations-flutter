@@ -22,14 +22,26 @@ import '../common.dart';
 
 class CrossRun extends ActivesOnlyAction {
 
-  @override
-  var level = LevelData.B2;
+  @override var level = LevelData.B2;
+  @override var help = '''
+Update Advanced definitions from Callerlab
+Animations for Dixie Grand for 1/4 and 3/4 Tag
+Sequencer changes:
+    Less "snapping", should help less common formations
+    Fix for Heads/Sides Promenade Home
+    Fix Clover And (anything) with centers facing out
+    Better code for Do Your Part
+    Accept Left Wheel and Deal
+    Code for Magic Hocus Pocus
+  ''';
 
   CrossRun(String name) : super(name);
 
   @override
   Future<void> perform(CallContext ctx) async {
     var spec = name.replaceFirst('Cross Run' , '' );
+    if (spec.isBlank)
+      throw CallError('Who is going to Cross Run?');
     var specCtx = CallContext.fromContext(ctx);
     await specCtx.applySpecifier(spec);
     var runners = ctx.actives.where((d) => specCtx.actives.contains(d));

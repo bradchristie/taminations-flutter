@@ -24,6 +24,7 @@ import '../common.dart';
 class Beaus extends FilterActives {
 
   @override final level = LevelData.A1;
+  @override var help = 'A Beau is a dancer with their partner to the right';
   Beaus() : super('Beaus');
 
   @override

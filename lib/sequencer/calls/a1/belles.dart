@@ -24,6 +24,7 @@ import '../common.dart';
 class Belles extends FilterActives {
 
   @override final level = LevelData.A1;
+  @override var help = 'A Belle is a dancer with their partner to the left';
   Belles() : super('Belles');
 
   @override

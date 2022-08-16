@@ -1018,13 +1018,13 @@ class CallContext {
 
   void matchStandardFormation() {
     if (_snap) {
-      var formations = dancers.length == 4
-          ? twoCoupleFormations
-          : standardFormations;
-      matchFormationList(formations);
-      //  One more check for bad I-Beam
-      repairFormation('Misshapen I-Beam', 'I-Beam');
-      repairFormation('Misshapen X-Beam', 'X-Beam');
+      if (dancers.length == 8) {
+        matchFormationList(standardFormations);
+        //  One more check for bad I-Beam
+        repairFormation('Misshapen I-Beam', 'I-Beam');
+        repairFormation('Misshapen X-Beam', 'X-Beam');
+      } else
+        matchFormationList(twoCoupleFormations,maxOffset: 2.1);
     }
   }
 
