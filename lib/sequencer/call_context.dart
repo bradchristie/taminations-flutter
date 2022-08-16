@@ -934,30 +934,32 @@ class CallContext {
   //  For calls that just apply to the centers, make sure they
   //  stay in the center and don't collide with the other dancers
   void checkCenters() {
-    animate(0.0);
-    analyze();
-    final moving = movingDancers();
-    final groupsOK = groups.length > 1 && (groups[0].length == 4 ||
-        (groups[0].length==2 && groups[1].length==2));
-    if (groupsOK && moving.length == 4 && center(4).containsAll(moving)) {
-      animateToEnd();
-      var minDist = actives.minOf((d) =>
-          dancerClosest(d, (d2) => !moving.contains(d2))!.distanceTo(d));
-      if (!center(4).containsAll(moving) || !minDist.isGreaterThan(1.0)) {
-        //print('WARNING centers mix with other dancers!');
-        animate(0.0);
-        final ctx2 = CallContext.fromDancers(center(4));
-        if (ctx2.isLines()) {
-          ctx2.adjustToFormation('Compact Wave RH');
-        } else if (ctx2.isDiamond()) {
-          ctx2.adjustToFormation('Diamond Compact');
-        } else
-          return;
+    if (dancers.length == 8) {
+      animate(0.0);
+      analyze();
+      final moving = movingDancers();
+      final groupsOK = groups.length > 1 && (groups[0].length == 4 ||
+          (groups[0].length == 2 && groups[1].length == 2));
+      if (groupsOK && moving.length == 4 && center(4).containsAll(moving)) {
         animateToEnd();
-        ctx2.appendToSource(this,true);
+        var minDist = actives.minOf((d) =>
+            dancerClosest(d, (d2) => !moving.contains(d2))!.distanceTo(d));
+        if (!center(4).containsAll(moving) || !minDist.isGreaterThan(1.0)) {
+          //print('WARNING centers mix with other dancers!');
+          animate(0.0);
+          final ctx2 = CallContext.fromDancers(center(4));
+          if (ctx2.isLines()) {
+            ctx2.adjustToFormation('Compact Wave RH');
+          } else if (ctx2.isDiamond()) {
+            ctx2.adjustToFormation('Diamond Compact');
+          } else
+            return;
+          animateToEnd();
+          ctx2.appendToSource(this, true);
+        }
       }
+      animateToEnd();
     }
-    animateToEnd();
   }
 
   //  See if the current dancer positions resemble a standard formation
