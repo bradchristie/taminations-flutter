@@ -50,8 +50,7 @@ class Start extends Action {
         throw CallError('Who is supposed to start?');
 
       await ctx.subContext(ctx.actives, (dypctx) async {
-        //  Run DYP for the call, but save the intermediate context,
-        //    which will be a XMLCall.
+        //  Run DYP for the call, but save the intermediate context
         final p = await DoYourPart(finishCall).findYourPart(dypctx);
         //  Run Do the 1st Part (which is a CodedCall)
         //  of the call on the starting formation
@@ -62,7 +61,7 @@ class Start extends Action {
         //  Copy path movements from call to sequence
         for (var i = 0; i < mapping.length; i++) {
           final m = mapping[i];
-          // TODO check for esymmetric call!
+          // TODO check for asymmetric call!
           dypctx.dancers[i].path.add(pctx.dancers[m].path);
         }
       });
