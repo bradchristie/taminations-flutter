@@ -55,7 +55,7 @@
   </tam>
 
   <tam title="Heads Separate And Star Thru"
-       formation="Static Square" group=" " actives="Heads">
+       formation="Static Square" group=" " actives="Heads" sequencer="gender-specific">
     <path>
       <move select="Extend Left" beats="3" scaleX="2" scaleY="2.5"/>
       <move select="Forward"/>
