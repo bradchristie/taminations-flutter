@@ -22,6 +22,12 @@ import '../common.dart';
 class AlterAndCirculate extends Action with CallWithParts, CallWithStars {
 
   @override final level = LevelData.C2;
+  @override var help = '''Alter and Circulate is a 5-part call. Parts can be changed with Skip and Replace.
+  1.  Swing
+  2.  Centers Cast Off 3/4 While Ends Turn Back
+  3.  Outer 4 Circulate While Very Centers Trade
+  4.  Turn the Star Twice - amount can be changed
+  5.  Flip the Diamond''';
   @override int numberOfParts = 5;
   @override var turnStarAmount = 2;
   @override var turnStarCall = 'Split Counter Rotate';

@@ -32,11 +32,12 @@ Dart
 
 */
 
-import 'dart:math';
-import 'package:vector_math/vector_math.dart' hide Vector;
-import 'vector.dart';
-import '../extensions.dart';
+import 'package:scidart/numdart.dart';
 import 'package:tuple/tuple.dart';
+import 'package:vector_math/vector_math.dart' hide Vector;
+
+import '../extensions.dart';
+import 'vector.dart';
 
 class Matrix extends Matrix3 {
 
@@ -54,6 +55,9 @@ class Matrix extends Matrix3 {
 
   factory Matrix.fromMatrix3(Matrix3 m) =>
       Matrix(m[0],m[3],m[6],m[1],m[4],m[7]);
+
+  factory Matrix.fromArray2d(Array2d a) =>
+      Matrix(a[0][0],a[0][1],0,a[1][0],a[1][1],0);
 
   factory Matrix.getIdentity() => Matrix(1,0,0,0,1,0);
 
@@ -86,7 +90,7 @@ class Matrix extends Matrix3 {
   }
 
     @override
-  String toString() => '[${m11.s}, ${m12.s}, ${m21.s}, ${m22.s}, ${m31.s}, ${m32.s}]';
+  String toString() => '[${m11.s}, ${m21.s}, ${m31.s}, ${m12.s}, ${m22.s}, ${m32.s}]';
 
   //  This is for rotation transforms only,
   //  or when using as a 2x2 matrix (as in SVD)
@@ -110,56 +114,15 @@ class Matrix extends Matrix3 {
       Matrix(_snapDouble(m11, delta),_snapDouble(m21, delta),m31,
              _snapDouble(m12, delta),_snapDouble(m22, delta),m32);
 
-  //  SVD simple and fast for 2x2 arrays
-  //  for matching 2d formations
   Tuple3<Matrix,List<double>,Matrix> svd22() {
-    final a = m11;
-    final b = m12;
-    final c = m21;
-    final d = m22;
-    //  Check for trivial case
-    var epsilon = 0.0001;
-    final atanarg1 = 2 * a * c + 2 * b * d;
-    final atanarg2 = a * a + b * b - c * c - d * d;
-    if (b.abs() < epsilon && c.abs() < epsilon) {
-      final v = Matrix(a < 0 ? -1 : 1, 0, 0, 0, d < 0 ? -1 : 1, 0);
-      final sigma = [ a.abs(), d.abs() ];
-      final u = Matrix.getIdentity();
-      return Tuple3(u, sigma, v);
-      //  Check for 90 degree case
-    } else if (atanarg1.abs() < epsilon && atanarg2.abs() < epsilon) {
-      final j = a*a + b*b;
-      final k = c*c + d*d;
-      final s1 = sqrt(j);
-      final s2 = (j-k).abs() < epsilon ? s1 :sqrt(k);
-      final sigma = [ s1, s2 ];
-      final u = Matrix.getIdentity();
-      final v = Matrix(a/s1, c/s2, 0.0, b/s1, d/s2, 0.0);
-      return Tuple3(u, sigma, v);
-    } else {   //  Otherwise, solve quadratic for eigenvalues
-      final theta = 0.5 * atan2(atanarg1, atanarg2);
-      final u = Matrix(
-          cos(theta), -sin(theta), 0.0,
-          sin(theta), cos(theta), 0.0
-      );
-
-      final phi = 0.5 * atan2(2 * a * b + 2 * c * d, a.sq - b.sq + c.sq - d.sq);
-      final s11 = (a * cos(theta) + c * sin(theta)) * cos(phi) +
-          (b * cos(theta) + d * sin(theta)) * sin(phi);
-      final s22 = (a * sin(theta) - c * cos(theta)) * sin(phi) +
-          (-b * sin(theta) + d * cos(theta)) * cos(phi);
-
-      final s1 = a.sq + b.sq + c.sq + d.sq;
-      final s2 = sqrt((a.sq + b.sq - c.sq - d.sq).sq + 4 * (a * c + b * d).sq);
-      final sigma = [ sqrt(s1 + s2) / 2, sqrt(s1 - s2) / 2 ];
-
-      final v = Matrix(
-          s11.sign * cos(phi), -s22.sign * sin(phi), 0.0,
-          s11.sign * sin(phi), s22.sign * cos(phi), 0.0
-      );
-      return Tuple3(u, sigma, v);
-    }
-
+    var svd = SVD(Array2d([
+      Array([m11, m12]),
+      Array([m21, m22])
+    ]));
+    var u = svd.U();
+    var v = svd.V();
+    var s = svd.singularValues();
+    return Tuple3(Matrix.fromArray2d(u), s.toList(), Matrix.fromArray2d(v));
   }
 
 }

@@ -23,6 +23,13 @@ import '../common.dart';
 class AllEight extends Action {
 
   @override final level = LevelData.A2;
+  @override var help =
+      'If the current formation is a Thar '
+  ' and the call applies to 4 dancers in a line or wave'
+  ' the sequencer will compute the call for each group of 4.'
+  ' Examples are All 8 Swing Thru and All 8 Crossfire.'
+  ' Otherwise the sequencer will look up the call'
+  ' from the All 8 animations.';
   AllEight(String name) : super(name);
 
   @override

@@ -168,11 +168,10 @@ mixin CallWithParts {
           final mapping = ctx.matchFormations(ctx2, sexy: sexy);
           if (mapping != null) {
             //  Adjust sequence dancers as needed to match call
-            final matchResult = ctx.computeFormationOffsets(ctx2, mapping);
-            ctx.adjustToFormationMatch(matchResult);
+            ctx.adjustToFormationMatch(mapping.match);
             //  Copy path movements from call to sequence
-            for (var i = 0; i < mapping.length; i++) {
-              final m = mapping[i];
+            for (var i = 0; i < mapping.mapping.length; i++) {
+              final m = mapping.mapping[i];
               // TODO check for asymmetric call!
               var b = 0.0;
               for (final move in allp[m >> 1].movelist) {

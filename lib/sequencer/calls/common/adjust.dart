@@ -44,6 +44,20 @@ class Adjust extends Action {
     '.*box'.ri : 'Facing Couples'
   };
 
+  @override var help = '''Adjust moves the dancers to a specific formation.
+The dancers must be near the formation you want.
+Formations you can use are
+     Lines or Waves (same)
+     Thar
+     Squared Set
+     Boxes or Columns (same)
+     1/4 or 3/4 Tag (same)
+     Diamonds
+     Tidal Wave or Tidal Line (same)
+     Hourglass
+     Galaxy
+     Butterfly
+     O''';
   Adjust(String name) : super(name);
 
   @override
@@ -58,10 +72,9 @@ class Adjust extends Action {
     if (formation == null)
       throw CallError('Sorry, don''t know how to $name from here.' );
     var ctx2 = CallContext.fromXML(TamUtils.getFormation(formation));
-    var mapping = ctx.matchFormations(ctx2,sexy:false,fuzzy:true,rotate:180,handholds:false, maxError : 3.0)
+    var mapping = ctx.matchFormations(ctx2,sexy:false,fuzzy:true,rotate:180,handholds:false, maxError : 3.0, delta: 0.3)
         ?? thrower(CallError('Unable to match formation to $fname'));
-    var matchResult = ctx.computeFormationOffsets(ctx2,mapping!,delta:0.3);
-    if (!ctx.adjustToFormationMatch(matchResult))
+    if (!ctx.adjustToFormationMatch(mapping!.match))
       throw CallError('No adjustment to $fname needed.');
     ctx.noSnap(recurse: false);
   }

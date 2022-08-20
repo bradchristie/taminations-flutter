@@ -23,6 +23,7 @@ import '../common.dart';
 class AceyDeucey extends Action {
 
   @override var level = LevelData.PLUS;
+  @override var help = 'Center 4 Trade While Outer 4 Circulate.';
   AceyDeucey() : super('Acey Deucey');
 
   @override

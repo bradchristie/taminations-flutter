@@ -263,6 +263,9 @@ class SequencerModel extends fm.ChangeNotifier {
       setSpeed(call, settings);
     else if (call.lc.trim().startsWith('axes'))
       setAxes(call, settings);
+    else if (call.lc.trim().startsWith('help '))
+      showHelp(call);
+
 
     else {
       var prevbeats = animation.beats;

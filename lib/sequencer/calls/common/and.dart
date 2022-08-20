@@ -22,6 +22,9 @@ import '../common.dart';
 
 class And extends FilterActives {
 
+  @override var help = 'Calls can be combined with And.'
+  ' If the first call is directed to specific dancers, only those dancers'
+  ' will do the second call.  Example: Heads Pass the Ocean And Recycle';
   And() : super('and' );
 
   int _index = 0;

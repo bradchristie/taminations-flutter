@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+ <?xml version="1.0"?>
 <!DOCTYPE tamination SYSTEM "../src/tamination.dtd">
 <!--
 
@@ -25,7 +25,7 @@
   <tam title="Hinge"
        from="Right-Hand Box"
        formation="Box RH"
-       difficulty="1" sequencer="no">
+       difficulty="1">
     <path>
       <move select="Hinge Right" beats="2" />
     </path>

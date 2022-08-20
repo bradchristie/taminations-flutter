@@ -77,11 +77,12 @@ class XMLCall extends Call {
         var mm = ctxwork.matchFormations(ctx2q,sexy: sexy, fuzzy: fuzzy,
             handholds: !fuzzy, headsMatchSides: headsMatchSides);
         if (mm != null) {
-          var matchResult = ctxwork.computeFormationOffsets(ctx2q, mm,delta: 0.2);
+          //var matchResult = ctxwork.computeFormationOffsets(ctx2q, mm,delta: 0.2);
+          var matchResult = mm.match;
           var totOffset = matchResult.offsets.fold<double>(0.0, (s, v) => s + v.length);
           if (totOffset < bestOffset) {
             xelem = tam;
-            xmlmap = mm;
+            xmlmap = mm.mapping;
             ctx2 = ctx2q;
             bestOffset = totOffset;
             level = LevelData.find(link)!;

@@ -20,10 +20,14 @@
 
 import '../common.dart';
 
-class AnythingChainThru extends Action with CallWithParts {
+class AnythingChainThru extends Action with CallWithParts, ButCall {
 
   @override int numberOfParts = 3;
   @override final level = LevelData.C1;
+  @override var help = '''(anything) Chain Thru is a 3-part call:
+  1.  Do the (anything) call.  If the call is a Circulate you can omit the word Circulate.
+  2.  Very Centers Trade
+  3.  Center 4 Cast Off 3/4 - can be relaced with But''';
   String firstCall;
   AnythingChainThru(String name) :
         firstCall = name.replaceFirst('Chain\\s*Thru'.ri,'').trim(),
@@ -47,7 +51,7 @@ class AnythingChainThru extends Action with CallWithParts {
 
   @override
   Future<void> performPart3(CallContext ctx) async {
-    await ctx.applyCalls('Center 4 Cast Off 3/4');
+    await ctx.applyCalls('Center 4 $butCall');
   }
 
 

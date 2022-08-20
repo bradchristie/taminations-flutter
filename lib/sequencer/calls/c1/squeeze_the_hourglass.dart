@@ -33,8 +33,8 @@ class SqueezeTheHourglass extends Action {
     if (mm == null)
       throw CallError('Not an Hourglass formation');
     //  All but two of the dancers squeeze
-    ctx.dancers[mm[2]].data.active = false;
-    ctx.dancers[mm[3]].data.active = false;
+    ctx.dancers[mm.mapping[2]].data.active = false;
+    ctx.dancers[mm.mapping[3]].data.active = false;
     await ctx.applyCalls('Squeeze');
   }
 

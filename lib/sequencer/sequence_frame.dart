@@ -251,7 +251,7 @@ class _SequencerEditLineState extends fm.State<SequencerEditLine> {
                         onPressed: () => { textFieldController.clear() },
                       ),
                       errorStyle: fm.TextStyle(fontSize: 20),
-                      errorMaxLines: 10,
+                      errorMaxLines: 20,
                       errorText: model.errorString.isEmpty ? null : model.errorString),
                   enableSuggestions: false,
                   style: fm.TextStyle(fontSize: 24),
@@ -319,27 +319,12 @@ class _SequencerEditLineState extends fm.State<SequencerEditLine> {
   }
 
   void _sendOneLine(SequencerModel model, String value) async {
-    final settings = pp.Provider.of<Settings>(context,listen: false);
     final oldbeats = model.animation.movingBeats;
     var hasError = false;
     //  Accept more than one call separated by semi colons
     for (final call in value.split(';')) {
       //  Process the call
-      if (call.lc.trim() == 'undo')
-        model.undoLastCall();
-      else if (call.lc.trim() == 'reset')
-        await model.reset();
-      else if (call.lc.trim().startsWith('color'))
-        model.setColor(call, settings);
-      else if (call.lc.trim().startsWith('id '))
-        model.setId(call, settings);
-      else if (call.lc.trim().startsWith('speed '))
-        model.setSpeed(call, settings);
-      else if (call.lc.trim().startsWith('axes'))
-        model.setAxes(call, settings);
-      else if (call.lc.trim().startsWith('help '))
-        model.showHelp(call);
-      else if (!(await model.loadOneCall(call))) {
+      if (!(await model.loadOneCall(call))) {
         hasError = true;
         break;
       }

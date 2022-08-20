@@ -35,19 +35,19 @@ class FormationMatchResult {
 
   final Matrix transform;
   final List<Vector> offsets;
-
-  FormationMatchResult(this.transform,this.offsets);
+  final List<double> angles;
+  FormationMatchResult(this.transform,this.offsets,this.angles);
 
 }
 
-class BestMapping {
+class MappingContext {
 
-  final String name;
+  String name;
   final List<int> mapping;
   final FormationMatchResult match;
-  final double totalOffset;
+  double totalOffset;
 
-  BestMapping(this.name,this.mapping,this.match,this.totalOffset);
+  MappingContext(this.name,this.mapping,this.match,this.totalOffset);
 
 }
 
@@ -695,8 +695,10 @@ class CallContext {
   //  Once a mapping of two formations is found,
   //  this finds the best rotation to fit one onto the other
   //  and computes the difference between the two.
-  FormationMatchResult computeFormationOffsets(CallContext ctx2, List<int>mapping, {double delta=0.1}) {
+  FormationMatchResult computeFormationOffsets(CallContext ctx2, List<int>mapping,
+      {List<int>?rotated, double delta=0.1}) {
     var dvbest = <Vector>[];
+    var dabest = <double>[];
     //  We don't know how the XML formation needs to be turned to overlap
     //  the current formation.  So do an RMS fit to find the best match.
     var bxa = [ [ 0.0, 0.0], [0.0,0.0] ];
@@ -708,6 +710,16 @@ class CallContext {
       bxa[0][1] += v1.y * v2.x;
       bxa[1][0] += v1.x * v2.y;
       bxa[1][1] += v1.y * v2.y;
+      //  Also add a point in front of the dancers, so it will match
+      //  the direction the dancers are facing
+      var a1 = d1.angleFacing;
+      var v1f = v1 + Vector(cos(a1),sin(a1));
+      var a2 = ctx2.dancers[mapping[i]].angleFacing;
+      var v2f = v2 + Vector(cos(a2),sin(a2));
+      bxa[0][0] += v1f.x * v2f.x;
+      bxa[0][1] += v1f.y * v2f.x;
+      bxa[1][0] += v1f.x * v2f.y;
+      bxa[1][1] += v1f.y * v2f.y;
     }
     var svdSolution =  Matrix(bxa[0][0], bxa[1][0], 0.0, bxa[0][1], bxa[1][1], 0.0).svd22();
     var u = svdSolution.item1;
@@ -715,14 +727,18 @@ class CallContext {
     var ut = u.transpose();
     var rotmat = (v * ut).snapTo90(delta:delta);
     //  Now rotate the formation and compute any remaining
-    //  differences in position
+    //  differences
     for (var j=0; j<actives.length; j++) {
       var d2 = actives[j];
       var v1 = d2.location;
       var v2 = rotmat * ctx2.dancers[mapping[j]].location;
       dvbest.add(v1 - v2);
+      var a1 = d2.angleFacing;
+      //var r = rotated?[mapping[j]].d.toRadians ?? 0.0;
+      var a2 = (rotmat * ctx2.dancers[mapping[j]].tx).angle; // + r;
+      dabest.add(a1.angleDiff(a2));
     }
-    return FormationMatchResult(rotmat,dvbest);
+    return FormationMatchResult(rotmat,dvbest,dabest);
   }
 
   /*
@@ -762,7 +778,7 @@ class CallContext {
   //  Most often ctx2 is a defined formation.
   //  Returns a mapping from this context to ctx2
   //  or null if no mapping.
-  List<int>? matchFormations(CallContext ctx2,{
+  MappingContext? matchFormations(CallContext ctx2,{
     bool sexy=false, // don't match girls with boys
     bool fuzzy=false,  // dancers can be somewhat offset
     int rotate=0, // rotate dancers by 90s or 180 degrees to match
@@ -771,14 +787,14 @@ class CallContext {
     //  set headsmatchsides to false
     bool headsMatchSides=true,
     bool subformation=false,  //  don't need to match all the dancers of ctx2
-    double maxError=1.9
+    double maxError=1.9,
+    double delta = 0.1
   }) {
     if (!subformation && dancers.length != ctx2.dancers.length)
       return null;
     //  Find mapping using DFS
+    MappingContext? bestMapping;
     var mapping = List.filled(dancers.length, -1);
-    List<int>? bestmapping;
-    var bestOffset = 0.0;
     var rotated = List.filled(dancers.length, 0);
     var mapindex = 0;
     while (mapindex >= 0 && mapindex < dancers.length) {
@@ -804,17 +820,21 @@ class CallContext {
         //  If requested, try rotating this dancer
         if (rotate > 0 && rotated[mapindex] + rotate < 360) {
           dancers[mapindex].rotateStartAngle(rotate.d);
-          if (!asymmetric && !ctx2.asymmetric)
-            dancers[mapindex+1].rotateStartAngle(rotate.d);
           rotated[mapindex] += rotate;
+          if (!asymmetric && !ctx2.asymmetric) {
+            dancers[mapindex + 1].rotateStartAngle(rotate.d);
+            rotated[mapindex+1] += rotate;
+          }
         } else {
           if (rotated[mapindex]+rotate == 360) {
             //  Restore to original
             dancers[mapindex].rotateStartAngle(rotate.d);
             if (!asymmetric && !ctx2.asymmetric)
               dancers[mapindex+1].rotateStartAngle(rotate.d);
+            rotated[mapindex] = 0;
+            if (!asymmetric && !ctx2.asymmetric)
+              rotated[mapindex+1] = 0;
           }
-          rotated[mapindex] = 0;
           mapindex -= asymmetric || ctx2.asymmetric ? 1 : 2;
         }
       } else {
@@ -823,24 +843,22 @@ class CallContext {
         if (mapindex >= dancers.length) {
           //  All dancers mapped
           //  Rate the mapping and save if best
-          var matchResult = computeFormationOffsets(ctx2,mapping);
+          var matchResult = computeFormationOffsets(ctx2,mapping,rotated: rotated, delta: delta);
           //  Don't match if some dancers are too far from their mapped location
           var maxOffset = matchResult.offsets.firstBy((it) => -it.length)!;
           //  Don't match if rotation is not multiple of 90 degrees
           var angsnap = matchResult.transform.angle / (pi / 2);
           if (maxOffset.length < maxError && angsnap.isApproxInt(delta : 0.2)) {
             var totOffset = matchResult.offsets.fold<double>(0.0, (s, v) => s + v.length);
-            if (bestmapping == null || totOffset < bestOffset) {
-              bestmapping = mapping.copy();
-              bestOffset = totOffset;
-            }
+            if (bestMapping == null || totOffset < bestMapping.totalOffset)
+              bestMapping = MappingContext(' ', mapping.copy(), matchResult, totOffset);
           }
           // continue to look for more mappings
           mapindex -= asymmetric || ctx2.asymmetric ? 1 : 2;
         }
       }
     }
-    return bestmapping;
+    return bestMapping;
   }
 
   bool _testMapping(CallContext ctx1, CallContext ctx2, List<int>mapping, int i,
@@ -974,7 +992,7 @@ class CallContext {
     var ctx1 = CallContext.fromContext(this);
     for (var d in ctx1.dancers)
       d.data.active = true;
-    BestMapping? bestMapping;
+    MappingContext? bestMapping;
     for (var f in formations.keys) {
       var ctx2 = CallContext.fromXML(TamUtils.getFormation(f));
       //  See if this formation matches
@@ -988,7 +1006,7 @@ class CallContext {
       var mapping = ctx1.matchFormations(ctx2,sexy:false,fuzzy:true,rotate:rot,handholds:false);
       if (mapping != null) {
         //  If it does, get the offsets
-        var matchResult = ctx1.computeFormationOffsets(ctx2, mapping);
+        var matchResult = mapping.match;
         //  If the match is at some odd angle (not a multiple of 90 degrees)
         //  then consider it bogus
         var angsnap = matchResult.transform.angle / (pi / 2);
@@ -1001,13 +1019,11 @@ class CallContext {
         ((bestMapping?.name.startsWith('Normal Lines') ?? false) &&
             f == 'Double Pass Thru');
         if (totOffset < maxOffset && angsnap.isApproxInt(delta : 0.05) && !specialHack) {
-          if (bestMapping == null || totOffset*favoring + 0.2 < bestMapping.totalOffset)
-            bestMapping = BestMapping(
-                f,  // only used for debugging
-                mapping,
-                matchResult,
-                totOffset*favoring
-            );
+          if (bestMapping == null || totOffset*favoring + 0.2 < bestMapping.totalOffset) {
+            mapping.name = f;
+            mapping.totalOffset *= favoring;
+            bestMapping = mapping;
+          }
         }
       }
     }
@@ -1036,19 +1052,14 @@ class CallContext {
     var mapping = ctx1.matchFormations(
         incorrect, sexy: false, fuzzy: true, rotate: 90, handholds: false);
     if (mapping != null) {
-      var matchResult = ctx1.computeFormationOffsets(incorrect, mapping);
-      var totOffset = matchResult.offsets.fold<double>(
-          0.0, (s, v) => s + v.length);
-      if (totOffset < 5.0) {
+      if (mapping.totalOffset < 5.0) {
         var corrected = CallContext.fromName(to);
         var mapping2 = ctx1.matchFormations(corrected, sexy: false,
             fuzzy: true,
             rotate: 90,
             handholds: false);
-        if (mapping2 != null) {
-          var matchResult2 = ctx1.computeFormationOffsets(corrected, mapping2);
-          adjustToFormationMatch(matchResult2);
-        }
+        if (mapping2 != null)
+          adjustToFormationMatch(mapping2.match);
       }
     }
   }
@@ -1062,36 +1073,35 @@ class CallContext {
       d.data.active = true;
     for (var i=0; i<dancers.length; i++) {
       var d = dancers[i];
-      if (match.offsets[i].length > 0.01) {
+      if (match.offsets[i].length > 0.01 || match.angles[i] > 0.1) {
         retval = true;  // adjustment made
         //  Get the last movement
         Movement m;
         if (d.path.movelist.isNotEmpty)
           m = d.path.pop();
         else
-          m = (TamUtils.getMove('Stand')..notFromCall()).pop();
+          m = (TamUtils.getMove('Stand Ahead')..notFromCall()).pop();
         //  Transform the offset to the dancer's angle
         d.animateToEnd();
         var vd = match.offsets[i].rotate(-d.tx.angle);
         //  Apply it
-        d.path.add(m.skew(-vd.x,-vd.y));
+        d.path.add(m.skew(-vd.x,-vd.y).twist(-match.angles[i]));
         d.animateToEnd();
       }
     }
     return retval;
   }
 
-  bool adjustToFormation(String fname, {int rotate = 180}) {
+  bool adjustToFormation(String fname, {int rotate = 180, double delta = 0.1}) {
     //  Work on a copy with all dancers active, mapping only uses active dancers???
     var ctx1 = CallContext.fromContext(this);
     for (var d in ctx1.dancers)
       d.data.active = true;
     var ctx2 = CallContext.fromXML(TamUtils.getFormation(fname));
-    var mapping = ctx1.matchFormations(ctx2,sexy:false,fuzzy:true,rotate:rotate,handholds:false, maxError : 2.9);
+    var mapping = ctx1.matchFormations(ctx2,sexy:false,fuzzy:true,rotate:rotate,handholds:false, maxError : 2.9, delta: delta);
     if (mapping != null) {
       //  If it does, get the offsets
-      var matchResult = ctx1.computeFormationOffsets(ctx2, mapping, delta : 0.5);
-      adjustToFormationMatch(matchResult);
+      adjustToFormationMatch(mapping.match);
       return true;
     }
     return false;
@@ -1108,7 +1118,7 @@ class CallContext {
       var headsActive = false;
       var sidesActive = false;
       for (var i=0; i<actives.length; i++) {
-        final d2 = ss.dancers[m[i]];
+        final d2 = ss.dancers[m.mapping[i]];
         if (d2.location.x.abs().isAbout(3.0))
           headsActive = true;
         else
@@ -1184,10 +1194,10 @@ class CallContext {
     var mapping = matchFormations(ctx2,sexy:false,fuzzy:true,rotate:0,handholds:false, subformation : true);
     if (mapping == null)
       return null;
-    var matchResult = computeFormationOffsets(ctx2, mapping);
+    var matchResult = mapping.match;
     var rotmat = Matrix.getRotation(-matchResult.transform.angle);
     var unmapped = ctx2.dancers.asMap().keys
-        .where((i) => !mapping.contains(i)).map((i) => ctx2.dancers[i]).toList();
+        .where((i) => !mapping.mapping.contains(i)).map((i) => ctx2.dancers[i]).toList();
     var phantoms = unmapped.map((d) {
       var ph = Dancer(letters[nextPhantom],'0',Gender.PHANTOM,Color.GRAY,
           rotmat * d.starttx,
@@ -1299,7 +1309,7 @@ class CallContext {
     if (mapping != null) {
       for (var i=0; i<ctx2.dancers.length; i++) {
         if (ctx2.dancers[i].gender == Gender.GIRL)
-          points.add(dancers[mapping[i]]);
+          points.add(dancers[mapping.mapping[i]]);
       }
     }
     return points;

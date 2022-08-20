@@ -49,6 +49,11 @@
      <movement hands="both" beats="1" cx1="0" cy1="0" cx2="0" cy2="0" x2="0" y2="0" />
   </path>
 
+  <path name="Stand Ahead">
+    <movement hands="both" beats="1" cx1="0" cy1="0" cx2="0" cy2="0" x2="0" y2="0"
+              cx3="0.33" cx4="0.67" cy4="0" x4="1" y4="0"/>
+  </path>
+
   <path name="Stand Alone">
     <move select="Stand" hands="none"/>
   </path>

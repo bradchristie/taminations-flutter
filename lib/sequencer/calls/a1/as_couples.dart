@@ -24,6 +24,10 @@ class AsCouples extends FourDancerConcept {
 
   @override final level = LevelData.A1;
   @override final conceptName = 'As Couples?';
+  @override var help = 'Any call that can be done with 4 dancers'
+      ' can be done As Couples.'
+      ' At this time all the dancers must be As Couples,'
+      ' for example you cannot say Boys As Couples (some call).';
   AsCouples(String name) : super(name.replaceAll('As Couples?'.ri, 'As Couples'));
 
   @override

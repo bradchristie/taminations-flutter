@@ -31,12 +31,13 @@ class BlockFormation extends Action {
     final match = blockFormation.matchFormations(ctx,rotate:90);
     if (match == null)
       throw CallError('Dancers are not in Blocks');
+    final map = match.mapping;
     final ctx1 = CallContext.fromContext(ctx,
-      dancers:[ ctx.dancers[match[0]],ctx.dancers[match[5]],
-                ctx.dancers[match[2]],ctx.dancers[match[7]]]);
+      dancers:[ ctx.dancers[map[0]],ctx.dancers[map[5]],
+                ctx.dancers[map[2]],ctx.dancers[map[7]]]);
     final ctx2 = CallContext.fromContext(ctx,
-        dancers:[ ctx.dancers[match[1]],ctx.dancers[match[4]],
-                  ctx.dancers[match[3]],ctx.dancers[match[6]]]);
+        dancers:[ ctx.dancers[map[1]],ctx.dancers[map[4]],
+                  ctx.dancers[map[3]],ctx.dancers[map[6]]]);
     //try {
       await ctx1.applyCalls(blockCall);
       ctx1.appendToSource();

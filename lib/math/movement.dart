@@ -146,6 +146,8 @@ class Movement {
     return Movement(beats,hands,bt,br);
   }
 
+  Movement copy() => Movement(beats,hands,btranslate,brotate,fromCall:fromCall);
+
   /// Return a matrix for the translation part of this movement at time t
   /// @param t  Time in beats
   /// @return   Matrix for using with canvas
@@ -187,6 +189,32 @@ class Movement {
   /// Coords are dancer space at dancer's start position
   Movement skew(double x, double y) =>
       Movement(beats,hands,btranslate.skew(x, y), brotate);
+
+  /// Return a new Movement with the final facing position turned
+  /// by a specific radians
+  Movement twist(double a) {
+    late Bezier brot;
+    if (a.abs() < 0.01)
+      return copy();
+    if (brotate.x2.abs() < 0.1 && brotate.y2.abs() < 0.1) {
+      //  No rotate bezier (e.g. Stand movement)
+      //  Make a rotation bezier of the requested amount
+      print('Making twist of ${a.s}');
+      var y2 = a > 0 ? 2.0 : -2.0;
+      //  This is a rotation of 180 degrees
+      var bez = Bezier([[0.0,0.0].v,[4.0/3.0,0.0].v,[4.0/3.0,y2].v,[0.0,y2].v]);
+      brot = bez.clip(a.abs()/pi);
+    } else {
+      //  Spin the 2nd control point around the end point
+      //  by the requested angle
+      var d = (brotate.points[3] - brotate.points[2]).length;
+      var a1 = (brotate.points[3] - (brotate.points[2])).v.angle;
+      var a2 = a1 + a;
+      var p2 = brotate.points[3].v - Vector(d*cos(a2),d*sin(a2));
+      brot = Bezier([brotate.points[0].v,brotate.points[1].v,p2,brotate.points[3].v]);
+    }
+    return Movement(beats,hands,btranslate,brot,fromCall:fromCall);
+  }
 
   Movement skewFromEnd(double x, double y) {
     var a = rotate().angle;
