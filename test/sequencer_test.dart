@@ -3064,6 +3064,16 @@ Circulate
 Quarter In
 Right and Left Grand''',
 
+  'Wheel And 2' :
+'''Heads Touch a Quarter While Sides Trade
+Centers Turn Back
+Wheel and Walk and Dodge
+Centers Run and Roll
+Zing
+Star Thru
+Ends Trade
+Allemande Left''',
+
   'Centers Trade the Wave' :
 '''Sides Pass the Ocean
 Centers Trade the Wave
