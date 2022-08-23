@@ -199,7 +199,6 @@ class Movement {
     if (brotate.x2.abs() < 0.1 && brotate.y2.abs() < 0.1) {
       //  No rotate bezier (e.g. Stand movement)
       //  Make a rotation bezier of the requested amount
-      print('Making twist of ${a.s}');
       var y2 = a > 0 ? 2.0 : -2.0;
       //  This is a rotation of 180 degrees
       var bez = Bezier([[0.0,0.0].v,[4.0/3.0,0.0].v,[4.0/3.0,y2].v,[0.0,y2].v]);

@@ -31,7 +31,7 @@ class BlockFormation extends Action {
     final match = blockFormation.matchFormations(ctx,rotate:90);
     if (match == null)
       throw CallError('Dancers are not in Blocks');
-    final map = match.mapping;
+    final map = match.map;
     final ctx1 = CallContext.fromContext(ctx,
       dancers:[ ctx.dancers[map[0]],ctx.dancers[map[5]],
                 ctx.dancers[map[2]],ctx.dancers[map[7]]]);

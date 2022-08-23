@@ -41,7 +41,7 @@ class DoYourPart extends Action {
         final mapping = dypctx.matchFormations(ctx2, sexy: sexy,
             subformation: true, handholds: false, maxError: 2.9);
         if (mapping != null)
-          return Pair(ctx2,mapping.mapping);
+          return Pair(ctx2,mapping.map);
       }
     }
     //  Unable to find call
@@ -93,8 +93,8 @@ class DoYourPart extends Action {
         //  Perform the call
         await ctxBest.applyCalls(callName);
         //  Copy path movements from call to sequence
-        for (var i = 0; i < bestMapping.mapping.length; i++) {
-          final m = bestMapping.mapping[i];
+        for (var i = 0; i < bestMapping.map.length; i++) {
+          final m = bestMapping.map[i];
           // TODO check for asymmetric call!
           dypctx.dancers[i].path.add(ctxBest.dancers[m].path);
         }

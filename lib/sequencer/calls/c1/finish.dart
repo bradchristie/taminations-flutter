@@ -51,8 +51,8 @@ class Finish extends Action {
           if (mapping != null) {
             final matchResult = mapping.match;
             ctx.adjustToFormationMatch(matchResult);
-            for (var i=0; i<mapping.mapping.length; i++) {
-              final m = mapping.mapping[i];
+            for (var i=0; i<mapping.map.length; i++) {
+              final m = mapping.map[i];
               final p = Path(allp[m >> 1].movelist);
               var firstBeats = 0.0;
               while (firstBeats.isLessThan(firstPart))

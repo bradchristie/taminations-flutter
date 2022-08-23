@@ -82,7 +82,7 @@ class XMLCall extends Call {
           var totOffset = matchResult.offsets.fold<double>(0.0, (s, v) => s + v.length);
           if (totOffset < bestOffset) {
             xelem = tam;
-            xmlmap = mm.mapping;
+            xmlmap = mm.map;
             ctx2 = ctx2q;
             bestOffset = totOffset;
             level = LevelData.find(link)!;

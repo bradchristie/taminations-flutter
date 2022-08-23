@@ -3187,6 +3187,18 @@ Star Thru
 Wheel and Deal
 Zoom
 Centers Pass Thru
+Allemande Left''',
+
+  'Auto Adjust 1' :
+'''Heads Pair Off
+Slide Thru
+Touch a Quarter
+Circulate 1.5
+Girls Spread
+Boys Half Circulate
+Crossfire
+Boys Run
+Right and Left Thru
 Allemande Left'''
 
 };

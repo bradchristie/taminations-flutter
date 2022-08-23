@@ -86,9 +86,12 @@ abstract class FourDancerConcept extends ActivesOnlyAction {
     var conceptctx = CallContext.fromDancers(singles);
     //  And apply the call
     await conceptctx.applyCalls(realCall);
+    //conceptctx.matchStandardFormation();
     //  Hook for concept to see the result
     conceptctx.animate(0.0);
     analyzeConceptResult(conceptctx, ctx);
+
+
 
     //  Get the paths and apply to the original dancers
     for (var ci=0; ci<conceptctx.dancers.length; ci++) {

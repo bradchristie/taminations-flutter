@@ -43,11 +43,11 @@ class FormationMatchResult {
 class MappingContext {
 
   String name;
-  final List<int> mapping;
+  final List<int> map;
   final FormationMatchResult match;
   double totalOffset;
 
-  MappingContext(this.name,this.mapping,this.match,this.totalOffset);
+  MappingContext(this.name,this.map,this.match,this.totalOffset);
 
 }
 
@@ -788,7 +788,8 @@ class CallContext {
     bool headsMatchSides=true,
     bool subformation=false,  //  don't need to match all the dancers of ctx2
     double maxError=1.9,
-    double delta = 0.1
+    double delta = 0.1,
+    double maxAngle = 0.2
   }) {
     if (!subformation && dancers.length != ctx2.dancers.length)
       return null;
@@ -839,6 +840,7 @@ class CallContext {
         }
       } else {
         //  Mapping for this dancer found
+        //print('dancer ${dancers[mapindex]} mapped to ${ctx2.dancers[mapping[mapindex]]}');
         mapindex += asymmetric || ctx2.asymmetric ? 1 : 2;
         if (mapindex >= dancers.length) {
           //  All dancers mapped
@@ -848,7 +850,7 @@ class CallContext {
           var maxOffset = matchResult.offsets.firstBy((it) => -it.length)!;
           //  Don't match if rotation is not multiple of 90 degrees
           var angsnap = matchResult.transform.angle / (pi / 2);
-          if (maxOffset.length < maxError && angsnap.isApproxInt(delta : 0.2)) {
+          if (maxOffset.length < maxError && angsnap.isApproxInt(delta : maxAngle)) {
             var totOffset = matchResult.offsets.fold<double>(0.0, (s, v) => s + v.length);
             if (bestMapping == null || totOffset < bestMapping.totalOffset)
               bestMapping = MappingContext(' ', mapping.copy(), matchResult, totOffset);
@@ -1118,7 +1120,7 @@ class CallContext {
       var headsActive = false;
       var sidesActive = false;
       for (var i=0; i<actives.length; i++) {
-        final d2 = ss.dancers[m.mapping[i]];
+        final d2 = ss.dancers[m.map[i]];
         if (d2.location.x.abs().isAbout(3.0))
           headsActive = true;
         else
@@ -1197,7 +1199,7 @@ class CallContext {
     var matchResult = mapping.match;
     var rotmat = Matrix.getRotation(-matchResult.transform.angle);
     var unmapped = ctx2.dancers.asMap().keys
-        .where((i) => !mapping.mapping.contains(i)).map((i) => ctx2.dancers[i]).toList();
+        .where((i) => !mapping.map.contains(i)).map((i) => ctx2.dancers[i]).toList();
     var phantoms = unmapped.map((d) {
       var ph = Dancer(letters[nextPhantom],'0',Gender.PHANTOM,Color.GRAY,
           rotmat * d.starttx,
@@ -1309,7 +1311,7 @@ class CallContext {
     if (mapping != null) {
       for (var i=0; i<ctx2.dancers.length; i++) {
         if (ctx2.dancers[i].gender == Gender.GIRL)
-          points.add(dancers[mapping.mapping[i]]);
+          points.add(dancers[mapping.map[i]]);
       }
     }
     return points;

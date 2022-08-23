@@ -18,11 +18,7 @@
 
 */
 
-import '../action.dart';
-import '../../../extensions.dart';
-import '../../call_context.dart';
-import '../../call_error.dart';
-import '../../../tam_utils.dart';
+import '../common.dart';
 
 class Adjust extends Action {
 
@@ -30,7 +26,7 @@ class Adjust extends Action {
     '.*lines?'.ri : 'Normal Lines' ,
     '.*waves?'.ri : 'Normal Lines' ,
     '.*thar'.ri : 'Thar RH Boys' ,
-    '.*square(d)?set'.ri : 'Squared Set' ,
+    '.*square(d)?(set)?'.ri : 'Squared Set' ,
     '.*boxes'.ri : 'Eight Chain Thru' ,
     '.*columns?'.ri : 'Eight Chain Thru' ,
     '.*(1|3)4tag'.ri : 'Quarter Tag' ,
@@ -39,7 +35,9 @@ class Adjust extends Action {
     '.*hourglass'.ri : 'Hourglass RH BP' ,
     '.*galaxy'.ri : 'Galaxy RH GP' ,
     '.*butterfly'.ri : 'Butterfly RH' ,
-    '.*o'.ri : 'O RH',
+    '.* o'.ri : 'O RH',
+    '.*circle'.ri : 'Circle',
+    '.*alamo'.ri : 'Alamo Wave',  // actually, same as Circle
      //  two couples
     '.*box'.ri : 'Facing Couples'
   };
@@ -50,6 +48,7 @@ Formations you can use are
      Lines or Waves (same)
      Thar
      Squared Set
+     Circle or Alamo (same)
      Boxes or Columns (same)
      1/4 or 3/4 Tag (same)
      Diamonds
@@ -72,7 +71,7 @@ Formations you can use are
     if (formation == null)
       throw CallError('Sorry, don''t know how to $name from here.' );
     var ctx2 = CallContext.fromXML(TamUtils.getFormation(formation));
-    var mapping = ctx.matchFormations(ctx2,sexy:false,fuzzy:true,rotate:180,handholds:false, maxError : 3.0, delta: 0.3)
+    var mapping = ctx.matchFormations(ctx2,sexy:false,fuzzy:true,rotate:180,handholds:false, maxError : 3.0, delta: 0.3, maxAngle: 0.5)
         ?? thrower(CallError('Unable to match formation to $fname'));
     if (!ctx.adjustToFormationMatch(mapping!.match))
       throw CallError('No adjustment to $fname needed.');
