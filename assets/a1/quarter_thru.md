@@ -15,7 +15,7 @@ an Inverted Box.
 
 If there are two side-by-side formations each of which can do the call,
 dancers don't move from one to the other.
-For exaple: from Right-Hand Columns, each of the two Box
+For example: from Right-Hand Columns, each of the two Box
 Circulate formations does the call independently.
 
 > 
