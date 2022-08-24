@@ -252,4 +252,22 @@
            xref-link="b2/alamo_style"
            xref-title="Allemande Left to an Alamo Ring"/>
 
+  <tam title="Touch"
+       from="Eight Chain Thru"
+       formation="Eight Chain Thru"
+       display="no">
+    <path>
+      <move select="Extend Left" beats="2" scaleY="2" />
+    </path>
+    <path>
+      <move select="Forward" beats="2" />
+    </path>
+    <path>
+      <move select="Extend Left" beats="2" scaleY="2" />
+    </path>
+    <path>
+      <move select="Forward" beats="2" />
+    </path>
+  </tam>
+
 </tamination>
