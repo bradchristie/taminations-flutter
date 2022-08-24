@@ -23,6 +23,11 @@ import '../common.dart';
 class TurnAndDeal extends Action {
 
   @override final level = LevelData.A1;
+  @override var help = '''[Left] Turn and Deal
+Works with one or two Lines of 4.  A tidal formation is two Lines of 4.
+For larger lines, use
+Line of (6 or 8) [Left] Turn and Deal
+''';
   TurnAndDeal(String name) : super(name);
 
   @override
@@ -43,6 +48,7 @@ class TurnAndDeal extends Action {
 class BigLineTurnAndDeal extends ActivesOnlyAction {
 
   @override final level = LevelData.A1;
+  @override var help = TurnAndDeal('').help;
   BigLineTurnAndDeal(String name) : super(name);
 
   @override

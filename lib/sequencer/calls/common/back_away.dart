@@ -22,6 +22,10 @@ import '../common.dart';
 
 class BackAway extends Action {
 
+  @override var help =
+'''Back Away or Back Up
+Move backwards one full position.  (This is not a real call.)
+''';
   BackAway() : super('Back Away');
 
   @override

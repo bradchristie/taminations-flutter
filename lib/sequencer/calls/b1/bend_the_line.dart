@@ -22,6 +22,7 @@ import '../common.dart';
 
 class BendTheLine extends Action {
 
+  @override var help = 'Any couple not centered on an axis can Bend the Line';
   BendTheLine() : super('Bend the Line' );
 
   @override

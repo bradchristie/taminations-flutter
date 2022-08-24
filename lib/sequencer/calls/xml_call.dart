@@ -77,7 +77,7 @@ class XMLCall extends Call {
         var mm = ctxwork.matchFormations(ctx2q,sexy: sexy, fuzzy: fuzzy,
             handholds: !fuzzy, headsMatchSides: headsMatchSides);
         if (mm != null) {
-          //var matchResult = ctxwork.computeFormationOffsets(ctx2q, mm,delta: 0.2);
+          //var matchResult = ctxwork.computeFormationOffsets(ctx2q, mm.map,delta: 0.2);
           var matchResult = mm.match;
           var totOffset = matchResult.offsets.fold<double>(0.0, (s, v) => s + v.length);
           if (totOffset < bestOffset) {
@@ -131,10 +131,12 @@ class XMLCall extends Call {
     }
 
     var matchResult = ctxwork.computeFormationOffsets(ctx2, xmlmap, delta: 0.2);
+    ctxwork.adjustToFormationMatch(matchResult);
 
     for (var i3 = 0; i3 < xmlmap.length; i3++) {
       var m = xmlmap[i3];
       var p = Path.fromPath(asymmetric ? allPaths[m] : allPaths[m >> 1]);
+      /*
       if (p.movelist.isEmpty)
         p.add(TamUtils.getMove('Stand')..notFromCall());
       //  Scale active dancers to fit the space they are in
@@ -143,6 +145,8 @@ class XMLCall extends Call {
       //  Apply formation difference to first movement of XML path
       if (vd.length > 0.1)
         p.skewFirst(-vd.x, -vd.y);
+
+       */
       //  Add XML path to dancer
       ctxwork.actives[i3].path.add(p);
       //  Move dancer to end so any subsequent modifications (e.g. roll)

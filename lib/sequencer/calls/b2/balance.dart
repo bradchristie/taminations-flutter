@@ -22,9 +22,8 @@ import '../common.dart';
 
 class Balance extends ActivesOnlyAction {
 
-  @override
-  var level = LevelData.B2;
-
+  @override var level = LevelData.B2;
+  @override var help = 'Move slightly forward and back.  Dancers must be in waves.';
   Balance() : super('Balance');
 
   @override

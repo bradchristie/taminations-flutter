@@ -223,6 +223,7 @@ import 'common/heads.dart';
 import 'common/in_the_center.dart';
 import 'common/insides.dart';
 import 'common/leaders.dart';
+import 'common/nobody.dart';
 import 'common/nothing.dart';
 import 'common/one_and_a_half.dart';
 import 'common/outsides.dart';
@@ -274,7 +275,7 @@ abstract class CodedCall extends Call {
 
   CodedCall(String name) : super(name.capWords());
 
-  static const specifier = '\\s*(?:boys?|girls?|beaus?|belles?|centers?|ends?|lead(?:er)?s?|trail(?:er)?s?|heads?|sides?|very ?centers?)\\s*';
+  static const specifier = '\\s*(?:boys?|girls?|beaus?|belles?|centers?|ends?|lead(?:er)?s?|trail(?:er)?s?|heads?|sides?|very ?centers?|every(one|body)|no(one|body))\\s*';
 
   static final Map<RegExp, CodedCall Function(String norm)> normCallMap = {
     'aceydeucey'.ri: (_) => AceyDeucey(),
@@ -298,12 +299,12 @@ abstract class CodedCall extends Call {
     '(line|wave)of(6|8)(left)?(12)?tag(theline)?'.ri: (name) => BigLineTagTheLine(name),
     '(line|wave)of(6|8)(left)?turnanddeal'.ri: (name) => BigLineTurnAndDeal(name),
     'inyourblock.*'.ri: (name) => BlockFormation(name),
-    'bounce(the)?$specifier'.ri: (name) => Bounce(name),
+    'bounce(the)?($specifier)?'.ri: (name) => Bounce(name),
     'boy'.ri: (_) => Boys(),
     'boxthegnat'.ri: (_) => BoxTheGnat(),
     'bracethru'.ri: (_) => BraceThru(),
     'breaker(1|2|3)'.ri: (name) => Breaker(name),
-    '.+But[A-Z1-9].+'.r: (name) => But(name),
+    '.*But(?![a-z]).*'.r: (name) => But(name),
     'butterfly.*'.ri: (name) => Butterfly(name),
 
     'californiatwirl'.ri: (_) => CaliforniaTwirl(),
@@ -412,6 +413,7 @@ abstract class CodedCall extends Call {
     'mix'.ri: (_) => Mix(),
     'motivate'.ri: (_) => Motivate(),
 
+    'no(body|one)'.ri: (_) => Nobody(),
     'nothing'.ri: (_) => Nothing('Nothing'),
 
     'O[A-Z0-9].+'.r: (name) => OFormation(name),

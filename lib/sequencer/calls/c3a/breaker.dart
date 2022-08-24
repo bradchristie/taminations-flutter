@@ -23,6 +23,9 @@ class Breaker extends Action with CallWithParts {
 
   @override var level = LevelData.C3A;
   @override var numberOfParts = 2;
+  @override var help =  '''Breaker (n) is a 2-part call:
+  1.  Ends Cast Off 3/4 While Center 4 Box Couunter Rotate and 1/2 Box Circulate
+  2.  Center Wave/Line Cast Off n/4 While Others Hourglass Circulate''';
   Breaker(String name) : super(name);
 
   @override

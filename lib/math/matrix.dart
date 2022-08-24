@@ -114,6 +114,8 @@ class Matrix extends Matrix3 {
       Matrix(_snapDouble(m11, delta),_snapDouble(m21, delta),m31,
              _snapDouble(m12, delta),_snapDouble(m22, delta),m32);
 
+  //  Compute SVD, used for finding best match of two formations
+  //  See numdart/SVD in the pub SciDart package
   Tuple3<Matrix,List<double>,Matrix> svd22() {
     var svd = SVD(Array2d([
       Array([m11, m12]),

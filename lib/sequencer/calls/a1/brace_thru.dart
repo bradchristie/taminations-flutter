@@ -24,6 +24,11 @@ class BraceThru extends ActivesOnlyAction with CallWithParts {
 
   @override final level = LevelData.A1;
   @override int numberOfParts = 2;
+  @override var help = '''Brace Thru is a two-part call:
+  1.  Pass Thru (can start from waves)
+  2.  a. Normal couples courtesy turn
+      b. Sashayed couples turn back
+Part 2 cannot be done with same-sex couples.''';
   BraceThru() : super('Brace Thru');
 
   @override

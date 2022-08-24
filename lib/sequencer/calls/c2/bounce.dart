@@ -24,6 +24,9 @@ class Bounce extends ActivesOnlyAction with CallWithParts {
 
   @override final level = LevelData.C2;
   @override int numberOfParts = 2;
+  @override var help = '''Bounce the (somebody) is a two-part call:
+  1.  Veer to a back-to-back formation
+  2.  (somebody) U-Turn in flow direction''';
   var direction = 'Right';
   var whodancers = <Dancer>[];
   Bounce(String name) : super(name);
@@ -41,6 +44,8 @@ class Bounce extends ActivesOnlyAction with CallWithParts {
         : thrower(CallError('Unable to calculate Bounce'));
     //  Remember who to bounce
     final who = name.replaceFirst('Bounce( the)?'.r,'');
+    if (who.isBlank)
+      throw CallError('Bounce who?');
     final whoctx = CallContext.fromContext(ctx,dancers:ctx.actives);
     if (!who.matches('No\\s*(body|one)'.ri))
       await whoctx.applySpecifier(who);

@@ -22,6 +22,9 @@ import '../common.dart';
 class BlockFormation extends Action {
 
   @override final level = LevelData.C1;
+  @override var help = 'In Your Block (4-person call)\n'
+      'Dancers must be in Blocks, and the call must work for '
+      'dancers in a box.';
   BlockFormation(String name) : super(name);
 
   @override

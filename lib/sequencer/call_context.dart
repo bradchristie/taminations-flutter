@@ -1082,7 +1082,9 @@ class CallContext {
         if (d.path.movelist.isNotEmpty)
           m = d.path.pop();
         else
-          m = (TamUtils.getMove('Stand Ahead')..notFromCall()).pop();
+          m = (TamUtils.getMove('Stand Ahead')
+            ..changeBeats(match.offsets[i].length)
+            ..notFromCall()).pop();
         //  Transform the offset to the dancer's angle
         d.animateToEnd();
         var vd = match.offsets[i].rotate(-d.tx.angle);
@@ -1537,11 +1539,19 @@ class CallContext {
     contractPaths();
     //  get the longest number of beats
     var maxb = maxBeats();
-    //  add that number as needed by using the 'Stand' move
     for (var d in dancers) {
       var b = maxb - d.path.beats;
-      if (b > 0)
-        d.path.add(TamUtils.getMove('Stand')..changeBeats(b)..notFromCall());
+      if (b > 0) {
+        if (b < 1 && d.path.movelist.isNotEmpty) {
+          //  Small change - ust change the length
+          d.path.changeBeats(d.path.beats + b);
+        } else {
+          //  Large change - add that number as needed by using the 'Stand' move
+          d.path.add(TamUtils.getMove('Stand')
+            ..changeBeats(b)
+            ..notFromCall());
+        }
+      }
     }
   }
 

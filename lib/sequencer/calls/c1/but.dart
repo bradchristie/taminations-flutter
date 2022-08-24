@@ -26,11 +26,13 @@ mixin ButCall {
 class But extends Action {
 
   @override final level = LevelData.C1;
+  @override var help = 'But (something) replaces a specific part of a call. '
+  'See the definition or Help info for calls that support But.';
   But(String name) : super(name);
 
   @override
   Future<void> perform(CallContext ctx) async {
-    final callName = name.replaceFirst(' but .*'.ri, '').trim();
+    final callName = name.replaceFirst(' but\\b.*'.ri, '').trim();
     await ctx.subContext(ctx.dancers, (ctx2) async {
       if (!ctx2.matchCodedCall(callName))
         throw CallError('Unable to find $callName as a Call with Parts');
