@@ -22,8 +22,11 @@ import '../common.dart';
 
 class CastOffThreeQuarters extends ActivesOnlyAction {
 
-  @override
-  var level = LevelData.MS;
+  @override var level = LevelData.MS;
+  @override var help = '''Cast Off (fraction)
+  You can use 1/4, 1/2, 3/4 for the fraction.
+  Dancers must be couples or mini-waves not centered on an axis.''';
+  @override var helplink = 'ms/cast_off_three_quarters';
   CastOffThreeQuarters(String name) : super(name);
 
   @override

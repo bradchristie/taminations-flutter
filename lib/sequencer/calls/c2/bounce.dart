@@ -27,6 +27,7 @@ class Bounce extends ActivesOnlyAction with CallWithParts {
   @override var help = '''Bounce the (somebody) is a two-part call:
   1.  Veer to a back-to-back formation
   2.  (somebody) U-Turn in flow direction''';
+  @override var helplink = 'c2/bounce';
   var direction = 'Right';
   var whodancers = <Dancer>[];
   Bounce(String name) : super(name);

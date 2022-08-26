@@ -27,6 +27,7 @@ class AroundToALine extends Action {
   - Around 1 to a Line
   - Around 2 to a Line
 ''' 'From a Squared Set, typical usage is Heads Pass Thru Separate Around 1 To A Line';
+  @override var helplink = 'b1/separate';
   AroundToALine(String name) : super(name);
 
   @override

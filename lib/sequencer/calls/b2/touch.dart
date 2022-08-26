@@ -34,7 +34,6 @@ class Touch extends Action {
 
   @override
   Path performOne(Dancer d, CallContext ctx) {
-    print('Performing Touch');
     var d2 = ctx.dancerFacing(d);
     if (d2 == null)
       return ctx.dancerCannotPerform(d,name);

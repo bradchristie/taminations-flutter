@@ -45,6 +45,7 @@ class SequencerModel extends fm.ChangeNotifier {
   String errorString = '';
   DanceModel animation;
   int currentCall = -1;
+  String helplink = '';
 
   SequencerModel([fm.BuildContext? context]) :
         animation = DanceModel(context) {
@@ -66,6 +67,7 @@ class SequencerModel extends fm.ChangeNotifier {
     calls = [];
     errorString = '';
     currentCall = -1;
+    helplink = 'info/sequencer';
     await _startSequence();
     later(() {
       notifyListeners();
@@ -186,6 +188,7 @@ class SequencerModel extends fm.ChangeNotifier {
     final call = CodedCall.fromName(callName);
     if (call != null) {
       errorString = call.help;
+      helplink = call.helplink;
     } else
       errorString = 'Could not find $callName';
     notifyListeners();

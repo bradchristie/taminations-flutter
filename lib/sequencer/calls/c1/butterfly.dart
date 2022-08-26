@@ -38,6 +38,7 @@ class Butterfly extends ModifiedFormationConcept {
       'dancers in the corresponding column-like formation.\n'
   'You can skip the final re-adjustment to the Butterfly formation '
       'by appending To Lines / Waves / Columns';
+  @override var helplink = 'c1/butterfly_formation';
   Butterfly(String name) : super(name);
 
   @override

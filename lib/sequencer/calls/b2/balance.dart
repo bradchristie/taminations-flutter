@@ -24,6 +24,7 @@ class Balance extends ActivesOnlyAction {
 
   @override var level = LevelData.B2;
   @override var help = 'Move slightly forward and back.  Dancers must be in waves.';
+  @override var helplink = 'b2/ocean_wave';
   Balance() : super('Balance');
 
   @override

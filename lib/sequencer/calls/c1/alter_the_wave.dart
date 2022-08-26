@@ -29,6 +29,7 @@ class AlterTheWave extends Action with CallWithParts, CallWithStars {
   2.  Centers Cast Off 3/4 While Ends Turn Back
   3.  Turn the Star (Split Counter Rotate) Twice - amount can be changed
   4.  Flip the Diamond''';
+  @override var helplink = 'c1/alter_the_wave';
   AlterTheWave(String name) : super(name);
 
   @override

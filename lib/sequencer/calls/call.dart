@@ -25,7 +25,8 @@ import '../../tam_utils.dart';
 abstract class Call {
 
   String name;
-  String get help => 'Sorry, no help for $name (class $runtimeType)';
+  String get help => 'No specific help for $name';
+  String get helplink => 'info/sequencer';
   String get norm => TamUtils.normalizeCall(name);
   var level = LevelData.B1;
 

@@ -23,6 +23,11 @@ class ChiselThru extends Action with CallWithParts {
 
   @override int numberOfParts = 3;
   @override final level = LevelData.C2;
+  @override var help = '''Chisel Thru is a 3-Part call:
+  1.  Concentric Pass In
+  2.  Pass Thru and 1/4 In
+  3.  Pass In''';
+  @override var helplink = 'c2/chisel_thru';
   ChiselThru() : super('Chisel Thru');
 
   @override

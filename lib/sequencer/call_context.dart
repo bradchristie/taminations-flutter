@@ -1041,6 +1041,12 @@ class CallContext {
         //  One more check for bad I-Beam
         repairFormation('Misshapen I-Beam', 'I-Beam');
         repairFormation('Misshapen X-Beam', 'X-Beam');
+        var ctxCopy = CallContext.fromContext(this);
+        var ctxLines = CallContext.fromName('Normal Lines');
+        if (ctxCopy.matchFormations(ctxLines,rotate: 180) == null &&
+            ctxCopy.matchFormations(ctxLines,rotate:90) != null) {
+          adjustToFormation('Double Pass Thru',rotate: 90);
+        }
       } else
         matchFormationList(twoCoupleFormations,maxOffset: 2.1);
     }

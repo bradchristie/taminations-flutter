@@ -29,6 +29,7 @@ class BraceThru extends ActivesOnlyAction with CallWithParts {
   2.  a. Normal couples courtesy turn
       b. Sashayed couples turn back
 Part 2 cannot be done with same-sex couples.''';
+  @override var helplink  = 'a1/brace_thru';
   BraceThru() : super('Brace Thru');
 
   @override

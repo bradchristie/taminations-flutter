@@ -28,6 +28,7 @@ Works with one or two Lines of 4.  A tidal formation is two Lines of 4.
 For larger lines, use
 Line of (6 or 8) [Left] [Half] Tag the Line
 ''';
+  @override var helplink = 'ms/tag';
   TagTheLine(name) : super(name);
 
   @override

@@ -26,6 +26,7 @@ class BoxTheGnat extends ActivesOnlyAction {
   @override var level = LevelData.B2;
   @override var help = 'Box the Gnat works with facing dancers and'
   ' right-hand waves. Must be opposite genders.';
+  @override var helplink  = 'b2/box_the_gnat';
   BoxTheGnat() : super('Box the Gnat');
 
   Dancer? _checkOtherDancer(Dancer d, Dancer? d2) {

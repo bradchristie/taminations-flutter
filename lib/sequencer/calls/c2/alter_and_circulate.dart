@@ -28,6 +28,7 @@ class AlterAndCirculate extends Action with CallWithParts, CallWithStars {
   3.  Outer 4 Circulate While Very Centers Trade
   4.  Turn the Star Twice - amount can be changed
   5.  Flip the Diamond''';
+  @override var helplink = 'c2/alter_and_circulate';
   @override int numberOfParts = 5;
   @override var turnStarAmount = 2;
   @override var turnStarCall = 'Split Counter Rotate';

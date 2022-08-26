@@ -25,11 +25,12 @@ class BlockFormation extends Action {
   @override var help = 'In Your Block (4-person call)\n'
       'Dancers must be in Blocks, and the call must work for '
       'dancers in a box.';
+  @override var helplink = 'c1/block_formation';
   BlockFormation(String name) : super(name);
 
   @override
   Future<void> perform(CallContext ctx) async {
-    final blockCall = name.replaceAll('in your block'.ri, '').trim();
+    final blockCall = name.replaceAll('.*?block'.ri, '').trim();
     final blockFormation = CallContext.fromXML(TamUtils.getFormation('Blocks'));
     final match = blockFormation.matchFormations(ctx,rotate:90);
     if (match == null)
@@ -41,15 +42,11 @@ class BlockFormation extends Action {
     final ctx2 = CallContext.fromContext(ctx,
         dancers:[ ctx.dancers[map[1]],ctx.dancers[map[4]],
                   ctx.dancers[map[3]],ctx.dancers[map[6]]]);
-    //try {
       await ctx1.applyCalls(blockCall);
       ctx1.appendToSource();
       await ctx2.applyCalls(blockCall);
       ctx2.appendToSource();
       ctx.adjustToFormation('Blocks',rotate: 90);
-    //} on CallError catch (e) {
-    //  print(e);
-    //}
   }
 
 }

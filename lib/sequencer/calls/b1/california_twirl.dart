@@ -22,6 +22,8 @@ import '../common.dart';
 
 class CaliforniaTwirl extends Action {
 
+  @override var help = 'Must be a couple of opposite gender';
+  @override var helplink = 'b1/california_twirl';
   CaliforniaTwirl() : super('California Twirl' );
 
   @override

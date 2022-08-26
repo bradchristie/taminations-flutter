@@ -25,6 +25,7 @@ class Belles extends FilterActives {
 
   @override final level = LevelData.A1;
   @override var help = 'A Belle is a dancer with their partner to the left';
+  @override var helplink = 'a1/belles_and_beaus';
   Belles() : super('Belles');
 
   @override

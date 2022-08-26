@@ -24,10 +24,15 @@ class CircleBy extends Action with CallWithParts {
 
   @override final level = LevelData.C1;
   @override var numberOfParts = 2;
+  @override var help = 'Circle By (fraction) and (fraction or call)';
+  @override var helplink = 'c1/circle_by';
   late String frac1;
   late String frac2;
   late String name2;
-  CircleBy(String name) : super(name) {
+
+  CircleBy(String name) : super(name);
+
+  void _setup() {
     //  Make sure we have "Circle By <fraction> and <something>"
     final a = name.replaceFirst('Circle By','').divide('and');
     if (a.length != 2)
@@ -39,6 +44,7 @@ class CircleBy extends Action with CallWithParts {
 
   @override
   Future<void> performPart1(CallContext ctx) async {
+    _setup();
     //  Do the first fraction
     if (frac1.matches('(14|12|34)'.r))
       await ctx.applyCalls('Circle Four Left $frac1');
@@ -54,6 +60,7 @@ class CircleBy extends Action with CallWithParts {
 
   @override
   Future<void> performPart2(CallContext ctx) async {
+    _setup();
     //  Do the second fraction or call
     if (frac2 == '14')
       await ctx.applyCalls('Hinge');

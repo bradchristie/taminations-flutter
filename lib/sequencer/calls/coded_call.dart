@@ -275,7 +275,7 @@ abstract class CodedCall extends Call {
 
   CodedCall(String name) : super(name.capWords());
 
-  static const specifier = '\\s*(?:boys?|girls?|beaus?|belles?|centers?|ends?|lead(?:er)?s?|trail(?:er)?s?|heads?|sides?|very ?centers?|every(one|body)|no(one|body))\\s*';
+  static const specifier = '\\s*(?:boys?|girls?|beaus?|belles?|centers?|ends?|lead(?:er)?s?|trail(?:er)?s?|heads?|sides?|very ?centers?|every(?:one|body)|no(?:one|body))\\s*';
 
   static final Map<RegExp, CodedCall Function(String norm)> normCallMap = {
     'aceydeucey'.ri: (_) => AceyDeucey(),
@@ -298,29 +298,29 @@ abstract class CodedCall extends Call {
     'bendtheline'.ri: (_) => BendTheLine(),
     '(line|wave)of(6|8)(left)?(12)?tag(theline)?'.ri: (name) => BigLineTagTheLine(name),
     '(line|wave)of(6|8)(left)?turnanddeal'.ri: (name) => BigLineTurnAndDeal(name),
-    'inyourblock.*'.ri: (name) => BlockFormation(name),
+    '(inyour)?block.*'.ri: (name) => BlockFormation(name),
     'bounce(the)?($specifier)?'.ri: (name) => Bounce(name),
     'boy'.ri: (_) => Boys(),
     'boxthegnat'.ri: (_) => BoxTheGnat(),
     'bracethru'.ri: (_) => BraceThru(),
-    'breaker(1|2|3)'.ri: (name) => Breaker(name),
+    'breaker(1|2|3)?'.ri: (name) => Breaker(name),
     '.*But(?![a-z]).*'.r: (name) => But(name),
     'butterfly.*'.ri: (name) => Butterfly(name),
 
     'californiatwirl'.ri: (_) => CaliforniaTwirl(),
-    '(14|12|34)castandrelay'.ri: (name) => CastAndRelay(name),
-    'castashadowcenter(go|cast)?34'.ri: (name) => CastAShadow(name),
+    '(14|12|34)?castandrelay'.ri: (name) => CastAndRelay(name),
+    'castashadow(center(go|cast)?34)?'.ri: (name) => CastAShadow(name),
     '(cross)?castback'.ri: (name) => CastBack(name),
     'castoff(14|12|34)'.ri: (name) => CastOffThreeQuarters(name),
-    '(all4couples)?(left)?(split)?catch.*?(1|2|3|4)'.ri: (name) => Catch(name),
+    '(all4couples)?(left)?(split)?catch.*?(1|2|3|4)?'.ri: (name) => Catch(name),
     'center'.ri: (_) => Centers(),
     'center6'.ri: (_) => CenterSix(),
     'center(line|wave)of4'.ri: (name) => CenterWaveOfFour(name),
     'chainreaction'.ri: (_) => ChainReaction(),
-    'checkpoint(.+)by(.*)'.ri: (name) => Checkpoint(name),
+    'checkpoint((.+)by(.*))?'.ri: (name) => Checkpoint(name),
     'changethe(centers?|wave)'.ri: (name) => ChangeTheCenters(name),
     'chiselthru'.ri: (_) => ChiselThru(),
-    'circleby(14|12|34|nothing)and(14|12|34|nothing)'.ri: (name) => CircleBy(name),
+    'circleby((14|12|34|nothing)and(14|12|34|nothing))?'.ri: (name) => CircleBy(name),
     'circleby(14|12|34|nothing)and(?!(14|12|34|nothing)).*'.ri: (name) => CircleBy(name),
     '(box)?circulate'.ri: (_) => Circulate(),
     '(cross)?cloverand(\\w.*)'.ri: (name) => CloverAnd(name),

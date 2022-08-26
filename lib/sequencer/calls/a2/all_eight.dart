@@ -30,6 +30,7 @@ class AllEight extends Action {
   ' Examples are All 8 Swing Thru and All 8 Crossfire.'
   ' Otherwise the sequencer will look up the call'
   ' from the All 8 animations.';
+  @override var helplink = 'a2/all_4_all_8';
   AllEight(String name) : super(name);
 
   @override
