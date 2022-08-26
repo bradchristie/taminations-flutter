@@ -24,77 +24,77 @@
 
   <tam title="Catch 1"
        from="Facing Couples"
-       formation="Facing Couples" group=" "
+       formation="Facing Couples Compact" group=" "
        parts="2;3" >
     <path numbers="1 4">
-      <move select="Extend Left" beats="2" scaleX="2" scaleY="1.5" />
+      <move select="Extend Left" beats="2" scaleX="1.5" scaleY="1.5" />
       <move select="Stand" beats="3"/>
-      <move select="Flip Right" beats="3" offsetX="2" offsetY=".5" />
+      <move select="Flip Right" beats="3" offsetX="1.5" offsetY=".5" />
     </path>
     <path numbers="2 3">
-      <move select="Forward 2" />
+      <move select="Forward 2" scaleX="0.75"/>
       <move select="Swing Left" />
-      <move select="Forward 2" beats="3" />
+      <move select="Forward 2" beats="3" scaleX="0.75"/>
     </path>
   </tam>
 
   <tam title="Catch 2"
        from="Facing Couples"
-       formation="Facing Couples" group=" "
+       formation="Facing Couples Compact" group=" "
        parts="4;3" >
     <path numbers="1 4">
-      <move select="Extend Left" beats="2" scaleX="2" scaleY=".5" />
+      <move select="Extend Left" beats="2" scaleX="1.5" scaleY=".5" />
       <move select="Lead Right" beats="2" scaleX=".5" scaleY="1.5" />
       <move select="Swing Right" scaleX=".5" scaleY=".5" />
-      <move select="Extend Left" beats="3" scaleX="2" scaleY=".5" />
+      <move select="Extend Left" beats="3" scaleX="1.5" scaleY=".5" />
     </path>
     <path numbers="2 3">
-      <move select="Extend Left" beats="2" scaleX="2" scaleY=".5" />
+      <move select="Extend Left" beats="2" scaleX="1.5" scaleY=".5" />
       <move select="Lead Left" beats="2" scaleX="1.5" scaleY=".5" />
       <move select="Stand" beats="3"/>
-      <move select="Flip Left" beats="3" offsetX="2" offsetY="-1.5" />
+      <move select="Flip Left" beats="3" offsetX="1.5" offsetY="-1.5" />
     </path>
   </tam>
 
   <tam title="Catch 3"
        from="Facing Couples"
-       formation="Facing Couples" group=" "
+       formation="Facing Couples Compact" group=" "
        parts="6;3" >
     <path numbers="1 4">
-      <move select="Extend Left" beats="2" scaleX="2" scaleY=".5" />
+      <move select="Extend Left" beats="2" scaleX="1.5" scaleY=".5" />
       <move select="Lead Right" beats="2" scaleX=".5" scaleY="1.5" />
       <move select="Lead Right" beats="2" scaleX="1.5" scaleY=".5" />
       <move select="Stand" beats="3"/>
-      <move select="Flip Right" beats="3" offsetX="2" offsetY="1.5" />
+      <move select="Flip Right" beats="3" offsetX="1.5" offsetY="1.5" />
     </path>
     <path numbers="2 3">
-      <move select="Extend Left" beats="2" scaleX="2" scaleY=".5" />
+      <move select="Extend Left" beats="2" scaleX="1.5" scaleY=".5" />
       <move select="Lead Left" beats="2" scaleX="1.5" scaleY=".5" />
       <move select="Lead Left" beats="2" scaleX=".5" scaleY="1.5" />
       <move select="Swing Left" scaleX=".5" scaleY=".5"/>
-      <move select="Extend Right" beats="3" scaleX="2" scaleY=".5"/>
+      <move select="Extend Right" beats="3" scaleX="1.5" scaleY=".5"/>
     </path>
   </tam>
 
   <tam title="Catch 4"
        from="Facing Couples"
-       formation="Facing Couples" group=" "
+       formation="Facing Couples Compact" group=" "
        parts="8;3" >
     <path numbers="1 4">
-      <move select="Extend Left" beats="2" scaleX="2" scaleY=".5" />
+      <move select="Extend Left" beats="2" scaleX="1.5" scaleY=".5" />
       <move select="Lead Right" beats="2" scaleX=".5" scaleY="1.5" />
       <move select="Lead Right" beats="2" scaleX="1.5" scaleY=".5" />
       <move select="Lead Right" beats="2" scaleX=".5" scaleY="1.5" />
       <move select="Swing Right" scaleX=".5" scaleY=".5"/>
-      <move select="Extend Left" beats="3" scaleX="2" scaleY=".5" />
+      <move select="Extend Left" beats="3" scaleX="1.5" scaleY=".5" />
     </path>
     <path numbers="2 3">
-      <move select="Extend Left" beats="2" scaleX="2" scaleY=".5" />
+      <move select="Extend Left" beats="2" scaleX="1.5" scaleY=".5" />
       <move select="Lead Left" beats="2" scaleX="1.5" scaleY=".5" />
       <move select="Lead Left" beats="2" scaleX=".5" scaleY="1.5" />
       <move select="Lead Left" beats="2" scaleX="1.5" scaleY=".5" />
       <move select="Stand" beats="3"/>
-      <move select="Flip Left" beats="3" offsetX="2" offsetY="-1.5" />
+      <move select="Flip Left" beats="3" offsetX="1.5" offsetY="-1.5" />
     </path>
   </tam>
 

@@ -22,25 +22,25 @@
 -->
 <tamination title="Pull By">
 
-  <tam title="Right Pull By" formation="Facing Couples" group=" ">
+  <tam title="Right Pull By" formation="Facing Couples Compact" group=" ">
     <path>
-      <move select="Pull Left" scaleX="2" scaleY=".5" beats="2"/>
-      <move select="Extend Right" scaleX="2" scaleY=".5" beats="2"/>
+      <move select="Pull Left" scaleX="1.5" scaleY=".5" beats="2"/>
+      <move select="Extend Right" scaleX="1.5" scaleY=".5" beats="2"/>
     </path>
     <path>
-      <move select="Pull Left" scaleX="2" scaleY=".5" beats="2"/>
-      <move select="Extend Right" scaleX="2" scaleY=".5" beats="2"/>
+      <move select="Pull Left" scaleX="1.5" scaleY=".5" beats="2"/>
+      <move select="Extend Right" scaleX="1.5" scaleY=".5" beats="2"/>
     </path>
   </tam>
 
-  <tam title="Left Pull By" formation="Facing Couples" group=" ">
+  <tam title="Left Pull By" formation="Facing Couples Compact" group=" ">
     <path>
-      <move select="Pull Right" scaleX="2" scaleY=".5" beats="2"/>
-      <move select="Extend Left" scaleX="2" scaleY=".5" beats="2"/>
+      <move select="Pull Right" scaleX="1.5" scaleY=".5" beats="2"/>
+      <move select="Extend Left" scaleX="1.5" scaleY=".5" beats="2"/>
     </path>
     <path>
-      <move select="Pull Right" scaleX="2" scaleY=".5" beats="2"/>
-      <move select="Extend Left" scaleX="2" scaleY=".5" beats="2"/>
+      <move select="Pull Right" scaleX="1.5" scaleY=".5" beats="2"/>
+      <move select="Extend Left" scaleX="1.5" scaleY=".5" beats="2"/>
     </path>
   </tam>
 

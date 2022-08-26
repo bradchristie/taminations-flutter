@@ -33,13 +33,13 @@
 
   <tam title="Step to a Wave"
        from="Facing Couples"
-       formation="Facing Couples"
+       formation="Facing Couples Compact"
        difficulty="1">
     <path>
-      <move select="Extend Left" beats="2" scaleX="2" scaleY="2" />
+      <move select="Extend Left" beats="2" scaleX="1.5" scaleY="2" />
     </path>
     <path>
-      <move select="Forward 2" />
+      <move select="Forward 2" scaleX="0.75"/>
     </path>
   </tam>
 
@@ -90,13 +90,13 @@
 
   <tam title="Step to a Left-Hand Wave"
        from="Facing Couples"
-       formation="Facing Couples"
+       formation="Facing Couples Compact"
        difficulty="2">
     <path>
-      <move select="Forward 2" />
+      <move select="Forward 2" scaleX="0.75"/>
     </path>
     <path>
-      <move select="Extend Right" beats="2" scaleX="2" scaleY="2" />
+      <move select="Extend Right" beats="2" scaleX="1.5" scaleY="2" />
     </path>
   </tam>
 

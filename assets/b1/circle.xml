@@ -359,16 +359,17 @@
     </path>
   </tam>
 
-  <tam title="Circle Four Left 1/4" from="Facing Couples" formation="Facing Couples">
+  <tam title="Circle Four Left 1/4" from="Facing Couples"
+       formation="Facing Couples Compact">
     <path>
-      <move select="Eighth Right" hands="right" offsetX="1"/>
+      <move select="Eighth Right" hands="right" offsetX=".5"/>
       <move select="Circle Left Quarter" scaleX="2" scaleY="2"/>
-      <move select="Eighth Left" hands="right" offsetX="-.707" offsetY="-.707"/>
+      <move select="Eighth Left" hands="right" offsetX="-.353" offsetY="-.353"/>
     </path>
     <path>
-      <move select="Eighth Left" hands="left" offsetX="1"/>
+      <move select="Eighth Left" hands="left" offsetX=".5"/>
       <move select="Circle Left Quarter" scaleX="2" scaleY="2"/>
-      <move select="Eighth Right" hands="left" offsetX="-.707" offsetY=".707"/>
+      <move select="Eighth Right" hands="left" offsetX="-.353" offsetY=".353"/>
     </path>
   </tam>
 
@@ -418,16 +419,17 @@
     </path>
   </tam>
 
-  <tam title="Circle Four Right 1/4" from="Facing Couples" formation="Facing Couples">
+  <tam title="Circle Four Right 1/4" from="Facing Couples"
+       formation="Facing Couples Compact">
     <path>
-      <move select="Eighth Right" hands="right" offsetX="1"/>
+      <move select="Eighth Right" hands="right" offsetX=".5"/>
       <move select="Circle Right Quarter" scaleX="2" scaleY="2"/>
-      <move select="Eighth Left" hands="right" offsetX="-.707" offsetY="-.707"/>
+      <move select="Eighth Left" hands="right" offsetX="-.353" offsetY="-.353"/>
     </path>
     <path>
-      <move select="Eighth Left" hands="left" offsetX="1"/>
+      <move select="Eighth Left" hands="left" offsetX=".5"/>
       <move select="Circle Right Quarter" scaleX="2" scaleY="2"/>
-      <move select="Eighth Right" hands="left" offsetX="-.707" offsetY=".707"/>
+      <move select="Eighth Right" hands="left" offsetX="-.353" offsetY=".353"/>
     </path>
   </tam>
 
@@ -477,18 +479,19 @@
     </path>
   </tam>
 
-  <tam title="Circle Four Left 1/2" from="Facing Couples" formation="Facing Couples">
+  <tam title="Circle Four Left 1/2" from="Facing Couples"
+       formation="Facing Couples Compact">
     <path>
-      <move select="Eighth Right" hands="right" offsetX="1"/>
+      <move select="Eighth Right" hands="right" offsetX=".5"/>
       <move select="Circle Left Quarter" scaleX="2" scaleY="2"/>
       <move select="Circle Left Quarter" scaleX="2" scaleY="2"/>
-      <move select="Eighth Left" hands="right" offsetX="-.707" offsetY="-.707"/>
+      <move select="Eighth Left" hands="right" offsetX="-.353" offsetY="-.353"/>
     </path>
     <path>
-      <move select="Eighth Left" hands="left" offsetX="1"/>
+      <move select="Eighth Left" hands="left" offsetX=".5"/>
       <move select="Circle Left Quarter" scaleX="2" scaleY="2"/>
       <move select="Circle Left Quarter" scaleX="2" scaleY="2"/>
-      <move select="Eighth Right" hands="left" offsetX="-.707" offsetY=".707"/>
+      <move select="Eighth Right" hands="left" offsetX="-.353" offsetY=".353"/>
     </path>
   </tam>
 
@@ -546,18 +549,19 @@
     </path>
   </tam>
 
-  <tam title="Circle Four Right 1/2" from="Facing Couples" formation="Facing Couples">
+  <tam title="Circle Four Right 1/2" from="Facing Couples"
+       formation="Facing Couples Compact">
     <path>
-      <move select="Eighth Right" hands="right" offsetX="1"/>
+      <move select="Eighth Right" hands="right" offsetX=".5"/>
       <move select="Circle Right Quarter" scaleX="2" scaleY="2"/>
       <move select="Circle Right Quarter" scaleX="2" scaleY="2"/>
-      <move select="Eighth Left" hands="right" offsetX="-.707" offsetY="-.707"/>
+      <move select="Eighth Left" hands="right" offsetX="-.353" offsetY="-.353"/>
     </path>
     <path>
-      <move select="Eighth Left" hands="left" offsetX="1"/>
+      <move select="Eighth Left" hands="left" offsetX=".5"/>
       <move select="Circle Right Quarter" scaleX="2" scaleY="2"/>
       <move select="Circle Right Quarter" scaleX="2" scaleY="2"/>
-      <move select="Eighth Right" hands="left" offsetX="-.707" offsetY=".707"/>
+      <move select="Eighth Right" hands="left" offsetX="-.353" offsetY=".353"/>
     </path>
   </tam>
 
@@ -615,20 +619,21 @@
     </path>
   </tam>
 
-  <tam title="Circle Four Left 3/4" from="Facing Couples" formation="Facing Couples">
+  <tam title="Circle Four Left 3/4" from="Facing Couples"
+       formation="Facing Couples Compact">
     <path>
-      <move select="Eighth Right" hands="right" offsetX="1"/>
+      <move select="Eighth Right" hands="right" offsetX=".5"/>
       <move select="Circle Left Quarter" scaleX="2" scaleY="2"/>
       <move select="Circle Left Quarter" scaleX="2" scaleY="2"/>
       <move select="Circle Left Quarter" scaleX="2" scaleY="2"/>
-      <move select="Eighth Left" hands="right" offsetX="-.707" offsetY="-.707"/>
+      <move select="Eighth Left" hands="right" offsetX="-.353" offsetY="-.353"/>
     </path>
     <path>
-      <move select="Eighth Left" hands="left" offsetX="1"/>
+      <move select="Eighth Left" hands="left" offsetX=".5"/>
       <move select="Circle Left Quarter" scaleX="2" scaleY="2"/>
       <move select="Circle Left Quarter" scaleX="2" scaleY="2"/>
       <move select="Circle Left Quarter" scaleX="2" scaleY="2"/>
-      <move select="Eighth Right" hands="left" offsetX="-.707" offsetY=".707"/>
+      <move select="Eighth Right" hands="left" offsetX="-.353" offsetY=".353"/>
     </path>
   </tam>
 
@@ -694,20 +699,21 @@
     </path>
   </tam>
 
-  <tam title="Circle Four Right 3/4" from="Facing Couples" formation="Facing Couples">
+  <tam title="Circle Four Right 3/4" from="Facing Couples"
+       formation="Facing Couples Compact">
     <path>
-      <move select="Eighth Right" hands="right" offsetX="1"/>
+      <move select="Eighth Right" hands="right" offsetX=".5"/>
       <move select="Circle Right Quarter" scaleX="2" scaleY="2"/>
       <move select="Circle Right Quarter" scaleX="2" scaleY="2"/>
       <move select="Circle Right Quarter" scaleX="2" scaleY="2"/>
-      <move select="Eighth Left" hands="right" offsetX="-.707" offsetY="-.707"/>
+      <move select="Eighth Left" hands="right" offsetX="-.353" offsetY="-.353"/>
     </path>
     <path>
-      <move select="Eighth Left" hands="left" offsetX="1"/>
+      <move select="Eighth Left" hands="left" offsetX=".5"/>
       <move select="Circle Right Quarter" scaleX="2" scaleY="2"/>
       <move select="Circle Right Quarter" scaleX="2" scaleY="2"/>
       <move select="Circle Right Quarter" scaleX="2" scaleY="2"/>
-      <move select="Eighth Right" hands="left" offsetX="-.707" offsetY=".707"/>
+      <move select="Eighth Right" hands="left" offsetX="-.353" offsetY=".353"/>
     </path>
   </tam>
 

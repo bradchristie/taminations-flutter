@@ -48,18 +48,19 @@
     </path>
   </tam>
 
-  <tam title="Single Checkmate" from="Facing Couples" formation="Facing Couples">
+  <tam title="Single Checkmate" from="Facing Couples"
+       formation="Facing Couples Compact">
     <path>
-      <move select="Extend Left" beats="2" scaleX="2" scaleY=".5"/>
+      <move select="Extend Left" beats="2" scaleX="1.5" scaleY=".5"/>
       <move select="Lead Right" scaleY=".5"/>
       <move select="Extend Left" scaleY=".5"/>
-      <move select="Extend Right" beats="2" scaleX="2" scaleY=".5"/>
+      <move select="Extend Right" beats="2" scaleX="1.5" scaleY=".5"/>
     </path>
     <path>
-      <move select="Extend Left" beats="2" scaleX="2" scaleY=".5"/>
+      <move select="Extend Left" beats="2" scaleX="1.5" scaleY=".5"/>
       <move select="Quarter Left" offsetX="1" offsetY="-.5"/>
       <move select="Extend Left" scaleY=".5"/>
-      <move select="Extend Right" beats="2" scaleX="2" scaleY=".5"/>
+      <move select="Extend Right" beats="2" scaleX="1.5" scaleY=".5"/>
     </path>
   </tam>
 

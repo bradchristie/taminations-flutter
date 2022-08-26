@@ -24,7 +24,7 @@
 
   <tam title="Ladies Chain"
        from="Facing Couples"
-       formation="Facing Couples" sequencer="gender-specific"
+       formation="Facing Couples Compact" sequencer="gender-specific"
        fractions="5" difficulty="1">
     <path>
       <move select="Stand" />
@@ -32,8 +32,8 @@
       <move select="Beau Wheel" />
     </path>
     <path>
-      <move select="Pull Left" beats="2.5" scaleX="2" scaleY="1.75" />
-      <move select="Extend Right" beats="2.5" scaleX="2" scaleY="1.75" />
+      <move select="Pull Left" beats="2.5" scaleX="1.5" scaleY="1.75" />
+      <move select="Extend Right" beats="2.5" scaleX="1.5" scaleY="1.75" />
       <move select="Belle Wheel" />
     </path>
   </tam>

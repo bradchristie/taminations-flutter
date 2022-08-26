@@ -24,7 +24,7 @@
 
   <tam title="Boys Run"
        from="Facing Couples"
-       formation="Facing Couples" sequencer="no">
+       formation="Facing Couples Compact" sequencer="no">
     <path>
       <move select="Run Right" beats="4" />
     </path>
@@ -233,8 +233,7 @@
 
   <tam title="Girls Run"
        from="Facing Couples"
-       formation="Facing Couples" sequencer="no"
-       fractions="" >
+       formation="Facing Couples Compact" sequencer="no">
     <path>
       <move select="Dodge Right" beats="4" />
     </path>

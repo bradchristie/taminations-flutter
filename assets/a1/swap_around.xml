@@ -24,13 +24,13 @@
 
   <tam title="Swap Around"
        from="Facing Couples"
-       formation="Facing Couples"
+       formation="Facing Couples Compact"
        fractions="2" >
     <path>
       <move select="Flip Right" beats="4" />
     </path>
     <path>
-      <move select="Forward 4" />
+      <move select="Forward 3" beats="4" />
     </path>
   </tam>
 
@@ -134,10 +134,10 @@
 
   <tam title="Reverse Swap Around"
        from="Facing Couples"
-       formation="Facing Couples"
+       formation="Facing Couples Compact"
        fractions="2" >
     <path>
-      <move select="Forward 4" />
+      <move select="Forward 3" beats="4" />
     </path>
     <path>
       <move select="Flip Left" beats="4" />

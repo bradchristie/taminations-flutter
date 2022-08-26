@@ -24,15 +24,15 @@
 
   <tam title="Pass the Ocean"
        from="Facing Couples"
-       formation="Facing Couples"
+       formation="Facing Couples Compact"
        difficulty="1">
     <path>
-      <move select="Extend Left" beats="2" scaleX="2" scaleY=".5" />
+      <move select="Extend Left" beats="2" scaleX="1.5" scaleY=".5" />
       <move select="Forward" beats=".5" />
       <move select="Lead Right" scaleX="2" scaleY="1.5" />
     </path>
     <path>
-      <move select="Extend Left" beats="2" scaleX="2" scaleY=".5" />
+      <move select="Extend Left" beats="2" scaleX="1.5" scaleY=".5" />
       <move select="Lead Left" hands="left" beats="2" scaleY=".5" />
     </path>
   </tam>

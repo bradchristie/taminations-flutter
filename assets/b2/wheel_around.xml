@@ -24,7 +24,7 @@
 
   <tam title="Wheel Around"
        from="Facing Couples"
-       formation="Facing Couples" sequencer="no">
+       formation="Facing Couples Compact" sequencer="no">
     <path>
       <move select="Beau Wheel" />
     </path>
@@ -71,7 +71,7 @@
 
   <tam title="Reverse Wheel Around"
        from="Facing Couples"
-       formation="Facing Couples"
+       formation="Facing Couples Compact"
        sequencer="no">
     <path>
       <move select="Belle Wheel" reflect="1" />

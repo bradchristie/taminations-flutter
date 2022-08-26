@@ -23,14 +23,14 @@
 <tamination title="Forward and Back">
 
   <tam title="Forward and Back" from="Facing Couples"
-       formation="Facing Couples">
+       formation="Facing Couples Compact">
     <path>
-      <move select="Forward" hands="right" beats="2" />
-      <move select="Back" hands="right" beats="2" />
+      <move select="Forward" hands="right" beats="2" scaleX="0.7" />
+      <move select="Back" hands="right" beats="2" scaleX="0.7"/>
     </path>
     <path>
-      <move select="Forward" hands="left" beats="2" />
-      <move select="Back" hands="left" beats="2" />
+      <move select="Forward" hands="left" beats="2" scaleX="0.7"/>
+      <move select="Back" hands="left" beats="2" scaleX="0.7"/>
     </path>
   </tam>
 

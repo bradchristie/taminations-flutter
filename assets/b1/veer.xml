@@ -24,13 +24,13 @@
 
   <tam title="Veer Left"
        from="Facing Couples"
-       formation="Facing Couples"
+       formation="Facing Couples Compact"
        fractions="" difficulty="1">
     <path>
-      <move select="Extend Left" beats="2" hands="right" scaleX="2" scaleY="2" />
+      <move select="Extend Left" beats="2" hands="right" scaleX="1.5" scaleY="2" />
     </path>
     <path>
-      <move select="Extend Left" beats="2" hands="left" scaleX="2" scaleY="2" />
+      <move select="Extend Left" beats="2" hands="left" scaleX="1.5" scaleY="2" />
     </path>
   </tam>
 
@@ -120,13 +120,13 @@
 
   <tam title="Veer Right"
        from="Facing Couples"
-       formation="Facing Couples"
+       formation="Facing Couples Compact"
        fractions="" difficulty="1">
     <path>
-      <move select="Extend Right" beats="2" hands="right" scaleX="2" scaleY="2" />
+      <move select="Extend Right" beats="2" hands="right" scaleX="1.5" scaleY="2" />
     </path>
     <path>
-      <move select="Extend Right" beats="2" hands="left" scaleX="2" scaleY="2" />
+      <move select="Extend Right" beats="2" hands="left" scaleX="1.5" scaleY="2" />
     </path>
   </tam>
 

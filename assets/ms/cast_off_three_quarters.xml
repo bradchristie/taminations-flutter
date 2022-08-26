@@ -57,10 +57,12 @@
 
   <tam title="Cast Off Three Quarters" from="Right-Hand Wave" formation="Wave RH" difficulty="1">
     <path>
-      <move select="Cast Right"/>
+      <move select="Swing Right"/>
+      <move select="Hinge Right" offsetY=".5"/>
     </path>
     <path>
-      <move select="Cast Right"/>
+      <move select="Swing Right"/>
+      <move select="Hinge Right" offsetY="-.5"/>
     </path>
   </tam>
 

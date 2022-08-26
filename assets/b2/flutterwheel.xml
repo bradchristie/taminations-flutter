@@ -24,17 +24,17 @@
 
   <tam title="Flutterwheel"
        from="Facing Couples"
-       formation="Facing Couples"
+       formation="Facing Couples Compact"
        difficulty="1" >
     <path>
       <move select="Stand" hands="nohands" beats="3.5" />
-      <move select="Extend Left" hands="right" beats="1.5" scaleX="2" scaleY="1.5" />
-      <move select="Run Right" hands="right" scaleX="1.5" scaleY="2" offsetX="2" offsetY=".5" />
+      <move select="Extend Left" hands="right" beats="1.5" scaleX="1.5" scaleY="1.5" />
+      <move select="Run Right" hands="right" scaleX="1.5" scaleY="2" offsetX="1.5" offsetY=".5" />
     </path>
     <path>
-      <move select="Extend Left" beats="2" scaleX="2" scaleY="1.75" />
+      <move select="Extend Left" beats="2" scaleX="1.5" scaleY="1.75" />
       <move select="Swing Right" hands="both" scaleX=".75" scaleY=".75" />
-      <move select="U-Turn Right" hands="left" offsetX="2" offsetY=".25" />
+      <move select="U-Turn Right" hands="left" offsetX="1.5" offsetY=".25" />
     </path>
   </tam>
 
@@ -108,17 +108,17 @@
 
   <tam title="Reverse Flutterwheel"
        from="Facing Couples"
-       formation="Facing Couples"
+       formation="Facing Couples Compact"
        difficulty="1" >
     <path>
-      <move select="Extend Right" beats="2" scaleX="2" scaleY="1.75" />
+      <move select="Extend Right" beats="2" scaleX="1.5" scaleY="1.75" />
       <move select="Swing Left" hands="both" scaleX=".75" scaleY=".75" />
-      <move select="U-Turn Left" hands="right" offsetX="2" offsetY="-.25" />
+      <move select="U-Turn Left" hands="right" offsetX="1.5" offsetY="-.25" />
     </path>
     <path>
       <move select="Stand" hands="nohands" beats="3.5" />
-      <move select="Extend Right" hands="left" beats="1.5" scaleX="2" scaleY="1.5" />
-      <move select="Run Left" hands="left" scaleX="1.5" scaleY="2" offsetX="2" offsetY="-.5" />
+      <move select="Extend Right" hands="left" beats="1.5" scaleX="1.5" scaleY="1.5" />
+      <move select="Run Left" hands="left" scaleX="1.5" scaleY="2" offsetX="1.5" offsetY="-.5" />
     </path>
   </tam>
 

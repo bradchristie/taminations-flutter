@@ -56,12 +56,13 @@
     </path>
   </tam>
 
-  <tam title="Right Roll to a Wave" from="Facing Couples" formation="Facing Couples">
+  <tam title="Right Roll to a Wave" from="Facing Couples"
+       formation="Facing Couples Compact">
     <path>
-      <move select="Extend Left" beats="3" scaleX="2" scaleY="2" />
+      <move select="Extend Left" beats="3" scaleX="1.5" scaleY="2" />
     </path>
     <path>
-      <move select="Forward 2" beats="3" />
+      <move select="Forward" scaleX="1.5" beats="3" />
     </path>
     <taminator>
       This is the same as Step to a Wave.  It emphasizes the trailer's part
@@ -361,12 +362,13 @@
     </path>
   </tam>
 
-  <tam title="Left Roll to a Wave" from="Facing Couples" formation="Facing Couples">
+  <tam title="Left Roll to a Wave"
+       from="Facing Couples" formation="Facing Couples Compact">
     <path>
-      <move select="Forward 2" beats="3" />
+      <move select="Forward" scaleX="1.5" beats="3" />
     </path>
     <path>
-      <move select="Extend Right" beats="3" scaleX="2" scaleY="2" />
+      <move select="Extend Right" beats="3" scaleX="1.5" scaleY="2" />
     </path>
     <taminator>This is the same as Step to a Left-Hand Wave.</taminator>
   </tam>

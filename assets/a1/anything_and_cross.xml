@@ -99,10 +99,9 @@
 
   <tam title="Beaus Cross"
        from="Facing Couples"
-       formation="Facing Couples"
-       fractions="" >
+       formation="Facing Couples Compact">
     <path>
-      <movement hands="left" beats="2" cx1="1" cy1="0" cx2=".8" cy2="-2" x2="4" y2="-2"
+      <movement hands="left" beats="2" cx1="1" cy1="0" cx2=".8" cy2="-2" x2="3" y2="-2"
                 cx3="1" cx4="1" cy4="-.4" x4="2" y4="-.4" />
     </path>
     <path>
@@ -112,8 +111,7 @@
 
   <tam title="Beaus Cross"
        from="Normal Lines"
-       formation="Normal Lines"
-       fractions="" >
+       formation="Normal Lines">
     <path>
       <movement hands="left" beats="2" cx1="1" cy1="0" cx2=".8" cy2="-2" x2="4" y2="-2"
                 cx3="1" cx4="1" cy4="-.4" x4="2" y4="-.4" />
@@ -132,21 +130,19 @@
 
   <tam title="Belles Cross"
        from="Facing Couples"
-       formation="Facing Couples"
-       fractions="" >
+       formation="Facing Couples Compact">
     <path>
       <move select="Stand" beats="2" hands="none"/>
     </path>
     <path>
-      <movement hands="right" beats="2" cx1="1" cy1="0" cx2=".8" cy2="2" x2="4" y2="2"
+      <movement hands="right" beats="2" cx1="1" cy1="0" cx2=".8" cy2="2" x2="3" y2="2"
                 cx3="1" cx4="1" cy4=".4" x4="2" y4=".4" />
     </path>
   </tam>
 
   <tam title="Belles Cross"
        from="Normal Lines"
-       formation="Normal Lines"
-       fractions="" >
+       formation="Normal Lines">
     <path>
       <move select="Stand" beats="2" hands="none"/>
     </path>

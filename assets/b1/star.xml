@@ -24,14 +24,14 @@
 
   <tam title="Right Hand Star"
        from="Facing Couples"
-       formation="Facing Couples">
+       formation="Facing Couples Compact">
     <path>
-      <move select="Forward" beats="1.5" scaleX="2" />
+      <move select="Forward" beats="1.5" scaleX="1.5" />
       <move select="Swing Right" />
       <move select="Swing Right" />
     </path>
     <path>
-      <move select="Lead Left" beats="1.5" />
+      <move select="Lead Left" beats="1.5" scaleX=".5"/>
       <move select="Swing Right" />
       <move select="Swing Right" />
     </path>
@@ -64,14 +64,14 @@
 
   <tam title="Left Hand Star"
        from="Facing Couples"
-       formation="Facing Couples">
+       formation="Facing Couples Compact">
     <path>
-      <move select="Lead Right" beats="1.5" />
+      <move select="Lead Right" beats="1.5" scaleX=".5"/>
       <move select="Swing Left" />
       <move select="Swing Left" />
     </path>
     <path>
-      <move select="Forward" beats="1.5" scaleX="2" />
+      <move select="Forward" beats="1.5" scaleX="1.5" />
       <move select="Swing Left" />
       <move select="Swing Left" />
     </path>
