@@ -24,24 +24,24 @@
 
   <tam title="Square Chain the Top"
        from="Facing Couples"
-       formation="Facing Couples"
+       formation="Facing Couples Compact"
        parts="5;7.5" >
     <path>
-      <move select="Extend Left" beats="2" scaleX="2" scaleY=".5" />
+      <move select="Extend Left" beats="2" scaleX="1.5" scaleY=".5" />
       <move select="Lead Right" beats="3" scaleY="1.5" />
       <move select="Swing Left" />
       <move select="Lead Left" beats="4.5" scaleX="2.5" scaleY="3" />
       <move select="Swing Left" scaleX=".75" scaleY=".75" />
-      <move select="Forward 2"/>
+      <move select="Forward 2" scaleX="0.75"/>
     </path>
     <path>
-      <move select="Extend Left" beats="2" scaleX="2" scaleY=".5" />
+      <move select="Extend Left" beats="2" scaleX="1.5" scaleY=".5" />
       <move select="Lead Left" beats="3" scaleX="3" scaleY=".5" />
       <move select="Swing Left" />
       <move select="Swing Right" />
       <move select="Hinge Right"  />
       <move select="Swing Left"  scaleX=".75" scaleY=".75" />
-      <move select="Extend Left" beats="2" scaleX="2" scaleY="1.5" />
+      <move select="Extend Left" beats="2" scaleX="1.5" scaleY="1.5" />
     </path>
   </tam>
 
@@ -221,24 +221,24 @@
 
   <tam title="Left Square Chain the Top"
        from="Facing Couples"
-       formation="Facing Couples"
+       formation="Facing Couples Compact"
        parts="5;7.5" >
     <path>
-      <move select="Extend Right" beats="2" scaleX="2" scaleY=".5" />
+      <move select="Extend Right" beats="2" scaleX="1.5" scaleY=".5" />
       <move select="Lead Right" beats="3" scaleX="3" scaleY=".5" />
       <move select="Swing Right" />
       <move select="Swing Left" />
       <move select="Hinge Left"  />
       <move select="Swing Right"  scaleX=".75" scaleY=".75" />
-      <move select="Extend Right" beats="2" scaleX="2" scaleY="1.5" />
+      <move select="Extend Right" beats="2" scaleX="1.5" scaleY="1.5" />
     </path>
     <path>
-      <move select="Extend Right" beats="2" scaleX="2" scaleY=".5" />
+      <move select="Extend Right" beats="2" scaleX="1.5" scaleY=".5" />
       <move select="Lead Left" beats="3" scaleY="1.5" />
       <move select="Swing Right" />
       <move select="Lead Right" beats="4.5" scaleX="2.5" scaleY="3" />
       <move select="Swing Right" scaleX=".75" scaleY=".75" />
-      <move select="Forward 2"/>
+      <move select="Forward 2" scaleX="0.75"/>
     </path>
   </tam>
 

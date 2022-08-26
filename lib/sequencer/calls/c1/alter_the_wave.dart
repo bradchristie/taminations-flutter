@@ -24,6 +24,12 @@ class AlterTheWave extends Action with CallWithParts, CallWithStars {
   @override int numberOfParts = 4;
   @override final level = LevelData.C1;
   @override var turnStarAmount = 2;
+  @override var help = '''Alter the Wave is a 4-part call. Parts can be changed with Skip and Replace.
+  1.  Swing
+  2.  Centers Cast Off 3/4 While Ends Turn Back
+  3.  Turn the Star (Split Counter Rotate) Twice - amount can be changed
+  4.  Flip the Diamond''';
+  @override var helplink = 'c1/alter_the_wave';
   AlterTheWave(String name) : super(name);
 
   @override

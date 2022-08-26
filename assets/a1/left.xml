@@ -24,18 +24,18 @@
 
 
   <tam title="Left Dosado" group="Left"
-       formation="Facing Couples">
+       formation="Facing Couples Compact">
     <path>
-      <move select="Extend Right" scaleX="2" scaleY=".5" />
+      <move select="Extend Right" scaleX="1.5" scaleY=".5" />
       <move select="Extend Left" scaleY=".5" />
       <move select="Retreat Left" scaleY=".5" />
-      <move select="Retreat Right" scaleX="2" scaleY=".5" />
+      <move select="Retreat Right" scaleX="1.5" scaleY=".5" />
     </path>
     <path>
-      <move select="Extend Right" scaleX="2" scaleY=".5" />
+      <move select="Extend Right" scaleX="1.5" scaleY=".5" />
       <move select="Extend Left" scaleY=".5" />
       <move select="Retreat Left" scaleY=".5" />
-      <move select="Retreat Right" scaleX="2" scaleY=".5" />
+      <move select="Retreat Right" scaleX="1.5" scaleY=".5" />
     </path>
   </tam>
 
@@ -92,16 +92,16 @@
 
   <tam title="Left Turn Thru" group="Left"
        from="Facing Couples"
-       formation="Facing Couples">
+       formation="Facing Couples Compact">
     <path>
-      <move select="Extend Right" scaleX="2" scaleY=".5" />
-      <move select="Swing Left" hands="gripright" beats="2" scaleX=".5" scaleY=".5" />
-      <move select="Extend Left" scaleX="2" scaleY=".5" />
+      <move select="Extend Right" scaleX="1.5" scaleY=".5" />
+      <move select="Swing Left" beats="2" scaleX=".5" scaleY=".5" />
+      <move select="Extend Left" scaleX="1.5" scaleY=".5" />
     </path>
     <path>
-      <move select="Extend Right" scaleX="2" scaleY=".5" />
-      <move select="Swing Left" hands="gripright" beats="2" scaleX=".5" scaleY=".5" />
-      <move select="Extend Left" scaleX="2" scaleY=".5" />
+      <move select="Extend Right" scaleX="1.5" scaleY=".5" />
+      <move select="Swing Left" beats="2" scaleX=".5" scaleY=".5" />
+      <move select="Extend Left" scaleX="1.5" scaleY=".5" />
     </path>
   </tam>
 

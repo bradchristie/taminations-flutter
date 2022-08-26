@@ -23,14 +23,14 @@
 <tamination title="Partner Tag">
 
   <tam title="Partner Tag" from="Facing Couples"
-       formation="Facing Couples" sequencer="no">
+       formation="Facing Couples Compact" sequencer="no">
     <path>
       <move select="Lead Right" scaleX=".5"/>
-      <move select="Extend Left" beats="2" scaleX="2" scaleY=".5" />
+      <move select="Forward" beats="1.5" scaleX="1.5"/>
     </path>
     <path>
       <move select="Quarter Left" offsetX="-.5" offsetY="1"/>
-      <move select="Extend Right" beats="2" scaleX="2" scaleY="1.5" />
+      <move select="Extend Right" beats="1.5" scaleX="1.5" />
     </path>
   </tam>
 

@@ -24,14 +24,14 @@
 
   <tam title="Boys Kick Off"
        from="Facing Couples"
-       formation="Facing Couples"
+       formation="Facing Couples Compact"
        sequencer="no">
     <path>
-      <move select="Run Right" beats="2.5" offsetX="1.5" offsetY="-.5" />
-      <move select="Quarter Right" offsetX=".5" offsetY=".5" />
+      <move select="Run Right" beats="2.5" scaleX=".75" offsetX="1" offsetY="-.5" />
+      <move select="Quarter Right" offsetX=".5" />
     </path>
     <path>
-      <move select="Lead Left" beats="4" scaleY="3" />
+      <move select="Lead Left" beats="4" scaleX=".5" scaleY="2.5" />
     </path>
   </tam>
 

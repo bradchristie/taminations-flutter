@@ -54,40 +54,5 @@
     </path>
   </tam>
 
-  <tam title="Adjust to an Alamo" display="none"
-       from="Static Miniwaves"
-       formation="Static MiniWaves RH"
-       difficulty="1">
-    <path>
-      <move select="Sxtnth Right" beats="1" offsetX="0.586"/>
-    </path>
-    <path>
-      <move select="Sxtnth Left"  beats="1" offsetX="-0.586"/>
-    </path>
-    <path>
-      <move select="Sxtnth Right" beats="1" offsetX="0.586"/>
-    </path>
-    <path>
-      <move select="Sxtnth Left" beats="1" offsetX="-0.586"/>
-    </path>
-  </tam>
-
-  <tam title="Adjust to an Alamo" display="none"
-       from="Static Left-Hand Miniwaves"
-       formation="Static MiniWaves LH"
-       difficulty="1">
-    <path>
-      <move select="Sxtnth Right" beats="1" offsetX="-0.586"/>
-    </path>
-    <path>
-      <move select="Sxtnth Left" beats="1" offsetX="0.586"/>
-    </path>
-    <path>
-      <move select="Sxtnth Right" beats="1" offsetX="-0.586"/>
-    </path>
-    <path>
-      <move select="Sxtnth Left" beats="1" offsetX="0.586"/>
-    </path>
-  </tam>
 
 </tamination>

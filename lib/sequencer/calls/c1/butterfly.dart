@@ -33,6 +33,12 @@ class Butterfly extends ModifiedFormationConcept {
     else
       return getReal.replaceAllMapped('(.*) to .*'.ri, (m) => m[1]!);
   }
+  @override var help = 'Butterfly (call)\n'
+      'Dancers must be in a Butterfly, and the call must work for '
+      'dancers in the corresponding column-like formation.\n'
+  'You can skip the final re-adjustment to the Butterfly formation '
+      'by appending To Lines / Waves / Columns';
+  @override var helplink = 'c1/butterfly_formation';
   Butterfly(String name) : super(name);
 
   @override

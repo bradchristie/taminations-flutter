@@ -41,7 +41,7 @@ class DoYourPart extends Action {
         final mapping = dypctx.matchFormations(ctx2, sexy: sexy,
             subformation: true, handholds: false, maxError: 2.9);
         if (mapping != null)
-          return Pair(ctx2,mapping);
+          return Pair(ctx2,mapping.map);
       }
     }
     //  Unable to find call
@@ -61,9 +61,8 @@ class DoYourPart extends Action {
       final norm = TamUtils.normalizeCall(callName);
       final files = CallContext.xmlFilesForCall(norm.toLowerCase());
       var bestOffset = double.maxFinite;
-      List<int>? bestMapping;
+      MappingContext? bestMapping;
       CallContext? ctxBest;
-      FormationMatchResult? bestResult;
       for (final link in files) {
         final file = await CallContext.loadOneFile(link);
         for (final tam in file.rootElement.childrenNamed('tam')
@@ -77,29 +76,29 @@ class DoYourPart extends Action {
           final mapping = dypctx.matchFormations(ctx2, sexy: sexy,
               subformation: true, handholds: false, maxError: 2.9);
           if (mapping != null) {
-            var matchResult = dypctx.computeFormationOffsets(ctx2, mapping, delta: 0.2);
+            //var matchResult = dypctx.computeFormationOffsets(ctx2, mapping, delta: 0.2);
+            var matchResult = mapping.match;
             var totOffset = matchResult.offsets.fold<double>(0.0, (s, v) => s + v.length);
             if (totOffset < bestOffset) {
               ctxBest = ctx2;
               bestOffset = totOffset;
               bestMapping = mapping;
-              bestResult = matchResult;
             }
           }
 
         }
       }
-      if (ctxBest != null) {
+      if (bestMapping != null && ctxBest != null) {
         //  Adjust sequence dancers as needed to match call
         //  Perform the call
         await ctxBest.applyCalls(callName);
         //  Copy path movements from call to sequence
-        for (var i = 0; i < bestMapping!.length; i++) {
-          final m = bestMapping[i];
+        for (var i = 0; i < bestMapping.map.length; i++) {
+          final m = bestMapping.map[i];
           // TODO check for asymmetric call!
           dypctx.dancers[i].path.add(ctxBest.dancers[m].path);
         }
-        dypctx.adjustToFormationMatch(bestResult!);
+        dypctx.adjustToFormationMatch(bestMapping.match);
         return;
       }
       //  Unable to find call

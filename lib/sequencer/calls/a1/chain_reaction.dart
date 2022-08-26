@@ -23,6 +23,15 @@ class ChainReaction extends Action with CallWithParts, CallWithStars, ButCall {
 
   @override int numberOfParts = 4;
   @override final level = LevelData.A1;
+  @override var helplink = 'a1/chain_reaction';
+  @override var help = '''Chain Reaction is a 4-part call:
+  1.  Facing Dancers Pass Thru, Ends of wave Counter Rotate
+  2.  Middle 4 dancers Hinge
+  3.  Center 4 Turn the Star, Outer 4 Trade
+  4.  Center 4 of wave Cast Off 3/4, others Hourglass Circulate
+The star turn amount can be changed with Turn the Star (fraction).
+The centers part of Part 4 can be changed with But (another call).  
+  ''';
   ChainReaction() : super('Chain Reaction');
 
   @override

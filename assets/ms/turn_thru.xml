@@ -24,16 +24,16 @@
 
   <tam title="Turn Thru"
        from="Facing Couples"
-       formation="Facing Couples">
+       formation="Facing Couples Compact">
     <path>
-      <move select="Extend Left" scaleX="2" scaleY=".5" />
+      <move select="Extend Left" scaleX="1.5" scaleY=".5" />
       <move select="Swing Right" hands="gripright" beats="2" scaleX=".5" scaleY=".5" />
-      <move select="Extend Right" scaleX="2" scaleY=".5" />
+      <move select="Extend Right" scaleX="1.5" scaleY=".5" />
     </path>
     <path>
-      <move select="Extend Left" scaleX="2" scaleY=".5" />
+      <move select="Extend Left" scaleX="1.5" scaleY=".5" />
       <move select="Swing Right" hands="gripright" beats="2" scaleX=".5" scaleY=".5" />
-      <move select="Extend Right" scaleX="2" scaleY=".5" />
+      <move select="Extend Right" scaleX="1.5" scaleY=".5" />
     </path>
   </tam>
 

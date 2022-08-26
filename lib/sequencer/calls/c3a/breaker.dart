@@ -23,6 +23,10 @@ class Breaker extends Action with CallWithParts {
 
   @override var level = LevelData.C3A;
   @override var numberOfParts = 2;
+  @override var help =  '''Breaker (n) is a 2-part call:
+  1.  Ends Cast Off 3/4 While Center 4 Box Couunter Rotate and 1/2 Box Circulate
+  2.  Center Wave/Line Cast Off n/4 While Others Hourglass Circulate''';
+  @override var helplink = 'c3a/breaker_anything';
   Breaker(String name) : super(name);
 
   @override
@@ -35,12 +39,16 @@ class Breaker extends Action with CallWithParts {
   @override
   Future<void> performPart2(CallContext ctx) async {
     print(ctx.dancers.show());
-    var cast = 'Cast Off 3/4';
-    if (norm.contains('1'))
-      cast = 'Hinge';
-    else if (norm.contains('2'))
-      cast = 'Trade';
-    await ctx.applyCalls('Center Wave of 4 $cast '
+    var cast = norm.replaceFirst('breaker'.ri,'');
+    String call;
+    switch (cast) {
+      case '1' : call = 'Hinge'; break;
+      case '2' : call = 'Trade'; break;
+      case '3' : call = 'Cast Off 3/4'; break;
+      case '' : throw CallError('Breaker what?');
+      default : call = cast; break;
+    }
+    await ctx.applyCalls('Center Wave of 4 $call '
         'While Others Do Your Part Hourglass Circulate');
   }
 

@@ -45,6 +45,7 @@ class SequencerModel extends fm.ChangeNotifier {
   String errorString = '';
   DanceModel animation;
   int currentCall = -1;
+  String helplink = '';
 
   SequencerModel([fm.BuildContext? context]) :
         animation = DanceModel(context) {
@@ -66,6 +67,7 @@ class SequencerModel extends fm.ChangeNotifier {
     calls = [];
     errorString = '';
     currentCall = -1;
+    helplink = 'info/sequencer';
     await _startSequence();
     later(() {
       notifyListeners();
@@ -181,6 +183,17 @@ class SequencerModel extends fm.ChangeNotifier {
     }
   }
 
+  void showHelp(String c) {
+    final callName = c.replaceFirst('help '.ri, '');
+    final call = CodedCall.fromName(callName);
+    if (call != null) {
+      errorString = call.help;
+      helplink = call.helplink;
+    } else
+      errorString = 'Could not find $callName';
+    notifyListeners();
+  }
+
   Future<bool> loadOneCall(String call) async {
     errorString = '';
     try {
@@ -253,6 +266,9 @@ class SequencerModel extends fm.ChangeNotifier {
       setSpeed(call, settings);
     else if (call.lc.trim().startsWith('axes'))
       setAxes(call, settings);
+    else if (call.lc.trim().startsWith('help '))
+      showHelp(call);
+
 
     else {
       var prevbeats = animation.beats;

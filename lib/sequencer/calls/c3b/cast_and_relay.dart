@@ -24,6 +24,14 @@ class CastAndRelay extends Action with CallWithParts, ButCall, CallWithStars {
   @override var level = LevelData.C3B;
   @override var numberOfParts = 4;
   @override var turnStarAmount = 0;
+  @override var help = '''(fraction) Cast and Relay is a 4-part call:
+  1.  Turn (fraction)
+  2.  Centers Cast Off 3/4, Ends Circulate 1/2
+  3.  Centers Turn the Star (fraction), others Trade
+  4.  Center Wave of 4 Cast Off 3/4, others Hourglass Circulate
+The turn amount for Part 3 can be changed by appending Turn the Star (amount).
+The centers part for Part 4 can be changed with But (another call).''';
+  @override var helplink = 'c3b/fraction_cast_and_relay';
   String fraction;
   static final fractionCall = {
     '14' : 'Hinge',
@@ -41,7 +49,9 @@ class CastAndRelay extends Action with CallWithParts, ButCall, CallWithStars {
 
   @override
   Future<void> performPart1(CallContext ctx) async {
-    await ctx.applyCalls(fractionCall[fraction]!);
+    var amount = fractionCall[fraction] ??
+        thrower(CallError('What fraction to Cast and Relay?'))!;
+    await ctx.applyCalls(amount);
   }
 
   @override

@@ -23,6 +23,8 @@ import '../common.dart';
 class Checkpoint extends Action {
 
   @override final level = LevelData.C2;
+  @override var help = 'Checkpoint (centers call) by (others call)';
+  @override var helplink = 'c2/checkpoint';
   Checkpoint(String name) : super(name);
 
   @override
@@ -30,8 +32,11 @@ class Checkpoint extends Action {
     //  Parse out the two calls
     final firstCall = name.replaceMatch('Checkpoint (.+) by (.+)'.ri,'\\1');
     final secondCall = name.replaceMatch('Checkpoint (.+) by (.+)'.ri,'\\2');
+    if ((firstCall+secondCall).contains('Checkpoint'))
+      throw CallError('Checkpoint what?');
 
     //  Figure out who does the first call
+    print('$firstCall $secondCall ${ctx.groupstr}');
     List<Dancer> centers;
     if (ctx.groupstr == '2222')
       centers = ctx.groups[1] + ctx.groups[2];

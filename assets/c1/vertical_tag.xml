@@ -128,16 +128,16 @@
   <tam title="Vertical 1/2 Tag"
        from="Facing Couples">
     <formation>
-      <dancer gender="boy" x="1" y="2" angle="270"/>
-      <dancer gender="girl" x="-1" y="2" angle="270"/>
+      <dancer gender="boy" x="1" y="1.5" angle="270"/>
+      <dancer gender="girl" x="-1" y="1.5" angle="270"/>
     </formation>
     <path numbers="3 2">
       <move select="Dodge Right" beats="2" scaleY=".25"/>
       <move select="Dodge Left" beats="2" scaleY=".25"/>
     </path>
     <path numbers="1 4">
-      <move select="Extend Left" beats="2" scaleX="2" scaleY="1.5" />
-      <move select="Extend Left" beats="2" scaleX="2" scaleY=".5"/>
+      <move select="Extend Left" beats="2" scaleX="1.5" scaleY="1.5" />
+      <move select="Extend Left" beats="2" scaleX="1.5" scaleY=".5"/>
     </path>
     <taminator>Compare this with Belles Cross.</taminator>
   </tam>

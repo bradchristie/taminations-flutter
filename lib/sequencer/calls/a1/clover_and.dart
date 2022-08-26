@@ -23,6 +23,7 @@ import '../common.dart';
 class Cloverleaf extends Action {
 
   @override final level = LevelData.MS;
+  @override var helplink = 'ms/cloverleaf';
   Cloverleaf() : super('Cloverleaf');
 
   //  We get here only if standard Cloverleaf with all 8 dancers active fails.

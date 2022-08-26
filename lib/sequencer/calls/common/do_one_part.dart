@@ -27,6 +27,7 @@ class DoOnePart extends Action {
   Future<void> perform(CallContext ctx) async {
     final callName = name.replaceFirst('do the .* part (of)?'.ri, '').trim();
     await ctx.subContext(ctx.dancers, (ctx2) async {
+      ctx2.analyze();
       if (!ctx2.matchCodedCall(callName))
         throw CallError('Unable to find $callName as a Call with Parts');
       if (ctx2.callstack.last is CallWithParts) {

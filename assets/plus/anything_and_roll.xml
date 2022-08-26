@@ -654,17 +654,17 @@
   </tam>
 
   <tam title="Touch a Quarter and Roll" group=" "
-       formation="Facing Couples"
+       formation="Facing Couples Compact"
        fractions="" difficulty="1">
     <path>
-      <move select="Extend Left" scaleX="2" scaleY=".5" />
+      <move select="Extend Left" scaleX="1.5" scaleY=".5" />
       <move select="Hinge Right" scaleY=".5" beats="1" />
-      <move select="Quarter Right" offsetY="1"/>
+      <move select="Quarter Right" offsetY=".5"/>
     </path>
     <path>
-      <move select="Extend Left" scaleX="2" scaleY=".5" />
+      <move select="Extend Left" scaleX="1.5" scaleY=".5" />
       <move select="Hinge Right" scaleY=".5" beats="1" />
-      <move select="Quarter Right" offsetY="1"/>
+      <move select="Quarter Right" offsetY=".5"/>
     </path>
   </tam>
 

@@ -41,12 +41,12 @@
     </path>
   </tam>
 
-  <tam title="Rip Off" from="Facing Couples" formation="Facing Couples">
+  <tam title="Rip Off" from="Facing Couples" formation="Facing Couples Compact">
     <path>
-      <move select="Forward 4"/>
+      <move select="Forward 3"/>
     </path>
     <path>
-      <move select="Dodge Left" beats="4"/>
+      <move select="Dodge Left"/>
     </path>
   </tam>
 

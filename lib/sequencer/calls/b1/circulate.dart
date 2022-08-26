@@ -23,6 +23,10 @@ import '../common.dart';
 
 class Circulate extends Action {
 
+  @override var help = 'You can just enter Circulate for All 8 Circulate,'
+      ' Column Circulate, Couples Circulate, and, for 4 dancers, Box Circulate.';
+  @override var helplink = 'b1/circulate';
+
   Circulate() : super('Circulate' );
 
   @override

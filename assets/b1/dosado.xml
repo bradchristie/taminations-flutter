@@ -24,18 +24,18 @@
 
   <tam title="Dosado"
        from="Facing Couples"
-       formation="Facing Couples" difficulty="1">
+       formation="Facing Couples Compact" difficulty="1">
     <path>
-      <move select="Extend Left" scaleX="2" scaleY=".5" />
+      <move select="Extend Left" scaleX="1.5" scaleY=".5" />
       <move select="Extend Right" scaleY=".5" />
       <move select="Retreat Right" scaleY=".5" />
-      <move select="Retreat Left" scaleX="2" scaleY=".5" />
+      <move select="Retreat Left" scaleX="1.5" scaleY=".5" />
     </path>
     <path>
-      <move select="Extend Left" scaleX="2" scaleY=".5" />
+      <move select="Extend Left" scaleX="1.5" scaleY=".5" />
       <move select="Extend Right" scaleY=".5" />
       <move select="Retreat Right" scaleY=".5" />
-      <move select="Retreat Left" scaleX="2" scaleY=".5" />
+      <move select="Retreat Left" scaleX="1.5" scaleY=".5" />
     </path>
   </tam>
 
@@ -99,16 +99,16 @@
 
   <tam title="Dosado to a Wave"
        from="Facing Couples"
-       formation="Facing Couples" difficulty="2">
+       formation="Facing Couples Compact" difficulty="2">
     <path>
-      <move select="Extend Left" scaleX="2" scaleY=".5" />
+      <move select="Extend Left" scaleX="1.5" scaleY=".5" />
       <move select="Extend Right" scaleY=".5" />
       <move select="Retreat Right" scaleY=".5" />
       <move select="Retreat Left" scaleY=".5" />
       <move select="Extend Left" beats="2" scaleY="2"/>
     </path>
     <path>
-      <move select="Extend Left" scaleX="2" scaleY=".5" />
+      <move select="Extend Left" scaleX="1.5" scaleY=".5" />
       <move select="Extend Right" scaleY=".5" />
       <move select="Retreat Right" scaleY=".5" />
       <move select="Retreat Left" scaleY=".5" />

@@ -324,13 +324,14 @@
   <call link="c2/3_by_1_triangle_formation" title="Interlocked 3 by 1 Triangle Formation"/>
   <call link="c3b/interlocked_counter" title="Interlocked Counter"/>
   <call link="c1/interlocked_diamond_circulate" title="Interlocked Diamond Circulate"/>
-  <call link="c3a/interlocked_scoot_back" title="Interlocked Extend"/>
+  <call link="c3a/interlocked_extend" title="Interlocked Extend"/>
   <call link="c3a/interlocked_little" title="Interlocked Little"/>
   <call link="c3a/interlocked_little_more" title="Interlocked Little More"/>
   <call link="c3a/interlocked_plenty" title="Interlocked Plenty"/>
   <call link="c3b/interlocked_rally" title="Interlocked Rally"/>
   <call link="c3b/interlocked_ramble" title="Interlocked Ramble"/>
   <call link="c3a/interlocked_scoot_back" title="Interlocked Scoot Back"/>
+  <call link="c3a/interlocked_scoot_chain_thru" title="Interlocked Scoot Chain Thru"/>
   <call link="c2/interlocked_triangle_formation" title="Interlocked Triangle Formation"/>
   <call link="c1/interrupt" title="Interrupt"/>
   <call link="c2/invert_the_column" title="Invert the Column"/>

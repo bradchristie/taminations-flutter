@@ -22,30 +22,31 @@ import '../common.dart';
 class BlockFormation extends Action {
 
   @override final level = LevelData.C1;
+  @override var help = 'In Your Block (4-person call)\n'
+      'Dancers must be in Blocks, and the call must work for '
+      'dancers in a box.';
+  @override var helplink = 'c1/block_formation';
   BlockFormation(String name) : super(name);
 
   @override
   Future<void> perform(CallContext ctx) async {
-    final blockCall = name.replaceAll('in your block'.ri, '').trim();
+    final blockCall = name.replaceAll('.*?block'.ri, '').trim();
     final blockFormation = CallContext.fromXML(TamUtils.getFormation('Blocks'));
     final match = blockFormation.matchFormations(ctx,rotate:90);
     if (match == null)
       throw CallError('Dancers are not in Blocks');
+    final map = match.map;
     final ctx1 = CallContext.fromContext(ctx,
-      dancers:[ ctx.dancers[match[0]],ctx.dancers[match[5]],
-                ctx.dancers[match[2]],ctx.dancers[match[7]]]);
+      dancers:[ ctx.dancers[map[0]],ctx.dancers[map[5]],
+                ctx.dancers[map[2]],ctx.dancers[map[7]]]);
     final ctx2 = CallContext.fromContext(ctx,
-        dancers:[ ctx.dancers[match[1]],ctx.dancers[match[4]],
-                  ctx.dancers[match[3]],ctx.dancers[match[6]]]);
-    //try {
+        dancers:[ ctx.dancers[map[1]],ctx.dancers[map[4]],
+                  ctx.dancers[map[3]],ctx.dancers[map[6]]]);
       await ctx1.applyCalls(blockCall);
       ctx1.appendToSource();
       await ctx2.applyCalls(blockCall);
       ctx2.appendToSource();
       ctx.adjustToFormation('Blocks',rotate: 90);
-    //} on CallError catch (e) {
-    //  print(e);
-    //}
   }
 
 }

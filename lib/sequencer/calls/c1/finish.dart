@@ -49,10 +49,10 @@ class Finish extends Action {
           ctx2.animate(firstPart);
           final mapping = ctx.matchFormations(ctx2,sexy: sexy);
           if (mapping != null) {
-            final matchResult = ctx.computeFormationOffsets(ctx2, mapping);
+            final matchResult = mapping.match;
             ctx.adjustToFormationMatch(matchResult);
-            for (var i=0; i<mapping.length; i++) {
-              final m = mapping[i];
+            for (var i=0; i<mapping.map.length; i++) {
+              final m = mapping.map[i];
               final p = Path(allp[m >> 1].movelist);
               var firstBeats = 0.0;
               while (firstBeats.isLessThan(firstPart))

@@ -22,12 +22,13 @@
 -->
 <tamination title="Lead Right">
 
-  <tam title="Lead Right" from="Facing Couples" formation="Facing Couples" difficulty="2">
+  <tam title="Lead Right" from="Facing Couples"
+       formation="Facing Couples Compact" difficulty="2">
     <path>
-      <move select="Hinge Right" beats="4" scaleX=".5" scaleY=".5" offsetX="2.5" offsetY="-2.5" />
+      <move select="Hinge Right" beats="4" scaleX=".5" scaleY=".5" offsetX="2" offsetY="-2" />
     </path>
     <path>
-      <move select="Quarter Right" beats="4" hands="left" offsetX="1" offsetY="-1"/>
+      <move select="Quarter Right" beats="4" hands="left" offsetX=".5" offsetY="-.5"/>
     </path>
   </tam>
 
@@ -69,12 +70,13 @@
     </path>
   </tam>
 
-  <tam title="Lead Left" from="Facing Couples" formation="Facing Couples" difficulty="2">
+  <tam title="Lead Left" from="Facing Couples"
+       formation="Facing Couples Compact" difficulty="2">
     <path>
-      <move select="Quarter Left" beats="4" hands="right" offsetX="1" offsetY="1"/>
+      <move select="Quarter Left" beats="4" hands="right" offsetX=".5" offsetY=".5"/>
     </path>
     <path>
-      <move select="Hinge Left" beats="4" scaleX=".5" scaleY=".5" offsetX="2.5" offsetY="2.5" />
+      <move select="Hinge Left" beats="4" scaleX=".5" scaleY=".5" offsetX="2" offsetY="2" />
     </path>
   </tam>
 

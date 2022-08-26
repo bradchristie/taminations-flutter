@@ -173,18 +173,18 @@
   <tam title="Square Chain Thru to a Wave"
        from="Facing Couples">
     <formation>
-      <dancer gender="boy" x="1" y="2" angle="270"/>
-      <dancer gender="girl" x="-1" y="2" angle="270"/>
+      <dancer gender="boy" x="1" y="1.5" angle="270"/>
+      <dancer gender="girl" x="-1" y="1.5" angle="270"/>
     </formation>
     <path numbers="3 2">
-      <move select="Pull Left" scaleX="2" scaleY=".5" />
+      <move select="Pull Left" scaleX="1.5" scaleY=".5" />
       <move select="Lead Right" beats="2" scaleY="1.5" />
       <move select="Swing Left" />
       <move select="Stand" beats="3" />
       <move select="Swing Left" />
     </path>
     <path numbers="1 4">
-      <move select="Pull Left" scaleX="2" scaleY=".5" />
+      <move select="Pull Left" scaleX="1.5" scaleY=".5" />
       <move select="Lead Left" beats="2" scaleX="3" scaleY=".5" />
       <move select="Swing Left" />
       <move select="Swing Right" />
@@ -365,16 +365,16 @@
 
   <tam title="Square Thru 3 to a Wave" group=" "
        from="Facing Couples"
-       formation="Facing Couples"
+       formation="Facing Couples Compact"
        fractions="2;1.5">
     <path numbers="1 4">
-      <move select="Forward" />
+      <move select="Forward" scaleX=".5"/>
       <move select="Pull Left" scaleY=".5" />
       <move select="Lead Right" scaleX=".5" scaleY="1.5" />
       <move select="Lead Right" beats="2" offsetX="2" offsetY=".5" />
     </path>
     <path numbers="2 3">
-      <move select="Forward" />
+      <move select="Forward" scaleX=".5"/>
       <move select="Pull Left" scaleY=".5" />
       <move select="Lead Left" offsetX=".5" offsetY="-.5" />
       <move select="Lead Left" beats="2" scaleY="1.5" />

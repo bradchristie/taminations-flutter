@@ -127,15 +127,15 @@
   </tam>
 
   <tam title="Mirror Right and Left Thru" group="Mirror"
-       formation="Facing Couples">
+       formation="Facing Couples Compact">
     <path>
-      <move select="Pull Right" scaleX="2" scaleY=".5" />
-      <move select="Extend Left" scaleX="2" scaleY=".5" />
+      <move select="Pull Right" scaleX="1.5" scaleY=".5" />
+      <move select="Extend Left" scaleX="1.5" scaleY=".5" />
       <move select="Beau Reverse Wheel" scaleX=".67" />
     </path>
     <path>
-      <move select="Pull Right" scaleX="2" scaleY=".5" />
-      <move select="Extend Left" scaleX="2" scaleY=".5" />
+      <move select="Pull Right" scaleX="1.5" scaleY=".5" />
+      <move select="Extend Left" scaleX="1.5" scaleY=".5" />
       <move select="Belle Reverse Wheel" scaleX=".67" />
     </path>
   </tam>
@@ -151,14 +151,14 @@
 
   <tam title="Mirror Slide Thru"
        sequencer="gender-specific" group="Mirror"
-       formation="Facing Couples">
+       formation="Facing Couples Compact">
     <path>
-      <move select="Extend Right" beats="2" scaleX="2" scaleY=".5" />
-      <move select="Quarter Left" beats="2" offsetX="1" offsetY="1.5" />
+      <move select="Extend Right" beats="2" scaleX="1.5" scaleY=".5" />
+      <move select="Quarter Left" beats="2" offsetX="1" offsetY="1" />
     </path>
     <path>
-      <move select="Extend Right" beats="2" scaleX="2" scaleY=".5" />
-      <move select="Quarter Right" beats="2" offsetX="1" offsetY="-.5" />
+      <move select="Extend Right" beats="2" scaleX="1.5" scaleY=".5" />
+      <move select="Quarter Right" beats="2" offsetX="1" />
     </path>
   </tam>
 

@@ -74,9 +74,10 @@ class TamState extends fm.ChangeNotifier {
   bool loop;
   bool grid;
   String axes;
-  //  Fields for sequencer URL
+  //  Fields for sequencer
   String? formation;
   String? calls;
+  String? helplink;
   @override
   bool operator ==(Object other) =>
       (other is TamState)
@@ -103,7 +104,7 @@ class TamState extends fm.ChangeNotifier {
   void change({String? level, String? link, int? animnum, String? animname,
     MainPage? mainPage, DetailPage? detailPage,
     bool? embed, bool? play, bool? loop, bool? grid, String? axes,
-    String? formation, String? calls}) {
+    String? formation, String? calls, String? helplink}) {
     final before = toString();
     final params = Uri.parse(link ?? '').queryParameters;
     _level = level ?? _level;
@@ -127,6 +128,7 @@ class TamState extends fm.ChangeNotifier {
     this.axes = axes ?? this.axes;
     this.formation = formation ?? this.formation;
     this.calls = calls ?? this.calls;
+    this.helplink = helplink ?? this.helplink;
     if (toString() != before)
       notifyListeners();
   }
@@ -149,7 +151,9 @@ class TamState extends fm.ChangeNotifier {
     if (formation != null && formation!.isNotBlank)
       'formation=$formation',
     if (calls != null && calls!.isNotBlank)
-      'calls=$calls'
+      'calls=$calls',
+    if (helplink != null && helplink!.isNotBlank)
+      'helplink=$helplink'
   ].join('&');
 
   bool get isBlank => toString().isBlank;

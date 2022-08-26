@@ -24,14 +24,14 @@
 
   <tam title="Wheel Fan Thru"
        from="Facing Couples"
-       formation="Facing Couples">
+       formation="Facing Couples Compact">
     <path numbers="1 4">
-      <move select="HalfHinge Right" beats="2" offsetX="1.75" offsetY="-.25" />
+      <move select="HalfHinge Right" beats="2" offsetX="1.25" offsetY="-.25" />
       <move select="Swing Right" scaleX=".707" scaleY=".707" />
-      <move select="HalfHinge Right" beats="2" offsetX="1.4" offsetY="-1.2" />
+      <move select="HalfHinge Right" beats="2" offsetX="1.1" offsetY="-0.8" />
     </path>
     <path numbers="2 3">
-      <move select="Quarter Right" beats="3" offsetX="1" offsetY="-1" />
+      <move select="Quarter Right" beats="3" offsetX=".5" offsetY="-.5" />
       <move select="Stand" hands="none" beats="4"/>
     </path>
   </tam>
@@ -82,14 +82,14 @@
 
   <tam title="Left Wheel Fan Thru"
        from="Facing Couples"
-       formation="Facing Couples">
+       formation="Facing Couples Compact">
     <path>
-      <move select="Quarter Left" offsetX="1" offsetY="1" />
+      <move select="Quarter Left" offsetX=".5" offsetY=".5" />
     </path>
     <path>
-      <move select="HalfHinge Left" beats="2" offsetX="1.75" offsetY=".25" />
+      <move select="HalfHinge Left" beats="2" offsetX="1.25" offsetY=".25" />
       <move select="Swing Left" scaleX=".707" scaleY=".707" />
-      <move select="HalfHinge Left" beats="2" offsetX="1.4" offsetY="1.2" />
+      <move select="HalfHinge Left" beats="2" offsetX="1.1" offsetY="0.8" />
     </path>
   </tam>
 

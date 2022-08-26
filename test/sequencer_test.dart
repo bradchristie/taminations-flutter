@@ -3064,6 +3064,16 @@ Circulate
 Quarter In
 Right and Left Grand''',
 
+  'Wheel And 2' :
+'''Heads Touch a Quarter While Sides Trade
+Centers Turn Back
+Wheel and Walk and Dodge
+Centers Run and Roll
+Zing
+Star Thru
+Ends Trade
+Allemande Left''',
+
   'Centers Trade the Wave' :
 '''Sides Pass the Ocean
 Centers Trade the Wave
@@ -3165,6 +3175,30 @@ Sides Pair Off
 Pass Thru
 Trade By
 Pass Thru
+Allemande Left''',
+
+  'Side Girls Cross Run' :
+'''Four Ladies Chain 3/4
+Heads Pass the Ocean
+Side Girls Cross Run
+Chain Reaction
+Recycle
+Star Thru
+Wheel and Deal
+Zoom
+Centers Pass Thru
+Allemande Left''',
+
+  'Auto Adjust 1' :
+'''Heads Pair Off
+Slide Thru
+Touch a Quarter
+Circulate 1.5
+Girls Spread
+Boys Half Circulate
+Crossfire
+Boys Run
+Right and Left Thru
 Allemande Left'''
 
 };

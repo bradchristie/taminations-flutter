@@ -52,14 +52,15 @@
     </path>
   </tam>
 
-  <tam title="Everybody Hop" formation="Facing Couples" parts="4" group=" ">
+  <tam title="Everybody Hop" formation="Facing Couples Compact"
+       parts="4" group=" ">
     <path>
-      <move select="Extend Left" beats="2" scaleX="2" scaleY=".5"/>
+      <move select="Extend Left" beats="2" scaleX="1.5" scaleY=".5"/>
       <move select="Extend Right" beats="2" scaleX="2" scaleY=".5"/>
       <move select="Lead Right"/>
     </path>
     <path>
-      <move select="Extend Left" beats="2" scaleX="2" scaleY=".5"/>
+      <move select="Extend Left" beats="2" scaleX="1.5" scaleY=".5"/>
       <move select="Extend Right" beats="2" scaleX="2" scaleY=".5"/>
       <move select="Quarter Left" beats="1.5" offsetX="-1" offsetY="1"/>
     </path>

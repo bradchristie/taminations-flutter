@@ -91,7 +91,7 @@ class _SequencerPageState extends fm.State<SequencerPage> {
       model.reset();
     }
     model.addListener(() {
-      tamState.change(formation:model.startingFormation,
+      tamState.change(formation:model.startingFormation,helplink: model.helplink,
           calls : model.calls.map((e) => e.name).join(';'));
     });
   }
@@ -151,7 +151,7 @@ class _SequencerPageState extends fm.State<SequencerPage> {
                           else if (tamState.detailPage == DetailPage.SETTINGS)
                             return SequencerSettingsFrame();
                           else
-                            return MarkdownFrame('info/sequencer.html');
+                            return MarkdownFrame(tamState.helplink ?? 'info/sequencer');
                         }
                     )),
                   )

@@ -24,12 +24,12 @@
 
   <tam title="Wheel Thru"
        from="Facing Couples"
-       formation="Facing Couples">
+       formation="Facing Couples Compact">
     <path numbers="1 4">
-      <movement  beats="3" cx1="2.5" cy1="0" cx2="3" cy2="-.5" x2="3" y2="-3" hands="none"/>
+      <movement  beats="3" cx1="2" cy1="0" cx2="2.5" cy2="-.5" x2="2.5" y2="-2.5" hands="none"/>
     </path>
     <path numbers="2 3">
-      <move select="Quarter Right" beats="3" offsetX="1" offsetY="-1" />
+      <move select="Quarter Right" beats="3" offsetX=".5" offsetY="-.5" />
     </path>
   </tam>
 
@@ -121,12 +121,12 @@
 
   <tam title="Left Wheel Thru"
        from="Facing Couples"
-       formation="Facing Couples">
+       formation="Facing Couples Compact">
     <path numbers="1 4">
-      <move select="Quarter Left" beats="4" offsetX="1" offsetY="1" />
+      <move select="Quarter Left" beats="4" offsetX=".5" offsetY=".5" />
     </path>
     <path numbers="2 3">
-      <move select="Wheel Thru Left" beats="4"/>
+      <move select="Wheel Thru Left" scaleX="0.833" scaleY="0.833" beats="4"/>
     </path>
   </tam>
 

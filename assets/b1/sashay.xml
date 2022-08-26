@@ -22,7 +22,7 @@
 -->
 <tamination title="Half Sashay Family">
 
-  <tam title="Half Sashay" from="Facing Couples" formation="Facing Couples">
+  <tam title="Half Sashay" from="Facing Couples" formation="Facing Couples Compact">
     <path>
       <move select="BackSashay Right" beats="4" />
     </path>

@@ -22,7 +22,7 @@
 -->
 <tamination title="Face Left / Right / In / Out">
 
-	<tam title="Face Left" formation="Facing Couples Close" from="Facing Couples">
+	<tam title="Face Left" formation="Facing Couples Close" from="Facing Couples" sequencer="no">
 		<path>
 			<move select="Quarter Left"/>
 		</path>
@@ -31,7 +31,7 @@
 	  </path>
 	</tam>
 
-	<tam title="Face Left" formation="Couples Facing Out Close" from="Couples Facing Out">
+	<tam title="Face Left" formation="Couples Facing Out Close" from="Couples Facing Out" sequencer="no">
 		<path>
 			<move select="Quarter Left"/>
 		</path>
@@ -40,7 +40,7 @@
 	  </path>
 	</tam>
 
-  <tam title="Face Right" formation="Facing Couples Close" from="Facing Couples">
+  <tam title="Face Right" formation="Facing Couples Close" from="Facing Couples" sequencer="no">
 		<path>
 			<move select="Quarter Right"/>
 		</path>
@@ -49,7 +49,7 @@
 	  </path>
   </tam>
 
-	<tam title="Face Right" formation="Couples Facing Out Close" from="Couples Facing Out">
+	<tam title="Face Right" formation="Couples Facing Out Close" from="Couples Facing Out" sequencer="no">
 		<path>
 			<move select="Quarter Right"/>
 		</path>
@@ -58,7 +58,7 @@
 	  </path>
 	</tam>
 
-  <tam title="Face In" formation="Facing Couples Close" from="Facing Couples">
+  <tam title="Face In" formation="Facing Couples Close" from="Facing Couples" sequencer="no">
 		<path>
 			<move select="Quarter Right"/>
 		</path>
@@ -67,7 +67,7 @@
 	  </path>
   </tam>
 
-	<tam title="Face In" formation="Couples Facing Out Close" from="Couples Facing Out">
+	<tam title="Face In" formation="Couples Facing Out Close" from="Couples Facing Out"  sequencer="no">
 		<path>
 			<move select="Quarter Left"/>
 		</path>

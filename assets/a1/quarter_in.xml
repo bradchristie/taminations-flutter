@@ -24,12 +24,12 @@
 
   <tam title="Quarter In"
        from="Facing Couples"
-       formation="Facing Couples">
+       formation="Facing Couples Compact">
     <path>
-      <move select="Quarter Right" beats="2" offsetX="1" offsetY="1" />
+      <move select="Quarter Right" beats="2" offsetX=".5" offsetY=".5" />
     </path>
     <path>
-      <move select="Quarter Left" beats="2" offsetX="1" offsetY="-1" />
+      <move select="Quarter Left" beats="2" offsetX=".5" offsetY="-.5" />
     </path>
   </tam>
 
@@ -235,12 +235,12 @@
 
   <tam title="Quarter Out"
        from="Facing Couples"
-       formation="Facing Couples">
+       formation="Facing Couples Compact">
     <path>
-      <move select="Quarter Left" beats="2" offsetX="1" offsetY="1" />
+      <move select="Quarter Left" beats="2" offsetX=".5" offsetY=".5" />
     </path>
     <path>
-      <move select="Quarter Right" beats="2" offsetX="1" offsetY="-1" />
+      <move select="Quarter Right" beats="2" offsetX=".5" offsetY="-.5" />
     </path>
   </tam>
 

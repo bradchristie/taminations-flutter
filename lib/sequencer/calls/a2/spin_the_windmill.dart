@@ -37,7 +37,7 @@ class SpinTheWindmill extends Action {
     ctxCenters.analyze();
     final wave = name.startsWith('Left') ? 'Left-Hand Wave' : 'Wave';
     if (ctxCenters.dancers.every((d) => ctxCenters.isInCouple(d)))
-      prefix = 'Step to a $wave';
+      prefix = 'Step to a Compact $wave';
     //  Then Swing, Slip, Cast
     final centerPart = anycall.matches('(Left )?Spin'.r)
         ? 'Center 4 $prefix Trade Slip Cast Off 3/4'

@@ -232,14 +232,14 @@
   </tam>
 
   <tam title="Single Cross and Wheel" from="Facing Couples"
-       formation="Facing Couples" parts="1.5">
+       formation="Facing Couples Compact" parts="1.5">
     <path>
-      <move select="Hinge Right"/>
-      <move select="Forward 2" beats="3"/>
+      <move select="Hinge Right" offsetX="-0.5"/>
+      <move select="Forward 2" beats="3" scaleX=".75"/>
     </path>
     <path>
-      <move select="Quarter Left" offsetX="-1" offsetY="1"/>
-      <move select="Run Right" beats="3" offsetX="2"/>
+      <move select="Quarter Left" offsetX="-.5" offsetY="1"/>
+      <move select="Run Right" beats="3" offsetX="1.5" scaleY=".5"/>
     </path>
   </tam>
 
@@ -287,16 +287,16 @@
 
   <tam title="Single Cross Trade and Wheel"
        from="Facing Couples"
-       formation="Facing Couples" parts="1.5;3">
+       formation="Facing Couples Compact" parts="1.5;3">
     <path>
       <move select="Lead Right"/>
-      <move select="Swing Left"/>
-      <move select="Forward 2"/>
+      <move select="Swing Left" scaleX=".5" scaleY=".5"/>
+      <move select="Extend Right" beats="3" scaleX="1.5" scaleY=".5"/>
     </path>
     <path>
-      <move select="Quarter Left" offsetX="-1" offsetY="1"/>
+      <move select="Quarter Left" offsetY="1"/>
       <move select="Stand" beats="3"/>
-      <move select="Run Right" beats="5" offsetX="2"/>
+      <move select="Flip Right" offsetX="1.5" scaleY=".25"/>
     </path>
   </tam>
 

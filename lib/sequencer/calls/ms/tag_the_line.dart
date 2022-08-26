@@ -22,8 +22,13 @@ import '../common.dart';
 
 class TagTheLine extends Action {
 
-  @override
-  var level = LevelData.MS;
+  @override var level = LevelData.MS;
+  @override var help = '''[Left] [fraction] Tag the Line
+Works with one or two Lines of 4.  A tidal formation is two Lines of 4.
+For larger lines, use
+Line of (6 or 8) [Left] [Half] Tag the Line
+''';
+  @override var helplink = 'ms/tag';
   TagTheLine(name) : super(name);
 
   @override
@@ -38,8 +43,8 @@ class TagTheLine extends Action {
 
 class BigLineTagTheLine extends ActivesOnlyAction {
 
-  @override
-  var level = LevelData.MS;
+  @override var level = LevelData.MS;
+  @override var help = TagTheLine('').help;
   var isLeft;
 
   BigLineTagTheLine(String name) : isLeft=name.contains('Left'), super(name) ;

@@ -25,6 +25,8 @@ import '../common.dart';
 class CastAShadow extends Action {
 
   @override final level = LevelData.A1;
+  @override var help = 'Cast a Shadow - can be modified with Centers Go 3/4';
+  @override var helplink = 'a1/cast_a_shadow';
   CastAShadow(String name) : super(name);
 
   @override
@@ -43,7 +45,6 @@ class CastAShadow extends Action {
       }
     } else
       throw CallError('Improper variation for Cast a Shadow');
-
   }
 
 }

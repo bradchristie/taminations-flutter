@@ -24,12 +24,12 @@
 
   <tam title="Recycle"
        from="Facing Couples"
-       formation="Facing Couples">
+       formation="Facing Couples Compact">
     <path numbers="1 4">
-      <move select="U-Turn Right" beats="3" offsetX="2" />
+      <move select="U-Turn Right" beats="3" offsetX="1.5" />
     </path>
     <path numbers="2 3">
-      <movement hands="none" beats="3" cx1="-.5" cy1="0" cx2="0" cy2="4" x2="2" y2="4" cx3="1" cx4="2" cy4="2" x4="3" y4="2" />
+      <movement hands="none" beats="3" cx1="-.5" cy1="0" cx2="0" cy2="4" x2="1.5" y2="4" cx3="1" cx4="2" cy4="2" x4="3" y4="2" />
     </path>
   </tam>
 
@@ -68,12 +68,12 @@
   </tam>
 
   <tam title="Reverse Recycle" from="Facing Couples"
-       formation="Facing Couples">
+       formation="Facing Couples Compact">
     <path>
-      <movement hands="none" beats="3" cx1="-.5" cy1="0" cx2="0" cy2="-4" x2="2" y2="-4" cx3="1" cx4="2" cy4="-2" x4="3" y4="-2" />
+      <movement hands="none" beats="3" cx1="-.5" cy1="0" cx2="0" cy2="-4" x2="1.5" y2="-4" cx3="1" cx4="2" cy4="-2" x4="3" y4="-2" />
     </path>
     <path>
-      <move select="U-Turn Left" beats="3" offsetX="2" />
+      <move select="U-Turn Left" beats="3" offsetX="1.5" />
     </path>
   </tam>
 

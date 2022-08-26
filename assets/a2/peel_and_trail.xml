@@ -22,22 +22,22 @@
 -->
 <tamination title="Peel and Trail">
 
-  <tam title="Peel and Trail" from="Right-Hand Box" formation="Box RH">
+  <tam title="Peel and Trail" from="Right-Hand Box" formation="Box RH Compact">
     <path>
-      <move select="Forward 2"/>
+      <move select="Forward 1.5" beats="3"/>
       <move select="Swing Right"/>
     </path>
     <path>
-      <move select="Run Left" beats="5" offsetX="-2"/>
+      <move select="Run Left" beats="6" offsetX="-1.5"/>
     </path>
   </tam>
 
-  <tam title="Peel and Trail" from="Left-Hand Box" formation="Box LH">
+  <tam title="Peel and Trail" from="Left-Hand Box" formation="Box LH Compact">
     <path>
-      <move select="Run Right" beats="5" offsetX="-2"/>
+      <move select="Run Right" beats="6" offsetX="-1.5"/>
     </path>
     <path>
-      <move select="Forward 2"/>
+      <move select="Forward 1.5" beats="3"/>
       <move select="Swing Left"/>
     </path>
   </tam>

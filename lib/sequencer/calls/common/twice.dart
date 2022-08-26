@@ -24,6 +24,9 @@ import '../xml_call.dart';
 
 class Twice extends CodedCall {
 
+
+  @override var help = 'Repeat the entire call. '
+      'Can be limited to specific dancers, as in Circulate Boys Go Twice';
   Twice(String name) : super(name);
 
   @override

@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<!--
+  ~     Copyright 2022 Brad Christie
+  ~
+  ~     This file is part of Taminations.
+  ~
+  ~     Taminations is free software: you can redistribute it and/or modify
+  ~     it under the terms of the GNU Affero General Public License as published
+  ~     by the Free Software Foundation, either version 3 of the License, or
+  ~     (at your option) any later version.
+  ~
+  ~     Taminations is distributed in the hope that it will be useful,
+  ~     but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~     GNU Affero General Public License for more details.
+  ~
+  ~     You should have received a copy of the GNU Affero General Public License
+  ~     along with Taminations.  If not, see <http://www.gnu.org/licenses/>.
+  -->
+
+<!DOCTYPE tamination SYSTEM "../src/tamination.dtd">
+<tamination title="Interlocked Extend">
+
+  <tam title="Interlocked Extend" from="Right-Hand Quarter Line"
+       formation="Quarter Lines RH">
+    <path>
+      <move select="Extend Left" beats="3" scaleY="2"/>
+    </path>
+    <path>
+      <move select="Forward" beats="3"/>
+    </path>
+    <path>
+      <move select="Extend Right" beats="3" scaleX="2" scaleY="2"/>
+    </path>
+    <path>
+      <move select="Forward 2" beats="3"/>
+    </path>
+  </tam>
+
+  <tam title="Interlocked Extend" from="Left-Hand Quarter Line"
+       formation="Quarter Lines LH">
+    <path>
+      <move select="Forward" beats="3"/>
+    </path>
+    <path>
+      <move select="Extend Right" beats="3" scaleY="2"/>
+    </path>
+    <path>
+      <move select="Extend Left" beats="3" scaleX="2" scaleY="2"/>
+    </path>
+    <path>
+      <move select="Forward 2" beats="3"/>
+    </path>
+  </tam>
+
+</tamination>

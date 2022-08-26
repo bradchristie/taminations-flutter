@@ -22,12 +22,13 @@
 -->
 <tamination title="Turn to a Line">
 
-  <tam title="Turn to a Line" from="Facing Couples" formation="Facing Couples">
+  <tam title="Turn to a Line" from="Facing Couples"
+       formation="Facing Couples Compact">
     <path numbers="1 4">
-      <move select="Flip Left" offsetX="2" />
+      <move select="Flip Left" offsetX="1.5" />
     </path>
     <path numbers="2 3">
-      <move select="Flip Left" offsetX="2" />
+      <move select="Flip Left" offsetX="1.5" />
     </path>
   </tam>
 

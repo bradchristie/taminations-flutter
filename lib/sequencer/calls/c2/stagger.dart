@@ -36,11 +36,11 @@ class Stagger extends ModifiedFormationConcept {
   bool checkFormation(CallContext ctx) {
     final ctx1 = CallContext.fromXML(TamUtils.getFormation('Facing Blocks Right'));
     final ctx2 = CallContext.fromXML(TamUtils.getFormation('Facing Blocks Left'));
-    if (ctx.matchFormations(ctx1,sexy:false,fuzzy:true,rotate:180,handholds:false) != null) {
+    if (ctx.matchFormations(ctx1,sexy:false,fuzzy:true,rotate:180,handholds:false,delta: 0.3) != null) {
       _startFormation = 'Facing Blocks Right';
       return true;
     }
-    if (ctx.matchFormations(ctx2,sexy:false,fuzzy:true,rotate:180,handholds:false) != null) {
+    if (ctx.matchFormations(ctx2,sexy:false,fuzzy:true,rotate:180,handholds:false,delta: 0.3) != null) {
       _startFormation = 'Facing Blocks Left';
       return true;
     }
@@ -59,7 +59,7 @@ class Stagger extends ModifiedFormationConcept {
     (a1.angleDiff(a2).abs().isAround(pi/2) ^ (_startFormation=='Facing Blocks Right'))
         ? 'Facing Blocks Right'
         : 'Facing Blocks Left';
-    return ctx.adjustToFormation(finalFormation);
+    return ctx.adjustToFormation(finalFormation,delta: 0.3);
   }
 
 }

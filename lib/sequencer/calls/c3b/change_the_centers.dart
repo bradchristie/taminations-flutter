@@ -24,6 +24,8 @@ class ChangeTheCenters extends ActivesOnlyAction with CallWithParts {
 
   @override var level = LevelData.C3B;
   @override var numberOfParts = 4;
+  @override var help = 'Change the Centers is a 4-part call';
+  @override var helplink = 'c3b/change_the_centers';
   ChangeTheCenters(String name) : super(name);
 
   @override

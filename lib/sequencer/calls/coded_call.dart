@@ -223,6 +223,7 @@ import 'common/heads.dart';
 import 'common/in_the_center.dart';
 import 'common/insides.dart';
 import 'common/leaders.dart';
+import 'common/nobody.dart';
 import 'common/nothing.dart';
 import 'common/one_and_a_half.dart';
 import 'common/outsides.dart';
@@ -274,11 +275,11 @@ abstract class CodedCall extends Call {
 
   CodedCall(String name) : super(name.capWords());
 
-  static const specifier = '\\s*(?:boys?|girls?|beaus?|belles?|centers?|ends?|lead(?:er)?s?|trail(?:er)?s?|heads?|sides?|very ?centers?)\\s*';
+  static const specifier = '\\s*(?:boys?|girls?|beaus?|belles?|centers?|ends?|lead(?:er)?s?|trail(?:er)?s?|heads?|sides?|very ?centers?|every(?:one|body)|no(?:one|body))\\s*';
 
   static final Map<RegExp, CodedCall Function(String norm)> normCallMap = {
     'aceydeucey'.ri: (_) => AceyDeucey(),
-    'adjustto.*'.ri: (name) => Adjust(name),
+    'adjust(to)?.*'.ri: (name) => Adjust(name),
     'all8(?!circulate)(?!recycle).*'.ri: (name) => AllEight(name),
     'alterandcirculate'.ri: (_) => AlterAndCirculate(),
     'alterthewave'.ri: (name) => AlterTheWave(name),
@@ -297,29 +298,29 @@ abstract class CodedCall extends Call {
     'bendtheline'.ri: (_) => BendTheLine(),
     '(line|wave)of(6|8)(left)?(12)?tag(theline)?'.ri: (name) => BigLineTagTheLine(name),
     '(line|wave)of(6|8)(left)?turnanddeal'.ri: (name) => BigLineTurnAndDeal(name),
-    'inyourblock.*'.ri: (name) => BlockFormation(name),
-    'bounce(the)?$specifier'.ri: (name) => Bounce(name),
+    '(inyour)?block.*'.ri: (name) => BlockFormation(name),
+    'bounce(the)?($specifier)?'.ri: (name) => Bounce(name),
     'boy'.ri: (_) => Boys(),
     'boxthegnat'.ri: (_) => BoxTheGnat(),
     'bracethru'.ri: (_) => BraceThru(),
-    'breaker(1|2|3)'.ri: (name) => Breaker(name),
-    '.+But[A-Z1-9].+'.r: (name) => But(name),
+    'breaker(1|2|3)?'.ri: (name) => Breaker(name),
+    '.*But(?![a-z]).*'.r: (name) => But(name),
     'butterfly.*'.ri: (name) => Butterfly(name),
 
     'californiatwirl'.ri: (_) => CaliforniaTwirl(),
-    '(14|12|34)castandrelay'.ri: (name) => CastAndRelay(name),
-    'castashadowcenter(go|cast)?34'.ri: (name) => CastAShadow(name),
+    '(14|12|34)?castandrelay'.ri: (name) => CastAndRelay(name),
+    'castashadow(center(go|cast)?34)?'.ri: (name) => CastAShadow(name),
     '(cross)?castback'.ri: (name) => CastBack(name),
     'castoff(14|12|34)'.ri: (name) => CastOffThreeQuarters(name),
-    '(all4couples)?(left)?(split)?catch.*?(1|2|3|4)'.ri: (name) => Catch(name),
+    '(all4couples)?(left)?(split)?catch.*?(1|2|3|4)?'.ri: (name) => Catch(name),
     'center'.ri: (_) => Centers(),
     'center6'.ri: (_) => CenterSix(),
     'center(line|wave)of4'.ri: (name) => CenterWaveOfFour(name),
     'chainreaction'.ri: (_) => ChainReaction(),
-    'checkpoint(.+)by(.*)'.ri: (name) => Checkpoint(name),
+    'checkpoint((.+)by(.*))?'.ri: (name) => Checkpoint(name),
     'changethe(centers?|wave)'.ri: (name) => ChangeTheCenters(name),
     'chiselthru'.ri: (_) => ChiselThru(),
-    'circleby(14|12|34|nothing)and(14|12|34|nothing)'.ri: (name) => CircleBy(name),
+    'circleby((14|12|34|nothing)and(14|12|34|nothing))?'.ri: (name) => CircleBy(name),
     'circleby(14|12|34|nothing)and(?!(14|12|34|nothing)).*'.ri: (name) => CircleBy(name),
     '(box)?circulate'.ri: (_) => Circulate(),
     '(cross)?cloverand(\\w.*)'.ri: (name) => CloverAnd(name),
@@ -337,7 +338,7 @@ abstract class CodedCall extends Call {
     'crossfold'.ri: (_) => CrossFold(),
     'crossovercirculate'.ri: (_) => CrossOverCirculate(),
     'crossramble'.ri: (_) => CrossRamble(),
-    '${specifier}crossrun'.ri: (name) => CrossRun(name),
+    '($specifier)*crossrun'.ri: (name) => CrossRun(name),
     '(left)?crosstradeandwheel'.ri: (name) => CrossTradeAndWheel(name),
 
     'detour'.ri: (_) => Detour(),
@@ -412,6 +413,7 @@ abstract class CodedCall extends Call {
     'mix'.ri: (_) => Mix(),
     'motivate'.ri: (_) => Motivate(),
 
+    'no(body|one)'.ri: (_) => Nobody(),
     'nothing'.ri: (_) => Nothing('Nothing'),
 
     'O[A-Z0-9].+'.r: (name) => OFormation(name),

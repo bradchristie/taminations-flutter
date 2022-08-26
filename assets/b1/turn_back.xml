@@ -24,7 +24,7 @@
 
   <tam title="U-Turn Back"
        from="Facing Couples"
-       formation="Facing Couples"
+       formation="Facing Couples Compact"
        fractions="1.5" >
     <path>
       <move select="U-Turn Right" />
@@ -37,8 +37,8 @@
   <tam title="U-Turn Back"
        from="Sashayed Couples">
     <formation>
-      <dancer gender="boy" x="-2" y="-1" angle="0" />
-      <dancer gender="girl" x="-2" y="1" angle="0" />
+      <dancer gender="boy" x="-1.5" y="-1" angle="0" />
+      <dancer gender="girl" x="-1.5" y="1" angle="0" />
     </formation>
     <path>
       <move select="U-Turn Left" />
@@ -133,7 +133,7 @@
   </tam>
 
   <tam title="Boys Turn Back" from="Facing Couples"
-       formation="Facing Couples" sequencer="no">
+       formation="Facing Couples Compact" sequencer="no">
     <path>
       <move select="U-Turn Right" />
     </path>
@@ -151,7 +151,7 @@
   </tam>
 
   <tam title="Girls Turn Back" from="Facing Couples"
-       sequencer="no" formation="Facing Couples">
+       sequencer="no" formation="Facing Couples Compact">
     <path>
     </path>
     <path>

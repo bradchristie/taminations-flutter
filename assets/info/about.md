@@ -20,23 +20,21 @@ Call pronunciations provided by
 
 ---
 
-## Taminations version 1.6.43 built 2022-07-11
+## Taminations version 1.6.44 built 2022-08-15
 Copyright 2022 by Brad Christie.  
 This is free software, and you are welcome to modify and redistribute it
 under the terms of the [GNU GPL license](http://www.gnu.org/licenses/gpl.html).  
 
 ## What's New
-* More animations for Square Thru fractions
-* Animations for Sock It To Me, Here Comes the Judge from tidal formations
+* Update Advanced definitions from Callerlab
+* Animations for Dixie Grand for 1/4 and 3/4 Tag
 * Sequencer changes:
-  * Fix for abbreviations that expand to multiple calls separated by semicolons
-  * Fix for Centers Catch
-  * Better code for Phantom calls
-  * Add Stack the Line as a 2-part call
-  * Enable All 4 Couples Square Thru [n] to a Wave, All 4 Couples Catch
-  * Now can select Center / Middle / Outside Diamond from appropriate formations
-  * Code for Lines (anything) Thru
-  * Code for Reshape the Triangle
+  * Less "snapping", should help less common formations
+  * Fix for Heads/Sides Promenade Home
+  * Fix Clover And (anything) with centers facing out
+  * Better code for Do Your Part
+  * Accept Left Wheel and Deal
+  * Code for Magic Hocus Pocus
 
 For a detailed history of changes, view the
 [Git log](https://github.com/bradchristie/taminations-flutter/commits/main)

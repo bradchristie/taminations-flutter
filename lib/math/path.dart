@@ -133,10 +133,10 @@ class Path {
     }
   }
 
-  void skewFirst(double x, double y) {
+  void skewFirst(double x, double y,[double? angle]) {
     if (movelist.isNotEmpty) {
       var first = movelist.removeAt(0);
-      movelist.insert(0, first.skew(x,y));
+      movelist.insert(0, first.skew(x,y).twist(angle ?? 0.0));
       recalculate();
     }
   }

@@ -164,7 +164,8 @@
     </path>
   </tam>
 
-  <tam title="Hinge the Lock" from="Facing Couples" formation="Facing Couples" parts="1.5">
+  <tam title="Hinge the Lock" from="Facing Couples"
+       formation="Facing Couples" parts="1.5">
     <path couples="3 1">
       <move select="Lead Right" beats="1.5"/>
       <move select="Hinge Left" beats="3"/>

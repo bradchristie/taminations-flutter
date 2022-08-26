@@ -75,15 +75,15 @@
   </tam>
 
   <tam title="Swing Thru" from="Facing Couples"
-       formation="Facing Couples"
+       formation="Facing Couples Compact"
        parts="6" difficulty="1">
     <path>
-      <move select="Extend Left" beats="3" scaleX="2" scaleY="2"/>
+      <move select="Extend Left" beats="3" scaleX="1.5" scaleY="2"/>
       <move select="Swing Right"/>
       <move select="Swing Left"/>
     </path>
     <path>
-      <move select="Forward 2" beats="3"/>
+      <move select="Forward" beats="3" scaleX="1.5"/>
       <move select="Swing Right"/>
     </path>
   </tam>
@@ -339,13 +339,13 @@
   </tam>
 
   <tam title="Left Swing Thru" from="Facing Couples" parts="5"
-       formation="Facing Couples" difficulty="2">
+       formation="Facing Couples Compact" difficulty="2">
     <path>
-      <move select="Forward 2" />
+      <move select="Forward 2" scaleX="0.75"/>
       <move select="Swing Left" />
     </path>
     <path>
-      <move select="Extend Right" beats="2" scaleX="2" scaleY="2" />
+      <move select="Extend Right" beats="2" scaleX="1.5" scaleY="2" />
       <move select="Swing Left" />
       <move select="Swing Right" />
     </path>

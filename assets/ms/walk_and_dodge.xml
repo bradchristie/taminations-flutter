@@ -149,10 +149,10 @@
 
   <tam title="Boys Walk, Girls Dodge"
        from="Facing Couples"
-       formation="Facing Couples" sequencer="gender-specific"
+       formation="Facing Couples Compact" sequencer="gender-specific"
        difficulty="1">
     <path>
-      <move select="Forward 4" />
+      <move select="Forward 3" beats="4" />
     </path>
     <path>
       <move select="Dodge Left" beats="4" />
@@ -197,13 +197,13 @@
 
   <tam title="Girls Walk, Boys Dodge"
        from="Facing Couples"
-       formation="Facing Couples" sequencer="gender-specific"
+       formation="Facing Couples Compact" sequencer="gender-specific"
        difficulty="1">
     <path>
       <move select="Dodge Right" beats="4" />
     </path>
     <path>
-      <move select="Forward 4" />
+      <move select="Forward 3" beats="4" />
     </path>
   </tam>
 

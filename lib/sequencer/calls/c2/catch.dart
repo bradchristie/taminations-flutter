@@ -24,6 +24,11 @@ class Catch extends ActivesOnlyAction with CallWithParts {
 
   @override int numberOfParts = 3;
   @override var level = LevelData.C2;
+  @override var help = '''Catch (n) is a 3-part call:
+  1.  Square Thru (n) to a Wave.  Can be modified by starting the call with Left or Split
+  2.  Centers Trade.  At C-3A this can be replaced by giving another call between Catch and (n).
+  3.  Step and Fold''';
+  @override var helplink = 'c2/catch';
   Catch(String name) : super(name);
   late String direction = name.contains('Left') ? 'Left' : '';
   late String split = name.contains('Split') ? 'Split' : '';

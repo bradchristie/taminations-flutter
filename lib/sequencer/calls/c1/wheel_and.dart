@@ -33,7 +33,7 @@ class WheelAnd extends Action {
     final reverse = wheelCall.contains('Reverse') ? 'Reverse' : '';
     //  Find the 4 dancers to Wheel
     var facingOut = ctx.dancers.where((d) => d.isFacingOut).toList();
-    if (facingOut.length == 8 && !ctx.isSquare())
+    if (facingOut.length > 4 && !ctx.isSquare())
       facingOut = ctx.outer(4);
     if (facingOut.length != 4)
       throw CallError('Cannot find 2 couples facing out');
@@ -56,6 +56,5 @@ class WheelAnd extends Action {
       }
     }
   }
-
 
 }
