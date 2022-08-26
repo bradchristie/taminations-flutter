@@ -23,6 +23,11 @@ class CoupleUp extends ActivesOnlyAction with CallWithParts {
 
   @override final level = LevelData.C3A;
   @override var numberOfParts = 2;
+  @override var help = '''Couple Up is a 2-part call:
+  1.  Box or Split Circulate
+  2.  Leaders Turn Back
+(anything) Like a Couple Up: Do the (anything) call, then leaders Turn Back.''';
+  @override var helplink = 'c3a/couple_up';
   CoupleUp() : super('Couple Up');
 
   @override

@@ -29,7 +29,7 @@ void main() async {
   print('import \'../common.dart\';');
   print('class Paths {');
   movesDoc.findAllElements('path').forEach((p) {
-    var objName = p('name').ident;
+    var objName = p('name').id;
     movesMap[p('name')] = objName;
     var m = p.childrenNamed('movement').firstOrNull;
     if (m != null) {
@@ -56,7 +56,7 @@ void main() async {
     } else {
       m = p.childrenNamed('move').firstOrNull;
       if (m != null) {
-        var objFrom = m('select').ident;
+        var objFrom = m('select').id;
         var mods = '';
         if (m('hands').isNotBlank)
           mods += '..changehands(Hands.${m('hands').toUpperCase()})';

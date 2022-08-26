@@ -267,7 +267,7 @@ class Paths {
   static final Path PullBy = PullLeft..scale(1,0.5);
   static final Path SwingLeft = RunLeft..changehands(Hands.GRIPLEFT);
   static final Path SwingRight = SwingLeft..scale(1,-1);
-  static final Path CastLeft = SwingLeft;
+  static final Path CastLeft = SwingLeft + HingeLeft;
   static final Path CastRight = CastLeft..scale(1,-1);
   static final Path LeadLeft2 = LeadLeft..scale(2,2);
   static final Path LeadRight2 = LeadLeft2..scale(1,-1);

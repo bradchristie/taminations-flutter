@@ -23,6 +23,10 @@ import '../common.dart';
 class CrossAndWheel extends Action with CallWithParts {
 
   @override final level = LevelData.C2;
+  @override var help = '''Cross and Wheel is a 2-part call:
+  1.  As Couples Hinge
+  2.  As Couples Step and Fold''';
+  @override var helplink = 'c2/cross_and_wheel';
   @override int numberOfParts = 2;
   CrossAndWheel(name) : super(name);
 

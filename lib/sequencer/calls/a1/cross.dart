@@ -23,6 +23,9 @@ import '../common.dart';
 class Cross extends Action {
 
   @override final level = LevelData.A1;
+  @override var help = 'Either specify the dancers to Cross, or by default'
+      ' the trailers Cross.';
+  @override var helplink = 'a1/anything_and_cross';
   Cross() : super('Cross');
 
   var crossCount  = 0;

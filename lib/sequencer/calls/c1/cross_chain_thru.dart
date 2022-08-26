@@ -24,6 +24,12 @@ class CrossChainThru extends Action with CallWithParts, CallWithStars {
   @override final level = LevelData.C1;
   @override var numberOfParts = 2;
   @override var turnStarAmount = 2;
+  @override var help = '''Cross Chain Thru is a 2-part call:
+  1.  Pull By
+  2.  Center 4 Left-Hand Star 1/2, outer 4 Courtesy Turn to end in a Eight Chain Thru formation
+The Star Turn can be changed with Turn the Star (fraction)
+On Cross Chain and Roll, the ends Roll after the Courtesy Turn and all adjust to end in waves.''';
+  @override var helplink = 'c1/cross_chain_thru';
   CrossChainThru(name) : super(name);
 
   @override

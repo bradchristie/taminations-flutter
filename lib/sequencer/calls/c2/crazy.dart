@@ -23,6 +23,12 @@ import '../common.dart';
 class Crazy extends Action with CallWithParts {
 
   @override final level = LevelData.C2;
+  @override var help = '''Crazy (call) is a 4-part concept:
+  1.  Each half does the (generally 4-person) call.
+  2.  Center 4 do the call
+  3.  Each half does the call
+  4.  Center 4 do the call''';
+  @override var helplink = 'c2/crazy_concept';
   //  Make any adjustments needed to apply the crazy call to
   //  8 dancers or 4 dancers
   String get crazy4 => crazyCall.matches('counter rotate.*'.ri)

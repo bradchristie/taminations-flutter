@@ -23,6 +23,12 @@ class Coordinate extends Action with CallWithParts {
 
   @override int numberOfParts = 4;
   @override var level = LevelData.PLUS;
+  @override var help = '''Coordinate is a 4-part call:
+  1.  Circulate
+  2.  1/2 Circulate
+  3.  Center 6 Trade
+  4.  Center 2 and Outer 2 move up''';
+  @override var helplink = 'plus/coordinate';
   Coordinate() : super('Coordinate');
 
   @override

@@ -23,8 +23,10 @@ import '../../../math/bezier.dart';
 
 class CounterRotate extends Action {
 
-  @override
-  var level = LevelData.C1;
+  @override var level = LevelData.C1;
+  @override var help = 'Any dancer not facing directly towards or'
+      ' away from the center can Counter Rotate';
+  @override var helplink = 'c1/counter_rotate';
   CounterRotate() : super('Counter Rotate');
 
   @override

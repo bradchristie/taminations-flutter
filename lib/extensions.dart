@@ -161,7 +161,7 @@ extension TamString on String {
       chopped().map((e) => e.diced()).expand((e) => e).toList();
 
   //  Convert a string into one that could be used as an identifier
-  String get ident => replaceAll('-','m')
+  String get id => replaceAll('-','m')
       .replaceAll('.','p')
       .replaceFirst('^(?=\\d)'.r,'n')
       .replaceAll('[\\W ]'.r,'');

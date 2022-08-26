@@ -35,7 +35,7 @@
 
   <tam title="Courtesy Turn"
        from="Lines Facing Out"
-       formation="Lines Facing Out">
+       formation="Lines Facing Out" sequencer="gender-specific">
     <path>
       <move select="Belle Wheel" scaleX="0.67" />
     </path>
@@ -81,7 +81,7 @@
 
   <tam title="Courtesy Turn and a Quarter More" group=" "
        from="Couples Facing Out"
-       formation="Couples Facing Out">
+       formation="Couples Facing Out" sequencer="gender-specific">
     <path>
       <move select="Belle Wheel" scaleX="0.67" />
       <move select="Hinge Left"/>

@@ -22,10 +22,19 @@ import '../common.dart';
 
 class CourtesyTurn extends Action {
 
+  @override var help = 'At levels below Plus, Courtesy Turn is limited'
+  ' to a boy turning a girl';
+  @override var helplink = 'b1/courtesy_turn';
   CourtesyTurn() : super('Courtesy Turn');
 
   @override
   Future<void> perform(CallContext ctx) async {
+    for (var d in ctx.actives) {
+      if (d.gender == Gender.BOY && !d.data.beau ||
+          d.gender == Gender.GIRL && !d.data.belle) {
+        ctx.level = LevelData.PLUS;
+      }
+    }
     try {
       await ctx.applyCalls('Wheel Around');
     } on CallError catch(e) {

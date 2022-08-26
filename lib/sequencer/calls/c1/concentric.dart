@@ -24,6 +24,9 @@ class Concentric extends FourDancerConcept {
 
   @override final level = LevelData.C1;
   @override final conceptName = 'Concentric';
+  @override var help = 'Besides Concentric calls for all 8 dancers,'
+      ' you can have 4 dancers perform a Concentric call outside the other 4.';
+  @override var helplink = 'c1/concentric_concept';
   final _dancerLocations = <String,List<Vector>>{};
   final _dancerShifts = <String,List<Vector>>{};
   var _minDistance = 10.0;
@@ -163,6 +166,8 @@ class Concentric extends FourDancerConcept {
 
   @override
   Future<void> perform(CallContext ctx) async {
+    if (realCall.isBlank)
+      throw CallError('Concentric what?');
     if (ctx.actives.length == 8)
       await ctx.applyCalls('Center 4 $realCall While Outer 4 $name');
     else if (ctx.dancers.length == 8)
