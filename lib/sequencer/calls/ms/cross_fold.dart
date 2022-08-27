@@ -22,8 +22,8 @@ import '../common.dart';
 
 class CrossFold extends Action {
 
-  @override
-  var level = LevelData.MS;
+  @override var level = LevelData.MS;
+  @override var helplink = 'ms/fold';
   CrossFold() : super('Cross Fold');
 
   @override

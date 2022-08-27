@@ -23,18 +23,9 @@ import '../common.dart';
 class CrossRun extends ActivesOnlyAction {
 
   @override var level = LevelData.B2;
-  @override var help = '''
-Update Advanced definitions from Callerlab
-Animations for Dixie Grand for 1/4 and 3/4 Tag
-Sequencer changes:
-    Less "snapping", should help less common formations
-    Fix for Heads/Sides Promenade Home
-    Fix Clover And (anything) with centers facing out
-    Better code for Do Your Part
-    Accept Left Wheel and Deal
-    Code for Magic Hocus Pocus
-  ''';
-
+  @override var help = 'Cross Run dancers must be either all centers'
+      ' or all ends of general lines.';
+  @override var helplink = 'b2/run';
   CrossRun(String name) : super(name);
 
   @override

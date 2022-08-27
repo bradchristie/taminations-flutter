@@ -24,6 +24,10 @@ class CrossRamble extends Action with CallWithParts {
 
   @override final level = LevelData.C2;
   @override var numberOfParts = 2;
+  @override var help = '''Cross Ramble is a 2-part call:
+  1.  Outer 4 Cross Cast Back, others Extend and Trade
+  2.  Everyone Slide Thru''';
+  @override var helplink = 'c2/cross_ramble';
   CrossRamble() : super('Cross Ramble');
 
   @override

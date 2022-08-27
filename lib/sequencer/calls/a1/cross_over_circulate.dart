@@ -23,6 +23,9 @@ import '../common.dart';
 class CrossOverCirculate extends Action {
 
   @override final level = LevelData.A1;
+  @override var help = '4 dancers can Cross Over Circulate if they match'
+      ' one of the circulate paths.';
+  @override var helplink = 'a1/cross_over_circulate';
   CrossOverCirculate() : super('Cross Over Circulate');
 
   //  All 8-dancer versions are coded in XML

@@ -132,7 +132,8 @@ class CallContext {
     'c2/drop_in',
     'c2/drop_right',
     'c2/reverse_cut_the_galaxy',
-    'c2/fascinate'
+    'c2/fascinate',
+    'c1/twist_the_line'
   ];
 
   static const standardFormations = {

@@ -36,7 +36,6 @@ class Checkpoint extends Action {
       throw CallError('Checkpoint what?');
 
     //  Figure out who does the first call
-    print('$firstCall $secondCall ${ctx.groupstr}');
     List<Dancer> centers;
     if (ctx.groupstr == '2222')
       centers = ctx.groups[1] + ctx.groups[2];
