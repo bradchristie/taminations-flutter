@@ -32,28 +32,31 @@ class TwistAnything extends Action {
         ? 'Star Thru'
         : name.replaceFirst('.*? and '.r, '');
 
-    final isOut = ctx.center(4).every((d) => d.isFacingOut);
-    final isIn = ctx.center(4).every((d) => d.isFacingIn);
-    if (!isOut && !isIn)
-      throw CallError('Centers must face the same direction');
-    //  First try original centers do the any call
+    final centers = ctx.dancers.where((d) => d.data.center);
+    for (var d in centers) {
+      final d2 = ctx.dancerClosest(d, (d3) => d3.data.center);
+      if (d2 == null || !d2.angleFacing.isAround(d.angleFacing))
+        throw CallError('Centers must face the same direction');
+    }
+
+    //  Remember the outer 4 to do the Anything call
+    final outers = ctx.dancers.where((d) => !centers.contains(d)).toList();
+
+    //  Do the Twist And part
+    if (ctx.isLines())
+      //  All possible 2x4 general lines are in XML
+      await ctx.applyCalls('Twist And');
+    else
+      await ctx.applyCalls('Centers Step Trade while Others 1/4 In and Half Step');
+
+    //  Do the Anthing call
+    //  First try original ends
     try {
-      await ctx.subContext(ctx.dancers, (ctx2) async {
-        await ctx2.applyCalls(
-            'Outer 4 Face In and Step while '
-                'Center 4 ${isIn ? 'Half' : ''} Step Ahead',
-            '${isIn ? 'Center' : 'Outer'} 4 Trade while '
-                '${isIn ? 'Outer' : 'Center'} 4 $anyCall'
-        );
+      await ctx.subContext(outers, (ctx2) async {
+        await ctx2.applyCalls(anyCall);
       });
     } on CallError catch (_) {
-      //  If that didn't work, try everybody do the any call
-      await ctx.applyCalls(
-          'Outer 4 Face In and Step while '
-              'Center 4 ${isIn ? 'Half' : ''} Step Ahead',
-          '${isOut ? 'Outer' : 'Center'} 4 Trade'
-      );
-      ctx.matchStandardFormation();
+      //  If that didn't work, try everybody do the Anything call
       await ctx.applyCalls(anyCall);
     }
   }

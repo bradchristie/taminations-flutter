@@ -20,14 +20,20 @@
 
 import '../common.dart';
 
-class PassInOut extends Action {
+class PassInOut extends ActivesOnlyAction with CallWithParts {
 
   @override final level = LevelData.A1;
+  @override var numberOfParts = 2;
   PassInOut(String name) : super(name);
 
   @override
-  Future<void> perform(CallContext ctx) async {
-    await ctx.applyCalls('Pass Thru',name.replaceFirst('Pass', 'Face'));
+  Future<void> performPart1(CallContext ctx) async {
+    await ctx.applyCalls('Step to a Wave','Pass Thru');
+  }
+
+  @override
+  Future<void> performPart2(CallContext ctx) async {
+    await ctx.applyCalls(name.replaceFirst('Pass','Face'));
   }
 
 }

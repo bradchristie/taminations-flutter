@@ -28,12 +28,12 @@
        formation="Two-Faced Line RH"
        difficulty="2">
     <path>
-      <move beats="2" select="Quarter Left" hands="right" offsetX=".33" offsetY="-.33" />
+      <move beats="2" select="Quarter Left" hands="right" offsetX=".33" offsetY="-.83" />
       <move beats="2" select="Quarter Left" hands="right" offsetX="-.33" offsetY="-.33" />
       <move beats="2" select="Quarter Left" hands="right" offsetX="-.33" offsetY=".33" />
     </path>
     <path>
-      <move beats="2" select="Hinge Left" scaleX="2" scaleY="2" offsetX=".33" offsetY="-.33" />
+      <move beats="2" select="Hinge Left" scaleX="2" scaleY="2" offsetX=".33" offsetY="-.83" />
       <move beats="2" select="Hinge Left" scaleX="2" scaleY="2" offsetX="-.33" offsetY="-.33" />
       <move beats="2" select="Hinge Left" scaleX="2" scaleY="2" offsetX="-.33" offsetY=".33" />
     </path>
@@ -44,12 +44,12 @@
        formation="Two-Faced Line LH"
        difficulty="2">
     <path>
-      <move select="Hinge Right" scaleX="2" scaleY="2" offsetX=".33" offsetY=".33" />
+      <move select="Hinge Right" scaleX="2" scaleY="2" offsetX=".33" offsetY=".83" />
       <move select="Hinge Right" scaleX="2" scaleY="2" offsetX="-.33" offsetY=".33" />
       <move select="Hinge Right" scaleX="2" scaleY="2" offsetX="-.33" offsetY="-.33" />
     </path>
     <path>
-      <move select="Quarter Right" hands="left" offsetX=".33" offsetY=".33" />
+      <move select="Quarter Right" hands="left" offsetX=".33" offsetY=".83" />
       <move select="Quarter Right" hands="left" offsetX="-.33" offsetY=".33" />
       <move select="Quarter Right" hands="left" offsetX="-.33" offsetY="-.33" />
     </path>
@@ -68,10 +68,12 @@
 
   <tam title="Cast Off Three Quarters" from="Left-Hand Wave" formation="Wave LH" difficulty="1">
     <path>
-      <move select="Cast Left"/>
+      <move select="Swing Left"/>
+      <move select="Hinge Left" offsetY="-.5"/>
     </path>
     <path>
-      <move select="Cast Left"/>
+      <move select="Swing Left"/>
+      <move select="Hinge Left" offsetY=".5"/>
     </path>
   </tam>
 
