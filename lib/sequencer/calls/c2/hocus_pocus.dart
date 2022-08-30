@@ -23,6 +23,8 @@ import '../common.dart';
 class HocusPocus extends Action {
 
   @override final level = LevelData.C2;
+  @override var help = 'Centers Trade, others O Circulate twice';
+  @override var helplink = 'c2/hocus_pocus';
   HocusPocus(name) : super(name);
 
   @override

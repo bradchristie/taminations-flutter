@@ -25,6 +25,10 @@ class FlipYourNeighbor extends Action with CallWithParts {
 
   @override final level = LevelData.C2;
   @override var numberOfParts = 2;
+  @override var help = '''Flip Your (Criss) (Cross) Neighbor is a 2-part call:
+  1.  Flip the Line 1/2
+  2.  Follow / Cross / Criss Cross Your Neighbor''';
+  @override var helplink = 'c2/any_tagging_call_your_neighbor';
   FlipYourNeighbor(String name) : super(name);
 
   static const flipTypes = {

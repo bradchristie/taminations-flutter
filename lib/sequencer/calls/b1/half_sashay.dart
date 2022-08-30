@@ -22,6 +22,10 @@ import '../common.dart';
 
 class HalfSashay extends Action {
 
+  @override var help = 'Any couple can Half Sashay.'
+      ' If you want the beau to go in front of the belle, use'
+      ' Reverse Half Sashay.';
+  @override var helplink = 'b1/sashay';
   HalfSashay(String name) : super(name);
 
   @override

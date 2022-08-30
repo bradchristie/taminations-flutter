@@ -24,13 +24,17 @@ import '../common.dart';
 class Finish extends Action {
 
   @override final level = LevelData.C1;
+  @override var help = 'Finish is the same as Skip the First Part';
+  @override var helplink = 'c1/finish';
   Finish(String name) : super(name);
 
   @override
   Future<void> perform(CallContext ctx) async {
     final finishCall = name.replaceFirst('Finish\\s+'.ri,' ');
+    if (finishCall.isBlank)
+      throw CallError('Finish what?');
     final finishNorm = TamUtils.normalizeCall(finishCall);
-    //  For now we just work with XML calls
+    //  First look for XML calls
     //  Find matching XML call
     final files = CallContext.xmlFilesForCall(finishNorm.toLowerCase());
     for (final link in files) {

@@ -22,6 +22,10 @@ import '../common.dart';
 class FlipBack extends Action with CallWithParts {
 
   @override final level = LevelData.C1;
+  @override var help = '''Flip Back is a 2-part call:
+  1.  Flip the Line 1/2
+  2.  Scoot Back''';
+  @override var helplink = 'c1/tagging_calls_back_to_a_wave';
   @override var numberOfParts = 2;
   FlipBack() : super('Flip Back');
 

@@ -23,6 +23,10 @@ class GrandSingleCrossAndWheel extends Action with CallWithParts {
 
   @override final level = LevelData.C2;
   @override int numberOfParts = 2;
+  @override var help = '''Grand Single Cross and Wheel is a 2-part call:
+  1.  Hinge
+  2.  Center 6 Step, others Fold''';
+  @override var helplink = 'c2/cross_and_wheel';
   GrandSingleCrossAndWheel(name) : super(name);
 
   @override

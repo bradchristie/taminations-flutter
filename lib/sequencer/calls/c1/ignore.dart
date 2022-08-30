@@ -24,6 +24,9 @@ import '../coded_call.dart';
 class Ignore extends Action {
 
   @override final level = LevelData.C1;
+  @override var help = 'Ignore (dancers) means the designated dancers do not'
+      ' move while all other dancers do their part of the call.';
+  @override var helplink = 'c1/ignore';
   Ignore(String name) : super(name);
 
   @override
@@ -48,7 +51,6 @@ class Ignore extends Action {
       ctx2.dancers.where((d) => ignoreDancers.contains(d))
           .forEach((d) { d.path = Path(); });
     });
-
 
   }
 

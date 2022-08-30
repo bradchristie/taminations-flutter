@@ -184,13 +184,17 @@ class SequencerModel extends fm.ChangeNotifier {
   }
 
   void showHelp(String c) {
-    final callName = c.replaceFirst('help '.ri, '');
-    final call = CodedCall.fromName(callName);
-    if (call != null) {
-      errorString = call.help;
-      helplink = call.helplink;
-    } else
-      errorString = 'Could not find $callName';
+    final callName = c.replaceFirst('help'.ri, '');
+    if (callName.isBlank)
+      errorString = 'Enter "Help <call>" for specific information on <call>.';
+    else {
+      final call = CodedCall.fromName(callName);
+      if (call != null) {
+        errorString = call.help;
+        helplink = call.helplink;
+      } else
+        errorString = 'Could not find $callName';
+    }
     notifyListeners();
   }
 
@@ -266,7 +270,7 @@ class SequencerModel extends fm.ChangeNotifier {
       setSpeed(call, settings);
     else if (call.lc.trim().startsWith('axes'))
       setAxes(call, settings);
-    else if (call.lc.trim().startsWith('help '))
+    else if (call.lc.trim().startsWith('help'))
       showHelp(call);
 
 

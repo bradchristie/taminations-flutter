@@ -22,6 +22,12 @@ import '../common.dart';
 
 class DoYourPart extends Action {
 
+  @override var level = LevelData.A1;
+  @override var help = '(some dancers) Do Your Part (call):'
+      ' Designated dancers do their part of the call, ignoring the other dancers,'
+      ' and assuming phantom dancers as needed to do their part of the call.'
+      ' The other dancers do not move unless given another call.';
+  @override var helplink = 'a1/do_your_part';
   DoYourPart(String name) : super(name);
 
   Future<Pair<CallContext,List<int>>> findYourPart(CallContext dypctx) async {

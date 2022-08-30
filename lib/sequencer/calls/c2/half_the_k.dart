@@ -23,6 +23,8 @@ import '../common.dart';
 class HalfTheK extends Action {
 
   @override final level = LevelData.C2;
+  @override var help = 'Centers Hinge, others 1/4 Out';
+  @override var helplink = 'c2/cross_the_k';
   HalfTheK() : super('Half the K');
 
   @override

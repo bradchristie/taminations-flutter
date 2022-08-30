@@ -24,8 +24,9 @@ import '../common.dart';
 //  e.g. to take a thar to a 1/4 tag
 class Explode extends Action {
 
-  @override
-  var level = LevelData.PLUS;
+  @override var level = LevelData.PLUS;
+  @override var help = 'You can use Explode for Explode and Nothing';
+  @override var helplink = 'plus/explode_and_anything';
   Explode() : super('Explode');
 
   @override

@@ -25,6 +25,8 @@ import 'fliter_actives.dart';
 
 class Heads extends FilterActives {
 
+  @override var help = 'If the dancers are a squared set, Heads refers to those'
+      ' at the head positions.  Otherwise, Heads refers to the original heads.';
   Heads(String name) : super(name);
 
   @override

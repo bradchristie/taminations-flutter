@@ -23,6 +23,11 @@ class GrandSingleCrossTradeAndWheel extends Action with CallWithParts {
 
   @override final level = LevelData.C2;
   @override int numberOfParts = 3;
+  @override var help = '''Grand Single Cross Trade and Wheel is a 3-part call:
+  1.  Hinge
+  2.  Triple Trade
+  3.  Center 6 Step, others Fold''';
+  @override var helplink = 'c2/cross_and_wheel';
   GrandSingleCrossTradeAndWheel(name) : super(name);
 
   @override

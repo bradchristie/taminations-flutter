@@ -23,6 +23,8 @@ import '../common.dart';
 class Detour extends Action {
 
   @override final level = LevelData.C2;
+  @override var help = 'Center 4 Counter Rotate, others 1/2 Zoom and Hinge';
+  @override var helplink = 'c2/detour';
   Detour() : super('Detour');
 
   @override

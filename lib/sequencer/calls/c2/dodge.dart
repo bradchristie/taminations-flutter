@@ -22,11 +22,16 @@ import '../common.dart';
 class Dodge extends ActivesOnlyAction {
 
   @override var level = LevelData.C2;
+  @override var help = 'Dodge (call): Centers Walk and Dodge, '
+      'others do their part of the call';
+  @override var helplink = 'c2/dodge_anything';
   Dodge(String name) : super(name);
 
   @override
   Future<void> perform(CallContext ctx) async {
     var anyCall = name.replaceFirst('dodge'.ri, '').trim();
+    if (anyCall.isBlank)
+      throw CallError('Dodge what?');
     try {
       await ctx.applyCalls('Centers Walk and Dodge While Ends $anyCall');
     } on CallError {

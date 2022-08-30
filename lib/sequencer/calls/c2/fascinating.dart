@@ -22,6 +22,7 @@ import '../common.dart';
 class Fascinating extends Action {
 
   @override var level = LevelData.C2;
+  @override var helplink = 'c2/fascinate';
   Fascinating(String name) : super(name);
 
   @override

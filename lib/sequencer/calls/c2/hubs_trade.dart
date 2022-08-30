@@ -23,6 +23,10 @@ class HubsTrade extends ActivesOnlyAction with CallWithParts {
 
   @override final level = LevelData.C2;
   @override int numberOfParts = 2;
+  @override var help = ''''Hubs/Rims Trade (call) is a 2-part call:
+  1.  Partner Trade
+  2.  Original Centers (Hubs) or Outsides (Rims) do the given call''';
+  @override var helplink = 'c2/rims_trade_anything';
   HubsTrade(String name) : super(name);
 
   @override
@@ -44,6 +48,8 @@ class HubsTrade extends ActivesOnlyAction with CallWithParts {
     ctx.analyze();
     final otherCall = name.replaceFirst('(Hubs|Rims) Trade'.ri, '').trim()
         .replaceFirst('^Back'.ri, 'Circulate');
+    if (otherCall.isBlank)
+      throw CallError('$name what?');
     final who = name.startsWith('Hubs') ? 'Ends' : 'Centers';
     await ctx.applyCalls('$who $otherCall');
   }

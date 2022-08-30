@@ -22,6 +22,12 @@ import '../common.dart';
 class Interrupt extends Action {
 
   @override final level = LevelData.C1;
+  @override var help = '''Interrupt add additional actions to a call with parts.
+It can be used in these ways:
+  (call) Interrupt between each part with (action) -- If call has parts 1-2-3 it will do 1-action-2-action-3
+  (call) Interrupt after each part with (action) -- If call has parts 1-2-3 it will do 1-action-2-action-3-action
+  (call) Interrupt after part (n) with (action) -- For n = 2, call 1-2-3 is done as 1-2-action-3''';
+  @override var helplink = 'c1/interrupt';
   Interrupt(String name) : super(name);
 
   @override

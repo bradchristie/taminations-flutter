@@ -22,6 +22,7 @@ import '../common.dart';
 
 class Dosado extends Action {
 
+  @override var helplink = 'b1/dosado';
   Dosado(String name) : super(name);
 
   @override

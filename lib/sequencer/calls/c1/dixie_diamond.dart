@@ -23,6 +23,10 @@ class DixieDiamond extends ActivesOnlyAction with CallWithParts {
 
   @override var level = LevelData.C1;
   @override int numberOfParts = 2;
+  @override var help = '''Dixie Diamond is a 2-part call:
+  1.  Dixie Style to a Wave
+  2.  Centers Hinge, Ends Turn Back''';
+  @override var helplink = 'c1/dixie_diamond';
   DixieDiamond(String name) : super(name);
 
   @override

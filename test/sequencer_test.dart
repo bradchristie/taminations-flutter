@@ -1792,7 +1792,6 @@ Girls Pass Thru
 Touch a Quarter
 Boys Run
 As Couples Hinge and Individually Roll
-Adjust to Boxes
 Double Pass Thru
 Tandem Turn Back and Individually Roll
 Cast Off Three Quarters

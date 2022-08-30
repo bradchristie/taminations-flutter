@@ -23,6 +23,7 @@ import '../common.dart';
 //  Does Face In, Out, Left, Right
 class Face extends Action {
 
+  @override var helplink = 'b1/face';
   Face(String name) : super(name);
 
   @override

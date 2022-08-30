@@ -23,8 +23,11 @@ import '../../../math/bezier.dart';
 
 class DiamondCirculate extends Action {
 
-  @override
-  var level = LevelData.PLUS;
+  @override var level = LevelData.PLUS;
+  @override var help = 'In addition to Twin Diamonds and Point-to-Point'
+      ' Diamonds, any 4 dancers arranged in a Diamond'
+      ' can Diamond Circulate';
+  @override var helplink = 'plus/diamond_circulate';
   DiamondCirculate() : super('Diamond Circulate');
 
   @override

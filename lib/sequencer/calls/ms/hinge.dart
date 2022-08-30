@@ -22,8 +22,10 @@ import '../common.dart';
 
 class Hinge extends Action {
 
-  @override
-  var level = LevelData.MS;
+  @override var level = LevelData.MS;
+  @override var help = 'Hinge can be either from a mini-wave (Mainstream)'
+      ' or from a couple (A-1)';
+  @override var helplink = 'ms/hinge';
   Hinge(String name) : super(name);
 
   @override
