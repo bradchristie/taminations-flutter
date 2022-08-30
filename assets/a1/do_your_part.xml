@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<!--
+  ~     Copyright 2022 Brad Christie
+  ~
+  ~     This file is part of Taminations.
+  ~
+  ~     Taminations is free software: you can redistribute it and/or modify
+  ~     it under the terms of the GNU Affero General Public License as published
+  ~     by the Free Software Foundation, either version 3 of the License, or
+  ~     (at your option) any later version.
+  ~
+  ~     Taminations is distributed in the hope that it will be useful,
+  ~     but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~     GNU Affero General Public License for more details.
+  ~
+  ~     You should have received a copy of the GNU Affero General Public License
+  ~     along with Taminations.  If not, see <http://www.gnu.org/licenses/>.
+  -->
+
+<!DOCTYPE tamination SYSTEM "../src/tamination.dtd">
+<tamination title="Double Star Thru">
+
+  <tam title="Ends Hourglass Circulate"
+       formation="3 and 1 lines #1" group=" ">
+    <path>
+      <move select="Lead Left" beats="3" scaleX="2" scaleY="3"/>
+    </path>
+    <path>
+    </path>
+    <path>
+    </path>
+    <path>
+      <move select="Extend Left" beats="3" scaleX="2" scaleY="2"/>
+    </path>
+  </tam>
+
+  <tam title="Boys Chase Right, Girls Circulate" group=" ">
+    <formation>
+      <dancer gender="boy" x="-2" y="3" angle="180"/>
+      <dancer gender="girl" x="-2" y="-1" angle="180"/>
+      <dancer gender="boy" x="-2" y="1" angle="180"/>
+      <dancer gender="girl" x="-2" y="-3" angle="180"/>
+    </formation>
+    <path>
+      <move select="U-Turn Right" beats="1.5" offsetX="-1" />
+      <move select="Forward 2" />
+      <move select="Run Right" beats="2.5" offsetX="1" />
+    </path>
+    <path>
+      <move select="Run Right" beats="6" hands="left"/>
+    </path>
+    <path>
+      <move select="Run Right" beats="2.5" />
+      <move select="Forward 4" beats="3.5" />
+    </path>
+    <path>
+      <move select="Run Right" beats="6" hands="right" scaleX="3" scaleY="3"/>
+    </path>
+  </tam>
+</tamination>
