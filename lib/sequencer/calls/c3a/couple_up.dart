@@ -49,6 +49,8 @@ class CoupleUp extends ActivesOnlyAction with CallWithParts {
 class LikeACoupleUp extends ActivesOnlyAction {
 
   @override final level = LevelData.C3A;
+  @override var help = CoupleUp().help;
+  @override var helplink = CoupleUp().helplink;
   LikeACoupleUp() : super('Like A Couple Up');
 
   @override

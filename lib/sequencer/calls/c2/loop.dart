@@ -23,18 +23,29 @@ import '../common.dart';
 class Loop extends Action {
 
   @override final level = LevelData.C2;
+  @override var help = '';
+  @override var helplink = 'c2/loop';
   Loop(String name) : super(name);
 
   @override
   Path performOne(Dancer d, CallContext ctx) {
-    final dir = when([
-      { ()=>name.startsWith('Left') : 'Left' },
-      { ()=>name.startsWith('Right') : 'Right' },
-      { ()=>name.startsWith('In') : d.isCenterLeft ? 'Left' : 'Right' },
-      { ()=>name.startsWith('Out') : d.isCenterLeft ? 'Right' : 'Left' }
-    ]);
-    final amount = name.last.d;
-    return TamUtils.getMove('Run $dir',scale:[1.0,amount].v);
+    String dir;
+    if (name.startsWith('Left'))
+      dir = 'Left';
+    else if (name.startsWith('Right'))
+      dir = 'Right';
+    else if (name.startsWith('In'))
+      dir = d.isCenterLeft ? 'Left' : 'Right';
+    else if (name.startsWith('Out'))
+      dir = d.isCenterLeft ? 'Right' : 'Left';
+    else
+      throw CallError('Need a direction for Loop');
+    try {
+      final amount = name.last.d;
+      return TamUtils.getMove('Run $dir',scale:[1.0,amount].v);
+    } on FormatException {
+      throw CallError('Need an amount for Loop');
+    }
   }
 
 }

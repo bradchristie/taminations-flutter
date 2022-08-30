@@ -22,16 +22,19 @@ import '../common.dart';
 class LinesAnythingThru extends Action {
 
   @override var level = LevelData.C2;
-
+  @override var help = 'Lines (call) Thru: Centers do the call, others Circulate';
+  @override var helplink = 'c2/lines_anything_thru';
   LinesAnythingThru(String name) : super(name);
 
   @override
   Future<void> perform(CallContext ctx) async {
-    var anyCall = name.replaceMatch('Lines (.*) Thru'.r, '\\1');
+    var anyCall = name.replaceMatch('Lines\\s*(.*)\\s*Thru'.r, '\\1');
+    if (anyCall.isBlank)
+      throw CallError('Lines what Thru?');
     await ctx.applyCalls('Outer 4 Circulate While Center 4 $anyCall');
     //  Make sure centers and ends are separate and
     //  the program doesn't try to adjust to a 1/4 tag
-    ctx.adjustToFormation('H-Beam');
+    ctx.checkCenters();
   }
 
 }

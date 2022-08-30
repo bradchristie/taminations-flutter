@@ -24,6 +24,11 @@ class MiniBusy extends Action with CallWithParts, ButCall {
   @override int numberOfParts = 3;
   @override final level = LevelData.A2;
   @override var butCall = 'Flip the Diamond';
+  @override var help = '''Mini-Busy is a 3-part call:
+  Leaders (1) Face In (2) Step (3) Face In
+  Trailers (1) As Couples Extend (2) Very Centers Hinge (3) Flip the Diamond
+Trailers part 3 can be replace with But (another call)''';
+  @override var helplink = 'a2/mini_busy';
   MiniBusy() : super('Mini-Busy');
 
   @override

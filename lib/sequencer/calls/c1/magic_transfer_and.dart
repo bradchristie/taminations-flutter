@@ -21,7 +21,8 @@ import '../common.dart';
 
 class MagicTransferAnd extends Action {
 
-  @override final level = LevelData.A2;
+  @override final level = LevelData.C1;
+  @override var helplink = 'c1/magic_column_formation';
   MagicTransferAnd(String name) : super(name);
 
   @override

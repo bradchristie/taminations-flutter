@@ -397,7 +397,7 @@ abstract class CodedCall extends Call {
     'likeacoupleup'.ri: (_) => LikeACoupleUp(),
     'linearaction'.ri: (_) => LinearAction(),
     '(left)?linearcycle'.ri: (name) => LinearCycle(name),
-    'Lines.+Thru'.ri: (name) => LinesAnythingThru(name),
+    'Lines.*Thru'.ri: (name) => LinesAnythingThru(name),
     //  Little needs two regexes
     //  to handle both <something> Little and Little <something>
     '(scootand)?(outside|point)?(out|in|left|right|(go)?(forward|asyouare))?little'.ri:
@@ -405,7 +405,7 @@ abstract class CodedCall extends Call {
     '(scootand)?little(outside|point)(in|out|left|right|(go)?(forward|asyouare))?'.ri:
         (name) => Little(name),
     'loadtheboat'.ri: (_) => LoadTheBoat(),
-    '(left|right|in|out)loop(1|2|3)'.ri: (name) => Loop(name),
+    '(left|right|in|out)?loop(1|2|3)?'.ri: (name) => Loop(name),
 
     'magiccolumntransferand.+'.ri: (name) => MagicTransferAnd(name),
     'makemagic'.ri: (_) => MakeMagic(),

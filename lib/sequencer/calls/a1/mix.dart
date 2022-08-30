@@ -23,6 +23,10 @@ class Mix extends Action with CallWithParts {
 
   @override var level = LevelData.A1;
   @override var numberOfParts = 2;
+  @override var help = '''Mix is a 2-part call:
+1.  Centers Cross Run
+2.  New Centers Trade''';
+  @override var helplink = 'a1/mix';
   Mix() : super('Mix');
 
   @override

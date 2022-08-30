@@ -24,6 +24,14 @@ class LoadTheBoat extends Action with CallWithParts, ButCall {
   @override int numberOfParts = 4;
   @override var level = LevelData.PLUS;
   @override var butCall = 'Pass Thru';
+  @override var help = '''Load the Boat is a 4-part call:
+  1.  Centers Pass Thru, Ends Move Forward and pass another End
+  2.  Centers Face Out, Ends Move Forward and pass another End
+  3.  Centers Trade, Ends Move Forward and pass another End
+  4.  Centers Pass Thru, Ends Face In
+Part 4 for the Centers can be replaced with But (another call)''';
+  @override var helplink = 'plus/load_the_boat';
+
   LoadTheBoat() : super('Load the Boat');
 
   String _endsPart(CallContext ctx) {

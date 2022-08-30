@@ -24,6 +24,8 @@ class LinearCycle extends Action {
   //  All the legal Plus formations have XML animations
   //  so we can assume that anything here is A-1
   @override var level = LevelData.A1;
+  @override var help = '';
+  @override var helplink = 'plus/linear_cycle';
   LinearCycle(String name) : super(name);
 
   @override
