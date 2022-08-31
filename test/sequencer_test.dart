@@ -3198,6 +3198,27 @@ Boys Half Circulate
 Crossfire
 Boys Run
 Right and Left Thru
+Allemande Left''',
+
+  'Split Recycle' :
+'''Heads Touch a Quarter
+Split Recycle
+Head Girls Run
+Circulate
+Split Recycle
+Hinge
+Centers Boys Run
+Split Recycle
+Trade the Wave
+Head Girls Run
+Reverse Split Recycle
+Boys Run
+Wheel and Deal
+Pass the Ocean
+Circulate
+Boys Run
+Bend the Line
+Left Square Thru 4
 Allemande Left'''
 
 };
