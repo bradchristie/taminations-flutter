@@ -18,13 +18,7 @@
 
 */
 
-import '../action.dart';
-import '../../../level_data.dart';
-import '../../../math/path.dart';
-import '../../../dancer.dart';
-import '../../call_context.dart';
-import '../../../tam_utils.dart';
-import '../../../math/vector.dart';
+import '../common.dart';
 
 class Touch extends Action {
 
@@ -41,6 +35,16 @@ class Touch extends Action {
     var dir = name.contains('Left') ? 'Right' : 'Left';
     //  Touch to handhold in between wide and narrow
     return TamUtils.getMove('Extend $dir',scale:[dist/2,0.75].v);
+  }
+
+  @override
+  Future<void> perform(CallContext ctx) async {
+    //  First try Step to a Wave, which has some good XML animations
+    try {
+      await ctx.applyCalls('Step to a Wave');
+    } on CallError {
+      await super.perform(ctx);
+    }
   }
 
 }
