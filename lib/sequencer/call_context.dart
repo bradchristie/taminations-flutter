@@ -668,11 +668,10 @@ class CallContext {
           TamUtils.normalizeCall(tam('title')).toLowerCase() ==
               callnorm.toLowerCase());
       if (tamlist.isNotEmpty) {
-        final xmlName = tamlist.first('title').replaceAll('\\(.*\\)'.r, '').replaceAll('"', '') ;
-        final xmlCall = XMLCall(xmlName);
+        final xmlCall = XMLCall(calltext);
         xmlCall.level = LevelData.find(link)!;
         ctx0.callstack.add(xmlCall);
-        ctx0.callname += xmlName + ' ';
+        ctx0.callname += xmlCall.name + ' ';
         return true;
       }
     }
