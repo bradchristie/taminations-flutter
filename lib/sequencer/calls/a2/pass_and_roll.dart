@@ -27,6 +27,20 @@ class PassAndRoll extends Action with CallWithParts {
   final String dir;
   final String left;
   final bool isCross;
+  @override var help = '''Pass and Roll is a 4-part call:
+  1.  Pass Thru
+  2.  Centers Turn Thru, Others Turn Back
+  3.  Pass Thru
+  4.  Centers Pass Thru, all Right Roll to a Wave
+Variations: (Left) Pass and Roll (Your (Cross) Neighbor)''';
+  @override String get helplink {
+    if (isCross)
+      return 'c1/cross_your_neighbor';
+    else if (isNeighbor)
+      return 'a2/pass_and_roll_your_neighbor';
+    else
+      return 'a2/pass_and_roll';
+  }
   PassAndRoll(String name) :
         dir = name.startsWith('Left') ? 'Left' : 'Right',
         left =  name.startsWith('Left') ? 'Left' : '',

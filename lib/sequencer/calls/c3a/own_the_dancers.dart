@@ -22,6 +22,7 @@ import '../common.dart';
 class OwnTheDancers extends Action {
 
   @override var level = LevelData.C3A;
+  @override var helplink = 'c3a/own_the_anyone_anything_by_anything';
   OwnTheDancers(String name) : super(name);
 
   @override

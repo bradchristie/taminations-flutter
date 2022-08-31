@@ -25,6 +25,11 @@ class PassTheOcean extends ActivesOnlyAction with CallWithParts {
 
   @override var level = LevelData.B2;
   @override int numberOfParts = 3;
+  @override var help = '''Pass the Ocean is a 3-part call:
+  1.  Pass Thru
+  2.  Quarter In
+  3.  Step to a Wave''';
+  @override var helplink = 'b2/pass_the_ocean';
   PassTheOcean() : super('Pass the Ocean');
 
   @override

@@ -24,6 +24,10 @@ class PassInOut extends ActivesOnlyAction with CallWithParts {
 
   @override final level = LevelData.A1;
   @override var numberOfParts = 2;
+  @override var help = '''Pass In/Out is a 2-part call:
+  1.  Pass Thru
+  2.  Face In or Out''';
+  @override var helplink = 'a1/pass_in';
   PassInOut(String name) : super(name);
 
   @override

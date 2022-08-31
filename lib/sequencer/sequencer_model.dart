@@ -188,7 +188,7 @@ class SequencerModel extends fm.ChangeNotifier {
     if (callName.isBlank)
       errorString = 'Enter "Help <call>" for specific information on <call>.';
     else {
-      final call = CodedCall.fromName(callName);
+      final call = CodedCall.fromName(callName.capWords());
       if (call != null) {
         errorString = call.help;
         helplink = call.helplink;

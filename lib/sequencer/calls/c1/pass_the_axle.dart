@@ -24,6 +24,13 @@ class PassTheAxle extends Action with CallWithParts, ButCall {
   @override int numberOfParts = 4;
   @override final level = LevelData.C1;
   @override var butCall = 'Trade';
+  @override var help = '''Pass the Axle is a 4-part call:
+  1.  Pass Thru
+  2.  Centers Pass Thru, others Cross Cast Back
+  3.  Swing
+  4.  Centers Trade
+Part 3 can be replaced with But (another call)''';
+  @override var helplink = 'c1/pass_the_axle';
   PassTheAxle() : super('Pass the Axle');
 
   @override
