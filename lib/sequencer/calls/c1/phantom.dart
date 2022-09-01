@@ -24,6 +24,8 @@ class Phantom extends Action {
 
   @override final level = LevelData.C1;
   final String _subcall;
+  @override var help = 'Currently the program only supports C-1 Phantom formations';
+  @override var helplink = 'c1/phantom_formation';
   Phantom(String name) :
         _subcall = name.replaceFirst('Phantom'.ri, '').trim(),
         super(name);

@@ -25,6 +25,12 @@ class Plenty extends Action with CallWithParts, CallWithStars {
   @override final level = LevelData.C1;
   @override var turnStarCall = 'Split Circulate';
   @override var turnStarAmount = 2;
+  @override var help = '''Plenty is a 3-part call:
+  1.  Center 4 Step and Fold, others Face Right and Counter Rotate
+  2.  Split Circulate twice
+  3.  Center 4 1/2 Zoom, others Counter Rotate and Roll
+The number of Split Circulates can be changed with Turn the Star (fraction)''';
+  @override var helplink = 'c1/plenty';
   Plenty(String name) : super(name);
 
   @override

@@ -24,7 +24,13 @@ class Percolate extends Action with CallWithParts, ButCall {
   @override int numberOfParts = 3;
   @override final level = LevelData.C1;
   @override var butCall = 'Hinge and Cross';
-  Percolate() : super('Percolate');
+  @override var help = '''Percolate is a 3-part call:
+  1.  Circulate
+  2.  1/2 Circulate
+  3.  Center 4 Hinge and Cross, others Turn Thru
+The Hinge and Cross can be replaced with But (another call)''';
+  @override var helplink = 'c1/percolate';
+  Percolate(String name) : super(name);
 
   @override
   Future<void> performPart1(CallContext ctx) async {

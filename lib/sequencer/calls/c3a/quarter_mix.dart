@@ -26,6 +26,12 @@ class QuarterMix extends Action with CallWithParts {
   bool isGrand;
   bool isLeft;
   bool isThree;
+  @override var help = '''1/4 Mix is a 3-part call:
+  1.  Hinge
+  2.  Centers Cross Run
+  3.  New Centers Trade''';
+  @override var helplink = 'c3a/1_4_mix';
+
   QuarterMix(name) :
         isGrand=name.contains('Grand'),
         isLeft=name.contains('Left'),

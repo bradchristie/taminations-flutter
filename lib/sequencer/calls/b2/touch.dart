@@ -40,11 +40,15 @@ class Touch extends Action {
   @override
   Future<void> perform(CallContext ctx) async {
     //  First try Step to a Wave, which has some good XML animations
-    try {
-      await ctx.applyCalls('Step to a Wave');
-    } on CallError {
-      await super.perform(ctx);
+    if (name.contains('Touch')) {
+      try {
+        var hand =  name.startsWith('Left') ? 'Left-Hand' : '';
+        await ctx.applyCalls('Step to a $hand Wave');
+        return;
+        // ignore: empty_catches
+      } on CallError { }
     }
+    await super.perform(ctx);
   }
 
 }

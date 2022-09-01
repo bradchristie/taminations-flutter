@@ -23,7 +23,11 @@ class PassToTheCenter extends Action with CallWithParts {
 
   @override var level = LevelData.MS;
   @override int numberOfParts = 2;
-  PassToTheCenter() : super('Pass to the Center');
+  @override var help = '''Pass to the Center has 2 parts:
+  1.  Pass Thru
+  2.  Outer 4 Trade''';
+  @override var helplink = 'ms/pass_to_the_center';
+  PassToTheCenter(name) : super(name);
 
   @override
   Future<void> performPart1(CallContext ctx) async {

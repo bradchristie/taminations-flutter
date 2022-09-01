@@ -24,6 +24,7 @@ class QuarterTag extends ActivesOnlyAction {
 
   @override
   var level = LevelData.MS;
+  @override var helplink = 'ms/fraction_tag';
   QuarterTag(String name) : super(name);
 
   bool _centersHoldLeftHands(CallContext ctx) =>

@@ -27,6 +27,11 @@ class QuarterThru extends Action with CallWithParts {
   bool isGrand;
   bool isLeft;
   bool isThree;
+  @override var help = '''1/4 Thru is a 2-part call:
+  1.  Hinge
+  2.  Centers Trade''';
+  @override var helplink = 'a1/quarter_thru';
+
   QuarterThru(String name) :
         isGrand=name.contains('Grand'),
         isLeft=name.contains('Left'),
