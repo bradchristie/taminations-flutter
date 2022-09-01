@@ -713,9 +713,9 @@ class CallContext {
       //  Also add a point in front of the dancers, so it will match
       //  the direction the dancers are facing
       var a1 = d1.angleFacing;
-      var v1f = v1 + Vector(cos(a1),sin(a1));
+      var v1f = v1 + Vector(cos(a1),sin(a1)) * 0.1;
       var a2 = ctx2.dancers[mapping[i]].angleFacing;
-      var v2f = v2 + Vector(cos(a2),sin(a2));
+      var v2f = v2 + Vector(cos(a2),sin(a2)) * 0.1;
       bxa[0][0] += v1f.x * v2f.x;
       bxa[0][1] += v1f.y * v2f.x;
       bxa[1][0] += v1f.x * v2f.y;

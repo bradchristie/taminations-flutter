@@ -1416,6 +1416,7 @@ Siamese Touch 1/4
 Sides Half Zoom
 Hinge and Roll
 Face Out
+Adjust to Lines
 Wheel and Deal
 Zoom
 Centers Swap Around
@@ -1955,6 +1956,7 @@ Centers Boys Cross While Others Turn Back
 Girls Touch a Quarter While Others Zoom
 Girls Hinge
 Boys Half Zoom
+Adjust to Lines
 Any Hand Quarter Thru
 Chase Right
 Fan the Top
