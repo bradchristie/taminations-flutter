@@ -84,7 +84,7 @@ class _CallsFrameState extends fm.State<CallsFrame> {
                   final callsSearched = calls.where((call) => call.title.toLowerCase().contains(search)).toList();
                   return fm.OrientationBuilder(
                     builder: (context, orientation) {
-                      if (orientation == fm.Orientation.landscape) {
+                      if (fm.MediaQuery.of(context).orientation == fm.Orientation.landscape) {
                         return
                           fm.Scrollbar(
                           controller: scrollController,
