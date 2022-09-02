@@ -23,6 +23,7 @@ import '../common.dart';
 class WheelAnd extends Action {
 
   @override final level = LevelData.C1;
+  @override var helplink = 'c1/wheel_and_anything';
   WheelAnd(String name) : super(name);
 
   @override

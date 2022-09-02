@@ -22,6 +22,9 @@ import '../common.dart';
 
 class TurnBack extends Action {
 
+  @override var help = 'To Turn Back in flow direction, combine Turn Back'
+      ' with the previous call on the same line.';
+  @override var helplink = 'b1/turn_back';
   TurnBack(name) : super(name);
 
   @override

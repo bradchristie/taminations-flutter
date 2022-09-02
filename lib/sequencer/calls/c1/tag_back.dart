@@ -24,6 +24,10 @@ class TagBack extends Action with CallWithParts {
 
   @override final level = LevelData.C1;
   @override var numberOfParts = 2;
+  @override var help = '''Tag Back to a Wave has 2 parts:
+  1.  Half Tag
+  2.  Scoot Back''';
+  @override var helplink = 'c1/tagging_calls_back_to_a_wave';
   TagBack(String name) : super(name);
 
   @override

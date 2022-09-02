@@ -23,7 +23,8 @@ import '../common.dart';
 class TheK extends Action {
 
   @override final level = LevelData.C2;
-  TheK() : super('The K');
+  @override var helplink = 'c2/cross_the_k';
+  TheK(String name) : super(name);
 
   @override
   Future<void> perform(CallContext ctx) async {

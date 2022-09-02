@@ -748,7 +748,7 @@
   </tam>
 
 
-  <tam title="Centers Cast Off Three Quarters" from="Right-Hand Two-Faced Line" formation="Two-Faced Line RH" difficulty="1">
+  <tam title="Centers Cast Off Three Quarters" from="Right-Hand Two-Faced Line" formation="Two-Faced Line RH" difficulty="1" sequencer="no">
     <path>
     </path>
     <path>
@@ -756,7 +756,7 @@
     </path>
   </tam>
 
-  <tam title="Centers Cast Off Three Quarters" from="Left-Hand Two-Faced Line" formation="Two-Faced Line LH" difficulty="1">
+  <tam title="Centers Cast Off Three Quarters" from="Left-Hand Two-Faced Line" formation="Two-Faced Line LH" difficulty="1" sequencer="no">
     <path>
       <move select="Cast Left"/>
     </path>
@@ -764,7 +764,7 @@
     </path>
   </tam>
 
-  <tam title="Centers Cast Off Three Quarters" from="Right-Hand Wave" formation="Wave RH" difficulty="1">
+  <tam title="Centers Cast Off Three Quarters" from="Right-Hand Wave" formation="Wave RH" difficulty="1" sequencer="no">
     <path>
     </path>
     <path>
@@ -772,7 +772,7 @@
     </path>
   </tam>
 
-  <tam title="Centers Cast Off Three Quarters" from="Left-Hand Wave" formation="Wave LH" difficulty="1">
+  <tam title="Centers Cast Off Three Quarters" from="Left-Hand Wave" formation="Wave LH" difficulty="1" sequencer="no">
     <path>
     </path>
     <path>
@@ -780,7 +780,7 @@
     </path>
   </tam>
 
-  <tam title="Centers Cast Off Three Quarters" from="Right-Hand Diamond" formation="Diamond RH" difficulty="1">
+  <tam title="Centers Cast Off Three Quarters" from="Right-Hand Diamond" formation="Diamond RH" difficulty="1" sequencer="no">
     <path>
     </path>
     <path>
@@ -788,7 +788,7 @@
     </path>
   </tam>
 
-  <tam title="Centers Cast Off Three Quarters" from="Left-Hand Diamond" formation="Diamond LH" difficulty="1">
+  <tam title="Centers Cast Off Three Quarters" from="Left-Hand Diamond" formation="Diamond LH" difficulty="1" sequencer="no">
     <path>
     </path>
     <path>
@@ -796,46 +796,7 @@
     </path>
   </tam>
 
-  <tam title="Centers Cast Off Three Quarters" from="Right-Hand Two-Faced Lines" formation="Two-Faced Lines RH" difficulty="1">
-    <path>
-    </path>
-    <path>
-      <move select="Cast Right"/>
-    </path>
-    <path>
-      <move select="Cast Right"/>
-    </path>
-    <path>
-    </path>
-  </tam>
-
-  <tam title="Centers Cast Off Three Quarters" from="Left-Hand Two-Faced Lines" formation="Two-Faced Lines LH" difficulty="1">
-    <path>
-    </path>
-    <path>
-      <move select="Cast Left"/>
-    </path>
-    <path>
-      <move select="Cast Left"/>
-    </path>
-    <path>
-    </path>
-  </tam>
-
-  <tam title="Centers Cast Off Three Quarters" from="Right-Hand Waves" formation="Ocean Waves RH BGGB" difficulty="1">
-    <path>
-    </path>
-    <path>
-      <move select="Cast Left"/>
-    </path>
-    <path>
-      <move select="Cast Left"/>
-    </path>
-    <path>
-    </path>
-  </tam>
-
-  <tam title="Centers Cast Off Three Quarters" from="Left-Hand Waves" formation="Ocean Waves LH BGGB" difficulty="1">
+  <tam title="Centers Cast Off Three Quarters" from="Right-Hand Two-Faced Lines" formation="Two-Faced Lines RH" difficulty="1" sequencer="no">
     <path>
     </path>
     <path>
@@ -848,7 +809,46 @@
     </path>
   </tam>
 
-  <tam title="Centers Cast Off Three Quarters" from="Right-Hand Diamonds" formation="Diamonds RH Girl Points" difficulty="1">
+  <tam title="Centers Cast Off Three Quarters" from="Left-Hand Two-Faced Lines" formation="Two-Faced Lines LH" difficulty="1" sequencer="no">
+    <path>
+    </path>
+    <path>
+      <move select="Cast Left"/>
+    </path>
+    <path>
+      <move select="Cast Left"/>
+    </path>
+    <path>
+    </path>
+  </tam>
+
+  <tam title="Centers Cast Off Three Quarters" from="Right-Hand Waves" formation="Ocean Waves RH BGGB" difficulty="1" sequencer="no">
+    <path>
+    </path>
+    <path>
+      <move select="Cast Left"/>
+    </path>
+    <path>
+      <move select="Cast Left"/>
+    </path>
+    <path>
+    </path>
+  </tam>
+
+  <tam title="Centers Cast Off Three Quarters" from="Left-Hand Waves" formation="Ocean Waves LH BGGB" difficulty="1" sequencer="no">
+    <path>
+    </path>
+    <path>
+      <move select="Cast Right"/>
+    </path>
+    <path>
+      <move select="Cast Right"/>
+    </path>
+    <path>
+    </path>
+  </tam>
+
+  <tam title="Centers Cast Off Three Quarters" from="Right-Hand Diamonds" formation="Diamonds RH Girl Points" difficulty="1" sequencer="no">
     <path>
       <move select="Cast Right"/>
     </path>
@@ -861,7 +861,7 @@
     </path>
   </tam>
 
-  <tam title="Centers Cast Off Three Quarters" from="Left-Hand Diamonds" formation="Diamonds LH Girl Points" difficulty="1">
+  <tam title="Centers Cast Off Three Quarters" from="Left-Hand Diamonds" formation="Diamonds LH Girl Points" difficulty="1" sequencer="no">
     <path>
       <move select="Cast Left"/>
     </path>
@@ -875,7 +875,7 @@
   </tam>
 
 
-  <tam title="Very Centers Cast Off Three Quarters" from="Right-Hand Diamonds" formation="Diamonds RH Girl Points" difficulty="1">
+  <tam title="Very Centers Cast Off Three Quarters" from="Right-Hand Diamonds" formation="Diamonds RH Girl Points" difficulty="1" sequencer="no">
     <path>
     </path>
     <path>
@@ -887,7 +887,7 @@
     </path>
   </tam>
 
-  <tam title="Very Centers Cast Off Three Quarters" from="Left-Hand Diamonds" formation="Diamonds LH Girl Points" difficulty="1">
+  <tam title="Very Centers Cast Off Three Quarters" from="Left-Hand Diamonds" formation="Diamonds LH Girl Points" difficulty="1" sequencer="no">
     <path>
     </path>
     <path>

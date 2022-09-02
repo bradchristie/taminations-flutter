@@ -23,7 +23,7 @@ import '../../call_context.dart';
 
 class ThoseWhoCan extends CodedCall {
 
-  ThoseWhoCan() : super('Those Who Can');
+  ThoseWhoCan(String name) : super(name);
 
   @override
   Future<void> performCall(CallContext ctx) async {

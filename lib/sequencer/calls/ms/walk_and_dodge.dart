@@ -26,8 +26,8 @@ import '../coded_call.dart';
 
 class WalkAndDodge extends ActivesOnlyAction {
 
-  @override
-  var level = LevelData.MS;
+  @override var level = LevelData.MS;
+  @override var helplink = 'ms/walk_and_dodge';
   WalkAndDodge(String name) : super(name);
 
   late CallContext walkctx;

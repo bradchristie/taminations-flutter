@@ -22,8 +22,8 @@ import '../common.dart';
 
 class ThreeQuartersTag extends Action {
 
-  @override
-  var level = LevelData.MS;
+  @override var level = LevelData.MS;
+  @override var helplink = 'ms/fraction_tag';
   ThreeQuartersTag(String name) : super(name);
 
   @override

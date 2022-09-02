@@ -24,8 +24,9 @@ import '../common.dart';
 abstract class TripleFormation extends Action {
 
   @override final level = LevelData.C1;
+  @override var helplink = 'c1/triple_box_concept';
   TripleFormation(String name) :
-        subCall = name.replaceFirst('Triple (Box|Lines?|Waves?|Columns?) '.r,''),
+        subCall = name.replaceFirst('Triple (Box|Lines?|Waves?|Columns?)'.r,''),
         super(name);
 
   static const tripleBoxFormations = {
@@ -48,6 +49,8 @@ abstract class TripleFormation extends Action {
 
   @override
   Future<void> perform(CallContext ctx) async {
+    if (subCall.isBlank)
+      throw CallError('$name what?');
     isXaxis = findAxis(ctx);
     //  Add phantoms in spots not occupied by dancers
     final phantoms = <Dancer>[];

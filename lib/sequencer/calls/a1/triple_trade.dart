@@ -23,7 +23,8 @@ import '../common.dart';
 class TripleTrade extends Action {
 
   @override final level = LevelData.A1;
-  TripleTrade() : super('Triple Trade');
+  @override var helplink = 'a1/triple_trade';
+  TripleTrade(String name) : super(name);
 
   @override
   Future<void> perform(CallContext ctx) async {

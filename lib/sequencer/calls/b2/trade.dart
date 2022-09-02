@@ -22,8 +22,8 @@ import '../common.dart';
 
 class Trade extends Action {
 
-  @override
-  var level = LevelData.B2;
+  @override var level = LevelData.B2;
+  @override var helplink = 'b2/trade';
   Trade(String name) : super(name);
 
   @override

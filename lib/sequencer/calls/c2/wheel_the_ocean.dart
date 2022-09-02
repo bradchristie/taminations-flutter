@@ -20,34 +20,52 @@
 import '../common.dart';
 
 //  This class includes 1/4, 3/4 Wheel the Ocean / Seabtl
-class WheelTheOcean extends ActivesOnlyAction with CallWithParts {
+class WheelTheOcean extends Action with CallWithParts {
 
+  @override LevelData get level =>
+      norm.startsWith('14') || norm.startsWith('34')
+          ? LevelData.C3A : LevelData.C2;
+  @override String get helplink =>
+      norm.startsWith('14') || norm.startsWith('34')
+      ? 'c3a/1_4_wheel_the_ocean' : 'c2/wheel_the_ocean';
+  @override String get help => '''$name is a 2-part call:
+  1.  ${_wheelAmount()}
+  2.  ${_passCall()}''';
   @override var numberOfParts = 2;
-  WheelTheOcean(String name) : super(name) {
-    final norm = TamUtils.normalizeCall(name);
-    if (norm.startsWith('14') || norm.startsWith('34'))
-      level = LevelData.C3A;
+  WheelTheOcean(String name) : super(name);
+
+  String _wheelAmount() {
+    var reverse = name.contains('Reverse') ? ' Reverse' : '';
+    if (norm.startsWith('14'))
+      return '1/2$reverse Wheel Around';
+    else if (norm.startsWith('34'))
+      return '$reverse Wheel Around Once and a Half';
     else
-      level = LevelData.C2;
+      return 'Leaders $reverse Wheel Around';
+  }
+
+  String _passCall() {
+    if (name.contains('Reverse'))
+      return name.endsWith('Sea')
+          ? 'Beaus Walk Belles Dodge'
+          : 'Beaus Cross';
+    else
+      return name.endsWith('Sea')
+          ? 'Belles Walk Beaus Dodge'
+          : 'Belles Cross';
   }
 
   @override
   Future<void> performPart1(CallContext ctx) async {
-    final norm = TamUtils.normalizeCall(name);
-    if (norm.startsWith('14'))
-      await ctx.applyCalls('1/2 Wheel Around');
-    else if (norm.startsWith('34'))
-      await ctx.applyCalls('Wheel Around Once and a Half');
-    else
-      await ctx.applyCalls('Wheel Around');
+    var wheel = _wheelAmount();
+    if (ctx.actives.length < ctx.dancers.length)
+      wheel = wheel.replaceFirst('Leaders', '');
+    await ctx.applyCalls(wheel);
   }
 
   @override
   Future<void> performPart2(CallContext ctx) async {
-    if (name.endsWith('Sea'))
-      await ctx.applyCalls('Belles Walk Beaus Dodge');
-    else
-      await ctx.applyCalls('Belles Cross');
+    await ctx.applyCalls(_passCall());
   }
 
 }

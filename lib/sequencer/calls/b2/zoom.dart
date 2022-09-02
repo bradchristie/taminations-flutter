@@ -23,11 +23,9 @@ import '../common.dart';
 //  This class implements both Zoom and Zing
 class Zoom extends ActivesOnlyAction {
 
-  @override
-  LevelData level;
-  Zoom(String name) :
-        level = name == 'Zing'  ? LevelData.C1 : LevelData.B2,
-        super(name);
+  @override LevelData get level => name == 'Zing'  ? LevelData.C1 : LevelData.B2;
+  @override String get helplink => name == 'Zing'  ? 'c1/zing' : 'b2/zoom';
+  Zoom(String name) : super(name);
 
   @override
   Path performOne(Dancer d, CallContext ctx) {

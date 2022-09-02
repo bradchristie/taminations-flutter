@@ -23,7 +23,8 @@ import '../common.dart';
 class ToAWave extends Action {
 
   @override final level = LevelData.C1;
-  ToAWave() : super('to a Wave');
+  @override var helplink = 'c1/anything_to_a_wave';
+  ToAWave(String name) : super(name);
 
   @override
   Future<void> perform(CallContext ctx) async {

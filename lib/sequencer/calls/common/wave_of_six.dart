@@ -22,7 +22,7 @@ import '../common.dart';
 
 class WaveOfSix extends CodedCall {
 
-  WaveOfSix() : super('Wave of Six');
+  WaveOfSix(String name) : super(name);
 
   @override
   Future<void> performCall(CallContext ctx) async {

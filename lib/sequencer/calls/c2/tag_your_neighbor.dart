@@ -25,6 +25,11 @@ class TagYourNeighbor extends Action with CallWithParts {
 
   @override final level = LevelData.C2;
   @override var numberOfParts = 2;
+  @override var help = '''Tag Your Neighbor is a 2-part call:
+  1.  Half Tag
+  2.  Follow Your Neighbor
+Variations: (Left) (Vertical) Tag Your (Criss) (Cross) Neighbor''';
+  @override var helplink = 'c2/any_tagging_call_your_neighbor';
   TagYourNeighbor(String name) : super(name);
 
   @override

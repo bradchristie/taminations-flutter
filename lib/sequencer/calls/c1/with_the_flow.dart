@@ -23,7 +23,8 @@ import '../common.dart';
 class WithTheFlow extends ActivesOnlyAction {
 
   @override final level = LevelData.C1;
-  WithTheFlow() : super('With the Flow');
+  @override var helplink = 'c1/with_the_flow';
+  WithTheFlow(String name) : super(name);
 
   @override
   Future<void> perform(CallContext ctx) async {

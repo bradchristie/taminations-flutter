@@ -22,8 +22,8 @@ import '../common.dart';
 
 class TurnThru extends Action {
 
-  @override
-  var level = LevelData.MS;
+  @override var level = LevelData.MS;
+  @override var helplink = 'ms/turn_thru';
   TurnThru(String name) : super(name);
 
   @override

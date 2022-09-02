@@ -23,6 +23,7 @@ import '../common.dart';
 class ZigZag extends ActivesOnlyAction {
 
   @override final level = LevelData.A2;
+  @override var helplink = 'a2/zig_and_zag';
   ZigZag(String name) : super(name);
 
   @override

@@ -22,8 +22,8 @@ import '../common.dart';
 
 class WheelAround extends ActivesOnlyAction {
 
-  @override
-  var level = LevelData.B2;
+  @override var level = LevelData.B2;
+  @override var helplink = 'b2/wheel_around';
   WheelAround(String name) : super(name);
 
   @override

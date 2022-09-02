@@ -23,6 +23,7 @@ import '../common.dart';
 class TwistAnything extends Action {
 
   @override final level = LevelData.C1;
+  @override var helplink = 'c1/twist_the_line';
   TwistAnything(String name) : super(name);
 
   @override
@@ -55,7 +56,7 @@ class TwistAnything extends Action {
       await ctx.subContext(outers, (ctx2) async {
         await ctx2.applyCalls(anyCall);
       });
-    } on CallError catch (_) {
+    } on CallError {
       //  If that didn't work, try everybody do the Anything call
       await ctx.applyCalls(anyCall);
     }

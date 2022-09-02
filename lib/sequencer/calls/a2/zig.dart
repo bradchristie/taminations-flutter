@@ -25,6 +25,7 @@ import '../common.dart';
 class Zig extends Action {
 
   @override final level = LevelData.A2;
+  @override var helplink = 'a2/zig_and_zag';
   Zig(String name) : super(name);
 
   @override

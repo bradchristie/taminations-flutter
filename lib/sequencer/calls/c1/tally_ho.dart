@@ -23,7 +23,13 @@ class TallyHo extends Action with CallWithParts, ButCall {
 
   @override int numberOfParts = 3;
   @override final level = LevelData.C1;
-  TallyHo() : super('Tally Ho');
+  @override var help = '''Tally Ho is a 3-part call:
+  1.  1/2 Circulate
+  2.  Center wave of 4 Hinge and 1/2 Circulate, others Trade
+  3.  Center wave of 4 Cast Off 3/4, others Hourglass Circulate
+The final Cast Off 3/4 can be replaced with But (another call)''';
+  @override var helplink = 'c1/tally_ho';
+  TallyHo(String name) : super(name);
 
   @override
   Future<void> performPart1(CallContext ctx) async {

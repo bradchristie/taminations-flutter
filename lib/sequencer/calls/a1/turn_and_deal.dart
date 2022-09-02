@@ -26,8 +26,8 @@ class TurnAndDeal extends Action {
   @override var help = '''[Left] Turn and Deal
 Works with one or two Lines of 4.  A tidal formation is two Lines of 4.
 For larger lines, use
-Line of (6 or 8) [Left] Turn and Deal
-''';
+Line of (6 or 8) [Left] Turn and Deal''';
+  @override var helplink = 'a1/turn_and_deal';
   TurnAndDeal(String name) : super(name);
 
   @override

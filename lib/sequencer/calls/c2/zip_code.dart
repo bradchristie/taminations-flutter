@@ -23,6 +23,8 @@ import '../common.dart';
 class ZipCode extends Action with CallWithParts {
 
   @override final level = LevelData.C2;
+  @override var helplink = 'c2/zip_code';
+  @override var help = 'Zip Code n has n parts';
   ZipCode(String name) : super(name) {
     final count = TamUtils.normalizeCall(name).last.toIntOrNull();
     if (count == null)

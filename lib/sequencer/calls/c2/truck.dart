@@ -23,6 +23,7 @@ import '../common.dart';
 class Truck extends Action {
 
   @override final level = LevelData.C2;
+  @override var helplink = 'c2/truck';
   Truck(String name) : super(name);
 
   @override

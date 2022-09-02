@@ -23,11 +23,14 @@ import '../common.dart';
 class TransferAnd extends Action {
 
   @override final level = LevelData.A2;
+  @override var helplink = 'a2/transfer_and_anything';
   TransferAnd(String name) : super(name);
 
   @override
   Future<void> perform(CallContext ctx) async {
     final othercall = name.replaceFirst('Transfer\\s+and\\s+'.ri,'');
+    if (othercall.isBlank)
+      throw CallError('Transfer and what?');
     await ctx.applyCalls('Transfer and');
     ctx.contractPaths();
     await ctx.applyCalls('Centers $othercall');

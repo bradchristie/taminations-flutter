@@ -22,8 +22,9 @@ import '../common.dart';
 
 class TouchAQuarter extends ActivesOnlyAction {
 
-  @override
-  var level = LevelData.B2;
+  @override var level = LevelData.B2;
+  @override var help = 'The sequencer also accepts Touch 1/2';
+  @override var helplink = 'b2/touch_a_quarter';
   TouchAQuarter(String name) : super(name);
 
   @override

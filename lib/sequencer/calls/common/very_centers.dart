@@ -24,7 +24,7 @@ import 'fliter_actives.dart';
 
 class VeryCenters extends FilterActives {
 
-  VeryCenters() : super('Very Centers');
+  VeryCenters(String name) : super(name);
 
   @override
   bool isActive(Dancer d, CallContext ctx) => d.data.verycenter;
