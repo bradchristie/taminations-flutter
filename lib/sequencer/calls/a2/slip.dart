@@ -20,7 +20,7 @@
 
 import '../common.dart';
 
-class Slip extends Action {
+class Slip extends ActivesOnlyAction {
 
   @override final level = LevelData.A2;
   @override var helplink = 'a2/slip';

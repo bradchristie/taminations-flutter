@@ -51,6 +51,7 @@ import 'a2/motivate.dart';
 import 'a2/pass_and_roll.dart';
 import 'a2/remake.dart';
 import 'a2/scoot_and_weave.dart';
+import 'a2/scoot_chain_thru.dart';
 import 'a2/single_wheel.dart';
 import 'a2/slide.dart';
 import 'a2/slip.dart';
@@ -470,6 +471,9 @@ abstract class CodedCall extends Call {
     'scootandplenty'.ri: (name) => ScootAndPlenty(name),
     'scootandramble'.ri: (name) => ScootAndRamble(name),
     'scootandweave'.ri: (name) => ScootAndWeave(name),
+    //  Accept Scoot Chain Thru Centers so user can say e.g.
+    //  Centers Skip the 3rd Part
+    'scootchainthru(center)?'.ri: (name) => ScootChainThru(name),
     '(center|inside|middle|out(er|side))diamond'.ri: (name) => SelectDiamond(name),
     'separate'.ri: (name) => Separate(name),
     'shazam'.ri: (name) => Shazam(name),

@@ -3221,6 +3221,19 @@ Circulate
 Boys Run
 Bend the Line
 Left Square Thru 4
+Allemande Left''',
+
+  'Scoot Chain Thru' :
+'''Sides Pass the Ocean
+Extend
+Scoot Chain Thru Centers Skip the 3rd Part
+Recycle
+Centers Right Roll to a Wave
+Scoot Chain Thru Replace the 3rd Part With Mix
+Plenty
+Extend
+Boys Run
+Star Thru
 Allemande Left'''
 
 };

@@ -1431,7 +1431,8 @@ class CallContext {
   bool isWaves() => dancers.every((d) {
     var dr = dancerToRight(d);
     var dl = dancerToLeft(d);
-    if (dr == null && dl == null)
+    if ((dr == null || d.distanceTo(dr) > 2.1) &&
+        (dl == null || d.distanceTo(dl) > 2.1))
       return false;
     if (dr != null && d.distanceTo(dr) < 2.1 && !isInWave(d,dr))
       return false;
