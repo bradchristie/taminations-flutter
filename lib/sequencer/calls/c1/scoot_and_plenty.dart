@@ -25,6 +25,13 @@ class ScootAndPlenty extends Action with CallWithParts, CallWithStars {
   @override final level = LevelData.C1;
   @override var turnStarAmount = 2;
   @override var turnStarCall = 'Split Circulate';
+  @override var help = '''Scoot and Plenty is a 4-part call:
+  1.  Scoot Back
+  2.  Little, outsides in direction of the Scoot Back
+  3.  Split Circulate twice
+  4.  Center 4 1/2 Zoom, others Counter Rotate and Roll
+The number of Split Circulates can be modified with "Split Circulate n" or "Turn the Star n"''';
+  @override var helplink = 'c1/scoot_and_plenty';
   String dir = 'Right';
   ScootAndPlenty(String name) : super(name);
 

@@ -24,6 +24,7 @@ class Siamese extends FourDancerConcept {
 
   @override final level = LevelData.C1;
   @override final conceptName = 'Siamese';
+  @override var helplink = 'c1/siamese_concept';
   late List<List<Dancer>> couples;
   late List<List<Dancer>> tandems;
   Siamese(String name) : super(name);
@@ -77,24 +78,6 @@ class Siamese extends FourDancerConcept {
       'Quarter Tag' : 1.5,
     };
     ctx.matchFormationList(tandemFormations,maxOffset: 9.0);
-
-/*
-
-    if (tandems.contains(group)) {
-      //  If there is space, spread out the tandem a bit
-      final leader = group[0];
-      final trailer = group[1];
-      if ((ctx.dancerInFront(leader)?.distanceTo(leader) ?? 2.0) > 1.0 &&
-          (ctx.dancerInBack(trailer)?.distanceTo(trailer) ?? 2.0) > 1.0) {
-        leader.path.skewFromEnd(0.5, 0.0);
-        trailer.path.skewFromEnd(-0.5, 0.0);
-      }
-    } else {
-      //  Couples
-      group[0].path.addhands(Hands.GRIPRIGHT);
-      group[1].path.addhands(Hands.GRIPLEFT);
-    }
-*/
   }
 
 }

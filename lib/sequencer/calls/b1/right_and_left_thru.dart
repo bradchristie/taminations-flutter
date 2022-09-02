@@ -22,7 +22,12 @@ import '../common.dart';
 class RightAndLeftThru extends ActivesOnlyAction with CallWithParts {
 
   @override int numberOfParts = 2;
-  RightAndLeftThru() : super('Right and Left Thru');
+  @override var help = '''Right and Left Thru has 2 parts:
+  1.  Pull By
+  2.  Courtesy Turn
+If the Courtesy Turn is not a boy turning a girl, the level will be marked Plus.''';
+  @override var helplink = 'b1/right_and_left_thru';
+  RightAndLeftThru(String name) : super(name);
 
   @override
   Future<void> performPart1(CallContext ctx) async {

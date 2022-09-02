@@ -23,7 +23,8 @@ import '../common.dart';
 class SnapTheLock extends Action {
 
   @override final level = LevelData.C3A;
-  SnapTheLock() : super('Snap the Lock');
+  @override var helplink = 'c3a/snap_the_lock';
+  SnapTheLock(name) : super(name);
 
   @override
   Future<void> perform(CallContext ctx) async {

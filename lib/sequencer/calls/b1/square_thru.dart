@@ -22,6 +22,11 @@ import '../common.dart';
 
 class SquareThru extends Action {
 
+  @override var help = 'In addition to the common use of Square Thru, the'
+      ' program accepts these variatons:\n'
+      'Square Thru (n) to a Wave\n'
+      'Square Thru on the (nth) Hand (some call)';
+  @override var helplink = 'b1/square_thru';
   SquareThru(String name) : super(name);
 
   @override

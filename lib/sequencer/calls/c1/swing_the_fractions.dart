@@ -24,6 +24,14 @@ class SwingTheFractions extends Action with CallWithParts {
 
   @override int numberOfParts = 5;
   @override var level = LevelData.C1;
+  @override var help = '''Swing the Fractions is a 5-part call:
+  1.  Right Hinge
+  2.  Left Swing
+  3.  Cast Off 3/4 with the Right Hand
+  4.  Left Swing
+  5.  Right Hinge
+The hands can be swapped with Left Swing the Fractions''';
+  @override var helplink = 'c1/swing_the_fractions';
   bool isLeft;
   List<Dancer>? part1dancers;
   List<Dancer>? part2dancers;

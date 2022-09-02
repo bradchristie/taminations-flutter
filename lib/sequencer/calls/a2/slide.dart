@@ -23,7 +23,8 @@ import '../common.dart';
 class Slide extends Action {
 
   @override final level = LevelData.A2;
-  Slide() : super('Slide');
+  @override var helplink = 'a2/slip';
+  Slide(String name) : super(name);
 
   @override
   Future<void> perform(CallContext ctx) async {

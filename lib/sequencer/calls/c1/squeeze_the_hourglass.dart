@@ -23,7 +23,7 @@ import '../common.dart';
 class SqueezeTheHourglass extends Action {
 
   @override final level = LevelData.C1;
-  SqueezeTheHourglass() : super('Squeeze the Hourglass');
+  SqueezeTheHourglass(String name) : super(name);
 
   @override
   Future<void> perform(CallContext ctx) async {

@@ -23,6 +23,10 @@ class SplitDixieDiamond extends Action with CallWithParts {
 
   @override var level = LevelData.C1;
   @override var numberOfParts = 2;
+  @override var help = '''Split Dixie Diamond has 2 parts:
+  1.  Split Dixie Style to a Wave
+  2.  Centers Hinge, others Turn Back''';
+  @override var helplink = 'c1/split_square_thru_variations';
   SplitDixieDiamond(String name) : super(name);
 
   @override

@@ -23,6 +23,11 @@ class RotarySpin extends Action with CallWithParts {
 
   @override int numberOfParts = 2;
   @override final level = LevelData.C1;
+  @override var help = '''Rotary Spin is a 2-part call:
+  1.  Right Pull By
+  2.  Centers Step to a Left-Hand Wave and Cast Off 3/4, others Courtesy Turn and Roll
+You can switch the hands with Left Rotary Spin''';
+  @override var helplink = 'c1/rotary_spin';
   final bool isLeft;
   RotarySpin(String name) : isLeft=name.startsWith('Left'), super(name);
 

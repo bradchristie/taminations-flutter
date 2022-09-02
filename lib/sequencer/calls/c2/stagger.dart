@@ -25,6 +25,7 @@ class Stagger extends ModifiedFormationConcept {
   @override final level = LevelData.C2;
   @override final conceptName = 'Stagger';
   @override final modifiedFormationName = 'Double Pass Thru';
+  @override var helplink = 'c2/stagger_concept';
   Stagger(String name) : super(name);
 
   String _startFormation = '';

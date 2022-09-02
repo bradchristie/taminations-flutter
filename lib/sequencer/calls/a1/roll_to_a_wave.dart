@@ -23,6 +23,7 @@ import '../common.dart';
 class RollToAWave extends Action {
 
   @override final level = LevelData.A1;
+  @override var helplink = 'a1/right_roll_to_a_wave';
   RollToAWave(String name) : super(name);
   @override
   Path performOne(Dancer d, CallContext ctx) {

@@ -23,12 +23,17 @@ class SpinTheTop extends ActivesOnlyAction with CallWithParts {
 
   @override int numberOfParts = 2;
   @override var level = LevelData.MS;
-  SpinTheTop() : super('Spin the Top');
+  @override var help = '''Spin the Top is a 2-part call:
+  1.  Swing
+  2.  Fan the Top''';
+  @override var helplink = 'ms/spin_the_top';
+  SpinTheTop(name) : super(name);
 
   @override
   Future<void> performPart1(CallContext ctx) async {
+    var left = name.contains('left'.ri) ? 'Left-Hand' : '';
     if (ctx.dancers.any((d) => ctx.dancerFacing(d) != null))
-      await ctx.applyCalls('Facing Dancers Step to a Wave');
+      await ctx.applyCalls('Facing Dancers Step to a $left Wave');
     if (ctx.actives.every((it) => ctx.isInWave(it)))
       await ctx.applyCalls('Swing');
     else

@@ -23,7 +23,10 @@ import '../common.dart';
 class Relocate extends Action {
 
   @override final level = LevelData.C2;
+  @override var help = 'Very Centers Cast Off 3/4, others Counter Rotate';
+  @override var helplink = 'c2/relocate_the_setup';
   Relocate(String name) : super(name);
+
 
   @override
   Future<void> perform(CallContext ctx) async {

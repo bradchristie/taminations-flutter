@@ -23,7 +23,8 @@ import '../common.dart';
 class Slip extends Action {
 
   @override final level = LevelData.A2;
-  Slip() : super('Slip');
+  @override var helplink = 'a2/slip';
+  Slip(name) : super(name);
 
   @override
   Future<void> perform(CallContext ctx) async {

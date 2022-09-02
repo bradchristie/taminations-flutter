@@ -22,7 +22,8 @@ import '../common.dart';
 class Substitute extends Action {
 
   @override final level = LevelData.C1;
-  Substitute() : super('Substitute');
+  @override var helplink = 'c1/substitute';
+  Substitute(String name) : super(name);
 
   @override
   Future<void> perform(CallContext ctx) async {

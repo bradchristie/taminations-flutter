@@ -22,7 +22,8 @@ import '../common.dart';
 
 class SplitCirculate extends Action {
 
-  SplitCirculate() : super('Split Circulate' );
+  @override var helplink = 'b1/circulate';
+  SplitCirculate(String name) : super(name);
 
   @override
   Future<void> perform(CallContext ctx) async {

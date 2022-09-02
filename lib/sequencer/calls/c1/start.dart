@@ -25,11 +25,17 @@ import '../common/do_one_part.dart';
 class Start extends Action {
 
   @override final level = LevelData.C1;
+  @override var help = 'Start is used as "(some dancers) Start (call)"\n'
+      'The designated dancers do Part 1 of the call, then all the'
+      ' dancers finish the call';
+  @override var helplink = 'c1/start';
   Start(String name) : super(name);
 
   @override
   Future<void> perform(CallContext ctx) async {
     final finishCall = name.replaceFirst('^start\\s+'.ri, '');
+    if (finishCall.isBlank)
+      throw CallError('Start what?');
 
     //  Special case - Heads or Sides "Start" from a static square
     //  - they move in and everyone does the call

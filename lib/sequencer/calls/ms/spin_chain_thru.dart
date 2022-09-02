@@ -23,7 +23,13 @@ class SpinChainThru extends Action with CallWithParts {
 
   @override int numberOfParts = 4;
   @override var level = LevelData.MS;
-  SpinChainThru() : super('Spin Chain Thru');
+  @override var help = '''Spin Chain Thru has 4 parts:
+  1.  Swing
+  2.  Centers Cast Off 3/4
+  3.  Very Centers Trade
+  4.  Centers Cast Off 3/4''';
+  @override var helplink = 'ms/spin_chain_thru';
+  SpinChainThru(name) : super(name);
 
   @override
   Future<void> performPart1(CallContext ctx) async {

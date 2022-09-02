@@ -21,6 +21,7 @@ import '../common.dart';
 
 class Rollaway extends Action {
 
+  @override var helplink = 'b1/sashay';
   Rollaway(name) : super(name);
 
   @override

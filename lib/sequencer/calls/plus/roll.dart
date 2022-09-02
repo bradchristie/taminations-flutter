@@ -21,8 +21,10 @@ import '../common.dart';
 
 class Roll extends Action {
 
-  @override
-  var level = LevelData.PLUS;
+  @override var level = LevelData.PLUS;
+  @override var help = 'The sequencer calculates Roll based on the'
+      ' turning motion at the end of the previous call.';
+  @override var helplink = 'plus/anything_and_roll';
   Roll(String name) : super(name);
 
   @override

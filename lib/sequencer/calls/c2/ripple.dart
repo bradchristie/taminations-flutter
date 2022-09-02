@@ -23,6 +23,9 @@ import '../common.dart';
 class Ripple extends Action {
 
   @override final level = LevelData.C2;
+  @override var help = '''The sequencer can do Ripple but not Like a Ripple.
+You can specify the direction with Left Ripple or Right Ripple.''';
+  @override var helplink = 'c2/ripple_the_wave';
   Ripple(String name) : super(name);
   late Map<Dancer,bool> _isRight;
 

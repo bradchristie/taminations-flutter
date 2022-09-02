@@ -24,6 +24,10 @@ class Ramble extends Action with CallWithParts {
 
   @override int numberOfParts = 2;
   @override final level = LevelData.C1;
+  @override var help = '''Ramble is a 2-part call:
+  1.  Center 4 Single Wheel, others Separate
+  2.  Slide Thru''';
+  @override var helplink = 'c1/scoot_and_ramble';
   Ramble() : super('Ramble');
 
   @override

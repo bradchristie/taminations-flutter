@@ -22,17 +22,18 @@ import '../common.dart';
 class SwingThru extends ActivesOnlyAction with CallWithParts {
 
   @override int numberOfParts = 2;
-  @override var level = LevelData.B2;
+  @override LevelData get level => isGrand ? LevelData.PLUS : LevelData.B2;
+  @override var help = '''Swing Thru is a 2-part call:
+  1.  Trade with the right hand
+  2.  Trade with the left hand''';
+  @override var helplink = 'b2/swing_thru';
   bool isGrand;
   bool isLeft;
   List<Dancer>? part1dancers;
   SwingThru(String name) :
         isGrand=name.contains('Grand'),
         isLeft=name.contains('Left'),
-        super(name) {
-    if (isGrand)
-      level = LevelData.PLUS;
-  }
+        super(name);
 
   @override
   Future<void> performPart1(CallContext ctx) async {

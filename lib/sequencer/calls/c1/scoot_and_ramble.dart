@@ -24,7 +24,11 @@ class ScootAndRamble extends Action with CallWithParts {
 
   @override final level = LevelData.C1;
   @override int numberOfParts = 2;
-  ScootAndRamble() : super('Scoot and Ramble');
+  @override var help = '''Scoot and Ramble is a 2-part call:
+  1.  Scoot Back
+  2.  Ramble''';
+  @override var helplink = 'c1/scoot_and_ramble';
+  ScootAndRamble(name) : super(name);
 
   @override
   Future<void> performPart1(CallContext ctx) async {

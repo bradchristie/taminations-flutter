@@ -23,6 +23,15 @@ class SpinChainAndExchangeTheGears extends Action with CallWithParts, CallWithSt
 
   @override int numberOfParts = 5;
   @override final level = LevelData.PLUS;
+  @override var help = '''Spin Chain and Exchange the Gears has 5 parts:
+  1.  Swing
+  2.  Centers Cast Off 3/4, others Flip In
+  3.  Very Centers Trade
+  4.  Turn the Stars 3/4
+  5.  Very Centers lead their star to the other side where they form a wave.
+You can change the star turn of Part 4 by adding Turn the Star (fraction).
+Use "A Full Turn" to turn it all the way around.''';
+  @override var helplink = 'plus/spin_chain_and_exchange_the_gears';
   var turnAmount = 3;
   SpinChainAndExchangeTheGears(String name) : super(name);
 

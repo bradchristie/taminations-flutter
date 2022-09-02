@@ -23,6 +23,7 @@ import '../common.dart';
 class SpinTheWindmill extends Action {
 
   @override final level = LevelData.A2;
+  @override var helplink = 'a2/spin_the_windmill';
   SpinTheWindmill(String name) : super(name);
 
   @override

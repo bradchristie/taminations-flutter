@@ -23,6 +23,12 @@ class SquareChainTheTop extends ActivesOnlyAction with CallWithParts {
 
   @override var level = LevelData.C1;
   @override var numberOfParts = 3;
+  @override var help = '''Square Chain the Top has 3 parts:
+  1.  Right Pull By and 1/4 In
+  2.  Left Spin the Top
+  3.  Left Turn Thru
+The hands can be swapped with Left Square Chain the Top''';
+  @override var helplink = 'c1/square_chain_the_top';
   SquareChainTheTop(String name) : super(name);
 
   @override

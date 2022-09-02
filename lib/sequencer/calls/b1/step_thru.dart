@@ -21,7 +21,8 @@ import '../common.dart';
 
 class StepThru extends ActivesOnlyAction {
 
-  StepThru() : super('Step Thru');
+  @override var helplink = 'b1/step_thru';
+  StepThru(String name) : super(name);
 
   @override
   Path performOne(Dancer d, CallContext ctx) {

@@ -23,6 +23,7 @@ import '../common.dart';
 class SplitSquareThru extends Action {
 
   @override final level = LevelData.A1;
+  @override var helplink = 'a1/split_square_thru';
   SplitSquareThru(String name) : super(name);
 
   @override

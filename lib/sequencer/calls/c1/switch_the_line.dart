@@ -23,7 +23,8 @@ import '../common.dart';
 class SwitchTheLine extends Action {
 
   @override final level = LevelData.C1;
-  SwitchTheLine() : super('Switch the Line');
+  @override var helplink = 'c1/switch_the_line';
+  SwitchTheLine(String name) : super(name);
 
   @override
   Future<void> perform(CallContext ctx) async {
@@ -39,6 +40,5 @@ class SwitchTheLine extends Action {
             scale:[1.0,d.distanceTo(d2)/2.0].v);
     }
   }
-
 
 }

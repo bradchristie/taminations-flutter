@@ -23,7 +23,8 @@ import '../common.dart';
 class SqueezeTheGalaxy extends Action {
 
   @override final level = LevelData.C1;
-  SqueezeTheGalaxy() : super('Squeeze the Galaxy');
+  @override var helplink = 'c1/squeeze';
+  SqueezeTheGalaxy(String name) : super(name);
 
   @override
   Future<void> perform(CallContext ctx) async {

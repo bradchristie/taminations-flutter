@@ -27,6 +27,13 @@ class Remake extends ActivesOnlyAction with CallWithParts {
   bool isLeft;
   List<Dancer>? part1dancers;
   List<Dancer>? part2dancers;
+  @override var help = '''Remake is a 3-part call:
+  1.  Right-hand Hinge
+  2.  Left-hand Trade
+  3.  Right-hand Cast Off 3/4
+Switch hands with Left Remake
+Allow very centers to work with each other with Grand Remake''';
+  @override var helplink = 'a2/remake';
   Remake(String name) :
         isGrand=name.contains('Grand'),
         isLeft=name.contains('Left'),

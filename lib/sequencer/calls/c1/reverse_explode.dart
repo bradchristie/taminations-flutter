@@ -22,9 +22,9 @@ import '../common.dart';
 //  See plus/explode.dart
 class ReverseExplode extends Action {
 
-  @override
-  var level = LevelData.PLUS;
-  ReverseExplode() : super('Reverse Explode');
+  @override var level = LevelData.C1;
+  @override var helplink = 'c1/reverse_explode';
+  ReverseExplode(name) : super(name);
 
   @override
   Path performOne(Dancer d, CallContext ctx) {

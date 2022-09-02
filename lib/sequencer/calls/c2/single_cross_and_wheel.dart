@@ -24,6 +24,11 @@ class SingleCrossAndWheel extends Action with CallWithParts {
 
   @override final level = LevelData.C2;
   @override int numberOfParts = 2;
+  @override var help = '''Single Cross and Wheel has 2 parts:
+  1.  Hinge
+  2.  Step and Fold
+You can make couples do a Left Hinge with Left Single Cross and Wheel''';
+  @override var helplink = 'c2/cross_and_wheel';
   SingleCrossAndWheel(name) : super(name);
 
   @override

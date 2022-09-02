@@ -24,6 +24,7 @@ class Spread extends Action {
 
   @override
   var level = LevelData.PLUS;
+  @override var helplink = 'plus/anything_and_spread';
   Spread(String name) : super(name);
 
   /*

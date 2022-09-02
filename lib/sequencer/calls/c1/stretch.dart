@@ -23,6 +23,7 @@ import '../common.dart';
 class Stretch extends Action {
 
   @override final level = LevelData.C1;
+  @override var helplink = 'c1/stretch_concept';
   Stretch(String name) : super(name);
 
   @override

@@ -23,6 +23,14 @@ class Sidetrack extends ActivesOnlyAction with CallWithParts {
 
   @override var level = LevelData.C3B;
   @override var numberOfParts = 3;
+  @override var help = '''Sidetrack has 3 parts:
+  1.  Zig Zag
+  2.  Counter Rotate
+  3.  Roll
+Variations
+  Single Sidetrack - replace Part 2 with Lockit
+  Split Sidetrack - replace Part 2 with Split Counter Rotate''';
+  @override var helplink = 'c3b/sidetrack';
   Sidetrack(String name) : super(name);
 
   @override

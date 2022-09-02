@@ -23,6 +23,15 @@ import '../common.dart';
 class TriangleCirculate extends Action {
 
   @override final level = LevelData.C1;
+  @override var help = '''Use one of these terms to identify the triangles:
+  Inside
+  Outside
+  Inpoint
+  Outpoint
+  Tandem-based
+  Wave-based
+You do not need to use one of these if the triangles are unambiguous (as in a sausage formation)''';
+  @override var link = 'c1/triangle_circulate';
   var rootName = 'Triangle Circulate'.r;
   TriangleCirculate(String name) : super(name);
 
@@ -114,8 +123,12 @@ class TriangleCirculate extends Action {
         }
         break;
     }
-    if (ctx.actives.length != 6)
-      throw CallError('Unable to find dancers to circulate');
+    if (ctx.actives.length != 6) {
+      if (triangleType.isBlank)
+        throw CallError('You need to identify the triangle');
+      else
+        throw CallError('Unable to find dancers to circulate');
+    }
     //  Should be able to split the square to 2 3-dancer triangles
     List<List<Dancer>> triangles;
     if (ctx.actives.none((d) => d.location.x.isAbout(0)))

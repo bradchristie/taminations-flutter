@@ -23,6 +23,7 @@ import '../common.dart';
 class SwingAndCircle extends Action {
 
   @override final level = LevelData.C1;
+  @override var helplink = 'c1/swing_and_circle';
   SwingAndCircle(String name) : super(name);
 
   @override

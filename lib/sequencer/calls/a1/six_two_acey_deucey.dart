@@ -21,9 +21,9 @@ import '../common.dart';
 
 class SixTwoAceyDeucey extends Action {
 
-  @override
-  var level = LevelData.PLUS;
-  SixTwoAceyDeucey() : super('Six-Two Acey Deucey');
+  @override var level = LevelData.A1;
+  @override var helplink = 'a1/six_two_acey_deucey';
+  SixTwoAceyDeucey(name) : super(name);
 
   @override
   Future<void> perform(CallContext ctx, [int i = 0]) async {

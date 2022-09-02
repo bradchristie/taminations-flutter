@@ -24,7 +24,11 @@ class Shazam extends ActivesOnlyAction with CallWithParts {
 
   @override final level = LevelData.C2;
   @override int numberOfParts = 2;
-  Shazam() : super('Shazam');
+  @override var help = '''Shazam has 2 parts:
+  1.  Hinge
+  2.  Turn Back''';
+  @override var helplink = 'c2/shazam';
+  Shazam(name) : super(name);
 
   @override
   Future<void> perform(CallContext ctx) async {

@@ -23,7 +23,11 @@ class ScootAndWeave extends ActivesOnlyAction with CallWithParts {
 
   @override var level = LevelData.A2;
   @override var numberOfParts = 2;
-  ScootAndWeave() : super('Scoot and Weave');
+  @override var help = '''Scoot and Weave has 2 parts:
+  1.  Scoot Back
+  2. Weave''';
+  @override var helplink = 'a2/scoot_and_weave';
+  ScootAndWeave(name) : super(name);
 
   @override
   Future<void> performPart1(CallContext ctx) async {

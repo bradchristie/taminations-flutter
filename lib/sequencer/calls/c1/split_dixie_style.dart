@@ -23,6 +23,10 @@ class SplitDixieStyle extends Action with CallWithParts {
 
   @override var level = LevelData.C1;
   @override var numberOfParts = 2;
+  @override var help = '''Split Dixie Style to a Wave has 2 parts:
+  1.  Facing dancers Pull By and 1/4 In
+  2.  Left Touch 1/4''';
+  @override var helplink = 'c1/split_square_thru_variations';
   SplitDixieStyle(String name) : super(name);
 
   @override

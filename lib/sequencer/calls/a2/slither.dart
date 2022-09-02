@@ -23,7 +23,8 @@ import '../common.dart';
 class Slither extends Action {
 
   @override final level = LevelData.A2;
-  Slither() : super('Slither');
+  @override var helplink = 'a2/slip';
+  Slither(name) : super(name);
 
   @override
   Future<void> perform(CallContext ctx) async {

@@ -24,7 +24,8 @@ import '../common.dart';
 class Swing extends Action {
 
   @override final level = LevelData.A2;
-  Swing() : super('Swing');
+  @override var helplink = 'a2/slip';
+  Swing(String name) : super(name);
 
   @override
   Future<void> perform(CallContext ctx) async {

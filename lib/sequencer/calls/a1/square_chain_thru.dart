@@ -23,6 +23,12 @@ class SquareChainThru extends ActivesOnlyAction with CallWithParts {
 
   @override var level = LevelData.A1;
   @override var numberOfParts = 3;
+  @override var help = '''Square Chain Thru has 3 parts:
+  1.  Right Pull By and 1/4 In
+  2.  Left Swing Thru
+  3.  Left Turn Thru
+The hands can be swapped with Left Square Chain the Top''';
+  @override var helplink = 'a1/square_chain_thru';
   SquareChainThru(String name) : super(name);
 
   @override

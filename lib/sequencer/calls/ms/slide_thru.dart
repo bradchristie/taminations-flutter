@@ -22,9 +22,11 @@ import '../common.dart';
 
 class SlideThru extends ActivesOnlyAction {
 
-  @override
-  var level = LevelData.MS;
-  SlideThru() : super('Slide Thru');
+  @override var level = LevelData.MS;
+  @override var help = 'Unlike Star Thru, you can do Slide Thru with '
+      'the same gender facing.';
+  @override var helplink = 'ms/slide_thru';
+  SlideThru(name) : super(name);
 
   @override
   Path performOne(Dancer d, CallContext ctx) {

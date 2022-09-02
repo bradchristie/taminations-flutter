@@ -85,6 +85,8 @@ abstract class FourDancerConcept extends ActivesOnlyAction {
     //  Create context for concept dancers
     var conceptctx = CallContext.fromDancers(singles);
     //  And apply the call
+    if (realCall.isBlank)
+      throw CallError('$conceptName what?');
     await conceptctx.applyCalls(realCall);
     //conceptctx.matchStandardFormation();
     //  Hook for concept to see the result

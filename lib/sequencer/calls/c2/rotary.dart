@@ -23,6 +23,7 @@ import '../common.dart';
 class Rotary extends Action {
 
   @override final level = LevelData.C2;
+  @override var helplink = 'c2/rotary';
   Rotary(String name) : super(name);
 
   @override

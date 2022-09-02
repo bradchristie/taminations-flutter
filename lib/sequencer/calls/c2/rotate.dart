@@ -23,6 +23,7 @@ import '../common.dart';
 class Rotate extends Action {
 
   @override final level = LevelData.C2;
+  @override var helplink = 'c2/rotate';
   Rotate(String name) : super(name);
 
   @override
@@ -42,11 +43,14 @@ class Rotate extends Action {
       });
     }
     final norm = TamUtils.normalizeCall(name);
-    await ctx.applyCalls('Couples Hinge');
-    if (norm.endsWith('12'))
+    if (norm.endsWith('14'))
       await ctx.applyCalls('Couples Hinge');
-    if (norm.endsWith('34'))
+    else if (norm.endsWith('12'))
       await ctx.applyCalls('Couples Hinge','Couples Hinge');
+    else if (norm.endsWith('34'))
+      await ctx.applyCalls('Couples Hinge','Couples Hinge','Couples Hinge');
+    else
+      throw CallError('Rotate how much?');
   }
 
 }

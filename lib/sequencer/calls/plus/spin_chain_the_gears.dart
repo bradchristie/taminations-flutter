@@ -24,6 +24,16 @@ class SpinChainTheGears extends Action with CallWithParts, CallWithStars {
   @override int numberOfParts = 6;
   @override final level = LevelData.PLUS;
   @override var turnStarAmount = 3;
+  @override var help = '''Spin Chain the Gears is a 6-part call:
+  1.  Swing
+  2.  Centers Cast Off 3/4, others Flip In
+  3.  Very Centers Trade
+  4.  Turn the Stars 3/4
+  5.  Very Centers Trade
+  6.  Center Wave Cast Off 3/4, others Flip Out
+You can change the star turn of Part 4 by adding Turn the Star (fraction).
+Use "A Full Turn" to turn it all the way around.''';
+  @override var helplink = 'plus/spin_chain_the_gears';
   SpinChainTheGears(String name) : super(name);
 
   @override

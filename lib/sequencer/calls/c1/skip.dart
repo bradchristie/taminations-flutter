@@ -22,6 +22,9 @@ import '../common.dart';
 class Skip extends Action {
 
   @override final level = LevelData.C1;
+  @override var help = 'You can skip any one part of a Call with Parts '
+      'with Skip the nth Part';
+  @override var helplink = 'c1/replace';
   Skip(String name) : super(name);
 
   @override

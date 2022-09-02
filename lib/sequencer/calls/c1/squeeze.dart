@@ -23,6 +23,7 @@ import '../common.dart';
 class Squeeze extends Action {
 
   @override final level = LevelData.C1;
+  @override var helplink = 'c1/squeeze';
   Squeeze(String name) : super(name);
 
   @override

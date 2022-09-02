@@ -23,6 +23,10 @@ class StackTheLine extends ActivesOnlyAction with CallWithParts {
 
   @override var level = LevelData.C2;
   @override var numberOfParts = 2;
+  @override var help = '''Stack the Line is a 2-part call:
+  1.  Quarter In
+  2.  Original Leaders Step and all adjust to make a Right-Hand Box''';
+  @override var helplink = 'c2/stack_the_line';
   List<Dancer> originalLeads = [];
   final bool isLeft;
   StackTheLine(String name) : isLeft=name.startsWith('Left'), super(name);

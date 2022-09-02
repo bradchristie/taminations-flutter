@@ -23,6 +23,7 @@ import '../common.dart';
 class SingleWheel extends Action {
 
   @override final level = LevelData.A2;
+  @override var helplink = 'a2/single_wheel';
   SingleWheel(String name) : super(name);
 
   @override

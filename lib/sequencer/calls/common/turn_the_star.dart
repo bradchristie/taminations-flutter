@@ -41,6 +41,7 @@ class TurnTheStar extends Action {
         final amountText = TamUtils.normalizeCall(name.replaceFirst(callName,''));
         if (amountText.contains('donot'))
           call.turnStarAmount = 0;
+        //  First check for fractions 1/4 1/2 3/4
         else if (amountText.contains('14'))
           call.turnStarAmount = 1;
         else if (amountText.contains('12'))
@@ -48,6 +49,15 @@ class TurnTheStar extends Action {
         else if (amountText.contains('34'))
           call.turnStarAmount = 3;
         else if (amountText.contains('Full'))
+          call.turnStarAmount = 4;
+        //  Also check for number of times 1, 2, 3, 4
+        else if (amountText.contains('1'))
+          call.turnStarAmount = 1;
+        else if (amountText.contains('2'))
+          call.turnStarAmount = 2;
+        else if (amountText.contains('3'))
+          call.turnStarAmount = 3;
+        else if (amountText.contains('4'))
           call.turnStarAmount = 4;
         else
           throw CallError('Turn the Star how much?');

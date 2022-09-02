@@ -22,11 +22,19 @@ import '../common.dart';
 class Replace extends Action {
 
   @override final level = LevelData.C1;
+  @override var help = 'Use Replace to change one part of a call with parts.'
+      ' Currently you need to refer to the part to replace by number, such as:'
+      ' "Replace the 3rd part woth (call)" ';
+  @override var helplink = 'c1/replace';
   Replace(String name) : super(name);
 
   @override
   Future<void> perform(CallContext ctx) async {
     final callName = name.replaceFirst('(but )?replace .*'.ri,'').trim();
+    if (callName.isBlank)
+      throw CallError('Replace what?');
+    if (!name.contains(' with '.ri))
+      throw CallError('Need to replace With some other call');
     final replacementName = name.replaceFirst('.* with'.ri, '').trim();
     await ctx.subContext(ctx.dancers, (ctx2) async {
       if (!ctx2.matchCodedCall(callName))

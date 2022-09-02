@@ -21,9 +21,8 @@ import '../common.dart';
 
 class Run extends Action {
 
-  @override
-  var level = LevelData.B2;
-
+  @override var level = LevelData.B2;
+  @override var helplink = 'b2/run';
   Run(String name) : super(name);
 
   void _runOne(Dancer d, Dancer d2, String dir) {

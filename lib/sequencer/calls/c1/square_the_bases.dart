@@ -23,6 +23,11 @@ class SquareTheBases extends Action with CallWithParts {
 
   @override var level = LevelData.C1;
   @override var numberOfParts = 3;
+  @override var help = '''Square the Bases has 3 parts:
+  1.  Centers Square Thru 3 while Ends Pass Thru and Bend
+  2.  Split Square Thru 2
+  3.  Trade By''';
+  @override var helplink = 'c1/square_the_bases';
   SquareTheBases() : super('Square the Bases');
 
   @override

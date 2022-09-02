@@ -21,9 +21,14 @@ import '../common.dart';
 
 class SwingAndMix extends Action with CallWithParts {
 
-  @override var level = LevelData.A1;
+  @override var level = LevelData.A2;
   @override var numberOfParts = 3;
-  SwingAndMix() : super('Mix');
+  @override var help = '''Swing and Mix is a 3-part call:
+  1.  Swing
+  2.  Centers Cross Run
+  3.  New Centers Trade''';
+  @override var helplink = 'a2/swing_and_mix';
+  SwingAndMix(String name) : super(name);
 
   @override
   Future<void> performPart1(CallContext ctx) async {

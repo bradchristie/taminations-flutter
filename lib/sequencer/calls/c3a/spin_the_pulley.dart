@@ -24,6 +24,13 @@ class SpinThePulley extends Action with CallWithParts, ButCall {
   @override var level = LevelData.C3A;
   @override var numberOfParts = 3;
   @override var butCall = 'Peel Off';
+  @override var help = '''Spin the Pulley is a 3-part call:
+  1.  Centers or designated dancers Touch if needed and Cast Off 3/4
+  2.  Triple Cross
+  3.  Peel Off
+You can replace Part 3 by adding But (another call).
+Skip Part 1 with the call The Pulley.''';
+  @override var helplink = 'c3a/spin_the_pulley';
   SpinThePulley(String name) : super(name);
 
   @override

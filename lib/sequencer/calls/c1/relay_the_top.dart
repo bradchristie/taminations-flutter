@@ -23,6 +23,14 @@ class RelayTheTop extends Action with CallWithParts, CallWithStars, ButCall {
 
   @override int numberOfParts = 4;
   @override final level = LevelData.C1;
+  @override var help = '''Relay the Top is a 4-part call:
+  1.  Swing
+  2.  Centers Cast Off 3/4, others Hourglass Circulate
+  3.  Center 4 Turn the Star 1/4, others Trade
+  4.  Center 4 in the wave Cast Off 3/4, others Hourglass Circulate
+The star can be modified with Turn the Star (fraction)
+Cast Off 3/4 in Part 4 can be replaced with But (another call)''';
+  @override var helplink = 'c1/relay_the_top';
   RelayTheTop(String name) : super(name);
 
   @override

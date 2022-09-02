@@ -23,7 +23,9 @@ import '../common.dart';
 class Reshape extends TriangleCirculate {
 
   @override var level = LevelData.C2;
-  @override var rootName = 'Triangle Reshape( The Triangle)?'.ri;
+  @override var rootName = '(Triangle )?Reshape( The Triangle)?'.ri;
+  @override var help = TriangleCirculate('').help;
+  @override var helplink = 'c2/reshape_the_triangle';
   Reshape(String name) : super(name);
 
   @override

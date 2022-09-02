@@ -29,6 +29,8 @@ import '../action.dart';
 
 class SquareTheSet extends Action {
 
+  @override var help = 'Square the Set moves all the dancers to '
+      'their original squared set locations.  This is not a real call.';
   SquareTheSet() : super('Square the Set' );
 
   @override
