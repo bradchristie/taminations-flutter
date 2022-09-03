@@ -3247,6 +3247,17 @@ Slide Thru
 Centers Trade
 Wheel and Deal
 Centers Wheel Around
+Allemande Left''',
+
+  'Trail to a Diamond' :
+'''Heads Wheel Thru
+Right and Left Thru Boys Roll
+Trail to a Diamond
+Hinge
+Trail to a Diamond
+Cut the Diamond
+Cast Off 3/4
+Left Square Thru 4
 Allemande Left'''
 
 };

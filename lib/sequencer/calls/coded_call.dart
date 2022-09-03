@@ -190,6 +190,7 @@ import 'c2/stack_the_line.dart';
 import 'c2/stagger.dart';
 import 'c2/tag_your_neighbor.dart';
 import 'c2/the_k.dart';
+import 'c2/trail_to_a_diamond.dart';
 import 'c2/truck.dart';
 import 'c2/wheel_the_ocean.dart';
 import 'c2/zip_code.dart';
@@ -551,6 +552,7 @@ abstract class CodedCall extends Call {
     '(left)?touch1(4|2)'.ri: (name) => TouchAQuarter(name),
     '(partner)?trade(?!thewave)'.ri: (name) => Trade(name),
     'trail'.ri: (name) => Trailers(name),
+    'trailtoadiamond'.ri: (name) => TrailToADiamond(name),
     'transferand.*'.ri: (name) => TransferAnd(name),
     '(inside|outside|inpoint|outpoint|tandembased|wavebased)?trianglecirculate'.ri:
         (name) => TriangleCirculate(name),
