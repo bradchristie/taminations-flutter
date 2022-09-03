@@ -3234,6 +3234,19 @@ Plenty
 Extend
 Boys Run
 Star Thru
+Allemande Left''',
+
+  'Leaders Right Loop' :
+'''Heads Pass the Ocean
+Extend
+Leaders Right Loop 2
+Triple Box Pass Thru
+Triple Box Shakedown
+Trade By
+Slide Thru
+Centers Trade
+Wheel and Deal
+Centers Wheel Around
 Allemande Left'''
 
 };

@@ -395,7 +395,7 @@ abstract class CodedCall extends Call {
 
     '(cross)?kickoff'.ri: (name) => KickOff(name),
 
-    'lead'.ri: (name) => Leaders(name),
+    'lead(er)?s?'.ri: (name) => Leaders(name),
     'likeacoupleup'.ri: (_) => LikeACoupleUp(),
     'linearaction'.ri: (_) => LinearAction(),
     '(left)?linearcycle'.ri: (name) => LinearCycle(name),

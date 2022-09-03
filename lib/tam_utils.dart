@@ -482,7 +482,7 @@ class TamUtils {
       .replaceAll('\\bm[ea]n\\b'.ri,'Boy')
       .replaceAll('\\bwom[ea]n\\b'.ri,'Girl')
       .replaceAll('\\blad(y|ies)\\b'.ri,'Girl')
-      .replaceAll('\\blead(er)?(ing)?s?\\b'.ri,'Lead')
+    //  .replaceAll('\\blead(er)?(ing)?s?\\b'.ri,'Lead')
       .replaceAll('\\btrail(er)?(ing)?s?\\b'.ri,'Trail')
       .replaceAll('\\bcentres?\\b'.ri,'Center')
       .replaceAllMapped('\\b(1|3)4 tag the line\\b'.ri,
