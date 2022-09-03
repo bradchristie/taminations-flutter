@@ -155,7 +155,7 @@ class _AnimListState extends fm.State<AnimListFrame> {
           }
         }
         if (group.isNotBlank)
-          from = tamTitle.replaceFirst(group, ' ').trim();
+          from = tamTitle.replaceFirst(group.replaceFirst('\\(.*\\\)'.r,'').trim(), ' ').trim();
       } else if (tamTitle != prevTitle) {
         // Not a group but a different call
         // Put out a header with this call

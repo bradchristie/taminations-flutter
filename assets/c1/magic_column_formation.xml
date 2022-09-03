@@ -385,11 +385,11 @@
     </path>
   </tam>
 
-  <tamxref title="Magic Column (C-2) File to a Line" group="Magic Column (C-2)"
+  <tamxref title="Magic Column File to a Line" group="Magic Column (C-2)"
            xref-link="c2/file_to_a_line"
            xref-title="Magic Column File to a Line"/>
 
-  <tamxref title="Magic Column (C-2) Invert the Column" group="Magic Column (C-2)"
+  <tamxref title="Magic Column Invert the Column" group="Magic Column (C-2)"
            xref-link="c2/invert_the_column"
            xref-title="Magic Column Invert the Column"/>
 

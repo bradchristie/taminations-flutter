@@ -568,31 +568,31 @@
     </path>
   </tam>
 
-  <tamxref title="&quot;O&quot; (C-1) Cross and Turn" group="&quot;O&quot; (C-1)"
+  <tamxref title="&quot;O&quot; Cross and Turn" group="&quot;O&quot; (C-1)"
            xref-link="c1/cross_and_turn"
            xref-title="&quot;O&quot; Cross and Turn"/>
 
-  <tamxref title="&quot;O&quot; (C-1) Reverse Cross and Turn" group="&quot;O&quot; (C-1)"
+  <tamxref title="&quot;O&quot; Reverse Cross and Turn" group="&quot;O&quot; (C-1)"
            xref-link="c1/reverse_cross_and_turn"
            xref-title="&quot;O&quot; Reverse Cross and Turn"/>
 
-  <tamxref title="&quot;O&quot; (C-1) Shakedown" group="&quot;O&quot; (C-1)"
+  <tamxref title="&quot;O&quot; Shakedown" group="&quot;O&quot; (C-1)"
            xref-link="c1/shakedown"
            xref-title="&quot;O&quot; Shakedown"/>
 
-  <tamxref title="&quot;O&quot; (C-1) Wheel Fan Thru" group="&quot;O&quot; (C-1)"
+  <tamxref title="&quot;O&quot; Wheel Fan Thru" group="&quot;O&quot; (C-1)"
            xref-link="c1/wheel_fan_thru"
            xref-title="&quot;O&quot; Wheel Fan Thru"/>
 
-  <tamxref title="&quot;O&quot; (C-1) Left Wheel Fan Thru" group="&quot;O&quot; (C-1)"
+  <tamxref title="&quot;O&quot; Left Wheel Fan Thru" group="&quot;O&quot; (C-1)"
            xref-link="c1/wheel_fan_thru"
            xref-title="&quot;O&quot; Left Wheel Fan Thru"/>
 
-  <tamxref title="&quot;O&quot; (C-1) Zing" group="&quot;O&quot; (C-1)"
+  <tamxref title="&quot;O&quot; Zing" group="&quot;O&quot; (C-1)"
            xref-link="c1/zing"
            xref-title="&quot;O&quot; Zing"/>
 
-  <tam title="Magic &quot;O&quot; (C-1) Circulate" group="Magic &quot;O&quot; (C-1)">
+  <tam title="Magic &quot;O&quot; Circulate" group="Magic &quot;O&quot; (C-1)">
     <formation>
       <dancer gender="boy" x="-3" y="1" angle="0"/>
       <dancer gender="girl" x="-3" y="-1" angle="180"/>
@@ -613,7 +613,7 @@
     </path>
   </tam>
 
-  <tam title="Magic &quot;O&quot; (C-1) Circulate"
+  <tam title="Magic &quot;O&quot; Circulate"
        group="Magic &quot;O&quot; (C-1)" display="no">
     <formation>
       <dancer gender="boy" x="-3" y="1" angle="180"/>
@@ -635,7 +635,7 @@
     </path>
   </tam>
 
-  <tam title="Magic &quot;O&quot; (C-1) Walk and Dodge" group="Magic &quot;O&quot; (C-1)">
+  <tam title="Magic &quot;O&quot; Walk and Dodge" group="Magic &quot;O&quot; (C-1)">
     <formation>
       <dancer gender="boy" x="-3" y="1" angle="0"/>
       <dancer gender="girl" x="-3" y="-1" angle="180"/>
@@ -656,7 +656,7 @@
     </path>
   </tam>
 
-  <tamxref title="&quot;O&quot; (C-2) Turn to a Line" group="&quot;O&quot; (C-2)"
+  <tamxref title="&quot;O&quot; Turn to a Line" group="&quot;O&quot; (C-2)"
            xref-link="c2/turn_to_a_line"
            xref-title="&quot;O&quot; Turn to a Line"/>
 

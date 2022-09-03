@@ -23,7 +23,7 @@
 
 <tamination title="All 4 Couples / All 8 concepts">
 
-  <tam title="All 4 Couples Chase Right" group="All 4 Couples"
+  <tam title="All 4 Couples Chase Right" group="All 4 Couples (with calls through Plus)"
        formation="Static Facing Out">
     <path numbers="2 7">
       <move select="Run Right" beats="4" scaleY="1.5" offsetX="-1" />
@@ -51,7 +51,7 @@
     </taminator>
   </tam>
 
-  <tam title="All 4 Couples Fan the Top" group="All 4 Couples"
+  <tam title="All 4 Couples Fan the Top" group="All 4 Couples (with calls through Plus)"
        formation="Static Square">
     <path>
       <move select="Extend Left" beats="2" scaleX="2" scaleY="2" />
@@ -73,7 +73,7 @@
     </path>
   </tam>
 
-  <tam title="All 4 Couples Left Chase" group="All 4 Couples"
+  <tam title="All 4 Couples Left Chase" group="All 4 Couples (with calls through Plus)"
        formation="Static Facing Out">
     <path>
       <move select="Run Left" scaleY=".5" offsetX="-2" />
@@ -97,7 +97,7 @@
     </path>
   </tam>
 
-  <tam title="All 4 Couples Left Touch a Quarter" group="All 4 Couples"
+  <tam title="All 4 Couples Left Touch a Quarter" group="All 4 Couples (with calls through Plus)"
        formation="Static Square">
     <path>
       <move select="Extend Left"/>
@@ -121,7 +121,7 @@
     </path>
   </tam>
 
-  <tam title="All 4 Couples Pass Thru" group="All 4 Couples"
+  <tam title="All 4 Couples Pass Thru" group="All 4 Couples (with calls through Plus)"
        formation="Static Square">
     <path>
       <move select="Extend Left" beats="2" scaleX="2" scaleY="2" />
@@ -147,7 +147,7 @@
     </path>
   </tam>
 
-  <tam title="All 4 Couples Pass the Ocean" group="All 4 Couples"
+  <tam title="All 4 Couples Pass the Ocean" group="All 4 Couples (with calls through Plus)"
        formation="Static Square">
     <path>
       <move select="Extend Left" beats="2" scaleX="2" scaleY="2" />
@@ -177,7 +177,7 @@
     </path>
   </tam>
 
-  <tam title="All 4 Couples Right and Left Thru" group="All 4 Couples"
+  <tam title="All 4 Couples Right and Left Thru" group="All 4 Couples (with calls through Plus)"
        formation="Static Square">
     <path numbers="1 8">
       <move select="Extend Left" beats="2" scaleX="2" scaleY="2" />
@@ -207,7 +207,7 @@
     </path>
   </tam>
 
-  <tam title="All 4 Couples Single Circle to a Wave" group="All 4 Couples"
+  <tam title="All 4 Couples Single Circle to a Wave" group="All 4 Couples (with calls through Plus)"
        formation="Static Square">
     <path>
       <move select="Extend Left" beats="1.5" scaleY="1.5" />
@@ -239,7 +239,7 @@
     </path>
   </tam>
 
-  <tam title="All 4 Couples Slide Thru" group="All 4 Couples"
+  <tam title="All 4 Couples Slide Thru" group="All 4 Couples (with calls through Plus)"
        formation="Static Square" sequencer="gender-specific">
     <path>
       <move select="Extend Left" beats="2" scaleX="2" scaleY="2" />
@@ -261,7 +261,7 @@
     </path>
   </tam>
 
-  <tam title="All 4 Couples Slide Thru" group="All 4 Couples"
+  <tam title="All 4 Couples Slide Thru" group="All 4 Couples (with calls through Plus)"
        sequencer="gender-specific" display="none">
     <formation>
       <dancer gender="girl" x="-3" y="1" angle="0"/>
@@ -289,7 +289,7 @@
     </path>
   </tam>
 
-  <tam title="All 4 Couples Slide Thru" group="All 4 Couples"
+  <tam title="All 4 Couples Slide Thru" group="All 4 Couples (with calls through Plus)"
        sequencer="gender-specific" display="none">
     <formation>
       <dancer gender="girl" x="-3" y="1" angle="0"/>
@@ -317,7 +317,7 @@
     </path>
   </tam>
 
-  <tam title="All 4 Couples Spin the Top" group="All 4 Couples"
+  <tam title="All 4 Couples Spin the Top" group="All 4 Couples (with calls through Plus)"
        formation="Static Square">
     <path>
       <move select="Extend Left" beats="2" scaleX="2" scaleY="2" />
@@ -343,7 +343,7 @@
     </path>
   </tam>
 
-  <tam title="All 4 Couples Square Thru" group="All 4 Couples"
+  <tam title="All 4 Couples Square Thru" group="All 4 Couples (with calls through Plus)"
        formation="Static Square">
     <path>
       <move select="Extend Left" beats="2" scaleX="2" scaleY="2" />
@@ -387,7 +387,7 @@
     </path>
   </tam>
 
-  <tam title="All 4 Couples Square Thru to a Wave" group="All 4 Couples"
+  <tam title="All 4 Couples Square Thru to a Wave" group="All 4 Couples (with calls through Plus)"
        formation="Static Square" display="none">
     <path>
       <move select="Extend Left" beats="2" scaleX="2" scaleY="2" />
@@ -423,7 +423,7 @@
     </path>
   </tam>
 
-  <tam title="All 4 Couples Square Thru 3" group="All 4 Couples"
+  <tam title="All 4 Couples Square Thru 3" group="All 4 Couples (with calls through Plus)"
        formation="Static Square" display="none">
     <path>
       <move select="Extend Left" beats="2" scaleX="2" scaleY="2" />
@@ -461,7 +461,7 @@
     </path>
   </tam>
 
-  <tam title="All 4 Couples Square Thru 3 to a Wave" group="All 4 Couples"
+  <tam title="All 4 Couples Square Thru 3 to a Wave" group="All 4 Couples (with calls through Plus)"
        formation="Static Square" display="none">
     <path>
       <move select="Extend Left" beats="2" scaleX="2" scaleY="2" />
@@ -491,7 +491,7 @@
     </path>
   </tam>
 
-  <tam title="All 4 Couples Square Thru 2" group="All 4 Couples"
+  <tam title="All 4 Couples Square Thru 2" group="All 4 Couples (with calls through Plus)"
        formation="Static Square" display="none">
     <path>
       <move select="Extend Left" beats="2" scaleX="2" scaleY="2" />
@@ -523,7 +523,7 @@
     </path>
   </tam>
 
-  <tam title="All 4 Couples Square Thru 2 to a Wave" group="All 4 Couples"
+  <tam title="All 4 Couples Square Thru 2 to a Wave" group="All 4 Couples (with calls through Plus)"
        formation="Static Square" display="none">
     <path>
       <move select="Extend Left" beats="2" scaleX="2" scaleY="2" />
@@ -547,7 +547,7 @@
     </path>
   </tam>
 
-  <tam title="All 4 Couples Star Thru" group="All 4 Couples"
+  <tam title="All 4 Couples Star Thru" group="All 4 Couples (with calls through Plus)"
        formation="Static Square" sequencer="gender-specific">
     <path>
       <move select="Extend Left" beats="2" scaleX="2" scaleY="2" />
@@ -569,7 +569,7 @@
     </path>
   </tam>
 
-  <tam title="All 4 Couples Star Thru" group="All 4 Couples"
+  <tam title="All 4 Couples Star Thru" group="All 4 Couples (with calls through Plus)"
        sequencer="gender-specific" display="none">
     <formation>
       <dancer gender="girl" x="-3" y="1" angle="0"/>
@@ -597,7 +597,7 @@
     </path>
   </tam>
 
-  <tam title="All 4 Couples Star Thru" group="All 4 Couples"
+  <tam title="All 4 Couples Star Thru" group="All 4 Couples (with calls through Plus)"
        sequencer="gender-specific" display="none">
     <formation>
       <dancer gender="girl" x="-3" y="1" angle="0"/>
@@ -625,7 +625,7 @@
     </path>
   </tam>
 
-  <tam title="All 4 Couples Step to a Wave" group="All 4 Couples"
+  <tam title="All 4 Couples Step to a Wave" group="All 4 Couples (with calls through Plus)"
        formation="Static Square">
     <path>
       <move select="Extend Left" beats="2" scaleX="2" scaleY="2" />
@@ -643,7 +643,7 @@
     </path>
   </tam>
 
-  <tam title="All 4 Couples Swing Thru" group="All 4 Couples"
+  <tam title="All 4 Couples Swing Thru" group="All 4 Couples (with calls through Plus)"
        from="Static Square"
        formation="Static Square">
     <path>
@@ -668,7 +668,7 @@
     </path>
   </tam>
 
-  <tam title="All 4 Couples Touch a Quarter" group="All 4 Couples"
+  <tam title="All 4 Couples Touch a Quarter" group="All 4 Couples (with calls through Plus)"
        formation="Static Square">
     <path numbers="1 8">
       <move select="Extend Left" beats="3" scaleX="3" scaleY="2.5" />
@@ -690,7 +690,7 @@
     </path>
   </tam>
 
-  <tam title="All 4 Couples Turn Thru" group="All 4 Couples"
+  <tam title="All 4 Couples Turn Thru" group="All 4 Couples (with calls through Plus)"
        formation="Static Square">
     <path>
       <move select="Extend Left" beats="2" scaleX="2" scaleY="1.5"/>
@@ -724,7 +724,7 @@
 
 
 
-  <tam title="All 8 Box Circulate" group="All 8" formation="Static MiniWaves RH">
+  <tam title="All 8 Box Circulate" group="All 8 (with calls through Plus)" formation="Static MiniWaves RH">
     <path>
       <move select="Forward 6" beats="4"/>
     </path>
@@ -739,7 +739,7 @@
     </path>
   </tam>
 
-  <tam title="All 8 Box Circulate" group="All 8"
+  <tam title="All 8 Box Circulate" group="All 8 (with calls through Plus)"
        formation="Static MiniWaves LH" display="none">
     <path>
       <move select="Run Left" beats="4"/>
@@ -755,7 +755,7 @@
     </path>
   </tam>
 
-  <tam title="All 8 Chain Down the Line" group="All 8" formation="Thar RH Girls">
+  <tam title="All 8 Chain Down the Line" group="All 8 (with calls through Plus)" formation="Thar RH Girls">
     <path>
       <move select="Swing Right" />
       <move select="Hinge Left" />
@@ -778,7 +778,7 @@
     </path>
   </tam>
 
-  <tam title="All 8 Chain Down the Line" group="All 8" display="none">
+  <tam title="All 8 Chain Down the Line" group="All 8 (with calls through Plus)" display="none">
     <formation>
       <dancer gender="girl" x="-1" y="0" angle="90"/>
       <dancer gender="boy" x="-3" y="0" angle="90"/>
@@ -809,7 +809,7 @@
 
   <!-- All 8 Chase Right / Left Chase for sequencer
        as it could be entered that way instead of All 4 Couples -->
-  <tam title="All 8 Chase Right" group="All 8"
+  <tam title="All 8 Chase Right" group="All 8 (with calls through Plus)"
        formation="Static Facing Out" display="no">
     <path numbers="2 7">
       <move select="Run Right" beats="4" scaleY="1.5" offsetX="-1" />
@@ -833,7 +833,7 @@
     </path>
   </tam>
 
-  <tam title="All 8 Left Chase" group="All 8"
+  <tam title="All 8 Left Chase" group="All 8 (with calls through Plus)"
        formation="Static Facing Out" display="no">
     <path>
       <move select="Run Left" scaleY=".5" offsetX="-2" />
@@ -858,7 +858,7 @@
   </tam>
 
 
-  <tam title="All 8 Crossfire" group="All 8">
+  <tam title="All 8 Crossfire" group="All 8 (with calls through Plus)">
     <formation>
       <dancer gender="girl" x="-1" y="0" angle="90"/>
       <dancer gender="boy" x="-3" y="0" angle="90"/>
@@ -881,7 +881,7 @@
     </path>
   </tam>
 
-  <tam title="All 8 Crossfire" group="All 8" display="no">
+  <tam title="All 8 Crossfire" group="All 8 (with calls through Plus)" display="no">
     <formation>
       <dancer gender="girl" x="-1" y="0" angle="270"/>
       <dancer gender="boy" x="-3" y="0" angle="270"/>
@@ -904,7 +904,7 @@
     </path>
   </tam>
 
-  <tam title="All 8 Cut the Diamond" group="All 8"
+  <tam title="All 8 Cut the Diamond" group="All 8 (with calls through Plus)"
        formation="Thar LH Girls">
     <path>
       <move select="Forward 2"/>
@@ -924,7 +924,7 @@
     </path>
   </tam>
 
-  <tam title="All 8 Diamond Circulate" group="All 8"
+  <tam title="All 8 Diamond Circulate" group="All 8 (with calls through Plus)"
        formation="Star Promenade">
     <path>
       <move select="Lead Left" beats="3" scaleX="3"/>
@@ -940,7 +940,7 @@
     </path>
   </tam>
 
-  <tam title="All 8 Dixie Style to a Wave" group="All 8"
+  <tam title="All 8 Dixie Style to a Wave" group="All 8 (with calls through Plus)"
        formation="Static Square">
     <path numbers="1 8">
       <move select="Extend Right" beats="5" scaleY="1.75"/>
@@ -962,7 +962,7 @@
     </path>
   </tam>
 
-  <tam title="All 8 Reverse Dixie Style to a Wave" group="All 8"
+  <tam title="All 8 Reverse Dixie Style to a Wave" group="All 8 (with calls through Plus)"
        formation="Static Square">
     <path>
       <move select="Extend Right" hands="left" beats="3" scaleX="3" scaleY="2" />
@@ -984,7 +984,7 @@
     </path>
   </tam>
 
-  <tam title="All 8 Dixie Style to a Wave" group="All 8" display="none"
+  <tam title="All 8 Dixie Style to a Wave" group="All 8 (with calls through Plus)" display="none"
        formation="Static Girls Lead">
     <path>
       <move select="Extend Right" beats="4" scaleX="2" scaleY=".75"/>
@@ -1006,7 +1006,7 @@
     </path>
   </tam>
 
-  <tam title="All 8 Reverse Dixie Style to a Wave" group="All 8" display="none"
+  <tam title="All 8 Reverse Dixie Style to a Wave" group="All 8 (with calls through Plus)" display="none"
        formation="Static Girls Lead">
     <path>
       <move select="Extend Left" beats="4" scaleX="2" scaleY=".75"/>
@@ -1028,7 +1028,7 @@
     </path>
   </tam>
 
-  <tam title="All 8 Explode the Wave" group="All 8" formation="Thar LH Girls">
+  <tam title="All 8 Explode the Wave" group="All 8 (with calls through Plus)" formation="Thar LH Girls">
     <path>
       <move select="Lead Left" scaleX="2" beats="4"/>
       <move select="Forward 2" />
@@ -1055,7 +1055,7 @@
     </taminator>
   </tam>
 
-  <tam title="All 8 Flip the Diamond" group="All 8"
+  <tam title="All 8 Flip the Diamond" group="All 8 (with calls through Plus)"
        formation="Thar LH Girls">
     <path>
       <move select="Forward 2"/>
@@ -1073,7 +1073,7 @@
     </path>
   </tam>
 
-  <tam title="All 8 Flutterwheel" group="All 8"
+  <tam title="All 8 Flutterwheel" group="All 8 (with calls through Plus)"
        from="Static Square"
        formation="Static Square">
     <path>
@@ -1104,7 +1104,7 @@
     </path>
   </tam>
 
-  <tam title="All 8 Follow Your Neighbor" group="All 8"
+  <tam title="All 8 Follow Your Neighbor" group="All 8 (with calls through Plus)"
        formation="Static MiniWaves RH">
     <path>
       <move select="Forward 3" />
@@ -1126,7 +1126,7 @@
     </path>
   </tam>
 
-  <tam title="All 8 Follow Your Neighbor and Spread" group="All 8"
+  <tam title="All 8 Follow Your Neighbor and Spread" group="All 8 (with calls through Plus)"
        formation="Static MiniWaves RH">
     <path>
       <move select="Forward 3" />
@@ -1150,7 +1150,7 @@
     </path>
   </tam>
 
-  <tam title="All 8 Half Tag" group="All 8">
+  <tam title="All 8 Half Tag" group="All 8 (with calls through Plus)">
     <formation>
       <dancer gender="boy" x="-1" y="0" angle="90"/>
       <dancer gender="girl" x="-3" y="0" angle="90"/>
@@ -1173,7 +1173,7 @@
     </path>
   </tam>
 
-  <tam title="All 8 Left Swing Thru" formation="Thar RH Boys" group="All 8">
+  <tam title="All 8 Left Swing Thru" formation="Thar RH Boys" group="All 8 (with calls through Plus)">
     <path>
       <move select="Swing Left"/>
     </path>
@@ -1190,7 +1190,7 @@
     </path>
   </tam>
 
-  <tam title="All 8 Linear Cycle" group="All 8"
+  <tam title="All 8 Linear Cycle" group="All 8 (with calls through Plus)"
        formation="Thar LH Boys">
     <path>
       <move select="Hinge Right" />
@@ -1216,7 +1216,7 @@
     </path>
   </tam>
 
-  <tam title="All 8 Peel Off" group="All 8"
+  <tam title="All 8 Peel Off" group="All 8 (with calls through Plus)"
        formation="Static MiniWaves RH">
     <path>
       <move select="U-Turn Left" beats="4" offsetX="3" />
@@ -1232,7 +1232,7 @@
     </path>
   </tam>
 
-  <tam title="All 8 Peel the Top" group="All 8"
+  <tam title="All 8 Peel the Top" group="All 8 (with calls through Plus)"
        formation="Static MiniWaves RH">
     <path>
       <move select="Forward 3" beats="4" />
@@ -1252,7 +1252,7 @@
     </path>
   </tam>
 
-  <tam title="All 8 Peel the Top" group="All 8"
+  <tam title="All 8 Peel the Top" group="All 8 (with calls through Plus)"
        formation="Static MiniWaves LH" display="none">
     <path>
       <move select="Run Right" beats="4" offsetX="-3" />
@@ -1272,7 +1272,7 @@
     </path>
   </tam>
 
-	<tam title="All 8 Recycle" group="All 8" formation="Thar LH Girls">
+	<tam title="All 8 Recycle" group="All 8 (with calls through Plus)" formation="Thar LH Girls">
     <path>
       <move select="Run Right" beats="2" scaleX=".5" scaleY=".5" offsetX="-1.5" />
       <move select="Run Right" beats="2" scaleX=".5" scaleY=".5" offsetX="1.5" />
@@ -1289,7 +1289,7 @@
     </path>
 	</tam>
 
-  <tam title="All 8 Recycle" group="All 8" formation="Thar RH Girls" display="no">
+  <tam title="All 8 Recycle" group="All 8 (with calls through Plus)" formation="Thar RH Girls" display="no">
     <path>
       <move select="Run Left" beats="2" scaleX=".5" scaleY=".5" offsetX="-1.5" />
       <move select="Run Left" beats="2" scaleX=".5" scaleY=".5" offsetX="1.5" />
@@ -1306,11 +1306,11 @@
     </path>
   </tam>
 
-  <tamxref title="All 8 Reverse Flutterwheel" group="All 8"
+  <tamxref title="All 8 Reverse Flutterwheel" group="All 8 (with calls through Plus)"
            xref-link="b2/flutterwheel"
            xref-title="All 4 Men Lead Reverse Flutterwheel"/>
 
-  <tam title="All 8 Reverse Flutterwheel" group="All 8"
+  <tam title="All 8 Reverse Flutterwheel" group="All 8 (with calls through Plus)"
        from="Static Square"
        formation="Static Square">
     <path>
@@ -1341,7 +1341,7 @@
     </path>
   </tam>
 
-  <tam title="All 8 Scoot Back" group="All 8"
+  <tam title="All 8 Scoot Back" group="All 8 (with calls through Plus)"
        formation="Static MiniWaves RH">
     <path>
       <move select="Forward 3" />
@@ -1361,7 +1361,7 @@
     </path>
   </tam>
 
-  <tam title="All 8 Swing Thru" group="All 8"
+  <tam title="All 8 Swing Thru" group="All 8 (with calls through Plus)"
        formation="Thar LH Girls">
     <path numbers="6 7" couples="2 4">
       <move select="Swing Right"/>
@@ -1379,7 +1379,7 @@
     </path>
   </tam>
 
-  <tam title="All 8 Veer Left" group="All 8" formation="Static Square">
+  <tam title="All 8 Veer Left" group="All 8 (with calls through Plus)" formation="Static Square">
     <path>
       <move select="Extend Left" beats="4" scaleX="3" scaleY="2" hands="right"/>
     </path>
@@ -1394,7 +1394,7 @@
     </path>
   </tam>
 
-  <tam title="All 8 Walk and Dodge" group="All 8"
+  <tam title="All 8 Walk and Dodge" group="All 8 (with calls through Plus)"
        from=""
        formation="Static MiniWaves RH"
        fractions="" >
@@ -1414,7 +1414,7 @@
     </path>
   </tam>
 
-  <tam title="All 8 Zoom" group="All 8"
+  <tam title="All 8 Zoom" group="All 8 (with calls through Plus)"
        from=""
        formation="Static MiniWaves RH"
        fractions="" >
@@ -1437,7 +1437,7 @@
   </tam>
 
 
-  <tam title="All 4 Couples (A-1) Brace Thru" group="All 4 Couples (A-1)"
+  <tam title="All 4 Couples Brace Thru" group="All 4 Couples (with A-1 calls)"
        sequencer="gender-specific">
     <formation name="Static Square">
       <dancer gender="boy" x="-3" y="1" angle="0"/>
@@ -1473,7 +1473,7 @@
     </path>
   </tam>
 
-  <tam title="All 4 Couples (A-1) Cross Trail Thru" group="All 4 Couples (A-1)"
+  <tam title="All 4 Couples Cross Trail Thru" group="All 4 Couples (with A-1 calls)"
        formation="Static Square">
     <path>
       <move select="Extend Left" beats="2" scaleX="2" scaleY="2" />
@@ -1499,8 +1499,8 @@
     </path>
   </tam>
 
-  <tam title="All 4 Couples (A-1) Double Star Thru"
-       formation="Static Square" group="All 4 Couples (A-1)"
+  <tam title="All 4 Couples Double Star Thru"
+       formation="Static Square" group="All 4 Couples (with A-1 calls)"
        sequencer="gender-specific">
     <path>
       <move select="Extend Left" beats="2" scaleX="2" scaleY="2" />
@@ -1530,10 +1530,10 @@
     </path>
   </tam>
 
-  <tam title="All 4 Couples (A-1) Pair Off"
+  <tam title="All 4 Couples Pair Off"
        from="Static Square"
        formation="Static Square"
-       group="All 4 Couples (A-1)" >
+       group="All 4 Couples (with A-1 calls)" >
     <path>
       <move select="Eighth Left" beats=".5" />
       <move select="Forward" beats="3" scaleX="2.828" scaleY="2.828" />
@@ -1552,8 +1552,8 @@
     </path>
   </tam>
 
-  <tam title="All 4 Couples (A-1) Pass In" from="Static Square"
-       formation="Static Square" group="All 4 Couples (A-1)">
+  <tam title="All 4 Couples Pass In" from="Static Square"
+       formation="Static Square" group="All 4 Couples (with A-1 calls)">
     <path>
       <move select="Extend Left" beats="3" scaleX="2" scaleY="3" />
       <move select="Forward" />
@@ -1574,8 +1574,8 @@
     </path>
   </tam>
 
-  <tam title="All 4 Couples (A-1) Pass Out" from="Static Square"
-       formation="Static Square" group="All 4 Couples (A-1)">
+  <tam title="All 4 Couples Pass Out" from="Static Square"
+       formation="Static Square" group="All 4 Couples (with A-1 calls)">
     <path>
       <move select="Extend Left" beats="2" scaleX="2" scaleY="2" />
       <move select="Forward" />
@@ -1596,8 +1596,8 @@
     </path>
   </tam>
 
-  <tam title="All 4 Couples (A-1) Pass the Sea"
-       group="All 4 Couples (A-1)"
+  <tam title="All 4 Couples Pass the Sea"
+       group="All 4 Couples (with A-1 calls)"
        from="Static Square"
        formation="Static Square">
     <path>
@@ -1622,9 +1622,9 @@
     </path>
   </tam>
 
-  <tam title="All 4 Couples (A-1) Quarter In"
+  <tam title="All 4 Couples Quarter In"
        formation="Squared Set"
-       group="All 4 Couples (A-1)">
+       group="All 4 Couples (with A-1 calls)">
     <path>
       <move select="Extend Left" beats="3" scaleY="2" />
       <move select="Quarter Right" offsetX="1"/>
@@ -1643,9 +1643,9 @@
     </path>
   </tam>
 
-  <tam title="All 4 Couples (A-1) Quarter Out"
+  <tam title="All 4 Couples Quarter Out"
        formation="Squared Set"
-       group="All 4 Couples (A-1)">
+       group="All 4 Couples (with A-1 calls)">
     <path>
       <move select="Extend Left" beats="3" scaleY="2" />
       <move select="Quarter Left" offsetX="1"/>
@@ -1664,7 +1664,7 @@
     </path>
   </tam>
 
-  <tam title="All 4 Couples (A-1) Square Chain Thru" group="All 4 Couples (A-1)"
+  <tam title="All 4 Couples Square Chain Thru" group="All 4 Couples (with A-1 calls)"
        from="Static Square"
        formation="Static Square"
        parts="6.5;6" >
@@ -1706,7 +1706,7 @@
     </path>
   </tam>
 
-  <tam title="All 8 (A-1) Left Quarter Thru" group="All 8 (A-1)"
+  <tam title="All 8 Left Quarter Thru" group="All 8 (with A-1 calls)"
        formation="Static MiniWaves LH"
        fractions="1.5" >
     <path>
@@ -1725,9 +1725,9 @@
     </path>
   </tam>
 
-  <tam title="All 8 (A-1) Left Roll to a Wave"
+  <tam title="All 8 Left Roll to a Wave"
        from="Couples Facing Out"
-       formation="Static Facing Out" group="All 8 (A-1)">
+       formation="Static Facing Out" group="All 8 (with A-1 calls)">
     <path>
       <move select="Run Left" beats="4" offsetX="-3" />
     </path>
@@ -1742,8 +1742,8 @@
     </path>
   </tam>
 
-  <tam title="All 8 (A-1) Left Roll to a Wave" display="none"
-       formation="Static MiniWaves RH" group="All 8 (A-1)">
+  <tam title="All 8 Left Roll to a Wave" display="none"
+       formation="Static MiniWaves RH" group="All 8 (with A-1 calls)">
     <path>
       <move select="Forward 3" beats="4"/>
     </path>
@@ -1758,8 +1758,8 @@
     </path>
   </tam>
 
-  <tam title="All 8 (A-1) Left Roll to a Wave" display="none"
-       formation="Static MiniWaves LH" group="All 8 (A-1)">
+  <tam title="All 8 Left Roll to a Wave" display="none"
+       formation="Static MiniWaves LH" group="All 8 (with A-1 calls)">
     <path>
       <move select="U-Turn Left" beats="4" offsetX="-3" />
     </path>
@@ -1774,10 +1774,10 @@
     </path>
   </tam>
 
-  <tam title="All 8 (A-1) Left Wheel Thru"
+  <tam title="All 8 Left Wheel Thru"
        from="Static Square"
        formation="Static Square"
-       group="All 8 (A-1)" >
+       group="All 8 (with A-1 calls)" >
     <path>
       <move select="Lead Left" beats="7.5" scaleX="2" scaleY="2" />
     </path>
@@ -1796,8 +1796,8 @@
     </path>
   </tam>
 
-  <tam title="All 8 (A-1) Lockit" from="Right-Hand Thar"
-       formation="Thar LH Boys" group="All 8 (A-1)">
+  <tam title="All 8 Lockit" from="Right-Hand Thar"
+       formation="Thar LH Boys" group="All 8 (with A-1 calls)">
     <path>
       <move select="Hinge Left" beats="6" />
     </path>
@@ -1812,8 +1812,8 @@
     </path>
   </tam>
 
-  <tam title="All 8 (A-1) Lockit" from="Right-Hand Thar" display="none"
-       formation="Thar RH Boys" group="All 8 (A-1)">
+  <tam title="All 8 Lockit" from="Right-Hand Thar" display="none"
+       formation="Thar RH Boys" group="All 8 (with A-1 calls)">
     <path>
       <move select="Hinge Right" beats="6" />
     </path>
@@ -1828,10 +1828,10 @@
     </path>
   </tam>
 
-  <tam title="All 8 (A-1) Mix"
+  <tam title="All 8 Mix"
        from="Thar"
        formation="Thar LH Boys"
-       parts="4.5" group="All 8 (A-1)">
+       parts="4.5" group="All 8 (with A-1 calls)">
     <path>
       <move select="Hinge Left" />
       <move select="Lead Left" beats="3" scaleX="3" />
@@ -1852,10 +1852,10 @@
     </path>
   </tam>
 
-  <tam title="All 8 (A-1) Mix"
+  <tam title="All 8 Mix"
        from="Thar"
        formation="Thar RH Boys"
-       parts="4.5" group="All 8 (A-1)" display="none">
+       parts="4.5" group="All 8 (with A-1 calls)" display="none">
     <path>
       <move select="Hinge Right" />
       <move select="Lead Right" beats="3" scaleX="3" />
@@ -1876,10 +1876,10 @@
     </path>
   </tam>
 
-  <tam title="All 8 (A-1) Partner Tag"
+  <tam title="All 8 Partner Tag"
        from="Static Square"
        formation="Static Square"
-       group="All 8 (A-1)" >
+       group="All 8 (with A-1 calls)" >
     <path>
       <move select="Lead Right"/>
       <move select="Extend Left" beats="3" scaleX="3"/>
@@ -1900,7 +1900,7 @@
     </path>
   </tam>
 
-  <tam title="All 8 (A-1) Quarter Thru" group="All 8 (A-1)"
+  <tam title="All 8 Quarter Thru" group="All 8 (with A-1 calls)"
        formation="Static MiniWaves RH"
        fractions="1.5" >
     <path>
@@ -1919,10 +1919,10 @@
     </path>
   </tam>
 
-  <tam title="All 8 (A-1) Reverse Swap Around"
+  <tam title="All 8 Reverse Swap Around"
        from="Static Square"
        formation="Static Square"
-       fractions="3" group="All 8 (A-1)">
+       fractions="3" group="All 8 (with A-1 calls)">
     <path>
       <move select="Forward 6" />
     </path>
@@ -1937,10 +1937,10 @@
     </path>
   </tam>
 
-  <tam title="All 8 (A-1) Right Roll to a Wave"
+  <tam title="All 8 Right Roll to a Wave"
        from="Couples Facing Out"
        formation="Static Facing Out"
-       group="All 8 (A-1)">
+       group="All 8 (with A-1 calls)">
     <path>
       <move select="U-Turn Right" beats="4" offsetX="-3" />
     </path>
@@ -1955,9 +1955,9 @@
     </path>
   </tam>
 
-  <tam title="All 8 (A-1) Right Roll to a Wave" display="none"
+  <tam title="All 8 Right Roll to a Wave" display="none"
        formation="Static MiniWaves RH"
-       group="All 8 (A-1)">
+       group="All 8 (with A-1 calls)">
     <path>
       <move select="Extend Left" beats="4" scaleX="3" scaleY="2"/>
     </path>
@@ -1972,9 +1972,9 @@
     </path>
   </tam>
 
-  <tam title="All 8 (A-1) Right Roll to a Wave" display="none"
+  <tam title="All 8 Right Roll to a Wave" display="none"
        formation="Static MiniWaves LH"
-       group="All 8 (A-1)">
+       group="All 8 (with A-1 calls)">
     <path>
       <move select="Run Right" beats="4" offsetX="-3" />
     </path>
@@ -1989,10 +1989,10 @@
     </path>
   </tam>
 
-  <tam title="All 8 (A-1) Scoot and Dodge"
+  <tam title="All 8 Scoot and Dodge"
        from="Static Mini-Waves"
        formation="Static MiniWaves RH"
-       group="All 8 (A-1)" >
+       group="All 8 (with A-1 calls)" >
     <path>
       <move select="Forward 3" />
       <move select="Swing Right" />
@@ -2011,10 +2011,10 @@
     </path>
   </tam>
 
-  <tam title="All 8 (A-1) Scoot and Dodge" display="none"
+  <tam title="All 8 Scoot and Dodge" display="none"
        from="Static Mini-Waves"
        formation="Static MiniWaves LH"
-       group="All 8 (A-1)" >
+       group="All 8 (with A-1 calls)" >
     <path>
       <move select="Dodge Left" />
     </path>
@@ -2033,10 +2033,10 @@
     </path>
   </tam>
 
-  <tam title="All 8 (A-1) Swap Around"
+  <tam title="All 8 Swap Around"
        from="Static Square"
        formation="Static Square"
-       fractions="3" group="All 8 (A-1)">
+       fractions="3" group="All 8 (with A-1 calls)">
     <path>
       <move select="Flip Right" beats="6" />
     </path>
@@ -2051,10 +2051,10 @@
     </path>
   </tam>
 
-  <tam title="All 8 (A-1) 3/4 Thru"
+  <tam title="All 8 3/4 Thru"
        from="Static Mini-Waves"
        formation="Static MiniWaves RH"
-       parts="4.5" group="All 8 (A-1)">
+       parts="4.5" group="All 8 (with A-1 calls)">
     <path>
       <move select="Swing Right"/>
       <move select="Quarter Right" hands="right" offsetY="-1"/>
@@ -2075,8 +2075,8 @@
     </path>
   </tam>
 
-  <tam title="All 8 (A-1) Turn and Deal" display="none"
-       group="All 8 (A-1)"
+  <tam title="All 8 Turn and Deal" display="none"
+       group="All 8 (with A-1 calls)"
        from="Thar"
        formation="Thar RH Boys">
     <path>
@@ -2093,8 +2093,8 @@
     </path>
   </tam>
 
-  <tam title="All 8 (A-1) Turn and Deal" display="none"
-       group="All 8 (A-1)"
+  <tam title="All 8 Turn and Deal" display="none"
+       group="All 8 (with A-1 calls)"
        from="Wrong Way Thar"
        formation="Thar LH Boys">
     <path>
@@ -2111,8 +2111,8 @@
     </path>
   </tam>
 
-  <tam title="All 8 (A-1) Turn and Deal" display="none"
-       group="All 8 (A-1)"
+  <tam title="All 8 Turn and Deal" display="none"
+       group="All 8 (with A-1 calls)"
        from="Star Promenade"
        formation="Star Promenade">
     <path>
@@ -2129,8 +2129,8 @@
     </path>
   </tam>
 
-  <tam title="All 8 (A-1) Turn and Deal"
-       group="All 8 (A-1)"
+  <tam title="All 8 Turn and Deal"
+       group="All 8 (with A-1 calls)"
        from="Reverse Star Promenade"
        formation="Reverse Star Promenade">
     <path>
@@ -2147,8 +2147,8 @@
     </path>
   </tam>
 
-  <tam title="All 8 (A-1) Wheel Thru"
-       group="All 8 (A-1)"
+  <tam title="All 8 Wheel Thru"
+       group="All 8 (with A-1 calls)"
        from="Static Square"
        formation="Static Square">
     <path>
@@ -2169,195 +2169,196 @@
     </path>
   </tam>
 
-  <tamxref title="All 8 (A-2) Box Transfer" group="All 8 (A-2)"
+  <tamxref title="All 8 Box Transfer" group="All 8 (with A-2 calls)"
            xref-link="a2/box_transfer"
            xref-title="All 8 Box Transfer"/>
 
-  <tamxref title="All 8 (A-2) Pass and Roll" group="All 8 (A-2)"
+  <tamxref title="All 8 Pass and Roll" group="All 8 (with A-2 calls)"
            xref-link="a2/pass_and_roll"
            xref-title="All 8 Pass and Roll"/>
 
-  <tamxref title="All 8 (A-2) Pass and Roll Your Neighbor and Spread" group="All 8 (A-2)"
+  <tamxref title="All 8 Pass and Roll Your Neighbor and Spread"
+           group="All 8 (with A-2 calls)"
            xref-link="a2/pass_and_roll_your_neighbor"
            xref-title="All 8 Pass and Roll Your Neighbor and Spread"/>
 
-  <tamxref title="All 8 (A-2) Peel and Trail" group="All 8 (A-2)"
+  <tamxref title="All 8 Peel and Trail" group="All 8 (with A-2 calls)"
            xref-link="a2/peel_and_trail"
            xref-title="All 8 Peel and Trail"/>
 
-  <tamxref title="All 8 (A-2) Recycle" group="All 8 (A-2)"
+  <tamxref title="All 8 Recycle" group="All 8 (with A-2 calls)"
            xref-link="a2/recycle"
            xref-title="All 8 Recycle"/>
 
-  <tamxref title="All 8 (A-2) Remake" group="All 8 (A-2)"
+  <tamxref title="All 8 Remake" group="All 8 (with A-2 calls)"
            xref-link="a2/remake"
            xref-title="All 8 Remake"/>
 
-  <tamxref title="All 8 (A-2) Scoot and Weave" group="All 8 (A-2)"
+  <tamxref title="All 8 Scoot and Weave" group="All 8 (with A-2 calls)"
            xref-link="a2/scoot_and_weave"
            xref-title="All 8 Scoot and Weave"/>
 
-  <tamxref title="All 8 (A-2) Slide" group="All 8 (A-2)"
+  <tamxref title="All 8 Slide" group="All 8 (with A-2 calls)"
            xref-link="a2/slip"
            xref-title="All 8 Slide"/>
 
-  <tamxref title="All 8 (A-2) Slip" group="All 8 (A-2)"
+  <tamxref title="All 8 Slip" group="All 8 (with A-2 calls)"
            xref-link="a2/slip"
            xref-title="All 8 Slip"/>
 
-  <tamxref title="All 8 (A-2) Slither" group="All 8 (A-2)"
+  <tamxref title="All 8 Slither" group="All 8 (with A-2 calls)"
            xref-link="a2/slip"
            xref-title="All 8 Slither"/>
 
-  <tamxref title="All 8 (A-2) Swing" group="All 8 (A-2)"
+  <tamxref title="All 8 Swing" group="All 8 (with A-2 calls)"
            xref-link="a2/slip"
            xref-title="All 8 Swing"/>
 
-  <tamxref title="All 8 (A-2) Swing and Mix" group="All 8 (A-2)"
+  <tamxref title="All 8 Swing and Mix" group="All 8 (with A-2 calls)"
            xref-link="a2/swing_and_mix"
            xref-title="All 8 Swing and Mix"/>
 
-  <tamxref title="All 8 (A-2) Switch the Wave" group="All 8 (A-2)"
+  <tamxref title="All 8 Switch the Wave" group="All 8 (with A-2 calls)"
            xref-link="a2/switch_the_wave"
            xref-title="All 8 Switch the Wave"/>
 
-  <tamxref title="All 8 (A-2) Trail Off" group="All 8 (A-2)"
+  <tamxref title="All 8 Trail Off" group="All 8 (with A-2 calls)"
            xref-link="a2/trail_off"
            xref-title="All 8 Trail Off"/>
 
-  <tamxref title="All 4 Couples (C-1) Right and Left Thru With the Flow"
+  <tamxref title="All 4 Couples Right and Left Thru With the Flow"
            group="All 4 Couples (C-1)"
            xref-link="c1/with_the_flow"
            xref-title="All 4 Couples Right and Left Thru With the Flow"/>
 
-  <tamxref title="All 4 Couples (C-1) Square Chain the Top"
+  <tamxref title="All 4 Couples Square Chain the Top"
            group="All 4 Couples (C-1)"
            xref-link="c1/square_chain_the_top"
            xref-title="All 4 Couples Square Chain the Top" />
 
-  <tamxref title="All 4 Couples (C-1) Zing" group="All 4 Couples (C-1)"
+  <tamxref title="All 4 Couples Zing" group="All 4 Couples (C-1)"
            xref-link="c1/zing"
            xref-title="All 4 Couples Zing"/>
 
-  <tamxref title="All 8 (C-1) Alter the Wave" group="All 8 (C-1)"
+  <tamxref title="All 8 Alter the Wave" group="All 8 (C-1)"
            xref-link="c1/alter_the_wave"
            xref-title="All 8 Alter the Wave"/>
 
-  <tamxref title="All 8 (C-1) Box Recycle" group="All 8 (C-1)"
+  <tamxref title="All 8 Box Recycle" group="All 8 (C-1)"
            xref-link="c1/recycle"
            xref-title="All 8 Box Recycle"/>
 
-  <tamxref title="All 8 (C-1) Chase Your Neighbor" group="All 8 (C-1)"
+  <tamxref title="All 8 Chase Your Neighbor" group="All 8 (C-1)"
            xref-link="c1/chase_your_neighbor"
            xref-title="All 8 Chase Your Neighbor"/>
 
-  <tamxref title="All 8 (C-1) Cross and Turn" group="All 8 (C-1)"
+  <tamxref title="All 8 Cross and Turn" group="All 8 (C-1)"
            xref-link="c1/cross_and_turn"
            xref-title="All 8 Cross and Turn"/>
 
-  <tamxref title="All 8 (C-1) Cross Your Neighbor" group="All 8 (C-1)"
+  <tamxref title="All 8 Cross Your Neighbor" group="All 8 (C-1)"
            xref-link="c1/cross_your_neighbor"
            xref-title="All 8 Cross Your Neighbor"/>
 
-  <tamxref title="All 8 (C-1) Dixie Diamond" group="All 8 (C-1)"
+  <tamxref title="All 8 Dixie Diamond" group="All 8 (C-1)"
            xref-link="c1/dixie_diamond"
            xref-title="All 8 Dixie Diamond"/>
 
-  <tamxref title="All 8 (C-1) Dixie Sashay" group="All 8 (C-1)"
+  <tamxref title="All 8 Dixie Sashay" group="All 8 (C-1)"
            xref-link="c1/dixie_sashay"
            xref-title="All 8 Dixie Sashay"/>
 
-  <tamxref title="All 8 (C-1) Follow Thru" group="All 8 (C-1)"
+  <tamxref title="All 8 Follow Thru" group="All 8 (C-1)"
            xref-link="c1/follow_thru"
            xref-title="All 8 Follow Thru"/>
 
-  <tamxref title="All 8 (C-1) Phantom Circulate" group="All 8 (C-1)"
+  <tamxref title="All 8 Phantom Circulate" group="All 8 (C-1)"
            xref-link="c1/phantom_formation"
            xref-title="Phantom All 8 Circulate"/>
 
-  <tamxref title="All 8 (C-1) Reverse Cross and Turn" group="All 8 (C-1)"
+  <tamxref title="All 8 Reverse Cross and Turn" group="All 8 (C-1)"
            xref-link="c1/reverse_cross_and_turn"
            xref-title="All 8 Reverse Cross and Turn"/>
 
-  <tamxref title="All 8 (C-1) Reverse Explode" group="All 8 (C-1)"
+  <tamxref title="All 8 Reverse Explode" group="All 8 (C-1)"
            xref-link="c1/reverse_explode"
            xref-title="All 8 Reverse Explode"/>
 
-  <tamxref title="All 8 (C-1) Shakedown" group="All 8 (C-1)"
+  <tamxref title="All 8 Shakedown" group="All 8 (C-1)"
            xref-link="c1/shakedown"
            xref-title="All 8 Shakedown"/>
 
-  <tamxref title="All 8 (C-1) Step and Fold" group="All 8 (C-1)"
+  <tamxref title="All 8 Step and Fold" group="All 8 (C-1)"
            xref-link="c1/step_and_fold"
            xref-title="All 8 Step and Fold"
            xref-formation="Thar LH Boys"/>
 
-  <tamxref title="All 8 (C-1) Switch the Line" group="All 8 (C-1)"
+  <tamxref title="All 8 Switch the Line" group="All 8 (C-1)"
            xref-link="c1/switch_the_line"
            xref-title="All 8 Switch the Line"
            xref-formation="Reverse Star Promenade"/>
 
-  <tamxref title="All 8 (C-1) Vertical 1/2 Tag" group="All 8 (C-1)"
+  <tamxref title="All 8 Vertical 1/2 Tag" group="All 8 (C-1)"
            xref-link="c1/vertical_tag"
            xref-title="All 8 Vertical 1/2 Tag"/>
 
-  <tamxref title="All 8 (C-1) Vertical Tag Back to a Wave" group="All 8 (C-1)"
+  <tamxref title="All 8 Vertical Tag Back to a Wave" group="All 8 (C-1)"
            xref-link="c1/tagging_calls_back_to_a_wave"
            xref-title="All 8 Vertical Tag Back to a Wave"/>
 
-  <tamxref title="All 8 (C-1) Weave" group="All 8 (C-1)"
+  <tamxref title="All 8 Weave" group="All 8 (C-1)"
            xref-link="c1/anything_and_weave"
            xref-title="All 8 Weave"/>
 
-  <tamxref title="All 8 (C-1) Wheel Fan Thru" group="All 8 (C-1)"
+  <tamxref title="All 8 Wheel Fan Thru" group="All 8 (C-1)"
            xref-link="c1/wheel_fan_thru"
            xref-title="All 8 Wheel Fan Thru"/>
 
-  <tamxref title="All 8 (C-1) Left Wheel Fan Thru" group="All 8 (C-1)"
+  <tamxref title="All 8 Left Wheel Fan Thru" group="All 8 (C-1)"
            xref-link="c1/wheel_fan_thru"
            xref-title="All 8 Left Wheel Fan Thru"/>
 
-  <tamxref title="All 4 Couples (C-2) Rotate 1/2" group="All 4 Couples (C-2)"
+  <tamxref title="All 4 Couples Rotate 1/2" group="All 4 Couples (C-2)"
            xref-link="c2/rotate"
            xref-title="All 4 Couples Rotate 1/2"/>
 
-  <tamxref title="All 8 (C-2) Criss Cross Your Neighbor" group="All 8 (C-2)"
+  <tamxref title="All 8 Criss Cross Your Neighbor" group="All 8 (C-2)"
            xref-link="c2/criss_cross_your_neighbor"
            xref-title="All 8 Criss Cross Your Neighbor"/>
 
-  <tamxref title="All 8 (C-2) Cross Back" group="All 8 (C-2)"
+  <tamxref title="All 8 Cross Back" group="All 8 (C-2)"
            xref-link="c2/cross_back"
            xref-title="All 8 Cross Back"/>
 
-  <tamxref title="All 8 (C-2) Peel to a Diamond" group="All 8 (C-2)"
+  <tamxref title="All 8 Peel to a Diamond" group="All 8 (C-2)"
            xref-link="c2/peel_to_a_diamond"
            xref-title="All 8 Peel to a Diamond"/>
 
-  <tamxref title="All 8 (C-2) Trail to a Diamond" group="All 8 (C-2)"
+  <tamxref title="All 8 Trail to a Diamond" group="All 8 (C-2)"
            xref-link="c2/trail_to_a_diamond"
            xref-title="All 8 Trail to a Diamond"/>
 
-  <tamxref title="All 8 (C-2) Turn to a Line" group="All 8 (C-2)"
+  <tamxref title="All 8 Turn to a Line" group="All 8 (C-2)"
            xref-link="c2/turn_to_a_line"
            xref-title="All 8 Turn to a Line"/>
 
-  <tamxref title="All 8 (C-2) Wheel the Ocean" group="All 8 (C-2)"
+  <tamxref title="All 8 Wheel the Ocean" group="All 8 (C-2)"
            xref-link="c2/wheel_the_ocean"
            xref-title="All 8 Wheel the Ocean"/>
 
-  <tamxref title="All 8 (C-2) Wheel the Sea" group="All 8 (C-2)"
+  <tamxref title="All 8 Wheel the Sea" group="All 8 (C-2)"
            xref-link="c2/wheel_the_sea"
            xref-title="All 8 Wheel the Sea"/>
 
-  <tamxref title="All 8 (C-3A) Follow to a Diamond" group="All 8 (C-3A)"
+  <tamxref title="All 8 Follow to a Diamond" group="All 8 (C-3A)"
            xref-link="c3a/follow_to_a_diamond"
            xref-title="All 8 Follow to a Diamond"/>
 
-  <tamxref title="All 8 (C-3A) Hinge the Lock" group="All 8 (C-3A)"
+  <tamxref title="All 8 Hinge the Lock" group="All 8 (C-3A)"
            xref-link="c3a/lock_the_hinge"
            xref-title="All 8 Hinge the Lock"/>
 
-  <tamxref title="All 8 (C-3A) Mini Chase" group="All 8 (C-3A)"
+  <tamxref title="All 8 Mini Chase" group="All 8 (C-3A)"
            xref-link="c3a/mini_chase"
            xref-title="All 8 Mini Chase"/>
 

@@ -651,71 +651,71 @@
     </path>
   </tam>
 
-  <tamxref title="Stretch (C-1) 2/3 Recycle" group="Stretch (C-1)"
+  <tamxref title="Stretch 2/3 Recycle" group="Stretch (C-1)"
            xref-link="c1/recycle"
            xref-title="Stretch 2/3 Recycle"/>
 
-  <tamxref title="Stretch (C-1) Ah So" group="Stretch (C-1)"
+  <tamxref title="Stretch Ah So" group="Stretch (C-1)"
            xref-link="c1/ah_so"
            xref-title="Stretch Ah So"/>
 
-  <tamxref title="Stretch (C-1) Follow Thru" group="Stretch (C-1)"
+  <tamxref title="Stretch Follow Thru" group="Stretch (C-1)"
            xref-link="c1/follow_thru"
            xref-title="Stretch Follow Thru"/>
 
-  <tamxref title="Stretch (C-1) Reverse Explode" group="Stretch (C-1)"
+  <tamxref title="Stretch Reverse Explode" group="Stretch (C-1)"
            xref-link="c1/reverse_explode"
            xref-title="Stretch Reverse Explode"/>
 
-  <tamxref title="Stretch (C-1) Shakedown (from columns)" group="Stretch (C-1)"
+  <tamxref title="Stretch Shakedown (from columns)" group="Stretch (C-1)"
            xref-link="c1/shakedown"
            xref-title="Stretch Shakedown (from columns)"/>
 
-  <tamxref title="Stretch (C-1) Shakedown (from lines)" group="Stretch (C-1)"
+  <tamxref title="Stretch Shakedown (from lines)" group="Stretch (C-1)"
            xref-link="c1/shakedown"
            xref-title="Stretch Shakedown (from lines)"/>
 
-  <tamxref title="Stretch (C-1) Left Shakedown (from columns)" group="Stretch (C-1)"
+  <tamxref title="Stretch Left Shakedown (from columns)" group="Stretch (C-1)"
            xref-link="c1/shakedown"
            xref-title="Stretch Left Shakedown (from columns)"/>
 
-  <tamxref title="Stretch (C-1) Left Shakedown (from lines)" group="Stretch (C-1)"
+  <tamxref title="Stretch Left Shakedown (from lines)" group="Stretch (C-1)"
            xref-link="c1/shakedown"
            xref-title="Stretch Left Shakedown (from lines)"/>
 
-  <tamxref title="Stretch (C-1) Step and Flip" group="Stretch (C-1)"
+  <tamxref title="Stretch Step and Flip" group="Stretch (C-1)"
            xref-link="c1/step_and_flip"
            xref-title="Stretch Step and Flip"/>
 
-  <tamxref title="Stretch (C-1) Step and Fold" group="Stretch (C-1)"
+  <tamxref title="Stretch Step and Fold" group="Stretch (C-1)"
            xref-link="c1/step_and_fold"
            xref-title="Stretch Step and Fold"/>
 
-  <tamxref title="Stretch (C-1) Wheel Fan Thru" group="Stretch (C-1)"
+  <tamxref title="Stretch Wheel Fan Thru" group="Stretch (C-1)"
            xref-link="c1/wheel_fan_thru"
            xref-title="Stretch Wheel Fan Thru"/>
 
-  <tamxref title="Stretch (C-1) Left Wheel Fan Thru" group="Stretch (C-1)"
+  <tamxref title="Stretch Left Wheel Fan Thru" group="Stretch (C-1)"
            xref-link="c1/wheel_fan_thru"
            xref-title="Stretch Left Wheel Fan Thru"/>
 
-  <tamxref title="Stretch (C-1) Zing" group="Stretch (C-1)"
+  <tamxref title="Stretch Zing" group="Stretch (C-1)"
            xref-link="c1/zing"
            xref-title="Stretch Zing"/>
 
-  <tamxref title="Stretch (C-2) Bounce the Boys" group="Stretch (C-2)"
+  <tamxref title="Stretch Bounce the Boys" group="Stretch (C-2)"
            xref-link="c2/bounce"
            xref-title="Stretch Bounce the Boys"/>
 
-  <tamxref title="Stretch (C-2) Turn to a Line" group="Stretch (C-2)"
+  <tamxref title="Stretch Turn to a Line" group="Stretch (C-2)"
            xref-link="c2/turn_to_a_line"
            xref-title="Stretch Turn to a Line"/>
 
-  <tamxref title="Stretch (C-3A) Mini Chase" group="Stretch (C-3A)"
+  <tamxref title="Stretch Mini Chase" group="Stretch (C-3A)"
            xref-link="c3a/mini_chase"
            xref-title="Stretch Mini Chase"/>
 
-  <tamxref title="Stretch (C-3A) Single Checkmate" group="Stretch (C-3A)"
+  <tamxref title="Stretch Single Checkmate" group="Stretch (C-3A)"
            xref-link="c3a/single_concept"
            xref-title="Stretch Single Checkmate"/>
 

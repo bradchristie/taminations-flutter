@@ -215,25 +215,25 @@
     </path>
   </tam>
 
-  <tamxref title="Mirror (C-3B) Lift Off" group="Mirror (C-3B)"
+  <tamxref title="Mirror Lift Off" group="Mirror (C-3B)"
            xref-link="c3b/lift_off"
            xref-title="Mirror Lift Off"/>
 
-  <tamxref title="Mirror (C-3B) Rip Off (from completed double pass thru)" group="Mirror (C-3B)"
+  <tamxref title="Mirror Rip Off (from completed double pass thru)" group="Mirror (C-3B)"
            xref-link="c3b/rip_off"
            xref-from="Completed Double Pass Thru"
            xref-title="Mirror Rip Off"/>
 
-  <tamxref title="Mirror (C-3B) Rip Off (from magic columns)" group="Mirror (C-3B)"
+  <tamxref title="Mirror Rip Off (from magic columns)" group="Mirror (C-3B)"
            xref-link="c3b/rip_off"
            xref-from="Magic Columns"
            xref-title="Mirror Rip Off"/>
 
-  <tamxref title="Mirror (C-3B) Swap the Top" group="Mirror (C-3B)"
+  <tamxref title="Mirror Swap the Top" group="Mirror (C-3B)"
            xref-link="c3b/swap_the_top"
            xref-title="Mirror Swap the Top"/>
 
-  <tamxref title="Mirror (C-3B) Cross Swap the Top" group="Mirror (C-3B)"
+  <tamxref title="Mirror Cross Swap the Top" group="Mirror (C-3B)"
            xref-link="c3b/swap_the_top"
            xref-title="Mirror Cross Swap the Top"/>
 
