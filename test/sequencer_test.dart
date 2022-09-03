@@ -885,7 +885,7 @@ Interlocked Diamond Chain Thru
 Centers Pass Thru
 Girls Chase Right
 Slide
-Right and Left Grand ''',
+Right and Left Grand''',
 
   'Peel to a Diamond Chain Thru' :
   '''Heads Lead Right

@@ -104,7 +104,7 @@
   </tam>
 
   <tam title="Cast Off Three Quarters" from="Right-Hand Box"
-       formation="Box RH" difficulty="1">
+       formation="Box RH" difficulty="1" sequencer="no">
     <path>
       <move select="Cast Right"/>
     </path>
@@ -114,7 +114,7 @@
   </tam>
 
   <tam title="Cast Off Three Quarters" from="Left-Hand Box"
-       formation="Box LH" difficulty="1">
+       formation="Box LH" difficulty="1" sequencer="no">
     <path>
       <move select="Cast Left"/>
     </path>
