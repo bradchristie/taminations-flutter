@@ -22,7 +22,7 @@
 -->
 <tamination title="As Couples Concept">
 
-  <tam title="As Couples Cast Off Three Quarters" group="As Couples"
+  <tam title="As Couples Cast Off Three Quarters" group="As Couples (with calls through Plus)"
        formation="Tidal Line LH">
     <path>
       <move select="Quarter Right" beats="2"/>
@@ -44,7 +44,7 @@
     </path>
   </tam>
 
-  <tam title="As Couples Chase Right" group="As Couples"
+  <tam title="As Couples Chase Right" group="As Couples (with calls through Plus)"
        formation="Lines Facing Out">
     <path>
       <move select="Beau Wheel" reflect="-1" offsetX="-2" />
@@ -66,7 +66,7 @@
     </path>
   </tam>
 
-  <tam title="As Couples Centers Cross Run" group="As Couples"
+  <tam title="As Couples Centers Cross Run" group="As Couples (with calls through Plus)"
        formation="Tidal Line RH">
     <path>
       <move select="Dodge Right" />
@@ -82,7 +82,7 @@
     </path>
   </tam>
 
-  <tam title="As Couples Crossfire" group="As Couples"
+  <tam title="As Couples Crossfire" group="As Couples (with calls through Plus)"
        formation="Tidal Line RH">
     <path>
       <move select="Run Right" hands="right" beats="4" scaleX="3.25" scaleY="3.25" offsetX="2" />
@@ -100,7 +100,7 @@
     </path>
   </tam>
 
-  <tam title="As Couples Dixie Style to a Wave" group="As Couples"
+  <tam title="As Couples Dixie Style to a Wave" group="As Couples (with calls through Plus)"
        formation="Normal Lines">
     <path>
       <move select="BackSashay Right" beats="6" hands="right" scaleY="2"/>
@@ -122,7 +122,7 @@
     </path>
   </tam>
 
-  <tam title="As Couples Explode the Wave" group="As Couples"
+  <tam title="As Couples Explode the Wave" group="As Couples (with calls through Plus)"
        formation="Two-Faced Tidal Line RH">
     <path>
       <move select="Lead Right" beats="3" scaleX="3.5" scaleY="3.5" />
@@ -142,7 +142,7 @@
     </path>
   </tam>
 
-  <tam title="As Couples Extend" group="As Couples"
+  <tam title="As Couples Extend" group="As Couples (with calls through Plus)"
        formation="Quarter Lines RH">
     <path>
       <move select="Extend Left" hands="right" beats="2" scaleX="1.5" scaleY="2"/>
@@ -158,7 +158,7 @@
     </path>
   </tam>
 
-  <tam title="As Couples Fan the Top" group="As Couples"
+  <tam title="As Couples Fan the Top" group="As Couples (with calls through Plus)"
        formation="Two-Faced Tidal Line RH">
     <path>
       <move select="Lead Right" beats="4.5" scaleX="3.5" scaleY="3.5" />
@@ -176,7 +176,7 @@
     </path>
   </tam>
 
-  <tam title="As Couples Ends Fold" group="As Couples"
+  <tam title="As Couples Ends Fold" group="As Couples (with calls through Plus)"
        formation="Two-Faced Tidal Line RH">
     <path>
       <move select="Run Right" hands="right" offsetX="2" offsetY="-.5" />
@@ -192,7 +192,7 @@
     </path>
   </tam>
 
-  <tam title="As Couples Ends Cross Fold" group="As Couples"
+  <tam title="As Couples Ends Cross Fold" group="As Couples (with calls through Plus)"
        formation="Two-Faced Tidal Line RH">
     <path>
       <move select="Run Right" beats="5" hands="right" offsetX="2" offsetY="-4.5" />
@@ -208,7 +208,7 @@
     </path>
   </tam>
 
-  <tam title="As Couples Flutterwheel" group="As Couples"
+  <tam title="As Couples Flutterwheel" group="As Couples (with calls through Plus)"
        formation="Normal Lines">
     <path>
       <move select="Stand" beats="2" hands="right" />
@@ -236,7 +236,7 @@
     </path>
   </tam>
 
-  <tam title="As Couples Follow Your Neighbor" group="As Couples"
+  <tam title="As Couples Follow Your Neighbor" group="As Couples (with calls through Plus)"
        formation="Two-Faced Lines RH">
     <path>
       <move select="Extend Right" hands="right" beats="2" scaleX="2" scaleY="1.5" />
@@ -258,7 +258,7 @@
     </path>
   </tam>
 
-  <tam title="As Couples Follow Your Neighbor" group="As Couples" display="none"
+  <tam title="As Couples Follow Your Neighbor" group="As Couples (with calls through Plus)" display="none"
        formation="Two-Faced Lines LH">
     <path>
       <move select="Lead Left" hands="left" beats="2" scaleX="2" scaleY="3" />
@@ -280,7 +280,7 @@
     </path>
   </tam>
 
-  <tam title="As Couples Half Sashay" group="As Couples"
+  <tam title="As Couples Half Sashay" group="As Couples (with calls through Plus)"
        formation="Normal Lines" >
     <path>
       <move select="BackSashay Right" beats="6" hands="right" scaleX="1.5" scaleY="2"/>
@@ -296,7 +296,7 @@
     </path>
   </tam>
 
-  <tam title="As Couples Ladies Center as the Men Sashay" group="As Couples">
+  <tam title="As Couples Ladies Center as the Men Sashay" group="As Couples (with calls through Plus)">
      <formation>
       <dancer gender="boy" x="-2.414" y="1" angle="-22.5"/>
       <dancer gender="girl" x="1" y="2.414" angle="247.5"/>
@@ -331,7 +331,7 @@
     </path>
   </tam>
 
-  <tam title="As Couples Left Swing Thru" group="As Couples"
+  <tam title="As Couples Left Swing Thru" group="As Couples (with calls through Plus)"
        formation="Two-Faced Tidal Line LH">
     <path>
       <move select="Swing Left" scaleX="1.5" scaleY="1.5" />
@@ -349,7 +349,7 @@
     </path>
   </tam>
 
-  <tam title="As Couples Linear Cycle" group="As Couples"
+  <tam title="As Couples Linear Cycle" group="As Couples (with calls through Plus)"
        formation="Two-Faced Tidal Line RH">
     <path>
       <move select="Hinge Right" scaleX="1.5" scaleY="1.5" />
@@ -375,7 +375,7 @@
     </path>
   </tam>
 
-  <tam title="As Couples Pass the Ocean" group="As Couples"
+  <tam title="As Couples Pass the Ocean" group="As Couples (with calls through Plus)"
        formation="Normal Lines">
     <path>
       <move select="Extend Left" hands="right" beats="2" scaleX="2" scaleY=".5" />
@@ -395,7 +395,7 @@
     </path>
   </tam>
 
-  <tam title="As Couples Peel Off" group="As Couples"
+  <tam title="As Couples Peel Off" group="As Couples (with calls through Plus)"
        formation="Two-Faced Lines RH">
     <path>
       <move select="Beau Wheel" hands="gripright" beats="5" offsetX="2" offsetY="-.5" />
@@ -411,7 +411,7 @@
     </path>
   </tam>
 
-  <tam title="As Couples Peel the Top" group="As Couples"
+  <tam title="As Couples Peel the Top" group="As Couples (with calls through Plus)"
        formation="Two-Faced Lines RH">
     <path>
       <move select="Extend Right" hands="right" beats="2" scaleX="2" scaleY="1.5" />
@@ -433,7 +433,7 @@
     </path>
   </tam>
 
-  <tam title="As Couples Recycle" group="As Couples"
+  <tam title="As Couples Recycle" group="As Couples (with calls through Plus)"
        formation="Two-Faced Tidal Line RH">
     <path>
       <move select="Lead Right" beats="4" scaleX="3" scaleY="3.5" />
@@ -453,7 +453,7 @@
     </path>
   </tam>
 
-  <tam title="As Couples Reverse Flutterwheel" group="As Couples"
+  <tam title="As Couples Reverse Flutterwheel" group="As Couples (with calls through Plus)"
        formation="Normal Lines">
     <path>
       <move select="Extend Right" hands="gripright" beats="2" scaleX="2" scaleY="3.5" />
@@ -481,7 +481,7 @@
     </path>
   </tam>
 
-  <tam title="As Couples Right and Left Thru" group="As Couples"
+  <tam title="As Couples Right and Left Thru" group="As Couples (with calls through Plus)"
        formation="Normal Lines">
     <path>
       <move select="Extend Left" hands="right" beats="2" scaleX="2" scaleY=".5" />
@@ -505,7 +505,7 @@
     </path>
   </tam>
 
-  <tam title="As Couples Centers Run" group="As Couples"
+  <tam title="As Couples Centers Run" group="As Couples (with calls through Plus)"
        formation="Tidal Line RH">
     <path>
       <move select="Dodge Right" />
@@ -521,7 +521,7 @@
     </path>
   </tam>
 
-  <tam title="As Couples Scoot Back" group="As Couples"
+  <tam title="As Couples Scoot Back" group="As Couples (with calls through Plus)"
        formation="Two-Faced Lines RH">
     <path>
       <move select="Extend Right" hands="right" beats="2" scaleX="2" scaleY="1.5" />
@@ -541,7 +541,7 @@
     </path>
   </tam>
 
-  <tam title="As Couples Scoot Back" group="As Couples" display="none"
+  <tam title="As Couples Scoot Back" group="As Couples (with calls through Plus)" display="none"
        formation="Two-Faced Lines LH">
     <path>
       <move select="Run Left" hands="left" beats="5" scaleX="2.5" scaleY="3" />
@@ -561,7 +561,7 @@
     </path>
   </tam>
 
-  <tam title="As Couples Slide Thru" group="As Couples" sequencer="gender-specific">
+  <tam title="As Couples Slide Thru" group="As Couples (with calls through Plus)" sequencer="gender-specific">
      <formation>
       <dancer gender="boy" x="-2" y="3" angle="0"/>
       <dancer gender="girl" x="-2" y="-1" angle="0"/>
@@ -586,7 +586,7 @@
     </path>
   </tam>
 
-  <tam title="As Couples Slide Thru" group="As Couples"
+  <tam title="As Couples Slide Thru" group="As Couples (with calls through Plus)"
        sequencer="gender-specific" display="none">
     <formation>
       <dancer gender="girl" x="-2" y="3" angle="0"/>
@@ -612,7 +612,7 @@
     </path>
   </tam>
 
-  <tam title="As Couples Spin the Top" group="As Couples"
+  <tam title="As Couples Spin the Top" group="As Couples (with calls through Plus)"
        formation="Two-Faced Tidal Line RH">
     <path>
       <move select="Swing Right" scaleX="1.5" scaleY="1.5" />
@@ -634,7 +634,7 @@
     </path>
   </tam>
 
-  <tam title="As Couples Square Thru" group="As Couples"
+  <tam title="As Couples Square Thru" group="As Couples (with calls through Plus)"
        formation="Normal Lines">
     <path>
       <move select="Extend Left" hands="right" beats="2" scaleX="2" scaleY=".5" />
@@ -666,7 +666,7 @@
     </path>
   </tam>
 
-  <tam title="As Couples Swing Thru" group="As Couples"
+  <tam title="As Couples Swing Thru" group="As Couples (with calls through Plus)"
        formation="Two-Faced Tidal Line RH">
     <path>
       <move select="Swing Right" scaleX="1.5" scaleY="1.5" />
@@ -684,7 +684,7 @@
     </path>
   </tam>
 
-  <tam title="As Couples Touch a Quarter" group="As Couples"
+  <tam title="As Couples Touch a Quarter" group="As Couples (with calls through Plus)"
        formation="Normal Lines">
     <path>
       <move select="Extend Left" hands="right" beats="2" scaleX="2" scaleY=".5" />
@@ -704,7 +704,7 @@
     </path>
   </tam>
 
-  <tam title="As Couples Trade the Wave" group="As Couples"
+  <tam title="As Couples Trade the Wave" group="As Couples (with calls through Plus)"
        formation="Two-Faced Tidal Line RH">
     <path>
       <move select="Run Right" beats="4" hands="right" scaleX="3.5" scaleY="2.5" />
@@ -721,7 +721,7 @@
   </tam>
 
   <tam title="As Couples Trade the Wave"
-       group="As Couples"
+       group="As Couples (with calls through Plus)"
        formation="Two-Faced Tidal Line LH"
        display="none">
     <path>
@@ -738,7 +738,7 @@
     </path>
   </tam>
 
-  <tam title="As Couples U-Turn Back" group="As Couples"
+  <tam title="As Couples U-Turn Back" group="As Couples (with calls through Plus)"
        formation="Lines Facing Out">
     <path>
       <move select="Belle Wheel" />
@@ -754,7 +754,7 @@
     </path>
   </tam>
 
-  <tam title="As Couples Walk and Dodge" group="As Couples"
+  <tam title="As Couples Walk and Dodge" group="As Couples (with calls through Plus)"
        formation="Two-Faced Lines RH">
     <path numbers="1 8">
       <move select="Forward 4" hands="right" />
@@ -770,7 +770,7 @@
     </path>
   </tam>
 
-  <tam title="As Couples Zoom" group="As Couples"
+  <tam title="As Couples Zoom" group="As Couples (with calls through Plus)"
        formation="Two-Faced Lines RH">
     <path>
       <move select="Forward 4" hands="right" />
@@ -790,119 +790,119 @@
     </path>
   </tam>
 
-  <tamxref title="As Couples Cross Trail Thru" group="As Couples (A-1)"
+  <tamxref title="As Couples Cross Trail Thru" group="As Couples (with A-1 calls)"
            xref-link="a1/cross_trail_thru"
            xref-title="As Couples Cross Trail Thru"/>
 
-  <tamxref title="As Couples Left Roll to a Wave (from lines facing out)" group="As Couples (A-1)"
+  <tamxref title="As Couples Left Roll to a Wave (from lines facing out)" group="As Couples (with A-1 calls)"
            xref-link="a1/left_roll_to_a_wave"
            xref-title="As Couples Left Roll to a Wave"
            xref-from="Lines Facing Out" />
 
-  <tamxref title="As Couples Left Roll to a Wave (from two-faced lines)" group="As Couples (A-1)"
+  <tamxref title="As Couples Left Roll to a Wave (from two-faced lines)" group="As Couples (with A-1 calls)"
            xref-link="a1/left_roll_to_a_wave"
            xref-title="As Couples Left Roll to a Wave"
            xref-from="Two-Faced Lines" />
 
-  <tamxref title="As Couples Left Square Chain Thru" group="As Couples (A-1)"
+  <tamxref title="As Couples Left Square Chain Thru" group="As Couples (with A-1 calls)"
            xref-link="a1/left_square_chain_thru"
            xref-title="As Couples Left Square Chain Thru" />
 
-  <tamxref title="As Couples Left Wheel Thru" group="As Couples (A-1)"
+  <tamxref title="As Couples Left Wheel Thru" group="As Couples (with A-1 calls)"
            xref-link="a1/left_wheel_thru"
            xref-title="As Couples Left Wheel Thru" />
 
-  <tamxref title="As Couples Linear Cycle" group="As Couples (A-1)"
+  <tamxref title="As Couples Linear Cycle" group="As Couples (with A-1 calls)"
            xref-link="a1/linear_cycle"
            xref-title="As Couples Linear Cycle" />
 
-  <tamxref title="As Couples Lockit" group="As Couples (A-1)"
+  <tamxref title="As Couples Lockit" group="As Couples (with A-1 calls)"
            xref-link="a1/lock_it"
            xref-title="As Couples Lockit" />
 
-  <tamxref title="As Couples Mix" group="As Couples (A-1)"
+  <tamxref title="As Couples Mix" group="As Couples (with A-1 calls)"
            xref-link="a1/mix"
            xref-title="As Couples Mix" />
 
-  <tamxref title="As Couples Pair Off" group="As Couples (A-1)"
+  <tamxref title="As Couples Pair Off" group="As Couples (with A-1 calls)"
            xref-link="a1/pair_off"
            xref-title="As Couples Pair Off" />
 
-  <tamxref title="As Couples Pass In" group="As Couples (A-1)"
+  <tamxref title="As Couples Pass In" group="As Couples (with A-1 calls)"
            xref-link="a1/pass_in"
            xref-title="As Couples Pass In" />
 
-  <tamxref title="As Couples Pass Out" group="As Couples (A-1)"
+  <tamxref title="As Couples Pass Out" group="As Couples (with A-1 calls)"
            xref-link="a1/pass_out"
            xref-title="As Couples Pass Out" />
 
-  <tamxref title="As Couples Pass the Sea" group="As Couples (A-1)"
+  <tamxref title="As Couples Pass the Sea" group="As Couples (with A-1 calls)"
            xref-link="a1/pass_the_sea"
            xref-title="As Couples Pass the Sea" />
 
-  <tamxref title="As Couples Quarter In" group="As Couples (A-1)"
+  <tamxref title="As Couples Quarter In" group="As Couples (with A-1 calls)"
            xref-link="a1/quarter_in"
            xref-title="As Couples Quarter In" />
 
-  <tamxref title="As Couples Quarter Out" group="As Couples (A-1)"
+  <tamxref title="As Couples Quarter Out" group="As Couples (with A-1 calls)"
            xref-link="a1/quarter_out"
            xref-title="As Couples Quarter Out" />
 
-  <tamxref title="As Couples Quarter Thru" group="As Couples (A-1)"
+  <tamxref title="As Couples Quarter Thru" group="As Couples (with A-1 calls)"
            xref-link="a1/quarter_thru"
            xref-title="As Couples Quarter Thru" />
 
-  <tamxref title="As Couples Reverse Swap Around" group="As Couples (A-1)"
+  <tamxref title="As Couples Reverse Swap Around" group="As Couples (with A-1 calls)"
            xref-link="a1/swap_around"
            xref-title="As Couples Reverse Swap Around" />
 
-  <tamxref title="As Couples Right Roll to a Wave (from lines facing out)" group="As Couples (A-1)"
+  <tamxref title="As Couples Right Roll to a Wave (from lines facing out)" group="As Couples (with A-1 calls)"
            xref-link="a1/right_roll_to_a_wave"
            xref-title="As Couples Right Roll to a Wave"
            xref-from="Lines Facing Out" />
 
-  <tamxref title="As Couples Right Roll to a Wave (from two-faced lines)" group="As Couples (A-1)"
+  <tamxref title="As Couples Right Roll to a Wave (from two-faced lines)" group="As Couples (with A-1 calls)"
            xref-link="a1/right_roll_to_a_wave"
            xref-title="As Couples Right Roll to a Wave"
            xref-from="Two-Faced Lines" />
 
-  <tamxref title="As Couples Scoot and Dodge" group="As Couples (A-1)"
+  <tamxref title="As Couples Scoot and Dodge" group="As Couples (with A-1 calls)"
            xref-link="a1/scoot_and_dodge"
            xref-title="As Couples Scoot and Dodge" />
 
-  <tamxref title="As Couples Square Chain Thru" group="As Couples (A-1)"
+  <tamxref title="As Couples Square Chain Thru" group="As Couples (with A-1 calls)"
            xref-link="a1/square_chain_thru"
            xref-title="As Couples Square Chain Thru" />
 
-  <tamxref title="As Couples Swap Around" group="As Couples (A-1)"
+  <tamxref title="As Couples Swap Around" group="As Couples (with A-1 calls)"
            xref-link="a1/swap_around"
            xref-title="As Couples Swap Around" />
 
-  <tamxref title="As Couples 3/4 Thru" group="As Couples (A-1)"
+  <tamxref title="As Couples 3/4 Thru" group="As Couples (with A-1 calls)"
            xref-link="a1/three_quarter_thru"
            xref-title="As Couples 3/4 Thru" />
 
-  <tamxref title="As Couples Turn and Deal (from right-hand tidal line)" group="As Couples (A-1)"
+  <tamxref title="As Couples Turn and Deal (from right-hand tidal line)" group="As Couples (with A-1 calls)"
            xref-link="a1/turn_and_deal"
            xref-title="As Couples Turn and Deal"
            xref-from="Right-Hand Tidal Line"  />
 
-  <tamxref title="As Couples Turn and Deal (from left-hand tidal line)" group="As Couples (A-1)"
+  <tamxref title="As Couples Turn and Deal (from left-hand tidal line)" group="As Couples (with A-1 calls)"
            xref-link="a1/turn_and_deal"
            xref-title="As Couples Turn and Deal"
            xref-from="Left-Hand Tidal Line"  />
 
-  <tamxref title="As Couples Turn and Deal (from right-hand two-faced tidal line)" group="As Couples (A-1)"
+  <tamxref title="As Couples Turn and Deal (from right-hand two-faced tidal line)" group="As Couples (with A-1 calls)"
            xref-link="a1/turn_and_deal"
            xref-title="As Couples Turn and Deal"
            xref-from="Right-Hand Two-Faced Tidal Line"  />
 
-  <tamxref title="As Couples Turn and Deal (from left-hand two-faced tidal line)" group="As Couples (A-1)"
+  <tamxref title="As Couples Turn and Deal (from left-hand two-faced tidal line)" group="As Couples (with A-1 calls)"
            xref-link="a1/turn_and_deal"
            xref-title="As Couples Turn and Deal"
            xref-from="Left-Hand Two-Faced Tidal Line"  />
 
-  <tamxref title="As Couples Wheel Thru" group="As Couples (A-1)"
+  <tamxref title="As Couples Wheel Thru" group="As Couples (with A-1 calls)"
            xref-link="a1/wheel_thru"
            xref-title="As Couples Wheel Thru" />
 
