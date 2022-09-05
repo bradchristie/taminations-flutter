@@ -4,8 +4,8 @@
 
 The basic operation of the sequencer is simple: 
 type a call, press return, and watch the dancers perform it.
-But to learn all the details requires a lot more information
-than can be presented on one page.  So it's broken up into these topics.
+There are also special commands and features, which you can learn about
+on the following pages.
 
 ## Contents
 
@@ -17,17 +17,12 @@ than can be presented on one page.  So it's broken up into these topics.
 * [Selecting Dancers](designators.md) - Boys/Girls, Leaders/Trailers, etc.
 * [Calls with Parts and Other Modifications](modifications.md)
 * [How it Works](how_it_works.md)
-* Notes for Specific Calls
-  - [Basic 1](sequencer-b1.md)
-  - [Basic 2](sequencer-b2.md)
-  - [Mainstream](sequencer-ms.md)
-  - [Plus](sequencer-plus.md)
-  - [A-1](sequencer-a1.md)
-  - [A-2](sequencer-a2.md)
-  - [C-1](sequencer-c1.md)
-  - [C-2](sequencer-c2.md)
-  - [C-3A](sequencer-c3a.md)
-  - [C-3B](sequencer-c3b.md)
+
+## Help on specific calls
+
+For many calls, you can find details specific to the sequencer by typing
+"Help _callname_".  On a large screen it will also show the Callerlab definition
+in the right panel.
 
 ## The Sequencer is Continuously In Development
 
