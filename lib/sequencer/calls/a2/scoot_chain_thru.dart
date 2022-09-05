@@ -24,8 +24,8 @@ class ScootChainThru extends Action with CallWithParts {
   @override var numberOfParts = 5;
   @override var level = LevelData.A2;
   @override var helplink = 'a2/scoot_chain_thru';
-  @override var help = '''Scoot Chain Thru is a 5-part call:
-  1.  From waves, leaders Split Circulate while trailers Extend
+  @override String get help => '''$name is a 5-part call:
+  1.  From waves, leaders${name.contains('Scatter')?'':'Scplit'} Circulate while trailers Extend
       From 1/4 Tag, everyone Extend
   2.  Wave dancers Swing
   3.  Wave dancers Slip
@@ -35,8 +35,9 @@ class ScootChainThru extends Action with CallWithParts {
 
   @override
   Future<void> performPart1(CallContext ctx) async {
+    var split = name.contains('Scatter') ? 'All 8' : 'Split';
     if (ctx.isWaves()) {
-      await ctx.applyCalls('Leaders Do Your Part Split Circulate'
+      await ctx.applyCalls('Leaders Do Your Part $split Circulate'
           ' While Trailers Do Your Part Extend');
     }
     else

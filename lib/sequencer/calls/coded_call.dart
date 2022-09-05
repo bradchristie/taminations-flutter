@@ -474,7 +474,7 @@ abstract class CodedCall extends Call {
     'scootandweave'.ri: (name) => ScootAndWeave(name),
     //  Accept Scoot Chain Thru Centers so user can say e.g.
     //  Centers Skip the 3rd Part
-    'scootchainthru(center)?'.ri: (name) => ScootChainThru(name),
+    '(scatter)?scootchainthru(center)?'.ri: (name) => ScootChainThru(name),
     '(center|inside|middle|out(er|side))diamond'.ri: (name) => SelectDiamond(name),
     'separate'.ri: (name) => Separate(name),
     'shazam'.ri: (name) => Shazam(name),
