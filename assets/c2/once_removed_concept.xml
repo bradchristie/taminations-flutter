@@ -390,32 +390,6 @@
     </path>
   </tam>
 
-  <tam title="Once Removed Pass the Ocean" group="(From columns) Once Removed"
-       formation="Double Pass Thru">
-    <path couples="1 2">
-      <move select="Extend Left" scaleY=".5"/>
-      <move select="Forward 2"/>
-      <move select="Lead Right" scaleX="1.5"/>
-      <move select="Dodge Left" beats="1" scaleY=".5" offsetX=".5"/>
-    </path>
-    <path couples="1 2">
-      <move select="Extend Left" scaleY=".5"/>
-      <move select="Forward 2"/>
-      <move select="Hinge Left" scaleX=".5" scaleY=".5"/>
-    </path>
-    <path couples="2 1">
-      <move select="Extend Left" scaleY=".5"/>
-      <move select="Forward 2"/>
-      <move select="Lead Right" scaleX="1.5" scaleY="1.5"/>
-    </path>
-    <path couples="2 1">
-      <move select="Extend Left" scaleY=".5"/>
-      <move select="Forward 2"/>
-      <move select="Quarter Left"/>
-      <move select="Dodge Left" beats="1" scaleY=".25" offsetX=".5"/>
-    </path>
-  </tam>
-
   <tam title="Once Removed Peel Off" group="(From columns) Once Removed"
        formation="Column RH GBGB">
     <path couples="1 2">
@@ -452,58 +426,6 @@
     </path>
   </tam>
 
-  <tam title="Once Removed Right and Left Thru" group="(From columns) Once Removed"
-       formation="Double Pass Thru">
-    <path couples="1 2">
-      <move select="Extend Left" scaleY=".5" />
-      <move select="Forward 2" />
-      <move select="Extend Right" scaleY=".5" />
-      <move select="Beau Wheel" scaleX="0.5"/>
-    </path>
-    <path couples="1 2">
-      <move select="Extend Left" scaleY=".5" />
-      <move select="Forward 2" />
-      <move select="Extend Right" scaleY=".5" />
-      <move select="Belle Wheel" scaleX="0.5"/>
-    </path>
-    <path couples="2 1">
-      <move select="Extend Left" scaleY=".5" />
-      <move select="Forward 2" />
-      <move select="Extend Right" scaleY=".5" />
-      <move select="Beau Wheel" scaleX="0.5"/>
-    </path>
-    <path couples="2 1">
-      <move select="Extend Left" scaleY=".5" />
-      <move select="Forward 2" />
-      <move select="Extend Right" scaleY=".5" />
-      <move select="Belle Wheel" scaleX="0.5"/>
-    </path>
-  </tam>
-
-  <tam title="Once Removed Slide Thru" group="(From columns) Once Removed"
-       formation="Double Pass Thru">
-    <path couples="1 2">
-      <move select="Extend Left" scaleY=".5" />
-      <move select="Forward 2" />
-      <move select="Quarter Right" offsetX="1"/>
-    </path>
-    <path couples="1 2">
-      <move select="Extend Left" scaleY=".5" />
-      <move select="Forward 2" />
-      <move select="Quarter Left" offsetX="1" offsetY="-1"/>
-    </path>
-    <path couples="2 1">
-      <move select="Extend Left" scaleY=".5" />
-      <move select="Forward 2" />
-      <move select="Quarter Right" offsetX="1"/>
-    </path>
-    <path couples="2 1">
-      <move select="Extend Left" scaleY=".5" />
-      <move select="Forward 2" />
-      <move select="Quarter Left" offsetX="1" offsetY="-1"/>
-    </path>
-  </tam>
-
   <tam title="Once Removed Turn to a Line" group="(From columns) Once Removed"
        formation="Column RH GBGB">
     <path couples="1 2">
@@ -524,35 +446,6 @@
       Dancers are not Once Removed at the end of the call because the formation
       axis has changed.
     </taminator>
-  </tam>
-
-  <tam title="Once Removed Touch a Quarter" group="(From columns) Once Removed">
-    <formation>
-      <dancer gender="boy" y="3" x="1" angle="270"/>
-      <dancer gender="girl" y="3" x="-1" angle="270"/>
-      <dancer gender="boy" y="1" x="1" angle="270"/>
-      <dancer gender="girl" y="1" x="-1" angle="270"/>
-    </formation>
-    <path couples="1 2">
-      <move select="Extend Left" scaleY=".5" />
-      <move select="Forward 2" />
-      <move select="Quarter Right" offsetX="1"/>
-    </path>
-    <path couples="1 2">
-      <move select="Extend Left" scaleY=".5" />
-      <move select="Forward 2" />
-      <move select="Quarter Right" offsetX="1" offsetY="-1"/>
-    </path>
-    <path couples="2 1">
-      <move select="Extend Left" scaleY=".5" />
-      <move select="Forward 2" />
-      <move select="Quarter Right" offsetX="1"/>
-    </path>
-    <path couples="2 1">
-      <move select="Extend Left" scaleY=".5" />
-      <move select="Forward 2" />
-      <move select="Quarter Right" offsetX="1" offsetY="-1"/>
-    </path>
   </tam>
 
   <tam title="Once Removed Walk and Dodge" group="(From columns) Once Removed">
@@ -591,6 +484,130 @@
     </path>
     <path couples="2 1">
       <move select="Forward 4" beats="6" />
+    </path>
+  </tam>
+
+
+  <tam title="Once Removed Pass the Ocean" group="(From double pass thru) Once Removed"
+       formation="Double Pass Thru">
+    <path couples="1 2">
+      <move select="Extend Left" scaleY=".5"/>
+      <move select="Forward 2"/>
+      <move select="Lead Right" scaleX="1.5"/>
+      <move select="Dodge Left" beats="1" scaleY=".5" offsetX=".5"/>
+    </path>
+    <path couples="1 2">
+      <move select="Extend Left" scaleY=".5"/>
+      <move select="Forward 2"/>
+      <move select="Hinge Left" scaleX=".5" scaleY=".5"/>
+    </path>
+    <path couples="2 1">
+      <move select="Extend Left" scaleY=".5"/>
+      <move select="Forward 2"/>
+      <move select="Lead Right" scaleX="1.5" scaleY="1.5"/>
+    </path>
+    <path couples="2 1">
+      <move select="Extend Left" scaleY=".5"/>
+      <move select="Forward 2"/>
+      <move select="Quarter Left"/>
+      <move select="Dodge Left" beats="1" scaleY=".25" offsetX=".5"/>
+    </path>
+  </tam>
+
+  <tam title="Once Removed Right and Left Thru" group="(From double pass thru) Once Removed"
+       formation="Double Pass Thru">
+    <path couples="1 2">
+      <move select="Extend Left" scaleY=".5" />
+      <move select="Forward 2" />
+      <move select="Extend Right" scaleY=".5" />
+      <move select="Beau Wheel" scaleX="0.5"/>
+    </path>
+    <path couples="1 2">
+      <move select="Extend Left" scaleY=".5" />
+      <move select="Forward 2" />
+      <move select="Extend Right" scaleY=".5" />
+      <move select="Belle Wheel" scaleX="0.5"/>
+    </path>
+    <path couples="2 1">
+      <move select="Extend Left" scaleY=".5" />
+      <move select="Forward 2" />
+      <move select="Extend Right" scaleY=".5" />
+      <move select="Beau Wheel" scaleX="0.5"/>
+    </path>
+    <path couples="2 1">
+      <move select="Extend Left" scaleY=".5" />
+      <move select="Forward 2" />
+      <move select="Extend Right" scaleY=".5" />
+      <move select="Belle Wheel" scaleX="0.5"/>
+    </path>
+  </tam>
+
+  <tam title="Once Removed Slide Thru" group="(From double pass thru) Once Removed"
+       formation="Double Pass Thru">
+    <path couples="1 2">
+      <move select="Extend Left" scaleY=".5" />
+      <move select="Forward 2" />
+      <move select="Quarter Right" offsetX="1"/>
+    </path>
+    <path couples="1 2">
+      <move select="Extend Left" scaleY=".5" />
+      <move select="Forward 2" />
+      <move select="Quarter Left" offsetX="1" offsetY="-1"/>
+    </path>
+    <path couples="2 1">
+      <move select="Extend Left" scaleY=".5" />
+      <move select="Forward 2" />
+      <move select="Quarter Right" offsetX="1"/>
+    </path>
+    <path couples="2 1">
+      <move select="Extend Left" scaleY=".5" />
+      <move select="Forward 2" />
+      <move select="Quarter Left" offsetX="1" offsetY="-1"/>
+    </path>
+  </tam>
+
+  <tam title="Once Removed Touch a Quarter" group="(From double pass thru) Once Removed">
+    <formation>
+      <dancer gender="boy" y="3" x="1" angle="270"/>
+      <dancer gender="girl" y="3" x="-1" angle="270"/>
+      <dancer gender="boy" y="1" x="1" angle="270"/>
+      <dancer gender="girl" y="1" x="-1" angle="270"/>
+    </formation>
+    <path couples="1 2">
+      <move select="Extend Left" scaleY=".5" />
+      <move select="Forward 2" />
+      <move select="Quarter Right" offsetX="1"/>
+    </path>
+    <path couples="1 2">
+      <move select="Extend Left" scaleY=".5" />
+      <move select="Forward 2" />
+      <move select="Quarter Right" offsetX="1" offsetY="-1"/>
+    </path>
+    <path couples="2 1">
+      <move select="Extend Left" scaleY=".5" />
+      <move select="Forward 2" />
+      <move select="Quarter Right" offsetX="1"/>
+    </path>
+    <path couples="2 1">
+      <move select="Extend Left" scaleY=".5" />
+      <move select="Forward 2" />
+      <move select="Quarter Right" offsetX="1" offsetY="-1"/>
+    </path>
+  </tam>
+
+  <tam title="Once Removed Turn to a Line" group="(From double pass thru) Once Removed"
+       formation="Double Pass Thru">
+    <path couples="1 2">
+      <move select="U-Turn Left" beats="4" offsetX="1.5" offsetY="2"/>
+    </path>
+    <path couples="1 2">
+      <move select="U-Turn Left" beats="4" offsetX="1.5" offsetY="2"/>
+    </path>
+    <path couples="2 1">
+      <move select="U-Turn Left" beats="4" offsetX="2.5" offsetY="2"/>
+    </path>
+    <path couples="2 1">
+      <move select="U-Turn Left" beats="4" offsetX="2.5" offsetY="2"/>
     </path>
   </tam>
 
