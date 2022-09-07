@@ -22,7 +22,8 @@
 -->
 <tamination title="Split Two">
 
-  <tam title="Split the Outside Couple" formation="Eight Chain Thru" group=" ">
+  <tam title="Centers Split the Outside Couple"
+       formation="Eight Chain Thru" group=" " actives="Centers">
     <path>
       <move select="Extend Left" scaleY=".5"/>
       <move select="Extend Right" scaleY=".5"/>
@@ -41,10 +42,30 @@
     </path>
   </tam>
 
-  <tam title="Split the Outside Couple, Separate, Go Around One to a Line"
+  <tam title="Centers Split Two" formation="Eight Chain Thru"
+       group=" " display="none" actives="Centers">
+    <path>
+      <move select="Extend Left" scaleY=".5"/>
+      <move select="Extend Right" scaleY=".5"/>
+    </path>
+    <path>
+      <move select="Extend Right" scaleY=".5"/>
+      <move select="Extend Left" scaleY=".5"/>
+    </path>
+    <path>
+      <move select="Extend Right" scaleY=".5"/>
+      <move select="Extend Left" scaleY=".5"/>
+    </path>
+    <path>
+      <move select="Extend Left" scaleY=".5"/>
+      <move select="Extend Right" scaleY=".5"/>
+    </path>
+  </tam>
+
+  <tam title="Centers Split the Outside Couple, Separate, Go Around One to a Line"
        from="Pass Thru" group=" "
        formation="Eight Chain Thru"
-       fractions="" >
+       actives="Centers">
     <path>
       <move select="Dodge Left" beats="1" scaleX=".25" scaleY=".25" offsetX=".5" />
       <move select="Dodge Right" beats="1" scaleX=".25" scaleY=".25" offsetX=".5" />

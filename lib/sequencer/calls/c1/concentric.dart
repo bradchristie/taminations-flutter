@@ -91,10 +91,15 @@ class Concentric extends ActivesOnlyAction {
 
     if (realCall.isBlank)
       throw CallError('Concentric what?');
-    if (ctx.actives.length == 8)
-      await ctx.applyCalls('Center 4 $realCall While Outer 4 $name');
+    if (ctx.actives.length == 8) {
+      await ctx.applyCalls('Center 4 $realCall');
+      ctx.checkCenters();
+      ctx.contractPaths();
+      await ctx.applyCalls('Outer 4 $name');
+    }
     else {
       await _performConcentric(ctx);
+      ctx.checkCenters();
     }
   }
 
