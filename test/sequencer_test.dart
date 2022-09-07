@@ -3258,6 +3258,19 @@ Trail to a Diamond
 Cut the Diamond
 Cast Off 3/4
 Left Square Thru 4
+Allemande Left''',
+
+  'Concentric Tag the Line' :
+'''Head Lead Right
+Veer Left
+Fan the Top
+As Couples Centers Run
+Concentric Tag the Line
+Right Roll to a Wave
+Boys Run
+Double Pass Thru
+Leaders Trade
+Pass Thru
 Allemande Left'''
 
 };

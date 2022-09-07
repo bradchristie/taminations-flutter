@@ -201,6 +201,11 @@
     <dancer gender="girl" x="-1" y="0" angle="0"/>
   </formation>
 
+  <formation name="Single Double Pass Thru Close">
+    <dancer gender="boy" x="-1.5" y="0" angle="0"/>
+    <dancer gender="girl" x="-.5" y="0" angle="0"/>
+  </formation>
+
   <formation name="Single Eight Chain Thru">
     <dancer gender="boy" x="-3" y="0" angle="0"/>
     <dancer gender="girl" x="-1" y="0" angle="180"/>
