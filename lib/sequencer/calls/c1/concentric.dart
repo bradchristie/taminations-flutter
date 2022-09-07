@@ -20,7 +20,7 @@
 
 import '../common.dart';
 
-class Concentric extends ActivesOnlyAction {
+class Concentric extends Action {
 
   @override final level = LevelData.C1;
   @override var help = 'Besides Concentric calls for all 8 dancers,'
@@ -98,8 +98,10 @@ class Concentric extends ActivesOnlyAction {
       await ctx.applyCalls('Outer 4 $name');
     }
     else {
-      await _performConcentric(ctx);
-      ctx.checkCenters();
+      await ctx.subContext(ctx.actives, (ctx2) async {
+        await _performConcentric(ctx2);
+      });
+      ctx.checkCenters(force:true);
     }
   }
 

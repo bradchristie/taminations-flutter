@@ -953,11 +953,11 @@ class CallContext {
 
   //  For calls that just apply to the centers, make sure they
   //  stay in the center and don't collide with the other dancers
-  void checkCenters() {
+  void checkCenters({bool force=false}) {
     if (dancers.length == 8) {
       animate(0.0);
       analyze();
-      final moving = movingDancers();
+      final moving = force ? center(4) : movingDancers();
       final groupsOK = groups.length > 1 && (groups[0].length == 4 ||
           (groups[0].length == 2 && groups[1].length == 2));
       if (groupsOK && moving.length == 4 && center(4).containsAll(moving)) {
@@ -972,10 +972,12 @@ class CallContext {
             ctx2.adjustToFormation('Compact Wave RH');
           } else if (ctx2.isDiamond()) {
             ctx2.adjustToFormation('Diamond Compact');
+          } else if (ctx2.isColumns()) {
+            ctx2.adjustToFormation('Single Double Pass Thru Close');
           } else
             return;
+          ctx2.appendToSource(this, false);
           animateToEnd();
-          ctx2.appendToSource(this, true);
         }
       }
       animateToEnd();
@@ -1442,6 +1444,7 @@ class CallContext {
   });
 
   //  Return true if 8 dancers are in 2 general columns of 4 dancers each
+  //  Or 1 column of 4 dancers
   bool isColumns([int num = 4]) =>
       dancers.every((d) =>
           dancersInFront(d).length + dancersInBack(d).length == num - 1
