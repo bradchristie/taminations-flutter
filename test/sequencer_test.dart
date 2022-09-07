@@ -3271,6 +3271,26 @@ Boys Run
 Double Pass Thru
 Leaders Trade
 Pass Thru
+Allemande Left''',
+
+  'Concentric Veer' :
+'''Sides Pass the Ocean
+Heads Concentric Veer Left
+Cycle and Wheel
+Brace Thru
+Star Thru
+Pass Thru
+Allemande Left''',
+
+  'Regroup' :
+'''Sides Pass the Ocean
+Extend
+Centers Walk and Dodge
+Ends Run
+Regroup
+Brace Thru
+Star Thru
+Pass Thru
 Allemande Left'''
 
 };

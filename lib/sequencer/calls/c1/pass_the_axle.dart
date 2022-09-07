@@ -31,7 +31,7 @@ class PassTheAxle extends Action with CallWithParts, ButCall {
   4.  Centers Trade
 Part 3 can be replaced with But (another call)''';
   @override var helplink = 'c1/pass_the_axle';
-  PassTheAxle() : super('Pass the Axle');
+  PassTheAxle(String name) : super(name);
 
   @override
   Future<void> performPart1(CallContext ctx) async {
@@ -51,6 +51,37 @@ Part 3 can be replaced with But (another call)''';
 
   @override
   Future<void> performPart4(CallContext ctx) async {
+    await ctx.applyCalls('Centers Trade');
+  }
+
+}
+
+class TheAxle extends Action with CallWithParts, ButCall {
+
+  @override int numberOfParts = 3;
+  @override final level = LevelData.C1;
+  @override var butCall = 'Trade';
+  @override var help = '''The Axle is a 3-part call:
+  1.  Centers Pass Thru, others Cross Cast Back
+  2.  Swing
+  3.  Centers Trade
+Part 2 can be replaced with But (another call)''';
+  @override var helplink = 'c1/pass_the_axle';
+  TheAxle(String name) : super(name);
+
+  @override
+  Future<void> performPart1(CallContext ctx) async {
+    await ctx.applyCalls('Centers Pass Thru While Ends Cross Cast Back');
+    ctx.matchStandardFormation();
+  }
+
+  @override
+  Future<void> performPart2(CallContext ctx) async {
+    await ctx.applyCalls(butCall);
+  }
+
+  @override
+  Future<void> performPart3(CallContext ctx) async {
     await ctx.applyCalls('Centers Trade');
   }
 

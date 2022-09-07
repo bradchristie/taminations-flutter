@@ -119,6 +119,7 @@ import 'c1/percolate.dart';
 import 'c1/phantom.dart';
 import 'c1/plenty.dart';
 import 'c1/ramble.dart';
+import 'c1/regroup.dart';
 import 'c1/relay_the_top.dart';
 import 'c1/replace.dart';
 import 'c1/reverse_explode.dart';
@@ -427,7 +428,7 @@ abstract class CodedCall extends Call {
     'partnertag'.ri: (_) => PartnerTag(),
     '(left)?passandroll(your(cross)?neighbor)?'.ri: (name) => PassAndRoll(name),
     'pass(in|out)'.ri: (name) => PassInOut(name),
-    'passtheaxle'.ri: (_) => PassTheAxle(),
+    'passtheaxle'.ri: (name) => PassTheAxle(name),
     'passtheocean'.ri: (_) => PassTheOcean(),
     'passthesea'.ri: (_) => PassTheSea(),
     '(left)?passthru'.ri: (name) => PassThru(name),
@@ -449,6 +450,7 @@ abstract class CodedCall extends Call {
     '(grand)?(left)?(14|34)thru'.ri: (name) => QuarterThru(name),
 
     'ramble'.ri: (_) => Ramble(),
+    'regroup'.ri: (name) => Regroup(name),
     'relocate(.*)'.ri: (name) => Relocate(name),
     'relaythetop'.ri: (name) => RelayTheTop(name),
     '(left)?(grand)?remake'.ri: (name) => Remake(name),
@@ -542,6 +544,7 @@ abstract class CodedCall extends Call {
     'tallyho'.ri: (name) => TallyHo(name),
     //  Tandem concept not tandem-based triangle
     'tandem(?!based).+'.ri: (name) => Tandem(name),
+    'theaxle'.ri: (name) => TheAxle(name),
     'thek'.ri: (name) => TheK(name),
     'thosewhocan'.ri: (name) => ThoseWhoCan(name),
     '32aceydeucey'.ri: (name) => ThreeByTwoAceyDeucey(name),
