@@ -1460,8 +1460,8 @@ class CallContext {
   //  Return true if dancers are at squared set positions
   bool isSquare() => dancers.every((d) {
     var loc = d.location;
-    return (loc.x.abs().isAbout(3.0) && loc.y.abs().isAbout(1.0)) ||
-           (loc.x.abs().isAbout(1.0) && loc.y.abs().isAbout(3.0));
+    return (loc.x.abs().isAbout(3.0,delta:0.6) && loc.y.abs().isAbout(1.0,delta:0.6)) ||
+           (loc.x.abs().isAbout(1.0,delta:0.6) && loc.y.abs().isAbout(3.0,delta:0.6));
   });
 
   //  Return true if dancers are tidal line or wave
