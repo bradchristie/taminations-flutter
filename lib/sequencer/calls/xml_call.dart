@@ -27,29 +27,17 @@ class XMLCall extends Call {
   late List<int> xmlmap;
   late CallContext ctx2;
   bool found = false;
+  bool exact = false;
+  var perimeter = false;
+  var foundLink = '';
+  @override String get help => 'Look at the animations of $name to find '
+      'what the sequencer will accept';
 
   static const noInactiveCalls = ['slip','slither'];
 
   XMLCall(String title) : super(title);
 
-  @override
-  Future<void> performCall(CallContext ctx) async {
-
-    //  If actives != dancers, create another call context with just the actives
-    var dc = ctx.dancers.length;
-    var ac = ctx.actives.length;
-    var perimeter = false;
-    var exact = dc == ac;
-    var ctxwork = ctx;
-    if (!exact) {
-      //  Don't try to match unless the actives are together
-      if (ctx.actives.any((d) =>
-          ctx.inBetween(d, ctx.actives.first).any((it) => !it.data.active)
-      ))
-        perimeter = true;
-      ctxwork = CallContext.fromContext(ctx,dancers:ctx.actives);
-    }
-
+  Future<bool> lookupCall(CallContext ctxwork) async {
     var callfiles = CallContext.xmlFilesForCall(norm.toLowerCase());
     //  Found xml file with call, now look through each animation
     var bestOffset = double.maxFinite;
@@ -57,6 +45,7 @@ class XMLCall extends Call {
 
     for (var link in callfiles) {
       var file = await CallContext.loadOneFile(link);
+      foundLink = link;
       var tamlist = file.rootElement.findAllElements('tam').where((tam) =>
       tam('sequencer') != 'no' &&
           //  Check for calls that must go around the centers
@@ -91,6 +80,27 @@ class XMLCall extends Call {
         }
       }
     }
+    return found;
+  }
+
+  @override
+  Future<void> performCall(CallContext ctx) async {
+
+    //  If actives != dancers, create another call context with just the actives
+    var dc = ctx.dancers.length;
+    var ac = ctx.actives.length;
+    exact = dc == ac;
+    var ctxwork = ctx;
+    if (!exact) {
+      //  Don't try to match unless the actives are together
+      if (ctx.actives.any((d) =>
+          ctx.inBetween(d, ctx.actives.first).any((it) => !it.data.active)
+      ))
+        perimeter = true;
+      ctxwork = CallContext.fromContext(ctx,dancers:ctx.actives);
+    }
+
+    var found = await lookupCall(ctxwork);
 
     if (found) {
       if (['Allemande Left',

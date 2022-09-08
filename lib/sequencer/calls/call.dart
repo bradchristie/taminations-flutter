@@ -18,9 +18,7 @@
 
 */
 
-import '../../level_data.dart';
-import '../call_context.dart';
-import '../../tam_utils.dart';
+import 'common.dart';
 
 abstract class Call {
 
@@ -30,7 +28,7 @@ abstract class Call {
   String get norm => TamUtils.normalizeCall(name);
   var level = LevelData.B1;
 
-  Call(this.name);
+  Call(String s) : name=s.capWords();
   Future<void> performCall(CallContext ctx) => Future<void>.value();
 
 }

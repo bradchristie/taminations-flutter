@@ -183,17 +183,28 @@ class SequencerModel extends fm.ChangeNotifier {
     }
   }
 
-  void showHelp(String c) {
-    final callName = c.replaceFirst('help'.ri, '');
+  void showHelp(String c) async {
+    final callName = c.replaceFirst('help'.ri, '').trim();
     if (callName.isBlank)
       errorString = 'Enter "Help <call>" for specific information on <call>.';
     else {
+      errorString = 'Could not find $callName';
+      //  First look for a coded call
       final call = CodedCall.fromName(callName.capWords());
       if (call != null) {
         errorString = call.help;
         helplink = call.helplink;
-      } else
-        errorString = 'Could not find $callName';
+      } else {
+        //  No coded call, see if we can just show the Callerlab definition
+        print('Looking for XML of $callName');
+        var xmlCall = XMLCall(callName);
+        await xmlCall.lookupCall(CallContext.fromDancers(animation.dancers));
+        if (xmlCall.foundLink.isNotBlank) {
+          helplink = xmlCall.foundLink;
+          errorString  = xmlCall.help;
+          notifyListeners();
+        }
+      }
     }
     notifyListeners();
   }

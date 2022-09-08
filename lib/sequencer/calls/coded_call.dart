@@ -277,7 +277,7 @@ import 'plus/spread.dart';
 
 abstract class CodedCall extends Call {
 
-  CodedCall(String name) : super(name.capWords());
+  CodedCall(String name) : super(name);
 
   static const specifier = '\\s*(?:boys?|girls?|beaus?|belles?|centers?|ends?|lead(?:er)?s?|trail(?:er)?s?|heads?|sides?|very ?centers?|every(?:one|body)|no(?:one|body))\\s*';
 
