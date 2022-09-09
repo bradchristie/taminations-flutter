@@ -36,6 +36,14 @@ The number of Split Circulates can be modified with "Split Circulate n" or "Turn
   ScootAndPlenty(String name) : super(name);
 
   @override
+  int partNumberForName(String name) {
+    print(name);
+    if (name.matches('.*Stars?'.ri))
+      return 3;
+    return 0;
+  }
+
+  @override
   Future<void> performPart1(CallContext ctx) async {
     if (ctx.dancersHoldingLeftHands(isGrand: false).length > 2)
       dir = 'Left';

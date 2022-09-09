@@ -36,6 +36,7 @@ class Replace extends Action {
     if (!name.contains(' with '.ri))
       throw CallError('Need to replace With some other call');
     final replacementName = name.replaceFirst('.* with'.ri, '').trim();
+    final partName = name.replaceFirst('.*replace( the)?'.ri,'').replaceFirst('with.*'.ri,'').trim();
     await ctx.subContext(ctx.dancers, (ctx2) async {
       if (!ctx2.matchCodedCall(callName))
         throw CallError('Unable to find $callName as a Call with Parts');
@@ -44,7 +45,8 @@ class Replace extends Action {
       };
       if (ctx2.callstack.last is CallWithParts) {
         final call = ctx2.callstack.last as CallWithParts;
-        final partNumber = CallWithParts.partNumberFromCall(call, name);
+
+        final partNumber = CallWithParts.partNumberFromCall(call,partName);
         if (partNumber == 0)
           throw CallError('Unable to figure out what to Replace');
         call.replacePart[partNumber] = replacement;

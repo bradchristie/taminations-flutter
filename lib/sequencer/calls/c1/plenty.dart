@@ -34,6 +34,14 @@ The number of Split Circulates can be changed with Turn the Star (fraction)''';
   Plenty(String name) : super(name);
 
   @override
+  int partNumberForName(String name) {
+    print(name);
+    if (name.matches('.*Stars?'.ri))
+      return 2;
+    return 0;
+  }
+
+  @override
   Future<void> performPart1(CallContext ctx) async {
     await ctx.applyCalls('Center 4 Step and Fold '
         'While Outer 4 Face Right and Counter Rotate');

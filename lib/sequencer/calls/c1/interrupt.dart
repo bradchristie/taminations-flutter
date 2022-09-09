@@ -65,7 +65,8 @@ It can be used in these ways:
           }
         } else {
           //  Otherwise we are interrupting at one specific location
-          var partNumber = CallWithParts.partNumberFromCall(call, name);
+          final partName = name.replaceFirst('.*(after|before)( the)?'.ri,'').replaceFirst('with.*'.ri,'').trim();
+          var partNumber = CallWithParts.partNumberFromCall(call, partName);
           if (partNumber == 0)
             throw CallError('Unable to figure out what to Interrupt');
           if (name.contains('\\bafter\\b'.ri))

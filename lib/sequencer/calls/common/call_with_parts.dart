@@ -112,27 +112,29 @@ mixin CallWithParts {
 
   //  Utility to parse out a part number from a call
   static final partMap = {
-    'First|1st'.ri : 1,
-    'Second|2nd'.ri : 2,
-    'Third|3rd'.ri : 3,
-    'Fourth|4th'.ri : 4,
-    'Fifth|5th'.ri : 5,
-    'Sixth|6th'.ri : 6,
-    'Seventh|7th'.ri : 7,
-    'Eighth|8th'.ri : 8,
+    'First|One|1(st)?'.ri : 1,
+    'Second|Two|2(nd)?'.ri : 2,
+    'Third|Three|3(rd)?'.ri : 3,
+    'Four(th)?|4(th)?'.ri : 4,
+    'Fifth|Five|5(th)?'.ri : 5,
+    'Six(th)?|6(th)?'.ri : 6,
+    'Seven(th)?|7(th)?'.ri : 7,
+    'Eighth?|8(th)?'.ri : 8,
     'Last'.ri : -1
   };
   static int partNumberFromCall(CallWithParts call, String name) {
-    var partNumber = 0;
-    for (var r in partMap.keys) {
-      if (name.contains(r)) {
-        partNumber = partMap[r]!;
+    var partNumber = call.partNumberForName(name);
+    if (partNumber == 0) {
+      for (var r in partMap.keys) {
+        if (name.contains(r)) {
+          partNumber = partMap[r]!;
+        }
       }
+      if (partNumber < 0)
+        partNumber = call.numberOfParts;
+      if (partNumber == 0)
+        partNumber = call.partNumberForName(name);
     }
-    if (partNumber < 0)
-      partNumber = call.numberOfParts;
-    if (partNumber == 0)
-      partNumber = call.partNumberForName(name);
     return partNumber;
   }
 

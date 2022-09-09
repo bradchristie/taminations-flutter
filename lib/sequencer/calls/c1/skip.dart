@@ -35,7 +35,8 @@ class Skip extends Action {
         throw CallError('Unable to find $callName as a Call with Parts');
       if (ctx2.callstack.last is CallWithParts) {
         final call = ctx2.callstack.last as CallWithParts;
-        final partNumber = CallWithParts.partNumberFromCall(call, name);
+        final partName = name.replaceFirst('.*(skip|delete)( the)?'.ri,'').trim();
+        final partNumber = CallWithParts.partNumberFromCall(call,partName);
         if (partNumber == 0)
           throw CallError('Unable to figure out what to Skip');
         call.replacePart[partNumber] = (ctx) async { };
