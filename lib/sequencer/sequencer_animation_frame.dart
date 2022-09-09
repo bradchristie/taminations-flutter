@@ -117,7 +117,7 @@ class SequencerHelpButton extends fm.StatelessWidget {
     final appState = pp.Provider.of<TamState>(context,listen: false);
     return fm.Expanded(
         child: Button('Help',onPressed: () {
-          appState.change(detailPage:DetailPage.HELP);
+          appState.change(detailPage:DetailPage.HELP,helplink: 'info/sequencer');
         },)
     );
   }

@@ -185,8 +185,10 @@ class SequencerModel extends fm.ChangeNotifier {
 
   void showHelp(String c) async {
     final callName = c.replaceFirst('help'.ri, '').trim();
-    if (callName.isBlank)
+    if (callName.isBlank) {
       errorString = 'Enter "Help <call>" for specific information on <call>.';
+      helplink = 'info/sequencer';
+    }
     else {
       errorString = 'Could not find $callName';
       //  First look for a coded call
