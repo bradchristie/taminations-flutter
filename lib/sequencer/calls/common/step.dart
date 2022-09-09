@@ -22,17 +22,19 @@ import '../common.dart';
 
 class Step extends Action {
 
+  @override LevelData get level => name.contains('Press')
+      ? LevelData.C1 : LevelData.B1;
   @override String get help => '$name moves dancers ahead one position.';
   @override String get helplink =>
       name.contains('Press') ? 'c1/press' : super.helplink;
-  Step(String name) : super(name) {
-    if (name.contains('Press'))
-      level = LevelData.C1;
-  }
+
+  Step(String name) : super(name);
 
   @override
   Path performOne(Dancer d, CallContext ctx) {
-    return TamUtils.getMove('Forward 2');
+    var dist = ctx.isLines() && d.data.trailer
+        ? d.distanceTo(ctx.dancerInFront(d)!) : 2.0;
+    return TamUtils.getMove('Forward')..changeBeats(2.0)..scale(dist, 1.0);
   }
 
 }

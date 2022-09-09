@@ -3291,6 +3291,17 @@ Regroup
 Brace Thru
 Star Thru
 Pass Thru
+Allemande Left''',
+
+  'Press Ahead' :
+'''Sides Pass the Ocean
+Extend
+Leaders Press Ahead
+In Your Block Trade
+In Your Block Zing
+Girls 1/2 Press Ahead
+Star Thru
+Trade By
 Allemande Left'''
 
 };
