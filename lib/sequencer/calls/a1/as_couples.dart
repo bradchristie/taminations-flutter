@@ -72,8 +72,16 @@ class AsCouples extends FourDancerConcept {
 
   @override
   void postAdjustment(CallContext ctx, Dancer cd, List<Dancer> group) {
+    final couplesSnapFormations = {
+      'Normal Lines Compact': 1.0,
+      'Normal Lines': 1.0,
+      'Double Pass Thru': 1.0,
+      'Quarter Tag' : 1.5,
+      'Tidal Line RH' : 1.0,
+    };
     group.first.path.addhands(Hands.GRIPRIGHT);
     group.second.path.addhands(Hands.GRIPLEFT);
+    ctx.matchFormationList(couplesSnapFormations,maxOffset: 8.1);
   }
 
 }
