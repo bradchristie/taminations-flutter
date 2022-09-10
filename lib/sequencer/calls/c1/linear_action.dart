@@ -42,11 +42,14 @@ The final Cast Off 3/4 can be replaced with But (another call)''';
 
   @override
   Future<void> performPart2(CallContext ctx) async {
-    await ctx.subContext(centerDancers, (ctx2)async {
+    await ctx.subContext(ctx.dancers, (ctxPart2) async {
+    await ctxPart2.subContext(centerDancers, (ctx2)async {
       await ctx2.applyCalls('Box Circulate 1.5');
     });
-    await ctx.subContext(outerDancers, (ctx2) async {
+    ctxPart2.checkCenters();
+    await ctxPart2.subContext(outerDancers, (ctx2) async {
       await ctx2.applyCalls('Trade');
+    });
     });
   }
 

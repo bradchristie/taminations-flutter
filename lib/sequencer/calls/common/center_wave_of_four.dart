@@ -26,18 +26,29 @@ class CenterWaveOfFour extends CodedCall {
 
   @override
   Future<void> performCall(CallContext ctx) async {
-    final vc = ctx.dancers.where((d) => d.data.verycenter).toList();
-    if (vc.length == 2) {
-      final waveOf4 = [
-        ctx.dancerToRight(vc.first),
-        ctx.dancerToLeft(vc.first),
-        ctx.dancerToRight(vc.second),
-        ctx.dancerToLeft(vc.second)
-      ].whereType<Dancer>().toList();
-      if (waveOf4.length == 4) {
-        ctx.dancers.forEach((d) { d.data.active = waveOf4.contains(d); });
-        return;
+    var waveOf4 = <Dancer>[];
+    final xd = ctx.dancers.where((d) => d.location.x.isAbout(0.0)).toList();
+    final yd = ctx.dancers.where((d) => d.location.y.isAbout(0.0)).toList();
+    if (xd.length > 4)
+      waveOf4 = xd.sortedWith((d1, d2) => d1.location.length.compareTo(d2.location.length))
+          .take(4).toList();
+    else if (yd.length > 4)
+      waveOf4 = yd.sortedWith((d1, d2) => d1.location.length.compareTo(d2.location.length))
+          .take(4).toList();
+    else {
+      final vc = ctx.dancers.where((d) => d.data.verycenter).toList();
+      if (vc.length == 2) {
+        waveOf4 = [
+          ctx.dancerToRight(vc.first),
+          ctx.dancerToLeft(vc.first),
+          ctx.dancerToRight(vc.second),
+          ctx.dancerToLeft(vc.second)
+        ].whereType<Dancer>().toList();
       }
+    }
+    if (waveOf4.length == 4) {
+      ctx.dancers.forEach((d) { d.data.active = waveOf4.contains(d); });
+      return;
     }
     throw CallError('Unable to identify $name');
   }

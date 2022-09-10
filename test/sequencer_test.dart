@@ -2506,6 +2506,15 @@ Boys Run
 Veer Right
 Promenade Home''',
 
+  'Linear Action 2' :
+'''Heads Step to a Wave
+Linear Action
+Boys Run
+Wheel and Deal
+Zoom
+Centers Pass Thru
+Allemande Left''',
+
   'Pass the Axle' :
 '''Sides Lead Right
 Pass the Axle But Cast Off 3/4
