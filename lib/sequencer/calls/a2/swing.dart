@@ -25,6 +25,11 @@ class Swing extends Action {
 
   @override final level = LevelData.A2;
   @override var helplink = 'a2/slip';
+  @override var help = '''Swing by itself is the A-2 call.
+You can also finish a singing call sequencer with
+Swing Corner and Promenade
+Or, skip the Swing with
+Promenade Corner''';
   Swing(String name) : super(name);
 
   @override

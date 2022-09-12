@@ -33,6 +33,13 @@ import '../../../tam_utils.dart';
 //  Swing Your Corner And Promenade
 class PromenadeHome extends Action {
 
+  @override var help = '''If all the dancers are in sequence and near their partner, you can
+Promenade Home
+You can also finish a singing call sequence with
+Swing Corner and Promenade
+Or, skip the Swing with
+Promenade Corner''';
+  @override var helplink = 'b1/promenade';
   PromenadeHome(String name) : super(name);
 
   var _startPoints = <Vector>[];

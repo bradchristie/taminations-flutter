@@ -438,7 +438,7 @@ abstract class CodedCall extends Call {
     'phantom.+'.ri: (name) => Phantom(name),
     'plenty'.ri: (name) => Plenty(name),
     'point'.ri: (_) => Points(),
-    'promenadehome'.ri: (name) => PromenadeHome(name),
+    'promenade(home)?'.ri: (name) => PromenadeHome(name),
     'swing(your)?corner(and)?promenade(home)?'.ri: (name) => PromenadeHome(name),
     'promenade(home)?(with)?(your)?corner'.ri: (name) => PromenadeHome(name),
     '(left|right)?pullby'.ri: (name) => PullBy(name),
