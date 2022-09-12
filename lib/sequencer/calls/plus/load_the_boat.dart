@@ -46,7 +46,12 @@ Part 4 for the Centers can be replaced with But (another call)''';
 
   @override
   Future<void> performPart1(CallContext ctx) async {
-    await ctx.applyCalls('Ends ${_endsPart(ctx)} While Center 4 Pass Thru');
+    await ctx.subContext(ctx.outer(4), (ctx2) async {
+      await ctx2.applyCalls(_endsPart(ctx2));
+    });
+    await ctx.subContext(ctx.center(4), (ctx2) async {
+      await ctx2.applyCalls('Pass Thru');
+    });
   }
 
   @override
