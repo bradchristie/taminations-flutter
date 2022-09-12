@@ -20,10 +20,11 @@
 
 import 'package:flutter/material.dart' as fm;
 import 'package:provider/provider.dart' as pp;
-import 'package:taminations/sequencer/sequence_frame.dart';
 
 import '../common.dart';
 import '../pages/animation_page.dart';
+import '../pages/page.dart';
+import 'sequence_frame.dart';
 import 'sequencer_model.dart';
 
 class SequencerAnimationFrame extends fm.StatelessWidget {
@@ -101,7 +102,7 @@ class BasicSequencerAnimation extends fm.StatelessWidget {
                       builder: (context,model,_) =>
                           fm.Text(model.currentCall < 0 ? ''
                               : model.calls[model.currentCall].name,
-                              style: fm.TextStyle(fontSize: 28))
+                              style: fm.TextStyle(fontSize: isSmallDevice(context) ? 14 : 28))
                   )
               )
             ]
