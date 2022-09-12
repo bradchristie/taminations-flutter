@@ -20,21 +20,18 @@ Call pronunciations provided by
 
 ---
 
-## Taminations version 1.6.45 built 2022-09-05
+## Taminations version 1.6.46 built 2022-09-12
 Copyright 2022 by Brad Christie.  
 This is free software, and you are welcome to modify and redistribute it
 under the terms of the [GNU GPL license](http://www.gnu.org/licenses/gpl.html).  
 
 ## What's New
-* Update C-1 and C-3A definitions from Callerlab
-* Fix scrolling when searching calls on small devices
-* Clarify organization of As Couples and All 4 / All 8 animations
+* Animation for Once Removed Wheel and Deal, Once Removed Turn to a Line
+* Linear Action, All 8 Recycle / Cycle and Wheel from I-Beam formations
 * Sequencer changes:
-  * Add Help command, enter "Help (call)" to get help on a specific call
-  * Fix for sequencer grinding on CPU even while idle on some platforms
-  * Better animations for some cases where some dancers are at angles to the walls
-  * Define parts for (Scatter) Scoot Chain Thru
-  * Many other minor fixes
+  * More additions to Help command
+  * Fix for ending formation for As Couples
+
 
 For a detailed history of changes, view the
 [Git log](https://github.com/bradchristie/taminations-flutter/commits/main)
