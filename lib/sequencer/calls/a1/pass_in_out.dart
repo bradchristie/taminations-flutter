@@ -32,7 +32,7 @@ class PassInOut extends ActivesOnlyAction with CallWithParts {
 
   @override
   Future<void> performPart1(CallContext ctx) async {
-    await ctx.applyCalls('Step to a Wave','Pass Thru');
+    await ctx.applyCalls('Pass Thru');
   }
 
   @override
