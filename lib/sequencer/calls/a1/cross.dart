@@ -51,6 +51,9 @@ class Cross extends Action {
     //  Find the other dancer to cross with
     Dancer? d2;
     for (var it in ctx.actives) {
+      //  Not too far away
+      if (d.distanceTo(it) > 6.0)
+        continue;
       //  Dancers must be facing opposite directions
       //  and facing diagonal to each other
       final a = d.angleToDancer(it).abs();
