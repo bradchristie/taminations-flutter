@@ -31,7 +31,8 @@ class SlideThru extends ActivesOnlyAction {
   @override
   Path performOne(Dancer d, CallContext ctx) {
     //  Check if in wave, slide thru with adj dancer
-    if (ctx.isInWave(d) && d.data.beau && ctx.dancerToRight(d)!.data.active) {
+    var d2 = ctx.dancerFacing(d);
+    if (d2 == null && ctx.isInWave(d) && d.data.beau && ctx.dancerToRight(d)!.data.active) {
       var dist = d.distanceTo(ctx.dancerToRight(d)!);
       if (d.gender == Gender.BOY)
         return TamUtils.getMove('Lead Right',scale:[1.0,dist/2.0].v);
@@ -40,7 +41,6 @@ class SlideThru extends ActivesOnlyAction {
     } else {
       //  Not in wave
       //  Must be facing dancers
-      var d2 = ctx.dancerFacing(d);
       if (d2 == null)
           return ctx.dancerCannotPerform(d,name);
       var dist = d.distanceTo(d2);
