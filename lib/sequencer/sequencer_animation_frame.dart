@@ -18,6 +18,7 @@
 
 */
 
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart' as fm;
 import 'package:provider/provider.dart' as pp;
 
@@ -100,9 +101,10 @@ class BasicSequencerAnimation extends fm.StatelessWidget {
                   top: 6, left:12, right:12,
                   child: pp.Consumer<SequencerModel>(
                       builder: (context,model,_) =>
-                          fm.Text(model.currentCall < 0 ? ''
+                          AutoSizeText(model.currentCall < 0 ? ''
                               : model.calls[model.currentCall].name,
-                              style: fm.TextStyle(fontSize: isSmallDevice(context) ? 14 : 28))
+                              maxLines: 2,
+                              style: fm.TextStyle(fontSize: 28))
                   )
               )
             ]
