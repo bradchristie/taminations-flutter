@@ -490,6 +490,7 @@ class TamUtils {
       .replaceAll('\\b12 square thru\\b'.ri,'Square Thru 2')
       .replaceAll('\\bsquare thru 4\\b'.ri,'Square Thru')
    //   .replaceAll('\\bbox recycle\\b'.ri,'Recycle')
+      .replaceAll('(all 8|box|column|couples) Circulate'.ri,'Circulate')
       .replaceAll('\\ballamande?\\b'.ri,'Allemande')
       .replaceAllMapped('interlocked (flip|cut) the'.ri,
           (m) => '${m[1]} the Interlocked')

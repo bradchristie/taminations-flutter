@@ -139,30 +139,20 @@ class XMLCall extends Call {
       ctx3.extendPaths();
       ctx3.analyze();
     }
-
-    var matchResult = ctxwork.computeFormationOffsets(ctx2, xmlmap, delta: 0.2);
-    ctxwork.adjustToFormationMatch(matchResult);
-
+    var endbeat = ctxwork.maxBeats();
     for (var i3 = 0; i3 < xmlmap.length; i3++) {
       var m = xmlmap[i3];
       var p = Path.fromPath(asymmetric ? allPaths[m] : allPaths[m >> 1]);
-      /*
-      if (p.movelist.isEmpty)
-        p.add(TamUtils.getMove('Stand')..notFromCall());
-      //  Scale active dancers to fit the space they are in
-      //  Compute difference between current formation and XML formation
-      var vd = matchResult.offsets[i3].rotate(-ctxwork.actives[i3].tx.angle);
-      //  Apply formation difference to first movement of XML path
-      if (vd.length > 0.1)
-        p.skewFirst(-vd.x, -vd.y);
-
-       */
       //  Add XML path to dancer
       ctxwork.actives[i3].path.add(p);
-      //  Move dancer to end so any subsequent modifications (e.g. roll)
-      //  use the new position
-      ctxwork.actives[i3].animateToEnd();
     }
+
+    ctxwork.animate(endbeat);
+    var matchResult = ctxwork.computeFormationOffsets(ctx2, xmlmap, delta: 0.2);
+    ctxwork.adjustToFormationMatch(matchResult);
+    //  Move dancers to end so any subsequent modifications (e.g. roll)
+    //  use the new position
+    ctxwork.animateToEnd();
 
     //  Mark dancers that had no XML move as inactive
     //  Needed for post-call modifications e.g. spread

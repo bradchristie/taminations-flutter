@@ -96,6 +96,19 @@ class Fraction extends Action {
             d.path.add(mo.clip(_partBeats - d.path.beats));
         }
       }
+
+      //  Make any ajustment needed to match XML animation at fractional point
+      if (call is XMLCall && call.found) {
+        var xmlctx = CallContext.fromXML(call.xelem, loadPaths: true);
+        xmlctx.animate(_partBeats);
+        fracctx.animateToEnd();
+        var match = fracctx.matchFormations(xmlctx,fuzzy: true);
+        if (match == null) {
+          throw CallError('Error computing fractional call');
+        }
+        fracctx.adjustToFormationMatch(match.match,map: match.map);
+      }
+
     }
     fracctx.appendToSource();
   }
