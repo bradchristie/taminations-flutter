@@ -185,6 +185,7 @@ import 'c2/rotary.dart';
 import 'c2/rotate.dart';
 import 'c2/scoot_and_cross_ramble.dart';
 import 'c2/shazam.dart';
+import 'c2/single_bounce.dart';
 import 'c2/single_cross_and_wheel.dart';
 import 'c2/single_cross_trade_and_wheel.dart';
 import 'c2/stack_the_line.dart';
@@ -483,6 +484,7 @@ abstract class CodedCall extends Call {
     'siamese.*'.ri: (name) => Siamese(name),
     'side'.ri: (name) => Sides(name),
     '(single)?(split)?sidetrack'.ri: (name) => Sidetrack(name),
+    'singlebounce(the)?($specifier)?'.ri: (name) => SingleBounce(name),
     '(left)?singlecrossandwheel'.ri: (name) => SingleCrossAndWheel(name),
     '(left)?singlecrosstradeandwheel'.ri: (name) => SingleCrossTradeAndWheel(name),
     '(left)?singlewheel'.ri: (name) => SingleWheel(name),

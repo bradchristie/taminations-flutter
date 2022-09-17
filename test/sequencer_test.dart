@@ -3311,6 +3311,25 @@ In Your Block Zing
 Girls 1/2 Press Ahead
 Star Thru
 Trade By
+Allemande Left''',
+
+  'Single Bounce' :
+'''Heads Pass the Ocean
+Extend
+Single Bounce the Boys
+Left Roll to a Wave
+Single Bounce the Centers
+Partner Tag
+Centers Trade
+Single Bounce the Boys
+Magic Column Circulate
+Trade and Roll
+Star Thru
+Track 2
+Cast Off 3/4
+Boys Run
+Star Thru
+Pass Thru
 Allemande Left'''
 
 };
