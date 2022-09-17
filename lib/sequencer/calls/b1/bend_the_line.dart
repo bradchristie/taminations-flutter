@@ -30,16 +30,17 @@ class BendTheLine extends Action {
   Path performOne(Dancer d, CallContext ctx) {
     if (!ctx.isInCouple(d) || !d.data.partner!.data.active)
       throw CallError('Only couples can Bend the Line' );
+    var ys = d.distanceTo(d.data.partner!)/2.0;
     if (d.data.beau) {
       if (d.isCenterRight)
-        return TamUtils.getMove('Hinge Right' );
+        return TamUtils.getMove('Hinge Right' )..scale(1.0,ys);
       else if (d.isCenterLeft)
-        return TamUtils.getMove('BackHinge Right' );
+        return TamUtils.getMove('BackHinge Right' )..scale(1.0,ys);
     } else if (d.data.belle) {
       if (d.isCenterRight)
-        return TamUtils.getMove('BackHinge Left' );
+        return TamUtils.getMove('BackHinge Left' )..scale(1.0,ys);
       else if (d.isCenterLeft)
-        return TamUtils.getMove('Hinge Left' );
+        return TamUtils.getMove('Hinge Left' )..scale(1.0,ys);
     }
     throw CallError('Cannot figure out how to Bend the Line' );
   }
