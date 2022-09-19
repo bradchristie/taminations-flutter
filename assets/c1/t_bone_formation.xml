@@ -22,7 +22,7 @@
 -->
 <tamination title="T-Bone Formation">
 
-  <tam title="(T-Bone) Circulate" from="" fractions="" group="(T-Bone)">
+  <tam title="Circulate" from="" fractions="" group="(T-Bone)">
      <formation>
       <dancer gender="girl" x="-1" y="3" angle="90"/>
       <dancer gender="boy" x="-1" y="1" angle="180"/>
@@ -43,7 +43,7 @@
     </path>
   </tam>
 
-  <tam title="(T-Bone) Split Circulate" from="" fractions="" group="(T-Bone)">
+  <tam title="Split Circulate" from="" fractions="" group="(T-Bone)">
      <formation>
       <dancer gender="girl" x="-1" y="3" angle="90"/>
       <dancer gender="boy" x="-1" y="1" angle="180"/>
@@ -64,7 +64,7 @@
     </path>
   </tam>
 
-  <tam title="(T-Bone) Scoot Back" from="" group="(T-Bone)">
+  <tam title="Scoot Back" from="" group="(T-Bone)">
      <formation>
       <dancer gender="girl" x="-1" y="3" angle="0"/>
       <dancer gender="boy" x="-1" y="1" angle="270"/>
@@ -89,7 +89,7 @@
     </path>
   </tam>
 
-  <tam title="(T-Bone) Follow Your Neighbor"
+  <tam title="Follow Your Neighbor"
        from="Left-Handed T-Bone"
        group="(T-Bone)" >
      <formation>
