@@ -22,22 +22,22 @@
 -->
 <tamination title="Facing Couples Rule">
 
-  <tamxref title="Swing Thru" from="Facing Couples"
+  <tamxref title="Swing Thru"
            xref-link="b2/swing_thru"
            xref-title="Swing Thru"
            xref-from="Facing Couples" />
 
-  <tamxref title="Swing Thru" from="Eight Chain Thru"
+  <tamxref title="Swing Thru"
            xref-link="b2/swing_thru"
            xref-title="Swing Thru"
            xref-from="Eight Chain Thru" />
 
-  <tamxref title="Left Swing Thru" from="Facing Couples"
+  <tamxref title="Left Swing Thru"
            xref-link="b2/swing_thru"
            xref-title="Left Swing Thru"
            xref-from="Facing Couples" />
 
-  <tamxref title="Left Swing Thru" from="Eight Chain Thru"
+  <tamxref title="Left Swing Thru"
            xref-link="b2/swing_thru"
            xref-title="Left Swing Thru"
            xref-from="Eight Chain Thru" />
