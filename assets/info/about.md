@@ -20,18 +20,17 @@ Call pronunciations provided by
 
 ---
 
-## Taminations version 1.6.46 built 2022-09-12
+## Taminations version 1.6.47 built 2022-09-19
 Copyright 2022 by Brad Christie.  
 This is free software, and you are welcome to modify and redistribute it
 under the terms of the [GNU GPL license](http://www.gnu.org/licenses/gpl.html).  
 
 ## What's New
-* Animation for Once Removed Wheel and Deal, Once Removed Turn to a Line
-* Linear Action, All 8 Recycle / Cycle and Wheel from I-Beam formations
+* Clean up animation lists for T-Bones and Facing Couples
 * Sequencer changes:
-  * More additions to Help command
-  * Fix for ending formation for As Couples
-
+  * Code for Single Bounce
+  * Fix for some uses of fractions
+  * Fix some cases of Bend the Line
 
 For a detailed history of changes, view the
 [Git log](https://github.com/bradchristie/taminations-flutter/commits/main)
