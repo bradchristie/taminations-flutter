@@ -1754,6 +1754,18 @@ Circulate
 Boys Run
 Allemande Left''',
 
+  'Triple Box 2' :
+'''Sides Pass the Ocean
+Extend
+Triple Box Circulate
+Triple Box Walk and Dodge
+Triple Box Chase Right
+Left Swing Thru
+Recycle
+Pass Thru
+Trade By
+Allemande Left''',
+
   'Start' :
   '''Heads Lead Right
 Boys Cross
