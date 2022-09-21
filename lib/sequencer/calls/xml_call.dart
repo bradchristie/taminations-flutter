@@ -149,7 +149,7 @@ class XMLCall extends Call {
 
     ctxwork.animate(endbeat);
     var matchResult = ctxwork.computeFormationOffsets(ctx2, xmlmap, delta: 0.2);
-    ctxwork.adjustToFormationMatch(matchResult);
+    ctxwork.adjustToFormationMatch(matchResult,adjustFirstMovement: true);
     //  Move dancers to end so any subsequent modifications (e.g. roll)
     //  use the new position
     ctxwork.animateToEnd();
