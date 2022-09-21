@@ -1083,7 +1083,8 @@ class CallContext {
   //  Given a match to a formation, adjust the dancer's last move
   //  so it ends with that formation.
   //  Returns true if any adjustment was made.
-  bool adjustToFormationMatch(FormationMatchResult match,{List<int>? map} ) {
+  bool adjustToFormationMatch(FormationMatchResult match,
+      {List<int>? map, bool adjustFirstMovement=false} ) {
     var retval = false;
     for (var i=0; i<dancers.length; i++) {
       if (map != null && map[i] < 0)
@@ -1094,16 +1095,23 @@ class CallContext {
         //  Get the last movement
         Movement m;
         if (d.path.movelist.isNotEmpty)
-          m = d.path.pop();
+          m = adjustFirstMovement ? d.path.shift()! : d.path.pop();
         else
           m = (TamUtils.getMove('Stand Ahead')
             ..changeBeats(match.offsets[i].length)
             ..notFromCall()).pop();
         //  Transform the offset to the dancer's angle
-        d.animateToEnd();
+        if (adjustFirstMovement)
+          d.animate(0);
+        else
+          d.animateToEnd();
         var vd = match.offsets[i].rotate(-d.tx.angle);
         //  Apply it
-        d.path.add(m.skew(-vd.x,-vd.y).twist(-match.angles[i]));
+        m = m.skew(-vd.x,-vd.y).twist(-match.angles[i]);
+        if (adjustFirstMovement)
+          d.path.unshift(m);
+        else
+          d.path.add(m);
         d.animateToEnd();
       }
     }

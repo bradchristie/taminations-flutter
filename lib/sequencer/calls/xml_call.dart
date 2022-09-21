@@ -201,8 +201,7 @@ class XMLCall extends Call {
     print(ctxwork.dancers.show());
     print(ctx2.dancers.show());
     var matchResult = ctxwork.computeFormationOffsets(ctx2, xmlmap, delta: 0.2);
-    print('  Adjusting to match');
-    ctxwork.adjustToFormationMatch(matchResult);
+    ctxwork.adjustToFormationMatch(matchResult,adjustFirstMovement: true);
     //  Move dancers to end so any subsequent modifications (e.g. roll)
     //  use the new position
     print('  Animating to end');

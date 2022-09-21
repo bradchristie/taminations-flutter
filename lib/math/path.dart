@@ -86,6 +86,12 @@ class Path {
     return null;
   }
 
+  Path unshift(Movement m) {
+    movelist.insert(0,m);
+    recalculate();
+    return this;
+  }
+
   void reflect() {
     movelist = movelist.map((it) => it.reflect()).toList();
     recalculate();
