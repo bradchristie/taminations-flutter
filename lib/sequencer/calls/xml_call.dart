@@ -1,7 +1,7 @@
 /*
 
   Taminations Square Dance Animations
-  Copyright (C) 2021 Brad Christie
+  Copyright (C) 2022 Brad Christie
 
   This program is free software: you can redistribute it and/or modify
   it under the terms of the GNU General Public License as published by
@@ -18,12 +18,17 @@
 
 */
 
+import '../../calls/calls_index.g.dart';
+import '../../formations.g.dart';
+import '../../math/paths.dart';
+import 'animated_call.dart';
 import 'common.dart';
 import 'call.dart';
 
 class XMLCall extends Call {
 
   late XmlElement xelem;
+  late AnimatedCall xcall;
   late List<int> xmlmap;
   late CallContext ctx2;
   bool found = false;
@@ -36,6 +41,34 @@ class XMLCall extends Call {
   static const noInactiveCalls = ['slip','slither'];
 
   XMLCall(String title) : super(title);
+
+  bool lookupAnimatedCall(CallContext ctxwork) {
+    var calllist = CallsIndex.index[norm] ?? <AnimatedCall>[];
+    var bestOffset = double.maxFinite;
+    var fuzzy = true;
+
+    for (var tam in calllist) {
+      var headsMatchSides = !tam.title.contains('Heads?|Sides?'.r);
+      var sexy = tam.genderSpecific;
+      var ctx2q = CallContext.fromFormation(tam.formation);
+      var mm = ctxwork.matchFormations(ctx2q,sexy: sexy, fuzzy: fuzzy,
+          handholds: !fuzzy, headsMatchSides: headsMatchSides);
+      if (mm != null) {
+        var matchResult = mm.match;
+        var totOffset = matchResult.offsets.fold<double>(0.0, (s, v) => s + v.length);
+        var totAngle = matchResult.angles.fold<double>(0.0, (s, a) => s + a);
+        if (totOffset < bestOffset && totAngle.isAbout(0.0)) {
+          xcall = tam;
+          xmlmap = mm.map;
+          ctx2 = ctx2q;
+          bestOffset = totOffset;
+          level = tam.level;
+          found = true;
+        }
+      }
+    }
+    return found;
+  }
 
   Future<bool> lookupCall(CallContext ctxwork) async {
     var callfiles = CallContext.xmlFilesForCall(norm.toLowerCase());
@@ -86,6 +119,22 @@ class XMLCall extends Call {
   @override
   Future<void> performCall(CallContext ctx) async {
 
+    var testCall =     AnimatedCall('Heads Lead Right',
+        Formations.StaticSquare,
+        [
+          Path([
+            ...(Paths.HingeRight..changeBeats(4)..scale(0.5,0.5)..skew(3.5,-1.5)).movelist,
+          ]),
+          Path([
+            ...(Paths.QuarterRight..changeBeats(4)..changehands(1)..skew(2.0,0.0)).movelist,
+          ]),
+          Path([
+          ]),
+          Path([
+          ]),
+        ],
+        parts:'');
+
     //  If actives != dancers, create another call context with just the actives
     var dc = ctx.dancers.length;
     var ac = ctx.actives.length;
@@ -100,7 +149,8 @@ class XMLCall extends Call {
       ctxwork = CallContext.fromContext(ctx,dancers:ctx.actives);
     }
 
-    var found = await lookupCall(ctxwork);
+    //var found = await lookupCall(ctxwork);
+    var found = lookupAnimatedCall(ctxwork);
 
     if (found) {
       if (['Allemande Left',
@@ -119,10 +169,8 @@ class XMLCall extends Call {
       }
       return;
     }
-
-    final allPaths = xelem.childrenNamed('path').map(
-            (element) => Path(TamUtils.translatePath(element))).toList();
-    final asymmetric = xelem('asymmetric').isNotBlank;
+    final allPaths = xcall.formation.dancers.map((d) => d.path).toList();
+    final asymmetric = xcall.isAsymmetric;
     //  If moving just some of the dancers,
     //  see if we can keep them in the same shape
     if (ctx.actives.length < ctx.dancers.length) {
@@ -147,18 +195,25 @@ class XMLCall extends Call {
       ctxwork.actives[i3].path.add(p);
     }
 
+    print('  Added call with $endbeat beats');
     ctxwork.animate(endbeat);
+    print('  Finding offsets');
+    print(ctxwork.dancers.show());
+    print(ctx2.dancers.show());
     var matchResult = ctxwork.computeFormationOffsets(ctx2, xmlmap, delta: 0.2);
+    print('  Adjusting to match');
     ctxwork.adjustToFormationMatch(matchResult);
     //  Move dancers to end so any subsequent modifications (e.g. roll)
     //  use the new position
+    print('  Animating to end');
     ctxwork.animateToEnd();
 
     //  Mark dancers that had no XML move as inactive
     //  Needed for post-call modifications e.g. spread
     //  But first check if actives are specifically flagged in the animation
+    print('  Finding inactive dancers');
     var inactives = <Dancer>[];
-    switch (xelem('actives')) {
+    switch (xcall.actives) {
       case 'Heads' :
         inactives = ctxwork.dancers.where((d) => d.isSide).toList();
         break;
@@ -181,13 +236,16 @@ class XMLCall extends Call {
             inactives.add(ctxwork.actives[i4]);
         }
     }
+    print('Marking inactives: $inactives');
     inactives.forEach((d) {
       d.data.active = false;
     });
 
     if (!exact) {
+      print('  Appending to source');
       ctxwork.appendToSource();
     }
+    print('  done');
 
   }
 

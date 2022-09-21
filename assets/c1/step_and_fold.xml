@@ -382,13 +382,14 @@
     </path>
   </tam>
 
-  <tam title="Triple Line Step and Fold"
-       group=" " >
+  <tam title="Triple Line Step and Fold" group=" " >
      <formation>
-      <dancer gender="boy" x="-4" y="1" angle="0"/>
-      <dancer gender="girl" x="-4" y="-1" angle="0"/>
-      <dancer gender="boy" x="0" y="1" angle="0"/>
-      <dancer gender="girl" x="0" y="3" angle="180"/>
+       <dancer gender="boy" x="-4" y="1" angle="0"/>
+       <dancer gender="girl" x="-4" y="-1" angle="0"/>
+       <dancer gender="boy" x="0" y="1" angle="0"/>
+       <dancer gender="girl" x="0" y="3" angle="180"/>
+       <dancer gender="phantom" x="-4" y="3" angle="180"/>
+       <dancer gender="phantom" x="-4" y="-3" angle="180"/>
     </formation>
     <path>
       <move select="Forward" hands="right"/>

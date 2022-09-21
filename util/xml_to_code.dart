@@ -17,44 +17,66 @@
  *     along with Taminations.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import 'package:xml/xml.dart';
 import 'dart:io';
+
 import 'package:taminations/extensions.dart';
+import 'package:taminations/math/movement.dart';
+import 'package:taminations/normalize_call.dart';
+import 'package:xml/xml.dart';
 
 void main() async {
+  await writeMoves();
+  await writeFormations();
+  await writeCalls();
+}
 
-  var movesDoc = await File('src/moves.xml').readAsString()
-      .then((text)=>XmlDocument.parse(text));
-  var movesMap = <String,String>{};
-  print('import \'../common.dart\';');
-  print('class Paths {');
+void writeOneMovement(IOSink mDart, XmlElement m) {
+  mDart.writeln('Movement.fromData(');
+  var b = 'beats: ' + m('beats');
+  var h = 'hands: Hands.' + m('hands').toUpperCase();
+  var cx1 = 'cx1: ' + m('cx1');
+  var cy1 = 'cy1: ' + m('cy1');
+  var cx2 = 'cx2: ' + m('cx2');
+  var cy2 = 'cy2: ' + m('cy2');
+  var x2 = 'x2: ' + m('x2');
+  var y2 = 'y2: ' + m('y2');
+  if (m('cx3').isNotBlank) {
+    var cx3 = 'cx3: ' + m('cx3');
+    var cx4 = 'cx4: ' + m('cx4');
+    var cy4 = 'cy4: ' + m('cy4');
+    var x4 = 'x4: ' + m('x4');
+    var y4 = 'y4: ' + m('y4');
+    mDart.writeln(
+        '    $b, $h, $cx1, $cy1, $cx2, $cy2, $x2, $y2, $cx3, $cx4, $cy4, $x4, $y4');
+  } else {
+    mDart.writeln('    $b, $h, $cx1, $cy1, $cx2, $cy2, $x2, $y2');
+  }
+  mDart.write('  )');
+}
+
+Future<void> writeMoves() async {
+  var movesDoc = await File('assets/src/moves.xml').readAsString()
+      .then((text) => XmlDocument.parse(text));
+  var movesDart = File('lib/moves.g.dart').openWrite();
+  var movesMap = <String, String>{};
+  movesDart.writeln('import \'../common.dart\';');
+  movesDart.writeln();
+  movesDart.writeln('class Paths {');
   movesDoc.findAllElements('path').forEach((p) {
     var objName = p('name').id;
     movesMap[p('name')] = objName;
-    var m = p.childrenNamed('movement').firstOrNull;
+    var m = p
+        .childrenNamed('movement')
+        .firstOrNull;
     if (m != null) {
-      print('static final Path $objName = Path([Movement.fromData(');
-      var b = 'beats: ' + m('beats');
-      var h = 'hands: Hands.' + m('hands').toUpperCase();
-      var cx1 = 'cx1: ' + m('cx1');
-      var cy1 = 'cy1: ' + m('cy1');
-      var cx2 = 'cx2: ' + m('cx2');
-      var cy2 = 'cy2: ' + m('cy2');
-      var x2 = 'x2: ' + m('x2');
-      var y2 = 'y2: ' + m('y2');
-      if (m('cx3').isNotBlank) {
-        var cx3 = 'cx3: ' + m('cx3');
-        var cx4 = 'cx4: ' + m('cx4');
-        var cy4 = 'cy4: ' + m('cy4');
-        var x4 = 'x4: ' + m('x4');
-        var y4 = 'y4: ' + m('y4');
-        print('  $b, $h, $cx1, $cy1, $cx2, $cy2, $x2, $y2, $cx3, $cx4, $cy4, $x4, $y4');
-      } else {
-        print('  $b, $h, $cx1, $cy1, $cx2, $cy2, $x2, $y2');
-      }
-      print(')],\'${p('name')}\');');
+      movesDart.writeln(
+          '  static final Path $objName = Path([');
+      writeOneMovement(movesDart, m);
+      movesDart.writeln('],\'${p('name')}\');');
     } else {
-      m = p.childrenNamed('move').firstOrNull;
+      m = p
+          .childrenNamed('move')
+          .firstOrNull;
       if (m != null) {
         var objFrom = m('select').id;
         var mods = '';
@@ -62,18 +84,203 @@ void main() async {
           mods += '..changehands(Hands.${m('hands').toUpperCase()})';
         if (m('reflect').isNotBlank)
           mods += '..scale(1,-1)';
-        if ((m('scaleX')+m('scaleY')).isNotBlank)
-          mods += '..scale(${m('scaleX','1')},${m('scaleY','1')})';
-        print('static final Path $objName = $objFrom$mods;');
+        if ((m('scaleX') + m('scaleY')).isNotBlank)
+          mods += '..scale(${m('scaleX', '1')},${m('scaleY', '1')})';
+        movesDart.writeln('  static final Path $objName = $objFrom$mods;');
       }
     }
   });
 
-  print('static final Map<String,Path> pathMap = {');
+  //  Map to look up move (Path object) by name
+  movesDart.writeln();
+  movesDart.writeln('static final Map<String,Path> pathMap = {');
   movesMap.forEach((key, value) {
-    print('    \'$key\' : $value,');
+    movesDart.writeln('    \'$key\' : $value,');
   });
-  print('};');
+  movesDart.writeln('  };');
 
-  print('}');
+  movesDart.writeln('}');  // end of Paths class
+  await movesDart.flush();
+  await movesDart.close();
+}
+
+void writeOneFormation(IOSink fDart, XmlElement f) {
+  fDart.writeln('Formation(\'${f('name')}\', [');
+  final asymmetric = f('asymmetric').isNotBlank;
+  var numberArray =  ['1','5','2','6','3','7','4','8',
+    '','','','','','','',''];
+  var coupleArray = asymmetric
+      ? ['1','1','3','3','2','2','4','4',' ',' ',' ',' ',' ',' ',' ',' ']
+      : ['1','3','1','3','2','4','2','4',' ',' ',' ',' ',' ',' ',' ',' '];
+  final dancers = f.childrenNamed('dancer');
+  for (var i=0; i<dancers.length; i++) {
+    var d = dancers[i];
+    fDart.write('        Dancer.fromData(');
+    fDart.write('number:\'${numberArray[i*2]}\',');
+    fDart.write('couple:\'${coupleArray[i*2]}\',');
+    fDart.write('gender:Gender.${d('gender').toUpperCase()},');
+    fDart.write('x:${d('x')},');
+    fDart.write('y:${d('y')},');
+    fDart.write('angle:${d('angle')},');
+    fDart.write('geom: SquareGeometry(0)');
+    fDart.writeln('),');
+    if (!asymmetric) {
+      fDart.write('        Dancer.fromData(');
+      fDart.write('number:\'${numberArray[i*2+1]}\',');
+      fDart.write('couple:\'${coupleArray[i*2+1]}\',');
+      fDart.write('gender:Gender.${d('gender').toUpperCase()},');
+      fDart.write('x:${d('x')},');
+      fDart.write('y:${d('y')},');
+      fDart.write('angle:${d('angle')},');
+      fDart.write('geom: SquareGeometry(1)');
+      fDart.writeln('),');
+    }
+  }
+  fDart.write('  ])');
+}
+
+Future<void> writeFormations() async {
+  var fDoc = await File('assets/src/formations.xml').readAsString()
+      .then((text) => XmlDocument.parse(text));
+  var fDart = File('lib/formations.g.dart').openWrite();
+  var fMap = <String,String>{};
+  fDart.writeln('import \'../common.dart\';');
+  fDart.writeln();
+  fDart.writeln('class Formations {');
+  fDoc.findAllElements('formation').forEach((f) {
+    var objName = f('name').id;
+    fMap[f('name')] = objName;
+    fDart.writeln('  static final Formation $objName = ');
+    writeOneFormation(fDart, f);
+    fDart.writeln(';');
+  });
+
+
+  //  Map to look up move formation by name
+  fDart.writeln();
+  fDart.writeln('static final Map<String,Formation> formationMap = {');
+  fMap.forEach((key, value) {
+    fDart.writeln('    \'$key\' : $value,');
+  });
+  fDart.writeln('  };');
+  fDart.writeln();
+
+  fDart.writeln('}');  // end of Formations class
+
+  await fDart.flush();
+  await fDart.close();
+}
+
+
+Future<void> writeCalls() async {
+  for (var dir in ['b1','b2','ms','plus','a1','a2','c1','c2','c3a','c3b']) {
+    for (var file in Directory('lib/calls/$dir').listSync()) {
+      file.deleteSync();
+    }
+  }
+  var callsDoc = await File('assets/src/calls.xml').readAsString()
+      .then((text) => XmlDocument.parse(text));
+  var callIndex = <String,List<String>>{};
+  var importSet = <String>{};
+  await Future.forEach(callsDoc.findAllElements('call'),(c) async {
+    var call = c as XmlElement;
+    var link = call('link').replaceFirst('\\?.*'.r, '');
+    var dir = link.split('/').first;
+    if (link.contains('ssd'))
+      return;
+    var callDoc = await File('assets/$link.xml').readAsString()
+        .then((text) => XmlDocument.parse(text));
+    if (callDoc.findAllElements('tam').isEmpty)
+      return;
+    var className = link.replaceFirst('.*\\/'.r, '')
+        .replaceAllMapped('_(\\w)'.r, (m) => m[1]!.toUpperCase())
+        .replaceAllMapped('^(\\w)'.r, (m) => m[1]!.toUpperCase());
+    if (className.startsWith('[0-9]'.r))
+      className = 'Q' + className;
+    print('Building $className');
+
+    var cDart = File('lib/calls/$link.g.dart').openWrite();
+    importSet.add('import \'$link.g.dart\' as $dir;');
+    cDart.writeln('import \'../../common.dart\';');
+    cDart.writeln('import \'../../formations.g.dart\';');
+    cDart.writeln('import \'../../moves.g.dart\';');
+    cDart.writeln('import \'../../sequencer/calls/animated_call.dart\';');
+    cDart.writeln();
+    cDart.writeln('class $className {');
+    cDart.writeln('  static List<AnimatedCall> animlist = [ ');
+    var count = 0;
+    callDoc.findAllElements('tam')
+        .where((tam) => !(tam('sequencer').contains('no')))
+        .forEach((tam) {
+      cDart.writeln('    AnimatedCall(${tam('title').q},');
+      if (tam.childrenNamed('formation').isNotEmpty) {
+        //  custom formation
+        cDart.write('      ');
+        writeOneFormation(cDart, tam.childrenNamed('formation').first);
+        cDart.writeln(',');
+      }
+      else
+        cDart.writeln('      Formations.${tam('formation').id},');
+      cDart.writeln('      [');
+      tam.findElements('path').forEach((path) {
+        cDart.writeln('        Path([');
+        path.childElements.forEach((move) {
+          if (move.tag == 'move') {
+            cDart.write('          ...(Paths.${move('select').id}.copy()');
+            if (move('beats').isNotBlank)
+              cDart.write('..changeBeats(${move('beats')})');
+            if (move('hands').isNotBlank) {
+              var h = Hands.getHands(move('hands'));
+              cDart.write('..changehands($h)');
+            }
+            if (move('scaleX').isNotBlank || move('scaleY').isNotBlank) {
+              var sx = move('scaleX','1').d;
+              var sy = move('scaleY','1').d;
+              cDart.write('..scale($sx,$sy)');
+            }
+            if (move('offsetX').isNotBlank || move('offsetY').isNotBlank) {
+              var sx = move('offsetX','0').d;
+              var sy = move('offsetY','0').d;
+              cDart.write('..skew($sx,$sy)');
+            }
+            cDart.writeln(').movelist,');  // end of one move
+          }
+          else if (move.tag == 'movement') {
+            cDart.write('      ');
+            writeOneMovement(cDart, move);
+            cDart.writeln(',');
+          }
+        });
+        cDart.writeln('        ]),');  //  end of one path
+      });
+      cDart.writeln('      ],');  //  end of all paths for one animation
+      cDart.writeln('      parts:\'${tam('parts')}\'),');
+      var norm = normalizeCall(tam('title'));
+      if (!callIndex.containsKey(norm))
+        callIndex[norm] = [];
+      callIndex[norm]!.add('$dir.$className.animlist[$count]');
+      count += 1;
+    });
+    cDart.writeln('  ];');  //  end of animation list
+    cDart.writeln('}');  // end of class
+    await cDart.flush();
+    await cDart.close();
+  });  // end of call
+
+  var iDart = File('lib/calls/calls_index.g.dart').openWrite();
+  iDart.writeln('import \'../sequencer/calls/animated_call.dart\';');
+  importSet.forEach((imp) {
+    iDart.writeln(imp);
+  });
+  iDart.writeln('class CallsIndex {');
+  iDart.writeln('  static Map<String,List<AnimatedCall>> index = {');
+  callIndex.forEach((norm, calls) {
+    var callstr = calls.join(',');
+    iDart.writeln('      ${norm.q} : [ $callstr ],');
+  });
+  iDart.writeln('  };');
+  iDart.writeln('}');
+  await iDart.flush();
+  await iDart.close();
+
 }

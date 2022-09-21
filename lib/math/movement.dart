@@ -17,9 +17,14 @@
   along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 */
+import 'dart:math';
 
-import '../common.dart';
+import 'package:xml/xml.dart';
+
+import '../extensions.dart';
+import '../math/vector.dart';
 import 'bezier.dart';
+import 'matrix.dart';
 
 class Hands {
   static const int NOHANDS = 0;

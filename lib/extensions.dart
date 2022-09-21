@@ -97,6 +97,7 @@ extension TamString on String {
 
   double get d => double.parse(this);
   int get i => int.parse(this);
+  String get q => "'${replaceAll("'","\\'")}'";
   RegExp get r => RegExp(this);
   RegExp get ri => RegExp(this, caseSensitive: false);
   RegExp get rd => RegExp(this, dotAll: true);
@@ -161,8 +162,8 @@ extension TamString on String {
       chopped().map((e) => e.diced()).expand((e) => e).toList();
 
   //  Convert a string into one that could be used as an identifier
-  String get id => replaceAll('-','m')
-      .replaceAll('.','p')
+  String get id => replaceAll('-','neg')
+      .replaceAll('.','dot')
       .replaceFirst('^(?=\\d)'.r,'n')
       .replaceAll('[\\W ]'.r,'');
 

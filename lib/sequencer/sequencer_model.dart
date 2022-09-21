@@ -23,9 +23,11 @@ import 'package:flutter/services.dart' as fs;
 
 import '../common.dart';
 import '../dance_model.dart';
+import '../formations.g.dart';
 import 'abbreviations_model.dart';
 import 'call_context.dart';
 import 'call_error.dart';
+import 'calls/animated_call.dart';
 import 'calls/coded_call.dart';
 import 'calls/xml_call.dart';
 
@@ -55,20 +57,20 @@ class SequencerModel extends fm.ChangeNotifier {
     });
   }
 
-  Future<void> setStartingFormation(String formation) async {
+  void setStartingFormation(String formation) {
     if (formation != _startingFormation) {
       _startingFormation = formation;
-      await reset();
+      reset();
     }
   }
 
-  Future<void> reset() async {
+  void reset() async {
     animation.doPause();
     calls = [];
     errorString = '';
     currentCall = -1;
     helplink = 'info/sequencer';
-    await _startSequence();
+    _startSequence();
     later(() {
       notifyListeners();
     });
@@ -274,7 +276,7 @@ class SequencerModel extends fm.ChangeNotifier {
     if (call.lc.trim() == 'undo')
       undoLastCall();
     else if (call.lc.trim() == 'reset')
-      await reset();
+      reset();
     else if (call.lc.trim().startsWith('color'))
       setColor(call, settings);
     else if (call.lc.trim().startsWith('id '))
@@ -290,8 +292,11 @@ class SequencerModel extends fm.ChangeNotifier {
     else {
       var prevbeats = animation.beats;
       var cctx = CallContext.fromDancers(animation.dancers);
+      print('Interpret');
       await cctx.interpretCall(call);
+      print('Perform');
       await cctx.performCall();
+      print('Check');
       cctx.checkForCollisions();
       cctx.extendPaths();
       if (!cctx.callname.contains('(move in|step|gnat|back\\s*(up|away))'.ri))
@@ -304,8 +309,8 @@ class SequencerModel extends fm.ChangeNotifier {
           firstCall is CodedCall ||
           (firstCall is XMLCall && !firstCall.found))
         cctx.matchStandardFormation();
-      if (cctx.isCollision())
-        throw CallError('Unable to calculate valid animation.');
+   //   if (cctx.isCollision())
+   //     throw CallError('Unable to calculate valid animation.');
       if (cctx.resolutionError)
         errorString = 'Warning: Dancers are not resolved';
       cctx.appendToSource();
@@ -325,8 +330,10 @@ class SequencerModel extends fm.ChangeNotifier {
   bool isComment(String text) =>
       text.trim().startsWith('[^\\a-zA-Z0-9]'.r);
 
-  Future<void> _startSequence() async {
-    await animation.setAnimation(TamUtils.getFormation(startingFormation));
+  void _startSequence() {
+    var paths = [Path(),Path(),Path(),Path(),Path(),Path(),Path(),Path()];
+    animation.setAnimatedCall(
+        AnimatedCall('',Formations.formationMap[startingFormation]!,paths));
     animation.recalculate();
     _updateParts();
   }

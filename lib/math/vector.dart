@@ -19,7 +19,6 @@
 */
 
 import 'dart:math';
-import 'dart:ui';
 import 'package:vector_math/vector_math.dart';
 import '../extensions.dart';
 
@@ -67,9 +66,6 @@ class Vector {
   @override
   int get hashCode => x.round().hashCode ^ y.round().hashCode;
 
-  //  Conversions
-  Size get size => Size(x,y);
-
 
 }
 
@@ -89,11 +85,4 @@ extension VectorListExtension on List<Vector> {
   List<Vector2> get v2 => map((e) => Vector2(e.x,e.y)).toList();
 }
 
-extension Size2Vector on Size {
-  Vector get v => Vector(width,height);
-}
-
-extension Offset2Vector on Offset {
-  Vector get v => Vector(dx,dy);
-}
 

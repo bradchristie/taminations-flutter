@@ -941,7 +941,9 @@ class CallContext {
     analyze();
     for (var i=0; i<callstack.length; i++) {
       var c = callstack[i];
+      print('  Perform $c');
       await c.performCall(this);
+      print('  Perform $c ok');
       if (i < callstack.length-1)
         analyze();
       //checkCenters();

@@ -26,6 +26,10 @@ class Formation {
   final List<Dancer> dancers;
 
   Formation(this.name,this.dancers,{this.asymmetric=false});
+  Formation copy() {
+    var dcopy = dancers.map((d) => Dancer.clone(d)).toList();
+    return Formation(name,dcopy,asymmetric: asymmetric);
+  }
 
   factory Formation.fromXML(XmlElement xml) {
     final dancerElements = xml.childrenNamed('dancer');

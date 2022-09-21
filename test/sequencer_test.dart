@@ -21,7 +21,7 @@ void main() async {
         await TamUtils.init();
         await CallContext.init();
         final model = SequencerModel();
-        await model.setStartingFormation('Static Square');
+        model.setStartingFormation('Static Square');
         await model.paste(testSequences[testName]!);
         expect(model.errorString.trim(), '');
       });

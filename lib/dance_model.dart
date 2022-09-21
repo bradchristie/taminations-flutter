@@ -23,6 +23,7 @@ import 'package:taminations/beat_notifier.dart';
 
 import 'common.dart';
 import 'practice_dancer.dart';
+import 'sequencer/calls/animated_call.dart';
 
 class DanceModel extends fm.ChangeNotifier {
 
@@ -360,6 +361,19 @@ class DanceModel extends fm.ChangeNotifier {
     _resetAnimation();
     partstr = _tam!('parts','') + _tam!('fractions','');
     hasParts = _tam!('parts').isNotBlank;
+    notifyListeners();
+  }
+
+  void setAnimatedCall(AnimatedCall call) {
+    dancers = call.formation.dancers;
+    leadin = 2.0;
+    leadout = 2.0;
+    _beats = 0.0;
+    for (var d in dancers) {
+      _beats = max(_beats, d.beats + leadout);
+      d.showNumber = _showNumbers;
+    }
+    beater.setTimes(-leadin, _beats);
     notifyListeners();
   }
 

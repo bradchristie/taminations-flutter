@@ -1,7 +1,7 @@
 /*
 
   Taminations Square Dance Animations
-  Copyright (C) 2021 Brad Christie
+  Copyright (C) 2020 Brad Christie
 
   This program is free software: you can redistribute it and/or modify
   it under the terms of the GNU General Public License as published by
@@ -18,26 +18,19 @@
 
 */
 
-export 'dart:math';
+import 'dart:ui';
+import 'vector.dart';
 
-export 'package:xml/xml.dart';
+extension VectorUI on Vector {
+  //  Conversions
+  Size get size => Size(x,y);
 
-export 'button.dart';
-export 'color.dart';
-export 'dance_painter.dart';
-export 'dancer.dart';
-export 'extensions.dart';
-export 'formation.dart';
-export 'geometry.dart';
-export 'handhold.dart';
-export 'later.dart';
-export 'level_data.dart';
-export 'math/matrix.dart';
-export 'math/movement.dart';
-export 'math/path.dart';
-export 'math/vector.dart';
-export 'math/vectorui.dart';
-export 'settings.dart';
-export 'tam_utils.dart';
-export 'title_bar.dart';
-export 'tam_state.dart';
+}
+
+extension Size2Vector on Size {
+  Vector get v => Vector(width,height);
+}
+
+extension Offset2Vector on Offset {
+  Vector get v => Vector(dx,dy);
+}
