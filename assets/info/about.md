@@ -20,17 +20,15 @@ Call pronunciations provided by
 
 ---
 
-## Taminations version 1.6.47 built 2022-09-19
+## Taminations version 1.6.48 built 2022-09-22
 Copyright 2022 by Brad Christie.  
 This is free software, and you are welcome to modify and redistribute it
 under the terms of the [GNU GPL license](http://www.gnu.org/licenses/gpl.html).  
 
 ## What's New
-* Clean up animation lists for T-Bones and Facing Couples
 * Sequencer changes:
-  * Code for Single Bounce
-  * Fix for some uses of fractions
-  * Fix some cases of Bend the Line
+  * Fix for Triple Box Circulate
+  * Fix display of some animations, especially from Squared Set
 
 For a detailed history of changes, view the
 [Git log](https://github.com/bradchristie/taminations-flutter/commits/main)
