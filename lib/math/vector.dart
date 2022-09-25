@@ -19,10 +19,13 @@
 */
 
 import 'dart:math';
+
 import 'package:vector_math/vector_math.dart';
+
+import '../cloneable.dart';
 import '../extensions.dart';
 
-class Vector {
+class Vector implements Cloneable {
 
   final double x;
   final double y;
@@ -31,6 +34,10 @@ class Vector {
 
   @override
   String toString() => '(${x.s} ${y.s})';
+
+  //  Since Vector is read-only no need to make a copy
+  @override
+  Vector clone() => this;
 
   bool isAbout(Vector v2) => x.isAbout(v2.x) && y.isAbout(v2.y);
   double get angle => atan2(y,x);
@@ -65,7 +72,6 @@ class Vector {
 
   @override
   int get hashCode => x.round().hashCode ^ y.round().hashCode;
-
 
 }
 

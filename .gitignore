@@ -36,6 +36,7 @@
 /coverage/
 /macos/Flutter/ephemeral/
 /macos/Flutter/GeneratedPluginRegistrant.swift
+*.g.dart
 
 # Web related
 

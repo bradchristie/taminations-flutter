@@ -21,14 +21,17 @@
 import 'dart:math';
 
 import 'package:bezier/bezier.dart' hide Bezier;
-
+import '../cloneable.dart';
 import '../extensions.dart';
 import 'matrix.dart';
 import 'vector.dart';
 
-class Bezier extends CubicBezier {
+class Bezier extends CubicBezier implements Cloneable<Bezier> {
 
   Bezier(List<Vector> points) : super(points.v2);
+
+  @override
+  Bezier clone() => Bezier(points.v);
 
   //  Constructor from 4 points along the curve
   //  at times 0, 1/3, 2/3, 1

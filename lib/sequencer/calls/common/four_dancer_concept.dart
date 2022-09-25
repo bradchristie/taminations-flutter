@@ -75,7 +75,7 @@ abstract class FourDancerConcept extends ActivesOnlyAction {
       if (group.every((it) => it.numberCouple.matches('[24]{2}' .r)))
         nc = '2' ;
       //  Create the concept dancer
-      var dsingle = Dancer.clone(group.first, gender:g, numberCouple:nc);
+      var dsingle = Dancer.cloneWithOptions(group.first, gender:g, numberCouple:nc);
       //  Set the location for the concept dancer
       var newpos = startPosition(group);
       dsingle.setStartPosition(newpos);

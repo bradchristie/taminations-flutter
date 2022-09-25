@@ -58,7 +58,7 @@ abstract class TripleFormation extends Action {
       for (final c2 in minorValues(ctx)) {
         final v = isXaxis ? [c1,c2].v : [c2,c1].v;
         if (ctx.dancerAt(v) == null) {
-          final phantomDancer = Dancer.clone(ctx.dancers.first,
+          final phantomDancer = Dancer.cloneWithOptions(ctx.dancers.first,
               gender: Gender.PHANTOM,
               number: 'P${phantoms.length+1}');
           phantomDancer.setStartPosition(v);

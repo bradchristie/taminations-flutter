@@ -74,10 +74,7 @@ Future<void> writeMoves() async {
       writeOneMovement(movesDart, m);
       movesDart.writeln('],\'${p('name')}\');');
     } else {
-      m = p
-          .childrenNamed('move')
-          .firstOrNull;
-      if (m != null) {
+      final movestr = p.childrenNamed('move').map((m) {
         var objFrom = m('select').id;
         var mods = '';
         if (m('hands').isNotBlank)
@@ -86,8 +83,9 @@ Future<void> writeMoves() async {
           mods += '..scale(1,-1)';
         if ((m('scaleX') + m('scaleY')).isNotBlank)
           mods += '..scale(${m('scaleX', '1')},${m('scaleY', '1')})';
-        movesDart.writeln('  static final Path $objName = $objFrom$mods;');
-      }
+        return '($objFrom.clone()$mods)';
+      }).join('+');
+      movesDart.writeln('  static final Path $objName = $movestr;');
     }
   });
 
@@ -173,7 +171,8 @@ Future<void> writeFormations() async {
 
 
 Future<void> writeCalls() async {
-  for (var dir in ['b1','b2','ms','plus','a1','a2','c1','c2','c3a','c3b']) {
+  final dirs = ['b1','b2','ms','plus','a1','a2','c1','c2','c3a','c3b'];
+  for (var dir in dirs) {
     for (var file in Directory('lib/calls/$dir').listSync()) {
       file.deleteSync();
     }
@@ -200,14 +199,16 @@ Future<void> writeCalls() async {
     print('Building $className');
 
     var cDart = File('lib/calls/$link.g.dart').openWrite();
-    importSet.add('import \'$link.g.dart\' as $dir;');
+    final thisImport = 'import \'$link.g.dart\';';
+    //if (importSet.contains(thisImport))
+    //  return;
+    importSet.add(thisImport);
     cDart.writeln('import \'../../common.dart\';');
     cDart.writeln('import \'../../formations.g.dart\';');
     cDart.writeln('import \'../../moves.g.dart\';');
     cDart.writeln('import \'../../sequencer/calls/animated_call.dart\';');
     cDart.writeln();
-    cDart.writeln('class $className {');
-    cDart.writeln('  static List<AnimatedCall> animlist = [ ');
+    cDart.writeln('  final List<AnimatedCall> $className = [ ');
     var count = 0;
     callDoc.findAllElements('tam')
         .where((tam) => !(tam('sequencer').contains('no')))
@@ -223,10 +224,10 @@ Future<void> writeCalls() async {
         cDart.writeln('      Formations.${tam('formation').id},');
       cDart.writeln('      [');
       tam.findElements('path').forEach((path) {
-        cDart.writeln('        Path([');
+        cDart.writeln('        Path.fromPaths([');
         path.childElements.forEach((move) {
           if (move.tag == 'move') {
-            cDart.write('          ...(Paths.${move('select').id}.copy()');
+            cDart.write('          Paths.${move('select').id}.clone()');
             if (move('beats').isNotBlank)
               cDart.write('..changeBeats(${move('beats')})');
             if (move('hands').isNotBlank) {
@@ -243,12 +244,12 @@ Future<void> writeCalls() async {
               var sy = move('offsetY','0').d;
               cDart.write('..skew($sx,$sy)');
             }
-            cDart.writeln(').movelist,');  // end of one move
+            cDart.writeln(',');  // end of one move
           }
           else if (move.tag == 'movement') {
-            cDart.write('      ');
+            cDart.write('      Path.fromMovement(');
             writeOneMovement(cDart, move);
-            cDart.writeln(',');
+            cDart.writeln('),');
           }
         });
         cDart.writeln('        ]),');  //  end of one path
@@ -258,29 +259,37 @@ Future<void> writeCalls() async {
       var norm = normalizeCall(tam('title'));
       if (!callIndex.containsKey(norm))
         callIndex[norm] = [];
-      callIndex[norm]!.add('$dir.$className.animlist[$count]');
+      callIndex[norm]!.add('$dir/$className[$count]');
       count += 1;
     });
     cDart.writeln('  ];');  //  end of animation list
-    cDart.writeln('}');  // end of class
     await cDart.flush();
     await cDart.close();
   });  // end of call
 
-  var iDart = File('lib/calls/calls_index.g.dart').openWrite();
-  iDart.writeln('import \'../sequencer/calls/animated_call.dart\';');
-  importSet.forEach((imp) {
-    iDart.writeln(imp);
-  });
-  iDart.writeln('class CallsIndex {');
-  iDart.writeln('  static Map<String,List<AnimatedCall>> index = {');
-  callIndex.forEach((norm, calls) {
-    var callstr = calls.join(',');
-    iDart.writeln('      ${norm.q} : [ $callstr ],');
-  });
-  iDart.writeln('  };');
-  iDart.writeln('}');
-  await iDart.flush();
-  await iDart.close();
+  for (var dir in dirs) {
+    var iDart = File('lib/calls/$dir/calls_index.g.dart').openWrite();
+    iDart.writeln('import \'../../sequencer/calls/animated_call.dart\';');
+    importSet.forEach((imp) {
+      if (imp.contains('$dir/'))
+        iDart.writeln(imp.replaceFirst('$dir/', ''));
+    });
+    iDart.writeln('class CallsIndex {');
+    iDart.writeln('  static Map<String,List<AnimatedCall>> index = {');
+    callIndex.forEach((norm, calls) {
+      final thesecalls = calls
+          .where((call) => call.startsWith(dir))
+          .map((call) => call.replaceFirst('$dir/', ''));
+      if (thesecalls.isNotEmpty) {
+        var callstr = thesecalls.join(',');
+        iDart.writeln('      ${norm.q} : [ $callstr ],');
+      }
+    });
+    iDart.writeln('  };');
+    iDart.writeln('}');
+    await iDart.flush();
+    await iDart.close();
+
+  }
 
 }

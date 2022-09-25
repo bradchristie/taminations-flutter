@@ -19,6 +19,7 @@
 */
 
 import 'dart:math';
+import 'cloneable.dart';
 
 import 'package:xml/xml.dart';
 
@@ -247,6 +248,10 @@ extension TamList<E> on List<E> {
       f(i,this[i]);
   }
 
+}
+
+extension TamCloneList<T extends Cloneable> on List<T> {
+  List<T> clone() => map((T e) => e.clone() as T).toList();
 }
 
 extension TamDoubleList on List<double> {

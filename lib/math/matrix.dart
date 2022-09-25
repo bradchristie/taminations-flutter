@@ -36,10 +36,11 @@ import 'package:scidart/numdart.dart';
 import 'package:tuple/tuple.dart';
 import 'package:vector_math/vector_math.dart' hide Vector;
 
+import '../cloneable.dart';
 import '../extensions.dart';
 import 'vector.dart';
 
-class Matrix extends Matrix3 {
+class Matrix extends Matrix3 implements Cloneable<Matrix> {
 
   double get m11 => this[0];
   double get m12 => this[1];
@@ -75,7 +76,8 @@ class Matrix extends Matrix3 {
   Vector get location => Vector(m31,m32);
   Vector get direction => Vector(m11,m21);
   double get angle => atan2(m12,m22);
-  Matrix copy() => Matrix(m11,m21,m31,m12,m22,m32);
+  @override
+  Matrix clone() => Matrix(m11,m21,m31,m12,m22,m32);
 
   @override
   dynamic operator *(dynamic arg) {

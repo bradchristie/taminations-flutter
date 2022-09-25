@@ -200,9 +200,8 @@ class SequencerModel extends fm.ChangeNotifier {
         helplink = call.helplink;
       } else {
         //  No coded call, see if we can just show the Callerlab definition
-        print('Looking for XML of $callName');
         var xmlCall = XMLCall(callName);
-        await xmlCall.lookupCall(CallContext.fromDancers(animation.dancers));
+        xmlCall.lookupAnimatedCall(CallContext.fromDancers(animation.dancers));
         if (xmlCall.foundLink.isNotBlank) {
           helplink = xmlCall.foundLink;
           errorString  = xmlCall.help;
@@ -292,11 +291,8 @@ class SequencerModel extends fm.ChangeNotifier {
     else {
       var prevbeats = animation.beats;
       var cctx = CallContext.fromDancers(animation.dancers);
-      print('Interpret');
       await cctx.interpretCall(call);
-      print('Perform');
       await cctx.performCall();
-      print('Check');
       cctx.checkForCollisions();
       cctx.extendPaths();
       if (!cctx.callname.contains('(move in|step|gnat|back\\s*(up|away))'.ri))

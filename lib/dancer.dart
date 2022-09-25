@@ -153,7 +153,7 @@ extension DancerList on List<Dancer> {
 
 }
 
-class Dancer implements Comparable<Dancer> {
+class Dancer implements Comparable<Dancer>, Cloneable<Dancer> {
 
   static const NUMBERS_OFF = 0;
   static const NUMBERS_DANCERS = 1;
@@ -242,14 +242,17 @@ class Dancer implements Comparable<Dancer> {
     return Dancer(number,couple,gender,color,mat,g,path);
   }
 
-  Dancer.clone(Dancer from,{String? number, String? numberCouple, int? gender}) :
+  Dancer.cloneWithOptions(Dancer from,{String? number, String? numberCouple, int? gender}) :
       this(
           number ?? from.number,
           numberCouple ?? from.numberCouple,
           gender ?? from.gender,
           from.fillColor,from.tx,
           //  Already geometrically rotated so don't do it again
-          Geometry(from._geom.geometry,0),[],from);
+          Geometry(from._geom.geometry,0),from.path.movelist,from);
+
+  @override
+  Dancer clone() => Dancer.cloneWithOptions(this);
 
   @override
   int get hashCode => number.hashCode;
@@ -353,20 +356,20 @@ class Dancer implements Comparable<Dancer> {
   Dancer setStartPosition(Vector pos) {
     var a = angleFacing;
     starttx = Matrix.getTranslation(pos.x,pos.y) * Matrix.getRotation(a);
-    tx = starttx.copy();
+    tx = starttx.clone();
     return this;
   }
 
   Dancer setStartAngle(double a) {
     starttx = Matrix.getTranslation(starttx.location) * Matrix.getRotation(a);
-    tx = starttx.copy();
+    tx = starttx.clone();
     return this;
   }
 
   //  Note that this takes an angle in degrees
   Dancer rotateStartAngle(double angle) {
     starttx = starttx * Matrix.getRotation(angle.toRadians);
-    tx = starttx.copy();
+    tx = starttx.clone();
     return this;
   }
 

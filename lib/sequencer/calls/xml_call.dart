@@ -18,9 +18,17 @@
 
 */
 
-import '../../calls/calls_index.g.dart';
-import '../../formations.g.dart';
-import '../../math/paths.dart';
+import '../../calls/b1/calls_index.g.dart' as b1;
+import '../../calls/b2/calls_index.g.dart' as b2;
+import '../../calls/ms/calls_index.g.dart' as ms;
+import '../../calls/plus/calls_index.g.dart' as plus;
+import '../../calls/a1/calls_index.g.dart' as a1;
+import '../../calls/a2/calls_index.g.dart' as a2;
+import '../../calls/c1/calls_index.g.dart' as c1;
+import '../../calls/c2/calls_index.g.dart' as c2;
+import '../../calls/c3a/calls_index.g.dart' as c3a;
+import '../../calls/c3b/calls_index.g.dart' as c3b;
+
 import 'animated_call.dart';
 import 'common.dart';
 import 'call.dart';
@@ -43,7 +51,18 @@ class XMLCall extends Call {
   XMLCall(String title) : super(title);
 
   bool lookupAnimatedCall(CallContext ctxwork) {
-    var calllist = CallsIndex.index[norm] ?? <AnimatedCall>[];
+    var calllist =
+            (b1.CallsIndex.index[norm] ?? <AnimatedCall>[]) +
+            (b2.CallsIndex.index[norm] ?? <AnimatedCall>[]) +
+            (ms.CallsIndex.index[norm] ?? <AnimatedCall>[]) +
+            (plus.CallsIndex.index[norm] ?? <AnimatedCall>[]) +
+            (a1.CallsIndex.index[norm] ?? <AnimatedCall>[]) +
+            (a2.CallsIndex.index[norm] ?? <AnimatedCall>[]) +
+            (c1.CallsIndex.index[norm] ?? <AnimatedCall>[]) +
+            (c2.CallsIndex.index[norm] ?? <AnimatedCall>[]) +
+            (c3a.CallsIndex.index[norm] ?? <AnimatedCall>[]) +
+            (c3b.CallsIndex.index[norm] ?? <AnimatedCall>[]);
+
     var bestOffset = double.maxFinite;
     var fuzzy = true;
 
@@ -51,6 +70,7 @@ class XMLCall extends Call {
       var headsMatchSides = !tam.title.contains('Heads?|Sides?'.r);
       var sexy = tam.genderSpecific;
       var ctx2q = CallContext.fromFormation(tam.formation);
+      ctx2q.animate(0.0);
       var mm = ctxwork.matchFormations(ctx2q,sexy: sexy, fuzzy: fuzzy,
           handholds: !fuzzy, headsMatchSides: headsMatchSides);
       if (mm != null) {
@@ -70,71 +90,8 @@ class XMLCall extends Call {
     return found;
   }
 
-  Future<bool> lookupCall(CallContext ctxwork) async {
-    var callfiles = CallContext.xmlFilesForCall(norm.toLowerCase());
-    //  Found xml file with call, now look through each animation
-    var bestOffset = double.maxFinite;
-    var fuzzy = true;
-
-    for (var link in callfiles) {
-      var file = await CallContext.loadOneFile(link);
-      foundLink = link;
-      var tamlist = file.rootElement.findAllElements('tam').where((tam) =>
-      tam('sequencer') != 'no' &&
-          //  Check for calls that must go around the centers
-          (!perimeter || tam('sequencer','').contains('perimeter')) &&
-          //  Check for 4-dancer calls that do not work for 8 dancers
-          (exact || !tam('sequencer','').contains('exact')) &&
-          TamUtils.normalizeCall(tam('title')).toLowerCase() ==
-              norm.toLowerCase());
-      for (var tam in tamlist) {
-        //  Calls that are gender-specific, e.g. Star Thru,
-        //  are specifically flagged in XML
-        var sexy = tam('sequencer','').contains('gender-specific');
-        //  Make sure we don't mismatch heads and sides
-        //  on calls that specifically refer to them
-        var headsMatchSides = !tam('title').contains('Heads?|Sides?'.r);
-        //  Try to match the formation to the current dancer positions
-        var ctx2q = CallContext.fromXML(tam);
-        var mm = ctxwork.matchFormations(ctx2q,sexy: sexy, fuzzy: fuzzy,
-            handholds: !fuzzy, headsMatchSides: headsMatchSides);
-        if (mm != null) {
-          var matchResult = mm.match;
-          var totOffset = matchResult.offsets.fold<double>(0.0, (s, v) => s + v.length);
-          var totAngle = matchResult.angles.fold<double>(0.0, (s, a) => s + a);
-          if (totOffset < bestOffset && totAngle.isAbout(0.0)) {
-            xelem = tam;
-            xmlmap = mm.map;
-            ctx2 = ctx2q;
-            bestOffset = totOffset;
-            level = LevelData.find(link)!;
-            found = true;
-          }
-        }
-      }
-    }
-    return found;
-  }
-
   @override
   Future<void> performCall(CallContext ctx) async {
-
-    var testCall =     AnimatedCall('Heads Lead Right',
-        Formations.StaticSquare,
-        [
-          Path([
-            ...(Paths.HingeRight..changeBeats(4)..scale(0.5,0.5)..skew(3.5,-1.5)).movelist,
-          ]),
-          Path([
-            ...(Paths.QuarterRight..changeBeats(4)..changehands(1)..skew(2.0,0.0)).movelist,
-          ]),
-          Path([
-          ]),
-          Path([
-          ]),
-        ],
-        parts:'');
-
     //  If actives != dancers, create another call context with just the actives
     var dc = ctx.dancers.length;
     var ac = ctx.actives.length;
@@ -149,9 +106,7 @@ class XMLCall extends Call {
       ctxwork = CallContext.fromContext(ctx,dancers:ctx.actives);
     }
 
-    //var found = await lookupCall(ctxwork);
     var found = lookupAnimatedCall(ctxwork);
-
     if (found) {
       if (['Allemande Left',
         'Dixie Grand',
@@ -187,30 +142,25 @@ class XMLCall extends Call {
       ctx3.extendPaths();
       ctx3.analyze();
     }
-    var endbeat = ctxwork.maxBeats();
     for (var i3 = 0; i3 < xmlmap.length; i3++) {
       var m = xmlmap[i3];
-      var p = Path.fromPath(asymmetric ? allPaths[m] : allPaths[m >> 1]);
+      var p = Path.fromPath(allPaths[m]);
       //  Add XML path to dancer
       ctxwork.actives[i3].path.add(p);
     }
+    var endbeat = ctxwork.maxBeats();
 
-    print('  Added call with $endbeat beats');
     ctxwork.animate(endbeat);
-    print('  Finding offsets');
-    print(ctxwork.dancers.show());
-    print(ctx2.dancers.show());
+    ctx2.animateToEnd();
     var matchResult = ctxwork.computeFormationOffsets(ctx2, xmlmap, delta: 0.2);
     ctxwork.adjustToFormationMatch(matchResult,adjustFirstMovement: true);
     //  Move dancers to end so any subsequent modifications (e.g. roll)
     //  use the new position
-    print('  Animating to end');
     ctxwork.animateToEnd();
 
     //  Mark dancers that had no XML move as inactive
     //  Needed for post-call modifications e.g. spread
     //  But first check if actives are specifically flagged in the animation
-    print('  Finding inactive dancers');
     var inactives = <Dancer>[];
     switch (xcall.actives) {
       case 'Heads' :
@@ -235,16 +185,13 @@ class XMLCall extends Call {
             inactives.add(ctxwork.actives[i4]);
         }
     }
-    print('Marking inactives: $inactives');
     inactives.forEach((d) {
       d.data.active = false;
     });
 
     if (!exact) {
-      print('  Appending to source');
       ctxwork.appendToSource();
     }
-    print('  done');
 
   }
 

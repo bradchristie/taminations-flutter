@@ -268,7 +268,7 @@ class CallContext {
   CallContext.fromDancers(List<Dancer> dancers) {
     this.dancers = dancers.map((d) {
       d.animateToEnd();
-      return Dancer.clone(d);
+      return d.clone();
     }).toList();
     allActive();
   }
@@ -280,7 +280,7 @@ class CallContext {
       }) {
     dancers ??= source.dancers;
     dancers.forEach((d) { d.animate(beat); });
-    this.dancers = dancers.map((d) => Dancer.clone(d)).toList();
+    this.dancers = dancers.clone();
     if (!dancers.areDancersOrdered())
       this.dancers = this.dancers.center().inOrder();
     _source = source;
@@ -289,7 +289,7 @@ class CallContext {
   }
 
   CallContext.fromFormation(Formation f) {
-    dancers = f.dancers.copy();
+    dancers = f.dancers.clone();
     asymmetric = f.asymmetric;
   }
 
@@ -941,9 +941,7 @@ class CallContext {
     analyze();
     for (var i=0; i<callstack.length; i++) {
       var c = callstack[i];
-      print('  Perform $c');
       await c.performCall(this);
-      print('  Perform $c ok');
       if (i < callstack.length-1)
         analyze();
       //checkCenters();

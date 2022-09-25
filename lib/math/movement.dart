@@ -21,6 +21,7 @@ import 'dart:math';
 
 import 'package:xml/xml.dart';
 
+import '../cloneable.dart';
 import '../extensions.dart';
 import '../math/vector.dart';
 import 'bezier.dart';
@@ -71,7 +72,7 @@ class Hands {
 
 }
 
-class Movement {
+class Movement extends Cloneable<Movement> {
 
   double beats;
   int hands;
@@ -128,7 +129,7 @@ class Movement {
     double x4 = 0.0,
     double y4 = 0.0
   }) {
-    final bt = Bezier([[0.0,0.0].v,[cx1,cx2].v,[cx2,cy2].v,[x2,y2].v]);
+    final bt = Bezier([[0.0,0.0].v,[cx1,cy1].v,[cx2,cy2].v,[x2,y2].v]);
     final br = cx3 == 0.0 ? bt :
         Bezier([[0.0,0.0].v,[cx3,0.0].v,[cx4,cy4].v,[x4,y4].v]);
     return Movement(beats,hands,bt,br);
@@ -151,7 +152,9 @@ class Movement {
     return Movement(beats,hands,bt,br);
   }
 
-  Movement copy() => Movement(beats,hands,btranslate,brotate,fromCall:fromCall);
+  @override
+  Movement clone() =>
+      Movement(beats,hands,btranslate.clone(),brotate.clone(),fromCall:fromCall);
 
   /// Return a matrix for the translation part of this movement at time t
   /// @param t  Time in beats
@@ -200,7 +203,7 @@ class Movement {
   Movement twist(double a) {
     late Bezier brot;
     if (a.abs() < 0.01)
-      return copy();
+      return clone();
     if (brotate.x2.abs() < 0.1 && brotate.y2.abs() < 0.1) {
       //  No rotate bezier (e.g. Stand movement)
       //  Make a rotation bezier of the requested amount

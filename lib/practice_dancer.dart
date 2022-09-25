@@ -71,9 +71,9 @@ class PracticeDancer extends Dancer {
 
 
   Matrix computeMatrix(double beat) {
-    final savetx = tx.copy();
+    final savetx = tx.clone();
     super.animate(beat);
-    final computetx = tx.copy();
+    final computetx = tx.clone();
     tx = savetx;
     return computetx;
   }

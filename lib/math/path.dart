@@ -18,9 +18,14 @@
 
 */
 
-import '../common.dart';
+import 'package:xml/xml.dart';
 
-class Path {
+import '../cloneable.dart';
+import '../extensions.dart';
+import 'matrix.dart';
+import 'movement.dart';
+
+class Path implements Cloneable<Path> {
 
   String name = '';
   List<Movement> movelist = [];
@@ -38,21 +43,26 @@ class Path {
     _transformlist = movelist.map((it) {
       tx = tx * it.translate();
       tx = tx * it.rotate();
-      return tx.copy();
+      return tx.clone();
     }).toList();
   }
 
   Path.fromMovement(Movement m) {
-    movelist = [m];
+    movelist = [m.clone()];
     recalculate();
   }
 
   Path.fromPath(Path p) {
-    movelist = p.movelist.toList();
+    movelist = p.movelist.map((m) => m.clone()).toList();
     recalculate();
   }
 
-  Path copy() => Path.fromPath(this);
+  Path.fromPaths(List<Path> plist) {
+    movelist = plist.expand((p) => p.movelist).toList();
+  }
+
+  @override
+  Path clone() => Path.fromPath(this);
 
   void clear() {
     movelist = [];

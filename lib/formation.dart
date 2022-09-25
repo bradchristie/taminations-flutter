@@ -27,7 +27,7 @@ class Formation {
 
   Formation(this.name,this.dancers,{this.asymmetric=false});
   Formation copy() {
-    var dcopy = dancers.map((d) => Dancer.clone(d)).toList();
+    var dcopy = dancers.clone();
     return Formation(name,dcopy,asymmetric: asymmetric);
   }
 
