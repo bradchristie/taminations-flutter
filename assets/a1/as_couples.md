@@ -4,7 +4,7 @@
 From any formation composed only of couples, for example Double Pass Thru, Facing
 Lines, or Parallel Two-Faced Lines: This is used to modify a call, for example, 
 As Couples [Walk and Dodge](../ms/walk_and_dodge.md) 
-from Parallel Two-Faced Lines. Each couple acts as though it waw a single
+from Parallel Two-Faced Lines. Each couple acts as though it were a single
 dancer, and does the part of the call appropriate to its position in the starting
 formation.
 

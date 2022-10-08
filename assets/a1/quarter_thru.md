@@ -28,7 +28,7 @@ Circulate formations does the call independently.
 Timing: 8
 
 From any appropriate 4-dancer formation
-(for example, Right-Hand Box Circulate, Left-Hand Facing Ciamond):
+(for example, Right-Hand Box Circulate, Left-Hand Facing Diamond):
 ***Those who can Turn 3/4 by the Right***,
 ***then those who can Turn 1/2 by the Left.***
 As with [Quarter Thru](quarter_thru.md), there must be people doing each part of the call.
