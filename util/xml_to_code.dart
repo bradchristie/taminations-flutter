@@ -183,10 +183,15 @@ Future<void> writeFormations() async {
 //  is built that maps normalized call names to lists of AnimatedCall objects
 Future<void> writeCalls() async {
   final dirs = ['b1','b2','ms','plus','a1','a2','c1','c2','c3a','c3b'];
+  try {
+    Directory('lib/calls').deleteSync(recursive: true);
+  } catch(e) {
+    if (!(e is FileSystemException))
+      rethrow;
+  }
+  Directory('lib/calls').createSync();
   for (var dir in dirs) {
-    for (var file in Directory('lib/calls/$dir').listSync()) {
-      file.deleteSync();
-    }
+    Directory('lib/calls/$dir').createSync();
   }
   var callsDoc = await File('assets/src/calls.xml').readAsString()
       .then((text) => XmlDocument.parse(text));
