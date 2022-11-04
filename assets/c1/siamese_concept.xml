@@ -22,9 +22,140 @@
 -->
 <tamination title="Siamese Concept">
 
+  <tam title="Siamese 2/3 Recycle" group="Siamese" formation="Siamese Wave">
+    <path>
+      <move select="Lead Right" hands="right" beats="2" scaleX="2" scaleY="2.5"/>
+      <move select="Forward 3" hands="right" offsetY="1"/>
+    </path>
+    <path>
+      <move select="Lead Right" hands="left" beats="2" scaleY="1.5"/>
+      <move select="Forward 3" hands="left"/>
+    </path>
+    <path>
+      <move select="Counter Rotate Right 0 -2"/>
+      <move select="Counter Rotate Right 0 -2" offsetY="-.5"/>
+      <move select="Counter Rotate Right 0 -2" offsetX=".5"/>
+    </path>
+    <path>
+      <move select="Counter Rotate Right 2 0"/>
+      <move select="Counter Rotate Right 2 0" offsetY="-.5"/>
+      <move select="Counter Rotate Right 2 0" offsetX=".5"/>
+    </path>
+  </tam>
 
+  <tam title="Siamese Ah So" group="Siamese" formation="Siamese Wave">
+    <path>
+      <move select="Run Right" hands="gripright" beats="6" scaleX="2" scaleY="3.25" offsetX="2"/>
+    </path>
+    <path>
+      <move select="Run Right" hands="gripleft" beats="6" scaleY="1.75" offsetX="2"/>
+    </path>
+    <path>
+      <move select="Counter Rotate Right 0 -2" beats="3" offsetX="-1" offsetY=".5"/>
+      <move select="Counter Rotate Right 0 -2" beats="3" offsetX="-.5" offsetY="-1"/>
+    </path>
+    <path>
+      <move select="Counter Rotate Right 2 0" beats="3" offsetX="-1" offsetY=".5"/>
+      <move select="Counter Rotate Right 2 0" beats="3" offsetX="-.5" offsetY="-1"/>
+    </path>
+  </tam>
 
-  <tam title="Siamese Diamond Circulate" group="Siamese" from=""
+  <tam title="Siamese Alter the Wave" group="Siamese" formation="Siamese Wave">
+    <path>
+      <move select="Run Right" beats="4" hands="right" scaleX="1.5" scaleY="1.5"/>
+      <move select="Hinge Left" hands="both" scaleX=".5" scaleY=".5"/>
+      <move select="Hinge Left" hands="both" scaleX=".5" scaleY=".5"/>
+      <move select="Hinge Left" hands="both" scaleX=".5" scaleY=".5"/>
+      <move select="Hinge Left" beats="3" hands="both" scaleX=".5" scaleY=".5"/>
+      <move select="Hinge Left" beats="3" hands="both" scaleX=".5" scaleY=".5"/>
+      <move select="Lead Left" beats="4" hands="right" scaleX="2.5" scaleY=".5"/>
+    </path>
+    <path>
+      <move select="Run Right" beats="4" hands="left" scaleX=".5" scaleY=".5"/>
+      <move select="Lead Left" beats="1.5" hands="left" scaleX="1.5" scaleY="1.5"/>
+      <move select="Lead Left" beats="1.5" hands="left" scaleX="1.5" scaleY="1.5"/>
+      <move select="Lead Left" beats="1.5" hands="left" scaleX="1.5" scaleY="1.5"/>
+      <move select="Lead Left" beats="3" hands="left" scaleX="1.5" scaleY="1.5"/>
+      <move select="Lead Left" beats="3" hands="left" scaleX="1.5" scaleY="1.5"/>
+      <move select="Lead Left" beats="4" hands="left" scaleX="3.5" scaleY="1.5"/>
+    </path>
+    <path>
+      <move select="Counter Rotate Right 0 -2"/>
+      <move select="Counter Rotate Right 0 -2"/>
+      <move select="Pivot backward right" beats="4.5"/>
+      <move select="Counter Rotate Left 2 4" beats="3"/>
+      <move select="Counter Rotate Left 2 4" beats="3"/>
+      <move select="Counter Rotate Left 0 2"/>
+      <move select="Counter Rotate Left 0 2"/>
+    </path>
+    <path>
+      <move select="Counter Rotate Right 2 0"/>
+      <move select="Counter Rotate Right 2 0"/>
+      <move select="Pivot forward left" beats="4.5"/>
+      <move select="Counter Rotate Left 4 2" beats="3"/>
+      <move select="Counter Rotate Left 4 2" beats="3"/>
+      <move select="Counter Rotate Left 2 0"/>
+      <move select="Counter Rotate Left 2 0"/>
+    </path>
+  </tam>
+
+  <tam title="Siamese Bend the Line" group="Siamese"
+       formation="Siamese 2-Faced Line 2">
+    <path>
+      <move select="BackHinge Left" hands="gripright" beats="3" scaleY=".5"/>
+    </path>
+    <path>
+      <move select="BackHinge Left" hands="gripleft" beats="3" scaleX="3" scaleY="1.5"/>
+    </path>
+    <path>
+      <move select="Counter Rotate Right 2 0" beats="3" offsetX="1"/>
+    </path>
+    <path>
+      <move select="Counter Rotate Right 0 -2" beats="3" offsetX="1"/>
+    </path>
+  </tam>
+
+  <tam title="Box Circulate" group="Siamese" formation="Siamese Box 3">
+    <path>
+      <move select="Run Right" hands="right" beats="4" scaleX="2.5" scaleY="3"/>
+    </path>
+    <path>
+      <move select="Run Right" hands="left" beats="4" />
+    </path>
+    <path>
+      <move select="Forward 4"/>
+    </path>
+    <path>
+      <move select="Forward 4"/>
+    </path>
+  </tam>
+
+  <tam title="Siamese Cross Your Neighbor" group="Siamese" formation="Siamese Box 3">
+    <path>
+      <move select="Lead Right" beats="4" hands="right" scaleX="3" scaleY="3"/>
+      <move select="Swing Right" beats="6" scaleX="1.5" scaleY="1.25"/>
+    </path>
+    <path>
+      <move select="Lead Right" beats="4" hands="left" scaleX="1.5"/>
+      <move select="U-Turn Right" beats="6" hands="left" offsetY=".5"/>
+    </path>
+    <path>
+      <move select="Extend Right" beats="3" scaleY="3"/>
+      <move select="Forward"/>
+      <move select="Counter Rotate Left 2 0" hands="left"/>
+      <move select="Counter Rotate Left 2 0" hands="left"/>
+      <move select="Counter Rotate Left 2 0" hands="left"/>
+    </path>
+    <path>
+      <move select="Extend Right" beats="3" scaleY="3"/>
+      <move select="Forward"/>
+      <move select="Counter Rotate Left 0 2" hands="left"/>
+      <move select="Counter Rotate Left 0 2" hands="left"/>
+      <move select="Counter Rotate Left 0 2" hands="left"/>
+    </path>
+  </tam>
+
+  <tam title="Siamese Diamond Circulate" group="Siamese"
        formation="Interlocked Diamonds RH Girl Points">
     <path>
       <move select="Lead Right" hands="gripright" beats="6" scaleX="5" scaleY="3"/>
@@ -37,6 +168,148 @@
     </path>
     <path>
       <move select="Quarter Right" beats="6" offsetX="-1" offsetY="-4"/>
+    </path>
+  </tam>
+
+  <tam title="Siamese Dixie Style to a Wave" group="Siamese" formation="Siamese Box 2">
+    <path>
+      <move select="Extend Left" hands="gripleft" beats="3" scaleX="2" scaleY="3.5" />
+      <move select="Extend Right" hands="gripleft" beats="3" scaleX="2" scaleY="3.5" />
+      <move select="Hinge Left" beats="2" scaleX="1.5" scaleY="3" />
+    </path>
+    <path>
+      <move select="Extend Left" hands="gripright" beats="3" scaleX="2" scaleY="2.5" />
+      <move select="Extend Right" hands="gripright" beats="3" scaleX="2" scaleY="2.5" />
+      <move select="Hinge Left" hands="both" beats="2" scaleX=".5" />
+    </path>
+    <path>
+      <move select="Dodge Right" beats="6" scaleY="1.5"/>
+      <move select="Counter Rotate Left 2 0"/>
+    </path>
+    <path>
+      <move select="Dodge Right" beats="6" scaleY="1.5" offsetX="-1"/>
+      <move select="Counter Rotate Left 0 2" offsetX="1"/>
+    </path>
+  </tam>
+
+  <tam title="Siamese Follow Thru" group="Siamese" formation="Siamese Box 3">
+    <path>
+      <move select="Lead Right" beats="5" hands="right" scaleX="3" scaleY="3"/>
+    </path>
+    <path>
+      <move select="Lead Right" beats="5" hands="left"/>
+    </path>
+    <path>
+      <move select="Forward 2"/>
+      <move select="Counter Rotate Right 2 0" beats="3" offsetY="-1"/>
+    </path>
+    <path>
+      <move select="Forward 2"/>
+      <move select="Counter Rotate Right 0 -2" beats="3" offsetY="-1"/>
+    </path>
+  </tam>
+
+  <tam title="Siamese Mix" group="Siamese" formation="Siamese Wave 2">
+    <path>
+      <move select="Run Left" beats="4" hands="right" scaleX="2" scaleY="1.5"/>
+    </path>
+    <path>
+      <move select="Run Left" beats="4" hands="left" scaleX="3" scaleY="2.5"/>
+    </path>
+    <path>
+      <move select="Dodge Right"/>
+      <move select="Counter Rotate Right 0 -2" hands="right"/>
+      <move select="Counter Rotate Right 0 -2" hands="right"/>
+    </path>
+    <path>
+      <move select="Dodge Right"/>
+      <move select="Counter Rotate Right 2 0" hands="right"/>
+      <move select="Counter Rotate Right 2 0" hands="right"/>
+    </path>
+  </tam>
+
+  <tam title="Siamese Pass the Ocean" group="Siamese" formation="Siamese Box 1">
+    <path>
+      <move select="Extend Left" hands="right" beats="2" scaleX="2" scaleY=".5"/>
+      <move select="Lead Right" hands="right" beats="4" scaleX="3.5" scaleY="3.5"/>
+    </path>
+    <path>
+      <move select="Extend Left" hands="left" beats="2" scaleX="2" scaleY="1.5"/>
+      <move select="Lead Right" hands="left" beats="4" scaleX="2.5" scaleY="2.5"/>
+    </path>
+    <path>
+      <move select="Extend Left" beats="2" scaleX="2.5" scaleY="1"/>
+      <move select="Counter Rotate Left 2 0" hands="left" beats="4" offsetX="-.5"/>
+    </path>
+    <path>
+      <move select="Extend Left" beats="2" scaleX="1.5" scaleY="1"/>
+      <move select="Counter Rotate Left 0 2" hands="left" beats="4" offsetX=".5"/>
+    </path>
+  </tam>
+
+  <tam title="Siamese Recycle" group="Siamese" formation="Siamese Wave">
+    <path>
+      <move select="Run Right" hands="right" beats="8" scaleX="2.5" scaleY="3.25" offsetX="2"/>
+    </path>
+    <path>
+      <move select="Run Right" hands="left" beats="8" scaleX="1.5" scaleY="1.75" offsetX="2"/>
+    </path>
+    <path>
+      <move select="Counter Rotate Right 0 -2" offsetX="-.5" offsetY="-.25"/>
+      <move select="Counter Rotate Right 0 -2" offsetY="-.5" offsetX=".25"/>
+      <move select="Counter Rotate Right 0 -2" offsetX=".5" offsetY=".25"/>
+      <move select="Counter Rotate Right 0 -2" offsetY=".5" offsetX="-.25"/>
+    </path>
+    <path>
+      <move select="Counter Rotate Right 2 0" offsetX="-.5" offsetY="-.25"/>
+      <move select="Counter Rotate Right 2 0" offsetY="-.5" offsetX=".25"/>
+      <move select="Counter Rotate Right 2 0" offsetX=".5" offsetY=".25"/>
+      <move select="Counter Rotate Right 2 0" offsetY=".5" offsetX="-.25"/>
+    </path>
+  </tam>
+
+  <tam title="Siamese Spin the Top" group="Siamese"
+       formation="Siamese Wave" parts="4">
+    <path>
+      <move select="Run Right" hands="right" beats="4" scaleX="1.5" scaleY="1.5"/>
+      <move select="Run Left" hands="both" beats="3" scaleX=".5" scaleY=".5"/>
+      <move select="Hinge Left" hands="both" beats="1.5" scaleX=".5" scaleY=".5"/>
+    </path>
+    <path>
+      <move select="Run Right" hands="left" beats="4" scaleX=".5" scaleY=".5"/>
+      <move select="Run Left" hands="left" beats="3" scaleX="1.5" scaleY="1.5"/>
+      <move select="Hinge Left" hands="left" beats="1.5" scaleX="1.5" scaleY="1.5"/>
+    </path>
+    <path>
+      <move select="Counter Rotate Right 0 -2"/>
+      <move select="Counter Rotate Right 0 -2"/>
+      <move select="Counter Rotate Right 2 -4" beats="4.5"/>
+    </path>
+    <path>
+      <move select="Counter Rotate Right 2 0"/>
+      <move select="Counter Rotate Right 2 0"/>
+      <move select="Counter Rotate Right 4 -2" beats="4.5"/>
+    </path>
+  </tam>
+
+  <tam title="Siamese Zing" group="Siamese" formation="Siamese Box 3">
+    <path>
+      <move select="U-Turn Left" hands="right"/>
+      <move select="Forward 2" hands="right"/>
+      <move select="Lead Left" beats="2" hands="right"/>
+    </path>
+    <path>
+      <move select="Run Left" hands="right" scaleY="1.5"/>
+      <move select="Forward 2" hands="left"/>
+      <move select="Lead Left" hands="left" beats="2" scaleX="3" scaleY="2"/>
+    </path>
+    <path>
+      <move select="Forward 2" beats="4"/>
+      <move select="Counter Rotate Right 2 0" beats="3" offsetX="1" offsetY="1"/>
+    </path>
+    <path>
+      <move select="Forward 2" beats="4"/>
+      <move select="Counter Rotate Right 0 -2" beats="3" offsetX="1" offsetY="1"/>
     </path>
   </tam>
 
