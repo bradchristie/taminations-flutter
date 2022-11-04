@@ -31,6 +31,11 @@ class PassToTheCenter extends Action with CallWithParts {
 
   @override
    void performPart1(CallContext ctx) {
+    //  Check that Pass Thru is with dancers facing in passing dancers facing out
+    //  Otherwise it will accept incorrect starting formations
+    if (ctx.dancers.where((d) => d.isFacingIn).length !=
+        ctx.dancers.where((d) => d.isFacingOut).length)
+      throw FormationNotFoundError(name);
     ctx.applyCalls('Pass Thru');
   }
 
