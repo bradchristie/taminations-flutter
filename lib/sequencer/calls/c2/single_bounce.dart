@@ -32,36 +32,36 @@ class SingleBounce extends ActivesOnlyAction with CallWithParts {
   SingleBounce(String name) : super(name);
 
   @override
-  Future<void> performPart1(CallContext ctx) async {
+   void performPart1(CallContext ctx) {
     //  Remember who to bounce
     final who = name.replaceFirst('Single Bounce( the)?'.r,'');
     if (who.isBlank)
       throw CallError('Bounce who?');
     final whoctx = CallContext.fromContext(ctx,dancers:ctx.actives);
     if (!who.matches('No\\s*(body|one)'.ri))
-      await whoctx.applySpecifier(who);
+      whoctx.applySpecifier(who);
     beaudancers = whoctx.actives.where((d) => d.data.beau).toList();
     belledancers = whoctx.actives.where((d) => d.data.belle).toList();
     //  Now do the veer, which we can cheat by finishing Pass Thru
     if (ctx.actives.every((d) => d.data.beau))
-      await ctx.applyCalls('Pass Thru');
+      ctx.applyCalls('Pass Thru');
     else if (ctx.actives.every((d) => d.data.belle))
-      await ctx.applyCalls('Left Pass Thru');
+      ctx.applyCalls('Left Pass Thru');
     else
-      await ctx.applyCalls('Beaus Pass Thru While Belles Left Pass Thru');
+      ctx.applyCalls('Beaus Pass Thru While Belles Left Pass Thru');
 
   }
 
   @override
-  Future<void> performPart2(CallContext ctx) async {
+   void performPart2(CallContext ctx) {
     if (beaudancers.isNotEmpty) {
-      await ctx.subContext(beaudancers, (ctx2) async {
-        await ctx2.applyCalls('Face Right', 'Face Right');
+      ctx.subContext(beaudancers, (ctx2) {
+        ctx2.applyCalls('Face Right', 'Face Right');
       });
     }
     if (belledancers.isNotEmpty) {
-      await ctx.subContext(belledancers, (ctx2) async {
-        await ctx2.applyCalls('Face Left', 'Face Left');
+      ctx.subContext(belledancers, (ctx2) {
+        ctx2.applyCalls('Face Left', 'Face Left');
       });
     }
   }

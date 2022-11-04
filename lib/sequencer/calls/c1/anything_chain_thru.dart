@@ -40,18 +40,18 @@ class AnythingChainThru extends Action with CallWithParts, ButCall {
   }
 
   @override
-  Future<void> performPart1(CallContext ctx) async {
-    await ctx.applyCalls(firstCall);
+   void performPart1(CallContext ctx) {
+    ctx.applyCalls(firstCall);
   }
 
   @override
-  Future<void> performPart2(CallContext ctx) async {
-    await ctx.applyCalls('Very Centers Trade');
+   void performPart2(CallContext ctx) {
+    ctx.applyCalls('Very Centers Trade');
   }
 
   @override
-  Future<void> performPart3(CallContext ctx) async {
-    await ctx.applyCalls('Center 4 $butCall');
+   void performPart3(CallContext ctx) {
+    ctx.applyCalls('Center 4 $butCall');
   }
 
 

@@ -36,35 +36,35 @@ class ZipCode extends Action with CallWithParts {
   }
 
   @override
-  Future<void> performPart1(CallContext ctx) async {
-    await ctx.applyCalls('Centers Face Out');
+   void performPart1(CallContext ctx) {
+    ctx.applyCalls('Centers Face Out');
     ctx.analyze();
-    await ctx.applyCalls('Centers Run');
+    ctx.applyCalls('Centers Run');
   }
 
   @override
-  Future<void> performPart2(CallContext ctx) async {
-    await ctx.applyCalls('Ends Pass Thru');
+   void performPart2(CallContext ctx) {
+    ctx.applyCalls('Ends Pass Thru');
   }
 
   @override
-  Future<void> performPart3(CallContext ctx) async {
-    await ctx.applyCalls('Ends Bend');
+   void performPart3(CallContext ctx) {
+    ctx.applyCalls('Ends Bend');
   }
 
   @override
-  Future<void> performPart4(CallContext ctx) async {
-    await ctx.applyCalls('Ends Pass Thru');
+   void performPart4(CallContext ctx) {
+    ctx.applyCalls('Ends Pass Thru');
   }
 
   @override
-  Future<void> performPart5(CallContext ctx) async {
-    await ctx.applyCalls('Ends Bend');
+   void performPart5(CallContext ctx) {
+    ctx.applyCalls('Ends Bend');
   }
 
   @override
-  Future<void> performPart6(CallContext ctx) async {
-    await ctx.applyCalls('Ends Pass Thru');
+   void performPart6(CallContext ctx) {
+    ctx.applyCalls('Ends Pass Thru');
   }
 
 }

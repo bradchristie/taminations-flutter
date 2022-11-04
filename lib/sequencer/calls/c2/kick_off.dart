@@ -27,11 +27,11 @@ class KickOff extends Action {
   KickOff(String name) : super(name);
 
   @override
-  Future<void> perform(CallContext ctx) async {
+  void perform(CallContext ctx) {
     //  Active dancers [Cross] Run and Roll
     final cross = name.startsWith('Cross') ? 'Cross' : '';
     final inactives = ctx.dancers.where((d) => !d.isActive).toList();
-    await ctx.applyCalls('$cross Run and Roll');
+    ctx.applyCalls('$cross Run and Roll');
     //  Inactive dancers that moved do a Partner Tag
     inactives.forEach((d) {
       final m = d.path.shift()!;

@@ -27,10 +27,10 @@ class TrailToADiamond extends ActivesOnlyAction {
   TrailToADiamond(name) : super(name);
 
   @override
-  Future<void> perform(CallContext ctx) async {
+  void perform(CallContext ctx) {
     //  All boxes, waves, columns are covered in XML
     //  so we only need to handle t-bones here
-    await ctx.applyCalls('Leaders Do Your Part Trail to a Diamond'
+    ctx.applyCalls('Leaders Do Your Part Trail to a Diamond'
         ' While Trailers Do Your Part Trail to a Diamond');
   }
 

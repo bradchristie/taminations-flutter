@@ -39,7 +39,7 @@ class WalkAndDodge extends ActivesOnlyAction {
       d != null && dodgectx.actives.map((dd) => dd.number).contains(d.number);
 
   @override
-  Future<void> perform(CallContext ctx) async {
+  void perform(CallContext ctx) {
     //  Figure out who is a walker and who is a dodger.
     //  Save the results in call contexts
     walkctx = CallContext.fromContext(ctx);
@@ -59,18 +59,18 @@ class WalkAndDodge extends ActivesOnlyAction {
       var codedCall = CodedCall.fromName(call);
       if (codedCall == null)
         throw CallError('Error parsing Walk and Dodge');
-      await codedCall.performCall(walkctx);
+      codedCall.performCall(walkctx);
     }
     for (var call in dodgers.split('\\s+'.r)) {
       var codedCall = CodedCall.fromName(call);
       if (codedCall == null)
         throw CallError('Error parsing Walk and Dodge');
-      await codedCall.performCall(dodgectx);
+      codedCall.performCall(dodgectx);
     }
     //  If dancer is not in either set then it is inactive
     for (var d in ctx.dancers)
       d.data.active = isWalker(d) || isDodger(d);
-    await super.perform(ctx);
+    super.perform(ctx);
   }
 
   @override

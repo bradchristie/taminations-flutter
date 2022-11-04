@@ -37,7 +37,7 @@ class Run extends Action {
   }
 
   @override
-  Future<void> perform(CallContext ctx) async {
+  void perform(CallContext ctx) {
     var dancersToRun = ctx.dancers.where((d) => d.isActive).toSet();
     var dancersToWalk = ctx.dancers.where((d) => d.isNotActive).toSet();
     var usePartner = false;

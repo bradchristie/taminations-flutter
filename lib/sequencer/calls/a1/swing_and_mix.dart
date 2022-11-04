@@ -31,19 +31,19 @@ class SwingAndMix extends Action with CallWithParts {
   SwingAndMix(String name) : super(name);
 
   @override
-  Future<void> performPart1(CallContext ctx) async {
-    await ctx.applyCalls('Swing');
+   void performPart1(CallContext ctx) {
+    ctx.applyCalls('Swing');
   }
 
   @override
-  Future<void> performPart2(CallContext ctx) async {
-    await ctx.applyCalls('Centers Cross Run');
+   void performPart2(CallContext ctx) {
+    ctx.applyCalls('Centers Cross Run');
   }
 
   @override
-  Future<void> performPart3(CallContext ctx) async {
+   void performPart3(CallContext ctx) {
     ctx.analyze();
-    await ctx.applyCalls('Centers Trade');
+    ctx.applyCalls('Centers Trade');
   }
 
 }

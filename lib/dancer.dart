@@ -249,7 +249,7 @@ class Dancer implements Comparable<Dancer>, Cloneable<Dancer> {
           gender ?? from.gender,
           from.fillColor,from.tx,
           //  Already geometrically rotated so don't do it again
-          Geometry(from._geom.geometry,0),from.path.movelist,from);
+          Geometry(from._geom.geometry,0),[],from);
 
   @override
   Dancer clone() => Dancer.cloneWithOptions(this);

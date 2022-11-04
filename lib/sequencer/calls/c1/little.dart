@@ -27,11 +27,11 @@ class Little extends Action {
   Little(String name) : super(name);
 
   @override
-  Future<void> perform(CallContext ctx) async {
+  void perform(CallContext ctx) {
 
     //  Do the Scoot Back of Scoot and Little
     if (name.startsWith('Scoot and'))
-      await ctx.applyCalls('Scoot Back');
+      ctx.applyCalls('Scoot Back');
     final namePart2 = name.replaceFirst('Scoot and','').trim();
 
     //  Figure out which way the outside dancers turn
@@ -50,9 +50,9 @@ class Little extends Action {
     //  Do the call, catch any errors triggered by bad counter rotates
     try {
       if (ctx.actives.length == 8)
-        await ctx.applyCalls('Outer 4 $turn Counter Rotate While Center 4 Step and Fold');
+        ctx.applyCalls('Outer 4 $turn Counter Rotate While Center 4 Step and Fold');
       else if (ctx.actives.length==4 && ctx.actives.containsAll(ctx.outer(4)))
-        await ctx.applyCalls('Outer 4 $turn Counter Rotate');
+        ctx.applyCalls('Outer 4 $turn Counter Rotate');
       else
         throw CallError("Don't know how to Little for these dancers.");
     } on CallError catch (_) {

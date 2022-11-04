@@ -35,25 +35,25 @@ The final Cast Off 3/4 can be replaced with But (another call).''';
   Motivate() : super('Motivate');
 
   @override
-  Future<void> performPart1(CallContext ctx) async {
-    await ctx.applyCalls('Circulate');
+   void performPart1(CallContext ctx) {
+    ctx.applyCalls('Circulate');
   }
 
   @override
-  Future<void> performPart2(CallContext ctx) async {
-    await ctx.applyCalls('Center 4 Cast Off 3/4 '
+   void performPart2(CallContext ctx) {
+    ctx.applyCalls('Center 4 Cast Off 3/4 '
         'While Others Do Your Part Big Hourglass Circulate');
   }
 
   @override
-  Future<void> performPart3(CallContext ctx) async {
-    await ctx.applyCalls('Outer 4 Trade '
+   void performPart3(CallContext ctx) {
+    ctx.applyCalls('Outer 4 Trade '
         'While Center 4 $starTurns');
   }
 
   @override
-  Future<void> performPart4(CallContext ctx) async {
-    await ctx.applyCalls('Wave of 6 Center 4 $butCall '
+   void performPart4(CallContext ctx) {
+    ctx.applyCalls('Wave of 6 Center 4 $butCall '
         'While Others Do Your Part Hourglass Circulate');
   }
 

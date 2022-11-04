@@ -28,12 +28,12 @@ class Detour extends Action {
   Detour() : super('Detour');
 
   @override
-  Future<void> perform(CallContext ctx) async {
-    await ctx.subContext(ctx.center(4), (ctx2) async {
-      await ctx2.applyCalls('Box Counter Rotate');
+  void perform(CallContext ctx) {
+    ctx.subContext(ctx.center(4), (ctx2) {
+      ctx2.applyCalls('Box Counter Rotate');
     });
-    await ctx.subContext(ctx.outer(4), (ctx2) async {
-      await ctx2.applyCalls('Half Zoom','Hinge');
+    ctx.subContext(ctx.outer(4), (ctx2) {
+      ctx2.applyCalls('Half Zoom','Hinge');
     });
   }
 

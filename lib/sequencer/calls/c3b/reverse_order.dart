@@ -27,11 +27,11 @@ class ReverseOrder extends ActivesOnlyAction {
   ReverseOrder(String name) : super(name);
 
   @override
-  Future<void> perform(CallContext ctx) async {
+  void perform(CallContext ctx) {
     final reverseCall = name.replaceFirst('Reverse Order '.ri, '');
     final codedCall = CodedCall.fromName(reverseCall);
     if (codedCall is CallWithParts) {
-      await (codedCall as CallWithParts).reverseOrder(ctx);
+      (codedCall as CallWithParts).reverseOrder(ctx);
       return;
     }
 

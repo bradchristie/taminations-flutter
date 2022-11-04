@@ -34,28 +34,28 @@ The final Cast Off 3/4 can be replaced with But (another call)''';
   LinearAction() : super('Linear Cycle');
 
   @override
-  Future<void> performPart1(CallContext ctx) async {
+   void performPart1(CallContext ctx) {
     centerDancers = ctx.center(4);
     outerDancers = ctx.outer(4);
-    await ctx.applyCalls('Hinge');
+    ctx.applyCalls('Hinge');
   }
 
   @override
-  Future<void> performPart2(CallContext ctx) async {
-    await ctx.subContext(ctx.dancers, (ctxPart2) async {
-    await ctxPart2.subContext(centerDancers, (ctx2)async {
-      await ctx2.applyCalls('Box Circulate 1.5');
+   void performPart2(CallContext ctx) {
+    ctx.subContext(ctx.dancers, (ctxPart2) {
+    ctxPart2.subContext(centerDancers, (ctx2) {
+      ctx2.applyCalls('Box Circulate 1.5');
     });
     ctxPart2.checkCenters();
-    await ctxPart2.subContext(outerDancers, (ctx2) async {
-      await ctx2.applyCalls('Trade');
+    ctxPart2.subContext(outerDancers, (ctx2) {
+      ctx2.applyCalls('Trade');
     });
     });
   }
 
   @override
-  Future<void> performPart3(CallContext ctx) async {
-    await ctx.applyCalls('Center Wave of 4 $butCall '
+   void performPart3(CallContext ctx) {
+    ctx.applyCalls('Center Wave of 4 $butCall '
         'While Others Do Your Part Hourglass Circulate');
   }
 

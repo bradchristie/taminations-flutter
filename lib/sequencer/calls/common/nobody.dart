@@ -25,7 +25,7 @@ class Nobody extends CodedCall {
   Nobody() : super('Nobody');
 
   @override
-  Future<void> performCall(CallContext ctx) async {
+   void performCall(CallContext ctx) {
     for (var d in ctx.dancers) {
       d.data.active = false;
     }

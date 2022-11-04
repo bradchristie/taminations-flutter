@@ -30,25 +30,25 @@ class Circulate extends Action {
   Circulate() : super('Circulate' );
 
   @override
-  Future<void> perform(CallContext ctx) async {
+  void perform(CallContext ctx) {
     //  If just 4 dancers, try Box Circulate
     if (ctx.actives.length == 4) {
       //  As a convenience, if diamond do a diamond circulate
-      await ctx.subContext(ctx.actives, (ctx2) async {
+      ctx.subContext(ctx.actives, (ctx2) {
         if (ctx2.isDiamond()) {
-          await ctx2.applyCalls('Diamond Circulate');
+          ctx2.applyCalls('Diamond Circulate');
           level = LevelData.PLUS;
         }
         else if (ctx.actives.every((d) => d.data.center)) {
           try {
-            await ctx2.applyCalls('Box Circulate');
+            ctx2.applyCalls('Box Circulate');
           } on CallError {
             //  That didn't work, try to find a circulate path for each dancer
-            await super.perform(ctx);
+            super.perform(ctx);
           }
         } else {
           //  Dancers not in center, go on and try to calculate the circulate
-          await super.perform(ctx);
+          super.perform(ctx);
         }
       });
     }
@@ -56,16 +56,16 @@ class Circulate extends Action {
     //  All 8 dancers active
     //  Try various forms of Circulate
     else if (ctx.isTwoFacedLines())
-      await ctx.applyCalls('Couples Circulate' );
+      ctx.applyCalls('Couples Circulate' );
     else if (ctx.isLines())
-      await ctx.applyCalls('All 8 Circulate' );
+      ctx.applyCalls('All 8 Circulate' );
     else if (ctx.isColumns())
-      await ctx.applyCalls('Column Circulate' );
+      ctx.applyCalls('Column Circulate' );
     else if (ctx.actives.length == 6 && ctx.isColumns(3))
-      await ctx.applyCalls('Column Circulate' );
+      ctx.applyCalls('Column Circulate' );
     //  If none of these, but t-bones or 6 dancers, calculate paths
     else if (ctx.actives.length == 6 || ctx.isTBone()) {
-      await super.perform(ctx);
+      super.perform(ctx);
       if (ctx.isCollision())
         throw CallError('Cannot handle dancer collision here.' );
     }

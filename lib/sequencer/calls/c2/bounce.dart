@@ -33,7 +33,7 @@ class Bounce extends ActivesOnlyAction with CallWithParts {
   Bounce(String name) : super(name);
 
   @override
-  Future<void> performPart1(CallContext ctx) async {
+   void performPart1(CallContext ctx) {
     //  Figure out which way to veer
     final centerBelles = ctx.actives.where((d) => d.data.center && d.data.belle);
     final centerBeaus = ctx.actives.where((d) => d.data.center && d.data.beau);
@@ -49,15 +49,15 @@ class Bounce extends ActivesOnlyAction with CallWithParts {
       throw CallError('Bounce who?');
     final whoctx = CallContext.fromContext(ctx,dancers:ctx.actives);
     if (!who.matches('No\\s*(body|one)'.ri))
-      await whoctx.applySpecifier(who);
+      whoctx.applySpecifier(who);
     whodancers = ctx.dancers.where((d) => whoctx.actives.contains(d)).toList();
-    await ctx.applyCalls('Veer $direction');
+    ctx.applyCalls('Veer $direction');
   }
 
   @override
-  Future<void> performPart2(CallContext ctx) async {
-    await ctx.subContext(whodancers, (ctx2) async {
-      await ctx2.applyCalls('Face $direction', 'Face $direction');
+   void performPart2(CallContext ctx) {
+    ctx.subContext(whodancers, (ctx2) {
+      ctx2.applyCalls('Face $direction', 'Face $direction');
     });
   }
 

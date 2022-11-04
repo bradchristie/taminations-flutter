@@ -30,7 +30,7 @@ class CastOffThreeQuarters extends ActivesOnlyAction {
   CastOffThreeQuarters(String name) : super(name);
 
   @override
-  Future<void> perform(CallContext ctx) async {
+  void perform(CallContext ctx) {
     var waveDancers = ctx.actives.where((d) => ctx.isInWave(d)).toList();
     var couplesLeft = ctx.actives.where((d) =>
     ctx.isInCouple(d) && d.isCenterLeft &&
@@ -41,38 +41,38 @@ class CastOffThreeQuarters extends ActivesOnlyAction {
 
     //  Dancers in mini-waves hinge three times
     if (waveDancers.isNotEmpty) {
-      await ctx.subContext(waveDancers, (ctx2) async {
+      ctx.subContext(waveDancers, (ctx2) {
         if (norm.endsWith('14'))
-          await ctx2.applyCalls('Hinge');
+          ctx2.applyCalls('Hinge');
         else if (norm.endsWith('12'))
-          await ctx2.applyCalls('Hinge','Hinge');
+          ctx2.applyCalls('Hinge','Hinge');
         else
-          await ctx2.applyCalls('Hinge','Hinge','Hinge');
+          ctx2.applyCalls('Hinge','Hinge','Hinge');
       });
     }
 
     //  Couples right of center (they look left to view center)
     //  reverse wheel around 1.5
     if (couplesLeft.isNotEmpty) {
-      await ctx.subContext(couplesLeft, (ctx2) async {
+      ctx.subContext(couplesLeft, (ctx2) {
         if (norm.endsWith('14'))
-          await ctx2.applyCalls('Half Reverse Wheel Around');
+          ctx2.applyCalls('Half Reverse Wheel Around');
         else if (norm.endsWith('12'))
-          await ctx2.applyCalls('Reverse Wheel Around');
+          ctx2.applyCalls('Reverse Wheel Around');
         else
-          await ctx2.applyCalls('Reverse Wheel Around 1.5');
+          ctx2.applyCalls('Reverse Wheel Around 1.5');
       });
     }
 
     //  Couples left of center wheel around 1.5
     if (couplesRight.isNotEmpty) {
-      await ctx.subContext(couplesRight, (ctx2) async {
+      ctx.subContext(couplesRight, (ctx2) {
         if (norm.endsWith('14'))
-          await ctx2.applyCalls('Half Wheel Around');
+          ctx2.applyCalls('Half Wheel Around');
         else if (norm.endsWith('12'))
-          await ctx2.applyCalls('Wheel Around');
+          ctx2.applyCalls('Wheel Around');
         else
-          await ctx2.applyCalls('Wheel Around 1.5');
+          ctx2.applyCalls('Wheel Around 1.5');
       });
     }
     //  If nobody fell in any of these three categories then something's wrong

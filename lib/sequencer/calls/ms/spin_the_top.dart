@@ -30,19 +30,19 @@ class SpinTheTop extends ActivesOnlyAction with CallWithParts {
   SpinTheTop(name) : super(name);
 
   @override
-  Future<void> performPart1(CallContext ctx) async {
+   void performPart1(CallContext ctx) {
     var left = name.contains('left'.ri) ? 'Left-Hand' : '';
     if (ctx.dancers.any((d) => ctx.dancerFacing(d) != null))
-      await ctx.applyCalls('Facing Dancers Step to a $left Wave');
+      ctx.applyCalls('Facing Dancers Step to a $left Wave');
     if (ctx.actives.every((it) => ctx.isInWave(it)))
-      await ctx.applyCalls('Swing');
+      ctx.applyCalls('Swing');
     else
       throw CallError('Unable to Spin the Top from this formation');
   }
 
   @override
-  Future<void> performPart2(CallContext ctx) async {
-    await ctx.applyCalls('Fan the Top');
+   void performPart2(CallContext ctx) {
+    ctx.applyCalls('Fan the Top');
   }
 
 }

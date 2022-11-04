@@ -32,19 +32,19 @@ The final Cast Off 3/4 can be replaced with But (another call)''';
   TallyHo(String name) : super(name);
 
   @override
-  Future<void> performPart1(CallContext ctx) async {
-    await ctx.applyCalls('1/2 Circulate');
+   void performPart1(CallContext ctx) {
+    ctx.applyCalls('1/2 Circulate');
     ctx.matchStandardFormation();
   }
 
   @override
-  Future<void> performPart2(CallContext ctx) async {
-    await ctx.applyCalls('Center Wave Of Four Hinge and 1/2 Circulate While Others Trade');
+   void performPart2(CallContext ctx) {
+    ctx.applyCalls('Center Wave Of Four Hinge and 1/2 Circulate While Others Trade');
   }
 
   @override
-  Future<void> performPart3(CallContext ctx) async {
-    await ctx.applyCalls('Center Wave Of Four $butCall '
+   void performPart3(CallContext ctx) {
+    ctx.applyCalls('Center Wave Of Four $butCall '
         'While Others Do Your Part Hourglass Circulate');
   }
 

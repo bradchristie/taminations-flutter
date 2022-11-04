@@ -52,14 +52,14 @@ class BigLineTurnAndDeal extends ActivesOnlyAction {
   BigLineTurnAndDeal(String name) : super(name);
 
   @override
-  Future<void> perform(CallContext ctx) async {
+  void perform(CallContext ctx) {
     final left = name.contains('Left') ? 'Left' : '';
     final length = norm.contains('6') ? '6' : '8';
     if (length == '6' && ctx.dancers.length > 6)
-      await ctx.applyCalls('Wave of 6 $name');
+      ctx.applyCalls('Wave of 6 $name');
     else {
-      await ctx.applyCalls('Line of $length $left Half Tag');
-      await super.perform(ctx);
+      ctx.applyCalls('Line of $length $left Half Tag');
+      super.perform(ctx);
     }
   }
 

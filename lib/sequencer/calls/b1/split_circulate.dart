@@ -26,10 +26,10 @@ class SplitCirculate extends Action {
   SplitCirculate(String name) : super(name);
 
   @override
-  Future<void> perform(CallContext ctx) async {
+  void perform(CallContext ctx) {
     if (!ctx.isTBone())
       throw CallError('Only 2 boxes of 4 can Split Circulate.' );
-    await super.perform(ctx);
+    super.perform(ctx);
   }
 
   @override

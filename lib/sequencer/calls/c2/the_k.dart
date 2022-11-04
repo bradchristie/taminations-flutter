@@ -27,12 +27,12 @@ class TheK extends Action {
   TheK(String name) : super(name);
 
   @override
-  Future<void> perform(CallContext ctx) async {
+  void perform(CallContext ctx) {
     if (ctx.dancers.where((d) => d.data.center).length == 4 &&
         ctx.dancers.where((d) => d.data.end).length == 4)
-      await ctx.applyCalls('Centers Trade While Ends Quarter Out and Roll');
+      ctx.applyCalls('Centers Trade While Ends Quarter Out and Roll');
     else
-      await ctx.applyCalls('Center 4 Trade while Outer 4 1/4 Out and Roll');
+      ctx.applyCalls('Center 4 Trade while Outer 4 1/4 Out and Roll');
   }
 
 }

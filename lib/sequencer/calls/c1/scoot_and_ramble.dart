@@ -31,13 +31,13 @@ class ScootAndRamble extends Action with CallWithParts {
   ScootAndRamble(name) : super(name);
 
   @override
-  Future<void> performPart1(CallContext ctx) async {
-    await ctx.applyCalls('Scoot Back');
+   void performPart1(CallContext ctx) {
+    ctx.applyCalls('Scoot Back');
   }
 
   @override
-  Future<void> performPart2(CallContext ctx) async {
-    await ctx.applyCalls('Ramble');
+   void performPart2(CallContext ctx) {
+    ctx.applyCalls('Ramble');
   }
 
 }

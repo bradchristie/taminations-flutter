@@ -28,10 +28,10 @@ class TouchAQuarter extends ActivesOnlyAction {
   TouchAQuarter(String name) : super(name);
 
   @override
-  Future<void> perform(CallContext ctx) async {
+  void perform(CallContext ctx) {
     var left = name.startsWith('Left') ? 'Left-Hand' : '';
-    await ctx.applyCalls('Step to a $left Wave');
-    await ctx.applyCalls(norm.endsWith('2') ? 'Swing' : 'Hinge');
+    ctx.applyCalls('Step to a $left Wave');
+    ctx.applyCalls(norm.endsWith('2') ? 'Swing' : 'Hinge');
   }
 
 }

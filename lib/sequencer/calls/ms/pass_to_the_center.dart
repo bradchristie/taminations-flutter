@@ -30,13 +30,13 @@ class PassToTheCenter extends Action with CallWithParts {
   PassToTheCenter(name) : super(name);
 
   @override
-  Future<void> performPart1(CallContext ctx) async {
-    await ctx.applyCalls('Pass Thru');
+   void performPart1(CallContext ctx) {
+    ctx.applyCalls('Pass Thru');
   }
 
   @override
-  Future<void> performPart2(CallContext ctx) async {
-    await ctx.applyCalls('Outer 4 Trade');
+   void performPart2(CallContext ctx) {
+    ctx.applyCalls('Outer 4 Trade');
   }
 
 }

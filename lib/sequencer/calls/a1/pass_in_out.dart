@@ -31,13 +31,13 @@ class PassInOut extends ActivesOnlyAction with CallWithParts {
   PassInOut(String name) : super(name);
 
   @override
-  Future<void> performPart1(CallContext ctx) async {
-    await ctx.applyCalls('Pass Thru');
+   void performPart1(CallContext ctx) {
+    ctx.applyCalls('Pass Thru');
   }
 
   @override
-  Future<void> performPart2(CallContext ctx) async {
-    await ctx.applyCalls(name.replaceFirst('Pass','Face'));
+   void performPart2(CallContext ctx) {
+    ctx.applyCalls(name.replaceFirst('Pass','Face'));
   }
 
 }

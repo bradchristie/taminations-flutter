@@ -32,25 +32,25 @@ class Coordinate extends Action with CallWithParts {
   Coordinate() : super('Coordinate');
 
   @override
-  Future<void> performPart1(CallContext ctx) async {
-    await ctx.applyCalls('Circulate');
+   void performPart1(CallContext ctx) {
+    ctx.applyCalls('Circulate');
   }
 
   @override
-  Future<void> performPart2(CallContext ctx) async {
-    await ctx.applyCalls('1/2 Circulate');
+   void performPart2(CallContext ctx) {
+    ctx.applyCalls('1/2 Circulate');
   }
 
   @override
-  Future<void> performPart3(CallContext ctx) async {
-    await ctx.applyCalls('Center 6 Trade');
+   void performPart3(CallContext ctx) {
+    ctx.applyCalls('Center 6 Trade');
   }
 
   @override
-  Future<void> performPart4(CallContext ctx) async {
-    await ctx.applyCalls('Very Centers Do Your Part Hourglass Circulate');
+   void performPart4(CallContext ctx) {
+    ctx.applyCalls('Very Centers Do Your Part Hourglass Circulate');
     ctx.contractPaths();
-    await ctx.applyCalls('Outer 2 Do Your Part Hourglass Circulate');
+    ctx.applyCalls('Outer 2 Do Your Part Hourglass Circulate');
   }
 
 }

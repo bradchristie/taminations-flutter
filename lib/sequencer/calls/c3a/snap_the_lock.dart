@@ -27,9 +27,9 @@ class SnapTheLock extends Action {
   SnapTheLock(name) : super(name);
 
   @override
-  Future<void> perform(CallContext ctx) async {
+  void perform(CallContext ctx) {
     try {
-      await ctx.applyCalls('Partner Tag',
+      ctx.applyCalls('Partner Tag',
           'Outsides Partner Tag While Centers Step to a Wave Lockit Step Thru');
     } on CallError {
       throw CallError('Cannot Snap the Lock from this formation.');

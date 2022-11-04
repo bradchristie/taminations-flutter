@@ -24,18 +24,28 @@ class AnimatedCall {
 
   String title;
   Formation formation;
-  bool genderSpecific = false;
-  bool isExact = false;
-  bool isAsymmetric = false;
-  String actives = '';
+  bool isExact;
+  bool isAsymmetric;
+  bool isPerimeter;
+  bool isGenderSpecific;
+  String actives;
   LevelData level = LevelData.B1;
   String parts;
+  String fractions;
 
-  AnimatedCall(this.title,Formation f,List<Path> paths,{this.parts=''})
+  AnimatedCall(this.title,Formation f,List<Path> paths,
+      {this.parts='',
+        this.fractions='',
+        this.actives='',
+        this.isPerimeter=false,
+        this.isExact=false,
+        this.isAsymmetric=false,
+        this.isGenderSpecific=false})
       : formation = f.copy() {
     if (paths.length == formation.dancers.length) {
       for (var i = 0; i < formation.dancers.length; i++)
         formation.dancers[i].path = paths[i];
+      isAsymmetric = true;
     } else if (paths.length * 2 == formation.dancers.length) {
       for (var i = 0; i < formation.dancers.length; i++)
         formation.dancers[i].path = paths[i ~/ 2];

@@ -36,31 +36,31 @@ class SwingThru extends ActivesOnlyAction with CallWithParts {
         super(name);
 
   @override
-  Future<void> performPart1(CallContext ctx) async {
+   void performPart1(CallContext ctx) {
     if (ctx.dancers.where((d) => !ctx.isInWave(d)).isNotEmpty) {
       try {
-        await ctx.applyCalls('Wave Dancers Nothing While Others Step to a Wave');
+        ctx.applyCalls('Wave Dancers Nothing While Others Step to a Wave');
       } on CallError catch(_) { }
       ctx.analyze();
     }
-    await ctx.subContext(ctx.dancersHoldingSameHands(isRight: !isLeft, isGrand: isGrand),
-            (ctx2) async {
+    ctx.subContext(ctx.dancersHoldingSameHands(isRight: !isLeft, isGrand: isGrand),
+            (ctx2) {
               if (ctx2.actives.isEmpty)
                 throw CallError('Noone to do part 1 of Swing Thru');
               part1dancers = ctx2.actives;
-              await ctx2.applyCalls('Trade');
+              ctx2.applyCalls('Trade');
     });
   }
 
   @override
-  Future<void> performPart2(CallContext ctx) async {
-    await ctx.subContext(ctx.dancersHoldingSameHands(isRight: isLeft, isGrand: isGrand),
-            (ctx2) async {
+   void performPart2(CallContext ctx) {
+    ctx.subContext(ctx.dancersHoldingSameHands(isRight: isLeft, isGrand: isGrand),
+            (ctx2) {
               if (ctx2.actives.isEmpty)
                 throw CallError('Noone to do part 2 of Swing Thru');
               if (part1dancers != null && !part1dancers!.any((d) => ctx2.actives.contains(d)))
                 throw CallError('No dancers doing both parts of Swing Thru');
-              await ctx2.applyCalls('Trade');
+              ctx2.applyCalls('Trade');
     });
   }
 

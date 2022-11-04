@@ -32,43 +32,43 @@ class EightChain extends Action with CallWithParts {
   }
 
   @override
-  Future<void> performPart1(CallContext ctx) async {
-    await ctx.applyCalls('Pass Thru');
+   void performPart1(CallContext ctx) {
+    ctx.applyCalls('Pass Thru');
   }
 
   @override
-  Future<void> performPart2(CallContext ctx) async {
-    await ctx.applyCalls('Center Pass Thru While Outsides Courtesy Turn');
+   void performPart2(CallContext ctx) {
+    ctx.applyCalls('Center Pass Thru While Outsides Courtesy Turn');
   }
 
   @override
-  Future<void> performPart3(CallContext ctx) async {
-    await ctx.applyCalls('Pass Thru');
+   void performPart3(CallContext ctx) {
+    ctx.applyCalls('Pass Thru');
   }
 
   @override
-  Future<void> performPart4(CallContext ctx) async {
-    await ctx.applyCalls('Center Pass Thru While Outsides Courtesy Turn');
+   void performPart4(CallContext ctx) {
+    ctx.applyCalls('Center Pass Thru While Outsides Courtesy Turn');
   }
 
   @override
-  Future<void> performPart5(CallContext ctx) async {
-    await ctx.applyCalls('Pass Thru');
+   void performPart5(CallContext ctx) {
+    ctx.applyCalls('Pass Thru');
   }
 
   @override
-  Future<void> performPart6(CallContext ctx) async {
-    await ctx.applyCalls('Center Pass Thru While Outsides Courtesy Turn');
+   void performPart6(CallContext ctx) {
+    ctx.applyCalls('Center Pass Thru While Outsides Courtesy Turn');
   }
 
   @override
-  Future<void> performPart7(CallContext ctx) async {
-    await ctx.applyCalls('Pass Thru');
+   void performPart7(CallContext ctx) {
+    ctx.applyCalls('Pass Thru');
   }
 
   @override
-  Future<void> performPart8(CallContext ctx) async {
-    await ctx.applyCalls('Center Pass Thru While Outsides Courtesy Turn');
+   void performPart8(CallContext ctx) {
+    ctx.applyCalls('Center Pass Thru While Outsides Courtesy Turn');
   }
 
 }

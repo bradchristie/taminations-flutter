@@ -27,9 +27,9 @@ class SwitchTheLine extends Action {
   SwitchTheLine(String name) : super(name);
 
   @override
-  Future<void> perform(CallContext ctx) async {
+  void perform(CallContext ctx) {
     //  Start with Ends Cross Run
-    await ctx.applyCalls('Ends Cross Run');
+    ctx.applyCalls('Ends Cross Run');
     //  And now make tne centers Run instead of Dodge
     for (final d in ctx.dancers)
       d.animate(0.0);

@@ -31,27 +31,27 @@ class SquareTheBases extends Action with CallWithParts {
   SquareTheBases() : super('Square the Bases');
 
   @override
-  Future<void> performPart1(CallContext ctx) async {
+   void performPart1(CallContext ctx) {
     //  First part is Center 4 Square Thru 3 while Ends Pass Thru and Ends Bend
     //  So long as we have facing lines we can do that as is
     if (ctx.isLines()) {
-      await ctx.applyCalls('Centers Square Thru 3 While Ends Pass Thru and Ends Bend');
+      ctx.applyCalls('Centers Square Thru 3 While Ends Pass Thru and Ends Bend');
     } else {
       //  Some dancers are in waves (e.g. tidal wave)
       //  Ends Bend gets confused if centers are in a wave..
-      await ctx.applyCalls('Center 4 Pass In While Outer 4 Pass Thru');
-      await ctx.applyCalls('Centers Square Thru 2 While Ends Bend');
+      ctx.applyCalls('Center 4 Pass In While Outer 4 Pass Thru');
+      ctx.applyCalls('Centers Square Thru 2 While Ends Bend');
     }
   }
 
   @override
-  Future<void> performPart2(CallContext ctx) async {
-    await ctx.applyCalls('Split Square Thru 2');
+   void performPart2(CallContext ctx) {
+    ctx.applyCalls('Split Square Thru 2');
   }
 
   @override
-  Future<void> performPart3(CallContext ctx) async {
-    await ctx.applyCalls('Trade By');
+   void performPart3(CallContext ctx) {
+    ctx.applyCalls('Trade By');
   }
 
 }

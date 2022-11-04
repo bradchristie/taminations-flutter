@@ -27,7 +27,7 @@ class ToAWave extends Action {
   ToAWave(String name) : super(name);
 
   @override
-  Future<void> perform(CallContext ctx) async {
+  void perform(CallContext ctx) {
     if (ctx.callstack.length < 2)
       throw CallError('What to a Wave?');
     //  Assume the last move is an Extend from a wave

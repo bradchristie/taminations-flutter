@@ -32,23 +32,23 @@ class SpinChainThru extends Action with CallWithParts {
   SpinChainThru(name) : super(name);
 
   @override
-  Future<void> performPart1(CallContext ctx) async {
-    await ctx.applyCalls('Swing');
+   void performPart1(CallContext ctx) {
+    ctx.applyCalls('Swing');
   }
 
   @override
-  Future<void> performPart2(CallContext ctx) async {
-    await ctx.applyCalls('Centers Cast Off 3/4');
+   void performPart2(CallContext ctx) {
+    ctx.applyCalls('Centers Cast Off 3/4');
   }
 
   @override
-  Future<void> performPart3(CallContext ctx) async {
-    await ctx.applyCalls('Very Centers Trade');
+   void performPart3(CallContext ctx) {
+    ctx.applyCalls('Very Centers Trade');
   }
 
   @override
-  Future<void> performPart4(CallContext ctx) async {
-    await ctx.applyCalls('Centers Cast Off 3/4');
+   void performPart4(CallContext ctx) {
+    ctx.applyCalls('Centers Cast Off 3/4');
   }
 
 }

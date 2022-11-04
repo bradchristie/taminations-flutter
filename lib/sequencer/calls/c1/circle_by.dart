@@ -43,11 +43,11 @@ class CircleBy extends Action with CallWithParts {
   }
 
   @override
-  Future<void> performPart1(CallContext ctx) async {
+   void performPart1(CallContext ctx) {
     _setup();
     //  Do the first fraction
     if (frac1.matches('(14|12|34)'.r))
-      await ctx.applyCalls('Circle Four Left $frac1');
+      ctx.applyCalls('Circle Four Left $frac1');
     else if (frac1 != 'Nothing')
       throw CallError('Circle by what?');
     //  Step to a Wave
@@ -55,21 +55,21 @@ class CircleBy extends Action with CallWithParts {
     final compact = (ctx.dancers.length == 8 && ctx.actives.length == 4)
         ? 'Compact'
         : '';
-    await ctx.applyCalls('Step to a $compact Wave');
+    ctx.applyCalls('Step to a $compact Wave');
   }
 
   @override
-  Future<void> performPart2(CallContext ctx) async {
+   void performPart2(CallContext ctx) {
     _setup();
     //  Do the second fraction or call
     if (frac2 == '14')
-      await ctx.applyCalls('Hinge');
+      ctx.applyCalls('Hinge');
     else if (frac2 == '12')
-      await ctx.applyCalls('Trade');
+      ctx.applyCalls('Trade');
     else if (frac2 == '34')
-      await ctx.applyCalls('Cast Off 3/4');
+      ctx.applyCalls('Cast Off 3/4');
     else if (frac2 != 'Nothing')
-      await ctx.applyCalls(name2);
+      ctx.applyCalls(name2);
   }
 
 }

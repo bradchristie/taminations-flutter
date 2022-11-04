@@ -29,9 +29,9 @@ class LinearCycle extends Action {
   LinearCycle(String name) : super(name);
 
   @override
-  Future<void> perform(CallContext ctx) async {
+  void perform(CallContext ctx) {
     final left = name.startsWith('Left') ? 'Left' : '';
-    await ctx.applyCalls('$left Hinge','Finish Linear Cycle');
+    ctx.applyCalls('$left Hinge','Finish Linear Cycle');
     //  Undo C-1 level set by Finish
     ctx.level = LevelData.A1;
   }

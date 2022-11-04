@@ -56,16 +56,16 @@ class WheelTheOcean extends Action with CallWithParts {
   }
 
   @override
-  Future<void> performPart1(CallContext ctx) async {
+   void performPart1(CallContext ctx) {
     var wheel = _wheelAmount();
     if (ctx.actives.length < ctx.dancers.length)
       wheel = wheel.replaceFirst('Leaders', '');
-    await ctx.applyCalls(wheel);
+    ctx.applyCalls(wheel);
   }
 
   @override
-  Future<void> performPart2(CallContext ctx) async {
-    await ctx.applyCalls(_passCall());
+   void performPart2(CallContext ctx) {
+    ctx.applyCalls(_passCall());
   }
 
 }

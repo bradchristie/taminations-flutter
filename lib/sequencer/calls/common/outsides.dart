@@ -28,7 +28,7 @@ class Outsides extends Action {
   Outsides(String name) : super(name);
 
   @override
-  Future<void> performCall(CallContext ctx) async {
+   void performCall(CallContext ctx) {
     var norm = TamUtils.normalizeCall(name);
     var num = 4;
     if (norm.endsWith('2')) num = 2;

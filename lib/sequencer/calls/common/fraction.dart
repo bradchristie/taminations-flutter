@@ -41,7 +41,7 @@ class Fraction extends Action {
   }
 
   @override
-  Future<void> perform(CallContext ctx) async {
+  void perform(CallContext ctx) {
 
     final fracctx = ctx.nextActionContext(this) ??
         thrower(CallError('Not able to find call for fraction $name'))!;
@@ -61,15 +61,15 @@ class Fraction extends Action {
       if (cwp.numberOfParts % _denominator != 0)
         throw CallError('Unable to divide ${call.name} into $_denominator parts.' );
       cwp.numberOfParts = cwp.numberOfParts * _numerator ~/ _denominator;
-      await fracctx.performCall();
+      fracctx.performCall();
 
     } else {
       _partBeats = 0.0;
-      await fracctx.performCall();
+      fracctx.performCall();
       if (call is XMLCall && call.found) {
         //  Figure out how many beats are in the fractional call
         //  Calls could have either "parts" or "fractions"
-        var parts = call.xelem('parts', '') + call.xelem('fractions', '');
+        var parts = call.xcall.parts;
         if (parts.isNotEmpty) {
           var partnums = parts.split(';');
           var numParts = partnums.length + 1;
@@ -99,7 +99,7 @@ class Fraction extends Action {
 
       //  Make any ajustment needed to match XML animation at fractional point
       if (call is XMLCall && call.found) {
-        var xmlctx = CallContext.fromXML(call.xelem, loadPaths: true);
+        var xmlctx = CallContext.fromFormation(call.xcall.formation, withPaths: true);
         xmlctx.animate(_partBeats);
         fracctx.animateToEnd();
         var match = fracctx.matchFormations(xmlctx,fuzzy: true);

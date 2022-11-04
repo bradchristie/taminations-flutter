@@ -30,7 +30,7 @@ class SquareThru extends Action {
   SquareThru(String name) : super(name);
 
   @override
-  Future<void> perform(CallContext ctx, [int i=0]) async {
+   void perform(CallContext ctx, [int i=0]) {
     //  Set up alternating hands
     var left = 'Left-Hand' ;
     var right = '' ;
@@ -64,7 +64,7 @@ class SquareThru extends Action {
       count = 6;
     //  First hand is step to a wave if not already there
     if (ctx.actives.any((d) => ctx.isInCouple(d))) {
-      await ctx.applyCalls('Facing Dancers Step to a Compact $right Wave' );
+      ctx.applyCalls('Facing Dancers Step to a Compact $right Wave' );
       ctx.analyze();
     }
     //  Check that wave is the correct hand
@@ -76,16 +76,16 @@ class SquareThru extends Action {
     //  Square thru remaining hands
     for (var c=1; c<count; c++) {
       var hand = (c % 2 == 0) ? right : left;
-      await ctx.applyCalls('Explode and Step to a Compact $hand Wave');
+      ctx.applyCalls('Explode and Step to a Compact $hand Wave');
       ctx.level = LevelData.B1;  // override Explode (Plus)
     }
     //  Finish back-to-back unless C-1 concept 'to a Wave'  added
     if (norm.endsWith('toawave' ))
       level = LevelData.C1;
     else if (onHand <= 0)  //  on the nth hand ...
-      await ctx.applyCalls('Step Thru' );
+      ctx.applyCalls('Step Thru' );
     if (extra.isNotBlank)
-      await ctx.applyCalls(extra);
+      ctx.applyCalls(extra);
   }
 
 }

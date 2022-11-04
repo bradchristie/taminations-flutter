@@ -28,7 +28,7 @@ class CourtesyTurn extends Action {
   CourtesyTurn() : super('Courtesy Turn');
 
   @override
-  Future<void> perform(CallContext ctx) async {
+  void perform(CallContext ctx) {
     for (var d in ctx.actives) {
       if (d.gender == Gender.BOY && !d.data.beau ||
           d.gender == Gender.GIRL && !d.data.belle) {
@@ -36,7 +36,7 @@ class CourtesyTurn extends Action {
       }
     }
     try {
-      await ctx.applyCalls('Wheel Around');
+      ctx.applyCalls('Wheel Around');
     } on CallError catch(e) {
       throw CallError(e.description.replaceAll('Wheel Around', 'Courtesy Turn'));
     }

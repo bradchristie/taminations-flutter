@@ -29,12 +29,12 @@ class CrossRun extends ActivesOnlyAction {
   CrossRun(String name) : super(name);
 
   @override
-  Future<void> perform(CallContext ctx) async {
+  void perform(CallContext ctx) {
     var spec = name.replaceFirst('Cross Run' , '' );
     if (spec.isBlank)
       throw CallError('Who is going to Cross Run?');
     var specCtx = CallContext.fromContext(ctx);
-    await specCtx.applySpecifier(spec);
+    specCtx.applySpecifier(spec);
     var runners = ctx.actives.where((d) => specCtx.actives.contains(d));
     var dodgers = ctx.actives.where((d) => !runners.contains(d));
     if (runners.length > dodgers.length)

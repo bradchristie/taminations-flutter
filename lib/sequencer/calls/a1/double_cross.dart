@@ -27,10 +27,10 @@ class DoubleCross extends Action {
   DoubleCross() : super('Double Cross');
 
   @override
-  Future<void> perform(CallContext ctx) async {
+  void perform(CallContext ctx) {
     var crossCount  = 0;
     //  Ignore the outer 2 dancers
-    await ctx.subContext(ctx.center6(), (ctx2) async {
+    ctx.subContext(ctx.center6(), (ctx2) {
       //  Now look for 4 dancers facing on a diagonal
       //  This is largely copied from cross.dart (so merge this code??)
       for (var d in ctx2.dancers) {

@@ -44,34 +44,34 @@ Use "A Full Turn" to turn it all the way around.''';
   }
 
   @override
-  Future<void> performPart1(CallContext ctx) async {
-    await ctx.applyCalls('Swing');
+   void performPart1(CallContext ctx) {
+    ctx.applyCalls('Swing');
   }
 
   @override
-  Future<void> performPart2(CallContext ctx) async {
-    await ctx.applyCalls('Centers Cast Off 3/4 While Ends Flip In');
+   void performPart2(CallContext ctx) {
+    ctx.applyCalls('Centers Cast Off 3/4 While Ends Flip In');
   }
 
   @override
-  Future<void> performPart3(CallContext ctx) async {
-    await ctx.applyCalls('Very Centers Trade');
+   void performPart3(CallContext ctx) {
+    ctx.applyCalls('Very Centers Trade');
   }
 
   @override
-  Future<void> performPart4(CallContext ctx) async {
+   void performPart4(CallContext ctx) {
     for (var i=0; i<turnStarAmount; i++)
-      await ctx.applyCalls('Turn the Stars');
+      ctx.applyCalls('Turn the Stars');
   }
 
   @override
-  Future<void> performPart5(CallContext ctx) async {
-    await ctx.applyCalls('Very Centers Trade');
+   void performPart5(CallContext ctx) {
+    ctx.applyCalls('Very Centers Trade');
   }
 
   @override
-  Future<void> performPart6(CallContext ctx) async {
-    await ctx.applyCalls('Center Wave of 4 Cast Off 3/4 While Others Flip Out');
+   void performPart6(CallContext ctx) {
+    ctx.applyCalls('Center Wave of 4 Cast Off 3/4 While Others Flip Out');
   }
 
 }

@@ -29,6 +29,6 @@ abstract class Call {
   var level = LevelData.B1;
 
   Call(String s) : name=s.capWords();
-  Future<void> performCall(CallContext ctx) => Future<void>.value();
+  void performCall(CallContext ctx);
 
 }

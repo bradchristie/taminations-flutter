@@ -36,16 +36,16 @@ class QuarterTag extends ActivesOnlyAction {
           .every((d) => ctx.dancerToRight(d)?.data.center ?? false);
 
   @override
-  Future<void> perform(CallContext ctx, [int i = 0]) async {
+   void perform(CallContext ctx, [int i = 0]) {
     var dir = name.startsWith('Left') ? 'Left' : '';
     if (ctx.isTidal())
-      await ctx.applyCalls('Center 4 Face Out While Outer 4 Face In','Facing Dancers $dir Touch');
+      ctx.applyCalls('Center 4 Face Out While Outer 4 Face In','Facing Dancers $dir Touch');
     else {
       if (_centersHoldLeftHands(ctx) && dir == '' ||
           _centersHoldRightHands(ctx) && dir == 'Left')
-        await ctx.applyCalls('Center 4 Hinge and Spread While Ends Face In');
+        ctx.applyCalls('Center 4 Hinge and Spread While Ends Face In');
       else
-        await ctx.applyCalls('Centers $dir Hinge While Ends Face In');
+        ctx.applyCalls('Centers $dir Hinge While Ends Face In');
     }
   }
 

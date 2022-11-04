@@ -32,18 +32,18 @@ Trailers part 3 can be replace with But (another call)''';
   MiniBusy() : super('Mini-Busy');
 
   @override
-  Future<void> performPart1(CallContext ctx) async {
-    await CallWithParts.performOnePart(ctx, 'Mini-Busy', 1);
+   void performPart1(CallContext ctx) {
+    CallWithParts.performOnePart(ctx, 'Mini-Busy', 1);
   }
 
   @override
-  Future<void> performPart2(CallContext ctx) async {
-    await ctx.applyCalls('Very Centers Hinge While Outer 4 Step');
+   void performPart2(CallContext ctx) {
+    ctx.applyCalls('Very Centers Hinge While Outer 4 Step');
   }
 
   @override
-  Future<void> performPart3(CallContext ctx) async {
-    await ctx.applyCalls('Center 4 $butCall While Outer 4 Face In');
+   void performPart3(CallContext ctx) {
+    ctx.applyCalls('Center 4 $butCall While Outer 4 Face In');
   }
 
 

@@ -26,14 +26,14 @@ abstract class ActivesOnlyAction extends Action {
   ActivesOnlyAction(String name) : super(name);
 
   @override
-  Future<void> performCall(CallContext ctx) async {
+   void performCall(CallContext ctx) {
     if (ctx.actives.length < ctx.dancers.length) {
-      await ctx.subContext(ctx.actives, (ctx2) async {
+      ctx.subContext(ctx.actives, (ctx2) {
         ctx2.analyze();
-        await performCall(ctx2);
+        performCall(ctx2);
       });
     } else
-      await super.performCall(ctx);
+      super.performCall(ctx);
   }
 
 }

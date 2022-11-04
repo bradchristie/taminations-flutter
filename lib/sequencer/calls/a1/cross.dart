@@ -31,7 +31,7 @@ class Cross extends Action {
   var crossCount  = 0;
 
   @override
-  Future<void> perform(CallContext ctx) async {
+  void perform(CallContext ctx) {
     //  If dancers are not specified, then the trailers cross
     ctx.analyze();
     if (ctx.actives.length == ctx.dancers.length) {
@@ -41,7 +41,7 @@ class Cross extends Action {
     if (ctx.actives.length == ctx.dancers.length || ctx.actives.isEmpty)
       throw CallError('You must specify which dancers Cross.');
     crossCount = 0;
-    await super.perform(ctx);
+    super.perform(ctx);
     if (crossCount == 0)
       throw CallError('Cannot find dancers to Cross');
   }

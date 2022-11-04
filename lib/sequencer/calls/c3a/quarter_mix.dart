@@ -39,23 +39,23 @@ class QuarterMix extends Action with CallWithParts {
         super(name);
 
   @override
-  Future<void> performPart1(CallContext ctx) async {
-    await ctx.subContext(ctx.dancersHoldingSameHands(isRight: !isLeft, isGrand: isGrand), (ctx2) async {
+   void performPart1(CallContext ctx) {
+    ctx.subContext(ctx.dancersHoldingSameHands(isRight: !isLeft, isGrand: isGrand), (ctx2) {
       if (ctx2.dancers.isEmpty)
         throw CallError('No dancers able to do Part 1 of $name');
-      await ctx2.applyCalls(isThree ? 'Cast Off 3/4' : 'Hinge');
+      ctx2.applyCalls(isThree ? 'Cast Off 3/4' : 'Hinge');
     }
     );
   }
 
   @override
-  Future<void> performPart2(CallContext ctx) async {
-    await ctx.applyCalls('Centers Cross Run');
+   void performPart2(CallContext ctx) {
+    ctx.applyCalls('Centers Cross Run');
   }
 
   @override
-  Future<void> performPart3(CallContext ctx) async {
-    await ctx.applyCalls('Centers Trade');
+   void performPart3(CallContext ctx) {
+    ctx.applyCalls('Centers Trade');
   }
 
 }

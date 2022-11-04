@@ -201,7 +201,7 @@ class SequencerModel extends fm.ChangeNotifier {
       } else {
         //  No coded call, see if we can just show the Callerlab definition
         var xmlCall = XMLCall(callName);
-        xmlCall.lookupAnimatedCall(CallContext.fromDancers(animation.dancers));
+        xmlCall.matchAnimatedCall(CallContext.fromDancers(animation.dancers));
         if (xmlCall.foundLink.isNotBlank) {
           helplink = xmlCall.foundLink;
           errorString  = xmlCall.help;
@@ -212,10 +212,10 @@ class SequencerModel extends fm.ChangeNotifier {
     notifyListeners();
   }
 
-  Future<bool> loadOneCall(String call) async {
+  bool loadOneCall(String call) {
     errorString = '';
     try {
-      await _interpretOneCall(call);
+      _interpretOneCall(call);
     } on CallError catch(e) {
       errorString = e.toString();
       notifyListeners();
@@ -245,13 +245,13 @@ class SequencerModel extends fm.ChangeNotifier {
     }
   }
 
-  Future<void> _interpretOneCall(String call) async {
+  void _interpretOneCall(String call) {
     if (call.isBlank)
-      return Future<void>.value();
+      return;
     if (isComment(call)) {
       calls.add(SequencerCall(call,beats:0.0,level:null));
       notifyListeners();
-      return Future<void>.value();
+      return;
     }
     //  Replace abbreviations
     call = AbbreviationsModel.replaceAbbreviations(call);
@@ -259,7 +259,7 @@ class SequencerModel extends fm.ChangeNotifier {
     //  run each one separately
     if (call.contains(';')) {
       for (var oneCall in call.split(';'))
-        await _interpretOneCall(oneCall);
+        _interpretOneCall(oneCall);
       return;
     }
     //  Remove any underscores, which are reserved for internal calls only
@@ -291,8 +291,8 @@ class SequencerModel extends fm.ChangeNotifier {
     else {
       var prevbeats = animation.beats;
       var cctx = CallContext.fromDancers(animation.dancers);
-      await cctx.interpretCall(call);
-      await cctx.performCall();
+      cctx.interpretCall(call);
+      cctx.performCall();
       cctx.checkForCollisions();
       cctx.extendPaths();
       if (!cctx.callname.contains('(move in|step|gnat|back\\s*(up|away))'.ri))
@@ -388,7 +388,7 @@ class SequencerModel extends fm.ChangeNotifier {
       if (line.isBlank) {
         continue;
       }
-      if (!await loadOneCall(line)) {
+      if (!loadOneCall(line)) {
         break;
       }
     }

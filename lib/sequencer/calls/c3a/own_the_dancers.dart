@@ -26,7 +26,7 @@ class OwnTheDancers extends Action {
   OwnTheDancers(String name) : super(name);
 
   @override
-  Future<void> perform(CallContext ctx) async {
+  void perform(CallContext ctx) {
     //  For now we will assume the specifier is just one word
     final match = 'Own the (\\w+) (.*) by (.*)'.ri.firstMatch(name);
     if (match == null || match.groupCount < 3)
@@ -34,7 +34,7 @@ class OwnTheDancers extends Action {
     final specifier = match[1]!;
     final firstCall = match[2]!;
     final secondCall = match[3]!;
-    await ctx.applyCalls('$specifier Do Your Part $firstCall'
+    ctx.applyCalls('$specifier Do Your Part $firstCall'
         ' While Others Do Your Part $secondCall');
   }
 

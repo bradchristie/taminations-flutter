@@ -56,25 +56,25 @@ class Crazy extends Action with CallWithParts {
   }
 
   @override
-  Future<void> performPart1(CallContext ctx) async {
-    await ctx.applyCalls(isReverse ? crazy4 : crazy8);
+   void performPart1(CallContext ctx) {
+    ctx.applyCalls(isReverse ? crazy4 : crazy8);
   }
 
   @override
-  Future<void> performPart2(CallContext ctx) async {
+   void performPart2(CallContext ctx) {
     ctx.matchStandardFormation();
-    await ctx.applyCalls(isReverse ? crazy8 : crazy4);
+    ctx.applyCalls(isReverse ? crazy8 : crazy4);
   }
 
   @override
-  Future<void> performPart3(CallContext ctx) async {
+   void performPart3(CallContext ctx) {
     ctx.matchStandardFormation();
-    await ctx.applyCalls(isReverse ? crazy4 : crazy8);
+    ctx.applyCalls(isReverse ? crazy4 : crazy8);
   }
 
   @override
-  Future<void> performPart4(CallContext ctx) async {
+   void performPart4(CallContext ctx) {
     ctx.matchStandardFormation();
-    await ctx.applyCalls(isReverse ? crazy8 : crazy4);
+    ctx.applyCalls(isReverse ? crazy8 : crazy4);
   }
 }

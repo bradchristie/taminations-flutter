@@ -39,24 +39,24 @@ class QuarterThru extends Action with CallWithParts {
         super(name);
 
   @override
-  Future<void> performPart1(CallContext ctx) async {
-    await ctx.subContext(ctx.dancersHoldingSameHands(isRight: !isLeft, isGrand: isGrand), (ctx2) async {
+   void performPart1(CallContext ctx) {
+    ctx.subContext(ctx.dancersHoldingSameHands(isRight: !isLeft, isGrand: isGrand), (ctx2) {
       if (ctx2.dancers.isEmpty)
         throw CallError('No dancers able to do Part 1 of $name');
       part1dancers = ctx2.dancers;
-      await ctx2.applyCalls(isThree ? 'Cast Off 3/4' : 'Hinge');
+      ctx2.applyCalls(isThree ? 'Cast Off 3/4' : 'Hinge');
     }
     );
   }
 
   @override
-  Future<void> performPart2(CallContext ctx) async {
-    await ctx.subContext(ctx.dancersHoldingSameHands(isRight: isLeft, isGrand: isGrand), (ctx2) async {
+   void performPart2(CallContext ctx) {
+    ctx.subContext(ctx.dancersHoldingSameHands(isRight: isLeft, isGrand: isGrand), (ctx2) {
       if (ctx2.dancers.isEmpty)
         throw CallError('No dancers able to do Part 2 of $name');
       if (part1dancers != null && !part1dancers!.any((d) => ctx2.actives.contains(d)))
         throw CallError('No dancers doing both Parts 1 and 2 of $name');
-      await ctx2.applyCalls('Trade');
+      ctx2.applyCalls('Trade');
     }
     );
   }

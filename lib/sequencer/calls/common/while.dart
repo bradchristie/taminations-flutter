@@ -25,7 +25,7 @@ class While extends Action {
   While(String name) : super(name);
 
   @override
-  Future<void> perform(CallContext ctx, [int i = 0]) async {
+   void perform(CallContext ctx, [int i = 0]) {
 
     //  First strip off extra beats added to the inactive dancers
     ctx.contractPaths();
@@ -45,7 +45,7 @@ class While extends Action {
     var whilecall = name.toLowerCase()
         .replaceAll('while (the )?'.r,'')
         .replaceAll('(the )?others? '.r,'');
-    await ctx2.applyCalls(whilecall);
+    ctx2.applyCalls(whilecall);
     //  Check that nobody is active on both sides of while
     if (ctx.movingDancers().toSet().intersection(ctx2.movingDancers().toSet()).isNotEmpty)
       throw CallError('Cannot have dancers active on both sides of While');

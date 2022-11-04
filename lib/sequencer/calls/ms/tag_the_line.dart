@@ -32,11 +32,11 @@ Line of (6 or 8) [Left] [Half] Tag the Line
   TagTheLine(name) : super(name);
 
   @override
-  Future<void> perform(CallContext ctx, [int i = 0]) async {
+   void perform(CallContext ctx, [int i = 0]) {
     final left = name.startsWith('Left') ? 'Left' : '';
-    await ctx.applyCalls('$left 34tag');
+    ctx.applyCalls('$left 34tag');
     ctx.contractPaths();
-    await ctx.applyCalls('extend');
+    ctx.applyCalls('extend');
   }
 
 }
@@ -50,17 +50,17 @@ class BigLineTagTheLine extends ActivesOnlyAction {
   BigLineTagTheLine(String name) : isLeft=name.contains('Left'), super(name) ;
 
   @override
-  Future<void> perform(CallContext ctx) async {
+  void perform(CallContext ctx) {
     final left = isLeft ? 'Left' : '';
     final length = norm.contains('6') ? '6' : '8';
     if (length == '6' && ctx.dancers.length > 6)
-      await ctx.applyCalls('Wave of 6 $name');
+      ctx.applyCalls('Wave of 6 $name');
     else {
-      await super.perform(ctx);
+      super.perform(ctx);
       if (norm.contains('12'))
-        await ctx.applyCalls('_Finish Line of $length $left Half Tag');
+        ctx.applyCalls('_Finish Line of $length $left Half Tag');
       else
-        await ctx.applyCalls('_Finish Line of $length $left Tag the Line');
+        ctx.applyCalls('_Finish Line of $length $left Tag the Line');
     }
   }
 

@@ -30,14 +30,14 @@ class Breaker extends Action with CallWithParts {
   Breaker(String name) : super(name);
 
   @override
-  Future<void> performPart1(CallContext ctx) async {
-    await ctx.applyCalls(
+   void performPart1(CallContext ctx) {
+    ctx.applyCalls(
         'Outer 4 Cast Off 3/4 While '
         'Center 4 Box Counter Rotate and 1/2 Box Circulate');
   }
 
   @override
-  Future<void> performPart2(CallContext ctx) async {
+   void performPart2(CallContext ctx) {
     print(ctx.dancers.show());
     var cast = norm.replaceFirst('breaker'.ri,'');
     String call;
@@ -48,7 +48,7 @@ class Breaker extends Action with CallWithParts {
       case '' : throw CallError('Breaker what?');
       default : call = cast; break;
     }
-    await ctx.applyCalls('Center Wave of 4 $call '
+    ctx.applyCalls('Center Wave of 4 $call '
         'While Others Do Your Part Hourglass Circulate');
   }
 

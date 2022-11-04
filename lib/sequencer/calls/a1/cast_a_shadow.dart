@@ -30,13 +30,13 @@ class CastAShadow extends Action {
   CastAShadow(String name) : super(name);
 
   @override
-  Future<void> perform(CallContext ctx) async {
+  void perform(CallContext ctx) {
     if (ctx.actives.length == 8 &&
         TamUtils.normalizeCall(name).matches('CastaShadowCenter.*34'.r)) {
       final inCenters = ctx.dancers.where((d) => d.data.center && d.data.trailer);
       if (inCenters.length != 2)
         throw CallError('Need exactly 2 trailing centers to go 3/4.');
-      await ctx.applyCalls('Cast a Shadow');
+      ctx.applyCalls('Cast a Shadow');
       final castDir = inCenters.first.isCenterLeft ? 'Left' : 'Right';
       for (final d in inCenters) {
         d.path =  TamUtils.getMove('Forward 2') +

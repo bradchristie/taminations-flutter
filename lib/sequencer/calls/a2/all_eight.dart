@@ -34,15 +34,15 @@ class AllEight extends Action {
   AllEight(String name) : super(name);
 
   @override
-  Future<void> perform(CallContext ctx) async {
+  void perform(CallContext ctx) {
     if (ctx.isThar()) {
       final all8call = name.replaceAll('All (8|Eight)'.ri, '').trim();
       final xDancers = ctx.dancers.where((d) => d.isOnXAxis).toList();
       final yDancers = ctx.dancers.where((d) => d.isOnYAxis).toList();
-      await ctx.subContext(xDancers, (xctx) =>
+      ctx.subContext(xDancers, (xctx) =>
           xctx.applyCalls(all8call)
       );
-      await ctx.subContext(yDancers, (yctx) =>
+      ctx.subContext(yDancers, (yctx) =>
           yctx.applyCalls(all8call)
       );
     } else

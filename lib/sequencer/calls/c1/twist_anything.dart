@@ -27,7 +27,7 @@ class TwistAnything extends Action {
   TwistAnything(String name) : super(name);
 
   @override
-  Future<void> perform(CallContext ctx) async {
+  void perform(CallContext ctx) {
     //  Get "Anything" call
     final anyCall = (name == 'Twist the Line')
         ? 'Star Thru'
@@ -46,19 +46,19 @@ class TwistAnything extends Action {
     //  Do the Twist And part
     if (ctx.isLines())
       //  All possible 2x4 general lines are in XML
-      await ctx.applyCalls('Twist And');
+      ctx.applyCalls('Twist And');
     else
-      await ctx.applyCalls('Centers Step Trade while Others 1/4 In and Half Step');
+      ctx.applyCalls('Centers Step Trade while Others 1/4 In and Half Step');
 
     //  Do the Anthing call
     //  First try original ends
     try {
-      await ctx.subContext(outers, (ctx2) async {
-        await ctx2.applyCalls(anyCall);
+      ctx.subContext(outers, (ctx2) {
+        ctx2.applyCalls(anyCall);
       });
     } on CallError {
       //  If that didn't work, try everybody do the Anything call
-      await ctx.applyCalls(anyCall);
+      ctx.applyCalls(anyCall);
     }
   }
 

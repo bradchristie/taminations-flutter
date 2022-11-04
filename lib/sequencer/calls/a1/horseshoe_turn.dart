@@ -28,8 +28,8 @@ class HorseshoeTurn extends Action {
   HorseshoeTurn() : super('Horseshoe Turn');
 
   @override
-  Future<void> perform(CallContext ctx) async {
-    await ctx.applyCalls('Clover and Partner Tag');
+  void perform(CallContext ctx) {
+    ctx.applyCalls('Clover and Partner Tag');
   }
 
 }

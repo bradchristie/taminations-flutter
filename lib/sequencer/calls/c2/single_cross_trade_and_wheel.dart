@@ -33,20 +33,20 @@ You can make couples do a Left Hinge with Left Single Cross and Wheel''';
   SingleCrossTradeAndWheel(name) : super(name);
 
   @override
-  Future<void> performPart1(CallContext ctx) async {
+   void performPart1(CallContext ctx) {
     final left = name.startsWith('Left') ? 'Left' : '';
-    await ctx.applyCalls('$left Hinge');
+    ctx.applyCalls('$left Hinge');
   }
 
   @override
-  Future<void> performPart2(CallContext ctx) async {
+   void performPart2(CallContext ctx) {
     ctx.analyze();
-    await ctx.applyCalls('Centers Trade');
+    ctx.applyCalls('Centers Trade');
   }
 
   @override
-  Future<void> performPart3(CallContext ctx) async {
-    await ctx.applyCalls('Step and Fold');
+   void performPart3(CallContext ctx) {
+    ctx.applyCalls('Step and Fold');
   }
 
 }

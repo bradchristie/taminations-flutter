@@ -19,6 +19,7 @@
 
 import '../../../math/pair.dart';
 import '../common.dart';
+import '../xml_call.dart';
 
 class DoYourPart extends Action {
 
@@ -30,20 +31,14 @@ class DoYourPart extends Action {
   @override var helplink = 'a1/do_your_part';
   DoYourPart(String name) : super(name);
 
-  Future<Pair<CallContext,List<int>>> findYourPart(CallContext dypctx) async {
+  Pair<CallContext,List<int>> findYourPart(CallContext dypctx) {
     final callName = name.replaceFirst('Do Your Part'.ri,'').trim();
     final norm = TamUtils.normalizeCall(callName);
-    final files = CallContext.xmlFilesForCall(norm.toLowerCase());
-    for (final link in files) {
-      final file = await CallContext.loadOneFile(link);
-      for (final tam in file.rootElement.childrenNamed('tam')
-          .where((tam) =>
-      tam('sequencer') != 'no' &&
-          TamUtils.normalizeCall(tam('title')).toLowerCase() ==
-              norm.toLowerCase())) {
+    for (var entry in XMLCall.lookupAnimatedCall(norm).entries) {
+      for (var tam in entry.value) {
         //  See if this is a subset match to the DYP dancers
-        final sexy = tam('sequencer', '').contains('gender');
-        final ctx2 = CallContext.fromXML(tam, loadPaths: false);
+        final sexy = tam.isGenderSpecific;
+        final ctx2 = CallContext.fromFormation(tam.formation);
         final mapping = dypctx.matchFormations(ctx2, sexy: sexy,
             subformation: true, handholds: false, maxError: 2.9);
         if (mapping != null)
@@ -55,30 +50,24 @@ class DoYourPart extends Action {
   }
 
   @override
-  Future<void> perform(CallContext ctx) async {
+  void perform(CallContext ctx) {
     final callName = name.replaceFirst('Do Your Part'.ri,'').trim();
     if (callName.isBlank)
       throw CallError('Do Your Part of what?');
 
-    await ctx.subContext(ctx.actives, (dypctx) async {
+    ctx.subContext(ctx.actives, (dypctx) {
       //  Currently just works with formations that match
       //  an XML animation for the call
       //  Find the call to do
       final norm = TamUtils.normalizeCall(callName);
-      final files = CallContext.xmlFilesForCall(norm.toLowerCase());
       var bestOffset = double.maxFinite;
       MappingContext? bestMapping;
       CallContext? ctxBest;
-      for (final link in files) {
-        final file = await CallContext.loadOneFile(link);
-        for (final tam in file.rootElement.childrenNamed('tam')
-            .where((tam) =>
-        tam('sequencer') != 'no' &&
-            TamUtils.normalizeCall(tam('title')).toLowerCase() ==
-                norm.toLowerCase())) {
+      for (var entry in XMLCall.lookupAnimatedCall(norm).entries) {
+        for (var tam in entry.value) {
           //  See if this is a subset match to the DYP dancers
-          final sexy = tam('sequencer', '').contains('gender');
-          final ctx2 = CallContext.fromXML(tam, loadPaths: false);
+          final sexy = tam.isGenderSpecific;
+          final ctx2 = CallContext.fromFormation(tam.formation);
           final mapping = dypctx.matchFormations(ctx2, sexy: sexy,
               subformation: true, handholds: false, maxError: 2.9);
           if (mapping != null) {
@@ -97,7 +86,7 @@ class DoYourPart extends Action {
       if (bestMapping != null && ctxBest != null) {
         //  Adjust sequence dancers as needed to match call
         //  Perform the call
-        await ctxBest.applyCalls(callName);
+        ctxBest.applyCalls(callName);
         //  Copy path movements from call to sequence
         for (var i = 0; i < bestMapping.map.length; i++) {
           final m = bestMapping.map[i];

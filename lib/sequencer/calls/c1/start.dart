@@ -32,7 +32,7 @@ class Start extends Action {
   Start(String name) : super(name);
 
   @override
-  Future<void> perform(CallContext ctx) async {
+  void perform(CallContext ctx) {
     final finishCall = name.replaceFirst('^start\\s+'.ri, '');
     if (finishCall.isBlank)
       throw CallError('Start what?');
@@ -41,13 +41,13 @@ class Start extends Action {
     //  - they move in and everyone does the call
     if (ctx.isSquare() && ctx.dancers.every((d) =>
                   d.isFacingIn && ctx.isInCouple(d))) {
-      await ctx.subContext(ctx.actives, (ctx2) async {
-        await ctx2.applyCalls('Step');
+      ctx.subContext(ctx.actives, (ctx2) {
+        ctx2.applyCalls('Step');
       });
       for (var d in ctx.dancers)
         d.data.active = true;
       ctx.extendPaths();
-      await ctx.applyCalls(finishCall);
+      ctx.applyCalls(finishCall);
 
     } else {
 
@@ -55,15 +55,15 @@ class Start extends Action {
       if (ctx.actives.length >= ctx.dancers.length)
         throw CallError('Who is supposed to start?');
 
-      await ctx.subContext(ctx.actives, (dypctx) async {
+      ctx.subContext(ctx.actives, (dypctx) {
         //  Run DYP for the call, but save the intermediate context
-        final p = await DoYourPart(finishCall).findYourPart(dypctx);
+        final p = DoYourPart(finishCall).findYourPart(dypctx);
         //  Run Do the 1st Part (which is a CodedCall)
         //  of the call on the starting formation
         //  of the intermediate context.
         final pctx = p.firstValue;
         final mapping = p.secondValue;
-        await DoOnePart('Do the First Part of $finishCall').perform(pctx);
+        DoOnePart('Do the First Part of $finishCall').perform(pctx);
         //  Copy path movements from call to sequence
         for (var i = 0; i < mapping.length; i++) {
           final m = mapping[i];
@@ -78,7 +78,7 @@ class Start extends Action {
       for (var d in ctx.dancers)
         d.data.active = true;
       //  And finish the call
-      await ctx.applyCalls('Finish $finishCall');
+      ctx.applyCalls('Finish $finishCall');
     }
   }
 

@@ -27,10 +27,10 @@ class DoubleScoot extends Action {
   DoubleScoot() : super('Double Scoot');
 
   @override
-  Future<void> perform(CallContext ctx) async {
+  void perform(CallContext ctx) {
     //  There are XML animations for 6-dancer Double Scoot
     if (ctx.actives.length > 6) {
-      await ctx.applyCalls('Center 6 Double Scoot');
+      ctx.applyCalls('Center 6 Double Scoot');
     } else
       throw CallError('Cannot Double Scoot from this formation');
   }

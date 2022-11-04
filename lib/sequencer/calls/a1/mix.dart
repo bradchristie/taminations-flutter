@@ -30,14 +30,14 @@ class Mix extends Action with CallWithParts {
   Mix() : super('Mix');
 
   @override
-  Future<void> performPart1(CallContext ctx) async {
-    await ctx.applyCalls('Centers Cross Run');
+   void performPart1(CallContext ctx) {
+    ctx.applyCalls('Centers Cross Run');
   }
 
   @override
-  Future<void> performPart2(CallContext ctx) async {
+   void performPart2(CallContext ctx) {
     ctx.analyze();
-    await ctx.applyCalls('Centers Trade');
+    ctx.applyCalls('Centers Trade');
   }
 
 }

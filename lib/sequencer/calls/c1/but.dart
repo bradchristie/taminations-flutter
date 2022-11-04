@@ -32,15 +32,15 @@ class But extends Action {
   But(String name) : super(name);
 
   @override
-  Future<void> perform(CallContext ctx) async {
+  void perform(CallContext ctx) {
     final callName = name.replaceFirst(' but\\b.*'.ri, '').trim();
-    await ctx.subContext(ctx.dancers, (ctx2) async {
+    ctx.subContext(ctx.dancers, (ctx2) {
       if (!ctx2.matchCodedCall(callName))
         throw CallError('Unable to find $callName as a Call with Parts');
       if (ctx2.callstack.last is ButCall) {
         final call = ctx2.callstack.last as ButCall;
         call.butCall = name.replaceFirst('.* but '.ri, '');
-        await ctx2.performCall();
+        ctx2.performCall();
       }
       else
         throw CallError('$callName does not recognize But');

@@ -35,28 +35,28 @@ class AlterAndCirculate extends Action with CallWithParts, CallWithStars {
   AlterAndCirculate() : super('Alter and Circulate');
 
   @override
-  Future<void> performPart1(CallContext ctx) async {
-    await ctx.applyCalls('Swing');
+   void performPart1(CallContext ctx) {
+    ctx.applyCalls('Swing');
   }
 
   @override
-  Future<void> performPart2(CallContext ctx) async {
-    await ctx.applyCalls('Centers Cast Off 3/4 While Ends Turn Back');
+   void performPart2(CallContext ctx) {
+    ctx.applyCalls('Centers Cast Off 3/4 While Ends Turn Back');
   }
 
   @override
-  Future<void> performPart3(CallContext ctx) async {
-    await ctx.applyCalls('Outer 4 Circulate While Very Centers Trade');
+   void performPart3(CallContext ctx) {
+    ctx.applyCalls('Outer 4 Circulate While Very Centers Trade');
   }
 
   @override
-  Future<void> performPart4(CallContext ctx) async {
-    await ctx.applyCalls(starTurns);
+   void performPart4(CallContext ctx) {
+    ctx.applyCalls(starTurns);
   }
 
   @override
-  Future<void> performPart5(CallContext ctx) async {
-    await ctx.applyCalls('Flip the Diamond');
+   void performPart5(CallContext ctx) {
+    ctx.applyCalls('Flip the Diamond');
   }
 
 }

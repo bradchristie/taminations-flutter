@@ -20,6 +20,7 @@
 
 import '../coded_call.dart';
 import '../common.dart';
+import '../xml_call.dart';
 
 class Finish extends Action {
 
@@ -29,27 +30,23 @@ class Finish extends Action {
   Finish(String name) : super(name);
 
   @override
-  Future<void> perform(CallContext ctx) async {
+  void perform(CallContext ctx) {
     final finishCall = name.replaceFirst('Finish\\s+'.ri,' ');
     if (finishCall.isBlank)
       throw CallError('Finish what?');
     final finishNorm = TamUtils.normalizeCall(finishCall);
     //  First look for XML calls
     //  Find matching XML call
-    final files = CallContext.xmlFilesForCall(finishNorm.toLowerCase());
-    for (final link in files) {
-      final file = await CallContext.loadOneFile(link);
-      for (final tam in file.rootElement.childrenNamed('tam')
-          .where((tam) => tam('sequencer')!='no' &&
-          TamUtils.normalizeCall(tam('title')).toLowerCase()==finishNorm.toLowerCase())) {
+    for (var entry in XMLCall.lookupAnimatedCall(finishNorm).entries) {
+      for (var tam in entry.value) {
         //  Should be divided into parts, will also accept fractions
-        final parts = tam('parts','') + tam('fractions','');
-        final sexy = tam('sequencer','').contains('gender');
-        final allp = tam.childrenNamed('path').map((it) => Path(TamUtils.translatePath(it))).toList();
+        final parts = tam.parts.isNotEmpty ? tam.parts : tam.fractions;
+        final sexy = tam.isGenderSpecific;
+        final allp = tam.formation.dancers.map((d) => d.path).toList();
         final firstPart = parts.isBlank ? 0.0 : (parts.split(';').firstOrNull?.d ?? 0.0);
         if (firstPart > 0) {
           //  Load the call and animate past the first part
-          final ctx2 = CallContext.fromXML(tam,loadPaths: true);
+          final ctx2 = CallContext.fromFormation(tam.formation,withPaths: true);
           ctx2.animate(firstPart);
           final mapping = ctx.matchFormations(ctx2,sexy: sexy);
           if (mapping != null) {
@@ -57,7 +54,7 @@ class Finish extends Action {
             ctx.adjustToFormationMatch(matchResult);
             for (var i=0; i<mapping.map.length; i++) {
               final m = mapping.map[i];
-              final p = Path(allp[m >> 1].movelist);
+              final p = Path(allp[m].movelist);
               var firstBeats = 0.0;
               while (firstBeats.isLessThan(firstPart))
                 firstBeats += p.shift()?.beats ?? firstPart;
@@ -72,7 +69,7 @@ class Finish extends Action {
     //  If that didn't work, try a coded call
     final codedCall = CodedCall.fromName(finishCall);
     if (codedCall is CallWithParts) {
-      await (codedCall as CallWithParts).finish(ctx);
+      (codedCall as CallWithParts).finish(ctx);
       return;
     }
 

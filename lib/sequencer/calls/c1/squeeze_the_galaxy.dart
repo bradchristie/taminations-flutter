@@ -27,7 +27,7 @@ class SqueezeTheGalaxy extends Action {
   SqueezeTheGalaxy(String name) : super(name);
 
   @override
-  Future<void> perform(CallContext ctx) async {
+  void perform(CallContext ctx) {
     //  Match to any galaxy
     final galaxy = CallContext.fromXML(TamUtils.getFormation('Galaxy RH GP'));
     final mm = galaxy.matchFormations(ctx,rotate:180);
@@ -36,7 +36,7 @@ class SqueezeTheGalaxy extends Action {
     //  All but two of the dancers squeeze
     ctx.dancers[mm.map[2]].data.active = false;
     ctx.dancers[mm.map[3]].data.active = false;
-    await ctx.applyCalls('Squeeze');
+    ctx.applyCalls('Squeeze');
   }
 
 }

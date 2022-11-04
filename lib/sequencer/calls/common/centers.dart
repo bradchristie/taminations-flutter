@@ -31,10 +31,10 @@ class Centers extends FilterActives {
   bool isActive(Dancer d, CallContext ctx) => d.data.center;
 
   @override
-  Future<void> performCall(CallContext ctx) async {
+   void performCall(CallContext ctx) {
     final saveActives = ctx.actives.toList();
     try {
-      await super.performCall(ctx);
+      super.performCall(ctx);
     } on CallError {
       //  Check for centers of PTP diamonds
       for (final d in ctx.dancers)

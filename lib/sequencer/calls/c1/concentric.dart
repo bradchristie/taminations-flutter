@@ -31,14 +31,14 @@ class Concentric extends Action {
         realCall=name.replaceFirst('Concentric', '').trim(),
         super(name);
 
-  Future<void> _performConcentric(CallContext ctx) async {
+  void _performConcentric(CallContext ctx) {
     //  Move the dancers closer to the center
     var maxX = ctx.dancers.maxOf((d) => d.location.x.abs());
     var maxY = ctx.dancers.maxOf((d) => d.location.y.abs());
     var isMajorX = maxX > maxY;
     var dstarts = <Dancer,Vector>{};
     var dangles = <Dancer,double>{};
-    await ctx.subContext(ctx.dancers, (ctx2) async {
+    ctx.subContext(ctx.dancers, (ctx2) {
       for (var d in ctx2.dancers) {
         late Vector dstart;
         if (isMajorX)
@@ -52,7 +52,7 @@ class Concentric extends Action {
       //  Note if we have a 2x2
       var startsWithBox = ctx2.isBox();
       //  Now do the call normally
-      await ctx2.applyCalls(realCall);
+      ctx2.applyCalls(realCall);
       ctx2.animateToEnd();
       var endsWithBox = ctx2.isBox();
       //  Figure out which axis to stretch out the end position
@@ -87,19 +87,19 @@ class Concentric extends Action {
   }
 
   @override
-  Future<void> perform(CallContext ctx) async {
+  void perform(CallContext ctx) {
 
     if (realCall.isBlank)
       throw CallError('Concentric what?');
     if (ctx.actives.length == 8) {
-      await ctx.applyCalls('Center 4 $realCall');
+      ctx.applyCalls('Center 4 $realCall');
       ctx.checkCenters();
       ctx.contractPaths();
-      await ctx.applyCalls('Outer 4 $name');
+      ctx.applyCalls('Outer 4 $name');
     }
     else {
-      await ctx.subContext(ctx.actives, (ctx2) async {
-        await _performConcentric(ctx2);
+      ctx.subContext(ctx.actives, (ctx2) {
+        _performConcentric(ctx2);
       });
       ctx.checkCenters(force:true);
     }

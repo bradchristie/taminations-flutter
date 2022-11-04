@@ -30,7 +30,7 @@ class Ignore extends Action {
   Ignore(String name) : super(name);
 
   @override
-  Future<void> perform(CallContext ctx) async {
+  void perform(CallContext ctx) {
     //  Who should we ignore?
     final regex = 'ignore (?:the )?((?:${CodedCall.specifier} )+)(?:and )?(?:for a )?(.+)'.ri;
     final match = regex.firstMatch(name);
@@ -38,15 +38,15 @@ class Ignore extends Action {
       throw CallError('Error parsing Ignore');
     final who = match.group(1)!;
     final call = match.group(2)!;
-    await ctx.subContext(ctx.dancers, (ctx2) async {
+    ctx.subContext(ctx.dancers, (ctx2) {
       //  Remember the dancers that we will ignore
-      await ctx2.interpretCall(who,noAction: true);
-      await ctx2.performCall();
+      ctx2.interpretCall(who,noAction: true);
+      ctx2.performCall();
       final ignoreDancers = ctx2.actives;
       //  Do the call
       for (final d in ctx2.dancers)
         d.data.active = true;
-      await ctx2.applyCalls(call);
+      ctx2.applyCalls(call);
       //  Now erase the action of the ignored dancers
       ctx2.dancers.where((d) => ignoreDancers.contains(d))
           .forEach((d) { d.path = Path(); });

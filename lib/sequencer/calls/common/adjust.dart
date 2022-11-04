@@ -60,7 +60,7 @@ Formations you can use are
   Adjust(String name) : super(name);
 
   @override
-  Future<void> perform(CallContext ctx) async {
+  void perform(CallContext ctx) {
     var fname = name.replaceFirst('Adjust to( an?)? '.ri, '' );
     var fnorm = TamUtils.normalizeCall(fname);
     String? formation;

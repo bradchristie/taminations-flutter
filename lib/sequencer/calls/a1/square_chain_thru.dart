@@ -32,21 +32,21 @@ The hands can be swapped with Left Square Chain the Top''';
   SquareChainThru(String name) : super(name);
 
   @override
-  Future<void> performPart1(CallContext ctx) async {
+   void performPart1(CallContext ctx) {
     final pullBy = name.contains('Left') ? 'Left Pull By' : 'Pull By';
-    await ctx.applyCalls(pullBy,'Quarter In');
+    ctx.applyCalls(pullBy,'Quarter In');
   }
 
   @override
-  Future<void> performPart2(CallContext ctx) async {
+   void performPart2(CallContext ctx) {
     final left = name.contains('Left') ? '' : 'Left';
-    await ctx.applyCalls('$left Swing Thru');
+    ctx.applyCalls('$left Swing Thru');
   }
 
   @override
-  Future<void> performPart3(CallContext ctx) async {
+   void performPart3(CallContext ctx) {
     final left = name.contains('Left') ? '' : 'Left';
-    await ctx.applyCalls('$left Turn Thru');
+    ctx.applyCalls('$left Turn Thru');
   }
 
 }

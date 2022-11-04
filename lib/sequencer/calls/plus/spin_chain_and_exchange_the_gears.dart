@@ -36,30 +36,30 @@ Use "A Full Turn" to turn it all the way around.''';
   SpinChainAndExchangeTheGears(String name) : super(name);
 
   @override
-  Future<void> performPart1(CallContext ctx) async {
-    await ctx.applyCalls('Swing');
+   void performPart1(CallContext ctx) {
+    ctx.applyCalls('Swing');
   }
 
   @override
-  Future<void> performPart2(CallContext ctx) async {
-    await ctx.applyCalls('Spin Chain the Gears Part 2');
+   void performPart2(CallContext ctx) {
+    ctx.applyCalls('Spin Chain the Gears Part 2');
   }
 
   @override
-  Future<void> performPart3(CallContext ctx) async {
-    await ctx.applyCalls('Very Centers Trade');
+   void performPart3(CallContext ctx) {
+    ctx.applyCalls('Very Centers Trade');
   }
 
   @override
-  Future<void> performPart4(CallContext ctx) async {
+   void performPart4(CallContext ctx) {
     for (var i=0; i<turnAmount; i++)
-      await ctx.applyCalls('Turn the Stars');
+      ctx.applyCalls('Turn the Stars');
   }
 
 
   @override
-  Future<void> performPart5(CallContext ctx) async {
-    await CallWithParts.performOnePart(ctx,'Spin Chain and Exchange the Gears',5);
+   void performPart5(CallContext ctx) {
+    CallWithParts.performOnePart(ctx,'Spin Chain and Exchange the Gears',5);
   }
 
 }

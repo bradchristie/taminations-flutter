@@ -44,27 +44,27 @@ The number of Split Circulates can be modified with "Split Circulate n" or "Turn
   }
 
   @override
-  Future<void> performPart1(CallContext ctx) async {
+   void performPart1(CallContext ctx) {
     if (ctx.dancersHoldingLeftHands(isGrand: false).length > 2)
       dir = 'Left';
-    await ctx.applyCalls('Scoot Back');
+    ctx.applyCalls('Scoot Back');
   }
 
   @override
-  Future<void> performPart2(CallContext ctx) async {
-    await ctx.applyCalls('Center 4 Step and Fold '
+   void performPart2(CallContext ctx) {
+    ctx.applyCalls('Center 4 Step and Fold '
         'While Outer 4 Face $dir and Counter Rotate');
     ctx.adjustToFormation('Normal Lines Compact');
   }
 
   @override
-  Future<void> performPart3(CallContext ctx) async {
-    await ctx.applyCalls(starTurns);
+   void performPart3(CallContext ctx) {
+    ctx.applyCalls(starTurns);
   }
 
   @override
-  Future<void> performPart4(CallContext ctx) async {
-    await ctx.applyCalls('Outer 4 Counter Rotate and Roll '
+   void performPart4(CallContext ctx) {
+    ctx.applyCalls('Outer 4 Counter Rotate and Roll '
         'While Center 4 1/2 Zoom');
     ctx.adjustToFormation('Quarter Tag');
   }

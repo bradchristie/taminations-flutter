@@ -26,7 +26,7 @@ class CenterSix extends CodedCall {
   CenterSix() : super('Center 6');
 
   @override
-  Future<void> performCall(CallContext ctx) async {
+   void performCall(CallContext ctx) {
     for (var d in ctx.dancers - ctx.center6()) {
       d.data.active = false;
     }

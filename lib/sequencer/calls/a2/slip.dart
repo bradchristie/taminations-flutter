@@ -27,19 +27,19 @@ class Slip extends ActivesOnlyAction {
   Slip(name) : super(name);
 
   @override
-  Future<void> perform(CallContext ctx) async {
+  void perform(CallContext ctx) {
     //  If single wave in center, then very centers trade
     final ctx4 = CallContext.fromContext(ctx,dancers: ctx.center(4));
     ctx4.analyze();
     if (ctx.dancers.length == 8 && ctx4.isLines() && !ctx.isTidal())
-      await ctx.applyCalls('Very Centers Trade');
+      ctx.applyCalls('Very Centers Trade');
     else {
       //  Otherwise, all centers trade
       //  Check that it's not a partner trade
       final ctxc = CallContext.fromContext(ctx,dancers:ctx.dancers.where((it) => it.data.center).toList());
       if (!ctxc.isWaves())
         throw CallError('Centers must be in a mini-wave.');
-      await ctx.applyCalls('Centers Trade');
+      ctx.applyCalls('Centers Trade');
     }
   }
 

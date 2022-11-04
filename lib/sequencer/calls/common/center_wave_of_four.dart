@@ -25,7 +25,7 @@ class CenterWaveOfFour extends CodedCall {
   CenterWaveOfFour(name) : super(name);
 
   @override
-  Future<void> performCall(CallContext ctx) async {
+   void performCall(CallContext ctx) {
     var waveOf4 = <Dancer>[];
     final xd = ctx.dancers.where((d) => d.location.x.isAbout(0.0)).toList();
     final yd = ctx.dancers.where((d) => d.location.y.isAbout(0.0)).toList();

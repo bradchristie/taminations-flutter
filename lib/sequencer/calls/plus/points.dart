@@ -26,7 +26,7 @@ class Points extends CodedCall {
   Points() : super('Points');
 
   @override
-  Future<void> performCall(CallContext ctx) async {
+   void performCall(CallContext ctx) {
     var points = ctx.points();
     if (points.isEmpty)
       throw CallError('Unable to find Points');

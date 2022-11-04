@@ -27,7 +27,7 @@ class Squeeze extends Action {
   Squeeze(String name) : super(name);
 
   @override
-  Future<void> perform(CallContext ctx) async {
+  void perform(CallContext ctx) {
     if (name.lc.endsWith('butterfly')) {
       final ctx2 = CallContext.fromXML(TamUtils.getFormation('Butterfly RH'));
       if (ctx.matchFormations(ctx2,rotate: 180) == null)

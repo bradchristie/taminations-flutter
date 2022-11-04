@@ -41,7 +41,6 @@ class BoxTheGnat extends ActivesOnlyAction {
 
   @override
   Path performOne(Dancer d, CallContext ctx) {
-
     //  First try facing dancers
     var d2 = _checkOtherDancer(d, ctx.dancerFacing(d));
     if (d2 != null) {

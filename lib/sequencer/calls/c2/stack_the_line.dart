@@ -32,20 +32,20 @@ class StackTheLine extends ActivesOnlyAction with CallWithParts {
   StackTheLine(String name) : isLeft=name.startsWith('Left'), super(name);
 
   @override
-  Future<void> performPart1(CallContext ctx) async {
+   void performPart1(CallContext ctx) {
     originalLeads = ctx.dancers.where((d) => d.data.leader).toList();
-    await ctx.applyCalls('Quarter In');
+    ctx.applyCalls('Quarter In');
   }
 
   @override
-  Future<void> performPart2(CallContext ctx) async {
+   void performPart2(CallContext ctx) {
     if (ctx.dancers.length == 4)
-      return await performPart2forOneBox(ctx);
+      return performPart2forOneBox(ctx);
     final boxes = ctx.boxes();
     if (boxes != null) {
       for (final box in boxes) {
-        await ctx.subContext(box, (ctx2) async {
-          await performPart2forOneBox(ctx2);
+        ctx.subContext(box, (ctx2) {
+          performPart2forOneBox(ctx2);
         });
       }
     } else {
@@ -54,7 +54,7 @@ class StackTheLine extends ActivesOnlyAction with CallWithParts {
 
   }
 
-  Future<void> performPart2forOneBox(CallContext ctx) async {
+   void performPart2forOneBox(CallContext ctx) {
     final left = isLeft ? 'Right' : 'Left';
     if (originalLeads.isEmpty)
       throw CallError('Cannot find original leaders for Stack the Line');

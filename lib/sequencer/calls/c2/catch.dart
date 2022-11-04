@@ -37,29 +37,29 @@ class Catch extends ActivesOnlyAction with CallWithParts {
       ?? thrower(CallError('Catch how much?'));
 
   @override
-  Future<void> perform(CallContext ctx) async {
-    await super.perform(ctx);
+  void perform(CallContext ctx) {
+    super.perform(ctx);
   }
 
   @override
-  Future<void> performPart1(CallContext ctx) async {
-    await ctx.applyCalls('$all4 $direction $split Square Thru $count to a Wave');
+   void performPart1(CallContext ctx) {
+    ctx.applyCalls('$all4 $direction $split Square Thru $count to a Wave');
   }
 
   @override
-  Future<void> performPart2(CallContext ctx) async {
+   void performPart2(CallContext ctx) {
     var part2 = 'catch(.*)[1234]'.ri.firstMatch(name)![1]!;
     if (part2.isBlank)
       part2 = 'Centers Trade';
     else
       level = LevelData.C3A;
-    await ctx.applyCalls(part2);
+    ctx.applyCalls(part2);
   }
 
   @override
-  Future<void> performPart3(CallContext ctx) async {
+   void performPart3(CallContext ctx) {
     var all8 = all4.isBlank ? '' : 'All 8';
-    await ctx.applyCalls('$all8 Step and Fold');
+    ctx.applyCalls('$all8 Step and Fold');
   }
 
 }

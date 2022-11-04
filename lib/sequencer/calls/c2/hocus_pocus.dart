@@ -28,15 +28,15 @@ class HocusPocus extends Action {
   HocusPocus(name) : super(name);
 
   @override
-  Future<void> perform(CallContext ctx) async {
+  void perform(CallContext ctx) {
     final outer4 = CallContext.fromContext(ctx,dancers: ctx.outer(4).inOrder());
-    await ctx.subContext(outer4.dancers, (ctx2) async {
+    ctx.subContext(outer4.dancers, (ctx2) {
       final magic = name.contains('Magic') ? 'Magic' : '';
       final oCall = 'Do Your Part $magic O Circulate';
-      await ctx2.applyCalls(oCall,oCall);
+      ctx2.applyCalls(oCall,oCall);
     });
-    await ctx.subContext(ctx.center(4), (ctx2) async {
-      await ctx2.applyCalls('Trade');
+    ctx.subContext(ctx.center(4), (ctx2) {
+      ctx2.applyCalls('Trade');
     });
   }
 

@@ -38,14 +38,14 @@ class FlipYourNeighbor extends Action with CallWithParts {
   };
 
   @override
-  Future<void> performPart1(CallContext ctx) async {
-    await ctx.applyCalls('Flip the Line 1/2');
+   void performPart1(CallContext ctx) {
+    ctx.applyCalls('Flip the Line 1/2');
   }
 
   @override
-  Future<void> performPart2(CallContext ctx) async {
+   void performPart2(CallContext ctx) {
     final secondCall = flipTypes[name] ?? thrower(CallError('Incorrect Flip call'))!;
-    await ctx.applyCalls(secondCall);
+    ctx.applyCalls(secondCall);
   }
 
 }

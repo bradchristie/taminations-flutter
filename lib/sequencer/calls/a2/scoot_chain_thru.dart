@@ -34,47 +34,47 @@ class ScootChainThru extends Action with CallWithParts {
   ScootChainThru(String name) : super(name);
 
   @override
-  Future<void> performPart1(CallContext ctx) async {
+   void performPart1(CallContext ctx) {
     var split = name.contains('Scatter') ? 'All 8' : 'Split';
     if (ctx.isWaves()) {
-      await ctx.applyCalls('Leaders Do Your Part $split Circulate'
+      ctx.applyCalls('Leaders Do Your Part $split Circulate'
           ' While Trailers Do Your Part Extend');
     }
     else
       //  Presume 1/4 Tag
-      await ctx.applyCalls('Extend');
+      ctx.applyCalls('Extend');
   }
 
   @override
-  Future<void> performPart2(CallContext ctx) async {
+   void performPart2(CallContext ctx) {
     if (ctx.isWaves())
-      await ctx.applyCalls('Swing');
+      ctx.applyCalls('Swing');
     else
-      await ctx.applyCalls('Center Wave of 4 Swing');
+      ctx.applyCalls('Center Wave of 4 Swing');
   }
 
   @override
-  Future<void> performPart3(CallContext ctx) async {
+   void performPart3(CallContext ctx) {
     if (ctx.isWaves())
-      await ctx.applyCalls('Slip');
+      ctx.applyCalls('Slip');
     else
-      await ctx.applyCalls('Center Wave of 4 Slip');
+      ctx.applyCalls('Center Wave of 4 Slip');
   }
 
   @override
-  Future<void> performPart4(CallContext ctx) async {
+   void performPart4(CallContext ctx) {
     if (ctx.isWaves())
-      await ctx.applyCalls('Swing');
+      ctx.applyCalls('Swing');
     else
-      await ctx.applyCalls('Center Wave of 4 Swing');
+      ctx.applyCalls('Center Wave of 4 Swing');
   }
 
   @override
-  Future<void> performPart5(CallContext ctx) async {
+   void performPart5(CallContext ctx) {
     if (ctx.isWaves())
-      await ctx.applyCalls('Extend');
+      ctx.applyCalls('Extend');
     else
-      await ctx.applyCalls('Center Wave of 4 Step');
+      ctx.applyCalls('Center Wave of 4 Step');
   }
 
 }

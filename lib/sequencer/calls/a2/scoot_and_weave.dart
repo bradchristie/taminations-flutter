@@ -30,13 +30,13 @@ class ScootAndWeave extends ActivesOnlyAction with CallWithParts {
   ScootAndWeave(name) : super(name);
 
   @override
-  Future<void> performPart1(CallContext ctx) async {
-    await ctx.applyCalls('Scoot Back');
+   void performPart1(CallContext ctx) {
+    ctx.applyCalls('Scoot Back');
   }
 
   @override
-  Future<void> performPart2(CallContext ctx) async {
-    await ctx.applyCalls('Weave');
+   void performPart2(CallContext ctx) {
+    ctx.applyCalls('Weave');
   }
 
 }

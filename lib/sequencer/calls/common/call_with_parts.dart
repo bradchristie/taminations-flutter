@@ -18,6 +18,7 @@
  */
 
 import '../common.dart';
+import '../xml_call.dart';
 
 mixin CallWithParts {
 
@@ -25,33 +26,33 @@ mixin CallWithParts {
   int numberOfParts = 1;
 
   //  and implement with overrides how ever many of these it has
-  Future<void> performPart1(CallContext ctx) async { }
-  Future<void> performPart2(CallContext ctx) async { }
-  Future<void> performPart3(CallContext ctx) async { }
-  Future<void> performPart4(CallContext ctx) async { }
-  Future<void> performPart5(CallContext ctx) async { }
-  Future<void> performPart6(CallContext ctx) async { }
-  Future<void> performPart7(CallContext ctx) async { }
-  Future<void> performPart8(CallContext ctx) async { }
+  void performPart1(CallContext ctx) { }
+  void performPart2(CallContext ctx) { }
+  void performPart3(CallContext ctx) { }
+  void performPart4(CallContext ctx) { }
+  void performPart5(CallContext ctx) { }
+  void performPart6(CallContext ctx) { }
+  void performPart7(CallContext ctx) { }
+  void performPart8(CallContext ctx) { }
   //  The call with the most parts is Eight Chain Thru, with 8 parts.
   //  But more parts can be added esp. with 'Interrupt Each Part..'
   //  So make space for a lot more
   //  These are not actually overriden anywhere
   //  but the corresponding replacePart might be used
-  Future<void> performPart9(CallContext ctx) async { }
-  Future<void> performPart10(CallContext ctx) async { }
-  Future<void> performPart11(CallContext ctx) async { }
-  Future<void> performPart12(CallContext ctx) async { }
-  Future<void> performPart13(CallContext ctx) async { }
-  Future<void> performPart14(CallContext ctx) async { }
-  Future<void> performPart15(CallContext ctx) async { }
-  Future<void> performPart16(CallContext ctx) async { }
-  Future<void> performPart17(CallContext ctx) async { }
-  Future<void> performPart18(CallContext ctx) async { }
-  Future<void> performPart19(CallContext ctx) async { }
-  Future<void> performPart20(CallContext ctx) async { }
+  void performPart9(CallContext ctx) { }
+  void performPart10(CallContext ctx) { }
+  void performPart11(CallContext ctx) { }
+  void performPart12(CallContext ctx) { }
+  void performPart13(CallContext ctx) { }
+  void performPart14(CallContext ctx) { }
+  void performPart15(CallContext ctx) { }
+  void performPart16(CallContext ctx) { }
+  void performPart17(CallContext ctx) { }
+  void performPart18(CallContext ctx) { }
+  void performPart19(CallContext ctx) { }
+  void performPart20(CallContext ctx) { }
 
-  Future<void> Function(CallContext ctx) performPart(int i) {
+  void Function(CallContext ctx) performPart(int i) {
     switch (i) {
       case 1 : return performPart1;
       case 2 : return performPart2;
@@ -79,30 +80,30 @@ mixin CallWithParts {
 
   //  When a call with parts is modified with Replace, But, Interrupt etc.
   //  the modification is placed in this array.
-  final List<Future<void> Function(CallContext ctx)?> replacePart =
+  final List<void Function(CallContext ctx)?> replacePart =
   [null,null,null,null,null,null,null,null,null,null,null,
    null,null,null,null,null,null,null,null,null,null,null];
 
-  Future<void> Function(CallContext ctx)? get lastPart => replacePart[numberOfParts];
+  void Function(CallContext ctx)? get lastPart => replacePart[numberOfParts];
   set lastPart(value) { replacePart[numberOfParts] = value; }
 
-  Future<void> perform(CallContext ctx) async {
+  void perform(CallContext ctx) {
     for (var part=1; part<=numberOfParts; part++) {
       ctx.extendPaths();
       ctx.analyze();
-      await (replacePart[part]??performPart(part))(ctx);
+      (replacePart[part]??performPart(part))(ctx);
     }
   }
 
-  Future<void> finish(CallContext ctx) async {
-    replacePart[1] = (ctx) async { };
+  void finish(CallContext ctx) {
+    replacePart[1] = (ctx) { };
     return perform(ctx);
   }
 
-  Future<void> reverseOrder(CallContext ctx) async {
+  void reverseOrder(CallContext ctx) {
     for (var part=numberOfParts; part>=1; part--) {
       ctx.extendPaths();
-      await (replacePart[part]??performPart(part))(ctx);
+      (replacePart[part]??performPart(part))(ctx);
     }
   }
 
@@ -140,27 +141,20 @@ mixin CallWithParts {
 
   //  This function is for looking up and performing one part of an XML call.
   //  Useful for calls that have a part that's not easily coded.
-  static Future<void> performOnePart(CallContext ctx, String name, int partNum) async {
+  static void performOnePart(CallContext ctx, String name, int partNum) {
     final norm = TamUtils.normalizeCall(name);
     //  Find matching XML call
-    final files = CallContext.xmlFilesForCall(norm.toLowerCase());
-    for (final link in files) {
-      final file = await CallContext.loadOneFile(link);
-      for (final tam in file.rootElement.childrenNamed('tam')
-          .where((tam) =>
-      tam('sequencer') != 'no' &&
-          TamUtils.normalizeCall(tam('title')).toLowerCase() ==
-              norm.toLowerCase())) {
+    for (var entry in XMLCall.lookupAnimatedCall(norm).entries) {
+      for (var tam in entry.value) {
         //  Should be divided into parts, will also accept fractions
-        final parts = tam('parts', '') + tam('fractions', '');
-        final sexy = tam('sequencer', '').contains('gender');
-        final allp = tam.childrenNamed('path').map((it) =>
-            Path(TamUtils.translatePath(it))).toList();
+        final parts = tam.parts;  // fractions?
+        final sexy = tam.isGenderSpecific;
+        final allp = tam.formation.dancers.map((d) => d.path).toList();
         final partTimes = parts.isBlank ? <double>[] :
             parts.split(';').map((e) => e.d).toList();
         if (partTimes.length+1 >= partNum) {
           //  Load the call and calculate the beats where to splice into the sequence
-          final ctx2 = CallContext.fromXML(tam, loadPaths: true);
+          final ctx2 = CallContext.fromFormation(tam.formation);
           final startBeat = partTimes.take(partNum-1).fold<double>(0.0, (a, b) => a+b);
           final endBeat = partNum == partTimes.length + 1
               ? ctx2.maxBeats()
@@ -176,7 +170,7 @@ mixin CallWithParts {
               final m = mapping.map[i];
               // TODO check for asymmetric call!
               var b = 0.0;
-              for (final move in allp[m >> 1].movelist) {
+              for (final move in allp[m].movelist) {
                 if (!b.isLessThan(startBeat) && b.isLessThan(endBeat))
                   ctx.dancers[i].path.add(move);
                 b += move.beats;

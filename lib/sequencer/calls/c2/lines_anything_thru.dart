@@ -27,11 +27,11 @@ class LinesAnythingThru extends Action {
   LinesAnythingThru(String name) : super(name);
 
   @override
-  Future<void> perform(CallContext ctx) async {
+  void perform(CallContext ctx) {
     var anyCall = name.replaceMatch('Lines\\s*(.*)\\s*Thru'.r, '\\1');
     if (anyCall.isBlank)
       throw CallError('Lines what Thru?');
-    await ctx.applyCalls('Outer 4 Circulate While Center 4 $anyCall');
+    ctx.applyCalls('Outer 4 Circulate While Center 4 $anyCall');
     //  Make sure centers and ends are separate and
     //  the program doesn't try to adjust to a 1/4 tag
     ctx.checkCenters();

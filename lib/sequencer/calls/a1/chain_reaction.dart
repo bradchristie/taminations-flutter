@@ -35,28 +35,28 @@ The centers part of Part 4 can be changed with But (another call).
   ChainReaction() : super('Chain Reaction');
 
   @override
-  Future<void> performPart1(CallContext ctx) async {
+   void performPart1(CallContext ctx) {
     final level = ctx.outer(4).every((d) => ctx.isInCouple(d)) &&
         ctx.center(4).every((d) => ctx.isInWave(d))
         ? LevelData.A1 : LevelData.C1;
-    await ctx.applyCalls('Facing Dancers Pass Thru While Ends Counter Rotate');
+    ctx.applyCalls('Facing Dancers Pass Thru While Ends Counter Rotate');
     ctx.adjustToFormation('Sausage RH');
     ctx.level = level;
   }
 
   @override
-  Future<void> performPart2(CallContext ctx) async {
-    await ctx.applyCalls('Center 6 Except the Very Centers Hinge');
+   void performPart2(CallContext ctx) {
+    ctx.applyCalls('Center 6 Except the Very Centers Hinge');
   }
 
   @override
-  Future<void> performPart3(CallContext ctx) async {
-    await ctx.applyCalls('Outer 4 Trade While Center 4 $starTurns');
+   void performPart3(CallContext ctx) {
+    ctx.applyCalls('Outer 4 Trade While Center 4 $starTurns');
   }
 
   @override
-  Future<void> performPart4(CallContext ctx) async {
-    await ctx.applyCalls('Wave of 6 Center 4 $butCall '
+   void performPart4(CallContext ctx) {
+    ctx.applyCalls('Wave of 6 Center 4 $butCall '
         'While Others Do Your Part Hourglass Circulate');
   }
 

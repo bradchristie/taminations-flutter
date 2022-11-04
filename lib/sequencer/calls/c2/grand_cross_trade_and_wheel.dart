@@ -32,19 +32,19 @@ class GrandCrossTradeAndWheel extends Action with CallWithParts {
   GrandCrossTradeAndWheel(name) : super(name);
 
   @override
-  Future<void> performPart1(CallContext ctx) async {
+   void performPart1(CallContext ctx) {
     final left = name.startsWith('Left') ? 'Left' : '';
-    await ctx.applyCalls('As Couples $left Hinge');
+    ctx.applyCalls('As Couples $left Hinge');
   }
 
   @override
-  Future<void> performPart2(CallContext ctx) async {
-    await ctx.applyCalls('Triple Trade');
+   void performPart2(CallContext ctx) {
+    ctx.applyCalls('Triple Trade');
   }
 
   @override
-  Future<void> performPart3(CallContext ctx) async {
-    await ctx.applyCalls('As Couples Step and Fold');
+   void performPart3(CallContext ctx) {
+    ctx.applyCalls('As Couples Step and Fold');
   }
 
 }

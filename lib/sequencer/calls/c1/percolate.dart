@@ -33,21 +33,24 @@ The Hinge and Cross can be replaced with But (another call)''';
   Percolate(String name) : super(name);
 
   @override
-  Future<void> performPart1(CallContext ctx) async {
-    await ctx.applyCalls('Circulate');
+   void performPart1(CallContext ctx) {
+    print('Percolate 1');
+    ctx.applyCalls('Circulate');
   }
 
   @override
-  Future<void> performPart2(CallContext ctx) async {
-    await ctx.applyCalls('Half Circulate');
+   void performPart2(CallContext ctx) {
+    print('Percolate 2');
+    ctx.applyCalls('Half Circulate');
   }
 
   @override
-  Future<void> performPart3(CallContext ctx) async {
+   void performPart3(CallContext ctx) {
+    print('Percolate 3');
     ctx.analyze();
     final turnCall = ctx.outer(4).every((d) => d.data.belle)
         ? 'Left Turn Thru' : 'Turn Thru';
-    await ctx.applyCalls('Center Wave of 4 $butCall While Others $turnCall');
+    ctx.applyCalls('Center Wave of 4 $butCall While Others $turnCall');
   }
 
 }

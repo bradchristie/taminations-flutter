@@ -29,8 +29,8 @@ class Action extends CodedCall {
   Action(String name) : super(name);
 
   @override
-  Future<void> performCall(CallContext ctx) async {
-    await perform(ctx);
+   void performCall(CallContext ctx) {
+    perform(ctx);
     for (var d in ctx.dancers) {
       d.path.recalculate();
       d.animateToEnd();
@@ -40,8 +40,8 @@ class Action extends CodedCall {
   //  Default method to perform one call
   //  Pass the call on to each active dancer
   //  Then append the returned paths to each dancer
-  //  While this does not have any async calls, overrides might.
-  Future<void> perform(CallContext ctx) async {
+  //  While this does not have any calls, overrides might.
+  void perform(CallContext ctx) {
     //  Get all the paths with performOne calls
     for (var d in ctx.actives) {
       var path = performOne(d, ctx);

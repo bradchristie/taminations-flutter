@@ -30,15 +30,15 @@ class DixieDiamond extends ActivesOnlyAction with CallWithParts {
   DixieDiamond(String name) : super(name);
 
   @override
-  Future<void> performPart1(CallContext ctx) async {
+   void performPart1(CallContext ctx) {
     final reverse = name.contains('reverse'.ri) ? 'Reverse' : '';
-    await ctx.applyCalls('$reverse Dixie Style to a Wave');
+    ctx.applyCalls('$reverse Dixie Style to a Wave');
   }
 
   @override
-  Future<void> performPart2(CallContext ctx) async {
+   void performPart2(CallContext ctx) {
     ctx.analyze();
-    await ctx.applyCalls('Centers Hinge While Ends Turn Back');
+    ctx.applyCalls('Centers Hinge While Ends Turn Back');
   }
 
 }

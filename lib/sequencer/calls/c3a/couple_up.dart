@@ -31,17 +31,17 @@ class CoupleUp extends ActivesOnlyAction with CallWithParts {
   CoupleUp() : super('Couple Up');
 
   @override
-  Future<void> performPart1(CallContext ctx) async {
+   void performPart1(CallContext ctx) {
     if (ctx.dancers.length == 8)
-      await ctx.applyCalls('Split Circulate');
+      ctx.applyCalls('Split Circulate');
     else
-      await ctx.applyCalls('Box Circulate');
+      ctx.applyCalls('Box Circulate');
   }
 
   @override
-  Future<void> performPart2(CallContext ctx) async {
+   void performPart2(CallContext ctx) {
     ctx.analyze();
-    await ctx.applyCalls('Leaders Turn Back');
+    ctx.applyCalls('Leaders Turn Back');
   }
 
 }
@@ -54,8 +54,8 @@ class LikeACoupleUp extends ActivesOnlyAction {
   LikeACoupleUp() : super('Like A Couple Up');
 
   @override
-  Future<void> perform(CallContext ctx) async {
-    await ctx.applyCalls('Finish Couple Up');
+  void perform(CallContext ctx) {
+    ctx.applyCalls('Finish Couple Up');
   }
 
 }

@@ -28,7 +28,7 @@ class Checkpoint extends Action {
   Checkpoint(String name) : super(name);
 
   @override
-  Future<void> perform(CallContext ctx) async {
+  void perform(CallContext ctx) {
     //  Parse out the two calls
     final firstCall = name.replaceMatch('Checkpoint (.+) by (.+)'.ri,'\\1');
     final secondCall = name.replaceMatch('Checkpoint (.+) by (.+)'.ri,'\\2');
@@ -46,13 +46,13 @@ class Checkpoint extends Action {
     final ctx1 = CallContext.fromContext(ctx,dancers: centers);
     final ctx2 = CallContext.fromContext(ctx,dancers: ctx.dancers - centers);
     //  Do the first call
-    await ctx1.applyCalls('Concentric $firstCall');
+    ctx1.applyCalls('Concentric $firstCall');
     ctx1.appendToSource();
     //  Slide in the outer 2 if needed
     if (ctx.groups[2].first.location.length > 4.0)
-      await ctx2.applyCalls('outer 2 slide in');
+      ctx2.applyCalls('outer 2 slide in');
     //  Do the second call
-    await ctx2.applyCalls(secondCall);
+    ctx2.applyCalls(secondCall);
     ctx2.appendToSource();
   }
 

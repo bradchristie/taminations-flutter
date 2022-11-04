@@ -35,7 +35,6 @@ import 'call.dart';
 
 class XMLCall extends Call {
 
-  late XmlElement xelem;
   late AnimatedCall xcall;
   late List<int> xmlmap;
   late CallContext ctx2;
@@ -48,42 +47,50 @@ class XMLCall extends Call {
 
   static const noInactiveCalls = ['slip','slither'];
 
+  static Map<LevelData,List<AnimatedCall>> lookupAnimatedCall(String norm) =>
+     {
+      LevelData.B1: b1.CallsIndex.index[norm] ?? <AnimatedCall>[],
+      LevelData.B2: b2.CallsIndex.index[norm] ?? <AnimatedCall>[],
+      LevelData.MS: ms.CallsIndex.index[norm] ?? <AnimatedCall>[],
+      LevelData.PLUS: plus.CallsIndex.index[norm] ?? <AnimatedCall>[],
+      LevelData.A1: a1.CallsIndex.index[norm] ?? <AnimatedCall>[],
+      LevelData.A2: a2.CallsIndex.index[norm] ?? <AnimatedCall>[],
+      LevelData.C1: c1.CallsIndex.index[norm] ?? <AnimatedCall>[],
+      LevelData.C2: c2.CallsIndex.index[norm] ?? <AnimatedCall>[],
+      LevelData.C3A: c3a.CallsIndex.index[norm] ?? <AnimatedCall>[],
+      LevelData.C3B: c3b.CallsIndex.index[norm] ?? <AnimatedCall>[]
+    };
+
   XMLCall(String title) : super(title);
 
-  bool lookupAnimatedCall(CallContext ctxwork) {
-    var calllist =
-            (b1.CallsIndex.index[norm] ?? <AnimatedCall>[]) +
-            (b2.CallsIndex.index[norm] ?? <AnimatedCall>[]) +
-            (ms.CallsIndex.index[norm] ?? <AnimatedCall>[]) +
-            (plus.CallsIndex.index[norm] ?? <AnimatedCall>[]) +
-            (a1.CallsIndex.index[norm] ?? <AnimatedCall>[]) +
-            (a2.CallsIndex.index[norm] ?? <AnimatedCall>[]) +
-            (c1.CallsIndex.index[norm] ?? <AnimatedCall>[]) +
-            (c2.CallsIndex.index[norm] ?? <AnimatedCall>[]) +
-            (c3a.CallsIndex.index[norm] ?? <AnimatedCall>[]) +
-            (c3b.CallsIndex.index[norm] ?? <AnimatedCall>[]);
-
+  bool matchAnimatedCall(CallContext ctxwork) {
     var bestOffset = double.maxFinite;
     var fuzzy = true;
-
-    for (var tam in calllist) {
-      var headsMatchSides = !tam.title.contains('Heads?|Sides?'.r);
-      var sexy = tam.genderSpecific;
-      var ctx2q = CallContext.fromFormation(tam.formation);
-      ctx2q.animate(0.0);
-      var mm = ctxwork.matchFormations(ctx2q,sexy: sexy, fuzzy: fuzzy,
-          handholds: !fuzzy, headsMatchSides: headsMatchSides);
-      if (mm != null) {
-        var matchResult = mm.match;
-        var totOffset = matchResult.offsets.fold<double>(0.0, (s, v) => s + v.length);
-        var totAngle = matchResult.angles.fold<double>(0.0, (s, a) => s + a);
-        if (totOffset < bestOffset && totAngle.isAbout(0.0)) {
-          xcall = tam;
-          xmlmap = mm.map;
-          ctx2 = ctx2q;
-          bestOffset = totOffset;
-          level = tam.level;
-          found = true;
+    for (var entry in lookupAnimatedCall(norm).entries) {
+      for (var tam in entry.value) {
+        //  Check for 4-dancer calls that do not work for 8 dancers
+        if (tam.isExact && !exact)
+          continue;
+        var headsMatchSides = !tam.title.contains('Heads?|Sides?'.r);
+        var sexy = tam.isGenderSpecific;
+        var ctx2q = CallContext.fromFormation(tam.formation);
+        ctx2q.asymmetric = tam.isAsymmetric;
+        ctx2q.animate(0.0);
+        var mm = ctxwork.matchFormations(ctx2q, sexy: sexy, fuzzy: fuzzy,
+            handholds: !fuzzy, headsMatchSides: headsMatchSides);
+        if (mm != null) {
+          var matchResult = mm.match;
+          var totOffset = matchResult.offsets.fold<double>(
+              0.0, (s, v) => s + v.length);
+          var totAngle = matchResult.angles.fold<double>(0.0, (s, a) => s + a);
+          if (totOffset < bestOffset && totAngle.isAbout(0.0)) {
+            xcall = tam;
+            xmlmap = mm.map;
+            ctx2 = ctx2q;
+            bestOffset = totOffset;
+            level = entry.key;
+            found = true;
+          }
         }
       }
     }
@@ -91,7 +98,7 @@ class XMLCall extends Call {
   }
 
   @override
-  Future<void> performCall(CallContext ctx) async {
+  void performCall(CallContext ctx) {
     //  If actives != dancers, create another call context with just the actives
     var dc = ctx.dancers.length;
     var ac = ctx.actives.length;
@@ -106,7 +113,7 @@ class XMLCall extends Call {
       ctxwork = CallContext.fromContext(ctx,dancers:ctx.actives);
     }
 
-    var found = lookupAnimatedCall(ctxwork);
+    var found = matchAnimatedCall(ctxwork);
     if (found) {
       if (['Allemande Left',
         'Dixie Grand',
@@ -117,7 +124,7 @@ class XMLCall extends Call {
       }
     } else {
       try {
-        await ctx.applyCodedCall(name);
+        ctx.applyCodedCall(name);
       } on CallError {
         //  Found the call but formations did not match
         throw FormationNotFoundError(name);
@@ -125,7 +132,6 @@ class XMLCall extends Call {
       return;
     }
     final allPaths = xcall.formation.dancers.map((d) => d.path).toList();
-    final asymmetric = xcall.isAsymmetric;
     //  If moving just some of the dancers,
     //  see if we can keep them in the same shape
     if (ctx.actives.length < ctx.dancers.length) {
@@ -135,23 +141,22 @@ class XMLCall extends Call {
       //  So ctx3 is a copy of the start point
       //  Now add the paths
       for (var ii = 0; ii < ctx3.dancers.length; ii++) {
-        final path = asymmetric ? allPaths[ii] : allPaths[ii >> 1];
+        final path = allPaths[ii];
         ctx3.dancers[ii].path.add(path);
       }
       //  And move it to the end point
       ctx3.extendPaths();
       ctx3.analyze();
     }
+    var endbeat = ctxwork.maxBeats();
     for (var i3 = 0; i3 < xmlmap.length; i3++) {
       var m = xmlmap[i3];
       var p = Path.fromPath(allPaths[m]);
       //  Add XML path to dancer
       ctxwork.actives[i3].path.add(p);
     }
-    var endbeat = ctxwork.maxBeats();
 
     ctxwork.animate(endbeat);
-    ctx2.animateToEnd();
     var matchResult = ctxwork.computeFormationOffsets(ctx2, xmlmap, delta: 0.2);
     ctxwork.adjustToFormationMatch(matchResult,adjustFirstMovement: true);
     //  Move dancers to end so any subsequent modifications (e.g. roll)
@@ -180,7 +185,7 @@ class XMLCall extends Call {
       default :
         for (var i4 = 0; i4 < xmlmap.length; i4++) {
           var m = xmlmap[i4];
-          var path = asymmetric ? allPaths[m] : allPaths[m >> 1];
+          var path = allPaths[m];
           if (path.movelist.isEmpty)
             inactives.add(ctxwork.actives[i4]);
         }

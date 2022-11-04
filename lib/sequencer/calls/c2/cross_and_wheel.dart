@@ -31,14 +31,14 @@ class CrossAndWheel extends Action with CallWithParts {
   CrossAndWheel(name) : super(name);
 
   @override
-  Future<void> performPart1(CallContext ctx) async {
+   void performPart1(CallContext ctx) {
     final left = name.startsWith('Left') ? 'Left' : '';
-    await ctx.applyCalls('As Couples $left Hinge');
+    ctx.applyCalls('As Couples $left Hinge');
   }
 
   @override
-  Future<void> performPart2(CallContext ctx) async {
-    await ctx.applyCalls('As Couples Step and Fold');
+   void performPart2(CallContext ctx) {
+    ctx.applyCalls('As Couples Step and Fold');
   }
 
 }

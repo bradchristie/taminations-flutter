@@ -26,7 +26,7 @@ class SqueezeTheHourglass extends Action {
   SqueezeTheHourglass(String name) : super(name);
 
   @override
-  Future<void> perform(CallContext ctx) async {
+  void perform(CallContext ctx) {
     //  Match to any hourglass
     final hourglass = CallContext.fromXML(TamUtils.getFormation('Hourglass RH BP'));
     final mm = hourglass.matchFormations(ctx,rotate:180);
@@ -35,7 +35,7 @@ class SqueezeTheHourglass extends Action {
     //  All but two of the dancers squeeze
     ctx.dancers[mm.map[2]].data.active = false;
     ctx.dancers[mm.map[3]].data.active = false;
-    await ctx.applyCalls('Squeeze');
+    ctx.applyCalls('Squeeze');
   }
 
 }

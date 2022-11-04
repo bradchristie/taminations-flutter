@@ -27,7 +27,7 @@ class SpinTheWindmill extends Action {
   SpinTheWindmill(String name) : super(name);
 
   @override
-  Future<void> perform(CallContext ctx) async {
+  void perform(CallContext ctx) {
     var anycall = name.replaceFirst('the Windmill.*'.r,'').trim();
     var prefix = '';
     //  Get the center 4 dancers
@@ -46,11 +46,11 @@ class SpinTheWindmill extends Action {
     final outerPart = 'Outer 4 _Windmill '+name.replaceFirst('.*windmill'.ri,'');
     //  If there's an 'any' call, first try it with the center 4
     try {
-      await ctx.applyCalls('$outerPart while $centerPart');
+      ctx.applyCalls('$outerPart while $centerPart');
     } on CallError catch (e) {
       //  If that failed, try the 'any' call with all 8 dancers
       try {
-        await ctx.applyCalls(anycall, '$outerPart While Centers Cast Off 3/4');
+        ctx.applyCalls(anycall, '$outerPart While Centers Cast Off 3/4');
       } on CallError catch(_) {
         throw(e);
       }
@@ -64,14 +64,14 @@ class WindmillX extends Action {
   WindmillX(String name) : super(name);
 
   @override
-  Future<void> perform(CallContext ctx) async {
+  void perform(CallContext ctx) {
     //  Get the direction
     final dir = name.replaceFirst('_windmill'.ri,'').trim().toLowerCase();
     //  Face that way and do two circulates
     if (dir == 'forward')
-      await ctx.applyCalls('Circulate','Circulate');
+      ctx.applyCalls('Circulate','Circulate');
     else
-      await ctx.applyCalls('Face $dir','Circulate','Circulate');
+      ctx.applyCalls('Face $dir','Circulate','Circulate');
   }
 
 }

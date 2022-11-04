@@ -48,28 +48,28 @@ The centers part for Part 4 can be changed with But (another call).''';
         super(name);
 
   @override
-  Future<void> performPart1(CallContext ctx) async {
+   void performPart1(CallContext ctx) {
     var amount = fractionCall[fraction] ??
         thrower(CallError('What fraction to Cast and Relay?'))!;
-    await ctx.applyCalls(amount);
+    ctx.applyCalls(amount);
   }
 
   @override
-  Future<void> performPart2(CallContext ctx) async {
-    await ctx.applyCalls('Centers Cast Off 3/4 '
+   void performPart2(CallContext ctx) {
+    ctx.applyCalls('Centers Cast Off 3/4 '
         'While Ends Do Your Part Big Hourglass Circulate');
   }
 
   @override
-  Future<void> performPart3(CallContext ctx) async {
+   void performPart3(CallContext ctx) {
     if (turnStarAmount == 0)
       turnStarAmount = fractionTurn[fraction]!;
-    await ctx.applyCalls('Center 4 $starTurns While Others Trade');
+    ctx.applyCalls('Center 4 $starTurns While Others Trade');
   }
 
   @override
-  Future<void> performPart4(CallContext ctx) async {
-    await ctx.applyCalls('Wave of 6 Center 4 $butCall '
+   void performPart4(CallContext ctx) {
+    ctx.applyCalls('Wave of 6 Center 4 $butCall '
         'While Others Do Your Part Hourglass Circulate');
   }
 }

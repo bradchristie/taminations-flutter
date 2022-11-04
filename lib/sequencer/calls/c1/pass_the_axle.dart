@@ -34,24 +34,24 @@ Part 3 can be replaced with But (another call)''';
   PassTheAxle(String name) : super(name);
 
   @override
-  Future<void> performPart1(CallContext ctx) async {
-    await ctx.applyCalls('Pass Thru');
+   void performPart1(CallContext ctx) {
+    ctx.applyCalls('Pass Thru');
   }
 
   @override
-  Future<void> performPart2(CallContext ctx) async {
-    await ctx.applyCalls('Centers Pass Thru While Ends Cross Cast Back');
+   void performPart2(CallContext ctx) {
+    ctx.applyCalls('Centers Pass Thru While Ends Cross Cast Back');
     ctx.matchStandardFormation();
   }
 
   @override
-  Future<void> performPart3(CallContext ctx) async {
-    await ctx.applyCalls(butCall);
+   void performPart3(CallContext ctx) {
+    ctx.applyCalls(butCall);
   }
 
   @override
-  Future<void> performPart4(CallContext ctx) async {
-    await ctx.applyCalls('Centers Trade');
+   void performPart4(CallContext ctx) {
+    ctx.applyCalls('Centers Trade');
   }
 
 }
@@ -70,19 +70,19 @@ Part 2 can be replaced with But (another call)''';
   TheAxle(String name) : super(name);
 
   @override
-  Future<void> performPart1(CallContext ctx) async {
-    await ctx.applyCalls('Centers Pass Thru While Ends Cross Cast Back');
+   void performPart1(CallContext ctx) {
+    ctx.applyCalls('Centers Pass Thru While Ends Cross Cast Back');
     ctx.matchStandardFormation();
   }
 
   @override
-  Future<void> performPart2(CallContext ctx) async {
-    await ctx.applyCalls(butCall);
+   void performPart2(CallContext ctx) {
+    ctx.applyCalls(butCall);
   }
 
   @override
-  Future<void> performPart3(CallContext ctx) async {
-    await ctx.applyCalls('Centers Trade');
+   void performPart3(CallContext ctx) {
+    ctx.applyCalls('Centers Trade');
   }
 
 }

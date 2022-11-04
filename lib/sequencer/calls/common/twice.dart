@@ -30,7 +30,7 @@ class Twice extends CodedCall {
   Twice(String name) : super(name);
 
   @override
-  Future<void> performCall(CallContext ctx) async {
+   void performCall(CallContext ctx) {
     //  Find the previous call that we want to repeat,
     //  skipping any selectors
     var stackIndex = ctx.callstack.indexOf(this) - 1;
@@ -46,7 +46,7 @@ class Twice extends CodedCall {
     var prevCall = ctx.callstack[stackIndex].name;
     //  If not all dancers active, assume we mean those selected do your part
     var dyp = ctx.actives.length < ctx.dancers.length ? 'Do Your Part ' : '';
-    await ctx.applyCalls(dyp + prevCall);
+    ctx.applyCalls(dyp + prevCall);
   }
 
 }

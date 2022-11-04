@@ -31,14 +31,14 @@ class VerticalTagBack extends Action with CallWithParts {
   VerticalTagBack(String name) : super(name);
 
   @override
-  Future<void> performPart1(CallContext ctx) async {
+   void performPart1(CallContext ctx) {
     final left = name.contains('Left') ? 'Left' : '';
-    await ctx.applyCalls('$left Vertical 1/2 Tag');
+    ctx.applyCalls('$left Vertical 1/2 Tag');
   }
 
   @override
-  Future<void> performPart2(CallContext ctx) async {
-    await ctx.applyCalls('Scoot Back');
+   void performPart2(CallContext ctx) {
+    ctx.applyCalls('Scoot Back');
   }
 
 }

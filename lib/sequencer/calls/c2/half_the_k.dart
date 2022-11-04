@@ -28,12 +28,12 @@ class HalfTheK extends Action {
   HalfTheK() : super('Half the K');
 
   @override
-  Future<void> perform(CallContext ctx) async {
+  void perform(CallContext ctx) {
     if (ctx.dancers.where((d) => d.data.center).length == 4 &&
         ctx.dancers.where((d) => d.data.end).length == 4)
-      await ctx.applyCalls('Centers Hinge While Ends Quarter Out');
+      ctx.applyCalls('Centers Hinge While Ends Quarter Out');
     else
-      await ctx.applyCalls('Center 4 Hinge while Outer 4 1/4 Out');
+      ctx.applyCalls('Center 4 Hinge while Outer 4 1/4 Out');
   }
 
 

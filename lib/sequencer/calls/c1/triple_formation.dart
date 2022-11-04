@@ -48,7 +48,7 @@ abstract class TripleFormation extends Action {
   String subCall;
 
   @override
-  Future<void> perform(CallContext ctx) async {
+  void perform(CallContext ctx) {
     if (subCall.isBlank)
       throw CallError('$name what?');
     isXaxis = findAxis(ctx);
@@ -74,10 +74,10 @@ abstract class TripleFormation extends Action {
       if (box.dancers.length != 4)
         throw CallError('Error splitting into groups - group has ${box.dancers.length} dancers.');
       box.analyze();
-      final rotatedBox = await box.rotatePhantoms(subCall,rotate: 180, asym: true);
+      final rotatedBox = box.rotatePhantoms(subCall,rotate: 180, asym: true);
       if (rotatedBox == null)
         throw CallError('Unable to do $subCall with these Triple Boxes');
-      await rotatedBox.applyCalls(subCall);
+      rotatedBox.applyCalls(subCall);
       //  If it ends in a bax, make it a compact box in major direction
       //  so it will fit with others to make a triple box
       if (rotatedBox.isBox() &&

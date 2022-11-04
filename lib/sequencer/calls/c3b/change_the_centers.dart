@@ -33,32 +33,32 @@ class ChangeTheCenters extends ActivesOnlyAction with CallWithParts {
   ChangeTheCenters(String name) : super(name);
 
   @override
-  Future<void> performPart1(CallContext ctx) async {
+   void performPart1(CallContext ctx) {
     if (ctx.dancers.where((d) => !ctx.isInWave(d)).isNotEmpty) {
       try {
-        await ctx.applyCalls('Wave Dancers Nothing While Others Step to a Wave');
+        ctx.applyCalls('Wave Dancers Nothing While Others Step to a Wave');
       } on CallError catch(_) { }
       ctx.analyze();
     }
-    await ctx.applyCalls('Trade');
+    ctx.applyCalls('Trade');
   }
 
   @override
-  Future<void> performPart2(CallContext ctx) async {
-    await ctx.applyCalls('Slip');
+   void performPart2(CallContext ctx) {
+    ctx.applyCalls('Slip');
   }
 
   @override
-  Future<void> performPart3(CallContext ctx) async {
-    await ctx.applyCalls('Centers Cross Run');
+   void performPart3(CallContext ctx) {
+    ctx.applyCalls('Centers Cross Run');
   }
 
   @override
-  Future<void> performPart4(CallContext ctx) async {
+   void performPart4(CallContext ctx) {
     if (name.contains('Centers'.ri))
-      await ctx.applyCalls('Slip');
+      ctx.applyCalls('Slip');
     else
-      await ctx.applyCalls('Swing');
+      ctx.applyCalls('Swing');
   }
 
 }

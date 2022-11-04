@@ -29,18 +29,18 @@ class TripleStarThru extends Action with CallWithParts {
   }
 
   @override
-  Future<void> performPart1(CallContext ctx) async {
-    await ctx.applyCalls('Facing Dancers Star Thru');
+   void performPart1(CallContext ctx) {
+    ctx.applyCalls('Facing Dancers Star Thru');
   }
 
   @override
-  Future<void> performPart2(CallContext ctx) async {
-    await ctx.applyCalls('Facing Dancers _Left Star Thru');
+   void performPart2(CallContext ctx) {
+    ctx.applyCalls('Facing Dancers _Left Star Thru');
   }
 
   @override
-  Future<void> performPart3(CallContext ctx) async {
-    await ctx.applyCalls('Facing Dancers Star Thru');
+   void performPart3(CallContext ctx) {
+    ctx.applyCalls('Facing Dancers Star Thru');
   }
 
 }

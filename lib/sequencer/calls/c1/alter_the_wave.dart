@@ -33,24 +33,24 @@ class AlterTheWave extends Action with CallWithParts, CallWithStars {
   AlterTheWave(String name) : super(name);
 
   @override
-  Future<void> performPart1(CallContext ctx) async {
-    await ctx.applyCalls('Swing');
+   void performPart1(CallContext ctx) {
+    ctx.applyCalls('Swing');
   }
 
   @override
-  Future<void> performPart2(CallContext ctx) async {
-    await ctx.applyCalls('Centers Cast Off 3/4 While Ends Turn Back');
+   void performPart2(CallContext ctx) {
+    ctx.applyCalls('Centers Cast Off 3/4 While Ends Turn Back');
   }
 
   @override
-  Future<void> performPart3(CallContext ctx) async {
+   void performPart3(CallContext ctx) {
     for (var i=0; i<turnStarAmount; i++)
-      await ctx.applyCalls('Split Counter Rotate');
+      ctx.applyCalls('Split Counter Rotate');
   }
 
   @override
-  Future<void> performPart4(CallContext ctx) async {
-    await ctx.applyCalls('Flip the Diamond');
+   void performPart4(CallContext ctx) {
+    ctx.applyCalls('Flip the Diamond');
   }
 
 }

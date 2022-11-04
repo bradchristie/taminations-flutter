@@ -31,9 +31,9 @@ class TurnTheStar extends Action {
   TurnTheStar(String name) : super(name);
 
   @override
-  Future<void> perform(CallContext ctx) async {
+  void perform(CallContext ctx) {
     final callName = name.replaceFirst('(do not )?turn the star.*'.ri, '').trim();
-    await ctx.subContext(ctx.dancers, (ctx2) async {
+    ctx.subContext(ctx.dancers, (ctx2) {
       if (!ctx2.matchCodedCall(callName))
         throw CallError('Unable to find $callName as a Call with Parts');
       if (ctx2.callstack.last is CallWithStars) {
@@ -61,7 +61,7 @@ class TurnTheStar extends Action {
           call.turnStarAmount = 4;
         else
           throw CallError('Turn the Star how much?');
-        await ctx2.performCall();
+        ctx2.performCall();
       } else {
         throw CallError('$callName not recognized as a call with stars');
       }

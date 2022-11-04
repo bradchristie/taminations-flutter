@@ -33,18 +33,18 @@ class PassTheSea extends ActivesOnlyAction with CallWithParts {
   PassTheSea() : super('Pass the Sea');
 
   @override
-  Future<void> performPart1(CallContext ctx) async {
-    await ctx.applyCalls('Pass Thru');
+   void performPart1(CallContext ctx) {
+    ctx.applyCalls('Pass Thru');
   }
 
   @override
-  Future<void> performPart2(CallContext ctx) async {
-    await ctx.applyCalls('Quarter In');
+   void performPart2(CallContext ctx) {
+    ctx.applyCalls('Quarter In');
   }
 
   @override
-  Future<void> performPart3(CallContext ctx) async {
-    await ctx.applyCalls('Step to a Left-Hand Wave');
+   void performPart3(CallContext ctx) {
+    ctx.applyCalls('Step to a Left-Hand Wave');
   }
 
 }

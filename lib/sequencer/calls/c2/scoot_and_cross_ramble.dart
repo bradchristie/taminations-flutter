@@ -32,19 +32,19 @@ class ScootAndCrossRamble extends Action with CallWithParts {
   ScootAndCrossRamble(name) : super(name);
 
   @override
-  Future<void> performPart1(CallContext ctx) async {
-    await ctx.applyCalls('Scoot Back');
+   void performPart1(CallContext ctx) {
+    ctx.applyCalls('Scoot Back');
   }
 
   @override
-  Future<void> performPart2(CallContext ctx) async {
-    await ctx.applyCalls('Outer 4 Cross Cast Back '
+   void performPart2(CallContext ctx) {
+    ctx.applyCalls('Outer 4 Cross Cast Back '
         'While Others Extend and Trade');
   }
 
   @override
-  Future<void> performPart3(CallContext ctx) async {
-    await ctx.applyCalls('Slide Thru');
+   void performPart3(CallContext ctx) {
+    ctx.applyCalls('Slide Thru');
   }
 
 

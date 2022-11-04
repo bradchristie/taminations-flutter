@@ -26,8 +26,8 @@ class Regroup extends Action {
   Regroup(String name) : super(name);
 
   @override
-  Future<void> perform(CallContext ctx) async {
-    await ctx.applyCalls('Ends 1/4 Out Trade Do Your Part O Circulate '
+  void perform(CallContext ctx) {
+    ctx.applyCalls('Ends 1/4 Out Trade Do Your Part O Circulate '
         'While Centers Trade and Roll');
   }
 

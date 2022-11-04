@@ -31,20 +31,20 @@ class Shazam extends ActivesOnlyAction with CallWithParts {
   Shazam(name) : super(name);
 
   @override
-  Future<void> perform(CallContext ctx) async {
+  void perform(CallContext ctx) {
     if (ctx.dancers.any((d) => !ctx.isInWave(d)))
       throw CallError('All dancers must be in a Wave');
-    await super.perform(ctx);
+    super.perform(ctx);
   }
 
   @override
-  Future<void> performPart1(CallContext ctx) async {
-    await ctx.applyCalls('Hinge');
+   void performPart1(CallContext ctx) {
+    ctx.applyCalls('Hinge');
   }
 
   @override
-  Future<void> performPart2(CallContext ctx) async {
-    await ctx.applyCalls('Turn Back');
+   void performPart2(CallContext ctx) {
+    ctx.applyCalls('Turn Back');
   }
 
 }

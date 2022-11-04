@@ -27,7 +27,7 @@ class OneAndaHalf extends CodedCall {
   OneAndaHalf(String name) : super(name);
 
   @override
-  Future<void> performCall(CallContext ctx) async {
+   void performCall(CallContext ctx) {
     if (ctx.callstack.length < 2)
       throw CallError('One and a half of what?');
     //  At this point the call has already been done once
@@ -36,7 +36,7 @@ class OneAndaHalf extends CodedCall {
     //  Now do half of it again
     var prevCall = ctx.callstack.take(ctx.callstack.length-1)
         .map((it) => it.name).join(' ');
-    await ctx.applyCalls('Half $prevCall');
+    ctx.applyCalls('Half $prevCall');
   }
 
 }

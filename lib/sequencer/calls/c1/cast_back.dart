@@ -30,7 +30,7 @@ class CastBack extends Action {
   CastBack(String name) : super(name);
 
   @override
-  Future<void> perform(CallContext ctx) async {
+  void perform(CallContext ctx) {
     //  Either the leaders Cast Back or the caller has
     //  to specify the dancers
     final leaders = ctx.dancers.where((it) => it.data.leader );
@@ -41,7 +41,7 @@ class CastBack extends Action {
         : throw CallError('Who is going to Cast Back?');
     for (final d in ctx.dancers)
       d.data.active = casters.contains(d);
-    await super.perform(ctx);
+    super.perform(ctx);
   }
 
   @override

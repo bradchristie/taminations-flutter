@@ -27,28 +27,28 @@ class Rotate extends Action {
   Rotate(String name) : super(name);
 
   @override
-  Future<void> perform(CallContext ctx) async {
+  void perform(CallContext ctx) {
     if (!ctx.isLines() || !ctx.dancers.every((d) => ctx.isInCouple(d)))
       throw CallError('Unable to Rotate from this formation');
     final leaders = ctx.dancers.where((d) => d.data.leader).toList();
     final trailers = ctx.dancers.where((d) => d.data.trailer).toList();
     if (leaders.isNotEmpty) {
-      await ctx.subContext(leaders, (ctx2) async {
-        await ctx2.applyCalls('Half Wheel Around');
+      ctx.subContext(leaders, (ctx2) {
+        ctx2.applyCalls('Half Wheel Around');
       });
     }
     if (trailers.isNotEmpty) {
-      await ctx.subContext(trailers, (ctx2) async {
-        await ctx2.applyCalls('Half Reverse Wheel Around');
+      ctx.subContext(trailers, (ctx2) {
+        ctx2.applyCalls('Half Reverse Wheel Around');
       });
     }
     final norm = TamUtils.normalizeCall(name);
     if (norm.endsWith('14'))
-      await ctx.applyCalls('Couples Hinge');
+      ctx.applyCalls('Couples Hinge');
     else if (norm.endsWith('12'))
-      await ctx.applyCalls('Couples Hinge','Couples Hinge');
+      ctx.applyCalls('Couples Hinge','Couples Hinge');
     else if (norm.endsWith('34'))
-      await ctx.applyCalls('Couples Hinge','Couples Hinge','Couples Hinge');
+      ctx.applyCalls('Couples Hinge','Couples Hinge','Couples Hinge');
     else
       throw CallError('Rotate how much?');
   }

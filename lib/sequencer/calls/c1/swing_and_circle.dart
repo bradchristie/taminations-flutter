@@ -27,19 +27,19 @@ class SwingAndCircle extends Action {
   SwingAndCircle(String name) : super(name);
 
   @override
-  Future<void> perform(CallContext ctx) async {
+  void perform(CallContext ctx) {
     final norm = TamUtils.normalizeCall(name);
     //  Swing and Circle 1/4 is an XML animation
     //  So just repeat that as requested
     if (norm.endsWith('12'))
-      await ctx.applyCalls('Swing and Circle 1/4',
+      ctx.applyCalls('Swing and Circle 1/4',
           'Swing and Circle 1/4');
     else if (norm.endsWith('34'))
-      await ctx.applyCalls('Swing and Circle 1/4',
+      ctx.applyCalls('Swing and Circle 1/4',
           'Swing and Circle 1/4',
           'Swing and Circle 1/4');
     else
-      await ctx.applyCalls('Swing and Circle 1/4',
+      ctx.applyCalls('Swing and Circle 1/4',
           'Swing and Circle 1/4',
           'Swing and Circle 1/4',
           'Swing and Circle 1/4');

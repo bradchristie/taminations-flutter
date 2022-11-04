@@ -27,7 +27,7 @@ class WheelAnd extends Action {
   WheelAnd(String name) : super(name);
 
   @override
-  Future<void> perform(CallContext ctx) async {
+  void perform(CallContext ctx) {
     final divided = name.divide(' and '.r);
     final wheelCall = divided[0];
     final andCall = divided[1];
@@ -40,17 +40,17 @@ class WheelAnd extends Action {
       throw CallError('Cannot find 2 couples facing out');
     //  If on squared set spots, couples facing in step into the center
     if (ctx.isSquare())
-      await ctx.applyCalls('Facing Couples Move In');
+      ctx.applyCalls('Facing Couples Move In');
     //  Check for t-bones, center 4 facing out, outer 4 facing their shoulders
     if (ctx.center(4).containsAll(facingOut))
-      await ctx.applyCalls('As Couples Step');
+      ctx.applyCalls('As Couples Step');
     try {
-      await ctx.applyCalls('Outer 4 $reverse Wheel While Center 4 $andCall');
+      ctx.applyCalls('Outer 4 $reverse Wheel While Center 4 $andCall');
     } on CallError catch (e1) {
       //  Maybe the call applies to all 8 dancers
       //  (although that really doesn't fit the definition)
       try {
-        await ctx.applyCalls('Outer 4 $reverse Wheel',andCall);
+        ctx.applyCalls('Outer 4 $reverse Wheel',andCall);
       } on CallError {
         //  That didn't work either, throw the original error
         throw e1;

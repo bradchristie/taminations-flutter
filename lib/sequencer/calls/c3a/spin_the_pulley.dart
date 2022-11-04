@@ -34,26 +34,26 @@ Skip Part 1 with the call The Pulley.''';
   SpinThePulley(String name) : super(name);
 
   @override
-  Future<void> performPart1(CallContext ctx) async {
+   void performPart1(CallContext ctx) {
     if (ctx.dancers.none((d) => ctx.isInWave(d))) {
       if (ctx.actives.length < ctx.dancers.length)
-        await ctx.applyCalls('Step to a Wave');
+        ctx.applyCalls('Step to a Wave');
       else
-        await ctx.applyCalls('Centers Step to a Wave');
+        ctx.applyCalls('Centers Step to a Wave');
     }
     ctx.matchStandardFormation();
     ctx.analyze();
-    await ctx.applyCalls('Centers Cast Off 3/4');
+    ctx.applyCalls('Centers Cast Off 3/4');
   }
 
   @override
-  Future<void> performPart2(CallContext ctx) async {
-    await ctx.applyCalls('Everyone Triple Cross');
+   void performPart2(CallContext ctx) {
+    ctx.applyCalls('Everyone Triple Cross');
   }
 
   @override
-  Future<void> performPart3(CallContext ctx) async {
-    await ctx.applyCalls(butCall);
+   void performPart3(CallContext ctx) {
+    ctx.applyCalls(butCall);
   }
 
 }

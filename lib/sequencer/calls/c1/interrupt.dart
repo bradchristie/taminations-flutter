@@ -31,14 +31,14 @@ It can be used in these ways:
   Interrupt(String name) : super(name);
 
   @override
-  Future<void> perform(CallContext ctx) async {
+  void perform(CallContext ctx) {
 
     //  Parse out the call with parts we are interrupting
     final callName = name.replaceFirst('interrupt .+'.ri,'').trim();
     //  Parse out what to interrupt it with
     final interruptName = name.replaceFirst('.+interrupt .+? with a?n?\\b'.ri,'').trim();
 
-    await ctx.subContext(ctx.dancers, (ctx2) async {
+    ctx.subContext(ctx.dancers, (ctx2) {
       //  Get the call with parts
       if (!ctx2.matchCodedCall(callName))
         throw CallError('Unable to find $callName as a Call with Parts');
@@ -51,15 +51,15 @@ It can be used in these ways:
             //  Insert space between each call
             call.replacePart[i*2-1] = call.replacePart[i] ?? call.performPart(i);
             //  And patch in the interrupting call at each space
-            call.replacePart[i*2-2] = (ctx) async {
-              await ctx.applyCalls(interruptName);
+            call.replacePart[i*2-2] = (ctx) {
+              ctx.applyCalls(interruptName);
             };
           }
           call.numberOfParts = call.numberOfParts * 2 - 1;
           //  Add one more if 'after'
           if (name.contains('\\bafter\\b'.ri)) {
-            call.replacePart[call.numberOfParts+1] = (ctx) async {
-              await ctx.applyCalls(interruptName);
+            call.replacePart[call.numberOfParts+1] = (ctx) {
+              ctx.applyCalls(interruptName);
             };
             call.numberOfParts += 1;
           }
@@ -75,8 +75,8 @@ It can be used in these ways:
           for (var i = call.replacePart.length - 1; i > partNumber; i--)
             call.replacePart[i] = call.replacePart[i - 1] ?? call.performPart(i - 1);
           //  And patch in the interrupting call
-          call.replacePart[partNumber] = (ctx) async {
-            await ctx.applyCalls(interruptName);
+          call.replacePart[partNumber] = (ctx) {
+            ctx.applyCalls(interruptName);
           };
           call.numberOfParts += 1;
         }
@@ -85,7 +85,7 @@ It can be used in these ways:
         throw CallError('Can only Interrupt in a call with Parts');
 
       //  Finally, do the (now modified) call with parts
-      await ctx2.performCall();
+      ctx2.performCall();
 
     });
   }

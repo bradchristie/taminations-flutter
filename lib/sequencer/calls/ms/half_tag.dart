@@ -28,9 +28,9 @@ class HalfTag extends Action {
   HalfTag(String name) : super(name);
 
   @override
-  Future<void> perform(CallContext ctx, [int i = 0]) async {
+   void perform(CallContext ctx, [int i = 0]) {
     var dir = name.startsWith('Left') ? 'Left' : '';
-    await ctx.applyCalls('$dir Quarter Tag','Extend');
+    ctx.applyCalls('$dir Quarter Tag','Extend');
   }
 
 }

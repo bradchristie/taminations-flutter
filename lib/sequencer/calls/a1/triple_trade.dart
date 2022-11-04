@@ -27,18 +27,18 @@ class TripleTrade extends Action {
   TripleTrade(String name) : super(name);
 
   @override
-  Future<void> perform(CallContext ctx) async {
+  void perform(CallContext ctx) {
     //  Check to see if there's a line of 6
     //  If so, do it with those dancers
     final lineOf6 = ctx.dancers.where((d) =>
     ctx.dancersToRight(d).length + ctx.dancersToLeft(d).length == 5).toList();
     if (lineOf6.length == 6) {
-      await ctx.subContext(lineOf6, (ctx2) async =>
-      await ctx2.applyCalls('Trade')
+      ctx.subContext(lineOf6, (ctx2) =>
+          ctx2.applyCalls('Trade')
       );
     } else {
       //  Otherwise just try with center 6 however they are arranged
-      await ctx.applyCalls('Center 6 Trade');
+      ctx.applyCalls('Center 6 Trade');
     }
 
   }

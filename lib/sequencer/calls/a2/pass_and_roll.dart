@@ -52,30 +52,30 @@ Variations: (Left) Pass and Roll (Your (Cross) Neighbor)''';
   }
 
   @override
-  Future<void> performPart1(CallContext ctx) async {
-    await ctx.applyCalls('$left Pass Thru');
+   void performPart1(CallContext ctx) {
+    ctx.applyCalls('$left Pass Thru');
   }
 
   @override
-  Future<void> performPart2(CallContext ctx) async {
+   void performPart2(CallContext ctx) {
     final n = ctx.dancers.length ~/ 2;
-    await ctx.applyCalls('Center $n $left Turn Thru While Outer $n Face $dir Face $dir');
+    ctx.applyCalls('Center $n $left Turn Thru While Outer $n Face $dir Face $dir');
   }
 
   @override
-  Future<void> performPart3(CallContext ctx) async {
-    await ctx.applyCalls('$left Pass Thru');
+   void performPart3(CallContext ctx) {
+    ctx.applyCalls('$left Pass Thru');
   }
 
   @override
-  Future<void> performPart4(CallContext ctx) async {
+   void performPart4(CallContext ctx) {
     final n = ctx.dancers.length ~/ 2;
     final cross = isCross ^ (left.isNotBlank) ? 'left' : '';
     if (isNeighbor)
-      await ctx.applyCalls('Center $n $cross Touch and Cast Off 3/4 '
+      ctx.applyCalls('Center $n $cross Touch and Cast Off 3/4 '
           'While Outer $n Face $dir Face $dir Face $dir');
     else
-      await ctx.applyCalls('Center $n $left Pass Thru','$dir Roll to a Wave');
+      ctx.applyCalls('Center $n $left Pass Thru','$dir Roll to a Wave');
   }
 
 }

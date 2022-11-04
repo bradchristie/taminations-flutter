@@ -30,13 +30,13 @@ class FlipBack extends Action with CallWithParts {
   FlipBack() : super('Flip Back');
 
   @override
-  Future<void> performPart1(CallContext ctx) async {
-    await ctx.applyCalls('Flip the Line 1/2');
+   void performPart1(CallContext ctx) {
+    ctx.applyCalls('Flip the Line 1/2');
   }
 
   @override
-  Future<void> performPart2(CallContext ctx) async {
-    await ctx.applyCalls('Scoot Back');
+   void performPart2(CallContext ctx) {
+    ctx.applyCalls('Scoot Back');
   }
 
 }

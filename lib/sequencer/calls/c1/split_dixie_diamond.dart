@@ -30,13 +30,13 @@ class SplitDixieDiamond extends Action with CallWithParts {
   SplitDixieDiamond(String name) : super(name);
 
   @override
-  Future<void> performPart1(CallContext ctx) async {
-    await ctx.applyCalls('Split Dixie Style');
+   void performPart1(CallContext ctx) {
+    ctx.applyCalls('Split Dixie Style');
   }
 
   @override
-  Future<void> performPart2(CallContext ctx) async {
-    await ctx.applyCalls('Centers Hinge While Ends Turn Back');
+   void performPart2(CallContext ctx) {
+    ctx.applyCalls('Centers Hinge While Ends Turn Back');
   }
 
 }

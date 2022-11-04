@@ -30,7 +30,7 @@ class SweepAQuarter extends Action {
   SweepAQuarter(String name) : super(name);
 
   @override
-  Future<void> perform(CallContext ctx) async {
+  void perform(CallContext ctx) {
     ctx.analyze();
     if (ctx.actives.any((d) => !ctx.isInCouple(d)))
       throw CallError('Only couples can Sweep a Quarter' );
@@ -47,7 +47,7 @@ class SweepAQuarter extends Action {
     //  Sweeping direction is opposite rolling direction
     final dir = isLeft ? 'Right' : 'Left';
     try {
-      await ctx.applyCalls('Sweep a Quarter $dir');
+      ctx.applyCalls('Sweep a Quarter $dir');
     } on CallError {
       throw CallError('Improper movement for Sweep 1/4');
     }

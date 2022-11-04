@@ -26,11 +26,11 @@ class MagicTransferAnd extends Action {
   MagicTransferAnd(String name) : super(name);
 
   @override
-  Future<void> perform(CallContext ctx) async {
+  void perform(CallContext ctx) {
     final othercall = name.replaceFirst('Magic (Column )?Transfer and'.ri,'').trim();
-    await ctx.applyCalls('Magic Column Transfer and');
+    ctx.applyCalls('Magic Column Transfer and');
     ctx.contractPaths();
-    await ctx.applyCalls('Centers $othercall');
+    ctx.applyCalls('Centers $othercall');
   }
 
 }

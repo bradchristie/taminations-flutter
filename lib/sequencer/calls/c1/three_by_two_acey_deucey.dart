@@ -27,8 +27,8 @@ class ThreeByTwoAceyDeucey extends Action {
   ThreeByTwoAceyDeucey(String name) : super(name);
 
   @override
-  Future<void> perform(CallContext ctx) async {
-    await ctx.applyCalls('Outside Triangle Circulate While Very Centers Trade');
+  void perform(CallContext ctx) {
+    ctx.applyCalls('Outside Triangle Circulate While Very Centers Trade');
   }
 
 }

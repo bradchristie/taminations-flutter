@@ -41,7 +41,7 @@ abstract class ModifiedFormationConcept extends Action {
       ctx.adjustToFormation(formationName,rotate:90,delta:0.3);
 
   @override
-  Future<void> perform(CallContext ctx) async {
+  void perform(CallContext ctx) {
     //  Check that the formation matches
     if (!checkFormation(ctx))
       throw CallError('Not $conceptName formation' );
@@ -52,7 +52,7 @@ abstract class ModifiedFormationConcept extends Action {
     var adjusted = ctx.dancers.where((d) => d.path.movelist.isNotEmpty).toList();
 
     //  Perform the call
-    await ctx.applyCalls(realCall);
+    ctx.applyCalls(realCall);
     //  Merge the initial adjustment into the start of the call
     for (var d in ctx.dancers) {
       if (adjusted.contains(d) && d.path.movelist.length > 1) {

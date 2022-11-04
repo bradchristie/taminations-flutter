@@ -28,9 +28,9 @@ class Skip extends Action {
   Skip(String name) : super(name);
 
   @override
-  Future<void> perform(CallContext ctx) async {
+  void perform(CallContext ctx) {
     final callName = name.replaceFirst('(but )?(skip|delete) .+'.ri,'').trim();
-    await ctx.subContext(ctx.dancers, (ctx2) async {
+    ctx.subContext(ctx.dancers, (ctx2) {
       if (!ctx2.matchCodedCall(callName))
         throw CallError('Unable to find $callName as a Call with Parts');
       if (ctx2.callstack.last is CallWithParts) {
@@ -39,11 +39,11 @@ class Skip extends Action {
         final partNumber = CallWithParts.partNumberFromCall(call,partName);
         if (partNumber == 0)
           throw CallError('Unable to figure out what to Skip');
-        call.replacePart[partNumber] = (ctx) async { };
+        call.replacePart[partNumber] = (ctx) { };
       }
       else
         throw CallError('Can only Skip in a call with Parts');
-      await ctx2.performCall();
+      ctx2.performCall();
     });
   }
 

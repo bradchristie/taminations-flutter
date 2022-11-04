@@ -30,9 +30,9 @@ class And extends FilterActives {
   int _index = 0;
 
   @override
-  Future<void> performCall(CallContext ctx) async {
+   void performCall(CallContext ctx) {
     _index = ctx.callstack.indexOf(this);
-    await super.performCall(ctx);
+    super.performCall(ctx);
   }
 
   //  If the previous call was retrieved from XML and has a selector

@@ -33,12 +33,12 @@ Part 2 cannot be done with same-sex couples.''';
   BraceThru() : super('Brace Thru');
 
   @override
-  Future<void> performPart1(CallContext ctx) async {
-    await ctx.applyCalls('Pass Thru');
+   void performPart1(CallContext ctx) {
+    ctx.applyCalls('Pass Thru');
   }
 
   @override
-  Future<void> performPart2(CallContext ctx) async {
+   void performPart2(CallContext ctx) {
     ctx.analyze();
     for (final d in ctx.dancers) {
       final partner = d.data.partner.throwIfNull(CallError('Dancer $d cannot Brace Thru'));
@@ -48,13 +48,13 @@ Part 2 cannot be done with same-sex couples.''';
     final normal = ctx.dancers.where((d) => d.data.beau ^ (d.gender == Gender.GIRL)).toList();
     final sashay = ctx.dancers.where((d) => d.data.beau ^ (d.gender == Gender.BOY)).toList();
     if (normal.isNotEmpty) {
-      await ctx.subContext(normal, (ctx3) async {
-        await ctx3.applyCalls('Courtesy Turn');
+      ctx.subContext(normal, (ctx3) {
+        ctx3.applyCalls('Courtesy Turn');
       });
     }
     if (sashay.isNotEmpty) {
-      await ctx.subContext(sashay, (ctx3) async {
-        await ctx3.applyCalls('Turn Back');
+      ctx.subContext(sashay, (ctx3) {
+        ctx3.applyCalls('Turn Back');
       });
     }
   }

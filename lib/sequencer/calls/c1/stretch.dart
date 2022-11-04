@@ -27,13 +27,13 @@ class Stretch extends Action {
   Stretch(String name) : super(name);
 
   @override
-  Future<void> perform(CallContext ctx) async {
+  void perform(CallContext ctx) {
 
     final stretchctx = ctx.nextActionContext(this)
         ?? thrower(CallError('Not able to find call for Stretch'))!;
 
     //  First perform the call normally
-    await stretchctx.performCall();
+    stretchctx.performCall();
 
     //  Now shift the new centers to their stretch positions
     stretchctx.animateToEnd();

@@ -31,9 +31,9 @@ class SplitRecycle extends Action {
   SplitRecycle(String name) : super(name);
 
   @override
-  Future<void> perform(CallContext ctx) async {
+  void perform(CallContext ctx) {
     var reverse = name.contains('Reverse') ? 'Reverse' : '';
-    await ctx.applyCalls('Couples Do Your Part $reverse Recycle'
+    ctx.applyCalls('Couples Do Your Part $reverse Recycle'
         ' While Wave Dancers Do Your Part Split Recycle');
   }
 

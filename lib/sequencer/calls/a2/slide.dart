@@ -27,17 +27,17 @@ class Slide extends Action {
   Slide(String name) : super(name);
 
   @override
-  Future<void> perform(CallContext ctx) async {
+  void perform(CallContext ctx) {
     //  If single wave in center, just those 4 Slide
-    if (! await ctx.subContext(ctx.center(4), (ctx2) async {
+    if (! ctx.subContext(ctx.center(4), (ctx2) {
       if (ctx.dancers.length > 4 && ctx2.isLines() && ctx2.isWaves() && !ctx.isTidal()) {
         ctx2.analyze();
-        await ctx2.applyCalls('Slide');
+        ctx2.applyCalls('Slide');
       }
     })) {
       //  Not single wave in center
       if (ctx.actives.every((it) => ctx.isInWave(it)))
-        await super.perform(ctx);
+        super.perform(ctx);
       else
         throw CallError('Dancers must be in mini-waves to Slide');
     }

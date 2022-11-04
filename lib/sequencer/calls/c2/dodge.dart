@@ -28,14 +28,14 @@ class Dodge extends ActivesOnlyAction {
   Dodge(String name) : super(name);
 
   @override
-  Future<void> perform(CallContext ctx) async {
+  void perform(CallContext ctx) {
     var anyCall = name.replaceFirst('dodge'.ri, '').trim();
     if (anyCall.isBlank)
       throw CallError('Dodge what?');
     try {
-      await ctx.applyCalls('Centers Walk and Dodge While Ends $anyCall');
+      ctx.applyCalls('Centers Walk and Dodge While Ends $anyCall');
     } on CallError {
-      await ctx.applyCalls(
+      ctx.applyCalls(
           'Centers Walk and Dodge While Ends Do Your Part $anyCall');
     }
   }

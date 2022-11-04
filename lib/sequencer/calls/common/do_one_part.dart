@@ -24,9 +24,9 @@ class DoOnePart extends Action {
   DoOnePart(String name) : super(name);
 
   @override
-  Future<void> perform(CallContext ctx) async {
+  void perform(CallContext ctx) {
     final callName = name.replaceFirst('do the .* part (of)?'.ri, '').trim();
-    await ctx.subContext(ctx.dancers, (ctx2) async {
+    ctx.subContext(ctx.dancers, (ctx2) {
       ctx2.analyze();
       if (!ctx2.matchCodedCall(callName))
         throw CallError('Unable to find $callName as a Call with Parts');
@@ -35,7 +35,7 @@ class DoOnePart extends Action {
         final partNumber = CallWithParts.partNumberFromCall(call, name);
         if (partNumber == 0)
           throw CallError('Unable to figure out what Part to do');
-        await call.performPart(partNumber)(ctx2);
+        call.performPart(partNumber)(ctx2);
       }
       else
         throw CallError('Can only Do a Part of a call with Parts');

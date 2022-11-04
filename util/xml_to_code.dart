@@ -24,6 +24,9 @@ import 'package:taminations/math/movement.dart';
 import 'package:taminations/normalize_call.dart';
 import 'package:xml/xml.dart';
 
+//  This program generates Dart classes from the XML animations
+//  and supporting XML files
+
 void main() async {
   await writeMoves();
   await writeFormations();
@@ -54,6 +57,8 @@ void writeOneMovement(IOSink mDart, XmlElement m) {
   mDart.write('  )');
 }
 
+//  This routine builds a list of Path objects
+//  from the moves.xml file
 Future<void> writeMoves() async {
   var movesDoc = await File('assets/src/moves.xml').readAsString()
       .then((text) => XmlDocument.parse(text));
@@ -79,6 +84,8 @@ Future<void> writeMoves() async {
         var mods = '';
         if (m('hands').isNotBlank)
           mods += '..changehands(Hands.${m('hands').toUpperCase()})';
+        if (m('beats').isNotBlank)
+          mods += '..changeBeats(${m('beats')})';
         if (m('reflect').isNotBlank)
           mods += '..scale(1,-1)';
         if ((m('scaleX') + m('scaleY')).isNotBlank)
@@ -102,12 +109,11 @@ Future<void> writeMoves() async {
   await movesDart.close();
 }
 
-void writeOneFormation(IOSink fDart, XmlElement f) {
+void writeOneFormation(IOSink fDart, XmlElement f, {bool isAsymmetric=false}) {
   fDart.writeln('Formation(\'${f('name')}\', [');
-  final asymmetric = f('asymmetric').isNotBlank;
   var numberArray =  ['1','5','2','6','3','7','4','8',
     '','','','','','','',''];
-  var coupleArray = asymmetric
+  var coupleArray = isAsymmetric
       ? ['1','1','3','3','2','2','4','4',' ',' ',' ',' ',' ',' ',' ',' ']
       : ['1','3','1','3','2','4','2','4',' ',' ',' ',' ',' ',' ',' ',' '];
   final dancers = f.childrenNamed('dancer');
@@ -122,7 +128,7 @@ void writeOneFormation(IOSink fDart, XmlElement f) {
     fDart.write('angle:${d('angle')},');
     fDart.write('geom: SquareGeometry(0)');
     fDart.writeln('),');
-    if (!asymmetric) {
+    if (!isAsymmetric) {
       fDart.write('        Dancer.fromData(');
       fDart.write('number:\'${numberArray[i*2+1]}\',');
       fDart.write('couple:\'${coupleArray[i*2+1]}\',');
@@ -137,6 +143,8 @@ void writeOneFormation(IOSink fDart, XmlElement f) {
   fDart.write('  ])');
 }
 
+//  This routine builds a list of Formation class objects
+//  from the formations.xml file
 Future<void> writeFormations() async {
   var fDoc = await File('assets/src/formations.xml').readAsString()
       .then((text) => XmlDocument.parse(text));
@@ -153,7 +161,6 @@ Future<void> writeFormations() async {
     fDart.writeln(';');
   });
 
-
   //  Map to look up move formation by name
   fDart.writeln();
   fDart.writeln('static final Map<String,Formation> formationMap = {');
@@ -169,7 +176,11 @@ Future<void> writeFormations() async {
   await fDart.close();
 }
 
-
+//  This fetches every animation xml file
+//  and creates a corresponding file containing
+//  a list of AnimatedCall objects
+//  Also, for each directory, an index file calls_index.g.dart
+//  is built that maps normalized call names to lists of AnimatedCall objects
 Future<void> writeCalls() async {
   final dirs = ['b1','b2','ms','plus','a1','a2','c1','c2','c3a','c3b'];
   for (var dir in dirs) {
@@ -200,8 +211,6 @@ Future<void> writeCalls() async {
 
     var cDart = File('lib/calls/$link.g.dart').openWrite();
     final thisImport = 'import \'$link.g.dart\';';
-    //if (importSet.contains(thisImport))
-    //  return;
     importSet.add(thisImport);
     cDart.writeln('import \'../../common.dart\';');
     cDart.writeln('import \'../../formations.g.dart\';');
@@ -217,7 +226,8 @@ Future<void> writeCalls() async {
       if (tam.childrenNamed('formation').isNotEmpty) {
         //  custom formation
         cDart.write('      ');
-        writeOneFormation(cDart, tam.childrenNamed('formation').first);
+        writeOneFormation(cDart, tam.childrenNamed('formation').first,
+            isAsymmetric: tam('asymmetric').isNotBlank);
         cDart.writeln(',');
       }
       else
@@ -234,9 +244,11 @@ Future<void> writeCalls() async {
               var h = Hands.getHands(move('hands'));
               cDart.write('..changehands($h)');
             }
-            if (move('scaleX').isNotBlank || move('scaleY').isNotBlank) {
+            if (move('scaleX').isNotBlank || move('scaleY').isNotBlank || move('reflect').isNotBlank) {
               var sx = move('scaleX','1').d;
               var sy = move('scaleY','1').d;
+              if (move('reflect').isNotBlank)
+                sy = -sy;
               cDart.write('..scale($sx,$sy)');
             }
             if (move('offsetX').isNotBlank || move('offsetY').isNotBlank) {
@@ -255,7 +267,13 @@ Future<void> writeCalls() async {
         cDart.writeln('        ]),');  //  end of one path
       });
       cDart.writeln('      ],');  //  end of all paths for one animation
-      cDart.writeln('      parts:\'${tam('parts')}\'),');
+      final genderParam = tam('sequencer') == 'gender-specific' ? ',isGenderSpecific:true' : '';
+      final exactParam = tam('sequencer') == 'exact' ? ',isExact:true' : '';
+      final perimeterParam = tam('sequencer') == 'perimeter' ? ',isPerimeter:true' : '';
+      cDart.writeln('      parts:\'${tam('parts')}\''
+          ',fractions:\'${tam('fractions')}\''
+          ',actives:\'${tam('actives')}\''
+          '$genderParam$exactParam$perimeterParam),');
       var norm = normalizeCall(tam('title'));
       if (!callIndex.containsKey(norm))
         callIndex[norm] = [];
@@ -267,6 +285,7 @@ Future<void> writeCalls() async {
     await cDart.close();
   });  // end of call
 
+  //  Generated indexes
   for (var dir in dirs) {
     var iDart = File('lib/calls/$dir/calls_index.g.dart').openWrite();
     iDart.writeln('import \'../../sequencer/calls/animated_call.dart\';');

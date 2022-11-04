@@ -26,8 +26,8 @@ class SixTwoAceyDeucey extends Action {
   SixTwoAceyDeucey(name) : super(name);
 
   @override
-  Future<void> perform(CallContext ctx, [int i = 0]) async {
-    await ctx.applyCalls('Very Centers Trade While Outer 6 Circulate');
+   void perform(CallContext ctx, [int i = 0]) {
+    ctx.applyCalls('Very Centers Trade While Outer 6 Circulate');
   }
 
 }

@@ -45,7 +45,7 @@ Promenade Corner''';
   var _startPoints = <Vector>[];
 
   @override
-  Future<void> perform(CallContext ctx) async {
+  void perform(CallContext ctx) {
     if (ctx.dancers.length != 8)
       throw CallError('Only for 4 couples at this point.');
     //   Compute the center point of each couple
@@ -84,16 +84,16 @@ Promenade Corner''';
         throw CallError('Dancers are not resolved, cannot promenade home.');
     }
     //  Now get each dancer to move to the calculated promenade position
-    await super.perform(ctx);
+    super.perform(ctx);
     //  Promenade to home
     var dc = ctx.actives.first;
     var a = (dc.numberCouple.i + 1.0) * pi / 2.0;
     do {
-      await ctx.applyCalls('Counter Rotate');
+      ctx.applyCalls('Counter Rotate');
     } while (dc.path.movelist.length < 100 && // sanity check
         !dc.anglePosition.isAround(a));
     //  Adjust from promenade to squared set
-    await ctx.applyCalls('Half Wheel Around');
+    ctx.applyCalls('Half Wheel Around');
     ctx.adjustToFormation('Squared Set');
     ctx.level = LevelData.B1;  // otherwise Counter Rotate would set to C-1
   }

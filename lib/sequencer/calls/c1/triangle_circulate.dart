@@ -61,7 +61,7 @@ You do not need to use one of these if the triangles are unambiguous (as in a sa
   }
 
   @override
-  Future<void> perform(CallContext ctx) async {
+  void perform(CallContext ctx) {
     //  Find the 6 dancers to circulate
     final triangleType = name.replaceFirst(rootName, '')
         .toLowerCase()

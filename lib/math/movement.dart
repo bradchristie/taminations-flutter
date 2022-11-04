@@ -123,14 +123,14 @@ class Movement extends Cloneable<Movement> {
     required double cy2,
     required double x2,
     required double y2,
-    double cx3 = 0.0,
+    double cx3 = -1.0,  //  need default < 0 because 0 can be a real value
     double cx4 = 0.0,
     double cy4 = 0.0,
     double x4 = 0.0,
     double y4 = 0.0
   }) {
     final bt = Bezier([[0.0,0.0].v,[cx1,cy1].v,[cx2,cy2].v,[x2,y2].v]);
-    final br = cx3 == 0.0 ? bt :
+    final br = cx3 < 0.0 ? bt :
         Bezier([[0.0,0.0].v,[cx3,0.0].v,[cx4,cy4].v,[x4,y4].v]);
     return Movement(beats,hands,bt,br);
   }

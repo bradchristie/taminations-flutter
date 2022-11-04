@@ -34,24 +34,24 @@ Variations
   Sidetrack(String name) : super(name);
 
   @override
-  Future<void> performPart1(CallContext ctx) async {
-    await ctx.applyCalls('Zig Zag');
+   void performPart1(CallContext ctx) {
+    ctx.applyCalls('Zig Zag');
     ctx.matchStandardFormation();
   }
 
   @override
-  Future<void> performPart2(CallContext ctx) async {
+   void performPart2(CallContext ctx) {
     if (name.contains('single'.ri))
-      await ctx.applyCalls('Lockit');
+      ctx.applyCalls('Lockit');
     else if (name.contains('split'.ri))
-      await ctx.applyCalls('Split Counter Rotate');
+      ctx.applyCalls('Split Counter Rotate');
     else
-      await ctx.applyCalls('Counter Rotate');
+      ctx.applyCalls('Counter Rotate');
   }
 
   @override
-  Future<void> performPart3(CallContext ctx) async {
-    await ctx.applyCalls('Roll');
+   void performPart3(CallContext ctx) {
+    ctx.applyCalls('Roll');
   }
 
 }

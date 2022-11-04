@@ -26,7 +26,7 @@ class Substitute extends Action {
   Substitute(String name) : super(name);
 
   @override
-  Future<void> perform(CallContext ctx) async {
+  void perform(CallContext ctx) {
     //  Check that we have a valid 2x4 formation
     final ctxDPT = CallContext.fromXML(TamUtils.getFormation('Double Pass Thru'));
     if (ctxDPT.matchFormations(ctx,sexy:false,fuzzy:false,rotate:90,handholds:false) == null)

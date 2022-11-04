@@ -11,6 +11,12 @@ Taminations for Android, iOS, MacOS, Windows, Web coded in Flutter
 ```
 flutter pub get
 ```
+- Before building the program, you need to run the code-generation program which
+builds classes from the xml files.  This is a Dart command-line program:
+```
+dart util/xml_to_code.dart
+```
+
 - For iOS, build and run with these commands
 ```
 cd ios

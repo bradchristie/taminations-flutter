@@ -25,7 +25,7 @@ class InTheCenter extends Action {
   InTheCenter() : super('In the Center');
 
   @override
-  Future<void> perform(CallContext ctx) async {
+  void perform(CallContext ctx) {
     ctx.checkCenters();
   }
 

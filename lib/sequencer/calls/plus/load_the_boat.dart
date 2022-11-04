@@ -45,33 +45,33 @@ Part 4 for the Centers can be replaced with But (another call)''';
   }
 
   @override
-  Future<void> performPart1(CallContext ctx) async {
-    await ctx.subContext(ctx.outer(4), (ctx2) async {
-      await ctx2.applyCalls(_endsPart(ctx2));
+   void performPart1(CallContext ctx) {
+    ctx.subContext(ctx.outer(4), (ctx2) {
+      ctx2.applyCalls(_endsPart(ctx2));
     });
-    await ctx.subContext(ctx.center(4), (ctx2) async {
-      await ctx2.applyCalls('Pass Thru');
+    ctx.subContext(ctx.center(4), (ctx2) {
+      ctx2.applyCalls('Pass Thru');
     });
   }
 
   @override
-  Future<void> performPart2(CallContext ctx) async {
+   void performPart2(CallContext ctx) {
     ctx.analyze();
-    await ctx.applyCalls('Ends ${_endsPart(ctx)} While Center 4 Face Out');
+    ctx.applyCalls('Ends ${_endsPart(ctx)} While Center 4 Face Out');
   }
 
   @override
-  Future<void> performPart3(CallContext ctx) async {
+   void performPart3(CallContext ctx) {
     //  Center 4 might be off a bit, snap to boxes so Ends Bend works
     ctx.adjustToFormation('Eight Chain Thru',rotate: 90);
     ctx.analyze();
-    await ctx.applyCalls('Ends ${_endsPart(ctx)} While Center 4 Trade');
+    ctx.applyCalls('Ends ${_endsPart(ctx)} While Center 4 Trade');
   }
 
   @override
-  Future<void> performPart4(CallContext ctx) async {
+   void performPart4(CallContext ctx) {
     ctx.analyze();
-    await ctx.applyCalls('Ends Face In While Center 4 $butCall');
+    ctx.applyCalls('Ends Face In While Center 4 $butCall');
   }
 
 }

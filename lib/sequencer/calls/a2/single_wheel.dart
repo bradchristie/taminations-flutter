@@ -27,9 +27,9 @@ class SingleWheel extends Action {
   SingleWheel(String name) : super(name);
 
   @override
-  Future<void> perform(CallContext ctx) async {
+  void perform(CallContext ctx) {
     //  Accept both Single Wheel and Left Single Wheel
-    await  ctx.applyCalls(name.replaceFirst('Single Wheel','Hinge and Roll'));
+    ctx.applyCalls(name.replaceFirst('Single Wheel','Hinge and Roll'));
   }
 
 }

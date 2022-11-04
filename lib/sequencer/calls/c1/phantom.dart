@@ -30,7 +30,7 @@ class Phantom extends Action {
         _subcall = name.replaceFirst('Phantom'.ri, '').trim(),
         super(name);
 
-  Future<CallContext> _addPhantoms(CallContext ctx) async {
+  CallContext _addPhantoms(CallContext ctx) {
     //  Add all the phantoms
     //  This assumes lines, will not work
     //  for phantom column formations
@@ -60,14 +60,14 @@ class Phantom extends Action {
     final phantomctx = CallContext.fromContext(ctx,dancers: ctx.dancers+phantoms);
     //  Find good rotation
     phantomctx.analyze();
-    final retval = await phantomctx.rotatePhantoms(_subcall);
+    final retval = phantomctx.rotatePhantoms(_subcall);
     if (retval == null)
       throw CallError('Unable to find phantom formation for $_subcall');
     return retval;
   }
 
   @override
-  Future<void> perform(CallContext ctx) async {
+  void perform(CallContext ctx) {
     final phantomSnapFormations = {
       'Phantom Snap Formation 1' : 1.0,
       'Phantom Snap Formation 2' : 1.0
@@ -81,9 +81,9 @@ class Phantom extends Action {
       //  Make a call context for this group
       final groupctx = CallContext.fromContext(ctx,dancers: group);
       //  Add phantoms to make 8 dancers
-      final phantomctx = await _addPhantoms(groupctx);
+      final phantomctx = _addPhantoms(groupctx);
       //  Perform 8-dancer call
-      await phantomctx.applyCalls(_subcall);
+      phantomctx.applyCalls(_subcall);
       //  Append the results
       final groupResult = phantomctx.dancers.where((d) => d.gender != Gender.PHANTOM).toList();
       for (var i=0; i<groupResult.length; i++) {

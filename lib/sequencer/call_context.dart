@@ -225,17 +225,6 @@ class CallContext {
     return callfiles2;
   }
 
-  //  Load all XML files that might be used to interpret a call
-  static Future<void> _loadAllFilesForCall(String call) async {
-    for (var item in call.minced()) {
-      var norm = TamUtils.normalizeCall(item).toLowerCase();
-      var callitems = TamUtils.callmap[norm] ?? <CallListDatum>[];
-      for (var callitem in callitems) {
-        await loadOneFile(Uri.parse(callitem.link).path);
-      }
-    }
-  }
-
   static Future<void> init() {
     if (callindex.isEmpty) {
       return Future.wait(callindexinitfiles.map((file) => loadOneFile(file)));
@@ -288,9 +277,13 @@ class CallContext {
     _snap = source._snap;
   }
 
-  CallContext.fromFormation(Formation f) {
+  CallContext.fromFormation(Formation f, {bool withPaths=false}) {
     dancers = f.dancers.clone();
     asymmetric = f.asymmetric;
+    if (withPaths) {
+      for (var i=0; i<f.dancers.length; i++)
+        dancers[i].path = f.dancers[i].path.clone();
+    }
   }
 
   //  Create a context from a formation defined in XML
@@ -421,9 +414,9 @@ class CallContext {
   //  Apply a function as a method of the new CallContext.
   //  Then transfer any new calls from the created CallContext to this CallContext.
   //  Return true if anything new was added.
-  Future<bool> subContext(List<Dancer> dancers, Future<void> Function(CallContext) block) async {
+  bool subContext(List<Dancer> dancers, void Function(CallContext) block) {
     var ctx = CallContext.fromContext(this,dancers:dancers.inOrder());
-    await block(ctx);
+    block(ctx);
     return ctx.appendToSource(this);
   }
 
@@ -496,39 +489,39 @@ class CallContext {
       throw CallError('$calltext does nothing.');
   }
 
-  Future<void> applySpecifier(String calltext) async {
-    await interpretCall(calltext,noAction: true);
-    await performCall();
+  void applySpecifier(String calltext) {
+    interpretCall(calltext,noAction: true);
+    performCall();
   }
 
-  Future<void> _applyCall(String call) async {
+  void _applyCall(String call) {
     var ctx2 = CallContext.fromContext(this);
-    await ctx2.interpretCall(call);
-    await ctx2.performCall();
+    ctx2.interpretCall(call);
+    ctx2.performCall();
     ctx2.appendToSource();
   }
 
-  Future<void> applyCalls(String call1, [String? call2, String? call3, String? call4]) async {
+  void applyCalls(String call1, [String? call2, String? call3, String? call4]) {
     var calls = [call1,call2,call3,call4].whereType<String>();
     for (var call in calls) {
       final saved = saveActives();
-      await _applyCall(call);
+      _applyCall(call);
       restoreActives(saved);
     }
   }
 
-  Future<void> applyCodedCall(String call) async {
+  void applyCodedCall(String call) {
     var ctx2 = CallContext.fromContext(this);
-    await ctx2.interpretCall(call,skipFirstXML: true);
-    await ctx2.performCall();
+    ctx2.interpretCall(call,skipFirstXML: true);
+    ctx2.performCall();
     ctx2.appendToSource();
   }
 
-  Future<CallContext?> _checkCalls(List<String> calls) async {
+  CallContext? _checkCalls(List<String> calls) {
     var testctx = CallContext.fromContext(this);
     try {
       for (var call in calls) {
-        await testctx.applyCalls(call);
+        testctx.applyCalls(call);
         if (testctx.isCollision())
           return null;
       }
@@ -563,10 +556,9 @@ class CallContext {
   /// This is the main loop for interpreting a call
   ///  [calltxt]  One complete call, lower case, words separated by single spaces
   ///  [noAction] set to true if it's ok for this call not to do anything
-  Future<void> interpretCall(String calltext,
-      {bool noAction = false, bool skipFirstXML = false}) async {
+  void interpretCall(String calltext,
+      {bool noAction = false, bool skipFirstXML = false}) {
     calltext = _cleanupCall(calltext);
-    await _loadAllFilesForCall(calltext);
     CallError err = CallNotFoundError(calltext);
     //  Clear out any previous paths from incomplete parsing
     for (var d in dancers) {
@@ -588,7 +580,7 @@ class CallContext {
         //  First try to find a snapshot match
         if (onecall.norm.lc != calltext.norm.lc || !skipFirstXML) {
           try {
-            foundOneCall = await matchXMLcall(onecall);
+            foundOneCall = matchXMLcall(onecall);
           } on CallError catch (err2) {
             err = err2;
           }
@@ -599,7 +591,7 @@ class CallContext {
         if (onecall.norm.lc != calltext.norm.lc || !skipFirstXML) {
           try {
             foundOneCall =
-                foundOneCall || await matchXMLcall(onecall, fuzzy: true);
+                foundOneCall || matchXMLcall(onecall, fuzzy: true);
           } on CallError catch (err3) {
             err = err3;
           }
@@ -624,7 +616,7 @@ class CallContext {
   }
 
   //  Main routine to map a call to an animation in a Taminations XML file
-  Future<bool> matchXMLcall(String calltext, {bool fuzzy = false}) async {
+  bool matchXMLcall(String calltext, {bool fuzzy = false}) {
     var ctx0 = this;
     var ctx1 = this;
     //  If there are precursors, run them first so the result
@@ -635,9 +627,9 @@ class CallContext {
       ctx1.callstack = callstack.copy();
       //  Ignore any errors, some precursors (like Half) expect to find more on the stack
       try {
-        await ctx1.performCall();
-      // ignore: empty_catches
-      } on CallError { }
+        ctx1.performCall();
+        // ignore: empty_catches
+      } on CallError {}
     }
     //  If actives != dancers, create another call context with just the actives
     var dc = ctx1.dancers.length;
@@ -650,26 +642,22 @@ class CallContext {
           ctx1.inBetween(d, ctx1.actives.first).any((it) => !it.data.active)
       ))
         perimeter = true;
-      ctx1 = CallContext.fromContext(ctx1,dancers:ctx1.actives);
+      ctx1 = CallContext.fromContext(ctx1, dancers: ctx1.actives);
     }
+
     //  Try to find a match in the xml animations
-
-    var callnorm = TamUtils.normalizeCall(calltext);
-    var callfiles = xmlFilesForCall(callnorm.toLowerCase());
-
-    for (var link in callfiles) {
-      var file = await loadOneFile(link);
-      var tamlist = file.rootElement.findAllElements('tam').where((tam) =>
-      tam('sequencer') != 'no' &&
-          //  Check for calls that must go around the centers
-          (!perimeter || tam('sequencer', '').contains('perimeter')) &&
-          //  Check for 4-dancer calls that do not work for 8 dancers
-          (exact || !tam('sequencer', '').contains('exact')) &&
-          TamUtils.normalizeCall(tam('title')).toLowerCase() ==
-              callnorm.toLowerCase());
-      if (tamlist.isNotEmpty) {
+    var norm = TamUtils.normalizeCall(calltext);
+    for (var entry in XMLCall.lookupAnimatedCall(norm).entries) {
+      for (var tam in entry.value) {
+        //  Check for calls that must go around the centers
+        if (perimeter && !tam.isPerimeter)
+          continue;
+        //  Check for 4-dancer calls that do not work for 8 dancers
+        if (!exact && tam.isExact)
+          continue;
+        //  Found something, call is ok
         final xmlCall = XMLCall(calltext);
-        xmlCall.level = LevelData.find(link)!;
+        xmlCall.level = entry.key;
         ctx0.callstack.add(xmlCall);
         ctx0.callname += xmlCall.name + ' ';
         return true;
@@ -932,7 +920,7 @@ class CallContext {
   //  Perform calls by popping them off the stack until the stack is empty.
   //  This doesn't run an animation, rather it takes the stack of calls
   //  and builds the dancer movements.
-  Future<void> performCall() async {
+  void performCall() {
     //  Some calls alter the callstack, so save and restore
     final saveCallstack = callstack.copy();
     for (final d in dancers) {
@@ -941,7 +929,7 @@ class CallContext {
     analyze();
     for (var i=0; i<callstack.length; i++) {
       var c = callstack[i];
-      await c.performCall(this);
+      c.performCall(this);
       if (i < callstack.length-1)
         analyze();
       //checkCenters();
@@ -1162,8 +1150,8 @@ class CallContext {
   ///  which are rotated together
   ///  unless asym is set
   ///  as this is required for XML mapping to work
-  Future<CallContext?> rotatePhantoms(String call,
-      {int rotate=180, bool asym=false}) async {
+  CallContext? rotatePhantoms(String call,
+      {int rotate=180, bool asym=false}) {
     var phantoms = dancers.where((it) => it.gender == Gender.PHANTOM).toList();
     //  Compute number of possibilities
     var rotnum = 360 ~/ rotate;
@@ -1192,7 +1180,7 @@ class CallContext {
         }
       }
       var ctx2 = CallContext.fromContext(this);
-      var testctx = await ctx2._checkCalls([call]);
+      var testctx = ctx2._checkCalls([call]);
       if (testctx != null) {
         //  Good rotation found
         //  See if it's the "Best" rotation

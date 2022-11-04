@@ -27,7 +27,7 @@ class QuarterMore extends Action {
   QuarterMore() : super('and a Quarter More' );
 
   @override
-  Future<void> performCall(CallContext ctx) async {
+   void performCall(CallContext ctx) {
     if (ctx.actives.any((d) => !ctx.isInCouple(d)))
       throw CallError('Only couples can go a Quarter More' );
     var isLeft = true;
@@ -42,9 +42,9 @@ class QuarterMore extends Action {
     //  Rolling direction determines rotation
     //  Usually belle forward beau backward
     if (isRight)
-      await ctx.applyCalls('Half Reverse Wheel Around' );
+      ctx.applyCalls('Half Reverse Wheel Around' );
     else if (isLeft)
-      await ctx.applyCalls('Half Wheel Around' );
+      ctx.applyCalls('Half Wheel Around' );
     else
       throw CallError('Unable to determine direction for A Quarter More' );
   }

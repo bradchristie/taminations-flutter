@@ -26,22 +26,22 @@ class Fascinating extends Action {
   Fascinating(String name) : super(name);
 
   @override
-  Future<void> perform(CallContext ctx) async {
+  void perform(CallContext ctx) {
     var what = name.replaceFirst('Fascinating', '').trim();
-    await ctx.applyCalls('Centers Cast Off 3/4 While Ends Circulate 1.5');
+    ctx.applyCalls('Centers Cast Off 3/4 While Ends Circulate 1.5');
     ctx.analyze();
     var w6 = ctx.waveOf6() ?? thrower('Unable to find Wave of 6')!;
     var vc = ctx.dancers.where((d) => d.data.verycenter).toList();
-    await ctx.subContext(vc, (ctx2) async {
-      await ctx2.applyCalls('Trade');
+    ctx.subContext(vc, (ctx2) {
+      ctx2.applyCalls('Trade');
     });
     var other2 = ctx.dancers.where((d) => !w6.contains(d)).toList();
-    await ctx.subContext(other2, (ctx2) async {
-      await ctx2.applyCalls('Counter Rotate');
+    ctx.subContext(other2, (ctx2) {
+      ctx2.applyCalls('Counter Rotate');
     });
-    await ctx.subContext(w6, (ctx2) async {
-      await ctx2.subContext(ctx2.outer(4), (ctx3) async {
-        await ctx3.applyCalls('Concentric $what');
+    ctx.subContext(w6, (ctx2) {
+      ctx2.subContext(ctx2.outer(4), (ctx3) {
+        ctx3.applyCalls('Concentric $what');
       });
     });
 

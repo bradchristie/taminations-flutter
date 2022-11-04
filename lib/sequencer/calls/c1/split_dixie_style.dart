@@ -30,21 +30,21 @@ class SplitDixieStyle extends Action with CallWithParts {
   SplitDixieStyle(String name) : super(name);
 
   @override
-  Future<void> performPart1(CallContext ctx) async {
+   void performPart1(CallContext ctx) {
     if (ctx.dancers.any((d) => ctx.isInWave(d))) {
       final face = ctx.dancers.where((d) => ctx.isInWave(d)).every((d) => d.data.center)
       ? 'Face Out' : 'Face In';
-      await ctx.applyCalls('Wave Dancers Pull By and $face');
+      ctx.applyCalls('Wave Dancers Pull By and $face');
     } else {
       final face = ctx.dancers.where((d) => ctx.dancerFacing(d)!=null).every((d) => d.data.center)
           ? 'Face Out' : 'Face In';
-      await ctx.applyCalls('Facing Dancers Pull By and $face');
+      ctx.applyCalls('Facing Dancers Pull By and $face');
     }
   }
 
   @override
-  Future<void> performPart2(CallContext ctx) async {
-    await ctx.applyCalls('Left Touch 1/4');
+   void performPart2(CallContext ctx) {
+    ctx.applyCalls('Left Touch 1/4');
   }
 
 }

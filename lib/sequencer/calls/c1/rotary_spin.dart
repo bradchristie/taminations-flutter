@@ -32,17 +32,17 @@ You can switch the hands with Left Rotary Spin''';
   RotarySpin(String name) : isLeft=name.startsWith('Left'), super(name);
 
   @override
-  Future<void> performPart1(CallContext ctx) async {
+   void performPart1(CallContext ctx) {
     var left = isLeft ? 'Left' : '';
-    await ctx.applyCalls('$left Pass Thru');
+    ctx.applyCalls('$left Pass Thru');
   }
 
   @override
-  Future<void> performPart2(CallContext ctx) async {
+   void performPart2(CallContext ctx) {
     var wave = isLeft ? 'Wave' : 'Left-Hand Wave';
     //  Fake Courtesy Turn with a Wheel Around so we can do the left version
     var wheel = isLeft ? 'Reverse Wheel Around' : 'Wheel Around';
-    await ctx.applyCalls('Centers Step to a $wave and Cast Off 3/4 '
+    ctx.applyCalls('Centers Step to a $wave and Cast Off 3/4 '
         'While Ends $wheel and Roll');
   }
 

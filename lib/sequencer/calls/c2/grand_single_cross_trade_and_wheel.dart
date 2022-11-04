@@ -31,21 +31,21 @@ class GrandSingleCrossTradeAndWheel extends Action with CallWithParts {
   GrandSingleCrossTradeAndWheel(name) : super(name);
 
   @override
-  Future<void> performPart1(CallContext ctx) async {
+   void performPart1(CallContext ctx) {
     final left = name.startsWith('Left') ? 'Left' : '';
-    await ctx.applyCalls('$left Hinge');
+    ctx.applyCalls('$left Hinge');
   }
 
   @override
-  Future<void> performPart2(CallContext ctx) async {
+   void performPart2(CallContext ctx) {
     ctx.analyze();
-    await ctx.applyCalls('Triple Trade');
+    ctx.applyCalls('Triple Trade');
   }
 
   @override
-  Future<void> performPart3(CallContext ctx) async {
+   void performPart3(CallContext ctx) {
     ctx.analyze();
-    await ctx.applyCalls('Center 6 Step While Very Ends Fold');
+    ctx.applyCalls('Center 6 Step While Very Ends Fold');
   }
 
 }

@@ -33,14 +33,14 @@ Variations: (Left) (Vertical) Tag Your (Criss) (Cross) Neighbor''';
   TagYourNeighbor(String name) : super(name);
 
   @override
-  Future<void> performPart1(CallContext ctx) async {
+   void performPart1(CallContext ctx) {
     final left = name.contains('Left') ? 'Left' : '';
     final vertical = name.contains('Vertical') ? 'Vertical' : '';
-    await ctx.applyCalls('$vertical $left Half Tag');
+    ctx.applyCalls('$vertical $left Half Tag');
   }
 
   @override
-  Future<void> performPart2(CallContext ctx) async {
+   void performPart2(CallContext ctx) {
     final base = name.replaceFirst('Left ', '')
         .replaceFirst('Vertical ', '')
         .replaceFirst('Tag Your ', '');
@@ -49,7 +49,7 @@ Variations: (Left) (Vertical) Tag Your (Criss) (Cross) Neighbor''';
       else if (base == 'Cross Neighbor') 'Cross Your Neighbor'
       else if (base == 'Criss Cross Neighbor') 'Criss Cross Your Neighbor'
     ].firstOrNull ?? thrower(CallError('Tag what?'))!;
-    await ctx.applyCalls(baseCall);
+    ctx.applyCalls(baseCall);
   }
 
 }

@@ -27,7 +27,7 @@ class SplitSquareThru extends Action {
   SplitSquareThru(String name) : super(name);
 
   @override
-  Future<void> perform(CallContext ctx) async {
+  void perform(CallContext ctx) {
     if (ctx.actives.length < 8)
       throw CallError('Use Heads Start or Sides Start Split Square Thru');
     var left = 'Left';
@@ -48,13 +48,13 @@ class SplitSquareThru extends Action {
         throw CallError('Dancers must start with left hand');
       if (left == '' && !waveDancers.every((it) => it.data.belle))
         throw CallError('Dancers must start with right hand');
-      await ctx.applyCalls(explode,'$left Square Thru ${count - 1}');
+      ctx.applyCalls(explode,'$left Square Thru ${count - 1}');
     } else {
       //  If the centers start, they need to face out to work with the ends
       //  Otherwise they will face in to work with the other dancers
       final face = ctx.actives.every((d) => d.data.center || ctx.dancerFacing(d) == null)
           ? 'Out' : 'In';
-      await ctx.applyCalls('Facing Dancers $right Pass Thru and Face $face',
+      ctx.applyCalls('Facing Dancers $right Pass Thru and Face $face',
           '$left Square Thru ${count - 1}');
     }
   }

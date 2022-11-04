@@ -46,7 +46,7 @@ You can specify the direction with Left Ripple or Right Ripple.''';
   }
 
   @override
-  Future<void> perform(CallContext ctx) async {
+  void perform(CallContext ctx) {
     final actives = ctx.actives.copy();
     if (actives.length == ctx.dancers.length)
       throw CallError('Who is going to Ripple?');
@@ -66,20 +66,20 @@ You can specify the direction with Left Ripple or Right Ripple.''';
 
     for (var i=0; i<count; i++) {
       final traders = _findTraders(ctx,actives);
-      await ctx.subContext(traders, (ctx2) async {
+      ctx.subContext(traders, (ctx2) {
         for (final d in ctx2.dancers)
           d.data.active = true;
-        await ctx2.applyCalls('Trade');
+        ctx2.applyCalls('Trade');
       });
       ctx.extendPaths();
       _isRight = { for (final d in actives) d : !_isRight[d]! };
     }
     if (half) {
       final traders = _findTraders(ctx, actives);
-      await ctx.subContext(traders, (ctx2) async {
+      ctx.subContext(traders, (ctx2) {
         for (final d in ctx2.dancers)
           d.data.active = true;
-        await ctx2.applyCalls('Hinge');
+        ctx2.applyCalls('Hinge');
       });
     }
   }

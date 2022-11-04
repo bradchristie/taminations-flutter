@@ -27,13 +27,13 @@ class TransferAnd extends Action {
   TransferAnd(String name) : super(name);
 
   @override
-  Future<void> perform(CallContext ctx) async {
+  void perform(CallContext ctx) {
     final othercall = name.replaceFirst('Transfer\\s+and\\s+'.ri,'');
     if (othercall.isBlank)
       throw CallError('Transfer and what?');
-    await ctx.applyCalls('Transfer and');
+    ctx.applyCalls('Transfer and');
     ctx.contractPaths();
-    await ctx.applyCalls('Centers $othercall');
+    ctx.applyCalls('Centers $othercall');
   }
 
 }

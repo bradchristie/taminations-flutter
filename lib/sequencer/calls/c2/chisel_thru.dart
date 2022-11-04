@@ -31,19 +31,19 @@ class ChiselThru extends Action with CallWithParts {
   ChiselThru() : super('Chisel Thru');
 
   @override
-  Future<void> performPart1(CallContext ctx) async {
-    await ctx.applyCalls('Concentric Pass In');
+   void performPart1(CallContext ctx) {
+    ctx.applyCalls('Concentric Pass In');
   }
 
   @override
-  Future<void> performPart2(CallContext ctx) async {
+   void performPart2(CallContext ctx) {
     ctx.analyze();
-    await ctx.applyCalls('Pass Thru and 1/4 In');
+    ctx.applyCalls('Pass Thru and 1/4 In');
   }
 
   @override
-  Future<void> performPart3(CallContext ctx) async {
-    await ctx.applyCalls('Pass In');
+   void performPart3(CallContext ctx) {
+    ctx.applyCalls('Pass In');
   }
 
 }

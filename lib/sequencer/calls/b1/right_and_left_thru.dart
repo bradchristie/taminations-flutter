@@ -30,13 +30,13 @@ If the Courtesy Turn is not a boy turning a girl, the level will be marked Plus.
   RightAndLeftThru(String name) : super(name);
 
   @override
-  Future<void> performPart1(CallContext ctx) async {
-    await ctx.applyCalls('Pull By');
+   void performPart1(CallContext ctx) {
+    ctx.applyCalls('Pull By');
   }
 
   @override
-  Future<void> performPart2(CallContext ctx) async {
-    await ctx.applyCalls('Courtesy Turn');
+   void performPart2(CallContext ctx) {
+    ctx.applyCalls('Courtesy Turn');
   }
 
 }

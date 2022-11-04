@@ -31,10 +31,10 @@ class DiamondCirculate extends Action {
   DiamondCirculate() : super('Diamond Circulate');
 
   @override
-  Future<void> perform(CallContext ctx) async {
+  void perform(CallContext ctx) {
     if (ctx.actives.length != 4)
       throw CallError('Unable to calculate Diamond Circulate');
-    await super.perform(ctx);
+    super.perform(ctx);
   }
 
   @override

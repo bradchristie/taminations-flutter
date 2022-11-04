@@ -26,8 +26,8 @@ class MiniBusyBut extends Action {
   MiniBusyBut(String name) : super(name);
 
   @override
-  Future<void> perform(CallContext ctx) async {
-    await  ctx.applyCalls('_Mini-Busy But','Center 4 '+name.replaceFirst('.*But'.r,''));
+  void perform(CallContext ctx) {
+     ctx.applyCalls('_Mini-Busy But','Center 4 '+name.replaceFirst('.*But'.r,''));
   }
 
 }

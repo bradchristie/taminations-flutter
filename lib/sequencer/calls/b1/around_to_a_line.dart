@@ -31,18 +31,18 @@ class AroundToALine extends Action {
   AroundToALine(String name) : super(name);
 
   @override
-  Future<void> perform(CallContext ctx) async {
+  void perform(CallContext ctx) {
     if (ctx.actives.length < ctx.dancers.length) {
       ctx.matchStandardFormation();
       for (var d in ctx.dancers)
         d.data.active = true;
       final norm = TamUtils.normalizeCall(name).toLowerCase();
       if (norm.contains('1andcomeintothemiddle' ))
-        await ctx.applyCalls('Around One and Come Into the Middle' );
+        ctx.applyCalls('Around One and Come Into the Middle' );
       else if (norm.contains('1toaline' ))
-        await  ctx.applyCalls('Around One To A Line' );
+        ctx.applyCalls('Around One To A Line' );
       else if (norm.contains('2toaline' ))
-        await  ctx.applyCalls('Around Two To A Line' );
+        ctx.applyCalls('Around Two To A Line' );
       else
         throw CallError('Go Around What?' );
     }

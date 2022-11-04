@@ -33,13 +33,13 @@ On Cross Chain and Roll, the ends Roll after the Courtesy Turn and all adjust to
   CrossChainThru(name) : super(name);
 
   @override
-  Future<void> performPart1(CallContext ctx) async {
-    await ctx.applyCalls('Pull By');
+   void performPart1(CallContext ctx) {
+    ctx.applyCalls('Pull By');
     ctx.adjustToFormation('Eight Chain Thru');
   }
 
   @override
-  Future<void> performPart2(CallContext ctx) async {
+   void performPart2(CallContext ctx) {
     var turnFraction = '1/2';
     switch (turnStarAmount) {
       case 1 : turnFraction = '1/4'; break;
@@ -49,7 +49,7 @@ On Cross Chain and Roll, the ends Roll after the Courtesy Turn and all adjust to
       default : throw CallError('Unable to turn the star that amount');
     }
     final andRoll = name.endsWith('Roll') ? 'and Roll' : '';
-    await ctx.applyCalls('Outer 4 Courtesy Turn $andRoll While '
+    ctx.applyCalls('Outer 4 Courtesy Turn $andRoll While '
         'Center 4 Left-Hand Star $turnFraction $andRoll');
   }
 

@@ -27,7 +27,7 @@ class WithTheFlow extends ActivesOnlyAction {
   WithTheFlow(String name) : super(name);
 
   @override
-  Future<void> perform(CallContext ctx) async {
+  void perform(CallContext ctx) {
     if (ctx.dancers.any((d) => !ctx.isInCouple(d)))
       throw CallError('Only couples can do With the Flow');
     var isLeft = true;
@@ -41,9 +41,9 @@ class WithTheFlow extends ActivesOnlyAction {
     }
     //  Rolling direction determines who walks and who dodges
     if (isRight)
-      await ctx.applyCalls('Beau Walk Belle Dodge');
+      ctx.applyCalls('Beau Walk Belle Dodge');
     else if (isLeft)
-      await ctx.applyCalls('Belle Walk Beau Dodge');
+      ctx.applyCalls('Belle Walk Beau Dodge');
     else
       throw CallError('All dancers must be moving the same direction for With the Flow');
   }

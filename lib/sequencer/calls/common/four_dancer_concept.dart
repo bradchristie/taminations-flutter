@@ -56,7 +56,7 @@ abstract class FourDancerConcept extends ActivesOnlyAction {
   void postAdjustment(CallContext ctx, Dancer cd, List<Dancer> group) { }
 
   @override
-  Future<void> perform(CallContext ctx) async {
+  void perform(CallContext ctx) {
     //  Get dancer groups
     var groups = dancerGroups(ctx);
     //  Create a concept dancer for each group dancer
@@ -87,7 +87,7 @@ abstract class FourDancerConcept extends ActivesOnlyAction {
     //  And apply the call
     if (realCall.isBlank)
       throw CallError('$conceptName what?');
-    await conceptctx.applyCalls(realCall);
+    conceptctx.applyCalls(realCall);
     //conceptctx.matchStandardFormation();
     //  Hook for concept to see the result
     conceptctx.animate(0.0);

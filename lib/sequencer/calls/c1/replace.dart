@@ -29,7 +29,7 @@ class Replace extends Action {
   Replace(String name) : super(name);
 
   @override
-  Future<void> perform(CallContext ctx) async {
+  void perform(CallContext ctx) {
     final callName = name.replaceFirst('(but )?replace .*'.ri,'').trim();
     if (callName.isBlank)
       throw CallError('Replace what?');
@@ -37,11 +37,11 @@ class Replace extends Action {
       throw CallError('Need to replace With some other call');
     final replacementName = name.replaceFirst('.* with'.ri, '').trim();
     final partName = name.replaceFirst('.*replace( the)?'.ri,'').replaceFirst('with.*'.ri,'').trim();
-    await ctx.subContext(ctx.dancers, (ctx2) async {
+    ctx.subContext(ctx.dancers, (ctx2) {
       if (!ctx2.matchCodedCall(callName))
         throw CallError('Unable to find $callName as a Call with Parts');
-      final replacement = (CallContext ctx3) async {
-        await ctx3.applyCalls(replacementName);
+      final replacement = (CallContext ctx3) {
+        ctx3.applyCalls(replacementName);
       };
       if (ctx2.callstack.last is CallWithParts) {
         final call = ctx2.callstack.last as CallWithParts;
@@ -53,7 +53,7 @@ class Replace extends Action {
       }
       else
         throw CallError('Can only Replace in a call with Parts');
-      await ctx2.performCall();
+      ctx2.performCall();
     });
   }
 

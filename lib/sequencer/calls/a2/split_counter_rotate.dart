@@ -26,13 +26,13 @@ class SplitCounterRotate extends Action {
   SplitCounterRotate(name) : super(name);
 
   @override
-  Future<void> perform(CallContext ctx) async {
+  void perform(CallContext ctx) {
     //  TODO diamonds, etc
     final boxes = ctx.boxes() ??
         thrower(CallError('Must have boxes for Split Counter Rotate'))!;
     for (final boxDancers in boxes) {
-      await ctx.subContext(boxDancers, (ctx2) async {
-        await ctx2.applyCalls('Box Counter Rotate');
+      ctx.subContext(boxDancers, (ctx2) {
+        ctx2.applyCalls('Box Counter Rotate');
       });
     }
   }

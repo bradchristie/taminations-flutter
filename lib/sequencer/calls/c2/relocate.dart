@@ -29,8 +29,8 @@ class Relocate extends Action {
 
 
   @override
-  Future<void> perform(CallContext ctx) async {
-    await ctx.applyCalls('Outer 6 Counter Rotate While Very Centers Cast Off 3/4');
+  void perform(CallContext ctx) {
+    ctx.applyCalls('Outer 6 Counter Rotate While Very Centers Cast Off 3/4');
   }
 
 }

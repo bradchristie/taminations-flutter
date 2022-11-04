@@ -30,28 +30,28 @@ class HubsTrade extends ActivesOnlyAction with CallWithParts {
   HubsTrade(String name) : super(name);
 
   @override
-  Future<void> perform(CallContext ctx) async {
+  void perform(CallContext ctx) {
     print(ctx.dancers.show());
     print('$name: isLines: ${ctx.isLines()}');
     if (!ctx.isLines() && !ctx.isThar())
       throw CallError('Cannot do $name from here');
-    await super.perform(ctx);
+    super.perform(ctx);
   }
 
   @override
-  Future<void> performPart1(CallContext ctx) async {
-    await ctx.applyCalls('Trade');
+   void performPart1(CallContext ctx) {
+    ctx.applyCalls('Trade');
   }
 
   @override
-  Future<void> performPart2(CallContext ctx) async {
+   void performPart2(CallContext ctx) {
     ctx.analyze();
     final otherCall = name.replaceFirst('(Hubs|Rims) Trade'.ri, '').trim()
         .replaceFirst('^Back'.ri, 'Circulate');
     if (otherCall.isBlank)
       throw CallError('$name what?');
     final who = name.startsWith('Hubs') ? 'Ends' : 'Centers';
-    await ctx.applyCalls('$who $otherCall');
+    ctx.applyCalls('$who $otherCall');
   }
 
 }

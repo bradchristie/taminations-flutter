@@ -29,10 +29,10 @@ class Cloverleaf extends Action {
   //  We get here only if standard Cloverleaf with all 8 dancers active fails.
   //  So do a 4-dancer cloverleaf
   @override
-  Future<void> perform(CallContext ctx) async {
+  void perform(CallContext ctx) {
     final adjust = ctx.is2x4() && ctx.center(4).every((d) => d.isFacingOut)
         ? 'Adjust to a Box' : 'Nothing';
-    await ctx.applyCalls('Clover and $adjust');
+    ctx.applyCalls('Clover and $adjust');
   }
 
 }
@@ -46,7 +46,7 @@ class CloverAnd extends Action {
   CloverAnd(String name) : super(name);
 
   @override
-  Future<void> perform(CallContext ctx) async {
+  void perform(CallContext ctx) {
     //  Find the 4 dancers to Cloverleaf
     //  First check the outer 4
     final outer4 = ctx.dancers.sortedBy((d) => d.location.length).drop(4).toList();
@@ -87,18 +87,18 @@ class CloverAnd extends Action {
     final call2 = name.split('and');
     final cloverCall = call2.first;
     final andCall = call2.drop(1).join('and');
-    await ctx.subContext(clovers, (ctx2) async {
-      await ctx2.applyCalls('$cloverCall and');
+    ctx.subContext(clovers, (ctx2) {
+      ctx2.applyCalls('$cloverCall and');
       //  "Clover and <nothing>" is stored in A-1 but is really Mainstream
       ctx2.level = LevelData.MS;
     });
     //  And the other 4 do the next call at the same time
-    await ctx.subContext(ctx.dancers.where((d) => !clovers.contains(d)).toList(), (ctx2) async {
+    ctx.subContext(ctx.dancers.where((d) => !clovers.contains(d)).toList(), (ctx2) {
       for (final d in ctx2.dancers)
         d.data.active = true;
       if (othersStep)
-        await ctx2.applyCalls('Step');
-      await ctx2.applyCalls(andCall);
+        ctx2.applyCalls('Step');
+      ctx2.applyCalls(andCall);
     });
   }
 

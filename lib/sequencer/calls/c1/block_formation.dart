@@ -29,7 +29,7 @@ class BlockFormation extends Action {
   BlockFormation(String name) : super(name);
 
   @override
-  Future<void> perform(CallContext ctx) async {
+  void perform(CallContext ctx) {
     final blockCall = name.replaceAll('.*?block'.ri, '').trim();
     final blockFormation = CallContext.fromXML(TamUtils.getFormation('Blocks'));
     final match = blockFormation.matchFormations(ctx,rotate:90);
@@ -42,9 +42,9 @@ class BlockFormation extends Action {
     final ctx2 = CallContext.fromContext(ctx,
         dancers:[ ctx.dancers[map[1]],ctx.dancers[map[4]],
                   ctx.dancers[map[3]],ctx.dancers[map[6]]]);
-      await ctx1.applyCalls(blockCall);
+      ctx1.applyCalls(blockCall);
       ctx1.appendToSource();
-      await ctx2.applyCalls(blockCall);
+      ctx2.applyCalls(blockCall);
       ctx2.appendToSource();
       ctx.adjustToFormation('Blocks',rotate: 90);
   }

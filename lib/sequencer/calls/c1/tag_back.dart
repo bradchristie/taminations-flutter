@@ -31,14 +31,14 @@ class TagBack extends Action with CallWithParts {
   TagBack(String name) : super(name);
 
   @override
-  Future<void> performPart1(CallContext ctx) async {
+   void performPart1(CallContext ctx) {
     final left = name.startsWith('Left') ? 'Left' : '';
-    await ctx.applyCalls('$left Half Tag');
+    ctx.applyCalls('$left Half Tag');
   }
 
   @override
-  Future<void> performPart2(CallContext ctx) async {
-    await ctx.applyCalls('Scoot Back');
+   void performPart2(CallContext ctx) {
+    ctx.applyCalls('Scoot Back');
   }
 
 }

@@ -31,14 +31,14 @@ class Ramble extends Action with CallWithParts {
   Ramble() : super('Ramble');
 
   @override
-  Future<void> performPart1(CallContext ctx) async {
-    await ctx.applyCalls('Center 4 Single Wheel While Outer 4 Separate');
+   void performPart1(CallContext ctx) {
+    ctx.applyCalls('Center 4 Single Wheel While Outer 4 Separate');
     ctx.matchStandardFormation(); // So "I" formations work
   }
 
   @override
-  Future<void> performPart2(CallContext ctx) async {
-    await ctx.applyCalls('Slide Thru');
+   void performPart2(CallContext ctx) {
+    ctx.applyCalls('Slide Thru');
   }
 
 }
