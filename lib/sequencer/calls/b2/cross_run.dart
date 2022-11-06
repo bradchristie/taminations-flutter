@@ -30,7 +30,7 @@ class CrossRun extends ActivesOnlyAction {
 
   @override
   void perform(CallContext ctx) {
-    var spec = name.replaceFirst('Cross Run' , '' );
+    var spec = name.replaceFirst('Cross\\s*Run'.ri , '' );
     if (spec.isBlank)
       throw CallError('Who is going to Cross Run?');
     var specCtx = CallContext.fromContext(ctx);
