@@ -128,21 +128,21 @@
        from="Right-Hand Waves"
        formation="Ocean Waves RH BGGB">
     <path>
-      <move select="Extend Right" beats="2" scaleX="2" scaleY=".5" />
+      <move select="Extend Right" beats="2" scaleX="2" scaleY="2" />
       <move select="Quarter Left" hands="left" offsetX="1" />
       <move select="U-Turn Left" />
     </path>
     <path>
-      <move select="Extend Right" scaleY=".5" />
+      <move select="Forward" scaleY=".5" />
       <move select="Belle Wheel" />
     </path>
     <path>
-      <move select="Extend Right" scaleY=".5" />
-      <move select="Beau Wheel" />
+      <move select="Extend Right" beats="2" scaleX="2" scaleY="2" />
+      <move select="Hinge Left" offsetY="1" />
     </path>
     <path>
-      <move select="Extend Right" beats="2" scaleX="2" scaleY="2.5" />
-      <move select="Hinge Left" offsetY="1" />
+      <move select="Extend Right" scaleY="2" />
+      <move select="Beau Wheel" />
     </path>
   </tam>
 
