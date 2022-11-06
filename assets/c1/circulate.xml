@@ -24,13 +24,13 @@
 
   <tam title="Circulate" from="Thar" formation="Thar RH Boys">
     <path>
-      <move select="Lead Right" beats="4"/>
+      <move select="Lead Right" hands="right" beats="4"/>
     </path>
     <path>
       <move select="Lead Left" beats="4" scaleX="3" scaleY="3"/>
     </path>
     <path>
-      <move select="Lead Right" beats="4"/>
+      <move select="Lead Right" hands="right" beats="4"/>
     </path>
     <path>
       <move select="Lead Left" beats="4" scaleX="3" scaleY="3"/>
@@ -39,16 +39,46 @@
 
   <tam title="Circulate" from="Wrong Way Thar" formation="Thar LH Boys">
     <path>
-      <move select="Lead Left" beats="4"/>
+      <move select="Lead Left" hands="left" beats="4"/>
     </path>
     <path>
       <move select="Lead Right" beats="4" scaleX="3" scaleY="3"/>
     </path>
     <path>
-      <move select="Lead Left" beats="4"/>
+      <move select="Lead Left" hands="left" beats="4"/>
     </path>
     <path>
       <move select="Lead Right" beats="4" scaleX="3" scaleY="3"/>
+    </path>
+  </tam>
+
+  <tam title="Circulate" from="Star Promenade" formation="Star Promenade">
+    <path>
+      <move select="Lead Left" hands="both" beats="4"/>
+    </path>
+    <path>
+      <move select="Lead Left" hands="left" beats="4" scaleX="3" scaleY="3"/>
+    </path>
+    <path>
+      <move select="Lead Left" hands="both" beats="4"/>
+    </path>
+    <path>
+      <move select="Lead Left" hands="left" beats="4" scaleX="3" scaleY="3"/>
+    </path>
+  </tam>
+
+  <tam title="Circulate" from="Reverse Star Promenade" formation="Reverse Star Promenade">
+    <path>
+      <move select="Lead Right" hands="right" beats="4" scaleX="3" scaleY="3"/>
+    </path>
+    <path>
+      <move select="Lead Right" hands="both" beats="4"/>
+    </path>
+    <path>
+      <move select="Lead Right" hands="right" beats="4" scaleX="3" scaleY="3"/>
+    </path>
+    <path>
+      <move select="Lead Right" hands="both" beats="4"/>
     </path>
   </tam>
 
