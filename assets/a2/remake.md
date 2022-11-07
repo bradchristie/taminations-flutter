@@ -5,7 +5,7 @@
 
 Timing: Alamo 12, others 10
 
-From a Right Hand Mini-Wave Box, or a Left-Hand Facing Ciamond:
+From a Right Hand Mini-Wave Box, or a Left-Hand Facing Diamond:
 ***Those who can Turn 1/4 by the Right,***
 ***those who can Turn 1/2 by the Left,***
 and ***those who can Turn 3/4 by the Right.***
