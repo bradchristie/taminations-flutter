@@ -40,6 +40,7 @@
     </path>
   </tam>
 
+  <!--  too weird
   <tam title="Bend the Line and Spread" group=" "
        from="Lines"
        formation="Normal Lines"
@@ -60,7 +61,7 @@
       This looks like a nice call, but I've never seen it used,
       and doubt many dancers would know how to do it.
     </taminator>
-  </tam>
+  </tam>  -->
 
   <tam title="Cloverleaf and Spread" group=" "
        from="Completed Double Pass Thru"
@@ -167,18 +168,22 @@
   <tam title="Ferris Wheel and Spread" group=" "
        from="Right-Handed Two-Faced Lines"
        formation="Two-Faced Lines RH"
-       fractions="" difficulty="1">
+       difficulty="1">
     <path>
-      <move select="Run Right" beats="6" hands="right" scaleX="2" scaleY="2" offsetX="4" offsetY="-2" />
+      <move select="Run Right" beats="4" hands="right" scaleX="2" scaleY="2.5" offsetX="3.5" />
+      <move select="Dodge Left" beats="1" scaleY=".5" offsetX="-.5"/>
     </path>
     <path>
-      <move select="U-Turn Right" beats="6" hands="left" offsetX="4" offsetY="2" />
+      <move select="U-Turn Right" beats="4" hands="left" offsetX="3.5" offsetY="1" />
+      <move select="Dodge Right" beats="1" scaleY=".5" offsetX="-.5"/>
     </path>
     <path>
-      <move select="U-Turn Right" beats="6" hands="gripleft" />
+      <move select="U-Turn Right" beats="4" hands="gripleft" offsetX="1" />
+      <move select="Forward" hands="left"/>
     </path>
     <path>
-      <move select="Run Right" beats="6" hands="gripright" scaleX="2" scaleY="2" />
+      <move select="Run Right" beats="4" hands="gripright" scaleX="2" scaleY="2" offsetX="1" />
+      <move select="Forward" hands="right"/>
     </path>
   </tam>
 
