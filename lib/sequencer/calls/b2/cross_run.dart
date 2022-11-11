@@ -40,7 +40,11 @@ class CrossRun extends ActivesOnlyAction {
     if (runners.length > dodgers.length)
       throw CallError('Not valid arrangement for Cross Run');
     //  Runners must be all ends or all centers
-    if (runners.any((d) => d.data.end) && runners.any((d) => d.data.center))
+    //  In a 1/4 tag, center 4 are all centers, and the ends of that wave
+    //  are also ends, which makes this check a little trickier
+    var endsOnly = runners.where((d) => d.data.end && !d.data.center);
+    var centersOnly = runners.where((d) => d.data.center && !d.data.end);
+    if (endsOnly.isNotEmpty && centersOnly.isNotEmpty)
       throw CallError('Cross Run dancers must be all ends or all centers');
     var realDodgers = <Dancer>[];
     for (var d in runners) {
