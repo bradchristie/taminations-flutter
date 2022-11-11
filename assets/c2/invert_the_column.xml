@@ -112,7 +112,7 @@
     </taminator>
   </tam>
 
-  <tam title="Magic Column Invert the Column" from="Right-Hand Columns"
+  <tam title="Magic Column Invert the Column"
        fractions="5;3;4" group=" ">
     <formation>
       <dancer gender="boy" x="-3" y="1" angle="0"/>
@@ -144,6 +144,41 @@
       <move select="Forward" beats="3" />
       <move select="Forward" beats="4"/>
       <move select="Extend Left" beats="3" scaleY="2"/>
+    </path>
+  </tam>
+
+  <tam title="Magic Column Invert the Column"
+       fractions="5;3;4" group=" " display="no">
+    <formation>
+      <dancer gender="boy" x="-3" y="1" angle="180"/>
+      <dancer gender="girl" x="-1" y="-1" angle="180"/>
+      <dancer gender="boy" x="1" y="-1" angle="180"/>
+      <dancer gender="girl" x="3" y="1" angle="180"/>
+    </formation>
+    <path>
+      <move select="Run Right" offsetX="-1"/>
+      <move select="Forward 2"/>
+      <move select="Forward" beats="3" />
+      <move select="Forward" beats="4"/>
+      <move select="Extend Right" beats="3" scaleY="2"/>
+    </path>
+    <path>
+      <move select="Extend Right" beats="5" scaleY="2" />
+      <move select="Run Right" offsetX="-1"/>
+      <move select="Forward" beats="4"/>
+      <move select="Extend Right" beats="3" scaleY="2"/>
+    </path>
+    <path>
+      <move select="Forward" beats="5"/>
+      <move select="Forward" beats="3"/>
+      <move select="Run Right" beats="4" scaleY="2" offsetX="1"/>
+      <move select="Extend Right" beats="3" scaleY="2"/>
+    </path>
+    <path>
+      <move select="Forward" beats="5" />
+      <move select="Extend Left" beats="3" scaleY="2" />
+      <move select="Forward" beats="4"/>
+      <move select="Run Right" offsetX="3"/>
     </path>
   </tam>
 
