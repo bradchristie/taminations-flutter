@@ -211,6 +211,7 @@
     </path>
   </tam>
 
+  <!--
   <tam title="Right-Hand Star 1/4" group=" "
        formation="Facing Couples Compact">
     <path>
@@ -432,6 +433,202 @@
       <move select="Hinge Left" beats="2"/>
       <move select="Swing Left" beats="4"/>
       <move select="Forward" hands="left"/>
+    </path>
+  </tam>
+  -->
+
+  <tam title="Right-Hand Star 1/4" formation="Eight Chain Thru" group=" ">
+    <path>
+      <move select="Forward" hands="right"/>
+      <move select="Forward" hands="right"/>
+    </path>
+    <path>
+      <move select="Quarter Left" beats="1" hands="right" offsetY="1"/>
+      <move select="Quarter Right" beats="1" hands="right" offsetX="1"/>
+    </path>
+    <path>
+      <move select="Forward" hands="right"/>
+      <move select="U-Turn Right" beats="1" offsetX="1"/>
+    </path>
+    <path>
+      <move select="Quarter Left" beats="1" hands="right" offsetY="1"/>
+      <move select="Quarter Left" beats="1" hands="right" offsetX="1"/>
+    </path>
+    <taminator>
+      This and the following animations assume ending in a Double
+      Pass Thru formation, as that is commonly assumed especially for singing calls.
+    </taminator>
+  </tam>
+
+  <tam title="Right-Hand Star 1/2" group=" "
+       formation="Eight Chain Thru">
+    <path>
+      <move select="Forward" hands="right"/>
+      <move select="Hinge Right" beats="2"/>
+      <move select="Quarter Left" beats="1" hands="right" offsetX="1"/>
+    </path>
+    <path>
+      <move select="Quarter Left" beats="1" hands="right" offsetY="1"/>
+      <move select="Hinge Right" beats="2"/>
+      <move select="Forward" hands="right"/>
+    </path>
+    <path>
+      <move select="Forward" hands="right"/>
+      <move select="Hinge Right" beats="2"/>
+      <move select="Quarter Right" beats="1" hands="right" offsetX="1"/>
+    </path>
+    <path>
+      <move select="Quarter Left" beats="1" hands="right" offsetY="1"/>
+      <move select="Hinge Right" beats="2"/>
+      <move select="U-Turn Right" beats="1" offsetX="1"/>
+    </path>
+  </tam>
+
+  <tam title="Right-Hand Star 3/4" group=" "
+       formation="Eight Chain Thru">
+    <path>
+      <move select="Forward" hands="right"/>
+      <move select="Swing Right" beats="4"/>
+      <move select="U-Turn Right" beats="1" offsetX="1"/>
+    </path>
+    <path>
+      <move select="Quarter Left" beats="1" hands="right" offsetY="1"/>
+      <move select="Swing Right" beats="4"/>
+      <move select="Quarter Left" beats="1" hands="right" offsetX="1"/>
+    </path>
+    <path>
+      <move select="Forward" hands="right"/>
+      <move select="Swing Right" beats="4"/>
+      <move select="Forward" hands="right"/>
+    </path>
+    <path>
+      <move select="Quarter Left" beats="1" hands="right" offsetY="1"/>
+      <move select="Swing Right" beats="4"/>
+      <move select="Quarter Right" beats="1" hands="right" offsetX="1"/>
+    </path>
+  </tam>
+
+  <tam title="Right-Hand Star a Full Turn" group=" "
+       formation="Eight Chain Thru">
+    <path>
+      <move select="Forward" hands="right"/>
+      <move select="Hinge Right" beats="2"/>
+      <move select="Swing Right" beats="4"/>
+      <move select="Quarter Right" beats="1" hands="right" offsetX="1"/>
+    </path>
+    <path>
+      <move select="Quarter Left" beats="1" hands="right" offsetY="1"/>
+      <move select="Hinge Right" beats="2"/>
+      <move select="Swing Right" beats="4"/>
+      <move select="U-Turn Right" beats="1" offsetX="1"/>
+    </path>
+    <path>
+      <move select="Forward" hands="right"/>
+      <move select="Hinge Right" beats="2"/>
+      <move select="Swing Right" beats="4"/>
+      <move select="Quarter Left" beats="1" hands="right" offsetX="1"/>
+    </path>
+    <path>
+      <move select="Quarter Left" beats="1" hands="right" offsetY="1"/>
+      <move select="Hinge Right" beats="2"/>
+      <move select="Swing Right" beats="4"/>
+      <move select="Forward" hands="right"/>
+    </path>
+  </tam>
+
+  <tam title="Left-Hand Star 1/4" group=" "
+       formation="Eight Chain Thru">
+    <path>
+      <move select="Quarter Right" beats="1" hands="left" offsetY="-1"/>
+      <move select="Quarter Left" beats="1" hands="left" offsetX="1"/>
+    </path>
+    <path>
+      <move select="Forward" hands="left"/>
+      <move select="Forward" hands="left"/>
+    </path>
+    <path>
+      <move select="Quarter Right" beats="1" hands="left" offsetY="-1"/>
+      <move select="Quarter Right" beats="1" hands="left" offsetX="1"/>
+    </path>
+    <path>
+      <move select="Forward" hands="left"/>
+      <move select="U-Turn Left" beats="1" offsetX="1"/>
+    </path>
+  </tam>
+
+  <tam title="Left-Hand Star 1/2" group=" "
+       formation="Eight Chain Thru">
+    <path>
+      <move select="Quarter Right" beats="1" hands="left" offsetY="-1"/>
+      <move select="Hinge Left" beats="2"/>
+      <move select="Forward" hands="left"/>
+    </path>
+    <path>
+      <move select="Forward" hands="left"/>
+      <move select="Hinge Left" beats="2"/>
+      <move select="Quarter Right" beats="1" hands="left" offsetX="1"/>
+    </path>
+    <path>
+      <move select="Quarter Right" beats="1" hands="left" offsetY="-1"/>
+      <move select="Hinge Left" beats="2"/>
+      <move select="U-Turn Left" beats="1" offsetX="1"/>
+    </path>
+    <path>
+      <move select="Forward" hands="left"/>
+      <move select="Hinge Left" beats="2"/>
+      <move select="Quarter Left" beats="1" hands="left" offsetX="1"/>
+    </path>
+  </tam>
+
+  <tam title="Left-Hand Star 3/4" group=" "
+       formation="Eight Chain Thru">
+    <path>
+      <move select="Quarter Right" beats="1" hands="left" offsetY="-1"/>
+      <move select="Swing Left" beats="4"/>
+      <move select="Quarter Right" beats="1" hands="left" offsetX="1"/>
+    </path>
+    <path>
+      <move select="Forward" hands="left"/>
+      <move select="Swing Left" beats="4"/>
+      <move select="U-Turn Left" beats="1" offsetX="1"/>
+    </path>
+    <path>
+      <move select="Quarter Right" beats="1" hands="left" offsetY="-1"/>
+      <move select="Swing Left" beats="4"/>
+      <move select="Quarter Left" beats="1" hands="left" offsetX="1"/>
+    </path>
+    <path>
+      <move select="Forward" hands="left"/>
+      <move select="Swing Left" beats="4"/>
+      <move select="Forward" hands="left"/>
+    </path>
+  </tam>
+
+  <tam title="Left-Hand Star a Full Turn" group=" "
+       formation="Eight Chain Thru">
+    <path>
+      <move select="Quarter Right" beats="1" hands="left" offsetY="-1"/>
+      <move select="Hinge Left" beats="2"/>
+      <move select="Swing Left" beats="4"/>
+      <move select="U-Turn Left" beats="1" offsetX="1"/>
+    </path>
+    <path>
+      <move select="Forward" hands="left"/>
+      <move select="Hinge Left" beats="2"/>
+      <move select="Swing Left" beats="4"/>
+      <move select="Quarter Left" beats="1" hands="left" offsetX="1"/>
+    </path>
+    <path>
+      <move select="Quarter Right" beats="1" hands="left" offsetY="-1"/>
+      <move select="Hinge Left" beats="2"/>
+      <move select="Swing Left" beats="4"/>
+      <move select="Forward" hands="left"/>
+    </path>
+    <path>
+      <move select="Forward" hands="left"/>
+      <move select="Hinge Left" beats="2"/>
+      <move select="Swing Left" beats="4"/>
+      <move select="Quarter Right" beats="1" hands="left" offsetX="1"/>
     </path>
   </tam>
 
