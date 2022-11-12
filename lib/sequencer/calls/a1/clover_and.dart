@@ -51,7 +51,8 @@ class CloverAnd extends Action {
     //  First check the outer 4
     final outer4 = ctx.dancers.sortedBy((d) => d.location.length).drop(4).toList();
     //  If that fails will try for 4 dancers facing out
-    final facingOut = ctx.dancers.where((d) => d.isFacingOut).toList();
+    final facingOut = ctx.dancers.where((d) =>
+             d.isFacingOut && ctx.dancerInFront(d)==null).toList();
     List<Dancer> clovers;
     //  Don't use outer4 directly, instead filter facingOut
     //  This preserves the original order, required for mapping
