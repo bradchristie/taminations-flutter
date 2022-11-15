@@ -20,15 +20,21 @@ Call pronunciations provided by
 
 ---
 
-## Taminations version 1.6.48 built 2022-09-22
+## Taminations version 1.6.49 built 2022-11-15
 Copyright 2022 by Brad Christie.  
 This is free software, and you are welcome to modify and redistribute it
 under the terms of the [GNU GPL license](http://www.gnu.org/licenses/gpl.html).  
 
 ## What's New
+* More animations for Siamese Concept
+* Move animations for Split Counter Rotate from diamonds from C-1 to A-2
+* Fix animation for Grand Chain Eight from waves
+* Animations for Circle 2
+* Animations for Inside Path / Outside Path Ping Pong Circulate
+* Animations for Stars as commonly used in singing calls
 * Sequencer changes:
-  * Fix for Triple Box Circulate
-  * Fix display of some animations, especially from Squared Set
+  * Fix freezes/crashes on some Circulate or Cross Run calls
+  * Improvements for Clover And (anything) from some formations
 
 For a detailed history of changes, view the
 [Git log](https://github.com/bradchristie/taminations-flutter/commits/main)
