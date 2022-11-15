@@ -29,7 +29,7 @@ class Touch extends Action {
   @override
   Path performOne(Dancer d, CallContext ctx) {
     var d2 = ctx.dancerFacing(d);
-    if (d2 == null)
+    if (d2 == null || !d2.data.active)
       return ctx.dancerCannotPerform(d,name);
     var dist = d.distanceTo(d2);
     var dir = name.contains('Left') ? 'Right' : 'Left';
