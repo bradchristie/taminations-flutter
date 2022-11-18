@@ -467,7 +467,7 @@ abstract class CodedCall extends Call {
     '(left|right)rolltoawave'.ri: (name) => RollToAWave(name),
     'rotary'.ri: (name) => Rotary(name),
     '(left)?rotaryspin'.ri: (name) => RotarySpin(name),
-    'rotate(14|12|34)?'.ri: (name) => Rotate(name),
+    '(reverse)?rotate(14|12|34)?'.ri: (name) => Rotate(name),
     'run(left|right)?'.ri: (name) => Run(name),
 
     'samesex(es)?.+'.ri: (name) => SameSex(name),

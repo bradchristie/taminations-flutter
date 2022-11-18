@@ -28,18 +28,19 @@ class Rotate extends Action {
 
   @override
   void perform(CallContext ctx) {
+    final isReverse = name.contains('Reverse');
     if (!ctx.isLines() || !ctx.dancers.every((d) => ctx.isInCouple(d)))
       throw CallError('Unable to Rotate from this formation');
     final leaders = ctx.dancers.where((d) => d.data.leader).toList();
     final trailers = ctx.dancers.where((d) => d.data.trailer).toList();
     if (leaders.isNotEmpty) {
       ctx.subContext(leaders, (ctx2) {
-        ctx2.applyCalls('Half Wheel Around');
+        ctx2.applyCalls('Half ${isReverse ? 'Reverse' : ''} Wheel Around');
       });
     }
     if (trailers.isNotEmpty) {
       ctx.subContext(trailers, (ctx2) {
-        ctx2.applyCalls('Half Reverse Wheel Around');
+        ctx2.applyCalls('Half ${isReverse ? '' : 'Reverse'} Wheel Around');
       });
     }
     final norm = TamUtils.normalizeCall(name);
