@@ -476,6 +476,53 @@
     </path>
   </tam>
 
+  <tam title="Left Half Tag" from="Right-Hand Two-Faced Line"
+       formation="Two-Faced Line RH" difficulty="3">
+    <path>
+      <move select="Quarter Right" offsetX="-1"/>
+      <move select="Forward"/>
+    </path>
+    <path>
+      <move select="Quarter Right" offsetX="-1"/>
+      <move select="Forward 3"/>
+    </path>
+  </tam>
+
+  <tam title="Left Half Tag"
+       from="Left-Hand Two-Faced Line"
+       formation="Two-Faced Line LH" difficulty="2">
+    <path>
+      <move select="Lead Left" />
+      <move select="Forward 2" />
+    </path>
+    <path>
+      <move select="Lead Left" />
+    </path>
+  </tam>
+
+  <tam title="Left Half Tag" from="Right-Hand Wave"
+       formation="Wave RH" difficulty="2">
+    <path>
+      <move select="Quarter Right" offsetX="-1"/>
+      <move select="Forward"/>
+    </path>
+    <path>
+      <move select="Quarter Left" offsetX="1"/>
+      <move select="Forward 3"/>
+    </path>
+  </tam>
+
+  <tam title="Left Half Tag" from="Left-Hand Wave" formation="Wave LH" difficulty="2">
+    <path>
+      <move select="Quarter Left" offsetX="1"/>
+      <move select="Forward"/>
+    </path>
+    <path>
+      <move select="Quarter Right" offsetX="-1"/>
+      <move select="Forward 3"/>
+    </path>
+  </tam>
+
   <tam title="Left Half Tag" from="Left-Hand Two-Faced Lines"
        formation="Two-Faced Lines LH" difficulty="2">
     <path>
