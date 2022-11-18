@@ -458,22 +458,6 @@ class CallContext {
     throw CallError('Unable to find Action to insert $insertCall');
   }
 
-  //  For now this just checks for collisions in a tidal formation
-  //  If a collision is detected, then the animation is
-  //  squeezed along the axis of the formation
-  void checkForCollisions() {
-    if (isOnAxis() && isCollision()) {
-      var a = isOnXAxis() ? 0.0 : pi/2;
-      for (var d in dancers) {
-        d.animate(0.0);
-        var b = d.angleFacing;
-        var xscale = 1.0-0.5*cos(a+b).abs();
-        var yscale = 1.0 - 0.5*sin(a+b).abs();
-        d.path.scale(xscale,yscale);
-      }
-    }
-  }
-
   void thoseWhoCanOnly() {
     _thoseWhoCan = true;
   }
@@ -929,6 +913,7 @@ class CallContext {
     analyze();
     for (var i=0; i<callstack.length; i++) {
       var c = callstack[i];
+     // print('Performing ${c.name} with object $c');
       c.performCall(this);
       if (i < callstack.length-1)
         analyze();
@@ -956,7 +941,6 @@ class CallContext {
         var minDist = actives.minOf((d) =>
             dancerClosest(d, (d2) => !moving.contains(d2))!.distanceTo(d));
         if (!center(4).containsAll(moving) || !minDist.isGreaterThan(1.0)) {
-          //print('WARNING centers mix with other dancers!');
           animate(0.0);
           final ctx2 = CallContext.fromDancers(center(4));
           if (ctx2.isLines()) {
@@ -1091,9 +1075,10 @@ class CallContext {
           d.animate(0);
         else
           d.animateToEnd();
-        var vd = match.offsets[i].rotate(-d.tx.angle);
+        var vd = -match.offsets[i].rotate(-d.tx.angle);
+        var va = -match.angles[i];
         //  Apply it
-        m = m.skew(-vd.x,-vd.y).twist(-match.angles[i]);
+        m = m.skew(vd.x,vd.y).twist(va);
         if (adjustFirstMovement)
           d.path.unshift(m);
         else

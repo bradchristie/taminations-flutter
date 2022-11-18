@@ -287,13 +287,11 @@ class SequencerModel extends fm.ChangeNotifier {
     else if (call.lc.trim().startsWith('help'))
       showHelp(call);
 
-
     else {
       var prevbeats = animation.beats;
       var cctx = CallContext.fromDancers(animation.dancers);
       cctx.interpretCall(call);
       cctx.performCall();
-      cctx.checkForCollisions();
       cctx.extendPaths();
       if (!cctx.callname.contains('(move in|step|gnat|back\\s*(up|away))'.ri))
         cctx.adjustForSquaredSetCovention();
@@ -305,6 +303,7 @@ class SequencerModel extends fm.ChangeNotifier {
           firstCall is CodedCall ||
           (firstCall is XMLCall && !firstCall.found))
         cctx.matchStandardFormation();
+
       if (cctx.isCollision())
         throw CallError('Unable to calculate valid animation.');
       if (cctx.resolutionError)
