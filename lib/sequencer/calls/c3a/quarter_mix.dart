@@ -35,7 +35,7 @@ class QuarterMix extends Action with CallWithParts {
   QuarterMix(name) :
         isGrand=name.contains('Grand'),
         isLeft=name.contains('Left'),
-        isThree=TamUtils.normalizeCall(name).contains('34'),
+        isThree=normalizeCall(name).contains('34'),
         super(name);
 
   @override

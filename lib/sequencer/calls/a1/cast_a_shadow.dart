@@ -32,7 +32,7 @@ class CastAShadow extends Action {
   @override
   void perform(CallContext ctx) {
     if (ctx.actives.length == 8 &&
-        TamUtils.normalizeCall(name).matches('CastaShadowCenter.*34'.r)) {
+        normalizeCall(name).matches('CastaShadowCenter.*34'.r)) {
       final inCenters = ctx.dancers.where((d) => d.data.center && d.data.trailer);
       if (inCenters.length != 2)
         throw CallError('Need exactly 2 trailing centers to go 3/4.');

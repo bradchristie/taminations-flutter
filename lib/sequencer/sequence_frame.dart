@@ -194,7 +194,7 @@ class _SequencerEditLineState extends fm.State<SequencerEditLine> {
           //  all square dance words
           var call = speech.lastResult!.alternates[i].recognizedWords.replaceAll('\\W'.r, ' ');
           var words = call.split('\\s+'.r)
-              .map((w) => TamUtils.normalizeCall(w).toLowerCase());
+              .map((w) => normalizeCall(w).toLowerCase());
           if (words.every((word) => TamUtils.words.contains(word))) {
             //print('Found call in alternative $i: $call');
             later( () {

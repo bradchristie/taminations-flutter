@@ -50,7 +50,7 @@ You can specify the direction with Left Ripple or Right Ripple.''';
     final actives = ctx.actives.copy();
     if (actives.length == ctx.dancers.length)
       throw CallError('Who is going to Ripple?');
-    final norm = TamUtils.normalizeCall(name);
+    final norm = normalizeCall(name);
     final countstr = norm.replaceFirst('(Right|Left)?Ripple'.r,'')
         .replaceFirst('the(Line|Wave)'.r,'9');
     final half = countstr.endsWith('12');

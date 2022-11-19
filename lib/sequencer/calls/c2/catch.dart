@@ -33,7 +33,7 @@ class Catch extends ActivesOnlyAction with CallWithParts {
   late String direction = name.contains('Left') ? 'Left' : '';
   late String split = name.contains('Split') ? 'Split' : '';
   late String all4 = norm.contains('All4Couples') ? 'All 4 Couples' : '';
-  late int count = TamUtils.normalizeCall(name).last.toIntOrNull()
+  late int count = normalizeCall(name).last.toIntOrNull()
       ?? thrower(CallError('Catch how much?'));
 
   @override

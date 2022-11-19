@@ -37,9 +37,9 @@ class CircleBy extends Action with CallWithParts {
     final a = name.replaceFirst('Circle By','').divide('and');
     if (a.length != 2)
       throw CallError('Circle By <fraction> and <fraction or call>');
-    frac1 = TamUtils.normalizeCall(a[0]);
+    frac1 = normalizeCall(a[0]);
     name2 = a[1];
-    frac2 = TamUtils.normalizeCall(name2);
+    frac2 = normalizeCall(name2);
   }
 
   @override

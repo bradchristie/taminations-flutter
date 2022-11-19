@@ -33,7 +33,7 @@ class Fraction extends Action {
 
   Fraction(String name) : super(name) {
     //  Convert "half", "quarter", "3/5" etc into "12","14","35"
-    var norm = TamUtils.normalizeCall(name);
+    var norm = normalizeCall(name);
     _numerator = norm[0].i;
     _denominator = norm[1].i;
     if (_numerator < 1 || _numerator >= _denominator)

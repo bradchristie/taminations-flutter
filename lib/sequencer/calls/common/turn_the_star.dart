@@ -38,7 +38,7 @@ class TurnTheStar extends Action {
         throw CallError('Unable to find $callName as a Call with Parts');
       if (ctx2.callstack.last is CallWithStars) {
         final call = ctx2.callstack.last as CallWithStars;
-        final amountText = TamUtils.normalizeCall(name.replaceFirst(callName,''));
+        final amountText = normalizeCall(name.replaceFirst(callName,''));
         if (amountText.contains('donot'))
           call.turnStarAmount = 0;
         //  First check for fractions 1/4 1/2 3/4

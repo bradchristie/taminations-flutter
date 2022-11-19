@@ -32,7 +32,7 @@ class VerticalTag extends Action {
     //  This calls performOne below, which performs Vertical 1/4 Tag
     super.perform(ctx);
     //  Now extend as requested
-    final norm = TamUtils.normalizeCall(name);
+    final norm = normalizeCall(name);
     if (norm.contains('12'))
       ctx.applyCalls('Extend');
     else if (norm.contains('34'))

@@ -41,7 +41,7 @@ class And extends FilterActives {
   bool isActive(Dancer d, CallContext ctx) {
     var retval = d.isActive;
     for (var call in ctx.callstack.take(_index)) {
-      var normWords = TamUtils.normalizeCall(call.name).toLowerCase().split(' ');
+      var normWords = normalizeCall(call.name).toLowerCase().split(' ');
       if (normWords.contains('boy'))
         retval &= d.gender == Gender.BOY;
       if (normWords.contains('girl' ))

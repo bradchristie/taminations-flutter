@@ -26,7 +26,7 @@ class ZipCode extends Action with CallWithParts {
   @override var helplink = 'c2/zip_code';
   @override var help = 'Zip Code n has n parts';
   ZipCode(String name) : super(name) {
-    final count = TamUtils.normalizeCall(name).last.toIntOrNull();
+    final count = normalizeCall(name).last.toIntOrNull();
     if (count == null)
       throw CallError('Zip Code how much?');
     if (count >= 1 && count <= 6)

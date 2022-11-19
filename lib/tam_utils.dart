@@ -482,6 +482,8 @@ class TamUtils {
       .replaceAll('\\bm[ea]n\\b'.ri,'Boy')
       .replaceAll('\\bwom[ea]n\\b'.ri,'Girl')
       .replaceAll('\\blad(y|ies)\\b'.ri,'Girl')
+      .replaceAll('\\bflutter\\s+\\wheel\\b'.ri,'Flutterwheel')
+      .replaceAll('\\bcross\\s+\\fire\\b'.ri,'Crossfire')
     //  .replaceAll('\\blead(er)?(ing)?s?\\b'.ri,'Lead')
       .replaceAll('\\btrail(er)?(ing)?s?\\b'.ri,'Trail')
       .replaceAll('\\bcentres?\\b'.ri,'Center')
@@ -494,7 +496,7 @@ class TamUtils {
       .replaceAll('\\ballamande?\\b'.ri,'Allemande')
       .replaceAllMapped('interlocked (flip|cut) the'.ri,
           (m) => '${m[1]} the Interlocked')
-      .replaceAll('walk around your corner'.ri,'WalkAround the Corner')
+      .replaceAll('walk around your corner'.ri,'Walk Around the Corner')
       .replaceAll('on the second hand'.ri,'on 2')
       .replaceAll('on the third hand'.ri,'on 3')
       .replaceAll('on the fou?rth hand'.ri,'on 4')
@@ -537,5 +539,5 @@ class TamUtils {
 }
 
 extension TamUtilsString on String {
-  String get norm => TamUtils.normalizeCall(this);
+  String get norm => normalizeCall(this);
 }

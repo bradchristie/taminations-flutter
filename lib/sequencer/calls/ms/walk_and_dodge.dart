@@ -48,8 +48,8 @@ class WalkAndDodge extends ActivesOnlyAction {
     dodgectx.analyze();
     var walkers = 'trailers';
     var dodgers = 'leaders';
-    if (name != 'Walk and Dodge') {
-      var match = RegExp('(.+) walk(?: and)? (.+) dodge').firstMatch(name.toLowerCase());
+    if (norm != 'WalkandDodge') {
+      var match = RegExp('(.+) walk(?: and|&)? (.+) dodge').firstMatch(name.toLowerCase());
       if (match == null)
         throw CallError('Error parsing Walk and Dodge');
       walkers = match.group(1)!;

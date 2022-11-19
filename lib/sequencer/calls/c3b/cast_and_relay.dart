@@ -44,7 +44,7 @@ The centers part for Part 4 can be changed with But (another call).''';
     '34' : 3
   };
   CastAndRelay(String name) :
-        fraction=TamUtils.normalizeCall(name).substring(0,2),
+        fraction=normalizeCall(name).substring(0,2),
         super(name);
 
   @override

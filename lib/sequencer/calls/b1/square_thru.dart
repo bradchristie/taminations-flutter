@@ -39,7 +39,7 @@ class SquareThru extends Action {
       right = 'Left-Hand' ;
     }
     //  Find out how many hands
-    var norm = TamUtils.normalizeCall(name).toLowerCase();
+    var norm = normalizeCall(name).toLowerCase();
     var extra = '';
     var onHand = norm.indexOf('on(2|3|4|5|6)'.r);
     if (onHand > 0) {

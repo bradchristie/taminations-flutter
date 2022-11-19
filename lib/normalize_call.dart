@@ -21,99 +21,100 @@
 import 'extensions.dart';
 
 /// Standardize a call name to match against other names  */
-String normalizeCall(String callname) => callname
-    .capWords()
-    .trim()
-    .replaceAll('\\(.*\\)'.ri, '')
-    .replaceAll('&', 'and')
-//  Strip all non-alphanums
-//  But keep underscores, used for hidden calls
-//  and dots, used for decimal fractions
-    .replaceAll('[^a-zA-Z0-9_. ]'.ri, '')
-    .replaceAll('\\s+'.ri, ' ')
-//  Through => Thru
-    .replaceAll('\\bthrou?g?h?\\b'.ri, 'Thru')
-//  One and a half
-    .replaceAll('(onc?e and a half)|(1 12)|(15)'.ri, '112')
-//  Process fractions 1/2 3/4 1/4 2/3
-//  Non-alphanums are not used in matching
-//  so these fractions become 12 34 14 23
-//  Fortunately two-digit numbers are not used in calls
-    .replaceAll('\\b12|((a|one).)?half\\b'.ri, '12')
-    .replaceAll('\\b(three.quarters?|34)\\b'.ri, '34')
-    .replaceAll('\\b(((a|one).)?quarter|14)\\b'.ri, '14')
-    .replaceAll('\\b23|two.?thirds?\\b'.ri, '23')
-//  Process any other numbers
-    .replaceAll('\\bzero\\b'.ri, '0')
-    .replaceAll('\\b(1|onc?e)\\b'.ri, '1')
-    .replaceAll('\\b(2|two)\\b'.ri, '2')
-    .replaceAll('\\b(3|three)\\b'.ri, '3')
-    .replaceAll('\\b(4|four)\\b'.ri, '4')
-    .replaceAll('\\b(5|five)\\b'.ri, '5')
-    .replaceAll('\\b(6|six)\\b'.ri, '6')
-    .replaceAll('\\b(7|seven)\\b'.ri, '7')
-    .replaceAll('\\b(8|eight)\\b'.ri, '8')
-    .replaceAll('\\b(9|nine)\\b'.ri, '9')
-//  Ordinals
-    .replaceAll('1st'.ri, 'first')
-    .replaceAll('2nd'.ri, 'second')
-    .replaceAll('3rd'.ri, 'third')
-    .replaceAll('4th'.ri, 'fourth')
-    .replaceAll('\\bforth\\b'.ri, 'fourth')
-    .replaceAll('5th'.ri, 'fifth')
-    .replaceAll('6th'.ri, 'sixth')
-//  Decimal fractions 2.5, 3.5 etc
-    .replaceAllMapped('\\b([1-9])\\.5'.ri, (m) => '${m[1]}12')
-//  Now we can strip all other dots
-    .replaceAll('\\.'.r, '')
-//  Standardize 6 by 2, 6-2, 6 2 Acey Deucey
-    .replaceAll('(six|6)\\s*(by)?x?-?\\s*(two|2)'.ri, '62')
-    .replaceAll('(three|3)\\s*(by)?x?-?\\s*(two|2)'.ri, '32')
-    .replaceAll('(three|3)\\s*(by)?x?-?\\s*(one|1)'.ri, '31')
-    .replaceAll('(one|1)\\s*(by)?x?-?\\s*(three|3)'.ri, '13')
-//  'Column' of Magic Column is optional
-    .replaceAll('magic column'.ri, 'Magic ')
-//  Use singular form
-    .replaceAllMapped(
-        '\\b(boy|girl|beau|belle|center|end|point|head|(out)?side)s\\b'.ri,
-        (m) => m[1]!)
-//  Misc other variations
-    .replaceAll('\\bswap(\\s+around)?\\b'.ri, 'Swap')
-    .replaceAll('\\bm[ea]n\\b'.ri, 'Boy')
-    .replaceAll('\\bwom[ea]n\\b'.ri, 'Girl')
-    .replaceAll('\\blad(y|ies)\\b'.ri, 'Girl')
-//  .replaceAll('\\blead(er)?(ing)?s?\\b'.ri,'Lead')
-    .replaceAll('\\btrail(er)?(ing)?s?\\b'.ri, 'Trail')
-    .replaceAll('\\bcentres?\\b'.ri, 'Center')
-    .replaceAllMapped('\\b(1|3)4 tag the line\\b'.ri, (m) => '${m[1]}4 Tag')
-    .replaceAll('\\b12 square thru\\b'.ri, 'Square Thru 2')
-    .replaceAll('\\bsquare thru 4\\b'.ri, 'Square Thru')
-//   .replaceAll('\\bbox recycle\\b'.ri,'Recycle')
-    .replaceAll('(all 8|box|column|couples) Circulate'.ri, 'Circulate')
-    .replaceAll('\\ballamande?\\b'.ri, 'Allemande')
-    .replaceAllMapped(
-        'interlocked (flip|cut) the'.ri, (m) => '${m[1]} the Interlocked')
-    .replaceAll('walk around your corner'.ri, 'WalkAround the Corner')
-    .replaceAll('on the second hand'.ri, 'on 2')
-    .replaceAll('on the third hand'.ri, 'on 3')
-    .replaceAll('on the fou?rth hand'.ri, 'on 4')
-    .replaceAll('on the fifth hand'.ri, 'on 5')
-    .replaceAll('on the sixth hand'.ri, 'on 6')
-//  Remove superfluous Buts, so not to confuse the real But
-    .replaceAllMapped('but (skip|replace|delete|interrupt)'.ri, (m) => m[1]!)
-//  'Dixie Style' -> 'Dixie Style to a Wave'
-    .replaceAll('\\bdixie style(?! to)'.ri, 'Dixie Style to a Wave')
-//  Accept both Left Chase and Chase Left
-    .replaceAll('\\bchase left\\b'.ri, 'Left Chase')
-//  Change (fraction) Circle Left/Right to Circle Left/Right (fraction)
-    .replaceAllMapped(
-        '(14|12|34) circle (left|right)'.ri, (m) => 'Circle ${m[2]} ${m[1]}')
-//  Accept optional 'dancers' e.g. 'head dancers' == 'heads'
-    .replaceAll('\\bdancers?\\b'.ri, '')
-//  Also handle 'Lead Couples' as 'Leads'
-//  but make sure not to clobber 'As Couples' or 'Couples Hinge'
-    .replaceAllMapped(
-        '((head|side|lead|trail|center|end).)couples?'.ri, (m) => m[1]!)
-//  Finally remove non-alphanums and strip spaces
-    .replaceAll('\\W'.ri, '')
-    .replaceAll('\\s'.ri, '');
+String normalizeCall(String callname) =>
+    callname.capWords().trim()
+        .replaceAll('\\(.*\\)'.ri,'')
+        .replaceAll('&','and')
+    //  Strip all non-alphanums
+    //  But keep underscores, used for hidden calls
+    //  and dots, used for decimal fractions
+        .replaceAll('[^a-zA-Z0-9_. ]'.ri,'')
+        .replaceAll('\\s+'.ri,' ')
+    //  Through => Thru
+        .replaceAll('\\bthrou?g?h?\\b'.ri,'Thru')
+    //  One and a half
+        .replaceAll('(onc?e and a half)|(1 12)|(15)'.ri,'112')
+    //  Process fractions 1/2 3/4 1/4 2/3
+    //  Non-alphanums are not used in matching
+    //  so these fractions become 12 34 14 23
+    //  Fortunately two-digit numbers are not used in calls
+        .replaceAll('\\b12|((a|one).)?half\\b'.ri,'12')
+        .replaceAll('\\b(three.quarters?|34)\\b'.ri,'34')
+        .replaceAll('\\b(((a|one).)?quarter|14)\\b'.ri,'14')
+        .replaceAll('\\b23|two.?thirds?\\b'.ri,'23')
+    //  Process any other numbers
+        .replaceAll('\\bzero\\b'.ri,'0')
+        .replaceAll('\\b(1|onc?e)\\b'.ri,'1')
+        .replaceAll('\\b(2|two)\\b'.ri,'2')
+        .replaceAll('\\b(3|three)\\b'.ri,'3')
+        .replaceAll('\\b(4|four)\\b'.ri,'4')
+        .replaceAll('\\b(5|five)\\b'.ri,'5')
+        .replaceAll('\\b(6|six)\\b'.ri,'6')
+        .replaceAll('\\b(7|seven)\\b'.ri,'7')
+        .replaceAll('\\b(8|eight)\\b'.ri,'8')
+        .replaceAll('\\b(9|nine)\\b'.ri,'9')
+    //  Ordinals
+        .replaceAll('1st'.ri,'first')
+        .replaceAll('2nd'.ri,'second')
+        .replaceAll('3rd'.ri,'third')
+        .replaceAll('4th'.ri,'fourth')
+        .replaceAll('\\bforth\\b'.ri,'fourth')
+        .replaceAll('5th'.ri,'fifth')
+        .replaceAll('6th'.ri,'sixth')
+    //  Decimal fractions 2.5, 3.5 etc
+        .replaceAllMapped('\\b([1-9])\\.5'.ri,
+            (m) => '${m[1]}12')
+    //  Now we can strip all other dots
+        .replaceAll('\\.'.r,'')
+    //  Standardize 6 by 2, 6-2, 6 2 Acey Deucey
+        .replaceAll('(six|6)\\s*(by)?x?-?\\s*(two|2)'.ri,'62')
+        .replaceAll('(three|3)\\s*(by)?x?-?\\s*(two|2)'.ri,'32')
+        .replaceAll('(three|3)\\s*(by)?x?-?\\s*(one|1)'.ri,'31')
+        .replaceAll('(one|1)\\s*(by)?x?-?\\s*(three|3)'.ri,'13')
+    //  'Column' of Magic Column is optional
+        .replaceAll('magic column'.ri,'Magic ')
+    //  Use singular form
+        .replaceAllMapped('\\b(boy|girl|beau|belle|center|end|point|head|(out)?side)s\\b'.ri, (m) => m[1]!)
+    //  Misc other variations
+        .replaceAll('\\bswap(\\s+around)?\\b'.ri,'Swap')
+        .replaceAll('\\bm[ea]n\\b'.ri,'Boy')
+        .replaceAll('\\bwom[ea]n\\b'.ri,'Girl')
+        .replaceAll('\\blad(y|ies)\\b'.ri,'Girl')
+        .replaceAll('\\bflutter\\s+\\wheel\\b'.ri,'Flutterwheel')
+        .replaceAll('\\bcross\\s+\\fire\\b'.ri,'Crossfire')
+    //  .replaceAll('\\blead(er)?(ing)?s?\\b'.ri,'Lead')
+        .replaceAll('\\btrail(er)?(ing)?s?\\b'.ri,'Trail')
+        .replaceAll('\\bcentres?\\b'.ri,'Center')
+        .replaceAllMapped('\\b(1|3)4 tag the line\\b'.ri,
+            (m) => '${m[1]}4 Tag')
+        .replaceAll('\\b12 square thru\\b'.ri,'Square Thru 2')
+        .replaceAll('\\bsquare thru 4\\b'.ri,'Square Thru')
+    //   .replaceAll('\\bbox recycle\\b'.ri,'Recycle')
+        .replaceAll('(all 8|column|couples) Circulate'.ri,'Circulate')
+        .replaceAll('\\ballamande?\\b'.ri,'Allemande')
+        .replaceAllMapped('interlocked (flip|cut) the'.ri,
+            (m) => '${m[1]} the Interlocked')
+        .replaceAll('walk around your corner'.ri,'Walk Around the Corner')
+        .replaceAll('on the second hand'.ri,'on 2')
+        .replaceAll('on the third hand'.ri,'on 3')
+        .replaceAll('on the fou?rth hand'.ri,'on 4')
+        .replaceAll('on the fifth hand'.ri,'on 5')
+        .replaceAll('on the sixth hand'.ri,'on 6')
+    //  Remove superfluous Buts, so not to confuse the real But
+        .replaceAllMapped('but (skip|replace|delete|interrupt)'.ri, (m) => m[1]!)
+    //  'Dixie Style' -> 'Dixie Style to a Wave'
+        .replaceAll('\\bdixie style(?! to)'.ri,'Dixie Style to a Wave')
+    //  Accept both Left Chase and Chase Left
+        .replaceAll('\\bchase left\\b'.ri,'Left Chase')
+    //  Change (fraction) Circle Left/Right to Circle Left/Right (fraction)
+        .replaceAllMapped('(14|12|34) circle (left|right)'.ri,
+            (m) => 'Circle ${m[2]} ${m[1]}')
+    //  Accept optional 'dancers' e.g. 'head dancers' == 'heads'
+        .replaceAll('\\bdancers?\\b'.ri,'')
+    //  Also handle 'Lead Couples' as 'Leads'
+    //  but make sure not to clobber 'As Couples' or 'Couples Hinge'
+        .replaceAllMapped('((head|side|lead|trail|center|end).)couples?'.ri,
+            (m) => m[1]!)
+    //  Finally remove non-alphanums and strip spaces
+        .replaceAll('\\W'.ri,'')
+        .replaceAll('\\s'.ri,'');

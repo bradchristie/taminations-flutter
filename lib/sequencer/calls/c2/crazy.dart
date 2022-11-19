@@ -44,7 +44,7 @@ class Crazy extends Action with CallWithParts {
         crazyCall = name.replaceFirst('.*Crazy '.r, ''),
         super(name) {
     //  Find out how crazy we are
-    final norm = TamUtils.normalizeCall(name);
+    final norm = normalizeCall(name);
     if (norm.startsWith('14'))
       numberOfParts = 1;  //  really?
     else if (norm.startsWith('12'))

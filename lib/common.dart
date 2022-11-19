@@ -38,6 +38,7 @@ export 'math/movement.dart';
 export 'math/path.dart';
 export 'math/vector.dart';
 export 'math/vectorui.dart';
+export 'normalize_call.dart';
 export 'settings.dart';
 export 'tam_utils.dart';
 export 'title_bar.dart';

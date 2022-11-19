@@ -19,7 +19,7 @@
 */
 
 import '../../extensions.dart';
-import '../../tam_utils.dart';
+import '../../normalize_call.dart';
 import 'a1/as_couples.dart';
 import 'a1/beaus.dart';
 import 'a1/belles.dart';
@@ -609,7 +609,7 @@ abstract class CodedCall extends Call {
   };
 
   static CodedCall? fromName(String name) {
-    var norm = TamUtils.normalizeCall(name);
+    var norm = normalizeCall(name);
 
     //  Some words are high-level splitters
     //  Don't accept any calls with these words in the middle

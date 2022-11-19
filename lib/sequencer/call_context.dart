@@ -207,7 +207,7 @@ class CallContext {
     var doc = await TamUtils.getXMLAsset(link);
     //  Add all the calls to the index
     doc.findAllElements('tam').forEach((tam) {
-      var norm = TamUtils.normalizeCall(tam('title')).toLowerCase();
+      var norm = normalizeCall(tam('title')).toLowerCase();
       if (!callindex.containsKey(norm))
         callindex[norm] = <String>{};
       callindex[norm]!.add(link);
@@ -530,7 +530,7 @@ class CallContext {
     //  Dot for fractions (Swing Thru 1.5)
     //  Slash also for fractions (Swing Thru 1 1/2)
     //  Dash for Mini-Busy, Out-Roll Circulate e.g.
-    return calltext.replaceAll('[^a-zA-Z0-9_./-]'.r,' ')
+    return calltext.replaceAll('[^a-zA-Z0-9_./-/&]'.r,' ')
     //  Clean up any whitespace
         .replaceAll('\\s+'.r, ' ').trim()
     //  Standardize capitalization
@@ -630,7 +630,7 @@ class CallContext {
     }
 
     //  Try to find a match in the xml animations
-    var norm = TamUtils.normalizeCall(calltext);
+    var norm = normalizeCall(calltext);
     for (var entry in XMLCall.lookupAnimatedCall(norm).entries) {
       for (var tam in entry.value) {
         //  Check for calls that must go around the centers

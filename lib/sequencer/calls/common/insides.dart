@@ -18,11 +18,7 @@
 
 */
 
-
-import '../../../tam_utils.dart';
-import '../../call_context.dart';
-import '../action.dart';
-import '../../../extensions.dart';
+import '../common.dart';
 
 class Insides extends Action {
 
@@ -30,7 +26,7 @@ class Insides extends Action {
 
   @override
    void performCall(CallContext ctx) {
-    var norm = TamUtils.normalizeCall(name);
+    var norm = normalizeCall(name);
     var num = 4;
     if (norm.endsWith('2')) num = 2;
     if (norm.endsWith('6')) num = 6;

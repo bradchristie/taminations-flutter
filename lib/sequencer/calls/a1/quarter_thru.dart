@@ -35,7 +35,7 @@ class QuarterThru extends Action with CallWithParts {
   QuarterThru(String name) :
         isGrand=name.contains('Grand'),
         isLeft=name.contains('Left'),
-        isThree=TamUtils.normalizeCall(name).contains('34'),
+        isThree=normalizeCall(name).contains('34'),
         super(name);
 
   @override

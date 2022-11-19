@@ -28,7 +28,7 @@ class SwingAndCircle extends Action {
 
   @override
   void perform(CallContext ctx) {
-    final norm = TamUtils.normalizeCall(name);
+    final norm = normalizeCall(name);
     //  Swing and Circle 1/4 is an XML animation
     //  So just repeat that as requested
     if (norm.endsWith('12'))

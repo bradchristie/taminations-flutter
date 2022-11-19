@@ -33,7 +33,7 @@ class DoYourPart extends Action {
 
   Pair<CallContext,List<int>> findYourPart(CallContext dypctx) {
     final callName = name.replaceFirst('Do Your Part'.ri,'').trim();
-    final norm = TamUtils.normalizeCall(callName);
+    final norm = normalizeCall(callName);
     for (var entry in XMLCall.lookupAnimatedCall(norm).entries) {
       for (var tam in entry.value) {
         //  See if this is a subset match to the DYP dancers
@@ -59,7 +59,7 @@ class DoYourPart extends Action {
       //  Currently just works with formations that match
       //  an XML animation for the call
       //  Find the call to do
-      final norm = TamUtils.normalizeCall(callName);
+      final norm = normalizeCall(callName);
       var bestOffset = double.maxFinite;
       MappingContext? bestMapping;
       CallContext? ctxBest;

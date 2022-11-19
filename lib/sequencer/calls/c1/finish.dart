@@ -34,7 +34,7 @@ class Finish extends Action {
     final finishCall = name.replaceFirst('Finish\\s+'.ri,' ');
     if (finishCall.isBlank)
       throw CallError('Finish what?');
-    final finishNorm = TamUtils.normalizeCall(finishCall);
+    final finishNorm = normalizeCall(finishCall);
     //  First look for XML calls
     //  Find matching XML call
     for (var entry in XMLCall.lookupAnimatedCall(finishNorm).entries) {

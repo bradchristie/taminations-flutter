@@ -142,7 +142,7 @@ mixin CallWithParts {
   //  This function is for looking up and performing one part of an XML call.
   //  Useful for calls that have a part that's not easily coded.
   static void performOnePart(CallContext ctx, String name, int partNum) {
-    final norm = TamUtils.normalizeCall(name);
+    final norm = normalizeCall(name);
     //  Find matching XML call
     for (var entry in XMLCall.lookupAnimatedCall(norm).entries) {
       for (var tam in entry.value) {

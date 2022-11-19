@@ -25,7 +25,7 @@ abstract class Call {
   String name;
   String get help => 'No specific help for $name';
   String get helplink => 'info/sequencer';
-  String get norm => TamUtils.normalizeCall(name);
+  String get norm => normalizeCall(name);
   var level = LevelData.B1;
 
   Call(String s) : name=s.capWords();

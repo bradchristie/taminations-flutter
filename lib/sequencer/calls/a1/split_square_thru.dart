@@ -36,7 +36,7 @@ class SplitSquareThru extends Action {
       left = '';
       right = 'Left';
     }
-    final count = TamUtils.normalizeCall(name).last.toIntOrNull() ?? 4;
+    final count = normalizeCall(name).last.toIntOrNull() ?? 4;
     //  Might start from waves or mini-waves
     final waveDancers = ctx.dancers.where((it) => ctx.isInWave(it));
     if (waveDancers.length == 4) {

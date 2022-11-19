@@ -62,7 +62,7 @@ Formations you can use are
   @override
   void perform(CallContext ctx) {
     var fname = name.replaceFirst('Adjust to( an?)? '.ri, '' );
-    var fnorm = TamUtils.normalizeCall(fname);
+    var fnorm = normalizeCall(fname);
     String? formation;
     for (var r in formationMap.keys) {
       if (fnorm.matches(r))

@@ -43,7 +43,7 @@ class Rotate extends Action {
         ctx2.applyCalls('Half ${isReverse ? '' : 'Reverse'} Wheel Around');
       });
     }
-    final norm = TamUtils.normalizeCall(name);
+    final norm = normalizeCall(name);
     if (norm.endsWith('14'))
       ctx.applyCalls('Couples Hinge');
     else if (norm.endsWith('12'))
