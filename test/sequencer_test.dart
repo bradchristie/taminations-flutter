@@ -3342,6 +3342,22 @@ Cast Off 3/4
 Boys Run
 Star Thru
 Pass Thru
+Allemande Left''',
+
+  '&' :
+'''Heads Lead Right
+Right & Left Thru
+Touch 1/4
+Walk & Dodge
+Wheel & Deal
+Centers Swing Thru
+Scoot & Plenty Replace the Stars With Out Roll Circulate
+Extend
+Boys Run
+Reverse Wheel Around
+Pass Thru
+Wheel and Deal
+Centers Pass Thru
 Allemande Left'''
 
 };

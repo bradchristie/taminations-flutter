@@ -272,13 +272,15 @@ Future<void> writeCalls() async {
         cDart.writeln('        ]),');  //  end of one path
       });
       cDart.writeln('      ],');  //  end of all paths for one animation
-      final genderParam = tam('sequencer') == 'gender-specific' ? ',isGenderSpecific:true' : '';
-      final exactParam = tam('sequencer') == 'exact' ? ',isExact:true' : '';
-      final perimeterParam = tam('sequencer') == 'perimeter' ? ',isPerimeter:true' : '';
-      cDart.writeln('      parts:\'${tam('parts')}\''
-          ',fractions:\'${tam('fractions')}\''
-          ',actives:\'${tam('actives')}\''
-          '$genderParam$exactParam$perimeterParam),');
+      final genderParam = tam('sequencer') == 'gender-specific' ? 'isGenderSpecific:true' : '';
+      final exactParam = tam('sequencer') == 'exact' ? 'isExact:true' : '';
+      final perimeterParam = tam('sequencer') == 'perimeter' ? 'isPerimeter:true' : '';
+      final partsParam = tam('parts').isNotBlank ? 'parts:\'${tam('parts')}\'' : '';
+      final fractionsParam = tam('fractions').isNotBlank
+          ? 'fractions:\'${tam('fractions')}\'' : '';
+      final activesParam = tam('actives').isNotBlank ? 'actives:\'${tam('actives')}\'' : '';
+      final allParams = [genderParam,exactParam,perimeterParam,partsParam,fractionsParam,activesParam].where((param) => param.isNotBlank).join(',');
+      cDart.writeln('      $allParams),');
       var norm = normalizeCall(tam('title'));
       if (!callIndex.containsKey(norm))
         callIndex[norm] = [];

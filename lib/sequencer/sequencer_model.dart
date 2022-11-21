@@ -292,7 +292,6 @@ class SequencerModel extends fm.ChangeNotifier {
       var cctx = CallContext.fromDancers(animation.dancers);
       cctx.interpretCall(call);
       cctx.performCall();
-      cctx.extendPaths();
       if (!cctx.callname.contains('(move in|step|gnat|back\\s*(up|away))'.ri))
         cctx.adjustForSquaredSetCovention();
       cctx.checkCenters();
@@ -308,6 +307,7 @@ class SequencerModel extends fm.ChangeNotifier {
         throw CallError('Unable to calculate valid animation.');
       if (cctx.resolutionError)
         errorString = 'Warning: Dancers are not resolved';
+      cctx.extendPaths();
       cctx.appendToSource();
       animation.recalculate();
       var newbeats = animation.beats;
