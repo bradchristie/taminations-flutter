@@ -43,6 +43,27 @@
     </path>
   </tam>
 
+  <tam title="Shoot the Star"
+       from="Wrong Way Thar"
+       formation="Thar LH Boys" >
+    <path>
+      <move select="Swing Right" />
+      <move select="Sxtnth Right" beats="2" hands="none" offsetX=".7" offsetY="-1"/>
+    </path>
+    <path>
+      <move select="Swing Right" />
+      <move select="Sxtnth Left" beats="2" hands="none" offsetX=".7" offsetY="-1"/>
+    </path>
+    <path>
+      <move select="Swing Right" />
+      <move select="Sxtnth Right" beats="2" hands="none" offsetX=".7" offsetY="-1"/>
+    </path>
+    <path>
+      <move select="Swing Right" />
+      <move select="Sxtnth Left" beats="2" hands="none" offsetX=".7" offsetY="-1"/>
+    </path>
+  </tam>
+
   <tam title="Shoot the Star All the Way Around"
        from="Thar"
        formation="Thar RH Boys">
@@ -67,4 +88,29 @@
       <move select="Sxtnth Left" beats="2" hands="none" offsetX=".7" offsetY="1"/>
     </path>
   </tam>
+  <tam title="Shoot the Star All the Way Around"
+       from="Wrong Way Thar"
+       formation="Thar LH Boys">
+    <path>
+      <move select="Swing Right" />
+      <move select="Swing Right" />
+      <move select="Sxtnth Left" beats="2" hands="none" offsetX=".7" offsetY="-1"/>
+    </path>
+    <path>
+      <move select="Swing Right" />
+      <move select="Swing Right" />
+      <move select="Sxtnth Right" beats="2" hands="none" offsetX=".7" offsetY="-1"/>
+    </path>
+    <path>
+      <move select="Swing Right" />
+      <move select="Swing Right" />
+      <move select="Sxtnth Left" beats="2" hands="none" offsetX=".7" offsetY="-1"/>
+    </path>
+    <path>
+      <move select="Swing Right" />
+      <move select="Swing Right" />
+      <move select="Sxtnth Right" beats="2" hands="none" offsetX=".7" offsetY="-1"/>
+    </path>
+  </tam>
+
 </tamination>
