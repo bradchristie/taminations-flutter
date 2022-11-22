@@ -41,6 +41,7 @@ class SequencerCall {
 class SequencerModel extends fm.ChangeNotifier {
 
   List<SequencerCall> calls = [];
+  List<SequencerCall> savedCalls = [];
   String _startingFormation = 'Squared Set'; // overriden by Settings
   String get startingFormation => _startingFormation;
   String partString = '';
@@ -64,16 +65,28 @@ class SequencerModel extends fm.ChangeNotifier {
     }
   }
 
-  void reset() async {
+  void reset() {
     animation.doPause();
+    savedCalls = calls;
     calls = [];
-    errorString = '';
+    errorString = savedCalls.isNotEmpty ? 'Use Undo to restore sequence' : '';
     currentCall = -1;
     helplink = 'info/sequencer';
     _startSequence();
     later(() {
       notifyListeners();
     });
+  }
+
+  void undoReset() {
+    if (savedCalls.isNotEmpty) {
+      for (final call in savedCalls)
+        loadOneCall(call.name);
+      _updateParts();
+      later(() {
+        notifyListeners();
+      });
+    }
   }
 
   void setColor(String c, Settings settings) {
@@ -242,7 +255,8 @@ class SequencerModel extends fm.ChangeNotifier {
       later(() {
         notifyListeners();
       });
-    }
+    } else if (savedCalls.isNotEmpty)
+      undoReset();
   }
 
   void _interpretOneCall(String call) {
@@ -317,6 +331,7 @@ class SequencerModel extends fm.ChangeNotifier {
             (cctx.callname + comment).trim(), beats: (newbeats - prevbeats),
             level: cctx.level));
         _updateParts();
+        savedCalls = [];
       }
       notifyListeners();
     }
