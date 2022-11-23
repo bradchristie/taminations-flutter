@@ -50,6 +50,23 @@
     </path>
   </tam>
 
+  <tam title="Wheel Around"
+       from="Eight Chain Thru"
+       formation="Eight Chain Thru">
+    <path>
+      <move select="Beau Wheel" scaleX=".5"/>
+    </path>
+    <path>
+      <move select="Belle Wheel" scaleX=".5"/>
+    </path>
+    <path>
+      <move select="Beau Wheel" scaleX=".5"/>
+    </path>
+    <path>
+      <move select="Belle Wheel" scaleX=".5"/>
+    </path>
+  </tam>
+
   <tam title="Heads Wheel Around"
        from="Promenade"
        formation="Promenade 2">
@@ -95,6 +112,23 @@
     </path>
     <path>
       <move select="Beau Wheel" reflect="-1" />
+    </path>
+  </tam>
+
+  <tam title="Reverse Wheel Around"
+       from="Eight Chain Thru"
+       formation="Eight Chain Thru">
+    <path>
+      <move select="Belle Wheel" reflect="-1" scaleX=".5"/>
+    </path>
+    <path>
+      <move select="Beau Wheel" reflect="-1" scaleX=".5"/>
+    </path>
+    <path>
+      <move select="Belle Wheel" reflect="-1" scaleX=".5"/>
+    </path>
+    <path>
+      <move select="Beau Wheel" reflect="-1" scaleX=".5"/>
     </path>
   </tam>
 
