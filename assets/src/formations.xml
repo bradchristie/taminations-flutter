@@ -271,6 +271,11 @@
     <dancer gender="girl" x="0" y="1" angle="0"/>
   </formation>
 
+  <formation name="Block">
+    <dancer gender="boy" x="-2" y="2" angle="0" />
+    <dancer gender="girl" x="-2" y="-2" angle="0" />
+  </formation>
+
   <!-- Four Couple Formations    -->
   <formation name="Static Square">
     <dancer gender="boy" x="-3" y="1" angle="0"/>

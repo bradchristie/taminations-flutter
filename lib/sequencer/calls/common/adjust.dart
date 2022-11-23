@@ -38,6 +38,7 @@ class Adjust extends Action {
     '.* o'.ri : 'O RH',
     '.*circle'.ri : 'Circle',
     '.*alamo'.ri : 'Alamo Wave',  // actually, same as Circle
+    '.*blocks'.ri : 'Blocks',
      //  two couples
     '.*box'.ri : 'Facing Couples'
   };
@@ -71,7 +72,8 @@ Formations you can use are
     if (formation == null)
       throw CallError('Sorry, don''t know how to $name from here.' );
     var ctx2 = CallContext.fromXML(TamUtils.getFormation(formation));
-    var mapping = ctx.matchFormations(ctx2,sexy:false,fuzzy:true,rotate:180,handholds:false, maxError : 3.0, delta: 0.3, maxAngle: 0.5)
+    var rotate = formation == 'Blocks' ? 90 : 180;
+    var mapping = ctx.matchFormations(ctx2,sexy:false,fuzzy:true,rotate:rotate,handholds:false, maxError : 3.0, delta: 0.3, maxAngle: 0.5)
         ?? thrower(CallError('Unable to match formation to $fname'));
     if (!ctx.adjustToFormationMatch(mapping!.match))
       throw CallError('No adjustment to $fname needed.');

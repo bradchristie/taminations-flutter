@@ -39,14 +39,18 @@ class BlockFormation extends Action {
     final ctx1 = CallContext.fromContext(ctx,
       dancers:[ ctx.dancers[map[0]],ctx.dancers[map[5]],
                 ctx.dancers[map[2]],ctx.dancers[map[7]]]);
+    ctx1.asymmetric = true;
     final ctx2 = CallContext.fromContext(ctx,
         dancers:[ ctx.dancers[map[1]],ctx.dancers[map[4]],
                   ctx.dancers[map[3]],ctx.dancers[map[6]]]);
-      ctx1.applyCalls(blockCall);
-      ctx1.appendToSource();
-      ctx2.applyCalls(blockCall);
-      ctx2.appendToSource();
-      ctx.adjustToFormation('Blocks',rotate: 90);
+    ctx2.asymmetric = true;
+    ctx1.applyCalls(blockCall);
+    ctx1.adjustToFormation('Block',rotate: 90);
+    ctx1.appendToSource();
+    ctx2.applyCalls(blockCall);
+    ctx2.adjustToFormation('Block',rotate: 90);
+    ctx2.appendToSource();
+    ctx.adjustToFormation('Blocks',rotate: 90);
   }
 
 }
