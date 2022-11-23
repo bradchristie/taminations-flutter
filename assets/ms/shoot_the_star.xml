@@ -64,6 +64,56 @@
     </path>
   </tam>
 
+  <tam title="Shoot the Star 3/4 to an Alamo Ring"
+       from="Thar"
+       formation="Thar RH Boys">
+    <path>
+      <move select="Swing Left" />
+      <move select="Hinge Left" offsetY="-.414" />
+      <move select="Sxtnth Left" />
+    </path>
+    <path>
+      <move select="Swing Left" />
+      <move select="Hinge Left" offsetY=".414" />
+      <move select="Sxtnth Right" />
+    </path>
+    <path>
+      <move select="Swing Left" />
+      <move select="Hinge Left" offsetY="-.414" />
+      <move select="Sxtnth Left" />
+    </path>
+    <path>
+      <move select="Swing Left" />
+      <move select="Hinge Left" offsetY=".414" />
+      <move select="Sxtnth Right" />
+    </path>
+  </tam>
+
+  <tam title="Shoot the Star 3/4 to an Alamo Ring"
+       from="Wrong Way Thar"
+       formation="Thar LH Boys">
+    <path>
+      <move select="Swing Right" />
+      <move select="Hinge Right" offsetY=".414" />
+      <move select="Sxtnth Right" />
+    </path>
+    <path>
+      <move select="Swing Right" />
+      <move select="Hinge Right" offsetY="-.414" />
+      <move select="Sxtnth Left" />
+    </path>
+    <path>
+      <move select="Swing Right" />
+      <move select="Hinge Right" offsetY=".414" />
+      <move select="Sxtnth Right" />
+    </path>
+    <path>
+      <move select="Swing Right" />
+      <move select="Hinge Right" offsetY="-.414" />
+      <move select="Sxtnth Left" />
+    </path>
+  </tam>
+
   <tam title="Shoot the Star All the Way Around"
        from="Thar"
        formation="Thar RH Boys">
