@@ -41,8 +41,9 @@ class SequencerCall {
 class SequencerModel extends fm.ChangeNotifier {
 
   List<SequencerCall> calls = [];
-  List<SequencerCall> savedCalls = [];
+  List<SequencerCall> _savedCalls = [];
   String _startingFormation = 'Squared Set'; // overriden by Settings
+  String _savedStartingFormation = '';
   String get startingFormation => _startingFormation;
   String partString = '';
   String errorString = '';
@@ -67,9 +68,10 @@ class SequencerModel extends fm.ChangeNotifier {
 
   void reset() {
     animation.doPause();
-    savedCalls = calls;
+    _savedCalls = calls;
+    _savedStartingFormation = _startingFormation;
     calls = [];
-    errorString = savedCalls.isNotEmpty ? 'Use Undo to restore sequence' : '';
+    errorString = _savedCalls.isNotEmpty ? 'Use Undo to restore sequence' : '';
     currentCall = -1;
     helplink = 'info/sequencer';
     _startSequence();
@@ -79,8 +81,10 @@ class SequencerModel extends fm.ChangeNotifier {
   }
 
   void undoReset() {
-    if (savedCalls.isNotEmpty) {
-      for (final call in savedCalls)
+    if (_savedCalls.isNotEmpty) {
+      _startingFormation = _savedStartingFormation;
+      _startSequence();
+      for (final call in _savedCalls)
         loadOneCall(call.name);
       _updateParts();
       later(() {
@@ -255,7 +259,7 @@ class SequencerModel extends fm.ChangeNotifier {
       later(() {
         notifyListeners();
       });
-    } else if (savedCalls.isNotEmpty)
+    } else if (_savedCalls.isNotEmpty)
       undoReset();
   }
 
@@ -331,7 +335,7 @@ class SequencerModel extends fm.ChangeNotifier {
             (cctx.callname + comment).trim(), beats: (newbeats - prevbeats),
             level: cctx.level));
         _updateParts();
-        savedCalls = [];
+        _savedCalls = [];
       }
       notifyListeners();
     }
@@ -341,9 +345,10 @@ class SequencerModel extends fm.ChangeNotifier {
       text.trim().startsWith('[^\\a-zA-Z0-9]'.r);
 
   void _startSequence() {
-    var paths = [Path(),Path(),Path(),Path(),Path(),Path(),Path(),Path()];
-    animation.setAnimatedCall(
-        AnimatedCall('',Formations.formationMap[startingFormation]!,paths));
+    var formation = Formations.formationMap[startingFormation]
+        ?? thrower(CallError('Could not find formation $startingFormation'))!;
+    var paths = [for (var _ in formation.dancers) Path()];
+    animation.setAnimatedCall(AnimatedCall('',formation,paths));
     animation.recalculate();
     _updateParts();
   }

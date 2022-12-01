@@ -374,7 +374,9 @@ class DanceModel extends fm.ChangeNotifier {
       d.showNumber = _showNumbers;
     }
     beater.setTimes(-leadin, _beats);
-    notifyListeners();
+    later(() {
+      notifyListeners();
+    });
   }
 
   void _resetAnimation() {
