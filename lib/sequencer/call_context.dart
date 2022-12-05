@@ -632,7 +632,7 @@ class CallContext {
     //  Try to find a match in the xml animations
     var norm = normalizeCall(calltext);
     for (var entry in XMLCall.lookupAnimatedCall(norm).entries) {
-      for (var tam in entry.value) {
+      for (var tam in entry. value) {
         //  Check for calls that must go around the centers
         if (perimeter && !tam.isPerimeter)
           continue;

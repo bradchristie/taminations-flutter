@@ -82,6 +82,7 @@ String normalizeCall(String callname) =>
         .replaceAll('\\blad(y|ies)\\b'.ri,'Girl')
         .replaceAll('\\bflutter\\s+\\wheel\\b'.ri,'Flutterwheel')
         .replaceAll('\\bcross\\s+\\fire\\b'.ri,'Crossfire')
+        .replaceAll('crossover'.ri, 'Cross Over')
     //  .replaceAll('\\blead(er)?(ing)?s?\\b'.ri,'Lead')
         .replaceAll('\\btrail(er)?(ing)?s?\\b'.ri,'Trail')
         .replaceAll('\\bcentres?\\b'.ri,'Center')
