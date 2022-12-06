@@ -93,6 +93,7 @@ String normalizeCall(String callname) =>
     //   .replaceAll('\\bbox recycle\\b'.ri,'Recycle')
         .replaceAll('(all 8|column|couples) Circulate'.ri,'Circulate')
         .replaceAll('\\ballamande?\\b'.ri,'Allemande')
+        .replaceAll('left\\s*allemande'.ri,'Allemande Left')
         .replaceAllMapped('interlocked (flip|cut) the'.ri,
             (m) => '${m[1]} the Interlocked')
         .replaceAll('walk around your corner'.ri,'Walk Around the Corner')
