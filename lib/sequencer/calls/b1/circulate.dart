@@ -55,6 +55,8 @@ class Circulate extends Action {
 
     //  All 8 dancers active
     //  Try various forms of Circulate
+    else if (ctx.isThar())
+      ctx.applyCalls('Inside Diamond Circulate While Outside Diamond Circulate');
     else if (ctx.isTwoFacedLines())
       ctx.applyCalls('Couples Circulate' );
     else if (ctx.isLines())
