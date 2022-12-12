@@ -76,6 +76,7 @@ import 'b1/right_and_left_thru.dart';
 import 'b1/rollaway.dart';
 import 'b1/separate.dart';
 import 'b1/split_circulate.dart';
+import 'b1/split_two.dart';
 import 'b1/square_thru.dart';
 import 'b1/star_thru.dart';
 import 'b1/step_thru.dart';
@@ -508,6 +509,7 @@ abstract class CodedCall extends Call {
     'splitdixiestyle(toawave)?'.ri: (name) => SplitDixieStyle(name),
     '(reverse)?splitrecycle'.ri: (name) => SplitRecycle(name),
     '(left)?splitsquarethru[2-7]?'.ri: (name) => SplitSquareThru(name),
+    'split(2|theoutsides?(couple))?'.ri: (name) => SplitTwo(name),
     '(and)?spread'.ri: (name) => Spread(name),
     '(left)?squarechainthetop'.ri: (name) => SquareChainTheTop(name),
     '(left)?squarechainthru'.ri: (name) => SquareChainThru(name),

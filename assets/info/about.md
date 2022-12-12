@@ -20,21 +20,21 @@ Call pronunciations provided by
 
 ---
 
-## Taminations version 1.6.49 built 2022-11-15
+## Taminations version 1.6.50 built 2022-12-12
 Copyright 2022 by Brad Christie.  
 This is free software, and you are welcome to modify and redistribute it
 under the terms of the [GNU GPL license](http://www.gnu.org/licenses/gpl.html).  
 
 ## What's New
-* More animations for Siamese Concept
-* Move animations for Split Counter Rotate from diamonds from C-1 to A-2
-* Fix animation for Grand Chain Eight from waves
-* Animations for Circle 2
-* Animations for Inside Path / Outside Path Ping Pong Circulate
-* Animations for Stars as commonly used in singing calls
+* Shoot the Star 3/4 to an Alamo Ring
 * Sequencer changes:
-  * Fix freezes/crashes on some Circulate or Cross Run calls
-  * Improvements for Clover And (anything) from some formations
+  * Fix parsing of '&'
+  * Code for C-2 Reverse Rotate
+  * Accept more synonyms such as Left Allemande, Cross Over, Flutter Wheel
+  * Improvments for Block Concept
+  * Fixes for selecting starting formation
+  * Undo after Reset now restores erased sequence
+  * Handle Couples Circulate from concentric diamonds
 
 For a detailed history of changes, view the
 [Git log](https://github.com/bradchristie/taminations-flutter/commits/main)
@@ -44,7 +44,7 @@ For a detailed history of changes, view the
 ## Recommended Browsers
 
 Chrome, Edge, Firefox and Opera browsers work well with Taminations.
-You may have problems with Safari.
+You may have problems with Safari.  But better yet ...
 ***
 ## Download Taminations for Offline Use
 

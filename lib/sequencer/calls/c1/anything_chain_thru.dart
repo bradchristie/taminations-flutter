@@ -27,7 +27,7 @@ class AnythingChainThru extends Action with CallWithParts, ButCall {
   @override var help = '''(anything) Chain Thru is a 3-part call:
   1.  Do the (anything) call.  If the call is a Circulate you can omit the word Circulate.
   2.  Very Centers Trade
-  3.  Center 4 Cast Off 3/4 - can be relaced with But''';
+  3.  Center 4 Cast Off 3/4 - can be replaced with But''';
   String firstCall;
   AnythingChainThru(String name) :
         firstCall = name.replaceFirst('Chain\\s*Thru'.ri,'').trim(),
