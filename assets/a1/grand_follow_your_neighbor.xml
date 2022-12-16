@@ -86,7 +86,7 @@
       <dancer gender="girl" x="1" y="2" angle="270"/>
     </formation>
     <path numbers="6 1">
-      <move select="Lead Right" beats="2" scaleX="2" />
+      <move select="Lead Right" beats="2.5" scaleX="2" />
       <move select="Run Right" scaleY=".75" />
     </path>
     <path numbers="5 2">
@@ -100,6 +100,30 @@
       <move select="Hinge Right" scaleX=".5" />
       <move select="Hinge Right" scaleX=".5" scaleY=".5" />
       <move select="Hinge Right" scaleX=".5" scaleY=".5" />
+    </path>
+  </tam>
+
+  <tam title="Grand Follow Your Neighbor" from="Left-Hand Columns of 6">
+    <formation>
+      <dancer gender="girl" x="1" y="-2" angle="90"/>
+      <dancer gender="boy" x="1" y="0" angle="90"/>
+      <dancer gender="girl" x="1" y="2" angle="90"/>
+    </formation>
+    <path>
+      <move select="Forward" />
+      <move select="Hinge Left" scaleX=".5" />
+      <move select="Hinge Left" scaleX=".5" scaleY=".5" />
+      <move select="Hinge Left" scaleX=".5" scaleY=".5" />
+    </path>
+    <path>
+      <move select="Forward" />
+      <move select="Hinge Left" scaleX=".5" />
+      <move select="Hinge Left" scaleX=".5" scaleY=".5" />
+      <move select="Hinge Left" scaleX=".5" scaleY=".5" />
+    </path>
+    <path>
+      <move select="Lead Left" beats="2.5" scaleX="2" />
+      <move select="Run Left" scaleY=".75" />
     </path>
   </tam>
 
