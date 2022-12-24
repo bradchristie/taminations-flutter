@@ -1218,6 +1218,12 @@
     <dancer gender="boy" x="0" y="-1" angle="0"/>
   </formation>
 
+  <formation name="Compact Wave of 6">
+    <dancer gender="boy" x="0" y=".5" angle="180"/>
+    <dancer gender="girl" x="0" y="1.5" angle="0"/>
+    <dancer gender="girl" x="0" y="2.5" angle="180"/>
+  </formation>
+
   <formation name="I-Beam">
     <dancer gender="boy" x="-1" y="-3.5" angle="90"/>
     <dancer gender="girl" x="1" y="-3.5" angle="90"/>
@@ -1586,6 +1592,13 @@
     <dancer gender="girl" x="-1" y="-1" angle="180"/>
   </formation>
 
+  <formation name="T-Bone RDDL">
+    <dancer gender="boy" x="-1" y="3" angle="270"/>
+    <dancer gender="girl" x="1" y="3" angle="270"/>
+    <dancer gender="boy" x="-1" y="1" angle="180"/>
+    <dancer gender="girl" x="-1" y="-1" angle="180"/>
+  </formation>
+
   <formation name="T-Bone LULU">
     <dancer gender="boy" x="-1" y="3" angle="90"/>
     <dancer gender="girl" x="-1" y="1" angle="0"/>
@@ -1649,11 +1662,18 @@
     <dancer gender="girl" x="-1" y="-3" angle="90"/>
   </formation>
 
-  <formation name="T-Bone Couples">
+  <formation name="T-Bone Couples 1">
     <dancer gender="boy" x="-2" y="3" angle="0"/>
     <dancer gender="girl" x="-2" y="1" angle="0"/>
     <dancer gender="girl" x="-3" y="-2" angle="270"/>
     <dancer gender="boy" x="-1" y="-2" angle="270"/>
+  </formation>
+
+  <formation name="T-Bone Couples 2">
+    <dancer gender="boy" x="-2" y="-1" angle="0"/>
+    <dancer gender="girl" x="-2" y="-3" angle="0"/>
+    <dancer gender="girl" x="1" y="-2" angle="270"/>
+    <dancer gender="boy" x="3" y="-2" angle="270"/>
   </formation>
 
   <!--  Formations with phantoms  -->

@@ -44,12 +44,10 @@
     </taminator>
   </tam>
 
-
-
   <tam title="Ferris Wheel"
        from="Right-Handed Two-Faced Lines"
        formation="Two-Faced Lines RH"
-       fractions="" difficulty="1">
+       difficulty="1">
     <path>
       <move select="Run Right" beats="4" hands="gripright" scaleX="2" scaleY="2" offsetX="3" />
     </path>
@@ -70,7 +68,7 @@
   <tam title="Ferris Wheel"
        from="Left-Handed Two-Faced Lines"
        formation="Two-Faced Lines LH"
-       fractions="" difficulty="1">
+       difficulty="1">
     <path>
       <move select="Run Left" beats="4" hands="gripleft" scaleX="2" scaleY="2" offsetX="1" />
     </path>
@@ -87,8 +85,8 @@
 
   <tam title="Ferris Wheel"
        from="T-Bone Couples"
-       formation="T-Bone Couples"
-       fractions="" difficulty="2">
+       formation="T-Bone Couples 1"
+       difficulty="2">
     <path>
       <move select="Run Right" beats="4" hands="gripright" scaleX="2" scaleY="2" offsetX="3" />
     </path>
@@ -102,4 +100,23 @@
       <move select="U-Turn Left" beats="4" hands="gripright" offsetX="1" />
     </path>
   </tam>
+
+  <tam title="Ferris Wheel"
+       from="T-Bone Couples 2"
+       formation="T-Bone Couples 2"
+       difficulty="2">
+    <path>
+      <move select="U-Turn Left" beats="4" hands="gripright" offsetX="3" />
+    </path>
+    <path>
+      <move select="Run Left" beats="4" hands="gripleft" scaleX="2" scaleY="2" offsetX="3" />
+    </path>
+    <path>
+      <move select="U-Turn Right" beats="4" hands="gripleft" offsetX="1" />
+    </path>
+    <path>
+      <move select="Run Right" beats="4" hands="gripright" scaleX="2" scaleY="2" offsetX="1" />
+    </path>
+  </tam>
+
 </tamination>

@@ -83,7 +83,7 @@ class XMLCall extends Call {
           var totOffset = matchResult.offsets.fold<double>(
               0.0, (s, v) => s + v.length);
           var totAngle = matchResult.angles.fold<double>(0.0, (s, a) => s + a);
-          if (totOffset < bestOffset && totAngle.isAbout(0.0)) {
+          if (totOffset < bestOffset) { // && totAngle.isAbout(0.0)) {
             xcall = tam;
             xmlmap = mm.map;
             ctx2 = ctx2q;
