@@ -37,7 +37,6 @@ The number of Split Circulates can be modified with "Split Circulate n" or "Turn
 
   @override
   int partNumberForName(String name) {
-    print(name);
     if (name.matches('.*Stars?'.ri))
       return 3;
     return 0;

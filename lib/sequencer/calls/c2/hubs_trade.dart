@@ -31,8 +31,6 @@ class HubsTrade extends ActivesOnlyAction with CallWithParts {
 
   @override
   void perform(CallContext ctx) {
-    print(ctx.dancers.show());
-    print('$name: isLines: ${ctx.isLines()}');
     if (!ctx.isLines() && !ctx.isThar())
       throw CallError('Cannot do $name from here');
     super.perform(ctx);

@@ -34,19 +34,16 @@ The Hinge and Cross can be replaced with But (another call)''';
 
   @override
    void performPart1(CallContext ctx) {
-    print('Percolate 1');
     ctx.applyCalls('Circulate');
   }
 
   @override
    void performPart2(CallContext ctx) {
-    print('Percolate 2');
     ctx.applyCalls('Half Circulate');
   }
 
   @override
    void performPart3(CallContext ctx) {
-    print('Percolate 3');
     ctx.analyze();
     final turnCall = ctx.outer(4).every((d) => d.data.belle)
         ? 'Left Turn Thru' : 'Turn Thru';

@@ -38,7 +38,6 @@ class Breaker extends Action with CallWithParts {
 
   @override
    void performPart2(CallContext ctx) {
-    print(ctx.dancers.show());
     var cast = norm.replaceFirst('breaker'.ri,'');
     String call;
     switch (cast) {
