@@ -650,6 +650,36 @@
     </path>
   </tam>
 
+  <tam title="Once Removed Swing Thru" group="(From tidal line) Once Removed"
+       formation="Two-Faced Tidal Line RH">
+    <path>
+      <move select="Lead Right" scaleX=".5" scaleY=".5"/>
+      <move select="Forward"/>
+      <move select="Lead Right" scaleX=".5" scaleY=".5"/>
+      <move select="Lead Left" scaleX=".5" scaleY=".5"/>
+      <move select="Forward"/>
+      <move select="Lead Left" scaleX=".5" scaleY=".5"/>
+    </path>
+    <path>
+      <move select="Lead Right" scaleX=".5" scaleY=".5"/>
+      <move select="Forward"/>
+      <move select="Lead Right" scaleX=".5" scaleY=".5"/>
+      <move select="Lead Left" scaleX=".5" scaleY=".5"/>
+      <move select="Forward"/>
+      <move select="Lead Left" scaleX=".5" scaleY=".5"/>
+    </path>
+    <path>
+      <move select="Lead Right" scaleX=".5" scaleY=".5"/>
+      <move select="Forward"/>
+      <move select="Lead Right" scaleX=".5" scaleY=".5"/>
+    </path>
+    <path>
+      <move select="Lead Right" scaleX=".5" scaleY=".5"/>
+      <move select="Forward"/>
+      <move select="Lead Right" scaleX=".5" scaleY=".5"/>
+    </path>
+  </tam>
+
   <tam title="Once Removed Switch to a Diamond" group="(From tidal line) Once Removed"
        formation="Two-Faced Tidal Line RH">
     <path couples="1 2">
