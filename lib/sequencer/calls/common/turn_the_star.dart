@@ -33,14 +33,12 @@ class TurnTheStar extends Action {
   @override
   void perform(CallContext ctx) {
     final callName = name.replaceFirst('(do not )?turn the star.*'.ri, '').trim();
-    print('Trying stars');
     ctx.subContext(ctx.dancers, (ctx2) {
       if (!ctx2.matchCodedCall(callName))
         throw CallError('Unable to find $callName as a Call with Parts');
       if (ctx2.callstack.last is CallWithStars) {
         final call = ctx2.callstack.last as CallWithStars;
         final amountText = normalizeCall(name.replaceFirst(callName,''));
-        print(amountText);
         if (amountText.contains('donot'.ri))
           call.turnStarAmount = 0;
         //  First check for fractions 1/4 1/2 3/4
