@@ -44,7 +44,13 @@ class Fascinating extends Action {
         ctx3.applyCalls('Concentric $what');
       });
     });
-
+    if (ctx.isCollision()) {
+      ctx.subContext(other2, (ctx4) {
+        //  TODO would be better to apply this as an adjustment to
+        //  the previous Counter Rotate
+        ctx4.applyCalls('Half Slide In');
+      });
+    }
   }
 
 }
