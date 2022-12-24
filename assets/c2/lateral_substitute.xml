@@ -22,19 +22,19 @@
 -->
 <tamination title="Lateral Substitute">
 
-  <tam title="Centers Lateral Substitute" from="Lines Facing In"
-       formation="Normal Lines">
+  <tam title="Centers Lateral Substitute" from="T-Bones"
+       formation="T-Bone RDDL">
     <path>
-      <move select="Dodge Right"/>
+      <move select="Forward 2" beats="3"/>
     </path>
     <path>
-      <move select="BackSashay Left" scaleX="2"/>
+      <move select="Forward 2" beats="3"/>
     </path>
     <path>
-      <move select="BackSashay Right" scaleX="2"/>
+      <move select="Sashay Right" beats="3" scaleX="2"/>
     </path>
     <path>
-      <move select="Dodge Left"/>
+      <move select="Sashay Left" beats="3" scaleX="2"/>
     </path>
   </tam>
 

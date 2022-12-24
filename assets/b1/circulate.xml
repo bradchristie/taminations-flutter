@@ -816,7 +816,7 @@
 
   <tam title="Couples Circulate"
        from="T-Bone Couples"
-       formation="T-Bone Couples"
+       formation="T-Bone Couples 1"
        fractions="" difficulty="2">
     <path>
       <move select="Extend Right" beats="2" hands="right" scaleX="2" />
