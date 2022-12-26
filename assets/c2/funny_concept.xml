@@ -71,7 +71,9 @@
     </path>
   </tam>
 
-  <tam title="Funny Slide Thru 9 Times" group="Funny" parts="3;3;3;3;3;3;3;3">
+  <tam title="Funny Slide Thru 9 Times" group="Funny"
+       sequencer="gender-specific"
+       parts="3;3;3;3;3;3;3;3">
      <formation>
       <dancer gender="girl" x="-3" y="1" angle="0"/>
       <dancer gender="boy" x="0" y="-3" angle="90"/>
