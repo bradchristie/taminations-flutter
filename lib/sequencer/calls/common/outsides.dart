@@ -18,9 +18,10 @@
 
 */
 
+import '../coded_call.dart';
 import '../common.dart';
 
-class Outsides extends Action {
+class Outsides extends CodedCall {
 
   Outsides(String name) : super(name);
 
