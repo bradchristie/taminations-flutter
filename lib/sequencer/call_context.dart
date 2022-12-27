@@ -24,6 +24,7 @@ import 'calls/action.dart';
 import 'calls/call.dart';
 import 'calls/coded_call.dart';
 import 'calls/xml_call.dart';
+import 'calls/debug_switches.dart';
 
 enum Rolling {
   LEFT,
@@ -469,7 +470,7 @@ class CallContext {
   }
 
   void _checkForAction(String calltext) {
-    if (callstack.none((c) => c is Action || c is XMLCall))
+    if (callstack.none((c) => c is Action || c is XMLCall || c is DebugSwitches))
       throw CallError('$calltext does nothing.');
   }
 
@@ -560,7 +561,8 @@ class CallContext {
       var chopped = calltext.matches('trade circulate'.ri)
           ? ['Trade Circulate'] : calltext.chopped();
       for (var onecall in chopped) {
-        //print('Trying $onecall');
+        if (DebugSwitches.parsing)
+          print('Trying $onecall');
         //  First try to find a snapshot match
         if (onecall.norm.lc != calltext.norm.lc || !skipFirstXML) {
           try {
@@ -581,7 +583,8 @@ class CallContext {
           }
         }
         if (foundOneCall) {
-          //print('    Found $onecall');
+          if (DebugSwitches.parsing)
+            print('    Found $onecall as ${callstack.last}');
           //  Remove the words we matched, break out of
           //  the chopped loop, and continue if any words left
           calltext = calltext.replaceFirst(onecall, '').trim();
@@ -1523,7 +1526,7 @@ class CallContext {
     //  to find something to base the roll direction
     var mySource = _source;
     while (d.path.movelist.isEmpty && mySource != null) {
-      d = mySource!.dancers.firstWhere((d2) => d2 == dv);
+      d = mySource.dancers.firstWhere((d2) => d2 == dv);
       mySource = mySource._source;
     }
     var move = d.path.movelist.where((m) => m.fromCall).lastOrNull;

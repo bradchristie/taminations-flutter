@@ -29,6 +29,7 @@ import 'call_context.dart';
 import 'call_error.dart';
 import 'calls/animated_call.dart';
 import 'calls/coded_call.dart';
+import 'calls/debug_switches.dart';
 import 'calls/xml_call.dart';
 
 class SequencerCall {
@@ -320,9 +321,10 @@ class SequencerModel extends fm.ChangeNotifier {
           firstCall is CodedCall ||
           (firstCall is XMLCall && !firstCall.found))
         cctx.matchStandardFormation();
-
-      if (cctx.isCollision())
-        throw CallError('Unable to calculate valid animation.');
+      if (!DebugSwitches.collisions) {
+        if (cctx.isCollision())
+          throw CallError('Unable to calculate valid animation.');
+      }
       if (cctx.resolutionError)
         errorString = 'Warning: Dancers are not resolved';
       cctx.extendPaths();

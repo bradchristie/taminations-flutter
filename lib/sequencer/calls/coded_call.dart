@@ -250,6 +250,7 @@ import 'common/very_ends.dart';
 import 'common/wave_of_six.dart';
 import 'common/waves.dart';
 import 'common/while.dart';
+import 'debug_switches.dart';
 import 'ms/cast_off_three_quarters.dart';
 import 'ms/cross_fold.dart';
 import 'ms/eight_chain.dart';
@@ -347,6 +348,7 @@ abstract class CodedCall extends Call {
     '($specifier)*crossrun'.ri: (name) => CrossRun(name),
     '(left)?crosstradeandwheel'.ri: (name) => CrossTradeAndWheel(name),
 
+    'debug(parsing|collisions)(on|off)?'.ri: (name) => DebugSwitches(name),
     'detour'.ri: (_) => Detour(),
     'diamondcirculate'.ri: (_) => DiamondCirculate(),
     '(reverse)?dixiediamond'.ri: (name) => DixieDiamond(name),
