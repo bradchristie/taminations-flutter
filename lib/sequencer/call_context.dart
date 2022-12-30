@@ -260,6 +260,8 @@ class CallContext {
       d.animateToEnd();
       return d.clone();
     }).toList();
+    if (!dancers.areDancersOrdered())
+      this.dancers = this.dancers.center().inOrder();
     allActive();
   }
 
@@ -937,28 +939,34 @@ class CallContext {
       animate(0.0);
       analyze();
       final moving = force ? center(4) : movingDancers();
+      final cw4 = centerWaveOf4();
+      final cd4 = centerDiamond();
       final groupsOK = groups.length > 1 && (groups[0].length == 4 ||
           (groups[0].length == 2 && groups[1].length == 2));
-      if (groupsOK && moving.length == 4 && center(4).containsAll(moving)) {
+      if (moving.length == 4 && (
+          (cw4?.containsAll(moving) ?? false) ||
+          (cd4?.containsAll(moving) ?? false) ||
+          (groupsOK && center(4).containsAll(moving)))) {
         animateToEnd();
         var minDist = actives.minOf((d) =>
             dancerClosest(d, (d2) => !moving.contains(d2))!.distanceTo(d));
-        if (!center(4).containsAll(moving) || !minDist.isGreaterThan(1.0)) {
-          animate(0.0);
-          final ctx2 = CallContext.fromDancers(center(4));
-          if (ctx2.isLines()) {
-            ctx2.adjustToFormation('Compact Wave RH');
-          } else if (ctx2.isDiamond()) {
-            ctx2.adjustToFormation('Diamond Compact');
-          } else if (ctx2.isColumns()) {
-            ctx2.adjustToFormation('Single Double Pass Thru Close');
-          } else
+        if (minDist.isGreaterThan(1.0)) {
+          if (center(4).containsAll(moving) ||
+              (centerWaveOf4()?.containsAll(moving) ?? false) ||
+              (centerDiamond()?.containsAll(moving) ?? false))
             return;
-          ctx2.appendToSource(this, false);
-          animateToEnd();
         }
+        final ctx2 = CallContext.fromDancers(moving);
+        if (ctx2.isLines()) {
+          ctx2.adjustToFormation('Compact Wave RH');
+        } else if (ctx2.isDiamond()) {
+          ctx2.adjustToFormation('Diamond Compact');
+        } else if (ctx2.isColumns()) {
+          ctx2.adjustToFormation('Single Double Pass Thru Close');
+        } else
+          return;
+        ctx2.appendToSource(this, false);
       }
-      animateToEnd();
     }
   }
 
@@ -1228,12 +1236,13 @@ class CallContext {
   Dancer? dancerInBack(Dancer d) =>
       dancerClosest(d, (d2) => d2.isInBackOf(d));
   //  Return dancer directly to the right of given dancer
-  Dancer? dancerToRight(Dancer d) =>
-      dancerClosest(d, (d2) => d2.isRightOf(d));
+  Dancer? dancerToRight(Dancer d, {double minDistance=99.0}) =>
+      dancerClosest(d, (d2) =>
+      d2.isRightOf(d) && !d2.distanceTo(d).isGreaterThan(minDistance));
   //  Return dancer directly to the left of given dancer
-  Dancer? dancerToLeft(Dancer d) =>
-      dancerClosest(d, (d2) => d2.isLeftOf(d));
-
+  Dancer? dancerToLeft(Dancer d, {double minDistance=99.0}) =>
+      dancerClosest(d, (d2)
+      => d2.isLeftOf(d) && !d2.distanceTo(d).isGreaterThan(minDistance));
   //  Return dancer that is facing the front of this dancer
   Dancer? dancerFacing(Dancer d) {
     var d2 = dancerInFront(d);
@@ -1268,9 +1277,22 @@ class CallContext {
           .drop(dancers.length-num);
 
   //  Return center 2, 4 , 6 dancers
-  List<Dancer> center(int num) =>
-      dancers.sortedWith((d1, d2) => d1.location.length.compareTo(d2.location.length))
-          .take(num).toList();
+  List<Dancer> center(int num) {
+    //  Special test for center 4 dancers in a line/wave
+    //  These are considered the center 4 regardless of
+    //  the geometry of the others
+    if (num == 4) {
+      var cw4 = centerWaveOf4();
+      var cd4 = centerDiamond();
+      if (cw4 != null && cd4 == null)
+        return cw4;
+      else if (cd4 != null && cw4 == null)
+        return cd4;
+    }
+    return dancers.sortedWith((d1, d2) =>
+        d1.location.length.compareTo(d2.location.length))
+        .take(num).toList();
+  }
 
   //  Smarter code for center 6, works for 1/4 and 3/4 tags
   //  Requires call to analyze()
@@ -1351,20 +1373,60 @@ class CallContext {
       return null;
   }
 
+  List<Dancer>? centerWaveOf4() {
+    var waveOf4 = <Dancer>[];
+    //  Get the dancers on each axis
+    final xd = dancers.where((d) => d.location.x.isAbout(0.0)).toList();
+    final yd = dancers.where((d) => d.location.y.isAbout(0.0)).toList();
+    //  If there are 6 or 8 dancers on one axis, the center 4 of those
+    //  is the Center Wave of 4
+    if (xd.length > 4)
+      waveOf4 = xd.sortedWith((d1, d2) => d1.location.length.compareTo(d2.location.length))
+          .take(4).toList();
+    else if (yd.length > 4)
+      waveOf4 = yd.sortedWith((d1, d2) => d1.location.length.compareTo(d2.location.length))
+          .take(4).toList();
+    else {
+      //  Otherwise, find the 2 dancers in the very center
+      //  Those and their adjacent dancers make the center wave of 4
+      final vc = dancers.where((d) => !d.location.length.isGreaterThan(1.0)).toList();
+      if (vc.length == 2) {
+        waveOf4 = [
+          dancerToRight(vc.first,minDistance: 2.0),
+          dancerToLeft(vc.first,minDistance: 2.0),
+          dancerToRight(vc.second,minDistance: 2.0),
+          dancerToLeft(vc.second,minDistance: 2.0),
+        ].whereType<Dancer>().toList();
+      }
+    }
+    return waveOf4.length == 4 ? waveOf4 : null;
+  }
+
+  //  This return the center 4 dancers if they are in any diamond-like
+  //  formation, including single tag or star
+  List<Dancer>? centerDiamond() {
+    var dordered = dancers.sortedBy((d) => d.location.length);
+    var diamondOf4 = <Dancer?>[
+      dordered.where((d) => d.location.x.isAbout(0) && d.location.y.isGreaterThan(0)).firstOrNull,
+      dordered.where((d) => d.location.x.isAbout(0) && d.location.y.isLessThan(0)).firstOrNull,
+      dordered.where((d) => d.location.x.isGreaterThan(0) && d.location.y.isAbout(0)).firstOrNull,
+      dordered.where((d) => d.location.x.isLessThan(0) && d.location.y.isAbout(0)).firstOrNull,
+    ].whereType<Dancer>().toList();
+    return diamondOf4.length == 4 ? diamondOf4 : null;
+  }
+
   List<Dancer> dancersHoldingRightHands({bool isGrand=true}) =>
       dancers.where((d) {
-        final d2 = dancerToRight(d);
-        return d2 != null && d.distanceTo(d2) < 3.5 &&
-            dancerToRight(d2) == d &&
+        final d2 = dancerToRight(d,minDistance: 3.0);
+        return d2 != null && dancerToRight(d2) == d &&
             (isGrand || !isTidal() ||
                 !d.data.verycenter || !d2.data.verycenter);
       }).toList();
 
   List<Dancer> dancersHoldingLeftHands({bool isGrand=true}) =>
       dancers.where((d) {
-        final d2 = dancerToLeft(d);
-        return d2 != null && d.distanceTo(d2) < 3.5 &&
-            dancerToLeft(d2) == d &&
+        final d2 = dancerToLeft(d,minDistance: 3.0);
+        return d2 != null && dancerToLeft(d2) == d &&
             (isGrand || !isTidal() ||
                 !d.data.verycenter || !d2.data.verycenter);
       }).toList();
@@ -1419,14 +1481,13 @@ class CallContext {
   );
 
   bool isWaves() => dancers.every((d) {
-    var dr = dancerToRight(d);
-    var dl = dancerToLeft(d);
-    if ((dr == null || d.distanceTo(dr) > 2.1) &&
-        (dl == null || d.distanceTo(dl) > 2.1))
+    var dr = dancerToRight(d,minDistance: 2.0);
+    var dl = dancerToLeft(d,minDistance: 2.0);
+    if (dr == null && dl == null)
       return false;
-    if (dr != null && d.distanceTo(dr) < 2.1 && !isInWave(d,dr))
+    if (dr != null && !isInWave(d,dr))
       return false;
-    if (dl != null && d.distanceTo(dl) < 2.1 && !isInWave(d,dl))
+    if (dl != null && !isInWave(d,dl))
       return false;
     return true;
   });
@@ -1708,6 +1769,11 @@ class CallContext {
     if (isTidal) {
       for (var i in [2,3,4,5])
         dorder[i].data.center = true;
+    }
+    //  If there's a center wave/line of 4, use that
+    else if (dancers.length == 8 && centerWaveOf4() != null) {
+      for (var d in centerWaveOf4()!)
+        d.data.center = true;
     }
     //  Otherwise, if there are 4 dancers closer to the center than the other 4,
     //  they are the centers

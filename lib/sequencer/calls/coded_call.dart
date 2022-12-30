@@ -322,7 +322,7 @@ abstract class CodedCall extends Call {
     '(all4couples)?(left)?(split)?catch.*?(1|2|3|4)?'.ri: (name) => Catch(name),
     'center'.ri: (_) => Centers(),
     'center6'.ri: (_) => CenterSix(),
-    'center(line|wave)of4'.ri: (name) => CenterWaveOfFour(name),
+    'center(line|wave)(of4)?'.ri: (name) => CenterWaveOfFour(name),
     'chainreaction'.ri: (_) => ChainReaction(),
     'checkpoint((.+)by(.*))?'.ri: (name) => Checkpoint(name),
     'changethe(centers?|wave)'.ri: (name) => ChangeTheCenters(name),
@@ -481,7 +481,10 @@ abstract class CodedCall extends Call {
     //  Accept Scoot Chain Thru Centers so user can say e.g.
     //  Centers Skip the 3rd Part
     '(scatter)?scootchainthru(center)?'.ri: (name) => ScootChainThru(name),
-    '(center|inside|middle|out(er|side))diamond'.ri: (name) => SelectDiamond(name),
+    //  Special hack for Centers Star Thru, otherwise it gets parsed
+    //  as Centers Star
+    'centerstarthru'.ri: (name) => CentersStarThru(name),
+    '(center|inside|middle|out(er|side))(diamond|star|thar)'.ri: (name) => SelectDiamond(name),
     'separate'.ri: (name) => Separate(name),
     'shazam'.ri: (name) => Shazam(name),
     'siamese.*'.ri: (name) => Siamese(name),

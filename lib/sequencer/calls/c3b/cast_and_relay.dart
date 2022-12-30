@@ -64,12 +64,12 @@ The centers part for Part 4 can be changed with But (another call).''';
    void performPart3(CallContext ctx) {
     if (turnStarAmount == 0)
       turnStarAmount = fractionTurn[fraction]!;
-    ctx.applyCalls('Center 4 $starTurns While Others Trade');
+    ctx.applyCalls('Center Star $starTurns While Others Trade');
   }
 
   @override
    void performPart4(CallContext ctx) {
-    ctx.applyCalls('Wave of 6 Center 4 $butCall '
+    ctx.applyCalls('Center Wave $butCall '
         'While Others Do Your Part Hourglass Circulate');
   }
 }

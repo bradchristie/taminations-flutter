@@ -48,12 +48,12 @@ The final Cast Off 3/4 can be replaced with But (another call).''';
   @override
    void performPart3(CallContext ctx) {
     ctx.applyCalls('Outer 4 Trade '
-        'While Center 4 $starTurns');
+        'While Center Star $starTurns');
   }
 
   @override
    void performPart4(CallContext ctx) {
-    ctx.applyCalls('Wave of 6 Center 4 $butCall '
+    ctx.applyCalls('Center Wave $butCall '
         'While Others Do Your Part Hourglass Circulate');
   }
 

@@ -33,6 +33,7 @@ class Centers extends FilterActives {
   @override
    void performCall(CallContext ctx) {
     final saveActives = ctx.actives.toList();
+    ctx.analyzeActives();
     try {
       super.performCall(ctx);
     } on CallError {

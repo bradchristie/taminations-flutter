@@ -1309,7 +1309,7 @@ Hinge
 Acey Deucey Once and a Half
 Grand Swing Thru
 Girls Diamond Circulate
-Center 4 Diamond Circulate
+Center Diamond Diamond Circulate
 Boys Diamond Circulate
 Girls Mix
 Half Grand Swing Thru
@@ -2936,7 +2936,7 @@ Extend
 Quarter Thru
 Boys Reverse Explode While Girls Explode
 1/2 Circulate
-Center 4 Run
+Center Star Run
 Boys Reverse Explode
 Left Plenty
 Extend

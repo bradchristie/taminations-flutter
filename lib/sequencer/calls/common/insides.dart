@@ -30,8 +30,21 @@ class Insides extends Action {
     var num = 4;
     if (norm.endsWith('2')) num = 2;
     if (norm.endsWith('6')) num = 6;
-    ctx.actives.sortedBy((d) => d.location.length).drop(num).forEach((d) {
-      d.data.active =  false;
+    var outerDancers = ctx.actives.sortedBy((d) => d.location.length).drop(num);
+    //  Special check for Center 4
+    if (num == 4) {
+      var cw4 = ctx.centerWaveOf4();
+      var cd4 = ctx.centerDiamond();
+      if (cd4 != null && cw4 != null)
+        throw CallError(
+            'Center 4 is ambiguous. Use Center Wave/Line or Center Diamond/Star.');
+      else if (cw4 != null)
+        outerDancers = ctx.actives - cw4;
+      else if (cd4 != null)
+        outerDancers = ctx.actives - cd4;
+    }
+    outerDancers.forEach((d) {
+      d.data.active = false;
     });
   }
 

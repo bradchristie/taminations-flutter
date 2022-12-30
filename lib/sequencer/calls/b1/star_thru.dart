@@ -47,3 +47,20 @@ class StarThru extends ActivesOnlyAction {
   }
 
 }
+
+//  This class is a hack since 'Centers' 'Star Thru'
+//  parses as 'Centers Star' which fails
+class CentersStarThru extends StarThru {
+
+  CentersStarThru(String name) : super(name);
+
+  @override
+  void perform(CallContext ctx) {
+    ctx.dancers.forEach((d) {
+      if (!d.data.center)
+        d.data.active = false;
+    });
+    super.perform(ctx);
+  }
+
+}
