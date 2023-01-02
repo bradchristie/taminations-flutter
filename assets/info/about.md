@@ -26,15 +26,15 @@ This is free software, and you are welcome to modify and redistribute it
 under the terms of the [GNU GPL license](http://www.gnu.org/licenses/gpl.html).  
 
 ## What's New
-* Shoot the Star 3/4 to an Alamo Ring
+* Better animations for Ladies Chain
+* Animation for Once Removed Swing Thru
+* Better example for Lateral Substitute
 * Sequencer changes:
-  * Fix parsing of '&'
-  * Code for C-2 Reverse Rotate
-  * Accept more synonyms such as Left Allemande, Cross Over, Flutter Wheel
-  * Improvments for Block Concept
-  * Fixes for selecting starting formation
-  * Undo after Reset now restores erased sequence
-  * Handle Couples Circulate from concentric diamonds
+  * Select Center Wave/Line or Center Diamond/Star from formations that have both
+  * Fix for Turn Back Once and a Half, Wheel Around Once and a Half
+  * Fix Left Square Thru (n) to a Wave
+  * Fix for modification Do Not Turn the Star(s)
+  * Fix incorrect resolution warning on Dixie Grand, Allemande Left
 
 For a detailed history of changes, view the
 [Git log](https://github.com/bradchristie/taminations-flutter/commits/main)
