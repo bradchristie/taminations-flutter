@@ -29,7 +29,6 @@ import 'call_context.dart';
 import 'call_error.dart';
 import 'calls/animated_call.dart';
 import 'calls/coded_call.dart';
-import 'calls/debug_switches.dart';
 import 'calls/xml_call.dart';
 
 class SequencerCall {

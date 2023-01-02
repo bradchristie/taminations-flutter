@@ -24,7 +24,7 @@ import 'calls/action.dart';
 import 'calls/call.dart';
 import 'calls/coded_call.dart';
 import 'calls/xml_call.dart';
-import 'calls/debug_switches.dart';
+import 'calls/set_debug_switches.dart';
 
 enum Rolling {
   LEFT,
@@ -49,6 +49,8 @@ class MappingContext {
   double totalOffset;
 
   MappingContext(this.name,this.map,this.match,this.totalOffset);
+  String show(ctxfrom,ctxto) => map.mapIndexed((index, item) =>
+       '${ctxfrom.dancers[index]}=>${ctxto.dancers[map[item]]}').join(' ');
 
 }
 
@@ -472,7 +474,7 @@ class CallContext {
   }
 
   void _checkForAction(String calltext) {
-    if (callstack.none((c) => c is Action || c is XMLCall || c is DebugSwitches))
+    if (callstack.none((c) => c is Action || c is XMLCall || c is SetDebugSwitches))
       throw CallError('$calltext does nothing.');
   }
 

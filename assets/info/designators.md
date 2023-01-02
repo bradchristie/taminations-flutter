@@ -16,5 +16,5 @@ Otherwise, the original heads or sides.
 * **Couples / Waves** - dancers that are couples (facing the same direction),
   or dancers in waves or mini-waves (facing opposite directions).  You can
   also say "Dancers in Waves" or "Wave Dancers".
-* **Center Wave of 4** - useful for less common formations like concentric diamonds
+* **Center Line/Wave or Diamond/Star of 4** - necessary to select center dancers in less common formations that have both lines and stars in the center.
 * **Wave of 6**

@@ -3358,6 +3358,12 @@ Reverse Wheel Around
 Pass Thru
 Wheel and Deal
 Centers Pass Thru
+Allemande Left''',
+
+  'Resolution' :
+'''Heads Pass In
+Zoom
+Dixie Grand
 Allemande Left'''
 
 };

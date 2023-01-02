@@ -72,7 +72,7 @@
       <dancer gender="boy" x="-3" y="1" angle="0"/>
       <dancer gender="girl" x="-3" y="-1" angle="0"/>
       <dancer gender="boy" x="-1" y="-2" angle="180"/>
-      <dancer gender="girl" x="-1" y="2" angle="180"/>
+      <dancer gender="girl" x="1" y="-2" angle="0"/>
     </formation>
     <path>
       <move select="Forward"/>
@@ -89,7 +89,7 @@
       <move select="Swing Left" scaleX=".5" scaleY=".5"/>
       <move select="Extend Left" beats="2" scaleY=".5"/>
     </path>
-    <path couples="4 2">
+    <path>
       <move select="Forward"/>
       <move select="Swing Left" scaleX=".5" scaleY=".5"/>
       <move select="Extend Left" beats="2" scaleY=".5"/>

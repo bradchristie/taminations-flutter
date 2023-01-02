@@ -46,7 +46,7 @@ class SecondLandscapePage extends fm.StatelessWidget {
               final model = pp.Provider.of<DanceModel>(context, listen: false);
               TamUtils.getXMLAsset(tamState.link!).then((doc) {
                 var tam = TamUtils.tamList(doc)
-                    .where((it) => !(it('display', '').startsWith('n')))
+                    .where((it) => DebugSwitches.showHiddenAnimations || !(it('display', '').startsWith('n')))
                     .toList()[max(0, tamState.animnum)];
                 model.setAnimation(tam);
                 if (tamState.animnum >= 0)

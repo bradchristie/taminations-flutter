@@ -17,22 +17,10 @@
  *     along with Taminations.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import 'coded_call.dart';
-import 'common.dart';
-
-class DebugSwitches extends CodedCall {
+class DebugSwitches {
 
   static var parsing = false;
   static var collisions = false;
-
-  DebugSwitches(String name) : super(name);
-
-  @override
-  void performCall(CallContext ctx) {
-    if (name.contains('pars'.ri))
-      parsing = !name.contains('off'.ri);
-    else if (name.contains('col'.ri))
-      collisions = !name.contains('off'.ri);
-  }
+  static var showHiddenAnimations = false;
 
 }
