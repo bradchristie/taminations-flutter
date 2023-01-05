@@ -74,7 +74,8 @@ extension TamDouble on double {
   bool isApproxInt({double delta = 0.1}) => (this-round()).abs() < delta;
   double angleDiff(double a2) =>
       ((((this-a2) % (pi*2)) + (pi*3)) % (pi*2)) - pi;
-  bool isAround(double a2) => angleDiff(a2).isAbout(0.0);
+  bool isAround(double a2, {double delta = 0.1}) =>
+      angleDiff(a2).isAbout(0.0,delta:delta);
   //  Less than and not equal to, for floating point
   bool isLessThan(double a2, {double delta = 0.1}) =>
       this < a2 && !isAbout(a2,delta:delta);
@@ -90,6 +91,7 @@ extension TamDouble on double {
   double get toRadians => this * pi / 180;
   double get toDegrees => this * 180 / pi;
   double coerceIn(double a, double b) => max(a,min(b,this));
+  double get angleOff90 => (this + pi*2.0 + 0.1) % (pi/2.0) - 0.1;
 
 }
 

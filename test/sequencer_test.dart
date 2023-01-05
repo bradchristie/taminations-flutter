@@ -3364,6 +3364,27 @@ Allemande Left''',
 '''Heads Pass In
 Zoom
 Dixie Grand
-Allemande Left'''
+Allemande Left''',
+
+  'Quarter Tops' :
+'''All 4 Couples Pass the Ocean
+Half the Top
+3/4 the Top
+Half the Top
+1/4 the Top
+Adjust to Thar
+All 8 Recycle
+Allemande Left''',
+
+  'Half Bend the Line' :
+'''Heads Lead Right
+Veer Left
+1/2 Bend the Line
+Chain Reaction
+Centers Pass Thru and Chase Right
+Left Swing Thru
+Tag the Line
+Leads Turn Back
+Right and Left Grand'''
 
 };

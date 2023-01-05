@@ -373,6 +373,10 @@ class CallContext {
   List<Dancer> movingDancers() => dancers.where((d) =>
       d.path.movelist.any((m) => m.fromCall)).toList();
 
+  double get angleOff90 =>
+      dancers.map((d) => d.angleFacing.angleOff90)
+          .fold<double>(0.0, (a, b) => a + b) / dancers.length;
+
 
   /// Append the result of processing this CallContext to it source.
   /// The CallContext must have been previously cloned from the source.
@@ -831,8 +835,11 @@ class CallContext {
           //  Don't match if some dancers are too far from their mapped location
           var maxOffset = matchResult.offsets.firstBy((it) => -it.length)!;
           //  Don't match if rotation is not multiple of 90 degrees
-          var angsnap = matchResult.transform.angle / (pi / 2);
-          if (maxOffset.length < maxError && angsnap.isApproxInt(delta : maxAngle)) {
+          var matchAngle = matchResult.transform.angle.angleOff90;
+          var matchAngleDiff = angleOff90.angleDiff(ctx2.angleOff90)
+              .angleDiff(matchAngle);
+          var angleOK = matchAngle.isAround(0.0,delta:0.2) || matchAngleDiff.isAround(0.0,delta:0.2);
+          if (maxOffset.length < maxError && angleOK) {
             var totOffset = matchResult.offsets.fold<double>(0.0, (s, v) => s + v.length);
             if (bestMapping == null || totOffset < bestMapping.totalOffset)
               bestMapping = MappingContext(' ', mapping.copy(), matchResult, totOffset);
