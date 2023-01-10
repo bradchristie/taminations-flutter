@@ -635,11 +635,36 @@
 
   <!--  For fractional tops   -->
   <path name="Sxtnth">
-    <movement hands="none" beats="1.125" cx1="0.3939" cy1="0" cx2="0.7842" cy2="-0.0777" x2="1.1481" y2="-0.2283" />
+    <movement hands="none" beats="1.125" cx1="0.3939" cy1="0"
+              cx2="0.784134"
+              cy2="-0.0776224"
+              x2="1.148050"
+              y2="-0.2283614" />
   </path>
 
-  <path name="H16th">
-    <movement hands="left" beats="0.375" cx1="0.1313" cy1="0" cx2="0.2614" cy2="0.0259" x2="0.3827" y2="0.0761" />
+  <path name="Lead Left 1/4">
+    <!--  x2 = sin(pi/8)
+          y2 = 1 - cos(pi/8)
+          cx2 = x2 - .1313*cos(pi/8)
+          cy2 = y2 - .1313*sin(pi/8)
+    -->
+    <movement hands="none" beats="0.375" cx1="0.1313" cy1="0"
+              cx2="0.261378050"
+              cy2="0.0258741328"
+              x2="0.38268343"
+              y2="0.076120467" />
+  </path>
+
+  <path name="Lead Right 1/4">
+    <move select="Lead Left 1/4" reflect="-1"/>
+  </path>
+
+  <path name="Hinge Left 1/4">
+    <move select="Lead Left 1/4" hands="left"/>
+  </path>
+
+  <path name="Hinge Right 1/4">
+    <move select="Hinge Left 1/4" reflect="-1"/>
   </path>
 
   <!--  For couples circle left   -->

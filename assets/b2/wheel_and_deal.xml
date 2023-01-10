@@ -27,10 +27,22 @@
        formation="Two-Faced Line RH"
        difficulty="1">
     <path>
-      <move select="Run Right" beats="4" hands="right" scaleX="2" scaleY="2" offsetX="2" />
+      <move select="Run Right" beats="4" hands="right" scaleX="2" scaleY="2" offsetX="1.5" />
     </path>
     <path>
-      <move select="U-Turn Right" beats="4" hands="left" offsetX="2" />
+      <move select="U-Turn Right" beats="4" hands="left" offsetX="1.5" />
+    </path>
+  </tam>
+
+  <tam title="Wheel and Deal"
+       from="Compact Right-Hand Two-Faced Line"
+       formation="Compact Two-Faced Line RH"
+       difficulty="1" display="no">
+    <path>
+      <move select="Run Right" beats="4" hands="right" scaleX="1.5" scaleY="1.25" offsetX="1" />
+    </path>
+    <path>
+      <move select="U-Turn Right" beats="4" hands="left" offsetX="1" offsetY=".5"/>
     </path>
   </tam>
 
@@ -39,10 +51,22 @@
        formation="Two-Faced Line LH"
        fractions="" difficulty="1">
     <path>
-      <move select="U-Turn Left" beats="4" hands="right" offsetX="2" />
+      <move select="U-Turn Left" beats="4" hands="right" offsetX="1.5" />
     </path>
     <path>
-      <move select="Run Left" beats="4" hands="left" scaleX="2" scaleY="2" offsetX="2" />
+      <move select="Run Left" beats="4" hands="left" scaleX="2" scaleY="2" offsetX="1.5" />
+    </path>
+  </tam>
+
+  <tam title="Wheel and Deal"
+       from="Compact Left-Hand Two-Faced Line"
+       formation="Compact Two-Faced Line LH"
+       difficulty="1" display="no">
+    <path>
+      <move select="U-Turn Left" beats="4" hands="right" offsetX="1" offsetY="-.5"/>
+    </path>
+    <path>
+      <move select="Run Left" beats="4" hands="left" scaleX="1.5" scaleY="1.25" offsetX="1" />
     </path>
   </tam>
 

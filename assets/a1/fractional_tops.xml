@@ -28,21 +28,21 @@
        parts="3" >
     <path>
       <move select="Swing Left" />
-      <move select="Sxtnth" reflect="-1" />
+      <move select="Lead Left 1/4" beats="1.125" scaleX="3" scaleY="3" />
     </path>
     <path>
       <move select="Swing Left" />
       <move select="Lead Right 1/2" hands="right" />
-      <move select="H16th" reflect="-1" />
+      <move select="Hinge Right 1/4"/>
     </path>
     <path>
       <move select="Swing Left" />
-      <move select="Sxtnth" reflect="-1" />
+      <move select="Lead Left 1/4" beats="1.125" scaleX="3" scaleY="3" />
     </path>
     <path>
       <move select="Swing Left" />
       <move select="Lead Right 1/2" hands="right" />
-      <move select="H16th" reflect="-1" />
+      <move select="Hinge Right 1/4"/>
     </path>
   </tam>
 
@@ -52,21 +52,21 @@
        parts="3" >
     <path>
       <move select="Swing Right" />
-      <move select="Sxtnth" />
+      <move select="Lead Right 1/4" beats="1.125" scaleX="3" scaleY="3" />
     </path>
     <path>
       <move select="Swing Right" />
       <move select="Lead Left 1/2" hands="left" />
-      <move select="H16th" />
+      <move select="Hinge Left 1/4"/>
     </path>
     <path>
       <move select="Swing Right" />
-      <move select="Sxtnth" />
+      <move select="Lead Right 1/4" beats="1.125" scaleX="3" scaleY="3" />
     </path>
     <path>
       <move select="Swing Right" />
       <move select="Lead Left 1/2" hands="left" />
-      <move select="H16th" />
+      <move select="Hinge Left 1/4"/>
     </path>
   </tam>
 
@@ -125,22 +125,22 @@
     <path>
       <move select="Swing Left" />
       <move select="Lead Left 1/2" beats="2.25" scaleX="3" scaleY="3" />
-      <move select="Sxtnth" reflect="-1" />
+      <move select="Lead Left 1/4" beats="1.125" scaleX="3" scaleY="3" />
     </path>
     <path>
       <move select="Swing Left" />
       <move select="Swing Right" />
-      <move select="H16th" reflect="-1" />
+      <move select="Hinge Right 1/4"/>
     </path>
     <path>
       <move select="Swing Left" />
       <move select="Lead Left 1/2" beats="2.25" scaleX="3" scaleY="3" />
-      <move select="Sxtnth" reflect="-1" />
+      <move select="Lead Left 1/4" beats="1.125" scaleX="3" scaleY="3" />
     </path>
     <path>
       <move select="Swing Left" />
       <move select="Swing Right" />
-      <move select="H16th" reflect="-1" />
+      <move select="Hinge Right 1/4"/>
     </path>
   </tam>
 
@@ -151,22 +151,22 @@
     <path>
       <move select="Swing Right" />
       <move select="Lead Right 1/2" beats="2.25" scaleX="3" scaleY="3" />
-      <move select="Sxtnth" />
+      <move select="Lead Right 1/4" beats="1.125" scaleX="3" scaleY="3" />
     </path>
     <path>
       <move select="Swing Right" />
       <move select="Swing Left" />
-      <move select="H16th" />
+      <move select="Hinge Left 1/4"/>
     </path>
     <path>
       <move select="Swing Right" />
       <move select="Lead Right 1/2" beats="2.25" scaleX="3" scaleY="3" />
-      <move select="Sxtnth" />
+      <move select="Lead Right 1/4" beats="1.125" scaleX="3" scaleY="3" />
     </path>
     <path>
       <move select="Swing Right" />
       <move select="Swing Left" />
-      <move select="H16th" />
+      <move select="Hinge Left 1/4"/>
     </path>
   </tam>
 

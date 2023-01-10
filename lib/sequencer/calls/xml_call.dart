@@ -157,10 +157,8 @@ class XMLCall extends Call {
     }
 
     ctxwork.animate(endbeat);
-    var matchResult = ctxwork.computeFormationOffsets(ctx2, xmlmap, delta: 0.2);
+    var matchResult = ctxwork.computeFormationOffsets(ctx2, xmlmap, delta: 0.05);
     ctxwork.adjustToFormationMatch(matchResult,adjustFirstMovement: true);
-    //  Move dancers to end so any subsequent modifications (e.g. roll)
-    //  use the new position
     ctxwork.animateToEnd();
 
     //  Mark dancers that had no XML move as inactive
@@ -197,9 +195,6 @@ class XMLCall extends Call {
     if (!exact) {
       ctxwork.appendToSource();
     }
-
   }
-
-
 
 }

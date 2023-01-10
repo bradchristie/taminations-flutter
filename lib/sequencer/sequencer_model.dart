@@ -316,6 +316,7 @@ class SequencerModel extends fm.ChangeNotifier {
       //  Snap to a standard formation so subsequent calls will work
       //  But not if just one XML call, as it knows how it should end
       final firstCall = cctx.callstack.first;
+      cctx.animateToEnd();
       if (cctx.callstack.length > 1 ||
           firstCall is CodedCall ||
           (firstCall is XMLCall && !firstCall.found))
@@ -328,6 +329,7 @@ class SequencerModel extends fm.ChangeNotifier {
         errorString = 'Warning: Dancers are not resolved';
       cctx.extendPaths();
       cctx.appendToSource();
+      cctx.animateToEnd();
       animation.recalculate();
       var newbeats = animation.beats;
       if (newbeats > prevbeats) {

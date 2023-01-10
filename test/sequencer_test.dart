@@ -3372,7 +3372,6 @@ Half the Top
 3/4 the Top
 Half the Top
 1/4 the Top
-Adjust to Thar
 All 8 Recycle
 Allemande Left''',
 

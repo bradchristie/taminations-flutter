@@ -97,18 +97,6 @@ class Fraction extends Action {
         }
       }
 
-      //  Make any ajustment needed to match XML animation at fractional point
-      if (call is XMLCall && call.found) {
-        var xmlctx = CallContext.fromFormation(call.xcall.formation, withPaths: true);
-        xmlctx.animate(_partBeats);
-        fracctx.animateToEnd();
-        var match = fracctx.matchFormations(xmlctx,fuzzy: true);
-        if (match == null) {
-          throw CallError('Error computing fractional call');
-        }
-        fracctx.adjustToFormationMatch(match.match,map: match.map);
-      }
-
     }
     fracctx.appendToSource();
   }

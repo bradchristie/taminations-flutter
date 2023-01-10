@@ -53,12 +53,13 @@ abstract class ModifiedFormationConcept extends Action {
 
     //  Perform the call
     ctx.applyCalls(realCall);
+
     //  Merge the initial adjustment into the start of the call
     for (var d in ctx.dancers) {
       if (adjusted.contains(d) && d.path.movelist.length > 1) {
-        var dy = d.path.movelist.first.btranslate.endPoint.y;
+        var dp = d.path.movelist.first.btranslate.endPoint;
         d.path.shift();
-        d.path.skewFirst(0.0, dy);
+        d.path.skewFirst(dp.x, dp.y);
       }
     }
 
