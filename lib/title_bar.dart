@@ -92,15 +92,17 @@ class TitleBar extends fm.StatelessWidget {
                 //  Title, gets an Expanded so it uses all excess space
                 fm.Expanded(
                     child: fm.Center(
-                        child: AutoSizeText(titleModel.title,
-                            style: fm.TextStyle(
-                                color: Color.WHITE,
-                                fontWeight: fm.FontWeight.bold,
-                                fontSize: 30,
-                                shadows: <fm.Shadow>[
-                                  fm.Shadow(offset: fm.Offset(1.0, 1.0))
-                                ]
-                            )
+                        child: fm.SelectionArea(
+                          child: AutoSizeText(titleModel.title,
+                              style: fm.TextStyle(
+                                  color: Color.WHITE,
+                                  fontWeight: fm.FontWeight.bold,
+                                  fontSize: 30,
+                                  shadows: <fm.Shadow>[
+                                    fm.Shadow(offset: fm.Offset(1.0, 1.0))
+                                  ]
+                              )
+                          ),
                         )
                     )
                 ),
