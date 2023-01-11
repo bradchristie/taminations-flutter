@@ -54,7 +54,6 @@ class MappingContext {
 
 }
 
-var debugLog = false;
 class CallContext {
 
   //  XML files that have been loaded
@@ -478,7 +477,7 @@ class CallContext {
   }
 
   void _checkForAction(String calltext) {
-    if (callstack.none((c) => c is Action || c is XMLCall || c is SetDebugSwitches))
+    if (callstack.none((c) => c is Action || c is XMLCall || c is SetDebugSwitch))
       throw CallError('$calltext does nothing.');
   }
 
@@ -569,8 +568,7 @@ class CallContext {
       var chopped = calltext.matches('trade circulate'.ri)
           ? ['Trade Circulate'] : calltext.chopped();
       for (var onecall in chopped) {
-        if (DebugSwitches.parsing)
-          print('Trying $onecall');
+        DebugSwitch.parsing.log('Trying $onecall');
         //  First try to find a snapshot match
         if (onecall.norm.lc != calltext.norm.lc || !skipFirstXML) {
           try {
@@ -591,8 +589,7 @@ class CallContext {
           }
         }
         if (foundOneCall) {
-          if (DebugSwitches.parsing)
-            print('    Found $onecall as ${callstack.last}');
+          DebugSwitch.parsing.log('    Found $onecall as ${callstack.last}');
           //  Remove the words we matched, break out of
           //  the chopped loop, and continue if any words left
           calltext = calltext.replaceFirst(onecall, '').trim();
@@ -774,8 +771,7 @@ class CallContext {
     double delta = 0.1,
     double maxAngle = 0.2
   }) {
-    if (debugLog)
-      print('in matchFormations ${dancers.length}  ${ctx2.dancers.length}');
+    DebugSwitch.mapping.log('matchFormations ${dancers.length}  ${ctx2.dancers.length}');
     if (!subformation && dancers.length != ctx2.dancers.length)
       return null;
     //  Work on a copy of this CallContext, rotating dancers can mess it up
@@ -827,8 +823,7 @@ class CallContext {
         }
       } else {
         //  Mapping for this dancer found
-        if (debugLog)
-          print('dancer ${dancers[mapindex]} mapped to ${ctx2.dancers[mapping[mapindex]]}');
+        DebugSwitch.mapping.log('dancer ${dancers[mapindex]} mapped to ${ctx2.dancers[mapping[mapindex]]}');
         mapindex += asymmetric || ctx2.asymmetric ? 1 : 2;
         if (mapindex >= workctx.dancers.length) {
           //  All dancers mapped

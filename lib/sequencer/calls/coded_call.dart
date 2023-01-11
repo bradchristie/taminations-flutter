@@ -348,7 +348,7 @@ abstract class CodedCall extends Call {
     '($specifier)*crossrun'.ri: (name) => CrossRun(name),
     '(left)?crosstradeandwheel'.ri: (name) => CrossTradeAndWheel(name),
 
-    'debug(parsing|collisions|showhidden)(on|off)?'.ri: (name) => SetDebugSwitches(name),
+    'debug.*'.ri: (name) => SetDebugSwitch(name),
     'detour'.ri: (_) => Detour(),
     'diamondcirculate'.ri: (_) => DiamondCirculate(),
     '(reverse)?dixiediamond'.ri: (name) => DixieDiamond(name),

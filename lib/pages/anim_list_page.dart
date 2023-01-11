@@ -131,7 +131,8 @@ class _AnimListState extends fm.State<AnimListFrame> {
     var prevGroup = '';
     var animationsAdded = 0;
     for (final tam in TamUtils.tamList(doc)
-        .where((it) => DebugSwitches.showHiddenAnimations || !(it('display','')).startsWith('n'))) {
+        .where((it) => DebugSwitch.showHiddenAnimations.enabled ||
+                       !(it('display','')).startsWith('n'))) {
       var tamTitle = tam('title');
       var group = tam('group','');
       var from = group.isNotEmpty ? '' : tam('from') + tam('xref-from');

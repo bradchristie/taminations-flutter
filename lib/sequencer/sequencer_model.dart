@@ -321,7 +321,7 @@ class SequencerModel extends fm.ChangeNotifier {
           firstCall is CodedCall ||
           (firstCall is XMLCall && !firstCall.found))
         cctx.matchStandardFormation();
-      if (!DebugSwitches.collisions) {
+      if (!DebugSwitch.collisions.enabled) {
         if (cctx.isCollision())
           throw CallError('Unable to calculate valid animation.');
       }

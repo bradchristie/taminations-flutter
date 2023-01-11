@@ -20,18 +20,22 @@
 import 'coded_call.dart';
 import 'common.dart';
 
-class SetDebugSwitches extends CodedCall {
+class SetDebugSwitch extends CodedCall {
 
-  SetDebugSwitches(String name) : super(name);
+  @override var help = 'Parsing\nCollisions\nHidden\nMapping';
+
+  SetDebugSwitch(String name) : super(name);
 
   @override
   void performCall(CallContext ctx) {
     if (name.contains('pars'.ri))
-      DebugSwitches.parsing = !name.contains('off'.ri);
+      DebugSwitch.parsing.enabled = !name.contains('off'.ri);
     else if (name.contains('col'.ri))
-      DebugSwitches.collisions = !name.contains('off'.ri);
+      DebugSwitch.collisions.enabled = !name.contains('off'.ri);
     else if (name.contains('hidden'.ri))
-      DebugSwitches.showHiddenAnimations = !name.contains('off'.ri);
+      DebugSwitch.showHiddenAnimations.enabled = !name.contains('off'.ri);
+    else if (name.contains('mapping'.ri))
+      DebugSwitch.mapping.enabled = !name.contains('off'.ri);
   }
 
 }

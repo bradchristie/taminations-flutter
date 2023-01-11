@@ -17,10 +17,17 @@
  *     along with Taminations.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-class DebugSwitches {
+class DebugSwitch {
 
-  static var parsing = false;
-  static var collisions = false;
-  static var showHiddenAnimations = false;
+  static var parsing = DebugSwitch();
+  static var collisions = DebugSwitch();
+  static var showHiddenAnimations = DebugSwitch();
+  static var mapping = DebugSwitch();
+
+  var enabled = false;
+  void log(String message) {
+    if (enabled)
+      print(message);
+  }
 
 }
