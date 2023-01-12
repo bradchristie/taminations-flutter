@@ -612,7 +612,7 @@ abstract class CodedCall extends Call {
     //  Anything Couple Up does not include Like A Couple Up
     '.+(?<!(start|finish|likea|part))(motivate|coordinate|coupleup|percolate|perkup)'.ri: (name) => Anything(name),
     //  Anything Chain Thru should not match Square Chain Thru or others
-    '.*(?<!(cross|8|peel|scatter|scoot|spin|square|swing|tag))chainthru'.ri:
+    '.*(?<!(cross|.+diamond|8|peel|scatter|scoot|spin|square|swing|tag))chainthru'.ri:
         (name) => AnythingChainThru(name),
   };
 

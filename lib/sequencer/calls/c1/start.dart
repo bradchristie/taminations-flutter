@@ -71,9 +71,11 @@ class Start extends Action {
           dypctx.dancers[i].path.add(pctx.dancers[m].path);
         }
       });
+
       //  Extend paths of all dancers so others don' start
       //  until the selected dancers have finished the 1st part
       ctx.extendPaths();
+      ctx.matchStandardFormation();
       //  Now everyone is active
       for (var d in ctx.dancers)
         d.data.active = true;
