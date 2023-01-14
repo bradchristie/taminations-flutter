@@ -39,7 +39,7 @@ class SwingThru extends ActivesOnlyAction with CallWithParts {
    void performPart1(CallContext ctx) {
     if (ctx.dancers.where((d) => !ctx.isInWave(d)).isNotEmpty) {
       try {
-        ctx.applyCalls('Wave Dancers Nothing While Others Step to a Wave');
+        ctx.applyCalls('Wave Dancers Nothing While Others Facing Dancers Step to a Wave');
       } on CallError catch(_) { }
       ctx.analyze();
     }

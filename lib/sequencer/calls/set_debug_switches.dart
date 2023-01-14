@@ -36,6 +36,8 @@ class SetDebugSwitch extends CodedCall {
       DebugSwitch.showHiddenAnimations.enabled = !name.contains('off'.ri);
     else if (name.contains('mapping'.ri))
       DebugSwitch.mapping.enabled = !name.contains('off'.ri);
+    else if (name.contains('perform'.ri))
+      DebugSwitch.perform.enabled = !name.contains('off'.ri);
   }
 
 }

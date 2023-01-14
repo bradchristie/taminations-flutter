@@ -78,6 +78,8 @@ class CastOffThreeQuarters extends ActivesOnlyAction {
     //  If nobody fell in any of these three categories then something's wrong
     if (waveDancers.isEmpty && couplesLeft.isEmpty && couplesRight.isEmpty)
       throw CallError('Unable to calculate Cast Off 3/4');
+    if ((ctx.actives - waveDancers - couplesRight - couplesLeft).isNotEmpty)
+      throw CallError('Not all dancers can Cast Off 3/4');
   }
 
 }

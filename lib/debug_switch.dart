@@ -23,6 +23,7 @@ class DebugSwitch {
   static var collisions = DebugSwitch();
   static var showHiddenAnimations = DebugSwitch();
   static var mapping = DebugSwitch();
+  static var perform = DebugSwitch();
 
   var enabled = false;
   void log(String message) {

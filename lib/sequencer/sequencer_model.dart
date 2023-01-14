@@ -309,7 +309,7 @@ class SequencerModel extends fm.ChangeNotifier {
       var prevbeats = animation.beats;
       var cctx = CallContext.fromDancers(animation.dancers);
       cctx.interpretCall(call);
-      cctx.performCall();
+      cctx.performCall(tryDoYourPart: true);
       if (!cctx.callname.contains('(move in|step|gnat|back\\s*(up|away))'.ri))
         cctx.adjustForSquaredSetCovention();
       cctx.checkCenters();

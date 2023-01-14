@@ -71,7 +71,6 @@ class DoYourPart extends Action {
           final mapping = dypctx.matchFormations(ctx2, sexy: sexy,
               subformation: true, handholds: false, maxError: 2.9);
           if (mapping != null) {
-            //var matchResult = dypctx.computeFormationOffsets(ctx2, mapping, delta: 0.2);
             var matchResult = mapping.match;
             var totOffset = matchResult.offsets.fold<double>(0.0, (s, v) => s + v.length);
             if (totOffset < bestOffset) {

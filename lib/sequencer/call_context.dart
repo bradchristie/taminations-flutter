@@ -609,51 +609,13 @@ class CallContext {
 
   //  Main routine to map a call to an animation in a Taminations XML file
   bool matchXMLcall(String calltext, {bool fuzzy = false}) {
-    var ctx0 = this;
-    var ctx1 = this;
-    //  If there are precursors, run them first so the result
-    //  will be used to match formations
-    //  Needed for calls like 'Explode And ...'
-    if (callstack.isNotEmpty) {
-      ctx1 = CallContext.fromContext(this);
-      ctx1.callstack = callstack.copy();
-      //  Ignore any errors, some precursors (like Half) expect to find more on the stack
-      try {
-        ctx1.performCall();
-        // ignore: empty_catches
-      } on CallError {}
-    }
-    //  If actives != dancers, create another call context with just the actives
-    var dc = ctx1.dancers.length;
-    var ac = ctx1.actives.length;
-    var perimeter = false;
-    var exact = dc == ac;
-    if (!exact) {
-      //  Don't try to match unless the actives are together
-      if (ctx1.actives.any((d) =>
-          ctx1.inBetween(d, ctx1.actives.first).any((it) => !it.data.active)
-      ))
-        perimeter = true;
-      ctx1 = CallContext.fromContext(ctx1, dancers: ctx1.actives);
-    }
-
     //  Try to find a match in the xml animations
     var norm = normalizeCall(calltext);
-    for (var entry in XMLCall.lookupAnimatedCall(norm).entries) {
-      for (var tam in entry. value) {
-        //  Check for calls that must go around the centers
-        if (perimeter && !tam.isPerimeter)
-          continue;
-        //  Check for 4-dancer calls that do not work for 8 dancers
-        if (!exact && tam.isExact)
-          continue;
-        //  Found something, call is ok
-        final xmlCall = XMLCall(calltext);
-        xmlCall.level = entry.key;
-        ctx0.callstack.add(xmlCall);
-        ctx0.callname += xmlCall.name + ' ';
-        return true;
-      }
+    if (XMLCall.lookupAnimatedCall(norm).isNotEmpty) {
+      final xmlCall = XMLCall(calltext);
+      callstack.add(xmlCall);
+      callname += xmlCall.name + ' ';
+      return true;
     }
     return false;
   }
@@ -915,7 +877,7 @@ class CallContext {
   //  Perform calls by popping them off the stack until the stack is empty.
   //  This doesn't run an animation, rather it takes the stack of calls
   //  and builds the dancer movements.
-  void performCall() {
+  void performCall({bool tryDoYourPart=false}) {
     //  Some calls alter the callstack, so save and restore
     final saveCallstack = callstack.copy();
     for (final d in dancers) {
@@ -924,11 +886,10 @@ class CallContext {
     analyze();
     for (var i=0; i<callstack.length; i++) {
       var c = callstack[i];
-     // print('Performing ${c.name} with object $c');
+     DebugSwitch.perform.log('Performing ${c.name} with object $c');
       c.performCall(this);
       if (i < callstack.length-1)
         analyze();
-      //checkCenters();
       //  A few calls (e.g. Hinge) don't know their level
       //  until the call is performed
       if (c.level > level)

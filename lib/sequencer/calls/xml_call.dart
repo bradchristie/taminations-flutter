@@ -59,7 +59,7 @@ class XMLCall extends Call {
       LevelData.C2: c2.CallsIndex.index[norm] ?? <AnimatedCall>[],
       LevelData.C3A: c3a.CallsIndex.index[norm] ?? <AnimatedCall>[],
       LevelData.C3B: c3b.CallsIndex.index[norm] ?? <AnimatedCall>[]
-    };
+    }..removeWhere((key, value) => value.isEmpty);
 
   XMLCall(String title) : super(title);
 
@@ -70,6 +70,9 @@ class XMLCall extends Call {
       for (var tam in entry.value) {
         //  Check for 4-dancer calls that do not work for 8 dancers
         if (tam.isExact && !exact)
+          continue;
+        //  Check for calls that must go around the centers
+        if (perimeter && !tam.isPerimeter)
           continue;
         var headsMatchSides = !tam.title.contains('Heads?|Sides?'.r);
         var sexy = tam.isGenderSpecific;
@@ -124,8 +127,16 @@ class XMLCall extends Call {
       }
     } else {
       try {
-        ctx.applyCodedCall(name);
-      } on CallError {
+        try {
+          ctx.applyCodedCall(name);
+        } on CallError {
+          //  See if it works with an implied "Do Your Part"
+          if (ctx.actives.length < ctx.dancers.length) {
+            ctx.applyCalls('Do Your Part $name');
+          } else
+            rethrow;
+        }
+      } on CallError catch(e) {
         //  Found the call but formations did not match
         throw FormationNotFoundError(name);
       }

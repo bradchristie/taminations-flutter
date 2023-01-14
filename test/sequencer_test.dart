@@ -3384,6 +3384,19 @@ Centers Pass Thru and Chase Right
 Left Swing Thru
 Tag the Line
 Leads Turn Back
-Right and Left Grand'''
+Right and Left Grand''',
+
+  'Start Diamond Chain Thru' :
+'''Heads Star Thru and Spread
+Pass the Ocean
+Centers Cast Off 3/4
+Boys Start Diamond Chain Thru
+Centers Start Brace Thru
+Star Thru
+Veer Left
+Cast Off 3/4
+Star Thru
+Pass Thru
+Allemande Left'''
 
 };
