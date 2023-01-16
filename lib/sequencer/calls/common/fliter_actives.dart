@@ -40,8 +40,22 @@ abstract class FilterActives extends CodedCall {
     for (var d in actives) {
       d.data.active = isActive(d,ctx);
     }
-    if (ctx.actives.isEmpty)
+    if (ctx.actives.isEmpty) {
+      //  See if we can add an assumed "While"
+      if (actives.length < ctx.dancers.length) {
+        for (var d in ctx.dancers) {
+          d.data.active = isActive(d,ctx);
+        }
+        if (ctx.actives.isNotEmpty) {
+          ctx.contractPaths();
+          ctx.noExtend();
+          return;
+        }
+      }
+      //  If still no actives, the user must have entered something
+      //  like "Leaders Trade" from facing lines
       throw CallError('Unable to identify any $name');
+    }
   }
 
 }
