@@ -252,6 +252,7 @@ class CallContext {
   CallContext? get parent => _source;
   bool _snap = true;
   bool _thoseWhoCan = false;
+  bool _noExtend = false;
   bool resolutionError = false;
   bool asymmetric = false;
 
@@ -468,6 +469,10 @@ class CallContext {
 
   void thoseWhoCanOnly() {
     _thoseWhoCan = true;
+  }
+
+  void noExtend() {
+    _noExtend = true;
   }
 
   Path dancerCannotPerform(Dancer d, String call) {
@@ -894,7 +899,8 @@ class CallContext {
       //  until the call is performed
       if (c.level > level)
         level = c.level;
-      extendPaths();
+      if (!_noExtend)
+        extendPaths();
     }
     callstack = saveCallstack;
   }

@@ -5,7 +5,7 @@ description: Taminations in Flutter
 publish_to: 'none'
 
 # Also change version in msix_config (below) to match
-version: 1.6.51+214
+version: 1.6.52+215
 
 environment:
   sdk: ">=2.12.0 <3.0.0"
@@ -22,7 +22,7 @@ dependencies:
   scidart: ^0.0.2-dev.11
   scrollable_positioned_list: ^0.3.0
   shared_preferences: ^2.0.0
-  speech_to_text: ^6.0.0
+  speech_to_text: ^5.0.0
   tuple: ^2.0.0
   url_launcher: ^6.1.5
   xml: ^6.1.0
@@ -66,7 +66,7 @@ flutter:
 #  This is for building a Windows release:
 #  flutter pub run msix:create
 #  Then to make a bundle, from the windows directory:
-#  makeappx.exe bundle  /f mapping.txt /p taminations.msixbundle /bv 1.6.51.0
+#  makeappx.exe bundle  /f mapping.txt /p taminations.msixbundle /bv 1.6.52.0
 msix_config:
   display_name: Taminations
   publisher_display_name: Brad Christie

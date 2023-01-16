@@ -20,21 +20,17 @@ Call pronunciations provided by
 
 ---
 
-## Taminations version 1.6.51 built 2023-01-02
+## Taminations version 1.6.52 built 2023-16-02
 Copyright 2023 by Brad Christie.  
 This is free software, and you are welcome to modify and redistribute it
 under the terms of the [GNU GPL license](http://www.gnu.org/licenses/gpl.html).  
 
 ## What's New
-* Better animations for Ladies Chain
-* Animation for Once Removed Swing Thru
-* Better example for Lateral Substitute
+* Better animations for Trade the Deucey, Left Pass to the Center
+* Allow text selection of title
 * Sequencer changes:
-  * Select Center Wave/Line or Center Diamond/Star from formations that have both
-  * Fix for Turn Back Once and a Half, Wheel Around Once and a Half
-  * Fix Left Square Thru (n) to a Wave
-  * Fix for modification Do Not Turn the Star(s)
-  * Fix incorrect resolution warning on Dixie Grand, Allemande Left
+  * Handle formations at odd angles, such as after Fractional Tops
+  * Don't require Do Your Part or While in most cases
 
 For a detailed history of changes, view the
 [Git log](https://github.com/bradchristie/taminations-flutter/commits/main)
