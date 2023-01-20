@@ -415,7 +415,7 @@ abstract class CodedCall extends Call {
     'loadtheboat'.ri: (_) => LoadTheBoat(),
     '(left|right|in|out)?loop(1|2|3)?'.ri: (name) => Loop(name),
 
-    'magiccolumntransferand.+'.ri: (name) => MagicTransferAnd(name),
+    'magictransferand.+'.ri: (name) => MagicTransferAnd(name),
     'makemagic'.ri: (_) => MakeMagic(),
     'minibusy'.ri: (_) => MiniBusy(),
     'mix'.ri: (_) => Mix(),

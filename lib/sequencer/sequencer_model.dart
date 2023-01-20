@@ -53,7 +53,6 @@ class SequencerModel extends fm.ChangeNotifier {
 
   SequencerModel([fm.BuildContext? context]) :
         animation = DanceModel(context) {
-    CallContext.init();
     animation.addListener(() {
       _updateCurrentCall();
     });

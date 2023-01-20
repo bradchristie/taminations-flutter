@@ -7,7 +7,6 @@
 
 import 'package:flutter_test/flutter_test.dart';
 
-import 'package:taminations/sequencer/call_context.dart';
 import 'package:taminations/sequencer/sequencer_model.dart';
 import 'package:taminations/tam_utils.dart';
 
@@ -19,7 +18,6 @@ void main() async {
     testWidgets(testName, (WidgetTester tester) async {
       await tester.runAsync(() async {
         await TamUtils.init();
-        await CallContext.init();
         final model = SequencerModel();
         model.setStartingFormation('Static Square');
         await model.paste(testSequences[testName]!);

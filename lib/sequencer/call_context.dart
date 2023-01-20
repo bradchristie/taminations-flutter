@@ -56,88 +56,6 @@ class MappingContext {
 
 class CallContext {
 
-  //  XML files that have been loaded
-  static var loadedMXL = <String,XmlDocument>{};
-
-  //  Index into files for specific calls
-  //  Supplements looking up calls in TamUtils.calldata
-  //  Keys are normalized call name
-  //  Values are file names
-  static var callindex = <String,Set<String>>{};
-
-  static const callindexinitfiles = [
-    'c1/block_formation',
-    'b1/circle',
-    'a1/clover_and_anything',
-    'a1/clover_and_anything',
-    'c1/cross_your_neighbor',
-    'c2/criss_cross_your_neighbor',
-    'plus/explode_the_wave',
-    'a1/explode_the_line',
-    'b1/sashay',
-    'b1/ladies_chain',
-    'a1/any_hand_concept',
-    'a1/split_square_thru',
-    'b2/sweep_a_quarter',
-    'b1/circulate',
-    'b1/face',
-    'c1/butterfly_formation',
-    'a2/all_4_all_8',
-    'a1/as_couples',
-    'b1/veer',
-    'b1/circle',
-    'b1/grand_square',
-    'b1/lead_right',
-    'b1/first_couple_go',
-    'a1/as_couples',
-    'c1/recycle',
-    'c1/stretch_concept',
-    'c1/butterfly_formation',
-    'c1/concentric_concept',
-    'c1/o_formation',
-    'c1/magic_column_formation',
-    'c1/phantom_formation',
-    'plus/single_circle_to_a_wave',
-    'c1/tandem_concept',
-    'c1/track_n',
-    'c1/triple_box_concept',
-    'b2/ocean_wave',
-    'c1/wheel_and_anything',
-    'plus/chase_right',
-    'a1/fractional_tops',
-    'a1/quarter_thru',
-    'b1/split_the_outside_couple',
-    'c2/cross_the_k',
-    'a2/transfer_and_anything',
-    'ms/eight_chain_thru',
-    'b1/separate',
-    'c1/anything_the_windmill',
-    'c1/anything_to_a_wave',
-    'c1/tagging_calls_back_to_a_wave',
-    'plus/grand_swing_thru',
-    'c2/anything_and_circle',
-    'b1/star',
-    'b2/alamo_style',
-    'c2/once_removed_concept',
-    'c1/split_square_thru_variations',
-    'c2/unwrap',
-    'c2/stretched_concept',
-    'c1/finish',
-    'ms/fraction_tag',
-    'c3a/big_block_concept',
-    'plus/triple_scoot',
-    'c1/scoot_and_little',
-    'a2/hourglass_circulate',
-    'c2/reverse_cut_the_diamond',
-    'c1/vertical_tag',
-    'ms/tag',
-    'c2/drop_in',
-    'c2/drop_right',
-    'c2/reverse_cut_the_galaxy',
-    'c2/fascinate',
-    'c1/twist_the_line'
-  ];
-
   static const standardFormations = {
     'Normal Lines Compact': 1.0,
     'Normal Lines': 1.0,
@@ -202,37 +120,6 @@ class CallContext {
     //  two couples
     '.*box'.ri : 'Facing Couples'
   };
-
-  static Future<XmlDocument> loadOneFile(String link) async {
-    if (loadedMXL.containsKey(link))
-      return loadedMXL[link]!;
-    var doc = await TamUtils.getXMLAsset(link);
-    //  Add all the calls to the index
-    doc.findAllElements('tam').forEach((tam) {
-      var norm = normalizeCall(tam('title')).toLowerCase();
-      if (!callindex.containsKey(norm))
-        callindex[norm] = <String>{};
-      callindex[norm]!.add(link);
-    });
-    loadedMXL[link] = doc;
-    return doc;
-  }
-
-  static Set<String> xmlFilesForCall(String norm) {
-    var callfiles1 = TamUtils.callmap.containsKey(norm)
-        ? TamUtils.callmap[norm]!.map((e) => Uri.parse(e.link).path) : <String>[];
-    var callfiles2 = callindex.containsKey(norm)
-        ? callindex[norm]! : <String>{};
-    callfiles2.addAll(callfiles1);
-    return callfiles2;
-  }
-
-  static Future<void> init() {
-    if (callindex.isEmpty) {
-      return Future.wait(callindexinitfiles.map((file) => loadOneFile(file)));
-    }
-    return Future<void>.value();
-  }
 
   static final genderMap = {
     'boy': Gender.BOY,
