@@ -58,7 +58,7 @@ class Finish extends Action {
               var firstBeats = 0.0;
               while (firstBeats.isLessThan(firstPart))
                 firstBeats += p.shift()?.beats ?? firstPart;
-              ctx.dancers[i].path.add(p);
+              ctx.dancers[i].path += p;
             }
             return;
           }

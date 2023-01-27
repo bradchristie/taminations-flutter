@@ -33,14 +33,14 @@ class BendTheLine extends Action {
     var ys = d.distanceTo(d.data.partner!)/2.0;
     if (d.data.beau) {
       if (d.isCenterRight)
-        return TamUtils.getMove('Hinge Right' )..scale(1.0,ys);
+        return TamUtils.getMove('Hinge Right' ).scale(1.0,ys);
       else if (d.isCenterLeft)
-        return TamUtils.getMove('BackHinge Right' )..scale(1.0,ys);
+        return TamUtils.getMove('BackHinge Right' ).scale(1.0,ys);
     } else if (d.data.belle) {
       if (d.isCenterRight)
-        return TamUtils.getMove('BackHinge Left' )..scale(1.0,ys);
+        return TamUtils.getMove('BackHinge Left' ).scale(1.0,ys);
       else if (d.isCenterLeft)
-        return TamUtils.getMove('Hinge Left' )..scale(1.0,ys);
+        return TamUtils.getMove('Hinge Left' ).scale(1.0,ys);
     }
     throw CallError('Cannot figure out how to Bend the Line' );
   }

@@ -610,7 +610,7 @@ abstract class CodedCall extends Call {
   static final Map<RegExp, CodedCall Function(String norm)> normCallMap2 = {
     //  Anything Motivate does not include Start or Finish Motivate
     //  Anything Couple Up does not include Like A Couple Up
-    '.+(?<!(start|finish|likea|part))(motivate|coordinate|coupleup|percolate|perkup)'.ri: (name) => Anything(name),
+    '.+(?<!(start|finish|likea|part|$specifier))(motivate|coordinate|coupleup|percolate|perkup)'.ri: (name) => Anything(name),
     //  Anything Chain Thru should not match Square Chain Thru or others
     '.*(?<!(cross|startdiamond|8|peel|scatter|scoot|spin|square|swing|tag))chainthru'.ri:
         (name) => AnythingChainThru(name),

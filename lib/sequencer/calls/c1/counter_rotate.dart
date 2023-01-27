@@ -35,7 +35,7 @@ class CounterRotate extends Action {
     //  Looks much better if dancers all take the same time
     var maxBeats = ctx.dancers.maxOf((d) => d.path.beats);
     for (var d in ctx.dancers) {
-      d.path.changeBeats(maxBeats);
+      d.path = d.path.changeBeats(maxBeats);
     }
   }
 

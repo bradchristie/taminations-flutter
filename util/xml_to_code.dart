@@ -33,8 +33,8 @@ void main() async {
   await writeCalls();
 }
 
-void writeOneMovement(IOSink mDart, XmlElement m) {
-  mDart.writeln('Movement.fromData(');
+String writeOneMovement(XmlElement m) {
+  var move = 'Movement.fromData(';
   var b = 'beats: ' + m('beats');
   var h = 'hands: Hands.' + m('hands').toUpperCase();
   var cx1 = 'cx1: ' + m('cx1');
@@ -49,12 +49,12 @@ void writeOneMovement(IOSink mDart, XmlElement m) {
     var cy4 = 'cy4: ' + m('cy4');
     var x4 = 'x4: ' + m('x4');
     var y4 = 'y4: ' + m('y4');
-    mDart.writeln(
-        '    $b, $h, $cx1, $cy1, $cx2, $cy2, $x2, $y2, $cx3, $cx4, $cy4, $x4, $y4');
+    move += '    $b, $h, $cx1, $cy1, $cx2, $cy2, $x2, $y2, $cx3, $cx4, $cy4, $x4, $y4';
   } else {
-    mDart.writeln('    $b, $h, $cx1, $cy1, $cx2, $cy2, $x2, $y2');
+    move += '    $b, $h, $cx1, $cy1, $cx2, $cy2, $x2, $y2';
   }
-  mDart.write('  )');
+  move += '  )';
+  return move;
 }
 
 //  This routine builds a list of Path objects
@@ -76,20 +76,20 @@ Future<void> writeMoves() async {
     if (m != null) {
       movesDart.writeln(
           '  static final Path $objName = Path([');
-      writeOneMovement(movesDart, m);
+      movesDart.write(writeOneMovement(m));
       movesDart.writeln('],\'${p('name')}\');');
     } else {
       final movestr = p.childrenNamed('move').map((m) {
         var objFrom = m('select').id;
         var mods = '';
         if (m('hands').isNotBlank)
-          mods += '..changehands(Hands.${m('hands').toUpperCase()})';
+          mods += '.changehands(Hands.${m('hands').toUpperCase()})';
         if (m('beats').isNotBlank)
-          mods += '..changeBeats(${m('beats')})';
+          mods += '.changeBeats(${m('beats')})';
         if (m('reflect').isNotBlank)
-          mods += '..scale(1,-1)';
+          mods += '.scale(1,-1)';
         if ((m('scaleX') + m('scaleY')).isNotBlank)
-          mods += '..scale(${m('scaleX', '1')},${m('scaleY', '1')})';
+          mods += '.scale(${m('scaleX', '1')},${m('scaleY', '1')})';
         return '($objFrom.clone()$mods)';
       }).join('+');
       movesDart.writeln('  static final Path $objName = $movestr;');
@@ -239,37 +239,41 @@ Future<void> writeCalls() async {
         cDart.writeln('      Formations.${tam('formation').id},');
       cDart.writeln('      [');
       tam.findElements('path').forEach((path) {
-        cDart.writeln('        Path.fromPaths([');
-        path.childElements.forEach((move) {
+        var paths = path.childElements.map((move) {
+          var onePath = '';
           if (move.tag == 'move') {
-            cDart.write('          Paths.${move('select').id}.clone()');
+            onePath = '          Paths.${move('select').id}';
             if (move('beats').isNotBlank)
-              cDart.write('..changeBeats(${move('beats')})');
+              onePath += '.changeBeats(${move('beats')})';
             if (move('hands').isNotBlank) {
               var h = Hands.getHands(move('hands'));
-              cDart.write('..changehands($h)');
+              onePath += '.changehands($h)';
             }
             if (move('scaleX').isNotBlank || move('scaleY').isNotBlank || move('reflect').isNotBlank) {
               var sx = move('scaleX','1').d;
               var sy = move('scaleY','1').d;
               if (move('reflect').isNotBlank)
                 sy = -sy;
-              cDart.write('..scale($sx,$sy)');
+              onePath += '.scale($sx,$sy)';
             }
             if (move('offsetX').isNotBlank || move('offsetY').isNotBlank) {
               var sx = move('offsetX','0').d;
               var sy = move('offsetY','0').d;
-              cDart.write('..skew($sx,$sy)');
+              onePath += '.skew($sx,$sy)';
             }
-            cDart.writeln(',');  // end of one move
+            // end of one move
           }
           else if (move.tag == 'movement') {
-            cDart.write('      Path.fromMovement(');
-            writeOneMovement(cDart, move);
-            cDart.writeln('),');
+            onePath = '      Path.fromMovement(' + writeOneMovement(move) + ')';
           }
+          return onePath;
         });
-        cDart.writeln('        ]),');  //  end of one path
+        if (paths.isNotEmpty)
+          cDart.writeAll(paths,'+ \n');
+        else
+          cDart.write('          Path()');
+        cDart.writeln(',\n');
+        //  end of one path
       });
       cDart.writeln('      ],');  //  end of all paths for one animation
       final genderParam = tam('sequencer') == 'gender-specific' ? 'isGenderSpecific:true' : '';

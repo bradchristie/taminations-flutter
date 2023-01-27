@@ -172,7 +172,7 @@ mixin CallWithParts {
               var b = 0.0;
               for (final move in allp[m].movelist) {
                 if (!b.isLessThan(startBeat) && b.isLessThan(endBeat))
-                  ctx.dancers[i].path.add(move);
+                  ctx.dancers[i].path += move;
                 b += move.beats;
               }
             }

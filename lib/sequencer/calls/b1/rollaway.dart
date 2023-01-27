@@ -30,24 +30,24 @@ class Rollaway extends Action {
     final dist = d.distanceTo(d2);
     if (name.toLowerCase().startsWith('reverse')) {
       if (d.data.beau) {
-        return (TamUtils.getMove('Fold Right')..changeBeats(1.5)
-          ..scale(0.6, dist/4)..changehands(Hands.GRIPRIGHT)) +
-            (TamUtils.getMove('U-Turn Right')..changeBeats(1.5)
-              ..skew(1.2, dist/2.0)..changehands(Hands.GRIPRIGHT));
+        return TamUtils.getMove('Fold Right').changeBeats(1.5)
+            .scale(0.6, dist/4).changehands(Hands.GRIPRIGHT) +
+            TamUtils.getMove('U-Turn Right').changeBeats(1.5)
+                .skew(1.2, dist/2.0).changehands(Hands.GRIPRIGHT);
       } else if (d.data.belle) {
         return TamUtils.getMove('Dodge Left')
-          ..scale(1.0, dist/2.0)..changehands(Hands.GRIPLEFT);
+          .scale(1.0, dist/2.0).changehands(Hands.GRIPLEFT);
       } else
         throw CallError('Dancer $d does not know how to Rollaway');
     }
     if (d.data.beau) {
       return TamUtils.getMove('Dodge Right')
-        ..scale(1.0, dist/2.0)..changehands(Hands.GRIPRIGHT);
+        .scale(1.0, dist/2.0).changehands(Hands.GRIPRIGHT);
     } else if (d.data.belle) {
-      return (TamUtils.getMove('Fold Left')..changeBeats(1.5)
-          ..scale(0.6, dist/4)..changehands(Hands.GRIPLEFT)) +
-          (TamUtils.getMove('U-Turn Left')..changeBeats(1.5)
-          ..skew(1.2, -dist/2.0)..changehands(Hands.GRIPLEFT));
+      return TamUtils.getMove('Fold Left').changeBeats(1.5)
+          .scale(0.6, dist/4).changehands(Hands.GRIPLEFT) +
+          TamUtils.getMove('U-Turn Left').changeBeats(1.5)
+          .skew(1.2, -dist/2.0).changehands(Hands.GRIPLEFT);
     } else
       throw CallError('Dancer $d does not know how to Rollaway');
   }

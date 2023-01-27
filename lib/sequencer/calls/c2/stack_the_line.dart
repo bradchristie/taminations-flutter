@@ -65,23 +65,23 @@ class StackTheLine extends ActivesOnlyAction with CallWithParts {
             thrower(CallError('Unable to calculate 2nd part of Stack the Line'))!;
         if (beauLike ^ isLeft)
           d.path += TamUtils.getMove('Forward')
-            ..scale(d.distanceTo(d2), 1)
-            ..changeBeats(2.0);
+            .scale(d.distanceTo(d2), 1)
+            .changeBeats(2.0);
         else {
           var d3 = (beauLike ? ctx.dancerToRight(d) : ctx.dancerToLeft(d)) ??
               thrower(CallError('Unable to calculate 2nd part of Stack the Line'))!;
           d.path += TamUtils.getMove('Forward') +
-              (TamUtils.getMove('Extend $left')
-            ..scale(d.distanceTo(d2)-1.0, d.distanceTo(d3))
-            ..changeBeats(2.0));
+              TamUtils.getMove('Extend $left')
+            .scale(d.distanceTo(d2)-1.0, d.distanceTo(d3))
+            .changeBeats(2.0);
         }
       } else {
         if (!beauLike ^ isLeft) {
           var d3 = (beauLike ? ctx.dancerToRight(d) : ctx.dancerToLeft(d)) ??
               thrower(CallError('Unable to calculate 2nd part of Stack the Line'))!;
           d.path += TamUtils.getMove('Dodge $left')
-            ..scale(1.0,d.distanceTo(d3)/2.0)
-            ..changeBeats(2.0);
+            .scale(1.0,d.distanceTo(d3)/2.0)
+            .changeBeats(2.0);
         }
       }
     }

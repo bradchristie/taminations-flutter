@@ -68,7 +68,7 @@ class Start extends Action {
         for (var i = 0; i < mapping.length; i++) {
           final m = mapping[i];
           // TODO check for asymmetric call!
-          dypctx.dancers[i].path.add(pctx.dancers[m].path);
+          dypctx.dancers[i].path += pctx.dancers[m].path;
         }
       });
 

@@ -35,7 +35,7 @@ class SplitCirculate extends Action {
   @override
   Path performOne(Dancer d, CallContext ctx) {
     if (d.data.trailer)
-      return TamUtils.getMove('Forward 2' )..changeBeats(3.0);
+      return TamUtils.getMove('Forward 2' ).changeBeats(3.0);
     else if (d.data.leader) {
       var move = (ctx.dancerInFront(d) != null) ? 'Flip'  : 'Run' ;
       if (ctx.dancersToLeft(d).length % 2 == 1)

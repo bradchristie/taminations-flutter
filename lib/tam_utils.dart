@@ -409,15 +409,15 @@ class TamUtils {
   }) {
     var path = Path(_translate(_moves[name]!),name);
     if (scale != null)
-      path.scale(scale.x,scale.y);
+      path = path.scale(scale.x,scale.y);
     if (skew != null)
-      path.skew(skew.x,skew.y);
+      path = path.skew(skew.x,skew.y);
     if (hands != null)
-      path.changehands(hands);
+      path = path.changehands(hands);
     if (beats != null)
-      path.changeBeats(beats);
+      path = path.changeBeats(beats);
     if ((reflect ?? false))
-      path.reflect();
+      path = path.reflect();
     return path;
   }
 

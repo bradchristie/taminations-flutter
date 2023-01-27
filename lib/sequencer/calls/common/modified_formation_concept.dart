@@ -59,7 +59,7 @@ abstract class ModifiedFormationConcept extends Action {
       if (adjusted.contains(d) && d.path.movelist.length > 1) {
         var dp = d.path.movelist.first.btranslate.endPoint;
         d.path.shift();
-        d.path.skewFirst(dp.x, dp.y);
+        d.path = d.path.skewFirst(dp.x, dp.y);
       }
     }
 

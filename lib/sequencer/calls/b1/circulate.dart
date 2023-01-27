@@ -89,8 +89,8 @@ class Circulate extends Action {
           //  Pass right shoulders if crossing another dancer
           var xScale = (d2.data.leader && d2.isRightOf(d)) ? 1 + dist/3 : dist/3;
           return TamUtils.getMove(d2.isRightOf(d) ? 'Run Right'  : 'Run Left' )
-              ..scale(xScale, dist/2)
-              ..changeBeats(4.0);
+              .scale(xScale, dist/2)
+              .changeBeats(4.0);
         }
       } else if (d.data.trailer) {
         //  Looking at active dancer?  Then take its place
@@ -99,15 +99,15 @@ class Circulate extends Action {
           var dist = d.distanceTo(d2);
           if (d2.data.leader)
             return TamUtils.getMove('Forward' )
-                ..scale(dist,1)
-                ..changeBeats(4);
+                .scale(dist,1)
+                .changeBeats(4);
           else  //  Facing dancers - pass right shoulders
-            return (TamUtils.getMove('Extend Left' )
-                ..scale(dist/2,0.5)
-                ..changeBeats(2)) +
-                (TamUtils.getMove('Extend Right' )
-                  ..scale(dist/2,0.5)
-                  ..changeBeats(2));
+            return TamUtils.getMove('Extend Left' )
+                  .scale(dist/2,0.5)
+                  .changeBeats(2) +
+                TamUtils.getMove('Extend Right' )
+                  .scale(dist/2,0.5)
+                  .changeBeats(2);
         }
       }
     }
@@ -122,16 +122,16 @@ class Circulate extends Action {
         var v = d.vectorToDancer(d2);
         if (d.angleFacing.isAround(d2.angleFacing))
           return TamUtils.getMove('Extend Left' )
-              ..changeBeats(3)
-              ..scale(v.x,v.y);
+              .changeBeats(3)
+              .scale(v.x,v.y);
         else if (d.angleFacing.isAround(d2.angleFacing+pi/2))
           return TamUtils.getMove('Lead Left' )
-            ..changeBeats(3.0)
-            ..scale(v.x,v.y);
+            .changeBeats(3.0)
+            .scale(v.x,v.y);
         else if (d.angleFacing.isAround(d2.angleFacing-pi/2))
           return TamUtils.getMove('Lead Right' )
-              ..changeBeats(3.0)
-            ..scale(v.x,-v.y);
+              .changeBeats(3.0)
+              .scale(v.x,-v.y);
         else
           throw CallError('Unable to calculate Circulate path.' );
       } else {
@@ -152,18 +152,18 @@ class Circulate extends Action {
       if (ctx.dancersInFront(d).length + ctx.dancersInBack(d).length == 3) {
         if (ctx.dancersInFront(d).isNotEmpty) {
           if (ctx.dancerFacing(d) != null)
-            return (TamUtils.getMove('Extend Left' )..scale(1.0,0.5)..changeBeats(2)) +
-                (TamUtils.getMove('Extend Right' )..scale(1.0,0.5)..changeBeats(2));
+            return TamUtils.getMove('Extend Left' ).scale(1.0,0.5).changeBeats(2) +
+                   TamUtils.getMove('Extend Right' ).scale(1.0,0.5).changeBeats(2);
           else
-            return TamUtils.getMove('Forward 2' )..changeBeats(4);
+            return TamUtils.getMove('Forward 2' ).changeBeats(4);
         }
         else if (ctx.dancersToLeft(d).length == 1 &&
             ctx.isFacingSameDirection(d, ctx.dancerToLeft(d)!))
-          return TamUtils.getMove('Flip Left' )..changeBeats(4);
+          return TamUtils.getMove('Flip Left' ).changeBeats(4);
         else if (ctx.dancersToLeft(d).length == 1)
-          return TamUtils.getMove('Run Left' )..changeBeats(4);
+          return TamUtils.getMove('Run Left' ).changeBeats(4);
         else if (ctx.dancersToRight(d).length == 1)
-          return TamUtils.getMove('Run Right' )..changeBeats(4);
+          return TamUtils.getMove('Run Right' ).changeBeats(4);
         else
           throw CallError('Could not calculate Circulate for dancer $d' );
       }
@@ -171,25 +171,25 @@ class Circulate extends Action {
       else if (ctx.dancersToLeft(d).length + ctx.dancersToRight(d).length == 3) {
         if (ctx.dancersInFront(d).length == 1) {
           if (ctx.dancerFacing(d) != null)
-            return (TamUtils.getMove('Extend Left' )..scale(1.0,0.5)..changeBeats(2)) +
-                (TamUtils.getMove('Extend Right' )..scale(1.0,0.5)..changeBeats(2));
+            return TamUtils.getMove('Extend Left' ).scale(1.0,0.5).changeBeats(2) +
+                   TamUtils.getMove('Extend Right' ).scale(1.0,0.5).changeBeats(2);
           else
-            return TamUtils.getMove('Forward 2' )..changeBeats(4);
+            return TamUtils.getMove('Forward 2' ).changeBeats(4);
         }
         switch (ctx.dancersToLeft(d).length) {
           case 0:
             var d2 = ctx.dancersToRight(d).last;
             if (ctx.isFacingSameDirection(d,d2))
-              return TamUtils.getMove('Run Right' )..scale(3.0,3.0)..changeBeats(4.0);
-            return TamUtils.getMove('Run Right' )..scale(2.0,3.0)..changeBeats(4.0);
+              return TamUtils.getMove('Run Right' ).scale(3.0,3.0).changeBeats(4.0);
+            return TamUtils.getMove('Run Right' ).scale(2.0,3.0).changeBeats(4.0);
           case 1:
-            return TamUtils.getMove('Run Right' )..changeBeats(4.0);
+            return TamUtils.getMove('Run Right' ).changeBeats(4.0);
           case 2:
             if (ctx.isFacingSameDirection(d,ctx.dancerToLeft(d)!))
-              return TamUtils.getMove('Flip Left' )..changeBeats(4.0);
-            return TamUtils.getMove('Run Left' )..changeBeats(4.0);
+              return TamUtils.getMove('Flip Left' ).changeBeats(4.0);
+            return TamUtils.getMove('Run Left' ).changeBeats(4.0);
           case 3:
-            return TamUtils.getMove('Run Left' )..scale(2.0,3.0)..changeBeats(4.0);
+            return TamUtils.getMove('Run Left' ).scale(2.0,3.0).changeBeats(4.0);
           default:
             throw CallError('Could not calculate Circulate for dancer $d' );
         }

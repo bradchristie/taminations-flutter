@@ -30,7 +30,7 @@ class StepThru extends ActivesOnlyAction {
       throw CallError('Dancer $d cannot Step Thru');
     final dir = d.data.beau ? 'Right' : 'Left';
     final dist = d.distanceTo(d.data.partner!);
-    return TamUtils.getMove('Extend $dir')..scale(1.0, dist/2.0);
+    return TamUtils.getMove('Extend $dir').scale(1.0, dist/2.0);
   }
 
 }

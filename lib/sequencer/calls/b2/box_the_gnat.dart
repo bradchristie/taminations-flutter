@@ -70,8 +70,8 @@ class BoxTheGnat extends ActivesOnlyAction {
       else if (dist > 1.5 && d.data.center)
         offset = 0.0;
       return TamUtils.getMove((d.gender==Gender.BOY) ? 'U-Turn Right' : 'U-Turn Left')
-        ..skew(1.0,offset)
-        ..changehands(Hands.GRIPRIGHT);
+        .skew(1.0,offset)
+        .changehands(Hands.GRIPRIGHT);
     }
     return ctx.dancerCannotPerform(d, name);
   }

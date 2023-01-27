@@ -119,7 +119,7 @@ abstract class FourDancerConcept extends ActivesOnlyAction {
           //  And use it to build the Movement
           var cm = Movement(m.beats,m.hands,cb, m.brotate, fromCall:m.fromCall);
           //  And add the Movement to the Path
-          d.path.add(cm);
+          d.path += cm;
         }
         cdbeat += m.beats;
       }

@@ -29,7 +29,7 @@ class PullBy extends PassThru {
   @override
   Path performOne(Dancer d, CallContext ctx) =>
       super.performOne(d, ctx)
-        ..changehands(name.toLowerCase().startsWith('left')
+        .changehands(name.toLowerCase().startsWith('left')
             ? Hands.LEFTHAND
             : Hands.RIGHTHAND);
 

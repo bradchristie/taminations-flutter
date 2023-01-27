@@ -79,8 +79,8 @@ class AsCouples extends FourDancerConcept {
       'Quarter Tag' : 1.5,
       'Tidal Line RH' : 1.0,
     };
-    group.first.path.addhands(Hands.GRIPRIGHT);
-    group.second.path.addhands(Hands.GRIPLEFT);
+    group.first.path = group.first.path.addhands(Hands.GRIPRIGHT);
+    group.second.path = group.second.path.addhands(Hands.GRIPLEFT);
     ctx.matchFormationList(couplesSnapFormations,maxOffset: 8.1);
   }
 

@@ -153,7 +153,7 @@ class XMLCall extends Call {
       //  Now add the paths
       for (var ii = 0; ii < ctx3.dancers.length; ii++) {
         final path = allPaths[ii];
-        ctx3.dancers[ii].path.add(path);
+        ctx3.dancers[ii].path += path;
       }
       //  And move it to the end point
       ctx3.extendPaths();
@@ -164,7 +164,7 @@ class XMLCall extends Call {
       var m = xmlmap[i3];
       var p = Path.fromPath(allPaths[m]);
       //  Add XML path to dancer
-      ctxwork.actives[i3].path.add(p);
+      ctxwork.actives[i3].path += p;
     }
 
     ctxwork.animate(endbeat);

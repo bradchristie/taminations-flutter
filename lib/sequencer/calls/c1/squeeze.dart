@@ -56,11 +56,11 @@ class Squeeze extends Action {
     final tradePath = TamUtils.getMove(tradeMove);
     final dodgeMove = (d2.isLeftOf(d) ^ isClose)
         ? 'Dodge Left' : 'Dodge Right';
-    final dodgePath = TamUtils.getMove(dodgeMove);
+    var dodgePath = TamUtils.getMove(dodgeMove);
     if (isClose)
       return tradePath + dodgePath;
     else {
-      dodgePath.scale(1.0,(dist-2.0)/4.0);
+      dodgePath = dodgePath.scale(1.0,(dist-2.0)/4.0);
       return dodgePath + tradePath;
     }
   }

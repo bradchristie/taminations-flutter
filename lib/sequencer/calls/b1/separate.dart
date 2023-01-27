@@ -38,24 +38,24 @@ class Separate extends Action {
         var d2 = ctx.dancerClosest(d, (it) => it.data.active)!;
         if (d2.isRightOf(d) && d.isFacingIn)
           d.path += TamUtils.getMove('Quarter Left' ) +
-              (TamUtils.getMove('Lead Right' )
-                ..changeBeats(2.0)
-                ..scale(2.0, 2.0));
+               TamUtils.getMove('Lead Right' )
+                .changeBeats(2.0)
+                .scale(2.0, 2.0);
         else if (d2.isRightOf(d) && d.isFacingOut)
           d.path += TamUtils.getMove('Quarter Left' ) +
-              (TamUtils.getMove('Lead Left' )
-                ..changeBeats(2.0)
-                ..scale(2.0, 2.0));
+              TamUtils.getMove('Lead Left' )
+                .changeBeats(2.0)
+                .scale(2.0, 2.0);
         else if (d2.isLeftOf(d) && d.isFacingIn)
           d.path += TamUtils.getMove('Quarter Right' ) +
-              (TamUtils.getMove('Lead Left' )
-                ..changeBeats(2.0)
-                ..scale(2.0, 2.0));
+              TamUtils.getMove('Lead Left' )
+                .changeBeats(2.0)
+                .scale(2.0, 2.0);
         else if (d2.isLeftOf(d) && d.isFacingOut)
           d.path += TamUtils.getMove('Quarter Right' ) +
-              (TamUtils.getMove('Lead Right' )
-                ..changeBeats(2.0)
-                ..scale(2.0, 2.0));
+              TamUtils.getMove('Lead Right' )
+                .changeBeats(2.0)
+                .scale(2.0, 2.0);
         else
           throw CallError('Unable to figure out how to Separate' );
       }
@@ -76,7 +76,7 @@ class Separate extends Action {
         var d3 = ctx.dancerInBack(d);
         var dist3 = d3?.distanceTo(d) ?? 1.0;
         if (!dist3.isLessThan(2.0))
-          d.path += TamUtils.getMove('Forward')..scale((dist3-2)/2,1.0);
+          d.path += TamUtils.getMove('Forward').scale((dist3-2)/2,1.0);
       }
       //  Other dancers need to move in
       for (var d in ctx.inActives) {
@@ -86,8 +86,8 @@ class Separate extends Action {
         //  Space the dancers 2 units apart
         var dist = d.distanceTo(d2!) / 2 - 1;
         d.path += TamUtils.getMove('Forward' )
-          ..scale(dist, 1.0)
-          ..changeBeats(3.0);
+          .changeBeats(3.0)
+          .scale(dist, 1.0);
       }
     }
 

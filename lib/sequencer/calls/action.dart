@@ -45,7 +45,7 @@ class Action extends CodedCall {
     //  Get all the paths with performOne calls
     for (var d in ctx.actives) {
       var path = performOne(d, ctx);
-      d.path.add(path);
+      d.path += path;
     }
   }
 

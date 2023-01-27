@@ -59,7 +59,7 @@ class Stretch extends Action {
           shift = Vector(0.0, d.distanceTo(d2));
         } else
           throw CallError('Unable to find direction to Stretch');
-        d.path.skewFromEnd(shift.x, shift.y);
+        d.path = d.path.skewFromEnd(shift.x, shift.y);
       }
     } else if (stretchctx.isOnAxis()) {
       for (final d in stretchctx.center(4)) {
@@ -70,7 +70,7 @@ class Stretch extends Action {
           stretchctx.dancersToRight(d) ]
             .reduce((list1, list2) => list1.length > list2.length ? list1 : list2);
         final shift = d.vectorToDancer(dancerList[1]);
-        d.path.skewFromEnd(shift.x,shift.y);
+        d.path = d.path.skewFromEnd(shift.x,shift.y);
       }
     } else
       throw CallError('Unable to calculate Stretch');

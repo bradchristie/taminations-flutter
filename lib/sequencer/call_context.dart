@@ -289,10 +289,10 @@ class CallContext {
           original.animateToEnd();
           //  Apply the offset
           var vd = offset.rotate(-original.angleFacing);
-          original.path.skewFromEnd(-vd.x, -vd.y);
+          original.path = original.path.skewFromEnd(-vd.x, -vd.y);
         } else
           //  just append clone
-          original.path.add(clone.path);
+          original.path += clone.path;
         original.animateToEnd();
         if (!clone.isActive)
           original.data.active = false;
@@ -930,9 +930,9 @@ class CallContext {
         if (d.path.movelist.isNotEmpty)
           m = adjustFirstMovement ? d.path.shift()! : d.path.pop();
         else
-          m = (TamUtils.getMove('Stand Ahead')
-            ..changeBeats(match.offsets[i].length)
-            ..notFromCall()).pop();
+          m = TamUtils.getMove('Stand Ahead')
+            .changeBeats(match.offsets[i].length)
+            .notFromCall().pop();
         //  Transform the offset to the dancer's angle
         if (adjustFirstMovement)
           d.animate(0);
@@ -945,7 +945,7 @@ class CallContext {
         if (adjustFirstMovement)
           d.path.unshift(m);
         else
-          d.path.add(m);
+          d.path += m;
         d.animateToEnd();
       }
     }
@@ -1458,12 +1458,12 @@ class CallContext {
       if (b > 0) {
         if (b < 1 && d.path.movelist.isNotEmpty) {
           //  Small change - ust change the length
-          d.path.changeBeats(d.path.beats + b);
+          d.path = d.path.changeBeats(d.path.beats + b);
         } else {
           //  Large change - add that number as needed by using the 'Stand' move
-          d.path.add(TamUtils.getMove('Stand')
-            ..changeBeats(b)
-            ..notFromCall());
+          d.path = d.path + TamUtils.getMove('Stand')
+            .changeBeats(b)
+            .notFromCall();
         }
       }
     }
@@ -1482,7 +1482,7 @@ class CallContext {
   void changeBeats(double newbeats) {
     contractPaths();
     for (var d in dancers)
-      d.path.changeBeats(newbeats);
+      d.path = d.path.changeBeats(newbeats);
   }
 
   //  Center dancers around the origin

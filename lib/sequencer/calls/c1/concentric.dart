@@ -78,9 +78,9 @@ class Concentric extends Action {
           dend = Vector(d.location.x.sign * 2.0, 0.0);
         d.animate(0.0);
         dend = dend.rotate(-d.angleFacing);
-        d.path.skewFirst(dend.x,dend.y);
+        d.path = d.path.skewFirst(dend.x,dend.y);
         var dstart = dstarts[d]!.rotate(-d.angleFacing);
-        d.path.skewFirst(-dstart.x,-dstart.y);
+        d.path = d.path.skewFirst(-dstart.x,-dstart.y);
       }
       ctx2.animateToEnd();
     });

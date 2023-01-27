@@ -93,7 +93,7 @@ class Fraction extends Action {
         //  OK if there's no movement, part of nothing is nothing
         if (mo != null) {
           if (d.path.beats < _partBeats)
-            d.path.add(mo.clip(_partBeats - d.path.beats));
+            d.path += mo.clip(_partBeats - d.path.beats);
         }
       }
 

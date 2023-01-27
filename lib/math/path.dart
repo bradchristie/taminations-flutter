@@ -69,17 +69,15 @@ class Path implements Cloneable<Path> {
     recalculate();
   }
 
-  void add(dynamic mp) {
+  Path add(dynamic mp) {
     if (mp is Path) {
-      movelist += mp.movelist;
-      recalculate();
+      return Path(movelist + mp.movelist);
     } else if (mp is Movement) {
-      movelist.add(mp);
-      recalculate();
+      return Path(movelist.copy()..add(mp));
     } else throw ArgumentError();
   }
 
-  Path operator +(Path p) { add(p); return this; }
+  Path operator +(dynamic p) => add(p);
 
   Movement pop() {
     var m = movelist.removeLast();
@@ -102,63 +100,64 @@ class Path implements Cloneable<Path> {
     return this;
   }
 
-  void reflect() {
-    movelist = movelist.map((it) => it.reflect()).toList();
-    recalculate();
-  }
+  Path reflect() => Path(movelist.map((it) => it.reflect()).toList());
 
   double get beats => movelist.map((it) => it.beats).fold(0.0, (previousValue, element) => previousValue + element);
 
-  void changeBeats(double newbeats) {
+  Path changeBeats(double newbeats) {
     var factor = newbeats / beats;
-    movelist = movelist.map((it) => it.time(it.beats * factor)).toList();
-    //  no need to recalculate, transformlist doesn't depend on beats
+    return Path(movelist.map((it) => it.time(it.beats * factor)).toList());
   }
 
-  void changehands(int hands) {
-    movelist = movelist.map((it) => it.useHands(hands)).toList();
-  }
+  Path changehands(int hands) =>
+      Path(movelist.map((it) => it.useHands(hands)).toList());
 
-  void addhands(int hands) {
-    movelist = movelist.map((it) => it.useHands(it.hands | hands)).toList();
-  }
+  Path addhands(int hands) =>
+    Path(movelist.map((it) => it.useHands(it.hands | hands)).toList());
 
-  void scale(double x, double y) {
-    movelist = movelist.map((it) => it.scale(x, y)).toList();
-    recalculate();
-  }
+  Path scale(double x, double y) =>
+    Path(movelist.map((it) => it.scale(x, y)).toList());
 
   //  This likely will not work well for paths with >1 movement
   //  Instead use skewFirst or skewFromEnd
-  void skew(double x, double y) {
+  Path skew(double x, double y) {
     if (movelist.isNotEmpty) {
       //  Apply the skew to just the list movement
-      var last = movelist.removeLast();
-      movelist.add(last.skew(x,y));
-      recalculate();
+      var skewed = clone();
+      var last = skewed.movelist.removeLast();
+      skewed.movelist.add(last.skew(x,y));
+      skewed.recalculate();
+      return skewed;
     }
+    return this;
   }
 
   //  Shift path based on adjustment to final position
   //  This should work well with any number of movements in the path
-  void skewFromEnd(double x, double y) {
+  Path skewFromEnd(double x, double y) {
     if (movelist.isNotEmpty) {
-      var last = movelist.removeLast();
-      movelist.add(last.skewFromEnd(x, y));
-      recalculate();
+      var skewed = clone();
+      var last = skewed.movelist.removeLast();
+      skewed.movelist.add(last.skewFromEnd(x, y));
+      skewed.recalculate();
+      return skewed;
     }
+    return this;
   }
 
-  void skewFirst(double x, double y,[double? angle]) {
+  Path skewFirst(double x, double y,[double? angle]) {
     if (movelist.isNotEmpty) {
-      var first = movelist.removeAt(0);
-      movelist.insert(0, first.skew(x,y).twist(angle ?? 0.0));
-      recalculate();
+      var skewed = clone();
+      var first = skewed.movelist.removeAt(0);
+      skewed.movelist.insert(0, first.skew(x,y).twist(angle ?? 0.0));
+      skewed.recalculate();
+      return skewed;
     }
+    return this;
   }
 
-  void notFromCall() {
-    movelist = movelist.map((it) => it.notFromCall()).toList();
+  Path notFromCall() {
+    return Path(movelist.map((it) => it.notFromCall()).toList());
   }
 
   /// Return a transform for a specific point of time

@@ -45,7 +45,7 @@ class HalfSashay extends Action {
       move = d2.isLeftOf(d) ? 'BackSashay Left'  : 'Sashay Right' ;
     else if (d2.isLeftOf(d))
       move = 'Sashay Left' ;
-    return TamUtils.getMove(move)..scale(1,d.distanceTo(d2)/2);
+    return TamUtils.getMove(move).scale(1,d.distanceTo(d2)/2);
   }
 
 }

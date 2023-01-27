@@ -87,7 +87,7 @@ class Phantom extends Action {
       //  Append the results
       final groupResult = phantomctx.dancers.where((d) => d.gender != Gender.PHANTOM).toList();
       for (var i=0; i<groupResult.length; i++) {
-        group[i].path.add(groupResult[i].path);
+        group[i].path += groupResult[i].path;
       }
     }
 

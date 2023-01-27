@@ -35,42 +35,34 @@ class Reshape extends TriangleCirculate {
     //  Trailer of tandem-based triangle
     if (d2.isInFrontOf(d)) {
       final dir = CallContext.dancerRelation(d, d3) == 1 ? 'Left' : 'Right';
-      return TamUtils.getMove('Quarter $dir')
-        ..skew(dist, 0.0)..changeBeats(3.0);
+      return TamUtils.getMove('Quarter $dir').skew(dist, 0.0).changeBeats(3.0);
     }
     //  Point of tandem-based triangle
     else if (d3.isInFrontOf(d2)) {
       final dir = CallContext.dancerRelation(d, d2) == 1 ? 'Left' : 'Right';
-      return TamUtils.getMove('Lead $dir')
-        ..scale(v.x, v.y.abs())..changeBeats(3.0);
+      return TamUtils.getMove('Lead $dir').scale(v.x, v.y.abs()).changeBeats(3.0);
     }
     final d2dir = CallContext.dancerRelation(d, d2);
     final d3dir = CallContext.dancerRelation(d, d3);
     //  Out-facing wave dancer of left-hand triangle
     if (d2dir == 2 && d3dir == 3) {
-      return TamUtils.getMove('Quarter Left')
-          ..skew(0.0, dist)
-          ..changeBeats(3.0);
+      return TamUtils.getMove('Quarter Left').skew(0.0, dist).changeBeats(3.0);
     }
     //  Out-facing wave dancer of right-hand triangle
     else if (d2dir == 6 && d3dir == 5) {
-      return TamUtils.getMove('Quarter Right')
-        ..skew(0.0, -dist)
-        ..changeBeats(3.0);
+      return TamUtils.getMove('Quarter Right').skew(0.0, -dist).changeBeats(3.0);
     }
     //  Point of wave-based left-hand triangle
     else if (d2dir == 1 && d3dir == 3) {
-      return TamUtils.getMove('Run Left')
-          ..scale(1.0,v.y.abs()/2.0)
-          ..skew(v.x, 0.0)
-          ..changeBeats(3.0);
+      return TamUtils.getMove('Run Left').scale(1.0,v.y.abs()/2.0).skew(v.x, 0.0)
+          .changeBeats(3.0);
     }
     //  Point of wave-based right-hand triangle
     else if (d2dir == 7 && d3dir == 5) {
       return TamUtils.getMove('Run Right')
-        ..scale(1.0,v.y.abs()/2.0)
-        ..skew(v.x, 0.0)
-        ..changeBeats(3.0);
+        .scale(1.0,v.y.abs()/2.0)
+        .skew(v.x, 0.0)
+        .changeBeats(3.0);
     }
     //  None of the above - same as Triangle Circulate
     return super.oneCirculatePath(d, d2, d3);

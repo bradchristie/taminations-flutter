@@ -34,7 +34,7 @@ class Step extends Action {
   Path performOne(Dancer d, CallContext ctx) {
     var dist = ctx.isLines() && d.data.trailer
         ? d.distanceTo(ctx.dancerInFront(d)!) : 2.0;
-    return TamUtils.getMove('Forward')..changeBeats(2.0)..scale(dist, 1.0);
+    return TamUtils.getMove('Forward').changeBeats(2.0).scale(dist, 1.0);
   }
 
 }

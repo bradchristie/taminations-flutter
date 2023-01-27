@@ -115,7 +115,6 @@ class _Case2 extends Action {
 
   @override
   Path performOne(Dancer d, CallContext ctx) {
-    var p = d.path;
     //  This is for waves only
     //  Compute offset for spread
     var v = Vector();
@@ -124,12 +123,12 @@ class _Case2 extends Action {
     else if (d.data.beau)
       v = Vector(0.0, -ctx.dancerToRight(d)!.distanceTo(d));
     //  Pop off the last movement and shift it by that offset
-    var m = (p.movelist.isNotEmpty)
-        ? p.pop()
+    var m = (d.path.movelist.isNotEmpty)
+        ? d.path.pop()
         : TamUtils.getMove('Stand').pop();
     var tx = m.rotate();
     v = tx * v;
-    p.add(m.skew(v.x,v.y).useHands(Hands.NOHANDS));
+    d.path += m.skew(v.x,v.y).useHands(Hands.NOHANDS);
     //  Return dummy path
     return Path();
   }

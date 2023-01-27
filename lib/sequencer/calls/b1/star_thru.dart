@@ -35,15 +35,14 @@ class StarThru extends ActivesOnlyAction {
     if (d2.gender == d.gender)
       throw CallError('Cannot Star Thru with same gender.' );
     var dist = d.distanceTo(d2);
-    var move = TamUtils.getMove('Extend Left' )..scale(dist/2,0.5);
+    var move = TamUtils.getMove('Extend Left' ).scale(dist/2,0.5);
     move += d.gender == Gender.BOY
-        ? (TamUtils.getMove('Lead Right' )..scale(1.0,0.5))
-        : (TamUtils.getMove('Quarter Left' )..skew(1.0,-.5));
+        ? TamUtils.getMove('Lead Right' ).scale(1.0,0.5)
+        : TamUtils.getMove('Quarter Left' ).skew(1.0,-.5);
     //  Double and Triple Star Thru use "Left Star Thru"
     if (name.toLowerCase().contains('left' ))
-      move.reflect();
-    move.changeBeats(4.0);
-    return move;
+      move = move.reflect();
+    return move.changeBeats(4.0);
   }
 
 }

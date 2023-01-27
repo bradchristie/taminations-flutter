@@ -34,9 +34,9 @@ class CaliforniaTwirl extends Action {
         throw CallError('Dancer $d cannot California Twirl' );
       var dist = d.distanceTo(d2);
       return TamUtils.getMove('Run Right' )
-          ..changehands(Hands.GRIPRIGHT)
-          ..scale(dist/2,dist/2)
-          ..changeBeats(4.0);
+          .changehands(Hands.GRIPRIGHT)
+          .scale(dist/2,dist/2)
+          .changeBeats(4.0);
     }
     else if (d.gender == Gender.GIRL) {
       var d2 = ctx.dancerToLeft(d);
@@ -44,9 +44,9 @@ class CaliforniaTwirl extends Action {
         throw CallError('Dancer $d cannot California Twirl' );
       var dist = d.distanceTo(d2);
       return TamUtils.getMove('Flip Left' )
-          ..changehands(Hands.GRIPLEFT)
-          ..scale(dist/2,dist/2)
-          ..changeBeats(4.0);
+          .changehands(Hands.GRIPLEFT)
+          .scale(dist/2,dist/2)
+          .changeBeats(4.0);
     }
     else
       throw CallError('Phantoms cannot Twirl' );

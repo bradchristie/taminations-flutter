@@ -90,7 +90,7 @@ class DoYourPart extends Action {
         for (var i = 0; i < bestMapping.map.length; i++) {
           final m = bestMapping.map[i];
           // TODO check for asymmetric call!
-          dypctx.dancers[i].path.add(ctxBest.dancers[m].path);
+          dypctx.dancers[i].path += ctxBest.dancers[m].path;
         }
         dypctx.adjustToFormationMatch(bestMapping.match);
         return;
