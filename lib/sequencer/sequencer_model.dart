@@ -339,7 +339,10 @@ class SequencerModel extends fm.ChangeNotifier {
         _updateParts();
         _savedCalls = [];
       }
-      notifyListeners();
+      later(() {
+        notifyListeners();
+      });
+
     }
   }
 
