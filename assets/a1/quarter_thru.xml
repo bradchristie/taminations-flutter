@@ -75,7 +75,7 @@
   <tam title="Quarter Thru"
        from="Columns"
        formation="Column RH GBGB"
-       fractions="1.5" >
+       parts="1.5" >
     <path numbers="2 7">
       <move select="Hinge Right" scaleX=".5" />
     </path>
@@ -117,7 +117,7 @@
   <tam title="Quarter Thru"
        from="Facing Diamonds"
        formation="Diamonds Facing Girl Points"
-       fractions="1.5" >
+       parts="1.5" >
     <path>
       <move select="Hinge Right" />
       <move select="Swing Left" />
@@ -136,10 +136,32 @@
     </path>
   </tam>
 
+  <tam title="Quarter Thru"
+       from="Facing Point-to-Point Diamonds"
+       formation="Diamonds Facing PTP"
+       parts="1.5">
+    <path>
+      <move select="Hinge Right" scaleX=".67"/>
+      <move select="Swing Left" scaleX=".67" scaleY=".67"/>
+    </path>
+    <path>
+      <move select="Stand" beats="1.5"/>
+      <move select="Swing Left" scaleX=".67" scaleY=".67"/>
+    </path>
+    <path>
+      <move select="Hinge Right" scaleX=".67"/>
+      <move select="Swing Left" scaleX=".67" scaleY=".67"/>
+    </path>
+    <path>
+      <move select="Stand" beats="1.5"/>
+      <move select="Swing Left" scaleX=".67" scaleY=".67"/>
+    </path>
+  </tam>
+
   <tam title="Centers Quarter Thru"
        from="Left-Hand Waves"
        formation="Ocean Waves LH BGGB"
-       fractions="1.5" >
+       parts="1.5" >
     <path>
     </path>
     <path>
@@ -156,7 +178,7 @@
   <tam title="Left Quarter Thru"
        from="Left-Hand Box"
        formation="Box LH"
-       fractions="1.5" >
+       parts="1.5" >
     <path>
       <move select="Hinge Left" />
     </path>
@@ -170,7 +192,7 @@
        from="Left-Hand Box Close"
        formation="Box LH Close"
        display="none"
-       fractions="1.5" >
+       parts="1.5" >
     <path>
       <move select="Hinge Left" scaleX=".5" />
     </path>
@@ -183,7 +205,7 @@
   <tam title="Left Quarter Thru"
        from="Left-Hand Waves"
        formation="Ocean Waves LH BGGB"
-       fractions="1.5" >
+       parts="1.5" >
     <path>
       <move select="Hinge Left" />
     </path>
@@ -203,7 +225,7 @@
   <tam title="Left Quarter Thru"
        from="Left-Hand Columns"
        formation="Column LH GBGB"
-       fractions="1.5" >
+       parts="1.5" >
     <path>
       <move select="Hinge Left" scaleX=".5" />
       <move select="Swing Right" scaleX=".5" scaleY=".5" />
@@ -244,7 +266,7 @@
 
   <tam title="Left Quarter Thru"
        from="Facing Diamonds"
-       fractions="1.5" >
+       parts="1.5" >
      <formation>
       <dancer gender="boy" x="0" y="-3" angle="0"/>
       <dancer gender="girl" x="-3" y="-2" angle="90"/>
@@ -269,9 +291,31 @@
     </path>
   </tam>
 
+  <tam title="Left Quarter Thru"
+       from="Facing Point-to-Point Diamonds"
+       formation="Diamonds Facing LH PTP"
+       parts="1.5">
+    <path>
+      <move select="Hinge Left" scaleX=".67"/>
+      <move select="Swing Right" scaleX=".67" scaleY=".67"/>
+    </path>
+    <path>
+      <move select="Stand" beats="1.5"/>
+      <move select="Swing Right" scaleX=".67" scaleY=".67"/>
+    </path>
+    <path>
+      <move select="Hinge Left" scaleX=".67"/>
+      <move select="Swing Right" scaleX=".67" scaleY=".67"/>
+    </path>
+    <path>
+      <move select="Stand" beats="1.5"/>
+      <move select="Swing Right" scaleX=".67" scaleY=".67"/>
+    </path>
+  </tam>
+
   <tam title="As Couples Quarter Thru" group=" "
        formation="Two-Faced Lines RH"
-       fractions="3" >
+       parts="3" >
     <path>
       <move select="Hinge Right" beats="3" scaleX="1.5" scaleY="3" />
       <move select="Swing Left" beats="4" scaleX=".5" scaleY=".5" />
@@ -390,6 +434,30 @@
     <path>
       <move select="Stand" beats="4.5" />
       <move select="Swing Left" />
+    </path>
+  </tam>
+
+  <tam title="3/4 Thru"
+       from="Facing Point-to-Point Diamonds"
+       formation="Diamonds Facing PTP"
+       parts="4.5">
+    <path>
+      <move select="Hinge Right" scaleX=".67"/>
+      <move select="Swing Right" scaleX=".67" scaleY=".67"/>
+      <move select="Swing Left" scaleX=".67" scaleY=".67"/>
+    </path>
+    <path>
+      <move select="Stand" beats="4.5"/>
+      <move select="Swing Left" scaleX=".67" scaleY=".67"/>
+    </path>
+    <path>
+      <move select="Hinge Right" scaleX=".67"/>
+      <move select="Swing Right" scaleX=".67" scaleY=".67"/>
+      <move select="Swing Left" scaleX=".67" scaleY=".67"/>
+    </path>
+    <path>
+      <move select="Stand" beats="4.5"/>
+      <move select="Swing Left" scaleX=".67" scaleY=".67"/>
     </path>
   </tam>
 
@@ -513,6 +581,30 @@
     <path>
       <move select="Stand" beats="4.5" />
       <move select="Swing Right" />
+    </path>
+  </tam>
+
+  <tam title="Left 3/4 Thru"
+       from="Facing Point-to-Point Diamonds"
+       formation="Diamonds Facing LH PTP"
+       parts="4.5">
+    <path>
+      <move select="Hinge Left" scaleX=".67"/>
+      <move select="Swing Left" scaleX=".67" scaleY=".67"/>
+      <move select="Swing Right" scaleX=".67" scaleY=".67"/>
+    </path>
+    <path>
+      <move select="Stand" beats="4.5"/>
+      <move select="Swing Right" scaleX=".67" scaleY=".67"/>
+    </path>
+    <path>
+      <move select="Hinge Left" scaleX=".67"/>
+      <move select="Swing Left" scaleX=".67" scaleY=".67"/>
+      <move select="Swing Right" scaleX=".67" scaleY=".67"/>
+    </path>
+    <path>
+      <move select="Stand" beats="4.5"/>
+      <move select="Swing Right" scaleX=".67" scaleY=".67"/>
     </path>
   </tam>
 

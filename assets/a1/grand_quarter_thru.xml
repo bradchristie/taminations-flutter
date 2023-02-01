@@ -67,6 +67,26 @@
     </path>
   </tam>
 
+  <tam title="Grand Quarter Thru"
+       from="Facing Point-to-Point Diamonds"
+       formation="Diamonds Facing PTP"
+       parts="2">
+    <path>
+      <move select="Hinge Right" beats="2"/>
+    </path>
+    <path>
+      <move select="Hinge Right" beats="2"/>
+    </path>
+    <path>
+      <move select="Hinge Right" beats="2" scaleX=".5"/>
+      <move select="Swing Left" scaleX=".75" scaleY=".75"/>
+    </path>
+    <path>
+      <move select="Stand" beats="2"/>
+      <move select="Swing Left" scaleX=".75" scaleY=".75"/>
+    </path>
+  </tam>
+
   <tam title="Grand Left Quarter Thru"
        from="Left-Hand Columns"
        formation="Column LH GBGB"
@@ -104,6 +124,26 @@
     </path>
     <path>
       <move select="Hinge Left" beats="2" scaleX=".75" hands="gripleft"/>
+    </path>
+  </tam>
+
+  <tam title="Grand Left Quarter Thru"
+       from="Facing Point-to-Point Diamonds"
+       formation="Diamonds Facing LH PTP"
+       parts="2">
+    <path>
+      <move select="Hinge Left" beats="2" scaleX=".5"/>
+      <move select="Swing Right" scaleX=".75" scaleY=".75"/>
+    </path>
+    <path>
+      <move select="Hinge Left" beats="2"/>
+    </path>
+    <path>
+      <move select="Hinge Left" beats="2"/>
+    </path>
+    <path>
+      <move select="Stand" beats="2"/>
+      <move select="Swing Right" scaleX=".75" scaleY=".75"/>
     </path>
   </tam>
 
@@ -154,6 +194,29 @@
     </path>
   </tam>
 
+  <tam title="Grand 3/4 Thru"
+       from="Facing Point-to-Point Diamonds"
+       formation="Diamonds Facing PTP"
+       parts="4.5">
+    <path>
+      <move select="Swing Right"/>
+      <move select="Hinge Right" scaleX=".5"/>
+      <move select="Swing Left" scaleX=".75" scaleY=".75"/>
+    </path>
+    <path>
+      <move select="Swing Right"/>
+      <move select="Hinge Right"/>
+    </path>
+    <path>
+      <move select="Swing Right"/>
+      <move select="Hinge Right"/>
+    </path>
+    <path>
+      <move select="Stand" beats="4.5"/>
+      <move select="Swing Left" scaleX=".75" scaleY=".75"/>
+    </path>
+  </tam>
+
   <tam title="Grand Left 3/4 Thru"
        from="Left-Hand Columns"
        formation="Column LH GBGB"
@@ -198,6 +261,29 @@
       <move select="Hinge Left" beats="2" scaleX=".75" hands="gripleft"/>
       <move select="Swing Left" scaleX=".75" scaleY=".75"/>
       <move select="Swing Right" beats="4" scaleX=".75" scaleY=".75" hands="gripright"/>
+    </path>
+  </tam>
+
+  <tam title="Grand Left 3/4 Thru"
+       from="Facing Point-to-Point Diamonds"
+       formation="Diamonds Facing LH PTP"
+       parts="4.5">
+    <path>
+      <move select="Swing Left"/>
+      <move select="Hinge Left"/>
+    </path>
+    <path>
+      <move select="Swing Left"/>
+      <move select="Hinge Left"/>
+    </path>
+    <path>
+      <move select="Swing Left"/>
+      <move select="Hinge Left" scaleX=".5"/>
+      <move select="Swing Right" scaleX=".75" scaleY=".75"/>
+    </path>
+    <path>
+      <move select="Stand" beats="4.5"/>
+      <move select="Swing Right" scaleX=".75" scaleY=".75"/>
     </path>
   </tam>
 
