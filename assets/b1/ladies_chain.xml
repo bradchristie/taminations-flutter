@@ -444,6 +444,22 @@
     </path>
   </tam>
 
+  <tam title="Chain Down the Line"
+       from="Compact Two-Faced Line"
+       formation="Compact Two-Faced Line RH"
+       fractions="3" difficulty="1" display="no">
+    <path>
+      <move select="Quarter Right" beats="3"/>
+      <move select="U-Turn Left" beats="1.5"/>
+      <move select="Beau Wheel" scaleX=".5" scaleY=".5"/>
+    </path>
+    <path>
+      <move select="Swing Right" scaleX=".5" scaleY=".5" />
+      <move select="Hinge Left" />
+      <move select="Belle Wheel" />
+    </path>
+  </tam>
+
   <tam title="Chain Down the Line" from="Left-Hand Wave"
        formation="Wave LH" difficulty="1">
     <path>
