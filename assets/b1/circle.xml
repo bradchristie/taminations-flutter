@@ -79,6 +79,31 @@
     </taminator>
   </tam>
 
+  <tam title="Circle Left 1/8"
+       from="Static Square" group=" " display="no"
+       formation="Static Square">
+    <path>
+      <move select="Forward" hands="both" scaleX=".59" scaleY=".59" />
+      <move select="cl" />
+      <move select="Eighth Right"  hands="left" beats="1" offsetX="-.417" offsetY=".417" />
+    </path>
+    <path>
+      <move select="Eighth Left" beats="1" hands="gripboth" offsetX="0.59"/>
+      <move select="cl" />
+      <move select="Back" hands="right" scaleX=".59" scaleY=".59" />
+    </path>
+    <path>
+      <move select="Forward" hands="both" scaleX=".59"/>
+      <move select="cl" />
+      <move select="Eighth Right" hands="left" beats="1" offsetX="-.417" offsetY=".417" />
+    </path>
+    <path>
+      <move select="Eighth Left" beats="1" hands="gripboth" offsetX="0.5"/>
+      <move select="cl" />
+      <move select="Back" hands="right" scaleX=".59"/>
+    </path>
+  </tam>
+
   <tam title="Circle Left 1/4"
        from="Static Square" group=" "
        formation="Static Square">
@@ -246,6 +271,31 @@
       This animation shows the dancers circling all the way around once.
       However, in general dancers continue to circle right until the next call is given.
     </taminator>
+  </tam>
+
+  <tam title="Circle Right 1/8"
+       from="Static Square" group=" " display="no"
+       formation="Static Square">
+    <path>
+      <move select="Eighth Right" beats="1" hands="gripboth" offsetX="0.59"/>
+      <move select="cr" />
+      <move select="Back" hands="left" scaleX=".59"/>
+    </path>
+    <path>
+      <move select="Forward" hands="both" scaleX=".59"/>
+      <move select="cr" />
+      <move select="Eighth Left" beats="1" hands="right" offsetX="-.417" offsetY="-0.417"/>
+    </path>
+    <path>
+      <move select="Eighth Right" beats="1" hands="gripboth" offsetX="0.59"/>
+      <move select="cr" />
+      <move select="Back" hands="left" scaleX=".59"/>
+    </path>
+    <path>
+      <move select="Forward" hands="both" scaleX=".59"/>
+      <move select="cr" />
+      <move select="Eighth Left" beats="1" hands="right" offsetX="-.417" offsetY="-0.417"/>
+    </path>
   </tam>
 
   <tam title="Circle Right 1/4"
