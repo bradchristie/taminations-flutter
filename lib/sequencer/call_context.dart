@@ -142,6 +142,7 @@ class CallContext {
   bool _noExtend = false;
   bool resolutionError = false;
   bool asymmetric = false;
+  bool didYourPart = false;
 
   //  Create a context from an array of Dancer
   CallContext.fromDancers(List<Dancer> dancers) {
@@ -300,6 +301,7 @@ class CallContext {
     });
     if (_source != null && _source!.level < level)
       _source!.level = level;
+    ctx?.didYourPart |= didYourPart;
     return didSomething;
   }
 

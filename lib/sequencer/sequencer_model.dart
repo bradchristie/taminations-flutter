@@ -326,6 +326,8 @@ class SequencerModel extends fm.ChangeNotifier {
       }
       if (cctx.resolutionError)
         errorString = 'Warning: Dancers are not resolved';
+      if (cctx.didYourPart)
+        errorString = 'Note: Assuming Do Your Part';
       cctx.extendPaths();
       cctx.appendToSource();
       cctx.animateToEnd();

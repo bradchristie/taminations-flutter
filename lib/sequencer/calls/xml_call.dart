@@ -133,10 +133,11 @@ class XMLCall extends Call {
           //  See if it works with an implied "Do Your Part"
           if (ctx.actives.length < ctx.dancers.length) {
             ctx.applyCalls('Do Your Part $name');
+            ctx.didYourPart = true;
           } else
             rethrow;
         }
-      } on CallError catch(e) {
+      } on CallError catch(_) {
         //  Found the call but formations did not match
         throw FormationNotFoundError(name);
       }
