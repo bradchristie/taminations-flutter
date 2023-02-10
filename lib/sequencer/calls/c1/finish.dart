@@ -42,7 +42,7 @@ class Finish extends Action {
         //  Should be divided into parts, will also accept fractions
         final parts = tam.parts.isNotEmpty ? tam.parts : tam.fractions;
         final sexy = tam.isGenderSpecific;
-        final allp = tam.formation.dancers.map((d) => d.path).toList();
+        final allp = CallContext.fromFormation(tam.formation,withPaths:true).dancers.map((d) => d.path).toList();
         final firstPart = parts.isBlank ? 0.0 : (parts.split(';').firstOrNull?.d ?? 0.0);
         if (firstPart > 0) {
           //  Load the call and animate past the first part

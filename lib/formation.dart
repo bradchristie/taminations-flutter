@@ -25,41 +25,11 @@ class Formation {
   final bool asymmetric;
   final List<Dancer> dancers;
 
-  Formation(this.name,this.dancers,{this.asymmetric=false});
+  Formation(this.name,this.dancers, {this.asymmetric=false});
+
   Formation copy() {
     var dcopy = dancers.clone();
     return Formation(name,dcopy,asymmetric: asymmetric);
-  }
-
-  factory Formation.fromXML(XmlElement xml) {
-    final dancerElements = xml.childrenNamed('dancer');
-    final asymmetric = xml('asymmetric').isNotBlank;
-    var numberArray =  ['1','2','3','4','5','6','7','8'];
-    var coupleArray = asymmetric
-        ? ['1','1','3','3','2','2','4','4']
-        : ['1','3','1','3','2','4','2','4'];
-    var dancers = <Dancer>[];
-    for (var i=0; i<dancerElements.length; i++) {
-      var element = dancerElements[i];
-      //  This assumes square geometry
-      //  Make sure each dancer in the list is immediately followed by its
-      //  diagonal opposite, if not asymmetric.  Required for mapping.
-      dancers.add(Dancer.fromData(
-          number:numberArray[i*2], couple:coupleArray[i*2],
-          gender:Gender.fromString(element('gender')),
-          x:element('x').d, y:element('y').d, angle: element('angle').d,
-          geom: Geometry.getGeometry(Geometry.SQUARE).first
-      ));
-      if (!asymmetric)
-        dancers.add(Dancer.fromData(
-            number:numberArray[i*2+1], couple:coupleArray[i*2+1],
-            gender:Gender.fromString(element('gender')),
-            x:element('x').d, y:element('y').d, angle: element('angle').d,
-            geom: Geometry.getGeometry(Geometry.SQUARE)[1]
-        ));
-    }
-    final ff = Formation(xml('title'),dancers,asymmetric: asymmetric);
-    return ff;
   }
 
 }

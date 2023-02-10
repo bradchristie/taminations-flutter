@@ -75,7 +75,7 @@ extension DancerList on List<Dancer> {
   bool areDancersOrdered() =>
       length % 2 == 0 &&
   indices.where((it) => it % 2 == 0).every(
-          (it) => this[it].location.isAbout(-this[it+1].location));
+          (it) => this[it].location.isAbout(-this[it+1].location) && (this[it].angleFacing-this[it+1].angleFacing).isAround(pi));
 
   //  Center a list of dancers
   //  Assumes dancers are distributed evenly around a central point
@@ -250,6 +250,10 @@ class Dancer implements Comparable<Dancer>, Cloneable<Dancer> {
           from.fillColor,from.tx,
           //  Already geometrically rotated so don't do it again
           Geometry(from._geom.geometry,0),[],from);
+
+  Dancer.cloneWithGeometry(Dancer from, int geometry) :
+      this(from.number,from.numberCouple,from.gender,from.fillColor,from.tx,
+      Geometry(from._geom.geometry,geometry),[]);
 
   @override
   Dancer clone() => Dancer.cloneWithOptions(this);

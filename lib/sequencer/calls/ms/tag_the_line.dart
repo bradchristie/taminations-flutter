@@ -52,12 +52,9 @@ class BigLineTagTheLine extends ActivesOnlyAction {
 
   static final Formation ColumnsOf3 =
   Formation('Columns of 3', [
-    Dancer.fromData(number:'1',couple:'1',gender:Gender.BOY,x:-2,y:1,angle:0),
-    Dancer.fromData(number:'5',couple:'3',gender:Gender.BOY,x:2,y:-1,angle:180),
-    Dancer.fromData(number:'2',couple:'1',gender:Gender.GIRL,x:0,y:-1,angle:180),
-    Dancer.fromData(number:'6',couple:'3',gender:Gender.GIRL,x:0,y:1,angle:0),
-    Dancer.fromData(number:'3',couple:'2',gender:Gender.BOY,x:-2,y:-1,angle:180),
-    Dancer.fromData(number:'7',couple:'4',gender:Gender.BOY,x:2,y:1,angle:0),
+      Dancer.fromData(gender:Gender.GIRL,x:-2,y:-1,angle:180),
+      Dancer.fromData(gender:Gender.BOY,x:0,y:-1,angle:180),
+      Dancer.fromData(gender:Gender.GIRL,x:2,y:-1,angle:180),
   ]);
 
   BigLineTagTheLine(String name) : isLeft=name.contains('Left'), super(name) ;

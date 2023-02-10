@@ -365,7 +365,17 @@ class DanceModel extends fm.ChangeNotifier {
   }
 
   void setAnimatedCall(AnimatedCall call) {
-    dancers = call.formation.dancers;
+    var myGeometry = Geometry.SQUARE;  // TODO other geometries
+    dancers = [];
+    var dnum = 0;
+    for (var d in call.formation.dancers) {
+      for (var g=0; g<myGeometry; g++) {
+        dancers.add(Dancer(call.numbers[dnum*2+g],call.coupleNumbers[dnum*2+g],
+            d.gender, Color.BLUE,
+            d.starttx,Geometry.getGeometry(myGeometry)[g], d.path.movelist));
+      }
+      dnum += 1;
+    }
     leadin = 2.0;
     leadout = 2.0;
     _beats = 0.0;

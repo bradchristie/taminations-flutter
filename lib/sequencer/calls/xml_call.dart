@@ -143,7 +143,8 @@ class XMLCall extends Call {
       }
       return;
     }
-    final allPaths = xcall.formation.dancers.map((d) => d.path).toList();
+    final allPaths = CallContext.fromFormation(xcall.formation,withPaths: true)
+        .dancers.map((d) => d.path).toList();
     //  If moving just some of the dancers,
     //  see if we can keep them in the same shape
     if (ctx.actives.length < ctx.dancers.length) {

@@ -164,9 +164,11 @@ extension TamString on String {
   List<String> minced() =>
       chopped().map((e) => e.diced()).expand((e) => e).toList();
 
-  //  Convert a string into one that could be used as an identifier
-  String get id => replaceAll('-','neg')
-      .replaceAll('.','dot')
+  //  Convert a string into one that could be used as an identifier\
+  //  Only used in xml_to_code
+  String get id => replaceAll(' (?=-?\\d)'.r,'_')
+      .replaceAll('-','m')
+      .replaceAll('.','p')
       .replaceFirst('^(?=\\d)'.r,'n')
       .replaceAll('[\\W ]'.r,'');
 

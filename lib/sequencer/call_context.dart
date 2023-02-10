@@ -143,6 +143,7 @@ class CallContext {
   bool resolutionError = false;
   bool asymmetric = false;
   bool didYourPart = false;
+  int geometry = Geometry.SQUARE;
 
   //  Create a context from an array of Dancer
   CallContext.fromDancers(List<Dancer> dancers) {
@@ -165,17 +166,31 @@ class CallContext {
     this.dancers = dancers.clone();
     if (!dancers.areDancersOrdered())
       this.dancers = this.dancers.center().inOrder();
+    asymmetric = !dancers.areDancersOrdered();
     _source = source;
     _thoseWhoCan = source._thoseWhoCan;
     _snap = source._snap;
   }
 
-  CallContext.fromFormation(Formation f, {bool withPaths=false}) {
-    dancers = f.dancers.clone();
+  CallContext.fromFormation(Formation f,
+      {bool withPaths=false, int geometry=Geometry.SQUARE}) {
+    if (f.asymmetric)
+      geometry = 1;
+    dancers = [for (var d in f.dancers) for (var g=0; g<geometry; g++)
+      Dancer.cloneWithGeometry(d,g) ];
+    //  Set default dancer numbers
+    var numbers = ['1', '5', '2', '6', '3', '7', '4', '8'];
+    var couples = ['1', '3', '1', '3', '2', '4', '2', '4'];
+    for (var i=0; i<min(dancers.length,numbers.length); i++) {
+      dancers[i].number = numbers[i];
+      dancers[i].numberCouple = couples[i];
+    }
     asymmetric = f.asymmetric;
     if (withPaths) {
-      for (var i=0; i<f.dancers.length; i++)
-        dancers[i].path = f.dancers[i].path.clone();
+      for (var i=0; i<f.dancers.length; i++) {
+        for (var g = 0; g < geometry; g++)
+          dancers[i*geometry + g].path = f.dancers[i].path.clone();
+      }
     }
   }
 

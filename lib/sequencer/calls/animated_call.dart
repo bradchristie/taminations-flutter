@@ -32,15 +32,20 @@ class AnimatedCall {
   LevelData level = LevelData.B1;
   String parts;
   String fractions;
+  List<String> numbers;
+  List<String> coupleNumbers;
 
   AnimatedCall(this.title,Formation f,List<Path> paths,
-      {this.parts='',
-        this.fractions='',
-        this.actives='',
-        this.isPerimeter=false,
-        this.isExact=false,
-        this.isAsymmetric=false,
-        this.isGenderSpecific=false})
+      {this.parts = '',
+        this.fractions = '',
+        this.actives = '',
+        this.isPerimeter = false,
+        this.isExact = false,
+        this.isAsymmetric = false,
+        this.isGenderSpecific = false,
+        this.numbers = const ['1', '5', '2', '6', '3', '7', '4', '8'],
+        this.coupleNumbers = const ['1', '3', '1', '3', '2', '4', '2', '4']
+      })
       : formation = f.copy() {
     if (paths.length == formation.dancers.length) {
       for (var i = 0; i < formation.dancers.length; i++)

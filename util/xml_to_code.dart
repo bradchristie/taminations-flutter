@@ -66,7 +66,6 @@ Future<void> writeMoves() async {
   var movesMap = <String, String>{};
   movesDart.writeln('import \'../common.dart\';');
   movesDart.writeln();
-  movesDart.writeln('class Paths {');
   movesDoc.findAllElements('path').forEach((p) {
     var objName = p('name').id;
     movesMap[p('name')] = objName;
@@ -75,7 +74,7 @@ Future<void> writeMoves() async {
         .firstOrNull;
     if (m != null) {
       movesDart.writeln(
-          '  static final Path $objName = Path([');
+          'final Path $objName = Path([');
       movesDart.write(writeOneMovement(m));
       movesDart.writeln('],\'${p('name')}\');');
     } else {
@@ -92,55 +91,27 @@ Future<void> writeMoves() async {
           mods += '.scale(${m('scaleX', '1')},${m('scaleY', '1')})';
         return '($objFrom.clone()$mods)';
       }).join('+');
-      movesDart.writeln('  static final Path $objName = $movestr;');
+      movesDart.writeln('final Path $objName = $movestr;');
     }
   });
 
-  //  Map to look up move (Path object) by name
-  movesDart.writeln();
-  movesDart.writeln('static final Map<String,Path> pathMap = {');
-  movesMap.forEach((key, value) {
-    movesDart.writeln('    \'$key\' : $value,');
-  });
-  movesDart.writeln('  };');
-
-  movesDart.writeln('}');  // end of Paths class
   await movesDart.flush();
   await movesDart.close();
 }
 
 void writeOneFormation(IOSink fDart, XmlElement f, {bool isAsymmetric=false}) {
   fDart.writeln('Formation(\'${f('name')}\', [');
-  var numberArray =  ['1','5','2','6','3','7','4','8',
-    '','','','','','','',''];
-  var coupleArray = isAsymmetric
-      ? ['1','1','3','3','2','2','4','4',' ',' ',' ',' ',' ',' ',' ',' ']
-      : ['1','3','1','3','2','4','2','4',' ',' ',' ',' ',' ',' ',' ',' '];
   final dancers = f.childrenNamed('dancer');
   for (var i=0; i<dancers.length; i++) {
     var d = dancers[i];
     fDart.write('        Dancer.fromData(');
-    fDart.write('number:\'${numberArray[i*2]}\',');
-    fDart.write('couple:\'${coupleArray[i*2]}\',');
     fDart.write('gender:Gender.${d('gender').toUpperCase()},');
     fDart.write('x:${d('x')},');
     fDart.write('y:${d('y')},');
-    fDart.write('angle:${d('angle')},');
-    fDart.write('geom: SquareGeometry(0)');
+    fDart.write('angle:${d('angle')}');
     fDart.writeln('),');
-    if (!isAsymmetric) {
-      fDart.write('        Dancer.fromData(');
-      fDart.write('number:\'${numberArray[i*2+1]}\',');
-      fDart.write('couple:\'${coupleArray[i*2+1]}\',');
-      fDart.write('gender:Gender.${d('gender').toUpperCase()},');
-      fDart.write('x:${d('x')},');
-      fDart.write('y:${d('y')},');
-      fDart.write('angle:${d('angle')},');
-      fDart.write('geom: SquareGeometry(1)');
-      fDart.writeln('),');
-    }
   }
-  fDart.write('  ])');
+  fDart.write('  ]${isAsymmetric?',asymmetric:true':''})');
 }
 
 //  This routine builds a list of Formation class objects
@@ -227,7 +198,7 @@ Future<void> writeCalls() async {
     callDoc.findAllElements('tam')
         .where((tam) => !(tam('sequencer').contains('no')))
         .forEach((tam) {
-      cDart.writeln('    AnimatedCall(${tam('title').q},');
+      cDart.writeln('\n    AnimatedCall(${tam('title').q},');
       if (tam.childrenNamed('formation').isNotEmpty) {
         //  custom formation
         cDart.write('      ');
@@ -242,7 +213,7 @@ Future<void> writeCalls() async {
         var paths = path.childElements.map((move) {
           var onePath = '';
           if (move.tag == 'move') {
-            onePath = '          Paths.${move('select').id}';
+            onePath = '          ${move('select').id}';
             if (move('beats').isNotBlank)
               onePath += '.changeBeats(${move('beats')})';
             if (move('hands').isNotBlank) {
@@ -269,7 +240,7 @@ Future<void> writeCalls() async {
           return onePath;
         });
         if (paths.isNotEmpty)
-          cDart.writeAll(paths,'+ \n');
+          cDart.writeAll(paths,' +\n');
         else
           cDart.write('          Path()');
         cDart.writeln(',\n');
