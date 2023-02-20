@@ -18,6 +18,7 @@
 
 */
 
+import '../../../moves.g.dart';
 import '../common.dart';
 
 class TurnBack extends Action {
@@ -31,11 +32,11 @@ class TurnBack extends Action {
   Path performOne(Dancer d, CallContext ctx) {
     final roll = ctx.roll(d);
     final move = {
-      Rolling.LEFT : 'U-Turn Left',
-      Rolling.RIGHT : 'U-Turn Right',
-      Rolling.NONE : d.data.beau ? 'U-Turn Right' : 'U-Turn Left'
+      Rolling.LEFT : UmTurnLeft,
+      Rolling.RIGHT : UmTurnRight,
+      Rolling.NONE : d.data.beau ? UmTurnRight : UmTurnLeft
     }[roll]!;
-    return TamUtils.getMove(move);
+    return move;
   }
 
 }

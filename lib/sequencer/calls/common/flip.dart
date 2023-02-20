@@ -17,6 +17,7 @@
  *     along with Taminations.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+import '../../../moves.g.dart';
 import '../common.dart';
 
 class Flip extends Action {
@@ -28,18 +29,18 @@ class Flip extends Action {
 
   @override
   Path performOne(Dancer d, CallContext ctx) {
-    String dir;
+    Path move;
     if (name == 'Flip Left' )
-      dir = 'Left' ;
+      move = FlipLeft;
     else if (name == 'Flip Right' )
-      dir = 'Right' ;
+      move = FlipRight;
     else if (name == 'Flip In' )
-      dir = d.isCenterLeft ? 'Left'  : 'Right' ;
+      move = d.isCenterLeft ? FlipLeft  : FlipRight;
     else if (name == 'Flip Out' )
-      dir = d.isCenterLeft ? 'Right'  : 'Left' ;
+      move = d.isCenterLeft ? FlipRight  : FlipLeft;
     else
       throw CallError('Flip how?' );
-    return TamUtils.getMove('Flip $dir' );
+    return move;
   }
 
 }

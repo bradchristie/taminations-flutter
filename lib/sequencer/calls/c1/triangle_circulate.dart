@@ -18,6 +18,7 @@
 
 */
 
+import '../../../moves.g.dart';
 import '../common.dart';
 
 class TriangleCirculate extends Action {
@@ -31,7 +32,7 @@ class TriangleCirculate extends Action {
   Tandem-based
   Wave-based
 You do not need to use one of these if the triangles are unambiguous (as in a sausage formation)''';
-  @override var link = 'c1/triangle_circulate';
+  @override var helplink = 'c1/triangle_circulate';
   var rootName = 'Triangle Circulate'.r;
   TriangleCirculate(String name) : super(name);
 
@@ -42,21 +43,17 @@ You do not need to use one of these if the triangles are unambiguous (as in a sa
     if (d2.isInFrontOf(d)) {
       //  Path is forward
       final dist = d.distanceTo(d2);
-      return TamUtils.getMove('Forward',scale:[dist,1.0].v,beats: dist);
+      return Forward.scale(dist,1.0).changeBeats(dist);
     }
     else if (d2.angleFacing.isAround(d.angleFacing+pi)) {
       //  Path is 180 degree turn to left or right
       final d2v = d.vectorToDancer(d2);
-      return TamUtils.getMove('Run Left',
-          scale:[0.5,d2v.y/2].v,
-          skew:[d2v.x,0.0].v);
+      return RunLeft.scale(0.5,d2v.y/2).skew(d2v.x,0.0);
     }
     else {
       //  Path is 90 degree turn to left or right
       final d2v = d.vectorToDancer(d2);
-      return TamUtils.getMove('Lead Left',
-          scale:[d2v.x,d2v.y].v,
-          beats:d2v.length);
+      return LeadLeft.scale(d2v.x,d2v.y).changeBeats(d2v.length);
     }
   }
 

@@ -18,6 +18,7 @@
 
 */
 
+import '../../../moves.g.dart';
 import '../common.dart';
 
 class SwitchTheLine extends Action {
@@ -36,8 +37,8 @@ class SwitchTheLine extends Action {
     for (final d in ctx.dancers.where((it) => it.data.center)) {
       final d2 = d.data.partner;
       if (d2 != null)  // better not be
-        d.path = TamUtils.getMove(d.data.beau ? 'Flip Right' : 'Flip Left',
-            scale:[1.0,d.distanceTo(d2)/2.0].v);
+        d.path = (d.data.beau ? FlipRight : FlipLeft)
+            .scale(1.0,d.distanceTo(d2)/2.0);
     }
   }
 

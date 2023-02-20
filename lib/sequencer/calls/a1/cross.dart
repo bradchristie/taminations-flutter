@@ -18,6 +18,7 @@
 
 */
 
+import '../../../moves.g.dart';
 import '../common.dart';
 
 class Cross extends Action {
@@ -81,7 +82,7 @@ class Cross extends Action {
     final x = dist * cos(a);
     final y = dist * sin(a.abs());
     crossCount += 1;
-    return TamUtils.getMove((a > 0) ? 'Cross Left' : 'Cross Right',scale:[x/2.0,y/2.0].v);
+    return (a > 0 ? CrossLeft : CrossRight).scale(x/2.0,y/2.0);
   }
 
 }

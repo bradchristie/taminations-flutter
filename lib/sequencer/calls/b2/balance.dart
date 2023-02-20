@@ -18,6 +18,7 @@
 
 */
 
+import '../../../moves.g.dart';
 import '../common.dart';
 
 class Balance extends ActivesOnlyAction {
@@ -30,10 +31,8 @@ class Balance extends ActivesOnlyAction {
   @override
   Path performOne(Dancer d, CallContext ctx) {
     if (ctx.isInWave(d)) {
-      return TamUtils.getMove('Forward',
-              beats: 2.0, hands: Hands.GRIPBOTH, scale: [0.3,1.0].v) +
-          TamUtils.getMove('Back',
-              beats: 2.0, hands: Hands.GRIPBOTH, scale: [0.3,1.0].v);
+      return Forward.changeBeats(2.0).addhands(Hands.GRIPBOTH).scale(0.3,1.0) +
+             Back.changeBeats(2.0).addhands(Hands.GRIPBOTH).scale(0.3,1.0);
     }
     return Path();
   }

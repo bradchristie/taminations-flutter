@@ -18,6 +18,7 @@
 
 */
 
+import '../../../moves.g.dart';
 import '../common.dart';
 
 class ZigZag extends ActivesOnlyAction {
@@ -28,16 +29,16 @@ class ZigZag extends ActivesOnlyAction {
 
   @override
   Path performOne(Dancer d, CallContext ctx) {
-    var move = 'Stand';
+    var move = Stand;
     if (d.data.leader && name.matches('zig z[ai]g'.ri))
-      move = 'Quarter Right';
+      move = QuarterRight;
     if (d.data.leader && name.matches('zag z[ai]g'.ri))
-      move = 'Quarter Left';
+      move = QuarterLeft;
     if (d.data.trailer && name.matches('z[ai]g zig'.ri))
-      move = 'Quarter Right';
+      move = QuarterRight;
     if (d.data.trailer && name.matches('z[ai]g zag'.ri))
-      move = 'Quarter Left';
-    return TamUtils.getMove(move);
+      move = QuarterLeft;
+    return move;
   }
 
 }

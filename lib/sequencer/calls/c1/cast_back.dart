@@ -18,6 +18,7 @@
 
 */
 
+import '../../../moves.g.dart';
 import '../common.dart';
 
 //  This handles both Cast Back and Cross Cast Back
@@ -46,10 +47,13 @@ class CastBack extends Action {
 
   @override
   Path performOne(Dancer d, CallContext ctx) {
-    final dir = (d.isCenterRight ^ (name == 'Cross Cast Back')) ? 'Left' : 'Right';
-    final move = (d.isCenterRight && (name == 'Cross Cast Back')) ? 'Flip' : 'Run';
+    Path move;
+    if (name == 'Cross Cast Back')
+      move = d.isCenterRight ? FlipRight : RunLeft;
+    else
+      move = d.isCenterRight ? RunLeft : RunRight;
     final scale = (name == 'Cross Cast Back') ? 2.0 : 1.0;
-    return TamUtils.getMove('$move $dir',scale:[1.0,scale].v,skew:[-2.0,0.0].v);
+    return move.scale(1.0,scale).skew(-2.0,0.0);
   }
 
 }

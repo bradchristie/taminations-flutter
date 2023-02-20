@@ -18,6 +18,7 @@
 
 */
 
+import '../../../moves.g.dart';
 import '../common.dart';
 
 class TurnAndDeal extends Action {
@@ -39,8 +40,8 @@ Line of (6 or 8) [Left] Turn and Deal''';
     final dist = !ctx.isTidal() ? 2.0 :
     d.data.center ? 1.5 : 0.5;
     final sign = (dir=='Left') ? 1.0 : -1.0;
-    return TamUtils.getMove('U-Turn $dir',
-        skew:[sign*(name.startsWith('Left') ? amount : -amount),dist*sign].v);
+    return (dir=='Left' ? UmTurnLeft : UmTurnRight)
+        .skew(sign*(name.startsWith('Left') ? amount : -amount),dist*sign);
   }
 
 }
@@ -66,10 +67,7 @@ class BigLineTurnAndDeal extends ActivesOnlyAction {
   @override
   Path performOne(Dancer d, CallContext ctx) {
     d.animate(0.0);
-    if (d.isCenterRight)
-      return TamUtils.getMove('Quarter Right');
-    else
-      return TamUtils.getMove('Quarter Left');
+    return d.isCenterRight ? QuarterRight : QuarterLeft;
   }
 
 }

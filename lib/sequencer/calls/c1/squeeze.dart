@@ -18,6 +18,7 @@
 
 */
 
+import '../../../moves.g.dart';
 import '../common.dart';
 
 class Squeeze extends Action {
@@ -49,19 +50,17 @@ class Squeeze extends Action {
     final dist = d.distanceTo(d2);
     final isClose = dist < 2.0 || dist.isAbout(2.0);
     final sameDirection = d.angleFacing.isAround(d2.angleFacing);
-    var tradeMove = 'Swing Right';
-    if (d2.isLeftOf(d) && sameDirection) tradeMove = 'Flip Left';
-    else if (d2.isRightOf(d) && sameDirection) tradeMove = 'Run Right';
-    else if (d2.isLeftOf(d)) tradeMove = 'Swing Left';
-    final tradePath = TamUtils.getMove(tradeMove);
-    final dodgeMove = (d2.isLeftOf(d) ^ isClose)
-        ? 'Dodge Left' : 'Dodge Right';
-    var dodgePath = TamUtils.getMove(dodgeMove);
+    var tradeMove = SwingRight;
+    if (d2.isLeftOf(d) && sameDirection) tradeMove = FlipLeft;
+    else if (d2.isRightOf(d) && sameDirection) tradeMove = RunRight;
+    else if (d2.isLeftOf(d)) tradeMove = SwingLeft;
+    var dodgeMove = (d2.isLeftOf(d) ^ isClose)
+        ? DodgeLeft : DodgeRight;
     if (isClose)
-      return tradePath + dodgePath;
+      return tradeMove + dodgeMove;
     else {
-      dodgePath = dodgePath.scale(1.0,(dist-2.0)/4.0);
-      return dodgePath + tradePath;
+      dodgeMove = dodgeMove.scale(1.0,(dist-2.0)/4.0);
+      return dodgeMove + tradeMove;
     }
   }
 

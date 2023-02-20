@@ -19,12 +19,13 @@
 */
 
 import '../common.dart';
+import '../moves.g.dart';
 import 'call_error.dart';
 import 'calls/action.dart';
 import 'calls/call.dart';
 import 'calls/coded_call.dart';
-import 'calls/xml_call.dart';
 import 'calls/set_debug_switches.dart';
+import 'calls/xml_call.dart';
 
 enum Rolling {
   LEFT,
@@ -947,7 +948,7 @@ class CallContext {
         if (d.path.movelist.isNotEmpty)
           m = adjustFirstMovement ? d.path.shift()! : d.path.pop();
         else
-          m = TamUtils.getMove('Stand Ahead')
+          m = StandAhead
             .changeBeats(match.offsets[i].length)
             .notFromCall().pop();
         //  Transform the offset to the dancer's angle
@@ -1478,9 +1479,7 @@ class CallContext {
           d.path = d.path.changeBeats(d.path.beats + b);
         } else {
           //  Large change - add that number as needed by using the 'Stand' move
-          d.path = d.path + TamUtils.getMove('Stand')
-            .changeBeats(b)
-            .notFromCall();
+          d.path = d.path + Stand.changeBeats(b).notFromCall();
         }
       }
     }

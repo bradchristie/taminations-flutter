@@ -17,6 +17,7 @@
   along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 */
+import '../../../moves.g.dart';
 import '../common.dart';
 
 class Run extends Action {
@@ -27,13 +28,13 @@ class Run extends Action {
 
   void _runOne(Dancer d, Dancer d2, String dir) {
     var dist = d.distanceTo(d2);
-    d.path += TamUtils.getMove('Run $dir' ,scale:[1.0,dist/2].v);
-    var m2 = 'Stand' ;
-    if (d.isRightOf(d2)) m2 = 'Dodge Right' ;
-    if (d.isLeftOf(d2)) m2 = 'Dodge Left' ;
-    if (d.isInFrontOf(d2)) m2 = 'Forward 2' ;
-    if (d.isInBackOf(d2)) m2 = 'Back 2' ;  //  really ???
-    d2.path += TamUtils.getMove(m2,scale:[dist/2,dist/2].v);
+    d.path += (dir=='Left' ? RunLeft : RunRight).scale(1.0,dist/2);
+    var m2 = Stand;
+    if (d.isRightOf(d2)) m2 = DodgeRight;
+    if (d.isLeftOf(d2)) m2 = DodgeLeft;
+    if (d.isInFrontOf(d2)) m2 = Forward_2;
+    if (d.isInBackOf(d2)) m2 = Back_2;  //  really ???
+    d2.path += m2.scale(dist/2,dist/2);
   }
 
   @override

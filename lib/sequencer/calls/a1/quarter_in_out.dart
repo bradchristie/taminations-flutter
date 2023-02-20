@@ -18,6 +18,7 @@
 
 */
 
+import '../../../moves.g.dart';
 import '../common.dart';
 
 class QuarterInOut extends Action {
@@ -47,27 +48,27 @@ class QuarterInOut extends Action {
     final isOut = name.matches('.*out'.ri);
     if (ctx.isBox()) {
       if (d.isCenterLeft)
-        return TamUtils.getMove(isOut ? 'Quarter Right' : 'Quarter Left');
+        return isOut ? QuarterRight : QuarterLeft;
       else if (d.isCenterRight)
-        return TamUtils.getMove(isOut ? 'Quarter Left' : 'Quarter Right');
+        return isOut ? QuarterLeft : QuarterRight;
       else
         //  should never happen because we know dancer is in a box
         throw CallError('Unable to calculate $name for dancer $d');
     }
-    String move;
+    Path move;
     if (d.data.partner == null) {
       //  No partner - Face In (Out)
       move = ((d.angleToOrigin < 0) ^ name.matches('.*out'.ri))
-          ? 'Quarter Right' : 'Quarter Left';
+          ? QuarterRight : QuarterLeft;
       //  If it thinks that the very centers are partners,
       //  as in ptp diamonds, face into (out of) center of each side
     } else if (d.data.partner!.data.verycenter && d.data.verycenter) {
       move = ((d.angleToOrigin < 0) ^ name.matches('.*out'.ri))
-          ? 'Quarter Left' : 'Quarter Right';
+          ? QuarterLeft : QuarterRight;
     } else
       move = (d.data.beau ^ name.matches('.*out'.ri))
-          ? 'Quarter Right' : 'Quarter Left';
-    return TamUtils.getMove(move);
+          ? QuarterRight : QuarterLeft;
+    return move;
   }
 
 }

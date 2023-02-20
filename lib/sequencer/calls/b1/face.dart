@@ -18,6 +18,7 @@
 
 */
 
+import '../../../moves.g.dart';
 import '../common.dart';
 
 //  Does Face In, Out, Left, Right
@@ -28,28 +29,30 @@ class Face extends Action {
 
   @override
   Path performOne(Dancer d, CallContext ctx) {
-    var moveName = '' ;
+    Path move;
     if (name == 'Face In' ) {
       if (d.angleToOrigin.isLessThan(0))
-        moveName = 'Quarter Right' ;
+        move = QuarterRight;
       else if (d.angleToOrigin.isGreaterThan(0))
-        moveName = 'Quarter Left' ;
+        move = QuarterLeft;
       else
         throw CallError('Dancer $d does not know which way to turn.' );
     }
     else if (name == 'Face Out') {
       if (d.angleToOrigin.isLessThan(0))
-        moveName = 'Quarter Left';
+        move = QuarterLeft;
       else if (d.angleToOrigin.isGreaterThan(0))
-        moveName = 'Quarter Right';
+        move = QuarterRight;
       else
         throw CallError('Dancer $d does not know which way to turn.' );
     }
     else if (name == 'Face Left' )
-      moveName = 'Quarter Left';
+      move = QuarterLeft;
     else if (name == 'Face Right')
-      moveName = 'Quarter Right';
-    return TamUtils.getMove(moveName);
+      move = QuarterRight;
+    else
+      throw CallError('Face which direction?');
+    return move;
   }
 
 }

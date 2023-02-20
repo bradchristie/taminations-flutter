@@ -17,6 +17,7 @@
  *     along with Taminations.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+import '../../../moves.g.dart';
 import '../common.dart';
 
 class StepThru extends ActivesOnlyAction {
@@ -28,9 +29,9 @@ class StepThru extends ActivesOnlyAction {
   Path performOne(Dancer d, CallContext ctx) {
     if (!ctx.isInWave(d))
       throw CallError('Dancer $d cannot Step Thru');
-    final dir = d.data.beau ? 'Right' : 'Left';
+    final move = d.data.beau ? ExtendRight : ExtendLeft;
     final dist = d.distanceTo(d.data.partner!);
-    return TamUtils.getMove('Extend $dir').scale(1.0, dist/2.0);
+    return move.scale(1.0, dist/2.0);
   }
 
 }

@@ -18,6 +18,7 @@
 
 */
 
+import '../../../moves.g.dart';
 import '../common.dart';
 
 class Truck extends Action {
@@ -28,11 +29,13 @@ class Truck extends Action {
 
   @override
   Path performOne(Dancer d, CallContext ctx) {
-    final direction = [
-      if (d.gender == Gender.BOY) name.startsWith('Reverse') ? 'Right' : 'Left',
-      if (d.gender == Gender.GIRL) name.startsWith('Reverse') ? 'Left' : 'Right',
+    final move = [
+      if (d.gender == Gender.BOY) name.startsWith('Reverse') ? DodgeRight : DodgeLeft,
+      if (d.gender == Gender.GIRL) name.startsWith('Reverse') ? DodgeLeft : DodgeRight,
     ].firstOrNull;
-    return TamUtils.getMove('Dodge $direction');
+    if (move == null)
+      throw CallError('Attempt to Truck a phantom');
+    return move;
   }
 
 }

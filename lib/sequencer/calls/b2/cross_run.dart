@@ -18,6 +18,7 @@
 
 */
 
+import '../../../moves.g.dart';
 import '../common.dart';
 
 class CrossRun extends ActivesOnlyAction {
@@ -63,22 +64,22 @@ class CrossRun extends ActivesOnlyAction {
         //  dancer on right goes in front (half-sashay action)
         if (d.data.center && ctx.dancerToRight(d)!.angleFacing.isAround(d.angleFacing)) {
           d.path =
-              TamUtils.getMove('Dodge Right',scale:[1.0,0.5].v,beats: 1.0) +
-              TamUtils.getMove('Run Right',scale:[1.0, dist/2].v,skew:[0.0,1.0].v);
+              DodgeRight.scale(1.0,0.5).changeBeats(1.0) +
+              RunRight.scale(1.0, dist/2).skew(0.0,1.0);
         } else {
           //  Pass right shoulders
           var scaleX = 1.0;
           if (d.data.end && numright > 2 &&
               dright[2].angleFacing.isAround(d.angleFacing))
             scaleX = 2.0;
-          d.path = TamUtils.getMove('Run Right', scale: [scaleX, dist / 2].v);
+          d.path = RunRight.scale(scaleX, dist / 2);
         }
       }
       else if (numleft == 2 || numleft == 3 || numleft == 6 || numleft == 7) {
         final d2 = dleft[1];
         realDodgers.add(d2);
         final dist = d.distanceTo(d2);
-        d.path = TamUtils.getMove('Run Left',scale:[1.0,dist/2].v);
+        d.path = RunLeft.scale(1.0,dist/2);
       }
       else
         throw CallError('Error calculating Cross Run');
@@ -94,17 +95,13 @@ class CrossRun extends ActivesOnlyAction {
       var dback = ctx.dancerInBack(d);
       //  Dodge or move forward/back to that spot
       if (runners.contains(dright))
-        d.path = TamUtils.getMove('Dodge Right' , scale:[1.0,d.distanceTo(dright!)/2].v);
+        d.path = DodgeRight.scale(1.0,d.distanceTo(dright!)/2);
       else if (runners.contains(dleft))
-        d.path = TamUtils.getMove('Dodge Left' , scale:[1.0,d.distanceTo(dleft!)/2].v);
+        d.path = DodgeLeft.scale(1.0,d.distanceTo(dleft!)/2);
       else if (runners.contains(dfront))
-        d.path = TamUtils.getMove('Forward' ,
-            beats: 3.0,
-            scale:[d.distanceTo(dfront!),1.0].v);
+        d.path = Forward.changeBeats(3.0).scale(d.distanceTo(dfront!),1.0);
       else if (runners.contains(dback))
-        d.path = TamUtils.getMove('Back' ,
-            beats: 3.0,
-            scale:[d.distanceTo(dback!),1.0].v);
+        d.path = Back.changeBeats(3.0).scale(d.distanceTo(dback!),1.0);
       else
         throw CallError('Unable to calculate Cross Run for dancer $d');
     }

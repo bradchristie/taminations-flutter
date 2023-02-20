@@ -352,7 +352,7 @@ class SequencerModel extends fm.ChangeNotifier {
       text.trim().startsWith('[^\\a-zA-Z0-9]'.r);
 
   void _startSequence() {
-    var formation = Formations.formationMap[startingFormation]
+    var formation = Formations.formationIndex[startingFormation]
         ?? thrower(CallError('Could not find formation $startingFormation'))!;
     var paths = [for (var _ in formation.dancers) Path()];
     animation.setAnimatedCall(AnimatedCall('',formation,paths));

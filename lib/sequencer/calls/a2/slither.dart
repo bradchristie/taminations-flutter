@@ -18,6 +18,7 @@
 
 */
 
+import '../../../moves.g.dart';
 import '../common.dart';
 
 class Slither extends Action {
@@ -46,11 +47,11 @@ class Slither extends Action {
   @override
   Path performOne(Dancer d, CallContext ctx) {
     if (ctx.dancerToRight(d)?.isActive ?? false)
-      return TamUtils.getMove('BackSashay Right',
-          scale:[1.0,d.distanceTo(ctx.dancerToRight(d)!)/2.0].v);
+      return BackSashayRight
+          .scale(1.0,d.distanceTo(ctx.dancerToRight(d)!)/2.0);
     else if (ctx.dancerToLeft(d)?.isActive ?? false)
-      return TamUtils.getMove('BackSashay Left',
-          scale:[1.0,d.distanceTo(ctx.dancerToLeft(d)!)/2.0].v);
+      return BackSashayLeft
+          .scale(1.0,d.distanceTo(ctx.dancerToLeft(d)!)/2.0);
     else
       throw CallError('Unable to calculate Sither.');
   }

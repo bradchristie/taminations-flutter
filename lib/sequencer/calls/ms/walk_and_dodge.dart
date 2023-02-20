@@ -18,6 +18,7 @@
 
 */
 
+import '../../../moves.g.dart';
 import '../common.dart';
 import '../coded_call.dart';
 
@@ -79,23 +80,23 @@ class WalkAndDodge extends ActivesOnlyAction {
       //  A Dodger.  Figure out which way to dodge.
       final dRight = ctx.dancerToRight(d);
       final dLeft = ctx.dancerToLeft(d);
-      String dir;
+      Path move;
       if (dRight == null && dLeft == null)
         throw CallError('Dancer $d does not know which way to Dodge');
       else if (dRight == null)
-        dir = 'Left';
+        move = DodgeLeft;
       else if (dLeft == null)
-        dir = 'Right';
+        move = DodgeRight;
       else
-        dir = (dRight.location.length > dLeft.location.length) ? 'Right' : 'Left';
+        move = (dRight.location.length > dLeft.location.length) ? DodgeRight : DodgeLeft;
       if (ctx.isInCouple(d) && isDodger(d.data.partner))
         throw CallError('Dodgers would cross each other');
-      var d2 = (dir == 'Right')
+      var d2 = (move == DodgeRight)
           ? ctx.dancerToRight(d)
           : ctx.dancerToLeft(d);
       if (d2 != null) {
         var dist = d.distanceTo(d2);
-        return TamUtils.getMove('Dodge $dir', scale: [1.0, dist / 2.0].v);
+        return move.scale(1.0, dist / 2.0);
       }
       throw CallError('Unable to calculate Walk and Dodge for dancer $d');
 
@@ -108,7 +109,7 @@ class WalkAndDodge extends ActivesOnlyAction {
         throw CallError('Walkers ($d and $d2) cannot face each other');
       else {
         var dist = d.distanceTo(d2);
-        return TamUtils.getMove('Forward',scale:[dist,1.0].v,beats:3.0);
+        return Forward.scale(dist,1.0).changeBeats(3.0);
       }
 
     } else

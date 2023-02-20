@@ -18,6 +18,7 @@
 
 */
 
+import '../../../moves.g.dart';
 import '../common.dart';
 
 class CrossOverCirculate extends Action {
@@ -48,11 +49,10 @@ class CrossOverCirculate extends Action {
     //  Centers <-> Ends
     if (!(d.data.center ^ d2.data.center))
       throw CallError('Incorrect circulate path for Cross Over Circulate');
-    final move = (d2.isRightOf(d)) ? 'Run Right' : 'Run Left';
     //  Pass right shoulders if necessary
     final xScale = (d2.isRightOf(d) && d2.data.leader) ? 2.0 : 1.0;
     final yScale = d.distanceTo(d2) / 2.0;
-    return TamUtils.getMove(move,scale:[xScale,yScale].v);
+    return (d2.isRightOf(d) ? RunRight : RunLeft).scale(xScale,yScale);
 
     } else if (d.data.trailer) {
       //  Find the dancer in the other line to move to
@@ -65,16 +65,13 @@ class CrossOverCirculate extends Action {
     final v = d.vectorToDancer(d2);
     //  Pass right shoulders if necessary
     if (d2.data.trailer && v.y > 0)
-      return TamUtils.getMove('Extend Left',beats:v.x-1,scale:[v.x-1,v.y].v) +
-             TamUtils.getMove('Forward');
+      return ExtendLeft.changeBeats(v.x-1).scale(v.x-1,v.y) + Forward;
     else if (d2.data.trailer && v.y < 0)
-      return TamUtils.getMove('Forward') +
-             TamUtils.getMove('Extend Right',scale:[v.x-1,-v.y].v,beats:v.x-1);
+      return Forward + ExtendRight.scale(v.x-1,-v.y).changeBeats(v.x-1);
     else if (v.y > 0)
-      return TamUtils.getMove('Extend Left',beats:v.x,scale:[v.x,v.y].v);
+      return ExtendLeft.changeBeats(v.x).scale(v.x,v.y);
     else
-      return TamUtils.getMove('Extend Right',beats:v.x,scale:[v.x,-v.y].v);
-
+      return ExtendRight.changeBeats(v.x).scale(v.x,-v.y);
     } else
       throw CallError('Unable to calculate Cross Over Circulate for dancer $d');
   }

@@ -18,6 +18,7 @@
 
 */
 
+import '../../../moves.g.dart';
 import '../common.dart';
 
 class SlideThru extends ActivesOnlyAction {
@@ -35,19 +36,19 @@ class SlideThru extends ActivesOnlyAction {
     if (d2 == null && ctx.isInWave(d) && d.data.beau && ctx.dancerToRight(d)!.data.active) {
       var dist = d.distanceTo(ctx.dancerToRight(d)!);
       if (d.gender == Gender.BOY)
-        return TamUtils.getMove('Lead Right',scale:[1.0,dist/2.0].v);
+        return LeadRight.scale(1.0,dist/2.0);
       else
-        return TamUtils.getMove('Quarter Left',skew:[1.0, -dist/2.0].v);
+        return QuarterLeft.skew(1.0, -dist/2.0);
     } else {
       //  Not in wave
       //  Must be facing dancers
       if (d2 == null)
           return ctx.dancerCannotPerform(d,name);
       var dist = d.distanceTo(d2);
-      return TamUtils.getMove('Extend Left',scale:[dist / 2, 0.5].v) +
-          ((d.gender == Gender.BOY)
-              ? TamUtils.getMove('Lead Right',scale:[1.0, 0.5].v)
-              :  TamUtils.getMove('Quarter Left',skew:[1.0, -0.5].v));
+      return ExtendLeft.scale(dist / 2, 0.5) +
+          (d.gender == Gender.BOY
+              ? LeadRight.scale(1.0, 0.5)
+              : QuarterLeft.skew(1.0, -0.5));
     }
 
   }

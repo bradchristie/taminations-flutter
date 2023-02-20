@@ -18,6 +18,7 @@
 
 */
 
+import '../../../moves.g.dart';
 import '../common.dart';
 
 class RollToAWave extends Action {
@@ -27,21 +28,16 @@ class RollToAWave extends Action {
   RollToAWave(String name) : super(name);
   @override
   Path performOne(Dancer d, CallContext ctx) {
-    final dir = name.startsWith('Left') ? 'Left' : 'Right';
-    final otherDir = name.startsWith('Left') ? 'Right' : 'Left';
+    final flip = name.startsWith('Left') ? FlipLeft : FlipRight;
+    final extend = name.startsWith('Left') ? ExtendRight :ExtendLeft;
     if (d.data.leader) {
       final d2 = ctx.dancerInBack(d).throwIfNull('Error for dancer $d');
       final dist = d.distanceTo(d2);
-      return TamUtils.getMove('Flip $dir',
-          beats: 4.0,
-          scale: [1.0,0.25].v,
-          skew: [-dist/2.0,0.0].v);
+      return flip.changeBeats(4.0).scale(1.0, 0.25).skew(-dist/2.0,0.0);
     } else if (d.data.trailer) {
       final d2 = ctx.dancerInFront(d).throwIfNull('Error for dancer $d');
       final dist = d.distanceTo(d2);
-      return TamUtils.getMove('Extend $otherDir',
-        beats: 4.0,
-        scale: [dist/2.0,0.5].v);
+      return extend.changeBeats(4.0).scale(dist/2.0,0.5);
     } else
       throw CallError('Dancer $d cannot $name');
   }

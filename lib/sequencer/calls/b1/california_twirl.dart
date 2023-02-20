@@ -18,6 +18,7 @@
 
 */
 
+import '../../../moves.g.dart';
 import '../common.dart';
 
 class CaliforniaTwirl extends Action {
@@ -33,7 +34,7 @@ class CaliforniaTwirl extends Action {
       if (d2 == null || d2.gender != Gender.GIRL || !d2.data.active)
         throw CallError('Dancer $d cannot California Twirl' );
       var dist = d.distanceTo(d2);
-      return TamUtils.getMove('Run Right' )
+      return RunRight
           .changehands(Hands.GRIPRIGHT)
           .scale(dist/2,dist/2)
           .changeBeats(4.0);
@@ -43,7 +44,7 @@ class CaliforniaTwirl extends Action {
       if (d2 == null || d2.gender != Gender.BOY || !d2.data.active)
         throw CallError('Dancer $d cannot California Twirl' );
       var dist = d.distanceTo(d2);
-      return TamUtils.getMove('Flip Left' )
+      return FlipLeft
           .changehands(Hands.GRIPLEFT)
           .scale(dist/2,dist/2)
           .changeBeats(4.0);

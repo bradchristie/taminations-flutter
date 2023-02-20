@@ -17,6 +17,7 @@
  *     along with Taminations.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+import '../../../moves.g.dart';
 import '../common.dart';
 
 class DoubleCross extends Action {
@@ -50,8 +51,7 @@ class DoubleCross extends Action {
           final dist = d.distanceTo(dcross);
           final x = dist * cos(a);
           final y = dist * sin(a.abs());
-          d.path = TamUtils.getMove((a > 0) ? 'Cross Left' : 'Cross Right',scale:[x/2.0,y/2.0].v);
-
+          d.path = (a > 0 ? CrossLeft : CrossRight).scale(x/2.0,y/2.0);
         }
       }
     });

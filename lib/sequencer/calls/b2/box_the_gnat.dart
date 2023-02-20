@@ -18,6 +18,7 @@
 
 */
 
+import '../../../moves.g.dart';
 import '../common.dart';
 import '../../../math/bezier.dart';
 
@@ -69,7 +70,7 @@ class BoxTheGnat extends ActivesOnlyAction {
         offset = -dist;
       else if (dist > 1.5 && d.data.center)
         offset = 0.0;
-      return TamUtils.getMove((d.gender==Gender.BOY) ? 'U-Turn Right' : 'U-Turn Left')
+      return (d.gender==Gender.BOY ? UmTurnRight : UmTurnLeft)
         .skew(1.0,offset)
         .changehands(Hands.GRIPRIGHT);
     }

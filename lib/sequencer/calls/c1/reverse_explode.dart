@@ -17,6 +17,7 @@
  *     along with Taminations.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+import '../../../moves.g.dart';
 import '../common.dart';
 
 //  See plus/explode.dart
@@ -33,14 +34,14 @@ class ReverseExplode extends Action {
       var dist = d.distanceTo(d2);
       if (d2.location.length.isGreaterThan(d.location.length)) {
         if (d.data.beau)
-          return TamUtils.getMove('Lead Right', scale: [1.0, dist / 2.0].v);
+          return LeadRight.scale(1.0, dist / 2.0);
         else if (d.data.belle)
-          return TamUtils.getMove('Lead Left', scale: [1.0, dist / 2.0].v);
+          return LeadLeft.scale(1.0, dist / 2.0);
       } else if (d2.location.length.isLessThan(d.location.length)) {
         if (d.data.beau)
-          return TamUtils.getMove('Quarter Left', skew: [1.0, -dist / 2.0].v);
+          return QuarterLeft.skew(1.0, -dist / 2.0);
         else if (d.data.belle)
-          return TamUtils.getMove('Quarter Right', skew: [1.0, dist / 2.0].v);
+          return QuarterRight.skew(1.0, dist / 2.0);
       }
     }
     throw CallError('Unable to Reverse Explode from this formation.');

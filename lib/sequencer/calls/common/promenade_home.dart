@@ -19,6 +19,7 @@
 */
 
 import 'dart:math';
+import '../../../moves.g.dart';
 import '../action.dart';
 import '../../../math/vector.dart';
 import '../../call_context.dart';
@@ -27,7 +28,6 @@ import '../../../dancer.dart';
 import '../../../extensions.dart';
 import '../../../level_data.dart';
 import '../../../math/path.dart';
-import '../../../tam_utils.dart';
 
 //  This covers both Promenade Home and
 //  Swing Your Corner And Promenade
@@ -111,10 +111,8 @@ Promenade Corner''';
       startAngle = d.gender == Gender.BOY
           ? startCouple.angle
           : startCouple.angle + pi;
-      extraMoves = TamUtils.getMove('ssqtr') + TamUtils.getMove('ssqtr') +
-          TamUtils.getMove('ssqtr') + TamUtils.getMove('ssqtr') +
-          TamUtils.getMove(
-              d.gender == Gender.BOY ? 'Quarter Left' : 'Quarter Right');
+      extraMoves = ssqtr + ssqtr + ssqtr + ssqtr +
+          (d.gender == Gender.BOY ? QuarterLeft : QuarterRight);
     }
     return ctx.moveToPosition(d, startLocation, startAngle) + extraMoves;
   }

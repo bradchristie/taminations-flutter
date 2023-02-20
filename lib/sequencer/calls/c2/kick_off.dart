@@ -18,6 +18,7 @@
 
 */
 
+import '../../../moves.g.dart';
 import '../common.dart';
 
 class KickOff extends Action {
@@ -37,9 +38,9 @@ class KickOff extends Action {
       final m = d.path.shift()!;
       final dy = m.btranslate.endPoint.y;
       if (dy > 0)
-        d.path = TamUtils.getMove('Quarter Left',beats:3.0,skew:[0.0,dy].v);
+        d.path = QuarterLeft.changeBeats(3.0).skew(0.0,dy);
       else if (dy < 0)
-        d.path = TamUtils.getMove('Quarter Right',beats:3.0,skew:[0.0,dy].v);
+        d.path = QuarterRight.changeBeats(3.0).skew(0.0,dy);
     });
   }
 

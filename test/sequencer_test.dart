@@ -5,14 +5,22 @@
 // gestures. You can also use WidgetTester to find child widgets in the widget
 // tree, read text, and verify that the values of widget properties are correct.
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import 'package:taminations/sequencer/sequencer_model.dart';
 import 'package:taminations/tam_utils.dart';
 
-
+import 'package:stack_trace/stack_trace.dart' as stack_trace;
 
 void main() async {
+
+  //  This is necessary else the 1st test crashes
+  FlutterError.demangleStackTrace = (StackTrace stack) {
+    if (stack is stack_trace.Trace) return stack.vmTrace;
+    if (stack is stack_trace.Chain) return stack.toTrace().vmTrace;
+    return stack;
+  };
 
   for (var testName in testSequences.keys) {
     testWidgets(testName, (WidgetTester tester) async {

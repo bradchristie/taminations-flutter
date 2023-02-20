@@ -18,6 +18,7 @@
 
 */
 
+import '../../../moves.g.dart';
 import '../common.dart';
 
 class Hinge extends Action {
@@ -58,19 +59,18 @@ class Hinge extends Action {
     if (ctx.isInWave(d,d2)) {
       if (name.startsWith('Left') && d2.isRightOf(d))
         throw CallError('Cannot Left Hinge with right hands');
-      return TamUtils.getMove(d2.isRightOf(d) ? 'Hinge Right' : 'Hinge Left',
-          scale: [xScale, dist/2].v);
+      return (d2.isRightOf(d) ? HingeRight : HingeLeft).scale(xScale, dist/2);
     }
     //  Left Partner Hinge
     else if (ctx.isInCouple(d,d2) && d2.isRightOf(d) && name.startsWith('Left'))
-      return TamUtils.getMove('Quarter Right', skew: [-xScale,-dist/2].v);
+      return QuarterRight.skew(-xScale,-dist/2);
     else if (ctx.isInCouple(d,d2) && d2.isLeftOf(d) && name.startsWith('Left'))
-      return TamUtils.getMove('Lead Left',scale:[xScale,dist/2].v);
+      return LeadLeft.scale(xScale,dist/2);
     //  Partner Hinge
     else if (ctx.isInCouple(d,d2) && d2.isRightOf(d))
-      return TamUtils.getMove('Lead Right',scale: [xScale,dist/2].v);
+      return LeadRight.scale(xScale,dist/2);
     else if (ctx.isInCouple(d,d2) && d2.isLeftOf(d))
-      return TamUtils.getMove('Quarter Left',skew: [-xScale,dist/2].v);
+      return QuarterLeft.skew(-xScale,dist/2);
     else
       return ctx.dancerCannotPerform(d, name);
   }

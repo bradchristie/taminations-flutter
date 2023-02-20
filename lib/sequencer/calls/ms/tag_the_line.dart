@@ -18,6 +18,7 @@
 
 */
 
+import '../../../moves.g.dart';
 import '../common.dart';
 
 class TagTheLine extends Action {
@@ -86,25 +87,25 @@ class BigLineTagTheLine extends ActivesOnlyAction {
     var skewAmount = _isHalfTag ? 1.0 : 0.5;
     if (isLeft) {
       if (d.isCenterRight)
-        p1 = TamUtils.getMove('Quarter Right', skew: [-skewAmount, 0.0].v);
+        p1 = QuarterRight.skew(-skewAmount, 0);
       else
-        p1 = TamUtils.getMove('Quarter Left', skew: [skewAmount, 0.0].v);
+        p1 = QuarterLeft.skew(skewAmount, 0);
     } else {
       if (d.isCenterRight)
-        p1 = TamUtils.getMove('Quarter Right', skew: [skewAmount, 0.0].v);
+        p1 = QuarterRight.skew(skewAmount, 0);
       else
-        p1 = TamUtils.getMove('Quarter Left', skew: [-skewAmount, 0.0].v);
+        p1 = QuarterLeft.skew(-skewAmount, 0);
     }
     var howMuch = _isHalfTag
         ? (_minDist + _maxDist) / 2.0
         : _minDist + _maxDist - 0.5;
-    p2 = TamUtils.getMove('Forward', scale: [howMuch, 1.0].v, beats:howMuch);
+    p2 = Forward.scale(howMuch,1.0).changeBeats(howMuch);
     if (_isHalfTag)
       p3 = Path();
     else if (isLeft)
-      p3 = TamUtils.getMove('Extend Left',scale: [0.5,0.5].v);
+      p3 = ExtendLeft.scale(.5,.5);
     else
-      p3 = TamUtils.getMove('Extend Right',scale: [0.5,0.5].v);
+      p3 = ExtendRight.scale(.5,.5);
     return p1 + p2 + p3;
   }
 

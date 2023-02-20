@@ -18,6 +18,7 @@
 
 */
 
+import '../../../moves.g.dart';
 import '../common.dart';
 
 class Jaywalk extends Action {
@@ -60,19 +61,13 @@ class Jaywalk extends Action {
     final v = d.vectorToDancer(d2);
     final da = d.angleFacing - d2.angleFacing;
     if (da.isAround(pi/2.0))
-      return TamUtils.getMove('Lead Left Passing',scale:[v.x,v.y].v);
+      return LeadLeftPassing.scale(v.x,v.y);
     else if (da.isAround(pi*3.0/2.0))
-      return TamUtils.getMove('Lead Right Passing',scale:[v.x,-v.y].v);
+      return LeadRightPassing.scale(v.x,-v.y);
     return (v.y > 0)
     //   Pass right shoulders
-        ? TamUtils.getMove('Extend Left',
-        scale:[v.x-1,v.y].v,
-        beats:v.length.ceil()-1.0) +
-        TamUtils.getMove('Forward')
-        : TamUtils.getMove('Forward') +
-        TamUtils.getMove('Extend Right',
-            scale:[v.x-1,-v.y].v,
-            beats:v.length.ceil()-1.0);
+        ? ExtendLeft.scale(v.x-1,v.y).changeBeats(v.length.ceil()-1.0) + Forward
+        : Forward + ExtendRight.changeBeats(v.length.ceil()-1.0).scale(v.x-1,-v.y);
   }
 
 }

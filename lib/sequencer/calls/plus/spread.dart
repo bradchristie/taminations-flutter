@@ -18,6 +18,7 @@
 
 */
 
+import '../../../moves.g.dart';
 import '../common.dart';
 
 class Spread extends Action {
@@ -83,20 +84,20 @@ class _Case1 extends Action {
     for (var d in ctx.dancers) {
       if (d.isActive) {
         //  Active dancers spread apart
-        String m;
+        Path m;
         if (ctx.dancersToRight(d).isEmpty)
-          m = 'Dodge Right';
+          m = DodgeRight;
         else if (ctx.dancersToLeft(d).isEmpty)
-          m = 'Dodge Left';
+          m = DodgeLeft;
         else
           throw CallError('Cannot figure out how to Spread');
-        d.path += TamUtils.getMove(m,beats: 2.0);
+        d.path += m.changeBeats(2.0);
       } else {
         //  Inactive dancers move forward
         var d2 = ctx.dancerInFront(d);
         if (d2 != null) {
           var dist = min(d.distanceTo(d2),2.0);
-          d.path += TamUtils.getMove('Forward',scale:[dist,1.0].v,beats: 2.0);
+          d.path += Forward.scale(dist,1.0).changeBeats(2.0);
         }
       }
     }
@@ -125,7 +126,7 @@ class _Case2 extends Action {
     //  Pop off the last movement and shift it by that offset
     var m = (d.path.movelist.isNotEmpty)
         ? d.path.pop()
-        : TamUtils.getMove('Stand').pop();
+        : Stand.pop();
     var tx = m.rotate();
     v = tx * v;
     d.path += m.skew(v.x,v.y).useHands(Hands.NOHANDS);
@@ -162,14 +163,14 @@ class _Case4 extends Action {
     for (var d in ctx.dancers) {
       if (d.isActive) {
         //  Active dancers spread apart
-        String m;
+        Path m;
         if (ctx.dancersToRight(d).isEmpty)
-          m = 'Dodge Right';
+          m = DodgeRight;
         else if (ctx.dancersToLeft(d).isEmpty)
-          m = 'Dodge Left';
+          m = DodgeLeft;
         else
           throw CallError('Cannot figure out how to Spread');
-        d.path += TamUtils.getMove(m,beats: 2.0);
+        d.path += m.changeBeats(2.0);
       }
       //  Inactive dancers do not move
     }

@@ -18,6 +18,7 @@
 
 */
 
+import '../../../moves.g.dart';
 import '../common.dart';
 
 class SlideDir extends Action {
@@ -28,18 +29,18 @@ class SlideDir extends Action {
 
   @override
   Path performOne(Dancer d, CallContext ctx) {
-    String dir;
+    Path move;
     if (name == 'Slide Left' )
-      dir = 'Left' ;
+      move = DodgeLeft;
     else if (name == 'Slide Right' )
-      dir = 'Right' ;
+      move = DodgeRight;
     else if (name == 'Slide In' )
-      dir = d.isCenterLeft ? 'Left'  : 'Right' ;
+      move = d.isCenterLeft ? DodgeLeft  : DodgeRight;
     else if (name == 'Slide Out' )
-      dir = d.isCenterLeft ? 'Right'  : 'Left' ;
+      move = d.isCenterLeft ? DodgeRight  : DodgeLeft;
     else
       throw CallError('Slide how?' );
-    return TamUtils.getMove('Dodge $dir' );
+    return move;
   }
 
 }

@@ -18,6 +18,7 @@
 
 */
 
+import '../../../moves.g.dart';
 import '../common.dart';
 
 class Loop extends Action {
@@ -29,20 +30,20 @@ class Loop extends Action {
 
   @override
   Path performOne(Dancer d, CallContext ctx) {
-    String dir;
+    Path move;
     if (name.startsWith('Left'))
-      dir = 'Left';
+      move = RunLeft;
     else if (name.startsWith('Right'))
-      dir = 'Right';
+      move = RunRight;
     else if (name.startsWith('In'))
-      dir = d.isCenterLeft ? 'Left' : 'Right';
+      move = d.isCenterLeft ? RunLeft : RunRight;
     else if (name.startsWith('Out'))
-      dir = d.isCenterLeft ? 'Right' : 'Left';
+      move = d.isCenterLeft ? RunRight : RunLeft;
     else
       throw CallError('Need a direction for Loop');
     try {
       final amount = name.last.d;
-      return TamUtils.getMove('Run $dir',scale:[1.0,amount].v);
+      return move.scale(1.0,amount);
     } on FormatException {
       throw CallError('Need an amount for Loop');
     }

@@ -17,6 +17,7 @@
  *     along with Taminations.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+import '../../../moves.g.dart';
 import '../common.dart';
 
 class Substitute extends Action {
@@ -36,22 +37,22 @@ class Substitute extends Action {
         throw CallError('Cannot Substitute from this formation');
       final dx = d.isFacingIn ? -1.0 :1.0;
       final dy = d.isCenterRight ? 1.0 : -1.0;
-      d.path = TamUtils.getMove('Stand',skew: [dx,dy].v) +
-               TamUtils.getMove('Stand',skew: [dx,-dy].v);
+      d.path = Stand.skew(dx,dy) +
+               Stand.skew(dx,-dy);
     });
     ctx.outer(4).forEach((d) {
-      var move = '';
+      Path move;
       if (ctx.dancersInFront(d).length == 3)
-        move = 'Forward 2';
+        move = Forward_2;
       else if (ctx.dancersInBack(d).length == 3)
-        move = 'Back 2';
+        move = Back_2;
       else if (ctx.dancersToLeft(d).length == 3)
-        move = 'Dodge Left';
+        move = DodgeLeft;
       else if (ctx.dancersToRight(d).length == 3)
-        move = 'Dodge Right';
+        move = DodgeRight;
       else
         throw CallError('Cannot Substitute from this formation');
-      d.path = TamUtils.getMove(move,beats: 2.0);
+      d.path = move.changeBeats(2.0);
     });
   }
 

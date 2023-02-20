@@ -17,19 +17,13 @@
   along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 */
-import 'dart:math';
 
-import '../../../dancer.dart';
-import '../../../extensions.dart';
-import '../../../math/path.dart';
-import '../../../math/vector.dart';
-import '../../../tam_utils.dart';
-import '../../call_context.dart';
-import '../action.dart';
+import '../../../moves.g.dart';
+import '../common.dart';
 
 class SquareTheSet extends Action {
 
-  @override var help = 'Square the Set moves all the dancers to '
+  @override var helplink = 'Square the Set moves all the dancers to '
       'their original squared set locations.  This is not a real call.';
   SquareTheSet() : super('Square the Set' );
 
@@ -80,28 +74,26 @@ class SquareTheSet extends Action {
     var angle = d.tx.angle;
     tohome = tohome.rotate(-angle);
     var adiff = ahome.angleDiff(angle);
-    var turn = 'Stand' ;
+    var turn = Stand;
     if (adiff.isAround(0.0))
-      turn = 'Stand' ;
+      turn = Stand;
     else if (adiff.isAround(pi/4))
-      turn = 'Eighth Left' ;
+      turn = EighthLeft;
     else if (adiff.isAround(pi/2))
-      turn = 'Quarter Left' ;
+      turn = QuarterLeft;
     else if (adiff.isAround(pi*3/4))
-      turn = '3/8 Left' ;
+      turn = n38Left;
     else if (adiff.isAround(pi))
-      turn = 'U-Turn Right' ;
+      turn = UmTurnRight;
     else if (adiff.isAround(-pi*3/4))
-      turn = '3/8 Right' ;
+      turn = n38Right;
     else if (adiff.isAround(-pi/2))
-      turn = 'Quarter Right' ;
+      turn = QuarterRight;
     else if (adiff.isAround(-pi/4))
-      turn = 'Eighth Right' ;
+      turn = EighthRight;
 
     //  Can now move to home
-    return TamUtils.getMove(turn,
-        beats: 2.0,
-        skew: tohome);
+    return turn.changeBeats(2.0).skew(tohome.x,tohome.y);
   }
 
 }

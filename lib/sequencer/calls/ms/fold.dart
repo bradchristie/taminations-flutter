@@ -18,6 +18,7 @@
 
 */
 
+import '../../../moves.g.dart';
 import '../common.dart';
 
 class Fold extends Action {
@@ -38,7 +39,7 @@ class Fold extends Action {
       var d2 = d.data.partner.throwIfNull(CallError('Dancer ${d.number} has nobody to Fold in front'));
       if (d2.data.active || d2.data.partner != d)
         throw CallError('Dancer ${d.number} has nobody to Fold in front');
-      var m = d2.isRightOf(d) ? 'Fold Right' : 'Fold Left';
+      var m = d2.isRightOf(d) ? FoldRight : FoldLeft;
       var dist = d.distanceTo(d2);
       var dxscale = 0.75;
       var dyoffset = 1.0;
@@ -50,16 +51,14 @@ class Fold extends Action {
         dyoffset = 2.0;
       if (d2.isLeftOf(d))
         dyoffset = -dyoffset;
-      d.path = TamUtils.getMove(m,
-          scale:[dxscale,1.0].v,
-          skew:[0.0,dyoffset].v);
+      d.path = m.scale(dxscale,1.0).skew(0.0,dyoffset);
 
       //  Also set path for partner
-      var m2 = 'Stand';
+      var m2 = Stand;
       if (d.isRightOf(d2))
-        m2 = 'Dodge Right';
+        m2 = DodgeRight;
       else if (d.isLeftOf(d2))
-        m2 = 'Dodge Left';
+        m2 = DodgeLeft;
       var myScale = 0.25;
       if (ctx.isTidal())
         myScale = 0.25;
@@ -67,8 +66,7 @@ class Fold extends Action {
         myScale = 0.5;
       else if (d2.data.center)
         myScale = 0.0;
-      d2.path = TamUtils.getMove(m2,
-          scale:[1.0,dist*myScale].v);
+      d2.path = m2.scale(1.0,dist*myScale);
     }
   }
 

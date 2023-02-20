@@ -53,6 +53,8 @@ and [for the Mac program](https://apps.apple.com/us/app/taminations/id613793359)
 
 ## More Information
 
+[Details on Using Taminations](how_to_use.md)
+
 [How to put Taminations on your web site](embed.md)
 
 ***

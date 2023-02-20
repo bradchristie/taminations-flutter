@@ -18,6 +18,7 @@
 
 */
 
+import '../../../moves.g.dart';
 import '../common.dart';
 import '../../../math/bezier.dart';
 
@@ -54,11 +55,11 @@ class CounterRotate extends Action {
     var p4 = d.location.rotate(anginc*3.0).ds(d);
     var bz = Bezier.fromPoints(p1,p2,p3,p4);
     //  Get turn, which is 1/4 right or left
-    var turn = (da < 0) ? 'Right' : 'Left';
-    var brot = TamUtils.getMove('Quarter $turn').movelist[0].brotate;
+    var move = (da < 0) ? QuarterRight : QuarterLeft;
+    var brot = move.movelist[0].brotate;
     var beats = d.location.length.ceil().toDouble();
-    var move = Movement(beats,Hands.NOHANDS,bz,brot);
-    return Path([move]);
+    var move2 = Movement(beats,Hands.NOHANDS,bz,brot);
+    return Path([move2]);
   }
 
 }

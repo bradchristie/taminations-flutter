@@ -18,6 +18,7 @@
 
 */
 
+import '../../../moves.g.dart';
 import '../common.dart';
 import '../../../math/bezier.dart';
 
@@ -56,9 +57,8 @@ class DiamondCirculate extends Action {
     var isLeft = a2 > 0;
     var xScale = dist * cos(a2);
     var yScale = dist * sin(a2);
-    var move = isLeft ? 'Lead Left' : 'Lead Right';
-    var simplePath = TamUtils.getMove(
-        move, scale: [xScale, yScale.abs()].v, beats: 2.0);
+    var move = isLeft ? LeadLeft : LeadRight;
+    var simplePath = move.scale(xScale, yScale.abs()).changeBeats(2.0);
     var isFacing = d2.angleToDancer(d).abs() < pi / 2;
     if (isFacing) {
       //  Calculate curves to pass right shoulders

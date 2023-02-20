@@ -18,6 +18,7 @@
 
 */
 
+import '../../../moves.g.dart';
 import '../common.dart';
 
 class MakeMagic extends Action {
@@ -46,8 +47,8 @@ class MakeMagic extends Action {
     if (d2 != null) {
       if (ctx.center(4).contains(d) ^ ctx.center(4).contains(d2)) {
         final dist = d.distanceTo(d2);
-        return TamUtils.getMove('Extend Left',scale:[dist/2,0.5].v) +
-            TamUtils.getMove('Extend Right',scale:[dist/2,0.5].v);
+        return ExtendLeft.scale(dist/2,0.5) +
+               ExtendRight.scale(dist/2,0.5);
       }
     }
     //  Center dancers facing in cross
@@ -57,7 +58,7 @@ class MakeMagic extends Action {
       final a = d.angleToOrigin;
       final dx = d.location.length * cos(a);
       final dy = d.location.length * sin(a.abs());
-      return TamUtils.getMove((a > 0) ? 'Cross Left' : 'Cross Right',scale:[dx,dy].v);
+      return (a > 0 ? CrossLeft : CrossRight).scale(dx,dy);
     }
     //  This dancer does not move
     return Path();

@@ -18,6 +18,7 @@
 
 */
 
+import '../../../moves.g.dart';
 import '../common.dart';
 
 //  This class is only for the variation "Cast a Shadow, Centers go 3/4"
@@ -37,11 +38,10 @@ class CastAShadow extends Action {
       if (inCenters.length != 2)
         throw CallError('Need exactly 2 trailing centers to go 3/4.');
       ctx.applyCalls('Cast a Shadow');
-      final castDir = inCenters.first.isCenterLeft ? 'Left' : 'Right';
       for (final d in inCenters) {
-        d.path =  TamUtils.getMove('Forward 2') +
-            TamUtils.getMove('Cast $castDir') +
-            TamUtils.getMove('Forward 2');
+        d.path =  Forward_2 +
+                  (inCenters.first.isCenterLeft ? CastLeft : CastRight) +
+                  Forward_2;
       }
     } else
       throw CallError('Improper variation for Cast a Shadow');

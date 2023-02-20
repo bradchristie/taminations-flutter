@@ -18,6 +18,7 @@
 
 */
 
+import '../../../moves.g.dart';
 import '../common.dart';
 
 class ThreeQuartersTag extends Action {
@@ -51,24 +52,16 @@ class ThreeQuartersTag extends Action {
     var dist = d.distanceTo(d2)/2.0;
     var tagtype = ctx.dancersToRight(d).length + (d.isFacingOut ? 4  : 0);
     switch (tagtype) {
-      case 0 : return TamUtils.getMove('Quarter Left',skew:[dist-3, 1.0].v) +
-          TamUtils.getMove('Forward 2');
-      case 1 : return TamUtils.getMove('Quarter Left',skew:[dist-2,1.0].v) +
-          TamUtils.getMove('Forward') +
-          TamUtils.getMove('Extend Right',scale:[2.0,1.0].v,beats:2.0);
-      case 2 : return TamUtils.getMove('Lead Right',skew:[dist-2,0.0].v) +
-          TamUtils.getMove('Forward 3');
-      case 3 : return TamUtils.getMove('Lead Right',skew:[dist-2,0.0].v) +
-          TamUtils.getMove('Forward 2');
-      case 4 : return TamUtils.getMove('Quarter Left',skew:[1-dist,1.0].v) +
-          TamUtils.getMove('Forward 2');
-      case 5 : return TamUtils.getMove('Quarter Left',skew:[1-dist,1.0].v) +
-          TamUtils.getMove('Forward 3');
-      case 6 : return TamUtils.getMove('Lead Right',skew:[2-dist,0.0].v) +
-          TamUtils.getMove('Forward') +
-          TamUtils.getMove('Extend Right',scale:[2.0,2.0].v,beats:2.0);
-      case 7 : return TamUtils.getMove('Lead Right',skew:[2-dist,0.0].v) +
-          TamUtils.getMove('Forward 2');
+      case 0 : return QuarterLeft.skew(dist-3, 1.0) + Forward_2;
+      case 1 : return QuarterLeft.skew(dist-2,1.0) + Forward +
+          ExtendRight.scale(2.0,1.0).changeBeats(2.0);
+      case 2 : return LeadRight.skew(dist-2,0.0) + Forward_3;
+      case 3 : return LeadRight.skew(dist-2,0.0) + Forward_2;
+      case 4 : return QuarterLeft.skew(1-dist,1.0) + Forward_2;
+      case 5 : return QuarterLeft.skew(1-dist,1.0) + Forward_3;
+      case 6 : return LeadRight.skew(2-dist,0.0) + Forward +
+          ExtendRight.scale(2.0,2.0).changeBeats(2.0);
+      case 7 : return LeadRight.skew(2-dist,0.0) + Forward_2;
       default: return Path();     // should never happen
     }
   }

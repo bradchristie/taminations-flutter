@@ -18,6 +18,7 @@
 
 */
 
+import '../../../moves.g.dart';
 import '../common.dart';
 
 class HalfSashay extends Action {
@@ -40,12 +41,12 @@ class HalfSashay extends Action {
       d2 = ctx.dancerToLeft(d)!;
     else
       throw CallError('Dancer $d has nobody to Sashay with' );
-    var move = 'BackSashay Right' ;
+    var move = BackSashayRight;
     if (name.toLowerCase().startsWith('reverse' ))
-      move = d2.isLeftOf(d) ? 'BackSashay Left'  : 'Sashay Right' ;
+      move = d2.isLeftOf(d) ? BackSashayLeft  : SashayRight;
     else if (d2.isLeftOf(d))
-      move = 'Sashay Left' ;
-    return TamUtils.getMove(move).scale(1,d.distanceTo(d2)/2);
+      move = SashayLeft;
+    return move.scale(1,d.distanceTo(d2)/2);
   }
 
 }

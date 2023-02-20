@@ -17,6 +17,7 @@
   along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 */
+import '../../../moves.g.dart';
 import '../common.dart';
 
 class Roll extends Action {
@@ -38,11 +39,11 @@ class Roll extends Action {
   Path performOne(Dancer d, CallContext ctx) {
     final roll = ctx.roll(d);
     final move = {
-      Rolling.LEFT : 'Quarter Left',
-      Rolling.RIGHT : 'Quarter Right',
-      Rolling.NONE : 'Stand'
+      Rolling.LEFT : QuarterLeft,
+      Rolling.RIGHT : QuarterRight,
+      Rolling.NONE : Stand
     }[roll]!;
-    return TamUtils.getMove(move);
+    return move;
   }
 
 }

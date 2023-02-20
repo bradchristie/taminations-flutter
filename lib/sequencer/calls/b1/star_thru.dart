@@ -18,6 +18,7 @@
 
 */
 
+import '../../../moves.g.dart';
 import '../common.dart';
 
 class StarThru extends ActivesOnlyAction {
@@ -35,10 +36,10 @@ class StarThru extends ActivesOnlyAction {
     if (d2.gender == d.gender)
       throw CallError('Cannot Star Thru with same gender.' );
     var dist = d.distanceTo(d2);
-    var move = TamUtils.getMove('Extend Left' ).scale(dist/2,0.5);
+    var move = ExtendLeft.scale(dist/2,0.5);
     move += d.gender == Gender.BOY
-        ? TamUtils.getMove('Lead Right' ).scale(1.0,0.5)
-        : TamUtils.getMove('Quarter Left' ).skew(1.0,-.5);
+        ? LeadRight.scale(1.0,0.5)
+        : QuarterLeft.skew(1.0,-.5);
     //  Double and Triple Star Thru use "Left Star Thru"
     if (name.toLowerCase().contains('left' ))
       move = move.reflect();

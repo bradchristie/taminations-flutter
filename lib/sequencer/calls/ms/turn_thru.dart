@@ -18,6 +18,7 @@
 
 */
 
+import '../../../moves.g.dart';
 import '../common.dart';
 
 class TurnThru extends Action {
@@ -28,11 +29,13 @@ class TurnThru extends Action {
 
   @override
   Path performOne(Dancer d, CallContext ctx) {
-    var dir1 = 'Left';
-    var dir2 = 'Right';
+    var move1 = ExtendLeft;
+    var move2 = SwingRight;
+    var move3 = ExtendRight;
     if (name.startsWith('Left')) {
-      dir1 = 'Right';
-      dir2 = 'Left';
+      move1 = ExtendRight;
+      move2 = SwingLeft;
+      move3 = ExtendLeft;
     }
     //  Check for dancers in mini-wave
     if (ctx.isInWave(d)) {
@@ -41,8 +44,8 @@ class TurnThru extends Action {
       var d2 = (name.startsWith('Left')) ? ctx.dancerToLeft(d) : ctx.dancerToRight(d);
       if (d2 != null && d2.data.active) {
         var dist = d.distanceTo(d2);
-        return TamUtils.getMove('Swing $dir2',scale:[0.5,dist/4+0.25].v) +
-               TamUtils.getMove('Extend $dir2',scale:[1.0, 0.5].v);
+        return move2.scale(0.5,dist/4+0.25) +
+               move3.scale(1.0, 0.5);
       }
     }
     //  Otherwise has to be facing dancers
@@ -50,9 +53,9 @@ class TurnThru extends Action {
     if (d2 == null || !d2.data.active || ctx.dancerInFront(d2) != d)
       return ctx.dancerCannotPerform(d,name);
     var dist = d.distanceTo(d2);
-    return TamUtils.getMove('Extend $dir1',scale:[dist / 2, 0.5].v) +
-           TamUtils.getMove('Swing $dir2',scale:[0.5, 0.5].v) +
-           TamUtils.getMove('Extend $dir2',scale:[dist / 2, 0.5].v);
+    return move1.scale(dist / 2, 0.5) +
+           move2.scale(0.5, 0.5) +
+           move3.scale(dist / 2, 0.5);
   }
 
 }

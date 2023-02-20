@@ -18,6 +18,7 @@
 
 */
 
+import '../../../moves.g.dart';
 import '../common.dart';
 
 class Slide extends Action {
@@ -48,9 +49,9 @@ class Slide extends Action {
     final d2 = d.data.partner.throwIfNull(CallError('Unable to calculate Slide'));
     final dist = d.distanceTo(d2);
     if (d.data.beau)
-      return TamUtils.getMove('BackSashay Right',scale:[1.0,dist/2].v);
+      return BackSashayRight.scale(1.0,dist/2);
     else if (d.data.belle)
-      return TamUtils.getMove('BackSashay Left',scale:[1.0,dist/2].v);
+      return BackSashayLeft.scale(1.0,dist/2);
     else
       throw CallError('Unable to calculate Slide');
   }

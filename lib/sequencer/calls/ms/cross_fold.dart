@@ -18,6 +18,7 @@
 
 */
 
+import '../../../moves.g.dart';
 import '../common.dart';
 
 class CrossFold extends Action {
@@ -38,7 +39,7 @@ class CrossFold extends Action {
         throw CallError('General line required for Cross Fold');
       //  Center beaus and end belles fold left
       var isRight = d.data.beau ^ d.data.center;
-      var m = (isRight) ? 'Fold Right' : 'Fold Left';
+      var m = (isRight) ? FoldRight : FoldLeft;
       var d2 = d.data.partner.throwIfNull(CallError('No partner for dancer $d'));
       var dist = d.distanceTo(d2);
       var dxscale = 0.75;
@@ -55,17 +56,15 @@ class CrossFold extends Action {
         dyoffset = 2.0 - dist*2;  // which wll generally be -2.0
       if (!isRight)
         dyoffset = -dyoffset;
-      d.path = TamUtils.getMove(m,
-          scale: [dxscale,1.0].v,
-          skew: [0.0,dyoffset].v);
+      d.path = m.scale(dxscale,1.0).skew(0.0,dyoffset);
 
       //  Also set path for partner
       //  This is an adjustment to shift the dancers into a standard formation
-      var m2 = 'Stand';
+      var m2 = Stand;
       if (d.isRightOf(d2))
-        m2 = 'Dodge Right';
+        m2 = DodgeRight;
       else if (d.isLeftOf(d2))
-        m2 = 'Dodge Left';
+        m2 = DodgeLeft;
       var myScale = 0.25;
       if (ctx.isTidal())
         myScale = 0.25;
@@ -73,8 +72,7 @@ class CrossFold extends Action {
         myScale = 0.5;
       else if (d2.data.center)
         myScale = 0.0;
-      d2.path = TamUtils.getMove(m2,
-          scale: [1.0,dist*myScale].v);
+      d2.path = m2.scale(1.0,dist*myScale);
     }
   }
 

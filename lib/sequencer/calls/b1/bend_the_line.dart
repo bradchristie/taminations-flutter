@@ -18,6 +18,7 @@
 
 */
 
+import '../../../moves.g.dart';
 import '../common.dart';
 
 class BendTheLine extends Action {
@@ -33,14 +34,14 @@ class BendTheLine extends Action {
     var ys = d.distanceTo(d.data.partner!)/2.0;
     if (d.data.beau) {
       if (d.isCenterRight)
-        return TamUtils.getMove('Hinge Right' ).scale(1.0,ys);
+        return HingeRight.scale(1.0,ys);
       else if (d.isCenterLeft)
-        return TamUtils.getMove('BackHinge Right' ).scale(1.0,ys);
+        return BackHingeRight.scale(1.0,ys);
     } else if (d.data.belle) {
       if (d.isCenterRight)
-        return TamUtils.getMove('BackHinge Left' ).scale(1.0,ys);
+        return BackHingeLeft.scale(1.0,ys);
       else if (d.isCenterLeft)
-        return TamUtils.getMove('Hinge Left' ).scale(1.0,ys);
+        return HingeLeft.scale(1.0,ys);
     }
     throw CallError('Cannot figure out how to Bend the Line' );
   }

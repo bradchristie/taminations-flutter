@@ -18,6 +18,7 @@
 
 */
 
+import '../../../moves.g.dart';
 import '../common.dart';
 
 class PartnerTag extends Action {
@@ -34,11 +35,11 @@ class PartnerTag extends Action {
      .throwIfNull(CallError('Dancer $d cannnot Partner Tag'));
     final dist = d.distanceTo(d2);
     if (d2.isRightOf(d))
-      return TamUtils.getMove('Lead Right',scale:[0.5,dist/2].v) +
-             TamUtils.getMove('Extend Right',scale:[dist/2,0.5].v);
+      return LeadRight.scale(0.5,dist/2) +
+             ExtendRight.scale(dist/2,0.5);
     else
-      return TamUtils.getMove('Quarter Left',skew:[-0.5,dist/2].v) +
-             TamUtils.getMove('Extend Right',scale:[dist/2,0.5].v);
+      return QuarterLeft.skew(-0.5,dist/2) +
+             ExtendRight.scale(dist/2,0.5);
   }
 
 }

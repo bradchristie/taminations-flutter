@@ -399,28 +399,6 @@ class TamUtils {
         .time(m.beats * beatFactor)).toList();
   }
 
-  ///   Gets a named path (move) from the file of moves
-  static Path getMove(String name, {
-    Vector? scale,
-    Vector? skew,
-    int? hands,
-    double? beats,
-    bool? reflect
-  }) {
-    var path = Path(_translate(_moves[name]!),name);
-    if (scale != null)
-      path = path.scale(scale.x,scale.y);
-    if (skew != null)
-      path = path.skew(skew.x,skew.y);
-    if (hands != null)
-      path = path.changehands(hands);
-    if (beats != null)
-      path = path.changeBeats(beats);
-    if ((reflect ?? false))
-      path = path.reflect();
-    return path;
-  }
-
   static String platform() {
     try {
       final platform = LocalPlatform();

@@ -17,6 +17,7 @@
  *     along with Taminations.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+import '../../../moves.g.dart';
 import '../common.dart';
 
 class StackTheLine extends ActivesOnlyAction with CallWithParts {
@@ -55,7 +56,8 @@ class StackTheLine extends ActivesOnlyAction with CallWithParts {
   }
 
    void performPart2forOneBox(CallContext ctx) {
-    final left = isLeft ? 'Right' : 'Left';
+    final extend = isLeft ? ExtendRight : ExtendLeft;
+    final dodge = isLeft ? DodgeRight : DodgeLeft;
     if (originalLeads.isEmpty)
       throw CallError('Cannot find original leaders for Stack the Line');
     for (var d in ctx.dancers) {
@@ -64,24 +66,18 @@ class StackTheLine extends ActivesOnlyAction with CallWithParts {
         var d2 = ctx.dancerInFront(d) ??
             thrower(CallError('Unable to calculate 2nd part of Stack the Line'))!;
         if (beauLike ^ isLeft)
-          d.path += TamUtils.getMove('Forward')
-            .scale(d.distanceTo(d2), 1)
-            .changeBeats(2.0);
+          d.path += Forward.scale(d.distanceTo(d2), 1).changeBeats(2.0);
         else {
           var d3 = (beauLike ? ctx.dancerToRight(d) : ctx.dancerToLeft(d)) ??
               thrower(CallError('Unable to calculate 2nd part of Stack the Line'))!;
-          d.path += TamUtils.getMove('Forward') +
-              TamUtils.getMove('Extend $left')
-            .scale(d.distanceTo(d2)-1.0, d.distanceTo(d3))
-            .changeBeats(2.0);
+          d.path += Forward +
+              extend.scale(d.distanceTo(d2)-1.0, d.distanceTo(d3)).changeBeats(2.0);
         }
       } else {
         if (!beauLike ^ isLeft) {
           var d3 = (beauLike ? ctx.dancerToRight(d) : ctx.dancerToLeft(d)) ??
               thrower(CallError('Unable to calculate 2nd part of Stack the Line'))!;
-          d.path += TamUtils.getMove('Dodge $left')
-            .scale(1.0,d.distanceTo(d3)/2.0)
-            .changeBeats(2.0);
+          d.path += dodge.scale(1.0,d.distanceTo(d3)/2.0).changeBeats(2.0);
         }
       }
     }

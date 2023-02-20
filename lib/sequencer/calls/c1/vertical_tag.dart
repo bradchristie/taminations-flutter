@@ -18,6 +18,7 @@
 
 */
 
+import '../../../moves.g.dart';
 import '../common.dart';
 
 class VerticalTag extends Action {
@@ -58,18 +59,18 @@ class VerticalTag extends Action {
     if (name.contains('Left')) {
       if (d.data.leader) {
         if (d.data.beau && dp.data.belle)
-          return TamUtils.getMove('Flip Right',skew:[-h, 3.0 - w].v);
+          return FlipRight.skew(-h, 3.0 - w);
         else if (d.data.belle)
-          return TamUtils.getMove('Flip Left',skew:[0.5, w - 2.0].v);
+          return FlipLeft.skew(0.5, w - 2.0);
         else
-          return TamUtils.getMove('Flip Right',skew:[0.5, 2.0 - w].v);
+          return FlipRight.skew(0.5, 2.0 - w);
       } else {  //  trailer
         if (d.data.belle && dp.data.beau)
-          return TamUtils.getMove('Dodge Left',beats:3.0,skew:[-0.5, w - 2.0].v);
+          return DodgeLeft.changeBeats(3.0).skew(-0.5, w - 2.0);
         else if (d.data.belle)
-          return TamUtils.getMove('Forward',beats:3.0,skew:[h - 1.0, w - 1.0].v);
+          return Forward.changeBeats(3.0).skew(h - 1.0, w - 1.0);
         else
-          return TamUtils.getMove('Extend Right',beats:3.0,skew:[h - 1.0, w - 2.0].v);
+          return ExtendRight.changeBeats(3.0).skew(h - 1.0, w - 2.0);
       }
     }
 
@@ -77,19 +78,19 @@ class VerticalTag extends Action {
       if (d.data.leader) {
         //  Leader always goes behind unless belle of a couple facing out
         if (d.data.belle && dp.data.beau)
-          return TamUtils.getMove('Flip Left',skew:[-h, w - 3.0].v);
+          return FlipLeft.skew(-h, w - 3.0);
         else if (d.data.beau)
-          return TamUtils.getMove('Flip Right',skew:[0.5, 2.0 - w].v);
+          return FlipRight.skew(0.5, 2.0 - w);
         else
-          return TamUtils.getMove('Flip Left',skew:[0.5, w - 2.0].v);
+          return FlipLeft.skew(0.5, w - 2.0);
       } else {  // trailer
         //  Trailer always goes in front unless beau of a couple facing in
         if (d.data.beau && dp.data.belle)
-          return TamUtils.getMove('Dodge Right',beats:3.0,skew:[-0.5, 2.0 - w].v);
+          return DodgeRight.changeBeats(3.0).skew(-0.5, 2.0 - w);
         else if (d.data.beau)
-          return TamUtils.getMove('Forward',beats:3.0,skew:[h - 1.0, 1.0 - w].v);
+          return Forward.changeBeats(3.0).skew(h - 1.0, 1.0 - w);
         else
-          return TamUtils.getMove('Extend Left',beats:3.0,skew:[h - 1.0, w].v);
+          return ExtendLeft.changeBeats(3.0).skew(h - 1.0, w);
       }
     }
   }

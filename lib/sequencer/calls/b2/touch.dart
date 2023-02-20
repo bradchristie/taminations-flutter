@@ -18,6 +18,7 @@
 
 */
 
+import '../../../moves.g.dart';
 import '../common.dart';
 
 class Touch extends Action {
@@ -32,9 +33,9 @@ class Touch extends Action {
     if (d2 == null || !d2.data.active)
       return ctx.dancerCannotPerform(d,name);
     var dist = d.distanceTo(d2);
-    var dir = name.contains('Left') ? 'Right' : 'Left';
+    var move = name.contains('Left') ? ExtendRight : ExtendLeft;
     //  Touch to handhold in between wide and narrow
-    return TamUtils.getMove('Extend $dir',scale:[dist/2,0.75].v);
+    return move.scale(dist/2,0.75);
   }
 
   @override

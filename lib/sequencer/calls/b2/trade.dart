@@ -18,6 +18,7 @@
 
 */
 
+import '../../../moves.g.dart';
 import '../common.dart';
 
 class Trade extends Action {
@@ -54,16 +55,16 @@ class Trade extends Action {
 
     Dancer dtrade;
     bool samedir;
-    String call;
+    Path call;
     //  We trade with the nearest dancer in the direction with
     //  an odd number of dancers
     if (bestright!=null && ((rightcount % 2 == 1 && leftcount % 2 == 0) || bestleft==null)) {
       dtrade = bestright;
-      call = 'Run Right' ;
+      call = RunRight;
       samedir = d.isLeftOf(dtrade);
     } else if (bestleft!=null && ((rightcount % 2 == 0 && leftcount % 2 == 1) || bestright==null)) {
       dtrade = bestleft;
-      call = 'Run Left' ;
+      call = RunLeft;
       samedir = d.isRightOf(dtrade);
     }
     else
@@ -77,22 +78,20 @@ class Trade extends Action {
     if (ctx.inBetween(d,dtrade).isNotEmpty) {
       //  Intervening dancers
       //  Allow enough room to get around them and pass right shoulders
-      if (call == 'Run Right'  && samedir)
+      if (call == RunRight  && samedir)
         scaleX = 2.0;
     } else {
       //  No intervening dancers
-      if (call == 'Run Left'  && samedir)
+      if (call == RunLeft  && samedir)
         //  Partner trade, flip the belle
-        call = 'Flip Left' ;
+        call = FlipLeft;
       else
         scaleX = dist/2;
       //  Hold hands for trades that are swing/slip
       if (!samedir && dist < 2.1)
-        hands = (call == 'Run Left') ? Hands.LEFTHAND : Hands.RIGHTHAND;
+        hands = (call == RunLeft) ? Hands.LEFTHAND : Hands.RIGHTHAND;
     }
-    return TamUtils.getMove(call,
-        hands:hands,
-        scale:[scaleX,dist/2].v);
+    return call.addhands(hands).scale(scaleX,dist/2);
   }
 
 }

@@ -18,6 +18,7 @@
 
 */
 
+import '../../../moves.g.dart';
 import '../common.dart';
 
 //  This is for the one-word calls Zig and Zag
@@ -30,12 +31,12 @@ class Zig extends Action {
 
   @override
   Path performOne(Dancer d, CallContext ctx) {
-    var move = 'Stand';
+    var move = Stand;
     if (d.data.leader && name == 'Zig')
-      move = 'Quarter Right';
+      move = QuarterRight;
     if (d.data.leader && name == 'Zag')
-      move = 'Quarter Left';
-    return TamUtils.getMove(move);
+      move = QuarterLeft;
+    return move;
   }
 
 }

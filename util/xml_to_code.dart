@@ -134,7 +134,7 @@ Future<void> writeFormations() async {
 
   //  Map to look up move formation by name
   fDart.writeln();
-  fDart.writeln('static final Map<String,Formation> formationMap = {');
+  fDart.writeln('static final Map<String,Formation> formationIndex = {');
   fMap.forEach((key, value) {
     fDart.writeln('    \'$key\' : $value,');
   });

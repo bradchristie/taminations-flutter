@@ -18,6 +18,7 @@
 
 */
 
+import '../../../moves.g.dart';
 import '../common.dart';
 
 class SplitCirculate extends Action {
@@ -35,13 +36,19 @@ class SplitCirculate extends Action {
   @override
   Path performOne(Dancer d, CallContext ctx) {
     if (d.data.trailer)
-      return TamUtils.getMove('Forward 2' ).changeBeats(3.0);
+      return Forward_2.changeBeats(3.0);
     else if (d.data.leader) {
-      var move = (ctx.dancerInFront(d) != null) ? 'Flip'  : 'Run' ;
-      if (ctx.dancersToLeft(d).length % 2 == 1)
-        return TamUtils.getMove('$move Left' );
-      else if (ctx.dancersToRight(d).length % 2 == 1)
-        return TamUtils.getMove('$move Right' );
+      if (ctx.dancerInFront(d) != null) {
+        if (ctx.dancersToLeft(d).length % 2 == 1)
+          return FlipLeft;
+        else if (ctx.dancersToRight(d).length % 2 == 1)
+          return FlipRight;
+      } else {
+        if (ctx.dancersToLeft(d).length % 2 == 1)
+          return RunLeft;
+        else if (ctx.dancersToRight(d).length % 2 == 1)
+          return RunRight;
+      }
     }
     throw CallError('Unable to calculate Split Circulate for dancer $d.' );
   }

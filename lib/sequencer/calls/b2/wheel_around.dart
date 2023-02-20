@@ -18,6 +18,7 @@
 
 */
 
+import '../../../moves.g.dart';
 import '../common.dart';
 
 class WheelAround extends ActivesOnlyAction {
@@ -32,13 +33,12 @@ class WheelAround extends ActivesOnlyAction {
     if (!ctx.isInCouple(d,d2))
       throw CallError('Only Couples can Wheel Around.');
     var dist = d.distanceTo(d2);
-    String move;
+    Path move;
     if (name.startsWith('Reverse'))
-      move = d2.isRightOf(d) ? 'Beau Reverse Wheel' : 'Belle Reverse Wheel';
+      move = d2.isRightOf(d) ? BeauReverseWheel : BelleReverseWheel;
     else
-      move = d2.isRightOf(d) ? 'Beau Wheel' : 'Belle Wheel';
-    return TamUtils.getMove(move,
-        scale:[dist/2,dist/2].v);
+      move = d2.isRightOf(d) ? BeauWheel : BelleWheel;
+    return move.scale(dist/2,dist/2);
   }
 
 }

@@ -18,6 +18,7 @@
 
 */
 
+import '../../../moves.g.dart';
 import '../common.dart';
 
 class BackAway extends Action {
@@ -31,7 +32,7 @@ Move backwards one full position.  (This is not a real call.)
   @override
   Path performOne(Dancer d, CallContext ctx) {
     //  TODO hold hands with partner?
-    return TamUtils.getMove('Back 2');
+    return Back_2;
   }
 
 }

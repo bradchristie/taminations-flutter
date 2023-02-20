@@ -18,6 +18,7 @@
 
 */
 
+import '../../../moves.g.dart';
 import '../common.dart';
 
 //  This class implements both Zoom and Zing
@@ -34,15 +35,15 @@ class Zoom extends ActivesOnlyAction {
         ctx.dancersToLeft(d).length == 1;
     var centerRight = ctx.dancersToRight(d).length == 1 &&
         ctx.dancersToLeft(d).length == 2;
-    String c,c2,c3;
+    Path c,c2,c3;
     if (centerLeft || (!centerRight && a > 0)) {
-      c = 'Run Right' ;
-      c2 = 'Lead Right' ;
-      c3 = 'Quarter Left' ;
+      c = RunRight;
+      c2 = LeadRight;
+      c3 = QuarterLeft;
     } else {
-      c = 'Run Left' ;
-      c2 = 'Lead Left' ;
-      c3 = 'Quarter Right' ;
+      c = RunLeft;
+      c2 = LeadLeft;
+      c3 = QuarterRight;
     }
     var s = centerLeft || centerRight ? 0.25 : 1.0;
     if (d.data.leader) {
@@ -52,18 +53,10 @@ class Zoom extends ActivesOnlyAction {
       if (ctx.dancerInBack(d2) == d)
         throw CallError('Cannot call $name from back-to-back dancers');
       var dist = d.distanceTo(d2);
-      return TamUtils.getMove(c,
-          beats:2.0,
-          skew:[-dist/2,0.0].v,
-          scale:[1.0,s].v) +
-          ((name == 'Zoom' )
-              ? TamUtils.getMove(c,
-              beats:2.0,
-              skew:[dist/2.0,0.0].v,
-              scale:[1.0,s].v)
-              : TamUtils.getMove(c2,
-              beats:2.0,
-              scale:[dist/2.0,2.0*s].v));
+      return c.changeBeats(2.0).skew(-dist/2,0.0).scale(1.0,s) +
+          (name == 'Zoom'
+              ? c.changeBeats(2.0).skew(dist/2.0,0.0).scale(1.0,s)
+              : c2.changeBeats(2.0).scale(dist/2.0,2.0*s));
     } else if (d.data.trailer) {
       var d2 = ctx.dancerInFront(d).throwIfNull(CallError('Dancer $d cannot $name'));
       if (!d2.data.active)
@@ -71,21 +64,10 @@ class Zoom extends ActivesOnlyAction {
       var dist = d.distanceTo(d2);
       var offset = ctx.dancerInFront(d2) == d ? 0.5 : 0.0;
       return (name == 'Zoom' )
-          ? TamUtils.getMove('Forward' ,
-          beats:2.0,
-          scale:[dist/2.0,1.0].v,
-          skew: [0.0,offset].v) +
-          TamUtils.getMove('Forward' ,
-              beats:2.0,
-              scale:[dist/2.0,1.0].v,
-              skew: [0.0,-offset].v)
-          : TamUtils.getMove('Forward' ,
-          beats:2.0,
-          scale:[dist-1,1.0].v,
-          skew: [0.0,offset].v) +
-          TamUtils.getMove(c3,
-              beats:2.0,
-              skew:[1.0,-offset].v);
+          ? Forward.changeBeats(2.0).scale(dist/2.0,1.0).skew(0.0,offset) +
+            Forward.changeBeats(2.0).scale(dist/2.0,1.0).skew(0.0,-offset)
+          : Forward.changeBeats(2.0).scale(dist-1,1.0).skew(0.0,offset) +
+            c3.changeBeats(2.0).skew(1.0,-offset);
     } else
       throw CallError('Dancer $d cannot $name' );
   }

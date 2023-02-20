@@ -18,6 +18,7 @@
 
 */
 
+import '../../../moves.g.dart';
 import '../common.dart';
 
 class Dosado extends Action {
@@ -30,16 +31,13 @@ class Dosado extends Action {
     var d2 = ctx.dancerFacing(d) ??
         thrower(CallError('Dancer $d has no one to Dosado with.' ));
     var dist = d.distanceTo(d2!);
-    var dir1 = 'Left' ;
-    var dir2 = 'Right' ;
-    if (name.toLowerCase().startsWith('left' )) {
-      dir1 = 'Right' ;
-      dir2 = 'Left' ;
-    }
-    return TamUtils.getMove('Extend $dir1' ).scale(dist/2.0,0.5).changeBeats(dist/2.0) +
-        TamUtils.getMove('Extend $dir2' ).scale(1.0,0.5) +
-        TamUtils.getMove('Retreat $dir2' ).scale(1.0,0.5) +
-        TamUtils.getMove('Retreat $dir1' ).scale(1.0,0.5);
+    var moves = name.toLowerCase().startsWith('left' )
+        ? [ ExtendLeft, ExtendRight, RetreatRight, RetreatLeft ]
+        : [ ExtendRight, ExtendLeft, RetreatLeft, RetreatRight ];
+    return moves[0].scale(dist/2.0,0.5).changeBeats(dist/2.0) +
+           moves[1].scale(1.0,0.5) +
+           moves[2].scale(1.0,0.5) +
+           moves[3].scale(1.0,0.5);
   }
 
 }
