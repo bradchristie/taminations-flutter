@@ -19,6 +19,7 @@
 */
 
 import 'package:flutter/material.dart' as fm;
+import 'package:flutter/services.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'tam_utils.dart';
@@ -67,36 +68,45 @@ class Settings extends fm.ChangeNotifier {
   }
 
   Future<bool> _getPreferences() async {
-    prefs = await SharedPreferences.getInstance();
-    _speed = prefs.getString('Dancer Speed') ?? 'Normal';
-    _loop = prefs.getBool('Loop') ?? false;
-    _grid = prefs.getBool('Grid') ?? false;
-    _axes = prefs.getString('Axes') ?? 'None';
-    _paths = prefs.getBool('Paths') ?? false;
-    _numbers = prefs.getString('Numbers') ?? 'None';
-    for (var i = 1; i <= 6; i++) {
-      _coupleColors[i - 1] = prefs.getString('Couple $i') ?? _coupleColors[i - 1];
-    }
-    for (var i = 1; i <= 12; i++) {
-      _dancerColors[i - 1] = prefs.getString('Dancer $i') ?? _dancerColors[i - 1];
-    }
-    _phantoms = prefs.getBool('Phantoms') ?? false;
-    _geometry = prefs.getString('Special Geometry') ?? 'None';
-    _language = prefs.getString('Language for Definitions') ?? 'System';
-    _preferencesRead = true;
-    _isAbbrev = prefs.getBool('DefinitionAbbrev') ?? true;
-    _practiceGender = prefs.getString('PracticeGender') ?? 'Boy';
-    _practiceSpeed = prefs.getString('PracticeSpeed') ?? 'Slow';
-    _primaryControl = prefs.getString('PrimaryControl') ?? 'Left Finger';
-    _mouseControl = prefs.getString('MouseControl') ?? 'Dancer moves only when mouse button is pressed';
-    _startingFormation = prefs.getString('Starting Formation') ?? 'Squared Set';
-    if (_startingFormation == 'Eight Chain Thru')
-      _startingFormation = 'Zero Box';
-    _dancerShapes = prefs.getBool('Dancer Shapes') ?? true;
-    _dancerIdentification = prefs.getString('Dancer Identification') ?? 'None';
-    _showDancerColors = prefs.getString('Dancer Colors') ?? 'By Couple';
-    _joinCallsWith = prefs.getString('Join Calls With') ?? 'New Line';
-    notifyListeners();
+    try {
+      prefs = await SharedPreferences.getInstance();
+      _speed = prefs.getString('Dancer Speed') ?? 'Normal';
+      _loop = prefs.getBool('Loop') ?? false;
+      _grid = prefs.getBool('Grid') ?? false;
+      _axes = prefs.getString('Axes') ?? 'None';
+      _paths = prefs.getBool('Paths') ?? false;
+      _numbers = prefs.getString('Numbers') ?? 'None';
+      for (var i = 1; i <= 6; i++) {
+        _coupleColors[i - 1] =
+            prefs.getString('Couple $i') ?? _coupleColors[i - 1];
+      }
+      for (var i = 1; i <= 12; i++) {
+        _dancerColors[i - 1] =
+            prefs.getString('Dancer $i') ?? _dancerColors[i - 1];
+      }
+      _phantoms = prefs.getBool('Phantoms') ?? false;
+      _geometry = prefs.getString('Special Geometry') ?? 'None';
+      _language = prefs.getString('Language for Definitions') ?? 'System';
+      _preferencesRead = true;
+      _isAbbrev = prefs.getBool('DefinitionAbbrev') ?? true;
+      _practiceGender = prefs.getString('PracticeGender') ?? 'Boy';
+      _practiceSpeed = prefs.getString('PracticeSpeed') ?? 'Slow';
+      _primaryControl = prefs.getString('PrimaryControl') ?? 'Left Finger';
+      _mouseControl = prefs.getString('MouseControl') ??
+          'Dancer moves only when mouse button is pressed';
+      _startingFormation =
+          prefs.getString('Starting Formation') ?? 'Squared Set';
+      if (_startingFormation == 'Eight Chain Thru')
+        _startingFormation = 'Zero Box';
+      _dancerShapes = prefs.getBool('Dancer Shapes') ?? true;
+      _dancerIdentification =
+          prefs.getString('Dancer Identification') ?? 'None';
+      _showDancerColors = prefs.getString('Dancer Colors') ?? 'By Couple';
+      _joinCallsWith = prefs.getString('Join Calls With') ?? 'New Line';
+      notifyListeners();
+      //  This is so testing will work, it's Dart and doesn't have\
+      //  the SharedPreferences plugin
+    } on MissingPluginException catch (_) { }
     return true;
   }
 

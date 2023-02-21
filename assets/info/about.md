@@ -20,17 +20,17 @@ Call pronunciations provided by
 
 ---
 
-## Taminations version 1.6.52 built 2023-16-02
+## Taminations version 1.6.53 built 2023-02-20
 Copyright 2023 by Brad Christie.  
 This is free software, and you are welcome to modify and redistribute it
 under the terms of the [GNU GPL license](http://www.gnu.org/licenses/gpl.html).  
 
 ## What's New
-* Better animations for Trade the Deucey, Left Pass to the Center
-* Allow text selection of title
+* Separate info page on basic use of animations
+* More animations for 1/4 Thru family
 * Sequencer changes:
-  * Handle formations at odd angles, such as after Fractional Tops
-  * Don't require Do Your Part or While in most cases
+  * Add note if Do Your Part is assumed
+  * Fix for 1/2 Wheel Around and Roll
 
 For a detailed history of changes, view the
 [Git log](https://github.com/bradchristie/taminations-flutter/commits/main)
