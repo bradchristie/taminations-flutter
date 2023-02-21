@@ -18,6 +18,7 @@
 
 */
 
+import '../../../formations.g.dart';
 import '../common.dart';
 
 class Tandem extends FourDancerConcept {
@@ -69,11 +70,11 @@ class Tandem extends FourDancerConcept {
   @override
   void postAdjustment(CallContext ctx, Dancer cd, List<Dancer> group) {
     //  This covers most all the formations you get from tandem calls
-    const tandemFormations = {
-      'Normal Lines Compact': 1.0,
-      'Normal Lines': 1.0,
-      'Double Pass Thru': 1.0,
-      'Quarter Tag' : 1.5,
+    var tandemFormations = {
+      Formations.NormalLinesCompact: 1.0,
+      Formations.NormalLines: 1.0,
+      Formations.DoublePassThru: 1.0,
+      Formations.QuarterTag : 1.5,
     };
     ctx.matchFormationList(tandemFormations,maxOffset: 9.0);
   }

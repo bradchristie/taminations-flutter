@@ -18,31 +18,32 @@
 
 */
 
+import '../../../formations.g.dart';
 import '../common.dart';
 
 class Stagger extends ModifiedFormationConcept {
 
   @override final level = LevelData.C2;
   @override final conceptName = 'Stagger';
-  @override final modifiedFormationName = 'Double Pass Thru';
+  @override final modifiedFormation = Formations.DoublePassThru;
   @override var helplink = 'c2/stagger_concept';
   Stagger(String name) : super(name);
 
-  String _startFormation = '';
-  @override String get formationName => _startFormation;
+  late Formation _startFormation;
+  @override Formation get baseFormation => _startFormation;
 
   //  Starting formation could be blocks leaning left or right
   //  So check both and remember which one
   @override
   bool checkFormation(CallContext ctx) {
-    final ctx1 = CallContext.fromXML(TamUtils.getFormation('Facing Blocks Right'));
-    final ctx2 = CallContext.fromXML(TamUtils.getFormation('Facing Blocks Left'));
+    final ctx1 = CallContext.fromFormation(Formations.FacingBlocksRight);
+    final ctx2 = CallContext.fromFormation(Formations.FacingBlocksLeft);
     if (ctx.matchFormations(ctx1,sexy:false,fuzzy:true,rotate:180,handholds:false,delta: 0.3) != null) {
-      _startFormation = 'Facing Blocks Right';
+      _startFormation = Formations.FacingBlocksRight;
       return true;
     }
     if (ctx.matchFormations(ctx2,sexy:false,fuzzy:true,rotate:180,handholds:false,delta: 0.3) != null) {
-      _startFormation = 'Facing Blocks Left';
+      _startFormation = Formations.FacingBlocksLeft;
       return true;
     }
     return false;
@@ -57,9 +58,9 @@ class Stagger extends ModifiedFormationConcept {
     ctx.dancers[0].animateToEnd();
     final a2 = ctx.dancers[0].angleFacing;
     final finalFormation =
-    (a1.angleDiff(a2).abs().isAround(pi/2) ^ (_startFormation=='Facing Blocks Right'))
-        ? 'Facing Blocks Right'
-        : 'Facing Blocks Left';
+    (a1.angleDiff(a2).abs().isAround(pi/2) ^ (_startFormation.name=='Facing Blocks Right'))
+        ? Formations.FacingBlocksRight
+        : Formations.FacingBlocksLeft;
     return ctx.adjustToFormation(finalFormation,delta: 0.3);
   }
 

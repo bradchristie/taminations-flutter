@@ -28,17 +28,17 @@ abstract class ModifiedFormationConcept extends Action {
 
   var conceptName = '' ;
   String get realCall => name.replaceFirst('$conceptName ' .r, '' );
-  var formationName = '' ;
-  var modifiedFormationName = '' ;
+  Formation get baseFormation;
+  Formation get modifiedFormation;
 
   bool checkFormation(CallContext ctx) {
-    var ctx2 = CallContext.fromXML(TamUtils.getFormation(formationName));
+    var ctx2 = CallContext.fromFormation(baseFormation);
     return ctx.matchFormations(ctx2,sexy:false,fuzzy:true,rotate:90,handholds:false) != null;
   }
 
   bool reformFormation(CallContext ctx) =>
-      ctx.adjustToFormation(formationName,rotate:180,delta:0.3) ||
-      ctx.adjustToFormation(formationName,rotate:90,delta:0.3);
+      ctx.adjustToFormation(baseFormation,rotate:180,delta:0.3) ||
+      ctx.adjustToFormation(baseFormation,rotate:90,delta:0.3);
 
   @override
   void perform(CallContext ctx) {
@@ -46,9 +46,9 @@ abstract class ModifiedFormationConcept extends Action {
     if (!checkFormation(ctx))
       throw CallError('Not $conceptName formation' );
     //  Shift dancers into modified formation
-    if (!ctx.adjustToFormation(modifiedFormationName,rotate:180,delta:0.3) &&
-        !ctx.adjustToFormation(modifiedFormationName,rotate:90,delta:0.3))
-      throw CallError('Unable to adjust $formationName to $modifiedFormationName' );
+    if (!ctx.adjustToFormation(modifiedFormation,rotate:180,delta:0.3) &&
+        !ctx.adjustToFormation(modifiedFormation,rotate:90,delta:0.3))
+      throw CallError('Unable to adjust $baseFormation to $modifiedFormation' );
     var adjusted = ctx.dancers.where((d) => d.path.movelist.isNotEmpty).toList();
 
     //  Perform the call
@@ -65,7 +65,7 @@ abstract class ModifiedFormationConcept extends Action {
 
     //  Reform the formation
     if (!reformFormation(ctx))
-      throw CallError('Unable to reform $formationName formation' );
+      throw CallError('Unable to reform $baseFormation formation' );
   }
 
 }

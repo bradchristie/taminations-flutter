@@ -63,16 +63,9 @@ Formations you can use are
   @override
   void perform(CallContext ctx) {
     var fname = name.replaceFirst('Adjust to( an?)? '.ri, '' );
-    var fnorm = normalizeCall(fname);
-    String? formation;
-    for (var r in formationMap.keys) {
-      if (fnorm.matches(r))
-        formation = formationMap[r]!;
-    }
-    if (formation == null)
-      throw CallError('Sorry, don''t know how to $name from here.' );
-    var ctx2 = CallContext.fromXML(TamUtils.getFormation(formation));
-    var rotate = formation == 'Blocks' ? 90 : 180;
+    var formation = Formation.fromName(fname);
+    var ctx2 = CallContext.fromFormation(formation);
+    var rotate = formation.name == 'Blocks' ? 90 : 180;
     var mapping = ctx.matchFormations(ctx2,sexy:false,fuzzy:true,rotate:rotate,handholds:false, maxError : 3.0, delta: 0.3, maxAngle: 0.5)
         ?? thrower(CallError('Unable to match formation to $fname'));
     if (!ctx.adjustToFormationMatch(mapping!.match))

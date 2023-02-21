@@ -18,6 +18,7 @@
 
 */
 
+import '../../../formations.g.dart';
 import '../common.dart';
 
 class Phantom extends Action {
@@ -69,8 +70,8 @@ class Phantom extends Action {
   @override
   void perform(CallContext ctx) {
     final phantomSnapFormations = {
-      'Phantom Snap Formation 1' : 1.0,
-      'Phantom Snap Formation 2' : 1.0
+      Formations.PhantomSnapFormation_1 : 1.0,
+      Formations.PhantomSnapFormation_2 : 1.0
     };
     ctx.matchFormationList(phantomSnapFormations);
     //  Split the dancers into two groups

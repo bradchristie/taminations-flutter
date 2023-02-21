@@ -18,6 +18,8 @@
 
 */
 
+import 'package:taminations/formations.g.dart';
+
 import '../common.dart';
 import '../moves.g.dart';
 import 'call_error.dart';
@@ -57,51 +59,24 @@ class MappingContext {
 
 class CallContext {
 
-  static const standardFormations = {
-    'Normal Lines Compact': 1.0,
-    'Normal Lines': 1.0,
-    'Double Pass Thru': 1.0,
-    'Quarter Tag' : 1.5,
-    'Tidal Line RH' : 1.0,
+  static var standardFormations = {
+    Formations.NormalLinesCompact: 1.0,
+    Formations.NormalLines: 1.0,
+    Formations.DoublePassThru: 1.0,
+    Formations.QuarterTag : 1.5,
+    Formations.TidalLineRH : 1.0,
     //  Need I-Beam so Heads Swing Thru doesn't collide with the sides
     //'I-Beam' : 2.0,
   };
-  /*
-    'Tidal Wave of 6' : 2.0,
-    'Diamonds RH Girl Points' : 2.0,
-    'Diamonds RH PTP Girl Points' : 3.0,
-    'Hourglass RH BP' : 3.0,
-    'Galaxy RH GP' : 3.0,
-    'Butterfly RH' : 3.0,
-    'O RH' : 3.0,
-    'Thar RH Boys' : 3.0,
-    'Sausage RH' : 3.0,
-    'Static Square' : 2.0,
-    //'Alamo Wave'
-    'Right-Hand Zs' : 2.0,
-    'Left-Hand Zs' : 2.0,
-    //  Siamese formations
-    //  This also covers C-1 Phantom formations
-    'Siamese Box 1' : 2.0,
-    'Siamese Box 2' : 2.0,
-    'Siamese Wave' : 2.0,
-    //  Blocks
-    'Facing Blocks Right' : 2.0,
-    'Facing Blocks Left' : 2.0,
-    'Concentric Diamonds RH' : 2.0,
-    'Quarter Z RH' : 4.0,
-    'Quarter Z LH' : 4.0,
-    'Diamond Between Kouples' : 4.0
-  };  */
 
-  static const twoCoupleFormations = {
-    'Facing Couples Compact' : 1.0,
-    'Facing Couples' : 1.0,
-    'Two-Faced Line RH' : 1.0,
-    'Diamond RH' : 1.0,
-    'Single Eight Chain Thru' : 1.0,
-    'Single Quarter Tag' : 1.0,
-    'Square RH' : 1.0
+  static var twoCoupleFormations = {
+    Formations.FacingCouplesCompact : 1.0,
+    Formations.FacingCouples : 1.0,
+    Formations.TwomFacedLineRH : 1.0,
+    Formations.DiamondRH : 1.0,
+    Formations.SingleEightChainThru : 1.0,
+    Formations.SingleQuarterTag : 1.0,
+    Formations.SquareRH : 1.0
   };
 
   static Map<RegExp,String> formationMap = {
@@ -194,64 +169,6 @@ class CallContext {
       }
     }
   }
-
-  //  Create a context from a formation defined in XML
-  //  The element passed in can be either a 'tam' from
-  //  an animation, or a formation
-  CallContext.fromXML(XmlElement tam, {bool loadPaths=false}) {
-    var numberArray = TamUtils.getNumbers(tam);
-    var coupleArray = TamUtils.getCouples(tam);
-    var paths = loadPaths ? tam.childrenNamed('path') : [];
-    var fname = tam('formation');
-    var f = fname.isNotBlank
-        ? TamUtils.getFormation(fname)
-        : (tam.childrenNamed('formation').firstOrNull ?? tam);
-    var dancerElements = f.childrenNamed('dancer');
-    dancers = [];
-    asymmetric = tam('asymmetric').isNotBlank;
-    for (var i=0; i<dancerElements.length; i++) {
-      var element = dancerElements[i];
-      //  This assumes square geometry
-      //  Make sure each dancer in the list is immediately followed by its
-      //  diagonal opposite, if not asymmetric.  Required for mapping.
-      dancers.add(Dancer.fromData(
-        number:numberArray[i*2], couple:coupleArray[i*2],
-        x:element('x').d,y:element('y').d,angle:element('angle').d,
-        gender: Gender.genderMap[element('gender')]!,
-        geom: Geometry.getGeometry(Geometry.SQUARE)[0],
-        path: paths.length > i ? TamUtils.translatePath(paths[i]) : []
-      ));
-      if (!asymmetric)
-        dancers.add(Dancer.fromData(
-            number:numberArray[i*2+1], couple:coupleArray[i*2+1],
-            x:element('x').d,y:element('y').d,angle:element('angle').d,
-            gender: Gender.genderMap[element('gender')]!,
-            geom: Geometry.getGeometry(Geometry.SQUARE)[1],
-            path: paths.length > i ? TamUtils.translatePath(paths[i]) : []
-        ));
-    }
-  }
-
-  //  Get a loadable formation name given a more generic name
-  static String formationName(String request) {
-    for (var e in formationMap.entries) {
-      if (request.matches(e.key))
-        return e.value;
-    }
-    throw CallError('Unable to find formation $request');
-  }
-
-  //  Load a formation from any sort of name
-  static XmlElement _xmlFromName(String name) {
-    try {
-      return TamUtils.getFormation(name);
-    } on Error {
-      return TamUtils.getFormation(formationName(name));
-    }
-  }
-
-  //  Create a CallContext from any sort of formation name
-  CallContext.fromName(String name) : this.fromXML(_xmlFromName(name));
 
   void noSnap({bool recurse=true}) {
     _snap = false;
@@ -836,11 +753,11 @@ class CallContext {
         }
         final ctx2 = CallContext.fromDancers(moving);
         if (ctx2.isLines()) {
-          ctx2.adjustToFormation('Compact Wave RH');
+          ctx2.adjustToFormation(Formations.CompactWaveRH);
         } else if (ctx2.isDiamond()) {
-          ctx2.adjustToFormation('Diamond Compact');
+          ctx2.adjustToFormation(Formations.DiamondCompact);
         } else if (ctx2.isColumns()) {
-          ctx2.adjustToFormation('Single Double Pass Thru Close');
+          ctx2.adjustToFormation(Formations.SingleDoublePassThruClose);
         } else
           return;
         ctx2.appendToSource(this, false);
@@ -850,7 +767,7 @@ class CallContext {
 
   //  See if the current dancer positions resemble a standard formation
   //  and, if so, snap to the standard
-  void matchFormationList(Map<String,double> formations, {double maxOffset = 6.1}) {
+  void matchFormationList(Map<Formation,double> formations, {double maxOffset = 6.1}) {
     //  Make sure newly added animations are finished
     for (var d in dancers) {
       d.path.recalculate();
@@ -858,10 +775,10 @@ class CallContext {
     }
     MappingContext? bestMapping;
     for (var f in formations.keys) {
-      var ctx2 = CallContext.fromXML(TamUtils.getFormation(f));
+      var ctx2 = CallContext.fromFormation(f);
       //  See if this formation matches
       var rot = 180;
-      switch (f) {
+      switch (f.name) {
         case 'Double Pass Thru' :
         case 'I-Beam' :
         rot = 90; break;
@@ -880,10 +797,10 @@ class CallContext {
         //  Special hack to favor lines over boxes
         var specialHack =
         ((bestMapping?.name.startsWith('Normal Lines') ?? false) &&
-            f == 'Double Pass Thru');
+            f.name == 'Double Pass Thru');
         if (totOffset < maxOffset && angsnap.isApproxInt(delta : 0.05) && !specialHack) {
           if (bestMapping == null || totOffset*favoring + 0.2 < bestMapping.totalOffset) {
-            mapping.name = f;
+            mapping.name = f.name;
             mapping.totalOffset *= favoring;
             bestMapping = mapping;
           }
@@ -900,26 +817,26 @@ class CallContext {
       if (dancers.length == 8) {
         matchFormationList(standardFormations);
         //  One more check for bad I-Beam
-        repairFormation('Misshapen I-Beam', 'I-Beam');
-        repairFormation('Misshapen X-Beam', 'X-Beam');
-        var ctxLines = CallContext.fromName('Normal Lines');
+        repairFormation(Formations.MisshapenImBeam, Formations.ImBeam);
+        repairFormation(Formations.MisshapenXmBeam, Formations.XmBeam);
+        var ctxLines = CallContext.fromFormation(Formations.NormalLines);
         if (matchFormations(ctxLines,rotate: 180) == null &&
             matchFormations(ctxLines,rotate:90) != null) {
-          adjustToFormation('Double Pass Thru',rotate: 90);
+          adjustToFormation(Formations.DoublePassThru,rotate: 90);
         }
       } else
         matchFormationList(twoCoupleFormations,maxOffset: 2.1);
     }
   }
 
-  void repairFormation(String from, String to) {
+  void repairFormation(Formation from, Formation to) {
     var ctx1 = CallContext.fromContext(this);
-    var incorrect = CallContext.fromName(from);
+    var incorrect = CallContext.fromFormation(from);
     var mapping = ctx1.matchFormations(
         incorrect, sexy: false, fuzzy: true, rotate: 90, handholds: false);
     if (mapping != null) {
       if (mapping.totalOffset < 5.0) {
-        var corrected = CallContext.fromName(to);
+        var corrected = CallContext.fromFormation(to);
         var mapping2 = ctx1.matchFormations(corrected, sexy: false,
             fuzzy: true,
             rotate: 90,
@@ -970,10 +887,10 @@ class CallContext {
     return retval;
   }
 
-  bool adjustToFormation(String fname, {int rotate = 180, double delta = 0.1}) {
+  bool adjustToFormation(Formation formation, {int rotate = 180, double delta = 0.1}) {
     //  Work on a copy with all dancers active, mapping only uses active dancers???
     //var ctx1 = CallContext.fromContext(this);
-    var ctx2 = CallContext.fromXML(TamUtils.getFormation(fname));
+    var ctx2 = CallContext.fromFormation(formation);
     var mapping = matchFormations(ctx2,sexy:false,fuzzy:true,rotate:rotate,handholds:false, maxError : 2.9, delta: delta);
     if (mapping != null) {
       //  If it does, get the offsets
@@ -987,7 +904,7 @@ class CallContext {
   void adjustForSquaredSetCovention() {
     //  First see if we are starting from a squared set
     animate(0.0);
-    final ss = CallContext.fromName('Squared Set');
+    final ss = CallContext.fromFormation(Formations.SquaredSet);
     final m = matchFormations(ss,rotate: 180, maxError: 0.9);
     if (m != null) {
       //  Applies to only heads or only sides, not if all or a mix are active
@@ -1003,7 +920,7 @@ class CallContext {
       if (!headsActive || !sidesActive) {
         animateToEnd();
         //  So now adjust back to squared set if possible
-        adjustToFormation('Squared Set', rotate: 180);
+        adjustToFormation(Formations.SquaredSet, rotate: 180);
       }
     }
   }
@@ -1058,32 +975,6 @@ class CallContext {
     }
     return bestContext;
   }
-
-  //  Use phantoms to fill in a formation starting from the dancers
-  //  in the current context
-  CallContext? fillFormation(String fname) {
-    //  Use letters for phantom numbers so there's no way they can
-    //  match the real dancers
-    var letters = 'ABCDEFGH';
-    var nextPhantom = 0;
-    var ctx2 = CallContext.fromXML(TamUtils.getFormation(fname));
-    var mapping = matchFormations(ctx2,sexy:false,fuzzy:true,rotate:0,handholds:false, subformation : true);
-    if (mapping == null)
-      return null;
-    var matchResult = mapping.match;
-    var rotmat = Matrix.getRotation(-matchResult.transform.angle);
-    var unmapped = ctx2.dancers.asMap().keys
-        .where((i) => !mapping.map.contains(i)).map((i) => ctx2.dancers[i]).toList();
-    var phantoms = unmapped.map((d) {
-      var ph = Dancer(letters[nextPhantom],'0',Gender.PHANTOM,Color.GRAY,
-          rotmat * d.starttx,
-          Geometry.getGeometry(Geometry.SQUARE).first,[]);
-      nextPhantom += 1;
-      return ph;
-    }).toList();
-    return CallContext.fromContext(this,dancers:dancers + phantoms);
-  }
-
 
   //  Return max number of beats among all the dancers
   double maxBeats() => dancers.fold(0.0, (v, d) => max(v,d.path.beats));
@@ -1192,8 +1083,8 @@ class CallContext {
 
   //  Returns points of a diamond formations
   //  Formation to match must have girl points
-  List<Dancer> pointsOfDiamondFormation(String f) {
-    final ctx2 = CallContext.fromXML(TamUtils.getFormation(f));
+  List<Dancer> pointsOfDiamondFormation(Formation f) {
+    final ctx2 = CallContext.fromFormation(f);
     final points = <Dancer>[];
     final mapping = ctx2.matchFormations(this,rotate: 180, subformation: true);
     if (mapping != null) {
@@ -1207,15 +1098,15 @@ class CallContext {
 
   List<Dancer> points() {
     var points =
-        pointsOfDiamondFormation('Diamonds RH Girl Points') +
-        pointsOfDiamondFormation('Diamonds RH PTP Girl Points') +
-        pointsOfDiamondFormation('Hourglass RH GP') +
-        pointsOfDiamondFormation('Galaxy RH GP');
+        pointsOfDiamondFormation(Formations.DiamondsRHGirlPoints) +
+        pointsOfDiamondFormation(Formations.DiamondsRHPTPGirlPoints) +
+        pointsOfDiamondFormation(Formations.HourglassRHGP) +
+        pointsOfDiamondFormation(Formations.GalaxyRHGP);
     //  Only try single diamond if none others found
     //  Otherwise points of hourglass central diamond
     //  are incorrectly added
     if (points.isEmpty)
-      points = pointsOfDiamondFormation('Diamond LH Boys Center');
+      points = pointsOfDiamondFormation(Formations.DiamondLHBoysCenter);
     return points;
   }
 

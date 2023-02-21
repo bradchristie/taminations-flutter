@@ -19,6 +19,7 @@
 */
 
 import 'dart:math';
+import '../../../formations.g.dart';
 import '../../../moves.g.dart';
 import '../action.dart';
 import '../../../math/vector.dart';
@@ -94,7 +95,7 @@ Promenade Corner''';
         !dc.anglePosition.isAround(a));
     //  Adjust from promenade to squared set
     ctx.applyCalls('Half Wheel Around');
-    ctx.adjustToFormation('Squared Set');
+    ctx.adjustToFormation(Formations.SquaredSet);
     ctx.level = LevelData.B1;  // otherwise Counter Rotate would set to C-1
   }
 

@@ -18,14 +18,15 @@
 
 */
 
+import '../../../formations.g.dart';
 import '../common.dart';
 
 class Butterfly extends ModifiedFormationConcept {
 
   @override final level = LevelData.C1;
   @override final conceptName = 'Butterfly';
-  @override final modifiedFormationName = 'Double Pass Thru';
-  @override final formationName = 'Butterfly RH';
+  @override final modifiedFormation = Formations.DoublePassThru;
+  @override final baseFormation = Formations.ButterflyRH;
   @override String get realCall {
     final getReal = super.realCall;
     if (getReal.lc.endsWith('a wave') || getReal.lc.endsWith('a line'))
@@ -45,7 +46,7 @@ class Butterfly extends ModifiedFormationConcept {
   bool reformFormation(CallContext ctx) {
     //  If a different ending formation was given, use that
     if (name.matches('.* to (?!a (line|wave))(a )?.*'.ri)) {
-      final formation = CallContext.formationName(norm);
+      final formation = Formation.fromName(name);
       if (!ctx.adjustToFormation(formation))
         throw CallError('Unable to form ending formation');
     }
@@ -54,7 +55,7 @@ class Butterfly extends ModifiedFormationConcept {
       //  That didn't work, we are too far off from a butterfly
       //  So first just concentrate on the centers
       final centers = CallContext.fromContext(ctx,dancers:ctx.center(4));
-      if (centers.adjustToFormation('Facing Couples Close',rotate: 180)) {
+      if (centers.adjustToFormation(Formations.FacingCouplesClose,rotate: 180)) {
         //  And now use the base method to fix the outer 4
         centers.appendToSource();
         return super.reformFormation(ctx);

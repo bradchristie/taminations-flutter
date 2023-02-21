@@ -17,6 +17,7 @@
  *     along with Taminations.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+import '../../../formations.g.dart';
 import '../common.dart';
 
 class LoadTheBoat extends Action with CallWithParts, ButCall {
@@ -63,7 +64,7 @@ Part 4 for the Centers can be replaced with But (another call)''';
   @override
    void performPart3(CallContext ctx) {
     //  Center 4 might be off a bit, snap to boxes so Ends Bend works
-    ctx.adjustToFormation('Eight Chain Thru',rotate: 90);
+    ctx.adjustToFormation(Formations.EightChainThru,rotate: 90);
     ctx.analyze();
     ctx.applyCalls('Ends ${_endsPart(ctx)} While Center 4 Trade');
   }

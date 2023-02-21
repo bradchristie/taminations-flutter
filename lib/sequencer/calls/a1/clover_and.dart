@@ -18,6 +18,7 @@
 
 */
 
+import '../../../formations.g.dart';
 import '../common.dart';
 
 class Cloverleaf extends Action {
@@ -78,7 +79,7 @@ class CloverAnd extends Action {
     }))
       othersStep = true;
 
-    final ss = CallContext.fromName('Squared Set');
+    final ss = CallContext.fromFormation(Formations.SquaredSet);
     final m = ctx.matchFormations(ss,rotate: 180);
     if (m != null) {
       othersStep = true;

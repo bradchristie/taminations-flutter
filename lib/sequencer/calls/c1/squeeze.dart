@@ -18,6 +18,8 @@
 
 */
 
+
+import '../../../formations.g.dart';
 import '../../../moves.g.dart';
 import '../common.dart';
 
@@ -30,12 +32,12 @@ class Squeeze extends Action {
   @override
   void perform(CallContext ctx) {
     if (name.lc.endsWith('butterfly')) {
-      final ctx2 = CallContext.fromXML(TamUtils.getFormation('Butterfly RH'));
+      final ctx2 = CallContext.fromFormation(Formations.ButterflyRH);
       if (ctx.matchFormations(ctx2,rotate: 180) == null)
         throw CallError('Formation is not a Butterfly');
     }
     else if (name.lc.endsWith('o')) {
-      final ctx2 = CallContext.fromXML(TamUtils.getFormation('O RH'));
+      final ctx2 = CallContext.fromFormation(Formations.ORH);
       if (ctx.matchFormations(ctx2,rotate: 180) == null)
         throw CallError('Formation is not an O');
     }

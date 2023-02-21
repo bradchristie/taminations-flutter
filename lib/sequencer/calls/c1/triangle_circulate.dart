@@ -18,6 +18,7 @@
 
 */
 
+import '../../../formations.g.dart';
 import '../../../moves.g.dart';
 import '../common.dart';
 
@@ -112,7 +113,7 @@ You do not need to use one of these if the triangles are unambiguous (as in a sa
           }
         } else {
           //  No points, maybe a sausage
-          final sausage = CallContext.fromXML(TamUtils.getFormation('Sausage RH'));
+          final sausage = CallContext.fromFormation(Formations.SausageRH);
           if (ctx.matchFormations(sausage,rotate:180) != null) {
             for (final d in ctx.center(2))
               d.data.active = false;

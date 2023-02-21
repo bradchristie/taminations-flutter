@@ -18,6 +18,7 @@
 
 */
 
+import '../../../formations.g.dart';
 import '../common.dart';
 
 
@@ -29,11 +30,11 @@ abstract class TripleFormation extends Action {
         subCall = name.replaceFirst('Triple (Box|Lines?|Waves?|Columns?)'.r,''),
         super(name);
 
-  static const tripleBoxFormations = {
-    'Triple Boxes' : 1.0,
-    'Triple Boxes 2' : 1.0,
-    'Triple Lines' : 1.0,
-    'Triple Columns' : 1.0
+  static var tripleBoxFormations = {
+    Formations.TripleBoxes : 1.0,
+    Formations.TripleBoxes_2 : 1.0,
+    Formations.TripleLines : 1.0,
+    Formations.TripleColumns : 1.0
   };
 
   var isXaxis = false;
@@ -82,7 +83,7 @@ abstract class TripleFormation extends Action {
       //  so it will fit with others to make a triple box
       if (rotatedBox.isBox() &&
           rotatedBox.dancers.any((d) => major(d.location).abs().isGreaterThan(1.0)))
-        rotatedBox.adjustToFormation('Facing Couples Close',rotate: 90);
+        rotatedBox.adjustToFormation(Formations.FacingCouplesClose,rotate: 90);
       //  Now apply the result to the 12-dancer triple box context
       rotatedBox.appendToSource();
       box.appendToSource();
