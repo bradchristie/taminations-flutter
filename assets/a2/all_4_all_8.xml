@@ -940,6 +940,54 @@
     </path>
   </tam>
 
+  <tam title="All 8 Diamond Circulate" group="All 8 (with calls through Plus)"
+       formation="Reverse Star Promenade" display="no">
+    <path>
+      <move select="Lead Right" beats="3" scaleY="3"/>
+    </path>
+    <path>
+      <move select="Lead Right" beats="3" scaleX="3"/>
+    </path>
+    <path>
+      <move select="Lead Right" beats="3" scaleY="3"/>
+    </path>
+    <path>
+      <move select="Lead Right" beats="3" scaleX="3"/>
+    </path>
+  </tam>
+
+  <tam title="All 8 Diamond Circulate" group="All 8 (with calls through Plus)"
+       formation="Thar LH Boys" display="no">
+    <path>
+      <move select="Lead Left Passing" beats="3" scaleX="3"/>
+    </path>
+    <path>
+      <move select="Lead Right Passing" beats="3" scaleY="3"/>
+    </path>
+    <path>
+      <move select="Lead Left Passing" beats="3" scaleX="3"/>
+    </path>
+    <path>
+      <move select="Lead Right Passing" beats="3" scaleY="3"/>
+    </path>
+  </tam>
+
+  <tam title="All 8 Diamond Circulate" group="All 8 (with calls through Plus)"
+       formation="Thar RH Boys" display="no">
+    <path>
+      <move select="Lead Right Passing" beats="3" scaleX="3"/>
+    </path>
+    <path>
+      <move select="Lead Left Passing" beats="3" scaleY="3"/>
+    </path>
+    <path>
+      <move select="Lead Right Passing" beats="3" scaleX="3"/>
+    </path>
+    <path>
+      <move select="Lead Left Passing" beats="3" scaleY="3"/>
+    </path>
+  </tam>
+
   <tam title="All 8 Dixie Style to a Wave" group="All 8 (with calls through Plus)"
        formation="Static Square">
     <path numbers="1 8">
