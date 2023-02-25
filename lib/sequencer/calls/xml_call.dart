@@ -126,9 +126,12 @@ class XMLCall extends Call {
         }
       }
     } else {
-      try {
         try {
           ctx.applyCodedCall(name);
+          return;
+        } on CallNotFoundError {
+          //  Found the call but no code and formations did not match
+          throw FormationNotFoundError(name);
         } on CallError {
           //  See if it works with an implied "Do Your Part"
           if (ctx.actives.length < ctx.dancers.length) {
@@ -136,13 +139,10 @@ class XMLCall extends Call {
             ctx.didYourPart = true;
           } else
             rethrow;
+          return;  //  DYP CodedCall that worked
         }
-      } on CallError catch(_) {
-        //  Found the call but formations did not match
-        throw FormationNotFoundError(name);
       }
-      return;
-    }
+
     final allPaths = CallContext.fromFormation(xcall.formation,withPaths: true)
         .dancers.map((d) => d.path).toList();
     //  If moving just some of the dancers,

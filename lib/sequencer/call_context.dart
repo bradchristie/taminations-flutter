@@ -110,6 +110,10 @@ class CallContext {
   LevelData level = LevelData.find('b1')!;
   List<Call> callstack = [];
   List<List<Dancer>> groups = [];
+  Map<double,List<Dancer>> xSlices = {};
+  Map<double,List<Dancer>> ySlices = {};
+
+
   String get groupstr => groups.map((e) => e.length).join();
   CallContext? _source;
   CallContext? get parent => _source;
@@ -1507,6 +1511,9 @@ class CallContext {
       groups.last.add(d);
       dist = d.location.length;
     }
+
+    xSlices = dancers.groupBy((d) => (d.location.x*10).round()/10.0);
+    ySlices = dancers.groupBy((d) => (d.location.y*10).round()/10.0);
 
     //  The 2 dancers closest to the center
     //  are centers (4 dancers) or very centers (8 dancers)

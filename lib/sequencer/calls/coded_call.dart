@@ -18,6 +18,8 @@
 
 */
 
+import 'package:taminations/sequencer/calls/c2/lateral_substitute.dart';
+
 import '../../extensions.dart';
 import '../../normalize_call.dart';
 import 'a1/as_couples.dart';
@@ -401,6 +403,7 @@ abstract class CodedCall extends Call {
 
     '(cross)?kickoff'.ri: (name) => KickOff(name),
 
+    'lateralsubstitute'.ri: (name) => LateralSubstitute(name),
     'lead(er)?s?'.ri: (name) => Leaders(name),
     'likeacoupleup'.ri: (_) => LikeACoupleUp(),
     'linearaction'.ri: (_) => LinearAction(),
@@ -568,6 +571,8 @@ abstract class CodedCall extends Call {
     'transferand.*'.ri: (name) => TransferAnd(name),
     '(inside|outside|inpoint|outpoint|tandembased|wavebased)?trianglecirculate'.ri:
         (name) => TriangleCirculate(name),
+    '(inside|outside|inpoint|outpoint|tandembased|wavebased)?triangle'.ri:
+        (name) => SelectTriangle(name),
     'triplebox.*'.ri: (name) => TripleBox(name),
     'triple(lines?|waves?|columns?).*'.ri: (name) => TripleLine(name),
     '(double|triple)starthru'.ri: (name) => TripleStarThru(name),

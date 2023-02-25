@@ -292,6 +292,8 @@ class Dancer implements Comparable<Dancer>, Cloneable<Dancer> {
 
   //  Angle the dancer is facing relative to the positive x-axis
   double get angleFacing => tx.angle;
+  bool get isFacingX => angleFacing.isAround(0.0) || angleFacing.isAround(pi);
+  bool get isFacingY => angleFacing.isAround(pi/2) || angleFacing.isAround(3*pi/2);
 
   //  Angle of the dancer's position relative to the positive x-axis
   double get anglePosition => tx.location.angle;

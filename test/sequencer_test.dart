@@ -13,6 +13,16 @@ import 'package:taminations/tam_utils.dart';
 
 import 'package:stack_trace/stack_trace.dart' as stack_trace;
 
+class TestSequence {
+
+  final String name;
+  final String sequence;
+  final String result;
+
+  TestSequence(this.name,this.sequence,this.result);
+
+}
+
 void main() async {
 
   //  This is necessary else the 1st test crashes
@@ -22,14 +32,14 @@ void main() async {
     return stack;
   };
 
-  for (var testName in testSequences.keys) {
-    testWidgets(testName, (WidgetTester tester) async {
+  for (var test in testSequences) {
+    testWidgets(test.name, (WidgetTester tester) async {
       await tester.runAsync(() async {
         await TamUtils.init();
         final model = SequencerModel();
         model.setStartingFormation('Static Square');
-        await model.paste(testSequences[testName]!);
-        expect(model.errorString.trim(), '');
+        await model.paste(test.sequence);
+        expect(model.errorString.trim(), test.result);
       });
     });
   }
@@ -37,13 +47,13 @@ void main() async {
 
 }
 
-final testSequences = {
+final testSequences = [
 
-  'Back Away':
+  TestSequence('Back Away',
   '''Heads Right and Left Thru and Back Away
-Sides Pass the Ocean''',
+Sides Pass the Ocean''',''),
 
-  'Beaus Run':
+  TestSequence('Beaus Run',
   '''Heads Pass the Ocean
 Extend
 Hinge
@@ -56,9 +66,9 @@ Centers Circulate
 Boys Run
 Bend the Line
 Quarter Out
-Allemande Left''',
+Allemande Left''',''),
 
-  'Belles Run':
+  TestSequence('Belles Run',
   '''Heads Lead Right
 Sides Half Sashay
 Touch a Quarter
@@ -73,14 +83,14 @@ Bend the Line
 Touch a Quarter
 Circulate
 Boys Run
-Allemande Left''',
+Allemande Left''',''),
 
-  'Box Counter Rotate':
+  TestSequence('Box Counter Rotate',
   '''Heads Move In and Right and Left Thru
 Centers Box Counter Rotate
-Double Pass Thru ''',
+Double Pass Thru ''',''),
 
-  'Box the Gnat':
+  TestSequence('Box the Gnat',
   '''Heads Box the Gnat
 Sides Separate and Box the Gnat
 Centers Pass In
@@ -88,9 +98,9 @@ Slide Thru
 Cloverleaf
 Zoom
 Centers Pass Thru
-Allemande Left''',
+Allemande Left''',''),
 
-  'Brace Thru':
+  TestSequence('Brace Thru',
   '''Heads Pass the Ocean
 Extend
 Leads Turn Back
@@ -99,18 +109,18 @@ Slide Thru
 Right and Left Thru
 Pass Thru
 Trade By
-Allemande Left''',
+Allemande Left''',''),
 
-  'Brace Thru 2':
+  TestSequence('Brace Thru 2',
   '''Heads Star Thru and Spread
 Pass the Ocean
 Brace Thru
 Veer Left
 Ferris Wheel
 Centers Square Thru 3
-Allemande Left''',
+Allemande Left''',''),
 
-  'Brace Thru 3':
+  TestSequence('Brace Thru 3',
   '''Heads Star Thru and Spread
 Pass the Ocean
 Recycle
@@ -128,20 +138,20 @@ Brace Thru
 Pass Thru
 Trade By
 Pass Thru
-Allemande Left ''',
+Allemande Left ''',''),
 
-  'California Twirl':
+  TestSequence('California Twirl',
   '''Sides Star Thru
 Centers California Twirl
 Star Thru
-Right and Left Thru ''',
+Right and Left Thru ''',''),
 
-  'Center 6':
+  TestSequence('Center 6',
   '''Heads Pass the Ocean
 Center 6 Turn Back
-Acey Deucey ''',
+Acey Deucey ''',''),
 
-  'Circle By':
+  TestSequence('Circle By',
   '''Heads Circle By 1/2 and 1/4
 Girls Pass Thru
 Centers Girls Cross
@@ -158,26 +168,26 @@ Boys Run
 Bend the Line
 Star Thru
 Pass Thru
-Allemande Left''',
+Allemande Left''',''),
 
-  'Cloverleaf':
+  TestSequence('Cloverleaf',
   '''Heads Pair Off and Spread
 Circulate
 Cloverleaf
 Centers Pass Thru and Cloverleaf
 Centers Pass Thru
 Allemande Left
-Promenade Home''',
+Promenade Home''',''),
 
-  'Cloverleaf 2' :
+  TestSequence('Cloverleaf 2',
 '''Heads Pass the Ocean While Sides Trade
 Outer 4 Cloverleaf While Centers Fan the Top
 Centers Recycle
 Zoom
 Centers Pass Thru
-Allemande Left''',
+Allemande Left''',''),
 
-  'Clover And':
+  TestSequence('Clover And',
   '''Heads Move In and Pass Thru
 Clover and Touch 1/4
 Centers Run
@@ -186,16 +196,16 @@ Out-Roll Circulate
 Girls Run
 Ferris Wheel
 Centers Square Thru 3
-Allemande Left''',
+Allemande Left''',''),
 
-  'Clover And 2':
+  TestSequence('Clover And 2',
 '''Sides Move In and Pass Thru
 Clover and Pass Thru
 Pass Thru
 Trade By
-Allemande Left''',
+Allemande Left''',''),
 
-  'Courtesy Turn':
+  TestSequence('Courtesy Turn',
   '''Heads Move In and Pass Thru
 Centers Courtesy Turn and Back Away
 Sides Star Thru
@@ -203,9 +213,9 @@ Double Pass Thru
 Ends Courtesy Turn
 Pass Thru
 Trade By
-Allemande Left''',
+Allemande Left''',''),
 
-  'Cross':
+  TestSequence('Cross',
   '''Heads Lead Right
 Boys Cross
 Cross
@@ -215,9 +225,9 @@ Circulate
 Boys Run
 Veer Left
 Bend the Line
-Centers Girls Cross''',
+Centers Girls Cross''',''),
 
-  'Cross 2':
+  TestSequence('Cross 2',
   '''Heads Touch a Quarter and Cross
 Slide Thru
 Step and Slide
@@ -227,9 +237,9 @@ Trade By
 Veer Left
 Bend the Line
 Square Thru 2
-Allemande Left''',
+Allemande Left''',''),
 
-  'Cross Fold':
+  TestSequence('Cross Fold',
   '''Heads Pass the Ocean
 Extend
 Girls Cross Fold
@@ -246,9 +256,9 @@ Trail Off
 Crossfire
 In-Roll Circulate
 Quarter In
-Right and Left Grand''',
+Right and Left Grand''',''),
 
-  'Cross Run':
+  TestSequence('Cross Run',
   '''Sides Touch a Quarter and Spread
 Circulate
 Centers Cross Run
@@ -261,9 +271,9 @@ Right and Left Thru
 Pass Thru
 Trade By
 Allemande Left
-Promenade Home''',
+Promenade Home''',''),
 
-  'Cross Run 2':
+  TestSequence('Cross Run 2',
   '''Heads Pass the Ocean
 Extend
 Spin the Top
@@ -277,9 +287,9 @@ Centers Pass Thru
 Right and Left Thru
 Pass Thru
 Allemande Left
-Promenade Home''',
+Promenade Home''',''),
 
-  'Double Star Thru' :
+  TestSequence('Double Star Thru',
   '''Heads Move In and Pass Thru
 Sides Separate
 Double Star Thru
@@ -293,17 +303,17 @@ Pass the Ocean
 Swing Thru
 Boys Run
 Wheel and Deal
-Allemande Left''',
+Allemande Left''',''),
 
-  'Face In' :
+  TestSequence('Face In',
   '''Sides Pair Off
 Pass Thru
 Face In
 Right and Left Thru
 Face In
-Double Pass Thru''',
+Double Pass Thru''',''),
 
-  'Facing Dancers' :
+  TestSequence('Facing Dancers',
   '''Heads Touch a Quarter
 Facing Dancers Pass Thru
 Facing Dancers Pass Thru
@@ -320,9 +330,9 @@ Touch a Quarter
 Boys Run
 Wheel and Deal
 Centers Square Thru 3
-Allemande Left''',
+Allemande Left''',''),
 
-  'Fold' :
+  TestSequence('Fold',
   '''Heads Pass the Ocean
 Extend
 Ends Fold
@@ -341,9 +351,9 @@ In-Roll Circulate
 Girls Run
 Wheel and Deal
 Centers Swap Around
-Allemande Left''',
+Allemande Left''',''),
 
-  'Half' :
+  TestSequence('Half',
   '''Heads Pass the Ocean
 Extend
 Half Split Circulate
@@ -362,9 +372,9 @@ Bend the Line
 Touch a Quarter
 Circulate
 Boys Run
-Allemande Left''',
+Allemande Left''',''),
 
-  'Half 2' :
+  TestSequence('Half 2',
   '''Sides Pass the Ocean
 Extend
 Centers Half Circulate
@@ -374,9 +384,9 @@ Boys Run
 Circulate
 Ferris Wheel
 Centers Square Thru 3
-Allemande Left''',
+Allemande Left''',''),
 
-  'Half Sashay' :
+  TestSequence('Half Sashay',
   '''Sides Half Sashay
 Heads Lead Right
 Touch a Quarter
@@ -394,9 +404,9 @@ Boys Run
 Right and Left Thru
 Pass Thru
 Trade By
-Allemande Left''',
+Allemande Left''',''),
 
-  'Sides' :
+  TestSequence('Sides',
   '''Four Ladies Chain 3/4
 Sides Pass the Ocean
 Extend
@@ -409,9 +419,9 @@ Boys Run
 Veer Left
 Ferris Wheel
 Centers Square Thru 3
-Allemande Left''',
+Allemande Left''',''),
 
-  'Hinge' :
+  TestSequence('Hinge',
   '''Heads Touch a Quarter
 Sides Separate and Touch 1/4
 Centers Hinge
@@ -423,9 +433,9 @@ Extend
 Boys Run
 Ferris Wheel
 Centers Pass Thru
-Allemande Left''',
+Allemande Left''',''),
 
-  'Leaders' :
+  TestSequence('Leaders',
   '''Heads Touch a Quarter
 Leads Turn Back
 Veer Right
@@ -436,9 +446,9 @@ Load the Boat
 Star Thru
 Ferris Wheel
 Centers Square Thru 3
-Allemande Left''',
+Allemande Left''',''),
 
-  'Outer' : '''Heads Pass the Ocean
+  TestSequence('Outer', '''Heads Pass the Ocean
 Extend
 Spin the Top
 Outer 4 Turn Back
@@ -457,9 +467,9 @@ Bend the Line
 Touch a Quarter
 Circulate
 Boys Run
-Allemande Left''',
+Allemande Left''',''),
 
-  'Partner Tag' :
+  TestSequence('Partner Tag',
   '''Heads Move In Touch a Quarter and Roll
 Sides Partner Tag
 Any Hand Swing Thru
@@ -472,9 +482,9 @@ Slide Thru
 Circulate
 Wheel and Deal
 Allemande Left
-Right and Left Grand''',
+Right and Left Grand''',''),
 
-  'Quarter In' :
+  TestSequence('Quarter In',
   '''Heads Lead Right
 Quarter In
 Pass Thru
@@ -492,9 +502,9 @@ Girls Pass Thru
 Touch a Quarter
 Boys Run
 Wheel and Deal
-Allemande Left''',
+Allemande Left''',''),
 
-  'Roll' :
+  TestSequence('Roll',
   '''Heads Move In Lead Right and Roll
 Sides Separate and Touch 1/4
 Split Circulate and Roll
@@ -506,9 +516,9 @@ Boys Run
 Pass Thru
 Wheel and Deal
 Centers Square Thru 3
-Allemande Left''',
+Allemande Left''',''),
 
-  'Run' :
+  TestSequence('Run',
   '''Sides Pass the Ocean
 Boys Run
 Girls Run
@@ -528,9 +538,9 @@ Boys Run
 Circulate
 Ferris Wheel
 Centers Square Thru 3
-Allemande Left''',
+Allemande Left''',''),
 
-  'Run 2' :
+  TestSequence('Run 2',
   '''Head Couples Pass Thru Separate Around 2 to a Line
 Pass Thru
 Ends Cross Fold
@@ -539,9 +549,9 @@ Ends Trade and Roll
 Touch a Quarter
 Boys Run
 Centers Face Out
-Allemande Left''',
+Allemande Left''',''),
 
-  'Separate' :
+  TestSequence('Separate',
   '''Heads Lead Right
 Pass Thru
 Ends Separate
@@ -561,9 +571,9 @@ Circulate
 Boys Run
 Ferris Wheel
 Centers Reverse Swap Around
-Allemande Left''',
+Allemande Left''',''),
 
-  'Single Wheel' :
+  TestSequence('Single Wheel',
   '''Heads Lead Right
 Veer Left
 Girls Single Wheel
@@ -590,9 +600,9 @@ Circulate
 Boys Run
 Ferris Wheel
 Centers Reverse Swap Around
-Allemande Left''',
+Allemande Left''',''),
 
-  'Slide Thru' :
+  TestSequence('Slide Thru',
   '''Heads Pass Out
 Slide Thru
 Hinge
@@ -612,9 +622,9 @@ Boys Slide Thru
 Turn and Deal
 Centers Chase Right
 Centers Girls Cross
-Allemande Left''',
+Allemande Left''',''),
 
-  'Spread' :
+  TestSequence('Spread',
   '''Heads Touch a Quarter and Spread
 Centers Pass the Ocean
 Flip the Diamond
@@ -628,9 +638,9 @@ Boys Run
 Pass Thru
 Wheel and Deal
 Centers Reverse Swap Around
-Allemande Left''',
+Allemande Left''',''),
 
-  'Square the Set' :
+  TestSequence('Square the Set',
   '''Heads Lead Right
 Veer Left
 Bend the Line
@@ -647,9 +657,9 @@ Boys Run
 Wheel and Deal
 Zoom
 Centers Square Thru 3
-Allemande Left''',
+Allemande Left''',''),
 
-  'Star Thru' :
+  TestSequence('Star Thru',
   '''Heads Pass the Ocean
 Extend
 Quarter Thru
@@ -662,9 +672,9 @@ Pass Thru
 Wheel and Deal
 Zoom
 Centers Pass Thru
-Allemande Left''',
+Allemande Left''',''),
 
-  'Sweep 1/4' :
+  TestSequence('Sweep 1/4',
   '''Heads Lead Right
 Veer Left
 Wheel and Deal and Sweep a Quarter
@@ -678,9 +688,9 @@ Recycle and Sweep a Quarter
 Touch a Quarter
 Circulate
 Boys Run
-Allemande Left''',
+Allemande Left''',''),
 
-  '3/4 Tag' :
+  TestSequence('3/4 Tag',
   '''Heads Pass the Sea
 Extend
 3/4 Tag the Line
@@ -693,9 +703,9 @@ Pass Thru
 Wheel and Deal
 Zoom
 Centers Pass Thru
-Allemande Left''',
+Allemande Left''',''),
 
-  'Trailers' :
+  TestSequence('Trailers',
   '''Sides Pass the Ocean
 Extend
 Trailers Turn Back
@@ -709,9 +719,9 @@ Boys Run
 Circulate
 Ferris Wheel
 Centers Square Thru 3
-Allemande Left''',
+Allemande Left''',''),
 
-  'Triple Star Thru' :
+  TestSequence('Triple Star Thru',
   '''Sides Lead Left
 Veer Right
 Leads Quarter In
@@ -722,18 +732,18 @@ Swing Thru
 Boys Run
 Ferris Wheel
 Centers Reverse Swap Around
-Allemande Left''',
+Allemande Left''',''),
 
-  'Triple Trade' :
+  TestSequence('Triple Trade',
   '''Sides Pass the Ocean
 Triple Trade
 Acey Deucey
 Extend
 Spin the Top
 Mix
-Triple Trade''',
+Triple Trade''',''),
 
-  'Triple Trade 2' :
+  TestSequence('Triple Trade 2',
 '''Sides Pass the Ocean
 Extend
 Acey Deucey Once and a Half
@@ -745,9 +755,9 @@ Centers Circulate
 Boys Run
 Pass Thru
 Quarter In
-Right and Left Grand''',
+Right and Left Grand''',''),
 
-  'Turn Thru' :
+  TestSequence('Turn Thru',
   '''Heads Lead Right
 Veer Left
 Bend the Line
@@ -762,9 +772,9 @@ Boys Run
 Centers Walk and Dodge
 Flutterwheel
 Right and Left Thru
-Allemande Left''',
+Allemande Left''',''),
 
-  'ZigZag' :
+  TestSequence('ZigZag',
   '''Sides Star Thru and Spread
 Touch a Quarter
 Zig Zig
@@ -784,9 +794,9 @@ Heads Slide Thru
 Centers Chase Right
 Ferris Wheel
 Centers Cross Trail Thru
-Allemande Left''',
+Allemande Left''',''),
 
-  'Zoom' :
+  TestSequence('Zoom',
   '''Sides Touch a Quarter
 Boys Zoom
 Centers Zoom
@@ -801,9 +811,9 @@ Boys Run
 Wheel and Deal
 Zoom
 Centers Square Thru 3
-Allemande Left''',
+Allemande Left''',''),
 
-  'Split Square Thru' :
+  TestSequence('Split Square Thru',
   '''Heads Start Split Square Thru 3
 Partner Trade Boys Roll
 Split Square Thru 3
@@ -815,9 +825,9 @@ Star Thru
 Pass Thru
 Wheel and Deal
 Centers Pass Thru
-Allemande Left''',
+Allemande Left''',''),
 
-  'Split Square Thru 2' :
+  TestSequence('Split Square Thru 2',
   '''Sides Pass the Ocean
 Centers Lockit
 Split Square Thru 2
@@ -828,9 +838,9 @@ Cast Off Three Quarters
 Pass Thru
 Bend the Line
 Star Thru
-Allemande Left''',
+Allemande Left''',''),
 
-  'Left Split Square Thru' :
+  TestSequence('Left Split Square Thru',
   '''Sides Start Left Split Square Thru
 Right Roll to a Wave
 Recycle
@@ -846,9 +856,9 @@ Swing Thru
 Boys Run
 Ferris Wheel
 Centers Square Thru 3
-Allemande Left''',
+Allemande Left''',''),
 
-  'Square Thru' :
+  TestSequence('Square Thru',
   '''Sides Square Thru 2
 Left Square Thru 3
 Right Roll to a Wave
@@ -863,9 +873,9 @@ Boys Run
 Circulate
 Ferris Wheel
 Centers Square Thru 3
-Allemande Left''',
+Allemande Left''',''),
 
-  'Cross Over Circulate' :
+  TestSequence('Cross Over Circulate',
   '''Heads Lead Right While Sides Half Sashay
 Veer Left
 Boys Cross Over Circulate
@@ -879,9 +889,9 @@ Star Thru
 Right and Left Thru
 Pass Thru
 Trade By
-Allemande Left''',
+Allemande Left''',''),
 
-  'Interlocked Diamond Chain Thru' :
+  TestSequence('Interlocked Diamond Chain Thru',
   '''Heads Lead Right
 Veer Left
 Trade Circulate
@@ -891,9 +901,9 @@ Interlocked Diamond Chain Thru
 Centers Pass Thru
 Girls Chase Right
 Slide
-Right and Left Grand''',
+Right and Left Grand''',''),
 
-  'Peel to a Diamond Chain Thru' :
+  TestSequence('Peel to a Diamond Chain Thru',
   '''Heads Lead Right
 Girls Cross
 Peel to a Diamond Chain Thru
@@ -901,9 +911,9 @@ Girls Run
 Ferris Wheel
 Centers Square Thru 3
 Allemande Left
-Promenade Home''',
+Promenade Home''',''),
 
-  'Triangle Circulate' :
+  TestSequence('Triangle Circulate',
   '''Sides Pass the Ocean
 Extend
 Switch to an Hourglass
@@ -927,9 +937,9 @@ Recycle
 Pass Thru
 Centers Cross Trail Thru
 Ends Turn Back
-Allemande Left ''',
+Allemande Left ''',''),
 
-  'Squeeze' :
+  TestSequence('Squeeze',
   '''Heads Slide Thru and Spread
 Pass Thru
 Wheel and Deal
@@ -956,9 +966,9 @@ Wheel and Deal
 Zoom
 Centers Pass Thru
 Pass Thru
-Allemande Left ''',
+Allemande Left ''',''),
 
-  'Squeeze 2' :
+  TestSequence('Squeeze 2',
   '''Heads Lead Right
 Veer Left
 Bend the Line
@@ -980,9 +990,9 @@ Slide Thru
 Pass Thru
 Wheel and Deal
 Centers Reverse Swap Around
-Allemande Left''',
+Allemande Left''',''),
 
-  'Zing' :
+  TestSequence('Zing',
   '''Heads Pass the Ocean
 Extend
 Ends Zing
@@ -996,9 +1006,9 @@ Girls Trade
 Wheel and Deal
 Pass to the Center
 Centers Pass Thru
-Allemande Left''',
+Allemande Left''',''),
 
-  'Zing 2' :
+  TestSequence('Zing 2',
   '''Heads Lead Right
 Veer Left
 Zing
@@ -1016,9 +1026,9 @@ Circulate
 Boys Run
 Bend the Line
 Pass Thru
-Promenade Home''',
+Promenade Home''',''),
 
-  'Squeeze the Hourglass' :
+  TestSequence('Squeeze the Hourglass',
   '''Heads Lead Right
 Veer Left
 Switch to an Hourglass
@@ -1029,9 +1039,9 @@ All 8 Left Swing Thru
 Boys Run
 All 8 Crossfire
 Boys Run
-All 4 Couples Right and Left Thru''',
+All 4 Couples Right and Left Thru''',''),
 
-  'Squeeze the Galaxy' :
+  TestSequence('Squeeze the Galaxy',
   '''Heads Lead Right
 Veer Left
 Switch to an Hourglass
@@ -1043,9 +1053,9 @@ Circulate
 Ferris Wheel
 Centers Pass Thru
 Allemande Left
-Right and Left Grand''',
+Right and Left Grand''',''),
 
-  'Butterfly' :
+  TestSequence('Butterfly',
   '''Heads Lead Right
 Pass Thru
 Outer 4 Squeeze
@@ -1067,9 +1077,9 @@ Star Thru
 Bend the Line
 Star Thru
 Pass Thru
-Allemande Left''',
+Allemande Left''',''),
 
-  'O' :
+  TestSequence('O',
   '''Sides Face Out
 O Pass Out
 O Centers Trade
@@ -1087,17 +1097,17 @@ Hinge
 Boys Run
 Ferris Wheel
 Centers Pass Thru
-Allemande Left''',
+Allemande Left''',''),
 
-  'Pass Thru' :
+  TestSequence('Pass Thru',
   '''Sides Pass the Ocean
 Extend
 Pass Thru
 Centers Pass the Ocean
 Clover and Pass Thru
-Allemande Left''',
+Allemande Left''',''),
 
-  'Pass Thru 2' :
+  TestSequence('Pass Thru 2',
   '''Side Ladies Chain
 Sides Dixie Style to a Wave
 Heads Half Sashay
@@ -1111,9 +1121,9 @@ Horseshoe Turn
 Star Thru
 Ferris Wheel
 Centers Square Thru 3
-Allemande Left''',
+Allemande Left''',''),
 
-  'To A Wave' :
+  TestSequence('To A Wave',
   '''Heads Square Chain Thru to a Wave
 Extend
 Recycle
@@ -1125,9 +1135,9 @@ Ping Pong Circulate
 Centers Recycle
 Half Sashay
 Centers Square Thru 3
-Allemande Left''',
+Allemande Left''',''),
 
-  'Kick Off' :
+  TestSequence('Kick Off',
   '''Heads Lead Right
 Boys Kick Off
 Centers Kick Off
@@ -1150,9 +1160,9 @@ Swing Thru
 Boys Run
 Circulate
 Wheel and Deal
-Allemande Left''',
+Allemande Left''',''),
 
-  'Twist And' :
+  TestSequence('Twist And',
   '''Heads Lead Right
 Star Thru
 Twist and Pass Out
@@ -1168,9 +1178,9 @@ Bend the Line
 Pass Thru
 Wheel and Deal
 Centers Pass Thru
-Allemande Left''',
+Allemande Left''',''),
 
-  'Twist And 2' :
+  TestSequence('Twist And 2',
   '''Heads Lead Right
 Veer Left
 Bend the Line
@@ -1185,9 +1195,9 @@ Acey Deucey
 Boys Run
 Ferris Wheel
 Centers Square Thru 3
-Allemande Left''',
+Allemande Left''',''),
 
-  'As Couples' :
+  TestSequence('As Couples',
   '''Heads Star Thru and Spread
 As Couples Left Square Chain Thru to a Wave
 As Couples Switch the Wave and Roll
@@ -1196,9 +1206,9 @@ As Couples Alter the Wave
 As Couples Recycle
 Star Thru
 Leaders Trade
-Allemande Left''',
+Allemande Left''',''),
 
-  'Crazy' :
+  TestSequence('Crazy',
   '''Heads Lead Right
 Touch a Quarter
 Crazy Counter Rotate Twice
@@ -1215,9 +1225,9 @@ Boys Run
 Circulate
 Ferris Wheel
 Centers Square Thru 3
-Allemande Left''',
+Allemande Left''',''),
 
-  'Catch' :
+  TestSequence('Catch',
   '''Heads Lead Right
 Catch 2
 Boys Run
@@ -1226,9 +1236,9 @@ In-Roll Circulate
 Boys Run
 Wheel and Deal
 Centers Pass Thru
-Allemande Left''',
+Allemande Left''',''),
 
-  'Split Catch' :
+  TestSequence('Split Catch',
   '''Heads Move In and Right and Left Thru
 Left Split Catch 3
 Boys Run
@@ -1248,9 +1258,9 @@ Star Thru
 Pass Thru
 Centers Reverse Swap Around
 Ends Trade
-Allemande Left''',
+Allemande Left''',''),
 
-  'Vertical Tag' :
+  TestSequence('Vertical Tag',
   '''Heads Lead Right
 Veer Left
 Vertical 1/4 Tag
@@ -1273,9 +1283,9 @@ Extend
 Girls Run
 Wheel and Deal
 Centers Pass Thru
-Allemande Left''',
+Allemande Left''',''),
 
-  'Adjust' :
+  TestSequence('Adjust',
   '''Heads Pass the Ocean
 Extend
 Hinge
@@ -1296,9 +1306,9 @@ Pass Thru
 Wheel and Deal
 Centers Pass Thru
 Right and Left Thru
-Allemande Left''',
+Allemande Left''',''),
 
-  'Bend the Line' :
+  TestSequence('Bend the Line',
   '''Heads Pass the Ocean
 Extend
 Circulate 1.5
@@ -1306,9 +1316,9 @@ Boys Run
 Bend the Line
 Centers Star Thru
 Centers Pass Thru
-Allemande Left''',
+Allemande Left''',''),
 
-  'Diamond Circulate' :
+  TestSequence('Diamond Circulate',
   '''Sides Pass the Ocean
 Extend
 Hinge
@@ -1334,9 +1344,9 @@ Boys Run
 Centers Pass Thru
 Veer Left
 Wheel and Deal
-Allemande Left''',
+Allemande Left''',''),
 
-  'Tandem' :
+  TestSequence('Tandem',
   '''Sides Pass the Ocean
 Extend
 Tandem Left Swing Thru
@@ -1354,9 +1364,9 @@ Zig Zag
 Recycle
 Centers Pass Thru
 Quarter In
-Allemande Left''',
+Allemande Left''',''),
 
-  'Bounce' :
+  TestSequence('Bounce',
   '''Heads Lead Right
 Veer Left
 Bounce the Ends
@@ -1374,9 +1384,9 @@ Wheel and Deal
 Zoom
 Centers Pass Thru
 Allemande Left
-Promenade Home''',
+Promenade Home''',''),
 
-  'Bounce 2' :
+  TestSequence('Bounce 2',
   '''Heads Lead Right
 Veer Left
 Bounce the Boys and Roll
@@ -1397,9 +1407,9 @@ Chain Reaction
 Hinge
 Swing Thru
 Circulate
-Promenade Home''',
+Promenade Home''',''),
 
-  'Siamese' :
+  TestSequence('Siamese',
   '''Heads Lead Right
 Veer Left
 Fan the Top
@@ -1427,9 +1437,9 @@ Wheel and Deal
 Zoom
 Centers Swap Around
 Heads Half Sashay
-Allemande Left''',
+Allemande Left''',''),
 
-  'Transfer And' :
+  TestSequence('Transfer And',
   '''Sides Pair Off
 Star Thru
 Left Touch a Quarter
@@ -1449,9 +1459,9 @@ Acey Deucey
 Circulate
 Ferris Wheel
 Centers Square Thru 3
-Allemande Left''',
+Allemande Left''',''),
 
-  'Phantom' :
+  TestSequence('Phantom',
   '''Heads Star Thru and Spread
 Boys Bend the Line
 Phantom Right and Left Thru
@@ -1469,9 +1479,9 @@ Star Thru
 Girls Circulate
 Ferris Wheel
 Centers Reverse Swap Around
-Allemande Left''',
+Allemande Left''',''),
 
-  'Center 6 Circulate' :
+  TestSequence('Center 6 Circulate',
   '''Heads Lead Right
 Star Thru
 Touch a Quarter
@@ -1490,9 +1500,9 @@ Circulate
 Turn and Deal
 Center 4 Right Roll to a Wave
 Center 4 Step Thru
-Allemande Left''',
+Allemande Left''',''),
 
-  'Little' :
+  TestSequence('Little',
   '''Sides Pass the Ocean
 Little Outsides Out
 Centers Hinge
@@ -1508,9 +1518,9 @@ Touch a Quarter
 Boys Run
 Trade
 Centers Pass Thru
-Allemande Left''',
+Allemande Left''',''),
 
-  'Slip' :
+  TestSequence('Slip',
   '''Sides Pass the Ocean
 Slip
 Extend
@@ -1522,9 +1532,9 @@ Star Thru
 Pass to the Center
 Centers Flutterwheel
 Centers Pass Thru
-Allemande Left''',
+Allemande Left''',''),
 
-  'Turn and Deal' :
+  TestSequence('Turn and Deal',
   '''Heads Pass the Ocean
 Extend
 Fan the Top
@@ -1538,9 +1548,9 @@ Star Thru
 Touch a Quarter
 Circulate
 Boys Run
-Allemande Left''',
+Allemande Left''',''),
 
-  'Truck' :
+  TestSequence('Truck',
   '''Heads Star Thru and Spread
 Touch a Quarter
 Circulate
@@ -1561,10 +1571,10 @@ In-Roll Circulate
 Boys Run
 Ferris Wheel
 Centers Pass Thru
-Allemande Left''',
+Allemande Left''',''),
 
 /*    Does not work, Concentric Right Roll to a Wave fails
-  'Concentric' :
+  TestSequence('Concentric',
   '''Heads Pass the Ocean
 Extend
 Circulate 1.5
@@ -1586,10 +1596,10 @@ Boys Run
 Centers Pass Thru
 Right and Left Thru
 Pass Thru
-Allemande Left''',
+Allemande Left''',''),
  */
 
-  'Checkpoint' :
+  TestSequence('Checkpoint',
   '''Heads Pass the Ocean
 Extend
 Swing Thru
@@ -1608,9 +1618,9 @@ Face Out
 Bend the Line
 Star Thru
 Pass Thru
-Allemande Left''',
+Allemande Left''',''),
 
-  'Peel to a Diamond' :
+  TestSequence('Peel to a Diamond',
   '''Heads Lead Right
 Veer Left
 Peel to a Diamond
@@ -1630,9 +1640,9 @@ Bend the Line
 Star Thru
 Right and Left Thru
 Pass Thru
-Allemande Left''',
+Allemande Left''',''),
 
-  'Wheel Around' :
+  TestSequence('Wheel Around',
   '''Heads Square Thru 4
 Dixie Style to a Wave
 Boys Trade
@@ -1651,9 +1661,9 @@ Bend the Line
 Star Thru
 Zoom
 Ends Trade
-Allemande Left''',
+Allemande Left''',''),
 
-  'Stagger' :
+  TestSequence('Stagger',
   '''Sides Star Thru
 Centers Pass Thru
 Boys Truck
@@ -1673,9 +1683,9 @@ Star Thru
 Pass Thru
 Wheel and Deal
 Centers Pass Thru
-Allemande Left''',
+Allemande Left''',''),
 
-  'Hocus Pocus' :
+  TestSequence('Hocus Pocus',
   '''Heads Touch a Quarter and Spread
 Hocus Pocus
 Turn Back
@@ -1690,9 +1700,9 @@ Right and Left Thru
 Pass Thru
 Wheel and Deal
 Centers Square Thru 3
-Allemande Left''',
+Allemande Left''',''),
 
-  'Finish' :
+  TestSequence('Finish',
   '''Sides Lead Right
 Veer Left
 Bend the Line
@@ -1708,9 +1718,9 @@ Right and Left Thru
 Pass Thru
 Wheel and Deal
 Centers Pass Thru
-Allemande Left''',
+Allemande Left''',''),
 
-  'Anything Concept' :
+  TestSequence('Anything Concept',
   '''Heads Lead Right
 Touch 1/4 Motivate
 Split Counter Coordinate
@@ -1721,9 +1731,9 @@ Belles Run
 Split Counter Perk Up
 Ferris Wheel
 Centers Square Thru 3
-Allemande Left''',
+Allemande Left''',''),
 
-  'Explode' :
+  TestSequence('Explode',
   '''Heads Lead Right
 Veer Left
 Sides Hinge
@@ -1738,9 +1748,9 @@ Star Thru
 Boys Circulate
 Ferris Wheel
 Centers Pass Thru
-Allemande Left''',
+Allemande Left''',''),
 
-  'Triple Box' :
+  TestSequence('Triple Box',
   '''Heads Lead Right
 Triple Box Left Chase
 Triple Box Walk and Dodge
@@ -1758,9 +1768,9 @@ Bend the Line
 Touch a Quarter
 Circulate
 Boys Run
-Allemande Left''',
+Allemande Left''',''),
 
-  'Triple Box 2' :
+  TestSequence('Triple Box 2',
 '''Sides Pass the Ocean
 Extend
 Triple Box Circulate
@@ -1770,9 +1780,9 @@ Left Swing Thru
 Recycle
 Pass Thru
 Trade By
-Allemande Left''',
+Allemande Left''',''),
 
-  'Start' :
+  TestSequence('Start',
   '''Heads Lead Right
 Boys Cross
 Centers U-turn Back
@@ -1781,9 +1791,9 @@ Centers Trade
 Girls Start Swing Thru
 Circulate
 Heads Trade
-Right and Left Grand''',
+Right and Left Grand''',''),
 
-  'Cast Back' :
+  TestSequence('Cast Back',
   '''Heads Pair Off
 Pass Thru
 Outer 4 Cross Cast Back
@@ -1802,9 +1812,9 @@ Pass Thru
 Wheel and Deal
 Double Pass Thru
 Outer 4 Trade
-Allemande Left''',
+Allemande Left''',''),
 
-  'Individually Roll' :
+  TestSequence('Individually Roll',
   '''Heads As Couples Touch 1/4
 As Couples Follow Your Neighbor and Individually Roll
 Girls Pass Thru
@@ -1822,9 +1832,9 @@ Girls Trade
 Bend the Line
 Star Thru
 Pass Thru
-Allemande Left''',
+Allemande Left''',''),
 
-  'Horseshoe Turn' :
+  TestSequence('Horseshoe Turn',
   '''Heads Touch a Quarter
 Sides Trade
 Horseshoe Turn
@@ -1834,9 +1844,9 @@ Horseshoe Turn
 Centers Run and Roll
 Double Pass Thru
 Ends U-turn Back
-Allemande Left''',
+Allemande Left''',''),
 
-  'Rotate (C-2)' :
+  TestSequence('Rotate (C-2)',
   '''Heads Lead Right
 Veer Left
 Bend the Line
@@ -1849,9 +1859,9 @@ Wheel and Deal
 Touch a Quarter
 Circulate
 Boys Run
-Allemande Left''',
+Allemande Left''',''),
 
-  'Rotary' :
+  TestSequence('Rotary',
   '''Heads Lead Right
 Rotary Explode and Right and Left Thru
 Cycle and Wheel
@@ -1863,9 +1873,9 @@ Centers Circulate
 Boys Run
 Trade Circulate
 Boys Run
-Right and Left Grand''',
+Right and Left Grand''',''),
 
-  'Outer 6 Circulate' :
+  TestSequence('Outer 6 Circulate',
   '''Heads Pass the Ocean
 Extend
 Switch to an Hourglass
@@ -1885,9 +1895,9 @@ Boys Touch a Quarter
 Boys Run
 Left Turn and Deal
 Right and Left Thru
-Allemande Left''',
+Allemande Left''',''),
 
-  'Ignore' :
+  TestSequence('Ignore',
   '''Heads Lead Right
 Ignore the Head Girls Wheel Thru
 Boys Trade and Roll
@@ -1907,9 +1917,9 @@ Boys Run
 Circulate
 Ferris Wheel
 Centers Pass Thru
-Allemande Left''',
+Allemande Left''',''),
 
-  'Split Circulate' :
+  TestSequence('Split Circulate',
   '''Heads Touch a Quarter
 Girls Touch a Quarter
 Split Circulate
@@ -1928,9 +1938,9 @@ Double Pass Thru
 Trade and Roll
 Star Thru
 Centers Square Thru 3
-Allemande Left''',
+Allemande Left''',''),
 
-  'Grand Swing Thru' :
+  TestSequence('Grand Swing Thru',
   '''Heads Pass the Ocean
 Extend
 Acey Deucey Once and a Half
@@ -1948,9 +1958,9 @@ Star Thru
 Boys Trade
 Ferris Wheel
 Centers Pass Thru
-Allemande Left''',
+Allemande Left''',''),
 
-  'Ripple' :
+  TestSequence('Ripple',
   '''Heads Lead Right
 Veer Left
 Head Boys Ripple the Line
@@ -1964,9 +1974,9 @@ Wheel and Deal
 Turn and Deal
 Center 4 U-turn Back and Pass Thru
 Allemande Left
-Promenade Home''',
+Promenade Home''',''),
 
-  'While Others' :
+  TestSequence('While Others',
   '''Heads Touch a Quarter
 Facing Dancers Pass Thru While Others Turn Back
 Boys Run
@@ -1989,9 +1999,9 @@ Wheel and Deal
 Centers Flutterwheel
 Centers Pass Thru
 Allemande Left
-Promenade Home''',
+Promenade Home''',''),
 
-  'Cross 3' :
+  TestSequence('Cross 3',
   '''Heads Lead Right
 Touch a Quarter and Cross
 Wheel and Deal
@@ -2007,9 +2017,9 @@ Bend the Line
 Touch a Quarter
 Circulate
 Boys Run
-Allemande Left''',
+Allemande Left''',''),
 
-  'Flutterwheel and Sweep 1/4' :
+  TestSequence('Flutterwheel and Sweep 1/4',
   '''Heads Lead Right
 Flutterwheel and and Sweep a Quarter
 Pass Thru
@@ -2023,9 +2033,9 @@ Girls Zoom
 Centers Pass Thru
 Right and Left Thru
 Veer Right
-Promenade Home''',
+Promenade Home''',''),
 
-  'Saparate Go Around' :
+  TestSequence('Saparate Go Around',
   '''Heads Move In and Turn Thru
 Centers Separate Around One to a Line
 Pass Thru
@@ -2035,9 +2045,9 @@ Split Circulate
 Girls Run
 Ferris Wheel
 Centers Pass Thru
-Allemande Left''',
+Allemande Left''',''),
 
-  'Those Who Can Pass Thru' :
+  TestSequence('Those Who Can Pass Thru',
   '''Heads Touch 1/4
 Those Who Can Pass Thru
 Centers Step to a Wave
@@ -2047,9 +2057,9 @@ Star Thru
 Wheel and Deal
 Zoom
 Centers Square Thru 3
-Allemande Left''',
+Allemande Left''',''),
 
-  'Cast a Shadow 3/4 Slip' :
+  TestSequence('Cast a Shadow 3/4 Slip',
   '''Heads Lead Right
 Veer Left
 Cast a Shadow Centers Go 3/4
@@ -2060,9 +2070,9 @@ Turn and Deal
 Touch a Quarter
 Circulate
 Boys Run
-Allemande Left''',
+Allemande Left''',''),
 
-  'Spin the Windmill' :
+  TestSequence('Spin the Windmill',
   '''Heads Pass the Sea
 Spin the Windmill Out
 Centers Left Quarter Thru
@@ -2081,9 +2091,9 @@ Girls Circulate
 Bend the Line
 Star Thru
 Pass Thru
-Allemande Left''',
+Allemande Left''',''),
 
-  'Actives Actions' :
+  TestSequence('Actives Actions',
   '''Heads Separate and Star Thru
 Double Pass Thru
 Horseshoe Turn
@@ -2100,9 +2110,9 @@ Boys Run
 Circulate
 Ferris Wheel
 Centers Square Thru 3
-Allemande Left''',
+Allemande Left''',''),
 
-  'Linear Cycle' :
+  TestSequence('Linear Cycle',
   '''Heads Touch 1/4 and Spread
 Circulate
 Linear Cycle
@@ -2121,9 +2131,9 @@ Brace Thru
 Touch a Quarter
 Circulate
 Boys Run
-Allemande Left''',
+Allemande Left''',''),
 
-  'Couples' :
+  TestSequence('Couples',
   '''Heads Touch 1/4 and Spread
 Couples Partner Trade
 Centers Trade
@@ -2144,9 +2154,9 @@ Boys Run
 Trade By
 Brace Thru
 Pass Thru
-Allemande Left''',
+Allemande Left''',''),
 
-  'Waves' :
+  TestSequence('Waves',
   '''Heads Touch 1/4 and Spread
 Wave Dancers Trade
 Centers Pass the Ocean
@@ -2163,9 +2173,9 @@ As Couples Extend
 Circulate
 Ferris Wheel
 Centers Square Thru 3
-Allemande Left''',
+Allemande Left''',''),
 
-  'Recycle Twice and Roll' :
+  TestSequence('Recycle Twice and Roll',
   '''Heads Lead Right
 Recycle Twice and Roll
 Left Swing Thru
@@ -2176,9 +2186,9 @@ Right and Left Thru
 Touch a Quarter
 Circulate
 Boys Run
-Allemande Left''',
+Allemande Left''',''),
 
-  'Anything the Windmill' :
+  TestSequence('Anything the Windmill',
   '''Sides Pass the Ocean
 Very Centers Hinge
 Side Boys Face In
@@ -2190,9 +2200,9 @@ Trade By
 Veer Left
 Bend the Line
 Quarter In
-Right and Left Grand''',
+Right and Left Grand''',''),
 
-  'Anything the Windmill 2' :
+  TestSequence('Anything the Windmill 2',
 '''Heads Pass the Ocean
 Extend
 Extend the Windmill Left
@@ -2203,9 +2213,9 @@ Right and Left Thru
 Pass Thru
 Wheel and Deal
 Centers Pass Thru
-Allemande Left''',
+Allemande Left''',''),
 
-  'Magic Transfer and' :
+  TestSequence('Magic Transfer and',
   '''Heads Touch 1/4
 Make Magic
 Magic Transfer and Left 1/4 Thru
@@ -2215,16 +2225,16 @@ Centers Square Thru 3
 Box the Gnat
 Right and Left Thru
 Allemande Left
-Right and Left Grand''',
+Right and Left Grand''',''),
 
-  'Tag Back to a Wave' :
+  TestSequence('Tag Back to a Wave',
   '''Heads Star Thru and Spread
 Pass Thru
 Tag Back to a Wave
 Extend
-Right and Left Grand''',
+Right and Left Grand''',''),
 
-  'All 8' :
+  TestSequence('All 8',
   '''Hinge
 Adjust to Thar
 All 8 Slip
@@ -2234,9 +2244,9 @@ All 8 Cross Roll
 All 8 Swing Thru 1.5
 All 8 Switch the Wave
 Trade
-Promenade Home''',
+Promenade Home''',''),
 
-  'Chain Reaction' :
+  TestSequence('Chain Reaction',
 '''Sides Pass the Ocean
 Girls Run
 Chain Reaction Turn the Star 3/4
@@ -2248,18 +2258,18 @@ Star Thru
 Circulate
 Ferris Wheel
 Centers Square Thru 3
-Allemande Left''',
+Allemande Left''',''),
 
-  'Mix' :
+  TestSequence('Mix',
 '''Sides Lead Right
 Veer Left
 Reverse Order Mix
 Bend the Line
 Pass Thru
 Quarter In
-Right and Left Grand''',
+Right and Left Grand''',''),
 
-  '6x2 Acey Deucey' :
+  TestSequence('6x2 Acey Deucey',
 '''Heads Lead Right
 Veer Left
 Girls Hinge
@@ -2270,9 +2280,9 @@ Outer 2 Counter Rotate
 Chain Reaction
 Left Tag the Line
 Centers Turn Back
-Allemande Left''',
+Allemande Left''',''),
 
-  'Swing and Mix' :
+  TestSequence('Swing and Mix',
 '''Sides Pass the Ocean
 Extend
 Reverse Order Swing and Mix
@@ -2283,9 +2293,9 @@ Pass Thru
 Wheel and Deal
 Zoom
 Centers Square Thru 3
-Allemande Left''',
+Allemande Left''',''),
 
-  'Mini-Busy' :
+  TestSequence('Mini-Busy',
 '''Sides Lead Right
 Veer Left
 Mini Busy But Cut the Diamond
@@ -2293,9 +2303,9 @@ Chain Reaction
 Tag the Line
 Zoom
 Ends Turn Back
-Right and Left Grand''',
+Right and Left Grand''',''),
 
-  'Motivate' :
+  TestSequence('Motivate',
 '''Sides Pass the Ocean
 Extend
 Motivate
@@ -2306,9 +2316,9 @@ Boys Run
 Circulate
 Ferris Wheel
 Centers Square Thru 3
-Allemande Left''',
+Allemande Left''',''),
 
-  'Remake' :
+  TestSequence('Remake',
 '''Sides Pass the Ocean
 Extend
 Centers Reverse Order Left Remake
@@ -2319,9 +2329,9 @@ Boys Run
 Track 2
 Recycle
 Right and Left Thru
-Allemande Left''',
+Allemande Left''',''),
 
-  'Slide' :
+  TestSequence('Slide',
 '''Sides Pass the Ocean
 Slide
 Slide
@@ -2336,9 +2346,9 @@ Right and Left Thru
 Star Thru
 Pass Thru
 Trade By
-Allemande Left''',
+Allemande Left''',''),
 
-  'Slither' :
+  TestSequence('Slither',
 '''Sides Pass the Sea
 Slither
 Slither
@@ -2357,17 +2367,17 @@ Wheel and Deal
 Star Thru
 Boys Trade
 Wheel and Deal
-Allemande Left''',
+Allemande Left''',''),
 
-  'Split Counter Rotate' :
+  TestSequence('Split Counter Rotate',
 '''Sides Pass Out
 Split Counter Rotate
 Centers Pass Thru While Ends Face In
 Split Counter Rotate
 Ends Trade While Centers Pass Out
-Allemande Left''',
+Allemande Left''',''),
 
-  'Swing' :
+  TestSequence('Swing',
 '''Sides Pass the Ocean
 Swing
 Extend
@@ -2380,9 +2390,9 @@ Double Pass Thru
 Face Left
 Ferris Wheel
 Centers Square Thru 3
-Allemande Left''',
+Allemande Left''',''),
 
-  'Center Wave of 4' :
+  TestSequence('Center Wave of 4',
 '''Sides Pass In and Spread
 Swing Thru
 Center Wave Of Four Recycle
@@ -2395,9 +2405,9 @@ Boys Circulate
 Cast Off Three Quarters
 Split Counter Rotate
 Box the Gnat
-Right and Left Grand''',
+Right and Left Grand''',''),
 
-  'Centers of PTP Diamonds' :
+  TestSequence('Centers of PTP Diamonds',
 '''Heads Lead Right
 Veer Left
 Girls Hinge
@@ -2409,9 +2419,9 @@ Star Thru
 Trade By
 Veer Left
 Trade
-Promenade Home''',
+Promenade Home''',''),
 
-  'Do One Part' :
+  TestSequence('Do One Part',
 '''Sides Pass the Ocean
 Extend
 Boys Run
@@ -2421,18 +2431,18 @@ Cut the Hourglass
 Circulate
 Ferris Wheel
 Centers Turn Back
-Allemande Left''',
+Allemande Left''',''),
 
-  'Spin Chain the Gears' :
+  TestSequence('Spin Chain the Gears',
 '''Sides Pass the Ocean
 Extend
 Spin Chain the Gears Turn the Star a Full Turn
 Boys Run
 Ferris Wheel
 Centers Square Thru 3
-Allemande Left''',
+Allemande Left''',''),
 
-  'Same Sexes' :
+  TestSequence('Same Sexes',
 '''Sides Pass the Ocean
 Extend
 Hinge
@@ -2446,9 +2456,9 @@ Split Circulate
 Girls Run
 Circulate
 Wheel and Deal
-Allemande Left''',
+Allemande Left''',''),
 
-  'And 1/4 More' :
+  TestSequence('And 1/4 More',
 '''Heads Lead Right
 Veer Left
 Chain Down the Line and a Quarter More
@@ -2457,9 +2467,9 @@ Reverse Wheel Around and a Quarter More
 Ends Bend and Star Thru
 Veer Left
 Wheel Around
-Promenade Home''',
+Promenade Home''',''),
 
-  'Everyone' :
+  TestSequence('Everyone',
 '''Sides Pass the Ocean
 Extend
 Hinge
@@ -2468,9 +2478,9 @@ Tag the Line Face In
 Star Thru
 Pass Thru
 Trade By
-Allemande Left''',
+Allemande Left''',''),
 
-  'Alter the Wave' :
+  TestSequence('Alter the Wave',
 '''Sides Pass the Ocean
 Extend
 Alter the Wave Turn the Star 1/4
@@ -2478,9 +2488,9 @@ Recycle
 Star Thru
 Trade By
 Right and Left Thru
-Allemande Left''',
+Allemande Left''',''),
 
-  'Block' :
+  TestSequence('Block',
 '''Heads Lead Right
 Boys Spread
 In Your Block Zoom
@@ -2493,9 +2503,9 @@ Star Thru
 Centers Pass Thru
 Right and Left Thru
 Box the Gnat
-Right and Left Grand''',
+Right and Left Grand''',''),
 
-  'Dixie Diamond' :
+  TestSequence('Dixie Diamond',
 '''Sides Star Thru and Spread
 Reverse Dixie Diamond
 Diamond Chain Thru
@@ -2503,9 +2513,9 @@ Wheel and Deal
 Right and Left Thru
 Star Thru
 Trade
-Promenade Home''',
+Promenade Home''',''),
 
-  'Interrupt' :
+  TestSequence('Interrupt',
 '''Sides Lead Right
 Pass and Roll Interrupt Between Each Part With Half Sashay
 Remake Interrupt After Each Part With Split Circulate
@@ -2513,27 +2523,27 @@ Spin Chain Thru Interrupt After the 2nd Part With Diamond Circulate
 Circulate
 Boys Run
 Turn and Deal
-Allemande Left''',
+Allemande Left''',''),
 
-  'Linear Action' :
+  TestSequence('Linear Action',
 '''Sides Pass the Ocean
 Linear Action But Trade the Wave
 Diamond Chain Thru
 Crossfire
 Boys Run
 Veer Right
-Promenade Home''',
+Promenade Home''',''),
 
-  'Linear Action 2' :
+  TestSequence('Linear Action 2',
 '''Heads Step to a Wave
 Linear Action
 Boys Run
 Wheel and Deal
 Zoom
 Centers Pass Thru
-Allemande Left''',
+Allemande Left''',''),
 
-  'Pass the Axle' :
+  TestSequence('Pass the Axle',
 '''Sides Lead Right
 Pass the Axle But Cast Off 3/4
 Chase Right
@@ -2543,9 +2553,9 @@ Circulate
 Bend the Line
 Star Thru
 Pass Thru
-Allemande Left''',
+Allemande Left''',''),
 
-  'Ramble' :
+  TestSequence('Ramble',
 '''Heads Star Thru and Spread
 Pass Thru
 Wheel and Deal
@@ -2558,25 +2568,25 @@ Girls Run
 Star Thru
 Pass Thru
 Trade By
-Allemande Left''',
+Allemande Left''',''),
 
-  'Replace' :
+  TestSequence('Replace',
 '''Sides Pass the Ocean
 Extend
 Remake Replace the 2nd Part With Split Circulate
 Boys Run
 Ferris Wheel
 Centers Square Thru 3
-Allemande Left''',
+Allemande Left''',''),
 
-  'Snap the Lock' :
+  TestSequence('Snap the Lock',
 '''Sides Touch 1/4 and Spread
 Snap the Lock
 Bend the Line
 Star Thru
-Allemande Left''',
+Allemande Left''',''),
 
-  'Acey Deucey' :
+  TestSequence('Acey Deucey',
 '''Heads Star Thru
 Double Pass Thru
 Centers Chase Right
@@ -2590,9 +2600,9 @@ Girls Run
 Wheel and Deal
 Centers Pass Thru
 Veer Right
-Promenade Home''',
+Promenade Home''',''),
 
-  'Coordinate' :
+  TestSequence('Coordinate',
 '''Heads Pair Off
 Boys Run
 Coordinate Replace the 3rd Part With Very Centers Trade
@@ -2605,9 +2615,9 @@ Flip the Hourglass
 Boys Run
 Circulate
 Wheel and Deal
-Allemande Left''',
+Allemande Left''',''),
 
-  'Load the Boat' :
+  TestSequence('Load the Boat',
 '''Heads Lead Right
 Veer Left
 Bend the Line
@@ -2619,9 +2629,9 @@ Right Roll to a Wave
 Out-Roll Circulate
 Boys Run
 Wheel Around
-Promenade Home''',
+Promenade Home''',''),
 
-  'Plenty' :
+  TestSequence('Plenty',
 '''Sides Pass the Ocean
 Extend
 Extend
@@ -2629,9 +2639,9 @@ Plenty Turn the Star 1/4
 Centers Recycle and Pass Thru
 Right and Left Thru
 Pass Thru
-Allemande Left''',
+Allemande Left''',''),
 
-  'Relay the Top' :
+  TestSequence('Relay the Top',
 '''Sides Pass the Ocean
 Cross Extend
 Relay the Top Turn the Star a Full Turn
@@ -2640,18 +2650,18 @@ Bend the Line
 Star Thru
 Veer Left
 Wheel Around
-Promenade Home''',
+Promenade Home''',''),
 
-  'Swing the Fractions' :
+  TestSequence('Swing the Fractions',
 '''Sides Pass the Ocean
 Extend
 Swing the Fractions Interrupt Between Each Part With Split Circulate
 Left Swing the Fractions Interrupt After the 2nd Part With Cut the Diamond
 Girls Run
 Quarter In
-Right and Left Grand''',
+Right and Left Grand''',''),
 
-  'Tally Ho' :
+  TestSequence('Tally Ho',
 '''Sides Pass the Ocean
 Extend
 Tally Ho But Recycle
@@ -2663,9 +2673,9 @@ Boys Run
 Circulate
 Ferris Wheel
 Centers Square Thru 3
-Allemande Left''',
+Allemande Left''',''),
 
-  'With the Flow' :
+  TestSequence('With the Flow',
 '''Heads Lead Right
 Veer Left
 Cast Off Three Quarters With the Flow
@@ -2679,9 +2689,9 @@ Boys Run
 Bend the Line
 Right and Left Thru
 Star Thru
-Allemande Left''',
+Allemande Left''',''),
 
-  'Alter and Circulate' :
+  TestSequence('Alter and Circulate',
 '''Sides Pass the Ocean
 Extend
 Alter and Circulate Turn the Star 1/4
@@ -2689,9 +2699,9 @@ Recycle
 Cross Trail Thru
 Wheel and Deal
 Centers Pass Thru
-Allemande Left''',
+Allemande Left''',''),
 
-  'Couple Up' :
+  TestSequence('Couple Up',
 '''Sides Pass the Ocean
 Extend
 Trade Couple Up
@@ -2704,9 +2714,9 @@ As Couples Couple Up
 Pass Thru
 Turn and Deal
 Centers Square Thru 3
-Allemande Left''',
+Allemande Left''',''),
 
-  'Zip Code' :
+  TestSequence('Zip Code',
 '''Heads Star Thru
 Zip Code 3
 Star Thru
@@ -2718,9 +2728,9 @@ Girls Circulate
 Boys Run
 Ferris Wheel
 Centers Square Thru 3
-Allemande Left''',
+Allemande Left''',''),
 
-  'Scoot and Weave' :
+  TestSequence('Scoot and Weave',
 '''Sides Pass the Ocean
 Extend
 Reverse Order Scoot and Weave
@@ -2729,17 +2739,17 @@ Boys Run
 Pass Thru
 Wheel and Deal
 Centers Square Thru 3
-Allemande Left''',
+Allemande Left''',''),
 
-  'Square the Bases' :
+  TestSequence('Square the Bases',
 '''Heads Star Thru and Spread
 Square the Bases Interrupt Between Each Part With Centers Half Sashay
 Star Thru
 Bend the Line
 Slide Thru
-Allemande Left''',
+Allemande Left''',''),
 
-  'Quarter Mix' :
+  TestSequence('Quarter Mix',
 '''Sides Pass the Ocean
 Extend
 1/4 Mix Interrupt Between Each Part With Split Circulate
@@ -2748,9 +2758,9 @@ Fan the Top
 Reverse Order Grand Left 3/4 Mix
 Girls Run
 Centers Pass Thru
-Allemande Left''',
+Allemande Left''',''),
 
-  'Vertical Tag Back' :
+  TestSequence('Vertical Tag Back',
 '''Sides Pass the Ocean
 Extend
 Reverse Order Vertical Tag Back
@@ -2758,17 +2768,17 @@ Centers Walk and Dodge
 Vertical Tag Back
 Quarter Thru
 Circulate
-Right and Left Grand''',
+Right and Left Grand''',''),
 
-  'Tag Back' :
+  TestSequence('Tag Back',
 '''Sides Pass the Ocean
 Extend
 Reverse Order Tag Back
 Centers Walk and Dodge
 Tag Back
-Right and Left Grand''',
+Right and Left Grand''',''),
 
-  'Flip Back' :
+  TestSequence('Flip Back',
 '''Sides Pass the Ocean
 Extend
 Reverse Order Flip Back
@@ -2776,9 +2786,9 @@ Flip Back Interrupt Between Each Part With Split Circulate
 Boys Run
 Ferris Wheel
 Centers Square Thru 3
-Allemande Left''',
+Allemande Left''',''),
 
-  'Wheel the Ocean' :
+  TestSequence('Wheel the Ocean',
 '''Heads Star Thru and Spread
 Pass Thru
 Wheel the Ocean Interrupt After the 1st Part With Half Sashay
@@ -2790,9 +2800,9 @@ Girls Run
 Wheel and Deal
 Zoom
 Centers Pass Thru
-Allemande Left''',
+Allemande Left''',''),
 
-  'Left Swing Thru' :
+  TestSequence('Left Swing Thru',
 '''Heads Pass the Ocean
 Left Swing Thru
 Extend
@@ -2800,9 +2810,9 @@ Spin Chain Thru
 Recycle
 Pass Thru
 Centers Turn Thru While Outsides Trade
-Allemande Left''',
+Allemande Left''',''),
 
-  'Swing Thru 2' :
+  TestSequence('Swing Thru 2',
 '''Sides Pass the Ocean
 Left Swing Thru
 Heads Separate
@@ -2814,9 +2824,9 @@ Boys Circulate
 Boys Run
 Circulate
 Wheel and Deal
-Allemande Left''',
+Allemande Left''',''),
 
-  'Cast and Relay' :
+  TestSequence('Cast and Relay',
 '''Sides Pass the Ocean
 Extend
 1/4 Cast and Relay Turn the Star 1/2
@@ -2824,9 +2834,9 @@ Extend
 Quarter Thru
 Stretch Recycle
 Centers Turn Back
-Allemande Left''',
+Allemande Left''',''),
 
-  'Change the Centers' :
+  TestSequence('Change the Centers',
 '''Sides Pass the Ocean
 Extend
 Change the Centers Interrupt After Each Part With Split Circulate
@@ -2836,9 +2846,9 @@ Boys Run
 Pass Thru
 Wheel and Deal
 Centers Square Thru 3
-Allemande Left''',
+Allemande Left''',''),
 
-  'Split Dixie Style' :
+  TestSequence('Split Dixie Style',
 '''Heads Step to a Wave
 Split Dixie Style
 Leaders Run
@@ -2851,9 +2861,9 @@ Star Thru
 Wheel and Deal
 Zoom
 Centers Square Thru 3
-Allemande Left''',
+Allemande Left''',''),
 
-  'Split Dixie Diamond' :
+  TestSequence('Split Dixie Diamond',
 '''Heads Step to a Wave
 Split Dixie Diamond
 Flip the Diamond
@@ -2868,9 +2878,9 @@ Out-Roll Circulate
 Boys Run
 Ferris Wheel
 Centers Square Thru 3
-Allemande Left''',
+Allemande Left''',''),
 
-  'Sidetrack' :
+  TestSequence('Sidetrack',
 '''Sides Pass the Ocean
 Extend
 Sidetrack
@@ -2882,25 +2892,25 @@ Brace Thru
 Pass Thru
 Wheel and Deal
 Centers Pass Thru
-Allemande Left''',
+Allemande Left''',''),
 
-  'Spin the Pulley' :
+  TestSequence('Spin the Pulley',
 '''Heads Move In and Right and Left Thru
 Spin the Pulley But Trail Off
 Left Turn and Deal
 Veer Right
-Promenade Home''',
+Promenade Home''',''),
 
-  'Scoot and Plenty' :
+  TestSequence('Scoot and Plenty',
 '''Sides Pass the Ocean
 Scoot and Plenty Turn the Star 3/4
 Extend
 Boys Run
 Ferris Wheel
 Centers Square Thru 3
-Allemande Left''',
+Allemande Left''',''),
 
-  'Own the Dancers' :
+  TestSequence('Own the Dancers',
 '''Heads Pass Out
 Own the Boys Pass In By Pass Out
 Own the Girls Chase Right By Couples Circulate
@@ -2909,9 +2919,9 @@ Own the Ends Load the Boat By Box Recycle
 Chain Reaction But Hinge
 Trade the Wave
 Boys Run
-Promenade Home''',
+Promenade Home''',''),
 
-  'Pass the Sea' :
+  TestSequence('Pass the Sea',
 '''Heads Pair Off
 Pass Thru
 Finish Pass the Sea
@@ -2921,9 +2931,9 @@ Partner Tag
 Left Turn and Deal
 Centers Pass Thru
 Right and Left Thru
-Allemande Left''',
+Allemande Left''',''),
 
-  'Stretch' :
+  TestSequence('Stretch',
 '''Sides Pair Off
 Circle to a Line
 Pass Thru
@@ -2934,9 +2944,9 @@ Stretch Left Turn and Deal and Roll
 Circulate
 Ferris Wheel
 Centers Pass Thru While Ends Half Sashay
-Allemande Left''',
+Allemande Left''',''),
 
-  'Reverse Explode' :
+  TestSequence('Reverse Explode',
 '''Sides Pass the Ocean
 Extend
 Quarter Thru
@@ -2950,9 +2960,9 @@ Out-Roll Circulate
 Girls Run
 Star Thru
 Pass Thru
-Allemande Left''',
+Allemande Left''',''),
 
-  'Spread 2' :
+  TestSequence('Spread 2',
 '''Heads Star Thru and Spread
 Ends Touch 1/4 and Spread
 Butterfly Center 4 Touch 1/4
@@ -2965,17 +2975,17 @@ Star Thru
 Pass Thru
 Wheel and Deal
 Centers Pass Thru
-Allemande Left''',
+Allemande Left''',''),
 
-  'Spread 3' :
+  TestSequence('Spread 3',
 '''Sides Spin the Top and Spread
 Centers Quarter In
 Centers Pass and Roll Your Neighbor and Spread
 Centers Recycle
 Centers Cross Trail Thru
-Allemande Left''',
+Allemande Left''',''),
 
-  'Butterfly To Lines' :
+  TestSequence('Butterfly To Lines',
 '''Sides Face In
 O Double Pass Thru
 O Track 2 to Waves
@@ -2986,9 +2996,9 @@ Brace Thru
 Star Thru
 Pass Thru
 Trade By
-Allemande Left''',
+Allemande Left''',''),
 
-  'Squared Set Convention' :
+  TestSequence('Squared Set Convention',
 '''Heads Pass Thru
 Heads Left Chase
 Sides Pass Thru
@@ -3006,9 +3016,9 @@ Boys Run
 Cast Off Three Quarters
 Star Thru
 Pass Thru
-Allemande Left''',
+Allemande Left''',''),
 
-  'Square Chain the Top' :
+  TestSequence('Square Chain the Top',
 '''Heads Pass the Sea
 Extend
 Finish Square Chain the Top
@@ -3022,18 +3032,18 @@ Recycle
 Star Thru
 Trade By
 Half Sashay
-Right and Left Grand''',
+Right and Left Grand''',''),
 
-  'Step Thru' :
+  TestSequence('Step Thru',
 '''Heads Pass Out and Spread
 Step Thru
 Left Roll to a Wave
 Step Thru
 Cross Clover and Face Out
 Right and Left Thru
-Allemande Left''',
+Allemande Left''',''),
 
-  'Big Tag the Line' :
+  TestSequence('Big Tag the Line',
 '''Sides Pass the Ocean
 Extend
 Fan the Top
@@ -3060,9 +3070,9 @@ Circulate
 Boys Run
 Cast Off Three Quarters
 Quarter Out
-Allemande Left''',
+Allemande Left''',''),
 
-  'Big Turn and Deal' :
+  TestSequence('Big Turn and Deal',
 '''Sides Pass the Ocean
 Extend
 Fan the Top
@@ -3076,9 +3086,9 @@ Star Thru
 Right and Left Thru
 Pass Thru
 Trade By
-Allemande Left''',
+Allemande Left''',''),
 
-  'Wheel And' :
+  TestSequence('Wheel And',
 '''Heads Pass Thru
 Wheel and Cross Trail Thru
 Pass Thru
@@ -3090,9 +3100,9 @@ Centers Touch a Quarter
 Left Quarter Thru
 Circulate
 Quarter In
-Right and Left Grand''',
+Right and Left Grand''',''),
 
-  'Wheel And 2' :
+  TestSequence('Wheel And 2',
 '''Heads Touch a Quarter While Sides Trade
 Centers Turn Back
 Wheel and Walk and Dodge
@@ -3100,9 +3110,9 @@ Centers Run and Roll
 Zing
 Star Thru
 Ends Trade
-Allemande Left''',
+Allemande Left''',''),
 
-  'Centers Trade the Wave' :
+  TestSequence('Centers Trade the Wave',
 '''Sides Pass the Ocean
 Centers Trade the Wave
 Extend
@@ -3110,9 +3120,9 @@ Boys Trade
 Girls Run
 Ferris Wheel
 Centers Pass Thru
-Allemande Left''',
+Allemande Left''',''),
 
-  'Double Cross' :
+  TestSequence('Double Cross',
 '''Heads Pass the Sea
 Side Boys Run
 Double Cross
@@ -3129,9 +3139,9 @@ Boys Circulate
 Boys Run
 Circulate
 Wheel and Deal
-Allemande Left''',
+Allemande Left''',''),
 
-  'Select Diamond' :
+  TestSequence('Select Diamond',
 '''Sides Pass the Ocean
 Extend
 Acey Deucey Once and a Half
@@ -3143,9 +3153,9 @@ Outside Diamond Circulate
 Center Line Of 4 Wheel and Deal
 Outer 4 Bend the Line
 Centers Pass Thru
-Allemande Left''',
+Allemande Left''',''),
 
-  'Dodge' :
+  TestSequence('Dodge',
 '''Heads Pass the Ocean
 Extend
 Dodge Face In
@@ -3162,9 +3172,9 @@ Dodge Separate and Pass In
 Touch a Quarter
 Acey Deucey
 Trade
-Right and Left Grand''',
+Right and Left Grand''',''),
 
-  'Lines Anything Thru' :
+  TestSequence('Lines Anything Thru',
 '''Sides Pass the Ocean
 Extend
 Lines Box Recycle Thru
@@ -3182,9 +3192,9 @@ Right and Left Thru
 Pass Thru
 Wheel and Deal
 Centers Square Thru 3
-Allemande Left''',
+Allemande Left''',''),
 
-  'Reshape' :
+  TestSequence('Reshape',
 '''Heads Lead Right
 Veer Left
 Boys 1/2 Circulate
@@ -3203,9 +3213,9 @@ Sides Pair Off
 Pass Thru
 Trade By
 Pass Thru
-Allemande Left''',
+Allemande Left''',''),
 
-  'Side Girls Cross Run' :
+  TestSequence('Side Girls Cross Run',
 '''Four Ladies Chain 3/4
 Heads Pass the Ocean
 Side Girls Cross Run
@@ -3215,9 +3225,9 @@ Star Thru
 Wheel and Deal
 Zoom
 Centers Pass Thru
-Allemande Left''',
+Allemande Left''',''),
 
-  'Auto Adjust 1' :
+  TestSequence('Auto Adjust 1',
 '''Heads Pair Off
 Slide Thru
 Touch a Quarter
@@ -3227,9 +3237,9 @@ Boys Half Circulate
 Crossfire
 Boys Run
 Right and Left Thru
-Allemande Left''',
+Allemande Left''',''),
 
-  'Split Recycle' :
+  TestSequence('Split Recycle',
 '''Heads Touch a Quarter
 Split Recycle
 Head Girls Run
@@ -3248,9 +3258,9 @@ Circulate
 Boys Run
 Bend the Line
 Left Square Thru 4
-Allemande Left''',
+Allemande Left''',''),
 
-  'Scoot Chain Thru' :
+  TestSequence('Scoot Chain Thru',
 '''Sides Pass the Ocean
 Extend
 Scoot Chain Thru Centers Skip the 3rd Part
@@ -3261,9 +3271,9 @@ Plenty
 Extend
 Boys Run
 Star Thru
-Allemande Left''',
+Allemande Left''',''),
 
-  'Leaders Right Loop' :
+  TestSequence('Leaders Right Loop',
 '''Heads Pass the Ocean
 Extend
 Leaders Right Loop 2
@@ -3274,9 +3284,9 @@ Slide Thru
 Centers Trade
 Wheel and Deal
 Centers Wheel Around
-Allemande Left''',
+Allemande Left''',''),
 
-  'Trail to a Diamond' :
+  TestSequence('Trail to a Diamond',
 '''Heads Wheel Thru
 Right and Left Thru Boys Roll
 Trail to a Diamond
@@ -3285,9 +3295,9 @@ Trail to a Diamond
 Cut the Diamond
 Cast Off 3/4
 Left Square Thru 4
-Allemande Left''',
+Allemande Left''',''),
 
-  'Concentric Tag the Line' :
+  TestSequence('Concentric Tag the Line',
 '''Head Lead Right
 Veer Left
 Fan the Top
@@ -3298,18 +3308,18 @@ Boys Run
 Double Pass Thru
 Leaders Trade
 Pass Thru
-Allemande Left''',
+Allemande Left''',''),
 
-  'Concentric Veer' :
+  TestSequence('Concentric Veer',
 '''Sides Pass the Ocean
 Heads Concentric Veer Left
 Cycle and Wheel
 Brace Thru
 Star Thru
 Pass Thru
-Allemande Left''',
+Allemande Left''',''),
 
-  'Regroup' :
+  TestSequence('Regroup',
 '''Sides Pass the Ocean
 Extend
 Centers Walk and Dodge
@@ -3318,9 +3328,9 @@ Regroup
 Brace Thru
 Star Thru
 Pass Thru
-Allemande Left''',
+Allemande Left''',''),
 
-  'Press Ahead' :
+  TestSequence('Press Ahead',
 '''Sides Pass the Ocean
 Extend
 Leaders Press Ahead
@@ -3329,9 +3339,9 @@ In Your Block Zing
 Girls 1/2 Press Ahead
 Star Thru
 Trade By
-Allemande Left''',
+Allemande Left''',''),
 
-  'Single Bounce' :
+  TestSequence('Single Bounce',
 '''Heads Pass the Ocean
 Extend
 Single Bounce the Boys
@@ -3348,9 +3358,9 @@ Cast Off 3/4
 Boys Run
 Star Thru
 Pass Thru
-Allemande Left''',
+Allemande Left''',''),
 
-  '&' :
+  TestSequence('&',
 '''Heads Lead Right
 Right & Left Thru
 Touch 1/4
@@ -3364,24 +3374,24 @@ Reverse Wheel Around
 Pass Thru
 Wheel and Deal
 Centers Pass Thru
-Allemande Left''',
+Allemande Left''',''),
 
-  'Resolution' :
+  TestSequence('Resolution',
 '''Heads Pass In
 Zoom
 Dixie Grand
-Allemande Left''',
+Allemande Left''',''),
 
-  'Quarter Tops' :
+  TestSequence('Quarter Tops',
 '''All 4 Couples Pass the Ocean
 Half the Top
 3/4 the Top
 Half the Top
 1/4 the Top
 All 8 Recycle
-Allemande Left''',
+Allemande Left''',''),
 
-  'Half Bend the Line' :
+  TestSequence('Half Bend the Line',
 '''Heads Lead Right
 Veer Left
 1/2 Bend the Line
@@ -3390,9 +3400,9 @@ Centers Pass Thru and Chase Right
 Left Swing Thru
 Tag the Line
 Leads Turn Back
-Right and Left Grand''',
+Right and Left Grand''',''),
 
-  'Start Diamond Chain Thru' :
+  TestSequence('Start Diamond Chain Thru',
 '''Heads Star Thru and Spread
 Pass the Ocean
 Centers Cast Off 3/4
@@ -3403,6 +3413,82 @@ Veer Left
 Cast Off 3/4
 Star Thru
 Pass Thru
-Allemande Left'''
+Allemande Left''',''),
 
-};
+  TestSequence('Lateral Substitute 1a',
+'''Heads Lead Right
+Veer Left
+Boys 1/2 Circulate
+Galaxy Circulate
+Lateral Substitute
+Tandem Based Triangle Lateral Substitute
+Boys Hinge
+Center Diamond Cut the Diamond
+Center Wave Left Swing Thru Others Cast Off 3/4
+Extend
+Split Circulate
+Girls Run
+Circulate
+Wheel and Deal
+Allemande Left''', ''),
+
+  TestSequence('Lateral Substitute 1b',
+'''Sides Lead Right
+Veer Left
+Boys 1/2 Circulate
+Galaxy Circulate
+Lateral Substitute
+Tandem Based Triangle Lateral Substitute
+Boys Hinge
+Center Diamond Cut the Diamond
+Center Wave Left Swing Thru Others Cast Off 3/4
+Extend
+Split Circulate
+Girls Run
+Circulate
+Wheel and Deal
+Allemande Left''', ''),
+
+  TestSequence('Lateral Substitute 2a',
+'''Heads Move In
+Sides Hinge
+Lateral Substitute
+Outside Triangle Lateral Substitute
+Center Wave Recycle
+Pass the Ocean
+Swing Thru
+Circulate
+Boys Run
+Bend the Line
+Right and Left Thru
+Star Thru
+Pass Thru
+Allemande Left''', ''),
+
+  TestSequence('Lateral Substitute 2b',
+'''Sides Move In
+Heads Hinge
+Lateral Substitute
+Outside Triangle Lateral Substitute
+Center Wave Recycle
+Pass the Ocean
+Swing Thru
+Circulate
+Boys Run
+Bend the Line
+Right and Left Thru
+Star Thru
+Pass Thru
+Allemande Left''', ''),
+
+  TestSequence('Lateral Substitute 3', '''Heads Move In
+Boys Run
+Lateral Substitute
+Counter Rotate
+Outer 4 Lateral Substitute
+Girls Run
+Outer 4 Cloverleaf
+Box the Gnat
+Allemande Left''', '')
+
+];

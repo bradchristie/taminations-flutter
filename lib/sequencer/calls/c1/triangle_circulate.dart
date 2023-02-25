@@ -20,7 +20,80 @@
 
 import '../../../formations.g.dart';
 import '../../../moves.g.dart';
+import '../coded_call.dart';
 import '../common.dart';
+
+class SelectTriangle extends CodedCall {
+
+  SelectTriangle(String name) : super(name);
+
+  @override
+  void performCall(CallContext ctx) {
+    //  Find the 6 dancers
+    final triangleType = name.replaceAll('Triangle','')
+        .toLowerCase()
+        .replaceAll('\\W'.r, '');
+    final points = ctx.points();
+    switch (triangleType) {
+      case 'inside' :
+        for (final d in ctx.outer(2))
+          d.data.active = false;
+        break;
+      case 'outside' :
+        for (final d in ctx.center(2))
+          d.data.active = false;
+        break;
+      case 'inpoint' :
+        for (final d in points) {
+          if (d.data.leader)
+            d.data.active = false;
+        }
+        break;
+      case 'outpoint' :
+        for (final d in points) {
+          if (d.data.trailer)
+            d.data.active = false;
+        }
+        break;
+      case 'tandembased' :
+        final tandems = ctx.dancers.where((d2) => ctx.isInTandem(d2)).toList();
+        //  Find the dancer closest to each tandem
+        //  We don't want dancers further out to get involved
+        final tandemPoints = <Dancer>{};
+        for (final d in tandems) {
+          var d2 = ctx.tandemDancer(d)!;
+          var d3 = ctx.dancers.where((dq) => !tandems.contains(dq) &&
+              dq.distanceTo(d) < 3.0 && dq.distanceTo(d2) < 3.0).firstOrNull;
+          if (d3 != null)
+            tandemPoints.add(d3);
+        }
+        for (final d in ctx.dancers)
+          if (!tandems.contains(d) && !tandemPoints.contains(d))
+            d.data.active = false;
+        break;
+      case 'wavebased':
+      case '':
+        if (points.isNotEmpty) {
+          for (final d in points) {
+            final others = ctx.dancersInOrder(d);
+            if (!(others[0].isLeftOf(others[1]) || others[0].isRightOf(others[1])) ||
+                !(others[1].isLeftOf(others[0]) || others[1].isRightOf(others[0])))
+              d.data.active = false;
+          }
+        } else {
+          //  No points, maybe a sausage
+          final sausage = CallContext.fromFormation(Formations.SausageRH);
+          if (ctx.matchFormations(sausage,rotate:180) != null) {
+            for (final d in ctx.center(2))
+              d.data.active = false;
+          }
+        }
+        break;
+    }
+
+  }
+
+}
 
 class TriangleCirculate extends Action {
 

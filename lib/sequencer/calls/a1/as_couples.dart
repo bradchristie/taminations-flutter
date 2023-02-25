@@ -33,14 +33,16 @@ class AsCouples extends FourDancerConcept {
   AsCouples(String name) : super(name.replaceAll('As Couples?'.ri, 'As Couples'));
 
   @override
-  List<List<Dancer>> dancerGroups(CallContext ctx) =>
-      ctx.dancers.where((d) => d.data.beau)
-      .map((d) {
-        final d2 = d.data.partner.throwIfNull(CallError('No partner for $d'));
-        if (!ctx.isInCouple(d,d2))
-          throw CallError('$d and $d2 are not a Couple');
-        return [d,d2];
-      }).toList();
+  List<List<Dancer>> dancerGroups(CallContext ctx) {
+    //  Check that all dancers are couples
+    ctx.dancers.forEach((d) {
+      if (!ctx.isInCouple(d))
+        throw CallError('Dancer $d is not part of a Couple');
+    });
+    //  Now we know all the dancers are couples with one beau, one belle
+    return ctx.dancers.where((d) => d.data.beau)
+        .map((d) => [d, d.data.partner!]).toList();
+  }
 
   @override
   Vector startPosition(List<Dancer> group) {

@@ -24,6 +24,7 @@ class DebugSwitch {
   static var showHiddenAnimations = DebugSwitch();
   static var mapping = DebugSwitch();
   static var perform = DebugSwitch();
+  static var nosnap = DebugSwitch();
 
   var enabled = false;
   void log(String message) {

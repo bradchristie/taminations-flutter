@@ -38,6 +38,8 @@ class SetDebugSwitch extends CodedCall {
       DebugSwitch.mapping.enabled = !name.contains('off'.ri);
     else if (name.contains('perform'.ri))
       DebugSwitch.perform.enabled = !name.contains('off'.ri);
+    else if (name.contains('nosnap'.ri))
+      DebugSwitch.nosnap.enabled = !name.contains('off'.ri);
   }
 
 }
