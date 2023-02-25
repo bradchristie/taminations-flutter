@@ -224,6 +224,8 @@ import 'common/ends.dart';
 import 'common/everyone.dart';
 import 'common/except.dart';
 import 'common/facing_dancers.dart';
+import 'common/facing_in.dart';
+import 'common/facing_out.dart';
 import 'common/flip.dart';
 import 'common/fraction.dart';
 import 'common/girls.dart';
@@ -369,6 +371,8 @@ abstract class CodedCall extends Call {
 
     'face(in|out|left|right)'.ri: (name) => Face(name),
     'facing'.ri: (_) => FacingDancers(),
+    '(those|dancers)?facingin'.ri: (name) => FacingIn(name),
+    '(those|dancers)?facingout'.ri: (name) => FacingOut(name),
     'fascinating.*'.ri: (name) => Fascinating(name),
     'finish.*'.ri: (name) => Finish(name),
     'flip(in|out|left|right)?'.ri: (name) => Flip(name),
