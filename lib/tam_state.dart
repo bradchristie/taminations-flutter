@@ -74,6 +74,7 @@ class TamState extends fm.ChangeNotifier {
   bool loop;
   bool grid;
   String axes;
+  bool definition;
   //  Fields for sequencer
   String? formation;
   String? calls;
@@ -95,6 +96,7 @@ class TamState extends fm.ChangeNotifier {
     this.play = false,
     this.loop = false,
     this.grid = false,
+    this.definition = false,
     this.axes = 'None',
     this.formation,
     this.calls
@@ -103,7 +105,7 @@ class TamState extends fm.ChangeNotifier {
 
   void change({String? level, String? link, int? animnum, String? animname,
     MainPage? mainPage, DetailPage? detailPage,
-    bool? embed, bool? play, bool? loop, bool? grid, String? axes,
+    bool? embed, bool? play, bool? loop, bool? grid, bool? definition, String? axes,
     String? formation, String? calls, String? helplink}) {
     final before = toString();
     final params = Uri.parse(link ?? '').queryParameters;
@@ -126,6 +128,7 @@ class TamState extends fm.ChangeNotifier {
     this.loop = loop ?? this.loop;
     this.grid = grid ?? this.grid;
     this.axes = axes ?? this.axes;
+    this.definition = definition ?? this.definition;
     this.formation = formation ?? this.formation;
     this.calls = calls ?? this.calls;
     this.helplink = helplink ?? this.helplink;
@@ -147,6 +150,7 @@ class TamState extends fm.ChangeNotifier {
     if (play) 'play',
     if (loop) 'loop',
     if (grid) 'grid',
+    if (definition) 'definition',
     if (axes!='None') 'axes=$axes',
     if (formation != null && formation!.isNotBlank)
       'formation=$formation',

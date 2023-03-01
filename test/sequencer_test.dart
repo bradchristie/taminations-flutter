@@ -3489,6 +3489,24 @@ Outer 4 Lateral Substitute
 Girls Run
 Outer 4 Cloverleaf
 Box the Gnat
+Allemande Left''', ''),
+
+  TestSequence('Facing In / Out',
+'''Heads Lead Right
+Veer Left
+Those Facing Out Trade
+Those Facing In Pass Thru
+Centers Trade
+Boys Facing Out Face In
+Those Facing In Quarter Out
+Those Facing Out Trade
+Centers Touch 1/4
+Centers Facing Out Turn Back
+Pass the Ocean
+Split Circulate
+Boys Run
+Ferris Wheel
+Centers Swap
 Allemande Left''', '')
 
 ];

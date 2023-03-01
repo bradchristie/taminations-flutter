@@ -131,6 +131,11 @@ class TaminationsRouterDelegate extends fm.RouterDelegate<TamState>
 
   @override
   fm.Widget build(fm.BuildContext context) {
+    if (appState.embed && appState.definition)
+      return pp.ChangeNotifierProvider.value(
+          value: appState,
+          child: MarkdownFrame(appState.link ?? '')
+      );
     if (appState.embed) {
       return pp.ChangeNotifierProvider.value(
           value: appState,
@@ -383,6 +388,7 @@ class TaminationsRouterDelegate extends fm.RouterDelegate<TamState>
         play: configuration.play,
         loop: configuration.loop,
         grid: configuration.grid,
+        definition: configuration.definition,
         formation: configuration.formation,
         calls: configuration.calls
     );
@@ -409,6 +415,7 @@ class TaminationsRouteInformationParser extends fm.RouteInformationParser<TamSta
     var play = params['play'] != null;
     var loop = params['loop'] != null;
     var grid = params['grid'] != null;
+    var definition = params['definition'] != null;
     //  For sequencer
     if (params['action'] == 'SEQUENCER') {
       mainPage = MainPage.SEQUENCER;
@@ -423,7 +430,7 @@ class TaminationsRouteInformationParser extends fm.RouteInformationParser<TamSta
     }
     return TamState(mainPage: mainPage, detailPage: detailPage, level:level,
       link:link,animnum:animnum,
-      embed:embed, play:play, loop:loop, grid:grid,
+      embed:embed, play:play, loop:loop, grid:grid, definition: definition,
       formation: formation, calls: calls
     );
   }

@@ -18,9 +18,9 @@ it is possible for only those on the outside path (dancers numbered 1, 2, 3, 4 i
 > ![alt](ping_pong_2.png)
 >
 
-STYLING: Styling is the same as previously described for the basics 
-[pass thru](../b1/pass_thru.md) and  [partner trade](../b2/trade.md). 
-Dancers in center use basic ocean wave styling. 
+STYLING: Styling is the same as previously described for the basics
+[pass thru](../b1/pass_thru.md) and  [partner trade](../b2/trade.md).
+Dancers in center use basic ocean wave styling.
 Outside dancers join hands in  couple handhold.
 
 Timing: 6

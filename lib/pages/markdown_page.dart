@@ -32,9 +32,19 @@ class MarkdownPage extends fm.StatelessWidget {
 
   @override
   fm.Widget build(fm.BuildContext context) {
-    return Page(child:MarkdownFrame(link));
+    return Page(
+        child: pp.Consumer<TitleModel>(builder: (context, titleModel, _) {
+          if (link.contains('about'))
+            titleModel.title = 'Taminations';
+          else if (link.contains('sequencer'))
+            titleModel.title = 'Sequencer';
+          else {
+            titleModel.title = 'Definition';
+            //titleModel.level = LevelData.find(link)?.name ?? '';
+          }
+          return MarkdownFrame(link);
+        }));
   }
-
 }
 
 class MarkdownFrame extends fm.StatefulWidget {
@@ -100,16 +110,8 @@ class _MarkdownFrameState extends fm.State<MarkdownFrame> {
       //  Padding at end of each paragraph
       pPadding: fm.EdgeInsets.only(bottom:10.0)
     );
-    return pp.Consumer3<Settings,TitleModel,HighlightState>(
-        builder: (context, settings, titleModel, highlightState, child) {
-          if (currentLink.contains('about'))
-            titleModel.title = 'Taminations';
-          else if (currentLink.contains('sequencer'))
-            titleModel.title = 'Sequencer';
-          else {
-            titleModel.title = 'Definition';
-            titleModel.level = LevelData.find(currentLink)?.name ?? '';
-          }
+    return pp.Consumer3<Settings,TamState,HighlightState>(
+        builder: (context, settings,  tamState, highlightState, child) {
           return fm.FutureBuilder(
               future:  _mdFuture,
               builder: (context,snapshot) {
@@ -144,7 +146,7 @@ class _MarkdownFrameState extends fm.State<MarkdownFrame> {
                                   thickness: 16,
                                   controller: scrollController,
                                   child: Markdown(
-                                    data: adjustMarkdown(snapshot.data!.toString(), highlightState),
+                                    data: adjustMarkdown(snapshot.data!.toString(), tamState, highlightState),
                                     selectable: true,
                                     styleSheet: markdownStyle,
                                     controller: scrollController,
@@ -204,7 +206,7 @@ class _MarkdownFrameState extends fm.State<MarkdownFrame> {
     'teaching-tip',
   ];
 
-  String adjustMarkdown(String md, HighlightState highlightState) {
+  String adjustMarkdown(String md, TamState tamState, HighlightState highlightState) {
     var part = highlightState.currentPart;
     var partCount = 0;
     var partsMap = <String>[];
@@ -212,6 +214,9 @@ class _MarkdownFrameState extends fm.State<MarkdownFrame> {
       partsMap = md.replaceFirst('.+<!-- Parts'.rd,'').trim().split('\\s+'.r);
       partsMap.removeLast();
     }
+    //  Links don't seem to format properly in embed pages
+    if (tamState.embed)
+      md = md.replaceAllMapped('\\[(.*?)\\]\\(.*?md\\)'.r, (m) => m[1]!);
     return md
     //  Title is uppercase
         .replaceAllMapped('^# (.*)'.rm,(m) => '# ${m[1]!.toUpperCase()}')

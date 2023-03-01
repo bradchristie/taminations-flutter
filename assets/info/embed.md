@@ -17,9 +17,14 @@ and copy the link.  Just click on the Share button and the link
 is copied to the clipboard.  Paste it into your HTML page
 as the source for your iframe, and append "&embed"
 to the end.
+
+## Embed a Definition
+
+View the animation and copy the link, but this time append "&embed&definition" to the end.
+
 ## Embed a Sequence
 
-The method is much the same as an animation.  Write your calls in
+Again, the method is much the same as an animation.  Write your calls in
 the sequencer, then copy the link with the Share button.
 The starting formation and all the
 calls are in the link.  So then paste the link as the source
