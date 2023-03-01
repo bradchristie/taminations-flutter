@@ -367,6 +367,8 @@ class TaminationsRouterDelegate extends fm.RouterDelegate<TamState>
         animnum: configuration.animnum,
         mainPage:configuration.mainPage,
         detailPage: configuration.detailPage,
+        embed: configuration.embed,
+        definition: configuration.definition,
         formation: configuration.formation,
         calls: configuration.calls
     );
