@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>SSD Lesson Plan</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    * { font-family: sans-serif; }
+    h1 { text-align: center; }
+    h2 { line-height: 0; padding: 20px 0 0 20px; }
+    a { text-decoration: none; }
+    .flex-container {
+      display: flex;
+      width: 99vw;
+      height: 99vh;
+      align-items: stretch;
+    }
+    .flex-item {
+      flex-basis: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: #fff8f0;
+    }
+    #animation-title {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 10vh;
+        font: bold 4vh sans-serif;
+        text-shadow: 2px 2px black;
+        color:white;
+        background-image:linear-gradient(#00c000,#004000);
+    }
+    #animation {
+        width: 100%;
+        height: 84vh;
+    }
+    #definition {
+        width: 100%;
+        height: 94vh;
+        overflow-x: hidden;
+    }
+    .button {
+        width: 50%;
+        height: 5vh;
+        float: left;
+        font: bold 2vh sans-serif;
+    }
+    .noscroll {
+        overflow: hidden;
+    }
+    #animation-page, #definition-page {
+      display: none;
+    }
+
+    @media only screen and (min-width: 768px) {
+      .button {
+        display: none;
+      }
+      #animation {
+        height: 89vh;
+      }
+      #definition {
+        height: 99vh;
+      }
+      #animation-page, #definition-page {
+        display: block;
+      }
+      .flex-item {
+        flex-basis: 33%;
+      }
+    }
+  </style>
+</head>
+<script type="application/javascript">
+function setAnimation(title,link,name) {
+  document.getElementById('animation-title').innerHTML = title;
+  var url = 'https://www.tamtwirlers.org/taminations-test/#?main=ANIMATIONS&link=' + link + '&animname=' + name + '&embed';
+  document.getElementById('animation').src = url;
+  document.getElementById('definition').src = url + '&definition';
+  //showAnimation();
+}
+function showIndex() {
+  document.getElementById('index-page').style.display = 'block';
+  document.getElementById('animation-page').style.display = 'none';
+  document.getElementById('definition-page').style.display = 'none';
+}
+function showDefinition() {
+  document.getElementById('index-page').style.display = 'none';
+  document.getElementById('animation-page').style.display = 'none';
+  document.getElementById('definition-page').style.display = 'block';
+}
+function showAnimation() {
+  document.getElementById('index-page').style.display = 'none';
+  document.getElementById('animation-page').style.display = 'block';
+  document.getElementById('definition-page').style.display = 'none';
+}
+</script>
+<body style="overflow: hidden" onload="setAnimation('Circle Left','ssd/circle','CircleLeft')">
+  <div class="flex-container">`
+    <div id="index-page" class="flex-item">
+      <h1>SSD Lesson Plan</h1>
+
+      <h2>Lesson 1</h2>
+      <ul>
+        <li><a href="javascript:setAnimation('Circle Left','ssd/circle','CircleLeft')">Circle Left</a> /
+          <a href="javascript:setAnimation('Circle Right','ssd/circle','CircleRight')">Circle Right</a></li>
+        <li><a href="javascript:setAnimation('Forward and Back','ssd/forward_and_back','ForwardandBackfromLines')">Forward and Back</a></li>
+        <li><a href="javascript:setAnimation('Dosado','ssd/dosado','DosadoFromFacingCouples')">Dosado</a></li>
+        <li><a href="javascript:setAnimation('Swing Your Partner','ssd/swing','SwingYourPartnerfromFacingCouples')">Swing</a></li>
+        <li>Promenade:
+            <a href="javascript:setAnimation('Couples Promenade','ssd/promenade','All4CouplesPromenadeFull')">Couples</a>,
+            <a href="javascript:setAnimation('Four Girls Promenade','ssd/promenade','FourGirlsPromenade')">Single File</a>,
+            <a href="javascript:setAnimation('Heads Wrong Way Promenade Half Way','ssd/promenade','HeadsWrongWayPromenade12')">Wrong Way</a>,
+            <a href="javascript:setAnimation('Star Promenade','ssd/promenade','StarPromenade')">Star</a>
+          </li>
+        <li><a href="javascript:setAnimation('Allemande Left','ssd/allemande','AllemandeLeftfromStaticSquare')">Allemande Left</a> and
+            <a href="javascript:setAnimation('Turn Partner by the Right','ssd/arm_turns','TurnPartnerbytheRight')">Arm Turns</a></li>
+        <li><a href="javascript:setAnimation('Right and Left Grand','ssd/right_and_left_grand','RightandLeftGrandfromGrandCircle')">Right and Left Grand</a>,
+            <a href="javascript:setAnimation('Weave the Ring','ssd/right_and_left_grand','WeavetheRing')">Weave the Ring</a>, and
+            <a href="javascript:setAnimation('Wrong Way Grand','ssd/right_and_left_grand','WrongWayGrandfromGrandCircle')">Wrong Way Grand</a></li>
+        <li>Left-Hand Star / Right-Hand Star</li>
+        <li><a href="javascript:setAnimation('Courtesy Turn','ssd/courtesy_turn','CourtesyTurnfromCouplesFacingOut')">Courtesy Turn</a>,
+            <a href="javascript:setAnimation('Head Ladies Chain','ssd/ladies_chain','HeadLadiesChain')">Two Ladies Chain</a>,
+            <a href="javascript:setAnimation('Four Ladies Chain','ssd/ladies_chain','FourLadiesChainfromStaticSquare')">Four Ladies Chain</a></li>
+        <li><a href="javascript:setAnimation('Pass Thru','ssd/pass_thru','PassThrufromEightChainThru')">Pass Thru</a></li>
+        <li><a href="javascript:setAnimation('Wheel Around','ssd/wheel_around','WheelAroundfromCouplesFacingOut')">Wheel Around</a> and
+            <a href="javascript:setAnimation('Reverse Wheel Around','ssd/wheel_around','ReverseWheelAroundfromCouplesFacingOut')">Reverse Wheel Around</a></li>
+      </ul>
+
+      <h2>Lesson 2</h2>
+      <ul>
+        <li><a href="javascript:setAnimation('Star Thru','ssd/star_thru','StarThrufromFacingCouples')">Star Thru</a> and
+            <a href="javascript:setAnimation('Slide Thru','ssd/slide_thru','SlideThrufromFacingCouples')">Slide Thru</a></li>
+       <li><a href="javascript:setAnimation('Half Sashay','ssd/sashay','HalfSashayfromFacingCouples')">Half Sashay</a>,
+           <a href="javascript:setAnimation('Rollaway','ssd/sashay','RollawayfromCircleLeft')">Rollaway</a>,
+           <a href="javascript:setAnimation('Ladies In, Men Sashay','ssd/sashay','LadiesInMenSashayfromCircleLeft')">Ladies In Men Sashay</a></li>
+      </ul>
+
+      <h2>Lesson 3</h2>
+      <ul>
+        <li><a href="javascript:setAnimation('California Twirl','ssd/california_twirl','CaliforniaTwirlfromCouplesFacingOut')">California Twirl</a></li>
+        <li><a href="javascript:setAnimation('Bend the Line','ssd/bend_the_line','BendtheLinefromLinesFacingOut')">Bend the Line</a></li>
+            <li><a href="javascript:setAnimation('U-Turn Back','ssd/turn_back','UTurnBackfromCouplesFacingOut')">U-Turn Back</a>,
+                <a href="javascript:setAnimation('Girls Backtrack','ssd/turn_back','GirlsBacktrackfromPromenade')">Backtrack</a></li>
+        <li><a href="javascript:setAnimation('Dive Thru','ssd/dive_thru','DiveThru')">Dive Thru</a></li>
+      </ul>
+
+      <h2>Lesson 4</h2>
+      <ul>
+        <li><a href="javascript:setAnimation('Heads Square Thru 4','ssd/square_thru','HeadsSquareThru4')">Square Thru</a></li>
+        <li><a href="javascript:setAnimation('Sides Face, Grand Square','ssd/grand_square','SidesFaceGrandSquare')">Grand Square</a></li>
+      </ul>
+
+      <h2>Lesson 5</h2>
+      <ul>
+        <li><a href="javascript:setAnimation('Heads Lead Right','ssd/lead_right','HeadsLeadRight')">Lead Right</a> /
+            <a href="javascript:setAnimation('Heads Lead Left','ssd/lead_right','HeadsLeadLeft')">Lead Left</a></li>
+        <li><a href="javascript:setAnimation('Veer Left','ssd/veer','VeerLeftfromEightChainThru')">Veer Left</a> /
+            <a href="javascript:setAnimation('Veer Right','ssd/veer','VeerRightfromEightChainThru')">Veer Right</a></li>
+        <li>Circulate: <a href="javascript:setAnimation('Couples Circulate','ssd/circulate','CouplesCirculatefromRightHandTwoFacedLines')">Couples</a>,
+                       <a href="javascript:setAnimation('Ends Circulate','ssd/circulate','EndsCirculatefromTwoFacedLines')">Named Dancers</a></li>
+        <li>Trade: <a href="javascript:setAnimation('Couples Trade','ssd/trade','CouplesTradefromRightHandTwoFacedLines')">Couples</a>,
+                   <a href="javascript:setAnimation('Girls Trade','ssd/trade','GirlsTradefromRightHandTwoFacedLines')">Named Dancers</a>)</li>
+        <li><a href="javascript:setAnimation('Chain Down the Line','ssd/ladies_chain','ChainDowntheLinefromTwoFacedLines')">Chain Down the Line</a></li>
+      </ul>
+
+      <h2>Lesson 6</h2>
+      <ul>
+        <li><a href="javascript:setAnimation('Right and Left Thru','ssd/right_and_left_thru','RightandLeftThrufromFacingCouples')">Right and Left Thru</a></li>
+        <li><a href="javascript:setAnimation('Flutterwheel','ssd/flutterwheel','FlutterwheelfromFacingCouples')">Flutterwheel</a> /
+            <a href="javascript:setAnimation('Reverse Flutterwheel','ssd/flutterwheel','ReverseFlutterwheelfromFacingCouples')">Reverse Flutterwheel</a></li>
+        <li><a href="javascript:setAnimation('Flutterwheel and Sweep a Quarter','ssd/sweep_a_quarter','FlutterwheelandSweepaQuarter')">Sweep a Quarter</a></li>
+      </ul>
+
+      <h2>Lesson 7</h2>
+      <ul>
+        <li><a href="javascript:setAnimation('Circle to a Line','ssd/circle_to_a_line','CircletoaLine')">Circle to a Line</a></li>
+        <li>Separate<ol type="a">
+          <li>Around 1 or 2 (<a href="javascript:setAnimation('Heads Pass Thru, Separate, Around 2 to a Line','ssd/separate','HeadsPassThruSeparateAround2toaLine')">To a Line</a> or
+                             <a href="javascript:setAnimation('Heads Pass Thru, Separate, Around 1 and Come Into the Middle','ssd/separate','HeadsPassThruSeparateAround1andComeIntotheMiddle')">Come Into the Middle</a>)</li>
+          <li><a href="javascript:setAnimation('Split 2','ssd/split_the_outside_couple','CentersSplittheOutsideCouple')">Split 2</a></li>
+        </ol></li>
+        <li>Wheel and Deal: from <a href="javascript:setAnimation('Wheel and Deal','ssd/wheel_and_deal','WheelandDealfromRightHandTwoFacedLines')">2-Faced Lines</a>,
+              <a href="javascript:setAnimation('Wheel and Deal','ssd/wheel_and_deal','WheelandDealfromLinesFacingOut')">Lines Facing Out</a></li>
+        <li><a href="javascript:setAnimation('Double Pass Thru','ssd/double_pass_thru','DoublePassThrufromDoublePassThru')">Double Pass Thru</a></li>
+        <li><a href="javascript:setAnimation('First Couple Go Left, Next Couple Go Right','ssd/first_couple_go','FirstCoupleGoLeftNextCoupleGoRight')">First Couple Go Left/Right, Next Couple Go Right/Left</a></li>
+      </ul>
+
+      <h2>Lesson 8</h2>
+      <ul>
+        <li>Ocean Waves:
+          <a href="javascript:setAnimation('Step to a Wave','ssd/ocean_wave','SteptoaWavefromFacingCouples')">Step to a Wave</a>,
+          <a href="javascript:setAnimation('Balance','ssd/ocean_wave','BalancefromRightHandWaves')">Balance</a>,
+          <a href="javascript:setAnimation('Allemande Left in the Alamo Style','ssd/alamo_style','AllemandeLeftintheAlamoStylefromStaticSquare')">Alamo Style</a></li>
+        <li>Trade: <a href="javascript:setAnimation('Trade','ssd/trade','TradefromRightHandWaves')">Right-Hand</a>,
+                   <a href="javascript:setAnimation('Trade','ssd/trade','TradefromLeftHandWaves')">Left-Hand</a></li>
+        <li><a href="javascript:setAnimation('Swing Thru','ssd/swing_thru','SwingThrufromRightHandWaves')">Swing Thru</a></li>
+        <li><a href="javascript:setAnimation('Boys Run','ssd/run','BoysRunfromRightHandWaves')">Run</a> and
+            <a href="javascript:setAnimation('Girls Cross Run','ssd/run','CentersCrossRunfromRightHandWaves')">Cross Run</a></li>
+      </ul>
+
+      <h2>Lesson 9</h2>
+      <ul>
+        <li><a href="javascript:setAnimation('Pass the Ocean','ssd/pass_the_ocean','PasstheOceanfromLines')">Pass the Ocean</a></li>
+        <li><a href="javascript:setAnimation('Extend','ssd/extend','ExtendfromRightHand14Tag')">Extend</a></li>
+        <li><a href="javascript:setAnimation('Zoom','ssd/zoom','ZoomfromDoublePassThru')">Zoom</a></li>
+      </ul>
+
+      <h2>Lesson 10</h2>
+      <ul>
+        <li><a href="javascript:setAnimation('Centers In','ssd/centers_in','CentersInfromCompletedDoublePassThru')">Centers In</a></li>
+        <li><a href="javascript:setAnimation('Cast Off 3/4','ssd/cast_off_three_quarters','CastOffThreeQuartersfromLinesFacingOut')">Cast Off 3/4</a></li>
+        <li><a href="javascript:setAnimation('Ferris Wheel','ssd/ferris_wheel','FerrisWheelfromRightHandedTwoFacedLines')">Ferris Wheel</a></li>
+        <li><a href="javascript:setAnimation('Partner Trade','ssd/trade','PartnerTradefromLinesFacingOut')">Partner Trade</a></li>
+        <li><a href="javascript:setAnimation('Trade By','ssd/trade_by','TradeByfromTradeBy')">Trade By</a></li>
+      </ul>
+
+      <h2>Lesson 11</h2>
+      <ul>
+        <li><a href="javascript:setAnimation('Box the Gnat','ssd/box_the_gnat','BoxtheGnatfromFacingCouples')">Box the Gnat</a></li>
+        <li><a href="javascript:setAnimation('Hinge','ssd/hinge','HingefromRightHandWaves')">Hinge</a></li>
+        <li><a href="javascript:setAnimation('Touch 1/4','ssd/touch_a_quarter','TouchaQuarterfromLines')">Touch 1/4</a></li>
+        <li>Circulate: <a href="javascript:setAnimation('All 8 Circulate','ssd/circulate','All8CirculatefromRightHandWaves')">All 8</a>,
+                       <a href="javascript:setAnimation('Single File Circulate','ssd/circulate','ColumnCirculatefromRightHandColumns')">Single File</a></li>
+        <li><a href="javascript:setAnimation('Tag the Line','ssd/tag','TagtheLinefromLinesFacingOut')">Tag the Line</a> /
+            <a href="javascript:setAnimation('Half Tag','ssd/fraction_tag','HalfTagfromRightHandTwoFacedLines')">Half Tag</a></li>
+      </ul>
+
+      <h2>Lesson 12</h2>
+      <ul>
+        <li>Circulate: <a href="javascript:setAnimation('Split Circulate','ssd/circulate','SplitCirculatefromRightHandWaves')">Split</a>,
+                       <a href="javascript:setAnimation('Centers Box Circulate','ssd/circulate','CentersCirculatefromRightHandWaves')">Box</a></li>
+        <li><a href="javascript:setAnimation('Ends Fold','ssd/fold','EndsFoldfromLinesFacingOut')">Fold</a> /
+            <a href="javascript:setAnimation('Ends Cross Fold','ssd/fold','EndsCrossFoldfromLinesFacingOut')">Cross Fold</a></li>
+        <li><a href="javascript:setAnimation('Scoot Back','ssd/scoot_back','ScootBackfromRightHandWaves')">Scoot Back</a></li>
+        <li><a href="javascript:setAnimation('Recycle','ssd/recycle','RecyclefromRightHandWave')">Recycle</a></li>
+      </ul>
+    </div>
+
+    <div id="animation-page" class="flex-item noscroll">
+       <div id="animation-title"></div>
+       <iframe id="animation"></iframe>
+      <div class="animation-buttons">
+        <input class="button" type="button" value="Index" onclick="showIndex()"/>
+        <input class="button" type="button" value="Definition" onclick="showDefinition()"/>
+      </div>
+    </div>
+
+    <div id="definition-page" class="flex-item noscroll">
+      <iframe id="definition"></iframe>
+      <div class="animation-buttons">
+        <input class="button" type="button" value="Index" onclick="showIndex()"/>
+        <input class="button" type="button" value="Animation" onclick="showAnimation()"/>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>

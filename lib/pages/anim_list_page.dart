@@ -188,7 +188,7 @@ class _AnimListState extends fm.State<AnimListFrame> {
     later(() {
       highlightState.currentCall = item.title.replaceAll('[^a-zA-Z0-9]'.r, '');
       //  this syncs the title
-      tamState.change(animnum: item.animnumber);
+      tamState.change(animnum: item.animnumber, animname: item.fullname);
     });
   }
 

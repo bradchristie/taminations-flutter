@@ -365,6 +365,7 @@ class TaminationsRouterDelegate extends fm.RouterDelegate<TamState>
         level: configuration.level,
         link: configuration.link,
         animnum: configuration.animnum,
+        animname: configuration.animname,
         mainPage:configuration.mainPage,
         detailPage: configuration.detailPage,
         embed: configuration.embed,
@@ -384,6 +385,7 @@ class TaminationsRouterDelegate extends fm.RouterDelegate<TamState>
         level: configuration.level,
         link: configuration.link,
         animnum: configuration.animnum,
+        animname: configuration.animname,
         mainPage:configuration.mainPage,
         detailPage: configuration.detailPage,
         embed: configuration.embed,
@@ -412,6 +414,7 @@ class TaminationsRouteInformationParser extends fm.RouteInformationParser<TamSta
     var level = params['level'] ?? '';
     var link = params['link'] ?? '';
     var animnum = int.tryParse(params['animnum'] ?? '-1') ?? -1;
+    var animname = params['animname'];
     //  Extra embed params
     var embed = params['embed'] != null;
     var play = params['play'] != null;
@@ -431,7 +434,7 @@ class TaminationsRouteInformationParser extends fm.RouteInformationParser<TamSta
       level = LevelData.find(link)!.dir;
     }
     return TamState(mainPage: mainPage, detailPage: detailPage, level:level,
-      link:link,animnum:animnum,
+      link:link,animnum:animnum,animname:animname,
       embed:embed, play:play, loop:loop, grid:grid, definition: definition,
       formation: formation, calls: calls
     );

@@ -44,9 +44,20 @@ class AnimationState extends fm.ChangeNotifier {
 void _startModel(fm.BuildContext context, TamState tamState, TitleModel? titleModel) {
   final model = pp.Provider.of<DanceModel>(context,listen:false);
   TamUtils.getXMLAsset(tamState.link!).then((doc) {
-    var tam = TamUtils.tamList(doc)
+    var tamList = TamUtils.tamList(doc)
         .where((it) => !(it('display','').startsWith('n')))
-        .toList()[max(0, tamState.animnum)];
+        .toList();
+    var tam = tamList[0];
+    if (tamState.animname != null) {
+      tam = tamList.firstWhere((it) {
+        var fullname = it('title');
+        if (it('group').isEmpty && it('from').isNotBlank)
+          fullname += 'from' + it('from');
+        fullname = fullname.replaceAll('[^a-zA-Z0-9]'.r, '');
+        return fullname == tamState.animname;
+      }, orElse: () => tamList[0]);
+    } else if (tamState.animnum >= 0 && tamState.animnum < tamList.length)
+      tam = tamList[tamState.animnum];
     model.setAnimation(tam);
     if (titleModel != null)
       titleModel.title = tam('title');

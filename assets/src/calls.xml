@@ -350,7 +350,7 @@
   <call link="c3a/latch_on" title="Latch On"/>
   <call link="c2/lateral_substitute" title="Lateral Substitute"/>
   <call audio="b1/lead_right.mp3" languages="lang-de lang-ja" link="b1/lead_right" title="Lead Right / Left"/>
-  <call languages="lang-de lang-ja" link="ssd/lead_right" title="Lead Right Left"/>
+  <call languages="lang-de lang-ja" link="ssd/lead_right" title="Lead Right / Left"/>
   <call link="a1/left" title="Left"/>
   <call languages="lang-de" link="b1/arm_turns" title="Left Arm Turn"/>
   <call languages="lang-de" link="ssd/arm_turns" title="Left Arm Turn"/>

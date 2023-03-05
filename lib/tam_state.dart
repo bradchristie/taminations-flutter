@@ -100,7 +100,7 @@ class TamState extends fm.ChangeNotifier {
     this.axes = 'None',
     this.formation,
     this.calls
-  }) : _level=level, _link=link, _animnum=animnum,
+  }) : _level=level, _link=link, _animnum=animnum, _animname=animname,
         _mainPage=mainPage, _detailPage=detailPage;
 
   void change({String? level, String? link, int? animnum, String? animname,

@@ -34,6 +34,17 @@
   </tam>
 
   <tam title="Wheel Around"
+       from="Couples Facing Out"
+       formation="Couples Facing Out Compact" sequencer="no">
+    <path>
+      <move select="Belle Wheel" />
+    </path>
+    <path>
+      <move select="Beau Wheel" />
+    </path>
+  </tam>
+
+  <tam title="Wheel Around"
        from="Lines"
        formation="Normal Lines">
     <path>
@@ -95,6 +106,18 @@
     </path>
     <path>
       <move select="Beau Wheel" reflect="1" />
+    </path>
+  </tam>
+
+  <tam title="Reverse Wheel Around"
+       from="Couples Facing Out"
+       formation="Couples Facing Out Compact"
+       sequencer="no">
+    <path>
+      <move select="Beau Wheel" reflect="1" />
+    </path>
+    <path>
+      <move select="Belle Wheel" reflect="1" />
     </path>
   </tam>
 
