@@ -32,7 +32,7 @@ abstract class TripleFormation extends Action {
 
   static var tripleBoxFormations = {
     Formations.TripleBoxes : 1.0,
-    Formations.TripleBoxes_2 : 1.0,
+    Formations.TripleBoxesClose : 1.0,
     Formations.TripleLines : 1.0,
     Formations.TripleColumns : 1.0
   };

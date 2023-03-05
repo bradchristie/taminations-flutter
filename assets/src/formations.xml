@@ -1777,15 +1777,15 @@
   </formation>
 
   <formation name="Triple Boxes">
-    <dancer gender="boy" x="2" y="3" angle="0"/>
-    <dancer gender="girl" x="2" y="1" angle="0"/>
-    <dancer gender="girl" x="-2" y="1" angle="0"/>
-    <dancer gender="boy" x="-2" y="3" angle="0"/>
-    <dancer gender="phantom" x="2" y="5" angle="180"/>
-    <dancer gender="phantom" x="2" y="-5" angle="0"/>
+    <dancer gender="boy" x="1.5" y="3" angle="0"/>
+    <dancer gender="girl" x="1.5" y="1" angle="0"/>
+    <dancer gender="girl" x="-1.5" y="1" angle="0"/>
+    <dancer gender="boy" x="-1.5" y="3" angle="0"/>
+    <dancer gender="phantom" x="1.5" y="5" angle="180"/>
+    <dancer gender="phantom" x="1.5" y="-5" angle="0"/>
   </formation>
 
-  <formation name="Triple Boxes 2">
+  <formation name="Triple Boxes Close">
     <dancer gender="boy" x="1" y="3" angle="90"/>
     <dancer gender="girl" x="1" y="1" angle="90"/>
     <dancer gender="girl" x="-1" y="1" angle="90"/>

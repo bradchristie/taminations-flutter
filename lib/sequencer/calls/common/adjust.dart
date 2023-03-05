@@ -22,30 +22,9 @@ import '../common.dart';
 
 class Adjust extends Action {
 
-  static Map<RegExp,String> formationMap = {
-    '.*lines?'.ri : 'Normal Lines' ,
-    '.*waves?'.ri : 'Normal Lines' ,
-    '.*thar'.ri : 'Thar RH Boys' ,
-    '.*square(d)?(set)?'.ri : 'Squared Set' ,
-    '.*boxes'.ri : 'Eight Chain Thru' ,
-    '.*columns?'.ri : 'Eight Chain Thru' ,
-    '.*(1|3)4tag'.ri : 'Quarter Tag' ,
-    '.*diamonds?'.ri : 'Diamonds RH Girl Points' ,
-    '.*tidal(wave|line)?'.ri : 'Tidal Line RH' ,
-    '.*hourglass'.ri : 'Hourglass RH BP' ,
-    '.*galaxy'.ri : 'Galaxy RH GP' ,
-    '.*butterfly'.ri : 'Butterfly RH' ,
-    '.* o'.ri : 'O RH',
-    '.*circle'.ri : 'Circle',
-    '.*alamo'.ri : 'Alamo Wave',  // actually, same as Circle
-    '.*blocks'.ri : 'Blocks',
-     //  two couples
-    '.*box'.ri : 'Facing Couples'
-  };
-
   @override var help = '''Adjust moves the dancers to a specific formation.
 The dancers must be near the formation you want.
-Formations you can use are
+Formations you can use include
      Lines or Waves (same)
      Thar
      Squared Set
@@ -65,8 +44,9 @@ Formations you can use are
     var fname = name.replaceFirst('Adjust to( an?)? '.ri, '' );
     var formation = Formation.fromName(fname);
     var ctx2 = CallContext.fromFormation(formation);
+    var isSubset = ctx2.dancers.length > 8;
     var rotate = formation.name == 'Blocks' ? 90 : 180;
-    var mapping = ctx.matchFormations(ctx2,sexy:false,fuzzy:true,rotate:rotate,handholds:false, maxError : 3.0, delta: 0.3, maxAngle: 0.5)
+    var mapping = ctx.matchFormations(ctx2,sexy:false,fuzzy:true,rotate:rotate,handholds:false,subformation: isSubset, maxError : 3.0, delta: 0.3, maxAngle: 0.5)
         ?? thrower(CallError('Unable to match formation to $fname'));
     if (!ctx.adjustToFormationMatch(mapping!.match))
       throw CallError('No adjustment to $fname needed.');

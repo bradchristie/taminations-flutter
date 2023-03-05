@@ -1782,6 +1782,21 @@ Pass Thru
 Trade By
 Allemande Left''',''),
 
+  TestSequence('Triple Box 3',
+'''Heads Pair Off
+Pass Thru
+Triple Box Star Thru
+Triple Box Pass the Ocean
+Triple Wave Swing Thru
+Triple Wave Hinge
+Boys Run
+Triple Box Pass Thru
+Triple Box Shakedown
+Trade By
+Cross Trail Thru
+Trade By
+Allemande Left''',''),
+
   TestSequence('Start',
   '''Heads Lead Right
 Boys Cross

@@ -123,10 +123,15 @@ extension DancerList on List<Dancer> {
     for (final d in this) {
       var dx = d.location.x.round();
       var dy = (d.location.y*2.0).round();
-      if (dx.abs() <= 5 && dy.abs() <= 10)
-        charMatrix[-dx+5][-dy+10] =
-        coupleNumbers ? d.numberCouple.substring(0,1)
-            : arrayNumbers ? i.s : d.number.substring(0,1);
+      if (dx.abs() <= 5 && dy.abs() <= 10) {
+        var c = coupleNumbers ? d.numberCouple
+            : arrayNumbers ? i.s : d.number;
+        if (c.length > 1)
+          c = c.substring(0,1);
+        if (c.isEmpty)
+          c = 'X';
+        charMatrix[-dx + 5][-dy + 10] = c;
+      }
       var dsym = '';
       if (d.angleFacing.isAround(0)) {
         dx += 1;

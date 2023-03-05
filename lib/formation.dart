@@ -53,6 +53,11 @@ class Formation {
   factory Formation.fromName(String name) {
     var fnorm = normalizeCall(name);
     Formation? formation;
+    //  First try a specific match to any formation
+    for (var r in Formations.formationIndex.keys) {
+      if (fnorm == normalizeCall(r))
+        return Formations.formationIndex[r]!;
+    }
     for (var r in _formationMap.keys) {
       if (fnorm.matches(r))
         formation = _formationMap[r]!;

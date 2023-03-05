@@ -325,7 +325,7 @@ class _SequencerEditLineState extends fm.State<SequencerEditLine> {
     //  Accept more than one call separated by semi colons
     for (final call in value.split(';')) {
       //  Process the call
-      if (!(await model.loadOneCall(call))) {
+      if (!(model.loadOneCall(call))) {
         hasError = true;
         break;
       }
