@@ -20,17 +20,18 @@ Call pronunciations provided by
 
 ---
 
-## Taminations version 1.6.53 built 2023-02-20
+## Taminations version 1.6.54 built 2023-03-06
 Copyright 2023 by Brad Christie.  
 This is free software, and you are welcome to modify and redistribute it
 under the terms of the [GNU GPL license](http://www.gnu.org/licenses/gpl.html).  
 
 ## What's New
-* Separate info page on basic use of animations
-* More animations for 1/4 Thru family
+* Improve embed code and add embed for definitions
+* All 8 Diamond Circulate from all thar-like formations
 * Sequencer changes:
-  * Add note if Do Your Part is assumed
-  * Fix for 1/2 Wheel Around and Roll
+  * Code for Lateral Substitute
+  * Add selectors for Dancers Facing In / Out
+  * Improvements for Triple Boxes, including Adjust to Triple Boxes
 
 For a detailed history of changes, view the
 [Git log](https://github.com/bradchristie/taminations-flutter/commits/main)

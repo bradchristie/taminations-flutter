@@ -4,20 +4,27 @@
   <title>SSD Lesson Plan</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-    * { font-family: sans-serif; }
+    * {
+      font-family: sans-serif;
+      box-sizing: border-box;
+    }
+    body { margin: 0; }
     h1 { text-align: center; }
     h2 { line-height: 0; padding: 20px 0 0 20px; }
     a { text-decoration: none; }
     .flex-container {
       display: flex;
-      width: 99vw;
-      height: 99vh;
+      width: 100vw;
+      height: 100vh;
       align-items: stretch;
     }
     .flex-item {
       flex-basis: 100%;
       height: 100%;
       overflow: auto;
+      border: 0;
+      margin: 0;
+      padding: 0;
       background-color: #fff8f0;
     }
     #animation-title {
@@ -33,6 +40,7 @@
     #animation {
         width: 100%;
         height: 84vh;
+        padding: 0;
     }
     #definition {
         width: 100%;
@@ -48,11 +56,14 @@
     .noscroll {
         overflow: hidden;
     }
-    #animation-page, #definition-page {
-      display: none;
-    }
 
+    @media only screen and (max-width: 767px) {
+      .hide-page {
+        display: none;
+      }
+    }
     @media only screen and (min-width: 768px) {
+      .hide-page { }
       .button {
         display: none;
       }
@@ -61,9 +72,6 @@
       }
       #definition {
         height: 99vh;
-      }
-      #animation-page, #definition-page {
-        display: block;
       }
       .flex-item {
         flex-basis: 33%;
@@ -77,26 +85,26 @@ function setAnimation(title,link,name) {
   var url = 'https://www.tamtwirlers.org/taminations-test/#?main=ANIMATIONS&link=' + link + '&animname=' + name + '&embed';
   document.getElementById('animation').src = url;
   document.getElementById('definition').src = url + '&definition';
-  //showAnimation();
+  showAnimation();
 }
 function showIndex() {
-  document.getElementById('index-page').style.display = 'block';
-  document.getElementById('animation-page').style.display = 'none';
-  document.getElementById('definition-page').style.display = 'none';
+  document.getElementById('index-page').classList.remove('hide-page');
+  document.getElementById('animation-page').classList.add('hide-page');
+  document.getElementById('definition-page').classList.add('hide-page');
 }
 function showDefinition() {
-  document.getElementById('index-page').style.display = 'none';
-  document.getElementById('animation-page').style.display = 'none';
-  document.getElementById('definition-page').style.display = 'block';
+  document.getElementById('index-page').classList.add('hide-page');
+  document.getElementById('animation-page').classList.add('hide-page');
+  document.getElementById('definition-page').classList.remove('hide-page');
 }
 function showAnimation() {
-  document.getElementById('index-page').style.display = 'none';
-  document.getElementById('animation-page').style.display = 'block';
-  document.getElementById('definition-page').style.display = 'none';
+  document.getElementById('index-page').classList.add('hide-page');
+  document.getElementById('animation-page').classList.remove('hide-page');
+  document.getElementById('definition-page').classList.add('hide-page');
 }
 </script>
-<body style="overflow: hidden" onload="setAnimation('Circle Left','ssd/circle','CircleLeft')">
-  <div class="flex-container">`
+<body style="overflow: hidden" onload="showIndex()">
+  <div class="flex-container">
     <div id="index-page" class="flex-item">
       <h1>SSD Lesson Plan</h1>
 

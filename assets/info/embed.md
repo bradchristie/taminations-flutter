@@ -49,12 +49,11 @@ https://www.tamtwirlers.org/taminations/
      Parameters for an animation
      These are from copying and pasting an animation link
      Don't worry about the details
-#link=plus%2Ffan_the_top
-&name=Fan%20the%20Top%20from%20Right-Hand%20Waves
+#link=plus/fan_the_top
+&animname=FantheTopfromRightHandWaves
 &level=Plus
-&title=Fan%20the%20Top
-&animnum=5
-&action=ANIMLIST
+&animnum=7
+&main=ANIMATIONS
      Here are the additional values
      First, the special "embed"
 &embed
