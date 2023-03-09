@@ -143,21 +143,25 @@
 
   <tamxref title="Stretched Box Circulate"
            from="Normal Lines"
+           xref-title="Scatter Circulate"
            xref-link="c3a/scatter_circulate"
            xref-from="Normal Lines" />
 
   <tamxref title="Stretched Box Circulate"
            from="Lines Facing Out"
+           xref-title="Scatter Circulate"
            xref-link="c3a/scatter_circulate"
            xref-from="Lines Facing Out" />
 
   <tamxref title="Stretched Box Circulate"
            from="Right-Hand Two-Faced Lines"
+           xref-title="Scatter Circulate"
            xref-link="c3a/scatter_circulate"
            xref-from="Right-Hand Two-Faced Lines" />
 
   <tamxref title="Stretched Box Circulate"
            from="Left-Hand Two-Faced Lines"
+           xref-title="Scatter Circulate"
            xref-link="c3a/scatter_circulate"
            xref-from="Left-Hand Two-Faced Lines" />
 

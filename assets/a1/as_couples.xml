@@ -795,21 +795,21 @@
            xref-title="As Couples Cross Trail Thru"/>
 
   <tamxref title="As Couples Left Roll to a Wave (from lines facing out)" group="As Couples (with A-1 calls)"
-           xref-link="a1/left_roll_to_a_wave"
+           xref-link="a1/right_roll_to_a_wave"
            xref-title="As Couples Left Roll to a Wave"
            xref-from="Lines Facing Out" />
 
   <tamxref title="As Couples Left Roll to a Wave (from two-faced lines)" group="As Couples (with A-1 calls)"
-           xref-link="a1/left_roll_to_a_wave"
+           xref-link="a1/right_roll_to_a_wave"
            xref-title="As Couples Left Roll to a Wave"
            xref-from="Two-Faced Lines" />
 
   <tamxref title="As Couples Left Square Chain Thru" group="As Couples (with A-1 calls)"
-           xref-link="a1/left_square_chain_thru"
+           xref-link="a1/square_chain_thru"
            xref-title="As Couples Left Square Chain Thru" />
 
   <tamxref title="As Couples Left Wheel Thru" group="As Couples (with A-1 calls)"
-           xref-link="a1/left_wheel_thru"
+           xref-link="a1/wheel_thru"
            xref-title="As Couples Left Wheel Thru" />
 
   <tamxref title="As Couples Linear Cycle" group="As Couples (with A-1 calls)"
@@ -833,7 +833,7 @@
            xref-title="As Couples Pass In" />
 
   <tamxref title="As Couples Pass Out" group="As Couples (with A-1 calls)"
-           xref-link="a1/pass_out"
+           xref-link="a1/pass_in"
            xref-title="As Couples Pass Out" />
 
   <tamxref title="As Couples Pass the Sea" group="As Couples (with A-1 calls)"
@@ -845,7 +845,7 @@
            xref-title="As Couples Quarter In" />
 
   <tamxref title="As Couples Quarter Out" group="As Couples (with A-1 calls)"
-           xref-link="a1/quarter_out"
+           xref-link="a1/quarter_in"
            xref-title="As Couples Quarter Out" />
 
   <tamxref title="As Couples Quarter Thru" group="As Couples (with A-1 calls)"
@@ -879,7 +879,7 @@
            xref-title="As Couples Swap Around" />
 
   <tamxref title="As Couples 3/4 Thru" group="As Couples (with A-1 calls)"
-           xref-link="a1/three_quarter_thru"
+           xref-link="a1/quarter_thru"
            xref-title="As Couples 3/4 Thru" />
 
   <tamxref title="As Couples Turn and Deal (from right-hand tidal line)" group="As Couples (with A-1 calls)"
@@ -935,7 +935,7 @@
            xref-title="As Couples Scoot and Weave" />
 
   <tamxref title="As Couples Slide" group="As Couples (A-2)"
-           xref-link="a2/slide"
+           xref-link="a2/slip"
            xref-title="As Couples Slide" />
 
   <tamxref title="As Couples Slip" group="As Couples (A-2)"
@@ -943,11 +943,11 @@
            xref-title="As Couples Slip" />
 
   <tamxref title="As Couples Slither" group="As Couples (A-2)"
-           xref-link="a2/slither"
+           xref-link="a2/slip"
            xref-title="As Couples Slither" />
 
   <tamxref title="As Couples Swing" group="As Couples (A-2)"
-           xref-link="a2/swing"
+           xref-link="a2/slip"
            xref-title="As Couples Swing" />
 
   <tamxref title="As Couples Swing and Mix" group="As Couples (A-2)"
@@ -1007,7 +1007,7 @@
            xref-title="As Couples Follow Thru" />
 
   <tamxref title="As Couples Reverse Cross and Turn" group="As Couples (C-1)"
-           xref-link="c1/reverse_cross_and_turn"
+           xref-link="c1/cross_and_turn"
            xref-title="As Couples Reverse Cross and Turn" />
 
   <tamxref title="As Couples Reverse Explode" group="As Couples (C-1)"
@@ -1084,7 +1084,7 @@
            xref-title="As Couples the K" />
 
   <tamxref title="As Couples Trail to a Diamond" group="As Couples (C-2)"
-           xref-link="c2/trail_to_a_diamond"
+           xref-link="c2/peel_to_a_diamond"
            xref-title="As Couples Trail to a Diamond" />
 
   <tamxref title="As Couples Turn to a Line" group="As Couples (C-2)"
@@ -1096,7 +1096,7 @@
            xref-title="As Couples Wheel the Ocean" />
 
   <tamxref title="As Couples Wheel the Sea" group="As Couples (C-2)"
-           xref-link="c2/wheel_the_sea"
+           xref-link="c2/wheel_the_ocean"
            xref-title="As Couples Wheel the Sea" />
 
   <tamxref title="As Couples 1/4 Mix" group="As Couples (C-3A)"

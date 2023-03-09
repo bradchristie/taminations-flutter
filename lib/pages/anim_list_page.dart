@@ -22,9 +22,12 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart' as fm;
 import 'package:provider/provider.dart' as pp;
 import 'package:taminations/beat_notifier.dart';
+import 'package:taminations/sequencer/calls/animated_call.dart';
 
+import '../call_entry.dart';
 import '../common.dart';
 import 'page.dart';
+import '../call_index.g.dart';
 
 enum CellType { Header, Separator, Indented, Plain }
 
@@ -61,10 +64,8 @@ class AnimListPage extends fm.StatelessWidget {
     return Page(
       child: pp.Consumer<TamState>(
         builder: (context, tamState, _) {
-          TamUtils.getXMLAsset(tamState.link!).then((doc) {
-            pp.Provider.of<TitleModel>(context,listen: false).title =
-                doc.rootElement('title');
-          });
+          pp.Provider.of<TitleModel>(context,listen: false).title =
+              titleIndex[tamState.link] ?? '';
           return fm.Column(
               children: [
                 fm.Expanded(
@@ -103,7 +104,7 @@ class _AnimListState extends fm.State<AnimListFrame> {
 
   String link;
   List<AnimListItem> animListItems = [];
-  Future<XmlDocument>? docFuture;
+  CallEntry? callEntry;
   var hasDifficulty = false;
   var selectedItem = -1;
   final scrollController = fm.ScrollController();
@@ -113,7 +114,7 @@ class _AnimListState extends fm.State<AnimListFrame> {
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
-    docFuture = TamUtils.getXMLAsset(link);
+    callEntry = callIndex.firstWhere((element) => element.link == link);
   }
 
   fm.Widget oneLegendWidget(String text, Color c) =>
@@ -125,18 +126,17 @@ class _AnimListState extends fm.State<AnimListFrame> {
           )
       );
 
-  void _loadList(XmlDocument doc) {
+  void _loadList(List<AnimatedCall> doc) {
     animListItems = [];
     var prevTitle = '';
     var prevGroup = '';
     var animationsAdded = 0;
-    for (final tam in TamUtils.tamList(doc)
-        .where((it) => DebugSwitch.showHiddenAnimations.enabled ||
-                       !(it('display','')).startsWith('n'))) {
-      var tamTitle = tam('title');
-      var group = tam('group','');
-      var from = group.isNotEmpty ? '' : tam('from') + tam('xref-from');
-      if (tam('difficulty').isNotBlank)
+    for (final tam in doc
+        .where((it) => DebugSwitch.showHiddenAnimations.enabled || !it.noDisplay)) {
+      var tamTitle = tam.title;
+      var group = tam.group;
+      var from = group.isNotEmpty ? '' : tam.from;
+      if (tam.difficulty > 0)
         hasDifficulty = true;
       if (group.isNotEmpty) {
         //  Add header for new group as needed
@@ -177,7 +177,7 @@ class _AnimListState extends fm.State<AnimListFrame> {
           fullname: fullname,
           group: group.isEmpty ? '$tamTitle from' : group,
           animnumber: animationsAdded,
-          difficulty: tam('difficulty','0').i));
+          difficulty: tam.difficulty));
       animationsAdded += 1;
     };
   }
@@ -194,13 +194,10 @@ class _AnimListState extends fm.State<AnimListFrame> {
 
   @override
   fm.Widget build(fm.BuildContext context) {
-    return fm.FutureBuilder<XmlDocument>(
-        future: docFuture,
-        builder: (fm.BuildContext context,
-            fm.AsyncSnapshot<XmlDocument> snapshot) {
-          if (snapshot.hasData) {
-            _loadList(snapshot.data!);
-            var foundLink = false;
+    var foundLink = false;
+    if (callEntry != null)
+      _loadList(callEntry!.calls);
+
             return fm.Column(children: [
               fm.Expanded(
                   child: fm.Scrollbar(
@@ -255,7 +252,7 @@ class _AnimListState extends fm.State<AnimListFrame> {
                             return fm.Container(
                                 child: pp.Consumer2<TamState,HighlightState>(
                                     builder: (context, tamState,highlightState,_) {
-                                      var animRegex = ('.*' + (tamState.animname??'!') + '.*').ri;
+                                      var animRegex = (tamState.animname??'XXX').ri;
                                       if (selectedItem != index) {
                                         //  Check for animation selected by name in link
                                         if (!foundLink && item.fullname.matches(animRegex)) {
@@ -334,9 +331,6 @@ class _AnimListState extends fm.State<AnimListFrame> {
                 ),
               )
             ]);
-          }
-          return fm.Text('Loading...');
-        });
   }
 
 }

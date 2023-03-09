@@ -59,7 +59,9 @@ class XMLCall extends Call {
       LevelData.C2: c2.CallsIndex.index[norm] ?? <AnimatedCall>[],
       LevelData.C3A: c3a.CallsIndex.index[norm] ?? <AnimatedCall>[],
       LevelData.C3B: c3b.CallsIndex.index[norm] ?? <AnimatedCall>[]
-    }..removeWhere((key, value) => value.isEmpty);
+    }.map((level, calls)  =>
+         MapEntry(level,calls.where((call) => !call.notForSequencer).toList()))
+       ..removeWhere((key, value) => value.isEmpty);
 
   XMLCall(String title) : super(title);
 
@@ -68,6 +70,8 @@ class XMLCall extends Call {
     var fuzzy = true;
     for (var entry in lookupAnimatedCall(norm).entries) {
       for (var tam in entry.value) {
+        if (normalizeCall(tam.title) != norm)
+          continue;
         //  Check for 4-dancer calls that do not work for 8 dancers
         if (tam.isExact && !exact)
           continue;
@@ -143,7 +147,7 @@ class XMLCall extends Call {
         }
       }
 
-    final allPaths = CallContext.fromFormation(xcall.formation,withPaths: true)
+    final allPaths = CallContext.fromFormation(xcall.formation,withPaths: xcall.paths)
         .dancers.map((d) => d.path).toList();
     //  If moving just some of the dancers,
     //  see if we can keep them in the same shape

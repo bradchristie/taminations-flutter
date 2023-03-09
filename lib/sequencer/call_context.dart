@@ -153,7 +153,7 @@ class CallContext {
   }
 
   CallContext.fromFormation(Formation f,
-      {bool withPaths=false, int geometry=Geometry.SQUARE}) {
+      {List<Path>? withPaths, int geometry=Geometry.SQUARE}) {
     if (f.asymmetric)
       geometry = 1;
     dancers = [for (var d in f.dancers) for (var g=0; g<geometry; g++)
@@ -166,10 +166,10 @@ class CallContext {
       dancers[i].numberCouple = couples[i];
     }
     asymmetric = f.asymmetric;
-    if (withPaths) {
+    if (withPaths != null) {
       for (var i=0; i<f.dancers.length; i++) {
         for (var g = 0; g < geometry; g++)
-          dancers[i*geometry + g].path = f.dancers[i].path.clone();
+          dancers[i*geometry + g].path = withPaths[i].clone();
       }
     }
   }
@@ -198,9 +198,9 @@ class CallContext {
   List<Dancer> movingDancers() => dancers.where((d) =>
       d.path.movelist.any((m) => m.fromCall)).toList();
 
-  double get angleOff90 =>
-      dancers.map((d) => d.angleFacing.angleOff90)
-          .fold<double>(0.0, (a, b) => a + b) / dancers.length;
+  double get angleOff90 => dancers.first.angleFacing.angleOff90;
+   //   dancers.map((d) => d.angleFacing.angleOff90)
+   //       .fold<double>(0.0, (a, b) => a.abs() + b.abs()) / dancers.length;
 
 
   /// Append the result of processing this CallContext to it source.
@@ -625,10 +625,15 @@ class CallContext {
           //  Don't match if some dancers are too far from their mapped location
           var maxOffset = matchResult.offsets.firstBy((it) => -it.length)!;
           //  Don't match if rotation is not multiple of 90 degrees
+          //  But allow for a rotation of the current context
+          //  for fractional tops
+          //  TODO check this math!!
           var matchAngle = matchResult.transform.angle.angleOff90;
-          var matchAngleDiff = angleOff90.angleDiff(ctx2.angleOff90)
-              .angleDiff(matchAngle);
-          var angleOK = matchAngle.isAround(0.0,delta:0.2) || matchAngleDiff.isAround(0.0,delta:0.2);
+          var matchAngleDiff1 = angleOff90.angleDiff(ctx2.angleOff90).angleDiff(matchAngle);
+          var matchAngleDiff2 = angleOff90.angleDiff(ctx2.angleOff90).angleDiff(-matchAngle);
+          var angleOK = matchAngle.isAround(0.0,delta:0.2) ||
+              matchAngleDiff1.isAround(0.0,delta:0.2) ||
+              matchAngleDiff2.isAround(0.0,delta:0.2);
           if (maxOffset.length < maxError && angleOK) {
             var totOffset = matchResult.offsets.fold<double>(0.0, (s, v) => s + v.length);
             if (bestMapping == null || totOffset < bestMapping.totalOffset)

@@ -34,8 +34,12 @@ class OwnTheDancers extends Action {
     final specifier = match[1]!;
     final firstCall = match[2]!;
     final secondCall = match[3]!;
-    ctx.applyCalls('$specifier Do Your Part $firstCall'
-        ' While Others Do Your Part $secondCall');
+    try {
+      ctx.applyCalls('$specifier $firstCall While Others $secondCall');
+    } on CallError catch(_) {
+      ctx.applyCalls('$specifier Do Your Part $firstCall'
+          ' While Others Do Your Part $secondCall');
+    }
   }
 
 }

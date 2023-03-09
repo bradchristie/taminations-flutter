@@ -1379,7 +1379,7 @@
            xref-title="Concentric Follow Thru"/>
 
   <tamxref title="Concentric Reverse Cross and Turn" group="Concentric (C-1)"
-           xref-link="c1/reverse_cross_and_turn"
+           xref-link="c1/cross_and_turn"
            xref-title="Concentric Reverse Cross and Turn"/>
 
   <tamxref title="Concentric Reverse Explode" group="Concentric (C-1)"
@@ -1427,7 +1427,7 @@
            xref-title="Concentric the K"/>
 
   <tamxref title="Concentric Trail to a Diamond" group="Concentric (C-2)"
-           xref-link="c2/trail_to_a_diamond"
+           xref-link="c2/peel_to_a_diamond"
            xref-title="Concentric Trail to a Diamond"/>
 
   <tamxref title="Concentric Turn to a Line" group="Concentric (C-2)"

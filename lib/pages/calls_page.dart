@@ -22,8 +22,10 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart' as fm;
 import 'package:provider/provider.dart' as pp;
 
+import '../call_entry.dart';
 import '../common.dart';
 import 'page.dart';
+import '../call_index.g.dart';
 
 class CallsPage extends fm.StatelessWidget {
   @override
@@ -78,8 +80,10 @@ class _CallsFrameState extends fm.State<CallsFrame> {
                   titleModel.title = levelDatum.name;
                   //  Get the initial list of calls to show
                   final showLevel = RegExp('(bms|adv|cha|all)').hasMatch(levelDatum.dir);
-                  final calls = TamUtils.calldata.where((element) =>
-                      levelDatum.selector(element.link)).toList();
+                  //final calls = TamUtils.calldata.where((element) =>
+                  //    levelDatum.selector(element.link)).toList();
+                  final calls = callIndex.where((it) =>
+                      levelDatum.selector(it.level)).toList();
                   //  Do any search to filter the calls
                   final callsSearched = calls.where((call) => call.title.toLowerCase().contains(search)).toList();
                   return fm.OrientationBuilder(
@@ -126,7 +130,7 @@ class _CallsFrameState extends fm.State<CallsFrame> {
   }
 
   //  Builder for one item of the list or grid
-  fm.Widget itemBuilder(fm.BuildContext context, int index, List<CallListDatum> callsSearched, bool showLevel) {
+  fm.Widget itemBuilder(fm.BuildContext context, int index, List<CallEntry> callsSearched, bool showLevel) {
     return fm.Container(
       decoration: fm.BoxDecoration(
           border: fm.Border(top: fm.BorderSide(width: 1, color: Color.BLACK))),
@@ -135,9 +139,9 @@ class _CallsFrameState extends fm.State<CallsFrame> {
         builder: (context,tamState,_) =>
          fm.Material(
           //  Color the item according the the level
-          color: LevelData.find(callsSearched[index].link)!.color,
+          color: LevelData.find(callsSearched[index].level)!.color,
           child: fm.InkWell(
-            highlightColor: LevelData.find(callsSearched[index].link)!.color.darker(),
+            highlightColor: LevelData.find(callsSearched[index].level)!.color.darker(),
               onTap: () {
                 tamState.change(
                     mainPage: MainPage.ANIMLIST,

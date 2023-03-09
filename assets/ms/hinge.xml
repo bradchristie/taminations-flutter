@@ -1,4 +1,4 @@
- <?xml version="1.0"?>
+<?xml version="1.0"?>
 <!DOCTYPE tamination SYSTEM "../src/tamination.dtd">
 <!--
 
@@ -72,19 +72,24 @@
 
   <tam title="Hinge"
        from="Right-Hand Waves"
-       formation="Ocean Waves RH BGGB"
        difficulty="1">
+    <formation>
+      <dancer gender="boy" x="-1.5" y="3" angle="0"/>
+      <dancer gender="girl" x="-1.5" y="1" angle="180"/>
+      <dancer gender="girl" x="-1.5" y="-1" angle="0"/>
+      <dancer gender="boy" x="-1.5" y="-3" angle="180"/>
+    </formation>
     <path>
-      <move select="Hinge Right" beats="2" />
+      <move select="Hinge Right" beats="2" offsetX="-.5" offsetY="-.5"/>
     </path>
     <path>
-      <move select="Hinge Right" beats="2" />
+      <move select="Hinge Right" beats="2" offsetX=".5" offsetY=".5"/>
     </path>
     <path>
-      <move select="Hinge Right" beats="2" />
+      <move select="Hinge Right" beats="2" offsetX="-.5" offsetY=".5"/>
     </path>
     <path>
-      <move select="Hinge Right" beats="2" />
+      <move select="Hinge Right" beats="2" offsetX=".5" offsetY="-.5"/>
     </path>
   </tam>
 

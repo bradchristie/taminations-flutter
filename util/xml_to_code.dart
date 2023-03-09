@@ -33,6 +33,22 @@ void main() async {
   await writeCalls();
 }
 
+String link2class(String link) {
+  var className = link.replaceFirst('.*\\/'.r, '')
+      .replaceAllMapped('_(\\w)'.r, (m) => m[1]!.toUpperCase())
+      .replaceAllMapped('^(\\w)'.r, (m) => m[1]!.toUpperCase());
+  if (className.startsWith('[0-9]'.r))
+    className = 'Q' + className;
+  return className;
+}
+
+///  Get all tam and tamxref elements from an animation XML document
+List<XmlElement> tamList(XmlDocument doc) => doc.firstElementChild!
+    .children.toList()
+    .whereType<XmlElement>().cast<XmlElement>()
+    .where((element) =>
+     (element.name.toString() == 'tam' || element.name.toString() == 'tamxref')).toList();
+
 String writeOneMovement(XmlElement m) {
   var move = 'Movement.fromData(';
   var b = 'beats: ' + m('beats');
@@ -99,7 +115,7 @@ Future<void> writeMoves() async {
   await movesDart.close();
 }
 
-void writeOneFormation(IOSink fDart, XmlElement f, {bool isAsymmetric=false}) {
+void writeOneFormation(StringSink fDart, XmlElement f, {bool isAsymmetric=false}) {
   fDart.writeln('Formation(\'${f('name')}\', [');
   final dancers = f.childrenNamed('dancer');
   for (var i=0; i<dancers.length; i++) {
@@ -168,47 +184,115 @@ Future<void> writeCalls() async {
       .then((text) => XmlDocument.parse(text));
   var callIndex = <String,List<String>>{};
   var importSet = <String>{};
+  var cIndex = <String>[];
+  var cInclude = <String>{};
+  var titles = <String,String>{};
   await Future.forEach(callsDoc.findAllElements('call'),(c) async {
     var call = c as XmlElement;
     var link = call('link').replaceFirst('\\?.*'.r, '');
     var dir = link.split('/').first;
-    if (link.contains('ssd'))
+    var imports = <String>{};
+    var className = link2class(link);
+
+    //  Add entry for call index
+    var languages = call('languages').split('\\s'.r).map((a) => "'$a'").join(',');
+    if (languages == "''")
+      languages = '';
+    var audio = call('audio');
+    if (audio.isNotBlank)
+      audio = ",'$audio'";
+    var title = call('title').replaceAll("'","\\'");
+    cIndex.add("CallEntry('$title','$dir','$link',$dir.$className,[$languages]$audio)");
+    var importLink = link;
+    if(importLink.startsWith('ssd')) {
+      var importLinkb1 = importLink.replaceAll('ssd', 'b1');
+      var importLinkb2 = importLink.replaceAll('ssd', 'b2');
+      var importLinkms = importLink.replaceAll('ssd', 'ms');
+      if (cInclude.contains("import 'calls/$importLinkb1.g.dart' as b1;"))
+        importLink = importLinkb1;
+      else if (cInclude.contains("import 'calls/$importLinkb2.g.dart' as b2;"))
+        importLink = importLinkb2;
+      else if (cInclude.contains("import 'calls/$importLinkms.g.dart' as ms;"))
+        importLink = importLinkms;
+    }
+    cInclude.add("import 'calls/$importLink.g.dart' as $dir;");
+
+    if (dir == 'ssd')
       return;
+
     var callDoc = await File('assets/$link.xml').readAsString()
         .then((text) => XmlDocument.parse(text));
-    if (callDoc.findAllElements('tam').isEmpty)
+    if (callDoc.findAllElements('tam').isEmpty &&
+        callDoc.findAllElements('tamxref').isEmpty)
       return;
-    var className = link.replaceFirst('.*\\/'.r, '')
-        .replaceAllMapped('_(\\w)'.r, (m) => m[1]!.toUpperCase())
-        .replaceAllMapped('^(\\w)'.r, (m) => m[1]!.toUpperCase());
-    if (className.startsWith('[0-9]'.r))
-      className = 'Q' + className;
-    print('Building $className');
 
-    var cDart = File('lib/calls/$link.g.dart').openWrite();
-    final thisImport = 'import \'$link.g.dart\';';
-    importSet.add(thisImport);
-    cDart.writeln('import \'../../common.dart\';');
-    cDart.writeln('import \'../../formations.g.dart\';');
-    cDart.writeln('import \'../../moves.g.dart\';');
-    cDart.writeln('import \'../../sequencer/calls/animated_call.dart\';');
-    cDart.writeln();
-    cDart.writeln('  final List<AnimatedCall> $className = [ ');
+    print('Building $className');
+    titles[link] = callDoc.rootElement('title');
+
+    importSet.add("import '$link.g.dart';");
+    imports.add("import '../../common.dart';");
+    imports.add("import '../../formations.g.dart';");
+    imports.add("import '../../moves.g.dart';");
+    imports.add("import '../../sequencer/calls/animated_call.dart';");
+
+    var callBuffer = StringBuffer();
+    callBuffer.writeln('  final List<AnimatedCall> $className = [ ');
     var count = 0;
-    callDoc.findAllElements('tam')
-        .where((tam) => !(tam('sequencer').contains('no')))
-        .forEach((tam) {
-      cDart.writeln('\n    AnimatedCall(${tam('title').q},');
+
+    tamList(callDoc).forEach((tam) {
+
+      if (tam.name.toString() == 'tamxref') {
+        var xreflink = tam('xref-link');
+        var xrefdir = xreflink.split('/').first;
+        var prefix = '';
+        imports.add("import '../$xreflink.g.dart' as $xrefdir;");
+        prefix = '$xrefdir.';
+        callBuffer.writeln('    $prefix${link2class(xreflink)}.where((tam) =>');
+        var where = "      tam.title == '${tam('xref-title')}'";
+        if (tam('xref-from').isNotBlank)
+          where += " && tam.from == '${tam('xref-from')}'";
+        callBuffer.write('$where).first');
+
+        if (tam('title').isNotEmpty)
+          callBuffer.write(".xref(title: '${tam('title')}')");
+        if (tam('group').isNotEmpty)
+          callBuffer.write(".xref(group: '${tam('group')}')");
+        if (tam('difficulty').isNotBlank)
+          callBuffer.write('.xref(difficulty: ${tam('difficulty')})');
+        callBuffer.writeln(',');
+        count += 1;
+        return;
+      }
+
+      callBuffer.writeln('\n    AnimatedCall(${tam('title').q},');
       if (tam.childrenNamed('formation').isNotEmpty) {
         //  custom formation
-        cDart.write('      ');
-        writeOneFormation(cDart, tam.childrenNamed('formation').first,
+        callBuffer.write('      formation:');
+        writeOneFormation(callBuffer, tam.childrenNamed('formation').first,
             isAsymmetric: tam('asymmetric').isNotBlank);
-        cDart.writeln(',');
+        callBuffer.writeln(',');
       }
       else
-        cDart.writeln('      Formations.${tam('formation').id},');
-      cDart.writeln('      [');
+        callBuffer.writeln('      formation:Formations.${tam('formation').id},');
+      final fromParam = tam('from').isNotBlank ? "from:'${tam('from')}'" : '';
+      final groupParam = tam('group').isNotEmpty? "group:'${tam('group')}'" : '';
+      final genderParam = tam('sequencer') == 'gender-specific' ? 'isGenderSpecific:true' : '';
+      final exactParam = tam('sequencer') == 'exact' ? 'isExact:true' : '';
+      final perimeterParam = tam('sequencer') == 'perimeter' ? 'isPerimeter:true' : '';
+      final partsParam = tam('parts').isNotBlank ? "parts:'${tam('parts')}'" : '';
+      final fractionsParam = tam('fractions').isNotBlank
+          ? "fractions:'${tam('fractions')}'" : '';
+      final difficultyParam = tam('difficulty').isNotBlank
+          ? 'difficulty: ${tam('difficulty')}' : '';
+      final activesParam = tam('actives').isNotBlank ? "actives:'${tam('actives')}'" : '';
+      final notSequencerParam = tam('sequencer').contains('no') ? 'notForSequencer: true' : '';
+      final noDisplayParam = tam('display').isNotBlank ? 'noDisplay: true' : '';
+      final allParams = [fromParam,groupParam,genderParam,exactParam,perimeterParam,
+        partsParam,fractionsParam,difficultyParam,
+        activesParam,notSequencerParam,noDisplayParam]
+          .where((param) => param.isNotEmpty).join(',');
+      callBuffer.writeln('      $allParams,');
+      callBuffer.writeln('      paths:[');
       tam.findElements('path').forEach((path) {
         var paths = path.childElements.map((move) {
           var onePath = '';
@@ -240,31 +324,45 @@ Future<void> writeCalls() async {
           return onePath;
         });
         if (paths.isNotEmpty)
-          cDart.writeAll(paths,' +\n');
+          callBuffer.writeAll(paths,' +\n');
         else
-          cDart.write('          Path()');
-        cDart.writeln(',\n');
+          callBuffer.write('          Path()');
+        callBuffer.writeln(',\n');
         //  end of one path
       });
-      cDart.writeln('      ],');  //  end of all paths for one animation
-      final genderParam = tam('sequencer') == 'gender-specific' ? 'isGenderSpecific:true' : '';
-      final exactParam = tam('sequencer') == 'exact' ? 'isExact:true' : '';
-      final perimeterParam = tam('sequencer') == 'perimeter' ? 'isPerimeter:true' : '';
-      final partsParam = tam('parts').isNotBlank ? 'parts:\'${tam('parts')}\'' : '';
-      final fractionsParam = tam('fractions').isNotBlank
-          ? 'fractions:\'${tam('fractions')}\'' : '';
-      final activesParam = tam('actives').isNotBlank ? 'actives:\'${tam('actives')}\'' : '';
-      final allParams = [genderParam,exactParam,perimeterParam,partsParam,fractionsParam,activesParam].where((param) => param.isNotBlank).join(',');
-      cDart.writeln('      $allParams),');
+      callBuffer.writeln('      ]),');  //  end of all paths for one animation
       var norm = normalizeCall(tam('title'));
       if (!callIndex.containsKey(norm))
         callIndex[norm] = [];
       callIndex[norm]!.add('$dir/$className[$count]');
       count += 1;
     });
-    cDart.writeln('  ];');  //  end of animation list
+    callBuffer.writeln('  ];');  //  end of animation list
+
+    var cDart = File('lib/calls/$link.g.dart').openWrite();
+    cDart.writeAll(imports,'\n');
+    cDart.writeln('\n');
+    cDart.writeln(callBuffer);
     await cDart.flush();
     await cDart.close();
+
+    var cIndexDart = File('lib/call_index.g.dart').openWrite();
+    for (var line in cInclude)
+      cIndexDart.writeln(line);
+    cIndexDart.writeln("import 'call_entry.dart';");
+    cIndexDart.write('\nvar callIndex = [\n  ');
+    cIndexDart.writeln(cIndex.join(',\n  '));
+    cIndexDart.writeln('];');
+    cIndexDart.writeln('\nvar titleIndex = <String,String>{');
+    for (var link in titles.keys) {
+      var t = titles[link]!.replaceAll("'","\\'");
+      cIndexDart.writeln("    '$link' : '$t',");
+    }
+    cIndexDart.writeln('};');
+    await cIndexDart.flush();
+    await cIndexDart.close();
+
+
   });  // end of call
 
   //  Generated indexes

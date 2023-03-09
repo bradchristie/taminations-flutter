@@ -149,7 +149,7 @@ mixin CallWithParts {
         //  Should be divided into parts, will also accept fractions
         final parts = tam.parts;  // fractions?
         final sexy = tam.isGenderSpecific;
-        final allp = CallContext.fromFormation(tam.formation,withPaths:true).dancers.map((d) => d.path).toList();
+        final allp = CallContext.fromFormation(tam.formation,withPaths:tam.paths).dancers.map((d) => d.path).toList();
         final partTimes = parts.isBlank ? <double>[] :
             parts.split(';').map((e) => e.d).toList();
         if (partTimes.length+1 >= partNum) {

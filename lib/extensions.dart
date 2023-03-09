@@ -91,7 +91,7 @@ extension TamDouble on double {
   double get toRadians => this * pi / 180;
   double get toDegrees => this * 180 / pi;
   double coerceIn(double a, double b) => max(a,min(b,this));
-  double get angleOff90 => (this + pi*2.0 + 0.1) % (pi/2.0) - 0.1;
+  double get angleOff90 => (this + pi*2.0 + pi/4) % (pi/2.0) - pi/4;
 
 }
 

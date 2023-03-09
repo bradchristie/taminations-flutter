@@ -306,10 +306,16 @@
   </tam>
 
 
-  <tamxref title="Single Turn and Deal" xref-link="a2/single_wheel"
+  <tamxref title="Single Turn and Deal"
+           xref-title="Single Wheel"
+           xref-link="a2/single_wheel"
            xref-from="Couples Facing Out"/>
-  <tamxref title="Single Turn and Deal" xref-link="a2/single_wheel"
+
+  <tamxref title="Single Turn and Deal"
+           xref-title="Single Wheel"
+           xref-link="a2/single_wheel"
            xref-from="Right-Hand Box"/>
+
   <tam title="Single Turn and Deal" from="Left-Hand Box" formation="Box LH">
     <path>
       <move select="U-Turn Left" offsetX="-1" offsetY="1"/>

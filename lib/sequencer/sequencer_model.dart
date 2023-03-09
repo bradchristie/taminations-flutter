@@ -357,7 +357,7 @@ class SequencerModel extends fm.ChangeNotifier {
     var formation = Formations.formationIndex[startingFormation]
         ?? thrower(CallError('Could not find formation $startingFormation'))!;
     var paths = [for (var _ in formation.dancers) Path()];
-    animation.setAnimatedCall(AnimatedCall('',formation,paths));
+    animation.setAnimatedCall(AnimatedCall('',formation:formation,paths:paths));
     animation.recalculate();
     _updateParts();
   }
