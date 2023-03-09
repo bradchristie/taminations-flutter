@@ -211,6 +211,103 @@
     </path>
   </tam>
 
+  <tam title="Head Right-Hand Star All the Way Around"
+       formation="Static Square" group=" ">
+    <path>
+      <move select="Forward 2"/>
+      <move select="Forward" beats="1.5"/>
+      <move select="Cast Right"/>
+      <move select="Quarter Right" beats="3" offsetX="1" offsetY="2"/>
+    </path>
+    <path>
+      <move select="Forward 2"/>
+      <move select="Quarter Left" offsetY="1"/>
+      <move select="Cast Right"/>
+      <move select="U-Turn Right" beats="3" offsetX="3"/>
+    </path>
+    <path>
+    </path>
+    <path>
+    </path>
+  </tam>
+
+  <tam title="Head Left-Hand Star All the Way Around"
+       formation="Static Square" group=" ">
+    <path>
+      <move select="Forward 2"/>
+      <move select="Quarter Right" offsetY="-1"/>
+      <move select="Cast Left"/>
+      <move select="U-Turn Left" beats="3" offsetX="3"/>
+    </path>
+    <path>
+      <move select="Forward 2"/>
+      <move select="Forward" beats="1.5"/>
+      <move select="Cast Left"/>
+      <move select="Quarter Left" beats="3" offsetX="1" offsetY="-2"/>
+    </path>
+    <path>
+    </path>
+    <path>
+    </path>
+  </tam>
+
+  <tam title="Heads Square Thru; Make A Right Hand Star With The Sides; Heads Center Left Hand Star; Back To The Same Girl With A Right and Left Thru"
+       formation="Static Square" group=" ">
+    <path>
+      <move select="Forward 2" />
+      <move select="Pull Left" scaleY=".5" />
+      <move select="Lead Right" scaleX=".5" scaleY="1.5" />
+      <move select="Lead Right" offsetX=".5" offsetY=".5" />
+      <move select="Lead Right" scaleX=".5" scaleY="1.5" />
+      <move select="Extend Left" scaleY=".5" />
+      <move select="Forward" beats="1.5"/>
+      <move select="Cast Right"/>
+      <move select="Hinge Left"/>
+      <move select="Cast Left"/>
+      <move select="Quarter Right" offsetX="1"/>
+      <move select="Pull Left" scaleY=".5"/>
+      <move select="Extend Right" scaleY=".5"/>
+      <move select="Beau Wheel" scaleX=".5"/>
+    </path>
+    <path>
+      <move select="Forward 2" />
+      <move select="Pull Left" scaleY=".5" />
+      <move select="Lead Left" offsetX=".5" offsetY="-.5" />
+      <move select="Lead Left" scaleX=".5" scaleY="1.5" />
+      <move select="Lead Left" offsetX=".5" offsetY="-.5" />
+      <move select="Extend Left" scaleY=".5" />
+      <move select="Quarter Left" offsetY="1"/>
+      <move select="Cast Right"/>
+      <move select="Hinge Right"/>
+      <move select="Cast Left"/>
+      <move select="Forward" beats="1.5"/>
+      <move select="Pull Left" scaleY=".5"/>
+      <move select="Extend Right" scaleY=".5"/>
+      <move select="Belle Wheel" scaleX=".5"/>
+    </path>
+    <path>
+      <move select="Stand" beats="8.5"/>
+      <move select="Forward" beats="1.5"/>
+      <move select="Cast Right"/>
+      <move select="Quarter Right" offsetX="1"/>
+      <move select="Stand" beats="6"/>
+      <move select="Pull Left" scaleY=".5"/>
+      <move select="Extend Right" scaleY=".5"/>
+      <move select="Beau Wheel" scaleX=".5"/>
+    </path>
+    <path>
+      <move select="Stand" beats="8.5"/>
+      <move select="Quarter Left" offsetY="1"/>
+      <move select="Cast Right"/>
+      <move select="U-Turn Right" offsetX="1"/>
+      <move select="Stand" beats="4.5"/>
+      <move select="Pull Left" scaleY=".5"/>
+      <move select="Extend Right" scaleY=".5"/>
+      <move select="Belle Wheel" scaleX=".5"/>
+    </path>
+  </tam>
+
+
   <!--
   <tam title="Right-Hand Star 1/4" group=" "
        formation="Facing Couples Compact">

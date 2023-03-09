@@ -143,9 +143,9 @@ Future<void> writeFormations() async {
   fDoc.findAllElements('formation').forEach((f) {
     var objName = f('name').id;
     fMap[f('name')] = objName;
-    fDart.writeln('  static final Formation $objName = ');
+    fDart.write('  static final Formation $objName = ');
     writeOneFormation(fDart, f);
-    fDart.writeln(';');
+    fDart.writeln(';\n');
   });
 
   //  Map to look up move formation by name

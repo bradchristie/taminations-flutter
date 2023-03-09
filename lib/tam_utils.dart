@@ -43,10 +43,6 @@ class TamUtils {
   static Map<String,List<CallListDatum>> callmap = {};
   static final Map<String,XmlElement> _formations = {};
   static final Map<String,XmlElement> _moves = {};
-  //  CSS to be injected in web pages
-  static String css = '';
-  //  Javascript to be injected in web pages
-  static String framecode = '';
   //  Keep a set of all words used in calls.
   //  Used to check sequencer abbreviations - don't let the use make
   //  an abbreviation for a real word.
@@ -227,10 +223,6 @@ class TamUtils {
     movesDoc.findAllElements('path').forEach((m) {
       _moves[m('name')] = m;
     });
-
-    var rawCSS = await getAsset('src/tamination.css');
-    css = '<style>' + rawCSS.replaceAll(r'/\*.*?\*/'.rd, '') + '</style>';
-    framecode = await getAsset('src/framecode.js');
 
     var callsDoc = await getXMLAsset('src/calls');
     calldata = callsDoc.findAllElements('call').map((e) =>
