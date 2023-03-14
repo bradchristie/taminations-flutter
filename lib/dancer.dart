@@ -23,142 +23,7 @@ import 'package:google_fonts/google_fonts.dart';
 
 import 'common.dart';
 
-class Gender {
-  static const BOY = 1;
-  static const GIRL = 2;
-  static const PHANTOM = 3;
-  static const NONE = 4;    // for concepts with abstract dancers
-  static final genderMap = {
-    'boy': Gender.BOY,
-    'girl': Gender.GIRL,
-    'phantom': Gender.PHANTOM
-  };
-  static int fromString(String g) => genderMap[g] ?? NONE;
-}
-
-//  Additional data for each dancer for use by sequencer
-class DancerData {
-  var active = true;
-  var beau = false;
-  var belle = false;
-  var leader = false;
-  var trailer = false;
-  var center = false;
-  var verycenter = false;
-  var end = false;
-  Dancer? partner;
-}
-
-//  Dancer Space is a coordinate system where the dancer
-//  is at (0,0) and looking down the X axis.
-//  Convert a point from world space to dancer space
-//  based on the dancer's current location.
-extension DancerVector on Vector {
-  Vector ds(Dancer d) => d.tx.inverse() * this;
-}
-
-extension DancerQ on Dancer? {
-  Dancer throwIfNull(Object e) {
-    if (this == null)
-      throw e;
-    return this!;
-  }
-}
-
-extension DancerList on List<Dancer> {
-
-  //  Return dancer with a specific number
-  Dancer find(int i) => firstWhere((d) => d.number.i == i);
-
-  //  Check to see if dancers are in diagonal-opposite order
-  //  That is, dancer 1 is the diagonal opposite of dancer 0, etc.
-  bool areDancersOrdered() =>
-      length % 2 == 0 &&
-  indices.where((it) => it % 2 == 0).every(
-          (it) => this[it].location.isAbout(-this[it+1].location) && (this[it].angleFacing-this[it+1].angleFacing).isAround(pi));
-
-  //  Center a list of dancers
-  //  Assumes dancers are distributed evenly around a central point
-  List<Dancer> center() {
-    if (length > 0) {
-      var vs = fold<Vector>(Vector(0.0,0.0), (v, d) => v + d.location);
-      var va = vs / length.d;
-      forEach((d) {
-        d.setStartPosition(d.location - va);
-      });
-    }
-    return this;
-  }
-
-  //  Take a list of dancers in any order and re-order
-  //  in pairs of diagonal opposites
-  //  If it fails, just return original list
-  //  rather than null or crashing
-  List<Dancer> inOrder() {
-    try {
-      final inOrderList = where((it) =>
-      it.location.x.isGreaterThan(0) ||
-          it.location.x.isAbout(0) && it.location.y.isGreaterThan(0))
-          .expand((d) =>
-      [
-        d,
-        firstWhere((it) => it.location.isAbout(-d.location))
-      ]).toList();
-      return inOrderList.length == length ? inOrderList : this;
-    } catch (_) {
-      return this;
-    }
-  }
-
-  String show({bool arrayNumbers=false, bool coupleNumbers=false}) {
-    final charMatrix = [for (var i=0; i<11; i++) [ for (var j=0; j<21; j++) ' ']];
-    for (var i=0; i<21; i++)
-      charMatrix[5][i] = '-';
-    for (var i=0; i<11; i++)
-      charMatrix[i][10] = '|';
-    charMatrix[5][10] = '+';
-    charMatrix[5][0] = 'Y';
-    charMatrix[0][10] = 'X';
-    var i = 0;
-    for (final d in this) {
-      var dx = d.location.x.round();
-      var dy = (d.location.y*2.0).round();
-      if (dx.abs() <= 5 && dy.abs() <= 10) {
-        var c = coupleNumbers ? d.numberCouple
-            : arrayNumbers ? i.s : d.number;
-        if (c.length > 1)
-          c = c.substring(0,1);
-        if (c.isEmpty)
-          c = 'X';
-        charMatrix[-dx + 5][-dy + 10] = c;
-      }
-      var dsym = '';
-      if (d.angleFacing.isAround(0)) {
-        dx += 1;
-        dsym = '^';
-      } else if (d.angleFacing.isAround(pi)) {
-        dx -= 1;
-        dsym = 'v';
-      } else if (d.angleFacing.isAround(pi/2)) {
-        dy += 1;
-        dsym = '<';
-      } else if (d.angleFacing.isAround(-pi/2)) {
-        dy -= 1;
-        dsym = '>';
-      }
-      if (dsym.length == 1 && dx.abs() <= 5 && dy.abs() <= 10) {
-        final oldChar = charMatrix[-dx + 5][-dy + 10];
-        if (oldChar == ' ' || oldChar == '-' || oldChar == '|')
-          charMatrix[-dx + 5][-dy + 10] = dsym;
-      }
-      i += 1;
-    }
-    return '\n' + charMatrix.map((e) => e.join('')).join('\n') + '\n';
-  }
-
-}
-
-class Dancer implements Comparable<Dancer>, Cloneable<Dancer> {
+class Dancer extends DancerModel {
 
   static const NUMBERS_OFF = 0;
   static const NUMBERS_DANCERS = 1;
@@ -171,13 +36,7 @@ class Dancer implements Comparable<Dancer>, Cloneable<Dancer> {
       fm.Radius.circular(0.3));
 
   //  Passed into default constructor
-  String number;
-  String numberCouple;
-  int gender;
   Color fillColor;
-  Geometry _geom;
-  List<Movement> moves;
-  Dancer? clonedFrom;
 
   //  Computed
   Color get drawColor => fillColor.darker();
@@ -185,24 +44,8 @@ class Dancer implements Comparable<Dancer>, Cloneable<Dancer> {
   bool showColor = true;
   bool showShape = true;
   bool hidden = false;
-  Matrix starttx;
-  Path path;
   bool showPath = false;
-  int hands = Hands.NOHANDS;
-  Matrix tx = Matrix.getIdentity();
   fm.Path? _pathPath;
-  double get beats => path.beats;
-  //  Other vars for computing handholds
-  Dancer? leftDancer;
-  Dancer? rightDancer;
-  Dancer? rightGrip;
-  Dancer? leftGrip;
-  bool rightHandVisibility = false;
-  bool leftHandVisibility = false;
-  bool rightHandNewVisibility = false;
-  bool leftHandNewVisibility = false;
-  var data = DancerData();
-  var name = '';  // for sequencer
   var _span = fm.TextSpan();
   var _tp = fm.TextPainter();
 
@@ -221,183 +64,44 @@ class Dancer implements Comparable<Dancer>, Cloneable<Dancer> {
 
       }
 
-  Dancer(this.number,this.numberCouple, this.gender,
-      this.fillColor, Matrix mat, this._geom, this.moves, [this.clonedFrom])
-      : path = Path(moves),
-        starttx = _geom.startMatrix(mat)
+  Dancer(number,numberCouple, gender,this.fillColor, Matrix mat, moves)
+      : super(number,numberCouple,gender,mat,moves)
   {
-    if (clonedFrom != null)
-      data.active = clonedFrom!.data.active;
     // Compute points of path for drawing path
     computePath();
-    //  Restore dancer to start position
-    _animateComputed(-2.0);
   }
 
   factory Dancer.fromData({required int gender,
     String number='', String couple='',
     required double x, required double y, required double angle,
     Color color = Color.WHITE,
-    Geometry? geom,
+    Geometry? geometry, int rotnum=0,
     List<Movement> path = const <Movement>[]
   }) {
-    final mat = Matrix.getTranslation(x,y) *
-        Matrix.getRotation(angle.toRadians);
-    final g = geom ?? SquareGeometry(0);
-    return Dancer(number,couple,gender,color,mat,g,path);
-  }
-
-  Dancer.cloneWithOptions(Dancer from,{String? number, String? numberCouple, int? gender}) :
-      this(
-          number ?? from.number,
-          numberCouple ?? from.numberCouple,
-          gender ?? from.gender,
-          from.fillColor,from.tx,
-          //  Already geometrically rotated so don't do it again
-          Geometry(from._geom.geometry,0),[],from);
-
-  Dancer.cloneWithGeometry(Dancer from, int geometry) :
-      this(from.number,from.numberCouple,from.gender,from.fillColor,from.tx,
-      Geometry(from._geom.geometry,geometry),[]);
-
-  @override
-  Dancer clone() => Dancer.cloneWithOptions(this);
-
-  @override
-  int get hashCode => number.hashCode;
-
-  bool get isActive => data.active;
-  bool get isNotActive => !data.active;
-
-  @override
-  bool operator ==(Object other) {
-    if (other is Dancer) {
-      return number == other.number;
-    }
-    return false;
-  }
-
-  @override
-  int compareTo(Dancer other) => number.compareTo(other.number);
-  bool operator <(Object other) {
-    if (other is Dancer)
-      return number.compareTo(other.number) < 0;
-    return false;
+        var myGeometry = geometry ?? Geometry(Geometry.SQUARE);
+    final mat = myGeometry.startMatrix(Matrix.getTranslation(x,y) *
+        Matrix.getRotation(angle.toRadians), rotnum);
+    return Dancer(number,couple,gender,color,mat,path);
   }
 
   @override
   String toString() => number;
 
-  bool get isPhantom => gender == Gender.PHANTOM;
-
-  Vector get location => tx.location;
-
-  //  Distance to another dancer
-  double distanceTo(Dancer d2) => (location - d2.location).length;
-
-  //  Angle the dancer is facing relative to the positive x-axis
-  double get angleFacing => tx.angle;
-  bool get isFacingX => angleFacing.isAround(0.0) || angleFacing.isAround(pi);
-  bool get isFacingY => angleFacing.isAround(pi/2) || angleFacing.isAround(3*pi/2);
-
-  //  Angle of the dancer's position relative to the positive x-axis
-  double get anglePosition => tx.location.angle;
-
-  //  Angle the dancer turns to look at the origin
-  double get angleToOrigin => (tx.inverse()*Vector()).angle;
-
-  Vector vectorToDancer(Dancer d2) =>
-      tx.inverse() * d2.location;
-
-  //  Angle of d2 as viewed from this dancer
-  //  If angle is 0 then d2 is in front
-  //  Angle returned is in the range -pi to pi
-  double angleToDancer(Dancer d2) => vectorToDancer(d2).angle;
-
-  //  Other geometric interrogatives
-  bool get isFacingIn {
-    var a = angleToOrigin.abs();
-    return !a.isAbout(pi/2) && a < pi/2;
-  }
-
-  bool get isFacingOut {
-    var a = angleToOrigin.abs();
-    return !a.isAbout(pi/2) && a > pi/2;
-  }
-
-  bool get isOnSSSpot =>
-      {location.x.abs().round(), location.y.abs().round()}.containsAll({1,3});
-
-  //  Dancer turns to the left to look at center of the square
-  bool get isCenterLeft => angleToOrigin > 0;
-  bool get isCenterRight => angleToOrigin < 0;
-  bool get isOnXAxis => location.y.isAbout(0);
-  bool get isOnYAxis => location.x.isAbout(0);
-  bool get isOnAxis => isOnXAxis || isOnYAxis;
-  bool get isTidal =>
-      (isOnXAxis || isOnYAxis) && (isCenterLeft || isCenterRight);
-  bool get isHead => numberCouple == '1' || numberCouple == '3';
-  bool get isSide => numberCouple == '2' || numberCouple == '4';
-
-  bool isInFrontOf(Dancer d2) =>
-      this != d2 && d2.angleToDancer(this).isAround(0);
-  bool isInBackOf(Dancer d2) =>
-      this != d2 && d2.angleToDancer(this).isAround(pi);
-  bool isRightOf(Dancer d2) =>
-      this != d2 && d2.angleToDancer(this).isAround(pi*3/2);
-  bool isLeftOf(Dancer d2) =>
-      this != d2 && d2.angleToDancer(this).isAround(pi/2);
-  bool isOpposite(Dancer d2) =>
-      this != d2 && (location + d2.location).length.isAbout(0);
-
-  ///   Used for hexagon handholds
-  /// @return  True if dancer is close enough to center to make a center star
-  bool get inCenter => location.length < 1.1;
-
-
-  void _animateComputed(double beat) {
-    hands = path.hands(beat);
-    tx = starttx * path.animate(beat);
-    tx = _geom.pathMatrix(starttx, tx, beat) * tx;
-  }
-  void animate(double beat) => _animateComputed(beat);
-  void animateToEnd() => animate(beats);
-
-
-  Dancer setStartPosition(Vector pos) {
-    var a = angleFacing;
-    starttx = Matrix.getTranslation(pos.x,pos.y) * Matrix.getRotation(a);
-    tx = starttx.clone();
-    return this;
-  }
-
-  Dancer setStartAngle(double a) {
-    starttx = Matrix.getTranslation(starttx.location) * Matrix.getRotation(a);
-    tx = starttx.clone();
-    return this;
-  }
-
-  //  Note that this takes an angle in degrees
-  Dancer rotateStartAngle(double angle) {
-    starttx = starttx * Matrix.getRotation(angle.toRadians);
-    tx = starttx.clone();
-    return this;
-  }
 
   // Compute points of path for drawing path
   void computePath() {
-    _animateComputed(0);
+    animateComputed(0);
     var loc = location;
     _pathPath = fm.Path();
     _pathPath!.moveTo(loc.x, loc.y);
     for (var beat = 0.1; beat <= beats; beat += 0.1) {
-      _animateComputed(beat);
+      animateComputed(beat);
       loc = location;
       _pathPath!.lineTo(loc.x, loc.y);
     }
   }
 
-  ///   Draw the entire dancer's path as a translucent colored line
+  ///   Draw the entire Dancer's path as a translucent colored line
   /// @param c  Canvas to draw to
   void drawPath(fm.Canvas c) {
     //  The path color is a partly transparent version of the draw color
@@ -408,9 +112,9 @@ class Dancer implements Comparable<Dancer>, Cloneable<Dancer> {
     c.drawPath(_pathPath!, p);
   }
 
-  //  Draw the dancer at its current position
-  //  The Canvas is already transformed to the dancer's position and orientation
-  //  and scaled to the dancer's size
+  //  Draw the Dancer at its current position
+  //  The Canvas is already transformed to the Dancer's position and orientation
+  //  and scaled to the Dancer's size
   void draw(fm.Canvas c) {
     var dc = showColor ? drawColor : Color.GRAY;
     var fc = showColor ? fillColor : Color.LIGHTGREY;
@@ -446,8 +150,8 @@ class Dancer implements Comparable<Dancer>, Cloneable<Dancer> {
       c.drawRRect(rrect, p);
     //  Draw number if on
     if (reallyShowNumbers) {
-      //  The dancer is rotated relative to the display, but of course
-      //  the dancer number should not be rotated.
+      //  The Dancer is rotated relative to the display, but of course
+      //  the Dancer number should not be rotated.
       //  So the number needs to be transformed back
       var angle = atan2(tx.m12,tx.m22);
       var txtext = Matrix.getRotation(-angle + pi/2);

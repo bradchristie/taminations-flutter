@@ -38,7 +38,7 @@ class And extends FilterActives {
   //  If the previous call was retrieved from XML and has a selector
   //  such as Boys or Heads then we need to filter the actives here
   @override
-  bool isActive(Dancer d, CallContext ctx) {
+  bool isActive(DancerModel d, CallContext ctx) {
     var retval = d.isActive;
     for (var call in ctx.callstack.take(_index)) {
       var normWords = normalizeCall(call.name).toLowerCase().split(' ');

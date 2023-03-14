@@ -28,7 +28,7 @@ class Face extends Action {
   Face(String name) : super(name);
 
   @override
-  Path performOne(Dancer d, CallContext ctx) {
+  Path performOne(DancerModel d, CallContext ctx) {
     Path move;
     if (name == 'Face In' ) {
       if (d.angleToOrigin.isLessThan(0))
@@ -36,7 +36,7 @@ class Face extends Action {
       else if (d.angleToOrigin.isGreaterThan(0))
         move = QuarterLeft;
       else
-        throw CallError('Dancer $d does not know which way to turn.' );
+        throw CallError('DancerModel $d does not know which way to turn.' );
     }
     else if (name == 'Face Out') {
       if (d.angleToOrigin.isLessThan(0))
@@ -44,7 +44,7 @@ class Face extends Action {
       else if (d.angleToOrigin.isGreaterThan(0))
         move = QuarterRight;
       else
-        throw CallError('Dancer $d does not know which way to turn.' );
+        throw CallError('DancerModel $d does not know which way to turn.' );
     }
     else if (name == 'Face Left' )
       move = QuarterLeft;

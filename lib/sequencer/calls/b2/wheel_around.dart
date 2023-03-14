@@ -28,8 +28,8 @@ class WheelAround extends ActivesOnlyAction {
   WheelAround(String name) : super(name);
 
   @override
-  Path performOne(Dancer d, CallContext ctx) {
-    var d2 = d.data.partner.throwIfNull(CallError('Dancer $d must Wheel Around with partner'));
+  Path performOne(DancerModel d, CallContext ctx) {
+    var d2 = d.data.partner.throwIfNull(CallError('DancerModel $d must Wheel Around with partner'));
     if (!ctx.isInCouple(d,d2))
       throw CallError('Only Couples can Wheel Around.');
     var dist = d.distanceTo(d2);

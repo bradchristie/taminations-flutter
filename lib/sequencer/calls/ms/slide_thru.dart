@@ -30,7 +30,7 @@ class SlideThru extends ActivesOnlyAction {
   SlideThru(name) : super(name);
 
   @override
-  Path performOne(Dancer d, CallContext ctx) {
+  Path performOne(DancerModel d, CallContext ctx) {
     //  Check if in wave, slide thru with adj dancer
     var d2 = ctx.dancerFacing(d);
     if (d2 == null && ctx.isInWave(d) && d.data.beau && ctx.dancerToRight(d)!.data.active) {

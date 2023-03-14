@@ -27,6 +27,7 @@ export 'cloneable.dart';
 export 'color.dart';
 export 'dance_painter.dart';
 export 'dancer.dart';
+export 'dancer_model.dart';
 export 'debug_switch.dart';
 export 'extensions.dart';
 export 'formation.dart';

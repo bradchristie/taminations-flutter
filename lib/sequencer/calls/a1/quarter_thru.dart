@@ -23,7 +23,7 @@ class QuarterThru extends Action with CallWithParts {
 
   @override var level = LevelData.A1;
   @override var numberOfParts = 2;
-  List<Dancer>? part1dancers;
+  List<DancerModel>? part1dancers;
   bool isGrand;
   bool isLeft;
   bool isThree;

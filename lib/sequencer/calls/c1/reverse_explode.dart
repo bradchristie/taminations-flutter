@@ -28,7 +28,7 @@ class ReverseExplode extends Action {
   ReverseExplode(name) : super(name);
 
   @override
-  Path performOne(Dancer d, CallContext ctx) {
+  Path performOne(DancerModel d, CallContext ctx) {
     var d2 = d.data.partner;
     if (d2 != null) {
       var dist = d.distanceTo(d2);

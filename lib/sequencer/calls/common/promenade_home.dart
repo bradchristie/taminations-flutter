@@ -25,7 +25,7 @@ import '../action.dart';
 import '../../../math/vector.dart';
 import '../../call_context.dart';
 import '../../call_error.dart';
-import '../../../dancer.dart';
+import '../../../dancer_model.dart';
 import '../../../extensions.dart';
 import '../../../level_data.dart';
 import '../../../math/path.dart';
@@ -100,7 +100,7 @@ Promenade Corner''';
   }
 
   @override
-  Path performOne(Dancer d, CallContext ctx) {
+  Path performOne(DancerModel d, CallContext ctx) {
     var num = (d.gender == Gender.GIRL && name.contains('Corner'))
         ? d.numberCouple.i % 4 + 1
         : d.numberCouple.i;

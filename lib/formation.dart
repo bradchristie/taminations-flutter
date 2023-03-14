@@ -25,7 +25,7 @@ class Formation {
 
   final String name;
   final bool asymmetric;
-  final List<Dancer> dancers;
+  final List<DancerModel> dancers;
 
   static final Map<RegExp,Formation> _formationMap = {
     '.*lines?'.ri : Formations.NormalLines,

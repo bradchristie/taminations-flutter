@@ -65,9 +65,9 @@ String writeOneMovement(XmlElement m) {
     var cy4 = 'cy4: ' + m('cy4');
     var x4 = 'x4: ' + m('x4');
     var y4 = 'y4: ' + m('y4');
-    move += '    $b, $h, $cx1, $cy1, $cx2, $cy2, $x2, $y2, $cx3, $cx4, $cy4, $x4, $y4';
+    move += '$b, $h, $cx1, $cy1, $cx2, $cy2, $x2, $y2, $cx3, $cx4, $cy4, $x4, $y4';
   } else {
-    move += '    $b, $h, $cx1, $cy1, $cx2, $cy2, $x2, $y2';
+    move += '$b, $h, $cx1, $cy1, $cx2, $cy2, $x2, $y2';
   }
   move += '  )';
   return move;
@@ -80,8 +80,10 @@ Future<void> writeMoves() async {
       .then((text) => XmlDocument.parse(text));
   var movesDart = File('lib/moves.g.dart').openWrite();
   var movesMap = <String, String>{};
-  movesDart.writeln('import \'../common.dart\';');
+  movesDart.writeln("import 'math/movement.dart';");
+  movesDart.writeln("import 'math/path.dart';");
   movesDart.writeln();
+  var allMoves = <String>[];
   movesDoc.findAllElements('path').forEach((p) {
     var objName = p('name').id;
     movesMap[p('name')] = objName;
@@ -91,10 +93,10 @@ Future<void> writeMoves() async {
     if (m != null) {
       movesDart.writeln(
           'final Path $objName = Path([');
-      movesDart.write(writeOneMovement(m));
+      movesDart.write('      '+writeOneMovement(m));
       movesDart.writeln('],\'${p('name')}\');');
     } else {
-      final movestr = p.childrenNamed('move').map((m) {
+      final movelist = p.childrenNamed('move').map((m) {
         var objFrom = m('select').id;
         var mods = '';
         if (m('hands').isNotBlank)
@@ -105,12 +107,16 @@ Future<void> writeMoves() async {
           mods += '.scale(1,-1)';
         if ((m('scaleX') + m('scaleY')).isNotBlank)
           mods += '.scale(${m('scaleX', '1')},${m('scaleY', '1')})';
-        return '($objFrom.clone()$mods)';
-      }).join('+');
+        return objFrom + mods;
+      });
+      var movestr = movelist.length > 1
+          ? "(${movelist.join('+')})..name='${p('name')}'"
+          : "${movelist.first}..name='${p('name')}'";
       movesDart.writeln('final Path $objName = $movestr;');
     }
+    allMoves.add(objName);
   });
-
+  movesDart.writeln('\nfinal List<Path> AllMoves = [${allMoves.join(',')}];');
   await movesDart.flush();
   await movesDart.close();
 }
@@ -120,7 +126,7 @@ void writeOneFormation(StringSink fDart, XmlElement f, {bool isAsymmetric=false}
   final dancers = f.childrenNamed('dancer');
   for (var i=0; i<dancers.length; i++) {
     var d = dancers[i];
-    fDart.write('        Dancer.fromData(');
+    fDart.write('        DancerModel.fromData(');
     fDart.write('gender:Gender.${d('gender').toUpperCase()},');
     fDart.write('x:${d('x')},');
     fDart.write('y:${d('y')},');
@@ -137,7 +143,8 @@ Future<void> writeFormations() async {
       .then((text) => XmlDocument.parse(text));
   var fDart = File('lib/formations.g.dart').openWrite();
   var fMap = <String,String>{};
-  fDart.writeln('import \'../common.dart\';');
+  fDart.writeln("import 'dancer_model.dart';");
+  fDart.writeln("import 'formation.dart';");
   fDart.writeln();
   fDart.writeln('class Formations {');
   fDoc.findAllElements('formation').forEach((f) {

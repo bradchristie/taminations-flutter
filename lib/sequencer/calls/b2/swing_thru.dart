@@ -29,7 +29,7 @@ class SwingThru extends ActivesOnlyAction with CallWithParts {
   @override var helplink = 'b2/swing_thru';
   bool isGrand;
   bool isLeft;
-  List<Dancer>? part1dancers;
+  List<DancerModel>? part1dancers;
   SwingThru(String name) :
         isGrand=name.contains('Grand'),
         isLeft=name.contains('Left'),

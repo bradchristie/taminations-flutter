@@ -27,8 +27,8 @@ class SingleBounce extends ActivesOnlyAction with CallWithParts {
   1.  Single Veer to a back-to-back formation
   2.  (somebody) U-Turn in flow direction''';
   @override var helplink = 'c2/bounce';
-  var beaudancers = <Dancer>[];
-  var belledancers = <Dancer>[];
+  var beaudancers = <DancerModel>[];
+  var belledancers = <DancerModel>[];
   SingleBounce(String name) : super(name);
 
   @override

@@ -39,7 +39,7 @@ class DiamondCirculate extends Action {
   }
 
   @override
-  Path performOne(Dancer d, CallContext ctx) {
+  Path performOne(DancerModel d, CallContext ctx) {
     //  Should be exactly 1 other active dancer
     //  in front of this dancer within 90 degrees
     var offset = 0.5;

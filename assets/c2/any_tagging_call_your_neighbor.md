@@ -1,5 +1,5 @@
 
-## \<any tagging call> Your Neighbor
+# \<any tagging call> Your Neighbor
 
 Do the tagging call to the 1/2 Tag position; Follow Your Neighbor.
 

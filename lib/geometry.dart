@@ -34,51 +34,37 @@ abstract class Geometry {
   static const int HASHTAG = 4;
   static const int ASYMMETRIC = 5;
 
-  var rotnum = 0;
   var geometry = 0;
   var prevangle = 0.0;  // used for computing dancer path
 
-  Geometry.create(this.rotnum);
+  Geometry.create();
 
   fm.Paint gridPaint() => fm.Paint()
       ..color = Color.LIGHTGREY
       ..style = fm.PaintingStyle.stroke
       ..strokeWidth = 0;
 
-  factory Geometry(int g, [int r = 0]) {
-    if (g == BIGON) return BigonGeometry(r);
-    else if (g == SQUARE || g == ASYMMETRIC) return SquareGeometry(r);
-    else if (g == HEXAGON) return HexagonGeometry(r);
-    else if (g == HASHTAG) return HashtagGeometry(r);
+  factory Geometry(int g) {
+    if (g == BIGON) return BigonGeometry();
+    else if (g == SQUARE || g == ASYMMETRIC) return SquareGeometry();
+    else if (g == HEXAGON) return HexagonGeometry();
+    else if (g == HASHTAG) return HashtagGeometry();
     else throw ArgumentError();
   }
 
   factory Geometry.fromString(String gstr) {
     if (gstr.toLowerCase() == 'bi-gon')
-      return BigonGeometry(0);
+      return BigonGeometry();
     else if (gstr.toLowerCase() == 'hexagon')
-      return HexagonGeometry(0);
+      return HexagonGeometry();
     else if (gstr.toLowerCase() == 'hashtag')
-      return HashtagGeometry(0);
+      return HashtagGeometry();
     else
-      return SquareGeometry(0);
-  }
-
-  static List<Geometry> getGeometry(int sym) {
-    if (sym == BIGON)
-      return [BigonGeometry(0)];
-    else if (sym == HEXAGON)
-      return [HexagonGeometry(0),HexagonGeometry(1),HexagonGeometry(2)];
-    else if (sym == HASHTAG)
-      return [HashtagGeometry(0),HashtagGeometry(1),
-        HashtagGeometry(2),HashtagGeometry(3)];
-    else if (sym == ASYMMETRIC)
-      return [SquareGeometry(0)];
-    else return [SquareGeometry(0),SquareGeometry(1)];
+      return SquareGeometry();
   }
 
   /// Generate a transform to apply to a dancer's start position
-  Matrix startMatrix(Matrix mat);
+  Matrix startMatrix(Matrix mat, int rotnum);
 
   /// Convert transform for a dancer's current position
   Matrix pathMatrix(Matrix starttx, Matrix tx, double beat);
@@ -96,13 +82,13 @@ abstract class Geometry {
 /////  Specific Geometry classes  //////
 class BigonGeometry extends Geometry {
 
-  BigonGeometry(int rotnum) : super.create(rotnum);
+  BigonGeometry() : super.create();
 
   @override
   var geometry = Geometry.BIGON;
 
   @override
-  Geometry clone() => BigonGeometry(rotnum);
+  Geometry clone() => BigonGeometry();
 
   @override
   void drawGrid(fm.Canvas ctx) {
@@ -157,7 +143,7 @@ class BigonGeometry extends Geometry {
   }
 
   @override
-  Matrix startMatrix(Matrix mat) {
+  Matrix startMatrix(Matrix mat, int rotnum) {
     var x = mat.m31;
     var y = mat.m32;
     var r = sqrt(x * x + y * y);
@@ -174,13 +160,13 @@ class BigonGeometry extends Geometry {
 ///////////////////////////////////////////////////////////////////////////
 class SquareGeometry extends Geometry {
 
-  SquareGeometry(int rotnum) : super.create(rotnum);
+  SquareGeometry() : super.create();
 
   @override
   var geometry = Geometry.SQUARE;
 
   @override
-  Geometry clone() => SquareGeometry(rotnum);
+  Geometry clone() => SquareGeometry();
 
   @override
   void drawGrid(fm.Canvas ctx) {
@@ -214,7 +200,7 @@ class SquareGeometry extends Geometry {
       Matrix.getIdentity();
 
   @override
-  Matrix startMatrix(Matrix mat) =>
+  Matrix startMatrix(Matrix mat, int rotnum) =>
       Matrix.getRotation(pi * rotnum) * mat;
 
 }
@@ -222,13 +208,13 @@ class SquareGeometry extends Geometry {
 ///////////////////////////////////////////////////////////////////////////
 class HexagonGeometry extends Geometry {
 
-  HexagonGeometry(int rotnum) : super.create(rotnum);
+  HexagonGeometry() : super.create();
 
   @override
   var geometry = Geometry.HEXAGON;
 
   @override
-  Geometry clone() => HexagonGeometry(rotnum);
+  Geometry clone() => HexagonGeometry();
 
   @override
   void drawGrid(fm.Canvas ctx) {
@@ -294,7 +280,7 @@ class HexagonGeometry extends Geometry {
 
   /// Generate a transform to apply to a dancer's start position
   @override
-  Matrix startMatrix(Matrix mat) {
+  Matrix startMatrix(Matrix mat, int rotnum) {
     var a = (pi * 2 / 3) * rotnum;
     var x = mat.m31;
     var y = mat.m32;
@@ -314,13 +300,13 @@ class HexagonGeometry extends Geometry {
 ///////////////////////////////////////////////////////////////////////////
 class HashtagGeometry extends Geometry {
 
-  HashtagGeometry(int rotnum) : super.create(rotnum);
+  HashtagGeometry() : super.create();
 
   @override
   var geometry = Geometry.HASHTAG;
 
   @override
-  Geometry clone() => HashtagGeometry(rotnum);
+  Geometry clone() => HashtagGeometry();
 
   //  Same as sqaure geometry
   @override
@@ -356,7 +342,7 @@ class HashtagGeometry extends Geometry {
     Matrix.getIdentity();
 
   @override
-  Matrix startMatrix(Matrix mat) =>
+  Matrix startMatrix(Matrix mat, int rotnum) =>
       Matrix.getRotation(pi * rotnum / 2.0) * mat;
 
 }

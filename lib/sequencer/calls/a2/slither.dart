@@ -45,7 +45,7 @@ class Slither extends Action {
   }
 
   @override
-  Path performOne(Dancer d, CallContext ctx) {
+  Path performOne(DancerModel d, CallContext ctx) {
     if (ctx.dancerToRight(d)?.isActive ?? false)
       return BackSashayRight
           .scale(1.0,d.distanceTo(ctx.dancerToRight(d)!)/2.0);

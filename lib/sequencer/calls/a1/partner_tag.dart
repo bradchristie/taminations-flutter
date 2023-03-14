@@ -28,7 +28,7 @@ class PartnerTag extends Action {
   PartnerTag() : super('Partner Tag');
 
   @override
-  Path performOne(Dancer d, CallContext ctx) {
+  Path performOne(DancerModel d, CallContext ctx) {
     //  Generally Partner Tag is with partner, but there can be exceptions
     final d2 = [d.data.partner, ctx.dancerToRight(d), ctx.dancerToLeft(d)]
     .where((it) => it != null && it.isActive).firstOrNull

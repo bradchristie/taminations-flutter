@@ -18,7 +18,7 @@
 
 */
 
-import '../../../dancer.dart';
+import '../../../dancer_model.dart';
 import '../../call_context.dart';
 import 'fliter_actives.dart';
 
@@ -27,7 +27,7 @@ class FacingDancers extends FilterActives {
   FacingDancers() : super('Facing Dancers');
 
   @override
-  bool isActive(Dancer d, CallContext ctx) =>
+  bool isActive(DancerModel d, CallContext ctx) =>
       ctx.dancerFacing(d)?.isActive ?? false;
 
 }

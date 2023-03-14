@@ -28,11 +28,11 @@ class CaliforniaTwirl extends Action {
   CaliforniaTwirl() : super('California Twirl' );
 
   @override
-  Path performOne(Dancer d, CallContext ctx) {
+  Path performOne(DancerModel d, CallContext ctx) {
     if (d.gender == Gender.BOY) {
       var d2 = ctx.dancerToRight(d);
       if (d2 == null || d2.gender != Gender.GIRL || !d2.data.active)
-        throw CallError('Dancer $d cannot California Twirl' );
+        throw CallError('DancerModel $d cannot California Twirl' );
       var dist = d.distanceTo(d2);
       return RunRight
           .changehands(Hands.GRIPRIGHT)
@@ -42,7 +42,7 @@ class CaliforniaTwirl extends Action {
     else if (d.gender == Gender.GIRL) {
       var d2 = ctx.dancerToLeft(d);
       if (d2 == null || d2.gender != Gender.BOY || !d2.data.active)
-        throw CallError('Dancer $d cannot California Twirl' );
+        throw CallError('DancerModel $d cannot California Twirl' );
       var dist = d.distanceTo(d2);
       return FlipLeft
           .changehands(Hands.GRIPLEFT)

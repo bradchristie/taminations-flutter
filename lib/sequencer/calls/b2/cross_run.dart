@@ -47,7 +47,7 @@ class CrossRun extends ActivesOnlyAction {
     var centersOnly = runners.where((d) => d.data.center && !d.data.end);
     if (endsOnly.isNotEmpty && centersOnly.isNotEmpty)
       throw CallError('Cross Run dancers must be all ends or all centers');
-    var realDodgers = <Dancer>[];
+    var realDodgers = <DancerModel>[];
     for (var d in runners) {
       var dright = ctx.dancersToRight(d);
       var dleft = ctx.dancersToLeft(d);

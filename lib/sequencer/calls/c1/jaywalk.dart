@@ -31,8 +31,8 @@ class Jaywalk extends Action {
   //  Only looks from this dancer's perspective
   //  Returns null if no dancer found or if
   //  cannot decide between two other dancers
-  Dancer? _bestJay(CallContext ctx, Dancer d) {
-    Dancer? bestDancer;
+  DancerModel? _bestJay(CallContext ctx, DancerModel d) {
+    DancerModel? bestDancer;
     var bestDistance = 10.0;
     ctx.actives.where((it) => it != d).forEach((d2) {
       final a1 = d.angleToDancer(d2);
@@ -52,7 +52,7 @@ class Jaywalk extends Action {
   }
 
   @override
-  Path performOne(Dancer d, CallContext ctx) {
+  Path performOne(DancerModel d, CallContext ctx) {
     //  Find dancer to Jaywalk with
     final d2 = (_bestJay(ctx,d)
         ?? ctx.actives.where((d3) => _bestJay(ctx,d3) == d).firstOrNull)

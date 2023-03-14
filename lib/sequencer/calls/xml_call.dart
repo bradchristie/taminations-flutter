@@ -181,7 +181,7 @@ class XMLCall extends Call {
     //  Mark dancers that had no XML move as inactive
     //  Needed for post-call modifications e.g. spread
     //  But first check if actives are specifically flagged in the animation
-    var inactives = <Dancer>[];
+    var inactives = <DancerModel>[];
     switch (xcall.actives) {
       case 'Heads' :
         inactives = ctxwork.dancers.where((d) => d.isSide).toList();

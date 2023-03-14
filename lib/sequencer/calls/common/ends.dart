@@ -18,7 +18,7 @@
 
 */
 
-import '../../../dancer.dart';
+import '../../../dancer_model.dart';
 import '../../call_context.dart';
 import 'fliter_actives.dart';
 
@@ -27,6 +27,6 @@ class Ends extends FilterActives {
   Ends() : super('Ends');
 
   @override
-  bool isActive(Dancer d, CallContext ctx) => d.data.end;
+  bool isActive(DancerModel d, CallContext ctx) => d.data.end;
 
 }

@@ -33,7 +33,7 @@ class AsCouples extends FourDancerConcept {
   AsCouples(String name) : super(name.replaceAll('As Couples?'.ri, 'As Couples'));
 
   @override
-  List<List<Dancer>> dancerGroups(CallContext ctx) {
+  List<List<DancerModel>> dancerGroups(CallContext ctx) {
     //  Check that all dancers are couples
     ctx.dancers.forEach((d) {
       if (!ctx.isInCouple(d))
@@ -45,7 +45,7 @@ class AsCouples extends FourDancerConcept {
   }
 
   @override
-  Vector startPosition(List<Dancer> group) {
+  Vector startPosition(List<DancerModel> group) {
     final d = group.first;
     final d2 = group.second;
     if (d.location.length.isAbout(d2.location.length))
@@ -63,7 +63,7 @@ class AsCouples extends FourDancerConcept {
 
 
   @override
-  Vector computeLocation(Dancer d, Movement m, int mi, double beat, int groupIndex) {
+  Vector computeLocation(DancerModel d, Movement m, int mi, double beat, int groupIndex) {
     //  Position individual dancers 0.5 units left and right of the concept dancer
     final pos = m.translate(beat).location;
     final offset = 0.5;
@@ -74,7 +74,7 @@ class AsCouples extends FourDancerConcept {
   }
 
   @override
-  void postAdjustment(CallContext ctx, Dancer cd, List<Dancer> group) {
+  void postAdjustment(CallContext ctx, DancerModel cd, List<DancerModel> group) {
     final couplesSnapFormations = {
       Formations.NormalLinesCompact: 1.0,
       Formations.NormalLines: 1.0,

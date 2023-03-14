@@ -41,12 +41,12 @@ class CounterRotate extends Action {
   }
 
   @override
-  Path performOne(Dancer d, CallContext ctx) {
+  Path performOne(DancerModel d, CallContext ctx) {
     var da = d.angleToOrigin;
     //  Counter Rotate not possible if dancer is looking
     //  directly at the center of the square
     if (da.isAround(0.0))
-      throw CallError('Dancer $d cannot Counter Rotate');
+      throw CallError('DancerModel $d cannot Counter Rotate');
     //  Compute points for Bezier
     var anginc = pi/6.0 * da.sign;
     var p1 = d.location.ds(d);

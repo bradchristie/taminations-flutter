@@ -28,7 +28,7 @@ class SquareTheSet extends Action {
   SquareTheSet() : super('Square the Set' );
 
   @override
-  Path performOne(Dancer d, CallContext ctx) {
+  Path performOne(DancerModel d, CallContext ctx) {
 
     // Get X and Y coordinates of this dancer's home position
     var xhome = 0.0;

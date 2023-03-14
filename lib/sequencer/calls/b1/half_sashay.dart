@@ -30,9 +30,9 @@ class HalfSashay extends Action {
   HalfSashay(String name) : super(name);
 
   @override
-  Path performOne(Dancer d, CallContext ctx) {
+  Path performOne(DancerModel d, CallContext ctx) {
     //  Figure out who we sashay with
-    Dancer d2;
+    DancerModel d2;
     if (ctx.actives.contains(d.data.partner) && (d.data.beau || d.data.belle))
       d2 = d.data.partner!;
     else if (ctx.dancerToRight(d)?.data.active ?? false)
@@ -40,7 +40,7 @@ class HalfSashay extends Action {
     else if (ctx.dancerToLeft(d)?.data.active ?? false)
       d2 = ctx.dancerToLeft(d)!;
     else
-      throw CallError('Dancer $d has nobody to Sashay with' );
+      throw CallError('DancerModel $d has nobody to Sashay with' );
     var move = BackSashayRight;
     if (name.toLowerCase().startsWith('reverse' ))
       move = d2.isLeftOf(d) ? BackSashayLeft  : SashayRight;

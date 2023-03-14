@@ -18,7 +18,7 @@
 
 */
 
-import '../../../dancer.dart';
+import '../../../dancer_model.dart';
 import '../../call_context.dart';
 import 'fliter_actives.dart';
 
@@ -27,6 +27,6 @@ class Girls extends FilterActives {
   Girls() : super('Girls');
 
   @override
-  bool isActive(Dancer d, CallContext ctx) => d.gender == Gender.GIRL;
+  bool isActive(DancerModel d, CallContext ctx) => d.gender == Gender.GIRL;
 
 }

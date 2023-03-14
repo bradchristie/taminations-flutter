@@ -32,7 +32,7 @@ Line of (6 or 8) [Left] Turn and Deal''';
   TurnAndDeal(String name) : super(name);
 
   @override
-  Path performOne(Dancer d, CallContext ctx) {
+  Path performOne(DancerModel d, CallContext ctx) {
     final dir = ctx.tagDirection(d);
     if (dir.isBlank)
       throw CallError('Unable to calculate Turn and Deal');
@@ -65,7 +65,7 @@ class BigLineTurnAndDeal extends ActivesOnlyAction {
   }
 
   @override
-  Path performOne(Dancer d, CallContext ctx) {
+  Path performOne(DancerModel d, CallContext ctx) {
     d.animate(0.0);
     return d.isCenterRight ? QuarterRight : QuarterLeft;
   }

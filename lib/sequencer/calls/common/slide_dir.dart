@@ -28,7 +28,7 @@ class SlideDir extends Action {
   SlideDir(String name) : super(name);
 
   @override
-  Path performOne(Dancer d, CallContext ctx) {
+  Path performOne(DancerModel d, CallContext ctx) {
     Path move;
     if (name == 'Slide Left' )
       move = DodgeLeft;

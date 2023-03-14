@@ -28,7 +28,7 @@ class Truck extends Action {
   Truck(String name) : super(name);
 
   @override
-  Path performOne(Dancer d, CallContext ctx) {
+  Path performOne(DancerModel d, CallContext ctx) {
     final move = [
       if (d.gender == Gender.BOY) name.startsWith('Reverse') ? DodgeRight : DodgeLeft,
       if (d.gender == Gender.GIRL) name.startsWith('Reverse') ? DodgeLeft : DodgeRight,

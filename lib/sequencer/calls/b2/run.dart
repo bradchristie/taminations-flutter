@@ -26,7 +26,7 @@ class Run extends Action {
   @override var helplink = 'b2/run';
   Run(String name) : super(name);
 
-  void _runOne(Dancer d, Dancer d2, String dir) {
+  void _runOne(DancerModel d, DancerModel d2, String dir) {
     var dist = d.distanceTo(d2);
     d.path += (dir=='Left' ? RunLeft : RunRight).scale(1.0,dist/2);
     var m2 = Stand;
@@ -44,7 +44,7 @@ class Run extends Action {
     var usePartner = false;
     while (dancersToRun.isNotEmpty) {
       var foundRunner = false;
-      var runnersRunned = <Dancer>{};
+      var runnersRunned = <DancerModel>{};
       for (var d in dancersToRun) {
         var dleft = ctx.dancerToLeft(d);
         var dright = ctx.dancerToRight(d);
@@ -53,11 +53,11 @@ class Run extends Action {
         var isRight = dright != null && dancersToWalk.contains(dright) &&
             name != 'Run Left' ;
         if (!isLeft && !isRight)
-          throw CallError('Dancer $d cannot Run' );
+          throw CallError('DancerModel $d cannot Run' );
         else if (!isLeft ||
             (usePartner && dright!=null && dright == d.data.partner)) {
           //  Run Right
-          var d2 = dright.throwIfNull(CallError('Dancer $d unable to Run' ));
+          var d2 = dright.throwIfNull(CallError('DancerModel $d unable to Run' ));
           _runOne(d, d2, 'Right' );
           runnersRunned.add(d);
           dancersToWalk.remove(d2);
@@ -67,7 +67,7 @@ class Run extends Action {
         else if (!isRight ||
             (usePartner && dleft!=null && dleft == d.data.partner)) {
           //  Run Left
-          var d2 = dleft.throwIfNull(CallError('Dancer $d unable to Run' ));
+          var d2 = dleft.throwIfNull(CallError('DancerModel $d unable to Run' ));
           _runOne(d,d2,'Left' );
           runnersRunned.add(d);
           dancersToWalk.remove(d2);

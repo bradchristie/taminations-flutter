@@ -29,6 +29,6 @@ class Beaus extends FilterActives {
   Beaus() : super('Beaus');
 
   @override
-  bool isActive(Dancer d, CallContext ctx) => d.data.beau;
+  bool isActive(DancerModel d, CallContext ctx) => d.data.beau;
 
 }

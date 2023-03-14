@@ -28,12 +28,12 @@ class Trade extends Action {
   Trade(String name) : super(name);
 
   @override
-  Path performOne(Dancer d, CallContext ctx) {
+  Path performOne(DancerModel d, CallContext ctx) {
     //  Figure out what dancer we're trading with
     var leftcount = 0;
-    Dancer? bestleft;
+    DancerModel? bestleft;
     var rightcount = 0;
-    Dancer? bestright;
+    DancerModel? bestright;
     for (var d2 in ctx.actives) {
       if (d2 != d) {
         if (d2.isLeftOf(d)) {
@@ -53,7 +53,7 @@ class Trade extends Action {
     if (bestleft!=null && !d.isRightOf(bestleft) && !d.isLeftOf(bestleft))
       bestleft = null;
 
-    Dancer dtrade;
+    DancerModel dtrade;
     bool samedir;
     Path call;
     //  We trade with the nearest dancer in the direction with

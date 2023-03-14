@@ -18,7 +18,7 @@
 
 */
 
-import '../../../dancer.dart';
+import '../../../dancer_model.dart';
 import '../../../extensions.dart';
 import '../../call_context.dart';
 import '../../call_error.dart';
@@ -32,7 +32,7 @@ abstract class FilterActives extends CodedCall {
 
   ///  Child classes need to override the isActive method
   ///  according to which dancers should be selected
-  bool isActive(Dancer d, CallContext ctx);
+  bool isActive(DancerModel d, CallContext ctx);
 
   @override
    void performCall(CallContext ctx) {

@@ -18,7 +18,7 @@
 
 */
 
-import 'package:taminations/dancer.dart';
+import 'package:taminations/dancer_model.dart';
 import 'package:taminations/math/path.dart';
 import 'package:taminations/sequencer/calls/coded_call.dart';
 
@@ -51,6 +51,6 @@ class Action extends CodedCall {
 
   //  Default method for one dancer to perform one call
   //  Returns an empty path (the dancer just stands there)
-  Path performOne(Dancer d, CallContext ctx) => Path();
+  Path performOne(DancerModel d, CallContext ctx) => Path();
 
 }

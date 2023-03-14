@@ -39,21 +39,21 @@ abstract class FourDancerConcept extends ActivesOnlyAction {
   //  List must have 4 sub-lists
   //  Each sub-list has 2 or more real (or phantom) dancers
   //  For example, the groups for As Couples are the 4 couples
-  List<List<Dancer>> dancerGroups(CallContext ctx);
+  List<List<DancerModel>> dancerGroups(CallContext ctx);
 
   //  Return start position of concept dancer for one group
-  Vector startPosition(List<Dancer> group);
+  Vector startPosition(List<DancerModel> group);
 
   //  Compute location for a real dancer at a specific beat
   //  given location of the concept dancer
-  Vector computeLocation(Dancer d, Movement m, int mi, double beat, int groupIndex);
+  Vector computeLocation(DancerModel d, Movement m, int mi, double beat, int groupIndex);
 
   //  Any analysis or processing after call is applied to concept dancers
   //  but before application to real dancers
   void analyzeConceptResult(CallContext conceptctx, CallContext realctx) { }
 
   //  Make any changes to the final result (optional)
-  void postAdjustment(CallContext ctx, Dancer cd, List<Dancer> group) { }
+  void postAdjustment(CallContext ctx, DancerModel cd, List<DancerModel> group) { }
 
   @override
   void perform(CallContext ctx) {
@@ -75,7 +75,7 @@ abstract class FourDancerConcept extends ActivesOnlyAction {
       if (group.every((it) => it.numberCouple.matches('[24]{2}' .r)))
         nc = '2' ;
       //  Create the concept dancer
-      var dsingle = Dancer.cloneWithOptions(group.first, gender:g, numberCouple:nc);
+      var dsingle = DancerModel.cloneWithOptions(group.first, gender:g, numberCouple:nc);
       //  Set the location for the concept dancer
       var newpos = startPosition(group);
       dsingle.setStartPosition(newpos);

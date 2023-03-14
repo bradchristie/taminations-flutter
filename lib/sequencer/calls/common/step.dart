@@ -32,7 +32,7 @@ class Step extends Action {
   Step(String name) : super(name);
 
   @override
-  Path performOne(Dancer d, CallContext ctx) {
+  Path performOne(DancerModel d, CallContext ctx) {
     var dist = ctx.isLines() && d.data.trailer
         ? d.distanceTo(ctx.dancerInFront(d)!) : 2.0;
     return Forward.changeBeats(2.0).scale(dist, 1.0);

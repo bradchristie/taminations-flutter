@@ -36,7 +36,7 @@ class SplitTwo extends Action {
   }
 
   @override
-  Path performOne(Dancer d, CallContext ctx) {
+  Path performOne(DancerModel d, CallContext ctx) {
     if (d.isActive) {
       if (_activesAreCouples) {
         final d2 = ctx.dancerInFront(d) ??

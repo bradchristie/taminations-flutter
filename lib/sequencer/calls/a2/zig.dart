@@ -30,7 +30,7 @@ class Zig extends Action {
   Zig(String name) : super(name);
 
   @override
-  Path performOne(Dancer d, CallContext ctx) {
+  Path performOne(DancerModel d, CallContext ctx) {
     var move = Stand;
     if (d.data.leader && name == 'Zig')
       move = QuarterRight;

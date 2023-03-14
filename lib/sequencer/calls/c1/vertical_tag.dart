@@ -43,11 +43,11 @@ class VerticalTag extends Action {
   }
 
   @override
-  Path performOne(Dancer d, CallContext ctx) {
+  Path performOne(DancerModel d, CallContext ctx) {
     if (!d.data.beau && !d.data.belle)
-      throw CallError('Dancer $d is not part of a couple');
+      throw CallError('DancerModel $d is not part of a couple');
     if (!d.data.leader && !d.data.trailer)
-      throw CallError('Dancer $d is not in a box');
+      throw CallError('DancerModel $d is not in a box');
     final dp = d.data.partner
         .throwIfNull(CallError('Cannot find partner for $d'));
     final dt = (d.data.leader ? ctx.dancerInBack(d) : ctx.dancerInFront(d))

@@ -27,11 +27,11 @@ class Ripple extends Action {
 You can specify the direction with Left Ripple or Right Ripple.''';
   @override var helplink = 'c2/ripple_the_wave';
   Ripple(String name) : super(name);
-  late Map<Dancer,bool> _isRight;
+  late Map<DancerModel,bool> _isRight;
 
-  List<Dancer> _findTraders(CallContext ctx, List<Dancer> actives) {
+  List<DancerModel> _findTraders(CallContext ctx, List<DancerModel> actives) {
     final traders = actives.copy();
-    final ended = <Dancer>[];
+    final ended = <DancerModel>[];
     for (final d in actives) {
       final d2 = _isRight[d]! ? ctx.dancerToRight(d) : ctx.dancerToLeft(d);
       if (d2 != null)

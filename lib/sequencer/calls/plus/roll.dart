@@ -36,7 +36,7 @@ class Roll extends Action {
   }
 
   @override
-  Path performOne(Dancer d, CallContext ctx) {
+  Path performOne(DancerModel d, CallContext ctx) {
     final roll = ctx.roll(d);
     final move = {
       Rolling.LEFT : QuarterLeft,

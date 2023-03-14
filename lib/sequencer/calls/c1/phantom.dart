@@ -51,7 +51,7 @@ class Phantom extends Action {
             (v) => ctx.dancers.none((d) => d.location.isAbout(v))).toList();
     //  Put phantoms in those positions
     final phantoms = phantomPositions.mapIndexed((index, v) =>
-        Dancer.cloneWithOptions(ctx.dancers.first,
+        DancerModel.cloneWithOptions(ctx.dancers.first,
             gender: Gender.PHANTOM,
             number: 'P${index+1}')
             .setStartPosition(v)

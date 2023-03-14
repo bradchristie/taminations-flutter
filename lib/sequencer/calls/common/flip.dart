@@ -28,7 +28,7 @@ class Flip extends Action {
   Flip(String name) : super(name);
 
   @override
-  Path performOne(Dancer d, CallContext ctx) {
+  Path performOne(DancerModel d, CallContext ctx) {
     Path move;
     if (name == 'Flip Left' )
       move = FlipLeft;

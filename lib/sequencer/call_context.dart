@@ -105,13 +105,13 @@ class CallContext {
 
   /////// end of static code ///////
 
-  late List<Dancer> dancers;
+  late List<DancerModel> dancers;
   String callname = '';
   LevelData level = LevelData.find('b1')!;
   List<Call> callstack = [];
-  List<List<Dancer>> groups = [];
-  Map<double,List<Dancer>> xSlices = {};
-  Map<double,List<Dancer>> ySlices = {};
+  List<List<DancerModel>> groups = [];
+  Map<double,List<DancerModel>> xSlices = {};
+  Map<double,List<DancerModel>> ySlices = {};
 
 
   String get groupstr => groups.map((e) => e.length).join();
@@ -125,8 +125,8 @@ class CallContext {
   bool didYourPart = false;
   int geometry = Geometry.SQUARE;
 
-  //  Create a context from an array of Dancer
-  CallContext.fromDancers(List<Dancer> dancers) {
+  //  Create a context from an array of DancerModel
+  CallContext.fromDancers(List<DancerModel> dancers) {
     this.dancers = dancers.map((d) {
       d.animateToEnd();
       return d.clone();
@@ -138,7 +138,7 @@ class CallContext {
 
   CallContext.fromContext(
       CallContext source, {
-        List<Dancer>? dancers,
+        List<DancerModel>? dancers,
         double beat = double.maxFinite
       }) {
     dancers ??= source.dancers;
@@ -153,12 +153,13 @@ class CallContext {
   }
 
   CallContext.fromFormation(Formation f,
-      {List<Path>? withPaths, int geometry=Geometry.SQUARE}) {
+      {List<Path>? withPaths, int geometryType=Geometry.SQUARE}) {
     if (f.asymmetric)
-      geometry = 1;
-    dancers = [for (var d in f.dancers) for (var g=0; g<geometry; g++)
-      Dancer.cloneWithGeometry(d,g) ];
-    //  Set default dancer numbers
+      geometryType = 1;
+    var geometry = Geometry(geometryType);
+    dancers = [for (var d in f.dancers) for (var g=0; g<geometryType; g++)
+      DancerModel.cloneWithGeometry(d,geometry.startMatrix(d.starttx, g)) ];
+    //  Set default DancerModel numbers
     var numbers = ['1', '5', '2', '6', '3', '7', '4', '8'];
     var couples = ['1', '3', '1', '3', '2', '4', '2', '4'];
     for (var i=0; i<min(dancers.length,numbers.length); i++) {
@@ -168,8 +169,8 @@ class CallContext {
     asymmetric = f.asymmetric;
     if (withPaths != null) {
       for (var i=0; i<f.dancers.length; i++) {
-        for (var g = 0; g < geometry; g++)
-          dancers[i*geometry + g].path = withPaths[i].clone();
+        for (var g = 0; g < geometryType; g++)
+          dancers[i*geometryType + g].path = withPaths[i].clone();
       }
     }
   }
@@ -183,19 +184,19 @@ class CallContext {
   }
 
   //  Get the active dancers, e.g. for 'Boys Trade' the boys are active
-  List<Dancer> get actives => dancers.where( (d) => d.data.active ).toList();
-  List<Dancer> get inActives => dancers.where( (d) => !d.data.active ).toList();
+  List<DancerModel> get actives => dancers.where( (d) => d.data.active ).toList();
+  List<DancerModel> get inActives => dancers.where( (d) => !d.data.active ).toList();
   void allActive() {
     for (var d in dancers)
       d.data.active = true;
   }
-  Set<Dancer> saveActives() => dancers.where((d) => d.data.active).toSet();
-  void restoreActives(Set<Dancer> saved) {
+  Set<DancerModel> saveActives() => dancers.where((d) => d.data.active).toSet();
+  void restoreActives(Set<DancerModel> saved) {
     for (var d in dancers)
       d.data.active = saved.contains(d);
   }
 
-  List<Dancer> movingDancers() => dancers.where((d) =>
+  List<DancerModel> movingDancers() => dancers.where((d) =>
       d.path.movelist.any((m) => m.fromCall)).toList();
 
   double get angleOff90 => dancers.first.angleFacing.angleOff90;
@@ -249,7 +250,7 @@ class CallContext {
   //  Apply a function as a method of the new CallContext.
   //  Then transfer any new calls from the created CallContext to this CallContext.
   //  Return true if anything new was added.
-  bool subContext(List<Dancer> dancers, void Function(CallContext) block) {
+  bool subContext(List<DancerModel> dancers, void Function(CallContext) block) {
     var ctx = CallContext.fromContext(this,dancers:dancers.inOrder());
     block(ctx);
     return ctx.appendToSource(this);
@@ -259,7 +260,7 @@ class CallContext {
   //  up to and including the next Action.
   //  Used for concepts and modifications.
   CallContext? nextActionContext(Call thisCall,
-      { List<Dancer>? dancers, bool greedy=false }) {
+      { List<DancerModel>? dancers, bool greedy=false }) {
     final stackIndex = callstack.indexOf(thisCall);
     final actionctx = CallContext.fromContext(this,dancers:dancers);
     //  Look for the next action on the stack
@@ -301,10 +302,10 @@ class CallContext {
     _noExtend = true;
   }
 
-  Path dancerCannotPerform(Dancer d, String call) {
+  Path dancerCannotPerform(DancerModel d, String call) {
     if (_thoseWhoCan)
       return Path();
-    throw CallError('Dancer $d cannot $call.');
+    throw CallError('DancerModel $d cannot $call.');
   }
 
   void _checkForAction(String calltext) {
@@ -545,7 +546,7 @@ class CallContext {
     return -1;
   }
 
-  static int dancerRelation(Dancer d1, Dancer d2) => _angleBin(d1.angleToDancer(d2));
+  static int dancerRelation(DancerModel d1, DancerModel d2) => _angleBin(d1.angleToDancer(d2));
 
   //  Test two sets of dancers to see if the formations match.
   //  Most often ctx2 is a defined formation.
@@ -590,11 +591,11 @@ class CallContext {
           nextmapping += 1;
       }
       if (nextmapping >= ctx2.dancers.length) {
-        //  No more mappings for this dancer
+        //  No more mappings for this DancerModel
         mapping[mapindex] = -1;
         if (!asymmetric && !ctx2.asymmetric)
           mapping[mapindex + 1] = -1;
-        //  If requested, try rotating this dancer
+        //  If requested, try rotating this DancerModel
         if (rotate > 0 && rotated[mapindex] + rotate < 360) {
           workctx.dancers[mapindex].rotateStartAngle(rotate.d);
           rotated[mapindex] += rotate;
@@ -615,8 +616,8 @@ class CallContext {
           mapindex -= asymmetric || ctx2.asymmetric ? 1 : 2;
         }
       } else {
-        //  Mapping for this dancer found
-        DebugSwitch.mapping.log('dancer ${dancers[mapindex]} mapped to ${ctx2.dancers[mapping[mapindex]]}');
+        //  Mapping for this DancerModel found
+        DebugSwitch.mapping.log('DancerModel ${dancers[mapindex]} mapped to ${ctx2.dancers[mapping[mapindex]]}');
         mapindex += asymmetric || ctx2.asymmetric ? 1 : 2;
         if (mapindex >= workctx.dancers.length) {
           //  All dancers mapped
@@ -647,7 +648,7 @@ class CallContext {
     return bestMapping;
   }
 
-  bool _testMapping(CallContext ctx1, List<Dancer> ctx1Dancers, CallContext ctx2, List<int>mapping, int i,
+  bool _testMapping(CallContext ctx1, List<DancerModel> ctx1Dancers, CallContext ctx2, List<int>mapping, int i,
       {bool sexy=false, bool fuzzy=false,
         bool handholds=true, bool headsmatchsides=true}) {
     if (sexy && (ctx1Dancers[i].gender != ctx2.dancers[mapping[i]].gender))
@@ -712,7 +713,7 @@ class CallContext {
 
   //  Perform calls by popping them off the stack until the stack is empty.
   //  This doesn't run an animation, rather it takes the stack of calls
-  //  and builds the dancer movements.
+  //  and builds the DancerModel movements.
   void performCall({bool tryDoYourPart=false}) {
     //  Some calls alter the callstack, so save and restore
     final saveCallstack = callstack.copy();
@@ -774,7 +775,7 @@ class CallContext {
     }
   }
 
-  //  See if the current dancer positions resemble a standard formation
+  //  See if the current DancerModel positions resemble a standard formation
   //  and, if so, snap to the standard
   void matchFormationList(Map<Formation,double> formations, {double maxOffset = 6.1}) {
     //  Make sure newly added animations are finished
@@ -856,7 +857,7 @@ class CallContext {
     }
   }
 
-  //  Given a match to a formation, adjust the dancer's last move
+  //  Given a match to a formation, adjust the DancerModel's last move
   //  so it ends with that formation.
   //  Returns true if any adjustment was made.
   bool adjustToFormationMatch(FormationMatchResult match,
@@ -877,7 +878,7 @@ class CallContext {
           m = StandAhead
             .changeBeats(match.offsets[i].length)
             .notFromCall().pop();
-        //  Transform the offset to the dancer's angle
+        //  Transform the offset to the DancerModel's angle
         if (adjustFirstMovement)
           d.animate(0);
         else
@@ -988,64 +989,64 @@ class CallContext {
   //  Return max number of beats among all the dancers
   double maxBeats() => dancers.fold(0.0, (v, d) => max(v,d.path.beats));
 
-  //  Return all dancers, ordered by distance from another dancer,
+  //  Return all dancers, ordered by distance from another DancerModel,
   //  that satisfies a conditional
-  List<Dancer> dancersInOrder(Dancer d, [bool Function(Dancer d)? f]) =>
+  List<DancerModel> dancersInOrder(DancerModel d, [bool Function(DancerModel d)? f]) =>
       (dancers - d).where(f ?? (d)=>true).toList().sortedBy((d2) => d.distanceTo(d2) );
 
-  //  Return closest dancer that satisfies a given conditional
-  Dancer? dancerClosest(Dancer d, bool Function(Dancer d2) f) =>
+  //  Return closest DancerModel that satisfies a given conditional
+  DancerModel? dancerClosest(DancerModel d, bool Function(DancerModel d2) f) =>
       dancersInOrder(d,f).firstOrNull;
 
-  //  Return dancer directly in front of given dancer
-  Dancer? dancerInFront(Dancer d) =>
+  //  Return DancerModel directly in front of given DancerModel
+  DancerModel? dancerInFront(DancerModel d) =>
       dancerClosest(d, (d2) => d2.isInFrontOf(d));
-  //  Return dancer directly in back of given dancer
-  Dancer? dancerInBack(Dancer d) =>
+  //  Return DancerModel directly in back of given DancerModel
+  DancerModel? dancerInBack(DancerModel d) =>
       dancerClosest(d, (d2) => d2.isInBackOf(d));
-  //  Return dancer directly to the right of given dancer
-  Dancer? dancerToRight(Dancer d, {double minDistance=99.0}) =>
+  //  Return DancerModel directly to the right of given DancerModel
+  DancerModel? dancerToRight(DancerModel d, {double minDistance=99.0}) =>
       dancerClosest(d, (d2) =>
       d2.isRightOf(d) && !d2.distanceTo(d).isGreaterThan(minDistance));
-  //  Return dancer directly to the left of given dancer
-  Dancer? dancerToLeft(Dancer d, {double minDistance=99.0}) =>
+  //  Return DancerModel directly to the left of given DancerModel
+  DancerModel? dancerToLeft(DancerModel d, {double minDistance=99.0}) =>
       dancerClosest(d, (d2)
       => d2.isLeftOf(d) && !d2.distanceTo(d).isGreaterThan(minDistance));
-  //  Return dancer that is facing the front of this dancer
-  Dancer? dancerFacing(Dancer d) {
+  //  Return DancerModel that is facing the front of this DancerModel
+  DancerModel? dancerFacing(DancerModel d) {
     var d2 = dancerInFront(d);
     return d2 != null && dancerInFront(d2) == d ? d2 : null;
   }
 
   //  Return dancers that are in between two other dancers
-  List<Dancer> inBetween(Dancer d1, Dancer d2) =>
+  List<DancerModel> inBetween(DancerModel d1, DancerModel d2) =>
       dancers.where((d) =>
       d != d1 && d != d2 &&
           (d.distanceTo(d1)+d.distanceTo(d2)).isAbout(d1.distanceTo(d2))).toList();
 
   //  Return all the dancers to the right, in order
-  List<Dancer> dancersToRight(Dancer d) =>
+  List<DancerModel> dancersToRight(DancerModel d) =>
       dancersInOrder(d, (d2) => d2.isRightOf(d));
 
   //  Return all the dancers to the left, in order
-  List<Dancer> dancersToLeft(Dancer d) =>
+  List<DancerModel> dancersToLeft(DancerModel d) =>
       dancersInOrder(d, (d2) => d2.isLeftOf(d));
 
   //  Return all the dancers in front, in order
-  List<Dancer> dancersInFront(Dancer d) =>
+  List<DancerModel> dancersInFront(DancerModel d) =>
       dancersInOrder(d, (d2) => d2.isInFrontOf(d));
 
   //  Return all the dancers in back, in order
-  List<Dancer> dancersInBack(Dancer d) =>
+  List<DancerModel> dancersInBack(DancerModel d) =>
       dancersInOrder(d, (d2) => d2.isInBackOf(d));
 
   //  Return outer 2, 4 , 6 dancers
-  List<Dancer> outer(int num) =>
+  List<DancerModel> outer(int num) =>
       dancers.sortedWith((d1, d2) => d1.location.length.compareTo(d2.location.length))
           .drop(dancers.length-num);
 
   //  Return center 2, 4 , 6 dancers
-  List<Dancer> center(int num) {
+  List<DancerModel> center(int num) {
     //  Special test for center 4 dancers in a line/wave
     //  These are considered the center 4 regardless of
     //  the geometry of the others
@@ -1064,7 +1065,7 @@ class CallContext {
 
   //  Smarter code for center 6, works for 1/4 and 3/4 tags
   //  Requires call to analyze()
-  List<Dancer> center6() {
+  List<DancerModel> center6() {
     if (dancers.length == 6)
       return dancers;
     if (dancers.length != 8)
@@ -1092,9 +1093,9 @@ class CallContext {
 
   //  Returns points of a diamond formations
   //  Formation to match must have girl points
-  List<Dancer> pointsOfDiamondFormation(Formation f) {
+  List<DancerModel> pointsOfDiamondFormation(Formation f) {
     final ctx2 = CallContext.fromFormation(f);
-    final points = <Dancer>[];
+    final points = <DancerModel>[];
     final mapping = ctx2.matchFormations(this,rotate: 180, subformation: true);
     if (mapping != null) {
       for (var i=0; i<ctx2.dancers.length; i++) {
@@ -1105,7 +1106,7 @@ class CallContext {
     return points;
   }
 
-  List<Dancer> points() {
+  List<DancerModel> points() {
     var points =
         pointsOfDiamondFormation(Formations.DiamondsRHGirlPoints) +
         pointsOfDiamondFormation(Formations.DiamondsRHPTPGirlPoints) +
@@ -1120,7 +1121,7 @@ class CallContext {
   }
 
   //  Return pair of boxes for dancers in a 2x4 formation
-  List<List<Dancer>>? boxes() {
+  List<List<DancerModel>>? boxes() {
     if (!isTBone())
       return null;
     var farout = outer(4).first;
@@ -1130,7 +1131,7 @@ class CallContext {
     );
   }
 
-  List<Dancer>? waveOf6() {
+  List<DancerModel>? waveOf6() {
     final xDancers = dancers.where((d) => d.isOnXAxis);
     final yDancers = dancers.where((d) => d.isOnYAxis);
     if (xDancers.length == 6)
@@ -1141,8 +1142,8 @@ class CallContext {
       return null;
   }
 
-  List<Dancer>? centerWaveOf4() {
-    var waveOf4 = <Dancer>[];
+  List<DancerModel>? centerWaveOf4() {
+    var waveOf4 = <DancerModel>[];
     //  Get the dancers on each axis
     final xd = dancers.where((d) => d.location.x.isAbout(0.0)).toList();
     final yd = dancers.where((d) => d.location.y.isAbout(0.0)).toList();
@@ -1164,7 +1165,7 @@ class CallContext {
           dancerToLeft(vc.first,minDistance: 2.0),
           dancerToRight(vc.second,minDistance: 2.0),
           dancerToLeft(vc.second,minDistance: 2.0),
-        ].whereType<Dancer>().toList();
+        ].whereType<DancerModel>().toList();
       }
     }
     return waveOf4.length == 4 ? waveOf4 : null;
@@ -1172,18 +1173,18 @@ class CallContext {
 
   //  This return the center 4 dancers if they are in any diamond-like
   //  formation, including single tag or star
-  List<Dancer>? centerDiamond() {
+  List<DancerModel>? centerDiamond() {
     var dordered = dancers.sortedBy((d) => d.location.length);
-    var diamondOf4 = <Dancer?>[
+    var diamondOf4 = <DancerModel?>[
       dordered.where((d) => d.location.x.isAbout(0) && d.location.y.isGreaterThan(0)).firstOrNull,
       dordered.where((d) => d.location.x.isAbout(0) && d.location.y.isLessThan(0)).firstOrNull,
       dordered.where((d) => d.location.x.isGreaterThan(0) && d.location.y.isAbout(0)).firstOrNull,
       dordered.where((d) => d.location.x.isLessThan(0) && d.location.y.isAbout(0)).firstOrNull,
-    ].whereType<Dancer>().toList();
+    ].whereType<DancerModel>().toList();
     return diamondOf4.length == 4 ? diamondOf4 : null;
   }
 
-  List<Dancer> dancersHoldingRightHands({bool isGrand=true}) =>
+  List<DancerModel> dancersHoldingRightHands({bool isGrand=true}) =>
       dancers.where((d) {
         final d2 = dancerToRight(d,minDistance: 3.0);
         return d2 != null && dancerToRight(d2) == d &&
@@ -1191,7 +1192,7 @@ class CallContext {
                 !d.data.verycenter || !d2.data.verycenter);
       }).toList();
 
-  List<Dancer> dancersHoldingLeftHands({bool isGrand=true}) =>
+  List<DancerModel> dancersHoldingLeftHands({bool isGrand=true}) =>
       dancers.where((d) {
         final d2 = dancerToLeft(d,minDistance: 3.0);
         return d2 != null && dancerToLeft(d2) == d &&
@@ -1199,29 +1200,29 @@ class CallContext {
                 !d.data.verycenter || !d2.data.verycenter);
       }).toList();
 
-  List<Dancer> dancersHoldingSameHands({ required bool isRight, bool isGrand=true}) =>
+  List<DancerModel> dancersHoldingSameHands({ required bool isRight, bool isGrand=true}) =>
       isRight ? dancersHoldingRightHands(isGrand:isGrand)
               : dancersHoldingLeftHands(isGrand:isGrand);
 
-  //  Return true if this dancer is in a wave or mini-wave
-  bool isInWave(Dancer d, [Dancer? d2]) {
+  //  Return true if this DancerModel is in a wave or mini-wave
+  bool isInWave(DancerModel d, [DancerModel? d2]) {
     d2 ??= d.data.partner;
     return d2 != null && d.angleToDancer(d2).isAround(d2.angleToDancer(d)) &&
         d.distanceTo(d2) < 2.4;
   }
 
   //  Return true if two dancers are facing the same direction
-  bool isFacingSameDirection(Dancer d, Dancer d2) =>
+  bool isFacingSameDirection(DancerModel d, DancerModel d2) =>
       d.angleFacing.isAround(d2.angleFacing);
 
-  //  Return true if this dancer is part of a couple facing same direction
-  bool isInCouple(Dancer d, [Dancer? d2]) {
+  //  Return true if this DancerModel is part of a couple facing same direction
+  bool isInCouple(DancerModel d, [DancerModel? d2]) {
     d2 ??= d.data.partner;
     return d2 != null && isFacingSameDirection(d,d2);
   }
 
-  //  Return true if this dancer is in tandem with another dancer
-  Dancer? tandemDancer(Dancer d) {
+  //  Return true if this DancerModel is in tandem with another DancerModel
+  DancerModel? tandemDancer(DancerModel d) {
     if (d.data.trailer && (dancerInFront(d)?.data.leader ?? false))
       return dancerInFront(d);
     else if (d.data.leader && (dancerInBack(d)?.data.trailer ?? false))
@@ -1229,14 +1230,14 @@ class CallContext {
     else
       return null;
   }
-  bool isInTandem(Dancer d) => tandemDancer(d) != null;
+  bool isInTandem(DancerModel d) => tandemDancer(d) != null;
 
   //  Return true if this is 4 dancers in a box
   bool isBox() =>
       //  Must have 4 dancers
       dancers.length == 4 &&
-          //  Each dancer must have one dancer at the same X coordinate
-          //  and one dancer at the same Y coordinate
+          //  Each DancerModel must have one DancerModel at the same X coordinate
+          //  and one DancerModel at the same Y coordinate
           dancers.every((d) =>
               dancers.where((it) => d.location.x.isAbout(it.location.x)).length == 2 &&
               dancers.where((it) => d.location.y.isAbout(it.location.y)).length == 2
@@ -1328,8 +1329,8 @@ class CallContext {
       d2.angleFacing.isAround(d.angleFacing + pi)
   ));
 
-  //  Direction dancer would turn to Tag the Line
-  String tagDirection(Dancer d) {
+  //  Direction DancerModel would turn to Tag the Line
+  String tagDirection(DancerModel d) {
     if (dancerToRight(d)?.data.center == true)
       return 'Right';
     else if (dancerToLeft(d)?.data.center == true)
@@ -1337,8 +1338,8 @@ class CallContext {
     return '';
   }
 
-  //  Is there a dancer at a specific spot?
-  Dancer? dancerAt(Vector spot) =>
+  //  Is there a DancerModel at a specific spot?
+  DancerModel? dancerAt(Vector spot) =>
       dancers.where((d) => d.location == spot).firstOrNull;
 
   //  Are two dancers on the same spot?
@@ -1348,8 +1349,8 @@ class CallContext {
       )
   );
 
-  //  Get direction dancer would Roll
-  Rolling roll(Dancer dv) {
+  //  Get direction DancerModel would Roll
+  Rolling roll(DancerModel dv) {
     var d = dv;
     //  If nothing in this context, dive into parent contexts
     //  to find something to base the roll direction
@@ -1415,9 +1416,9 @@ class CallContext {
     }
   }
 
-  //  Move a dancer to a specific position (location and angle)
+  //  Move a DancerModel to a specific position (location and angle)
   //  Location and angle are in the dance floor space
-  Path moveToPosition(Dancer d, Vector location, double angle) {
+  Path moveToPosition(DancerModel d, Vector location, double angle) {
     //  Compute transform matrix to new location
     final tohome = (location - d.location).rotate(-d.tx.angle);
     final adiff = angle.angleDiff(d.tx.angle);
@@ -1427,7 +1428,7 @@ class CallContext {
     return Path.fromMovement(fracMove);
   }
 
-  //  This is useful for calls that depend on re-defining dancer types
+  //  This is useful for calls that depend on re-defining DancerModel types
   //  for subgroups, e.g. 'Centers Zoom'
   void analyzeActives() {
     //  If all dancers are active then the usual call to analyze() will suffice

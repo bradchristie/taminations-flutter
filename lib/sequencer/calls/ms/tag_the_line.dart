@@ -53,9 +53,9 @@ class BigLineTagTheLine extends ActivesOnlyAction {
 
   static final Formation ColumnsOf3 =
   Formation('Columns of 3', [
-      Dancer.fromData(gender:Gender.GIRL,x:-2,y:-1,angle:180),
-      Dancer.fromData(gender:Gender.BOY,x:0,y:-1,angle:180),
-      Dancer.fromData(gender:Gender.GIRL,x:2,y:-1,angle:180),
+      DancerModel.fromData(gender:Gender.GIRL,x:-2,y:-1,angle:180),
+      DancerModel.fromData(gender:Gender.BOY,x:0,y:-1,angle:180),
+      DancerModel.fromData(gender:Gender.GIRL,x:2,y:-1,angle:180),
   ]);
 
   BigLineTagTheLine(String name) : isLeft=name.contains('Left'), super(name) ;
@@ -82,7 +82,7 @@ class BigLineTagTheLine extends ActivesOnlyAction {
   }
 
   @override
-  Path performOne(Dancer d, CallContext ctx) {
+  Path performOne(DancerModel d, CallContext ctx) {
     Path p1, p2, p3;
     var skewAmount = _isHalfTag ? 1.0 : 0.5;
     if (isLeft) {

@@ -3,88 +3,17 @@
 <head>
   <title>SSD Lesson Plan</title>
   <meta name="viewport" content="width=device-width, height=device-height, interactive-widget=resizes-content, initial-scale=1.0">
-  <style>
-    * {
-      font-family: sans-serif;
-      box-sizing: border-box;
-    }
-    body { margin: 0; }
-    h1 { text-align: center; }
-    h2 { line-height: 0; padding: 20px 0 0 20px; }
-    a { text-decoration: none; }
-    .flex-container {
-      display: flex;
-      width: 100vw;
-      height: 100vh;
-      align-items: stretch;
-    }
-    .flex-item {
-      flex-basis: 100%;
-      height: 100%;
-      overflow: auto;
-      border: 0;
-      margin: 0;
-      padding: 0;
-      background-color: #fff8f0;
-    }
-    #animation-title {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 10vh;
-        font: bold 4vh sans-serif;
-        text-shadow: 2px 2px black;
-        color:white;
-        background-image:linear-gradient(#00c000,#004000);
-    }
-    #animation {
-        width: 100%;
-        height: 75vh;
-        padding: 0;
-    }
-    #definition {
-        width: 100%;
-        height: 84vh;
-        overflow-x: hidden;
-    }
-    .button {
-        width: 50%;
-        height: 5vh;
-        float: left;
-        font: bold 2vh sans-serif;
-    }
-    .noscroll {
-        overflow: hidden;
-    }
-
-    @media only screen and (max-width: 767px) {
-      .hide-page {
-        display: none;
-      }
-    }
-    @media only screen and (min-width: 768px) {
-      .hide-page { }
-      .button {
-        display: none;
-      }
-      #animation {
-        height: 89vh;
-      }
-      #definition {
-        height: 99vh;
-      }
-      .flex-item {
-        flex-basis: 33%;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="ssd.css">
 </head>
 <script type="application/javascript">
+const resizeOps = () => {
+   document.documentElement.style.setProperty("--vh", window.innerHeight * 0.01 + "px");
+};
 function setAnimation(title,link,name) {
   document.getElementById('animation-title').innerHTML = title;
-  var url = 'https://www.tamtwirlers.org/taminations/#?main=ANIMATIONS&link=' + link + '&animname=' + name + '&embed';
-  document.getElementById('animation').src = url;
-  document.getElementById('definition').src = url + '&definition';
+  document.getElementById('animation').src =
+      'https://www.tamtwirlers.org/taminations-test/#?main=ANIMATIONS&link=' + link + '&animname=' + name + '&embed';
+  document.getElementById('definition').src = 'https://www.tamtwirlers.org/taminations-test/html/'+link+'.html';
   showAnimation();
 }
 function showIndex() {
@@ -102,8 +31,13 @@ function showAnimation() {
   document.getElementById('animation-page').classList.remove('hide-page');
   document.getElementById('definition-page').classList.add('hide-page');
 }
+function startup() {
+  resizeOps();
+  window.addEventListener("resize", resizeOps);
+  showIndex();
+}
 </script>
-<body style="overflow: hidden" onload="showIndex()">
+<body style="overflow: hidden" onload="startup()">
   <div class="flex-container">
     <div id="index-page" class="flex-item">
       <h1>SSD Lesson Plan</h1>
@@ -247,8 +181,8 @@ function showAnimation() {
     </div>
 
     <div id="animation-page" class="flex-item noscroll">
-       <div id="animation-title"></div>
-       <iframe id="animation"></iframe>
+      <div id="animation-title"></div>
+      <iframe id="animation"></iframe>
       <div class="animation-buttons">
         <input class="button" type="button" value="Index" onclick="showIndex()"/>
         <input class="button" type="button" value="Definition" onclick="showDefinition()"/>

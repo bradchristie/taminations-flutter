@@ -34,9 +34,9 @@ class WalkAndDodge extends ActivesOnlyAction {
   late CallContext walkctx;
   late CallContext dodgectx;
 
-  bool isWalker(Dancer? d) =>
+  bool isWalker(DancerModel? d) =>
       d != null && walkctx.actives.map((wd) => wd.number).contains(d.number);
-  bool isDodger(Dancer? d) =>
+  bool isDodger(DancerModel? d) =>
       d != null && dodgectx.actives.map((dd) => dd.number).contains(d.number);
 
   @override
@@ -75,14 +75,14 @@ class WalkAndDodge extends ActivesOnlyAction {
   }
 
   @override
-  Path performOne(Dancer d, CallContext ctx) {
+  Path performOne(DancerModel d, CallContext ctx) {
     if (isDodger(d)) {
       //  A Dodger.  Figure out which way to dodge.
       final dRight = ctx.dancerToRight(d);
       final dLeft = ctx.dancerToLeft(d);
       Path move;
       if (dRight == null && dLeft == null)
-        throw CallError('Dancer $d does not know which way to Dodge');
+        throw CallError('DancerModel $d does not know which way to Dodge');
       else if (dRight == null)
         move = DodgeLeft;
       else if (dLeft == null)
@@ -113,7 +113,7 @@ class WalkAndDodge extends ActivesOnlyAction {
       }
 
     } else
-      throw CallError('Dancer $d cannot Walk or Dodge');
+      throw CallError('DancerModel $d cannot Walk or Dodge');
 
   }
 

@@ -52,9 +52,9 @@ class PracticeDancer extends Dancer {
   @override
   Color get drawColor => _onTrackColor.darker();
 
-  PracticeDancer(String number, String numberCouple, int gender, Color fillColor, Matrix mat, Geometry geom, List<Movement> moves) :
+  PracticeDancer(String number, String numberCouple, int gender, Color fillColor, Matrix mat, List<Movement> moves) :
         _onTrackColor = fillColor,
-        super(number, numberCouple, gender, fillColor, mat, geom, moves);
+        super(number, numberCouple, gender, fillColor, mat, moves);
 
   factory PracticeDancer.fromData({required int gender,
     String number='', String couple='',
@@ -65,8 +65,7 @@ class PracticeDancer extends Dancer {
   }) {
     final mat = Matrix.getTranslation(x,y) *
         Matrix.getRotation(angle.toRadians);
-    final g = geom ?? SquareGeometry(0);
-    return PracticeDancer(number, couple, gender, color, mat, g, path);
+    return PracticeDancer(number, couple, gender, color, mat, path);
   }
 
 

@@ -39,6 +39,7 @@
 *.g.dart
 
 # Web related
+/html/
 
 # Symbolication related
 app.*.symbols

@@ -24,6 +24,6 @@ class Waves extends FilterActives {
   Waves(String name) : super(name);
 
   @override
-  bool isActive(Dancer d, CallContext ctx) => ctx.isInWave(d);
+  bool isActive(DancerModel d, CallContext ctx) => ctx.isInWave(d);
 
 }

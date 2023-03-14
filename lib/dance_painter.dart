@@ -111,7 +111,7 @@ class DancePainter extends fm.CustomPainter  {
         for (var i2 = i1 + 1; i2 < model.dancers.length; i2++) {
           var d2 = model.dancers[i2];
           if (!d2.isPhantom || model.showPhantoms) {
-            var hh = Handhold.create(d1, d2, model.geometry);
+            var hh = Handhold.create(d1, d2, model.geometryType);
             if (hh != null)
               hhlist.add(hh);
           }
@@ -124,7 +124,7 @@ class DancePainter extends fm.CustomPainter  {
     //  so that if a dancer has a choice it gets the best handhold
     hhlist.where((it) => !_dancerInHandhold(it)).forEach((hh) {
       //  Check that the hands aren't already used
-      var incenter = model.geometry == Geometry.HEXAGON && hh.inCenter;
+      var incenter = model.geometryType == Geometry.HEXAGON && hh.inCenter;
       if (incenter ||
           (hh.hold1 == Hands.RIGHTHAND && hh.dancer1.rightDancer == null ||
               hh.hold1 == Hands.LEFTHAND && hh.dancer1.leftDancer == null) &&
@@ -202,13 +202,13 @@ class DancePainter extends fm.CustomPainter  {
     ctx.rotate(pi/2);
     //  Draw grid if on
     if (model.gridVisibility) {
-      Geometry(model.geometry,0).drawGrid(ctx);
+      Geometry(model.geometryType).drawGrid(ctx);
     }
     if (model.axesVisibility!='None') {
-      Geometry(model.geometry,0).drawAxes(ctx,short:(model.axesVisibility=='Short'));
+      Geometry(model.geometryType).drawAxes(ctx,short:(model.axesVisibility=='Short'));
     }
     //  Always show bigon center mark
-    if (model.geometry == Geometry.BIGON) {
+    if (model.geometryType == Geometry.BIGON) {
       var p = fm.Paint()
           ..strokeWidth = 0.03;
       ctx.drawLine(fm.Offset(0,-0.5), fm.Offset(0,0.5), p);

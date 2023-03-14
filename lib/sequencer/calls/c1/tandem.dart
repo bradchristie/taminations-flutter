@@ -30,7 +30,7 @@ class Tandem extends FourDancerConcept {
 
   //  Build list of (leader, trailer) tandems
   @override
-  List<List<Dancer>> dancerGroups(CallContext ctx) =>
+  List<List<DancerModel>> dancerGroups(CallContext ctx) =>
       ctx.dancers.where((d) => d.data.leader).map((d) {
         final d2 = ctx.dancerInBack(d).throwIfNull(CallError('No tandem for dancer $d'));
         if (!d2.data.trailer)
@@ -39,7 +39,7 @@ class Tandem extends FourDancerConcept {
       }).toList();
 
   @override
-  Vector startPosition(List<Dancer> group) {
+  Vector startPosition(List<DancerModel> group) {
     final d = group[0];
     final d2 = group[1];
     if (d.location.length.isAbout(d2.location.length))
@@ -57,7 +57,7 @@ class Tandem extends FourDancerConcept {
   }
 
   @override
-  Vector computeLocation(Dancer d, Movement m, int mi, double beat, int groupIndex) {
+  Vector computeLocation(DancerModel d, Movement m, int mi, double beat, int groupIndex) {
     //  Position tandem dancers 0.5 units in front and behind concept dancer
     final offset = 0.5;
     final isLeader = groupIndex == 0;
@@ -68,7 +68,7 @@ class Tandem extends FourDancerConcept {
   }
 
   @override
-  void postAdjustment(CallContext ctx, Dancer cd, List<Dancer> group) {
+  void postAdjustment(CallContext ctx, DancerModel cd, List<DancerModel> group) {
     //  This covers most all the formations you get from tandem calls
     var tandemFormations = {
       Formations.NormalLinesCompact: 1.0,

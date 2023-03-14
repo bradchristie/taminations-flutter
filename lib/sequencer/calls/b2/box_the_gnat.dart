@@ -30,7 +30,7 @@ class BoxTheGnat extends ActivesOnlyAction {
   @override var helplink  = 'b2/box_the_gnat';
   BoxTheGnat() : super('Box the Gnat');
 
-  Dancer? _checkOtherDancer(Dancer d, Dancer? d2) {
+  DancerModel? _checkOtherDancer(DancerModel d, DancerModel? d2) {
     if (d2 == null)
       return null;
     if (!d2.data.active)
@@ -41,7 +41,7 @@ class BoxTheGnat extends ActivesOnlyAction {
   }
 
   @override
-  Path performOne(Dancer d, CallContext ctx) {
+  Path performOne(DancerModel d, CallContext ctx) {
     //  First try facing dancers
     var d2 = _checkOtherDancer(d, ctx.dancerFacing(d));
     if (d2 != null) {

@@ -36,8 +36,8 @@ class Concentric extends Action {
     var maxX = ctx.dancers.maxOf((d) => d.location.x.abs());
     var maxY = ctx.dancers.maxOf((d) => d.location.y.abs());
     var isMajorX = maxX > maxY;
-    var dstarts = <Dancer,Vector>{};
-    var dangles = <Dancer,double>{};
+    var dstarts = <DancerModel,Vector>{};
+    var dangles = <DancerModel,double>{};
     ctx.subContext(ctx.dancers, (ctx2) {
       for (var d in ctx2.dancers) {
         late Vector dstart;

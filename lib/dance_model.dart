@@ -60,7 +60,7 @@ class DanceModel extends fm.ChangeNotifier {
   var _showPaths = false;
   var _showNumbers = Dancer.NUMBERS_OFF;
   var _showPhantoms = false;
-  var _geometry = Geometry.SQUARE;
+  var _geometryType = Geometry.SQUARE;
   var _asymmetric = false;
   var _randomColors = false;
   var _practiceScore = 0.0;
@@ -73,7 +73,7 @@ class DanceModel extends fm.ChangeNotifier {
   //  Except for the phantoms, these are the standard colors
   //  used for teaching callers
   List<Color> get _dancerColor =>
-      (_geometry == Geometry.HEXAGON) ?
+      (_geometryType == Geometry.HEXAGON) ?
       [Color.LIGHTGRAY, Color.RED, Color.GREEN, Color.MAGENTA,
   Color.BLUE, Color.YELLOW, Color.CYAN,
   Color.LIGHTGRAY, Color.LIGHTGRAY, Color.LIGHTGRAY, Color.LIGHTGRAY]
@@ -230,10 +230,10 @@ class DanceModel extends fm.ChangeNotifier {
     }
   }
 
-  int get geometry => _geometry;
+  int get geometryType => _geometryType;
   set geometry(int g) {
-    if (!_asymmetric && g != _geometry) {
-      _geometry = g;
+    if (!_asymmetric && g != _geometryType) {
+      _geometryType = g;
       later(() {
         _resetAnimation();
       });
@@ -365,14 +365,15 @@ class DanceModel extends fm.ChangeNotifier {
   }
 
   void setAnimatedCall(AnimatedCall call) {
-    var myGeometry = Geometry.SQUARE;  // TODO other geometries
+    var geometryType = Geometry.SQUARE;  // TODO other geometries
+    var geometry = Geometry(geometryType);
     dancers = [];
     var dnum = 0;
     for (var d in call.formation.dancers) {
-      for (var g=0; g<myGeometry; g++) {
+      for (var g=0; g<geometryType; g++) {
         dancers.add(Dancer(call.numbers[dnum*2+g],call.coupleNumbers[dnum*2+g],
             d.gender, Color.BLUE,
-            d.starttx,Geometry.getGeometry(myGeometry)[g], d.path.movelist));
+            geometry.startMatrix(d.starttx,g),d.path.movelist));
       }
       dnum += 1;
     }
@@ -412,29 +413,29 @@ class DanceModel extends fm.ChangeNotifier {
       var numbers = <String>[];
       _asymmetric = _tam!('asymmetric').isNotBlank;
       if (_asymmetric)
-        _geometry = Geometry.ASYMMETRIC;
-      if (_geometry == Geometry.HEXAGON)
+        _geometryType = Geometry.ASYMMETRIC;
+      if (_geometryType == Geometry.HEXAGON)
         numbers = ['A', 'E', 'I',
           'B', 'F', 'J',
           'C', 'G', 'K',
           'D', 'H', 'L',
           'U', 'V', 'W', 'X', 'Y', 'Z'];
-      else if (_geometry == Geometry.BIGON)
+      else if (_geometryType == Geometry.BIGON)
         numbers = ['1', '2', '3', '4', '5', '6', '7', '8'];
-      else if (_geometry == Geometry.HASHTAG)
+      else if (_geometryType == Geometry.HASHTAG)
         numbers = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
       else if (paths.isEmpty)
         numbers = ['1', '5', '2', '6', '3', '7', '4', '8'];
       else
         numbers = TamUtils.getNumbers(_tam!);
       var couples = <String>[];
-      if (_geometry == Geometry.HEXAGON)
+      if (_geometryType == Geometry.HEXAGON)
         couples = ['1', '3', '5', '1', '3', '5',
           '2', '4', '6', '2', '4', '6',
           '7', '8', '7', '8', '7', '8'];
-      else if (_geometry == Geometry.BIGON)
+      else if (_geometryType == Geometry.BIGON)
         couples = [ '1', '2', '3', '4', '5', '6', '7', '8' ];
-      else if (_geometry == Geometry.HASHTAG)
+      else if (_geometryType == Geometry.HASHTAG)
         couples = ['1','3','1','3',
           '1','3','1','3',
           '1','3','1','3',
@@ -444,7 +445,6 @@ class DanceModel extends fm.ChangeNotifier {
       else
         couples = TamUtils.getCouples(_tam!);
 
-      var geoms = Geometry.getGeometry(_geometry);
 
       //  Select a random dancer of the correct gender for the interactive dancer
       var icount = -1;
@@ -458,7 +458,7 @@ class DanceModel extends fm.ChangeNotifier {
         //  We want to rotate the formation so that direction is up
         iangle = glist[icount]('angle').d;
         //  Adjust icount for looping through geometry below
-        icount = icount * geoms.length + 1;
+        icount = icount * _geometryType + 1;
       }
 
       //  Create the dancers and set their starting positions
@@ -469,34 +469,36 @@ class DanceModel extends fm.ChangeNotifier {
         var x = xy.x;
         var y = xy.y;
         var angle = fd('angle').d + iangle;
-        var g = Gender.BOY;
-        if (fd('gender') == 'girl') g = Gender.GIRL;
-        if (fd('gender') == 'phantom') g = Gender.PHANTOM;
+        var gender = Gender.BOY;
+        if (fd('gender') == 'girl') gender = Gender.GIRL;
+        if (fd('gender') == 'phantom') gender = Gender.PHANTOM;
         var movelist = (paths.length > i) ? TamUtils.translatePath(paths[i]) : <Movement>[];
         //  Each dancer listed in the formation corresponds to
+        var geometry = Geometry(_geometryType);
         //  one, two, or three real dancers depending on the geometry
-        geoms.forEach((geom) {
-          var nstr = (g == Gender.PHANTOM) ? ' ' : numbers[dnum];
-          var cstr = (g == Gender.PHANTOM) ? ' ' : couples[dnum];
-          var colorstr = (g == Gender.PHANTOM) ? ' ' : couples[dnum];
+        for (var g=0; g<_geometryType; g+=1) {
+          var nstr = (gender == Gender.PHANTOM) ? ' ' : numbers[dnum];
+          var cstr = (gender == Gender.PHANTOM) ? ' ' : couples[dnum];
+          var colorstr = (gender == Gender.PHANTOM) ? ' ' : couples[dnum];
           var color = Color.LIGHTGREY;
-          if (g != Gender.PHANTOM)
+          if (gender != Gender.PHANTOM)
             color = _dancerColor[colorstr.i];
 
           //  add one dancer
           //  practice dancer?
-          if (g == _interactiveDancer  && --icount == 0) {
-            practiceDancer = PracticeDancer.fromData(gender: g, x: x, y: y, angle: angle, color: color, geom: geom.clone(), path:movelist);
+          if (gender == _interactiveDancer  && --icount == 0) {
+            practiceDancer = PracticeDancer.fromData(gender: gender, x: x, y: y, angle: angle, color: color, path:movelist);
             dancers.add(practiceDancer!);
           } else  // not the practice dancer
             dancers.add(Dancer.fromData(number: nstr, couple: cstr,
                 x: x, y: y, angle: angle,
-                geom: geom.clone(), gender: g, color: color, path: movelist));
-          if (g == Gender.PHANTOM && !_showPhantoms)
+                geometry: geometry, rotnum: g,
+                gender: gender, color: color, path: movelist));
+          if (gender == Gender.PHANTOM && !_showPhantoms)
             dancers.last.hidden = true;
           _beats = max(_beats, dancers.last.beats + leadout);
           dnum += 1;
-        });
+        };
       }  //  All dancers added
       for (var d in dancers)
         d.showNumber = _showNumbers;

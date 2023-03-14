@@ -45,7 +45,7 @@ class Squeeze extends Action {
   }
 
   @override
-  Path performOne(Dancer d, CallContext ctx) {
+  Path performOne(DancerModel d, CallContext ctx) {
     final d2 = ctx.dancerToLeft(d) ?? ctx.dancerToRight(d);
     if (d2 == null)
       return ctx.dancerCannotPerform(d, name);

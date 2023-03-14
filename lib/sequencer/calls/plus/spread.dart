@@ -115,7 +115,7 @@ class _Case2 extends Action {
   }
 
   @override
-  Path performOne(Dancer d, CallContext ctx) {
+  Path performOne(DancerModel d, CallContext ctx) {
     //  This is for waves only
     //  Compute offset for spread
     var v = Vector();

@@ -39,7 +39,7 @@ class CrossOverCirculate extends Action {
   }
 
   @override
-  Path performOne(Dancer d, CallContext ctx) {
+  Path performOne(DancerModel d, CallContext ctx) {
 
     if (d.data.leader) {
       //  Find another active dancer in this line

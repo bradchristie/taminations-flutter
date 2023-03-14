@@ -28,7 +28,7 @@ class StackTheLine extends ActivesOnlyAction with CallWithParts {
   1.  Quarter In
   2.  Original Leaders Step and all adjust to make a Right-Hand Box''';
   @override var helplink = 'c2/stack_the_line';
-  List<Dancer> originalLeads = [];
+  List<DancerModel> originalLeads = [];
   final bool isLeft;
   StackTheLine(String name) : isLeft=name.startsWith('Left'), super(name);
 

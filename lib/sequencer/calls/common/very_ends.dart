@@ -20,7 +20,7 @@
 
 import 'dart:math';
 
-import '../../../dancer.dart';
+import '../../../dancer_model.dart';
 import '../../call_context.dart';
 import 'fliter_actives.dart';
 
@@ -29,7 +29,7 @@ class VeryEnds extends FilterActives {
   VeryEnds(String name) : super(name);
 
   @override
-  bool isActive(Dancer d, CallContext ctx) {
+  bool isActive(DancerModel d, CallContext ctx) {
     var leftCount = ctx.dancersToLeft(d).length;
     var rightCount = ctx.dancersToRight(d).length;
     return min(leftCount,rightCount) == 0 &&

@@ -46,9 +46,9 @@ class LateralSubstitute extends Action {
     }
 
     var dir = '';
-    var movers = <Dancer>[];
+    var movers = <DancerModel>[];
     var amount = 0.0;
-    var getAmount = (Dancer d1, Dancer d2) =>
+    var getAmount = (DancerModel d1, DancerModel d2) =>
         (d1.location.x - d2.location.x).abs();
     var slices = ctx.xSlices;
 
@@ -73,7 +73,7 @@ class LateralSubstitute extends Action {
         dir = ctx.actives.first.location.y.abs() < movers.first.location.y.abs()
             ? 'out' : 'in';
         getAmount =
-            (Dancer d1, Dancer d2) => (d1.location.y - d2.location.y).abs();
+            (DancerModel d1, DancerModel d2) => (d1.location.y - d2.location.y).abs();
       } else {
         slices = ctx.xSlices;
         dir = ctx.actives.first.location.x.abs() < movers.first.location.x.abs()
@@ -100,7 +100,7 @@ class LateralSubstitute extends Action {
       if (ctx.actives.first.isFacingX) {
         slices = ctx.ySlices;
         getAmount =
-            (Dancer d1, Dancer d2) => (d1.location.y - d2.location.y).abs();
+            (DancerModel d1, DancerModel d2) => (d1.location.y - d2.location.y).abs();
       }
       if (slices.keys.length < 4)
         throw CallError('Cannot Lateral Substitute with this formation');

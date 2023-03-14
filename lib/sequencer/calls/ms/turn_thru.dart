@@ -28,7 +28,7 @@ class TurnThru extends Action {
   TurnThru(String name) : super(name);
 
   @override
-  Path performOne(Dancer d, CallContext ctx) {
+  Path performOne(DancerModel d, CallContext ctx) {
     var move1 = ExtendLeft;
     var move2 = SwingRight;
     var move3 = ExtendRight;

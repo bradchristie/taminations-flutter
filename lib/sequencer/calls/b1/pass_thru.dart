@@ -27,7 +27,7 @@ class PassThru extends Action {
   PassThru(String name) : super(name);
 
   @override
-  Path performOne(Dancer d, CallContext ctx) {
+  Path performOne(DancerModel d, CallContext ctx) {
     //  If in wave then maybe Ocean Wave rule applies
     var isFacing = ctx.dancerFacing(d)?.data.active ?? false;
     if (!isFacing && ctx.isInWave(d) && d.data.partner != null &&

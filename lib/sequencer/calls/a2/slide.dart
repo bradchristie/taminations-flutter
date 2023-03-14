@@ -45,7 +45,7 @@ class Slide extends Action {
   }
 
   @override
-  Path performOne(Dancer d, CallContext ctx) {
+  Path performOne(DancerModel d, CallContext ctx) {
     final d2 = d.data.partner.throwIfNull(CallError('Unable to calculate Slide'));
     final dist = d.distanceTo(d2);
     if (d.data.beau)
