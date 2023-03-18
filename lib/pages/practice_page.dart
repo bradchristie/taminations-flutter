@@ -160,28 +160,34 @@ class _PracticeFrameState extends fm.State<PracticeFrame>
                 danceModel.practiceDancer!.primaryIsLeft =
                     settings.primaryControl == 'Left Finger';
                 danceModel.practiceDancer!.practiceMousePressed =
-                    settings.mouseControl.contains('pressed');
+                    settings.mouseControl.contains('Press');
                 return fm.Listener(
-                  onPointerDown: (event) {
-                    danceModel.practiceDancer!.touchDown(
-                        event.pointer,
-                        dancePainter.mouse2dance(event.position.v),
-                        isMouse: event.kind == PointerDeviceKind.mouse
-                    );
-                  },
-                  onPointerUp: (event) {
-                    danceModel.practiceDancer!.touchUp(
-                        event.pointer,
-                        dancePainter.mouse2dance(event.position.v),
-                        isMouse: event.kind == PointerDeviceKind.mouse
-                    );
-                  },
-                  onPointerMove: (event) {
-                    danceModel.practiceDancer!.touchMove(
-                        event.pointer,
-                        dancePainter.mouse2dance(event.position.v)
-                    );
-                  },
+                    onPointerDown: (event) {
+                      danceModel.practiceDancer!.touchDown(
+                          event.pointer,
+                          dancePainter.mouse2dance(event.position.v),
+                          isMouse: event.kind == PointerDeviceKind.mouse
+                      );
+                    },
+                    onPointerUp: (event) {
+                      danceModel.practiceDancer!.touchUp(
+                          event.pointer,
+                          dancePainter.mouse2dance(event.position.v),
+                          isMouse: event.kind == PointerDeviceKind.mouse
+                      );
+                    },
+                    onPointerHover: (event) {
+                      danceModel.practiceDancer!.touchMove(
+                          event.pointer,
+                          dancePainter.mouse2dance(event.position.v)
+                      );
+                    },
+                    onPointerMove: (event) {
+                      danceModel.practiceDancer!.touchMove(
+                          event.pointer,
+                          dancePainter.mouse2dance(event.position.v)
+                      );
+                    },
                   child: pp.Consumer<BeatNotifier>(
                     builder: (context, beater, _) {
                       return fm.Stack(

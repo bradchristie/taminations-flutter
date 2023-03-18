@@ -161,7 +161,7 @@ class PracticeDancer extends Dancer {
   }
 
   void touchMove(int id, Vector pos) {
-    if (id == _primaryid)
+    if (id == _primaryid || (id==0 && !practiceMousePressed))
       _primaryMove = pos;
     else if (id == _secondaryid)
       _secondaryMove = pos;

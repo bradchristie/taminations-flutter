@@ -93,7 +93,7 @@ class Settings extends fm.ChangeNotifier {
       _practiceSpeed = prefs.getString('PracticeSpeed') ?? 'Slow';
       _primaryControl = prefs.getString('PrimaryControl') ?? 'Left Finger';
       _mouseControl = prefs.getString('MouseControl') ??
-          'Dancer moves only when mouse button is pressed';
+          'Press mouse button to move';
       _startingFormation =
           prefs.getString('Starting Formation') ?? 'Squared Set';
       if (_startingFormation == 'Eight Chain Thru')

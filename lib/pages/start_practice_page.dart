@@ -211,11 +211,11 @@ class _StartPracticeFrameState extends fm.State<StartPracticeFrame> {
                         if (!TamUtils.isTouchDevice)
                           _StartPracticeRadioGroup(
                               groupValue: settings.mouseControl,
-                              values: ['Dancer moves only when mouse button is pressed',
-                                'Dancer moves only when mouse button is released'],
+                              values: ['Press mouse button to move',
+                                'Release mouse button to move'],
                               onChanged: (value) {
                                 setState(() {
-                                  settings.primaryControl = value ?? 'Dancer moves only when mouse button is pressed';
+                                  settings.mouseControl = value ?? 'Press mouse button to move';
                                 });
                               }),
                       ],
