@@ -82,8 +82,9 @@ class _SequencerPageState extends fm.State<SequencerPage> {
       model.setStartingFormation(tamState.formation!);
       model.reset();
       if (tamState.calls != null && tamState.calls!.isNotBlank) {
+        var pasteCalls = tamState.calls;  // tamState gets clobbered, need to save the calls
         later(() {
-          model.paste(tamState.calls!.replaceAll(';', '\n'));
+          model.paste(pasteCalls!.replaceAll(';', '\n'));
         });
       }
     }
