@@ -42,7 +42,7 @@ class Loop extends Action {
     else
       throw CallError('Need a direction for Loop');
     try {
-      final amount = name.last.d;
+      final amount = name.last.d + 1;
       return move.scale(1.0,amount);
     } on FormatException {
       throw CallError('Need an amount for Loop');
