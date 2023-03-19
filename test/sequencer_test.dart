@@ -3291,7 +3291,7 @@ Allemande Left''',''),
   TestSequence('Leaders Right Loop',
 '''Heads Pass the Ocean
 Extend
-Leaders Right Loop 2
+Leaders Right Loop 1
 Triple Box Pass Thru
 Triple Box Shakedown
 Trade By
