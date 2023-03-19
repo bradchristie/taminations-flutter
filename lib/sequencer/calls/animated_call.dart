@@ -60,10 +60,11 @@ class AnimatedCall {
         this.coupleNumbers = const ['1', '3', '1', '3', '2', '4', '2', '4']
       })
       : formation = formation.copy(), paths = paths.clone() {
+    if (formation.asymmetric)
+      isAsymmetric = true;
     if (paths.length == formation.dancers.length) {
       for (var i = 0; i < formation.dancers.length; i++)
         formation.dancers[i].path = paths[i];
-      isAsymmetric = true;
     } else if (paths.length * 2 == formation.dancers.length) {
       for (var i = 0; i < formation.dancers.length; i++)
         formation.dancers[i].path = paths[i ~/ 2];
