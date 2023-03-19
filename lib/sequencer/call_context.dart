@@ -65,8 +65,7 @@ class CallContext {
     Formations.DoublePassThru: 1.0,
     Formations.QuarterTag : 1.5,
     Formations.TidalLineRH : 1.0,
-    //  Need I-Beam so Heads Swing Thru doesn't collide with the sides
-    //'I-Beam' : 2.0,
+    Formations.SquaredSet : 1.0
   };
 
   static var twoCoupleFormations = {
@@ -154,11 +153,16 @@ class CallContext {
 
   CallContext.fromFormation(Formation f,
       {List<Path>? withPaths, int geometryType=Geometry.SQUARE}) {
-    if (f.asymmetric)
-      geometryType = 1;
-    var geometry = Geometry(geometryType);
-    dancers = [for (var d in f.dancers) for (var g=0; g<geometryType; g++)
-      DancerModel.cloneWithGeometry(d,geometry.startMatrix(d.starttx, g)) ];
+    var geometryCount = geometryType;
+    if (f.asymmetric) {
+      geometryType = Geometry.ASYMMETRIC;
+      geometryCount = 1;
+      dancers = f.dancers.copy();
+    } else {
+      var geometry = Geometry(geometryType);
+      dancers = [for (var d in f.dancers) for (var g = 0; g < geometryType; g++)
+        DancerModel.cloneWithGeometry(d, geometry.startMatrix(d.starttx, g))];
+    }
     //  Set default DancerModel numbers
     var numbers = ['1', '5', '2', '6', '3', '7', '4', '8'];
     var couples = ['1', '3', '1', '3', '2', '4', '2', '4'];
@@ -169,8 +173,8 @@ class CallContext {
     asymmetric = f.asymmetric;
     if (withPaths != null) {
       for (var i=0; i<f.dancers.length; i++) {
-        for (var g = 0; g < geometryType; g++)
-          dancers[i*geometryType + g].path = withPaths[i].clone();
+        for (var g = 0; g < geometryCount; g++)
+          dancers[i*geometryCount + g].path = withPaths[i].clone();
       }
     }
   }
