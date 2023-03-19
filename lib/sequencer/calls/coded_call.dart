@@ -420,7 +420,7 @@ abstract class CodedCall extends Call {
     '(scootand)?little(outside|point)(in|out|left|right|(go)?(forward|asyouare))?'.ri:
         (name) => Little(name),
     'loadtheboat'.ri: (_) => LoadTheBoat(),
-    '(left|right|in|out)?loop(1|2|3)?'.ri: (name) => Loop(name),
+    '(left|right|in|out)?loop(0|1|2|3)?'.ri: (name) => Loop(name),
 
     'magictransferand.+'.ri: (name) => MagicTransferAnd(name),
     'makemagic'.ri: (_) => MakeMagic(),
