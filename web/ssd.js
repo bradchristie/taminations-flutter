@@ -100,9 +100,9 @@ function setAnimation(title,link,name) {
   document.getElementById('animation-title').innerHTML = title;
   //  Load Taminations and tell it to show our animation
   document.getElementById('animation').src =
-      'https://www.tamtwirlers.org/taminations-test/#?main=ANIMATIONS&link=' + link + '&animname=' + name + '&embed';
+      'https://www.tamtwirlers.org/taminations/#?main=ANIMATIONS&link=' + link + '&animname=' + name + '&embed';
   //  Load the definition
-  document.getElementById('definition').src = 'https://www.tamtwirlers.org/taminations-test/html/'+link+'.html';
+  document.getElementById('definition').src = 'https://www.tamtwirlers.org/taminations/html/'+link+'.html';
   //  On small screens, show the animation frame
   showAnimation();
 }
