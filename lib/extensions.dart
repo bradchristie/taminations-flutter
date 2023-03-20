@@ -221,6 +221,13 @@ extension TamList<E> on List<E> {
   double minOf(double Function(E e) of) => fold(double.maxFinite, (a, b) => min(a,of(b)));
   List<E> unique() => toSet().toList();
 
+  E? firstWhereOrNull(bool Function(E element) test) {
+    for (var element in this) {
+      if (test(element)) return element;
+    }
+    return null;
+  }
+
   E? firstBy(Comparable Function(E) selector) {
     if (isEmpty) return null;
     if (length == 1) return first;

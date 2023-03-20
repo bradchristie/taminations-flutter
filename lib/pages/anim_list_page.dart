@@ -194,143 +194,150 @@ class _AnimListState extends fm.State<AnimListFrame> {
 
   @override
   fm.Widget build(fm.BuildContext context) {
-    var foundLink = false;
     if (callEntry != null)
       _loadList(callEntry!.calls);
 
-            return fm.Column(children: [
-              fm.Expanded(
-                  child: fm.Scrollbar(
-                    thumbVisibility: TamUtils.platform() == 'web',
-                    thickness: 16,
-                    controller: scrollController,
-                    child: fm.ListView.builder(
-                        controller: scrollController,
-                        itemCount: animListItems.length,
-                        itemBuilder: (fm.BuildContext context, int index) {
-                          var item = animListItems[index];
-                          var backColor = Color.WHITE;
-                          switch (item.difficulty) {
-                            case Difficulty.COMMON:
-                              backColor = Color.COMMON;
-                              break;
-                            case Difficulty.HARDER:
-                              backColor = Color.HARDER;
-                              break;
-                            case Difficulty.EXPERT:
-                              backColor = Color.EXPERT;
-                              break;
-                          }
-                          switch (item.celltype) {
-                            case CellType.Header:
-                              return fm.Container(
-                                  decoration: fm.BoxDecoration(
-                                      color: fm.Color(0xff804080),
-                                      border: fm.Border(
-                                          bottom: fm.BorderSide(
-                                              width: 1, color: fm.Colors.black))),
-                                  padding: fm.EdgeInsets.only(
-                                      left: 20.0, top: 4, bottom: 4),
-                                  child: fm.Text(item.name,
-                                      style: fm.TextStyle(
-                                          fontSize: 20, color: fm.Colors.white)));
-                            case CellType.Separator:
-                              return fm.Container(
-                                  decoration: fm.BoxDecoration(
-                                      color: fm.Color(0xff804080),
-                                      border: fm.Border(
-                                          bottom: fm.BorderSide(
-                                              width: 1, color: fm.Colors.black))),
-                                  padding: fm.EdgeInsets.only(
-                                      left: 20.0, top: 4, bottom: 4),
-                                  child: fm.Text(item.title,
-                                      style: fm.TextStyle(
-                                          color: Color.WHITE,
-                                          fontSize: item.title.isBlank ? 2 : 20)));
-                            case CellType.Indented:
-                            case CellType.Plain:
-                            return fm.Container(
-                                child: pp.Consumer2<TamState,HighlightState>(
-                                    builder: (context, tamState,highlightState,_) {
-                                      var animRegex = (tamState.animname??'XXX').ri;
-                                      if (selectedItem != index) {
-                                        //  Check for animation selected by name in link
-                                        if (!foundLink && item.fullname.matches(animRegex)) {
-                                          _selectAnimListItem(index, tamState, highlightState);
-                                          foundLink = true;
-                                        }
-                                        //  In case of link by number instead of name
-                                        else if (item.animnumber == tamState.animnum) {
-                                          _selectAnimListItem(index, tamState, highlightState);
-                                        }
-                                        //  Otherwise select first animation
-                                        else if (tamState.animnum < 0 &&
-                                            tamState.animname == null &&
-                                            item.animnumber == 0) {
-                                          _selectAnimListItem(index, tamState, highlightState);
-                                        }
-                                      }
-                                      return fm.Material(
-                                        color: widget.highlightSelected &&
-                                            selectedItem == index
-                                            ? Color.BLUE
-                                            : backColor,
-                                        child: fm.InkWell(
-                                          highlightColor: backColor.darker(),
-                                          onTap: () {
-                                            setState(() {
-                                              _selectAnimListItem(index, tamState, highlightState);
-                                            });
-                                            tamState.change(
-                                                mainPage: MainPage.ANIMATIONS,
-                                                animnum: item.animnumber
-                                            );
-                                            pp.Provider.of<BeatNotifier>(context,listen: false).beat = 0.0;
-                                          },
-                                          child: fm.Container(
-                                            decoration: fm.BoxDecoration(
-                                                border: fm.Border(
-                                                    bottom: fm.BorderSide(
-                                                        width: 1,
-                                                        color: fm.Colors.black))),
-                                            padding: fm.EdgeInsets.only(
-                                                left: item.celltype ==
-                                                    CellType.Indented
-                                                    ? 40.0
-                                                    : 20.0,
-                                                top: 4,
-                                                bottom: 4),
-                                            child: fm.Text(item.name,
-                                                style: fm.TextStyle(
-                                                    color: widget
-                                                        .highlightSelected &&
-                                                        selectedItem == index
-                                                        ? backColor
-                                                        : Color.BLACK,
-                                                    fontSize: 20
-                                                )),
-                                          ),
-                                        ),
+    return fm.Column(children: [
+      fm.Expanded(
+          child: fm.Scrollbar(
+            thumbVisibility: TamUtils.platform() == 'web',
+            thickness: 16,
+            controller: scrollController,
+            child: fm.ListView.builder(
+                controller: scrollController,
+                itemCount: animListItems.length,
+                itemBuilder: (fm.BuildContext context, int index) {
+                  var item = animListItems[index];
+                  var backColor = Color.WHITE;
+                  switch (item.difficulty) {
+                    case Difficulty.COMMON:
+                      backColor = Color.COMMON;
+                      break;
+                    case Difficulty.HARDER:
+                      backColor = Color.HARDER;
+                      break;
+                    case Difficulty.EXPERT:
+                      backColor = Color.EXPERT;
+                      break;
+                  }
+                  switch (item.celltype) {
+                    case CellType.Header:
+                      return fm.Container(
+                          decoration: fm.BoxDecoration(
+                              color: fm.Color(0xff804080),
+                              border: fm.Border(
+                                  bottom: fm.BorderSide(
+                                      width: 1, color: fm.Colors.black))),
+                          padding: fm.EdgeInsets.only(
+                              left: 20.0, top: 4, bottom: 4),
+                          child: fm.Text(item.name,
+                              style: fm.TextStyle(
+                                  fontSize: 20, color: fm.Colors.white)));
+                    case CellType.Separator:
+                      return fm.Container(
+                          decoration: fm.BoxDecoration(
+                              color: fm.Color(0xff804080),
+                              border: fm.Border(
+                                  bottom: fm.BorderSide(
+                                      width: 1, color: fm.Colors.black))),
+                          padding: fm.EdgeInsets.only(
+                              left: 20.0, top: 4, bottom: 4),
+                          child: fm.Text(item.title,
+                              style: fm.TextStyle(
+                                  color: Color.WHITE,
+                                  fontSize: item.title.isBlank ? 2 : 20)));
+                    case CellType.Indented:
+                    case CellType.Plain:
+                      return fm.Container(
+                          child: pp.Consumer2<TamState, HighlightState>(
+                              builder: (context, tamState, highlightState, _) {
+                                var animRegex = (tamState.animname ?? 'XXX').ri;
+                                if (selectedItem != index) {
+                                  //  Check for animation selected by name in link
+                                  var selectedNameIndex =
+                                      animListItems.firstWhereOrNull((it) =>
+                                      it.fullname.matches(animRegex))
+                                      ?.animnumber ?? -1;
+                                  if (tamState.animnum < 0 &&
+                                      item.animnumber == selectedNameIndex) {
+                                    _selectAnimListItem(
+                                        index, tamState, highlightState);
+                                  }
+                                  //  In case of link by number instead of name
+                                  else if (item.animnumber == tamState.animnum) {
+                                    _selectAnimListItem(index, tamState, highlightState);
+                                  }
+                                  //  Otherwise select first animation
+                                  else if (tamState.animnum < 0 &&
+                                      tamState.animname == null &&
+                                      item.animnumber == 0) {
+                                    _selectAnimListItem(index, tamState, highlightState);
+                                  }
+                                }
+                                return fm.Material(
+                                  color: widget.highlightSelected && selectedItem == index
+                                      ? Color.BLUE
+                                      : backColor,
+                                  child: fm.InkWell(
+                                    highlightColor: backColor.darker(),
+                                    onTap: () {
+                                      setState(() {
+                                        _selectAnimListItem(
+                                            index, tamState, highlightState);
+                                      });
+                                      tamState.change(
+                                          mainPage: MainPage.ANIMATIONS,
+                                          animnum: item.animnumber
                                       );
-                                    }
-                                ));
-                          }
-                        }),
-                  )),
-              if (hasDifficulty) fm.Container(
-                  decoration: fm.BoxDecoration(
-                      border: fm.Border.all(
-                              width: 1,
-                              color: Color.GRAY)),
-                  child: fm.Row(
-                    children: [
-                      oneLegendWidget('Common', Color.COMMON),
-                      oneLegendWidget('Harder', Color.HARDER),
-                      oneLegendWidget('Expert', Color.EXPERT)
-                    ]
-                ),
-              )
-            ]);
+                                      pp.Provider
+                                          .of<BeatNotifier>(
+                                          context, listen: false)
+                                          .beat = 0.0;
+                                    },
+                                    child: fm.Container(
+                                      decoration: fm.BoxDecoration(
+                                          border: fm.Border(
+                                              bottom: fm.BorderSide(
+                                                  width: 1,
+                                                  color: fm.Colors.black))),
+                                      padding: fm.EdgeInsets.only(
+                                          left: item.celltype ==
+                                              CellType.Indented
+                                              ? 40.0
+                                              : 20.0,
+                                          top: 4,
+                                          bottom: 4),
+                                      child: fm.Text(item.name,
+                                          style: fm.TextStyle(
+                                              color: widget
+                                                  .highlightSelected &&
+                                                  selectedItem == index
+                                                  ? backColor
+                                                  : Color.BLACK,
+                                              fontSize: 20
+                                          )),
+                                    ),
+                                  ),
+                                );
+                              }
+                          ));
+                  }
+                }),
+          )),
+      if (hasDifficulty) fm.Container(
+        decoration: fm.BoxDecoration(
+            border: fm.Border.all(
+                width: 1,
+                color: Color.GRAY)),
+        child: fm.Row(
+            children: [
+              oneLegendWidget('Common', Color.COMMON),
+              oneLegendWidget('Harder', Color.HARDER),
+              oneLegendWidget('Expert', Color.EXPERT)
+            ]
+        ),
+      )
+    ]);
   }
 
 }
