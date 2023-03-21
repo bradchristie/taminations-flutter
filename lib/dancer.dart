@@ -34,11 +34,8 @@ class Dancer extends DancerModel {
   static const rect = fm.Rect.fromLTWH(-0.5, -0.5, 1.0, 1.0);
   static var rrect = fm.RRect.fromRectAndRadius(rect,
       fm.Radius.circular(0.3));
-
-  //  Passed into default constructor
-  Color fillColor;
-
-  //  Computed
+  Geometry geometry;
+  Color fillColor;  //  Passed into default constructor
   Color get drawColor => fillColor.darker();
   int _showNumber = NUMBERS_DANCERS;
   bool showColor = true;
@@ -64,9 +61,8 @@ class Dancer extends DancerModel {
 
       }
 
-  Dancer(number,numberCouple, gender,this.fillColor, Matrix mat, moves)
-      : super(number,numberCouple,gender,mat,moves)
-  {
+  Dancer(number,numberCouple, gender,this.fillColor, Matrix mat, this.geometry, moves)
+      : super(number,numberCouple,gender,mat,moves) {
     // Compute points of path for drawing path
     computePath();
   }
@@ -81,11 +77,17 @@ class Dancer extends DancerModel {
         var myGeometry = geometry ?? Geometry(Geometry.SQUARE);
     final mat = myGeometry.startMatrix(Matrix.getTranslation(x,y) *
         Matrix.getRotation(angle.toRadians), rotnum);
-    return Dancer(number,couple,gender,color,mat,path);
+    return Dancer(number,couple,gender,color,mat,myGeometry,path);
   }
 
   @override
   String toString() => number;
+
+  @override
+  void animate(double beat) {
+    animateComputed(beat);
+    tx = geometry.pathMatrix(starttx, tx, beat) * tx;
+  }
 
 
   // Compute points of path for drawing path

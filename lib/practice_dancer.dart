@@ -54,7 +54,7 @@ class PracticeDancer extends Dancer {
 
   PracticeDancer(String number, String numberCouple, int gender, Color fillColor, Matrix mat, List<Movement> moves) :
         _onTrackColor = fillColor,
-        super(number, numberCouple, gender, fillColor, mat, moves);
+        super(number, numberCouple, gender, fillColor, mat, Geometry(Geometry.SQUARE), moves);
 
   factory PracticeDancer.fromData({required int gender,
     String number='', String couple='',

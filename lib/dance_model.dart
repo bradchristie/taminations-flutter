@@ -373,7 +373,7 @@ class DanceModel extends fm.ChangeNotifier {
       for (var g=0; g<geometryType; g++) {
         dancers.add(Dancer(call.numbers[dnum*2+g],call.coupleNumbers[dnum*2+g],
             d.gender, Color.BLUE,
-            geometry.startMatrix(d.starttx,g),d.path.movelist));
+            geometry.startMatrix(d.starttx,g),Geometry(Geometry.SQUARE), d.path.movelist));
       }
       dnum += 1;
     }
@@ -474,7 +474,6 @@ class DanceModel extends fm.ChangeNotifier {
         if (fd('gender') == 'phantom') gender = Gender.PHANTOM;
         var movelist = (paths.length > i) ? TamUtils.translatePath(paths[i]) : <Movement>[];
         //  Each dancer listed in the formation corresponds to
-        var geometry = Geometry(_geometryType);
         //  one, two, or three real dancers depending on the geometry
         for (var g=0; g<_geometryType; g+=1) {
           var nstr = (gender == Gender.PHANTOM) ? ' ' : numbers[dnum];
@@ -492,7 +491,7 @@ class DanceModel extends fm.ChangeNotifier {
           } else  // not the practice dancer
             dancers.add(Dancer.fromData(number: nstr, couple: cstr,
                 x: x, y: y, angle: angle,
-                geometry: geometry, rotnum: g,
+                geometry: Geometry(_geometryType), rotnum: g,
                 gender: gender, color: color, path: movelist));
           if (gender == Gender.PHANTOM && !_showPhantoms)
             dancers.last.hidden = true;
