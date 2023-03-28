@@ -20,19 +20,14 @@ Call pronunciations provided by
 
 ---
 
-## Taminations version 1.6.56 built 2023-03-20
+## Taminations version 1.6.57 built 2023-03-28
 Copyright 2023 by Brad Christie.  
 This is free software, and you are welcome to modify and redistribute it
 under the terms of the [GNU GPL license](http://www.gnu.org/licenses/gpl.html).  
 
 ## What's New
-* Fix for Magic Column Circulate animations not playing
-* Small improvements for Practice mode
-* Example web page with embedded animations for learning SSD
-* Sequencer changes:
-  * Fix amount for Loop
-  * Fix deep linking to sequencer with calls
-  * Add snap to squared set
+* Fix for Hexagon animations
+* Startup animation for web page
 
 For a detailed history of changes, view the
 [Git log](https://github.com/bradchristie/taminations-flutter/commits/main)
