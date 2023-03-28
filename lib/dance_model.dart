@@ -33,6 +33,7 @@ class DanceModel extends fm.ChangeNotifier {
   static const FASTSPEED = 200.0;
   static const LUDICROUSSPEED = 10.0;
 
+  AnimatedCall? _call;
   XmlElement? _tam;
   BeatNotifier beater;
   var _interactiveDancer = -1;
@@ -235,7 +236,7 @@ class DanceModel extends fm.ChangeNotifier {
     if (!_asymmetric && g != _geometryType) {
       _geometryType = g;
       later(() {
-        _resetAnimation();
+        _resetAnimatedCall();
       });
     }
   }
@@ -364,30 +365,89 @@ class DanceModel extends fm.ChangeNotifier {
     notifyListeners();
   }
 
-  void setAnimatedCall(AnimatedCall call) {
-    var geometryType = Geometry.SQUARE;  // TODO other geometries
-    var geometry = Geometry(geometryType);
-    dancers = [];
-    var dnum = 0;
-    for (var d in call.formation.dancers) {
-      for (var g=0; g<geometryType; g++) {
-        dancers.add(Dancer(call.numbers[dnum*2+g],call.coupleNumbers[dnum*2+g],
-            d.gender, Color.BLUE,
-            geometry.startMatrix(d.starttx,g),Geometry(Geometry.SQUARE), d.path.movelist));
-      }
-      dnum += 1;
-    }
-    leadin = 2.0;
-    leadout = 2.0;
-    _beats = 0.0;
-    for (var d in dancers) {
-      _beats = max(_beats, d.beats + leadout);
-      d.showNumber = _showNumbers;
-    }
-    beater.setTimes(-leadin, _beats);
+  void setAnimatedCall(AnimatedCall call, {int geometryType=Geometry.SQUARE,
+    int practiceGender = -1, bool practiceIsRandom = true}) {
+    _call = call;
+    _geometryType = geometryType;
+    _interactiveDancer = practiceGender;
+    _interactiveRandom = practiceIsRandom;
+    _resetAnimatedCall();
+    partstr = call.parts;
+    hasParts = call.parts.isNotBlank;
     later(() {
       notifyListeners();
     });
+  }
+
+  void _resetAnimatedCall() {
+    var mycall = _call;
+    if (mycall != null) {
+      var geometry = Geometry(_geometryType);
+      if (mycall.isAsymmetric) { // not used here as of yet
+        _geometryType = Geometry.ASYMMETRIC;
+        dancers = mycall.formation.dancers.map((d) =>
+            Dancer(
+                d.number,
+                d.numberCouple,
+                d.gender,
+                Color.BLUE,
+                geometry.startMatrix(d.starttx, 0),
+                Geometry(Geometry.SQUARE),
+                d.path.movelist)).toList();
+      } else {
+        var geometry = Geometry(_geometryType);
+        var numbers = mycall.numbers;
+        var couples = mycall.coupleNumbers;
+        if (_geometryType == Geometry.HEXAGON) {
+          numbers = ['A', 'E', 'I',
+            'B', 'F', 'J',
+            'C', 'G', 'K',
+            'D', 'H', 'L',
+            'U', 'V', 'W', 'X', 'Y', 'Z'];
+          couples = ['1', '3', '5', '1', '3', '5',
+            '2', '4', '6', '2', '4', '6',
+            '7', '8', '7', '8', '7', '8'];
+        } else if (_geometryType == Geometry.HASHTAG) {
+          numbers = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
+          couples = ['1', '3', '1', '3',
+            '1', '3', '1', '3',
+            '1', '3', '1', '3',
+            '1', '3', '1', '3',
+            '1', '3', '1', '3',
+            '1', '3', '1', '3'];
+        } else if (_geometryType == Geometry.BIGON) {
+          numbers = ['1', '2', '3', '4', '5', '6', '7', '8'];
+          couples = [ '1', '2', '3', '4', '5', '6', '7', '8'];
+        }
+
+        dancers = [for (var ent in mycall.formation.dancers
+            .asMap()
+            .entries)
+          for (var g = 0; g < _geometryType; g++)
+            Dancer(
+                numbers[ent.key * _geometryType + g],
+                couples[ent.key * _geometryType + g],
+                ent.value.gender,
+                Color.BLUE,
+                // real color will be set later
+                geometry.startMatrix(ent.value.starttx, g),
+                geometry.clone(),
+                mycall.paths[ent.key].movelist)
+        ];
+      }
+
+      leadin = 2.0;
+      leadout = 2.0;
+      _beats = 0.0;
+      for (var d in dancers) {
+        _beats = max(_beats, d.beats + leadout);
+        d.showNumber = _showNumbers;
+      }
+      beater.setTimes(-leadin, _beats);
+      later(() {
+        notifyListeners();
+      });
+    }
   }
 
   void _resetAnimation() {

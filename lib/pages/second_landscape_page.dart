@@ -21,6 +21,7 @@
 import 'package:flutter/material.dart' as fm;
 import 'package:provider/provider.dart' as pp;
 
+import '../call_index.g.dart';
 import '../common.dart';
 import '../dance_model.dart';
 import 'anim_list_page.dart';
@@ -41,21 +42,30 @@ class SecondLandscapePage extends fm.StatelessWidget {
             builder: (context,tamState,_) {
               if (tamState.link == null)  // sanity check
                 return fm.Container();
-              final title = pp.Provider.of<TitleModel>(
-                  context, listen: false);
+              final titleModel = pp.Provider.of<TitleModel>(context, listen: false);
               final model = pp.Provider.of<DanceModel>(context, listen: false);
-              TamUtils.getXMLAsset(tamState.link!).then((doc) {
-                var tam = TamUtils.tamList(doc)
-                    .where((it) => DebugSwitch.showHiddenAnimations.enabled ||
-                                   !(it('display', '').startsWith('n')))
-                    .toList()[max(0, tamState.animnum)];
-                model.setAnimation(tam);
-                if (tamState.animnum >= 0)
-                  title.title = tam('title');
-                else
-                  title.title = doc.rootElement('title');
-              });
-              title.level = LevelData.find(tamState.link!)?.name ?? '';
+              final settings = pp.Provider.of<Settings>(context, listen: false);
+
+              //  TODO this duplicates the same code in animation_page _startModel
+              var callEntry = callIndex.firstWhere((element) => element.link == tamState.link);
+              var tamList = callEntry.calls
+                  .where((it) => DebugSwitch.showHiddenAnimations.enabled || !it.noDisplay).toList();
+              var tam = tamList[0];
+              if (tamState.animnum >= 0 && tamState.animnum < tamList.length)
+                tam = tamList[tamState.animnum];
+              if (tamState.animname != null)
+                tam = tamList.firstWhere((it) {
+                  var fullname = it.title;
+                  if (it.group.isEmpty && it.from.isNotBlank)
+                    fullname += 'from' + it.from;
+                  fullname = fullname.replaceAll('[^a-zA-Z0-9]'.r, '');
+                  return fullname == tamState.animname;
+                },orElse: () => tam);
+              model.setAnimatedCall(tam,
+                  geometryType: Geometry.fromString(settings.geometry).geometry);
+              titleModel.title = tam.title;
+              titleModel.level = LevelData.find(tamState.link!)?.name ?? '';
+
               return fm.Scaffold(
                 backgroundColor: Color.LIGHTGRAY,
                 appBar: fm.PreferredSize(

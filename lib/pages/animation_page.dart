@@ -27,6 +27,7 @@ import '../beat_notifier.dart';
 import '../common.dart';
 import '../dance_model.dart';
 import 'page.dart';
+import '../call_index.g.dart';
 
 class AnimationState extends fm.ChangeNotifier {
 
@@ -43,25 +44,24 @@ class AnimationState extends fm.ChangeNotifier {
 
 void _startModel(fm.BuildContext context, TamState tamState, TitleModel? titleModel) {
   final model = pp.Provider.of<DanceModel>(context,listen:false);
-  TamUtils.getXMLAsset(tamState.link!).then((doc) {
-    var tamList = TamUtils.tamList(doc)
-        .where((it) => !(it('display','').startsWith('n')))
-        .toList();
-    var tam = tamList[0];
-    if (tamState.animname != null) {
-      tam = tamList.firstWhere((it) {
-        var fullname = it('title');
-        if (it('group').isEmpty && it('from').isNotBlank)
-          fullname += 'from' + it('from');
-        fullname = fullname.replaceAll('[^a-zA-Z0-9]'.r, '');
-        return fullname == tamState.animname;
-      }, orElse: () => tamList[0]);
-    } else if (tamState.animnum >= 0 && tamState.animnum < tamList.length)
-      tam = tamList[tamState.animnum];
-    model.setAnimation(tam);
-    if (titleModel != null)
-      titleModel.title = tam('title');
-  });
+  final settings = pp.Provider.of<Settings>(context, listen: false);
+  var callEntry = callIndex.firstWhere((element) => element.link == tamState.link);
+  var tamList = callEntry.calls
+      .where((it) => DebugSwitch.showHiddenAnimations.enabled || !it.noDisplay).toList();
+  var tam = tamList[0];
+  if (tamState.animnum >= 0 && tamState.animnum < tamList.length)
+    tam = tamList[tamState.animnum];
+  if (tamState.animname != null)
+    tam = tamList.firstWhere((it) {
+      var fullname = it.title;
+      if (it.group.isEmpty && it.from.isNotBlank)
+        fullname += 'from' + it.from;
+      fullname = fullname.replaceAll('[^a-zA-Z0-9]'.r, '');
+      return fullname == tamState.animname;
+    },orElse: () => tam);
+  model.setAnimatedCall(tam, geometryType: Geometry.fromString(settings.geometry).geometry);
+  if (titleModel != null)
+    titleModel.title = tam.title;
 }
 
 

@@ -140,7 +140,7 @@ class TamState extends fm.ChangeNotifier {
   @override
   String toString() => <String>[
     if (level != null && level!.isNotEmpty) 'level=$level',
-    if (animnum >= 0) 'animnum=${animnum.d}',
+    if (animnum >= 0) 'animnum=$animnum',
     if ((animname ?? '').isNotBlank) 'animname=$animname',
     if (link != null && link!.isNotEmpty) 'link=$link',
     if (mainPage != null) 'main=${describeEnum(mainPage!)}',
