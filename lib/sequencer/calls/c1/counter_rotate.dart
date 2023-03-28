@@ -46,7 +46,7 @@ class CounterRotate extends Action {
     //  Counter Rotate not possible if dancer is looking
     //  directly at the center of the square
     if (da.isAround(0.0))
-      throw CallError('DancerModel $d cannot Counter Rotate');
+      throw CallError('Dancer $d cannot Counter Rotate');
     //  Compute points for Bezier
     var anginc = pi/6.0 * da.sign;
     var p1 = d.location.ds(d);

@@ -28,7 +28,7 @@ class StepThru extends ActivesOnlyAction {
   @override
   Path performOne(DancerModel d, CallContext ctx) {
     if (!ctx.isInWave(d))
-      throw CallError('DancerModel $d cannot Step Thru');
+      throw CallError('Dancer $d cannot Step Thru');
     final move = d.data.beau ? ExtendRight : ExtendLeft;
     final dist = d.distanceTo(d.data.partner!);
     return move.scale(1.0, dist/2.0);

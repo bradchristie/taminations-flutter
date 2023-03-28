@@ -47,7 +47,7 @@ class Zoom extends ActivesOnlyAction {
     }
     var s = centerLeft || centerRight ? 0.25 : 1.0;
     if (d.data.leader) {
-      var d2 = ctx.dancerInBack(d).throwIfNull(CallError('DancerModel $d cannot $name'));
+      var d2 = ctx.dancerInBack(d).throwIfNull(CallError('Dancer $d cannot $name'));
       if (!d2.data.active)
         throw CallError('Trailer of dancer $d is not active' );
       if (ctx.dancerInBack(d2) == d)
@@ -58,7 +58,7 @@ class Zoom extends ActivesOnlyAction {
               ? c.changeBeats(2.0).skew(dist/2.0,0.0).scale(1.0,s)
               : c2.changeBeats(2.0).scale(dist/2.0,2.0*s));
     } else if (d.data.trailer) {
-      var d2 = ctx.dancerInFront(d).throwIfNull(CallError('DancerModel $d cannot $name'));
+      var d2 = ctx.dancerInFront(d).throwIfNull(CallError('Dancer $d cannot $name'));
       if (!d2.data.active)
         throw CallError('Leader of dancer $d is not active' );
       var dist = d.distanceTo(d2);
@@ -69,7 +69,7 @@ class Zoom extends ActivesOnlyAction {
           : Forward.changeBeats(2.0).scale(dist-1,1.0).skew(0.0,offset) +
             c3.changeBeats(2.0).skew(1.0,-offset);
     } else
-      throw CallError('DancerModel $d cannot $name' );
+      throw CallError('Dancer $d cannot $name' );
   }
 
 }

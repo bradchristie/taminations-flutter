@@ -82,7 +82,7 @@ class WalkAndDodge extends ActivesOnlyAction {
       final dLeft = ctx.dancerToLeft(d);
       Path move;
       if (dRight == null && dLeft == null)
-        throw CallError('DancerModel $d does not know which way to Dodge');
+        throw CallError('Dancer $d does not know which way to Dodge');
       else if (dRight == null)
         move = DodgeLeft;
       else if (dLeft == null)
@@ -113,7 +113,7 @@ class WalkAndDodge extends ActivesOnlyAction {
       }
 
     } else
-      throw CallError('DancerModel $d cannot Walk or Dodge');
+      throw CallError('Dancer $d cannot Walk or Dodge');
 
   }
 

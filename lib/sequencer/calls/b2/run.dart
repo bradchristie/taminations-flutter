@@ -53,11 +53,11 @@ class Run extends Action {
         var isRight = dright != null && dancersToWalk.contains(dright) &&
             name != 'Run Left' ;
         if (!isLeft && !isRight)
-          throw CallError('DancerModel $d cannot Run' );
+          throw CallError('Dancer $d cannot Run' );
         else if (!isLeft ||
             (usePartner && dright!=null && dright == d.data.partner)) {
           //  Run Right
-          var d2 = dright.throwIfNull(CallError('DancerModel $d unable to Run' ));
+          var d2 = dright.throwIfNull(CallError('Dancer $d unable to Run' ));
           _runOne(d, d2, 'Right' );
           runnersRunned.add(d);
           dancersToWalk.remove(d2);
@@ -67,7 +67,7 @@ class Run extends Action {
         else if (!isRight ||
             (usePartner && dleft!=null && dleft == d.data.partner)) {
           //  Run Left
-          var d2 = dleft.throwIfNull(CallError('DancerModel $d unable to Run' ));
+          var d2 = dleft.throwIfNull(CallError('Dancer $d unable to Run' ));
           _runOne(d,d2,'Left' );
           runnersRunned.add(d);
           dancersToWalk.remove(d2);

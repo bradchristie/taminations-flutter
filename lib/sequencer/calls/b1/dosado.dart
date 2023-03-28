@@ -29,7 +29,7 @@ class Dosado extends Action {
   @override
   Path performOne(DancerModel d, CallContext ctx) {
     var d2 = ctx.dancerFacing(d) ??
-        thrower(CallError('DancerModel $d has no one to Dosado with.' ));
+        thrower(CallError('Dancer $d has no one to Dosado with.' ));
     var dist = d.distanceTo(d2!);
     var moves = name.toLowerCase().startsWith('left' )
         ? [ ExtendLeft, ExtendRight, RetreatRight, RetreatLeft ]

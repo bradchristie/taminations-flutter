@@ -36,9 +36,9 @@ class Fold extends Action {
     for (var d in ctx.actives) {
       //  Find dancer to fold in front of
       //  Usually it's the partner
-      var d2 = d.data.partner.throwIfNull(CallError('DancerModel ${d.number} has nobody to Fold in front'));
+      var d2 = d.data.partner.throwIfNull(CallError('Dancer ${d.number} has nobody to Fold in front'));
       if (d2.data.active || d2.data.partner != d)
-        throw CallError('DancerModel ${d.number} has nobody to Fold in front');
+        throw CallError('Dancer ${d.number} has nobody to Fold in front');
       var m = d2.isRightOf(d) ? FoldRight : FoldLeft;
       var dist = d.distanceTo(d2);
       var dxscale = 0.75;

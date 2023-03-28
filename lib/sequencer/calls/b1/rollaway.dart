@@ -38,7 +38,7 @@ class Rollaway extends Action {
       } else if (d.data.belle) {
         return DodgeLeft.scale(1.0, dist/2.0).changehands(Hands.GRIPLEFT);
       } else
-        throw CallError('DancerModel $d does not know how to Rollaway');
+        throw CallError('Dancer $d does not know how to Rollaway');
     }
     if (d.data.beau) {
       return DodgeRight.scale(1.0, dist/2.0).changehands(Hands.GRIPRIGHT);
@@ -48,7 +48,7 @@ class Rollaway extends Action {
           UmTurnLeft.changeBeats(1.5)
           .skew(1.2, -dist/2.0).changehands(Hands.GRIPLEFT);
     } else
-      throw CallError('DancerModel $d does not know how to Rollaway');
+      throw CallError('Dancer $d does not know how to Rollaway');
   }
 
 }
