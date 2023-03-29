@@ -25,6 +25,7 @@ import 'package:flutter/services.dart' show rootBundle;
 import 'package:platform/platform.dart';
 
 import 'common.dart';
+import 'call_index.g.dart';
 
 class CallListDatum {
   final String title;
@@ -39,8 +40,6 @@ class CallListDatum {
 class TamUtils {
 
   //  Data read at start of program, to speed up later lookups
-  static List<CallListDatum> calldata = [];
-  static Map<String,List<CallListDatum>> callmap = {};
   static final Map<String,XmlElement> _formations = {};
   static final Map<String,XmlElement> _moves = {};
   //  Keep a set of all words used in calls.
@@ -224,25 +223,10 @@ class TamUtils {
       _moves[m('name')] = m;
     });
 
-    var callsDoc = await getXMLAsset('src/calls');
-    calldata = callsDoc.findAllElements('call').map((e) =>
-        CallListDatum(
-            e('title'),
-            normalizeCall(e('title')).toLowerCase(),
-            e('link'),
-            e('languages'),
-            e('audio'))
-    ).toList();
     //  Add words in each call to set of all words
-    for (var data in calldata) {
+    for (var data in callIndex) {
       var dataWords = data.title.split('\\s+'.r).map((w) => w.toLowerCase());
       words.addAll(dataWords);
-      //  Index link to this call by its normalized name
-      var norm = data.norm;
-      if (callmap.containsKey(norm))
-        callmap[norm]!.add(data);
-      else
-        callmap[norm] = [ data ];
     }
     return true;
   }

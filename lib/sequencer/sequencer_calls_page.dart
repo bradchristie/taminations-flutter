@@ -21,8 +21,10 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart' as fm;
 import 'package:provider/provider.dart' as pp;
 
+import '../call_entry.dart';
 import '../common.dart';
 import '../pages/page.dart';
+import '../call_index.g.dart';
 
 class SequencerCallsPage extends fm.StatelessWidget {
 
@@ -40,7 +42,7 @@ class SequencerCallsFrame extends fm.StatefulWidget {
 
 class SequencerCallsModel extends fm.ChangeNotifier {
 
-  var callsSelected = <CallListDatum>[];
+  var callsSelected = <CallEntry>[];
   final _levelsSelected = <LevelData,bool>{
     LevelData.SSD : false,
     LevelData.B1 : false,
@@ -58,8 +60,8 @@ class SequencerCallsModel extends fm.ChangeNotifier {
   void setSelected(LevelData level, bool value) {
     if (_levelsSelected[level] != value) {
       _levelsSelected[level] = value;
-      callsSelected = TamUtils.calldata.where(
-              (element) => _levelsSelected[LevelData.find(element.link)] ?? false).toList();
+      callsSelected = callIndex.where((element) =>
+      _levelsSelected[LevelData.find(element.link)] ?? false).toList();
       notifyListeners();
     }
   }

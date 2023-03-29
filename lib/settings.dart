@@ -22,7 +22,8 @@ import 'package:flutter/material.dart' as fm;
 import 'package:flutter/services.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-import 'tam_utils.dart';
+import 'call_index.g.dart';
+import 'common.dart';
 
 class Settings extends fm.ChangeNotifier {
 
@@ -209,11 +210,10 @@ class Settings extends fm.ChangeNotifier {
   String getLanguageLink(String link) {
     var code = languageCode;
     if (code != 'en') {
-      if (TamUtils.calldata.indexWhere((item) {
-        return item.link == link && item.languages.contains(code);
-      }) >= 0) {
+      var call = callIndex.firstWhereOrNull((e) =>
+      e.link == link && e.languages.contains('lang-$code'));
+      if (call != null)
         link += '.lang-$code';
-      }
     }
     return link;
   }

@@ -24,6 +24,7 @@ import 'package:flutter/material.dart' as fm;
 import 'package:provider/provider.dart' as pp;
 
 import 'common.dart';
+import 'call_index.g.dart';
 
 class TitleModel extends fm.ChangeNotifier {
   String _title = 'Taminations';
@@ -72,9 +73,9 @@ class TitleBar extends fm.StatelessWidget {
               builder: (context,titleModel,_) {
                 //  See if we have audio for this title
                 var audioAsset = '';
-                TamUtils.calldata.where((item) => item.title == titleModel.title).forEach((call) {
-                  if (call.audio.isNotBlank)
-                    audioAsset = call.audio;
+                callIndex.where((item) => item.title == titleModel.title).forEach((call) {
+                  if (call.audio != null)
+                    audioAsset = call.audio!;
                 });
 
                 return fm.Row(children: [
