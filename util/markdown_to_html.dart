@@ -26,14 +26,14 @@ import 'package:taminations/extensions.dart';
 void main() async {
   var dirs = ['b1','b2','ms','plus','a1','a2','c1','c2','c3a','c3b'];
   try {
-    Directory('html').deleteSync(recursive: true);
+    Directory('web/html').deleteSync(recursive: true);
   } catch(e) {
     if (!(e is FileSystemException))
       rethrow;
   }
-  Directory('html').createSync();
+  Directory('web/html').createSync();
   for (var dir in dirs) {
-    Directory('html/$dir').createSync();
+    Directory('web/html/$dir').createSync();
   }
   for (var dir in dirs) {
     await for (var ent in Directory('assets/$dir').list()) {
@@ -57,7 +57,7 @@ void main() async {
 <body>
 ''' + html + '</body></html>\n';
         //  save it
-        var outfile = File(filename.replaceFirst('assets', 'html').replaceFirst(
+        var outfile = File(filename.replaceFirst('assets', 'web/html').replaceFirst(
             '.md', '.html')).openWrite();
         outfile.write(html);
         await outfile.flush();
@@ -65,16 +65,16 @@ void main() async {
       }
       else if (filename.endsWith('png')) {
         print('Copying $filename');
-        var fileto = filename.replaceFirst('assets', 'html');
+        var fileto = filename.replaceFirst('assets', 'web/html');
         await File(filename).copy(fileto);
       }
     }
   }
 
   //  Duplicate files for SSD
-  Directory('html/ssd').createSync();
+  Directory('web/html/ssd').createSync();
   for (var dir in ['b1','b2','ms']) {
-    await for (var ent in Directory('html/$dir').list()) {
+    await for (var ent in Directory('web/html/$dir').list()) {
       var from = ent.path;
       var to = from.replaceFirst(dir, 'ssd');
       await File(from).copy(to);
