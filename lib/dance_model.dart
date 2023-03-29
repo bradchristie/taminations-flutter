@@ -69,7 +69,7 @@ class DanceModel extends fm.ChangeNotifier {
       _tam?.childrenNamed('taminator').firstOrNull
           ?.text.trim().replaceAll(r'\s+'.r, ' ') ?? '';
   String get title => _tam?.getAttribute('title')
-      ?.replaceAll(' \\(.*?\\) '.r, ' ') ?? '';
+      ?.replaceAll(' \\(.*?\\) '.r, ' ') ?? _call?.title ?? '';
 
   //  Except for the phantoms, these are the standard colors
   //  used for teaching callers
@@ -428,13 +428,39 @@ class DanceModel extends fm.ChangeNotifier {
                 numbers[ent.key * _geometryType + g],
                 couples[ent.key * _geometryType + g],
                 ent.value.gender,
-                Color.BLUE,
+                ent.value.gender == Gender.PHANTOM
+                  ? Color.GRAY
+                  : _dancerColor[couples[ent.key * _geometryType + g].i],
                 // real color will be set later
                 geometry.startMatrix(ent.value.starttx, g),
                 geometry.clone(),
                 mycall.paths[ent.key].movelist)
         ];
-      }
+
+        //  For practice, replace one of the dancers with an interactive dancer
+        if (_interactiveDancer > 0) {
+          var p = 0;
+          while (dancers[p].gender != _interactiveDancer)
+            p += 1;
+          if (_interactiveRandom) {
+            do {
+              p = Random().nextInt(dancers.length);
+            } while (dancers[p].gender != _interactiveDancer);
+          }
+          practiceDancer = PracticeDancer(
+              dancers[p].number, dancers[p].numberCouple,
+              dancers[p].gender, dancers[p].fillColor,
+              dancers[p].starttx, dancers[p].moves);
+          dancers[p] = practiceDancer!;
+          //  Rotate formation so practice dancer is facing forward
+          practiceDancer!.animateComputed(0.0);
+          var iangle = -practiceDancer!.angleFacing;
+          var iangleTx = Matrix.getRotation(iangle);
+          for (var d in dancers)
+            d.starttx = iangleTx * d.starttx;
+        }  // practice dancer
+
+      }  //  not asymmetric
 
       leadin = 2.0;
       leadout = 2.0;

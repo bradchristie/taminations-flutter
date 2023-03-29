@@ -20,9 +20,12 @@
 
 import 'package:flutter/material.dart' as fm;
 import 'package:provider/provider.dart' as pp;
+import 'package:taminations/moves.g.dart';
+import 'package:taminations/sequencer/calls/animated_call.dart';
 
 import '../common.dart';
 import '../dance_model.dart';
+import '../formations.g.dart';
 import 'page.dart';
 import 'practice_page.dart';
 
@@ -37,7 +40,44 @@ class TutorialPage extends fm.StatelessWidget {
 
 }
 
+
+
 class TutorialModel extends PracticeModel {
+
+  static final calls = [
+    AnimatedCall('Couples Circulate',
+        formation:Formation('', [
+          DancerModel.fromData(gender:Gender.BOY,x:-2,y:3,angle:0),
+          DancerModel.fromData(gender:Gender.GIRL,x:-2,y:1,angle:0),
+          DancerModel.fromData(gender:Gender.BOY,x:-2,y:-1,angle:180),
+          DancerModel.fromData(gender:Gender.GIRL,x:-2,y:-3,angle:180)]),
+        paths: [
+          Forward_4.changehands(Hands.RIGHT),
+          Forward_4.changehands(Hands.LEFT),
+          RunRight.changeBeats(4.0).changehands(Hands.LEFT),
+          RunRight.changeBeats(4.0).changehands(Hands.RIGHT).scale(3.0, 3.0)
+        ]),
+    AnimatedCall('Partner Trade',
+        formation: Formations.BoxRH,
+        paths:[
+          SwingRight,
+          SwingRight
+        ]),
+    AnimatedCall('As Couples Walk and Dodge',
+        formation: Formations.TwomFacedLinesLH,
+        paths: [
+          DodgeLeft.changeBeats(4.0).changehands(Hands.GRIPLEFT).scale(2, 2),
+          DodgeLeft.changeBeats(4.0).changehands(Hands.GRIPRIGHT).scale(2, 2),
+          Forward_4.changehands(Hands.RIGHT),
+          Forward_4.changehands(Hands.LEFT)
+        ]),
+    AnimatedCall('U-Turn Left',
+        formation: Formations.FacingCouples,
+        paths: [
+          UmTurnLeft,
+          UmTurnLeft
+        ])
+    ];
 
   static final touchHints = [
     'Use your %1 finger on the %1 side of the screen. '
@@ -115,13 +155,9 @@ class TutorialModel extends PracticeModel {
   @override
   Future<bool> firstAnimation(fm.BuildContext context, DanceModel danceModel) async {
     final settings = pp.Provider.of<Settings>(context,listen: false);
-    final doc = await TamUtils.getXMLAsset('src/tutorial');
-    final tams = TamUtils.tamList(doc);
-    await danceModel.setAnimation(
-        tams[lessonNumber],
+    danceModel.setAnimatedCall(calls[lessonNumber],
         practiceGender: settings.practiceGender=='Boy' ? Gender.BOY : Gender.GIRL,
-        practiceIsRandom: false
-    );
+        practiceIsRandom: false);
     return true;
   }
 

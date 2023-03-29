@@ -40,7 +40,7 @@
 *.g.xml
 
 # Web related
-/html/
+/web/html/
 
 # Symbolication related
 app.*.symbols
