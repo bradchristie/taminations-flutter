@@ -27,7 +27,20 @@ import 'package:provider/provider.dart' as pp;
 import '../beat_notifier.dart';
 import '../common.dart';
 import '../dance_model.dart';
+import '../sequencer/calls/animated_call.dart';
 import 'page.dart';
+
+import '../calls/b1/calls_index.g.dart' as b1;
+import '../calls/b2/calls_index.g.dart' as b2;
+import '../calls/ms/calls_index.g.dart' as ms;
+import '../calls/plus/calls_index.g.dart' as plus;
+import '../calls/a1/calls_index.g.dart' as a1;
+import '../calls/a2/calls_index.g.dart' as a2;
+import '../calls/c1/calls_index.g.dart' as c1;
+import '../calls/c2/calls_index.g.dart' as c2;
+import '../calls/c3a/calls_index.g.dart' as c3a;
+import '../calls/c3b/calls_index.g.dart' as c3b;
+
 
 class PracticePage extends fm.StatelessWidget {
 
@@ -47,26 +60,44 @@ class PracticeModel {
   Future<bool> firstAnimation(fm.BuildContext context, DanceModel danceModel) async =>
     nextAnimation(context, danceModel);
 
+  Map<String,List<AnimatedCall>> _callsForLevel(LevelData level) {
+    if (level == LevelData.B1)
+      return b1.CallsIndex.index;
+    else if (level == LevelData.B2)
+      return b2.CallsIndex.index;
+    else if (level == LevelData.MS)
+      return ms.CallsIndex.index;
+    else if (level == LevelData.PLUS)
+      return plus.CallsIndex.index;
+    else if (level == LevelData.A1)
+      return a1.CallsIndex.index;
+    else if (level == LevelData.A2)
+      return a2.CallsIndex.index;
+    else if (level == LevelData.C1)
+      return c1.CallsIndex.index;
+    else if (level == LevelData.C2)
+      return c2.CallsIndex.index;
+    else if (level == LevelData.C3A)
+      return c3a.CallsIndex.index;
+    else if (level == LevelData.C3B)
+      return c3b.CallsIndex.index;
+    throw ArgumentError('Invalid level: $level');
+  }
+
   Future<bool> nextAnimation(fm.BuildContext context, DanceModel danceModel) async {
     //  Choose a random call from the selected level
     final appState = pp.Provider.of<TamState>(context,listen: false);
     final titleModel = pp.Provider.of<TitleModel>(context,listen: false);
     final settings = pp.Provider.of<Settings>(context,listen: false);
     final levelDatum = LevelData.find(appState.level!)!;
-    final levelCalls = TamUtils.calldata.where((element) =>
-        levelDatum.selector(element.link)).toList();
-    final randomCall = levelCalls[Random().nextInt(levelCalls.length)];
-
+    final levelCalls = _callsForLevel(levelDatum).values.toList();
     //  Load that call and choose a random animation
-    final randomLink = randomCall.link;
-    final doc = await TamUtils.getXMLAsset(randomLink);
-    final tams = TamUtils.tamList(doc)
-        .where((element) => element.name.toString() == 'tam').toList();
-    final randomAnim = Random().nextInt(tams.length);
-    final randomTam = tams[randomAnim];
-    titleModel.title = randomTam('title');
+    final randomCall = levelCalls[Random().nextInt(levelCalls.length)];
+    final randomAnim = randomCall[Random().nextInt(randomCall.length)];
+
+    titleModel.title = randomAnim.title;
     titleModel.level = levelDatum.name;
-    await danceModel.setAnimation(randomTam,
+    danceModel.setAnimatedCall(randomAnim,
         practiceGender: settings.practiceGender=='Boy' ? Gender.BOY : Gender.GIRL);
     danceModel.doPlay();
     return true;

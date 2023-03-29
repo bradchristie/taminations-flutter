@@ -62,7 +62,7 @@ class DanceModel extends fm.ChangeNotifier {
   var _showNumbers = Dancer.NUMBERS_OFF;
   var _showPhantoms = false;
   var _geometryType = Geometry.SQUARE;
-  var _asymmetric = false;
+  final _asymmetric = false;
   var _randomColors = false;
   var _practiceScore = 0.0;
   String get animationNote =>
@@ -351,20 +351,6 @@ class DanceModel extends fm.ChangeNotifier {
     _prevbeat = beater.beat;
   }
 
-
-
-
-  Future<void> setAnimation(XmlElement xtam,
-      {int practiceGender = -1, bool practiceIsRandom = true}) async {
-    _tam = await TamUtils.tamXref(xtam);
-    _interactiveDancer = practiceGender;
-    _interactiveRandom = practiceIsRandom;
-    _resetAnimation();
-    partstr = _tam!('parts','') + _tam!('fractions','');
-    hasParts = _tam!('parts').isNotBlank;
-    notifyListeners();
-  }
-
   void setAnimatedCall(AnimatedCall call, {int geometryType=Geometry.SQUARE,
     int practiceGender = -1, bool practiceIsRandom = true}) {
     _call = call;
@@ -473,124 +459,6 @@ class DanceModel extends fm.ChangeNotifier {
       later(() {
         notifyListeners();
       });
-    }
-  }
-
-  void _resetAnimation() {
-    if (_tam != null) {
-      leadin = _interactiveDancer < 0 ? 2.0 : 3.0;
-      leadout = _interactiveDancer < 0 ? 2.0 : 0.2;
-      //beater.reset();
-      var tform = _tam!.getElement('formation');
-      var aform = _tam!('formation');
-      var formation = _tam!;
-      if (tform != null)
-        formation = tform;
-      else if (aform.isNotBlank)
-        formation = TamUtils.getFormation(aform);
-      var flist = formation.childrenNamed('dancer');
-      dancers = [];
-      _beats = 0.0;
-
-      //  Get numbers for dancers and couples
-      //  This fetches any custom numbers that might be defined in
-      //  the animation to match a Callerlab or Ceder Chest illustration
-      var paths = _tam!.childrenNamed('path');
-      var numbers = <String>[];
-      _asymmetric = _tam!('asymmetric').isNotBlank;
-      if (_asymmetric)
-        _geometryType = Geometry.ASYMMETRIC;
-      if (_geometryType == Geometry.HEXAGON)
-        numbers = ['A', 'E', 'I',
-          'B', 'F', 'J',
-          'C', 'G', 'K',
-          'D', 'H', 'L',
-          'U', 'V', 'W', 'X', 'Y', 'Z'];
-      else if (_geometryType == Geometry.BIGON)
-        numbers = ['1', '2', '3', '4', '5', '6', '7', '8'];
-      else if (_geometryType == Geometry.HASHTAG)
-        numbers = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
-      else if (paths.isEmpty)
-        numbers = ['1', '5', '2', '6', '3', '7', '4', '8'];
-      else
-        numbers = TamUtils.getNumbers(_tam!);
-      var couples = <String>[];
-      if (_geometryType == Geometry.HEXAGON)
-        couples = ['1', '3', '5', '1', '3', '5',
-          '2', '4', '6', '2', '4', '6',
-          '7', '8', '7', '8', '7', '8'];
-      else if (_geometryType == Geometry.BIGON)
-        couples = [ '1', '2', '3', '4', '5', '6', '7', '8' ];
-      else if (_geometryType == Geometry.HASHTAG)
-        couples = ['1','3','1','3',
-          '1','3','1','3',
-          '1','3','1','3',
-          '1','3','1','3',
-          '1','3','1','3',
-          '1','3','1','3'];
-      else
-        couples = TamUtils.getCouples(_tam!);
-
-
-      //  Select a random dancer of the correct gender for the interactive dancer
-      var icount = -1;
-      var iangle = 0.0;
-      if (_interactiveDancer > 0) {
-        var glist = formation.childrenNamed('dancer')
-            .where((d) => d('gender') == (_interactiveDancer==Gender.BOY ? 'boy' : 'girl')).toList();
-        //  Select either the first or random dancer to be interactive
-        icount = _interactiveRandom ? Random().nextInt(glist.length) : 0;
-        //  Find the angle the interactive dancer faces at start
-        //  We want to rotate the formation so that direction is up
-        iangle = glist[icount]('angle').d;
-        //  Adjust icount for looping through geometry below
-        icount = icount * _geometryType + 1;
-      }
-
-      //  Create the dancers and set their starting positions
-      var dnum = 0;
-      for (var i=0; i<flist.length; i++) {
-        var fd = flist[i];
-        var xy = Vector(fd('x').d, fd('y').d).rotate(iangle.toRadians);
-        var x = xy.x;
-        var y = xy.y;
-        var angle = fd('angle').d + iangle;
-        var gender = Gender.BOY;
-        if (fd('gender') == 'girl') gender = Gender.GIRL;
-        if (fd('gender') == 'phantom') gender = Gender.PHANTOM;
-        var movelist = (paths.length > i) ? TamUtils.translatePath(paths[i]) : <Movement>[];
-        //  Each dancer listed in the formation corresponds to
-        //  one, two, or three real dancers depending on the geometry
-        for (var g=0; g<_geometryType; g+=1) {
-          var nstr = (gender == Gender.PHANTOM) ? ' ' : numbers[dnum];
-          var cstr = (gender == Gender.PHANTOM) ? ' ' : couples[dnum];
-          var colorstr = (gender == Gender.PHANTOM) ? ' ' : couples[dnum];
-          var color = Color.LIGHTGREY;
-          if (gender != Gender.PHANTOM)
-            color = _dancerColor[colorstr.i];
-
-          //  add one dancer
-          //  practice dancer?
-          if (gender == _interactiveDancer  && --icount == 0) {
-            practiceDancer = PracticeDancer.fromData(gender: gender, x: x, y: y, angle: angle, color: color, path:movelist);
-            dancers.add(practiceDancer!);
-          } else  // not the practice dancer
-            dancers.add(Dancer.fromData(number: nstr, couple: cstr,
-                x: x, y: y, angle: angle,
-                geometry: Geometry(_geometryType), rotnum: g,
-                gender: gender, color: color, path: movelist));
-          if (gender == Gender.PHANTOM && !_showPhantoms)
-            dancers.last.hidden = true;
-          _beats = max(_beats, dancers.last.beats + leadout);
-          dnum += 1;
-        };
-      }  //  All dancers added
-      for (var d in dancers)
-        d.showNumber = _showNumbers;
-
-      //  Initialize other instance variables
-      beater.setTimes(-leadin, _beats);
-      notifyListeners();
     }
   }
 
