@@ -19,7 +19,6 @@
 */
 
 import 'dart:async' show Future;
-import 'dart:typed_data';
 
 import 'package:flutter/services.dart' show rootBundle;
 import 'package:platform/platform.dart';
@@ -39,9 +38,6 @@ class CallListDatum {
 //  Class of static methods and data, this class is not instantiated
 class TamUtils {
 
-  //  Data read at start of program, to speed up later lookups
-  static final Map<String,XmlElement> _formations = {};
-  static final Map<String,XmlElement> _moves = {};
   //  Keep a set of all words used in calls.
   //  Used to check sequencer abbreviations - don't let the use make
   //  an abbreviation for a real word.
@@ -205,23 +201,9 @@ class TamUtils {
   //  Read an XML file or other from the assets
   static Future<String> getAsset(String filename) async =>
       rootBundle.loadString('assets/${linkSSD(filename)}');
-  static Future<ByteData> getBinaryAsset(String filename) async =>
-      rootBundle.load('assets/${linkSSD(filename)}');
-  static Future<XmlDocument> getXMLAsset(String filename) async =>
-      rootBundle.loadString('assets/${linkSSD(filename)}.xml').then((text) =>
-      XmlDocument.parse(text));
 
   //  Read data at start of program
   static Future<bool> init() async {
-
-    var formationsDoc = await getXMLAsset('src/formations');
-    formationsDoc.findAllElements('formation').forEach((f) {
-      _formations[f('name')] = f;
-    });
-    var movesDoc = await getXMLAsset('src/moves');
-    movesDoc.findAllElements('path').forEach((m) {
-      _moves[m('name')] = m;
-    });
 
     //  Add words in each call to set of all words
     for (var data in callIndex) {

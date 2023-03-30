@@ -17,6 +17,7 @@
  *     along with Taminations.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+import 'package:flutter/services.dart';
 import 'package:taminations/common.dart';
 import 'package:flutter/material.dart' as fm;
 
@@ -29,13 +30,17 @@ void main() async {
 
 class ListAnimations extends fm.StatefulWidget {
 
+  static Future<XmlDocument> getXMLAsset(String filename) async =>
+      rootBundle.loadString('assets/${TamUtils.linkSSD(filename)}.xml').then((text) =>
+          XmlDocument.parse(text));
+
   static Future<void> listAnimations() async {
-    var callsDoc = await TamUtils.getXMLAsset('src/calls');
+    var callsDoc = await getXMLAsset('src/calls');
     for (var e in callsDoc.findAllElements('call')) {
       if (e('link').startsWith('ssd'))
         continue;
       var link = e('link').replaceFirst('\\?.*'.r, '');
-      var oneDoc = await TamUtils.getXMLAsset(link);
+      var oneDoc = await getXMLAsset(link);
       var oneCount = 0;
       for (var e2 in oneDoc.findAllElements('tam')) {
         if (e2('display').startsWith('n'))
