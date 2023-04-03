@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>SSD Lesson Plan</title>
+  <meta name="viewport" content="width=device-width, height=device-height, interactive-widget=resizes-content, initial-scale=1.0">
+  <link rel="stylesheet" href="ssd.css">
+</head>
+<script type="application/javascript" src="ssd.js"></script>
+<body style="overflow: hidden" onload="startup()">
+
+<div class="flex-container">  <!-- Container for all 3 frames -->
+
+  <!--  First frame - call index -->
+  <div id="index-page" class="flex-item">
+    <h1>SSD Lesson Plan</h1>
+
+    <h2>Lesson 1</h2>
+    <ul>
+      <!-- Each call is just a reload of this page with a search paramter
+           of the call to show.  Call names match the names in the table
+           in ssd.js, case not important.  -->
+      <li><a href="?CircleLeft">Circle Left</a> /
+        <a href="?CircleRight">Circle Right</a></li>
+      <li><a href="?ForwardAndBack">Forward and Back</a></li>
+      <li><a href="?Dosado">Dosado</a></li>
+      <li><a href="?Swing">Swing</a></li>
+      <li>Promenade:
+        <a href="?CouplesPromenade">Couples</a>,
+        <a href="?SingleFilePromenade">Single File</a>,
+        <a href="?WrongWayPromenade">Wrong Way</a>,
+        <a href="?StarPromenade">Star</a>
+      </li>
+      <li><a href="?AllemandeLeft">Allemande Left</a> and
+        <a href="?ArmTurns">Arm Turns</a></li>
+      <li><a href="?RightandLeftGrand">Right and Left Grand</a>,
+        <a href="?WeavetheRing">Weave the Ring</a>, and
+        <a href="?WrongWayGrand">Wrong Way Grand</a></li>
+      <li><a href="?LeftHandStar">Left-Hand Star</a> /
+        <a href="?RightHandStar">Right-Hand Star</a></li>
+      <li><a href="?CourtesyTurn">Courtesy Turn</a>,
+        <a href="?TwoLadiesChain">Two Ladies Chain</a>,
+        <a href="?FourLadiesChain">Four Ladies Chain</a></li>
+      <li><a href="?PassThru">Pass Thru</a></li>
+      <li><a href="?WheelAround">Wheel Around</a> and
+        <a href="?ReverseWheelAround">Reverse Wheel Around</a></li>
+    </ul>
+
+    <h2>Lesson 2</h2>
+    <ul>
+      <li><a href="?StarThru">Star Thru</a> and
+        <a href="?SlideThru">Slide Thru</a></li>
+      <li><a href="?HalfSashay">Half Sashay</a>,
+        <a href="?Rollaway">Rollaway</a>,
+        <a href="?LadiesInMenSashay">Ladies In Men Sashay</a></li>
+    </ul>
+
+    <h2>Lesson 3</h2>
+    <ul>
+      <li><a href="?CaliforniaTwirl">California Twirl</a></li>
+      <li><a href="?BendtheLine">Bend the Line</a></li>
+      <li><a href="?UTurnBack">U-Turn Back</a>,
+        <a href="?Backtrack">Backtrack</a></li>
+      <li><a href="?DiveThru">Dive Thru</a></li>
+    </ul>
+
+    <h2>Lesson 4</h2>
+    <ul>
+      <li><a href="?SquareThru">Square Thru</a></li>
+      <li><a href="?GrandSquare">Grand Square</a></li>
+    </ul>
+
+    <h2>Lesson 5</h2>
+    <ul>
+      <li><a href="?LeadRight">Lead Right</a> /
+        <a href="?LeadLeft">Lead Left</a></li>
+      <li><a href="?VeerLeft">Veer Left</a> /
+        <a href="?VeerRight">Veer Right</a></li>
+      <li>Circulate: <a href="?CouplesCirculate">Couples</a>,
+        <a href="?NamedDancersCirculate">Named Dancers</a></li>
+      <li>Trade: <a href="?NamedDancersTrade">Named Dancers</a>)</li>
+      <li><a href="?ChainDowntheLine">Chain Down the Line</a></li>
+    </ul>
+
+    <h2>Lesson 6</h2>
+    <ul>
+      <li><a href="?RightandLeftThru">Right and Left Thru</a></li>
+      <li><a href="?Flutterwheel">Flutterwheel</a> /
+        <a href="?ReverseFlutterwheel">Reverse Flutterwheel</a></li>
+      <li><a href="?SweepaQuarter">Sweep a Quarter</a></li>
+    </ul>
+
+    <h2>Lesson 7</h2>
+    <ul>
+      <li><a href="?CircletoaLine">Circle to a Line</a></li>
+      <li>Separate<ol type="a">
+        <li>Around 1 or 2 (<a href="?SeparateAround2toaLine">To a Line</a> or
+          <a href="?SeparateAround1andComeIntotheMiddle">Come Into the Middle</a>)</li>
+        <li><a href="?Split2">Split 2</a></li>
+      </ol></li>
+      <li>Wheel and Deal: from <a href="?WheelandDeal">2-Faced Lines</a>,
+        <a href="?WheelandDealfromLinesFacingOut">Lines Facing Out</a></li>
+      <li><a href="javascript:setAnimation('Double Pass Thru','ssd/double_pass_thru','DoublePassThrufromDoublePassThru')">Double Pass Thru</a></li>
+      <li><a href="?firstcouplegoleftrightnextcouplegorightleft">First Couple Go Left/Right, Next Couple Go Right/Left</a></li>
+    </ul>
+
+    <h2>Lesson 8</h2>
+    <ul>
+      <li>Ocean Waves:
+        <a href="?SteptoaWave">Step to a Wave</a>,
+        <a href="?Balance">Balance</a>,
+        <a href="?AlamoStyle">Alamo Style</a></li>
+      <li>Trade: <a href="?RightHandTrade">Right-Hand</a>,
+        <a href="?LeftHandTrade">Left-Hand</a></li>
+      <li><a href="?SwingThru">Swing Thru</a></li>
+      <li><a href="?Run">Run</a> and
+        <a href="?CrossRun">Cross Run</a></li>
+    </ul>
+
+    <h2>Lesson 9</h2>
+    <ul>
+      <li><a href="?PasstheOcean">Pass the Ocean</a></li>
+      <li><a href="?Extend">Extend</a></li>
+      <li><a href="?Zoom">Zoom</a></li>
+    </ul>
+
+    <h2>Lesson 10</h2>
+    <ul>
+      <li><a href="?CentersIn">Centers In</a></li>
+      <li><a href="?CastOff34">Cast Off 3/4</a></li>
+      <li><a href="?FerrisWheel">Ferris Wheel</a></li>
+      <li><a href="?PartnerTrade">Partner Trade</a></li>
+      <li><a href="?TradeBy">Trade By</a></li>
+    </ul>
+
+    <h2>Lesson 11</h2>
+    <ul>
+      <li><a href="?BoxtheGnat">Box the Gnat</a></li>
+      <li><a href="?Hinge">Hinge</a></li>
+      <li><a href="?Touch14">Touch 1/4</a></li>
+      <li>Circulate: <a href="?All8Circulate">All 8</a>,
+        <a href="?SingleFileCirculate">Single File</a></li>
+      <li><a href="?TagtheLine">Tag the Line</a> /
+        <a href="?HalfTag">Half Tag</a></li>
+    </ul>
+
+    <h2>Lesson 12</h2>
+    <ul>
+      <li>Circulate: <a href="?SplitCirculate">Split</a>,
+        <a href="?BoxCirculate">Box</a></li>
+      <li><a href="?Fold">Fold</a> /
+        <a href="?CrossFold">Cross Fold</a></li>
+      <li><a href="?ScootBack">Scoot Back</a></li>
+      <li><a href="?Recycle">Recycle</a></li>
+    </ul>
+  </div>
+
+  <!--  Second frame - the animation -->
+  <div id="animation-page" class="flex-item noscroll">
+    <div id="animation-title">Select a Call</div>
+    <iframe id="animation"></iframe>
+    <div class="animation-buttons">
+      <input class="button" type="button" value="SSD Index" onclick="showIndex()"/>
+      <input class="button" type="button" value="Definition" onclick="showDefinition()"/>
+    </div>
+  </div>
+
+  <!--  Third frame - the definition -->
+  <div id="definition-page" class="flex-item noscroll">
+    <iframe id="definition"></iframe>
+    <div class="animation-buttons">
+      <input class="button" type="button" value="SSD Index" onclick="showIndex()"/>
+      <input class="button" type="button" value="Animation" onclick="showAnimation()"/>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
