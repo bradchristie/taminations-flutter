@@ -124,7 +124,7 @@ class CallContext {
   bool didYourPart = false;
   int geometry = Geometry.SQUARE;
 
-  //  Create a context from an array of DancerModel
+  //  Create a context from an array of dancers
   CallContext.fromDancers(List<DancerModel> dancers) {
     this.dancers = dancers.map((d) {
       d.animateToEnd();
@@ -208,7 +208,7 @@ class CallContext {
    //       .fold<double>(0.0, (a, b) => a.abs() + b.abs()) / dancers.length;
 
 
-  /// Append the result of processing this CallContext to it source.
+  /// Append the result of processing this CallContext to its source.
   /// The CallContext must have been previously cloned from the source.
   //  Return true if anything new was added.
   bool appendToSource([CallContext? ctx, bool adjust=false]) {
@@ -1333,7 +1333,7 @@ class CallContext {
       d2.angleFacing.isAround(d.angleFacing + pi)
   ));
 
-  //  Direction DancerModel would turn to Tag the Line
+  //  Direction dancer would turn to Tag the Line
   String tagDirection(DancerModel d) {
     if (dancerToRight(d)?.data.center == true)
       return 'Right';
@@ -1342,7 +1342,7 @@ class CallContext {
     return '';
   }
 
-  //  Is there a DancerModel at a specific spot?
+  //  Is there a dancer at a specific spot?
   DancerModel? dancerAt(Vector spot) =>
       dancers.where((d) => d.location == spot).firstOrNull;
 
@@ -1353,7 +1353,7 @@ class CallContext {
       )
   );
 
-  //  Get direction DancerModel would Roll
+  //  Get direction dancer would Roll
   Rolling roll(DancerModel dv) {
     var d = dv;
     //  If nothing in this context, dive into parent contexts
@@ -1432,7 +1432,7 @@ class CallContext {
     return Path.fromMovement(fracMove);
   }
 
-  //  This is useful for calls that depend on re-defining DancerModel types
+  //  This is useful for calls that depend on re-defining dancer types
   //  for subgroups, e.g. 'Centers Zoom'
   void analyzeActives() {
     //  If all dancers are active then the usual call to analyze() will suffice

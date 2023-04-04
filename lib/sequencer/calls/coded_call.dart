@@ -18,8 +18,6 @@
 
 */
 
-import 'package:taminations/sequencer/calls/c2/lateral_substitute.dart';
-
 import '../../extensions.dart';
 import '../../normalize_call.dart';
 import 'a1/as_couples.dart';
@@ -33,7 +31,6 @@ import 'a1/cross.dart';
 import 'a1/cross_over_circulate.dart';
 import 'a1/double_cross.dart';
 import 'a1/horseshoe_turn.dart';
-import 'a1/linear_cycle.dart';
 import 'a1/mix.dart';
 import 'a1/partner_tag.dart';
 import 'a1/pass_in_out.dart';
@@ -178,6 +175,7 @@ import 'c2/half_the_k.dart';
 import 'c2/hocus_pocus.dart';
 import 'c2/hubs_trade.dart';
 import 'c2/kick_off.dart';
+import 'c2/lateral_substitute.dart';
 import 'c2/lines_anything_thru.dart';
 import 'c2/loop.dart';
 import 'c2/peel_to_a_diamond.dart';
@@ -254,7 +252,6 @@ import 'common/very_ends.dart';
 import 'common/wave_of_six.dart';
 import 'common/waves.dart';
 import 'common/while.dart';
-import 'set_debug_switches.dart';
 import 'ms/cast_off_three_quarters.dart';
 import 'ms/cross_fold.dart';
 import 'ms/eight_chain.dart';
@@ -275,12 +272,15 @@ import 'plus/coordinate.dart';
 import 'plus/diamond_circulate.dart';
 import 'plus/double_scoot.dart';
 import 'plus/explode.dart';
+import 'plus/linear_cycle.dart';
 import 'plus/load_the_boat.dart';
+import 'plus/peel_off.dart';
 import 'plus/points.dart';
 import 'plus/roll.dart';
 import 'plus/spin_chain_and_exchange_the_gears.dart';
 import 'plus/spin_chain_the_gears.dart';
 import 'plus/spread.dart';
+import 'set_debug_switches.dart';
 
 abstract class CodedCall extends Call {
 
@@ -444,6 +444,7 @@ abstract class CodedCall extends Call {
     'passthesea'.ri: (_) => PassTheSea(),
     '(left)?passthru'.ri: (name) => PassThru(name),
     'passtothecenter'.ri: (name) => PassToTheCenter(name),
+    'peel(off|left|right)'.ri: (name) => PeelOff(name),
     'peeltoadiamond'.ri: (name) => PeelToADiamond(name),
     'percolate'.ri: (name) => Percolate(name),
     'phantom.+'.ri: (name) => Phantom(name),

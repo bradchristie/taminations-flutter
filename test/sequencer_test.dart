@@ -339,6 +339,7 @@ Ends Fold
 Peel Off
 Boys Fold
 Girls Turn Back
+Adjust to Columns
 Peel and Trail
 Spin the Top
 Boys Fold
@@ -346,6 +347,7 @@ Trail Off
 Boys Run
 Girls Fold
 Peel Off
+Adjust to Tidal Line
 Crossfire
 In-Roll Circulate
 Girls Run
@@ -3522,6 +3524,22 @@ Split Circulate
 Boys Run
 Ferris Wheel
 Centers Swap
-Allemande Left''', '')
+Allemande Left''', ''),
+
+  TestSequence('Peel Off',
+'''Heads Lead Right
+Veer Left
+Girls Hinge
+Boys Peel Off
+Girls Recycle While Boys Bend the Line
+Double Pass Thru
+Belles Peel Off
+Couples Bend the Line Others Face In
+Adjust to Lines
+Star Thru
+Trade By
+Pass Thru
+Trade By
+Allemande Left''','')
 
 ];

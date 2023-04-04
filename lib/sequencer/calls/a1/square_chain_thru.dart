@@ -27,7 +27,7 @@ class SquareChainThru extends ActivesOnlyAction with CallWithParts {
   1.  Right Pull By and 1/4 In
   2.  Left Swing Thru
   3.  Left Turn Thru
-The hands can be swapped with Left Square Chain the Top''';
+The hands can be swapped with Left Square Chain Thru''';
   @override var helplink = 'a1/square_chain_thru';
   SquareChainThru(String name) : super(name);
 

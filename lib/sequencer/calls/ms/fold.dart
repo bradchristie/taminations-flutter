@@ -42,6 +42,8 @@ class Fold extends Action {
       var m = d2.isRightOf(d) ? FoldRight : FoldLeft;
       var dist = d.distanceTo(d2);
       var dxscale = 0.75;
+      var dyscale = dist/2.0;
+      /*
       var dyoffset = 1.0;
       if (ctx.isTidal())
         dyoffset = 1.5;
@@ -52,8 +54,11 @@ class Fold extends Action {
       if (d2.isLeftOf(d))
         dyoffset = -dyoffset;
       d.path = m.scale(dxscale,1.0).skew(0.0,dyoffset);
+       */
+      d.path = m.scale(dxscale, dyscale);
 
       //  Also set path for partner
+      /*
       var m2 = Stand;
       if (d.isRightOf(d2))
         m2 = DodgeRight;
@@ -67,6 +72,7 @@ class Fold extends Action {
       else if (d2.data.center)
         myScale = 0.0;
       d2.path = m2.scale(1.0,dist*myScale);
+       */
     }
   }
 
