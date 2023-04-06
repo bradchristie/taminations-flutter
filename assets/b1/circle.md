@@ -22,8 +22,8 @@ Dancers join hands with adjacent
 dancers to form a circle and move the circle in the
 indicated direction, or to the left if no direction was given.
 The amount to circle may be a specified
-distance (e.g., Circle Left 1/2 Way) or until the next command is given
-(e.g., Circle Left ... Circle Right).
+distance (for example, Circle Left 1/2 Way) or until the next command is given
+(for example, Circle Left ... Circle Right).
 
 ### Ending formation
 
@@ -44,7 +44,7 @@ that hands are above the elbow.
 
 Couple handhold in circles: In circles with alternating men and women,
 men's palms are up and
-women's palms are down. In other circles (e.g., BBGG), everyone has the
+women's palms are down. In other circles (for example, BBGG), everyone has the
 right-hand palm up and the
 left-hand palm down.
 
@@ -100,6 +100,13 @@ Facing Couples
 Same as above.
 The grapevine step is not recommended in 4-dancer circles.
 
+### Comments
+
+From Facing Lines, the caller should indicate clearly whether to make one 8-dancer circle,
+two 4-dancer circles, or four 2-dancer circles.
+A wider variety of Command Examples are often used when calling
+to English-speaking dancers (for example, “Circle up 4, go 3/4 round; Right and Left Thru”).
+
 ## Case 3: 2 dancers
 
 ### Starting formation
@@ -108,47 +115,43 @@ Facing Dancers
 
 ### Command examples
 
-#### Join 2 Hands And Circle Left Halfway
-#### Make Circles of 2 and Circle Left Halfway
-#### With the person in front of you circle 1/4, 1/2, 3/4, or full around
-#### Allemande Left; Dosado; with your Partner Circle 1/2 and Star Thru
-#### Head Ladies Step Into The Center and Circle 1/2 With Each Other
-#### With the one you face, join both hands and circle 1/2, 3/4 or full around
+#### Single Circle Full Around
+#### Single Circle Left Halfway
+#### Single Circle Left 1/2; Pass Thru
+#### Head Ladies Single Circle full around and back out at home
+#### Those facing join both hands, Single Circle Left three-quarters
+#### To the Right, Single Circle 3/4
+#### Heads Square Thru 4; with your Corner Dosado; then Single Circle half, and Star Thru
+#### Heads Lead Left; Single Circle Right 3/4; Step to a Left-Hand Ocean Wave
 
 ### Dance action
 
-Same as above.
+The facing dancers join both hands and move around the center point between them
+in the indicated direction, or to the left if no direction was given. 
+The amount to move is specified as a fraction of a full circle (there is no default).
+
 ### Ending formation
 
 Facing Dancers
 
 ### Timing
 
-½: 4, ¾: 5
+1/4: 2, 1/2: 4, 3/4: 5, Full: 7
 
 ### Styling
 
-In a mixed sex circle,
-the men dance palms up and the women dance palms down. In a Same Sex
-circle, dancers use right hand palm up, left hand palm down.
-Some regions always use the latter
-styling.
+Dancers join right hand to left hand and left hand to right hand. 
+In the case of a man facing a woman, they join hands with the man holding
+both palms up and the women holding both palms down. In all other cases, 
+both dancers hold right hand palm up and left hand palm down. 
+Some regions always use the latter styling. At the end of the call, 
+dancers drop hands or adjust the handhold depending on the next call.
 
 ### Comments
- 
-While the concept of circling with 2
-or more dancers is part of the Mainstream program, there
-is no well established terminology. Callers wanting circles of 2 dancers
-must use terminology familiar to their dancers.
 
-Some callers use the phrase "Single Circle" for circles of 2 dancers
-(e.g., Single Circle 3/4 to A Star Thru). The phrase "Single Circle" is
-not explicitly listed and taught at Mainstream so this usage may
-cause communication problems. In addition, the phrase
-"Single Circle" is very similar to the call
-"[Single Circle To A Wave](../plus/single_circle_to_a_wave.md)"
-which is part of another dance program.
-Some callers feel that the use of the term
-"Single Circle" at Mainstream is improper.
+"Single Circle" is a historical name for this action and is consistent 
+with other calls where a larger action is reduced to just two dancers.
+A wider variety of Command Examples are often used when calling
+to English-speaking dancers (for example, “Circle up 2, go halfway round”).
 
-###### @ Copyright 1994, 2000-2021 by CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed nor revised in any derivation or publication.
+###### @ Copyright 1994, 2000-2023 by CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed nor revised in any derivation or publication.

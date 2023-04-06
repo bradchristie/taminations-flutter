@@ -48,7 +48,7 @@ palm (palms flat, fingers pointed upwards).
 The timing of a Forward And Back from Facing Lines depends on several factors. In
 Traditional Squares and Contras with phrased calling, it is definitely 8 steps. In Mainstream, it can
 be 8 steps if the caller assures that the lines are not too close together at the start and delivers the call
-in a way that encourages the dancers to take the full 8 steps (e.g., Lines Go Forward ... And You Come
+in a way that encourages the dancers to take the full 8 steps (for example, Lines Go Forward ... And You Come
 Back Out).
 
 The choreographic style and delivery of Modern Western patter calling have evolved in such a way that
@@ -61,4 +61,4 @@ lines determines the timing, not what the caller says. Some callers only allow 4
 Forward And Back is also used as a signal from the caller to any square that has broken down that it
 can get started again by making normal Facing Lines and joining the sequence in progress.
 
-###### @ Copyright 1994, 2000-2021 by CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed nor revised in any derivation or publication.
+###### @ Copyright 1994, 2000-2023 by CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed nor revised in any derivation or publication.

@@ -42,8 +42,8 @@ but rather continue walking until the next command is given.
 
 ### Ending formations
 
-Squared Set (e.g., Promenade Home), Promenade (e.g., Promenade, Keep Walking),
-or couples facing in on the outside of the set (e.g., Sides Promenade 3/4; Heads Right and Left Thru).
+Squared Set (for example, Promenade Home), Promenade (for example, Promenade, Keep Walking),
+or couples facing in on the outside of the set (for example, Sides Promenade 3/4; Heads Right and Left Thru).
 
 ### Timing
 
@@ -87,7 +87,7 @@ Detail: Styling: Other styling terms and issues".)
 her hand is palm up near her shoulder while the man's right arm
 is behind her, his right hand palm down in her right palm.
 
-In addition to the alternatives mentioned above, when designated dancers Promenade a specified distance from a Squared Set (e.g., Heads Promenade 1/2), the couple handhold is also acceptable. This is also common when couples are sashayed or same-sex.
+In addition to the alternatives mentioned above, when designated dancers Promenade a specified distance from a Squared Set (for example, Heads Promenade 1/2), the couple handhold is also acceptable. This is also common when couples are sashayed or same-sex.
 
 When dancers are not directed to Keep Walking, there are several ways in which they can finish. In all cases, handholds should blend smoothly to end with a couple handhold. Sometimes they simply turn as a couple to face in. At other times they end with a twirl (see "Twirls" in "Part 4: Additional Detail: Styling: Other styling terms and issues"), in which case the twirl should finish as the couple arrives at their destination. There are two alternatives:
 - Right hands, if joined, are dropped. Then the man leads the twirl by raising their joined left hands, gently guiding the woman through a clockwise twirl underneath.
@@ -111,7 +111,7 @@ Other applications may require workshopping.
 When couples are sashayed or same-sex, Promenade Home can be
 ambiguous (unless everyone is paired with their original partner),
 and the caller must further specify where couples should end
-(e.g., Promenade to the girl’s home).
+(for example, Promenade to the girl’s home).
 
 The previous call can blend into Promenade. For example, from
 Facing Lines, Reverse Flutterwheel, Promenade Home. See "Part 4:
@@ -134,11 +134,11 @@ Infacing Circle Of 8, Squared Set, Columns
 #### Couple 1, turn your back on your partner and Promenade this way around the outside of the set
 #### Promenade Single File; men turn in and Star by the Right
 #### Left Touch 1/4; Single File Promenade Home (from Facing Lines)
-#### Circle Left; drop hands, go single file (i.e., Wrong Way Single File Promenade)
+#### Circle Left; drop hands, go single file (that is, Wrong Way Single File Promenade)
 
 ### Dance action
 
-When some dancers are designated from a Squared Set (e.g., Ladies Single File Promenade), they
+When some dancers are designated from a Squared Set (for example, Ladies Single File Promenade), they
 will initially step forward into the center.
 
 Designated dancers turn, if necessary, to face promenade direction and move forward around the center of the
@@ -146,7 +146,7 @@ set, in single file (one behind another). The next call determines when the danc
 
 ### Ending formation
 
-Single File Promenade (possibly with fewer than eight dancers), Squared Set (e.g., Single File
+Single File Promenade (possibly with fewer than eight dancers), Squared Set (for example, Single File
 Promenade Home)
  
 ### Timing
@@ -164,13 +164,13 @@ After all active dancers have passed by, the inactives step backward to return t
 
 ### Comments
 
-If dancers facing out are designated to Single File Promenade (e.g., Heads Pass Thru, Promenade
+If dancers facing out are designated to Single File Promenade (for example, Heads Pass Thru, Promenade
 Single File), they step forward and promenade outside.
 
 Dancers moving individually and in the opposite direction from Promenade is called Wrong Way Single File
-Promenade (e.g., Walk Around Your Corner; See Saw; four boys Wrong Way Single File Promenade inside).
+Promenade (for example, Walk Around Your Corner; See Saw; four boys Wrong Way Single File Promenade inside).
 
-Some callers use fractions with Single File Promenade (e.g. Heads Single File Promenade 1/2). The dancers
+Some callers use fractions with Single File Promenade (for example Heads Single File Promenade 1/2). The dancers
 will stay in this single file formation until the next command is given.
 
 ## Wrong Way Promenade
@@ -192,11 +192,11 @@ Squared Set, Right-Hand Two-Faced Lines, Right and Left Grand Circle (only with 
 
 ### Dance action
 
-Wrong Way Promenade is just like Promenade, except dancers go clockwise (i.e., in the opposite direction of Promenade). However, when starting from a Right And Left Grand Circle with genders as described in the starting formation above, the necessary adjustment, like for Promenade, involves the women turning around as the men step forward, but the men must step to the outside to form normal couples.
+Wrong Way Promenade is just like Promenade, except dancers go clockwise (that is, in the opposite direction of Promenade). However, when starting from a Right And Left Grand Circle with genders as described in the starting formation above, the necessary adjustment, like for Promenade, involves the women turning around as the men step forward, but the men must step to the outside to form normal couples.
 
 ### Ending formations
 
-Squared Set (e.g., Wrong Way Promenade Home), Wrong Way Promenade (e.g., Wrong Way Promenade, Keep Walking), or couples facing in on the outside of the set (e.g., Sides Wrong Way Promenade 3/4; Heads Square Thru 3).
+Squared Set (for example, Wrong Way Promenade Home), Wrong Way Promenade (for example, Wrong Way Promenade, Keep Walking), or couples facing in on the outside of the set (for example, Sides Wrong Way Promenade 3/4; Heads Square Thru 3).
 
 ### Timing
 
@@ -208,7 +208,7 @@ Same as for Promenade.
 
 ### Comments
 
-Wrong Way Promenade is infrequently called and is usually used from normal couples, i.e., the girls will be on the inside.
+Wrong Way Promenade is infrequently called and is usually used from normal couples, that is, the girls will be on the inside.
 
 Some callers omit “Wrong Way” or say “This Way” if dancers are already moving in or facing in wrong way promenade direction.
 
@@ -229,8 +229,8 @@ Also see the comments for Promenade Couples (Full, 1/2, 3/4)
 
 ### Dance action
 
-Directed dancers (e.g., men) form (or are already in) a star and turn it. When they encounter
-the next directed dancer (e.g., partner) they become a couple, and promenade while retaining the center
+Directed dancers (for example, men) form (or are already in) a star and turn it. When they encounter
+the next directed dancer (for example, partner) they become a couple, and promenade while retaining the center
 star.
 
 ### Ending formation
@@ -255,4 +255,4 @@ Star Promenade is occasionally used with a 2-dancer star. For example, Head Men 
 Star; pick up your partner with an arm around and Star Promenade; she picks up her corner with an arm
 around and keep on moving; now he picks up his partner; all Bend The Big Line
 
-###### @ Copyright 1994, 2000-2021 by CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed nor revised in any derivation or publication.
+###### @ Copyright 1994, 2000-2023 by CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed nor revised in any derivation or publication.

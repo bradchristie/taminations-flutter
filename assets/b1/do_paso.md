@@ -50,9 +50,9 @@ everyone can head to their corner.
 Do Paso is used primarily with a directional style of calling, in which many of the calls have vague or
 flexible starting or ending formations, usually in circles, thars, and squares. Dancers are expected to
 blend smoothly into the next call. The call defines a general pattern, but the specific parts of the call
-are typically cued (e.g., "Do Paso; It's partner left, corner right, partner left and hang on tight, make
+are typically cued (for example, "Do Paso; It's partner left, corner right, partner left and hang on tight, make
 an Allemande Thar with the men in the middle ..."). Variations can be cued, but the caller should draw
-attention to the fact that the typical pattern has been broken (e.g., "Do Paso, turn partner left, turn
+attention to the fact that the typical pattern has been broken (for example, "Do Paso, turn partner left, turn
 corner by the right, Don't Stop Yet! Partner left and corner right, hang on tight, Boys swing in to a
 Wrong Way Thar").
 
@@ -65,4 +65,4 @@ and Left-Hand Ocean Waves (boys on end).
 Do Paso may also be used from circles of 4 and 6 dancers. These applications have received insufficient
 use in recent years and will probably require a quick walk through.
 
-###### @ Copyright 1994, 2000-2021 by CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed nor revised in any derivation or publication.
+###### @ Copyright 1994, 2000-2023 by CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed nor revised in any derivation or publication.

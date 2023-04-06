@@ -22,7 +22,7 @@ appropriate hand in the center of the formation. Forming the star may require a 
 turn in place up to 3/8 of a turn.
 
 Dancers turn the star by walking forward in a circle around the center of the star. The distance
-traveled may be specified in fractions of a star full around, or until some condition is met (e.g., Men
+traveled may be specified in fractions of a star full around, or until some condition is met (for example, Men
 Center Left Hand Star, Pick Up Your Partner with an Arm Around, Star Promenade).
 
 ### Ending formation
@@ -49,7 +49,7 @@ long as the caller's instructions to the dancers are understood.
 
 Some callers use 2-dancer stars in place of Arm Turns, accomplishing the hands up styling necessary
 in Ocean Waves, and having one less call to teach. While this is acceptable in a teaching situation, and
-may be a logical way to understand stars (i.e., 2 or more dancers), 2-dancer stars are not commonly
+may be a logical way to understand stars (that is, 2 or more dancers), 2-dancer stars are not commonly
 encountered at dances.
 
-###### @ Copyright 1994, 2000-2021 by CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed nor revised in any derivation or publication.
+###### @ Copyright 1994, 2000-2023 by CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed nor revised in any derivation or publication.

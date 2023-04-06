@@ -18,7 +18,7 @@
  */
 
 import 'package:flutter/services.dart';
-import 'package:taminations/common.dart';
+import 'package:taminations/common_flutter.dart';
 import 'package:flutter/material.dart' as fm;
 
 void main() async {

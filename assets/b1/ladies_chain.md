@@ -51,7 +51,7 @@ same-sex.
 
 From a squared set with the men at home, Head Ladies Chain is
 danced by those currently at the Heads position, even if this
-involves the original Side women (e.g., after Four Ladies Chain 3/4).
+involves the original Side women (for example, after Four Ladies Chain 3/4).
 
 The next four comments refer to uncommon or regional
 applications of Ladies Chain and may require workshopping.
@@ -91,8 +91,8 @@ indefinite amount)
 #### Four Ladies Chain
 #### Four Ladies Chain 3/4
 #### All Four Ladies Chain Across
-#### Chain Those Ladies Over and Back (i.e., twice)
-#### Four Ladies Chain; Chain Them Home (i.e., twice)
+#### Chain Those Ladies Over and Back (that is, twice)
+#### Four Ladies Chain; Chain Them Home (that is, twice)
 #### Do Paso, partner left, corner right, partner left; Four Ladies Chain
 #### Shoot the Star; Four Ladies Chain
 
@@ -162,4 +162,4 @@ At Mainstream, Chain Down the Line starts only with women as
 centers and men as ends because Courtesy Turn is restricted to men
 turning women.
 
-###### @ Copyright 1994, 2000-2021 by CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed nor revised in any derivation or publication.
+###### @ Copyright 1994, 2000-2023 by CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed nor revised in any derivation or publication.

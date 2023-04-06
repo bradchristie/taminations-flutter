@@ -64,7 +64,7 @@ Right and Left Grand Circle
 Women work their skirt with both hands as they move around the square. Men hold hands in
 natural dance position. Dancers lead with their right shoulder as they pass the dancer on the right,
 then with the left shoulder as they pass the dancer on the left. Brief eye contact should be made as they
-meet each dancer. Attention should be paid to keeping the circle a reasonable size (i.e., not too large).
+meet each dancer. Attention should be paid to keeping the circle a reasonable size (that is, not too large).
 
 ### Comments
 
@@ -102,4 +102,4 @@ Right and Left Grand Circle
 
 Same as for Right and Left Grand
 
-###### @ Copyright 1994, 2000-2021 by CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed nor revised in any derivation or publication.
+###### @ Copyright 1994, 2000-2023 by CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed nor revised in any derivation or publication.

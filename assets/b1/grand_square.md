@@ -65,7 +65,7 @@ A wide variety of embellishments may be encountered.
 From a Squared Set, the caller must designate who faces for Grand Square.
 It is improper to call "Grand Square" and expect "Sides Face, Grand Square".
 
-The caller may designate the number of steps to take (e.g., "Grand Square, 6 Steps").
+The caller may designate the number of steps to take (for example, "Grand Square, 6 Steps").
 
 The following variations on Grand Square may require workshopping.
 
@@ -73,4 +73,4 @@ Some callers, observing that each dancer dances the edges of a square (in their 
 
 In "Heads Star Thru; Sides Face, Grand Square", dancers dance the edges of the same squares, making the usual turns, even though some of the dancers start and finish in the center of the set.
 
-###### @ Copyright 1994, 2000-2021 by CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed nor revised in any derivation or publication.
+###### @ Copyright 1994, 2000-2023 by CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed nor revised in any derivation or publication.

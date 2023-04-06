@@ -105,6 +105,35 @@
     </path>
   </tam>
 
+  <tam title="Double Pass Thru" from="Tidal Column" difficulty="2">
+    <formation>
+      <dancer gender="boy" x="3.5" y="0" angle="180"/>
+      <dancer gender="girl" x="2.5" y="0" angle="180"/>
+      <dancer gender="boy" x="1.5" y="0" angle="0"/>
+      <dancer gender="girl" x="0.5" y="0" angle="0"/>
+    </formation>
+    <path>
+      <move select="Extend Left" scaleX=".5" scaleY=".5"/>
+      <move select="Forward"/>
+      <move select="Extend Right" scaleX=".5" scaleY=".5"/>
+    </path>
+    <path>
+      <move select="Extend Left" scaleX=".5" scaleY=".5"/>
+      <move select="Forward"/>
+      <move select="Extend Right" scaleX=".5" scaleY=".5"/>
+    </path>
+    <path>
+      <move select="Extend Left" scaleX=".5" scaleY=".5"/>
+      <move select="Forward"/>
+      <move select="Extend Right" scaleX=".5" scaleY=".5"/>
+    </path>
+    <path>
+      <move select="Extend Left" scaleX=".5" scaleY=".5"/>
+      <move select="Forward"/>
+      <move select="Extend Right" scaleX=".5" scaleY=".5"/>
+    </path>
+  </tam>
+
   <tam title="Left Double Pass Thru" from="Double Pass Thru"
        formation="Double Pass Thru" difficulty="2">
     <path>
@@ -152,6 +181,35 @@
     <taminator>
       This is an example of the Ocean Wave rule as applied to a Left-Hand Wave.
     </taminator>
+  </tam>
+
+  <tam title="Left Double Pass Thru" from="Tidal Column" difficulty="3">
+    <formation>
+      <dancer gender="boy" x="3.5" y="0" angle="180"/>
+      <dancer gender="girl" x="2.5" y="0" angle="180"/>
+      <dancer gender="boy" x="1.5" y="0" angle="0"/>
+      <dancer gender="girl" x="0.5" y="0" angle="0"/>
+    </formation>
+    <path>
+      <move select="Extend Right" scaleX=".5" scaleY=".5"/>
+      <move select="Forward"/>
+      <move select="Extend Left" scaleX=".5" scaleY=".5"/>
+    </path>
+    <path>
+      <move select="Extend Right" scaleX=".5" scaleY=".5"/>
+      <move select="Forward"/>
+      <move select="Extend Left" scaleX=".5" scaleY=".5"/>
+    </path>
+    <path>
+      <move select="Extend Right" scaleX=".5" scaleY=".5"/>
+      <move select="Forward"/>
+      <move select="Extend Left" scaleX=".5" scaleY=".5"/>
+    </path>
+    <path>
+      <move select="Extend Right" scaleX=".5" scaleY=".5"/>
+      <move select="Forward"/>
+      <move select="Extend Left" scaleX=".5" scaleY=".5"/>
+    </path>
   </tam>
 
   <tam title="Boys on a Diagonal Double Pass Thru"

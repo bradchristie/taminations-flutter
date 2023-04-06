@@ -89,10 +89,10 @@ The [Ocean Wave Rule](../b2/ocean_wave_rule.md) applies to this call.
 
 Some dancers get dizzy when swinging. Be aware of your partner's needs.
 
-When two dancers who are swinging are of disparate weights (e.g., an adult man swinging a child), it
+When two dancers who are swinging are of disparate weights (for example, an adult man swinging a child), it
 is rude and dangerous to cause the lighter dancer to leave the ground.
 
-There should be little to no vertical motion while swinging (i.e., no bouncing or hopping).
+There should be little to no vertical motion while swinging (that is, no bouncing or hopping).
 
 In a swing, dancers are neither side-by-side with right hip to right-hip, nor precisely facing. Instead
 they are offset one step to the left from facing and at a slight angle with the woman's nose facing the
@@ -118,4 +118,4 @@ From a Squared Set, the command "Heads (or Sides) Swing"
 has the designated dancers face and Swing.
 That is, they Swing the dancer close to them, not the one they are facing across the square.
 
-###### @ Copyright 1994, 2000-2021 by CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed nor revised in any derivation or publication.
+###### @ Copyright 1994, 2000-2023 by CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed nor revised in any derivation or publication.

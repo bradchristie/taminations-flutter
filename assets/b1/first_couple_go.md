@@ -18,7 +18,7 @@ Dancers, with each couple working as a unit, walk forward in an arc in the indic
 direction. The center couple walks forward before taking the second direction given.
 
 If the couples are asked to go in opposite directions
-(e.g., First Couple Go Left, Next Couple Go Right),
+(for example, First Couple Go Left, Next Couple Go Right),
 they should move in a tight circle in their specified direction
 for half a circle. At this point they will be
 facing another couple and the ending formation will be Facing Lines.
@@ -26,7 +26,7 @@ The other couple in their line will
 be the couple that started facing the same way immediately ahead of or behind them.
 
 If both couples are asked to go in the same direction
-(e.g., First Couple Go Left, Next Couple Go Left)
+(for example, First Couple Go Left, Next Couple Go Left)
 the ending formation is a Promenade or Wrong Way Promenade, and the next call is usually
 Promenade.
 
@@ -54,4 +54,4 @@ specified direction, and the immediate Allemande Left successfully completes the
 definitions are not going to further define "Go"
 and recommend that callers should not expand on this usage.
 
-###### @ Copyright 1994, 2000-2021 by CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed nor revised in any derivation or publication.
+###### @ Copyright 1994, 2000-2023 by CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed nor revised in any derivation or publication.

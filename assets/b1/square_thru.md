@@ -55,7 +55,7 @@ E.g., Heads Lead Right, Circle To A Line, Left Square Thru 4, Left Allemande.
 
 The [Ocean Wave Rule](../b2/ocean_wave_rule.md) applies to this call.
 
-The movement can be continued beyond 4 hands (e.g., Square Thru 5).
+The movement can be continued beyond 4 hands (for example, Square Thru 5).
 
 There are some alternative ways in which Square Thru can be called:
 
@@ -94,4 +94,4 @@ includes half of the next Pull By and ends in an Ocean Wave.
 Dancers are not expected to know this variation, so it should only
 be used following an appropriate workshop.
 
-###### @ Copyright 1994, 2000-2021 by CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed nor revised in any derivation or publication.
+###### @ Copyright 1994, 2000-2023 by CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed nor revised in any derivation or publication.

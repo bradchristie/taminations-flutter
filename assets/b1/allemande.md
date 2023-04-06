@@ -65,7 +65,7 @@ Forearm handhold
 ### Comments
 
 The variation in the timing numbers is due to the adjustments which may be required before
-the Allemande Left (e.g., turning to face your corner, stepping to a left forearm).
+the Allemande Left (for example, turning to face your corner, stepping to a left forearm).
 
 Choreography like "Allemande Left Your Corner; Dosado Your Partner; Allemande Left Your Corner"
 is acceptable. The command "Allemande Left Your Corner" can be a shorthand for "Face Your Corner;
@@ -105,4 +105,4 @@ As a gimmick, some callers will call "Allemande Left; Right And Left Grand ... O
 Promenade". This causes the dancers to first believe the caller has made a mistake (wrong corner) and
 then be surprised by the quick fix.
 
-###### @ Copyright 1994, 2000-2021 by CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed nor revised in any derivation or publication.
+###### @ Copyright 1994, 2000-2023 by CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed nor revised in any derivation or publication.

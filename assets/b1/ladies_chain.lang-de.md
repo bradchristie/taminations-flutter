@@ -61,8 +61,8 @@ Squared Set, Infacing Circle of 8, or a "Turning Your Partner Left" Formation (d
 #### Four Ladies Chain
 #### Four Ladies Chain 3/4
 #### All Four Ladies Chain Across
-#### Chain Those Ladies Over and Back (i.e., twice)
-#### Four Ladies Chain; Chain Them Home (i.e., twice)
+#### Chain Those Ladies Over and Back (that is, twice)
+#### Four Ladies Chain; Chain Them Home (that is, twice)
 #### Do Paso, partner left, corner right, partner left; Four Ladies Chain
 #### Shoot the Star; Four Ladies Chain
 

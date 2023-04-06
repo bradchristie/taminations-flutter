@@ -20,7 +20,7 @@ Individual dancer
 ### Dance action
 
 The dancer does an individual about-face turn (180 degrees) in place, turning toward partner
-unless the body flow dictates otherwise. If alone (i.e., no partner), the dancer turns toward the center
+unless the body flow dictates otherwise. If alone (that is, no partner), the dancer turns toward the center
 of the set. If the solo dancer is facing directly toward or away from the center of the set, the turn may
 be in either direction.
 
@@ -82,6 +82,6 @@ If necessary, release the handhold. Continue with arms in natural dance position
 Backtrack requires a forward motion before the Backtrack and a forward motion (in the other
 direction) after the Backtrack.
 
-The couples version of Backtrack (e.g., Promenade, Head Couples Backtrack) is no longer in use.
+The couples version of Backtrack (for example, Promenade, Head Couples Backtrack) is no longer in use.
 
-###### @ Copyright 1994, 2000-2021 by CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed nor revised in any derivation or publication.
+###### @ Copyright 1994, 2000-2023 by CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed nor revised in any derivation or publication.

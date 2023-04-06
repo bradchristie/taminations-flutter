@@ -88,7 +88,7 @@ Heads Promenade 1/2（ヘッズ プラマネイド ハーフ）に関しては�
 #### Couple 1, turn your back on your partner and Promenade this way around the outside of the set
 #### Promenade Single File; men turn in and Star by the Right
 #### Left Touch 1/4; Single File Promenade Home (from Facing Lines)
-#### Circle Left; drop hands, go single file (i.e., Wrong Way Single File Promenade)
+#### Circle Left; drop hands, go single file (that is, Wrong Way Single File Promenade)
 
 ### 動作
 

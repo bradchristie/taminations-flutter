@@ -20,9 +20,9 @@ Facing Dancers, Mini-Wave
 ### Dance action
 
 Dancers join indicated forearms and walk forward around each other. The amount of turn
-can be specified as a fraction (e.g., Half (180 degrees), 3/4 (270 degrees),
+can be specified as a fraction (for example, Half (180 degrees), 3/4 (270 degrees),
 Full (360 degrees) or implicitly
-by the next call (e.g., Turn Partner By the Left; 4 Ladies Chain).
+by the next call (for example, Turn Partner By the Left; 4 Ladies Chain).
 
 ### Ending formation
 
@@ -39,14 +39,14 @@ Forearm hold
 
 ### Comments
 
-From a Mini-Wave the distance to turn may be specified by a fraction (e.g., Arm Turn 1/2).
+From a Mini-Wave the distance to turn may be specified by a fraction (for example, Arm Turn 1/2).
 
-From Facing Dancers the distance to turn must be specified by a relative position (e.g., To A Thar, or
-To Your Corner) or the next call (e.g., Turn Corner By The Right; Do Paso). It is improper to specify
+From Facing Dancers the distance to turn must be specified by a relative position (for example, To A Thar, or
+To Your Corner) or the next call (for example, Turn Corner By The Right; Do Paso). It is improper to specify
 a fraction.
 
 The Mini-Wave formation does not imply a specific handhold. The styling for Arm Turns and calls
 defined with Arm Turns is a Forearm hold. See the section
 "Dance Action: Defining Calls with Arm Turns".
 
-###### @ Copyright 1994, 2000-2021 by CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed nor revised in any derivation or publication.
+###### @ Copyright 1994, 2000-2023 by CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed nor revised in any derivation or publication.

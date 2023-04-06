@@ -24,9 +24,9 @@ Case 1: The active or designated couple is on Squared Set spots
 
 The dancers turn back-to-back and start walking forward in opposite directions around the outside of
 the square away from each other until they meet another dancer. The call ends here unless further
-instructions are given (e.g., "and come back home").
+instructions are given (for example, "and come back home").
 
-Case 2: The active or designated couple is in the center facing out of the square (e.g., after Heads Slide
+Case 2: The active or designated couple is in the center facing out of the square (for example, after Heads Slide
 Thru, Square Thru 2)
 
 The couple steps forward and then performs the Separate action described above.
@@ -47,7 +47,7 @@ dance position; woman's skirt work optional.
 ### Comments
 
 While Separate is usually followed with instructions for walking around some number of
-inactive dancers, the active dancers can also be directed to perform some other action (e.g., Separate,
+inactive dancers, the active dancers can also be directed to perform some other action (for example, Separate,
 walk around the outside passing 2 dancers and Star Thru with the third).
 
 From a squared set, calling
@@ -166,4 +166,4 @@ to finish on the outside. Men's arms in natural dance position; woman's skirt wo
 While "Around 1" and "Around 2" are the most common numbers, higher numbers are
 acceptable. In all cases, the count is of inactive dancers passed by the active dancers.
 
-###### @ Copyright 1994, 2000-2021 by CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed nor revised in any derivation or publication.
+###### @ Copyright 1994, 2000-2023 by CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed nor revised in any derivation or publication.

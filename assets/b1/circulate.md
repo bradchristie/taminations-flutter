@@ -24,7 +24,7 @@ in the following sections.
 
 ### Starting formations
 
-General Lines (e.g., Ocean Waves, Two-Faced Lines), General Columns
+General Lines (for example, Ocean Waves, Two-Faced Lines), General Columns
 
 ### Command examples
 
@@ -53,9 +53,9 @@ Arms should be held in natural dance position and ready to assume appropriate po
 
 The call "(Named Dancers) Circulate" is usually used from General Lines.
 
-When all dancers are active (e.g., Everyone Circulate), the comments in All 8 Circulate also apply.
+When all dancers are active (for example, Everyone Circulate), the comments in All 8 Circulate also apply.
 
-Circulate is the same as Everyone Circulate, unless it is clear from the previous call that only certain dancers are active (e.g., Dive Thru, Centers Touch 1/4 and Circulate).
+Circulate is the same as Everyone Circulate, unless it is clear from the previous call that only certain dancers are active (for example, Dive Thru, Centers Touch 1/4 and Circulate).
 
 Not all dancers on a given circulate path need to go in the same direction. Dancers going in opposite directions along the same path will pass right shoulders. (See "Part 1: General: Conventions and Rules: Passing Rule".)
 
@@ -69,10 +69,10 @@ Not all dancers on a given circulate path need to go in the same direction. Danc
 
 It is improper for (Named Dancers) Circulate to cause a circulating dancer
 to end on the same spot as an inactive dancer,
-e.g., from Columns, Ends Circulate. From Columns, "Centers Circulate" is only
+for example, from Columns, Ends Circulate. From Columns, "Centers Circulate" is only
 proper if the caller makes it clear that the dancers must stay in the center,
-e.g., "Boys work in the center and Circulate". Box Circulate could
-instead be used, e.g., “Centers Box Circulate”.
+for example, "Boys work in the center and Circulate". Box Circulate could
+instead be used, for example, “Centers Box Circulate”.
 
 ## Couples Circulate
 
@@ -109,7 +109,7 @@ and ready to assume appropriate position for the next call.
 
 ### Starting formations
 
-General Lines (e.g., Ocean Waves, Two-Faced Lines), General Columns
+General Lines (for example, Ocean Waves, Two-Faced Lines), General Columns
 
 ### Command example
 
@@ -138,7 +138,7 @@ From Two-Faced Lines, Couples Circulate is a more common way to call All 8 Circu
 From Columns, Single File Circulate is the same as All 8 Circulate.
 
 When dancers go in opposite directions along the same path,
-All 8 Circulate is often equivalent to other calls (e.g., Pass Thru or Trade By).
+All 8 Circulate is often equivalent to other calls (for example, Pass Thru or Trade By).
 These applications are proper, but confusing to many dancers.
 Except in an instructional setting, they are often perceived as attempts
 to trick the dancers and should probably be avoided. On the other hand,
@@ -212,7 +212,7 @@ and Circulate are the same, and many callers will say only "Circulate".
 
 ### Starting formations
 
-General Lines (e.g., Ocean Waves), General Columns
+General Lines (for example, Ocean Waves), General Columns
 
 ### Command example
 
@@ -237,4 +237,4 @@ Columns.
 
 Same as for (Named Dancers) Circulate
 
-###### @ Copyright 1994, 2000-2021 by CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed nor revised in any derivation or publication.
+###### @ Copyright 1994, 2000-2023 by CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed nor revised in any derivation or publication.

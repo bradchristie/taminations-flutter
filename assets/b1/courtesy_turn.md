@@ -46,7 +46,7 @@ The woman's left hand (palm down) and man's left hand (palm up) are joined.
 Right hands are placed according to the woman's choice. If she places her right hand behind her right
 hip, palm out, then the man places his right hand in hers without grasping it, leaving these hands
 available for the next call. If she uses her right hand to work her skirt, then the man places his right
-hand in the small of the back (i.e., in the center).
+hand in the small of the back (that is, in the center).
 
 ### Comments
  
@@ -56,15 +56,15 @@ dancers have their left hands available. For example, Square Thru
 already have a Couples handhold, Wheel Around, California Twirl or
 Partner Trade may be better choices for smoother dancing.
 
-The turning amount can be given explicitly either by the final facing direction (e.g., "to face back in"),
-or the total distance, or both (e.g., "Centers go a full turn around to face the outside 2").
+The turning amount can be given explicitly either by the final facing direction (for example, "to face back in"),
+or the total distance, or both (for example, "Centers go a full turn around to face the outside 2").
 
 The phrase "and A Quarter More" can be used after Courtesy Turn or a call ending with Courtesy Turn
-(e.g., Right And Left Thru And A Quarter More). The couple turns an extra 90 degrees, generally
+(for example, Right And Left Thru And A Quarter More). The couple turns an extra 90 degrees, generally
 ending in a Right-Hand Two-Faced Line.
 
-Calls that end in a Squared Set with a Courtesy Turn (e.g., 4 Ladies Chain or Do Paso) can easily blend
+Calls that end in a Squared Set with a Courtesy Turn (for example, 4 Ladies Chain or Do Paso) can easily blend
 into a left arm turn or into an Allemande Thar. For example, "4 Ladies Chain; Chain Them Back with
 a Do Paso". See "Additional Detail: Blending one call into another".
 
-###### @ Copyright 1994, 2000-2021 by CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed nor revised in any derivation or publication.
+###### @ Copyright 1994, 2000-2023 by CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed nor revised in any derivation or publication.

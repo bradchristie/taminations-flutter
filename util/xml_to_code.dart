@@ -237,7 +237,8 @@ Future<void> writeCalls() async {
     titles[link] = callDoc.rootElement('title');
 
     importSet.add("import '$link.g.dart';");
-    imports.add("import '../../common.dart';");
+    imports.add("import '../../common_dart.dart';");
+    imports.add("import '../../formation.dart';");
     imports.add("import '../../formations.g.dart';");
     imports.add("import '../../moves.g.dart';");
     imports.add("import '../../sequencer/calls/animated_call.dart';");

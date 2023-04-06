@@ -20,13 +20,29 @@
 
 import 'dart:io';
 
-import 'package:taminations/extensions.dart';
-import 'package:xml/xml.dart';
+import 'package:taminations/call_index.g.dart';
 import 'package:taminations/formations.g.dart';
 import 'package:taminations/moves.g.dart';
 
 void main() async {
+  clean();
   await writeMoves();
+  await writeFormations();
+  await writeAnimations();
+}
+
+void clean() {
+  final dirs = ['b1','b2','ms','plus','a1','a2','c1','c2','c3a','c3b'];
+  try {
+    Directory('assets/generated/').deleteSync(recursive: true);
+  } catch(e) {
+    if (!(e is FileSystemException))
+      rethrow;
+  }
+  Directory('assets/generated').createSync();
+  for (var dir in dirs) {
+    Directory('assets/generated/$dir').createSync();
+  }
 }
 
 Future<void> writeMoves() async {
@@ -49,11 +65,27 @@ Future<void> writeMoves() async {
 Future<void> writeFormations() async {
   var formationsXML = File('assets/generated/formations.g.xml').openWrite();
   formationsXML.writeln('<?xml version="1.0"?>');
-  formationsXML.writeln('<!DOCTYPE moves SYSTEM "tamination.dtd">');
+  formationsXML.writeln('<!DOCTYPE formations SYSTEM "tamination.dtd">');
   formationsXML.writeln('<formations>');
-
-
+  for (var formation in Formations.formationIndex.values) {
+    formationsXML.writeln('  '+formation.toXML().toXmlString(pretty: true, level: 1));
+  }
   formationsXML.writeln('</formations>');
   await formationsXML.flush();
   await formationsXML.close();
+}
+
+Future<void> writeAnimations() async {
+  for (var callEntry in callIndex) {
+    print(callEntry.title);
+    var callXML = File('assets/generated/'+callEntry.link+'.xml').openWrite();
+    callXML.writeln('<?xml version="1.0"?>');
+    callXML.writeln('<!DOCTYPE tamination SYSTEM "tamination.dtd">');
+    callXML.writeln('<tamination title="${callEntry.title}">');
+    for (var call in callEntry.calls)
+      callXML.writeln('\n  '+call.toXml().toXmlString(pretty: true, level: 1));
+    callXML.writeln('\n</tamination>');
+    await callXML.flush();
+    await callXML.close();
+  }
 }
