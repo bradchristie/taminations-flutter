@@ -354,24 +354,23 @@ Future<void> writeCalls() async {
     await cDart.flush();
     await cDart.close();
 
-    var cIndexDart = File('lib/call_index.g.dart').openWrite();
-    for (var line in cInclude)
-      cIndexDart.writeln(line);
-    cIndexDart.writeln("import 'call_entry.dart';");
-    cIndexDart.write('\nvar callIndex = [\n  ');
-    cIndexDart.writeln(cIndex.join(',\n  '));
-    cIndexDart.writeln('];');
-    cIndexDart.writeln('\nvar titleIndex = <String,String>{');
-    for (var link in titles.keys) {
-      var t = titles[link]!.replaceAll("'","\\'");
-      cIndexDart.writeln("    '$link' : '$t',");
-    }
-    cIndexDart.writeln('};');
-    await cIndexDart.flush();
-    await cIndexDart.close();
-
-
   });  // end of call
+
+  var cIndexDart = File('lib/call_index.g.dart').openWrite();
+  for (var line in cInclude)
+    cIndexDart.writeln(line);
+  cIndexDart.writeln("import 'call_entry.dart';");
+  cIndexDart.write('\nvar callIndex = [\n  ');
+  cIndexDart.writeln(cIndex.join(',\n  '));
+  cIndexDart.writeln('];');
+  cIndexDart.writeln('\nvar titleIndex = <String,String>{');
+  for (var link in titles.keys) {
+    var t = titles[link]!.replaceAll("'","\\'");
+    cIndexDart.writeln("    '$link' : '$t',");
+  }
+  cIndexDart.writeln('};');
+  await cIndexDart.flush();
+  await cIndexDart.close();
 
   //  Generated indexes
   for (var dir in dirs) {
