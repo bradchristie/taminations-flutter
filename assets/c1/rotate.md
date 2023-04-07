@@ -1,59 +1,70 @@
 
 # Rotate Family
 
-The following calls start from a Static Square,
-or a Static Square with some couples facing out (for
-example, after Heads Partner Trade).
-This is the only permitted starting formation at C-1. 
+At C-1, the following calls are used only from a Static Square or any other formation in which the
+designated dancers can act as Ends of General Columns (see "When the Formation Isn’t There",
+page 8). The designated dancers must be named explicitly to avoid confusion with other Rotate
+applications that involve all 8 dancers (not part of the C-1 program).
+* For Rotate and Reverse Rotate, the designated dancers must be Couples.
+* For Single Rotate and Reverse Single Rotate, 
+the designated dancers must be Couples or in Mini-Waves.
+* These calls all include a fraction, which is required.
 
-## Rotate
+## Rotate / Reverse Rotate
 
-Working As Couples, the designated outside dancers turn
+### Rotate 1/4, 1/2, 3/4
+
+Working As Couples, the designated dancers turn
 1/4 in place to face promenade direction and
 [Counter Rotate](../a2/box_counter_rotate.md)
-the designated fraction (or 1/4, if none is specified) around the outside of the
-square, while the other dancers step forward into the
-middle. This is a restricted definition for C-1, using only
-the permitted formation of a static square.
+the given fraction around the outside of the square, 
+while the other dancers move into the middle
+if they are not already there.
 
-> In this diagram, dancers #1, 2, 7, and 8 are the ones
-> designated to Rotate.
+
 > 
-> ![alt](rotate.png)
+> ![alt](rotate_1a.png)![alt](rotate_1b.png)![alt](rotate_1c.png)
 > 
 
-## Reverse Rotate
+### Reverse Rotate 1/4, 1/2, 3/4
 
 Working As Couples, the designated
 outside dancers turn 1/4 in place to face reverse
-promenade direction and [Counter Rotate](../a2/box_counter_rotate.md) the designated
-fraction (or 1/4, if none is specified) around the outside of
-the square, while the other dancers step forward into the
-middle.
+promenade direction and [Counter Rotate](../a2/box_counter_rotate.md) the given
+fraction around the outside of the square,
+while the other dancers move into the middle
+if they are not already there.
 
-## Single Rotate
+>
+> ![alt](rotate_2a.png)![alt](rotate_2b.png)!
+>
 
-Working individually, the designated outside dancers
+## Single Rotate / Reverse Single Rotate
+
+### Single Rotate 1/4, 1/2, 3/4
+
+Working individually, the designated dancers
 turn 1/4 in place to face promenade direction and
 [Counter Rotate](../a2/box_counter_rotate.md)
-the designated fraction (or 1/4, if none is
-specified) around the outside of the square, while the
-other dancers step forward into the middle.
+the given fraction around the outside of the square,
+while the other dancers move into the middle
+if they are not already there.
 
-> In this diagram, dancers #1, 2, 7, and 8 are the ones
-> designated to Single Rotate.
-> 
-> ![alt](single_rotate.png)
-> 
+>
+> ![alt](rotate_3a.png)![alt](rotate_3b.png)!
+>
 
-## Reverse Single Rotate
+### Reverse Single Rotate 1/4, 1/2, 3/4
 
-Working individually, the
-designated outside dancers turn 1/4 in place to face reverse
-promenade direction and
-[Counter Rotate](../a2/box_counter_rotate.md) the designated
-fraction (or 1/4, if none is specified) around the outside of
-the square, while the other dancers step forward into the
-middle.
+Working individually, the designated dancers turn 1/4 in place 
+to face reverse promenade direction and
+[Counter Rotate](../a2/box_counter_rotate.md) the given
+fraction around the outside of the square,
+while the other dancers move into the middle
+if they are not already there.
+
+>
+> ![alt](rotate_4a.png)![alt](rotate_4b.png)!
+>
 
 ###### @ Copyright 1983, 1986-1988, 1995-2022 Bill Davis, John Sybalsky and CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed nor revised in any derivation or publication.
