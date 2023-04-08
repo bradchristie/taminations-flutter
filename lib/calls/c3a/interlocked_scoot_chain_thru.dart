@@ -18,13 +18,11 @@
 
 */
 
-import '../../common_dart.dart';
-import '../../formation.dart';
+import '../../animated_call.dart';
 import '../../formations.dart';
 import '../../moves.dart';
-import '../../animated_call.dart';
 
-  final List<AnimatedCall> InterlockedScootChainThru = [ 
+  final List<AnimatedCall> InterlockedScootChainThru = [
 
     AnimatedCall('Interlocked Scoot Chain Thru',
       formation:Formations.QuarterLinesRH,

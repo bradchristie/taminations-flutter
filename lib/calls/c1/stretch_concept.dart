@@ -18,14 +18,14 @@
 
 */
 
+import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
 import '../../formations.dart';
 import '../../moves.dart';
-import '../../animated_call.dart';
-import '../c1/recycle.dart' as c1;
 import '../c1/ah_so.dart' as c1;
 import '../c1/follow_thru.dart' as c1;
+import '../c1/recycle.dart' as c1;
 import '../c1/reverse_explode.dart' as c1;
 import '../c1/shakedown.dart' as c1;
 import '../c1/step_and_flip.dart' as c1;
@@ -37,7 +37,7 @@ import '../c2/turn_to_a_line.dart' as c2;
 import '../c3a/mini_chase.dart' as c3a;
 import '../c3a/single_concept.dart' as c3a;
 
-  final List<AnimatedCall> StretchConcept = [ 
+  final List<AnimatedCall> StretchConcept = [
 
     AnimatedCall('Stretch Bend the Line',
       formation:Formations.NormalLines,

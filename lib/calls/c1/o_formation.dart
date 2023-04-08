@@ -18,18 +18,18 @@
 
 */
 
+import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
 import '../../formations.dart';
 import '../../moves.dart';
-import '../../animated_call.dart';
 import '../c1/cross_and_turn.dart' as c1;
 import '../c1/shakedown.dart' as c1;
 import '../c1/wheel_fan_thru.dart' as c1;
 import '../c1/zing.dart' as c1;
 import '../c2/turn_to_a_line.dart' as c2;
 
-  final List<AnimatedCall> OFormation = [ 
+  final List<AnimatedCall> OFormation = [
 
     AnimatedCall('"O" Chase Right',
       formation:Formations.OTradeBy,

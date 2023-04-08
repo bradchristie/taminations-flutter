@@ -18,8 +18,8 @@
 
 */
 
-import '../common.dart';
 import '../coded_call.dart';
+import '../common.dart';
 
 class Ignore extends Action {
 

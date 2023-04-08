@@ -18,13 +18,12 @@
 
 */
 
+import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formation.dart';
 import '../../formations.dart';
 import '../../moves.dart';
-import '../../animated_call.dart';
 
-  final List<AnimatedCall> CircleToALine = [ 
+  final List<AnimatedCall> CircleToALine = [
 
     AnimatedCall('Circle to a Line',
       formation:Formations.EightChainThru,

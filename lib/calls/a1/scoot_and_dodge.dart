@@ -18,14 +18,12 @@
 
 */
 
-import '../../common_dart.dart';
-import '../../formation.dart';
+import '../../animated_call.dart';
 import '../../formations.dart';
 import '../../moves.dart';
-import '../../animated_call.dart';
 import '../a2/all_4_all_8.dart' as a2;
 
-  final List<AnimatedCall> ScootAndDodge = [ 
+  final List<AnimatedCall> ScootAndDodge = [
 
     AnimatedCall('Scoot and Dodge',
       formation:Formations.BoxRH,

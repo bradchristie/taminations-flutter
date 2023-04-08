@@ -18,13 +18,13 @@
 
 */
 
+import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
 import '../../formations.dart';
 import '../../moves.dart';
-import '../../animated_call.dart';
 
-  final List<AnimatedCall> RelocateTheSetup = [ 
+  final List<AnimatedCall> RelocateTheSetup = [
 
     AnimatedCall('Relocate the Diamond',
       formation:Formations.DiamondsRHGirlPoints,

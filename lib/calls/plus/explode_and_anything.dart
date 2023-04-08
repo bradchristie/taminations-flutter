@@ -18,14 +18,12 @@
 
 */
 
-import '../../common_dart.dart';
-import '../../formation.dart';
+import '../../animated_call.dart';
 import '../../formations.dart';
 import '../../moves.dart';
-import '../../animated_call.dart';
 import '../plus/anything_and_roll.dart' as plus;
 
-  final List<AnimatedCall> ExplodeAndAnything = [ 
+  final List<AnimatedCall> ExplodeAndAnything = [
 
     AnimatedCall('Explode and Touch a Quarter and Roll',
       formation:Formations.WaveRH,

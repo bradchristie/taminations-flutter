@@ -18,13 +18,11 @@
 
 */
 
-import '../../common_dart.dart';
-import '../../formation.dart';
+import '../../animated_call.dart';
 import '../../formations.dart';
 import '../../moves.dart';
-import '../../animated_call.dart';
 
-  final List<AnimatedCall> WithConfidence = [ 
+  final List<AnimatedCall> WithConfidence = [
 
     AnimatedCall('With Confidence',
       formation:Formations.OceanWavesRHGBGB,

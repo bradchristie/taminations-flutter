@@ -23,9 +23,9 @@ import 'package:flutter/material.dart' as fm;
 import 'package:provider/provider.dart' as pp;
 
 import '../call_entry.dart';
+import '../call_index.dart';
 import '../common_flutter.dart';
 import 'page.dart';
-import '../call_index.dart';
 
 final _levelColor = {
   LevelData.B1 : Color.B1,

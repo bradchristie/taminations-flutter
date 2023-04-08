@@ -1,11 +1,10 @@
 import '../../animated_call.dart';
-import 'thar.dart';
 import 'cast_off_three_quarters.dart';
 import 'centers_in.dart';
 import 'cloverleaf.dart';
-import 'fold.dart';
 import 'dixie_style.dart';
 import 'eight_chain_thru.dart';
+import 'fold.dart';
 import 'fraction_tag.dart';
 import 'hinge.dart';
 import 'pass_to_the_center.dart';
@@ -17,6 +16,7 @@ import 'slip_the_clutch.dart';
 import 'spin_chain_thru.dart';
 import 'spin_the_top.dart';
 import 'tag.dart';
+import 'thar.dart';
 import 'turn_thru.dart';
 import 'walk_and_dodge.dart';
 class CallsIndex {

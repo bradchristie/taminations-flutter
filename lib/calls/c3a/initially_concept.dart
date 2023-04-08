@@ -18,13 +18,11 @@
 
 */
 
-import '../../common_dart.dart';
-import '../../formation.dart';
+import '../../animated_call.dart';
 import '../../formations.dart';
 import '../../moves.dart';
-import '../../animated_call.dart';
 
-  final List<AnimatedCall> InitiallyConcept = [ 
+  final List<AnimatedCall> InitiallyConcept = [
 
     AnimatedCall('Initially As Couples Hinge the Lock',
       formation:Formations.TidalLineRH,

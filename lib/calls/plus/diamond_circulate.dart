@@ -18,13 +18,13 @@
 
 */
 
+import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
 import '../../formations.dart';
 import '../../moves.dart';
-import '../../animated_call.dart';
 
-  final List<AnimatedCall> DiamondCirculate = [ 
+  final List<AnimatedCall> DiamondCirculate = [
 
     AnimatedCall('Diamond Circulate',
       formation:Formations.DiamondRH,

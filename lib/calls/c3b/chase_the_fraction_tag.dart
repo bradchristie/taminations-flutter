@@ -18,15 +18,15 @@
 
 */
 
+import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
 import '../../formations.dart';
 import '../../moves.dart';
-import '../../animated_call.dart';
-import '../c3b/anything_the_top.dart' as c3b;
 import '../c1/chase_your_neighbor.dart' as c1;
+import '../c3b/anything_the_top.dart' as c3b;
 
-  final List<AnimatedCall> ChaseTheFractionTag = [ 
+  final List<AnimatedCall> ChaseTheFractionTag = [
 
     AnimatedCall('Chase the Tag',
       formation:Formation('', [

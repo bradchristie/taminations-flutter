@@ -18,14 +18,12 @@
 
 */
 
-import '../../common_dart.dart';
-import '../../formation.dart';
+import '../../animated_call.dart';
 import '../../formations.dart';
 import '../../moves.dart';
-import '../../animated_call.dart';
 import '../b1/see_saw.dart' as b1;
 
-  final List<AnimatedCall> AllAroundTheCorner = [ 
+  final List<AnimatedCall> AllAroundTheCorner = [
 
     AnimatedCall('Walk Around the Corner',
       formation:Formations.FacingCouples,

@@ -18,16 +18,16 @@
 
 */
 
+import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
 import '../../formations.dart';
 import '../../moves.dart';
-import '../../animated_call.dart';
-import '../c1/recycle.dart' as c1;
 import '../c1/chase_your_neighbor.dart' as c1;
 import '../c1/cross_and_turn.dart' as c1;
 import '../c1/cross_roll.dart' as c1;
 import '../c1/follow_thru.dart' as c1;
+import '../c1/recycle.dart' as c1;
 import '../c1/reverse_explode.dart' as c1;
 import '../c1/shakedown.dart' as c1;
 import '../c1/step_and_fold.dart' as c1;
@@ -35,13 +35,13 @@ import '../c1/zing.dart' as c1;
 import '../c2/bounce.dart' as c2;
 import '../c2/circle_to_a_wave.dart' as c2;
 import '../c2/criss_cross_your_neighbor.dart' as c2;
-import '../c2/peel_to_a_diamond.dart' as c2;
 import '../c2/cross_the_k.dart' as c2;
+import '../c2/peel_to_a_diamond.dart' as c2;
 import '../c2/turn_to_a_line.dart' as c2;
 import '../c3a/couple_up.dart' as c3a;
 import '../c3a/mini_chase.dart' as c3a;
 
-  final List<AnimatedCall> ConcentricConcept = [ 
+  final List<AnimatedCall> ConcentricConcept = [
 
     AnimatedCall('Concentric Box Counter Rotate',
       formation:Formations.MagicColumnRH,

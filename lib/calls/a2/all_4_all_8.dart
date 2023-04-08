@@ -18,12 +18,11 @@
 
 */
 
+import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
 import '../../formations.dart';
 import '../../moves.dart';
-import '../../animated_call.dart';
-import '../b2/flutterwheel.dart' as b2;
 import '../a2/box_transfer.dart' as a2;
 import '../a2/pass_and_roll.dart' as a2;
 import '../a2/pass_and_roll_your_neighbor.dart' as a2;
@@ -35,11 +34,9 @@ import '../a2/slip.dart' as a2;
 import '../a2/swing_and_mix.dart' as a2;
 import '../a2/switch_the_wave.dart' as a2;
 import '../a2/trail_off.dart' as a2;
-import '../c1/with_the_flow.dart' as c1;
-import '../c1/square_chain_the_top.dart' as c1;
-import '../c1/zing.dart' as c1;
+import '../b2/flutterwheel.dart' as b2;
 import '../c1/alter_the_wave.dart' as c1;
-import '../c1/recycle.dart' as c1;
+import '../c1/anything_and_weave.dart' as c1;
 import '../c1/chase_your_neighbor.dart' as c1;
 import '../c1/cross_and_turn.dart' as c1;
 import '../c1/cross_your_neighbor.dart' as c1;
@@ -47,25 +44,28 @@ import '../c1/dixie_diamond.dart' as c1;
 import '../c1/dixie_sashay.dart' as c1;
 import '../c1/follow_thru.dart' as c1;
 import '../c1/phantom_formation.dart' as c1;
+import '../c1/recycle.dart' as c1;
 import '../c1/reverse_explode.dart' as c1;
 import '../c1/shakedown.dart' as c1;
+import '../c1/square_chain_the_top.dart' as c1;
 import '../c1/step_and_fold.dart' as c1;
 import '../c1/switch_the_line.dart' as c1;
-import '../c1/vertical_tag.dart' as c1;
 import '../c1/tagging_calls_back_to_a_wave.dart' as c1;
-import '../c1/anything_and_weave.dart' as c1;
+import '../c1/vertical_tag.dart' as c1;
 import '../c1/wheel_fan_thru.dart' as c1;
-import '../c2/rotate.dart' as c2;
+import '../c1/with_the_flow.dart' as c1;
+import '../c1/zing.dart' as c1;
 import '../c2/criss_cross_your_neighbor.dart' as c2;
 import '../c2/cross_back.dart' as c2;
 import '../c2/peel_to_a_diamond.dart' as c2;
+import '../c2/rotate.dart' as c2;
 import '../c2/turn_to_a_line.dart' as c2;
 import '../c2/wheel_the_ocean.dart' as c2;
 import '../c3a/follow_to_a_diamond.dart' as c3a;
 import '../c3a/lock_the_hinge.dart' as c3a;
 import '../c3a/mini_chase.dart' as c3a;
 
-  final List<AnimatedCall> All4All8 = [ 
+  final List<AnimatedCall> All4All8 = [
 
     AnimatedCall('All 4 Couples Chase Right',
       formation:Formations.StaticFacingOut,

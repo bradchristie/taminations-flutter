@@ -23,8 +23,8 @@ import 'dart:async' show Future;
 import 'package:flutter/services.dart' show rootBundle;
 import 'package:platform/platform.dart';
 
-import 'common_flutter.dart';
 import 'call_index.dart';
+import 'common_flutter.dart';
 
 class CallListDatum {
   final String title;

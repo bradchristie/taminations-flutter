@@ -18,16 +18,12 @@
 
 */
 
-import '../../common_dart.dart';
-import '../../formation.dart';
-import '../../formations.dart';
-import '../../moves.dart';
 import '../../animated_call.dart';
-import '../b1/pass_thru.dart' as b1;
 import '../b1/circulate.dart' as b1;
+import '../b1/pass_thru.dart' as b1;
 import '../b2/run.dart' as b2;
 
-  final List<AnimatedCall> PassingRule = [ 
+  final List<AnimatedCall> PassingRule = [
     b1.PassThru.where((tam) =>
       tam.title == 'Pass Thru' && tam.from == 'Facing Couples').first.xref(title: 'Pass Thru').xref(group: ' '),
     b1.Circulate.where((tam) =>

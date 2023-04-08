@@ -18,13 +18,12 @@
 
 */
 
+import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formation.dart';
 import '../../formations.dart';
 import '../../moves.dart';
-import '../../animated_call.dart';
 
-  final List<AnimatedCall> FanTheTop = [ 
+  final List<AnimatedCall> FanTheTop = [
 
     AnimatedCall('Fan the Top',
       formation:Formations.WaveRH,

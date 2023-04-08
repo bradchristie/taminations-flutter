@@ -18,13 +18,12 @@
 
 */
 
+import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formation.dart';
 import '../../formations.dart';
 import '../../moves.dart';
-import '../../animated_call.dart';
 
-  final List<AnimatedCall> SquareThru = [ 
+  final List<AnimatedCall> SquareThru = [
 
     AnimatedCall('Square Thru 2',
       formation:Formations.FacingCouplesCompact,

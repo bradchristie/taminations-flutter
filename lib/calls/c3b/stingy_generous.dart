@@ -18,14 +18,14 @@
 
 */
 
+import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
 import '../../formations.dart';
 import '../../moves.dart';
-import '../../animated_call.dart';
 import '../a1/quarter_thru.dart' as a1;
 
-  final List<AnimatedCall> StingyGenerous = [ 
+  final List<AnimatedCall> StingyGenerous = [
 
     AnimatedCall('Generous Dixie Style to a Wave',
       formation:Formations.DoublePassThru,

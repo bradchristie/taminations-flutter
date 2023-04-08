@@ -18,13 +18,11 @@
 
 */
 
-import '../../common_dart.dart';
-import '../../formation.dart';
+import '../../animated_call.dart';
 import '../../formations.dart';
 import '../../moves.dart';
-import '../../animated_call.dart';
 
-  final List<AnimatedCall> FlipTheLine = [ 
+  final List<AnimatedCall> FlipTheLine = [
 
     AnimatedCall('Flip the Line 1/4',
       formation:Formations.WaveRH,

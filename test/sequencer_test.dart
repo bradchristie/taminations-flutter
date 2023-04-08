@@ -7,11 +7,9 @@
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter_test/flutter_test.dart';
-
+import 'package:stack_trace/stack_trace.dart' as stack_trace;
 import 'package:taminations/sequencer/sequencer_model.dart';
 import 'package:taminations/tam_utils.dart';
-
-import 'package:stack_trace/stack_trace.dart' as stack_trace;
 
 class TestSequence {
 

@@ -18,32 +18,32 @@
 
 */
 
+import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
 import '../../formations.dart';
 import '../../moves.dart';
-import '../../animated_call.dart';
-import '../c1/recycle.dart' as c1;
 import '../c1/ah_so.dart' as c1;
 import '../c1/alter_the_wave.dart' as c1;
+import '../c1/anything_and_weave.dart' as c1;
 import '../c1/chase_your_neighbor.dart' as c1;
 import '../c1/cross_extend.dart' as c1;
 import '../c1/cross_roll.dart' as c1;
 import '../c1/cross_your_neighbor.dart' as c1;
 import '../c1/follow_thru.dart' as c1;
+import '../c1/recycle.dart' as c1;
 import '../c1/reverse_explode.dart' as c1;
 import '../c1/square_chain_the_top.dart' as c1;
 import '../c1/step_and_flip.dart' as c1;
 import '../c1/step_and_fold.dart' as c1;
-import '../c1/anything_and_weave.dart' as c1;
 import '../c1/wheel_fan_thru.dart' as c1;
 import '../c1/zing.dart' as c1;
 import '../c2/bounce.dart' as c2;
 import '../c2/criss_cross_your_neighbor.dart' as c2;
 import '../c2/cross_back.dart' as c2;
+import '../c2/cross_the_k.dart' as c2;
 import '../c2/peel_to_a_diamond.dart' as c2;
 import '../c2/split_swap_around.dart' as c2;
-import '../c2/cross_the_k.dart' as c2;
 import '../c2/turn_to_a_line.dart' as c2;
 import '../c3a/couple_up.dart' as c3a;
 import '../c3a/follow_to_a_diamond.dart' as c3a;
@@ -52,7 +52,7 @@ import '../c3a/mini_chase.dart' as c3a;
 import '../c3a/single_concept.dart' as c3a;
 import '../c3b/bingo.dart' as c3b;
 
-  final List<AnimatedCall> TandemConcept = [ 
+  final List<AnimatedCall> TandemConcept = [
 
     AnimatedCall('Tandem Bend the Line',
       formation:Formations.TwomFacedLinesRH,

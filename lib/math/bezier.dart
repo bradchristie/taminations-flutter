@@ -21,6 +21,7 @@
 import 'dart:math';
 
 import 'package:bezier/bezier.dart' hide Bezier;
+
 import '../cloneable.dart';
 import '../extensions.dart';
 import 'matrix.dart';

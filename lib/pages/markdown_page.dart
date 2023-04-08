@@ -18,8 +18,8 @@
  */
 
 import 'package:flutter/material.dart' as fm;
-import 'package:provider/provider.dart' as pp;
 import 'package:flutter_markdown/flutter_markdown.dart';
+import 'package:provider/provider.dart' as pp;
 import 'package:url_launcher/url_launcher.dart';
 
 import '../common_flutter.dart';

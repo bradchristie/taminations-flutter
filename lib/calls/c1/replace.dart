@@ -18,13 +18,13 @@
 
 */
 
+import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
 import '../../formations.dart';
 import '../../moves.dart';
-import '../../animated_call.dart';
 
-  final List<AnimatedCall> Replace = [ 
+  final List<AnimatedCall> Replace = [
 
     AnimatedCall('Chain Reaction, But 2/3 Recycle',
       formation:Formations.QuarterTag,

@@ -18,18 +18,17 @@
 
 */
 
+import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formation.dart';
 import '../../formations.dart';
 import '../../moves.dart';
-import '../../animated_call.dart';
-import '../b2/wheel_around.dart' as b2;
-import '../b2/flutterwheel.dart' as b2;
-import '../ms/dixie_style.dart' as ms;
 import '../a1/swap_around.dart' as a1;
 import '../a2/recycle.dart' as a2;
+import '../b2/flutterwheel.dart' as b2;
+import '../b2/wheel_around.dart' as b2;
+import '../ms/dixie_style.dart' as ms;
 
-  final List<AnimatedCall> Reverse = [ 
+  final List<AnimatedCall> Reverse = [
 
     AnimatedCall('Reverse Rollaway',
       formation:Formations.NormalLines,

@@ -19,6 +19,7 @@
 */
 
 import 'dart:ui';
+
 import 'vector.dart';
 
 extension VectorUI on Vector {

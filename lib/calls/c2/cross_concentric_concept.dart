@@ -18,17 +18,17 @@
 
 */
 
+import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
 import '../../formations.dart';
 import '../../moves.dart';
-import '../../animated_call.dart';
 import '../c2/bounce.dart' as c2;
 import '../c2/circle_to_a_wave.dart' as c2;
 import '../c2/cross_the_k.dart' as c2;
 import '../c2/turn_to_a_line.dart' as c2;
 
-  final List<AnimatedCall> CrossConcentricConcept = [ 
+  final List<AnimatedCall> CrossConcentricConcept = [
     c2.Bounce.where((tam) =>
       tam.title == 'Cross Concentric Bounce the Boys').first.xref(title: 'Cross Concentric Bounce the Boys').xref(group: 'Cross Concentric'),
     c2.CircleToAWave.where((tam) =>

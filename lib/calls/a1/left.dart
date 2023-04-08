@@ -18,14 +18,9 @@
 
 */
 
-import '../../common_dart.dart';
-import '../../formation.dart';
+import '../../animated_call.dart';
 import '../../formations.dart';
 import '../../moves.dart';
-import '../../animated_call.dart';
-import '../b2/swing_thru.dart' as b2;
-import '../b2/touch_a_quarter.dart' as b2;
-import '../plus/track_ii.dart' as plus;
 import '../a1/partner_hinge.dart' as a1;
 import '../a1/quarter_thru.dart' as a1;
 import '../a1/split_square_thru.dart' as a1;
@@ -34,8 +29,11 @@ import '../a1/turn_and_deal.dart' as a1;
 import '../a2/pass_and_roll.dart' as a2;
 import '../a2/remake.dart' as a2;
 import '../a2/spin_the_windmill.dart' as a2;
+import '../b2/swing_thru.dart' as b2;
+import '../b2/touch_a_quarter.dart' as b2;
+import '../plus/track_ii.dart' as plus;
 
-  final List<AnimatedCall> Left = [ 
+  final List<AnimatedCall> Left = [
 
     AnimatedCall('Left Dosado',
       formation:Formations.FacingCouplesCompact,

@@ -18,15 +18,15 @@
 
 */
 
+import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
 import '../../formations.dart';
 import '../../moves.dart';
-import '../../animated_call.dart';
 import '../a2/remake.dart' as a2;
 import '../c1/swing_the_fractions.dart' as c1;
 
-  final List<AnimatedCall> AnyHandConcept = [ 
+  final List<AnimatedCall> AnyHandConcept = [
 
     AnimatedCall('Any Hand Swing Thru',
       formation:Formations.InvertedLinesEndsFacingOut,

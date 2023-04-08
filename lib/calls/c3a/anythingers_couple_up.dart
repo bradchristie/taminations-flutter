@@ -18,13 +18,11 @@
 
 */
 
-import '../../common_dart.dart';
-import '../../formation.dart';
+import '../../animated_call.dart';
 import '../../formations.dart';
 import '../../moves.dart';
-import '../../animated_call.dart';
 
-  final List<AnimatedCall> AnythingersCoupleUp = [ 
+  final List<AnimatedCall> AnythingersCoupleUp = [
 
     AnimatedCall('Counter Couple Up',
       formation:Formations.OceanWavesRHBGGB,

@@ -18,13 +18,13 @@
 
 */
 
+import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
 import '../../formations.dart';
 import '../../moves.dart';
-import '../../animated_call.dart';
 
-  final List<AnimatedCall> SplitSquareThruVariations = [ 
+  final List<AnimatedCall> SplitSquareThruVariations = [
 
     AnimatedCall('Split Square Chain the Top',
       formation:Formations.TmBoneULRU,

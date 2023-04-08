@@ -18,13 +18,12 @@
 
 */
 
+import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
-import '../../animated_call.dart';
 
-  final List<AnimatedCall> ZConcept = [ 
+  final List<AnimatedCall> ZConcept = [
 
     AnimatedCall('(From offset lines) "Z" Chase Right',
       formation:Formation('Ocean Waves RH BGGB', [

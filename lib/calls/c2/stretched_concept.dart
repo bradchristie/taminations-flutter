@@ -18,14 +18,12 @@
 
 */
 
-import '../../common_dart.dart';
-import '../../formation.dart';
+import '../../animated_call.dart';
 import '../../formations.dart';
 import '../../moves.dart';
-import '../../animated_call.dart';
 import '../c3a/scatter_circulate.dart' as c3a;
 
-  final List<AnimatedCall> StretchedConcept = [ 
+  final List<AnimatedCall> StretchedConcept = [
 
     AnimatedCall('Stretched Line Crossfire',
       formation:Formations.TidalLineRH,

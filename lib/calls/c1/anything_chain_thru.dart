@@ -18,14 +18,12 @@
 
 */
 
-import '../../common_dart.dart';
-import '../../formation.dart';
+import '../../animated_call.dart';
 import '../../formations.dart';
 import '../../moves.dart';
-import '../../animated_call.dart';
 import '../a2/diamond_chain_thru.dart' as a2;
 
-  final List<AnimatedCall> AnythingChainThru = [ 
+  final List<AnimatedCall> AnythingChainThru = [
 
     AnimatedCall('All Eight Recycle Chain Thru',
       formation:Formations.QuarterTag,

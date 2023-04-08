@@ -18,14 +18,10 @@
 
 */
 
-import '../../common_dart.dart';
-import '../../formation.dart';
-import '../../formations.dart';
-import '../../moves.dart';
 import '../../animated_call.dart';
 import '../b2/swing_thru.dart' as b2;
 
-  final List<AnimatedCall> FacingCouplesRule = [ 
+  final List<AnimatedCall> FacingCouplesRule = [
     b2.SwingThru.where((tam) =>
       tam.title == 'Swing Thru' && tam.from == 'Facing Couples').first.xref(title: 'Swing Thru'),
     b2.SwingThru.where((tam) =>

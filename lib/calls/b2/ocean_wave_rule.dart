@@ -18,14 +18,10 @@
 
 */
 
-import '../../common_dart.dart';
-import '../../formation.dart';
-import '../../formations.dart';
-import '../../moves.dart';
 import '../../animated_call.dart';
 import '../b1/right_and_left_thru.dart' as b1;
 
-  final List<AnimatedCall> OceanWaveRule = [ 
+  final List<AnimatedCall> OceanWaveRule = [
     b1.RightAndLeftThru.where((tam) =>
       tam.title == 'Right and Left Thru' && tam.from == 'Right-Hand Wave').first.xref(title: 'Right and Left Thru'),
     b1.RightAndLeftThru.where((tam) =>

@@ -18,13 +18,11 @@
 
 */
 
-import '../../common_dart.dart';
-import '../../formation.dart';
+import '../../animated_call.dart';
 import '../../formations.dart';
 import '../../moves.dart';
-import '../../animated_call.dart';
 
-  final List<AnimatedCall> SeeSaw = [ 
+  final List<AnimatedCall> SeeSaw = [
 
     AnimatedCall('All Around the Corner, See Saw Your Partner',
       formation:Formations.StaticSquare,

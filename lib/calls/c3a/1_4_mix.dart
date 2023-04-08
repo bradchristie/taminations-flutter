@@ -18,13 +18,12 @@
 
 */
 
+import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formation.dart';
 import '../../formations.dart';
 import '../../moves.dart';
-import '../../animated_call.dart';
 
-  final List<AnimatedCall> Q14Mix = [ 
+  final List<AnimatedCall> Q14Mix = [
 
     AnimatedCall('1/4 Mix',
       formation:Formations.BoxRHCompact,

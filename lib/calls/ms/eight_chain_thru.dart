@@ -18,13 +18,11 @@
 
 */
 
-import '../../common_dart.dart';
-import '../../formation.dart';
+import '../../animated_call.dart';
 import '../../formations.dart';
 import '../../moves.dart';
-import '../../animated_call.dart';
 
-  final List<AnimatedCall> EightChainThru = [ 
+  final List<AnimatedCall> EightChainThru = [
 
     AnimatedCall('Eight Chain One',
       formation:Formations.EightChainThru,

@@ -18,14 +18,14 @@
 
 */
 
+import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
 import '../../formations.dart';
 import '../../moves.dart';
-import '../../animated_call.dart';
 import '../b2/alamo_style.dart' as b2;
 
-  final List<AnimatedCall> OceanWave = [ 
+  final List<AnimatedCall> OceanWave = [
 
     AnimatedCall('Step to a Wave',
       formation:Formation('', [

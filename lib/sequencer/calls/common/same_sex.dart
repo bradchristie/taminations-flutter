@@ -18,9 +18,9 @@
 
 */
 
-import '../action.dart';
-import '../../call_context.dart';
 import '../../../extensions.dart';
+import '../../call_context.dart';
+import '../action.dart';
 
 class SameSex extends Action {
 

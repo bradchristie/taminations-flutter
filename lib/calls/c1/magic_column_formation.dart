@@ -18,15 +18,15 @@
 
 */
 
+import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
 import '../../formations.dart';
 import '../../moves.dart';
-import '../../animated_call.dart';
 import '../c2/file_to_a_line.dart' as c2;
 import '../c2/invert_the_column.dart' as c2;
 
-  final List<AnimatedCall> MagicColumnFormation = [ 
+  final List<AnimatedCall> MagicColumnFormation = [
 
     AnimatedCall('Magic Column Circulate',
       formation:Formation('', [

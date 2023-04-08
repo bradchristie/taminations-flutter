@@ -18,13 +18,11 @@
 
 */
 
-import '../../common_dart.dart';
-import '../../formation.dart';
+import '../../animated_call.dart';
 import '../../formations.dart';
 import '../../moves.dart';
-import '../../animated_call.dart';
 
-  final List<AnimatedCall> GrandSwingThru = [ 
+  final List<AnimatedCall> GrandSwingThru = [
 
     AnimatedCall('Grand Swing Thru',
       formation:Formations.TidalWaveRHBGGB,

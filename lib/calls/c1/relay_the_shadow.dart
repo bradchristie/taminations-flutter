@@ -18,13 +18,11 @@
 
 */
 
-import '../../common_dart.dart';
-import '../../formation.dart';
+import '../../animated_call.dart';
 import '../../formations.dart';
 import '../../moves.dart';
-import '../../animated_call.dart';
 
-  final List<AnimatedCall> RelayTheShadow = [ 
+  final List<AnimatedCall> RelayTheShadow = [
 
     AnimatedCall('Relay the Shadow',
       formation:Formations.TidalWaveRHBGGB,

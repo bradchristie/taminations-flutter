@@ -18,13 +18,11 @@
 
 */
 
-import '../../common_dart.dart';
-import '../../formation.dart';
+import '../../animated_call.dart';
 import '../../formations.dart';
 import '../../moves.dart';
-import '../../animated_call.dart';
 
-  final List<AnimatedCall> PassToTheCenter = [ 
+  final List<AnimatedCall> PassToTheCenter = [
 
     AnimatedCall('Pass to the Center',
       formation:Formations.PassThru,

@@ -18,13 +18,11 @@
 
 */
 
-import '../../common_dart.dart';
-import '../../formation.dart';
+import '../../animated_call.dart';
 import '../../formations.dart';
 import '../../moves.dart';
-import '../../animated_call.dart';
 
-  final List<AnimatedCall> DixieDiamond = [ 
+  final List<AnimatedCall> DixieDiamond = [
 
     AnimatedCall('Dixie Diamond',
       formation:Formations.FacingCouples,

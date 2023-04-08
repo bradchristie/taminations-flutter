@@ -18,14 +18,14 @@
 
 */
 
+import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
 import '../../formations.dart';
 import '../../moves.dart';
-import '../../animated_call.dart';
 import '../c1/replace.dart' as c1;
 
-  final List<AnimatedCall> SwingTheFractions = [ 
+  final List<AnimatedCall> SwingTheFractions = [
 
     AnimatedCall('Swing the Fractions',
       formation:Formations.OceanWavesRHBGGB,

@@ -18,14 +18,12 @@
 
 */
 
-import '../../common_dart.dart';
-import '../../formation.dart';
+import '../../animated_call.dart';
 import '../../formations.dart';
 import '../../moves.dart';
-import '../../animated_call.dart';
 import '../plus/follow_your_neighbor.dart' as plus;
 
-  final List<AnimatedCall> AnythingAndSpread = [ 
+  final List<AnimatedCall> AnythingAndSpread = [
 
     AnimatedCall('Acey Deucey and Spread',
       formation:Formations.OceanWavesRHBGGB,

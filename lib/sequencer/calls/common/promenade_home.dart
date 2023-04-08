@@ -19,16 +19,17 @@
 */
 
 import 'dart:math';
-import '../../../formations.dart';
-import '../../../moves.dart';
-import '../action.dart';
-import '../../../math/vector.dart';
-import '../../call_context.dart';
-import '../../call_error.dart';
+
 import '../../../dancer_model.dart';
 import '../../../extensions.dart';
+import '../../../formations.dart';
 import '../../../level_data.dart';
 import '../../../math/path.dart';
+import '../../../math/vector.dart';
+import '../../../moves.dart';
+import '../../call_context.dart';
+import '../../call_error.dart';
+import '../action.dart';
 
 //  This covers both Promenade Home and
 //  Swing Your Corner And Promenade

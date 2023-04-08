@@ -19,9 +19,10 @@
 */
 
 import 'dart:math';
-import 'cloneable.dart';
 
 import 'package:xml/xml.dart';
+
+import 'cloneable.dart';
 
 Future<T> afterDelay<T>(T Function()f, [Duration? when]) async {
   return Future<T>.delayed(when ?? Duration(),f);

@@ -18,13 +18,12 @@
 
 */
 
+import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formation.dart';
 import '../../formations.dart';
 import '../../moves.dart';
-import '../../animated_call.dart';
 
-  final List<AnimatedCall> CircleToAWave = [ 
+  final List<AnimatedCall> CircleToAWave = [
 
     AnimatedCall('Circle to a Wave',
       formation:Formations.FacingCouplesCompact,

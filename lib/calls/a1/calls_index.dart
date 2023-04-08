@@ -1,17 +1,16 @@
 import '../../animated_call.dart';
 import 'any_hand_concept.dart';
+import 'anything_and_cross.dart';
 import 'as_couples.dart';
 import 'belles_and_beaus.dart';
 import 'brace_thru.dart';
 import 'cast_a_shadow.dart';
 import 'chain_reaction.dart';
 import 'clover_and_anything.dart';
-import 'anything_and_cross.dart';
 import 'cross_over_circulate.dart';
 import 'cross_trail_thru.dart';
 import 'cycle_and_wheel.dart';
 import 'do_your_part.dart';
-import 'triple_cross.dart';
 import 'double_star_thru.dart';
 import 'ends_bend.dart';
 import 'explode_and_anything.dart';
@@ -21,8 +20,6 @@ import 'grand_follow_your_neighbor.dart';
 import 'grand_quarter_thru.dart';
 import 'horseshoe_turn.dart';
 import 'left.dart';
-import 'right_roll_to_a_wave.dart';
-import 'wheel_thru.dart';
 import 'linear_cycle.dart';
 import 'lock_it.dart';
 import 'mix.dart';
@@ -34,16 +31,19 @@ import 'pass_the_sea.dart';
 import 'quarter_in.dart';
 import 'quarter_thru.dart';
 import 'reverse.dart';
-import 'swap_around.dart';
+import 'right_roll_to_a_wave.dart';
 import 'scoot_and_dodge.dart';
 import 'six_two_acey_deucey.dart';
 import 'split_square_chain_thru.dart';
 import 'split_square_thru.dart';
 import 'square_chain_thru.dart';
 import 'step_and_slide.dart';
+import 'swap_around.dart';
 import 'transfer_the_column.dart';
+import 'triple_cross.dart';
 import 'triple_trade.dart';
 import 'turn_and_deal.dart';
+import 'wheel_thru.dart';
 class CallsIndex {
   static Map<String,List<AnimatedCall>> index = {
       'AnyHandSwingThru' : [ AnyHandConcept[0],AnyHandConcept[1],AnyHandConcept[2],AnyHandConcept[3] ],

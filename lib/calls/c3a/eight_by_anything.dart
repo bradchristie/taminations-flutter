@@ -18,13 +18,13 @@
 
 */
 
+import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
 import '../../formations.dart';
 import '../../moves.dart';
-import '../../animated_call.dart';
 
-  final List<AnimatedCall> EightByAnything = [ 
+  final List<AnimatedCall> EightByAnything = [
 
     AnimatedCall('Eight by Reach Out',
       formation:Formations.n3and_1lines3,

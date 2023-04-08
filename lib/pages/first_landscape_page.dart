@@ -22,10 +22,10 @@ import 'package:flutter/material.dart' as fm;
 import 'package:provider/provider.dart' as pp;
 
 import '../common_flutter.dart';
-import 'markdown_page.dart';
-import 'page.dart';
 import 'calls_page.dart';
 import 'level_page.dart';
+import 'markdown_page.dart';
+import 'page.dart';
 import 'settings_page.dart';
 
 class FirstLandscapePage extends fm.StatelessWidget {

@@ -20,19 +20,19 @@
 
 import 'package:flutter/material.dart' as fm;
 import 'package:provider/provider.dart' as pp;
+import 'package:taminations/beat_notifier.dart';
 
 import '../common_flutter.dart';
 import '../pages/animation_page.dart';
-import '../pages/settings_page.dart';
 import '../pages/markdown_page.dart';
 import '../pages/page.dart';
+import '../pages/settings_page.dart';
 import 'abbreviations_frame.dart';
 import 'abbreviations_model.dart';
 import 'sequence_frame.dart';
 import 'sequencer_animation_frame.dart';
 import 'sequencer_calls_page.dart';
 import 'sequencer_model.dart';
-import 'package:taminations/beat_notifier.dart';
 
 class SequencerTestPage extends fm.StatefulWidget {
   @override

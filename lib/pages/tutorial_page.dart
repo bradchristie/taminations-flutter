@@ -20,8 +20,8 @@
 
 import 'package:flutter/material.dart' as fm;
 import 'package:provider/provider.dart' as pp;
-import 'package:taminations/moves.dart';
 import 'package:taminations/animated_call.dart';
+import 'package:taminations/moves.dart';
 
 import '../common_flutter.dart';
 import '../dance_model.dart';

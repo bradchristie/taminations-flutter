@@ -18,13 +18,13 @@
 
 */
 
+import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
 import '../../formations.dart';
 import '../../moves.dart';
-import '../../animated_call.dart';
 
-  final List<AnimatedCall> PeelTheTop = [ 
+  final List<AnimatedCall> PeelTheTop = [
 
     AnimatedCall('Peel the Top',
       formation:Formation('', [

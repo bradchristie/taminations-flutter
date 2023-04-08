@@ -18,13 +18,11 @@
 
 */
 
-import '../../common_dart.dart';
-import '../../formation.dart';
+import '../../animated_call.dart';
 import '../../formations.dart';
 import '../../moves.dart';
-import '../../animated_call.dart';
 
-  final List<AnimatedCall> TripTheSet = [ 
+  final List<AnimatedCall> TripTheSet = [
 
     AnimatedCall('Trip the Set',
       formation:Formations.LinesFacingOut,

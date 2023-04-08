@@ -20,9 +20,9 @@
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart' as fm;
+import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart' as pp;
-import 'package:flutter/services.dart';
 import 'package:taminations/beat_notifier.dart';
 import 'package:taminations/sequencer/sequencer_model.dart';
 
@@ -32,17 +32,17 @@ import 'pages/animation_page.dart';
 import 'pages/calls_page.dart';
 import 'pages/first_landscape_page.dart';
 import 'pages/level_page.dart';
+import 'pages/markdown_page.dart';
+import 'pages/page.dart';
 import 'pages/practice_page.dart';
 import 'pages/second_landscape_page.dart';
 import 'pages/settings_page.dart';
 import 'pages/start_practice_page.dart';
 import 'pages/tutorial_page.dart';
-import 'pages/markdown_page.dart';
-import 'pages/page.dart';
-import 'sequencer/sequencer_page.dart';
 import 'sequencer/abbreviations_frame.dart';
-import 'sequencer/sequencer_calls_page.dart';
 import 'sequencer/abbreviations_model.dart';
+import 'sequencer/sequencer_calls_page.dart';
+import 'sequencer/sequencer_page.dart';
 
 ///  Main routine
 void main() {

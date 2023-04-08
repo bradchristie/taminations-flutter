@@ -18,13 +18,12 @@
 
 */
 
+import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formation.dart';
 import '../../formations.dart';
 import '../../moves.dart';
-import '../../animated_call.dart';
 
-  final List<AnimatedCall> Press = [ 
+  final List<AnimatedCall> Press = [
 
     AnimatedCall('Boys Press Right',
       formation:Formations.ColumnLHGBGB,

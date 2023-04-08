@@ -24,22 +24,21 @@ import 'package:flutter/material.dart' as fm;
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart' as pp;
 
-import '../beat_notifier.dart';
-import '../common_flutter.dart';
-import '../dance_model.dart';
 import '../animated_call.dart';
-import 'page.dart';
-
-import '../calls/b1/calls_index.dart' as b1;
-import '../calls/b2/calls_index.dart' as b2;
-import '../calls/ms/calls_index.dart' as ms;
-import '../calls/plus/calls_index.dart' as plus;
+import '../beat_notifier.dart';
 import '../calls/a1/calls_index.dart' as a1;
 import '../calls/a2/calls_index.dart' as a2;
+import '../calls/b1/calls_index.dart' as b1;
+import '../calls/b2/calls_index.dart' as b2;
 import '../calls/c1/calls_index.dart' as c1;
 import '../calls/c2/calls_index.dart' as c2;
 import '../calls/c3a/calls_index.dart' as c3a;
 import '../calls/c3b/calls_index.dart' as c3b;
+import '../calls/ms/calls_index.dart' as ms;
+import '../calls/plus/calls_index.dart' as plus;
+import '../common_flutter.dart';
+import '../dance_model.dart';
+import 'page.dart';
 
 
 class PracticePage extends fm.StatelessWidget {

@@ -18,14 +18,12 @@
 
 */
 
-import '../../common_dart.dart';
-import '../../formation.dart';
+import '../../animated_call.dart';
 import '../../formations.dart';
 import '../../moves.dart';
-import '../../animated_call.dart';
 import '../a2/all_4_all_8.dart' as a2;
 
-  final List<AnimatedCall> TurnAndDeal = [ 
+  final List<AnimatedCall> TurnAndDeal = [
 
     AnimatedCall('Turn and Deal',
       formation:Formations.TwomFacedLineRH,

@@ -18,13 +18,13 @@
 
 */
 
+import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
 import '../../formations.dart';
 import '../../moves.dart';
-import '../../animated_call.dart';
 
-  final List<AnimatedCall> ChangeYourImage = [ 
+  final List<AnimatedCall> ChangeYourImage = [
 
     AnimatedCall('Change Your Image',
       formation:Formations.OceanWavesRHBGGB,

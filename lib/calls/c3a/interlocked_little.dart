@@ -18,13 +18,13 @@
 
 */
 
+import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
 import '../../formations.dart';
 import '../../moves.dart';
-import '../../animated_call.dart';
 
-  final List<AnimatedCall> InterlockedLittle = [ 
+  final List<AnimatedCall> InterlockedLittle = [
 
     AnimatedCall('Interlocked Little',
       formation:Formations.QuarterLinesRH,

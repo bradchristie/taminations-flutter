@@ -19,8 +19,8 @@
 */
 
 import '../../../moves.dart';
-import '../common.dart';
 import '../coded_call.dart';
+import '../common.dart';
 
 //  This handles both generic Walk and Dodge
 //  and directed (somebody) Walk (somebody else) Dodge

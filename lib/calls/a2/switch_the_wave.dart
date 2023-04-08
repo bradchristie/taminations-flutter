@@ -18,13 +18,11 @@
 
 */
 
-import '../../common_dart.dart';
-import '../../formation.dart';
+import '../../animated_call.dart';
 import '../../formations.dart';
 import '../../moves.dart';
-import '../../animated_call.dart';
 
-  final List<AnimatedCall> SwitchTheWave = [ 
+  final List<AnimatedCall> SwitchTheWave = [
 
     AnimatedCall('Switch the Wave',
       formation:Formations.WaveRHBoysCenter,

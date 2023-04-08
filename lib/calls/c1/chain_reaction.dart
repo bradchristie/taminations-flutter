@@ -18,14 +18,14 @@
 
 */
 
+import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
 import '../../formations.dart';
 import '../../moves.dart';
-import '../../animated_call.dart';
 import '../a1/chain_reaction.dart' as a1;
 
-  final List<AnimatedCall> ChainReaction = [ 
+  final List<AnimatedCall> ChainReaction = [
     a1.ChainReaction.where((tam) =>
       tam.title == 'Chain Reaction' && tam.from == 'Quarter Tag').first.xref(title: 'Chain Reaction'),
     a1.ChainReaction.where((tam) =>

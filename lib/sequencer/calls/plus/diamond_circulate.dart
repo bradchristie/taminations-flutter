@@ -18,9 +18,9 @@
 
 */
 
+import '../../../math/bezier.dart';
 import '../../../moves.dart';
 import '../common.dart';
-import '../../../math/bezier.dart';
 
 class DiamondCirculate extends Action {
 

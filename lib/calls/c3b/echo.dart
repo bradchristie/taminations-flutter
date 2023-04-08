@@ -18,13 +18,12 @@
 
 */
 
+import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formation.dart';
 import '../../formations.dart';
 import '../../moves.dart';
-import '../../animated_call.dart';
 
-  final List<AnimatedCall> Echo = [ 
+  final List<AnimatedCall> Echo = [
 
     AnimatedCall('Echo As Couples 1/2 Tag',
       formation:Formations.TidalLineRH,

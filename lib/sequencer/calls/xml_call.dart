@@ -18,20 +18,19 @@
 
 */
 
-import '../../calls/b1/calls_index.dart' as b1;
-import '../../calls/b2/calls_index.dart' as b2;
-import '../../calls/ms/calls_index.dart' as ms;
-import '../../calls/plus/calls_index.dart' as plus;
+import '../../animated_call.dart';
 import '../../calls/a1/calls_index.dart' as a1;
 import '../../calls/a2/calls_index.dart' as a2;
+import '../../calls/b1/calls_index.dart' as b1;
+import '../../calls/b2/calls_index.dart' as b2;
 import '../../calls/c1/calls_index.dart' as c1;
 import '../../calls/c2/calls_index.dart' as c2;
 import '../../calls/c3a/calls_index.dart' as c3a;
 import '../../calls/c3b/calls_index.dart' as c3b;
-
-import '../../animated_call.dart';
-import 'common.dart';
+import '../../calls/ms/calls_index.dart' as ms;
+import '../../calls/plus/calls_index.dart' as plus;
 import 'call.dart';
+import 'common.dart';
 
 class XMLCall extends Call {
 

@@ -18,13 +18,11 @@
 
 */
 
-import '../../common_dart.dart';
-import '../../formation.dart';
+import '../../animated_call.dart';
 import '../../formations.dart';
 import '../../moves.dart';
-import '../../animated_call.dart';
 
-  final List<AnimatedCall> Interrupt = [ 
+  final List<AnimatedCall> Interrupt = [
 
     AnimatedCall('Scoot and Plenty, Interrupt Before the Split Circulates with an Acey Deucey',
       formation:Formations.QuarterTag,

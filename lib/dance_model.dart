@@ -21,9 +21,9 @@ import 'package:flutter/material.dart' as fm;
 import 'package:provider/provider.dart' as pp;
 import 'package:taminations/beat_notifier.dart';
 
+import 'animated_call.dart';
 import 'common_flutter.dart';
 import 'practice_dancer.dart';
-import 'animated_call.dart';
 
 class DanceModel extends fm.ChangeNotifier {
 

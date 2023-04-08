@@ -18,13 +18,13 @@
 
 */
 
+import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
 import '../../formations.dart';
 import '../../moves.dart';
-import '../../animated_call.dart';
 
-  final List<AnimatedCall> RotarySpin = [ 
+  final List<AnimatedCall> RotarySpin = [
 
     AnimatedCall('Rotary Spin',
       formation:Formation('', [

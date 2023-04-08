@@ -18,13 +18,13 @@
 
 */
 
+import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
 import '../../formations.dart';
 import '../../moves.dart';
-import '../../animated_call.dart';
 
-  final List<AnimatedCall> OwnTheAnyoneAnythingByAnything = [ 
+  final List<AnimatedCall> OwnTheAnyoneAnythingByAnything = [
 
     AnimatedCall('Own the Boys: Ah So by Switch the Wave',
       formation:Formations.TidalWaveRHBGBG,

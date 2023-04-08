@@ -19,8 +19,8 @@
 */
 
 import '../common.dart';
-import '../common/do_your_part.dart';
 import '../common/do_one_part.dart';
+import '../common/do_your_part.dart';
 
 class Start extends Action {
 

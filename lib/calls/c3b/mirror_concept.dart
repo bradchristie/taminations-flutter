@@ -18,16 +18,16 @@
 
 */
 
+import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
 import '../../formations.dart';
 import '../../moves.dart';
-import '../../animated_call.dart';
 import '../c3b/lift_off.dart' as c3b;
 import '../c3b/rip_off.dart' as c3b;
 import '../c3b/swap_the_top.dart' as c3b;
 
-  final List<AnimatedCall> MirrorConcept = [ 
+  final List<AnimatedCall> MirrorConcept = [
 
     AnimatedCall('Mirror All 4 Couples Right and Left Thru',
       formation:Formations.StaticSquare,

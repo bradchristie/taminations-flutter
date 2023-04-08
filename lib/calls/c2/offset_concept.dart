@@ -18,14 +18,13 @@
 
 */
 
+import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
-import '../../animated_call.dart';
 import '../c2/cross_the_k.dart' as c2;
 
-  final List<AnimatedCall> OffsetConcept = [ 
+  final List<AnimatedCall> OffsetConcept = [
 
     AnimatedCall('Offset Lines Couples Circulate',
       formation:Formation('', [

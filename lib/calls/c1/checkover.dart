@@ -18,13 +18,13 @@
 
 */
 
+import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
 import '../../formations.dart';
 import '../../moves.dart';
-import '../../animated_call.dart';
 
-  final List<AnimatedCall> Checkover = [ 
+  final List<AnimatedCall> Checkover = [
 
     AnimatedCall('Checkover',
       formation:Formation('', [
