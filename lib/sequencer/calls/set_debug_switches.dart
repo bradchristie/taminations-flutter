@@ -22,7 +22,13 @@ import 'common.dart';
 
 class SetDebugSwitch extends CodedCall {
 
-  @override var help = 'Parsing\nCollisions\nHidden\nMapping';
+  @override var help =
+  '''Collisions
+Hidden
+Mapping
+NoSnap
+Parsing
+Perform''';
 
   SetDebugSwitch(String name) : super(name);
 

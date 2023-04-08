@@ -24,7 +24,6 @@ import '../xml_call.dart';
 
 class Twice extends CodedCall {
 
-
   @override var help = 'Repeat the entire call. '
       'Can be limited to specific dancers, as in Circulate Boys Go Twice';
   Twice(String name) : super(name);
@@ -44,9 +43,13 @@ class Twice extends CodedCall {
     ctx.extendPaths();
     //  So do it again
     var prevCall = ctx.callstack[stackIndex].name;
-    //  If not all dancers active, assume we mean those selected do your part
-    var dyp = ctx.actives.length < ctx.dancers.length ? 'Do Your Part ' : '';
-    ctx.applyCalls(dyp + prevCall);
+    DebugSwitch.perform.log('Twice $prevCall');
+    try {
+      ctx.applyCalls(prevCall);
+    } on CallError catch(_) {
+      //  This is for calls like Trade Circulate Boys go Twice
+      ctx.applyCalls('Do Your Part $prevCall');
+    }
   }
 
 }

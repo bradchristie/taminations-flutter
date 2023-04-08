@@ -333,7 +333,7 @@ abstract class CodedCall extends Call {
     'chiselthru'.ri: (_) => ChiselThru(),
     'circleby((14|12|34|nothing)and(14|12|34|nothing))?'.ri: (name) => CircleBy(name),
     'circleby(14|12|34|nothing)and(?!(14|12|34|nothing)).*'.ri: (name) => CircleBy(name),
-    '(box)?circulate'.ri: (_) => Circulate(),
+    '(box)?circulate'.ri: (name) => Circulate(name),
     '(cross)?cloverand(\\w.*)'.ri: (name) => CloverAnd(name),
     'cloverleaf'.ri: (_) => Cloverleaf(),
     'concentric.*'.ri: (name) => Concentric(name),

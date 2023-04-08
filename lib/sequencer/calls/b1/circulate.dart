@@ -28,7 +28,7 @@ class Circulate extends Action {
       ' Column Circulate, Couples Circulate, and, for 4 dancers, Box Circulate.';
   @override var helplink = 'b1/circulate';
 
-  Circulate() : super('Circulate' );
+  Circulate(name) : super(name);
 
   @override
   void perform(CallContext ctx) {
@@ -55,6 +55,8 @@ class Circulate extends Action {
     }
 
     //  All 8 dancers active
+    else if (name == 'Box Circulate')
+      throw CallError('Cannot do Box Circulate with 8 dancers');
     //  Try various forms of Circulate
     else if (ctx.isThar())
       ctx.applyCalls('Inside Diamond Circulate While Outside Diamond Circulate');

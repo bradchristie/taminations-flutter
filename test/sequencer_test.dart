@@ -3538,6 +3538,26 @@ Star Thru
 Trade By
 Pass Thru
 Trade By
-Allemande Left''','')
+Allemande Left''',''),
+
+  TestSequence('Twice', '''Heads Pass Out
+Touch 1/4
+Centers Trade
+Centers Run
+Cross Over Circulate Boys Go Twice
+Centers Trade
+Trade Circulate Boys Go Twice
+Star Thru
+Centers Pass Thru
+Pass the Ocean
+Fan the Top
+Acey Deucey Boys Go Twice
+Recycle
+Pass Thru
+Trade By
+Star Thru
+Slide Thru
+Pass Thru
+Allemande Left''', '')
 
 ];
