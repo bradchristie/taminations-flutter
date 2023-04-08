@@ -1218,13 +1218,13 @@ class CallContext {
   bool isFacingSameDirection(DancerModel d, DancerModel d2) =>
       d.angleFacing.isAround(d2.angleFacing);
 
-  //  Return true if this DancerModel is part of a couple facing same direction
+  //  Return true if this dancer is part of a couple facing same direction
   bool isInCouple(DancerModel d, [DancerModel? d2]) {
     d2 ??= d.data.partner;
     return d2 != null && isFacingSameDirection(d,d2);
   }
 
-  //  Return true if this DancerModel is in tandem with another DancerModel
+  //  Return true if this dancer is in tandem with another DancerModel
   DancerModel? tandemDancer(DancerModel d) {
     if (d.data.trailer && (dancerInFront(d)?.data.leader ?? false))
       return dancerInFront(d);

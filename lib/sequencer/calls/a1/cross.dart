@@ -53,7 +53,7 @@ class Cross extends Action {
     DancerModel? d2;
     for (var it in ctx.actives) {
       //  Not too far away
-      if (d.distanceTo(it) > 6.0)
+      if (d.data.end && it.data.end && d.distanceTo(it) > 6.0)
         continue;
       //  Dancers must be facing opposite directions
       //  and facing diagonal to each other
