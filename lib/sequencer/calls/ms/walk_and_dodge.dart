@@ -18,7 +18,7 @@
 
 */
 
-import '../../../moves.g.dart';
+import '../../../moves.dart';
 import '../common.dart';
 import '../coded_call.dart';
 

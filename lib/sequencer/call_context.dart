@@ -18,10 +18,9 @@
 
 */
 
-import 'package:taminations/formations.g.dart';
-
-import '../common.dart';
-import '../moves.g.dart';
+import '../common_flutter.dart';
+import '../formations.dart';
+import '../moves.dart';
 import 'call_error.dart';
 import 'calls/action.dart';
 import 'calls/call.dart';

@@ -21,7 +21,7 @@ import 'package:flutter/material.dart' as fm;
 import 'package:flutter/painting.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import 'common.dart';
+import 'common_flutter.dart';
 
 class Dancer extends DancerModel {
 

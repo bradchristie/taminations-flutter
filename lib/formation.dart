@@ -17,8 +17,13 @@
  *     along with Taminations.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import 'common.dart';
-import 'formations.g.dart';
+
+import 'package:taminations/extensions.dart';
+import 'package:xml/xml.dart';
+
+import 'dancer_model.dart';
+import 'formations.dart';
+import 'normalize_call.dart';
 import 'sequencer/call_error.dart';
 
 class Formation {
@@ -71,5 +76,19 @@ class Formation {
     var dcopy = dancers.clone();
     return Formation(name,dcopy,asymmetric: asymmetric);
   }
+
+  XmlElement toXML() => XmlElement('formation'.xml,<XmlAttribute>[
+    if (name.isNotEmpty)
+      XmlAttribute('name'.xml, name)
+    ],<XmlElement>[
+      for (var d in dancers)
+        XmlElement('dancer'.xml,<XmlAttribute>[
+          XmlAttribute('gender'.xml, d.gender==Gender.BOY ? 'boy'
+              : d.gender==Gender.GIRL ? 'girl' : 'phantom'),
+          XmlAttribute('x'.xml, d.starttx.location.x.s),
+          XmlAttribute('y'.xml, d.starttx.location.y.s),
+          XmlAttribute('angle'.xml, d.starttx.angle.toDegrees.i.s)
+        ])
+    ]);
 
 }

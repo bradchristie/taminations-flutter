@@ -21,13 +21,13 @@
 import 'package:flutter/material.dart' as fm;
 import 'package:flutter/services.dart' as fs;
 
-import '../common.dart';
+import '../common_flutter.dart';
 import '../dance_model.dart';
-import '../formations.g.dart';
+import '../formations.dart';
 import 'abbreviations_model.dart';
 import 'call_context.dart';
 import 'call_error.dart';
-import 'calls/animated_call.dart';
+import '../animated_call.dart';
 import 'calls/coded_call.dart';
 import 'calls/xml_call.dart';
 

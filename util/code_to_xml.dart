@@ -20,9 +20,9 @@
 
 import 'dart:io';
 
-import 'package:taminations/call_index.g.dart';
-import 'package:taminations/formations.g.dart';
-import 'package:taminations/moves.g.dart';
+import 'package:taminations/call_index.dart';
+import 'package:taminations/formations.dart';
+import 'package:taminations/moves.dart';
 
 void main() async {
   clean();
@@ -34,19 +34,19 @@ void main() async {
 void clean() {
   final dirs = ['b1','b2','ms','plus','a1','a2','c1','c2','c3a','c3b'];
   try {
-    Directory('assets/generated/').deleteSync(recursive: true);
+    Directory('web/xml/').deleteSync(recursive: true);
   } catch(e) {
     if (!(e is FileSystemException))
       rethrow;
   }
-  Directory('assets/generated').createSync();
+  Directory('web/xml').createSync();
   for (var dir in dirs) {
-    Directory('assets/generated/$dir').createSync();
+    Directory('web/xml/$dir').createSync();
   }
 }
 
 Future<void> writeMoves() async {
-  var movesXML = File('assets/generated/moves.g.xml').openWrite();
+  var movesXML = File('web/xml/moves.xml').openWrite();
   movesXML.writeln('<?xml version="1.0"?>');
   movesXML.writeln('<!DOCTYPE moves SYSTEM "tamination.dtd">');
   movesXML.writeln('<moves>');
@@ -63,7 +63,7 @@ Future<void> writeMoves() async {
 }
 
 Future<void> writeFormations() async {
-  var formationsXML = File('assets/generated/formations.g.xml').openWrite();
+  var formationsXML = File('web/xml/formations.xml').openWrite();
   formationsXML.writeln('<?xml version="1.0"?>');
   formationsXML.writeln('<!DOCTYPE formations SYSTEM "tamination.dtd">');
   formationsXML.writeln('<formations>');
@@ -77,8 +77,10 @@ Future<void> writeFormations() async {
 
 Future<void> writeAnimations() async {
   for (var callEntry in callIndex) {
+    if (callEntry.link.contains('ssd'))
+      continue;
     print(callEntry.title);
-    var callXML = File('assets/generated/'+callEntry.link+'.xml').openWrite();
+    var callXML = File('web/xml/'+callEntry.link+'.xml').openWrite();
     callXML.writeln('<?xml version="1.0"?>');
     callXML.writeln('<!DOCTYPE tamination SYSTEM "tamination.dtd">');
     callXML.writeln('<tamination title="${callEntry.title}">');

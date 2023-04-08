@@ -23,7 +23,7 @@ import 'package:flutter/services.dart' as fs;
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart' as pp;
 
-import '../common.dart';
+import '../common_flutter.dart';
 import '../pages/page.dart';
 import 'abbreviations_model.dart';
 

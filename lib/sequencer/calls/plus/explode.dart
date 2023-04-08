@@ -18,7 +18,7 @@
 
 */
 
-import '../../../moves.g.dart';
+import '../../../moves.dart';
 import '../common.dart';
 
 //  This is for Explode applied to a mini-wave,

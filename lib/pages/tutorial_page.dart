@@ -20,12 +20,12 @@
 
 import 'package:flutter/material.dart' as fm;
 import 'package:provider/provider.dart' as pp;
-import 'package:taminations/moves.g.dart';
-import 'package:taminations/sequencer/calls/animated_call.dart';
+import 'package:taminations/moves.dart';
+import 'package:taminations/animated_call.dart';
 
-import '../common.dart';
+import '../common_flutter.dart';
 import '../dance_model.dart';
-import '../formations.g.dart';
+import '../formations.dart';
 import 'page.dart';
 import 'practice_page.dart';
 

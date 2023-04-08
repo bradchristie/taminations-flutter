@@ -19,7 +19,7 @@
 */
 
 import '../../../dancer_model.dart';
-import '../../../formations.g.dart';
+import '../../../formations.dart';
 import '../../call_context.dart';
 import '../../call_error.dart';
 import 'fliter_actives.dart';

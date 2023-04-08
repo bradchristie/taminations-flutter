@@ -1,5 +1,5 @@
 /*
- *     Copyright 2022 Brad Christie
+ *     Copyright 2023 Brad Christie
  *
  *     This file is part of Taminations.
  *
@@ -26,6 +26,27 @@ import 'package:xml/xml.dart';
 
 //  This program generates Dart classes from the XML animations
 //  and supporting XML files
+
+const gpl = '''/*
+
+  Taminations Square Dance Animations
+  Copyright (C) 2023 Brad Christie
+
+  This program is free software: you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+
+  You should have received a copy of the GNU General Public License
+  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+*/
+''';
 
 void main() async {
   await writeMoves();
@@ -78,7 +99,7 @@ String writeOneMovement(XmlElement m) {
 Future<void> writeMoves() async {
   var movesDoc = await File('assets/src/moves.xml').readAsString()
       .then((text) => XmlDocument.parse(text));
-  var movesDart = File('lib/moves.g.dart').openWrite();
+  var movesDart = File('lib/moves.dart').openWrite();
   var movesMap = <String, String>{};
   movesDart.writeln("import 'math/movement.dart';");
   movesDart.writeln("import 'math/path.dart';");
@@ -141,7 +162,7 @@ void writeOneFormation(StringSink fDart, XmlElement f, {bool isAsymmetric=false}
 Future<void> writeFormations() async {
   var fDoc = await File('assets/src/formations.xml').readAsString()
       .then((text) => XmlDocument.parse(text));
-  var fDart = File('lib/formations.g.dart').openWrite();
+  var fDart = File('lib/formations.dart').openWrite();
   var fMap = <String,String>{};
   fDart.writeln("import 'dancer_model.dart';");
   fDart.writeln("import 'formation.dart';");
@@ -173,7 +194,7 @@ Future<void> writeFormations() async {
 //  This fetches every animation xml file
 //  and creates a corresponding file containing
 //  a list of AnimatedCall objects
-//  Also, for each directory, an index file calls_index.g.dart
+//  Also, for each directory, an index file calls_index.dart
 //  is built that maps normalized call names to lists of AnimatedCall objects
 Future<void> writeCalls() async {
   final dirs = ['b1','b2','ms','plus','a1','a2','c1','c2','c3a','c3b'];
@@ -215,14 +236,14 @@ Future<void> writeCalls() async {
       var importLinkb1 = importLink.replaceAll('ssd', 'b1');
       var importLinkb2 = importLink.replaceAll('ssd', 'b2');
       var importLinkms = importLink.replaceAll('ssd', 'ms');
-      if (cInclude.contains("import 'calls/$importLinkb1.g.dart' as b1;"))
+      if (cInclude.contains("import 'calls/$importLinkb1.dart' as b1;"))
         importLink = importLinkb1;
-      else if (cInclude.contains("import 'calls/$importLinkb2.g.dart' as b2;"))
+      else if (cInclude.contains("import 'calls/$importLinkb2.dart' as b2;"))
         importLink = importLinkb2;
-      else if (cInclude.contains("import 'calls/$importLinkms.g.dart' as ms;"))
+      else if (cInclude.contains("import 'calls/$importLinkms.dart' as ms;"))
         importLink = importLinkms;
     }
-    cInclude.add("import 'calls/$importLink.g.dart' as $dir;");
+    cInclude.add("import 'calls/$importLink.dart' as $dir;");
 
     if (dir == 'ssd')
       return;
@@ -236,12 +257,12 @@ Future<void> writeCalls() async {
     print('Building $className');
     titles[link] = callDoc.rootElement('title');
 
-    importSet.add("import '$link.g.dart';");
+    importSet.add("import '$link.dart';");
     imports.add("import '../../common_dart.dart';");
     imports.add("import '../../formation.dart';");
-    imports.add("import '../../formations.g.dart';");
-    imports.add("import '../../moves.g.dart';");
-    imports.add("import '../../sequencer/calls/animated_call.dart';");
+    imports.add("import '../../formations.dart';");
+    imports.add("import '../../moves.dart';");
+    imports.add("import '../../animated_call.dart';");
 
     var callBuffer = StringBuffer();
     callBuffer.writeln('  final List<AnimatedCall> $className = [ ');
@@ -253,7 +274,7 @@ Future<void> writeCalls() async {
         var xreflink = tam('xref-link');
         var xrefdir = xreflink.split('/').first;
         var prefix = '';
-        imports.add("import '../$xreflink.g.dart' as $xrefdir;");
+        imports.add("import '../$xreflink.dart' as $xrefdir;");
         prefix = '$xrefdir.';
         callBuffer.writeln('    $prefix${link2class(xreflink)}.where((tam) =>');
         var where = "      tam.title == '${tam('xref-title')}'";
@@ -301,7 +322,11 @@ Future<void> writeCalls() async {
           .where((param) => param.isNotEmpty).join(',');
       callBuffer.writeln('      $allParams,');
       callBuffer.writeln('      paths:[');
+      var firstPath = true;
       tam.findElements('path').forEach((path) {
+        if (!firstPath)
+          callBuffer.writeln(',\n');
+        firstPath = false;
         var paths = path.childElements.map((move) {
           var onePath = '';
           if (move.tag == 'move') {
@@ -335,10 +360,9 @@ Future<void> writeCalls() async {
           callBuffer.writeAll(paths,' +\n');
         else
           callBuffer.write('          Path()');
-        callBuffer.writeln(',\n');
         //  end of one path
       });
-      callBuffer.writeln('      ]),');  //  end of all paths for one animation
+      callBuffer.writeln('\n      ]),');  //  end of all paths for one animation
       var norm = normalizeCall(tam('title'));
       if (!callIndex.containsKey(norm))
         callIndex[norm] = [];
@@ -347,7 +371,8 @@ Future<void> writeCalls() async {
     });
     callBuffer.writeln('  ];');  //  end of animation list
 
-    var cDart = File('lib/calls/$link.g.dart').openWrite();
+    var cDart = File('lib/calls/$link.dart').openWrite();
+    cDart.writeln(gpl);
     cDart.writeAll(imports,'\n');
     cDart.writeln('\n');
     cDart.writeln(callBuffer);
@@ -356,7 +381,7 @@ Future<void> writeCalls() async {
 
   });  // end of call
 
-  var cIndexDart = File('lib/call_index.g.dart').openWrite();
+  var cIndexDart = File('lib/call_index.dart').openWrite();
   for (var line in cInclude)
     cIndexDart.writeln(line);
   cIndexDart.writeln("import 'call_entry.dart';");
@@ -374,8 +399,8 @@ Future<void> writeCalls() async {
 
   //  Generated indexes
   for (var dir in dirs) {
-    var iDart = File('lib/calls/$dir/calls_index.g.dart').openWrite();
-    iDart.writeln('import \'../../sequencer/calls/animated_call.dart\';');
+    var iDart = File('lib/calls/$dir/calls_index.dart').openWrite();
+    iDart.writeln('import \'../../animated_call.dart\';');
     importSet.forEach((imp) {
       if (imp.contains('$dir/'))
         iDart.writeln(imp.replaceFirst('$dir/', ''));

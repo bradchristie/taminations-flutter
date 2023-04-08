@@ -21,7 +21,7 @@
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:flutter/material.dart' as fm;
 import 'package:flutter/services.dart' as fs;
-import '../common.dart';
+import '../common_flutter.dart';
 
 class Abbreviation {
   String abbr;

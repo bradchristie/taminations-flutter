@@ -24,10 +24,10 @@ import 'package:provider/provider.dart' as pp;
 import 'package:taminations/sequencer/sequencer_model.dart';
 
 import '../beat_notifier.dart';
-import '../common.dart';
+import '../common_flutter.dart';
 import '../dance_model.dart';
 import 'page.dart';
-import '../call_index.g.dart';
+import '../call_index.dart';
 
 class AnimationState extends fm.ChangeNotifier {
 

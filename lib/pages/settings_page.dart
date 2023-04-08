@@ -22,7 +22,7 @@ import 'package:flutter/material.dart' as fm;
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart' as pp;
 
-import '../common.dart';
+import '../common_flutter.dart';
 import 'page.dart';
 
 //  Settings page, only used in Portrait

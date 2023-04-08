@@ -22,7 +22,7 @@ import 'package:provider/provider.dart' as pp;
 import 'package:flutter_markdown/flutter_markdown.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-import '../common.dart';
+import '../common_flutter.dart';
 import 'page.dart';
 
 class MarkdownPage extends fm.StatelessWidget {

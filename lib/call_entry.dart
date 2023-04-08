@@ -18,9 +18,7 @@
 
 */
 
-import 'calls/a1/chain_reaction.g.dart';
-
-import 'sequencer/calls/animated_call.dart';
+import 'animated_call.dart';
 
 class CallEntry {
 

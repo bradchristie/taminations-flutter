@@ -18,7 +18,7 @@
 
 */
 
-import '../../../moves.g.dart';
+import '../../../moves.dart';
 import '../common.dart';
 
 //  This class is only for the variation "Cast a Shadow, Centers go 3/4"

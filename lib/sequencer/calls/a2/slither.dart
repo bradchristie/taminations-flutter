@@ -18,7 +18,7 @@
 
 */
 
-import '../../../moves.g.dart';
+import '../../../moves.dart';
 import '../common.dart';
 
 class Slither extends Action {

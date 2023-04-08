@@ -26,7 +26,7 @@ import 'package:flutter/services.dart';
 import 'package:taminations/beat_notifier.dart';
 import 'package:taminations/sequencer/sequencer_model.dart';
 
-import 'common.dart';
+import 'common_flutter.dart';
 import 'pages/anim_list_page.dart';
 import 'pages/animation_page.dart';
 import 'pages/calls_page.dart';

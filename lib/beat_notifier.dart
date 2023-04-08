@@ -19,7 +19,7 @@
 
 import 'package:flutter/material.dart' as fm;
 import 'package:flutter/scheduler.dart';
-import 'package:taminations/common.dart';
+import 'package:taminations/common_flutter.dart';
 
 //  This class is used to
 class BeatNotifier extends fm.ChangeNotifier {

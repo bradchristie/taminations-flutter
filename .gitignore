@@ -36,11 +36,10 @@
 /coverage/
 /macos/Flutter/ephemeral/
 /macos/Flutter/GeneratedPluginRegistrant.swift
-*.g.dart
-*.g.xml
 
 # Web related
 /web/html/
+/web/xml/
 
 # Symbolication related
 app.*.symbols

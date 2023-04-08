@@ -17,7 +17,7 @@
  *     along with Taminations.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import '../../../formations.g.dart';
+import '../../../formations.dart';
 import '../common.dart';
 
 class ScootAndPlenty extends Action with CallWithParts, CallWithStars {

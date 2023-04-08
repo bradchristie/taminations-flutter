@@ -17,7 +17,7 @@
  *     along with Taminations.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import '../../../moves.g.dart';
+import '../../../moves.dart';
 import '../common.dart';
 
 //  See plus/explode.dart

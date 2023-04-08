@@ -27,7 +27,8 @@ import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
 import 'package:speech_to_text/speech_to_text.dart';
 import 'package:speech_to_text/speech_to_text_provider.dart';
 
-import '../common.dart';
+import '../common_flutter.dart';
+import '../pages/calls_page.dart';
 import '../pages/page.dart';
 import 'abbreviations_model.dart';
 import 'sequencer_model.dart';

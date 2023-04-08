@@ -20,7 +20,7 @@
 import 'package:flutter/material.dart' as fm;
 import 'package:provider/provider.dart' as pp;
 
-import '../common.dart';
+import '../common_flutter.dart';
 
 //  Widget for one full-screen display
 //  Not related to the Flutter Material Page class

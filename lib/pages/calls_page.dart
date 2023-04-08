@@ -23,9 +23,30 @@ import 'package:flutter/material.dart' as fm;
 import 'package:provider/provider.dart' as pp;
 
 import '../call_entry.dart';
-import '../common.dart';
+import '../common_flutter.dart';
 import 'page.dart';
-import '../call_index.g.dart';
+import '../call_index.dart';
+
+final _levelColor = {
+  LevelData.B1 : Color.B1,
+  LevelData.B2 : Color.B2,
+  LevelData.MS : Color.MS,
+  LevelData.BMS : Color.BMS,
+  LevelData.SSD : Color.MS,
+  LevelData.PLUS : Color.PLUS,
+  LevelData.A1 : Color.A1,
+  LevelData.A2 : Color.A2,
+  LevelData.ADV : Color.ADV,
+  LevelData.C1 : Color.C1,
+  LevelData.C2 : Color.C2,
+  LevelData.C3A : Color.C3A,
+  LevelData.C3B : Color.C3B,
+  LevelData.CHALLENGE : Color.CHALLENGE,
+  LevelData.INDEX : Color.LIGHTGRAY
+};
+extension LevelColor on LevelData {
+  Color get color => _levelColor[this]!;
+}
 
 class CallsPage extends fm.StatelessWidget {
   @override

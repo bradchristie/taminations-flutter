@@ -18,7 +18,7 @@
 
 */
 
-import 'package:taminations/moves.g.dart';
+import 'package:taminations/moves.dart';
 
 import '../common.dart';
 

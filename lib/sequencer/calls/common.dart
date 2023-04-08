@@ -18,7 +18,7 @@
 
 */
 
-export '../../common.dart';
+export '../../common_flutter.dart';
 export '../call_context.dart';
 export '../call_error.dart';
 export 'action.dart';

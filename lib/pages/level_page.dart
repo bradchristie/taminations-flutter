@@ -22,7 +22,7 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart' as fm;
 import 'package:provider/provider.dart' as pp;
 
-import '../common.dart';
+import '../common_flutter.dart';
 import 'page.dart';
 
 class LevelPage extends fm.StatelessWidget {

@@ -18,7 +18,7 @@
 
 */
 
-import 'common.dart';
+import 'common_flutter.dart';
 
 class PracticeDancer extends Dancer {
 

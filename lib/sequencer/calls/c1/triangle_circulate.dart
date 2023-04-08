@@ -18,8 +18,8 @@
 
 */
 
-import '../../../formations.g.dart';
-import '../../../moves.g.dart';
+import '../../../formations.dart';
+import '../../../moves.dart';
 import '../coded_call.dart';
 import '../common.dart';
 

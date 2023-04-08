@@ -22,9 +22,10 @@ import 'package:flutter/material.dart' as fm;
 import 'package:provider/provider.dart' as pp;
 
 import '../call_entry.dart';
-import '../common.dart';
+import '../call_index.dart';
+import '../common_flutter.dart';
+import '../pages/calls_page.dart';
 import '../pages/page.dart';
-import '../call_index.g.dart';
 
 class SequencerCallsPage extends fm.StatelessWidget {
 

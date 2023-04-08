@@ -21,7 +21,7 @@
 
 import 'package:flutter/material.dart' as fm;
 
-import 'common.dart';
+import 'common_flutter.dart';
 import 'dance_model.dart';
 
 class DancePainter extends fm.CustomPainter  {

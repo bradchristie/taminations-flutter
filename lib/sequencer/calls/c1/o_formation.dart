@@ -18,7 +18,7 @@
 
 */
 
-import '../../../formations.g.dart';
+import '../../../formations.dart';
 import '../common.dart';
 
 class OFormation extends ModifiedFormationConcept {

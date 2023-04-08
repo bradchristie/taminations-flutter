@@ -19,8 +19,8 @@
 */
 
 import 'dart:math';
-import '../../../formations.g.dart';
-import '../../../moves.g.dart';
+import '../../../formations.dart';
+import '../../../moves.dart';
 import '../action.dart';
 import '../../../math/vector.dart';
 import '../../call_context.dart';

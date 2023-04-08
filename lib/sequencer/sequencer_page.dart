@@ -21,7 +21,7 @@
 import 'package:flutter/material.dart' as fm;
 import 'package:provider/provider.dart' as pp;
 
-import '../common.dart';
+import '../common_flutter.dart';
 import '../pages/animation_page.dart';
 import '../pages/settings_page.dart';
 import '../pages/markdown_page.dart';

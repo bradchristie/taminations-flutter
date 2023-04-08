@@ -19,8 +19,8 @@
 */
 
 
-import '../../../formations.g.dart';
-import '../../../moves.g.dart';
+import '../../../formations.dart';
+import '../../../moves.dart';
 import '../common.dart';
 
 class Squeeze extends Action {

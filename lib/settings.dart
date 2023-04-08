@@ -22,8 +22,8 @@ import 'package:flutter/material.dart' as fm;
 import 'package:flutter/services.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-import 'call_index.g.dart';
-import 'common.dart';
+import 'call_index.dart';
+import 'common_flutter.dart';
 
 class Settings extends fm.ChangeNotifier {
 

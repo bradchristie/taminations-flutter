@@ -21,8 +21,8 @@
 import 'package:flutter/material.dart' as fm;
 import 'package:provider/provider.dart' as pp;
 
-import '../call_index.g.dart';
-import '../common.dart';
+import '../call_index.dart';
+import '../common_flutter.dart';
 import '../dance_model.dart';
 import 'anim_list_page.dart';
 import 'animation_page.dart';

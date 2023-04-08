@@ -17,8 +17,8 @@
  *     along with Taminations.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import '../../../formations.g.dart';
-import '../../../moves.g.dart';
+import '../../../formations.dart';
+import '../../../moves.dart';
 import '../common.dart';
 
 class Substitute extends Action {

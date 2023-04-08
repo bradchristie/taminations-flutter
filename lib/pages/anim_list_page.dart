@@ -22,12 +22,12 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart' as fm;
 import 'package:provider/provider.dart' as pp;
 import 'package:taminations/beat_notifier.dart';
-import 'package:taminations/sequencer/calls/animated_call.dart';
+import 'package:taminations/animated_call.dart';
 
 import '../call_entry.dart';
-import '../common.dart';
+import '../common_flutter.dart';
 import 'page.dart';
-import '../call_index.g.dart';
+import '../call_index.dart';
 
 enum CellType { Header, Separator, Indented, Plain }
 

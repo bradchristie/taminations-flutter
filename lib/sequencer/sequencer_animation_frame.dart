@@ -22,9 +22,8 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart' as fm;
 import 'package:provider/provider.dart' as pp;
 
-import '../common.dart';
+import '../common_flutter.dart';
 import '../pages/animation_page.dart';
-import '../pages/page.dart';
 import 'sequence_frame.dart';
 import 'sequencer_model.dart';
 

@@ -19,7 +19,7 @@
 */
 
 
-import '../../../moves.g.dart';
+import '../../../moves.dart';
 import '../common.dart';
 
 class Circulate extends Action {
