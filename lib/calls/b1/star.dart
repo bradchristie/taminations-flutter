@@ -287,6 +287,10 @@ import '../../moves.dart';
     AnimatedCall('Right-Hand Star 1/4',
       formation:Formations.EightChainThru,
       group:' ',
+      taminator: '''
+      This and the following animations assume ending in a Double
+      Pass Thru formation, as that is commonly assumed especially for singing calls.
+    ''',
       paths:[
           Forward.changehands(2) +
           Forward.changehands(2),

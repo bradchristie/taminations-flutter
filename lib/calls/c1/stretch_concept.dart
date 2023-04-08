@@ -35,6 +35,7 @@ import '../c1/zing.dart' as c1;
 import '../c2/bounce.dart' as c2;
 import '../c2/turn_to_a_line.dart' as c2;
 import '../c3a/mini_chase.dart' as c3a;
+
 import '../c3a/single_concept.dart' as c3a;
 
   final List<AnimatedCall> StretchConcept = [
@@ -492,6 +493,11 @@ import '../c3a/single_concept.dart' as c3a;
     AnimatedCall('Stretch Turn and Deal (from Lines Facing Out)',
       formation:Formations.LinesFacingOut,
       group:'Stretch',
+      taminator: '''
+    In this case the centers cannot easily move to the far center spots
+    during the call.  So instead the centers Pass Thru after
+    completing the Turn and Deal.
+    ''',
       paths:[
           UmTurnLeft.changeBeats(4).skew(-1.0,2.0) +
           ExtendLeft.scale(1.0,0.5) +

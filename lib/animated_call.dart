@@ -46,6 +46,7 @@ class AnimatedCall {
   String fractions;
   List<String> numbers;
   List<String> coupleNumbers;
+  String taminator;
 
   AnimatedCall(this.title,
       { required Formation formation,
@@ -63,7 +64,8 @@ class AnimatedCall {
         this.notForSequencer = false,
         this.noDisplay = false,
         this.numbers = const ['1', '5', '2', '6', '3', '7', '4', '8'],
-        this.coupleNumbers = const ['1', '3', '1', '3', '2', '4', '2', '4']
+        this.coupleNumbers = const ['1', '3', '1', '3', '2', '4', '2', '4'],
+        this.taminator = ''
       })
       : formation = formation.copy(), paths = paths.clone() {
     if (formation.asymmetric)
@@ -131,7 +133,9 @@ class AnimatedCall {
     if (formation.name.isEmpty)
       formation.toXML(),
     for (var p in paths)
-      p.toXML()
+      p.toXML(),
+    if (taminator.isNotEmpty)
+      XmlElement('taminator'.xml,[],[XmlText(taminator)])
   ]);
 
 }

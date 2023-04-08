@@ -29,6 +29,10 @@ import '../../moves.dart';
     AnimatedCall('Plenty',
       formation:Formations.QuarterTag,
       from:'Right-Hand Quarter Tag',parts:'5;7',
+      taminator: '''
+      Split Circulate 2 is done as one part,
+      with no re-evaluation between them.
+    ''',
       paths:[
           ExtendRight.changeBeats(5).scale(1.0,4.0) +
           ExtendLeft.changeBeats(3).scale(3.0,0.5) +

@@ -86,6 +86,10 @@ import '../../moves.dart';
         DancerModel.fromData(gender:Gender.GIRL,x:-4,y:0,angle:90),
   ]),
       group:' ',fractions:'4;3',
+      taminator: '''
+      From this formation Invert the Column 1/3 forms a Galaxy,
+      Invert the Column 2/3 forms an Hourglass.
+    ''',
       paths:[
           Forward.changeBeats(4) +
           Forward.changeBeats(3) +

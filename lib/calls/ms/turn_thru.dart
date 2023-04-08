@@ -157,6 +157,10 @@ import '../../moves.dart';
         DancerModel.fromData(gender:Gender.BOY,x:0,y:-1,angle:0),
   ]),
       from:'Quarter Tag',difficulty: 1,
+      taminator: '''
+      The Ocean Wave rule is used here.
+      The centers work with each other and not the outsides.
+    ''',
       paths:[
           Path(),
 

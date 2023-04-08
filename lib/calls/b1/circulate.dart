@@ -373,6 +373,10 @@ import '../../moves.dart';
     AnimatedCall('All 8 Circulate',
       formation:Formations.LinesFacingOut,
       from:'Lines Facing Out',fractions:'2',difficulty: 2,
+      taminator: '''
+      The result is the same as Couples Trade, but the traffic pattern
+      is different.
+    ''',
       paths:[
           RunLeft.changeBeats(4).scale(2.0,3.0),
 
@@ -403,6 +407,9 @@ import '../../moves.dart';
     AnimatedCall('All 8 Circulate',
       formation:Formations.TradeBy,
       from:'Trade By',difficulty: 3,
+      taminator: '''
+      Note that this is the same as Trade By.
+    ''',
       paths:[
           FlipLeft,
 

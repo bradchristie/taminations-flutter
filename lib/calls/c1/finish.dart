@@ -70,6 +70,10 @@ import '../../moves.dart';
     AnimatedCall('Finish Coordinate',
       formation:Formations.ColumnRHGBGB,
       group:'Finish',parts:'1;3',
+      taminator: '''
+    The first part of Coordinate is Circulate, and the second part is
+    Circulate 1/2.  So Finish Coordinate starts with Circulate 1/2.
+    ''',
       paths:[
           LeadRight.scale(0.5,1.0) +
           LeadRight.changeBeats(5).scale(3.0,1.5),

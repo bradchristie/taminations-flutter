@@ -87,6 +87,10 @@ import '../../moves.dart';
         DancerModel.fromData(gender:Gender.GIRL,x:-1,y:1,angle:270),
   ]),
       from:'Double Pass Thru',
+      taminator: '''
+      According to the definition, the last part is Couples Circulate.
+      But most dancers do a All 8 Circulate as shown here.
+    ''',
       paths:[
           ExtendLeft.scale(1.0,0.5) +
           Forward_2 +

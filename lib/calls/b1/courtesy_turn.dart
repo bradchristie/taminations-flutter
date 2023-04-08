@@ -56,6 +56,10 @@ import '../../moves.dart';
         DancerModel.fromData(gender:Gender.GIRL,x:-1,y:1,angle:90),
   ]),
       from:'Girls facing Boys',isGenderSpecific:true,
+      taminator: '''
+      This is used after a call directed at the girls, such as
+      Girls Pass Thru or Girls Square Thru 3.
+    ''',
       paths:[
           UmTurnLeft.skew(1.0,-0.5) +
           BeauWheel.scale(0.5,1.25),
@@ -101,6 +105,9 @@ import '../../moves.dart';
     AnimatedCall('All 4 Ladies make a right-hand star, turn it once around; boys Courtesy Turn your girl',
       formation:Formations.StaticSquare,
       group:' ',isGenderSpecific:true,
+      taminator: '''
+      This is also called 4 Ladies Chain All 4 Quarters
+    ''',
       paths:[
           Stand.changeBeats(6) +
           QuarterLeft.changeBeats(3).skew(0.0,-2.0) +

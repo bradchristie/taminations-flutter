@@ -176,6 +176,10 @@ import '../../moves.dart';
     AnimatedCall('Tag the Line',
       formation:Formations.TidalLineRH,
       from:'Tidal Line',difficulty: 2,
+      taminator: '''
+    Although not clear from the current definition, Tag the Line is a
+    4-dancer call.  Each side of the Tidal Line works independently.
+    ''',
       paths:[
           QuarterRight.changeBeats(2).skew(0.5,0.0) +
           Forward.changeBeats(2) +
@@ -197,6 +201,10 @@ import '../../moves.dart';
     AnimatedCall('Line of 8 Tag the Line',
       formation:Formations.TidalLineRH,
       from:'Tidal Line',difficulty: 2,
+      taminator: '''
+    Usually each group of 4 dancers works independently.
+    By adding "Line of 8", the caller tells all 8 dancers to work together.
+    ''',
       paths:[
           QuarterRight.skew(0.5,0.0) +
           Forward_3 +

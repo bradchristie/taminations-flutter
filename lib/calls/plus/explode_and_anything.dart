@@ -21,6 +21,7 @@
 import '../../animated_call.dart';
 import '../../formations.dart';
 import '../../moves.dart';
+
 import '../plus/anything_and_roll.dart' as plus;
 
   final List<AnimatedCall> ExplodeAndAnything = [
@@ -58,6 +59,11 @@ import '../plus/anything_and_roll.dart' as plus;
     AnimatedCall('Explode and Right and Left Thru',
       formation:Formations.OceanWavesRHBGGB,
       group:'Explode and',difficulty: 1,
+      taminator: '''
+      This animation shows a strict interpretation.  The dancers first
+      step forward, then turn in.  Some of the other animations show a smoother
+      motion with the dancers stepping forward and turning at the same time.
+    ''',
       paths:[
           Forward +
           QuarterRight +

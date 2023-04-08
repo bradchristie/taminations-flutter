@@ -29,6 +29,9 @@ import '../../moves.dart';
     AnimatedCall('Slide Thru',
       formation:Formations.FacingCouplesCompact,
       from:'Facing Couples',isGenderSpecific:true,difficulty: 1,
+      taminator: '''
+      Slide Thru is just Star Thru with no hands.
+    ''',
       paths:[
           ExtendLeft.changeBeats(2).scale(1.5,0.5) +
           QuarterRight.changeBeats(2).skew(1.0,0.0),
@@ -110,6 +113,9 @@ import '../../moves.dart';
     AnimatedCall('Slide Thru',
       formation:Formations.OceanWavesRHBGBG,
       from:'Ocean Waves',isGenderSpecific:true,difficulty: 2,
+      taminator: '''
+      This is an example of the Ocean Wave Rule.
+    ''',
       paths:[
           LeadRight.changeBeats(2),
 
@@ -128,6 +134,11 @@ import '../../moves.dart';
         DancerModel.fromData(gender:Gender.GIRL,x:-2,y:-1,angle:0),
   ]),
       from:'Same Sex Facing',isGenderSpecific:true,difficulty: 2,
+      taminator: '''
+    Unlike Star Thru, Slide Thru can be done facing the same sex.
+    For the boys it's a no-hands Touch a Quarter.
+    The girls pass thru and face left.
+    ''',
       paths:[
           ExtendLeft.changeBeats(2).scale(2.0,0.5) +
           QuarterRight.changeBeats(2).skew(1.0,-0.5),

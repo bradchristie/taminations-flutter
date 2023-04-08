@@ -47,6 +47,10 @@ import '../../moves.dart';
     AnimatedCall('Walk and Dodge',
       formation:Formations.OceanWavesRHBGGB,
       from:'Right-Hand Waves',difficulty: 1,notForSequencer: true,
+      taminator: '''
+    An analogy is loading a package in a mini-van.
+    The door slides open (dodger), the package goes in (walker).
+    ''',
       paths:[
           Forward_4,
 
@@ -73,6 +77,9 @@ import '../../moves.dart';
     AnimatedCall('Walk and Dodge',
       formation:Formations.ColumnRHGBGB,
       from:'Right-Hand Columns',difficulty: 2,
+      taminator: '''
+      Centers facing in must be careful to dodge and not walk.
+    ''',
       paths:[
           DodgeRight.changeBeats(4),
 
@@ -382,6 +389,10 @@ import '../../moves.dart';
     AnimatedCall('1 by 3 Walk and Dodge',
       formation:Formations.n3and_1lines4,
       from:'3 and 1 Lines #4',difficulty: 3,
+      taminator: '''
+      There are 8 different 3 and 1 lines, but only half of them
+      have the ends in tandem required for 1 by 3 Walk and Dodge.
+    ''',
       paths:[
           Forward_4,
 
@@ -400,6 +411,9 @@ import '../../moves.dart';
         DancerModel.fromData(gender:Gender.BOY,x:-2,y:-3,angle:180),
   ]),
       from:'3 and 1 Lines #5',difficulty: 3,
+      taminator: '''
+      This is the third illustrated example in the defintion.
+    ''',
       paths:[
           Forward_4,
 

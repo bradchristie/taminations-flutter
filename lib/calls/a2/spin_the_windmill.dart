@@ -50,6 +50,10 @@ import '../../moves.dart';
     AnimatedCall('Spin the Windmill Right',
       formation:Formations.QuarterTagLH,
       from:'Left-Hand Quarter Tag',parts:'3;3',
+      taminator: '''
+      The caller could say "Left Spin the Windmill Right" but the Left prefix
+      is not required because the centers are already in a left-hand wave.
+    ''',
       paths:[
           QuarterRight +
           Forward_2 +

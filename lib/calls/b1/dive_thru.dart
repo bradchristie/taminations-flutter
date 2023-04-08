@@ -65,6 +65,9 @@ import '../../moves.dart';
     AnimatedCall('Heads Wheel Around and make an Arch, Sides Dive Thru',
       formation:Formations.Promenade_2,
       group:' ',difficulty: 2,
+      taminator: '''
+      Wheel Around is in the Basic 2 program.
+    ''',
       paths:[
           BackHingeRight.changeBeats(1.25).scale(0.5,0.5) +
           HalfBackHingeRight.scale(0.5,0.5).skew(-0.35,0.35) +

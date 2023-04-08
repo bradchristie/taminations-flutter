@@ -74,6 +74,10 @@ import '../../moves.dart';
     AnimatedCall('Remake',
       formation:Formations.ColumnRHGBGB,
       from:'Right-Hand Columns',parts:'1.5;3',
+      taminator: '''
+      Note that the very centers do not trade, since this is not a
+      Grand Remake.
+    ''',
       paths:[
           HingeRight.scale(0.5,1.0) +
           Stand.changeBeats(3) +
@@ -164,6 +168,10 @@ import '../../moves.dart';
     AnimatedCall('Left Remake',
       formation:Formations.ColumnLHGBGB,
       from:'Left-Hand Columns',parts:'1.5;3',
+      taminator: '''
+      Note that the very centers do not trade, since this is not a
+      Grand Remake.
+    ''',
       paths:[
           HingeLeft.scale(0.5,1.0) +
           SwingRight.scale(0.5,0.5) +
@@ -522,6 +530,9 @@ import '../../moves.dart';
     AnimatedCall('Remake the Thar',
       formation:Formations.TharRHBoys,
       from:'Thar',parts:'1.5;3',
+      taminator: '''Note that this starts with the left hand.  Unlike Remake,
+      the caller does not need to say "Left Remake the Thar".
+    ''',
       paths:[
       Path.fromMovement(Movement.fromData(beats: 1.5, hands: Hands.LEFT, cx1: 0.55, cy1: 0, cx2: 1, cy2: 0.45, x2: 1, y2: 1, cx3: .265, cx4: .52, cy4: .105, x4: .707, y4: .293  )) +
           SwingRight.scale(0.707,0.707) +

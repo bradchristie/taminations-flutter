@@ -29,6 +29,11 @@ import '../../moves.dart';
     AnimatedCall('Bend the Line and Roll',
       formation:Formations.NormalLines,
       from:'Normal Lines',group:' ',difficulty: 2,
+      taminator: '''
+    After learning Hinge and Roll, Trade and Roll, it's easy to get
+    the mistaken feeling that Roll means "face your partner".  Learn Bend the Line
+    and Roll and others so you know what Roll really means.
+    ''',
       paths:[
           HingeRight.skew(0.0,-1.0) +
           QuarterRight,
@@ -71,6 +76,9 @@ import '../../moves.dart';
     AnimatedCall('Chase Right and Roll',
       formation:Formations.LinesFacingOut,
       group:' ',difficulty: 3,
+      taminator: '''
+      Only the dancers being chased can roll.
+    ''',
       paths:[
           UmTurnRight.changeBeats(1.5).skew(-1.0,0.0) +
           Forward +
@@ -92,6 +100,9 @@ import '../../moves.dart';
     AnimatedCall('Cloverleaf and Roll',
       formation:Formations.CompletedDoublePassThru,
       group:' ',difficulty: 3,
+      taminator: '''
+      CALLERLAB has ruled that only the trailers can roll.
+    ''',
       paths:[
           LeadRight +
           LeadRight.changeBeats(2).scale(1.5,1.5) +
@@ -460,6 +471,9 @@ import '../../moves.dart';
     AnimatedCall('Scoot Back and Roll',
       formation:Formations.OceanWavesRHBGBG,
       from:'Right-Hand Waves',group:' ',difficulty: 2,notForSequencer: true,
+      taminator: '''Note that the scooters do not roll as they are moving
+    straight ahead at the end of the call.
+    ''',
       paths:[
           ExtendRight.changeBeats(1.5).scale(2.0,0.25) +
           SwingRight.scale(0.75,0.75) +

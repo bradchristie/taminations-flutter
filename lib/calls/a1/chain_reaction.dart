@@ -60,6 +60,11 @@ import '../../moves.dart';
         DancerModel.fromData(gender:Gender.GIRL,x:0,y:-1,angle:180),
   ]),
       from:'Left-Hand Quarter Tag',fractions:'3;1.5;2',
+      taminator: '''
+      The outside beau (#1) must wait for the very center to pass through,
+      and then hinge to form the left-hand star.  If the outside beau just
+      moves forward and tries to make a right-hand star the call will fail.
+    ''',
       paths:[
           Stand.changeBeats(3) +
           HingeRight.skew(1.0,0.0) +

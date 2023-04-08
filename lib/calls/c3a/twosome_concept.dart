@@ -29,6 +29,9 @@ import '../../moves.dart';
     AnimatedCall('Couples Twosome Circulate',
       formation:Formations.TwomFacedLinesRH,
       group:'Couples Twosome',
+      taminator: '''
+      Many Twosome moves are danced like a Turn and Deal.
+    ''',
       paths:[
           Forward_4.changeBeats(5),
 
@@ -98,6 +101,9 @@ import '../../moves.dart';
         DancerModel.fromData(gender:Gender.BOY,x:2,y:-1,angle:180),
   ]),
       group:'Couples Twosome',
+      taminator: '''
+      Same as Turn and Deal
+    ''',
       paths:[
           LeadRight +
           QuarterRight.skew(1.0,0.0),

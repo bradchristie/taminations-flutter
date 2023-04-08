@@ -52,6 +52,9 @@ import '../../moves.dart';
     AnimatedCall('Bounce the Girls',
       formation:Formations.TwomFacedLinesRH,
       group:' ',isGenderSpecific:true,parts:'2',
+      taminator: '''
+      Note that the girls turn back in the direction of the veer.
+    ''',
       paths:[
           ExtendRight.changeBeats(2).changehands(1).scale(1.0,2.0),
 
@@ -67,6 +70,9 @@ import '../../moves.dart';
     AnimatedCall('Bounce the Leaders',
       formation:Formations.TwomFacedLinesRH,
       group:' ',parts:'2',
+      taminator: '''
+      The dancers who Bounce are the leaders before the veer.
+    ''',
       paths:[
           ExtendRight.changeBeats(2).changehands(1).scale(1.0,2.0),
 

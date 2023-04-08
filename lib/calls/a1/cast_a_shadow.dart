@@ -52,6 +52,10 @@ import '../../moves.dart';
     AnimatedCall('Cast a Shadow',
       formation:Formations.OceanWavesLHGBBG,
       from:'Left-Hand Waves',
+      taminator: '''
+      The center facing out need to cloverleaf far enough to go around
+      the ends as they do their arm turn.
+    ''',
       paths:[
           UmTurnRight.changeBeats(.5).skew(0.0,-0.75) +
           Forward_2.changeBeats(1) +

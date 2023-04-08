@@ -80,6 +80,10 @@ import '../../moves.dart';
         DancerModel.fromData(gender:Gender.GIRL,x:-2,y:-3,angle:0),
   ]),
       from:'3 and 1 Lines, Right-Hand Centers',parts:'4;2;3',difficulty: 3,
+      taminator: '''
+      Not officially in the Plus program, but can be workshopped,
+      or called at higher levels.
+    ''',
       paths:[
           ExtendLeft.changeBeats(2).scale(2.0,0.5) +
           ExtendRight.changeBeats(2).scale(2.0,0.5) +
@@ -107,6 +111,10 @@ import '../../moves.dart';
     AnimatedCall('Coordinate',
       formation:Formations.n3and_1lines2,
       from:'3 and 1 Lines, Left-Hand Centers',parts:'4;2;3',difficulty: 3,
+      taminator: '''
+      Not officially in the Plus program, but can be workshopped,
+      or called at higher levels.
+    ''',
       paths:[
           ExtendLeft.changeBeats(2).scale(2.0,0.5) +
           ExtendRight.changeBeats(2).scale(2.0,0.5) +
@@ -134,6 +142,10 @@ import '../../moves.dart';
     AnimatedCall('Coordinate',
       formation:Formations.NormalLines,
       from:'Normal Lines',parts:'4;2;3',difficulty: 3,
+      taminator: '''
+      Not officially in the Plus program, but can be workshopped,
+      or called at higher levels.
+    ''',
       paths:[
           ExtendLeft.changeBeats(2).scale(2.0,0.5) +
           ExtendRight.changeBeats(2).scale(2.0,0.5) +
@@ -162,6 +174,10 @@ import '../../moves.dart';
     AnimatedCall('Coordinate',
       formation:Formations.LinesFacingOut,
       from:'Lines Facing Out',parts:'4;1;3',difficulty: 3,
+      taminator: '''
+      Not officially in the Plus program, but can be workshopped,
+      or called at higher levels.
+    ''',
       paths:[
           LeadLeft.changeBeats(2).scale(1.5,3.0) +
           LeadLeft.changeBeats(2).scale(3.0,2.5) +
@@ -191,6 +207,10 @@ import '../../moves.dart';
     AnimatedCall('Coordinate',
       formation:Formations.TmBoneDLDL,
       from:'T-Bones 1',parts:'4;1;3',difficulty: 3,
+      taminator: '''
+      Not officially in the Plus program, but can be workshopped,
+      or called at higher levels.
+    ''',
       paths:[
           RunLeft.changeBeats(4).scale(2.0,3.0) +
           Forward +
@@ -214,6 +234,10 @@ import '../../moves.dart';
     AnimatedCall('Coordinate',
       formation:Formations.TmBoneRDRD,
       from:'T-Bones 2',parts:'4;1;3',difficulty: 3,
+      taminator: '''
+      Not officially in the Plus program, but can be workshopped,
+      or called at higher levels.
+    ''',
       paths:[
           RunRight.changeBeats(4).scale(2.0,3.0) +
           Forward +
@@ -237,6 +261,10 @@ import '../../moves.dart';
     AnimatedCall('Coordinate',
       formation:Formations.TmBoneLDLD,
       from:'T-Bones 3',parts:'4;1;3',difficulty: 3,
+      taminator: '''
+      Not officially in the Plus program, but can be workshopped,
+      or called at higher levels.
+    ''',
       paths:[
           RunRight.changeBeats(4) +
           Forward +
@@ -261,6 +289,10 @@ import '../../moves.dart';
     AnimatedCall('Coordinate',
       formation:Formations.TmBoneDRDR,
       from:'T-Bones 4',parts:'4;1;3',difficulty: 3,
+      taminator: '''
+      Not officially in the Plus program, but can be workshopped,
+      or called at higher levels.
+    ''',
       paths:[
           RunLeft.changeBeats(4).scale(2.0,3.0) +
           Forward +

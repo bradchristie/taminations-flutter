@@ -184,6 +184,9 @@ import '../../moves.dart';
     AnimatedCall('Load the Boat',
       formation:Formations.TidalWaveRHBGGB,
       from:'Tidal Wave',parts:'1.5;3;3',difficulty: 2,
+      taminator: '''
+      This is an application of the Ocean Wave Rule.
+    ''',
       paths:[
           ExtendRight.changeBeats(1.5).scale(1.0,0.5) +
           LeadRight.changeBeats(3).scale(2.5,3.5) +

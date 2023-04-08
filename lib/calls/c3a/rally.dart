@@ -137,6 +137,10 @@ import '../../moves.dart';
     AnimatedCall('Scoot and Rally',
       formation:Formations.QuarterTagLH,
       from:'Left-Hand 1/4 Tag',parts:'5;3',
+      taminator: '''
+      For Scoot and Rally, the outsides quarter to the direction of the handhold
+      after the Scoot Back.
+    ''',
       paths:[
           Forward.scale(1.5,1.0) +
           SwingLeft.scale(0.75,0.75) +

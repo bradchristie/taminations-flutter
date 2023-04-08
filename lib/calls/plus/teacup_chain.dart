@@ -238,6 +238,11 @@ import '../../moves.dart';
     AnimatedCall('Beer Mug Chain',
       formation:Formations.StaticSquare,
       from:'Static Square',fractions:'7;7;10',difficulty: 3,
+      taminator: '''This extension is the mirror of the Teacup Chain.  Typically called as
+    "Head Men Center, Side Men to the Left for a Beer Mug Chain".
+    Note that all start with the left hand, and finish with a reverse wheel around
+    or reverse courtesy turn.
+    ''',
       paths:[
           PullRight.changeBeats(2).scale(3.0,1.75) +
           HingeLeft.scale(0.75,0.75) +
@@ -289,6 +294,15 @@ import '../../moves.dart';
     AnimatedCall('Tea Mug Chain',
       formation:Formations.StaticSquare,
       from:'Static Square',fractions:'7;7;10',difficulty: 3,
+      taminator: '''
+    Here the heads start a Teacup Chain, while the sides start a Beer Mug Chain.
+    This is more challenging for the non-designated dancers, who need to turn
+    both belles and beaus.  Note that the head boys need to turn dancers
+    coming from both the left and the right, and the side girls need to send
+    dancers to both the left and right.
+    This might be called as "Head Ladies Center, Side Men Left for a
+    Tea Mug Chain".
+    ''',
       paths:[
           QuarterRight.changeBeats(2).skew(-0.75,-1.0) +
           CastLeft.scale(0.75,0.75) +

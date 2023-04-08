@@ -158,6 +158,11 @@ import '../../moves.dart';
     AnimatedCall('Triple Box Pass In',
       formation:Formations.PhantomLinesIn,
       group:'Triple Box',
+      taminator: '''
+      Triple Box calls are always done in a box of 4.
+      Other dancers are ignored.
+      So here all dancers turn to face the center of their box.
+    ''',
       paths:[
           ExtendLeft.changeBeats(2).scale(2.0,0.5) +
           LeadRight.scale(1.0,0.5),

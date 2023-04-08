@@ -29,6 +29,8 @@ import '../../moves.dart';
     AnimatedCall('Flip Back to a Wave',
       formation:Formations.WaveRH,
       from:'Right-Hand Wave',fractions:'5.5',
+      taminator: '''Note that the outside dancers adjust so they do not finish offset.
+    ''',
       paths:[
           HingeRight +
           Forward_4 +

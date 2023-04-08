@@ -109,6 +109,11 @@ import '../../moves.dart';
     AnimatedCall('Peel and Trail',
       formation:Formations.DoublePassThru,
       from:'Double Pass Thru',
+      taminator: '''
+      Some dancers in the trailing position perform a partner trade, with the
+      beau passing in front of the belle.  This animation shows the movement
+      as defined, with the belle passing in front of the beau.
+    ''',
       paths:[
           FlipRight.skew(1.0,0.0),
 
@@ -122,6 +127,11 @@ import '../../moves.dart';
     AnimatedCall('Peel and Trail',
       formation:Formations.CompletedDoublePassThru,
       from:'Completed Double Pass Thru',
+      taminator: '''
+      Some dancers in the trailing position perform a partner trade, with the
+      beau passing in front of the belle.  This animation shows the movement
+      as defined, with the belle passing in front of the beau.
+    ''',
       paths:[
           RunRight.skew(-1.0,0.0),
 

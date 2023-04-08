@@ -362,6 +362,9 @@ import '../../moves.dart';
     AnimatedCall('Cross Trail Thru the K',
       formation:Formations.NormalLines,
       from:'Lines',group:'  ',fractions:'5',
+      taminator: '''
+			This is the same as Cross the K
+		''',
       paths:[
           ExtendLeft.changeBeats(2).scale(2.0,0.5) +
           ExtendRight.changeBeats(2).scale(1.0,2.5) +

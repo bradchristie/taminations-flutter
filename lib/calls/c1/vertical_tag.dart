@@ -72,6 +72,8 @@ import '../../moves.dart';
         DancerModel.fromData(gender:Gender.GIRL,x:-1,y:2,angle:270),
   ]),
       from:'Left-Hand Box',
+      taminator: '''Note that the dancers pass right shoulders.
+    ''',
       paths:[
           UmTurnLeft.changeBeats(2).skew(0.0,0.5) +
           Forward_2 +
@@ -125,6 +127,7 @@ import '../../moves.dart';
         DancerModel.fromData(gender:Gender.GIRL,x:-1,y:1.5,angle:270),
   ]),
       from:'Facing Couples',
+      taminator: '''Compare this with Belles Cross.''',
       paths:[
           DodgeRight.changeBeats(2).scale(1.0,0.25) +
           DodgeLeft.changeBeats(2).scale(1.0,0.25),
@@ -146,6 +149,7 @@ import '../../moves.dart';
     AnimatedCall('Vertical 1/2 Tag',
       formation:Formations.BoxRH,
       from:'Right-Hand Box',
+      taminator: '''Compare with Box Circulate''',
       paths:[
           Forward_4.changeBeats(3),
 

@@ -34,6 +34,8 @@ import '../../moves.dart';
         DancerModel.fromData(gender:Gender.GIRL,x:-1,y:-3,angle:90),
   ]),
       from:'Right-Hand Columns',
+      taminator: '''Note that the Slither is blended into the end of Cast Off 3/4.
+    ''',
       paths:[
           FlipRight.changeBeats(2).scale(1.0,1.5) +
           Forward_5 +
@@ -60,6 +62,8 @@ import '../../moves.dart';
     AnimatedCall('Checkover',
       formation:Formations.ColumnLHGBGB,
       from:'Left-Hand Columns',
+      taminator: '''Note that the Slither is blended into the end of Cast Off 3/4.
+    ''',
       paths:[
           Forward_2 +
           HingeLeft.scale(0.5,1.0) +

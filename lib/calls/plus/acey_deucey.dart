@@ -684,6 +684,8 @@ import '../../moves.dart';
     AnimatedCall('Acey Deucey Once and a Half',
       formation:Formations.OceanWavesRHBGGB,
       from:'Right-Hand Waves',fractions:'4',difficulty: 2,
+      taminator: '''A common variation.
+      Note that the center 4 dancers form a diamond.''',
       paths:[
           Forward_4 +
           LeadRight.changeBeats(2).scale(3.0,3.0),

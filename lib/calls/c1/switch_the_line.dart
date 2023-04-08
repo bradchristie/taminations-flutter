@@ -27,6 +27,7 @@ import '../../moves.dart';
     AnimatedCall('Switch the Line',
       formation:Formations.WaveRH,
       from:'Right-Hand Wave',
+      taminator: '''Same as Switch the Wave (A-2)''',
       paths:[
           RunRight.changeBeats(6).scale(1.0,2.0),
 
@@ -45,6 +46,7 @@ import '../../moves.dart';
     AnimatedCall('Switch the Line',
       formation:Formations.WaveLH,
       from:'Left-Hand Wave',
+      taminator: '''Same as Switch the Wave (A-2)''',
       paths:[
           RunLeft.changeBeats(6).scale(1.0,2.0),
 

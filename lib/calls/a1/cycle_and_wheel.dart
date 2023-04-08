@@ -43,6 +43,10 @@ import '../../moves.dart';
     AnimatedCall('Cycle and Wheel',
       formation:Formations.n3and_1lines2,
       from:'3 and 1 lines #2',
+      taminator: '''
+      Not a recommended formation, as all the dancers are trying
+      squeeze into the center
+    ''',
       paths:[
           RunRight.changeBeats(4).skew(1.0,-2.0),
 
@@ -57,6 +61,10 @@ import '../../moves.dart';
     AnimatedCall('Cycle and Wheel',
       formation:Formations.n3and_1lines3,
       from:'3 and 1 lines #3',
+      taminator: '''
+      Not a recommended formation, as all the dancers are trying
+      squeeze into the center
+    ''',
       paths:[
           RunRight.changeBeats(4).changehands(2).scale(1.0,2.0).skew(1.0,0.0),
 
@@ -176,6 +184,10 @@ import '../../moves.dart';
     AnimatedCall('Cycle and Wheel',
       formation:Formations.InvertedLinesEndsFacingIn,
       from:'Inverted Lines Ends Facing In',
+      taminator: '''
+      Not a recommended formation, as all the dancers are trying
+      squeeze into the center
+    ''',
       paths:[
           RunRight.changeBeats(4).skew(1.0,-2.0),
 

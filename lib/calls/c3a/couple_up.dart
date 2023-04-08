@@ -107,6 +107,9 @@ import '../../moves.dart';
     AnimatedCall('Counter Couple Up',
       formation:Formations.OceanWavesRHBGGB,
       group:'  ',parts:'4',
+      taminator: '''
+      This is an application of the C-2 Anything Concept.
+    ''',
       paths:[
           CounterRotateRight_5_m1.changeBeats(4),
 
@@ -122,6 +125,9 @@ import '../../moves.dart';
     AnimatedCall('Split Counter Couple Up',
       formation:Formations.OceanWavesRHBGGB,
       group:'  ',parts:'3',
+      taminator: '''
+      This is an application of the C-2 Anything Concept.
+    ''',
       paths:[
           CounterRotateRight_2_0.changeBeats(3).changehands(2).skew(1.0,0.0),
 
@@ -137,6 +143,9 @@ import '../../moves.dart';
     AnimatedCall('Trade Couple Up',
       formation:Formations.OceanWavesRHBGGB,
       group:'  ',parts:'4',
+      taminator: '''
+      This is an application of the C-2 Anything Concept.
+    ''',
       paths:[
           Forward +
           ExtendRight.changeBeats(3).scale(3.0,2.0) +

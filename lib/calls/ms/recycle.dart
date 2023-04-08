@@ -27,6 +27,9 @@ import '../../moves.dart';
     AnimatedCall('Recycle',
       formation:Formations.WaveRH,
       from:'Right-Hand Wave',difficulty: 1,
+      taminator: '''
+      Do NOT hold hands during this call.
+    ''',
       paths:[
           RunRight.changeBeats(4).skew(1.5,-2.0),
 
@@ -47,6 +50,9 @@ import '../../moves.dart';
     AnimatedCall('Recycle',
       formation:Formations.OceanWavesRHBGGB,
       from:'Right-Hand Waves',difficulty: 1,
+      taminator: '''
+      Keep your hands to yourself until the end of the call.
+    ''',
       paths:[
           RunRight.changeBeats(4).skew(1.0,-2.0),
 
@@ -62,6 +68,9 @@ import '../../moves.dart';
     AnimatedCall('Recycle',
       formation:Formations.OceanWavesLHGBBG,
       from:'Left-Hand Waves',difficulty: 1,
+      taminator: '''
+      Do not hold, pull, push, or drag any other dancer.
+    ''',
       paths:[
           RunLeft.changeBeats(4).skew(1.0,2.0),
 

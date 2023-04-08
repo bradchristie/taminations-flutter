@@ -107,6 +107,11 @@ import '../../moves.dart';
     AnimatedCall('Crossfire',
       formation:Formations.LinesFacingOut,
       from:'Lines Facing Out',difficulty: 2,
+      taminator: '''
+      There is some controversy over this particular case.
+      The alternative treats Crossfire as a strictly 4-dancer call,
+      so this case ends in a double pass thru formation.
+    ''',
       paths:[
           RunLeft.changeBeats(5).scale(1.0,2.0).skew(1.0,0.0),
 

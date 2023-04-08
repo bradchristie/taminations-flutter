@@ -21,6 +21,7 @@
 import '../../animated_call.dart';
 import '../../formations.dart';
 import '../../moves.dart';
+
 import '../a2/all_4_all_8.dart' as a2;
 
   final List<AnimatedCall> TurnAndDeal = [
@@ -363,6 +364,10 @@ import '../a2/all_4_all_8.dart' as a2;
     AnimatedCall('Left Turn and Deal',
       formation:Formations.TwomFacedLineLH,
       from:'Left-Hand Two-Faced Line',
+      taminator: '''
+      This variation is also called Left Shoulder Turn and Deal, and is
+      often called from Left-Hand Two-Faced Lines.
+    ''',
       paths:[
           UmTurnLeft.changeBeats(4).skew(1.5,2.0),
 

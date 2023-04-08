@@ -393,6 +393,10 @@ import '../../moves.dart';
         DancerModel.fromData(gender:Gender.GIRL,x:-1,y:3,angle:270),
   ]),
       group:' ',
+      taminator: '''
+    Starting with the 4 men in a star, this animation shows "Pick up your partner
+    and Star Promenade".
+    ''',
       paths:[
           HingeLeft.changeBeats(3) +
           HingeLeft.changeBeats(3).changehands(3) +

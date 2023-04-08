@@ -72,6 +72,9 @@ import '../../moves.dart';
     AnimatedCall('Pass Thru',
       formation:Formations.OceanWavesRHBGGB,
       from:'Ocean Waves',difficulty: 2,
+      taminator: '''
+      Note that the new centers end facing each other, and do not form a wave.
+    ''',
       paths:[
           ExtendRight.changeBeats(2).scale(1.0,2.0),
 

@@ -78,6 +78,9 @@ import '../../moves.dart';
         DancerModel.fromData(gender:Gender.BOY,x:0,y:-1,angle:90),
   ]),
       group:'Funny',isGenderSpecific:true,parts:'3;3;3;3;3;3;3;3',
+      taminator: '''
+      This is a drill that reportedly was created by Lee Kopman.
+    ''',
       paths:[
           Stand.changeBeats(3) +
           Stand.changeBeats(3) +

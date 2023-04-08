@@ -94,6 +94,10 @@ import '../../moves.dart';
     AnimatedCall('Right and Left Thru',
       formation:Formations.OceanWavesRHBGGB,
       from:'Right-Hand Waves',isGenderSpecific:true,parts:'2',difficulty: 1,
+      taminator: '''
+      Common after Spin the Top.
+      This is an example of the Ocean Wave Rule.
+    ''',
       paths:[
           ExtendRight.changeBeats(2).scale(1.0,2.0) +
           BeauWheel.scale(0.5,1.0),
@@ -111,6 +115,10 @@ import '../../moves.dart';
     AnimatedCall('Right and Left Thru',
       formation:Formations.TidalWaveRHBGGB,
       from:'Tidal Wave',isGenderSpecific:true,parts:'2',difficulty: 1,
+      taminator: '''
+      Another example of the Ocean Wave Rule.
+      This is common after Spin the Top.
+    ''',
       paths:[
           ExtendRight.changeBeats(2).scale(2.0,0.5) +
           BeauWheel.scale(0.67,1.0),

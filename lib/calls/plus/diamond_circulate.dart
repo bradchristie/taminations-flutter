@@ -47,6 +47,9 @@ import '../../moves.dart';
     AnimatedCall('Diamond Circulate',
       formation:Formations.DiamondFacingRH,
       from:'Facing Diamond, Right-Hand Centers',difficulty: 2,
+      taminator: '''
+    Note that dancers pass right shoulders.
+    ''',
       paths:[
           LeadLeftPassing.changeBeats(3).scale(1.0,3.0),
 
@@ -56,6 +59,10 @@ import '../../moves.dart';
     AnimatedCall('Diamond Circulate',
       formation:Formations.DiamondFacing,
       from:'Facing Diamond, Left-Hand Centers',difficulty: 2,
+      taminator: '''
+    Again, dancers pass right shoulders.
+    Note that the flow is slightly different than the previous animation.
+    ''',
       paths:[
           LeadRightPassing.changeBeats(3).scale(1.0,3.0),
 
@@ -78,6 +85,10 @@ import '../../moves.dart';
     AnimatedCall('Diamond Circulate',
       formation:Formations.DiamondsLHGirlPoints,
       from:'Left-Hand Diamonds',difficulty: 1,
+      taminator: '''
+    The new points need to resist the temptation to turn around and
+    point the right shoulder in.
+    ''',
       paths:[
           LeadLeft.changeBeats(3).scale(3.0,1.0),
 
@@ -117,6 +128,9 @@ import '../../moves.dart';
     AnimatedCall('Diamond Circulate',
       formation:Formations.DiamondsRHPTPGirlPoints,
       from:'Right-Hand Point-to-Point Diamonds',difficulty: 2,
+      taminator: '''
+    Be careful to keep the Point-to-Point Diamonds formation.
+    ''',
       paths:[
           LeadRight.changeBeats(3).scale(2.0,1.0),
 
@@ -179,6 +193,10 @@ import '../../moves.dart';
     AnimatedCall('Diamond Circulate',
       formation:Formations.Diamonds_3and_1,
       from:'Diamonds with Center Two-Faced Line',difficulty: 3,
+      taminator: '''
+    In this case two dancers are circulating to the same spot.
+    So the Same Position Rule applies and they join right hands.
+    ''',
       paths:[
           ExtendLeft.changeBeats(1.5).scale(2.0,0.5) +
           LeadRight.changeBeats(1.5).scale(2.0,1.5),

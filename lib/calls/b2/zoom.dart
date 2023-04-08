@@ -49,6 +49,9 @@ import '../../moves.dart';
     AnimatedCall('Zoom',
       formation:Formations.CompletedDoublePassThru,
       from:'Completed Double Pass Thru',fractions:'2',difficulty: 2,
+      taminator: '''
+    One analogy of Zoom is two people on a tandem bicycle changing seats.
+    ''',
       paths:[
           RunRight.changeBeats(2).skew(-1.0,0.0) +
           RunRight.changeBeats(2).skew(1.0,0.0),
@@ -64,6 +67,11 @@ import '../../moves.dart';
     AnimatedCall('Zoom',
       formation:Formations.DoublePassThru,
       from:'Double Pass Thru',fractions:'2',difficulty: 1,
+      taminator: '''
+    Another analogy is a driver and back-seat passenger changing places in a car.
+    The driver gets out the front and gets in the back,
+    while the passenger climbs over the seat.
+    ''',
       paths:[
           Forward_2.changeBeats(4).changehands(2),
 

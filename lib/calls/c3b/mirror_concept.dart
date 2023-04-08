@@ -25,6 +25,7 @@ import '../../formations.dart';
 import '../../moves.dart';
 import '../c3b/lift_off.dart' as c3b;
 import '../c3b/rip_off.dart' as c3b;
+
 import '../c3b/swap_the_top.dart' as c3b;
 
   final List<AnimatedCall> MirrorConcept = [
@@ -64,6 +65,11 @@ import '../c3b/swap_the_top.dart' as c3b;
         DancerModel.fromData(gender:Gender.GIRL,x:-2,y:-1,angle:0),
   ]),
       from:'Lines',group:'Mirror',fractions:'3',
+      taminator: '''
+    If you are uncertain about any of these Mirror animations, hold a
+    mirror to the side and look at the animation through the mirror.
+    You will see the "normal" version of the call.
+    ''',
       paths:[
           PullRight.changeBeats(1.5).scale(2.0,0.5) +
           ExtendLeft.changeBeats(1.5).scale(2.0,0.5) +

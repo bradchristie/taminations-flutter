@@ -21,6 +21,7 @@
 import '../../animated_call.dart';
 import '../../formations.dart';
 import '../../moves.dart';
+
 import '../plus/follow_your_neighbor.dart' as plus;
 
   final List<AnimatedCall> AnythingAndSpread = [
@@ -179,6 +180,10 @@ import '../plus/follow_your_neighbor.dart' as plus;
     AnimatedCall('Hinge and Spread',
       formation:Formations.OceanWavesRHBGGB,
       from:'Right-Hand Waves',group:' ',difficulty: 3,
+      taminator: '''
+      This looks like a nice call, but I've never seen it used,
+      and doubt many dancers would know how to do it.
+    ''',
       paths:[
           QuarterRight.changeBeats(2).skew(-1.0,-1.0),
 

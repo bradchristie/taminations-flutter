@@ -39,6 +39,7 @@ import '../c2/cross_the_k.dart' as c2;
 import '../c2/peel_to_a_diamond.dart' as c2;
 import '../c2/turn_to_a_line.dart' as c2;
 import '../c3a/couple_up.dart' as c3a;
+
 import '../c3a/mini_chase.dart' as c3a;
 
   final List<AnimatedCall> ConcentricConcept = [
@@ -46,6 +47,9 @@ import '../c3a/mini_chase.dart' as c3a;
     AnimatedCall('Concentric Box Counter Rotate',
       formation:Formations.MagicColumnRH,
       group:'(From columns) Concentric',
+      taminator: '''
+    Same as Counter Rotate
+    ''',
       paths:[
           CounterRotateLeft_4_m2.changeBeats(5).changehands(1),
 
@@ -423,6 +427,9 @@ import '../c3a/mini_chase.dart' as c3a;
     AnimatedCall('Concentric Star Thru',
       formation:Formations.DoublePassThru,
       group:'(From columns) Concentric',isGenderSpecific:true,
+      taminator: '''
+    I confess.  This is just a copy of the Concentric Slide Thru animation.
+    ''',
       paths:[
           ExtendLeft.changeBeats(3).scale(3.0,2.5) +
           QuarterRight.changeBeats(2).skew(1.0,-0.5),

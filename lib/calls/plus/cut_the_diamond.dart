@@ -124,6 +124,10 @@ import '../../moves.dart';
     AnimatedCall('Cut the Diamond',
       formation:Formations.DiamondsFacingLHGirlPoints,
       from:'Facing Diamonds, Left-Hand Wave',difficulty: 2,
+      taminator: '''
+      Centers circulate on the outside, points slide togther inside.
+      Right-shoulder rule does not apply.
+    ''',
       paths:[
           Forward_2 +
           LeadLeft,

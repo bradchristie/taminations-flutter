@@ -70,6 +70,9 @@ import '../../moves.dart';
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:-3,angle:180),
   ]),
       from:'Right-Hand Two-Faced Lines',
+      taminator: '''
+      Be sure to go one full position and not stop at 1/2 Press Ahead.
+    ''',
       paths:[
           Forward_2.changehands(2),
 
@@ -163,6 +166,9 @@ import '../../moves.dart';
     AnimatedCall('1/2 Press Ahead',
       formation:Formations.OceanWavesRHBGBG,
       from:'Right-Hand Waves',
+      taminator: '''
+    Unlike Extend, the girls do not adjust to make a couple.
+    ''',
       paths:[
           Forward_2,
 

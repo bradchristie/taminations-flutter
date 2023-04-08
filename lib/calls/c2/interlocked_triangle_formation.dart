@@ -70,6 +70,8 @@ import '../../moves.dart';
         DancerModel.fromData(gender:Gender.GIRL,x:0,y:-3,angle:180),
   ]),
       group:' ',
+      taminator: '''Turn on the Paths button to see the triangles
+    ''',
       paths:[
           LeadRight.changeBeats(4).scale(3.0,3.0),
 

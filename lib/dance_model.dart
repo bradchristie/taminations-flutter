@@ -34,7 +34,6 @@ class DanceModel extends fm.ChangeNotifier {
   static const LUDICROUSSPEED = 10.0;
 
   AnimatedCall? _call;
-  XmlElement? _tam;
   BeatNotifier beater;
   var _interactiveDancer = -1;
   var _interactiveRandom = true;
@@ -65,11 +64,8 @@ class DanceModel extends fm.ChangeNotifier {
   final _asymmetric = false;
   var _randomColors = false;
   var _practiceScore = 0.0;
-  String get animationNote =>
-      _tam?.childrenNamed('taminator').firstOrNull
-          ?.text.trim().replaceAll(r'\s+'.r, ' ') ?? '';
-  String get title => _tam?.getAttribute('title')
-      ?.replaceAll(' \\(.*?\\) '.r, ' ') ?? _call?.title ?? '';
+  String get animationNote => (_call?.taminator ?? '').replaceAll(r'\s+'.r, ' ');
+  String get title => _call?.title ?? '';
 
   //  Except for the phantoms, these are the standard colors
   //  used for teaching callers

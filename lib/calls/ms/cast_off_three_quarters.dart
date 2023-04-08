@@ -132,6 +132,10 @@ import '../../moves.dart';
     AnimatedCall('Cast Off Three Quarters',
       formation:Formations.TwomFacedLinesRH,
       from:'Right-Hand Two-Faced Lines',difficulty: 2,
+      taminator: '''
+      Remember, the centers push, the ends are the pivot.
+      Resist the instinct to turn towards the center of the square.
+    ''',
       paths:[
           QuarterLeft.changehands(2).skew(0.33,-0.33) +
           QuarterLeft.changehands(2).skew(-0.33,-0.33) +
@@ -153,6 +157,10 @@ import '../../moves.dart';
     AnimatedCall('Cast Off Three Quarters',
       formation:Formations.TwomFacedLinesLH,
       from:'Left-Hand Two-Faced Lines',difficulty: 2,
+      taminator: '''
+      Remember, the centers push, the ends are the pivot.
+      Resist the instinct to turn towards the center of the square.
+    ''',
       paths:[
           QuarterRight.changehands(1).skew(0.33,0.33) +
           QuarterRight.changehands(1).skew(-0.33,0.33) +

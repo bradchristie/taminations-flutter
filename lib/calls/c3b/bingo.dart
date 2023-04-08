@@ -210,6 +210,9 @@ import '../../moves.dart';
     AnimatedCall('Couples Twosome Bingo',
       formation:Formations.TwomFacedLinesRH,
       group:' ',
+      taminator: '''
+      This is the same as Once Removed Bingo
+    ''',
       paths:[
           LeadRight.changeBeats(4.5).scale(3.0,4.0),
 

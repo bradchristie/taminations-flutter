@@ -81,6 +81,10 @@ import '../../moves.dart';
     AnimatedCall('Peel the Top',
       formation:Formations.LeftmHandZs,
       from:'Left-Hand Zs',parts:'2',difficulty: 1,
+      taminator: '''
+      The very center girls might not start with a handhold if the
+      previous call was Girls Fold.  But Peel the Top works just the same.
+    ''',
       paths:[
           Forward_2 +
           HingeLeft.changeBeats(1.5).scale(0.5,1.0) +

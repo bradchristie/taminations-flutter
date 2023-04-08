@@ -28,6 +28,9 @@ import '../../moves.dart';
     AnimatedCall('Triple Trade',
       formation:Formations.TidalWaveRHBGGB,
       from:'Tidal Wave',
+      taminator: '''
+    The very centers always trade on a Triple Trade
+  ''',
       paths:[
           Stand.changeBeats(3).changehands(0),
 

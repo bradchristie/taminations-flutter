@@ -170,6 +170,10 @@ import '../../moves.dart';
     AnimatedCall('Peel Off',
       formation:Formations.LeftmHandZs,
       from:'Left-Hand Zs',difficulty: 1,
+      taminator: '''
+      The very center girls might not start with a handhold if the
+      previous call was Girls Fold.  But Peel Off works just the same.
+    ''',
       paths:[
           UmTurnRight.changeBeats(4).skew(2.0,0.0),
 

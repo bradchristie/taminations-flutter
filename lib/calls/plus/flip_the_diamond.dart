@@ -106,6 +106,10 @@ import '../../moves.dart';
     AnimatedCall('Flip the Diamond',
       formation:Formations.DiamondsFacingLHGirlPoints,
       from:'Facing Diamonds, Left-Hand Wave',difficulty: 2,
+      taminator: '''
+    The points take the inside path, even though they pass left shoulders
+    with the centers.
+    ''',
       paths:[
           Forward_2 +
           LeadLeft,

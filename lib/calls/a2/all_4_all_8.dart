@@ -63,6 +63,7 @@ import '../c2/turn_to_a_line.dart' as c2;
 import '../c2/wheel_the_ocean.dart' as c2;
 import '../c3a/follow_to_a_diamond.dart' as c3a;
 import '../c3a/lock_the_hinge.dart' as c3a;
+
 import '../c3a/mini_chase.dart' as c3a;
 
   final List<AnimatedCall> All4All8 = [
@@ -70,6 +71,10 @@ import '../c3a/mini_chase.dart' as c3a;
     AnimatedCall('All 4 Couples Chase Right',
       formation:Formations.StaticFacingOut,
       group:'All 4 Couples (with calls through Plus)',
+      taminator: '''
+      All 8 Chase Right may also be correct for this example.  The dancers
+      are not required to weave around the outside to avoid collisions in the center.
+    ''',
       paths:[
           RunRight.changeBeats(4).scale(1.0,1.5).skew(-1.0,0.0) +
           Forward_3 +
@@ -985,6 +990,10 @@ import '../c3a/mini_chase.dart' as c3a;
     AnimatedCall('All 8 Explode the Wave',
       formation:Formations.TharLHGirls,
       group:'All 8 (with calls through Plus)',
+      taminator: '''
+    This can be broken down to as All 8 Step Forward and Quarter In, then
+    All 4 Couples Pass Thru.
+    ''',
       paths:[
           LeadLeft.changeBeats(4).scale(2.0,1.0) +
           Forward_2 +

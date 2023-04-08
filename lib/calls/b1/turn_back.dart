@@ -147,6 +147,9 @@ import '../../moves.dart';
     AnimatedCall('Girls Backtrack',
       formation:Formations.Promenade,
       from:'Promenade',isGenderSpecific:true,
+      taminator: '''
+      Girls continue clockwise and boys counterclockwise until the next call.
+    ''',
       paths:[
           LeadLeft_12.changeBeats(2).scale(2.0,2.0),
 

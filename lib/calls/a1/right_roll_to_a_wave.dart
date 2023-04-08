@@ -23,6 +23,7 @@ import '../../common_dart.dart';
 import '../../formation.dart';
 import '../../formations.dart';
 import '../../moves.dart';
+
 import '../a2/all_4_all_8.dart' as a2;
 
   final List<AnimatedCall> RightRollToAWave = [
@@ -57,6 +58,10 @@ import '../a2/all_4_all_8.dart' as a2;
     AnimatedCall('Right Roll to a Wave',
       formation:Formations.FacingCouplesCompact,
       from:'Facing Couples',
+      taminator: '''
+      This is the same as Step to a Wave.  It emphasizes the trailer's part
+      of Right Roll to a Wave.
+    ''',
       paths:[
           ExtendLeft.changeBeats(3).scale(1.5,2.0),
 
@@ -294,6 +299,7 @@ import '../a2/all_4_all_8.dart' as a2;
     AnimatedCall('Left Roll to a Wave',
       formation:Formations.FacingCouplesCompact,
       from:'Facing Couples',
+      taminator: '''This is the same as Step to a Left-Hand Wave.''',
       paths:[
           Forward.changeBeats(3).scale(1.5,1.0),
 

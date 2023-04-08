@@ -34,6 +34,9 @@ import '../../moves.dart';
         DancerModel.fromData(gender:Gender.BOY,x:-3,y:1.5,angle:90),
   ]),
       from:'Right-Hand Waves',
+      taminator: '''
+    Click the Paths button to see the concentric circles the dancers follow.
+    ''',
       paths:[
           CounterRotateRight_4p5_m1p5.changeBeats(5),
 
@@ -104,6 +107,11 @@ import '../../moves.dart';
     AnimatedCall('Counter Rotate',
       formation:Formations.NormalLines,
       from:'Normal Lines',
+      taminator: '''
+    Tha dancers cannot follow concentric circles here because they would collide.
+    Instead, each dancer needs to know where to go, pass right shoulders
+    with the one ahead, then go to that spot.
+    ''',
       paths:[
           ExtendLeft.changeBeats(2).scale(2.0,0.5) +
           LeadRight.changeBeats(3).scale(3.0,1.5),

@@ -171,6 +171,9 @@ import '../../moves.dart';
     AnimatedCall('Head Ladies Chain Left',
       formation:Formations.StaticSquare,
       group:' ',isGenderSpecific:true,difficulty: 2,
+      taminator: '''
+      This is the same as Side Ladies Chain Right
+    ''',
       paths:[
           Stand +
           DodgeRight.changeBeats(2) +
@@ -194,6 +197,9 @@ import '../../moves.dart';
     AnimatedCall('Side Ladies Chain Left',
       formation:Formations.StaticSquare,
       group:' ',isGenderSpecific:true,difficulty: 2,
+      taminator: '''
+      This is the same as Head Ladies Chain Right
+    ''',
       paths:[
           Stand +
           DodgeRight.changeBeats(2) +

@@ -27,6 +27,9 @@ import '../../moves.dart';
     AnimatedCall('Ferris Wheel',
       formation:Formations.TwomFacedLinesRH,
       from:'Right-Handed Two-Faced Lines, strictly',difficulty: 1,
+      taminator: '''The center couples form a momentary two-faced line, following
+    the Dance action description.
+    ''',
       paths:[
           Forward_2.changehands(2) +
           RunRight.changeBeats(4).changehands(6).scale(1.0,2.0).skew(1.0,0.0),
@@ -42,6 +45,9 @@ import '../../moves.dart';
     AnimatedCall('Ferris Wheel',
       formation:Formations.TwomFacedLinesRH,
       from:'Right-Handed Two-Faced Lines',difficulty: 1,
+      taminator: '''The center dancers start the Wheel and Deal action immmediately,
+       and a two-faced line is not formed.  This is how many dancers perform this call.
+    ''',
       paths:[
           RunRight.changeBeats(4).changehands(6).scale(2.0,2.0).skew(3.0,0.0),
 

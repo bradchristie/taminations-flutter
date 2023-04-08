@@ -125,6 +125,8 @@ import '../../moves.dart';
     AnimatedCall('Zig',
       formation:Formations.n34Tag,
       from:'Three Quarters Tag',
+      taminator: '''Here the dancers adjust to form diamonds.
+    ''',
       paths:[
           QuarterRight.skew(0.0,-1.0),
 

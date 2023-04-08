@@ -114,6 +114,9 @@ import '../../moves.dart';
     AnimatedCall('Swing Thru',
       formation:Formations.TidalWaveRHBGGB,
       from:'Right-Hand Tidal Wave',parts:'3',difficulty: 2,
+      taminator: '''
+       Be careful not to do Grand Swing Thru
+    ''',
       paths:[
           SwingRight.changehands(6).scale(0.75,0.5) +
           SwingLeft.changehands(5).scale(0.75,0.5),
@@ -146,6 +149,9 @@ import '../../moves.dart';
     AnimatedCall('Swing Thru',
       formation:Formations.EightChainThru,
       from:'Eight Chain Thru',parts:'4',difficulty: 1,
+      taminator: '''
+      This is an example of the Facing Couples rule.
+    ''',
       paths:[
           ExtendLeft.scale(1.0,2.0) +
           SwingRight +
@@ -165,6 +171,11 @@ import '../../moves.dart';
     AnimatedCall('Swing Thru',
       formation:Formations.QuarterTag,
       from:'Quarter Tag',parts:'3',difficulty: 1,
+      taminator: '''
+      The center dancers do not extend to the outside dancers.
+      The Facing Couples rule does not apply
+      here because the center dancers are already in a wave.
+    ''',
       paths:[
           Path(),
 
@@ -273,6 +284,11 @@ import '../../moves.dart';
     AnimatedCall('Left Swing Thru',
       formation:Formations.FacingCouplesCompact,
       from:'Facing Couples',parts:'5',difficulty: 2,
+      taminator: '''
+      This is an example of the Facing Couples rule.
+      Because this is a Left Swing Thru, dancers first extend to
+      a Left-Hand Wave.
+    ''',
       paths:[
           Forward_2.scale(0.75,1.0) +
           SwingLeft,
@@ -349,6 +365,11 @@ import '../../moves.dart';
     AnimatedCall('Left Swing Thru',
       formation:Formations.EightChainThru,
       from:'Eight Chain Thru',parts:'4',difficulty: 2,
+      taminator: '''
+      This is an example of the Facing Couples rule.
+      Because this is a Left Swing Thru, dancers first extend to
+      a Left-Hand Wave.
+    ''',
       paths:[
           Forward +
           SwingLeft,

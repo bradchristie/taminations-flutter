@@ -642,6 +642,9 @@ import '../../moves.dart';
     AnimatedCall('Centers Cross Run',
       formation:Formations.LinesFacingOut,
       from:'Lines Facing Out',difficulty: 2,notForSequencer: true,
+      taminator: '''
+      Centers pass each other with a Half Sashay
+    ''',
       paths:[
           DodgeLeft.changeBeats(6),
 

@@ -65,6 +65,9 @@ import '../../moves.dart';
     AnimatedCall('Spin Chain Thru',
       formation:Formations.EightChainThru,
       from:'Eight Chain Thru',parts:'5;4.5;3',difficulty: 2,
+      taminator: '''
+    The Facing Couples rule applies here.
+    ''',
       paths:[
           ExtendLeft.changeBeats(2).scale(1.0,2.0) +
           SwingRight +
@@ -88,6 +91,10 @@ import '../../moves.dart';
     AnimatedCall('Left Spin Chain Thru',
       formation:Formations.EightChainThru,
       from:'Eight Chain Thru',parts:'5;4.5;3',difficulty: 3,
+      taminator: '''
+      The Facing Couples rule applies here.
+      The caller says Left so everyone steps to a left-hand wave.
+    ''',
       paths:[
           Forward.changeBeats(2) +
           SwingLeft,

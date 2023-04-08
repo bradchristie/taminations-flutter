@@ -76,6 +76,9 @@ import '../../moves.dart';
     AnimatedCall('Wheel and Deal',
       formation:Formations.TwomFacedLinesRH,
       from:'Right-Hand Two-Faced Lines',difficulty: 1,
+      taminator: '''
+      Be careful not to do a Ferris Wheel!
+    ''',
       paths:[
           RunRight.changeBeats(4).changehands(6).scale(1.0,2.0).skew(1.0,0.0),
 
@@ -89,6 +92,9 @@ import '../../moves.dart';
     AnimatedCall('Wheel and Deal',
       formation:Formations.TwomFacedLinesLH,
       from:'Left-Hand Two-Faced Lines',difficulty: 2,
+      taminator: '''
+      Be careful not to do a Ferris Wheel!
+    ''',
       paths:[
           RunLeft.changeBeats(4).changehands(5).scale(2.0,2.0).skew(1.0,0.0),
 
@@ -102,6 +108,10 @@ import '../../moves.dart';
     AnimatedCall('Wheel and Deal',
       formation:Formations.NormalLines,
       from:'Lines Facing In',difficulty: 2,
+      taminator: '''
+      This is seldom called, because everyone is trying to squeeze into the
+      center of the square.
+    ''',
       paths:[
           RunRight.changeBeats(4).changehands(6).scale(1.0,2.0).skew(1.0,0.0),
 

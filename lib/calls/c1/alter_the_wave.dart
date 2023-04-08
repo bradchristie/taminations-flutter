@@ -226,6 +226,9 @@ import '../../moves.dart';
     AnimatedCall('Left Alter the Wave',
       formation:Formations.EightChainThru,
       from:'Eight Chain Thru',parts:'5;4.5;4',
+      taminator: '''
+      "Left" tells the dancers to step to a left-hand wave.
+    ''',
       paths:[
           Forward.changeBeats(2) +
           SwingLeft +

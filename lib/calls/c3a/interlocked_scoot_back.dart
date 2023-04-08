@@ -34,6 +34,9 @@ import '../../moves.dart';
         DancerModel.fromData(gender:Gender.GIRL,x:0,y:3,angle:0),
   ]),
       from:'Right-Hand Quarter Line',
+      taminator: '''
+      Some dance this instead as Couples Twosome Scoot Back
+    ''',
       paths:[
           Forward.changeBeats(2).scale(1.5,1.0) +
           SwingRight.scale(0.5,0.5) +

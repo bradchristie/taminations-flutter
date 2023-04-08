@@ -303,6 +303,7 @@ Future<void> writeCalls() async {
       }
       else
         callBuffer.writeln('      formation:Formations.${tam('formation').id},');
+      final taminator = tam.findElements('taminator').firstOrNull?.text ?? '';
       final fromParam = tam('from').isNotBlank ? "from:'${tam('from')}'" : '';
       final groupParam = tam('group').isNotEmpty? "group:'${tam('group')}'" : '';
       final genderParam = tam('sequencer') == 'gender-specific' ? 'isGenderSpecific:true' : '';
@@ -321,6 +322,8 @@ Future<void> writeCalls() async {
         activesParam,notSequencerParam,noDisplayParam]
           .where((param) => param.isNotEmpty).join(',');
       callBuffer.writeln('      $allParams,');
+      if (taminator.isNotBlank)
+        callBuffer.writeln("      taminator: '''$taminator''',");
       callBuffer.writeln('      paths:[');
       var firstPath = true;
       tam.findElements('path').forEach((path) {

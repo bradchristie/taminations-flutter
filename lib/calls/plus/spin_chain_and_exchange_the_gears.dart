@@ -372,6 +372,8 @@ import '../../moves.dart';
     AnimatedCall('Spin Chain and Exchange the Gears, Turn the Star a Full Turn',
       formation:Formations.OceanWavesRHBGGB,
       from:'Right-Hand Waves',group:' ',parts:'3;4.5;3;6',difficulty: 2,
+      taminator: '''A common variation.
+    ''',
       paths:[
           SwingRight +
           CastLeft +

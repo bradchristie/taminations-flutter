@@ -23,6 +23,7 @@ import '../../common_dart.dart';
 import '../../formation.dart';
 import '../../formations.dart';
 import '../../moves.dart';
+
 import '../a2/single_wheel.dart' as a2;
 
   final List<AnimatedCall> SingleConcept = [
@@ -83,6 +84,9 @@ import '../a2/single_wheel.dart' as a2;
     AnimatedCall('Single Checkmate',
       formation:Formations.OceanWavesRHBGBG,
       from:'Right-Hand Waves',
+      taminator: '''
+      This has also been called Split Checkmate
+    ''',
       paths:[
           Forward_2 +
           LeadRight.changeBeats(4).scale(1.0,2.0),
@@ -193,6 +197,9 @@ import '../a2/single_wheel.dart' as a2;
     AnimatedCall('Heads Single Checkmate',
       formation:Formations.StaticSquare,
       from:'Static Square',group:' ',
+      taminator: '''
+      This has also been called Box Checkmate
+    ''',
       paths:[
           ExtendLeft.changeBeats(3).scale(3.0,0.5) +
           LeadRight.scale(1.0,0.5) +
@@ -251,6 +258,9 @@ import '../a2/single_wheel.dart' as a2;
     AnimatedCall('Tandem Single Checkmate',
       formation:Formations.ColumnRHGBGB,
       group:' ',
+      taminator: '''
+      Note how this is different from A-2 Checkmate
+    ''',
       paths:[
           RunRight.scale(1.0,1.5) +
           Forward_4 +

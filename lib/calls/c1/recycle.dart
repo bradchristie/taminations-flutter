@@ -326,6 +326,10 @@ import '../../moves.dart';
     AnimatedCall('2/3 Recycle, by definition,',
       formation:Formations.WaveRH,
       from:'Right-Hand Wave',
+      taminator: '''
+      This explicitly shows both parts,
+      but is not how experienced dancers perform the call.
+    ''',
       paths:[
           ExtendRight.changeBeats(2).scale(1.5,2.0) +
           CounterRotateRight_0_m2.changehands(2).scale(1.0,1.25).skew(-0.5,0.0),
@@ -337,6 +341,10 @@ import '../../moves.dart';
     AnimatedCall('2/3 Recycle, by definition,',
       formation:Formations.WaveLH,
       from:'Left-Hand Wave',
+      taminator: '''
+      This explicitly shows both parts,
+      but is not how experienced dancers perform the call.
+    ''',
       paths:[
           ExtendLeft.changeBeats(2).scale(1.5,2.0) +
           CounterRotateLeft_0_2.changehands(1).scale(1.0,1.25).skew(-0.5,0.0),
@@ -348,6 +356,10 @@ import '../../moves.dart';
     AnimatedCall('2/3 Recycle, by definition,',
       formation:Formations.OceanWavesRHBGGB,
       from:'Right-Hand Waves',
+      taminator: '''
+      This explicitly shows both parts,
+      but is not how experienced dancers perform the call.
+    ''',
       paths:[
           ExtendRight.changeBeats(2).scale(1.0,2.0) +
           CounterRotateRight_0_m2.changehands(2).scale(1.0,1.25),
@@ -365,6 +377,10 @@ import '../../moves.dart';
     AnimatedCall('2/3 Recycle, by definition,',
       formation:Formations.OceanWavesLHBGGB,
       from:'Left-Hand Waves',
+      taminator: '''
+      This explicitly shows both parts,
+      but is not how experienced dancers perform the call.
+    ''',
       paths:[
           ExtendLeft.changeBeats(2).scale(1.0,2.0) +
           CounterRotateLeft_0_2.changehands(1).scale(1.0,1.25),
@@ -382,6 +398,10 @@ import '../../moves.dart';
     AnimatedCall('2/3 Recycle, by definition,',
       formation:Formations.TidalWaveRHBGGB,
       from:'Right-Hand Tidal Wave',
+      taminator: '''
+      This explicitly shows both parts,
+      but is not how experienced dancers perform the call.
+    ''',
       paths:[
           ExtendRight.changeBeats(2).scale(1.5,0.5) +
           CounterRotateRight_0_m2.changehands(2).skew(-0.5,0.0),
@@ -399,6 +419,10 @@ import '../../moves.dart';
     AnimatedCall('2/3 Recycle, by definition,',
       formation:Formations.TidalWaveLHBGGB,
       from:'Left-Hand Tidal Wave',
+      taminator: '''
+      This explicitly shows both parts,
+      but is not how experienced dancers perform the call.
+    ''',
       paths:[
           ExtendLeft.changeBeats(2).scale(1.5,0.5) +
           CounterRotateLeft_0_2.changehands(1).skew(-0.5,0.0),
@@ -416,6 +440,10 @@ import '../../moves.dart';
     AnimatedCall('2/3 Recycle',
       formation:Formations.WaveRH,
       from:'Right-Hand Wave',
+      taminator: '''
+      This is how experienced dancers perform the call,
+      but does not show the call as two parts.
+    ''',
       paths:[
           LeadRight.changeBeats(4.5).scale(1.0,4.5),
 
@@ -426,6 +454,10 @@ import '../../moves.dart';
     AnimatedCall('2/3 Recycle',
       formation:Formations.WaveLH,
       from:'Left-Hand Wave',
+      taminator: '''
+      This is how experienced dancers perform the call,
+      but does not show the call as two parts.
+    ''',
       paths:[
           LeadLeft.changeBeats(4.5).scale(1.0,4.5),
 
@@ -436,6 +468,10 @@ import '../../moves.dart';
     AnimatedCall('2/3 Recycle',
       formation:Formations.OceanWavesRHBGGB,
       from:'Right-Hand Waves',
+      taminator: '''
+      This is how experienced dancers perform the call,
+      but does not show the call as two parts.
+    ''',
       paths:[
           LeadRight.changeBeats(4.5).scale(1.0,5.0),
 
@@ -449,6 +485,10 @@ import '../../moves.dart';
     AnimatedCall('2/3 Recycle',
       formation:Formations.OceanWavesLHBGGB,
       from:'Left-Hand Waves',
+      taminator: '''
+      This is how experienced dancers perform the call,
+      but does not show the call as two parts.
+    ''',
       paths:[
           LeadLeft.changeBeats(4.5).scale(1.0,5.0),
 
@@ -462,6 +502,10 @@ import '../../moves.dart';
     AnimatedCall('2/3 Recycle',
       formation:Formations.TidalWaveRHBGGB,
       from:'Right-Hand Tidal Wave',
+      taminator: '''
+      This is how experienced dancers perform the call,
+      but does not show the call as two parts.
+    ''',
       paths:[
           LeadRight.changeBeats(4.5).scale(1.0,2.5),
 
@@ -479,6 +523,10 @@ import '../../moves.dart';
     AnimatedCall('2/3 Recycle',
       formation:Formations.TidalWaveLHBGGB,
       from:'Left-Hand Tidal Wave',
+      taminator: '''
+      This is how experienced dancers perform the call,
+      but does not show the call as two parts.
+    ''',
       paths:[
           LeadLeft.changeBeats(4.5).scale(1.0,2.5),
 

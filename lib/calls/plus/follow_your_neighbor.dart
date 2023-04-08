@@ -327,6 +327,9 @@ import '../../moves.dart';
     AnimatedCall('Follow Your Neighbor and Spread',
       formation:Formations.OceanWavesRHBGGB,
       from:'Ocean Waves',difficulty: 1,
+      taminator: '''
+      Very common.  Do not forget how to do Follow Your Neighbor WITHOUT a Spread!
+    ''',
       paths:[
           Forward_2.changeBeats(1.5).skew(0.0,-0.25) +
           SwingRight.scale(0.75,0.75) +

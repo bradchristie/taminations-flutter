@@ -1358,6 +1358,9 @@ import '../../moves.dart';
     AnimatedCall('Square Thru, on the Third Hand Spin the Top',
       formation:Formations.NormalLines,
       group:'   ',parts:'5;3',difficulty: 2,
+      taminator: '''
+      Spin the Top is in the Mainstream program.
+    ''',
       paths:[
           Forward +
           PullLeft.scale(1.0,0.5) +
@@ -1393,6 +1396,9 @@ import '../../moves.dart';
     AnimatedCall('Square Thru, on the Third Hand Eight Chain 5',
       formation:Formations.EightChainThru,
       group:'   ',difficulty: 2,
+      taminator: '''
+      Eight Chain 5 is in the Mainstream program.
+    ''',
       paths:[
           PullLeft.scale(1.0,0.5) +
           LeadRight.scale(0.5,1.5) +
@@ -1492,6 +1498,9 @@ import '../../moves.dart';
     AnimatedCall('Square Thru, on the Fourth Hand Left Swing Thru',
       formation:Formations.NormalLines,
       group:'   ',difficulty: 2,
+      taminator: '''
+      Swing Thru is in Basic 2.
+    ''',
       paths:[
           Forward +
           PullLeft.scale(1.0,0.5) +
@@ -1564,6 +1573,9 @@ import '../../moves.dart';
     AnimatedCall('Square Thru, on the Third Hand Touch 1/4',
       formation:Formations.FacingCouplesCompact,
       group:'   ',difficulty: 2,
+      taminator: '''
+      Touch a Quarter is in Basic 2.
+    ''',
       paths:[
           Forward.scale(0.5,1.0) +
           PullLeft.scale(1.0,0.5) +
@@ -1581,6 +1593,9 @@ import '../../moves.dart';
     AnimatedCall('Square Thru, on the Fourth Hand Left Touch 1/4',
       formation:Formations.FacingCouplesCompact,
       group:'   ',difficulty: 2,
+      taminator: '''
+      Touch a Quarter is in Basic 2.
+    ''',
       paths:[
           Forward.scale(0.5,1.0) +
           PullLeft.scale(1.0,0.5) +

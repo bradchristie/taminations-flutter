@@ -34,6 +34,8 @@ import '../../moves.dart';
         DancerModel.fromData(gender:Gender.BOY,x:0,y:3.1,angle:0),
   ]),
       from:'Right-Hand Galaxy',
+      taminator: '''Turn on the Paths setting to see the circulate pattern.
+    ''',
       paths:[
           LeadRight.changeBeats(3).scale(2.0,1.0),
 

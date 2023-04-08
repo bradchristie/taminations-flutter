@@ -50,6 +50,7 @@ import '../c3a/follow_to_a_diamond.dart' as c3a;
 import '../c3a/lock_the_hinge.dart' as c3a;
 import '../c3a/mini_chase.dart' as c3a;
 import '../c3a/single_concept.dart' as c3a;
+
 import '../c3b/bingo.dart' as c3b;
 
   final List<AnimatedCall> TandemConcept = [
@@ -285,6 +286,10 @@ import '../c3b/bingo.dart' as c3b;
     AnimatedCall('Tandem Diamond Circulate',
       formation:Formations.TmBoneULLD,
       group:'Tandem',
+      taminator: '''
+    If you have trouble visualizing the diamond, look at the center
+    point of each tandem.
+    ''',
       paths:[
           Forward.changeBeats(1.5) +
           LeadRight.changeBeats(2.5).scale(1.0,2.0),

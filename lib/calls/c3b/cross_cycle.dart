@@ -42,6 +42,10 @@ import '../../moves.dart';
     AnimatedCall('Cross Cycle',
       formation:Formations.TwomFacedLineRH,
       from:'Right-Hand Two-Faced Line',fractions:'4',
+      taminator: '''
+      For the rest of these animations from lines, the first two parts are danced as
+      one movement.
+    ''',
       paths:[
           LeadRight.changeBeats(4).scale(1.0,4.0) +
           QuarterRight.skew(0.0,1.0),

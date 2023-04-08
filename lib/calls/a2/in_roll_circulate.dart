@@ -94,6 +94,10 @@ import '../../moves.dart';
     AnimatedCall('In-Roll Circulate',
       formation:Formations.n3and_1lines4,
       from:'3 and 1 Lines #4',fractions:'2',
+      taminator: '''
+      There are 8 different 3 and 1 lines, but only half of them
+      have the ends in tandem required for In-Roll Circulate.
+    ''',
       paths:[
           Forward_4,
 
@@ -112,6 +116,9 @@ import '../../moves.dart';
         DancerModel.fromData(gender:Gender.BOY,x:-2,y:-3,angle:180),
   ]),
       from:'3 and 1 Lines #5',fractions:'2',
+      taminator: '''
+      This is the third illustrated example in the defintion.
+    ''',
       paths:[
           Forward_4,
 
@@ -203,6 +210,10 @@ import '../../moves.dart';
     AnimatedCall('Out-Roll Circulate',
       formation:Formations.n3and_1lines4,
       from:'3 and 1 Lines #4',fractions:'3',
+      taminator: '''
+      There are 8 different 3 and 1 lines, but only half of them
+      have the ends in tandem required for Out-Roll Circulate.
+    ''',
       paths:[
           FlipRight.changeBeats(6),
 
@@ -221,6 +232,9 @@ import '../../moves.dart';
         DancerModel.fromData(gender:Gender.BOY,x:-2,y:-3,angle:180),
   ]),
       from:'3 and 1 Lines #5',fractions:'3',
+      taminator: '''
+      This is the third illustrated example in the defintion.
+    ''',
       paths:[
           FlipRight.changeBeats(6),
 

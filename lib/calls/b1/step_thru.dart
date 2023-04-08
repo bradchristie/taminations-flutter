@@ -89,6 +89,9 @@ import '../../moves.dart';
     AnimatedCall('Step Thru',
       formation:Formations.OceanWavesRHBGBG,
       from:'Right-Hand Waves',
+      taminator: '''
+      Note how this is different from Extend
+    ''',
       paths:[
           ExtendRight.changeBeats(2).scale(1.0,2.0),
 
@@ -203,6 +206,9 @@ import '../../moves.dart';
     AnimatedCall('Centers Step Thru',
       formation:Formations.QuarterTag,
       group:' ',
+      taminator: '''
+      Note how this is different from Extend
+    ''',
       paths:[
           Path(),
 

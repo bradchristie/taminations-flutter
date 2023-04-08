@@ -27,6 +27,10 @@ import '../../moves.dart';
     AnimatedCall('Linear Cycle',
       formation:Formations.WaveRH,
       from:'Right-Hand Wave',parts:'1.5;4',difficulty: 1,
+      taminator: '''
+      After the Hinge, be sure to let go of hands.  Do not hold
+      hands again until the end of the call.
+    ''',
       paths:[
           HingeRight +
           Forward_4 +
@@ -55,6 +59,9 @@ import '../../moves.dart';
     AnimatedCall('Linear Cycle',
       formation:Formations.OceanWavesRHBGGB,
       from:'Right-Hand Waves',parts:'1.5;4',difficulty: 1,
+      taminator: '''
+    Linear Cycle is NOT Recycle and Sweep a Quarter,
+    ''',
       paths:[
           HingeRight +
           Forward_4 +

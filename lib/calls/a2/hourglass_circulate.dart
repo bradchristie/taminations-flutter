@@ -55,6 +55,9 @@ import '../../moves.dart';
     AnimatedCall('Hourglass Circulate',
       formation:Formations.HourglassFacingLHBox,
       from:'Facing Hourglass, Left-Hand Box',
+      taminator: '''
+    All dancers pass right shoulders.
+    ''',
       paths:[
           ExtendLeft.changeBeats(3).scale(1.0,2.0) +
           Forward,
@@ -414,6 +417,9 @@ import '../../moves.dart';
     AnimatedCall('Flip the Hourglass and Roll',
       formation:Formations.HourglassRHBP,
       group:' ',
+      taminator: '''
+      Note that the very centers do not Roll
+    ''',
       paths:[
           FlipRight +
           QuarterRight.skew(1.0,0.0),

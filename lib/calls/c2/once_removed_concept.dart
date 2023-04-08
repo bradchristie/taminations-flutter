@@ -23,6 +23,7 @@ import '../../common_dart.dart';
 import '../../formation.dart';
 import '../../formations.dart';
 import '../../moves.dart';
+
 import '../c2/cross_the_k.dart' as c2;
 
   final List<AnimatedCall> OnceRemovedConcept = [
@@ -35,6 +36,9 @@ import '../c2/cross_the_k.dart' as c2;
         DancerModel.fromData(gender:Gender.BOY,x:-1.5,y:-3,angle:180),
   ]),
       group:'(From lines) Once Removed',isGenderSpecific:true,
+      taminator: '''
+    For these animations, the dancers are colored to show those who work together.
+    ''',
       paths:[
           DodgeRight.changeBeats(5).scale(1.0,2.0),
 
@@ -67,6 +71,10 @@ import '../c2/cross_the_k.dart' as c2;
     AnimatedCall('Once Removed Circle By 1/4 by 1/2',
       formation:Formations.NormalLinesCompact,
       group:'(From lines) Once Removed',
+      taminator: '''
+      Dancers are not Once Removed at the end of the call because the formation
+      axis has changed.
+    ''',
       paths:[
           EighthRight.changeBeats(1).changehands(2).skew(0.5,0.0) +
           CircleLeftQuarter.changeBeats(4).changehands(0).scale(2.0,2.0) +
@@ -139,6 +147,10 @@ import '../c2/cross_the_k.dart' as c2;
     AnimatedCall('Once Removed Pass the Ocean',
       formation:Formations.NormalLines,
       group:'(From lines) Once Removed',
+      taminator: '''
+      Dancers are not Once Removed at the end of the call because the formation
+      axis has changed.
+    ''',
       paths:[
           ExtendLeft.changeBeats(2).scale(2.0,0.5) +
           LeadRight.changeBeats(4).scale(3.0,1.5),
@@ -193,6 +205,11 @@ import '../c2/cross_the_k.dart' as c2;
     AnimatedCall('Once Removed Single Wheel',
       formation:Formations.LinesFacingOutCompact,
       group:'(From lines) Once Removed',
+      taminator: '''
+      Note that this is the same as Turn and Deal.
+      Dancers are not Once Removed at the end of the call because the formation
+      axis has changed.
+    ''',
       paths:[
           UmTurnLeft.changeBeats(4).skew(-0.5,2.0),
 
@@ -206,6 +223,11 @@ import '../c2/cross_the_k.dart' as c2;
     AnimatedCall('Once Removed Square Chain Thru',
       formation:Formations.NormalLinesCompact,
       group:'(From lines) Once Removed',
+      taminator: '''
+      This call is done by "taking out" the Once Removed after the
+      first pull by. After completion of the call the centers pass thru to
+      restore the Once Removed setup.
+    ''',
       paths:[
           ExtendLeft.changeBeats(1.5).scale(1.5,0.5) +
           LeadRight.changeBeats(2).scale(0.5,1.5) +
@@ -357,6 +379,10 @@ import '../c2/cross_the_k.dart' as c2;
     AnimatedCall('Once Removed Turn to a Line',
       formation:Formations.ColumnRHGBGB,
       group:'(From columns) Once Removed',
+      taminator: '''
+      Dancers are not Once Removed at the end of the call because the formation
+      axis has changed.
+    ''',
       paths:[
           UmTurnRight.changeBeats(4).skew(-1.0,-2.0),
 
@@ -739,6 +765,9 @@ import '../c2/cross_the_k.dart' as c2;
     AnimatedCall('Once Removed Diamond Circulate',
       formation:Formations.InterlockedDiamondsRHGirlPoints,
       group:'(From OR diamonds, tandem points) Once Removed',
+      taminator: '''
+      Same as Interlocked Diamond Circulate
+    ''',
       paths:[
           LeadRight.changeBeats(3).scale(3.0,1.0),
 

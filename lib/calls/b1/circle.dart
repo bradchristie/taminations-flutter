@@ -27,6 +27,10 @@ import '../../moves.dart';
     AnimatedCall('Circle Left',
       formation:Formations.StaticSquare,
       from:'Static Square',group:' ',
+      taminator: '''
+      This animation shows the dancers circling all the way around once.
+      However, in general dancers continue to circle left until the next call is given.
+    ''',
       paths:[
           Forward.changehands(3).scale(0.59,0.59) +
           cl +
@@ -196,6 +200,10 @@ import '../../moves.dart';
     AnimatedCall('Circle Right',
       formation:Formations.StaticSquare,
       from:'Static Square',group:' ',
+      taminator: '''
+      This animation shows the dancers circling all the way around once.
+      However, in general dancers continue to circle right until the next call is given.
+    ''',
       paths:[
           EighthRight.changeBeats(1).changehands(7).skew(0.59,0.0) +
           cr +

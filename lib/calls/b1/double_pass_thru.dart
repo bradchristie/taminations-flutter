@@ -63,6 +63,9 @@ import '../../moves.dart';
     AnimatedCall('Double Pass Thru',
       formation:Formations.QuarterTag,
       from:'Quarter Tag',difficulty: 2,
+      taminator: '''
+      This is an example of the Ocean Wave rule.
+    ''',
       paths:[
           ExtendLeft.changeBeats(1.5).scale(1.5,0.5) +
           Forward +
@@ -141,6 +144,9 @@ import '../../moves.dart';
     AnimatedCall('Left Double Pass Thru',
       formation:Formations.QuarterTagLH,
       from:'Left-Hand Quarter Tag',difficulty: 3,
+      taminator: '''
+      This is an example of the Ocean Wave rule as applied to a Left-Hand Wave.
+    ''',
       paths:[
           ExtendRight.changeBeats(1.5).scale(1.5,0.5) +
           Forward +
