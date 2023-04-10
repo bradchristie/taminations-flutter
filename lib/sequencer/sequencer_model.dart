@@ -199,6 +199,48 @@ class SequencerModel extends fm.ChangeNotifier {
         errorString = 'Invalid axes setting';
         break;
     }
+    notifyListeners();
+  }
+
+  void setGrid(String c, Settings settings) {
+    final command = c.toLowerCase().replaceAll('grid', '').trim();
+    switch (command) {
+      case 'off' :
+      case 'none' :
+        settings.grid = false;
+        break;
+      case 'on' :
+        settings.grid = true;
+        break;
+      default :
+        errorString = 'Invalid grid setting';
+        break;
+    }
+    notifyListeners();
+  }
+
+  void setPaths(String c, Settings settings) {
+    final command = c.toLowerCase().replaceAll('paths?'.r, '').trim();
+    Dancer? d;
+    if (command.substring(0,1).matches('[0-9]'.r)) {
+      d = animation.dancers.firstWhere((it) => it.number == command.substring(0,1));
+    }
+    bool showPath = false;
+    if (command.endsWith('on'))
+      showPath = true;
+    else if (command.endsWith('off'))
+      showPath = false;
+    else {
+      errorString = 'Invalid path setting';
+      return;
+    }
+    if (d != null)
+      d.showPath = showPath;
+    else {
+      for (var d2 in animation.dancers)
+        d2.showPath = showPath;
+    }
+    notifyListeners();
   }
 
   void showHelp(String c) async {
@@ -301,6 +343,10 @@ class SequencerModel extends fm.ChangeNotifier {
       setSpeed(call, settings);
     else if (call.lc.trim().startsWith('axes'))
       setAxes(call, settings);
+    else if (call.lc.trim().startsWith('grid'))
+      setGrid(call, settings);
+    else if (call.lc.trim().startsWith('path'))
+      setPaths(call, settings);
     else if (call.lc.trim().startsWith('help'))
       showHelp(call);
 
