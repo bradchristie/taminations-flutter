@@ -20,14 +20,19 @@ Call pronunciations provided by
 
 ---
 
-## Taminations version 1.6.57 built 2023-03-28
+## Taminations version 1.6.58 built 2023-04-10
 Copyright 2023 by Brad Christie.  
 This is free software, and you are welcome to modify and redistribute it
 under the terms of the [GNU GPL license](http://www.gnu.org/licenses/gpl.html).  
 
 ## What's New
-* Fix for Hexagon animations
-* Startup animation for web page
+* Update definitions from Callerlab
+* Restore Zoom to SSD call list
+* Restore notes on specific calls
+* Sequencer changes:
+  - Better code for Fold, Linear Cycle
+  - Fixes for Centers Box Circulate Twice, Head Boys Cross
+  - Add commands to set Grid, Paths
 
 For a detailed history of changes, view the
 [Git log](https://github.com/bradchristie/taminations-flutter/commits/main)
