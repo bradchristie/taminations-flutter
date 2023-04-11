@@ -40,7 +40,8 @@ The centers part of Part 4 can be changed with But (another call).
     final level = ctx.outer(4).every((d) => ctx.isInCouple(d)) &&
         ctx.center(4).every((d) => ctx.isInWave(d))
         ? LevelData.A1 : LevelData.C1;
-    ctx.applyCalls('Facing Dancers Pass Thru While Ends Counter Rotate');
+    ctx.applyCalls('Facing Dancers Pass Thru '
+        'While Center Wave Except the Very Centers Counter Rotate');
     ctx.adjustToFormation(Formations.SausageRH);
     ctx.level = level;
   }

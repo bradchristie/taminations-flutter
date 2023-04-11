@@ -1545,15 +1545,20 @@ class CallContext {
     }
     //  If there's a center wave/line of 4, use that
     else if (dancers.length == 8 && centerWaveOf4() != null) {
-      for (var d in centerWaveOf4()!)
-        d.data.center = true;
+      var wave = centerWaveOf4()!;
+      for (var d in dancers) {
+        d.data.center = wave.contains(d);
+        d.data.end = !d.data.center;
+      }
     }
     //  Otherwise, if there are 4 dancers closer to the center than the other 4,
     //  they are the centers
-    else if (dancers.length > 4 &&
+    else if (dancers.length == 8 &&
         !(dorder[3].location.length.isAbout(dorder[4].location.length))) {
       for (var i in [0,1,2,3])
         dorder[i].data.center = true;
+      for (var i in [4,5,6,7])
+        dorder[i].data.end = true;
     }
 
   }

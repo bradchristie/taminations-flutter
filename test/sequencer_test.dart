@@ -2292,6 +2292,7 @@ Split Counter Rotate
 Very Centers Hinge
 Six-two Acey Deucey
 Outer 2 Counter Rotate
+Adjust to 1/4 Tag
 Chain Reaction
 Left Tag the Line
 Centers Turn Back
