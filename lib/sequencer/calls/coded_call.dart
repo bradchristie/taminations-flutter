@@ -516,7 +516,7 @@ abstract class CodedCall extends Call {
     'spinchainandexchangethegears'.ri: (name) => SpinChainAndExchangeTheGears(name),
     'spinchainthru'.ri: (name) => SpinChainThru(name),
     '(spin)?thepulley'.ri: (name) => SpinThePulley(name),
-    '(left)?spinthetop'.ri: (name) => SpinTheTop(name),
+    'spinthetop'.ri: (name) => SpinTheTop(name),
     '(.+)thewindmill(left|right|in|out|forward)'.ri: (name) => SpinTheWindmill(name),
     'splitcirculate'.ri: (name) => SplitCirculate(name),
     'splitcounterrotate'.ri: (name) => SplitCounterRotate(name),

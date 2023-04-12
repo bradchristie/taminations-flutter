@@ -18,8 +18,9 @@
  */
 
 import '../common.dart';
+import '../common/left.dart';
 
-class SpinTheTop extends ActivesOnlyAction with CallWithParts {
+class SpinTheTop extends ActivesOnlyAction with CallWithParts, IsLeft {
 
   @override int numberOfParts = 2;
   @override var level = LevelData.MS;
@@ -31,9 +32,11 @@ class SpinTheTop extends ActivesOnlyAction with CallWithParts {
 
   @override
    void performPart1(CallContext ctx) {
-    var left = name.contains('left'.ri) ? 'Left-Hand' : '';
     if (ctx.dancers.any((d) => ctx.dancerFacing(d) != null))
-      ctx.applyCalls('Facing Dancers Step to a $left Wave');
+      ctx.applyCalls('Facing Dancers Step to a $leftHand Wave');
+    else if (isLeft)
+      throw CallError('Left Spin the Top only applies to facing dancers');
+    ctx.analyze();
     if (ctx.actives.every((it) => ctx.isInWave(it)))
       ctx.applyCalls('Swing');
     else
