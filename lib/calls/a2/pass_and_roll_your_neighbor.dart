@@ -138,6 +138,43 @@ import '../../moves.dart';
           QuarterRight.skew(1.0,-0.5)
       ]),
 
+    AnimatedCall('Pass and Roll Your Neighbor',
+        from:'Tidal Column',
+        formation: Formation('',[
+          DancerModel.fromData(gender: Gender.BOY, x: .5, y: 0, angle: 0),
+          DancerModel.fromData(gender: Gender.GIRL, x: 1.5, y: 0, angle: 180),
+          DancerModel.fromData(gender: Gender.BOY, x: 2.5, y: 0, angle: 0),
+          DancerModel.fromData(gender: Gender.GIRL, x: 3.5, y: 0, angle: 180),
+        ]),
+        paths: [
+          ExtendLeft.scale(.5,0.5) +
+              Forward +
+              SwingRight.scale(0.5,0.5) +
+              Forward +
+              LeadRight.scale(0.5, 0.5) +
+              UmTurnRight,
+
+          ExtendLeft.scale(.5,0.5) +
+              Forwardp5 +
+              FlipRight.scale(.5,0.5) +
+              Forward_1p5 +
+              CastRight.scale(.5, .5),
+
+          ExtendLeft.scale(.5,0.5) +
+              Forwardp5 +
+              FlipRight.scale(.5,0.5) +
+              Forward_1p5 +
+              CastRight.scale(.5, .5),
+
+          ExtendLeft.scale(.5,0.5) +
+              Forward +
+              SwingRight.scale(0.5,0.5) +
+              Forward +
+              LeadRight.scale(0.5, 0.5) +
+              UmTurnRight
+
+        ]),
+
     AnimatedCall('Left Pass and Roll Your Neighbor',
       formation:Formation('', [
         DancerModel.fromData(gender:Gender.BOY,x:-3,y:0,angle:0),
@@ -249,6 +286,43 @@ import '../../moves.dart';
           QuarterLeft +
           QuarterLeft
       ]),
+
+    AnimatedCall('Left Pass and Roll Your Neighbor',
+        from:'Tidal Column',
+        formation: Formation('',[
+          DancerModel.fromData(gender: Gender.BOY, x: .5, y: 0, angle: 0),
+          DancerModel.fromData(gender: Gender.GIRL, x: 1.5, y: 0, angle: 180),
+          DancerModel.fromData(gender: Gender.BOY, x: 2.5, y: 0, angle: 0),
+          DancerModel.fromData(gender: Gender.GIRL, x: 3.5, y: 0, angle: 180),
+        ]),
+        paths: [
+          ExtendRight.scale(.5,0.5) +
+              Forward +
+              SwingLeft.scale(0.5,0.5) +
+              Forward +
+              LeadLeft.scale(0.5, 0.5) +
+              UmTurnLeft,
+
+          ExtendRight.scale(.5,0.5) +
+              Forwardp5 +
+              FlipLeft.scale(.5,0.5) +
+              Forward_1p5 +
+              CastLeft.scale(.5, .5),
+
+          ExtendRight.scale(.5,0.5) +
+              Forwardp5 +
+              FlipLeft.scale(.5,0.5) +
+              Forward_1p5 +
+              CastLeft.scale(.5, .5),
+
+          ExtendRight.scale(.5,0.5) +
+              Forward +
+              SwingLeft.scale(0.5,0.5) +
+              Forward +
+              LeadLeft.scale(0.5, 0.5) +
+              UmTurnLeft
+
+        ]),
 
     AnimatedCall('All 8 Pass and Roll Your Neighbor and Spread',
       formation:Formations.StaticFacing,
