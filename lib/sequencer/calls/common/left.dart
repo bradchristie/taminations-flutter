@@ -18,18 +18,32 @@
 
 */
 
-import 'common.dart';
+import '../coded_call.dart';
+import '../common.dart';
 
-abstract class Call {
+mixin IsLeft {
 
-  String name;
-  String get help => 'No specific help for $name';
-  String get helplink => 'info/sequencer';
-  String get norm => normalizeCall(name);
-  bool nextCallCoded = false;
-  var level = LevelData.B1;
+  var isLeft = false;
+  String get left => isLeft ? 'Left' : '';
+  String get leftHand => isLeft ? 'Left-Hand' : '';
 
-  Call(String s) : name=s.capWords();
-  void performCall(CallContext ctx);
+}
+
+class Left extends CodedCall {
+
+  @override var nextCallCoded = true;
+
+  Left(String name) : super(name);
+
+  @override
+  void performCall(CallContext ctx) {
+    for (var i=ctx.callstack.indexOf(this)+1; i<ctx.callstack.length; i+=1) {
+      if (ctx.callstack[i] is IsLeft) {
+        (ctx.callstack[i] as IsLeft).isLeft = true;
+        return;
+      }
+    }
+    throw CallError('Left what?');
+  }
 
 }

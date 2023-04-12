@@ -19,8 +19,9 @@
 */
 
 import '../common.dart';
+import '../common/left.dart';
 
-class SwingAndCircle extends Action {
+class SwingAndCircle extends Action with IsLeft {
 
   @override final level = LevelData.C1;
   @override var helplink = 'c1/swing_and_circle';
@@ -29,9 +30,16 @@ class SwingAndCircle extends Action {
   @override
   void perform(CallContext ctx) {
     final norm = normalizeCall(name);
+    //  Facing Couples rule
+    if (ctx.center(4).every((d) => ctx.isInCouple(d))) {
+      ctx.applyCalls('Center 4 Step to a $leftHand Wave');
+    } else if (isLeft)
+      throw CallError('Left only applies to center facing couples');
     //  Swing and Circle 1/4 is an XML animation
     //  So just repeat that as requested
-    if (norm.endsWith('12'))
+    if (norm.endsWith('14'))
+      ctx.applyCalls('Swing and Circle 1/4');
+    else if (norm.endsWith('12'))
       ctx.applyCalls('Swing and Circle 1/4',
           'Swing and Circle 1/4');
     else if (norm.endsWith('34'))

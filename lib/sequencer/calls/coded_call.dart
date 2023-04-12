@@ -231,6 +231,7 @@ import 'common/heads.dart';
 import 'common/in_the_center.dart';
 import 'common/insides.dart';
 import 'common/leaders.dart';
+import 'common/left.dart';
 import 'common/nobody.dart';
 import 'common/nothing.dart';
 import 'common/one_and_a_half.dart';
@@ -409,6 +410,7 @@ abstract class CodedCall extends Call {
 
     'lateralsubstitute'.ri: (name) => LateralSubstitute(name),
     'lead(er)?s?'.ri: (name) => Leaders(name),
+    'left'.ri: (name) => Left(name),
     'likeacoupleup'.ri: (_) => LikeACoupleUp(),
     'linearaction'.ri: (_) => LinearAction(),
     '(left)?linearcycle'.ri: (name) => LinearCycle(name),
@@ -548,7 +550,7 @@ abstract class CodedCall extends Call {
     'substitute'.ri: (name) => Substitute(name),
     'sweep14'.ri: (name) => SweepAQuarter(name),
     'swing'.ri: (name) => Swing(name),
-    'swingandcircle(12|34)'.ri: (name) => SwingAndCircle(name),
+    'swingandcircle(14|12|34)'.ri: (name) => SwingAndCircle(name),
     'swingandmix'.ri: (name) => SwingAndMix(name),
     '(left)?swingthefractions'.ri: (name) => SwingTheFractions(name),
     '(grand)?(left)?swingthru'.ri: (name) => SwingThru(name),
