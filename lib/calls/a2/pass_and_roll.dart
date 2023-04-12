@@ -121,6 +121,41 @@ import '../../moves.dart';
           ExtendLeft.changeBeats(2).scale(2.0,0.5)
       ]),
 
+    AnimatedCall('Pass and Roll',
+        from:'Tidal Column',
+        formation: Formation('',[
+          DancerModel.fromData(gender: Gender.BOY, x: .5, y: 0, angle: 0),
+          DancerModel.fromData(gender: Gender.GIRL, x: 1.5, y: 0, angle: 180),
+          DancerModel.fromData(gender: Gender.BOY, x: 2.5, y: 0, angle: 0),
+          DancerModel.fromData(gender: Gender.GIRL, x: 3.5, y: 0, angle: 180),
+        ]),
+        paths: [
+          ExtendLeft.scale(.5,0.5) +
+              Forward +
+              SwingRight.scale(0.5,0.5) +
+              Forward +
+              RunRight.scale(0.5, 0.75),
+
+          ExtendLeft.scale(.5,0.5) +
+              Forwardp5 +
+              FlipRight.scale(.5,0.5) +
+              Forward_1p5 +
+              ExtendLeft.changeBeats(2).scale(1,0.5),
+
+          ExtendLeft.scale(.5,0.5) +
+              Forwardp5 +
+              FlipRight.scale(.5,0.5) +
+              Forward_1p5 +
+              ExtendLeft.changeBeats(2).scale(1,0.5),
+
+          ExtendLeft.scale(.5,0.5) +
+              Forward +
+              SwingRight.scale(0.5,0.5) +
+              Forward +
+              RunRight.scale(0.5, 0.75)
+
+        ]),
+
     AnimatedCall('Left Pass and Roll',
       formation:Formation('', [
         DancerModel.fromData(gender:Gender.BOY,x:-3,y:0,angle:0),
@@ -215,6 +250,41 @@ import '../../moves.dart';
           ExtendLeft.scale(1.0,0.5) +
           UmTurnLeft.skew(0.0,1.0)
       ]),
+
+    AnimatedCall('Left Pass and Roll',
+        from:'Tidal Column',
+        formation: Formation('',[
+          DancerModel.fromData(gender: Gender.BOY, x: .5, y: 0, angle: 0),
+          DancerModel.fromData(gender: Gender.GIRL, x: 1.5, y: 0, angle: 180),
+          DancerModel.fromData(gender: Gender.BOY, x: 2.5, y: 0, angle: 0),
+          DancerModel.fromData(gender: Gender.GIRL, x: 3.5, y: 0, angle: 180),
+        ]),
+        paths: [
+          ExtendRight.scale(.5,0.5) +
+              Forward +
+              SwingLeft.scale(0.5,0.5) +
+              Forward +
+              RunLeft.scale(0.5, 0.75),
+
+          ExtendRight.scale(.5,0.5) +
+              Forwardp5 +
+              FlipLeft.scale(.5,0.5) +
+              Forward_1p5 +
+              ExtendRight.changeBeats(2).scale(1,0.5),
+
+          ExtendRight.scale(.5,0.5) +
+              Forwardp5 +
+              FlipLeft.scale(.5,0.5) +
+              Forward_1p5 +
+              ExtendRight.changeBeats(2).scale(1,0.5),
+
+          ExtendRight.scale(.5,0.5) +
+              Forward +
+              SwingLeft.scale(0.5,0.5) +
+              Forward +
+              RunLeft.scale(0.5, 0.75)
+
+        ]),
 
     AnimatedCall('All 8 Pass and Roll',
       formation:Formations.StaticFacing,
