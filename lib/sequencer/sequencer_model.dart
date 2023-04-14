@@ -225,7 +225,7 @@ class SequencerModel extends fm.ChangeNotifier {
     if (command.substring(0,1).matches('[0-9]'.r)) {
       d = animation.dancers.firstWhere((it) => it.number == command.substring(0,1));
     }
-    bool showPath = false;
+    var showPath = false;
     if (command.endsWith('on'))
       showPath = true;
     else if (command.endsWith('off'))

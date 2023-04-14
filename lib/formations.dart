@@ -1768,19 +1768,19 @@ class Formations {
   static final Formation TripleLines = Formation('Triple Lines', [
         DancerModel.fromData(gender:Gender.BOY,x:0,y:3,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:0,y:1,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:4,y:1,angle:180),
-        DancerModel.fromData(gender:Gender.BOY,x:4,y:3,angle:0),
-        DancerModel.fromData(gender:Gender.PHANTOM,x:4,y:-1,angle:0),
-        DancerModel.fromData(gender:Gender.PHANTOM,x:4,y:-3,angle:180),
+        DancerModel.fromData(gender:Gender.GIRL,x:3,y:1,angle:180),
+        DancerModel.fromData(gender:Gender.BOY,x:3,y:3,angle:0),
+        DancerModel.fromData(gender:Gender.PHANTOM,x:3,y:-1,angle:0),
+        DancerModel.fromData(gender:Gender.PHANTOM,x:3,y:-3,angle:180),
   ]);
 
   static final Formation TripleColumns = Formation('Triple Columns', [
-        DancerModel.fromData(gender:Gender.BOY,x:3,y:2,angle:180),
+        DancerModel.fromData(gender:Gender.BOY,x:3,y:3,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:3,y:0,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:1,y:0,angle:0),
-        DancerModel.fromData(gender:Gender.BOY,x:1,y:2,angle:0),
-        DancerModel.fromData(gender:Gender.PHANTOM,x:1,y:-2,angle:0),
-        DancerModel.fromData(gender:Gender.PHANTOM,x:3,y:-2,angle:180),
+        DancerModel.fromData(gender:Gender.BOY,x:1,y:3,angle:0),
+        DancerModel.fromData(gender:Gender.PHANTOM,x:1,y:-3,angle:0),
+        DancerModel.fromData(gender:Gender.PHANTOM,x:3,y:-3,angle:180),
   ]);
 
   static final Formation SiameseBox_1 = Formation('Siamese Box 1', [

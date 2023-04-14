@@ -782,7 +782,8 @@ class CallContext {
 
   //  See if the current DancerModel positions resemble a standard formation
   //  and, if so, snap to the standard
-  void matchFormationList(Map<Formation,double> formations, {double maxOffset = 6.1}) {
+  //  Returns true if a match was found
+  bool matchFormationList(Map<Formation,double> formations, {double maxOffset = 6.1}) {
     //  Make sure newly added animations are finished
     for (var d in dancers) {
       d.path.recalculate();
@@ -825,6 +826,7 @@ class CallContext {
     if (bestMapping != null) {
       adjustToFormationMatch(bestMapping.match);
     }
+    return bestMapping != null;
   }
 
   void matchStandardFormation() {
@@ -975,15 +977,26 @@ class CallContext {
           phantoms[p * 2 + 1].rotateStartAngle((rotate).d);
         }
       }
-      var ctx2 = CallContext.fromContext(this);
-      var testctx = ctx2._checkCalls([call]);
-      if (testctx != null) {
-        //  Good rotation found
-        //  See if it's the "Best" rotation
-        var count = testctx.movingDancers().length;
-        if (count > bestCount) {
-          bestContext = ctx2;
-          bestCount = count;
+      //  The resulting formation must be symmetric
+      var isSym = true;
+      for (var d1 in dancers) {
+        for (var d2 in dancers) {
+          if (d1.location.isAbout(-d2.location) &&
+          !d1.angleFacing.isAround(d2.angleFacing+pi))
+            isSym = false;
+        }
+      }
+      if (isSym) {
+        var ctx2 = CallContext.fromContext(this);
+        var testctx = ctx2._checkCalls([call]);
+        if (testctx != null) {
+          //  Good rotation found
+          //  See if it's the "Best" rotation
+          var count = testctx.movingDancers().length;
+          if (count > bestCount) {
+            bestContext = ctx2;
+            bestCount = count;
+          }
         }
       }
       //  This rotation does not work

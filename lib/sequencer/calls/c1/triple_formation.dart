@@ -50,53 +50,52 @@ abstract class TripleFormation extends Action {
 
   @override
   void perform(CallContext ctx) {
-    if (subCall.isBlank)
-      throw CallError('$name what?');
+    if (subCall.isBlank) throw CallError('$name what?');
     isXaxis = findAxis(ctx);
     //  Add phantoms in spots not occupied by dancers
     final phantoms = <DancerModel>[];
     for (final c1 in majorValues(ctx)) {
       for (final c2 in minorValues(ctx)) {
-        final v = isXaxis ? [c1,c2].v : [c2,c1].v;
+        final v = isXaxis ? [c1, c2].v : [c2, c1].v;
         if (ctx.dancerAt(v) == null) {
           final phantomDancer = DancerModel.cloneWithOptions(ctx.dancers.first,
-              gender: Gender.PHANTOM,
-              number: 'P${phantoms.length+1}');
+              gender: Gender.PHANTOM, number: 'P${phantoms.length + 1}');
           phantomDancer.setStartPosition(v);
           phantoms.add(phantomDancer);
         }
       }
     }
     //  Make the three boxes
-    final tripleBoxCtx = CallContext.fromContext(ctx, dancers:ctx.dancers + phantoms);
+    final tripleBoxCtx = CallContext.fromContext(ctx, dancers: ctx.dancers + phantoms);
     final tripleContexts = tripleFormations(tripleBoxCtx);
     //  Apply call to each box
     for (final box in tripleContexts) {
       if (box.dancers.length != 4)
         throw CallError('Error splitting into groups - group has ${box.dancers.length} dancers.');
       box.analyze();
-      final rotatedBox = box.rotatePhantoms(subCall,rotate: 180, asym: true);
-      if (rotatedBox == null)
-        throw CallError('Unable to do $subCall with these Triple Boxes');
+      final rotatedBox = box.rotatePhantoms(subCall, rotate: 180, asym: true);
+      if (rotatedBox == null) throw CallError('Unable to do $subCall with these Triple Boxes');
       rotatedBox.applyCalls(subCall);
       //  If it ends in a bax, make it a compact box in major direction
       //  so it will fit with others to make a triple box
       if (rotatedBox.isBox() &&
           rotatedBox.dancers.any((d) => major(d.location).abs().isGreaterThan(1.0)))
-        rotatedBox.adjustToFormation(Formations.FacingCouplesClose,rotate: 90);
+        rotatedBox.adjustToFormation(Formations.FacingCouplesClose, rotate: 90);
+      else if (rotatedBox.isLines()) {
+        rotatedBox.adjustToFormation(Formations.TwomFacedLineRH, delta: 0.5);
+      }
       //  Now apply the result to the 12-dancer triple box context
       rotatedBox.appendToSource();
       box.appendToSource();
     }
     //  Apply 12-dancer result to original 8 dancers
     tripleBoxCtx.animateToEnd();
-    tripleBoxCtx.matchFormationList(tripleBoxFormations,maxOffset: 9.1);
+    tripleBoxCtx.matchFormationList(tripleBoxFormations, maxOffset: 12.1);
     for (final boxd in tripleBoxCtx.dancers.where((d) => d.gender != Gender.PHANTOM)) {
       ctx.dancers.firstWhere((d) => d == boxd).path = boxd.path;
     }
     ctx.noSnap();
   }
-
 }
 
 
