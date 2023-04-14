@@ -1602,7 +1602,7 @@ var titleIndex = <String,String>{
     'a2/single_wheel' : 'Single Wheel',
     'a1/six_two_acey_deucey' : 'Six-Two Acey Deucey',
     'c3a/slant' : 'Slant',
-    'a2/slip' : 'Slip',
+    'a2/slip' : 'Slip / Slide / Swing / Slither',
     'ms/slide_thru' : 'Slide Thru',
     'ms/slip_the_clutch' : 'Slip the Clutch',
     'c3a/snap_the_lock' : 'Snap the Lock',
