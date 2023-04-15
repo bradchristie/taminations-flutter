@@ -904,11 +904,15 @@ class CallContext {
     return retval;
   }
 
-  bool adjustToFormation(Formation formation, {int rotate = 180, double delta = 0.1}) {
+  bool adjustToFormation(Formation formation, {
+    int rotate = 180,
+    bool subformation = false,
+    double maxError = 2.9,
+    double delta = 0.1}) {
     //  Work on a copy with all dancers active, mapping only uses active dancers???
     //var ctx1 = CallContext.fromContext(this);
     var ctx2 = CallContext.fromFormation(formation);
-    var mapping = matchFormations(ctx2,sexy:false,fuzzy:true,rotate:rotate,handholds:false, maxError : 2.9, delta: delta);
+    var mapping = matchFormations(ctx2,sexy:false,fuzzy:true,rotate:rotate,handholds:false, maxError : maxError, subformation: subformation, delta: delta);
     if (mapping != null) {
       //  If it does, get the offsets
       adjustToFormationMatch(mapping.match);
@@ -1160,13 +1164,14 @@ class CallContext {
       return null;
   }
 
+  //  Return dancers in center wave or line
   List<DancerModel>? centerWaveOf4() {
     var waveOf4 = <DancerModel>[];
     //  Get the dancers on each axis
     final xd = dancers.where((d) => d.location.x.isAbout(0.0)).toList();
     final yd = dancers.where((d) => d.location.y.isAbout(0.0)).toList();
-    //  If there are 6 or 8 dancers on one axis, the center 4 of those
-    //  is the Center Wave of 4
+    //  If there are 6 or 8 dancers on one axis,
+    //  the center 4 of those is the Center Wave of 4
     if (xd.length > 4)
       waveOf4 = xd.sortedWith((d1, d2) => d1.location.length.compareTo(d2.location.length))
           .take(4).toList();
@@ -1186,7 +1191,13 @@ class CallContext {
         ].whereType<DancerModel>().toList();
       }
     }
-    return waveOf4.length == 4 ? waveOf4 : null;
+    //  Check that these are in a wave or line
+    if (waveOf4.length == 4) {
+      if (waveOf4.every((d) =>
+                (dancersToRight(d)+dancersToLeft(d)).where((d2) => waveOf4.contains(d2)).length ==3))
+        return waveOf4;
+    }
+    return null;
   }
 
   //  This return the center 4 dancers if they are in any diamond-like
@@ -1222,7 +1233,7 @@ class CallContext {
       isRight ? dancersHoldingRightHands(isGrand:isGrand)
               : dancersHoldingLeftHands(isGrand:isGrand);
 
-  //  Return true if this DancerModel is in a wave or mini-wave
+  //  Return true if this dancer is in a wave or mini-wave
   bool isInWave(DancerModel d, [DancerModel? d2]) {
     d2 ??= d.data.partner;
     return d2 != null && d.angleToDancer(d2).isAround(d2.angleToDancer(d)) &&
@@ -1434,7 +1445,7 @@ class CallContext {
     }
   }
 
-  //  Move a DancerModel to a specific position (location and angle)
+  //  Move a dancer to a specific position (location and angle)
   //  Location and angle are in the dance floor space
   Path moveToPosition(DancerModel d, Vector location, double angle) {
     //  Compute transform matrix to new location
@@ -1479,6 +1490,7 @@ class CallContext {
       d.data.verycenter = false;
     }
     var isTidal = false;
+    var centerWave = centerWaveOf4();
     for (var d1 in dancers.sortedBy((d) => -d.location.length)) {
       var bestleft = dancerToLeft(d1);
       var bestright = dancerToRight(d1);
@@ -1524,6 +1536,19 @@ class CallContext {
         isTidal = true;
       }
     }
+    //  But if there's a center wave (like quarter tags)
+    //  then we don't have leaders / trailers
+    //  unless the outer 4 are facing out, then they are leaders
+    if (centerWave != null) {
+      for (var d in dancers) {
+        d.data.leader = false;
+        d.data.trailer = false;
+      }
+      dancers.where((d) => !centerWave.contains(d)).forEach((d) {
+        if (d.isFacingOut && isInCouple(d))
+          d.data.leader = true;
+      });
+    }
     //  Analyze for centers and very centers
     //  Sort and group dancers by distance from center
     var dorder = dancers.sortedBy((d) => d.location.length);
@@ -1559,10 +1584,9 @@ class CallContext {
         dorder[i].data.center = true;
     }
     //  If there's a center wave/line of 4, use that
-    else if (dancers.length == 8 && centerWaveOf4() != null) {
-      var wave = centerWaveOf4()!;
+    else if (dancers.length == 8 && centerWave != null) {
       for (var d in dancers) {
-        d.data.center = wave.contains(d);
+        d.data.center = centerWave.contains(d);
         d.data.end = !d.data.center;
       }
     }

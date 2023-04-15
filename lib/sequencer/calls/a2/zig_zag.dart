@@ -28,6 +28,13 @@ class ZigZag extends ActivesOnlyAction {
   ZigZag(String name) : super(name);
 
   @override
+  void perform(CallContext ctx) {
+    if (ctx.dancers.none((d) => d.data.trailer))
+      throw CallError('No trailers in this formation');
+    super.perform(ctx);
+  }
+
+  @override
   Path performOne(DancerModel d, CallContext ctx) {
     var move = Stand;
     if (d.data.leader && name.matches('zig z[ai]g'.ri))

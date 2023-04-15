@@ -45,13 +45,13 @@ class SelectTriangle extends CodedCall {
         break;
       case 'inpoint' :
         for (final d in points) {
-          if (d.data.leader)
+          if (d.isFacingOut)
             d.data.active = false;
         }
         break;
       case 'outpoint' :
         for (final d in points) {
-          if (d.data.trailer)
+          if (d.isFacingIn)
             d.data.active = false;
         }
         break;
@@ -149,13 +149,13 @@ You do not need to use one of these if the triangles are unambiguous (as in a sa
         break;
       case 'inpoint' :
         for (final d in points) {
-          if (d.data.leader)
+          if (d.isFacingOut)
             d.data.active = false;
         }
         break;
       case 'outpoint' :
         for (final d in points) {
-          if (d.data.trailer)
+          if (d.isFacingIn)
             d.data.active = false;
         }
         break;
