@@ -18,6 +18,7 @@
 
 */
 
+import '../../../formations.dart';
 import '../common.dart';
 
 class TwistAnything extends Action {
@@ -44,6 +45,7 @@ class TwistAnything extends Action {
     final outers = ctx.dancers.where((d) => !centers.contains(d)).toList();
 
     //  Do the Twist And part
+    var tidalStart = ctx.isTidal();
     if (ctx.isLines())
       //  All possible 2x4 general lines are in XML
       ctx.applyCalls('Twist And');
@@ -60,6 +62,9 @@ class TwistAnything extends Action {
       //  If that didn't work, try everybody do the Anything call
       ctx.applyCalls(anyCall);
     }
+
+    if (tidalStart)
+      ctx.adjustToFormation(Formations.TripleLines,subformation: true ,maxError: 8.1, delta: 0.3);
   }
 
 
