@@ -20,20 +20,29 @@
 
 import '../../../moves.dart';
 import '../common.dart';
+import '../common/left.dart';
 
-class Dosado extends Action {
+class Dosado extends ActivesOnlyAction with IsLeft {
 
   @override var helplink = 'b1/dosado';
   Dosado(String name) : super(name);
+
+  //  Since Left Dosado is described in the definition for Dosado,
+  //  we'll assume it's ok at B-1
+  @override
+  void performCall(CallContext ctx) {
+    level = LevelData.B1;
+    super.perform(ctx);
+  }
 
   @override
   Path performOne(DancerModel d, CallContext ctx) {
     var d2 = ctx.dancerFacing(d) ??
         thrower(CallError('Dancer $d has no one to Dosado with.' ));
     var dist = d.distanceTo(d2!);
-    var moves = name.toLowerCase().startsWith('left' )
-        ? [ ExtendLeft, ExtendRight, RetreatRight, RetreatLeft ]
-        : [ ExtendRight, ExtendLeft, RetreatLeft, RetreatRight ];
+    var moves = isLeft
+        ? [ ExtendRight, ExtendLeft, RetreatLeft, RetreatRight ]
+        : [ ExtendLeft, ExtendRight, RetreatRight, RetreatLeft ];
     return moves[0].scale(dist/2.0,0.5).changeBeats(dist/2.0) +
            moves[1].scale(1.0,0.5) +
            moves[2].scale(1.0,0.5) +

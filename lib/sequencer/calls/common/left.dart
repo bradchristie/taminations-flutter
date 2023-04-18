@@ -40,6 +40,8 @@ class Left extends CodedCall {
     for (var i=ctx.callstack.indexOf(this)+1; i<ctx.callstack.length; i+=1) {
       if (ctx.callstack[i] is IsLeft) {
         (ctx.callstack[i] as IsLeft).isLeft = true;
+        if (ctx.callstack[i].level < LevelData.A1)
+          ctx.callstack[i].level = LevelData.A1;
         return;
       }
     }

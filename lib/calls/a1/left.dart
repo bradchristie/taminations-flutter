@@ -38,6 +38,7 @@ import '../plus/track_ii.dart' as plus;
     AnimatedCall('Left Dosado',
       formation:Formations.FacingCouplesCompact,
       group:'Left',
+      notForSequencer: true,
       paths:[
           ExtendRight.scale(1.5,0.5) +
           ExtendLeft.scale(1.0,0.5) +
