@@ -7,6 +7,9 @@ Taminations is written and maintained by
 [Brad Christie](mailto:brad@bradchristie.com),
 webmaster of the [Tam Twirlers Square Dance Club](http://www.tamtwirlers.org/).
 
+For a list of SSD calls in teaching order, with one example animation
+for each call, look at the [SSD web page](https://www.tamtwirlers.org/taminations/ssd.html).
+
 Taminations is not affiliated with
 [CALLERLAB](http://www.callerlab.org/). For official and complete
 definitions, refer to the
@@ -20,19 +23,19 @@ Call pronunciations provided by
 
 ---
 
-## Taminations version 1.6.58 built 2023-04-10
+## Taminations version 1.6.59 built 2023-04-21
 Copyright 2023 by Brad Christie.  
 This is free software, and you are welcome to modify and redistribute it
 under the terms of the [GNU GPL license](http://www.gnu.org/licenses/gpl.html).  
 
 ## What's New
-* Update definitions from Callerlab
-* Restore Zoom to SSD call list
-* Restore notes on specific calls
+* Link to SSD web page
+* Pass and Roll (Your Neighbor) from tidal column
 * Sequencer changes:
-  - Better code for Fold, Linear Cycle
-  - Fixes for Centers Box Circulate Twice, Head Boys Cross
-  - Add commands to set Grid, Paths
+  - Improvements for Triple Box / Line
+  - Accept Zig or Zag with 3/4 tag
+  - Fix Left Dosado
+  - Accept Ends to refer to outer 4 if not in lines
 
 For a detailed history of changes, view the
 [Git log](https://github.com/bradchristie/taminations-flutter/commits/main)
