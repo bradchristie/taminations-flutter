@@ -33,6 +33,8 @@ class Dosado extends ActivesOnlyAction with IsLeft {
   void performCall(CallContext ctx) {
     level = LevelData.B1;
     super.perform(ctx);
+    if (name.endsWith('to a Wave'))
+      ctx.applyCalls('Step to a $leftHand Wave');
   }
 
   @override

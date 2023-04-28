@@ -359,7 +359,7 @@ abstract class CodedCall extends Call {
     '(reverse)?dixiediamond'.ri: (name) => DixieDiamond(name),
     'dodge.*'.ri: (name) => Dodge(name),
     'dothe.+?part.+'.ri: (name) => DoOnePart(name),
-    'dosado'.ri: (name) => Dosado(name),
+    'dosado(toawave)?'.ri: (name) => Dosado(name),
     'doublecross'.ri: (_) => DoubleCross(),
     'doublescoot'.ri: (_) => DoubleScoot(),
     'doyourpart.*'.ri: (name) => DoYourPart(name),

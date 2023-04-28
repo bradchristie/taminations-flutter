@@ -3559,6 +3559,26 @@ Trade By
 Star Thru
 Slide Thru
 Pass Thru
+Allemande Left''', ''),
+
+  TestSequence('Dosado to a Wave', '''Heads Lead Right
+Dosado to a Wave
+Recycle
+Left Dosado to a Wave
+Centers Walk and Dodge
+Circulate
+Boys Dosado to a Wave
+Outside Triangle Circulate
+Very Centers Face In and Dosado to a Wave
+Center 4 Flip the Diamond
+Center 4 Step and Fold
+Couples Circulate
+Ferris Wheel
+Centers Pass Thru
+Star Thru
+Acey Deucey Boys Go Twice
+Ferris Wheel
+Centers Reverse Swap
 Allemande Left''', '')
 
 ];
