@@ -29,6 +29,10 @@ class WalkAndDodge extends ActivesOnlyAction {
 
   @override var level = LevelData.MS;
   @override var helplink = 'ms/walk_and_dodge';
+  @override var help = '''Variations you can use for Walk and Dodge:
+  - (some dancers) Walk (other dancers) Dodge
+  - from 3 and 1 lines, centers facing out, 1 by 3 Walk and Dodge
+  - from columns, 3 by 1 Walk and Dodge''';
   WalkAndDodge(String name) : super(name);
 
   late CallContext walkctx;
