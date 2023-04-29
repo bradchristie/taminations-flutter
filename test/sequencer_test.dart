@@ -3336,14 +3336,20 @@ Pass Thru
 Allemande Left''',''),
 
   TestSequence('Regroup',
-'''Sides Pass the Ocean
-Extend
-Centers Walk and Dodge
-Ends Run
+'''Heads Star Thru and Spread
+Centers Touch 1/4
 Regroup
-Brace Thru
-Star Thru
-Pass Thru
+Ends Pass Thru
+Regroup
+Centers Touch 1/4
+Regroup
+Pass the Ocean
+Boys Circulate
+Boys Run
+Bend the Line
+Touch 1/4
+Circulate
+Boys Run
 Allemande Left''',''),
 
   TestSequence('Press Ahead',

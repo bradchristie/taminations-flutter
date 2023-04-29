@@ -18,6 +18,7 @@
 
 */
 
+
 import '../../animated_call.dart';
 import '../../formations.dart';
 import '../../moves.dart';
@@ -61,5 +62,36 @@ import '../../moves.dart';
           Forward_2 +
           LeadLeft.changeBeats(2).scale(2.0,1.0)
       ]),
+
+    AnimatedCall('Regroup',
+        formation: Formations.OceanWavesRHBGGB,
+        from: 'Right-Hand Waves',
+        paths: [
+          QuarterLeft + RunRight.scale(1.5, 2.5).skew(-1.0, 0),
+          SwingLeft + QuarterLeft.skew(1.0, -1.0),
+          SwingLeft + QuarterLeft.skew(-1.0,-1.0),
+          QuarterLeft + RunLeft.scale(0.5, 2.5).skew(-1.0, 0)
+        ]),
+
+    AnimatedCall('Regroup',
+        formation: Formations.OceanWavesLHBGGB,
+        from: 'Left-Hand Waves',
+        paths: [
+          QuarterRight + RunRight.scale(1.5, 2.5).skew(-1.0, 0),
+          SwingRight + QuarterRight.skew(-1.0, 1.0),
+          SwingRight + QuarterRight.skew(1.0,1.0),
+          QuarterRight + RunLeft.scale(0.5, 2.5).skew(-1.0, 0)
+        ]),
+
+    AnimatedCall('Regroup',
+        formation: Formations.TmBoneDLRD,
+        from: 'T-Bones',
+        paths: [
+          QuarterRight + RunRight.scale(1.5, 2).skew(-2.0, 0),
+          FlipLeft + QuarterLeft,
+          RunRight + QuarterRight,
+          QuarterLeft + RunLeft.scale(0.5, 2).skew(-2.0, 0)
+        ])
+
   ];
 
