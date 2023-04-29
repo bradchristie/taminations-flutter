@@ -42,7 +42,8 @@ final _levelColor = {
   LevelData.C3A : Color.C3A,
   LevelData.C3B : Color.C3B,
   LevelData.CHALLENGE : Color.CHALLENGE,
-  LevelData.INDEX : Color.LIGHTGRAY
+  LevelData.INDEX : Color.LIGHTGRAY,
+  LevelData.NONE : Color.WHITE
 };
 extension LevelColor on LevelData {
   Color get color => _levelColor[this]!;

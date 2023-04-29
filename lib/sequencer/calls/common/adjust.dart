@@ -22,6 +22,7 @@ import '../common.dart';
 
 class Adjust extends Action {
 
+  @override var level = LevelData.NONE;
   @override var help = '''Adjust moves the dancers to a specific formation.
 The dancers must be near the formation you want.
 Formations you can use include

@@ -43,6 +43,7 @@ class LevelData implements Comparable<LevelData> {
   static final C3A = LevelData('C-3A', 'c3a', 'c3a'.r);
   static final C3B = LevelData('C-3B', 'c3b', 'c3b'.r);
   static final INDEX = LevelData('Index of All Calls', 'all', '[^s]'.r);
+  static final NONE = LevelData('','x','x'.r);  // for sequencer commands
 
   static final List<LevelData> _data = [
     LevelData.BMS,
@@ -59,7 +60,8 @@ class LevelData implements Comparable<LevelData> {
     LevelData.C2,
     LevelData.C3A,
     LevelData.C3B,
-    LevelData.INDEX
+    LevelData.INDEX,
+    LevelData.NONE
   ];
 
   static LevelData? find(String s) {
