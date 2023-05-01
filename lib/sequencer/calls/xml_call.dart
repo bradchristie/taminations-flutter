@@ -20,16 +20,6 @@
 
 
 import '../../animated_call.dart';
-import '../../calls/a1/calls_index.dart' as a1;
-import '../../calls/a2/calls_index.dart' as a2;
-import '../../calls/b1/calls_index.dart' as b1;
-import '../../calls/b2/calls_index.dart' as b2;
-import '../../calls/c1/calls_index.dart' as c1;
-import '../../calls/c2/calls_index.dart' as c2;
-import '../../calls/c3a/calls_index.dart' as c3a;
-import '../../calls/c3b/calls_index.dart' as c3b;
-import '../../calls/ms/calls_index.dart' as ms;
-import '../../calls/plus/calls_index.dart' as plus;
 import 'call.dart';
 import 'common.dart';
 import 'common/left.dart';
@@ -48,57 +38,43 @@ class XMLCall extends Call with IsLeft {
 
   static const noInactiveCalls = ['slip','slither'];
 
-  static Map<LevelData,List<AnimatedCall>> lookupAnimatedCall(String norm) =>
-     {
-      LevelData.B1: b1.CallsIndex.index[norm] ?? <AnimatedCall>[],
-      LevelData.B2: b2.CallsIndex.index[norm] ?? <AnimatedCall>[],
-      LevelData.MS: ms.CallsIndex.index[norm] ?? <AnimatedCall>[],
-      LevelData.PLUS: plus.CallsIndex.index[norm] ?? <AnimatedCall>[],
-      LevelData.A1: a1.CallsIndex.index[norm] ?? <AnimatedCall>[],
-      LevelData.A2: a2.CallsIndex.index[norm] ?? <AnimatedCall>[],
-      LevelData.C1: c1.CallsIndex.index[norm] ?? <AnimatedCall>[],
-      LevelData.C2: c2.CallsIndex.index[norm] ?? <AnimatedCall>[],
-      LevelData.C3A: c3a.CallsIndex.index[norm] ?? <AnimatedCall>[],
-      LevelData.C3B: c3b.CallsIndex.index[norm] ?? <AnimatedCall>[]
-    }.map((level, calls)  =>
-         MapEntry(level,calls.where((call) => !call.notForSequencer).toList()))
-       ..removeWhere((key, value) => value.isEmpty);
-
+  static List<AnimatedCall> lookupAnimatedCall(String norm) =>
+      TamUtils.normalizedCallIndex[norm] ?? [];
   XMLCall(String title) : super(title);
 
   bool matchAnimatedCall(CallContext ctxwork) {
     var bestOffset = double.maxFinite;
     var fuzzy = true;
-    for (var entry in lookupAnimatedCall(norm).entries) {
-      for (var tam in entry.value) {
-        if (normalizeCall(tam.title) != norm)
-          continue;
-        //  Check for 4-dancer calls that do not work for 8 dancers
-        if (tam.isExact && !exact)
-          continue;
-        //  Check for calls that must go around the centers
-        if (perimeter && !tam.isPerimeter)
-          continue;
-        var headsMatchSides = !tam.title.contains('Heads?|Sides?'.r);
-        var sexy = tam.isGenderSpecific;
-        var ctx2q = CallContext.fromFormation(tam.formation);
-        ctx2q.asymmetric = tam.isAsymmetric;
-        ctx2q.animate(0.0);
-        var mm = ctxwork.matchFormations(ctx2q, sexy: sexy, fuzzy: fuzzy,
-            handholds: !fuzzy, headsMatchSides: headsMatchSides);
-        if (mm != null) {
-          var matchResult = mm.match;
-          var totOffset = matchResult.offsets.fold<double>(
-              0.0, (s, v) => s + v.length);
-          //var totAngle = matchResult.angles.fold<double>(0.0, (s, a) => s + a);
-          if (totOffset < bestOffset) { // && totAngle.isAbout(0.0)) {
-            xcall = tam;
-            xmlmap = mm.map;
-            ctx2 = ctx2q;
-            bestOffset = totOffset;
-            level = entry.key;
-            found = true;
-          }
+    for (var tam in lookupAnimatedCall(norm)) {
+      if (tam.notForSequencer)
+        continue;
+      if (normalizeCall(tam.title) != norm)
+        continue;
+      //  Check for 4-dancer calls that do not work for 8 dancers
+      if (tam.isExact && !exact)
+        continue;
+      //  Check for calls that must go around the centers
+      if (perimeter && !tam.isPerimeter)
+        continue;
+      var headsMatchSides = !tam.title.contains('Heads?|Sides?'.r);
+      var sexy = tam.isGenderSpecific;
+      var ctx2q = CallContext.fromFormation(tam.formation);
+      ctx2q.asymmetric = tam.isAsymmetric;
+      ctx2q.animate(0.0);
+      var mm = ctxwork.matchFormations(ctx2q, sexy: sexy, fuzzy: fuzzy,
+          handholds: !fuzzy, headsMatchSides: headsMatchSides);
+      if (mm != null) {
+        var matchResult = mm.match;
+        var totOffset = matchResult.offsets.fold<double>(
+            0.0, (s, v) => s + v.length);
+        //var totAngle = matchResult.angles.fold<double>(0.0, (s, a) => s + a);
+        if (totOffset < bestOffset) { // && totAngle.isAbout(0.0)) {
+          xcall = tam;
+          xmlmap = mm.map;
+          ctx2 = ctx2q;
+          bestOffset = totOffset;
+          level = tam.level;
+          found = true;
         }
       }
     }

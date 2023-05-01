@@ -34,16 +34,14 @@ class DoYourPart extends Action {
   Pair<CallContext,List<int>> findYourPart(CallContext dypctx) {
     final callName = name.replaceFirst('Do Your Part'.ri,'').trim();
     final norm = normalizeCall(callName);
-    for (var entry in XMLCall.lookupAnimatedCall(norm).entries) {
-      for (var tam in entry.value) {
-        //  See if this is a subset match to the DYP dancers
-        final sexy = tam.isGenderSpecific;
-        final ctx2 = CallContext.fromFormation(tam.formation);
-        final mapping = dypctx.matchFormations(ctx2, sexy: sexy,
-            subformation: true, handholds: false, maxError: 2.9);
-        if (mapping != null)
-          return Pair(ctx2,mapping.map);
-      }
+    for (var tam in XMLCall.lookupAnimatedCall(norm)) {
+      //  See if this is a subset match to the DYP dancers
+      final sexy = tam.isGenderSpecific;
+      final ctx2 = CallContext.fromFormation(tam.formation);
+      final mapping = dypctx.matchFormations(ctx2, sexy: sexy,
+          subformation: true, handholds: false, maxError: 2.9);
+      if (mapping != null)
+        return Pair(ctx2,mapping.map);
     }
     //  Unable to find call
     throw CallError('Unable to find $callName to match requested dancers');
@@ -63,23 +61,20 @@ class DoYourPart extends Action {
       var bestOffset = double.maxFinite;
       MappingContext? bestMapping;
       CallContext? ctxBest;
-      for (var entry in XMLCall.lookupAnimatedCall(norm).entries) {
-        for (var tam in entry.value) {
-          //  See if this is a subset match to the DYP dancers
-          final sexy = tam.isGenderSpecific;
-          final ctx2 = CallContext.fromFormation(tam.formation);
-          final mapping = dypctx.matchFormations(ctx2, sexy: sexy,
-              subformation: true, handholds: false, maxError: 2.9);
-          if (mapping != null) {
-            var matchResult = mapping.match;
-            var totOffset = matchResult.offsets.fold<double>(0.0, (s, v) => s + v.length);
-            if (totOffset < bestOffset) {
-              ctxBest = ctx2;
-              bestOffset = totOffset;
-              bestMapping = mapping;
-            }
+      for (var tam in XMLCall.lookupAnimatedCall(norm)) {
+        //  See if this is a subset match to the DYP dancers
+        final sexy = tam.isGenderSpecific;
+        final ctx2 = CallContext.fromFormation(tam.formation);
+        final mapping = dypctx.matchFormations(ctx2, sexy: sexy,
+            subformation: true, handholds: false, maxError: 2.9);
+        if (mapping != null) {
+          var matchResult = mapping.match;
+          var totOffset = matchResult.offsets.fold<double>(0.0, (s, v) => s + v.length);
+          if (totOffset < bestOffset) {
+            ctxBest = ctx2;
+            bestOffset = totOffset;
+            bestMapping = mapping;
           }
-
         }
       }
       if (bestMapping != null && ctxBest != null) {

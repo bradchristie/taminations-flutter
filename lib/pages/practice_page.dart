@@ -26,16 +26,7 @@ import 'package:provider/provider.dart' as pp;
 
 import '../animated_call.dart';
 import '../beat_notifier.dart';
-import '../calls/a1/calls_index.dart' as a1;
-import '../calls/a2/calls_index.dart' as a2;
-import '../calls/b1/calls_index.dart' as b1;
-import '../calls/b2/calls_index.dart' as b2;
-import '../calls/c1/calls_index.dart' as c1;
-import '../calls/c2/calls_index.dart' as c2;
-import '../calls/c3a/calls_index.dart' as c3a;
-import '../calls/c3b/calls_index.dart' as c3b;
-import '../calls/ms/calls_index.dart' as ms;
-import '../calls/plus/calls_index.dart' as plus;
+import '../call_index.dart';
 import '../common_flutter.dart';
 import '../dance_model.dart';
 import 'page.dart';
@@ -59,28 +50,9 @@ class PracticeModel {
   Future<bool> firstAnimation(fm.BuildContext context, DanceModel danceModel) async =>
     nextAnimation(context, danceModel);
 
-  Map<String,List<AnimatedCall>> _callsForLevel(LevelData level) {
-    if (level == LevelData.B1)
-      return b1.CallsIndex.index;
-    else if (level == LevelData.B2)
-      return b2.CallsIndex.index;
-    else if (level == LevelData.MS)
-      return ms.CallsIndex.index;
-    else if (level == LevelData.PLUS)
-      return plus.CallsIndex.index;
-    else if (level == LevelData.A1)
-      return a1.CallsIndex.index;
-    else if (level == LevelData.A2)
-      return a2.CallsIndex.index;
-    else if (level == LevelData.C1)
-      return c1.CallsIndex.index;
-    else if (level == LevelData.C2)
-      return c2.CallsIndex.index;
-    else if (level == LevelData.C3A)
-      return c3a.CallsIndex.index;
-    else if (level == LevelData.C3B)
-      return c3b.CallsIndex.index;
-    throw ArgumentError('Invalid level: $level');
+  List<List<AnimatedCall>> _callsForLevel(LevelData level) {
+    var calls = callIndex.where((item) => item.level == level.dir);
+    return calls.map((e) => e.calls).toList();
   }
 
   Future<bool> nextAnimation(fm.BuildContext context, DanceModel danceModel) async {
@@ -89,7 +61,7 @@ class PracticeModel {
     final titleModel = pp.Provider.of<TitleModel>(context,listen: false);
     final settings = pp.Provider.of<Settings>(context,listen: false);
     final levelDatum = LevelData.find(appState.level!)!;
-    final levelCalls = _callsForLevel(levelDatum).values.toList();
+    final levelCalls = _callsForLevel(levelDatum);
     //  Load that call and choose a random animation
     final randomCall = levelCalls[Random().nextInt(levelCalls.length)];
     final randomAnim = randomCall[Random().nextInt(randomCall.length)];

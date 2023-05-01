@@ -23,6 +23,7 @@ import 'dart:async' show Future;
 import 'package:flutter/services.dart' show rootBundle;
 import 'package:platform/platform.dart';
 
+import 'animated_call.dart';
 import 'call_index.dart';
 import 'common_flutter.dart';
 
@@ -49,6 +50,8 @@ class TamUtils {
     'color', 'dancer', 'black', 'blue', 'cyan', 'gray', 'grey',
     'green', 'magenta', 'orange', 'red', 'white', 'yellow'
   };
+
+  static Map<String,List<AnimatedCall>> normalizedCallIndex = {};
 
   //  Link ssd assets to assets in b1/b2/ms
   static Map<String,String> ssdDir = {
@@ -206,9 +209,22 @@ class TamUtils {
   static Future<bool> init() async {
 
     //  Add words in each call to set of all words
-    for (var data in callIndex) {
-      var dataWords = data.title.split('\\s+'.r).map((w) => w.toLowerCase());
-      words.addAll(dataWords);
+    if (words.length < 50) {
+      for (var data in callIndex) {
+        var dataWords = data.title.split('\\s+'.r).map((w) => w.toLowerCase());
+        words.addAll(dataWords);
+      }
+    }
+    //  Build index of normalized animated calls for sequencer
+    if (normalizedCallIndex.isEmpty) {
+      for (var data in callIndex) {
+        for (var call in data.calls) {
+          if (!call.notForSequencer) {
+            var norm = call.title.norm;
+            normalizedCallIndex.putIfAbsent(norm, () => []).add(call);
+          }
+        }
+      }
     }
     return true;
   }

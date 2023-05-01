@@ -37,31 +37,29 @@ class Finish extends Action {
     final finishNorm = normalizeCall(finishCall);
     //  First look for XML calls
     //  Find matching XML call
-    for (var entry in XMLCall.lookupAnimatedCall(finishNorm).entries) {
-      for (var tam in entry.value) {
-        //  Should be divided into parts, will also accept fractions
-        final parts = tam.parts.isNotEmpty ? tam.parts : tam.fractions;
-        final sexy = tam.isGenderSpecific;
-        final allp = CallContext.fromFormation(tam.formation,withPaths:tam.paths).dancers.map((d) => d.path).toList();
-        final firstPart = parts.isBlank ? 0.0 : (parts.split(';').firstOrNull?.d ?? 0.0);
-        if (firstPart > 0) {
-          //  Load the call and animate past the first part
-          final ctx2 = CallContext.fromFormation(tam.formation,withPaths: tam.paths);
-          ctx2.animate(firstPart);
-          final mapping = ctx.matchFormations(ctx2,sexy: sexy);
-          if (mapping != null) {
-            final matchResult = mapping.match;
-            ctx.adjustToFormationMatch(matchResult);
-            for (var i=0; i<mapping.map.length; i++) {
-              final m = mapping.map[i];
-              final p = Path(allp[m].movelist);
-              var firstBeats = 0.0;
-              while (firstBeats.isLessThan(firstPart))
-                firstBeats += p.shift()?.beats ?? firstPart;
-              ctx.dancers[i].path += p;
-            }
-            return;
+    for (var tam in XMLCall.lookupAnimatedCall(finishNorm)) {
+      //  Should be divided into parts, will also accept fractions
+      final parts = tam.parts.isNotEmpty ? tam.parts : tam.fractions;
+      final sexy = tam.isGenderSpecific;
+      final allp = CallContext.fromFormation(tam.formation,withPaths:tam.paths).dancers.map((d) => d.path).toList();
+      final firstPart = parts.isBlank ? 0.0 : (parts.split(';').firstOrNull?.d ?? 0.0);
+      if (firstPart > 0) {
+        //  Load the call and animate past the first part
+        final ctx2 = CallContext.fromFormation(tam.formation,withPaths: tam.paths);
+        ctx2.animate(firstPart);
+        final mapping = ctx.matchFormations(ctx2,sexy: sexy);
+        if (mapping != null) {
+          final matchResult = mapping.match;
+          ctx.adjustToFormationMatch(matchResult);
+          for (var i=0; i<mapping.map.length; i++) {
+            final m = mapping.map[i];
+            final p = Path(allp[m].movelist);
+            var firstBeats = 0.0;
+            while (firstBeats.isLessThan(firstPart))
+              firstBeats += p.shift()?.beats ?? firstPart;
+            ctx.dancers[i].path += p;
           }
+          return;
         }
       }
     }

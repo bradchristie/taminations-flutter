@@ -144,8 +144,7 @@ mixin CallWithParts {
   static void performOnePart(CallContext ctx, String name, int partNum) {
     final norm = normalizeCall(name);
     //  Find matching XML call
-    for (var entry in XMLCall.lookupAnimatedCall(norm).entries) {
-      for (var tam in entry.value) {
+    for (var tam in XMLCall.lookupAnimatedCall(norm)) {
         //  Should be divided into parts, will also accept fractions
         final parts = tam.parts;  // fractions?
         final sexy = tam.isGenderSpecific;
@@ -178,7 +177,6 @@ mixin CallWithParts {
             }
             return;
           }
-        }
       }
     }
 
