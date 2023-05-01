@@ -59,7 +59,6 @@ import 'calls/c1/butterfly_formation.dart' as c1;
 import 'calls/b1/california_twirl.dart' as b1;
 import 'calls/b1/california_twirl.dart' as ssd;
 import 'calls/a1/cast_a_shadow.dart' as a1;
-import 'calls/c1/cast_a_shadow.dart' as c1;
 import 'calls/c3b/fraction_cast_and_relay.dart' as c3b;
 import 'calls/c1/cast_back.dart' as c1;
 import 'calls/ms/cast_off_three_quarters.dart' as ms;
@@ -614,7 +613,6 @@ var callIndex = [
   CallEntry('California Twirl','b1','b1/california_twirl',b1.CaliforniaTwirl,['lang-de','lang-ja'],'b1/california_twirl.mp3'),
   CallEntry('California Twirl','ssd','ssd/california_twirl',ssd.CaliforniaTwirl,['lang-de','lang-ja']),
   CallEntry('Cast a Shadow','a1','a1/cast_a_shadow',a1.CastAShadow,[],'a1/cast_a_shadow.mp3'),
-  CallEntry('Cast a Shadow','c1','c1/cast_a_shadow',c1.CastAShadow,[],'a1/cast_a_shadow.mp3'),
   CallEntry('Cast and Relay','c3b','c3b/fraction_cast_and_relay',c3b.FractionCastAndRelay,[]),
   CallEntry('Cast Back','c1','c1/cast_back',c1.CastBack,[]),
   CallEntry('Cast Off Three Quarters','ms','ms/cast_off_three_quarters',ms.CastOffThreeQuarters,['lang-de','lang-ja'],'ms/cast_off_three_quarters.mp3'),

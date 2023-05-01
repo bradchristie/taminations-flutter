@@ -133,6 +133,50 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cast a Shadow',
+        formation:Formations.n3and_1lines1,
+        from:'3 and 1 Lines #1',
+        paths:[
+          UmTurnRight.changeBeats(.5).skew(0.0,-0.75) +
+              Forward_2.changeBeats(1) +
+              SwingRight.scale(0.75,0.75) +
+              LeadRight.changeBeats(3).skew(2.0,1.25),
+
+          ExtendLeft.changeBeats(2).scale(2.0,0.5) +
+              LeadRight.changeBeats(3.5).scale(1.5,1.5) +
+              ExtendRight.changeBeats(2).scale(2.0,0.5),
+
+          ExtendLeft.changeBeats(2).scale(2.0,0.5) +
+              LeadLeft.changeBeats(3.5).scale(0.5,0.5) +
+              ExtendRight.changeBeats(2).scale(2.0,0.5),
+
+          ExtendLeft.changeBeats(1.5).scale(2.0,0.75) +
+              SwingRight.scale(0.75,0.75) +
+              LeadRight.changeBeats(3).skew(2.0,-0.75)
+        ]),
+
+    AnimatedCall('Cast a Shadow',
+        formation:Formations.n3and_1lines4,
+        from:'3 and 1 Lines #4',
+        paths:[
+          ExtendRight.changeBeats(1.5).scale(2.0,0.75) +
+              SwingLeft.scale(0.75,0.75) +
+              LeadLeft.changeBeats(3).skew(2.0,0.75),
+
+          ExtendLeft.changeBeats(2).scale(2.0,0.5) +
+              LeadRight.changeBeats(3.5).scale(1.5,1.5) +
+              ExtendRight.changeBeats(2).scale(2.0,0.5),
+
+          ExtendLeft.changeBeats(2).scale(2.0,0.5) +
+              LeadLeft.changeBeats(3.5).scale(0.5,0.5) +
+              ExtendRight.changeBeats(2).scale(2.0,0.5),
+
+          UmTurnLeft.changeBeats(.5).skew(0.0,0.75) +
+              Forward_2.changeBeats(1) +
+              SwingLeft.scale(0.75,0.75) +
+              LeadLeft.changeBeats(3).skew(2.0,-1.25)
+        ]),
+
+    AnimatedCall('Cast a Shadow',
       formation:Formations.n3and_1lines5,
       from:'3 and 1 Lines #5',
       paths:[

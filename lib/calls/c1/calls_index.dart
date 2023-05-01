@@ -8,7 +8,6 @@ import 'anything_the_windmill.dart';
 import 'anything_to_a_wave.dart';
 import 'block_formation.dart';
 import 'butterfly_formation.dart';
-import 'cast_a_shadow.dart';
 import 'cast_back.dart';
 import 'chain_reaction.dart';
 import 'chase_your_neighbor.dart';
@@ -190,7 +189,6 @@ class CallsIndex {
       'ButterflyVeerLeft' : [ ButterflyFormation[23] ],
       'ButterflyWalkandDodge' : [ ButterflyFormation[24] ],
       'ButterflyWheelThru' : [ ButterflyFormation[25] ],
-      'CastaShadow' : [ CastAShadow[0],CastAShadow[1] ],
       'CastBack' : [ CastBack[0],CastBack[1],CastBack[2],CastBack[3],CastBack[0],CastBack[1],CastBack[2],CastBack[3] ],
       'CrossCastBack' : [ CastBack[4],CastBack[4] ],
       'ChainReaction' : [ ChainReaction[2],ChainReaction[3],ChainReaction[4],ChainReaction[5],ChainReaction[6],ChainReaction[7] ],

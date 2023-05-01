@@ -92,7 +92,7 @@ class CallsIndex {
       'BeauWalkBelleDodge' : [ BellesAndBeaus[3] ],
       'BelleCross' : [ BellesAndBeaus[4],AnythingAndCross[7],AnythingAndCross[8] ],
       'BraceThru' : [ BraceThru[0],BraceThru[1],BraceThru[2],BraceThru[3] ],
-      'CastaShadow' : [ CastAShadow[0],CastAShadow[1],CastAShadow[2],CastAShadow[3],CastAShadow[4],CastAShadow[5] ],
+      'CastaShadow' : [ CastAShadow[0],CastAShadow[1],CastAShadow[2],CastAShadow[3],CastAShadow[4],CastAShadow[5], CastAShadow[6], CastAShadow[7] ],
       'HeadCastaShadow' : [ CastAShadow[6] ],
       'ChainReaction' : [ ChainReaction[0],ChainReaction[1] ],
       'ChainReactionTurntheStar12' : [ ChainReaction[2] ],
