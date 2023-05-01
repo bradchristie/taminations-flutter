@@ -122,7 +122,7 @@ import '../../moves.dart';
 
     AnimatedCall('Left Double Pass Thru',
       formation:Formations.DoublePassThru,
-      from:'Double Pass Thru',difficulty: 2,
+      from:'Double Pass Thru',difficulty: 2, noDisplay: true,
       paths:[
           ExtendRight.scale(1.0,0.5) +
           Forward_2 +
@@ -143,7 +143,7 @@ import '../../moves.dart';
 
     AnimatedCall('Left Double Pass Thru',
       formation:Formations.QuarterTagLH,
-      from:'Left-Hand Quarter Tag',difficulty: 3,
+      from:'Left-Hand Quarter Tag',difficulty: 3, noDisplay: true,
       taminator: '''
       This is an example of the Ocean Wave rule as applied to a Left-Hand Wave.
     ''',
@@ -168,7 +168,7 @@ import '../../moves.dart';
         DancerModel.fromData(gender:Gender.BOY,x:1.5,y:0,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:0.5,y:0,angle:0),
   ]),
-      from:'Tidal Column',difficulty: 3,
+      from:'Tidal Column',difficulty: 3, noDisplay: true,
       paths:[
           ExtendRight.scale(0.5,0.5) +
           Forward +
