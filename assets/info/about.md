@@ -23,19 +23,20 @@ Call pronunciations provided by
 
 ---
 
-## Taminations version 1.6.59 built 2023-04-21
+## Taminations version 1.6.60 built 2023-05-02
 Copyright 2023 by Brad Christie.  
 This is free software, and you are welcome to modify and redistribute it
 under the terms of the [GNU GPL license](http://www.gnu.org/licenses/gpl.html).  
 
 ## What's New
-* Link to SSD web page
-* Pass and Roll (Your Neighbor) from tidal column
+* Fix crash displaying animations with phantoms
+* More animations for Regroup
+* Remove Cast a Shadow from C-1, now all variations are in A-1
 * Sequencer changes:
-  - Improvements for Triple Box / Line
-  - Accept Zig or Zag with 3/4 tag
-  - Fix Left Dosado
-  - Accept Ends to refer to outer 4 if not in lines
+  - Don't show a level for Adjust
+  - Fix Circulate from some uncommon formations
+  - Don't treat Dosado to a Wave like C-1 (anything) to a Wave
+  - Handle Hinge and Motivate (e.g.) as two calls, Hinge Motivate as one
 
 For a detailed history of changes, view the
 [Git log](https://github.com/bradchristie/taminations-flutter/commits/main)
