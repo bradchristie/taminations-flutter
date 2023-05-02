@@ -1540,10 +1540,6 @@ class CallContext {
     //  then we don't have leaders / trailers
     //  unless the outer 4 are facing out, then they are leaders
     if (centerWave != null) {
-      for (var d in dancers) {
-        d.data.leader = false;
-        d.data.trailer = false;
-      }
       dancers.where((d) => !centerWave.contains(d)).forEach((d) {
         if (d.isFacingOut && isInCouple(d))
           d.data.leader = true;
