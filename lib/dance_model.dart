@@ -385,18 +385,22 @@ class DanceModel extends fm.ChangeNotifier {
             'B', 'F', 'J',
             'C', 'G', 'K',
             'D', 'H', 'L',
-            'U', 'V', 'W', 'X', 'Y', 'Z'];
+            ' ', ' ', ' ', ' ', ' ', ' ',
+            ' ', ' ', ' ', ' ', ' ', ' '];
           couples = ['1', '3', '5', '1', '3', '5',
             '2', '4', '6', '2', '4', '6',
-            '7', '8', '7', '8', '7', '8'];
+            ' ', ' ', ' ', ' ', ' ', ' ',
+            ' ', ' ', ' ', ' ', ' ', ' '];
         } else if (_geometryType == Geometry.HASHTAG) {
-          numbers = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
+          numbers = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ                        '.split('');
           couples = ['1', '3', '1', '3',
             '1', '3', '1', '3',
             '1', '3', '1', '3',
             '1', '3', '1', '3',
             '1', '3', '1', '3',
-            '1', '3', '1', '3'];
+            '1', '3', '1', '3',
+            ' ', ' ', ' ', ' ', ' ', ' ',' ',' ',
+            ' ', ' ', ' ', ' ', ' ', ' ',' ',' '];
         } else if (_geometryType == Geometry.BIGON) {
           numbers = ['1', '2', '3', '4', '5', '6', '7', '8'];
           couples = [ '1', '2', '3', '4', '5', '6', '7', '8'];
@@ -450,6 +454,7 @@ class DanceModel extends fm.ChangeNotifier {
       for (var d in dancers) {
         _beats = max(_beats, d.beats + leadout);
         d.showNumber = _showNumbers;
+        d.hidden = d.isPhantom && !_showPhantoms;
       }
       beater.setTimes(-leadin, _beats);
       later(() {

@@ -63,8 +63,10 @@ class AnimatedCall {
         this.isGenderSpecific = false,
         this.notForSequencer = false,
         this.noDisplay = false,
-        this.numbers = const ['1', '5', '2', '6', '3', '7', '4', '8'],
-        this.coupleNumbers = const ['1', '3', '1', '3', '2', '4', '2', '4'],
+        this.numbers = const ['1', '5', '2', '6', '3', '7', '4', '8',
+          ' ',' ',' ',' ',' ',' ',' ',' '],
+        this.coupleNumbers = const ['1', '3', '1', '3', '2', '4', '2', '4',
+          ' ',' ',' ',' ',' ',' ',' ',' '],
         this.taminator = ''
       })
       : formation = formation.copy(), paths = paths.clone() {
