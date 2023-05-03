@@ -19,6 +19,8 @@
 */
 
 import '../../animated_call.dart';
+import '../../dancer_model.dart';
+import '../../formation.dart';
 import '../../formations.dart';
 import '../../moves.dart';
 
@@ -217,6 +219,63 @@ import '../../moves.dart';
           ExtendLeft.changeBeats(2).scale(2.0,1.75) +
           HingeRight.scale(1.0,0.75)
       ]),
+
+    AnimatedCall('Scoot and Weave',
+        from: 'Point-to-Point 1/4 Tag',
+        formation: Formation('', [
+          DancerModel.fromData(gender:Gender.BOY,x:0,y:1,angle:90),
+          DancerModel.fromData(gender:Gender.GIRL,x:1,y:3,angle:270),
+          DancerModel.fromData(gender:Gender.BOY,x:0,y:5,angle:270),
+          DancerModel.fromData(gender:Gender.GIRL,x:-1,y:3,angle:90),
+        ]),
+        paths: [
+          ExtendLeft.changeBeats(1.5).scale(1,0.75) +
+              SwingRight.scale(0.5,0.75) +
+              LeadRight.changeBeats(1.5).scale(1.25,0.75),
+
+          Forward.changeBeats(1.5).scale(1,1.0).skew(0.0,-0.25) +
+              SwingRight.scale(0.5,0.75) +
+              ExtendRight.scale(1, 1.25) +
+              HingeLeft.scale(.7, .5),
+
+          ExtendLeft.changeBeats(1.5).scale(1,0.75) +
+              SwingRight.scale(0.5,0.75) +
+              LeadRight.changeBeats(1.5).scale(1,0.75),
+
+          Forward.changeBeats(1.5).scale(1,1.0).skew(0.0,-0.25) +
+              SwingRight.scale(0.5,0.75) +
+              ExtendRight.scale(1, 1.25) +
+              HingeLeft.scale(.7, .5)
+        ]),
+
+    AnimatedCall('Scoot and Weave',
+        from: 'Point-to-Point Left-Hand 1/4 Tag',
+        formation: Formation('', [
+          DancerModel.fromData(gender:Gender.BOY,x:0,y:1,angle:90),
+          DancerModel.fromData(gender:Gender.GIRL,x:1,y:3,angle:90),
+          DancerModel.fromData(gender:Gender.BOY,x:0,y:5,angle:270),
+          DancerModel.fromData(gender:Gender.GIRL,x:-1,y:3,angle:270),
+        ]),
+        paths: [
+          ExtendRight.changeBeats(1.5).scale(1,0.75) +
+              SwingLeft.scale(0.5,0.75) +
+              LeadLeft.changeBeats(1.5).scale(1.25,0.75),
+
+          Forward.changeBeats(1.5).scale(1,1.0).skew(0.0,0.25) +
+              SwingLeft.scale(0.5,0.75) +
+              ExtendLeft.scale(1, 1.25) +
+              HingeRight.scale(.7, .5),
+
+          ExtendRight.changeBeats(1.5).scale(1,0.75) +
+              SwingLeft.scale(0.5,0.75) +
+              LeadLeft.changeBeats(1.5).scale(1,0.75),
+
+          Forward.changeBeats(1.5).scale(1,1.0).skew(0.0,0.25) +
+              SwingLeft.scale(0.5,0.75) +
+              ExtendLeft.scale(1, 1.25) +
+              HingeRight.scale(.7, .5)
+        ]),
+
 
     AnimatedCall('As Couples Scoot and Weave',
       formation:Formations.TwomFacedLinesRH,

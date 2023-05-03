@@ -279,5 +279,60 @@ import '../../moves.dart';
           SwingLeft.scale(0.75,0.75) +
           ExtendRight.changeBeats(1.5).scale(1.5,0.5)
       ]),
+
+    AnimatedCall('Scoot Back',
+        from: 'Point-to-Point 1/4 Tag',
+        difficulty: 3,
+        formation: Formation('', [
+          DancerModel.fromData(gender:Gender.BOY,x:0,y:1,angle:90),
+          DancerModel.fromData(gender:Gender.GIRL,x:1,y:3,angle:270),
+          DancerModel.fromData(gender:Gender.BOY,x:0,y:5,angle:270),
+          DancerModel.fromData(gender:Gender.GIRL,x:-1,y:3,angle:90),
+        ]),
+        paths: [
+          ExtendLeft.changeBeats(1.5).scale(1,0.75) +
+              SwingRight.scale(0.5,0.75) +
+              ExtendRight.changeBeats(1.5).scale(1,0.75),
+
+          Forward.changeBeats(1.5).scale(1,1.0).skew(0.0,-0.25) +
+              SwingRight.scale(0.5,0.75) +
+              Forward.changeBeats(1.5).scale(1,1.0).skew(0.0,0.25),
+
+          ExtendLeft.changeBeats(1.5).scale(1,0.75) +
+              SwingRight.scale(0.5,0.75) +
+              ExtendRight.changeBeats(1.5).scale(1,0.75),
+
+          Forward.changeBeats(1.5).scale(1,1.0).skew(0.0,-0.25) +
+              SwingRight.scale(0.5,0.75) +
+              Forward.changeBeats(1.5).scale(1,1.0).skew(0.0,0.25)
+        ]),
+
+    AnimatedCall('Scoot Back',
+        from: 'Point-to-Point Left-Hand 1/4 Tag',
+        difficulty: 3,
+        formation: Formation('', [
+          DancerModel.fromData(gender:Gender.BOY,x:0,y:1,angle:90),
+          DancerModel.fromData(gender:Gender.GIRL,x:1,y:3,angle:90),
+          DancerModel.fromData(gender:Gender.BOY,x:0,y:5,angle:270),
+          DancerModel.fromData(gender:Gender.GIRL,x:-1,y:3,angle:270),
+        ]),
+        paths: [
+          ExtendRight.changeBeats(1.5).scale(1,0.75) +
+              SwingLeft.scale(0.5,0.75) +
+              ExtendLeft.changeBeats(1.5).scale(1,0.75),
+
+          Forward.changeBeats(1.5).scale(1,1.0).skew(0.0,0.25) +
+              SwingLeft.scale(0.5,0.75) +
+              Forward.changeBeats(1.5).scale(1,1.0).skew(0.0,-0.25),
+
+          ExtendRight.changeBeats(1.5).scale(1,0.75) +
+              SwingLeft.scale(0.5,0.75) +
+              ExtendLeft.changeBeats(1.5).scale(1,0.75),
+
+          Forward.changeBeats(1.5).scale(1,1.0).skew(0.0,0.25) +
+              SwingLeft.scale(0.5,0.75) +
+              Forward.changeBeats(1.5).scale(1,1.0).skew(0.0,-0.25)
+        ])
+
   ];
 
