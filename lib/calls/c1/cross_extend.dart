@@ -19,6 +19,8 @@
 */
 
 import '../../animated_call.dart';
+import '../../dancer_model.dart';
+import '../../formation.dart';
 import '../../formations.dart';
 import '../../moves.dart';
 
@@ -41,6 +43,24 @@ import '../../moves.dart';
 
           ExtendLeft.changeBeats(2)
       ]),
+
+    AnimatedCall('Cross Extend',
+        formation:Formations.SingleQuarterTag,
+        from:'Single 1/4 Tag',
+        paths:[
+          ExtendRight.changeBeats(2).scale(1.5,1.0),
+
+          ExtendRight.changeBeats(2).scale(1.5, 2)
+        ]),
+
+    AnimatedCall('Cross Extend',
+        formation:Formations.SingleLeftQuarterTag,
+        from:'Single Left-Hand 1/4 Tag',
+        paths:[
+          ExtendLeft.changeBeats(2).scale(1.5,1.0),
+
+          ExtendLeft.changeBeats(2).scale(1.5, 2)
+        ]),
 
     AnimatedCall('Cross Extend',
       formation:Formations.OceanWavesRHBGBG,
@@ -93,6 +113,43 @@ import '../../moves.dart';
 
           ExtendLeft.changeBeats(2).scale(2.0,2.0)
       ]),
+
+    AnimatedCall('Cross Extend',
+        from: 'Point-to-Point 1/4 Tag',
+        formation: Formation('', [
+          DancerModel.fromData(gender:Gender.BOY,x:0,y:1,angle:90),
+          DancerModel.fromData(gender:Gender.GIRL,x:1,y:3,angle:270),
+          DancerModel.fromData(gender:Gender.BOY,x:0,y:5,angle:270),
+          DancerModel.fromData(gender:Gender.GIRL,x:-1,y:3,angle:90),
+        ]),
+        paths: [
+          ExtendRight.changeBeats(2).skew(-1, 0),
+
+          ExtendRight.changeBeats(2).scale(1, 2).skew(1, 0),
+
+          ExtendRight.changeBeats(2).skew(1,0),
+
+          ExtendRight.changeBeats(2).scale(1, 2).skew(-1, 0)
+        ]),
+
+    AnimatedCall('Cross Extend',
+        from: 'Point-to-Point Left-Hand 1/4 Tag',
+        formation: Formation('', [
+          DancerModel.fromData(gender:Gender.BOY,x:0,y:1,angle:90),
+          DancerModel.fromData(gender:Gender.GIRL,x:1,y:3,angle:90),
+          DancerModel.fromData(gender:Gender.BOY,x:0,y:5,angle:270),
+          DancerModel.fromData(gender:Gender.GIRL,x:-1,y:3,angle:270),
+        ]),
+        paths: [
+          ExtendLeft.changeBeats(2).skew(-1, 0),
+
+          ExtendLeft.changeBeats(2).scale(1, 2).skew(-1, 0),
+
+          ExtendLeft.changeBeats(2).skew(1,0),
+
+          ExtendLeft.changeBeats(2).scale(1, 2).skew(1, 0)
+        ]),
+
 
     AnimatedCall('As Couples Cross Extend',
       formation:Formations.TwomFacedLinesRH,
