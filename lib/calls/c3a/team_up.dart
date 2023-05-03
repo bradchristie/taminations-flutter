@@ -25,6 +25,19 @@ import '../../moves.dart';
   final List<AnimatedCall> TeamUp = [
 
     AnimatedCall('Team Up',
+        from: 'Lines Facing Out',
+        formation: Formations.LinesFacingOut,
+        numbers: ['1','8','2','7','3','6','4','5'],
+        paths: [
+          LeadLeft.scale(1, 3).changeBeats(2) +
+              HingeRight.skew(0, 1),
+          DodgeLeft.skew(-1, 0),
+          RunRight.skew(-1, 0),
+          LeadRight.scale(2, 3).changeBeats(2) +
+              HingeRight,
+        ]),
+
+    AnimatedCall('Team Up',
       formation:Formations.CompletedDoublePassThru,
       from:'Completed Double Pass Thru',
       paths:[
@@ -53,6 +66,19 @@ import '../../moves.dart';
           LeadRight_2.skew(0.0,-1.0) +
           HingeRight
       ]),
+
+    AnimatedCall('Team Up',
+        from: '3 and 1 Lines',
+        formation: Formations.n3and_1lines2,
+        numbers: ['1','8','2','7','3','6','4','5'],
+        paths: [
+          ExtendLeft.changeBeats(2).scale(2, 0.5) +
+              HingeRight.scale(1, 0.5),
+          BackSashayLeft.skew(-1, 0),
+          BackSashayLeft.skew(1, 0),
+          ExtendLeft.changeBeats(2).scale(2, 0.5) +
+              HingeRight.scale(1, 0.5)
+        ]),
 
     AnimatedCall('Team Up',
       formation:Formations.TmBoneURDR,
