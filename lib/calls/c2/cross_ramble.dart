@@ -21,13 +21,12 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> CrossRamble = [
 
     AnimatedCall('Cross Ramble',
-      formation:Formations.n34Tag,
+      formation:Formation('3/4 Tag'),
       from:'3/4 Tag',isGenderSpecific:true,parts:'4',
       paths:[
           LeadLeft.changeBeats(1).scale(0.5,1.0) +
@@ -49,7 +48,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cross Ramble',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.GIRL,x:-3,y:1,angle:180),
         DancerModel.fromData(gender:Gender.BOY,x:0,y:-3,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:-3,y:-1,angle:180),
@@ -76,7 +75,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cross Ramble',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-3,y:1,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:0,y:-3,angle:180),
         DancerModel.fromData(gender:Gender.BOY,x:-3,y:-1,angle:180),
@@ -103,7 +102,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('_Cross Ramble Part 1',
-      formation:Formations.n34Tag,
+      formation:Formation('3/4 Tag'),
       from:'3/4 Tag',parts:'4',noDisplay: true,
       paths:[
           LeadLeft.changeBeats(1).scale(0.5,1.0) +
@@ -117,7 +116,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('_Cross Ramble Part 1',
-      formation:Formations.n34TagLH,
+      formation:Formation('3/4 Tag LH'),
       from:'3/4 Tag LH',parts:'4',noDisplay: true,
       paths:[
           LeadLeft.changeBeats(1).scale(0.5,1.0) +
@@ -131,7 +130,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Scoot and Cross Ramble',
-      formation:Formations.QuarterTag,
+      formation:Formation('Quarter Tag'),
       from:'Quarter Tag',isGenderSpecific:true,parts:'5;4',
       paths:[
           ExtendLeft.scale(1.5,1.5) +
@@ -165,7 +164,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Scoot and Cross Ramble',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.GIRL,x:-3,y:1,angle:0),
         DancerModel.fromData(gender:Gender.BOY,x:0,y:-3,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:-3,y:-1,angle:0),
@@ -204,7 +203,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Scoot and Cross Ramble',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-3,y:1,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:0,y:-3,angle:180),
         DancerModel.fromData(gender:Gender.BOY,x:-3,y:-1,angle:0),

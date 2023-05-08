@@ -21,13 +21,12 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> ZigAndZag = [
 
     AnimatedCall('Zig Zag',
-      formation:Formations.DoublePassThru,
+      formation:Formation('Double Pass Thru'),
       from:'Double Pass Thru',
       paths:[
           QuarterLeft.changeBeats(2).skew(0.0,1.0),
@@ -40,7 +39,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Zig Zag',
-      formation:Formations.CompletedDoublePassThru,
+      formation:Formation('Completed Double Pass Thru'),
       from:'Completed Double Pass Thru',
       paths:[
           QuarterRight.changeBeats(2).skew(0.0,-1.0),
@@ -53,7 +52,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Zig Zag',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.GIRL,x:-1,y:3,angle:90),
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:1,angle:90),
         DancerModel.fromData(gender:Gender.GIRL,x:-1,y:-1,angle:90),
@@ -71,7 +70,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Zig Zag',
-      formation:Formations.ColumnLHGBGB,
+      formation:Formation('Column LH GBGB'),
       from:'Left-Hand Columns',
       paths:[
           QuarterLeft.changeBeats(2).skew(0.0,-1.0),
@@ -84,7 +83,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Zig Zag',
-      formation:Formations.TwomFacedLinesRH,
+      formation:Formation('Two-Faced Lines RH'),
       from:'Two-Faced Lines',
       paths:[
           QuarterLeft.changeBeats(2).skew(1.0,0.0),
@@ -97,7 +96,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Zig Zag',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       from:'Right-Hand Waves',
       paths:[
           QuarterLeft.changeBeats(2).skew(1.0,0.0),
@@ -110,7 +109,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Zig Zag',
-      formation:Formations.OceanWavesLHBGGB,
+      formation:Formation('Ocean Waves LH BGGB'),
       from:'Left-Hand Waves',
       paths:[
           QuarterRight.changeBeats(2).skew(-1.0,0.0),
@@ -123,7 +122,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Zig',
-      formation:Formations.n34Tag,
+      formation:Formation('3/4 Tag'),
       from:'Three Quarters Tag',
       taminator: '''Here the dancers adjust to form diamonds.
     ''',
@@ -138,7 +137,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('As Couples Zig Zag',
-      formation:Formations.TwomFacedLinesRH,
+      formation:Formation('Two-Faced Lines RH'),
       group:'As Couples',
       paths:[
           BackHingeRight,
@@ -151,7 +150,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('As Couples Zag Zig',
-      formation:Formations.TwomFacedLinesRH,
+      formation:Formation('Two-Faced Lines RH'),
       group:'As Couples',
       paths:[
           HingeRight,

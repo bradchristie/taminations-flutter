@@ -19,13 +19,13 @@
 */
 
 import '../../animated_call.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> WheelAround = [
 
     AnimatedCall('Wheel Around',
-      formation:Formations.FacingCouplesCompact,
+      formation:Formation('Facing Couples Compact'),
       from:'Facing Couples',notForSequencer: true,
       paths:[
           BeauWheel,
@@ -34,7 +34,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Wheel Around',
-      formation:Formations.CouplesFacingOutCompact,
+      formation:Formation('Couples Facing Out Compact'),
       from:'Couples Facing Out',notForSequencer: true,
       paths:[
           BelleWheel,
@@ -43,7 +43,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Wheel Around',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       from:'Lines',
       paths:[
           BeauWheel,
@@ -56,7 +56,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Wheel Around',
-      formation:Formations.EightChainThru,
+      formation:Formation('Eight Chain Thru'),
       from:'Eight Chain Thru',
       paths:[
           BeauWheel.scale(0.5,1.0),
@@ -69,7 +69,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Heads Wheel Around',
-      formation:Formations.Promenade_2,
+      formation:Formation('Promenade 2'),
       from:'Promenade',
       paths:[
           BackHingeRight.scale(0.5,0.5) +
@@ -84,7 +84,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Reverse Wheel Around',
-      formation:Formations.FacingCouplesCompact,
+      formation:Formation('Facing Couples Compact'),
       from:'Facing Couples',notForSequencer: true,
       paths:[
           BelleWheel.scale(1.0,-1.0),
@@ -93,7 +93,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Reverse Wheel Around',
-      formation:Formations.CouplesFacingOutCompact,
+      formation:Formation('Couples Facing Out Compact'),
       from:'Couples Facing Out',notForSequencer: true,
       paths:[
           BeauWheel.scale(1.0,-1.0),
@@ -102,7 +102,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Reverse Wheel Around',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       from:'Lines',
       paths:[
           BelleWheel.scale(1.0,-1.0),
@@ -115,7 +115,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Reverse Wheel Around',
-      formation:Formations.EightChainThru,
+      formation:Formation('Eight Chain Thru'),
       from:'Eight Chain Thru',
       paths:[
           BelleWheel.scale(0.5,-1.0),

@@ -19,13 +19,13 @@
 */
 
 import '../../animated_call.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> SingleWheel = [
 
     AnimatedCall('Single Wheel',
-      formation:Formations.FacingCouples,
+      formation:Formation('Facing Couples'),
       from:'Facing Couples',
       paths:[
           UmTurnRight.skew(1.0,-1.0),
@@ -34,7 +34,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Single Wheel',
-      formation:Formations.CouplesFacingOut,
+      formation:Formation('Couples Facing Out'),
       from:'Couples Facing Out',
       paths:[
           UmTurnLeft.skew(-1.0,1.0),
@@ -43,7 +43,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Single Wheel',
-      formation:Formations.BoxRH,
+      formation:Formation('Box RH'),
       from:'Right-Hand Box',
       paths:[
           UmTurnRight.skew(1.0,-1.0),
@@ -52,7 +52,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Single Wheel',
-      formation:Formations.BoxLH,
+      formation:Formation('Box LH'),
       from:'Left-Hand Box',
       paths:[
           UmTurnLeft.skew(1.0,1.0),
@@ -61,7 +61,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Single Wheel',
-      formation:Formations.WaveRH,
+      formation:Formation('Wave RH'),
       from:'Right-Hand Wave',
       paths:[
           FlipRight.changeBeats(4).skew(1.5,0.0),
@@ -70,7 +70,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Single Wheel',
-      formation:Formations.WaveLH,
+      formation:Formation('Wave LH'),
       from:'Left-Hand Wave',
       paths:[
           FlipLeft.changeBeats(4).skew(1.5,0.0),
@@ -79,7 +79,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Single Wheel',
-      formation:Formations.LinesFacingOut,
+      formation:Formation('Lines Facing Out'),
       from:'Lines Facing Out',
       paths:[
           FlipLeft.skew(-1.0,0.0),
@@ -92,7 +92,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Single Wheel',
-      formation:Formations.TwomFacedLinesRH,
+      formation:Formation('Two-Faced Lines RH'),
       from:'Right-Hand Two-Faced Lines',
       paths:[
           FlipRight.skew(1.0,0.0),
@@ -105,7 +105,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Single Wheel',
-      formation:Formations.OceanWavesRHBGBG,
+      formation:Formation('Ocean Waves RH BGBG'),
       from:'Right-Hand Waves',
       paths:[
           FlipRight.skew(1.0,0.0),
@@ -118,7 +118,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Single Wheel',
-      formation:Formations.OceanWavesLHBGBG,
+      formation:Formation('Ocean Waves LH BGBG'),
       from:'Left-Hand Waves',
       paths:[
           FlipLeft.skew(1.0,0.0),
@@ -131,7 +131,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Single Wheel',
-      formation:Formations.CompletedDoublePassThru,
+      formation:Formation('Completed Double Pass Thru'),
       from:'Completed Double Pass Thru',
       paths:[
           FlipLeft.skew(-0.5,-1.0),
@@ -144,7 +144,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Single Wheel',
-      formation:Formations.TidalWaveRHBGGB,
+      formation:Formation('Tidal Wave RH BGGB'),
       from:'Right-Hand Tidal Wave',
       paths:[
           UmTurnRight.changeBeats(4).skew(1.5,-0.5),
@@ -157,7 +157,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Single Wheel',
-      formation:Formations.TidalWaveLHBGGB,
+      formation:Formation('Tidal Wave LH BGGB'),
       from:'Left-Hand Tidal Wave',
       paths:[
           UmTurnLeft.changeBeats(4).skew(1.5,0.5),
@@ -170,7 +170,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Single Wheel',
-      formation:Formations.TwomFacedTidalLineRH,
+      formation:Formation('Two-Faced Tidal Line RH'),
       from:'Right-Hand Tidal Two-Faced Line',
       paths:[
           UmTurnRight.changeBeats(4).skew(1.5,-0.5),
@@ -183,7 +183,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Single Wheel',
-      formation:Formations.TwomFacedTidalLineLH,
+      formation:Formation('Two-Faced Tidal Line LH'),
       from:'Left-Hand Tidal Two-Faced Line',
       paths:[
           UmTurnLeft.changeBeats(4).skew(-1.5,0.5),
@@ -196,7 +196,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Single Wheel',
-      formation:Formations.TidalLineRH,
+      formation:Formation('Tidal Line RH'),
       from:'Right-Hand Tidal Line',
       paths:[
           UmTurnRight.changeBeats(4).skew(1.5,-0.5),
@@ -209,7 +209,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Single Wheel',
-      formation:Formations.TidalLineLH,
+      formation:Formation('Tidal Line LH'),
       from:'Left-Hand Tidal Line',
       paths:[
           UmTurnRight.changeBeats(4).skew(1.5,-0.5),
@@ -222,7 +222,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Single Wheel 3 Times',
-      formation:Formations.TidalWaveRHBGGB,
+      formation:Formation('Tidal Wave RH BGGB'),
       from:'Tidal Wave',fractions:'3;3',
       paths:[
           UmTurnRight.skew(2.0,-0.5) +

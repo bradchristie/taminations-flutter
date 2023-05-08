@@ -21,13 +21,12 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> SolidConcept = [
 
     AnimatedCall('Groups of 4 work Solid, Touch a Quarter',
-      formation:Formations.DoublePassThru,
+      formation:Formation('Double Pass Thru'),
       group:' ',
       paths:[
           ExtendLeft.changeBeats(2).changehands(2).scale(1.0,2.0) +
@@ -48,7 +47,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Centers work Solid, all Swing Thru',
-      formation:Formations.InvertedLinesEndsFacingIn,
+      formation:Formation('Inverted Lines Ends Facing In'),
       group:' ',
       paths:[
           SwingRight.changeBeats(4).scale(1.5,2.0) +
@@ -63,7 +62,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Lines of 3 work Solid, all Diamond Circulate',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:0,y:5,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:0,y:3,angle:0),
         DancerModel.fromData(gender:Gender.BOY,x:3,y:0,angle:270),
@@ -81,7 +80,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Outside Triangles work Solid, all Mix',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:-3,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:0,y:-1,angle:0),
         DancerModel.fromData(gender:Gender.BOY,x:1,y:-3,angle:180),
@@ -105,7 +104,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Tandem-Based Triangle work Solid, all Flip the Diamond',
-      formation:Formations.GalaxyRHGP,
+      formation:Formation('Galaxy RH GP'),
       from:'Galaxy',group:' ',
       paths:[
           CounterRotateRight_0_m2.changeBeats(4).skew(2.0,0.0),

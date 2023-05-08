@@ -21,13 +21,12 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> InRollCirculate = [
 
     AnimatedCall('In-Roll Circulate',
-      formation:Formations.OceanWavesRHBGGBCompact,
+      formation:Formation('Ocean Waves RH BGGB Compact'),
       from:'Right-Hand Waves',fractions:'2',
       paths:[
           Forward_3.changeBeats(4),
@@ -40,7 +39,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('In-Roll Circulate',
-      formation:Formations.OceanWavesLHBGGB,
+      formation:Formation('Ocean Waves LH BGGB'),
       from:'Left-Hand Waves',fractions:'2',
       paths:[
           FlipLeft.changeBeats(4),
@@ -53,7 +52,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('In-Roll Circulate',
-      formation:Formations.TwomFacedLinesRH,
+      formation:Formation('Two-Faced Lines RH'),
       from:'Right-Hand Two-Faced Lines',fractions:'2',
       paths:[
           Forward_4,
@@ -66,7 +65,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('In-Roll Circulate',
-      formation:Formations.TwomFacedLinesLH,
+      formation:Formation('Two-Faced Lines LH'),
       from:'Left-Hand Two-Faced Lines',fractions:'2',
       paths:[
           FlipLeft.changeBeats(4),
@@ -79,7 +78,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('In-Roll Circulate',
-      formation:Formations.n3and_1lines1,
+      formation:Formation('3 and 1 Lines #1'),
       from:'3 and 1 Lines #1',fractions:'2',
       paths:[
           FlipLeft.changeBeats(4),
@@ -92,7 +91,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('In-Roll Circulate',
-      formation:Formations.n3and_1lines4,
+      formation:Formation('3 and 1 Lines #4'),
       from:'3 and 1 Lines #4',fractions:'2',
       taminator: '''
       There are 8 different 3 and 1 lines, but only half of them
@@ -109,7 +108,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('In-Roll Circulate',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-2,y:3,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:-2,y:1,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:-2,y:-1,angle:180),
@@ -130,7 +129,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('In-Roll Circulate',
-      formation:Formations.n3and_1lines8,
+      formation:Formation('3 and 1 Lines #8'),
       from:'3 and 1 Lines #8',fractions:'2',
       paths:[
           FlipLeft.changeBeats(4),
@@ -143,7 +142,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Out-Roll Circulate',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       from:'Right-Hand Waves',fractions:'3',
       paths:[
           FlipRight.changeBeats(6),
@@ -156,7 +155,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Out-Roll Circulate',
-      formation:Formations.OceanWavesLHBGGB,
+      formation:Formation('Ocean Waves LH BGGB'),
       from:'Left-Hand Waves',fractions:'3',
       paths:[
           RunLeft.changeBeats(6).scale(2.0,3.0),
@@ -169,7 +168,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Out-Roll Circulate',
-      formation:Formations.TwomFacedLinesRH,
+      formation:Formation('Two-Faced Lines RH'),
       from:'Right-Hand Two-Faced Lines',fractions:'3',
       paths:[
           FlipRight.changeBeats(6),
@@ -182,7 +181,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Out-Roll Circulate',
-      formation:Formations.TwomFacedLinesLH,
+      formation:Formation('Two-Faced Lines LH'),
       from:'Left-Hand Two-Faced Lines',fractions:'3',
       paths:[
           RunLeft.changeBeats(6).scale(2.0,3.0),
@@ -195,7 +194,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Out-Roll Circulate',
-      formation:Formations.n3and_1lines1,
+      formation:Formation('3 and 1 Lines #1'),
       from:'3 and 1 Lines #1',fractions:'3',
       paths:[
           RunLeft.changeBeats(6).scale(2.0,3.0),
@@ -208,7 +207,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Out-Roll Circulate',
-      formation:Formations.n3and_1lines4,
+      formation:Formation('3 and 1 Lines #4'),
       from:'3 and 1 Lines #4',fractions:'3',
       taminator: '''
       There are 8 different 3 and 1 lines, but only half of them
@@ -225,7 +224,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Out-Roll Circulate',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-2,y:3,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:-2,y:1,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:-2,y:-1,angle:180),
@@ -246,7 +245,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Out-Roll Circulate',
-      formation:Formations.n3and_1lines8,
+      formation:Formation('3 and 1 Lines #8'),
       from:'3 and 1 Lines #8',fractions:'3',
       paths:[
           RunLeft.changeBeats(6).scale(2.0,3.0),

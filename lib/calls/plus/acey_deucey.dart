@@ -21,13 +21,12 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> AceyDeucey = [
 
     AnimatedCall('Acey Deucey',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       from:'Right-Hand Waves',fractions:'2',difficulty: 1,
       paths:[
           Forward_4,
@@ -40,7 +39,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Acey Deucey',
-      formation:Formations.OceanWavesLHBGGB,
+      formation:Formation('Ocean Waves LH BGGB'),
       from:'Left-Hand Waves',fractions:'2',difficulty: 1,
       paths:[
           RunLeft.changeBeats(4).scale(2.0,3.0),
@@ -53,7 +52,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Acey Deucey',
-      formation:Formations.TwomFacedLinesRH,
+      formation:Formation('Two-Faced Lines RH'),
       from:'Right-Hand Two-Faced Lines',fractions:'2',difficulty: 1,
       paths:[
           Forward_4,
@@ -66,7 +65,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Acey Deucey',
-      formation:Formations.TwomFacedLinesLH,
+      formation:Formation('Two-Faced Lines LH'),
       from:'Left-Hand Two-Faced Lines',fractions:'2',difficulty: 1,
       paths:[
           RunLeft.changeBeats(4).scale(2.0,3.0),
@@ -79,7 +78,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Acey Deucey',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       from:'Lines Facing In',fractions:'2',difficulty: 2,
       paths:[
           ExtendLeft.changeBeats(2).scale(2.0,0.5) +
@@ -94,7 +93,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Acey Deucey',
-      formation:Formations.LinesFacingOut,
+      formation:Formation('Lines Facing Out'),
       from:'Lines Facing Out',fractions:'2',difficulty: 2,
       paths:[
           RunLeft.changeBeats(4).scale(2.0,3.0),
@@ -107,7 +106,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Acey Deucey',
-      formation:Formations.InvertedLinesEndsFacingIn,
+      formation:Formation('Inverted Lines Ends Facing In'),
       from:'Inverted Lines, Ends Facing In',fractions:'2',difficulty: 2,
       paths:[
           ExtendLeft.changeBeats(2).scale(2.0,0.5) +
@@ -122,7 +121,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Acey Deucey',
-      formation:Formations.InvertedLinesEndsFacingOut,
+      formation:Formation('Inverted Lines Ends Facing Out'),
       from:'Inverted Lines, Ends Facing Out',fractions:'2',difficulty: 2,
       paths:[
           LeadLeft.changeBeats(2).scale(2.0,3.0) +
@@ -137,7 +136,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Acey Deucey',
-      formation:Formations.n3and_1lines1,
+      formation:Formation('3 and 1 Lines #1'),
       from:'3 and 1 Lines #1',fractions:'2',difficulty: 2,
       paths:[
           RunLeft.changeBeats(4).scale(1.5,3.0),
@@ -150,7 +149,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Acey Deucey',
-      formation:Formations.n3and_1lines2,
+      formation:Formation('3 and 1 Lines #2'),
       from:'3 and 1 Lines #2',fractions:'2',difficulty: 2,
       paths:[
           ExtendLeft.changeBeats(2).scale(2.0,0.5) +
@@ -165,7 +164,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Acey Deucey',
-      formation:Formations.n3and_1lines3,
+      formation:Formation('3 and 1 Lines #3'),
       from:'3 and 1 Lines #3',fractions:'2',difficulty: 2,
       paths:[
           ExtendLeft.changeBeats(2).scale(2.0,0.5) +
@@ -180,7 +179,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Acey Deucey',
-      formation:Formations.n3and_1lines4,
+      formation:Formation('3 and 1 Lines #4'),
       from:'3 and 1 Lines #4',fractions:'2',difficulty: 2,
       paths:[
           Forward_4,
@@ -193,7 +192,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Acey Deucey',
-      formation:Formations.n3and_1lines5,
+      formation:Formation('3 and 1 Lines #5'),
       from:'3 and 1 Lines #5',fractions:'2',difficulty: 2,
       paths:[
           Forward_4,
@@ -206,7 +205,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Acey Deucey',
-      formation:Formations.n3and_1lines6,
+      formation:Formation('3 and 1 Lines #6'),
       from:'3 and 1 Lines #6',fractions:'2',difficulty: 2,
       paths:[
           RunLeft.changeBeats(4).scale(2.0,3.0),
@@ -219,7 +218,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Acey Deucey',
-      formation:Formations.n3and_1lines7,
+      formation:Formation('3 and 1 Lines #7'),
       from:'3 and 1 Lines #7',fractions:'2',difficulty: 2,
       paths:[
           RunLeft.changeBeats(4).scale(2.0,3.0),
@@ -232,7 +231,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Acey Deucey',
-      formation:Formations.n3and_1lines8,
+      formation:Formation('3 and 1 Lines #8'),
       from:'3 and 1 Lines #8',fractions:'2',difficulty: 2,
       paths:[
           RunLeft.changeBeats(4).scale(2.0,3.0),
@@ -245,7 +244,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Acey Deucey',
-      formation:Formations.CompletedDoublePassThru,
+      formation:Formation('Completed Double Pass Thru'),
       from:'Completed Double Pass Thru',difficulty: 3,
       paths:[
           FlipLeft.changeBeats(4),
@@ -258,7 +257,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Acey Deucey',
-      formation:Formations.TradeBy,
+      formation:Formation('Trade By'),
       from:'Trade By',difficulty: 3,
       paths:[
           FlipLeft.changeBeats(4),
@@ -271,7 +270,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Acey Deucey',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.GIRL,x:-3,y:1,angle:180),
         DancerModel.fromData(gender:Gender.BOY,x:-3,y:-1,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:-1,y:-1,angle:180),
@@ -289,7 +288,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Acey Deucey',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.GIRL,x:-3,y:1,angle:180),
         DancerModel.fromData(gender:Gender.BOY,x:-3,y:-1,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:-1,y:-1,angle:0),
@@ -307,7 +306,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Acey Deucey',
-      formation:Formations.n34Tag,
+      formation:Formation('3/4 Tag'),
       from:'3/4 Tag',fractions:'1.5',difficulty: 3,
       paths:[
           FlipLeft,
@@ -320,7 +319,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Acey Deucey',
-      formation:Formations.n34TagLH,
+      formation:Formation('3/4 Tag LH'),
       from:'Left-Hand 3/4 Tag',fractions:'1.5',difficulty: 3,
       paths:[
           FlipLeft,
@@ -333,7 +332,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Acey Deucey',
-      formation:Formations.n34LinesRH,
+      formation:Formation('3/4 Lines RH'),
       from:'3/4 Lines',fractions:'1.5',difficulty: 3,
       paths:[
           FlipLeft,
@@ -346,7 +345,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Acey Deucey',
-      formation:Formations.n34LinesLH,
+      formation:Formation('3/4 Lines LH'),
       from:'Left-Hand 3/4 Lines',fractions:'1.5',difficulty: 3,
       paths:[
           FlipLeft,
@@ -359,7 +358,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Acey Deucey',
-      formation:Formations.DiamondsRHGirlPoints,
+      formation:Formation('Diamonds RH Girl Points'),
       from:'Right-Hand Diamonds',fractions:'2',difficulty: 3,
       paths:[
           SwingRight.changeBeats(4),
@@ -373,7 +372,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Acey Deucey',
-      formation:Formations.DiamondsLHGirlPoints,
+      formation:Formation('Diamonds LH Girl Points'),
       from:'Left-Hand Diamonds',fractions:'2',difficulty: 3,
       paths:[
           SwingLeft.changeBeats(4),
@@ -387,7 +386,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Acey Deucey',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:0,y:-3,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:-3,y:-2,angle:90),
         DancerModel.fromData(gender:Gender.BOY,x:0,y:-1,angle:0),
@@ -407,7 +406,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Acey Deucey',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:0,y:-3,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:-3,y:-2,angle:270),
         DancerModel.fromData(gender:Gender.BOY,x:0,y:-1,angle:0),
@@ -426,7 +425,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Acey Deucey',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:0,y:-3,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:-3,y:-2,angle:270),
         DancerModel.fromData(gender:Gender.BOY,x:0,y:-1,angle:0),
@@ -446,7 +445,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Acey Deucey',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:0,y:-3,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:-3,y:-2,angle:90),
         DancerModel.fromData(gender:Gender.BOY,x:0,y:-1,angle:180),
@@ -466,7 +465,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Acey Deucey',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:0,y:-3,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:-3,y:-2,angle:90),
         DancerModel.fromData(gender:Gender.BOY,x:0,y:-1,angle:180),
@@ -485,7 +484,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Acey Deucey',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:0,y:-3,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:-3,y:-2,angle:270),
         DancerModel.fromData(gender:Gender.BOY,x:0,y:-1,angle:180),
@@ -505,7 +504,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Acey Deucey',
-      formation:Formations.InterlockedDiamondsRHGirlPoints,
+      formation:Formation('Interlocked Diamonds RH Girl Points'),
       from:'Interlocked Diamonds 1',difficulty: 3,
       paths:[
           RunRight.changeBeats(4),
@@ -519,7 +518,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Acey Deucey',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:0,y:-3,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:-3,y:-2,angle:90),
         DancerModel.fromData(gender:Gender.BOY,x:0,y:-1,angle:180),
@@ -539,7 +538,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Acey Deucey',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:0,y:-3,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:-3,y:-2,angle:270),
         DancerModel.fromData(gender:Gender.BOY,x:0,y:-1,angle:180),
@@ -558,7 +557,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Acey Deucey',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:0,y:-3,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:-3,y:-2,angle:270),
         DancerModel.fromData(gender:Gender.BOY,x:0,y:-1,angle:180),
@@ -578,7 +577,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Acey Deucey',
-      formation:Formations.InterlockedDiamondsLHGirlPoints,
+      formation:Formation('Interlocked Diamonds LH Girl Points'),
       from:'Interlocked Diamonds 5',difficulty: 3,
       paths:[
           FlipLeft.changeBeats(4),
@@ -592,7 +591,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Acey Deucey',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:0,y:-3,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:-3,y:-2,angle:90),
         DancerModel.fromData(gender:Gender.BOY,x:0,y:-1,angle:0),
@@ -612,7 +611,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Acey Deucey',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:0,y:-3,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:-3,y:-2,angle:90),
         DancerModel.fromData(gender:Gender.BOY,x:0,y:-1,angle:0),
@@ -631,7 +630,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Acey Deucey',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:0,y:-3,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:-3,y:-2,angle:270),
         DancerModel.fromData(gender:Gender.BOY,x:0,y:-1,angle:0),
@@ -651,7 +650,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Acey Deucey',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:0.75,y:0,angle:270),
         DancerModel.fromData(gender:Gender.GIRL,x:2.25,y:0,angle:90),
         DancerModel.fromData(gender:Gender.BOY,x:3.75,y:0,angle:270),
@@ -669,7 +668,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Acey Deucey',
-      formation:Formations.GalaxyRHGP,
+      formation:Formation('Galaxy RH GP'),
       from:'Galaxy',difficulty: 3,
       paths:[
           SwingRight.changeBeats(4),
@@ -682,7 +681,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Acey Deucey Once and a Half',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       from:'Right-Hand Waves',fractions:'4',difficulty: 2,
       taminator: '''A common variation.
       Note that the center 4 dancers form a diamond.''',

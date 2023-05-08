@@ -20,13 +20,13 @@
 
 import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> LeadRight = [
 
     AnimatedCall('Lead Right',
-      formation:Formations.FacingCouplesCompact,
+      formation:Formation('Facing Couples Compact'),
       from:'Facing Couples',difficulty: 2,
       paths:[
           HingeRight.changeBeats(4).scale(0.5,0.5).skew(2.0,-2.0),
@@ -35,7 +35,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Lead Right',
-      formation:Formations.EightChainThru,
+      formation:Formation('Eight Chain Thru'),
       from:'Eight Chain Thru',difficulty: 2,
       paths:[
           EighthRight.changeBeats(2).changehands(2).skew(0.5,-1.5) +
@@ -50,7 +50,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Lead Right',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       from:'Lines',difficulty: 2,
       paths:[
           HingeRight.changeBeats(4).scale(0.5,0.5).skew(2.5,-1.5),
@@ -63,7 +63,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Lead Left',
-      formation:Formations.FacingCouplesCompact,
+      formation:Formation('Facing Couples Compact'),
       from:'Facing Couples',difficulty: 2,
       paths:[
           QuarterLeft.changeBeats(4).changehands(2).skew(0.5,0.5),
@@ -72,7 +72,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Lead Left',
-      formation:Formations.EightChainThru,
+      formation:Formation('Eight Chain Thru'),
       from:'Eight Chain Thru',difficulty: 2,
       paths:[
           QuarterLeft.changeBeats(4).changehands(2).skew(0.0,1.0),
@@ -87,7 +87,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Lead Left',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       from:'Lines',difficulty: 2,
       paths:[
           QuarterLeft.changeBeats(4).changehands(2).skew(1.0,0.0),
@@ -100,7 +100,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Heads Lead Right',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       from:'Static Square',group:' ',difficulty: 1,
       paths:[
           HingeRight.changeBeats(4).scale(0.5,0.5).skew(3.5,-1.5),
@@ -113,7 +113,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Heads Lead Left',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       from:'Static Square',group:' ',difficulty: 1,
       paths:[
           QuarterLeft.changeBeats(4).changehands(2).skew(2.0,0.0),
@@ -126,7 +126,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Sides Lead Right',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       from:'Static Square',group:' ',difficulty: 1,noDisplay: true,
       paths:[
           Path(),
@@ -139,7 +139,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Sides Lead Left',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       from:'Static Square',group:' ',difficulty: 1,noDisplay: true,
       paths:[
           Path(),

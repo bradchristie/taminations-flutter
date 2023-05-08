@@ -21,7 +21,6 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 import '../c1/cross_and_turn.dart' as c1;
 import '../c1/shakedown.dart' as c1;
@@ -32,7 +31,7 @@ import '../c2/turn_to_a_line.dart' as c2;
   final List<AnimatedCall> ButterflyFormation = [
 
     AnimatedCall('Butterfly Chase Right',
-      formation:Formations.ButterflyTradeBy,
+      formation:Formation('Butterfly Trade By'),
       group:'Butterfly',
       paths:[
           RunRight.changeBeats(4).scale(1.0,2.0) +
@@ -48,7 +47,7 @@ import '../c2/turn_to_a_line.dart' as c2;
       ]),
 
     AnimatedCall('Butterfly Checkmate',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:3,y:3,angle:270),
         DancerModel.fromData(gender:Gender.GIRL,x:-3,y:3,angle:90),
         DancerModel.fromData(gender:Gender.GIRL,x:1,y:1,angle:270),
@@ -76,7 +75,7 @@ import '../c2/turn_to_a_line.dart' as c2;
       ]),
 
     AnimatedCall('Butterfly Circulate',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.GIRL,x:-3,y:3,angle:0),
         DancerModel.fromData(gender:Gender.BOY,x:-3,y:-3,angle:180),
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:1,angle:0),
@@ -94,7 +93,7 @@ import '../c2/turn_to_a_line.dart' as c2;
       ]),
 
     AnimatedCall('Butterfly Cloverleaf',
-      formation:Formations.ButterflyOut,
+      formation:Formation('Butterfly Out'),
       group:'Butterfly',
       paths:[
           RunLeft +
@@ -115,7 +114,7 @@ import '../c2/turn_to_a_line.dart' as c2;
       ]),
 
     AnimatedCall('Butterfly Coordinate',
-      formation:Formations.ButterflyRH,
+      formation:Formation('Butterfly RH'),
       group:'Butterfly',
       paths:[
           ExtendRight.changeBeats(3).scale(2.0,2.0) +
@@ -138,7 +137,7 @@ import '../c2/turn_to_a_line.dart' as c2;
       ]),
 
     AnimatedCall('Butterfly Double Pass Thru',
-      formation:Formations.ButterflyIn,
+      formation:Formation('Butterfly In'),
       group:'Butterfly',
       paths:[
           Forward_3 +
@@ -155,7 +154,7 @@ import '../c2/turn_to_a_line.dart' as c2;
       ]),
 
     AnimatedCall('Butterfly Grand Remake',
-      formation:Formations.ButterflyRH,
+      formation:Formation('Butterfly RH'),
       group:'Butterfly',
       paths:[
           LeadRight.changeBeats(3).scale(0.5,3.0) +
@@ -180,7 +179,7 @@ import '../c2/turn_to_a_line.dart' as c2;
       ]),
 
     AnimatedCall('Butterfly Horseshoe Turn',
-      formation:Formations.ButterflyOut,
+      formation:Formation('Butterfly Out'),
       group:'Butterfly',
       paths:[
           QuarterLeft +
@@ -201,7 +200,7 @@ import '../c2/turn_to_a_line.dart' as c2;
       ]),
 
     AnimatedCall('Butterfly Pass In',
-      formation:Formations.ButterflyChainThru,
+      formation:Formation('Butterfly Chain Thru'),
       group:'Butterfly',
       paths:[
           LeadRight.changeBeats(3).scale(2.0,2.0),
@@ -217,7 +216,7 @@ import '../c2/turn_to_a_line.dart' as c2;
       ]),
 
     AnimatedCall('Butterfly Pass Thru',
-      formation:Formations.ButterflyChainThru,
+      formation:Formation('Butterfly Chain Thru'),
       group:'Butterfly',
       paths:[
           Forward +
@@ -234,7 +233,7 @@ import '../c2/turn_to_a_line.dart' as c2;
       ]),
 
     AnimatedCall('Butterfly Peel Off',
-      formation:Formations.ButterflyRH,
+      formation:Formation('Butterfly RH'),
       group:'Butterfly',
       paths:[
           UmTurnLeft.skew(2.0,-2.0),
@@ -247,7 +246,7 @@ import '../c2/turn_to_a_line.dart' as c2;
       ]),
 
     AnimatedCall('Butterfly Remake',
-      formation:Formations.ButterflyRH,
+      formation:Formation('Butterfly RH'),
       group:'Butterfly',
       paths:[
           LeadRight.changeBeats(3).scale(0.5,3.0) +
@@ -272,7 +271,7 @@ import '../c2/turn_to_a_line.dart' as c2;
       ]),
 
     AnimatedCall('Butterfly Right Roll to a Wave',
-      formation:Formations.ButterflyTradeBy,
+      formation:Formation('Butterfly Trade By'),
       group:'Butterfly',
       paths:[
           RunRight.skew(-2.0,0.0),
@@ -285,7 +284,7 @@ import '../c2/turn_to_a_line.dart' as c2;
       ]),
 
     AnimatedCall('Butterfly Scoot Back',
-      formation:Formations.ButterflyRH,
+      formation:Formation('Butterfly RH'),
       group:'Butterfly',
       paths:[
           ExtendRight.changeBeats(2).scale(0.5,2.5) +
@@ -302,7 +301,7 @@ import '../c2/turn_to_a_line.dart' as c2;
       ]),
 
     AnimatedCall('Butterfly Slide Thru',
-      formation:Formations.ButterflyChainThru,
+      formation:Formation('Butterfly Chain Thru'),
       group:'Butterfly',
       paths:[
           LeadRight.changeBeats(2.5).scale(2.0,1.0) +
@@ -317,7 +316,7 @@ import '../c2/turn_to_a_line.dart' as c2;
       ]),
 
     AnimatedCall('Butterfly Split Circulate',
-      formation:Formations.ButterflyRH,
+      formation:Formation('Butterfly RH'),
       from:'Butterfly',group:'Butterfly',
       paths:[
           ExtendRight.changeBeats(2).scale(2.0,2.0),
@@ -330,7 +329,7 @@ import '../c2/turn_to_a_line.dart' as c2;
       ]),
 
     AnimatedCall('Butterfly Square Thru',
-      formation:Formations.ButterflyChainThru,
+      formation:Formation('Butterfly Chain Thru'),
       group:'Butterfly',
       paths:[
           ExtendRight.changeBeats(2) +
@@ -359,7 +358,7 @@ import '../c2/turn_to_a_line.dart' as c2;
       ]),
 
     AnimatedCall('Butterfly Swap Around',
-      formation:Formations.ButterflyChainThru,
+      formation:Formation('Butterfly Chain Thru'),
       group:'Butterfly',
       paths:[
           FlipRight.changeBeats(5).scale(3.0,3.0),
@@ -372,7 +371,7 @@ import '../c2/turn_to_a_line.dart' as c2;
       ]),
 
     AnimatedCall('Butterfly Swing Thru',
-      formation:Formations.ButterflyChainThru,
+      formation:Formation('Butterfly Chain Thru'),
       group:'Butterfly',
       paths:[
           Forward.changeBeats(2) +
@@ -393,7 +392,7 @@ import '../c2/turn_to_a_line.dart' as c2;
       ]),
 
     AnimatedCall('Butterfly Touch a Quarter',
-      formation:Formations.ButterflyChainThru,
+      formation:Formation('Butterfly Chain Thru'),
       group:'Butterfly',
       paths:[
           LeadRight.changeBeats(2).scale(2.0,1.0) +
@@ -410,7 +409,7 @@ import '../c2/turn_to_a_line.dart' as c2;
       ]),
 
     AnimatedCall('Butterfly Track Two',
-      formation:Formations.ButterflyOut,
+      formation:Formation('Butterfly Out'),
       group:'Butterfly',
       paths:[
           RunRight.changeBeats(6).scale(1.0,3.0) +
@@ -427,7 +426,7 @@ import '../c2/turn_to_a_line.dart' as c2;
       ]),
 
     AnimatedCall('Butterfly Trade By',
-      formation:Formations.ButterflyTradeBy,
+      formation:Formation('Butterfly Trade By'),
       group:'Butterfly',
       paths:[
           RunRight.changeBeats(6).scale(1.0,3.0),
@@ -442,7 +441,7 @@ import '../c2/turn_to_a_line.dart' as c2;
       ]),
 
     AnimatedCall('Butterfly Transfer the Column',
-      formation:Formations.ButterflyRH,
+      formation:Formation('Butterfly RH'),
       group:'Butterfly',
       paths:[
           ExtendRight.changeBeats(4).scale(2.0,2.0) +
@@ -463,7 +462,7 @@ import '../c2/turn_to_a_line.dart' as c2;
       ]),
 
     AnimatedCall('Butterfly Veer Left',
-      formation:Formations.ButterflyChainThru,
+      formation:Formation('Butterfly Chain Thru'),
       group:'Butterfly',
       paths:[
           Path(),
@@ -477,7 +476,7 @@ import '../c2/turn_to_a_line.dart' as c2;
       ]),
 
     AnimatedCall('Butterfly Walk and Dodge',
-      formation:Formations.ButterflyRH,
+      formation:Formation('Butterfly RH'),
       group:'Butterfly',
       paths:[
           ExtendRight.changeBeats(4).scale(2.0,2.0),
@@ -490,7 +489,7 @@ import '../c2/turn_to_a_line.dart' as c2;
       ]),
 
     AnimatedCall('Butterfly Wheel Thru',
-      formation:Formations.ButterflyChainThru,
+      formation:Formation('Butterfly Chain Thru'),
       group:'Butterfly',
       paths:[
           LeadRight.changeBeats(3.5).scale(1.0,3.0) +

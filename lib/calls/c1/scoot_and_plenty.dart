@@ -21,13 +21,12 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> ScootAndPlenty = [
 
     AnimatedCall('Plenty',
-      formation:Formations.QuarterTag,
+      formation:Formation('Quarter Tag'),
       from:'Right-Hand Quarter Tag',parts:'5;7',
       taminator: '''
       Split Circulate 2 is done as one part,
@@ -65,7 +64,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Plenty',
-      formation:Formations.n34Tag,
+      formation:Formation('3/4 Tag'),
       from:'Right-Hand 3/4 Tag',parts:'6;7',
       paths:[
           FlipRight.skew(-1.0,0.0) +
@@ -94,7 +93,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Plenty',
-      formation:Formations.QuarterTagLH,
+      formation:Formation('Quarter Tag LH'),
       from:'Left-Hand Quarter Tag',parts:'5;7',
       paths:[
           ExtendRight.changeBeats(5).scale(1.0,4.0) +
@@ -122,7 +121,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Plenty',
-      formation:Formations.n34TagLH,
+      formation:Formation('3/4 Tag LH'),
       from:'Left-Hand 3/4 Tag',parts:'5;7',
       paths:[
           FlipRight.changeBeats(2).skew(-1.0,0.0) +
@@ -155,7 +154,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Plenty',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-3,y:1,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:-3,y:-1,angle:0),
         DancerModel.fromData(gender:Gender.BOY,x:1.5,y:0,angle:90),
@@ -189,7 +188,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Plenty',
-      formation:Formations.HourglassRHBP,
+      formation:Formation('Hourglass RH BP'),
       from:'Hourglass',parts:'6;4',
       paths:[
           QuarterRight +
@@ -222,7 +221,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Plenty, Points Go As You Are',
-      formation:Formations.DiamondsRHGirlPoints,
+      formation:Formation('Diamonds RH Girl Points'),
       from:'Diamonds',parts:'6;7',
       paths:[
           FlipRight.changeBeats(6).skew(2.0,0.0) +
@@ -250,7 +249,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left Plenty',
-      formation:Formations.QuarterTag,
+      formation:Formation('Quarter Tag'),
       from:'Right-Hand Quarter Tag',parts:'5;7',
       paths:[
           ExtendLeft.changeBeats(2.5).scale(2.0,2.0) +
@@ -277,7 +276,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left Plenty',
-      formation:Formations.n34Tag,
+      formation:Formation('3/4 Tag'),
       from:'Right-Hand 3/4 Tag',parts:'5;7',
       paths:[
           FlipLeft.changeBeats(4).scale(2.0,2.0) +
@@ -305,7 +304,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left Plenty',
-      formation:Formations.QuarterTagLH,
+      formation:Formation('Quarter Tag LH'),
       from:'Left-Hand Quarter Tag',parts:'5;7',
       paths:[
           ExtendLeft.changeBeats(3).scale(2.0,2.0) +
@@ -339,7 +338,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left Plenty',
-      formation:Formations.n34TagLH,
+      formation:Formation('3/4 Tag LH'),
       from:'Left-Hand 3/4 Tag',parts:'6;7',
       paths:[
           FlipLeft.changeBeats(5).scale(2.0,2.0) +
@@ -368,7 +367,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Scoot and Plenty',
-      formation:Formations.QuarterTag,
+      formation:Formation('Quarter Tag'),
       from:'Quarter Tag',parts:'6;6;7',
       paths:[
           ExtendLeft.changeBeats(1.5).scale(1.5,1.5) +
@@ -409,7 +408,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Scoot and Plenty',
-      formation:Formations.QuarterTagLH,
+      formation:Formation('Quarter Tag LH'),
       from:'Left-Hand Quarter Tag',parts:'6;6;7',
       paths:[
           Forward.changeBeats(1.5).scale(1.5,1.0) +

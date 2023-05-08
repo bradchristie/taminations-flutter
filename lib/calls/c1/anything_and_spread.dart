@@ -19,13 +19,13 @@
 */
 
 import '../../animated_call.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> AnythingAndSpread = [
 
     AnimatedCall('Touch a Quarter, Boys Spread',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       group:' ',isGenderSpecific:true,
       paths:[
           ExtendLeft.changeBeats(2).scale(2.0,0.5) +

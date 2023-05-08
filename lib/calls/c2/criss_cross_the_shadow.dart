@@ -21,13 +21,12 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> CrissCrossTheShadow = [
 
     AnimatedCall('Criss Cross the Shadow',
-      formation:Formations.OceanWavesRHGBBG,
+      formation:Formation('Ocean Waves RH GBBG'),
       from:'Right-Hand Waves',
       paths:[
           ExtendLeft.changeBeats(2).scale(2.0,0.5) +
@@ -48,7 +47,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Criss Cross the Shadow',
-      formation:Formations.OceanWavesLHGBBG,
+      formation:Formation('Ocean Waves LH GBBG'),
       from:'Left-Hand Waves',
       paths:[
           UmTurnRight.changeBeats(2).skew(-2.0,0.5) +
@@ -69,7 +68,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Criss Cross the Shadow',
-      formation:Formations.TwomFacedLinesRH,
+      formation:Formation('Two-Faced Lines RH'),
       from:'Right-Hand Two-Faced Lines',
       paths:[
           ExtendLeft.changeBeats(2).scale(2.0,0.5) +
@@ -90,7 +89,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Criss Cross the Shadow',
-      formation:Formations.TwomFacedLinesLH,
+      formation:Formation('Two-Faced Lines LH'),
       from:'Left-Hand Two-Faced Lines',
       paths:[
           UmTurnRight.changeBeats(2).skew(-2.0,0.5) +
@@ -111,7 +110,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Criss Cross the Shadow',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.GIRL,x:-2,y:3,angle:0),
         DancerModel.fromData(gender:Gender.BOY,x:-2,y:1,angle:0),
         DancerModel.fromData(gender:Gender.BOY,x:-2,y:-1,angle:0),
@@ -135,7 +134,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Criss Cross the Shadow',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.GIRL,x:-2,y:3,angle:0),
         DancerModel.fromData(gender:Gender.BOY,x:-2,y:1,angle:180),
         DancerModel.fromData(gender:Gender.BOY,x:-2,y:-1,angle:180),

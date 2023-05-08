@@ -21,13 +21,12 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> PlanAhead = [
 
     AnimatedCall('Plan Ahead',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.GIRL,x:-2,y:3,angle:0),
         DancerModel.fromData(gender:Gender.BOY,x:-2,y:1,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:-2,y:-1,angle:0),
@@ -63,7 +62,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Plan Ahead',
-      formation:Formations.InvertedLinesEndsFacingOut,
+      formation:Formation('Inverted Lines Ends Facing Out'),
       from:'Inverted Lines',fractions:'8.5',
       paths:[
           RunLeft.changeBeats(3).scale(1.0,3.0) +

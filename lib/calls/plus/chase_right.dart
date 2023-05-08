@@ -21,13 +21,12 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> ChaseRight = [
 
     AnimatedCall('Chase Right',
-      formation:Formations.CouplesFacingOut,
+      formation:Formation('Couples Facing Out'),
       from:'Couples Facing Out',difficulty: 1,
       paths:[
           UmTurnRight.changeBeats(1.5).skew(-1.0,0.0) +
@@ -39,7 +38,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Chase Right',
-      formation:Formations.CouplesFacingOutFar,
+      formation:Formation('Couples Facing Out Far'),
       from:'Couples Facing Out Far',difficulty: 1,noDisplay: true,
       paths:[
           UmTurnRight.changeBeats(1.5).skew(-1.0,0.0) +
@@ -51,7 +50,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Chase Right',
-      formation:Formations.LinesFacingOut,
+      formation:Formation('Lines Facing Out'),
       from:'Lines Facing Out',difficulty: 1,
       paths:[
           UmTurnRight.changeBeats(1.5).skew(-1.0,0.0) +
@@ -70,7 +69,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Chase Right',
-      formation:Formations.TradeBy,
+      formation:Formation('Trade By'),
       from:'Trade By',difficulty: 2,
       paths:[
           UmTurnRight.changeBeats(1.5) +
@@ -89,7 +88,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Chase Right',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-3,y:1,angle:90),
         DancerModel.fromData(gender:Gender.GIRL,x:-3,y:-1,angle:180),
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:-1,angle:270),
@@ -111,7 +110,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Chase Right',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-3,y:1,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:-3,y:-1,angle:270),
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:-1,angle:0),
@@ -137,7 +136,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Chase Right',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:1,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:-3,y:-1,angle:270),
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:-1,angle:0),
@@ -161,7 +160,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left Chase',
-      formation:Formations.CouplesFacingOut,
+      formation:Formation('Couples Facing Out'),
       from:'Couples Facing Out',difficulty: 2,
       paths:[
           RunLeft +
@@ -173,7 +172,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left Chase',
-      formation:Formations.CouplesFacingOutFar,
+      formation:Formation('Couples Facing Out Far'),
       from:'Couples Facing Out Far',difficulty: 2,noDisplay: true,
       paths:[
           RunLeft +
@@ -185,7 +184,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left Chase',
-      formation:Formations.LinesFacingOut,
+      formation:Formation('Lines Facing Out'),
       from:'Lines Facing Out',difficulty: 2,
       paths:[
           RunLeft +
@@ -204,7 +203,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left Chase',
-      formation:Formations.TradeBy,
+      formation:Formation('Trade By'),
       from:'Trade By',difficulty: 2,
       paths:[
           RunLeft +
@@ -223,7 +222,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left Chase',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-3,y:1,angle:90),
         DancerModel.fromData(gender:Gender.GIRL,x:-3,y:-1,angle:180),
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:-1,angle:270),
@@ -249,7 +248,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left Chase',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-3,y:1,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:-3,y:-1,angle:270),
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:-1,angle:0),
@@ -271,7 +270,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left Chase',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:1,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:-3,y:-1,angle:270),
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:-1,angle:0),

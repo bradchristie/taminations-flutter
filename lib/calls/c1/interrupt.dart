@@ -19,13 +19,13 @@
 */
 
 import '../../animated_call.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> Interrupt = [
 
     AnimatedCall('Scoot and Plenty, Interrupt Before the Split Circulates with an Acey Deucey',
-      formation:Formations.QuarterTag,
+      formation:Formation('Quarter Tag'),
       group:' ',fractions:'10.5;4',
       paths:[
           ExtendLeft.changeBeats(1.5).scale(1.5,1.5) +
@@ -68,7 +68,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Square Chain Thru, Interrupt Before the Last Part with Spin the Top',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       group:' ',fractions:'3;3;3;3;4.5',
       paths:[
           PullLeft.scale(2.0,0.5) +
@@ -111,7 +111,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Square Thru, Interrupt on the Third Hand with a Swing Thru',
-      formation:Formations.EightChainThru,
+      formation:Formation('Eight Chain Thru'),
       group:' ',fractions:'1;1.5;2;3;3',
       paths:[
           PullLeft.scale(1.0,0.5) +
@@ -148,7 +148,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Swing the Fractions, Interrupt after 3/5 with Trade Circulate',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       group:' ',fractions:'1.5;3;4.5;4;3',
       paths:[
           HingeRight +

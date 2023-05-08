@@ -19,13 +19,13 @@
 */
 
 import '../../animated_call.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> Detour = [
 
     AnimatedCall('Detour',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       from:'Right-Hand Waves',
       paths:[
           Forward_2 +
@@ -40,7 +40,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Detour',
-      formation:Formations.TwomFacedLinesRH,
+      formation:Formation('Two-Faced Lines RH'),
       from:'Right-Hand Two-Faced Lines',
       paths:[
           Forward_2 +
@@ -55,7 +55,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Detour',
-      formation:Formations.OceanWavesLHBGGB,
+      formation:Formation('Ocean Waves LH BGGB'),
       from:'Left-Hand Waves',
       paths:[
           RunRight.changeBeats(2).skew(-2.0,1.0) +
@@ -70,7 +70,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Detour',
-      formation:Formations.TwomFacedLinesLH,
+      formation:Formation('Two-Faced Lines LH'),
       from:'Left-Hand Two-Faced Lines',
       paths:[
           RunRight.changeBeats(2).skew(-2.0,1.0) +
@@ -85,7 +85,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Detour',
-      formation:Formations.DiamondsRHGirlPoints,
+      formation:Formation('Diamonds RH Girl Points'),
       from:'Right-Hand Diamonds',
       paths:[
           LeadRight.changeBeats(3).scale(2.0,3.0),
@@ -100,7 +100,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Detour',
-      formation:Formations.DiamondsLHGirlPoints,
+      formation:Formation('Diamonds LH Girl Points'),
       from:'Left-Hand Diamonds',
       paths:[
           LeadLeft.changeBeats(3).scale(2.0,3.0),
@@ -115,7 +115,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Detour',
-      formation:Formations.TmBoneURRD,
+      formation:Formation('T-Bone URRD'),
       from:'T-Bones 1',
       paths:[
           Forward.changeBeats(3) +
@@ -130,7 +130,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Detour',
-      formation:Formations.TmBoneDRRU,
+      formation:Formation('T-Bone DRRU'),
       from:'T-Bones 2',
       paths:[
           RunRight.scale(1.0,0.5).skew(-1.0,0.0) +

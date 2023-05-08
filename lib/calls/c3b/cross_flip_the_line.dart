@@ -19,13 +19,13 @@
 */
 
 import '../../animated_call.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> CrossFlipTheLine = [
 
     AnimatedCall('Cross Flip the Line 1/4',
-      formation:Formations.TwomFacedLineRH,
+      formation:Formation('Two-Faced Line RH'),
       from:'Right-Hand Two-Face Line',
       paths:[
           LeadRight +
@@ -36,7 +36,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cross Flip the Line 1/4',
-      formation:Formations.TwomFacedLineLH,
+      formation:Formation('Two-Faced Line LH'),
       from:'Left-Hand Two-Face Line',
       paths:[
           LeadLeft.changeBeats(2).scale(1.0,2.0) +
@@ -47,7 +47,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cross Flip the Line 1/4',
-      formation:Formations.TwomFacedLinesRH,
+      formation:Formation('Two-Faced Lines RH'),
       from:'Right-Hand Two-Face Lines',
       paths:[
           LeadRight +
@@ -64,7 +64,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cross Flip the Line 1/4',
-      formation:Formations.TwomFacedLinesLH,
+      formation:Formation('Two-Faced Lines LH'),
       from:'Left-Hand Two-Face Lines',
       paths:[
           LeadLeft +
@@ -81,7 +81,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cross Flip the Line 1/4',
-      formation:Formations.TwomFacedTidalLineRH,
+      formation:Formation('Two-Faced Tidal Line RH'),
       from:'Right-Hand Two-Face Tidal Line',
       paths:[
           LeadRight,
@@ -97,7 +97,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cross Flip the Line 1/4',
-      formation:Formations.TwomFacedTidalLineLH,
+      formation:Formation('Two-Faced Tidal Line LH'),
       from:'Left-Hand Two-Face Tidal Line',
       paths:[
           LeadLeft,
@@ -113,7 +113,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cross Flip the Line 1/2',
-      formation:Formations.TwomFacedLineRH,
+      formation:Formation('Two-Faced Line RH'),
       from:'Right-Hand Two-Face Line',
       paths:[
           LeadRight +
@@ -124,7 +124,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cross Flip the Line 1/2',
-      formation:Formations.TwomFacedLineLH,
+      formation:Formation('Two-Faced Line LH'),
       from:'Left-Hand Two-Face Line',
       paths:[
           LeadLeft.changeBeats(2).scale(1.0,2.0) +
@@ -135,7 +135,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cross Flip the Line 1/2',
-      formation:Formations.TwomFacedLinesRH,
+      formation:Formation('Two-Faced Lines RH'),
       from:'Right-Hand Two-Face Lines',
       paths:[
           LeadRight +
@@ -152,7 +152,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cross Flip the Line 1/2',
-      formation:Formations.TwomFacedLinesLH,
+      formation:Formation('Two-Faced Lines LH'),
       from:'Left-Hand Two-Face Lines',
       paths:[
           LeadLeft +
@@ -169,7 +169,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cross Flip the Line 1/2',
-      formation:Formations.TwomFacedTidalLineRH,
+      formation:Formation('Two-Faced Tidal Line RH'),
       from:'Right-Hand Two-Face Tidal Line',
       paths:[
           LeadRight +
@@ -186,7 +186,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cross Flip the Line 1/2',
-      formation:Formations.TwomFacedTidalLineLH,
+      formation:Formation('Two-Faced Tidal Line LH'),
       from:'Left-Hand Two-Face Tidal Line',
       paths:[
           LeadLeft +
@@ -203,7 +203,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cross Flip the Line 3/4',
-      formation:Formations.TwomFacedLineRH,
+      formation:Formation('Two-Faced Line RH'),
       from:'Right-Hand Two-Face Line',
       paths:[
           LeadRight +
@@ -216,7 +216,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cross Flip the Line 3/4',
-      formation:Formations.TwomFacedLineLH,
+      formation:Formation('Two-Faced Line LH'),
       from:'Left-Hand Two-Face Line',
       paths:[
           LeadLeft.changeBeats(2).scale(1.0,2.0) +
@@ -229,7 +229,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cross Flip the Line 3/4',
-      formation:Formations.TwomFacedLinesRH,
+      formation:Formation('Two-Faced Lines RH'),
       from:'Right-Hand Two-Face Lines',
       paths:[
           LeadRight +
@@ -249,7 +249,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cross Flip the Line 3/4',
-      formation:Formations.TwomFacedLinesLH,
+      formation:Formation('Two-Faced Lines LH'),
       from:'Left-Hand Two-Face Lines',
       paths:[
           LeadLeft +
@@ -269,7 +269,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cross Flip the Line 3/4',
-      formation:Formations.TwomFacedTidalLineRH,
+      formation:Formation('Two-Faced Tidal Line RH'),
       from:'Right-Hand Two-Face Tidal Line',
       paths:[
           LeadRight +
@@ -289,7 +289,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cross Flip the Line 3/4',
-      formation:Formations.TwomFacedTidalLineLH,
+      formation:Formation('Two-Faced Tidal Line LH'),
       from:'Left-Hand Two-Face Tidal Line',
       paths:[
           LeadLeft +
@@ -309,7 +309,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cross Flip the Line',
-      formation:Formations.TwomFacedLineRH,
+      formation:Formation('Two-Faced Line RH'),
       from:'Right-Hand Two-Faced Line',
       paths:[
           LeadRight +
@@ -324,7 +324,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cross Flip the Line',
-      formation:Formations.TwomFacedLineLH,
+      formation:Formation('Two-Faced Line LH'),
       from:'Left-Hand Two-Faced Line',
       paths:[
           LeadLeft +
@@ -339,7 +339,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cross Flip the Line',
-      formation:Formations.TwomFacedLinesRH,
+      formation:Formation('Two-Faced Lines RH'),
       from:'Right-Hand Two-Faced Lines',
       paths:[
           LeadRight +
@@ -363,7 +363,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cross Flip the Line',
-      formation:Formations.TwomFacedLinesLH,
+      formation:Formation('Two-Faced Lines LH'),
       from:'Left-Hand Two-Faced Lines',
       paths:[
           LeadLeft +
@@ -387,7 +387,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cross Flip the Line',
-      formation:Formations.TwomFacedTidalLineRH,
+      formation:Formation('Two-Faced Tidal Line RH'),
       from:'Right-Hand Two-Faced Tidal Line',
       paths:[
           LeadRight +
@@ -409,7 +409,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cross Flip the Line',
-      formation:Formations.TwomFacedTidalLineLH,
+      formation:Formation('Two-Faced Tidal Line LH'),
       from:'Left-Hand Two-Faced Tidal Line',
       paths:[
           LeadLeft +
@@ -431,7 +431,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cross Flip and Scatter',
-      formation:Formations.TwomFacedLinesRH,
+      formation:Formation('Two-Faced Lines RH'),
       from:'Right-Hand Two-Face Lines',parts:'5',
       paths:[
           LeadRight +
@@ -456,7 +456,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cross Flip and Scatter',
-      formation:Formations.TwomFacedLinesLH,
+      formation:Formation('Two-Faced Lines LH'),
       from:'Left-Hand Two-Face Lines',parts:'5',
       paths:[
           LeadLeft +
@@ -481,7 +481,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cross Flip Back',
-      formation:Formations.TwomFacedLineRH,
+      formation:Formation('Two-Faced Line RH'),
       from:'Right-Hand Two-Face Line',parts:'5',
       paths:[
           LeadRight +
@@ -496,7 +496,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cross Flip Back',
-      formation:Formations.TwomFacedLineLH,
+      formation:Formation('Two-Faced Line LH'),
       from:'Left-Hand Two-Face Line',parts:'5',
       paths:[
           LeadLeft.changeBeats(2).scale(1.0,2.0) +
@@ -511,7 +511,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cross Flip Chain Thru',
-      formation:Formations.TwomFacedLinesRH,
+      formation:Formation('Two-Faced Lines RH'),
       from:'Right-Hand Two-Face Lines',parts:'5',
       paths:[
           LeadRight +
@@ -540,7 +540,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cross Flip Chain Thru',
-      formation:Formations.TwomFacedLinesLH,
+      formation:Formation('Two-Faced Lines LH'),
       from:'Left-Hand Two-Face Lines',parts:'5',
       paths:[
           LeadLeft +
@@ -569,7 +569,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cross Flip Your Leader',
-      formation:Formations.TwomFacedLinesRH,
+      formation:Formation('Two-Faced Lines RH'),
       from:'Right-Hand Two-Face Lines',
       paths:[
           LeadRight +
@@ -601,7 +601,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cross Flip Your Leader',
-      formation:Formations.TwomFacedLinesLH,
+      formation:Formation('Two-Faced Lines LH'),
       from:'Left-Hand Two-Face Lines',
       paths:[
           LeadLeft +
@@ -633,7 +633,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cross Flip Your Neighbor',
-      formation:Formations.TwomFacedLineRH,
+      formation:Formation('Two-Faced Line RH'),
       from:'Right-Hand Two-Face Line',parts:'5',
       paths:[
           LeadRight +
@@ -649,7 +649,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cross Flip Your Neighbor',
-      formation:Formations.TwomFacedLineLH,
+      formation:Formation('Two-Faced Line LH'),
       from:'Left-Hand Two-Face Line',parts:'5',
       paths:[
           LeadLeft.changeBeats(2).scale(1.0,2.0) +

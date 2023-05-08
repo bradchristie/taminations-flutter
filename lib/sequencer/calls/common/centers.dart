@@ -19,7 +19,7 @@
 */
 
 import '../../../dancer_model.dart';
-import '../../../formations.dart';
+import '../../../formation.dart';
 import '../../call_context.dart';
 import '../../call_error.dart';
 import 'fliter_actives.dart';
@@ -41,7 +41,7 @@ class Centers extends FilterActives {
       //  Check for centers of PTP diamonds
       for (final d in ctx.dancers)
         d.data.active = true;  // otherwise formation matching doesn't work
-      final points = ctx.pointsOfDiamondFormation(Formations.DiamondsRHPTPGirlPoints);
+      final points = ctx.pointsOfDiamondFormation(Formation('Diamonds RH PTP Girl Points'));
       if (points.isEmpty)
         rethrow;
       for (final d in ctx.dancers)

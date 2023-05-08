@@ -21,13 +21,12 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> Turnstyle = [
 
     AnimatedCall('Turnstyle',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:0,y:3,angle:270),
         DancerModel.fromData(gender:Gender.GIRL,x:0,y:1,angle:270),
   ]),
@@ -40,7 +39,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Turnstyle',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       from:'Right-Hand Waves',
       paths:[
           QuarterRight.skew(1.0,0.0),
@@ -53,7 +52,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Turnstyle',
-      formation:Formations.OceanWavesLHBGGB,
+      formation:Formation('Ocean Waves LH BGGB'),
       from:'Left-Hand Waves',
       paths:[
           QuarterRight.skew(-1.0,0.0),
@@ -66,7 +65,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Turnstyle',
-      formation:Formations.QuarterTag,
+      formation:Formation('Quarter Tag'),
       from:'Quarter Tag',
       paths:[
           QuarterRight.skew(0.0,1.0),
@@ -79,7 +78,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Turnstyle',
-      formation:Formations.QuarterLinesRH,
+      formation:Formation('Quarter Lines RH'),
       from:'Quarter Lines',
       paths:[
           QuarterRight.changeBeats(6).skew(0.0,1.0),
@@ -96,7 +95,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Turnstyle',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:0,y:3,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:3,y:1,angle:0),
         DancerModel.fromData(gender:Gender.BOY,x:0,y:1,angle:0),

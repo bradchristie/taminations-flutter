@@ -21,14 +21,13 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 import '../plus/fan_the_top.dart' as plus;
 
   final List<AnimatedCall> FanConcept = [
 
     AnimatedCall('Fan Alter and Circulate',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       group:' ',fractions:'7.5;4',
       paths:[
           UmTurnRight +
@@ -53,7 +52,7 @@ import '../plus/fan_the_top.dart' as plus;
       ]),
 
     AnimatedCall('Fan Alter the Wave',
-      formation:Formations.WaveRH,
+      formation:Formation('Wave RH'),
       group:' ',fractions:'4.5;4',
       paths:[
           UmTurnRight.changeBeats(4.5) +
@@ -67,7 +66,7 @@ import '../plus/fan_the_top.dart' as plus;
       ]),
 
     AnimatedCall('Fan Chain and Exchange the Gears',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       group:' ',fractions:'4.5;3;4.5;4',
       paths:[
           Stand.changeBeats(2) +
@@ -112,7 +111,7 @@ import '../plus/fan_the_top.dart' as plus;
       ]),
 
     AnimatedCall('Fan Chain the Gears',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       group:' ',fractions:'4.5;3;4.5;3',
       paths:[
           Stand.changeBeats(2) +
@@ -139,7 +138,7 @@ import '../plus/fan_the_top.dart' as plus;
       ]),
 
     AnimatedCall('Fan Chain the Line',
-      formation:Formations.TidalWaveRHBGGB,
+      formation:Formation('Tidal Wave RH BGGB'),
       group:' ',
       paths:[
           Stand.changeBeats(3) +
@@ -158,7 +157,7 @@ import '../plus/fan_the_top.dart' as plus;
       ]),
 
     AnimatedCall('Fan Chain Thru',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       group:' ',fractions:'4.5;3',
       paths:[
           Path(),
@@ -175,7 +174,7 @@ import '../plus/fan_the_top.dart' as plus;
       ]),
 
     AnimatedCall('Fan Relay the Deucey',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       group:' ',fractions:'4.5;3;3;3',
       paths:[
           Forward_2.changeBeats(4.5) +
@@ -204,7 +203,7 @@ import '../plus/fan_the_top.dart' as plus;
       ]),
 
     AnimatedCall('Fan Relay the Shadow',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:0,y:3.5,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:-2,y:2,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:-2,y:-2,angle:0),
@@ -238,7 +237,7 @@ import '../plus/fan_the_top.dart' as plus;
       ]),
 
     AnimatedCall('Fan Relay the Top',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       group:' ',fractions:'4.5;3',
       paths:[
           ExtendRight.changeBeats(4.5).scale(2.0,2.0) +
@@ -261,7 +260,7 @@ import '../plus/fan_the_top.dart' as plus;
       tam.title == 'Fan the Top' && tam.from == 'Right-Hand Wave').first.xref(title: 'Fan the Top').xref(group: ' '),
 
     AnimatedCall('Fan 1/2 Cast and Relay',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       from:'Right-Hand Waves',group:' ',fractions:'4.5;3',
       paths:[
           ExtendRight.changeBeats(4.5).scale(2.0,2.0) +

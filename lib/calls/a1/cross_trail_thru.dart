@@ -20,14 +20,14 @@
 
 import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 import '../a2/all_4_all_8.dart' as a2;
 
   final List<AnimatedCall> CrossTrailThru = [
 
     AnimatedCall('Cross Trail Thru',
-      formation:Formations.FacingCouplesCompact,
+      formation:Formation('Facing Couples Compact'),
       from:'Facing Couples',
       paths:[
           ExtendLeft.changeBeats(2).scale(1.5,0.5) +
@@ -38,7 +38,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Cross Trail Thru',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       from:'Lines',
       paths:[
           ExtendLeft.changeBeats(2).scale(2.0,0.5) +
@@ -55,7 +55,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Cross Trail Thru',
-      formation:Formations.EightChainThru,
+      formation:Formation('Eight Chain Thru'),
       from:'Eight Chain Thru',
       paths:[
           ExtendLeft.changeBeats(2).scale(1.0,0.5) +
@@ -72,7 +72,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Cross Trail Thru',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       from:'Ocean Waves',
       paths:[
       Path.fromMovement(Movement.fromData(beats: 4, hands: Hands.NONE, cx1: 1, cy1: 0, cx2: 0, cy2: -4, x2: 1, y2: -4, cx3: 1, cx4: 1, cy4: -.5, x4: 2, y4: -.5  )),
@@ -85,7 +85,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('As Couples Cross Trail Thru',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       from:'Lines',group:' ',
       paths:[
           ExtendLeft.changeBeats(2).changehands(2).scale(2.0,0.5) +

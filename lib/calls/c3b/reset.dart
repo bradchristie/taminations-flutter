@@ -19,13 +19,13 @@
 */
 
 import '../../animated_call.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> Reset = [
 
     AnimatedCall('Reset',
-      formation:Formations.BoxRHBoysLead,
+      formation:Formation('Box RH Boys Lead'),
       from:'Right-Hand Box',parts:'3;1.5;3',
       paths:[
           RunLeft.skew(-2.0,0.0) +
@@ -40,7 +40,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Reset',
-      formation:Formations.BoxLH,
+      formation:Formation('Box LH'),
       from:'Left-Hand Box',parts:'3;1.5;3',
       paths:[
           RunRight.skew(-2.0,0.0) +

@@ -21,13 +21,12 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> HourglassCirculate = [
 
     AnimatedCall('Hourglass Circulate',
-      formation:Formations.HourglassRHBP,
+      formation:Formation('Hourglass RH BP'),
       from:'Right-Hand Hourglass',
       paths:[
           LeadRight.changeBeats(4).scale(1.0,3.0),
@@ -40,7 +39,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Hourglass Circulate',
-      formation:Formations.HourglassLHBP,
+      formation:Formation('Hourglass LH BP'),
       from:'Left-Hand Hourglass',
       paths:[
           ExtendLeft.changeBeats(4).scale(2.0,2.0),
@@ -53,7 +52,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Hourglass Circulate',
-      formation:Formations.HourglassFacingLHBox,
+      formation:Formation('Hourglass Facing LH Box'),
       from:'Facing Hourglass, Left-Hand Box',
       taminator: '''
     All dancers pass right shoulders.
@@ -73,7 +72,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Hourglass Circulate',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-3,y:2,angle:90),
         DancerModel.fromData(gender:Gender.GIRL,x:0,y:3,angle:180),
         DancerModel.fromData(gender:Gender.BOY,x:3,y:2,angle:270),
@@ -95,7 +94,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Big Hourglass Circulate',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-3,y:2,angle:90),
         DancerModel.fromData(gender:Gender.GIRL,x:0,y:5,angle:0),
         DancerModel.fromData(gender:Gender.BOY,x:3,y:2,angle:270),
@@ -115,7 +114,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Big Hourglass Circulate',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-3,y:2,angle:270),
         DancerModel.fromData(gender:Gender.GIRL,x:0,y:5,angle:180),
         DancerModel.fromData(gender:Gender.BOY,x:3,y:2,angle:90),
@@ -135,7 +134,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cut the Hourglass',
-      formation:Formations.HourglassRHGP,
+      formation:Formation('Hourglass RH GP'),
       from:'Right-Hand Hourglass',
       paths:[
           DodgeRight +
@@ -151,7 +150,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cut the Hourglass',
-      formation:Formations.HourglassLHBP,
+      formation:Formation('Hourglass LH BP'),
       from:'Left-Hand Hourglass',
       paths:[
           DodgeLeft +
@@ -167,7 +166,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cut the Hourglass',
-      formation:Formations.HourglassFacingLHBox,
+      formation:Formation('Hourglass Facing LH Box'),
       from:'Facing Hourglass with Right-Hand Diamond',
       paths:[
           DodgeLeft +
@@ -183,7 +182,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cut the Hourglass',
-      formation:Formations.HourglassFacingRHBox,
+      formation:Formation('Hourglass Facing RH Box'),
       from:'Facing Hourglass with Left-Hand Diamond',
       paths:[
           DodgeRight +
@@ -199,7 +198,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cut the Hourglass',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-2,y:-3,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:-3,y:0,angle:90),
         DancerModel.fromData(gender:Gender.BOY,x:-2,y:3,angle:180),
@@ -220,7 +219,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cut the Hourglass',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-2,y:-3,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:-3,y:0,angle:90),
         DancerModel.fromData(gender:Gender.BOY,x:-2,y:3,angle:0),
@@ -241,7 +240,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cut the Hourglass',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-2,y:-3,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:-3,y:0,angle:270),
         DancerModel.fromData(gender:Gender.BOY,x:-2,y:3,angle:180),
@@ -262,7 +261,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cut the Hourglass',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-2,y:-3,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:-3,y:0,angle:270),
         DancerModel.fromData(gender:Gender.BOY,x:-2,y:3,angle:0),
@@ -283,7 +282,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Flip the Hourglass',
-      formation:Formations.HourglassRHBP,
+      formation:Formation('Hourglass RH BP'),
       from:'Right-Hand Hourglass',
       paths:[
           FlipRight,
@@ -297,7 +296,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Flip the Hourglass',
-      formation:Formations.HourglassLHBP,
+      formation:Formation('Hourglass LH BP'),
       from:'Left-Hand Hourglass',
       paths:[
           FlipLeft,
@@ -311,7 +310,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Flip the Hourglass',
-      formation:Formations.HourglassFacingLHBox,
+      formation:Formation('Hourglass Facing LH Box'),
       from:'Facing Hourglass with Right-Hand Diamond',
       paths:[
           FlipLeft.changeBeats(4),
@@ -325,7 +324,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Flip the Hourglass',
-      formation:Formations.HourglassFacingRHBox,
+      formation:Formation('Hourglass Facing RH Box'),
       from:'Facing Hourglass with Left-Hand Diamond',
       paths:[
           FlipRight.changeBeats(4),
@@ -339,7 +338,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Flip the Hourglass',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-2,y:-3,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:-3,y:0,angle:90),
         DancerModel.fromData(gender:Gender.BOY,x:-2,y:3,angle:180),
@@ -358,7 +357,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Flip the Hourglass',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-2,y:-3,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:-3,y:0,angle:90),
         DancerModel.fromData(gender:Gender.BOY,x:-2,y:3,angle:0),
@@ -377,7 +376,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Flip the Hourglass',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-2,y:-3,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:-3,y:0,angle:270),
         DancerModel.fromData(gender:Gender.BOY,x:-2,y:3,angle:180),
@@ -396,7 +395,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Flip the Hourglass',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-2,y:-3,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:-3,y:0,angle:270),
         DancerModel.fromData(gender:Gender.BOY,x:-2,y:3,angle:0),
@@ -415,7 +414,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Flip the Hourglass and Roll',
-      formation:Formations.HourglassRHBP,
+      formation:Formation('Hourglass RH BP'),
       group:' ',
       taminator: '''
       Note that the very centers do not Roll

@@ -19,7 +19,7 @@
 */
 
 import '../../animated_call.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 import '../a1/partner_hinge.dart' as a1;
 import '../a1/quarter_thru.dart' as a1;
@@ -36,7 +36,7 @@ import '../plus/track_ii.dart' as plus;
   final List<AnimatedCall> Left = [
 
     AnimatedCall('Left Dosado',
-      formation:Formations.FacingCouplesCompact,
+      formation:Formation('Facing Couples Compact'),
       group:'Left',
       notForSequencer: true,
       paths:[
@@ -52,7 +52,7 @@ import '../plus/track_ii.dart' as plus;
       ]),
 
     AnimatedCall('Left Pass to the Center',
-      formation:Formations.OceanWavesLHGBBG,
+      formation:Formation('Ocean Waves LH GBBG'),
       group:'Left',
       paths:[
           ExtendLeft.changeBeats(2).scale(1.0,2.0) +
@@ -69,7 +69,7 @@ import '../plus/track_ii.dart' as plus;
       tam.title == 'Left Swing Thru' && tam.from == 'Right-Hand Wave').first.xref(title: 'Left Swing Thru').xref(group: 'Left'),
 
     AnimatedCall('Left 3/4 Tag the Line',
-      formation:Formations.TwomFacedLinesLH,
+      formation:Formation('Two-Faced Lines LH'),
       group:'Left',
       paths:[
           LeadLeft +
@@ -90,7 +90,7 @@ import '../plus/track_ii.dart' as plus;
       tam.title == 'Left Track 2').first.xref(title: 'Left Track 2').xref(group: 'Left'),
 
     AnimatedCall('Left Turn Thru',
-      formation:Formations.FacingCouplesCompact,
+      formation:Formation('Facing Couples Compact'),
       from:'Facing Couples',group:'Left',
       paths:[
           ExtendRight.scale(1.5,0.5) +
@@ -103,7 +103,7 @@ import '../plus/track_ii.dart' as plus;
       ]),
 
     AnimatedCall('Left Turn Thru',
-      formation:Formations.WaveLH,
+      formation:Formation('Wave LH'),
       from:'Left-Hand Wave',group:'Left',
       paths:[
           HingeLeft.scale(0.75,1.0) +
@@ -116,7 +116,7 @@ import '../plus/track_ii.dart' as plus;
       ]),
 
     AnimatedCall('Left Wheel and Deal',
-      formation:Formations.LinesFacingOut,
+      formation:Formation('Lines Facing Out'),
       group:'Left',
       paths:[
           RunLeft.changeBeats(4).changehands(1).scale(2.0,2.0).skew(1.0,0.0),

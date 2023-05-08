@@ -19,13 +19,13 @@
 */
 
 import '../../animated_call.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> WithConfidence = [
 
     AnimatedCall('With Confidence',
-      formation:Formations.OceanWavesRHGBGB,
+      formation:Formation('Ocean Waves RH GBGB'),
       from:'Right-Hand Waves',fractions:'3',
       paths:[
           Forward_2.changeBeats(3) +
@@ -46,7 +46,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('With Confidence',
-      formation:Formations.TwomFacedLinesRH,
+      formation:Formation('Two-Faced Lines RH'),
       from:'Right-Hand Two-Faced Lines',
       paths:[
           Forward_2.changeBeats(3) +
@@ -67,7 +67,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('With Confidence',
-      formation:Formations.OceanWavesLHBGBG,
+      formation:Formation('Ocean Waves LH BGBG'),
       from:'Left-Hand Waves',
       paths:[
           LeadLeft.changeBeats(3).scale(2.0,3.0) +
@@ -88,7 +88,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('With Confidence',
-      formation:Formations.TwomFacedLinesLH,
+      formation:Formation('Two-Faced Lines LH'),
       from:'Left-Hand Two-Faced Lines',
       paths:[
           LeadLeft.changeBeats(3).scale(2.0,3.0) +

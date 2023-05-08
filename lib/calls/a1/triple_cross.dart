@@ -21,13 +21,12 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> TripleCross = [
 
     AnimatedCall('Triple Cross',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.GIRL,x:-1,y:3,angle:90),
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:1,angle:90),
         DancerModel.fromData(gender:Gender.GIRL,x:-1,y:-1,angle:90),
@@ -45,7 +44,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Triple Cross',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.GIRL,x:-1,y:3,angle:270),
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:1,angle:270),
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:-1,angle:270),
@@ -63,7 +62,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Triple Cross',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.GIRL,x:-1,y:3,angle:270),
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:1,angle:90),
         DancerModel.fromData(gender:Gender.GIRL,x:-1,y:-1,angle:90),
@@ -81,7 +80,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Triple Cross',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.GIRL,x:-1,y:3,angle:270),
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:1,angle:270),
         DancerModel.fromData(gender:Gender.GIRL,x:-1,y:-1,angle:270),
@@ -99,7 +98,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Double Cross',
-      formation:Formations.QuarterTag,
+      formation:Formation('Quarter Tag'),
       from:'Quarter Tag',
       paths:[
           Stand.changeBeats(3).changehands(0),
@@ -112,7 +111,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Double Cross',
-      formation:Formations.QuarterTagLH,
+      formation:Formation('Quarter Tag LH'),
       from:'Left-Hand Quarter Tag',
       paths:[
           CrossRight.changeBeats(3).scale(1.5,1.0),
@@ -125,7 +124,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Double Cross',
-      formation:Formations.QuarterLinesRH,
+      formation:Formation('Quarter Lines RH'),
       from:'Quarter Lines',noDisplay: true,
       paths:[
           CrossRight.changeBeats(3).scale(1.5,1.0),
@@ -138,7 +137,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Double Cross',
-      formation:Formations.QuarterLinesLH,
+      formation:Formation('Quarter Lines LH'),
       from:'Quarter Lines LH',noDisplay: true,
       paths:[
           Stand.changeBeats(3).changehands(0),

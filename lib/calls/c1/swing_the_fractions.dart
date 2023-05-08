@@ -21,14 +21,13 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 import '../c1/replace.dart' as c1;
 
   final List<AnimatedCall> SwingTheFractions = [
 
     AnimatedCall('Swing the Fractions',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       from:'Right-Hand Waves',parts:'1.5;3;4.5;3',
       paths:[
           HingeRight +
@@ -57,7 +56,7 @@ import '../c1/replace.dart' as c1;
       ]),
 
     AnimatedCall('Swing the Fractions',
-      formation:Formations.OceanWavesLHBGGB,
+      formation:Formation('Ocean Waves LH BGGB'),
       from:'Left-Hand Waves',parts:'1.5;3;4.5;3',
       paths:[
           Stand.changeBeats(9) +
@@ -82,7 +81,7 @@ import '../c1/replace.dart' as c1;
       ]),
 
     AnimatedCall('Swing the Fractions',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-3,y:0,angle:90),
         DancerModel.fromData(gender:Gender.GIRL,x:-2,y:3,angle:180),
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:0,angle:270),
@@ -112,7 +111,7 @@ import '../c1/replace.dart' as c1;
       ]),
 
     AnimatedCall('Left Swing the Fractions',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       from:'Right-Hand Waves',parts:'1.5;3;4.5;3',
       paths:[
           Stand.changeBeats(9) +
@@ -137,7 +136,7 @@ import '../c1/replace.dart' as c1;
       ]),
 
     AnimatedCall('Left Swing the Fractions',
-      formation:Formations.OceanWavesLHBGGB,
+      formation:Formation('Ocean Waves LH BGGB'),
       from:'Left-Hand Waves',parts:'1.5;3;4.5;3',
       paths:[
           HingeLeft +
@@ -166,7 +165,7 @@ import '../c1/replace.dart' as c1;
       ]),
 
     AnimatedCall('Left Swing the Fractions',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-3,y:0,angle:270),
         DancerModel.fromData(gender:Gender.GIRL,x:-2,y:3,angle:0),
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:0,angle:90),
@@ -196,7 +195,7 @@ import '../c1/replace.dart' as c1;
       ]),
 
     AnimatedCall('Any Hand Swing the Fractions',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:3,y:2,angle:270),
         DancerModel.fromData(gender:Gender.GIRL,x:1,y:2,angle:90),
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:2,angle:90),
@@ -238,7 +237,7 @@ import '../c1/replace.dart' as c1;
       ]),
 
     AnimatedCall('Any Hand Swing the Fractions',
-      formation:Formations.InvertedLinesEndsFacingOut,
+      formation:Formation('Inverted Lines Ends Facing Out'),
       from:'Inverted Line Ends Facing Out',parts:'1.5;3;4.5;3',noDisplay: true,
       paths:[
           HingeLeft +

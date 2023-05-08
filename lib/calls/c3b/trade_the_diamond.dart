@@ -19,13 +19,13 @@
 */
 
 import '../../animated_call.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> TradeTheDiamond = [
 
     AnimatedCall('Trade the Diamond',
-      formation:Formations.TwomFacedLinesRH,
+      formation:Formation('Two-Faced Lines RH'),
       from:'Right-Hand Two-Faced Lines',parts:'6;1.5;3',
       paths:[
           ExtendRight.changeBeats(6).scale(4.0,2.0) +
@@ -50,7 +50,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Trade the Diamond',
-      formation:Formations.TwomFacedLinesLH,
+      formation:Formation('Two-Faced Lines LH'),
       from:'Left-Hand Two-Faced Lines',parts:'6;1.5;3',
       paths:[
           RunLeft.changeBeats(6).scale(1.0,2.0) +
@@ -75,7 +75,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Trade the Diamond',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       from:'Right-Hand Waves',parts:'6;1.5;3.5',
       paths:[
           ExtendRight.changeBeats(6).scale(4.0,2.0) +
@@ -102,7 +102,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Trade the Diamond',
-      formation:Formations.OceanWavesLHBGGB,
+      formation:Formation('Ocean Waves LH BGGB'),
       from:'Left-Hand Waves',parts:'6;1.5;3.5',
       paths:[
           RunLeft.changeBeats(6).scale(1.0,2.0) +

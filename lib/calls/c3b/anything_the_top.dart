@@ -21,13 +21,12 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> AnythingTheTop = [
 
     AnimatedCall('Chase the Top',
-      formation:Formations.LinesFacingOut,
+      formation:Formation('Lines Facing Out'),
       group:' ',fractions:'6',
       paths:[
           UmTurnRight.skew(-2.0,0.0) +
@@ -53,7 +52,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Flip the Top',
-      formation:Formations.OceanWavesLHBGGB,
+      formation:Formation('Ocean Waves LH BGGB'),
       group:' ',fractions:'7.5',
       paths:[
           LeadLeft.changeBeats(3.5).scale(0.5,2.0) +
@@ -82,7 +81,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Tag the Top',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:2,y:3,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:2,y:1,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:2,y:-3,angle:180),

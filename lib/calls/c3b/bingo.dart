@@ -21,13 +21,12 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> Bingo = [
 
     AnimatedCall('Bingo',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:1,y:2,angle:270),
         DancerModel.fromData(gender:Gender.GIRL,x:1,y:-2,angle:270),
   ]),
@@ -41,7 +40,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Bingo',
-      formation:Formations.BoxLH,
+      formation:Formation('Box LH'),
       from:'Left-Hand Box',fractions:'2.25',
       paths:[
           QuarterRight.skew(-0.333,-0.333) +
@@ -52,7 +51,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Bingo',
-      formation:Formations.OceanWavesRHBGBG,
+      formation:Formation('Ocean Waves RH BGBG'),
       from:'Right-Hand Waves',
       paths:[
           LeadRight.changeBeats(4.5).scale(3.0,2.0),
@@ -69,7 +68,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Bingo',
-      formation:Formations.OceanWavesLHBGBG,
+      formation:Formation('Ocean Waves LH BGBG'),
       from:'Left-Hand Waves',
       paths:[
           QuarterRight.skew(-0.333,0.0) +
@@ -86,7 +85,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Bingo',
-      formation:Formations.ColumnRHGBGB,
+      formation:Formation('Column RH GBGB'),
       from:'Right-Hand Columns',
       paths:[
           QuarterLeft.skew(0.0,0.333) +
@@ -103,7 +102,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Bingo',
-      formation:Formations.ColumnLHGBGB,
+      formation:Formation('Column LH GBGB'),
       from:'Left-Hand Columns',
       paths:[
           LeadLeft.changeBeats(4.5).scale(2.0,3.0),
@@ -120,7 +119,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Bingo',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:1,y:1,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:1,y:-1,angle:270),
   ]),
@@ -134,7 +133,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('As Couples Bingo',
-      formation:Formations.TwomFacedLinesRH,
+      formation:Formation('Two-Faced Lines RH'),
       group:' ',
       paths:[
           LeadRight.changeBeats(3).changehands(2).scale(3.5,3.0) +
@@ -153,7 +152,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Tandem Bingo',
-      formation:Formations.ColumnRHGBGB,
+      formation:Formation('Column RH GBGB'),
       group:' ',
       paths:[
           CounterRotateLeft_0_2 +
@@ -173,7 +172,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('In Your Block Bingo',
-      formation:Formations.BlocksRH,
+      formation:Formation('Blocks RH'),
       group:' ',
       paths:[
           LeadRight.changeBeats(4.5).scale(4.0,4.0),
@@ -190,7 +189,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Once Removed Bingo',
-      formation:Formations.TwomFacedLinesRH,
+      formation:Formation('Two-Faced Lines RH'),
       group:' ',
       paths:[
           LeadRight.changeBeats(4.5).scale(3.0,4.0),
@@ -208,7 +207,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Couples Twosome Bingo',
-      formation:Formations.TwomFacedLinesRH,
+      formation:Formation('Two-Faced Lines RH'),
       group:' ',
       taminator: '''
       This is the same as Once Removed Bingo
@@ -229,7 +228,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Tandem Twosome Bingo',
-      formation:Formations.ColumnRHGBGB,
+      formation:Formation('Column RH GBGB'),
       group:' ',
       paths:[
           QuarterLeft.changeBeats(2).skew(0.0,0.5) +

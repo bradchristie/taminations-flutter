@@ -19,13 +19,13 @@
 */
 
 import '../../animated_call.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> LoopAndTag = [
 
     AnimatedCall('Loop and Tag',
-      formation:Formations.BoxRH,
+      formation:Formation('Box RH'),
       from:'Right-Hand Box',fractions:'6.5;2;2',
       paths:[
           Forward_3.changeBeats(2) +
@@ -43,7 +43,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Loop and Tag',
-      formation:Formations.BoxLH,
+      formation:Formation('Box LH'),
       from:'Left-Hand Box',fractions:'6.5;2;2',
       paths:[
           RunRight.skew(-1.0,0.0) +

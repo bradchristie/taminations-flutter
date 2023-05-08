@@ -19,13 +19,13 @@
 */
 
 import '../../animated_call.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> AlamoStyle = [
 
     AnimatedCall('Allemande Left in the Alamo Style',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       from:'Static Square',difficulty: 1,
       paths:[
           LeadLeft.changeBeats(3).skew(0.5,0.0) +

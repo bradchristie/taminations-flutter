@@ -21,13 +21,12 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> FractionTag = [
 
     AnimatedCall('Quarter Tag',
-      formation:Formations.TwomFacedLineRH,
+      formation:Formation('Two-Faced Line RH'),
       from:'Right-Hand Two-Faced Line',difficulty: 2,
       paths:[
           QuarterRight,
@@ -36,7 +35,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Quarter Tag',
-      formation:Formations.TwomFacedLineLH,
+      formation:Formation('Two-Faced Line LH'),
       from:'Left-Hand Two-Faced Line',difficulty: 3,
       paths:[
           QuarterLeft.skew(-1.0,1.0),
@@ -45,7 +44,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Quarter Tag',
-      formation:Formations.WaveRH,
+      formation:Formation('Wave RH'),
       from:'Right-Hand Wave',difficulty: 3,
       paths:[
           QuarterRight,
@@ -54,7 +53,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Quarter Tag',
-      formation:Formations.WaveLH,
+      formation:Formation('Wave LH'),
       from:'Left-Hand Wave',difficulty: 2,
       paths:[
           QuarterLeft,
@@ -63,7 +62,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Quarter Tag',
-      formation:Formations.TwomFacedLinesRH,
+      formation:Formation('Two-Faced Lines RH'),
       from:'Right-Hand Two-Faced Lines',difficulty: 2,
       paths:[
           QuarterRight.skew(1.0,0.0),
@@ -76,7 +75,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Quarter Tag',
-      formation:Formations.LinesFacingOut,
+      formation:Formation('Lines Facing Out'),
       from:'Lines Facing Out',difficulty: 2,
       paths:[
           QuarterLeft.changeBeats(2).skew(-1.0,0.0),
@@ -89,7 +88,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Half Tag',
-      formation:Formations.TwomFacedLineRH,
+      formation:Formation('Two-Faced Line RH'),
       from:'Right-Hand Two-Faced Line',difficulty: 1,
       paths:[
           LeadRight,
@@ -99,7 +98,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Half Tag',
-      formation:Formations.TwomFacedLineLH,
+      formation:Formation('Two-Faced Line LH'),
       from:'Left-Hand Two-Faced Line',difficulty: 2,
       paths:[
           QuarterLeft.skew(-1.0,0.0) +
@@ -110,7 +109,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Half Tag',
-      formation:Formations.WaveRH,
+      formation:Formation('Wave RH'),
       from:'Right-Hand Wave',difficulty: 2,
       paths:[
           QuarterRight.skew(1.0,0.0) +
@@ -121,7 +120,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Half Tag',
-      formation:Formations.WaveLH,
+      formation:Formation('Wave LH'),
       from:'Left-Hand Wave',difficulty: 2,
       paths:[
           QuarterLeft.skew(-1.0,0.0) +
@@ -132,7 +131,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Half Tag',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.GIRL,x:-2,y:3,angle:180),
         DancerModel.fromData(gender:Gender.BOY,x:-2,y:-1,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:-2,y:1,angle:180),
@@ -152,7 +151,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Half Tag',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       from:'Lines Facing In',difficulty: 2,
       paths:[
           LeadRight.changeBeats(4),
@@ -167,7 +166,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Half Tag',
-      formation:Formations.TwomFacedLinesRH,
+      formation:Formation('Two-Faced Lines RH'),
       from:'Right-Hand Two-Faced Lines',difficulty: 1,
       paths:[
           LeadRight,
@@ -182,7 +181,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Half Tag',
-      formation:Formations.TwomFacedLinesLH,
+      formation:Formation('Two-Faced Lines LH'),
       from:'Left-Hand Two-Faced Lines',difficulty: 2,
       paths:[
           QuarterLeft.changeBeats(4).skew(-1.0,1.0),
@@ -197,7 +196,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Half Tag',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       from:'Right-Hand Waves',difficulty: 3,
       paths:[
           LeadRight,
@@ -212,7 +211,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Half Tag',
-      formation:Formations.OceanWavesLHBGGB,
+      formation:Formation('Ocean Waves LH BGGB'),
       from:'Left-Hand Waves',difficulty: 2,
       paths:[
           QuarterLeft.changeBeats(4).skew(-1.0,1.0),
@@ -227,7 +226,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Half Tag',
-      formation:Formations.n3and_1lines1,
+      formation:Formation('3 and 1 Lines #1'),
       from:'3 and 1 Lines #1',noDisplay: true,
       paths:[
           QuarterLeft.changeBeats(4).skew(-1.0,1.0),
@@ -242,7 +241,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Half Tag',
-      formation:Formations.n3and_1lines2,
+      formation:Formation('3 and 1 Lines #2'),
       from:'3 and 1 Lines #2',noDisplay: true,
       paths:[
           LeadRight,
@@ -257,7 +256,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Half Tag',
-      formation:Formations.n3and_1lines3,
+      formation:Formation('3 and 1 Lines #3'),
       from:'3 and 1 Lines #3',noDisplay: true,
       paths:[
           LeadRight,
@@ -272,7 +271,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Half Tag',
-      formation:Formations.n3and_1lines4,
+      formation:Formation('3 and 1 Lines #4'),
       from:'3 and 1 Lines #4',noDisplay: true,
       paths:[
           LeadRight,
@@ -287,7 +286,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Half Tag',
-      formation:Formations.n3and_1lines5,
+      formation:Formation('3 and 1 Lines #5'),
       from:'3 and 1 Lines #5',noDisplay: true,
       paths:[
           LeadRight,
@@ -302,7 +301,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Half Tag',
-      formation:Formations.n3and_1lines6,
+      formation:Formation('3 and 1 Lines #6'),
       from:'3 and 1 Lines #6',noDisplay: true,
       paths:[
           QuarterLeft.changeBeats(4).skew(-1.0,1.0),
@@ -317,7 +316,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Half Tag',
-      formation:Formations.n3and_1lines7,
+      formation:Formation('3 and 1 Lines #7'),
       from:'3 and 1 Lines #7',noDisplay: true,
       paths:[
           QuarterLeft.changeBeats(4).skew(-1.0,1.0),
@@ -332,7 +331,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Half Tag',
-      formation:Formations.n3and_1lines8,
+      formation:Formation('3 and 1 Lines #8'),
       from:'3 and 1 Lines #8',noDisplay: true,
       paths:[
           QuarterLeft.changeBeats(4).skew(-1.0,1.0),
@@ -347,7 +346,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Half Tag',
-      formation:Formations.InvertedLinesEndsFacingOut,
+      formation:Formation('Inverted Lines Ends Facing Out'),
       from:'Inverted Lines Ends Facing Out',noDisplay: true,
       paths:[
           QuarterLeft.changeBeats(4).skew(-1.0,1.0),
@@ -362,7 +361,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Half Tag',
-      formation:Formations.InvertedLinesEndsFacingIn,
+      formation:Formation('Inverted Lines Ends Facing In'),
       from:'Inverted Lines Ends Facing In',noDisplay: true,
       paths:[
           LeadRight,
@@ -377,7 +376,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Half Tag',
-      formation:Formations.TwomFacedTidalLineRH,
+      formation:Formation('Two-Faced Tidal Line RH'),
       from:'Two-Faced Tidal Line',difficulty: 1,
       paths:[
           QuarterRight.changeBeats(2).skew(1.0,0.0) +
@@ -394,7 +393,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Half Tag',
-      formation:Formations.TidalLineRH,
+      formation:Formation('Tidal Line RH'),
       from:'Tidal Line',difficulty: 2,
       paths:[
           QuarterRight.changeBeats(2).skew(1.0,0.0) +
@@ -411,7 +410,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left Half Tag',
-      formation:Formations.TwomFacedLineRH,
+      formation:Formation('Two-Faced Line RH'),
       from:'Right-Hand Two-Faced Line',difficulty: 3,
       paths:[
           QuarterRight.skew(-1.0,0.0) +
@@ -422,7 +421,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left Half Tag',
-      formation:Formations.TwomFacedLineLH,
+      formation:Formation('Two-Faced Line LH'),
       from:'Left-Hand Two-Faced Line',difficulty: 2,
       paths:[
           LeadLeft +
@@ -432,7 +431,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left Half Tag',
-      formation:Formations.WaveRH,
+      formation:Formation('Wave RH'),
       from:'Right-Hand Wave',difficulty: 2,
       paths:[
           QuarterRight.skew(-1.0,0.0) +
@@ -443,7 +442,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left Half Tag',
-      formation:Formations.WaveLH,
+      formation:Formation('Wave LH'),
       from:'Left-Hand Wave',difficulty: 2,
       paths:[
           QuarterLeft.skew(1.0,0.0) +
@@ -454,7 +453,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left Half Tag',
-      formation:Formations.TwomFacedLinesLH,
+      formation:Formation('Two-Faced Lines LH'),
       from:'Left-Hand Two-Faced Lines',difficulty: 2,
       paths:[
           LeadLeft,
@@ -469,7 +468,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('3/4 Tag the Line',
-      formation:Formations.TwomFacedLineRH,
+      formation:Formation('Two-Faced Line RH'),
       from:'Right-Hand Two-Faced Line',difficulty: 1,
       paths:[
           LeadRight.scale(0.5,1.0) +
@@ -481,7 +480,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('3/4 Tag the Line',
-      formation:Formations.TwomFacedLineLH,
+      formation:Formation('Two-Faced Line LH'),
       from:'Left-Hand Two-Faced Line',difficulty: 2,
       paths:[
           QuarterLeft.skew(-0.5,0.5) +
@@ -493,7 +492,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('3/4 Tag the Line',
-      formation:Formations.WaveRH,
+      formation:Formation('Wave RH'),
       from:'Right-Hand Wave',difficulty: 2,
       paths:[
           LeadRight.scale(0.5,1.0) +
@@ -505,7 +504,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('3/4 Tag the Line',
-      formation:Formations.WaveLH,
+      formation:Formation('Wave LH'),
       from:'Left-Hand Wave',difficulty: 2,
       paths:[
           QuarterLeft.skew(-0.5,0.5) +
@@ -517,7 +516,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('3/4 Tag the Line',
-      formation:Formations.TwomFacedLinesRH,
+      formation:Formation('Two-Faced Lines RH'),
       from:'Right-Hand Two-Faced Lines',difficulty: 1,
       paths:[
           LeadRight.scale(0.5,1.0) +
@@ -535,7 +534,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('3/4 Tag the Line',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-2,y:3,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:-2,y:1,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:-2,y:-1,angle:180),
@@ -558,7 +557,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left 3/4 Tag the Line',
-      formation:Formations.TwomFacedLineRH,
+      formation:Formation('Two-Faced Line RH'),
       from:'Right-Hand Two-Faced Line',difficulty: 3,
       paths:[
           QuarterRight.skew(-0.5,-0.5) +
@@ -570,7 +569,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left 3/4 Tag the Line',
-      formation:Formations.TwomFacedLineLH,
+      formation:Formation('Two-Faced Line LH'),
       from:'Left-Hand Two-Faced Line',difficulty: 2,
       paths:[
           LeadLeft.scale(0.5,1.0) +
@@ -582,7 +581,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left 3/4 Tag the Line',
-      formation:Formations.WaveRH,
+      formation:Formation('Wave RH'),
       from:'Right-Hand Wave',difficulty: 2,
       paths:[
           QuarterRight.skew(-0.5,-0.5) +
@@ -594,7 +593,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left 3/4 Tag the Line',
-      formation:Formations.WaveLH,
+      formation:Formation('Wave LH'),
       from:'Left-Hand Wave',difficulty: 3,
       paths:[
           LeadLeft.scale(0.5,1.0) +

@@ -19,14 +19,14 @@
 */
 
 import '../../animated_call.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 import '../b1/see_saw.dart' as b1;
 
   final List<AnimatedCall> AllAroundTheCorner = [
 
     AnimatedCall('Walk Around the Corner',
-      formation:Formations.FacingCouples,
+      formation:Formation('Facing Couples'),
       from:'Facing Couples',
       paths:[
           ExtendLeft.changeBeats(2.5).scale(2.0,1.3) +
@@ -39,7 +39,7 @@ import '../b1/see_saw.dart' as b1;
       ]),
 
     AnimatedCall('Walk Around the Corner',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       from:'Static Square',
       paths:[
           LeadLeft.skew(-0.5,0.0) +

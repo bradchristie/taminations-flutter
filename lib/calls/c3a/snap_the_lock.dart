@@ -19,13 +19,13 @@
 */
 
 import '../../animated_call.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> SnapTheLock = [
 
     AnimatedCall('Snap the Lock',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       from:'Lines',fractions:'3;1;2',
       paths:[
           LeadRight.changeBeats(2).scale(1.5,1.0) +

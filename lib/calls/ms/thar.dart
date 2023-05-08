@@ -19,13 +19,13 @@
 */
 
 import '../../animated_call.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> Thar = [
 
     AnimatedCall('Allemande Thar',
-      formation:Formations.TharRHBoys,
+      formation:Formation('Thar RH Boys'),
       from:'Thar Star',group:' ',
       paths:[
           BackHingeRight.changeBeats(3).changehands(3),
@@ -38,7 +38,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Wrong Way Thar',
-      formation:Formations.TharLHBoys,
+      formation:Formation('Thar LH Boys'),
       from:'Left Hand Thar Star',group:' ',
       paths:[
           BackHingeLeft.changeBeats(3).changehands(3),
@@ -51,7 +51,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Allemande Left to an Allemande Thar',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       from:'Static Square',group:' ',notForSequencer: true,
       paths:[
           LeadLeft.changeBeats(3).skew(0.5,0.0) +
@@ -82,7 +82,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Allemande Left to an Allemande Thar',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       from:'Static Square',noDisplay: true,
       paths:[
           LeadLeft.changeBeats(3).skew(0.5,0.0) +

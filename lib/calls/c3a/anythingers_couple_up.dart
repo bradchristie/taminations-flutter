@@ -19,13 +19,13 @@
 */
 
 import '../../animated_call.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> AnythingersCoupleUp = [
 
     AnimatedCall('Counter Couple Up',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       group:'  ',parts:'4',
       paths:[
           CounterRotateRight_5_m1.changeBeats(4),
@@ -40,7 +40,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Split Counter Couple Up',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       group:'  ',parts:'3',
       paths:[
           CounterRotateRight_2_0.changeBeats(3).changehands(2).skew(1.0,0.0),
@@ -55,7 +55,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Trade Couple Up',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       group:'  ',parts:'4',
       paths:[
           Forward +

@@ -21,14 +21,13 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 import '../a2/all_4_all_8.dart' as a2;
 
   final List<AnimatedCall> DoubleStarThru = [
 
     AnimatedCall('Double Star Thru',
-      formation:Formations.FacingCouplesCompact,
+      formation:Formation('Facing Couples Compact'),
       from:'Facing Couples',isGenderSpecific:true,parts:'3',
       paths:[
           ExtendLeft.changeBeats(1.5).changehands(2).scale(1.5,0.5) +
@@ -43,7 +42,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Double Star Thru',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       from:'Lines',isGenderSpecific:true,parts:'3',
       paths:[
           ExtendLeft.changeBeats(1.5).changehands(2).scale(2.0,0.5) +
@@ -68,7 +67,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Double Star Thru',
-      formation:Formations.EightChainThru,
+      formation:Formation('Eight Chain Thru'),
       from:'Eight Chain Thru',isGenderSpecific:true,parts:'3',
       paths:[
           ExtendLeft.changeBeats(1.5).changehands(2).scale(1.0,0.5) +
@@ -95,7 +94,7 @@ import '../a2/all_4_all_8.dart' as a2;
       tam.title == 'All 4 Couples Double Star Thru').first.xref(title: 'All 4 Couples Double Star Thru').xref(group: ' '),
 
     AnimatedCall('Triple Star Thru',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-3,y:-1,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:-3,y:1,angle:0),
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:1,angle:0),
@@ -127,7 +126,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Triple Star Thru',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-3,y:1,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:-3,y:-1,angle:0),
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:-1,angle:180),

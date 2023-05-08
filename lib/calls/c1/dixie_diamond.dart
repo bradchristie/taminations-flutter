@@ -19,13 +19,13 @@
 */
 
 import '../../animated_call.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> DixieDiamond = [
 
     AnimatedCall('Dixie Diamond',
-      formation:Formations.FacingCouples,
+      formation:Formation('Facing Couples'),
       from:'Facing Couples',parts:'5.5',
       paths:[
           DodgeRight.changeBeats(4).scale(1.0,0.875) +
@@ -39,7 +39,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Dixie Diamond',
-      formation:Formations.TandemGirlsLead,
+      formation:Formation('Tandem Girls Lead'),
       from:'Tandem',
       paths:[
           Stand.changeBeats(2) +
@@ -54,7 +54,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Dixie Diamond',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       from:'Lines',parts:'6',
       paths:[
           DodgeRight.changeBeats(4).scale(1.0,0.875) +
@@ -77,7 +77,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Dixie Diamond',
-      formation:Formations.EightChainThru,
+      formation:Formation('Eight Chain Thru'),
       from:'Eight Chain Thru',parts:'5.5',
       paths:[
           DodgeRight.scale(1.0,0.875).skew(-0.3,0.0) +
@@ -102,7 +102,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Dixie Diamond',
-      formation:Formations.DoublePassThru,
+      formation:Formation('Double Pass Thru'),
       from:'Double Pass Thru',parts:'4.5',
       paths:[
           Stand.changeBeats(2) +
@@ -127,7 +127,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('All 8 Dixie Diamond',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       group:' ',parts:'8',
       paths:[
           ExtendRight.changeBeats(5).scale(1.0,1.75) +
@@ -150,7 +150,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('As Couples Dixie Diamond',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       group:' ',parts:'8',
       paths:[
           BackSashayRight.changeBeats(6).changehands(2).scale(1.0,2.0) +
@@ -173,7 +173,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Dixie Diamond, Interrupt with Flip Back',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       group:' ',parts:'5.5;6;6.5',
       paths:[
           DodgeRight.changeBeats(4).scale(1.0,0.875) +
@@ -212,7 +212,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Reverse Dixie Diamond',
-      formation:Formations.FacingCouples,
+      formation:Formation('Facing Couples'),
       group:' ',parts:'5.5',
       paths:[
           ExtendRight.changeBeats(2).changehands(2).skew(1.0,-0.5) +

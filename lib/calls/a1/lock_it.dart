@@ -21,14 +21,13 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 import '../a2/all_4_all_8.dart' as a2;
 
   final List<AnimatedCall> LockIt = [
 
     AnimatedCall('Lockit',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-3,y:0,angle:90),
         DancerModel.fromData(gender:Gender.GIRL,x:-1,y:0,angle:270),
   ]),
@@ -40,7 +39,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Lockit',
-      formation:Formations.WaveLH,
+      formation:Formation('Wave LH'),
       from:'Left-Hand Wave',
       paths:[
           LeadLeft.changeBeats(4).scale(3.0,3.0),
@@ -49,7 +48,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Lockit',
-      formation:Formations.TwomFacedLineRH,
+      formation:Formation('Two-Faced Line RH'),
       from:'Right-Hand Two-Faced Line',
       paths:[
           LeadRight.changeBeats(4).changehands(2).scale(3.0,3.0),
@@ -58,7 +57,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Lockit',
-      formation:Formations.TwomFacedLineLH,
+      formation:Formation('Two-Faced Line LH'),
       from:'Left-Hand Two-Faced Line',
       paths:[
           HingeLeft.changeBeats(4).changehands(3),
@@ -67,7 +66,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Lockit',
-      formation:Formations.DiamondRH,
+      formation:Formation('Diamond RH'),
       from:'Right-Hand Diamond',
       paths:[
           LeadRight.changeBeats(4).scale(3.0,3.0),
@@ -76,7 +75,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Lockit',
-      formation:Formations.DiamondLH,
+      formation:Formation('Diamond LH'),
       from:'Left-Hand Diamond',
       paths:[
           LeadLeft.changeBeats(4).scale(3.0,3.0),
@@ -85,7 +84,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Lockit',
-      formation:Formations.DiamondFacingRH,
+      formation:Formation('Diamond Facing RH'),
       from:'Facing Diamond, Right-Hand Centers',
       paths:[
           LeadLeft.changeBeats(4).scale(3.0,3.0),
@@ -94,7 +93,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Lockit',
-      formation:Formations.DiamondFacing,
+      formation:Formation('Diamond Facing'),
       from:'Facing Diamond, Left-Hand Centers',
       paths:[
           LeadRight.changeBeats(4).scale(3.0,3.0),
@@ -103,7 +102,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Lockit',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       from:'Right-Hand Waves',
       paths:[
           LeadRight.changeBeats(4).scale(1.5,3.0),
@@ -116,7 +115,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Lockit',
-      formation:Formations.OceanWavesLHBGGB,
+      formation:Formation('Ocean Waves LH BGGB'),
       from:'Left-Hand Waves',
       paths:[
           LeadLeft.changeBeats(4).scale(1.5,3.0),
@@ -129,7 +128,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Lockit',
-      formation:Formations.TwomFacedLinesRH,
+      formation:Formation('Two-Faced Lines RH'),
       from:'Right-Hand Two-Faced Lines',
       paths:[
           LeadRight.changeBeats(4).changehands(6).scale(1.5,3.0),
@@ -142,7 +141,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Lockit',
-      formation:Formations.TwomFacedLinesLH,
+      formation:Formation('Two-Faced Lines LH'),
       from:'Left-Hand Two-Faced Lines',
       paths:[
           LeadLeft.changeBeats(4).changehands(5).scale(1.5,3.0),
@@ -155,7 +154,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Lockit',
-      formation:Formations.TidalWaveRHBGGB,
+      formation:Formation('Tidal Wave RH BGGB'),
       from:'Right-Hand Tidal Wave',
       paths:[
           LeadRight.changeBeats(4).scale(3.0,1.5),
@@ -168,7 +167,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Lockit',
-      formation:Formations.TidalWaveLHBGGB,
+      formation:Formation('Tidal Wave LH BGGB'),
       from:'Left-Hand Tidal Wave',
       paths:[
           LeadLeft.changeBeats(4).scale(3.0,1.5),
@@ -181,7 +180,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Lockit',
-      formation:Formations.TwomFacedTidalLineRH,
+      formation:Formation('Two-Faced Tidal Line RH'),
       from:'Right-Hand Two-Faced Tidal Line',
       paths:[
           LeadRight.changeBeats(4).changehands(6).scale(3.0,1.5),
@@ -194,7 +193,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Lockit',
-      formation:Formations.TwomFacedTidalLineLH,
+      formation:Formation('Two-Faced Tidal Line LH'),
       from:'Left-Hand Two-Faced Tidal Line',
       paths:[
           LeadLeft.changeBeats(4).changehands(5).scale(3.0,1.5),
@@ -207,7 +206,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Lockit',
-      formation:Formations.DiamondsRHGirlPoints,
+      formation:Formation('Diamonds RH Girl Points'),
       from:'Right-Hand Twin Diamonds',
       paths:[
           QuarterRight.changeBeats(4).changehands(2).skew(1.0,0.0),
@@ -220,7 +219,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Lockit',
-      formation:Formations.DiamondsLHGirlPoints,
+      formation:Formation('Diamonds LH Girl Points'),
       from:'Left-Hand Twin Diamonds',
       paths:[
           QuarterLeft.changeBeats(4).changehands(1).skew(1.0,0.0),
@@ -233,7 +232,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Lockit',
-      formation:Formations.DiamondsFacingGirlPoints,
+      formation:Formation('Diamonds Facing Girl Points'),
       from:'Facing Diamonds, Right-Hand Centers',
       paths:[
           QuarterRight.changeBeats(4).changehands(2).skew(1.0,0.0),
@@ -246,7 +245,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Lockit',
-      formation:Formations.DiamondsFacingLHGirlPoints,
+      formation:Formation('Diamonds Facing LH Girl Points'),
       from:'Facing Diamonds, Left-Hand Centers',
       paths:[
           QuarterLeft.changeBeats(4).changehands(1).skew(1.0,0.0),
@@ -259,7 +258,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Lockit',
-      formation:Formations.DiamondsRHPTPGirlPoints,
+      formation:Formation('Diamonds RH PTP Girl Points'),
       from:'Right-Hand Point-to-Point Diamonds',
       paths:[
           HingeRight.changeBeats(4).skew(1.0,0.0),
@@ -272,7 +271,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Lockit',
-      formation:Formations.DiamondsLHPTPGirlPoints,
+      formation:Formation('Diamonds LH PTP Girl Points'),
       from:'Left-Hand Point-to-Point Diamonds',
       paths:[
           HingeLeft.changeBeats(4).skew(-1.0,0.0),
@@ -285,7 +284,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Lockit',
-      formation:Formations.DiamondsFacingPTP,
+      formation:Formation('Diamonds Facing PTP'),
       from:'Facing PTP Diamonds, Right-Hand Centers',
       paths:[
           HingeRight.changeBeats(4).skew(1.0,0.0),
@@ -298,7 +297,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Lockit',
-      formation:Formations.DiamondsFacingLHPTP,
+      formation:Formation('Diamonds Facing LH PTP'),
       from:'Facing PTP Diamonds, Left-Hand Centers',
       paths:[
           HingeLeft.changeBeats(4).skew(-1.0,0.0),
@@ -311,7 +310,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('As Couples Lockit',
-      formation:Formations.TwomFacedTidalLineRH,
+      formation:Formation('Two-Faced Tidal Line RH'),
       from:'Two-Faced Tidal Line',group:' ',
       paths:[
           HingeRight.changeBeats(4).scale(3.5,3.5),

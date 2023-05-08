@@ -19,13 +19,13 @@
 */
 
 import '../../animated_call.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> GrandSquare = [
 
     AnimatedCall('Sides Face, Grand Square',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       from:'Static Square, Sides Face',group:' ',parts:'4;4;4;4;4;4;4',difficulty: 1,
       paths:[
           Forward.changeBeats(3).changehands(2).scale(1.5,1.5) +
@@ -94,7 +94,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Heads Face, Grand Square',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       from:'Static Square',group:' ',parts:'4;4;4;4;4;4;4',difficulty: 1,
       paths:[
           QuarterRight.changeBeats(1).skew(0.0,0.5) +
@@ -163,7 +163,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Heads Star Thru, Sides Face, Grand Square',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       from:'Static Square',group:' ',parts:'4;4;4;4;4;4;4',difficulty: 3,
       paths:[
           ExtendLeft.changeBeats(3).scale(3.0,0.5) +
@@ -236,7 +236,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Boys Face your Partner, Grand Square',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       from:'Static Square',group:' ',isGenderSpecific:true,parts:'4;4;4;4;4;4;4',difficulty: 3,
       paths:[
           QuarterRight.changeBeats(1).skew(0.0,0.5) +
@@ -305,7 +305,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Girls Face your Partner, Grand Square',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       from:'Static Square',group:' ',isGenderSpecific:true,parts:'4;4;4;4;4;4;4',difficulty: 3,
       paths:[
           Forward.changeBeats(3).changehands(2).scale(1.5,1.5) +
@@ -374,7 +374,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Grand Square',
-      formation:Formations.ButterflyIn,
+      formation:Formation('Butterfly In'),
       from:'Butterfly',parts:'4;4;4;4;4;4;4',difficulty: 2,
       paths:[
           Forward.changeBeats(3).scale(1.5,1.5) +
@@ -439,7 +439,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Grand Square',
-      formation:Formations.FacingBlocksLeft,
+      formation:Formation('Facing Blocks Left'),
       from:'Blocks',parts:'4;4;4;4;4;4;4',difficulty: 3,
       paths:[
           Forward.changeBeats(3).scale(1.5,1.5) +

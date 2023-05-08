@@ -21,13 +21,12 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> Cloverleaf = [
 
     AnimatedCall('Cloverleaf',
-      formation:Formations.CouplesFacingOut,
+      formation:Formation('Couples Facing Out'),
       from:'Couples Facing Out',isExact:true,
       paths:[
           LeadRight +
@@ -40,7 +39,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cloverleaf',
-      formation:Formations.CompletedDoublePassThru,
+      formation:Formation('Completed Double Pass Thru'),
       from:'Completed Double Pass Thru',
       paths:[
           LeadRight +
@@ -65,7 +64,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cloverleaf',
-      formation:Formations.TradeBy,
+      formation:Formation('Trade By'),
       from:'Trade By',
       paths:[
           LeadRight +
@@ -82,7 +81,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cloverleaf',
-      formation:Formations.n34Tag,
+      formation:Formation('3/4 Tag'),
       from:'3/4 Tag',
       paths:[
           LeadRight.changeBeats(2).scale(1.0,2.0) +
@@ -99,7 +98,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cloverleaf',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:1,y:1,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:1,y:-1,angle:0),
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:-3,angle:90),

@@ -21,13 +21,12 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> DoYourPart = [
 
     AnimatedCall('Ends Hourglass Circulate',
-      formation:Formations.n3and_1lines1,
+      formation:Formation('3 and 1 Lines #1'),
       group:' ',
       paths:[
           LeadLeft.changeBeats(3).scale(2.0,3.0),
@@ -40,7 +39,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Boys Chase Right, Girls Circulate',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-2,y:3,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:-2,y:-1,angle:180),
         DancerModel.fromData(gender:Gender.BOY,x:-2,y:1,angle:180),

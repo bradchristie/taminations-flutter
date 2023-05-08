@@ -18,7 +18,6 @@
 
 */
 
-import '../../../formations.dart';
 import '../common.dart';
 
 
@@ -30,11 +29,47 @@ abstract class TripleFormation extends Action {
         subCall = name.replaceFirst('Triple (Box|Lines?|Waves?|Columns?)'.r,''),
         super(name);
 
+  static final Formation TripleBoxes = Formation('', dancers:[
+    DancerModel.fromData(gender:Gender.BOY,x:1.5,y:3,angle:0),
+    DancerModel.fromData(gender:Gender.GIRL,x:1.5,y:1,angle:0),
+    DancerModel.fromData(gender:Gender.GIRL,x:-1.5,y:1,angle:0),
+    DancerModel.fromData(gender:Gender.BOY,x:-1.5,y:3,angle:0),
+    DancerModel.fromData(gender:Gender.PHANTOM,x:1.5,y:5,angle:180),
+    DancerModel.fromData(gender:Gender.PHANTOM,x:1.5,y:-5,angle:0),
+  ]);
+
+  static final Formation TripleBoxesClose = Formation('', dancers:[
+    DancerModel.fromData(gender:Gender.BOY,x:1,y:3,angle:90),
+    DancerModel.fromData(gender:Gender.GIRL,x:1,y:1,angle:90),
+    DancerModel.fromData(gender:Gender.GIRL,x:-1,y:1,angle:90),
+    DancerModel.fromData(gender:Gender.BOY,x:-1,y:3,angle:90),
+    DancerModel.fromData(gender:Gender.PHANTOM,x:1,y:5,angle:270),
+    DancerModel.fromData(gender:Gender.PHANTOM,x:1,y:-5,angle:90),
+  ]);
+
+  static final Formation TripleLines = Formation('', dancers:[
+    DancerModel.fromData(gender:Gender.BOY,x:0,y:3,angle:180),
+    DancerModel.fromData(gender:Gender.GIRL,x:0,y:1,angle:0),
+    DancerModel.fromData(gender:Gender.GIRL,x:3,y:1,angle:180),
+    DancerModel.fromData(gender:Gender.BOY,x:3,y:3,angle:0),
+    DancerModel.fromData(gender:Gender.PHANTOM,x:3,y:-1,angle:0),
+    DancerModel.fromData(gender:Gender.PHANTOM,x:3,y:-3,angle:180),
+  ]);
+
+  static final Formation TripleColumns = Formation('', dancers:[
+    DancerModel.fromData(gender:Gender.BOY,x:3,y:3,angle:180),
+    DancerModel.fromData(gender:Gender.GIRL,x:3,y:0,angle:180),
+    DancerModel.fromData(gender:Gender.GIRL,x:1,y:0,angle:0),
+    DancerModel.fromData(gender:Gender.BOY,x:1,y:3,angle:0),
+    DancerModel.fromData(gender:Gender.PHANTOM,x:1,y:-3,angle:0),
+    DancerModel.fromData(gender:Gender.PHANTOM,x:3,y:-3,angle:180),
+  ]);
+
   static var tripleBoxFormations = {
-    Formations.TripleBoxes : 1.0,
-    Formations.TripleBoxesClose : 1.0,
-    Formations.TripleLines : 1.0,
-    Formations.TripleColumns : 1.0
+    TripleBoxes : 1.0,
+    TripleBoxesClose : 1.0,
+    TripleLines : 1.0,
+    TripleColumns : 1.0
   };
 
   var isXaxis = false;
@@ -80,9 +115,9 @@ abstract class TripleFormation extends Action {
       //  so it will fit with others to make a triple box
       if (rotatedBox.isBox() &&
           rotatedBox.dancers.any((d) => major(d.location).abs().isGreaterThan(1.0)))
-        rotatedBox.adjustToFormation(Formations.FacingCouplesClose, rotate: 90);
+        rotatedBox.adjustToFormation(Formation('Facing Couples Close'), rotate: 90);
       else if (rotatedBox.isLines()) {
-        rotatedBox.adjustToFormation(Formations.TwomFacedLineRH, delta: 0.5);
+        rotatedBox.adjustToFormation(Formation('Two-Faced Line RH'), delta: 0.5);
       }
       //  Now apply the result to the 12-dancer triple box context
       rotatedBox.appendToSource();

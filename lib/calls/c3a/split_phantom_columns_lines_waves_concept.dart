@@ -26,7 +26,7 @@ import '../../moves.dart';
   final List<AnimatedCall> SplitPhantomColumnsLinesWavesConcept = [
 
     AnimatedCall('Split Phantom Columns Triple Cross',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:3,y:1,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:1,y:1,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:3,y:-1,angle:0),
@@ -56,7 +56,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Split Phantom Columns Something New',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:3,y:1,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:1,y:1,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:3,y:-1,angle:0),
@@ -86,7 +86,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Split Phantom Lines Acey Deucey',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:3,y:1,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:1,y:1,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:1,y:-3,angle:0),
@@ -116,7 +116,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Split Phantom Lines Load the Boat',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:1,y:3,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:1,y:1,angle:0),
         DancerModel.fromData(gender:Gender.BOY,x:1,y:-1,angle:0),
@@ -172,7 +172,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Split Phantom Waves In Roll Circulate',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:1,y:3,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:1,y:1,angle:180),
         DancerModel.fromData(gender:Gender.BOY,x:1,y:-1,angle:0),
@@ -202,7 +202,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Split Phantom Waves Split Counter Rotate',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:1,y:3,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:1,y:1,angle:180),
         DancerModel.fromData(gender:Gender.BOY,x:1,y:-1,angle:0),

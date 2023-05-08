@@ -26,7 +26,7 @@ import '../../moves.dart';
   final List<AnimatedCall> TransferTheColumn = [
 
     AnimatedCall('Transfer the Column',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.GIRL,x:-1,y:3,angle:90),
         DancerModel.fromData(gender:Gender.GIRL,x:-1,y:-1,angle:90),
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:1,angle:90),
@@ -54,7 +54,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Transfer the Column',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:-3,angle:270),
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:1,angle:270),
         DancerModel.fromData(gender:Gender.GIRL,x:-1,y:-1,angle:270),

@@ -19,13 +19,13 @@
 */
 
 import '../../animated_call.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> ExchangeTheDiamond = [
 
     AnimatedCall('Exchange the Diamond',
-      formation:Formations.DiamondsRHGirlPoints,
+      formation:Formation('Diamonds RH Girl Points'),
       from:'Right-Hand Diamonds',parts:'3;3;3',
       paths:[
           LeadRight.changeBeats(3).scale(2.0,1.0) +
@@ -50,7 +50,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Exchange the Diamond',
-      formation:Formations.DiamondsLHGirlPoints,
+      formation:Formation('Diamonds LH Girl Points'),
       from:'Left-Hand Diamonds',parts:'3;3;3',
       paths:[
           LeadLeft.changeBeats(3).scale(2.0,1.0) +
@@ -75,7 +75,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Exchange the Diamond',
-      formation:Formations.DiamondsFacingGirlPoints,
+      formation:Formation('Diamonds Facing Girl Points'),
       from:'Facing Diamonds, Right-Hand Centers',parts:'3;3;3',
       paths:[
           LeadRight.changeBeats(3).scale(2.0,1.0) +
@@ -103,7 +103,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Exchange the Diamond',
-      formation:Formations.DiamondsFacingLHGirlPoints,
+      formation:Formation('Diamonds Facing LH Girl Points'),
       from:'Facing Diamonds, Left-Hand Centers',parts:'3;3;3',
       paths:[
           ExtendLeft.changeBeats(1.5) +
@@ -131,7 +131,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Exchange the Diamond',
-      formation:Formations.DiamondsRHPTPGirlPoints,
+      formation:Formation('Diamonds RH PTP Girl Points'),
       from:'Right-Hand Point-to-Point Diamonds',parts:'3;3;3',
       paths:[
           LeadRight.changeBeats(3).scale(2.0,1.0) +
@@ -156,7 +156,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Exchange the Diamond',
-      formation:Formations.DiamondsLHPTPGirlPoints,
+      formation:Formation('Diamonds LH PTP Girl Points'),
       from:'Left-Hand Point-to-Point Diamonds',parts:'3;3;3',
       paths:[
           LeadLeft.changeBeats(3).scale(2.0,1.0) +
@@ -181,7 +181,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Exchange the Diamond',
-      formation:Formations.DiamondsFacingPTP,
+      formation:Formation('Diamonds Facing PTP'),
       from:'Facing Point-to-Point Diamonds, Right-Hand Centers',
       paths:[
           LeadRight.changeBeats(3).scale(2.0,1.0) +
@@ -212,7 +212,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Exchange the Diamond',
-      formation:Formations.DiamondsFacingLHPTP,
+      formation:Formation('Diamonds Facing LH PTP'),
       from:'Facing Point-to-Point Diamonds, Left-Hand Centers',
       paths:[
           ExtendLeft.changeBeats(2) +

@@ -21,13 +21,12 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> ChangeLanes = [
 
     AnimatedCall('Change Lanes',
-      formation:Formations.TwomFacedLinesRH,
+      formation:Formation('Two-Faced Lines RH'),
       from:'Right-Hand Two-Faced Lines',
       paths:[
           Forward_4.changeBeats(6) +
@@ -48,7 +47,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Change Lanes',
-      formation:Formations.TwomFacedLinesLH,
+      formation:Formation('Two-Faced Lines LH'),
       from:'Left-Hand Two-Faced Lines',
       paths:[
           RunLeft.changeBeats(8).scale(2.0,3.0) +
@@ -69,7 +68,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Change Lanes',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       from:'Right-Hand Waves',
       paths:[
           Forward_4.changeBeats(6) +
@@ -90,7 +89,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Change Lanes',
-      formation:Formations.OceanWavesLHBGGB,
+      formation:Formation('Ocean Waves LH BGGB'),
       from:'Left-Hand Waves',
       paths:[
           RunLeft.changeBeats(8).scale(2.0,3.0) +
@@ -111,7 +110,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Change Lanes',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:3,y:1,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:1,y:1,angle:0),
         DancerModel.fromData(gender:Gender.BOY,x:-3,y:1,angle:180),

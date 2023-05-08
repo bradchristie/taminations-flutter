@@ -20,13 +20,13 @@
 
 import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> WheelTheOcean = [
 
     AnimatedCall('Wheel the Ocean',
-      formation:Formations.CouplesFacingOut,
+      formation:Formation('Couples Facing Out'),
       from:'Couples Facing Out',parts:'3',
       paths:[
           BelleWheel +
@@ -38,7 +38,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Wheel the Ocean',
-      formation:Formations.LinesFacingOut,
+      formation:Formation('Lines Facing Out'),
       from:'Lines Facing Out',fractions:'3',
       paths:[
           BelleWheel +
@@ -57,7 +57,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Wheel the Ocean',
-      formation:Formations.TwomFacedLinesRH,
+      formation:Formation('Two-Faced Lines RH'),
       from:'Right-Hand Two-Faced Lines',parts:'3',
       paths:[
           Stand.changeBeats(7),
@@ -74,7 +74,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Wheel the Ocean',
-      formation:Formations.TwomFacedLinesLH,
+      formation:Formation('Two-Faced Lines LH'),
       from:'Left-Hand Two-Faced Lines',parts:'3',
       paths:[
           BelleWheel +
@@ -91,7 +91,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Wheel the Ocean',
-      formation:Formations.TradeBy,
+      formation:Formation('Trade By'),
       from:'Trade By',parts:'3',
       paths:[
           BelleWheel.scale(0.5,1.0) +
@@ -108,7 +108,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Wheel the Ocean',
-      formation:Formations.CompletedDoublePassThru,
+      formation:Formation('Completed Double Pass Thru'),
       from:'Completed Double Pass Thru',parts:'3',
       paths:[
           BelleWheel.scale(0.5,1.0) +
@@ -126,7 +126,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Reverse Wheel the Ocean',
-      formation:Formations.CouplesFacingOut,
+      formation:Formation('Couples Facing Out'),
       from:'Couples Facing Out',parts:'3',
       paths:[
           BelleReverseWheel +
@@ -138,7 +138,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Reverse Wheel the Ocean',
-      formation:Formations.LinesFacingOut,
+      formation:Formation('Lines Facing Out'),
       from:'Lines Facing Out',parts:'3',
       paths:[
           BelleReverseWheel +
@@ -157,7 +157,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Reverse Wheel the Ocean',
-      formation:Formations.TwomFacedLinesRH,
+      formation:Formation('Two-Faced Lines RH'),
       from:'Right-Hand Two-Faced Lines',parts:'3',
       paths:[
           Stand.changeBeats(3).changehands(0) +
@@ -175,7 +175,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Reverse Wheel the Ocean',
-      formation:Formations.TwomFacedLinesLH,
+      formation:Formation('Two-Faced Lines LH'),
       from:'Left-Hand Two-Faced Lines',parts:'3',
       paths:[
           BelleReverseWheel +
@@ -193,7 +193,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Reverse Wheel the Ocean',
-      formation:Formations.TradeBy,
+      formation:Formation('Trade By'),
       from:'Trade By',parts:'3',
       paths:[
           BelleReverseWheel.scale(0.5,1.0),
@@ -210,7 +210,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Reverse Wheel the Ocean',
-      formation:Formations.CompletedDoublePassThru,
+      formation:Formation('Completed Double Pass Thru'),
       from:'Completed Double Pass Thru',parts:'3',
       paths:[
           BelleReverseWheel.scale(0.5,1.0),
@@ -227,7 +227,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Head Couples Wheel the Ocean',
-      formation:Formations.Promenade,
+      formation:Formation('Promenade'),
       group:' ',parts:'2.25',
       paths:[
           BackHingeRight.scale(1.0,0.5) +
@@ -248,7 +248,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('As Couples Wheel the Ocean',
-      formation:Formations.LinesFacingOut,
+      formation:Formation('Lines Facing Out'),
       group:' ',fractions:'5',
       paths:[
           BelleWheel.changeBeats(5).scale(3.0,3.0) +
@@ -267,7 +267,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('All 8 Wheel the Ocean',
-      formation:Formations.StaticFacingOut,
+      formation:Formation('Static Facing Out'),
       group:' ',fractions:'3',
       paths:[
           BeauWheel,
@@ -286,7 +286,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('All 8 Reverse Wheel the Ocean',
-      formation:Formations.StaticFacingOut,
+      formation:Formation('Static Facing Out'),
       from:'Squared Couples Facing Out',group:' ',fractions:'3',noDisplay: true,
       paths:[
           BeauReverseWheel +
@@ -305,7 +305,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Wheel the Sea',
-      formation:Formations.CouplesFacingOut,
+      formation:Formation('Couples Facing Out'),
       from:'Couples Facing Out',parts:'3',
       paths:[
           BelleWheel +
@@ -316,7 +316,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Wheel the Sea',
-      formation:Formations.LinesFacingOut,
+      formation:Formation('Lines Facing Out'),
       from:'Lines Facing Out',parts:'3',
       paths:[
           BelleWheel +
@@ -333,7 +333,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Wheel the Sea',
-      formation:Formations.TwomFacedLinesRH,
+      formation:Formation('Two-Faced Lines RH'),
       from:'Right-Hand Two-Faced Lines',parts:'3',
       paths:[
           Stand.changeBeats(3) +
@@ -350,7 +350,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Wheel the Sea',
-      formation:Formations.TwomFacedLinesLH,
+      formation:Formation('Two-Faced Lines LH'),
       from:'Left-Hand Two-Faced Lines',parts:'3',
       paths:[
           BelleWheel +
@@ -367,7 +367,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Wheel the Sea',
-      formation:Formations.TradeBy,
+      formation:Formation('Trade By'),
       from:'Trade By',parts:'3',
       paths:[
           BelleWheel.scale(0.5,1.0) +
@@ -384,7 +384,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Wheel the Sea',
-      formation:Formations.CompletedDoublePassThru,
+      formation:Formation('Completed Double Pass Thru'),
       from:'Completed Double Pass Thru',parts:'3',
       paths:[
           BelleWheel.scale(0.5,1.0) +
@@ -401,7 +401,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Reverse Wheel the Sea',
-      formation:Formations.CouplesFacingOut,
+      formation:Formation('Couples Facing Out'),
       from:'Couples Facing Out',parts:'3',
       paths:[
           BelleReverseWheel +
@@ -412,7 +412,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Reverse Wheel the Sea',
-      formation:Formations.LinesFacingOut,
+      formation:Formation('Lines Facing Out'),
       from:'Lines Facing Out',parts:'3',
       paths:[
           BelleReverseWheel +
@@ -429,7 +429,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Reverse Wheel the Sea',
-      formation:Formations.TwomFacedLinesRH,
+      formation:Formation('Two-Faced Lines RH'),
       from:'Right-Hand Two-Faced Lines',parts:'3',
       paths:[
           Stand.changeBeats(3) +
@@ -446,7 +446,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Reverse Wheel the Sea',
-      formation:Formations.TwomFacedLinesLH,
+      formation:Formation('Two-Faced Lines LH'),
       from:'Left-Hand Two-Faced Lines',parts:'3',
       paths:[
           BelleReverseWheel +
@@ -463,7 +463,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Reverse Wheel the Sea',
-      formation:Formations.TradeBy,
+      formation:Formation('Trade By'),
       from:'Trade By',parts:'3',
       paths:[
           BelleReverseWheel.scale(0.5,1.0) +
@@ -480,7 +480,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Reverse Wheel the Sea',
-      formation:Formations.CompletedDoublePassThru,
+      formation:Formation('Completed Double Pass Thru'),
       from:'Completed Double Pass Thru',parts:'3',
       paths:[
           BelleReverseWheel.scale(0.5,1.0) +
@@ -497,7 +497,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Head Couples Wheel the Sea',
-      formation:Formations.Promenade,
+      formation:Formation('Promenade'),
       group:' ',parts:'2.25',
       paths:[
           BackHingeRight.scale(1.0,0.5) +
@@ -516,7 +516,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('As Couples Wheel the Sea',
-      formation:Formations.LinesFacingOut,
+      formation:Formation('Lines Facing Out'),
       group:' ',parts:'5',
       paths:[
           BelleWheel.changeBeats(5).scale(3.0,3.0) +
@@ -533,7 +533,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('All 8 Wheel the Sea',
-      formation:Formations.StaticFacingOut,
+      formation:Formation('Static Facing Out'),
       group:' ',parts:'3',
       paths:[
           BeauWheel +
@@ -550,7 +550,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('All 8 Reverse Wheel the Sea',
-      formation:Formations.StaticFacingOut,
+      formation:Formation('Static Facing Out'),
       group:' ',parts:'3',noDisplay: true,
       paths:[
           BeauReverseWheel +

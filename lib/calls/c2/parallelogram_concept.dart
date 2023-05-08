@@ -26,7 +26,7 @@ import '../../moves.dart';
   final List<AnimatedCall> ParallelogramConcept = [
 
     AnimatedCall('Parallelogram Acey Deucey',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-2,y:1,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:-2,y:-1,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:-2,y:-3,angle:0),
@@ -44,7 +44,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Parallelogram Bend the Line',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.GIRL,x:-2,y:1,angle:180),
         DancerModel.fromData(gender:Gender.BOY,x:-2,y:-1,angle:180),
         DancerModel.fromData(gender:Gender.BOY,x:-2,y:-3,angle:180),
@@ -62,7 +62,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Parallelogram Cast Off 3/4',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-2,y:1,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:-2,y:-1,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:-2,y:-3,angle:0),
@@ -80,7 +80,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Parallelogram In Roll Circulate',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-2,y:1,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:-2,y:-1,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:-2,y:-3,angle:0),
@@ -98,7 +98,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Parallelogram Pass the Ocean',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-2,y:1,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:-2,y:-1,angle:0),
         DancerModel.fromData(gender:Gender.BOY,x:-2,y:-3,angle:0),
@@ -120,7 +120,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Parallelogram Recycle',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-2,y:1,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:-2,y:-1,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:-2,y:-3,angle:0),
@@ -140,7 +140,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Parallelogram Scoot Back',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-2,y:1,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:-2,y:-1,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:-2,y:-3,angle:0),
@@ -162,7 +162,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Parallelogram Slide Thru',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-2,y:1,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:-2,y:-1,angle:0),
         DancerModel.fromData(gender:Gender.BOY,x:-2,y:-3,angle:0),
@@ -184,7 +184,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Parallelogram Split Circulate',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-2,y:1,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:-2,y:-1,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:-2,y:-3,angle:0),
@@ -202,7 +202,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Parallelogram Walk and Dodge',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-2,y:1,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:-2,y:-1,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:-2,y:-3,angle:0),

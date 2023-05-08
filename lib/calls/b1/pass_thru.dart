@@ -19,13 +19,13 @@
 */
 
 import '../../animated_call.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> PassThru = [
 
     AnimatedCall('Pass Thru',
-      formation:Formations.FacingCouplesCompact,
+      formation:Formation('Facing Couples Compact'),
       from:'Facing Couples',difficulty: 1,notForSequencer: true,
       paths:[
           ExtendLeft.scale(1.5,0.5) +
@@ -36,7 +36,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Pass Thru',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       from:'Lines',difficulty: 1,
       paths:[
           ExtendLeft.scale(2.0,0.5) +
@@ -53,7 +53,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Pass Thru',
-      formation:Formations.EightChainThru,
+      formation:Formation('Eight Chain Thru'),
       from:'Eight Chain Thru',difficulty: 1,
       paths:[
           ExtendLeft.scale(1.0,0.5) +
@@ -70,7 +70,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Pass Thru',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       from:'Ocean Waves',difficulty: 2,
       taminator: '''
       Note that the new centers end facing each other, and do not form a wave.

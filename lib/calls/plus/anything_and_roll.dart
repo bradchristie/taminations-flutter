@@ -21,13 +21,12 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> AnythingAndRoll = [
 
     AnimatedCall('Bend the Line and Roll',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       from:'Normal Lines',group:' ',difficulty: 2,
       taminator: '''
     After learning Hinge and Roll, Trade and Roll, it's easy to get
@@ -49,7 +48,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cast Off 3/4 and Roll',
-      formation:Formations.LinesFacingOut,
+      formation:Formation('Lines Facing Out'),
       group:' ',difficulty: 2,
       paths:[
           QuarterRight.changehands(1).skew(0.33,0.33) +
@@ -74,7 +73,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Chase Right and Roll',
-      formation:Formations.LinesFacingOut,
+      formation:Formation('Lines Facing Out'),
       group:' ',difficulty: 3,
       taminator: '''
       Only the dancers being chased can roll.
@@ -98,7 +97,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cloverleaf and Roll',
-      formation:Formations.CompletedDoublePassThru,
+      formation:Formation('Completed Double Pass Thru'),
       group:' ',difficulty: 3,
       taminator: '''
       CALLERLAB has ruled that only the trailers can roll.
@@ -128,7 +127,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cut the Diamond and Roll',
-      formation:Formations.DiamondsRHGirlPoints,
+      formation:Formation('Diamonds RH Girl Points'),
       group:' ',difficulty: 2,
       paths:[
           Forward_2 +
@@ -149,7 +148,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Dixie Style to a Wave and Roll',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-3,y:1,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:-1,y:1,angle:0),
         DancerModel.fromData(gender:Gender.BOY,x:-3,y:-1,angle:0),
@@ -179,7 +178,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Ends Fold and Roll',
-      formation:Formations.LinesFacingOut,
+      formation:Formation('Lines Facing Out'),
       group:' ',difficulty: 2,
       paths:[
           FoldLeft.skew(-1.0,0.0) +
@@ -194,7 +193,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Explode and Roll',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       group:' ',difficulty: 2,
       paths:[
           RunRight.skew(1.0,0.0),
@@ -207,7 +206,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Ferris Wheel and Roll',
-      formation:Formations.TwomFacedLinesRH,
+      formation:Formation('Two-Faced Lines RH'),
       from:'Right-Handed Two-Faced Lines',group:' ',difficulty: 2,
       paths:[
           RunRight.changeBeats(4).changehands(6).scale(2.0,2.0).skew(3.0,0.0) +
@@ -224,7 +223,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Flip the Diamond and Roll',
-      formation:Formations.DiamondsRHGirlPoints,
+      formation:Formation('Diamonds RH Girl Points'),
       group:' ',difficulty: 2,
       paths:[
           LeadRight.changeBeats(3).scale(3.0,1.0) +
@@ -241,7 +240,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Flutterwheel and Roll',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       group:' ',difficulty: 2,
       paths:[
           Forward.changeBeats(3.5).changehands(0) +
@@ -266,7 +265,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Hinge and Roll',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       from:'Ocean Waves',group:' ',difficulty: 1,
       paths:[
           HingeRight.skew(0.0,-1.0) +
@@ -283,7 +282,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Heads Lead Right and Roll',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       from:'Static Square',group:' ',difficulty: 2,
       paths:[
           HingeRight.changeBeats(4).scale(0.5,0.5).skew(3.5,-1.5) +
@@ -298,7 +297,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Partner Trade and Roll (from Lines)',
-      formation:Formations.LinesFacingOut,
+      formation:Formation('Lines Facing Out'),
       from:'Lines Facing Out',group:' ',difficulty: 1,
       paths:[
           FlipLeft.skew(-1.0,0.0) +
@@ -315,7 +314,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Partner Trade and Roll (from Completed Double Pass Thru)',
-      formation:Formations.CompletedDoublePassThru,
+      formation:Formation('Completed Double Pass Thru'),
       from:'Completed Double Pass Thru',group:' ',difficulty: 1,
       paths:[
           FlipLeft +
@@ -332,7 +331,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Pass to the Center and Roll',
-      formation:Formations.PassThru,
+      formation:Formation('Pass Thru'),
       from:'Pass Thru',group:' ',fractions:'2',difficulty: 2,
       paths:[
           PassThru,
@@ -349,7 +348,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Peel Off and Roll',
-      formation:Formations.CompletedDoublePassThru,
+      formation:Formation('Completed Double Pass Thru'),
       group:' ',difficulty: 2,
       paths:[
           RunRight.skew(-1.0,0.0) +
@@ -366,7 +365,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Recycle and Roll',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       from:'Right-Hand Waves',group:' ',difficulty: 2,
       paths:[
           RunRight.changeBeats(4).skew(1.0,-3.0) +
@@ -385,7 +384,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Recycle and Roll (from Left-Hand Waves)',
-      formation:Formations.OceanWavesLHBGGB,
+      formation:Formation('Ocean Waves LH BGGB'),
       from:'Left-Hand Waves',group:' ',difficulty: 2,
       paths:[
           RunLeft.changeBeats(4).skew(1.0,3.0) +
@@ -404,7 +403,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Reverse Flutterwheel and Roll',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       from:'Lines',group:' ',difficulty: 2,
       paths:[
           ExtendRight.changeBeats(2).scale(1.5,1.75) +
@@ -429,7 +428,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Right and Left Thru and Roll',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       from:'Lines',group:' ',difficulty: 2,
       paths:[
           PullLeft.changeBeats(2).scale(2.0,0.5) +
@@ -454,7 +453,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Centers Run and Roll',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       from:'Ocean Waves',group:' ',difficulty: 2,
       paths:[
           DodgeRight.skew(1.0,0.0),
@@ -469,7 +468,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Scoot Back and Roll',
-      formation:Formations.OceanWavesRHBGBG,
+      formation:Formation('Ocean Waves RH BGBG'),
       from:'Right-Hand Waves',group:' ',difficulty: 2,notForSequencer: true,
       taminator: '''Note that the scooters do not roll as they are moving
     straight ahead at the end of the call.
@@ -491,7 +490,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Slide Thru and Roll',
-      formation:Formations.EightChainThru,
+      formation:Formation('Eight Chain Thru'),
       from:'Eight Chain Thru',group:' ',difficulty: 1,
       paths:[
           ExtendLeft.changeBeats(2).scale(1.0,0.5) +
@@ -512,7 +511,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Spin the Top and Roll',
-      formation:Formations.WaveRHGBBG,
+      formation:Formation('Wave RH GBBG'),
       group:' ',difficulty: 2,notForSequencer: true,
       paths:[
           SwingRight +
@@ -527,7 +526,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Swing Thru and Roll',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       group:' ',difficulty: 2,
       paths:[
           SwingRight +
@@ -546,7 +545,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Touch a Quarter and Roll',
-      formation:Formations.FacingCouplesCompact,
+      formation:Formation('Facing Couples Compact'),
       group:' ',difficulty: 1,
       paths:[
           ExtendLeft.scale(1.5,0.5) +
@@ -559,7 +558,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Trade and Roll',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       from:'Ocean Waves',group:' ',difficulty: 1,notForSequencer: true,
       paths:[
           SwingRight +
@@ -576,7 +575,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Trade By and Roll',
-      formation:Formations.TradeBy,
+      formation:Formation('Trade By'),
       from:'Trade By',group:' ',difficulty: 2,
       paths:[
           FlipLeft +
@@ -593,7 +592,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Touch a Quarter and Roll',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       from:'Lines',group:' ',difficulty: 1,
       paths:[
           ExtendLeft.scale(2.0,0.5) +
@@ -614,7 +613,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('U-Turn Back and Roll (from Lines)',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       from:'Lines',group:' ',difficulty: 2,notForSequencer: true,
       paths:[
           UmTurnRight.skew(1.0,0.0) +
@@ -631,7 +630,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('U-Turn Back and Roll (from Waves)',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       from:'Waves',group:' ',difficulty: 2,notForSequencer: true,
       paths:[
           UmTurnRight.skew(1.0,0.0) +
@@ -648,7 +647,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Wheel and Deal and Roll',
-      formation:Formations.LinesFacingOut,
+      formation:Formation('Lines Facing Out'),
       from:'Lines Facing Out',group:' ',difficulty: 2,notForSequencer: true,
       paths:[
           RunLeft.changeBeats(4).changehands(1).scale(1.0,2.0).skew(-1.0,0.0) +
@@ -665,7 +664,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Wheel Around and Roll',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       from:'Lines',group:' ',difficulty: 2,notForSequencer: true,
       paths:[
           BeauWheel.skew(1.0,0.0) +

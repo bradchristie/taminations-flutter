@@ -21,13 +21,12 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> RotarySpin = [
 
     AnimatedCall('Rotary Spin',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:1,y:3,angle:270),
         DancerModel.fromData(gender:Gender.GIRL,x:-1,y:3,angle:270),
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:1,angle:90),
@@ -55,7 +54,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Rotary Spin',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       from:'Right-Hand Waves',parts:'2',
       paths:[
           ExtendRight.changeBeats(2).scale(2.0,2.0) +
@@ -74,7 +73,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('"O" Rotary Spin',
-      formation:Formations.OEightChainThru,
+      formation:Formation('O Eight Chain Thru'),
       group:' ',parts:'3',
       paths:[
           ExtendLeft.changeBeats(2).scale(1.0,0.5) +

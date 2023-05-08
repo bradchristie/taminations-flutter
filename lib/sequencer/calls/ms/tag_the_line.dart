@@ -52,7 +52,7 @@ class BigLineTagTheLine extends ActivesOnlyAction {
   var _isHalfTag;
 
   static final Formation ColumnsOf3 =
-  Formation('Columns of 3', [
+  Formation('Columns of 3', dancers:[
       DancerModel.fromData(gender:Gender.GIRL,x:-2,y:-1,angle:180),
       DancerModel.fromData(gender:Gender.BOY,x:0,y:-1,angle:180),
       DancerModel.fromData(gender:Gender.GIRL,x:2,y:-1,angle:180),

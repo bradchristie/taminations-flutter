@@ -17,7 +17,6 @@
  *     along with Taminations.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import '../../../formations.dart';
 import '../common.dart';
 
 class CrossChainThru extends Action with CallWithParts, CallWithStars {
@@ -36,7 +35,7 @@ On Cross Chain and Roll, the ends Roll after the Courtesy Turn and all adjust to
   @override
    void performPart1(CallContext ctx) {
     ctx.applyCalls('Pull By');
-    ctx.adjustToFormation(Formations.EightChainThru);
+    ctx.adjustToFormation(Formation('Eight Chain Thru'));
   }
 
   @override

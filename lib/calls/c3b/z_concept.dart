@@ -26,7 +26,7 @@ import '../../moves.dart';
   final List<AnimatedCall> ZConcept = [
 
     AnimatedCall('(From offset lines) "Z" Chase Right',
-      formation:Formation('Ocean Waves RH BGGB', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-1.5,y:2,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:-1.5,y:0,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:-1.5,y:-2,angle:180),
@@ -51,7 +51,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('(From offset lines) "Z" Shakedown',
-      formation:Formation('Ocean Waves RH BGGB', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-1.5,y:2,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:-1.5,y:0,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:-1.5,y:-2,angle:180),
@@ -73,7 +73,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('(From offset lines) "Z" Split Circulate',
-      formation:Formation('Ocean Waves RH BGGB', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-1.5,y:2,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:-1.5,y:0,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:-1.5,y:-2,angle:0),
@@ -91,7 +91,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('(From offset lines) "Z" Split Counter Rotate',
-      formation:Formation('Ocean Waves RH BGGB', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-1.5,y:2,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:-1.5,y:0,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:-1.5,y:-2,angle:0),
@@ -109,7 +109,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('(From offset lines) "Z" Swap Around',
-      formation:Formation('Ocean Waves RH BGGB', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-1.5,y:2,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:-1.5,y:0,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:-1.5,y:-2,angle:0),
@@ -127,7 +127,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('(From offset lines) "Z" Walk and Dodge',
-      formation:Formation('Ocean Waves RH BGGB', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-1.5,y:2,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:-1.5,y:0,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:-1.5,y:-2,angle:0),
@@ -145,7 +145,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('(From offset columns) "Z" Split Circulate',
-      formation:Formation('Column RH GBGB', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.GIRL,x:-2,y:-1,angle:180),
         DancerModel.fromData(gender:Gender.BOY,x:0,y:-1,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:2,y:-1,angle:180),
@@ -163,7 +163,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('(From offset columns) "Z" Split Counter Rotate',
-      formation:Formation('Column RH GBGB', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.GIRL,x:-2,y:-1,angle:180),
         DancerModel.fromData(gender:Gender.BOY,x:0,y:-1,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:2,y:-1,angle:180),
@@ -181,7 +181,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('(From offset columns) "Z" Split Sidetrack',
-      formation:Formation('Column RH GBGB', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.GIRL,x:-2,y:-1,angle:180),
         DancerModel.fromData(gender:Gender.BOY,x:0,y:-1,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:2,y:-1,angle:180),
@@ -207,7 +207,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('(From offset columns) "Z" Walk and Dodge',
-      formation:Formation('Column RH GBGB', [
+      formation:Formation('Column RH GBGB', dancers:[
         DancerModel.fromData(gender:Gender.GIRL,x:-2,y:-1,angle:180),
         DancerModel.fromData(gender:Gender.BOY,x:0,y:-1,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:2,y:-1,angle:180),

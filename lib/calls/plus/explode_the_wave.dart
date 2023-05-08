@@ -21,13 +21,12 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> ExplodeTheWave = [
 
     AnimatedCall('Explode the Wave',
-      formation:Formations.WaveRH,
+      formation:Formation('Wave RH'),
       from:'Right-Hand Wave',difficulty: 1,
       paths:[
           LeadRight.changeBeats(3).scale(1.5,2.0) +
@@ -38,7 +37,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Explode the Wave',
-      formation:Formations.WaveLHBoysCenter,
+      formation:Formation('Wave LH Boys Center'),
       from:'Left-Hand Wave',difficulty: 1,
       paths:[
           LeadRight.changeBeats(3).scale(1.5,2.0) +
@@ -49,7 +48,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Explode the Wave',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       from:'Right-Hand Waves',difficulty: 1,
       paths:[
           LeadRight.changeBeats(3).scale(1.5,2.0) +
@@ -66,7 +65,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Explode the Wave',
-      formation:Formations.OceanWavesLHGBBG,
+      formation:Formation('Ocean Waves LH GBBG'),
       from:'Left-Hand Waves',difficulty: 1,
       paths:[
           LeadLeft.changeBeats(3).scale(0.5,2.0) +
@@ -83,7 +82,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Explode the Wave',
-      formation:Formations.TidalWaveRHBGGB,
+      formation:Formation('Tidal Wave RH BGGB'),
       from:'Right-Hand Tidal Wave',difficulty: 2,
       paths:[
           LeadRight.changeBeats(3).scale(1.5,1.5) +
@@ -100,7 +99,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Explode the Wave',
-      formation:Formations.TidalWaveLHBGGB,
+      formation:Formation('Tidal Wave LH BGGB'),
       from:'Left-Hand Tidal Wave',difficulty: 2,
       paths:[
           LeadLeft.changeBeats(3).scale(0.5,1.5) +
@@ -117,7 +116,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Explode',
-      formation:Formations.WaveRH,
+      formation:Formation('Wave RH'),
       from:'Right-Hand Wave',noDisplay: true,
       paths:[
           LeadRight.changeBeats(2),
@@ -126,7 +125,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Explode',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:0,y:1.5,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:0,y:0.5,angle:180),
   ]),
@@ -138,7 +137,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Explode',
-      formation:Formations.WaveLH,
+      formation:Formation('Wave LH'),
       from:'Left-Hand Wave',noDisplay: true,
       paths:[
           LeadLeft.changeBeats(2),
@@ -147,7 +146,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Explode',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:0,y:1.5,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:0,y:0.5,angle:0),
   ]),
@@ -159,7 +158,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Explode',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       from:'Right-Hand Waves',noDisplay: true,
       paths:[
           LeadRight.changeBeats(2).scale(1.0,2.0),
@@ -172,7 +171,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Explode',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-2,y:1.5,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:-2,y:0.5,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:-2,y:-0.5,angle:0),
@@ -190,7 +189,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Explode',
-      formation:Formations.OceanWavesLHBGGB,
+      formation:Formation('Ocean Waves LH BGGB'),
       from:'Left-Hand Waves',noDisplay: true,
       paths:[
           LeadLeft.changeBeats(2).scale(1.0,2.0),
@@ -203,7 +202,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Explode',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-2,y:1.5,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:-2,y:0.5,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:-2,y:-0.5,angle:180),
@@ -221,7 +220,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Explode',
-      formation:Formations.TidalWaveRHBGGB,
+      formation:Formation('Tidal Wave RH BGGB'),
       from:'Right-Hand Tidal Wave',noDisplay: true,
       paths:[
           LeadRight.changeBeats(2).scale(1.0,0.5),
@@ -234,7 +233,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Explode',
-      formation:Formations.TidalWaveLHBGGB,
+      formation:Formation('Tidal Wave LH BGGB'),
       from:'Left-Hand Tidal Wave',noDisplay: true,
       paths:[
           LeadLeft.changeBeats(2).scale(1.0,0.5),

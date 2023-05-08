@@ -21,13 +21,12 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> Finish = [
 
     AnimatedCall('Finish Alter the Wave',
-      formation:Formations.OceanWavesLHBGGB,
+      formation:Formation('Ocean Waves LH BGGB'),
       group:'Finish',parts:'4.5;4',
       paths:[
           UmTurnLeft.changeBeats(4.5) +
@@ -50,7 +49,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Finish Brace Thru',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:2,y:3,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:2,y:1,angle:0),
         DancerModel.fromData(gender:Gender.BOY,x:2,y:-3,angle:0),
@@ -68,7 +67,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Finish Coordinate',
-      formation:Formations.ColumnRHGBGB,
+      formation:Formation('Column RH GBGB'),
       group:'Finish',parts:'1;3',
       taminator: '''
     The first part of Coordinate is Circulate, and the second part is
@@ -92,7 +91,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Finish Cross Chain And Roll',
-      formation:Formations.TradeBy,
+      formation:Formation('Trade By'),
       group:'Finish',
       paths:[
           BelleWheel +
@@ -111,7 +110,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Finish Diamond Chain Thru',
-      formation:Formations.DiamondsRHGirlPoints,
+      formation:Formation('Diamonds RH Girl Points'),
       group:'Finish',parts:'3',
       paths:[
           Stand.changeBeats(3) +
@@ -126,7 +125,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Finish Dixie Diamond',
-      formation:Formations.OceanWavesLHGBBG,
+      formation:Formation('Ocean Waves LH GBBG'),
       group:'Finish',
       paths:[
           UmTurnLeft,
@@ -139,7 +138,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Finish Linear Cycle',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       group:'Finish',fractions:'4',
       paths:[
           Forward_4 +
@@ -158,7 +157,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Finish Load the Boat',
-      formation:Formations.LinesFacingOut,
+      formation:Formation('Lines Facing Out'),
       group:'Finish',fractions:'2;3',
       paths:[
           LeadLeft.changeBeats(2).scale(1.5,3.5) +
@@ -179,7 +178,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Finish Motivate',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       group:'Finish',fractions:'4.5;3',
       paths:[
           ExtendRight.changeBeats(4.5).scale(2.0,2.0) +
@@ -200,7 +199,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Finish Pass and Roll',
-      formation:Formations.TradeBy,
+      formation:Formation('Trade By'),
       group:'Finish',
       paths:[
           FlipRight.scale(1.0,0.25) +
@@ -225,7 +224,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Finish Pass the Ocean',
-      formation:Formations.LinesFacingOut,
+      formation:Formation('Lines Facing Out'),
       group:'Finish',
       paths:[
           QuarterLeft.changeBeats(2).skew(-1.0,1.0),
@@ -238,7 +237,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Finish Pass the Sea',
-      formation:Formations.LinesFacingOut,
+      formation:Formation('Lines Facing Out'),
       group:'Finish',
       paths:[
           LeadLeft.changeBeats(2),
@@ -251,7 +250,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Finish Percolate',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       group:'Finish',parts:'2',
       paths:[
           Forward_2 +
@@ -273,7 +272,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Finish Recycle',
-      formation:Formations.BoxRH,
+      formation:Formation('Box RH'),
       group:'Finish',parts:'2',
       paths:[
           CounterRotateRight_3_1.skew(0.0,-1.0) +
@@ -284,7 +283,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Finish Relay the Deucey',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       group:'Finish',parts:'4.5;3;3;3',
       paths:[
           Forward_2.changeBeats(4.5) +
@@ -313,7 +312,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Finish Relay the Shadow',
-      formation:Formations.TidalWaveRHBGGB,
+      formation:Formation('Tidal Wave RH BGGB'),
       group:'Finish',parts:'4.5',
       paths:[
           LeadRight.changeBeats(4.5).scale(3.0,3.5) +
@@ -337,7 +336,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Finish Relay the Top',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       group:'Finish',parts:'4.5;3',
       paths:[
           ExtendRight.changeBeats(4.5).scale(2.0,2.0) +
@@ -358,7 +357,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Finish Remake',
-      formation:Formations.OceanWavesLHBGGB,
+      formation:Formation('Ocean Waves LH BGGB'),
       group:'Finish',parts:'3',
       paths:[
           SwingLeft +
@@ -373,7 +372,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Finish Rotary Spin',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:1,y:1,angle:270),
         DancerModel.fromData(gender:Gender.GIRL,x:-1,y:1,angle:270),
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:3,angle:90),
@@ -395,7 +394,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Finish Spin Chain and Exchange the Gears',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       group:'Finish',parts:'4.5;3;4.5;4',
       paths:[
           Stand.changeBeats(2) +
@@ -440,7 +439,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Finish Spin Chain the Gears',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       group:'Finish',parts:'4.5;3;4.5;3',
       paths:[
           Stand.changeBeats(2) +
@@ -467,7 +466,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Finish Spin Chain Thru',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       group:'Finish',parts:'4.5;3',
       paths:[
           Path(),
@@ -484,7 +483,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Finish Swing the Fractions',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       group:'Finish',parts:'3;4.5;3',
       paths:[
           Stand.changeBeats(3) +
@@ -509,7 +508,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Finish Tally Ho',
-      formation:Formations.TidalWaveRHBGGB,
+      formation:Formation('Tidal Wave RH BGGB'),
       group:'Finish',parts:'3',
       paths:[
           SwingRight.scale(0.5,0.5) +
@@ -529,7 +528,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Finish Triple Star Thru',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       group:'Finish',isGenderSpecific:true,parts:'3.5',
       paths:[
           ExtendRight.changeBeats(2).changehands(1).scale(2.0,0.5) +

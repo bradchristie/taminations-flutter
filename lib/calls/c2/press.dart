@@ -20,13 +20,13 @@
 
 import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> Press = [
 
     AnimatedCall('Boys Press Right',
-      formation:Formations.ColumnLHGBGB,
+      formation:Formation('Column LH GBGB'),
       from:'Waves',group:' ',isGenderSpecific:true,
       paths:[
           ExtendRight.changeBeats(3).scale(2.0,2.0),

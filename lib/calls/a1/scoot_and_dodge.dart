@@ -19,14 +19,14 @@
 */
 
 import '../../animated_call.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 import '../a2/all_4_all_8.dart' as a2;
 
   final List<AnimatedCall> ScootAndDodge = [
 
     AnimatedCall('Scoot and Dodge',
-      formation:Formations.BoxRH,
+      formation:Formation('Box RH'),
       from:'Right-Hand Box',
       paths:[
           ExtendRight.changeBeats(1.5).scale(2.0,0.25) +
@@ -37,7 +37,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Scoot and Dodge',
-      formation:Formations.BoxLH,
+      formation:Formation('Box LH'),
       from:'Left-Hand Box',
       paths:[
           DodgeLeft,
@@ -48,7 +48,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Scoot and Dodge',
-      formation:Formations.OceanWavesRHBGBG,
+      formation:Formation('Ocean Waves RH BGBG'),
       from:'Right-Hand Waves',
       paths:[
           ExtendRight.changeBeats(1.5).scale(2.0,0.25) +
@@ -65,7 +65,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Scoot and Dodge',
-      formation:Formations.OceanWavesLHBGBG,
+      formation:Formation('Ocean Waves LH BGBG'),
       from:'Left-Hand Waves',
       paths:[
           DodgeLeft,
@@ -82,7 +82,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Scoot and Dodge',
-      formation:Formations.ColumnRHGBGB,
+      formation:Formation('Column RH GBGB'),
       from:'Right-Hand Columns',
       paths:[
           DodgeRight,
@@ -99,7 +99,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Scoot and Dodge',
-      formation:Formations.ColumnLHGBGB,
+      formation:Formation('Column LH GBGB'),
       from:'Left-Hand Columns',
       paths:[
           ExtendLeft.changeBeats(1.5).scale(1.0,0.5) +
@@ -116,7 +116,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('As Couples Scoot and Dodge',
-      formation:Formations.TwomFacedLinesRH,
+      formation:Formation('Two-Faced Lines RH'),
       from:'Right-Hand Two-Faced Lines',group:' ',
       paths:[
           ExtendRight.changeBeats(2).changehands(2).scale(2.0,1.5) +

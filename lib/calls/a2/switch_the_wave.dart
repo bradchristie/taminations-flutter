@@ -19,13 +19,13 @@
 */
 
 import '../../animated_call.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> SwitchTheWave = [
 
     AnimatedCall('Switch the Wave',
-      formation:Formations.WaveRHBoysCenter,
+      formation:Formation('Wave RH Boys Center'),
       from:'Right-Hand Wave',
       paths:[
           RunRight.changeBeats(6),
@@ -34,7 +34,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Switch the Wave',
-      formation:Formations.CompactWaveRH,
+      formation:Formation('Compact Wave RH'),
       from:'Compact Right-Hand Wave',noDisplay: true,
       paths:[
           RunRight.changeBeats(6),
@@ -43,7 +43,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Switch the Wave',
-      formation:Formations.WaveLH,
+      formation:Formation('Wave LH'),
       from:'Left-Hand Wave',
       paths:[
           RunLeft.changeBeats(6).scale(1.0,2.0),
@@ -52,7 +52,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Switch the Wave',
-      formation:Formations.CompactWaveLH,
+      formation:Formation('Compact Wave LH'),
       from:'Compact Left-Hand Wave',noDisplay: true,
       paths:[
           RunLeft.changeBeats(6),
@@ -61,7 +61,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Switch the Wave',
-      formation:Formations.OceanWavesRHGBBG,
+      formation:Formation('Ocean Waves RH GBBG'),
       from:'Right-Hand Waves',
       paths:[
           RunRight.changeBeats(6).scale(1.0,2.0),
@@ -74,7 +74,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Switch the Wave',
-      formation:Formations.OceanWavesLHGBBG,
+      formation:Formation('Ocean Waves LH GBBG'),
       from:'Left-Hand Waves',
       paths:[
           RunLeft.changeBeats(6).scale(1.0,2.0),
@@ -87,7 +87,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Switch the Wave',
-      formation:Formations.TidalWaveRHBGGB,
+      formation:Formation('Tidal Wave RH BGGB'),
       from:'Right-Hand Tidal Wave',
       paths:[
           RunRight.changeBeats(6).scale(0.75,1.0),
@@ -100,7 +100,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Switch the Wave',
-      formation:Formations.TidalWaveLHBGGB,
+      formation:Formation('Tidal Wave LH BGGB'),
       from:'Left-Hand Tidal Wave',
       paths:[
           RunLeft.changeBeats(6).scale(0.75,1.0),
@@ -113,7 +113,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('As Couples Switch the Wave',
-      formation:Formations.TwomFacedTidalLineRH,
+      formation:Formation('Two-Faced Tidal Line RH'),
       from:'Tidal Two-Faced Line',
       paths:[
           RunRight.changeBeats(6).changehands(2).scale(2.5,2.5),
@@ -126,7 +126,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('All 8 Switch the Wave',
-      formation:Formations.TharLHBoys,
+      formation:Formation('Thar LH Boys'),
       from:'Thar',
       paths:[
           RunRight,

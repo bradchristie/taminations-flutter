@@ -19,13 +19,13 @@
 */
 
 import '../../animated_call.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> AlterAndCirculate = [
 
     AnimatedCall('Alter and Circulate',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       from:'Right-Hand Waves',parts:'3;4.5;3;4',
       paths:[
           SwingRight +
@@ -54,7 +54,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Alter and Circulate',
-      formation:Formations.OceanWavesLHBGGB,
+      formation:Formation('Ocean Waves LH BGGB'),
       from:'Left-Hand Waves',fractions:'3;4.5;3;4',
       paths:[
           SwingLeft +

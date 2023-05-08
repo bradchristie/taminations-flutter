@@ -18,7 +18,6 @@
 
 */
 
-import '../../../formations.dart';
 import '../common.dart';
 
 class Siamese extends FourDancerConcept {
@@ -73,10 +72,10 @@ class Siamese extends FourDancerConcept {
   void postAdjustment(CallContext ctx, DancerModel cd, List<DancerModel> group) {
     //  This covers most all the formations you get from tandem calls
     var tandemFormations = {
-      Formations.NormalLinesCompact: 1.0,
-      Formations.NormalLines: 1.0,
-      Formations.DoublePassThru: 1.0,
-      Formations.QuarterTag : 1.5,
+      Formation('Normal Lines Compact'): 1.0,
+      Formation('Normal Lines'): 1.0,
+      Formation('Double Pass Thru'): 1.0,
+      Formation('Quarter Tag') : 1.5,
     };
     ctx.matchFormationList(tandemFormations,maxOffset: 9.0);
   }

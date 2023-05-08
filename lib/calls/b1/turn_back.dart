@@ -21,13 +21,12 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> TurnBack = [
 
     AnimatedCall('U-Turn Back',
-      formation:Formations.FacingCouplesCompact,
+      formation:Formation('Facing Couples Compact'),
       from:'Facing Couples',fractions:'1.5',
       paths:[
           UmTurnRight,
@@ -36,7 +35,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('U-Turn Back',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-1.5,y:-1,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:-1.5,y:1,angle:0),
   ]),
@@ -48,7 +47,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('U-Turn Back',
-      formation:Formations.CouplesFacingOut,
+      formation:Formation('Couples Facing Out'),
       from:'Couples Facing Out',fractions:'1.5',
       paths:[
           UmTurnLeft,
@@ -57,7 +56,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('U-Turn Back',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       from:'Lines',fractions:'1.5',
       paths:[
           UmTurnRight,
@@ -70,7 +69,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('U-Turn Back',
-      formation:Formations.LinesFacingOut,
+      formation:Formation('Lines Facing Out'),
       from:'Lines Facing Out',fractions:'1.5',
       paths:[
           UmTurnLeft,
@@ -83,7 +82,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('U-Turn Back',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       from:'Right-Hand Waves',fractions:'1.5',
       paths:[
           UmTurnRight,
@@ -96,7 +95,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('U-Turn Back',
-      formation:Formations.OceanWavesLHBGGB,
+      formation:Formation('Ocean Waves LH BGGB'),
       from:'Left-Hand Waves',fractions:'1.5',
       paths:[
           UmTurnLeft,
@@ -109,7 +108,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Boys Turn Back',
-      formation:Formations.FacingCouplesCompact,
+      formation:Formation('Facing Couples Compact'),
       from:'Facing Couples',notForSequencer: true,
       paths:[
           UmTurnRight,
@@ -118,7 +117,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Boys Turn Back',
-      formation:Formations.BoxRH,
+      formation:Formation('Box RH'),
       from:'Right-Hand Box',notForSequencer: true,
       paths:[
           UmTurnRight,
@@ -127,7 +126,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Girls Turn Back',
-      formation:Formations.FacingCouplesCompact,
+      formation:Formation('Facing Couples Compact'),
       from:'Facing Couples',notForSequencer: true,
       paths:[
           Path(),
@@ -136,7 +135,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Girls Turn Back',
-      formation:Formations.BoxRH,
+      formation:Formation('Box RH'),
       from:'Right-Hand Box',notForSequencer: true,
       paths:[
           Path(),
@@ -145,7 +144,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Girls Backtrack',
-      formation:Formations.Promenade,
+      formation:Formation('Promenade'),
       from:'Promenade',isGenderSpecific:true,
       taminator: '''
       Girls continue clockwise and boys counterclockwise until the next call.

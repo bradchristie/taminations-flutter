@@ -21,13 +21,12 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> OddlyEvenlyConcept = [
 
     AnimatedCall('Oddly Once Removed Reset',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:3,angle:90),
         DancerModel.fromData(gender:Gender.GIRL,x:-1,y:1,angle:90),
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:-1,angle:90),
@@ -57,7 +56,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Oddly Tandem Remake',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:3,angle:90),
         DancerModel.fromData(gender:Gender.GIRL,x:-1,y:1,angle:90),
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:-1,angle:90),
@@ -91,7 +90,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Oddly Tandem Swing and Mix',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       group:'Oddly',fractions:'4;4',
       paths:[
           CounterRotateRight_2_0.changehands(2).skew(1.0,0.0) +

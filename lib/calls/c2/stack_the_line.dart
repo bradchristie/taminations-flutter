@@ -19,13 +19,13 @@
 */
 
 import '../../animated_call.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> StackTheLine = [
 
     AnimatedCall('Stack the Line',
-      formation:Formations.TwomFacedLinesRH,
+      formation:Formation('Two-Faced Lines RH'),
       from:'Right-Hand Two-Faced Lines',
       paths:[
           QuarterRight.changeBeats(3).skew(3.0,0.0),
@@ -38,7 +38,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Stack the Line',
-      formation:Formations.TwomFacedLinesLH,
+      formation:Formation('Two-Faced Lines LH'),
       from:'Left-Hand Two-Faced Lines',
       paths:[
           QuarterLeft.changeBeats(3).skew(-3.0,2.0),
@@ -51,7 +51,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Stack the Line',
-      formation:Formations.OceanWavesRHBGBG,
+      formation:Formation('Ocean Waves RH BGBG'),
       from:'Right-Hand Waves',
       paths:[
           QuarterRight.changeBeats(3).skew(3.0,0.0),
@@ -64,7 +64,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Stack the Line',
-      formation:Formations.OceanWavesLHBGBG,
+      formation:Formation('Ocean Waves LH BGBG'),
       from:'Left-Hand Waves',
       paths:[
           QuarterLeft.changeBeats(2).skew(-2.0,0.0) +
@@ -79,7 +79,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Stack the Line',
-      formation:Formations.DoublePassThru,
+      formation:Formation('Double Pass Thru'),
       from:'Double Pass Thru',
       paths:[
           QuarterRight.changeBeats(3).skew(2.0,0.5),
@@ -92,7 +92,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Stack the Line',
-      formation:Formations.CompletedDoublePassThru,
+      formation:Formation('Completed Double Pass Thru'),
       from:'Completed Double Pass Thru',
       paths:[
           QuarterLeft.changeBeats(3).skew(-2.0,2.5),
@@ -105,7 +105,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Stack the Line',
-      formation:Formations.ColumnRHGBGB,
+      formation:Formation('Column RH GBGB'),
       from:'Right-Hand Columns',
       paths:[
           QuarterRight.changeBeats(3).skew(0.0,-2.5),
@@ -118,7 +118,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Stack the Line',
-      formation:Formations.ColumnLHGBGB,
+      formation:Formation('Column LH GBGB'),
       from:'Left-Hand Columns',
       paths:[
           QuarterLeft.changeBeats(3).skew(0.0,-0.5),
@@ -133,7 +133,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Stack the Line',
-      formation:Formations.TmBoneUDLL,
+      formation:Formation('T-Bone UDLL'),
       from:'T-Bones',parts:'1.5',
       paths:[
           QuarterRight +

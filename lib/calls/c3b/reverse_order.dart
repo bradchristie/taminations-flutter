@@ -21,13 +21,12 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> ReverseOrder = [
 
     AnimatedCall('Reverse Order Diamond Chain Thru',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:2,angle:90),
         DancerModel.fromData(gender:Gender.GIRL,x:-3,y:2,angle:90),
         DancerModel.fromData(gender:Gender.GIRL,x:3,y:2,angle:270),
@@ -51,7 +50,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Reverse Order Mix',
-      formation:Formations.WaveRH,
+      formation:Formation('Wave RH'),
       group:'Reverse Order',parts:'3',
       paths:[
           Stand.changeBeats(3) +
@@ -62,7 +61,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Reverse Order Pass the Ocean',
-      formation:Formations.EightChainThru,
+      formation:Formation('Eight Chain Thru'),
       group:'Reverse Order',parts:'2;1.5',
       paths:[
           ExtendLeft.changeBeats(2).scale(1.5,2.0) +
@@ -87,7 +86,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Reverse Order Recoil',
-      formation:Formations.WaveRH,
+      formation:Formation('Wave RH'),
       group:'Reverse Order',parts:'3',
       paths:[
           RunRight.skew(1.0,0.0) +
@@ -98,7 +97,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Reverse Order Remake',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       group:'Reverse Order',parts:'4.5;3',
       paths:[
           CastRight +
@@ -119,7 +118,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Reverse Order Right and Left Thru',
-      formation:Formations.LinesFacingOut,
+      formation:Formation('Lines Facing Out'),
       group:'Reverse Order',parts:'3',
       paths:[
           BelleWheel.scale(0.67,1.0) +
@@ -140,7 +139,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Reverse Order Scramble',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       group:'Reverse Order',parts:'6',
       paths:[
           ExtendLeft.changeBeats(2).scale(2.0,0.5) +
@@ -163,7 +162,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Reverse Order Travel Thru',
-      formation:Formations.TwomFacedLineRH,
+      formation:Formation('Two-Faced Line RH'),
       group:'Reverse Order',parts:'1.5',
       paths:[
           HingeRight.changehands(2) +

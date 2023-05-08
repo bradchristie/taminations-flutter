@@ -26,7 +26,7 @@ import '../../moves.dart';
   final List<AnimatedCall> WaveTheAnyone = [
 
     AnimatedCall('Wave the Beaus',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:1,y:3,angle:270),
         DancerModel.fromData(gender:Gender.GIRL,x:-1,y:3,angle:270),
         DancerModel.fromData(gender:Gender.BOY,x:1,y:1,angle:0),
@@ -50,7 +50,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Wave the Belles',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:1,y:3,angle:270),
         DancerModel.fromData(gender:Gender.GIRL,x:-1,y:3,angle:270),
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:1,angle:90),
@@ -78,7 +78,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Wave the Boys',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:1,y:3,angle:270),
         DancerModel.fromData(gender:Gender.GIRL,x:-1,y:3,angle:270),
         DancerModel.fromData(gender:Gender.GIRL,x:1,y:1,angle:0),
@@ -102,7 +102,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Wave the Girls',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:1,y:3,angle:270),
         DancerModel.fromData(gender:Gender.GIRL,x:-1,y:3,angle:270),
         DancerModel.fromData(gender:Gender.GIRL,x:1,y:1,angle:0),

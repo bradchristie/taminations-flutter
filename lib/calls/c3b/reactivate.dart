@@ -21,13 +21,12 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> Reactivate = [
 
     AnimatedCall('Reactivate',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.GIRL,x:3,y:-1,angle:180),
         DancerModel.fromData(gender:Gender.BOY,x:3,y:1,angle:180),
         DancerModel.fromData(gender:Gender.BOY,x:0,y:3,angle:0),
@@ -52,7 +51,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Reactivate',
-      formation:Formations.QuarterTagLH,
+      formation:Formation('Quarter Tag LH'),
       from:'Left-Hand Quarter Tag',fractions:'3;3',
       paths:[
           Forward.changeBeats(3) +
@@ -72,7 +71,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Reactivate',
-      formation:Formations.QuarterLinesRH,
+      formation:Formation('Quarter Lines RH'),
       from:'Quarter Lines',fractions:'3;3',
       paths:[
           Forward.changeBeats(3) +
@@ -92,7 +91,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Reactivate',
-      formation:Formations.MixedQuarterTag1,
+      formation:Formation('Mixed Quarter Tag #1'),
       from:'Quarter Waves',fractions:'3;3',
       paths:[
           ExtendLeft.changeBeats(1.5).scale(1.5,0.5) +
@@ -112,7 +111,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cross Reactivate',
-      formation:Formations.QuarterTag,
+      formation:Formation('Quarter Tag'),
       from:'Quarter Tag',
       paths:[
           Forward.changeBeats(3) +

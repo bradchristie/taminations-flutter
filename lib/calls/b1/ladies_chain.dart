@@ -21,13 +21,12 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> LadiesChain = [
 
     AnimatedCall('Ladies Chain',
-      formation:Formations.FacingCouplesCompact,
+      formation:Formation('Facing Couples Compact'),
       from:'Facing Couples',isGenderSpecific:true,fractions:'5',difficulty: 1,
       paths:[
           Stand.changehands(0) +
@@ -41,7 +40,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Ladies Chain',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       from:'Normal Lines',isGenderSpecific:true,fractions:'5',difficulty: 1,
       paths:[
           Stand.changehands(0) +
@@ -64,7 +63,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Ladies Chain',
-      formation:Formations.EightChainThru,
+      formation:Formation('Eight Chain Thru'),
       from:'Eight Chain Thru',isGenderSpecific:true,fractions:'5',difficulty: 1,
       paths:[
           Stand +
@@ -87,7 +86,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Head Ladies Chain',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       from:'Static Square',group:' ',isGenderSpecific:true,difficulty: 1,
       paths:[
           Stand +
@@ -105,7 +104,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Side Ladies Chain',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       from:'Static Square',group:' ',isGenderSpecific:true,difficulty: 1,
       paths:[
           Path(),
@@ -123,7 +122,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Head Ladies Chain Right',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       group:' ',isGenderSpecific:true,difficulty: 2,
       paths:[
           Stand +
@@ -146,7 +145,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Side Ladies Chain Right',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       group:' ',isGenderSpecific:true,difficulty: 2,
       paths:[
           Stand +
@@ -169,7 +168,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Head Ladies Chain Left',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       group:' ',isGenderSpecific:true,difficulty: 2,
       taminator: '''
       This is the same as Side Ladies Chain Right
@@ -195,7 +194,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Side Ladies Chain Left',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       group:' ',isGenderSpecific:true,difficulty: 2,
       taminator: '''
       This is the same as Head Ladies Chain Right
@@ -221,7 +220,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('End Ladies Chain on a Diagonal',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       group:' ',isGenderSpecific:true,difficulty: 2,
       paths:[
           Path(),
@@ -240,7 +239,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Center Ladies Chain on a Diagonal',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       group:' ',isGenderSpecific:true,difficulty: 3,
       paths:[
           Stand.changeBeats(2) +
@@ -260,7 +259,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('On a Double Track, Ladies Chain',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-3,y:1,angle:0),
         DancerModel.fromData(gender:Gender.BOY,x:-3,y:-1,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:-1,y:1,angle:0),
@@ -288,7 +287,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Four Ladies Chain',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       from:'Static Square',isGenderSpecific:true,fractions:'5',difficulty: 1,
       paths:[
           Stand +
@@ -311,7 +310,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Four Ladies Chain',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       from:'Normal Lines',isGenderSpecific:true,difficulty: 2,
       paths:[
           DodgeRight.changeBeats(7).scale(1.0,0.75) +
@@ -336,7 +335,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Four Ladies Chain 3/4',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       from:'Static Square',group:' ',isGenderSpecific:true,fractions:'6.5',difficulty: 1,
       paths:[
           Stand +
@@ -361,7 +360,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Four Ladies Chain 1/4',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       from:'Static Square',group:' ',isGenderSpecific:true,fractions:'6.5',difficulty: 2,
       paths:[
           DodgeRight.changeBeats(2) +
@@ -382,7 +381,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Chain Down the Line',
-      formation:Formations.TwomFacedLineRH,
+      formation:Formation('Two-Faced Line RH'),
       from:'Two-Faced Line',fractions:'3',difficulty: 1,
       paths:[
           QuarterRight.changeBeats(3).skew(0.0,-1.0) +
@@ -395,7 +394,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Chain Down the Line',
-      formation:Formations.CompactTwomFacedLineRH,
+      formation:Formation('Compact Two-Faced Line RH'),
       from:'Compact Two-Faced Line',fractions:'3',difficulty: 1,noDisplay: true,
       paths:[
           QuarterRight.changeBeats(3) +
@@ -408,7 +407,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Chain Down the Line',
-      formation:Formations.WaveLH,
+      formation:Formation('Wave LH'),
       from:'Left-Hand Wave',difficulty: 1,
       paths:[
           QuarterLeft.changeBeats(3).skew(0.0,1.0) +
@@ -421,7 +420,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Chain Down the Line',
-      formation:Formations.TwomFacedLinesRH,
+      formation:Formation('Two-Faced Lines RH'),
       from:'Two-Faced Lines',fractions:'3',difficulty: 1,
       paths:[
           QuarterRight.changeBeats(3).skew(0.0,-1.0) +
@@ -442,7 +441,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Chain Down the Line',
-      formation:Formations.OceanWavesLHBGGB,
+      formation:Formation('Ocean Waves LH BGGB'),
       from:'Left-Hand Waves',fractions:'3',difficulty: 1,
       paths:[
           QuarterLeft.changeBeats(3).skew(0.0,1.0) +
@@ -463,7 +462,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Chain Down the Line',
-      formation:Formations.TwomFacedTidalLineRH,
+      formation:Formation('Two-Faced Tidal Line RH'),
       from:'Tidal Two-Faced Line',fractions:'3',difficulty: 2,
       paths:[
           QuarterRight.changeBeats(3) +
@@ -484,7 +483,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Chain Down the Line',
-      formation:Formations.TidalWaveLHBGGB,
+      formation:Formation('Tidal Wave LH BGGB'),
       from:'Tidal Left-Hand Wave',fractions:'3',difficulty: 2,
       paths:[
           QuarterLeft.changeBeats(3) +

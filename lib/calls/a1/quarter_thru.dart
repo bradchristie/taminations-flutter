@@ -21,14 +21,13 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 import '../a2/all_4_all_8.dart' as a2;
 
   final List<AnimatedCall> QuarterThru = [
 
     AnimatedCall('Quarter Thru',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:1,y:2,angle:270),
         DancerModel.fromData(gender:Gender.GIRL,x:-1,y:2,angle:90),
   ]),
@@ -41,7 +40,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Quarter Thru',
-      formation:Formations.BoxRHClose,
+      formation:Formation('Box RH Close'),
       from:'Right-Hand Box Close',parts:'1.5',noDisplay: true,
       paths:[
           HingeRight.scale(0.5,1.0) +
@@ -51,7 +50,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Quarter Thru',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       from:'Right-Hand Waves',parts:'1.5',
       paths:[
           HingeRight +
@@ -66,7 +65,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Quarter Thru',
-      formation:Formations.ColumnRHGBGB,
+      formation:Formation('Column RH GBGB'),
       from:'Columns',parts:'1.5',
       paths:[
           HingeRight.scale(0.5,1.0),
@@ -81,7 +80,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Quarter Thru',
-      formation:Formations.AlamoWave,
+      formation:Formation('Alamo Wave'),
       from:'Alamo Ring',parts:'1.6',
       paths:[
           SxtnthLeft.changehands(2) +
@@ -100,7 +99,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Quarter Thru',
-      formation:Formations.DiamondsFacingGirlPoints,
+      formation:Formation('Diamonds Facing Girl Points'),
       from:'Facing Diamonds',parts:'1.5',
       paths:[
           HingeRight +
@@ -117,7 +116,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Quarter Thru',
-      formation:Formations.DiamondsFacingPTP,
+      formation:Formation('Diamonds Facing PTP'),
       from:'Facing Point-to-Point Diamonds',parts:'1.5',
       paths:[
           HingeRight.scale(0.67,1.0) +
@@ -134,7 +133,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Centers Quarter Thru',
-      formation:Formations.OceanWavesLHBGGB,
+      formation:Formation('Ocean Waves LH BGGB'),
       from:'Left-Hand Waves',parts:'1.5',
       paths:[
           Path(),
@@ -148,7 +147,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Left Quarter Thru',
-      formation:Formations.BoxLH,
+      formation:Formation('Box LH'),
       from:'Left-Hand Box',parts:'1.5',
       paths:[
           HingeLeft,
@@ -158,7 +157,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Left Quarter Thru',
-      formation:Formations.BoxLHClose,
+      formation:Formation('Box LH Close'),
       from:'Left-Hand Box Close',parts:'1.5',noDisplay: true,
       paths:[
           HingeLeft.scale(0.5,1.0),
@@ -168,7 +167,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Left Quarter Thru',
-      formation:Formations.OceanWavesLHBGGB,
+      formation:Formation('Ocean Waves LH BGGB'),
       from:'Left-Hand Waves',parts:'1.5',
       paths:[
           HingeLeft,
@@ -183,7 +182,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Left Quarter Thru',
-      formation:Formations.ColumnLHGBGB,
+      formation:Formation('Column LH GBGB'),
       from:'Left-Hand Columns',parts:'1.5',
       paths:[
           HingeLeft.scale(0.5,1.0) +
@@ -198,7 +197,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Left Quarter Thru',
-      formation:Formations.AlamoWave,
+      formation:Formation('Alamo Wave'),
       from:'Alamo Ring',parts:'1.6',
       paths:[
           SxtnthRight.changehands(1) +
@@ -217,7 +216,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Left Quarter Thru',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:0,y:-3,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:-3,y:-2,angle:90),
         DancerModel.fromData(gender:Gender.BOY,x:0,y:-1,angle:180),
@@ -239,7 +238,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Left Quarter Thru',
-      formation:Formations.DiamondsFacingLHPTP,
+      formation:Formation('Diamonds Facing LH PTP'),
       from:'Facing Point-to-Point Diamonds',parts:'1.5',
       paths:[
           HingeLeft.scale(0.67,1.0) +
@@ -256,7 +255,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('As Couples Quarter Thru',
-      formation:Formations.TwomFacedLinesRH,
+      formation:Formation('Two-Faced Lines RH'),
       group:' ',parts:'3',
       paths:[
           HingeRight.changeBeats(3).scale(1.5,3.0) +
@@ -273,7 +272,7 @@ import '../a2/all_4_all_8.dart' as a2;
       tam.title == 'All 8 Quarter Thru').first.xref(title: 'All 8 Quarter Thru').xref(group: ' '),
 
     AnimatedCall('3/4 Thru',
-      formation:Formations.BoxRH,
+      formation:Formation('Box RH'),
       from:'Right-Hand Box',parts:'4.5',
       paths:[
           CastRight,
@@ -283,7 +282,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('3/4 Thru',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       from:'Ocean Waves',parts:'4.5',
       paths:[
           CastRight,
@@ -298,7 +297,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('3/4 Thru',
-      formation:Formations.ColumnRHGBGB,
+      formation:Formation('Column RH GBGB'),
       from:'Columns',parts:'4.5',
       paths:[
           CastRight.scale(0.5,1.0) +
@@ -313,7 +312,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('3/4 Thru',
-      formation:Formations.AlamoWave,
+      formation:Formation('Alamo Wave'),
       from:'Alamo Ring',parts:'4.6',
       paths:[
           SxtnthLeft.changehands(2) +
@@ -336,7 +335,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('3/4 Thru',
-      formation:Formations.DiamondsFacingGirlPoints,
+      formation:Formation('Diamonds Facing Girl Points'),
       from:'Facing Diamonds',parts:'4.5',
       paths:[
           CastRight +
@@ -353,7 +352,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('3/4 Thru',
-      formation:Formations.DiamondsFacingPTP,
+      formation:Formation('Diamonds Facing PTP'),
       from:'Facing Point-to-Point Diamonds',parts:'4.5',
       paths:[
           HingeRight.scale(0.67,1.0) +
@@ -372,7 +371,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Centers 3/4 Thru',
-      formation:Formations.OceanWavesLHBGGB,
+      formation:Formation('Ocean Waves LH BGGB'),
       from:'Left-Hand Waves',parts:'4.5',
       paths:[
           Path(),
@@ -386,7 +385,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Left 3/4 Thru',
-      formation:Formations.BoxLH,
+      formation:Formation('Box LH'),
       from:'Left-Hand Box',parts:'4.5',
       paths:[
           CastLeft +
@@ -396,7 +395,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Left 3/4 Thru',
-      formation:Formations.OceanWavesLHBGGB,
+      formation:Formation('Ocean Waves LH BGGB'),
       from:'Left-Hand Waves',parts:'4.5',
       paths:[
           CastLeft +
@@ -411,7 +410,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Left 3/4 Thru',
-      formation:Formations.ColumnLHGBGB,
+      formation:Formation('Column LH GBGB'),
       from:'Left-Hand Columns',parts:'1.5',
       paths:[
           CastLeft.scale(0.5,1.0),
@@ -426,7 +425,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Left 3/4 Thru',
-      formation:Formations.AlamoWave,
+      formation:Formation('Alamo Wave'),
       from:'Alamo Ring',parts:'1.6',
       paths:[
           SxtnthRight.changehands(1) +
@@ -449,7 +448,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Left 3/4 Thru',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:0,y:-3,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:-3,y:-2,angle:90),
         DancerModel.fromData(gender:Gender.BOY,x:0,y:-1,angle:180),
@@ -471,7 +470,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Left 3/4 Thru',
-      formation:Formations.DiamondsFacingLHPTP,
+      formation:Formation('Diamonds Facing LH PTP'),
       from:'Facing Point-to-Point Diamonds',parts:'4.5',
       paths:[
           HingeLeft.scale(0.67,1.0) +
@@ -490,7 +489,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('As Couples 3/4 Thru',
-      formation:Formations.TwomFacedLinesRH,
+      formation:Formation('Two-Faced Lines RH'),
       from:'Two-Faced Lines',group:' ',parts:'9',
       paths:[
           CastRight.changeBeats(9).scale(1.5,3.0),

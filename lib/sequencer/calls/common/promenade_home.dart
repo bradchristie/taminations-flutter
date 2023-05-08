@@ -22,7 +22,7 @@ import 'dart:math';
 
 import '../../../dancer_model.dart';
 import '../../../extensions.dart';
-import '../../../formations.dart';
+import '../../../formation.dart';
 import '../../../level_data.dart';
 import '../../../math/path.dart';
 import '../../../math/vector.dart';
@@ -96,7 +96,7 @@ Promenade Corner''';
         !dc.anglePosition.isAround(a));
     //  Adjust from promenade to squared set
     ctx.applyCalls('Half Wheel Around');
-    ctx.adjustToFormation(Formations.SquaredSet);
+    ctx.adjustToFormation(Formation('Squared Set'));
     ctx.level = LevelData.B1;  // otherwise Counter Rotate would set to C-1
   }
 

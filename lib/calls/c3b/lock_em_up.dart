@@ -19,13 +19,13 @@
 */
 
 import '../../animated_call.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> LockEmUp = [
 
     AnimatedCall('Lock \'Em Up',
-      formation:Formations.TidalWaveRHBGGB,
+      formation:Formation('Tidal Wave RH BGGB'),
       from:'Tidal Wave',fractions:'2;2;5',
       paths:[
           LeadRight.changeBeats(2).scale(3.0,1.5) +
@@ -52,7 +52,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Lock \'Em Up',
-      formation:Formations.TwomFacedLinesLH,
+      formation:Formation('Two-Faced Lines LH'),
       from:'Two-Faced Lines',fractions:'3;1.5;4',
       paths:[
           LeadLeft.changeBeats(3).changehands(1).scale(1.5,3.0) +

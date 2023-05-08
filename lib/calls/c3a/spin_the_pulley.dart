@@ -20,13 +20,13 @@
 
 import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> SpinThePulley = [
 
     AnimatedCall('Heads Spin the Pulley',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       from:'Static Square',parts:'7.5;2',
       paths:[
           ExtendLeft.changeBeats(3).scale(3.0,0.5) +

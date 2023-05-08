@@ -20,13 +20,13 @@
 
 import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> Jaywalk = [
 
     AnimatedCall('Boys Jaywalk',
-      formation:Formations.OceanWavesRHBGBG,
+      formation:Formation('Ocean Waves RH BGBG'),
       from:'Waves',isGenderSpecific:true,
       paths:[
           Forward +
@@ -41,7 +41,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Jaywalk',
-      formation:Formations.QuarterTag,
+      formation:Formation('Quarter Tag'),
       from:'Quarter Tag',
       paths:[
           PassThru.changeBeats(3).scale(1.5,1.0),
@@ -56,7 +56,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Jaywalk',
-      formation:Formations.QuarterTagLH,
+      formation:Formation('Quarter Tag LH'),
       from:'Left-Hand Quarter Tag',
       paths:[
           ExtendLeft.changeBeats(2).scale(2.0,2.0) +
@@ -71,7 +71,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Jaywalk',
-      formation:Formations.QuarterLinesRH,
+      formation:Formation('Quarter Lines RH'),
       from:'Quarter Lines',
       paths:[
           Forward +
@@ -87,7 +87,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Jaywalk',
-      formation:Formations.QuarterLinesLH,
+      formation:Formation('Quarter Lines LH'),
       from:'Left-Hand Quarter Lines',
       paths:[
           ExtendLeft.changeBeats(1.5).scale(1.5,2.0) +
@@ -104,7 +104,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Jaywalk',
-      formation:Formations.DiamondsFacingGirlPoints,
+      formation:Formation('Diamonds Facing Girl Points'),
       from:'Facing Diamonds',
       paths:[
           ExtendLeft.changeBeats(2).scale(2.0,0.5) +

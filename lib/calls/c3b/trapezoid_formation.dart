@@ -21,13 +21,12 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> TrapezoidFormation = [
 
     AnimatedCall('Trapezoid Brace Thru',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       group:'Trapezoid',
       paths:[
           Forward_2 +
@@ -52,7 +51,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Trapezoid Circulate',
-      formation:Formations.TwomFacedLinesRH,
+      formation:Formation('Two-Faced Lines RH'),
       group:'Trapezoid',
       paths:[
           ExtendRight.changeBeats(2).scale(1.5,1.0) +
@@ -67,7 +66,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Trapezoid Couple Up',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.GIRL,x:1,y:1,angle:270),
         DancerModel.fromData(gender:Gender.BOY,x:1,y:3,angle:270),
         DancerModel.fromData(gender:Gender.GIRL,x:1,y:-3,angle:270),

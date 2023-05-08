@@ -21,13 +21,12 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> TriplePlay = [
 
     AnimatedCall('Triple Play',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.GIRL,x:-1,y:3,angle:90),
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:1,angle:90),
         DancerModel.fromData(gender:Gender.GIRL,x:-1,y:-1,angle:90),
@@ -58,7 +57,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Triple Play',
-      formation:Formations.ColumnLHGBGB,
+      formation:Formation('Column LH GBGB'),
       from:'Left-Hand Columns',
       paths:[
           Forward +
@@ -84,7 +83,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Magic Column Triple Play',
-      formation:Formations.MagicColumnRH,
+      formation:Formation('Magic Column RH'),
       from:'Magic Columns Right-Hand Centers',
       paths:[
           Forward.changeBeats(2) +
@@ -110,7 +109,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Magic Column Triple Play',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.GIRL,x:-1,y:3,angle:90),
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:1,angle:270),
         DancerModel.fromData(gender:Gender.GIRL,x:-1,y:-1,angle:270),

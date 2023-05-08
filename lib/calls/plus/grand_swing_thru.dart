@@ -19,13 +19,13 @@
 */
 
 import '../../animated_call.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> GrandSwingThru = [
 
     AnimatedCall('Grand Swing Thru',
-      formation:Formations.TidalWaveRHBGGB,
+      formation:Formation('Tidal Wave RH BGGB'),
       from:'Right-Hand Tidal Wave',parts:'3',difficulty: 1,
       paths:[
           SwingRight.scale(0.65,0.5) +
@@ -41,7 +41,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Grand Swing Thru',
-      formation:Formations.TidalWaveLHBGGB,
+      formation:Formation('Tidal Wave LH BGGB'),
       from:'Left-Hand Tidal Wave',parts:'3',difficulty: 2,
       paths:[
           Stand.changeBeats(3).changehands(0) +
@@ -58,7 +58,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Grand Swing Thru',
-      formation:Formations.NormalLinesCompact,
+      formation:Formation('Normal Lines Compact'),
       from:'Normal Lines',parts:'4',difficulty: 2,
       paths:[
           ExtendLeft.scale(1.5,0.5) +
@@ -78,7 +78,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Grand Left Swing Thru',
-      formation:Formations.TidalWaveLHBGGB,
+      formation:Formation('Tidal Wave LH BGGB'),
       from:'Left-Hand Tidal Wave',parts:'3',difficulty: 1,
       paths:[
           SwingLeft.scale(0.65,0.5) +
@@ -94,7 +94,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Grand Left Swing Thru',
-      formation:Formations.TidalWaveRHBGGB,
+      formation:Formation('Tidal Wave RH BGGB'),
       from:'Right-Hand Tidal Wave',parts:'3',difficulty: 2,
       paths:[
           Stand.changeBeats(3).changehands(0) +
@@ -111,7 +111,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Grand Left Swing Thru',
-      formation:Formations.NormalLinesCompact,
+      formation:Formation('Normal Lines Compact'),
       from:'Normal Lines',parts:'4',difficulty: 2,
       paths:[
           ExtendRight.scale(1.5,0.5) +

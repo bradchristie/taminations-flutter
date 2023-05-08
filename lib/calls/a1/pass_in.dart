@@ -21,14 +21,13 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 import '../a2/all_4_all_8.dart' as a2;
 
   final List<AnimatedCall> PassIn = [
 
     AnimatedCall('Pass In',
-      formation:Formations.FacingCouplesCompact,
+      formation:Formation('Facing Couples Compact'),
       from:'Facing Couples',
       paths:[
           ExtendLeft.changeBeats(2).scale(1.5,0.5) +
@@ -39,7 +38,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Pass In',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       from:'Lines',
       paths:[
           ExtendLeft.changeBeats(2).scale(2.0,0.5) +
@@ -56,7 +55,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Pass In',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:1,y:3,angle:270),
         DancerModel.fromData(gender:Gender.GIRL,x:-1,y:3,angle:270),
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:1,angle:90),
@@ -78,7 +77,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Heads Pass In',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       group:'  ',
       paths:[
           ExtendLeft.changeBeats(3).scale(3.0,0.5) +
@@ -93,7 +92,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Sides Pass In',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       group:'  ',
       paths:[
           Path(),
@@ -108,7 +107,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('As Couples Pass In',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       from:'Lines',group:' ',
       paths:[
           ExtendLeft.changeBeats(2).changehands(2).scale(2.0,0.5) +
@@ -127,7 +126,7 @@ import '../a2/all_4_all_8.dart' as a2;
       tam.title == 'All 4 Couples Pass In').first.xref(title: 'All 4 Couples Pass In').xref(group: ' '),
 
     AnimatedCall('Pass Out',
-      formation:Formations.FacingCouplesCompact,
+      formation:Formation('Facing Couples Compact'),
       from:'Facing Couples',
       paths:[
           ExtendLeft.changeBeats(2).scale(1.5,0.5) +
@@ -138,7 +137,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Pass Out',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       from:'Lines',
       paths:[
           ExtendLeft.changeBeats(2).scale(2.0,0.5) +
@@ -155,7 +154,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Pass Out',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:1,y:3,angle:270),
         DancerModel.fromData(gender:Gender.GIRL,x:-1,y:3,angle:270),
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:1,angle:90),
@@ -177,7 +176,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Heads Pass Out',
-      formation:Formations.SquaredSet,
+      formation:Formation('Squared Set'),
       group:'  ',
       paths:[
           ExtendLeft.changeBeats(2).scale(3.0,0.5) +
@@ -192,7 +191,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Sides Pass Out',
-      formation:Formations.SquaredSet,
+      formation:Formation('Squared Set'),
       group:'  ',
       paths:[
           Path(),
@@ -207,7 +206,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('As Couples Pass Out',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       from:'Lines',group:' ',
       paths:[
           ExtendLeft.changeBeats(2).changehands(2).scale(2.0,0.5) +

@@ -19,13 +19,13 @@
 */
 
 import '../../animated_call.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> WithTheFlow = [
 
     AnimatedCall('Bend the Line With the Flow',
-      formation:Formations.TwomFacedLinesRH,
+      formation:Formation('Two-Faced Lines RH'),
       from:'Two-Faced Lines',group:' ',fractions:'2',
       paths:[
           HingeRight.changeBeats(2) +
@@ -42,7 +42,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Wheel and Deal With the Flow',
-      formation:Formations.TwomFacedLinesRH,
+      formation:Formation('Two-Faced Lines RH'),
       from:'Two-Faced Lines',group:' ',fractions:'4',
       paths:[
           RunRight.changeBeats(4).changehands(2).scale(1.0,2.0).skew(1.0,0.0) +
@@ -59,7 +59,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('All 4 Couples Right and Left Thru With the Flow',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       from:'Static Square',group:' ',fractions:'9.5',
       paths:[
           ExtendLeft.changeBeats(2).scale(2.0,2.0) +

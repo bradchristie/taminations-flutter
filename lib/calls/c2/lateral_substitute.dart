@@ -20,13 +20,13 @@
 
 import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> LateralSubstitute = [
 
     AnimatedCall('Centers Lateral Substitute',
-      formation:Formations.TmBoneRDDL,
+      formation:Formation('T-Bone RDDL'),
       from:'T-Bones',
       paths:[
           Forward_2.changeBeats(3),
@@ -39,7 +39,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Centers Lateral Substitute',
-      formation:Formations.GalaxyRHGP,
+      formation:Formation('Galaxy RH GP'),
       from:'Galaxy',
       paths:[
           SashayLeft.scale(1.0,1.05),

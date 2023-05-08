@@ -19,13 +19,13 @@
 */
 
 import '../../animated_call.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> Slant = [
 
     AnimatedCall('Slant Touch and Wheel',
-      formation:Formations.TwomFacedLinesRH,
+      formation:Formation('Two-Faced Lines RH'),
       from:'Right-Hand Two-Faced Lines',
       paths:[
           Forward_2.changeBeats(3),
@@ -38,7 +38,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Slant Touch and Wheel',
-      formation:Formations.TwomFacedLinesLH,
+      formation:Formation('Two-Faced Lines LH'),
       from:'Left-Hand Two-Faced Lines',
       paths:[
           RunLeft.changeBeats(4).changehands(1).scale(1.5,2.0).skew(1.0,0.0),
@@ -51,7 +51,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Slant Veer Right by Turn and Deal',
-      formation:Formations.TwomFacedLinesRH,
+      formation:Formation('Two-Faced Lines RH'),
       group:'Slant',
       paths:[
           ExtendRight.changeBeats(2).changehands(2).scale(1.0,2.0) +

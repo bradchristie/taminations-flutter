@@ -20,13 +20,13 @@
 
 import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> CastOffThreeQuarters = [
 
     AnimatedCall('Cast Off Three Quarters',
-      formation:Formations.TwomFacedLineRH,
+      formation:Formation('Two-Faced Line RH'),
       from:'Right-Hand Two-Faced Line',difficulty: 2,
       paths:[
           QuarterLeft.changeBeats(2).changehands(2).skew(0.33,-0.83) +
@@ -39,7 +39,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cast Off Three Quarters',
-      formation:Formations.TwomFacedLineLH,
+      formation:Formation('Two-Faced Line LH'),
       from:'Left-Hand Two-Faced Line',difficulty: 2,
       paths:[
           HingeRight.scale(2.0,2.0).skew(0.33,0.83) +
@@ -52,7 +52,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cast Off Three Quarters',
-      formation:Formations.WaveRH,
+      formation:Formation('Wave RH'),
       from:'Right-Hand Wave',difficulty: 1,
       paths:[
           SwingRight +
@@ -63,7 +63,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cast Off Three Quarters',
-      formation:Formations.WaveLH,
+      formation:Formation('Wave LH'),
       from:'Left-Hand Wave',difficulty: 1,
       paths:[
           SwingLeft +
@@ -74,7 +74,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cast Off Three Quarters',
-      formation:Formations.LinesFacingOut,
+      formation:Formation('Lines Facing Out'),
       from:'Lines Facing Out',difficulty: 1,
       paths:[
           QuarterRight.changehands(1).skew(0.33,0.33) +
@@ -95,7 +95,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cast Off Three Quarters',
-      formation:Formations.BoxRH,
+      formation:Formation('Box RH'),
       from:'Right-Hand Box',difficulty: 1,notForSequencer: true,
       paths:[
           CastRight,
@@ -104,7 +104,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cast Off Three Quarters',
-      formation:Formations.BoxLH,
+      formation:Formation('Box LH'),
       from:'Left-Hand Box',difficulty: 1,notForSequencer: true,
       paths:[
           CastLeft,
@@ -113,7 +113,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cast Off Three Quarters',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       from:'Lines Facing In',difficulty: 2,noDisplay: true,
       paths:[
           BackHingeRight +
@@ -130,7 +130,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cast Off Three Quarters',
-      formation:Formations.TwomFacedLinesRH,
+      formation:Formation('Two-Faced Lines RH'),
       from:'Right-Hand Two-Faced Lines',difficulty: 2,
       taminator: '''
       Remember, the centers push, the ends are the pivot.
@@ -155,7 +155,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cast Off Three Quarters',
-      formation:Formations.TwomFacedLinesLH,
+      formation:Formation('Two-Faced Lines LH'),
       from:'Left-Hand Two-Faced Lines',difficulty: 2,
       taminator: '''
       Remember, the centers push, the ends are the pivot.
@@ -180,7 +180,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cast Off Three Quarters',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       from:'Right-Hand Waves',difficulty: 1,
       paths:[
           CastRight,
@@ -193,7 +193,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cast Off Three Quarters',
-      formation:Formations.OceanWavesLHBGGB,
+      formation:Formation('Ocean Waves LH BGGB'),
       from:'Left-Hand Waves',difficulty: 1,
       paths:[
           CastLeft,
@@ -206,7 +206,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cast Off Three Quarters',
-      formation:Formations.InvertedLinesEndsFacingOut,
+      formation:Formation('Inverted Lines Ends Facing Out'),
       from:'Inverted Lines, Centers Facing',difficulty: 2,
       paths:[
           CastLeft,
@@ -219,7 +219,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cast Off Three Quarters',
-      formation:Formations.InvertedLinesEndsFacingIn,
+      formation:Formation('Inverted Lines Ends Facing In'),
       from:'Inverted Lines, Ends Facing',difficulty: 2,
       paths:[
           CastRight,
@@ -232,7 +232,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cast Off Three Quarters',
-      formation:Formations.TidalWaveRHBGBG,
+      formation:Formation('Tidal Wave RH BGBG'),
       from:'Right-Hand Tidal Wave',difficulty: 2,
       paths:[
           SwingRight.scale(0.5,0.5) +
@@ -249,7 +249,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cast Off Three Quarters',
-      formation:Formations.TidalWaveLHBGGB,
+      formation:Formation('Tidal Wave LH BGGB'),
       from:'Left-Hand Tidal Wave',difficulty: 2,
       paths:[
           SwingLeft.scale(0.5,0.5) +
@@ -266,7 +266,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cast Off Three Quarters',
-      formation:Formations.TidalLineRH,
+      formation:Formation('Tidal Line RH'),
       from:'Right-Hand Tidal Line',difficulty: 2,
       paths:[
           QuarterLeft.changehands(2).skew(0.33,-0.17) +
@@ -287,7 +287,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cast Off Three Quarters',
-      formation:Formations.TidalLineLH,
+      formation:Formation('Tidal Line LH'),
       from:'Left-Hand Tidal Line',difficulty: 2,
       paths:[
           HingeRight.skew(0.33,0.17) +
@@ -308,7 +308,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cast Off Three Quarters',
-      formation:Formations.TwomFacedTidalLineRH,
+      formation:Formation('Two-Faced Tidal Line RH'),
       from:'Right-Hand Two-Faced Tidal Line',difficulty: 2,
       paths:[
           QuarterLeft.changehands(2).skew(0.33,-0.17) +
@@ -329,7 +329,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cast Off Three Quarters',
-      formation:Formations.TwomFacedTidalLineLH,
+      formation:Formation('Two-Faced Tidal Line LH'),
       from:'Left-Hand Two-Faced Tidal Line',difficulty: 2,
       paths:[
           QuarterRight.changehands(1).skew(0.33,0.17) +
@@ -350,7 +350,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cast Off Three Quarters',
-      formation:Formations.InvertedTidalLineRH,
+      formation:Formation('Inverted Tidal Line RH'),
       from:'Right-Hand Inverted Tidal Line',difficulty: 2,
       paths:[
           SwingRight.scale(0.5,0.5) +
@@ -367,7 +367,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cast Off Three Quarters',
-      formation:Formations.InvertedTidalLineLH,
+      formation:Formation('Inverted Tidal Line LH'),
       from:'Left-Hand Inverted Tidal Line',difficulty: 2,
       paths:[
           SwingLeft.scale(0.5,0.5) +
@@ -384,7 +384,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cast Off Three Quarters',
-      formation:Formations.ColumnRHGBGB,
+      formation:Formation('Column RH GBGB'),
       from:'Right-Hand Columns',difficulty: 2,
       paths:[
           HingeRight.scale(0.5,1.0) +
@@ -401,7 +401,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cast Off Three Quarters',
-      formation:Formations.ColumnLHGBGB,
+      formation:Formation('Column LH GBGB'),
       from:'Left-Hand Columns',difficulty: 2,
       paths:[
           HingeLeft.scale(0.5,1.0) +
@@ -418,7 +418,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cast Off Three Quarters',
-      formation:Formations.MagicColumnRH,
+      formation:Formation('Magic Column RH'),
       from:'Magic Columns Right-Hand Centers',difficulty: 2,
       paths:[
           HingeLeft.scale(0.5,1.0) +
@@ -435,7 +435,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cast Off Three Quarters',
-      formation:Formations.MagicColumnLH,
+      formation:Formation('Magic Column LH'),
       from:'Magic Columns Left-Hand Centers',difficulty: 2,
       paths:[
           HingeRight.scale(0.5,1.0) +
@@ -452,7 +452,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cast Off Three Quarters',
-      formation:Formations.AlamoWave,
+      formation:Formation('Alamo Wave'),
       from:'Alamo Wave',difficulty: 2,
       paths:[
           SxtnthLeft +
@@ -473,7 +473,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cast Off Three Quarters',
-      formation:Formations.TharLHBoys,
+      formation:Formation('Thar LH Boys'),
       from:'Thar',difficulty: 2,
       paths:[
           SwingRight +
@@ -494,7 +494,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cast Off Three Quarters',
-      formation:Formations.n3and_1lines1,
+      formation:Formation('3 and 1 Lines #1'),
       from:'3 and 1 Lines #1',noDisplay: true,
       paths:[
           CastLeft,
@@ -509,7 +509,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cast Off Three Quarters',
-      formation:Formations.n3and_1lines2,
+      formation:Formation('3 and 1 Lines #2'),
       from:'3 and 1 Lines #2',noDisplay: true,
       paths:[
           CastRight,
@@ -524,7 +524,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cast Off Three Quarters',
-      formation:Formations.n3and_1lines3,
+      formation:Formation('3 and 1 Lines #3'),
       from:'3 and 1 Lines #3',noDisplay: true,
       paths:[
           BackHingeRight +
@@ -539,7 +539,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cast Off Three Quarters',
-      formation:Formations.n3and_1lines4,
+      formation:Formation('3 and 1 Lines #4'),
       from:'3 and 1 Lines #4',noDisplay: true,
       paths:[
           BackHingeRight +
@@ -554,7 +554,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cast Off Three Quarters',
-      formation:Formations.n3and_1lines5,
+      formation:Formation('3 and 1 Lines #5'),
       from:'3 and 1 Lines #5',noDisplay: true,
       paths:[
           CastRight,
@@ -569,7 +569,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cast Off Three Quarters',
-      formation:Formations.n3and_1lines6,
+      formation:Formation('3 and 1 Lines #6'),
       from:'3 and 1 Lines #6',noDisplay: true,
       paths:[
           CastLeft,
@@ -584,7 +584,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cast Off Three Quarters',
-      formation:Formations.n3and_1lines7,
+      formation:Formation('3 and 1 Lines #7'),
       from:'3 and 1 Lines #7',noDisplay: true,
       paths:[
           BackHingeLeft +
@@ -599,7 +599,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cast Off Three Quarters',
-      formation:Formations.n3and_1lines8,
+      formation:Formation('3 and 1 Lines #8'),
       from:'3 and 1 Lines #8',noDisplay: true,
       paths:[
           BackHingeLeft +
@@ -614,7 +614,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Centers Cast Off Three Quarters',
-      formation:Formations.TwomFacedLineRH,
+      formation:Formation('Two-Faced Line RH'),
       from:'Right-Hand Two-Faced Line',difficulty: 1,notForSequencer: true,
       paths:[
           Path(),
@@ -623,7 +623,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Centers Cast Off Three Quarters',
-      formation:Formations.TwomFacedLineLH,
+      formation:Formation('Two-Faced Line LH'),
       from:'Left-Hand Two-Faced Line',difficulty: 1,notForSequencer: true,
       paths:[
           CastLeft,
@@ -632,7 +632,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Centers Cast Off Three Quarters',
-      formation:Formations.WaveRH,
+      formation:Formation('Wave RH'),
       from:'Right-Hand Wave',difficulty: 1,notForSequencer: true,
       paths:[
           Path(),
@@ -641,7 +641,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Centers Cast Off Three Quarters',
-      formation:Formations.WaveLH,
+      formation:Formation('Wave LH'),
       from:'Left-Hand Wave',difficulty: 1,notForSequencer: true,
       paths:[
           Path(),
@@ -650,7 +650,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Centers Cast Off Three Quarters',
-      formation:Formations.DiamondRH,
+      formation:Formation('Diamond RH'),
       from:'Right-Hand Diamond',difficulty: 1,notForSequencer: true,
       paths:[
           Path(),
@@ -659,7 +659,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Centers Cast Off Three Quarters',
-      formation:Formations.DiamondLH,
+      formation:Formation('Diamond LH'),
       from:'Left-Hand Diamond',difficulty: 1,notForSequencer: true,
       paths:[
           Path(),
@@ -668,7 +668,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Centers Cast Off Three Quarters',
-      formation:Formations.TwomFacedLinesRH,
+      formation:Formation('Two-Faced Lines RH'),
       from:'Right-Hand Two-Faced Lines',difficulty: 1,notForSequencer: true,
       paths:[
           Path(),
@@ -681,7 +681,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Centers Cast Off Three Quarters',
-      formation:Formations.TwomFacedLinesLH,
+      formation:Formation('Two-Faced Lines LH'),
       from:'Left-Hand Two-Faced Lines',difficulty: 1,notForSequencer: true,
       paths:[
           Path(),
@@ -694,7 +694,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Centers Cast Off Three Quarters',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       from:'Right-Hand Waves',difficulty: 1,notForSequencer: true,
       paths:[
           Path(),
@@ -707,7 +707,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Centers Cast Off Three Quarters',
-      formation:Formations.OceanWavesLHBGGB,
+      formation:Formation('Ocean Waves LH BGGB'),
       from:'Left-Hand Waves',difficulty: 1,notForSequencer: true,
       paths:[
           Path(),
@@ -720,7 +720,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Centers Cast Off Three Quarters',
-      formation:Formations.DiamondsRHGirlPoints,
+      formation:Formation('Diamonds RH Girl Points'),
       from:'Right-Hand Diamonds',difficulty: 1,notForSequencer: true,
       paths:[
           CastRight,
@@ -733,7 +733,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Centers Cast Off Three Quarters',
-      formation:Formations.DiamondsLHGirlPoints,
+      formation:Formation('Diamonds LH Girl Points'),
       from:'Left-Hand Diamonds',difficulty: 1,notForSequencer: true,
       paths:[
           CastLeft,
@@ -746,7 +746,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Very Centers Cast Off Three Quarters',
-      formation:Formations.DiamondsRHGirlPoints,
+      formation:Formation('Diamonds RH Girl Points'),
       from:'Right-Hand Diamonds',difficulty: 1,notForSequencer: true,
       paths:[
           Path(),
@@ -759,7 +759,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Very Centers Cast Off Three Quarters',
-      formation:Formations.DiamondsLHGirlPoints,
+      formation:Formation('Diamonds LH Girl Points'),
       from:'Left-Hand Diamonds',difficulty: 1,notForSequencer: true,
       paths:[
           Path(),

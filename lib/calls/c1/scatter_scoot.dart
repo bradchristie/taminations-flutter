@@ -19,13 +19,13 @@
 */
 
 import '../../animated_call.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> ScatterScoot = [
 
     AnimatedCall('Scatter Scoot',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       from:'Right-Hand Waves',
       paths:[
           ExtendRight.changeBeats(1.5).scale(2.0,0.25) +
@@ -43,7 +43,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Scatter Scoot',
-      formation:Formations.OceanWavesLHBGBG,
+      formation:Formation('Ocean Waves LH BGBG'),
       from:'Left-Hand Waves',
       paths:[
           LeadLeft.changeBeats(3).scale(2.0,3.0) +
@@ -61,7 +61,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Scatter Scoot',
-      formation:Formations.TmBoneRDRD,
+      formation:Formation('T-Bone RDRD'),
       from:'T-Bones 1',
       paths:[
           RunRight.changeBeats(6).scale(2.0,3.0),
@@ -78,7 +78,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Scatter Scoot',
-      formation:Formations.TmBoneDLDL,
+      formation:Formation('T-Bone DLDL'),
       from:'T-Bones 2',
       paths:[
           RunLeft.changeBeats(6).scale(2.0,3.0),
@@ -95,7 +95,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Scatter Scoot Chain Thru',
-      formation:Formations.OceanWavesRHBGBG,
+      formation:Formation('Ocean Waves RH BGBG'),
       from:'Right-Hand Waves',parts:'2;3;3;3',
       paths:[
           Forward_2 +
@@ -116,7 +116,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Scatter Scoot Chain Thru',
-      formation:Formations.OceanWavesLHBGBG,
+      formation:Formation('Ocean Waves LH BGBG'),
       from:'Left-Hand Waves',parts:'2;3;3;3',
       paths:[
           RunLeft.changeBeats(6).scale(2.0,3.0),

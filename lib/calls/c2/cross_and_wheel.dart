@@ -21,13 +21,12 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> CrossAndWheel = [
 
     AnimatedCall('Cross and Wheel',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       from:'Normal Lines',parts:'3',
       paths:[
           LeadRight.changeBeats(3).changehands(2).scale(1.5,3.0) +
@@ -46,7 +45,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cross and Wheel',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:3,y:2,angle:270),
         DancerModel.fromData(gender:Gender.GIRL,x:1,y:2,angle:270),
         DancerModel.fromData(gender:Gender.GIRL,x:-1,y:2,angle:90),
@@ -70,7 +69,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cross and Wheel',
-      formation:Formations.TwomFacedLinesLH,
+      formation:Formation('Two-Faced Lines LH'),
       from:'Left-Hand Two-Faced Lines',parts:'3',
       paths:[
           LeadLeft.changeBeats(3).changehands(1).scale(1.5,3.0) +
@@ -89,7 +88,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cross Trade and Wheel',
-      formation:Formations.TwomFacedLinesRH,
+      formation:Formation('Two-Faced Lines RH'),
       from:'Right-Hand Two-Faced Lines',parts:'3;3',
       paths:[
           HingeRight.changeBeats(3).scale(1.5,3.0) +
@@ -112,7 +111,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cross Trade and Wheel',
-      formation:Formations.TwomFacedLinesLH,
+      formation:Formation('Two-Faced Lines LH'),
       from:'Left-Hand Two-Faced Lines',parts:'3;3',
       paths:[
           HingeLeft.changeBeats(3).scale(1.5,3.0) +
@@ -135,7 +134,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cross Trade and Wheel',
-      formation:Formations.LinesFacingOut,
+      formation:Formation('Lines Facing Out'),
       from:'Lines Facing Out',parts:'3;3',
       paths:[
           QuarterLeft.changeBeats(3).changehands(1).skew(-0.5,3.0) +
@@ -158,7 +157,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Grand Cross Trade and Wheel',
-      formation:Formations.TwomFacedLinesRH,
+      formation:Formation('Two-Faced Lines RH'),
       from:'Right-Hand Two-Faced Lines',parts:'3;3',
       paths:[
           HingeRight.changeBeats(3).changehands(6).scale(1.5,3.0) +
@@ -179,7 +178,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Single Cross and Wheel',
-      formation:Formations.BoxRH,
+      formation:Formation('Box RH'),
       from:'Right-Hand Box',parts:'1.5',
       paths:[
           HingeRight +
@@ -190,7 +189,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Single Cross and Wheel',
-      formation:Formations.BoxLH,
+      formation:Formation('Box LH'),
       from:'Left-Hand Box',parts:'1.5',
       paths:[
           HingeLeft +
@@ -201,7 +200,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Single Cross and Wheel',
-      formation:Formations.FacingCouplesCompact,
+      formation:Formation('Facing Couples Compact'),
       from:'Facing Couples',parts:'1.5',
       paths:[
           HingeRight.skew(-0.5,0.0) +
@@ -212,7 +211,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Single Cross and Wheel',
-      formation:Formations.CouplesFacingOut,
+      formation:Formation('Couples Facing Out'),
       from:'Couples Facing Out',parts:'1.5',
       paths:[
           QuarterLeft.skew(-1.0,1.0) +
@@ -223,7 +222,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Single Cross Trade and Wheel',
-      formation:Formations.BoxRH,
+      formation:Formation('Box RH'),
       from:'Right-Hand Box',parts:'1.5;3',
       paths:[
           HingeRight +
@@ -236,7 +235,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Single Cross Trade and Wheel',
-      formation:Formations.BoxLH,
+      formation:Formation('Box LH'),
       from:'Left-Hand Box',parts:'1.5;3',
       paths:[
           HingeLeft +
@@ -249,7 +248,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Single Cross Trade and Wheel',
-      formation:Formations.FacingCouplesCompact,
+      formation:Formation('Facing Couples Compact'),
       from:'Facing Couples',parts:'1.5;3',
       paths:[
           LeadRight +
@@ -262,7 +261,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Single Cross Trade and Wheel',
-      formation:Formations.CouplesFacingOut,
+      formation:Formation('Couples Facing Out'),
       from:'Couples Facing Out',parts:'1.5;3',
       paths:[
           QuarterLeft.skew(-1.0,1.0) +
@@ -275,7 +274,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Single Cross Trade and Wheel',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       from:'Right-Hand Waves',parts:'1.5;3',
       paths:[
           HingeRight +
@@ -296,7 +295,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Single Cross Trade and Wheel',
-      formation:Formations.OceanWavesLHBGGB,
+      formation:Formation('Ocean Waves LH BGGB'),
       from:'Left-Hand Waves',parts:'1.5;3',
       paths:[
           HingeLeft +
@@ -317,7 +316,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Single Cross Trade and Wheel',
-      formation:Formations.ColumnRHGBGB,
+      formation:Formation('Column RH GBGB'),
       from:'Right-Hand Columns',parts:'1.5;3',
       paths:[
           HingeRight.scale(0.5,1.0) +
@@ -338,7 +337,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Single Cross Trade and Wheel',
-      formation:Formations.ColumnLHGBGB,
+      formation:Formation('Column LH GBGB'),
       from:'Left-Hand Columns',parts:'1.5;3',
       paths:[
           HingeLeft.scale(0.5,1.0) +
@@ -359,7 +358,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Grand Single Cross and Wheel',
-      formation:Formations.ColumnRHGBGB,
+      formation:Formation('Column RH GBGB'),
       from:'Right-Hand Columns',parts:'1.5',
       paths:[
           HingeRight.scale(0.5,1.0) +
@@ -376,7 +375,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Grand Single Cross and Wheel',
-      formation:Formations.ColumnLHGBGB,
+      formation:Formation('Column LH GBGB'),
       from:'Left-Hand Columns',parts:'1.5',
       paths:[
           HingeLeft.scale(0.5,1.0) +
@@ -393,7 +392,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Grand Single Cross and Wheel',
-      formation:Formations.DoublePassThru,
+      formation:Formation('Double Pass Thru'),
       from:'Double Pass Thru',
       paths:[
           LeadRight.scale(0.5,1.0) +
@@ -410,7 +409,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Grand Single Cross and Wheel',
-      formation:Formations.CompletedDoublePassThru,
+      formation:Formation('Completed Double Pass Thru'),
       from:'Completed Double Pass Thru',
       paths:[
           QuarterLeft.skew(-0.5,1.0) +
@@ -427,7 +426,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Grand Single Cross and Wheel',
-      formation:Formations.EightChainThru,
+      formation:Formation('Eight Chain Thru'),
       from:'Eight Chain Thru',
       paths:[
           LeadRight.scale(0.5,1.0) +
@@ -444,7 +443,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Grand Single Cross and Wheel',
-      formation:Formations.TradeBy,
+      formation:Formation('Trade By'),
       from:'Trade By',
       paths:[
           QuarterLeft.skew(-0.5,1.0) +
@@ -461,7 +460,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Grand Single Cross and Wheel',
-      formation:Formations.MagicColumnRH,
+      formation:Formation('Magic Column RH'),
       from:'Magic Columns, Right-Hand Centers',
       paths:[
           HingeLeft.scale(0.5,1.0) +
@@ -478,7 +477,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Grand Single Cross and Wheel',
-      formation:Formations.MagicColumnLH,
+      formation:Formation('Magic Column LH'),
       from:'Magic Columns, Left-Hand Centers',
       paths:[
           HingeRight.scale(0.5,1.0) +
@@ -495,7 +494,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Grand Single Cross and Wheel',
-      formation:Formations.MixedColumnsRHEndsIn,
+      formation:Formation('Mixed Columns RH Ends In'),
       from:'Mixed Columns #1',
       paths:[
           LeadRight.scale(0.5,1.0) +
@@ -512,7 +511,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Grand Single Cross and Wheel',
-      formation:Formations.MixedColumnsLHEndsIn,
+      formation:Formation('Mixed Columns LH Ends In'),
       from:'Mixed Columns #2',
       paths:[
           LeadRight.scale(0.5,1.0) +
@@ -529,7 +528,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Grand Single Cross and Wheel',
-      formation:Formations.MixedColumnsRHEndsOut,
+      formation:Formation('Mixed Columns RH Ends Out'),
       from:'Mixed Columns #3',
       paths:[
           QuarterLeft.skew(-0.5,1.0) +
@@ -546,7 +545,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Grand Single Cross and Wheel',
-      formation:Formations.MixedColumnsLHEndsOut,
+      formation:Formation('Mixed Columns LH Ends Out'),
       from:'Mixed Columns #4',
       paths:[
           QuarterLeft.skew(-0.5,1.0) +
@@ -563,7 +562,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Grand Single Cross and Wheel',
-      formation:Formations.MixedColumnsRHCentersIn,
+      formation:Formation('Mixed Columns RH Centers In'),
       from:'Mixed Columns #5',
       paths:[
           HingeRight.scale(0.5,1.0) +
@@ -580,7 +579,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Grand Single Cross and Wheel',
-      formation:Formations.MixedColumnsLHCentersIn,
+      formation:Formation('Mixed Columns LH Centers In'),
       from:'Mixed Columns #6',
       paths:[
           HingeLeft.scale(0.5,1.0) +
@@ -597,7 +596,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Grand Single Cross and Wheel',
-      formation:Formations.MixedColumnsRHCentersOut,
+      formation:Formation('Mixed Columns RH Centers Out'),
       from:'Mixed Columns #7',
       paths:[
           HingeRight.scale(0.5,1.0) +
@@ -614,7 +613,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Grand Single Cross and Wheel',
-      formation:Formations.MixedColumnsLHCentersOut,
+      formation:Formation('Mixed Columns LH Centers Out'),
       from:'Mixed Columns #8',
       paths:[
           HingeLeft.scale(0.5,1.0) +
@@ -631,7 +630,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Grand Single Cross Trade and Wheel',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.GIRL,x:-1,y:3,angle:90),
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:1,angle:90),
         DancerModel.fromData(gender:Gender.GIRL,x:-1,y:-1,angle:90),
@@ -657,7 +656,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Grand Single Cross Trade and Wheel',
-      formation:Formations.ColumnLHGBGB,
+      formation:Formation('Column LH GBGB'),
       from:'Left-Hand Columns',parts:'1.5;3',
       paths:[
           HingeLeft.scale(0.5,1.0) +
@@ -678,7 +677,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Grand Single Cross Trade and Wheel',
-      formation:Formations.EightChainThru,
+      formation:Formation('Eight Chain Thru'),
       from:'Eight Chain Thru',parts:'1.5;3',
       paths:[
           LeadRight.scale(0.5,1.0) +
@@ -699,7 +698,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Grand Single Cross Trade and Wheel',
-      formation:Formations.TradeBy,
+      formation:Formation('Trade By'),
       from:'Trade By',parts:'1.5;3',
       paths:[
           QuarterLeft.skew(-0.5,1.0) +
@@ -720,7 +719,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Grand Single Cross Trade and Wheel',
-      formation:Formations.DoublePassThru,
+      formation:Formation('Double Pass Thru'),
       from:'Double Pass Thru',parts:'1.5;3',
       paths:[
           LeadRight.scale(0.5,1.0) +
@@ -741,7 +740,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Grand Single Cross Trade and Wheel',
-      formation:Formations.CompletedDoublePassThru,
+      formation:Formation('Completed Double Pass Thru'),
       from:'Completed Double Pass Thru',parts:'1.5;3',
       paths:[
           QuarterLeft.skew(-0.5,1.0) +
@@ -762,7 +761,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Grand Single Cross Trade and Wheel',
-      formation:Formations.MagicColumnRH,
+      formation:Formation('Magic Column RH'),
       from:'Magic Columns, Right-Hand Centers',
       paths:[
           HingeLeft.scale(0.5,1.0) +
@@ -783,7 +782,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Grand Single Cross Trade and Wheel',
-      formation:Formations.MagicColumnLH,
+      formation:Formation('Magic Column LH'),
       from:'Magic Columns, Left-Hand Centers',parts:'1.5;3',
       paths:[
           HingeRight.scale(0.5,1.0) +
@@ -804,7 +803,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Grand Single Cross Trade and Wheel',
-      formation:Formations.MixedColumnsRHEndsIn,
+      formation:Formation('Mixed Columns RH Ends In'),
       from:'Mixed Columns #1',parts:'1.5;3',noDisplay: true,
       paths:[
           LeadRight.scale(0.5,1.0) +
@@ -825,7 +824,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Grand Single Cross Trade and Wheel',
-      formation:Formations.MixedColumnsLHEndsIn,
+      formation:Formation('Mixed Columns LH Ends In'),
       from:'Mixed Columns #2',parts:'1.5;3',noDisplay: true,
       paths:[
           LeadRight.scale(0.5,1.0) +
@@ -846,7 +845,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Grand Single Cross Trade and Wheel',
-      formation:Formations.MixedColumnsRHEndsOut,
+      formation:Formation('Mixed Columns RH Ends Out'),
       from:'Mixed Columns #3',parts:'1.5;3',noDisplay: true,
       paths:[
           QuarterLeft.skew(-0.5,1.0) +
@@ -867,7 +866,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Grand Single Cross Trade and Wheel',
-      formation:Formations.MixedColumnsLHEndsOut,
+      formation:Formation('Mixed Columns LH Ends Out'),
       from:'Mixed Columns #4',parts:'1.5;3',noDisplay: true,
       paths:[
           QuarterLeft.skew(-0.5,1.0) +
@@ -888,7 +887,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Grand Single Cross Trade and Wheel',
-      formation:Formations.MixedColumnsRHCentersIn,
+      formation:Formation('Mixed Columns RH Centers In'),
       from:'Mixed Columns #5',parts:'1.5;3',noDisplay: true,
       paths:[
           HingeRight.scale(0.5,1.0) +
@@ -909,7 +908,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Grand Single Cross Trade and Wheel',
-      formation:Formations.MixedColumnsLHCentersIn,
+      formation:Formation('Mixed Columns LH Centers In'),
       from:'Mixed Columns #6',parts:'1.5;3',noDisplay: true,
       paths:[
           HingeLeft.scale(0.5,1.0) +
@@ -930,7 +929,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Grand Single Cross Trade and Wheel',
-      formation:Formations.MixedColumnsRHCentersOut,
+      formation:Formation('Mixed Columns RH Centers Out'),
       from:'Mixed Columns #7',parts:'1.5;3',noDisplay: true,
       paths:[
           HingeRight.scale(0.5,1.0) +
@@ -951,7 +950,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Grand Single Cross Trade and Wheel',
-      formation:Formations.MixedColumnsLHCentersOut,
+      formation:Formation('Mixed Columns LH Centers Out'),
       from:'Mixed Columns #8',parts:'1.5;3',noDisplay: true,
       paths:[
           HingeLeft.scale(0.5,1.0) +

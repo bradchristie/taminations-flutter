@@ -19,13 +19,13 @@
 */
 
 import '../../animated_call.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> ScootChainThru = [
 
     AnimatedCall('Scoot Chain Thru',
-      formation:Formations.OceanWavesRHBGBG,
+      formation:Formation('Ocean Waves RH BGBG'),
       from:'Right-Hand Waves',parts:'2;3;3;3',
       paths:[
           Forward_2 +
@@ -48,7 +48,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Scoot Chain Thru',
-      formation:Formations.OceanWavesLHBGBG,
+      formation:Formation('Ocean Waves LH BGBG'),
       from:'Left-Hand Waves',parts:'2;3;3;3',
       paths:[
           Stand.changeBeats(2) +
@@ -71,7 +71,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Scoot Chain Thru',
-      formation:Formations.QuarterTag,
+      formation:Formation('Quarter Tag'),
       from:'Quarter Tag',parts:'2;3;3;3',
       paths:[
           ExtendLeft.changeBeats(2).scale(1.0,2.0) +
@@ -100,7 +100,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Scoot Chain Thru',
-      formation:Formations.QuarterTagLH,
+      formation:Formation('Quarter Tag LH'),
       from:'Left-Handed Quarter Tag',parts:'2;3;3;3',
       paths:[
           Forward.changeBeats(2) +
@@ -129,7 +129,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Half Scoot Chain Thru',
-      formation:Formations.OceanWavesRHBGBG,
+      formation:Formation('Ocean Waves RH BGBG'),
       from:'Right-Hand Waves',noDisplay: true,
       paths:[
           Forward_2 +
@@ -147,7 +147,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Half Scoot Chain Thru',
-      formation:Formations.OceanWavesLHBGBG,
+      formation:Formation('Ocean Waves LH BGBG'),
       from:'Left-Hand Waves',noDisplay: true,
       paths:[
           Stand.changeBeats(2) +
@@ -165,7 +165,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Half Scoot Chain Thru',
-      formation:Formations.QuarterTag,
+      formation:Formation('Quarter Tag'),
       from:'Quarter Tag',noDisplay: true,
       paths:[
           ExtendLeft.changeBeats(2).scale(1.0,2.0) +
@@ -184,7 +184,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Half Scoot Chain Thru',
-      formation:Formations.QuarterTagLH,
+      formation:Formation('Quarter Tag LH'),
       from:'Left-Handed Quarter Tag',noDisplay: true,
       paths:[
           Forward.changeBeats(2) +

@@ -21,13 +21,12 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> AnythingToAWave = [
 
     AnimatedCall('Flip Back to a Wave',
-      formation:Formations.WaveRH,
+      formation:Formation('Wave RH'),
       from:'Right-Hand Wave',fractions:'5.5',
       taminator: '''Note that the outside dancers adjust so they do not finish offset.
     ''',
@@ -43,7 +42,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Flip Back to a Wave',
-      formation:Formations.WaveLH,
+      formation:Formation('Wave LH'),
       from:'Left-Hand Wave',fractions:'5.5',
       paths:[
           HingeLeft +
@@ -57,7 +56,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Flip Back to a Wave',
-      formation:Formations.OceanWavesRHGBBG,
+      formation:Formation('Ocean Waves RH GBBG'),
       from:'Right-Hand Waves',fractions:'5.5',
       paths:[
           HingeRight +
@@ -80,7 +79,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Flip Back to a Wave',
-      formation:Formations.OceanWavesLHGBBG,
+      formation:Formation('Ocean Waves LH GBBG'),
       from:'Left-Hand Waves',fractions:'5.5',
       paths:[
           HingeLeft +
@@ -103,7 +102,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Flip Back to a Wave',
-      formation:Formations.TidalWaveRHBGGB,
+      formation:Formation('Tidal Wave RH BGGB'),
       from:'Right-Hand Tidal Wave',parts:'4.5',
       paths:[
           LeadRight.scale(1.0,0.5) +
@@ -126,7 +125,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Flip Back to a Wave',
-      formation:Formations.TidalWaveLHBGGB,
+      formation:Formation('Tidal Wave LH BGGB'),
       from:'Left-Hand Tidal Wave',parts:'4.5',
       paths:[
           LeadLeft.scale(1.0,0.5) +
@@ -149,7 +148,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Square Chain Thru to a Wave',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:1,y:1.5,angle:270),
         DancerModel.fromData(gender:Gender.GIRL,x:-1,y:1.5,angle:270),
   ]),
@@ -169,7 +168,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Square Chain Thru to a Wave',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       from:'Lines',
       paths:[
           PullLeft.scale(2.0,0.5) +
@@ -198,7 +197,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Square Chain Thru to a Wave',
-      formation:Formations.EightChainThru,
+      formation:Formation('Eight Chain Thru'),
       from:'Eight Chain Thru',parts:'3;3;3',
       paths:[
           PullLeft.scale(1.0,0.5) +
@@ -227,7 +226,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Scoot Chain Thru to a Wave',
-      formation:Formations.QuarterTag,
+      formation:Formation('Quarter Tag'),
       from:'Quarter Tag',fractions:'2;3;3',
       paths:[
           ExtendLeft.changeBeats(2).scale(1.0,2.0) +
@@ -252,7 +251,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Scoot Chain Thru to a Wave',
-      formation:Formations.QuarterTagLH,
+      formation:Formation('Quarter Tag LH'),
       from:'Left-Hand Quarter Tag',fractions:'2;3;3',
       paths:[
           Forward.changeBeats(2) +
@@ -277,7 +276,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Scoot Chain Thru to a Wave',
-      formation:Formations.OceanWavesRHBGBG,
+      formation:Formation('Ocean Waves RH BGBG'),
       from:'Right-Hand Waves',parts:'2;3;3',
       paths:[
           Forward_2 +
@@ -298,7 +297,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Scoot Chain Thru to a Wave',
-      formation:Formations.OceanWavesLHBGBG,
+      formation:Formation('Ocean Waves LH BGBG'),
       from:'Left-Hand Waves',parts:'2;3;3',
       paths:[
           Stand.changeBeats(2) +
@@ -319,7 +318,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Square Thru 3 to a Wave',
-      formation:Formations.FacingCouplesCompact,
+      formation:Formation('Facing Couples Compact'),
       from:'Facing Couples',group:' ',fractions:'2;1.5',
       paths:[
           Forward.scale(0.5,1.0) +
@@ -334,7 +333,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Load the Boat to a Wave',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       from:'Normal Lines',group:' ',fractions:'2;2;3',
       paths:[
           ExtendLeft.scale(2.0,0.5) +
@@ -363,7 +362,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Percolate, Outsides to a Wave',
-      formation:Formations.EightChainThru,
+      formation:Formation('Eight Chain Thru'),
       from:'Eight Chain Thru',group:' ',fractions:'2;1;1.5',
       paths:[
           ExtendLeft.scale(1.0,0.5) +
@@ -387,7 +386,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Tag Back to a Wave to a Wave',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       from:'Lines',group:' ',fractions:'3',
       paths:[
           LeadRight.changeBeats(3) +
@@ -408,7 +407,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Turn Thru to a Wave',
-      formation:Formations.EightChainThru,
+      formation:Formation('Eight Chain Thru'),
       from:'Eight Chain Thru',group:' ',
       paths:[
           ExtendLeft.scale(1.0,0.5) +

@@ -21,13 +21,12 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> SwapTheWave = [
 
     AnimatedCall('Swap the Wave',
-      formation:Formations.WaveRH,
+      formation:Formation('Wave RH'),
       from:'Right-Hand Wave',
       paths:[
           LeadRight.changeBeats(2).scale(0.5,3.0) +
@@ -37,7 +36,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Swap the Wave',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.GIRL,x:0,y:3,angle:180),
         DancerModel.fromData(gender:Gender.BOY,x:0,y:1,angle:0),
   ]),
@@ -50,7 +49,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Swap the Wave',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       from:'Right-Hand Waves',
       paths:[
           LeadRight.changeBeats(2).scale(0.5,3.0) +
@@ -65,7 +64,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Swap the Wave',
-      formation:Formations.OceanWavesLHBGGB,
+      formation:Formation('Ocean Waves LH BGGB'),
       from:'Left-Hand Waves',
       paths:[
           ExtendLeft.changeBeats(4).scale(1.0,2.0),
@@ -80,7 +79,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Swap the Wave',
-      formation:Formations.TidalWaveRHBGGB,
+      formation:Formation('Tidal Wave RH BGGB'),
       from:'Right-Hand Tidal Wave',
       paths:[
           LeadRight.changeBeats(2).scale(0.5,1.5) +
@@ -95,7 +94,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Swap the Wave',
-      formation:Formations.TidalWaveLHBGGB,
+      formation:Formation('Tidal Wave LH BGGB'),
       from:'Left-Hand Tidal Wave',
       paths:[
           ExtendLeft.changeBeats(4).scale(2.0,0.5),

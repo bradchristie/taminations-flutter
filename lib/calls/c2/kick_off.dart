@@ -19,13 +19,13 @@
 */
 
 import '../../animated_call.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> KickOff = [
 
     AnimatedCall('Boys Kick Off',
-      formation:Formations.FacingCouplesCompact,
+      formation:Formation('Facing Couples Compact'),
       from:'Facing Couples',notForSequencer: true,
       paths:[
           RunRight.changeBeats(2.5).scale(0.75,1.0).skew(1.0,-0.5) +
@@ -35,7 +35,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Boys Kick Off',
-      formation:Formations.CouplesFacingOut,
+      formation:Formation('Couples Facing Out'),
       from:'Couples Facing Out',notForSequencer: true,
       paths:[
           QuarterLeft.changeBeats(4).skew(-1.0,3.0),
@@ -45,7 +45,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Centers Cross Kick Off',
-      formation:Formations.TwomFacedLineRH,
+      formation:Formation('Two-Faced Line RH'),
       from:'Right-Hand Two-Faced Line',
       paths:[
           QuarterRight.changeBeats(3).skew(0.0,-2.0),
@@ -55,7 +55,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Centers Cross Kick Off',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       from:'Right-Hand Waves',
       paths:[
           LeadRight.changeBeats(3).scale(1.0,2.0),
@@ -70,7 +70,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Centers Cross Kick Off',
-      formation:Formations.OceanWavesLHBGGB,
+      formation:Formation('Ocean Waves LH BGGB'),
       from:'Left-Hand Waves',
       paths:[
           QuarterLeft.changeBeats(3).skew(-1.0,2.0),
@@ -85,7 +85,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Centers Cross Kick Off',
-      formation:Formations.TwomFacedLinesRH,
+      formation:Formation('Two-Faced Lines RH'),
       from:'Right-Hand Two-Faced Lines',
       paths:[
           LeadRight.changeBeats(3).scale(1.0,2.0),
@@ -100,7 +100,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Centers Cross Kick Off',
-      formation:Formations.TwomFacedLinesLH,
+      formation:Formation('Two-Faced Lines LH'),
       from:'Left-Hand Two-Faced Lines',
       paths:[
           QuarterLeft.changeBeats(3).skew(-1.0,2.0),
@@ -115,7 +115,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Centers Cross Kick Off',
-      formation:Formations.LinesFacingOut,
+      formation:Formation('Lines Facing Out'),
       from:'Lines Facing Out',
       paths:[
           QuarterLeft.changeBeats(3).skew(-1.0,2.0),
@@ -130,7 +130,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Ends Cross Kick Off',
-      formation:Formations.TwomFacedLineRH,
+      formation:Formation('Two-Faced Line RH'),
       from:'Right-Hand Two-Faced Line',
       paths:[
           LeadRight.changeBeats(2).scale(2.0,2.0) +
@@ -140,7 +140,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Ends Cross Kick Off',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       from:'Right-Hand Waves',
       paths:[
           LeadRight.changeBeats(2).scale(1.5,2.0) +
@@ -155,7 +155,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Ends Cross Kick Off',
-      formation:Formations.OceanWavesLHBGGB,
+      formation:Formation('Ocean Waves LH BGGB'),
       from:'Left-Hand Waves',
       paths:[
           LeadLeft.changeBeats(2).scale(1.0,2.0) +
@@ -170,7 +170,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Ends Cross Kick Off',
-      formation:Formations.TwomFacedLinesRH,
+      formation:Formation('Two-Faced Lines RH'),
       from:'Right-Hand Two-Faced Lines',
       paths:[
           LeadRight.changeBeats(2).scale(1.5,2.0) +
@@ -185,7 +185,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Ends Cross Kick Off',
-      formation:Formations.TwomFacedLinesLH,
+      formation:Formation('Two-Faced Lines LH'),
       from:'Left-Hand Two-Faced Lines',
       paths:[
           LeadLeft.changeBeats(2).scale(1.0,2.0) +
@@ -200,7 +200,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Ends Cross Kick Off',
-      formation:Formations.LinesFacingOut,
+      formation:Formation('Lines Facing Out'),
       from:'Lines Facing Out',
       paths:[
           LeadLeft.changeBeats(3).scale(0.5,3.0) +

@@ -19,13 +19,13 @@
 */
 
 import '../../animated_call.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> Q14TheDeucey = [
 
     AnimatedCall('1/4 the Deucey',
-      formation:Formations.OceanWavesRHGBGB,
+      formation:Formation('Ocean Waves RH GBGB'),
       from:'Right-Hand Waves',fractions:'2;2;2',
       paths:[
           HingeRight.changeBeats(2) +
@@ -48,7 +48,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('1/4 the Deucey',
-      formation:Formations.OceanWavesLHBGGB,
+      formation:Formation('Ocean Waves LH BGGB'),
       from:'Left-Hand Waves',fractions:'2;2;2',
       paths:[
           HingeLeft.changeBeats(2) +
@@ -71,7 +71,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('3/4 the Deucey',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       from:'Right-Hand Waves',fractions:'4.5;4.5;4.5',
       paths:[
           CastRight +
@@ -94,7 +94,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('3/4 the Deucey',
-      formation:Formations.OceanWavesLHBGGB,
+      formation:Formation('Ocean Waves LH BGGB'),
       from:'Left-Hand Waves',fractions:'4.5;4.5;4.5',
       paths:[
           CastLeft +

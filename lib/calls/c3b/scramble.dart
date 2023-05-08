@@ -21,13 +21,12 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> Scramble = [
 
     AnimatedCall('Scramble',
-      formation:Formation('Inverted Lines Ends Facing Out', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.GIRL,x:2,y:1,angle:0),
         DancerModel.fromData(gender:Gender.BOY,x:2,y:3,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:-2,y:3,angle:180),
@@ -57,7 +56,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Scramble',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.GIRL,x:2,y:1,angle:180),
         DancerModel.fromData(gender:Gender.BOY,x:2,y:3,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:-2,y:3,angle:180),
@@ -87,7 +86,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Central Scramble',
-      formation:Formations.LinesFacingOut,
+      formation:Formation('Lines Facing Out'),
       group:' ',parts:'2',
       paths:[
           QuarterLeft.changeBeats(2).skew(-1.0,0.0) +

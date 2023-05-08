@@ -21,13 +21,12 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> EndsBend = [
 
     AnimatedCall('Bend',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.GIRL,x:-2,y:3,angle:180),
         DancerModel.fromData(gender:Gender.BOY,x:-2,y:-3,angle:180),
   ]),
@@ -39,7 +38,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Ends Bend',
-      formation:Formations.LinesFacingOut,
+      formation:Formation('Lines Facing Out'),
       from:'Lines Facing Out',actives:'Ends',notForSequencer: true,
       paths:[
           LeadLeft.changeBeats(2).scale(1.0,2.0),
@@ -52,7 +51,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Ends Bend',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.GIRL,x:-2,y:3,angle:180),
         DancerModel.fromData(gender:Gender.BOY,x:-2,y:1,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:-2,y:-1,angle:0),
@@ -70,7 +69,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Ends Bend',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       from:'Facing Lines',actives:'Ends',
       paths:[
           LeadRight.changeBeats(2).scale(1.0,2.0),
@@ -83,7 +82,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Ends Bend',
-      formation:Formations.InvertedLinesEndsFacingIn,
+      formation:Formation('Inverted Lines Ends Facing In'),
       from:'Inverted Lines, Ends Facing In',actives:'Ends',
       paths:[
           LeadRight.changeBeats(2).scale(1.0,2.0),

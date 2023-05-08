@@ -19,13 +19,13 @@
 */
 
 import '../../animated_call.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> SwingAndCircle = [
 
     AnimatedCall('Swing and Circle 1/4',
-      formation:Formations.QuarterTag,
+      formation:Formation('Quarter Tag'),
       from:'Right-Hand Quarter Tag',
       paths:[
           Stand.changeBeats(3).changehands(2) +
@@ -42,7 +42,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Swing and Circle 1/4',
-      formation:Formations.QuarterTagLH,
+      formation:Formation('Quarter Tag LH'),
       from:'Left-Hand Quarter Tag',
       paths:[
           Stand.changeBeats(3).changehands(2) +
@@ -59,7 +59,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Swing and Circle 1/4',
-      formation:Formations.n34Tag,
+      formation:Formation('3/4 Tag'),
       from:'Right-Hand 3/4 Tag',
       paths:[
           Stand.changeBeats(3).changehands(2) +
@@ -76,7 +76,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Swing and Circle 1/4',
-      formation:Formations.n34TagLH,
+      formation:Formation('3/4 Tag LH'),
       from:'Left-Hand 3/4 Tag',
       paths:[
           Stand.changeBeats(3).changehands(2) +
@@ -93,7 +93,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Swing and Circle 1/4',
-      formation:Formations.MixedQuarterTag1,
+      formation:Formation('Mixed Quarter Tag #1'),
       from:'Right-Hand Quarter Waves',
       paths:[
           Stand.changeBeats(3).changehands(2) +
@@ -110,7 +110,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Swing and Circle 1/4',
-      formation:Formations.MixedQuarterTag6,
+      formation:Formation('Mixed Quarter Tag #6'),
       from:'Left-Hand Quarter Waves',
       paths:[
           Stand.changeBeats(3).changehands(2) +
@@ -127,7 +127,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Swing and Circle 1/4',
-      formation:Formations.DiamondsRHGirlPoints,
+      formation:Formation('Diamonds RH Girl Points'),
       from:'Right-Hand Diamonds',
       paths:[
           SwingRight +
@@ -144,7 +144,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Swing and Circle 1/4',
-      formation:Formations.DiamondsLHGirlPoints,
+      formation:Formation('Diamonds LH Girl Points'),
       from:'Left-Hand Diamonds',
       paths:[
           SwingLeft +
@@ -161,7 +161,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Swing and Circle 1/4',
-      formation:Formations.MixedQuarterTag5,
+      formation:Formation('Mixed Quarter Tag #5'),
       from:'Mixed Quarter Tag 1',
       paths:[
           Stand.changeBeats(3).changehands(2) +
@@ -178,7 +178,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Swing and Circle 1/4',
-      formation:Formations.MixedQuarterTag2,
+      formation:Formation('Mixed Quarter Tag #2'),
       from:'Mixed Quarter Tag 2',
       paths:[
           Stand.changeBeats(3).changehands(2) +

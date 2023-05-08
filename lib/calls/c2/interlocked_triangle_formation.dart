@@ -26,7 +26,7 @@ import '../../moves.dart';
   final List<AnimatedCall> InterlockedTriangleFormation = [
 
     AnimatedCall('Inside Interlocked Triangle Circulate',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:3,y:2,angle:270),
         DancerModel.fromData(gender:Gender.GIRL,x:-3,y:2,angle:90),
         DancerModel.fromData(gender:Gender.BOY,x:0,y:-1,angle:180),
@@ -45,7 +45,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Outside Interlocked Triangle Circulate',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:3,y:2,angle:270),
         DancerModel.fromData(gender:Gender.GIRL,x:-3,y:2,angle:90),
         DancerModel.fromData(gender:Gender.BOY,x:0,y:-1,angle:180),
@@ -63,7 +63,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Inpoint Interlocked Triangle Circulate',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:3,y:2,angle:270),
         DancerModel.fromData(gender:Gender.GIRL,x:-3,y:2,angle:90),
         DancerModel.fromData(gender:Gender.BOY,x:0,y:-1,angle:180),
@@ -83,7 +83,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Outpoint Interlocked Triangle Circulate',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:3,y:2,angle:270),
         DancerModel.fromData(gender:Gender.GIRL,x:-3,y:2,angle:90),
         DancerModel.fromData(gender:Gender.BOY,x:0,y:-1,angle:180),

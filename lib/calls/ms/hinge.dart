@@ -21,13 +21,12 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> Hinge = [
 
     AnimatedCall('Hinge',
-      formation:Formations.BoxRH,
+      formation:Formation('Box RH'),
       from:'Right-Hand Box',difficulty: 1,notForSequencer: true,
       paths:[
           HingeRight.changeBeats(2),
@@ -36,7 +35,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Hinge',
-      formation:Formations.BoxLH,
+      formation:Formation('Box LH'),
       from:'Left-Hand Box',difficulty: 1,notForSequencer: true,
       paths:[
           HingeLeft.changeBeats(2),
@@ -45,7 +44,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Hinge',
-      formation:Formations.WaveRH,
+      formation:Formation('Wave RH'),
       from:'Right-Hand Wave',difficulty: 1,notForSequencer: true,
       paths:[
           HingeRight.changeBeats(2),
@@ -54,7 +53,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Hinge',
-      formation:Formations.WaveLH,
+      formation:Formation('Wave LH'),
       from:'Left-Hand Wave',difficulty: 1,
       paths:[
           HingeLeft.changeBeats(2),
@@ -63,7 +62,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Hinge',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-1.5,y:3,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:-1.5,y:1,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:-1.5,y:-1,angle:0),
@@ -81,7 +80,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Hinge',
-      formation:Formations.OceanWavesLHBGGB,
+      formation:Formation('Ocean Waves LH BGGB'),
       from:'Left-Hand Waves',difficulty: 1,
       paths:[
           HingeLeft.changeBeats(2),
@@ -94,7 +93,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Hinge',
-      formation:Formations.InvertedLinesEndsFacingOut,
+      formation:Formation('Inverted Lines Ends Facing Out'),
       from:'Inverted Lines, Centers In',difficulty: 2,
       paths:[
           HingeLeft.changeBeats(2),
@@ -107,7 +106,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Hinge',
-      formation:Formations.InvertedLinesEndsFacingIn,
+      formation:Formation('Inverted Lines Ends Facing In'),
       from:'Inverted Lines, Centers Out',difficulty: 2,
       paths:[
           HingeRight.changeBeats(2),
@@ -120,7 +119,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Hinge',
-      formation:Formations.ColumnRHGBGB,
+      formation:Formation('Column RH GBGB'),
       from:'Right-Hand Columns',difficulty: 1,
       paths:[
           HingeRight.changeBeats(2).scale(0.5,1.0),
@@ -133,7 +132,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Hinge',
-      formation:Formations.ColumnLHGBGB,
+      formation:Formation('Column LH GBGB'),
       from:'Left-Hand Columns',difficulty: 1,
       paths:[
           HingeLeft.changeBeats(2).scale(0.5,1.0),
@@ -146,7 +145,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Hinge',
-      formation:Formations.MagicColumnRH,
+      formation:Formation('Magic Column RH'),
       from:'Magic Columns, Right-Hand Centers',difficulty: 2,
       paths:[
           HingeLeft.changeBeats(2).scale(0.5,1.0),
@@ -159,7 +158,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Hinge',
-      formation:Formations.MagicColumnLH,
+      formation:Formation('Magic Column LH'),
       from:'Magic Columns, Left-Hand Centers',difficulty: 2,
       paths:[
           HingeRight.changeBeats(2).scale(0.5,1.0),
@@ -172,7 +171,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Hinge',
-      formation:Formations.TidalWaveRHBGGB,
+      formation:Formation('Tidal Wave RH BGGB'),
       from:'Right-Hand Tidal Wave',difficulty: 1,
       paths:[
           HingeRight.changeBeats(2).scale(1.0,0.5),
@@ -185,7 +184,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Hinge',
-      formation:Formations.TidalWaveLHBGGB,
+      formation:Formation('Tidal Wave LH BGGB'),
       from:'Left-Hand Tidal Wave',difficulty: 1,
       paths:[
           HingeLeft.changeBeats(2).scale(1.0,0.5),
@@ -198,7 +197,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Centers Hinge',
-      formation:Formations.TwomFacedLineRH,
+      formation:Formation('Two-Faced Line RH'),
       from:'Right-Hand Two-Faced Line',difficulty: 1,
       paths:[
           Path(),
@@ -207,7 +206,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Centers Hinge',
-      formation:Formations.TwomFacedLineLH,
+      formation:Formation('Two-Faced Line LH'),
       from:'Left-Hand Two-Faced Line',difficulty: 2,
       paths:[
           HingeLeft.changeBeats(2),
@@ -216,7 +215,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Centers Hinge',
-      formation:Formations.WaveRH,
+      formation:Formation('Wave RH'),
       from:'Right-Hand Wave',difficulty: 1,
       paths:[
           Path(),
@@ -225,7 +224,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Centers Hinge',
-      formation:Formations.WaveLH,
+      formation:Formation('Wave LH'),
       from:'Left-Hand Wave',difficulty: 1,
       paths:[
           Path(),
@@ -234,7 +233,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Centers Hinge',
-      formation:Formations.DiamondRH,
+      formation:Formation('Diamond RH'),
       from:'Right-Hand Diamond',difficulty: 2,
       paths:[
           Path(),
@@ -243,7 +242,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Centers Hinge',
-      formation:Formations.DiamondLH,
+      formation:Formation('Diamond LH'),
       from:'Left-Hand Diamond',difficulty: 2,
       paths:[
           Path(),
@@ -252,7 +251,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Centers Hinge',
-      formation:Formations.TwomFacedLinesRH,
+      formation:Formation('Two-Faced Lines RH'),
       from:'Right-Hand Two-Faced Lines',difficulty: 1,
       paths:[
           Path(),
@@ -265,7 +264,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Centers Hinge',
-      formation:Formations.TwomFacedLinesLH,
+      formation:Formation('Two-Faced Lines LH'),
       from:'Left-Hand Two-Faced Lines',difficulty: 2,
       paths:[
           Path(),
@@ -278,7 +277,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Centers Hinge',
-      formation:Formations.DiamondsRHGirlPoints,
+      formation:Formation('Diamonds RH Girl Points'),
       from:'Right-Hand Diamonds',difficulty: 2,
       paths:[
           HingeRight.changeBeats(2),
@@ -291,7 +290,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Centers Hinge',
-      formation:Formations.DiamondsLHGirlPoints,
+      formation:Formation('Diamonds LH Girl Points'),
       from:'Left-Hand Diamonds',difficulty: 2,
       paths:[
           HingeLeft.changeBeats(2),
@@ -304,7 +303,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Centers Hinge',
-      formation:Formations.QuarterTag,
+      formation:Formation('Quarter Tag'),
       from:'Quarter Tag',difficulty: 2,
       paths:[
           Path(),
@@ -317,7 +316,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Very Centers Hinge',
-      formation:Formations.DiamondsRHGirlPoints,
+      formation:Formation('Diamonds RH Girl Points'),
       from:'Right-Hand Diamonds',difficulty: 2,
       paths:[
           Path(),
@@ -330,7 +329,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Very Centers Hinge',
-      formation:Formations.DiamondsLHGirlPoints,
+      formation:Formation('Diamonds LH Girl Points'),
       from:'Left-Hand Diamonds',difficulty: 2,
       paths:[
           Path(),
@@ -343,7 +342,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Very Centers Hinge',
-      formation:Formations.QuarterTag,
+      formation:Formation('Quarter Tag'),
       from:'Quarter Tag',difficulty: 2,
       paths:[
           Path(),
@@ -356,7 +355,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Very Centers Hinge',
-      formation:Formations.TidalWaveRHBGGB,
+      formation:Formation('Tidal Wave RH BGGB'),
       from:'Right-Hand Tidal Wave',difficulty: 2,
       paths:[
           Path(),
@@ -369,7 +368,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Couples Hinge',
-      formation:Formations.TwomFacedLineRH,
+      formation:Formation('Two-Faced Line RH'),
       from:'Right-Hand Two-Faced Line',difficulty: 1,
       paths:[
           HingeRight.changeBeats(3).changehands(6).scale(3.0,3.0),
@@ -378,7 +377,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Couples Hinge',
-      formation:Formations.TwomFacedLineLH,
+      formation:Formation('Two-Faced Line LH'),
       from:'Left-Hand Two-Faced Line',difficulty: 1,
       paths:[
           HingeLeft.changeBeats(3).changehands(7).scale(1.0,1.0),
@@ -387,7 +386,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Couples Hinge',
-      formation:Formations.TwomFacedLinesRH,
+      formation:Formation('Two-Faced Lines RH'),
       from:'Right-Hand Two-Faced Lines',difficulty: 1,
       paths:[
           HingeRight.changeBeats(3).changehands(6).scale(1.5,3.0),
@@ -400,7 +399,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Couples Hinge',
-      formation:Formations.TwomFacedLinesLH,
+      formation:Formation('Two-Faced Lines LH'),
       from:'Left-Hand Two-Faced Lines',difficulty: 1,
       paths:[
           HingeLeft.changeBeats(3).changehands(5).scale(1.5,3.0),
@@ -413,7 +412,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Couples Hinge',
-      formation:Formations.TwomFacedTidalLineRH,
+      formation:Formation('Two-Faced Tidal Line RH'),
       from:'Two-Faced Tidal Line',difficulty: 1,
       paths:[
           HingeRight.changeBeats(3).changehands(6).scale(3.0,1.5),
@@ -426,7 +425,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Couples Hinge',
-      formation:Formations.TwomFacedTidalLineLH,
+      formation:Formation('Two-Faced Tidal Line LH'),
       difficulty: 1,noDisplay: true,
       paths:[
           HingeLeft.changeBeats(3).changehands(5).scale(3.0,1.5),
@@ -439,7 +438,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Couples Hinge',
-      formation:Formations.LinesFacingOut,
+      formation:Formation('Lines Facing Out'),
       from:'Lines Facing Out',difficulty: 2,
       paths:[
           QuarterLeft.changeBeats(3).changehands(1).skew(-0.5,3.0),
@@ -452,7 +451,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Couples Hinge',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       from:'Lines Facing In',difficulty: 2,noDisplay: true,
       paths:[
           HingeRight.changeBeats(3).scale(1.5,3.0),
@@ -465,7 +464,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Couples Hinge',
-      formation:Formations.TidalLineRH,
+      formation:Formation('Tidal Line RH'),
       from:'Tidal Line',difficulty: 2,
       paths:[
           HingeRight.changeBeats(3).scale(3.0,1.5),
@@ -478,7 +477,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Couples Hinge',
-      formation:Formations.TidalLineLH,
+      formation:Formation('Tidal Line LH'),
       from:'Tidal Line LH',difficulty: 2,noDisplay: true,
       paths:[
           QuarterLeft.changeBeats(3).changehands(2).skew(-3.0,0.5),
@@ -491,7 +490,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Couples Hinge',
-      formation:Formations.TwomFacedTidalLineRH,
+      formation:Formation('Two-Faced Tidal Line RH'),
       from:'Two-Faced Tidal Line',difficulty: 2,
       paths:[
           HingeRight.changeBeats(3).scale(3.0,1.5),
@@ -504,7 +503,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Couples Hinge',
-      formation:Formations.TwomFacedTidalLineLH,
+      formation:Formation('Two-Faced Tidal Line LH'),
       from:'Two-Faced Tidal Line LH',difficulty: 2,noDisplay: true,
       paths:[
           HingeLeft.changeBeats(3).scale(3.0,1.5),

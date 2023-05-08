@@ -21,13 +21,12 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> SetsInMotion = [
 
     AnimatedCall('Sets in Motion',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       from:'Right-Hand Waves',
       paths:[
           Forward_4 +
@@ -52,7 +51,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Sets in Motion',
-      formation:Formations.OceanWavesLHBGGB,
+      formation:Formation('Ocean Waves LH BGGB'),
       from:'Left-Hand Waves',
       paths:[
           RunLeft.changeBeats(4).scale(2.0,3.0) +
@@ -77,7 +76,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Sets in Motion',
-      formation:Formations.TwomFacedLinesRH,
+      formation:Formation('Two-Faced Lines RH'),
       from:'Right-Hand Two-Faced Lines',
       paths:[
           Forward_4 +
@@ -103,7 +102,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Sets in Motion',
-      formation:Formations.TwomFacedLinesLH,
+      formation:Formation('Two-Faced Lines LH'),
       from:'Left-Hand Two-Faced Lines',
       paths:[
           RunLeft.changeBeats(4).scale(2.0,3.0) +
@@ -128,7 +127,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Sets in Motion',
-      formation:Formations.LinesFacingOut,
+      formation:Formation('Lines Facing Out'),
       from:'Lines Facing Out',
       paths:[
           RunLeft.changeBeats(5).scale(2.0,3.0) +
@@ -153,7 +152,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Sets in Motion',
-      formation:Formations.InvertedLinesEndsFacingIn,
+      formation:Formation('Inverted Lines Ends Facing In'),
       from:'Inverted Lines',
       paths:[
           ExtendLeft.changeBeats(1.5).scale(2.0,0.5) +
@@ -187,7 +186,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Sets in Motion',
-      formation:Formations.n3and_1lines2,
+      formation:Formation('3 and 1 Lines #2'),
       from:'3 and 1 Lines #2',
       paths:[
           ExtendLeft.changeBeats(1.5).scale(2.0,0.5) +
@@ -222,7 +221,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Sets in Motion',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-2,y:3,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:-2,y:1,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:-2,y:-1,angle:180),
@@ -262,7 +261,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Sets in Motion',
-      formation:Formations.n3and_1lines5,
+      formation:Formation('3 and 1 Lines #5'),
       from:'3 and 1 Lines #5',
       paths:[
           Forward_4 +
@@ -287,7 +286,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Sets in Motion',
-      formation:Formations.n3and_1lines6,
+      formation:Formation('3 and 1 Lines #6'),
       from:'3 and 1 Lines #6',
       paths:[
           RunLeft.changeBeats(5).scale(2.0,3.0) +
@@ -312,7 +311,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Sets in Motion',
-      formation:Formations.n3and_1lines7,
+      formation:Formation('3 and 1 Lines #7'),
       from:'3 and 1 Lines #7',
       paths:[
           RunLeft.changeBeats(5).scale(2.0,3.0) +
@@ -336,7 +335,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Sets in Motion',
-      formation:Formations.n3and_1lines8,
+      formation:Formation('3 and 1 Lines #8'),
       from:'3 and 1 Lines #8',
       paths:[
           RunLeft.changeBeats(4).scale(2.0,3.0) +
@@ -361,7 +360,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Sets in Motion',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-3,y:1,angle:270),
         DancerModel.fromData(gender:Gender.GIRL,x:-3,y:-1,angle:90),
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:-1,angle:180),

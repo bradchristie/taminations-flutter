@@ -20,13 +20,13 @@
 
 import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> CrossOverCirculate = [
 
     AnimatedCall('Cross Over Circulate',
-      formation:Formations.TwomFacedLinesRH,
+      formation:Formation('Two-Faced Lines RH'),
       from:'Right-Hand Two-Faced Lines',fractions:'3',
       paths:[
           ExtendRight.changeBeats(3).scale(1.5,1.0) +
@@ -45,7 +45,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cross Over Circulate',
-      formation:Formations.TwomFacedLinesLH,
+      formation:Formation('Two-Faced Lines LH'),
       from:'Left-Hand Two-Faced Lines',fractions:'3',
       paths:[
           QuarterLeft.skew(0.1,1.0) +
@@ -64,7 +64,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cross Over Circulate',
-      formation:Formations.LinesFacingOut,
+      formation:Formation('Lines Facing Out'),
       from:'Lines Facing Out',fractions:'3',
       paths:[
           QuarterLeft.skew(0.1,1.0) +
@@ -85,7 +85,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cross Over Circulate',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       from:'Facing Lines',fractions:'3',
       paths:[
           ExtendLeft.changeBeats(2).scale(2.0,0.5) +
@@ -102,7 +102,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cross Over Circulate',
-      formation:Formations.InvertedLinesEndsFacingOut,
+      formation:Formation('Inverted Lines Ends Facing Out'),
       from:'Inverted Lines Ends Facing Out',
       paths:[
           FlipLeft.changeBeats(6).scale(1.0,2.0),
@@ -117,7 +117,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cross Over Circulate',
-      formation:Formations.InvertedLinesEndsFacingIn,
+      formation:Formation('Inverted Lines Ends Facing In'),
       from:'Inverted Lines Ends Facing In',
       paths:[
           Forward.changeBeats(1.5) +
@@ -132,7 +132,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cross Over Circulate',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       from:'Right-Hand Waves',fractions:'3',
       paths:[
           Forward.changeBeats(1.5) +
@@ -147,7 +147,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cross Over Circulate',
-      formation:Formations.OceanWavesLHBGBG,
+      formation:Formation('Ocean Waves LH BGBG'),
       from:'Left-Hand Waves',fractions:'3',
       paths:[
           RunLeft.changeBeats(6).scale(0.5,2.0),
@@ -162,7 +162,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cross Over Circulate',
-      formation:Formations.n3and_1lines1,
+      formation:Formation('3 and 1 Lines #1'),
       from:'3 and 1 lines #1',
       paths:[
           RunLeft.changeBeats(6).scale(1.0,2.0),
@@ -178,7 +178,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cross Over Circulate',
-      formation:Formations.n3and_1lines2,
+      formation:Formation('3 and 1 Lines #2'),
       from:'3 and 1 lines #2',
       paths:[
           Forward_2.changeBeats(2.5) +
@@ -194,7 +194,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cross Over Circulate',
-      formation:Formations.n3and_1lines3,
+      formation:Formation('3 and 1 Lines #3'),
       from:'3 and 1 lines #3',
       paths:[
           Stand.changeBeats(2) +
@@ -210,7 +210,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cross Over Circulate',
-      formation:Formations.n3and_1lines4,
+      formation:Formation('3 and 1 Lines #4'),
       from:'3 and 1 lines #4',
       paths:[
           Stand.changeBeats(2) +
@@ -226,7 +226,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cross Over Circulate',
-      formation:Formations.n3and_1lines5,
+      formation:Formation('3 and 1 Lines #5'),
       from:'3 and 1 lines #5',
       paths:[
           ExtendRight.changeBeats(6).scale(4.0,2.0),
@@ -239,7 +239,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cross Over Circulate',
-      formation:Formations.n3and_1lines6,
+      formation:Formation('3 and 1 Lines #6'),
       from:'3 and 1 lines #6',
       paths:[
           FlipLeft.changeBeats(6).scale(1.0,2.0),
@@ -252,7 +252,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cross Over Circulate',
-      formation:Formations.n3and_1lines7,
+      formation:Formation('3 and 1 Lines #7'),
       from:'3 and 1 lines #7',
       paths:[
           FlipLeft.changeBeats(6).scale(1.0,2.0),
@@ -265,7 +265,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cross Over Circulate',
-      formation:Formations.n3and_1lines8,
+      formation:Formation('3 and 1 Lines #8'),
       from:'3 and 1 lines #8',
       paths:[
           FlipLeft.changeBeats(6).scale(1.0,2.0),

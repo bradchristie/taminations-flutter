@@ -21,13 +21,12 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> StarThru = [
 
     AnimatedCall('Star Thru',
-      formation:Formations.FacingCouplesCompact,
+      formation:Formation('Facing Couples Compact'),
       from:'Facing Couples',isGenderSpecific:true,
       paths:[
           ExtendLeft.changeBeats(2).changehands(6).scale(1.5,0.5) +
@@ -38,7 +37,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Star Thru',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-1.5,y:-1,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:-1.5,y:1,angle:0),
   ]),
@@ -52,7 +51,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Star Thru',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       from:'Lines',isGenderSpecific:true,
       paths:[
           ExtendLeft.changeBeats(2).changehands(6).scale(2.0,0.5) +
@@ -69,7 +68,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Star Thru',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-2,y:1,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:-2,y:3,angle:0),
         DancerModel.fromData(gender:Gender.BOY,x:-2,y:-3,angle:0),
@@ -91,7 +90,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Star Thru',
-      formation:Formations.EightChainThru,
+      formation:Formation('Eight Chain Thru'),
       from:'Eight Chain Thru',isGenderSpecific:true,
       paths:[
           ExtendLeft.changehands(6).scale(1.0,0.5) +
@@ -108,7 +107,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Heads Star Thru',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       group:' ',isGenderSpecific:true,
       paths:[
           ExtendLeft.changeBeats(3).changehands(6).scale(3.0,0.5) +

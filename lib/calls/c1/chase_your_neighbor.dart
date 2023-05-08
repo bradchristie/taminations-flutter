@@ -19,13 +19,13 @@
 */
 
 import '../../animated_call.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> ChaseYourNeighbor = [
 
     AnimatedCall('Chase Your Neighbor',
-      formation:Formations.CouplesFacingOut,
+      formation:Formation('Couples Facing Out'),
       from:'Couples Facing Out',parts:'3.7',
       paths:[
           UmTurnRight.skew(-2.0,0.0) +
@@ -39,7 +39,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Chase Your Neighbor',
-      formation:Formations.LinesFacingOut,
+      formation:Formation('Lines Facing Out'),
       from:'Lines Facing Out',parts:'3.7',
       paths:[
           UmTurnRight.skew(-2.0,0.0) +
@@ -62,7 +62,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Chase Your Neighbor',
-      formation:Formations.TradeBy,
+      formation:Formation('Trade By'),
       from:'Trade By',parts:'3',
       paths:[
           UmTurnRight.skew(-2.0,0.0) +
@@ -85,7 +85,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left Chase Your Neighbor',
-      formation:Formations.CouplesFacingOut,
+      formation:Formation('Couples Facing Out'),
       from:'Couples Facing Out',parts:'3.7',
       paths:[
           FlipLeft +
@@ -99,7 +99,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left Chase Your Neighbor',
-      formation:Formations.LinesFacingOut,
+      formation:Formation('Lines Facing Out'),
       from:'Lines Facing Out',parts:'3.7',
       paths:[
           FlipLeft +
@@ -122,7 +122,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left Chase Your Neighbor',
-      formation:Formations.TradeBy,
+      formation:Formation('Trade By'),
       from:'Trade By',parts:'3',
       paths:[
           FlipLeft +
@@ -145,7 +145,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('All 8 Chase Your Neighbor',
-      formation:Formations.StaticFacingOut,
+      formation:Formation('Static Facing Out'),
       group:' ',parts:'4.3',
       paths:[
           FlipRight +
@@ -166,7 +166,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('As Couples Chase Your Neighbor',
-      formation:Formations.LinesFacingOut,
+      formation:Formation('Lines Facing Out'),
       from:'Lines Facing Out',group:' ',parts:'6',
       paths:[
           BackRunLeft.changehands(1).skew(-1.0,0.0) +
@@ -191,7 +191,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Concentric Chase Your Neighbor',
-      formation:Formations.LinesFacingOut,
+      formation:Formation('Lines Facing Out'),
       group:' ',
       paths:[
           FlipRight.changeBeats(5).scale(1.0,0.5).skew(-2.0,0.0) +
@@ -211,7 +211,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Tandem Chase Your Neighbor',
-      formation:Formations.CompletedDoublePassThru,
+      formation:Formation('Completed Double Pass Thru'),
       group:' ',
       paths:[
           FlipRight.skew(-2.0,0.0) +
@@ -241,7 +241,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Triple Box Chase Your Neighbor',
-      formation:Formations.PhantomLinesOut,
+      formation:Formation('Phantom Lines Out'),
       group:' ',parts:'3.7',
       paths:[
           FlipRight +

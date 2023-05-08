@@ -21,13 +21,12 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> DriftApart = [
 
     AnimatedCall('Drift Apart',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       from:'Facing Lines',fractions:'4',
       paths:[
           ExtendLeft.changeBeats(2).scale(2.0,0.5) +
@@ -48,7 +47,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Drift Apart',
-      formation:Formations.LinesFacingOut,
+      formation:Formation('Lines Facing Out'),
       from:'Lines Facing Out',fractions:'4',
       paths:[
           FlipLeft.changeBeats(4) +
@@ -69,7 +68,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Drift Apart',
-      formation:Formations.TwomFacedLinesRH,
+      formation:Formation('Two-Faced Lines RH'),
       from:'Right-Hand Two-Faced Lines',fractions:'4',
       paths:[
           Forward_4 +
@@ -86,7 +85,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Drift Apart',
-      formation:Formations.TwomFacedLinesLH,
+      formation:Formation('Two-Faced Lines LH'),
       from:'Left-Hand Two-Faced Lines',fractions:'4',
       paths:[
           RunLeft.changeBeats(4).scale(1.0,0.75) +
@@ -103,7 +102,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Drift Apart',
-      formation:Formations.InvertedLinesEndsFacingOut,
+      formation:Formation('Inverted Lines Ends Facing Out'),
       from:'Inverted Lines, Centers In',fractions:'4',
       paths:[
           RunLeft.changeBeats(4).scale(1.0,0.75) +
@@ -124,7 +123,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Drift Apart',
-      formation:Formations.InvertedLinesEndsFacingIn,
+      formation:Formation('Inverted Lines Ends Facing In'),
       from:'Inverted Lines, Centers Out',fractions:'4',
       paths:[
           ExtendLeft.changeBeats(2).scale(2.0,0.5) +
@@ -145,7 +144,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Drift Apart',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       from:'Right-Hand Waves',fractions:'4',
       paths:[
           ExtendLeft.changeBeats(4).scale(4.0,0.5) +
@@ -162,7 +161,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Drift Apart',
-      formation:Formations.OceanWavesLHGBGB,
+      formation:Formation('Ocean Waves LH GBGB'),
       from:'Left-Hand Waves',fractions:'4',
       paths:[
           RunLeft.changeBeats(4) +
@@ -179,7 +178,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Drift Apart',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:3,angle:90),
         DancerModel.fromData(gender:Gender.GIRL,x:-1,y:1,angle:90),
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:-1,angle:90),
@@ -201,7 +200,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Drift Apart',
-      formation:Formations.ColumnLHGBGB,
+      formation:Formation('Column LH GBGB'),
       from:'Left-Hand Columns',fractions:'3',
       paths:[
           Forward_2.changeBeats(3) +
@@ -218,7 +217,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Drift Apart',
-      formation:Formations.MagicColumnRH,
+      formation:Formation('Magic Column RH'),
       from:'Magic Columns, Right-Hand Centers',fractions:'3',
       paths:[
           Forward.changeBeats(1.5) +
@@ -237,7 +236,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Drift Apart',
-      formation:Formations.MagicColumnLH,
+      formation:Formation('Magic Column LH'),
       from:'Magic Columns, Left-Hand Centers',fractions:'3',
       paths:[
           RunRight +
@@ -254,7 +253,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Drift Apart',
-      formation:Formations.EightChainThru,
+      formation:Formation('Eight Chain Thru'),
       from:'Eight Chain Thru',fractions:'3',
       paths:[
           Forward_2.changeBeats(3) +
@@ -273,7 +272,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Drift Apart',
-      formation:Formations.TradeBy,
+      formation:Formation('Trade By'),
       from:'Trade By',fractions:'3',
       paths:[
           FlipLeft +
@@ -296,7 +295,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Drift Apart',
-      formation:Formations.TmBoneDRDR,
+      formation:Formation('T-Bone DRDR'),
       from:'T-Bones 1',fractions:'3',
       paths:[
           FlipLeft +
@@ -313,7 +312,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Drift Apart',
-      formation:Formations.TmBoneLDLD,
+      formation:Formation('T-Bone LDLD'),
       from:'T-Bones 2',fractions:'3',
       paths:[
           RunRight +
@@ -330,7 +329,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Drift Apart',
-      formation:Formations.TmBoneDLDL,
+      formation:Formation('T-Bone DLDL'),
       from:'T-Bones 3',fractions:'3',
       paths:[
           FlipLeft +
@@ -348,7 +347,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Drift Apart',
-      formation:Formations.TmBoneRDRD,
+      formation:Formation('T-Bone RDRD'),
       from:'T-Bones 4',fractions:'3',
       paths:[
           FlipRight +
@@ -366,7 +365,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Drift Apart',
-      formation:Formations.TmBoneURUR,
+      formation:Formation('T-Bone URUR'),
       from:'T-Bones 5',fractions:'3',
       paths:[
           Forward_2.changeBeats(3) +

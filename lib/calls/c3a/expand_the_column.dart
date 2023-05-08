@@ -21,13 +21,12 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> ExpandTheColumn = [
 
     AnimatedCall('Expand the Column',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-3,y:-1,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:-1,y:-1,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:1,y:-1,angle:180),
@@ -46,7 +45,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Magic Expand the Column',
-      formation:Formations.MagicColumnRH,
+      formation:Formation('Magic Column RH'),
       from:'Right-Hand Magic Columns',
       paths:[
           ExtendLeft.changeBeats(3).scale(2.0,2.0) +

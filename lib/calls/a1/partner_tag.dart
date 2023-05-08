@@ -19,13 +19,13 @@
 */
 
 import '../../animated_call.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> PartnerTag = [
 
     AnimatedCall('Partner Tag',
-      formation:Formations.FacingCouplesCompact,
+      formation:Formation('Facing Couples Compact'),
       from:'Facing Couples',notForSequencer: true,
       paths:[
           LeadRight.scale(0.5,1.0) +
@@ -36,7 +36,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Partner Tag',
-      formation:Formations.CouplesFacingOut,
+      formation:Formation('Couples Facing Out'),
       from:'Couples Facing Out',notForSequencer: true,
       paths:[
           QuarterLeft.skew(-0.5,1.0) +
@@ -47,7 +47,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Partner Tag',
-      formation:Formations.BoxRH,
+      formation:Formation('Box RH'),
       from:'Right-Hand Box',notForSequencer: true,
       paths:[
           LeadRight.scale(0.5,1.0) +
@@ -58,7 +58,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Partner Tag',
-      formation:Formations.BoxLH,
+      formation:Formation('Box LH'),
       from:'Left-Hand Box',notForSequencer: true,
       paths:[
           QuarterLeft.skew(-0.5,1.0) +
@@ -69,7 +69,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Partner Tag',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       from:'Lines',
       paths:[
           LeadRight.scale(0.5,1.0) +
@@ -86,7 +86,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Partner Tag',
-      formation:Formations.ColumnRHGBGB,
+      formation:Formation('Column RH GBGB'),
       from:'Right-Hand Columns',
       paths:[
           LeadRight.scale(0.5,1.0) +
@@ -103,7 +103,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Partner Tag',
-      formation:Formations.ColumnLHGBGB,
+      formation:Formation('Column LH GBGB'),
       from:'Left-Hand Columns',
       paths:[
           QuarterLeft.skew(-0.5,1.0) +
@@ -120,7 +120,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Partner Tag',
-      formation:Formations.QuarterTag,
+      formation:Formation('Quarter Tag'),
       from:'Quarter Tag',
       paths:[
           LeadRight.scale(0.5,1.0) +

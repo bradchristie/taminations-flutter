@@ -21,13 +21,12 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> DoublePassThru = [
 
     AnimatedCall('Double Pass Thru',
-      formation:Formations.SingleDoublePassThru,
+      formation:Formation('Single Double Pass Thru'),
       from:'Single Column',difficulty: 1,
       paths:[
           ExtendLeft.scale(1.0,0.5) +
@@ -40,7 +39,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Double Pass Thru',
-      formation:Formations.DoublePassThru,
+      formation:Formation('Double Pass Thru'),
       from:'Double Pass Thru',difficulty: 1,
       paths:[
           ExtendLeft.scale(1.0,0.5) +
@@ -61,7 +60,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Double Pass Thru',
-      formation:Formations.QuarterTag,
+      formation:Formation('Quarter Tag'),
       from:'Quarter Tag',difficulty: 2,
       taminator: '''
       This is an example of the Ocean Wave rule.
@@ -81,7 +80,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Double Pass Thru',
-      formation:Formations.QuarterZRH,
+      formation:Formation('Quarter Z RH'),
       from:'Right-Hand Z Tag',noDisplay: true,
       paths:[
           Forward +
@@ -95,7 +94,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Double Pass Thru',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:3.5,y:0,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:2.5,y:0,angle:180),
         DancerModel.fromData(gender:Gender.BOY,x:1.5,y:0,angle:0),
@@ -121,7 +120,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left Double Pass Thru',
-      formation:Formations.DoublePassThru,
+      formation:Formation('Double Pass Thru'),
       from:'Double Pass Thru',difficulty: 2, noDisplay: true,
       paths:[
           ExtendRight.scale(1.0,0.5) +
@@ -142,7 +141,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left Double Pass Thru',
-      formation:Formations.QuarterTagLH,
+      formation:Formation('Quarter Tag LH'),
       from:'Left-Hand Quarter Tag',difficulty: 3, noDisplay: true,
       taminator: '''
       This is an example of the Ocean Wave rule as applied to a Left-Hand Wave.
@@ -162,7 +161,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left Double Pass Thru',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:3.5,y:0,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:2.5,y:0,angle:180),
         DancerModel.fromData(gender:Gender.BOY,x:1.5,y:0,angle:0),
@@ -188,7 +187,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Boys on a Diagonal Double Pass Thru',
-      formation:Formations.DoublePassThru,
+      formation:Formation('Double Pass Thru'),
       from:'Double Pass Thru',group:' ',isGenderSpecific:true,difficulty: 2,
       paths:[
           Forward.changeBeats(2).scale(2.5,1.0) +
@@ -202,7 +201,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Girls on a Diagonal Double Pass Thru',
-      formation:Formations.DoublePassThru,
+      formation:Formation('Double Pass Thru'),
       from:'Double Pass Thru',group:' ',isGenderSpecific:true,difficulty: 2,
       paths:[
           Path(),
@@ -217,7 +216,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('On a Diagonal Double Pass Thru',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-3,y:1,angle:0),
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:1,angle:0),
   ]),
@@ -230,7 +229,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('On a Diagonal Double Pass Thru',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.GIRL,x:-3,y:-1,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:-1,y:-1,angle:0),
   ]),

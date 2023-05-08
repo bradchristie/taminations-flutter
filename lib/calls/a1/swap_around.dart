@@ -20,14 +20,14 @@
 
 import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 import '../a2/all_4_all_8.dart' as a2;
 
   final List<AnimatedCall> SwapAround = [
 
     AnimatedCall('Swap Around',
-      formation:Formations.FacingCouplesCompact,
+      formation:Formation('Facing Couples Compact'),
       from:'Facing Couples',fractions:'2',
       paths:[
           FlipRight.changeBeats(4),
@@ -36,7 +36,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Swap Around',
-      formation:Formations.FacingCouplesClose,
+      formation:Formation('Facing Couples Close'),
       from:'Facing Couples Close',fractions:'2',noDisplay: true,
       paths:[
           FlipRight.changeBeats(4),
@@ -45,7 +45,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Swap Around',
-      formation:Formations.FacingCouplesFar,
+      formation:Formation('Facing Couples Far'),
       from:'Facing Couples',fractions:'2',noDisplay: true,
       paths:[
           FlipRight.changeBeats(4),
@@ -54,7 +54,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Swap Around',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       from:'Normal Lines',fractions:'2',
       paths:[
           FlipRight.changeBeats(4),
@@ -67,7 +67,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Swap Around',
-      formation:Formations.EightChainThru,
+      formation:Formation('Eight Chain Thru'),
       from:'Eight Chain Thru',fractions:'2',
       paths:[
           FlipRight.changeBeats(4),
@@ -80,7 +80,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Half Swap Around',
-      formation:Formations.EightChainThru,
+      formation:Formation('Eight Chain Thru'),
       from:'Eight Chain Thru',noDisplay: true,
       paths:[
           QuarterRight.changeBeats(2).skew(-2.0,-1.0),
@@ -93,7 +93,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('As Couples Swap Around',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       from:'Normal Lines',group:' ',fractions:'2',
       paths:[
           RunRight.changeBeats(4).changehands(6).scale(1.0,3.0),
@@ -108,7 +108,7 @@ import '../a2/all_4_all_8.dart' as a2;
       tam.title == 'All 8 Swap Around').first.xref(title: 'All 8 Swap Around').xref(group: ' '),
 
     AnimatedCall('Reverse Swap Around',
-      formation:Formations.FacingCouplesCompact,
+      formation:Formation('Facing Couples Compact'),
       from:'Facing Couples',fractions:'2',
       paths:[
           Forward_3.changeBeats(4),
@@ -117,7 +117,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Reverse Swap Around',
-      formation:Formations.FacingCouplesClose,
+      formation:Formation('Facing Couples Close'),
       from:'Facing Couples Close',fractions:'2',noDisplay: true,
       paths:[
           Forward_2.changeBeats(4),
@@ -126,7 +126,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Reverse Swap Around',
-      formation:Formations.FacingCouplesFar,
+      formation:Formation('Facing Couples Far'),
       from:'Facing Couples Far',fractions:'2',noDisplay: true,
       paths:[
           Forward_6.changeBeats(4),
@@ -135,7 +135,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Reverse Swap Around',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       from:'Normal Lines',fractions:'2',
       paths:[
           Forward_4,
@@ -148,7 +148,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Reverse Swap Around',
-      formation:Formations.EightChainThru,
+      formation:Formation('Eight Chain Thru'),
       from:'Eight Chain Thru',fractions:'2',
       paths:[
           Forward_2.changeBeats(4),
@@ -161,7 +161,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Half Reverse Swap Around',
-      formation:Formations.EightChainThru,
+      formation:Formation('Eight Chain Thru'),
       from:'Eight Chain Thru',noDisplay: true,
       paths:[
           Path(),
@@ -174,7 +174,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('As Couples Reverse Swap Around',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       from:'Normal Lines',group:' ',fractions:'2',
       paths:[
           Forward_4.changehands(2),

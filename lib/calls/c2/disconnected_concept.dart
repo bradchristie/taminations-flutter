@@ -21,13 +21,12 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> DisconnectedConcept = [
 
     AnimatedCall('Boys Disconnected Crossfire',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:0,y:3,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:0,y:-.6,angle:0),
         DancerModel.fromData(gender:Gender.BOY,x:0,y:1.8,angle:0),
@@ -49,7 +48,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Girls Disconnected Cross Roll to a Wave',
-      formation:Formations.TidalLineGirlsDisconnected,
+      formation:Formation('Tidal Line Girls Disconnected'),
       group:'Girls Disconnected',isGenderSpecific:true,
       paths:[
           RunLeft.changeBeats(5),
@@ -62,7 +61,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Girls Disconnected Crossfire',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.GIRL,x:0,y:-2.5,angle:0),
         DancerModel.fromData(gender:Gender.BOY,x:0,y:-3.5,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:0,y:-.5,angle:0),
@@ -81,7 +80,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Girls Disconnected Mix',
-      formation:Formations.TidalWaveLHBGGB,
+      formation:Formation('Tidal Wave LH BGGB'),
       group:'Girls Disconnected',isGenderSpecific:true,
       paths:[
           Stand.changeBeats(7).changehands(0),
@@ -96,7 +95,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Girls Disconnected Swing Thru',
-      formation:Formations.TidalWaveLHBGGB,
+      formation:Formation('Tidal Wave LH BGGB'),
       group:'Girls Disconnected',isGenderSpecific:true,
       paths:[
           Stand.changeBeats(7).changehands(0),
@@ -111,7 +110,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Girls Disconnected Switch the Wave',
-      formation:Formations.TidalWaveLHBGGB,
+      formation:Formation('Tidal Wave LH BGGB'),
       group:'Girls Disconnected',isGenderSpecific:true,
       paths:[
           Stand.changeBeats(6).changehands(0),
@@ -125,7 +124,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Ends Disconnected Chase Right',
-      formation:Formations.LinesFacingOut,
+      formation:Formation('Lines Facing Out'),
       group:'Ends Disconnected',
       paths:[
           UmTurnRight.skew(-2.0,0.0) +
@@ -141,7 +140,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Ends Disconnected Scoot Back',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       group:'Ends Disconnected',
       paths:[
           ExtendRight.changeBeats(2).scale(2.0,2.25) +
@@ -156,7 +155,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Ends Disconnected Swap Around',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       group:'Ends Disconnected',
       paths:[
           RunRight.changeBeats(6).scale(1.5,3.0),
@@ -169,7 +168,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Same Sex Disconnected Crossfire',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.GIRL,x:0,y:3.5,angle:0),
         DancerModel.fromData(gender:Gender.BOY,x:0,y:2.5,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:0,y:.5,angle:0),
@@ -193,7 +192,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Disconnected Columns of 3 Circulate',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:1,y:4,angle:270),
         DancerModel.fromData(gender:Gender.GIRL,x:1,y:0,angle:270),
         DancerModel.fromData(gender:Gender.BOY,x:1,y:-4,angle:270),

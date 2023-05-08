@@ -21,13 +21,12 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> CastAShadow = [
 
     AnimatedCall('Cast a Shadow',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       from:'Right-Hand Waves',
       paths:[
           ExtendRight.changeBeats(2.5).scale(2.0,0.75) +
@@ -50,7 +49,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cast a Shadow',
-      formation:Formations.OceanWavesLHGBBG,
+      formation:Formation('Ocean Waves LH GBBG'),
       from:'Left-Hand Waves',
       taminator: '''
       The center facing out need to cloverleaf far enough to go around
@@ -77,7 +76,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cast a Shadow',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:3,y:2,angle:270),
         DancerModel.fromData(gender:Gender.GIRL,x:1,y:2,angle:270),
         DancerModel.fromData(gender:Gender.GIRL,x:-1,y:2,angle:90),
@@ -105,7 +104,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cast a Shadow',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.GIRL,x:3,y:2,angle:90),
         DancerModel.fromData(gender:Gender.BOY,x:1,y:2,angle:90),
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:2,angle:270),
@@ -133,7 +132,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cast a Shadow',
-        formation:Formations.n3and_1lines1,
+        formation:Formation('3 and 1 Lines #1'),
         from:'3 and 1 Lines #1',
         paths:[
           UmTurnRight.changeBeats(.5).skew(0.0,-0.75) +
@@ -155,7 +154,7 @@ import '../../moves.dart';
         ]),
 
     AnimatedCall('Cast a Shadow',
-        formation:Formations.n3and_1lines4,
+        formation:Formation('3 and 1 Lines #4'),
         from:'3 and 1 Lines #4',
         paths:[
           ExtendRight.changeBeats(1.5).scale(2.0,0.75) +
@@ -177,7 +176,7 @@ import '../../moves.dart';
         ]),
 
     AnimatedCall('Cast a Shadow',
-      formation:Formations.n3and_1lines5,
+      formation:Formation('3 and 1 Lines #5'),
       from:'3 and 1 Lines #5',
       paths:[
           ExtendRight.changeBeats(1.5).scale(2.0,0.75) +
@@ -201,7 +200,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cast a Shadow',
-      formation:Formations.n3and_1lines8,
+      formation:Formation('3 and 1 Lines #8'),
       from:'3 and 1 Lines #8',
       paths:[
           UmTurnRight.changeBeats(.5).skew(0.0,-0.75) +
@@ -225,7 +224,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Heads Cast a Shadow',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.GIRL,x:0,y:3,angle:180),
         DancerModel.fromData(gender:Gender.BOY,x:0,y:1.5,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:-3,y:0,angle:270),

@@ -19,13 +19,13 @@
 */
 
 import '../../animated_call.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> RimsTradeAnything = [
 
     AnimatedCall('Rims Trade Chase Right',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       group:'Rims Trade',fractions:'3',
       paths:[
           RunRight +
@@ -43,7 +43,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Rims Trade Follow Your Neighbor',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       group:'Rims Trade',fractions:'3',
       paths:[
           SwingRight +
@@ -61,7 +61,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Rims Trade Pass the Ocean',
-      formation:Formations.LinesFacingOut,
+      formation:Formation('Lines Facing Out'),
       group:'Rims Trade',fractions:'3',
       paths:[
           FlipLeft +
@@ -79,7 +79,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Rims Trade Pass Thru',
-      formation:Formations.LinesFacingOut,
+      formation:Formation('Lines Facing Out'),
       group:'Rims Trade',fractions:'3',
       paths:[
           FlipLeft +
@@ -96,7 +96,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Hubs Trade Zoom',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       group:'Hubs Trade',fractions:'3',
       paths:[
           SwingRight,

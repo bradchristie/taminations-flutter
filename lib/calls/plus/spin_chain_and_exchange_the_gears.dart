@@ -19,13 +19,13 @@
 */
 
 import '../../animated_call.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> SpinChainAndExchangeTheGears = [
 
     AnimatedCall('Spin Chain and Exchange the Gears',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       from:'Right-Hand Waves',parts:'3;4.5;3;4.5',difficulty: 1,
       paths:[
           SwingRight +
@@ -74,7 +74,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Spin Chain and Exchange the Gears',
-      formation:Formations.OceanWavesLHBGGB,
+      formation:Formation('Ocean Waves LH BGGB'),
       from:'Left-Hand Waves',parts:'3;4.5;3;4.5',difficulty: 2,
       paths:[
           SwingLeft +
@@ -123,7 +123,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Spin Chain and Exchange the Gears',
-      formation:Formations.EightChainThru,
+      formation:Formation('Eight Chain Thru'),
       from:'Eight Chain Thru',parts:'5;4.5;3;4.5',difficulty: 2,
       paths:[
           ExtendLeft.changeBeats(2).scale(1.0,2.0) +
@@ -176,7 +176,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left Spin Chain and Exchange the Gears',
-      formation:Formations.EightChainThru,
+      formation:Formation('Eight Chain Thru'),
       from:'Eight Chain Thru',group:' ',parts:'5;4.5;3;4.5',difficulty: 3,
       paths:[
           Forward.changeBeats(2) +
@@ -229,7 +229,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Spin Chain and Exchange the Gears, Do Not Turn the Star',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       group:' ',parts:'3;4.5;3;0',difficulty: 3,
       paths:[
           SwingRight +
@@ -274,7 +274,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Spin Chain and Exchange the Gears, Turn the Star One Quarter',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       group:' ',parts:'3;4.5;3;1.5',difficulty: 2,
       paths:[
           SwingRight +
@@ -321,7 +321,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Spin Chain and Exchange the Gears, Turn the Star One Half',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       from:'Right-Hand Waves',group:' ',parts:'3;4.5;3;3',difficulty: 2,
       paths:[
           SwingRight +
@@ -370,7 +370,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Spin Chain and Exchange the Gears, Turn the Star a Full Turn',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       from:'Right-Hand Waves',group:' ',parts:'3;4.5;3;6',difficulty: 2,
       taminator: '''A common variation.
     ''',
@@ -423,7 +423,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Spin Chain and Exchange the Gears, Do Not Turn the Star',
-      formation:Formations.OceanWavesLHBGGB,
+      formation:Formation('Ocean Waves LH BGGB'),
       group:' ',parts:'3;4.5;3;0',difficulty: 3,noDisplay: true,
       paths:[
           SwingLeft +
@@ -468,7 +468,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Spin Chain and Exchange the Gears, Turn the Star One Quarter',
-      formation:Formations.OceanWavesLHBGGB,
+      formation:Formation('Ocean Waves LH BGGB'),
       group:' ',parts:'3;4.5;3;1.5',difficulty: 2,noDisplay: true,
       paths:[
           SwingLeft +
@@ -515,7 +515,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Spin Chain and Exchange the Gears, Turn the Star One Half',
-      formation:Formations.OceanWavesLHBGGB,
+      formation:Formation('Ocean Waves LH BGGB'),
       group:' ',parts:'3;4.5;3;3',difficulty: 2,noDisplay: true,
       paths:[
           SwingLeft +
@@ -564,7 +564,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Spin Chain and Exchange the Gears, Turn the Star a Full Turn',
-      formation:Formations.OceanWavesLHBGGB,
+      formation:Formation('Ocean Waves LH BGGB'),
       group:' ',parts:'3;4.5;3;6',difficulty: 2,noDisplay: true,
       paths:[
           SwingLeft +

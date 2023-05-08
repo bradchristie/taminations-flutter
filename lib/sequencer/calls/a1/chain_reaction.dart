@@ -17,7 +17,6 @@
  *     along with Taminations.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import '../../../formations.dart';
 import '../common.dart';
 
 class ChainReaction extends Action with CallWithParts, CallWithStars, ButCall {
@@ -42,7 +41,7 @@ The centers part of Part 4 can be changed with But (another call).
         ? LevelData.A1 : LevelData.C1;
     ctx.applyCalls('Facing Dancers Pass Thru '
         'While Center Wave Except the Very Centers Counter Rotate');
-    ctx.adjustToFormation(Formations.SausageRH);
+    ctx.adjustToFormation(Formation('Sausage RH'));
     ctx.level = level;
   }
 

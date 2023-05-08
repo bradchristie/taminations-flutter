@@ -19,13 +19,13 @@
 */
 
 import '../../animated_call.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> CoupleUp = [
 
     AnimatedCall('Couple Up',
-      formation:Formations.BoxRH,
+      formation:Formation('Box RH'),
       from:'Right-Hand Box',parts:'4',
       paths:[
           Forward_4 +
@@ -35,7 +35,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Couple Up',
-      formation:Formations.BoxLH,
+      formation:Formation('Box LH'),
       from:'Left-Hand Box',parts:'4',
       paths:[
           RunLeft.changeBeats(4),
@@ -45,7 +45,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Couple Up',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       from:'Right-Hand Waves',parts:'4',
       paths:[
           Forward_4 +
@@ -60,7 +60,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Couple Up',
-      formation:Formations.OceanWavesLHBGGB,
+      formation:Formation('Ocean Waves LH BGGB'),
       from:'Left-Hand Waves',parts:'4',
       paths:[
           RunLeft.changeBeats(4),
@@ -75,7 +75,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Couple Up',
-      formation:Formations.ColumnRHGBGB,
+      formation:Formation('Column RH GBGB'),
       from:'Right-Hand Columns',parts:'3',
       paths:[
           RunRight,
@@ -90,7 +90,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Couple Up',
-      formation:Formations.ColumnLHGBGB,
+      formation:Formation('Column LH GBGB'),
       from:'Left-Hand Columns',parts:'3',
       paths:[
           Forward_2.changeBeats(3) +
@@ -105,7 +105,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Counter Couple Up',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       group:'  ',parts:'4',
       taminator: '''
       This is an application of the C-2 Anything Concept.
@@ -123,7 +123,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Split Counter Couple Up',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       group:'  ',parts:'3',
       taminator: '''
       This is an application of the C-2 Anything Concept.
@@ -141,7 +141,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Trade Couple Up',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       group:'  ',parts:'4',
       taminator: '''
       This is an application of the C-2 Anything Concept.
@@ -161,7 +161,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Trade Like a Couple Up',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       group:'  ',parts:'3',
       paths:[
           SwingRight +
@@ -176,7 +176,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('As Couples Couple Up',
-      formation:Formations.TwomFacedLinesRH,
+      formation:Formation('Two-Faced Lines RH'),
       group:' ',parts:'4',
       paths:[
           Forward_4.changehands(2) +
@@ -191,7 +191,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Concentric Couple Up',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       group:' ',parts:'4',
       paths:[
           Forward_4 +
@@ -206,7 +206,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Once Removed Couple Up',
-      formation:Formations.TwomFacedLinesRH,
+      formation:Formation('Two-Faced Lines RH'),
       group:' ',parts:'4',
       paths:[
           Forward_4 +
@@ -221,7 +221,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Tandem Couple Up',
-      formation:Formations.ColumnRHGBGB,
+      formation:Formation('Column RH GBGB'),
       group:' ',
       paths:[
           RunRight +

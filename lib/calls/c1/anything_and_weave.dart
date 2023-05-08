@@ -21,13 +21,12 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> AnythingAndWeave = [
 
     AnimatedCall('Weave',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:1,y:2,angle:270),
         DancerModel.fromData(gender:Gender.GIRL,x:-1,y:2,angle:90),
   ]),
@@ -40,7 +39,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Weave',
-      formation:Formations.BoxLH,
+      formation:Formation('Box LH'),
       from:'Left-Hand Box',
       paths:[
           LeadLeft,
@@ -50,7 +49,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Weave',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:0,y:3,angle:270),
         DancerModel.fromData(gender:Gender.GIRL,x:0,y:1,angle:90),
   ]),
@@ -65,7 +64,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Weave',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       from:'Right-Hand Waves',
       paths:[
           ExtendRight.changeBeats(2).scale(2.0,1.5) +
@@ -80,7 +79,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Weave',
-      formation:Formations.OceanWavesLHBGGB,
+      formation:Formation('Ocean Waves LH BGGB'),
       from:'Left-Hand Waves',
       paths:[
           LeadLeft,
@@ -95,7 +94,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Weave',
-      formation:Formations.ColumnRHGBGB,
+      formation:Formation('Column RH GBGB'),
       from:'Right-Hand Columns',
       paths:[
           LeadRight.scale(0.5,1.0),
@@ -110,7 +109,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Weave',
-      formation:Formations.ColumnLHGBGB,
+      formation:Formation('Column LH GBGB'),
       from:'Left-Hand Columns',
       paths:[
           ExtendLeft.changeBeats(1.5).scale(1.0,1.5) +
@@ -125,7 +124,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Weave',
-      formation:Formations.EightChainThru,
+      formation:Formation('Eight Chain Thru'),
       from:'Eight Chain Thru',
       paths:[
           ExtendLeft +
@@ -144,7 +143,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('As Couples Weave',
-      formation:Formations.TwomFacedLinesRH,
+      formation:Formation('Two-Faced Lines RH'),
       group:' ',
       paths:[
           ExtendRight.changeBeats(3).changehands(2).scale(2.0,3.5) +
@@ -159,7 +158,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('All 8 Weave',
-      formation:Formations.StaticMiniWavesRH,
+      formation:Formation('Static MiniWaves RH'),
       group:' ',
       paths:[
           ExtendRight.changeBeats(3).scale(3.0,2.0) +
@@ -174,7 +173,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Tandem Weave',
-      formation:Formations.ColumnRHGBGB,
+      formation:Formation('Column RH GBGB'),
       group:' ',
       paths:[
           CounterRotateRight_0_m2.changeBeats(3).skew(0.0,-0.5),
@@ -190,7 +189,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Tandem Weave',
-      formation:Formations.ColumnLHGBGB,
+      formation:Formation('Column LH GBGB'),
       group:' ',noDisplay: true,
       paths:[
           ExtendLeft.changeBeats(2).scale(2.0,1.5) +

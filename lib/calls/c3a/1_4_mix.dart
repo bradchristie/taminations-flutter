@@ -20,13 +20,13 @@
 
 import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> Q14Mix = [
 
     AnimatedCall('1/4 Mix',
-      formation:Formations.BoxRHCompact,
+      formation:Formation('Box RH Compact'),
       from:'Right-Hand Box',parts:'1.5;4',
       paths:[
           HingeRight.skew(-0.5,0.0) +
@@ -38,7 +38,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('1/4 Mix',
-      formation:Formations.DiamondRH,
+      formation:Formation('Diamond RH'),
       from:'Right-Hand Diamond',parts:'1.5;4',
       paths:[
           Stand.changeBeats(1.5) +
@@ -50,7 +50,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('1/4 Mix',
-      formation:Formations.DiamondFacingRH,
+      formation:Formation('Diamond Facing RH'),
       from:'Facing Diamond',parts:'1.5;4',
       paths:[
           Stand.changeBeats(1.5) +
@@ -62,7 +62,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('1/4 Mix',
-      formation:Formations.OceanWavesRHBGBG,
+      formation:Formation('Ocean Waves RH BGBG'),
       from:'Right-Hand Waves',parts:'1.5;4',
       paths:[
           HingeRight +
@@ -81,7 +81,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('1/4 Mix',
-      formation:Formations.OceanWavesLHBGGB,
+      formation:Formation('Ocean Waves LH BGGB'),
       from:'Left-Hand Waves',parts:'1.5;4',
       paths:[
           Path(),
@@ -97,7 +97,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('1/4 Mix',
-      formation:Formations.ColumnRHGBGB,
+      formation:Formation('Column RH GBGB'),
       from:'Right-Hand Columns',parts:'1.5;3',
       paths:[
           HingeRight.scale(0.5,1.0) +
@@ -116,7 +116,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('1/4 Mix',
-      formation:Formations.DiamondsRHGirlPoints,
+      formation:Formation('Diamonds RH Girl Points'),
       from:'Right-Hand Diamonds',parts:'1.5;4',
       paths:[
           HingeRight +
@@ -135,7 +135,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('1/4 Mix',
-      formation:Formations.DiamondsFacingGirlPoints,
+      formation:Formation('Diamonds Facing Girl Points'),
       from:'Facing Diamonds',parts:'1.5;4',
       paths:[
           HingeRight +
@@ -154,7 +154,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('1/4 Mix',
-      formation:Formations.DiamondsRHPTPGirlPoints,
+      formation:Formation('Diamonds RH PTP Girl Points'),
       from:'Point-to-Point Diamonds',parts:'4.5;4',
       paths:[
           HingeRight +
@@ -173,7 +173,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('1/4 Mix',
-      formation:Formations.AlamoWave,
+      formation:Formation('Alamo Wave'),
       from:'Alamo Ring',parts:'1.5;4',
       paths:[
           SxtnthLeft +
@@ -196,7 +196,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left 1/4 Mix',
-      formation:Formations.BoxLH,
+      formation:Formation('Box LH'),
       from:'Left-Hand Box',parts:'1.5;4',
       paths:[
           HingeLeft +
@@ -208,7 +208,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left 1/4 Mix',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       from:'Right-Hand Waves',parts:'1.5;4',
       paths:[
           Path(),
@@ -224,7 +224,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left 1/4 Mix',
-      formation:Formations.OceanWavesLHBGBG,
+      formation:Formation('Ocean Waves LH BGBG'),
       from:'Left-Hand Waves',parts:'1.5;4',
       paths:[
           HingeLeft +
@@ -243,7 +243,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left 1/4 Mix',
-      formation:Formations.ColumnLHGBGB,
+      formation:Formation('Column LH GBGB'),
       from:'Left-Hand Columns',parts:'1.5;3',
       paths:[
           HingeLeft.scale(0.5,1.0) +
@@ -262,7 +262,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left 1/4 Mix',
-      formation:Formations.DiamondsLHGirlPoints,
+      formation:Formation('Diamonds LH Girl Points'),
       from:'Left-Hand Diamonds',parts:'1.5;4',
       paths:[
           HingeLeft +
@@ -281,7 +281,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left 1/4 Mix',
-      formation:Formations.AlamoWave,
+      formation:Formation('Alamo Wave'),
       from:'Alamo Ring',parts:'1.5;4',
       paths:[
           SxtnthRight +
@@ -304,7 +304,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Grand 1/4 Mix',
-      formation:Formations.ColumnRHGBGB,
+      formation:Formation('Column RH GBGB'),
       group:' ',parts:'1.5;3',
       paths:[
           HingeRight.scale(0.5,1.0) +
@@ -324,7 +324,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Grand Left 1/4 Mix',
-      formation:Formations.ColumnLHGBGB,
+      formation:Formation('Column LH GBGB'),
       group:' ',parts:'1.5;3',
       paths:[
           HingeLeft.scale(0.5,1.0) +
@@ -344,7 +344,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('As Couples 1/4 Mix',
-      formation:Formations.TwomFacedLinesRH,
+      formation:Formation('Two-Faced Lines RH'),
       group:'  ',parts:'2;3',
       paths:[
           HingeRight.changeBeats(2).scale(1.5,3.0) +
@@ -363,7 +363,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('3/4 Mix',
-      formation:Formations.BoxRH,
+      formation:Formation('Box RH'),
       from:'Right-Hand Box',parts:'4.5;4',
       paths:[
           CastRight +
@@ -375,7 +375,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('3/4 Mix',
-      formation:Formations.DiamondRH,
+      formation:Formation('Diamond RH'),
       from:'Right-Hand Diamond',parts:'4.5;4',
       paths:[
           Stand.changeBeats(4.5) +
@@ -387,7 +387,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('3/4 Mix',
-      formation:Formations.DiamondFacingRH,
+      formation:Formation('Diamond Facing RH'),
       from:'Facing Diamond',parts:'4.5;4',
       paths:[
           Stand.changeBeats(4.5) +
@@ -399,7 +399,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('3/4 Mix',
-      formation:Formations.OceanWavesRHBGBG,
+      formation:Formation('Ocean Waves RH BGBG'),
       from:'Right-Hand Waves',parts:'4.5;4',
       paths:[
           CastRight +
@@ -418,7 +418,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('3/4 Mix',
-      formation:Formations.OceanWavesLHBGGB,
+      formation:Formation('Ocean Waves LH BGGB'),
       from:'Left-Hand Waves',parts:'4.5;4',
       paths:[
           Path(),
@@ -434,7 +434,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('3/4 Mix',
-      formation:Formations.ColumnRHGBGB,
+      formation:Formation('Column RH GBGB'),
       from:'Right-Hand Columns',parts:'4.5;3',
       paths:[
           HingeRight.scale(0.5,1.0) +
@@ -457,7 +457,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('3/4 Mix',
-      formation:Formations.DiamondsRHGirlPoints,
+      formation:Formation('Diamonds RH Girl Points'),
       from:'Right-Hand Diamonds',parts:'4.5;4',
       paths:[
           CastRight +
@@ -476,7 +476,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('3/4 Mix',
-      formation:Formations.DiamondsFacingGirlPoints,
+      formation:Formation('Diamonds Facing Girl Points'),
       from:'Facing Diamonds',parts:'4.5;4',
       paths:[
           CastRight +
@@ -495,7 +495,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('3/4 Mix',
-      formation:Formations.DiamondsRHPTPGirlPoints,
+      formation:Formation('Diamonds RH PTP Girl Points'),
       from:'Point-to-Point Diamonds',parts:'4.5;4',
       paths:[
           CastRight +
@@ -514,7 +514,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('3/4 Mix',
-      formation:Formations.AlamoWave,
+      formation:Formation('Alamo Wave'),
       from:'Alamo Ring',parts:'4.5;4',
       paths:[
           SxtnthLeft +
@@ -537,7 +537,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left 3/4 Mix',
-      formation:Formations.BoxLH,
+      formation:Formation('Box LH'),
       from:'Left-Hand Box',parts:'4.5;4',
       paths:[
           CastLeft +
@@ -549,7 +549,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left 3/4 Mix',
-      formation:Formations.DiamondLH,
+      formation:Formation('Diamond LH'),
       from:'Left-Hand Diamond',parts:'4.5;4',
       paths:[
           Stand.changeBeats(4.5) +
@@ -561,7 +561,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left 3/4 Mix',
-      formation:Formations.DiamondFacing,
+      formation:Formation('Diamond Facing'),
       from:'Facing Diamond',parts:'4.5;4',
       paths:[
           Stand.changeBeats(4.5) +
@@ -573,7 +573,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left 3/4 Mix',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       from:'Right-Hand Waves',parts:'4.5;4',
       paths:[
           Path(),
@@ -589,7 +589,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left 3/4 Mix',
-      formation:Formations.OceanWavesLHBGBG,
+      formation:Formation('Ocean Waves LH BGBG'),
       from:'Left-Hand Waves',parts:'4.5;4',
       paths:[
           CastLeft +
@@ -608,7 +608,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left 3/4 Mix',
-      formation:Formations.ColumnLHGBGB,
+      formation:Formation('Column LH GBGB'),
       from:'Left-Hand Columns',parts:'4.5;3',
       paths:[
           HingeLeft.scale(0.5,1.0) +
@@ -631,7 +631,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left 3/4 Mix',
-      formation:Formations.DiamondsLHGirlPoints,
+      formation:Formation('Diamonds LH Girl Points'),
       from:'Left-Hand Diamonds',parts:'4.5;4',
       paths:[
           CastLeft +
@@ -650,7 +650,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left 3/4 Mix',
-      formation:Formations.DiamondsFacingLHGirlPoints,
+      formation:Formation('Diamonds Facing LH Girl Points'),
       from:'Facing Diamonds',parts:'4.5;4',
       paths:[
           CastLeft +
@@ -669,7 +669,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left 3/4 Mix',
-      formation:Formations.DiamondsLHPTPGirlPoints,
+      formation:Formation('Diamonds LH PTP Girl Points'),
       from:'Point-to-Point Diamonds',parts:'4.5;4',
       paths:[
           CastLeft +
@@ -688,7 +688,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left 3/4 Mix',
-      formation:Formations.AlamoWave,
+      formation:Formation('Alamo Wave'),
       from:'Alamo Ring',parts:'4.5;4',
       paths:[
           SxtnthRight +
@@ -711,7 +711,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Grand 3/4 Mix',
-      formation:Formations.ColumnRHGBGB,
+      formation:Formation('Column RH GBGB'),
       group:' ',parts:'4.5;3',
       paths:[
           HingeRight.scale(0.5,1.0) +
@@ -735,7 +735,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Grand Left 3/4 Mix',
-      formation:Formations.ColumnLHGBGB,
+      formation:Formation('Column LH GBGB'),
       group:' ',parts:'1.5;3',
       paths:[
           HingeLeft.scale(0.5,1.0) +

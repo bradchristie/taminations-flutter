@@ -19,13 +19,13 @@
 */
 
 import '../../animated_call.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> SiameseConcept = [
 
     AnimatedCall('Siamese 2/3 Recycle',
-      formation:Formations.SiameseWave,
+      formation:Formation('Siamese Wave'),
       group:'Siamese',
       paths:[
           LeadRight.changeBeats(2).changehands(2).scale(2.0,2.5) +
@@ -44,7 +44,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Siamese Ah So',
-      formation:Formations.SiameseWave,
+      formation:Formation('Siamese Wave'),
       group:'Siamese',
       paths:[
           RunRight.changeBeats(6).changehands(6).scale(2.0,3.25).skew(2.0,0.0),
@@ -59,7 +59,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Siamese Alter the Wave',
-      formation:Formations.SiameseWave,
+      formation:Formation('Siamese Wave'),
       group:'Siamese',
       paths:[
           RunRight.changeBeats(4).changehands(2).scale(1.5,1.5) +
@@ -96,7 +96,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Siamese Bend the Line',
-      formation:Formations.Siamese_2mFacedLine_2,
+      formation:Formation('Siamese 2-Faced Line'),
       group:'Siamese',
       paths:[
           BackHingeLeft.changeBeats(3).changehands(6).scale(1.0,0.5),
@@ -109,7 +109,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Box Circulate',
-      formation:Formations.SiameseBox_3,
+      formation:Formation('Siamese Box 3'),
       group:'Siamese',
       paths:[
           RunRight.changeBeats(4).changehands(2).scale(2.5,3.0),
@@ -122,7 +122,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Siamese Cross Your Neighbor',
-      formation:Formations.SiameseBox_3,
+      formation:Formation('Siamese Box 3'),
       group:'Siamese',
       paths:[
           LeadRight.changeBeats(4).changehands(2).scale(3.0,3.0) +
@@ -145,7 +145,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Siamese Diamond Circulate',
-      formation:Formations.InterlockedDiamondsRHGirlPoints,
+      formation:Formation('Interlocked Diamonds RH Girl Points'),
       group:'Siamese',
       paths:[
           LeadRight.changeBeats(6).changehands(6).scale(5.0,3.0),
@@ -158,7 +158,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Siamese Dixie Style to a Wave',
-      formation:Formations.SiameseBox_2,
+      formation:Formation('Siamese Box 2'),
       group:'Siamese',
       paths:[
           ExtendLeft.changeBeats(3).changehands(5).scale(2.0,3.5) +
@@ -177,7 +177,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Siamese Follow Thru',
-      formation:Formations.SiameseBox_3,
+      formation:Formation('Siamese Box 3'),
       group:'Siamese',
       paths:[
           LeadRight.changeBeats(5).changehands(2).scale(3.0,3.0),
@@ -192,7 +192,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Siamese Mix',
-      formation:Formations.SiameseWave_2,
+      formation:Formation('Siamese Wave 2'),
       group:'Siamese',
       paths:[
           RunLeft.changeBeats(4).changehands(2).scale(2.0,1.5),
@@ -209,7 +209,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Siamese Pass the Ocean',
-      formation:Formations.SiameseBox_1,
+      formation:Formation('Siamese Box 1'),
       group:'Siamese',
       paths:[
           ExtendLeft.changeBeats(2).changehands(2).scale(2.0,0.5) +
@@ -226,7 +226,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Siamese Recycle',
-      formation:Formations.SiameseWave,
+      formation:Formation('Siamese Wave'),
       group:'Siamese',
       paths:[
           RunRight.changeBeats(8).changehands(2).scale(2.5,3.25).skew(2.0,0.0),
@@ -245,7 +245,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Siamese Spin the Top',
-      formation:Formations.SiameseWave,
+      formation:Formation('Siamese Wave'),
       group:'Siamese',parts:'4',
       paths:[
           RunRight.changeBeats(4).changehands(2).scale(1.5,1.5) +
@@ -266,7 +266,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Siamese Zing',
-      formation:Formations.SiameseBox_3,
+      formation:Formation('Siamese Box 3'),
       group:'Siamese',
       paths:[
           UmTurnLeft.changehands(2) +

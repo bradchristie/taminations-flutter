@@ -18,7 +18,6 @@
 
 */
 
-import '../../../formations.dart';
 import '../../../moves.dart';
 import '../coded_call.dart';
 import '../common.dart';
@@ -82,7 +81,7 @@ class SelectTriangle extends CodedCall {
           }
         } else {
           //  No points, maybe a sausage
-          final sausage = CallContext.fromFormation(Formations.SausageRH);
+          final sausage = CallContext.fromFormation(Formation('Sausage RH'));
           if (ctx.matchFormations(sausage,rotate:180) != null) {
             for (final d in ctx.center(2))
               d.data.active = false;
@@ -186,7 +185,7 @@ You do not need to use one of these if the triangles are unambiguous (as in a sa
           }
         } else {
           //  No points, maybe a sausage
-          final sausage = CallContext.fromFormation(Formations.SausageRH);
+          final sausage = CallContext.fromFormation(Formation('Sausage RH'));
           if (ctx.matchFormations(sausage,rotate:180) != null) {
             for (final d in ctx.center(2))
               d.data.active = false;

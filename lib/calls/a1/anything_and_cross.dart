@@ -20,13 +20,13 @@
 
 import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> AnythingAndCross = [
 
     AnimatedCall('Cross',
-      formation:Formations.BoxRH,
+      formation:Formation('Box RH'),
       from:'Right-Hand Box',
       paths:[
           ExtendRight.changeBeats(2).changehands(1).scale(3.0,2.0) +
@@ -36,7 +36,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cross',
-      formation:Formations.BoxLH,
+      formation:Formation('Box LH'),
       from:'Left-Hand Box',
       paths:[
           Stand.changeBeats(3).changehands(0),
@@ -46,7 +46,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cross',
-      formation:Formations.ColumnRHGBGB,
+      formation:Formation('Column RH GBGB'),
       from:'Right-Hand Columns',
       paths:[
           Stand.changeBeats(2).changehands(0),
@@ -59,7 +59,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cross',
-      formation:Formations.OceanWavesRHBGBG,
+      formation:Formation('Ocean Waves RH BGBG'),
       from:'Right-Hand Waves',
       paths:[
           ExtendRight.changeBeats(2).changehands(1).scale(3.0,2.0) +
@@ -74,7 +74,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cross',
-      formation:Formations.OceanWavesLHBGBG,
+      formation:Formation('Ocean Waves LH BGBG'),
       from:'Left-Hand Waves',
       paths:[
           Stand.changeBeats(3).changehands(0),
@@ -89,7 +89,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Beaus Cross',
-      formation:Formations.FacingCouplesCompact,
+      formation:Formation('Facing Couples Compact'),
       from:'Facing Couples',
       paths:[
       Path.fromMovement(Movement.fromData(beats: 2, hands: Hands.LEFT, cx1: 1, cy1: 0, cx2: .8, cy2: -2, x2: 3, y2: -2, cx3: 1, cx4: 1, cy4: -.4, x4: 2, y4: -.4  )),
@@ -98,7 +98,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Beaus Cross',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       from:'Normal Lines',
       paths:[
       Path.fromMovement(Movement.fromData(beats: 2, hands: Hands.LEFT, cx1: 1, cy1: 0, cx2: .8, cy2: -2, x2: 4, y2: -2, cx3: 1, cx4: 1, cy4: -.4, x4: 2, y4: -.4  )),
@@ -111,7 +111,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Belles Cross',
-      formation:Formations.FacingCouplesCompact,
+      formation:Formation('Facing Couples Compact'),
       from:'Facing Couples',
       paths:[
           Stand.changeBeats(2).changehands(0),
@@ -120,7 +120,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Belles Cross',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       from:'Normal Lines',
       paths:[
           Stand.changeBeats(2).changehands(0),
@@ -133,7 +133,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Wheel and Deal, Beaus Cross',
-      formation:Formations.TwomFacedLineRH,
+      formation:Formation('Two-Faced Line RH'),
       group:' ',
       paths:[
           RunRight.changeBeats(4).changehands(2).scale(2.0,2.0).skew(2.0,0.0) +

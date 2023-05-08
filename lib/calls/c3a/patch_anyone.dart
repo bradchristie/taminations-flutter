@@ -21,13 +21,12 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> PatchAnyone = [
 
     AnimatedCall('Patch the Centers',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.GIRL,x:1,y:3,angle:90),
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:3,angle:90),
         DancerModel.fromData(gender:Gender.GIRL,x:1,y:1,angle:90),
@@ -47,7 +46,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Patch the Leaders',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       group:' ',parts:'1.5',
       paths:[
           HingeRight,
@@ -62,7 +61,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Patch the Boys',
-      formation:Formations.LinesFacingOut,
+      formation:Formation('Lines Facing Out'),
       group:' ',isGenderSpecific:true,parts:'1.5',
       paths:[
           QuarterLeft.skew(-1.0,1.0),

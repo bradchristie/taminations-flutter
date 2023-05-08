@@ -25,7 +25,6 @@ import 'package:taminations/moves.dart';
 
 import '../common_flutter.dart';
 import '../dance_model.dart';
-import '../formations.dart';
 import 'page.dart';
 import 'practice_page.dart';
 
@@ -46,7 +45,7 @@ class TutorialModel extends PracticeModel {
 
   static final calls = [
     AnimatedCall('Couples Circulate',
-        formation:Formation('', [
+        formation:Formation('', dancers:[
           DancerModel.fromData(gender:Gender.BOY,x:-2,y:3,angle:0),
           DancerModel.fromData(gender:Gender.GIRL,x:-2,y:1,angle:0),
           DancerModel.fromData(gender:Gender.BOY,x:-2,y:-1,angle:180),
@@ -58,13 +57,13 @@ class TutorialModel extends PracticeModel {
           RunRight.changeBeats(4.0).changehands(Hands.RIGHT).scale(3.0, 3.0)
         ]),
     AnimatedCall('Partner Trade',
-        formation: Formations.BoxRH,
+        formation: Formation('Box RH'),
         paths:[
           SwingRight,
           SwingRight
         ]),
     AnimatedCall('As Couples Walk and Dodge',
-        formation: Formations.TwomFacedLinesLH,
+        formation: Formation('Two-Faced Lines LH'),
         paths: [
           DodgeLeft.changeBeats(4.0).changehands(Hands.GRIPLEFT).scale(2, 2),
           DodgeLeft.changeBeats(4.0).changehands(Hands.GRIPRIGHT).scale(2, 2),
@@ -72,7 +71,7 @@ class TutorialModel extends PracticeModel {
           Forward_4.changehands(Hands.LEFT)
         ]),
     AnimatedCall('U-Turn Left',
-        formation: Formations.FacingCouples,
+        formation: Formation('Facing Couples'),
         paths: [
           UmTurnLeft,
           UmTurnLeft

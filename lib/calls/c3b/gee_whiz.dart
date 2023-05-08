@@ -19,13 +19,13 @@
 */
 
 import '../../animated_call.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> GeeWhiz = [
 
     AnimatedCall('Gee Whiz',
-      formation:Formations.TwomFacedLinesRH,
+      formation:Formation('Two-Faced Lines RH'),
       from:'Right-Hand Two-Faced Lines',
       paths:[
           Stand.changeBeats(2) +
@@ -41,7 +41,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Gee Whiz',
-      formation:Formations.TwomFacedLinesLH,
+      formation:Formation('Two-Faced Lines LH'),
       from:'Left-Hand Two-Faced Lines',
       paths:[
           RunLeft.changeBeats(5).scale(1.5,2.0).skew(1.0,0.0),
@@ -57,7 +57,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left Gee Whiz',
-      formation:Formations.LinesFacingOut,
+      formation:Formation('Lines Facing Out'),
       group:' ',
       paths:[
           UmTurnLeft.changeBeats(2).skew(-1.5,0.5) +
@@ -75,7 +75,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Right Gee Whiz',
-      formation:Formations.LinesFacingOut,
+      formation:Formation('Lines Facing Out'),
       group:' ',
       paths:[
           RunLeft.changeBeats(5).scale(1.5,2.0).skew(1.0,0.0),

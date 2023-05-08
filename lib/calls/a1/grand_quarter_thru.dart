@@ -21,13 +21,12 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> GrandQuarterThru = [
 
     AnimatedCall('Grand Quarter Thru',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.GIRL,x:1,y:-3,angle:270),
         DancerModel.fromData(gender:Gender.BOY,x:1,y:-1,angle:270),
         DancerModel.fromData(gender:Gender.GIRL,x:1,y:1,angle:270),
@@ -48,7 +47,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Grand Quarter Thru',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.GIRL,x:1,y:-3,angle:270),
         DancerModel.fromData(gender:Gender.BOY,x:1,y:0,angle:270),
         DancerModel.fromData(gender:Gender.GIRL,x:1,y:3,angle:270),
@@ -65,7 +64,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Grand Quarter Thru',
-      formation:Formations.DiamondsFacingPTP,
+      formation:Formation('Diamonds Facing PTP'),
       from:'Facing Point-to-Point Diamonds',parts:'2',
       paths:[
           HingeRight.changeBeats(2),
@@ -80,7 +79,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Grand Left Quarter Thru',
-      formation:Formations.ColumnLHGBGB,
+      formation:Formation('Column LH GBGB'),
       from:'Left-Hand Columns',parts:'2',
       paths:[
           HingeLeft.changeBeats(2).changehands(5).scale(0.5,1.0) +
@@ -96,7 +95,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Grand Left Quarter Thru',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.GIRL,x:1,y:-3,angle:90),
         DancerModel.fromData(gender:Gender.BOY,x:1,y:0,angle:90),
         DancerModel.fromData(gender:Gender.GIRL,x:1,y:3,angle:90),
@@ -113,7 +112,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Grand Left Quarter Thru',
-      formation:Formations.DiamondsFacingLHPTP,
+      formation:Formation('Diamonds Facing LH PTP'),
       from:'Facing Point-to-Point Diamonds',parts:'2',
       paths:[
           HingeLeft.changeBeats(2).scale(0.5,1.0) +
@@ -128,7 +127,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Grand 3/4 Thru',
-      formation:Formations.ColumnRHGBGB,
+      formation:Formation('Column RH GBGB'),
       from:'Right-Hand Columns',parts:'4.5',
       paths:[
           HingeRight.changehands(6).scale(0.5,1.0) +
@@ -148,7 +147,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Grand 3/4 Thru',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.GIRL,x:1,y:-3,angle:270),
         DancerModel.fromData(gender:Gender.BOY,x:1,y:0,angle:270),
         DancerModel.fromData(gender:Gender.GIRL,x:1,y:3,angle:270),
@@ -168,7 +167,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Grand 3/4 Thru',
-      formation:Formations.DiamondsFacingPTP,
+      formation:Formation('Diamonds Facing PTP'),
       from:'Facing Point-to-Point Diamonds',parts:'4.5',
       paths:[
           SwingRight +
@@ -186,7 +185,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Grand Left 3/4 Thru',
-      formation:Formations.ColumnLHGBGB,
+      formation:Formation('Column LH GBGB'),
       from:'Left-Hand Columns',parts:'4.5',
       paths:[
           HingeLeft.changehands(5).scale(0.5,1.0) +
@@ -206,7 +205,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Grand Left 3/4 Thru',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.GIRL,x:1,y:-3,angle:90),
         DancerModel.fromData(gender:Gender.BOY,x:1,y:0,angle:90),
         DancerModel.fromData(gender:Gender.GIRL,x:1,y:3,angle:90),
@@ -226,7 +225,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Grand Left 3/4 Thru',
-      formation:Formations.DiamondsFacingLHPTP,
+      formation:Formation('Diamonds Facing LH PTP'),
       from:'Facing Point-to-Point Diamonds',parts:'4.5',
       paths:[
           SwingLeft +

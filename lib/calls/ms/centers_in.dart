@@ -21,13 +21,12 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> CentersIn = [
 
     AnimatedCall('Centers In',
-      formation:Formations.CompletedDoublePassThru,
+      formation:Formation('Completed Double Pass Thru'),
       from:'Completed Double Pass Thru',difficulty: 1,
       paths:[
           DodgeRight.changeBeats(2).skew(-1.0,0.0),
@@ -40,7 +39,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Centers In',
-      formation:Formations.EightChainThru,
+      formation:Formation('Eight Chain Thru'),
       from:'Eight Chain Thru',difficulty: 2,
       paths:[
           DodgeLeft.changeBeats(2).skew(1.0,0.0),
@@ -53,7 +52,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Centers In',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.GIRL,x:-3,y:1,angle:0),
         DancerModel.fromData(gender:Gender.BOY,x:-3,y:-1,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:-1,y:1,angle:180),
@@ -71,7 +70,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Centers In',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.GIRL,x:-3,y:1,angle:180),
         DancerModel.fromData(gender:Gender.BOY,x:-3,y:-1,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:-1,y:1,angle:180),

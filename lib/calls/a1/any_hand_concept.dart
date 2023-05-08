@@ -21,7 +21,6 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 import '../a2/remake.dart' as a2;
 import '../c1/swing_the_fractions.dart' as c1;
@@ -29,7 +28,7 @@ import '../c1/swing_the_fractions.dart' as c1;
   final List<AnimatedCall> AnyHandConcept = [
 
     AnimatedCall('Any Hand Swing Thru',
-      formation:Formations.InvertedLinesEndsFacingOut,
+      formation:Formation('Inverted Lines Ends Facing Out'),
       from:'Inverted Lines, Ends Facing Out',parts:'3',
       paths:[
           SwingLeft +
@@ -44,7 +43,7 @@ import '../c1/swing_the_fractions.dart' as c1;
       ]),
 
     AnimatedCall('Any Hand Swing Thru',
-      formation:Formations.InvertedLinesEndsFacingIn,
+      formation:Formation('Inverted Lines Ends Facing In'),
       from:'Inverted Lines, Ends Facing In',parts:'3',
       paths:[
           SwingRight +
@@ -59,7 +58,7 @@ import '../c1/swing_the_fractions.dart' as c1;
       ]),
 
     AnimatedCall('Any Hand Swing Thru',
-      formation:Formations.TidalInvertedLineRH,
+      formation:Formation('Tidal Inverted Line RH'),
       from:'Tidal Inverted Line, Right-Hand Centers',parts:'3',
       paths:[
           SwingRight.scale(0.5,0.5) +
@@ -74,7 +73,7 @@ import '../c1/swing_the_fractions.dart' as c1;
       ]),
 
     AnimatedCall('Any Hand Swing Thru',
-      formation:Formations.TidalInvertedLineLH,
+      formation:Formation('Tidal Inverted Line LH'),
       from:'Tidal Inverted Line, Left-Hand Centers',parts:'3',
       paths:[
           SwingLeft.scale(0.5,0.5) +
@@ -89,7 +88,7 @@ import '../c1/swing_the_fractions.dart' as c1;
       ]),
 
     AnimatedCall('Any Hand Grand Swing Thru',
-      formation:Formations.TidalInvertedLineRH,
+      formation:Formation('Tidal Inverted Line RH'),
       from:'Tidal Inverted Line, Right-Hand Centers',parts:'3',
       paths:[
           SwingRight.scale(0.5,0.5) +
@@ -105,7 +104,7 @@ import '../c1/swing_the_fractions.dart' as c1;
       ]),
 
     AnimatedCall('Any Hand Grand Swing Thru',
-      formation:Formations.TidalInvertedLineLH,
+      formation:Formation('Tidal Inverted Line LH'),
       from:'Tidal Inverted Line, Left-Hand Centers',parts:'3',
       paths:[
           SwingLeft.scale(0.5,0.5) +
@@ -121,7 +120,7 @@ import '../c1/swing_the_fractions.dart' as c1;
       ]),
 
     AnimatedCall('Any Hand Quarter Thru',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:3,y:2,angle:90),
         DancerModel.fromData(gender:Gender.GIRL,x:1,y:2,angle:270),
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:2,angle:270),
@@ -141,7 +140,7 @@ import '../c1/swing_the_fractions.dart' as c1;
       ]),
 
     AnimatedCall('Any Hand Quarter Thru',
-      formation:Formations.InvertedLinesEndsFacingIn,
+      formation:Formation('Inverted Lines Ends Facing In'),
       from:'Inverted Lines, Ends Facing In',parts:'1.5',
       paths:[
           HingeRight +
@@ -156,7 +155,7 @@ import '../c1/swing_the_fractions.dart' as c1;
       ]),
 
     AnimatedCall('Any Hand Quarter Thru',
-      formation:Formations.MagicColumnRH,
+      formation:Formation('Magic Column RH'),
       from:'Magic Columns, Right-Hand Centers',parts:'1.5',
       paths:[
           HingeLeft.scale(0.5,1.0) +
@@ -171,7 +170,7 @@ import '../c1/swing_the_fractions.dart' as c1;
       ]),
 
     AnimatedCall('Any Hand Quarter Thru',
-      formation:Formations.MagicColumnLH,
+      formation:Formation('Magic Column LH'),
       from:'Magic Columns, Left-Hand Centers',parts:'1.5',
       paths:[
           HingeRight.scale(0.5,1.0),
@@ -186,7 +185,7 @@ import '../c1/swing_the_fractions.dart' as c1;
       ]),
 
     AnimatedCall('Any Hand Quarter Thru',
-      formation:Formations.DiamondRH,
+      formation:Formation('Diamond RH'),
       from:'Right-Hand Diamond',parts:'1.5',
       paths:[
           Stand.changeBeats(1.5) +
@@ -197,7 +196,7 @@ import '../c1/swing_the_fractions.dart' as c1;
       ]),
 
     AnimatedCall('Any Hand Quarter Thru',
-      formation:Formations.DiamondLHBoysCenter,
+      formation:Formation('Diamond LH Boys Center'),
       from:'Left-Hand Diamond',parts:'1.5',
       paths:[
           HingeLeft +
@@ -208,7 +207,7 @@ import '../c1/swing_the_fractions.dart' as c1;
       ]),
 
     AnimatedCall('Any Hand Quarter Thru',
-      formation:Formations.DiamondsRHGirlPoints,
+      formation:Formation('Diamonds RH Girl Points'),
       from:'Right-Hand Diamonds',parts:'1.5',
       paths:[
           HingeRight +
@@ -225,7 +224,7 @@ import '../c1/swing_the_fractions.dart' as c1;
       ]),
 
     AnimatedCall('Any Hand Quarter Thru',
-      formation:Formations.DiamondsLHGirlPoints,
+      formation:Formation('Diamonds LH Girl Points'),
       from:'Left-Hand Diamonds',parts:'1.5',
       paths:[
           HingeLeft +
@@ -242,7 +241,7 @@ import '../c1/swing_the_fractions.dart' as c1;
       ]),
 
     AnimatedCall('Any Hand Quarter Thru',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:0,y:-3,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:-3,y:-2,angle:90),
         DancerModel.fromData(gender:Gender.BOY,x:0,y:-1,angle:0),
@@ -264,7 +263,7 @@ import '../c1/swing_the_fractions.dart' as c1;
       ]),
 
     AnimatedCall('Any Hand Quarter Thru',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:0,y:-3,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:-3,y:-2,angle:270),
         DancerModel.fromData(gender:Gender.BOY,x:0,y:-1,angle:0),
@@ -286,7 +285,7 @@ import '../c1/swing_the_fractions.dart' as c1;
       ]),
 
     AnimatedCall('Any Hand Quarter Thru',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:0,y:-3,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:-3,y:-2,angle:90),
         DancerModel.fromData(gender:Gender.BOY,x:0,y:-1,angle:180),
@@ -308,7 +307,7 @@ import '../c1/swing_the_fractions.dart' as c1;
       ]),
 
     AnimatedCall('Any Hand Quarter Thru',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:0,y:-3,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:-3,y:-2,angle:270),
         DancerModel.fromData(gender:Gender.BOY,x:0,y:-1,angle:180),
@@ -330,7 +329,7 @@ import '../c1/swing_the_fractions.dart' as c1;
       ]),
 
     AnimatedCall('Any Hand Quarter Thru',
-      formation:Formations.DiamondsRHPTPGirlPoints,
+      formation:Formation('Diamonds RH PTP Girl Points'),
       from:'Right-Hand Point-to-Point Diamonds',parts:'1.5',
       paths:[
           HingeRight.scale(0.75,1.0) +
@@ -347,7 +346,7 @@ import '../c1/swing_the_fractions.dart' as c1;
       ]),
 
     AnimatedCall('Any Hand Quarter Thru',
-      formation:Formations.DiamondsLHPTPGirlPoints,
+      formation:Formation('Diamonds LH PTP Girl Points'),
       from:'Left-Hand Point-to-Point Diamonds',parts:'1.5',
       paths:[
           HingeLeft.scale(0.75,1.0) +
@@ -364,7 +363,7 @@ import '../c1/swing_the_fractions.dart' as c1;
       ]),
 
     AnimatedCall('Any Hand 3/4 Thru',
-      formation:Formations.InvertedLinesEndsFacingOut,
+      formation:Formation('Inverted Lines Ends Facing Out'),
       from:'Inverted Lines, Ends Facing Out',parts:'4.5',
       paths:[
           CastLeft +
@@ -379,7 +378,7 @@ import '../c1/swing_the_fractions.dart' as c1;
       ]),
 
     AnimatedCall('Any Hand 3/4 Thru',
-      formation:Formations.InvertedLinesEndsFacingIn,
+      formation:Formation('Inverted Lines Ends Facing In'),
       from:'Inverted Lines, Ends Facing In',parts:'4.5',
       paths:[
           CastRight,
@@ -394,7 +393,7 @@ import '../c1/swing_the_fractions.dart' as c1;
       ]),
 
     AnimatedCall('Any Hand 3/4 Thru',
-      formation:Formations.MagicColumnRH,
+      formation:Formation('Magic Column RH'),
       from:'Magic Columns, Right-Hand Centers',parts:'4.5',
       paths:[
           HingeLeft.scale(0.5,1.0) +
@@ -413,7 +412,7 @@ import '../c1/swing_the_fractions.dart' as c1;
       ]),
 
     AnimatedCall('Any Hand 3/4 Thru',
-      formation:Formations.MagicColumnLH,
+      formation:Formation('Magic Column LH'),
       from:'Magic Columns, Left-Hand Centers',parts:'4.5',
       paths:[
           HingeRight.scale(0.5,1.0) +
@@ -432,7 +431,7 @@ import '../c1/swing_the_fractions.dart' as c1;
       ]),
 
     AnimatedCall('Any Hand 3/4 Thru',
-      formation:Formations.DiamondRH,
+      formation:Formation('Diamond RH'),
       from:'Right-Hand Diamond',parts:'4.5',
       paths:[
           Stand.changeBeats(4.5) +
@@ -443,7 +442,7 @@ import '../c1/swing_the_fractions.dart' as c1;
       ]),
 
     AnimatedCall('Any Hand 3/4 Thru',
-      formation:Formations.DiamondLHBoysCenter,
+      formation:Formation('Diamond LH Boys Center'),
       from:'Left-Hand Diamond',parts:'4.5',
       paths:[
           CastLeft +
@@ -454,7 +453,7 @@ import '../c1/swing_the_fractions.dart' as c1;
       ]),
 
     AnimatedCall('Any Hand 3/4 Thru',
-      formation:Formations.DiamondsRHGirlPoints,
+      formation:Formation('Diamonds RH Girl Points'),
       from:'Right-Hand Diamonds',parts:'4.5',
       paths:[
           CastRight +
@@ -471,7 +470,7 @@ import '../c1/swing_the_fractions.dart' as c1;
       ]),
 
     AnimatedCall('Any Hand 3/4 Thru',
-      formation:Formations.DiamondsLHGirlPoints,
+      formation:Formation('Diamonds LH Girl Points'),
       from:'Left-Hand Diamonds',parts:'4.5',
       paths:[
           CastLeft +
@@ -488,7 +487,7 @@ import '../c1/swing_the_fractions.dart' as c1;
       ]),
 
     AnimatedCall('Any Hand 3/4 Thru',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:0,y:-3,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:-3,y:-2,angle:90),
         DancerModel.fromData(gender:Gender.BOY,x:0,y:-1,angle:0),
@@ -510,7 +509,7 @@ import '../c1/swing_the_fractions.dart' as c1;
       ]),
 
     AnimatedCall('Any Hand 3/4 Thru',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:0,y:-3,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:-3,y:-2,angle:270),
         DancerModel.fromData(gender:Gender.BOY,x:0,y:-1,angle:0),
@@ -532,7 +531,7 @@ import '../c1/swing_the_fractions.dart' as c1;
       ]),
 
     AnimatedCall('Any Hand 3/4 Thru',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:0,y:-3,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:-3,y:-2,angle:90),
         DancerModel.fromData(gender:Gender.BOY,x:0,y:-1,angle:180),
@@ -554,7 +553,7 @@ import '../c1/swing_the_fractions.dart' as c1;
       ]),
 
     AnimatedCall('Any Hand 3/4 Thru',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:0,y:-3,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:-3,y:-2,angle:270),
         DancerModel.fromData(gender:Gender.BOY,x:0,y:-1,angle:180),
@@ -576,7 +575,7 @@ import '../c1/swing_the_fractions.dart' as c1;
       ]),
 
     AnimatedCall('Any Hand 3/4 Thru',
-      formation:Formations.DiamondsRHPTPGirlPoints,
+      formation:Formation('Diamonds RH PTP Girl Points'),
       from:'Right-Hand Point-to-Point Diamonds',parts:'4.5',
       paths:[
           HingeRight.scale(0.75,1.0) +
@@ -595,7 +594,7 @@ import '../c1/swing_the_fractions.dart' as c1;
       ]),
 
     AnimatedCall('Any Hand 3/4 Thru',
-      formation:Formations.DiamondsLHPTPGirlPoints,
+      formation:Formation('Diamonds LH PTP Girl Points'),
       from:'Left-Hand Point-to-Point Diamonds',parts:'4.5',
       paths:[
           HingeLeft.scale(0.75,1.0) +
@@ -614,7 +613,7 @@ import '../c1/swing_the_fractions.dart' as c1;
       ]),
 
     AnimatedCall('Any Hand Grand Quarter Thru',
-      formation:Formations.MagicColumnRH,
+      formation:Formation('Magic Column RH'),
       from:'Magic Columns Right-Hand Centers',parts:'1.5',
       paths:[
           HingeLeft.scale(0.5,1.0) +
@@ -630,7 +629,7 @@ import '../c1/swing_the_fractions.dart' as c1;
       ]),
 
     AnimatedCall('Any Hand Grand Quarter Thru',
-      formation:Formations.MagicColumnLH,
+      formation:Formation('Magic Column LH'),
       from:'Magic Columns Left-Hand Centers',parts:'1.5',
       paths:[
           HingeRight.scale(0.5,1.0),
@@ -646,7 +645,7 @@ import '../c1/swing_the_fractions.dart' as c1;
       ]),
 
     AnimatedCall('Any Hand Grand 3/4 Thru',
-      formation:Formations.MagicColumnRH,
+      formation:Formation('Magic Column RH'),
       from:'Magic Columns, Right-Hand Centers',parts:'4.5',
       paths:[
           HingeLeft.scale(0.5,1.0) +
@@ -666,7 +665,7 @@ import '../c1/swing_the_fractions.dart' as c1;
       ]),
 
     AnimatedCall('Any Hand Grand 3/4 Thru',
-      formation:Formations.MagicColumnLH,
+      formation:Formation('Magic Column LH'),
       from:'Magic Columns, Left-Hand Centers',parts:'4.5',
       paths:[
           HingeRight.scale(0.5,1.0) +

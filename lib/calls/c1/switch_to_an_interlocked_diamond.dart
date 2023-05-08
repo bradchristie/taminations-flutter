@@ -21,13 +21,12 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> SwitchToAnInterlockedDiamond = [
 
     AnimatedCall('Switch to an Interlocked Diamond',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.GIRL,x:3,y:2,angle:270),
         DancerModel.fromData(gender:Gender.BOY,x:1,y:2,angle:90),
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:2,angle:270),
@@ -45,7 +44,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Switch to an Interlocked Diamond',
-      formation:Formations.OceanWavesLHGBBG,
+      formation:Formation('Ocean Waves LH GBBG'),
       from:'Left-Hand Waves',
       paths:[
           LeadLeft.changeBeats(3).scale(1.0,3.0),
@@ -58,7 +57,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Switch to an Interlocked Diamond',
-      formation:Formations.TwomFacedLinesRH,
+      formation:Formation('Two-Faced Lines RH'),
       from:'Right-Hand Two-Faced Lines',
       paths:[
           LeadRight.changeBeats(3).scale(3.0,3.0),
@@ -71,7 +70,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Switch to an Interlocked Diamond',
-      formation:Formations.TwomFacedLinesLH,
+      formation:Formation('Two-Faced Lines LH'),
       from:'Left-Hand Two-Faced Lines',
       paths:[
           LeadLeft.changeBeats(3).scale(1.0,3.0),

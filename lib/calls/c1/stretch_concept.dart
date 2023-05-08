@@ -21,7 +21,6 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 import '../c1/ah_so.dart' as c1;
 import '../c1/follow_thru.dart' as c1;
@@ -41,7 +40,7 @@ import '../c3a/single_concept.dart' as c3a;
   final List<AnimatedCall> StretchConcept = [
 
     AnimatedCall('Stretch Bend the Line',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       group:'Stretch',
       paths:[
           ExtendLeft.changeBeats(1.5).scale(2.0,0.5) +
@@ -55,7 +54,7 @@ import '../c3a/single_concept.dart' as c3a;
       ]),
 
     AnimatedCall('Stretch Cast Off 3/4',
-      formation:Formations.LinesFacingOut,
+      formation:Formation('Lines Facing Out'),
       group:'Stretch',
       paths:[
           QuarterRight.changehands(1).skew(0.33,0.33) +
@@ -77,7 +76,7 @@ import '../c3a/single_concept.dart' as c3a;
       ]),
 
     AnimatedCall('Stretch Chase Right',
-      formation:Formation('Trade By', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.GIRL,x:1,y:3,angle:90),
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:3,angle:90),
         DancerModel.fromData(gender:Gender.GIRL,x:-1,y:1,angle:270),
@@ -101,7 +100,7 @@ import '../c3a/single_concept.dart' as c3a;
       ]),
 
     AnimatedCall('Stretch Crossfire',
-      formation:Formations.TwomFacedLinesRH,
+      formation:Formation('Two-Faced Lines RH'),
       group:'Stretch',
       paths:[
           LeadRight.changeBeats(4).scale(3.0,2.0) +
@@ -120,7 +119,7 @@ import '../c3a/single_concept.dart' as c3a;
       ]),
 
     AnimatedCall('Stretch Cross Trail Thru',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       group:'Stretch',
       paths:[
           ExtendLeft.changeBeats(2).scale(2.0,0.5) +
@@ -139,7 +138,7 @@ import '../c3a/single_concept.dart' as c3a;
       ]),
 
     AnimatedCall('Stretch Flutterwheel (from Eight Chain Thru)',
-      formation:Formations.EightChainThru,
+      formation:Formation('Eight Chain Thru'),
       group:'Stretch',
       paths:[
           Stand.changeBeats(3.5).changehands(0) +
@@ -162,7 +161,7 @@ import '../c3a/single_concept.dart' as c3a;
       ]),
 
     AnimatedCall('Stretch Flutterwheel (from Lines)',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       group:'Stretch',
       paths:[
           Forward.changeBeats(3.5).changehands(0) +
@@ -183,7 +182,7 @@ import '../c3a/single_concept.dart' as c3a;
       ]),
 
     AnimatedCall('Stretch Hinge',
-      formation:Formations.OceanWavesRHBGBG,
+      formation:Formation('Ocean Waves RH BGBG'),
       group:'Stretch',
       paths:[
           LeadRight.changeBeats(3).scale(3.0,1.0),
@@ -196,7 +195,7 @@ import '../c3a/single_concept.dart' as c3a;
       ]),
 
     AnimatedCall('Stretch Linear Cycle',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       group:'Stretch',
       paths:[
           HingeRight +
@@ -219,7 +218,7 @@ import '../c3a/single_concept.dart' as c3a;
       ]),
 
     AnimatedCall('Stretch Partner Hinge',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       group:'Stretch',
       paths:[
           LeadRight.changeBeats(3).scale(3.0,1.0),
@@ -232,7 +231,7 @@ import '../c3a/single_concept.dart' as c3a;
       ]),
 
     AnimatedCall('Stretch Partner Trade',
-      formation:Formations.LinesFacingOut,
+      formation:Formation('Lines Facing Out'),
       group:'Stretch',
       paths:[
           FlipLeft.changeBeats(4).scale(1.0,2.0),
@@ -245,7 +244,7 @@ import '../c3a/single_concept.dart' as c3a;
       ]),
 
     AnimatedCall('Stretch Recycle (from Right-Hand Waves)',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       group:'Stretch',
       paths:[
           RunRight.changeBeats(4).skew(3.0,-2.0),
@@ -260,7 +259,7 @@ import '../c3a/single_concept.dart' as c3a;
       ]),
 
     AnimatedCall('Stretch Recycle (from Left-Hand Waves)',
-      formation:Formations.OceanWavesLHBGGB,
+      formation:Formation('Ocean Waves LH BGGB'),
       group:'Stretch',
       paths:[
           RunLeft.changeBeats(4).skew(1.0,2.0),
@@ -275,7 +274,7 @@ import '../c3a/single_concept.dart' as c3a;
       ]),
 
     AnimatedCall('Stretch Reverse Flutterwheel',
-      formation:Formations.EightChainThru,
+      formation:Formation('Eight Chain Thru'),
       group:'Stretch',
       paths:[
           ExtendRight.changeBeats(2).scale(1.0,1.5) +
@@ -298,7 +297,7 @@ import '../c3a/single_concept.dart' as c3a;
       ]),
 
     AnimatedCall('Stretch Shakedown',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.GIRL,x:3,y:2,angle:90),
         DancerModel.fromData(gender:Gender.BOY,x:1,y:2,angle:90),
         DancerModel.fromData(gender:Gender.GIRL,x:-1,y:2,angle:90),
@@ -320,7 +319,7 @@ import '../c3a/single_concept.dart' as c3a;
       ]),
 
     AnimatedCall('Stretch Single Wheel',
-      formation:Formations.OceanWavesRHBGBG,
+      formation:Formation('Ocean Waves RH BGBG'),
       group:'Stretch',
       paths:[
           LeadRight.changeBeats(2).scale(3.0,1.0) +
@@ -334,7 +333,7 @@ import '../c3a/single_concept.dart' as c3a;
       ]),
 
     AnimatedCall('Stretch Slide',
-      formation:Formations.OceanWavesRHBGBG,
+      formation:Formation('Ocean Waves RH BGBG'),
       group:'Stretch',
       paths:[
           BackSashayRight.changeBeats(4).scale(1.0,2.0),
@@ -347,7 +346,7 @@ import '../c3a/single_concept.dart' as c3a;
       ]),
 
     AnimatedCall('Stretch Split Circulate (from Waves)',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       group:'Stretch',
       paths:[
           Forward_4,
@@ -361,7 +360,7 @@ import '../c3a/single_concept.dart' as c3a;
       ]),
 
     AnimatedCall('Stretch Split Circulate (from Columns)',
-      formation:Formations.ColumnRHGBGB,
+      formation:Formation('Column RH GBGB'),
       group:'Stretch',
       paths:[
           RunRight,
@@ -375,7 +374,7 @@ import '../c3a/single_concept.dart' as c3a;
       ]),
 
     AnimatedCall('Stretch Split Counter Rotate',
-      formation:Formations.OceanWavesRHBGBG,
+      formation:Formation('Ocean Waves RH BGBG'),
       group:'Stretch',
       paths:[
           CounterRotateRight_2_0.changeBeats(4).changehands(2).skew(1.0,0.0),
@@ -388,7 +387,7 @@ import '../c3a/single_concept.dart' as c3a;
       ]),
 
     AnimatedCall('Stretch Split Transfer (from Waves)',
-      formation:Formations.OceanWavesRHBGBG,
+      formation:Formation('Ocean Waves RH BGBG'),
       group:'Stretch',
       paths:[
           ExtendRight.changeBeats(1.5).scale(2.0,0.25) +
@@ -409,7 +408,7 @@ import '../c3a/single_concept.dart' as c3a;
       ]),
 
     AnimatedCall('Stretch Split Transfer (from Columns)',
-      formation:Formations.ColumnRHGBGB,
+      formation:Formation('Column RH GBGB'),
       group:'Stretch',
       paths:[
           RunRight.changeBeats(4).scale(0.5,1.75) +
@@ -430,7 +429,7 @@ import '../c3a/single_concept.dart' as c3a;
       ]),
 
     AnimatedCall('Stretch Swing',
-      formation:Formations.OceanWavesRHBGBG,
+      formation:Formation('Ocean Waves RH BGBG'),
       group:'Stretch',
       paths:[
           RunRight.changeBeats(4).scale(1.0,2.0),
@@ -443,7 +442,7 @@ import '../c3a/single_concept.dart' as c3a;
       ]),
 
     AnimatedCall('Stretch Touch',
-      formation:Formations.EightChainThru,
+      formation:Formation('Eight Chain Thru'),
       group:'Stretch',
       paths:[
           ExtendLeft.changeBeats(2).changehands(2).scale(1.0,2.0),
@@ -456,7 +455,7 @@ import '../c3a/single_concept.dart' as c3a;
       ]),
 
     AnimatedCall('Stretch Touch a Quarter',
-      formation:Formations.EightChainThru,
+      formation:Formation('Eight Chain Thru'),
       group:'Stretch',
       paths:[
           ExtendLeft +
@@ -474,7 +473,7 @@ import '../c3a/single_concept.dart' as c3a;
       ]),
 
     AnimatedCall('Stretch Turn and Deal',
-      formation:Formations.TwomFacedLinesRH,
+      formation:Formation('Two-Faced Lines RH'),
       group:'Stretch',
       paths:[
           LeadRight.changeBeats(4).scale(3.0,1.0) +
@@ -491,7 +490,7 @@ import '../c3a/single_concept.dart' as c3a;
       ]),
 
     AnimatedCall('Stretch Turn and Deal (from Lines Facing Out)',
-      formation:Formations.LinesFacingOut,
+      formation:Formation('Lines Facing Out'),
       group:'Stretch',
       taminator: '''
     In this case the centers cannot easily move to the far center spots
@@ -513,7 +512,7 @@ import '../c3a/single_concept.dart' as c3a;
       ]),
 
     AnimatedCall('Stretch Wheel and Deal',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       group:'Stretch',
       paths:[
           RunRight.changeBeats(4).changehands(6).scale(1.0,2.0).skew(3.0,0.0),
@@ -526,7 +525,7 @@ import '../c3a/single_concept.dart' as c3a;
       ]),
 
     AnimatedCall('Stretch Veer Right',
-      formation:Formations.TwomFacedLinesRH,
+      formation:Formation('Two-Faced Lines RH'),
       from:'Two-Faced Lines',group:'Stretch',
       paths:[
           Forward_2.changehands(2) +
@@ -541,7 +540,7 @@ import '../c3a/single_concept.dart' as c3a;
       ]),
 
     AnimatedCall('Stretch Wheel Thru',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       group:'Stretch',
       paths:[
           LeadRight.changeBeats(4).scale(4.0,2.0) +
@@ -555,7 +554,7 @@ import '../c3a/single_concept.dart' as c3a;
       ]),
 
     AnimatedCall('Stretch Zoom',
-      formation:Formations.ColumnRHGBGB,
+      formation:Formation('Column RH GBGB'),
       group:'Stretch',
       paths:[
           FlipLeft.changeBeats(1).scale(0.5,0.5) +

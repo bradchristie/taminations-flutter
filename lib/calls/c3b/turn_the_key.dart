@@ -21,13 +21,12 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> TurnTheKey = [
 
     AnimatedCall('Turn the Key',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       from:'Right-Hand Waves',parts:'3;5',
       paths:[
           SwingRight +
@@ -48,7 +47,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Turn the Key',
-      formation:Formations.OceanWavesLHBGGB,
+      formation:Formation('Ocean Waves LH BGGB'),
       from:'Left-Hand Waves',parts:'3;5',
       paths:[
           SwingLeft +
@@ -69,7 +68,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Turn the Key',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:2,y:1,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:2,y:3,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:-2,y:3,angle:180),
@@ -97,7 +96,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Turn the Key',
-      formation:Formations.n3and_1lines2,
+      formation:Formation('3 and 1 Lines #2'),
       from:'3 and 1 Lines #2',parts:'3;4',
       paths:[
           SwingRight +
@@ -120,7 +119,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Turn the Key',
-      formation:Formations.n3and_1lines3,
+      formation:Formation('3 and 1 Lines #3'),
       from:'3 and 1 Lines #3',parts:'3;4',
       paths:[
           RunRight +
@@ -143,7 +142,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Turn the Key',
-      formation:Formations.n3and_1lines4,
+      formation:Formation('3 and 1 Lines #4'),
       from:'3 and 1 Lines #4',parts:'3;5',
       paths:[
           RunRight +
@@ -166,7 +165,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Turn the Key',
-      formation:Formations.n3and_1lines5,
+      formation:Formation('3 and 1 Lines #5'),
       from:'3 and 1 Lines #5',parts:'3;5',
       paths:[
           SwingRight +
@@ -189,7 +188,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Turn the Key',
-      formation:Formations.n3and_1lines6,
+      formation:Formation('3 and 1 Lines #6'),
       from:'3 and 1 Lines #6',parts:'3;4',
       paths:[
           SwingLeft +
@@ -212,7 +211,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Turn the Key',
-      formation:Formations.n3and_1lines7,
+      formation:Formation('3 and 1 Lines #7'),
       from:'3 and 1 Lines #7',parts:'3;4',
       paths:[
           FlipLeft +
@@ -235,7 +234,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Turn the Key',
-      formation:Formations.n3and_1lines8,
+      formation:Formation('3 and 1 Lines #8'),
       from:'3 and 1 Lines #8',parts:'3;5',
       paths:[
           FlipLeft +
@@ -258,7 +257,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Turn the Key',
-      formation:Formations.QuarterTag,
+      formation:Formation('Quarter Tag'),
       from:'Quarter Tag',parts:'3;5.5',
       paths:[
           RunRight +
@@ -282,7 +281,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Turn the Key',
-      formation:Formations.TidalWaveRHBGBG,
+      formation:Formation('Tidal Wave RH BGBG'),
       from:'Tidal Wave',parts:'3;5',
       paths:[
           SwingRight.scale(0.5,0.5) +
@@ -303,7 +302,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Split Turn the Key',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       from:'Right-Hand Waves',parts:'3;3',
       paths:[
           SwingRight +
@@ -324,7 +323,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Split Turn the Key',
-      formation:Formations.OceanWavesLHBGGB,
+      formation:Formation('Ocean Waves LH BGGB'),
       from:'Left-Hand Waves',parts:'3;3',
       paths:[
           SwingLeft +
@@ -345,7 +344,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Split Turn the Key',
-      formation:Formations.ColumnRHGBGB,
+      formation:Formation('Column RH GBGB'),
       from:'Right-Hand Columns',parts:'3;3',
       paths:[
           SwingRight.scale(0.5,1.0) +
@@ -366,7 +365,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Split Turn the Key',
-      formation:Formations.ColumnLHGBGB,
+      formation:Formation('Column LH GBGB'),
       from:'Left-Hand Columns',parts:'3;3',
       paths:[
           SwingLeft.scale(0.5,1.0) +
@@ -387,7 +386,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Split Turn the Key',
-      formation:Formations.TidalWaveRHBGGB,
+      formation:Formation('Tidal Wave RH BGGB'),
       from:'Right-Hand Tidal Wave',parts:'3;3',
       paths:[
           SwingRight.scale(0.5,0.5) +
@@ -408,7 +407,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Split Turn the Key',
-      formation:Formations.TidalWaveLHBGGB,
+      formation:Formation('Tidal Wave LH BGGB'),
       from:'Left-Hand Tidal Wave',parts:'3;3',
       paths:[
           SwingLeft.scale(0.5,0.5) +

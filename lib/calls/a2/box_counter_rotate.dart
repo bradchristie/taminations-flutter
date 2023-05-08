@@ -21,13 +21,12 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> BoxCounterRotate = [
 
     AnimatedCall('Box Counter Rotate',
-      formation:Formations.BoxRHCompact,
+      formation:Formation('Box RH Compact'),
       from:'Right-Hand Box',
       paths:[
           CounterRotateRight_2p5_0p5.changeBeats(4).changehands(2),
@@ -36,7 +35,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Box Counter Rotate',
-      formation:Formations.BoxLHCompact,
+      formation:Formation('Box LH Compact'),
       from:'Left-Hand Box',
       paths:[
           CounterRotateLeft_m0p5_2p5.changeBeats(4).changehands(5),
@@ -45,7 +44,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Box Counter Rotate',
-      formation:Formations.FacingCouplesCompact,
+      formation:Formation('Facing Couples Compact'),
       from:'Facing Couples',
       paths:[
           ExtendLeft.changeBeats(2).scale(1.5,0.5) +
@@ -56,7 +55,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Box Counter Rotate',
-      formation:Formations.CouplesFacingOutCompact,
+      formation:Formation('Couples Facing Out Compact'),
       from:'Couples Facing Out',
       paths:[
           LeadLeftPassing.changeBeats(4).scale(1.0,2.5).skew(-1.5,0.0),
@@ -65,7 +64,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Box Counter Rotate',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:1,y:1,angle:90),
         DancerModel.fromData(gender:Gender.GIRL,x:1,y:-1,angle:0),
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:-1,angle:270),
@@ -83,7 +82,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Box Counter Rotate',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:1,y:1,angle:90),
         DancerModel.fromData(gender:Gender.GIRL,x:1,y:-1,angle:0),
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:-1,angle:270),
@@ -101,7 +100,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Box Counter Rotate',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:1,y:1,angle:90),
         DancerModel.fromData(gender:Gender.GIRL,x:1,y:-1,angle:0),
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:-1,angle:0),
@@ -119,7 +118,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Box Counter Rotate',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:1,y:1,angle:90),
         DancerModel.fromData(gender:Gender.GIRL,x:1,y:-1,angle:90),
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:-1,angle:0),
@@ -137,7 +136,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Box Counter Rotate',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:1,y:1,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:1,y:-1,angle:90),
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:-1,angle:0),
@@ -155,7 +154,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Box Counter Rotate',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:1,y:1,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:1,y:-1,angle:270),
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:-1,angle:180),
@@ -173,7 +172,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Box Counter Rotate',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:1,y:1,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:1,y:-1,angle:270),
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:-1,angle:180),
@@ -191,7 +190,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Box Counter Rotate',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:1,y:1,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:1,y:-1,angle:270),
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:-1,angle:90),
@@ -209,7 +208,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Box Counter Rotate',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:1,y:1,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:1,y:-1,angle:180),
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:-1,angle:90),
@@ -227,7 +226,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Box Counter Rotate',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:1,y:1,angle:270),
         DancerModel.fromData(gender:Gender.GIRL,x:1,y:-1,angle:180),
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:-1,angle:90),
@@ -245,7 +244,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Box Counter Rotate',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:1,y:1,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:1,y:-1,angle:0),
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:-1,angle:180),
@@ -263,7 +262,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Box Counter Rotate',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:1,y:1,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:1,y:-1,angle:0),
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:-1,angle:90),
@@ -282,7 +281,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Box Counter Rotate',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:1,y:1,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:1,y:-1,angle:90),
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:-1,angle:180),
@@ -300,7 +299,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Box Counter Rotate',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:1,y:1,angle:270),
         DancerModel.fromData(gender:Gender.GIRL,x:1,y:-1,angle:0),
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:-1,angle:90),
@@ -320,7 +319,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Box Counter Rotate',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:1,y:1,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:1,y:-1,angle:90),
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:-1,angle:90),
@@ -339,7 +338,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Box Counter Rotate',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:1,y:1,angle:270),
         DancerModel.fromData(gender:Gender.GIRL,x:1,y:-1,angle:0),
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:-1,angle:90),
@@ -359,7 +358,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Box Counter Rotate',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:1,y:1,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:1,y:-1,angle:0),
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:-1,angle:90),
@@ -378,7 +377,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Box Counter Rotate',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:1,y:1,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:1,y:-1,angle:90),
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:-1,angle:90),
@@ -397,7 +396,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Box Counter Rotate 3/4',
-      formation:Formations.BoxRH,
+      formation:Formation('Box RH'),
       from:'Right-Hand Box',fractions:'4;4',
       paths:[
           CounterRotateRight_3_1.changeBeats(4).changehands(2) +
@@ -410,7 +409,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('As Couples Box Counter Rotate',
-      formation:Formations.TwomFacedLinesRH,
+      formation:Formation('Two-Faced Lines RH'),
       from:'Two-Faced Lines',group:' ',
       paths:[
           CounterRotateRight_5_m1.changeBeats(5).changehands(2),
@@ -423,7 +422,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Split Counter Rotate',
-      formation:Formations.OceanWavesRHBGBG,
+      formation:Formation('Ocean Waves RH BGBG'),
       from:'Right-Hand Waves',
       paths:[
           CounterRotateRight_2_0.changeBeats(4).changehands(2).scale(1.5,1.0),
@@ -436,7 +435,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Split Counter Rotate',
-      formation:Formations.OceanWavesLHGBBG,
+      formation:Formation('Ocean Waves LH GBBG'),
       from:'Left-Hand Waves',
       paths:[
           CounterRotateLeft_0_2.changeBeats(4).changehands(1).skew(-1.0,0.0),
@@ -449,7 +448,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Split Counter Rotate',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:3,angle:90),
         DancerModel.fromData(gender:Gender.GIRL,x:-1,y:1,angle:90),
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:-1,angle:90),
@@ -467,7 +466,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Split Counter Rotate',
-      formation:Formations.ColumnLHGBGB,
+      formation:Formation('Column LH GBGB'),
       from:'Left-Hand Columns',
       paths:[
           CounterRotateLeft_2_0.changeBeats(4).changehands(1).skew(0.0,-1.0),
@@ -480,7 +479,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Split Counter Rotate',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       from:'Lines',
       paths:[
           ExtendLeft.changeBeats(2).scale(2.0,0.5) +
@@ -497,7 +496,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Split Counter Rotate',
-      formation:Formations.LinesFacingOutCompact,
+      formation:Formation('Lines Facing Out Compact'),
       from:'Lines Facing Out',
       paths:[
           LeadLeftPassing.changeBeats(4).scale(1.0,2.0).skew(-1.5,0.0),
@@ -510,7 +509,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Split Counter Rotate',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:3,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:-1,y:1,angle:90),
         DancerModel.fromData(gender:Gender.GIRL,x:-1,y:-1,angle:90),
@@ -528,7 +527,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Split Counter Rotate',
-      formation:Formations.DiamondsRHGirlPoints,
+      formation:Formation('Diamonds RH Girl Points'),
       from:'Right-Hand Diamonds',
       paths:[
           HingeRight.changeBeats(3).skew(0.0,1.0),
@@ -541,7 +540,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Split Counter Rotate',
-      formation:Formations.DiamondsLHGirlPoints,
+      formation:Formation('Diamonds LH Girl Points'),
       from:'Left-Hand Diamonds',
       paths:[
           HingeLeft.changeBeats(3).skew(0.0,-1.0),
@@ -554,7 +553,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Split Counter Rotate',
-      formation:Formations.DiamondsFacingGirlPoints,
+      formation:Formation('Diamonds Facing Girl Points'),
       from:'Facing Diamonds, Right-Hand Centers',
       paths:[
           HingeRight.changeBeats(3).skew(0.0,1.0),
@@ -567,7 +566,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Split Counter Rotate',
-      formation:Formations.DiamondsFacingLHGirlPoints,
+      formation:Formation('Diamonds Facing LH Girl Points'),
       from:'Facing Diamonds, Left-Hand Centers',
       paths:[
           HingeLeft.changeBeats(3).skew(0.0,-1.0),
@@ -580,7 +579,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Split Counter Rotate',
-      formation:Formations.DiamondsRHPTPGirlPoints,
+      formation:Formation('Diamonds RH PTP Girl Points'),
       from:'Right-Hand Point-to-Point Diamonds',
       paths:[
           HingeRight.changeBeats(3).skew(1.0,0.0),
@@ -593,7 +592,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Split Counter Rotate',
-      formation:Formations.DiamondsLHPTPGirlPoints,
+      formation:Formation('Diamonds LH PTP Girl Points'),
       from:'Left-Hand Point-to-Point Diamonds',
       paths:[
           HingeLeft.changeBeats(3).skew(-1.0,0.0),
@@ -606,7 +605,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Split Counter Rotate',
-      formation:Formations.DiamondsFacingPTP,
+      formation:Formation('Diamonds Facing PTP'),
       from:'Facing Point-to-Point Diamonds, Right-Hand Centers',
       paths:[
           HingeRight.changeBeats(3).skew(1.0,0.0),
@@ -619,7 +618,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Split Counter Rotate',
-      formation:Formations.DiamondsFacingLHPTP,
+      formation:Formation('Diamonds Facing LH PTP'),
       from:'Facing Point-to-Point Diamonds, Left-Hand Centers',
       paths:[
           HingeLeft.changeBeats(3).skew(-1.0,0.0),

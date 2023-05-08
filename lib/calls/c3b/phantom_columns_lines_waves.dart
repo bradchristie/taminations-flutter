@@ -26,7 +26,7 @@ import '../../moves.dart';
   final List<AnimatedCall> PhantomColumnsLinesWaves = [
 
     AnimatedCall('Phantom Columns Checkmate',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:3,y:3,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:1,y:3,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:3,y:-1,angle:0),
@@ -75,7 +75,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Phantom Columns Circulate',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:3,y:3,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:1,y:1,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:3,y:-3,angle:180),
@@ -105,7 +105,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Phantom Lines Chase Right',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-3,y:1,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:-1,y:1,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:1,y:-3,angle:0),
@@ -147,7 +147,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Phantom Lines Swap Around',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-3,y:1,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:-1,y:-1,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:1,y:3,angle:180),
@@ -177,7 +177,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Phantom Waves Circulate',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-3,y:1,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:-1,y:1,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:1,y:-3,angle:180),
@@ -209,7 +209,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Phantom Waves In-Roll Circulate',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-3,y:1,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:-1,y:1,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:1,y:-3,angle:180),

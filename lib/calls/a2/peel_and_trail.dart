@@ -21,13 +21,12 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> PeelAndTrail = [
 
     AnimatedCall('Peel and Trail',
-      formation:Formations.BoxRHCompact,
+      formation:Formation('Box RH Compact'),
       from:'Right-Hand Box',
       paths:[
           Forward_1p5.changeBeats(3) +
@@ -37,7 +36,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Peel and Trail',
-      formation:Formations.BoxLHCompact,
+      formation:Formation('Box LH Compact'),
       from:'Left-Hand Box',
       paths:[
           RunRight.changeBeats(6).skew(-1.5,0.0),
@@ -47,7 +46,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Peel and Trail',
-      formation:Formations.ColumnRHGBGB,
+      formation:Formation('Column RH GBGB'),
       from:'Right-Hand Columns',
       paths:[
           RunLeft.skew(-1.0,0.0),
@@ -62,7 +61,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Peel and Trail',
-      formation:Formations.ColumnLHGBGB,
+      formation:Formation('Column LH GBGB'),
       from:'Left-Hand Columns',
       paths:[
           Forward +
@@ -77,7 +76,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Peel and Trail',
-      formation:Formations.RightmHandZs,
+      formation:Formation('Right-Hand Zs'),
       from:'Right-Hand Zs',
       paths:[
           Forward_2.changeBeats(3) +
@@ -92,7 +91,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Peel and Trail',
-      formation:Formations.LeftmHandZs,
+      formation:Formation('Left-Hand Zs'),
       from:'Left-Hand Zs',
       paths:[
           Forward_2.changeBeats(3) +
@@ -107,7 +106,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Peel and Trail',
-      formation:Formations.DoublePassThru,
+      formation:Formation('Double Pass Thru'),
       from:'Double Pass Thru',
       taminator: '''
       Some dancers in the trailing position perform a partner trade, with the
@@ -125,7 +124,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Peel and Trail',
-      formation:Formations.CompletedDoublePassThru,
+      formation:Formation('Completed Double Pass Thru'),
       from:'Completed Double Pass Thru',
       taminator: '''
       Some dancers in the trailing position perform a partner trade, with the
@@ -143,7 +142,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Peel and Trail',
-      formation:Formations.TwomFacedLinesRH,
+      formation:Formation('Two-Faced Lines RH'),
       from:'Two-Faced Lines',
       paths:[
           Forward +
@@ -160,7 +159,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Peel and Trail',
-      formation:Formations.OceanWavesRHBGBG,
+      formation:Formation('Ocean Waves RH BGBG'),
       from:'Right-Hand Waves',
       paths:[
           ExtendRight.changeBeats(2).scale(2.0,0.25) +
@@ -175,7 +174,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Peel and Trail',
-      formation:Formations.OceanWavesLHBGBG,
+      formation:Formation('Ocean Waves LH BGBG'),
       from:'Left-Hand Waves',
       paths:[
           FlipRight.changeBeats(5).skew(-2.0,1.5),
@@ -190,7 +189,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Peel and Trail',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:0,y:1,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:2,y:1,angle:0),
   ]),
@@ -202,7 +201,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Peel and Trail',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:0,y:-1,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:2,y:-1,angle:0),
   ]),
@@ -214,7 +213,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Peel and Trail',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:0,y:1,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:2,y:-1,angle:180),
   ]),
@@ -227,7 +226,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Peel and Trail',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:0,y:-1,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:2,y:1,angle:180),
   ]),
@@ -240,7 +239,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Peel and Trail',
-      formation:Formations.QuarterZRH,
+      formation:Formation('Quarter Z RH'),
       from:'Right-Hand Z-Tag',
       paths:[
           ExtendRight.changeBeats(2).scale(2.0,0.5) +
@@ -255,7 +254,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Peel and Trail',
-      formation:Formations.QuarterZLH,
+      formation:Formation('Quarter Z LH'),
       from:'Left-Hand Z-Tag',
       paths:[
           ExtendLeft.changeBeats(2).scale(2.0,0.5) +
@@ -270,7 +269,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Peel and Trail',
-      formation:Formations.TmBoneURUR,
+      formation:Formation('T-Bone URUR'),
       from:'T-Bones 1',
       paths:[
           Forward +
@@ -285,7 +284,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Peel and Trail',
-      formation:Formations.TmBoneLULU,
+      formation:Formation('T-Bone LULU'),
       from:'T-Bones 2',
       paths:[
           RunLeft.changeBeats(4).skew(-1.0,0.0),
@@ -300,7 +299,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Peel and Trail',
-      formation:Formations.TmBoneRDRD,
+      formation:Formation('T-Bone RDRD'),
       from:'T-Bones 3',
       paths:[
           RunLeft.changeBeats(4).skew(-1.0,0.0),
@@ -315,7 +314,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Peel and Trail',
-      formation:Formations.TmBoneDLDL,
+      formation:Formation('T-Bone DLDL'),
       from:'T-Bones 4',
       paths:[
           RunRight.changeBeats(4).skew(-1.0,0.0),
@@ -330,7 +329,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('As Couples Peel and Trail',
-      formation:Formations.TwomFacedLinesRH,
+      formation:Formation('Two-Faced Lines RH'),
       group:' ',
       paths:[
           ExtendRight.changeBeats(2).scale(2.0,1.5) +
@@ -345,7 +344,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('As Couples Peel and Trail',
-      formation:Formations.TwomFacedLinesLH,
+      formation:Formation('Two-Faced Lines LH'),
       group:' ',noDisplay: true,
       paths:[
           BelleReverseWheel.changeBeats(5).changehands(5).skew(-2.0,-1.5),
@@ -360,7 +359,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('All 8 Peel and Trail',
-      formation:Formations.StaticMiniWavesRH,
+      formation:Formation('Static MiniWaves RH'),
       group:' ',
       paths:[
           Forward_3 +

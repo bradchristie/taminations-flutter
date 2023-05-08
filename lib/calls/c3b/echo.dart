@@ -20,13 +20,13 @@
 
 import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> Echo = [
 
     AnimatedCall('Echo As Couples 1/2 Tag',
-      formation:Formations.TidalLineRH,
+      formation:Formation('Tidal Line RH'),
       group:'Echo',fractions:'3',
       paths:[
           LeadRight.changeBeats(3).changehands(2).scale(3.0,1.5) +
@@ -43,7 +43,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Echo Concentric Recycle',
-      formation:Formations.DoublePassThru,
+      formation:Formation('Double Pass Thru'),
       group:'Echo',fractions:'4',
       paths:[
           UmTurnRight.changeBeats(4).skew(3.0,1.5) +
@@ -62,7 +62,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Echo Six-Two Acey Deucey',
-      formation:Formations.DiamondsRHGirlPoints,
+      formation:Formation('Diamonds RH Girl Points'),
       group:'Echo',fractions:'3',
       paths:[
           LeadRight.changeBeats(3).scale(3.0,1.0) +
@@ -79,7 +79,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Echo Split Circulate',
-      formation:Formations.OceanWavesRHBGBG,
+      formation:Formation('Ocean Waves RH BGBG'),
       group:'Echo',fractions:'3',
       paths:[
           Forward_4.changeBeats(3) +
@@ -96,7 +96,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Echo Stretch Partner Trade',
-      formation:Formations.LinesFacingOut,
+      formation:Formation('Lines Facing Out'),
       group:'Echo',fractions:'4',
       paths:[
           FlipLeft.changeBeats(4).scale(1.0,2.0) +
@@ -113,7 +113,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Echo Tandem Cross Roll',
-      formation:Formations.TwomFacedLinesRH,
+      formation:Formation('Two-Faced Lines RH'),
       group:'Echo',fractions:'9',
       paths:[
           Forward_4.changeBeats(5) +

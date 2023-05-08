@@ -20,13 +20,13 @@
 
 import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> ForwardAndBack = [
 
     AnimatedCall('Forward and Back',
-      formation:Formations.FacingCouplesCompact,
+      formation:Formation('Facing Couples Compact'),
       from:'Facing Couples',
       paths:[
           Forward.changeBeats(2).changehands(2).scale(0.7,1.0) +
@@ -37,7 +37,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Forward and Back',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       from:'Lines',
       paths:[
           Forward.changeBeats(2).changehands(2) +
@@ -54,7 +54,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Heads Forward and Back',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       from:'Static Square',group:' ',
       paths:[
           Forward_2.changeBeats(4).changehands(2) +
@@ -69,7 +69,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Sides Forward and Back',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       from:'Static Square',noDisplay: true,
       paths:[
           Path(),

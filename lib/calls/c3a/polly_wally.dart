@@ -21,13 +21,12 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> PollyWally = [
 
     AnimatedCall('Polly Wally',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.GIRL,x:-1,y:3,angle:90),
         DancerModel.fromData(gender:Gender.GIRL,x:-1,y:1,angle:90),
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:-1,angle:90),
@@ -47,7 +46,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Polly Wally',
-      formation:Formations.ColumnLHGBGB,
+      formation:Formation('Column LH GBGB'),
       from:'Left-Hand Columns',
       paths:[
           FlipRight.changeBeats(6).skew(1.0,0.0),
@@ -62,7 +61,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Polly Wally',
-      formation:Formations.DoublePassThru,
+      formation:Formation('Double Pass Thru'),
       from:'Double Pass Thru',
       paths:[
           FlipRight.changeBeats(6).skew(1.0,0.0),
@@ -77,7 +76,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Polly Wally',
-      formation:Formations.CompletedDoublePassThru,
+      formation:Formation('Completed Double Pass Thru'),
       from:'Completed Double Pass Thru',
       paths:[
           FlipLeft.changeBeats(6).skew(-1.0,0.0),

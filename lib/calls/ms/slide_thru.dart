@@ -21,13 +21,12 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> SlideThru = [
 
     AnimatedCall('Slide Thru',
-      formation:Formations.FacingCouplesCompact,
+      formation:Formation('Facing Couples Compact'),
       from:'Facing Couples',isGenderSpecific:true,difficulty: 1,
       taminator: '''
       Slide Thru is just Star Thru with no hands.
@@ -41,7 +40,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Slide Thru',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-1.5,y:-1,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:-1.5,y:1,angle:0),
   ]),
@@ -55,7 +54,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Slide Thru',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       from:'Lines',isGenderSpecific:true,difficulty: 1,
       paths:[
           ExtendLeft.changeBeats(2).scale(2.0,0.5) +
@@ -72,7 +71,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Slide Thru',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-2,y:1,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:-2,y:3,angle:0),
         DancerModel.fromData(gender:Gender.BOY,x:-2,y:-3,angle:0),
@@ -94,7 +93,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Slide Thru',
-      formation:Formations.EightChainThru,
+      formation:Formation('Eight Chain Thru'),
       from:'Eight Chain Thru',isGenderSpecific:true,difficulty: 2,
       paths:[
           ExtendLeft.changeBeats(2).scale(1.0,0.5) +
@@ -111,7 +110,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Slide Thru',
-      formation:Formations.OceanWavesRHBGBG,
+      formation:Formation('Ocean Waves RH BGBG'),
       from:'Ocean Waves',isGenderSpecific:true,difficulty: 2,
       taminator: '''
       This is an example of the Ocean Wave Rule.
@@ -127,7 +126,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Slide Thru',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-2,y:3,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:-2,y:1,angle:0),
         DancerModel.fromData(gender:Gender.BOY,x:-2,y:-3,angle:0),

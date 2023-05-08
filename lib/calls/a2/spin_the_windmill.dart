@@ -19,13 +19,13 @@
 */
 
 import '../../animated_call.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> SpinTheWindmill = [
 
     AnimatedCall('Spin the Windmill Right',
-      formation:Formations.QuarterTag,
+      formation:Formation('Quarter Tag'),
       from:'Quarter Tag',parts:'3;3',
       paths:[
           QuarterRight +
@@ -48,7 +48,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Spin the Windmill Right',
-      formation:Formations.QuarterTagLH,
+      formation:Formation('Quarter Tag LH'),
       from:'Left-Hand Quarter Tag',parts:'3;3',
       taminator: '''
       The caller could say "Left Spin the Windmill Right" but the Left prefix
@@ -75,7 +75,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Spin the Windmill Right',
-      formation:Formations.n34Tag,
+      formation:Formation('3/4 Tag'),
       from:'3/4 Tag',parts:'3;3',
       paths:[
           QuarterRight +
@@ -98,7 +98,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Spin the Windmill Right',
-      formation:Formations.DoublePassThru,
+      formation:Formation('Double Pass Thru'),
       from:'Double Pass Thru',parts:'5;3',
       paths:[
           QuarterRight +
@@ -123,7 +123,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Spin the Windmill Right',
-      formation:Formations.TradeBy,
+      formation:Formation('Trade By'),
       from:'Trade By',parts:'5;3',
       paths:[
           QuarterRight +
@@ -148,7 +148,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Spin the Windmill Left',
-      formation:Formations.QuarterTag,
+      formation:Formation('Quarter Tag'),
       from:'Quarter Tag',parts:'3;3',
       paths:[
           QuarterLeft +
@@ -171,7 +171,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Spin the Windmill Left',
-      formation:Formations.QuarterTagLH,
+      formation:Formation('Quarter Tag LH'),
       from:'Left-Hand Quarter Tag',parts:'3;3',
       paths:[
           QuarterLeft +
@@ -194,7 +194,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Spin the Windmill Left',
-      formation:Formations.n34Tag,
+      formation:Formation('3/4 Tag'),
       from:'3/4 Tag',parts:'3;3',
       paths:[
           QuarterLeft +
@@ -217,7 +217,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Spin the Windmill Left',
-      formation:Formations.DoublePassThru,
+      formation:Formation('Double Pass Thru'),
       from:'Double Pass Thru',parts:'5;3',
       paths:[
           QuarterLeft +
@@ -242,7 +242,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Spin the Windmill Left',
-      formation:Formations.TradeBy,
+      formation:Formation('Trade By'),
       from:'Trade By',parts:'5;3',
       paths:[
           QuarterLeft +
@@ -267,7 +267,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left Spin the Windmill Right',
-      formation:Formations.DoublePassThru,
+      formation:Formation('Double Pass Thru'),
       from:'Double Pass Thru',parts:'5;3',
       paths:[
           QuarterRight +
@@ -292,7 +292,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left Spin the Windmill Right',
-      formation:Formations.TradeBy,
+      formation:Formation('Trade By'),
       from:'Trade By',parts:'5;3',
       paths:[
           QuarterRight +
@@ -317,7 +317,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left Spin the Windmill Left',
-      formation:Formations.DoublePassThru,
+      formation:Formation('Double Pass Thru'),
       from:'Double Pass Thru',parts:'5;3',
       paths:[
           QuarterLeft +
@@ -342,7 +342,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left Spin the Windmill Left',
-      formation:Formations.TradeBy,
+      formation:Formation('Trade By'),
       from:'Trade By',parts:'5;3',
       paths:[
           QuarterLeft +
@@ -367,7 +367,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Spin the Windmill Forward',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       from:'Lines',parts:'5;3',
       paths:[
           ExtendLeft.changeBeats(2).scale(2.0,0.5) +
@@ -392,7 +392,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Spin the Windmill In',
-      formation:Formations.QuarterTag,
+      formation:Formation('Quarter Tag'),
       from:'Quarter Tag',parts:'3;3',
       paths:[
           LeadRight +
@@ -415,7 +415,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Spin the Windmill In',
-      formation:Formations.n34Tag,
+      formation:Formation('3/4 Tag'),
       from:'3/4 Tag',parts:'3;3',
       paths:[
           QuarterLeft.skew(0.0,1.0) +
@@ -438,7 +438,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Spin the Windmill Out',
-      formation:Formations.QuarterTag,
+      formation:Formation('Quarter Tag'),
       from:'Quarter Tag',parts:'3;3',
       paths:[
           QuarterLeft.skew(0.0,1.0) +
@@ -462,7 +462,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Spin the Windmill Out',
-      formation:Formations.n34Tag,
+      formation:Formation('3/4 Tag'),
       from:'3/4 Tag',parts:'3;3',
       paths:[
           QuarterRight.skew(0.0,-1.0) +
@@ -486,7 +486,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Spin the Windmill Forward',
-      formation:Formations.DiamondsRHGirlPoints,
+      formation:Formation('Diamonds RH Girl Points'),
       from:'Diamonds',parts:'3;3',
       paths:[
           SwingRight +

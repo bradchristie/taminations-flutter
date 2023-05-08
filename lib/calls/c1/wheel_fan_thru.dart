@@ -20,13 +20,13 @@
 
 import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> WheelFanThru = [
 
     AnimatedCall('Wheel Fan Thru',
-      formation:Formations.FacingCouplesCompact,
+      formation:Formation('Facing Couples Compact'),
       from:'Facing Couples',
       paths:[
           HalfHingeRight.changeBeats(2).skew(1.25,-0.25) +
@@ -38,7 +38,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Wheel Fan Thru',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       from:'Lines',
       paths:[
           HalfHingeRight.changeBeats(2).skew(1.6,-0.4) +
@@ -57,7 +57,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Wheel Fan Thru',
-      formation:Formations.EightChainThru,
+      formation:Formation('Eight Chain Thru'),
       from:'Eight Chain Thru',
       paths:[
           HalfHingeRight.changeBeats(2).skew(0.6,-0.4) +
@@ -74,7 +74,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left Wheel Fan Thru',
-      formation:Formations.FacingCouplesCompact,
+      formation:Formation('Facing Couples Compact'),
       from:'Facing Couples',
       paths:[
           QuarterLeft.skew(0.5,0.5),
@@ -85,7 +85,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left Wheel Fan Thru',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       from:'Lines',
       paths:[
           QuarterLeft.skew(1.0,0.0),
@@ -102,7 +102,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left Wheel Fan Thru',
-      formation:Formations.EightChainThru,
+      formation:Formation('Eight Chain Thru'),
       from:'Eight Chain Thru',
       paths:[
           QuarterLeft.skew(0.0,1.0),
@@ -119,7 +119,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Heads Wheel Fan Thru',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       group:'  ',
       paths:[
           HalfHingeRight.changeBeats(2).skew(2.6,-0.4) +
@@ -135,7 +135,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Sides Wheel Fan Thru',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       group:'  ',
       paths:[
           Path(),
@@ -151,7 +151,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Heads Left Wheel Fan Thru',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       group:'  ',
       paths:[
           QuarterLeft.changeBeats(3).skew(2.0,0.0) +
@@ -167,7 +167,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Sides Left Wheel Fan Thru',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       group:'  ',
       paths:[
           Path(),
@@ -183,7 +183,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('As Couples Wheel Fan Thru',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       group:' ',
       paths:[
           ExtendRight.changeBeats(2).changehands(2).scale(2.0,1.5) +
@@ -202,7 +202,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('All 8 Wheel Fan Thru',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       from:'Static Square',group:' ',
       paths:[
           Forward_3 +
@@ -219,7 +219,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Butterfly Wheel Fan Thru',
-      formation:Formations.ButterflyChainThru,
+      formation:Formation('Butterfly Chain Thru'),
       group:' ',
       paths:[
           HalfHingeRight.changeBeats(2).skew(0.1,-1.4) +
@@ -238,7 +238,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('"O" Wheel Fan Thru',
-      formation:Formations.OEightChainThru,
+      formation:Formation('O Eight Chain Thru'),
       group:' ',
       paths:[
           HalfHingeRight.changeBeats(2).skew(1.1,-1.4) +
@@ -257,7 +257,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Stretch Wheel Fan Thru',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       group:' ',
       paths:[
           HalfHingeRight.changeBeats(2).skew(1.6,-0.4) +
@@ -277,7 +277,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Tandem Wheel Fan Thru',
-      formation:Formations.DoublePassThru,
+      formation:Formation('Double Pass Thru'),
       group:' ',
       paths:[
           Forward_2 +
@@ -302,7 +302,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Triple Box Wheel Fan Thru',
-      formation:Formations.PhantomLinesIn,
+      formation:Formation('Phantom Lines In'),
       group:' ',
       paths:[
           HalfHingeRight.changeBeats(2).skew(1.6,-0.4) +
@@ -328,7 +328,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('All 8 Left Wheel Fan Thru',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       from:'Static Square',group:' ',
       paths:[
           LeadLeft.changeBeats(6).scale(2.0,2.0),
@@ -345,7 +345,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('As Couples Left Wheel Fan Thru',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       group:' ',
       paths:[
           BackHingeRight,
@@ -362,7 +362,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Butterfly Left Wheel Fan Thru',
-      formation:Formations.ButterflyChainThru,
+      formation:Formation('Butterfly Chain Thru'),
       group:' ',
       paths:[
           QuarterLeft +
@@ -381,7 +381,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('"O" Left Wheel Fan Thru',
-      formation:Formations.OEightChainThru,
+      formation:Formation('O Eight Chain Thru'),
       group:' ',
       paths:[
           QuarterLeft +
@@ -400,7 +400,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Stretch Left Wheel Fan Thru',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       group:' ',
       paths:[
           QuarterLeft.changeBeats(3).skew(1.0,0.0) +
@@ -420,7 +420,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Tandem Left Wheel Fan Thru',
-      formation:Formations.DoublePassThru,
+      formation:Formation('Double Pass Thru'),
       group:' ',
       paths:[
           EighthLeft.changeBeats(3) +
@@ -445,7 +445,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Triple Box Left Wheel Fan Thru',
-      formation:Formations.PhantomLinesIn,
+      formation:Formation('Phantom Lines In'),
       group:' ',
       paths:[
           QuarterLeft.changeBeats(3).skew(1.0,0.0) +

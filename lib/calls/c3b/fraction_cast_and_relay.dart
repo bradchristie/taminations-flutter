@@ -21,13 +21,12 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> FractionCastAndRelay = [
 
     AnimatedCall('1/4 Cast and Relay',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:3,y:2,angle:270),
         DancerModel.fromData(gender:Gender.GIRL,x:1,y:2,angle:90),
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:2,angle:270),
@@ -57,7 +56,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('1/4 Cast and Relay',
-      formation:Formations.OceanWavesLHBGBG,
+      formation:Formation('Ocean Waves LH BGBG'),
       from:'Left-Hand Waves',parts:'1.5;4.5;3',
       paths:[
           HingeLeft +
@@ -82,7 +81,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('1/2 Cast and Relay',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       from:'Right-Hand Waves',parts:'3;4.5;3',
       paths:[
           SwingRight +
@@ -107,7 +106,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('1/2 Cast and Relay',
-      formation:Formations.OceanWavesLHBGGB,
+      formation:Formation('Ocean Waves LH BGGB'),
       from:'Left-Hand Waves',parts:'3;4.5;3',
       paths:[
           SwingLeft +
@@ -132,7 +131,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('3/4 Cast and Relay',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       from:'Right-Hand Waves',parts:'4.5;4.5;4.5',
       paths:[
           CastRight +
@@ -157,7 +156,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('3/4 Cast and Relay',
-      formation:Formations.OceanWavesLHBGGB,
+      formation:Formation('Ocean Waves LH BGGB'),
       from:'Left-Hand Waves',parts:'4.5;4.5;4.5',
       paths:[
           CastLeft +

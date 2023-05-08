@@ -21,13 +21,12 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> Recycle = [
 
     AnimatedCall('Recycle in 3 parts',
-      formation:Formations.WaveRH,
+      formation:Formation('Wave RH'),
       from:'Right-Hand Wave',parts:'2;2',
       paths:[
           ExtendRight.changeBeats(2).scale(1.5,1.5) +
@@ -40,7 +39,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Recycle in 3 parts',
-      formation:Formations.WaveLH,
+      formation:Formation('Wave LH'),
       from:'Left-Hand Wave',parts:'2;2',
       paths:[
           ExtendLeft.changeBeats(2).scale(1.5,1.5) +
@@ -53,7 +52,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('All Eight Recycle',
-      formation:Formations.QuarterTag,
+      formation:Formation('Quarter Tag'),
       from:'Quarter Tag',
       paths:[
           UmTurnRight.changeBeats(3).skew(3.0,0.0),
@@ -67,7 +66,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('All Eight Recycle',
-      formation:Formations.QuarterTagLH,
+      formation:Formation('Quarter Tag LH'),
       from:'Left-Hand Quarter Tag',
       paths:[
           UmTurnRight.changeBeats(3).skew(3.0,0.0),
@@ -81,7 +80,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('All Eight Recycle',
-      formation:Formations.MixedQuarterTag1,
+      formation:Formation('Mixed Quarter Tag #1'),
       from:'Quarter Waves',
       paths:[
           UmTurnRight.changeBeats(6).changehands(6).skew(3.0,0.0),
@@ -95,7 +94,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('All Eight Recycle',
-      formation:Formations.MixedQuarterTag6,
+      formation:Formation('Mixed Quarter Tag #6'),
       from:'Left-Hand Quarter Waves',
       paths:[
           RunLeft.changeBeats(6).changehands(5).skew(-3.0,2.0),
@@ -109,7 +108,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('All Eight Recycle',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:-3.5,angle:90),
         DancerModel.fromData(gender:Gender.GIRL,x:1,y:-3.5,angle:90),
         DancerModel.fromData(gender:Gender.BOY,x:0,y:-2,angle:180),
@@ -130,7 +129,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('All Eight Recycle',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:-3.5,angle:90),
         DancerModel.fromData(gender:Gender.GIRL,x:1,y:-3.5,angle:90),
         DancerModel.fromData(gender:Gender.BOY,x:0,y:-2,angle:0),
@@ -151,7 +150,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('All Eight Recycle',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:-3.5,angle:90),
         DancerModel.fromData(gender:Gender.GIRL,x:1,y:-3.5,angle:270),
         DancerModel.fromData(gender:Gender.BOY,x:0,y:-2,angle:180),
@@ -172,7 +171,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('All Eight Recycle',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:-3.5,angle:270),
         DancerModel.fromData(gender:Gender.GIRL,x:1,y:-3.5,angle:90),
         DancerModel.fromData(gender:Gender.BOY,x:0,y:-2,angle:0),
@@ -193,7 +192,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('All 8 Cycle and Wheel',
-      formation:Formations.QuarterLinesRH,
+      formation:Formation('Quarter Lines RH'),
       from:'Quarter Lines',
       paths:[
           UmTurnRight.changeBeats(3).skew(3.0,0.0),
@@ -206,7 +205,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('All 8 Cycle and Wheel',
-      formation:Formations.QuarterLinesLH,
+      formation:Formation('Quarter Lines LH'),
       from:'Left-Hand Quarter Lines',
       paths:[
           UmTurnRight.changeBeats(3).skew(3.0,0.0),
@@ -220,7 +219,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('All 8 Cycle and Wheel',
-      formation:Formations.MixedQuarterTag3,
+      formation:Formation('Mixed Quarter Tag #3'),
       from:'Mixed Quarter Tag 1',
       paths:[
           UmTurnRight.changeBeats(6).changehands(6).skew(3.0,0.0),
@@ -233,7 +232,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('All 8 Cycle and Wheel',
-      formation:Formations.MixedQuarterTag8,
+      formation:Formation('Mixed Quarter Tag #8'),
       from:'Mixed Quarter Tag 2',
       paths:[
           RunLeft.changeBeats(6).changehands(5).skew(-3.0,2.0),
@@ -246,7 +245,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('All 8 Cycle and Wheel',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:-3.5,angle:90),
         DancerModel.fromData(gender:Gender.GIRL,x:1,y:-3.5,angle:90),
         DancerModel.fromData(gender:Gender.BOY,x:0,y:-2,angle:180),
@@ -266,7 +265,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('All 8 Cycle and Wheel',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:-3.5,angle:90),
         DancerModel.fromData(gender:Gender.GIRL,x:1,y:-3.5,angle:90),
         DancerModel.fromData(gender:Gender.BOY,x:0,y:-2,angle:0),
@@ -286,7 +285,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('All 8 Cycle and Wheel',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:-3.5,angle:90),
         DancerModel.fromData(gender:Gender.GIRL,x:1,y:-3.5,angle:270),
         DancerModel.fromData(gender:Gender.BOY,x:0,y:-2,angle:180),
@@ -304,7 +303,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('All 8 Cycle and Wheel',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:-3.5,angle:270),
         DancerModel.fromData(gender:Gender.GIRL,x:1,y:-3.5,angle:90),
         DancerModel.fromData(gender:Gender.BOY,x:0,y:-2,angle:0),
@@ -324,7 +323,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('2/3 Recycle, by definition,',
-      formation:Formations.WaveRH,
+      formation:Formation('Wave RH'),
       from:'Right-Hand Wave',
       taminator: '''
       This explicitly shows both parts,
@@ -339,7 +338,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('2/3 Recycle, by definition,',
-      formation:Formations.WaveLH,
+      formation:Formation('Wave LH'),
       from:'Left-Hand Wave',
       taminator: '''
       This explicitly shows both parts,
@@ -354,7 +353,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('2/3 Recycle, by definition,',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       from:'Right-Hand Waves',
       taminator: '''
       This explicitly shows both parts,
@@ -375,7 +374,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('2/3 Recycle, by definition,',
-      formation:Formations.OceanWavesLHBGGB,
+      formation:Formation('Ocean Waves LH BGGB'),
       from:'Left-Hand Waves',
       taminator: '''
       This explicitly shows both parts,
@@ -396,7 +395,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('2/3 Recycle, by definition,',
-      formation:Formations.TidalWaveRHBGGB,
+      formation:Formation('Tidal Wave RH BGGB'),
       from:'Right-Hand Tidal Wave',
       taminator: '''
       This explicitly shows both parts,
@@ -417,7 +416,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('2/3 Recycle, by definition,',
-      formation:Formations.TidalWaveLHBGGB,
+      formation:Formation('Tidal Wave LH BGGB'),
       from:'Left-Hand Tidal Wave',
       taminator: '''
       This explicitly shows both parts,
@@ -438,7 +437,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('2/3 Recycle',
-      formation:Formations.WaveRH,
+      formation:Formation('Wave RH'),
       from:'Right-Hand Wave',
       taminator: '''
       This is how experienced dancers perform the call,
@@ -452,7 +451,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('2/3 Recycle',
-      formation:Formations.WaveLH,
+      formation:Formation('Wave LH'),
       from:'Left-Hand Wave',
       taminator: '''
       This is how experienced dancers perform the call,
@@ -466,7 +465,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('2/3 Recycle',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       from:'Right-Hand Waves',
       taminator: '''
       This is how experienced dancers perform the call,
@@ -483,7 +482,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('2/3 Recycle',
-      formation:Formations.OceanWavesLHBGGB,
+      formation:Formation('Ocean Waves LH BGGB'),
       from:'Left-Hand Waves',
       taminator: '''
       This is how experienced dancers perform the call,
@@ -500,7 +499,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('2/3 Recycle',
-      formation:Formations.TidalWaveRHBGGB,
+      formation:Formation('Tidal Wave RH BGGB'),
       from:'Right-Hand Tidal Wave',
       taminator: '''
       This is how experienced dancers perform the call,
@@ -521,7 +520,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('2/3 Recycle',
-      formation:Formations.TidalWaveLHBGGB,
+      formation:Formation('Tidal Wave LH BGGB'),
       from:'Left-Hand Tidal Wave',
       taminator: '''
       This is how experienced dancers perform the call,
@@ -542,7 +541,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('As Couples 2/3 Recycle',
-      formation:Formations.TwomFacedTidalLineRH,
+      formation:Formation('Two-Faced Tidal Line RH'),
       group:' ',
       paths:[
           LeadRight.changeBeats(2).changehands(2).scale(3.0,2.5) +
@@ -561,7 +560,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Concentric 2/3 Recycle',
-      formation:Formations.TidalWaveRHBGGB,
+      formation:Formation('Tidal Wave RH BGGB'),
       group:' ',
       paths:[
           LeadRight.changeBeats(4.5).scale(3.0,5.5),
@@ -578,7 +577,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Stretch 2/3 Recycle',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       group:' ',
       paths:[
           LeadRight.changeBeats(4.5).scale(3.0,5.0),
@@ -592,7 +591,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Tandem 2/3 Recycle',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       group:' ',
       paths:[
           Forward_2 +
@@ -611,7 +610,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Box Recycle',
-      formation:Formations.BoxRH,
+      formation:Formation('Box RH'),
       from:'Right-Hand Box',
       paths:[
           UmTurnRight.changeBeats(4).changehands(6).skew(2.0,0.0),
@@ -620,7 +619,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Box Recycle',
-      formation:Formations.BoxLH,
+      formation:Formation('Box LH'),
       from:'Left-Hand Box',
       paths:[
           RunLeft.changeBeats(4).changehands(5).scale(2.0,2.0).skew(-2.0,0.0),
@@ -629,7 +628,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Split Recycle',
-      formation:Formations.OceanWavesRHBGBG,
+      formation:Formation('Ocean Waves RH BGBG'),
       from:'Right-Hand Waves',
       paths:[
           UmTurnRight.changeBeats(4).changehands(6).skew(2.0,-0.5),
@@ -642,7 +641,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Split Recycle',
-      formation:Formations.OceanWavesLHBGBG,
+      formation:Formation('Ocean Waves LH BGBG'),
       from:'Left-Hand Waves',
       paths:[
           RunLeft.changeBeats(4).changehands(5).scale(1.5,2.0).skew(-2.0,-1.5),
@@ -655,7 +654,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Split Recycle',
-      formation:Formations.ColumnRHGBGB,
+      formation:Formation('Column RH GBGB'),
       from:'Right-Hand Columns',
       paths:[
           RunRight.changeBeats(4).changehands(6).scale(2.0,2.0).skew(-1.0,0.0),
@@ -668,7 +667,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Split Recycle',
-      formation:Formations.ColumnLHGBGB,
+      formation:Formation('Column LH GBGB'),
       from:'Left-Hand Columns',
       paths:[
           UmTurnLeft.changeBeats(4).changehands(5).skew(1.0,0.0),
@@ -681,7 +680,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Split Recycle',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-2,y:3,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:-2,y:1,angle:180),
         DancerModel.fromData(gender:Gender.BOY,x:-2,y:-1,angle:0),
@@ -699,7 +698,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('As Couples Box Recycle',
-      formation:Formations.TwomFacedLinesRH,
+      formation:Formation('Two-Faced Lines RH'),
       from:'Two-Faced Lines',group:' ',
       paths:[
           RunRight.changeBeats(4).changehands(6).scale(1.0,0.5).skew(2.0,-1.5),
@@ -712,7 +711,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('All 8 Box Recycle',
-      formation:Formations.StaticMiniWavesRH,
+      formation:Formation('Static MiniWaves RH'),
       group:' ',
       paths:[
           UmTurnRight.changeBeats(4).changehands(6).skew(3.0,0.0),
@@ -725,7 +724,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('All 8 Box Recycle',
-      formation:Formations.StaticMiniWavesLH,
+      formation:Formation('Static MiniWaves LH'),
       group:' ',noDisplay: true,
       paths:[
           RunLeft.changeBeats(4).changehands(5).scale(2.0,2.0).skew(-3.0,0.0),
@@ -738,7 +737,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Concentric Box Recycle',
-      formation:Formations.ColumnRHGBGB,
+      formation:Formation('Column RH GBGB'),
       group:' ',
       paths:[
           RunRight.changeBeats(4).changehands(6).scale(2.0,2.25).skew(-3.0,0.0),
@@ -751,7 +750,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Tandem Box Recycle',
-      formation:Formations.ColumnRHGBGB,
+      formation:Formation('Column RH GBGB'),
       group:' ',
       paths:[
           CounterRotateRight_0_m4.changehands(2) +
@@ -766,7 +765,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Triple Box Recycle',
-      formation:Formations.PhantomWavesRH,
+      formation:Formation('Phantom Waves RH'),
       group:' ',
       paths:[
           UmTurnRight.changeBeats(4).changehands(6).skew(2.0,-0.5),

@@ -19,13 +19,13 @@
 */
 
 import '../../animated_call.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> Flutterwheel = [
 
     AnimatedCall('Flutterwheel',
-      formation:Formations.FacingCouplesCompact,
+      formation:Formation('Facing Couples Compact'),
       from:'Facing Couples',difficulty: 1,
       paths:[
           Stand.changeBeats(3.5).changehands(0) +
@@ -38,7 +38,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Flutterwheel',
-      formation:Formations.FacingCouplesFar,
+      formation:Formation('Facing Couples Far'),
       from:'Facing Couples Far',difficulty: 1,noDisplay: true,
       paths:[
           Stand.changeBeats(3.5).changehands(0) +
@@ -51,7 +51,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Flutterwheel',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       from:'Lines',difficulty: 1,
       paths:[
           Forward.changeBeats(3.5).changehands(0) +
@@ -72,7 +72,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Flutterwheel',
-      formation:Formations.EightChainThru,
+      formation:Formation('Eight Chain Thru'),
       from:'Eight Chain Thru',difficulty: 2,
       paths:[
           Stand.changeBeats(3.5).changehands(0) +
@@ -93,7 +93,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Reverse Flutterwheel',
-      formation:Formations.FacingCouplesCompact,
+      formation:Formation('Facing Couples Compact'),
       from:'Facing Couples',difficulty: 1,
       paths:[
           ExtendRight.changeBeats(2).scale(1.5,1.75) +
@@ -106,7 +106,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Reverse Flutterwheel',
-      formation:Formations.FacingCouplesFar,
+      formation:Formation('Facing Couples Far'),
       from:'Facing Couples Far',difficulty: 1,noDisplay: true,
       paths:[
           ExtendRight.changeBeats(2).scale(3.0,1.75) +
@@ -119,7 +119,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Reverse Flutterwheel',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       from:'Lines',difficulty: 1,
       paths:[
           ExtendRight.changeBeats(2).scale(1.5,1.75) +
@@ -140,7 +140,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Reverse Flutterwheel',
-      formation:Formations.EightChainThru,
+      formation:Formation('Eight Chain Thru'),
       from:'Eight Chain Thru',difficulty: 2,
       paths:[
           ExtendRight.changeBeats(2).scale(1.0,1.5) +
@@ -161,7 +161,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('All 4 Women Lead Flutterwheel',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       from:'Static Square',group:' ',difficulty: 2,
       paths:[
           QuarterLeft.changeBeats(4.5).skew(0.0,-1.0) +
@@ -188,7 +188,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('All 4 Men Lead Reverse Flutterwheel',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       from:'Static Square',group:' ',difficulty: 2,
       paths:[
           ExtendRight.changeBeats(3).scale(3.0,2.0) +

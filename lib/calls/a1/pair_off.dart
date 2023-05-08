@@ -21,14 +21,13 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 import '../a2/all_4_all_8.dart' as a2;
 
   final List<AnimatedCall> PairOff = [
 
     AnimatedCall('Pair Off',
-      formation:Formations.FacingCouplesCompact,
+      formation:Formation('Facing Couples Compact'),
       from:'Facing Couples',
       paths:[
           LeadLeft.changeBeats(2).scale(0.5,0.5),
@@ -37,7 +36,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Pair Off',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       from:'Lines',
       paths:[
           QuarterLeft.changeBeats(2).skew(1.0,0.0),
@@ -50,7 +49,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Pair Off',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:1,y:3,angle:270),
         DancerModel.fromData(gender:Gender.GIRL,x:-1,y:3,angle:270),
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:1,angle:90),
@@ -68,7 +67,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Heads Pair Off',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       group:' ',
       paths:[
           Forward.changeBeats(1.5) +
@@ -83,7 +82,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Sides Pair Off',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       group:' ',
       paths:[
           Path(),
@@ -98,7 +97,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('As Couples Pair Off',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       from:'Lines',group:' ',
       paths:[
           BackHingeRight,

@@ -21,13 +21,12 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> CourtesyTurn = [
 
     AnimatedCall('Courtesy Turn',
-      formation:Formations.CouplesFacingOut,
+      formation:Formation('Couples Facing Out'),
       from:'Couples Facing Out',notForSequencer: true,
       paths:[
           BelleWheel.scale(0.67,1.0),
@@ -36,7 +35,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Courtesy Turn',
-      formation:Formations.LinesFacingOut,
+      formation:Formation('Lines Facing Out'),
       from:'Lines Facing Out',isGenderSpecific:true,
       paths:[
           BelleWheel.scale(0.67,1.0),
@@ -49,7 +48,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Courtesy Turn',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:1,y:3,angle:270),
         DancerModel.fromData(gender:Gender.GIRL,x:1,y:1,angle:90),
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:3,angle:270),
@@ -75,7 +74,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Courtesy Turn and a Quarter More',
-      formation:Formations.CouplesFacingOut,
+      formation:Formation('Couples Facing Out'),
       from:'Couples Facing Out',group:' ',isGenderSpecific:true,
       paths:[
           BelleWheel.scale(0.67,1.0) +
@@ -86,7 +85,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Heads Pass Thru and Courtesy Turn',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       group:' ',isGenderSpecific:true,fractions:'6',
       paths:[
           ExtendLeft.changeBeats(3).scale(3.0,0.5) +
@@ -103,7 +102,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('All 4 Ladies make a right-hand star, turn it once around; boys Courtesy Turn your girl',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       group:' ',isGenderSpecific:true,
       taminator: '''
       This is also called 4 Ladies Chain All 4 Quarters

@@ -26,7 +26,7 @@ import '../../moves.dart';
   final List<AnimatedCall> SpinChainTheLine = [
 
     AnimatedCall('Spin Chain the Line',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-3.5,y:0,angle:90),
         DancerModel.fromData(gender:Gender.GIRL,x:-2.5,y:0,angle:270),
         DancerModel.fromData(gender:Gender.GIRL,x:-1.5,y:0,angle:90),

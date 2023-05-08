@@ -21,13 +21,12 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> TurnThru = [
 
     AnimatedCall('Turn Thru',
-      formation:Formations.FacingCouplesCompact,
+      formation:Formation('Facing Couples Compact'),
       from:'Facing Couples',
       paths:[
           ExtendLeft.scale(1.5,0.5) +
@@ -40,7 +39,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Turn Thru',
-      formation:Formations.BoxRH,
+      formation:Formation('Box RH'),
       from:'Right-Hand Box',
       paths:[
           HingeRight.scale(0.75,1.0) +
@@ -53,7 +52,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Turn Thru',
-      formation:Formations.WaveRH,
+      formation:Formation('Wave RH'),
       from:'Right-Hand Wave',difficulty: 2,
       paths:[
           HingeRight.scale(0.75,1.0) +
@@ -66,7 +65,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Turn Thru',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       from:'Lines',difficulty: 2,
       paths:[
           ExtendLeft.changeBeats(2).scale(2.0,0.5) +
@@ -87,7 +86,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Turn Thru',
-      formation:Formations.OceanWavesRHGBBG,
+      formation:Formation('Ocean Waves RH GBBG'),
       from:'Waves',difficulty: 1,
       paths:[
           HingeRight.scale(0.75,1.0) +
@@ -108,7 +107,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Turn Thru',
-      formation:Formations.EightChainThru,
+      formation:Formation('Eight Chain Thru'),
       from:'Eight Chain Thru',difficulty: 1,
       paths:[
           ExtendLeft.scale(1.0,0.5) +
@@ -129,7 +128,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Turn Thru',
-      formation:Formations.ColumnRHGBGB,
+      formation:Formation('Column RH GBGB'),
       from:'Right-Hand Columns',difficulty: 2,
       paths:[
           HingeRight.scale(0.75,1.0) +
@@ -150,7 +149,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Turn Thru',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-3,y:1,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:-3,y:-1,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:0,y:-3,angle:180),

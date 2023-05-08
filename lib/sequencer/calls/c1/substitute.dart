@@ -17,7 +17,6 @@
  *     along with Taminations.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import '../../../formations.dart';
 import '../../../moves.dart';
 import '../common.dart';
 
@@ -30,7 +29,7 @@ class Substitute extends Action {
   @override
   void perform(CallContext ctx) {
     //  Check that we have a valid 2x4 formation
-    final ctxDPT = CallContext.fromFormation(Formations.DoublePassThru);
+    final ctxDPT = CallContext.fromFormation(Formation('Double Pass Thru'));
     if (ctxDPT.matchFormations(ctx,sexy:false,fuzzy:false,rotate:90,handholds:false) == null)
       throw CallError('Cannot Substitute from this formation');
     ctx.center(4).forEach((d) {

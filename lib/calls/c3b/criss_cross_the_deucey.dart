@@ -21,13 +21,12 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> CrissCrossTheDeucey = [
 
     AnimatedCall('Criss Cross the Deucey',
-      formation:Formations.OceanWavesRHGBGB,
+      formation:Formation('Ocean Waves RH GBGB'),
       from:'Right-Hand Waves',
       paths:[
           ExtendRight.changeBeats(2).scale(2.0,1.75) +
@@ -46,7 +45,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Criss Cross the Deucey',
-      formation:Formations.OceanWavesLHGBGB,
+      formation:Formation('Ocean Waves LH GBGB'),
       from:'Left-Hand Waves',
       paths:[
           LeadLeft.changeBeats(2) +
@@ -65,7 +64,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Criss Cross the Deucey',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:1,y:3,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:1,y:1,angle:90),
         DancerModel.fromData(gender:Gender.BOY,x:1,y:-1,angle:0),
@@ -89,7 +88,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Criss Cross the Deucey',
-      formation:Formations.StaticMiniWavesRH,
+      formation:Formation('Static MiniWaves RH'),
       from:'Squared Mini-Waves',
       paths:[
           ExtendRight.changeBeats(3).scale(3.0,2.0) +

@@ -19,13 +19,13 @@
 */
 
 import '../../animated_call.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> BendTheLine = [
 
     AnimatedCall('Bend the Line',
-      formation:Formations.TwomFacedLineRH,
+      formation:Formation('Two-Faced Line RH'),
       from:'Right-Hand Two-Faced Line',difficulty: 1,
       paths:[
           HingeRight.changeBeats(4),
@@ -34,7 +34,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Bend the Line',
-      formation:Formations.TwomFacedLineLH,
+      formation:Formation('Two-Faced Line LH'),
       from:'Left-Hand Two-Faced Line',difficulty: 1,
       paths:[
           BackHingeRight.changeBeats(4),
@@ -43,7 +43,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Bend the Line',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       from:'Lines Facing In',difficulty: 2,
       paths:[
           HingeRight.changeBeats(4),
@@ -56,7 +56,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Bend the Line',
-      formation:Formations.LinesFacingOut,
+      formation:Formation('Lines Facing Out'),
       from:'Lines Facing Out',difficulty: 1,
       paths:[
           HingeLeft.changeBeats(4),
@@ -69,7 +69,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Bend the Line',
-      formation:Formations.TwomFacedLinesRH,
+      formation:Formation('Two-Faced Lines RH'),
       from:'Right-Hand Two-Faced Lines',difficulty: 1,
       paths:[
           HingeRight.changeBeats(4),
@@ -82,7 +82,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Bend the Line',
-      formation:Formations.TwomFacedLinesLH,
+      formation:Formation('Two-Faced Lines LH'),
       from:'Left-Hand Two-Faced Lines',difficulty: 1,
       paths:[
           HingeLeft.changeBeats(4),
@@ -95,7 +95,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Bend the Line',
-      formation:Formations.TwomFacedTidalLineRH,
+      formation:Formation('Two-Faced Tidal Line RH'),
       from:'Two-Faced Tidal Line',difficulty: 1,
       paths:[
           HingeRight.changeBeats(4).changehands(6).scale(1.0,0.5),
@@ -108,7 +108,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Bend the Line',
-      formation:Formations.TwomFacedTidalLineLH,
+      formation:Formation('Two-Faced Tidal Line LH'),
       from:'Left-Hand Two-Faced Tidal Line',difficulty: 1,
       paths:[
           HingeLeft.changeBeats(4).scale(1.0,0.5),
@@ -121,7 +121,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Bend the Line',
-      formation:Formations.TidalLineRH,
+      formation:Formation('Tidal Line RH'),
       from:'Right-Hand Tidal Line',difficulty: 2,
       paths:[
           HingeRight.changeBeats(4).scale(1.0,0.5),
@@ -134,7 +134,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Bend the Line',
-      formation:Formations.TidalLineLH,
+      formation:Formation('Tidal Line LH'),
       from:'Left-Hand Tidal Line',difficulty: 2,
       paths:[
           BackHingeRight.changeBeats(4).scale(1.0,0.5),
@@ -147,7 +147,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Line of 8, Bend the Line',
-      formation:Formations.TidalLineRH,
+      formation:Formation('Tidal Line RH'),
       from:'Tidal Line',difficulty: 2,
       paths:[
           LeadRight.changeBeats(6).changehands(6).scale(3.0,1.5),

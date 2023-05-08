@@ -21,13 +21,12 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> InterlockedPlenty = [
 
     AnimatedCall('Interlocked Plenty',
-      formation:Formations.QuarterLinesRH,
+      formation:Formation('Quarter Lines RH'),
       from:'Right-Hand Quarter Line',fractions:'6;6',
       paths:[
           ExtendRight.changeBeats(6).scale(1.0,4.0) +
@@ -54,7 +53,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Interlocked Plenty',
-      formation:Formations.QuarterLinesLH,
+      formation:Formation('Quarter Lines LH'),
       from:'Left-Hand Quarter Line',fractions:'6;7',
       paths:[
           ExtendRight.changeBeats(6).scale(1.0,4.0) +
@@ -86,7 +85,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Interlocked Plenty',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.GIRL,x:-3,y:1,angle:180),
         DancerModel.fromData(gender:Gender.BOY,x:-3,y:-1,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:0,y:1,angle:0),
@@ -123,7 +122,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Interlocked Plenty',
-      formation:Formations.n34LinesLH,
+      formation:Formation('3/4 Lines LH'),
       from:'Left-Hand 3/4 Line',fractions:'6;6',
       paths:[
           RunRight.skew(-2.0,0.0) +
@@ -151,7 +150,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Interlocked Scoot and Plenty',
-      formation:Formations.QuarterLinesRH,
+      formation:Formation('Quarter Lines RH'),
       from:'Right-Hand Quarter Line',fractions:'8;6;7',
       paths:[
           Forward.changeBeats(2).scale(1.5,1.0) +
@@ -195,7 +194,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Interlocked Scoot and Plenty',
-      formation:Formations.QuarterLinesLH,
+      formation:Formation('Quarter Lines LH'),
       from:'Left-Hand Quarter Line',fractions:'8;6;6',
       paths:[
           Forward.changeBeats(2).scale(1.5,1.0) +

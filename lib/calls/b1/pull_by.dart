@@ -19,13 +19,13 @@
 */
 
 import '../../animated_call.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> PullBy = [
 
     AnimatedCall('Right Pull By',
-      formation:Formations.FacingCouplesCompact,
+      formation:Formation('Facing Couples Compact'),
       group:' ',
       paths:[
           PullLeft.changeBeats(2).scale(1.5,0.5) +
@@ -36,7 +36,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left Pull By',
-      formation:Formations.FacingCouplesCompact,
+      formation:Formation('Facing Couples Compact'),
       group:' ',
       paths:[
           PullRight.changeBeats(2).scale(1.5,0.5) +

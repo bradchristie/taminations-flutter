@@ -19,13 +19,13 @@
 */
 
 import '../../animated_call.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> ChangeTheCenters = [
 
     AnimatedCall('Change the Centers',
-      formation:Formations.WaveRH,
+      formation:Formation('Wave RH'),
       from:'Right-Hand Wave',parts:'3;3;3',
       paths:[
           SwingRight +
@@ -40,7 +40,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Change the Centers',
-      formation:Formations.WaveLH,
+      formation:Formation('Wave LH'),
       from:'Left-Hand Wave',parts:'3;3;3',
       paths:[
           SwingLeft +
@@ -55,7 +55,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Change the Wave',
-      formation:Formations.WaveRH,
+      formation:Formation('Wave RH'),
       from:'Right-Hand Wave',parts:'3;3;3',
       paths:[
           SwingRight +
@@ -70,7 +70,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Change the Wave',
-      formation:Formations.WaveLH,
+      formation:Formation('Wave LH'),
       from:'Left-Hand Wave',parts:'3;3;3',
       paths:[
           SwingLeft +

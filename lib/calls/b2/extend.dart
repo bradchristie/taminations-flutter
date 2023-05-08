@@ -21,13 +21,12 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> Extend = [
 
     AnimatedCall('Extend',
-      formation:Formations.SingleQuarterTag,
+      formation:Formation('Single Quarter Tag'),
       from:'Single Quarter Tag',difficulty: 2,
       paths:[
           ExtendLeft.changeBeats(2),
@@ -36,7 +35,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Extend',
-      formation:Formations.SingleLeftQuarterTag,
+      formation:Formation('Single Left Quarter Tag'),
       from:'Single Left Quarter Tag',difficulty: 2,
       paths:[
           ExtendRight.changeBeats(2),
@@ -45,7 +44,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Extend',
-      formation:Formations.BoxRH,
+      formation:Formation('Box RH'),
       from:'Right-Hand Box',difficulty: 2,
       paths:[
           Forward_2,
@@ -54,7 +53,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Extend',
-      formation:Formations.BoxLH,
+      formation:Formation('Box LH'),
       from:'Left-Hand Box',difficulty: 2,
       paths:[
           ExtendLeft.changeBeats(2),
@@ -63,7 +62,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Extend',
-      formation:Formations.Single_34Tag,
+      formation:Formation('Single 3/4 Tag'),
       from:'Single 3/4 Tag',difficulty: 2,
       paths:[
           Path(),
@@ -72,7 +71,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Extend',
-      formation:Formations.SingleLeft_34Tag,
+      formation:Formation('Single Left 3/4 Tag'),
       from:'Single Left 3/4 Tag',difficulty: 2,
       paths:[
           Path(),
@@ -81,7 +80,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Extend',
-      formation:Formations.SingleDoublePassThru,
+      formation:Formation('Single Double Pass Thru'),
       from:'Single Double Pass Thru',difficulty: 2,
       paths:[
           Path(),
@@ -90,7 +89,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Extend',
-      formation:Formations.QuarterTag,
+      formation:Formation('Quarter Tag'),
       from:'Right-Hand 1/4 Tag',difficulty: 1,
       paths:[
           ExtendLeft.changeBeats(2).scale(1.0,2.0),
@@ -103,7 +102,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Extend',
-      formation:Formations.QuarterTagLH,
+      formation:Formation('Quarter Tag LH'),
       from:'Left-Hand 1/4 Tag',difficulty: 2,
       paths:[
           Forward.changeBeats(2),
@@ -116,7 +115,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Extend',
-      formation:Formations.DoublePassThru,
+      formation:Formation('Double Pass Thru'),
       from:'Double Pass Thru',difficulty: 2,
       paths:[
           Path(),
@@ -129,7 +128,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Extend',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       from:'Right-Hand Waves',difficulty: 1,
       paths:[
           Forward_2,
@@ -142,7 +141,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Extend',
-      formation:Formations.OceanWavesLHBGGB,
+      formation:Formation('Ocean Waves LH BGGB'),
       from:'Left-Hand Waves',difficulty: 2,
       paths:[
           ExtendLeft.changeBeats(2).scale(1.0,2.0),
@@ -155,7 +154,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Extend',
-      formation:Formations.n34Tag,
+      formation:Formation('3/4 Tag'),
       from:'3/4 Tag',difficulty: 2,
       paths:[
           Path(),
@@ -168,7 +167,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Extend',
-      formation:Formations.n34TagLH,
+      formation:Formation('3/4 Tag LH'),
       from:'Left-Hand 3/4 Tag',difficulty: 2,
       paths:[
           Path(),
@@ -181,7 +180,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Extend',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:-2,angle:90),
         DancerModel.fromData(gender:Gender.GIRL,x:0,y:-.5,angle:270),
         DancerModel.fromData(gender:Gender.BOY,x:1,y:-2,angle:270),
@@ -199,7 +198,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Extend',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:-2,angle:270),
         DancerModel.fromData(gender:Gender.GIRL,x:0,y:-.5,angle:270),
         DancerModel.fromData(gender:Gender.BOY,x:1,y:-2,angle:90),
@@ -217,7 +216,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Extend',
-      formation:Formations.ColumnRHGBGB,
+      formation:Formation('Column RH GBGB'),
       from:'Right-Hand Columns',difficulty: 3,
       paths:[
           ExtendRight.changeBeats(2).scale(0.5,1.0),
@@ -230,7 +229,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Extend',
-      formation:Formations.ColumnLHGBGB,
+      formation:Formation('Column LH GBGB'),
       from:'Left-Hand Columns',difficulty: 3,
       paths:[
           Forward.changeBeats(2),
@@ -243,7 +242,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Extend',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:-2,angle:90),
         DancerModel.fromData(gender:Gender.GIRL,x:0,y:-.5,angle:90),
         DancerModel.fromData(gender:Gender.BOY,x:1,y:-2,angle:270),
@@ -261,7 +260,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Extend',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:-2,angle:270),
         DancerModel.fromData(gender:Gender.GIRL,x:0,y:-.5,angle:90),
         DancerModel.fromData(gender:Gender.BOY,x:1,y:-2,angle:90),

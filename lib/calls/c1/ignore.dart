@@ -21,13 +21,12 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> Ignore = [
 
     AnimatedCall('Ignore the Very Centers, Fan the Top',
-      formation:Formations.TidalWaveRHBGGB,
+      formation:Formation('Tidal Wave RH BGGB'),
       group:' ',
       paths:[
           LeadRight.changeBeats(4).scale(3.0,1.5),
@@ -42,7 +41,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Ignore the Head Men, Motivate',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-2,y:-3,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:-2,y:-1,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:-2,y:1,angle:180),
@@ -69,7 +68,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Ignore the Lead End, Lines of 3 Out Roll Circulate',
-      formation:Formations.TwomFacedLinesRH,
+      formation:Formation('Two-Faced Lines RH'),
       group:' ',
       paths:[
           FlipRight.changeBeats(4),
@@ -82,7 +81,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Ignore the Head Men, Wave-Based Triangle Circulate',
-      formation:Formation('Diamonds RH PTP Girl Points', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.GIRL,x:-1,y:-3,angle:90),
         DancerModel.fromData(gender:Gender.BOY,x:0,y:-1,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:1,y:-3,angle:270),

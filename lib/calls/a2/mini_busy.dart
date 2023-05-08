@@ -21,13 +21,12 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> MiniBusy = [
 
     AnimatedCall('Mini-Busy',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.GIRL,x:-2,y:3,angle:0),
         DancerModel.fromData(gender:Gender.BOY,x:-2,y:1,angle:0),
         DancerModel.fromData(gender:Gender.BOY,x:-2,y:-1,angle:180),
@@ -53,7 +52,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('_Mini-Busy But',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.GIRL,x:-2,y:3,angle:0),
         DancerModel.fromData(gender:Gender.BOY,x:-2,y:1,angle:0),
         DancerModel.fromData(gender:Gender.BOY,x:-2,y:-1,angle:180),
@@ -76,7 +75,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Mini-Busy',
-      formation:Formations.TwomFacedLinesLH,
+      formation:Formation('Two-Faced Lines LH'),
       from:'Left-Hand Two-Faced Lines',parts:'2;1.5',
       paths:[
           QuarterLeft.changeBeats(2).skew(1.0,0.0) +
@@ -97,7 +96,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('_Mini-Busy But',
-      formation:Formations.TwomFacedLinesLH,
+      formation:Formation('Two-Faced Lines LH'),
       from:'Left-Hand Two-Faced Lines',parts:'2;1.5',noDisplay: true,
       paths:[
           QuarterLeft.changeBeats(2).skew(1.0,0.0) +
@@ -115,7 +114,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('2/3 Mini-Busy',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.GIRL,x:-2,y:3,angle:0),
         DancerModel.fromData(gender:Gender.BOY,x:-2,y:1,angle:0),
         DancerModel.fromData(gender:Gender.BOY,x:-2,y:-1,angle:180),
@@ -137,7 +136,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('2/3 Mini-Busy',
-      formation:Formations.TwomFacedLinesLH,
+      formation:Formation('Two-Faced Lines LH'),
       from:'Left-Hand Two-Faced Lines',parts:'2;1.5',noDisplay: true,
       paths:[
           QuarterLeft.changeBeats(2).skew(1.0,0.0) +

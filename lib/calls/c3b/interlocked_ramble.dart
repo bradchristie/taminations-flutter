@@ -21,13 +21,12 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> InterlockedRamble = [
 
     AnimatedCall('Interlocked Ramble',
-      formation:Formations.n34LinesRH,
+      formation:Formation('3/4 Lines RH'),
       from:'Right-Hand 3/4 Lines',parts:'4',
       paths:[
           QuarterRight.changeBeats(2).skew(0.0,-1.0) +
@@ -52,7 +51,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Interlocked Ramble',
-      formation:Formation('3/4 Lines LH', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.GIRL,x:3,y:-1,angle:0),
         DancerModel.fromData(gender:Gender.BOY,x:3,y:1,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:0,y:1,angle:180),

@@ -21,13 +21,12 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> CounterRotate = [
 
     AnimatedCall('Counter Rotate',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:3,y:1.5,angle:270),
         DancerModel.fromData(gender:Gender.GIRL,x:1,y:1.5,angle:90),
         DancerModel.fromData(gender:Gender.GIRL,x:-1,y:1.5,angle:270),
@@ -48,7 +47,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Counter Rotate',
-      formation:Formations.OceanWavesLHBGGB,
+      formation:Formation('Ocean Waves LH BGGB'),
       from:'Left-Hand Waves',
       paths:[
           CounterRotateLeft_1_5.changeBeats(5),
@@ -61,7 +60,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Counter Rotate',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-3.5,y:0,angle:90),
         DancerModel.fromData(gender:Gender.GIRL,x:-2.5,y:0,angle:270),
         DancerModel.fromData(gender:Gender.GIRL,x:-1.5,y:0,angle:90),
@@ -79,7 +78,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Counter Rotate',
-      formation:Formations.DiamondsRHGirlPoints,
+      formation:Formation('Diamonds RH Girl Points'),
       from:'Right-Hand Diamonds',
       paths:[
           LeadRight.changeBeats(5).scale(3.0,3.0),
@@ -92,7 +91,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Counter Rotate',
-      formation:Formations.DiamondsRHPTPGirlPoints,
+      formation:Formation('Diamonds RH PTP Girl Points'),
       from:'Point to Point Diamonds',
       paths:[
           CounterRotateRight_4_2.changeBeats(5).changehands(2),
@@ -105,7 +104,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Counter Rotate',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       from:'Normal Lines',
       taminator: '''
     Tha dancers cannot follow concentric circles here because they would collide.
@@ -127,7 +126,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Counter Rotate',
-      formation:Formations.InvertedLinesEndsFacingOut,
+      formation:Formation('Inverted Lines Ends Facing Out'),
       from:'Inverted Lines Centers Facing In',
       paths:[
           LeadLeft.changeBeats(3).scale(0.5,3.0) +
@@ -144,7 +143,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Counter Rotate',
-      formation:Formations.InvertedLinesEndsFacingIn,
+      formation:Formation('Inverted Lines Ends Facing In'),
       from:'Inverted Lines Centers Facing Out',
       paths:[
           ExtendLeft.changeBeats(2).scale(2.0,0.5) +
@@ -161,7 +160,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Counter Rotate',
-      formation:Formations.TwomFacedLinesRH,
+      formation:Formation('Two-Faced Lines RH'),
       from:'Right-Hand Two-Faced Lines',
       paths:[
           CounterRotateRight_5_m1.changeBeats(5).changehands(2),
@@ -174,7 +173,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Counter Rotate',
-      formation:Formations.TwomFacedLinesLH,
+      formation:Formation('Two-Faced Lines LH'),
       from:'Left-Hand Two-Faced Lines',
       paths:[
           CounterRotateLeft_1_5.changeBeats(5).changehands(1),
@@ -187,7 +186,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Counter Rotate',
-      formation:Formations.QuarterTag,
+      formation:Formation('Quarter Tag'),
       from:'Quarter Tag',
       paths:[
           ExtendLeft.changeBeats(3).scale(3.0,2.5) +
@@ -202,7 +201,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Counter Rotate',
-      formation:Formations.HourglassFacingRHBox,
+      formation:Formation('Hourglass Facing RH Box'),
       from:'Facing Hourglass',
       paths:[
           CounterRotateRight_1_m5.changeBeats(5),
@@ -215,7 +214,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Counter Rotate',
-      formation:Formations.ColumnRHGBGB,
+      formation:Formation('Column RH GBGB'),
       from:'Right-Hand Columns',
       paths:[
           CounterRotateRight_m2_m4.changeBeats(5).changehands(2),
@@ -228,7 +227,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Counter Rotate',
-      formation:Formations.ColumnLHGBGB,
+      formation:Formation('Column LH GBGB'),
       from:'Left-Hand Columns',
       paths:[
           CounterRotateLeft_4_m2.changeBeats(5).changehands(1),
@@ -241,7 +240,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Counter Rotate',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.GIRL,x:-1,y:3,angle:270),
         DancerModel.fromData(gender:Gender.GIRL,x:-1,y:1,angle:90),
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:-1,angle:90),
@@ -259,7 +258,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Counter Rotate',
-      formation:Formations.MagicColumnLH,
+      formation:Formation('Magic Column LH'),
       from:'Magic Columnns, Left-Hand Centers',
       paths:[
           CounterRotateRight_m2_m4.changeBeats(5).changehands(2),
@@ -272,7 +271,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Counter Rotate',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-2,y:1,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:-2,y:-1,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:-2,y:-3,angle:0),
@@ -290,7 +289,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Points Counter Rotate',
-      formation:Formations.DiamondsRHGirlPoints,
+      formation:Formation('Diamonds RH Girl Points'),
       from:'Right-Hand Diamonds',
       paths:[
           Path(),

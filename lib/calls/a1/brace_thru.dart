@@ -26,7 +26,7 @@ import '../../moves.dart';
   final List<AnimatedCall> BraceThru = [
 
     AnimatedCall('Brace Thru',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-2,y:3,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:-2,y:1,angle:0),
         DancerModel.fromData(gender:Gender.BOY,x:-2,y:-3,angle:0),
@@ -52,7 +52,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Brace Thru',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.GIRL,x:-2,y:3,angle:0),
         DancerModel.fromData(gender:Gender.BOY,x:-2,y:1,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:-2,y:-3,angle:0),
@@ -78,7 +78,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Brace Thru',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.GIRL,x:-3,y:1,angle:0),
         DancerModel.fromData(gender:Gender.BOY,x:-3,y:-1,angle:0),
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:-1,angle:180),
@@ -104,7 +104,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Brace Thru',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-3,y:1,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:-3,y:-1,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:-1,y:-1,angle:180),

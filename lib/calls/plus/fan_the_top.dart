@@ -20,13 +20,13 @@
 
 import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> FanTheTop = [
 
     AnimatedCall('Fan the Top',
-      formation:Formations.WaveRH,
+      formation:Formation('Wave RH'),
       from:'Right-Hand Wave',difficulty: 1,
       paths:[
           LeadRight.changeBeats(4).scale(3.0,3.0),
@@ -36,7 +36,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Fan the Top',
-      formation:Formations.WaveLH,
+      formation:Formation('Wave LH'),
       from:'Left-Hand Wave',difficulty: 2,
       paths:[
           LeadLeft.changeBeats(4).scale(3.0,3.0),
@@ -46,7 +46,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Fan the Top',
-      formation:Formations.DiamondRH,
+      formation:Formation('Diamond RH'),
       from:'Right-Hand Diamond',difficulty: 3,
       paths:[
           LeadRight.changeBeats(4).scale(3.0,3.0),
@@ -55,7 +55,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Fan the Top',
-      formation:Formations.DiamondLH,
+      formation:Formation('Diamond LH'),
       from:'Left-Hand Diamond',difficulty: 3,
       paths:[
           LeadLeft.changeBeats(4).scale(3.0,3.0),
@@ -64,7 +64,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Fan the Top',
-      formation:Formations.DiamondFacingRH,
+      formation:Formation('Diamond Facing RH'),
       from:'Facing Diamond',difficulty: 3,noDisplay: true,
       paths:[
           LeadLeft.changeBeats(4).scale(3.0,3.0),
@@ -73,7 +73,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Fan the Top',
-      formation:Formations.DiamondFacing,
+      formation:Formation('Diamond Facing'),
       from:'Left-Hand Facing Diamond',difficulty: 3,noDisplay: true,
       paths:[
           LeadRight.changeBeats(4).scale(3.0,3.0),
@@ -82,7 +82,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Fan the Top',
-      formation:Formations.TwomFacedLineRH,
+      formation:Formation('Two-Faced Line RH'),
       from:'Right-Hand Two-Faced Line',difficulty: 2,
       paths:[
           LeadRight.changeBeats(4).scale(3.0,3.0),
@@ -92,7 +92,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Fan the Top',
-      formation:Formations.TwomFacedLineLH,
+      formation:Formation('Two-Faced Line LH'),
       from:'Left-Hand Two-Faced Line',difficulty: 2,
       paths:[
           SwingLeft.changeBeats(2.67) +
@@ -102,7 +102,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Fan the Top',
-      formation:Formations.FacingCouples,
+      formation:Formation('Facing Couples'),
       from:'Facing Couples',difficulty: 2,
       paths:[
           ExtendLeft.changeBeats(3).scale(2.0,2.0) +
@@ -114,7 +114,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Fan the Top',
-      formation:Formations.FacingCouplesClose,
+      formation:Formation('Facing Couples Close'),
       from:'Close Couples',parts:'4',difficulty: 2,noDisplay: true,
       paths:[
           ExtendLeft.scale(1.0,0.5) +
@@ -125,7 +125,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Fan the Top',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       from:'Right-Hand Waves',difficulty: 1,
       paths:[
           LeadRight.changeBeats(4).scale(1.5,3.0),
@@ -142,7 +142,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Fan the Top',
-      formation:Formations.OceanWavesLHBGGB,
+      formation:Formation('Ocean Waves LH BGGB'),
       from:'Left-Hand Waves',difficulty: 2,
       paths:[
           LeadLeft.changeBeats(4).scale(1.5,3.0),
@@ -159,7 +159,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Fan the Top',
-      formation:Formations.TwomFacedLinesRH,
+      formation:Formation('Two-Faced Lines RH'),
       from:'Right-Hand Two-Faced Lines',difficulty: 2,
       paths:[
           LeadRight.changeBeats(4).scale(1.5,3.0),
@@ -176,7 +176,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Fan the Top',
-      formation:Formations.TwomFacedLinesLH,
+      formation:Formation('Two-Faced Lines LH'),
       from:'Left-Hand Two-Faced Lines',difficulty: 2,
       paths:[
           LeadLeft.changeBeats(4).scale(1.5,3.0),
@@ -193,7 +193,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Fan the Top',
-      formation:Formations.TidalWaveRHBGGB,
+      formation:Formation('Tidal Wave RH BGGB'),
       from:'Right-Hand Tidal Wave',difficulty: 1,
       paths:[
           LeadRight.changeBeats(4).scale(3.0,1.5),
@@ -208,7 +208,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Fan the Top',
-      formation:Formations.TidalWaveLHBGGB,
+      formation:Formation('Tidal Wave LH BGGB'),
       from:'Left-Hand Tidal Wave',difficulty: 2,
       paths:[
           LeadLeft.changeBeats(4).scale(3.0,1.5),
@@ -223,7 +223,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Fan the Top',
-      formation:Formations.TwomFacedTidalLineRH,
+      formation:Formation('Two-Faced Tidal Line RH'),
       from:'Right-Hand Tidal Two-Face Line',difficulty: 2,
       paths:[
           LeadRight.changeBeats(4).scale(3.0,1.5),
@@ -238,7 +238,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Fan the Top',
-      formation:Formations.TwomFacedTidalLineLH,
+      formation:Formation('Two-Faced Tidal Line LH'),
       from:'Left-Hand Tidal Two-Face Line',difficulty: 2,
       paths:[
           LeadLeft.changeBeats(4).scale(3.0,1.5),
@@ -253,7 +253,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Fan the Top',
-      formation:Formations.EightChainThru,
+      formation:Formation('Eight Chain Thru'),
       from:'Eight Chain Thru',difficulty: 2,
       paths:[
           ExtendLeft +
@@ -272,7 +272,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Fan the Top',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       from:'Facing Lines',difficulty: 2,
       paths:[
           ExtendLeft.changeBeats(2).scale(2.0,1.0) +
@@ -291,7 +291,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Fan the Top',
-      formation:Formations.DiamondsRHGirlPoints,
+      formation:Formation('Diamonds RH Girl Points'),
       from:'Diamonds',difficulty: 3,
       paths:[
           HingeRight.skew(0.0,0.33) +
@@ -308,7 +308,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Fan the Top',
-      formation:Formations.DiamondsLHGirlPoints,
+      formation:Formation('Diamonds LH Girl Points'),
       from:'Left-Hand Diamonds',difficulty: 3,noDisplay: true,
       paths:[
           HingeLeft.skew(0.0,-0.33) +
@@ -325,7 +325,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Fan the Top',
-      formation:Formations.DiamondsFacingGirlPoints,
+      formation:Formation('Diamonds Facing Girl Points'),
       from:'Facing Diamonds',difficulty: 3,
       paths:[
           HingeRight.skew(0.0,0.33) +
@@ -342,7 +342,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Fan the Top',
-      formation:Formations.DiamondsFacingLHGirlPoints,
+      formation:Formation('Diamonds Facing LH Girl Points'),
       from:'Left-Hand Facing Diamonds',difficulty: 3,noDisplay: true,
       paths:[
           HingeLeft.skew(0.0,-0.33) +
@@ -359,7 +359,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Fan the Top',
-      formation:Formations.DiamondsRHPTPGirlPoints,
+      formation:Formation('Diamonds RH PTP Girl Points'),
       from:'Point-to-Point Diamonds',difficulty: 3,
       paths:[
           SwingRight.skew(0.67,0.0) +
@@ -374,7 +374,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Fan the Top',
-      formation:Formations.DiamondsLHPTPGirlPoints,
+      formation:Formation('Diamonds LH PTP Girl Points'),
       from:'Left-Hand Point-to-Point Diamonds',difficulty: 3,noDisplay: true,
       paths:[
           SwingLeft.skew(-0.67,0.0) +
@@ -389,7 +389,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Fan the Top',
-      formation:Formations.DiamondsFacingPTP,
+      formation:Formation('Diamonds Facing PTP'),
       from:'Point-to-Point Facing Diamonds',difficulty: 3,noDisplay: true,
       paths:[
           SwingRight.skew(0.67,0.0) +
@@ -404,7 +404,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Fan the Top',
-      formation:Formations.DiamondsFacingLHPTP,
+      formation:Formation('Diamonds Facing LH PTP'),
       from:'Left-Hand Point-to-Point Facing Diamonds',difficulty: 3,noDisplay: true,
       paths:[
           SwingLeft.skew(-0.67,0.0) +
@@ -419,7 +419,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left Fan the Top',
-      formation:Formations.FacingCouples,
+      formation:Formation('Facing Couples'),
       from:'Facing Couples',difficulty: 3,
       paths:[
           Forward_2.changeBeats(3) +
@@ -430,7 +430,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left Fan the Top',
-      formation:Formations.FacingCouplesClose,
+      formation:Formation('Facing Couples Close'),
       from:'Close Couples',parts:'4',difficulty: 2,noDisplay: true,
       paths:[
           ExtendRight.scale(1.0,0.5) +
@@ -441,7 +441,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left Fan the Top',
-      formation:Formations.EightChainThru,
+      formation:Formation('Eight Chain Thru'),
       from:'Eight Chain Thru',difficulty: 3,
       paths:[
           ExtendRight.scale(1.0,0.25) +
@@ -460,7 +460,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left Fan the Top',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       from:'Facing Lines',difficulty: 2,
       paths:[
           Forward_2 +
@@ -478,7 +478,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Heads Fan the Top',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       from:'Static Square',group:' ',difficulty: 2,
       paths:[
           ExtendLeft.changeBeats(3).scale(3.0,0.5) +
@@ -494,7 +494,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Heads Left Fan the Top',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       from:'Static Square',group:' ',difficulty: 3,
       paths:[
           ExtendRight.changeBeats(3).scale(3.0,0.5) +

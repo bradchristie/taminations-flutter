@@ -20,13 +20,13 @@
 
 import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> RightAndLeftThru = [
 
     AnimatedCall('Right and Left Thru',
-      formation:Formations.FacingCouplesCompact,
+      formation:Formation('Facing Couples Compact'),
       from:'Facing Couples',parts:'3',difficulty: 1,notForSequencer: true,
       paths:[
           PullLeft.changeBeats(1.5).scale(1.5,0.5) +
@@ -39,7 +39,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Right and Left Thru',
-      formation:Formations.WaveRH,
+      formation:Formation('Wave RH'),
       from:'Right-Hand Wave',isGenderSpecific:true,parts:'2',difficulty: 1,
       paths:[
           ExtendRight.changeBeats(2).scale(2.0,2.0) +
@@ -50,7 +50,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Right and Left Thru',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       from:'Lines',isGenderSpecific:true,parts:'3',difficulty: 1,
       paths:[
           PullLeft.changeBeats(1.5).scale(2.0,0.5) +
@@ -71,7 +71,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Right and Left Thru',
-      formation:Formations.EightChainThru,
+      formation:Formation('Eight Chain Thru'),
       from:'Eight Chain Thru',isGenderSpecific:true,parts:'2',difficulty: 1,
       paths:[
           PullLeft.scale(1.0,0.5) +
@@ -92,7 +92,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Right and Left Thru',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       from:'Right-Hand Waves',isGenderSpecific:true,parts:'2',difficulty: 1,
       taminator: '''
       Common after Spin the Top.
@@ -113,7 +113,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Right and Left Thru',
-      formation:Formations.TidalWaveRHBGGB,
+      formation:Formation('Tidal Wave RH BGGB'),
       from:'Tidal Wave',isGenderSpecific:true,parts:'2',difficulty: 1,
       taminator: '''
       Another example of the Ocean Wave Rule.
@@ -134,7 +134,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Heads Right and Left Thru and Back Away',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       isGenderSpecific:true,noDisplay: true,
       paths:[
           Forward +
@@ -153,7 +153,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Sides Right and Left Thru and Back Away',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       isGenderSpecific:true,noDisplay: true,
       paths:[
           Path(),
@@ -172,7 +172,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Right and Left Thru and a Quarter More',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       group:' ',isGenderSpecific:true,parts:'3',difficulty: 2,
       paths:[
           PullLeft.scale(2.0,0.5) +
@@ -197,7 +197,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Right and Left Thru and a Quarter More',
-      formation:Formations.EightChainThru,
+      formation:Formation('Eight Chain Thru'),
       from:'Eight Chain Thru',group:' ',isGenderSpecific:true,parts:'2',difficulty: 1,noDisplay: true,
       paths:[
           PullLeft.scale(1.0,0.5) +
@@ -222,7 +222,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Centers Right and Left Thru, Full Turn',
-      formation:Formations.DoublePassThru,
+      formation:Formation('Double Pass Thru'),
       group:' ',isGenderSpecific:true,parts:'3',difficulty: 2,
       paths:[
           Path(),

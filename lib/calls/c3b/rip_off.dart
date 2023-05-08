@@ -21,13 +21,12 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> RipOff = [
 
     AnimatedCall('Rip Off',
-      formation:Formations.BoxRH,
+      formation:Formation('Box RH'),
       from:'Right-Hand Box',
       paths:[
           Forward_4,
@@ -36,7 +35,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Rip Off',
-      formation:Formations.BoxLH,
+      formation:Formation('Box LH'),
       from:'Left-Hand Box',
       paths:[
           RunRight.skew(-2.0,0.0) +
@@ -46,7 +45,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Rip Off',
-      formation:Formations.FacingCouplesCompact,
+      formation:Formation('Facing Couples Compact'),
       from:'Facing Couples',
       paths:[
           Forward_3,
@@ -55,7 +54,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Rip Off',
-      formation:Formations.CouplesFacingOut,
+      formation:Formation('Couples Facing Out'),
       from:'Couples Facing Out',
       paths:[
           RunRight.skew(-2.0,0.0) +
@@ -65,7 +64,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Rip Off',
-      formation:Formations.CompletedDoublePassThru,
+      formation:Formation('Completed Double Pass Thru'),
       from:'Completed Double Pass Thru',
       paths:[
           RunRight.skew(-1.0,0.0) +
@@ -79,7 +78,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Rip Off',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:3,y:1,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:1,y:1,angle:180),
         DancerModel.fromData(gender:Gender.BOY,x:1,y:-1,angle:0),
@@ -98,7 +97,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Mirror Rip Off',
-      formation:Formations.CompletedDoublePassThru,
+      formation:Formation('Completed Double Pass Thru'),
       from:'Completed Double Pass Thru',
       paths:[
           RunLeft.changeBeats(6),
@@ -112,7 +111,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Mirror Rip Off',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:3,y:1,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:1,y:1,angle:180),
         DancerModel.fromData(gender:Gender.BOY,x:1,y:-1,angle:0),

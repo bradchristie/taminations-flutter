@@ -19,7 +19,7 @@
 */
 
 import '../../animated_call.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 
 import '../plus/follow_your_neighbor.dart' as plus;
@@ -27,7 +27,7 @@ import '../plus/follow_your_neighbor.dart' as plus;
   final List<AnimatedCall> AnythingAndSpread = [
 
     AnimatedCall('Acey Deucey and Spread',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       from:'Waves',group:' ',difficulty: 2,
       paths:[
           ExtendRight.changeBeats(4).scale(4.0,2.0),
@@ -40,7 +40,7 @@ import '../plus/follow_your_neighbor.dart' as plus;
       ]),
 
     AnimatedCall('Cloverleaf and Spread',
-      formation:Formations.CompletedDoublePassThru,
+      formation:Formation('Completed Double Pass Thru'),
       from:'Completed Double Pass Thru',group:' ',difficulty: 2,
       paths:[
           LeadRight +
@@ -67,7 +67,7 @@ import '../plus/follow_your_neighbor.dart' as plus;
       ]),
 
     AnimatedCall('Coordinate and Spread',
-      formation:Formations.ColumnRHGBGB,
+      formation:Formation('Column RH GBGB'),
       from:'Right-Hand Columns',group:' ',difficulty: 3,
       paths:[
           FlipRight.changeBeats(2) +
@@ -89,7 +89,7 @@ import '../plus/follow_your_neighbor.dart' as plus;
       ]),
 
     AnimatedCall('Cut the Diamond and Spread',
-      formation:Formations.DiamondsRHGirlPoints,
+      formation:Formation('Diamonds RH Girl Points'),
       from:'Right-Hand Diamonds',group:' ',difficulty: 2,
       paths:[
           Forward_2 +
@@ -108,7 +108,7 @@ import '../plus/follow_your_neighbor.dart' as plus;
       ]),
 
     AnimatedCall('Fan the Top and Spread',
-      formation:Formations.TidalWaveRHBGGB,
+      formation:Formation('Tidal Wave RH BGGB'),
       from:'Right-Hand Tidal Wave',group:' ',difficulty: 2,
       paths:[
           LeadRight.changeBeats(6).scale(1.0,1.5),
@@ -123,7 +123,7 @@ import '../plus/follow_your_neighbor.dart' as plus;
       ]),
 
     AnimatedCall('Ferris Wheel and Spread',
-      formation:Formations.TwomFacedLinesRH,
+      formation:Formation('Two-Faced Lines RH'),
       from:'Right-Handed Two-Faced Lines',group:' ',difficulty: 1,
       paths:[
           RunRight.changeBeats(4).changehands(2).scale(2.0,2.5).skew(3.5,0.0) +
@@ -142,7 +142,7 @@ import '../plus/follow_your_neighbor.dart' as plus;
       tam.title == 'Follow Your Neighbor and Spread' && tam.from == 'Ocean Waves').first.xref(title: 'Follow Your Neighbor and Spread').xref(group: ' ').xref(difficulty: 1),
 
     AnimatedCall('Heads Star Thru and Spread',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       group:' ',difficulty: 1,
       paths:[
           ExtendLeft.changeBeats(3).scale(3.0,0.5) +
@@ -159,7 +159,7 @@ import '../plus/follow_your_neighbor.dart' as plus;
       ]),
 
     AnimatedCall('Heads Touch 1/4 and Spread',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       group:' ',difficulty: 2,
       paths:[
           ExtendLeft.changeBeats(3).scale(3.0,0.5) +
@@ -178,7 +178,7 @@ import '../plus/follow_your_neighbor.dart' as plus;
       ]),
 
     AnimatedCall('Hinge and Spread',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       from:'Right-Hand Waves',group:' ',difficulty: 3,
       taminator: '''
       This looks like a nice call, but I've never seen it used,
@@ -195,7 +195,7 @@ import '../plus/follow_your_neighbor.dart' as plus;
       ]),
 
     AnimatedCall('Pass the Ocean and Spread',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       from:'Lines',group:' ',difficulty: 3,
       paths:[
           ExtendLeft.changeBeats(2).scale(2.0,0.5) +
@@ -212,7 +212,7 @@ import '../plus/follow_your_neighbor.dart' as plus;
       ]),
 
     AnimatedCall('Pass to the Center and Spread',
-      formation:Formations.PassThru,
+      formation:Formation('Pass Thru'),
       from:'Eight Chain Thru',group:' ',difficulty: 2,
       paths:[
           ExtendLeft.scale(1.0,0.5) +
@@ -231,7 +231,7 @@ import '../plus/follow_your_neighbor.dart' as plus;
       ]),
 
     AnimatedCall('Swing Thru and Spread',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       from:'Right-Hand Waves',group:' ',difficulty: 2,
       paths:[
           SwingRight +
@@ -248,7 +248,7 @@ import '../plus/follow_your_neighbor.dart' as plus;
       ]),
 
     AnimatedCall('Trade the Wave and Spread',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       from:'Right-Hand Waves',group:' ',difficulty: 3,
       paths:[
           RunRight.changeBeats(6).scale(1.5,3.0),
@@ -261,7 +261,7 @@ import '../plus/follow_your_neighbor.dart' as plus;
       ]),
 
     AnimatedCall('Wheel and Deal and Spread',
-      formation:Formations.LinesFacingOut,
+      formation:Formation('Lines Facing Out'),
       from:'Lines Facing Out',group:' ',difficulty: 1,
       paths:[
           RunLeft.changeBeats(4).changehands(1).scale(1.0,2.0).skew(-1.0,0.0) +
@@ -278,7 +278,7 @@ import '../plus/follow_your_neighbor.dart' as plus;
       ]),
 
     AnimatedCall('Zoom and Spread',
-      formation:Formations.CompletedDoublePassThru,
+      formation:Formation('Completed Double Pass Thru'),
       from:'Completed Double Pass Thru',group:' ',difficulty: 2,
       paths:[
           FlipRight.changeBeats(1).scale(0.5,0.5) +

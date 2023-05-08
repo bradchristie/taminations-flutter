@@ -21,13 +21,12 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> SplitSquareThruVariations = [
 
     AnimatedCall('Split Square Chain the Top',
-      formation:Formations.TmBoneULRU,
+      formation:Formation('T-Bone ULRU'),
       from:'Ends Facing',
       paths:[
           PullLeft.scale(1.0,0.5) +
@@ -60,7 +59,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Split Square Chain the Top',
-      formation:Formations.TmBoneRUUL,
+      formation:Formation('T-Bone RUUL'),
       from:'Centers Facing',
       paths:[
           Stand +
@@ -93,7 +92,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Split Square Chain the Top',
-      formation:Formations.TmBoneRLUU,
+      formation:Formation('T-Bone RLUU'),
       from:'Left Side of Line Facing',
       paths:[
           PullLeft.scale(1.0,0.5) +
@@ -126,7 +125,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Split Square Chain the Top',
-      formation:Formations.TmBoneUURL,
+      formation:Formation('T-Bone UURL'),
       from:'Right Side of Line Facing',
       paths:[
           Stand +
@@ -159,7 +158,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Split Square Chain the Top',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:3,angle:270),
         DancerModel.fromData(gender:Gender.GIRL,x:1,y:3,angle:270),
         DancerModel.fromData(gender:Gender.BOY,x:0,y:1.5,angle:0),
@@ -193,7 +192,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Split Dixie Style to a Wave',
-      formation:Formations.TmBoneULRU,
+      formation:Formation('T-Bone ULRU'),
       from:'Ends Facing',parts:'2.5',
       paths:[
           PullLeft.scale(1.0,0.5) +
@@ -216,7 +215,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Split Dixie Style to a Wave',
-      formation:Formations.TmBoneRUUL,
+      formation:Formation('T-Bone RUUL'),
       from:'Centers Facing',parts:'2.5',
       paths:[
           Stand.changeBeats(2.5) +
@@ -239,7 +238,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Split Dixie Style to a Wave',
-      formation:Formations.TmBoneRLUU,
+      formation:Formation('T-Bone RLUU'),
       from:'Left Side of Line Facing',parts:'2.5',
       paths:[
           PullLeft.scale(1.0,0.5) +
@@ -262,7 +261,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Split Dixie Style to a Wave',
-      formation:Formations.TmBoneUURL,
+      formation:Formation('T-Bone UURL'),
       from:'Right Side of Line Facing',parts:'2.5',
       paths:[
           Stand.changeBeats(2.5) +
@@ -285,7 +284,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Split Dixie Diamond',
-      formation:Formations.TmBoneULRU,
+      formation:Formation('T-Bone ULRU'),
       from:'Ends Facing',parts:'5',
       paths:[
           PullLeft.scale(1.0,0.5) +
@@ -312,7 +311,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Split Dixie Diamond',
-      formation:Formations.TmBoneRUUL,
+      formation:Formation('T-Bone RUUL'),
       from:'Centers Facing',parts:'5',
       paths:[
           Stand.changeBeats(2.5) +
@@ -339,7 +338,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Split Dixie Sashay',
-      formation:Formations.TmBoneULRU,
+      formation:Formation('T-Bone ULRU'),
       from:'Ends Facing',parts:'2.5',
       paths:[
           PullLeft.scale(1.0,0.5) +
@@ -364,7 +363,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Split Dixie Sashay',
-      formation:Formations.TmBoneRUUL,
+      formation:Formation('T-Bone RUUL'),
       from:'Centers Facing',parts:'2.5',
       paths:[
           Stand.changeBeats(2.5) +
@@ -389,7 +388,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left Split Square Chain the Top',
-      formation:Formations.TmBoneULRU,
+      formation:Formation('T-Bone ULRU'),
       from:'Ends Facing',
       paths:[
           PullRight.scale(1.0,0.5) +
@@ -422,7 +421,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left Split Square Chain the Top',
-      formation:Formations.TmBoneRUUL,
+      formation:Formation('T-Bone RUUL'),
       from:'Centers Facing',
       paths:[
           Stand +
@@ -455,7 +454,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left Split Square Chain the Top',
-      formation:Formations.TmBoneRLUU,
+      formation:Formation('T-Bone RLUU'),
       from:'Left Side of Line Facing',
       paths:[
           PullRight.scale(1.0,0.5) +
@@ -488,7 +487,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left Split Square Chain the Top',
-      formation:Formations.TmBoneUURL,
+      formation:Formation('T-Bone UURL'),
       from:'Right Side of Line Facing',
       paths:[
           Stand +
@@ -521,7 +520,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left Split Dixie Style to a Wave',
-      formation:Formations.TmBoneULRU,
+      formation:Formation('T-Bone ULRU'),
       from:'Ends Facing',parts:'2.5',
       paths:[
           PullRight.scale(1.0,0.5) +
@@ -544,7 +543,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left Split Dixie Style to a Wave',
-      formation:Formations.TmBoneRUUL,
+      formation:Formation('T-Bone RUUL'),
       from:'Centers Facing',parts:'2.5',
       paths:[
           Stand.changeBeats(2.5) +
@@ -567,7 +566,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left Split Dixie Style to a Wave',
-      formation:Formations.TmBoneRLUU,
+      formation:Formation('T-Bone RLUU'),
       from:'Left Side of Line Facing',parts:'2.5',
       paths:[
           PullRight.scale(1.0,0.5) +
@@ -590,7 +589,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left Split Dixie Style to a Wave',
-      formation:Formations.TmBoneUURL,
+      formation:Formation('T-Bone UURL'),
       from:'Right Side of Line Facing',parts:'2.5',
       paths:[
           Stand.changeBeats(2.5) +
@@ -613,7 +612,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left Split Dixie Diamond',
-      formation:Formations.TmBoneULRU,
+      formation:Formation('T-Bone ULRU'),
       from:'Ends Facing',parts:'5',
       paths:[
           PullRight.scale(1.0,0.5) +
@@ -640,7 +639,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left Split Dixie Diamond',
-      formation:Formations.TmBoneRUUL,
+      formation:Formation('T-Bone RUUL'),
       from:'Centers Facing',parts:'5',
       paths:[
           Stand.changeBeats(2.5) +
@@ -667,7 +666,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left Split Dixie Sashay',
-      formation:Formations.TmBoneULRU,
+      formation:Formation('T-Bone ULRU'),
       from:'Ends Facing',parts:'2.5',
       paths:[
           PullRight.scale(1.0,0.5) +
@@ -692,7 +691,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left Split Dixie Sashay',
-      formation:Formations.TmBoneRUUL,
+      formation:Formation('T-Bone RUUL'),
       from:'Centers Facing',parts:'2.5',
       paths:[
           Stand.changeBeats(2.5) +

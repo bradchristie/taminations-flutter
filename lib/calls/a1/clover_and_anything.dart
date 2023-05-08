@@ -21,13 +21,12 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> CloverAndAnything = [
 
     AnimatedCall('Clover and',
-      formation:Formations.CouplesFacingOut,
+      formation:Formation('Couples Facing Out'),
       group:' ',noDisplay: true,
       paths:[
           LeadRight.scale(1.5,1.5) +
@@ -40,7 +39,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Clover and Lock It',
-      formation:Formations.n34Tag,
+      formation:Formation('3/4 Tag'),
       group:' ',
       paths:[
           LeadRight.scale(1.0,1.5) +
@@ -57,7 +56,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Clover and Lock It',
-      formation:Formations.n34TagLH,
+      formation:Formation('3/4 Tag LH'),
       group:' ',noDisplay: true,
       paths:[
           LeadRight.scale(1.0,1.5) +
@@ -74,7 +73,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Clover and Pass the Ocean',
-      formation:Formations.TradeBy,
+      formation:Formation('Trade By'),
       group:' ',
       paths:[
           LeadRight.scale(1.0,1.5) +
@@ -93,7 +92,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Clover and Square Thru 2',
-      formation:Formations.TradeBy,
+      formation:Formation('Trade By'),
       group:' ',
       paths:[
           LeadRight.scale(1.0,1.5) +
@@ -114,7 +113,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Clover and Square Chain Thru',
-      formation:Formations.TradeBy,
+      formation:Formation('Trade By'),
       group:' ',
       paths:[
           LeadRight.scale(1.0,1.5) +
@@ -141,7 +140,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Clover and Trade',
-      formation:Formations.CompletedDoublePassThru,
+      formation:Formation('Completed Double Pass Thru'),
       group:' ',
       paths:[
           LeadRight.scale(1.0,1.5) +
@@ -158,7 +157,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Clover and Triple Star Thru',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.GIRL,x:1,y:1,angle:0),
         DancerModel.fromData(gender:Gender.BOY,x:1,y:-1,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:1,y:-3,angle:90),
@@ -198,7 +197,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cross Clover and',
-      formation:Formations.CouplesFacingOut,
+      formation:Formation('Couples Facing Out'),
       group:' ',noDisplay: true,
       paths:[
           LeadLeft.changeBeats(3).scale(2.0,3.5) +
@@ -211,7 +210,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cross Clover and Swap Around',
-      formation:Formations.TradeBy,
+      formation:Formation('Trade By'),
       group:' ',
       paths:[
           LeadLeft.changeBeats(3).scale(2.0,3.5) +

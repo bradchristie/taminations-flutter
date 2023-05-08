@@ -19,13 +19,13 @@
 */
 
 import '../../animated_call.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> Dosado = [
 
     AnimatedCall('Dosado',
-      formation:Formations.FacingCouplesCompact,
+      formation:Formation('Facing Couples Compact'),
       from:'Facing Couples',difficulty: 1,
       paths:[
           ExtendLeft.scale(1.5,0.5) +
@@ -40,7 +40,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Dosado',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       from:'Normal Lines',difficulty: 2,
       paths:[
           ExtendLeft.scale(2.0,0.5) +
@@ -65,7 +65,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Dosado',
-      formation:Formations.EightChainThru,
+      formation:Formation('Eight Chain Thru'),
       from:'Eight Chain Thru',difficulty: 1,
       paths:[
           ExtendLeft.scale(1.0,0.5) +
@@ -90,7 +90,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Dosado to a Wave',
-      formation:Formations.FacingCouplesCompact,
+      formation:Formation('Facing Couples Compact'),
       from:'Facing Couples',difficulty: 2,
       paths:[
           ExtendLeft.scale(1.5,0.5) +
@@ -107,7 +107,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Dosado to a Wave',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       from:'Normal Lines',difficulty: 3,
       paths:[
           ExtendLeft.scale(2.0,0.5) +
@@ -136,7 +136,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Dosado to a Wave',
-      formation:Formations.EightChainThru,
+      formation:Formation('Eight Chain Thru'),
       from:'Eight Chain Thru',difficulty: 2,
       paths:[
           ExtendLeft.scale(1.0,0.5) +

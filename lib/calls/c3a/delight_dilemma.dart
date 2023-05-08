@@ -19,13 +19,13 @@
 */
 
 import '../../animated_call.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> DelightDilemma = [
 
     AnimatedCall('Delight',
-      formation:Formations.n34Tag,
+      formation:Formation('3/4 Tag'),
       group:' ',fractions:'3;3;3',
       paths:[
           QuarterRight.skew(0.0,-1.0) +
@@ -49,7 +49,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Dilemma',
-      formation:Formations.n34Tag,
+      formation:Formation('3/4 Tag'),
       group:' ',fractions:'3;3;3',
       paths:[
           QuarterLeft.skew(0.0,1.0) +
@@ -73,7 +73,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Tagger\'s Delight',
-      formation:Formations.LinesFacingOut,
+      formation:Formation('Lines Facing Out'),
       group:' ',
       paths:[
           QuarterLeft.skew(-0.5,1.0) +

@@ -43,7 +43,7 @@ Formations you can use include
   @override
   void perform(CallContext ctx) {
     var fname = name.replaceFirst('Adjust to( an?)? '.ri, '' );
-    var formation = Formation.fromName(fname);
+    var formation = Formation(fname);
     var ctx2 = CallContext.fromFormation(formation);
     var isSubset = ctx2.dancers.length > 8;
     var rotate = formation.name == 'Blocks' ? 90 : 180;

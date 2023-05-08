@@ -19,13 +19,13 @@
 */
 
 import '../../animated_call.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> FlipTheLine = [
 
     AnimatedCall('Flip the Line 1/4',
-      formation:Formations.WaveRH,
+      formation:Formation('Wave RH'),
       from:'Right-Hand Wave',
       paths:[
           LeadRight.changeBeats(3.5).scale(1.0,2.0) +
@@ -36,7 +36,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Flip the Line 1/4',
-      formation:Formations.WaveLH,
+      formation:Formation('Wave LH'),
       from:'Left-Hand Wave',
       paths:[
           LeadLeft.changeBeats(3.5).scale(1.0,2.0) +
@@ -47,7 +47,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Flip the Line 1/4',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       from:'Right-Hand Waves',
       paths:[
           LeadRight.changeBeats(3.5).scale(1.0,2.0) +
@@ -64,7 +64,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Flip the Line 1/4',
-      formation:Formations.OceanWavesLHBGGB,
+      formation:Formation('Ocean Waves LH BGGB'),
       from:'Left-Hand Waves',
       paths:[
           LeadLeft.changeBeats(3.5).scale(1.0,2.0) +
@@ -81,7 +81,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Flip the Line 1/4',
-      formation:Formations.TidalWaveRHBGGB,
+      formation:Formation('Tidal Wave RH BGGB'),
       from:'Right-Hand Tidal Wave',
       paths:[
           LeadRight.changeBeats(3.5),
@@ -96,7 +96,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Flip the Line 1/4',
-      formation:Formations.TidalWaveLHBGGB,
+      formation:Formation('Tidal Wave LH BGGB'),
       from:'Left-Hand Tidal Wave',
       paths:[
           LeadLeft.changeBeats(3.5),
@@ -111,7 +111,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Flip the Line 1/2',
-      formation:Formations.WaveRH,
+      formation:Formation('Wave RH'),
       from:'Right-Hand Wave',
       paths:[
           LeadRight.changeBeats(3.5).scale(1.0,2.0) +
@@ -123,7 +123,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Flip the Line 1/2',
-      formation:Formations.WaveLH,
+      formation:Formation('Wave LH'),
       from:'Left-Hand Wave',
       paths:[
           LeadLeft.changeBeats(3.5).scale(1.0,2.0) +
@@ -135,7 +135,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Flip the Line 1/2',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       from:'Right-Hand Waves',
       paths:[
           LeadRight.changeBeats(3.5).scale(1.0,2.0) +
@@ -154,7 +154,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Flip the Line 1/2',
-      formation:Formations.OceanWavesLHBGGB,
+      formation:Formation('Ocean Waves LH BGGB'),
       from:'Left-Hand Waves',
       paths:[
           LeadLeft.changeBeats(3.5).scale(1.0,2.0) +
@@ -173,7 +173,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Flip the Line 1/2',
-      formation:Formations.TidalWaveRHBGGB,
+      formation:Formation('Tidal Wave RH BGGB'),
       from:'Right-Hand Tidal Wave',
       paths:[
           LeadRight.changeBeats(3.5).scale(1.0,2.5),
@@ -188,7 +188,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Flip the Line 1/2',
-      formation:Formations.TidalWaveLHBGGB,
+      formation:Formation('Tidal Wave LH BGGB'),
       from:'Left-Hand Tidal Wave',
       paths:[
           LeadLeft.changeBeats(3.5).scale(1.0,2.5),
@@ -203,7 +203,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Flip the Line 3/4',
-      formation:Formations.WaveRH,
+      formation:Formation('Wave RH'),
       from:'Right-Hand Wave',
       paths:[
           LeadRight.changeBeats(3.5).scale(1.0,2.0) +
@@ -216,7 +216,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Flip the Line 3/4',
-      formation:Formations.WaveLH,
+      formation:Formation('Wave LH'),
       from:'Left-Hand Wave',
       paths:[
           LeadLeft.changeBeats(3.5).scale(1.0,2.0) +
@@ -229,7 +229,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Flip the Line 3/4',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       from:'Right-Hand Waves',
       paths:[
           LeadRight.changeBeats(3.5).scale(1.0,2.0) +
@@ -249,7 +249,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Flip the Line 3/4',
-      formation:Formations.OceanWavesLHBGGB,
+      formation:Formation('Ocean Waves LH BGGB'),
       from:'Left-Hand Waves',
       paths:[
           LeadLeft.changeBeats(3.5).scale(1.0,2.0) +
@@ -269,7 +269,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Flip the Line 3/4',
-      formation:Formations.TidalWaveRHBGGB,
+      formation:Formation('Tidal Wave RH BGGB'),
       from:'Right-Hand Tidal Wave',
       paths:[
           LeadRight.changeBeats(3).scale(1.0,1.5) +
@@ -288,7 +288,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Flip the Line 3/4',
-      formation:Formations.TidalWaveLHBGGB,
+      formation:Formation('Tidal Wave LH BGGB'),
       from:'Left-Hand Tidal Wave',
       paths:[
           LeadLeft.changeBeats(3).scale(1.0,1.5) +
@@ -307,7 +307,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Flip the Line',
-      formation:Formations.WaveRH,
+      formation:Formation('Wave RH'),
       from:'Right-Hand Wave',
       paths:[
           LeadRight.changeBeats(3.5).scale(0.5,2.0) +
@@ -321,7 +321,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Flip the Line',
-      formation:Formations.WaveLH,
+      formation:Formation('Wave LH'),
       from:'Left-Hand Wave',
       paths:[
           LeadLeft.changeBeats(3.5).scale(0.5,2.0) +
@@ -335,7 +335,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Flip the Line',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       from:'Right-Hand Waves',
       paths:[
           LeadRight.changeBeats(3.5).scale(1.0,2.0) +
@@ -356,7 +356,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Flip the Line',
-      formation:Formations.OceanWavesLHBGGB,
+      formation:Formation('Ocean Waves LH BGGB'),
       from:'Left-Hand Waves',
       paths:[
           LeadLeft.changeBeats(3.5).scale(0.5,2.0) +
@@ -377,7 +377,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Flip the Line',
-      formation:Formations.TidalWaveRHBGGB,
+      formation:Formation('Tidal Wave RH BGGB'),
       from:'Right-Hand Tidal Wave',
       paths:[
           LeadRight.changeBeats(3).scale(1.0,1.5) +
@@ -398,7 +398,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Flip the Line',
-      formation:Formations.TidalWaveLHBGGB,
+      formation:Formation('Tidal Wave LH BGGB'),
       from:'Left-Hand Tidal Wave',
       paths:[
           LeadLeft.changeBeats(3).scale(1.0,1.5) +
@@ -419,7 +419,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Concentric Flip the Line 1/4',
-      formation:Formations.TidalWaveRHBGGB,
+      formation:Formation('Tidal Wave RH BGGB'),
       group:' ',
       paths:[
           LeadRight.changeBeats(3.5).scale(3.0,2.0) +
@@ -435,7 +435,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Concentric Flip the Line 1/2',
-      formation:Formations.TidalWaveRHBGGB,
+      formation:Formation('Tidal Wave RH BGGB'),
       group:' ',
       paths:[
           LeadRight.changeBeats(3.5).scale(3.0,2.0) +
@@ -453,7 +453,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Concentric Flip the Line 3/4',
-      formation:Formations.TidalWaveRHBGGB,
+      formation:Formation('Tidal Wave RH BGGB'),
       group:' ',
       paths:[
           LeadRight.changeBeats(3.5).scale(3.0,2.0) +
@@ -473,7 +473,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Concentric Flip the Line',
-      formation:Formations.TidalWaveRHBGGB,
+      formation:Formation('Tidal Wave RH BGGB'),
       group:' ',
       paths:[
           LeadRight.changeBeats(3.5).scale(1.5,2.0) +
@@ -495,7 +495,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Tandem Flip the Line 1/4',
-      formation:Formations.OceanWavesRHBGGBCompact,
+      formation:Formation('Ocean Waves RH BGGB Compact'),
       group:'  ',
       paths:[
           LeadRight.changeBeats(3).scale(2.5,2.0),
@@ -511,7 +511,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Tandem Flip the Line 1/2',
-      formation:Formations.OceanWavesRHBGGBCompact,
+      formation:Formation('Ocean Waves RH BGGB Compact'),
       group:'  ',
       paths:[
           LeadRight.changeBeats(3).scale(2.5,2.0) +

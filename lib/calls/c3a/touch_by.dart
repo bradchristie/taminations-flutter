@@ -26,7 +26,7 @@ import '../../moves.dart';
   final List<AnimatedCall> TouchBy = [
 
     AnimatedCall('Touch By 1/2 By 1/4',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:0,y:3,angle:270),
         DancerModel.fromData(gender:Gender.GIRL,x:0,y:1,angle:270),
   ]),
@@ -42,7 +42,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Touch By 1/4 By 1/2',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:0,y:3,angle:270),
         DancerModel.fromData(gender:Gender.GIRL,x:0,y:1,angle:270),
   ]),
@@ -57,7 +57,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Touch By 1/4 By Swing Thru',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:1,y:3,angle:270),
         DancerModel.fromData(gender:Gender.GIRL,x:1,y:1,angle:270),
         DancerModel.fromData(gender:Gender.BOY,x:1,y:-1,angle:90),

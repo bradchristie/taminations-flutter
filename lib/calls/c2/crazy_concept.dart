@@ -21,14 +21,13 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 import '../c2/cross_the_k.dart' as c2;
 
   final List<AnimatedCall> CrazyConcept = [
 
     AnimatedCall('Crazy Circulate',
-      formation:Formations.OceanWavesRHBGBG,
+      formation:Formation('Ocean Waves RH BGBG'),
       group:'Crazy',parts:'3;3;3',
       paths:[
           Forward_4.changeBeats(3) +
@@ -53,7 +52,7 @@ import '../c2/cross_the_k.dart' as c2;
       ]),
 
     AnimatedCall('Crazy Circulate 3',
-      formation:Formations.OceanWavesRHBGBG,
+      formation:Formation('Ocean Waves RH BGBG'),
       group:'Crazy',parts:'9;9;9',
       paths:[
           Forward_4.changeBeats(3) +
@@ -102,7 +101,7 @@ import '../c2/cross_the_k.dart' as c2;
       ]),
 
     AnimatedCall('Crazy Circulate 1-2-2-3',
-      formation:Formations.OceanWavesRHBGBG,
+      formation:Formation('Ocean Waves RH BGBG'),
       group:'Crazy',parts:'3;6;6',
       paths:[
           Forward_4.changeBeats(3) +
@@ -137,7 +136,7 @@ import '../c2/cross_the_k.dart' as c2;
       ]),
 
     AnimatedCall('Crazy Counter Rotate 1/4',
-      formation:Formations.TwomFacedTidalLineRH,
+      formation:Formation('Two-Faced Tidal Line RH'),
       group:'Crazy',parts:'2;2;2',
       paths:[
           LeadRight.changeBeats(2).changehands(2).scale(3.0,1.5).skew(0.0,-1.0) +
@@ -163,7 +162,7 @@ import '../c2/cross_the_k.dart' as c2;
       ]),
 
     AnimatedCall('Crazy Flutterwheel',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       group:'Crazy',parts:'8;8;8',
       paths:[
           Forward.changeBeats(3.5).changehands(0) +
@@ -212,7 +211,7 @@ import '../c2/cross_the_k.dart' as c2;
       ]),
 
     AnimatedCall('Crazy Mix',
-      formation:Formations.TidalWaveRHBGGB,
+      formation:Formation('Tidal Wave RH BGGB'),
       group:'Crazy',parts:'3;3;3',
       paths:[
           DodgeRight.changeBeats(1).scale(0.5,0.5) +
@@ -245,7 +244,7 @@ import '../c2/cross_the_k.dart' as c2;
       tam.title == 'Crazy the K').first.xref(title: 'Crazy The K').xref(group: 'Crazy'),
 
     AnimatedCall('Crazy Trade',
-      formation:Formations.LinesFacingOut,
+      formation:Formation('Lines Facing Out'),
       group:'Crazy',parts:'3;3;3',
       paths:[
           FlipLeft +
@@ -270,7 +269,7 @@ import '../c2/cross_the_k.dart' as c2;
       ]),
 
     AnimatedCall('Crazy Triangle Circulate',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:-3,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:0,y:-1,angle:180),
         DancerModel.fromData(gender:Gender.BOY,x:1,y:-3,angle:0),
@@ -300,7 +299,7 @@ import '../c2/cross_the_k.dart' as c2;
       ]),
 
     AnimatedCall('1/2 Crazy Quarter Thru',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.GIRL,x:3,y:3,angle:270),
         DancerModel.fromData(gender:Gender.BOY,x:1,y:3,angle:90),
         DancerModel.fromData(gender:Gender.GIRL,x:-1,y:0,angle:270),
@@ -325,7 +324,7 @@ import '../c2/cross_the_k.dart' as c2;
       ]),
 
     AnimatedCall('1/2 Crazy Right and Left Thru',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       group:' ',parts:'5',
       paths:[
           PullLeft.scale(2.0,0.5) +
@@ -354,7 +353,7 @@ import '../c2/cross_the_k.dart' as c2;
       ]),
 
     AnimatedCall('3/4 Crazy Circulate',
-      formation:Formations.OceanWavesRHBGBG,
+      formation:Formation('Ocean Waves RH BGBG'),
       group:' ',parts:'3;3',
       paths:[
           Forward_4.changeBeats(3) +
@@ -375,7 +374,7 @@ import '../c2/cross_the_k.dart' as c2;
       ]),
 
     AnimatedCall('Reverse Crazy Reverse Flutterwheel',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       group:'Reverse Crazy',parts:'8;8;8',
       paths:[
           StandAlone.changeBeats(8) +
@@ -424,7 +423,7 @@ import '../c2/cross_the_k.dart' as c2;
       ]),
 
     AnimatedCall('1/2 Reverse Crazy Tag Back',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:3,y:0,angle:270),
         DancerModel.fromData(gender:Gender.GIRL,x:1,y:0,angle:270),
         DancerModel.fromData(gender:Gender.BOY,x:-2,y:3,angle:0),
@@ -465,7 +464,7 @@ import '../c2/cross_the_k.dart' as c2;
       ]),
 
     AnimatedCall('1/2 Reverse Crazy 2/3 Recycle',
-      formation:Formations.DiamondsFacingLHGirlPoints,
+      formation:Formation('Diamonds Facing LH Girl Points'),
       group:'1/2 Reverse Crazy',parts:'4.5',
       paths:[
           LeadLeft.changeBeats(4.5).scale(1.0,5.0) +
@@ -482,7 +481,7 @@ import '../c2/cross_the_k.dart' as c2;
       ]),
 
     AnimatedCall('3/4 Reverse Crazy Follow Thru',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:3,y:0,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:0,y:1,angle:0),
         DancerModel.fromData(gender:Gender.BOY,x:1,y:3,angle:270),
@@ -515,7 +514,7 @@ import '../c2/cross_the_k.dart' as c2;
       ]),
 
     AnimatedCall('3/4 Reverse Crazy Quarter Thru',
-      formation:Formations.OceanWavesLHBGGB,
+      formation:Formation('Ocean Waves LH BGGB'),
       group:'3/4 Reverse Crazy',parts:'4.5;4.5',
       paths:[
           StandAlone.changeBeats(4.5) +

@@ -21,13 +21,12 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> Inlet = [
 
     AnimatedCall('Inlet',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       from:'Right-Hand Waves',
       paths:[
           RunRight.changeBeats(4).changehands(6).skew(2.0,0.0),
@@ -41,7 +40,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Inlet',
-      formation:Formations.OceanWavesLHBGGB,
+      formation:Formation('Ocean Waves LH BGGB'),
       from:'Left-Hand Waves',
       paths:[
           RunLeft.changeBeats(4).skew(1.0,2.0),
@@ -55,7 +54,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Inlet',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-2,y:3,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:-2,y:1,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:-2,y:-1,angle:0),
@@ -74,7 +73,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Outlet',
-      formation:Formations.QuarterTag,
+      formation:Formation('Quarter Tag'),
       from:'Quarter Tag',
       paths:[
           UmTurnRight.changeBeats(4).skew(1.0,0.0),
@@ -87,7 +86,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Outlet',
-      formation:Formations.QuarterLinesRH,
+      formation:Formation('Quarter Lines RH'),
       from:'Quarter Lines',
       paths:[
           UmTurnRight.changeBeats(4).skew(1.0,0.0),
@@ -100,7 +99,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Outlet',
-      formation:Formations.MixedQuarterTag1,
+      formation:Formation('Mixed Quarter Tag #1'),
       from:'Mixed Quarter Tag 1',
       paths:[
           UmTurnRight.changeBeats(4).changehands(6).skew(1.0,0.0),
@@ -113,7 +112,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Outlet',
-      formation:Formations.MixedQuarterTag3,
+      formation:Formation('Mixed Quarter Tag #3'),
       from:'Mixed Quarter Tag 2',
       paths:[
           UmTurnRight.changeBeats(4).changehands(6).skew(1.0,0.0),
@@ -126,7 +125,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Outlet',
-      formation:Formations.MixedQuarterTag6,
+      formation:Formation('Mixed Quarter Tag #6'),
       from:'Mixed Quarter Tag 3',
       paths:[
           RunLeft.changeBeats(4).changehands(5).skew(-1.0,2.0),

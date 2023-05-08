@@ -17,7 +17,6 @@
  *     along with Taminations.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import '../../../formations.dart';
 import '../common.dart';
 
 class BlockFormation extends Action {
@@ -32,7 +31,7 @@ class BlockFormation extends Action {
   @override
   void perform(CallContext ctx) {
     final blockCall = name.replaceAll('.*?block'.ri, '').trim();
-    final blockFormation = CallContext.fromFormation(Formations.Blocks);
+    final blockFormation = CallContext.fromFormation(Formation('Blocks'));
     final match = blockFormation.matchFormations(ctx,rotate:90);
     if (match == null)
       throw CallError('Dancers are not in Blocks');
@@ -46,12 +45,12 @@ class BlockFormation extends Action {
                   ctx.dancers[map[3]],ctx.dancers[map[6]]]);
     ctx2.asymmetric = true;
     ctx1.applyCalls(blockCall);
-    ctx1.adjustToFormation(Formations.Block,rotate: 90);
+    ctx1.adjustToFormation(Formation('Block'),rotate: 90);
     ctx1.appendToSource();
     ctx2.applyCalls(blockCall);
-    ctx2.adjustToFormation(Formations.Block,rotate: 90);
+    ctx2.adjustToFormation(Formation('Block'),rotate: 90);
     ctx2.appendToSource();
-    ctx.adjustToFormation(Formations.Blocks,rotate: 90);
+    ctx.adjustToFormation(Formation('Blocks'),rotate: 90);
   }
 
 }

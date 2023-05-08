@@ -21,13 +21,12 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> OwnTheAnyoneAnythingByAnything = [
 
     AnimatedCall('Own the Boys: Ah So by Switch the Wave',
-      formation:Formations.TidalWaveRHBGBG,
+      formation:Formation('Tidal Wave RH BGBG'),
       from:'Right-Hand Tidal Wave',group:' ',isGenderSpecific:true,
       paths:[
           FoldRight.changeBeats(3).scale(0.65,0.5).skew(0.0,-1.5),
@@ -40,7 +39,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Own the Leaders: Step and Fold by 1/2 Crazy Lockit',
-      formation:Formations.OceanWavesRHGBGB,
+      formation:Formation('Ocean Waves RH GBGB'),
       from:'Right-Hand Waves',group:' ',
       paths:[
           HingeRight.changeBeats(2).skew(0.5,-2.0) +
@@ -55,7 +54,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Own the Ends: Regroup by Shakedown',
-      formation:Formations.LinesFacingOut,
+      formation:Formation('Lines Facing Out'),
       from:'Lines Facing Out',group:' ',
       paths:[
           QuarterRight +
@@ -74,7 +73,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Own the Outsides: Swing and Mix by Linear Cycle',
-      formation:Formations.TidalWaveRHBGGB,
+      formation:Formation('Tidal Wave RH BGGB'),
       from:'Right-Hand Tidal Wave',group:' ',
       paths:[
           SwingRight.scale(0.5,0.5) +
@@ -95,7 +94,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Own the Girls: Explode the Line by Vertical 1/2 Tag',
-      formation:Formations.n3and_1lines7,
+      formation:Formation('3 and 1 Lines #7'),
       from:'3 and 1 Lines',group:' ',isGenderSpecific:true,
       paths:[
           UmTurnLeft +
@@ -111,7 +110,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Own the Outsides: Linear Cycle by Pass the Ocean',
-      formation:Formation('C3A own_the_anyone_anything_by_anything 1', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:0,y:5,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:0,y:3,angle:180),
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:1,angle:90),

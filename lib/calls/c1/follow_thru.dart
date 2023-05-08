@@ -21,13 +21,12 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> FollowThru = [
 
     AnimatedCall('Follow Thru',
-      formation:Formations.BoxRH,
+      formation:Formation('Box RH'),
       from:'Right-Hand Box',
       paths:[
           LeadRight.changeBeats(2).changehands(2).scale(3.0,1.0),
@@ -36,7 +35,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Follow Thru',
-      formation:Formations.BoxLH,
+      formation:Formation('Box LH'),
       from:'Left-Hand Box',
       paths:[
           LeadLeft.changeBeats(2),
@@ -45,7 +44,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Follow Thru',
-      formation:Formations.BoxRHClose,
+      formation:Formation('Box RH Close'),
       from:'Right-Hand Box Close',noDisplay: true,
       paths:[
           LeadRight.changeBeats(2).changehands(2).scale(1.5,1.0),
@@ -54,7 +53,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Follow Thru',
-      formation:Formations.BoxLHClose,
+      formation:Formation('Box LH Close'),
       from:'Left-Hand Box Close',noDisplay: true,
       paths:[
           LeadLeft.changeBeats(2).scale(0.5,1.0),
@@ -63,7 +62,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Follow Thru',
-      formation:Formations.SingleQuarterTag,
+      formation:Formation('Single Quarter Tag'),
       from:'Single Quarter Tag',
       paths:[
           ExtendLeft.changeBeats(1.5).scale(1.5,0.5) +
@@ -74,7 +73,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Follow Thru',
-      formation:Formations.SingleLeftQuarterTag,
+      formation:Formation('Single Left Quarter Tag'),
       from:'Single Left Quarter Tag',
       paths:[
           ExtendRight.changeBeats(1.5).scale(1.5,0.5) +
@@ -85,7 +84,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Follow Thru',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:1,angle:270),
         DancerModel.fromData(gender:Gender.GIRL,x:1,y:1,angle:0),
   ]),
@@ -98,7 +97,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Follow Thru',
-      formation:Formations.OceanWavesRHBGBG,
+      formation:Formation('Ocean Waves RH BGBG'),
       from:'Right-Hand Waves',
       paths:[
           LeadRight.changeBeats(2).changehands(2).scale(3.0,1.0),
@@ -111,7 +110,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Follow Thru',
-      formation:Formations.OceanWavesLHBGBG,
+      formation:Formation('Ocean Waves LH BGBG'),
       from:'Left-Hand Waves',
       paths:[
           LeadLeft.changeBeats(2),
@@ -124,7 +123,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Follow Thru',
-      formation:Formations.ColumnRHGBGB,
+      formation:Formation('Column RH GBGB'),
       from:'Right-Hand Columns',
       paths:[
           LeadRight.changeBeats(2).scale(0.5,1.0),
@@ -137,7 +136,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Follow Thru',
-      formation:Formations.ColumnLHGBGB,
+      formation:Formation('Column LH GBGB'),
       from:'Left-Hand Columns',
       paths:[
           LeadLeft.changeBeats(2).scale(1.5,1.0),
@@ -150,7 +149,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Follow Thru',
-      formation:Formations.QuarterTag,
+      formation:Formation('Quarter Tag'),
       from:'Quarter Tag',
       paths:[
           ExtendLeft +
@@ -164,7 +163,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Follow Thru',
-      formation:Formations.QuarterTagLH,
+      formation:Formation('Quarter Tag LH'),
       from:'Left-Hand Quarter Tag',
       paths:[
           LeadLeft.changeBeats(2).changehands(1).scale(2.0,1.0),
@@ -178,7 +177,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Follow Thru',
-      formation:Formations.TmBoneDLDL,
+      formation:Formation('T-Bone DLDL'),
       from:'T-Bones',
       paths:[
           LeadLeft.changeBeats(2).scale(2.0,1.0),
@@ -191,7 +190,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Grand Follow Thru',
-      formation:Formations.ColumnRHGBGB,
+      formation:Formation('Column RH GBGB'),
       from:'Right-Hand Columns',
       paths:[
           LeadRight.changeBeats(2).scale(0.5,1.0),
@@ -204,7 +203,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Grand Follow Thru',
-      formation:Formations.ColumnLHGBGB,
+      formation:Formation('Column LH GBGB'),
       from:'Left-Hand Columns',
       paths:[
           LeadLeft.changeBeats(2).scale(1.5,1.0),
@@ -217,7 +216,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('All 8 Follow Thru',
-      formation:Formations.StaticMiniWavesRH,
+      formation:Formation('Static MiniWaves RH'),
       from:'Squared Mini-Waves',group:' ',
       paths:[
           Forward_3 +
@@ -232,7 +231,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('As Couples Follow Thru',
-      formation:Formations.TwomFacedLinesRH,
+      formation:Formation('Two-Faced Lines RH'),
       from:'Two-Faced Lines',group:' ',
       paths:[
           ExtendRight.changeBeats(2).changehands(2).scale(2.0,1.5) +
@@ -247,7 +246,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('As Couples Follow Thru',
-      formation:Formations.TwomFacedLinesLH,
+      formation:Formation('Two-Faced Lines LH'),
       from:'Two-Faced Lines',group:' ',noDisplay: true,
       paths:[
           HingeLeft.changeBeats(3).scale(1.5,3.0),
@@ -262,7 +261,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Concentric Follow Thru',
-      formation:Formations.ColumnRHGBGB,
+      formation:Formation('Column RH GBGB'),
       from:'Right-Hand Columns',group:' ',
       paths:[
           LeadRight.changeBeats(2).scale(0.5,1.0) +
@@ -277,7 +276,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Stretch Follow Thru',
-      formation:Formations.ColumnRHGBGB,
+      formation:Formation('Column RH GBGB'),
       from:'Right-Hand Columns',group:' ',
       paths:[
           LeadRight.changeBeats(2).scale(0.5,1.0),
@@ -292,7 +291,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Tandem Follow Thru',
-      formation:Formations.ColumnRHGBGB,
+      formation:Formation('Column RH GBGB'),
       from:'Right-Hand Columns',group:' ',
       paths:[
           QuarterRight.changeBeats(4).skew(0.0,-3.0),

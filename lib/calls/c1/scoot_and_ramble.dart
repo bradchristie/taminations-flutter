@@ -21,13 +21,12 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> ScootAndRamble = [
 
     AnimatedCall('Ramble',
-      formation:Formations.QuarterTag,
+      formation:Formation('Quarter Tag'),
       from:'Quarter Tag',isGenderSpecific:true,parts:'3',
       paths:[
           ExtendLeft.changeBeats(4).scale(3.0,3.0) +
@@ -46,7 +45,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Ramble',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-3,y:1,angle:0),
         DancerModel.fromData(gender:Gender.BOY,x:-3,y:-1,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:0,y:-3,angle:180),
@@ -70,7 +69,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Ramble',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.GIRL,x:-3,y:1,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:-3,y:-1,angle:0),
         DancerModel.fromData(gender:Gender.BOY,x:0,y:-3,angle:180),
@@ -94,7 +93,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Ramble',
-      formation:Formations.n34Tag,
+      formation:Formation('3/4 Tag'),
       from:'Three Quarter Tag',isGenderSpecific:true,parts:'3',
       paths:[
           QuarterRight.skew(0.0,-1.0) +
@@ -115,7 +114,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Ramble',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-3,y:1,angle:180),
         DancerModel.fromData(gender:Gender.BOY,x:-3,y:-1,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:0,y:-3,angle:180),
@@ -141,7 +140,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Ramble',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.GIRL,x:-3,y:1,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:-3,y:-1,angle:180),
         DancerModel.fromData(gender:Gender.BOY,x:0,y:-3,angle:180),
@@ -167,7 +166,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Ramble',
-      formation:Formations.ColumnRHGBGB,
+      formation:Formation('Column RH GBGB'),
       from:'Right-Hand Columns',isGenderSpecific:true,
       paths:[
           UmTurnLeft.skew(-1.0,2.0) +
@@ -187,7 +186,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Scoot and Ramble',
-      formation:Formations.QuarterTag,
+      formation:Formation('Quarter Tag'),
       from:'Quarter Tag',isGenderSpecific:true,parts:'6;3',
       paths:[
           ExtendLeft.changeBeats(1.5).scale(1.5,1.5) +
@@ -220,7 +219,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Scoot and Ramble',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.GIRL,x:-3,y:1,angle:0),
         DancerModel.fromData(gender:Gender.BOY,x:0,y:-3,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:-3,y:-1,angle:0),
@@ -258,7 +257,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Scoot and Ramble',
-      formation:Formation('Quarter Tag', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-3,y:1,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:0,y:-3,angle:180),
         DancerModel.fromData(gender:Gender.BOY,x:-3,y:-1,angle:0),

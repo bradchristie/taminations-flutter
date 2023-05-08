@@ -19,13 +19,13 @@
 */
 
 import '../../animated_call.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> SwingAndMix = [
 
     AnimatedCall('Swing and Mix',
-      formation:Formations.FacingCouples,
+      formation:Formation('Facing Couples'),
       from:'Facing Couples',parts:'5;3',
       paths:[
           ExtendLeft.changeBeats(2).scale(2.0,2.0) +
@@ -39,7 +39,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Swing and Mix',
-      formation:Formations.WaveRH,
+      formation:Formation('Wave RH'),
       from:'Right-Hand Wave',parts:'3;3',
       paths:[
           SwingRight +
@@ -51,7 +51,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Swing and Mix',
-      formation:Formations.WaveLH,
+      formation:Formation('Wave LH'),
       from:'Left-Hand Wave',parts:'3;3',
       paths:[
           SwingLeft +
@@ -63,7 +63,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Swing and Mix',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       from:'Lines',parts:'5;3',
       paths:[
           ExtendLeft.changeBeats(2).scale(2.0,0.5) +
@@ -86,7 +86,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Swing and Mix',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       from:'Right-Hand Waves',parts:'3;3',
       paths:[
           SwingRight +
@@ -105,7 +105,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Swing and Mix',
-      formation:Formations.OceanWavesLHBGGB,
+      formation:Formation('Ocean Waves LH BGGB'),
       from:'Left-Hand Waves',parts:'3;3',
       paths:[
           SwingLeft +
@@ -124,7 +124,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Swing and Mix',
-      formation:Formations.InvertedLinesEndsFacingIn,
+      formation:Formation('Inverted Lines Ends Facing In'),
       from:'Inverted Lines, Ends Facing In',parts:'3;3',
       paths:[
           SwingRight +
@@ -143,7 +143,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Swing and Mix',
-      formation:Formations.InvertedLinesEndsFacingOut,
+      formation:Formation('Inverted Lines Ends Facing Out'),
       from:'Inverted Lines, Ends Facing Out',parts:'3;3',
       paths:[
           SwingLeft +
@@ -162,7 +162,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Swing and Mix',
-      formation:Formations.EightChainThru,
+      formation:Formation('Eight Chain Thru'),
       from:'Eight Chain Thru',parts:'5;3',
       paths:[
           ExtendLeft.changeBeats(2).scale(1.0,2.0) +
@@ -185,7 +185,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Swing and Mix',
-      formation:Formations.TidalWaveRHBGGB,
+      formation:Formation('Tidal Wave RH BGGB'),
       from:'Right-Hand Tidal Wave',parts:'3;3',
       paths:[
           SwingRight.scale(0.5,0.5) +
@@ -204,7 +204,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Swing and Mix',
-      formation:Formations.TidalWaveLHBGGB,
+      formation:Formation('Tidal Wave LH BGGB'),
       from:'Left-Hand Tidal Wave',parts:'3;3',
       paths:[
           SwingLeft.scale(0.5,0.5) +
@@ -223,7 +223,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Swing and Mix',
-      formation:Formations.TidalInvertedLineRH,
+      formation:Formation('Tidal Inverted Line RH'),
       from:'Tidal Inverted Line',parts:'3;3',
       paths:[
           SwingRight.scale(0.5,0.5) +
@@ -243,7 +243,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Swing and Mix',
-      formation:Formations.TidalInvertedLineLH,
+      formation:Formation('Tidal Inverted Line LH'),
       from:'Tidal Inverted Line',parts:'3;3',noDisplay: true,
       paths:[
           SwingLeft.scale(0.5,0.5) +
@@ -263,7 +263,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left Swing and Mix',
-      formation:Formations.FacingCouples,
+      formation:Formation('Facing Couples'),
       from:'Facing Couples',parts:'5;3',
       paths:[
           Forward_2 +
@@ -277,7 +277,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left Swing and Mix',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       from:'Lines',parts:'5;3',
       paths:[
           ExtendRight.changeBeats(2).scale(2.0,0.5) +
@@ -300,7 +300,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left Swing and Mix',
-      formation:Formations.EightChainThru,
+      formation:Formation('Eight Chain Thru'),
       from:'Eight Chain Thru',parts:'5;3',
       paths:[
           Forward.changeBeats(2) +
@@ -323,7 +323,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('All 8 Swing and Mix',
-      formation:Formations.TharLHGirls,
+      formation:Formation('Thar LH Girls'),
       from:'Right-Hand Thar',parts:'3;4.5',
       paths:[
           SwingRight +
@@ -346,7 +346,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('All 8 Swing and Mix',
-      formation:Formations.TharRHGirls,
+      formation:Formation('Thar RH Girls'),
       from:'Left-Hand Thar',parts:'3;4.5',
       paths:[
           SwingLeft +
@@ -369,7 +369,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('As Couples Swing and Mix',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       group:' ',parts:'5;3',
       paths:[
           ExtendLeft.changeBeats(2).scale(2.0,0.5) +

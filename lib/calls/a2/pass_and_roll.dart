@@ -21,13 +21,12 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> PassAndRoll = [
 
     AnimatedCall('Pass and Roll',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-3,y:0,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:-1,y:0,angle:180),
   ]),
@@ -48,7 +47,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Pass and Roll',
-      formation:Formations.BoxRH,
+      formation:Formation('Box RH'),
       from:'Right-Hand Box',
       paths:[
           Forward_2 +
@@ -64,7 +63,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Pass and Roll',
-      formation:Formations.EightChainThru,
+      formation:Formation('Eight Chain Thru'),
       from:'Eight Chain Thru',
       paths:[
           ExtendLeft.scale(1.0,0.5) +
@@ -95,7 +94,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Pass and Roll',
-      formation:Formations.OceanWavesRHBGBG,
+      formation:Formation('Ocean Waves RH BGBG'),
       from:'Right-Hand Waves',
       paths:[
           Forward_2 +
@@ -123,7 +122,7 @@ import '../../moves.dart';
 
     AnimatedCall('Pass and Roll',
         from:'Tidal Column',
-        formation: Formation('',[
+        formation: Formation('',dancers:[
           DancerModel.fromData(gender: Gender.BOY, x: .5, y: 0, angle: 0),
           DancerModel.fromData(gender: Gender.GIRL, x: 1.5, y: 0, angle: 180),
           DancerModel.fromData(gender: Gender.BOY, x: 2.5, y: 0, angle: 0),
@@ -157,7 +156,7 @@ import '../../moves.dart';
         ]),
 
     AnimatedCall('Left Pass and Roll',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-3,y:0,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:-1,y:0,angle:180),
   ]),
@@ -178,7 +177,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left Pass and Roll',
-      formation:Formations.BoxLH,
+      formation:Formation('Box LH'),
       from:'Left-Hand Box',
       paths:[
           Forward +
@@ -194,7 +193,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left Pass and Roll',
-      formation:Formations.EightChainThru,
+      formation:Formation('Eight Chain Thru'),
       from:'Eight Chain Thru',
       paths:[
           ExtendRight.scale(1.0,0.5) +
@@ -225,7 +224,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left Pass and Roll',
-      formation:Formations.OceanWavesLHBGBG,
+      formation:Formation('Ocean Waves LH BGBG'),
       from:'Left-Hand Waves',
       paths:[
           Forward +
@@ -253,7 +252,7 @@ import '../../moves.dart';
 
     AnimatedCall('Left Pass and Roll',
         from:'Tidal Column',
-        formation: Formation('',[
+        formation: Formation('',dancers:[
           DancerModel.fromData(gender: Gender.BOY, x: .5, y: 0, angle: 0),
           DancerModel.fromData(gender: Gender.GIRL, x: 1.5, y: 0, angle: 180),
           DancerModel.fromData(gender: Gender.BOY, x: 2.5, y: 0, angle: 0),
@@ -287,7 +286,7 @@ import '../../moves.dart';
         ]),
 
     AnimatedCall('All 8 Pass and Roll',
-      formation:Formations.StaticFacing,
+      formation:Formation('Static Facing'),
       group:' ',
       paths:[
           ExtendLeft.scale(1.0,0.5) +
@@ -318,7 +317,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('As Couples Pass and Roll',
-      formation:Formations.EightChainThru,
+      formation:Formation('Eight Chain Thru'),
       group:' ',
       paths:[
           ExtendLeft.changehands(2).scale(1.0,0.5) +

@@ -21,13 +21,12 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> BellesAndBeaus = [
 
     AnimatedCall('Belles Walk, Beaus Dodge',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-2,y:3,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:-2,y:-1,angle:0),
         DancerModel.fromData(gender:Gender.BOY,x:-2,y:1,angle:0),
@@ -45,7 +44,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Beaus Trade',
-      formation:Formations.InvertedLinesEndsFacingOut,
+      formation:Formation('Inverted Lines Ends Facing Out'),
       from:'Inverted Lines',group:' ',
       paths:[
           Path(),
@@ -58,7 +57,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Belles Trade',
-      formation:Formations.InvertedLinesEndsFacingOut,
+      formation:Formation('Inverted Lines Ends Facing Out'),
       from:'Inverted Lines',group:' ',
       paths:[
           SwingLeft,
@@ -71,7 +70,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Beaus Walk, Belles Dodge',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.GIRL,x:-3,y:-1,angle:0),
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:-1,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:1,y:-1,angle:180),
@@ -89,7 +88,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Belles Cross',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-2,y:3,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:-2,y:1,angle:0),
         DancerModel.fromData(gender:Gender.BOY,x:-2,y:-1,angle:0),

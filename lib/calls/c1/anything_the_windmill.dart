@@ -19,13 +19,13 @@
 */
 
 import '../../animated_call.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> AnythingTheWindmill = [
 
     AnimatedCall('Mix the Windmill Right',
-      formation:Formations.QuarterTag,
+      formation:Formation('Quarter Tag'),
       group:' ',
       paths:[
           QuarterRight +
@@ -47,7 +47,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Half Tag the Windmill Right',
-      formation:Formations.QuarterLinesRH,
+      formation:Formation('Quarter Lines RH'),
       group:' ',
       paths:[
           QuarterRight +
@@ -70,7 +70,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Follow Your Neighbor the Windmill Forward',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       group:' ',
       paths:[
           Forward_4 +
@@ -90,7 +90,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Switch the Windmill Right',
-      formation:Formations.QuarterTag,
+      formation:Formation('Quarter Tag'),
       group:' ',
       paths:[
           QuarterRight +

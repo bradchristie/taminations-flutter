@@ -21,13 +21,12 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> TriangleFormation = [
 
     AnimatedCall('Inside Triangle Circulate',
-      formation:Formations.DiamondsRHGirlPoints,
+      formation:Formation('Diamonds RH Girl Points'),
       from:'Right-Hand Diamonds',
       paths:[
           Path(),
@@ -42,7 +41,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Inside Triangle Circulate',
-      formation:Formations.DiamondsLHGirlPoints,
+      formation:Formation('Diamonds LH Girl Points'),
       from:'Left-Hand Diamonds',
       paths:[
           Path(),
@@ -57,7 +56,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Inside Triangle Circulate',
-      formation:Formations.DiamondsRHPTPGirlPoints,
+      formation:Formation('Diamonds RH PTP Girl Points'),
       from:'Point-to-Point Diamonds',
       paths:[
           LeadRight.changeBeats(3).scale(2.0,1.0),
@@ -70,7 +69,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Outside Triangle Circulate',
-      formation:Formations.DiamondsRHGirlPoints,
+      formation:Formation('Diamonds RH Girl Points'),
       from:'Right-Hand Diamonds',
       paths:[
           LeadRight.changeBeats(6).scale(3.0,1.0),
@@ -85,7 +84,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Outside Triangle Circulate',
-      formation:Formations.DiamondsLHGirlPoints,
+      formation:Formation('Diamonds LH Girl Points'),
       from:'Left-Hand Diamonds',
       paths:[
           LeadLeft.changeBeats(6).scale(3.0,1.0),
@@ -100,7 +99,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Outside Triangle Circulate',
-      formation:Formations.DiamondsRHPTPGirlPoints,
+      formation:Formation('Diamonds RH PTP Girl Points'),
       from:'Point-to-Point Diamonds',
       paths:[
           FlipRight,
@@ -113,7 +112,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Inpoint Triangle Circulate',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:0,y:-3,angle:270),
         DancerModel.fromData(gender:Gender.GIRL,x:-3,y:-2,angle:90),
         DancerModel.fromData(gender:Gender.BOY,x:0,y:-1,angle:270),
@@ -131,7 +130,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Inpoint Triangle Circulate',
-      formation:Formations.DiamondsLHGirlPoints,
+      formation:Formation('Diamonds LH Girl Points'),
       from:'Left-Hand Diamonds',
       paths:[
           LeadLeft.changeBeats(3).scale(3.0,1.0),
@@ -144,7 +143,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Outpoint Triangle Circulate',
-      formation:Formations.DiamondsRHGirlPoints,
+      formation:Formation('Diamonds RH Girl Points'),
       from:'Right-Hand Diamonds',
       paths:[
           FlipRight,
@@ -157,7 +156,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Outpoint Triangle Circulate',
-      formation:Formations.DiamondsLHGirlPoints,
+      formation:Formation('Diamonds LH Girl Points'),
       from:'Left-Hand Diamonds',
       paths:[
           FlipLeft,
@@ -170,7 +169,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Wave-Based Triangle Circulate',
-      formation:Formations.HourglassRHBP,
+      formation:Formation('Hourglass RH BP'),
       from:'Right-Hand Hourglass',
       paths:[
           LeadRight.changeBeats(6).scale(1.0,3.0),
@@ -185,7 +184,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Wave-Based Triangle Circulate',
-      formation:Formations.HourglassLHBP,
+      formation:Formation('Hourglass LH BP'),
       from:'Left-Hand Hourglass',
       paths:[
           QuarterLeft.skew(0.0,1.0) +
@@ -200,7 +199,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Wave-Based Triangle Circulate',
-      formation:Formations.GalaxyRHGP,
+      formation:Formation('Galaxy RH GP'),
       from:'Right-Hand Galaxy',
       paths:[
           LeadRight.changeBeats(3).scale(2.0,1.0),
@@ -213,7 +212,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Wave-Based Triangle Circulate',
-      formation:Formations.GalaxyLHGP,
+      formation:Formation('Galaxy LH GP'),
       from:'Left-Hand Galaxy',
       paths:[
           FlipLeft,
@@ -226,7 +225,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Tandem-Based Triangle Circulate',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-2,y:-3,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:-3,y:0,angle:90),
         DancerModel.fromData(gender:Gender.BOY,x:-2,y:3,angle:0),
@@ -244,7 +243,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Tandem-Based Triangle Circulate',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-2,y:-3,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:-3,y:0,angle:90),
         DancerModel.fromData(gender:Gender.BOY,x:-2,y:3,angle:180),
@@ -262,7 +261,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Tandem-Based Triangle Circulate',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:-1,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:-3,y:0,angle:90),
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:1,angle:180),
@@ -280,7 +279,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Tandem-Based Triangle Circulate',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:-1,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:-3,y:0,angle:270),
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:1,angle:0),

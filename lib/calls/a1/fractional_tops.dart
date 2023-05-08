@@ -19,13 +19,13 @@
 */
 
 import '../../animated_call.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> FractionalTops = [
 
     AnimatedCall('Quarter the Top',
-      formation:Formations.TharRHBoys,
+      formation:Formation('Thar RH Boys'),
       from:'Thar',parts:'3',
       paths:[
           SwingLeft +
@@ -44,7 +44,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Quarter the Top',
-      formation:Formations.TharLHBoys,
+      formation:Formation('Thar LH Boys'),
       from:'Wrong Way Thar',parts:'3',
       paths:[
           SwingRight +
@@ -63,7 +63,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Half the Top',
-      formation:Formations.TharRHBoys,
+      formation:Formation('Thar RH Boys'),
       from:'Thar',parts:'3',
       paths:[
           SwingLeft +
@@ -82,7 +82,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Half the Top',
-      formation:Formations.TharLHBoys,
+      formation:Formation('Thar LH Boys'),
       from:'Wrong Way Thar',parts:'3',
       paths:[
           SwingRight +
@@ -101,7 +101,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('3/4 the Top',
-      formation:Formations.TharRHBoys,
+      formation:Formation('Thar RH Boys'),
       from:'Thar',parts:'3',
       paths:[
           SwingLeft +
@@ -122,7 +122,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('3/4 the Top',
-      formation:Formations.TharLHBoys,
+      formation:Formation('Thar LH Boys'),
       from:'Wrong Way Thar',parts:'3',
       paths:[
           SwingRight +

@@ -21,13 +21,12 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> StepThru = [
 
     AnimatedCall('Step Thru',
-      formation:Formations.WaveRH,
+      formation:Formation('Wave RH'),
       from:'Right-Hand Wave',
       paths:[
           ExtendRight.changeBeats(2).scale(2.0,2.0),
@@ -36,7 +35,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Step Thru',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:0,y:1.5,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:0,y:0.5,angle:180),
   ]),
@@ -48,7 +47,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Step Thru',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:0,y:1.5,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:0,y:0.5,angle:0),
   ]),
@@ -60,7 +59,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Step Thru',
-      formation:Formations.WaveLH,
+      formation:Formation('Wave LH'),
       from:'Left-Hand Wave',
       paths:[
           ExtendLeft.changeBeats(2).scale(2.0,2.0),
@@ -69,7 +68,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Step Thru',
-      formation:Formations.BoxRH,
+      formation:Formation('Box RH'),
       from:'Right-Hand Box',
       paths:[
           ExtendRight,
@@ -78,7 +77,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Step Thru',
-      formation:Formations.BoxLH,
+      formation:Formation('Box LH'),
       from:'Left-Hand Box',
       paths:[
           ExtendLeft,
@@ -87,7 +86,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Step Thru',
-      formation:Formations.OceanWavesRHBGBG,
+      formation:Formation('Ocean Waves RH BGBG'),
       from:'Right-Hand Waves',
       taminator: '''
       Note how this is different from Extend
@@ -103,7 +102,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Step Thru',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-2,y:1.5,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:-2,y:0.5,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:-2,y:-0.5,angle:0),
@@ -121,7 +120,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Step Thru',
-      formation:Formations.OceanWavesLHBGBG,
+      formation:Formation('Ocean Waves LH BGBG'),
       from:'Left-Hand Waves',
       paths:[
           ExtendLeft.changeBeats(2).scale(1.0,2.0),
@@ -134,7 +133,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Step Thru',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-2,y:1.5,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:-2,y:0.5,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:-2,y:-0.5,angle:180),
@@ -152,7 +151,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Step Thru',
-      formation:Formations.TidalWaveRHBGBG,
+      formation:Formation('Tidal Wave RH BGBG'),
       from:'Tidal Wave',
       paths:[
           ExtendRight.changeBeats(2).scale(2.0,0.5),
@@ -165,7 +164,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Step Thru',
-      formation:Formations.TidalWaveLHBGGB,
+      formation:Formation('Tidal Wave LH BGGB'),
       from:'Left-Hand Tidal Wave',
       paths:[
           ExtendLeft.changeBeats(2).scale(2.0,0.5),
@@ -178,7 +177,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Step Thru',
-      formation:Formations.ColumnRHGBGB,
+      formation:Formation('Column RH GBGB'),
       from:'Columns',
       paths:[
           ExtendRight.scale(0.5,1.0),
@@ -191,7 +190,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Step Thru',
-      formation:Formations.TharLHBoys,
+      formation:Formation('Thar LH Boys'),
       from:'Thar',
       paths:[
           ExtendRight.changeBeats(2).scale(0.75,1.25),
@@ -204,7 +203,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Centers Step Thru',
-      formation:Formations.QuarterTag,
+      formation:Formation('Quarter Tag'),
       group:' ',
       taminator: '''
       Note how this is different from Extend

@@ -21,13 +21,12 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> StripTheDiamond = [
 
     AnimatedCall('Strip the Diamond',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.GIRL,x:-3,y:0,angle:90),
         DancerModel.fromData(gender:Gender.BOY,x:-2,y:3,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:-1,y:0,angle:270),
@@ -48,7 +47,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Strip the Diamond',
-      formation:Formations.DiamondsLHGirlPoints,
+      formation:Formation('Diamonds LH Girl Points'),
       from:'Left-Hand Diamonds',
       paths:[
           LeadLeft.changeBeats(5).scale(3.5,3.0),
@@ -64,7 +63,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Strip the Hourglass',
-      formation:Formations.HourglassRHBP,
+      formation:Formation('Hourglass RH BP'),
       from:'Right-Hand Hourglass',
       paths:[
           UmTurnLeft.changeBeats(2).skew(-2.0,-0.5) +
@@ -79,7 +78,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Strip the Hourglass',
-      formation:Formations.HourglassLHBP,
+      formation:Formation('Hourglass LH BP'),
       from:'Left-Hand Hourglass',
       paths:[
           ExtendLeft.changeBeats(2).scale(2.0,1.5) +

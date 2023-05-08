@@ -877,8 +877,6 @@ var callIndex = [
   CallEntry('Mini-Busy','a2','a2/mini_busy',a2.MiniBusy,[]),
   CallEntry('Mini Chase','c3a','c3a/mini_chase',c3a.MiniChase,[]),
   CallEntry('Mirror Concept','c3b','c3b/mirror_concept',c3b.MirrorConcept,[]),
-  CallEntry('Mirror Cross Swap the Top','c3b','c3b/swap_the_top',c3b.SwapTheTop,[]),
-  CallEntry('Mirror Swap the Top','c3b','c3b/swap_the_top',c3b.SwapTheTop,[]),
   CallEntry('Mix','a1','a1/mix',a1.Mix,[],'a1/mix.mp3'),
   CallEntry('Motivate','a2','a2/motivate',a2.Motivate,[],'a2/motivate.mp3'),
   CallEntry('Nuclear Reaction','c3b','c3b/nuclear_reaction',c3b.NuclearReaction,[]),

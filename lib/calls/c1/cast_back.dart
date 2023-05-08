@@ -20,13 +20,13 @@
 
 import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> CastBack = [
 
     AnimatedCall('Cast Back',
-      formation:Formations.BoxRHBoysLead,
+      formation:Formation('Box RH Boys Lead'),
       from:'Right-Hand Box',
       paths:[
           RunLeft.changeBeats(5).skew(-4.0,0.0),
@@ -35,7 +35,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cast Back',
-      formation:Formations.DoublePassThru,
+      formation:Formation('Double Pass Thru'),
       from:'Double Pass Thru',
       paths:[
           Path(),
@@ -48,7 +48,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cast Back',
-      formation:Formations.CompletedDoublePassThru,
+      formation:Formation('Completed Double Pass Thru'),
       from:'Completed Double Pass Thru',
       paths:[
           RunRight.skew(-2.0,0.0),
@@ -61,7 +61,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cast Back',
-      formation:Formations.ColumnRHGBGB,
+      formation:Formation('Column RH GBGB'),
       from:'Right-Hand Columns',
       paths:[
           UmTurnLeft.skew(-2.0,2.0),
@@ -74,7 +74,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cross Cast Back',
-      formation:Formations.CompletedDoublePassThru,
+      formation:Formation('Completed Double Pass Thru'),
       from:'Completed Double Pass Thru',
       paths:[
           RunLeft.changeBeats(5).scale(2.0,2.0).skew(-1.0,0.0) +

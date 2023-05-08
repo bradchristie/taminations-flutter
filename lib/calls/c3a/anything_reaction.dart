@@ -19,13 +19,13 @@
 */
 
 import '../../animated_call.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> AnythingReaction = [
 
     AnimatedCall('Flip Reaction',
-      formation:Formations.OceanWavesRHGBBG,
+      formation:Formation('Ocean Waves RH GBBG'),
       from:'Right-Hand Waves',parts:'9',
       paths:[
           LeadRight +
@@ -63,7 +63,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Flip Reaction',
-      formation:Formations.OceanWavesLHGBBG,
+      formation:Formation('Ocean Waves LH GBBG'),
       from:'Left-Hand Waves',parts:'9',
       paths:[
           LeadLeft +
@@ -103,7 +103,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Flip Cross Reaction',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       from:'Right-Hand Waves',parts:'9',
       paths:[
           LeadRight +
@@ -145,7 +145,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Flip Cross Reaction',
-      formation:Formations.OceanWavesLHBGGB,
+      formation:Formation('Ocean Waves LH BGGB'),
       from:'Left-Hand Waves',parts:'9',
       paths:[
           LeadLeft +
@@ -187,7 +187,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Tag Reaction',
-      formation:Formations.TwomFacedLinesRH,
+      formation:Formation('Two-Faced Lines RH'),
       from:'Two-Faced Lines',group:' ',parts:'6',
       paths:[
           LeadRight.changeBeats(2).scale(1.0,2.0) +
@@ -221,7 +221,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left Tag Reaction',
-      formation:Formations.TwomFacedLinesLH,
+      formation:Formation('Two-Faced Lines LH'),
       group:' ',parts:'6',
       paths:[
           LeadLeft.changeBeats(2).scale(1.0,2.0) +
@@ -257,7 +257,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Tag Cross Reaction',
-      formation:Formations.TwomFacedLinesRH,
+      formation:Formation('Two-Faced Lines RH'),
       from:'Two-Faced Lines',group:' ',parts:'6',
       paths:[
           LeadRight.changeBeats(2).scale(1.0,2.0) +
@@ -295,7 +295,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left Tag Cross Reaction',
-      formation:Formations.TwomFacedLinesLH,
+      formation:Formation('Two-Faced Lines LH'),
       group:' ',parts:'6',
       paths:[
           LeadLeft.changeBeats(2).scale(1.0,2.0) +
@@ -333,7 +333,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Scoot Reaction',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       from:'Right-Hand Waves',parts:'5',
       paths:[
           Forward_2 +
@@ -365,7 +365,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Scoot Reaction',
-      formation:Formations.OceanWavesLHBGGB,
+      formation:Formation('Ocean Waves LH BGGB'),
       from:'Left-Hand Waves',parts:'5',
       paths:[
           RunLeft.changeBeats(5).skew(1.0,0.0) +
@@ -397,7 +397,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Scoot Cross Reaction',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       from:'Right-Hand Waves',parts:'5',
       paths:[
           Forward_2 +
@@ -431,7 +431,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Scoot Cross Reaction',
-      formation:Formations.OceanWavesLHBGGB,
+      formation:Formation('Ocean Waves LH BGGB'),
       from:'Left-Hand Waves',parts:'5',
       paths:[
           RunLeft.changeBeats(5).skew(1.0,0.0) +
@@ -465,7 +465,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Scoot Chain Thru Reaction',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       from:'Right-Hand Waves',parts:'11',
       paths:[
           Forward_2 +
@@ -503,7 +503,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Scoot Chain Thru Reaction',
-      formation:Formations.OceanWavesLHBGGB,
+      formation:Formation('Ocean Waves LH BGGB'),
       from:'Left-Hand Waves',parts:'11',
       paths:[
           RunLeft.changeBeats(5).skew(1.0,0.0) +
@@ -541,7 +541,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Scoot Chain Thru Cross Reaction',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       from:'Right-Hand Waves',parts:'11',
       paths:[
           Forward_2 +
@@ -581,7 +581,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Scoot Chain Thru Cross Reaction',
-      formation:Formations.OceanWavesLHBGGB,
+      formation:Formation('Ocean Waves LH BGGB'),
       from:'Left-Hand Waves',parts:'11',
       paths:[
           RunLeft.changeBeats(5).skew(1.0,0.0) +
@@ -621,7 +621,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Open Up Reaction',
-      formation:Formations.ColumnRHGBGB,
+      formation:Formation('Column RH GBGB'),
       from:'Right-Hand Columns',parts:'7.5',
       paths:[
           RunRight.changeBeats(5).scale(2.0,2.5) +
@@ -656,7 +656,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Open Up Reaction',
-      formation:Formations.ColumnLHGBGB,
+      formation:Formation('Column LH GBGB'),
       from:'Left-Hand Columns',parts:'7.5',
       paths:[
           Forward.changeBeats(3) +
@@ -691,7 +691,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Transfer the Column Reaction',
-      formation:Formations.ColumnRHGBGB,
+      formation:Formation('Column RH GBGB'),
       from:'Right-Hand Columns',parts:'6.5',
       paths:[
           RunRight.scale(1.0,2.5) +
@@ -729,7 +729,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Transfer the Column Reaction',
-      formation:Formations.ColumnLHGBGB,
+      formation:Formation('Column LH GBGB'),
       from:'Left-Hand Columns',parts:'6.5',
       paths:[
           Forward_2 +

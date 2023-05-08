@@ -19,13 +19,13 @@
 */
 
 import '../../animated_call.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> MiniChase = [
 
     AnimatedCall('Mini Chase',
-      formation:Formations.CouplesFacingOut,
+      formation:Formation('Couples Facing Out'),
       from:'Couples Facing Out',
       paths:[
           RunRight.skew(-1.5,0.0) +
@@ -36,7 +36,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Mini Chase',
-      formation:Formations.LinesFacingOut,
+      formation:Formation('Lines Facing Out'),
       from:'Lines Facing Out',
       paths:[
           RunRight.scale(1.0,0.5).skew(-1.5,0.0) +
@@ -53,7 +53,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Mini Chase',
-      formation:Formations.TradeBy,
+      formation:Formation('Trade By'),
       from:'Trade By',
       paths:[
           RunRight.skew(-0.5,0.0) +
@@ -70,7 +70,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Mini Chase',
-      formation:Formations.TmBoneDRLD,
+      formation:Formation('T-Bone DRLD'),
       from:'T-Bones',
       paths:[
           RunRight.scale(1.0,0.5).skew(-0.5,0.0) +
@@ -87,7 +87,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('All 8 Mini Chase',
-      formation:Formations.StaticFacingOut,
+      formation:Formation('Static Facing Out'),
       group:' ',
       paths:[
           QuarterRight.changeBeats(2).skew(0.0,-1.0) +
@@ -104,7 +104,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('As Couples Mini Chase',
-      formation:Formations.LinesFacingOut,
+      formation:Formation('Lines Facing Out'),
       group:' ',
       paths:[
           CounterRotateRight_m2_0.changehands(1) +
@@ -121,7 +121,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Concentric Mini Chase',
-      formation:Formations.CompletedDoublePassThru,
+      formation:Formation('Completed Double Pass Thru'),
       group:' ',
       paths:[
           RunRight.scale(1.0,1.5).skew(-0.5,0.0) +
@@ -138,7 +138,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Stretch Mini Chase',
-      formation:Formations.LinesFacingOut,
+      formation:Formation('Lines Facing Out'),
       group:' ',
       paths:[
           RunRight.scale(1.0,0.5).skew(-1.5,0.0) +
@@ -155,7 +155,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Tandem Mini Chase',
-      formation:Formations.CompletedDoublePassThru,
+      formation:Formation('Completed Double Pass Thru'),
       group:' ',
       paths:[
           RunRight.scale(1.0,2.0).skew(-1.5,0.0) +

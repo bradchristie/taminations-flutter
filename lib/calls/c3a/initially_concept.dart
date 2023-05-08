@@ -19,13 +19,13 @@
 */
 
 import '../../animated_call.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> InitiallyConcept = [
 
     AnimatedCall('Initially As Couples Hinge the Lock',
-      formation:Formations.TidalLineRH,
+      formation:Formation('Tidal Line RH'),
       group:'Initially As Couples',fractions:'2',
       paths:[
           HingeRight.changeBeats(2).scale(1.5,1.5) +
@@ -42,7 +42,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Initially As Couples Lock the Hinge',
-      formation:Formations.TwomFacedTidalLineRH,
+      formation:Formation('Two-Faced Tidal Line RH'),
       group:'Initially As Couples',fractions:'2',
       paths:[
           LeadRight.changeBeats(3).scale(3.5,3.5) +
@@ -59,7 +59,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Initially As Couples Mix',
-      formation:Formations.TwomFacedTidalLineRH,
+      formation:Formation('Two-Faced Tidal Line RH'),
       group:'Initially As Couples',fractions:'4',
       paths:[
           DodgeRight.changeBeats(4).changehands(2) +
@@ -74,7 +74,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Initially As Couples Spin the Top',
-      formation:Formations.TwomFacedTidalLineRH,
+      formation:Formation('Two-Faced Tidal Line RH'),
       group:'Initially As Couples',fractions:'4',
       paths:[
           SwingRight.changeBeats(4).scale(1.5,1.5) +

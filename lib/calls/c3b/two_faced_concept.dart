@@ -20,13 +20,13 @@
 
 import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> TwoFacedConcept = [
 
     AnimatedCall('Two-Faced Alter and Circulate',
-      formation:Formations.TwomFacedLinesRH,
+      formation:Formation('Two-Faced Lines RH'),
       group:'Two-Faced',fractions:'3;7.5;4',
       paths:[
           RunRight +
@@ -57,7 +57,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Two-Faced Alter the Wave',
-      formation:Formations.TwomFacedLineRH,
+      formation:Formation('Two-Faced Line RH'),
       group:'Two-Faced',fractions:'3;4.5;4',
       paths:[
           RunRight +
@@ -74,7 +74,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Two-Faced Change the Centers',
-      formation:Formations.TwomFacedLineRH,
+      formation:Formation('Two-Faced Line RH'),
       group:'Two-Faced',fractions:'3;3;3',
       paths:[
           RunRight +
@@ -89,7 +89,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Two-Faced Change the Wave',
-      formation:Formations.TwomFacedLineRH,
+      formation:Formation('Two-Faced Line RH'),
       group:'Two-Faced',fractions:'3;3;3',
       paths:[
           RunRight +
@@ -104,7 +104,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Two-Faced Delight',
-      formation:Formations.n34LinesRH,
+      formation:Formation('3/4 Lines RH'),
       group:'Two-Faced',fractions:'3;3;3',
       paths:[
           QuarterRight.skew(0.0,-1.0) +
@@ -132,7 +132,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Two-Faced Peel Chain Thru',
-      formation:Formations.n34LinesRH,
+      formation:Formation('3/4 Lines RH'),
       group:'Two-Faced',
       paths:[
           RunRight.changeBeats(4).skew(-2.0,0.0) +
@@ -159,7 +159,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Two-Faced Relay the Deucey',
-      formation:Formations.TwomFacedLinesRH,
+      formation:Formation('Two-Faced Lines RH'),
       group:'Two-Faced',fractions:'3;4.5;3;3;3',
       paths:[
           RunRight +
@@ -192,7 +192,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Two-Faced Relay the Shadow',
-      formation:Formations.TidalLineRH,
+      formation:Formation('Tidal Line RH'),
       group:'Two-Faced',
       paths:[
           RunRight.scale(1.0,0.5) +
@@ -224,7 +224,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Two-Faced Relay the Top',
-      formation:Formations.TwomFacedLinesRH,
+      formation:Formation('Two-Faced Lines RH'),
       group:'Two-Faced',fractions:'3;4.5;3',
       paths:[
           RunRight +
@@ -251,7 +251,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Two-Faced Reverse the Top',
-      formation:Formations.TwomFacedLineRH,
+      formation:Formation('Two-Faced Line RH'),
       group:'Two-Faced',fractions:'4.5',
       paths:[
           LeadRight.changeBeats(4.5).scale(3.0,3.0) +
@@ -262,7 +262,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Two-Faced Spin the Top',
-      formation:Formations.TwomFacedLineRH,
+      formation:Formation('Two-Faced Line RH'),
       group:'Two-Faced',fractions:'3',
       paths:[
           RunRight +

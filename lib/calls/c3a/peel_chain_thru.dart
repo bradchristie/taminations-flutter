@@ -19,13 +19,13 @@
 */
 
 import '../../animated_call.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> PeelChainThru = [
 
     AnimatedCall('Peel Chain Thru',
-      formation:Formations.TradeBy,
+      formation:Formation('Trade By'),
       from:'Trade By',fractions:'4;4',
       paths:[
           RunRight.changeBeats(4).skew(-2.0,0.0) +
@@ -52,7 +52,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Peel Chain Thru',
-      formation:Formations.n34Tag,
+      formation:Formation('3/4 Tag'),
       from:'Three Quarter Tag',fractions:'4;4',
       paths:[
           RunRight.changeBeats(4).skew(-2.0,0.0) +
@@ -77,7 +77,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Peel Chain Thru',
-      formation:Formations.n34TagLH,
+      formation:Formation('3/4 Tag LH'),
       from:'Left-Hand Three Quarter Tag',fractions:'4;4',
       paths:[
           RunRight.changeBeats(4).skew(-2.0,0.0) +

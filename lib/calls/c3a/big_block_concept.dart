@@ -26,7 +26,7 @@ import '../../moves.dart';
   final List<AnimatedCall> BigBlockConcept = [
 
     AnimatedCall('Big Block Circulate',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-3,y:1,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:-3,y:-3,angle:180),
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:3,angle:0),
@@ -46,7 +46,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Big Block Counter Rotate',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:3,y:3,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:1,y:1,angle:180),
         DancerModel.fromData(gender:Gender.BOY,x:1,y:-3,angle:180),
@@ -70,7 +70,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Big Block Split Circulate',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-3,y:1,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:-3,y:-3,angle:180),
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:3,angle:0),
@@ -90,7 +90,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Big Block Split Counter Rotate',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:3,y:3,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:1,y:1,angle:180),
         DancerModel.fromData(gender:Gender.BOY,x:1,y:-3,angle:180),
@@ -108,7 +108,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Big Block In Roll Circulate',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.GIRL,x:-3,y:1,angle:180),
         DancerModel.fromData(gender:Gender.BOY,x:-3,y:-3,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:-1,y:3,angle:0),
@@ -129,7 +129,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Big Block Trade Circulate',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-3,y:-3,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:-1,y:1,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:-3,y:3,angle:0),

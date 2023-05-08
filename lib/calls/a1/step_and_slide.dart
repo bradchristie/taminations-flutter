@@ -21,13 +21,12 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> StepAndSlide = [
 
     AnimatedCall('Step and Slide',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-3,y:0,angle:90),
         DancerModel.fromData(gender:Gender.GIRL,x:-1,y:0,angle:90),
   ]),
@@ -39,7 +38,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Step and Slide',
-      formation:Formations.TwomFacedLineLH,
+      formation:Formation('Two-Faced Line LH'),
       from:'Left-Hand Two-Faced Line',
       paths:[
           Forward_2.changeBeats(4),
@@ -48,7 +47,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Step and Slide',
-      formation:Formations.WaveRH,
+      formation:Formation('Wave RH'),
       from:'Right-Hand Wave',
       paths:[
           DodgeRight.changeBeats(4),
@@ -57,7 +56,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Step and Slide',
-      formation:Formations.WaveLH,
+      formation:Formation('Wave LH'),
       from:'Left-Hand Wave',
       paths:[
           DodgeLeft.changeBeats(4),
@@ -66,7 +65,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Step and Slide',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.GIRL,x:3,y:2,angle:90),
         DancerModel.fromData(gender:Gender.BOY,x:1,y:2,angle:90),
         DancerModel.fromData(gender:Gender.GIRL,x:-1,y:2,angle:90),
@@ -84,7 +83,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Step and Slide',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       from:'Lines Facing In',
       paths:[
           DodgeRight.changeBeats(4).skew(-1.0,0.0),
@@ -97,7 +96,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Step and Slide',
-      formation:Formations.InvertedLinesEndsFacingIn,
+      formation:Formation('Inverted Lines Ends Facing In'),
       from:'Inverted Lines, Ends Facing In',
       paths:[
           ExtendRight.changeBeats(4).scale(1.0,2.0),
@@ -110,7 +109,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Step and Slide',
-      formation:Formations.InvertedLinesEndsFacingOut,
+      formation:Formation('Inverted Lines Ends Facing Out'),
       from:'Inverted Lines, Ends Facing Out',
       paths:[
           ExtendLeft.changeBeats(4).scale(1.0,2.0),
@@ -123,7 +122,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Step and Slide',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       from:'Right-Hand Waves',
       paths:[
           DodgeRight.changeBeats(4),
@@ -136,7 +135,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Step and Slide',
-      formation:Formations.OceanWavesLHBGGB,
+      formation:Formation('Ocean Waves LH BGGB'),
       from:'Left-Hand Waves',
       paths:[
           DodgeLeft.changeBeats(4),
@@ -149,7 +148,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Step and Slide',
-      formation:Formations.TwomFacedLinesRH,
+      formation:Formation('Two-Faced Lines RH'),
       from:'Right-Hand Two-Faced Lines',
       paths:[
           DodgeRight.changeBeats(4),
@@ -162,7 +161,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Step and Slide',
-      formation:Formations.TwomFacedLinesLH,
+      formation:Formation('Two-Faced Lines LH'),
       from:'Left-Hand Two-Faced Lines',
       paths:[
           DodgeLeft.changeBeats(4),
@@ -175,7 +174,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Step and Slide',
-      formation:Formations.n3and_1lines1,
+      formation:Formation('3 and 1 Lines #1'),
       from:'3 and 1 Lines #1',noDisplay: true,
       paths:[
           DodgeLeft.changeBeats(4).skew(1.0,0.0),
@@ -188,7 +187,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Step and Slide',
-      formation:Formations.n3and_1lines2,
+      formation:Formation('3 and 1 Lines #2'),
       from:'3 and 1 Lines #2',noDisplay: true,
       paths:[
           DodgeRight.changeBeats(4),
@@ -201,7 +200,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Step and Slide',
-      formation:Formations.n3and_1lines3,
+      formation:Formation('3 and 1 Lines #3'),
       from:'3 and 1 Lines #3',noDisplay: true,
       paths:[
           DodgeRight.changeBeats(4),
@@ -214,7 +213,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Step and Slide',
-      formation:Formations.n3and_1lines4,
+      formation:Formation('3 and 1 Lines #4'),
       from:'3 and 1 Lines #4',noDisplay: true,
       paths:[
           DodgeRight.changeBeats(4).skew(-1.0,0.0),
@@ -227,7 +226,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Step and Slide',
-      formation:Formations.n3and_1lines5,
+      formation:Formation('3 and 1 Lines #5'),
       from:'3 and 1 Lines #5',noDisplay: true,
       paths:[
           DodgeRight.changeBeats(4).skew(1.0,0.0),
@@ -240,7 +239,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Step and Slide',
-      formation:Formations.n3and_1lines6,
+      formation:Formation('3 and 1 Lines #6'),
       from:'3 and 1 Lines #6',noDisplay: true,
       paths:[
           DodgeLeft.changeBeats(4),
@@ -253,7 +252,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Step and Slide',
-      formation:Formations.n3and_1lines7,
+      formation:Formation('3 and 1 Lines #7'),
       from:'3 and 1 Lines #7',noDisplay: true,
       paths:[
           DodgeLeft.changeBeats(4),
@@ -266,7 +265,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Step and Slide',
-      formation:Formations.n3and_1lines8,
+      formation:Formation('3 and 1 Lines #8'),
       from:'3 and 1 Lines #8',noDisplay: true,
       paths:[
           DodgeLeft.changeBeats(4).skew(-1.0,0.0),
@@ -279,7 +278,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Step and Slide',
-      formation:Formations.TidalLineRH,
+      formation:Formation('Tidal Line RH'),
       from:'Tidal Line',
       paths:[
           DodgeRight.skew(0.0,1.5),
@@ -292,7 +291,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Step and Slide',
-      formation:Formations.TidalLineLH,
+      formation:Formation('Tidal Line LH'),
       from:'Tidal Line LH',noDisplay: true,
       paths:[
           ExtendRight.changeBeats(3).changehands(1).scale(3.0,0.5),
@@ -305,7 +304,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Step and Slide',
-      formation:Formations.TwomFacedTidalLineRH,
+      formation:Formation('Two-Faced Tidal Line RH'),
       from:'Tidal Two-Faced Line',
       paths:[
           DodgeRight.skew(0.0,1.5),
@@ -318,7 +317,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Step and Slide',
-      formation:Formations.TwomFacedTidalLineLH,
+      formation:Formation('Two-Faced Tidal Line LH'),
       from:'Tidal Two-Faced Line',noDisplay: true,
       paths:[
           DodgeLeft.skew(0.0,-1.5),
@@ -331,7 +330,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Step and Slide',
-      formation:Formations.TidalInvertedLineRH,
+      formation:Formation('Tidal Inverted Line RH'),
       from:'Tidal Inverted Line',
       paths:[
           DodgeRight.skew(0.0,1.5),
@@ -344,7 +343,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Step and Slide',
-      formation:Formations.TidalInvertedLineLH,
+      formation:Formation('Tidal Inverted Line LH'),
       from:'Tidal Inverted Line LH',noDisplay: true,
       paths:[
           DodgeLeft.skew(0.0,-1.5),

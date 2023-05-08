@@ -21,13 +21,12 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> SplitSquareThru = [
 
     AnimatedCall('Split Square Thru 2',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:3,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:1,y:3,angle:180),
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:1,angle:90),
@@ -53,7 +52,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Split Square Thru 2',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:3,angle:270),
         DancerModel.fromData(gender:Gender.GIRL,x:1,y:3,angle:270),
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:1,angle:0),
@@ -79,7 +78,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left Split Square Thru',
-      formation:Formations.TmBoneULRU,
+      formation:Formation('T-Bone ULRU'),
       group:' ',notForSequencer: true,
       paths:[
           ExtendRight.scale(1.0,0.5) +
@@ -108,7 +107,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Heads Start Split Square Thru',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       group:' ',notForSequencer: true,
       paths:[
           Forward_2 +
@@ -139,7 +138,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Sides Start Split Square Thru',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       group:' ',notForSequencer: true,
       paths:[
           Stand.changeBeats(3.5) +

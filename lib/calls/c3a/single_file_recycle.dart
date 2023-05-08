@@ -19,13 +19,13 @@
 */
 
 import '../../animated_call.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> SingleFileRecycle = [
 
     AnimatedCall('Single File Recycle',
-      formation:Formations.SingleDoublePassThru,
+      formation:Formation('Single Double Pass Thru'),
       from:'Single Double Pass Thru',
       paths:[
           ExtendLeft.changeBeats(4).scale(3.0,3.0),

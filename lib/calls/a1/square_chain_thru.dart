@@ -19,14 +19,14 @@
 */
 
 import '../../animated_call.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 import '../a2/all_4_all_8.dart' as a2;
 
   final List<AnimatedCall> SquareChainThru = [
 
     AnimatedCall('Square Chain Thru',
-      formation:Formations.FacingCouplesCompact,
+      formation:Formation('Facing Couples Compact'),
       from:'Facing Couples',parts:'3;6',
       paths:[
           PullLeft.scale(1.0,0.5) +
@@ -45,7 +45,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Square Chain Thru',
-      formation:Formations.WaveRH,
+      formation:Formation('Wave RH'),
       from:'Right-Hand Wave',
       paths:[
           LeadRight.changeBeats(3).scale(0.5,3.0) +
@@ -62,7 +62,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Square Chain Thru',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       from:'Lines',parts:'3;6',
       paths:[
           PullLeft.scale(2.0,0.5) +
@@ -95,7 +95,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Square Chain Thru',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       from:'Right-Hand Waves',parts:'3;6',
       paths:[
           LeadRight.changeBeats(3).scale(0.5,3.0) +
@@ -124,7 +124,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Square Chain Thru',
-      formation:Formations.EightChainThru,
+      formation:Formation('Eight Chain Thru'),
       from:'Eight Chain Thru',parts:'3;6',
       paths:[
           PullLeft.scale(1.0,0.5) +
@@ -157,7 +157,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Square Chain Thru',
-      formation:Formations.TidalWaveRHBGGB,
+      formation:Formation('Tidal Wave RH BGGB'),
       from:'Tidal Wave',parts:'2;6',
       paths:[
           LeadRight.changeBeats(2).scale(1.0,1.5) +
@@ -186,7 +186,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('As Couples Square Chain Thru',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       from:'Lines',group:' ',parts:'6;8',
       paths:[
           ExtendLeft.changeBeats(2).changehands(2).scale(2.0,0.5) +
@@ -221,7 +221,7 @@ import '../a2/all_4_all_8.dart' as a2;
       tam.title == 'All 4 Couples Square Chain Thru').first.xref(title: 'All 4 Couples Square Chain Thru').xref(group: ' '),
 
     AnimatedCall('Left Square Chain Thru',
-      formation:Formations.FacingCouplesCompact,
+      formation:Formation('Facing Couples Compact'),
       from:'Facing Couples',parts:'3;6',
       paths:[
           PullRight.scale(1.5,0.5) +
@@ -240,7 +240,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Left Square Chain Thru',
-      formation:Formations.WaveLH,
+      formation:Formation('Wave LH'),
       from:'Left-Hand Wave',
       paths:[
           LeadLeft.changeBeats(3).scale(0.5,3.0) +
@@ -257,7 +257,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Left Square Chain Thru',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       from:'Lines',
       paths:[
           PullRight.scale(2.0,0.5) +
@@ -290,7 +290,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Left Square Chain Thru',
-      formation:Formations.OceanWavesLHBGGB,
+      formation:Formation('Ocean Waves LH BGGB'),
       from:'Left-Hand Waves',parts:'3;6',
       paths:[
           LeadLeft.changeBeats(3).scale(0.5,3.0) +
@@ -319,7 +319,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Left Square Chain Thru',
-      formation:Formations.EightChainThru,
+      formation:Formation('Eight Chain Thru'),
       from:'Eight Chain Thru',
       paths:[
           PullRight.scale(1.0,0.5) +
@@ -352,7 +352,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Left Square Chain Thru',
-      formation:Formations.TidalWaveLHBGGB,
+      formation:Formation('Tidal Wave LH BGGB'),
       from:'Left-Hand Tidal Wave',parts:'2;6',
       paths:[
           LeadLeft.changeBeats(2).scale(1.0,1.5) +
@@ -381,7 +381,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('As Couples Left Square Chain Thru',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       from:'Lines',group:' ',
       paths:[
           ExtendRight.changeBeats(2).changehands(2).scale(2.0,1.5) +

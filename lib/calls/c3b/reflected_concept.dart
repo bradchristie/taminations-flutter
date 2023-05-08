@@ -19,13 +19,13 @@
 */
 
 import '../../animated_call.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> ReflectedConcept = [
 
     AnimatedCall('Reflected Flip the Line',
-      formation:Formations.WaveRH,
+      formation:Formation('Wave RH'),
       from:'Right-Hand Wave',group:' ',
       paths:[
           LeadRight +
@@ -41,7 +41,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Reflected Tag the Line',
-      formation:Formations.TwomFacedLinesRH,
+      formation:Formation('Two-Faced Lines RH'),
       group:' ',
       paths:[
           LeadRight +

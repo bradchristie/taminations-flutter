@@ -19,13 +19,13 @@
 */
 
 import '../../animated_call.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> DiamondChainThru = [
 
     AnimatedCall('Diamond Chain Thru',
-      formation:Formations.DiamondsRHGirlPoints,
+      formation:Formation('Diamonds RH Girl Points'),
       from:'Right-Hand Diamonds',parts:'3;3',
       paths:[
           LeadRight.changeBeats(3).scale(3.0,1.0),
@@ -42,7 +42,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Diamond Chain Thru',
-      formation:Formations.DiamondsLHGirlPoints,
+      formation:Formation('Diamonds LH Girl Points'),
       from:'Left-Hand Diamonds',parts:'3;3',
       paths:[
           LeadLeft.changeBeats(3).scale(3.0,1.0),
@@ -59,7 +59,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Diamond Chain Thru',
-      formation:Formations.DiamondsFacingGirlPoints,
+      formation:Formation('Diamonds Facing Girl Points'),
       from:'Facing Diamonds, Right-Hand Centers',parts:'3;3',
       paths:[
           Forward_2 +
@@ -82,7 +82,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Diamond Chain Thru',
-      formation:Formations.DiamondsFacingLHGirlPoints,
+      formation:Formation('Diamonds Facing LH Girl Points'),
       from:'Facing Diamonds, Left-Hand Centers',parts:'3;3',
       paths:[
           LeadLeft.changeBeats(3).scale(3.0,1.0),

@@ -20,13 +20,13 @@
 
 import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> ReverseCheckpoint = [
 
     AnimatedCall('Reverse Checkpoint Follow to a Diamond by Box Circulate',
-      formation:Formations.TwomFacedLinesRH,
+      formation:Formation('Two-Faced Lines RH'),
       group:'Reverse Checkpoint',
       paths:[
           Stand.changeBeats(5) +
@@ -45,7 +45,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Reverse Checkpoint Hinge by Cast Off 3/4',
-      formation:Formations.OceanWavesLHBGGB,
+      formation:Formation('Ocean Waves LH BGGB'),
       group:'Reverse Checkpoint',
       paths:[
           DodgeLeft +
@@ -64,7 +64,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Reverse Checkpoint Recycle by Touch 1/4',
-      formation:Formations.DoublePassThru,
+      formation:Formation('Double Pass Thru'),
       group:'Reverse Checkpoint',
       paths:[
           Stand.changeBeats(2.5) +

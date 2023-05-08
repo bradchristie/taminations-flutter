@@ -21,13 +21,12 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> CrossBack = [
 
     AnimatedCall('Cross Back',
-      formation:Formations.BoxRHBoysLead,
+      formation:Formation('Box RH Boys Lead'),
       from:'Right-Hand Box',
       paths:[
           UmTurnRight,
@@ -37,7 +36,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cross Back',
-      formation:Formations.BoxLH,
+      formation:Formation('Box LH'),
       from:'Left-Hand Box',
       paths:[
           UmTurnLeft,
@@ -47,7 +46,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cross Back',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       from:'Right-Hand Waves',
       paths:[
           ExtendRight.changeBeats(2).changehands(1).scale(3.0,2.0) +
@@ -62,7 +61,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cross Back',
-      formation:Formations.OceanWavesLHBGGB,
+      formation:Formation('Ocean Waves LH BGGB'),
       from:'Left-Hand Waves',
       paths:[
           UmTurnLeft,
@@ -77,7 +76,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cross Back',
-      formation:Formations.ColumnRHGBGB,
+      formation:Formation('Column RH GBGB'),
       from:'Right-Hand Columns',
       paths:[
           UmTurnRight,
@@ -92,7 +91,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cross Back',
-      formation:Formations.ColumnLHGBGB,
+      formation:Formation('Column LH GBGB'),
       from:'Left-Hand Columns',
       paths:[
           ExtendLeft.changeBeats(2).changehands(2).scale(1.25,2.0) +
@@ -107,7 +106,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('All 8 Cross Back',
-      formation:Formations.StaticMiniWavesRH,
+      formation:Formation('Static MiniWaves RH'),
       group:' ',
       paths:[
           ExtendRight.changeBeats(2).changehands(1).scale(3.0,2.0) +
@@ -122,7 +121,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('As Couples Cross Back',
-      formation:Formations.TwomFacedLinesRH,
+      formation:Formation('Two-Faced Lines RH'),
       group:' ',
       paths:[
           ExtendRight.changeBeats(3).changehands(2).scale(2.0,4.0) +
@@ -137,7 +136,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Tandem Cross Back',
-      formation:Formations.ColumnRHGBGB,
+      formation:Formation('Column RH GBGB'),
       group:' ',
       paths:[
           Pivotbackwardright.changeBeats(5),
@@ -152,7 +151,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Grand Cross Back',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.GIRL,x:-1,y:3,angle:90),
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:1,angle:90),
         DancerModel.fromData(gender:Gender.GIRL,x:-1,y:-1,angle:90),
@@ -173,7 +172,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Grand Cross Back',
-      formation:Formations.ColumnLHGBGB,
+      formation:Formation('Column LH GBGB'),
       from:'Left-Hand Columns',
       paths:[
           ExtendLeft.changeBeats(2).scale(1.25,2.0) +

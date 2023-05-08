@@ -21,13 +21,12 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> VerticalTag = [
 
     AnimatedCall('Vertical Tag',
-      formation:Formations.FacingCouples,
+      formation:Formation('Facing Couples'),
       from:'Facing Couples',
       paths:[
           Stand.changeBeats(2) +
@@ -39,7 +38,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Vertical Tag',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.GIRL,x:1,y:2,angle:90),
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:2,angle:90),
   ]),
@@ -55,7 +54,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Vertical Tag',
-      formation:Formations.BoxRH,
+      formation:Formation('Box RH'),
       from:'Right-Hand Box',
       paths:[
           Forward_2.changeBeats(3) +
@@ -67,7 +66,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Vertical Tag',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:1,y:2,angle:90),
         DancerModel.fromData(gender:Gender.GIRL,x:-1,y:2,angle:270),
   ]),
@@ -85,7 +84,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Vertical 1/4 Tag',
-      formation:Formations.FacingCouples,
+      formation:Formation('Facing Couples'),
       from:'Facing Couples',
       paths:[
           DodgeRight.scale(1.0,0.5),
@@ -94,7 +93,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Vertical 1/4 Tag',
-      formation:Formations.CouplesFacingOut,
+      formation:Formation('Couples Facing Out'),
       from:'Couples Facing Out',
       paths:[
           UmTurnLeft.skew(-1.0,0.0) +
@@ -104,7 +103,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Vertical 1/4 Tag',
-      formation:Formations.BoxRH,
+      formation:Formation('Box RH'),
       from:'Right-Hand Box',
       paths:[
           Forward_2.changeBeats(3),
@@ -113,7 +112,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Vertical 1/4 Tag',
-      formation:Formations.BoxLH,
+      formation:Formation('Box LH'),
       from:'Left-Hand Box',
       paths:[
           FlipLeft.scale(1.0,0.5),
@@ -122,7 +121,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Vertical 1/2 Tag',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:1,y:1.5,angle:270),
         DancerModel.fromData(gender:Gender.GIRL,x:-1,y:1.5,angle:270),
   ]),
@@ -137,7 +136,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Vertical 1/2 Tag',
-      formation:Formations.CouplesFacingOut,
+      formation:Formation('Couples Facing Out'),
       from:'Couples Facing Out',
       paths:[
           UmTurnLeft.skew(-2.0,0.0) +
@@ -147,7 +146,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Vertical 1/2 Tag',
-      formation:Formations.BoxRH,
+      formation:Formation('Box RH'),
       from:'Right-Hand Box',
       taminator: '''Compare with Box Circulate''',
       paths:[
@@ -157,7 +156,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Vertical 1/2 Tag',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:1,y:2,angle:90),
         DancerModel.fromData(gender:Gender.GIRL,x:-1,y:2,angle:270),
   ]),
@@ -171,7 +170,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Vertical 3/4 Tag',
-      formation:Formations.FacingCouples,
+      formation:Formation('Facing Couples'),
       from:'Facing Couples',
       paths:[
           Stand.changeBeats(2) +
@@ -182,7 +181,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Vertical 3/4 Tag',
-      formation:Formations.CouplesFacingOut,
+      formation:Formation('Couples Facing Out'),
       from:'Couples Facing Out',
       paths:[
           UmTurnLeft.skew(-2.0,0.0) +
@@ -193,7 +192,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Vertical 3/4 Tag',
-      formation:Formations.BoxRH,
+      formation:Formation('Box RH'),
       from:'Right-Hand Box',
       paths:[
           Forward_2 +
@@ -204,7 +203,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Vertical 3/4 Tag',
-      formation:Formations.BoxLH,
+      formation:Formation('Box LH'),
       from:'Left-Hand Box',
       paths:[
           UmTurnLeft.changeBeats(2).skew(0.0,0.5) +
@@ -216,7 +215,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('All 8 Vertical 1/2 Tag',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       group:' ',
       paths:[
           Path(),

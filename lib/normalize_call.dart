@@ -109,6 +109,8 @@ String normalizeCall(String callname) =>
         .replaceAll('\\bdixie style(?! to)'.ri,'Dixie Style to a Wave')
     //  Accept both Left Chase and Chase Left
         .replaceAll('\\bchase left\\b'.ri,'Left Chase')
+    //  Change Circle 2 to Single Circle
+        .replaceAll('Circle 2'.ri,'Single Circle')
     //  Change (fraction) Circle Left/Right to Circle Left/Right (fraction)
         .replaceAllMapped('(14|12|34) circle (left|right)'.ri,
             (m) => 'Circle ${m[2]} ${m[1]}')

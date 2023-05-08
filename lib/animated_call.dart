@@ -40,7 +40,7 @@ class AnimatedCall {
   bool noDisplay;
   bool notForSequencer;
   String actives;
-  LevelData level = LevelData.B1;
+  LevelData level;
   String from;
   String parts;
   String fractions;
@@ -57,6 +57,7 @@ class AnimatedCall {
         this.fractions = '',
         this.difficulty = 0,
         this.actives = '',
+        this.level = LevelData.B1,
         this.isPerimeter = false,
         this.isExact = false,
         this.isAsymmetric = false,

@@ -21,13 +21,12 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> EaseOff = [
 
     AnimatedCall('Ease Off',
-      formation:Formations.TwomFacedLinesRH,
+      formation:Formation('Two-Faced Lines RH'),
       from:'Right-Hand Two-Faced Lines',
       paths:[
           QuarterRight.changeBeats(3).skew(3.0,0.0),
@@ -42,7 +41,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Ease Off',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.GIRL,x:-2,y:3,angle:180),
         DancerModel.fromData(gender:Gender.BOY,x:-2,y:1,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:-2,y:-1,angle:0),
@@ -62,7 +61,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Ease Off',
-      formation:Formations.OceanWavesRHGBGB,
+      formation:Formation('Ocean Waves RH GBGB'),
       from:'Right-Hand Waves',
       paths:[
           QuarterRight.changeBeats(3).skew(3.0,0.0),
@@ -77,7 +76,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Ease Off',
-      formation:Formations.OceanWavesLHBGGB,
+      formation:Formation('Ocean Waves LH BGGB'),
       from:'Left-Hand Waves',
       paths:[
           RunRight.skew(-2.0,0.0) +

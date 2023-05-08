@@ -19,13 +19,13 @@
 */
 
 import '../../animated_call.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> PassToTheCenter = [
 
     AnimatedCall('Pass to the Center',
-      formation:Formations.PassThru,
+      formation:Formation('Pass Thru'),
       from:'Eight Chain Thru',parts:'2',difficulty: 1,
       paths:[
           PassThru,
@@ -40,7 +40,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Pass to the Center',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       from:'Right-Hand Waves',difficulty: 3,
       paths:[
           ExtendRight.changeBeats(2).scale(1.0,2.0),

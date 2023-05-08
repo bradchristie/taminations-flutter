@@ -21,13 +21,12 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> DoPaso = [
 
     AnimatedCall('Do Paso',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       group:' ',
       paths:[
           QuarterRight +
@@ -70,7 +69,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Do Paso to an Allemande Thar',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       group:' ',
       paths:[
           QuarterRight +
@@ -107,7 +106,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Do Paso to an Allemande Thar',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-3,y:1,angle:270),
         DancerModel.fromData(gender:Gender.GIRL,x:-3,y:-1,angle:90),
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:-3,angle:0),

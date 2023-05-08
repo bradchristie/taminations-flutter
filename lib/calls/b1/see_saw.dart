@@ -19,13 +19,13 @@
 */
 
 import '../../animated_call.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> SeeSaw = [
 
     AnimatedCall('All Around the Corner, See Saw Your Partner',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       from:'Static Square',fractions:'7',
       paths:[
           LeadLeft.changeBeats(1.5).skew(-0.5,0.0) +

@@ -21,13 +21,12 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> PeelTheTop = [
 
     AnimatedCall('Peel the Top',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:0,y:1,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:2,y:1,angle:180),
   ]),
@@ -42,7 +41,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Peel the Top',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:0,y:-1,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:2,y:-1,angle:180),
   ]),
@@ -57,7 +56,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Peel the Top',
-      formation:Formations.BoxRH,
+      formation:Formation('Box RH'),
       from:'Right-Hand Box',parts:'3',difficulty: 2,
       paths:[
           Forward_2.changeBeats(3) +
@@ -68,7 +67,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Peel the Top',
-      formation:Formations.BoxLH,
+      formation:Formation('Box LH'),
       from:'Left-Hand Box',parts:'3',difficulty: 2,
       paths:[
           RunRight.skew(-2.0,0.0) +
@@ -79,7 +78,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Peel the Top',
-      formation:Formations.LeftmHandZs,
+      formation:Formation('Left-Hand Zs'),
       from:'Left-Hand Zs',parts:'2',difficulty: 1,
       taminator: '''
       The very center girls might not start with a handhold if the
@@ -102,7 +101,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Peel the Top',
-      formation:Formations.RightmHandZs,
+      formation:Formation('Right-Hand Zs'),
       from:'Right-Hand Zs',parts:'2',difficulty: 1,
       paths:[
           Forward_2 +
@@ -121,7 +120,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Peel the Top',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       from:'Right-Hand Waves',parts:'2',difficulty: 3,
       paths:[
           Forward.changeBeats(2).scale(2.0,2.0) +
@@ -139,7 +138,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Peel the Top',
-      formation:Formations.OceanWavesLHBGGB,
+      formation:Formation('Ocean Waves LH BGGB'),
       from:'Left-Hand Waves',parts:'2',difficulty: 3,
       paths:[
           RunRight.changeBeats(1).scale(0.5,0.5) +
@@ -157,7 +156,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Peel the Top',
-      formation:Formations.ColumnRHGBGB,
+      formation:Formation('Column RH GBGB'),
       from:'Right-Hand Columns',parts:'2',difficulty: 2,
       paths:[
           RunLeft.changeBeats(2).skew(-1.0,0.0) +
@@ -176,7 +175,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Peel the Top',
-      formation:Formations.ColumnLHGBGB,
+      formation:Formation('Column LH GBGB'),
       from:'Left-Hand Columns',parts:'2',difficulty: 2,
       paths:[
           Forward.changeBeats(2) +
@@ -195,7 +194,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Peel the Top',
-      formation:Formations.QuarterZRH,
+      formation:Formation('Quarter Z RH'),
       from:'Right-Hand Z-Tag',parts:'2',difficulty: 2,
       paths:[
           ExtendRight.changeBeats(2).scale(2.0,0.5) +
@@ -214,7 +213,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Peel the Top',
-      formation:Formations.QuarterZLH,
+      formation:Formation('Quarter Z LH'),
       from:'Left-Hand Z-Tag',parts:'2',difficulty: 2,
       paths:[
           ExtendLeft.changeBeats(2).scale(2.0,0.5) +
@@ -233,7 +232,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Peel the Top',
-      formation:Formations.TmBoneLULU,
+      formation:Formation('T-Bone LULU'),
       from:'T-Bones 1',parts:'2',difficulty: 3,
       paths:[
           RunLeft.changeBeats(2).skew(-1.0,0.0) +
@@ -252,7 +251,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Peel the Top',
-      formation:Formations.TmBoneDLDL,
+      formation:Formation('T-Bone DLDL'),
       from:'T-Bones 2',difficulty: 3,
       paths:[
           RunRight.skew(-2.0,0.0) +

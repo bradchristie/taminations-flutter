@@ -21,13 +21,12 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> Coordinate = [
 
     AnimatedCall('Coordinate',
-      formation:Formations.ColumnRHGBGB,
+      formation:Formation('Column RH GBGB'),
       from:'Right-Hand Columns',parts:'2;1;2.5',difficulty: 1,
       paths:[
           RunRight.changeBeats(2) +
@@ -50,7 +49,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Coordinate',
-      formation:Formations.ColumnLHGBGB,
+      formation:Formation('Column LH GBGB'),
       from:'Left-Hand Columns',parts:'2;1;2.5',difficulty: 2,
       paths:[
           Forward_2 +
@@ -73,7 +72,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Coordinate',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-2,y:3,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:-2,y:1,angle:0),
         DancerModel.fromData(gender:Gender.BOY,x:-2,y:-1,angle:180),
@@ -109,7 +108,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Coordinate',
-      formation:Formations.n3and_1lines2,
+      formation:Formation('3 and 1 Lines #2'),
       from:'3 and 1 Lines, Left-Hand Centers',parts:'4;2;3',difficulty: 3,
       taminator: '''
       Not officially in the Plus program, but can be workshopped,
@@ -140,7 +139,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Coordinate',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       from:'Normal Lines',parts:'4;2;3',difficulty: 3,
       taminator: '''
       Not officially in the Plus program, but can be workshopped,
@@ -172,7 +171,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Coordinate',
-      formation:Formations.LinesFacingOut,
+      formation:Formation('Lines Facing Out'),
       from:'Lines Facing Out',parts:'4;1;3',difficulty: 3,
       taminator: '''
       Not officially in the Plus program, but can be workshopped,
@@ -205,7 +204,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Coordinate',
-      formation:Formations.TmBoneDLDL,
+      formation:Formation('T-Bone DLDL'),
       from:'T-Bones 1',parts:'4;1;3',difficulty: 3,
       taminator: '''
       Not officially in the Plus program, but can be workshopped,
@@ -232,7 +231,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Coordinate',
-      formation:Formations.TmBoneRDRD,
+      formation:Formation('T-Bone RDRD'),
       from:'T-Bones 2',parts:'4;1;3',difficulty: 3,
       taminator: '''
       Not officially in the Plus program, but can be workshopped,
@@ -259,7 +258,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Coordinate',
-      formation:Formations.TmBoneLDLD,
+      formation:Formation('T-Bone LDLD'),
       from:'T-Bones 3',parts:'4;1;3',difficulty: 3,
       taminator: '''
       Not officially in the Plus program, but can be workshopped,
@@ -287,7 +286,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Coordinate',
-      formation:Formations.TmBoneDRDR,
+      formation:Formation('T-Bone DRDR'),
       from:'T-Bones 4',parts:'4;1;3',difficulty: 3,
       taminator: '''
       Not officially in the Plus program, but can be workshopped,

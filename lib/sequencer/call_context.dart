@@ -19,7 +19,6 @@
 */
 
 import '../common_flutter.dart';
-import '../formations.dart';
 import '../moves.dart';
 import 'call_error.dart';
 import 'calls/action.dart';
@@ -59,22 +58,22 @@ class MappingContext {
 class CallContext {
 
   static var standardFormations = {
-    Formations.NormalLinesCompact: 1.0,
-    Formations.NormalLines: 1.0,
-    Formations.DoublePassThru: 1.0,
-    Formations.QuarterTag : 1.5,
-    Formations.TidalLineRH : 1.0,
-    Formations.SquaredSet : 1.0
+    Formation('Normal Lines Compact'): 1.0,
+    Formation('Normal Lines'): 1.0,
+    Formation('Double Pass Thru'): 1.0,
+    Formation('Quarter Tag') : 1.5,
+    Formation('Tidal Line RH') : 1.0,
+    Formation('Squared Set') : 1.0
   };
 
   static var twoCoupleFormations = {
-    Formations.FacingCouplesCompact : 1.0,
-    Formations.FacingCouples : 1.0,
-    Formations.TwomFacedLineRH : 1.0,
-    Formations.DiamondRH : 1.0,
-    Formations.SingleEightChainThru : 1.0,
-    Formations.SingleQuarterTag : 1.0,
-    Formations.SquareRH : 1.0
+    Formation('Facing Couples Compact') : 1.0,
+    Formation('Facing Couples') : 1.0,
+    Formation('Two-Faced Line RH') : 1.0,
+    Formation('Diamond RH') : 1.0,
+    Formation('Single Eight Chain Thru') : 1.0,
+    Formation('Single Quarter Tag') : 1.0,
+    Formation('Square RH') : 1.0
   };
 
   static Map<RegExp,String> formationMap = {
@@ -596,7 +595,7 @@ class CallContext {
           nextmapping += 1;
       }
       if (nextmapping >= ctx2.dancers.length) {
-        //  No more mappings for this DancerModel
+        //  No more mappings for this Dancer
         mapping[mapindex] = -1;
         if (!asymmetric && !ctx2.asymmetric)
           mapping[mapindex + 1] = -1;
@@ -622,7 +621,7 @@ class CallContext {
         }
       } else {
         //  Mapping for this DancerModel found
-        DebugSwitch.mapping.log('DancerModel ${dancers[mapindex]} mapped to ${ctx2.dancers[mapping[mapindex]]}');
+        DebugSwitch.mapping.log('Dancer ${dancers[mapindex]} mapped to ${ctx2.dancers[mapping[mapindex]]}');
         mapindex += asymmetric || ctx2.asymmetric ? 1 : 2;
         if (mapindex >= workctx.dancers.length) {
           //  All dancers mapped
@@ -768,11 +767,11 @@ class CallContext {
         }
         final ctx2 = CallContext.fromDancers(moving);
         if (ctx2.isLines()) {
-          ctx2.adjustToFormation(Formations.CompactWaveRH);
+          ctx2.adjustToFormation(Formation('Compact Wave RH'));
         } else if (ctx2.isDiamond()) {
-          ctx2.adjustToFormation(Formations.DiamondCompact);
+          ctx2.adjustToFormation(Formation('Diamond Compact'));
         } else if (ctx2.isColumns()) {
-          ctx2.adjustToFormation(Formations.SingleDoublePassThruClose);
+          ctx2.adjustToFormation(Formation('Single Double Pass Thru Close'));
         } else
           return;
         ctx2.appendToSource(this, false);
@@ -834,12 +833,12 @@ class CallContext {
       if (dancers.length == 8) {
         matchFormationList(standardFormations);
         //  One more check for bad I-Beam
-        repairFormation(Formations.MisshapenImBeam, Formations.ImBeam);
-        repairFormation(Formations.MisshapenXmBeam, Formations.XmBeam);
-        var ctxLines = CallContext.fromFormation(Formations.NormalLines);
+        repairFormation(Formation('Misshapen I-Beam'), Formation('I-Beam'));
+        repairFormation(Formation('Misshapen X-Beam'), Formation('X-Beam'));
+        var ctxLines = CallContext.fromFormation(Formation('Normal Lines'));
         if (matchFormations(ctxLines,rotate: 180) == null &&
             matchFormations(ctxLines,rotate:90) != null) {
-          adjustToFormation(Formations.DoublePassThru,rotate: 90);
+          adjustToFormation(Formation('Double Pass Thru'),rotate: 90);
         }
       } else
         matchFormationList(twoCoupleFormations,maxOffset: 2.1);
@@ -925,7 +924,7 @@ class CallContext {
   void adjustForSquaredSetCovention() {
     //  First see if we are starting from a squared set
     animate(0.0);
-    final ss = CallContext.fromFormation(Formations.SquaredSet);
+    final ss = CallContext.fromFormation(Formation('Squared Set'));
     final m = matchFormations(ss,rotate: 180, maxError: 0.9);
     if (m != null) {
       //  Applies to only heads or only sides, not if all or a mix are active
@@ -941,7 +940,7 @@ class CallContext {
       if (!headsActive || !sidesActive) {
         animateToEnd();
         //  So now adjust back to squared set if possible
-        adjustToFormation(Formations.SquaredSet, rotate: 180);
+        adjustToFormation(Formation('Squared Set'), rotate: 180);
       }
     }
   }
@@ -1130,15 +1129,15 @@ class CallContext {
 
   List<DancerModel> points() {
     var points =
-        pointsOfDiamondFormation(Formations.DiamondsRHGirlPoints) +
-        pointsOfDiamondFormation(Formations.DiamondsRHPTPGirlPoints) +
-        pointsOfDiamondFormation(Formations.HourglassRHGP) +
-        pointsOfDiamondFormation(Formations.GalaxyRHGP);
+        pointsOfDiamondFormation(Formation('Diamonds RH Girl Points')) +
+        pointsOfDiamondFormation(Formation('Diamonds RH PTP Girl Points')) +
+        pointsOfDiamondFormation(Formation('Hourglass RH GP')) +
+        pointsOfDiamondFormation(Formation('Galaxy RH GP'));
     //  Only try single diamond if none others found
     //  Otherwise points of hourglass central diamond
     //  are incorrectly added
     if (points.isEmpty)
-      points = pointsOfDiamondFormation(Formations.DiamondLHBoysCenter);
+      points = pointsOfDiamondFormation(Formation('Diamond LH Boys Center'));
     return points;
   }
 

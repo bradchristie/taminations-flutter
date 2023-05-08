@@ -19,13 +19,13 @@
 */
 
 import '../../animated_call.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> TheGamut = [
 
     AnimatedCall('The Gamut',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       from:'Right-Hand Waves',fractions:'7.5;4.5',
       paths:[
           Forward_4 +
@@ -50,7 +50,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('The Gamut',
-      formation:Formations.OceanWavesLHBGGB,
+      formation:Formation('Ocean Waves LH BGGB'),
       from:'Left-Hand Waves',fractions:'7.5;4.5',
       paths:[
           RunLeft.changeBeats(8).scale(2.0,3.0) +
@@ -75,7 +75,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('The Gamut',
-      formation:Formations.TwomFacedLinesRH,
+      formation:Formation('Two-Faced Lines RH'),
       from:'Right-Hand Two-Faced Lines',fractions:'7.5;4.5',
       paths:[
           Forward_4 +
@@ -100,7 +100,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('The Gamut',
-      formation:Formations.TwomFacedLinesLH,
+      formation:Formation('Two-Faced Lines LH'),
       from:'Left-Hand Two-Faced Lines',fractions:'7.5;4.5',
       paths:[
           RunLeft.changeBeats(8).scale(2.0,3.0) +

@@ -19,13 +19,13 @@
 */
 
 import '../../animated_call.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> FerrisWheel = [
 
     AnimatedCall('Ferris Wheel',
-      formation:Formations.TwomFacedLinesRH,
+      formation:Formation('Two-Faced Lines RH'),
       from:'Right-Handed Two-Faced Lines, strictly',difficulty: 1,
       taminator: '''The center couples form a momentary two-faced line, following
     the Dance action description.
@@ -43,7 +43,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Ferris Wheel',
-      formation:Formations.TwomFacedLinesRH,
+      formation:Formation('Two-Faced Lines RH'),
       from:'Right-Handed Two-Faced Lines',difficulty: 1,
       taminator: '''The center dancers start the Wheel and Deal action immmediately,
        and a two-faced line is not formed.  This is how many dancers perform this call.
@@ -59,7 +59,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Ferris Wheel',
-      formation:Formations.TwomFacedLinesLH,
+      formation:Formation('Two-Faced Lines LH'),
       from:'Left-Handed Two-Faced Lines',difficulty: 1,
       paths:[
           RunLeft.changeBeats(4).changehands(5).scale(2.0,2.0).skew(1.0,0.0),
@@ -72,7 +72,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Ferris Wheel',
-      formation:Formations.TmBoneCouples_1,
+      formation:Formation('T-Bone Couples 1'),
       from:'T-Bone Couples',difficulty: 2,
       paths:[
           RunRight.changeBeats(4).changehands(6).scale(2.0,2.0).skew(3.0,0.0),
@@ -85,7 +85,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Ferris Wheel',
-      formation:Formations.TmBoneCouples_2,
+      formation:Formation('T-Bone Couples 2'),
       from:'T-Bone Couples 2',difficulty: 2,
       paths:[
           UmTurnLeft.changeBeats(4).changehands(6).skew(3.0,0.0),

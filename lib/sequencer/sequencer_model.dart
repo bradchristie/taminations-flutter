@@ -24,7 +24,6 @@ import 'package:flutter/services.dart' as fs;
 import '../animated_call.dart';
 import '../common_flutter.dart';
 import '../dance_model.dart';
-import '../formations.dart';
 import 'abbreviations_model.dart';
 import 'call_context.dart';
 import 'call_error.dart';
@@ -400,8 +399,7 @@ class SequencerModel extends fm.ChangeNotifier {
       text.trim().startsWith('[^\\a-zA-Z0-9]'.r);
 
   void _startSequence() {
-    var formation = Formations.formationIndex[startingFormation]
-        ?? thrower(CallError('Could not find formation $startingFormation'))!;
+    var formation = Formation(startingFormation);
     var paths = [for (var _ in formation.dancers) Path()];
     animation.setAnimatedCall(AnimatedCall('',formation:formation,paths:paths));
     animation.recalculate();

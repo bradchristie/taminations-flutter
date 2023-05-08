@@ -19,13 +19,13 @@
 */
 
 import '../../animated_call.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> Bounce = [
 
     AnimatedCall('Bounce the Centers',
-      formation:Formations.TwomFacedLineRH,
+      formation:Formation('Two-Faced Line RH'),
       from:'Right-Hand Two-Faced Line',group:' ',parts:'2',
       paths:[
           ExtendRight.changeBeats(2).changehands(2).scale(2.0,2.0),
@@ -35,7 +35,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Bounce the Boys',
-      formation:Formations.TwomFacedLinesRH,
+      formation:Formation('Two-Faced Lines RH'),
       group:' ',isGenderSpecific:true,parts:'2',
       paths:[
           ExtendRight.changeBeats(2).changehands(1).scale(1.0,2.0) +
@@ -50,7 +50,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Bounce the Girls',
-      formation:Formations.TwomFacedLinesRH,
+      formation:Formation('Two-Faced Lines RH'),
       group:' ',isGenderSpecific:true,parts:'2',
       taminator: '''
       Note that the girls turn back in the direction of the veer.
@@ -68,7 +68,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Bounce the Leaders',
-      formation:Formations.TwomFacedLinesRH,
+      formation:Formation('Two-Faced Lines RH'),
       group:' ',parts:'2',
       taminator: '''
       The dancers who Bounce are the leaders before the veer.
@@ -86,7 +86,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Bounce the Trailers',
-      formation:Formations.TwomFacedLinesRH,
+      formation:Formation('Two-Faced Lines RH'),
       group:' ',parts:'2',
       paths:[
           ExtendRight.changeBeats(2).changehands(1).scale(1.0,2.0) +
@@ -101,7 +101,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('As Couples Bounce the Ends',
-      formation:Formations.TidalLineRH,
+      formation:Formation('Tidal Line RH'),
       group:'  ',parts:'3',
       paths:[
           ExtendRight.changeBeats(3).changehands(2).scale(2.0,0.5) +
@@ -116,7 +116,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Concentric Bounce the Boys',
-      formation:Formations.TwomFacedTidalLineRH,
+      formation:Formation('Two-Faced Tidal Line RH'),
       group:'  ',isGenderSpecific:true,
       paths:[
           Forward.changehands(2) +
@@ -133,7 +133,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cross Concentric Bounce the Boys',
-      formation:Formations.TwomFacedTidalLineRH,
+      formation:Formation('Two-Faced Tidal Line RH'),
       group:'  ',isGenderSpecific:true,
       paths:[
           ExtendRight.changeBeats(4).changehands(6).scale(1.0,2.5) +
@@ -148,7 +148,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Stretch Bounce the Boys',
-      formation:Formations.TwomFacedLinesRH,
+      formation:Formation('Two-Faced Lines RH'),
       group:'  ',isGenderSpecific:true,
       paths:[
           Forward_2.changehands(2) +
@@ -165,7 +165,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Tandem Bounce the Centers',
-      formation:Formations.TwomFacedLinesRHCompact,
+      formation:Formation('Two-Faced Lines RH Compact'),
       group:'  ',parts:'3',
       paths:[
           Forward.changeBeats(1).changehands(2).scale(1.5,1.0) +
@@ -182,7 +182,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Single Bounce the Boys',
-      formation:Formations.BoxRH,
+      formation:Formation('Box RH'),
       from:'Box',isGenderSpecific:true,parts:'2',
       paths:[
           ExtendRight.changeBeats(2) +

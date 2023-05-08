@@ -19,13 +19,13 @@
 */
 
 import '../../animated_call.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> Fascinate = [
 
     AnimatedCall('Fascinate',
-      formation:Formations.TwomFacedLinesRH,
+      formation:Formation('Two-Faced Lines RH'),
       from:'Right-Hand Two-Faced Lines',
       paths:[
           Forward_4.changeBeats(3) +
@@ -45,7 +45,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Fascinate',
-      formation:Formations.TwomFacedLinesLH,
+      formation:Formation('Two-Faced Lines LH'),
       from:'Left-Hand Two-Faced Lines',
       paths:[
           LeadLeft.changeBeats(3).scale(2.0,3.0) +
@@ -65,7 +65,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Fascinating Recycle',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       from:'Right-Hand Waves',group:'Fascinating',
       paths:[
           Forward_4.changeBeats(3) +
@@ -86,7 +86,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Fascinating Turn and Deal',
-      formation:Formations.TwomFacedLinesRH,
+      formation:Formation('Two-Faced Lines RH'),
       from:'Right-Hand Two-Faced Lines',group:'Fascinating',
       paths:[
           Forward_4.changeBeats(3) +

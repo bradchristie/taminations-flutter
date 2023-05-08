@@ -21,13 +21,12 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> PeelOff = [
 
     AnimatedCall('Peel Off',
-      formation:Formations.BoxRH,
+      formation:Formation('Box RH'),
       from:'Right-Hand Box',difficulty: 2,
       paths:[
           Forward +
@@ -37,7 +36,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Peel Off',
-      formation:Formations.BoxLH,
+      formation:Formation('Box LH'),
       from:'Left-Hand Box',difficulty: 2,
       paths:[
           RunRight.changeBeats(4).skew(-2.0,0.0),
@@ -47,7 +46,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Peel Off',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:0,y:-1,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:2,y:-1,angle:180),
   ]),
@@ -59,7 +58,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Peel Off',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:0,y:1,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:2,y:1,angle:180),
   ]),
@@ -71,7 +70,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Peel Off',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:0,y:1,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:2,y:1,angle:0),
   ]),
@@ -83,7 +82,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Peel Off',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:0,y:-1,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:2,y:-1,angle:0),
   ]),
@@ -95,7 +94,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Peel Off',
-      formation:Formations.DoublePassThru,
+      formation:Formation('Double Pass Thru'),
       from:'Double Pass Thru',difficulty: 2,
       paths:[
           Forward.scale(0.7,1.0) +
@@ -110,7 +109,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Peel Off',
-      formation:Formations.CompletedDoublePassThru,
+      formation:Formation('Completed Double Pass Thru'),
       from:'Completed Double Pass Thru',difficulty: 1,
       paths:[
           RunRight.changeBeats(4).skew(-1.0,0.0),
@@ -125,7 +124,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Peel Off',
-      formation:Formations.ColumnRHGBGB,
+      formation:Formation('Column RH GBGB'),
       from:'Right-Hand Columns',difficulty: 2,
       paths:[
           RunLeft.changeBeats(4).skew(-1.0,0.0),
@@ -140,7 +139,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Peel Off',
-      formation:Formations.ColumnLHGBGB,
+      formation:Formation('Column LH GBGB'),
       from:'Left-Hand Columns',difficulty: 2,
       paths:[
           Forward.scale(0.7,1.0) +
@@ -155,7 +154,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Peel Off',
-      formation:Formations.RightmHandZs,
+      formation:Formation('Right-Hand Zs'),
       from:'Right-Hand Zs',difficulty: 1,
       paths:[
           UmTurnLeft.changeBeats(4).skew(2.0,0.0),
@@ -168,7 +167,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Peel Off',
-      formation:Formations.LeftmHandZs,
+      formation:Formation('Left-Hand Zs'),
       from:'Left-Hand Zs',difficulty: 1,
       taminator: '''
       The very center girls might not start with a handhold if the
@@ -185,7 +184,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Peel Off',
-      formation:Formations.QuarterZRH,
+      formation:Formation('Quarter Z RH'),
       from:'Right-Hand Z-Tag',difficulty: 2,
       paths:[
           UmTurnLeft.changeBeats(4).skew(2.0,-0.5),
@@ -198,7 +197,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Peel Off',
-      formation:Formations.QuarterZLH,
+      formation:Formation('Quarter Z LH'),
       from:'Left-Hand Z-Tag',difficulty: 2,
       paths:[
           UmTurnRight.changeBeats(4).skew(2.0,0.5),
@@ -211,7 +210,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Peel Off',
-      formation:Formations.TwomFacedLinesRH,
+      formation:Formation('Two-Faced Lines RH'),
       from:'Right-Hand Two-Faced Lines',difficulty: 3,
       paths:[
           Forward +
@@ -226,7 +225,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Peel Off',
-      formation:Formations.TwomFacedLinesLH,
+      formation:Formation('Two-Faced Lines LH'),
       from:'Left-Hand Two-Faced Lines',difficulty: 3,
       paths:[
           FlipRight.changeBeats(4).skew(-2.0,1.5),
@@ -241,7 +240,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Peel Off',
-      formation:Formations.OceanWavesRHBGBG,
+      formation:Formation('Ocean Waves RH BGBG'),
       from:'Right-Hand Waves',difficulty: 3,
       paths:[
           Forward +
@@ -256,7 +255,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Peel Off',
-      formation:Formations.OceanWavesLHBGBG,
+      formation:Formation('Ocean Waves LH BGBG'),
       from:'Left-Hand Waves',difficulty: 3,
       paths:[
           FlipRight.changeBeats(4).skew(-2.0,1.5),
@@ -271,7 +270,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Peel Off',
-      formation:Formations.TmBoneLULU,
+      formation:Formation('T-Bone LULU'),
       from:'T-Bones',difficulty: 3,
       paths:[
           FlipLeft.changeBeats(3).skew(-1.0,0.0),
@@ -284,7 +283,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Peel Off',
-      formation:Formations.StaticMiniWavesRH,
+      formation:Formation('Static MiniWaves RH'),
       from:'Static Mini-Waves',difficulty: 3,
       paths:[
           Forward_2 +
@@ -299,7 +298,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Ends Peel Off',
-      formation:Formations.OceanWavesRHBGBG,
+      formation:Formation('Ocean Waves RH BGBG'),
       from:'Right-Hand Waves',difficulty: 3,
       paths:[
           Forward +
@@ -313,7 +312,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Ends Peel Off',
-      formation:Formations.OceanWavesLHBGBG,
+      formation:Formation('Ocean Waves LH BGBG'),
       from:'Left-Hand Waves',difficulty: 3,
       paths:[
           RunRight.changeBeats(4).skew(-2.0,0.0),
@@ -327,7 +326,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Points Peel Off',
-      formation:Formations.DiamondsRHGirlPoints,
+      formation:Formation('Diamonds RH Girl Points'),
       from:'Diamonds',difficulty: 3,
       paths:[
           Path(),

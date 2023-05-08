@@ -21,7 +21,6 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 import '../c3b/lift_off.dart' as c3b;
 import '../c3b/rip_off.dart' as c3b;
@@ -31,7 +30,7 @@ import '../c3b/swap_the_top.dart' as c3b;
   final List<AnimatedCall> MirrorConcept = [
 
     AnimatedCall('Mirror All 4 Couples Right and Left Thru',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       group:'Mirror',
       paths:[
           ExtendLeft.changeBeats(3.5).scale(3.0,1.0) +
@@ -58,7 +57,7 @@ import '../c3b/swap_the_top.dart' as c3b;
       ]),
 
     AnimatedCall('Mirror Brace Thru',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-2,y:3,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:-2,y:1,angle:0),
         DancerModel.fromData(gender:Gender.BOY,x:-2,y:-3,angle:0),
@@ -89,7 +88,7 @@ import '../c3b/swap_the_top.dart' as c3b;
       ]),
 
     AnimatedCall('Mirror Pass the Ocean',
-      formation:Formations.FacingCouples,
+      formation:Formation('Facing Couples'),
       group:'Mirror',
       paths:[
           ExtendRight.changeBeats(2).scale(2.0,0.5) +
@@ -101,7 +100,7 @@ import '../c3b/swap_the_top.dart' as c3b;
       ]),
 
     AnimatedCall('Mirror Pass the Sea',
-      formation:Formations.FacingCouples,
+      formation:Formation('Facing Couples'),
       group:'Mirror',
       paths:[
           ExtendRight.changeBeats(2.5).scale(2.0,0.5) +
@@ -112,7 +111,7 @@ import '../c3b/swap_the_top.dart' as c3b;
       ]),
 
     AnimatedCall('Mirror Recycle',
-      formation:Formations.FacingCouples,
+      formation:Formation('Facing Couples'),
       from:'Facing Couples',group:'Mirror',
       paths:[
       Path.fromMovement(Movement.fromData(beats: 3, hands: Hands.NONE, cx1: -.5, cy1: 0, cx2: 0, cy2: -4, x2: 2, y2: -4, cx3: 1, cx4: 2, cy4: -2, x4: 3, y4: -2  )),
@@ -121,7 +120,7 @@ import '../c3b/swap_the_top.dart' as c3b;
       ]),
 
     AnimatedCall('Mirror Right and Left Thru',
-      formation:Formations.FacingCouplesCompact,
+      formation:Formation('Facing Couples Compact'),
       group:'Mirror',
       paths:[
           PullRight.scale(1.5,0.5) +
@@ -134,7 +133,7 @@ import '../c3b/swap_the_top.dart' as c3b;
       ]),
 
     AnimatedCall('Mirror Single Wheel',
-      formation:Formations.FacingCouples,
+      formation:Formation('Facing Couples'),
       group:'Mirror',
       paths:[
           UmTurnRight.skew(-1.0,-1.0),
@@ -143,7 +142,7 @@ import '../c3b/swap_the_top.dart' as c3b;
       ]),
 
     AnimatedCall('Mirror Slide Thru',
-      formation:Formations.FacingCouplesCompact,
+      formation:Formation('Facing Couples Compact'),
       group:'Mirror',isGenderSpecific:true,
       paths:[
           ExtendRight.changeBeats(2).scale(1.5,0.5) +
@@ -154,7 +153,7 @@ import '../c3b/swap_the_top.dart' as c3b;
       ]),
 
     AnimatedCall('Mirror Wheel and Deal',
-      formation:Formations.LinesFacingOut,
+      formation:Formation('Lines Facing Out'),
       group:'Mirror',
       paths:[
           RunLeft.changeBeats(4).changehands(1).scale(2.0,2.0).skew(1.0,0.0),
@@ -167,7 +166,7 @@ import '../c3b/swap_the_top.dart' as c3b;
       ]),
 
     AnimatedCall('Mirror Triple Star Thru',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-3,y:1,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:-3,y:-1,angle:0),
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:-1,angle:0),

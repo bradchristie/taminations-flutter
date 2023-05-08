@@ -20,13 +20,13 @@
 
 import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> Sashay = [
 
     AnimatedCall('Half Sashay',
-      formation:Formations.FacingCouplesCompact,
+      formation:Formation('Facing Couples Compact'),
       from:'Facing Couples',
       paths:[
           BackSashayRight.changeBeats(4),
@@ -35,7 +35,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Half Sashay',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       from:'Lines',
       paths:[
           BackSashayRight.changeBeats(4),
@@ -48,7 +48,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Half Sashay',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       from:'Squared Set',
       paths:[
           BackSashayRight.changeBeats(4),
@@ -61,7 +61,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Heads Half Sashay',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       from:'Squared Set',noDisplay: true,
       paths:[
           BackSashayRight.changeBeats(4),
@@ -74,7 +74,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Sides Half Sashay',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       from:'Squared Set',noDisplay: true,
       paths:[
           Path(),
@@ -87,7 +87,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Ladies In, Men Sashay',
-      formation:Formations.Circle,
+      formation:Formation('Circle'),
       from:'Circle Left',isGenderSpecific:true,
       paths:[
           SxtnthLeft +
@@ -108,7 +108,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Ladies In, Men Sashay',
-      formation:Formations.Circle,
+      formation:Formation('Circle'),
       from:'Circle Right',isGenderSpecific:true,
       paths:[
           SxtnthRight +
@@ -129,7 +129,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Rollaway',
-      formation:Formations.FacingCouples,
+      formation:Formation('Facing Couples'),
       from:'Facing Couples',notForSequencer: true,
       paths:[
           DodgeRight.changehands(6),
@@ -139,7 +139,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Rollaway',
-      formation:Formations.CouplesFacingOut,
+      formation:Formation('Couples Facing Out'),
       from:'Couples Facing Out',
       paths:[
           FoldLeft.changeBeats(1.5).changehands(5).scale(0.6,0.5) +
@@ -149,7 +149,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Rollaway',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       from:'Lines',
       paths:[
           DodgeRight.changehands(6),
@@ -164,7 +164,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Rollaway',
-      formation:Formations.Circle,
+      formation:Formation('Circle'),
       from:'Circle Left',isGenderSpecific:true,
       paths:[
           Stand.changeBeats(4.5).changehands(6) +
@@ -187,7 +187,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Rollaway',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       from:'Static Square',
       paths:[
           DodgeRight.changehands(6),

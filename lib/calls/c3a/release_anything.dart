@@ -21,13 +21,12 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> ReleaseAnything = [
 
     AnimatedCall('Release Ah So',
-      formation:Formations.QuarterTag,
+      formation:Formation('Quarter Tag'),
       group:'Release',fractions:'3',
       paths:[
           ExtendLeft.changeBeats(3).scale(3.0,2.0) +
@@ -44,7 +43,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Release Crossfire',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-3,y:1,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:-3,y:-1,angle:0),
         DancerModel.fromData(gender:Gender.BOY,x:0,y:-1,angle:0),
@@ -68,7 +67,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Release Cycle and Wheel',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.GIRL,x:0,y:1,angle:0),
         DancerModel.fromData(gender:Gender.BOY,x:0,y:3,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:3,y:-1,angle:180),
@@ -91,7 +90,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Release Left Turn and Deal',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-3,y:1,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:-3,y:-1,angle:0),
         DancerModel.fromData(gender:Gender.BOY,x:0,y:-1,angle:0),
@@ -113,7 +112,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Release Linear Cycle',
-      formation:Formations.QuarterTag,
+      formation:Formation('Quarter Tag'),
       group:'Release',fractions:'3;1.5;3',
       paths:[
           ExtendLeft.changeBeats(3).scale(3.0,2.0) +
@@ -140,7 +139,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Release Offset Waves Out Roll Circulate',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.GIRL,x:0,y:1,angle:180),
         DancerModel.fromData(gender:Gender.BOY,x:0,y:3,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:3,y:-1,angle:180),
@@ -164,7 +163,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Release Recycle',
-      formation:Formations.QuarterTag,
+      formation:Formation('Quarter Tag'),
       group:'Release',
       paths:[
           ExtendLeft.changeBeats(3).scale(3.0,2.0) +

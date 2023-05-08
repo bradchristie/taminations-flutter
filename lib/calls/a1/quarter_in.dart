@@ -21,14 +21,13 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 import '../a2/all_4_all_8.dart' as a2;
 
   final List<AnimatedCall> QuarterIn = [
 
     AnimatedCall('Quarter In',
-      formation:Formations.FacingCouplesCompact,
+      formation:Formation('Facing Couples Compact'),
       from:'Facing Couples',
       paths:[
           QuarterRight.changeBeats(2).skew(0.5,0.5),
@@ -37,7 +36,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Quarter In',
-      formation:Formations.TwomFacedLineRH,
+      formation:Formation('Two-Faced Line RH'),
       from:'Two-Faced Line',
       paths:[
           QuarterRight.changeBeats(2),
@@ -46,7 +45,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Quarter In',
-      formation:Formations.DiamondRH,
+      formation:Formation('Diamond RH'),
       from:'Diamond',
       paths:[
           QuarterRight.changeBeats(2),
@@ -55,7 +54,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Quarter In',
-      formation:Formations.EightChainThru,
+      formation:Formation('Eight Chain Thru'),
       from:'Eight Chain Thru',
       paths:[
           QuarterRight.changeBeats(2).skew(0.0,1.0),
@@ -68,7 +67,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Quarter In',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       from:'Lines',
       paths:[
           QuarterRight.changeBeats(2).skew(1.0,0.0),
@@ -81,7 +80,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Quarter In',
-      formation:Formations.LinesFacingOut,
+      formation:Formation('Lines Facing Out'),
       from:'Lines Facing Out',
       paths:[
           QuarterLeft.changeBeats(2).skew(-1.0,0.0),
@@ -94,7 +93,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Quarter In',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       from:'Right-Hand Waves',
       paths:[
           QuarterRight.changeBeats(2).skew(1.0,0.0),
@@ -107,7 +106,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Quarter In',
-      formation:Formations.OceanWavesLHBGGB,
+      formation:Formation('Ocean Waves LH BGGB'),
       from:'Left-Hand Waves',
       paths:[
           QuarterLeft.changeBeats(2).skew(-1.0,0.0),
@@ -120,7 +119,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Quarter In',
-      formation:Formations.TmBoneLDDR,
+      formation:Formation('T-Bone LDDR'),
       from:'T-Bones',
       paths:[
           QuarterRight.changeBeats(2),
@@ -133,7 +132,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Quarter In',
-      formation:Formations.DiamondsRHGirlPoints,
+      formation:Formation('Diamonds RH Girl Points'),
       from:'Diamonds',
       paths:[
           QuarterRight.changeBeats(2),
@@ -146,7 +145,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Quarter In',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:0,y:5.25,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:0,y:3.75,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:0,y:2.25,angle:0),
@@ -164,7 +163,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Heads Quarter In',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       group:' ',
       paths:[
           QuarterRight,
@@ -177,7 +176,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Sides Quarter In',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       group:' ',
       paths:[
           Path(),
@@ -192,7 +191,7 @@ import '../a2/all_4_all_8.dart' as a2;
       tam.title == 'All 4 Couples Quarter In').first.xref(title: 'All 4 Couples Quarter In').xref(group: ' '),
 
     AnimatedCall('As Couples Quarter In',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       from:'Lines',group:' ',
       paths:[
           HingeRight.changeBeats(3),
@@ -205,7 +204,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Quarter Out',
-      formation:Formations.FacingCouplesCompact,
+      formation:Formation('Facing Couples Compact'),
       from:'Facing Couples',
       paths:[
           QuarterLeft.changeBeats(2).skew(0.5,0.5),
@@ -214,7 +213,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Quarter Out',
-      formation:Formations.EightChainThru,
+      formation:Formation('Eight Chain Thru'),
       from:'Eight Chain Thru',
       paths:[
           QuarterLeft.changeBeats(2).skew(0.0,1.0),
@@ -227,7 +226,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Quarter Out',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       from:'Lines',
       paths:[
           QuarterLeft.changeBeats(2).skew(1.0,0.0),
@@ -240,7 +239,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Quarter Out',
-      formation:Formations.LinesFacingOut,
+      formation:Formation('Lines Facing Out'),
       from:'Lines Facing Out',
       paths:[
           QuarterRight.changeBeats(2).skew(-1.0,0.0),
@@ -253,7 +252,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Quarter Out',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       from:'Right-Hand Waves',
       paths:[
           QuarterLeft.changeBeats(2).skew(1.0,0.0),
@@ -266,7 +265,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Quarter Out',
-      formation:Formations.OceanWavesLHBGGB,
+      formation:Formation('Ocean Waves LH BGGB'),
       from:'Left-Hand Waves',
       paths:[
           QuarterRight.changeBeats(2).skew(-1.0,0.0),
@@ -279,7 +278,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Quarter Out',
-      formation:Formations.TmBoneLDDR,
+      formation:Formation('T-Bone LDDR'),
       from:'T-Bones',
       paths:[
           QuarterLeft.changeBeats(2),
@@ -292,7 +291,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Quarter Out',
-      formation:Formations.DiamondsRHGirlPoints,
+      formation:Formation('Diamonds RH Girl Points'),
       from:'Diamonds',
       paths:[
           QuarterLeft.changeBeats(2),
@@ -305,7 +304,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Quarter Out',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-3,y:1,angle:90),
         DancerModel.fromData(gender:Gender.GIRL,x:-3,y:-1,angle:90),
         DancerModel.fromData(gender:Gender.BOY,x:1,y:3,angle:270),
@@ -323,7 +322,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Heads Quarter Out',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       group:' ',
       paths:[
           QuarterLeft,
@@ -336,7 +335,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Sides Quarter Out',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       group:' ',
       paths:[
           Path(),
@@ -351,7 +350,7 @@ import '../a2/all_4_all_8.dart' as a2;
       tam.title == 'All 4 Couples Quarter Out').first.xref(title: 'All 4 Couples Quarter Out').xref(group: ' '),
 
     AnimatedCall('As Couples Quarter Out',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       from:'Lines',group:' ',
       paths:[
           BackHingeRight.changeBeats(2),

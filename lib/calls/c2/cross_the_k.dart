@@ -21,13 +21,12 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> CrossTheK = [
 
     AnimatedCall('Cross the K',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       from:'Lines',parts:'5',
       paths:[
           ExtendLeft.changeBeats(2).scale(2.0,0.5) +
@@ -52,7 +51,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cross the K',
-      formation:Formations.EightChainThru,
+      formation:Formation('Eight Chain Thru'),
       from:'Eight Chain Thru',parts:'6',
       paths:[
           ExtendLeft.changeBeats(2).scale(1.0,0.5) +
@@ -73,7 +72,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('The K',
-      formation:Formations.WaveRH,
+      formation:Formation('Wave RH'),
       from:'Right-Hand Wave',fractions:'1.5',
       paths:[
           UmTurnLeft,
@@ -82,7 +81,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('The K',
-      formation:Formations.WaveLH,
+      formation:Formation('Wave LH'),
       from:'Left-Hand Wave',fractions:'1.5',
       paths:[
           UmTurnRight,
@@ -91,7 +90,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('The K',
-      formation:Formations.TwomFacedLineRH,
+      formation:Formation('Two-Faced Line RH'),
       from:'Right-Hand Two-Faced Line',fractions:'1.5',
       paths:[
           UmTurnLeft,
@@ -100,7 +99,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('The K',
-      formation:Formations.TwomFacedLineLH,
+      formation:Formation('Two-Faced Line LH'),
       from:'Left-Hand Two-Faced Line',fractions:'1.5',
       paths:[
           SwingLeft,
@@ -109,7 +108,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('The K',
-      formation:Formations.DiamondRH,
+      formation:Formation('Diamond RH'),
       from:'Right-Hand Diamond',fractions:'1.5',
       paths:[
           UmTurnLeft,
@@ -118,7 +117,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('The K',
-      formation:Formations.DiamondLH,
+      formation:Formation('Diamond LH'),
       from:'Left-Hand Diamond',fractions:'1.5',
       paths:[
           UmTurnRight,
@@ -127,7 +126,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('The K',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       from:'Right-Hand Waves',fractions:'1.5',
       paths:[
           UmTurnLeft,
@@ -140,7 +139,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('The K',
-      formation:Formations.LinesFacingOut,
+      formation:Formation('Lines Facing Out'),
       from:'Lines Facing Out',fractions:'1.5',
       paths:[
           UmTurnRight,
@@ -153,7 +152,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('The K',
-      formation:Formations.DiamondsRHGirlPoints,
+      formation:Formation('Diamonds RH Girl Points'),
       from:'Right-Hand Diamonds',fractions:'1.5',
       paths:[
           SwingRight,
@@ -166,7 +165,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('The K',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:3,angle:90),
         DancerModel.fromData(gender:Gender.GIRL,x:-1,y:1,angle:90),
         DancerModel.fromData(gender:Gender.BOY,x:1,y:1,angle:270),
@@ -184,7 +183,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('The K',
-      formation:Formations.ColumnLHGBGB,
+      formation:Formation('Column LH GBGB'),
       from:'Left-Hand Columns',fractions:'1.5',
       paths:[
           UmTurnRight,
@@ -197,7 +196,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('The K',
-      formation:Formations.n34Tag,
+      formation:Formation('3/4 Tag'),
       from:'3/4 Tag',fractions:'1.5',
       paths:[
           UmTurnRight,
@@ -210,7 +209,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('The K',
-      formation:Formations.TwomFacedTidalLineRH,
+      formation:Formation('Two-Faced Tidal Line RH'),
       from:'Tidal Two-Faced Line',fractions:'1.5',
       paths:[
           UmTurnLeft,
@@ -223,7 +222,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('The K',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.GIRL,x:1,y:1,angle:270),
         DancerModel.fromData(gender:Gender.BOY,x:0,y:3,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:1,y:-1,angle:270),
@@ -241,7 +240,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('As Couples the K',
-      formation:Formations.TwomFacedTidalLineRH,
+      formation:Formation('Two-Faced Tidal Line RH'),
       group:' ',
       paths:[
           BeauWheel.scale(0.5,0.5),
@@ -254,7 +253,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Concentric the K',
-      formation:Formations.TwomFacedTidalLineRH,
+      formation:Formation('Two-Faced Tidal Line RH'),
       group:' ',
       paths:[
           UmTurnLeft.changeBeats(5),
@@ -267,7 +266,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Crazy the K',
-      formation:Formations.TwomFacedTidalLineRH,
+      formation:Formation('Two-Faced Tidal Line RH'),
       group:' ',parts:'3;3;3',
       paths:[
           UmTurnLeft +
@@ -292,7 +291,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cross Concentric the K',
-      formation:Formations.TwomFacedTidalLineRH,
+      formation:Formation('Two-Faced Tidal Line RH'),
       group:' ',
       paths:[
           DodgeRight +
@@ -307,7 +306,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Offset Lines the K',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:0,y:3,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:0,y:1,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:-2,y:-1,angle:180),
@@ -327,7 +326,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Once Removed the K',
-      formation:Formations.TidalWaveRHBGBG,
+      formation:Formation('Tidal Wave RH BGBG'),
       group:' ',
       paths:[
           UmTurnLeft,
@@ -340,7 +339,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Tandem the K',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:3,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:-1,y:1,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:-1,y:-1,angle:180),
@@ -360,7 +359,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cross Trail Thru the K',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       from:'Lines',group:'  ',fractions:'5',
       taminator: '''
 			This is the same as Cross the K

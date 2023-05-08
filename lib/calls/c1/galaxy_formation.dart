@@ -21,13 +21,12 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> GalaxyFormation = [
 
     AnimatedCall('Galaxy Circulate',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.GIRL,x:-1,y:-1,angle:180),
         DancerModel.fromData(gender:Gender.BOY,x:-3,y:0,angle:90),
         DancerModel.fromData(gender:Gender.GIRL,x:-1,y:1,angle:0),
@@ -47,7 +46,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Galaxy Circulate',
-      formation:Formations.GalaxyLHGP,
+      formation:Formation('Galaxy LH GP'),
       from:'Left-Hand Galaxy',
       paths:[
           ExtendRight.changeBeats(3).scale(1.0,2.1),
@@ -60,7 +59,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Galaxy Circulate',
-      formation:Formations.GalaxyFacingRHBox,
+      formation:Formation('Galaxy Facing RH Box'),
       from:'Facing Galaxy Right-Hand Box',
       paths:[
           Forward +
@@ -77,7 +76,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Galaxy Circulate',
-      formation:Formations.GalaxyFacingLHBox,
+      formation:Formation('Galaxy Facing LH Box'),
       from:'Facing Galaxy Left-Hand Box',
       paths:[
           LeadRight.changeBeats(2) +
@@ -94,7 +93,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cut the Galaxy',
-      formation:Formations.GalaxyRHGP,
+      formation:Formation('Galaxy RH GP'),
       from:'Right-Hand Galaxy',
       paths:[
           LeadRight.changeBeats(6).scale(2.0,1.0),
@@ -109,7 +108,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cut the Galaxy',
-      formation:Formations.GalaxyLHGP,
+      formation:Formation('Galaxy LH GP'),
       from:'Left-Hand Galaxy',
       paths:[
           ExtendRight.changeBeats(6).scale(1.0,2.1),
@@ -124,7 +123,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cut the Galaxy',
-      formation:Formations.GalaxyFacingRHBox,
+      formation:Formation('Galaxy Facing RH Box'),
       from:'Facing Galaxy, Right-Hand Centers',
       paths:[
           LeadRight.changeBeats(3).scale(2.0,1.0),
@@ -139,7 +138,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cut the Galaxy',
-      formation:Formations.GalaxyFacingLHBox,
+      formation:Formation('Galaxy Facing LH Box'),
       from:'Facing Galaxy, Left-Hand Centers',
       paths:[
           ExtendRight.changeBeats(3).scale(1.0,2.0),
@@ -154,7 +153,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Flip the Galaxy',
-      formation:Formations.GalaxyRHGP,
+      formation:Formation('Galaxy RH GP'),
       from:'Right-Hand Galaxy',
       paths:[
           LeadRight.changeBeats(3).scale(2.0,1.0),
@@ -167,7 +166,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Flip the Galaxy',
-      formation:Formations.GalaxyLHGP,
+      formation:Formation('Galaxy LH GP'),
       from:'Left-Hand Galaxy',
       paths:[
           ExtendRight.changeBeats(3).scale(1.0,2.0),
@@ -180,7 +179,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Flip the Galaxy',
-      formation:Formations.GalaxyFacingRHBox,
+      formation:Formation('Galaxy Facing RH Box'),
       from:'Facing Galaxy, Right-Hand Centers',
       paths:[
           LeadRight.changeBeats(3).scale(2.0,1.0),
@@ -193,7 +192,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Flip the Galaxy',
-      formation:Formations.GalaxyFacingLHBox,
+      formation:Formation('Galaxy Facing LH Box'),
       from:'Facing Galaxy, Left-Hand Centers',
       paths:[
           ExtendRight.changeBeats(3).scale(1.0,2.0),

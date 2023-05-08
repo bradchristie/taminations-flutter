@@ -20,13 +20,13 @@
 
 import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> Recycle = [
 
     AnimatedCall('Recycle',
-      formation:Formations.FacingCouplesCompact,
+      formation:Formation('Facing Couples Compact'),
       from:'Facing Couples',
       paths:[
           UmTurnRight.changeBeats(3).skew(1.5,0.0),
@@ -35,7 +35,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Recycle',
-      formation:Formations.EightChainThru,
+      formation:Formation('Eight Chain Thru'),
       from:'Eight Chain Thru',
       paths:[
           UmTurnRight.changeBeats(3).skew(1.0,0.0),
@@ -48,7 +48,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Recycle',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       from:'Lines',
       paths:[
           UmTurnRight.changeBeats(3).skew(2.0,-0.5),
@@ -61,7 +61,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Reverse Recycle',
-      formation:Formations.FacingCouplesCompact,
+      formation:Formation('Facing Couples Compact'),
       from:'Facing Couples',
       paths:[
       Path.fromMovement(Movement.fromData(beats: 3, hands: Hands.NONE, cx1: -.5, cy1: 0, cx2: 0, cy2: -4, x2: 1.5, y2: -4, cx3: 1, cx4: 2, cy4: -2, x4: 3, y4: -2  )),
@@ -70,7 +70,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Reverse Recycle',
-      formation:Formations.EightChainThru,
+      formation:Formation('Eight Chain Thru'),
       from:'Eight Chain Thru',
       paths:[
       Path.fromMovement(Movement.fromData(beats: 3, hands: Hands.NONE, cx1: -1, cy1: -2, cx2: 1, cy2: -4, x2: 1, y2: -4, cx3: 1, cx4: 2, cy4: -2, x4: 3, y4: -2  )),
@@ -83,7 +83,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Reverse Recycle',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       from:'Lines',
       paths:[
       Path.fromMovement(Movement.fromData(beats: 3, hands: Hands.NONE, cx1: -1, cy1: -2, cx2: 1, cy2: -2.5, x2: 2, y2: -2.5, cx3: 1, cx4: 2, cy4: -2, x4: 3, y4: -2  )),
@@ -96,7 +96,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('As Couples Recycle',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       from:'Lines',group:' ',
       paths:[
           RunRight.changeBeats(5).changehands(2).skew(2.0,-0.5),
@@ -109,7 +109,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('As Couples Reverse Recycle',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       from:'Lines',group:' ',
       paths:[
       Path.fromMovement(Movement.fromData(beats: 5, hands: Hands.GRIPRIGHT, cx1: -1, cy1: -2, cx2: 1, cy2: -5.5, x2: 2, y2: -5.5, cx3: 1, cx4: 2, cy4: -2, x4: 3, y4: -2  )),
@@ -122,7 +122,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('All 8 Recycle',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       from:'Static Square',group:' ',
       paths:[
           UmTurnRight.changeBeats(4).skew(3.0,0.0),
@@ -137,7 +137,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('All 8 Reverse Recycle',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       from:'Static Square',group:' ',
       paths:[
           Stand +

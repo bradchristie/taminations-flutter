@@ -19,13 +19,13 @@
 */
 
 import '../../animated_call.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> CrossRoll = [
 
     AnimatedCall('Cross Roll',
-      formation:Formations.WaveRH,
+      formation:Formation('Wave RH'),
       from:'Right-Hand Wave',
       paths:[
           FlipRight,
@@ -34,7 +34,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cross Roll',
-      formation:Formations.CompactWaveRH,
+      formation:Formation('Compact Wave RH'),
       from:'Compact Right-Hand Wave',noDisplay: true,
       paths:[
           FlipRight.scale(1.0,0.5),
@@ -43,7 +43,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cross Roll',
-      formation:Formations.WaveLH,
+      formation:Formation('Wave LH'),
       from:'Left-Hand Wave',
       paths:[
           FlipLeft,
@@ -52,7 +52,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cross Roll',
-      formation:Formations.CompactWaveLH,
+      formation:Formation('Compact Wave LH'),
       from:'Compact Left-Hand Wave',noDisplay: true,
       paths:[
           FlipLeft.scale(1.0,0.5),
@@ -61,7 +61,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cross Roll',
-      formation:Formations.TwomFacedLineRH,
+      formation:Formation('Two-Faced Line RH'),
       from:'Right-Hand Two-Faced Line',
       paths:[
           FlipRight,
@@ -70,7 +70,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cross Roll',
-      formation:Formations.CompactTwomFacedLineRH,
+      formation:Formation('Compact Two-Faced Line RH'),
       from:'Compact Right-Hand Two-Faced Line',noDisplay: true,
       paths:[
           FlipRight.scale(1.0,0.5),
@@ -79,7 +79,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cross Roll',
-      formation:Formations.TwomFacedLineLH,
+      formation:Formation('Two-Faced Line LH'),
       from:'Left-Hand Two-Faced Line',
       paths:[
           RunLeft.changeBeats(4).scale(1.0,2.0),
@@ -88,7 +88,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cross Roll',
-      formation:Formations.CompactTwomFacedLineLH,
+      formation:Formation('Compact Two-Faced Line LH'),
       from:'Compact Left-Hand Two-Faced Line',noDisplay: true,
       paths:[
           RunLeft.changeBeats(4),
@@ -97,7 +97,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cross Roll',
-      formation:Formations.OceanWavesRHBGBG,
+      formation:Formation('Ocean Waves RH BGBG'),
       from:'Right-Hand Waves',
       paths:[
           FlipRight,
@@ -110,7 +110,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cross Roll',
-      formation:Formations.OceanWavesLHBGBG,
+      formation:Formation('Ocean Waves LH BGBG'),
       from:'Left-Hand Waves',
       paths:[
           FlipLeft,
@@ -123,7 +123,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cross Roll',
-      formation:Formations.TwomFacedLinesRH,
+      formation:Formation('Two-Faced Lines RH'),
       from:'Right-Hand Two-Faced Lines',
       paths:[
           FlipRight,
@@ -136,7 +136,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cross Roll',
-      formation:Formations.TwomFacedLinesLH,
+      formation:Formation('Two-Faced Lines LH'),
       from:'Left-Hand Two-Faced Lines',
       paths:[
           FlipLeft,
@@ -149,7 +149,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cross Roll',
-      formation:Formations.InvertedLinesEndsFacingIn,
+      formation:Formation('Inverted Lines Ends Facing In'),
       from:'Inverted Lines, Ends Facing In',
       paths:[
           FlipRight,
@@ -162,7 +162,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cross Roll',
-      formation:Formations.InvertedLinesEndsFacingOut,
+      formation:Formation('Inverted Lines Ends Facing Out'),
       from:'Inverted Lines, Ends Facing Out',
       paths:[
           FlipLeft,
@@ -175,7 +175,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cross Roll',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       from:'Normal Lines',
       paths:[
           FlipRight,
@@ -188,7 +188,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cross Roll',
-      formation:Formations.LinesFacingOut,
+      formation:Formation('Lines Facing Out'),
       from:'Lines Facing Out',
       paths:[
           FlipLeft,
@@ -201,7 +201,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cross Roll',
-      formation:Formations.n3and_1lines1,
+      formation:Formation('3 and 1 Lines #1'),
       from:'3 and 1 Lines #1',
       paths:[
           FlipLeft,
@@ -214,7 +214,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cross Roll',
-      formation:Formations.n3and_1lines2,
+      formation:Formation('3 and 1 Lines #2'),
       from:'3 and 1 Lines #2',
       paths:[
           FlipRight,
@@ -227,7 +227,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cross Roll',
-      formation:Formations.n3and_1lines3,
+      formation:Formation('3 and 1 Lines #3'),
       from:'3 and 1 Lines #3',
       paths:[
           FlipRight,
@@ -240,7 +240,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cross Roll',
-      formation:Formations.n3and_1lines4,
+      formation:Formation('3 and 1 Lines #4'),
       from:'3 and 1 Lines #4',
       paths:[
           FlipRight,
@@ -253,7 +253,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cross Roll',
-      formation:Formations.n3and_1lines5,
+      formation:Formation('3 and 1 Lines #5'),
       from:'3 and 1 Lines #5',
       paths:[
           FlipRight,
@@ -266,7 +266,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cross Roll',
-      formation:Formations.n3and_1lines6,
+      formation:Formation('3 and 1 Lines #6'),
       from:'3 and 1 Lines #6',
       paths:[
           FlipLeft,
@@ -279,7 +279,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cross Roll',
-      formation:Formations.n3and_1lines7,
+      formation:Formation('3 and 1 Lines #7'),
       from:'3 and 1 Lines #7',
       paths:[
           FlipLeft,
@@ -292,7 +292,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cross Roll',
-      formation:Formations.n3and_1lines8,
+      formation:Formation('3 and 1 Lines #8'),
       from:'3 and 1 Lines #8',
       paths:[
           FlipLeft,
@@ -305,7 +305,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cross Roll',
-      formation:Formations.TidalLineRH,
+      formation:Formation('Tidal Line RH'),
       from:'Tidal Line',
       paths:[
           FlipRight.scale(1.0,0.5),
@@ -318,7 +318,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cross Roll',
-      formation:Formations.TidalLineLH,
+      formation:Formation('Tidal Line LH'),
       from:'Tidal Line LH',noDisplay: true,
       paths:[
           RunLeft.changeBeats(4),
@@ -331,7 +331,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cross Roll',
-      formation:Formations.TwomFacedTidalLineRH,
+      formation:Formation('Two-Faced Tidal Line RH'),
       from:'Two-Faced Tidal Line',
       paths:[
           FlipRight.scale(1.0,0.5),
@@ -344,7 +344,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cross Roll',
-      formation:Formations.TwomFacedTidalLineLH,
+      formation:Formation('Two-Faced Tidal Line LH'),
       from:'Two-Faced Tidal Line LH',noDisplay: true,
       paths:[
           FlipLeft.scale(1.0,0.5),
@@ -357,7 +357,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cross Roll',
-      formation:Formations.TidalInvertedLineRH,
+      formation:Formation('Tidal Inverted Line RH'),
       from:'Tidal Inverted Line RH',noDisplay: true,
       paths:[
           FlipRight.scale(1.0,0.5),
@@ -370,7 +370,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cross Roll',
-      formation:Formations.TidalInvertedLineLH,
+      formation:Formation('Tidal Inverted Line LH'),
       from:'Tidal Inverted Line LH',noDisplay: true,
       paths:[
           FlipLeft.scale(1.0,0.5),
@@ -383,7 +383,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cross Roll',
-      formation:Formations.TidalWaveRHBGGB,
+      formation:Formation('Tidal Wave RH BGGB'),
       from:'Right-Hand Tidal Wave',
       paths:[
           FlipRight.scale(1.0,0.5),
@@ -396,7 +396,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cross Roll',
-      formation:Formations.TidalWaveLHBGGB,
+      formation:Formation('Tidal Wave LH BGGB'),
       from:'Left-Hand Tidal Wave',
       paths:[
           FlipLeft.scale(1.0,0.5),
@@ -409,7 +409,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cross Roll',
-      formation:Formations.Tidal_3and_1Line1,
+      formation:Formation('Tidal 3 and 1 Line #1'),
       from:'Tidal 3 and 1 Line #1',noDisplay: true,
       paths:[
           FlipRight.scale(1.0,0.5),
@@ -422,7 +422,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cross Roll',
-      formation:Formations.Tidal_3and_1Line2,
+      formation:Formation('Tidal 3 and 1 Line #2'),
       from:'Tidal 3 and 1 Line #2',noDisplay: true,
       paths:[
           FlipRight.scale(1.0,0.5),
@@ -435,7 +435,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cross Roll',
-      formation:Formations.Tidal_3and_1Line3,
+      formation:Formation('Tidal 3 and 1 Line #3'),
       from:'Tidal 3 and 1 Line #3',noDisplay: true,
       paths:[
           FlipRight.scale(1.0,0.5),
@@ -448,7 +448,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cross Roll',
-      formation:Formations.Tidal_3and_1Line4,
+      formation:Formation('Tidal 3 and 1 Line #4'),
       from:'Tidal 3 and 1 Line #4',noDisplay: true,
       paths:[
           FlipLeft.scale(1.0,0.5),
@@ -461,7 +461,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cross Roll',
-      formation:Formations.Tidal_3and_1Line5,
+      formation:Formation('Tidal 3 and 1 Line #5'),
       from:'Tidal 3 and 1 Line #5',noDisplay: true,
       paths:[
           FlipLeft.scale(1.0,0.5),
@@ -474,7 +474,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cross Roll',
-      formation:Formations.Tidal_3and_1Line6,
+      formation:Formation('Tidal 3 and 1 Line #6'),
       from:'Tidal 3 and 1 Line #6',noDisplay: true,
       paths:[
           FlipLeft.scale(1.0,0.5),
@@ -487,7 +487,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cross Roll',
-      formation:Formations.Tidal_3and_1Line7,
+      formation:Formation('Tidal 3 and 1 Line #7'),
       from:'Tidal 3 and 1 Line #7',noDisplay: true,
       paths:[
           FlipLeft.scale(1.0,0.5),
@@ -500,7 +500,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cross Roll',
-      formation:Formations.Tidal_3and_1Line8,
+      formation:Formation('Tidal 3 and 1 Line #8'),
       from:'Tidal 3 and 1 Line #8',noDisplay: true,
       paths:[
           FlipRight.scale(1.0,0.5),
@@ -513,7 +513,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('All Eight Cross Roll',
-      formation:Formations.TharLHBoys,
+      formation:Formation('Thar LH Boys'),
       group:' ',
       paths:[
           HingeLeft +
@@ -530,7 +530,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('All Eight Cross Roll',
-      formation:Formations.TharRHBoys,
+      formation:Formation('Thar RH Boys'),
       group:' ',noDisplay: true,
       paths:[
           HingeRight +
@@ -547,7 +547,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('As Couples Cross Roll',
-      formation:Formations.TidalLineRH,
+      formation:Formation('Tidal Line RH'),
       group:' ',
       paths:[
           RunRight.changeBeats(5).scale(1.5,1.5),
@@ -560,7 +560,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Concentric Cross Roll',
-      formation:Formations.TwomFacedTidalLineRH,
+      formation:Formation('Two-Faced Tidal Line RH'),
       group:' ',
       paths:[
           FlipRight.scale(1.0,0.5),
@@ -573,7 +573,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Tandem Cross Roll',
-      formation:Formations.TwomFacedLinesRH,
+      formation:Formation('Two-Faced Lines RH'),
       group:' ',
       paths:[
           Forward_4 +

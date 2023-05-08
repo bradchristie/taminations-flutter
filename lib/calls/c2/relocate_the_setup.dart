@@ -21,13 +21,12 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> RelocateTheSetup = [
 
     AnimatedCall('Relocate the Diamond',
-      formation:Formations.DiamondsRHGirlPoints,
+      formation:Formation('Diamonds RH Girl Points'),
       from:'Twin Diamonds',
       paths:[
           LeadRight.changeBeats(4.5).scale(3.0,3.0),
@@ -40,7 +39,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Relocate the Diamond',
-      formation:Formations.DiamondsRHPTPGirlPoints,
+      formation:Formation('Diamonds RH PTP Girl Points'),
       from:'Point to Point Diamonds',
       paths:[
           CounterRotateRight_4_2.changeBeats(4.5).changehands(2),
@@ -53,7 +52,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Relocate the Hourglass',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.GIRL,x:-3,y:2,angle:90),
         DancerModel.fromData(gender:Gender.BOY,x:0,y:3,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:3,y:2,angle:270),
@@ -71,7 +70,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Relocate the Hourglass',
-      formation:Formations.HourglassFacingRHBox,
+      formation:Formation('Hourglass Facing RH Box'),
       from:'Facing Hourglass',
       paths:[
           CounterRotateRight_1_m5.changeBeats(4.5),
@@ -85,7 +84,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Relocate the Setup',
-      formation:Formations.QuarterTag,
+      formation:Formation('Quarter Tag'),
       from:'Quarter Tag',
       paths:[
           CounterRotateRight_4_2.changeBeats(4.5),
@@ -99,7 +98,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Relocate the Setup',
-      formation:Formations.TidalWaveRHBGGB,
+      formation:Formation('Tidal Wave RH BGGB'),
       from:'Tidal Wave',
       paths:[
           LeadRight.changeBeats(4.5).scale(3.5,3.5),
@@ -112,7 +111,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Relocate the Setup',
-      formation:Formations.TidalLineRH,
+      formation:Formation('Tidal Line RH'),
       from:'Tidal Line',
       paths:[
           LeadRight.changeBeats(4.5).scale(3.5,3.5),

@@ -19,14 +19,14 @@
 */
 
 import '../../animated_call.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 import '../a2/diamond_chain_thru.dart' as a2;
 
   final List<AnimatedCall> AnythingChainThru = [
 
     AnimatedCall('All Eight Recycle Chain Thru',
-      formation:Formations.QuarterTag,
+      formation:Formation('Quarter Tag'),
       from:'Quarter Tag',group:' ',
       paths:[
           UmTurnRight.changeBeats(3).skew(3.0,0.0) +
@@ -45,7 +45,7 @@ import '../a2/diamond_chain_thru.dart' as a2;
       ]),
 
     AnimatedCall('Cross Extend Chain Thru',
-      formation:Formations.OceanWavesRHBGBG,
+      formation:Formation('Ocean Waves RH BGBG'),
       from:'Right-Hand Waves',group:' ',
       paths:[
           ExtendRight.changeBeats(2).scale(2.0,2.0) +
@@ -66,7 +66,7 @@ import '../a2/diamond_chain_thru.dart' as a2;
       tam.title == 'Diamond Chain Thru' && tam.from == 'Right-Hand Diamonds').first.xref(title: 'Diamond Chain Thru').xref(group: ' '),
 
     AnimatedCall('Inside Triangle Chain Thru',
-      formation:Formations.DiamondsRHGirlPoints,
+      formation:Formation('Diamonds RH Girl Points'),
       group:' ',parts:'5;3',
       paths:[
           Stand.changeBeats(8) +
@@ -82,7 +82,7 @@ import '../a2/diamond_chain_thru.dart' as a2;
       ]),
 
     AnimatedCall('Follow Thru Chain Thru',
-      formation:Formations.ColumnRHGBGB,
+      formation:Formation('Column RH GBGB'),
       from:'Right-Hand Columns',group:' ',
       paths:[
           LeadRight.changeBeats(2).scale(0.5,1.0),
@@ -101,7 +101,7 @@ import '../a2/diamond_chain_thru.dart' as a2;
       ]),
 
     AnimatedCall('Follow Your Neighbor Chain Thru',
-      formation:Formations.ColumnRHGBGB,
+      formation:Formation('Column RH GBGB'),
       from:'Right-Hand Columns',group:' ',
       paths:[
           LeadRight.changeBeats(2).scale(1.5,1.0) +
@@ -127,7 +127,7 @@ import '../a2/diamond_chain_thru.dart' as a2;
       ]),
 
     AnimatedCall('Interlocked Diamond Chain Thru',
-      formation:Formations.InterlockedDiamondsRHGirlPoints,
+      formation:Formation('Interlocked Diamonds RH Girl Points'),
       from:'Interlocked Diamonds',group:' ',parts:'4;3',
       paths:[
           LeadRight.changeBeats(4).scale(3.0,1.0),
@@ -147,7 +147,7 @@ import '../a2/diamond_chain_thru.dart' as a2;
       ]),
 
     AnimatedCall('Ping Pong Chain Thru',
-      formation:Formations.QuarterTag,
+      formation:Formation('Quarter Tag'),
       from:'Quarter Tag',group:' ',
       paths:[
           ExtendLeft.changeBeats(3).scale(2.0,2.0) +
@@ -169,7 +169,7 @@ import '../a2/diamond_chain_thru.dart' as a2;
       ]),
 
     AnimatedCall('Single Circle to a Wave Chain Thru',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       from:'Lines',group:' ',
       paths:[
           Forward.scale(1.3,0.3) +
@@ -200,7 +200,7 @@ import '../a2/diamond_chain_thru.dart' as a2;
       ]),
 
     AnimatedCall('Split Recycle Chain Thru',
-      formation:Formations.OceanWavesRHBGBG,
+      formation:Formation('Ocean Waves RH BGBG'),
       from:'Right-Hand Waves',group:' ',
       paths:[
           UmTurnRight.changeBeats(4).changehands(6).skew(2.0,-0.5),

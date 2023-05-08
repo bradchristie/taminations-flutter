@@ -21,13 +21,12 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> Rotary = [
 
     AnimatedCall('Rotary Explode the Wave',
-      formation:Formations.EightChainThru,
+      formation:Formation('Eight Chain Thru'),
       group:'Rotary',parts:'2',
       paths:[
           PullLeft.scale(1.0,0.5) +
@@ -54,7 +53,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Rotary Mix',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:1,y:3,angle:270),
         DancerModel.fromData(gender:Gender.GIRL,x:-1,y:3,angle:270),
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:1,angle:90),
@@ -85,7 +84,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Rotary Trade the Wave',
-      formation:Formations.EightChainThru,
+      formation:Formation('Eight Chain Thru'),
       group:'Rotary',
       paths:[
           PullLeft.scale(1.0,0.5) +

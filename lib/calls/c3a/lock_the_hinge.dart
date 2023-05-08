@@ -19,13 +19,13 @@
 */
 
 import '../../animated_call.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> LockTheHinge = [
 
     AnimatedCall('Lock the Hinge',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       from:'Right-Hand Waves',parts:'3',
       paths:[
           LeadRight.changeBeats(3).scale(1.5,3.0) +
@@ -42,7 +42,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Lock the Hinge',
-      formation:Formations.OceanWavesLHBGGB,
+      formation:Formation('Ocean Waves LH BGGB'),
       from:'Left-Hand Waves',parts:'3',
       paths:[
           LeadLeft.changeBeats(3).scale(1.5,3.0) +
@@ -59,7 +59,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Lock the Hinge',
-      formation:Formations.TwomFacedLinesRH,
+      formation:Formation('Two-Faced Lines RH'),
       from:'Right-Hand Two-Faced Lines',parts:'3',
       paths:[
           LeadRight.changeBeats(3).changehands(6).scale(1.5,3.0) +
@@ -76,7 +76,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Lock the Hinge',
-      formation:Formations.TwomFacedLinesLH,
+      formation:Formation('Two-Faced Lines LH'),
       from:'Left-Hand Two-Faced Lines',parts:'3',
       paths:[
           LeadLeft.changeBeats(3).changehands(5).scale(1.5,3.0) +
@@ -93,7 +93,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Lock the Hinge',
-      formation:Formations.TidalWaveRHBGGB,
+      formation:Formation('Tidal Wave RH BGGB'),
       from:'Right-Hand Tidal Wave',parts:'3',
       paths:[
           LeadRight.changeBeats(3).scale(3.0,1.5) +
@@ -110,7 +110,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Lock the Hinge',
-      formation:Formations.TidalWaveLHBGGB,
+      formation:Formation('Tidal Wave LH BGGB'),
       from:'Left-Hand Tidal Wave',parts:'3',
       paths:[
           LeadLeft.changeBeats(3).scale(3.0,1.5) +
@@ -127,7 +127,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Hinge the Lock',
-      formation:Formations.BoxRH,
+      formation:Formation('Box RH'),
       from:'Right-Hand Box',parts:'1.5',
       paths:[
           HingeRight +
@@ -138,7 +138,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Hinge the Lock',
-      formation:Formations.BoxLH,
+      formation:Formation('Box LH'),
       from:'Left-Hand Box',parts:'1.5',
       paths:[
           HingeLeft +
@@ -149,7 +149,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Hinge the Lock',
-      formation:Formations.FacingCouples,
+      formation:Formation('Facing Couples'),
       from:'Facing Couples',parts:'1.5',
       paths:[
           LeadRight.changeBeats(1.5) +
@@ -160,7 +160,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Hinge the Lock',
-      formation:Formations.CouplesFacingOut,
+      formation:Formation('Couples Facing Out'),
       from:'Couples Facing Out',parts:'1.5',
       paths:[
           QuarterLeft.changeBeats(1.5).skew(-1.0,1.0) +
@@ -171,7 +171,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Hinge the Lock',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       from:'Right-Hand Waves',parts:'1.5',
       paths:[
           HingeRight +
@@ -188,7 +188,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Hinge the Lock',
-      formation:Formations.OceanWavesLHBGGB,
+      formation:Formation('Ocean Waves LH BGGB'),
       from:'Left-Hand Waves',parts:'1.5',
       paths:[
           HingeLeft +
@@ -205,7 +205,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Hinge the Lock',
-      formation:Formations.ColumnRHGBGB,
+      formation:Formation('Column RH GBGB'),
       from:'Right-Hand Columns',parts:'1.5',
       paths:[
           HingeRight.scale(0.5,1.0) +
@@ -222,7 +222,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Hinge the Lock',
-      formation:Formations.ColumnLHGBGB,
+      formation:Formation('Column LH GBGB'),
       from:'Left-Hand Columns',parts:'1.5',
       paths:[
           HingeLeft.scale(0.5,1.0) +
@@ -239,7 +239,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Hinge the Top',
-      formation:Formations.BoxRH,
+      formation:Formation('Box RH'),
       from:'Right-Hand Box',parts:'1.5',
       paths:[
           HingeRight +
@@ -250,7 +250,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Hinge the Top',
-      formation:Formations.BoxLH,
+      formation:Formation('Box LH'),
       from:'Left-Hand Box',parts:'1.5',
       paths:[
           HingeLeft +
@@ -261,7 +261,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('All 8 Hinge the Lock',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       group:' ',parts:'1.5',
       paths:[
           QuarterRight.changeBeats(1.5).skew(2.0,-1.0) +
@@ -278,7 +278,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('As Couples Lock the Hinge',
-      formation:Formations.TwomFacedTidalLineRH,
+      formation:Formation('Two-Faced Tidal Line RH'),
       group:' ',parts:'4',
       paths:[
           LeadRight.changeBeats(4).changehands(2).scale(3.5,3.5) +
@@ -295,7 +295,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('As Couples Hinge the Lock',
-      formation:Formations.TwomFacedLinesRH,
+      formation:Formation('Two-Faced Lines RH'),
       group:' ',parts:'3',
       paths:[
           LeadRight.changeBeats(3).changehands(2).scale(1.5,3.0) +
@@ -312,7 +312,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Tandem Lock the Hinge',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       group:' ',parts:'4',
       paths:[
           CounterRotateRight_5_m1.changeBeats(4) +
@@ -329,7 +329,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Tandem Hinge the Lock',
-      formation:Formations.ColumnRHGBGB,
+      formation:Formation('Column RH GBGB'),
       group:' ',parts:'2',
       paths:[
           CounterRotateRight_0_m2.changehands(2) +

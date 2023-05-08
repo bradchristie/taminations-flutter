@@ -20,13 +20,13 @@
 
 import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> Substitute = [
 
     AnimatedCall('Substitute',
-      formation:Formations.DoublePassThru,
+      formation:Formation('Double Pass Thru'),
       from:'Double Pass Thru',
       paths:[
           ExtendRight.changehands(6).scale(1.0,0.5) +
@@ -43,7 +43,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Substitute',
-      formation:Formations.TwomFacedLinesRH,
+      formation:Formation('Two-Faced Lines RH'),
       from:'Right-Hand Two-Faced Lines',
       paths:[
           ExtendRight.changeBeats(1.5).changehands(2).scale(2.0,0.5) +
@@ -60,7 +60,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Substitute',
-      formation:Formations.TwomFacedLinesLH,
+      formation:Formation('Two-Faced Lines LH'),
       from:'Left-Hand Two-Faced Lines',
       paths:[
           RetreatRight.changeBeats(1.5).changehands(5).scale(2.0,0.5) +
@@ -77,7 +77,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Substitute',
-      formation:Formations.GalaxyRHGP,
+      formation:Formation('Galaxy RH GP'),
       from:'Galaxy',
       paths:[
           ExtendLeft.changeBeats(1.5).changehands(6).scale(1.0,0.5) +

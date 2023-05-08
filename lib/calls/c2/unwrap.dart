@@ -19,13 +19,13 @@
 */
 
 import '../../animated_call.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> Unwrap = [
 
     AnimatedCall('Unwrap the Diamond',
-      formation:Formations.DiamondsRHGirlPoints,
+      formation:Formation('Diamonds RH Girl Points'),
       from:'Right-Hand Diamonds',
       paths:[
           LeadRight.changeBeats(3) +
@@ -41,7 +41,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Unwrap the Diamond',
-      formation:Formations.DiamondsLHGirlPoints,
+      formation:Formation('Diamonds LH Girl Points'),
       from:'Left-Hand Diamonds',
       paths:[
           LeadLeft.changeBeats(3) +
@@ -57,7 +57,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Unwrap the Diamond',
-      formation:Formations.DiamondsRHPTPGirlPoints,
+      formation:Formation('Diamonds RH PTP Girl Points'),
       from:'Right-Hand Point-to-Point Diamonds',
       paths:[
           Forward_6,
@@ -75,7 +75,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Unwrap the Diamond',
-      formation:Formations.DiamondsLHPTPGirlPoints,
+      formation:Formation('Diamonds LH PTP Girl Points'),
       from:'Left-Hand Point-to-Point Diamonds',
       paths:[
           LeadLeft.changeBeats(2).scale(2.0,1.0) +
@@ -93,7 +93,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Unwrap the Diamond',
-      formation:Formations.DiamondsFacingGirlPoints,
+      formation:Formation('Diamonds Facing Girl Points'),
       from:'Facing Diamonds',
       paths:[
           LeadRight.changeBeats(3) +
@@ -112,7 +112,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Unwrap the Hourglass',
-      formation:Formations.HourglassRHBP,
+      formation:Formation('Hourglass RH BP'),
       from:'Right-Hand Hourglass',
       paths:[
           LeadRight.changeBeats(3).scale(1.0,3.0) +
@@ -129,7 +129,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Unwrap the Hourglass',
-      formation:Formations.HourglassLHBP,
+      formation:Formation('Hourglass LH BP'),
       from:'Left-Hand Hourglass',
       paths:[
           ExtendLeft.changeBeats(6).scale(5.0,2.0),
@@ -146,7 +146,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Unwrap the Butterfly',
-      formation:Formations.ButterflyRH,
+      formation:Formation('Butterfly RH'),
       from:'Right-Hand Butterfly',
       paths:[
           ExtendRight.changeBeats(2).scale(2.0,2.0) +
@@ -162,7 +162,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Unwrap the Butterfly',
-      formation:Formations.ButterflyLH,
+      formation:Formation('Butterfly LH'),
       from:'Left-Hand Butterfly',
       paths:[
           RunLeft.changeBeats(4).scale(1.0,2.0) +
@@ -178,7 +178,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Unwrap the Galaxy',
-      formation:Formations.GalaxyRHGP,
+      formation:Formation('Galaxy RH GP'),
       from:'Right-Hand Galaxy',
       paths:[
           LeadRight.changeBeats(2).scale(2.0,1.0) +
@@ -194,7 +194,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Unwrap the Galaxy',
-      formation:Formations.GalaxyLHGP,
+      formation:Formation('Galaxy LH GP'),
       from:'Left-Hand Galaxy',
       paths:[
           Forward_4,

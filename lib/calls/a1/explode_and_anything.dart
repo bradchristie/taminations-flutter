@@ -19,13 +19,13 @@
 */
 
 import '../../animated_call.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> ExplodeAndAnything = [
 
     AnimatedCall('Explode and Roll',
-      formation:Formations.LinesFacingOut,
+      formation:Formation('Lines Facing Out'),
       from:'Lines Facing Out',
       paths:[
           QuarterLeft.skew(-1.0,1.0) +
@@ -42,7 +42,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Explode and Roll',
-      formation:Formations.InvertedLinesEndsFacingIn,
+      formation:Formation('Inverted Lines Ends Facing In'),
       from:'Inverted Lines',
       paths:[
           QuarterRight.skew(1.0,-1.0) +
@@ -59,7 +59,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Explode and Roll',
-      formation:Formations.n3and_1lines5,
+      formation:Formation('3 and 1 Lines #5'),
       from:'3 and 1 Lines',
       paths:[
           QuarterRight.skew(1.0,-1.0) +
@@ -76,7 +76,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Explode and Roll',
-      formation:Formations.n3and_1lines8,
+      formation:Formation('3 and 1 Lines #8'),
       from:'3 and 1 Lines',noDisplay: true,
       paths:[
           QuarterLeft.skew(-1.0,1.0) +
@@ -93,7 +93,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Explode and Roll',
-      formation:Formations.TidalInvertedLineLH,
+      formation:Formation('Tidal Inverted Line LH'),
       from:'Tidal Inverted Line',
       paths:[
           QuarterLeft.skew(1.0,0.5) +
@@ -110,7 +110,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Explode and Touch a Quarter',
-      formation:Formations.LinesFacingOut,
+      formation:Formation('Lines Facing Out'),
       from:'Lines',
       paths:[
           QuarterLeft.skew(-1.0,1.0) +

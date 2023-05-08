@@ -21,7 +21,6 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 
 import '../a2/single_wheel.dart' as a2;
@@ -29,7 +28,7 @@ import '../a2/single_wheel.dart' as a2;
   final List<AnimatedCall> SingleConcept = [
 
     AnimatedCall('Single Checkmate',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:1,y:2,angle:270),
         DancerModel.fromData(gender:Gender.GIRL,x:-1,y:2,angle:90),
   ]),
@@ -43,7 +42,7 @@ import '../a2/single_wheel.dart' as a2;
       ]),
 
     AnimatedCall('Single Checkmate',
-      formation:Formations.BoxLH,
+      formation:Formation('Box LH'),
       from:'Left-Hand Box',
       paths:[
           RunLeft.scale(1.0,1.5) +
@@ -54,7 +53,7 @@ import '../a2/single_wheel.dart' as a2;
       ]),
 
     AnimatedCall('Single Checkmate',
-      formation:Formations.FacingCouplesCompact,
+      formation:Formation('Facing Couples Compact'),
       from:'Facing Couples',
       paths:[
           ExtendLeft.changeBeats(2).scale(1.5,0.5) +
@@ -69,7 +68,7 @@ import '../a2/single_wheel.dart' as a2;
       ]),
 
     AnimatedCall('Single Checkmate',
-      formation:Formations.CouplesFacingOut,
+      formation:Formation('Couples Facing Out'),
       from:'Couples Facing Out',
       paths:[
           FlipLeft +
@@ -82,7 +81,7 @@ import '../a2/single_wheel.dart' as a2;
       ]),
 
     AnimatedCall('Single Checkmate',
-      formation:Formations.OceanWavesRHBGBG,
+      formation:Formation('Ocean Waves RH BGBG'),
       from:'Right-Hand Waves',
       taminator: '''
       This has also been called Split Checkmate
@@ -102,7 +101,7 @@ import '../a2/single_wheel.dart' as a2;
       ]),
 
     AnimatedCall('Single Checkmate',
-      formation:Formations.OceanWavesLHBGBG,
+      formation:Formation('Ocean Waves LH BGBG'),
       from:'Left-Hand Waves',
       paths:[
           RunLeft +
@@ -119,7 +118,7 @@ import '../a2/single_wheel.dart' as a2;
       ]),
 
     AnimatedCall('Single Checkmate',
-      formation:Formations.ColumnRHGBGB,
+      formation:Formation('Column RH GBGB'),
       from:'Right-Hand Columns',
       paths:[
           RunRight.scale(1.0,1.5) +
@@ -136,7 +135,7 @@ import '../a2/single_wheel.dart' as a2;
       ]),
 
     AnimatedCall('Single Checkmate',
-      formation:Formations.ColumnLHGBGB,
+      formation:Formation('Column LH GBGB'),
       from:'Left-Hand Columns',
       paths:[
           Forward +
@@ -153,7 +152,7 @@ import '../a2/single_wheel.dart' as a2;
       ]),
 
     AnimatedCall('Single Checkmate',
-      formation:Formations.InvertedLinesEndsFacingOut,
+      formation:Formation('Inverted Lines Ends Facing Out'),
       from:'Inverted Lines Ends Facing Out',
       paths:[
           RunLeft.scale(1.0,0.75) +
@@ -174,7 +173,7 @@ import '../a2/single_wheel.dart' as a2;
       ]),
 
     AnimatedCall('Single Checkmate',
-      formation:Formations.InvertedLinesEndsFacingIn,
+      formation:Formation('Inverted Lines Ends Facing In'),
       from:'Inverted Lines Ends Facing In',
       paths:[
           ExtendLeft.changeBeats(2).scale(2.0,0.5) +
@@ -195,7 +194,7 @@ import '../a2/single_wheel.dart' as a2;
       ]),
 
     AnimatedCall('Heads Single Checkmate',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       from:'Static Square',group:' ',
       taminator: '''
       This has also been called Box Checkmate
@@ -217,7 +216,7 @@ import '../a2/single_wheel.dart' as a2;
       ]),
 
     AnimatedCall('As Couples Single Checkmate',
-      formation:Formations.TwomFacedLinesRH,
+      formation:Formation('Two-Faced Lines RH'),
       group:' ',
       paths:[
           Forward_2.changehands(2) +
@@ -238,7 +237,7 @@ import '../a2/single_wheel.dart' as a2;
       ]),
 
     AnimatedCall('Stretch Single Checkmate',
-      formation:Formations.OceanWavesRHBGBG,
+      formation:Formation('Ocean Waves RH BGBG'),
       group:' ',
       paths:[
           Forward_2 +
@@ -256,7 +255,7 @@ import '../a2/single_wheel.dart' as a2;
       ]),
 
     AnimatedCall('Tandem Single Checkmate',
-      formation:Formations.ColumnRHGBGB,
+      formation:Formation('Column RH GBGB'),
       group:' ',
       taminator: '''
       Note how this is different from A-2 Checkmate
@@ -285,7 +284,7 @@ import '../a2/single_wheel.dart' as a2;
       tam.title == 'Single Wheel' && tam.from == 'Right-Hand Box').first.xref(title: 'Single Turn and Deal'),
 
     AnimatedCall('Single Turn and Deal',
-      formation:Formations.BoxLH,
+      formation:Formation('Box LH'),
       from:'Left-Hand Box',
       paths:[
           UmTurnLeft.skew(-1.0,1.0),
@@ -294,7 +293,7 @@ import '../a2/single_wheel.dart' as a2;
       ]),
 
     AnimatedCall('Single Ferris Wheel',
-      formation:Formations.OceanWavesRHBGBG,
+      formation:Formation('Ocean Waves RH BGBG'),
       group:'Single',
       paths:[
           Forward_2 +
@@ -310,7 +309,7 @@ import '../a2/single_wheel.dart' as a2;
       ]),
 
     AnimatedCall('Single Polly Wally',
-      formation:Formations.EightChainThru,
+      formation:Formation('Eight Chain Thru'),
       group:'Single',
       paths:[
           UmTurnRight.skew(1.0,0.0),
@@ -325,7 +324,7 @@ import '../a2/single_wheel.dart' as a2;
       ]),
 
     AnimatedCall('Single Rotary Spin',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:0,y:3,angle:270),
         DancerModel.fromData(gender:Gender.GIRL,x:0,y:1,angle:90),
   ]),
@@ -342,7 +341,7 @@ import '../a2/single_wheel.dart' as a2;
       ]),
 
     AnimatedCall('Single Shakedown',
-      formation:Formations.CouplesFacingOutCompact,
+      formation:Formation('Couples Facing Out Compact'),
       group:'Single',
       paths:[
           RunRight.skew(-0.5,0.0) +
@@ -353,7 +352,7 @@ import '../a2/single_wheel.dart' as a2;
       ]),
 
     AnimatedCall('Single Turn to a Line',
-      formation:Formations.FacingCouples,
+      formation:Formation('Facing Couples'),
       from:'Facing Couples',
       paths:[
           QuarterLeft.skew(1.0,0.0) +
@@ -366,7 +365,7 @@ import '../a2/single_wheel.dart' as a2;
       ]),
 
     AnimatedCall('Single Turn to a Line',
-      formation:Formations.CouplesFacingOut,
+      formation:Formation('Couples Facing Out'),
       from:'Couples Facing Out',
       paths:[
           QuarterRight.skew(-1.0,0.0) +
@@ -379,7 +378,7 @@ import '../a2/single_wheel.dart' as a2;
       ]),
 
     AnimatedCall('Single Turn to a Line',
-      formation:Formations.BoxRH,
+      formation:Formation('Box RH'),
       from:'Right-Hand Box',
       paths:[
           QuarterLeft.skew(1.0,0.0) +
@@ -392,7 +391,7 @@ import '../a2/single_wheel.dart' as a2;
       ]),
 
     AnimatedCall('Single Turn to a Line',
-      formation:Formations.BoxLH,
+      formation:Formation('Box LH'),
       from:'Left-Hand Box',
       paths:[
           QuarterRight.skew(-1.0,0.0) +

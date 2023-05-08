@@ -19,13 +19,13 @@
 */
 
 import '../../animated_call.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> SingleCircleToAWave = [
 
     AnimatedCall('Single Circle to a Wave',
-      formation:Formations.FacingCouples,
+      formation:Formation('Facing Couples'),
       from:'Facing Couples',difficulty: 1,
       paths:[
           Forward.scale(1.3,0.3) +
@@ -40,7 +40,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Single Circle to a Wave',
-      formation:Formations.EightChainThru,
+      formation:Formation('Eight Chain Thru'),
       from:'Eight Chain Thru',difficulty: 1,
       paths:[
           Forward.scale(0.3,0.3) +
@@ -65,7 +65,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Single Circle to a Wave',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       from:'Lines',difficulty: 2,
       paths:[
           Forward.scale(1.3,0.3) +
@@ -90,7 +90,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Single Circle 3/4 to a Wave',
-      formation:Formations.FacingCouples,
+      formation:Formation('Facing Couples'),
       from:'Facing Couples',difficulty: 2,
       paths:[
           Forward.scale(1.3,0.3) +
@@ -107,7 +107,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Single Circle 3/4 to a Wave',
-      formation:Formations.EightChainThru,
+      formation:Formation('Eight Chain Thru'),
       from:'Eight Chain Thru',difficulty: 2,
       paths:[
           Forward.scale(0.3,0.3) +
@@ -136,7 +136,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Single Circle 3/4 to a Wave',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       from:'Lines',difficulty: 2,
       paths:[
           Forward.scale(1.3,0.3) +
@@ -165,7 +165,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Reverse Single Circle to a Wave',
-      formation:Formations.FacingCouples,
+      formation:Formation('Facing Couples'),
       from:'Facing Couples',difficulty: 2,
       paths:[
           Forward.scale(1.3,0.3) +
@@ -180,7 +180,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Reverse Single Circle to a Wave',
-      formation:Formations.EightChainThru,
+      formation:Formation('Eight Chain Thru'),
       from:'Eight Chain Thru',difficulty: 2,
       paths:[
           Forward.scale(0.3,0.3) +
@@ -205,7 +205,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Reverse Single Circle to a Wave',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       from:'Lines',difficulty: 2,
       paths:[
           Forward.scale(1.3,0.3) +
@@ -230,7 +230,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Reverse Single Circle 3/4 to a Wave',
-      formation:Formations.FacingCouples,
+      formation:Formation('Facing Couples'),
       from:'Facing Couples',difficulty: 3,
       paths:[
           Forward.scale(1.3,0.3) +
@@ -247,7 +247,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Reverse Single Circle 3/4 to a Wave',
-      formation:Formations.EightChainThru,
+      formation:Formation('Eight Chain Thru'),
       from:'Eight Chain Thru',difficulty: 3,
       paths:[
           Forward.scale(0.3,0.3) +
@@ -276,7 +276,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Reverse Single Circle 3/4 to a Wave',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       from:'Lines',difficulty: 3,
       paths:[
           Forward.scale(1.3,0.3) +

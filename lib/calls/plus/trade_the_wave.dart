@@ -19,13 +19,13 @@
 */
 
 import '../../animated_call.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> TradeTheWave = [
 
     AnimatedCall('Trade the Wave',
-      formation:Formations.WaveRHBoysCenter,
+      formation:Formation('Wave RH Boys Center'),
       from:'Right-Hand Wave',difficulty: 2,
       paths:[
           RunLeft.changeBeats(6).scale(0.5,2.0),
@@ -34,7 +34,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Trade the Wave',
-      formation:Formations.CompactWaveRH,
+      formation:Formation('Compact Wave RH'),
       from:'Compact Right-Hand Wave',noDisplay: true,
       paths:[
           RunRight.changeBeats(6).scale(1.5,1.0),
@@ -43,7 +43,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Trade the Wave',
-      formation:Formations.WaveLHBoysCenter,
+      formation:Formation('Wave LH Boys Center'),
       from:'Left-Hand Wave',difficulty: 1,
       paths:[
           RunRight.changeBeats(6).scale(1.5,2.0),
@@ -52,7 +52,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Trade the Wave',
-      formation:Formations.CompactWaveLH,
+      formation:Formation('Compact Wave LH'),
       from:'Compact Left-Hand Wave',noDisplay: true,
       paths:[
           RunLeft.changeBeats(6).scale(0.5,1.0),
@@ -61,7 +61,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Trade the Wave',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       from:'Right-Hand Waves',difficulty: 2,
       paths:[
           RunRight.changeBeats(6).scale(1.5,2.0),
@@ -74,7 +74,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Trade the Wave',
-      formation:Formations.OceanWavesLHGBBG,
+      formation:Formation('Ocean Waves LH GBBG'),
       from:'Left-Hand Waves',difficulty: 1,
       paths:[
           RunLeft.changeBeats(6).scale(0.5,2.0),
@@ -87,7 +87,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Trade the Wave',
-      formation:Formations.TidalWaveRHBGGB,
+      formation:Formation('Tidal Wave RH BGGB'),
       from:'Right-Hand Tidal Wave',difficulty: 2,
       paths:[
           RunRight.changeBeats(6).scale(1.5,1.0),
@@ -100,7 +100,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Trade the Wave',
-      formation:Formations.TidalWaveLHBGGB,
+      formation:Formation('Tidal Wave LH BGGB'),
       from:'Left-Hand Tidal Wave',difficulty: 2,
       paths:[
           RunLeft.changeBeats(6).scale(0.5,1.0),

@@ -19,13 +19,13 @@
 */
 
 import '../../animated_call.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> TwistTheLine = [
 
     AnimatedCall('Twist the Line',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       from:'Normal Lines',isGenderSpecific:true,
       paths:[
           QuarterRight.changeBeats(3).skew(-0.5,-3.0) +
@@ -40,7 +40,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Twist the Line',
-      formation:Formations.LinesFacingOut,
+      formation:Formation('Lines Facing Out'),
       from:'Lines Facing Out',isGenderSpecific:true,
       paths:[
           QuarterLeft.changeBeats(3).skew(-1.5,3.0) +
@@ -55,7 +55,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Twist the Line',
-      formation:Formations.TidalLineRH,
+      formation:Formation('Tidal Line RH'),
       from:'Tidal Line',isGenderSpecific:true,
       paths:[
           QuarterRight.changeBeats(2).skew(0.5,-1.5) +
@@ -72,7 +72,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Twist And',
-      formation:Formations.LinesFacingOut,
+      formation:Formation('Lines Facing Out'),
       from:'Lines Facing Out',
       paths:[
           QuarterLeft.changeBeats(3).skew(-1.0,2.0),
@@ -85,7 +85,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Twist And',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       from:'Lines Facing In',
       paths:[
           QuarterRight.changeBeats(3).skew(-1.0,-2.0),
@@ -98,7 +98,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Twist And',
-      formation:Formations.InvertedLinesEndsFacingOut,
+      formation:Formation('Inverted Lines Ends Facing Out'),
       from:'Inverted Lines Ends Facing Out',
       paths:[
           LeadLeft.changeBeats(3).scale(1.0,2.0),
@@ -111,7 +111,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Twist And',
-      formation:Formations.InvertedLinesEndsFacingIn,
+      formation:Formation('Inverted Lines Ends Facing In'),
       from:'Inverted Lines Ends Facing In',
       paths:[
           LeadRight.changeBeats(3).scale(1.0,2.0),
@@ -124,7 +124,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Twist And',
-      formation:Formations.n3and_1lines1,
+      formation:Formation('3 and 1 Lines #1'),
       from:'3 and 1 Lines #1',
       paths:[
           LeadLeft.changeBeats(3).scale(1.0,2.0),
@@ -137,7 +137,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Twist And',
-      formation:Formations.n3and_1lines4,
+      formation:Formation('3 and 1 Lines #4'),
       from:'3 and 1 Lines #4',
       paths:[
           QuarterRight.changeBeats(3).skew(-1.0,-2.0),
@@ -150,7 +150,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Twist And',
-      formation:Formations.n3and_1lines5,
+      formation:Formation('3 and 1 Lines #5'),
       from:'3 and 1 Lines #5',
       paths:[
           LeadRight.changeBeats(3).scale(1.0,2.0),
@@ -163,7 +163,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Twist And',
-      formation:Formations.n3and_1lines8,
+      formation:Formation('3 and 1 Lines #8'),
       from:'3 and 1 Lines #8',
       paths:[
           QuarterLeft.changeBeats(3).skew(-1.0,2.0),
@@ -176,7 +176,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Twist And Pass Out',
-      formation:Formations.LinesFacingOut,
+      formation:Formation('Lines Facing Out'),
       from:'Lines Facing Out',group:' ',
       paths:[
           QuarterLeft.changeBeats(2).skew(-1.0,2.0) +
@@ -193,7 +193,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Twist And Split Square Thru 2',
-      formation:Formations.LinesFacingOut,
+      formation:Formation('Lines Facing Out'),
       from:'Lines Facing Out',group:' ',
       paths:[
           QuarterLeft.changeBeats(2).skew(-1.0,2.0) +
@@ -216,7 +216,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Twist And Square Thru 2',
-      formation:Formations.LinesFacingOut,
+      formation:Formation('Lines Facing Out'),
       from:'Lines Facing Out',group:' ',
       paths:[
           QuarterLeft.changeBeats(2).skew(-1.0,2.0) +

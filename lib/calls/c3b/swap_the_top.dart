@@ -19,13 +19,13 @@
 */
 
 import '../../animated_call.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> SwapTheTop = [
 
     AnimatedCall('Cross Swap the Top',
-      formation:Formations.FacingCouples,
+      formation:Formation('Facing Couples'),
       from:'Facing Couples',group:' ',
       paths:[
           FlipRight.changeBeats(4.5) +
@@ -36,7 +36,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Mirror Swap the Top',
-      formation:Formations.FacingCouples,
+      formation:Formation('Facing Couples'),
       from:'Facing Couples',group:' ',
       paths:[
           Forward_2 +
@@ -47,7 +47,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Mirror Cross Swap the Top',
-      formation:Formations.FacingCouples,
+      formation:Formation('Facing Couples'),
       from:'Facing Couples',group:' ',
       paths:[
           ExtendRight.changeBeats(2).scale(2.0,2.0) +

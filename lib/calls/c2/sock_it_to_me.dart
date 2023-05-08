@@ -19,13 +19,13 @@
 */
 
 import '../../animated_call.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> SockItToMe = [
 
     AnimatedCall('Sock It To Me',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       from:'Lines Facing In',
       paths:[
           RunRight.changeBeats(6).scale(1.5,3.0),
@@ -38,7 +38,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Sock It To Me',
-      formation:Formations.LinesFacingOut,
+      formation:Formation('Lines Facing Out'),
       from:'Lines Facing Out',
       paths:[
           FlipLeft.changeBeats(6),
@@ -51,7 +51,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Sock It To Me',
-      formation:Formations.InvertedLinesEndsFacingIn,
+      formation:Formation('Inverted Lines Ends Facing In'),
       from:'Inverted Lines, Ends Facing In',
       paths:[
           RunRight.changeBeats(6).scale(1.5,3.0),
@@ -64,7 +64,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Sock It To Me',
-      formation:Formations.InvertedLinesEndsFacingOut,
+      formation:Formation('Inverted Lines Ends Facing Out'),
       from:'Inverted Lines, Ends Facing Out',
       paths:[
           FlipLeft.changeBeats(6),
@@ -77,7 +77,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Sock It To Me',
-      formation:Formations.n3and_1lines2,
+      formation:Formation('3 and 1 Lines #2'),
       from:'3 and 1 Lines #2',
       paths:[
           RunRight.changeBeats(6).scale(1.5,3.0),
@@ -90,7 +90,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Sock It To Me',
-      formation:Formations.n3and_1lines3,
+      formation:Formation('3 and 1 Lines #3'),
       from:'3 and 1 Lines #3',
       paths:[
           RunRight.changeBeats(6).scale(1.5,3.0),
@@ -103,7 +103,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Sock It To Me',
-      formation:Formations.n3and_1lines6,
+      formation:Formation('3 and 1 Lines #6'),
       from:'3 and 1 Lines #6',
       paths:[
           FlipLeft.changeBeats(6),
@@ -116,7 +116,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Sock It To Me',
-      formation:Formations.n3and_1lines7,
+      formation:Formation('3 and 1 Lines #7'),
       from:'3 and 1 Lines #7',
       paths:[
           FlipLeft.changeBeats(6),
@@ -129,7 +129,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Sock It To Me',
-      formation:Formations.TidalLineRH,
+      formation:Formation('Tidal Line RH'),
       from:'Right-Hand Tidal Line',
       paths:[
           RunRight.changeBeats(6).scale(2.0,1.5),
@@ -142,7 +142,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Sock It To Me',
-      formation:Formations.TidalLineLH,
+      formation:Formation('Tidal Line LH'),
       from:'Left-Hand Tidal Line',
       paths:[
           FlipLeft.changeBeats(6).scale(1.0,0.5),
@@ -155,7 +155,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Sock It To Me',
-      formation:Formations.TidalInvertedLineRH,
+      formation:Formation('Tidal Inverted Line RH'),
       from:'Right-Hand Inverted Tidal Line',
       paths:[
           RunRight.changeBeats(6).scale(2.0,1.5),
@@ -168,7 +168,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Sock It To Me',
-      formation:Formations.TidalInvertedLineLH,
+      formation:Formation('Tidal Inverted Line LH'),
       from:'Left-Hand Inverted Tidal Line',
       paths:[
           FlipLeft.changeBeats(6).scale(1.0,0.5),
@@ -181,7 +181,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Sock It To Me',
-      formation:Formations.Tidal_3and_1Line2,
+      formation:Formation('Tidal 3 and 1 Line #2'),
       from:'Tidal 3 and 1 Line #2',
       paths:[
           RunRight.changeBeats(6).scale(2.0,1.5),
@@ -194,7 +194,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Sock It To Me',
-      formation:Formations.Tidal_3and_1Line3,
+      formation:Formation('Tidal 3 and 1 Line #3'),
       from:'Tidal 3 and 1 Line #3',
       paths:[
           RunRight.changeBeats(6).scale(2.0,1.5),
@@ -207,7 +207,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Sock It To Me',
-      formation:Formations.Tidal_3and_1Line6,
+      formation:Formation('Tidal 3 and 1 Line #6'),
       from:'Tidal 3 and 1 Line #6',
       paths:[
           FlipLeft.changeBeats(6).scale(1.0,0.5),
@@ -220,7 +220,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Sock It To Me',
-      formation:Formations.Tidal_3and_1Line7,
+      formation:Formation('Tidal 3 and 1 Line #7'),
       from:'Tidal 3 and 1 Line #7',
       paths:[
           FlipLeft.changeBeats(6).scale(1.0,0.5),
@@ -233,7 +233,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Here Comes the Judge',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       from:'Lines Facing In',
       paths:[
           FlipRight.changeBeats(6),
@@ -246,7 +246,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Here Comes the Judge',
-      formation:Formations.LinesFacingOut,
+      formation:Formation('Lines Facing Out'),
       from:'Lines Facing Out',
       paths:[
           RunLeft.changeBeats(6).scale(2.0,3.0),
@@ -259,7 +259,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Here Comes the Judge',
-      formation:Formations.InvertedLinesEndsFacingIn,
+      formation:Formation('Inverted Lines Ends Facing In'),
       from:'Inverted Lines, Ends Facing In',
       paths:[
           FlipRight.changeBeats(6),
@@ -272,7 +272,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Here Comes the Judge',
-      formation:Formations.InvertedLinesEndsFacingOut,
+      formation:Formation('Inverted Lines Ends Facing Out'),
       from:'Inverted Lines, Ends Facing Out',
       paths:[
           RunLeft.changeBeats(6).scale(2.0,3.0),
@@ -285,7 +285,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Here Comes the Judge',
-      formation:Formations.n3and_1lines2,
+      formation:Formation('3 and 1 Lines #2'),
       from:'3 and 1 Lines #2',
       paths:[
           FlipRight.changeBeats(6),
@@ -298,7 +298,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Here Comes the Judge',
-      formation:Formations.n3and_1lines3,
+      formation:Formation('3 and 1 Lines #3'),
       from:'3 and 1 Lines #3',
       paths:[
           FlipRight.changeBeats(6),
@@ -311,7 +311,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Here Comes the Judge',
-      formation:Formations.n3and_1lines6,
+      formation:Formation('3 and 1 Lines #6'),
       from:'3 and 1 Lines #6',
       paths:[
           RunLeft.changeBeats(6).scale(2.0,3.0),
@@ -324,7 +324,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Here Comes the Judge',
-      formation:Formations.n3and_1lines7,
+      formation:Formation('3 and 1 Lines #7'),
       from:'3 and 1 Lines #7',
       paths:[
           RunLeft.changeBeats(6).scale(2.0,3.0),
@@ -337,7 +337,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Here Comes the Judge',
-      formation:Formations.TidalLineRH,
+      formation:Formation('Tidal Line RH'),
       from:'Right-Hand Tidal Line',
       paths:[
           FlipRight.changeBeats(6).scale(1.0,0.5),
@@ -350,7 +350,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Here Comes the Judge',
-      formation:Formations.TidalLineLH,
+      formation:Formation('Tidal Line LH'),
       from:'Left-Hand Tidal Line',
       paths:[
           FlipRight.changeBeats(6).scale(1.0,0.5),
@@ -363,7 +363,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Here Comes the Judge',
-      formation:Formations.TidalInvertedLineRH,
+      formation:Formation('Tidal Inverted Line RH'),
       from:'Right-Hand Inverted Tidal Line',
       paths:[
           FlipRight.changeBeats(6).scale(1.0,0.5),
@@ -376,7 +376,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Here Comes the Judge',
-      formation:Formations.TidalInvertedLineLH,
+      formation:Formation('Tidal Inverted Line LH'),
       from:'Left-Hand Inverted Tidal Line',
       paths:[
           RunLeft.changeBeats(6).scale(2.0,1.5),
@@ -389,7 +389,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Here Comes the Judge',
-      formation:Formations.Tidal_3and_1Line2,
+      formation:Formation('Tidal 3 and 1 Line #2'),
       from:'Tidal 3 and 1 Line #2',
       paths:[
           FlipRight.changeBeats(6).scale(1.0,0.5),
@@ -402,7 +402,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Here Comes the Judge',
-      formation:Formations.Tidal_3and_1Line3,
+      formation:Formation('Tidal 3 and 1 Line #3'),
       from:'Tidal 3 and 1 Line #3',
       paths:[
           FlipRight.changeBeats(6).scale(1.0,0.5),
@@ -415,7 +415,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Here Comes the Judge',
-      formation:Formations.Tidal_3and_1Line6,
+      formation:Formation('Tidal 3 and 1 Line #6'),
       from:'Tidal 3 and 1 Line #6',
       paths:[
           RunLeft.changeBeats(6).scale(2.0,1.5),
@@ -428,7 +428,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Here Comes the Judge',
-      formation:Formations.Tidal_3and_1Line7,
+      formation:Formation('Tidal 3 and 1 Line #7'),
       from:'Tidal 3 and 1 Line #7',
       paths:[
           RunLeft.changeBeats(6).scale(2.0,1.5),

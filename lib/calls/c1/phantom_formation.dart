@@ -21,13 +21,12 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> PhantomFormation = [
 
     AnimatedCall('Phantom Acey Deucey',
-      formation:Formations.PhantomFormationRH,
+      formation:Formation('Phantom Formation RH'),
       group:'Phantom',
       paths:[
           Forward_4,
@@ -44,7 +43,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Phantom All 8 Circulate',
-      formation:Formations.PhantomFormationRH,
+      formation:Formation('Phantom Formation RH'),
       group:'Phantom',
       paths:[
           Forward_4,
@@ -61,7 +60,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Phantom Bend the Lines',
-      formation:Formations.PhantomFormationIn,
+      formation:Formation('Phantom Formation In'),
       group:'Phantom',
       paths:[
           HingeRight,
@@ -78,7 +77,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Phantom Couples Circulate',
-      formation:Formations.PhantomFormationTwomFaced,
+      formation:Formation('Phantom Formation Two-Faced'),
       group:'Phantom',
       paths:[
           Forward_4.changehands(2),
@@ -95,7 +94,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Phantom Ferris Wheel',
-      formation:Formations.PhantomFormationTwomFaced,
+      formation:Formation('Phantom Formation Two-Faced'),
       group:'Phantom',
       paths:[
           RunRight.changeBeats(4).changehands(6).scale(2.0,2.0).skew(3.0,0.0),
@@ -112,7 +111,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Phantom Load the Boat',
-      formation:Formations.PhantomFormationIn,
+      formation:Formation('Phantom Formation In'),
       group:'Phantom',
       paths:[
           Forward_3 +
@@ -150,7 +149,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Phantom Motivate',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-2,y:3,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:-2,y:1,angle:180),
         DancerModel.fromData(gender:Gender.BOY,x:3,y:2,angle:90),
@@ -195,7 +194,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Phantom Pass Thru',
-      formation:Formations.PhantomFormationIn,
+      formation:Formation('Phantom Formation In'),
       group:'Phantom',
       paths:[
           Forward_4.changehands(2),
@@ -214,7 +213,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Phantom Tally Ho',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-2,y:-3,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:-2,y:1,angle:180),
         DancerModel.fromData(gender:Gender.BOY,x:-3,y:2,angle:90),
@@ -252,7 +251,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Phantom Trade Circulate',
-      formation:Formations.PhantomFormationLH,
+      formation:Formation('Phantom Formation LH'),
       group:'Phantom',
       paths:[
           RunLeft.changeBeats(4).scale(1.5,2.0),
@@ -269,7 +268,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Phantom Wheel and Deal',
-      formation:Formations.PhantomFormationTwomFaced,
+      formation:Formation('Phantom Formation Two-Faced'),
       group:'Phantom',
       paths:[
           RunRight.changeBeats(4).changehands(2).scale(1.0,2.0).skew(1.0,0.0),

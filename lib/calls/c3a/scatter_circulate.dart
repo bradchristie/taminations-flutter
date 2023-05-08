@@ -21,13 +21,12 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> ScatterCirculate = [
 
     AnimatedCall('Scatter Circulate',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       from:'Normal Lines',
       paths:[
           ExtendLeft.changeBeats(2).scale(2.0,0.5) +
@@ -44,7 +43,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Scatter Circulate',
-      formation:Formations.LinesFacingOut,
+      formation:Formation('Lines Facing Out'),
       from:'Lines Facing Out',
       paths:[
           FlipLeft.changeBeats(4),
@@ -57,7 +56,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Scatter Circulate',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.GIRL,x:-2,y:3,angle:0),
         DancerModel.fromData(gender:Gender.BOY,x:-2,y:1,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:-2,y:-1,angle:180),
@@ -76,7 +75,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Scatter Circulate',
-      formation:Formations.TwomFacedLinesLH,
+      formation:Formation('Two-Faced Lines LH'),
       from:'Left-Hand Two-Faced Lines',
       paths:[
           RunLeft.changeBeats(4),
@@ -90,7 +89,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Scatter Circulate',
-      formation:Formation('T-Bone RDLU', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:1,y:3,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:1,y:1,angle:270),
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:3,angle:270),

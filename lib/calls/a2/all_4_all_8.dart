@@ -21,7 +21,6 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 import '../a2/box_transfer.dart' as a2;
 import '../a2/pass_and_roll.dart' as a2;
@@ -69,7 +68,7 @@ import '../c3a/mini_chase.dart' as c3a;
   final List<AnimatedCall> All4All8 = [
 
     AnimatedCall('All 4 Couples Chase Right',
-      formation:Formations.StaticFacingOut,
+      formation:Formation('Static Facing Out'),
       group:'All 4 Couples (with calls through Plus)',
       taminator: '''
       All 8 Chase Right may also be correct for this example.  The dancers
@@ -94,7 +93,7 @@ import '../c3a/mini_chase.dart' as c3a;
       ]),
 
     AnimatedCall('All 4 Couples Fan the Top',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       group:'All 4 Couples (with calls through Plus)',
       paths:[
           ExtendLeft.changeBeats(2).scale(2.0,2.0) +
@@ -113,7 +112,7 @@ import '../c3a/mini_chase.dart' as c3a;
       ]),
 
     AnimatedCall('All 4 Couples Left Chase',
-      formation:Formations.StaticFacingOut,
+      formation:Formation('Static Facing Out'),
       group:'All 4 Couples (with calls through Plus)',
       paths:[
           RunLeft.scale(1.0,0.5).skew(-2.0,0.0) +
@@ -134,7 +133,7 @@ import '../c3a/mini_chase.dart' as c3a;
       ]),
 
     AnimatedCall('All 4 Couples Left Touch a Quarter',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       group:'All 4 Couples (with calls through Plus)',
       paths:[
           ExtendLeft +
@@ -155,7 +154,7 @@ import '../c3a/mini_chase.dart' as c3a;
       ]),
 
     AnimatedCall('All 4 Couples Pass Thru',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       group:'All 4 Couples (with calls through Plus)',
       paths:[
           ExtendLeft.changeBeats(2).scale(2.0,2.0) +
@@ -178,7 +177,7 @@ import '../c3a/mini_chase.dart' as c3a;
       ]),
 
     AnimatedCall('All 4 Couples Pass the Ocean',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       group:'All 4 Couples (with calls through Plus)',
       paths:[
           ExtendLeft.changeBeats(2).scale(2.0,2.0) +
@@ -205,7 +204,7 @@ import '../c3a/mini_chase.dart' as c3a;
       ]),
 
     AnimatedCall('All 4 Couples Right and Left Thru',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       group:'All 4 Couples (with calls through Plus)',
       paths:[
           ExtendLeft.changeBeats(2).scale(2.0,2.0) +
@@ -232,7 +231,7 @@ import '../c3a/mini_chase.dart' as c3a;
       ]),
 
     AnimatedCall('All 4 Couples Single Circle to a Wave',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       group:'All 4 Couples (with calls through Plus)',
       paths:[
           ExtendLeft.changeBeats(1.5).scale(1.0,1.5) +
@@ -261,7 +260,7 @@ import '../c3a/mini_chase.dart' as c3a;
       ]),
 
     AnimatedCall('All 4 Couples Slide Thru',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       group:'All 4 Couples (with calls through Plus)',isGenderSpecific:true,
       paths:[
           ExtendLeft.changeBeats(2).scale(2.0,2.0) +
@@ -280,7 +279,7 @@ import '../c3a/mini_chase.dart' as c3a;
       ]),
 
     AnimatedCall('All 4 Couples Slide Thru',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.GIRL,x:-3,y:1,angle:0),
         DancerModel.fromData(gender:Gender.BOY,x:-3,y:-1,angle:0),
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:-3,angle:90),
@@ -304,7 +303,7 @@ import '../c3a/mini_chase.dart' as c3a;
       ]),
 
     AnimatedCall('All 4 Couples Slide Thru',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.GIRL,x:-3,y:1,angle:0),
         DancerModel.fromData(gender:Gender.BOY,x:-3,y:-1,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:-1,y:-3,angle:90),
@@ -328,7 +327,7 @@ import '../c3a/mini_chase.dart' as c3a;
       ]),
 
     AnimatedCall('All 4 Couples Spin the Top',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       group:'All 4 Couples (with calls through Plus)',
       paths:[
           ExtendLeft.changeBeats(2).scale(2.0,2.0) +
@@ -351,7 +350,7 @@ import '../c3a/mini_chase.dart' as c3a;
       ]),
 
     AnimatedCall('All 4 Couples Square Thru',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       group:'All 4 Couples (with calls through Plus)',
       paths:[
           ExtendLeft.changeBeats(2).scale(2.0,2.0) +
@@ -392,7 +391,7 @@ import '../c3a/mini_chase.dart' as c3a;
       ]),
 
     AnimatedCall('All 4 Couples Square Thru to a Wave',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       group:'All 4 Couples (with calls through Plus)',noDisplay: true,
       paths:[
           ExtendLeft.changeBeats(2).scale(2.0,2.0) +
@@ -425,7 +424,7 @@ import '../c3a/mini_chase.dart' as c3a;
       ]),
 
     AnimatedCall('All 4 Couples Square Thru 3',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       group:'All 4 Couples (with calls through Plus)',noDisplay: true,
       paths:[
           ExtendLeft.changeBeats(2).scale(2.0,2.0) +
@@ -460,7 +459,7 @@ import '../c3a/mini_chase.dart' as c3a;
       ]),
 
     AnimatedCall('All 4 Couples Square Thru 3 to a Wave',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       group:'All 4 Couples (with calls through Plus)',noDisplay: true,
       paths:[
           ExtendLeft.changeBeats(2).scale(2.0,2.0) +
@@ -487,7 +486,7 @@ import '../c3a/mini_chase.dart' as c3a;
       ]),
 
     AnimatedCall('All 4 Couples Square Thru 2',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       group:'All 4 Couples (with calls through Plus)',noDisplay: true,
       paths:[
           ExtendLeft.changeBeats(2).scale(2.0,2.0) +
@@ -516,7 +515,7 @@ import '../c3a/mini_chase.dart' as c3a;
       ]),
 
     AnimatedCall('All 4 Couples Square Thru 2 to a Wave',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       group:'All 4 Couples (with calls through Plus)',noDisplay: true,
       paths:[
           ExtendLeft.changeBeats(2).scale(2.0,2.0) +
@@ -537,7 +536,7 @@ import '../c3a/mini_chase.dart' as c3a;
       ]),
 
     AnimatedCall('All 4 Couples Star Thru',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       group:'All 4 Couples (with calls through Plus)',isGenderSpecific:true,
       paths:[
           ExtendLeft.changeBeats(2).scale(2.0,2.0) +
@@ -556,7 +555,7 @@ import '../c3a/mini_chase.dart' as c3a;
       ]),
 
     AnimatedCall('All 4 Couples Star Thru',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.GIRL,x:-3,y:1,angle:0),
         DancerModel.fromData(gender:Gender.BOY,x:-3,y:-1,angle:0),
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:-3,angle:90),
@@ -580,7 +579,7 @@ import '../c3a/mini_chase.dart' as c3a;
       ]),
 
     AnimatedCall('All 4 Couples Star Thru',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.GIRL,x:-3,y:1,angle:0),
         DancerModel.fromData(gender:Gender.BOY,x:-3,y:-1,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:-1,y:-3,angle:90),
@@ -604,7 +603,7 @@ import '../c3a/mini_chase.dart' as c3a;
       ]),
 
     AnimatedCall('All 4 Couples Step to a Wave',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       group:'All 4 Couples (with calls through Plus)',
       paths:[
           ExtendLeft.changeBeats(2).scale(2.0,2.0) +
@@ -619,7 +618,7 @@ import '../c3a/mini_chase.dart' as c3a;
       ]),
 
     AnimatedCall('All 4 Couples Swing Thru',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       from:'Static Square',group:'All 4 Couples (with calls through Plus)',
       paths:[
           ExtendLeft.changeBeats(2).scale(2.0,2.0) +
@@ -640,7 +639,7 @@ import '../c3a/mini_chase.dart' as c3a;
       ]),
 
     AnimatedCall('All 4 Couples Touch a Quarter',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       group:'All 4 Couples (with calls through Plus)',
       paths:[
           ExtendLeft.changeBeats(3).scale(3.0,2.5) +
@@ -659,7 +658,7 @@ import '../c3a/mini_chase.dart' as c3a;
       ]),
 
     AnimatedCall('All 4 Couples Turn Thru',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       group:'All 4 Couples (with calls through Plus)',
       paths:[
           ExtendLeft.changeBeats(2).scale(2.0,1.5) +
@@ -688,7 +687,7 @@ import '../c3a/mini_chase.dart' as c3a;
       ]),
 
     AnimatedCall('All 8 Box Circulate',
-      formation:Formations.StaticMiniWavesRH,
+      formation:Formation('Static MiniWaves RH'),
       group:'All 8 (with calls through Plus)',
       paths:[
           Forward_6.changeBeats(4),
@@ -701,7 +700,7 @@ import '../c3a/mini_chase.dart' as c3a;
       ]),
 
     AnimatedCall('All 8 Box Circulate',
-      formation:Formations.StaticMiniWavesLH,
+      formation:Formation('Static MiniWaves LH'),
       group:'All 8 (with calls through Plus)',noDisplay: true,
       paths:[
           RunLeft.changeBeats(4),
@@ -714,7 +713,7 @@ import '../c3a/mini_chase.dart' as c3a;
       ]),
 
     AnimatedCall('All 8 Chain Down the Line',
-      formation:Formations.TharRHGirls,
+      formation:Formation('Thar RH Girls'),
       group:'All 8 (with calls through Plus)',
       paths:[
           SwingRight +
@@ -735,7 +734,7 @@ import '../c3a/mini_chase.dart' as c3a;
       ]),
 
     AnimatedCall('All 8 Chain Down the Line',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.GIRL,x:-1,y:0,angle:90),
         DancerModel.fromData(gender:Gender.BOY,x:-3,y:0,angle:90),
         DancerModel.fromData(gender:Gender.GIRL,x:0,y:-1,angle:180),
@@ -761,7 +760,7 @@ import '../c3a/mini_chase.dart' as c3a;
       ]),
 
     AnimatedCall('All 8 Chase Right',
-      formation:Formations.StaticFacingOut,
+      formation:Formation('Static Facing Out'),
       group:'All 8 (with calls through Plus)',noDisplay: true,
       paths:[
           RunRight.changeBeats(4).scale(1.0,1.5).skew(-1.0,0.0) +
@@ -782,7 +781,7 @@ import '../c3a/mini_chase.dart' as c3a;
       ]),
 
     AnimatedCall('All 8 Left Chase',
-      formation:Formations.StaticFacingOut,
+      formation:Formation('Static Facing Out'),
       group:'All 8 (with calls through Plus)',noDisplay: true,
       paths:[
           RunLeft.scale(1.0,0.5).skew(-2.0,0.0) +
@@ -803,7 +802,7 @@ import '../c3a/mini_chase.dart' as c3a;
       ]),
 
     AnimatedCall('All 8 Crossfire',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.GIRL,x:-1,y:0,angle:90),
         DancerModel.fromData(gender:Gender.BOY,x:-3,y:0,angle:90),
         DancerModel.fromData(gender:Gender.GIRL,x:0,y:-1,angle:180),
@@ -823,7 +822,7 @@ import '../c3a/mini_chase.dart' as c3a;
       ]),
 
     AnimatedCall('All 8 Crossfire',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.GIRL,x:-1,y:0,angle:270),
         DancerModel.fromData(gender:Gender.BOY,x:-3,y:0,angle:270),
         DancerModel.fromData(gender:Gender.GIRL,x:0,y:-1,angle:0),
@@ -843,7 +842,7 @@ import '../c3a/mini_chase.dart' as c3a;
       ]),
 
     AnimatedCall('All 8 Cut the Diamond',
-      formation:Formations.TharLHGirls,
+      formation:Formation('Thar LH Girls'),
       group:'All 8 (with calls through Plus)',
       paths:[
           Forward_2 +
@@ -860,7 +859,7 @@ import '../c3a/mini_chase.dart' as c3a;
       ]),
 
     AnimatedCall('All 8 Diamond Circulate',
-      formation:Formations.StarPromenade,
+      formation:Formation('Star Promenade'),
       group:'All 8 (with calls through Plus)',
       paths:[
           LeadLeft.changeBeats(3).scale(3.0,1.0),
@@ -873,7 +872,7 @@ import '../c3a/mini_chase.dart' as c3a;
       ]),
 
     AnimatedCall('All 8 Diamond Circulate',
-      formation:Formations.ReverseStarPromenade,
+      formation:Formation('Reverse Star Promenade'),
       group:'All 8 (with calls through Plus)',noDisplay: true,
       paths:[
           LeadRight.changeBeats(3).scale(1.0,3.0),
@@ -886,7 +885,7 @@ import '../c3a/mini_chase.dart' as c3a;
       ]),
 
     AnimatedCall('All 8 Diamond Circulate',
-      formation:Formations.TharLHBoys,
+      formation:Formation('Thar LH Boys'),
       group:'All 8 (with calls through Plus)',noDisplay: true,
       paths:[
           LeadLeftPassing.changeBeats(3).scale(3.0,1.0),
@@ -899,7 +898,7 @@ import '../c3a/mini_chase.dart' as c3a;
       ]),
 
     AnimatedCall('All 8 Diamond Circulate',
-      formation:Formations.TharRHBoys,
+      formation:Formation('Thar RH Boys'),
       group:'All 8 (with calls through Plus)',noDisplay: true,
       paths:[
           LeadRightPassing.changeBeats(3).scale(3.0,1.0),
@@ -912,7 +911,7 @@ import '../c3a/mini_chase.dart' as c3a;
       ]),
 
     AnimatedCall('All 8 Dixie Style to a Wave',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       group:'All 8 (with calls through Plus)',
       paths:[
           ExtendRight.changeBeats(5).scale(1.0,1.75) +
@@ -931,7 +930,7 @@ import '../c3a/mini_chase.dart' as c3a;
       ]),
 
     AnimatedCall('All 8 Reverse Dixie Style to a Wave',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       group:'All 8 (with calls through Plus)',
       paths:[
           ExtendRight.changeBeats(3).changehands(1).scale(3.0,2.0) +
@@ -950,7 +949,7 @@ import '../c3a/mini_chase.dart' as c3a;
       ]),
 
     AnimatedCall('All 8 Dixie Style to a Wave',
-      formation:Formations.StaticGirlsLead,
+      formation:Formation('Static Girls Lead'),
       group:'All 8 (with calls through Plus)',noDisplay: true,
       paths:[
           ExtendRight.changeBeats(4).scale(2.0,0.75) +
@@ -969,7 +968,7 @@ import '../c3a/mini_chase.dart' as c3a;
       ]),
 
     AnimatedCall('All 8 Reverse Dixie Style to a Wave',
-      formation:Formations.StaticGirlsLead,
+      formation:Formation('Static Girls Lead'),
       group:'All 8 (with calls through Plus)',noDisplay: true,
       paths:[
           ExtendLeft.changeBeats(4).scale(2.0,0.75) +
@@ -988,7 +987,7 @@ import '../c3a/mini_chase.dart' as c3a;
       ]),
 
     AnimatedCall('All 8 Explode the Wave',
-      formation:Formations.TharLHGirls,
+      formation:Formation('Thar LH Girls'),
       group:'All 8 (with calls through Plus)',
       taminator: '''
     This can be broken down to as All 8 Step Forward and Quarter In, then
@@ -1013,7 +1012,7 @@ import '../c3a/mini_chase.dart' as c3a;
       ]),
 
     AnimatedCall('All 8 Flip the Diamond',
-      formation:Formations.TharLHGirls,
+      formation:Formation('Thar LH Girls'),
       group:'All 8 (with calls through Plus)',
       paths:[
           Forward_2 +
@@ -1028,7 +1027,7 @@ import '../c3a/mini_chase.dart' as c3a;
       ]),
 
     AnimatedCall('All 8 Flutterwheel',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       from:'Static Square',group:'All 8 (with calls through Plus)',
       paths:[
           QuarterLeft.changeBeats(4.5).skew(0.0,-1.0) +
@@ -1055,7 +1054,7 @@ import '../c3a/mini_chase.dart' as c3a;
       ]),
 
     AnimatedCall('All 8 Follow Your Neighbor',
-      formation:Formations.StaticMiniWavesRH,
+      formation:Formation('Static MiniWaves RH'),
       group:'All 8 (with calls through Plus)',
       paths:[
           Forward_3 +
@@ -1074,7 +1073,7 @@ import '../c3a/mini_chase.dart' as c3a;
       ]),
 
     AnimatedCall('All 8 Follow Your Neighbor and Spread',
-      formation:Formations.StaticMiniWavesRH,
+      formation:Formation('Static MiniWaves RH'),
       group:'All 8 (with calls through Plus)',
       paths:[
           Forward_3 +
@@ -1095,7 +1094,7 @@ import '../c3a/mini_chase.dart' as c3a;
       ]),
 
     AnimatedCall('All 8 Half Tag',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:0,angle:90),
         DancerModel.fromData(gender:Gender.GIRL,x:-3,y:0,angle:90),
         DancerModel.fromData(gender:Gender.BOY,x:0,y:-1,angle:180),
@@ -1115,7 +1114,7 @@ import '../c3a/mini_chase.dart' as c3a;
       ]),
 
     AnimatedCall('All 8 Left Swing Thru',
-      formation:Formations.TharRHBoys,
+      formation:Formation('Thar RH Boys'),
       group:'All 8 (with calls through Plus)',
       paths:[
           SwingLeft,
@@ -1130,7 +1129,7 @@ import '../c3a/mini_chase.dart' as c3a;
       ]),
 
     AnimatedCall('All 8 Linear Cycle',
-      formation:Formations.TharLHBoys,
+      formation:Formation('Thar LH Boys'),
       group:'All 8 (with calls through Plus)',
       paths:[
           HingeRight +
@@ -1153,7 +1152,7 @@ import '../c3a/mini_chase.dart' as c3a;
       ]),
 
     AnimatedCall('All 8 Peel Off',
-      formation:Formations.StaticMiniWavesRH,
+      formation:Formation('Static MiniWaves RH'),
       group:'All 8 (with calls through Plus)',
       paths:[
           UmTurnLeft.changeBeats(4).skew(3.0,0.0),
@@ -1166,7 +1165,7 @@ import '../c3a/mini_chase.dart' as c3a;
       ]),
 
     AnimatedCall('All 8 Peel the Top',
-      formation:Formations.StaticMiniWavesRH,
+      formation:Formation('Static MiniWaves RH'),
       group:'All 8 (with calls through Plus)',
       paths:[
           Forward_3.changeBeats(4) +
@@ -1183,7 +1182,7 @@ import '../c3a/mini_chase.dart' as c3a;
       ]),
 
     AnimatedCall('All 8 Peel the Top',
-      formation:Formations.StaticMiniWavesLH,
+      formation:Formation('Static MiniWaves LH'),
       group:'All 8 (with calls through Plus)',noDisplay: true,
       paths:[
           RunRight.changeBeats(4).skew(-3.0,0.0) +
@@ -1200,7 +1199,7 @@ import '../c3a/mini_chase.dart' as c3a;
       ]),
 
     AnimatedCall('All 8 Recycle',
-      formation:Formations.TharLHGirls,
+      formation:Formation('Thar LH Girls'),
       group:'All 8 (with calls through Plus)',
       paths:[
           RunRight.changeBeats(2).scale(0.5,0.5).skew(-1.5,0.0) +
@@ -1215,7 +1214,7 @@ import '../c3a/mini_chase.dart' as c3a;
       ]),
 
     AnimatedCall('All 8 Recycle',
-      formation:Formations.TharRHGirls,
+      formation:Formation('Thar RH Girls'),
       group:'All 8 (with calls through Plus)',noDisplay: true,
       paths:[
           RunLeft.changeBeats(2).scale(0.5,0.5).skew(-1.5,0.0) +
@@ -1232,7 +1231,7 @@ import '../c3a/mini_chase.dart' as c3a;
       tam.title == 'All 4 Men Lead Reverse Flutterwheel').first.xref(title: 'All 8 Reverse Flutterwheel').xref(group: 'All 8 (with calls through Plus)'),
 
     AnimatedCall('All 8 Reverse Flutterwheel',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       from:'Static Square',group:'All 8 (with calls through Plus)',
       paths:[
           ExtendRight.changeBeats(3).scale(3.0,2.0) +
@@ -1259,7 +1258,7 @@ import '../c3a/mini_chase.dart' as c3a;
       ]),
 
     AnimatedCall('All 8 Scoot Back',
-      formation:Formations.StaticMiniWavesRH,
+      formation:Formation('Static MiniWaves RH'),
       group:'All 8 (with calls through Plus)',
       paths:[
           Forward_3 +
@@ -1276,7 +1275,7 @@ import '../c3a/mini_chase.dart' as c3a;
       ]),
 
     AnimatedCall('All 8 Swing Thru',
-      formation:Formations.TharLHGirls,
+      formation:Formation('Thar LH Girls'),
       group:'All 8 (with calls through Plus)',
       paths:[
           SwingRight,
@@ -1291,7 +1290,7 @@ import '../c3a/mini_chase.dart' as c3a;
       ]),
 
     AnimatedCall('All 8 Veer Left',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       group:'All 8 (with calls through Plus)',
       paths:[
           ExtendLeft.changeBeats(4).changehands(2).scale(3.0,2.0),
@@ -1304,7 +1303,7 @@ import '../c3a/mini_chase.dart' as c3a;
       ]),
 
     AnimatedCall('All 8 Walk and Dodge',
-      formation:Formations.StaticMiniWavesRH,
+      formation:Formation('Static MiniWaves RH'),
       group:'All 8 (with calls through Plus)',
       paths:[
           Forward_3 +
@@ -1319,7 +1318,7 @@ import '../c3a/mini_chase.dart' as c3a;
       ]),
 
     AnimatedCall('All 8 Zoom',
-      formation:Formations.StaticMiniWavesRH,
+      formation:Formation('Static MiniWaves RH'),
       group:'All 8 (with calls through Plus)',
       paths:[
           Forward_3.changeBeats(4) +
@@ -1336,7 +1335,7 @@ import '../c3a/mini_chase.dart' as c3a;
       ]),
 
     AnimatedCall('All 4 Couples Brace Thru',
-      formation:Formation('Static Square', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-3,y:1,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:-3,y:-1,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:-1,y:-3,angle:90),
@@ -1368,7 +1367,7 @@ import '../c3a/mini_chase.dart' as c3a;
       ]),
 
     AnimatedCall('All 4 Couples Cross Trail Thru',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       group:'All 4 Couples (with A-1 calls)',
       paths:[
           ExtendLeft.changeBeats(2).scale(2.0,2.0) +
@@ -1391,7 +1390,7 @@ import '../c3a/mini_chase.dart' as c3a;
       ]),
 
     AnimatedCall('All 4 Couples Double Star Thru',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       group:'All 4 Couples (with A-1 calls)',isGenderSpecific:true,
       paths:[
           ExtendLeft.changeBeats(2).scale(2.0,2.0) +
@@ -1418,7 +1417,7 @@ import '../c3a/mini_chase.dart' as c3a;
       ]),
 
     AnimatedCall('All 4 Couples Pair Off',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       from:'Static Square',group:'All 4 Couples (with A-1 calls)',
       paths:[
           EighthLeft.changeBeats(.5) +
@@ -1435,7 +1434,7 @@ import '../c3a/mini_chase.dart' as c3a;
       ]),
 
     AnimatedCall('All 4 Couples Pass In',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       from:'Static Square',group:'All 4 Couples (with A-1 calls)',
       paths:[
           ExtendLeft.changeBeats(3).scale(2.0,3.0) +
@@ -1454,7 +1453,7 @@ import '../c3a/mini_chase.dart' as c3a;
       ]),
 
     AnimatedCall('All 4 Couples Pass Out',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       from:'Static Square',group:'All 4 Couples (with A-1 calls)',
       paths:[
           ExtendLeft.changeBeats(2).scale(2.0,2.0) +
@@ -1473,7 +1472,7 @@ import '../c3a/mini_chase.dart' as c3a;
       ]),
 
     AnimatedCall('All 4 Couples Pass the Sea',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       from:'Static Square',group:'All 4 Couples (with A-1 calls)',
       paths:[
           ExtendLeft.changeBeats(2).scale(2.0,2.0) +
@@ -1494,7 +1493,7 @@ import '../c3a/mini_chase.dart' as c3a;
       ]),
 
     AnimatedCall('All 4 Couples Quarter In',
-      formation:Formations.SquaredSet,
+      formation:Formation('Squared Set'),
       group:'All 4 Couples (with A-1 calls)',
       paths:[
           ExtendLeft.changeBeats(3).scale(1.0,2.0) +
@@ -1511,7 +1510,7 @@ import '../c3a/mini_chase.dart' as c3a;
       ]),
 
     AnimatedCall('All 4 Couples Quarter Out',
-      formation:Formations.SquaredSet,
+      formation:Formation('Squared Set'),
       group:'All 4 Couples (with A-1 calls)',
       paths:[
           ExtendLeft.changeBeats(3).scale(1.0,2.0) +
@@ -1528,7 +1527,7 @@ import '../c3a/mini_chase.dart' as c3a;
       ]),
 
     AnimatedCall('All 4 Couples Square Chain Thru',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       from:'Static Square',group:'All 4 Couples (with A-1 calls)',parts:'6.5;6',
       paths:[
           ExtendLeft.changeBeats(2).scale(2.0,2.0) +
@@ -1565,7 +1564,7 @@ import '../c3a/mini_chase.dart' as c3a;
       ]),
 
     AnimatedCall('All 8 Left Quarter Thru',
-      formation:Formations.StaticMiniWavesLH,
+      formation:Formation('Static MiniWaves LH'),
       group:'All 8 (with A-1 calls)',fractions:'1.5',
       paths:[
           QuarterLeft.changehands(1).skew(0.0,1.0),
@@ -1580,7 +1579,7 @@ import '../c3a/mini_chase.dart' as c3a;
       ]),
 
     AnimatedCall('All 8 Left Roll to a Wave',
-      formation:Formations.StaticFacingOut,
+      formation:Formation('Static Facing Out'),
       from:'Couples Facing Out',group:'All 8 (with A-1 calls)',
       paths:[
           RunLeft.changeBeats(4).skew(-3.0,0.0),
@@ -1593,7 +1592,7 @@ import '../c3a/mini_chase.dart' as c3a;
       ]),
 
     AnimatedCall('All 8 Left Roll to a Wave',
-      formation:Formations.StaticMiniWavesRH,
+      formation:Formation('Static MiniWaves RH'),
       group:'All 8 (with A-1 calls)',noDisplay: true,
       paths:[
           Forward_3.changeBeats(4),
@@ -1606,7 +1605,7 @@ import '../c3a/mini_chase.dart' as c3a;
       ]),
 
     AnimatedCall('All 8 Left Roll to a Wave',
-      formation:Formations.StaticMiniWavesLH,
+      formation:Formation('Static MiniWaves LH'),
       group:'All 8 (with A-1 calls)',noDisplay: true,
       paths:[
           UmTurnLeft.changeBeats(4).skew(-3.0,0.0),
@@ -1619,7 +1618,7 @@ import '../c3a/mini_chase.dart' as c3a;
       ]),
 
     AnimatedCall('All 8 Left Wheel Thru',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       from:'Static Square',group:'All 8 (with A-1 calls)',
       paths:[
           LeadLeft.changeBeats(7.5).scale(2.0,2.0),
@@ -1636,7 +1635,7 @@ import '../c3a/mini_chase.dart' as c3a;
       ]),
 
     AnimatedCall('All 8 Lockit',
-      formation:Formations.TharLHBoys,
+      formation:Formation('Thar LH Boys'),
       from:'Right-Hand Thar',group:'All 8 (with A-1 calls)',
       paths:[
           HingeLeft.changeBeats(6),
@@ -1649,7 +1648,7 @@ import '../c3a/mini_chase.dart' as c3a;
       ]),
 
     AnimatedCall('All 8 Lockit',
-      formation:Formations.TharRHBoys,
+      formation:Formation('Thar RH Boys'),
       from:'Right-Hand Thar',group:'All 8 (with A-1 calls)',noDisplay: true,
       paths:[
           HingeRight.changeBeats(6),
@@ -1662,7 +1661,7 @@ import '../c3a/mini_chase.dart' as c3a;
       ]),
 
     AnimatedCall('All 8 Mix',
-      formation:Formations.TharLHBoys,
+      formation:Formation('Thar LH Boys'),
       from:'Thar',group:'All 8 (with A-1 calls)',parts:'4.5',
       paths:[
           HingeLeft +
@@ -1681,7 +1680,7 @@ import '../c3a/mini_chase.dart' as c3a;
       ]),
 
     AnimatedCall('All 8 Mix',
-      formation:Formations.TharRHBoys,
+      formation:Formation('Thar RH Boys'),
       from:'Thar',group:'All 8 (with A-1 calls)',parts:'4.5',noDisplay: true,
       paths:[
           HingeRight +
@@ -1700,7 +1699,7 @@ import '../c3a/mini_chase.dart' as c3a;
       ]),
 
     AnimatedCall('All 8 Partner Tag',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       from:'Static Square',group:'All 8 (with A-1 calls)',
       paths:[
           LeadRight +
@@ -1719,7 +1718,7 @@ import '../c3a/mini_chase.dart' as c3a;
       ]),
 
     AnimatedCall('All 8 Quarter Thru',
-      formation:Formations.StaticMiniWavesRH,
+      formation:Formation('Static MiniWaves RH'),
       group:'All 8 (with A-1 calls)',fractions:'1.5',
       paths:[
           HingeRight.skew(1.0,0.0) +
@@ -1734,7 +1733,7 @@ import '../c3a/mini_chase.dart' as c3a;
       ]),
 
     AnimatedCall('All 8 Reverse Swap Around',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       from:'Static Square',group:'All 8 (with A-1 calls)',fractions:'3',
       paths:[
           Forward_6,
@@ -1747,7 +1746,7 @@ import '../c3a/mini_chase.dart' as c3a;
       ]),
 
     AnimatedCall('All 8 Right Roll to a Wave',
-      formation:Formations.StaticFacingOut,
+      formation:Formation('Static Facing Out'),
       from:'Couples Facing Out',group:'All 8 (with A-1 calls)',
       paths:[
           UmTurnRight.changeBeats(4).skew(-3.0,0.0),
@@ -1760,7 +1759,7 @@ import '../c3a/mini_chase.dart' as c3a;
       ]),
 
     AnimatedCall('All 8 Right Roll to a Wave',
-      formation:Formations.StaticMiniWavesRH,
+      formation:Formation('Static MiniWaves RH'),
       group:'All 8 (with A-1 calls)',noDisplay: true,
       paths:[
           ExtendLeft.changeBeats(4).scale(3.0,2.0),
@@ -1773,7 +1772,7 @@ import '../c3a/mini_chase.dart' as c3a;
       ]),
 
     AnimatedCall('All 8 Right Roll to a Wave',
-      formation:Formations.StaticMiniWavesLH,
+      formation:Formation('Static MiniWaves LH'),
       group:'All 8 (with A-1 calls)',noDisplay: true,
       paths:[
           RunRight.changeBeats(4).skew(-3.0,0.0),
@@ -1786,7 +1785,7 @@ import '../c3a/mini_chase.dart' as c3a;
       ]),
 
     AnimatedCall('All 8 Scoot and Dodge',
-      formation:Formations.StaticMiniWavesRH,
+      formation:Formation('Static MiniWaves RH'),
       from:'Static Mini-Waves',group:'All 8 (with A-1 calls)',
       paths:[
           Forward_3 +
@@ -1803,7 +1802,7 @@ import '../c3a/mini_chase.dart' as c3a;
       ]),
 
     AnimatedCall('All 8 Scoot and Dodge',
-      formation:Formations.StaticMiniWavesLH,
+      formation:Formation('Static MiniWaves LH'),
       from:'Static Mini-Waves',group:'All 8 (with A-1 calls)',noDisplay: true,
       paths:[
           DodgeLeft,
@@ -1820,7 +1819,7 @@ import '../c3a/mini_chase.dart' as c3a;
       ]),
 
     AnimatedCall('All 8 Swap Around',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       from:'Static Square',group:'All 8 (with A-1 calls)',fractions:'3',
       paths:[
           FlipRight.changeBeats(6),
@@ -1833,7 +1832,7 @@ import '../c3a/mini_chase.dart' as c3a;
       ]),
 
     AnimatedCall('All 8 3/4 Thru',
-      formation:Formations.StaticMiniWavesRH,
+      formation:Formation('Static MiniWaves RH'),
       from:'Static Mini-Waves',group:'All 8 (with A-1 calls)',parts:'4.5',
       paths:[
           SwingRight +
@@ -1852,7 +1851,7 @@ import '../c3a/mini_chase.dart' as c3a;
       ]),
 
     AnimatedCall('All 8 Turn and Deal',
-      formation:Formations.TharRHBoys,
+      formation:Formation('Thar RH Boys'),
       from:'Thar',group:'All 8 (with A-1 calls)',noDisplay: true,
       paths:[
           UmTurnRight.changeBeats(4).skew(3.0,-2.0),
@@ -1865,7 +1864,7 @@ import '../c3a/mini_chase.dart' as c3a;
       ]),
 
     AnimatedCall('All 8 Turn and Deal',
-      formation:Formations.TharLHBoys,
+      formation:Formation('Thar LH Boys'),
       from:'Wrong Way Thar',group:'All 8 (with A-1 calls)',noDisplay: true,
       paths:[
           UmTurnLeft.changeBeats(4).skew(-3.0,2.0),
@@ -1878,7 +1877,7 @@ import '../c3a/mini_chase.dart' as c3a;
       ]),
 
     AnimatedCall('All 8 Turn and Deal',
-      formation:Formations.StarPromenade,
+      formation:Formation('Star Promenade'),
       from:'Star Promenade',group:'All 8 (with A-1 calls)',noDisplay: true,
       paths:[
           UmTurnLeft.changeBeats(4).skew(3.0,2.0),
@@ -1891,7 +1890,7 @@ import '../c3a/mini_chase.dart' as c3a;
       ]),
 
     AnimatedCall('All 8 Turn and Deal',
-      formation:Formations.ReverseStarPromenade,
+      formation:Formation('Reverse Star Promenade'),
       from:'Reverse Star Promenade',group:'All 8 (with A-1 calls)',
       paths:[
           UmTurnRight.changeBeats(4).skew(3.0,-2.0),
@@ -1904,7 +1903,7 @@ import '../c3a/mini_chase.dart' as c3a;
       ]),
 
     AnimatedCall('All 8 Wheel Thru',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       from:'Static Square',group:'All 8 (with A-1 calls)',
       paths:[
           Forward_3 +

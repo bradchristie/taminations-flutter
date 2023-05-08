@@ -19,13 +19,13 @@
 */
 
 import '../../animated_call.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> HorseshoeTurn = [
 
     AnimatedCall('Horseshoe Turn',
-      formation:Formations.CompletedDoublePassThru,
+      formation:Formation('Completed Double Pass Thru'),
       from:'Completed Double Pass Thru',
       paths:[
           LeadRight.changeBeats(2).scale(1.0,1.5) +
@@ -44,7 +44,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Horseshoe Turn',
-      formation:Formations.TradeBy,
+      formation:Formation('Trade By'),
       from:'Trade By',
       paths:[
           LeadRight.changeBeats(2).scale(1.0,1.5) +
@@ -63,7 +63,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Horseshoe Turn',
-      formation:Formations.n34Tag,
+      formation:Formation('3/4 Tag'),
       from:'3/4 Tag',
       paths:[
           LeadRight.changeBeats(2).scale(1.0,2.5) +
@@ -82,7 +82,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Horseshoe Turn',
-      formation:Formations.TmBoneLUUR,
+      formation:Formation('T-Bone LUUR'),
       from:'T-Bones',
       paths:[
           LeadLeft.changeBeats(2).scale(1.0,1.5) +

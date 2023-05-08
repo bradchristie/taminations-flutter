@@ -19,13 +19,13 @@
 */
 
 import '../../animated_call.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> DropIn = [
 
     AnimatedCall('Drop In',
-      formation:Formations.DiamondsRHGirlPoints,
+      formation:Formation('Diamonds RH Girl Points'),
       from:'Diamonds',
       paths:[
           Forward_2,
@@ -38,7 +38,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Drop In',
-      formation:Formations.DiamondsLHGirlPoints,
+      formation:Formation('Diamonds LH Girl Points'),
       from:'Left-Hand Diamonds',
       paths:[
           Forward_2,
@@ -51,7 +51,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Drop In',
-      formation:Formations.DiamondsFacingGirlPoints,
+      formation:Formation('Diamonds Facing Girl Points'),
       from:'Facing Diamonds',
       paths:[
           Forward_2,
@@ -64,7 +64,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Drop In',
-      formation:Formations.DiamondsRHPTPGirlPoints,
+      formation:Formation('Diamonds RH PTP Girl Points'),
       from:'Point-to-Point Diamonds',
       paths:[
           Forward_2,
@@ -77,7 +77,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Drop Out',
-      formation:Formations.DiamondsRHGirlPoints,
+      formation:Formation('Diamonds RH Girl Points'),
       from:'Diamonds',
       paths:[
           Forward_2,
@@ -90,7 +90,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Drop Out',
-      formation:Formations.DiamondsLHGirlPoints,
+      formation:Formation('Diamonds LH Girl Points'),
       from:'Left-Hand Diamonds',
       paths:[
           Forward_2,
@@ -103,7 +103,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Drop Out',
-      formation:Formations.DiamondsFacingGirlPoints,
+      formation:Formation('Diamonds Facing Girl Points'),
       from:'Facing Diamonds',
       paths:[
           Forward_2,
@@ -116,7 +116,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Drop Out',
-      formation:Formations.DiamondsRHPTPGirlPoints,
+      formation:Formation('Diamonds RH PTP Girl Points'),
       from:'Point-to-Point Diamonds',
       paths:[
           Forward_2,
@@ -129,7 +129,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Drop Right',
-      formation:Formations.DiamondRH,
+      formation:Formation('Diamond RH'),
       from:'Right-Hand Diamond',
       paths:[
           LeadRight.changeBeats(2),
@@ -138,7 +138,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Drop Right',
-      formation:Formations.DiamondLH,
+      formation:Formation('Diamond LH'),
       from:'Left-Hand Diamond',
       paths:[
           QuarterRight.changeBeats(2).skew(1.0,1.0),
@@ -147,7 +147,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Drop Left',
-      formation:Formations.DiamondRH,
+      formation:Formation('Diamond RH'),
       from:'Right-Hand Diamond',
       paths:[
           QuarterLeft.changeBeats(2).skew(1.0,-1.0),
@@ -156,7 +156,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Drop Left',
-      formation:Formations.DiamondLH,
+      formation:Formation('Diamond LH'),
       from:'Left-Hand Diamond',
       paths:[
           LeadLeft.changeBeats(2),
@@ -165,7 +165,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Grand Drop In',
-      formation:Formations.SausageRH,
+      formation:Formation('Sausage RH'),
       group:' ',
       paths:[
           LeadRight.changeBeats(2),
@@ -178,7 +178,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Grand Drop Out',
-      formation:Formations.SausageRH,
+      formation:Formation('Sausage RH'),
       group:' ',
       paths:[
           QuarterLeft.changeBeats(2).skew(1.0,-1.0),

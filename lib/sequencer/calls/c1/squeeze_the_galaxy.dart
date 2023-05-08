@@ -18,7 +18,6 @@
 
 */
 
-import '../../../formations.dart';
 import '../common.dart';
 
 class SqueezeTheGalaxy extends Action {
@@ -30,7 +29,7 @@ class SqueezeTheGalaxy extends Action {
   @override
   void perform(CallContext ctx) {
     //  Match to any galaxy
-    final galaxy = CallContext.fromFormation(Formations.GalaxyRHGP);
+    final galaxy = CallContext.fromFormation(Formation('Galaxy RH GP'));
     final mm = galaxy.matchFormations(ctx,rotate:180);
     if (mm == null)
       throw CallError('Not a Galaxy formation');

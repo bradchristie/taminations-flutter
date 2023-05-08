@@ -21,7 +21,7 @@
 import 'dart:io';
 
 import 'package:taminations/call_index.dart';
-import 'package:taminations/formations.dart';
+import 'package:taminations/formation.dart';
 import 'package:taminations/moves.dart';
 
 void main() async {
@@ -67,7 +67,7 @@ Future<void> writeFormations() async {
   formationsXML.writeln('<?xml version="1.0"?>');
   formationsXML.writeln('<!DOCTYPE formations SYSTEM "tamination.dtd">');
   formationsXML.writeln('<formations>');
-  for (var formation in Formations.formationIndex.values) {
+  for (var formation in Formation.formations) {
     formationsXML.writeln('  '+formation.toXML().toXmlString(pretty: true, level: 1));
   }
   formationsXML.writeln('</formations>');

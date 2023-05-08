@@ -19,13 +19,13 @@
 */
 
 import '../../animated_call.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> Shakedown = [
 
     AnimatedCall('Shakedown',
-      formation:Formations.CouplesFacingOutCompact,
+      formation:Formation('Couples Facing Out Compact'),
       from:'Couples Facing Out',
       paths:[
           UmTurnRight.skew(-2.0,-1.0) +
@@ -36,7 +36,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Shakedown',
-      formation:Formations.TradeBy,
+      formation:Formation('Trade By'),
       from:'Trade By',
       paths:[
           UmTurnRight.skew(-1.0,-1.0) +
@@ -53,7 +53,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Shakedown',
-      formation:Formations.LinesFacingOutCompact,
+      formation:Formation('Lines Facing Out Compact'),
       from:'Lines Facing Out',
       paths:[
           UmTurnRight.skew(-1.5,-1.0) +
@@ -70,7 +70,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left Shakedown',
-      formation:Formations.CouplesFacingOutCompact,
+      formation:Formation('Couples Facing Out Compact'),
       from:'Couples Facing Out',
       paths:[
           FlipLeft.scale(1.0,1.5) +
@@ -81,7 +81,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left Shakedown',
-      formation:Formations.TradeBy,
+      formation:Formation('Trade By'),
       from:'Trade By',
       paths:[
           FlipLeft +
@@ -98,7 +98,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left Shakedown',
-      formation:Formations.LinesFacingOutCompact,
+      formation:Formation('Lines Facing Out Compact'),
       from:'Lines Facing Out',
       paths:[
           FlipLeft +
@@ -115,7 +115,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('All 8 Shakedown',
-      formation:Formations.StaticFacingOut,
+      formation:Formation('Static Facing Out'),
       group:' ',
       paths:[
           FlipRight.changeBeats(5).scale(1.0,2.0) +
@@ -132,7 +132,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('As Couples Shakedown',
-      formation:Formations.LinesFacingOutCompact,
+      formation:Formation('Lines Facing Out Compact'),
       from:'Lines Facing Out',group:' ',
       paths:[
           BeauWheel.scale(1.0,-1.0).skew(-2.0,-0.5) +
@@ -149,7 +149,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Butterfly Shakedown',
-      formation:Formations.ButterflyTradeBy,
+      formation:Formation('Butterfly Trade By'),
       group:' ',
       paths:[
           LeadRight.changeBeats(3).scale(1.0,3.0) +
@@ -167,7 +167,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Concentric Shakedown',
-      formation:Formations.CompletedDoublePassThru,
+      formation:Formation('Completed Double Pass Thru'),
       from:'Completed Double Pass Thru',group:' ',
       paths:[
           UmTurnRight.skew(-2.0,-2.0) +
@@ -184,7 +184,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('"O" Shakedown',
-      formation:Formations.OTradeBy,
+      formation:Formation('O Trade By'),
       group:' ',
       paths:[
           QuarterRight.skew(0.0,-1.0) +
@@ -202,7 +202,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Stretch Shakedown (from columns)',
-      formation:Formations.TradeBy,
+      formation:Formation('Trade By'),
       from:'Trade By',group:' ',
       paths:[
           UmTurnRight.skew(-2.0,-1.0) +
@@ -219,7 +219,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Stretch Shakedown (from lines)',
-      formation:Formations.LinesFacingOutCompact,
+      formation:Formation('Lines Facing Out Compact'),
       from:'Lines Facing Out',group:' ',
       paths:[
           UmTurnRight.skew(-1.0,-1.0) +
@@ -236,7 +236,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('As Couples Left Shakedown',
-      formation:Formations.LinesFacingOutCompact,
+      formation:Formation('Lines Facing Out Compact'),
       from:'Lines Facing Out',group:' ',
       paths:[
           RunLeft.changehands(1).scale(3.0,3.0).skew(1.5,0.0) +
@@ -253,7 +253,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Concentric Left Shakedown',
-      formation:Formations.CompletedDoublePassThru,
+      formation:Formation('Completed Double Pass Thru'),
       from:'Completed Double Pass Thru',group:' ',
       paths:[
           FlipLeft.skew(-1.0,1.0) +
@@ -270,7 +270,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Stretch Left Shakedown (from columns)',
-      formation:Formations.TradeBy,
+      formation:Formation('Trade By'),
       from:'Trade By',group:' ',
       paths:[
           FlipLeft +
@@ -287,7 +287,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Stretch Left Shakedown (from lines)',
-      formation:Formations.LinesFacingOutCompact,
+      formation:Formation('Lines Facing Out Compact'),
       from:'Lines Facing Out',group:' ',
       paths:[
           FlipLeft.scale(1.0,2.0) +

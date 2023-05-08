@@ -18,7 +18,6 @@
 
 */
 
-import '../../../formations.dart';
 import '../common.dart';
 
 class AsCouples extends FourDancerConcept {
@@ -76,11 +75,11 @@ class AsCouples extends FourDancerConcept {
   @override
   void postAdjustment(CallContext ctx, DancerModel cd, List<DancerModel> group) {
     final couplesSnapFormations = {
-      Formations.NormalLinesCompact: 1.0,
-      Formations.NormalLines: 1.0,
-      Formations.DoublePassThru: 1.0,
-      Formations.QuarterTag : 1.5,
-      Formations.TidalLineRH : 1.0,
+      Formation('Normal Lines Compact'): 1.0,
+      Formation('Normal Lines'): 1.0,
+      Formation('Double Pass Thru'): 1.0,
+      Formation('Quarter Tag') : 1.5,
+      Formation('Tidal Line RH') : 1.0,
     };
     group.first.path = group.first.path.addhands(Hands.GRIPRIGHT);
     group.second.path = group.second.path.addhands(Hands.GRIPLEFT);

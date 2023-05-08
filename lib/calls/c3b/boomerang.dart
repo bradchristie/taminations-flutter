@@ -21,13 +21,12 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> Boomerang = [
 
     AnimatedCall('Boomerang',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:1,y:2,angle:270),
         DancerModel.fromData(gender:Gender.GIRL,x:1,y:-2,angle:270),
   ]),
@@ -42,7 +41,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Boomerang',
-      formation:Formations.BoxLH,
+      formation:Formation('Box LH'),
       from:'Left-Hand Box',fractions:'3',
       paths:[
           RunRight.skew(-2.0,0.0) +
@@ -54,7 +53,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Boomerang',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:1,y:1,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:1,y:-1,angle:90),
   ]),
@@ -69,7 +68,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Boomerang',
-      formation:Formations.CompletedDoublePassThru,
+      formation:Formation('Completed Double Pass Thru'),
       from:'Completed Double Pass Thru',
       paths:[
           RunRight.changeBeats(3).skew(-1.0,0.0) +
@@ -86,7 +85,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Couples Twosome Boomerang',
-      formation:Formations.TwomFacedLinesRH,
+      formation:Formation('Two-Faced Lines RH'),
       group:' ',
       paths:[
           ExtendRight.changeBeats(1.5).scale(2.0,1.5) +
@@ -105,7 +104,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Tandem Twosome Boomerang',
-      formation:Formations.ColumnRHGBGB,
+      formation:Formation('Column RH GBGB'),
       group:' ',fractions:'3',
       paths:[
           RunLeft.skew(-2.0,0.0) +

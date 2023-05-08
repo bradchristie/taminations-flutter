@@ -21,7 +21,6 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 import '../c1/chase_your_neighbor.dart' as c1;
 import '../c3b/anything_the_top.dart' as c3b;
@@ -29,7 +28,7 @@ import '../c3b/anything_the_top.dart' as c3b;
   final List<AnimatedCall> ChaseTheFractionTag = [
 
     AnimatedCall('Chase the Tag',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:1,y:2,angle:90),
         DancerModel.fromData(gender:Gender.GIRL,x:-1,y:2,angle:90),
   ]),
@@ -46,7 +45,7 @@ import '../c3b/anything_the_top.dart' as c3b;
       ]),
 
     AnimatedCall('Chase the Tag',
-      formation:Formations.LinesFacingOut,
+      formation:Formation('Lines Facing Out'),
       from:'Lines Facing Out',fractions:'3;2;2',
       paths:[
           UmTurnRight.changeBeats(3).skew(-2.0,0.0) +
@@ -69,7 +68,7 @@ import '../c3b/anything_the_top.dart' as c3b;
       ]),
 
     AnimatedCall('Chase and Scatter',
-      formation:Formations.LinesFacingOut,
+      formation:Formation('Lines Facing Out'),
       group:' ',fractions:'3;2',
       paths:[
           UmTurnRight.changeBeats(3).skew(-2.0,0.0) +
@@ -95,7 +94,7 @@ import '../c3b/anything_the_top.dart' as c3b;
       ]),
 
     AnimatedCall('Chase Back',
-      formation:Formations.LinesFacingOut,
+      formation:Formation('Lines Facing Out'),
       group:' ',fractions:'3;2',
       paths:[
           UmTurnRight.changeBeats(3).skew(-2.0,0.0) +
@@ -120,7 +119,7 @@ import '../c3b/anything_the_top.dart' as c3b;
       ]),
 
     AnimatedCall('Chase Chain Thru',
-      formation:Formations.LinesFacingOut,
+      formation:Formation('Lines Facing Out'),
       group:' ',fractions:'3;2',
       paths:[
           UmTurnRight.changeBeats(3).skew(-2.0,0.0) +
@@ -151,7 +150,7 @@ import '../c3b/anything_the_top.dart' as c3b;
       tam.title == 'Chase the Top').first.xref(title: 'Chase the Top').xref(group: ' '),
 
     AnimatedCall('Chase Your Leader',
-      formation:Formations.LinesFacingOut,
+      formation:Formation('Lines Facing Out'),
       group:' ',
       paths:[
           UmTurnRight.changeBeats(3).skew(-2.0,0.0) +
@@ -185,7 +184,7 @@ import '../c3b/anything_the_top.dart' as c3b;
       tam.title == 'Chase Your Neighbor' && tam.from == 'Lines Facing Out').first.xref(title: 'Chase Your Neighbor').xref(group: ' '),
 
     AnimatedCall('Chaser\'s Delight',
-      formation:Formations.LinesFacingOut,
+      formation:Formation('Lines Facing Out'),
       group:' ',
       paths:[
           UmTurnRight.changeBeats(3).skew(-2.0,0.0) +

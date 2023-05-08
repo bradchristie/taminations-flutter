@@ -21,13 +21,12 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> SecondlyThirdlyFourthly = [
 
     AnimatedCall('Secondly Generous Crazy Hinge',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       group:'Secondly',fractions:'2;3;2',
       paths:[
           HingeRight.changeBeats(2) +
@@ -50,7 +49,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Secondly Split Turn the Key',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       group:'Secondly',fractions:'3;2',
       paths:[
           SwingRight +
@@ -71,7 +70,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Secondly Tandem Reset',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.GIRL,x:1,y:1,angle:270),
         DancerModel.fromData(gender:Gender.BOY,x:1,y:3,angle:270),
         DancerModel.fromData(gender:Gender.GIRL,x:-1,y:3,angle:90),
@@ -101,7 +100,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Thirdly Tandem Reset',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       group:'Thirdly',fractions:'3;1.5;5',
       paths:[
           ExtendRight.changeBeats(3).scale(2.0,0.5) +
@@ -128,7 +127,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Fourthly Tandem Swing the Fractions',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       group:'Fourthly',fractions:'2;3;5;4',
       paths:[
           HingeRight.changeBeats(2) +

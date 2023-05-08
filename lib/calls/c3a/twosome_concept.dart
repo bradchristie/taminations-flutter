@@ -21,13 +21,12 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> TwosomeConcept = [
 
     AnimatedCall('Couples Twosome Circulate',
-      formation:Formations.TwomFacedLinesRH,
+      formation:Formation('Two-Faced Lines RH'),
       group:'Couples Twosome',
       taminator: '''
       Many Twosome moves are danced like a Turn and Deal.
@@ -47,7 +46,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Couples Twosome Crossfire',
-      formation:Formations.TidalLineRH,
+      formation:Formation('Tidal Line RH'),
       group:'Couples Twosome',
       paths:[
           RunRight.changeBeats(5).scale(2.0,2.0).skew(2.0,-0.5),
@@ -62,7 +61,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Couples Twosome Hinge',
-      formation:Formations.TwomFacedLinesRH,
+      formation:Formation('Two-Faced Lines RH'),
       group:'Couples Twosome',
       paths:[
           LeadRight +
@@ -79,7 +78,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Couples Twosome Recycle',
-      formation:Formations.TwomFacedTidalLineRH,
+      formation:Formation('Two-Faced Tidal Line RH'),
       group:'Couples Twosome',
       paths:[
           RunRight.changeBeats(6).scale(2.0,2.0).skew(2.0,-0.5),
@@ -94,7 +93,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Couples Twosome Single Wheel',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.GIRL,x:-2,y:3,angle:0),
         DancerModel.fromData(gender:Gender.BOY,x:2,y:3,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:-2,y:-1,angle:180),
@@ -119,7 +118,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Couples Twosome Swing Thru',
-      formation:Formations.TwomFacedTidalLineRH,
+      formation:Formation('Two-Faced Tidal Line RH'),
       group:'Couples Twosome',
       paths:[
           RunRight.scale(0.75,1.0) +
@@ -134,7 +133,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Couples Twosome Trade',
-      formation:Formations.TwomFacedLinesRH,
+      formation:Formation('Two-Faced Lines RH'),
       group:'Couples Twosome',
       paths:[
           LeadRight +
@@ -155,7 +154,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Tandem Twosome Circulate',
-      formation:Formations.ColumnRHGBGB,
+      formation:Formation('Column RH GBGB'),
       group:'Tandem Twosome',
       paths:[
           FlipRight.changeBeats(4),
@@ -168,7 +167,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Tandem Twosome Left Roll to a Wave',
-      formation:Formations.ColumnRHGBGB,
+      formation:Formation('Column RH GBGB'),
       group:'Tandem Twosome',
       paths:[
           RunLeft.skew(-1.0,0.0),
@@ -181,7 +180,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Tandem Twosome Single Wheel',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.GIRL,x:-2,y:3,angle:0),
         DancerModel.fromData(gender:Gender.BOY,x:2,y:3,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:-2,y:-1,angle:180),
@@ -199,7 +198,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Tandem Twosome Zoom',
-      formation:Formations.ColumnRHGBGB,
+      formation:Formation('Column RH GBGB'),
       group:'Tandem Twosome',fractions:'4',
       paths:[
           RunLeft.skew(-1.0,0.0) +
@@ -216,7 +215,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Tandem, Tandem Twosome Touch a Quarter',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.GIRL,x:.8,y:0,angle:180),
         DancerModel.fromData(gender:Gender.BOY,x:3.6,y:0,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:2.2,y:0,angle:180),

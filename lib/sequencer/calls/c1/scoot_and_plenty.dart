@@ -17,7 +17,6 @@
  *     along with Taminations.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import '../../../formations.dart';
 import '../common.dart';
 
 class ScootAndPlenty extends Action with CallWithParts, CallWithStars {
@@ -54,7 +53,7 @@ The number of Split Circulates can be modified with "Split Circulate n" or "Turn
    void performPart2(CallContext ctx) {
     ctx.applyCalls('Center 4 Step and Fold '
         'While Outer 4 Face $dir and Counter Rotate');
-    ctx.adjustToFormation(Formations.NormalLinesCompact);
+    ctx.adjustToFormation(Formation('Normal Lines Compact'));
   }
 
   @override
@@ -66,7 +65,7 @@ The number of Split Circulates can be modified with "Split Circulate n" or "Turn
    void performPart4(CallContext ctx) {
     ctx.applyCalls('Outer 4 Counter Rotate and Roll '
         'While Center 4 1/2 Zoom');
-    ctx.adjustToFormation(Formations.QuarterTag);
+    ctx.adjustToFormation(Formation('Quarter Tag'));
   }
 
 }

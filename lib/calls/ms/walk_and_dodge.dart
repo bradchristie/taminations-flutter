@@ -21,13 +21,12 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> WalkAndDodge = [
 
     AnimatedCall('Walk and Dodge',
-      formation:Formations.BoxRH,
+      formation:Formation('Box RH'),
       from:'Right-Hand Box',difficulty: 1,notForSequencer: true,
       paths:[
           Forward_4,
@@ -36,7 +35,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Walk and Dodge',
-      formation:Formations.BoxLH,
+      formation:Formation('Box LH'),
       from:'Left-Hand Box',difficulty: 2,
       paths:[
           DodgeLeft.changeBeats(4),
@@ -45,7 +44,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Walk and Dodge',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       from:'Right-Hand Waves',difficulty: 1,notForSequencer: true,
       taminator: '''
     An analogy is loading a package in a mini-van.
@@ -62,7 +61,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Walk and Dodge',
-      formation:Formations.OceanWavesLHBGGB,
+      formation:Formation('Ocean Waves LH BGGB'),
       from:'Left-Hand Waves',difficulty: 2,
       paths:[
           DodgeLeft,
@@ -75,7 +74,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Walk and Dodge',
-      formation:Formations.ColumnRHGBGB,
+      formation:Formation('Column RH GBGB'),
       from:'Right-Hand Columns',difficulty: 2,
       taminator: '''
       Centers facing in must be careful to dodge and not walk.
@@ -91,7 +90,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Walk and Dodge',
-      formation:Formations.ColumnLHGBGB,
+      formation:Formation('Column LH GBGB'),
       from:'Left-Hand Columns',difficulty: 2,
       paths:[
           Forward_2.changeBeats(4),
@@ -104,7 +103,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Walk and Dodge',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.GIRL,x:-3,y:-1,angle:180),
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:-1,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:1,y:-1,angle:90),
@@ -122,7 +121,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Boys Walk, Girls Dodge',
-      formation:Formations.FacingCouplesCompact,
+      formation:Formation('Facing Couples Compact'),
       from:'Facing Couples',isGenderSpecific:true,difficulty: 1,
       paths:[
           Forward_3.changeBeats(4),
@@ -131,7 +130,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Boys Walk, Girls Dodge',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       from:'Lines',isGenderSpecific:true,difficulty: 1,
       paths:[
           Forward_4,
@@ -144,7 +143,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Boys Walk, Girls Dodge',
-      formation:Formations.EightChainThru,
+      formation:Formation('Eight Chain Thru'),
       from:'Eight Chain Thru',isGenderSpecific:true,difficulty: 2,
       paths:[
           Forward_2.changeBeats(4),
@@ -157,7 +156,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Girls Walk, Boys Dodge',
-      formation:Formations.FacingCouplesCompact,
+      formation:Formation('Facing Couples Compact'),
       from:'Facing Couples',isGenderSpecific:true,difficulty: 1,
       paths:[
           DodgeRight.changeBeats(4),
@@ -166,7 +165,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Girls Walk, Boys Dodge',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       from:'Lines',isGenderSpecific:true,difficulty: 1,
       paths:[
           DodgeRight.changeBeats(4),
@@ -179,7 +178,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Girls Walk, Boys Dodge',
-      formation:Formations.EightChainThru,
+      formation:Formation('Eight Chain Thru'),
       from:'Eight Chain Thru',isGenderSpecific:true,difficulty: 2,
       paths:[
           DodgeRight.changeBeats(4),
@@ -192,7 +191,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Center 6 Walk and Dodge',
-      formation:Formations.MixedQuarterTag2,
+      formation:Formation('Mixed Quarter Tag #2'),
       from:'Mixed Quarter Tag 1',difficulty: 3,
       paths:[
           Forward_3.changeBeats(4),
@@ -205,7 +204,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Center 6 Walk and Dodge',
-      formation:Formations.MixedQuarterTag3,
+      formation:Formation('Mixed Quarter Tag #3'),
       from:'Mixed Quarter Tag 2',difficulty: 3,
       paths:[
           Forward_3.changeBeats(4),
@@ -218,7 +217,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Center 6 Walk and Dodge',
-      formation:Formations.MixedQuarterTag5,
+      formation:Formation('Mixed Quarter Tag #5'),
       from:'Mixed Quarter Tag 3',difficulty: 3,
       paths:[
           DodgeLeft.changeBeats(4),
@@ -231,7 +230,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Center 6 Walk and Dodge',
-      formation:Formations.MixedQuarterTag8,
+      formation:Formation('Mixed Quarter Tag #8'),
       from:'Mixed Quarter Tag 4',difficulty: 3,
       paths:[
           DodgeLeft.changeBeats(4),
@@ -244,7 +243,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Outside 6 Walk and Dodge',
-      formation:Formations.MixedQuarterTag1,
+      formation:Formation('Mixed Quarter Tag #1'),
       from:'Mixed Quarter Tag 1',isPerimeter:true,difficulty: 3,
       paths:[
           ExtendLeft.changeBeats(4).scale(3.0,2.0),
@@ -257,7 +256,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Outside 6 Walk and Dodge',
-      formation:Formations.MixedQuarterTag3,
+      formation:Formation('Mixed Quarter Tag #3'),
       from:'Mixed Quarter Tag 2',isPerimeter:true,difficulty: 3,
       paths:[
           ExtendLeft.changeBeats(4).scale(3.0,2.0),
@@ -270,7 +269,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Outside 6 Walk and Dodge',
-      formation:Formations.MixedQuarterTag6,
+      formation:Formation('Mixed Quarter Tag #6'),
       from:'Mixed Quarter Tag 3',isPerimeter:true,difficulty: 3,
       paths:[
           DodgeLeft.changeBeats(4),
@@ -283,7 +282,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Outside 6 Walk and Dodge',
-      formation:Formations.MixedQuarterTag8,
+      formation:Formation('Mixed Quarter Tag #8'),
       from:'Mixed Quarter Tag 4',isPerimeter:true,difficulty: 3,
       paths:[
           DodgeLeft.changeBeats(4),
@@ -296,7 +295,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('3 by 1 Walk and Dodge',
-      formation:Formations.ColumnRHGBGB,
+      formation:Formation('Column RH GBGB'),
       from:'Right-Hand Columns',difficulty: 3,
       paths:[
           DodgeRight.changeBeats(4),
@@ -309,7 +308,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('3 by 1 Walk and Dodge',
-      formation:Formations.ColumnLHGBGB,
+      formation:Formation('Column LH GBGB'),
       from:'Left-Hand Columns',difficulty: 3,
       paths:[
           Forward_2.changeBeats(4),
@@ -322,7 +321,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('1 by 3 Walk and Dodge',
-      formation:Formations.OceanWavesRHBGGBCompact,
+      formation:Formation('Ocean Waves RH BGGB Compact'),
       from:'Right-Hand Waves',difficulty: 3,
       paths:[
           Forward_3.changeBeats(4),
@@ -335,7 +334,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('1 by 3 Walk and Dodge',
-      formation:Formations.OceanWavesLHBGGB,
+      formation:Formation('Ocean Waves LH BGGB'),
       from:'Left-Hand Waves',difficulty: 3,
       paths:[
           DodgeLeft.changeBeats(4),
@@ -348,7 +347,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('1 by 3 Walk and Dodge',
-      formation:Formations.TwomFacedLinesRH,
+      formation:Formation('Two-Faced Lines RH'),
       from:'Right-Hand Two-Faced Lines',difficulty: 3,
       paths:[
           Forward_4,
@@ -361,7 +360,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('1 by 3 Walk and Dodge',
-      formation:Formations.TwomFacedLinesLH,
+      formation:Formation('Two-Faced Lines LH'),
       from:'Left-Hand Two-Faced Lines',difficulty: 3,
       paths:[
           DodgeLeft.changeBeats(4),
@@ -374,7 +373,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('1 by 3 Walk and Dodge',
-      formation:Formations.n3and_1lines1,
+      formation:Formation('3 and 1 Lines #1'),
       from:'3 and 1 Lines #1',difficulty: 3,
       paths:[
           DodgeLeft.changeBeats(4),
@@ -387,7 +386,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('1 by 3 Walk and Dodge',
-      formation:Formations.n3and_1lines4,
+      formation:Formation('3 and 1 Lines #4'),
       from:'3 and 1 Lines #4',difficulty: 3,
       taminator: '''
       There are 8 different 3 and 1 lines, but only half of them
@@ -404,7 +403,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('1 by 3 Walk and Dodge',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-2,y:3,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:-2,y:1,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:-2,y:-1,angle:180),
@@ -425,7 +424,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('1 by 3 Walk and Dodge',
-      formation:Formations.n3and_1lines8,
+      formation:Formation('3 and 1 Lines #8'),
       from:'3 and 1 Lines #8',difficulty: 3,
       paths:[
           DodgeLeft.changeBeats(4),
@@ -438,7 +437,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Side Girls Dodge and Others Walk',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:1,y:1,angle:270),
         DancerModel.fromData(gender:Gender.GIRL,x:1,y:-1,angle:270),
         DancerModel.fromData(gender:Gender.GIRL,x:1,y:-3,angle:90),

@@ -21,13 +21,12 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> Star = [
 
     AnimatedCall('Right Hand Star',
-      formation:Formations.FacingCouplesCompact,
+      formation:Formation('Facing Couples Compact'),
       from:'Facing Couples',
       paths:[
           Forward.changeBeats(1.5).scale(1.5,1.0) +
@@ -40,7 +39,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Right Hand Star',
-      formation:Formations.EightChainThru,
+      formation:Formation('Eight Chain Thru'),
       from:'Eight Chain Thru',
       paths:[
           Forward.changeBeats(1.5) +
@@ -61,7 +60,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left Hand Star',
-      formation:Formations.FacingCouplesCompact,
+      formation:Formation('Facing Couples Compact'),
       from:'Facing Couples',
       paths:[
           LeadRight.changeBeats(1.5).scale(0.5,1.0) +
@@ -74,7 +73,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left Hand Star',
-      formation:Formations.EightChainThru,
+      formation:Formation('Eight Chain Thru'),
       from:'Eight Chain Thru',
       paths:[
           QuarterRight.changeBeats(1.5).skew(0.0,-1.0) +
@@ -95,7 +94,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Turn the Star',
-      formation:Formations.StarRH,
+      formation:Formation('Star RH'),
       from:'Right-Hand Star',
       paths:[
           HingeRight,
@@ -104,7 +103,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Turn the Star',
-      formation:Formations.StarLH,
+      formation:Formation('Star LH'),
       from:'Left-Hand Star',
       paths:[
           HingeLeft,
@@ -113,7 +112,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Turn the Star',
-      formation:Formations.StarFacing,
+      formation:Formation('Star Facing'),
       from:'Facing Star',
       paths:[
           EighthLeft.changeBeats(1.5).changehands(1).skew(0.353,0.647) +
@@ -124,7 +123,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Turn the Stars',
-      formation:Formations.StarsRH,
+      formation:Formation('Stars RH'),
       from:'Right-Hand Stars',
       paths:[
           HingeRight,
@@ -137,7 +136,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Turn the Stars',
-      formation:Formations.StarsLH,
+      formation:Formation('Stars LH'),
       from:'Left-Hand Stars',
       paths:[
           HingeLeft,
@@ -150,7 +149,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Turn the Stars',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:3,y:0,angle:90),
         DancerModel.fromData(gender:Gender.GIRL,x:2,y:1,angle:0),
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:0,angle:90),
@@ -172,7 +171,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Turn the Stars',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:3,y:0,angle:270),
         DancerModel.fromData(gender:Gender.GIRL,x:2,y:1,angle:180),
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:0,angle:270),
@@ -194,7 +193,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Head Right-Hand Star All the Way Around',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       group:' ',
       paths:[
           Forward_2 +
@@ -213,7 +212,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Head Left-Hand Star All the Way Around',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       group:' ',
       paths:[
           Forward_2 +
@@ -232,7 +231,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Heads Square Thru; Make A Right Hand Star With The Sides; Heads Center Left Hand Star; Back To The Same Girl With A Right and Left Thru',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       group:' ',
       paths:[
           Forward_2 +
@@ -285,7 +284,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Right-Hand Star 1/4',
-      formation:Formations.EightChainThru,
+      formation:Formation('Eight Chain Thru'),
       group:' ',
       taminator: '''
       This and the following animations assume ending in a Double
@@ -306,7 +305,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Right-Hand Star 1/2',
-      formation:Formations.EightChainThru,
+      formation:Formation('Eight Chain Thru'),
       group:' ',
       paths:[
           Forward.changehands(2) +
@@ -327,7 +326,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Right-Hand Star 3/4',
-      formation:Formations.EightChainThru,
+      formation:Formation('Eight Chain Thru'),
       group:' ',
       paths:[
           Forward.changehands(2) +
@@ -348,7 +347,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Right-Hand Star a Full Turn',
-      formation:Formations.EightChainThru,
+      formation:Formation('Eight Chain Thru'),
       group:' ',
       paths:[
           Forward.changehands(2) +
@@ -373,7 +372,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left-Hand Star 1/4',
-      formation:Formations.EightChainThru,
+      formation:Formation('Eight Chain Thru'),
       group:' ',
       paths:[
           QuarterRight.changeBeats(1).changehands(1).skew(0.0,-1.0) +
@@ -390,7 +389,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left-Hand Star 1/2',
-      formation:Formations.EightChainThru,
+      formation:Formation('Eight Chain Thru'),
       group:' ',
       paths:[
           QuarterRight.changeBeats(1).changehands(1).skew(0.0,-1.0) +
@@ -411,7 +410,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left-Hand Star 3/4',
-      formation:Formations.EightChainThru,
+      formation:Formation('Eight Chain Thru'),
       group:' ',
       paths:[
           QuarterRight.changeBeats(1).changehands(1).skew(0.0,-1.0) +
@@ -432,7 +431,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left-Hand Star a Full Turn',
-      formation:Formations.EightChainThru,
+      formation:Formation('Eight Chain Thru'),
       group:' ',
       paths:[
           QuarterRight.changeBeats(1).changehands(1).skew(0.0,-1.0) +

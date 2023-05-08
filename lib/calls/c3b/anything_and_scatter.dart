@@ -21,13 +21,12 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> AnythingAndScatter = [
 
     AnimatedCall('Chase and Scatter',
-      formation:Formations.LinesFacingOut,
+      formation:Formation('Lines Facing Out'),
       group:' ',fractions:'5',
       paths:[
           UmTurnRight.skew(-2.0,0.0) +
@@ -50,7 +49,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cross Flip and Scatter',
-      formation:Formations.TwomFacedLinesRH,
+      formation:Formation('Two-Faced Lines RH'),
       group:' ',fractions:'5.5',
       paths:[
           LeadRight +
@@ -75,7 +74,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cross Loop and Scatter',
-      formation:Formations.ColumnRHGBGB,
+      formation:Formation('Column RH GBGB'),
       group:' ',fractions:'7',
       paths:[
           RunRight.scale(0.4,1.5).skew(-1.0,0.0) +
@@ -106,7 +105,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Flip and Scatter',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       group:' ',fractions:'5.5',
       paths:[
           LeadRight +
@@ -131,7 +130,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Invert and Scatter',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:3,y:1,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:1,y:1,angle:0),
         DancerModel.fromData(gender:Gender.BOY,x:1,y:-1,angle:180),
@@ -159,7 +158,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Loop and Scatter',
-      formation:Formations.CompletedDoublePassThru,
+      formation:Formation('Completed Double Pass Thru'),
       from:'Completed Double Pass Thru',group:' ',fractions:'8.5',
       paths:[
           LeadRight +
@@ -194,7 +193,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Vertical Tag and Scatter',
-      formation:Formations.LinesFacingOut,
+      formation:Formation('Lines Facing Out'),
       group:' ',fractions:'5',
       paths:[
           UmTurnLeft.skew(-2.0,0.0) +

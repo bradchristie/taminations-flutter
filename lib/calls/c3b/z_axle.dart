@@ -26,7 +26,7 @@ import '../../moves.dart';
   final List<AnimatedCall> ZAxle = [
 
     AnimatedCall('"Z" Axle',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:2,y:-1,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:0,y:-1,angle:180),
   ]),
@@ -42,7 +42,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('"Z" Axle',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:2,y:1,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:0,y:1,angle:180),
   ]),
@@ -58,7 +58,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('"Z" Axle',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:2,y:1,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:0,y:1,angle:0),
   ]),
@@ -74,7 +74,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('"Z" Axle',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:2,y:-1,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:0,y:-1,angle:0),
   ]),
@@ -90,7 +90,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Pass "Z" Axle',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:2,y:1,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:0,y:1,angle:0),
   ]),
@@ -110,7 +110,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Pass "Z" Axle',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:2,y:-1,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:0,y:-1,angle:0),
   ]),

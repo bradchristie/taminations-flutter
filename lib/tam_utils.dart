@@ -219,6 +219,8 @@ class TamUtils {
     if (normalizedCallIndex.isEmpty) {
       for (var data in callIndex) {
         for (var call in data.calls) {
+          if (data.level != 'ssd')
+            call.level = LevelData.find(data.level)!;
           if (!call.notForSequencer) {
             var norm = call.title.norm;
             normalizedCallIndex.putIfAbsent(norm, () => []).add(call);

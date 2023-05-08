@@ -21,13 +21,12 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> LittleMore = [
 
     AnimatedCall('Little More',
-      formation:Formations.QuarterTag,
+      formation:Formation('Quarter Tag'),
       from:'Right-Hand Quarter Tag',fractions:'6',
       paths:[
           ExtendRight.changeBeats(6).scale(1.0,4.0),
@@ -43,7 +42,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Little More',
-      formation:Formations.QuarterTagLH,
+      formation:Formation('Quarter Tag LH'),
       from:'Left-Hand Quarter Tag',fractions:'6',
       paths:[
           ExtendRight.changeBeats(6).scale(1.0,4.0),
@@ -59,7 +58,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Little More',
-      formation:Formations.n34Tag,
+      formation:Formation('3/4 Tag'),
       from:'Right-Hand 3/4 Tag',fractions:'6',
       paths:[
           FlipRight.skew(-1.0,0.0) +
@@ -76,7 +75,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Little More',
-      formation:Formation('3/4 Tag LH', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.GIRL,x:-3,y:1,angle:180),
         DancerModel.fromData(gender:Gender.BOY,x:-3,y:-1,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:0,y:-3,angle:0),
@@ -98,7 +97,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Little More',
-      formation:Formations.MixedQuarterTag1,
+      formation:Formation('Mixed Quarter Tag #1'),
       from:'Right-Hand Quarter Waves',fractions:'6',
       paths:[
           LeadRight.scale(0.5,1.0) +
@@ -115,7 +114,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Little More',
-      formation:Formations.MixedQuarterTag6,
+      formation:Formation('Mixed Quarter Tag #6'),
       from:'Left-Hand Quarter Waves',fractions:'6',
       paths:[
           FlipRight.changeBeats(2).skew(-1.0,0.0) +
@@ -133,7 +132,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Scoot and Little More',
-      formation:Formations.QuarterTag,
+      formation:Formation('Quarter Tag'),
       from:'Quarter Tag',fractions:'5;6',
       paths:[
           ExtendLeft.scale(1.5,1.5) +
@@ -161,7 +160,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Scoot and Little More',
-      formation:Formations.QuarterTagLH,
+      formation:Formation('Quarter Tag LH'),
       from:'Left-Hand Quarter Tag',fractions:'5;6',
       paths:[
           Forward.scale(1.5,1.0) +

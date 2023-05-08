@@ -21,13 +21,12 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> ScootAndLittle = [
 
     AnimatedCall('Little',
-      formation:Formations.QuarterTag,
+      formation:Formation('Quarter Tag'),
       from:'Right-Hand Quarter Tag',
       paths:[
           ExtendRight.changeBeats(6).scale(1.0,4.0),
@@ -41,7 +40,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Little',
-      formation:Formations.QuarterTagLH,
+      formation:Formation('Quarter Tag LH'),
       from:'Left-Hand Quarter Tag',
       paths:[
           ExtendRight.changeBeats(6).scale(1.0,4.0),
@@ -55,7 +54,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Little',
-      formation:Formations.n34Tag,
+      formation:Formation('3/4 Tag'),
       from:'Right-Hand 3/4 Tag',
       paths:[
           FlipRight.skew(-1.0,0.0) +
@@ -70,7 +69,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Little',
-      formation:Formation('3/4 Tag LH', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.GIRL,x:-3,y:1,angle:180),
         DancerModel.fromData(gender:Gender.BOY,x:-3,y:-1,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:0,y:-3,angle:0),
@@ -90,7 +89,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Little',
-      formation:Formations.MixedQuarterTag1,
+      formation:Formation('Mixed Quarter Tag #1'),
       from:'Right-Hand Quarter Waves',
       paths:[
           LeadRight.scale(0.5,1.0) +
@@ -105,7 +104,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Little',
-      formation:Formations.MixedQuarterTag6,
+      formation:Formation('Mixed Quarter Tag #6'),
       from:'Left-Hand Quarter Waves',
       paths:[
           FlipRight.changeBeats(2).skew(-1.0,0.0) +
@@ -121,7 +120,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Little',
-      formation:Formations.DiamondsRHGirlPoints,
+      formation:Formation('Diamonds RH Girl Points'),
       from:'Diamonds',
       paths:[
           FlipRight.changeBeats(6).skew(1.0,0.0),
@@ -138,7 +137,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Little',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-3,y:1,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:-3,y:-1,angle:0),
         DancerModel.fromData(gender:Gender.BOY,x:1.5,y:0,angle:90),
@@ -157,7 +156,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Little',
-      formation:Formations.HourglassRHBP,
+      formation:Formation('Hourglass RH BP'),
       from:'Hourglass',
       paths:[
           QuarterRight +
@@ -174,7 +173,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Little, Points Go As You Are',
-      formation:Formations.DiamondsRHGirlPoints,
+      formation:Formation('Diamonds RH Girl Points'),
       from:'Diamonds',
       paths:[
           FlipRight.changeBeats(6).skew(2.0,0.0),
@@ -189,7 +188,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Little, Outsides Out',
-      formation:Formations.n34Tag,
+      formation:Formation('3/4 Tag'),
       from:'Right-Hand 3/4 Tag',
       paths:[
           RunRight.skew(-1.0,0.0) +
@@ -206,7 +205,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left Little',
-      formation:Formations.QuarterTag,
+      formation:Formation('Quarter Tag'),
       from:'Right-Hand Quarter Tag',
       paths:[
           ExtendLeft.changeBeats(3).scale(2.0,2.0) +
@@ -220,7 +219,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left Little',
-      formation:Formations.QuarterTagLH,
+      formation:Formation('Quarter Tag LH'),
       from:'Left-Hand Quarter Tag',
       paths:[
           ExtendLeft.changeBeats(3).scale(2.0,2.0) +
@@ -234,7 +233,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left Little',
-      formation:Formations.n34Tag,
+      formation:Formation('3/4 Tag'),
       from:'Right-Hand 3/4 Tag',
       paths:[
           FlipLeft.changeBeats(5).scale(2.0,2.0) +
@@ -249,7 +248,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left Little',
-      formation:Formations.n34TagLH,
+      formation:Formation('3/4 Tag LH'),
       from:'Left-Hand 3/4 Tag',
       paths:[
           FlipLeft.changeBeats(5).scale(2.0,2.0) +
@@ -264,7 +263,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left Little',
-      formation:Formations.MixedQuarterTag1,
+      formation:Formation('Mixed Quarter Tag #1'),
       from:'Right-Hand Quarter Waves',
       paths:[
           ExtendLeft.changeBeats(4).scale(3.0,2.5) +
@@ -280,7 +279,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Scoot and Little',
-      formation:Formations.QuarterTag,
+      formation:Formation('Quarter Tag'),
       from:'Quarter Tag',parts:'5',
       paths:[
           ExtendLeft.changeBeats(1.5).scale(1.5,1.5) +
@@ -305,7 +304,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Scoot and Little',
-      formation:Formations.QuarterTagLH,
+      formation:Formation('Quarter Tag LH'),
       from:'Left-Hand Quarter Tag',parts:'5',
       paths:[
           Forward.changeBeats(1.5).scale(1.5,1.0) +

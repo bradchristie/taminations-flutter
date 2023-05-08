@@ -21,13 +21,12 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> FlipYourLid = [
 
     AnimatedCall('Flip Your Lid',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.GIRL,x:3,y:-1,angle:180),
         DancerModel.fromData(gender:Gender.BOY,x:3,y:1,angle:180),
         DancerModel.fromData(gender:Gender.BOY,x:0,y:3,angle:0),
@@ -51,7 +50,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Flip Your Lid',
-      formation:Formations.QuarterTagLH,
+      formation:Formation('Quarter Tag LH'),
       from:'Left-Hand Quarter Tag',
       paths:[
           ExtendLeft.scale(1.5,0.25) +

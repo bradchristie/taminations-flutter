@@ -19,13 +19,13 @@
 */
 
 import '../../animated_call.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> TrackIi = [
 
     AnimatedCall('Track 2',
-      formation:Formations.CompletedDoublePassThru,
+      formation:Formation('Completed Double Pass Thru'),
       from:'Completed Double Pass Thru',group:' ',difficulty: 1,
       paths:[
           RunLeft.changeBeats(2).scale(0.5,0.5) +
@@ -43,7 +43,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left Track 2',
-      formation:Formations.CompletedDoublePassThru,
+      formation:Formation('Completed Double Pass Thru'),
       from:'Completed Double Pass Thru',group:' ',difficulty: 3,
       paths:[
           RunLeft.changeBeats(5).scale(2.0,2.0) +

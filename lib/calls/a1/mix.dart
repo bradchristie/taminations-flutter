@@ -19,14 +19,14 @@
 */
 
 import '../../animated_call.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 import '../a2/all_4_all_8.dart' as a2;
 
   final List<AnimatedCall> Mix = [
 
     AnimatedCall('Mix',
-      formation:Formations.WaveRH,
+      formation:Formation('Wave RH'),
       from:'Right-Hand Wave',parts:'3',
       paths:[
           DodgeRight +
@@ -36,7 +36,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Mix',
-      formation:Formations.CompactWaveRH,
+      formation:Formation('Compact Wave RH'),
       from:'Compact Right-Hand Wave',parts:'3',noDisplay: true,
       paths:[
           DodgeRight.scale(1.0,0.5) +
@@ -46,7 +46,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Mix',
-      formation:Formations.WaveLH,
+      formation:Formation('Wave LH'),
       from:'Left-Hand Wave',parts:'3',
       paths:[
           DodgeLeft +
@@ -56,7 +56,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Mix',
-      formation:Formations.CompactWaveLH,
+      formation:Formation('Compact Wave LH'),
       from:'Compact Left-Hand Wave',parts:'3',noDisplay: true,
       paths:[
           DodgeLeft.scale(1.0,0.5) +
@@ -66,7 +66,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Mix',
-      formation:Formations.TwomFacedLineRH,
+      formation:Formation('Two-Faced Line RH'),
       from:'Right-Hand Two-Face Line',parts:'3',
       paths:[
           DodgeRight +
@@ -76,7 +76,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Mix',
-      formation:Formations.CompactTwomFacedLineRH,
+      formation:Formation('Compact Two-Faced Line RH'),
       from:'Compact Right-Hand Two-Face Line',parts:'3',noDisplay: true,
       paths:[
           DodgeRight.scale(1.0,0.5) +
@@ -86,7 +86,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Mix',
-      formation:Formations.TwomFacedLineLH,
+      formation:Formation('Two-Faced Line LH'),
       from:'Left-Hand Two-Face Line',parts:'3',
       paths:[
           RunLeft.scale(1.0,2.0),
@@ -96,7 +96,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Mix',
-      formation:Formations.CompactTwomFacedLineLH,
+      formation:Formation('Compact Two-Faced Line LH'),
       from:'Compact Left-Hand Two-Face Line',parts:'3',noDisplay: true,
       paths:[
           RunLeft,
@@ -106,7 +106,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Mix',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       from:'Right-Hand Waves',parts:'3',
       paths:[
           DodgeRight +
@@ -121,7 +121,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Mix',
-      formation:Formations.OceanWavesLHBGGB,
+      formation:Formation('Ocean Waves LH BGGB'),
       from:'Left-Hand Waves',parts:'3',
       paths:[
           DodgeLeft +
@@ -136,7 +136,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Mix',
-      formation:Formations.TwomFacedLinesRH,
+      formation:Formation('Two-Faced Lines RH'),
       from:'Right-Hand Two-Faced Lines',parts:'3',
       paths:[
           DodgeRight +
@@ -151,7 +151,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Mix',
-      formation:Formations.TwomFacedLinesLH,
+      formation:Formation('Two-Faced Lines LH'),
       from:'Left-Hand Two-Faced Lines',parts:'3',
       paths:[
           DodgeLeft +
@@ -166,7 +166,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Mix',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       from:'Lines Facing In',parts:'3',
       paths:[
           DodgeRight +
@@ -181,7 +181,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Mix',
-      formation:Formations.LinesFacingOut,
+      formation:Formation('Lines Facing Out'),
       from:'Lines Facing Out',parts:'3',
       paths:[
           DodgeLeft +
@@ -196,7 +196,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Mix',
-      formation:Formations.InvertedLinesEndsFacingOut,
+      formation:Formation('Inverted Lines Ends Facing Out'),
       from:'Inverted Lines, Centers Facing',parts:'3',
       paths:[
           DodgeLeft +
@@ -211,7 +211,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Mix',
-      formation:Formations.InvertedLinesEndsFacingIn,
+      formation:Formation('Inverted Lines Ends Facing In'),
       from:'Inverted Lines, Ends Facing',parts:'3',
       paths:[
           DodgeRight +
@@ -226,7 +226,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Mix',
-      formation:Formations.n3and_1lines1,
+      formation:Formation('3 and 1 Lines #1'),
       from:'3 and 1 Lines #1',parts:'3',
       paths:[
           DodgeLeft +
@@ -241,7 +241,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Mix',
-      formation:Formations.n3and_1lines2,
+      formation:Formation('3 and 1 Lines #2'),
       from:'3 and 1 Lines #2',parts:'3',
       paths:[
           DodgeRight +
@@ -256,7 +256,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Mix',
-      formation:Formations.n3and_1lines3,
+      formation:Formation('3 and 1 Lines #3'),
       from:'3 and 1 Lines #3',parts:'3',
       paths:[
           DodgeRight +
@@ -271,7 +271,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Mix',
-      formation:Formations.n3and_1lines4,
+      formation:Formation('3 and 1 Lines #4'),
       from:'3 and 1 Lines #4',parts:'3',
       paths:[
           DodgeRight +
@@ -286,7 +286,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Mix',
-      formation:Formations.n3and_1lines5,
+      formation:Formation('3 and 1 Lines #5'),
       from:'3 and 1 Lines #5',parts:'3',
       paths:[
           DodgeRight +
@@ -301,7 +301,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Mix',
-      formation:Formations.n3and_1lines6,
+      formation:Formation('3 and 1 Lines #6'),
       from:'3 and 1 Lines #6',parts:'3',
       paths:[
           DodgeLeft +
@@ -316,7 +316,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Mix',
-      formation:Formations.n3and_1lines7,
+      formation:Formation('3 and 1 Lines #7'),
       from:'3 and 1 Lines #7',parts:'3',
       paths:[
           DodgeLeft +
@@ -331,7 +331,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Mix',
-      formation:Formations.n3and_1lines8,
+      formation:Formation('3 and 1 Lines #8'),
       from:'3 and 1 Lines #8',parts:'3',
       paths:[
           DodgeLeft +
@@ -346,7 +346,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Mix',
-      formation:Formations.TidalWaveRHBGGB,
+      formation:Formation('Tidal Wave RH BGGB'),
       from:'Right-Hand Tidal Wave',parts:'3',
       paths:[
           DodgeRight.scale(1.0,0.5) +
@@ -361,7 +361,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Mix',
-      formation:Formations.TidalWaveLHBGGB,
+      formation:Formation('Tidal Wave LH BGGB'),
       from:'Left-Hand Tidal Wave',parts:'3',
       paths:[
           DodgeLeft.scale(1.0,0.5) +
@@ -376,7 +376,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Mix',
-      formation:Formations.TwomFacedTidalLineRH,
+      formation:Formation('Two-Faced Tidal Line RH'),
       from:'Right-Hand Tidal Two-Faced Line',parts:'3',
       paths:[
           DodgeRight.scale(1.0,0.5) +
@@ -391,7 +391,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Mix',
-      formation:Formations.TwomFacedTidalLineLH,
+      formation:Formation('Two-Faced Tidal Line LH'),
       from:'Left-Hand Tidal Two-Faced Line',parts:'3',
       paths:[
           DodgeLeft.scale(1.0,0.5) +
@@ -408,7 +408,7 @@ import '../a2/all_4_all_8.dart' as a2;
       tam.title == 'All 8 Mix').first.xref(title: 'All 8 Mix').xref(group: ' '),
 
     AnimatedCall('As Couples Mix',
-      formation:Formations.TwomFacedTidalLineRH,
+      formation:Formation('Two-Faced Tidal Line RH'),
       from:'Two-Faced Tidal Line',group:' ',parts:'3',
       paths:[
           DodgeRight +
@@ -423,7 +423,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('As Couples Mix',
-      formation:Formations.TwomFacedTidalLineLH,
+      formation:Formation('Two-Faced Tidal Line LH'),
       from:'Two-Faced Tidal Line',group:' ',parts:'3',noDisplay: true,
       paths:[
           DodgeLeft +

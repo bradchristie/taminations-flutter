@@ -21,13 +21,12 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> BusyAnything = [
 
     AnimatedCall('Busy Cross Cycle',
-      formation:Formations.TwomFacedLinesRH,
+      formation:Formation('Two-Faced Lines RH'),
       group:'Busy',fractions:'4',
       paths:[
           Forward_2.changeBeats(4).changehands(2) +
@@ -47,7 +46,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Busy Crossfire',
-      formation:Formations.TwomFacedLinesLH,
+      formation:Formation('Two-Faced Lines LH'),
       group:'Busy',fractions:'4',
       paths:[
           RunLeft.changeBeats(4).changehands(1).scale(3.0,3.0) +
@@ -65,7 +64,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Busy Mix',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:2,y:3,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:2,y:1,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:2,y:-3,angle:180),
@@ -88,7 +87,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Busy Single Wheel',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:2,y:3,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:2,y:1,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:2,y:-3,angle:180),

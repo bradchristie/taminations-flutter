@@ -19,13 +19,13 @@
 */
 
 import '../../animated_call.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> TravelThru = [
 
     AnimatedCall('Travel Thru',
-      formation:Formations.FacingCouples,
+      formation:Formation('Facing Couples'),
       from:'Facing Couples',parts:'4',
       paths:[
           ExtendLeft.changeBeats(2).scale(2.0,0.5) +

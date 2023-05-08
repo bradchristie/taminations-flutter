@@ -19,13 +19,13 @@
 */
 
 import '../../animated_call.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> SplitTheOutsideCouple = [
 
     AnimatedCall('Centers Split the Outside Couple',
-      formation:Formations.EightChainThru,
+      formation:Formation('Eight Chain Thru'),
       group:' ',actives:'Centers',
       paths:[
           ExtendLeft.scale(1.0,0.5) +
@@ -42,7 +42,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Centers Split Two',
-      formation:Formations.EightChainThru,
+      formation:Formation('Eight Chain Thru'),
       group:' ',actives:'Centers',noDisplay: true,
       paths:[
           ExtendLeft.scale(1.0,0.5) +
@@ -59,7 +59,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Centers Split the Outside Couple, Separate, Go Around One to a Line',
-      formation:Formations.EightChainThru,
+      formation:Formation('Eight Chain Thru'),
       from:'Pass Thru',group:' ',actives:'Centers',
       paths:[
           DodgeLeft.changeBeats(1).scale(0.25,0.25).skew(0.5,0.0) +

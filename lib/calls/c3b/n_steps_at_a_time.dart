@@ -26,7 +26,7 @@ import '../../moves.dart';
   final List<AnimatedCall> NStepsAtATime = [
 
     AnimatedCall('1 Step at a Time',
-      formation:Formation('Column RH GBGB', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.GIRL,x:1,y:1,angle:270),
         DancerModel.fromData(gender:Gender.BOY,x:1,y:3,angle:270),
         DancerModel.fromData(gender:Gender.GIRL,x:1,y:-3,angle:270),
@@ -52,7 +52,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('2 Steps at a Time',
-      formation:Formation('Column RH GBGB', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.GIRL,x:1,y:1,angle:270),
         DancerModel.fromData(gender:Gender.BOY,x:1,y:3,angle:270),
         DancerModel.fromData(gender:Gender.GIRL,x:1,y:-3,angle:270),
@@ -78,7 +78,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('3 Steps at a Time',
-      formation:Formation('Column RH GBGB', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.GIRL,x:1,y:1,angle:270),
         DancerModel.fromData(gender:Gender.BOY,x:1,y:3,angle:270),
         DancerModel.fromData(gender:Gender.GIRL,x:1,y:-3,angle:270),
@@ -104,7 +104,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('4 Steps at a Time',
-      formation:Formation('Column RH GBGB', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.GIRL,x:1,y:1,angle:270),
         DancerModel.fromData(gender:Gender.BOY,x:1,y:3,angle:270),
         DancerModel.fromData(gender:Gender.GIRL,x:1,y:-3,angle:270),

@@ -19,13 +19,13 @@
 */
 
 import '../../animated_call.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> Circle = [
 
     AnimatedCall('Circle Left',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       from:'Static Square',group:' ',
       taminator: '''
       This animation shows the dancers circling all the way around once.
@@ -78,7 +78,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Circle Left 1/8',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       from:'Static Square',group:' ',noDisplay: true,
       paths:[
           Forward.changehands(3).scale(0.59,0.59) +
@@ -99,7 +99,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Circle Left 1/4',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       from:'Static Square',group:' ',
       paths:[
           Forward.changehands(3).scale(0.59,0.59) +
@@ -124,7 +124,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Circle Left 1/2',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       from:'Static Square',group:' ',
       paths:[
           Forward.changehands(3).scale(0.59,0.59) +
@@ -157,7 +157,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Circle Left 3/4',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       from:'Static Square',group:' ',
       paths:[
           Forward.changehands(3).scale(0.59,0.59) +
@@ -198,7 +198,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Circle Right',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       from:'Static Square',group:' ',
       taminator: '''
       This animation shows the dancers circling all the way around once.
@@ -251,7 +251,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Circle Right 1/8',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       from:'Static Square',group:' ',noDisplay: true,
       paths:[
           EighthRight.changeBeats(1).changehands(7).skew(0.59,0.0) +
@@ -272,7 +272,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Circle Right 1/4',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       from:'Static Square',group:' ',
       paths:[
           EighthRight.changeBeats(1).changehands(7).skew(0.59,0.0) +
@@ -297,7 +297,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Circle Right 1/2',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       from:'Static Square',group:' ',
       paths:[
           EighthRight.changeBeats(1).changehands(7).skew(0.59,0.0) +
@@ -330,7 +330,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Circle Right 3/4',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       from:'Static Square',group:' ',
       paths:[
           EighthRight.changeBeats(1).changehands(7).skew(0.59,0.0) +
@@ -371,7 +371,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Circle Four Left 1/4',
-      formation:Formations.FacingCouplesCompact,
+      formation:Formation('Facing Couples Compact'),
       from:'Facing Couples',
       paths:[
           EighthRight.changehands(2).skew(0.5,0.0) +
@@ -384,7 +384,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Circle Four Left 1/4',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       from:'Lines',
       paths:[
           EighthRight.changehands(2).skew(1.0,0.0) +
@@ -405,7 +405,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Circle Four Left 1/4',
-      formation:Formations.EightChainThru,
+      formation:Formation('Eight Chain Thru'),
       from:'Eight Chain Thru',
       paths:[
           EighthRight.changehands(6) +
@@ -426,7 +426,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Circle Four Right 1/4',
-      formation:Formations.FacingCouplesCompact,
+      formation:Formation('Facing Couples Compact'),
       from:'Facing Couples',
       paths:[
           EighthRight.changehands(2).skew(0.5,0.0) +
@@ -439,7 +439,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Circle Four Right 1/4',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       from:'Lines',
       paths:[
           EighthRight.changehands(2).skew(1.0,0.0) +
@@ -460,7 +460,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Circle Four Right 1/4',
-      formation:Formations.EightChainThru,
+      formation:Formation('Eight Chain Thru'),
       from:'Eight Chain Thru',
       paths:[
           EighthRight.changehands(6) +
@@ -481,7 +481,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Circle Four Left 1/2',
-      formation:Formations.FacingCouplesCompact,
+      formation:Formation('Facing Couples Compact'),
       from:'Facing Couples',
       paths:[
           EighthRight.changehands(2).skew(0.5,0.0) +
@@ -496,7 +496,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Circle Four Left 1/2',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       from:'Lines',
       paths:[
           EighthRight.changehands(2).skew(1.0,0.0) +
@@ -521,7 +521,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Circle Four Left 1/2',
-      formation:Formations.EightChainThru,
+      formation:Formation('Eight Chain Thru'),
       from:'Eight Chain Thru',
       paths:[
           EighthRight.changehands(6) +
@@ -546,7 +546,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Circle Four Right 1/2',
-      formation:Formations.FacingCouplesCompact,
+      formation:Formation('Facing Couples Compact'),
       from:'Facing Couples',
       paths:[
           EighthRight.changehands(2).skew(0.5,0.0) +
@@ -561,7 +561,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Circle Four Right 1/2',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       from:'Lines',
       paths:[
           EighthRight.changehands(2).skew(1.0,0.0) +
@@ -586,7 +586,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Circle Four Right 1/2',
-      formation:Formations.EightChainThru,
+      formation:Formation('Eight Chain Thru'),
       from:'Eight Chain Thru',
       paths:[
           EighthRight.changehands(6) +
@@ -611,7 +611,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Circle Four Left 3/4',
-      formation:Formations.FacingCouplesCompact,
+      formation:Formation('Facing Couples Compact'),
       from:'Facing Couples',
       paths:[
           EighthRight.changehands(2).skew(0.5,0.0) +
@@ -628,7 +628,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Circle Four Left 3/4',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       from:'Lines',
       paths:[
           EighthRight.changehands(2).skew(1.0,0.0) +
@@ -657,7 +657,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Circle Four Left 3/4',
-      formation:Formations.EightChainThru,
+      formation:Formation('Eight Chain Thru'),
       from:'Eight Chain Thru',
       paths:[
           EighthRight.changehands(6) +
@@ -686,7 +686,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Circle Four Right 3/4',
-      formation:Formations.FacingCouplesCompact,
+      formation:Formation('Facing Couples Compact'),
       from:'Facing Couples',
       paths:[
           EighthRight.changehands(2).skew(0.5,0.0) +
@@ -703,7 +703,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Circle Four Right 3/4',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       from:'Lines',
       paths:[
           EighthRight.changehands(2).skew(1.0,0.0) +
@@ -732,7 +732,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Circle Four Right 3/4',
-      formation:Formations.EightChainThru,
+      formation:Formation('Eight Chain Thru'),
       from:'Eight Chain Thru',
       paths:[
           EighthRight.changehands(6) +
@@ -761,7 +761,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Single Circle Left 1/4',
-      formation:Formations.FacingCouplesCompact,
+      formation:Formation('Facing Couples Compact'),
       from:'Facing Couples',
       paths:[
           Forward.scale(0.8,1.0) +
@@ -772,7 +772,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Single Circle Left 1/4',
-      formation:Formations.NormalLinesCompact,
+      formation:Formation('Normal Lines Compact'),
       from:'Lines',
       paths:[
           Forward.scale(0.8,1.0) +
@@ -789,7 +789,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Single Circle Left 1/4',
-      formation:Formations.EightChainThru,
+      formation:Formation('Eight Chain Thru'),
       from:'Eight Chain Thru',
       paths:[
           Forward.scale(0.3,1.0) +
@@ -806,7 +806,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Single Circle Left 1/2',
-      formation:Formations.FacingCouplesCompact,
+      formation:Formation('Facing Couples Compact'),
       from:'Facing Couples',
       paths:[
           Forward.scale(0.8,1.0) +
@@ -819,7 +819,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Single Circle Left 1/2',
-      formation:Formations.NormalLinesCompact,
+      formation:Formation('Normal Lines Compact'),
       from:'Lines',
       paths:[
           Forward.scale(0.8,1.0) +
@@ -840,7 +840,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Single Circle Left 1/2',
-      formation:Formations.EightChainThru,
+      formation:Formation('Eight Chain Thru'),
       from:'Eight Chain Thru',
       paths:[
           Forward.scale(0.3,1.0) +
@@ -861,7 +861,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Single Circle Left 3/4',
-      formation:Formations.FacingCouplesCompact,
+      formation:Formation('Facing Couples Compact'),
       from:'Facing Couples',
       paths:[
           Forward.scale(0.8,1.0) +
@@ -876,7 +876,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Single Circle Left 3/4',
-      formation:Formations.NormalLinesCompact,
+      formation:Formation('Normal Lines Compact'),
       from:'Lines',
       paths:[
           Forward.scale(0.8,1.0) +
@@ -901,7 +901,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Single Circle Left 3/4',
-      formation:Formations.EightChainThru,
+      formation:Formation('Eight Chain Thru'),
       from:'Eight Chain Thru',
       paths:[
           Forward.scale(0.3,1.0) +
@@ -926,7 +926,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Single Circle Right 1/4',
-      formation:Formations.FacingCouplesCompact,
+      formation:Formation('Facing Couples Compact'),
       from:'Facing Couples',
       paths:[
           Forward.scale(0.8,1.0) +
@@ -937,7 +937,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Single Circle Right 1/4',
-      formation:Formations.NormalLinesCompact,
+      formation:Formation('Normal Lines Compact'),
       from:'Lines',
       paths:[
           Forward.scale(0.8,1.0) +
@@ -954,7 +954,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Single Circle Right 1/4',
-      formation:Formations.EightChainThru,
+      formation:Formation('Eight Chain Thru'),
       from:'Eight Chain Thru',
       paths:[
           Forward.scale(0.3,1.0) +
@@ -971,7 +971,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Single Circle Right 1/2',
-      formation:Formations.FacingCouplesCompact,
+      formation:Formation('Facing Couples Compact'),
       from:'Facing Couples',
       paths:[
           Forward.scale(0.8,1.0) +
@@ -984,7 +984,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Single Circle Right 1/2',
-      formation:Formations.NormalLinesCompact,
+      formation:Formation('Normal Lines Compact'),
       from:'Lines',
       paths:[
           Forward.scale(0.8,1.0) +
@@ -1005,7 +1005,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Single Circle Right 1/2',
-      formation:Formations.EightChainThru,
+      formation:Formation('Eight Chain Thru'),
       from:'Eight Chain Thru',
       paths:[
           Forward.scale(0.3,1.0) +
@@ -1026,7 +1026,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Single Circle Right 3/4',
-      formation:Formations.FacingCouplesCompact,
+      formation:Formation('Facing Couples Compact'),
       from:'Facing Couples',
       paths:[
           Forward.scale(0.8,1.0) +
@@ -1041,7 +1041,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Single Circle Right 3/4',
-      formation:Formations.NormalLinesCompact,
+      formation:Formation('Normal Lines Compact'),
       from:'Lines',
       paths:[
           Forward.scale(0.8,1.0) +
@@ -1066,7 +1066,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Single Circle Right 3/4',
-      formation:Formations.EightChainThru,
+      formation:Formation('Eight Chain Thru'),
       from:'Eight Chain Thru',
       paths:[
           Forward.scale(0.3,1.0) +

@@ -18,15 +18,14 @@
 
 */
 
-import '../../../formations.dart';
 import '../common.dart';
 
 class OFormation extends ModifiedFormationConcept {
 
   @override final level = LevelData.C1;
   @override final conceptName = 'O';
-  @override final modifiedFormation = Formations.DoublePassThru;
-  @override final baseFormation = Formations.ORH;
+  @override final modifiedFormation = Formation('Double Pass Thru');
+  @override final baseFormation = Formation('O RH');
   @override String get realCall {
     final getReal = super.realCall;
     if (getReal.lc.endsWith('a wave') || getReal.lc.endsWith('a line'))

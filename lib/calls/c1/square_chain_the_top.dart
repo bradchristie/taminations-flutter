@@ -19,13 +19,13 @@
 */
 
 import '../../animated_call.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> SquareChainTheTop = [
 
     AnimatedCall('Square Chain the Top',
-      formation:Formations.FacingCouplesCompact,
+      formation:Formation('Facing Couples Compact'),
       from:'Facing Couples',parts:'5;7.5',
       paths:[
           ExtendLeft.changeBeats(2).scale(1.5,0.5) +
@@ -45,7 +45,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Square Chain the Top',
-      formation:Formations.WaveRH,
+      formation:Formation('Wave RH'),
       from:'Right-Hand Wave',parts:'3;7.5',
       paths:[
           LeadRight.changeBeats(3).scale(1.0,3.0) +
@@ -63,7 +63,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Square Chain the Top',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       from:'Normal Lines',parts:'5;7.5',
       paths:[
           ExtendLeft.changeBeats(2).scale(2.0,0.5) +
@@ -98,7 +98,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Square Chain the Top',
-      formation:Formations.EightChainThru,
+      formation:Formation('Eight Chain Thru'),
       from:'Eight Chain Thru',parts:'3;7.5',
       paths:[
           ExtendLeft.scale(1.0,0.5) +
@@ -133,7 +133,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Square Chain the Top',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       from:'Right-Hand Waves',parts:'2;7.5',
       paths:[
           LeadRight.changeBeats(2).scale(0.5,3.0) +
@@ -164,7 +164,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Square Chain the Top',
-      formation:Formations.TidalWaveRHBGGB,
+      formation:Formation('Tidal Wave RH BGGB'),
       from:'Tidal Wave',parts:'3;7.5',
       paths:[
           LeadRight.changeBeats(3).scale(1.0,1.5) +
@@ -195,7 +195,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left Square Chain the Top',
-      formation:Formations.FacingCouplesCompact,
+      formation:Formation('Facing Couples Compact'),
       from:'Facing Couples',parts:'5;7.5',
       paths:[
           ExtendRight.changeBeats(2).scale(1.5,0.5) +
@@ -215,7 +215,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left Square Chain the Top',
-      formation:Formations.WaveLH,
+      formation:Formation('Wave LH'),
       from:'Left-Hand Wave',parts:'3;7.5',
       paths:[
           LeadLeft.changeBeats(3).scale(1.0,3.0) +
@@ -233,7 +233,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left Square Chain the Top',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       from:'Normal Lines',parts:'5;7.5',
       paths:[
           ExtendRight.changeBeats(2).scale(2.0,0.5) +
@@ -268,7 +268,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left Square Chain the Top',
-      formation:Formations.EightChainThru,
+      formation:Formation('Eight Chain Thru'),
       from:'Eight Chain Thru',parts:'3;7.5',
       paths:[
           ExtendRight.scale(1.0,0.5) +
@@ -303,7 +303,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left Square Chain the Top',
-      formation:Formations.OceanWavesLHBGGB,
+      formation:Formation('Ocean Waves LH BGGB'),
       from:'Left-Hand Waves',parts:'2;7.5',
       paths:[
           LeadLeft.changeBeats(2).scale(0.5,3.0) +
@@ -334,7 +334,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left Square Chain the Top',
-      formation:Formations.TidalWaveLHBGGB,
+      formation:Formation('Tidal Wave LH BGGB'),
       from:'Left-Hand Tidal Wave',parts:'3;7.5',
       paths:[
           LeadLeft.changeBeats(3).scale(1.0,1.5) +
@@ -365,7 +365,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('All 4 Couples Square Chain the Top',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       from:'Static Square',group:' ',parts:'6.5;7.5',
       paths:[
           ExtendLeft.changeBeats(2).scale(2.0,2.0) +
@@ -404,7 +404,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('As Couples Square Chain the Top',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       group:' ',parts:'6;10',
       paths:[
           ExtendLeft.changeBeats(2).changehands(2).scale(2.0,0.5) +
@@ -439,7 +439,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Tandem Square Chain the Top',
-      formation:Formations.DoublePassThru,
+      formation:Formation('Double Pass Thru'),
       group:' ',parts:'5;11',
       paths:[
           ExtendLeft.changeBeats(2).scale(2.0,1.5) +

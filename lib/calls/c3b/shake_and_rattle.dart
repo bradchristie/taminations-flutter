@@ -19,13 +19,13 @@
 */
 
 import '../../animated_call.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> ShakeAndRattle = [
 
     AnimatedCall('Shake and Rattle',
-      formation:Formations.CompletedDoublePassThru,
+      formation:Formation('Completed Double Pass Thru'),
       from:'Completed Double Pass Thru',
       paths:[
           FlipRight.scale(1.0,0.5).skew(-1.0,0.0) +
@@ -40,7 +40,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Shake and Rattle',
-      formation:Formations.ColumnRHGBGB,
+      formation:Formation('Column RH GBGB'),
       from:'Right-Hand Columns',
       paths:[
           FlipRight +
@@ -55,7 +55,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Shake and Rattle',
-      formation:Formations.MagicColumnRH,
+      formation:Formation('Magic Column RH'),
       from:'Magic Columns',
       paths:[
           QuarterLeft.changeBeats(4.5).skew(0.0,3.0),
@@ -70,7 +70,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Shake and Rattle',
-      formation:Formations.OceanWavesRHBGBG,
+      formation:Formation('Ocean Waves RH BGBG'),
       from:'Right-Hand Waves',
       paths:[
           QuarterLeft.changeBeats(4.5).skew(3.0,0.0),
@@ -85,7 +85,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Shake and Rattle',
-      formation:Formations.OceanWavesLHBGBG,
+      formation:Formation('Ocean Waves LH BGBG'),
       from:'Left-Hand Waves',
       paths:[
           FlipRight.changeBeats(2.5).scale(1.0,0.25).skew(-1.0,0.0) +
@@ -100,7 +100,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Shake and Rattle',
-      formation:Formations.InvertedLinesEndsFacingOut,
+      formation:Formation('Inverted Lines Ends Facing Out'),
       from:'Inverted Lines',
       paths:[
           FlipRight.changeBeats(2.5).scale(1.0,0.25).skew(-1.0,0.0) +
@@ -115,7 +115,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Shake and Rattle and Roll',
-      formation:Formations.CompletedDoublePassThru,
+      formation:Formation('Completed Double Pass Thru'),
       group:' ',
       paths:[
           FlipRight.scale(1.0,0.5).skew(-1.0,0.0) +

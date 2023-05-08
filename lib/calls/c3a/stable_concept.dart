@@ -19,13 +19,13 @@
 */
 
 import '../../animated_call.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> StableConcept = [
 
     AnimatedCall('Stable Bend the Line',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       group:'Stable',
       paths:[
           ExtendRight.changeBeats(3).scale(1.0,2.0),

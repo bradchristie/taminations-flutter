@@ -21,13 +21,12 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> Press = [
 
     AnimatedCall('Press Ahead',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:3,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:-1,y:1,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:-1,y:-1,angle:0),
@@ -45,7 +44,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Press Ahead',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:3,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:-1,y:1,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:-1,y:-1,angle:180),
@@ -63,7 +62,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Press Ahead',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:3,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:-1,y:1,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:-1,y:-1,angle:180),
@@ -84,7 +83,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Press Ahead',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.GIRL,x:-1,y:3,angle:180),
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:1,angle:180),
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:-1,angle:0),
@@ -102,7 +101,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Press Ahead',
-      formation:Formations.Columns,
+      formation:Formation('Column RH GBGB'),
       from:'Right-Hand Columns',
       paths:[
           Forward_2.changehands(1),
@@ -115,7 +114,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Press Ahead',
-      formation:Formations.ColumnLHGBGB,
+      formation:Formation('Column LH GBGB'),
       from:'Left-Hand Columns',
       paths:[
           Forward_2.changehands(1),
@@ -128,7 +127,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Ends Press Ahead',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.GIRL,x:-1,y:3,angle:180),
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:1,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:-1,y:-1,angle:180),
@@ -146,7 +145,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Girls Press Ahead',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:3,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:-1,y:1,angle:180),
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:-1,angle:0),
@@ -164,7 +163,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('1/2 Press Ahead',
-      formation:Formations.OceanWavesRHBGBG,
+      formation:Formation('Ocean Waves RH BGBG'),
       from:'Right-Hand Waves',
       taminator: '''
     Unlike Extend, the girls do not adjust to make a couple.
@@ -180,7 +179,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('1/2 Press Ahead',
-      formation:Formations.OceanWavesLHBGBG,
+      formation:Formation('Ocean Waves LH BGBG'),
       from:'Left-Hand Waves',
       paths:[
           Forward.changeBeats(2),
@@ -193,7 +192,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('1/2 Press Ahead',
-      formation:Formations.TwomFacedLinesRH,
+      formation:Formation('Two-Faced Lines RH'),
       from:'Right-Hand Two-Faced Lines',
       paths:[
           Forward_2.changehands(2),
@@ -206,7 +205,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('1/2 Press Ahead',
-      formation:Formations.TwomFacedLinesLH,
+      formation:Formation('Two-Faced Lines LH'),
       from:'Left-Hand Two-Faced Lines',
       paths:[
           Forward.changeBeats(2).changehands(2),

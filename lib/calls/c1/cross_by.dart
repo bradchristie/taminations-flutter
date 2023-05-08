@@ -19,13 +19,13 @@
 */
 
 import '../../animated_call.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> CrossBy = [
 
     AnimatedCall('Cross By',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       from:'Right-Hand Waves',
       paths:[
           ExtendRight.changeBeats(3).scale(2.0,2.0),
@@ -38,7 +38,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cross By',
-      formation:Formations.OceanWavesLHBGGB,
+      formation:Formation('Ocean Waves LH BGGB'),
       from:'Left-Hand Waves',
       paths:[
           LeadLeft.changeBeats(3).scale(0.5,3.0),
@@ -51,7 +51,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cross By',
-      formation:Formations.TharRHBoys,
+      formation:Formation('Thar RH Boys'),
       from:'Thar',
       paths:[
           EighthRight.changeBeats(3).skew(2.121,1.121),

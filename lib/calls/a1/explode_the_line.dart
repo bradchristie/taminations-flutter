@@ -19,13 +19,13 @@
 */
 
 import '../../animated_call.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> ExplodeTheLine = [
 
     AnimatedCall('Explode the Line',
-      formation:Formations.LinesFacingOut,
+      formation:Formation('Lines Facing Out'),
       from:'Lines Facing Out',
       paths:[
           QuarterLeft.changeBeats(2).skew(-1.0,1.0) +
@@ -44,7 +44,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Explode the Line',
-      formation:Formations.InvertedLinesEndsFacingIn,
+      formation:Formation('Inverted Lines Ends Facing In'),
       from:'Inverted Lines, Ends Facing In',
       paths:[
           LeadRight.changeBeats(4).changehands(2).scale(1.5,3.0) +
@@ -61,7 +61,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Explode the Line',
-      formation:Formations.InvertedLinesEndsFacingOut,
+      formation:Formation('Inverted Lines Ends Facing Out'),
       from:'Inverted Lines, Ends Facing Out',
       paths:[
           LeadLeft.changeBeats(4).changehands(2).scale(0.5,3.0) +
@@ -78,7 +78,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Explode the Line',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       from:'Lines Facing In',
       paths:[
           QuarterRight.changeBeats(2).skew(-1.0,-1.0) +
@@ -97,7 +97,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Explode the Line',
-      formation:Formations.n3and_1lines1,
+      formation:Formation('3 and 1 Lines #1'),
       from:'3 and 1 Lines #1',
       paths:[
           LeadLeft.changeBeats(4).changehands(2).scale(0.5,3.0) +
@@ -115,7 +115,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Explode the Line',
-      formation:Formations.n3and_1lines4,
+      formation:Formation('3 and 1 Lines #4'),
       from:'3 and 1 Lines #4',
       paths:[
           QuarterRight.changeBeats(2).skew(-0.5,-1.0) +
@@ -133,7 +133,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Explode the Line',
-      formation:Formations.n3and_1lines5,
+      formation:Formation('3 and 1 Lines #5'),
       from:'3 and 1 Lines #5',
       paths:[
           LeadRight.changeBeats(4).changehands(2).scale(1.5,3.0) +
@@ -151,7 +151,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Explode the Line',
-      formation:Formations.n3and_1lines8,
+      formation:Formation('3 and 1 Lines #8'),
       from:'3 and 1 Lines #8',
       paths:[
           QuarterLeft.changeBeats(2).skew(-1.0,1.0) +
@@ -169,7 +169,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Explode the Line',
-      formation:Formations.TidalInvertedLineRH,
+      formation:Formation('Tidal Inverted Line RH'),
       from:'Tidal Inverted Line, Right-Hand Centers',
       paths:[
           LeadRight.changeBeats(2).scale(1.0,0.5) +
@@ -190,7 +190,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Explode the Line',
-      formation:Formations.TidalInvertedLineLH,
+      formation:Formation('Tidal Inverted Line LH'),
       from:'Tidal Inverted Line, Left-Hand Centers',
       paths:[
           LeadLeft.changeBeats(2).scale(1.0,0.5) +
@@ -211,7 +211,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Explode the Line',
-      formation:Formations.TidalLineRH,
+      formation:Formation('Tidal Line RH'),
       from:'Tidal Line, Right-Hand Centers',
       paths:[
           QuarterRight.changeBeats(2).skew(-1.0,-0.5) +
@@ -232,7 +232,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Explode the Line',
-      formation:Formations.TidalLineLH,
+      formation:Formation('Tidal Line LH'),
       from:'Tidal Line, Left-Hand Centers',
       paths:[
           QuarterLeft.changeBeats(2).skew(1.0,-0.5) +
@@ -253,7 +253,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Explode the Line',
-      formation:Formations.Tidal_3and_1Line1,
+      formation:Formation('Tidal 3 and 1 Line #1'),
       from:'Tidal 3 and 1 Line #1',
       paths:[
           QuarterRight.changeBeats(2).skew(-1.0,-0.5) +
@@ -274,7 +274,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Explode the Line',
-      formation:Formations.Tidal_3and_1Line4,
+      formation:Formation('Tidal 3 and 1 Line #4'),
       from:'Tidal 3 and 1 Line #4',
       paths:[
           QuarterLeft.changeBeats(2).skew(1.0,0.5) +
@@ -295,7 +295,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Explode the Line',
-      formation:Formations.Tidal_3and_1Line5,
+      formation:Formation('Tidal 3 and 1 Line #5'),
       from:'Tidal 3 and 1 Line #5',
       paths:[
           QuarterLeft.changeBeats(2).skew(-1.0,0.5) +
@@ -316,7 +316,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Explode the Line',
-      formation:Formations.Tidal_3and_1Line8,
+      formation:Formation('Tidal 3 and 1 Line #8'),
       from:'Tidal 3 and 1 Line #8',
       paths:[
           QuarterRight.changeBeats(2).skew(1.0,-0.5) +
@@ -337,7 +337,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Explode',
-      formation:Formations.LinesFacingOut,
+      formation:Formation('Lines Facing Out'),
       from:'Lines Facing Out',noDisplay: true,
       paths:[
           QuarterLeft.changeBeats(2).skew(-1.0,1.5),
@@ -350,7 +350,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Explode',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       from:'Lines Facing In',noDisplay: true,
       paths:[
           QuarterRight.changeBeats(2).skew(-1.0,-1.5),
@@ -363,7 +363,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Explode',
-      formation:Formations.InvertedLinesEndsFacingIn,
+      formation:Formation('Inverted Lines Ends Facing In'),
       from:'Inverted Lines',noDisplay: true,
       paths:[
           LeadRight.changeBeats(2).scale(1.0,1.5),
@@ -376,7 +376,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Explode',
-      formation:Formations.InvertedLinesEndsFacingOut,
+      formation:Formation('Inverted Lines Ends Facing Out'),
       from:'Inverted Lines 2',noDisplay: true,
       paths:[
           LeadLeft.changeBeats(2).scale(1.0,1.5),
@@ -389,7 +389,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Explode',
-      formation:Formations.n3and_1lines1,
+      formation:Formation('3 and 1 Lines #1'),
       from:'3 and 1 Lines #1',noDisplay: true,
       paths:[
           LeadLeft.changeBeats(2).scale(1.0,1.5),
@@ -402,7 +402,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Explode',
-      formation:Formations.n3and_1lines4,
+      formation:Formation('3 and 1 Lines #4'),
       from:'3 and 1 Lines #4',noDisplay: true,
       paths:[
           QuarterRight.changeBeats(2).skew(-1.0,-1.5),
@@ -415,7 +415,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Explode',
-      formation:Formations.n3and_1lines5,
+      formation:Formation('3 and 1 Lines #5'),
       from:'3 and 1 Lines #5',noDisplay: true,
       paths:[
           LeadRight.changeBeats(2).scale(1.0,1.5),
@@ -428,7 +428,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Explode',
-      formation:Formations.n3and_1lines8,
+      formation:Formation('3 and 1 Lines #8'),
       from:'3 and 1 Lines #8',noDisplay: true,
       paths:[
           QuarterLeft.changeBeats(2).skew(-1.0,1.5),
@@ -441,7 +441,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Explode',
-      formation:Formations.TidalInvertedLineRH,
+      formation:Formation('Tidal Inverted Line RH'),
       from:'Tidal Inverted Line RH',noDisplay: true,
       paths:[
           LeadRight.changeBeats(2).scale(1.0,0.5),
@@ -454,7 +454,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Explode',
-      formation:Formations.TidalInvertedLineLH,
+      formation:Formation('Tidal Inverted Line LH'),
       from:'Tidal Inverted Line LH',noDisplay: true,
       paths:[
           LeadLeft.changeBeats(2).scale(1.0,0.5),
@@ -467,7 +467,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Explode',
-      formation:Formations.TidalLineRH,
+      formation:Formation('Tidal Line RH'),
       from:'Tidal Line RH',noDisplay: true,
       paths:[
           QuarterRight.changeBeats(2).skew(-1.0,-0.5),
@@ -480,7 +480,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Explode',
-      formation:Formations.TidalLineLH,
+      formation:Formation('Tidal Line LH'),
       from:'Tidal Line LH',noDisplay: true,
       paths:[
           QuarterLeft.changeBeats(2).skew(1.0,-0.5),
@@ -493,7 +493,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Explode',
-      formation:Formations.Tidal_3and_1Line1,
+      formation:Formation('Tidal 3 and 1 Line #1'),
       from:'Tidal 3 and 1 Line #1',noDisplay: true,
       paths:[
           QuarterRight.changeBeats(2).skew(-1.0,-0.5),
@@ -506,7 +506,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Explode',
-      formation:Formations.Tidal_3and_1Line4,
+      formation:Formation('Tidal 3 and 1 Line #4'),
       from:'Tidal 3 and 1 Line #4',noDisplay: true,
       paths:[
           QuarterLeft.changeBeats(2).skew(1.0,0.5),
@@ -519,7 +519,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Explode',
-      formation:Formations.Tidal_3and_1Line5,
+      formation:Formation('Tidal 3 and 1 Line #5'),
       from:'Tidal 3 and 1 Line #5',noDisplay: true,
       paths:[
           QuarterLeft.changeBeats(2).skew(-1.0,0.5),
@@ -532,7 +532,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Explode',
-      formation:Formations.Tidal_3and_1Line8,
+      formation:Formation('Tidal 3 and 1 Line #8'),
       from:'Tidal 3 and 1 Line #8',noDisplay: true,
       paths:[
           QuarterRight.changeBeats(2).skew(1.0,-0.5),

@@ -19,13 +19,13 @@
 */
 
 import '../../animated_call.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> TaggingCallsBackToAWave = [
 
     AnimatedCall('Flip Back',
-      formation:Formations.WaveRH,
+      formation:Formation('Wave RH'),
       from:'Right-Hand Wave',parts:'5.5',
       paths:[
           HingeRight +
@@ -40,7 +40,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Flip Back',
-      formation:Formations.WaveLH,
+      formation:Formation('Wave LH'),
       from:'Left-Hand Wave',parts:'5.5',
       paths:[
           HingeLeft +
@@ -55,7 +55,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Flip Back',
-      formation:Formations.OceanWavesRHGBBG,
+      formation:Formation('Ocean Waves RH GBBG'),
       from:'Right-Hand Waves',parts:'4.5',
       paths:[
           LeadRight +
@@ -80,7 +80,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Flip Back',
-      formation:Formations.OceanWavesLHGBBG,
+      formation:Formation('Ocean Waves LH GBBG'),
       from:'Left-Hand Waves',parts:'4.5',
       paths:[
           LeadLeft +
@@ -105,7 +105,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Flip Back',
-      formation:Formations.TidalWaveRHBGGB,
+      formation:Formation('Tidal Wave RH BGGB'),
       from:'Right-Hand Tidal Wave',parts:'4.5',
       paths:[
           LeadRight.scale(1.0,0.5) +
@@ -130,7 +130,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Flip Back',
-      formation:Formations.TidalWaveLHBGGB,
+      formation:Formation('Tidal Wave LH BGGB'),
       from:'Left-Hand Tidal Wave',parts:'4.5',
       paths:[
           LeadLeft.scale(1.0,0.5) +
@@ -155,7 +155,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Tag Back to a Wave',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       from:'Lines',parts:'3',
       paths:[
           LeadRight.changeBeats(3) +
@@ -178,7 +178,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Tag Back to a Wave',
-      formation:Formations.TwomFacedLinesRH,
+      formation:Formation('Two-Faced Lines RH'),
       from:'Two-Faced Lines',parts:'3',
       paths:[
           LeadRight.changeBeats(3) +
@@ -201,7 +201,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Vertical Tag Back to a Wave',
-      formation:Formations.FacingCouplesCompact,
+      formation:Formation('Facing Couples Compact'),
       from:'Facing Couples',parts:'3',
       paths:[
           Stand.changeBeats(2) +
@@ -215,7 +215,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('All 8 Vertical Tag Back to a Wave',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       from:'Static Square',parts:'6',
       paths:[
           Stand.changeBeats(5) +

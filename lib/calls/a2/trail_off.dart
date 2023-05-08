@@ -21,13 +21,12 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> TrailOff = [
 
     AnimatedCall('Trail Off',
-      formation:Formations.BoxRHBoysLead,
+      formation:Formation('Box RH Boys Lead'),
       from:'Right-Hand Box',
       paths:[
           RunRight.scale(1.0,2.0).skew(-2.0,0.0),
@@ -37,7 +36,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Trail Off',
-      formation:Formations.BoxLH,
+      formation:Formation('Box LH'),
       from:'Left-Hand Box',
       paths:[
           RunLeft.scale(1.0,2.0).skew(-2.0,0.0),
@@ -47,7 +46,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Trail Off',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:0,y:1,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:2,y:1,angle:0),
   ]),
@@ -59,7 +58,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Trail Off',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:0,y:-1,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:2,y:-1,angle:0),
   ]),
@@ -71,7 +70,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Trail Off',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:0,y:1,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:2,y:-1,angle:180),
   ]),
@@ -84,7 +83,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Trail Off',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:0,y:-1,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:2,y:1,angle:180),
   ]),
@@ -97,7 +96,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Trail Off',
-      formation:Formations.ColumnRHGBGB,
+      formation:Formation('Column RH GBGB'),
       from:'Right-Hand Columns',
       paths:[
           RunRight.scale(1.0,2.0).skew(-1.0,0.0),
@@ -112,7 +111,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Trail Off',
-      formation:Formations.ColumnLHGBGB,
+      formation:Formation('Column LH GBGB'),
       from:'Left-Hand Columns',
       paths:[
           Forward +
@@ -127,7 +126,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Trail Off',
-      formation:Formations.RightmHandZs,
+      formation:Formation('Right-Hand Zs'),
       from:'Right-Hand Zs',
       paths:[
           Forward_2.changeBeats(3) +
@@ -142,7 +141,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Trail Off',
-      formation:Formations.LeftmHandZs,
+      formation:Formation('Left-Hand Zs'),
       from:'Left-Hand Zs',
       paths:[
           Forward_2.changeBeats(3) +
@@ -157,7 +156,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Trail Off',
-      formation:Formations.DoublePassThru,
+      formation:Formation('Double Pass Thru'),
       from:'Double Pass Thru',
       paths:[
           QuarterRight.changeBeats(2).skew(0.0,-1.0) +
@@ -172,7 +171,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Trail Off',
-      formation:Formations.CompletedDoublePassThru,
+      formation:Formation('Completed Double Pass Thru'),
       from:'Completed Double Pass Thru',
       taminator: '''
       Some dancers in the trailing position perform a partner trade, with the
@@ -190,7 +189,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Trail Off',
-      formation:Formations.TwomFacedLinesRH,
+      formation:Formation('Two-Faced Lines RH'),
       from:'Two-Faced Lines',
       paths:[
           Forward +
@@ -207,7 +206,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Trail Off',
-      formation:Formations.OceanWavesRHBGBG,
+      formation:Formation('Ocean Waves RH BGBG'),
       from:'Right-Hand Waves',
       paths:[
           ExtendRight.changeBeats(2).scale(2.0,0.25) +
@@ -222,7 +221,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Trail Off',
-      formation:Formations.OceanWavesLHBGBG,
+      formation:Formation('Ocean Waves LH BGBG'),
       from:'Left-Hand Waves',
       paths:[
           RunLeft.changeBeats(5).skew(-2.0,0.5),
@@ -237,7 +236,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Trail Off',
-      formation:Formations.QuarterZRH,
+      formation:Formation('Quarter Z RH'),
       from:'Right-Hand Z-Tag',
       paths:[
           ExtendRight.changeBeats(2).scale(2.0,0.5) +
@@ -252,7 +251,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Trail Off',
-      formation:Formations.QuarterZLH,
+      formation:Formation('Quarter Z LH'),
       from:'Left-Hand Z-Tag',
       paths:[
           ExtendLeft.changeBeats(2).scale(2.0,0.5) +
@@ -267,7 +266,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Trail Off',
-      formation:Formations.TmBoneURUR,
+      formation:Formation('T-Bone URUR'),
       from:'T-Bones 1',
       paths:[
           Forward.changeBeats(2) +
@@ -282,7 +281,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Trail Off',
-      formation:Formations.TmBoneRDRD,
+      formation:Formation('T-Bone RDRD'),
       from:'T-Bones 2',
       paths:[
           RunRight.changeBeats(6).skew(-1.0,0.0),
@@ -297,7 +296,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Trail Off',
-      formation:Formations.TmBoneDLDL,
+      formation:Formation('T-Bone DLDL'),
       from:'T-Bones 3',
       paths:[
           RunLeft.changeBeats(6).skew(-1.0,0.0),
@@ -312,7 +311,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Trail Off',
-      formation:Formations.TmBoneLULU,
+      formation:Formation('T-Bone LULU'),
       from:'T-Bones 4',
       paths:[
           RunRight.changeBeats(4).scale(1.0,2.0).skew(-1.0,0.0),
@@ -327,7 +326,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('As Couples Trail Off',
-      formation:Formations.TwomFacedLinesRH,
+      formation:Formation('Two-Faced Lines RH'),
       from:'Two-Faced Lines',
       paths:[
           ExtendRight.changeBeats(2).changehands(2).scale(2.0,1.5) +
@@ -342,7 +341,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('All 8 Trail Off',
-      formation:Formations.StaticMiniWavesRH,
+      formation:Formation('Static MiniWaves RH'),
       from:'Mini-Waves',
       paths:[
           Forward_3 +

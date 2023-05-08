@@ -19,13 +19,13 @@
 */
 
 import '../../animated_call.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> Recoil = [
 
     AnimatedCall('Recoil',
-      formation:Formations.BoxRH,
+      formation:Formation('Box RH'),
       from:'Right-Hand Box',parts:'4',
       paths:[
           UmTurnRight.changeBeats(4).changehands(6).skew(2.0,0.0) +

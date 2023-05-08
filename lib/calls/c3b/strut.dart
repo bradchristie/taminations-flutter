@@ -19,13 +19,13 @@
 */
 
 import '../../animated_call.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> Strut = [
 
     AnimatedCall('Strut Right',
-      formation:Formations.DoublePassThru,
+      formation:Formation('Double Pass Thru'),
       group:' ',
       paths:[
           Stand.changeBeats(3) +
@@ -48,7 +48,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Strut Left',
-      formation:Formations.DoublePassThru,
+      formation:Formation('Double Pass Thru'),
       group:' ',
       paths:[
           Stand.changeBeats(3) +
@@ -71,7 +71,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Strut Right Left',
-      formation:Formations.DoublePassThru,
+      formation:Formation('Double Pass Thru'),
       group:' ',
       paths:[
           Stand.changeBeats(3) +
@@ -94,7 +94,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Strut Left Right',
-      formation:Formations.DoublePassThru,
+      formation:Formation('Double Pass Thru'),
       group:' ',
       paths:[
           Stand.changeBeats(3) +

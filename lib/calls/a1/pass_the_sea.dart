@@ -21,14 +21,13 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 import '../a2/all_4_all_8.dart' as a2;
 
   final List<AnimatedCall> PassTheSea = [
 
     AnimatedCall('Pass the Sea',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:1,y:2,angle:270),
         DancerModel.fromData(gender:Gender.GIRL,x:-1,y:2,angle:270),
   ]),
@@ -42,7 +41,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Pass the Sea',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       from:'Lines',
       paths:[
           ExtendLeft.changeBeats(2).scale(2.0,0.5) +
@@ -59,7 +58,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Pass the Sea',
-      formation:Formations.EightChainThru,
+      formation:Formation('Eight Chain Thru'),
       from:'Eight Chain Thru',
       paths:[
           ExtendLeft.changeBeats(2).scale(1.0,0.5) +
@@ -76,7 +75,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Heads Pass the Sea',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       group:'  ',
       paths:[
           ExtendLeft.changeBeats(3).scale(3.0,0.5) +
@@ -91,7 +90,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Sides Pass the Sea',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       group:'  ',
       paths:[
           Path(),
@@ -106,7 +105,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('As Couples Pass the Sea',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       from:'Lines',group:' ',
       paths:[
           ExtendLeft.changeBeats(2).changehands(2).scale(2.0,0.5) +

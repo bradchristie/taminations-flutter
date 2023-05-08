@@ -20,13 +20,13 @@
 
 import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> SquareThru = [
 
     AnimatedCall('Square Thru 2',
-      formation:Formations.FacingCouplesCompact,
+      formation:Formation('Facing Couples Compact'),
       from:'Facing Couples',difficulty: 1,
       paths:[
           PullLeft.changeBeats(1.5).scale(1.5,0.5) +
@@ -39,7 +39,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Square Thru 2',
-      formation:Formations.WaveRH,
+      formation:Formation('Wave RH'),
       from:'Right-Hand Wave',difficulty: 2,
       paths:[
           LeadRight.changeBeats(3).scale(0.5,3.0) +
@@ -50,7 +50,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Square Thru 2',
-      formation:Formations.EightChainThru,
+      formation:Formation('Eight Chain Thru'),
       from:'Eight Chain Thru',difficulty: 1,
       paths:[
           PullLeft.scale(1.0,0.5) +
@@ -71,7 +71,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Square Thru 2',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       from:'Lines',difficulty: 1,
       paths:[
           Forward +
@@ -96,7 +96,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Square Thru 2',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       from:'Right-Hand Waves',difficulty: 2,
       paths:[
           LeadRight.changeBeats(3).scale(0.5,3.0) +
@@ -113,7 +113,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Square Thru 2',
-      formation:Formations.TidalWaveRHBGGB,
+      formation:Formation('Tidal Wave RH BGGB'),
       from:'Right-Hand Tidal Wave',difficulty: 2,
       paths:[
           LeadRight.changeBeats(2).scale(0.5,1.5) +
@@ -130,7 +130,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Square Thru 3',
-      formation:Formations.FacingCouplesCompact,
+      formation:Formation('Facing Couples Compact'),
       from:'Facing Couples',difficulty: 1,
       paths:[
           PullLeft.changeBeats(1.5).scale(1.5,0.5) +
@@ -145,7 +145,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Square Thru 3',
-      formation:Formations.WaveRH,
+      formation:Formation('Wave RH'),
       from:'Right-Hand Wave',difficulty: 2,
       paths:[
           LeadRight.changeBeats(3).scale(0.5,3.0) +
@@ -158,7 +158,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Square Thru 3',
-      formation:Formations.EightChainThru,
+      formation:Formation('Eight Chain Thru'),
       from:'Eight Chain Thru',difficulty: 1,
       paths:[
           PullLeft.scale(1.0,0.5) +
@@ -183,7 +183,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Square Thru 3',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       from:'Lines',difficulty: 1,
       paths:[
           Forward +
@@ -212,7 +212,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Square Thru 3',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       from:'Right-Hand Waves',difficulty: 2,
       paths:[
           LeadRight.changeBeats(3).scale(0.5,3.0) +
@@ -233,7 +233,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Square Thru 3',
-      formation:Formations.TidalWaveRHBGGB,
+      formation:Formation('Tidal Wave RH BGGB'),
       from:'Right-Hand Tidal Wave',difficulty: 2,
       paths:[
           LeadRight.changeBeats(2).scale(0.5,1.5) +
@@ -254,7 +254,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Square Thru 4',
-      formation:Formations.FacingCouplesCompact,
+      formation:Formation('Facing Couples Compact'),
       from:'Facing Couples',difficulty: 1,
       paths:[
           PullLeft.changeBeats(2).scale(1.5,0.5) +
@@ -271,7 +271,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Square Thru 4',
-      formation:Formations.WaveRH,
+      formation:Formation('Wave RH'),
       from:'Right-Hand Wave',difficulty: 2,
       paths:[
           LeadRight.changeBeats(3).scale(0.5,3.0) +
@@ -286,7 +286,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Square Thru 4',
-      formation:Formations.EightChainThru,
+      formation:Formation('Eight Chain Thru'),
       from:'Eight Chain Thru',difficulty: 1,
       paths:[
           PullLeft.scale(1.0,0.5) +
@@ -315,7 +315,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Square Thru 4',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       from:'Lines',difficulty: 1,
       paths:[
           Forward +
@@ -348,7 +348,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Square Thru 4',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       from:'Right-Hand Waves',difficulty: 2,
       paths:[
           LeadRight.changeBeats(3).scale(0.5,3.0) +
@@ -373,7 +373,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Square Thru 4',
-      formation:Formations.TidalWaveRHBGGB,
+      formation:Formation('Tidal Wave RH BGGB'),
       from:'Right-Hand Tidal Wave',difficulty: 2,
       paths:[
           LeadRight.changeBeats(2).scale(0.5,1.5) +
@@ -398,7 +398,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left Square Thru 4',
-      formation:Formations.FacingCouplesCompact,
+      formation:Formation('Facing Couples Compact'),
       from:'Facing Couples',difficulty: 1,noDisplay: true,
       paths:[
           Forward.scale(0.5,1.0) +
@@ -417,7 +417,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left Square Thru 4',
-      formation:Formations.WaveLH,
+      formation:Formation('Wave LH'),
       from:'Left-Hand Wave',difficulty: 2,noDisplay: true,
       paths:[
           LeadLeft.changeBeats(3).scale(0.5,3.0) +
@@ -432,7 +432,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left Square Thru 4',
-      formation:Formations.EightChainThru,
+      formation:Formation('Eight Chain Thru'),
       from:'Eight Chain Thru',difficulty: 1,noDisplay: true,
       paths:[
           PullRight.scale(1.0,0.5) +
@@ -461,7 +461,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left Square Thru 4',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       from:'Lines',difficulty: 2,noDisplay: true,
       paths:[
           Forward +
@@ -494,7 +494,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left Square Thru 3 1/2',
-      formation:Formations.FacingCouplesCompact,
+      formation:Formation('Facing Couples Compact'),
       from:'Facing Couples',difficulty: 1,noDisplay: true,
       paths:[
           Forward.scale(0.5,1.0) +
@@ -511,7 +511,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left Square Thru 3 1/2',
-      formation:Formations.WaveLH,
+      formation:Formation('Wave LH'),
       from:'Left-Hand Wave',difficulty: 2,noDisplay: true,
       paths:[
           LeadLeft.changeBeats(3).scale(0.5,3.0) +
@@ -524,7 +524,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left Square Thru 3 1/2',
-      formation:Formations.EightChainThru,
+      formation:Formation('Eight Chain Thru'),
       from:'Eight Chain Thru',difficulty: 1,noDisplay: true,
       paths:[
           PullRight.scale(1.0,0.5) +
@@ -549,7 +549,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left Square Thru 3 1/2',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       from:'Lines',difficulty: 2,noDisplay: true,
       paths:[
           Forward +
@@ -578,7 +578,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left Square Thru 3',
-      formation:Formations.FacingCouplesCompact,
+      formation:Formation('Facing Couples Compact'),
       from:'Facing Couples',difficulty: 1,noDisplay: true,
       paths:[
           Forward.scale(0.5,1.0) +
@@ -595,7 +595,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left Square Thru 3',
-      formation:Formations.WaveLH,
+      formation:Formation('Wave LH'),
       from:'Left-Hand Wave',difficulty: 2,noDisplay: true,
       paths:[
           LeadLeft.changeBeats(3).scale(0.5,3.0) +
@@ -608,7 +608,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left Square Thru 3',
-      formation:Formations.EightChainThru,
+      formation:Formation('Eight Chain Thru'),
       from:'Eight Chain Thru',difficulty: 1,noDisplay: true,
       paths:[
           PullRight.scale(1.0,0.5) +
@@ -633,7 +633,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left Square Thru 3',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       from:'Lines',difficulty: 2,noDisplay: true,
       paths:[
           Forward +
@@ -662,7 +662,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left Square Thru 2 1/2',
-      formation:Formations.FacingCouplesCompact,
+      formation:Formation('Facing Couples Compact'),
       from:'Facing Couples',difficulty: 1,noDisplay: true,
       paths:[
           Forward.scale(0.5,1.0) +
@@ -677,7 +677,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left Square Thru 2 1/2',
-      formation:Formations.WaveLH,
+      formation:Formation('Wave LH'),
       from:'Left-Hand Wave',difficulty: 2,noDisplay: true,
       paths:[
           LeadLeft.changeBeats(3).scale(0.5,3.0) +
@@ -688,7 +688,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left Square Thru 2 1/2',
-      formation:Formations.EightChainThru,
+      formation:Formation('Eight Chain Thru'),
       from:'Eight Chain Thru',difficulty: 1,noDisplay: true,
       paths:[
           PullRight.scale(1.0,0.5) +
@@ -709,7 +709,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left Square Thru 2 1/2',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       from:'Lines',difficulty: 2,noDisplay: true,
       paths:[
           Forward +
@@ -734,7 +734,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left Square Thru 2',
-      formation:Formations.FacingCouplesCompact,
+      formation:Formation('Facing Couples Compact'),
       from:'Facing Couples',difficulty: 1,noDisplay: true,
       paths:[
           Forward.scale(0.5,1.0) +
@@ -749,7 +749,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left Square Thru 2',
-      formation:Formations.WaveLH,
+      formation:Formation('Wave LH'),
       from:'Left-Hand Wave',difficulty: 2,noDisplay: true,
       paths:[
           LeadLeft.changeBeats(3).scale(0.5,3.0) +
@@ -760,7 +760,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left Square Thru 2',
-      formation:Formations.EightChainThru,
+      formation:Formation('Eight Chain Thru'),
       from:'Eight Chain Thru',difficulty: 1,noDisplay: true,
       paths:[
           PullRight.scale(1.0,0.5) +
@@ -781,7 +781,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left Square Thru 2',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       from:'Lines',difficulty: 2,noDisplay: true,
       paths:[
           Forward +
@@ -806,7 +806,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left Square Thru 1 1/2',
-      formation:Formations.FacingCouplesCompact,
+      formation:Formation('Facing Couples Compact'),
       from:'Facing Couples',difficulty: 1,noDisplay: true,
       paths:[
           Forward.scale(0.5,1.0) +
@@ -819,7 +819,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left Square Thru 1 1/2',
-      formation:Formations.WaveLH,
+      formation:Formation('Wave LH'),
       from:'Left-Hand Wave',difficulty: 2,noDisplay: true,
       paths:[
           LeadLeft.changeBeats(3).scale(1.0,3.0),
@@ -828,7 +828,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left Square Thru 1 1/2',
-      formation:Formations.EightChainThru,
+      formation:Formation('Eight Chain Thru'),
       from:'Eight Chain Thru',difficulty: 1,noDisplay: true,
       paths:[
           PullRight.scale(1.0,0.5) +
@@ -845,7 +845,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left Square Thru 1 1/2',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       from:'Lines',difficulty: 2,noDisplay: true,
       paths:[
           Forward +
@@ -866,7 +866,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Heads Square Thru 2',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       from:'Static Square',group:' ',difficulty: 1,notForSequencer: true,
       paths:[
           Forward_2 +
@@ -885,7 +885,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Heads Square Thru 3',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       from:'Static Square',group:' ',difficulty: 1,notForSequencer: true,
       paths:[
           Forward_2 +
@@ -906,7 +906,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Heads Square Thru 4',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       from:'Static Square',group:' ',difficulty: 1,notForSequencer: true,
       paths:[
           Forward_2 +
@@ -929,7 +929,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Heads Left Square Thru 4',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       from:'Static Square',group:' ',difficulty: 1,notForSequencer: true,
       paths:[
           Forward_2 +
@@ -952,7 +952,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Sides Square Thru 2',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       from:'Static Square',group:' ',difficulty: 1,notForSequencer: true,noDisplay: true,
       paths:[
           Path(),
@@ -971,7 +971,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Sides Square Thru 3',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       from:'Static Square',group:' ',difficulty: 1,notForSequencer: true,noDisplay: true,
       paths:[
           Path(),
@@ -992,7 +992,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Sides Square Thru 4',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       from:'Static Square',group:' ',difficulty: 1,notForSequencer: true,noDisplay: true,
       paths:[
           Path(),
@@ -1015,7 +1015,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Sides Left Square Thru 4',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       from:'Static Square',group:' ',difficulty: 2,notForSequencer: true,noDisplay: true,
       paths:[
           Path(),
@@ -1038,7 +1038,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Square Thru 1 1/2',
-      formation:Formations.FacingCouplesCompact,
+      formation:Formation('Facing Couples Compact'),
       from:'Facing Couples',difficulty: 2,
       paths:[
           Forward.scale(0.5,1.0) +
@@ -1051,7 +1051,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Square Thru 1 1/2',
-      formation:Formations.WaveRH,
+      formation:Formation('Wave RH'),
       from:'Right-Hand Wave',difficulty: 3,
       paths:[
           LeadRight.changeBeats(3).scale(0.5,3.0),
@@ -1060,7 +1060,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Square Thru 1 1/2',
-      formation:Formations.EightChainThru,
+      formation:Formation('Eight Chain Thru'),
       from:'Eight Chain Thru',difficulty: 2,
       paths:[
           PullLeft.scale(1.0,0.5) +
@@ -1077,7 +1077,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Square Thru 1 1/2',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       from:'Lines',difficulty: 2,
       paths:[
           Forward +
@@ -1098,7 +1098,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Square Thru 1 1/2',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       from:'Right-Hand Waves',difficulty: 3,
       paths:[
           LeadRight.changeBeats(3).scale(0.5,3.0),
@@ -1111,7 +1111,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Square Thru 1 1/2',
-      formation:Formations.TidalWaveRHBGGB,
+      formation:Formation('Tidal Wave RH BGGB'),
       from:'Right-Hand Tidal Wave',difficulty: 3,
       paths:[
           LeadRight.changeBeats(2).scale(0.5,1.5),
@@ -1124,7 +1124,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Square Thru 2 1/2',
-      formation:Formations.FacingCouplesCompact,
+      formation:Formation('Facing Couples Compact'),
       from:'Facing Couples',difficulty: 2,
       paths:[
           Forward.scale(0.5,1.0) +
@@ -1139,7 +1139,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Square Thru 2 1/2',
-      formation:Formations.WaveRH,
+      formation:Formation('Wave RH'),
       from:'Right-Hand Wave',difficulty: 3,
       paths:[
           LeadRight.changeBeats(3).scale(0.5,3.0) +
@@ -1150,7 +1150,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Square Thru 2 1/2',
-      formation:Formations.EightChainThru,
+      formation:Formation('Eight Chain Thru'),
       from:'Eight Chain Thru',difficulty: 2,
       paths:[
           PullLeft.scale(1.0,0.5) +
@@ -1171,7 +1171,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Square Thru 2 1/2',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       from:'Lines',difficulty: 2,
       paths:[
           Forward +
@@ -1196,7 +1196,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Square Thru 2 1/2',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       from:'Right-Hand Waves',difficulty: 3,
       paths:[
           LeadRight.changeBeats(3).scale(0.5,3.0) +
@@ -1213,7 +1213,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Square Thru 2 1/2',
-      formation:Formations.TidalWaveRHBGGB,
+      formation:Formation('Tidal Wave RH BGGB'),
       from:'Right-Hand Tidal Wave',difficulty: 3,
       paths:[
           LeadRight.changeBeats(2).scale(0.5,1.5) +
@@ -1230,7 +1230,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Square Thru 3 1/2',
-      formation:Formations.FacingCouplesCompact,
+      formation:Formation('Facing Couples Compact'),
       from:'Facing Couples',difficulty: 2,
       paths:[
           Forward.scale(0.5,1.0) +
@@ -1247,7 +1247,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Square Thru 3 1/2',
-      formation:Formations.WaveRH,
+      formation:Formation('Wave RH'),
       from:'Right-Hand Wave',difficulty: 3,
       paths:[
           LeadRight.changeBeats(3).scale(0.5,3.0) +
@@ -1260,7 +1260,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Square Thru 3 1/2',
-      formation:Formations.EightChainThru,
+      formation:Formation('Eight Chain Thru'),
       from:'Eight Chain Thru',difficulty: 2,
       paths:[
           PullLeft.scale(1.0,0.5) +
@@ -1285,7 +1285,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Square Thru 3 1/2',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       from:'Lines',difficulty: 2,
       paths:[
           Forward +
@@ -1314,7 +1314,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Square Thru 3 1/2',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       from:'Right-Hand Waves',difficulty: 3,
       paths:[
           LeadRight.changeBeats(3).scale(0.5,3.0) +
@@ -1335,7 +1335,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Square Thru 3 1/2',
-      formation:Formations.TidalWaveRHBGGB,
+      formation:Formation('Tidal Wave RH BGGB'),
       from:'Right-Hand Tidal Wave',difficulty: 3,
       paths:[
           LeadRight.changeBeats(2).scale(0.5,1.5) +
@@ -1356,7 +1356,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Square Thru, on the Third Hand Spin the Top',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       group:'   ',parts:'5;3',difficulty: 2,
       taminator: '''
       Spin the Top is in the Mainstream program.
@@ -1394,7 +1394,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Square Thru, on the Third Hand Eight Chain 5',
-      formation:Formations.EightChainThru,
+      formation:Formation('Eight Chain Thru'),
       group:'   ',difficulty: 2,
       taminator: '''
       Eight Chain 5 is in the Mainstream program.
@@ -1450,7 +1450,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Square Thru, on the Third Hand Box the Gnat and Right and Left Grand',
-      formation:Formations.EightChainThru,
+      formation:Formation('Eight Chain Thru'),
       group:'   ',parts:'4;3',difficulty: 2,
       paths:[
           PullLeft.scale(1.0,0.5) +
@@ -1496,7 +1496,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Square Thru, on the Fourth Hand Left Swing Thru',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       group:'   ',difficulty: 2,
       taminator: '''
       Swing Thru is in Basic 2.
@@ -1534,7 +1534,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Square Thru, on the Fourth Hand Left Allemande',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       group:'   ',parts:'6.5',difficulty: 2,
       paths:[
           Forward +
@@ -1571,7 +1571,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Square Thru, on the Third Hand Touch 1/4',
-      formation:Formations.FacingCouplesCompact,
+      formation:Formation('Facing Couples Compact'),
       group:'   ',difficulty: 2,
       taminator: '''
       Touch a Quarter is in Basic 2.
@@ -1591,7 +1591,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Square Thru, on the Fourth Hand Left Touch 1/4',
-      formation:Formations.FacingCouplesCompact,
+      formation:Formation('Facing Couples Compact'),
       group:'   ',difficulty: 2,
       taminator: '''
       Touch a Quarter is in Basic 2.

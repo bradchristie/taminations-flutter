@@ -19,13 +19,13 @@
 */
 
 import '../../animated_call.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> TradeBy = [
 
     AnimatedCall('Trade By',
-      formation:Formations.TradeBy,
+      formation:Formation('Trade By'),
       from:'Trade By',difficulty: 1,
       paths:[
           FlipLeft.changeBeats(4),
@@ -40,7 +40,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Trade By',
-      formation:Formations.n34Tag,
+      formation:Formation('3/4 Tag'),
       from:'3/4 Tag',difficulty: 2,
       paths:[
           FlipLeft.changeBeats(4),
@@ -53,7 +53,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Trade By',
-      formation:Formations.TmBoneLUUR,
+      formation:Formation('T-Bone LUUR'),
       from:'T-Bones',difficulty: 2,
       paths:[
           RunRight.changeBeats(4),

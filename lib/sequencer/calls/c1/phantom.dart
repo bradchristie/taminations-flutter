@@ -18,7 +18,6 @@
 
 */
 
-import '../../../formations.dart';
 import '../common.dart';
 
 class Phantom extends Action {
@@ -30,6 +29,20 @@ class Phantom extends Action {
   Phantom(String name) :
         _subcall = name.replaceFirst('Phantom'.ri, '').trim(),
         super(name);
+
+  static final Formation PhantomSnapFormation_1 = Formation('', dancers:[
+    DancerModel.fromData(gender:Gender.BOY,x:-2,y:3,angle:0),
+    DancerModel.fromData(gender:Gender.GIRL,x:-2,y:1,angle:0),
+    DancerModel.fromData(gender:Gender.BOY,x:3,y:2,angle:270),
+    DancerModel.fromData(gender:Gender.GIRL,x:1,y:2,angle:270),
+  ]);
+
+  static final Formation PhantomSnapFormation_2 = Formation('', dancers:[
+    DancerModel.fromData(gender:Gender.BOY,x:-2,y:-1,angle:0),
+    DancerModel.fromData(gender:Gender.GIRL,x:-2,y:-3,angle:0),
+    DancerModel.fromData(gender:Gender.BOY,x:3,y:-2,angle:90),
+    DancerModel.fromData(gender:Gender.GIRL,x:1,y:-2,angle:90),
+  ]);
 
   CallContext _addPhantoms(CallContext ctx) {
     //  Add all the phantoms
@@ -70,8 +83,8 @@ class Phantom extends Action {
   @override
   void perform(CallContext ctx) {
     final phantomSnapFormations = {
-      Formations.PhantomSnapFormation_1 : 1.0,
-      Formations.PhantomSnapFormation_2 : 1.0
+      PhantomSnapFormation_1 : 1.0,
+      PhantomSnapFormation_2 : 1.0
     };
     ctx.matchFormationList(phantomSnapFormations);
     //  Split the dancers into two groups

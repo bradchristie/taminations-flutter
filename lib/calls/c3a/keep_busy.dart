@@ -19,13 +19,13 @@
 */
 
 import '../../animated_call.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> KeepBusy = [
 
     AnimatedCall('Keep Busy',
-      formation:Formations.TwomFacedLinesRH,
+      formation:Formation('Two-Faced Lines RH'),
       from:'Right-Hand Two-Faced Lines',parts:'2;1.5;3',
       paths:[
           Forward_2.changehands(2) +
@@ -46,7 +46,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Keep Busy',
-      formation:Formations.TwomFacedLinesLH,
+      formation:Formation('Two-Faced Lines LH'),
       from:'Left-Hand Two-Faced Lines',parts:'2;1.5;3',
       paths:[
           RunLeft.changeBeats(5).changehands(1).scale(3.0,3.0) +

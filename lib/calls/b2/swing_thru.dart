@@ -20,13 +20,13 @@
 
 import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> SwingThru = [
 
     AnimatedCall('Swing Thru',
-      formation:Formations.WaveRH,
+      formation:Formation('Wave RH'),
       from:'Right-Hand Wave',parts:'3',difficulty: 1,
       paths:[
           SwingRight +
@@ -36,7 +36,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Swing Thru',
-      formation:Formations.CompactWaveRH,
+      formation:Formation('Compact Wave RH'),
       from:'Compact Right-Hand Wave',parts:'3',noDisplay: true,
       paths:[
           SwingRight.scale(0.5,0.5) +
@@ -46,7 +46,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Swing Thru',
-      formation:Formations.WaveLH,
+      formation:Formation('Wave LH'),
       from:'Left-Hand Wave',parts:'3',difficulty: 2,
       paths:[
           Stand.changeBeats(3).changehands(0) +
@@ -57,7 +57,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Swing Thru',
-      formation:Formations.CompactWaveLH,
+      formation:Formation('Compact Wave LH'),
       from:'Compact Left-Hand Wave',parts:'3',difficulty: 2,noDisplay: true,
       paths:[
           Stand.changeBeats(3).changehands(0) +
@@ -68,7 +68,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Swing Thru',
-      formation:Formations.FacingCouplesCompact,
+      formation:Formation('Facing Couples Compact'),
       from:'Facing Couples',parts:'6',difficulty: 1,
       paths:[
           ExtendLeft.changeBeats(3).scale(1.5,2.0) +
@@ -80,7 +80,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Swing Thru',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       from:'Right-Hand Waves',parts:'3',difficulty: 1,
       paths:[
           SwingRight +
@@ -95,7 +95,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Swing Thru',
-      formation:Formations.OceanWavesLHBGGB,
+      formation:Formation('Ocean Waves LH BGGB'),
       from:'Left-Hand Waves',parts:'3',difficulty: 2,
       paths:[
           Stand.changeBeats(3) +
@@ -112,7 +112,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Swing Thru',
-      formation:Formations.TidalWaveRHBGGB,
+      formation:Formation('Tidal Wave RH BGGB'),
       from:'Right-Hand Tidal Wave',parts:'3',difficulty: 2,
       taminator: '''
        Be careful not to do Grand Swing Thru
@@ -130,7 +130,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Swing Thru',
-      formation:Formations.TidalWaveLHBGGB,
+      formation:Formation('Tidal Wave LH BGGB'),
       from:'Left-Hand Tidal Wave',parts:'3',difficulty: 2,
       paths:[
           Stand.changeBeats(3).changehands(0) +
@@ -147,7 +147,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Swing Thru',
-      formation:Formations.EightChainThru,
+      formation:Formation('Eight Chain Thru'),
       from:'Eight Chain Thru',parts:'4',difficulty: 1,
       taminator: '''
       This is an example of the Facing Couples rule.
@@ -169,7 +169,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Swing Thru',
-      formation:Formations.QuarterTag,
+      formation:Formation('Quarter Tag'),
       from:'Quarter Tag',parts:'3',difficulty: 1,
       taminator: '''
       The center dancers do not extend to the outside dancers.
@@ -188,7 +188,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Swing Thru',
-      formation:Formations.AlamoWave,
+      formation:Formation('Alamo Wave'),
       from:'Alamo Wave',parts:'3.2',difficulty: 1,
       paths:[
           SxtnthLeft.changehands(2) +
@@ -221,7 +221,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Swing Thru',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       from:'Facing Lines',parts:'5',difficulty: 2,
       paths:[
           ExtendLeft.changeBeats(2).scale(2.0,0.5) +
@@ -240,7 +240,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left Swing Thru',
-      formation:Formations.WaveLH,
+      formation:Formation('Wave LH'),
       from:'Left-Hand Wave',parts:'3',difficulty: 1,
       paths:[
           SwingLeft +
@@ -250,7 +250,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left Swing Thru',
-      formation:Formations.CompactWaveLH,
+      formation:Formation('Compact Wave LH'),
       from:'Compact Left-Hand Wave',parts:'3',difficulty: 1,noDisplay: true,
       paths:[
           SwingLeft.scale(0.5,0.5) +
@@ -260,7 +260,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left Swing Thru',
-      formation:Formations.WaveRH,
+      formation:Formation('Wave RH'),
       from:'Right-Hand Wave',parts:'3',difficulty: 2,
       paths:[
           Stand.changeBeats(3).changehands(0) +
@@ -271,7 +271,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left Swing Thru',
-      formation:Formations.CompactWaveRH,
+      formation:Formation('Compact Wave RH'),
       from:'Compact Right-Hand Wave',parts:'3',difficulty: 2,noDisplay: true,
       paths:[
           Stand.changeBeats(3).changehands(0) +
@@ -282,7 +282,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left Swing Thru',
-      formation:Formations.FacingCouplesCompact,
+      formation:Formation('Facing Couples Compact'),
       from:'Facing Couples',parts:'5',difficulty: 2,
       taminator: '''
       This is an example of the Facing Couples rule.
@@ -299,7 +299,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left Swing Thru',
-      formation:Formations.OceanWavesLHBGGB,
+      formation:Formation('Ocean Waves LH BGGB'),
       from:'Left-Hand Waves',parts:'3',difficulty: 1,
       paths:[
           SwingLeft +
@@ -314,7 +314,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left Swing Thru',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       from:'Right-Hand Waves',parts:'3',difficulty: 2,
       paths:[
           Stand.changeBeats(3) +
@@ -331,7 +331,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left Swing Thru',
-      formation:Formations.TidalWaveLHBGGB,
+      formation:Formation('Tidal Wave LH BGGB'),
       from:'Left-Hand Tidal Wave',parts:'3',difficulty: 2,
       paths:[
           SwingLeft.changehands(5).scale(0.75,0.5) +
@@ -346,7 +346,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left Swing Thru',
-      formation:Formations.TidalWaveRHBGGB,
+      formation:Formation('Tidal Wave RH BGGB'),
       from:'Right-Hand Tidal Wave',parts:'3',difficulty: 2,
       paths:[
           Stand.changeBeats(3).changehands(0) +
@@ -363,7 +363,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left Swing Thru',
-      formation:Formations.EightChainThru,
+      formation:Formation('Eight Chain Thru'),
       from:'Eight Chain Thru',parts:'4',difficulty: 2,
       taminator: '''
       This is an example of the Facing Couples rule.
@@ -387,7 +387,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left Swing Thru',
-      formation:Formations.QuarterTagLH,
+      formation:Formation('Quarter Tag LH'),
       from:'Left-Hand Quarter Tag',parts:'3',difficulty: 2,
       paths:[
           Path(),
@@ -401,7 +401,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left Swing Thru',
-      formation:Formations.AlamoWave,
+      formation:Formation('Alamo Wave'),
       from:'Alamo Wave',parts:'3.2',difficulty: 2,
       paths:[
           SxtnthRight.changehands(1) +
@@ -434,7 +434,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left Swing Thru',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       from:'Facing Lines',parts:'5',difficulty: 2,
       paths:[
           ExtendRight.changeBeats(2).scale(2.0,0.5) +

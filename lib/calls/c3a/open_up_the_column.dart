@@ -21,13 +21,12 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> OpenUpTheColumn = [
 
     AnimatedCall('Open Up the Column',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.GIRL,x:-1,y:3,angle:90),
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:1,angle:90),
         DancerModel.fromData(gender:Gender.GIRL,x:-1,y:-1,angle:90),
@@ -52,7 +51,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Open Up the Column',
-      formation:Formations.ColumnLHGBGB,
+      formation:Formation('Column LH GBGB'),
       from:'Left-Hand Columns',fractions:'3;4.5',
       paths:[
           Forward.changeBeats(3) +
@@ -72,7 +71,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('2 By 1 Open Up the Column',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:1,y:2,angle:270),
         DancerModel.fromData(gender:Gender.BOY,x:1,y:0,angle:270),
         DancerModel.fromData(gender:Gender.GIRL,x:1,y:-2,angle:270),

@@ -19,13 +19,13 @@
 */
 
 import '../../animated_call.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> Q14WheelTheOcean = [
 
     AnimatedCall('1/4 Wheel the Ocean',
-      formation:Formations.TwomFacedLineLH,
+      formation:Formation('Two-Faced Line LH'),
       from:'Left-Hand Two-Faced Line',parts:'1.5',
       paths:[
           BackHingeRight +
@@ -37,7 +37,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('1/4 Wheel the Ocean',
-      formation:Formations.TwomFacedLinesLH,
+      formation:Formation('Two-Faced Lines LH'),
       from:'Left-Hand Two-Faced Lines',parts:'1.5',
       paths:[
           HingeLeft +
@@ -56,7 +56,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('1/4 Wheel the Ocean',
-      formation:Formations.TwomFacedTidalLineLH,
+      formation:Formation('Two-Faced Tidal Line LH'),
       from:'Left-Hand Two-Faced Tidal Line',parts:'1.5',
       paths:[
           HingeLeft.scale(1.0,0.5) +
@@ -75,7 +75,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('3/4 Wheel the Ocean',
-      formation:Formations.TwomFacedLineRH,
+      formation:Formation('Two-Faced Line RH'),
       from:'Right-Hand Two-Faced Line',parts:'6',
       paths:[
           QuarterLeft.changeBeats(2).changehands(2).skew(0.33,-0.33) +
@@ -91,7 +91,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('3/4 Wheel the Ocean',
-      formation:Formations.TwomFacedLinesRH,
+      formation:Formation('Two-Faced Lines RH'),
       from:'Right-Hand Two-Faced Lines',parts:'6',
       paths:[
           QuarterLeft.changeBeats(2).changehands(2).skew(0.33,-0.33) +
@@ -118,7 +118,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('3/4 Wheel the Ocean',
-      formation:Formations.TwomFacedTidalLineRH,
+      formation:Formation('Two-Faced Tidal Line RH'),
       from:'Right-Hand Two-Faced Tidal Line',parts:'6',
       paths:[
           QuarterLeft.changeBeats(2).changehands(2).skew(0.33,-0.17) +
@@ -143,7 +143,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('1/4 Wheel the Sea',
-      formation:Formations.TwomFacedLineLH,
+      formation:Formation('Two-Faced Line LH'),
       from:'Left-Hand Two-Faced Line',parts:'1.5',
       paths:[
           BackHingeRight +
@@ -154,7 +154,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('1/4 Wheel the Sea',
-      formation:Formations.TwomFacedLinesLH,
+      formation:Formation('Two-Faced Lines LH'),
       from:'Left-Hand Two-Faced Lines',parts:'1.5',
       paths:[
           HingeLeft +
@@ -171,7 +171,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('1/4 Wheel the Sea',
-      formation:Formations.TwomFacedTidalLineLH,
+      formation:Formation('Two-Faced Tidal Line LH'),
       from:'Left-Hand Two-Faced Tidal Line',parts:'1.5',
       paths:[
           HingeLeft.scale(1.0,0.5) +
@@ -188,7 +188,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('3/4 Wheel the Sea',
-      formation:Formations.TwomFacedLineRH,
+      formation:Formation('Two-Faced Line RH'),
       from:'Right-Hand Two-Faced Line',parts:'4.5',
       paths:[
           QuarterLeft.changehands(2).skew(0.33,-0.33) +
@@ -203,7 +203,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('3/4 Wheel the Sea',
-      formation:Formations.TwomFacedLinesRH,
+      formation:Formation('Two-Faced Lines RH'),
       from:'Right-Hand Two-Faced Lines',parts:'4.5',
       paths:[
           QuarterLeft.changehands(2).skew(0.33,-0.33) +
@@ -228,7 +228,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('3/4 Wheel the Sea',
-      formation:Formations.TwomFacedTidalLineRH,
+      formation:Formation('Two-Faced Tidal Line RH'),
       from:'Right-Hand Two-Faced Tidal Line',parts:'6',
       paths:[
           QuarterLeft.changeBeats(2).changehands(2).skew(0.33,-0.17) +

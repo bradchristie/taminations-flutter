@@ -21,13 +21,12 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> InterlockedDiamondCirculate = [
 
     AnimatedCall('Interlocked Diamond Circulate',
-      formation:Formations.InterlockedDiamondsRHGirlPoints,
+      formation:Formation('Interlocked Diamonds RH Girl Points'),
       from:'Right-Hand Interlocked Diamonds',
       paths:[
           LeadRight.changeBeats(3).scale(3.0,1.0),
@@ -41,7 +40,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Interlocked Diamond Circulate',
-      formation:Formations.InterlockedDiamondsLHGirlPoints,
+      formation:Formation('Interlocked Diamonds LH Girl Points'),
       from:'Left-Hand Interlocked Diamonds',
       paths:[
           LeadLeft.changeBeats(3).scale(3.0,1.0),
@@ -55,7 +54,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Interlocked Diamond Circulate',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:0,y:-3,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:-3,y:-2,angle:270),
         DancerModel.fromData(gender:Gender.BOY,x:0,y:-1,angle:180),
@@ -73,7 +72,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Interlocked Diamond Circulate',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:0,y:-3,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:-3,y:-2,angle:90),
         DancerModel.fromData(gender:Gender.BOY,x:0,y:-1,angle:0),
@@ -91,7 +90,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Interlocked Diamond Circulate',
-      formation:Formations.InterlockedDiamondsRHPTPGirlPoints,
+      formation:Formation('Interlocked Diamonds RH PTP Girl Points'),
       from:'Right-Hand Point-to-Point Interlocked Diamonds',
       paths:[
           LeadRight.changeBeats(4).scale(4.0,1.0),
@@ -104,7 +103,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Interlocked Diamond Circulate',
-      formation:Formations.InterlockedDiamondsLHPTPGirlPoints,
+      formation:Formation('Interlocked Diamonds LH PTP Girl Points'),
       from:'Left-Hand Point-to-Point Interlocked Diamonds',
       paths:[
           LeadLeft.changeBeats(3).scale(2.0,1.0),
@@ -117,7 +116,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Interlocked Diamond Circulate',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:-3,angle:90),
         DancerModel.fromData(gender:Gender.GIRL,x:0,y:-1,angle:0),
         DancerModel.fromData(gender:Gender.BOY,x:1,y:-3,angle:270),
@@ -135,7 +134,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Interlocked Diamond Circulate',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:-3,angle:270),
         DancerModel.fromData(gender:Gender.GIRL,x:0,y:-1,angle:180),
         DancerModel.fromData(gender:Gender.BOY,x:1,y:-3,angle:90),
@@ -153,7 +152,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cut the Interlocked Diamond',
-      formation:Formations.InterlockedDiamondsRHGirlPoints,
+      formation:Formation('Interlocked Diamonds RH Girl Points'),
       from:'Right-Hand Interlocked Diamonds',
       paths:[
           LeadRight.changeBeats(4).scale(3.0,1.0),
@@ -168,7 +167,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cut the Interlocked Diamond',
-      formation:Formations.InterlockedDiamondsLHGirlPoints,
+      formation:Formation('Interlocked Diamonds LH Girl Points'),
       from:'Left-Hand Interlocked Diamonds',
       paths:[
           LeadLeft.changeBeats(4).scale(3.0,1.0),
@@ -183,7 +182,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cut the Interlocked Diamond',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:0,y:-3,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:-3,y:-2,angle:270),
         DancerModel.fromData(gender:Gender.BOY,x:0,y:-1,angle:180),
@@ -204,7 +203,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cut the Interlocked Diamond',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:0,y:-3,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:-3,y:-2,angle:90),
         DancerModel.fromData(gender:Gender.BOY,x:0,y:-1,angle:180),
@@ -225,7 +224,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cut the Interlocked Diamond',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:0,y:-3,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:-3,y:-2,angle:270),
         DancerModel.fromData(gender:Gender.BOY,x:0,y:-1,angle:180),
@@ -246,7 +245,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cut the Interlocked Diamond',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:0,y:-3,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:-3,y:-2,angle:90),
         DancerModel.fromData(gender:Gender.BOY,x:0,y:-1,angle:0),
@@ -266,7 +265,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cut the Interlocked Diamond',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:0,y:-3,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:-3,y:-2,angle:90),
         DancerModel.fromData(gender:Gender.BOY,x:0,y:-1,angle:0),
@@ -286,7 +285,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cut the Interlocked Diamond',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:0,y:-3,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:-3,y:-2,angle:270),
         DancerModel.fromData(gender:Gender.BOY,x:0,y:-1,angle:0),
@@ -306,7 +305,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Flip the Interlocked Diamond',
-      formation:Formations.InterlockedDiamondsRHGirlPoints,
+      formation:Formation('Interlocked Diamonds RH Girl Points'),
       from:'Right-Hand Interlocked Diamonds',
       paths:[
           LeadRight.changeBeats(2).scale(3.0,1.0),
@@ -319,7 +318,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Flip the Interlocked Diamond',
-      formation:Formations.InterlockedDiamondsLHGirlPoints,
+      formation:Formation('Interlocked Diamonds LH Girl Points'),
       from:'Left-Hand Interlocked Diamonds',
       paths:[
           LeadLeft.changeBeats(2).scale(3.0,1.0),
@@ -332,7 +331,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Flip the Interlocked Diamond',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:0,y:-3,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:-3,y:-2,angle:270),
         DancerModel.fromData(gender:Gender.BOY,x:0,y:-1,angle:180),
@@ -350,7 +349,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Flip the Interlocked Diamond',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:0,y:-3,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:-3,y:-2,angle:90),
         DancerModel.fromData(gender:Gender.BOY,x:0,y:-1,angle:180),
@@ -368,7 +367,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Flip the Interlocked Diamond',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:0,y:-3,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:-3,y:-2,angle:270),
         DancerModel.fromData(gender:Gender.BOY,x:0,y:-1,angle:180),
@@ -386,7 +385,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Flip the Interlocked Diamond',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:0,y:-3,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:-3,y:-2,angle:90),
         DancerModel.fromData(gender:Gender.BOY,x:0,y:-1,angle:0),
@@ -404,7 +403,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Flip the Interlocked Diamond',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:0,y:-3,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:-3,y:-2,angle:90),
         DancerModel.fromData(gender:Gender.BOY,x:0,y:-1,angle:0),
@@ -422,7 +421,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Flip the Interlocked Diamond',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:0,y:-3,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:-3,y:-2,angle:270),
         DancerModel.fromData(gender:Gender.BOY,x:0,y:-1,angle:0),

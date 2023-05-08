@@ -19,13 +19,13 @@
 */
 
 import '../../animated_call.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> SquareTheBases = [
 
     AnimatedCall('Square the Bases',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       from:'Normal Lines',fractions:'5;2.5',
       paths:[
           ExtendLeft.changeBeats(2).scale(2.0,0.5) +

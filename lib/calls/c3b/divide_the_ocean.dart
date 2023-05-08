@@ -19,13 +19,13 @@
 */
 
 import '../../animated_call.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> DivideTheOcean = [
 
     AnimatedCall('Divide the Ocean Right',
-      formation:Formations.TidalWaveRHBGGB,
+      formation:Formation('Tidal Wave RH BGGB'),
       group:' ',
       paths:[
           SwingRight.scale(0.5,0.5) +
@@ -49,7 +49,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Divide the Sea Out',
-      formation:Formations.TidalWaveRHBGBG,
+      formation:Formation('Tidal Wave RH BGBG'),
       group:' ',
       paths:[
           SwingRight.scale(0.5,0.5) +

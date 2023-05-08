@@ -21,13 +21,12 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> ExchangeTheBox = [
 
     AnimatedCall('Exchange the Box',
-      formation:Formations.OceanWavesRHGBGB,
+      formation:Formation('Ocean Waves RH GBGB'),
       from:'Right-Hand Waves',parts:'4;4;4',
       paths:[
           Forward_4 +
@@ -53,7 +52,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Exchange the Box',
-      formation:Formations.OceanWavesLHBGBG,
+      formation:Formation('Ocean Waves LH BGBG'),
       from:'Left-Hand Waves',parts:'4;4;4',
       paths:[
           RunLeft.changeBeats(4) +
@@ -79,7 +78,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Exchange the Box',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-3,y:-1,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:-1,y:-1,angle:180),
         DancerModel.fromData(gender:Gender.BOY,x:1,y:-1,angle:180),
@@ -113,7 +112,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Exchange the Box',
-      formation:Formations.ColumnLHGBGB,
+      formation:Formation('Column LH GBGB'),
       from:'Left-Hand Columns',parts:'3;3;3',
       paths:[
           Forward_2.changeBeats(3) +
@@ -142,7 +141,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Exchange the Box',
-      formation:Formations.TwomFacedLinesRH,
+      formation:Formation('Two-Faced Lines RH'),
       from:'Right-Hand Two-Faced Lines',parts:'4;4;4',
       paths:[
           ExtendLeft.changeBeats(4).scale(4.0,1.0) +
@@ -170,7 +169,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Exchange the Inside Triangles',
-      formation:Formations.DiamondsRHPTPGirlPoints,
+      formation:Formation('Diamonds RH PTP Girl Points'),
       from:'Point-to-Point Diamonds',parts:'5;5',
       paths:[
           LeadRight.changeBeats(5).scale(2.0,1.0) +

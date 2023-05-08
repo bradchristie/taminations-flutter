@@ -21,7 +21,6 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 import '../c1/cross_and_turn.dart' as c1;
 import '../c1/shakedown.dart' as c1;
@@ -32,7 +31,7 @@ import '../c2/turn_to_a_line.dart' as c2;
   final List<AnimatedCall> OFormation = [
 
     AnimatedCall('"O" Chase Right',
-      formation:Formations.OTradeBy,
+      formation:Formation('O Trade By'),
       group:'"O"',
       paths:[
           RunRight +
@@ -51,7 +50,7 @@ import '../c2/turn_to_a_line.dart' as c2;
       ]),
 
     AnimatedCall('"O" Circulate (Right-Hand O)',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.GIRL,x:-3,y:1,angle:0),
         DancerModel.fromData(gender:Gender.BOY,x:-3,y:-1,angle:180),
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:3,angle:0),
@@ -69,7 +68,7 @@ import '../c2/turn_to_a_line.dart' as c2;
       ]),
 
     AnimatedCall('"O" Circulate (Left-Hand O)',
-      formation:Formations.OLH,
+      formation:Formation('O LH'),
       from:'Left-Hand O',group:'"O"',fractions:'1.5',
       paths:[
           FlipLeft,
@@ -82,7 +81,7 @@ import '../c2/turn_to_a_line.dart' as c2;
       ]),
 
     AnimatedCall('"O" Circulate',
-      formation:Formations.OEightChainThru,
+      formation:Formation('O Eight Chain Thru'),
       from:'O Eight Chain Thru',group:'"O"',fractions:'1.5',noDisplay: true,
       paths:[
           ExtendLeft.changeBeats(2).scale(1.0,2.0) +
@@ -99,7 +98,7 @@ import '../c2/turn_to_a_line.dart' as c2;
       ]),
 
     AnimatedCall('"O" Circulate',
-      formation:Formations.OTradeBy,
+      formation:Formation('O Trade By'),
       from:'O Trade By',group:'"O"',fractions:'1.5',noDisplay: true,
       paths:[
           RunRight,
@@ -114,7 +113,7 @@ import '../c2/turn_to_a_line.dart' as c2;
       ]),
 
     AnimatedCall('"O" Cloverleaf',
-      formation:Formations.OOut,
+      formation:Formation('O Out'),
       group:'"O"',
       paths:[
           LeadRight +
@@ -139,7 +138,7 @@ import '../c2/turn_to_a_line.dart' as c2;
       ]),
 
     AnimatedCall('"O" Coordinate',
-      formation:Formations.ORH,
+      formation:Formation('O RH'),
       group:'"O"',
       paths:[
           Forward_3.changeBeats(4) +
@@ -158,7 +157,7 @@ import '../c2/turn_to_a_line.dart' as c2;
       ]),
 
     AnimatedCall('"O" Double Pass Thru',
-      formation:Formations.OIn,
+      formation:Formation('O In'),
       group:'"O"',
       paths:[
           ExtendLeft.changeBeats(3).scale(3.0,2.0) +
@@ -175,7 +174,7 @@ import '../c2/turn_to_a_line.dart' as c2;
       ]),
 
     AnimatedCall('"O" Pass In',
-      formation:Formations.OEightChainThru,
+      formation:Formation('O Eight Chain Thru'),
       group:'"O"',
       paths:[
           ExtendLeft.changeBeats(2).scale(1.0,2.0) +
@@ -190,7 +189,7 @@ import '../c2/turn_to_a_line.dart' as c2;
       ]),
 
     AnimatedCall('"O" Pass Thru',
-      formation:Formations.OEightChainThru,
+      formation:Formation('O Eight Chain Thru'),
       group:'"O"',
       paths:[
           ExtendLeft.changeBeats(2).scale(1.0,2.0) +
@@ -207,7 +206,7 @@ import '../c2/turn_to_a_line.dart' as c2;
       ]),
 
     AnimatedCall('"O" Peel Off',
-      formation:Formations.ORH,
+      formation:Formation('O RH'),
       group:'"O"',
       paths:[
           UmTurnLeft.changeBeats(4),
@@ -220,7 +219,7 @@ import '../c2/turn_to_a_line.dart' as c2;
       ]),
 
     AnimatedCall('"O" Right Roll to a Wave',
-      formation:Formations.OTradeBy,
+      formation:Formation('O Trade By'),
       group:'"O"',
       paths:[
           UmTurnRight,
@@ -233,7 +232,7 @@ import '../c2/turn_to_a_line.dart' as c2;
       ]),
 
     AnimatedCall('"O" Scoot Back',
-      formation:Formations.ORH,
+      formation:Formation('O RH'),
       group:'"O"',
       paths:[
           ExtendRight.changeBeats(2) +
@@ -250,7 +249,7 @@ import '../c2/turn_to_a_line.dart' as c2;
       ]),
 
     AnimatedCall('"O" Slide Thru',
-      formation:Formations.OEightChainThru,
+      formation:Formation('O Eight Chain Thru'),
       group:'"O"',
       paths:[
           ExtendLeft.changeBeats(2).scale(1.0,2.0) +
@@ -265,7 +264,7 @@ import '../c2/turn_to_a_line.dart' as c2;
       ]),
 
     AnimatedCall('"O" Square Thru',
-      formation:Formations.OEightChainThru,
+      formation:Formation('O Eight Chain Thru'),
       group:'"O"',
       paths:[
           ExtendLeft.changeBeats(2) +
@@ -294,7 +293,7 @@ import '../c2/turn_to_a_line.dart' as c2;
       ]),
 
     AnimatedCall('"O" Split Circulate',
-      formation:Formations.ORH,
+      formation:Formation('O RH'),
       group:'"O"',
       paths:[
           ExtendLeft.changeBeats(6).scale(2.0,2.0),
@@ -307,7 +306,7 @@ import '../c2/turn_to_a_line.dart' as c2;
       ]),
 
     AnimatedCall('"O" Split Counter Rotate',
-      formation:Formations.ORH,
+      formation:Formation('O RH'),
       group:'"O"',
       paths:[
           CounterRotateRight_2_0.changeBeats(4).skew(0.0,2.0),
@@ -320,7 +319,7 @@ import '../c2/turn_to_a_line.dart' as c2;
       ]),
 
     AnimatedCall('"O" Swap Around',
-      formation:Formations.OEightChainThru,
+      formation:Formation('O Eight Chain Thru'),
       group:'"O"',
       paths:[
           FlipRight,
@@ -333,7 +332,7 @@ import '../c2/turn_to_a_line.dart' as c2;
       ]),
 
     AnimatedCall('"O" Swing Thru',
-      formation:Formations.OEightChainThru,
+      formation:Formation('O Eight Chain Thru'),
       group:'"O"',
       paths:[
           ExtendLeft.changeBeats(2).scale(1.0,2.0) +
@@ -354,7 +353,7 @@ import '../c2/turn_to_a_line.dart' as c2;
       ]),
 
     AnimatedCall('"O" Touch a Quarter',
-      formation:Formations.OEightChainThru,
+      formation:Formation('O Eight Chain Thru'),
       group:'"O"',
       paths:[
           ExtendLeft.changeBeats(2).scale(1.0,2.0) +
@@ -371,7 +370,7 @@ import '../c2/turn_to_a_line.dart' as c2;
       ]),
 
     AnimatedCall('"O" Track Two',
-      formation:Formations.OOut,
+      formation:Formation('O Out'),
       group:'"O"',
       paths:[
           FlipLeft.skew(-2.0,0.0) +
@@ -387,7 +386,7 @@ import '../c2/turn_to_a_line.dart' as c2;
       ]),
 
     AnimatedCall('"O" Trade By',
-      formation:Formations.OTradeBy,
+      formation:Formation('O Trade By'),
       group:'"O"',
       paths:[
           RunRight,
@@ -402,7 +401,7 @@ import '../c2/turn_to_a_line.dart' as c2;
       ]),
 
     AnimatedCall('"O" Transfer the Column',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.GIRL,x:-3,y:1,angle:0),
         DancerModel.fromData(gender:Gender.BOY,x:-3,y:-1,angle:180),
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:3,angle:0),
@@ -430,7 +429,7 @@ import '../c2/turn_to_a_line.dart' as c2;
       ]),
 
     AnimatedCall('"O" Veer Left',
-      formation:Formations.OEightChainThru,
+      formation:Formation('O Eight Chain Thru'),
       group:'"O"',
       paths:[
           ExtendLeft.changeBeats(2).scale(1.0,2.0) +
@@ -444,7 +443,7 @@ import '../c2/turn_to_a_line.dart' as c2;
       ]),
 
     AnimatedCall('"O" Walk and Dodge',
-      formation:Formations.ORH,
+      formation:Formation('O RH'),
       group:'"O"',
       paths:[
           ExtendLeft.changeBeats(4).scale(2.0,2.0),
@@ -457,7 +456,7 @@ import '../c2/turn_to_a_line.dart' as c2;
       ]),
 
     AnimatedCall('"O" Wheel Thru',
-      formation:Formations.OEightChainThru,
+      formation:Formation('O Eight Chain Thru'),
       group:'"O"',
       paths:[
           LeadRight.changeBeats(3).scale(2.0,2.0) +
@@ -472,7 +471,7 @@ import '../c2/turn_to_a_line.dart' as c2;
       ]),
 
     AnimatedCall('"O" Zoom',
-      formation:Formations.OIn,
+      formation:Formation('O In'),
       group:'"O"',
       paths:[
           ExtendLeft.changeBeats(6).scale(2.0,2.0),
@@ -499,7 +498,7 @@ import '../c2/turn_to_a_line.dart' as c2;
       tam.title == '"O" Zing').first.xref(title: '"O" Zing').xref(group: '"O" (C-1)'),
 
     AnimatedCall('Magic "O" Circulate',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-3,y:1,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:-3,y:-1,angle:180),
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:3,angle:180),
@@ -517,7 +516,7 @@ import '../c2/turn_to_a_line.dart' as c2;
       ]),
 
     AnimatedCall('Magic "O" Circulate',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-3,y:1,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:-3,y:-1,angle:0),
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:3,angle:0),
@@ -535,7 +534,7 @@ import '../c2/turn_to_a_line.dart' as c2;
       ]),
 
     AnimatedCall('Magic "O" Walk and Dodge',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-3,y:1,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:-3,y:-1,angle:180),
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:3,angle:180),

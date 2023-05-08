@@ -19,13 +19,13 @@
 */
 
 import '../../animated_call.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> SweepAQuarter = [
 
     AnimatedCall('Flutterwheel and Sweep a Quarter',
-      formation:Formations.FacingCouplesCompact,
+      formation:Formation('Facing Couples Compact'),
       group:' ',
       paths:[
           Forward.changeBeats(3.5).changehands(0).scale(0.5,1.0) +
@@ -40,7 +40,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Reverse Flutterwheel and Sweep a Quarter',
-      formation:Formations.FacingCouplesCompact,
+      formation:Formation('Facing Couples Compact'),
       from:'Facing Couples',group:' ',
       paths:[
           ExtendRight.changeBeats(2).scale(1.5,1.75) +
@@ -55,7 +55,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Ferris Wheel, Centers Sweep a Quarter',
-      formation:Formations.TwomFacedLinesRH,
+      formation:Formation('Two-Faced Lines RH'),
       from:'Right-Handed Two-Faced Lines',group:' ',
       paths:[
           RunRight.changeBeats(4).changehands(6).scale(2.0,2.0).skew(3.0,0.0) +
@@ -70,7 +70,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Ferris Wheel, Centers Sweep a Quarter',
-      formation:Formations.TwomFacedLinesLH,
+      formation:Formation('Two-Faced Lines LH'),
       from:'Left-Handed Two-Faced Lines',group:' ',noDisplay: true,
       paths:[
           RunLeft.changeBeats(4).changehands(5).scale(2.0,2.0).skew(1.0,0.0),
@@ -85,7 +85,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Flutterwheel and Sweep a Quarter',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       from:'Lines',group:' ',
       paths:[
           Forward.changeBeats(3.5).changehands(0) +
@@ -110,7 +110,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Recycle and Sweep a Quarter',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       from:'Ocean Waves',group:' ',fractions:'4',
       paths:[
           RunRight.changeBeats(4).skew(1.0,-2.0) +
@@ -129,7 +129,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Reverse Flutterwheel and Sweep a Quarter',
-      formation:Formations.EightChainThru,
+      formation:Formation('Eight Chain Thru'),
       from:'Eight Chain Thru',group:' ',
       paths:[
           ExtendRight.changeBeats(2).scale(1.0,1.5) +
@@ -154,7 +154,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Wheel and Deal, Centers Sweep a Quarter',
-      formation:Formations.LinesFacingOut,
+      formation:Formation('Lines Facing Out'),
       from:'Lines Facing Out',group:' ',fractions:'4',
       paths:[
           RunLeft.changeBeats(4).changehands(1).scale(1.0,2.0).skew(-1.0,0.0) +
@@ -169,7 +169,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Sweep a Quarter Left',
-      formation:Formations.FacingCouplesCompact,
+      formation:Formation('Facing Couples Compact'),
       from:'Facing Couples',noDisplay: true,
       paths:[
           CounterRotateRight_2_0.changehands(2).skew(0.5,0.5),
@@ -178,7 +178,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Sweep a Quarter Left',
-      formation:Formations.NormalLinesCompact,
+      formation:Formation('Normal Lines Compact'),
       from:'Normal Lines',noDisplay: true,
       paths:[
           CounterRotateRight_2_0.changehands(2).skew(0.5,0.0),
@@ -191,7 +191,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Sweep a Quarter Left',
-      formation:Formations.EightChainThru,
+      formation:Formation('Eight Chain Thru'),
       from:'Eight Chain Thru',noDisplay: true,
       paths:[
           CounterRotateRight_2_0.changehands(2).skew(0.0,0.5),
@@ -204,7 +204,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Sweep a Quarter Right',
-      formation:Formations.FacingCouplesCompact,
+      formation:Formation('Facing Couples Compact'),
       from:'Facing Couples',noDisplay: true,
       paths:[
           CounterRotateLeft_0_m2.changehands(2).skew(0.5,-0.5),
@@ -213,7 +213,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Sweep a Quarter Right',
-      formation:Formations.NormalLinesCompact,
+      formation:Formation('Normal Lines Compact'),
       from:'Normal Lines',noDisplay: true,
       paths:[
           CounterRotateLeft_0_m2.changehands(2).skew(0.5,0.0),
@@ -226,7 +226,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Sweep a Quarter Right',
-      formation:Formations.EightChainThru,
+      formation:Formation('Eight Chain Thru'),
       from:'Eight Chain Thru',noDisplay: true,
       paths:[
           CounterRotateLeft_0_m2.changehands(2).skew(0.0,-0.5),

@@ -21,7 +21,6 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 
 import '../a2/all_4_all_8.dart' as a2;
@@ -29,7 +28,7 @@ import '../a2/all_4_all_8.dart' as a2;
   final List<AnimatedCall> RightRollToAWave = [
 
     AnimatedCall('Right Roll to a Wave',
-      formation:Formations.CouplesFacingOut,
+      formation:Formation('Couples Facing Out'),
       from:'Couples Facing Out',
       paths:[
           FlipRight.changeBeats(4).skew(-2.0,0.0),
@@ -38,7 +37,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Right Roll to a Wave',
-      formation:Formations.BoxRH,
+      formation:Formation('Box RH'),
       from:'Right-Hand Box',
       paths:[
           ExtendLeft.changeBeats(3).scale(2.0,2.0),
@@ -47,7 +46,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Right Roll to a Wave',
-      formation:Formations.BoxLH,
+      formation:Formation('Box LH'),
       from:'Left-Hand Box',
       paths:[
           RunRight.changeBeats(3).skew(-2.0,0.0),
@@ -56,7 +55,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Right Roll to a Wave',
-      formation:Formations.FacingCouplesCompact,
+      formation:Formation('Facing Couples Compact'),
       from:'Facing Couples',
       taminator: '''
       This is the same as Step to a Wave.  It emphasizes the trailer's part
@@ -69,7 +68,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Right Roll to a Wave',
-      formation:Formations.DoublePassThru,
+      formation:Formation('Double Pass Thru'),
       from:'Double Pass Thru',
       paths:[
           ExtendLeft.changeBeats(3).scale(1.0,2.0),
@@ -82,7 +81,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Right Roll to a Wave',
-      formation:Formations.CompletedDoublePassThru,
+      formation:Formation('Completed Double Pass Thru'),
       from:'Completed Double Pass Thru',
       paths:[
           FlipRight.changeBeats(4).skew(-1.0,0.0),
@@ -95,7 +94,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Right Roll to a Wave',
-      formation:Formations.TradeBy,
+      formation:Formation('Trade By'),
       from:'Trade By',
       paths:[
           FlipRight.changeBeats(4).skew(-1.0,0.0),
@@ -108,7 +107,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Right Roll to a Wave',
-      formation:Formations.LinesFacingOut,
+      formation:Formation('Lines Facing Out'),
       from:'Lines Facing Out',
       paths:[
           UmTurnRight.skew(-1.0,-0.5) +
@@ -125,7 +124,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Right Roll to a Wave',
-      formation:Formations.TwomFacedLinesLH,
+      formation:Formation('Two-Faced Lines LH'),
       from:'Two-Faced Lines',
       paths:[
           UmTurnRight.skew(-2.0,-0.5),
@@ -138,7 +137,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Right Roll to a Wave',
-      formation:Formations.ColumnRHGBGB,
+      formation:Formation('Column RH GBGB'),
       from:'Right-Hand Columns',
       paths:[
           UmTurnRight.skew(-1.0,0.0),
@@ -151,7 +150,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Right Roll to a Wave',
-      formation:Formations.ColumnLHGBGB,
+      formation:Formation('Column LH GBGB'),
       from:'Left-Hand Columns',
       paths:[
           Forward.changeBeats(2),
@@ -164,7 +163,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Right Roll to a Wave',
-      formation:Formations.OceanWavesRHBGBG,
+      formation:Formation('Ocean Waves RH BGBG'),
       from:'Right-Hand Waves',
       paths:[
           ExtendLeft.changeBeats(3).scale(2.0,0.5),
@@ -177,7 +176,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Right Roll to a Wave',
-      formation:Formations.OceanWavesLHBGBG,
+      formation:Formation('Ocean Waves LH BGBG'),
       from:'Left-Hand Waves',
       paths:[
           UmTurnRight.skew(-2.0,-0.5),
@@ -190,7 +189,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Right Roll to a Wave',
-      formation:Formations.InvertedLinesEndsFacingOut,
+      formation:Formation('Inverted Lines Ends Facing Out'),
       from:'Inverted Lines, Centers Facing',
       paths:[
           UmTurnRight.skew(-2.0,-0.5),
@@ -203,7 +202,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Right Roll to a Wave',
-      formation:Formations.InvertedLinesEndsFacingIn,
+      formation:Formation('Inverted Lines Ends Facing In'),
       from:'Inverted Lines, Ends Facing',
       paths:[
           ExtendLeft.changeBeats(3).scale(2.0,0.5),
@@ -216,7 +215,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Right Roll to a Wave Three Times',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-2.5,y:0,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:-3.5,y:0,angle:180),
         DancerModel.fromData(gender:Gender.BOY,x:-1.5,y:0,angle:180),
@@ -242,7 +241,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('As Couples Right Roll to a Wave',
-      formation:Formations.LinesFacingOut,
+      formation:Formation('Lines Facing Out'),
       from:'Lines Facing Out',
       paths:[
           BeauWheel.changehands(5).scale(1.0,-1.0).skew(-2.0,-1.5),
@@ -255,7 +254,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('As Couples Right Roll to a Wave',
-      formation:Formations.TwomFacedLinesLH,
+      formation:Formation('Two-Faced Lines LH'),
       from:'Two-Faced Lines',
       paths:[
           BeauWheel.changehands(5).scale(1.0,-1.0).skew(-2.0,-1.5),
@@ -270,7 +269,7 @@ import '../a2/all_4_all_8.dart' as a2;
       tam.title == 'All 8 Right Roll to a Wave' && tam.from == 'Couples Facing Out').first.xref(title: 'All 8 Right Roll to a Wave').xref(group: ' '),
 
     AnimatedCall('Left Roll to a Wave',
-      formation:Formations.CouplesFacingOut,
+      formation:Formation('Couples Facing Out'),
       from:'Couples Facing Out',
       paths:[
           UmTurnLeft.changeBeats(4).skew(-2.0,0.0),
@@ -279,7 +278,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Left Roll to a Wave',
-      formation:Formations.BoxRH,
+      formation:Formation('Box RH'),
       from:'Right-Hand Box',
       paths:[
           Forward_2.changeBeats(3),
@@ -288,7 +287,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Left Roll to a Wave',
-      formation:Formations.BoxLH,
+      formation:Formation('Box LH'),
       from:'Left-Hand Box',
       paths:[
           UmTurnLeft.skew(-2.0,0.0),
@@ -297,7 +296,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Left Roll to a Wave',
-      formation:Formations.FacingCouplesCompact,
+      formation:Formation('Facing Couples Compact'),
       from:'Facing Couples',
       taminator: '''This is the same as Step to a Left-Hand Wave.''',
       paths:[
@@ -307,7 +306,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Left Roll to a Wave',
-      formation:Formations.DoublePassThru,
+      formation:Formation('Double Pass Thru'),
       from:'Double Pass Thru',
       paths:[
           Forward.changeBeats(3),
@@ -320,7 +319,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Left Roll to a Wave',
-      formation:Formations.CompletedDoublePassThru,
+      formation:Formation('Completed Double Pass Thru'),
       from:'Completed Double Pass Thru',
       paths:[
           UmTurnLeft.changeBeats(4).skew(-1.0,0.0),
@@ -333,7 +332,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Left Roll to a Wave',
-      formation:Formations.TradeBy,
+      formation:Formation('Trade By'),
       from:'Trade By',
       paths:[
           UmTurnLeft.changeBeats(4).skew(-1.0,0.0),
@@ -346,7 +345,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Left Roll to a Wave',
-      formation:Formations.LinesFacingOut,
+      formation:Formation('Lines Facing Out'),
       from:'Lines Facing Out',
       paths:[
           UmTurnLeft.skew(-1.0,0.5) +
@@ -363,7 +362,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Left Roll to a Wave',
-      formation:Formations.TwomFacedLinesRH,
+      formation:Formation('Two-Faced Lines RH'),
       from:'Right-Hand Two-Faced Lines',
       paths:[
           ExtendRight.changeBeats(4).scale(2.0,0.5),
@@ -378,7 +377,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Left Roll to a Wave',
-      formation:Formations.TwomFacedLinesLH,
+      formation:Formation('Two-Faced Lines LH'),
       from:'Left-Hand Two-Faced Lines',
       paths:[
           UmTurnLeft.skew(-1.0,0.5) +
@@ -393,7 +392,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Left Roll to a Wave',
-      formation:Formations.ColumnRHGBGB,
+      formation:Formation('Column RH GBGB'),
       from:'Right-Hand Columns',
       paths:[
           RunLeft.skew(-1.0,0.0),
@@ -406,7 +405,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Left Roll to a Wave',
-      formation:Formations.ColumnLHGBGB,
+      formation:Formation('Column LH GBGB'),
       from:'Left-Hand Columns',
       paths:[
           ExtendRight.changeBeats(3).scale(1.0,2.0),
@@ -419,7 +418,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Left Roll to a Wave',
-      formation:Formations.OceanWavesRHBGBG,
+      formation:Formation('Ocean Waves RH BGBG'),
       from:'Right-Hand Waves',
       paths:[
           ExtendRight.changeBeats(3).scale(2.0,0.5),
@@ -432,7 +431,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Left Roll to a Wave',
-      formation:Formations.OceanWavesLHBGBG,
+      formation:Formation('Ocean Waves LH BGBG'),
       from:'Left-Hand Waves',
       paths:[
           UmTurnLeft.skew(-2.0,0.5),
@@ -445,7 +444,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Left Roll to a Wave',
-      formation:Formations.InvertedLinesEndsFacingOut,
+      formation:Formation('Inverted Lines Ends Facing Out'),
       from:'Inverted Lines, Centers Facing',
       paths:[
           UmTurnLeft.skew(-2.0,0.5),
@@ -458,7 +457,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Left Roll to a Wave',
-      formation:Formations.InvertedLinesEndsFacingIn,
+      formation:Formation('Inverted Lines Ends Facing In'),
       from:'Inverted Lines, Ends Facing',
       paths:[
           ExtendRight.changeBeats(3).scale(2.0,0.5),
@@ -471,7 +470,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('As Couples Left Roll to a Wave',
-      formation:Formations.LinesFacingOut,
+      formation:Formation('Lines Facing Out'),
       from:'Lines Facing Out',
       paths:[
           BelleWheel.changehands(5).skew(-2.0,0.5),
@@ -484,7 +483,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('As Couples Left Roll to a Wave',
-      formation:Formations.TwomFacedLinesRH,
+      formation:Formation('Two-Faced Lines RH'),
       from:'Two-Faced Lines',
       paths:[
           ExtendRight.changeBeats(3).changehands(2).scale(2.0,1.5),

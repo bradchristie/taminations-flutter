@@ -21,13 +21,12 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> TripleBoxConcept = [
 
     AnimatedCall('Triple Box Circulate',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:2,y:3,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:2,y:1,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:-2,y:1,angle:0),
@@ -51,7 +50,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Triple Box Counter Rotate',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:2,y:5,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:2,y:3,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:2,y:1,angle:180),
@@ -75,7 +74,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Triple Box Dixie Style to a Wave',
-      formation:Formations.PhantomLinesIn,
+      formation:Formation('Phantom Lines In'),
       group:'Triple Box',
       paths:[
           DodgeRight.changeBeats(4).scale(1.0,0.875) +
@@ -101,7 +100,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Triple Box Flutterwheel',
-      formation:Formations.PhantomLinesIn,
+      formation:Formation('Phantom Lines In'),
       group:'Triple Box',
       paths:[
           Forward.changeBeats(3.5).changehands(0) +
@@ -130,7 +129,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Triple Box Follow Your Neighbor and Spread',
-      formation:Formations.PhantomWavesRH,
+      formation:Formation('Phantom Waves RH'),
       group:'Triple Box',
       paths:[
           Forward_2.changeBeats(1.5).skew(0.0,-0.125) +
@@ -156,7 +155,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Triple Box Pass In',
-      formation:Formations.PhantomLinesIn,
+      formation:Formation('Phantom Lines In'),
       group:'Triple Box',
       taminator: '''
       Triple Box calls are always done in a box of 4.
@@ -184,7 +183,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Triple Box Pass the Ocean',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:1,y:5,angle:270),
         DancerModel.fromData(gender:Gender.GIRL,x:-1,y:5,angle:270),
         DancerModel.fromData(gender:Gender.BOY,x:1,y:1,angle:270),
@@ -214,7 +213,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Triple Box Peel and Trail',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:5,angle:90),
         DancerModel.fromData(gender:Gender.GIRL,x:-1,y:3,angle:90),
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:1,angle:90),
@@ -241,7 +240,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Triple Box Quarter In',
-      formation:Formations.PhantomLinesIn,
+      formation:Formation('Phantom Lines In'),
       group:'Triple Box',
       paths:[
           QuarterRight.skew(1.0,0.0),
@@ -258,7 +257,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Triple Box Right and Left Thru',
-      formation:Formations.PhantomLinesIn,
+      formation:Formation('Phantom Lines In'),
       group:'Triple Box',
       paths:[
           PullLeft.scale(2.0,0.5) +
@@ -287,7 +286,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Triple Box Boys Run',
-      formation:Formations.PhantomWavesRH,
+      formation:Formation('Phantom Waves RH'),
       group:'Triple Box',isGenderSpecific:true,
       paths:[
           RunRight,
@@ -304,7 +303,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Triple Box Scoot Back',
-      formation:Formations.PhantomWavesRH,
+      formation:Formation('Phantom Waves RH'),
       group:'Triple Box',
       paths:[
           ExtendRight.scale(2.0,0.25) +
@@ -327,7 +326,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Triple Box Square Thru',
-      formation:Formations.PhantomLinesIn,
+      formation:Formation('Phantom Lines In'),
       group:'Triple Box',
       paths:[
           Forward +
@@ -374,7 +373,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Triple Box Wheel Thru',
-      formation:Formations.PhantomLinesIn,
+      formation:Formation('Phantom Lines In'),
       group:'Triple Box',
       paths:[
           LeadRight.changeBeats(4).scale(3.0,2.0),
@@ -391,7 +390,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Triple Column Pass and Roll',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:3,y:2,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:3,y:0,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:1,y:0,angle:0),
@@ -440,7 +439,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Triple Line Turn and Deal',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:4,y:3,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:4,y:1,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:0,y:1,angle:0),
@@ -464,7 +463,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Triple Wave 2/3 Recycle',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:4,y:-1,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:4,y:-3,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:0,y:1,angle:180),
@@ -488,7 +487,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Triple Wave Recycle',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:0,y:3.5,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:0,y:2.5,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:0,y:1.5,angle:0),
@@ -515,7 +514,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Triple Wave Swing Thru',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:0,y:3,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:0,y:1,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:4,y:1,angle:180),

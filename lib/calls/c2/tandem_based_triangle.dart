@@ -26,7 +26,7 @@ import '../../moves.dart';
   final List<AnimatedCall> TandemBasedTriangle = [
 
     AnimatedCall('Triangle Peel and Trail',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:-1,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:-1,y:1,angle:180),
         DancerModel.fromData(gender:Gender.BOY,x:-3,y:0,angle:90),
@@ -46,7 +46,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Triangle Recycle',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:-1,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:-1,y:1,angle:0),
         DancerModel.fromData(gender:Gender.BOY,x:-3,y:0,angle:90),
@@ -64,7 +64,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Triangle Swap Around',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:-1,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:-1,y:1,angle:0),
         DancerModel.fromData(gender:Gender.BOY,x:-3,y:0,angle:90),
@@ -82,7 +82,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Triangle Wheel Thru',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:-1,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:-1,y:1,angle:0),
         DancerModel.fromData(gender:Gender.BOY,x:-3,y:0,angle:90),
@@ -102,7 +102,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Outside Triangle Cross Your Neighbor',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:4.2,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:1,y:4.2,angle:0),
         DancerModel.fromData(gender:Gender.BOY,x:0,y:2.1,angle:180),
@@ -125,7 +125,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Outside Triangle Peel and Trail',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:4.2,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:1,y:4.2,angle:0),
         DancerModel.fromData(gender:Gender.BOY,x:0,y:2.1,angle:180),
@@ -145,7 +145,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Outside Triangle Peel the Top',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:4.2,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:1,y:4.2,angle:0),
         DancerModel.fromData(gender:Gender.BOY,x:0,y:2.1,angle:180),
@@ -167,7 +167,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Outside Triangle Peel to a Diamond',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:4.2,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:1,y:4.2,angle:0),
         DancerModel.fromData(gender:Gender.BOY,x:0,y:2.1,angle:180),

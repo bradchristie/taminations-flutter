@@ -19,13 +19,13 @@
 */
 
 import '../../animated_call.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> TradeTheDeucey = [
 
     AnimatedCall('Trade the Deucey',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       from:'Normal Lines',
       paths:[
           Forward.changeBeats(1.5) +
@@ -40,7 +40,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Trade the Deucey',
-      formation:Formations.LinesFacingOut,
+      formation:Formation('Lines Facing Out'),
       from:'Lines Facing Out',
       paths:[
           RunLeft.changeBeats(6).scale(2.0,2.0),
@@ -53,7 +53,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Trade the Deucey',
-      formation:Formations.TwomFacedLinesRH,
+      formation:Formation('Two-Faced Lines RH'),
       from:'Right-Hand Two-Faced Lines',
       paths:[
           ExtendRight.changeBeats(6).scale(4.0,2.0),
@@ -68,7 +68,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Trade the Deucey',
-      formation:Formations.TwomFacedLinesLH,
+      formation:Formation('Two-Faced Lines LH'),
       from:'Left-Hand Two-Faced Lines',
       paths:[
           RunLeft.changeBeats(6).scale(1.0,2.0),
@@ -83,7 +83,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Trade the Deucey',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       from:'Right-Hand Waves',
       paths:[
           ExtendRight.changeBeats(6).scale(4.0,2.0),
@@ -98,7 +98,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Trade the Deucey',
-      formation:Formations.OceanWavesLHBGGB,
+      formation:Formation('Ocean Waves LH BGGB'),
       from:'Left-Hand Waves',
       paths:[
           RunLeft.changeBeats(6).scale(1.5,2.0),
@@ -113,7 +113,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Trade the Deucey',
-      formation:Formations.EightChainThru,
+      formation:Formation('Eight Chain Thru'),
       from:'Eight Chain Thru',
       paths:[
           Stand.changeBeats(2) +
@@ -128,7 +128,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Trade the Deucey',
-      formation:Formations.DiamondsRHGirlPoints,
+      formation:Formation('Diamonds RH Girl Points'),
       from:'Right-Hand Diamonds',
       paths:[
           HingeRight.changeBeats(2).scale(0.5,1.0) +
@@ -144,7 +144,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Trade the Deucey',
-      formation:Formations.TharLHBoys,
+      formation:Formation('Thar LH Boys'),
       from:'Thar',
       paths:[
           RunLeft.changeBeats(6).scale(1.0,2.0),

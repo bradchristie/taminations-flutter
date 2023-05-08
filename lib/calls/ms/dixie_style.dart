@@ -21,13 +21,12 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> DixieStyle = [
 
     AnimatedCall('Dixie Style to a Wave',
-      formation:Formations.FacingCouples,
+      formation:Formation('Facing Couples'),
       from:'Facing Couples',difficulty: 1,
       paths:[
           DodgeRight.changeBeats(4).scale(1.0,0.875) +
@@ -39,7 +38,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Dixie Style to a Wave',
-      formation:Formations.TandemGirlsLead,
+      formation:Formation('Tandem Girls Lead'),
       from:'Tandem',difficulty: 2,
       paths:[
           Stand.changeBeats(2) +
@@ -52,7 +51,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Dixie Style to a Wave',
-      formation:Formations.SingleQuarterTag,
+      formation:Formation('Single Quarter Tag'),
       from:'Single Quarter Tag',difficulty: 2,
       paths:[
           Stand.changeBeats(2) +
@@ -64,7 +63,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Dixie Style to a Wave',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       from:'Lines',difficulty: 1,
       paths:[
           DodgeRight.changeBeats(4).scale(1.0,0.875) +
@@ -83,7 +82,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Dixie Style to a Wave',
-      formation:Formations.EightChainThru,
+      formation:Formation('Eight Chain Thru'),
       from:'Eight Chain Thru',difficulty: 2,
       paths:[
           DodgeRight.scale(1.0,0.875).skew(-0.3,0.0) +
@@ -104,7 +103,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Dixie Style to a Wave',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-3,y:1,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:-1,y:1,angle:0),
         DancerModel.fromData(gender:Gender.BOY,x:-3,y:-1,angle:0),
@@ -130,7 +129,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Dixie Style to a Wave',
-      formation:Formations.QuarterTag,
+      formation:Formation('Quarter Tag'),
       from:'Quarter Tag',difficulty: 2,
       paths:[
           Stand.changeBeats(2) +
@@ -149,7 +148,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Dixie Style to a Wave',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:0,y:-3.5,angle:90),
         DancerModel.fromData(gender:Gender.GIRL,x:0,y:-2.5,angle:90),
         DancerModel.fromData(gender:Gender.BOY,x:0,y:-0.5,angle:270),
@@ -175,7 +174,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Reverse Dixie Style to a Wave',
-      formation:Formations.FacingCouples,
+      formation:Formation('Facing Couples'),
       from:'Facing Couples',difficulty: 2,
       paths:[
           ExtendRight.changeBeats(2).changehands(2).skew(1.0,-0.5) +
@@ -187,7 +186,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Reverse Dixie Style to a Wave',
-      formation:Formations.TandemGirlsLead,
+      formation:Formation('Tandem Girls Lead'),
       from:'Tandem',difficulty: 2,
       paths:[
           Stand.changeBeats(2) +
@@ -200,7 +199,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Reverse Dixie Style to a Wave',
-      formation:Formations.SingleLeftQuarterTag,
+      formation:Formation('Single Left Quarter Tag'),
       from:'Single Left-Hand Quarter Tag',difficulty: 2,
       paths:[
           Stand.changeBeats(2) +
@@ -212,7 +211,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Reverse Dixie Style to a Wave',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       from:'Lines',difficulty: 2,
       paths:[
           ExtendRight.changeBeats(2).changehands(1).skew(1.0,-0.5) +
@@ -231,7 +230,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Reverse Dixie Style to a Wave',
-      formation:Formations.EightChainThru,
+      formation:Formation('Eight Chain Thru'),
       from:'Eight Chain Thru',difficulty: 2,
       paths:[
           ExtendRight.changeBeats(2).changehands(2).scale(1.15,1.5) +
@@ -252,7 +251,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Reverse Dixie Style to a Wave',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-3,y:1,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:-1,y:1,angle:0),
         DancerModel.fromData(gender:Gender.BOY,x:-3,y:-1,angle:0),
@@ -278,7 +277,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Reverse Dixie Style to a Wave',
-      formation:Formations.QuarterTagLH,
+      formation:Formation('Quarter Tag LH'),
       from:'Left-Hand Quarter Tag',difficulty: 2,
       paths:[
           Stand.changeBeats(2) +
@@ -297,7 +296,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Reverse Dixie Style to a Wave',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:0,y:-3.5,angle:90),
         DancerModel.fromData(gender:Gender.GIRL,x:0,y:-2.5,angle:90),
         DancerModel.fromData(gender:Gender.BOY,x:0,y:-0.5,angle:270),

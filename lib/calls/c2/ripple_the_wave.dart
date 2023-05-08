@@ -21,13 +21,12 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> RippleTheWave = [
 
     AnimatedCall('Ends Ripple the Wave',
-      formation:Formations.WaveRH,
+      formation:Formation('Wave RH'),
       from:'Right-Hand Wave',group:' ',parts:'3;3',
       paths:[
           SwingRight +
@@ -40,7 +39,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Very Ends Ripple the Wave',
-      formation:Formations.TidalLineRH,
+      formation:Formation('Tidal Line RH'),
       from:'Tidal Line',group:' ',parts:'3;3',
       paths:[
           RunRight.scale(1.0,0.5) +
@@ -61,7 +60,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Very Ends Ripple 3',
-      formation:Formations.TidalWaveRHBGGB,
+      formation:Formation('Tidal Wave RH BGGB'),
       from:'Tidal Wave',group:' ',parts:'3;3',
       paths:[
           SwingRight.scale(0.5,0.5) +
@@ -82,7 +81,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Very Ends Ripple 7',
-      formation:Formations.TidalWaveRHBGGB,
+      formation:Formation('Tidal Wave RH BGGB'),
       from:'Right-Hand Tidal Wave',group:' ',parts:'3;3;3;3;3;3',
       paths:[
           SwingRight.scale(0.5,0.5) +
@@ -109,7 +108,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Trailing End Like A Ripple Swing, Cast Off 3/4, and Single Wheel',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       group:' ',fractions:'3;4.5',
       paths:[
           SwingRight +
@@ -125,7 +124,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Outfacing Points Like a Ripple Jaywalk, Swing, Slip, Cast Off 3/4',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:0,y:-3,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:-3,y:-2,angle:270),
         DancerModel.fromData(gender:Gender.BOY,x:0,y:-1,angle:180),

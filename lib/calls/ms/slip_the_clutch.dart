@@ -19,13 +19,13 @@
 */
 
 import '../../animated_call.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> SlipTheClutch = [
 
     AnimatedCall('Slip the Clutch',
-      formation:Formations.TharRHBoys,
+      formation:Formation('Thar RH Boys'),
       from:'Thar',
       paths:[
           HalfHingeRight.changeBeats(2),
@@ -38,7 +38,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Slip the Clutch',
-      formation:Formations.TharLHBoys,
+      formation:Formation('Thar LH Boys'),
       from:'Wrong Way Thar',
       paths:[
           HalfHingeLeft.changeBeats(2),

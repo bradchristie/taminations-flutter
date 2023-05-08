@@ -21,13 +21,12 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> InterlockedCounter = [
 
     AnimatedCall('Interlocked Counter',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.GIRL,x:0,y:1,angle:0),
         DancerModel.fromData(gender:Gender.BOY,x:0,y:3,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:3,y:-1,angle:0),
@@ -55,7 +54,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Interlocked Counter',
-      formation:Formations.n34LinesLH,
+      formation:Formation('3/4 Lines LH'),
       from:'Left-Hand Three Quarter Lines',
       paths:[
           RunRight.skew(-3.0,-1.5) +
@@ -78,7 +77,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Interlocked Counter',
-      formation:Formations.n34Tag,
+      formation:Formation('3/4 Tag'),
       from:'Right-Hand Three Quarter Tag',
       paths:[
           RunRight.changeBeats(5.5).skew(-3.0,-2.0) +

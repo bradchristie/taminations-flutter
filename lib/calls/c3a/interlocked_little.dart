@@ -21,13 +21,12 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> InterlockedLittle = [
 
     AnimatedCall('Interlocked Little',
-      formation:Formations.QuarterLinesRH,
+      formation:Formation('Quarter Lines RH'),
       from:'Right-Hand Quarter Line',
       paths:[
           ExtendRight.changeBeats(6).scale(1.0,4.0),
@@ -42,7 +41,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Interlocked Little',
-      formation:Formations.QuarterLinesLH,
+      formation:Formation('Quarter Lines LH'),
       from:'Left-Hand Quarter Line',
       paths:[
           ExtendRight.changeBeats(6).scale(1.0,4.0),
@@ -57,7 +56,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Interlocked Little',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.GIRL,x:-3,y:1,angle:180),
         DancerModel.fromData(gender:Gender.BOY,x:-3,y:-1,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:0,y:1,angle:0),
@@ -77,7 +76,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Interlocked Little',
-      formation:Formations.n34LinesLH,
+      formation:Formation('3/4 Lines LH'),
       from:'Left-Hand 3/4 Line',
       paths:[
           RunRight.skew(-2.0,0.0) +
@@ -92,7 +91,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Interlocked Scoot and Little',
-      formation:Formations.QuarterLinesRH,
+      formation:Formation('Quarter Lines RH'),
       from:'Right-Hand Quarter Line',fractions:'8',
       paths:[
           Forward.changeBeats(2).scale(1.5,1.0) +
@@ -119,7 +118,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Interlocked Scoot and Little',
-      formation:Formations.QuarterLinesLH,
+      formation:Formation('Quarter Lines LH'),
       from:'Left-Hand Quarter Line',fractions:'8',
       paths:[
           Forward.changeBeats(2).scale(1.5,1.0) +

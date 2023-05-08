@@ -21,13 +21,12 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> Replace = [
 
     AnimatedCall('Chain Reaction, But 2/3 Recycle',
-      formation:Formations.QuarterTag,
+      formation:Formation('Quarter Tag'),
       group:' ',fractions:'3.5;2',
       paths:[
           ExtendLeft.changeBeats(2).scale(1.5,0.5) +
@@ -51,7 +50,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Chain Reaction, Replace the final Cast Off 3/4 with a Single Wheel',
-      formation:Formations.QuarterTag,
+      formation:Formation('Quarter Tag'),
       group:' ',fractions:'3.5;2',
       paths:[
           ExtendLeft.changeBeats(2).scale(1.5,0.5) +
@@ -75,7 +74,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Coordinate, Replace Trade with a Remake',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-3,y:1,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:-1,y:1,angle:0),
         DancerModel.fromData(gender:Gender.BOY,x:1,y:1,angle:0),
@@ -110,7 +109,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Delete All Arm Turn 1/2\'s, Spin Chain the Gears',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       group:' ',fractions:'4.5;4.5',
       paths:[
           Stand.changeBeats(2) +
@@ -133,7 +132,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Motivate, Replace Turning the Star with a U-Turn Back',
-      formation:Formations.TwomFacedLinesRH,
+      formation:Formation('Two-Faced Lines RH'),
       group:' ',fractions:'4;4.5;3',
       paths:[
           Forward_4.changehands(2) +
@@ -158,7 +157,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Pass the Axle, But Skip the Third Part',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:1,y:3,angle:270),
         DancerModel.fromData(gender:Gender.GIRL,x:-1,y:3,angle:270),
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:1,angle:90),
@@ -184,7 +183,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Scoot and Plenty, Replace the Box Circulates with a Motivate',
-      formation:Formations.QuarterTag,
+      formation:Formation('Quarter Tag'),
       group:' ',fractions:'6;6;4;4.5;3;4.5',
       paths:[
           ExtendLeft.changeBeats(1.5).scale(1.5,1.5) +
@@ -235,7 +234,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Swing the Fractions, Replace the Second Part with Trade Circulate',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       group:' ',fractions:'1.5;4;4.5;3',
       paths:[
           HingeRight +
@@ -260,7 +259,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Swing the Fractions, Replace the Third Part with a Split Circulate',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       group:' ',fractions:'1.5;3;3;3',
       paths:[
           HingeRight +
@@ -289,7 +288,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Tally Ho, But Explode the Wave',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       group:' ',fractions:'2;3',
       paths:[
           Forward_2 +

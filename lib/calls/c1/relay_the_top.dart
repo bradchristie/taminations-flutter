@@ -19,13 +19,13 @@
 */
 
 import '../../animated_call.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> RelayTheTop = [
 
     AnimatedCall('Relay the Top',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       from:'Right-Hand Waves',parts:'3;4.5;3',
       paths:[
           SwingRight +
@@ -50,7 +50,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Relay the Top',
-      formation:Formations.OceanWavesLHBGGB,
+      formation:Formation('Ocean Waves LH BGGB'),
       from:'Left-Hand Waves',parts:'3;4.5;3',
       paths:[
           SwingLeft +
@@ -75,7 +75,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Relay the Top',
-      formation:Formations.EightChainThru,
+      formation:Formation('Eight Chain Thru'),
       from:'Eight Chain Thru',parts:'4.5;4.5;3',
       paths:[
           ExtendLeft.changeBeats(1.5).scale(1.0,2.0) +
@@ -104,7 +104,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left Relay the Top',
-      formation:Formations.EightChainThru,
+      formation:Formation('Eight Chain Thru'),
       group:' ',parts:'4.5;4.5;3',
       paths:[
           Forward.changeBeats(1.5) +
@@ -133,7 +133,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Relay the Top, Turn the Star 1/2',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       group:' ',parts:'3;4.5;3',
       paths:[
           SwingRight +
@@ -158,7 +158,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Relay the Top, Turn the Star 3/4',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       group:' ',parts:'3;4.5;4.5',
       paths:[
           SwingRight +
@@ -183,7 +183,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Relay the Top, Do Not Turn the Star',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       group:' ',parts:'3;4.5;3',
       paths:[
           SwingRight +
@@ -208,7 +208,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Relay the Top, Turn the Star 1/2',
-      formation:Formations.OceanWavesLHBGGB,
+      formation:Formation('Ocean Waves LH BGGB'),
       group:' ',parts:'3;4.5;3',noDisplay: true,
       paths:[
           SwingLeft +
@@ -233,7 +233,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Relay the Top, Turn the Star 3/4',
-      formation:Formations.OceanWavesLHBGGB,
+      formation:Formation('Ocean Waves LH BGGB'),
       group:' ',parts:'3;4.5;4.5',noDisplay: true,
       paths:[
           SwingLeft +
@@ -258,7 +258,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Relay the Top, Do Not Turn the Star',
-      formation:Formations.OceanWavesLHBGGB,
+      formation:Formation('Ocean Waves LH BGGB'),
       group:' ',parts:'3;4.5;3',noDisplay: true,
       paths:[
           SwingLeft +

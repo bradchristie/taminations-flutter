@@ -21,13 +21,12 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> ChainReaction = [
 
     AnimatedCall('Chain Reaction',
-      formation:Formations.QuarterTag,
+      formation:Formation('Quarter Tag'),
       from:'Quarter Tag',fractions:'3;1.5;2',
       paths:[
           ExtendLeft.changeBeats(1.5).scale(1.5,0.5) +
@@ -53,7 +52,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Chain Reaction',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-3,y:1,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:-3,y:-1,angle:0),
         DancerModel.fromData(gender:Gender.BOY,x:0,y:-3,angle:0),
@@ -89,7 +88,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Chain Reaction, Turn the Star 1/2',
-      formation:Formations.QuarterTag,
+      formation:Formation('Quarter Tag'),
       from:'Quarter Tag',group:' ',fractions:'3;1.5;3',
       paths:[
           ExtendLeft.changeBeats(1.5).scale(1.5,0.5) +
@@ -115,7 +114,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Chain Reaction, Turn the Star 3/4',
-      formation:Formations.QuarterTag,
+      formation:Formation('Quarter Tag'),
       from:'Quarter Tag',group:' ',fractions:'3;1.5;4.5',
       paths:[
           ExtendLeft.changeBeats(1.5).scale(1.5,0.5) +
@@ -141,7 +140,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Chain Reaction, Do Not Turn the Star',
-      formation:Formations.QuarterTag,
+      formation:Formation('Quarter Tag'),
       from:'Quarter Tag',group:' ',fractions:'3;1;2',
       paths:[
           ExtendLeft.changeBeats(1.5).scale(1.5,0.5) +

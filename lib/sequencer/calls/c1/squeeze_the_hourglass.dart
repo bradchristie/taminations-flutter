@@ -18,7 +18,6 @@
 
 */
 
-import '../../../formations.dart';
 import '../common.dart';
 
 class SqueezeTheHourglass extends Action {
@@ -29,7 +28,7 @@ class SqueezeTheHourglass extends Action {
   @override
   void perform(CallContext ctx) {
     //  Match to any hourglass
-    final hourglass = CallContext.fromFormation(Formations.HourglassRHBP);
+    final hourglass = CallContext.fromFormation(Formation('Hourglass RH BP'));
     final mm = hourglass.matchFormations(ctx,rotate:180);
     if (mm == null)
       throw CallError('Not an Hourglass formation');

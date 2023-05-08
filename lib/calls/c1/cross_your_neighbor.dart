@@ -21,13 +21,12 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> CrossYourNeighbor = [
 
     AnimatedCall('Cross Your Neighbor',
-      formation:Formation('Box RH', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:1,y:2,angle:270),
         DancerModel.fromData(gender:Gender.GIRL,x:-1,y:2,angle:90),
   ]),
@@ -42,7 +41,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cross Your Neighbor',
-      formation:Formations.BoxLH,
+      formation:Formation('Box LH'),
       from:'Left-Hand Box',
       paths:[
           LeadLeft.changeBeats(3).scale(2.0,1.0) +
@@ -54,7 +53,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cross Your Neighbor',
-      formation:Formations.OceanWavesRHBGBG,
+      formation:Formation('Ocean Waves RH BGBG'),
       from:'Right-Hand Waves',
       paths:[
           ExtendRight.changeBeats(2).scale(2.0,1.75) +
@@ -73,7 +72,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cross Your Neighbor',
-      formation:Formations.OceanWavesLHBGBG,
+      formation:Formation('Ocean Waves LH BGBG'),
       from:'Left-Hand Waves',
       paths:[
           LeadLeft.changeBeats(3).scale(2.0,1.0) +
@@ -92,7 +91,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cross Your Neighbor',
-      formation:Formations.ColumnRHGBGB,
+      formation:Formation('Column RH GBGB'),
       from:'Right-Hand Columns',
       paths:[
           LeadRight.changeBeats(3).scale(1.5,1.0) +
@@ -109,7 +108,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cross Your Neighbor',
-      formation:Formations.ColumnLHGBGB,
+      formation:Formation('Column LH GBGB'),
       from:'Left-Hand Columns',
       paths:[
           ExtendLeft.changeBeats(2).scale(1.0,1.5) +
@@ -126,7 +125,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cross Your Neighbor',
-      formation:Formations.QuarterTag,
+      formation:Formation('Quarter Tag'),
       from:'Quarter Tag',
       paths:[
           ExtendLeft.changeBeats(2).scale(1.0,0.25) +
@@ -147,7 +146,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cross Your Neighbor',
-      formation:Formations.QuarterTagLH,
+      formation:Formation('Quarter Tag LH'),
       from:'Left-Hand Quarter Tag',
       paths:[
           ExtendLeft.changeBeats(2).scale(1.0,1.75) +
@@ -168,7 +167,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Grand Cross Your Neighbor',
-      formation:Formations.ColumnRHGBGB,
+      formation:Formation('Column RH GBGB'),
       from:'Right-Hand Columns',
       paths:[
           LeadRight.changeBeats(3).scale(1.5,1.0) +
@@ -185,7 +184,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Grand Cross Your Neighbor',
-      formation:Formations.ColumnLHGBGB,
+      formation:Formation('Column LH GBGB'),
       from:'Left-Hand Columns',
       paths:[
           ExtendLeft.changeBeats(2).scale(1.0,1.5) +
@@ -202,7 +201,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('All 8 Cross Your Neighbor',
-      formation:Formations.StaticMiniWavesRH,
+      formation:Formation('Static MiniWaves RH'),
       from:'Squared Mini-Waves',group:' ',
       paths:[
           ExtendRight.changeBeats(4.5).scale(3.0,2.0) +
@@ -219,7 +218,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('As Couples Cross Your Neighbor',
-      formation:Formations.TwomFacedLinesRH,
+      formation:Formation('Two-Faced Lines RH'),
       from:'Two-Faced Lines',group:' ',
       paths:[
           ExtendRight.changeBeats(4).changehands(6).scale(2.0,3.5) +
@@ -236,7 +235,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Tandem Cross Your Neighbor',
-      formation:Formations.ColumnRHGBGB,
+      formation:Formation('Column RH GBGB'),
       group:' ',
       paths:[
           RunRight.skew(1.0,0.0) +
@@ -260,7 +259,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Pass and Roll Your Cross Neighbor',
-      formation:Formations.EightChainThru,
+      formation:Formation('Eight Chain Thru'),
       group:' ',
       paths:[
           ExtendLeft.scale(1.0,0.5) +
@@ -298,7 +297,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left Pass and Roll Your Cross Neighbor',
-      formation:Formations.EightChainThru,
+      formation:Formation('Eight Chain Thru'),
       group:' ',
       paths:[
           ExtendRight.scale(1.0,0.5) +

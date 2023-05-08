@@ -21,13 +21,12 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> Zing = [
 
     AnimatedCall('Zing',
-      formation:Formations.BoxRHCompact,
+      formation:Formation('Box RH Compact'),
       from:'Right-Hand Box',
       paths:[
           Forward_2.changeBeats(2.5) +
@@ -38,7 +37,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Zing',
-      formation:Formations.BoxLHCompact,
+      formation:Formation('Box LH Compact'),
       from:'Left-Hand Box',
       paths:[
           RunRight.skew(-1.5,0.0) +
@@ -49,7 +48,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Zing',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:1,y:1,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:1,y:-1,angle:90),
   ]),
@@ -63,7 +62,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Zing',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:1,y:-1,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:1,y:1,angle:270),
   ]),
@@ -77,7 +76,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Zing',
-      formation:Formations.ColumnRHGBGB,
+      formation:Formation('Column RH GBGB'),
       from:'Right-Hand Columns',
       paths:[
           RunLeft.skew(-1.0,0.0) +
@@ -94,7 +93,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Zing',
-      formation:Formations.ColumnLHGBGB,
+      formation:Formation('Column LH GBGB'),
       from:'Left-Hand Columns',
       paths:[
           Forward.changeBeats(2) +
@@ -111,7 +110,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Zing',
-      formation:Formations.DoublePassThru,
+      formation:Formation('Double Pass Thru'),
       from:'Double Pass Thru',
       paths:[
           Forward.changeBeats(2) +
@@ -128,7 +127,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Zing',
-      formation:Formations.CompletedDoublePassThru,
+      formation:Formation('Completed Double Pass Thru'),
       from:'Completed Double Pass Thru',
       paths:[
           RunRight.skew(-1.0,0.0) +
@@ -145,7 +144,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Zing',
-      formation:Formations.TwomFacedLinesRH,
+      formation:Formation('Two-Faced Lines RH'),
       from:'Right-Hand Two-Faced Lines',
       paths:[
           Forward_2 +
@@ -162,7 +161,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Zing',
-      formation:Formations.TwomFacedLinesLH,
+      formation:Formation('Two-Faced Lines LH'),
       from:'Left-Hand Two-Faced Lines',
       paths:[
           RunRight.scale(1.0,0.5).skew(-2.0,0.0) +
@@ -179,7 +178,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Zing',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       from:'Right-Hand Waves',
       paths:[
           Forward_2 +
@@ -196,7 +195,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Zing',
-      formation:Formations.OceanWavesLHBGGB,
+      formation:Formation('Ocean Waves LH BGGB'),
       from:'Left-Hand Waves',
       paths:[
           RunRight.scale(1.0,0.5).skew(-2.0,0.0) +
@@ -213,7 +212,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Points Zing',
-      formation:Formations.DiamondsRHGirlPoints,
+      formation:Formation('Diamonds RH Girl Points'),
       from:'Diamonds',
       paths:[
           Path(),
@@ -227,7 +226,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('All 4 Couples Zing',
-      formation:Formations.StaticMiniWavesRH,
+      formation:Formation('Static MiniWaves RH'),
       group:' ',
       paths:[
           ExtendLeft.changeBeats(4).scale(3.0,2.0) +
@@ -246,7 +245,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('As Couples Zing',
-      formation:Formations.TwomFacedLinesRH,
+      formation:Formation('Two-Faced Lines RH'),
       group:' ',
       paths:[
           ExtendRight.changeBeats(4).changehands(2).scale(2.0,1.0) +
@@ -265,7 +264,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Butterfly Zing',
-      formation:Formations.ButterflyRH,
+      formation:Formation('Butterfly RH'),
       group:' ',
       paths:[
           LeadRight.changeBeats(3).scale(2.0,2.0),
@@ -281,7 +280,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Concentric Zing',
-      formation:Formations.ColumnRHGBGB,
+      formation:Formation('Column RH GBGB'),
       group:' ',
       paths:[
           RunLeft.scale(1.0,1.5).skew(-1.0,0.0) +
@@ -298,7 +297,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('"O" Zing',
-      formation:Formations.ORH,
+      formation:Formation('O RH'),
       group:' ',
       paths:[
           ExtendLeft.changeBeats(3).scale(2.0,2.0) +
@@ -314,7 +313,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Stretch Zing',
-      formation:Formations.ColumnRHGBGB,
+      formation:Formation('Column RH GBGB'),
       from:'Right-Hand Columns',group:' ',
       paths:[
           RunLeft.skew(-1.0,0.0) +
@@ -332,7 +331,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Tandem Zing',
-      formation:Formations.ColumnRHGBGB,
+      formation:Formation('Column RH GBGB'),
       group:' ',
       paths:[
           RunLeft.skew(-1.0,0.0) +

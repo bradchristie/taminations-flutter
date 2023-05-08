@@ -20,13 +20,13 @@
 
 import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> Remake = [
 
     AnimatedCall('Remake',
-      formation:Formations.BoxRH,
+      formation:Formation('Box RH'),
       from:'Right-Hand Box',parts:'1.5;3',
       paths:[
           HingeRight +
@@ -39,7 +39,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Remake',
-      formation:Formations.DiamondFacingRH,
+      formation:Formation('Diamond Facing RH'),
       from:'Facing Diamond',parts:'1.5;3',
       paths:[
           Stand.changeBeats(1.5) +
@@ -51,7 +51,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Remake',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       from:'Right-Hand Waves',parts:'1.5;3',
       paths:[
           HingeRight +
@@ -72,7 +72,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Remake',
-      formation:Formations.ColumnRHGBGB,
+      formation:Formation('Column RH GBGB'),
       from:'Right-Hand Columns',parts:'1.5;3',
       taminator: '''
       Note that the very centers do not trade, since this is not a
@@ -101,7 +101,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Remake',
-      formation:Formations.DiamondsFacingGirlPoints,
+      formation:Formation('Diamonds Facing Girl Points'),
       from:'Facing Diamonds',parts:'1.5;3',
       paths:[
           HingeRight +
@@ -120,7 +120,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left Remake',
-      formation:Formations.BoxLH,
+      formation:Formation('Box LH'),
       from:'Left-Hand Box',parts:'1.5;3',
       paths:[
           HingeLeft +
@@ -133,7 +133,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left Remake',
-      formation:Formations.DiamondFacing,
+      formation:Formation('Diamond Facing'),
       from:'Facing Diamond',parts:'1.5;3',
       paths:[
           Stand.changeBeats(1.5) +
@@ -145,7 +145,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left Remake',
-      formation:Formations.OceanWavesLHBGGB,
+      formation:Formation('Ocean Waves LH BGGB'),
       from:'Left-Hand Waves',parts:'1.5;3',
       paths:[
           HingeLeft +
@@ -166,7 +166,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left Remake',
-      formation:Formations.ColumnLHGBGB,
+      formation:Formation('Column LH GBGB'),
       from:'Left-Hand Columns',parts:'1.5;3',
       taminator: '''
       Note that the very centers do not trade, since this is not a
@@ -195,7 +195,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left Remake',
-      formation:Formations.DiamondsFacingLHGirlPoints,
+      formation:Formation('Diamonds Facing LH Girl Points'),
       from:'Facing Diamonds',parts:'1.5;3',
       paths:[
           HingeLeft +
@@ -214,7 +214,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Any Hand Remake',
-      formation:Formations.InvertedLinesEndsFacingIn,
+      formation:Formation('Inverted Lines Ends Facing In'),
       from:'Inverted Lines, Ends Facing In',parts:'1.5;3',
       paths:[
           HingeRight +
@@ -243,7 +243,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Any Hand Remake',
-      formation:Formations.InvertedLinesEndsFacingOut,
+      formation:Formation('Inverted Lines Ends Facing Out'),
       from:'Inverted Lines, Ends Facing Out',parts:'1.5;3',
       paths:[
           HingeLeft +
@@ -272,7 +272,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Any Hand Remake',
-      formation:Formations.MagicColumnRH,
+      formation:Formation('Magic Column RH'),
       from:'Magic Columns, Right-Hand Centers',parts:'1.5;3',
       paths:[
           HingeLeft.scale(0.5,1.0) +
@@ -299,7 +299,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Any Hand Remake',
-      formation:Formations.MagicColumnLH,
+      formation:Formation('Magic Column LH'),
       from:'Magic Columns, Left-Hand Centers',parts:'1.5;3',
       paths:[
           HingeRight.scale(0.5,1.0) +
@@ -326,7 +326,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Any Hand Remake',
-      formation:Formations.DiamondsRHGirlPoints,
+      formation:Formation('Diamonds RH Girl Points'),
       from:'Right-Hand Diamonds',parts:'1.5;3',
       paths:[
           HingeRight +
@@ -345,7 +345,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Any Hand Remake',
-      formation:Formations.DiamondsLHGirlPoints,
+      formation:Formation('Diamonds LH Girl Points'),
       from:'Left-Hand Diamonds',parts:'1.5;3',
       paths:[
           HingeLeft +
@@ -364,7 +364,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Remake the Alamo',
-      formation:Formations.AlamoWave,
+      formation:Formation('Alamo Wave'),
       from:'Alamo Wave',group:' ',parts:'1.5;3',
       paths:[
           SxtnthLeft +
@@ -395,7 +395,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('All 8 Remake',
-      formation:Formations.StaticMiniWavesRH,
+      formation:Formation('Static MiniWaves RH'),
       from:'Static Mini-Waves',group:' ',parts:'1.5;3',
       paths:[
           HingeRight.skew(1.0,0.0) +
@@ -424,7 +424,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('All 8 Left Remake',
-      formation:Formations.StaticMiniWavesLH,
+      formation:Formation('Static MiniWaves LH'),
       from:'Static Mini-Waves',group:' ',parts:'1.5;3',
       paths:[
           HingeLeft.skew(-1.0,0.0) +
@@ -453,7 +453,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('As Couples Remake',
-      formation:Formations.TwomFacedLinesRH,
+      formation:Formation('Two-Faced Lines RH'),
       from:'Two-Faced Lines',group:' ',parts:'3;4',
       paths:[
           LeadRight.changeBeats(3).changehands(2).scale(1.5,3.0) +
@@ -478,7 +478,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Grand Remake',
-      formation:Formations.ColumnRHGBGB,
+      formation:Formation('Column RH GBGB'),
       group:' ',parts:'1.5;3',
       paths:[
           HingeRight.scale(0.5,1.0) +
@@ -503,7 +503,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left Grand Remake',
-      formation:Formations.ColumnLHGBGB,
+      formation:Formation('Column LH GBGB'),
       group:' ',parts:'1.5;3',
       paths:[
           HingeLeft.scale(0.5,1.0) +
@@ -528,7 +528,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Remake the Thar',
-      formation:Formations.TharRHBoys,
+      formation:Formation('Thar RH Boys'),
       from:'Thar',parts:'1.5;3',
       taminator: '''Note that this starts with the left hand.  Unlike Remake,
       the caller does not need to say "Left Remake the Thar".
@@ -556,7 +556,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Remake the Thar',
-      formation:Formations.TharLHBoys,
+      formation:Formation('Thar LH Boys'),
       from:'Wrong Way Thar',parts:'1.5;3',
       paths:[
       Path.fromMovement(Movement.fromData(beats: 1.5, hands: Hands.RIGHT, cx1: 0.55, cy1: 0, cx2: 1, cy2: -0.45, x2: 1, y2: -1, cx3: .265, cx4: .52, cy4: -.105, x4: .707, y4: -.293  )) +

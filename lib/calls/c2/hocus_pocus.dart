@@ -19,13 +19,13 @@
 */
 
 import '../../animated_call.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> HocusPocus = [
 
     AnimatedCall('Hocus Pocus',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       from:'Lines',
       paths:[
           ExtendLeft.changeBeats(2).scale(2.0,0.5) +
@@ -40,7 +40,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Hocus Pocus',
-      formation:Formations.LinesFacingOut,
+      formation:Formation('Lines Facing Out'),
       from:'Lines Facing Out',
       paths:[
           LeadLeft.changeBeats(3).scale(1.5,3.0) +
@@ -55,7 +55,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Hocus Pocus',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       from:'Right-Hand Waves',
       paths:[
           Forward_4.changeBeats(3) +
@@ -69,7 +69,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Hocus Pocus',
-      formation:Formations.OceanWavesLHBGGB,
+      formation:Formation('Ocean Waves LH BGGB'),
       from:'Left-Hand Waves',
       paths:[
           RunLeft.changeBeats(5).skew(1.0,2.0),
@@ -83,7 +83,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Hocus Pocus',
-      formation:Formations.ColumnRHGBGB,
+      formation:Formation('Column RH GBGB'),
       from:'Right-Hand Columns',
       paths:[
           RunRight.changeBeats(5).skew(-1.0,-2.0),
@@ -97,7 +97,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Hocus Pocus',
-      formation:Formations.ColumnLHGBGB,
+      formation:Formation('Column LH GBGB'),
       from:'Left-Hand Columns',
       paths:[
           ExtendRight.changeBeats(2.5).scale(2.0,2.0) +
@@ -111,7 +111,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Hocus Pocus',
-      formation:Formations.CompletedDoublePassThru,
+      formation:Formation('Completed Double Pass Thru'),
       from:'Completed Double Pass Thru',
       paths:[
           FlipLeft.changeBeats(5).skew(-1.0,2.0),

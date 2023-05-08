@@ -21,13 +21,12 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> Prefer = [
 
     AnimatedCall('Prefer the Men, Explode the Line',
-      formation:Formations.LinesFacingOut,
+      formation:Formation('Lines Facing Out'),
       group:' ',isGenderSpecific:true,
       paths:[
           QuarterLeft.changeBeats(2).skew(-1.0,1.0) +
@@ -46,7 +45,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Prefer the Head Men, In Roll Circulate',
-      formation:Formation('Inverted Lines Ends Facing In', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-2,y:3,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:-2,y:1,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:-2,y:-1,angle:180),
@@ -64,7 +63,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Prefer the Girls, Scoot and Dodge',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       group:' ',isGenderSpecific:true,
       paths:[
           DodgeRight,

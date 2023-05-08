@@ -19,13 +19,13 @@
 */
 
 import '../../animated_call.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> InterlockedScootChainThru = [
 
     AnimatedCall('Interlocked Scoot Chain Thru',
-      formation:Formations.QuarterLinesRH,
+      formation:Formation('Quarter Lines RH'),
       from:'Right-Hand Quarter Line',
       paths:[
           Forward.changeBeats(2).scale(1.5,1.0) +
@@ -54,7 +54,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Interlocked Scoot Chain Thru',
-      formation:Formations.QuarterLinesLH,
+      formation:Formation('Quarter Lines LH'),
       from:'Left-Hand Quarter Line',
       paths:[
           Forward.changeBeats(2).scale(1.5,1.0) +

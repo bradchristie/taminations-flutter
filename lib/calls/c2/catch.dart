@@ -19,13 +19,13 @@
 */
 
 import '../../animated_call.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> Catch = [
 
     AnimatedCall('Catch 1',
-      formation:Formations.FacingCouplesCompact,
+      formation:Formation('Facing Couples Compact'),
       from:'Facing Couples',group:' ',parts:'2;3',
       paths:[
           ExtendLeft.changeBeats(2).scale(1.5,1.5) +
@@ -38,7 +38,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Catch 2',
-      formation:Formations.FacingCouplesCompact,
+      formation:Formation('Facing Couples Compact'),
       from:'Facing Couples',group:' ',parts:'4;3',
       paths:[
           ExtendLeft.changeBeats(2).scale(1.5,0.5) +
@@ -53,7 +53,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Catch 3',
-      formation:Formations.FacingCouplesCompact,
+      formation:Formation('Facing Couples Compact'),
       from:'Facing Couples',group:' ',parts:'6;3',
       paths:[
           ExtendLeft.changeBeats(2).scale(1.5,0.5) +
@@ -70,7 +70,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Catch 4',
-      formation:Formations.FacingCouplesCompact,
+      formation:Formation('Facing Couples Compact'),
       from:'Facing Couples',group:' ',parts:'8;3',
       paths:[
           ExtendLeft.changeBeats(2).scale(1.5,0.5) +

@@ -20,13 +20,13 @@
 
 import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> TripleTrade = [
 
     AnimatedCall('Triple Trade',
-      formation:Formations.TidalWaveRHBGGB,
+      formation:Formation('Tidal Wave RH BGGB'),
       from:'Tidal Wave',
       taminator: '''
     The very centers always trade on a Triple Trade
@@ -42,7 +42,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Triple Trade',
-      formation:Formations.TwomFacedTidalLineRH,
+      formation:Formation('Two-Faced Tidal Line RH'),
       from:'Two-Faced Tidal Line',
       paths:[
           Stand.changeBeats(3).changehands(0),
@@ -55,7 +55,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Triple Trade',
-      formation:Formations.TidalInvertedLineRH,
+      formation:Formation('Tidal Inverted Line RH'),
       from:'Tidal Inverted Line',
       paths:[
           Path(),
@@ -68,7 +68,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Triple Trade',
-      formation:Formations.DiamondsRHPTPGirlPoints,
+      formation:Formation('Diamonds RH PTP Girl Points'),
       from:'Point-to-Point Diamonds',
       paths:[
           SwingRight,
@@ -81,7 +81,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Triple Trade',
-      formation:Formations.QuarterTag,
+      formation:Formation('Quarter Tag'),
       from:'1/4 Tag',
       paths:[
           RunRight,
@@ -94,7 +94,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Triple Trade',
-      formation:Formations.n34Tag,
+      formation:Formation('3/4 Tag'),
       from:'3/4 Tag',
       paths:[
           FlipLeft,

@@ -19,13 +19,13 @@
 */
 
 import '../../animated_call.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> BoxTransfer = [
 
     AnimatedCall('Box Transfer',
-      formation:Formations.BoxRH,
+      formation:Formation('Box RH'),
       from:'Right-Hand Box',
       paths:[
           ExtendRight.changeBeats(1.5).scale(2.0,0.25) +
@@ -38,7 +38,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Box Transfer',
-      formation:Formations.BoxLHGirlsLead,
+      formation:Formation('Box LH Girls Lead'),
       from:'Left-Hand Box',
       paths:[
           ExtendLeft.changeBeats(1.5).scale(2.0,0.25) +
@@ -51,7 +51,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('All 8 Box Transfer',
-      formation:Formations.StaticMiniWavesRH,
+      formation:Formation('Static MiniWaves RH'),
       from:'Mini Waves',group:' ',
       paths:[
           Forward_3 +
@@ -72,7 +72,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('As Couples Box Transfer',
-      formation:Formations.TwomFacedLinesRH,
+      formation:Formation('Two-Faced Lines RH'),
       from:'Two-Faced Lines',group:' ',
       paths:[
           ExtendRight.changeBeats(2).changehands(2).scale(2.0,1.5) +
@@ -93,7 +93,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Split Transfer',
-      formation:Formations.OceanWavesRHBGBG,
+      formation:Formation('Ocean Waves RH BGBG'),
       from:'Right-Hand Waves',
       paths:[
           ExtendRight.changeBeats(1.5).scale(2.0,0.25) +
@@ -114,7 +114,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Split Transfer',
-      formation:Formations.OceanWavesLHBGBG,
+      formation:Formation('Ocean Waves LH BGBG'),
       from:'Left-Hand Waves',
       paths:[
           RunLeft.changeBeats(4).scale(0.5,1.25) +
@@ -135,7 +135,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Split Transfer',
-      formation:Formations.ColumnRHGBGB,
+      formation:Formation('Column RH GBGB'),
       from:'Right-Hand Columns',
       paths:[
           RunRight.changeBeats(4).scale(0.5,1.75) +
@@ -156,7 +156,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Split Transfer',
-      formation:Formations.ColumnLHGBGB,
+      formation:Formation('Column LH GBGB'),
       from:'Left-Hand Columns',
       paths:[
           ExtendLeft.changeBeats(1.5).scale(1.0,0.25) +

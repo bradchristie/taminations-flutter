@@ -21,13 +21,12 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> Checkpoint = [
 
     AnimatedCall('Checkpoint Ah So by Swing Thru',
-      formation:Formations.TidalWaveRHBGGB,
+      formation:Formation('Tidal Wave RH BGGB'),
       group:'Checkpoint',
       paths:[
           DodgeRight.changeBeats(2).scale(1.0,0.25) +
@@ -43,7 +42,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Checkpoint Tag the Line by Swing Thru',
-      formation:Formations.TidalWaveRHBGGB,
+      formation:Formation('Tidal Wave RH BGGB'),
       group:'Checkpoint',
       paths:[
           DodgeRight +
@@ -63,7 +62,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Checkpoint Box Circulate by Mix',
-      formation:Formations.DiamondsRHPTPGirlPoints,
+      formation:Formation('Diamonds RH PTP Girl Points'),
       group:'Checkpoint',
       paths:[
           ExtendLeft +
@@ -79,7 +78,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Checkpoint Counter Rotate by Triangle Circulate',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:-1,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:0,y:3.1,angle:0),
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:1,angle:0),

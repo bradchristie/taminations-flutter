@@ -21,13 +21,12 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> Promenade = [
 
     AnimatedCall('Heads Promenade 1/2',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       from:'Static Square',group:' ',
       paths:[
           ExtendRight.changeBeats(3).changehands(6).scale(2.0,4.0) +
@@ -48,7 +47,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Sides Promenade 1/2',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       from:'Static Square',group:' ',
       paths:[
           Forward_2.changehands(2) +
@@ -69,7 +68,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Heads Promenade 3/4',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       from:'Static Square',group:' ',
       paths:[
           ExtendRight.changeBeats(2.5).changehands(6).scale(2.0,4.0) +
@@ -90,7 +89,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Sides Promenade 3/4',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       from:'Static Square',group:' ',
       paths:[
           Forward_2.changehands(2),
@@ -111,7 +110,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Heads Promenade Full',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       from:'Static Square',group:' ',
       paths:[
           ExtendRight.changeBeats(2.5).changehands(6).scale(2.0,4.0) +
@@ -140,7 +139,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Sides Promenade Full',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       from:'Static Square',group:' ',
       paths:[
           Forward_2.changehands(2) +
@@ -169,7 +168,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Heads Promenade 1/4',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       from:'Static Square',group:' ',
       paths:[
           ExtendRight.changeBeats(2).changehands(6).scale(2.0,4.0) +
@@ -184,7 +183,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Sides Promenade 1/4',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       from:'Static Square',group:' ',
       paths:[
           Forward_2.changehands(2),
@@ -199,7 +198,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('All 4 Couples Promenade 1/4',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       from:'Static Square',group:' ',
       paths:[
           HingeRight.changeBeats(2).scale(2.0,2.0) +
@@ -220,7 +219,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('All 4 Couples Promenade 1/2',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       from:'Static Square',group:' ',
       paths:[
           HingeRight.changeBeats(2).scale(2.0,2.0) +
@@ -245,7 +244,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('All 4 Couples Promenade 3/4',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       from:'Static Square',group:' ',
       paths:[
           HingeRight.changeBeats(2).scale(2.0,2.0) +
@@ -274,7 +273,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('All 4 Couples Promenade Full',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       from:'Static Square',group:' ',
       paths:[
           HingeRight.changeBeats(2).scale(2.0,2.0) +
@@ -307,7 +306,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Four Boys Promenade',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       from:'Static Square',group:' ',isGenderSpecific:true,
       paths:[
           LeadRight.scale(1.5,1.0) +
@@ -330,7 +329,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Four Girls Promenade',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       from:'Static Square',group:' ',isGenderSpecific:true,
       paths:[
           Path(),
@@ -351,7 +350,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Single File Promenade',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       from:'Static Square',group:' ',
       paths:[
           QuarterRight.changeBeats(1).skew(0.1716,-1.0) +
@@ -386,7 +385,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Star Promenade',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:0,y:1,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:-3,y:-1,angle:0),
         DancerModel.fromData(gender:Gender.BOY,x:1,y:0,angle:90),
@@ -416,7 +415,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Heads Wrong Way Promenade 1/4',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       from:'Static Square',group:' ',
       paths:[
           ExtendLeft.changeBeats(2).changehands(6).scale(2.0,4.0) +
@@ -431,7 +430,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Sides Wrong Way Promenade 1/4',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       from:'Static Square',group:' ',
       paths:[
           Forward_2.changehands(2),
@@ -446,7 +445,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Heads Wrong Way Promenade 1/2',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       from:'Static Square',group:' ',
       paths:[
           ExtendLeft.changeBeats(3).changehands(6).scale(2.0,4.0) +
@@ -467,7 +466,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Sides Wrong Way Promenade 1/2',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       from:'Static Square',group:' ',
       paths:[
           Forward_2.changehands(2) +
@@ -488,7 +487,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Heads Wrong Way Promenade 3/4',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       from:'Static Square',group:' ',
       paths:[
           ExtendLeft.changeBeats(2.5).changehands(6).scale(2.0,4.0) +
@@ -509,7 +508,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Sides Wrong Way Promenade 3/4',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       from:'Static Square',group:' ',
       paths:[
           Forward_2.changehands(2),
@@ -530,7 +529,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Heads Wrong Way Promenade Full',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       from:'Static Square',group:' ',
       paths:[
           ExtendLeft.changeBeats(2.5).changehands(6).scale(2.0,4.0) +
@@ -559,7 +558,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Sides Wrong Way Promenade Full',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       from:'Static Square',group:' ',
       paths:[
           Forward_2.changehands(2) +
@@ -588,7 +587,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('All 4 Couples Wrong Way Promenade 1/4',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       from:'Static Square',group:' ',
       paths:[
           QuarterLeft.changeBeats(2).changehands(1).skew(1.0,0.0) +
@@ -609,7 +608,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('All 4 Couples Wrong Way Promenade 1/2',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       from:'Static Square',group:' ',
       paths:[
           QuarterLeft.changeBeats(2).changehands(1).skew(1.0,0.0) +
@@ -634,7 +633,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('All 4 Couples Wrong Way Promenade 3/4',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       from:'Static Square',group:' ',
       paths:[
           QuarterLeft.changeBeats(2).changehands(1).skew(1.0,0.0) +
@@ -663,7 +662,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('All 4 Couples Wrong Way Promenade Full',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       from:'Static Square',group:' ',
       paths:[
           QuarterLeft.changeBeats(2).changehands(1).skew(1.0,0.0) +

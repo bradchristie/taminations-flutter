@@ -19,13 +19,13 @@
 */
 
 import '../../animated_call.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> CrissCrossYourNeighbor = [
 
     AnimatedCall('Criss Cross Your Neighbor',
-      formation:Formations.BoxRH,
+      formation:Formation('Box RH'),
       from:'Right-Hand Box',
       paths:[
           ExtendRight.changeBeats(2).scale(2.0,1.75) +
@@ -38,7 +38,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Criss Cross Your Neighbor',
-      formation:Formations.BoxLH,
+      formation:Formation('Box LH'),
       from:'Left-Hand Box',
       paths:[
           RunLeft.scale(1.0,1.5) +
@@ -51,7 +51,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Criss Cross Your Neighbor',
-      formation:Formations.OceanWavesRHBGBG,
+      formation:Formation('Ocean Waves RH BGBG'),
       from:'Right-Hand Waves',
       paths:[
           ExtendRight.changeBeats(2).scale(2.0,1.5) +
@@ -72,7 +72,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Criss Cross Your Neighbor',
-      formation:Formations.OceanWavesLHBGBG,
+      formation:Formation('Ocean Waves LH BGBG'),
       from:'Left-Hand Waves',
       paths:[
           RunLeft.scale(1.0,1.25) +
@@ -93,7 +93,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Criss Cross Your Neighbor',
-      formation:Formations.ColumnRHGBGB,
+      formation:Formation('Column RH GBGB'),
       from:'Right-Hand Columns',
       paths:[
           RunRight.changeBeats(4).scale(1.0,1.5) +
@@ -112,7 +112,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Criss Cross Your Neighbor',
-      formation:Formations.ColumnLHGBGB,
+      formation:Formation('Column LH GBGB'),
       from:'Left-Hand Columns',
       paths:[
           ExtendLeft.changeBeats(2).scale(1.0,1.5) +
@@ -131,7 +131,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Criss Cross Your Neighbor',
-      formation:Formations.TmBoneURUR,
+      formation:Formation('T-Bone URUR'),
       from:'Right-Handed T-Bones',
       paths:[
           ExtendRight.changeBeats(2).scale(1.0,1.5) +
@@ -150,7 +150,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Criss Cross Your Neighbor',
-      formation:Formations.TmBoneLULU,
+      formation:Formation('T-Bone LULU'),
       from:'Left-Handed T-Bones',
       paths:[
           LeadRight.scale(0.5,1.0) +
@@ -169,7 +169,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('All 8 Criss Cross Your Neighbor',
-      formation:Formations.StaticMiniWavesRH,
+      formation:Formation('Static MiniWaves RH'),
       group:' ',
       paths:[
           ExtendRight.changeBeats(4).scale(3.0,2.0) +
@@ -192,7 +192,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('As Couples Criss Cross Your Neighbor',
-      formation:Formations.TwomFacedLinesRH,
+      formation:Formation('Two-Faced Lines RH'),
       group:' ',
       paths:[
           ExtendRight.changeBeats(3).changehands(2).scale(2.0,3.5) +
@@ -213,7 +213,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Tandem Criss Cross Your Neighbor',
-      formation:Formations.ColumnRHGBGB,
+      formation:Formation('Column RH GBGB'),
       group:' ',
       paths:[
           RunRight.changeBeats(5).scale(1.0,2.0).skew(-1.0,0.0) +
@@ -242,7 +242,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Concentric Criss Cross Your Neighbor',
-      formation:Formations.ColumnRHGBGB,
+      formation:Formation('Column RH GBGB'),
       group:' ',
       paths:[
           LeadRight +
@@ -264,7 +264,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Pass and Roll Your Criss Cross Neighbor',
-      formation:Formations.EightChainThru,
+      formation:Formation('Eight Chain Thru'),
       group:' ',
       paths:[
           ExtendLeft.scale(1.0,0.5) +
@@ -300,7 +300,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left Pass and Roll Your Criss Cross Neighbor',
-      formation:Formations.EightChainThru,
+      formation:Formation('Eight Chain Thru'),
       group:' ',
       paths:[
           ExtendRight.scale(1.0,0.5) +

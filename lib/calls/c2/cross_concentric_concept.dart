@@ -21,7 +21,6 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 import '../c2/bounce.dart' as c2;
 import '../c2/circle_to_a_wave.dart' as c2;
@@ -35,7 +34,7 @@ import '../c2/turn_to_a_line.dart' as c2;
       tam.title == 'Cross Concentric Circle to a Wave').first.xref(title: 'Cross Concentric Circle to a Wave').xref(group: 'Cross Concentric'),
 
     AnimatedCall('Cross Concentric Crossfire',
-      formation:Formations.TwomFacedTidalLineRH,
+      formation:Formation('Two-Faced Tidal Line RH'),
       group:'Cross Concentric',
       paths:[
           Stand.changeBeats(3) +
@@ -52,7 +51,7 @@ import '../c2/turn_to_a_line.dart' as c2;
       ]),
 
     AnimatedCall('Cross Concentric Flip the Diamond',
-      formation:Formations.ConcentricDiamondsRH,
+      formation:Formation('Concentric Diamonds RH'),
       group:'Cross Concentric',
       paths:[
           LeadRight.changeBeats(3).scale(1.5,3.0),
@@ -65,7 +64,7 @@ import '../c2/turn_to_a_line.dart' as c2;
       ]),
 
     AnimatedCall('Cross Concentric Hinge',
-      formation:Formations.TidalWaveRHBGGB,
+      formation:Formation('Tidal Wave RH BGGB'),
       group:'Cross Concentric',
       paths:[
           QuarterRight.changeBeats(3).changehands(2).skew(1.0,-1.5),
@@ -78,7 +77,7 @@ import '../c2/turn_to_a_line.dart' as c2;
       ]),
 
     AnimatedCall('Cross Concentric Recycle',
-      formation:Formations.TidalWaveRHBGGB,
+      formation:Formation('Tidal Wave RH BGGB'),
       group:'Cross Concentric',
       paths:[
           Stand.changeBeats(1) +
@@ -96,7 +95,7 @@ import '../c2/turn_to_a_line.dart' as c2;
       ]),
 
     AnimatedCall('Cross Concentric Reverse Explode',
-      formation:Formations.TidalWaveRHBGGB,
+      formation:Formation('Tidal Wave RH BGGB'),
       group:'Cross Concentric',
       paths:[
           Stand +
@@ -111,7 +110,7 @@ import '../c2/turn_to_a_line.dart' as c2;
       ]),
 
     AnimatedCall('Cross Concentric Star Thru',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       group:'Cross Concentric',
       paths:[
           ExtendLeft.changeBeats(2).scale(2.0,0.5) +
@@ -128,7 +127,7 @@ import '../c2/turn_to_a_line.dart' as c2;
       ]),
 
     AnimatedCall('Cross Concentric Star Thru (example 1)',
-      formation:Formations.DoublePassThru,
+      formation:Formation('Double Pass Thru'),
       group:'Cross Concentric',
       paths:[
           Forward_2 +
@@ -147,7 +146,7 @@ import '../c2/turn_to_a_line.dart' as c2;
       ]),
 
     AnimatedCall('Cross Concentric Star Thru (example 2)',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:3,y:2,angle:270),
         DancerModel.fromData(gender:Gender.GIRL,x:-1,y:2,angle:270),
         DancerModel.fromData(gender:Gender.BOY,x:1,y:2,angle:270),
@@ -169,7 +168,7 @@ import '../c2/turn_to_a_line.dart' as c2;
       ]),
 
     AnimatedCall('Cross Concentric Star Thru (example 3)',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:3,y:1,angle:270),
         DancerModel.fromData(gender:Gender.GIRL,x:-1,y:1,angle:0),
         DancerModel.fromData(gender:Gender.BOY,x:1,y:1,angle:180),
@@ -191,7 +190,7 @@ import '../c2/turn_to_a_line.dart' as c2;
       ]),
 
     AnimatedCall('Cross Concentric Step and Fold',
-      formation:Formations.TidalWaveRHBGGB,
+      formation:Formation('Tidal Wave RH BGGB'),
       group:'Cross Concentric',
       paths:[
           FlipRight.scale(1.0,1.25).skew(1.0,0.0),
@@ -208,7 +207,7 @@ import '../c2/turn_to_a_line.dart' as c2;
       tam.title == 'Cross Concentric Turn to a Line (from waves)').first.xref(title: 'Cross Concentric Turn to a Line').xref(group: 'Cross Concentric'),
 
     AnimatedCall('Cross Concentric Wheel and Deal',
-      formation:Formations.TwomFacedTidalLineRH,
+      formation:Formation('Two-Faced Tidal Line RH'),
       group:'Cross Concentric',
       paths:[
           RunRight.changehands(2).skew(1.0,-2.5),

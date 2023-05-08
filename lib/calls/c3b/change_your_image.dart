@@ -21,13 +21,12 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> ChangeYourImage = [
 
     AnimatedCall('Change Your Image',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       from:'Right-Hand Waves',fractions:'3',
       paths:[
           Forward_3 +
@@ -44,7 +43,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Change Your Image',
-      formation:Formations.OceanWavesLHBGGB,
+      formation:Formation('Ocean Waves LH BGGB'),
       from:'Left-Hand Waves',fractions:'3',
       paths:[
           RunLeft.skew(-1.0,0.0) +
@@ -61,7 +60,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Change Your Image',
-      formation:Formations.TwomFacedLinesRH,
+      formation:Formation('Two-Faced Lines RH'),
       from:'Right-Hand Two-Faced Lines',fractions:'3',
       paths:[
           Forward_3 +
@@ -78,7 +77,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Change Your Image',
-      formation:Formations.InvertedLinesEndsFacingIn,
+      formation:Formation('Inverted Lines Ends Facing In'),
       from:'Inverted Lines, Ends Facing In',fractions:'3',
       paths:[
           ExtendLeft.changeBeats(2).scale(2.0,0.5) +
@@ -97,7 +96,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Change Your Image',
-      formation:Formations.InvertedLinesEndsFacingOut,
+      formation:Formation('Inverted Lines Ends Facing Out'),
       from:'Inverted Lines, Ends Facing Out',
       paths:[
           Stand.changeBeats(4) +
@@ -118,7 +117,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Change Your Image',
-      formation:Formations.ColumnRHGBGB,
+      formation:Formation('Column RH GBGB'),
       from:'Right-Hand Columns',fractions:'3',
       paths:[
           RunRight +
@@ -134,7 +133,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Change Your Image',
-      formation:Formations.ColumnLHGBGB,
+      formation:Formation('Column LH GBGB'),
       from:'Left-Hand Columns',fractions:'3',
       paths:[
           Forward_2.changeBeats(3) +
@@ -150,7 +149,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Change Your Image',
-      formation:Formations.MagicColumnRH,
+      formation:Formation('Magic Column RH'),
       from:'Magic Columns',fractions:'3',
       paths:[
           ExtendLeft.changeBeats(1.5).scale(1.0,0.5) +
@@ -171,7 +170,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Change Your Image',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:1,y:3,angle:270),
         DancerModel.fromData(gender:Gender.GIRL,x:1,y:1,angle:270),
         DancerModel.fromData(gender:Gender.BOY,x:1,y:-1,angle:0),

@@ -26,7 +26,7 @@ import '../../moves.dart';
   final List<AnimatedCall> TBoneFormation = [
 
     AnimatedCall('Circulate',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.GIRL,x:-1,y:3,angle:90),
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:1,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:-1,y:-1,angle:90),
@@ -44,7 +44,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Split Circulate',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.GIRL,x:-1,y:3,angle:90),
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:1,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:-1,y:-1,angle:90),
@@ -62,7 +62,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Scoot Back',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.GIRL,x:-1,y:3,angle:0),
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:1,angle:270),
         DancerModel.fromData(gender:Gender.GIRL,x:-1,y:-1,angle:0),
@@ -84,7 +84,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Follow Your Neighbor',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.GIRL,x:1,y:3,angle:0),
         DancerModel.fromData(gender:Gender.BOY,x:1,y:1,angle:90),
         DancerModel.fromData(gender:Gender.GIRL,x:1,y:-1,angle:0),

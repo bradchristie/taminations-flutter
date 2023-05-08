@@ -21,13 +21,12 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> CutTheDiamond = [
 
     AnimatedCall('Cut the Diamond',
-      formation:Formations.DiamondRH,
+      formation:Formation('Diamond RH'),
       from:'Right-Hand Diamond',difficulty: 1,
       paths:[
           DodgeRight +
@@ -38,7 +37,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cut the Diamond',
-      formation:Formations.DiamondLH,
+      formation:Formation('Diamond LH'),
       from:'Left-Hand Diamond',difficulty: 2,
       paths:[
           DodgeLeft +
@@ -49,7 +48,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cut the Diamond',
-      formation:Formations.DiamondFacingRH,
+      formation:Formation('Diamond Facing RH'),
       from:'Facing Diamond',difficulty: 2,
       paths:[
           DodgeLeft +
@@ -60,7 +59,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cut the Diamond',
-      formation:Formations.DiamondFacing,
+      formation:Formation('Diamond Facing'),
       from:'Facing Diamond, Left-Hand Centers',difficulty: 2,
       paths:[
           DodgeRight +
@@ -71,7 +70,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cut the Diamond',
-      formation:Formations.DiamondsRHGirlPoints,
+      formation:Formation('Diamonds RH Girl Points'),
       from:'Right-Hand Diamonds',difficulty: 1,
       paths:[
           Forward_2 +
@@ -88,7 +87,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cut the Diamond',
-      formation:Formations.DiamondsLHGirlPoints,
+      formation:Formation('Diamonds LH Girl Points'),
       from:'Left-Hand Diamonds',difficulty: 2,
       paths:[
           Forward_2 +
@@ -105,7 +104,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cut the Diamond',
-      formation:Formations.DiamondsFacingGirlPoints,
+      formation:Formation('Diamonds Facing Girl Points'),
       from:'Facing Diamonds, Right-Hand Wave',difficulty: 2,
       paths:[
           Forward_2 +
@@ -122,7 +121,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cut the Diamond',
-      formation:Formations.DiamondsFacingLHGirlPoints,
+      formation:Formation('Diamonds Facing LH Girl Points'),
       from:'Facing Diamonds, Left-Hand Wave',difficulty: 2,
       taminator: '''
       Centers circulate on the outside, points slide togther inside.
@@ -143,7 +142,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cut the Diamond',
-      formation:Formations.Diamonds_3and_1GirlPoints,
+      formation:Formation('Diamonds 3 and 1 Girl Points'),
       from:'Right-Hand Wave, Points Facing Out',difficulty: 2,
       paths:[
           Forward_2 +
@@ -160,7 +159,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cut the Diamond',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:0,y:-3,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:-3,y:-2,angle:90),
         DancerModel.fromData(gender:Gender.BOY,x:0,y:-1,angle:0),
@@ -182,7 +181,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cut the Diamond',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:0,y:-3,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:-3,y:-2,angle:270),
         DancerModel.fromData(gender:Gender.BOY,x:0,y:-1,angle:180),
@@ -204,7 +203,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cut the Diamond',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:0,y:-3,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:-3,y:-2,angle:90),
         DancerModel.fromData(gender:Gender.BOY,x:0,y:-1,angle:180),
@@ -226,7 +225,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cut the Diamond',
-      formation:Formations.DiamondsRHPTPGirlPoints,
+      formation:Formation('Diamonds RH PTP Girl Points'),
       from:'Point-to-Point Diamonds',difficulty: 2,
       paths:[
           Forward.changeBeats(2).scale(1.5,1.0) +
@@ -242,7 +241,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cut the Diamond',
-      formation:Formations.DiamondsLHPTPGirlPoints,
+      formation:Formation('Diamonds LH PTP Girl Points'),
       from:'Left-Hand Point-to-Point Diamonds',difficulty: 2,
       paths:[
           LeadLeft.changeBeats(3).scale(0.5,1.0),
@@ -257,7 +256,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cut the Diamond',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:-3,angle:90),
         DancerModel.fromData(gender:Gender.GIRL,x:0,y:-1,angle:180),
         DancerModel.fromData(gender:Gender.BOY,x:1,y:-3,angle:270),
@@ -277,7 +276,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cut the Diamond',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:-3,angle:270),
         DancerModel.fromData(gender:Gender.GIRL,x:0,y:-1,angle:0),
         DancerModel.fromData(gender:Gender.BOY,x:1,y:-3,angle:90),
@@ -297,7 +296,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cut the Diamond',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:-3,angle:90),
         DancerModel.fromData(gender:Gender.GIRL,x:0,y:-1,angle:180),
         DancerModel.fromData(gender:Gender.BOY,x:1,y:-3,angle:270),
@@ -317,7 +316,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cut the Diamond',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:-3,angle:90),
         DancerModel.fromData(gender:Gender.GIRL,x:0,y:-1,angle:0),
         DancerModel.fromData(gender:Gender.BOY,x:1,y:-3,angle:270),
@@ -337,7 +336,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cut the Diamond',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:-3,angle:270),
         DancerModel.fromData(gender:Gender.GIRL,x:0,y:-1,angle:0),
         DancerModel.fromData(gender:Gender.BOY,x:1,y:-3,angle:90),
@@ -357,7 +356,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cut the Diamond',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:-3,angle:270),
         DancerModel.fromData(gender:Gender.GIRL,x:0,y:-1,angle:180),
         DancerModel.fromData(gender:Gender.BOY,x:1,y:-3,angle:90),

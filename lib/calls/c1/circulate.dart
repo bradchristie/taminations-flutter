@@ -19,13 +19,13 @@
 */
 
 import '../../animated_call.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> Circulate = [
 
     AnimatedCall('Circulate',
-      formation:Formations.TharRHBoys,
+      formation:Formation('Thar RH Boys'),
       from:'Thar',
       paths:[
           LeadRight.changeBeats(4).changehands(2),
@@ -38,7 +38,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Circulate',
-      formation:Formations.TharLHBoys,
+      formation:Formation('Thar LH Boys'),
       from:'Wrong Way Thar',
       paths:[
           LeadLeft.changeBeats(4).changehands(1),
@@ -51,7 +51,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Circulate',
-      formation:Formations.StarPromenade,
+      formation:Formation('Star Promenade'),
       from:'Star Promenade',
       paths:[
           LeadLeft.changeBeats(4).changehands(3),
@@ -64,7 +64,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Circulate',
-      formation:Formations.ReverseStarPromenade,
+      formation:Formation('Reverse Star Promenade'),
       from:'Reverse Star Promenade',
       paths:[
           LeadRight.changeBeats(4).changehands(2).scale(3.0,3.0),

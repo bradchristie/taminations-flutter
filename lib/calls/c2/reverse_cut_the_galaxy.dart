@@ -19,13 +19,13 @@
 */
 
 import '../../animated_call.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> ReverseCutTheGalaxy = [
 
     AnimatedCall('Reverse Cut the Galaxy',
-      formation:Formations.GalaxyRHGP,
+      formation:Formation('Galaxy RH GP'),
       from:'Right-Hand Galaxy',
       paths:[
           SwingRight.changeBeats(4).changehands(6).scale(0.5,1.0) +
@@ -42,7 +42,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Reverse Cut the Galaxy',
-      formation:Formations.GalaxyLHGP,
+      formation:Formation('Galaxy LH GP'),
       from:'Left-Hand Galaxy',
       paths:[
           SwingLeft.changeBeats(4).changehands(5).scale(0.5,1.0) +
@@ -59,7 +59,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Reverse Cut the Galaxy',
-      formation:Formations.GalaxyFacingRHBox,
+      formation:Formation('Galaxy Facing RH Box'),
       from:'Facing Galaxy, Right-Hand Box',
       paths:[
           SwingRight.changeBeats(4).changehands(6).scale(0.5,1.0) +
@@ -76,7 +76,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Reverse Cut the Galaxy',
-      formation:Formations.GalaxyFacingLHBox,
+      formation:Formation('Galaxy Facing LH Box'),
       from:'Facing Galaxy, Left-Hand Box',
       paths:[
           SwingLeft.changeBeats(4).changehands(5).scale(0.5,1.0) +
@@ -93,7 +93,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Reverse Cut the Galaxy',
-      formation:Formations.Galaxy_5,
+      formation:Formation('Galaxy 5'),
       from:'Galaxy 5',
       paths:[
           RunRight.changeBeats(4) +
@@ -110,7 +110,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Reverse Cut the Galaxy',
-      formation:Formations.Galaxy_6,
+      formation:Formation('Galaxy 6'),
       from:'Galaxy 6',
       paths:[
           FlipLeft.changeBeats(4).scale(0.5,1.0) +
@@ -127,7 +127,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Reverse Cut the Galaxy',
-      formation:Formations.Galaxy_7,
+      formation:Formation('Galaxy 7'),
       from:'Galaxy 7',
       paths:[
           RunRight.changeBeats(4) +
@@ -144,7 +144,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Reverse Cut the Galaxy',
-      formation:Formations.Galaxy_8,
+      formation:Formation('Galaxy 8'),
       from:'Galaxy 8',
       paths:[
           FlipLeft.changeBeats(4).scale(0.5,1.0) +
@@ -161,7 +161,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Reverse Flip the Galaxy',
-      formation:Formations.GalaxyRHGP,
+      formation:Formation('Galaxy RH GP'),
       from:'Right-Hand Galaxy',
       paths:[
           FlipLeft.changeBeats(4).skew(0.5,0.0),
@@ -174,7 +174,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Reverse Flip the Galaxy',
-      formation:Formations.GalaxyLHGP,
+      formation:Formation('Galaxy LH GP'),
       from:'Left-Hand Galaxy',
       paths:[
           FlipRight.changeBeats(4).skew(-0.5,0.0),
@@ -187,7 +187,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Reverse Flip the Galaxy',
-      formation:Formations.GalaxyFacingRHBox,
+      formation:Formation('Galaxy Facing RH Box'),
       from:'Facing Galaxy, Right-Hand Box',
       paths:[
           FlipLeft.changeBeats(4).skew(0.5,0.0),
@@ -200,7 +200,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Reverse Flip the Galaxy',
-      formation:Formations.GalaxyFacingLHBox,
+      formation:Formation('Galaxy Facing LH Box'),
       from:'Facing Galaxy, Left-Hand Box',
       paths:[
           FlipRight.changeBeats(4).skew(-0.5,0.0),
@@ -213,7 +213,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Reverse Flip the Galaxy',
-      formation:Formations.Galaxy_5,
+      formation:Formation('Galaxy 5'),
       from:'Galaxy 5',
       paths:[
           FlipLeft.changeBeats(4).skew(0.5,0.0),
@@ -226,7 +226,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Reverse Flip the Galaxy',
-      formation:Formations.Galaxy_6,
+      formation:Formation('Galaxy 6'),
       from:'Galaxy 6',
       paths:[
           FlipRight.changeBeats(4).skew(-0.5,0.0),
@@ -239,7 +239,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Reverse Flip the Galaxy',
-      formation:Formations.Galaxy_7,
+      formation:Formation('Galaxy 7'),
       from:'Galaxy 7',
       paths:[
           FlipLeft.changeBeats(4).skew(0.5,0.0),
@@ -252,7 +252,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Reverse Flip the Galaxy',
-      formation:Formations.Galaxy_8,
+      formation:Formation('Galaxy 8'),
       from:'Galaxy 8',
       paths:[
           FlipRight.changeBeats(4).skew(-0.5,0.0),

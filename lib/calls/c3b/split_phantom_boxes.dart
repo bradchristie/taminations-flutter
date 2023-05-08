@@ -26,7 +26,7 @@ import '../../moves.dart';
   final List<AnimatedCall> SplitPhantomBoxes = [
 
     AnimatedCall('Split Phantom Boxes Acey Deucey',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-1.5,y:-.75,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:-1.5,y:.75,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:-1.5,y:2.25,angle:0),
@@ -56,7 +56,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Split Phantom Boxes In Roll Circulate',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-1.5,y:-.75,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:-1.5,y:.75,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:-1.5,y:2.25,angle:0),
@@ -86,7 +86,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Split Phantom Boxes Link Up',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-1.5,y:5.25,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:-1.5,y:3.75,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:-1.5,y:2.25,angle:180),
@@ -130,7 +130,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Split Phantom Boxes Plan Ahead',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-1.5,y:2.25,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:-1.5,y:.75,angle:0),
         DancerModel.fromData(gender:Gender.BOY,x:-1.5,y:-.75,angle:0),
@@ -196,7 +196,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Split Phantom Boxes Walk Out to a Wave',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:1,y:.75,angle:270),
         DancerModel.fromData(gender:Gender.GIRL,x:1,y:2.25,angle:270),
         DancerModel.fromData(gender:Gender.GIRL,x:1,y:3.75,angle:270),

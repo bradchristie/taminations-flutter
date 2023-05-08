@@ -19,13 +19,13 @@
 */
 
 import '../../animated_call.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> DiveThru = [
 
     AnimatedCall('Dive Thru',
-      formation:Formations.PassThru,
+      formation:Formation('Pass Thru'),
       group:' ',difficulty: 1,
       paths:[
           ExtendRight.changehands(2).scale(1.0,0.5) +
@@ -44,7 +44,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Heads Arch, Sides Dive Thru',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       group:' ',difficulty: 2,
       paths:[
           ExtendLeft.changeBeats(1.5).changehands(6).scale(2.0,0.5) +
@@ -63,7 +63,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Heads Wheel Around and make an Arch, Sides Dive Thru',
-      formation:Formations.Promenade_2,
+      formation:Formation('Promenade 2'),
       group:' ',difficulty: 2,
       taminator: '''
       Wheel Around is in the Basic 2 program.

@@ -19,13 +19,13 @@
 */
 
 import '../../animated_call.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> InterlockedExtend = [
 
     AnimatedCall('Interlocked Extend',
-      formation:Formations.QuarterLinesRH,
+      formation:Formation('Quarter Lines RH'),
       from:'Right-Hand Quarter Line',
       paths:[
           ExtendLeft.changeBeats(3).scale(1.0,2.0),
@@ -38,7 +38,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Interlocked Extend',
-      formation:Formations.QuarterLinesLH,
+      formation:Formation('Quarter Lines LH'),
       from:'Left-Hand Quarter Line',
       paths:[
           Forward.changeBeats(3),

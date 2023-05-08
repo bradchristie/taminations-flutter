@@ -20,7 +20,7 @@
 
 import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 import '../a1/swap_around.dart' as a1;
 import '../a2/recycle.dart' as a2;
@@ -31,7 +31,7 @@ import '../ms/dixie_style.dart' as ms;
   final List<AnimatedCall> Reverse = [
 
     AnimatedCall('Reverse Rollaway',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       group:'Reverse',
       paths:[
           FoldRight.changeBeats(1.5).changehands(6).scale(0.6,0.5) +
@@ -46,7 +46,7 @@ import '../ms/dixie_style.dart' as ms;
       ]),
 
     AnimatedCall('Reverse Half Sashay',
-      formation:Formations.FacingCouples,
+      formation:Formation('Facing Couples'),
       group:'Reverse',notForSequencer: true,
       paths:[
           SashayRight.changeBeats(4),
@@ -57,7 +57,7 @@ import '../ms/dixie_style.dart' as ms;
       tam.title == 'Reverse Wheel Around' && tam.from == 'Facing Couples').first.xref(title: 'Reverse Wheel Around').xref(group: 'Reverse'),
 
     AnimatedCall('Reverse Courtesy Turn',
-      formation:Formations.CouplesFacingOut,
+      formation:Formation('Couples Facing Out'),
       group:'Reverse',
       paths:[
           BelleReverseWheel.scale(0.67,1.0),
@@ -70,7 +70,7 @@ import '../ms/dixie_style.dart' as ms;
       tam.title == 'Reverse Dixie Style to a Wave').first.xref(title: 'Reverse Dixie Style to a Wave').xref(group: 'Reverse'),
 
     AnimatedCall('Reverse Circle to a Line',
-      formation:Formations.EightChainThru,
+      formation:Formation('Eight Chain Thru'),
       group:'Reverse',
       paths:[
           EighthRight.changehands(7) +

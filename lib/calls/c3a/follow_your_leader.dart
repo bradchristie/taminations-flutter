@@ -19,13 +19,13 @@
 */
 
 import '../../animated_call.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> FollowYourLeader = [
 
     AnimatedCall('Follow Your Leader',
-      formation:Formations.OceanWavesRHGBGB,
+      formation:Formation('Ocean Waves RH GBGB'),
       from:'Right-Hand Waves',
       paths:[
           Forward_2.changeBeats(1.5).skew(0.0,-0.25) +
@@ -49,7 +49,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Follow Your Leader',
-      formation:Formations.OceanWavesLHBGBG,
+      formation:Formation('Ocean Waves LH BGBG'),
       from:'Left-Hand Waves',
       paths:[
           LeadLeft +
@@ -73,7 +73,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Your Leader',
-      formation:Formations.n34Tag,
+      formation:Formation('3/4 Tag'),
       from:'3/4 Tag',
       paths:[
           QuarterRight.changeBeats(.5) +
@@ -95,7 +95,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Your Leader',
-      formation:Formations.DiamondsRHGirlPoints,
+      formation:Formation('Diamonds RH Girl Points'),
       from:'Twin Diamonds',
       paths:[
           SwingRight.scale(0.75,0.75) +

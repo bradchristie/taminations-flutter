@@ -21,13 +21,12 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> CrossChainReaction = [
 
     AnimatedCall('Cross Chain Reaction',
-      formation:Formations.QuarterTag,
+      formation:Formation('Quarter Tag'),
       from:'Quarter Tag',fractions:'5;3',
       paths:[
           Stand.changeBeats(3) +
@@ -55,7 +54,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cross Chain Reaction',
-      formation:Formations.QuarterTagLH,
+      formation:Formation('Quarter Tag LH'),
       from:'Left-Hand Quarter Tag',fractions:'5;3',
       paths:[
           Forward +
@@ -83,7 +82,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cross Chain Reaction',
-      formation:Formations.QuarterLinesRH,
+      formation:Formation('Quarter Lines RH'),
       from:'Right-Hand Quarter Lines',fractions:'5;3',
       paths:[
           Forward +
@@ -113,7 +112,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cross Chain Reaction',
-      formation:Formations.QuarterLinesLH,
+      formation:Formation('Quarter Lines LH'),
       from:'Left-Hand Quarter Lines',fractions:'5;3',
       paths:[
           Stand.changeBeats(3) +
@@ -143,7 +142,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cross Chain Reaction',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-3,y:1,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:-3,y:-1,angle:0),
         DancerModel.fromData(gender:Gender.BOY,x:0,y:-3,angle:180),
@@ -176,7 +175,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cross Chain Reaction',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-3,y:1,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:-3,y:-1,angle:180),
         DancerModel.fromData(gender:Gender.BOY,x:0,y:-3,angle:0),
@@ -207,7 +206,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cross Chain Reaction',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-3,y:1,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:-3,y:-1,angle:180),
         DancerModel.fromData(gender:Gender.BOY,x:0,y:1,angle:0),
@@ -240,7 +239,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cross Chain Reaction',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-3,y:1,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:-3,y:-1,angle:0),
         DancerModel.fromData(gender:Gender.BOY,x:0,y:1,angle:180),

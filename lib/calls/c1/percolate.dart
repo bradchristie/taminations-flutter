@@ -21,13 +21,12 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> Percolate = [
 
     AnimatedCall('Percolate',
-      formation:Formations.EightChainThru,
+      formation:Formation('Eight Chain Thru'),
       from:'Eight Chain Thru',parts:'2;1',
       paths:[
           ExtendLeft.scale(1.0,0.5) +
@@ -53,7 +52,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Percolate',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       from:'Right-Hand Waves',parts:'4;2',
       paths:[
           Forward_4 +
@@ -80,7 +79,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Percolate',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.GIRL,x:-2,y:-3,angle:0),
         DancerModel.fromData(gender:Gender.BOY,x:-2,y:-1,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:-2,y:1,angle:0),
@@ -112,7 +111,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Percolate',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       from:'Normal Lines',parts:'3;2',
       paths:[
           ExtendLeft.changeBeats(2).scale(2.0,0.5) +
@@ -141,7 +140,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Percolate',
-      formation:Formations.LinesFacingOut,
+      formation:Formation('Lines Facing Out'),
       from:'Lines Facing Out',parts:'4;2',
       paths:[
           RunLeft.changeBeats(4).scale(2.0,3.0) +
@@ -165,7 +164,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Percolate',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:1,y:3,angle:270),
         DancerModel.fromData(gender:Gender.GIRL,x:-1,y:3,angle:180),
         DancerModel.fromData(gender:Gender.BOY,x:1,y:1,angle:180),
@@ -194,7 +193,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Percolate but Ah So',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       group:' ',parts:'4;2',
       paths:[
           Forward_4 +
@@ -218,7 +217,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Percolate but Swing Thru',
-      formation:Formations.EightChainThru,
+      formation:Formation('Eight Chain Thru'),
       group:' ',parts:'2;1',
       paths:[
           ExtendLeft.scale(1.0,0.5) +
@@ -244,7 +243,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Percolate but 2/3 Recycle',
-      formation:Formations.EightChainThru,
+      formation:Formation('Eight Chain Thru'),
       group:' ',parts:'2;1',
       paths:[
           ExtendLeft.scale(1.0,0.5) +

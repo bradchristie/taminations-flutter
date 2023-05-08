@@ -21,7 +21,6 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 
 import '../c2/cross_the_k.dart' as c2;
@@ -29,7 +28,7 @@ import '../c2/cross_the_k.dart' as c2;
   final List<AnimatedCall> OnceRemovedConcept = [
 
     AnimatedCall('Once Removed Boys Run',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.GIRL,x:-1.5,y:3,angle:0),
         DancerModel.fromData(gender:Gender.BOY,x:-1.5,y:-1,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:-1.5,y:1,angle:0),
@@ -50,7 +49,7 @@ import '../c2/cross_the_k.dart' as c2;
       ]),
 
     AnimatedCall('Once Removed Chase Right',
-      formation:Formations.LinesFacingOutCompact,
+      formation:Formation('Lines Facing Out Compact'),
       group:'(From lines) Once Removed',
       paths:[
           UmTurnRight.skew(-2.0,0.0) +
@@ -69,7 +68,7 @@ import '../c2/cross_the_k.dart' as c2;
       ]),
 
     AnimatedCall('Once Removed Circle By 1/4 by 1/2',
-      formation:Formations.NormalLinesCompact,
+      formation:Formation('Normal Lines Compact'),
       group:'(From lines) Once Removed',
       taminator: '''
       Dancers are not Once Removed at the end of the call because the formation
@@ -106,7 +105,7 @@ import '../c2/cross_the_k.dart' as c2;
       ]),
 
     AnimatedCall('Once Removed Circulate',
-      formation:Formations.TwomFacedLinesRHCompact,
+      formation:Formation('Two-Faced Lines RH Compact'),
       group:'(From lines) Once Removed',
       paths:[
           Forward_3.changeBeats(4),
@@ -119,7 +118,7 @@ import '../c2/cross_the_k.dart' as c2;
       ]),
 
     AnimatedCall('Once Removed Counter Rotate',
-      formation:Formations.TwomFacedLinesRHCompact,
+      formation:Formation('Two-Faced Lines RH Compact'),
       group:'(From lines) Once Removed',
       paths:[
           CounterRotateRight_2_0.scale(1.25,1.0),
@@ -132,7 +131,7 @@ import '../c2/cross_the_k.dart' as c2;
       ]),
 
     AnimatedCall('Once Removed Partner Trade',
-      formation:Formations.LinesFacingOutCompact,
+      formation:Formation('Lines Facing Out Compact'),
       group:'(From lines) Once Removed',
       paths:[
           FlipLeft.changeBeats(6).scale(1.0,2.0),
@@ -145,7 +144,7 @@ import '../c2/cross_the_k.dart' as c2;
       ]),
 
     AnimatedCall('Once Removed Pass the Ocean',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       group:'(From lines) Once Removed',
       taminator: '''
       Dancers are not Once Removed at the end of the call because the formation
@@ -166,7 +165,7 @@ import '../c2/cross_the_k.dart' as c2;
       ]),
 
     AnimatedCall('Once Removed Peel Off',
-      formation:Formations.OceanWavesRHBGGBCompact,
+      formation:Formation('Ocean Waves RH BGGB Compact'),
       group:'(From lines) Once Removed',
       paths:[
           UmTurnLeft.changeBeats(3).skew(1.5,-0.5) +
@@ -181,7 +180,7 @@ import '../c2/cross_the_k.dart' as c2;
       ]),
 
     AnimatedCall('Once Removed Shakedown',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.GIRL,x:-1.5,y:3,angle:180),
         DancerModel.fromData(gender:Gender.BOY,x:-1.5,y:1,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:-1.5,y:-1,angle:180),
@@ -203,7 +202,7 @@ import '../c2/cross_the_k.dart' as c2;
       ]),
 
     AnimatedCall('Once Removed Single Wheel',
-      formation:Formations.LinesFacingOutCompact,
+      formation:Formation('Lines Facing Out Compact'),
       group:'(From lines) Once Removed',
       taminator: '''
       Note that this is the same as Turn and Deal.
@@ -221,7 +220,7 @@ import '../c2/cross_the_k.dart' as c2;
       ]),
 
     AnimatedCall('Once Removed Square Chain Thru',
-      formation:Formations.NormalLinesCompact,
+      formation:Formation('Normal Lines Compact'),
       group:'(From lines) Once Removed',
       taminator: '''
       This call is done by "taking out" the Once Removed after the
@@ -265,7 +264,7 @@ import '../c2/cross_the_k.dart' as c2;
       ]),
 
     AnimatedCall('Once Removed Square Thru 3 to a Wave',
-      formation:Formations.NormalLinesCompact,
+      formation:Formation('Normal Lines Compact'),
       group:'(From lines) Once Removed',
       paths:[
           ExtendLeft.changeBeats(1.5).scale(1.5,0.5) +
@@ -295,7 +294,7 @@ import '../c2/cross_the_k.dart' as c2;
       ]),
 
     AnimatedCall('Once Removed Swap Around',
-      formation:Formations.NormalLinesCompact,
+      formation:Formation('Normal Lines Compact'),
       group:'(From lines) Once Removed',
       paths:[
           FlipRight.changeBeats(4).scale(1.0,2.0),
@@ -308,7 +307,7 @@ import '../c2/cross_the_k.dart' as c2;
       ]),
 
     AnimatedCall('Once Removed Walk and Dodge',
-      formation:Formations.TwomFacedLinesRHCompact,
+      formation:Formation('Two-Faced Lines RH Compact'),
       group:'(From lines) Once Removed',
       paths:[
           Forward_3.changeBeats(4).changehands(2),
@@ -321,7 +320,7 @@ import '../c2/cross_the_k.dart' as c2;
       ]),
 
     AnimatedCall('Once Removed Circulate',
-      formation:Formations.ColumnRHGBGB,
+      formation:Formation('Column RH GBGB'),
       group:'(From columns) Once Removed',
       paths:[
           RunRight.changeBeats(4),
@@ -334,7 +333,7 @@ import '../c2/cross_the_k.dart' as c2;
       ]),
 
     AnimatedCall('Once Removed Hinge',
-      formation:Formations.ColumnRHGBGB,
+      formation:Formation('Column RH GBGB'),
       group:'(From columns) Once Removed',
       paths:[
           LeadRight.scale(0.5,1.0),
@@ -347,7 +346,7 @@ import '../c2/cross_the_k.dart' as c2;
       ]),
 
     AnimatedCall('Once Removed Peel Off',
-      formation:Formations.ColumnRHGBGB,
+      formation:Formation('Column RH GBGB'),
       group:'(From columns) Once Removed',
       paths:[
           RunLeft.changeBeats(4).skew(-1.5,0.0),
@@ -360,7 +359,7 @@ import '../c2/cross_the_k.dart' as c2;
       ]),
 
     AnimatedCall('Once Removed Quarter Thru',
-      formation:Formations.ColumnRHGBGB,
+      formation:Formation('Column RH GBGB'),
       group:'(From columns) Once Removed',
       paths:[
           LeadRight.scale(0.5,1.0),
@@ -377,7 +376,7 @@ import '../c2/cross_the_k.dart' as c2;
       ]),
 
     AnimatedCall('Once Removed Turn to a Line',
-      formation:Formations.ColumnRHGBGB,
+      formation:Formation('Column RH GBGB'),
       group:'(From columns) Once Removed',
       taminator: '''
       Dancers are not Once Removed at the end of the call because the formation
@@ -396,7 +395,7 @@ import '../c2/cross_the_k.dart' as c2;
       ]),
 
     AnimatedCall('Once Removed Walk and Dodge',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.GIRL,x:-1,y:3,angle:90),
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:1,angle:90),
         DancerModel.fromData(gender:Gender.GIRL,x:-1,y:-1,angle:90),
@@ -414,7 +413,7 @@ import '../c2/cross_the_k.dart' as c2;
       ]),
 
     AnimatedCall('Once Removed Zoom',
-      formation:Formations.ColumnRHGBGB,
+      formation:Formation('Column RH GBGB'),
       group:'(From columns) Once Removed',
       paths:[
           RunLeft.skew(-2.0,0.0) +
@@ -429,7 +428,7 @@ import '../c2/cross_the_k.dart' as c2;
       ]),
 
     AnimatedCall('Once Removed Pass the Ocean',
-      formation:Formations.DoublePassThru,
+      formation:Formation('Double Pass Thru'),
       group:'(From double pass thru) Once Removed',
       paths:[
           ExtendLeft.scale(1.0,0.5) +
@@ -452,7 +451,7 @@ import '../c2/cross_the_k.dart' as c2;
       ]),
 
     AnimatedCall('Once Removed Right and Left Thru',
-      formation:Formations.DoublePassThru,
+      formation:Formation('Double Pass Thru'),
       group:'(From double pass thru) Once Removed',
       paths:[
           ExtendLeft.scale(1.0,0.5) +
@@ -477,7 +476,7 @@ import '../c2/cross_the_k.dart' as c2;
       ]),
 
     AnimatedCall('Once Removed Slide Thru',
-      formation:Formations.DoublePassThru,
+      formation:Formation('Double Pass Thru'),
       group:'(From double pass thru) Once Removed',
       paths:[
           ExtendLeft.scale(1.0,0.5) +
@@ -498,7 +497,7 @@ import '../c2/cross_the_k.dart' as c2;
       ]),
 
     AnimatedCall('Once Removed Touch a Quarter',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:1,y:3,angle:270),
         DancerModel.fromData(gender:Gender.GIRL,x:-1,y:3,angle:270),
         DancerModel.fromData(gender:Gender.BOY,x:1,y:1,angle:270),
@@ -524,7 +523,7 @@ import '../c2/cross_the_k.dart' as c2;
       ]),
 
     AnimatedCall('Once Removed Turn to a Line',
-      formation:Formations.DoublePassThru,
+      formation:Formation('Double Pass Thru'),
       group:'(From double pass thru) Once Removed',
       paths:[
           UmTurnLeft.changeBeats(4).skew(1.5,2.0),
@@ -537,7 +536,7 @@ import '../c2/cross_the_k.dart' as c2;
       ]),
 
     AnimatedCall('Once Removed Crossfire',
-      formation:Formations.TidalLineRH,
+      formation:Formation('Tidal Line RH'),
       group:'(From tidal line) Once Removed',
       paths:[
           LeadRight.changeBeats(2).scale(2.0,2.0) +
@@ -556,7 +555,7 @@ import '../c2/cross_the_k.dart' as c2;
       ]),
 
     AnimatedCall('Once Removed Reverse Explode',
-      formation:Formations.TwomFacedTidalLineRH,
+      formation:Formation('Two-Faced Tidal Line RH'),
       group:'(From tidal line) Once Removed',
       paths:[
           QuarterLeft.changeBeats(2).skew(1.0,-0.5),
@@ -569,7 +568,7 @@ import '../c2/cross_the_k.dart' as c2;
       ]),
 
     AnimatedCall('Once Removed Swing Thru',
-      formation:Formations.TwomFacedTidalLineRH,
+      formation:Formation('Two-Faced Tidal Line RH'),
       group:'(From tidal line) Once Removed',
       paths:[
           LeadRight.scale(0.5,0.5) +
@@ -596,7 +595,7 @@ import '../c2/cross_the_k.dart' as c2;
       ]),
 
     AnimatedCall('Once Removed Switch to a Diamond',
-      formation:Formations.TwomFacedTidalLineRH,
+      formation:Formation('Two-Faced Tidal Line RH'),
       group:'(From tidal line) Once Removed',
       paths:[
           LeadRight +
@@ -611,7 +610,7 @@ import '../c2/cross_the_k.dart' as c2;
       ]),
 
     AnimatedCall('Once Removed Turn and Deal',
-      formation:Formations.TwomFacedTidalLineLH,
+      formation:Formation('Two-Faced Tidal Line LH'),
       group:'(From tidal line) Once Removed',
       paths:[
           UmTurnLeft.changeBeats(4).skew(-1.5,0.5),
@@ -624,7 +623,7 @@ import '../c2/cross_the_k.dart' as c2;
       ]),
 
     AnimatedCall('Once Removed Two-Thirds Recycle',
-      formation:Formations.TwomFacedTidalLineRH,
+      formation:Formation('Two-Faced Tidal Line RH'),
       group:'(From tidal line) Once Removed',
       paths:[
           LeadRight.skew(0.0,0.5) +
@@ -641,7 +640,7 @@ import '../c2/cross_the_k.dart' as c2;
       ]),
 
     AnimatedCall('Once Removed Bend the Line',
-      formation:Formations.TidalWaveRHBGBG,
+      formation:Formation('Tidal Wave RH BGBG'),
       group:'(From tidal wave) Once Removed',
       paths:[
           HingeRight.changeBeats(3).scale(1.0,0.5),
@@ -658,7 +657,7 @@ import '../c2/cross_the_k.dart' as c2;
       tam.title == 'Once Removed the K').first.xref(title: 'Once Removed The K').xref(group: '(From tidal wave) Once Removed'),
 
     AnimatedCall('Once Removed Turn and Deal',
-      formation:Formations.TidalWaveRHBGBG,
+      formation:Formation('Tidal Wave RH BGBG'),
       group:'(From tidal wave) Once Removed',
       paths:[
           UmTurnRight.changeBeats(4).skew(1.5,-0.5),
@@ -671,7 +670,7 @@ import '../c2/cross_the_k.dart' as c2;
       ]),
 
     AnimatedCall('Once Removed Wheel and Deal',
-      formation:Formations.TidalWaveRHBGBG,
+      formation:Formation('Tidal Wave RH BGBG'),
       group:'(From tidal wave) Once Removed',
       paths:[
           Forward +
@@ -692,7 +691,7 @@ import '../c2/cross_the_k.dart' as c2;
       ]),
 
     AnimatedCall('Once Removed Diamond Circulate',
-      formation:Formations.OnceRemovedDiamondsTandemCenters,
+      formation:Formation('Once Removed Diamonds Tandem Centers'),
       group:'(From OR diamonds, tandem centers) Once Removed',
       paths:[
           LeadRight.changeBeats(4).scale(1.0,4.0),
@@ -705,7 +704,7 @@ import '../c2/cross_the_k.dart' as c2;
       ]),
 
     AnimatedCall('Once Removed Flip the Diamond',
-      formation:Formations.OnceRemovedDiamondsTandemCenters,
+      formation:Formation('Once Removed Diamonds Tandem Centers'),
       group:'(From OR diamonds, tandem centers) Once Removed',
       paths:[
           RunRight.changeBeats(4).scale(1.0,1.75),
@@ -718,7 +717,7 @@ import '../c2/cross_the_k.dart' as c2;
       ]),
 
     AnimatedCall('Once Removed Cut the Diamond',
-      formation:Formations.OnceRemovedDiamondsTandemCenters,
+      formation:Formation('Once Removed Diamonds Tandem Centers'),
       group:'(From OR diamonds, tandem centers) Once Removed',
       paths:[
           DodgeRight.changeBeats(4).scale(1.0,1.75) +
@@ -733,7 +732,7 @@ import '../c2/cross_the_k.dart' as c2;
       ]),
 
     AnimatedCall('Once Removed Reverse Flip the Diamond',
-      formation:Formations.OnceRemovedDiamondsTandemCenters,
+      formation:Formation('Once Removed Diamonds Tandem Centers'),
       group:'(From OR diamonds, tandem centers) Once Removed',
       paths:[
           LeadRight.changeBeats(4).scale(1.0,3.5),
@@ -746,7 +745,7 @@ import '../c2/cross_the_k.dart' as c2;
       ]),
 
     AnimatedCall('Once Removed Reverse Cut the Diamond',
-      formation:Formations.OnceRemovedDiamondsTandemCenters,
+      formation:Formation('Once Removed Diamonds Tandem Centers'),
       group:'(From OR diamonds, tandem centers) Once Removed',
       paths:[
           Stand +
@@ -763,7 +762,7 @@ import '../c2/cross_the_k.dart' as c2;
       ]),
 
     AnimatedCall('Once Removed Diamond Circulate',
-      formation:Formations.InterlockedDiamondsRHGirlPoints,
+      formation:Formation('Interlocked Diamonds RH Girl Points'),
       group:'(From OR diamonds, tandem points) Once Removed',
       taminator: '''
       Same as Interlocked Diamond Circulate
@@ -780,7 +779,7 @@ import '../c2/cross_the_k.dart' as c2;
       ]),
 
     AnimatedCall('Once Removed Flip the Diamond',
-      formation:Formations.InterlockedDiamondsRHGirlPoints,
+      formation:Formation('Interlocked Diamonds RH Girl Points'),
       group:'(From OR diamonds, tandem points) Once Removed',
       paths:[
           LeadRight.changeBeats(3).scale(3.0,1.0),
@@ -793,7 +792,7 @@ import '../c2/cross_the_k.dart' as c2;
       ]),
 
     AnimatedCall('Once Removed Cut the Diamond',
-      formation:Formations.InterlockedDiamondsRHGirlPoints,
+      formation:Formation('Interlocked Diamonds RH Girl Points'),
       group:'(From OR diamonds, tandem points) Once Removed',
       paths:[
           LeadRight.changeBeats(3).scale(3.0,1.0),
@@ -808,7 +807,7 @@ import '../c2/cross_the_k.dart' as c2;
       ]),
 
     AnimatedCall('Once Removed Reverse Flip the Diamond',
-      formation:Formations.InterlockedDiamondsRHGirlPoints,
+      formation:Formation('Interlocked Diamonds RH Girl Points'),
       group:'(From OR diamonds, tandem points) Once Removed',
       paths:[
           FlipLeft.changeBeats(4).scale(1.0,0.25),
@@ -821,7 +820,7 @@ import '../c2/cross_the_k.dart' as c2;
       ]),
 
     AnimatedCall('Once Removed Reverse Cut the Diamond',
-      formation:Formations.InterlockedDiamondsRHGirlPoints,
+      formation:Formation('Interlocked Diamonds RH Girl Points'),
       group:'(From OR diamonds, tandem points) Once Removed',
       paths:[
           LeadRight.scale(0.5,1.0) +

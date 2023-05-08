@@ -20,13 +20,13 @@
 
 
 import '../../animated_call.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> Regroup = [
 
     AnimatedCall('Regroup',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       from:'Normal Lines',parts:'3',
       paths:[
           LeadLeft +
@@ -45,7 +45,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Regroup',
-      formation:Formations.LinesFacingOut,
+      formation:Formation('Lines Facing Out'),
       from:'Lines Facing Out',parts:'3',
       paths:[
           UmTurnRight.skew(-1.0,-1.0) +
@@ -64,7 +64,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Regroup',
-        formation: Formations.OceanWavesRHBGGB,
+        formation: Formation('Ocean Waves RH BGGB'),
         from: 'Right-Hand Waves',
         paths: [
           QuarterLeft + RunRight.scale(1.5, 2.5).skew(-1.0, 0),
@@ -74,7 +74,7 @@ import '../../moves.dart';
         ]),
 
     AnimatedCall('Regroup',
-        formation: Formations.OceanWavesLHBGGB,
+        formation: Formation('Ocean Waves LH BGGB'),
         from: 'Left-Hand Waves',
         paths: [
           QuarterRight + RunRight.scale(1.5, 2.5).skew(-1.0, 0),
@@ -84,7 +84,7 @@ import '../../moves.dart';
         ]),
 
     AnimatedCall('Regroup',
-        formation: Formations.TmBoneDLRD,
+        formation: Formation('T-Bone DLRD'),
         from: 'T-Bones',
         paths: [
           QuarterRight + RunRight.scale(1.5, 2).skew(-2.0, 0),

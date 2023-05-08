@@ -19,13 +19,13 @@
 */
 
 import '../../animated_call.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> GrandMix = [
 
     AnimatedCall('Grand Mix',
-      formation:Formations.TidalWaveRHBGGB,
+      formation:Formation('Tidal Wave RH BGGB'),
       from:'Right-Hand Tidal Wave',parts:'3',
       paths:[
           DodgeRight.scale(1.0,0.5) +
@@ -41,7 +41,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Grand Mix',
-      formation:Formations.TidalWaveLHBGGB,
+      formation:Formation('Tidal Wave LH BGGB'),
       from:'Left-Hand Tidal Wave',parts:'3',
       paths:[
           DodgeLeft.scale(1.0,0.5) +
@@ -57,7 +57,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Grand Mix',
-      formation:Formations.TwomFacedTidalLineRH,
+      formation:Formation('Two-Faced Tidal Line RH'),
       from:'Right-Hand Tidal Two-Faced Line',parts:'3',
       paths:[
           DodgeRight.scale(1.0,0.5) +
@@ -73,7 +73,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Grand Mix',
-      formation:Formations.TwomFacedTidalLineLH,
+      formation:Formation('Two-Faced Tidal Line LH'),
       from:'Left-Hand Tidal Two-Faced Line',parts:'3',
       paths:[
           DodgeLeft.scale(1.0,0.5) +
@@ -89,7 +89,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Grand Mix',
-      formation:Formations.TidalInvertedLineRH,
+      formation:Formation('Tidal Inverted Line RH'),
       from:'Right-Hand Tidal Inverted Line',parts:'3',
       paths:[
           DodgeRight.scale(1.0,0.5) +
@@ -105,7 +105,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Grand Mix',
-      formation:Formations.TidalInvertedLineLH,
+      formation:Formation('Tidal Inverted Line LH'),
       from:'Left-Hand Tidal Inverted Line',parts:'3',
       paths:[
           DodgeLeft.scale(1.0,0.5) +
@@ -121,7 +121,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Grand Mix',
-      formation:Formations.TidalLineRH,
+      formation:Formation('Tidal Line RH'),
       from:'Right-Hand Tidal Line',parts:'3',
       paths:[
           DodgeRight.scale(1.0,0.5) +
@@ -137,7 +137,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Grand Mix',
-      formation:Formations.TidalLineLH,
+      formation:Formation('Tidal Line LH'),
       from:'Left-Hand Tidal Line',parts:'3',
       paths:[
           RunLeft +
@@ -153,7 +153,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Grand Swing and Mix',
-      formation:Formations.TidalWaveRHBGGB,
+      formation:Formation('Tidal Wave RH BGGB'),
       from:'Right-Hand Tidal Wave',parts:'3;3',
       paths:[
           SwingRight.scale(0.5,0.5) +
@@ -173,7 +173,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Grand Swing and Mix',
-      formation:Formations.TidalWaveLHBGGB,
+      formation:Formation('Tidal Wave LH BGGB'),
       from:'Left-Hand Tidal Wave',parts:'3',
       paths:[
           SwingLeft.scale(0.5,0.5) +
@@ -193,7 +193,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Grand Swing and Mix',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       from:'Facing Lines',parts:'5;3',
       paths:[
           ExtendLeft.changeBeats(2).scale(2.0,0.5) +

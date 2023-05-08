@@ -21,13 +21,12 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> SplitSquareChainThru = [
 
     AnimatedCall('Split Square Chain Thru',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:3,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:1,y:3,angle:180),
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:1,angle:90),
@@ -65,7 +64,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Split Square Chain Thru',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:3,angle:270),
         DancerModel.fromData(gender:Gender.GIRL,x:1,y:3,angle:270),
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:1,angle:0),
@@ -103,7 +102,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Split Square Chain Thru',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:3,angle:270),
         DancerModel.fromData(gender:Gender.GIRL,x:1,y:3,angle:270),
         DancerModel.fromData(gender:Gender.BOY,x:0,y:1.5,angle:0),
@@ -137,7 +136,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Split Square Chain Thru',
-      formation:Formations.TmBoneRLUU,
+      formation:Formation('T-Bone RLUU'),
       from:'T-Bones 3',parts:'1;2;6',
       paths:[
           PullLeft.scale(1.0,0.5) +
@@ -170,7 +169,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Split Square Chain Thru',
-      formation:Formations.TmBoneUURL,
+      formation:Formation('T-Bone UURL'),
       from:'T-Bones 4',parts:'1;2;6',
       paths:[
           Stand +
@@ -203,7 +202,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left Split Square Chain Thru',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:3,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:1,y:3,angle:180),
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:1,angle:90),
@@ -241,7 +240,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left Split Square Chain Thru',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:3,angle:270),
         DancerModel.fromData(gender:Gender.GIRL,x:1,y:3,angle:270),
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:1,angle:0),
@@ -279,7 +278,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left Split Square Chain Thru',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:3,angle:270),
         DancerModel.fromData(gender:Gender.GIRL,x:1,y:3,angle:270),
         DancerModel.fromData(gender:Gender.BOY,x:0,y:.5,angle:0),
@@ -313,7 +312,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left Split Square Chain Thru',
-      formation:Formations.TmBoneRLUU,
+      formation:Formation('T-Bone RLUU'),
       from:'T-Bones 3',parts:'1;2;6',
       paths:[
           PullRight.scale(1.0,0.5) +
@@ -346,7 +345,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left Split Square Chain Thru',
-      formation:Formations.TmBoneUURL,
+      formation:Formation('T-Bone UURL'),
       from:'T-Bones 4',parts:'1;2;6',
       paths:[
           Stand +
@@ -379,7 +378,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Heads Split Square Chain Thru',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       from:'Static Square',group:' ',parts:'3;2;6',
       paths:[
           PullLeft.changeBeats(3).scale(3.0,0.5) +
@@ -412,7 +411,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Heads Left Split Square Chain Thru',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       from:'Static Square',group:' ',parts:'3;2;6',
       paths:[
           PullRight.changeBeats(3).scale(3.0,0.5) +
@@ -445,7 +444,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Sides Split Square Chain Thru',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       from:'Static Square',group:' ',parts:'3;2;6',noDisplay: true,
       paths:[
           Stand.changeBeats(3) +
@@ -478,7 +477,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Sides Left Split Square Chain Thru',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       from:'Static Square',group:' ',parts:'3;2;6',noDisplay: true,
       paths:[
           Stand.changeBeats(3) +

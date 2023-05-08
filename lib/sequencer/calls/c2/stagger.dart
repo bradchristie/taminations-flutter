@@ -18,14 +18,13 @@
 
 */
 
-import '../../../formations.dart';
 import '../common.dart';
 
 class Stagger extends ModifiedFormationConcept {
 
   @override final level = LevelData.C2;
   @override final conceptName = 'Stagger';
-  @override final modifiedFormation = Formations.DoublePassThru;
+  @override final modifiedFormation = Formation('Double Pass Thru');
   @override var helplink = 'c2/stagger_concept';
   Stagger(String name) : super(name);
 
@@ -36,14 +35,14 @@ class Stagger extends ModifiedFormationConcept {
   //  So check both and remember which one
   @override
   bool checkFormation(CallContext ctx) {
-    final ctx1 = CallContext.fromFormation(Formations.FacingBlocksRight);
-    final ctx2 = CallContext.fromFormation(Formations.FacingBlocksLeft);
+    final ctx1 = CallContext.fromFormation(Formation('Facing Blocks Right'));
+    final ctx2 = CallContext.fromFormation(Formation('Facing Blocks Left'));
     if (ctx.matchFormations(ctx1,sexy:false,fuzzy:true,rotate:180,handholds:false,delta: 0.3) != null) {
-      _startFormation = Formations.FacingBlocksRight;
+      _startFormation = Formation('Facing Blocks Right');
       return true;
     }
     if (ctx.matchFormations(ctx2,sexy:false,fuzzy:true,rotate:180,handholds:false,delta: 0.3) != null) {
-      _startFormation = Formations.FacingBlocksLeft;
+      _startFormation = Formation('Facing Blocks Left');
       return true;
     }
     return false;
@@ -59,8 +58,8 @@ class Stagger extends ModifiedFormationConcept {
     final a2 = ctx.dancers[0].angleFacing;
     final finalFormation =
     (a1.angleDiff(a2).abs().isAround(pi/2) ^ (_startFormation.name=='Facing Blocks Right'))
-        ? Formations.FacingBlocksRight
-        : Formations.FacingBlocksLeft;
+        ? Formation('Facing Blocks Right')
+        : Formation('Facing Blocks Left');
     return ctx.adjustToFormation(finalFormation,delta: 0.3);
   }
 

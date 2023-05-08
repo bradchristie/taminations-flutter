@@ -19,13 +19,13 @@
 */
 
 import '../../animated_call.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> FinallyConcept = [
 
     AnimatedCall('Finally As Couples Swing Thru',
-      formation:Formations.TwomFacedTidalLineRH,
+      formation:Formation('Two-Faced Tidal Line RH'),
       from:'Tidal Two-Faced Line',group:'Finally As Couples',fractions:'3',
       paths:[
           Stand.changeBeats(8),
@@ -41,7 +41,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Finally As Couples Mix',
-      formation:Formations.TwomFacedTidalLineRH,
+      formation:Formation('Two-Faced Tidal Line RH'),
       from:'Tidal Two-Faced Line',group:'Finally As Couples',fractions:'3',
       paths:[
           DodgeRight.scale(1.0,0.5),
@@ -56,7 +56,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Finally As Couples Pass the Ocean',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       group:'Finally As Couples',fractions:'3;1.5',
       paths:[
           ExtendLeft.changeBeats(2).scale(2.0,0.5) +
@@ -81,7 +81,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Finally As Couples Wheel the Sea',
-      formation:Formations.LinesFacingOut,
+      formation:Formation('Lines Facing Out'),
       group:'Finally As Couples',fractions:'3',
       paths:[
           BelleWheel +
@@ -98,7 +98,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Finally Tandem Swing Thru',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       group:'Finally Tandem',fractions:'3',
       paths:[
           SwingRight +

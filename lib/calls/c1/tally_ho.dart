@@ -21,14 +21,13 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 import '../c1/replace.dart' as c1;
 
   final List<AnimatedCall> TallyHo = [
 
     AnimatedCall('Tally Ho',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       from:'Right-Hand Waves',parts:'2;3',
       paths:[
           Forward_2 +
@@ -51,7 +50,7 @@ import '../c1/replace.dart' as c1;
       ]),
 
     AnimatedCall('Tally Ho',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       from:'Right-Hand Waves to Partner',parts:'2;3',
       paths:[
           Forward_2 +
@@ -74,7 +73,7 @@ import '../c1/replace.dart' as c1;
       ]),
 
     AnimatedCall('Tally Ho',
-      formation:Formations.OceanWavesLHBGGB,
+      formation:Formation('Ocean Waves LH BGGB'),
       from:'Left-Hand Waves',parts:'2;3',
       paths:[
           LeadLeft.changeBeats(2).scale(3.0,3.0) +
@@ -97,7 +96,7 @@ import '../c1/replace.dart' as c1;
       ]),
 
     AnimatedCall('Tally Ho',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:3,y:2,angle:270),
         DancerModel.fromData(gender:Gender.GIRL,x:1,y:2,angle:270),
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:2,angle:270),
@@ -126,7 +125,7 @@ import '../c1/replace.dart' as c1;
       ]),
 
     AnimatedCall('Tally Ho',
-      formation:Formations.LinesFacingOut,
+      formation:Formation('Lines Facing Out'),
       from:'Lines Facing Out',parts:'3;3',
       paths:[
           LeadLeft.changeBeats(3).scale(1.0,3.0) +
@@ -151,7 +150,7 @@ import '../c1/replace.dart' as c1;
       ]),
 
     AnimatedCall('Tally Ho',
-      formation:Formations.InvertedLinesEndsFacingOut,
+      formation:Formation('Inverted Lines Ends Facing Out'),
       from:'Inverted Lines, Ends Facing Out',parts:'3;3',
       paths:[
           LeadLeft.changeBeats(3).scale(1.0,3.0) +
@@ -174,7 +173,7 @@ import '../c1/replace.dart' as c1;
       ]),
 
     AnimatedCall('Tally Ho',
-      formation:Formations.InvertedLinesEndsFacingIn,
+      formation:Formation('Inverted Lines Ends Facing In'),
       from:'Inverted Lines, Ends Facing In',parts:'2;3',
       paths:[
           ExtendLeft.changeBeats(2).scale(2.0,1.0) +
@@ -197,7 +196,7 @@ import '../c1/replace.dart' as c1;
       ]),
 
     AnimatedCall('Tally Ho',
-      formation:Formations.TwomFacedLinesRH,
+      formation:Formation('Two-Faced Lines RH'),
       from:'Right-Hand Two-Faced Lines',parts:'3;3',
       paths:[
           Forward_2.changeBeats(3).changehands(2) +
@@ -220,7 +219,7 @@ import '../c1/replace.dart' as c1;
       ]),
 
     AnimatedCall('Tally Ho',
-      formation:Formations.TwomFacedLinesLH,
+      formation:Formation('Two-Faced Lines LH'),
       from:'Left-Hand Two-Faced Lines',parts:'3;3',
       paths:[
           LeadLeft.changeBeats(3).changehands(1).scale(3.0,3.0) +
@@ -245,7 +244,7 @@ import '../c1/replace.dart' as c1;
       ]),
 
     AnimatedCall('Tally Ho',
-      formation:Formations.TradeBy,
+      formation:Formation('Trade By'),
       from:'Trade By',parts:'1;3.5',
       paths:[
           QuarterLeft.skew(0.0,1.0) +
@@ -267,7 +266,7 @@ import '../c1/replace.dart' as c1;
       ]),
 
     AnimatedCall('Tally Ho',
-      formation:Formations.TmBoneURLU,
+      formation:Formation('T-Bone URLU'),
       from:'T-Bones 1',parts:'1;3',
       paths:[
           ExtendLeft +
@@ -292,7 +291,7 @@ import '../c1/replace.dart' as c1;
       ]),
 
     AnimatedCall('Tally Ho',
-      formation:Formations.TmBoneLUUR,
+      formation:Formation('T-Bone LUUR'),
       from:'T-Bones 2',parts:'1;3',
       paths:[
           LeadRight.changeBeats(1) +
@@ -317,7 +316,7 @@ import '../c1/replace.dart' as c1;
       ]),
 
     AnimatedCall('Tally Ho',
-      formation:Formations.TmBoneLRDU,
+      formation:Formation('T-Bone LRDU'),
       from:'T-Bones 3',parts:'1.5;3',
       paths:[
           LeadRight +
@@ -340,7 +339,7 @@ import '../c1/replace.dart' as c1;
       ]),
 
     AnimatedCall('Tally Ho',
-      formation:Formations.TmBoneUDLR,
+      formation:Formation('T-Bone UDLR'),
       from:'T-Bones 4',parts:'1.5;3',
       paths:[
           Forward.changeBeats(1.5) +

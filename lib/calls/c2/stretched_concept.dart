@@ -19,14 +19,14 @@
 */
 
 import '../../animated_call.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 import '../c3a/scatter_circulate.dart' as c3a;
 
   final List<AnimatedCall> StretchedConcept = [
 
     AnimatedCall('Stretched Line Crossfire',
-      formation:Formations.TidalLineRH,
+      formation:Formation('Tidal Line RH'),
       group:'Stretched Line',
       paths:[
           RunRight.changeBeats(6).scale(1.0,1.25).skew(2.0,0.0),
@@ -41,7 +41,7 @@ import '../c3a/scatter_circulate.dart' as c3a;
       ]),
 
     AnimatedCall('Stretched Line Tag the Line',
-      formation:Formations.TidalLineRH,
+      formation:Formation('Tidal Line RH'),
       group:'Stretched Line',
       paths:[
           LeadRight.changeBeats(2.5).scale(0.5,1.0) +
@@ -60,7 +60,7 @@ import '../c3a/scatter_circulate.dart' as c3a;
       ]),
 
     AnimatedCall('Stretched Line Turn and Deal',
-      formation:Formations.TidalLineRH,
+      formation:Formation('Tidal Line RH'),
       group:'Stretched Line',
       paths:[
           LeadRight.changeBeats(2.5).scale(1.5,0.5) +
@@ -79,7 +79,7 @@ import '../c3a/scatter_circulate.dart' as c3a;
       ]),
 
     AnimatedCall('Stretched Line Wheel and Deal',
-      formation:Formations.TidalLineRH,
+      formation:Formation('Tidal Line RH'),
       group:'Stretched Line',
       paths:[
           RunRight.changeBeats(4).changehands(6).scale(1.5,1.25).skew(2.0,0.0),
@@ -92,7 +92,7 @@ import '../c3a/scatter_circulate.dart' as c3a;
       ]),
 
     AnimatedCall('Stretched Wave Explode the Wave',
-      formation:Formations.TidalWaveRHBGGB,
+      formation:Formation('Tidal Wave RH BGGB'),
       group:'Stretched Wave',
       paths:[
           LeadRight.changeBeats(2).scale(1.5,0.5) +
@@ -112,7 +112,7 @@ import '../c3a/scatter_circulate.dart' as c3a;
       ]),
 
     AnimatedCall('Stretched Wave Recycle',
-      formation:Formations.TidalWaveRHBGGB,
+      formation:Formation('Tidal Wave RH BGGB'),
       group:'Stretched Wave',
       paths:[
           RunRight.changeBeats(3).scale(1.0,1.25).skew(2.0,0.0),

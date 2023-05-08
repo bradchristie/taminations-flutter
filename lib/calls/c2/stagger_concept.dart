@@ -19,13 +19,13 @@
 */
 
 import '../../animated_call.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> StaggerConcept = [
 
     AnimatedCall('Stagger Double Pass Thru',
-      formation:Formations.FacingBlocksLeft,
+      formation:Formation('Facing Blocks Left'),
       group:'Stagger',
       paths:[
           ExtendLeft.changeBeats(2).scale(2.0,0.5) +
@@ -42,7 +42,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Stagger Circulate',
-      formation:Formations.BlocksRH,
+      formation:Formation('Blocks RH'),
       group:'Stagger',
       paths:[
           ExtendLeft.changeBeats(3).scale(2.0,2.0),
@@ -55,7 +55,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Stagger Split Circulate',
-      formation:Formations.BlocksRH,
+      formation:Formation('Blocks RH'),
       group:'Stagger',
       paths:[
           ExtendLeft.changeBeats(3).scale(2.0,2.0),

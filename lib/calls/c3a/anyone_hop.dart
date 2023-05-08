@@ -21,13 +21,12 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> AnyoneHop = [
 
     AnimatedCall('Beaus Hop',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:1,y:2,angle:270),
         DancerModel.fromData(gender:Gender.GIRL,x:-1,y:2,angle:270),
   ]),
@@ -41,7 +40,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Trailers Hop',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:1,y:2,angle:90),
         DancerModel.fromData(gender:Gender.GIRL,x:-1,y:2,angle:270),
   ]),
@@ -55,7 +54,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Everybody Hop',
-      formation:Formations.FacingCouplesCompact,
+      formation:Formation('Facing Couples Compact'),
       group:' ',parts:'4',
       paths:[
           ExtendLeft.changeBeats(2).scale(1.5,0.5) +
@@ -68,7 +67,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Nobody Hop',
-      formation:Formations.BoxRH,
+      formation:Formation('Box RH'),
       group:' ',parts:'3',
       paths:[
           BackSashayRight.scale(1.5,1.0) +
@@ -79,7 +78,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Boys Hop',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       from:'Lines',group:' ',isGenderSpecific:true,parts:'4',
       paths:[
           Forward_4 +
@@ -96,7 +95,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Magic Column Boys Hop',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-3,y:-1,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:1,y:-1,angle:180),
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:-1,angle:180),

@@ -21,13 +21,12 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> Tag = [
 
     AnimatedCall('Tag the Line',
-      formation:Formations.TwomFacedLineRH,
+      formation:Formation('Two-Faced Line RH'),
       from:'Right-Hand Two-Faced Line',difficulty: 1,
       paths:[
           QuarterRight.skew(0.5,0.0) +
@@ -40,7 +39,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Tag the Line',
-      formation:Formations.TwomFacedLineLH,
+      formation:Formation('Two-Faced Line LH'),
       from:'Left-Hand Two-Faced Line',difficulty: 2,
       paths:[
           QuarterLeft.skew(-0.5,0.0) +
@@ -53,7 +52,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Tag the Line',
-      formation:Formations.WaveRH,
+      formation:Formation('Wave RH'),
       from:'Right-Hand Ocean Wave',difficulty: 2,
       paths:[
           QuarterRight.skew(0.5,0.0) +
@@ -66,7 +65,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Tag the Line',
-      formation:Formations.WaveLH,
+      formation:Formation('Wave LH'),
       from:'Left-Hand Ocean Wave',difficulty: 2,
       paths:[
           QuarterLeft.skew(-0.5,0.0) +
@@ -79,7 +78,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Tag the Line',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       from:'Lines Facing In',difficulty: 2,
       paths:[
           QuarterRight.skew(1.0,0.0) +
@@ -98,7 +97,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Tag the Line',
-      formation:Formations.LinesFacingOut,
+      formation:Formation('Lines Facing Out'),
       from:'Lines Facing Out',difficulty: 1,
       paths:[
           QuarterLeft.skew(-1.0,0.0) +
@@ -117,7 +116,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Tag the Line',
-      formation:Formations.TwomFacedLinesRH,
+      formation:Formation('Two-Faced Lines RH'),
       from:'Right-Hand Two-Faced Lines',difficulty: 1,
       paths:[
           QuarterRight.skew(1.0,0.0) +
@@ -136,7 +135,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Tag the Line',
-      formation:Formations.TwomFacedLinesLH,
+      formation:Formation('Two-Faced Lines LH'),
       from:'Left-Hand Two-Faced Lines',difficulty: 2,
       paths:[
           QuarterLeft.skew(-1.0,0.0) +
@@ -155,7 +154,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Tag the Line',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       from:'Right-Hand Ocean Waves',difficulty: 2,
       paths:[
           QuarterRight.skew(1.0,0.0) +
@@ -174,7 +173,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Tag the Line',
-      formation:Formations.TidalLineRH,
+      formation:Formation('Tidal Line RH'),
       from:'Tidal Line',difficulty: 2,
       taminator: '''
     Although not clear from the current definition, Tag the Line is a
@@ -199,7 +198,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Line of 8 Tag the Line',
-      formation:Formations.TidalLineRH,
+      formation:Formation('Tidal Line RH'),
       from:'Tidal Line',difficulty: 2,
       taminator: '''
     Usually each group of 4 dancers works independently.
@@ -224,7 +223,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('_Finish Line of 8 Tag the Line',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:3.5,y:-.5,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:2.5,y:-.5,angle:180),
         DancerModel.fromData(gender:Gender.BOY,x:1.5,y:-.5,angle:180),
@@ -246,7 +245,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('_Finish Line of 8 Left Tag the Line',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:3.5,y:.5,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:2.5,y:.5,angle:180),
         DancerModel.fromData(gender:Gender.BOY,x:1.5,y:.5,angle:180),
@@ -268,7 +267,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('_Finish Line of 8 Half Tag',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:3.5,y:-.5,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:2.5,y:-.5,angle:180),
         DancerModel.fromData(gender:Gender.BOY,x:1.5,y:-.5,angle:180),
@@ -286,7 +285,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('_Finish Line of 8 Left Half Tag',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:3.5,y:.5,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:2.5,y:.5,angle:180),
         DancerModel.fromData(gender:Gender.BOY,x:1.5,y:.5,angle:180),
@@ -304,7 +303,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('_Finish Line of 6 Tag the Line',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:3.75,y:-.5,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:2.25,y:-.5,angle:180),
         DancerModel.fromData(gender:Gender.BOY,x:0.75,y:-.5,angle:180),
@@ -322,7 +321,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('_Finish Line of 6 Left Tag the Line',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:3.75,y:.5,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:2.25,y:.5,angle:180),
         DancerModel.fromData(gender:Gender.BOY,x:0.75,y:.5,angle:180),
@@ -340,7 +339,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('_Finish Line of 6 Half Tag',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:3.75,y:-.5,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:2.25,y:-.5,angle:180),
         DancerModel.fromData(gender:Gender.BOY,x:0.75,y:-.5,angle:180),
@@ -355,7 +354,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('_Finish Line of 6 Left Half Tag',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:3.75,y:.5,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:2.25,y:.5,angle:180),
         DancerModel.fromData(gender:Gender.BOY,x:0.75,y:.5,angle:180),

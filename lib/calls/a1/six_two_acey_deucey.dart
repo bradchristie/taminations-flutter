@@ -21,13 +21,12 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> SixTwoAceyDeucey = [
 
     AnimatedCall('Six-Two Acey Deucey',
-      formation:Formations.DiamondsRHGirlPoints,
+      formation:Formation('Diamonds RH Girl Points'),
       from:'Right-Hand Diamonds',
       paths:[
           LeadRight.changeBeats(4).scale(3.0,1.0),
@@ -40,7 +39,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Six-Two Acey Deucey',
-      formation:Formations.DiamondsLHGirlPoints,
+      formation:Formation('Diamonds LH Girl Points'),
       from:'Left-Hand Diamonds',
       paths:[
           LeadLeft.changeBeats(4).scale(3.0,1.0),
@@ -53,7 +52,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Six-Two Acey Deucey',
-      formation:Formations.DiamondsRHPTPGirlPoints,
+      formation:Formation('Diamonds RH PTP Girl Points'),
       from:'Point-to-Point Diamonds',
       paths:[
           ExtendLeft.changeBeats(2).scale(3.0,0.5) +
@@ -67,7 +66,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Six-Two Acey Deucey',
-      formation:Formations.DiamondsLHPTPGirlPoints,
+      formation:Formation('Diamonds LH PTP Girl Points'),
       from:'Left-Hand Point-to-Point Diamonds',
       paths:[
           LeadLeft.changeBeats(3).scale(2.0,1.0),
@@ -81,7 +80,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Six-Two Acey Deucey',
-      formation:Formations.HourglassRHBP,
+      formation:Formation('Hourglass RH BP'),
       from:'Hourglass',
       paths:[
           LeadRight.changeBeats(4).scale(1.0,3.0),
@@ -94,7 +93,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Six-Two Acey Deucey',
-      formation:Formations.HourglassLHBP,
+      formation:Formation('Hourglass LH BP'),
       from:'Left-Hand Hourglass',
       paths:[
           Forward_4,
@@ -107,7 +106,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Six-Two Acey Deucey',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-3,y:-1,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:0,y:-3,angle:180),
         DancerModel.fromData(gender:Gender.BOY,x:3,y:-1,angle:180),
@@ -125,7 +124,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Six-Two Acey Deucey',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-3,y:-1,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:0,y:-3,angle:0),
         DancerModel.fromData(gender:Gender.BOY,x:3,y:-1,angle:0),
@@ -143,7 +142,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Six-Two Acey Deucey',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-3,y:-1,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:0,y:-3,angle:180),
         DancerModel.fromData(gender:Gender.BOY,x:3,y:-1,angle:180),
@@ -161,7 +160,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Six-Two Acey Deucey',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-3,y:-1,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:0,y:-3,angle:0),
         DancerModel.fromData(gender:Gender.BOY,x:3,y:-1,angle:0),

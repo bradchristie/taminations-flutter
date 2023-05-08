@@ -21,13 +21,12 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> AhSo = [
 
     AnimatedCall('Ah So',
-      formation:Formations.WaveRH,
+      formation:Formation('Wave RH'),
       from:'Right-Hand Wave',
       paths:[
           RunRight.changehands(6).scale(1.5,2.0).skew(1.5,0.0),
@@ -36,7 +35,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Ah So',
-      formation:Formations.WaveLH,
+      formation:Formation('Wave LH'),
       from:'Left-Hand Wave',
       paths:[
           RunLeft.changehands(5).scale(1.5,2.0).skew(1.5,0.0),
@@ -45,7 +44,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Ah So',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       from:'Right-Hand Waves',
       paths:[
           RunRight.changehands(6).scale(1.0,2.0).skew(1.0,0.0),
@@ -58,7 +57,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Ah So',
-      formation:Formations.OceanWavesLHBGGB,
+      formation:Formation('Ocean Waves LH BGGB'),
       from:'Left-Hand Waves',
       paths:[
           RunLeft.changehands(5).scale(1.0,2.0).skew(1.0,0.0),
@@ -71,7 +70,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Ah So',
-      formation:Formations.InvertedLinesEndsFacingOut,
+      formation:Formation('Inverted Lines Ends Facing Out'),
       from:'Inverted Lines',
       paths:[
           RunLeft.changehands(5).scale(1.0,2.0).skew(-1.0,0.0),
@@ -84,7 +83,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Ah So',
-      formation:Formations.n3and_1lines1,
+      formation:Formation('3 and 1 Lines #1'),
       from:'3 and 1 Lines #1',
       paths:[
           RunLeft.changeBeats(4).changehands(1).scale(1.0,2.0).skew(1.0,0.0),
@@ -97,7 +96,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Ah So',
-      formation:Formations.n3and_1lines2,
+      formation:Formation('3 and 1 Lines #2'),
       from:'3 and 1 Lines #2',
       paths:[
           RunRight.changeBeats(4).changehands(2).scale(1.0,2.0).skew(1.0,0.0),
@@ -110,7 +109,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Ah So',
-      formation:Formations.n3and_1lines3,
+      formation:Formation('3 and 1 Lines #3'),
       from:'3 and 1 Lines #3',
       paths:[
           RunRight.changeBeats(4).changehands(2).scale(1.0,2.0).skew(1.0,0.0),
@@ -123,7 +122,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Ah So',
-      formation:Formations.n3and_1lines4,
+      formation:Formation('3 and 1 Lines #4'),
       from:'3 and 1 Lines #4',
       paths:[
           RunRight.changeBeats(4).changehands(2).scale(1.0,2.0).skew(1.0,0.0),
@@ -136,7 +135,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Ah So',
-      formation:Formations.n3and_1lines5,
+      formation:Formation('3 and 1 Lines #5'),
       from:'3 and 1 Lines #5',
       paths:[
           RunRight.changeBeats(4).changehands(2).scale(1.0,2.0).skew(1.0,0.0),
@@ -149,7 +148,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Ah So',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.GIRL,x:-2,y:3,angle:180),
         DancerModel.fromData(gender:Gender.BOY,x:-2,y:1,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:-2,y:-1,angle:180),
@@ -167,7 +166,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Ah So',
-      formation:Formations.n3and_1lines7,
+      formation:Formation('3 and 1 Lines #7'),
       from:'3 and 1 Lines #7',
       paths:[
           RunLeft.changeBeats(4).changehands(1).scale(1.0,2.0).skew(-1.0,0.0),
@@ -180,7 +179,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Ah So',
-      formation:Formations.n3and_1lines8,
+      formation:Formation('3 and 1 Lines #8'),
       from:'3 and 1 Lines #8',
       paths:[
           RunLeft.changeBeats(4).changehands(1).scale(1.0,2.0).skew(1.0,0.0),
@@ -193,7 +192,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Ah So',
-      formation:Formations.TidalWaveRHBGGB,
+      formation:Formation('Tidal Wave RH BGGB'),
       from:'Right-Hand Tidal Wave',
       paths:[
           RunRight.changeBeats(4).changehands(2).scale(1.0,1.25).skew(1.5,0.0),
@@ -206,7 +205,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Ah So',
-      formation:Formations.TidalWaveLHBGGB,
+      formation:Formation('Tidal Wave LH BGGB'),
       from:'Left-Hand Tidal Wave',
       paths:[
           RunLeft.changeBeats(4).changehands(1).scale(1.0,1.25).skew(1.5,0.0),
@@ -219,7 +218,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Ah So',
-      formation:Formations.Tidal_3and_1Line1,
+      formation:Formation('Tidal 3 and 1 Line #1'),
       from:'Tidal 3 and 1 Lines #1',
       paths:[
           RunRight.changeBeats(4).changehands(2).scale(1.0,1.25).skew(1.5,0.0),
@@ -232,7 +231,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Ah So',
-      formation:Formations.Tidal_3and_1Line2,
+      formation:Formation('Tidal 3 and 1 Line #2'),
       from:'Tidal 3 and 1 Lines #2',
       paths:[
           RunRight.changeBeats(4).changehands(2).scale(1.0,1.25).skew(1.5,0.0),
@@ -245,7 +244,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Ah So',
-      formation:Formations.Tidal_3and_1Line3,
+      formation:Formation('Tidal 3 and 1 Line #3'),
       from:'Tidal 3 and 1 Lines #3',
       paths:[
           RunRight.changeBeats(4).changehands(2).scale(1.0,1.25).skew(1.5,0.0),
@@ -258,7 +257,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Ah So',
-      formation:Formations.Tidal_3and_1Line4,
+      formation:Formation('Tidal 3 and 1 Line #4'),
       from:'Tidal 3 and 1 Lines #4',
       paths:[
           RunLeft.changeBeats(4).changehands(1).scale(1.0,1.25).skew(1.5,0.0),
@@ -271,7 +270,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Ah So',
-      formation:Formations.Tidal_3and_1Line5,
+      formation:Formation('Tidal 3 and 1 Line #5'),
       from:'Tidal 3 and 1 Lines #5',
       paths:[
           RunLeft.changeBeats(4).changehands(1).scale(1.0,1.25).skew(1.5,0.0),
@@ -284,7 +283,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Ah So',
-      formation:Formations.Tidal_3and_1Line6,
+      formation:Formation('Tidal 3 and 1 Line #6'),
       from:'Tidal 3 and 1 Lines #6',
       paths:[
           RunLeft.changeBeats(4).changehands(1).scale(1.0,1.25).skew(-1.5,0.0),
@@ -297,7 +296,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Ah So',
-      formation:Formations.Tidal_3and_1Line7,
+      formation:Formation('Tidal 3 and 1 Line #7'),
       from:'Tidal 3 and 1 Lines #7',
       paths:[
           RunLeft.changeBeats(4).changehands(1).scale(1.0,1.25).skew(-1.5,0.0),
@@ -310,7 +309,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Ah So',
-      formation:Formations.Tidal_3and_1Line8,
+      formation:Formation('Tidal 3 and 1 Line #8'),
       from:'Tidal 3 and 1 Lines #8',
       paths:[
           RunRight.changeBeats(4).changehands(2).scale(1.0,1.25).skew(1.5,0.0),
@@ -323,7 +322,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Ah So',
-      formation:Formations.InvertedTidalLineRH,
+      formation:Formation('Inverted Tidal Line RH'),
       from:'Right-Hand Inverted Tidal Line',
       paths:[
           RunRight.changeBeats(4).changehands(2).scale(1.0,1.25).skew(1.5,0.0),
@@ -336,7 +335,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Ah So',
-      formation:Formations.InvertedTidalLineLH,
+      formation:Formation('Inverted Tidal Line LH'),
       from:'Left-Hand Inverted Tidal Line',
       paths:[
           RunLeft.changeBeats(4).changehands(1).scale(1.0,1.25).skew(-1.5,0.0),
@@ -349,7 +348,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('As Couples Ah So',
-      formation:Formations.TwomFacedTidalLineRH,
+      formation:Formation('Two-Faced Tidal Line RH'),
       from:'Two-Faced Tidal Line',group:' ',
       paths:[
           RunRight.changeBeats(5).changehands(6).scale(2.0,3.0).skew(1.5,-0.5),
@@ -362,7 +361,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Concentric Ah So',
-      formation:Formations.TidalWaveRHBGGB,
+      formation:Formation('Tidal Wave RH BGGB'),
       from:'Tidal Wave',group:' ',
       paths:[
           RunRight.changehands(6).scale(1.0,2.25).skew(3.0,0.0),
@@ -375,7 +374,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Stretch Ah So',
-      formation:Formations.OceanWavesRHBGGBCompact,
+      formation:Formation('Ocean Waves RH BGGB Compact'),
       from:'Right-Hand Waves',group:' ',
       paths:[
           RunRight.changehands(6).scale(1.0,2.0).skew(2.5,0.0),
@@ -388,7 +387,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Tandem Ah So',
-      formation:Formations.OceanWavesRHBGGBCompact,
+      formation:Formation('Ocean Waves RH BGGB Compact'),
       from:'Right-Hand Waves',group:' ',
       paths:[
           CounterRotateRight_2_0.changeBeats(4).changehands(6).skew(2.0,0.0) +

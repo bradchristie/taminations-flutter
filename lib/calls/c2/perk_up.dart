@@ -21,13 +21,12 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> PerkUp = [
 
     AnimatedCall('Perk Up',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.GIRL,x:3,y:2,angle:270),
         DancerModel.fromData(gender:Gender.BOY,x:1,y:2,angle:90),
         DancerModel.fromData(gender:Gender.GIRL,x:-1,y:2,angle:270),
@@ -59,7 +58,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Perk Up',
-      formation:Formations.OceanWavesLHBGBG,
+      formation:Formation('Ocean Waves LH BGBG'),
       from:'Left-Hand Waves',fractions:'4;2',
       paths:[
           RunLeft.changeBeats(4).scale(2.0,3.0) +

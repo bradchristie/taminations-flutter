@@ -20,13 +20,13 @@
 
 import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> CircleToAWave = [
 
     AnimatedCall('Circle to a Wave',
-      formation:Formations.FacingCouplesCompact,
+      formation:Formation('Facing Couples Compact'),
       from:'Facing Couples',parts:'2.25',
       paths:[
           EighthRight.skew(0.5,0.0) +
@@ -39,7 +39,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Circle to a Wave',
-      formation:Formations.NormalLinesCompact,
+      formation:Formation('Normal Lines Compact'),
       from:'Normal Lines',parts:'2.25',
       paths:[
           EighthRight.skew(0.5,0.0) +
@@ -60,7 +60,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Circle to a Wave',
-      formation:Formations.EightChainThru,
+      formation:Formation('Eight Chain Thru'),
       from:'Eight Chain Thru',parts:'2.25',
       paths:[
           EighthRight +
@@ -81,7 +81,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Circle 1/2 to a Wave',
-      formation:Formations.FacingCouplesCompact,
+      formation:Formation('Facing Couples Compact'),
       group:' ',parts:'3.75',
       paths:[
           EighthRight.skew(0.5,0.0) +
@@ -96,7 +96,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('All 4 Couples Circle to a Wave',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       group:' ',
       paths:[
           Forward.changehands(3).scale(0.59,0.59) +
@@ -123,7 +123,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('As Couples Circle to a Wave',
-      formation:Formations.NormalLinesCompact,
+      formation:Formation('Normal Lines Compact'),
       group:' ',
       paths:[
           EighthRight.changeBeats(1).changehands(2).skew(0.5,-1.0) +
@@ -148,7 +148,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Concentric Circle to a Wave',
-      formation:Formations.DoublePassThru,
+      formation:Formation('Double Pass Thru'),
       group:' ',
       paths:[
           CounterRotateRight_4_2.changeBeats(4).changehands(2) +
@@ -169,7 +169,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cross Concentric Circle to a Wave',
-      formation:Formations.DoublePassThru,
+      formation:Formation('Double Pass Thru'),
       group:' ',
       paths:[
           Stand.changeBeats(5) +

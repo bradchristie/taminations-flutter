@@ -21,13 +21,12 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> CrossCycle = [
 
     AnimatedCall('Cross Cycle, 3 distinct parts',
-      formation:Formations.TwomFacedLineRH,
+      formation:Formation('Two-Faced Line RH'),
       group:' ',parts:'3;2',
       paths:[
           DodgeRight.skew(1.0,0.0) +
@@ -40,7 +39,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cross Cycle',
-      formation:Formations.TwomFacedLineRH,
+      formation:Formation('Two-Faced Line RH'),
       from:'Right-Hand Two-Faced Line',fractions:'4',
       taminator: '''
       For the rest of these animations from lines, the first two parts are danced as
@@ -56,7 +55,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cross Cycle',
-      formation:Formations.TwomFacedLineLH,
+      formation:Formation('Two-Faced Line LH'),
       from:'Left-Hand Two-Faced Line',fractions:'4',
       paths:[
           LeadLeft.changeBeats(2).scale(1.0,2.0) +
@@ -68,7 +67,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cross Cycle',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.GIRL,x:2,y:-1,angle:180),
         DancerModel.fromData(gender:Gender.BOY,x:2,y:1,angle:180),
   ]),
@@ -83,7 +82,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cross Cycle',
-      formation:Formations.BoxRH,
+      formation:Formation('Box RH'),
       from:'Right-Hand Box',
       paths:[
           UmTurnRight.changeBeats(4).changehands(6).skew(2.0,0.0) +

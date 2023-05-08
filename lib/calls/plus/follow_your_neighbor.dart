@@ -21,13 +21,12 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> FollowYourNeighbor = [
 
     AnimatedCall('Follow Your Neighbor',
-      formation:Formations.BoxRH,
+      formation:Formation('Box RH'),
       from:'Right-Hand Box',difficulty: 1,
       paths:[
           Forward_2.changeBeats(1.5).skew(0.0,-0.25) +
@@ -39,7 +38,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Follow Your Neighbor',
-      formation:Formations.BoxLH,
+      formation:Formation('Box LH'),
       from:'Left-Hand Box',difficulty: 2,
       paths:[
           LeadLeft.changeBeats(3).scale(2.0,1.0) +
@@ -51,7 +50,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Follow Your Neighbor',
-      formation:Formations.SingleQuarterTag,
+      formation:Formation('Single Quarter Tag'),
       from:'Single Quarter Tag',difficulty: 2,
       paths:[
           ExtendLeft.changeBeats(1.5).scale(1.0,0.75) +
@@ -64,7 +63,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Follow Your Neighbor',
-      formation:Formations.SingleLeftQuarterTag,
+      formation:Formation('Single Left Quarter Tag'),
       from:'Left-Hand Single Quarter Tag',difficulty: 3,
       paths:[
           ExtendRight.changeBeats(1.5).scale(1.0,0.75) +
@@ -77,7 +76,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Follow Your Neighbor',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-1.0,y:1,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:-1.0,y:-1,angle:270),
   ]),
@@ -92,7 +91,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Follow Your Neighbor',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-1.0,y:-1,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:-1.0,y:1,angle:90),
   ]),
@@ -107,7 +106,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Follow Your Neighbor',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       from:'Right-Hand Waves',difficulty: 1,
       paths:[
           Forward_2.changeBeats(1.5).skew(0.0,-0.25) +
@@ -126,7 +125,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Follow Your Neighbor',
-      formation:Formations.OceanWavesLHBGGB,
+      formation:Formation('Ocean Waves LH BGGB'),
       from:'Left-Hand Waves',difficulty: 2,
       paths:[
           LeadLeft.changeBeats(2).scale(2.0,1.0) +
@@ -145,7 +144,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Follow Your Neighbor',
-      formation:Formations.ColumnRHGBGB,
+      formation:Formation('Column RH GBGB'),
       from:'Right-Hand Columns',difficulty: 2,
       paths:[
           LeadRight.changeBeats(2).scale(1.5,1.0) +
@@ -164,7 +163,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Follow Your Neighbor',
-      formation:Formations.ColumnLHGBGB,
+      formation:Formation('Column LH GBGB'),
       from:'Left-Hand Columns',difficulty: 2,
       paths:[
           ExtendLeft.scale(1.0,0.5) +
@@ -183,7 +182,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Follow Your Neighbor',
-      formation:Formations.QuarterTag,
+      formation:Formation('Quarter Tag'),
       from:'Quarter Tag',difficulty: 2,
       paths:[
           ExtendLeft.scale(1.5,1.5) +
@@ -204,7 +203,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Follow Your Neighbor',
-      formation:Formations.QuarterTagLH,
+      formation:Formation('Quarter Tag LH'),
       from:'Left-Hand Quarter Tag',difficulty: 3,
       paths:[
           Forward.scale(1.5,1.0) +
@@ -225,7 +224,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Follow Your Neighbor',
-      formation:Formations.TmBoneDLDL,
+      formation:Formation('T-Bone DLDL'),
       from:'T-Bones 1',difficulty: 3,
       paths:[
           LeadLeft.changeBeats(2.5).scale(2.5,1.0) +
@@ -244,7 +243,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Follow Your Neighbor',
-      formation:Formations.TmBoneRDRD,
+      formation:Formation('T-Bone RDRD'),
       from:'T-Bones 2',difficulty: 3,
       paths:[
           LeadRight.changeBeats(2.5).scale(2.5,1.0) +
@@ -263,7 +262,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Follow Your Neighbor',
-      formation:Formations.TmBoneURUR,
+      formation:Formation('T-Bone URUR'),
       from:'T-Bones 3',difficulty: 3,
       paths:[
           Forward +
@@ -282,7 +281,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Follow Your Neighbor',
-      formation:Formations.TmBoneLULU,
+      formation:Formation('T-Bone LULU'),
       from:'T-Bones 4',difficulty: 3,
       paths:[
           LeadRight.changeBeats(2.5).scale(1.5,1.0) +
@@ -301,7 +300,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Follow Your Neighbor and Spread',
-      formation:Formations.BoxRH,
+      formation:Formation('Box RH'),
       from:'Right-Hand Box',difficulty: 1,
       paths:[
           Forward_2.changeBeats(1.5).skew(0.0,-0.25) +
@@ -313,7 +312,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Follow Your Neighbor and Spread',
-      formation:Formations.BoxLH,
+      formation:Formation('Box LH'),
       from:'Left-Hand Box',difficulty: 2,
       paths:[
           LeadLeft.changeBeats(3) +
@@ -325,7 +324,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Follow Your Neighbor and Spread',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       from:'Ocean Waves',difficulty: 1,
       taminator: '''
       Very common.  Do not forget how to do Follow Your Neighbor WITHOUT a Spread!

@@ -19,13 +19,13 @@
 */
 
 import '../../animated_call.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> RelayTheShadow = [
 
     AnimatedCall('Relay the Shadow',
-      formation:Formations.TidalWaveRHBGGB,
+      formation:Formation('Tidal Wave RH BGGB'),
       from:'Right-Hand Tidal Wave',parts:'3;4.5',
       paths:[
           SwingRight.changehands(6).scale(0.5,0.5) +
@@ -53,7 +53,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Relay the Shadow',
-      formation:Formations.TidalWaveLHBGGB,
+      formation:Formation('Tidal Wave LH BGGB'),
       from:'Left-Hand Tidal Wave',parts:'3;4.5',
       paths:[
           SwingLeft.changehands(5).scale(0.5,0.5) +
@@ -81,7 +81,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Relay the Shadow',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       from:'Normal Lines',parts:'5;4.5',noDisplay: true,
       paths:[
           ExtendLeft.changeBeats(2).scale(2.0,0.5) +

@@ -21,13 +21,12 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> All8SpinTheTop = [
 
     AnimatedCall('All 8 Spin the Top',
-      formation:Formations.TharLHBoys,
+      formation:Formation('Thar LH Boys'),
       from:'Wrong Way Thar',parts:'3',difficulty: 1,
       paths:[
           SwingRight +
@@ -44,7 +43,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('All 8 Spin the Top',
-      formation:Formations.TharRHBoys,
+      formation:Formation('Thar RH Boys'),
       from:'Thar',parts:'3',difficulty: 2,
       paths:[
           SwingLeft +
@@ -61,7 +60,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('All 8 Spin the Top',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:-3,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:1,y:-3,angle:180),
         DancerModel.fromData(gender:Gender.BOY,x:-3,y:1,angle:270),
@@ -87,7 +86,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('All 8 Left Spin the Top',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:-3,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:1,y:-3,angle:180),
         DancerModel.fromData(gender:Gender.BOY,x:-3,y:1,angle:270),

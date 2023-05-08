@@ -19,13 +19,13 @@
 */
 
 import '../../animated_call.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> Rally = [
 
     AnimatedCall('Rally',
-      formation:Formations.QuarterTag,
+      formation:Formation('Quarter Tag'),
       from:'1/4 Tag',parts:'3',
       paths:[
           ExtendRight.changeBeats(4).scale(1.0,4.0) +
@@ -44,7 +44,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Rally',
-      formation:Formations.n34Tag,
+      formation:Formation('3/4 Tag'),
       from:'3/4 Tag',parts:'3',
       paths:[
           QuarterRight.skew(-0.5,-1.0) +
@@ -64,7 +64,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Rally',
-      formation:Formations.QuarterTagLH,
+      formation:Formation('Quarter Tag LH'),
       from:'Left-Hand 1/4 Tag',parts:'3',
       paths:[
           ExtendRight.changeBeats(4).scale(1.0,4.0) +
@@ -83,7 +83,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Rally',
-      formation:Formations.n34TagLH,
+      formation:Formation('3/4 Tag LH'),
       from:'Left-Hand 3/4 Tag',parts:'3',
       paths:[
           QuarterRight.skew(-0.5,-1.0) +
@@ -103,7 +103,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Scoot and Rally',
-      formation:Formations.QuarterTag,
+      formation:Formation('Quarter Tag'),
       from:'1/4 Tag',parts:'5;3',
       paths:[
           ExtendLeft.scale(1.5,1.5) +
@@ -135,7 +135,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Scoot and Rally',
-      formation:Formations.QuarterTagLH,
+      formation:Formation('Quarter Tag LH'),
       from:'Left-Hand 1/4 Tag',parts:'5;3',
       taminator: '''
       For Scoot and Rally, the outsides quarter to the direction of the handhold

@@ -21,13 +21,12 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> ReverseTheTop = [
 
     AnimatedCall('Reverse the Top',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:1,y:2,angle:270),
         DancerModel.fromData(gender:Gender.GIRL,x:-1,y:2,angle:270),
   ]),
@@ -43,7 +42,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Reverse the Top',
-      formation:Formations.WaveRH,
+      formation:Formation('Wave RH'),
       from:'Right-Hand Wave',parts:'4.5',
       paths:[
           LeadRight.changeBeats(4.5).scale(3.0,3.0) +
@@ -54,7 +53,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Reverse the Top',
-      formation:Formations.WaveLH,
+      formation:Formation('Wave LH'),
       from:'Left-Hand Wave',parts:'4.5',
       paths:[
           LeadLeft.changeBeats(4.5).scale(3.0,3.0) +

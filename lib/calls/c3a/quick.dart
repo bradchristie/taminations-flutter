@@ -19,13 +19,13 @@
 */
 
 import '../../animated_call.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> Quick = [
 
     AnimatedCall('Quick Step',
-      formation:Formations.MixedColumnsRHEndsIn,
+      formation:Formation('Mixed Columns RH Ends In'),
       from:'Right-Hand Centers',
       paths:[
           Forward_2,
@@ -40,7 +40,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Quick Step',
-      formation:Formations.MixedColumnsLHEndsIn,
+      formation:Formation('Mixed Columns LH Ends In'),
       from:'Left-Hand Centers',
       paths:[
           Stand.changeBeats(3).changehands(0) +
@@ -55,7 +55,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Quick Turn and Deal',
-      formation:Formations.ColumnRHGBGB,
+      formation:Formation('Column RH GBGB'),
       from:'Right-Hand Columns',
       paths:[
           Stand.changeBeats(3).changehands(0) +

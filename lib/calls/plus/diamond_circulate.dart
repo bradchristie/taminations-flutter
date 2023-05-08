@@ -21,13 +21,12 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> DiamondCirculate = [
 
     AnimatedCall('Diamond Circulate',
-      formation:Formations.DiamondRH,
+      formation:Formation('Diamond RH'),
       from:'Right-Hand Diamond',difficulty: 1,
       paths:[
           LeadRight.changeBeats(3).scale(1.0,3.0),
@@ -36,7 +35,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Diamond Circulate',
-      formation:Formations.DiamondLH,
+      formation:Formation('Diamond LH'),
       from:'Left-Hand Diamond',difficulty: 1,
       paths:[
           LeadLeft.changeBeats(3).scale(1.0,3.0),
@@ -45,7 +44,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Diamond Circulate',
-      formation:Formations.DiamondFacingRH,
+      formation:Formation('Diamond Facing RH'),
       from:'Facing Diamond, Right-Hand Centers',difficulty: 2,
       taminator: '''
     Note that dancers pass right shoulders.
@@ -57,7 +56,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Diamond Circulate',
-      formation:Formations.DiamondFacing,
+      formation:Formation('Diamond Facing'),
       from:'Facing Diamond, Left-Hand Centers',difficulty: 2,
       taminator: '''
     Again, dancers pass right shoulders.
@@ -70,7 +69,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Diamond Circulate',
-      formation:Formations.DiamondsRHGirlPoints,
+      formation:Formation('Diamonds RH Girl Points'),
       from:'Right-Hand Diamonds',difficulty: 1,
       paths:[
           LeadRight.changeBeats(3).scale(3.0,1.0),
@@ -83,7 +82,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Diamond Circulate',
-      formation:Formations.DiamondsLHGirlPoints,
+      formation:Formation('Diamonds LH Girl Points'),
       from:'Left-Hand Diamonds',difficulty: 1,
       taminator: '''
     The new points need to resist the temptation to turn around and
@@ -100,7 +99,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Diamond Circulate',
-      formation:Formations.DiamondsFacingGirlPoints,
+      formation:Formation('Diamonds Facing Girl Points'),
       from:'Facing Diamonds, Right-Hand Centers',difficulty: 2,
       paths:[
           LeadRightPassing.changeBeats(3).scale(3.0,1.0),
@@ -113,7 +112,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Diamond Circulate',
-      formation:Formations.DiamondsFacingLHGirlPoints,
+      formation:Formation('Diamonds Facing LH Girl Points'),
       from:'Facing Diamonds, Left-Hand Centers',difficulty: 2,
       paths:[
           LeadLeftPassing.changeBeats(3).scale(3.0,1.0),
@@ -126,7 +125,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Diamond Circulate',
-      formation:Formations.DiamondsRHPTPGirlPoints,
+      formation:Formation('Diamonds RH PTP Girl Points'),
       from:'Right-Hand Point-to-Point Diamonds',difficulty: 2,
       taminator: '''
     Be careful to keep the Point-to-Point Diamonds formation.
@@ -142,7 +141,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Diamond Circulate',
-      formation:Formations.DiamondsLHPTPGirlPoints,
+      formation:Formation('Diamonds LH PTP Girl Points'),
       from:'Left-Hand Point-to-Point Diamonds',difficulty: 2,
       paths:[
           LeadLeft.changeBeats(3).scale(2.0,1.0),
@@ -155,7 +154,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Diamond Circulate',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:-3,angle:90),
         DancerModel.fromData(gender:Gender.GIRL,x:0,y:-1,angle:180),
         DancerModel.fromData(gender:Gender.BOY,x:1,y:-3,angle:270),
@@ -173,7 +172,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Diamond Circulate',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:-3,angle:270),
         DancerModel.fromData(gender:Gender.GIRL,x:0,y:-1,angle:0),
         DancerModel.fromData(gender:Gender.BOY,x:1,y:-3,angle:90),
@@ -191,7 +190,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Diamond Circulate',
-      formation:Formations.Diamonds_3and_1,
+      formation:Formation('Diamonds 3 and 1'),
       from:'Diamonds with Center Two-Faced Line',difficulty: 3,
       taminator: '''
     In this case two dancers are circulating to the same spot.
@@ -209,7 +208,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Diamond Circulate',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:0,y:-3,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:-3,y:-2,angle:270),
         DancerModel.fromData(gender:Gender.BOY,x:0,y:-1,angle:0),
@@ -228,7 +227,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Diamond Circulate',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:0,y:-3,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:-3,y:-2,angle:90),
         DancerModel.fromData(gender:Gender.BOY,x:0,y:-1,angle:180),
@@ -247,7 +246,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Diamond Circulate',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:0,y:-3,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:-3,y:-2,angle:90),
         DancerModel.fromData(gender:Gender.BOY,x:0,y:-1,angle:0),
@@ -266,7 +265,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Diamond Circulate',
-      formation:Formations.StarPromenade,
+      formation:Formation('Star Promenade'),
       from:'Star Promenade',difficulty: 3,
       paths:[
           LeadLeft.changeBeats(3).scale(3.0,1.0),

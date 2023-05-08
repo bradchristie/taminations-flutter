@@ -19,13 +19,13 @@
 */
 
 import '../../animated_call.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> AnyTaggingCallYourNeighbor = [
 
     AnimatedCall('Flip Your Neighbor',
-      formation:Formations.WaveRH,
+      formation:Formation('Wave RH'),
       from:'Right-Hand Wave',parts:'5.5',
       paths:[
           LeadRight +
@@ -41,7 +41,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Flip Your Neighbor',
-      formation:Formations.WaveLH,
+      formation:Formation('Wave LH'),
       from:'Left-Hand Wave',parts:'5.5',
       paths:[
           LeadLeft +
@@ -57,7 +57,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Flip Your Neighbor',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       from:'Right-Hand Waves',parts:'5.5',
       paths:[
           LeadRight +
@@ -84,7 +84,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Flip Your Neighbor',
-      formation:Formations.OceanWavesLHGBBG,
+      formation:Formation('Ocean Waves LH GBBG'),
       from:'Left-Hand Waves',parts:'5.5',
       paths:[
           LeadLeft +
@@ -111,7 +111,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Flip Your Neighbor',
-      formation:Formations.TidalWaveRHBGGB,
+      formation:Formation('Tidal Wave RH BGGB'),
       from:'Right-Hand Tidal Wave',parts:'5',
       paths:[
           LeadRight.changeBeats(2).scale(1.0,0.5) +
@@ -138,7 +138,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Flip Your Neighbor',
-      formation:Formations.TidalWaveLHBGGB,
+      formation:Formation('Tidal Wave LH BGGB'),
       from:'Left-Hand Tidal Wave',parts:'5',
       paths:[
           LeadLeft.changeBeats(2).scale(1.0,0.5) +
@@ -165,7 +165,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Flip Your Cross Neighbor',
-      formation:Formations.WaveRH,
+      formation:Formation('Wave RH'),
       from:'Right-Hand Wave',group:' ',parts:'5.5',
       paths:[
           LeadRight +
@@ -181,7 +181,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Flip Your Criss Cross Neighbor',
-      formation:Formations.WaveRH,
+      formation:Formation('Wave RH'),
       from:'Right-Hand Wave',group:' ',parts:'5.5',
       paths:[
           LeadRight +
@@ -197,7 +197,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Tag Your Neighbor',
-      formation:Formations.TwomFacedLineRH,
+      formation:Formation('Two-Faced Line RH'),
       group:' ',parts:'2',
       paths:[
           LeadRight.changeBeats(2).scale(1.0,2.0) +
@@ -211,7 +211,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Tag Your Cross Neighbor',
-      formation:Formations.TwomFacedLineRH,
+      formation:Formation('Two-Faced Line RH'),
       group:' ',parts:'2',
       paths:[
           LeadRight.changeBeats(2).scale(1.0,2.0) +
@@ -225,7 +225,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Tag Your Criss Cross Neighbor',
-      formation:Formations.TwomFacedLineRH,
+      formation:Formation('Two-Faced Line RH'),
       group:' ',parts:'2',
       paths:[
           LeadRight.changeBeats(2).scale(1.0,2.0) +
@@ -239,7 +239,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Vertical Tag Your Neighbor',
-      formation:Formations.CouplesFacingOut,
+      formation:Formation('Couples Facing Out'),
       group:' ',fractions:'4.5',
       paths:[
           UmTurnLeft.skew(-1.5,0.0) +
@@ -255,7 +255,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Vertical Tag Your Cross Neighbor',
-      formation:Formations.CouplesFacingOut,
+      formation:Formation('Couples Facing Out'),
       group:' ',fractions:'4.5',
       paths:[
           UmTurnLeft.skew(-1.5,0.0) +
@@ -271,7 +271,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Vertical Tag Your Criss Cross Neighbor',
-      formation:Formations.CouplesFacingOut,
+      formation:Formation('Couples Facing Out'),
       group:' ',fractions:'4.5',
       paths:[
           UmTurnLeft.skew(-1.5,0.0) +

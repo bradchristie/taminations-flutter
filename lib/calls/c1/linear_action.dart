@@ -19,13 +19,13 @@
 */
 
 import '../../animated_call.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> LinearAction = [
 
     AnimatedCall('Linear Action',
-      formation:Formations.QuarterTag,
+      formation:Formation('Quarter Tag'),
       from:'Right-Hand Quarter Tag',parts:'1.5;5',
       paths:[
           LeadRight +
@@ -48,7 +48,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Linear Action',
-      formation:Formations.QuarterTagLH,
+      formation:Formation('Quarter Tag LH'),
       from:'Left-Hand Quarter Tag',parts:'1.5;5',
       paths:[
           LeadRight +
@@ -73,7 +73,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Linear Action',
-      formation:Formations.n34Tag,
+      formation:Formation('3/4 Tag'),
       from:'Right-Hand 3/4 Tag',parts:'1.5;5',
       paths:[
           QuarterLeft.changeBeats(1.5).skew(-1.0,1.0) +
@@ -96,7 +96,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Linear Action',
-      formation:Formations.n34TagLH,
+      formation:Formation('3/4 Tag LH'),
       from:'Left-Hand 3/4 Tag',parts:'1.5;5',
       paths:[
           QuarterLeft.changeBeats(1.5).skew(-1.0,1.0) +
@@ -121,7 +121,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Linear Action',
-      formation:Formations.QuarterLinesRH,
+      formation:Formation('Quarter Lines RH'),
       from:'Right-Hand Quarter Lines',parts:'1.5;5',
       paths:[
           LeadRight +
@@ -144,7 +144,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Linear Action',
-      formation:Formations.QuarterLinesLH,
+      formation:Formation('Quarter Lines LH'),
       from:'Left-Hand Quarter Lines',parts:'1.5;5',
       paths:[
           LeadRight +
@@ -167,7 +167,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Linear Action',
-      formation:Formations.n34LinesRH,
+      formation:Formation('3/4 Lines RH'),
       from:'Right-Hand 3/4 Lines',parts:'1.5;5',
       paths:[
           QuarterLeft.changeBeats(1.5).skew(-1.0,1.0) +
@@ -190,7 +190,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Linear Action',
-      formation:Formations.n34LinesLH,
+      formation:Formation('3/4 Lines LH'),
       from:'Left-Hand 3/4 Lines',parts:'1.5;5',
       paths:[
           QuarterLeft.changeBeats(1.5).skew(-1.0,1.0) +
@@ -213,7 +213,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Linear Action',
-      formation:Formations.MixedQuarterTag1,
+      formation:Formation('Mixed Quarter Tag #1'),
       from:'Mixed Quarter Tag #1',parts:'1.5;5',
       paths:[
           HingeRight +
@@ -236,7 +236,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Linear Action',
-      formation:Formations.MixedQuarterTag2,
+      formation:Formation('Mixed Quarter Tag #2'),
       from:'Mixed Quarter Tag #2',parts:'1.5;5',
       paths:[
           HingeRight +
@@ -261,7 +261,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Linear Action',
-      formation:Formations.MixedQuarterTag3,
+      formation:Formation('Mixed Quarter Tag #3'),
       from:'Mixed Quarter Tag #3',parts:'1.5;5',
       paths:[
           HingeRight +
@@ -284,7 +284,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Linear Action',
-      formation:Formations.MixedQuarterTag4,
+      formation:Formation('Mixed Quarter Tag #4'),
       from:'Mixed Quarter Tag #4',parts:'1.5;5',
       paths:[
           HingeRight +
@@ -307,7 +307,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Linear Action',
-      formation:Formations.MixedQuarterTag5,
+      formation:Formation('Mixed Quarter Tag #5'),
       from:'Mixed Quarter Tag #5',parts:'1.5;5',
       paths:[
           HingeLeft +
@@ -332,7 +332,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Linear Action',
-      formation:Formations.MixedQuarterTag6,
+      formation:Formation('Mixed Quarter Tag #6'),
       from:'Mixed Quarter Tag #6',parts:'1.5;5',
       paths:[
           HingeLeft +
@@ -355,7 +355,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Linear Action',
-      formation:Formations.MixedQuarterTag7,
+      formation:Formation('Mixed Quarter Tag #7'),
       from:'Mixed Quarter Tag #7',parts:'1.5;5',
       paths:[
           HingeLeft +
@@ -380,7 +380,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Linear Action',
-      formation:Formations.MixedQuarterTag8,
+      formation:Formation('Mixed Quarter Tag #8'),
       from:'Mixed Quarter Tag #8',parts:'1.5;5',
       paths:[
           HingeLeft +

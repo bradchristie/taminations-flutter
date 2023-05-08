@@ -19,13 +19,13 @@
 */
 
 import '../../animated_call.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> Crossfire = [
 
     AnimatedCall('Crossfire',
-      formation:Formations.TwomFacedLineRH,
+      formation:Formation('Two-Faced Line RH'),
       from:'Right-Hand Two-Faced Line',difficulty: 1,
       paths:[
           RunRight.changeBeats(6).scale(2.0,2.0).skew(2.0,0.0),
@@ -35,7 +35,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Crossfire',
-      formation:Formations.TwomFacedLineLH,
+      formation:Formation('Two-Faced Line LH'),
       from:'Left-Hand Two-Faced Line',difficulty: 2,
       paths:[
           SwingLeft.changeBeats(3.5) +
@@ -45,7 +45,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Crossfire',
-      formation:Formations.TwomFacedLinesRH,
+      formation:Formation('Two-Faced Lines RH'),
       from:'Right-Hand Two-Faced Lines',difficulty: 1,
       paths:[
           RunRight.changeBeats(4).scale(1.0,2.0).skew(1.0,0.0),
@@ -60,7 +60,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Crossfire',
-      formation:Formations.TwomFacedLinesLH,
+      formation:Formation('Two-Faced Lines LH'),
       from:'Left-Hand Two-Faced Lines',difficulty: 2,
       paths:[
           RunLeft.changeBeats(4).scale(2.0,2.0).skew(1.0,0.0),
@@ -75,7 +75,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Crossfire',
-      formation:Formations.TwomFacedTidalLineRH,
+      formation:Formation('Two-Faced Tidal Line RH'),
       from:'Tidal Two-Faced Line',difficulty: 1,
       paths:[
           RunRight.changeBeats(5).skew(2.0,-0.5),
@@ -90,7 +90,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Crossfire',
-      formation:Formations.TwomFacedTidalLineLH,
+      formation:Formation('Two-Faced Tidal Line LH'),
       from:'Tidal Left-Hand Two-Faced Line',difficulty: 2,
       paths:[
           RunLeft.changeBeats(5).skew(2.0,0.5),
@@ -105,7 +105,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Crossfire',
-      formation:Formations.LinesFacingOut,
+      formation:Formation('Lines Facing Out'),
       from:'Lines Facing Out',difficulty: 2,
       taminator: '''
       There is some controversy over this particular case.
@@ -125,7 +125,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Crossfire',
-      formation:Formations.InvertedLinesEndsFacingOut,
+      formation:Formation('Inverted Lines Ends Facing Out'),
       from:'Inverted Lines, Centers Facing In',difficulty: 2,
       paths:[
           RunLeft.changeBeats(4).scale(1.0,2.0).skew(1.0,0.0) +
@@ -142,7 +142,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Crossfire',
-      formation:Formations.InvertedLinesEndsFacingIn,
+      formation:Formation('Inverted Lines Ends Facing In'),
       from:'Inverted Lines, Centers Facing Out',difficulty: 3,
       paths:[
           RunRight.changeBeats(4).scale(1.0,2.0).skew(1.0,0.0) +
@@ -159,7 +159,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Crossfire',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       from:'Lines Facing In',difficulty: 3,
       paths:[
           RunRight.changeBeats(4).scale(1.0,2.0).skew(1.0,0.0),
@@ -172,7 +172,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Crossfire',
-      formation:Formations.TidalLineRH,
+      formation:Formation('Tidal Line RH'),
       from:'Tidal Line',difficulty: 3,
       paths:[
           RunRight.changeBeats(5).scale(2.0,1.0).skew(2.0,-0.5),
@@ -185,7 +185,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Crossfire',
-      formation:Formations.TidalLineLH,
+      formation:Formation('Tidal Line LH'),
       from:'Tidal Line',difficulty: 3,noDisplay: true,
       paths:[
           RunLeft.changeBeats(5).skew(-2.0,-0.5),
@@ -198,7 +198,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Crossfire',
-      formation:Formations.TidalInvertedLineRH,
+      formation:Formation('Tidal Inverted Line RH'),
       from:'Tidal Inverted Line',difficulty: 3,
       paths:[
           RunRight.changeBeats(5).scale(2.0,1.0).skew(1.5,-1.0),
@@ -211,7 +211,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Crossfire',
-      formation:Formations.TidalInvertedLineLH,
+      formation:Formation('Tidal Inverted Line LH'),
       from:'Tidal Inverted Line',difficulty: 3,noDisplay: true,
       paths:[
           RunLeft.changeBeats(5).skew(1.5,0.0),
@@ -224,7 +224,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Crossfire',
-      formation:Formations.DiamondsFacingGirlPoints,
+      formation:Formation('Diamonds Facing Girl Points'),
       from:'Facing Diamonds, Right-Hand Centers',difficulty: 3,
       paths:[
           SwingRight.changehands(6).scale(1.0,0.75) +
@@ -239,7 +239,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Crossfire',
-      formation:Formations.DiamondsFacingLHGirlPoints,
+      formation:Formation('Diamonds Facing LH Girl Points'),
       from:'Facing Diamonds, Left-Hand Centers',difficulty: 3,
       paths:[
           SwingLeft.changehands(5).scale(1.0,0.75) +
@@ -254,7 +254,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Crossfire',
-      formation:Formations.DiamondsFacingPTP,
+      formation:Formation('Diamonds Facing PTP'),
       from:'Point-to-Point Facing Diamonds, Right-Hand Centers',difficulty: 3,
       paths:[
           SwingRight.changehands(6).scale(1.0,0.75).skew(0.5,0.0) +
@@ -269,7 +269,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Crossfire',
-      formation:Formations.DiamondsFacingLHPTP,
+      formation:Formation('Diamonds Facing LH PTP'),
       from:'Point-to-Point Facing Diamonds, Left-Hand Centers',difficulty: 3,
       paths:[
           SwingLeft.changehands(5).scale(1.0,0.75).skew(-0.5,0.0) +

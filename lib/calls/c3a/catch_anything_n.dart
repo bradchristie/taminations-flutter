@@ -19,13 +19,13 @@
 */
 
 import '../../animated_call.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> CatchAnythingN = [
 
     AnimatedCall('Catch Mix 3',
-      formation:Formations.FacingCouplesCompact,
+      formation:Formation('Facing Couples Compact'),
       from:'Facing Couples',group:' ',parts:'5;5',
       paths:[
           PullLeft.changeBeats(2).scale(1.5,0.5) +
@@ -43,7 +43,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Catch Switch to a Diamond 3',
-      formation:Formations.FacingCouplesCompact,
+      formation:Formation('Facing Couples Compact'),
       from:'Facing Couples',group:' ',parts:'5;5',
       paths:[
           PullLeft.changeBeats(2).scale(1.5,0.5) +

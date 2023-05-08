@@ -19,13 +19,13 @@
 */
 
 import '../../animated_call.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> EightChainThru = [
 
     AnimatedCall('Eight Chain One',
-      formation:Formations.EightChainThru,
+      formation:Formation('Eight Chain Thru'),
       from:'Eight Chain Thru',difficulty: 1,
       paths:[
           PullLeft.changeBeats(1.25).scale(1.0,0.5) +
@@ -42,7 +42,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Eight Chain One',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       from:'Right-Hand Waves',difficulty: 2,
       paths:[
           ExtendRight.changeBeats(2).scale(1.0,2.0),
@@ -55,7 +55,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Eight Chain Two',
-      formation:Formations.EightChainThru,
+      formation:Formation('Eight Chain Thru'),
       from:'Eight Chain Thru',parts:'2.5',difficulty: 1,
       paths:[
           PullLeft.changeBeats(1.25).scale(1.0,0.5) +
@@ -78,7 +78,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Eight Chain Two',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       from:'Right-Hand Waves',parts:'2',difficulty: 2,
       paths:[
           ExtendRight.changeBeats(2).scale(1.0,2.0) +
@@ -97,7 +97,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Eight Chain Three',
-      formation:Formations.EightChainThru,
+      formation:Formation('Eight Chain Thru'),
       from:'Eight Chain Thru',parts:'2.5;2.5',difficulty: 1,
       paths:[
           PullLeft.changeBeats(1.25).scale(1.0,0.5) +
@@ -128,7 +128,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Eight Chain Three',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       from:'Right-Hand Waves',parts:'2;2.5',difficulty: 2,
       paths:[
           ExtendRight.changeBeats(2).scale(1.0,2.0) +
@@ -155,7 +155,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Eight Chain Four',
-      formation:Formations.EightChainThru,
+      formation:Formation('Eight Chain Thru'),
       from:'Eight Chain Thru',parts:'2.5;2.5;2.5',difficulty: 1,
       paths:[
           PullLeft.changeBeats(1.25).scale(1.0,0.5) +
@@ -192,7 +192,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Eight Chain Four',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       from:'Right-Hand Waves',parts:'2;2.5;2.5',difficulty: 2,
       paths:[
           ExtendRight.changeBeats(2).scale(1.0,2.0) +
@@ -225,7 +225,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Eight Chain Five',
-      formation:Formations.EightChainThru,
+      formation:Formation('Eight Chain Thru'),
       from:'Eight Chain Thru',parts:'2.5;2.5;2.5;2.5',difficulty: 1,
       paths:[
           PullLeft.changeBeats(1.25).scale(1.0,0.5) +
@@ -270,7 +270,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Eight Chain Five',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       from:'Right-Hand Waves',parts:'2;2.5;2.5;2.5',difficulty: 2,
       paths:[
           ExtendRight.changeBeats(2).scale(1.0,2.0) +
@@ -311,7 +311,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Eight Chain Six',
-      formation:Formations.EightChainThru,
+      formation:Formation('Eight Chain Thru'),
       from:'Eight Chain Thru',parts:'2.5;2.5;2.5;2.5;2.5',difficulty: 1,
       paths:[
           PullLeft.changeBeats(1.25).scale(1.0,0.5) +
@@ -362,7 +362,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Eight Chain Six',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       from:'Right-Hand Waves',parts:'2;2.5;2.5;2.5;2.5',difficulty: 2,
       paths:[
           ExtendRight.changeBeats(2).scale(1.0,2.0) +
@@ -409,7 +409,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Eight Chain Seven',
-      formation:Formations.EightChainThru,
+      formation:Formation('Eight Chain Thru'),
       from:'Eight Chain Thru',parts:'2.5;2.5;2.5;2.5;2.5;2.5',difficulty: 1,
       paths:[
           PullLeft.changeBeats(1.25).scale(1.0,0.5) +
@@ -468,7 +468,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Eight Chain Seven',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       from:'Right-Hand Waves',parts:'2;2.5;2.5;2.5;2.5;2.5',difficulty: 2,
       paths:[
           ExtendRight.changeBeats(2).scale(1.0,2.0) +
@@ -523,7 +523,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Eight Chain Thru',
-      formation:Formations.EightChainThru,
+      formation:Formation('Eight Chain Thru'),
       from:'Eight Chain Thru',parts:'2.5;2.5;2.5;2.5;2.5;2.5;2.5',difficulty: 1,
       paths:[
           PullLeft.changeBeats(1.25).scale(1.0,0.5) +
@@ -588,7 +588,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Eight Chain Thru',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       from:'Right-Hand Waves',parts:'2;2.5;2.5;2.5;2.5;2.5;2.5',difficulty: 2,
       paths:[
           ExtendRight.changeBeats(2).scale(1.0,2.0) +
@@ -649,7 +649,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Eight Chain One and a Half',
-      formation:Formations.EightChainThru,
+      formation:Formation('Eight Chain Thru'),
       group:'  ',parts:'2.5',difficulty: 3,
       paths:[
           PullLeft.changeBeats(1.25).scale(1.0,0.5) +
@@ -670,7 +670,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Eight Chain Two and a Half',
-      formation:Formations.EightChainThru,
+      formation:Formation('Eight Chain Thru'),
       group:'  ',parts:'2.5;2.5',difficulty: 2,
       paths:[
           PullLeft.changeBeats(1.25).scale(1.0,0.5) +
@@ -697,7 +697,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Eight Chain Three and a Half',
-      formation:Formations.EightChainThru,
+      formation:Formation('Eight Chain Thru'),
       group:'  ',parts:'2.5;2.5;2.5',difficulty: 3,
       paths:[
           PullLeft.changeBeats(1.25).scale(1.0,0.5) +
@@ -732,7 +732,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Eight Chain Four and a Half',
-      formation:Formations.EightChainThru,
+      formation:Formation('Eight Chain Thru'),
       group:'  ',parts:'2.5;2.5;2.5;2.5',difficulty: 2,
       paths:[
           PullLeft.changeBeats(1.25).scale(1.0,0.5) +
@@ -773,7 +773,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Eight Chain Five and a Half',
-      formation:Formations.EightChainThru,
+      formation:Formation('Eight Chain Thru'),
       group:'  ',parts:'2.5;2.5;2.5;2.5;2.5',difficulty: 3,
       paths:[
           PullLeft.changeBeats(1.25).scale(1.0,0.5) +
@@ -822,7 +822,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Eight Chain Six and a Half',
-      formation:Formations.EightChainThru,
+      formation:Formation('Eight Chain Thru'),
       group:'  ',parts:'2.5;2.5;2.5;2.5;2.5;2.5',difficulty: 2,
       paths:[
           PullLeft.changeBeats(1.25).scale(1.0,0.5) +
@@ -877,7 +877,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Eight Chain Seven and a Half',
-      formation:Formations.EightChainThru,
+      formation:Formation('Eight Chain Thru'),
       group:'  ',parts:'2.5;2.5;2.5;2.5;2.5;2.5;2.5',difficulty: 3,
       paths:[
           PullLeft.changeBeats(1.25).scale(1.0,0.5) +

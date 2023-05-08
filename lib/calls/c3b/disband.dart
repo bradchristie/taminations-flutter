@@ -21,13 +21,12 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> Disband = [
 
     AnimatedCall('Disband',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       from:'Right-Hand Waves',parts:'3.5',
       paths:[
           Forward_2 +
@@ -47,7 +46,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Disband',
-      formation:Formations.OceanWavesLHBGGB,
+      formation:Formation('Ocean Waves LH BGGB'),
       from:'Left-Hand Waves',parts:'3.5',
       paths:[
           RunRight.changeBeats(2).skew(-2.0,1.0) +
@@ -67,7 +66,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Disband',
-      formation:Formations.TwomFacedLinesRH,
+      formation:Formation('Two-Faced Lines RH'),
       from:'Right-Hand Two-Faced Lines',parts:'3.5',
       paths:[
           Forward_2 +
@@ -87,7 +86,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Disband',
-      formation:Formations.TwomFacedLinesLH,
+      formation:Formation('Two-Faced Lines LH'),
       from:'Left-Hand Two-Faced Lines',parts:'3.5',
       paths:[
           RunRight.changeBeats(2).skew(-2.0,1.0) +
@@ -107,7 +106,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Disband',
-      formation:Formations.ColumnRHGBGB,
+      formation:Formation('Column RH GBGB'),
       from:'Right-Hand Columns',parts:'4',
       paths:[
           RunLeft.changeBeats(3).scale(1.0,1.25).skew(-3.0,0.0) +
@@ -127,7 +126,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Disband',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:1,y:3,angle:90),
         DancerModel.fromData(gender:Gender.GIRL,x:1,y:1,angle:90),
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:3,angle:270),

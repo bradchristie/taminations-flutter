@@ -19,13 +19,13 @@
 */
 
 import '../../animated_call.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> LatchOn = [
 
     AnimatedCall('Latch On',
-      formation:Formations.CouplesFacingOut,
+      formation:Formation('Couples Facing Out'),
       from:'Couples Facing Out',parts:'4',
       paths:[
           FlipRight.changeBeats(4).skew(-2.0,0.0) +

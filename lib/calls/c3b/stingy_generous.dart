@@ -21,14 +21,13 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 import '../a1/quarter_thru.dart' as a1;
 
   final List<AnimatedCall> StingyGenerous = [
 
     AnimatedCall('Generous Dixie Style to a Wave',
-      formation:Formations.DoublePassThru,
+      formation:Formation('Double Pass Thru'),
       group:'Generous',fractions:'2',
       paths:[
           Stand.changeBeats(2) +
@@ -51,7 +50,7 @@ import '../a1/quarter_thru.dart' as a1;
       ]),
 
     AnimatedCall('Generous Lockit',
-      formation:Formations.TidalWaveRHBGGB,
+      formation:Formation('Tidal Wave RH BGGB'),
       group:'Generous',
       paths:[
           LeadRight.changeBeats(3).scale(3.0,1.5),
@@ -66,7 +65,7 @@ import '../a1/quarter_thru.dart' as a1;
       ]),
 
     AnimatedCall('Generous Mix',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       from:'Right-Hand Waves',group:'Generous',fractions:'3',
       paths:[
           DodgeRight +
@@ -81,7 +80,7 @@ import '../a1/quarter_thru.dart' as a1;
       ]),
 
     AnimatedCall('Generous Reset',
-      formation:Formations.ColumnRHGBGB,
+      formation:Formation('Column RH GBGB'),
       group:'Generous',fractions:'3;3;3',
       paths:[
           RunLeft.skew(-1.0,0.0) +
@@ -106,7 +105,7 @@ import '../a1/quarter_thru.dart' as a1;
       ]),
 
     AnimatedCall('Generous Six-Two Acey Deucey',
-      formation:Formations.HourglassRHBP,
+      formation:Formation('Hourglass RH BP'),
       group:'Generous',
       paths:[
           LeadRight.changeBeats(4).scale(1.0,3.0),
@@ -119,7 +118,7 @@ import '../a1/quarter_thru.dart' as a1;
       ]),
 
     AnimatedCall('Generous Spin the Windmill Forward',
-      formation:Formations.OceanWavesRHGBBG,
+      formation:Formation('Ocean Waves RH GBBG'),
       group:'Generous',
       paths:[
           Forward_4.changeBeats(5) +
@@ -138,7 +137,7 @@ import '../a1/quarter_thru.dart' as a1;
       ]),
 
     AnimatedCall('Generous Scoot Back',
-      formation:Formations.QuarterTag,
+      formation:Formation('Quarter Tag'),
       group:'Generous',
       paths:[
           ExtendLeft.changeBeats(2).scale(1.0,1.75) +
@@ -159,7 +158,7 @@ import '../a1/quarter_thru.dart' as a1;
       ]),
 
     AnimatedCall('Generous Sets in Motion',
-      formation:Formations.DiamondsFacingGirlPoints,
+      formation:Formation('Diamonds Facing Girl Points'),
       group:'Generous',
       paths:[
           SwingRight +
@@ -186,7 +185,7 @@ import '../a1/quarter_thru.dart' as a1;
       tam.title == '3/4 Thru' && tam.from == 'Ocean Waves').first.xref(title: 'Generous Swing Thru').xref(group: 'Generous'),
 
     AnimatedCall('Stingy Cut the Diamond',
-      formation:Formations.DiamondsRHGirlPoints,
+      formation:Formation('Diamonds RH Girl Points'),
       group:'Stingy',
       paths:[
           Forward_2 +
@@ -203,7 +202,7 @@ import '../a1/quarter_thru.dart' as a1;
       ]),
 
     AnimatedCall('Stingy Follow Your Neighbor',
-      formation:Formations.OceanWavesRHBGBG,
+      formation:Formation('Ocean Waves RH BGBG'),
       group:'Stingy',
       paths:[
           Forward_2.skew(0.0,-0.25) +
@@ -222,7 +221,7 @@ import '../a1/quarter_thru.dart' as a1;
       ]),
 
     AnimatedCall('Stingy Spin the Top',
-      formation:Formations.BoxRH,
+      formation:Formation('Box RH'),
       group:'Stingy',fractions:'2',
       paths:[
           HingeRight.changeBeats(2) +
@@ -233,7 +232,7 @@ import '../a1/quarter_thru.dart' as a1;
       ]),
 
     AnimatedCall('Stingy Split Square Chain Thru',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:3,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:1,y:3,angle:180),
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:1,angle:90),
@@ -273,7 +272,7 @@ import '../a1/quarter_thru.dart' as a1;
       tam.title == 'Quarter Thru' && tam.from == 'Right-Hand Waves').first.xref(title: 'Stingy Swing Thru').xref(group: 'Stingy'),
 
     AnimatedCall('Finally Stingy Spin the Top',
-      formation:Formations.FacingCouples,
+      formation:Formation('Facing Couples'),
       group:' ',fractions:'3;3',
       paths:[
           ExtendLeft.changeBeats(3).scale(2.0,2.0) +

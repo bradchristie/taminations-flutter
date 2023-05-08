@@ -19,13 +19,13 @@
 */
 
 import '../../animated_call.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> ExplodeTheTop = [
 
     AnimatedCall('Explode the Top',
-      formation:Formations.LinesFacingOut,
+      formation:Formation('Lines Facing Out'),
       from:'Lines Facing Out',parts:'2;9.5;1.5',
       paths:[
           QuarterLeft.changeBeats(2).skew(-1.0,1.0) +
@@ -63,7 +63,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Explode the Top',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       from:'Right-Hand Waves',parts:'2;9.5;1.5',
       paths:[
           LeadRight.changeBeats(2).scale(1.0,2.0) +
@@ -101,7 +101,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Explode the Top',
-      formation:Formations.OceanWavesLHBGGB,
+      formation:Formation('Ocean Waves LH BGGB'),
       from:'Left-Hand Waves',parts:'2;9.5;1.5',
       paths:[
           LeadLeft.changeBeats(2).scale(1.0,2.0) +

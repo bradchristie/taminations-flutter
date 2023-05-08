@@ -21,13 +21,12 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> StepAndFold = [
 
     AnimatedCall('Step and Fold',
-      formation:Formations.WaveRH,
+      formation:Formation('Wave RH'),
       from:'Right-Hand Wave',
       paths:[
           RunRight.skew(1.5,0.0),
@@ -36,7 +35,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Step and Fold',
-      formation:Formations.WaveLH,
+      formation:Formation('Wave LH'),
       from:'Left-Hand Wave',
       paths:[
           RunLeft.skew(1.5,0.0),
@@ -45,7 +44,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Step and Fold',
-      formation:Formations.DiamondRH,
+      formation:Formation('Diamond RH'),
       from:'Right-Hand Diamond',
       paths:[
           RunRight.skew(1.0,0.0),
@@ -54,7 +53,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Step and Fold',
-      formation:Formations.DiamondLH,
+      formation:Formation('Diamond LH'),
       from:'Left-Hand Diamond',
       paths:[
           RunLeft.skew(1.0,0.0),
@@ -63,7 +62,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Step and Fold',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       from:'Right-Hand Waves',
       paths:[
           FlipRight.skew(1.0,0.0),
@@ -76,7 +75,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Step and Fold',
-      formation:Formations.OceanWavesLHBGGB,
+      formation:Formation('Ocean Waves LH BGGB'),
       from:'Left-Hand Waves',
       paths:[
           FlipLeft.skew(1.0,0.0),
@@ -89,7 +88,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Step and Fold',
-      formation:Formations.InvertedLinesEndsFacingIn,
+      formation:Formation('Inverted Lines Ends Facing In'),
       from:'Inverted Lines, Ends Facing In',
       paths:[
           FlipRight.skew(1.0,0.0),
@@ -102,7 +101,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Step and Fold',
-      formation:Formations.InvertedLinesEndsFacingOut,
+      formation:Formation('Inverted Lines Ends Facing Out'),
       from:'Inverted Lines, Ends Facing Out',
       paths:[
           FlipLeft.skew(1.0,0.0),
@@ -115,7 +114,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Step and Fold',
-      formation:Formations.DiamondsRHGirlPoints,
+      formation:Formation('Diamonds RH Girl Points'),
       from:'Right-Hand Diamonds',
       paths:[
           Forward,
@@ -128,7 +127,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Step and Fold',
-      formation:Formations.DiamondsLHGirlPoints,
+      formation:Formation('Diamonds LH Girl Points'),
       from:'Left-Hand Diamonds',
       paths:[
           Forward,
@@ -141,7 +140,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Step and Fold',
-      formation:Formations.DiamondsRHPTPGirlPoints,
+      formation:Formation('Diamonds RH PTP Girl Points'),
       from:'Right-Hand Point-to-Point Diamonds',
       paths:[
           Forward_2,
@@ -154,7 +153,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Step and Fold',
-      formation:Formations.DiamondsLHPTPGirlPoints,
+      formation:Formation('Diamonds LH PTP Girl Points'),
       from:'Left-Hand Point-to-Point Diamonds',
       paths:[
           Path(),
@@ -167,7 +166,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Step and Fold',
-      formation:Formations.TidalWaveRHBGGB,
+      formation:Formation('Tidal Wave RH BGGB'),
       from:'Right-Hand Tidal Wave',
       paths:[
           FlipRight.scale(1.0,0.25).skew(2.0,0.0),
@@ -180,7 +179,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Step and Fold',
-      formation:Formations.TidalWaveLHBGGB,
+      formation:Formation('Tidal Wave LH BGGB'),
       from:'Left-Hand Tidal Wave',
       paths:[
           FlipLeft.scale(1.0,0.25).skew(2.0,0.0),
@@ -193,7 +192,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Step and Fold',
-      formation:Formations.InvertedTidalLineRH,
+      formation:Formation('Inverted Tidal Line RH'),
       from:'Tidal Inverted Line, Right-Hand Centers',
       paths:[
           FlipRight.changeBeats(3).scale(1.0,0.25).skew(2.0,0.0),
@@ -206,7 +205,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Step and Fold',
-      formation:Formations.InvertedTidalLineLH,
+      formation:Formation('Inverted Tidal Line LH'),
       from:'Tidal Inverted Line, Left-Hand Centers',
       paths:[
           FlipLeft.changeBeats(3).scale(1.0,0.25).skew(2.0,0.0),
@@ -219,7 +218,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('All 8 Step and Fold',
-      formation:Formations.TharLHBoys,
+      formation:Formation('Thar LH Boys'),
       group:' ',
       paths:[
           Forward_3,
@@ -232,7 +231,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('All 8 Step and Fold',
-      formation:Formations.TharRHBoys,
+      formation:Formation('Thar RH Boys'),
       group:' ',noDisplay: true,
       paths:[
           Forward_3,
@@ -245,7 +244,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('As Couples Step and Fold',
-      formation:Formations.TwomFacedTidalLineRH,
+      formation:Formation('Two-Faced Tidal Line RH'),
       from:'Tidal Two-Faced Line',group:' ',
       paths:[
           RunRight.changeBeats(4).changehands(6).scale(1.0,2.0).skew(2.0,1.5),
@@ -258,7 +257,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Concentric Step and Fold',
-      formation:Formations.ConcentricDiamondsMixed,
+      formation:Formation('Concentric Diamonds Mixed'),
       group:' ',
       paths:[
           FlipRight.skew(1.0,0.0),
@@ -272,7 +271,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Concentric Diamond Step and Fold',
-      formation:Formations.ConcentricDiamondsMixed,
+      formation:Formation('Concentric Diamonds Mixed'),
       group:' ',
       paths:[
           Forward,
@@ -285,7 +284,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Stretch Step and Fold',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       group:' ',
       paths:[
           Forward_2.changeBeats(1) +
@@ -299,7 +298,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Tandem Step and Fold',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       group:' ',
       paths:[
           Forward_4.changeBeats(3) +
@@ -314,7 +313,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Triple Line Step and Fold',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-4,y:1,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:-4,y:-1,angle:0),
         DancerModel.fromData(gender:Gender.BOY,x:0,y:1,angle:0),

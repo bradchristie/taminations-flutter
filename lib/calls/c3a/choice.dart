@@ -21,13 +21,12 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> Choice = [
 
     AnimatedCall('Choice',
-      formation:Formations.TidalWaveRHBGGB,
+      formation:Formation('Tidal Wave RH BGGB'),
       from:'Tidal Wave',parts:'3',
       paths:[
           SwingRight.scale(0.5,0.5) +
@@ -44,7 +43,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Lockers Choice',
-      formation:Formations.OceanWavesRHGBGB,
+      formation:Formation('Ocean Waves RH GBGB'),
       from:'Right-Hand Waves',parts:'4;4',
       paths:[
           LeadRight.changeBeats(4).scale(1.5,3.0) +
@@ -65,7 +64,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Lockers Choice',
-      formation:Formations.OceanWavesLHBGGB,
+      formation:Formation('Ocean Waves LH BGGB'),
       from:'Left-Hand Waves',parts:'4;4',
       paths:[
           LeadLeft.changeBeats(4).scale(1.5,3.0) +
@@ -86,7 +85,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cut the Diamonder\'s Choice',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:-2.5,angle:90),
         DancerModel.fromData(gender:Gender.GIRL,x:0,y:-.5,angle:180),
         DancerModel.fromData(gender:Gender.BOY,x:1,y:-2.5,angle:270),

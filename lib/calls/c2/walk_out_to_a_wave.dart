@@ -19,13 +19,13 @@
 */
 
 import '../../animated_call.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> WalkOutToAWave = [
 
     AnimatedCall('Walk Out to a Wave',
-      formation:Formations.ColumnRHGBGB,
+      formation:Formation('Column RH GBGB'),
       from:'Right-Hand Columns',
       paths:[
           RunRight.changeBeats(5).scale(1.0,2.0).skew(-1.0,0.0) +
@@ -42,7 +42,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Walk Out to a Wave',
-      formation:Formations.ColumnLHGBGB,
+      formation:Formation('Column LH GBGB'),
       from:'Left-Hand Columns',
       paths:[
           Forward_3.changeBeats(5) +
@@ -59,7 +59,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Walk Out to a Wave',
-      formation:Formations.DoublePassThru,
+      formation:Formation('Double Pass Thru'),
       from:'Double Pass Thru',
       paths:[
           ExtendLeft.scale(1.0,0.5) +
@@ -80,7 +80,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Walk Out to a Wave',
-      formation:Formations.CompletedDoublePassThru,
+      formation:Formation('Completed Double Pass Thru'),
       from:'Completed Double Pass Thru',
       paths:[
           RunLeft.changeBeats(5).scale(2.0,2.0).skew(-1.0,0.0) +
@@ -97,7 +97,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Magic Walk Out to a Wave',
-      formation:Formations.MagicColumnRH,
+      formation:Formation('Magic Column RH'),
       from:'Magic Columns, Right-Hand Centers',
       paths:[
           Forward.changeBeats(2) +
@@ -117,7 +117,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Magic Walk Out to a Wave',
-      formation:Formations.MagicColumnLH,
+      formation:Formation('Magic Column LH'),
       from:'Magic Columns, Left-Hand Centers',
       paths:[
           RunRight.changeBeats(5).scale(1.0,2.0).skew(-1.0,0.0) +

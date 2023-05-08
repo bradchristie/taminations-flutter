@@ -19,13 +19,13 @@
 */
 
 import '../../animated_call.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> LinearCycle = [
 
     AnimatedCall('Linear Cycle',
-      formation:Formations.WaveRH,
+      formation:Formation('Wave RH'),
       from:'Right-Hand Wave',parts:'1.5;4',difficulty: 1,
       taminator: '''
       After the Hinge, be sure to let go of hands.  Do not hold
@@ -43,7 +43,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Linear Cycle',
-      formation:Formations.WaveLH,
+      formation:Formation('Wave LH'),
       from:'Left-Hand Wave',parts:'1.5;4',difficulty: 2,
       paths:[
           HingeLeft +
@@ -57,7 +57,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Linear Cycle',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       from:'Right-Hand Waves',parts:'1.5;4',difficulty: 1,
       taminator: '''
     Linear Cycle is NOT Recycle and Sweep a Quarter,
@@ -83,7 +83,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Linear Cycle',
-      formation:Formations.OceanWavesLHBGGB,
+      formation:Formation('Ocean Waves LH BGGB'),
       from:'Left-Hand Waves',parts:'1.5;4',difficulty: 2,
       paths:[
           HingeLeft +
@@ -106,7 +106,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Linear Cycle',
-      formation:Formations.TidalWaveRHBGGB,
+      formation:Formation('Tidal Wave RH BGGB'),
       from:'Right-Hand Tidal Wave',parts:'1.5;3',difficulty: 1,
       paths:[
           HingeRight.scale(1.0,0.5) +
@@ -129,7 +129,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Linear Cycle',
-      formation:Formations.TidalWaveLHBGGB,
+      formation:Formation('Tidal Wave LH BGGB'),
       from:'Left-Hand Tidal Wave',parts:'1.5;3',difficulty: 2,
       paths:[
           HingeLeft.scale(1.0,0.5) +

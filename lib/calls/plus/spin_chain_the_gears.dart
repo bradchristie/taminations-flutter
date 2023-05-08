@@ -19,13 +19,13 @@
 */
 
 import '../../animated_call.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> SpinChainTheGears = [
 
     AnimatedCall('Spin Chain the Gears',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       from:'Right-Hand Waves',parts:'3;4.5;3;4.5;3',difficulty: 1,
       paths:[
           SwingRight +
@@ -56,7 +56,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Spin Chain the Gears',
-      formation:Formations.OceanWavesLHBGGB,
+      formation:Formation('Ocean Waves LH BGGB'),
       from:'Left-Hand Waves',parts:'3;4.5;3;4.5;3',difficulty: 2,
       paths:[
           SwingLeft +
@@ -87,7 +87,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Spin Chain the Gears',
-      formation:Formations.EightChainThru,
+      formation:Formation('Eight Chain Thru'),
       from:'Eight Chain Thru',parts:'5;4.5;3;4.5;3',difficulty: 2,
       paths:[
           ExtendLeft.changeBeats(2).scale(1.0,2.0) +
@@ -122,7 +122,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left Spin Chain the Gears',
-      formation:Formations.EightChainThru,
+      formation:Formation('Eight Chain Thru'),
       from:'Eight Chain Thru',group:' ',parts:'5;4.5;3;4.5;3',difficulty: 3,
       paths:[
           Forward.changeBeats(2) +
@@ -157,7 +157,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Spin Chain the Gears Part 2',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       from:'Right-Hand Waves',noDisplay: true,
       paths:[
           FlipRight.changeBeats(4.5),
@@ -170,7 +170,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Spin Chain the Gears Part 2',
-      formation:Formations.OceanWavesLHBGGB,
+      formation:Formation('Ocean Waves LH BGGB'),
       from:'Left-Hand Waves',noDisplay: true,
       paths:[
           FlipLeft.changeBeats(4.5),
@@ -183,7 +183,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Spin Chain the Gears Part 6',
-      formation:Formations.StarsLH,
+      formation:Formation('Stars LH'),
       from:'Left-Hand Stars',noDisplay: true,
       paths:[
           CastLeft,
@@ -196,7 +196,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Spin Chain the Gears Part 6',
-      formation:Formations.StarsRH,
+      formation:Formation('Stars RH'),
       from:'Right-Hand Stars',noDisplay: true,
       paths:[
           CastRight,

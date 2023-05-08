@@ -19,13 +19,13 @@
 */
 
 import '../../animated_call.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> Rotate = [
 
     AnimatedCall('Rotate 1/4',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       group:' ',
       paths:[
           HingeRight +
@@ -42,7 +42,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Rotate 1/2',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       group:' ',fractions:'4.5',
       paths:[
           HingeRight +
@@ -63,7 +63,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Rotate 3/4',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       group:' ',fractions:'4.5;3',
       paths:[
           HingeRight +
@@ -88,7 +88,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Rotate 1/2 and Spread',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       group:'  ',fractions:'4.5;3',
       paths:[
           HingeRight +
@@ -109,7 +109,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Rotate 1/2 and Roll',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       group:'  ',fractions:'4.5;3',
       paths:[
           HingeRight +
@@ -134,7 +134,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('All 4 Couples Rotate 1/2',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       group:'   ',
       paths:[
           ExtendRight.changeBeats(4).changehands(2).scale(3.0,2.0) +
@@ -151,7 +151,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Reverse Rotate 3/4',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       from:'Lines',fractions:'4.5;3',
       paths:[
           BackHingeRight +
@@ -176,7 +176,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Single Rotate 1/4',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       from:'Lines',
       paths:[
           QuarterRight +
@@ -193,7 +193,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Single Rotate 1/4',
-      formation:Formations.OceanWavesRHBGBG,
+      formation:Formation('Ocean Waves RH BGBG'),
       from:'Waves',
       paths:[
           QuarterRight +
@@ -210,7 +210,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Reverse Single Rotate 1/4',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       from:'Lines',
       paths:[
           QuarterLeft +
@@ -227,7 +227,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Reverse Single Rotate 1/4',
-      formation:Formations.OceanWavesRHBGBG,
+      formation:Formation('Ocean Waves RH BGBG'),
       from:'Waves',
       paths:[
           QuarterLeft +

@@ -19,13 +19,13 @@
 */
 
 import '../../animated_call.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> Stampede = [
 
     AnimatedCall('Stampede',
-      formation:Formations.n34Tag,
+      formation:Formation('3/4 Tag'),
       from:'3/4 Tag',parts:'4;1.5',
       paths:[
           RunLeft.changeBeats(5.5).scale(1.5,2.0).skew(-2.0,0.0) +
@@ -46,7 +46,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Stampede',
-      formation:Formations.n34TagLH,
+      formation:Formation('3/4 Tag LH'),
       from:'Left-Hand 3/4 Tag',parts:'4;1.5',
       paths:[
           RunLeft.changeBeats(5.5).scale(1.5,2.0).skew(-2.0,0.0) +

@@ -21,13 +21,12 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> NuclearReaction = [
 
     AnimatedCall('Nuclear Reaction',
-      formation:Formations.QuarterTag,
+      formation:Formation('Quarter Tag'),
       from:'1/4 Tag',parts:'3;5',
       paths:[
           ExtendLeft.changeBeats(1.5).scale(1.5,0.5) +
@@ -53,7 +52,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Nuclear Reaction',
-      formation:Formations.QuarterTagLH,
+      formation:Formation('Quarter Tag LH'),
       from:'Left-Hand 1/4 Tag',parts:'3;5',
       paths:[
           Stand.changeBeats(3) +
@@ -79,7 +78,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Nuclear Reaction',
-      formation:Formations.QuarterLinesRH,
+      formation:Formation('Quarter Lines RH'),
       from:'Quarter Lines',parts:'3;5',
       paths:[
           Stand.changeBeats(3) +
@@ -107,7 +106,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cross Nuclear Reaction',
-      formation:Formations.QuarterTag,
+      formation:Formation('Quarter Tag'),
       from:'1/4 Tag',parts:'3;5',
       paths:[
           Stand.changeBeats(3) +
@@ -133,7 +132,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cross Nuclear Reaction',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:0,y:3,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:0,y:1,angle:0),
         DancerModel.fromData(gender:Gender.BOY,x:-3,y:1,angle:0),

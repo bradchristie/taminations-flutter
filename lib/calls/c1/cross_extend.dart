@@ -21,13 +21,12 @@
 import '../../animated_call.dart';
 import '../../dancer_model.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> CrossExtend = [
 
     AnimatedCall('Cross Extend',
-      formation:Formations.BoxRH,
+      formation:Formation('Box RH'),
       from:'Right-Hand Box',
       paths:[
           ExtendRight.changeBeats(2).scale(2.0,2.0),
@@ -36,7 +35,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cross Extend',
-      formation:Formations.BoxLHGirlsLead,
+      formation:Formation('Box LH Girls Lead'),
       from:'Left-Hand Box',
       paths:[
           ExtendLeft.changeBeats(2).scale(2.0,2.0),
@@ -45,7 +44,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cross Extend',
-        formation:Formations.SingleQuarterTag,
+        formation:Formation('Single Quarter Tag'),
         from:'Single 1/4 Tag',
         paths:[
           ExtendRight.changeBeats(2).scale(1.5,1.0),
@@ -54,7 +53,7 @@ import '../../moves.dart';
         ]),
 
     AnimatedCall('Cross Extend',
-        formation:Formations.SingleLeftQuarterTag,
+        formation:Formation('Single Left Quarter Tag'),
         from:'Single Left-Hand 1/4 Tag',
         paths:[
           ExtendLeft.changeBeats(2).scale(1.5,1.0),
@@ -63,7 +62,7 @@ import '../../moves.dart';
         ]),
 
     AnimatedCall('Cross Extend',
-      formation:Formations.OceanWavesRHBGBG,
+      formation:Formation('Ocean Waves RH BGBG'),
       from:'Right-Hand Waves',
       paths:[
           ExtendRight.changeBeats(2).scale(2.0,2.0),
@@ -76,7 +75,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cross Extend',
-      formation:Formations.OceanWavesLHBGBG,
+      formation:Formation('Ocean Waves LH BGBG'),
       from:'Left-Hand Waves',
       paths:[
           ExtendLeft.changeBeats(2).scale(1.0,2.0),
@@ -89,7 +88,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cross Extend',
-      formation:Formations.QuarterTag,
+      formation:Formation('Quarter Tag'),
       from:'Quarter Tag',
       paths:[
           Forward.changeBeats(2),
@@ -102,7 +101,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cross Extend',
-      formation:Formations.QuarterTagLH,
+      formation:Formation('Quarter Tag LH'),
       from:'Left-Hand Quarter Tag',
       paths:[
           ExtendLeft.changeBeats(2).scale(1.0,2.0),
@@ -116,7 +115,7 @@ import '../../moves.dart';
 
     AnimatedCall('Cross Extend',
         from: 'Point-to-Point 1/4 Tag',
-        formation: Formation('', [
+        formation: Formation('', dancers:[
           DancerModel.fromData(gender:Gender.BOY,x:0,y:1,angle:90),
           DancerModel.fromData(gender:Gender.GIRL,x:1,y:3,angle:270),
           DancerModel.fromData(gender:Gender.BOY,x:0,y:5,angle:270),
@@ -134,7 +133,7 @@ import '../../moves.dart';
 
     AnimatedCall('Cross Extend',
         from: 'Point-to-Point Left-Hand 1/4 Tag',
-        formation: Formation('', [
+        formation: Formation('', dancers:[
           DancerModel.fromData(gender:Gender.BOY,x:0,y:1,angle:90),
           DancerModel.fromData(gender:Gender.GIRL,x:1,y:3,angle:90),
           DancerModel.fromData(gender:Gender.BOY,x:0,y:5,angle:270),
@@ -152,7 +151,7 @@ import '../../moves.dart';
 
 
     AnimatedCall('As Couples Cross Extend',
-      formation:Formations.TwomFacedLinesRH,
+      formation:Formation('Two-Faced Lines RH'),
       group:' ',
       paths:[
           DodgeRight.changeBeats(5).changehands(2).scale(1.0,2.0).skew(2.0,0.0),
@@ -165,7 +164,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Tandem Cross Extend',
-      formation:Formations.ColumnRHGBGB,
+      formation:Formation('Column RH GBGB'),
       group:' ',
       paths:[
           Forward +

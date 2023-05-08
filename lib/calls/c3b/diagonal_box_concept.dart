@@ -19,13 +19,13 @@
 */
 
 import '../../animated_call.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> DiagonalBoxConcept = [
 
     AnimatedCall('Diagonal Box Circulate',
-      formation:Formations.OceanWavesRHBGBG,
+      formation:Formation('Ocean Waves RH BGBG'),
       group:'Diagonal Box',
       paths:[
           ExtendRight.changeBeats(1.5).scale(2.0,2.0) +
@@ -42,7 +42,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Diagonal Box Counter Rotate',
-      formation:Formations.OceanWavesRHGBGB,
+      formation:Formation('Ocean Waves RH GBGB'),
       group:'Diagonal Box',
       paths:[
           LeadRight.changeBeats(5).scale(3.0,4.0),
@@ -56,7 +56,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Diagonal Box Scoot Back',
-      formation:Formations.OceanWavesRHBGBG,
+      formation:Formation('Ocean Waves RH BGBG'),
       group:'Diagonal Box',
       paths:[
           ExtendRight.changeBeats(1.5).scale(2.0,2.0) +

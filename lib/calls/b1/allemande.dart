@@ -21,13 +21,12 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> Allemande = [
 
     AnimatedCall('Allemande Left',
-      formation:Formations.FacingCouplesCompact,
+      formation:Formation('Facing Couples Compact'),
       from:'Facing Couples',isGenderSpecific:true,
       paths:[
           Forward.scale(1.5,1.0) +
@@ -40,7 +39,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Allemande Left',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-3,y:1,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:-3,y:-1,angle:0),
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:-1,angle:180),
@@ -66,7 +65,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Allemande Left',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-3,y:1,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:-3,y:-1,angle:0),
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:-2,angle:180),
@@ -92,7 +91,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Allemande Left',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-3,y:-1,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:-1,y:-1,angle:0),
         DancerModel.fromData(gender:Gender.BOY,x:1,y:-1,angle:180),
@@ -118,7 +117,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Allemande Left',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       from:'Normal Lines',isGenderSpecific:true,
       paths:[
           ExtendRight.changeBeats(2).scale(2.0,0.5) +
@@ -139,7 +138,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Allemande Left',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-2,y:1,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:-2,y:-1,angle:180),
         DancerModel.fromData(gender:Gender.BOY,x:-2,y:-3,angle:180),
@@ -165,7 +164,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Allemande Left',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-2,y:1,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:-2,y:-3,angle:0),
         DancerModel.fromData(gender:Gender.BOY,x:-2,y:-1,angle:180),
@@ -191,7 +190,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Allemande Left',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:3,angle:90),
         DancerModel.fromData(gender:Gender.GIRL,x:-3,y:0,angle:270),
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:0,angle:90),
@@ -215,7 +214,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Allemande Left',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       from:'Static Square',isGenderSpecific:true,
       paths:[
           LeadLeft.changeBeats(3).skew(0.5,0.0) +
@@ -238,7 +237,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Allemande Left',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-2.45,y:1,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:-2.45,y:-1,angle:45),
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:-2.45,angle:90),
@@ -266,7 +265,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Allemande Left',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:0,angle:90),
         DancerModel.fromData(gender:Gender.GIRL,x:0,y:-3,angle:0),
         DancerModel.fromData(gender:Gender.BOY,x:0,y:-1,angle:180),
@@ -288,7 +287,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Allemande Left',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:3,y:1,angle:270),
         DancerModel.fromData(gender:Gender.GIRL,x:1,y:1.5,angle:180),
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:1.5,angle:0),

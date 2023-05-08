@@ -21,13 +21,12 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> BlockFormation = [
 
     AnimatedCall('In Your Block Box Circulate',
-      formation:Formations.BlocksRH,
+      formation:Formation('Blocks RH'),
       group:'In Your Block',
       paths:[
           Forward_4,
@@ -40,7 +39,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('In Your Block Chase Right',
-      formation:Formations.BlocksFacingOut,
+      formation:Formation('Blocks Facing Out'),
       group:'In Your Block',
       paths:[
           UmTurnRight.changeBeats(2).skew(-1.0,0.0) +
@@ -61,7 +60,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('In Your Block Pass Thru',
-      formation:Formations.FacingBlocksLeft,
+      formation:Formation('Facing Blocks Left'),
       group:'In Your Block',
       paths:[
           ExtendLeft.changeBeats(2).scale(2.0,0.5) +
@@ -78,7 +77,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('In Your Block Partner Tag',
-      formation:Formations.FacingBlocksLeft,
+      formation:Formation('Facing Blocks Left'),
       group:'In Your Block',
       paths:[
           LeadRight.changeBeats(2).scale(0.5,2.0) +
@@ -95,7 +94,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('In Your Block Partner Trade',
-      formation:Formations.BlocksFacingOut,
+      formation:Formation('Blocks Facing Out'),
       group:'In Your Block',
       paths:[
           FlipLeft.changeBeats(3).scale(1.0,2.0),
@@ -108,7 +107,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('In Your Block Slide Thru',
-      formation:Formations.FacingBlocksLeft,
+      formation:Formation('Facing Blocks Left'),
       group:'In Your Block',
       paths:[
           ExtendLeft.changeBeats(2).scale(2.0,0.5) +
@@ -125,7 +124,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('In Your Block Square Chain the Top',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:1,y:1,angle:270),
         DancerModel.fromData(gender:Gender.GIRL,x:-3,y:1,angle:270),
         DancerModel.fromData(gender:Gender.BOY,x:3,y:3,angle:270),
@@ -163,7 +162,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('In Your Block Square Chain Thru',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:1,y:1,angle:270),
         DancerModel.fromData(gender:Gender.GIRL,x:-3,y:1,angle:270),
         DancerModel.fromData(gender:Gender.BOY,x:3,y:3,angle:270),
@@ -201,7 +200,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('In Your Block Square Thru',
-      formation:Formations.FacingBlocksLeft,
+      formation:Formation('Facing Blocks Left'),
       group:'In Your Block',fractions:'4;4;4',
       paths:[
           ExtendLeft.changeBeats(2).scale(2.0,0.5) +
@@ -242,7 +241,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('In Your Block Touch a Quarter',
-      formation:Formations.FacingBlocksRight,
+      formation:Formation('Facing Blocks Right'),
       group:'In Your Block',
       paths:[
           ExtendLeft.changeBeats(2).scale(2.0,0.5) +
@@ -259,7 +258,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('In Your Block Walk and Dodge',
-      formation:Formations.BlocksRH,
+      formation:Formation('Blocks RH'),
       group:'In Your Block',
       paths:[
           Forward_4,
@@ -274,7 +273,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('In Your Block Wheel Thru',
-      formation:Formations.FacingBlocksLeft,
+      formation:Formation('Facing Blocks Left'),
       group:'In Your Block',
       paths:[
           LeadRight.changeBeats(4).scale(4.0,4.0),
@@ -287,7 +286,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('In Your Block Zing',
-      formation:Formations.BlocksRH,
+      formation:Formation('Blocks RH'),
       group:'In Your Block',
       paths:[
           Forward_3.changeBeats(4.5) +

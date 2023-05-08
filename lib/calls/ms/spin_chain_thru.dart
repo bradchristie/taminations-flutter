@@ -19,13 +19,13 @@
 */
 
 import '../../animated_call.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> SpinChainThru = [
 
     AnimatedCall('Spin Chain Thru',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       from:'Right-Hand Waves',parts:'3;4.5;3',difficulty: 1,
       paths:[
           SwingRight +
@@ -44,7 +44,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Spin Chain Thru',
-      formation:Formations.OceanWavesLHBGGB,
+      formation:Formation('Ocean Waves LH BGGB'),
       from:'Left-Hand Waves',parts:'3;4.5;3',difficulty: 2,
       paths:[
           SwingLeft +
@@ -63,7 +63,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Spin Chain Thru',
-      formation:Formations.EightChainThru,
+      formation:Formation('Eight Chain Thru'),
       from:'Eight Chain Thru',parts:'5;4.5;3',difficulty: 2,
       taminator: '''
     The Facing Couples rule applies here.
@@ -89,7 +89,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left Spin Chain Thru',
-      formation:Formations.EightChainThru,
+      formation:Formation('Eight Chain Thru'),
       from:'Eight Chain Thru',parts:'5;4.5;3',difficulty: 3,
       taminator: '''
       The Facing Couples rule applies here.

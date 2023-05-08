@@ -21,13 +21,12 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> GrandChainEight = [
 
     AnimatedCall('Grand Chain Eight',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-2,y:3,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:-2,y:-3,angle:0),
   ]),
@@ -45,7 +44,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Grand Chain Eight',
-      formation:Formations.DoublePassThru,
+      formation:Formation('Double Pass Thru'),
       from:'Double Pass Thru',
       paths:[
           Stand.changehands(2) +
@@ -66,7 +65,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Grand Chain Eight',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:3,y:2,angle:270),
         DancerModel.fromData(gender:Gender.GIRL,x:1,y:2,angle:270),
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:2,angle:270),
@@ -95,7 +94,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Grand Chain Eight',
-      formation:Formations.EightChainThru,
+      formation:Formation('Eight Chain Thru'),
       from:'Eight Chain Thru',
       paths:[
           ExtendLeft.scale(1.0,0.5) +
@@ -117,7 +116,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Grand Chain Eight',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       from:'Right-Hand Waves',
       paths:[
           ExtendRight.changeBeats(2).scale(2.0,2.0) +
@@ -135,7 +134,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Grand Chain Eight',
-      formation:Formations.TidalWave,
+      formation:Formation('Tidal Wave RH BGGB'),
       from:'Tidal Wave',
       paths:[
           LeadRight.changeBeats(3).scale(2.5,2.5) +
@@ -155,7 +154,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Split Grand Chain Eight',
-      formation:Formations.TmBoneULRU,
+      formation:Formation('T-Bone ULRU'),
       from:'T-Bones, Ends Facing',
       paths:[
           ExtendLeft.scale(1.0,0.5) +
@@ -179,7 +178,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Split Grand Chain Eight',
-      formation:Formations.TmBoneRUUL,
+      formation:Formation('T-Bone RUUL'),
       from:'T-Bones, Centers Facing',
       paths:[
           Stand.changeBeats(2) +
@@ -203,7 +202,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Split Grand Chain Eight',
-      formation:Formations.TmBoneRLUU,
+      formation:Formation('T-Bone RLUU'),
       from:'T-Bones 3',
       paths:[
           ExtendLeft.scale(1.0,0.5) +
@@ -227,7 +226,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Split Grand Chain Eight',
-      formation:Formations.TmBoneUURL,
+      formation:Formation('T-Bone UURL'),
       from:'T-Bones 4',
       paths:[
           Stand.changeBeats(1) +
@@ -251,7 +250,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Heads Start Split Grand Chain Eight',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       group:' ',
       paths:[
           Forward_2 +
@@ -277,7 +276,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Sides Start Split Grand Chain Eight',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       group:' ',noDisplay: true,
       paths:[
           Stand.changeBeats(3) +

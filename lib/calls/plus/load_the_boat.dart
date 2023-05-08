@@ -21,13 +21,12 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> LoadTheBoat = [
 
     AnimatedCall('Load the Boat',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-2,y:3,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:-2,y:-3,angle:0),
   ]),
@@ -47,7 +46,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Load the Boat',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-2,y:3,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:-2,y:-3,angle:180),
   ]),
@@ -63,7 +62,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Load the Boat',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:0,y:3.5,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:0,y:-2.5,angle:0),
   ]),
@@ -81,7 +80,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Load the Boat',
-      formation:Formations.FacingCouplesCompact,
+      formation:Formation('Facing Couples Compact'),
       from:'Facing Couples',noDisplay: true,
       paths:[
           ExtendLeft.scale(1.5,0.5) +
@@ -98,7 +97,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Load the Boat',
-      formation:Formations.WaveRH,
+      formation:Formation('Wave RH'),
       from:'Wave',noDisplay: true,
       paths:[
           ExtendRight.changeBeats(2).scale(1.0,2.0) +
@@ -113,7 +112,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Load the Boat',
-      formation:Formations.CompactWaveRH,
+      formation:Formation('Compact Wave RH'),
       from:'Compact Wave',noDisplay: true,
       paths:[
           ExtendRight.changeBeats(2).scale(1.0,0.5) +
@@ -128,7 +127,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Load the Boat',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       from:'Normal Lines',parts:'3;3;3',difficulty: 1,
       paths:[
           ExtendLeft.changeBeats(1.5).scale(2.0,0.5) +
@@ -157,7 +156,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Load the Boat',
-      formation:Formations.InvertedLinesEndsFacingOut,
+      formation:Formation('Inverted Lines Ends Facing Out'),
       from:'Inverted Lines',parts:'3;3;3',difficulty: 2,
       paths:[
           LeadLeft.changeBeats(3).scale(1.0,3.5) +
@@ -182,7 +181,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Load the Boat',
-      formation:Formations.TidalWaveRHBGGB,
+      formation:Formation('Tidal Wave RH BGGB'),
       from:'Tidal Wave',parts:'1.5;3;3',difficulty: 2,
       taminator: '''
       This is an application of the Ocean Wave Rule.
@@ -210,7 +209,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Load the Boat',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:0,y:-3,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:-3,y:-2,angle:90),
         DancerModel.fromData(gender:Gender.BOY,x:0,y:-1,angle:0),
@@ -242,7 +241,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Load the Boat',
-      formation:Formations.Diamonds_3and_1GirlPoints,
+      formation:Formation('Diamonds 3 and 1 Girl Points'),
       from:'Diamonds, Points Out',parts:'3;3;3',difficulty: 3,
       paths:[
           ExtendRight.changeBeats(3).scale(1.0,2.0) +
@@ -267,7 +266,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Load the Boat',
-      formation:Formations.ConcentricDiamondsMixed,
+      formation:Formation('Concentric Diamonds Mixed'),
       from:'Wave between Mini-Waves',parts:'2;3;3',difficulty: 3,
       paths:[
           ExtendRight.changeBeats(2).scale(1.0,2.0) +
@@ -292,7 +291,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Load the Boat',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:-3,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:-1,y:1,angle:270),
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:-1,angle:90),
@@ -322,7 +321,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Load the Boat',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:-3,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:-1,y:1,angle:270),
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:-1,angle:90),

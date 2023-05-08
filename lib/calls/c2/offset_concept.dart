@@ -27,7 +27,7 @@ import '../c2/cross_the_k.dart' as c2;
   final List<AnimatedCall> OffsetConcept = [
 
     AnimatedCall('Offset Lines Couples Circulate',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:0,y:3,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:0,y:1,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:-3,y:-1,angle:180),
@@ -47,7 +47,7 @@ import '../c2/cross_the_k.dart' as c2;
       ]),
 
     AnimatedCall('Offset Lines Bend the Line',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:3,y:0,angle:270),
         DancerModel.fromData(gender:Gender.GIRL,x:1,y:0,angle:270),
         DancerModel.fromData(gender:Gender.GIRL,x:1,y:3,angle:270),
@@ -65,7 +65,7 @@ import '../c2/cross_the_k.dart' as c2;
       ]),
 
     AnimatedCall('Offset Lines Pass the Ocean',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:0,y:3,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:0,y:1,angle:0),
         DancerModel.fromData(gender:Gender.BOY,x:-3,y:-1,angle:0),

@@ -19,13 +19,13 @@
 */
 
 import '../../animated_call.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> SingleFileRecoil = [
 
     AnimatedCall('Single File Recoil',
-      formation:Formations.SingleDoublePassThru,
+      formation:Formation('Single Double Pass Thru'),
       from:'Single Double Pass Thru',fractions:'4',
       paths:[
           ExtendLeft.changeBeats(4).scale(3.0,3.0) +

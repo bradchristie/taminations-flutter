@@ -19,13 +19,13 @@
 */
 
 import '../../animated_call.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> LinearCycle = [
 
     AnimatedCall('Linear Cycle',
-      formation:Formations.TwomFacedLineRH,
+      formation:Formation('Two-Faced Line RH'),
       from:'Right-Hand Two-Faced Line',parts:'1.5;4',
       paths:[
           HingeRight +
@@ -39,7 +39,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Linear Cycle',
-      formation:Formations.TwomFacedLineLH,
+      formation:Formation('Two-Faced Line LH'),
       from:'Left-Hand Two-Faced Line',parts:'1.5;4',
       paths:[
           HingeRight +
@@ -53,7 +53,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Linear Cycle',
-      formation:Formations.LinesFacingOut,
+      formation:Formation('Lines Facing Out'),
       from:'Lines Facing Out',parts:'1.5;4',
       paths:[
           QuarterLeft.skew(-1.0,1.0) +
@@ -76,7 +76,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Linear Cycle',
-      formation:Formations.TwomFacedLinesRH,
+      formation:Formation('Two-Faced Lines RH'),
       from:'Right-Hand Two-Faced Lines',parts:'1.5;4',
       paths:[
           HingeRight +
@@ -99,7 +99,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Linear Cycle',
-      formation:Formations.TwomFacedLinesLH,
+      formation:Formation('Two-Faced Lines LH'),
       from:'Left-Hand Two-Faced Lines',parts:'1.5;4',
       paths:[
           QuarterLeft.skew(-1.0,1.0) +
@@ -122,7 +122,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Linear Cycle',
-      formation:Formations.InvertedLinesEndsFacingIn,
+      formation:Formation('Inverted Lines Ends Facing In'),
       from:'Inverted Lines, Ends Facing In',parts:'1.5;4',
       paths:[
           HingeRight +
@@ -147,7 +147,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Linear Cycle',
-      formation:Formations.InvertedLinesEndsFacingOut,
+      formation:Formation('Inverted Lines Ends Facing Out'),
       from:'Inverted Lines, Ends Facing Out',parts:'1.5;4',
       paths:[
           HingeLeft +
@@ -172,7 +172,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Linear Cycle',
-      formation:Formations.n3and_1lines5,
+      formation:Formation('3 and 1 Lines #5'),
       from:'3 and 1 Lines',
       paths:[
           HingeRight +
@@ -195,7 +195,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Linear Cycle',
-      formation:Formations.TwomFacedTidalLineRH,
+      formation:Formation('Two-Faced Tidal Line RH'),
       from:'Right-Hand Two-Faced Tidal Line',parts:'1.5;4',
       paths:[
           HingeRight.scale(1.0,0.5) +
@@ -216,7 +216,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Linear Cycle',
-      formation:Formations.TwomFacedTidalLineLH,
+      formation:Formation('Two-Faced Tidal Line LH'),
       from:'Left-Hand Two-Faced Tidal Line',parts:'1.5;4',
       paths:[
           QuarterLeft.skew(-1.0,0.5) +
@@ -237,7 +237,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Linear Cycle',
-      formation:Formations.TidalLineRH,
+      formation:Formation('Tidal Line RH'),
       from:'Right-Hand Tidal Line',parts:'1.5;4',
       paths:[
           HingeRight.scale(1.0,0.5) +
@@ -258,7 +258,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Linear Cycle',
-      formation:Formations.TidalLineLH,
+      formation:Formation('Tidal Line LH'),
       from:'Left-Hand Tidal Line',parts:'1.5;4',
       paths:[
           HingeRight.scale(1.0,0.5) +
@@ -279,7 +279,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Linear Cycle',
-      formation:Formations.TidalInvertedLineRH,
+      formation:Formation('Tidal Inverted Line RH'),
       from:'Right-Hand Tidal Inverted Line',parts:'1.5;4',
       paths:[
           HingeRight.scale(1.0,0.5) +
@@ -304,7 +304,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Linear Cycle',
-      formation:Formations.TidalInvertedLineLH,
+      formation:Formation('Tidal Inverted Line LH'),
       from:'Left-Hand Tidal Inverted Line',parts:'1.5;4',
       paths:[
           HingeLeft.scale(1.0,0.5) +
@@ -329,7 +329,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left Linear Cycle',
-      formation:Formations.TwomFacedLineRH,
+      formation:Formation('Two-Faced Line RH'),
       from:'Right-Hand Two-Faced Line',parts:'1.5;4',
       paths:[
           QuarterRight.skew(-1.0,-1.0) +
@@ -343,7 +343,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left Linear Cycle',
-      formation:Formations.TwomFacedLineLH,
+      formation:Formation('Two-Faced Line LH'),
       from:'Left-Hand Two-Faced Line',parts:'1.5;4',
       paths:[
           QuarterRight.skew(-1.0,-1.0) +
@@ -357,7 +357,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left Linear Cycle',
-      formation:Formations.LinesFacingOut,
+      formation:Formation('Lines Facing Out'),
       from:'Lines Facing Out',parts:'1.5;4',
       paths:[
           HingeLeft +
@@ -380,7 +380,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left Linear Cycle',
-      formation:Formations.TwomFacedTidalLineRH,
+      formation:Formation('Two-Faced Tidal Line RH'),
       from:'Right-Hand Two-Faced Tidal Line',parts:'1.5;4',
       paths:[
           QuarterRight.skew(-1.0,-0.5) +
@@ -401,7 +401,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left Linear Cycle',
-      formation:Formations.TwomFacedTidalLineLH,
+      formation:Formation('Two-Faced Tidal Line LH'),
       from:'Left-Hand Two-Faced Tidal Line',parts:'1.5;4',
       paths:[
           HingeLeft.scale(1.0,0.5) +
@@ -422,7 +422,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left Linear Cycle',
-      formation:Formations.TidalLineRH,
+      formation:Formation('Tidal Line RH'),
       from:'Right-Hand Tidal Line',parts:'1.5;4',
       paths:[
           QuarterRight.skew(-1.0,-0.5) +
@@ -443,7 +443,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left Linear Cycle',
-      formation:Formations.TidalLineLH,
+      formation:Formation('Tidal Line LH'),
       from:'Left-Hand Tidal Line',parts:'1.5;4',
       paths:[
           QuarterRight.skew(-1.0,-0.5) +
@@ -464,7 +464,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('As Couples Linear Cycle',
-      formation:Formations.TidalLineRH,
+      formation:Formation('Tidal Line RH'),
       group:' ',
       paths:[
           HingeRight.changeBeats(3).scale(1.5,1.5) +

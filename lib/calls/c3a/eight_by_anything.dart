@@ -21,13 +21,12 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> EightByAnything = [
 
     AnimatedCall('Eight by Reach Out',
-      formation:Formations.n3and_1lines3,
+      formation:Formation('3 and 1 Lines #3'),
       group:'Eight by',
       paths:[
           ExtendLeft.changeBeats(2).scale(2.0,0.5) +
@@ -50,7 +49,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Eight by Swap Around',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       from:'Lines',group:'Eight by',
       paths:[
           ExtendLeft.changeBeats(2).scale(2.0,0.5) +
@@ -71,7 +70,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Eight by Wheel Thru',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       from:'Lines',group:'Eight by',
       paths:[
           ExtendLeft.changeBeats(2).scale(2.0,0.5) +
@@ -92,7 +91,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Eight by Swing Thru',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       from:'Lines',group:'Eight by',
       paths:[
           ExtendLeft.changeBeats(2).scale(2.0,0.5) +
@@ -117,7 +116,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Eight by Flip the Diamond',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:0,y:6,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:1,y:0,angle:270),
         DancerModel.fromData(gender:Gender.BOY,x:0,y:-2,angle:180),

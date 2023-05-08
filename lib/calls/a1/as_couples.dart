@@ -21,7 +21,6 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 import '../a1/cross_trail_thru.dart' as a1;
 import '../a1/linear_cycle.dart' as a1;
@@ -87,7 +86,7 @@ import '../c3b/bingo.dart' as c3b;
   final List<AnimatedCall> AsCouples = [
 
     AnimatedCall('As Couples Cast Off Three Quarters',
-      formation:Formations.TidalLineLH,
+      formation:Formation('Tidal Line LH'),
       group:'As Couples (with calls through Plus)',
       paths:[
           QuarterRight.changeBeats(2) +
@@ -106,7 +105,7 @@ import '../c3b/bingo.dart' as c3b;
       ]),
 
     AnimatedCall('As Couples Chase Right',
-      formation:Formations.LinesFacingOut,
+      formation:Formation('Lines Facing Out'),
       group:'As Couples (with calls through Plus)',
       paths:[
           BeauWheel.scale(1.0,-1.0).skew(-2.0,0.0) +
@@ -125,7 +124,7 @@ import '../c3b/bingo.dart' as c3b;
       ]),
 
     AnimatedCall('As Couples Centers Cross Run',
-      formation:Formations.TidalLineRH,
+      formation:Formation('Tidal Line RH'),
       group:'As Couples (with calls through Plus)',
       paths:[
           DodgeRight,
@@ -138,7 +137,7 @@ import '../c3b/bingo.dart' as c3b;
       ]),
 
     AnimatedCall('As Couples Crossfire',
-      formation:Formations.TidalLineRH,
+      formation:Formation('Tidal Line RH'),
       group:'As Couples (with calls through Plus)',
       paths:[
           RunRight.changeBeats(4).changehands(2).scale(3.25,3.25).skew(2.0,0.0),
@@ -153,7 +152,7 @@ import '../c3b/bingo.dart' as c3b;
       ]),
 
     AnimatedCall('As Couples Dixie Style to a Wave',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       group:'As Couples (with calls through Plus)',
       paths:[
           BackSashayRight.changeBeats(6).changehands(2).scale(1.0,2.0) +
@@ -172,7 +171,7 @@ import '../c3b/bingo.dart' as c3b;
       ]),
 
     AnimatedCall('As Couples Explode the Wave',
-      formation:Formations.TwomFacedTidalLineRH,
+      formation:Formation('Two-Faced Tidal Line RH'),
       group:'As Couples (with calls through Plus)',
       paths:[
           LeadRight.changeBeats(3).scale(3.5,3.5) +
@@ -189,7 +188,7 @@ import '../c3b/bingo.dart' as c3b;
       ]),
 
     AnimatedCall('As Couples Extend',
-      formation:Formations.QuarterLinesRH,
+      formation:Formation('Quarter Lines RH'),
       group:'As Couples (with calls through Plus)',
       paths:[
           ExtendLeft.changeBeats(2).changehands(2).scale(1.5,2.0),
@@ -202,7 +201,7 @@ import '../c3b/bingo.dart' as c3b;
       ]),
 
     AnimatedCall('As Couples Fan the Top',
-      formation:Formations.TwomFacedTidalLineRH,
+      formation:Formation('Two-Faced Tidal Line RH'),
       group:'As Couples (with calls through Plus)',
       paths:[
           LeadRight.changeBeats(4.5).scale(3.5,3.5),
@@ -217,7 +216,7 @@ import '../c3b/bingo.dart' as c3b;
       ]),
 
     AnimatedCall('As Couples Ends Fold',
-      formation:Formations.TwomFacedTidalLineRH,
+      formation:Formation('Two-Faced Tidal Line RH'),
       group:'As Couples (with calls through Plus)',
       paths:[
           RunRight.changehands(2).skew(2.0,-0.5),
@@ -230,7 +229,7 @@ import '../c3b/bingo.dart' as c3b;
       ]),
 
     AnimatedCall('As Couples Ends Cross Fold',
-      formation:Formations.TwomFacedTidalLineRH,
+      formation:Formation('Two-Faced Tidal Line RH'),
       group:'As Couples (with calls through Plus)',
       paths:[
           RunRight.changeBeats(5).changehands(2).skew(2.0,-4.5),
@@ -243,7 +242,7 @@ import '../c3b/bingo.dart' as c3b;
       ]),
 
     AnimatedCall('As Couples Flutterwheel',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       group:'As Couples (with calls through Plus)',
       paths:[
           Stand.changeBeats(2).changehands(2) +
@@ -268,7 +267,7 @@ import '../c3b/bingo.dart' as c3b;
       ]),
 
     AnimatedCall('As Couples Follow Your Neighbor',
-      formation:Formations.TwomFacedLinesRH,
+      formation:Formation('Two-Faced Lines RH'),
       group:'As Couples (with calls through Plus)',
       paths:[
           ExtendRight.changeBeats(2).changehands(2).scale(2.0,1.5) +
@@ -287,7 +286,7 @@ import '../c3b/bingo.dart' as c3b;
       ]),
 
     AnimatedCall('As Couples Follow Your Neighbor',
-      formation:Formations.TwomFacedLinesLH,
+      formation:Formation('Two-Faced Lines LH'),
       group:'As Couples (with calls through Plus)',noDisplay: true,
       paths:[
           LeadLeft.changeBeats(2).changehands(1).scale(2.0,3.0) +
@@ -306,7 +305,7 @@ import '../c3b/bingo.dart' as c3b;
       ]),
 
     AnimatedCall('As Couples Half Sashay',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       group:'As Couples (with calls through Plus)',
       paths:[
           BackSashayRight.changeBeats(6).changehands(2).scale(1.5,2.0),
@@ -319,7 +318,7 @@ import '../c3b/bingo.dart' as c3b;
       ]),
 
     AnimatedCall('As Couples Ladies Center as the Men Sashay',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-2.414,y:1,angle:-22.5),
         DancerModel.fromData(gender:Gender.GIRL,x:1,y:2.414,angle:247.5),
         DancerModel.fromData(gender:Gender.BOY,x:-2.414,y:-1,angle:22.5),
@@ -351,7 +350,7 @@ import '../c3b/bingo.dart' as c3b;
       ]),
 
     AnimatedCall('As Couples Left Swing Thru',
-      formation:Formations.TwomFacedTidalLineLH,
+      formation:Formation('Two-Faced Tidal Line LH'),
       group:'As Couples (with calls through Plus)',
       paths:[
           SwingLeft.scale(1.5,1.5) +
@@ -366,7 +365,7 @@ import '../c3b/bingo.dart' as c3b;
       ]),
 
     AnimatedCall('As Couples Linear Cycle',
-      formation:Formations.TwomFacedTidalLineRH,
+      formation:Formation('Two-Faced Tidal Line RH'),
       group:'As Couples (with calls through Plus)',
       paths:[
           HingeRight.scale(1.5,1.5) +
@@ -389,7 +388,7 @@ import '../c3b/bingo.dart' as c3b;
       ]),
 
     AnimatedCall('As Couples Pass the Ocean',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       group:'As Couples (with calls through Plus)',
       paths:[
           ExtendLeft.changeBeats(2).changehands(2).scale(2.0,0.5) +
@@ -406,7 +405,7 @@ import '../c3b/bingo.dart' as c3b;
       ]),
 
     AnimatedCall('As Couples Peel Off',
-      formation:Formations.TwomFacedLinesRH,
+      formation:Formation('Two-Faced Lines RH'),
       group:'As Couples (with calls through Plus)',
       paths:[
           BeauWheel.changeBeats(5).changehands(6).skew(2.0,-0.5),
@@ -419,7 +418,7 @@ import '../c3b/bingo.dart' as c3b;
       ]),
 
     AnimatedCall('As Couples Peel the Top',
-      formation:Formations.TwomFacedLinesRH,
+      formation:Formation('Two-Faced Lines RH'),
       group:'As Couples (with calls through Plus)',
       paths:[
           ExtendRight.changeBeats(2).changehands(2).scale(2.0,1.5) +
@@ -438,7 +437,7 @@ import '../c3b/bingo.dart' as c3b;
       ]),
 
     AnimatedCall('As Couples Recycle',
-      formation:Formations.TwomFacedTidalLineRH,
+      formation:Formation('Two-Faced Tidal Line RH'),
       group:'As Couples (with calls through Plus)',
       paths:[
           LeadRight.changeBeats(4).scale(3.0,3.5) +
@@ -455,7 +454,7 @@ import '../c3b/bingo.dart' as c3b;
       ]),
 
     AnimatedCall('As Couples Reverse Flutterwheel',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       group:'As Couples (with calls through Plus)',
       paths:[
           ExtendRight.changeBeats(2).changehands(6).scale(2.0,3.5) +
@@ -480,7 +479,7 @@ import '../c3b/bingo.dart' as c3b;
       ]),
 
     AnimatedCall('As Couples Right and Left Thru',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       group:'As Couples (with calls through Plus)',
       paths:[
           ExtendLeft.changeBeats(2).changehands(2).scale(2.0,0.5) +
@@ -501,7 +500,7 @@ import '../c3b/bingo.dart' as c3b;
       ]),
 
     AnimatedCall('As Couples Centers Run',
-      formation:Formations.TidalLineRH,
+      formation:Formation('Tidal Line RH'),
       group:'As Couples (with calls through Plus)',
       paths:[
           DodgeRight,
@@ -514,7 +513,7 @@ import '../c3b/bingo.dart' as c3b;
       ]),
 
     AnimatedCall('As Couples Scoot Back',
-      formation:Formations.TwomFacedLinesRH,
+      formation:Formation('Two-Faced Lines RH'),
       group:'As Couples (with calls through Plus)',
       paths:[
           ExtendRight.changeBeats(2).changehands(2).scale(2.0,1.5) +
@@ -531,7 +530,7 @@ import '../c3b/bingo.dart' as c3b;
       ]),
 
     AnimatedCall('As Couples Scoot Back',
-      formation:Formations.TwomFacedLinesLH,
+      formation:Formation('Two-Faced Lines LH'),
       group:'As Couples (with calls through Plus)',noDisplay: true,
       paths:[
           RunLeft.changeBeats(5).changehands(1).scale(2.5,3.0),
@@ -548,7 +547,7 @@ import '../c3b/bingo.dart' as c3b;
       ]),
 
     AnimatedCall('As Couples Slide Thru',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-2,y:3,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:-2,y:-1,angle:0),
         DancerModel.fromData(gender:Gender.BOY,x:-2,y:1,angle:0),
@@ -570,7 +569,7 @@ import '../c3b/bingo.dart' as c3b;
       ]),
 
     AnimatedCall('As Couples Slide Thru',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.GIRL,x:-2,y:3,angle:0),
         DancerModel.fromData(gender:Gender.BOY,x:-2,y:-1,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:-2,y:1,angle:0),
@@ -592,7 +591,7 @@ import '../c3b/bingo.dart' as c3b;
       ]),
 
     AnimatedCall('As Couples Spin the Top',
-      formation:Formations.TwomFacedTidalLineRH,
+      formation:Formation('Two-Faced Tidal Line RH'),
       group:'As Couples (with calls through Plus)',
       paths:[
           SwingRight.scale(1.5,1.5) +
@@ -611,7 +610,7 @@ import '../c3b/bingo.dart' as c3b;
       ]),
 
     AnimatedCall('As Couples Square Thru',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       group:'As Couples (with calls through Plus)',
       paths:[
           ExtendLeft.changeBeats(2).changehands(2).scale(2.0,0.5) +
@@ -640,7 +639,7 @@ import '../c3b/bingo.dart' as c3b;
       ]),
 
     AnimatedCall('As Couples Swing Thru',
-      formation:Formations.TwomFacedTidalLineRH,
+      formation:Formation('Two-Faced Tidal Line RH'),
       group:'As Couples (with calls through Plus)',
       paths:[
           SwingRight.scale(1.5,1.5) +
@@ -655,7 +654,7 @@ import '../c3b/bingo.dart' as c3b;
       ]),
 
     AnimatedCall('As Couples Touch a Quarter',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       group:'As Couples (with calls through Plus)',
       paths:[
           ExtendLeft.changeBeats(2).changehands(2).scale(2.0,0.5) +
@@ -672,7 +671,7 @@ import '../c3b/bingo.dart' as c3b;
       ]),
 
     AnimatedCall('As Couples Trade the Wave',
-      formation:Formations.TwomFacedTidalLineRH,
+      formation:Formation('Two-Faced Tidal Line RH'),
       group:'As Couples (with calls through Plus)',
       paths:[
           RunRight.changeBeats(4).changehands(2).scale(3.5,2.5),
@@ -685,7 +684,7 @@ import '../c3b/bingo.dart' as c3b;
       ]),
 
     AnimatedCall('As Couples Trade the Wave',
-      formation:Formations.TwomFacedTidalLineLH,
+      formation:Formation('Two-Faced Tidal Line LH'),
       group:'As Couples (with calls through Plus)',noDisplay: true,
       paths:[
           RunLeft.changeBeats(4).changehands(2).scale(1.5,2.5),
@@ -698,7 +697,7 @@ import '../c3b/bingo.dart' as c3b;
       ]),
 
     AnimatedCall('As Couples U-Turn Back',
-      formation:Formations.LinesFacingOut,
+      formation:Formation('Lines Facing Out'),
       group:'As Couples (with calls through Plus)',
       paths:[
           BelleWheel,
@@ -711,7 +710,7 @@ import '../c3b/bingo.dart' as c3b;
       ]),
 
     AnimatedCall('As Couples Walk and Dodge',
-      formation:Formations.TwomFacedLinesRH,
+      formation:Formation('Two-Faced Lines RH'),
       group:'As Couples (with calls through Plus)',
       paths:[
           Forward_4.changehands(2),
@@ -724,7 +723,7 @@ import '../c3b/bingo.dart' as c3b;
       ]),
 
     AnimatedCall('As Couples Zoom',
-      formation:Formations.TwomFacedLinesRH,
+      formation:Formation('Two-Faced Lines RH'),
       group:'As Couples (with calls through Plus)',
       paths:[
           Forward_4.changehands(2),

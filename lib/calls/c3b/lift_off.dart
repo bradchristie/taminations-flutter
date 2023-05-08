@@ -26,7 +26,7 @@ import '../../moves.dart';
   final List<AnimatedCall> LiftOff = [
 
     AnimatedCall('Lift Off',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:1,y:1,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:1,y:-1,angle:0),
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:-3,angle:90),
@@ -57,7 +57,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Mirror Lift Off',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:1,y:1,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:1,y:-1,angle:0),
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:-3,angle:90),

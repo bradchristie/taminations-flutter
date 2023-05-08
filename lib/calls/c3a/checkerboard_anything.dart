@@ -20,13 +20,13 @@
 
 import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> CheckerboardAnything = [
 
     AnimatedCall('Checkerboard Bounce the Boys',
-      formation:Formations.TwomFacedLinesRHCompact,
+      formation:Formation('Two-Faced Lines RH Compact'),
       group:'Checkerboard',isGenderSpecific:true,
       paths:[
           Forward +
@@ -42,7 +42,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Checkerboard Swing Thru',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       group:'Checkerboard',
       paths:[
           Forward_2 +
@@ -61,7 +61,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Checkerboard Tag the Line',
-      formation:Formations.TwomFacedLinesRHCompact,
+      formation:Formation('Two-Faced Lines RH Compact'),
       group:'Checkerboard',
       paths:[
           Forward.scale(1.5,1.0) +
@@ -80,7 +80,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Checkerboard Recycle',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       group:'Checkerboard',
       paths:[
           Forward_2 +
@@ -102,7 +102,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Checkerboard Swap the Wave',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       from:'Right Hand Waves',
       paths:[
           Forward_2 +
@@ -124,7 +124,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Checkerboard Swap the Wave',
-      formation:Formations.OceanWavesLHBGGB,
+      formation:Formation('Ocean Waves LH BGGB'),
       from:'Left Hand Waves',
       paths:[
           RunLeft.changeBeats(4).scale(1.0,2.0).skew(1.0,0.0) +
@@ -142,7 +142,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Checkerbox Recycle',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       group:'Checkerbox',
       paths:[
           ExtendRight.scale(1.0,1.5) +
@@ -161,7 +161,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Checkerbox Turn Thru',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       group:'Checkerbox',
       paths:[
           ExtendRight.changeBeats(2).scale(2.0,0.5) +
@@ -178,7 +178,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Checkerbox Swap Around',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       group:'Checkerbox',
       paths:[
           FlipRight.changeBeats(5).scale(1.0,2.0),

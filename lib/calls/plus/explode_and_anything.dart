@@ -19,7 +19,7 @@
 */
 
 import '../../animated_call.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 
 import '../plus/anything_and_roll.dart' as plus;
@@ -27,7 +27,7 @@ import '../plus/anything_and_roll.dart' as plus;
   final List<AnimatedCall> ExplodeAndAnything = [
 
     AnimatedCall('Explode and Touch a Quarter and Roll',
-      formation:Formations.WaveRH,
+      formation:Formation('Wave RH'),
       group:'Explode and',difficulty: 2,
       paths:[
           LeadRight.changeBeats(3).scale(2.0,3.0) +
@@ -40,7 +40,7 @@ import '../plus/anything_and_roll.dart' as plus;
       ]),
 
     AnimatedCall('Explode and Partner Trade',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       group:'Explode and',difficulty: 2,
       paths:[
           LeadRight +
@@ -57,7 +57,7 @@ import '../plus/anything_and_roll.dart' as plus;
       ]),
 
     AnimatedCall('Explode and Right and Left Thru',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       group:'Explode and',difficulty: 1,
       taminator: '''
       This animation shows a strict interpretation.  The dancers first
@@ -93,7 +93,7 @@ import '../plus/anything_and_roll.dart' as plus;
       tam.title == 'Explode and Roll').first.xref(title: 'Explode and Roll').xref(group: 'Explode and'),
 
     AnimatedCall('Explode and Touch a Quarter',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       group:'Explode and',difficulty: 1,
       paths:[
           Forward +
@@ -118,7 +118,7 @@ import '../plus/anything_and_roll.dart' as plus;
       ]),
 
     AnimatedCall('Explode and Slide Thru',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       group:'Explode and',isGenderSpecific:true,difficulty: 2,
       paths:[
           Forward +

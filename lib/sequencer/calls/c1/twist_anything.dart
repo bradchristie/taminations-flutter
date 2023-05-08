@@ -18,7 +18,6 @@
 
 */
 
-import '../../../formations.dart';
 import '../common.dart';
 
 class TwistAnything extends Action {
@@ -26,6 +25,15 @@ class TwistAnything extends Action {
   @override final level = LevelData.C1;
   @override var helplink = 'c1/twist_the_line';
   TwistAnything(String name) : super(name);
+
+  static final Formation TripleLines = Formation('', dancers:[
+    DancerModel.fromData(gender:Gender.BOY,x:0,y:3,angle:180),
+    DancerModel.fromData(gender:Gender.GIRL,x:0,y:1,angle:0),
+    DancerModel.fromData(gender:Gender.GIRL,x:3,y:1,angle:180),
+    DancerModel.fromData(gender:Gender.BOY,x:3,y:3,angle:0),
+    DancerModel.fromData(gender:Gender.PHANTOM,x:3,y:-1,angle:0),
+    DancerModel.fromData(gender:Gender.PHANTOM,x:3,y:-3,angle:180),
+  ]);
 
   @override
   void perform(CallContext ctx) {
@@ -64,7 +72,7 @@ class TwistAnything extends Action {
     }
 
     if (tidalStart)
-      ctx.adjustToFormation(Formations.TripleLines,subformation: true ,maxError: 8.1, delta: 0.3);
+      ctx.adjustToFormation(TripleLines,subformation: true ,maxError: 8.1, delta: 0.3);
   }
 
 

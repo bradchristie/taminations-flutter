@@ -19,13 +19,13 @@
 */
 
 import '../../animated_call.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> CrossAndTurn = [
 
     AnimatedCall('Cross and Turn',
-      formation:Formations.FacingCouplesCompact,
+      formation:Formation('Facing Couples Compact'),
       from:'Facing Couples',
       paths:[
           Forward +
@@ -35,7 +35,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cross and Turn',
-      formation:Formations.NormalLinesCompact,
+      formation:Formation('Normal Lines Compact'),
       from:'Lines',
       paths:[
           Forward +
@@ -50,7 +50,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cross and Turn',
-      formation:Formations.EightChainThru,
+      formation:Formation('Eight Chain Thru'),
       from:'Eight Chain Thru',
       paths:[
           Forward.changeBeats(.5).scale(0.5,0.5) +
@@ -65,7 +65,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('As Couples Cross and Turn',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       from:'Lines',group:' ',
       paths:[
           ExtendRight.changeBeats(2).changehands(2).scale(2.0,1.5) +
@@ -80,7 +80,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('All 8 Cross and Turn',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       from:'Static Square',group:' ',
       paths:[
           Forward_3 +
@@ -97,7 +97,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Butterfly Cross and Turn',
-      formation:Formations.ButterflyChainThru,
+      formation:Formation('Butterfly Chain Thru'),
       group:' ',
       paths:[
           Forward.changeBeats(.5).scale(0.5,0.5) +
@@ -112,7 +112,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Concentric Cross and Turn',
-      formation:Formations.DoublePassThru,
+      formation:Formation('Double Pass Thru'),
       from:'Double Pass Thru',group:' ',
       paths:[
           ExtendLeft.changeBeats(2).scale(2.0,1.0) +
@@ -128,7 +128,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('"O" Cross and Turn',
-      formation:Formations.OEightChainThru,
+      formation:Formation('O Eight Chain Thru'),
       group:' ',
       paths:[
           Forward.changeBeats(.5).scale(0.5,0.5) +
@@ -143,7 +143,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Reverse Cross and Turn',
-      formation:Formations.FacingCouplesCompact,
+      formation:Formation('Facing Couples Compact'),
       from:'Facing Couples',
       paths:[
           UmTurnRight,
@@ -153,7 +153,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Reverse Cross and Turn',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       from:'Lines',
       paths:[
           UmTurnRight,
@@ -168,7 +168,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Reverse Cross and Turn',
-      formation:Formations.EightChainThru,
+      formation:Formation('Eight Chain Thru'),
       from:'Eight Chain Thru',
       paths:[
           UmTurnRight,
@@ -183,7 +183,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('As Couples Reverse Cross and Turn',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       group:' ',
       paths:[
           BeauReverseWheel,
@@ -198,7 +198,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('All 8 Reverse Cross and Turn',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       from:'Static Square',group:' ',
       paths:[
           UmTurnRight,
@@ -215,7 +215,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Butterfly Reverse Cross and Turn',
-      formation:Formations.ButterflyChainThru,
+      formation:Formation('Butterfly Chain Thru'),
       group:' ',
       paths:[
           UmTurnRight,
@@ -230,7 +230,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Concentric Reverse Cross and Turn',
-      formation:Formations.DoublePassThru,
+      formation:Formation('Double Pass Thru'),
       from:'Double Pass Thru',group:' ',
       paths:[
           UmTurnRight,
@@ -246,7 +246,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('"O" Reverse Cross and Turn',
-      formation:Formations.OEightChainThru,
+      formation:Formation('O Eight Chain Thru'),
       group:' ',
       paths:[
           UmTurnRight,

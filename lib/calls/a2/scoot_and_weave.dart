@@ -21,13 +21,12 @@
 import '../../animated_call.dart';
 import '../../dancer_model.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> ScootAndWeave = [
 
     AnimatedCall('Scoot and Weave',
-      formation:Formations.BoxRH,
+      formation:Formation('Box RH'),
       from:'Right-Hand Box',parts:'5.5',
       paths:[
           ExtendRight.changeBeats(1.5).scale(2.0,0.25) +
@@ -41,7 +40,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Scoot and Weave',
-      formation:Formations.BoxLH,
+      formation:Formation('Box LH'),
       from:'Left-Hand Box',parts:'5',
       paths:[
           FlipLeft +
@@ -55,7 +54,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Scoot and Weave',
-      formation:Formations.SingleQuarterTag,
+      formation:Formation('Single Quarter Tag'),
       from:'Single Quarter Tag',parts:'5',
       paths:[
           ExtendLeft.changeBeats(2) +
@@ -69,7 +68,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Scoot and Weave',
-      formation:Formations.SingleLeftQuarterTag,
+      formation:Formation('Single Left Quarter Tag'),
       from:'Single Left Quarter Tag',parts:'5',
       paths:[
           ExtendRight.changeBeats(2) +
@@ -83,7 +82,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Scoot and Weave',
-      formation:Formations.OceanWavesRHBGBG,
+      formation:Formation('Ocean Waves RH BGBG'),
       from:'Right-Hand Waves',parts:'5',
       paths:[
           ExtendRight.changeBeats(1.5).scale(2.0,0.25) +
@@ -106,7 +105,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Scoot and Weave',
-      formation:Formations.OceanWavesLHBGBG,
+      formation:Formation('Ocean Waves LH BGBG'),
       from:'Left-Hand Waves',parts:'5',
       paths:[
           FlipLeft +
@@ -129,7 +128,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Scoot and Weave',
-      formation:Formations.ColumnRHGBGB,
+      formation:Formation('Column RH GBGB'),
       from:'Right-Hand Columns',parts:'5',
       paths:[
           RunRight.scale(0.5,1.0) +
@@ -152,7 +151,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Scoot and Weave',
-      formation:Formations.ColumnLHGBGB,
+      formation:Formation('Column LH GBGB'),
       from:'Left-Hand Columns',parts:'5',
       paths:[
           ExtendLeft.scale(1.0,0.5) +
@@ -175,7 +174,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Scoot and Weave',
-      formation:Formations.QuarterTag,
+      formation:Formation('Quarter Tag'),
       from:'Quarter Tag',parts:'5',
       paths:[
           ExtendLeft.changeBeats(2).scale(1.0,2.0) +
@@ -198,7 +197,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Scoot and Weave',
-      formation:Formations.QuarterTagLH,
+      formation:Formation('Quarter Tag LH'),
       from:'Left-Hand Quarter Tag',parts:'5',
       paths:[
           Forward.changeBeats(2) +
@@ -222,7 +221,7 @@ import '../../moves.dart';
 
     AnimatedCall('Scoot and Weave',
         from: 'Point-to-Point 1/4 Tag',
-        formation: Formation('', [
+        formation: Formation('', dancers:[
           DancerModel.fromData(gender:Gender.BOY,x:0,y:1,angle:90),
           DancerModel.fromData(gender:Gender.GIRL,x:1,y:3,angle:270),
           DancerModel.fromData(gender:Gender.BOY,x:0,y:5,angle:270),
@@ -250,7 +249,7 @@ import '../../moves.dart';
 
     AnimatedCall('Scoot and Weave',
         from: 'Point-to-Point Left-Hand 1/4 Tag',
-        formation: Formation('', [
+        formation: Formation('', dancers:[
           DancerModel.fromData(gender:Gender.BOY,x:0,y:1,angle:90),
           DancerModel.fromData(gender:Gender.GIRL,x:1,y:3,angle:90),
           DancerModel.fromData(gender:Gender.BOY,x:0,y:5,angle:270),
@@ -278,7 +277,7 @@ import '../../moves.dart';
 
 
     AnimatedCall('As Couples Scoot and Weave',
-      formation:Formations.TwomFacedLinesRH,
+      formation:Formation('Two-Faced Lines RH'),
       from:'Two-Faced Lines',parts:'6',
       paths:[
           ExtendRight.changeBeats(2).changehands(2).scale(2.0,1.5) +
@@ -301,7 +300,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('All 8 Scoot and Weave',
-      formation:Formations.StaticMiniWavesRH,
+      formation:Formation('Static MiniWaves RH'),
       from:'Squared Mini-Waves',parts:'7',
       paths:[
           Forward_3 +

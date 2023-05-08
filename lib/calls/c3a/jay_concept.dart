@@ -21,13 +21,12 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> JayConcept = [
 
     AnimatedCall('Jay Left Wheel Thru',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:3,y:1,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:3,y:-1,angle:180),
         DancerModel.fromData(gender:Gender.BOY,x:0,y:-1,angle:0),
@@ -45,7 +44,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Jay Pass the Ocean',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:3,y:0,angle:270),
         DancerModel.fromData(gender:Gender.GIRL,x:-1,y:0,angle:270),
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:-3,angle:90),
@@ -66,7 +65,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Jay Square Thru Three',
-      formation:Formations.QuarterTag,
+      formation:Formation('Quarter Tag'),
       group:'Jay',
       paths:[
           ExtendLeft.changeBeats(2).scale(1.0,0.5) +
@@ -91,7 +90,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Jay Swap Around',
-      formation:Formations.QuarterTag,
+      formation:Formation('Quarter Tag'),
       group:'Jay',
       paths:[
           RunRight.changeBeats(4),
@@ -104,7 +103,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Jay Touch a Quarter',
-      formation:Formations.QuarterTag,
+      formation:Formation('Quarter Tag'),
       group:'Jay',
       paths:[
           ExtendLeft.changeBeats(2).scale(1.5,0.5) +
@@ -119,7 +118,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Back Jay Chase Right',
-      formation:Formations.n34Tag,
+      formation:Formation('3/4 Tag'),
       group:'Back Jay',
       paths:[
           UmTurnRight.changeBeats(1.5).skew(-1.0,-1.0) +
@@ -138,7 +137,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Back Jay Shakedown',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:3,y:3,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:3,y:-3,angle:0),
         DancerModel.fromData(gender:Gender.BOY,x:0,y:3,angle:180),
@@ -162,7 +161,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left Jay Partner Tag',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:0,y:3,angle:270),
         DancerModel.fromData(gender:Gender.GIRL,x:2,y:1,angle:90),
         DancerModel.fromData(gender:Gender.BOY,x:0,y:1,angle:270),
@@ -184,7 +183,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Right Jay Partner Tag',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:0,y:3,angle:270),
         DancerModel.fromData(gender:Gender.GIRL,x:2,y:1,angle:90),
         DancerModel.fromData(gender:Gender.BOY,x:0,y:1,angle:270),

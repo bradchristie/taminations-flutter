@@ -19,13 +19,13 @@
 */
 
 import '../../animated_call.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> Counter = [
 
     AnimatedCall('Counter',
-      formation:Formations.QuarterTag,
+      formation:Formation('Quarter Tag'),
       from:'Quarter Tag',
       paths:[
           ExtendLeft.changeBeats(4).scale(3.0,3.0) +
@@ -46,7 +46,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Counter',
-      formation:Formations.QuarterLinesRH,
+      formation:Formation('Quarter Lines RH'),
       from:'Quarter Line',
       paths:[
           ExtendLeft.changeBeats(4).scale(3.0,3.0) +
@@ -69,7 +69,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Counter',
-      formation:Formations.n34Tag,
+      formation:Formation('3/4 Tag'),
       from:'3/4 Tag',
       paths:[
           RunRight.changeBeats(4).scale(1.0,1.5).skew(-3.0,0.0) +
@@ -90,7 +90,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Counter',
-      formation:Formations.QuarterTagLH,
+      formation:Formation('Quarter Tag LH'),
       from:'Left-Hand Quarter Tag',
       paths:[
           ExtendLeft.changeBeats(4).scale(3.0,3.0) +
@@ -111,7 +111,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Counter',
-      formation:Formations.QuarterLinesLH,
+      formation:Formation('Quarter Lines LH'),
       from:'Left-Hand Quarter Line',
       paths:[
           ExtendLeft.changeBeats(4).scale(3.0,3.0) +
@@ -134,7 +134,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Counter',
-      formation:Formations.n34TagLH,
+      formation:Formation('3/4 Tag LH'),
       from:'Left-Hand 3/4 Tag',
       paths:[
           RunRight.changeBeats(4).scale(1.0,1.5).skew(-3.0,0.0) +
@@ -155,7 +155,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left Counter',
-      formation:Formations.QuarterTag,
+      formation:Formation('Quarter Tag'),
       from:'Quarter Tag',
       paths:[
           ExtendLeft.changeBeats(4).scale(3.0,2.0) +
@@ -176,7 +176,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left Counter',
-      formation:Formations.QuarterLinesRH,
+      formation:Formation('Quarter Lines RH'),
       from:'Quarter Line',
       paths:[
           ExtendLeft.changeBeats(4).scale(3.0,2.0) +
@@ -199,7 +199,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left Counter',
-      formation:Formations.n34Tag,
+      formation:Formation('3/4 Tag'),
       from:'3/4 Tag',
       paths:[
           RunRight.changeBeats(4).skew(-3.0,0.0) +
@@ -220,7 +220,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left Counter',
-      formation:Formations.QuarterTagLH,
+      formation:Formation('Quarter Tag LH'),
       from:'Left-Hand Quarter Tag',
       paths:[
           ExtendLeft.changeBeats(4).scale(3.0,2.0) +
@@ -241,7 +241,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left Counter',
-      formation:Formations.QuarterLinesLH,
+      formation:Formation('Quarter Lines LH'),
       from:'Left-Hand Quarter Line',
       paths:[
           ExtendLeft.changeBeats(4).scale(3.0,2.0) +
@@ -264,7 +264,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left Counter',
-      formation:Formations.n34TagLH,
+      formation:Formation('3/4 Tag LH'),
       from:'Left-Hand 3/4 Tag',
       paths:[
           RunRight.changeBeats(4).skew(-3.0,0.0) +
@@ -285,7 +285,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Scoot and Counter',
-      formation:Formations.QuarterTag,
+      formation:Formation('Quarter Tag'),
       from:'Quarter Tag',fractions:'5',
       paths:[
           ExtendLeft.scale(1.5,1.5) +
@@ -318,7 +318,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left Scoot and Counter',
-      formation:Formations.QuarterTagLH,
+      formation:Formation('Quarter Tag LH'),
       from:'Left-Hand Quarter Tag',fractions:'5',
       paths:[
           Forward.scale(1.5,1.0) +

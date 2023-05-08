@@ -19,13 +19,13 @@
 */
 
 import '../../animated_call.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> AnythingConcept = [
 
     AnimatedCall('Split Counter Coordinate',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       group:' ',
       paths:[
           QuarterRight.changeBeats(4).changehands(6).skew(3.0,0.0) +
@@ -49,7 +49,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Split Coordinate',
-      formation:Formations.ColumnRHGBGB,
+      formation:Formation('Column RH GBGB'),
       group:' ',
       paths:[
           FlipRight.changeBeats(2) +
@@ -72,7 +72,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Counter Motivate',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       group:' ',
       paths:[
           LeadRight.changeBeats(5).scale(5.0,1.0) +
@@ -97,7 +97,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Trade Motivate',
-      formation:Formations.OceanWavesLHBGGB,
+      formation:Formation('Ocean Waves LH BGGB'),
       group:' ',
       paths:[
           RunLeft.changeBeats(4).scale(1.5,2.0) +
@@ -124,7 +124,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Counter Percolate',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       group:' ',
       paths:[
           LeadRight.changeBeats(5).scale(5.0,1.0) +
@@ -150,7 +150,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Split Percolate',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       group:' ',
       paths:[
           Forward_4 +
@@ -176,7 +176,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Trade Percolate',
-      formation:Formations.OceanWavesLHBGGB,
+      formation:Formation('Ocean Waves LH BGGB'),
       group:' ',
       paths:[
           RunLeft.changeBeats(4).scale(1.5,2.0) +

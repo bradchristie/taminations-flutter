@@ -20,13 +20,13 @@
 
 import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> SpinTheTop = [
 
     AnimatedCall('Spin the Top',
-      formation:Formations.WaveRHGBBG,
+      formation:Formation('Wave RH GBBG'),
       from:'Right-Hand Wave',parts:'3',difficulty: 1,
       paths:[
           SwingRight +
@@ -39,7 +39,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Spin the Top',
-      formation:Formations.WaveLHGBBG,
+      formation:Formation('Wave LH GBBG'),
       from:'Left-Hand Wave',parts:'3',difficulty: 2,
       paths:[
           SwingLeft +
@@ -52,7 +52,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Spin the Top',
-      formation:Formations.FacingCouples,
+      formation:Formation('Facing Couples'),
       from:'Facing Couples',parts:'5',difficulty: 2,
       paths:[
           ExtendLeft.changeBeats(2).scale(2.0,2.0) +
@@ -65,7 +65,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Spin the Top',
-      formation:Formations.FacingCouplesClose,
+      formation:Formation('Facing Couples Close'),
       from:'Close Couples',parts:'4',difficulty: 2,noDisplay: true,
       paths:[
           ExtendLeft.scale(1.0,0.5) +
@@ -78,7 +78,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Spin the Top',
-      formation:Formations.OceanWavesRHGBBG,
+      formation:Formation('Ocean Waves RH GBBG'),
       from:'Right-Hand Waves',parts:'3',difficulty: 1,
       paths:[
           SwingRight +
@@ -99,7 +99,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Spin the Top',
-      formation:Formations.OceanWavesLHGBBG,
+      formation:Formation('Ocean Waves LH GBBG'),
       from:'Left-Hand Waves',parts:'3',difficulty: 2,
       paths:[
           SwingLeft +
@@ -120,7 +120,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Spin the Top',
-      formation:Formations.TidalWaveRHGBBG,
+      formation:Formation('Tidal Wave RH GBBG'),
       from:'Right-Hand Tidal Wave',parts:'3',difficulty: 1,
       paths:[
           SwingRight.changehands(6).scale(0.5,0.5) +
@@ -139,7 +139,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Spin the Top',
-      formation:Formations.TidalWaveLHBGGB,
+      formation:Formation('Tidal Wave LH BGGB'),
       from:'Left-Hand Tidal Wave',parts:'3',difficulty: 2,
       paths:[
           SwingLeft.changehands(5).scale(0.5,0.5) +
@@ -158,7 +158,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Spin the Top',
-      formation:Formations.EightChainThru,
+      formation:Formation('Eight Chain Thru'),
       from:'Eight Chain Thru',parts:'4',difficulty: 2,
       paths:[
           ExtendLeft.scale(1.0,0.5) +
@@ -179,7 +179,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Spin the Top',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       from:'Lines',parts:'5',difficulty: 3,
       paths:[
           ExtendLeft.changeBeats(2).scale(2.0,0.5) +
@@ -202,7 +202,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left Spin the Top',
-      formation:Formations.FacingCouples,
+      formation:Formation('Facing Couples'),
       from:'Facing Couples',parts:'5',difficulty: 3,
       paths:[
           Forward_2 +
@@ -215,7 +215,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left Spin the Top',
-      formation:Formations.FacingCouplesClose,
+      formation:Formation('Facing Couples Close'),
       from:'Close Couples',parts:'4',difficulty: 2,noDisplay: true,
       paths:[
           ExtendRight.scale(1.0,0.5) +
@@ -228,7 +228,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left Spin the Top',
-      formation:Formations.EightChainThru,
+      formation:Formation('Eight Chain Thru'),
       from:'Eight Chain Thru',parts:'4',difficulty: 3,
       paths:[
           ExtendRight.scale(1.0,0.5) +
@@ -249,7 +249,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left Spin the Top',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       from:'Lines',parts:'5',difficulty: 3,
       paths:[
           ExtendRight.changeBeats(2).scale(2.0,0.5) +
@@ -272,7 +272,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Heads Spin the Top',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       from:'Static Square',group:' ',parts:'6',difficulty: 2,
       paths:[
           ExtendLeft.changeBeats(3).scale(3.0,0.5) +
@@ -290,7 +290,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Heads Left Spin the Top',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       from:'Static Square',group:' ',parts:'6',difficulty: 3,
       paths:[
           ExtendRight.changeBeats(3).scale(3.0,0.5) +

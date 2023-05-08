@@ -21,13 +21,12 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> StepAndFlip = [
 
     AnimatedCall('Step and Flip',
-      formation:Formations.LinesFacingOut,
+      formation:Formation('Lines Facing Out'),
       from:'Lines Facing Out',
       paths:[
           FlipLeft.skew(-1.0,0.0),
@@ -40,7 +39,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Step and Flip',
-      formation:Formations.InvertedLinesEndsFacingIn,
+      formation:Formation('Inverted Lines Ends Facing In'),
       from:'Inverted Lines Ends Facing In',
       paths:[
           FlipRight.skew(1.0,0.0),
@@ -53,7 +52,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Step and Flip',
-      formation:Formations.InvertedLinesEndsFacingOut,
+      formation:Formation('Inverted Lines Ends Facing Out'),
       from:'Inverted Lines Ends Facing Out',
       paths:[
           FlipLeft.skew(1.0,0.0),
@@ -66,7 +65,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Step and Flip',
-      formation:Formations.n3and_1lines5,
+      formation:Formation('3 and 1 Lines #5'),
       from:'3 and 1 Lines #5',
       paths:[
           FlipRight.skew(1.0,0.0),
@@ -79,7 +78,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Step and Flip',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:1,y:2,angle:90),
         DancerModel.fromData(gender:Gender.GIRL,x:3,y:2,angle:90),
         DancerModel.fromData(gender:Gender.BOY,x:-3,y:2,angle:90),
@@ -97,7 +96,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Step and Flip',
-      formation:Formations.n3and_1lines8,
+      formation:Formation('3 and 1 Lines #8'),
       from:'3 and 1 Lines #8',
       paths:[
           FlipLeft.skew(-1.0,0.0),
@@ -110,7 +109,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Step and Flip',
-      formation:Formation('Tidal Line RH', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:0,y:3.5,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:0,y:2.5,angle:0),
         DancerModel.fromData(gender:Gender.BOY,x:0,y:.5,angle:0),
@@ -128,7 +127,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Step and Flip',
-      formation:Formations.TidalLineLH,
+      formation:Formation('Tidal Line LH'),
       from:'Tidal Line LH',noDisplay: true,
       paths:[
           ExtendRight.changeBeats(3).changehands(1).scale(3.0,0.5),
@@ -141,7 +140,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Step and Flip',
-      formation:Formations.TidalInvertedLineRH,
+      formation:Formation('Tidal Inverted Line RH'),
       from:'Tidal Inverted Line',
       paths:[
           FlipRight.skew(0.0,1.5),
@@ -154,7 +153,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Step and Flip',
-      formation:Formations.TidalInvertedLineLH,
+      formation:Formation('Tidal Inverted Line LH'),
       from:'Tidal Inverted Line LH',noDisplay: true,
       paths:[
           FlipLeft.skew(0.0,-1.5),
@@ -167,7 +166,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Step and Flip',
-      formation:Formations.TwomFacedLineRH,
+      formation:Formation('Two-Faced Line RH'),
       from:'Right-Hand Two-Faced Line',
       paths:[
           FlipRight,
@@ -176,7 +175,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Step and Flip',
-      formation:Formations.TwomFacedLineLH,
+      formation:Formation('Two-Faced Line LH'),
       from:'Left-Hand Two-Faced Line',
       paths:[
           Forward_2,
@@ -185,7 +184,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Step and Flip',
-      formation:Formations.TwomFacedLinesRH,
+      formation:Formation('Two-Faced Lines RH'),
       from:'Right-Hand Two-Faced Lines',
       paths:[
           FlipRight,
@@ -198,7 +197,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Step and Flip',
-      formation:Formations.TwomFacedLinesLH,
+      formation:Formation('Two-Faced Lines LH'),
       from:'Left-Hand Two-Faced Lines',
       paths:[
           FlipLeft,
@@ -211,7 +210,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Step and Flip',
-      formation:Formations.TwomFacedTidalLineRH,
+      formation:Formation('Two-Faced Tidal Line RH'),
       from:'Right-Hand Two-Faced Tidal Line',
       paths:[
           FlipRight.scale(1.0,0.25),
@@ -224,7 +223,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Step and Flip',
-      formation:Formations.TwomFacedTidalLineLH,
+      formation:Formation('Two-Faced Tidal Line LH'),
       from:'Left-Hand Two-Faced Tidal Line',
       paths:[
           FlipLeft.scale(1.0,0.25),
@@ -237,7 +236,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Step and Flip and Roll',
-      formation:Formations.LinesFacingOut,
+      formation:Formation('Lines Facing Out'),
       from:'Lines Facing Out',group:' ',
       paths:[
           FlipLeft.skew(-1.0,0.0) +
@@ -252,7 +251,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('As Couples Step and Flip',
-      formation:Formation('Tidal Line RH', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:0,y:3.5,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:0,y:2.5,angle:0),
         DancerModel.fromData(gender:Gender.BOY,x:0,y:.5,angle:0),
@@ -270,7 +269,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Stretch Step and Flip',
-      formation:Formations.InvertedLinesEndsFacingIn,
+      formation:Formation('Inverted Lines Ends Facing In'),
       group:' ',
       paths:[
           Forward_2 +
@@ -285,7 +284,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Tandem Step and Flip',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       group:' ',
       paths:[
           Forward_3 +

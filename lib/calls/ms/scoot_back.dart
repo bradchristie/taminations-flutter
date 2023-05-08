@@ -21,13 +21,12 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> ScootBack = [
 
     AnimatedCall('Scoot Back',
-      formation:Formations.BoxRH,
+      formation:Formation('Box RH'),
       from:'Right-Hand Box',fractions:'3',difficulty: 1,
       paths:[
           ExtendRight.changeBeats(1.5).scale(2.0,0.25) +
@@ -38,7 +37,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Scoot Back',
-      formation:Formations.BoxLH,
+      formation:Formation('Box LH'),
       from:'Left-Hand Box',fractions:'3',difficulty: 2,
       paths:[
           FlipLeft.changeBeats(6),
@@ -49,7 +48,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Scoot Back',
-      formation:Formations.SingleQuarterTag,
+      formation:Formation('Single Quarter Tag'),
       from:'Single Quarter Tag',difficulty: 2,
       paths:[
           ExtendLeft.changeBeats(1.5).scale(1.5,0.75) +
@@ -62,7 +61,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Scoot Back',
-      formation:Formations.SingleLeftQuarterTag,
+      formation:Formation('Single Left Quarter Tag'),
       from:'Left-Hand Single Quarter Tag',difficulty: 3,
       paths:[
           ExtendRight.changeBeats(1.5).scale(1.5,0.75) +
@@ -75,7 +74,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Scoot Back',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-1.0,y:1,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:-1.0,y:-1,angle:270),
   ]),
@@ -89,7 +88,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Scoot Back',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-1.0,y:-1,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:-1.0,y:1,angle:90),
   ]),
@@ -103,7 +102,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Scoot Back',
-      formation:Formations.OceanWavesRHBGBG,
+      formation:Formation('Ocean Waves RH BGBG'),
       from:'Right-Hand Waves',fractions:'3',difficulty: 1,
       paths:[
           ExtendRight.changeBeats(1.5).scale(2.0,0.25) +
@@ -120,7 +119,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Scoot Back',
-      formation:Formations.OceanWavesLHBGBG,
+      formation:Formation('Ocean Waves LH BGBG'),
       from:'Left-Hand Waves',fractions:'3',difficulty: 2,
       paths:[
           FlipLeft.changeBeats(6),
@@ -137,7 +136,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Scoot Back',
-      formation:Formations.ColumnRHGBGB,
+      formation:Formation('Column RH GBGB'),
       from:'Right-Hand Columns',fractions:'3',difficulty: 2,
       paths:[
           RunRight.changeBeats(6).scale(0.5,1.0),
@@ -154,7 +153,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Scoot Back',
-      formation:Formations.ColumnLHGBGB,
+      formation:Formation('Column LH GBGB'),
       from:'Left-Hand Columns',fractions:'3',difficulty: 2,
       paths:[
           ExtendLeft.changeBeats(1.5).scale(1.0,0.5) +
@@ -171,7 +170,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Scoot Back',
-      formation:Formations.TmBoneURUR,
+      formation:Formation('T-Bone URUR'),
       from:'T-Bones URUR',noDisplay: true,
       paths:[
           ExtendRight.changeBeats(1.5).scale(1.0,0.25) +
@@ -188,7 +187,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Scoot Back',
-      formation:Formations.TmBoneLULU,
+      formation:Formation('T-Bone LULU'),
       from:'T-Bones LULU',noDisplay: true,
       paths:[
           RunRight.changeBeats(6),
@@ -205,7 +204,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Scoot Back',
-      formation:Formations.TmBoneDLDL,
+      formation:Formation('T-Bone DLDL'),
       from:'T-Bones DLDL',noDisplay: true,
       paths:[
           RunLeft.changeBeats(6).scale(0.5,1.0),
@@ -222,7 +221,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Scoot Back',
-      formation:Formations.TmBoneRDRD,
+      formation:Formation('T-Bone RDRD'),
       from:'T-Bones RDRD',noDisplay: true,
       paths:[
           RunRight.changeBeats(6).scale(0.5,1.0),
@@ -239,7 +238,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Scoot Back',
-      formation:Formations.QuarterTag,
+      formation:Formation('Quarter Tag'),
       from:'Quarter Tag',fractions:'3',difficulty: 2,
       paths:[
           ExtendLeft.changeBeats(1.5).scale(1.5,1.5) +
@@ -260,7 +259,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Scoot Back',
-      formation:Formations.QuarterTagLH,
+      formation:Formation('Quarter Tag LH'),
       from:'Left-Hand Quarter Tag',fractions:'3',difficulty: 3,
       paths:[
           Forward.changeBeats(1.5).scale(1.5,1.0) +
@@ -283,7 +282,7 @@ import '../../moves.dart';
     AnimatedCall('Scoot Back',
         from: 'Point-to-Point 1/4 Tag',
         difficulty: 3,
-        formation: Formation('', [
+        formation: Formation('', dancers:[
           DancerModel.fromData(gender:Gender.BOY,x:0,y:1,angle:90),
           DancerModel.fromData(gender:Gender.GIRL,x:1,y:3,angle:270),
           DancerModel.fromData(gender:Gender.BOY,x:0,y:5,angle:270),
@@ -310,7 +309,7 @@ import '../../moves.dart';
     AnimatedCall('Scoot Back',
         from: 'Point-to-Point Left-Hand 1/4 Tag',
         difficulty: 3,
-        formation: Formation('', [
+        formation: Formation('', dancers:[
           DancerModel.fromData(gender:Gender.BOY,x:0,y:1,angle:90),
           DancerModel.fromData(gender:Gender.GIRL,x:1,y:3,angle:90),
           DancerModel.fromData(gender:Gender.BOY,x:0,y:5,angle:270),

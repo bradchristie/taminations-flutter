@@ -20,13 +20,13 @@
 
 import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> Squeeze = [
 
     AnimatedCall('Ends Squeeze',
-      formation:Formations.ColumnRHGBGB,
+      formation:Formation('Column RH GBGB'),
       from:'Columns',
       paths:[
           HingeRight.scale(0.5,1.0) +
@@ -41,7 +41,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Ends Squeeze',
-      formation:Formations.ButterflyRH,
+      formation:Formation('Butterfly RH'),
       from:'Butterfly',
       paths:[
           LeadRight.changeBeats(3).scale(0.5,3.0) +
@@ -56,7 +56,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Squeeze',
-      formation:Formations.ButterflyRH,
+      formation:Formation('Butterfly RH'),
       from:'Butterfly',
       paths:[
           LeadRight.changeBeats(3).scale(0.5,3.0) +
@@ -73,7 +73,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Squeeze',
-      formation:Formations.DiamondsRHGirlPoints,
+      formation:Formation('Diamonds RH Girl Points'),
       from:'Diamonds',
       paths:[
           SwingRight +
@@ -90,7 +90,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Squeeze',
-      formation:Formations.ORH,
+      formation:Formation('O RH'),
       from:'O',
       paths:[
           HingeRight.scale(0.5,1.0) +
@@ -107,7 +107,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Centers Tandem Squeeze',
-      formation:Formations.ColumnRHGBGB,
+      formation:Formation('Column RH GBGB'),
       from:'Right-Hand Columns',
       paths:[
           Path(),
@@ -123,7 +123,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Centers Tandem Squeeze',
-      formation:Formations.ColumnLHGBGB,
+      formation:Formation('Column LH GBGB'),
       from:'Left-Hand Columns',
       paths:[
           Path(),
@@ -139,7 +139,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Squeeze the Hourglass',
-      formation:Formations.HourglassRHBP,
+      formation:Formation('Hourglass RH BP'),
       from:'Right-Hand Hourglass',
       paths:[
           QuarterRight.changeBeats(3).skew(0.0,-3.0) +
@@ -155,7 +155,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Squeeze the Hourglass',
-      formation:Formations.HourglassLHBP,
+      formation:Formation('Hourglass LH BP'),
       from:'Left-Hand Hourglass',
       paths:[
           LeadLeft.changeBeats(3).scale(1.0,3.0) +
@@ -171,7 +171,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Squeeze the Galaxy',
-      formation:Formations.GalaxyRHGP,
+      formation:Formation('Galaxy RH GP'),
       from:'Right-Hand Galaxy',
       paths:[
           HingeRight +
@@ -187,7 +187,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Squeeze the Galaxy',
-      formation:Formations.GalaxyLHGP,
+      formation:Formation('Galaxy LH GP'),
       from:'Left-Hand Galaxy',
       paths:[
           QuarterLeft.changehands(1).skew(0.0,1.0) +

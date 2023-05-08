@@ -18,7 +18,6 @@
 
 */
 
-import '../../../formations.dart';
 import '../../../moves.dart';
 import '../common.dart';
 
@@ -33,7 +32,7 @@ class ThreeQuartersTag extends Action {
     var dir = (name.startsWith('Left')) ? 'Left' : '';
     //  All the 4-dancer formations are in Taminations
     if (ctx.actives.length < 8 && !ctx.isAsym()) {
-      ctx.adjustToFormation(Formations.TwomFacedLineRH,rotate: 90, maxError: 6.1);
+      ctx.adjustToFormation(Formation('Two-Faced Line RH'),rotate: 90, maxError: 6.1);
       print(ctx.dancers.show());
       ctx.applyCalls('$dir 3/4 Tag the Line');
     }

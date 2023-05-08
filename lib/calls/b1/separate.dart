@@ -20,13 +20,13 @@
 
 import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> Separate = [
 
     AnimatedCall('Heads Separate',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       group:' ',actives:'Heads',
       paths:[
           ExtendLeft.changeBeats(3).scale(2.0,2.0),
@@ -39,7 +39,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Sides Separate',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       group:' ',actives:'Sides',
       paths:[
           Forward_2.changeBeats(3).changehands(2),
@@ -52,7 +52,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Heads Separate And Star Thru',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       group:' ',isGenderSpecific:true,actives:'Heads',
       paths:[
           ExtendLeft.changeBeats(3).scale(2.0,2.5) +
@@ -69,7 +69,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Heads Pass Thru, Separate Around 1 to a Line',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       group:'Heads Pass Thru, Separate',
       paths:[
           ExtendLeft.changeBeats(3).scale(3.0,0.5) +
@@ -90,7 +90,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Heads Pass Thru, Separate Around 1 and Come Into the Middle',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       group:'Heads Pass Thru, Separate',
       paths:[
           ExtendLeft.changeBeats(3).scale(3.0,0.5) +
@@ -117,7 +117,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Heads Pass Thru, Separate Around 2 and Come Into the Middle',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       group:'Heads Pass Thru, Separate',
       paths:[
           ExtendLeft.changeBeats(3).scale(3.0,0.5) +
@@ -146,7 +146,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Heads Pass Thru, Separate Around 2 to a Line',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       group:'Heads Pass Thru, Separate',
       paths:[
           ExtendLeft.changeBeats(3).scale(3.0,0.5) +
@@ -169,7 +169,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Heads Pass Thru, Separate Around 2; Meet Your Partner and Dosado',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       group:'Heads Pass Thru, Separate',
       paths:[
           ExtendLeft.changeBeats(3).scale(3.0,0.5) +
@@ -200,7 +200,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Outside Couples Separate And Touch a Quarter',
-      formation:Formations.TradeBy,
+      formation:Formation('Trade By'),
       group:'Outside Couples Separate',
       paths:[
           RunRight.changeBeats(5).skew(-3.0,-0.5) +
@@ -215,7 +215,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Heads Pass the Ocean and Swing Thru, Others Separate and Everybody Right and Left Thru',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       group:'  ',
       paths:[
           ExtendLeft.changeBeats(3).scale(3.0,0.5) +
@@ -246,7 +246,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Around One to a Line',
-      formation:Formations.TmBoneURLU,
+      formation:Formation('T-Bone URLU'),
       group:'   ',
       paths:[
           QuarterRight.changeBeats(2).skew(0.0,-1.5),
@@ -259,7 +259,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Around Two to a Line',
-      formation:Formations.TmBoneURLU,
+      formation:Formation('T-Bone URLU'),
       group:'   ',
       paths:[
           ExtendLeft.scale(1.0,0.5) +
@@ -274,7 +274,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Around One and Come Into the Middle',
-      formation:Formations.TmBoneURLU,
+      formation:Formation('T-Bone URLU'),
       group:'   ',
       paths:[
           QuarterRight.changeBeats(3).skew(0.0,-2.0),
@@ -289,7 +289,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Around Two and Come Into the Middle',
-      formation:Formations.TmBoneURLU,
+      formation:Formation('T-Bone URLU'),
       group:'   ',
       paths:[
           ExtendLeft.scale(1.0,0.5) +

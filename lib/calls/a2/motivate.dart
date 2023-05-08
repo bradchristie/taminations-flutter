@@ -21,13 +21,12 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> Motivate = [
 
     AnimatedCall('Motivate',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       from:'Right-Hand Waves',parts:'4;4.5;3',difficulty: 1,
       paths:[
           Forward_4 +
@@ -52,7 +51,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Motivate',
-      formation:Formations.OceanWavesLHBGGB,
+      formation:Formation('Ocean Waves LH BGGB'),
       from:'Left-Hand Waves',parts:'4;4.5;3',difficulty: 1,
       paths:[
           RunLeft.changeBeats(4).scale(2.0,3.0) +
@@ -77,7 +76,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Motivate',
-      formation:Formations.TwomFacedLinesRH,
+      formation:Formation('Two-Faced Lines RH'),
       from:'Two-Faced Lines',parts:'4;4.5;3',difficulty: 3,
       paths:[
           Forward_4.changehands(2) +
@@ -108,7 +107,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Motivate',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.GIRL,x:3,y:1,angle:270),
         DancerModel.fromData(gender:Gender.GIRL,x:1,y:1,angle:0),
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:1,angle:0),
@@ -148,7 +147,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Motivate, Turn the Star 1/4',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       from:'Right-Hand Waves',group:' ',parts:'4;4.5;3',difficulty: 1,
       paths:[
           Forward_4 +
@@ -173,7 +172,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Motivate, Turn the Star 1/4',
-      formation:Formations.OceanWavesLHBGGB,
+      formation:Formation('Ocean Waves LH BGGB'),
       from:'Left-Hand Waves',group:' ',parts:'4;4.5;3',difficulty: 1,noDisplay: true,
       paths:[
           RunLeft.changeBeats(4).scale(2.0,3.0) +
@@ -198,7 +197,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Motivate, Turn the Star 3/4',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       from:'Right-Hand Waves',group:' ',parts:'4;4.5;3',difficulty: 1,
       paths:[
           Forward_4 +
@@ -223,7 +222,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Motivate, Turn the Star 3/4',
-      formation:Formations.OceanWavesLHBGGB,
+      formation:Formation('Ocean Waves LH BGGB'),
       from:'Left-Hand Waves',group:' ',parts:'4;4.5;3',difficulty: 1,noDisplay: true,
       paths:[
           RunLeft.changeBeats(4).scale(2.0,3.0) +
@@ -248,7 +247,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Motivate, Do Not Turn the Star',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       from:'Right-Hand Waves',group:' ',parts:'4;4.5;3',difficulty: 2,
       paths:[
           Forward_4 +
@@ -273,7 +272,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Motivate, Do Not Turn the Star',
-      formation:Formations.OceanWavesLHBGGB,
+      formation:Formation('Ocean Waves LH BGGB'),
       from:'Left-Hand Waves',group:' ',parts:'4;4.5;3',difficulty: 2,noDisplay: true,
       paths:[
           RunLeft.changeBeats(4).scale(2.0,3.0) +

@@ -19,13 +19,13 @@
 */
 
 import '../../animated_call.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> Rotate = [
 
     AnimatedCall('Rotate 1/4',
-      formation:Formations.CompletedDoublePassThru,
+      formation:Formation('Completed Double Pass Thru'),
       group:' ',fractions:'1.5',
       paths:[
           HingeLeft.scale(0.5,1.0) +
@@ -42,7 +42,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Reverse Rotate 1/4',
-      formation:Formations.CompletedDoublePassThru,
+      formation:Formation('Completed Double Pass Thru'),
       group:' ',fractions:'1.5',
       paths:[
           BackHingeLeft.scale(0.5,1.0) +
@@ -59,7 +59,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Single Rotate 1/4',
-      formation:Formations.CompletedDoublePassThru,
+      formation:Formation('Completed Double Pass Thru'),
       group:' ',fractions:'1.5',
       paths:[
           QuarterLeft.skew(0.0,-1.0) +
@@ -76,7 +76,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Reverse Single Rotate 1/4',
-      formation:Formations.CompletedDoublePassThru,
+      formation:Formation('Completed Double Pass Thru'),
       group:' ',fractions:'1.5',
       paths:[
           QuarterRight.skew(0.0,-1.0) +
@@ -93,7 +93,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Split Single Rotate 1/4',
-      formation:Formations.CompletedDoublePassThru,
+      formation:Formation('Completed Double Pass Thru'),
       group:' ',fractions:'1.5',
       paths:[
           QuarterLeft +

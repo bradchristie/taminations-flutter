@@ -19,13 +19,13 @@
 */
 
 import '../../animated_call.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> ShootTheStar = [
 
     AnimatedCall('Shoot the Star',
-      formation:Formations.TharRHBoys,
+      formation:Formation('Thar RH Boys'),
       from:'Thar',
       paths:[
           SwingLeft +
@@ -42,7 +42,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Shoot the Star',
-      formation:Formations.TharLHBoys,
+      formation:Formation('Thar LH Boys'),
       from:'Wrong Way Thar',
       paths:[
           SwingRight +
@@ -59,7 +59,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Shoot the Star 3/4 to an Alamo Ring',
-      formation:Formations.TharRHBoys,
+      formation:Formation('Thar RH Boys'),
       from:'Thar',
       paths:[
           SwingLeft +
@@ -80,7 +80,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Shoot the Star 3/4 to an Alamo Ring',
-      formation:Formations.TharLHBoys,
+      formation:Formation('Thar LH Boys'),
       from:'Wrong Way Thar',
       paths:[
           SwingRight +
@@ -101,7 +101,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Shoot the Star All the Way Around',
-      formation:Formations.TharRHBoys,
+      formation:Formation('Thar RH Boys'),
       from:'Thar',
       paths:[
           SwingLeft +
@@ -122,7 +122,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Shoot the Star All the Way Around',
-      formation:Formations.TharLHBoys,
+      formation:Formation('Thar LH Boys'),
       from:'Wrong Way Thar',
       paths:[
           SwingRight +

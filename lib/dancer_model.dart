@@ -135,7 +135,7 @@ extension DancerList on List<DancerModel> {
     }
   }
 
-  String show({bool arrayNumbers=false, bool coupleNumbers=false}) {
+  String show({bool arrayNumbers=false, bool coupleNumbers=false, bool genders=false}) {
     final charMatrix = [for (var i=0; i<11; i++) [ for (var j=0; j<21; j++) ' ']];
     for (var i=0; i<21; i++)
       charMatrix[5][i] = '-';
@@ -151,6 +151,8 @@ extension DancerList on List<DancerModel> {
       if (dx.abs() <= 5 && dy.abs() <= 10) {
         var c = coupleNumbers ? d.numberCouple
             : arrayNumbers ? i.s : d.number;
+        if (genders)
+          c = d.gender.s;
         if (c.length > 1)
           c = c.substring(0,1);
         if (c.isEmpty)

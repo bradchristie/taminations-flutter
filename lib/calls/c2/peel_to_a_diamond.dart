@@ -19,13 +19,13 @@
 */
 
 import '../../animated_call.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> PeelToADiamond = [
 
     AnimatedCall('Peel to a Diamond',
-      formation:Formations.BoxRH,
+      formation:Formation('Box RH'),
       from:'Right-Hand Box',
       paths:[
           Forward_2 +
@@ -35,7 +35,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Peel to a Diamond',
-      formation:Formations.BoxLH,
+      formation:Formation('Box LH'),
       from:'Left-Hand Box',
       paths:[
           RunRight.changeBeats(4).skew(-2.0,0.0),
@@ -45,7 +45,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Peel to a Diamond',
-      formation:Formations.ColumnRHGBGB,
+      formation:Formation('Column RH GBGB'),
       from:'Right-Hand Columns',
       paths:[
           RunLeft.skew(-1.0,0.0),
@@ -60,7 +60,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Peel to a Diamond',
-      formation:Formations.ColumnLHGBGB,
+      formation:Formation('Column LH GBGB'),
       from:'Left-Hand Columns',
       paths:[
           Forward +
@@ -75,7 +75,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Peel to a Diamond',
-      formation:Formations.OceanWavesRHBGBG,
+      formation:Formation('Ocean Waves RH BGBG'),
       from:'Right-Hand Waves',
       paths:[
           ExtendRight.changeBeats(2).scale(2.0,0.5) +
@@ -90,7 +90,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Peel to a Diamond',
-      formation:Formations.OceanWavesLHBGBG,
+      formation:Formation('Ocean Waves LH BGBG'),
       from:'Left-Hand Waves',
       paths:[
           FlipRight.changeBeats(3).skew(-2.0,1.5),
@@ -105,7 +105,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('All 8 Peel to a Diamond',
-      formation:Formations.StaticMiniWavesRH,
+      formation:Formation('Static MiniWaves RH'),
       group:' ',
       paths:[
           Forward_3 +
@@ -120,7 +120,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('As Couples Peel to a Diamond',
-      formation:Formations.TwomFacedLinesRH,
+      formation:Formation('Two-Faced Lines RH'),
       group:' ',
       paths:[
           ExtendRight.changeBeats(2).scale(2.0,1.5) +
@@ -135,7 +135,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Concentric Peel to a Diamond',
-      formation:Formations.TwomFacedLinesRH,
+      formation:Formation('Two-Faced Lines RH'),
       group:'  ',
       paths:[
           Forward_3 +
@@ -150,7 +150,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Tandem Peel to a Diamond',
-      formation:Formations.ColumnRHGBGB,
+      formation:Formation('Column RH GBGB'),
       group:'  ',
       paths:[
           RunLeft.changeBeats(3).skew(-2.0,0.0) +
@@ -167,7 +167,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Trail to a Diamond',
-      formation:Formations.BoxRH,
+      formation:Formation('Box RH'),
       from:'Right-Hand Box',
       paths:[
           Forward_2 +
@@ -177,7 +177,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Trail to a Diamond',
-      formation:Formations.BoxLHGirlsLead,
+      formation:Formation('Box LH Girls Lead'),
       from:'Left-Hand Box',
       paths:[
           Forward_2 +
@@ -187,7 +187,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Trail to a Diamond',
-      formation:Formations.ColumnRHGBGB,
+      formation:Formation('Column RH GBGB'),
       from:'Right-Hand Columns',
       paths:[
           RunRight.scale(1.0,2.0).skew(-1.0,0.0),
@@ -202,7 +202,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Trail to a Diamond',
-      formation:Formations.ColumnLHGBGB,
+      formation:Formation('Column LH GBGB'),
       from:'Left-Hand Columns',
       paths:[
           Forward +
@@ -217,7 +217,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Trail to a Diamond',
-      formation:Formations.OceanWavesRHBGBG,
+      formation:Formation('Ocean Waves RH BGBG'),
       from:'Right-Hand Waves',
       paths:[
           ExtendRight.changeBeats(2).scale(2.0,0.5) +
@@ -232,7 +232,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Trail to a Diamond',
-      formation:Formations.OceanWavesLHBGBG,
+      formation:Formation('Ocean Waves LH BGBG'),
       from:'Left-Hand Waves',
       paths:[
           RunLeft.scale(1.0,1.25).skew(-2.0,0.0),
@@ -247,7 +247,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('All 8 Trail to a Diamond',
-      formation:Formations.StaticMiniWavesRH,
+      formation:Formation('Static MiniWaves RH'),
       group:' ',
       paths:[
           Forward_3 +
@@ -262,7 +262,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('As Couples Trail to a Diamond',
-      formation:Formations.TwomFacedLinesRH,
+      formation:Formation('Two-Faced Lines RH'),
       group:' ',
       paths:[
           Forward_2.changehands(2) +
@@ -279,7 +279,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Concentric Trail to a Diamond',
-      formation:Formations.TwomFacedLinesRH,
+      formation:Formation('Two-Faced Lines RH'),
       group:'  ',
       paths:[
           Forward_3 +
@@ -294,7 +294,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Tandem Trail to a Diamond',
-      formation:Formations.ColumnRHGBGB,
+      formation:Formation('Column RH GBGB'),
       group:'  ',
       paths:[
           RunRight.changeBeats(4).scale(1.0,2.0).skew(-2.0,0.0) +

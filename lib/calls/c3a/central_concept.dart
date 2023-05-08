@@ -21,14 +21,13 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 import '../c3b/scramble.dart' as c3b;
 
   final List<AnimatedCall> CentralConcept = [
 
     AnimatedCall('Central Choice',
-      formation:Formations.OceanWavesRHBGBG,
+      formation:Formation('Ocean Waves RH BGBG'),
       group:'Central',
       paths:[
           LeadRight.changeBeats(4).scale(1.5,3.0) +
@@ -45,7 +44,7 @@ import '../c3b/scramble.dart' as c3b;
       ]),
 
     AnimatedCall('Central Counter',
-      formation:Formations.OceanWavesRHBGBG,
+      formation:Formation('Ocean Waves RH BGBG'),
       group:'Central',fractions:'4.5',
       paths:[
           CastRight +
@@ -62,7 +61,7 @@ import '../c3b/scramble.dart' as c3b;
       ]),
 
     AnimatedCall('Central Load the Boat',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       group:'Central',
       paths:[
           ExtendLeft.scale(2.0,0.5) +
@@ -91,7 +90,7 @@ import '../c3b/scramble.dart' as c3b;
       ]),
 
     AnimatedCall('Central Ramble',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-2,y:3,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:-2,y:-1,angle:0),
         DancerModel.fromData(gender:Gender.BOY,x:-2,y:1,angle:180),
@@ -117,7 +116,7 @@ import '../c3b/scramble.dart' as c3b;
       ]),
 
     AnimatedCall('Central Spin the Windmill',
-      formation:Formations.OceanWavesRHGBGB,
+      formation:Formation('Ocean Waves RH GBGB'),
       group:'Central',
       paths:[
           SwingRight +
@@ -140,7 +139,7 @@ import '../c3b/scramble.dart' as c3b;
       tam.title == 'Central Scramble').first.xref(title: 'Central Scramble').xref(group: 'Central'),
 
     AnimatedCall('Central Stampede',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       group:'Central',
       paths:[
           RunRight.changeBeats(4).scale(1.5,2.0) +
@@ -161,7 +160,7 @@ import '../c3b/scramble.dart' as c3b;
       ]),
 
     AnimatedCall('Each Wave Central Counter',
-      formation:Formations.OceanWavesRHBGBG,
+      formation:Formation('Ocean Waves RH BGBG'),
       group:' ',fractions:'4.5',
       paths:[
           CastRight +

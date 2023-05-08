@@ -26,7 +26,7 @@ import '../../moves.dart';
   final List<AnimatedCall> TakeN = [
 
     AnimatedCall('Take 0',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.GIRL,x:1,y:-2,angle:270),
         DancerModel.fromData(gender:Gender.BOY,x:3,y:-2,angle:270),
         DancerModel.fromData(gender:Gender.GIRL,x:-3,y:-2,angle:270),
@@ -44,7 +44,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Take 1',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.GIRL,x:1,y:-2,angle:270),
         DancerModel.fromData(gender:Gender.BOY,x:3,y:-2,angle:270),
         DancerModel.fromData(gender:Gender.GIRL,x:-3,y:-2,angle:270),
@@ -66,7 +66,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Take 2',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.GIRL,x:1,y:-2,angle:270),
         DancerModel.fromData(gender:Gender.BOY,x:3,y:-2,angle:270),
         DancerModel.fromData(gender:Gender.GIRL,x:-3,y:-2,angle:270),
@@ -88,7 +88,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Take 3',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.GIRL,x:1,y:-2,angle:270),
         DancerModel.fromData(gender:Gender.BOY,x:3,y:-2,angle:270),
         DancerModel.fromData(gender:Gender.GIRL,x:-3,y:-2,angle:270),
@@ -110,7 +110,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Take 4',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.GIRL,x:1,y:-2,angle:270),
         DancerModel.fromData(gender:Gender.BOY,x:3,y:-2,angle:270),
         DancerModel.fromData(gender:Gender.GIRL,x:-3,y:-2,angle:270),

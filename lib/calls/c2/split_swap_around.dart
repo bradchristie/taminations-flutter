@@ -20,13 +20,13 @@
 
 import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> SplitSwapAround = [
 
     AnimatedCall('Split Swap Around',
-      formation:Formations.FacingCouplesCompact,
+      formation:Formation('Facing Couples Compact'),
       from:'Facing Couples',
       paths:[
           QuarterRight.changeBeats(3).skew(0.5,-2.5),
@@ -35,7 +35,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Split Swap Around',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       from:'Normal Lines',
       paths:[
           QuarterRight.changeBeats(3).skew(1.0,-2.0),
@@ -48,7 +48,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Split Swap Around',
-      formation:Formations.EightChainThru,
+      formation:Formation('Eight Chain Thru'),
       from:'Eight Chain Thru',
       paths:[
           QuarterRight.changeBeats(3).skew(0.0,-3.0),
@@ -61,7 +61,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Heads Split Swap Around',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       group:' ',
       paths:[
           QuarterRight.changeBeats(3).skew(2.0,-2.0),
@@ -74,7 +74,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('As Couples Split Swap Around',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       from:'Normal Lines',group:' ',
       paths:[
           HingeRight.changeBeats(4).skew(0.0,-4.0),
@@ -87,7 +87,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Tandem Split Swap Around',
-      formation:Formations.DoublePassThru,
+      formation:Formation('Double Pass Thru'),
       group:' ',
       paths:[
           Stand.changeBeats(1) +
@@ -102,7 +102,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Reverse Split Swap Around',
-      formation:Formations.FacingCouplesCompact,
+      formation:Formation('Facing Couples Compact'),
       from:'Facing Couples',
       paths:[
           QuarterLeft.changeBeats(3).skew(2.5,0.5),
@@ -111,7 +111,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Reverse Split Swap Around',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       from:'Normal Lines',
       paths:[
           QuarterLeft.changeBeats(3).skew(3.0,0.0),
@@ -124,7 +124,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Reverse Split Swap Around',
-      formation:Formations.EightChainThru,
+      formation:Formation('Eight Chain Thru'),
       from:'Eight Chain Thru',
       paths:[
           QuarterLeft.changeBeats(3).skew(2.0,1.0),
@@ -137,7 +137,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Heads Reverse Split Swap Around',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       group:' ',
       paths:[
           QuarterLeft.changeBeats(3).skew(4.0,0.0),
@@ -150,7 +150,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('As Couples Reverse Split Swap Around',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       from:'Normal Lines',group:' ',
       paths:[
           BackHingeRight.changeBeats(4).skew(4.0,0.0),
@@ -163,7 +163,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Tandem Reverse Split Swap Around',
-      formation:Formations.DoublePassThru,
+      formation:Formation('Double Pass Thru'),
       group:' ',
       paths:[
           QuarterLeft.changeBeats(5).skew(4.0,0.0),
@@ -178,7 +178,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Sides Reverse Split Swap Around',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       group:' ',noDisplay: true,
       paths:[
           Path(),

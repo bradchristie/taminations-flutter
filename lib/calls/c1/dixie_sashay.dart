@@ -21,13 +21,12 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> DixieSashay = [
 
     AnimatedCall('Dixie Sashay',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:1,y:1.5,angle:270),
         DancerModel.fromData(gender:Gender.GIRL,x:-1,y:1.5,angle:270),
   ]),
@@ -42,7 +41,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Dixie Sashay',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:1,y:1,angle:270),
         DancerModel.fromData(gender:Gender.GIRL,x:-1,y:1,angle:270),
   ]),
@@ -57,7 +56,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Dixie Sashay',
-      formation:Formations.TandemGirlsLead,
+      formation:Formation('Tandem Girls Lead'),
       from:'Tandem',
       paths:[
           Stand.changeBeats(2) +
@@ -71,7 +70,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Dixie Sashay',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       from:'Lines',
       paths:[
           DodgeRight.changeBeats(4).scale(1.0,0.875) +
@@ -90,7 +89,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Dixie Sashay',
-      formation:Formations.EightChainThru,
+      formation:Formation('Eight Chain Thru'),
       from:'Eight Chain Thru',
       paths:[
           DodgeRight.scale(1.0,0.875).skew(-0.3,0.0) +
@@ -111,7 +110,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Dixie Sashay',
-      formation:Formations.DoublePassThru,
+      formation:Formation('Double Pass Thru'),
       from:'Double Pass Thru',
       paths:[
           Stand.changeBeats(2) +
@@ -134,7 +133,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('All 8 Dixie Sashay',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       group:' ',
       paths:[
           ExtendRight.changeBeats(5).scale(1.0,1.75) +

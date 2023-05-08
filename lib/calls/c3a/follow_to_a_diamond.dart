@@ -21,13 +21,12 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> FollowToADiamond = [
 
     AnimatedCall('Follow to a Diamond',
-      formation:Formation('Box RH', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:1,y:2,angle:270),
         DancerModel.fromData(gender:Gender.GIRL,x:-1,y:2,angle:90),
   ]),
@@ -42,7 +41,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Follow to a Diamond',
-      formation:Formations.BoxLH,
+      formation:Formation('Box LH'),
       from:'Left-Hand Box',
       paths:[
           RunLeft.changeBeats(4) +
@@ -54,7 +53,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Follow to a Diamond',
-      formation:Formations.OceanWavesRHBGBG,
+      formation:Formation('Ocean Waves RH BGBG'),
       from:'Right-Hand Waves',
       paths:[
           Forward_2.changeBeats(1.5).skew(0.0,-0.125) +
@@ -73,7 +72,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Follow to a Diamond',
-      formation:Formations.OceanWavesLHBGBG,
+      formation:Formation('Ocean Waves LH BGBG'),
       from:'Left-Hand Waves',
       paths:[
           RunLeft.changeBeats(4) +
@@ -92,7 +91,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Follow to a Diamond',
-      formation:Formations.ColumnRHGBGB,
+      formation:Formation('Column RH GBGB'),
       from:'Right-Hand Columns',
       paths:[
           RunRight.changeBeats(5.5) +
@@ -111,7 +110,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Follow to a Diamond',
-      formation:Formations.ColumnLHGBGB,
+      formation:Formation('Column LH GBGB'),
       from:'Left-Hand Columns',
       paths:[
           Forward.changeBeats(1.5).skew(0.0,0.25) +
@@ -130,7 +129,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Follow to a Diamond',
-      formation:Formations.TmBoneURUR,
+      formation:Formation('T-Bone URUR'),
       from:'T-Bones',
       paths:[
           Forward.changeBeats(1.5).skew(0.0,-0.25) +
@@ -149,7 +148,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('All 8 Follow to a Diamond',
-      formation:Formations.StaticMiniWavesRH,
+      formation:Formation('Static MiniWaves RH'),
       group:' ',
       paths:[
           Forward_3.changeBeats(2) +
@@ -168,7 +167,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('As Couples Follow to a Diamond',
-      formation:Formations.TwomFacedLinesRH,
+      formation:Formation('Two-Faced Lines RH'),
       group:' ',
       paths:[
           Forward_2.changehands(2) +
@@ -189,7 +188,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Tandem Follow to a Diamond',
-      formation:Formations.ColumnRHGBGB,
+      formation:Formation('Column RH GBGB'),
       group:' ',
       paths:[
           RunRight.changeBeats(5) +

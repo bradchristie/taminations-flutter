@@ -26,7 +26,7 @@ import '../../moves.dart';
   final List<AnimatedCall> QuadrupleFormation = [
 
     AnimatedCall('Quadruple Box Split Swap',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:1,y:5.25,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:1,y:3.75,angle:180),
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:2.25,angle:0),
@@ -56,7 +56,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Quadruple Column Pass and Roll',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:3,y:3,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:3,y:1,angle:180),
         DancerModel.fromData(gender:Gender.BOY,x:1,y:3,angle:0),
@@ -122,7 +122,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Quadruple Line Bend the Line',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:3,y:3,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:3,y:1,angle:180),
         DancerModel.fromData(gender:Gender.BOY,x:1,y:3,angle:0),
@@ -152,7 +152,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Quadruple Wave Swing Thru',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:1,y:3,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:1,y:1,angle:0),
         DancerModel.fromData(gender:Gender.BOY,x:3,y:3,angle:0),
@@ -190,7 +190,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Quadruple Waves of 3 Swing Thru',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:1,y:2,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:1,y:0,angle:0),
         DancerModel.fromData(gender:Gender.BOY,x:3,y:2,angle:0),

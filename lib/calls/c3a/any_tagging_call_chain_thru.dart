@@ -19,13 +19,13 @@
 */
 
 import '../../animated_call.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> AnyTaggingCallChainThru = [
 
     AnimatedCall('Tag Chain Thru',
-      formation:Formations.LinesFacingOut,
+      formation:Formation('Lines Facing Out'),
       from:'Lines Facing Out',group:' ',fractions:'3.5',
       paths:[
           QuarterLeft.skew(-1.0,1.0) +
@@ -54,7 +54,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Flip Chain Thru',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       from:'Right-Hand Waves',group:' ',fractions:'6.5',
       paths:[
           LeadRight.changeBeats(3.5).scale(1.0,2.0) +

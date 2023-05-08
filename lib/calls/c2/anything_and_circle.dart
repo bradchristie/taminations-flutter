@@ -21,13 +21,12 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> AnythingAndCircle = [
 
     AnimatedCall('All 8 Recycle and Circle 1/4',
-      formation:Formations.MixedQuarterTag1,
+      formation:Formation('Mixed Quarter Tag #1'),
       group:' ',parts:'6',
       paths:[
           UmTurnRight.changeBeats(6).changehands(6).skew(3.0,0.0),
@@ -44,7 +43,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Diamond Circulate and Circle 1/4',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:0,y:3,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:1,y:0,angle:270),
         DancerModel.fromData(gender:Gender.BOY,x:-3,y:1,angle:0),
@@ -66,7 +65,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Heads Spin the Top and Circle 1/4',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       group:' ',parts:'6;4.5',
       paths:[
           ExtendLeft.changeBeats(3).scale(3.0,0.5) +
@@ -87,7 +86,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Inlet and Circle 1/4',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       group:' ',parts:'4',
       paths:[
           RunRight.changeBeats(4).changehands(6).skew(2.0,0.0) +
@@ -105,7 +104,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Switch and Circle 1/4',
-      formation:Formations.QuarterTag,
+      formation:Formation('Quarter Tag'),
       group:' ',fractions:'3',
       paths:[
           Stand.changeBeats(3).changehands(2) +
@@ -121,7 +120,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Switch and Circle 1/2',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:0,y:3,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:0,y:1,angle:0),
         DancerModel.fromData(gender:Gender.BOY,x:-3,y:1,angle:180),
@@ -151,7 +150,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Swing and Mix and Circle 1/2',
-      formation:Formations.QuarterTag,
+      formation:Formation('Quarter Tag'),
       group:' ',fractions:'8;4;8',
       paths:[
           Stand.changeBeats(8).changehands(2) +

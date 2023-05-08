@@ -19,13 +19,13 @@
 */
 
 import '../../animated_call.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> CircleBy = [
 
     AnimatedCall('Circle By Nothing and Nothing',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       group:'Circle By',
       paths:[
           ExtendLeft.changeBeats(2).scale(2.0,0.5),
@@ -38,7 +38,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Circle By Nothing and 1/4',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       group:'Circle By',
       paths:[
           ExtendLeft.changeBeats(2).scale(2.0,0.5) +
@@ -55,7 +55,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Circle By Nothing and 1/2',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       group:'Circle By',
       paths:[
           ExtendLeft.changeBeats(2).scale(2.0,0.5) +
@@ -72,7 +72,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Circle By Nothing and 3/4',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       group:'Circle By',
       paths:[
           ExtendLeft.changeBeats(2).scale(2.0,0.5) +
@@ -93,7 +93,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Circle By 1/4 and Nothing',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       group:'Circle By',
       paths:[
           EighthRight.changeBeats(1).changehands(2).skew(1.0,0.0) +
@@ -114,7 +114,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Circle By 1/4 and 1/4',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       group:'Circle By',parts:'4.5',
       paths:[
           EighthRight.changeBeats(1).changehands(2).skew(1.0,0.0) +
@@ -139,7 +139,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Circle By 1/4 and 1/2',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       group:'Circle By',parts:'4.5',
       paths:[
           EighthRight.changeBeats(1).changehands(2).skew(1.0,0.0) +
@@ -164,7 +164,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Circle By 1/4 and 3/4',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       group:'Circle By',parts:'4.5',
       paths:[
           EighthRight.changeBeats(1).changehands(2).skew(1.0,0.0) +
@@ -189,7 +189,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Circle By 1/2 and Nothing',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       group:'Circle By',
       paths:[
           EighthRight.changeBeats(1).changehands(2).skew(1.0,0.0) +
@@ -214,7 +214,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Circle By 1/2 and 1/4',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       group:'Circle By',parts:'6',
       paths:[
           EighthRight.changeBeats(1).changehands(2).skew(1.0,0.0) +
@@ -243,7 +243,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Circle By 1/2 and 1/2',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       group:'Circle By',parts:'6',
       paths:[
           EighthRight.changeBeats(1).changehands(2).skew(1.0,0.0) +
@@ -272,7 +272,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Circle By 1/2 and 3/4',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       group:'Circle By',parts:'6',
       paths:[
           EighthRight.changeBeats(1).changehands(2).skew(1.0,0.0) +
@@ -305,7 +305,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Circle By 3/4 and Nothing',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       group:'Circle By',
       paths:[
           EighthRight.changeBeats(1).changehands(2).skew(1.0,0.0) +
@@ -334,7 +334,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Circle By 3/4 and 1/4',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       group:'Circle By',parts:'7.5',
       paths:[
           EighthRight.changeBeats(1).changehands(2).skew(1.0,0.0) +
@@ -367,7 +367,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Circle By 3/4 and 1/2',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       group:'Circle By',parts:'7.5',
       paths:[
           EighthRight.changeBeats(1).changehands(2).skew(1.0,0.0) +
@@ -400,7 +400,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Circle By 3/4 and 3/4',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       group:'Circle By',parts:'7.5',
       paths:[
           EighthRight.changeBeats(1).changehands(2).skew(1.0,0.0) +

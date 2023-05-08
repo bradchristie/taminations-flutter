@@ -21,13 +21,12 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> InterlockedScootBack = [
 
     AnimatedCall('Interlocked Scoot Back',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-3,y:1,angle:0),
         DancerModel.fromData(gender:Gender.BOY,x:-3,y:-1,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:0,y:1,angle:0),
@@ -56,7 +55,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Interlocked Scoot Back',
-      formation:Formations.QuarterLinesLH,
+      formation:Formation('Quarter Lines LH'),
       from:'Left-Hand Quarter Line',
       paths:[
           Forward.changeBeats(2).scale(1.5,1.0) +

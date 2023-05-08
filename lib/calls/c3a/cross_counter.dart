@@ -19,13 +19,13 @@
 */
 
 import '../../animated_call.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> CrossCounter = [
 
     AnimatedCall('Cross Counter',
-      formation:Formations.n34Tag,
+      formation:Formation('3/4 Tag'),
       from:'3/4 Tag',parts:'4;4.5',
       paths:[
           RunLeft.changeBeats(4).scale(2.0,2.0).skew(-2.0,0.0) +
@@ -48,7 +48,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cross Counter',
-      formation:Formations.n34TagLH,
+      formation:Formation('3/4 Tag LH'),
       from:'Left-Hand 3/4 Tag',parts:'4;4.5',
       paths:[
           RunLeft.changeBeats(4).scale(2.0,2.0).skew(-2.0,0.0) +
@@ -71,7 +71,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Scoot and Cross Counter',
-      formation:Formations.QuarterTag,
+      formation:Formation('Quarter Tag'),
       group:' ',parts:'6;4;4.5',
       paths:[
           ExtendLeft.changeBeats(1.5).scale(1.5,1.5) +
@@ -106,7 +106,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left Scoot and Cross Counter',
-      formation:Formations.QuarterTagLH,
+      formation:Formation('Quarter Tag LH'),
       group:' ',parts:'6;4;4.5',
       paths:[
           Forward.changeBeats(1.5).scale(1.5,1.0) +

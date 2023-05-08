@@ -19,13 +19,13 @@
 */
 
 import '../../animated_call.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> FirstCoupleGo = [
 
     AnimatedCall('First Couple Go Left, Next Couple Go Right',
-      formation:Formations.CompletedDoublePassThru,
+      formation:Formation('Completed Double Pass Thru'),
       group:' ',
       paths:[
           RunLeft.changeBeats(4).changehands(1).scale(1.5,2.0).skew(-1.0,0.0),
@@ -38,7 +38,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('First Couple Go Right, Next Couple Go Left',
-      formation:Formations.CompletedDoublePassThru,
+      formation:Formation('Completed Double Pass Thru'),
       group:' ',
       paths:[
           UmTurnRight.changeBeats(4).changehands(1).skew(-1.0,0.0),
@@ -51,7 +51,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('First Couple Go Left, Next Couple Go Left',
-      formation:Formations.CompletedDoublePassThru,
+      formation:Formation('Completed Double Pass Thru'),
       group:' ',
       paths:[
           RunLeft.changeBeats(4).changehands(1).scale(1.5,2.5).skew(-3.0,0.0),
@@ -64,7 +64,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('First Couple Go Right, Next Couple Go Right',
-      formation:Formations.CompletedDoublePassThru,
+      formation:Formation('Completed Double Pass Thru'),
       group:' ',
       paths:[
           UmTurnRight.changeBeats(4).changehands(1).skew(-3.0,-1.0),

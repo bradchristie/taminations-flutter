@@ -21,7 +21,6 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 import '../a1/chain_reaction.dart' as a1;
 
@@ -32,7 +31,7 @@ import '../a1/chain_reaction.dart' as a1;
       tam.title == 'Chain Reaction' && tam.from == 'Left-Hand Quarter Tag').first.xref(title: 'Chain Reaction'),
 
     AnimatedCall('Chain Reaction',
-      formation:Formations.QuarterLinesRH,
+      formation:Formation('Quarter Lines RH'),
       from:'Right-Hand Quarter Lines',fractions:'3;1.5;2',
       paths:[
           Stand.changeBeats(3) +
@@ -62,7 +61,7 @@ import '../a1/chain_reaction.dart' as a1;
       ]),
 
     AnimatedCall('Chain Reaction',
-      formation:Formations.QuarterLinesLH,
+      formation:Formation('Quarter Lines LH'),
       from:'Left-Hand Quarter Lines',fractions:'3;1.5;2',
       paths:[
           ExtendLeft.changeBeats(1.5).scale(1.5,0.5) +
@@ -92,7 +91,7 @@ import '../a1/chain_reaction.dart' as a1;
       ]),
 
     AnimatedCall('Chain Reaction',
-      formation:Formations.MixedQuarterTag1,
+      formation:Formation('Mixed Quarter Tag #1'),
       from:'Right-Hand Quarter Waves',fractions:'3;2;3',
       paths:[
           ExtendLeft.changeBeats(1.5).scale(1.5,0.5) +
@@ -120,7 +119,7 @@ import '../a1/chain_reaction.dart' as a1;
       ]),
 
     AnimatedCall('Chain Reaction',
-      formation:Formations.MixedQuarterTag6,
+      formation:Formation('Mixed Quarter Tag #6'),
       from:'Left-Hand Quarter Waves',fractions:'3;2;2',
       paths:[
           Stand.changeBeats(3) +
@@ -146,7 +145,7 @@ import '../a1/chain_reaction.dart' as a1;
       ]),
 
     AnimatedCall('Chain Reaction',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-3,y:1,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:-3,y:-1,angle:0),
         DancerModel.fromData(gender:Gender.BOY,x:0,y:1,angle:0),
@@ -181,7 +180,7 @@ import '../a1/chain_reaction.dart' as a1;
       ]),
 
     AnimatedCall('Chain Reaction',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-3,y:1,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:-3,y:-1,angle:180),
         DancerModel.fromData(gender:Gender.BOY,x:0,y:1,angle:180),
@@ -220,7 +219,7 @@ import '../a1/chain_reaction.dart' as a1;
       tam.title == 'Chain Reaction, Turn the Star 1/2').first.xref(title: 'Chain Reaction, Turn the Star 1/2'),
 
     AnimatedCall('Chain Reaction, Turn the Star 1/2',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-3,y:1,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:-3,y:-1,angle:0),
         DancerModel.fromData(gender:Gender.BOY,x:0,y:-3,angle:0),
@@ -251,7 +250,7 @@ import '../a1/chain_reaction.dart' as a1;
       ]),
 
     AnimatedCall('Chain Reaction, Turn the Star 1/2',
-      formation:Formations.QuarterLinesRH,
+      formation:Formation('Quarter Lines RH'),
       from:'Right-Hand Quarter Lines',fractions:'3;1.5;3',
       paths:[
           Stand.changeBeats(3) +
@@ -281,7 +280,7 @@ import '../a1/chain_reaction.dart' as a1;
       ]),
 
     AnimatedCall('Chain Reaction, Turn the Star 1/2',
-      formation:Formations.QuarterLinesLH,
+      formation:Formation('Quarter Lines LH'),
       from:'Left-Hand Quarter Lines',fractions:'3;1.5;3',
       paths:[
           ExtendLeft.changeBeats(1.5).scale(1.5,0.5) +
@@ -311,7 +310,7 @@ import '../a1/chain_reaction.dart' as a1;
       ]),
 
     AnimatedCall('Chain Reaction, Turn the Star 1/2',
-      formation:Formations.MixedQuarterTag1,
+      formation:Formation('Mixed Quarter Tag #1'),
       from:'Right-Hand Quarter Waves',fractions:'3;2;4.5',
       paths:[
           ExtendLeft.changeBeats(1.5).scale(1.5,0.5) +
@@ -345,7 +344,7 @@ import '../a1/chain_reaction.dart' as a1;
       ]),
 
     AnimatedCall('Chain Reaction, Turn the Star 1/2',
-      formation:Formations.MixedQuarterTag6,
+      formation:Formation('Mixed Quarter Tag #6'),
       from:'Left-Hand Quarter Waves',fractions:'3;2;3',
       paths:[
           Stand.changeBeats(3) +
@@ -371,7 +370,7 @@ import '../a1/chain_reaction.dart' as a1;
       ]),
 
     AnimatedCall('Chain Reaction, Turn the Star 1/2',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-3,y:1,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:-3,y:-1,angle:0),
         DancerModel.fromData(gender:Gender.BOY,x:0,y:1,angle:0),
@@ -406,7 +405,7 @@ import '../a1/chain_reaction.dart' as a1;
       ]),
 
     AnimatedCall('Chain Reaction, Turn the Star 1/2',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-3,y:1,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:-3,y:-1,angle:180),
         DancerModel.fromData(gender:Gender.BOY,x:0,y:1,angle:180),

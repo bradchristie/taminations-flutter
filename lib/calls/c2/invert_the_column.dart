@@ -21,13 +21,12 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> InvertTheColumn = [
 
     AnimatedCall('Invert the Column',
-      formation:Formations.ColumnRHGBGB,
+      formation:Formation('Column RH GBGB'),
       from:'Right-Hand Columns',fractions:'5;3;3',
       paths:[
           RunLeft.skew(-1.0,0.0) +
@@ -53,7 +52,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Invert the Column',
-      formation:Formations.ColumnLHGBGB,
+      formation:Formation('Column LH GBGB'),
       from:'Left-Hand Columns',fractions:'5;3;3',
       paths:[
           Forward.changeBeats(5) +
@@ -79,7 +78,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Columns of 3 Invert the Column',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-2,y:1,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:0,y:1,angle:0),
         DancerModel.fromData(gender:Gender.BOY,x:2,y:1,angle:0),
@@ -108,7 +107,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Magic Column Invert the Column',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-3,y:1,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:-1,y:-1,angle:0),
         DancerModel.fromData(gender:Gender.BOY,x:1,y:-1,angle:0),
@@ -139,7 +138,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Magic Column Invert the Column',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-3,y:1,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:-1,y:-1,angle:180),
         DancerModel.fromData(gender:Gender.BOY,x:1,y:-1,angle:180),
@@ -170,7 +169,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cross Invert the Column 1/4',
-      formation:Formations.ColumnRHGBGB,
+      formation:Formation('Column RH GBGB'),
       from:'Right-Hand Columns',
       paths:[
           RunRight.changeBeats(4).scale(1.0,2.0).skew(-1.0,0.0) +
@@ -184,7 +183,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cross Invert the Column 1/4',
-      formation:Formations.ColumnLHGBGB,
+      formation:Formation('Column LH GBGB'),
       from:'Left-Hand Columns',
       paths:[
           Forward,
@@ -198,7 +197,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cross Invert the Column 1/2',
-      formation:Formations.ColumnRHGBGB,
+      formation:Formation('Column RH GBGB'),
       from:'Right-Hand Columns',
       paths:[
           RunRight.changeBeats(4).scale(1.0,2.0).skew(-2.0,0.0) +
@@ -213,7 +212,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cross Invert the Column 1/2',
-      formation:Formations.ColumnLHGBGB,
+      formation:Formation('Column LH GBGB'),
       from:'Left-Hand Columns',
       paths:[
           Forward,
@@ -228,7 +227,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cross Invert the Column 3/4',
-      formation:Formations.ColumnRHGBGB,
+      formation:Formation('Column RH GBGB'),
       from:'Right-Hand Columns',
       paths:[
           RunRight.changeBeats(4).scale(1.0,2.0).skew(-2.0,0.0) +
@@ -245,7 +244,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cross Invert the Column 3/4',
-      formation:Formations.ColumnLHGBGB,
+      formation:Formation('Column LH GBGB'),
       from:'Left-Hand Columns',
       paths:[
           Forward_3,
@@ -262,7 +261,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cross Invert the Column',
-      formation:Formations.ColumnRHGBGB,
+      formation:Formation('Column RH GBGB'),
       from:'Right-Hand Columns',
       paths:[
           RunRight +
@@ -281,7 +280,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Cross Invert the Column',
-      formation:Formations.ColumnLHGBGB,
+      formation:Formation('Column LH GBGB'),
       from:'Left-Hand Columns',
       paths:[
           Forward_6 +

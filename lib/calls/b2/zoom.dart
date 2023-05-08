@@ -21,13 +21,12 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> Zoom = [
 
     AnimatedCall('Zoom',
-      formation:Formations.BoxRH,
+      formation:Formation('Box RH'),
       from:'Right-Hand Box',fractions:'3',difficulty: 2,
       paths:[
           Forward_4.changeBeats(6),
@@ -37,7 +36,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Zoom',
-      formation:Formations.BoxLH,
+      formation:Formation('Box LH'),
       from:'Left-Hand Box',fractions:'3',difficulty: 2,
       paths:[
           RunRight.skew(-2.0,0.0) +
@@ -47,7 +46,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Zoom',
-      formation:Formations.CompletedDoublePassThru,
+      formation:Formation('Completed Double Pass Thru'),
       from:'Completed Double Pass Thru',fractions:'2',difficulty: 2,
       taminator: '''
     One analogy of Zoom is two people on a tandem bicycle changing seats.
@@ -65,7 +64,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Zoom',
-      formation:Formations.DoublePassThru,
+      formation:Formation('Double Pass Thru'),
       from:'Double Pass Thru',fractions:'2',difficulty: 1,
       taminator: '''
     Another analogy is a driver and back-seat passenger changing places in a car.
@@ -85,7 +84,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Zoom',
-      formation:Formations.ColumnRHGBGB,
+      formation:Formation('Column RH GBGB'),
       from:'Columns',fractions:'2',difficulty: 2,
       paths:[
           RunLeft.changeBeats(2).skew(-1.0,0.0) +
@@ -100,7 +99,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Zoom',
-      formation:Formations.ColumnLHGBGB,
+      formation:Formation('Column LH GBGB'),
       from:'Left-Hand Columns',fractions:'2',difficulty: 2,
       paths:[
           Forward_2.changeBeats(4),
@@ -115,7 +114,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Zoom',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.GIRL,x:-3,y:-1,angle:90),
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:-1,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:1,y:-1,angle:90),
@@ -135,7 +134,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Centers Zoom',
-      formation:Formations.ColumnRHGBGB,
+      formation:Formation('Column RH GBGB'),
       from:'Columns',fractions:'2',difficulty: 2,
       paths:[
           Path(),
@@ -149,7 +148,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Ends Zoom',
-      formation:Formations.TwomFacedLinesRH,
+      formation:Formation('Two-Faced Lines RH'),
       from:'Two-Faced Lines',fractions:'3',difficulty: 2,
       paths:[
           Forward_4.changeBeats(6),
@@ -163,7 +162,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Points Zoom',
-      formation:Formations.DiamondsRHGirlPoints,
+      formation:Formation('Diamonds RH Girl Points'),
       from:'Diamonds',fractions:'3',difficulty: 2,
       paths:[
           Path(),

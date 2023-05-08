@@ -19,7 +19,7 @@
 */
 
 import '../../animated_call.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 
 import '../a2/all_4_all_8.dart' as a2;
@@ -27,7 +27,7 @@ import '../a2/all_4_all_8.dart' as a2;
   final List<AnimatedCall> TurnAndDeal = [
 
     AnimatedCall('Turn and Deal',
-      formation:Formations.TwomFacedLineRH,
+      formation:Formation('Two-Faced Line RH'),
       from:'Right-Hand Two-Faced Line',
       paths:[
           UmTurnRight.changeBeats(4).skew(1.5,-2.0),
@@ -36,7 +36,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Turn and Deal',
-      formation:Formations.TwomFacedLineLH,
+      formation:Formation('Two-Faced Line LH'),
       from:'Left-Hand Two-Faced Line',
       paths:[
           UmTurnLeft.changeBeats(4).skew(-1.5,2.0),
@@ -45,7 +45,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Turn and Deal',
-      formation:Formations.WaveRH,
+      formation:Formation('Wave RH'),
       from:'Right-Hand Wave',
       paths:[
           UmTurnRight.changeBeats(4).skew(1.5,-2.0),
@@ -54,7 +54,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Turn and Deal',
-      formation:Formations.WaveLH,
+      formation:Formation('Wave LH'),
       from:'Left-Hand Wave',
       paths:[
           UmTurnLeft.changeBeats(4).skew(-1.5,2.0),
@@ -63,7 +63,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Turn and Deal',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       from:'Normal Lines',
       paths:[
           UmTurnRight.changeBeats(4).skew(1.0,-2.0),
@@ -76,7 +76,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Turn and Deal',
-      formation:Formations.LinesFacingOut,
+      formation:Formation('Lines Facing Out'),
       from:'Lines Facing Out',
       paths:[
           UmTurnLeft.changeBeats(4).skew(-1.0,2.0),
@@ -89,7 +89,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Turn and Deal',
-      formation:Formations.TwomFacedLinesRH,
+      formation:Formation('Two-Faced Lines RH'),
       from:'Right-Hand Two-Faced Lines',
       paths:[
           UmTurnRight.changeBeats(4).skew(1.0,-2.0),
@@ -102,7 +102,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Turn and Deal',
-      formation:Formations.TwomFacedLinesLH,
+      formation:Formation('Two-Faced Lines LH'),
       from:'Left-Hand Two-Faced Lines',
       paths:[
           UmTurnLeft.changeBeats(4).skew(-1.0,2.0),
@@ -115,7 +115,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Turn and Deal',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       from:'Right-Hand Waves',
       paths:[
           UmTurnRight.changeBeats(4).skew(1.0,-2.0),
@@ -128,7 +128,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Turn and Deal',
-      formation:Formations.OceanWavesLHBGGB,
+      formation:Formation('Ocean Waves LH BGGB'),
       from:'Left-Hand Waves',
       paths:[
           UmTurnLeft.changeBeats(4).skew(-1.0,2.0),
@@ -141,7 +141,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Turn and Deal',
-      formation:Formations.n3and_1lines1,
+      formation:Formation('3 and 1 Lines #1'),
       from:'3 and 1 Lines #1',
       paths:[
           UmTurnLeft.changeBeats(4).skew(-1.0,2.0),
@@ -154,7 +154,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Turn and Deal',
-      formation:Formations.n3and_1lines2,
+      formation:Formation('3 and 1 Lines #2'),
       from:'3 and 1 Lines #2',
       paths:[
           UmTurnRight.changeBeats(4).skew(1.0,-2.0),
@@ -167,7 +167,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Turn and Deal',
-      formation:Formations.n3and_1lines3,
+      formation:Formation('3 and 1 Lines #3'),
       from:'3 and 1 Lines #3',
       paths:[
           UmTurnRight.changeBeats(4).skew(1.0,-2.0),
@@ -180,7 +180,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Turn and Deal',
-      formation:Formations.n3and_1lines4,
+      formation:Formation('3 and 1 Lines #4'),
       from:'3 and 1 Lines #4',
       paths:[
           UmTurnRight.changeBeats(4).skew(1.0,-2.0),
@@ -193,7 +193,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Turn and Deal',
-      formation:Formations.n3and_1lines5,
+      formation:Formation('3 and 1 Lines #5'),
       from:'3 and 1 Lines #5',
       paths:[
           UmTurnRight.changeBeats(4).skew(1.0,-2.0),
@@ -206,7 +206,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Turn and Deal',
-      formation:Formations.n3and_1lines6,
+      formation:Formation('3 and 1 Lines #6'),
       from:'3 and 1 Lines #6',
       paths:[
           UmTurnLeft.changeBeats(4).skew(-1.0,2.0),
@@ -219,7 +219,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Turn and Deal',
-      formation:Formations.n3and_1lines7,
+      formation:Formation('3 and 1 Lines #7'),
       from:'3 and 1 Lines #7',
       paths:[
           UmTurnLeft.changeBeats(4).skew(-1.0,2.0),
@@ -232,7 +232,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Turn and Deal',
-      formation:Formations.n3and_1lines8,
+      formation:Formation('3 and 1 Lines #8'),
       from:'3 and 1 Lines #8',
       paths:[
           UmTurnLeft.changeBeats(4).skew(-1.0,2.0),
@@ -245,7 +245,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Turn and Deal',
-      formation:Formations.InvertedLinesEndsFacingOut,
+      formation:Formation('Inverted Lines Ends Facing Out'),
       from:'Inverted Lines, Centers Facing',
       paths:[
           UmTurnLeft.changeBeats(4).skew(-1.0,2.0),
@@ -258,7 +258,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Turn and Deal',
-      formation:Formations.InvertedLinesEndsFacingIn,
+      formation:Formation('Inverted Lines Ends Facing In'),
       from:'Inverted Lines, Ends Facing',
       paths:[
           UmTurnRight.changeBeats(4).skew(1.0,-2.0),
@@ -271,7 +271,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Turn and Deal',
-      formation:Formations.TidalLineRH,
+      formation:Formation('Tidal Line RH'),
       from:'Tidal Line',
       paths:[
           UmTurnRight.changeBeats(4).skew(1.5,-0.5),
@@ -284,7 +284,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Turn and Deal',
-      formation:Formations.TwomFacedTidalLineRH,
+      formation:Formation('Two-Faced Tidal Line RH'),
       from:'Right-Hand Two-Faced Tidal Line',
       paths:[
           UmTurnRight.changeBeats(4).skew(1.5,-0.5),
@@ -297,7 +297,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Turn and Deal',
-      formation:Formations.TwomFacedTidalLineLH,
+      formation:Formation('Two-Faced Tidal Line LH'),
       from:'Left-Hand Two-Faced Tidal Line',
       paths:[
           UmTurnLeft.changeBeats(4).skew(-1.5,0.5),
@@ -310,7 +310,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Turn and Deal',
-      formation:Formations.TidalWaveRHBGGB,
+      formation:Formation('Tidal Wave RH BGGB'),
       from:'Right-Hand Tidal Wave',
       paths:[
           UmTurnRight.changeBeats(4).skew(1.5,-0.5),
@@ -323,7 +323,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Turn and Deal',
-      formation:Formations.TidalWaveLHBGGB,
+      formation:Formation('Tidal Wave LH BGGB'),
       from:'Left-Hand Tidal Wave',
       paths:[
           UmTurnLeft.changeBeats(4).skew(-1.5,0.5),
@@ -336,7 +336,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Left Turn and Deal',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       from:'Right-Hand Waves',
       paths:[
           UmTurnRight.changeBeats(4).skew(-1.0,-2.0),
@@ -349,7 +349,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Left Turn and Deal',
-      formation:Formations.OceanWavesLHBGGB,
+      formation:Formation('Ocean Waves LH BGGB'),
       from:'Left-Hand Waves',
       paths:[
           UmTurnLeft.changeBeats(4).skew(1.0,2.0),
@@ -362,7 +362,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Left Turn and Deal',
-      formation:Formations.TwomFacedLineLH,
+      formation:Formation('Two-Faced Line LH'),
       from:'Left-Hand Two-Faced Line',
       taminator: '''
       This variation is also called Left Shoulder Turn and Deal, and is
@@ -375,7 +375,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Left Turn and Deal',
-      formation:Formations.TwomFacedLinesLH,
+      formation:Formation('Two-Faced Lines LH'),
       from:'Left-Hand Two-Faced Lines',
       paths:[
           UmTurnLeft.changeBeats(4).skew(1.0,2.0),
@@ -388,7 +388,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Left Turn and Deal',
-      formation:Formations.TidalWaveRHBGGB,
+      formation:Formation('Tidal Wave RH BGGB'),
       from:'Right-Hand Tidal Wave',
       paths:[
           UmTurnRight.changeBeats(4).skew(-1.5,-0.5),
@@ -401,7 +401,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Left Turn and Deal',
-      formation:Formations.TwomFacedTidalLineLH,
+      formation:Formation('Two-Faced Tidal Line LH'),
       from:'Left-Hand Two-Faced Tidal Line',
       paths:[
           UmTurnLeft.changeBeats(4).skew(1.5,0.5),
@@ -414,7 +414,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('As Couples Turn and Deal',
-      formation:Formations.TidalLineRH,
+      formation:Formation('Tidal Line RH'),
       from:'Right-Hand Tidal Line',
       paths:[
           BelleWheel.changeBeats(4).changehands(6).scale(1.0,-0.5).skew(1.5,-1.5),
@@ -427,7 +427,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('As Couples Turn and Deal',
-      formation:Formations.TidalLineLH,
+      formation:Formation('Tidal Line LH'),
       from:'Left-Hand Tidal Line',
       paths:[
           BeauWheel.changeBeats(4).scale(0.5,0.5).skew(-1.5,0.5),
@@ -442,7 +442,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('As Couples Turn and Deal',
-      formation:Formations.TwomFacedTidalLineRH,
+      formation:Formation('Two-Faced Tidal Line RH'),
       from:'Right-Hand Two-Faced Tidal Line',
       paths:[
           BelleWheel.changeBeats(4).scale(1.0,-0.5).skew(1.5,-1.5),
@@ -457,7 +457,7 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('As Couples Turn and Deal',
-      formation:Formations.TwomFacedTidalLineLH,
+      formation:Formation('Two-Faced Tidal Line LH'),
       from:'Left-Hand Two-Faced Tidal Line',
       paths:[
           BelleWheel.changeBeats(4).scale(0.5,0.5).skew(-1.5,1.5),

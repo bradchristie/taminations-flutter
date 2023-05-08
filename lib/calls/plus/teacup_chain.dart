@@ -19,13 +19,13 @@
 */
 
 import '../../animated_call.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> TeacupChain = [
 
     AnimatedCall('Teacup Chain',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       from:'Static Square',fractions:'7;7;10',difficulty: 1,
       paths:[
           QuarterLeft.changeBeats(2).skew(-0.75,-1.0) +
@@ -76,7 +76,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Teacup Chain',
-      formation:Formations.NormalLines,
+      formation:Formation('Normal Lines'),
       from:'Normal Lines',fractions:'10;8.5;13',difficulty: 3,
       paths:[
           Stand.changeBeats(4) +
@@ -128,7 +128,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('All Ladies Center, Teacup Chain',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       from:'Static Square',fractions:'7;7;10',difficulty: 2,
       paths:[
           DodgeRight.changeBeats(5).scale(0.875,0.875) +
@@ -181,7 +181,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('All Ladies Right, Teacup Chain',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       from:'Static Square',fractions:'7;7;10',difficulty: 2,
       paths:[
           QuarterLeft.changeBeats(2).skew(-0.75,-1.0) +
@@ -236,7 +236,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Beer Mug Chain',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       from:'Static Square',fractions:'7;7;10',difficulty: 3,
       taminator: '''This extension is the mirror of the Teacup Chain.  Typically called as
     "Head Men Center, Side Men to the Left for a Beer Mug Chain".
@@ -292,7 +292,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Tea Mug Chain',
-      formation:Formations.StaticSquare,
+      formation:Formation('Static Square'),
       from:'Static Square',fractions:'7;7;10',difficulty: 3,
       taminator: '''
     Here the heads start a Teacup Chain, while the sides start a Beer Mug Chain.

@@ -20,13 +20,13 @@
 
 import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formations.dart';
+import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> ReshapeTheTriangle = [
 
     AnimatedCall('Reshape the Outside Triangle',
-      formation:Formations.DiamondsRHPTPGirlPoints,
+      formation:Formation('Diamonds RH PTP Girl Points'),
       from:'ptp diamonds',group:' ',
       paths:[
           QuarterRight.changeBeats(3).skew(-0.1,-2.0),

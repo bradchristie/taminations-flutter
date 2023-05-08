@@ -21,7 +21,6 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../formation.dart';
-import '../../formations.dart';
 import '../../moves.dart';
 import '../c1/ah_so.dart' as c1;
 import '../c1/alter_the_wave.dart' as c1;
@@ -56,7 +55,7 @@ import '../c3b/bingo.dart' as c3b;
   final List<AnimatedCall> TandemConcept = [
 
     AnimatedCall('Tandem Bend the Line',
-      formation:Formations.TwomFacedLinesRH,
+      formation:Formation('Two-Faced Lines RH'),
       group:'Tandem',
       paths:[
           CounterRotateRight_2_0.changeBeats(3).changehands(2).skew(1.0,0.0),
@@ -69,7 +68,7 @@ import '../c3b/bingo.dart' as c3b;
       ]),
 
     AnimatedCall('Tandem Box Circulate',
-      formation:Formations.ColumnRHGBGB,
+      formation:Formation('Column RH GBGB'),
       group:'Tandem',
       paths:[
           RunRight +
@@ -84,7 +83,7 @@ import '../c3b/bingo.dart' as c3b;
       ]),
 
     AnimatedCall('Tandem Box Transfer',
-      formation:Formations.ColumnRHGBGB,
+      formation:Formation('Column RH GBGB'),
       group:'Tandem',
       paths:[
           CounterRotateRight_2_m4.changeBeats(3.333) +
@@ -109,7 +108,7 @@ import '../c3b/bingo.dart' as c3b;
       ]),
 
     AnimatedCall('Tandem Cast Off 3/4',
-      formation:Formations.ColumnRHGBGB,
+      formation:Formation('Column RH GBGB'),
       group:'Tandem',
       paths:[
           CounterRotateRight_0_m2.changehands(2) +
@@ -130,7 +129,7 @@ import '../c3b/bingo.dart' as c3b;
       ]),
 
     AnimatedCall('Tandem Centers Run',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       group:'Tandem',
       paths:[
           DodgeRight.changeBeats(6),
@@ -145,7 +144,7 @@ import '../c3b/bingo.dart' as c3b;
       ]),
 
     AnimatedCall('Tandem Chase Right',
-      formation:Formations.CompletedDoublePassThru,
+      formation:Formation('Completed Double Pass Thru'),
       group:'Tandem',
       paths:[
           Pivotbackwardright.skew(-1.0,0.0) +
@@ -166,7 +165,7 @@ import '../c3b/bingo.dart' as c3b;
       ]),
 
     AnimatedCall('Tandem Left Chase',
-      formation:Formations.CompletedDoublePassThru,
+      formation:Formation('Completed Double Pass Thru'),
       group:'Tandem',noDisplay: true,
       paths:[
           RunLeft.changeBeats(5) +
@@ -187,7 +186,7 @@ import '../c3b/bingo.dart' as c3b;
       ]),
 
     AnimatedCall('Tandem Courtesy Turn',
-      formation:Formations.CompletedDoublePassThru,
+      formation:Formation('Completed Double Pass Thru'),
       group:'Tandem',
       paths:[
           CounterRotateLeft_0_2.changehands(1) +
@@ -204,7 +203,7 @@ import '../c3b/bingo.dart' as c3b;
       ]),
 
     AnimatedCall('Tandem Crossfire',
-      formation:Formations.TwomFacedLinesRH,
+      formation:Formation('Two-Faced Lines RH'),
       group:'Tandem',
       paths:[
           Forward_4.changeBeats(3) +
@@ -223,7 +222,7 @@ import '../c3b/bingo.dart' as c3b;
       ]),
 
     AnimatedCall('Tandem Crossfire',
-      formation:Formations.TwomFacedLinesLH,
+      formation:Formation('Two-Faced Lines LH'),
       group:'Tandem',noDisplay: true,
       paths:[
           RunLeft.changeBeats(6).scale(1.0,2.0) +
@@ -242,7 +241,7 @@ import '../c3b/bingo.dart' as c3b;
       ]),
 
     AnimatedCall('Tandem Cut the Diamond',
-      formation:Formations.TmBoneULLD,
+      formation:Formation('T-Bone ULLD'),
       group:'Tandem',
       paths:[
           DodgeRight +
@@ -263,7 +262,7 @@ import '../c3b/bingo.dart' as c3b;
       ]),
 
     AnimatedCall('Tandem Cut the Diamond',
-      formation:Formations.TmBoneDRRU,
+      formation:Formation('T-Bone DRRU'),
       group:'Tandem',noDisplay: true,
       paths:[
           DodgeLeft +
@@ -284,7 +283,7 @@ import '../c3b/bingo.dart' as c3b;
       ]),
 
     AnimatedCall('Tandem Diamond Circulate',
-      formation:Formations.TmBoneULLD,
+      formation:Formation('T-Bone ULLD'),
       group:'Tandem',
       taminator: '''
     If you have trouble visualizing the diamond, look at the center
@@ -305,7 +304,7 @@ import '../c3b/bingo.dart' as c3b;
       ]),
 
     AnimatedCall('Tandem Diamond Circulate',
-      formation:Formations.TmBoneDRRU,
+      formation:Formation('T-Bone DRRU'),
       group:'Tandem',noDisplay: true,
       paths:[
           QuarterLeft.skew(0.0,1.0) +
@@ -322,7 +321,7 @@ import '../c3b/bingo.dart' as c3b;
       ]),
 
     AnimatedCall('Tandem Dixie Style to a Wave',
-      formation:Formations.DoublePassThru,
+      formation:Formation('Double Pass Thru'),
       group:'Tandem',
       paths:[
           Back.changeBeats(2) +
@@ -347,7 +346,7 @@ import '../c3b/bingo.dart' as c3b;
       ]),
 
     AnimatedCall('Tandem Fan the Top',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       group:'Tandem',
       paths:[
           CounterRotateRight_5_m1.changeBeats(9),
@@ -364,7 +363,7 @@ import '../c3b/bingo.dart' as c3b;
       ]),
 
     AnimatedCall('Tandem Fan the Top',
-      formation:Formations.OceanWavesLHBGGB,
+      formation:Formation('Ocean Waves LH BGGB'),
       group:'Tandem',noDisplay: true,
       paths:[
           CounterRotateLeft_1_5.changeBeats(9),
@@ -381,7 +380,7 @@ import '../c3b/bingo.dart' as c3b;
       ]),
 
     AnimatedCall('Tandem Flip the Diamond',
-      formation:Formations.TmBoneULLD,
+      formation:Formation('T-Bone ULLD'),
       group:'Tandem',
       paths:[
           Forward_2 +
@@ -398,7 +397,7 @@ import '../c3b/bingo.dart' as c3b;
       ]),
 
     AnimatedCall('Tandem Flip the Diamond',
-      formation:Formations.TmBoneDRRU,
+      formation:Formation('T-Bone DRRU'),
       group:'Tandem',noDisplay: true,
       paths:[
           RunLeft +
@@ -415,7 +414,7 @@ import '../c3b/bingo.dart' as c3b;
       ]),
 
     AnimatedCall('Tandem Follow Your Neighbor',
-      formation:Formations.ColumnRHGBGB,
+      formation:Formation('Column RH GBGB'),
       group:'Tandem',
       paths:[
           Forward_2 +
@@ -440,7 +439,7 @@ import '../c3b/bingo.dart' as c3b;
       ]),
 
     AnimatedCall('Tandem Follow Your Neighbor',
-      formation:Formations.ColumnLHGBGB,
+      formation:Formation('Column LH GBGB'),
       group:'Tandem',noDisplay: true,
       paths:[
           Forward_2 +
@@ -465,7 +464,7 @@ import '../c3b/bingo.dart' as c3b;
       ]),
 
     AnimatedCall('Tandem Follow Your Neighbor',
-      formation:Formations.ColumnLHGBGB,
+      formation:Formation('Column LH GBGB'),
       group:'Tandem',noDisplay: true,
       paths:[
           Forward_2 +
@@ -490,7 +489,7 @@ import '../c3b/bingo.dart' as c3b;
       ]),
 
     AnimatedCall('Tandem Hinge',
-      formation:Formations.ColumnRHGBGB,
+      formation:Formation('Column RH GBGB'),
       group:'Tandem',
       paths:[
           CounterRotateRight_0_m2.changehands(2).skew(0.0,-1.0),
@@ -503,7 +502,7 @@ import '../c3b/bingo.dart' as c3b;
       ]),
 
     AnimatedCall('Tandem Partner Hinge',
-      formation:Formations.CompletedDoublePassThru,
+      formation:Formation('Completed Double Pass Thru'),
       group:'Tandem',
       paths:[
           QuarterLeft.changeBeats(3).skew(-2.0,2.5),
@@ -516,7 +515,7 @@ import '../c3b/bingo.dart' as c3b;
       ]),
 
     AnimatedCall('Tandem Pass the Ocean',
-      formation:Formations.DoublePassThru,
+      formation:Formation('Double Pass Thru'),
       group:'Tandem',
       paths:[
           ExtendLeft.scale(1.0,0.5) +
@@ -537,7 +536,7 @@ import '../c3b/bingo.dart' as c3b;
       ]),
 
     AnimatedCall('Tandem Pass Thru',
-      formation:Formations.DoublePassThru,
+      formation:Formation('Double Pass Thru'),
       group:'Tandem',
       paths:[
           ExtendLeft.scale(1.0,0.5) +
@@ -558,7 +557,7 @@ import '../c3b/bingo.dart' as c3b;
       ]),
 
     AnimatedCall('Tandem Peel Off',
-      formation:Formations.ColumnRHGBGB,
+      formation:Formation('Column RH GBGB'),
       group:'Tandem',
       paths:[
           RunLeft.skew(-1.0,0.0) +
@@ -575,7 +574,7 @@ import '../c3b/bingo.dart' as c3b;
       ]),
 
     AnimatedCall('Tandem Peel Off',
-      formation:Formations.ColumnLHGBGB,
+      formation:Formation('Column LH GBGB'),
       group:'Tandem',noDisplay: true,
       paths:[
           Forward_2 +
@@ -592,7 +591,7 @@ import '../c3b/bingo.dart' as c3b;
       ]),
 
     AnimatedCall('Tandem Quarter Thru',
-      formation:Formation('', [
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.GIRL,x:-1,y:3,angle:90),
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:1,angle:90),
         DancerModel.fromData(gender:Gender.GIRL,x:-1,y:-1,angle:90),
@@ -614,7 +613,7 @@ import '../c3b/bingo.dart' as c3b;
       ]),
 
     AnimatedCall('Tandem Right and Left Thru',
-      formation:Formations.DoublePassThru,
+      formation:Formation('Double Pass Thru'),
       group:'Tandem',
       paths:[
           ExtendLeft.scale(1.0,0.5) +
@@ -643,7 +642,7 @@ import '../c3b/bingo.dart' as c3b;
       ]),
 
     AnimatedCall('Tandem Right Roll to a Wave',
-      formation:Formations.ColumnLHGBGB,
+      formation:Formation('Column LH GBGB'),
       group:'Tandem',
       paths:[
           Forward.changeBeats(2),
@@ -658,7 +657,7 @@ import '../c3b/bingo.dart' as c3b;
       ]),
 
     AnimatedCall('Tandem Scoot Back',
-      formation:Formations.ColumnRHGBGB,
+      formation:Formation('Column RH GBGB'),
       group:'Tandem',
       paths:[
           RunRight.changeBeats(5) +
@@ -679,7 +678,7 @@ import '../c3b/bingo.dart' as c3b;
       ]),
 
     AnimatedCall('Tandem Single Wheel',
-      formation:Formations.CompletedDoublePassThru,
+      formation:Formation('Completed Double Pass Thru'),
       group:'Tandem',
       paths:[
           FlipLeft.scale(1.0,0.5).skew(-1.0,0.0) +
@@ -695,7 +694,7 @@ import '../c3b/bingo.dart' as c3b;
       ]),
 
     AnimatedCall('Tandem Square Chain Thru',
-      formation:Formations.DoublePassThru,
+      formation:Formation('Double Pass Thru'),
       group:'Tandem',fractions:'5;4;4',
       paths:[
           ExtendLeft.changeBeats(2).scale(2.0,1.5) +
@@ -738,7 +737,7 @@ import '../c3b/bingo.dart' as c3b;
       ]),
 
     AnimatedCall('Tandem Swing Thru',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       group:'Tandem',fractions:'4',
       paths:[
           CounterRotateRight_2_0.changehands(2).skew(1.0,0.0) +
@@ -759,7 +758,7 @@ import '../c3b/bingo.dart' as c3b;
       ]),
 
     AnimatedCall('Tandem Switch the Wave',
-      formation:Formations.OceanWavesRHBGGB,
+      formation:Formation('Ocean Waves RH BGGB'),
       group:'Tandem',
       paths:[
           Forward_4.changeBeats(3) +
@@ -776,7 +775,7 @@ import '../c3b/bingo.dart' as c3b;
       ]),
 
     AnimatedCall('Tandem Switch the Wave',
-      formation:Formations.OceanWavesLHBGGB,
+      formation:Formation('Ocean Waves LH BGGB'),
       group:'Tandem',noDisplay: true,
       paths:[
           RunLeft.changeBeats(5).scale(1.0,2.0) +
@@ -793,7 +792,7 @@ import '../c3b/bingo.dart' as c3b;
       ]),
 
     AnimatedCall('Tandem Touch 1/4',
-      formation:Formations.DoublePassThru,
+      formation:Formation('Double Pass Thru'),
       group:'Tandem',
       paths:[
           ExtendLeft.changeBeats(2).scale(2.0,2.0) +
@@ -810,7 +809,7 @@ import '../c3b/bingo.dart' as c3b;
       ]),
 
     AnimatedCall('Tandem Walk and Dodge',
-      formation:Formations.ColumnRHGBGB,
+      formation:Formation('Column RH GBGB'),
       group:'Tandem',
       paths:[
           DodgeRight.changeBeats(4),
@@ -823,7 +822,7 @@ import '../c3b/bingo.dart' as c3b;
       ]),
 
     AnimatedCall('Tandem Zoom',
-      formation:Formations.ColumnRHGBGB,
+      formation:Formation('Column RH GBGB'),
       group:'Tandem',
       paths:[
           FlipLeft.changeBeats(2).scale(0.75,0.75) +
