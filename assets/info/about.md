@@ -23,20 +23,15 @@ Call pronunciations provided by
 
 ---
 
-## Taminations version 1.6.60 built 2023-05-02
+## Taminations version 1.6.61 built 2023-05-08
 Copyright 2023 by Brad Christie.  
 This is free software, and you are welcome to modify and redistribute it
 under the terms of the [GNU GPL license](http://www.gnu.org/licenses/gpl.html).  
 
 ## What's New
-* Fix crash displaying animations with phantoms
-* More animations for Regroup
-* Remove Cast a Shadow from C-1, now all variations are in A-1
+* More animations for Cross Extend, Team Up, Scoot Back, Scoot and Weave
 * Sequencer changes:
-  - Don't show a level for Adjust
-  - Fix Circulate from some uncommon formations
-  - Don't treat Dosado to a Wave like C-1 (anything) to a Wave
-  - Handle Hinge and Motivate (e.g.) as two calls, Hinge Motivate as one
+  - Fix displayed level for each call
 
 For a detailed history of changes, view the
 [Git log](https://github.com/bradchristie/taminations-flutter/commits/main)
