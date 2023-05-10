@@ -177,6 +177,15 @@ class CallContext {
     }
   }
 
+  T findMixin<T>({Call? startFrom}) {
+    var skip = callstack.indexOf(startFrom ?? callstack.first);
+    for (var c in callstack.skip(skip)) {
+      if (c is T)
+        return c as T;
+    }
+    throw CallError('Unable to find call that implements $T');
+  }
+
   void noSnap({bool recurse=true}) {
     _snap = false;
     if (recurse) {

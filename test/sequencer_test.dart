@@ -1861,6 +1861,34 @@ Double Pass Thru
 Ends U-turn Back
 Allemande Left''',''),
 
+  TestSequence('Rotate (C-1)',
+  '''Sides Pass the Ocean
+Heads Rotate 1/4
+Cycle and Wheel
+Mini Busy
+Heads Reverse Rotate 1/4
+Very Centers Run
+Line Of 8 Turn and Deal
+Star Thru
+Outer 4 Single Rotate 1/4
+Centers Chase Right
+Left Swing Thru
+Recycle
+Pass Thru
+Outer 4 Reverse Single Rotate 1/2
+Centers Touch 1/4
+Boys Run
+Centers Pass Thru
+Cast Off 3/4
+Star Thru
+Track 2
+Acey Deucey
+Swing Thru
+Boys Run
+Circulate
+Wheel and Deal
+Allemande Left''',''),
+
   TestSequence('Rotate (C-2)',
   '''Heads Lead Right
 Veer Left

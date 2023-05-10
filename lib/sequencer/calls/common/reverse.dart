@@ -22,25 +22,24 @@ import '../call.dart';
 import '../coded_call.dart';
 import '../common.dart';
 
-mixin IsLeft on Call {
+mixin IsReverse on Call {
 
-  var isLeft = false;
-  String get left => isLeft ? 'Left' : '';
-  String get leftHand => isLeft ? 'Left-Hand' : '';
+  var isReverse = false;
+  String get reverse => isReverse ? 'Reverse' : '';
 
 }
 
-class Left extends CodedCall {
+class Reverse extends CodedCall {
 
   @override var nextCallCoded = true;
 
-  Left(String name) : super(name);
+  Reverse(String name) : super(name);
 
   @override
   void performCall(CallContext ctx) {
-    var leftCall = ctx.findMixin<IsLeft>(startFrom:this);
-    leftCall.isLeft = true;
-    leftCall.raiseLevel(LevelData.A1);
+    var reverseCall = ctx.findMixin<IsReverse>(startFrom:this);
+    reverseCall.isReverse = true;
+    reverseCall.raiseLevel(LevelData.A1);
     return;
   }
 

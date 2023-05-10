@@ -30,6 +30,12 @@ abstract class Call {
   var level = LevelData.B1;
 
   Call(String s) : name=s.capWords();
+
   void performCall(CallContext ctx);
+
+  void raiseLevel(LevelData newLevel) {
+    if (newLevel > level)
+      level = newLevel;
+  }
 
 }

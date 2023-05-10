@@ -24,7 +24,7 @@ import '../../moves.dart';
 
   final List<AnimatedCall> Rotate = [
 
-    AnimatedCall('Heads Rotate',
+    AnimatedCall('Heads Rotate 1/4',
       formation:Formation('Static Square'),
       from:'Static Square',group:' ',parts:'2',
       paths:[
@@ -39,7 +39,7 @@ import '../../moves.dart';
           Forward_2.changehands(1)
       ]),
 
-    AnimatedCall('Sides Rotate',
+    AnimatedCall('Sides Rotate 1/4',
       formation:Formation('Static Square'),
       from:'Static Square',group:' ',parts:'2',
       paths:[
@@ -88,7 +88,7 @@ import '../../moves.dart';
           LeadLeft.changeBeats(4).changehands(1).scale(3.5,4.5)
       ]),
 
-    AnimatedCall('Heads Reverse Rotate',
+    AnimatedCall('Heads Reverse Rotate 1/4',
       formation:Formation('Static Square'),
       from:'Static Square',group:'  ',parts:'2',
       paths:[
@@ -103,7 +103,7 @@ import '../../moves.dart';
           Forward_2.changehands(1)
       ]),
 
-    AnimatedCall('Sides Reverse Rotate',
+    AnimatedCall('Sides Reverse Rotate 1/4',
       formation:Formation('Static Square'),
       from:'Static Square',group:'  ',parts:'2',
       paths:[
@@ -152,7 +152,7 @@ import '../../moves.dart';
           LeadRight.changeBeats(4).changehands(1).scale(2.5,3.0)
       ]),
 
-    AnimatedCall('Heads Single Rotate',
+    AnimatedCall('Heads Single Rotate 1/4',
       formation:Formation('Static Square'),
       from:'Static Square',group:'   ',
       paths:[
@@ -167,7 +167,7 @@ import '../../moves.dart';
           Forward_2.changehands(1)
       ]),
 
-    AnimatedCall('Sides Single Rotate',
+    AnimatedCall('Sides Single Rotate 1/4',
       formation:Formation('Static Square'),
       from:'Static Square',group:'   ',
       paths:[
@@ -216,7 +216,7 @@ import '../../moves.dart';
           CounterRotateLeft_2_4.skew(0.0,0.5)
       ]),
 
-    AnimatedCall('Heads Reverse Single Rotate',
+    AnimatedCall('Heads Reverse Single Rotate 1/4',
       formation:Formation('Static Square'),
       from:'Static Square',group:'    ',
       paths:[
@@ -231,7 +231,7 @@ import '../../moves.dart';
           Forward_2.changehands(1)
       ]),
 
-    AnimatedCall('Sides Reverse Single Rotate',
+    AnimatedCall('Sides Reverse Single Rotate 1/4',
       formation:Formation('Static Square'),
       from:'Static Square',group:'    ',
       paths:[

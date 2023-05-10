@@ -22,9 +22,8 @@
 import '../../animated_call.dart';
 import 'call.dart';
 import 'common.dart';
-import 'common/left.dart';
 
-class XMLCall extends Call with IsLeft {
+class XMLCall extends Call {
 
   late AnimatedCall xcall;
   late List<int> xmlmap;
@@ -97,11 +96,9 @@ class XMLCall extends Call with IsLeft {
       ctxwork = CallContext.fromContext(ctx,dancers:ctx.actives);
     }
 
-    var found = false;
-    //  If the call is Left <something> and that's not explicit,
-    //  don't try to find just <somehting>
-    if (!isLeft)
-      found = matchAnimatedCall(ctxwork);
+    //  Need to save this result so sequencer model knows if this is really XML
+    //  or punted to a coded call
+    found = matchAnimatedCall(ctxwork);
     if (found) {
       if (['Allemande Left',
         'Dixie Grand',
@@ -112,7 +109,7 @@ class XMLCall extends Call with IsLeft {
       }
     } else {
         try {
-          ctx.applyCodedCall('$left $name');
+          ctx.applyCodedCall(name);
           return;
         } on CallNotFoundError {
           //  Found the call but no code and formations did not match

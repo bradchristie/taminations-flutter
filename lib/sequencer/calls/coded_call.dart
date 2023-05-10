@@ -124,6 +124,7 @@ import 'c1/relay_the_top.dart';
 import 'c1/replace.dart';
 import 'c1/reverse_explode.dart';
 import 'c1/rotary_spin.dart';
+import 'c1/rotate.dart';
 import 'c1/scoot_and_plenty.dart';
 import 'c1/scoot_and_ramble.dart';
 import 'c1/siamese.dart';
@@ -183,7 +184,6 @@ import 'c2/relocate.dart';
 import 'c2/reshape.dart';
 import 'c2/ripple.dart';
 import 'c2/rotary.dart';
-import 'c2/rotate.dart';
 import 'c2/scoot_and_cross_ramble.dart';
 import 'c2/shazam.dart';
 import 'c2/single_bounce.dart';
@@ -238,9 +238,11 @@ import 'common/one_and_a_half.dart';
 import 'common/outsides.dart';
 import 'common/promenade_home.dart';
 import 'common/quarter_more.dart';
+import 'common/reverse.dart';
 import 'common/same_sex.dart';
 import 'common/select_diamond.dart';
 import 'common/sides.dart';
+import 'common/single.dart';
 import 'common/slide_dir.dart';
 import 'common/square_the_set.dart';
 import 'common/step.dart';
@@ -471,6 +473,7 @@ abstract class CodedCall extends Call {
     '.*(but)?replace.*'.ri: (name) => Replace(name),
     '((inside|outside|inpoint|outpoint|tandembased|wavebased)?triangles?)?reshape(thetriangle)?'.ri:
         (name) => Reshape(name),
+    'reverse'.ri: (name) => Reverse(name),
     'reverseexplode'.ri: (name) => ReverseExplode(name),
     'reverseorder.*'.ri: (name) => ReverseOrder(name),
     'rightandleftthru'.ri: (name) => RightAndLeftThru(name),
@@ -480,7 +483,7 @@ abstract class CodedCall extends Call {
     '(left|right)rolltoawave'.ri: (name) => RollToAWave(name),
     'rotary'.ri: (name) => Rotary(name),
     '(left)?rotaryspin'.ri: (name) => RotarySpin(name),
-    '(reverse)?rotate(14|12|34)?'.ri: (name) => Rotate(name),
+    'rotate(14|12|34)?'.ri: (name) => Rotate(name),
     'run(left|right)?'.ri: (name) => Run(name),
 
     'samesex(es)?.+'.ri: (name) => SameSex(name),
@@ -500,6 +503,7 @@ abstract class CodedCall extends Call {
     'siamese.*'.ri: (name) => Siamese(name),
     'side'.ri: (name) => Sides(name),
     '(single)?(split)?sidetrack'.ri: (name) => Sidetrack(name),
+    'single'.ri: (name) => Single(name),
     'singlebounce(the)?($specifier)?'.ri: (name) => SingleBounce(name),
     '(left)?singlecrossandwheel'.ri: (name) => SingleCrossAndWheel(name),
     '(left)?singlecrosstradeandwheel'.ri: (name) => SingleCrossTradeAndWheel(name),

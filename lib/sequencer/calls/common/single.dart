@@ -22,25 +22,23 @@ import '../call.dart';
 import '../coded_call.dart';
 import '../common.dart';
 
-mixin IsLeft on Call {
+mixin IsSingle on Call {
 
-  var isLeft = false;
-  String get left => isLeft ? 'Left' : '';
-  String get leftHand => isLeft ? 'Left-Hand' : '';
+  var isSingle = false;
+  String get single => isSingle ? 'Single' : '';
 
 }
 
-class Left extends CodedCall {
+class Single extends CodedCall {
 
   @override var nextCallCoded = true;
 
-  Left(String name) : super(name);
+  Single(String name) : super(name);
 
   @override
   void performCall(CallContext ctx) {
-    var leftCall = ctx.findMixin<IsLeft>(startFrom:this);
-    leftCall.isLeft = true;
-    leftCall.raiseLevel(LevelData.A1);
+    var singleCall = ctx.findMixin<IsSingle>(startFrom:this);
+    singleCall.isSingle = true;
     return;
   }
 
