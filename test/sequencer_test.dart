@@ -3531,7 +3531,8 @@ Star Thru
 Pass Thru
 Allemande Left''', ''),
 
-  TestSequence('Lateral Substitute 3', '''Heads Move In
+  TestSequence('Lateral Substitute 3',
+'''Heads Move In
 Boys Run
 Lateral Substitute
 Counter Rotate
@@ -3575,7 +3576,8 @@ Pass Thru
 Trade By
 Allemande Left''',''),
 
-  TestSequence('Twice', '''Heads Pass Out
+  TestSequence('Twice',
+'''Heads Pass Out
 Touch 1/4
 Centers Trade
 Centers Run
@@ -3595,7 +3597,8 @@ Slide Thru
 Pass Thru
 Allemande Left''', ''),
 
-  TestSequence('Dosado to a Wave', '''Heads Lead Right
+  TestSequence('Dosado to a Wave',
+'''Heads Lead Right
 Dosado to a Wave
 Recycle
 Left Dosado to a Wave
@@ -3613,6 +3616,17 @@ Star Thru
 Acey Deucey Boys Go Twice
 Ferris Wheel
 Centers Reverse Swap
+Allemande Left''', ''),
+
+  TestSequence('Left Linear Cycle',
+'''Heads Lead Right
+Veer Left
+Bend the Line
+Left Linear Cycle
+Touch 1/4
+Circulate
+Boys Run
+Centers Pass Thru
 Allemande Left''', '')
 
 ];

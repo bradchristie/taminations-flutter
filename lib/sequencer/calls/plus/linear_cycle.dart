@@ -20,8 +20,9 @@
 
 import '../../../moves.dart';
 import '../common.dart';
+import '../common/left.dart';
 
-class LinearCycle extends ActivesOnlyAction  with CallWithParts {
+class LinearCycle extends ActivesOnlyAction  with CallWithParts, IsLeft {
 
   @override int numberOfParts = 3;
   @override var level = LevelData.PLUS;
@@ -35,7 +36,7 @@ class LinearCycle extends ActivesOnlyAction  with CallWithParts {
 
   @override
   void performPart1(CallContext ctx) {
-    ctx.applyCalls('Hinge');
+    ctx.applyCalls('$left Hinge');
   }
 
   @override
@@ -45,7 +46,7 @@ class LinearCycle extends ActivesOnlyAction  with CallWithParts {
       if (d.data.belle)
         saveBelles.add(d);
     }
-    var isLeft = saveBelles.length == ctx.dancers.length;
+    var allBelles = saveBelles.length == ctx.dancers.length;
     var boxes = ctx.boxes();
     if (boxes != null) {
       for (var box in boxes) {
@@ -56,7 +57,13 @@ class LinearCycle extends ActivesOnlyAction  with CallWithParts {
         });
       }
     } else {
-      ctx.applyCalls('Leaders Fold',(isLeft ? 'left ' : '') + 'Double Pass Thru');
+      ctx.applyCalls('Leaders Fold');
+      try {
+        ctx.applyCalls((allBelles ? 'left ' : '') + 'Double Pass Thru');
+      } on CallError {
+        for (var d in ctx.dancers)
+          d.path += Forward_4;
+      }
     }
   }
 
