@@ -72,13 +72,10 @@ class Separate extends Action {
           d.path += Forward.scale((dist3-2)/2,1.0);
       }
       //  Other dancers need to move in
-      for (var d in ctx.inActives) {
-        //  Find the other inactive dancer that this dancer will face
-        var d2 = ctx.dancerClosest(
-            d, (it) => !it.data.active && it.isInFrontOf(d));
-        //  Space the dancers 2 units apart
-        var dist = d.distanceTo(d2!) / 2 - 1;
-        d.path += Forward.changeBeats(3.0).scale(dist, 1.0);
+      if (CallContext.fromDancers(ctx.inActives).isBox()) {
+        for (var d in ctx.inActives) {
+          d.path += ctx.moveToPosition(d, d.location.sign, d.angleFacing);
+        }
       }
     }
 

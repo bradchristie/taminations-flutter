@@ -258,6 +258,45 @@ import '../../moves.dart';
           QuarterLeft.changeBeats(2).skew(0.0,1.5)
       ]),
 
+    AnimatedCall('Around One to a Line',
+        formation:Formation('T-Bone URRU'), noDisplay: true,
+        group:'   ',
+        paths:[
+          QuarterRight.changeBeats(2).skew(0.0,-1.5),
+
+          DodgeRight.changeBeats(2).skew(-0.5,0.0),
+
+          DodgeRight.changeBeats(2).skew(0.5,0.0),
+
+          QuarterLeft.changeBeats(2).skew(0.0,1.5)
+        ]),
+
+    AnimatedCall('Around One to a Line', noDisplay: true,
+        formation:Formation('T-Bone ULLU'),
+        group:'   ',
+        paths:[
+          QuarterRight.changeBeats(2).skew(0.0,-1.5),
+
+          DodgeLeft.changeBeats(2).skew(0.5,0.0),
+
+          DodgeLeft.changeBeats(2).skew(-0.5,0.0),
+
+          QuarterLeft.changeBeats(2).skew(0.0,1.5)
+        ]),
+
+    AnimatedCall('Around One to a Line', noDisplay: true,
+        formation:Formation('T-Bone ULRU'),
+        group:'   ',
+        paths:[
+          QuarterRight.changeBeats(2).skew(0.0,-1.5),
+
+          DodgeRight.changeBeats(2).skew(0.5,0.0),
+
+          DodgeLeft.changeBeats(2).skew(0.5,0.0),
+
+          QuarterLeft.changeBeats(2).skew(0.0,1.5)
+        ]),
+
     AnimatedCall('Around Two to a Line',
       formation:Formation('T-Bone URLU'),
       group:'   ',

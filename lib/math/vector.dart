@@ -48,6 +48,7 @@ class Vector implements Cloneable {
     return Vector(d * cos(a), d * sin(a));
   }
   Vector scale(double sx,double sy) => Vector(x*sx,y*sy);
+  Vector get sign => Vector(x.sign,y.sign);
   //  Return difference angle between two vectors
   //  in the range of -pi to pi
   double angleDiff(Vector v) {
