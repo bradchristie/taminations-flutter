@@ -38,7 +38,7 @@ class Left extends CodedCall {
 
   @override
   void performCall(CallContext ctx) {
-    var leftCall = ctx.findMixin<IsLeft>(startFrom:this);
+    var leftCall = ctx.findImplementor<IsLeft>(startFrom:this);
     leftCall.isLeft = true;
     leftCall.raiseLevel(LevelData.A1);
     return;

@@ -20,7 +20,7 @@
 
 import '../common.dart';
 
-class Adjust extends Action {
+class Adjust extends ActivesOnlyAction {
 
   @override var level = LevelData.NONE;
   @override var help = '''Adjust moves the dancers to a specific formation.
@@ -45,7 +45,7 @@ Formations you can use include
     var fname = name.replaceFirst('Adjust to( an?)? '.ri, '' );
     var formation = Formation(fname);
     var ctx2 = CallContext.fromFormation(formation);
-    var isSubset = ctx2.dancers.length > 8;
+    var isSubset = ctx2.dancers.length > ctx.dancers.length;
     var rotate = formation.name == 'Blocks' ? 90 : 180;
     var mapping = ctx.matchFormations(ctx2,sexy:false,fuzzy:true,rotate:rotate,handholds:false,subformation: isSubset, maxError : 3.0, delta: 0.3, maxAngle: 0.5)
         ?? thrower(CallError('Unable to match formation to $fname'));

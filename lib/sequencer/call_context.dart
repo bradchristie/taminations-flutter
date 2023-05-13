@@ -177,7 +177,7 @@ class CallContext {
     }
   }
 
-  T findMixin<T>({Call? startFrom}) {
+  T findImplementor<T>({Call? startFrom}) {
     var skip = callstack.indexOf(startFrom ?? callstack.first);
     for (var c in callstack.skip(skip)) {
       if (c is T)

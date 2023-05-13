@@ -540,6 +540,74 @@ import '../../moves.dart';
           LeadLeft.changeBeats(4.5).scale(1.0,2.5)
       ]),
 
+    AnimatedCall('1/3 Recycle',
+        formation:Formation('Wave RH'),
+        from:'Right-Hand Wave',
+        paths:[
+          ExtendRight.changeBeats(2).scale(1.5,2.0),
+          UmTurnRight.changeBeats(2).skew(1.5,0.0)
+        ]),
+
+    AnimatedCall('1/3 Recycle',
+        formation:Formation('Wave LH'),
+        from:'Left-Hand Wave',
+        paths:[
+          ExtendLeft.changeBeats(2).scale(1.5,2.0),
+          UmTurnLeft.changeBeats(2).skew(1.5,0.0)
+        ]),
+
+    AnimatedCall('1/3 Recycle',
+        formation:Formation('Ocean Waves RH BGGB'),
+        from:'Right-Hand Waves',
+        paths:[
+          ExtendRight.changeBeats(2).scale(1.0,2.0),
+
+          UmTurnRight.changeBeats(2).skew(1.0,0.0),
+
+          UmTurnRight.changeBeats(2).skew(1.0,0.0),
+
+          ExtendRight.changeBeats(2).scale(1.0,2.0),
+        ]),
+
+    AnimatedCall('1/3 Recycle',
+        formation:Formation('Ocean Waves LH BGGB'),
+        from:'Left-Hand Waves',
+        paths:[
+          ExtendLeft.changeBeats(2).scale(1.0,2.0),
+
+          UmTurnLeft.changeBeats(2).skew(1.0,0.0),
+
+          UmTurnLeft.changeBeats(2).skew(1.0,0.0),
+
+          ExtendLeft.changeBeats(2).scale(1.0,2.0)
+        ]),
+
+    AnimatedCall('1/3 Recycle',
+        formation:Formation('Tidal Wave RH BGGB'),
+        from:'Right-Hand Tidal Wave',
+        paths:[
+          ExtendRight.changeBeats(2).scale(1.5,0.5),
+
+          UmTurnRight.changeBeats(2).skew(1.5,-0.5),
+
+          UmTurnRight.changeBeats(2).skew(1.5,-0.5),
+
+          ExtendRight.changeBeats(2).scale(1.5,0.5)
+        ]),
+
+    AnimatedCall('1/3 Recycle',
+        formation:Formation('Tidal Wave LH BGGB'),
+        from:'Left-Hand Tidal Wave',
+        paths:[
+          ExtendLeft.changeBeats(2).scale(1.5,0.5),
+
+          UmTurnLeft.changeBeats(2).skew(1.5,0.5),
+
+          UmTurnLeft.changeBeats(2).skew(1.5,0.5),
+
+          ExtendLeft.changeBeats(2).scale(1.5,0.5)
+        ]),
+
     AnimatedCall('As Couples 2/3 Recycle',
       formation:Formation('Two-Faced Tidal Line RH'),
       group:' ',

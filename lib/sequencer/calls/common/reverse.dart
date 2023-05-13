@@ -37,7 +37,7 @@ class Reverse extends CodedCall {
 
   @override
   void performCall(CallContext ctx) {
-    var reverseCall = ctx.findMixin<IsReverse>(startFrom:this);
+    var reverseCall = ctx.findImplementor<IsReverse>(startFrom:this);
     reverseCall.isReverse = true;
     reverseCall.raiseLevel(LevelData.A1);
     return;

@@ -37,7 +37,7 @@ class Single extends CodedCall {
 
   @override
   void performCall(CallContext ctx) {
-    var singleCall = ctx.findMixin<IsSingle>(startFrom:this);
+    var singleCall = ctx.findImplementor<IsSingle>(startFrom:this);
     singleCall.isSingle = true;
     return;
   }
