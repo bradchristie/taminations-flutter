@@ -88,10 +88,10 @@ class Concentric extends Action {
 
   @override
   void perform(CallContext ctx) {
-
     if (realCall.isBlank)
       throw CallError('Concentric what?');
     if (ctx.actives.length == 8) {
+      ctx.canDoYourPart = false;
       ctx.applyCalls('Center 4 $realCall');
       ctx.checkCenters();
       ctx.contractPaths();

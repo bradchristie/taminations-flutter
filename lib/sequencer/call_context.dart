@@ -117,6 +117,7 @@ class CallContext {
   bool _snap = true;
   bool _thoseWhoCan = false;
   bool _noExtend = false;
+  bool canDoYourPart = true;
   bool resolutionError = false;
   bool asymmetric = false;
   bool didYourPart = false;
@@ -147,6 +148,7 @@ class CallContext {
     _source = source;
     _thoseWhoCan = source._thoseWhoCan;
     _snap = source._snap;
+    canDoYourPart = source.canDoYourPart;
   }
 
   CallContext.fromFormation(Formation f,

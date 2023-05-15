@@ -50,6 +50,8 @@ class DoYourPart extends Action {
   @override
   void perform(CallContext ctx) {
     final callName = name.replaceFirst('Do Your Part'.ri,'').trim();
+    if (!ctx.canDoYourPart)
+      throw CallError('Unable to do $callName from this formation');
     if (callName.isBlank)
       throw CallError('Do Your Part of what?');
 
