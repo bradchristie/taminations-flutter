@@ -58,7 +58,8 @@ class CrossRun extends ActivesOnlyAction {
         throw CallError('Dancers must be in waves of 4 or 8');
       if (numright == 2 || numright == 3 || numright == 6 || numright == 7) {
         final d2 = dright[1];
-        realDodgers.add(d2);
+        if (!runners.contains(d2))
+          realDodgers.add(d2);
         final dist = d.distanceTo(d2);
         //  If centers are running and facing same direction,
         //  dancer on right goes in front (half-sashay action)
@@ -77,13 +78,16 @@ class CrossRun extends ActivesOnlyAction {
       }
       else if (numleft == 2 || numleft == 3 || numleft == 6 || numleft == 7) {
         final d2 = dleft[1];
-        realDodgers.add(d2);
+        if (!runners.contains(d2))
+          realDodgers.add(d2);
         final dist = d.distanceTo(d2);
         d.path = RunLeft.scale(1.0,dist/2);
       }
       else
         throw CallError('Error calculating Cross Run');
     }
+    if (realDodgers.length != runners.length)
+      throw CallError('Error calculating Cross Run');
 
     for (var d in realDodgers) {
       //  Find a direction they can move to a runner's spot
