@@ -38,6 +38,7 @@ import 'a1/quarter_in_out.dart';
 import 'a1/quarter_thru.dart';
 import 'a1/roll_to_a_wave.dart';
 import 'a1/six_two_acey_deucey.dart';
+import 'a1/split_square_chain_thru.dart';
 import 'a1/split_square_thru.dart';
 import 'a1/square_chain_thru.dart';
 import 'a1/swing_and_mix.dart';
@@ -527,6 +528,7 @@ abstract class CodedCall extends Call {
     'splitdixiediamond'.ri: (name) => SplitDixieDiamond(name),
     'splitdixiestyle(toawave)?'.ri: (name) => SplitDixieStyle(name),
     '(reverse)?splitrecycle'.ri: (name) => SplitRecycle(name),
+    'splitsquarechainthru'.ri: (name) => SplitSquareChainThru(name),
     '(left)?splitsquarethru[2-7]?'.ri: (name) => SplitSquareThru(name),
     'split(2|theoutsides?(couple))?'.ri: (name) => SplitTwo(name),
     '(and)?spread'.ri: (name) => Spread(name),

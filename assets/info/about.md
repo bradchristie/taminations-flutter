@@ -23,15 +23,18 @@ Call pronunciations provided by
 
 ---
 
-## Taminations version 1.6.61 built 2023-05-08
+## Taminations version 1.6.62 built 2023-06-05
 Copyright 2023 by Brad Christie.  
 This is free software, and you are welcome to modify and redistribute it
 under the terms of the [GNU GPL license](http://www.gnu.org/licenses/gpl.html).  
 
 ## What's New
-* More animations for Cross Extend, Team Up, Scoot Back, Scoot and Weave
+* Animations for 1/3 Recycle (C-1)
+* For Practice mode, don't select hidden animations only used internally for sequencer
+* Name <anything> calls consistently
 * Sequencer changes:
-  - Fix displayed level for each call
+  - (Reverse) (Single) Rotate from more formations
+  - Fix for Square Thru on Nth hand <some call>
 
 For a detailed history of changes, view the
 [Git log](https://github.com/bradchristie/taminations-flutter/commits/main)
