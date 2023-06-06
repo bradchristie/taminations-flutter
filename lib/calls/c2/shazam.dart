@@ -37,6 +37,18 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Shazam',
+        formation:Formation('Box RH Close'),
+        from:'Tight Right-Hand Box',parts:'1.5',
+        noDisplay: true,
+        paths:[
+          HingeRight.scale(0.5, 1) +
+              UmTurnRight,
+
+          HingeRight.scale(0.5, 1) +
+              UmTurnRight
+        ]),
+
+    AnimatedCall('Shazam',
       formation:Formation('Box LH'),
       from:'Left-Hand Box',parts:'1.5',
       paths:[
@@ -46,6 +58,18 @@ import '../../moves.dart';
           HingeLeft +
           UmTurnLeft
       ]),
+
+    AnimatedCall('Shazam',
+        formation:Formation('Box LH Close'),
+        from:'Tight Left-Hand Box',parts:'1.5',
+        noDisplay: true,
+        paths:[
+          HingeLeft.scale(0.5, 1) +
+              UmTurnLeft,
+
+          HingeLeft.scale(0.5, 1) +
+              UmTurnLeft
+        ]),
 
     AnimatedCall('Shazam',
       formation:Formation('Wave RH'),
