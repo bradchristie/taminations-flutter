@@ -3627,6 +3627,17 @@ Touch 1/4
 Circulate
 Boys Run
 Centers Pass Thru
-Allemande Left''', '')
+Allemande Left''', ''),
+
+  TestSequence('Anything and Circle',
+'''Sides Pass the Ocean
+Extend
+Extend
+Mix and Circle 1/2
+Girls Run and Circle 1/2
+Boys Recycle
+Right Roll to a Wave
+Cast Off 3/4
+Right and Left Grand''',''),
 
 ];

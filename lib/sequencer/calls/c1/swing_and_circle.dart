@@ -54,3 +54,25 @@ class SwingAndCircle extends Action with IsLeft {
   }
 
 }
+
+class AnythingAndCircle extends Action {
+
+  @override final level = LevelData.C2;
+  @override var helplink = 'c2/anything_and_circle';
+  AnythingAndCircle(String name) : super(name);
+
+  @override
+  void perform(CallContext ctx) {
+    var anyCall = name.replaceFirst(' and circle.*'.ri, '');
+    var count = ['14','12','34'].indexOf(norm.substring(norm.length-2)) + 1;
+    ctx.canDoYourPart = false;
+    for (var i=0; i<count; i++) {
+      try {
+        ctx.applyCalls('Centers $anyCall', 'Outer 6 and_Circle 1/4');
+      } on CallError catch (_) {
+        ctx.applyCalls(anyCall, 'Outer 6 and_Circle 1/4');
+      }
+    }
+  }
+
+}

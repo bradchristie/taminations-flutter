@@ -19,6 +19,7 @@
 */
 
 import '../../animated_call.dart';
+import '../../dancer_model.dart';
 import '../../formation.dart';
 import '../../moves.dart';
 
@@ -193,5 +194,157 @@ import '../../moves.dart';
           SwingLeft +
           UmTurnLeft.changeBeats(4).skew(3.0,2.0)
       ]),
+
+    AnimatedCall('and_Circle 1/4',
+        formation:Formation('', dancers:[
+          DancerModel.fromData(gender:Gender.BOY,x:-3,y:1,angle:0),
+          DancerModel.fromData(gender:Gender.GIRL,x:-3,y:-1,angle:0),
+          DancerModel.fromData(gender:Gender.BOY,x:0,y:-3,angle:180)
+        ]),
+        from:'Right-Hand Quarter Tag',
+        isPerimeter: true,
+        noDisplay: true,
+        paths:[
+          ExtendLeft.changeBeats(4).scale(3.0,2.0),
+          DodgeLeft.changeBeats(4),
+          UmTurnRight.changeBeats(4).skew(3.0,-2.0)
+        ]),
+
+    AnimatedCall('and_Circle 1/4',
+        formation:Formation('Quarter Tag LH', dancers:[
+          DancerModel.fromData(gender:Gender.BOY,x:-3,y:1,angle:0),
+          DancerModel.fromData(gender:Gender.GIRL,x:-3,y:-1,angle:0),
+          DancerModel.fromData(gender:Gender.BOY,x:0,y:-3,angle:0),
+        ]),
+        from:'Left-Hand Quarter Tag',
+        isPerimeter: true,
+        noDisplay: true,
+        paths:[
+          DodgeRight.changeBeats(4),
+          ExtendRight.changeBeats(4).scale(3.0,2.0),
+          UmTurnLeft.changeBeats(4).skew(3.0,2.0)
+        ]),
+
+    AnimatedCall('and_Circle 1/4',
+        formation:Formation('', dancers:[
+          DancerModel.fromData(gender:Gender.GIRL,x:-3,y:1,angle:180),
+          DancerModel.fromData(gender:Gender.BOY,x:-3,y:-1,angle:180),
+          DancerModel.fromData(gender:Gender.BOY,x:0,y:-3,angle:180),
+        ]),
+        from:'Right-Hand 3/4 Tag',
+        isPerimeter: true,
+        noDisplay: true,
+        paths:[
+          RunRight.changeBeats(4).skew(-3.0,0.0),
+          FlipRight.changeBeats(4),
+          UmTurnRight.changeBeats(4).skew(3.0,-2.0)
+        ]),
+
+    AnimatedCall('and_Circle 1/4',
+        formation:Formation('', dancers:[
+          DancerModel.fromData(gender:Gender.GIRL,x:-3,y:1,angle:180),
+          DancerModel.fromData(gender:Gender.BOY,x:-3,y:-1,angle:180),
+          DancerModel.fromData(gender:Gender.BOY,x:0,y:-3,angle:0),
+        ]),
+        from:'Left-Hand 3/4 Tag',
+        isPerimeter: true,
+        noDisplay: true,
+        paths:[
+          FlipLeft.changeBeats(4),
+          RunLeft.changeBeats(4).skew(-3.0,0.0),
+          UmTurnLeft.changeBeats(4).skew(3.0,2.0)
+        ]),
+
+    AnimatedCall('and_Circle 1/4',
+        formation:Formation('', dancers:[
+          DancerModel.fromData(gender:Gender.BOY,x:-3,y:1,angle:0),
+          DancerModel.fromData(gender:Gender.GIRL,x:-3,y:-1,angle:180),
+          DancerModel.fromData(gender:Gender.BOY,x:0,y:-3,angle:180),
+        ]),
+        from:'Right-Hand Quarter Waves',
+        isPerimeter: true,
+        noDisplay: true,
+        paths:[
+          ExtendLeft.changeBeats(4).scale(3.0,2.0),
+          FlipRight.changeBeats(4),
+          UmTurnRight.changeBeats(4).skew(3.0,-2.0)
+        ]),
+
+    AnimatedCall('and_Circle 1/4',
+        formation:Formation('', dancers:[
+          DancerModel.fromData(gender:Gender.BOY,x:-3,y:1,angle:180),
+          DancerModel.fromData(gender:Gender.GIRL,x:-3,y:-1,angle:0),
+          DancerModel.fromData(gender:Gender.BOY,x:0,y:-3,angle:0),
+        ]),
+        from:'Left-Hand Quarter Waves',
+        isPerimeter: true,
+        noDisplay: true,
+        paths:[
+          FlipLeft.changeBeats(4),
+          ExtendRight.changeBeats(4).scale(3.0,2.0),
+          UmTurnLeft.changeBeats(4).skew(3.0,2.0)
+        ]),
+
+    AnimatedCall('and_Circle 1/4',
+        formation:Formation('', dancers:[
+          DancerModel.fromData(gender:Gender.BOY,x:-3,y:1,angle:180),
+          DancerModel.fromData(gender:Gender.GIRL,x:-3,y:-1,angle:0),
+          DancerModel.fromData(gender:Gender.BOY,x:0,y:-3,angle:180),
+        ]),
+        from:'Mixed Quarter Tag 1',
+        isPerimeter: true,
+        noDisplay: true,
+        paths:[
+          RunRight.changeBeats(4).skew(-3.0,0.0),
+          DodgeLeft.changeBeats(4),
+          UmTurnRight.changeBeats(4).skew(3.0,-2.0)
+        ]),
+
+    AnimatedCall('and_Circle 1/4',
+        formation:Formation('', dancers:[
+          DancerModel.fromData(gender:Gender.BOY,x:-3,y:1,angle:0),
+          DancerModel.fromData(gender:Gender.GIRL,x:-3,y:-1,angle:180),
+          DancerModel.fromData(gender:Gender.BOY,x:0,y:-3,angle:0),
+        ]),
+        from:'Mixed Quarter Tag 2',
+        isPerimeter: true,
+        noDisplay: true,
+        paths:[
+          DodgeRight.changeBeats(4),
+          RunLeft.changeBeats(4).skew(-3.0,0.0),
+          UmTurnLeft.changeBeats(4).skew(3.0,2.0)
+        ]),
+
+    AnimatedCall('and_Circle 1/4',
+        formation:Formation('', dancers:[
+          DancerModel.fromData(gender:Gender.BOY,x:0,y:-3,angle:180),
+          DancerModel.fromData(gender:Gender.GIRL,x:-3,y:-2,angle:90),
+          DancerModel.fromData(gender:Gender.GIRL,x:3,y:-2,angle:270),
+        ]),
+        from:'Right-Hand Diamonds',
+        isPerimeter: true,
+        noDisplay: true,
+        paths:[
+          UmTurnRight.changeBeats(4).skew(3.0,-2.0),
+          QuarterRight.changeBeats(4).skew(3.0,0.0),
+          LeadRight.changeBeats(4).scale(1.0,3.0)
+        ]),
+
+    AnimatedCall('and_Circle 1/4',
+        formation:Formation('', dancers:[
+          DancerModel.fromData(gender:Gender.BOY,x:0,y:-3,angle:0),
+          DancerModel.fromData(gender:Gender.GIRL,x:-3,y:-2,angle:270),
+          DancerModel.fromData(gender:Gender.GIRL,x:3,y:-2,angle:90),
+        ]),
+        from:'Left-Hand Diamonds',
+        isPerimeter: true,
+        noDisplay: true,
+        paths:[
+          UmTurnLeft.changeBeats(4).skew(3.0,2.0),
+          LeadLeft.changeBeats(4).scale(1.0,3.0),
+          QuarterLeft.changeBeats(4).skew(3.0,0.0)
+        ]),
+
+
   ];
 

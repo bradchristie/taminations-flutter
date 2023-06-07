@@ -299,6 +299,7 @@ abstract class CodedCall extends Call {
     'alterandcirculate'.ri: (_) => AlterAndCirculate(),
     'alterthewave'.ri: (name) => AlterTheWave(name),
     'and'.ri: (_) => And(),
+    '.*(?<!(swing))andcircle(14|12|34)'.ri: (name) => AnythingAndCircle(name),
     'InterlockedDiamondChainThru'.r: (name) => AnythingChainThru(name),
     'around1andcomeintothemiddle'.ri: (_) =>
         AroundToALine('Around One and Come Into the Middle'),
