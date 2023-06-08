@@ -55,6 +55,7 @@ class SequencerModel extends fm.ChangeNotifier {
     animation.addListener(() {
       _updateCurrentCall();
     });
+    Dancer.shuffleNames();
   }
 
   void setStartingFormation(String formation) {
@@ -151,6 +152,10 @@ class SequencerModel extends fm.ChangeNotifier {
     }
     else if (command.matches('id name.*'.r)) {
       settings.dancerIdentification = 'Names';
+      if (command.lc.contains('shuffle')) {
+        Dancer.shuffleNames();
+        reset();
+      }
     }
     else {
       errorString = 'Invalid Id: $c';

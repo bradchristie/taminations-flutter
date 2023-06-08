@@ -90,15 +90,6 @@ class DanceModel extends fm.ChangeNotifier {
     Color.YELLOW
   ];
 
-  final _boyNames = ['Adam','Brad','Carl','David',
-    'Eric','Frank',
-    'Gary','Hank',
-    'John','Kevin','Larry',
-    'Mark','Paul','Ray','Scott','Tim','Wally'];
-  final _girlNames = ['Alice','Barb','Carol','Donna',
-    'Helen', 'Karen','Irene','Janet','Linda','Mary','Nancy',
-    'Pam','Ruth','Susan','Tina','Wanda'];
-
   DanceModel([fm.BuildContext? context])
       : beater = context == null ? BeatNotifier() : pp.Provider.of<BeatNotifier>(context,listen: false) {
     beater.addListener(_updateCurrentPart);
@@ -138,12 +129,6 @@ class DanceModel extends fm.ChangeNotifier {
       _showNumbers = Dancer.NUMBERS_COUPLES;
     else if (value == 'Names') {
       _showNumbers = Dancer.NUMBERS_NAMES;
-      _boyNames.shuffle();
-      _girlNames.shuffle();
-      for (var i=0; i<dancers.length; i++) {
-        final d = dancers[i];
-        d.name = d.gender == Gender.BOY ? _boyNames[i] : _girlNames[i];
-      }
     }
     for (var d in dancers) {
       if (d.showNumber != _showNumbers) {

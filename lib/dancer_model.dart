@@ -217,7 +217,6 @@ class DancerModel implements Comparable<DancerModel>, Cloneable<DancerModel> {
   bool rightHandNewVisibility = false;
   bool leftHandNewVisibility = false;
   var data = DancerData();
-  var name = '';  // for sequencer
 
   DancerModel(this.number,this.numberCouple, this.gender,
       Matrix mat, this.moves, [this.clonedFrom])

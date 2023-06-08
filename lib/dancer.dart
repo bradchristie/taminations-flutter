@@ -45,6 +45,21 @@ class Dancer extends DancerModel {
   fm.Path? _pathPath;
   var _span = fm.TextSpan();
   var _tp = fm.TextPainter();
+  var name = '';  // for sequencer
+
+  static final _boyNames = ['Adam','Brad','Carl','David',
+    'Eric','Frank',
+    'Gary','Hank',
+    'John','Kevin','Larry',
+    'Mark','Paul','Ray','Scott','Tim','Wally'];
+  static final _girlNames = ['Alice','Barb','Carol','Donna',
+    'Helen', 'Karen','Irene','Janet','Linda','Mary','Nancy',
+    'Pam','Ruth','Susan','Tina','Wanda'];
+
+  static void shuffleNames() {
+    _boyNames.shuffle();
+    _girlNames.shuffle();
+  }
 
   int get showNumber => _showNumber;
       set showNumber(int value) {
@@ -61,8 +76,15 @@ class Dancer extends DancerModel {
 
       }
 
-  Dancer(number,numberCouple, gender,this.fillColor, Matrix mat, this.geometry, moves)
+  Dancer(String number, String numberCouple,
+     int gender,this.fillColor, Matrix mat, this.geometry, List<Movement> moves)
       : super(number,numberCouple,gender,mat,moves) {
+    if (int.tryParse(number)!=null) {
+      if (gender == Gender.BOY)
+        name = _boyNames[number.i];
+      else if (gender == Gender.GIRL)
+        name = _girlNames[number.i];
+    }
     // Compute points of path for drawing path
     computePath();
   }
