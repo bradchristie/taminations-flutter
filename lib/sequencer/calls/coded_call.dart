@@ -201,6 +201,7 @@ import 'c2/zip_code.dart';
 import 'c3a/breaker.dart';
 import 'c3a/couple_up.dart';
 import 'c3a/own_the_dancers.dart';
+import 'c3a/patch.dart';
 import 'c3a/quarter_mix.dart';
 import 'c3a/snap_the_lock.dart';
 import 'c3a/spin_the_pulley.dart';
@@ -450,6 +451,7 @@ abstract class CodedCall extends Call {
     'passthesea'.ri: (_) => PassTheSea(),
     '(left)?passthru'.ri: (name) => PassThru(name),
     'passtothecenter'.ri: (name) => PassToTheCenter(name),
+    'patch(the)?($specifier)?'.ri: (name) => Patch(name),
     'peel(off|left|right)'.ri: (name) => PeelOff(name),
     'peeltoadiamond'.ri: (name) => PeelToADiamond(name),
     'percolate'.ri: (name) => Percolate(name),

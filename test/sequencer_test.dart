@@ -3640,4 +3640,20 @@ Right Roll to a Wave
 Cast Off 3/4
 Right and Left Grand''',''),
 
+  TestSequence('Patch',
+'''Sides Pass the Ocean
+Extend
+Patch the Boys
+Patch the Centers
+Pass Thru
+Patch the Leaders
+Split Circulate
+Boys Run
+Pass Thru
+Wheel and Deal
+Zoom
+Centers Square Thru 3
+Half Sashay
+Allemande Left''', ''),
+
 ];
