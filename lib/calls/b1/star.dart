@@ -454,5 +454,233 @@ import '../../moves.dart';
           SwingLeft.changeBeats(4) +
           QuarterRight.changeBeats(1).changehands(1).skew(1.0,0.0)
       ]),
-  ];
 
+
+    //  Stars for sequencer
+    AnimatedCall('Star Right 1/4 Across',
+        group: ' ',
+        formation: Formation('Facing Couples Close'),
+        noDisplay: true,
+        paths: [
+          Forward +
+              Forward,
+
+          QuarterLeft.changeBeats(1).skew(0, 1) +
+              QuarterLeft.changeBeats(1).skew(1, 0)
+        ]),
+
+    AnimatedCall('Star Right 1/2 Across',
+        group: ' ',
+        formation: Formation('Facing Couples Close'),
+        noDisplay: true,
+        paths: [
+          Forward +
+              HingeRight +
+              QuarterLeft.changeBeats(1).skew(1, 0),
+
+          QuarterLeft.changeBeats(1).skew(0, 1) +
+              HingeRight +
+              Forward
+        ]),
+
+    AnimatedCall('Star Right 3/4 Across',
+        group: ' ',
+        formation: Formation('Facing Couples Close'),
+        noDisplay: true,
+        paths: [
+          Forward +
+              SwingRight +
+              Forward,
+
+          QuarterLeft.changeBeats(1).skew(0, 1) +
+              SwingRight +
+              QuarterLeft.changeBeats(1).skew(1, 0)
+        ]),
+
+    AnimatedCall('Star Right Full Across',
+        group: ' ',
+        formation: Formation('Facing Couples Close'),
+        noDisplay: true,
+        paths: [
+          Forward +
+              SwingRight +
+              HingeRight +
+              QuarterLeft.changeBeats(1).skew(1, 0),
+
+          QuarterLeft.changeBeats(1).skew(0, 1) +
+              SwingRight +
+              HingeRight +
+              Forward
+        ]),
+
+    AnimatedCall('Star Left 1/4 Across',
+        group: ' ',
+        formation: Formation('Facing Couples Close'),
+        noDisplay: true,
+        paths: [
+          QuarterRight.changeBeats(1).skew(0, -1) +
+              QuarterRight.changeBeats(1).skew(1, 0),
+
+          Forward +
+              Forward
+        ]),
+
+    AnimatedCall('Star Left 1/2 Across',
+        group: ' ',
+        formation: Formation('Facing Couples Close'),
+        noDisplay: true,
+        paths: [
+          QuarterRight.changeBeats(1).skew(0, -1) +
+              HingeLeft +
+              Forward,
+
+          Forward +
+              HingeLeft +
+              QuarterRight.changeBeats(1).skew(1, 0)
+        ]),
+
+    AnimatedCall('Star Left 3/4 Across',
+        group: ' ',
+        formation: Formation('Facing Couples Close'),
+        noDisplay: true,
+        paths: [
+          QuarterRight.changeBeats(1).skew(0, -1) +
+              SwingLeft +
+              QuarterRight.changeBeats(1).skew(1, 0),
+
+          Forward +
+              SwingLeft +
+              Forward
+        ]),
+
+    AnimatedCall('Star Left Full Across',
+        group: ' ',
+        formation: Formation('Facing Couples Close'),
+        noDisplay: true,
+        paths: [
+          QuarterRight.changeBeats(1).skew(0, -1) +
+              SwingLeft +
+              HingeLeft +
+              Forward,
+
+          Forward +
+              SwingLeft +
+              HingeLeft +
+              QuarterRight.changeBeats(1).skew(1, 0)
+        ]),
+
+
+
+    AnimatedCall('Star Right 1/4 Across and Roll',
+        group: ' ',
+        formation: Formation('Facing Couples Close'),
+        noDisplay: true,
+        paths: [
+          Forward +
+              QuarterRight.changeBeats(1).skew(1, 0),
+
+          QuarterLeft.changeBeats(1).skew(0, 1) +
+              Forward
+        ]),
+
+    AnimatedCall('Star Right 1/2 Across and Roll',
+        group: ' ',
+        formation: Formation('Facing Couples Close'),
+        noDisplay: true,
+        paths: [
+          Forward +
+              HingeRight +
+              Forward,
+
+          QuarterLeft.changeBeats(1).skew(0, 1) +
+              HingeRight +
+              QuarterRight.changeBeats(1).skew(1, 0)
+        ]),
+
+    AnimatedCall('Star Right 3/4 Across and Roll',
+        group: ' ',
+        formation: Formation('Facing Couples Close'),
+        noDisplay: true,
+        paths: [
+          Forward +
+              SwingRight +
+              QuarterRight.changeBeats(1).skew(1, 0),
+
+          QuarterLeft.changeBeats(1).skew(0, 1) +
+              SwingRight +
+              Forward
+        ]),
+
+    AnimatedCall('Star Right Full Across and Roll',
+        group: ' ',
+        formation: Formation('Facing Couples Close'),
+        noDisplay: true,
+        paths: [
+          Forward +
+              SwingRight +
+              HingeRight +
+              Forward,
+
+          QuarterLeft.changeBeats(1).skew(0, 1) +
+              SwingRight +
+              HingeRight +
+              QuarterRight.changeBeats(1).skew(1, 0),
+        ]),
+
+    AnimatedCall('Star Left 1/4 Across and Roll',
+        group: ' ',
+        formation: Formation('Facing Couples Close'),
+        noDisplay: true,
+        paths: [
+          QuarterRight.changeBeats(1).skew(0, -1) +
+              Forward,
+
+          Forward +
+              QuarterLeft.changeBeats(1).skew(1, 0),
+        ]),
+
+    AnimatedCall('Star Left 1/2 Across and Roll',
+        group: ' ',
+        formation: Formation('Facing Couples Close'),
+        noDisplay: true,
+        paths: [
+          QuarterRight.changeBeats(1).skew(0, -1) +
+              HingeLeft +
+              QuarterLeft.changeBeats(1).skew(1, 0),
+
+          Forward +
+              HingeLeft +
+              Forward
+        ]),
+
+    AnimatedCall('Star Left 3/4 Across and Roll',
+        group: ' ',
+        formation: Formation('Facing Couples Close'),
+        noDisplay: true,
+        paths: [
+          QuarterRight.changeBeats(1).skew(0, -1) +
+              SwingLeft +
+              Forward,
+
+          Forward +
+              SwingLeft +
+              QuarterLeft.changeBeats(1).skew(1, 0)
+        ]),
+
+    AnimatedCall('Star Left Full Across and Roll',
+        group: ' ',
+        formation: Formation('Facing Couples Close'),
+        noDisplay: true,
+        paths: [
+          QuarterRight.changeBeats(1).skew(0, -1) +
+              SwingLeft +
+              HingeLeft +
+              QuarterLeft.changeBeats(1).skew(1, 0),
+
+          Forward +
+              SwingLeft +
+              HingeLeft +
+              Forward
+        ]),
+
+  ];

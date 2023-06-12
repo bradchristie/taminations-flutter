@@ -45,12 +45,12 @@ On Cross Chain and Roll, the ends Roll after the Courtesy Turn and all adjust to
       case 1 : turnFraction = '1/4'; break;
       case 2 : break;
       case 3 : turnFraction  = '3/4'; break;
-      case 4 : turnFraction = 'a Full Turn'; break;
+      case 4 : turnFraction = 'Full'; break;
       default : throw CallError('Unable to turn the star that amount');
     }
     final andRoll = name.endsWith('Roll') ? 'and Roll' : '';
     ctx.applyCalls('Outer 4 Courtesy Turn $andRoll While '
-        'Center 4 Left-Hand Star $turnFraction $andRoll');
+        'Center 4 Star Left $turnFraction Across $andRoll');
   }
 
 }
