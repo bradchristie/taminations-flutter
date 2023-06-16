@@ -3656,4 +3656,20 @@ Centers Square Thru 3
 Half Sashay
 Allemande Left''', ''),
 
+  TestSequence('Touch By',
+'''Heads Pass In
+Touch By 3/4 By 1/4
+Ferris Wheel
+Touch By 1/4 By Recycle
+Diamond Circulate
+Flip the Diamond
+Hinge
+Circulate
+Boys Run
+Bend the Line
+Touch 1/4
+Circulate
+Boys Run
+Allemande Left''',''),
+
 ];

@@ -205,6 +205,7 @@ import 'c3a/patch.dart';
 import 'c3a/quarter_mix.dart';
 import 'c3a/snap_the_lock.dart';
 import 'c3a/spin_the_pulley.dart';
+import 'c3a/touch_by.dart';
 import 'c3b/cast_and_relay.dart';
 import 'c3b/change_the_centers.dart';
 import 'c3b/reverse_order.dart';
@@ -580,7 +581,8 @@ abstract class CodedCall extends Call {
     'toawave'.ri: (name) => ToAWave(name),
     '(left)?touch'.ri: (name) => Touch(name),
     'steptoa(lefthand)?wave'.ri: (name) => Touch(name),
-    '(left)?touch1(4|2)'.ri: (name) => TouchAQuarter(name),
+    '(left)?touch(14|12|34)'.ri: (name) => TouchAQuarter(name),
+    'touchby.*'.ri: (name) => TouchBy(name),
     '(partner)?trade(?!thewave)'.ri: (name) => Trade(name),
     'trail'.ri: (name) => Trailers(name),
     'trailtoadiamond'.ri: (name) => TrailToADiamond(name),

@@ -207,7 +207,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('(From offset columns) "Z" Walk and Dodge',
-      formation:Formation('Column RH GBGB', dancers:[
+      formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.GIRL,x:-2,y:-1,angle:180),
         DancerModel.fromData(gender:Gender.BOY,x:0,y:-1,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:2,y:-1,angle:180),
