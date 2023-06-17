@@ -137,7 +137,8 @@ class CallContext {
   CallContext.fromContext(
       CallContext source, {
         List<DancerModel>? dancers,
-        double beat = double.maxFinite
+        double beat = double.maxFinite,
+        withCalls = false
       }) {
     dancers ??= source.dancers;
     dancers.forEach((d) { d.animate(beat); });
@@ -149,6 +150,8 @@ class CallContext {
     _thoseWhoCan = source._thoseWhoCan;
     _snap = source._snap;
     canDoYourPart = source.canDoYourPart;
+    if (withCalls)
+      callstack = source.callstack.copy();
   }
 
   CallContext.fromFormation(Formation f,

@@ -29,13 +29,44 @@ class Stretch extends Action {
   @override
   void perform(CallContext ctx) {
 
-    final stretchctx = ctx.nextActionContext(this)
+    //  Find out what we are stretching
+    var stretchctx = ctx.nextActionContext(this)
         ?? thrower(CallError('Not able to find call for Stretch'))!;
 
-    //  First perform the call normally
-    stretchctx.performCall();
+    //  First perform the call normally, with each set of 4 dancers
+    var found = false;
+    CallError? error;
+    if (stretchctx.dancers.none((d) => d.isOnXAxis)) {
+      try {
+        stretchctx.dancers.partition((d) => d.location.x < 0).forEach((xgroup) {
+          var groupctx = CallContext.fromContext(stretchctx, dancers: xgroup, withCalls: true);
+          groupctx.canDoYourPart = false;
+          groupctx.performCall();
+          groupctx.appendToSource();
+          found = true;
+        });
+      } on CallError catch (e) {
+        error = e;
+      }
+    }
+    if (stretchctx.dancers.none((d) => d.isOnYAxis)) {
+      try {
+        stretchctx.dancers.partition((d) => d.location.y < 0).forEach((xgroup) {
+          var groupctx = CallContext.fromContext(stretchctx, dancers: xgroup, withCalls: true);
+          groupctx.canDoYourPart = false;
+          groupctx.performCall();
+          groupctx.appendToSource();
+          found = true;
+        });
+      } on CallError catch (e) {
+        error = e;
+      }
+    }
+    if (!found)
+      throw error!;
 
     //  Now shift the new centers to their stretch positions
+    stretchctx.matchStandardFormation();
     stretchctx.animateToEnd();
     stretchctx.analyze();
     if (stretchctx.is2x4()) {
@@ -43,19 +74,19 @@ class Stretch extends Action {
         Vector shift;
         if (stretchctx.dancerInFront(d) ?.data.end ?? false) {
           final d2 = stretchctx.dancerInBack(d).throwIfNull(
-              CallError('Unable to calculate Stretch'));
+              CallError('Unable to calculate Stretch 1'));
           shift = Vector(-d.distanceTo(d2), 0.0);
         } else if (stretchctx.dancerInBack(d) ?.data.end ?? false) {
           final d2 = stretchctx.dancerInFront(d).throwIfNull(
-              CallError('Unable to calculate Stretch'));
+              CallError('Unable to calculate Stretch 2'));
           shift = Vector(d.distanceTo(d2), 0.0);
         } else if (stretchctx.dancerToLeft(d) ?.data.end ?? false) {
           final d2 = stretchctx.dancerToRight(d).throwIfNull(
-              CallError('Unable to calculate Stretch'));
+              CallError('Unable to calculate Stretch 3'));
           shift = Vector(0.0, -d.distanceTo(d2));
         } else if (stretchctx.dancerToRight(d) ?.data.end ?? false) {
           final d2 = stretchctx.dancerToLeft(d).throwIfNull(
-              CallError('Unable to calculate Stretch'));
+              CallError('Unable to calculate Stretch 4'));
           shift = Vector(0.0, d.distanceTo(d2));
         } else
           throw CallError('Unable to find direction to Stretch');
@@ -73,7 +104,7 @@ class Stretch extends Action {
         d.path = d.path.skewFromEnd(shift.x,shift.y);
       }
     } else
-      throw CallError('Unable to calculate Stretch');
+      throw CallError('Unable to calculate Stretch 5');
 
     stretchctx.appendToSource();
 
