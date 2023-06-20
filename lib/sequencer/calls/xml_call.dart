@@ -116,7 +116,7 @@ class XMLCall extends Call {
           throw FormationNotFoundError(name);
         } on CallError {
           //  See if it works with an implied "Do Your Part"
-          if (ctx.actives.length < ctx.dancers.length) {
+          if (ctx.actives.length < ctx.dancers.length && ctx.canDoYourPart) {
             ctx.applyCalls('Do Your Part $name');
             ctx.didYourPart = true;
           } else

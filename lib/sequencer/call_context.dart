@@ -739,6 +739,7 @@ class CallContext {
       d.path.clear();
     }
     analyze();
+    canDoYourPart = tryDoYourPart;
     for (var i=0; i<callstack.length; i++) {
       var c = callstack[i];
      DebugSwitch.perform.log('Performing ${c.name} with object $c');

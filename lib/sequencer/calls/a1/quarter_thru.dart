@@ -19,7 +19,7 @@
 
 import '../common.dart';
 
-class QuarterThru extends Action with CallWithParts {
+class QuarterThru extends ActivesOnlyAction with CallWithParts {
 
   @override var level = LevelData.A1;
   @override var numberOfParts = 2;
@@ -39,8 +39,16 @@ class QuarterThru extends Action with CallWithParts {
         super(name);
 
   @override
+  void perform(CallContext ctx) {
+    ctx.canDoYourPart = false;
+    super.perform(ctx);
+  }
+
+  @override
    void performPart1(CallContext ctx) {
+    ctx.canDoYourPart = false;
     ctx.subContext(ctx.dancersHoldingSameHands(isRight: !isLeft, isGrand: isGrand), (ctx2) {
+      ctx2.canDoYourPart = false;
       if (ctx2.dancers.isEmpty)
         throw CallError('No dancers able to do Part 1 of $name');
       part1dancers = ctx2.dancers;
@@ -52,6 +60,7 @@ class QuarterThru extends Action with CallWithParts {
   @override
    void performPart2(CallContext ctx) {
     ctx.subContext(ctx.dancersHoldingSameHands(isRight: isLeft, isGrand: isGrand), (ctx2) {
+      ctx2.canDoYourPart = false;
       if (ctx2.dancers.isEmpty)
         throw CallError('No dancers able to do Part 2 of $name');
       if (part1dancers != null && !part1dancers!.any((d) => ctx2.actives.contains(d)))
