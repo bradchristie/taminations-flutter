@@ -44,12 +44,12 @@ class SquareThru extends Action {
     var extra = '';
     var onHand = norm.indexOf('on(2|3|4|5|6)'.r);
     if (onHand > 0) {
-      extra = name.replaceFirst('.*hand '.ri, '');
+      extra = name.replaceFirst('.*(2(nd)?|3(rd)?|4(th)?|5(th)?|6(th)?|second|third|fou?rth|fifth|sixth) (hand)?'.ri, '').trim();
       norm = norm.substring(0,onHand+3);
-      if (extra.norm.matches('(left)?touch14'.r))
+      if (extra.norm.matches('(left)?touch14'.ri))
         extra = 'Hinge';
-
     }
+
     var count = norm.replaceAll('toawave' , '')
         .trim()
         .last

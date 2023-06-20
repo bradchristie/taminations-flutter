@@ -321,7 +321,7 @@ class CallContext {
   Path dancerCannotPerform(DancerModel d, String call) {
     if (_thoseWhoCan)
       return Path();
-    throw CallError('DancerModel $d cannot $call.');
+    throw CallError('Dancer $d cannot $call.');
   }
 
   void _checkForAction(String calltext) {
