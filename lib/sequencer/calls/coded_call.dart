@@ -18,6 +18,8 @@
 
 */
 
+import 'package:taminations/sequencer/calls/a1/as_couples_roll.dart';
+
 import '../../extensions.dart';
 import '../../normalize_call.dart';
 import 'a1/as_couples.dart';
@@ -307,7 +309,8 @@ abstract class CodedCall extends Call {
         AroundToALine('Around One and Come Into the Middle'),
     'around1toaline'.ri: (_) => AroundToALine('Around One to a Line'),
     'around2toaline'.ri: (_) => AroundToALine('Around Two to a Line'),
-    'AsCouples?.*'.r: (name) => AsCouples(name),
+    'AsCouples(?!Roll).*'.r: (name) => AsCouples(name),
+    'AsCouplesRoll'.r: (name) => AsCouplesRoll(name),
 
     'back(away|up)'.ri: (_) => BackAway(),
     'balance'.ri: (_) => Balance(),
