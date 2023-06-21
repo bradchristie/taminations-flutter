@@ -153,7 +153,7 @@ mixin CallWithParts {
             parts.split(';').map((e) => e.d).toList();
         if (partTimes.length+1 >= partNum) {
           //  Load the call and calculate the beats where to splice into the sequence
-          final ctx2 = CallContext.fromFormation(tam.formation);
+          final ctx2 = CallContext.fromFormation(tam.formation,withPaths: tam.paths);
           final startBeat = partTimes.take(partNum-1).fold<double>(0.0, (a, b) => a+b);
           final endBeat = partNum == partTimes.length + 1
               ? ctx2.maxBeats()
