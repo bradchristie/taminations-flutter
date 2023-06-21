@@ -126,7 +126,7 @@ class _Case2 extends Action {
     //  Pop off the last movement and shift it by that offset
     var m = (d.path.movelist.isNotEmpty)
         ? d.path.pop()
-        : Stand.pop();
+        : Stand.clone().pop();
     var tx = m.rotate();
     v = tx * v;
     d.path += m.skew(v.x,v.y).useHands(Hands.NOHANDS);
