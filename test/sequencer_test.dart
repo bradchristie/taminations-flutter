@@ -3672,4 +3672,24 @@ Circulate
 Boys Run
 Allemande Left''',''),
 
+  TestSequence('Chain Down the Line',
+'''Half Sashay
+Heads Lead Right
+Veer Left
+Tag the Line Face In
+Girls Pass the Ocean and Hinge
+Chain Down the Line
+Pass the Ocean
+Hinge
+Centers Trade
+Centers Run
+Couples Circulate
+Ferris Wheel
+Girls Touch 1/4
+Chain Down the Line
+Right and Left Thru
+Star Thru
+Pass Thru
+Allemande Left''',''),
+
 ];

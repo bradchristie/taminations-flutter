@@ -67,6 +67,7 @@ import 'a2/zig_zag.dart';
 import 'b1/around_to_a_line.dart';
 import 'b1/bend_the_line.dart';
 import 'b1/california_twirl.dart';
+import 'b1/chain_down_the_line.dart';
 import 'b1/circulate.dart';
 import 'b1/courtesy_turn.dart';
 import 'b1/dosado.dart';
@@ -337,6 +338,7 @@ abstract class CodedCall extends Call {
     'center'.ri: (_) => Centers(),
     'center6'.ri: (_) => CenterSix(),
     'center(line|wave)(of4)?'.ri: (name) => CenterWaveOfFour(name),
+    'chaindowntheline'.ri: (name) => ChainDownTheLine(name),
     'chainreaction'.ri: (_) => ChainReaction(),
     'checkpoint((.+)by(.*))?'.ri: (name) => Checkpoint(name),
     'changethe(centers?|wave)'.ri: (name) => ChangeTheCenters(name),

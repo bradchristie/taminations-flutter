@@ -383,6 +383,7 @@ import '../../moves.dart';
     AnimatedCall('Chain Down the Line',
       formation:Formation('Two-Faced Line RH'),
       from:'Two-Faced Line',fractions:'3',difficulty: 1,
+        isGenderSpecific: true,
       paths:[
           QuarterRight.changeBeats(3).skew(0.0,-1.0) +
           UmTurnLeft.changeBeats(1.5) +
@@ -396,6 +397,7 @@ import '../../moves.dart';
     AnimatedCall('Chain Down the Line',
       formation:Formation('Compact Two-Faced Line RH'),
       from:'Compact Two-Faced Line',fractions:'3',difficulty: 1,noDisplay: true,
+        isGenderSpecific: true,
       paths:[
           QuarterRight.changeBeats(3) +
           UmTurnLeft.changeBeats(1.5) +
@@ -409,6 +411,7 @@ import '../../moves.dart';
     AnimatedCall('Chain Down the Line',
       formation:Formation('Wave LH'),
       from:'Left-Hand Wave',difficulty: 1,
+        isGenderSpecific: true,
       paths:[
           QuarterLeft.changeBeats(3).skew(0.0,1.0) +
           UmTurnLeft.changeBeats(1.5) +
@@ -422,6 +425,7 @@ import '../../moves.dart';
     AnimatedCall('Chain Down the Line',
       formation:Formation('Two-Faced Lines RH'),
       from:'Two-Faced Lines',fractions:'3',difficulty: 1,
+        isGenderSpecific: true,
       paths:[
           QuarterRight.changeBeats(3).skew(0.0,-1.0) +
           UmTurnLeft.changeBeats(1.5) +
@@ -442,6 +446,7 @@ import '../../moves.dart';
 
     AnimatedCall('Chain Down the Line',
       formation:Formation('Ocean Waves LH BGGB'),
+        isGenderSpecific: true,
       from:'Left-Hand Waves',fractions:'3',difficulty: 1,
       paths:[
           QuarterLeft.changeBeats(3).skew(0.0,1.0) +
@@ -464,6 +469,7 @@ import '../../moves.dart';
     AnimatedCall('Chain Down the Line',
       formation:Formation('Two-Faced Tidal Line RH'),
       from:'Tidal Two-Faced Line',fractions:'3',difficulty: 2,
+        isGenderSpecific: true,
       paths:[
           QuarterRight.changeBeats(3) +
           UmTurnLeft.changeBeats(1.5).skew(0.5,-0.5) +
@@ -485,6 +491,7 @@ import '../../moves.dart';
     AnimatedCall('Chain Down the Line',
       formation:Formation('Tidal Wave LH BGGB'),
       from:'Tidal Left-Hand Wave',fractions:'3',difficulty: 2,
+        isGenderSpecific: true,
       paths:[
           QuarterLeft.changeBeats(3) +
           QuarterLeft.changeBeats(.75) +
