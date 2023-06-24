@@ -51,7 +51,7 @@ void _startModel(fm.BuildContext context, TamState tamState, TitleModel? titleMo
   var tam = tamList[0];
   if (tamState.animnum >= 0 && tamState.animnum < tamList.length)
     tam = tamList[tamState.animnum];
-  if (tamState.animname != null)
+  else if (tamState.animname != null)
     tam = tamList.firstWhere((it) {
       var fullname = it.title;
       if (it.group.isEmpty && it.from.isNotBlank)
