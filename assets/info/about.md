@@ -23,18 +23,22 @@ Call pronunciations provided by
 
 ---
 
-## Taminations version 1.6.62 built 2023-06-05
+## Taminations version 1.6.63 built 2023-06-26
 Copyright 2023 by Brad Christie.  
 This is free software, and you are welcome to modify and redistribute it
 under the terms of the [GNU GPL license](http://www.gnu.org/licenses/gpl.html).  
 
 ## What's New
-* Animations for 1/3 Recycle (C-1)
-* For Practice mode, don't select hidden animations only used internally for sequencer
-* Name <anything> calls consistently
+* Fix selecting some Once Removed animations
 * Sequencer changes:
-  - (Reverse) (Single) Rotate from more formations
-  - Fix for Square Thru on Nth hand <some call>
+  - Chain Down the Line from more formations
+  - Fix crash on Spread
+  - Enable As Couples Roll
+  - Fix for Square Thru on the Nth Hand ...
+  - Fix for Centers Shazam from galaxy
+  - Code for (Anything) and Circle, Patch, Touch By
+  - Fix Cross Chain Thru / Roll from waves
+  - Fixes for dancer names, new command to change names
 
 For a detailed history of changes, view the
 [Git log](https://github.com/bradchristie/taminations-flutter/commits/main)
