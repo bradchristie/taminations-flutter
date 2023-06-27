@@ -66,10 +66,13 @@ class Concentric extends Action {
         //  If start and final are boxes, then it depends on
         //  the dancer's facing positions - lines to lines, columns to columns
         else if (startsWithBox && endsWithBox) {
-          if (d.angleFacing.angleDiff(dangles[d]!).isAround(0.0) ^ isMajorX)
+          var angleDiff = d.angleFacing.angleDiff(dangles[d]!);
+          if ((angleDiff.isAround(0.0) || angleDiff.isAround(pi))^ isMajorX) {
             dend = Vector(0.0, d.location.y.sign * 2.0);
-          else
+          }
+          else {
             dend = Vector(d.location.x.sign * 2.0, 0.0);
+          }
         }
         //  If none of the above, then the major axis is rotated
         else if (isMajorX)

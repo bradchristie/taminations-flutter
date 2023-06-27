@@ -1599,6 +1599,19 @@ Pass Thru
 Allemande Left''',''),
  */
 
+  TestSequence('Concentric 1', '''Heads Pass the Ocean
+Extend
+Centers Box Counter Rotate
+Concentric Circulate
+Concentric Walk and Dodge
+Boys Bend and Pass Thru
+Hinge
+Boys Run
+Wheel and Deal
+Centers Pass Thru
+Box the Gnat
+Right and Left Grand''', ''),
+
   TestSequence('Checkpoint',
   '''Heads Pass the Ocean
 Extend
