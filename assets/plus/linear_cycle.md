@@ -1,24 +1,15 @@
 
 # Linear Cycle
 
-(from waves only for the Plus Program) - Starting formation -
-Parallel Ocean Waves or Four (4) Dancer Waves to be either right or left-handed.
-(For programs other than Plus, allowable formations include any formation in which the
-end and adjacent center can single or partner hinge. This is a three part call.) 
- 
-1. ***The ends and adjacent centers [hinge](../ms/hinge.md).***  
-2. ***Those facing out [fold](../ms/fold.md) behind those facing in and all dancers will then move forward in a [Double Pass Thru](../b1/double_pass_thru.md) action.***  
-3. ***If the hinge is right-handed, [peel](peel_off.md) right; if the hinge is left-handed, [peel](peel_off.md) left to end as facing couples.***  
+Starting formation: General Line (At Plus, this call is restricted to starting from a Wave only.)
 
-From a right-hand hinge, all will pass right shoulders. From a left-hand hinge, all
-will pass left shoulders. 
+This is a three-part call:
+1. The end and adjacent center dancers Hinge.
+2. In one blended action, the Leaders [Fold](../ms/fold.md) (behind the Trailers) as the Trailers begin a [Double Pass Thru](../b1/double_pass_thru.md) (or a Left Double Pass Thru if both mini-waves were left-handed before the Fold).
+3. As the dancers complete the Double Pass Thru, each pair of Tandem dancers [Peel](peel_off.md) to their right or left depending on the handedness of their mini-wave before the Fold. The ending formation is Facing Couples.
 
-An added note just for information from beyond the Plus Program -- From any inverted
-lines or some three in one lines, the [passing rule](../b1/passing_rule.md) shall prevail. (Not applicable in the
-Plus Program.) 
-
-STYLING: Arms in  natural dance position. Similar to styling for individual components. Rejoin hands upon completion of move.
+Styling: The first part is performed using the standard styling for the Hinge. Then dancers drop hands and dance with arms in natural dance position until reconnecting in a couple handhold as the call is being completed.
 
 Timing: 8-10
 
-###### @ Copyright 1997, 2001-2021 by CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed nor revised in any derivation or publication.
+###### @ Copyright 1997, 2001-2023 by CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed nor revised in any derivation or publication.
