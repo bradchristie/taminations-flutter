@@ -118,6 +118,16 @@ class Path implements Cloneable<Path> {
   Path scale(double x, double y) =>
     Path(movelist.map((it) => it.scale(x, y)).toList());
 
+  Path clip(double beat) {
+    var newpath = clone();
+    while (newpath.beats > beat) {
+      var m = newpath.pop();
+      if (newpath.beats < beat)
+        newpath += m.clip(beat - newpath.beats);
+    }
+    return newpath;
+  }
+
   //  This likely will not work well for paths with >1 movement
   //  Instead use skewFirst or skewFromEnd
   Path skew(double x, double y) {

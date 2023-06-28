@@ -72,6 +72,7 @@ import 'b1/circulate.dart';
 import 'b1/courtesy_turn.dart';
 import 'b1/dosado.dart';
 import 'b1/face.dart';
+import 'b1/grand_square.dart';
 import 'b1/half_sashay.dart';
 import 'b1/pass_thru.dart';
 import 'b1/pull_by.dart';
@@ -398,6 +399,7 @@ abstract class CodedCall extends Call {
     '(left)?grandsinglecrossandwheel'.ri: (name) => GrandSingleCrossAndWheel(name),
     '(left)?grandsinglecrosstradeandwheel'.ri:
         (name) => GrandSingleCrossTradeAndWheel(name),
+    '((head|side)face)?grandsquare((\\d+)steps)?'.ri: (name) => GrandSquare(name),
 
     '(reverse)?12sashay'.ri: (name) => HalfSashay(name),
     '(left)?12tag'.ri: (name) => HalfTag(name),

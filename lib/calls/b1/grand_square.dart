@@ -19,6 +19,7 @@
 */
 
 import '../../animated_call.dart';
+import '../../dancer_model.dart';
 import '../../formation.dart';
 import '../../moves.dart';
 
@@ -92,6 +93,80 @@ import '../../moves.dart';
           Forward.changeBeats(3).scale(1.5,1.5) +
           QuarterRight.changeBeats(1).skew(0.5,0.0)
       ]),
+
+    //  This is for the sequence to calculate Grand Square <nn> Steps
+    AnimatedCall('Grand Square',
+        formation:Formation('', dancers:[
+          DancerModel.fromData(gender:Gender.BOY,x:-3,y:1,angle:0),
+          DancerModel.fromData(gender:Gender.GIRL,x:-3,y:-1,angle:0),
+          DancerModel.fromData(gender:Gender.BOY,x:-1,y:-3,angle:0),
+          DancerModel.fromData(gender:Gender.GIRL,x:1,y:-3,angle:180),
+        ]),
+        from:'Static Square, Sides Face',group:' ',
+        parts:'4;4;4;4;4;4;4',difficulty: 1, noDisplay: true,
+        paths:[
+          Forward.changeBeats(3).changehands(2).scale(1.5,1.5) +
+              QuarterRight.changeBeats(1).skew(0.5,0.0) +
+              Back.changeBeats(3).changehands(1).scale(1.5,1.5) +
+              QuarterLeft.changeBeats(1).skew(-0.5,0.0) +
+              Back.changeBeats(3).scale(1.5,1.5) +
+              QuarterRight.changeBeats(1).skew(-0.5,0.0) +
+              Forward_2.changeBeats(4) +
+              Back.changeBeats(3).scale(1.5,1.5) +
+              QuarterLeft.changeBeats(1).skew(-0.5,0.0) +
+              Forward.changeBeats(3).scale(1.5,1.5) +
+              QuarterRight.changeBeats(1).skew(0.5,0.0) +
+              Forward.changeBeats(3).changehands(1).scale(1.5,1.5) +
+              QuarterLeft.changeBeats(1).skew(0.5,0.0) +
+              Back_2.changeBeats(4).changehands(2),
+
+          Forward.changeBeats(3).changehands(1).scale(1.5,1.5) +
+              QuarterLeft.changeBeats(1).skew(0.5,0.0) +
+              Back.changeBeats(3).changehands(2).scale(1.5,1.5) +
+              QuarterRight.changeBeats(1).skew(-0.5,0.0) +
+              Back.changeBeats(3).scale(1.5,1.5) +
+              QuarterLeft.changeBeats(1).skew(-0.5,0.0) +
+              Forward_2.changeBeats(4) +
+              Back.changeBeats(3).scale(1.5,1.5) +
+              QuarterRight.changeBeats(1).skew(-0.5,0.0) +
+              Forward.changeBeats(3).scale(1.5,1.5) +
+              QuarterLeft.changeBeats(1).skew(0.5,0.0) +
+              Forward.changeBeats(3).changehands(2).scale(1.5,1.5) +
+              QuarterRight.changeBeats(1).skew(0.5,0.0) +
+              Back_2.changeBeats(4).changehands(1),
+
+          Back.changeBeats(3).scale(1.5, 1.5) +
+              QuarterLeft.changeBeats(1).skew(-0.5,0.0) +
+              Forward.changeBeats(3).scale(1.5,1.5) +
+              QuarterRight.changeBeats(1).skew(0.5,0.0) +
+              Forward.changeBeats(3).changehands(1).scale(1.5,1.5) +
+              QuarterLeft.changeBeats(1).skew(0.5,0.0) +
+              Back_2.changeBeats(4).changehands(2) +
+              Forward.changeBeats(3).changehands(2).scale(1.5,1.5) +
+              QuarterRight.changeBeats(1).skew(0.5,0.0) +
+              Back.changeBeats(3).changehands(1).scale(1.5,1.5) +
+              QuarterLeft.changeBeats(1).skew(-0.5,0.0) +
+              Back.changeBeats(3).scale(1.5,1.5) +
+              QuarterRight.changeBeats(1).skew(-0.5,0.0) +
+              Forward.changeBeats(3).scale(1.5,1.5) +
+              QuarterLeft.changeBeats(1).skew(0.5,0.0),
+
+          Back.changeBeats(3).scale(1.5, 1.5) +
+              QuarterRight.changeBeats(1).skew(-0.5,0.0) +
+              Forward.changeBeats(3).scale(1.5,1.5) +
+              QuarterLeft.changeBeats(1).skew(0.5,0.0) +
+              Forward.changeBeats(3).changehands(2).scale(1.5,1.5) +
+              QuarterRight.changeBeats(1).skew(0.5,0.0) +
+              Back_2.changeBeats(4).changehands(1) +
+              Forward.changeBeats(3).changehands(1).scale(1.5,1.5) +
+              QuarterLeft.changeBeats(1).skew(0.5,0.0) +
+              Back.changeBeats(3).changehands(2).scale(1.5,1.5) +
+              QuarterRight.changeBeats(1).skew(-0.5,0.0) +
+              Back.changeBeats(3).scale(1.5,1.5) +
+              QuarterLeft.changeBeats(1).skew(-0.5,0.0) +
+              Forward.changeBeats(3).scale(1.5,1.5) +
+              QuarterRight.changeBeats(1).skew(0.5,0.0)
+        ]),
 
     AnimatedCall('Heads Face, Grand Square',
       formation:Formation('Static Square'),

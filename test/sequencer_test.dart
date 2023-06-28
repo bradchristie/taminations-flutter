@@ -3705,4 +3705,10 @@ Star Thru
 Pass Thru
 Allemande Left''',''),
 
+  TestSequence('Grand Square 6 Steps',
+'''Sides Face Grand Square 6 Steps
+Star Thru
+Right and Left Thru
+Allemande Left''', ''),
+
 ];
