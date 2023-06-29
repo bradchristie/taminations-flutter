@@ -339,35 +339,35 @@ import '../../moves.dart';
         DancerModel.fromData(gender:Gender.BOY,x:1,y:1.5,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:-1,y:1.5,angle:0),
   ]),
-      from:'after Allemande Left',isGenderSpecific:true,noDisplay: true,
+      from:'after Allemande Left',isGenderSpecific:true, noDisplay: true,
       paths:[
           LeadLeft_12.changeBeats(1.5).skew(0.0,1.1) +
           LeadLeft_12.changeBeats(3).changehands(1).scale(3.0,3.0).skew(0.52,-0.55) +
           LeadLeft_12.changeBeats(3).changehands(2).scale(2.0,2.0).skew(0.16,1.58) +
           LeadLeft_12.changeBeats(3).changehands(1).scale(3.0,3.0).skew(0.52,-1.2) +
           LeadLeft_12.changeBeats(1).changehands(2) +
-          QuarterLeft.changeBeats(2).skew(0.8,-0.1),
+          Forward.changeBeats(1).skew(-0.2,-0.1),
 
           LeadRight_12.changeBeats(1.5).skew(0.75,-0.45) +
           LeadRight_12.changeBeats(3).changehands(1).scale(2.0,2.0).skew(0.16,-1.92) +
           LeadRight_12.changeBeats(3).changehands(2).scale(3.0,3.0).skew(0.52,1.3) +
           LeadRight_12.changeBeats(3).changehands(1).scale(2.0,2.0).skew(0.16,-1.67) +
-          LeadRight_12.changeBeats(2).changehands(2).skew(0.5,1.0) +
-          QuarterRight.changeBeats(1).skew(0.1,0.0),
+          LeadRight_12.changeBeats(2).changehands(2).skew(0.5,1.0),
+
 
           ExtendLeft.changeBeats(1.5).scale(1.0,0.5) +
           LeadLeft_12.changeBeats(3).changehands(1).scale(3.0,3.0).skew(0.52,-2.55) +
           LeadLeft_12.changeBeats(3).changehands(2).scale(2.0,2.0).skew(0.16,1.58) +
           LeadLeft_12.changeBeats(3).changehands(1).scale(3.0,3.0).skew(0.52,-1.2) +
           LeadLeft_12.changeBeats(1).changehands(2) +
-          QuarterLeft.changeBeats(2).skew(0.8,-0.1),
+          Forward.changeBeats(1).skew(-0.2,-0.1),
 
           ExtendLeft.changeBeats(1.5).scale(1.0,0.5) +
           LeadRight_12.changeBeats(3).changehands(1).scale(2.0,2.0).skew(0.16,0.08) +
           LeadRight_12.changeBeats(3).changehands(2).scale(3.0,3.0).skew(0.52,1.3) +
           LeadRight_12.changeBeats(3).changehands(1).scale(2.0,2.0).skew(0.16,-1.67) +
-          LeadRight_12.changeBeats(2).changehands(2).skew(0.5,1.0) +
-          QuarterRight.changeBeats(1).skew(0.1,0.0)
+          LeadRight_12.changeBeats(2).changehands(2).skew(0.5,1.0)
+
       ]),
 
     AnimatedCall('Right and Left Grand',
