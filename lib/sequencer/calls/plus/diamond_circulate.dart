@@ -46,8 +46,8 @@ class DiamondCirculate extends Action {
     var others = ctx.actives.where((it) => it != d).where((d2) {
       var a = d.angleToDancer(d2).abs();
       return !a.isAround(pi / 2) && a < pi / 2;
-    });
-    if (others.length != 1)
+    }).toList().sortedBy((d2) => d.distanceTo(d2));
+    if (others.length > 1 && d.distanceTo(others[0]).isAbout(d.distanceTo(others[1])))
       throw CallError('Cannot figure out how dancer $d can Diamond Circulate');
     var d2 = others.first;
     var a2 = d.angleToDancer(d2);
