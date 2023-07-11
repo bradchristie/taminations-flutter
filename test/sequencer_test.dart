@@ -3711,4 +3711,13 @@ Star Thru
 Right and Left Thru
 Allemande Left''', ''),
 
+  TestSequence('Fold from t-bones','''Heads Lead Right
+Pass Thru
+Ends Face Out
+Ends Fold
+Centers Wheel Thru
+Pass Thru
+Trade By
+Allemande Left''',''),
+
 ];
