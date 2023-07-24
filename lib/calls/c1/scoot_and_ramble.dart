@@ -47,23 +47,23 @@ import '../../moves.dart';
     AnimatedCall('Ramble',
       formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-3,y:1,angle:0),
-        DancerModel.fromData(gender:Gender.BOY,x:-3,y:-1,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:0,y:-3,angle:180),
+        DancerModel.fromData(gender:Gender.BOY,x:-3,y:-1,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:0,y:-1,angle:0),
   ]),
       from:'Quarter Tag, Girls in Center',isGenderSpecific:true,parts:'3',
       paths:[
-          ExtendLeft.changeBeats(4).scale(3.0,3.0) +
+        ExtendLeft.changeBeats(4).scale(3.0,3.0) +
           LeadRight,
 
-          ExtendRight.changeBeats(4).scale(3.0,2.0) +
-          QuarterRight.skew(1.0,0.0),
-
-          FlipRight.skew(1.0,0.0) +
+        FlipRight.skew(1.0,0.0) +
           ExtendLeft.scale(1.0,0.5) +
           QuarterLeft.skew(1.0,-0.5),
 
-          UmTurnRight.skew(1.0,0.0) +
+        ExtendRight.changeBeats(4).scale(3.0,2.0) +
+            QuarterRight.skew(1.0,0.0),
+
+        UmTurnRight.skew(1.0,0.0) +
           ExtendLeft.scale(1.0,0.5) +
           QuarterLeft.skew(1.0,-0.5)
       ]),
@@ -71,23 +71,23 @@ import '../../moves.dart';
     AnimatedCall('Ramble',
       formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.GIRL,x:-3,y:1,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:-3,y:-1,angle:0),
         DancerModel.fromData(gender:Gender.BOY,x:0,y:-3,angle:180),
+        DancerModel.fromData(gender:Gender.GIRL,x:-3,y:-1,angle:0),
         DancerModel.fromData(gender:Gender.BOY,x:0,y:-1,angle:0),
   ]),
       from:'Quarter Tag, Boys in Center',isGenderSpecific:true,parts:'3',
       paths:[
-          ExtendLeft.changeBeats(4).scale(3.0,3.0) +
+        ExtendLeft.changeBeats(4).scale(3.0,3.0) +
           QuarterLeft.skew(1.0,-1.0),
 
-          ExtendRight.changeBeats(4).scale(3.0,2.0) +
-          QuarterLeft.skew(1.0,0.0),
-
-          FlipRight.skew(1.0,0.0) +
+        FlipRight.skew(1.0,0.0) +
           ExtendLeft.scale(1.0,0.5) +
           QuarterRight.skew(1.0,-0.5),
 
-          UmTurnRight.skew(1.0,0.0) +
+        ExtendRight.changeBeats(4).scale(3.0,2.0) +
+            QuarterLeft.skew(1.0,0.0),
+
+        UmTurnRight.skew(1.0,0.0) +
           ExtendLeft.scale(1.0,0.5) +
           QuarterRight.skew(1.0,-0.5)
       ]),
@@ -116,25 +116,25 @@ import '../../moves.dart';
     AnimatedCall('Ramble',
       formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-3,y:1,angle:180),
-        DancerModel.fromData(gender:Gender.BOY,x:-3,y:-1,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:0,y:-3,angle:180),
+        DancerModel.fromData(gender:Gender.BOY,x:-3,y:-1,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:0,y:-1,angle:0),
   ]),
       from:'Three Quarter Tag, Girls in Center',isGenderSpecific:true,parts:'3',
       paths:[
-          QuarterRight.skew(0.0,-1.0) +
+        QuarterRight.skew(0.0,-1.0) +
           LeadRight.changeBeats(3.5).scale(1.0,3.0) +
           QuarterRight.skew(1.0,0.0),
 
-          UmTurnLeft.skew(-1.0,1.0) +
-          Forward_2 +
-          LeadRight,
-
-          FlipRight.skew(1.0,0.0) +
+        FlipRight.skew(1.0,0.0) +
           ExtendLeft.scale(1.0,0.5) +
           QuarterLeft.skew(1.0,-0.5),
 
-          UmTurnRight.skew(1.0,0.0) +
+        UmTurnLeft.skew(-1.0,1.0) +
+            Forward_2 +
+            LeadRight,
+
+        UmTurnRight.skew(1.0,0.0) +
           ExtendLeft.scale(1.0,0.5) +
           QuarterLeft.skew(1.0,-0.5)
       ]),
@@ -142,25 +142,25 @@ import '../../moves.dart';
     AnimatedCall('Ramble',
       formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.GIRL,x:-3,y:1,angle:180),
-        DancerModel.fromData(gender:Gender.GIRL,x:-3,y:-1,angle:180),
         DancerModel.fromData(gender:Gender.BOY,x:0,y:-3,angle:180),
+        DancerModel.fromData(gender:Gender.GIRL,x:-3,y:-1,angle:180),
         DancerModel.fromData(gender:Gender.BOY,x:0,y:-1,angle:0),
   ]),
       from:'Three Quarter Tag, Boys in Center',isGenderSpecific:true,parts:'3',
       paths:[
-          QuarterRight.skew(0.0,-1.0) +
+        QuarterRight.skew(0.0,-1.0) +
           LeadRight.changeBeats(3.5).scale(1.0,3.0) +
           QuarterLeft.skew(1.0,0.0),
 
-          UmTurnLeft.skew(-1.0,1.0) +
-          Forward_2 +
-          QuarterLeft.skew(1.0,-1.0),
-
-          FlipRight.skew(1.0,0.0) +
+        FlipRight.skew(1.0,0.0) +
           ExtendLeft.scale(1.0,0.5) +
           QuarterRight.skew(1.0,-0.5),
 
-          UmTurnRight.skew(1.0,0.0) +
+        UmTurnLeft.skew(-1.0,1.0) +
+            Forward_2 +
+            QuarterLeft.skew(1.0,-1.0),
+
+        UmTurnRight.skew(1.0,0.0) +
           ExtendLeft.scale(1.0,0.5) +
           QuarterRight.skew(1.0,-0.5)
       ]),
