@@ -34,6 +34,8 @@ class Rotate extends Action with IsReverse, IsSingle {
 
   @override
   void perform(CallContext ctx) {
+    if (!norm.matches('(14|12|34)'.r))
+      throw CallError('All Rotates must end with a fraction');
     if (ctx.isSquare() || ctx.outer(4).containsAll(ctx.actives))
       perform_C1(ctx);
     else if (ctx.isLines())
