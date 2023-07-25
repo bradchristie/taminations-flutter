@@ -237,12 +237,14 @@ Bend the Line
 Square Thru 2
 Allemande Left''',''),
 
+
   TestSequence('Cross Fold',
   '''Heads Pass the Ocean
 Extend
 Girls Cross Fold
 Boys Trade and Roll and Roll
 Peel Off
+Adjust to Lines
 Boys Cross Fold
 Peel and Trail
 Spin the Top

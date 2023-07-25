@@ -37,16 +37,33 @@ class CrossFold extends Action {
       //  Must be in a 4-dancer wave or line
       if (!d.data.center && !d.data.end)
         throw CallError('General line required for Cross Fold');
-      //  Center beaus and end belles fold left
-      var isRight = d.data.beau ^ d.data.center;
+
+      //  Determine direction of Cross Fold
+      var dleft = ctx.dancersToLeft(d);
+      var dright = ctx.dancersToRight(d);
+      DancerModel d2;
+      var isRight = true;
+      if (dright.length < 2)
+        isRight = false;
+      if (dright.length >= 4 && dright.length-4 < 2)
+        isRight = false;
+      if (isRight && dright.length > 1) {
+        d2 = dright.second;
+      } else if (dleft.length > 1)
+        d2 = dleft.second;
+      else
+        throw CallError('Unaable to calculate Cross Fold');
+      if (d2.isActive)
+        throw CallError('Invalid Cross Fold');
+
       var m = (isRight) ? FoldRight : FoldLeft;
-      var d2 = d.data.partner.throwIfNull(CallError('No partner for dancer $d'));
       var dist = d.distanceTo(d2);
       var dxscale = 0.75;
 
       //  The y-distance of Fold is 2.0, here we adjust that value
       //  for various formations.  The dyoffset value computed is
       //  subtracted from the default 2.0 to get the final y offset.
+      /*
       var dyoffset = 0.0;
       if (ctx.isTidal() && d.data.end)
         dyoffset = -0.5;
@@ -56,10 +73,12 @@ class CrossFold extends Action {
         dyoffset = 2.0 - dist*2;  // which wll generally be -2.0
       if (!isRight)
         dyoffset = -dyoffset;
-      d.path = m.scale(dxscale,1.0).skew(0.0,dyoffset);
+       */
+      d.path = m.scale(dxscale,dist/2); // .skew(0.0,dyoffset);
 
       //  Also set path for partner
       //  This is an adjustment to shift the dancers into a standard formation
+      /*
       var m2 = Stand;
       if (d.isRightOf(d2))
         m2 = DodgeRight;
@@ -73,6 +92,7 @@ class CrossFold extends Action {
       else if (d2.data.center)
         myScale = 0.0;
       d2.path = m2.scale(1.0,dist*myScale);
+       */
     }
   }
 
