@@ -519,7 +519,7 @@ import '../../moves.dart';
           ExtendRight.scale(1.0,0.5)
       ]),
 
-    AnimatedCall('Left Split Dixie Style to a Wave',
+    AnimatedCall('Reverse Split Dixie Style to a Wave',
       formation:Formation('T-Bone ULRU'),
       from:'Ends Facing',parts:'2.5',
       paths:[
@@ -542,7 +542,7 @@ import '../../moves.dart';
           HingeRight.scale(0.75,1.0)
       ]),
 
-    AnimatedCall('Left Split Dixie Style to a Wave',
+    AnimatedCall('Reverse Split Dixie Style to a Wave',
       formation:Formation('T-Bone RUUL'),
       from:'Centers Facing',parts:'2.5',
       paths:[
@@ -565,7 +565,7 @@ import '../../moves.dart';
           QuarterRight.changehands(2).skew(0.75,0.0)
       ]),
 
-    AnimatedCall('Left Split Dixie Style to a Wave',
+    AnimatedCall('Reverse Split Dixie Style to a Wave',
       formation:Formation('T-Bone RLUU'),
       from:'Left Side of Line Facing',parts:'2.5',
       paths:[
@@ -588,7 +588,7 @@ import '../../moves.dart';
           HingeRight.scale(1.25,0.5)
       ]),
 
-    AnimatedCall('Left Split Dixie Style to a Wave',
+    AnimatedCall('Reverse Split Dixie Style to a Wave',
       formation:Formation('T-Bone UURL'),
       from:'Right Side of Line Facing',parts:'2.5',
       paths:[
@@ -611,7 +611,7 @@ import '../../moves.dart';
           HingeRight.scale(0.75,0.5)
       ]),
 
-    AnimatedCall('Left Split Dixie Diamond',
+    AnimatedCall('Reverse Split Dixie Diamond',
       formation:Formation('T-Bone ULRU'),
       from:'Ends Facing',parts:'5',
       paths:[
@@ -638,7 +638,7 @@ import '../../moves.dart';
           HingeLeft
       ]),
 
-    AnimatedCall('Left Split Dixie Diamond',
+    AnimatedCall('Reverse Split Dixie Diamond',
       formation:Formation('T-Bone RUUL'),
       from:'Centers Facing',parts:'5',
       paths:[
@@ -665,7 +665,7 @@ import '../../moves.dart';
           UmTurnRight
       ]),
 
-    AnimatedCall('Left Split Dixie Sashay',
+    AnimatedCall('Reverse Split Dixie Sashay',
       formation:Formation('T-Bone ULRU'),
       from:'Ends Facing',parts:'2.5',
       paths:[
@@ -690,7 +690,7 @@ import '../../moves.dart';
           HingeRight.scale(1.0,0.5)
       ]),
 
-    AnimatedCall('Left Split Dixie Sashay',
+    AnimatedCall('Reverse Split Dixie Sashay',
       formation:Formation('T-Bone RUUL'),
       from:'Centers Facing',parts:'2.5',
       paths:[

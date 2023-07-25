@@ -103,6 +103,7 @@ String normalizeCall(String callname) =>
         .replaceAll('on the fou?rth hand'.ri,'on 4')
         .replaceAll('on the fifth hand'.ri,'on 5')
         .replaceAll('on the sixth hand'.ri,'on 6')
+        .replaceAllMapped('left (split )?dixie'.ri,(m)=>'Reverse ${m[1]??''}Dixie')
     //  Remove superfluous Buts, so not to confuse the real But
         .replaceAllMapped('but (skip|replace|delete|interrupt)'.ri, (m) => m[1]!)
     //  'Dixie Style' -> 'Dixie Style to a Wave'
