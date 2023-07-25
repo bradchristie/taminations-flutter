@@ -132,6 +132,116 @@ import '../../moves.dart';
           HingeLeft.scale(1.0,0.5)
       ]),
 
+    AnimatedCall('Reverse Dixie Sashay',
+        formation:Formation('', dancers:[
+          DancerModel.fromData(gender:Gender.BOY,x:1,y:1.5,angle:270),
+          DancerModel.fromData(gender:Gender.GIRL,x:-1,y:1.5,angle:270),
+        ]),
+        from:'Facing Couples',
+        paths:[
+
+          ExtendRight.changeBeats(2).changehands(Hands.LEFT).skew(0.5,-0.5) +
+              ExtendLeft.changeBeats(2).scale(1.5,1.25) +
+              HingeRight.scale(1.5,0.75),
+
+          DodgeLeft.changeBeats(4).scale(1.0,0.875) +
+              HingeRight.changeBeats(3).scale(2.5,0.75)
+        ]),
+
+    AnimatedCall('Reverse Dixie Sashay',
+        formation:Formation('', dancers:[
+          DancerModel.fromData(gender:Gender.BOY,x:1,y:1,angle:270),
+          DancerModel.fromData(gender:Gender.GIRL,x:-1,y:1,angle:270),
+        ]),
+        from:'Facing Couples Close',noDisplay: true,
+        paths:[
+
+          ExtendRight.changeBeats(2).changehands(Hands.LEFT).skew(0.0,-0.5) +
+              ExtendLeft.changeBeats(2).scale(1.0,1.25) +
+              HingeRight.scale(0.5,0.75),
+
+          DodgeLeft.changeBeats(4).scale(1.0,0.875) +
+              HingeRight.changeBeats(3).scale(1.5,0.75)
+
+        ]),
+
+    AnimatedCall('Reverse Dixie Sashay',
+        formation:Formation('Tandem Girls Lead'),
+        from:'Tandem',
+        paths:[
+          Stand.changeBeats(2) +
+              ExtendLeft.scale(1.0,0.5) +
+              Forward_2 +
+              HingeRight.scale(1.0,0.5),
+
+          ExtendRight.scale(1.0,0.5) +
+              ExtendLeft.changeBeats(2).scale(2.0,1.0) +
+              HingeRight.scale(1.0,0.5)
+        ]),
+
+    AnimatedCall('Reverse Dixie Sashay',
+        formation:Formation('Normal Lines'),
+        from:'Lines',
+        paths:[
+          ExtendRight.changeBeats(2).changehands(Hands.LEFT).skew(1.0,-0.5) +
+              ExtendLeft.changeBeats(2).scale(2.0,1.25) +
+              HingeRight.scale(1.0,0.75),
+
+          DodgeLeft.changeBeats(4).scale(1.0,0.875) +
+              HingeRight.changeBeats(3).scale(3.0,0.75),
+
+          ExtendRight.changeBeats(2).changehands(Hands.LEFT).skew(1.0,-0.5) +
+              ExtendLeft.changeBeats(2).scale(2.0,1.25) +
+              HingeRight.scale(1.0,0.75),
+
+          DodgeLeft.changeBeats(4).scale(1.0,0.875) +
+              HingeRight.changeBeats(3).scale(3.0,0.75)
+        ]),
+
+    AnimatedCall('Reverse Dixie Sashay',
+        formation:Formation('Eight Chain Thru'),
+        from:'Eight Chain Thru',
+        paths:[
+          ExtendRight.changeBeats(2).changehands(Hands.LEFT).scale(1.15,1.5) +
+              ExtendLeft.changeBeats(2).scale(1.15,1.25) +
+              QuarterRight.changehands(1).skew(0.2,-0.75),
+
+          DodgeLeft.scale(1.0,0.875).skew(-0.3,0.0) +
+              Stand +
+              HingeRight.changeBeats(2).scale(1.8,0.75),
+
+          ExtendRight.changeBeats(2).changehands(Hands.LEFT).scale(1.15,1.5) +
+              ExtendLeft.changeBeats(2).scale(1.15,1.25) +
+              QuarterRight.changehands(1).skew(0.2,-0.75),
+
+          DodgeLeft.scale(1.0,0.875).skew(-0.3,0.0) +
+              Stand +
+              HingeRight.changeBeats(2).scale(1.8,0.75)
+        ]),
+
+    AnimatedCall('Reverse Dixie Sashay',
+        formation:Formation('Double Pass Thru'),
+        from:'Double Pass Thru',
+        paths:[
+          Stand.changeBeats(2) +
+              ExtendLeft.scale(1.0,0.5) +
+              Forward_2 +
+              HingeRight.scale(1.0,0.5),
+
+          Stand.changeBeats(2) +
+              ExtendLeft.scale(1.0,0.5) +
+              Forward_2 +
+              HingeRight.scale(1.0,0.5),
+
+          ExtendRight.scale(1.0,0.5) +
+              ExtendLeft.changeBeats(2).scale(2.0,1.0) +
+              HingeRight.scale(1.0,0.5),
+
+          ExtendRight.scale(1.0,0.5) +
+              ExtendLeft.changeBeats(2).scale(2.0,1.0) +
+              HingeRight.scale(1.0,0.5)
+        ]),
+
     AnimatedCall('All 8 Dixie Sashay',
       formation:Formation('Static Square'),
       group:' ',
@@ -152,5 +262,27 @@ import '../../moves.dart';
           ExtendRight.changeBeats(2).changehands(2).scale(2.0,1.75) +
           HingeLeft.scale(1.0,0.75)
       ]),
+
+    AnimatedCall('All Reverse 8 Dixie Sashay',
+        formation:Formation('Static Square'),
+        group:' ',
+        paths:[
+          ExtendRight.changeBeats(3).changehands(Hands.LEFT).scale(3.0,2.0) +
+              ExtendLeft.changeBeats(2).changehands(Hands.LEFT).scale(2.0,1.75) +
+              HingeRight.scale(1.0,0.75),
+
+          ExtendLeft.changeBeats(5).scale(1.0,1.75) +
+              Forward_2.changehands(Hands.RIGHT).skew(0.0,0.25) +
+              HingeRight,
+
+          ExtendRight.changeBeats(3).changehands(Hands.LEFT).scale(3.0,2.0) +
+              ExtendLeft.changeBeats(2).changehands(Hands.LEFT).scale(2.0,1.75) +
+              HingeRight.scale(1.0,0.75),
+
+          ExtendLeft.changeBeats(5).scale(1.0,1.75) +
+              Forward_2.changehands(Hands.RIGHT).skew(0.0,0.25) +
+              HingeRight
+        ]),
+
   ];
 
