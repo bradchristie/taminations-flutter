@@ -216,7 +216,7 @@ Future<void> writeCalls() async {
   var cInclude = <String>{};
   var titles = <String,String>{};
   await Future.forEach(callsDoc.findAllElements('call'),(c) async {
-    var call = c as XmlElement;
+    var call = c;
     var link = call('link').replaceFirst('\\?.*'.r, '');
     var dir = link.split('/').first;
     var imports = <String>{};
@@ -303,7 +303,7 @@ Future<void> writeCalls() async {
       }
       else
         callBuffer.writeln('      formation:Formations.${tam('formation').id},');
-      final taminator = tam.findElements('taminator').firstOrNull?.text ?? '';
+      final taminator = tam.findElements('taminator').firstOrNull?.innerText ?? '';
       final fromParam = tam('from').isNotBlank ? "from:'${tam('from')}'" : '';
       final groupParam = tam('group').isNotEmpty? "group:'${tam('group')}'" : '';
       final genderParam = tam('sequencer') == 'gender-specific' ? 'isGenderSpecific:true' : '';

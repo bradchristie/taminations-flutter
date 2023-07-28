@@ -47,6 +47,8 @@ class _AbbreviationsFrameState extends fm.State<AbbreviationsFrame> {
   late fm.TextEditingController textEditController;
   var focusNode = fm.FocusNode();
   final scrollController = fm.ScrollController();
+  static const upArrow = '\u2191';
+  static const downArrow = '\u2193';
 
   @override
   void initState() {
@@ -229,8 +231,54 @@ class _AbbreviationsFrameState extends fm.State<AbbreviationsFrame> {
         later(() {
           textEditController.selection = saveSelection;
         });
+        var (abbrArrow,expaArrow) = switch ((model.sortField,model.sortOrder)) {
+          (SortField.abbr,SortOrder.asc) => (downArrow,' '),
+          (SortField.abbr,SortOrder.desc) => (upArrow,' '),
+          (SortField.expa,SortOrder.asc) => (' ',downArrow),
+          (SortField.expa,SortOrder.desc) => (' ',upArrow),
+          (_,SortOrder.none) => (' ',' ')
+        };
         return fm.Column(
           children: [
+            fm.Container(
+              decoration: fm.BoxDecoration(
+                  color:Color.WHITE,
+                  border: fm.Border(
+                      bottom: fm.BorderSide(width: 2, color: fm.Colors.black),
+                      left: fm.BorderSide(width: 1, color: fm.Colors.black))
+              ),
+              child: fm.Row(
+                  children: [
+                    fm.Expanded(
+                      flex: 1,
+                      child: fm.InkWell(
+                          onTap: () {
+                            model.sortOrder = model.sortField==SortField.abbr &&
+                                model.sortOrder==SortOrder.asc
+                                ? SortOrder.desc
+                                : SortOrder.asc;
+                            model.sortField = SortField.abbr;
+                            model.sort();
+                          },
+                          child: fm.Text('Abbrev $abbrArrow',style:fm.TextStyle(fontSize: 20))
+                      ),
+                    ),
+                    fm.Expanded(
+                        flex: 4,
+                        child: fm.InkWell(
+                            onTap: () {
+                              model.sortOrder = model.sortField==SortField.expa &&
+                                  model.sortOrder==SortOrder.asc
+                                  ? SortOrder.desc
+                                  : SortOrder.asc;
+                              model.sortField = SortField.expa;
+                              model.sort();
+                            },
+                            child: fm.Text('Expansion $expaArrow',style:fm.TextStyle(fontSize: 20)))
+                    )
+                  ]
+              ),
+            ),
             fm.Expanded(
                 child: fm.Scrollbar(
                   thumbVisibility: TamUtils.platform().matches('web|windows'.r),

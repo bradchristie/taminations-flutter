@@ -31,9 +31,14 @@ class Abbreviation {
   Abbreviation(this.abbr,this.expa);
 }
 
+enum SortOrder { asc, desc, none }
+enum SortField { abbr, expa }
+
 class AbbreviationsModel extends fm.ChangeNotifier {
 
   static late SharedPreferences prefs;
+  var sortOrder = SortOrder.asc;
+  var sortField = SortField.abbr;
 
   static final initialAbbreviations = {
     'g' : 'Girls',
@@ -102,8 +107,8 @@ class AbbreviationsModel extends fm.ChangeNotifier {
             Abbreviation(k.replaceFirst('abbrev ',''),
             prefs.getString(k)!));
     }
-    currentAbbreviations = currentAbbreviations.sortedBy((e) => e.abbr);
     currentAbbreviations.add(Abbreviation('',''));
+    _detectSort();
   }
 
   void setAbbreviation(int index, String abbr) {
@@ -137,6 +142,7 @@ class AbbreviationsModel extends fm.ChangeNotifier {
           prefs.setString('abbrev ${p.abbr.trim()}', p.expa);
       }
     }
+    _detectSort();
   }
 
   bool _checkForErrors() {
@@ -173,6 +179,61 @@ class AbbreviationsModel extends fm.ChangeNotifier {
     if (currentAbbreviations.where((e) => e.isError).isNotEmpty || errorCount > 0)
       notifyListeners();
     return currentAbbreviations.any((item) => item.isError);
+  }
+
+  void _detectSort() {
+    var isAbbrAsc = true;
+    var isAbbrDesc = true;
+    var isExpaAsc = true;
+    var isExpaDesc = true;
+    //  be sure to skip the last line, which is blank for new entries
+    for (var i=1; i<currentAbbreviations.length-1; i++) {
+      if (currentAbbreviations[i].abbr.lc > currentAbbreviations[i-1].abbr.lc)
+        isAbbrDesc = false;
+      if (currentAbbreviations[i].abbr.lc < currentAbbreviations[i-1].abbr.lc)
+        isAbbrAsc = false;
+      if (currentAbbreviations[i].expa.lc > currentAbbreviations[i-1].expa.lc)
+        isExpaDesc = false;
+      if (currentAbbreviations[i].expa.lc < currentAbbreviations[i-1].expa.lc)
+        isExpaAsc = false;
+    }
+    if (isAbbrAsc) {
+      sortField = SortField.abbr;
+      sortOrder = SortOrder.asc;
+    }
+    else if (isAbbrDesc) {
+      sortField = SortField.abbr;
+      sortOrder = SortOrder.desc;
+    }
+    else if (isExpaAsc) {
+      sortField = SortField.expa;
+      sortOrder = SortOrder.asc;
+    }
+    else if (isExpaDesc) {
+      sortField = SortField.expa;
+      sortOrder = SortOrder.desc;
+    } else
+      sortOrder = SortOrder.none;
+  }
+
+  void sort() {
+    currentAbbreviations.sort((a,b) {
+      if (a.abbr.isBlank)
+        return 1;
+      else if (b.abbr.isBlank)
+        return -1;
+      return switch ((sortOrder, sortField)) {
+        (SortOrder.asc, SortField.abbr) => a.abbr.lc.compareTo(b.abbr.lc),
+        (SortOrder.asc, SortField.expa) => a.expa.lc.compareTo(b.expa.lc),
+        (SortOrder.desc, SortField.abbr) => b.abbr.lc.compareTo(a.abbr.lc),
+        (SortOrder.desc, SortField.expa) => b.expa.lc.compareTo(a.expa.lc),
+        (SortOrder.none, _) => 0
+      };
+    }
+    );
+    _save();
+    _load();
+    notifyListeners();
   }
 
   void copy() {

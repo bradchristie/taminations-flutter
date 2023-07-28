@@ -111,6 +111,8 @@ extension TamString on String {
   XmlName get xml => XmlName(this);
   bool get isBlank => trim().isEmpty;
   bool get isNotBlank => !isBlank;
+  bool operator>(String other) => compareTo(other) > 0;
+  bool operator<(String other) => compareTo(other) < 0;
   String capitalize() => isEmpty ? this :
       substring(0,1).toUpperCase() + substring(1).toLowerCase();
   //  Capitalize words except for common small words

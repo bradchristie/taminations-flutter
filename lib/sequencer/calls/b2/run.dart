@@ -65,9 +65,9 @@ class Run extends Action {
           usePartner = false;
         }
         else if (!isRight ||
-            (usePartner && dleft!=null && dleft == d.data.partner)) {
+            (usePartner && dleft == d.data.partner)) {
           //  Run Left
-          var d2 = dleft.throwIfNull(CallError('Dancer $d unable to Run' ));
+          var d2 = dleft;
           _runOne(d,d2,'Left' );
           runnersRunned.add(d);
           dancersToWalk.remove(d2);
