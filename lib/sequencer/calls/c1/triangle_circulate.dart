@@ -32,7 +32,10 @@ class SelectTriangle extends CodedCall {
     final triangleType = name.replaceAll('Triangle','')
         .toLowerCase()
         .replaceAll('\\W'.r, '');
-    final points = ctx.points();
+    var points = ctx.points();
+    if (points.length != 4)
+      //  Ignore points of center diamond, not useful for triangles
+      points = [];
     switch (triangleType) {
       case 'inside' :
         for (final d in ctx.outer(2))
@@ -132,67 +135,12 @@ You do not need to use one of these if the triangles are unambiguous (as in a sa
 
   @override
   void perform(CallContext ctx) {
+    final triangleType = name.replaceFirst(rootName, '');
     //  Find the 6 dancers to circulate
-    final triangleType = name.replaceFirst(rootName, '')
-        .toLowerCase()
-        .replaceAll('\\W'.r, '');
-    final points = ctx.points();
-    switch (triangleType) {
-      case 'inside' :
-        for (final d in ctx.outer(2))
-          d.data.active = false;
-        break;
-      case 'outside' :
-        for (final d in ctx.center(2))
-          d.data.active = false;
-        break;
-      case 'inpoint' :
-        for (final d in points) {
-          if (d.isFacingOut)
-            d.data.active = false;
-        }
-        break;
-      case 'outpoint' :
-        for (final d in points) {
-          if (d.isFacingIn)
-            d.data.active = false;
-        }
-        break;
-      case 'tandembased' :
-        final tandems = ctx.dancers.where((d2) => ctx.isInTandem(d2)).toList();
-        //  Find the dancer closest to each tandem
-        //  We don't want dancers further out to get involved
-        final tandemPoints = <DancerModel>{};
-        for (final d in tandems) {
-          var d2 = ctx.tandemDancer(d)!;
-          var d3 = ctx.dancers.where((dq) => !tandems.contains(dq) &&
-              dq.distanceTo(d) < 3.0 && dq.distanceTo(d2) < 3.0).firstOrNull;
-          if (d3 != null)
-            tandemPoints.add(d3);
-        }
-        for (final d in ctx.dancers)
-          if (!tandems.contains(d) && !tandemPoints.contains(d))
-            d.data.active = false;
-        break;
-      case 'wavebased':
-      case '':
-        if (points.isNotEmpty) {
-          for (final d in points) {
-            final others = ctx.dancersInOrder(d);
-            if (!(others[0].isLeftOf(others[1]) || others[0].isRightOf(others[1])) ||
-                !(others[1].isLeftOf(others[0]) || others[1].isRightOf(others[0])))
-              d.data.active = false;
-          }
-        } else {
-          //  No points, maybe a sausage
-          final sausage = CallContext.fromFormation(Formation('Sausage RH'));
-          if (ctx.matchFormations(sausage,rotate:180) != null) {
-            for (final d in ctx.center(2))
-              d.data.active = false;
-          }
-        }
-        break;
-    }
+    var specCtx = CallContext.fromContext(ctx);
+    specCtx.applySpecifier('$triangleType Triangle');
+    for (var d in ctx.dancers)
+      d.data.active = specCtx.actives.contains(d);
     if (ctx.actives.length != 6) {
       if (triangleType.isBlank)
         throw CallError('You need to identify the triangle');
