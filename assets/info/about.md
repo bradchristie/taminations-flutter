@@ -23,22 +23,23 @@ Call pronunciations provided by
 
 ---
 
-## Taminations version 1.6.63 built 2023-06-26
+## Taminations version 1.6.64 built 2023-07-31
 Copyright 2023 by Brad Christie.  
 This is free software, and you are welcome to modify and redistribute it
 under the terms of the [GNU GPL license](http://www.gnu.org/licenses/gpl.html).  
 
 ## What's New
-* Fix selecting some Once Removed animations
+* Update definition for Linear Cycle
+* Fix display of some animations for Ramble
+* Animations for Reverse Dixie Sashay
 * Sequencer changes:
-  - Chain Down the Line from more formations
-  - Fix crash on Spread
-  - Enable As Couples Roll
-  - Fix for Square Thru on the Nth Hand ...
-  - Fix for Centers Shazam from galaxy
-  - Code for (Anything) and Circle, Patch, Touch By
-  - Fix Cross Chain Thru / Roll from waves
-  - Fixes for dancer names, new command to change names
+  - Fix for Concentric Circulate
+  - Enable Grand Square <nn> steps
+  - Fix for some RLG after Allemande Left
+  - Fold and Cross Fold from t-bones
+  - Enable sorting abbreviations
+  - Fix Triangle Circulate from sausage formation
+
 
 For a detailed history of changes, view the
 [Git log](https://github.com/bradchristie/taminations-flutter/commits/main)
