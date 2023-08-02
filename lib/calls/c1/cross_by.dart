@@ -62,5 +62,19 @@ import '../../moves.dart';
 
           EighthLeft.changeBeats(3).skew(0.707,2.293)
       ]),
+
+    AnimatedCall('Cross By',
+        formation:Formation('Thar LH Boys'),
+        from:'Wrong Way Thar',
+        paths:[
+          EighthLeft.changeBeats(3).skew(2.121,-1.121),
+
+          EighthRight.changeBeats(3).skew(0.707,-2.293),
+
+          EighthLeft.changeBeats(3).skew(2.121,-1.121),
+
+          EighthRight.changeBeats(3).skew(0.707,-2.293)
+        ]),
+
   ];
 
