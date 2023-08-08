@@ -64,6 +64,7 @@ import 'a2/swing.dart';
 import 'a2/transfer_and.dart';
 import 'a2/zig.dart';
 import 'a2/zig_zag.dart';
+import 'b1/allemande_left.dart';
 import 'b1/around_to_a_line.dart';
 import 'b1/bend_the_line.dart';
 import 'b1/california_twirl.dart';
@@ -302,6 +303,7 @@ abstract class CodedCall extends Call {
     'aceydeucey'.ri: (_) => AceyDeucey(),
     'adjust(to)?.*'.ri: (name) => Adjust(name),
     'all8(?!circulate)(?!recycle).*'.ri: (name) => AllEight(name),
+    'AllemandeLeft'.r: (name) => AllemandeLeft(name),
     'alterandcirculate'.ri: (_) => AlterAndCirculate(),
     'alterthewave'.ri: (name) => AlterTheWave(name),
     'and'.ri: (_) => And(),

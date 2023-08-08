@@ -147,8 +147,8 @@ class Movement extends Cloneable<Movement> {
     final angle = t.angle;
     final dx = angle.abs() / 3.0;
     final br = Bezier([Vector(0,0),Vector(dx,0),
-        Vector(sin(angle)-dx*cos(angle),1-(cos(angle)+dx*sin(angle))),
-        Vector(sin(angle),1-cos(angle))]);
+      Vector(cos(angle/2)-dx*cos(angle),sin(angle/2)-dx*sin(angle)),
+      Vector(cos(angle/2),sin(angle/2))]);
     return Movement(beats,hands,bt,br);
   }
 
