@@ -208,5 +208,74 @@ import '../../moves.dart';
           ExtendLeft.changeBeats(2).scale(2.0,1.0) +
           RunLeft.changeBeats(3).scale(1.0,1.5).skew(1.0,0.0)
       ]),
+
+    AnimatedCall('Unwrap the Interlocked Diamond',
+        formation:Formation('Interlocked Diamonds RH Girl Points'),
+        from:'Right-Hand Diamonds',
+        paths:[
+          LeadRight.changeBeats(4) +
+              Forward_3.changeBeats(4),
+
+          ExtendRight.changeBeats(8).scale(5.0,2.0),
+
+          LeadRight.changeBeats(5).scale(1, 3) +
+              RunRight.skew(1.0,0.0),
+
+          LeadRight.changeBeats(5).scale(1.0,3.0) +
+              LeadRight.changeBeats(3).scale(1.0,2.0)
+        ]),
+
+    AnimatedCall('Unwrap the Interlocked Diamond',
+        formation:Formation('Interlocked Diamonds LH Girl Points'),
+        from:'Left-Hand Diamonds',
+        paths:[
+          LeadLeft.changeBeats(4) +
+              Forward_3.changeBeats(4),
+
+          LeadLeft.changeBeats(5).scale(1.0,3.0) +
+              LeadLeft.changeBeats(3).scale(1.0,2.0),
+
+          LeadLeft.changeBeats(5).scale(1, 3) +
+              RunLeft.skew(1.0,0.0),
+
+          ExtendLeft.changeBeats(8).scale(5.0,2.0)
+        ]),
+
+    AnimatedCall('Unwrap the Diamond',
+        formation:Formation('Interlocked Diamonds RH PTP Girl Points'),
+        from:'Right-Hand Interlocked Point-to-Point Diamonds',
+        paths:[
+          Forward_6,
+
+          LeadRight.changeBeats(3).scale(1.0,3.0) +
+              LeadRight.changeBeats(2).scale(2.0,1.0) +
+              LeadRight.changeBeats(1),
+
+          LeadRight.changeBeats(2).scale(2.0,1.0) +
+              LeadRight.changeBeats(2).scale(1.0,2.0) +
+              Forward_2,
+
+          LeadRight.changeBeats(2).scale(1.0,2.0) +
+              Forward_4
+        ]),
+
+    AnimatedCall('Unwrap the Diamond',
+        formation:Formation('Interlocked Diamonds LH PTP Girl Points'),
+        from:'Left-Hand Interlocked Point-to-Point Diamonds',
+        paths:[
+          LeadLeft.changeBeats(2).scale(2.0,1.0) +
+              LeadLeft.changeBeats(2).scale(1.0,2.0) +
+              Forward_2,
+
+          LeadLeft.changeBeats(3).scale(1.0,3.0) +
+              LeadLeft.changeBeats(2).scale(2.0,1.0) +
+              LeadLeft.changeBeats(1),
+
+          Forward_6,
+
+          LeadLeft.changeBeats(2).scale(1.0,2.0) +
+              Forward_4
+        ]),
+
   ];
 
