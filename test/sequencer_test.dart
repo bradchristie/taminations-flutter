@@ -2808,6 +2808,15 @@ Bend the Line
 Slide Thru
 Allemande Left''',''),
 
+  TestSequence('Square the Bases But',
+'''Heads Star Thru and Spread
+Square the Bases But Split Square Thru 3
+Cast Off 3/4
+Star Thru
+Pass Thru
+Trade By
+Allemande Left''' , ''),
+
   TestSequence('Quarter Mix',
 '''Sides Pass the Ocean
 Extend
