@@ -19,16 +19,26 @@
 
 import '../common.dart';
 
-class SquareTheBases extends Action with CallWithParts {
+class SquareTheBases extends Action with CallWithParts, ButCall {
 
   @override var level = LevelData.C1;
   @override var numberOfParts = 3;
+  @override var butCall = '';
   @override var help = '''Square the Bases has 3 parts:
   1.  Centers Square Thru 3 while Ends Pass Thru and Bend
   2.  Split Square Thru 2
-  3.  Trade By''';
+  3.  Trade By
+You can replace Parts 2 and 3 with But <another call>''';
+
   @override var helplink = 'c1/square_the_bases';
   SquareTheBases() : super('Square the Bases');
+
+  //  'But' call replaces both parts 2 and 3
+  @override
+  void perform(CallContext ctx) {
+    numberOfParts = butCall.isBlank ? 3 : 2;
+    super.perform(ctx);
+  }
 
   @override
    void performPart1(CallContext ctx) {
@@ -46,7 +56,7 @@ class SquareTheBases extends Action with CallWithParts {
 
   @override
    void performPart2(CallContext ctx) {
-    ctx.applyCalls('Split Square Thru 2');
+    ctx.applyCalls(butCall.isBlank ? 'Split Square Thru 2' : butCall);
   }
 
   @override
