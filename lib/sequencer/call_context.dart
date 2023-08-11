@@ -811,6 +811,7 @@ class CallContext {
       switch (f.name) {
         case 'Double Pass Thru' :
         case 'I-Beam' :
+        case 'Squared Set' :
         rot = 90; break;
       }
       var mapping = matchFormations(ctx2,sexy:false,fuzzy:true,rotate:rot,handholds:false);
