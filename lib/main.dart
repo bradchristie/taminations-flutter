@@ -348,6 +348,11 @@ class TaminationsRouterDelegate extends fm.RouterDelegate<TamState>
                                 appState.change(mainPage: MainPage.LEVELS,
                                     detailPage: DetailPage.NONE);
                             }
+
+                            else
+                              appState.change(mainPage: MainPage.LEVELS,
+                                  detailPage: DetailPage.NONE);
+
                           }
 
                           notifyListeners();

@@ -162,123 +162,137 @@ class _StartPracticeFrameState extends fm.State<StartPracticeFrame> {
   fm.Widget build(fm.BuildContext context) {
     return pp.Consumer<Settings>(
         builder: (context, settings, child) {
-          return fm.Container(
-            color: Color.FLOOR,
-            child: fm.Row(
-              crossAxisAlignment: fm.CrossAxisAlignment.stretch,
-              children: [
-                fm.Expanded(
-                  child: fm.Container(
-                    margin: fm.EdgeInsets.only(left:20,top:20),
-                    child: fm.Column(
-                      crossAxisAlignment: fm.CrossAxisAlignment.stretch,
-                      children: [
-                        fm.Text(
-                            'Choose a Gender', style: fm.TextStyle(fontSize: 20)),
-                        _StartPracticeRadioGroup(
-                            groupValue: settings.practiceGender,
-                            values: ['Boy', 'Girl'],
-                            onChanged: (value) {
-                              setState(() {
-                                settings.practiceGender = value ?? 'Boy';
-                              });
-                            }),
-                        fm.Text('Speed for Practice',
-                            style: fm.TextStyle(fontSize: 20)),
-                        _StartPracticeRadioGroup(
-                            groupValue: settings.practiceSpeed,
-                            values: ['Slow', 'Moderate', 'Normal'],
-                            onChanged: (value) {
-                              setState(() {
-                                settings.practiceSpeed = value ?? 'Slow';
-                              });
-                            }),
-                        if (TamUtils.isTouchDevice)
-                          fm.Text(
-                              'Primary Control', style: fm.TextStyle(fontSize: 20)),
-                        if (TamUtils.isTouchDevice)
-                          _StartPracticeRadioGroup(
-                              groupValue: settings.primaryControl,
-                              values: ['Left Finger', 'Right Finger'],
-                              onChanged: (value) {
-                                setState(() {
-                                  settings.primaryControl = value ?? 'Right Finger';
-                                });
-                              }),
-                        if (!TamUtils.isTouchDevice)
-                          fm.Text(
-                              'Mouse Control', style: fm.TextStyle(fontSize: 20)),
-                        if (!TamUtils.isTouchDevice)
-                          _StartPracticeRadioGroup(
-                              groupValue: settings.mouseControl,
-                              values: ['Press mouse button to move',
-                                'Release mouse button to move'],
-                              onChanged: (value) {
-                                setState(() {
-                                  settings.mouseControl = value ?? 'Press mouse button to move';
-                                });
-                              }),
-                      ],
+          return fm.OrientationBuilder(
+            builder: (context,orientation) {
+              if (orientation == fm.Orientation.portrait)
+                return fm.Container(
+                  color: Color.FLOOR,
+                  child: fm.Center(
+                      child: fm.Text(
+                          'Resize your window wider for Practice.',
+                        textAlign: TextAlign.center,
+                        style: fm.TextStyle(fontSize: 40),
+                      ))
+                );
+              return fm.Container(
+                color: Color.FLOOR,
+                child: fm.Row(
+                  crossAxisAlignment: fm.CrossAxisAlignment.stretch,
+                  children: [
+                    fm.Expanded(
+                      child: fm.Container(
+                        margin: fm.EdgeInsets.only(left:20,top:20),
+                        child: fm.Column(
+                          crossAxisAlignment: fm.CrossAxisAlignment.stretch,
+                          children: [
+                            fm.Text(
+                                'Choose a Gender', style: fm.TextStyle(fontSize: 20)),
+                            _StartPracticeRadioGroup(
+                                groupValue: settings.practiceGender,
+                                values: ['Boy', 'Girl'],
+                                onChanged: (value) {
+                                  setState(() {
+                                    settings.practiceGender = value ?? 'Boy';
+                                  });
+                                }),
+                            fm.Text('Speed for Practice',
+                                style: fm.TextStyle(fontSize: 20)),
+                            _StartPracticeRadioGroup(
+                                groupValue: settings.practiceSpeed,
+                                values: ['Slow', 'Moderate', 'Normal'],
+                                onChanged: (value) {
+                                  setState(() {
+                                    settings.practiceSpeed = value ?? 'Slow';
+                                  });
+                                }),
+                            if (TamUtils.isTouchDevice)
+                              fm.Text(
+                                  'Primary Control', style: fm.TextStyle(fontSize: 20)),
+                            if (TamUtils.isTouchDevice)
+                              _StartPracticeRadioGroup(
+                                  groupValue: settings.primaryControl,
+                                  values: ['Left Finger', 'Right Finger'],
+                                  onChanged: (value) {
+                                    setState(() {
+                                      settings.primaryControl = value ?? 'Right Finger';
+                                    });
+                                  }),
+                            if (!TamUtils.isTouchDevice)
+                              fm.Text(
+                                  'Mouse Control', style: fm.TextStyle(fontSize: 20)),
+                            if (!TamUtils.isTouchDevice)
+                              _StartPracticeRadioGroup(
+                                  groupValue: settings.mouseControl,
+                                  values: ['Press mouse button to move',
+                                    'Release mouse button to move'],
+                                  onChanged: (value) {
+                                    setState(() {
+                                      settings.mouseControl = value ?? 'Press mouse button to move';
+                                    });
+                                  }),
+                          ],
+                        ),
+                      ),
                     ),
-                  ),
+                    fm.Expanded(
+                      child: fm.Column(
+                        crossAxisAlignment: fm.CrossAxisAlignment.stretch,
+                        children: [
+                          _StartPracticeItem(
+                              text: 'Tutorial', color: Color.LIGHTGREY),
+                          fm.Expanded(
+                            child: fm.Row(
+                              crossAxisAlignment: fm.CrossAxisAlignment.stretch,
+                              children: [
+                                _StartPracticeItem(text: 'Basic 1', color: Color.B1),
+                                _StartPracticeItem(text: 'Basic 2', color: Color.B2)
+                              ],
+                            ),
+                          ),
+                          fm.Expanded(
+                            child: fm.Row(
+                              crossAxisAlignment: fm.CrossAxisAlignment.stretch,
+                              children: [
+                                _StartPracticeItem(
+                                    text: 'Mainstream', color: Color.MS),
+                                _StartPracticeItem(text: 'Plus', color: Color.PLUS)
+                              ],
+                            ),
+                          ),
+                          fm.Expanded(
+                            child: fm.Row(
+                              crossAxisAlignment: fm.CrossAxisAlignment.stretch,
+                              children: [
+                                _StartPracticeItem(text: 'A-1', color: Color.A1),
+                                _StartPracticeItem(text: 'A-2', color: Color.A2)
+                              ],
+                            ),
+                          ),
+                          fm.Expanded(
+                            child: fm.Row(
+                              crossAxisAlignment: fm.CrossAxisAlignment.stretch,
+                              children: [
+                                _StartPracticeItem(text: 'C-1', color: Color.C1),
+                                _StartPracticeItem(text: 'C-2', color: Color.C2)
+                              ],
+                            ),
+                          ),
+                          fm.Expanded(
+                            child: fm.Row(
+                              crossAxisAlignment: fm.CrossAxisAlignment.stretch,
+                              children: [
+                                _StartPracticeItem(text: 'C-3A', color: Color.C3A),
+                                _StartPracticeItem(text: 'C-3B', color: Color.C3B)
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
+                    )
+                  ],
                 ),
-                fm.Expanded(
-                  child: fm.Column(
-                    crossAxisAlignment: fm.CrossAxisAlignment.stretch,
-                    children: [
-                      _StartPracticeItem(
-                          text: 'Tutorial', color: Color.LIGHTGREY),
-                      fm.Expanded(
-                        child: fm.Row(
-                          crossAxisAlignment: fm.CrossAxisAlignment.stretch,
-                          children: [
-                            _StartPracticeItem(text: 'Basic 1', color: Color.B1),
-                            _StartPracticeItem(text: 'Basic 2', color: Color.B2)
-                          ],
-                        ),
-                      ),
-                      fm.Expanded(
-                        child: fm.Row(
-                          crossAxisAlignment: fm.CrossAxisAlignment.stretch,
-                          children: [
-                            _StartPracticeItem(
-                                text: 'Mainstream', color: Color.MS),
-                            _StartPracticeItem(text: 'Plus', color: Color.PLUS)
-                          ],
-                        ),
-                      ),
-                      fm.Expanded(
-                        child: fm.Row(
-                          crossAxisAlignment: fm.CrossAxisAlignment.stretch,
-                          children: [
-                            _StartPracticeItem(text: 'A-1', color: Color.A1),
-                            _StartPracticeItem(text: 'A-2', color: Color.A2)
-                          ],
-                        ),
-                      ),
-                      fm.Expanded(
-                        child: fm.Row(
-                          crossAxisAlignment: fm.CrossAxisAlignment.stretch,
-                          children: [
-                            _StartPracticeItem(text: 'C-1', color: Color.C1),
-                            _StartPracticeItem(text: 'C-2', color: Color.C2)
-                          ],
-                        ),
-                      ),
-                      fm.Expanded(
-                        child: fm.Row(
-                          crossAxisAlignment: fm.CrossAxisAlignment.stretch,
-                          children: [
-                            _StartPracticeItem(text: 'C-3A', color: Color.C3A),
-                            _StartPracticeItem(text: 'C-3B', color: Color.C3B)
-                          ],
-                        ),
-                      ),
-                    ],
-                  ),
-                )
-              ],
-            ),
+              );
+            }
           );
         });
 
