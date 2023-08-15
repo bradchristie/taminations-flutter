@@ -94,22 +94,42 @@ import '../../moves.dart';
 
     AnimatedCall('Unwrap the Diamond',
       formation:Formation('Diamonds Facing Girl Points'),
-      from:'Facing Diamonds',
+      from:'Facing Diamonds, Right-Hand Wave',
       paths:[
           LeadRight.changeBeats(3) +
           Forward_2 +
-          ExtendLeft.scale(1.0,0.5),
+          ExtendLeft,
 
           LeadLeft.changeBeats(3).scale(1.0,3.0) +
           LeadLeft.changeBeats(3).scale(0.5,2.0),
 
           LeadRight.changeBeats(2) +
           Forward +
-          RunRight.scale(1.0,1.25),
+          RunRight.scale(1.0,1.5),
 
           Forward_2 +
           ExtendLeft.changeBeats(4).scale(3.0,2.5)
       ]),
+
+    AnimatedCall('Unwrap the Diamond',
+        formation:Formation('Diamonds Facing LH Girl Points'),
+        from:'Facing Diamonds, Left-Hand Wave',
+        paths:[
+          LeadLeft.changeBeats(3) +
+              Forward_2 +
+              ExtendLeft.scale(1,.5),
+
+          Forward_2 +
+              ExtendRight.changeBeats(4).scale(3,1),
+
+          LeadLeft.changeBeats(2) +
+              Forward +
+              RunLeft.scale(1.0,.75),
+
+          LeadRight.changeBeats(3).scale(1.0,3.0) +
+              LeadRight.changeBeats(3).scale(2,2),
+
+        ]),
 
     AnimatedCall('Unwrap the Hourglass',
       formation:Formation('Hourglass RH BP'),
