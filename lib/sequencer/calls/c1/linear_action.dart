@@ -43,13 +43,13 @@ The final Cast Off 3/4 can be replaced with But (another call)''';
   @override
    void performPart2(CallContext ctx) {
     ctx.subContext(ctx.dancers, (ctxPart2) {
-    ctxPart2.subContext(centerDancers, (ctx2) {
-      ctx2.applyCalls('Box Circulate 1.5');
-    });
-    ctxPart2.checkCenters();
-    ctxPart2.subContext(outerDancers, (ctx2) {
-      ctx2.applyCalls('Trade');
-    });
+      ctxPart2.subContext(centerDancers, (ctx2) {
+        ctx2.applyCalls('Box Circulate 1.5');
+      });
+      ctxPart2.checkCenters();
+      ctxPart2.subContext(outerDancers, (ctx2) {
+        ctx2.applyCalls('Trade');
+      });
     });
   }
 

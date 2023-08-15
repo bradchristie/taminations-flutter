@@ -124,13 +124,17 @@ class CallContext {
   int geometry = Geometry.SQUARE;
 
   //  Create a context from an array of dancers
-  CallContext.fromDancers(List<DancerModel> dancers) {
+  CallContext.fromDancers(List<DancerModel> dancers, {withPaths=false}) {
     this.dancers = dancers.map((d) {
-      d.animateToEnd();
-      return d.clone();
+      d.animate(withPaths?0:d.beats);
+      var d2 = d.clone();
+      if (withPaths)
+        d2.path = d.path;
+      return d2;
     }).toList();
     if (!dancers.areDancersOrdered())
       this.dancers = this.dancers.center().inOrder();
+    animateToEnd();
     allActive();
   }
 
@@ -504,14 +508,17 @@ class CallContext {
       bxa[1][1] += v1.y * v2.y;
       //  Also add a point in front of the dancers, so it will match
       //  the direction the dancers are facing
-      var a1 = d1.angleFacing;
-      var v1f = v1 + Vector(cos(a1),sin(a1)) * 0.1;
-      var a2 = ctx2.dancers[mapping[i]].angleFacing;
-      var v2f = v2 + Vector(cos(a2),sin(a2)) * 0.1;
-      bxa[0][0] += v1f.x * v2f.x;
-      bxa[0][1] += v1f.y * v2f.x;
-      bxa[1][0] += v1f.x * v2f.y;
-      bxa[1][1] += v1f.y * v2f.y;
+      //  And another point to the left
+      for (var x=0; x<2; x+=1) {
+        var a1 = d1.angleFacing + x*pi/2;
+        var v1f = v1 + Vector(cos(a1), sin(a1)) * 0.1;
+        var a2 = ctx2.dancers[mapping[i]].angleFacing;
+        var v2f = v2 + Vector(cos(a2), sin(a2)) * 0.1;
+        bxa[0][0] += v1f.x * v2f.x;
+        bxa[0][1] += v1f.y * v2f.x;
+        bxa[1][0] += v1f.x * v2f.y;
+        bxa[1][1] += v1f.y * v2f.y;
+      }
     }
     var svdSolution =  Matrix(bxa[0][0], bxa[1][0], 0.0, bxa[0][1], bxa[1][1], 0.0).svd22();
     var u = svdSolution.item1;
@@ -780,7 +787,7 @@ class CallContext {
               (centerDiamond()?.containsAll(moving) ?? false))
             return;
         }
-        final ctx2 = CallContext.fromDancers(moving);
+        final ctx2 = CallContext.fromDancers(moving,withPaths: true);
         if (ctx2.isLines()) {
           ctx2.adjustToFormation(Formation('Compact Wave RH'));
         } else if (ctx2.isDiamond()) {
@@ -789,7 +796,9 @@ class CallContext {
           ctx2.adjustToFormation(Formation('Single Double Pass Thru Close'));
         } else
           return;
-        ctx2.appendToSource(this, false);
+        for (var d in ctx2.dancers)
+          dancers.find(d.number.i).path = d.path;
+        animateToEnd();
       }
     }
   }
@@ -913,9 +922,9 @@ class CallContext {
           d.path.unshift(m);
         else
           d.path += m;
-        d.animateToEnd();
       }
     }
+    animateToEnd();
     return retval;
   }
 
@@ -927,6 +936,7 @@ class CallContext {
     //  Work on a copy with all dancers active, mapping only uses active dancers???
     //var ctx1 = CallContext.fromContext(this);
     var ctx2 = CallContext.fromFormation(formation);
+    animateToEnd();
     var mapping = matchFormations(ctx2,sexy:false,fuzzy:true,rotate:rotate,handholds:false, maxError : maxError, subformation: subformation, delta: delta);
     if (mapping != null) {
       //  If it does, get the offsets

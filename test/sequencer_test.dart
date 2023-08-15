@@ -877,6 +877,12 @@ Ferris Wheel
 Centers Square Thru 3
 Allemande Left''',''),
 
+  TestSequence('Square Thru on 3 RLG',
+'''Heads Lead Right
+Ladies Chain
+Half Sashay
+Square Thru On the 3rd Hand Right and Left Grand''', ''),
+
   TestSequence('Cross Over Circulate',
   '''Heads Lead Right While Sides Half Sashay
 Veer Left
@@ -3730,5 +3736,19 @@ Centers Wheel Thru
 Pass Thru
 Trade By
 Allemande Left''',''),
+
+  TestSequence('Centers Single Wheel',
+'''Sides Pass Out
+Centers Single Wheel
+Very Centers Pass Thru
+Centers Pass and Roll
+Centers Walk and Dodge
+Pass and Roll
+Girls Trade
+Boys Run
+Bend the Line
+Star Thru
+Pass Thru
+Allemande Left''', ''),
 
 ];
