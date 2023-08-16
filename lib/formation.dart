@@ -1698,7 +1698,15 @@ class Formation {
       DancerModel.fromData(gender:Gender.GIRL,x:0,y:.5,angle:0),
       DancerModel.fromData(gender:Gender.BOY,x:-1,y:3,angle:0),
       DancerModel.fromData(gender:Gender.GIRL,x:1,y:3,angle:0),
-    ])
+    ]),
+
+    Formation('Siamese Diamond Tandem Centers', dancers:[
+      DancerModel.fromData(gender:Gender.BOY,x:0,y:4,angle:0),
+      DancerModel.fromData(gender:Gender.GIRL,x:1,y:1,angle:270),
+      DancerModel.fromData(gender:Gender.BOY,x:0,y:3,angle:0),
+      DancerModel.fromData(gender:Gender.GIRL,x:1,y:-1,angle:270),
+    ]),
+
 
 
   ];

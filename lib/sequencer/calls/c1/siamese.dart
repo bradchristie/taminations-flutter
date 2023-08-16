@@ -29,6 +29,23 @@ class Siamese extends FourDancerConcept {
   late List<List<DancerModel>> tandems;
   Siamese(String name) : super(name);
 
+  static var siameseFormations = {
+    Formation('Siamese Box 1'): 1.0,
+    Formation('Siamese Box 3') : 1.5,
+    Formation('Siamese Wave'): 1.0,  // tandems are centers
+    Formation('Siamese 2-Faced Line'): 1.0,   // tandems are ends
+    //  Interlocked diamonds are siamese with tandem points
+    Formation('Interlocked Diamonds RH Girl Points') : 1.0,
+    Formation('Siamese Diamond Tandem Centers'): 1.0
+  };
+
+  @override
+  void perform(CallContext ctx) {
+    ctx.matchFormationList(siameseFormations, delta:0.2);
+    super.perform(ctx);
+    ctx.matchFormationList(siameseFormations, maxOffset: 10.1, delta:0.2);
+  }
+
   @override
   List<List<DancerModel>> dancerGroups(CallContext ctx) {
     //  First find couples
@@ -37,10 +54,12 @@ class Siamese extends FourDancerConcept {
             (d.data.partner?.data.partner == d))
         .map((d) => [d,d.data.partner!]).toList();
     //  Remaining dancers are tandems
-    tandems = ctx.dancers.where((d) {
-      final d2 = ctx.dancerInBack(d);
-      return d2 != null && ctx.dancersInBack(d).length % 2 == 1
-          && couples.flatten().none((it) => it == d || it == d2);
+    var tandemDancers = ctx.dancers.where((d) => !couples.flatten().contains(d)).toList();
+    var ctxTandem = CallContext.fromDancers(tandemDancers);
+
+    tandems = tandemDancers.where((d) {
+      final d2 = ctxTandem.dancerInBack(d);
+      return d2 != null && ctxTandem.dancersInBack(d).length % 2 == 1;
       }).map((d) => [d,ctx.dancerInBack(d)!]).toList();
     //  Better be all the dancers
     if ((couples+tandems).flatten().length == ctx.dancers.length)

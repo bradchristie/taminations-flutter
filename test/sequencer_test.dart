@@ -1447,6 +1447,22 @@ Centers Swap Around
 Heads Half Sashay
 Allemande Left''',''),
 
+  TestSequence('Siamese 2',
+'''Heads Star Thru
+Double Pass Thru
+Girls Peel Off
+Siamese Box Circulate
+Siamese 1/2 Box Circulate
+Siamese Diamond Circulate
+Siamese Diamond Circulate
+Siamese Flip the Diamond
+Siamese Boys Run
+Girls Single Wheel
+Boys Run
+Ferris Wheel
+Centers Square Thru 3
+Allemande Left''',''),
+
   TestSequence('Transfer And',
   '''Sides Pair Off
 Star Thru

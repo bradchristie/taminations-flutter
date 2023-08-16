@@ -87,8 +87,9 @@ abstract class FourDancerConcept extends ActivesOnlyAction {
     //  And apply the call
     if (realCall.isBlank)
       throw CallError('$conceptName what?');
+    conceptctx.matchStandardFormation();
     conceptctx.applyCalls(realCall);
-    //conceptctx.matchStandardFormation();
+    conceptctx.matchStandardFormation();
     //  Hook for concept to see the result
     conceptctx.animate(0.0);
     analyzeConceptResult(conceptctx, ctx);

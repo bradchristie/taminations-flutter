@@ -806,7 +806,8 @@ class CallContext {
   //  See if the current DancerModel positions resemble a standard formation
   //  and, if so, snap to the standard
   //  Returns true if a match was found
-  bool matchFormationList(Map<Formation,double> formations, {double maxOffset = 6.1}) {
+  bool matchFormationList(Map<Formation,double> formations,
+      {double maxOffset = 6.1, double delta = 0.05}) {
     //  Make sure newly added animations are finished
     for (var d in dancers) {
       d.path.recalculate();
@@ -823,7 +824,7 @@ class CallContext {
         case 'Squared Set' :
         rot = 90; break;
       }
-      var mapping = matchFormations(ctx2,sexy:false,fuzzy:true,rotate:rot,handholds:false);
+      var mapping = matchFormations(ctx2,sexy:false,fuzzy:true,rotate:rot,handholds:false, delta: delta);
       if (mapping != null) {
         //  If it does, get the offsets
         var matchResult = mapping.match;
