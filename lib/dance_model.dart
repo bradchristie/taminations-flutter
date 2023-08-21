@@ -335,7 +335,7 @@ class DanceModel extends fm.ChangeNotifier {
   void setAnimatedCall(AnimatedCall call, {int geometryType=Geometry.SQUARE,
     int practiceGender = -1, bool practiceIsRandom = true}) {
     _call = call;
-    _geometryType = geometryType;
+    _geometryType = call.formation.asymmetric ? Geometry.ASYMMETRIC : geometryType;
     _interactiveDancer = practiceGender;
     _interactiveRandom = practiceIsRandom;
     _resetAnimatedCall();
@@ -350,19 +350,6 @@ class DanceModel extends fm.ChangeNotifier {
     var mycall = _call;
     if (mycall != null) {
       var geometry = Geometry(_geometryType);
-      if (mycall.isAsymmetric) { // not used here as of yet
-        _geometryType = Geometry.ASYMMETRIC;
-        dancers = mycall.formation.dancers.map((d) =>
-            Dancer(
-                d.number,
-                d.numberCouple,
-                d.gender,
-                Color.BLUE,
-                geometry.startMatrix(d.starttx, 0),
-                Geometry(Geometry.SQUARE),
-                d.path.movelist)).toList();
-      } else {
-        var geometry = Geometry(_geometryType);
         var numbers = mycall.numbers;
         var couples = mycall.coupleNumbers;
         if (_geometryType == Geometry.HEXAGON) {
@@ -391,17 +378,18 @@ class DanceModel extends fm.ChangeNotifier {
           couples = [ '1', '2', '3', '4', '5', '6', '7', '8'];
         }
 
+        var sym = mycall.formation.asymmetric ? 1 : _geometryType;
         dancers = [for (var ent in mycall.formation.dancers
             .asMap()
             .entries)
-          for (var g = 0; g < _geometryType; g++)
+          for (var g = 0; g < sym; g++)
             Dancer(
-                numbers[ent.key * _geometryType + g],
-                couples[ent.key * _geometryType + g],
+                numbers[ent.key * sym + g],
+                couples[ent.key * sym + g],
                 ent.value.gender,
                 ent.value.gender == Gender.PHANTOM
                   ? Color.GRAY
-                  : _dancerColor[couples[ent.key * _geometryType + g].i],
+                  : _dancerColor[couples[ent.key * sym + g].i],
                 // real color will be set later
                 geometry.startMatrix(ent.value.starttx, g),
                 geometry.clone(),
@@ -431,7 +419,6 @@ class DanceModel extends fm.ChangeNotifier {
             d.starttx = iangleTx * d.starttx;
         }  // practice dancer
 
-      }  //  not asymmetric
 
       leadin = 2.0;
       leadout = 2.0;

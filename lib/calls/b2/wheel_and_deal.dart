@@ -19,7 +19,9 @@
 */
 
 import '../../animated_call.dart';
+import '../../dancer_model.dart';
 import '../../formation.dart';
+import '../../math/movement.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> WheelAndDeal = [
@@ -173,6 +175,74 @@ import '../../moves.dart';
 
           UmTurnRight.changeBeats(4).changehands(5).skew(2.0,0.5)
       ]),
+
+
+    AnimatedCall('Wheel and Deal', noDisplay: true,
+        formation:  Formation('', asymmetric: true, dancers:[
+          DancerModel.fromData(gender:Gender.BOY,x:-2,y:3,angle:0),
+          DancerModel.fromData(gender:Gender.GIRL,x:-2,y:1,angle:0),
+          DancerModel.fromData(gender:Gender.GIRL,x:-2,y:-1,angle:180),
+          DancerModel.fromData(gender:Gender.BOY,x:-2,y:-3,angle:180),
+
+          DancerModel.fromData(gender:Gender.BOY,x:2,y:-3,angle:0),
+          DancerModel.fromData(gender:Gender.GIRL,x:2,y:-1,angle:0),
+          DancerModel.fromData(gender:Gender.GIRL,x:2,y:1,angle:0),
+          DancerModel.fromData(gender:Gender.BOY,x:2,y:3,angle:0),
+        ]),
+
+        from:'Asymmetric 1',difficulty: 2,
+        paths:[
+          RunRight.changeBeats(4).changehands(6).scale(1.0,2.0).skew(1.0,0.0),
+
+          UmTurnRight.changeBeats(4).changehands(5).skew(1.0,0.0),
+
+          UmTurnRight.changeBeats(4).changehands(5).skew(1.0,0.0),
+
+          RunRight.changeBeats(4).changehands(6).scale(2.0,2.0).skew(1.0,0.0),
+
+          RunLeft.changeBeats(4).changehands(1).scale(1.0,2.0).skew(-1.0,0.0),
+
+          UmTurnLeft.changeBeats(4).changehands(2).skew(-1.0,0.0),
+
+          UmTurnRight.changeBeats(4).changehands(5).skew(1.0,0.0),
+
+          RunRight.changeBeats(4).changehands(6).scale(2.0,2.0).skew(1.0,0.0)
+
+        ]),
+
+
+    AnimatedCall('Wheel and Deal', noDisplay: true,
+        formation:  Formation('', asymmetric: true, dancers:[
+          DancerModel.fromData(gender:Gender.BOY,x:-2,y:3,angle:180),
+          DancerModel.fromData(gender:Gender.GIRL,x:-2,y:1,angle:180),
+          DancerModel.fromData(gender:Gender.GIRL,x:-2,y:-1,angle:0),
+          DancerModel.fromData(gender:Gender.BOY,x:-2,y:-3,angle:0),
+
+          DancerModel.fromData(gender:Gender.BOY,x:2,y:-3,angle:0),
+          DancerModel.fromData(gender:Gender.GIRL,x:2,y:-1,angle:0),
+          DancerModel.fromData(gender:Gender.GIRL,x:2,y:1,angle:0),
+          DancerModel.fromData(gender:Gender.BOY,x:2,y:3,angle:0),
+        ]),
+
+        from:'Asymmetric 2',difficulty: 2,
+        paths:[
+          RunLeft.changeBeats(4).changehands(Hands.GRIPLEFT).scale(2.0,2.0).skew(1.0,0.0),
+
+          UmTurnLeft.changeBeats(4).changehands(Hands.GRIPRIGHT).skew(1.0,0.0),
+
+          UmTurnLeft.changeBeats(4).changehands(Hands.GRIPRIGHT).skew(1.0,0.0),
+
+          RunLeft.changeBeats(4).changehands(Hands.GRIPLEFT).scale(1.0,2.0).skew(1.0,0.0),
+
+          RunLeft.changeBeats(4).changehands(1).scale(1.0,2.0).skew(-1.0,0.0),
+
+          UmTurnLeft.changeBeats(4).changehands(2).skew(-1.0,0.0),
+
+          UmTurnRight.changeBeats(4).changehands(5).skew(1.0,0.0),
+
+          RunRight.changeBeats(4).changehands(6).scale(2.0,2.0).skew(1.0,0.0)
+
+        ]),
 
     AnimatedCall('Left Wheel and Deal',
       formation:Formation('Lines Facing Out'),

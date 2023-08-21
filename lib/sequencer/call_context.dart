@@ -132,8 +132,9 @@ class CallContext {
         d2.path = d.path;
       return d2;
     }).toList().center();
-    if (!asymmetric && !dancers.areDancersOrdered())
+    if (!dancers.areDancersOrdered())
       this.dancers = this.dancers.inOrder();
+    asymmetric = !dancers.areDancersOrdered();
     animateToEnd();
     allActive();
   }
