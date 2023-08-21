@@ -3767,4 +3767,20 @@ Star Thru
 Pass Thru
 Allemande Left''', ''),
 
+  TestSequence('Couple 1',
+'''Couple 1 Half Sashay
+Heads Slide Thru
+Facing Dancers Box the Gnat
+Facing Dancers Slide Thru Others Face Out
+Partner Trade
+Pass the Ocean
+Centers Circulate
+Swing Thru
+Swing Thru
+Boys Run
+Cast Off 3/4
+Star Thru
+Pass Thru
+Allemande Left''', '')
+
 ];

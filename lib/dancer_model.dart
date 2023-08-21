@@ -100,7 +100,8 @@ extension DancerList on List<DancerModel> {
   bool areDancersOrdered() =>
       length % 2 == 0 &&
           indices.where((it) => it % 2 == 0).every(
-                  (it) => this[it].location.isAbout(-this[it+1].location) && (this[it].angleFacing-this[it+1].angleFacing).isAround(pi));
+                  (it) => this[it].gender == this[it+1].gender &&
+                  this[it].location.isAbout(-this[it+1].location) && (this[it].angleFacing-this[it+1].angleFacing).isAround(pi));
 
   //  Center a list of dancers
   //  Assumes dancers are distributed evenly around a central point

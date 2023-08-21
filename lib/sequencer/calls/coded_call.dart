@@ -243,6 +243,7 @@ import 'common/left.dart';
 import 'common/nobody.dart';
 import 'common/nothing.dart';
 import 'common/one_and_a_half.dart';
+import 'common/one_couple.dart';
 import 'common/outsides.dart';
 import 'common/promenade_home.dart';
 import 'common/quarter_more.dart';
@@ -450,6 +451,7 @@ abstract class CodedCall extends Call {
 
     'O[A-Z0-9].+'.r: (name) => OFormation(name),
     '112'.ri: (name) => OneAndaHalf(name),
+    'couple(1|2|3|4)'.ri: (name) => OneCouple(name),
     'out(er|sides?)(2|4|6)?'.ri: (name) => Outsides(name),
     'ownthe.*'.ri: (name) => OwnTheDancers(name),
 

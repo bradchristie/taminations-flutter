@@ -131,9 +131,9 @@ class CallContext {
       if (withPaths)
         d2.path = d.path;
       return d2;
-    }).toList();
-    if (!dancers.areDancersOrdered())
-      this.dancers = this.dancers.center().inOrder();
+    }).toList().center();
+    if (!asymmetric && !dancers.areDancersOrdered())
+      this.dancers = this.dancers.inOrder();
     animateToEnd();
     allActive();
   }
@@ -146,9 +146,9 @@ class CallContext {
       }) {
     dancers ??= source.dancers;
     dancers.forEach((d) { d.animate(beat); });
-    this.dancers = dancers.clone();
-    if (!dancers.areDancersOrdered())
-      this.dancers = this.dancers.center().inOrder();
+    this.dancers = dancers.clone().center();
+    if (!source.asymmetric && !dancers.areDancersOrdered())
+      this.dancers = this.dancers.inOrder();
     asymmetric = !dancers.areDancersOrdered();
     _source = source;
     _thoseWhoCan = source._thoseWhoCan;
