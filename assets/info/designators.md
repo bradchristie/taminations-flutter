@@ -19,4 +19,5 @@ Otherwise, the original heads or sides.
   also say "Dancers in Waves" or "Wave Dancers".
 * **Center Line / Wave or Diamond / Star of 4** - necessary to select center dancers in less common formations that have both lines and stars in the center.
 * **Wave of 6**
+* **First 1/2/3, Last 1/2/3** - Select dancers in columns
 * **Couple 1/2/3/4** - Select one specific couple to do a call, which will then produce an asymmetric formation.  For a squared set, this will select the couple on the respective spot on the floor.  For other formations, it will select the couple that started at that spot.  These formations have had only limited testing, so you are likely to find many calls that do not work.

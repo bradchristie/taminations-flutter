@@ -232,6 +232,7 @@ import 'common/except.dart';
 import 'common/facing_dancers.dart';
 import 'common/facing_in.dart';
 import 'common/facing_out.dart';
+import 'common/first.dart';
 import 'common/flip.dart';
 import 'common/fraction.dart';
 import 'common/girls.dart';
@@ -391,6 +392,7 @@ abstract class CodedCall extends Call {
     '(those|dancers)?facingout'.ri: (name) => FacingOut(name),
     'fascinating.*'.ri: (name) => Fascinating(name),
     'finish.*'.ri: (name) => Finish(name),
+    'first(1|2|3)'.ri : (name) => First(name),
     'flip(in|out|left|right)?'.ri: (name) => Flip(name),
     'flipback'.ri: (_) => FlipBack(),
     'flipyour(criss)?(cross)?neighbor'.ri: (name) => FlipYourNeighbor(name),
@@ -424,6 +426,7 @@ abstract class CodedCall extends Call {
 
     '(cross)?kickoff'.ri: (name) => KickOff(name),
 
+    'last(1|2|3)'.ri: (name) => Last(name),
     'lateralsubstitute'.ri: (name) => LateralSubstitute(name),
     'lead(er)?s?'.ri: (name) => Leaders(name),
     'left'.ri: (name) => Left(name),
