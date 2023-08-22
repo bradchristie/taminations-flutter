@@ -65,6 +65,58 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Step and Flip',
+        formation:Formation('3 and 1 Lines #1'),
+        from:'3 and 1 Lines #1',
+        paths:[
+          FlipLeft.skew(1.0,0.0),
+
+          Forward.changehands(Hands.RIGHT),
+
+          Forward.changehands(Hands.LEFT),
+
+          FlipLeft.skew(-1.0,0.0)
+        ]),
+
+    AnimatedCall('Step and Flip',
+        formation:Formation('3 and 1 Lines #2'),
+        from:'3 and 1 Lines #2',
+        paths:[
+          FlipRight,
+
+          Forward_2.scale(0.67, 1),
+
+          Forward_2.scale(0.67, 1),
+
+          FlipLeft
+        ]),
+
+    AnimatedCall('Step and Flip',
+        formation:Formation('3 and 1 Lines #3'),
+        from:'3 and 1 Lines #3',
+        paths:[
+          FlipRight,
+
+          Forward_2.scale(0.67, 1),
+
+          Forward_2.scale(0.67, 1),
+
+          FlipLeft
+        ]),
+
+    AnimatedCall('Step and Flip',
+        formation:Formation('3 and 1 Lines #4'),
+        from:'3 and 1 Lines #4',
+        paths:[
+          FlipRight.skew(-1.0,0.0),
+
+          Forward.changehands(Hands.RIGHT),
+
+          Forward.changehands(Hands.LEFT),
+
+          FlipRight.skew(1.0,0.0)
+        ]),
+
+    AnimatedCall('Step and Flip',
       formation:Formation('3 and 1 Lines #5'),
       from:'3 and 1 Lines #5',
       paths:[
@@ -78,21 +130,29 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Step and Flip',
-      formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:1,y:2,angle:90),
-        DancerModel.fromData(gender:Gender.GIRL,x:3,y:2,angle:90),
-        DancerModel.fromData(gender:Gender.BOY,x:-3,y:2,angle:90),
-        DancerModel.fromData(gender:Gender.GIRL,x:-1,y:2,angle:270),
-  ]),
-      from:'3 and 1 Lines #7',
-      paths:[
-          Forward.changeBeats(3).scale(1.5,1.0),
-
+        formation:Formation('3 and 1 Lines #6'),
+        from:'3 and 1 Lines #6',
+        paths:[
           FlipLeft,
 
-          FlipRight,
+          Forward_2.scale(0.67, 1),
 
-          Forward.changeBeats(3).scale(1.5,1.0)
+          Forward_2.scale(0.67, 1),
+
+          FlipRight
+        ]),
+
+    AnimatedCall('Step and Flip',
+      formation: Formation('3 and 1 Lines #7'),
+      from:'3 and 1 Lines #7',
+      paths:[
+        FlipLeft,
+
+        Forward.changeBeats(3).scale(1.5,1.0),
+
+        Forward.changeBeats(3).scale(1.5,1.0),
+
+        FlipRight
       ]),
 
     AnimatedCall('Step and Flip',
@@ -234,6 +294,52 @@ import '../../moves.dart';
 
           FlipLeft.scale(1.0,0.25)
       ]),
+
+    AnimatedCall('Step and Flip',
+        formation: Formation('Wave RH'),
+        from: 'Right-Hand Wave',
+        noDisplay: true,
+        paths: [
+          FlipRight,
+
+          Forward_2
+        ]),
+
+    AnimatedCall('Step and Flip',
+        formation: Formation('Wave LH'),
+        from: 'Left-Hand Wave',
+        noDisplay: true,
+        paths: [
+          FlipLeft,
+
+          Forward_2,
+        ]),
+
+    AnimatedCall('Step and Flip',
+        formation: Formation('Ocean Waves RH BGGB'),
+        from: 'Right-Hand Waves',
+        paths: [
+          FlipRight,
+
+          Forward_2.scale(0.67,1.0),
+
+          Forward_2.scale(0.67,1.0),
+
+          FlipRight
+        ]),
+
+    AnimatedCall('Step and Flip',
+        formation: Formation('Ocean Waves LH BGGB'),
+        from: 'Left-Hand Waves',
+        paths: [
+          FlipLeft,
+
+          Forward_2.scale(0.67,1.0),
+
+          Forward_2.scale(0.67,1.0),
+
+          FlipLeft
+        ]),
 
     AnimatedCall('Step and Flip and Roll',
       formation:Formation('Lines Facing Out'),
