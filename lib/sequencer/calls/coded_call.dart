@@ -43,6 +43,7 @@ import 'a1/six_two_acey_deucey.dart';
 import 'a1/split_square_chain_thru.dart';
 import 'a1/split_square_thru.dart';
 import 'a1/square_chain_thru.dart';
+import 'a1/swap_around.dart';
 import 'a1/swing_and_mix.dart';
 import 'a1/triple_star_thru.dart';
 import 'a1/triple_trade.dart';
@@ -572,6 +573,7 @@ abstract class CodedCall extends Call {
     //  Stretch not Stretched
     'stretch(?!ed)'.ri: (name) => Stretch(name),
     'substitute'.ri: (name) => Substitute(name),
+    'swap'.ri: (name) => SwapAround(name),
     'sweep14'.ri: (name) => SweepAQuarter(name),
     'swing'.ri: (name) => Swing(name),
     'swingandcircle(14|12|34)'.ri: (name) => SwingAndCircle(name),
@@ -656,7 +658,6 @@ abstract class CodedCall extends Call {
 
   static CodedCall? fromName(String name) {
     var norm = normalizeCall(name);
-
     //  Some words are high-level splitters
     //  Don't accept any calls with these words in the middle
     if (norm.matches('.+(Individually|While).*'.r)) {

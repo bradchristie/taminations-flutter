@@ -3781,6 +3781,21 @@ Boys Run
 Cast Off 3/4
 Star Thru
 Pass Thru
+Allemande Left''', ''),
+
+  TestSequence('Swap Around',
+'''Heads Move In
+Swap Around
+Couples Trade and Roll
+Magic Column Circulate
+Boys Run
+Leaders Trade and Roll
+Reverse Swap
+Couples Trade Others Face In
+Pass the Ocean
+Acey Deucey Girls Go Twice
+Boys Run
+Bend the Line
 Allemande Left''', '')
 
 ];
