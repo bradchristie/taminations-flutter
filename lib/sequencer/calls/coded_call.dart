@@ -387,7 +387,7 @@ abstract class CodedCall extends Call {
     'except(the)?$specifier'.ri: (name) => Except(name),
     'explode'.ri: (_) => Explode(),
 
-    'face(in|out|left|right)'.ri: (name) => Face(name),
+    'face(in|out|left|right|thecaller)'.ri: (name) => Face(name),
     'facing'.ri: (_) => FacingDancers(),
     '(those|dancers)?facingin'.ri: (name) => FacingIn(name),
     '(those|dancers)?facingout'.ri: (name) => FacingOut(name),

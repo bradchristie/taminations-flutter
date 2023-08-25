@@ -38,6 +38,7 @@ class Face extends Action {
       else
         throw CallError('Dancer $d does not know which way to turn.' );
     }
+
     else if (name == 'Face Out') {
       if (d.angleToOrigin.isLessThan(0))
         move = QuarterLeft;
@@ -46,10 +47,23 @@ class Face extends Action {
       else
         throw CallError('Dancer $d does not know which way to turn.' );
     }
+
     else if (name == 'Face Left' )
       move = QuarterLeft;
     else if (name == 'Face Right')
       move = QuarterRight;
+
+    else if (name == 'Face the Caller') {
+      if (d.angleFacing.isAround(-pi/2))
+        move = QuarterRight;
+      else if (d.angleFacing.isAround(pi/2))
+        move = QuarterLeft;
+      else if (d.angleFacing.isAround(0))
+        move = UmTurnRight;
+      else
+        move = Stand;
+      }
+
     else
       throw CallError('Face which direction?');
     return move;

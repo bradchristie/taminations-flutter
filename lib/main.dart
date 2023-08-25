@@ -413,7 +413,7 @@ class TaminationsRouteInformationParser extends fm.RouteInformationParser<TamSta
   @override
   Future<TamState>
   parseRouteInformation(fm.RouteInformation routeInformation) async {
-    final params = Uri.parse(routeInformation.location!.replaceFirst('#', '')).queryParameters;
+    final params = routeInformation.uri.queryParameters;
     var mainPage = params['main']?.toMainPage();
     var detailPage = params['detail']?.toDetailPage();
     var level = params['level'] ?? '';
@@ -448,7 +448,7 @@ class TaminationsRouteInformationParser extends fm.RouteInformationParser<TamSta
   @override
   fm.RouteInformation restoreRouteInformation(TamState path) {
     var location = path.toString();
-    return fm.RouteInformation(location: '?$location');
+    return fm.RouteInformation(uri:Uri.parse('?$location'));
   }
 
 }

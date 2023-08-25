@@ -19,6 +19,7 @@ but are useful shortcuts or fixes.
 - **Step / Step Ahead / Back Away / Backup** - Moves the dancers forward or back
 - **Slide In/Out/Left/Right** - Moves the dancers sideways
 - **Flip In/Out/Left/Right** - Like a Run around a phantom.  Same as Loop 1.
+- **Face the Caller** - Designated dancers turn to face the bottom of the screen.
 - **While** - Combines 2 calls to be done simultaneously by 2 groups of dancers.
 You can use **While the Others** for the 2nd group to be all the dancers not in the
 1st group.

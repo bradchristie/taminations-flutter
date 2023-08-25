@@ -3796,6 +3796,25 @@ Pass the Ocean
 Acey Deucey Girls Go Twice
 Boys Run
 Bend the Line
-Allemande Left''', '')
+Allemande Left''', ''),
+
+  TestSequence('Face the Caller',
+'''Heads Lead Right
+Touch 1/4
+Swing Thru
+Recycle
+Veer Left Boys Face the Caller
+Wheel and Deal
+Boys Zoom
+Girls Face the Caller
+Facing Dancers Couples Pass Thru
+Trade By
+Pass Thru
+Trade By
+Star Thru
+Bend the Line
+Slide Thru
+Square Thru 3
+Allemande Left''','')
 
 ];
