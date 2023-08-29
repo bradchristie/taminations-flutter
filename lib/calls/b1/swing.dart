@@ -19,7 +19,7 @@
 */
 
 import '../../animated_call.dart';
-import '../../formation.dart';
+import '../../common_dart.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> Swing = [
@@ -32,13 +32,13 @@ import '../../moves.dart';
           QuarterRight.skew(0.75,0.25) +
           QuarterRight.skew(0.75,0.25) +
           QuarterRight.skew(0.75,0.25) +
-          DodgeLeft.changehands(2).scale(1.0,0.375),
+          DodgeLeft.changehands(Hands.RIGHT).scale(1.0,0.375),
 
           QuarterLeft.skew(0.25,0.5) +
           QuarterRight.skew(0.75,0.25) +
           QuarterRight.skew(0.75,0.25) +
           QuarterRight.skew(0.75,0.25) +
-          UmTurnRight.changehands(1).skew(1.0,0.75)
+          UmTurnRight.changehands(Hands.LEFT).skew(1.0,0.75)
       ]),
 
     AnimatedCall('Swing Your Corner',
@@ -51,7 +51,7 @@ import '../../moves.dart';
           QuarterRight.skew(0.75,0.25) +
           QuarterRight.skew(0.75,0.25) +
           QuarterRight.skew(0.75,0.25) +
-          DodgeLeft.changehands(2).scale(1.0,0.375),
+          DodgeLeft.changehands(Hands.RIGHT).scale(1.0,0.375),
 
           ExtendLeft.scale(1.5,0.25) +
           QuarterRight.skew(0.75,0.25) +
@@ -59,7 +59,7 @@ import '../../moves.dart';
           QuarterRight.skew(0.75,0.25) +
           QuarterRight.skew(0.75,0.25) +
           QuarterRight.skew(0.75,0.25) +
-          UmTurnRight.changehands(1).skew(1.0,0.75)
+          UmTurnRight.changehands(Hands.LEFT).skew(1.0,0.75)
       ]),
   ];
 

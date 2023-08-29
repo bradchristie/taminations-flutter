@@ -19,7 +19,7 @@
 */
 
 import '../../animated_call.dart';
-import '../../formation.dart';
+import '../../common_dart.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> DiveThru = [
@@ -28,38 +28,38 @@ import '../../moves.dart';
       formation:Formation('Pass Thru'),
       group:' ',difficulty: 1,
       paths:[
-          ExtendRight.changehands(2).scale(1.0,0.5) +
-          ExtendLeft.changehands(2).scale(1.0,0.5),
+          ExtendRight.changehands(Hands.RIGHT).scale(1.0,0.5) +
+          ExtendLeft.changehands(Hands.RIGHT).scale(1.0,0.5),
 
-          ExtendLeft.changehands(1).scale(1.0,0.5) +
-          ExtendRight.changehands(1).scale(1.0,0.5),
+          ExtendLeft.changehands(Hands.LEFT).scale(1.0,0.5) +
+          ExtendRight.changehands(Hands.LEFT).scale(1.0,0.5),
 
-          ExtendLeft.changehands(6).scale(1.0,0.5) +
-          ExtendRight.changehands(6).scale(1.0,0.5) +
-          RunRight.changehands(6),
+          ExtendLeft.changehands(Hands.GRIPRIGHT).scale(1.0,0.5) +
+          ExtendRight.changehands(Hands.GRIPRIGHT).scale(1.0,0.5) +
+          RunRight.changehands(Hands.GRIPRIGHT),
 
-          ExtendRight.changehands(5).scale(1.0,0.5) +
-          ExtendLeft.changehands(5).scale(1.0,0.5) +
-          FlipLeft.changehands(5)
+          ExtendRight.changehands(Hands.GRIPLEFT).scale(1.0,0.5) +
+          ExtendLeft.changehands(Hands.GRIPLEFT).scale(1.0,0.5) +
+          FlipLeft.changehands(Hands.GRIPLEFT)
       ]),
 
     AnimatedCall('Heads Arch, Sides Dive Thru',
       formation:Formation('Normal Lines'),
       group:' ',difficulty: 2,
       paths:[
-          ExtendLeft.changeBeats(1.5).changehands(6).scale(2.0,0.5) +
-          ExtendRight.changeBeats(1.5).changehands(6).scale(2.0,0.5) +
-          RunRight.changehands(6),
+          ExtendLeft.changeBeats(1.5).changehands(Hands.GRIPRIGHT).scale(2.0,0.5) +
+          ExtendRight.changeBeats(1.5).changehands(Hands.GRIPRIGHT).scale(2.0,0.5) +
+          RunRight.changehands(Hands.GRIPRIGHT),
 
-          ExtendRight.changeBeats(1.5).changehands(5).scale(2.0,0.5) +
-          ExtendLeft.changeBeats(1.5).changehands(5).scale(2.0,0.5) +
-          FlipLeft.changehands(5),
+          ExtendRight.changeBeats(1.5).changehands(Hands.GRIPLEFT).scale(2.0,0.5) +
+          ExtendLeft.changeBeats(1.5).changehands(Hands.GRIPLEFT).scale(2.0,0.5) +
+          FlipLeft.changehands(Hands.GRIPLEFT),
 
-          ExtendRight.changeBeats(1.5).changehands(2).scale(2.0,0.5) +
-          ExtendLeft.changeBeats(1.5).changehands(2).scale(2.0,0.5),
+          ExtendRight.changeBeats(1.5).changehands(Hands.RIGHT).scale(2.0,0.5) +
+          ExtendLeft.changeBeats(1.5).changehands(Hands.RIGHT).scale(2.0,0.5),
 
-          ExtendLeft.changeBeats(1.5).changehands(1).scale(2.0,0.5) +
-          ExtendRight.changeBeats(1.5).changehands(1).scale(2.0,0.5)
+          ExtendLeft.changeBeats(1.5).changehands(Hands.LEFT).scale(2.0,0.5) +
+          ExtendRight.changeBeats(1.5).changehands(Hands.LEFT).scale(2.0,0.5)
       ]),
 
     AnimatedCall('Heads Wheel Around and make an Arch, Sides Dive Thru',
@@ -71,23 +71,23 @@ import '../../moves.dart';
       paths:[
           BackHingeRight.changeBeats(1.25).scale(0.5,0.5) +
           HalfBackHingeRight.scale(0.5,0.5).skew(-0.35,0.35) +
-          ExtendLeft.changeBeats(1.5).changehands(6).scale(1.75,0.5) +
-          ExtendRight.changeBeats(1.5).changehands(6).scale(1.75,0.5) +
-          RunRight.changehands(6),
+          ExtendLeft.changeBeats(1.5).changehands(Hands.GRIPRIGHT).scale(1.75,0.5) +
+          ExtendRight.changeBeats(1.5).changehands(Hands.GRIPRIGHT).scale(1.75,0.5) +
+          RunRight.changehands(Hands.GRIPRIGHT),
 
           HingeLeft.changeBeats(1.25).scale(0.5,0.5) +
-          EighthLeft.changeBeats(.75).changehands(1).skew(0.6,-0.1) +
-          ExtendRight.changeBeats(1.5).changehands(5).scale(1.75,0.5) +
-          ExtendLeft.changeBeats(1.5).changehands(5).scale(1.75,0.5) +
-          FlipLeft.changehands(5),
+          EighthLeft.changeBeats(.75).changehands(Hands.LEFT).skew(0.6,-0.1) +
+          ExtendRight.changeBeats(1.5).changehands(Hands.GRIPLEFT).scale(1.75,0.5) +
+          ExtendLeft.changeBeats(1.5).changehands(Hands.GRIPLEFT).scale(1.75,0.5) +
+          FlipLeft.changehands(Hands.GRIPLEFT),
 
           HalfBackHingeRight.changeBeats(2).scale(0.5,0.5).skew(-0.25,0.25) +
-          ExtendRight.changeBeats(1.5).changehands(2).scale(1.75,0.5) +
-          ExtendLeft.changeBeats(1.5).changehands(2).scale(1.75,0.5),
+          ExtendRight.changeBeats(1.5).changehands(Hands.RIGHT).scale(1.75,0.5) +
+          ExtendLeft.changeBeats(1.5).changehands(Hands.RIGHT).scale(1.75,0.5),
 
-          EighthLeft.changeBeats(2).changehands(1).skew(0.71,-0.2) +
-          ExtendLeft.changeBeats(1.5).changehands(1).scale(1.75,0.5) +
-          ExtendRight.changeBeats(1.5).changehands(1).scale(1.75,0.5)
+          EighthLeft.changeBeats(2).changehands(Hands.LEFT).skew(0.71,-0.2) +
+          ExtendLeft.changeBeats(1.5).changehands(Hands.LEFT).scale(1.75,0.5) +
+          ExtendRight.changeBeats(1.5).changehands(Hands.LEFT).scale(1.75,0.5)
       ]),
   ];
 

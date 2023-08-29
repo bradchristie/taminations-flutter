@@ -19,7 +19,7 @@
 */
 
 import '../../animated_call.dart';
-import '../../formation.dart';
+import '../../common_dart.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> TeacupChain = [
@@ -87,8 +87,8 @@ import '../../moves.dart';
           RunRight.changeBeats(7).scale(0.5,0.5).skew(0.75,0.25) +
           SwingLeft.scale(0.75,0.75) +
           DodgeLeft.changeBeats(6).scale(1.0,0.75) +
-          QuarterLeft.changehands(2) +
-          UmTurnLeft.changeBeats(3).changehands(2),
+          QuarterLeft.changehands(Hands.RIGHT) +
+          UmTurnLeft.changeBeats(3).changehands(Hands.RIGHT),
 
           ExtendRight.changeBeats(2).scale(2.0,0.25) +
           SwingRight.scale(0.75,0.75) +
@@ -102,7 +102,7 @@ import '../../moves.dart';
           CastRight.scale(0.75,0.75) +
           ExtendLeft.changeBeats(3).scale(2.75,1.75) +
           HingeLeft.scale(1.5,1.5) +
-          RunLeft.changehands(1).scale(1.5,1.75),
+          RunLeft.changehands(Hands.LEFT).scale(1.5,1.75),
 
           DodgeRight.changeBeats(7).scale(1.0,0.5) +
           SwingLeft.scale(0.75,0.75) +
@@ -111,7 +111,7 @@ import '../../moves.dart';
           LeadRight.changeBeats(4.5).scale(0.75,0.75) +
           CastRight.scale(0.75,0.75) +
           QuarterLeft.changeBeats(6).skew(-0.75,-0.75) +
-          UmTurnLeft.changeBeats(3).changehands(2),
+          UmTurnLeft.changeBeats(3).changehands(Hands.RIGHT),
 
           ExtendLeft.changeBeats(4).scale(4.0,1.5) +
           CastRight.scale(0.75,0.75) +
@@ -124,7 +124,7 @@ import '../../moves.dart';
           ExtendLeft.changeBeats(4).scale(3.0,2.75) +
           SwingRight.scale(0.75,0.75) +
           LeadLeft.changeBeats(2).scale(0.5,1.25) +
-          RunLeft.changehands(1).scale(1.5,1.75)
+          RunLeft.changehands(Hands.LEFT).scale(1.5,1.75)
       ]),
 
     AnimatedCall('All Ladies Center, Teacup Chain',

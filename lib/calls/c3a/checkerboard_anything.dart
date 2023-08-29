@@ -20,7 +20,6 @@
 
 import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> CheckerboardAnything = [
@@ -30,11 +29,11 @@ import '../../moves.dart';
       group:'Checkerboard',isGenderSpecific:true,
       paths:[
           Forward +
-          ExtendRight.changeBeats(3).changehands(2).scale(2.0,4.0) +
+          ExtendRight.changeBeats(3).changehands(Hands.RIGHT).scale(2.0,4.0) +
           UmTurnRight,
 
           Forward +
-          ExtendRight.changeBeats(3).changehands(1).scale(2.0,4.0),
+          ExtendRight.changeBeats(3).changehands(Hands.LEFT).scale(2.0,4.0),
 
           FlipLeft,
 

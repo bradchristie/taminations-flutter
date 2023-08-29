@@ -19,7 +19,7 @@
 */
 
 import '../../animated_call.dart';
-import '../../formation.dart';
+import '../../common_dart.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> Rotate = [
@@ -28,128 +28,128 @@ import '../../moves.dart';
       formation:Formation('Static Square'),
       from:'Static Square',group:' ',parts:'2',
       paths:[
-          LeadRight.changeBeats(2).changehands(2).scale(1.0,2.0) +
-          LeadLeft.changeBeats(3).changehands(2).scale(2.0,2.0),
+          LeadRight.changeBeats(2).changehands(Hands.RIGHT).scale(1.0,2.0) +
+          LeadLeft.changeBeats(3).changehands(Hands.RIGHT).scale(2.0,2.0),
 
-          QuarterRight.changeBeats(2).changehands(1) +
-          LeadLeft.changeBeats(3).changehands(1).scale(3.5,3.0),
+          QuarterRight.changeBeats(2).changehands(Hands.LEFT) +
+          LeadLeft.changeBeats(3).changehands(Hands.LEFT).scale(3.5,3.0),
 
-          Forward_2.changehands(2),
+          Forward_2.changehands(Hands.RIGHT),
 
-          Forward_2.changehands(1)
+          Forward_2.changehands(Hands.LEFT)
       ]),
 
     AnimatedCall('Sides Rotate 1/4',
       formation:Formation('Static Square'),
       from:'Static Square',group:' ',parts:'2',
       paths:[
-          Forward_2.changehands(2),
+          Forward_2.changehands(Hands.RIGHT),
 
-          Forward_2.changehands(1),
+          Forward_2.changehands(Hands.LEFT),
 
-          LeadRight.changeBeats(2).changehands(2).scale(1.0,2.0) +
-          LeadLeft.changeBeats(3).changehands(2).scale(2.0,2.0),
+          LeadRight.changeBeats(2).changehands(Hands.RIGHT).scale(1.0,2.0) +
+          LeadLeft.changeBeats(3).changehands(Hands.RIGHT).scale(2.0,2.0),
 
-          QuarterRight.changeBeats(2).changehands(1) +
-          LeadLeft.changeBeats(3).changehands(1).scale(3.5,3.0)
+          QuarterRight.changeBeats(2).changehands(Hands.LEFT) +
+          LeadLeft.changeBeats(3).changehands(Hands.LEFT).scale(3.5,3.0)
       ]),
 
     AnimatedCall('Heads Rotate 1/2',
       formation:Formation('Static Square'),
       from:'Static Square',group:' ',parts:'2',
       paths:[
-          LeadRight.changeBeats(2).changehands(2).scale(1.0,2.0) +
-          LeadLeft.changeBeats(3).changehands(2).scale(2.0,2.0) +
-          LeadLeft.changeBeats(4).changehands(2).scale(2.5,3.0),
+          LeadRight.changeBeats(2).changehands(Hands.RIGHT).scale(1.0,2.0) +
+          LeadLeft.changeBeats(3).changehands(Hands.RIGHT).scale(2.0,2.0) +
+          LeadLeft.changeBeats(4).changehands(Hands.RIGHT).scale(2.5,3.0),
 
-          QuarterRight.changeBeats(2).changehands(1) +
-          LeadLeft.changeBeats(3).changehands(1).scale(3.5,3.0) +
-          LeadLeft.changeBeats(4).changehands(1).scale(3.5,4.5),
+          QuarterRight.changeBeats(2).changehands(Hands.LEFT) +
+          LeadLeft.changeBeats(3).changehands(Hands.LEFT).scale(3.5,3.0) +
+          LeadLeft.changeBeats(4).changehands(Hands.LEFT).scale(3.5,4.5),
 
-          Forward_2.changehands(2),
+          Forward_2.changehands(Hands.RIGHT),
 
-          Forward_2.changehands(1)
+          Forward_2.changehands(Hands.LEFT)
       ]),
 
     AnimatedCall('Sides Rotate 1/2',
       formation:Formation('Static Square'),
       from:'Static Square',group:' ',parts:'2',
       paths:[
-          Forward_2.changehands(2),
+          Forward_2.changehands(Hands.RIGHT),
 
-          Forward_2.changehands(1),
+          Forward_2.changehands(Hands.LEFT),
 
-          LeadRight.changeBeats(2).changehands(2).scale(1.0,2.0) +
-          LeadLeft.changeBeats(3).changehands(2).scale(2.0,2.0) +
-          LeadLeft.changeBeats(4).changehands(2).scale(2.5,3.0),
+          LeadRight.changeBeats(2).changehands(Hands.RIGHT).scale(1.0,2.0) +
+          LeadLeft.changeBeats(3).changehands(Hands.RIGHT).scale(2.0,2.0) +
+          LeadLeft.changeBeats(4).changehands(Hands.RIGHT).scale(2.5,3.0),
 
-          QuarterRight.changeBeats(2).changehands(1) +
-          LeadLeft.changeBeats(3).changehands(1).scale(3.5,3.0) +
-          LeadLeft.changeBeats(4).changehands(1).scale(3.5,4.5)
+          QuarterRight.changeBeats(2).changehands(Hands.LEFT) +
+          LeadLeft.changeBeats(3).changehands(Hands.LEFT).scale(3.5,3.0) +
+          LeadLeft.changeBeats(4).changehands(Hands.LEFT).scale(3.5,4.5)
       ]),
 
     AnimatedCall('Heads Reverse Rotate 1/4',
       formation:Formation('Static Square'),
       from:'Static Square',group:'  ',parts:'2',
       paths:[
-          QuarterLeft.changeBeats(2).changehands(2) +
-          LeadRight.changeBeats(3).changehands(2).scale(3.5,3.0),
+          QuarterLeft.changeBeats(2).changehands(Hands.RIGHT) +
+          LeadRight.changeBeats(3).changehands(Hands.RIGHT).scale(3.5,3.0),
 
-          LeadLeft.changeBeats(2).changehands(1).scale(1.0,2.0) +
-          LeadRight.changeBeats(3).changehands(1).scale(2.0,2.0),
+          LeadLeft.changeBeats(2).changehands(Hands.LEFT).scale(1.0,2.0) +
+          LeadRight.changeBeats(3).changehands(Hands.LEFT).scale(2.0,2.0),
 
-          Forward_2.changehands(2),
+          Forward_2.changehands(Hands.RIGHT),
 
-          Forward_2.changehands(1)
+          Forward_2.changehands(Hands.LEFT)
       ]),
 
     AnimatedCall('Sides Reverse Rotate 1/4',
       formation:Formation('Static Square'),
       from:'Static Square',group:'  ',parts:'2',
       paths:[
-          Forward_2.changehands(2),
+          Forward_2.changehands(Hands.RIGHT),
 
-          Forward_2.changehands(1),
+          Forward_2.changehands(Hands.LEFT),
 
-          QuarterLeft.changeBeats(2).changehands(2) +
-          LeadRight.changeBeats(3).changehands(2).scale(3.5,3.0),
+          QuarterLeft.changeBeats(2).changehands(Hands.RIGHT) +
+          LeadRight.changeBeats(3).changehands(Hands.RIGHT).scale(3.5,3.0),
 
-          LeadLeft.changeBeats(2).changehands(1).scale(1.0,2.0) +
-          LeadRight.changeBeats(3).changehands(1).scale(2.0,2.0)
+          LeadLeft.changeBeats(2).changehands(Hands.LEFT).scale(1.0,2.0) +
+          LeadRight.changeBeats(3).changehands(Hands.LEFT).scale(2.0,2.0)
       ]),
 
     AnimatedCall('Heads Reverse Rotate 1/2',
       formation:Formation('Static Square'),
       from:'Static Square',group:'  ',parts:'2',
       paths:[
-          QuarterLeft.changeBeats(2).changehands(2) +
-          LeadRight.changeBeats(3).changehands(2).scale(3.5,3.0) +
-          LeadRight.changeBeats(4).changehands(2).scale(3.5,4.5),
+          QuarterLeft.changeBeats(2).changehands(Hands.RIGHT) +
+          LeadRight.changeBeats(3).changehands(Hands.RIGHT).scale(3.5,3.0) +
+          LeadRight.changeBeats(4).changehands(Hands.RIGHT).scale(3.5,4.5),
 
-          LeadLeft.changeBeats(2).changehands(1).scale(1.0,2.0) +
-          LeadRight.changeBeats(3).changehands(1).scale(2.0,2.0) +
-          LeadRight.changeBeats(4).changehands(1).scale(2.5,3.0),
+          LeadLeft.changeBeats(2).changehands(Hands.LEFT).scale(1.0,2.0) +
+          LeadRight.changeBeats(3).changehands(Hands.LEFT).scale(2.0,2.0) +
+          LeadRight.changeBeats(4).changehands(Hands.LEFT).scale(2.5,3.0),
 
-          Forward_2.changehands(2),
+          Forward_2.changehands(Hands.RIGHT),
 
-          Forward_2.changehands(1)
+          Forward_2.changehands(Hands.LEFT)
       ]),
 
     AnimatedCall('Sides Reverse Rotate 1/2',
       formation:Formation('Static Square'),
       from:'Static Square',group:'  ',parts:'2',
       paths:[
-          Forward_2.changehands(2),
+          Forward_2.changehands(Hands.RIGHT),
 
-          Forward_2.changehands(1),
+          Forward_2.changehands(Hands.LEFT),
 
-          QuarterLeft.changeBeats(2).changehands(2) +
-          LeadRight.changeBeats(3).changehands(2).scale(3.5,3.0) +
-          LeadRight.changeBeats(4).changehands(2).scale(3.5,4.5),
+          QuarterLeft.changeBeats(2).changehands(Hands.RIGHT) +
+          LeadRight.changeBeats(3).changehands(Hands.RIGHT).scale(3.5,3.0) +
+          LeadRight.changeBeats(4).changehands(Hands.RIGHT).scale(3.5,4.5),
 
-          LeadLeft.changeBeats(2).changehands(1).scale(1.0,2.0) +
-          LeadRight.changeBeats(3).changehands(1).scale(2.0,2.0) +
-          LeadRight.changeBeats(4).changehands(1).scale(2.5,3.0)
+          LeadLeft.changeBeats(2).changehands(Hands.LEFT).scale(1.0,2.0) +
+          LeadRight.changeBeats(3).changehands(Hands.LEFT).scale(2.0,2.0) +
+          LeadRight.changeBeats(4).changehands(Hands.LEFT).scale(2.5,3.0)
       ]),
 
     AnimatedCall('Heads Single Rotate 1/4',
@@ -162,18 +162,18 @@ import '../../moves.dart';
           QuarterRight.skew(0.0,-1.0) +
           CounterRotateLeft_2_4.skew(-1.0,0.0),
 
-          Forward_2.changehands(2),
+          Forward_2.changehands(Hands.RIGHT),
 
-          Forward_2.changehands(1)
+          Forward_2.changehands(Hands.LEFT)
       ]),
 
     AnimatedCall('Sides Single Rotate 1/4',
       formation:Formation('Static Square'),
       from:'Static Square',group:'   ',
       paths:[
-          Forward_2.changehands(2),
+          Forward_2.changehands(Hands.RIGHT),
 
-          Forward_2.changehands(1),
+          Forward_2.changehands(Hands.LEFT),
 
           QuarterRight.skew(0.0,-1.0) +
           CounterRotateLeft_4_2.skew(-1.0,0.0),
@@ -194,18 +194,18 @@ import '../../moves.dart';
           CounterRotateLeft_2_4.skew(-1.0,0.0) +
           CounterRotateLeft_2_4.skew(0.0,0.5),
 
-          Forward_2.changehands(2).skew(-0.5,0.0),
+          Forward_2.changehands(Hands.RIGHT).skew(-0.5,0.0),
 
-          Forward_2.changehands(1).skew(-0.5,0.0)
+          Forward_2.changehands(Hands.LEFT).skew(-0.5,0.0)
       ]),
 
     AnimatedCall('Sides Single Rotate 1/2',
       formation:Formation('Static Square'),
       from:'Static Square',group:'   ',
       paths:[
-          Forward_2.changehands(2).skew(-0.5,0.0),
+          Forward_2.changehands(Hands.RIGHT).skew(-0.5,0.0),
 
-          Forward_2.changehands(1).skew(-0.5,0.0),
+          Forward_2.changehands(Hands.LEFT).skew(-0.5,0.0),
 
           QuarterRight.skew(0.0,-1.0) +
           CounterRotateLeft_4_2.skew(-1.0,0.0) +
@@ -226,18 +226,18 @@ import '../../moves.dart';
           QuarterLeft.skew(0.0,1.0) +
           CounterRotateRight_4_m2.skew(-1.0,0.0),
 
-          Forward_2.changehands(2),
+          Forward_2.changehands(Hands.RIGHT),
 
-          Forward_2.changehands(1)
+          Forward_2.changehands(Hands.LEFT)
       ]),
 
     AnimatedCall('Sides Reverse Single Rotate 1/4',
       formation:Formation('Static Square'),
       from:'Static Square',group:'    ',
       paths:[
-          Forward_2.changehands(2),
+          Forward_2.changehands(Hands.RIGHT),
 
-          Forward_2.changehands(1),
+          Forward_2.changehands(Hands.LEFT),
 
           QuarterLeft.skew(0.0,1.0) +
           CounterRotateRight_2_m4.skew(-1.0,0.0),
@@ -258,18 +258,18 @@ import '../../moves.dart';
           CounterRotateRight_4_m2.skew(-1.0,0.0) +
           CounterRotateRight_4_m2.skew(0.0,0.5),
 
-          Forward_2.changehands(2).skew(-0.5,0.0),
+          Forward_2.changehands(Hands.RIGHT).skew(-0.5,0.0),
 
-          Forward_2.changehands(2).skew(-0.5,0.0)
+          Forward_2.changehands(Hands.RIGHT).skew(-0.5,0.0)
       ]),
 
     AnimatedCall('Sides Reverse Single Rotate 1/2',
       formation:Formation('Static Square'),
       from:'Static Square',group:'    ',
       paths:[
-          Forward_2.changehands(2).skew(-0.5,0.0),
+          Forward_2.changehands(Hands.RIGHT).skew(-0.5,0.0),
 
-          Forward_2.changehands(2).skew(-0.5,0.0),
+          Forward_2.changehands(Hands.RIGHT).skew(-0.5,0.0),
 
           QuarterLeft.skew(0.0,1.0) +
           CounterRotateRight_2_m4.skew(-1.0,0.0) +

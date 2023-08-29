@@ -20,7 +20,6 @@
 
 import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> PhantomColumnsLinesWaves = [
@@ -40,12 +39,12 @@ import '../../moves.dart';
       paths:[
           Forward.changeBeats(4).scale(3.5,1.0) +
           LeadLeft +
-          Forward_4.changehands(2) +
-          ExtendLeft.changehands(2).scale(1.0,0.5),
+          Forward_4.changehands(Hands.RIGHT) +
+          ExtendLeft.changehands(Hands.RIGHT).scale(1.0,0.5),
 
           Forward_3.changeBeats(4) +
           LeadLeft +
-          Forward_5.changehands(1),
+          Forward_5.changehands(Hands.LEFT),
 
           RunLeft.changeBeats(4) +
           Forward_5 +
@@ -58,7 +57,7 @@ import '../../moves.dart';
 
           Forward_3.changeBeats(4) +
           LeadLeft +
-          Forward.changeBeats(5).changehands(2),
+          Forward.changeBeats(5).changehands(Hands.RIGHT),
 
           RunLeft.changeBeats(4).scale(1.0,3.0) +
           Forward_5 +
@@ -66,7 +65,7 @@ import '../../moves.dart';
 
           Forward_3.changeBeats(4) +
           LeadLeft +
-          Forward.changeBeats(5).changehands(1),
+          Forward.changeBeats(5).changehands(Hands.LEFT),
 
           Forward_2 +
           RunLeft.scale(1.0,3.0) +

@@ -19,7 +19,7 @@
 */
 
 import '../../animated_call.dart';
-import '../../formation.dart';
+import '../../common_dart.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> Recoil = [
@@ -28,10 +28,10 @@ import '../../moves.dart';
       formation:Formation('Box RH'),
       from:'Right-Hand Box',parts:'4',
       paths:[
-          UmTurnRight.changeBeats(4).changehands(6).skew(2.0,0.0) +
+          UmTurnRight.changeBeats(4).changehands(Hands.GRIPRIGHT).skew(2.0,0.0) +
           Forward_2.changeBeats(4),
 
-          RunRight.changeBeats(4).changehands(6).scale(2.0,2.0).skew(-2.0,0.0) +
+          RunRight.changeBeats(4).changehands(Hands.GRIPRIGHT).scale(2.0,2.0).skew(-2.0,0.0) +
           RunRight.changeBeats(4).skew(2.0,0.0)
       ]),
   ];

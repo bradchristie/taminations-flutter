@@ -19,7 +19,7 @@
 */
 
 import '../../animated_call.dart';
-import '../../formation.dart';
+import '../../common_dart.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> SpinChainTheGears = [
@@ -31,27 +31,27 @@ import '../../moves.dart';
           SwingRight +
           CastLeft +
           SwingRight +
-          CastLeft.changehands(5) +
+          CastLeft.changehands(Hands.GRIPLEFT) +
           FlipRight,
 
           SwingRight +
           Stand.changeBeats(2) +
           FlipRight.changeBeats(5.5) +
-          CastLeft.changehands(5) +
+          CastLeft.changehands(Hands.GRIPLEFT) +
           SwingRight +
           CastLeft,
 
           SwingRight +
           Stand.changeBeats(2) +
           FlipRight.changeBeats(5.5) +
-          CastLeft.changehands(5) +
+          CastLeft.changehands(Hands.GRIPLEFT) +
           Stand.changeBeats(3) +
           CastLeft,
 
           SwingRight +
           CastLeft +
           Stand.changeBeats(3) +
-          CastLeft.changehands(5) +
+          CastLeft.changehands(Hands.GRIPLEFT) +
           FlipRight
       ]),
 
@@ -62,27 +62,27 @@ import '../../moves.dart';
           SwingLeft +
           CastRight +
           Stand.changeBeats(3) +
-          CastRight.changehands(6) +
+          CastRight.changehands(Hands.GRIPRIGHT) +
           FlipLeft,
 
           SwingLeft +
           Stand.changeBeats(2) +
           FlipLeft.changeBeats(5.5) +
-          CastRight.changehands(6) +
+          CastRight.changehands(Hands.GRIPRIGHT) +
           Stand.changeBeats(3) +
           CastRight,
 
           SwingLeft +
           Stand.changeBeats(2) +
           FlipLeft.changeBeats(5.5) +
-          CastRight.changehands(6) +
+          CastRight.changehands(Hands.GRIPRIGHT) +
           SwingLeft +
           CastRight,
 
           SwingLeft +
           CastRight +
           SwingLeft +
-          CastRight.changehands(6) +
+          CastRight.changehands(Hands.GRIPRIGHT) +
           FlipLeft
       ]),
 
@@ -94,14 +94,14 @@ import '../../moves.dart';
           SwingRight +
           CastLeft +
           SwingRight +
-          CastLeft.changehands(5) +
+          CastLeft.changehands(Hands.GRIPLEFT) +
           FlipRight,
 
           Forward.changeBeats(2) +
           SwingRight +
           Stand.changeBeats(2) +
           FlipRight.changeBeats(5.5) +
-          CastLeft.changehands(5) +
+          CastLeft.changehands(Hands.GRIPLEFT) +
           Stand.changeBeats(3) +
           CastLeft,
 
@@ -109,14 +109,14 @@ import '../../moves.dart';
           SwingRight +
           CastLeft +
           Stand.changeBeats(3) +
-          CastLeft.changehands(5) +
+          CastLeft.changehands(Hands.GRIPLEFT) +
           FlipRight,
 
           Forward.changeBeats(2) +
           SwingRight +
           Stand.changeBeats(2) +
           FlipRight.changeBeats(5.5) +
-          CastLeft.changehands(5) +
+          CastLeft.changehands(Hands.GRIPLEFT) +
           SwingRight +
           CastLeft
       ]),
@@ -129,7 +129,7 @@ import '../../moves.dart';
           SwingLeft +
           Stand.changeBeats(2) +
           FlipLeft.changeBeats(5.5) +
-          CastRight.changehands(6) +
+          CastRight.changehands(Hands.GRIPRIGHT) +
           Stand.changeBeats(3) +
           CastRight,
 
@@ -137,14 +137,14 @@ import '../../moves.dart';
           SwingLeft +
           CastRight +
           SwingLeft +
-          CastRight.changehands(6) +
+          CastRight.changehands(Hands.GRIPRIGHT) +
           FlipLeft,
 
           Forward.changeBeats(2) +
           SwingLeft +
           Stand.changeBeats(2) +
           FlipLeft.changeBeats(5.5) +
-          CastRight.changehands(6) +
+          CastRight.changehands(Hands.GRIPRIGHT) +
           SwingLeft +
           CastRight,
 
@@ -152,7 +152,7 @@ import '../../moves.dart';
           SwingLeft +
           CastRight +
           Stand.changeBeats(3) +
-          CastRight.changehands(6) +
+          CastRight.changehands(Hands.GRIPRIGHT) +
           FlipLeft
       ]),
 

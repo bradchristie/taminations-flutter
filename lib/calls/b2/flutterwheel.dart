@@ -19,7 +19,7 @@
 */
 
 import '../../animated_call.dart';
-import '../../formation.dart';
+import '../../common_dart.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> Flutterwheel = [
@@ -29,12 +29,12 @@ import '../../moves.dart';
       from:'Facing Couples',difficulty: 1,
       paths:[
           Stand.changeBeats(3.5).changehands(0) +
-          ExtendLeft.changeBeats(1.5).changehands(2).scale(1.5,1.5) +
-          RunRight.changehands(2).scale(1.5,2.0).skew(1.5,0.5),
+          ExtendLeft.changeBeats(1.5).changehands(Hands.RIGHT).scale(1.5,1.5) +
+          RunRight.changehands(Hands.RIGHT).scale(1.5,2.0).skew(1.5,0.5),
 
           ExtendLeft.changeBeats(2).scale(1.5,1.75) +
-          SwingRight.changehands(3).scale(0.75,0.75) +
-          UmTurnRight.changehands(1).skew(1.5,0.25)
+          SwingRight.changehands(Hands.BOTH).scale(0.75,0.75) +
+          UmTurnRight.changehands(Hands.LEFT).skew(1.5,0.25)
       ]),
 
     AnimatedCall('Flutterwheel',
@@ -42,12 +42,12 @@ import '../../moves.dart';
       from:'Facing Couples Far',difficulty: 1,noDisplay: true,
       paths:[
           Stand.changeBeats(3.5).changehands(0) +
-          ExtendLeft.changeBeats(1.5).changehands(2).scale(3.0,1.5) +
-          RunRight.changehands(2).scale(1.5,2.0).skew(3.0,0.5),
+          ExtendLeft.changeBeats(1.5).changehands(Hands.RIGHT).scale(3.0,1.5) +
+          RunRight.changehands(Hands.RIGHT).scale(1.5,2.0).skew(3.0,0.5),
 
           ExtendLeft.changeBeats(2).scale(3.0,1.75) +
-          SwingRight.changehands(3).scale(0.75,0.75) +
-          UmTurnRight.changehands(1).skew(3.0,0.25)
+          SwingRight.changehands(Hands.BOTH).scale(0.75,0.75) +
+          UmTurnRight.changehands(Hands.LEFT).skew(3.0,0.25)
       ]),
 
     AnimatedCall('Flutterwheel',
@@ -55,20 +55,20 @@ import '../../moves.dart';
       from:'Lines',difficulty: 1,
       paths:[
           Forward.changeBeats(3.5).changehands(0) +
-          ExtendLeft.changeBeats(1.5).changehands(2).scale(1.5,1.5) +
-          RunRight.changehands(2).scale(1.5,2.0).skew(1.5,0.5),
+          ExtendLeft.changeBeats(1.5).changehands(Hands.RIGHT).scale(1.5,1.5) +
+          RunRight.changehands(Hands.RIGHT).scale(1.5,2.0).skew(1.5,0.5),
 
           ExtendLeft.changeBeats(2).scale(1.5,1.75) +
-          SwingRight.changehands(3).scale(0.75,0.75) +
-          UmTurnRight.changehands(1).skew(1.5,0.25),
+          SwingRight.changehands(Hands.BOTH).scale(0.75,0.75) +
+          UmTurnRight.changehands(Hands.LEFT).skew(1.5,0.25),
 
           Forward.changeBeats(3.5).changehands(0) +
-          ExtendLeft.changeBeats(1.5).changehands(2).scale(1.5,1.0) +
-          RunRight.changehands(2).scale(1.5,1.75).skew(1.5,0.5),
+          ExtendLeft.changeBeats(1.5).changehands(Hands.RIGHT).scale(1.5,1.0) +
+          RunRight.changehands(Hands.RIGHT).scale(1.5,1.75).skew(1.5,0.5),
 
           ExtendLeft.changeBeats(2).scale(1.5,1.75) +
-          SwingRight.changehands(3).scale(0.75,0.75) +
-          UmTurnRight.changehands(1).skew(1.5,0.25)
+          SwingRight.changehands(Hands.BOTH).scale(0.75,0.75) +
+          UmTurnRight.changehands(Hands.LEFT).skew(1.5,0.25)
       ]),
 
     AnimatedCall('Flutterwheel',
@@ -76,20 +76,20 @@ import '../../moves.dart';
       from:'Eight Chain Thru',difficulty: 2,
       paths:[
           Stand.changeBeats(3.5).changehands(0) +
-          ExtendLeft.changeBeats(1.5).changehands(2).scale(1.0,0.5) +
-          RunRight.changehands(2).skew(1.0,-0.5),
+          ExtendLeft.changeBeats(1.5).changehands(Hands.RIGHT).scale(1.0,0.5) +
+          RunRight.changehands(Hands.RIGHT).skew(1.0,-0.5),
 
           ExtendLeft.changeBeats(2).scale(1.0,1.5) +
-          SwingRight.changehands(3).scale(0.5,0.5) +
-          UmTurnRight.changehands(1).skew(1.0,0.5),
+          SwingRight.changehands(Hands.BOTH).scale(0.5,0.5) +
+          UmTurnRight.changehands(Hands.LEFT).skew(1.0,0.5),
 
           Stand.changeBeats(3.5).changehands(0) +
-          ExtendLeft.changeBeats(1.5).changehands(2).scale(1.0,0.5) +
-          RunRight.changehands(2).skew(1.0,-0.5),
+          ExtendLeft.changeBeats(1.5).changehands(Hands.RIGHT).scale(1.0,0.5) +
+          RunRight.changehands(Hands.RIGHT).skew(1.0,-0.5),
 
           ExtendLeft.changeBeats(2).scale(1.0,1.5) +
-          SwingRight.changehands(3).scale(0.5,0.5) +
-          UmTurnRight.changehands(1).skew(1.0,0.5)
+          SwingRight.changehands(Hands.BOTH).scale(0.5,0.5) +
+          UmTurnRight.changehands(Hands.LEFT).skew(1.0,0.5)
       ]),
 
     AnimatedCall('Reverse Flutterwheel',
@@ -97,12 +97,12 @@ import '../../moves.dart';
       from:'Facing Couples',difficulty: 1,
       paths:[
           ExtendRight.changeBeats(2).scale(1.5,1.75) +
-          SwingLeft.changehands(3).scale(0.75,0.75) +
-          UmTurnLeft.changehands(2).skew(1.5,-0.25),
+          SwingLeft.changehands(Hands.BOTH).scale(0.75,0.75) +
+          UmTurnLeft.changehands(Hands.RIGHT).skew(1.5,-0.25),
 
           Stand.changeBeats(3.5).changehands(0) +
-          ExtendRight.changeBeats(1.5).changehands(1).scale(1.5,1.5) +
-          RunLeft.changehands(1).scale(1.5,2.0).skew(1.5,-0.5)
+          ExtendRight.changeBeats(1.5).changehands(Hands.LEFT).scale(1.5,1.5) +
+          RunLeft.changehands(Hands.LEFT).scale(1.5,2.0).skew(1.5,-0.5)
       ]),
 
     AnimatedCall('Reverse Flutterwheel',
@@ -110,12 +110,12 @@ import '../../moves.dart';
       from:'Facing Couples Far',difficulty: 1,noDisplay: true,
       paths:[
           ExtendRight.changeBeats(2).scale(3.0,1.75) +
-          SwingLeft.changehands(3).scale(0.75,0.75) +
-          UmTurnLeft.changehands(2).skew(3.0,-0.25),
+          SwingLeft.changehands(Hands.BOTH).scale(0.75,0.75) +
+          UmTurnLeft.changehands(Hands.RIGHT).skew(3.0,-0.25),
 
           Stand.changeBeats(3.5).changehands(0) +
-          ExtendRight.changeBeats(1.5).changehands(1).scale(3.0,1.5) +
-          RunLeft.changehands(1).scale(1.5,2.0).skew(3.0,-0.5)
+          ExtendRight.changeBeats(1.5).changehands(Hands.LEFT).scale(3.0,1.5) +
+          RunLeft.changehands(Hands.LEFT).scale(1.5,2.0).skew(3.0,-0.5)
       ]),
 
     AnimatedCall('Reverse Flutterwheel',
@@ -123,20 +123,20 @@ import '../../moves.dart';
       from:'Lines',difficulty: 1,
       paths:[
           ExtendRight.changeBeats(2).scale(1.5,1.75) +
-          SwingLeft.changehands(3).scale(0.75,0.75) +
-          UmTurnLeft.changehands(2).skew(1.5,-0.25),
+          SwingLeft.changehands(Hands.BOTH).scale(0.75,0.75) +
+          UmTurnLeft.changehands(Hands.RIGHT).skew(1.5,-0.25),
 
           Forward.changeBeats(3.5).changehands(0) +
-          ExtendRight.changeBeats(1.5).changehands(1).scale(1.5,1.0) +
-          RunLeft.changehands(1).scale(1.5,2.0).skew(1.5,-1.0),
+          ExtendRight.changeBeats(1.5).changehands(Hands.LEFT).scale(1.5,1.0) +
+          RunLeft.changehands(Hands.LEFT).scale(1.5,2.0).skew(1.5,-1.0),
 
           ExtendRight.changeBeats(2).scale(1.5,1.75) +
-          SwingLeft.changehands(3).scale(0.75,0.75) +
-          UmTurnLeft.changehands(2).skew(1.5,-0.25),
+          SwingLeft.changehands(Hands.BOTH).scale(0.75,0.75) +
+          UmTurnLeft.changehands(Hands.RIGHT).skew(1.5,-0.25),
 
           Forward.changeBeats(3.5).changehands(0) +
-          ExtendRight.changeBeats(1.5).changehands(1).scale(1.5,1.5) +
-          RunLeft.changehands(1).scale(1.5,2.0).skew(1.5,-0.5)
+          ExtendRight.changeBeats(1.5).changehands(Hands.LEFT).scale(1.5,1.5) +
+          RunLeft.changehands(Hands.LEFT).scale(1.5,2.0).skew(1.5,-0.5)
       ]),
 
     AnimatedCall('Reverse Flutterwheel',
@@ -144,20 +144,20 @@ import '../../moves.dart';
       from:'Eight Chain Thru',difficulty: 2,
       paths:[
           ExtendRight.changeBeats(2).scale(1.0,1.5) +
-          SwingLeft.changehands(3).scale(0.5,0.5) +
-          UmTurnLeft.changehands(2).skew(1.0,-0.5),
+          SwingLeft.changehands(Hands.BOTH).scale(0.5,0.5) +
+          UmTurnLeft.changehands(Hands.RIGHT).skew(1.0,-0.5),
 
           Stand.changeBeats(3.5).changehands(0) +
-          ExtendRight.changeBeats(1.5).changehands(1).scale(1.0,0.5) +
-          RunLeft.changehands(1).skew(1.0,0.5),
+          ExtendRight.changeBeats(1.5).changehands(Hands.LEFT).scale(1.0,0.5) +
+          RunLeft.changehands(Hands.LEFT).skew(1.0,0.5),
 
           ExtendRight.changeBeats(2).scale(1.0,1.5) +
-          SwingLeft.changehands(3).scale(0.5,0.5) +
-          UmTurnLeft.changehands(2).skew(1.0,-0.5),
+          SwingLeft.changehands(Hands.BOTH).scale(0.5,0.5) +
+          UmTurnLeft.changehands(Hands.RIGHT).skew(1.0,-0.5),
 
           Stand.changeBeats(3.5).changehands(0) +
-          ExtendRight.changeBeats(1.5).changehands(1).scale(1.0,0.5) +
-          RunLeft.changehands(1).skew(1.0,0.5)
+          ExtendRight.changeBeats(1.5).changehands(Hands.LEFT).scale(1.0,0.5) +
+          RunLeft.changehands(Hands.LEFT).skew(1.0,0.5)
       ]),
 
     AnimatedCall('All 4 Women Lead Flutterwheel',
@@ -167,24 +167,24 @@ import '../../moves.dart';
           QuarterLeft.changeBeats(4.5).skew(0.0,-1.0) +
           HingeRight.changeBeats(3).scale(3.0,3.0) +
           HingeRight.changeBeats(3).scale(3.0,2.0) +
-          QuarterRight.changeBeats(3).changehands(2).skew(2.0,0.0),
+          QuarterRight.changeBeats(3).changehands(Hands.RIGHT).skew(2.0,0.0),
 
           ExtendLeft.changeBeats(3).scale(3.0,2.0) +
           HingeRight +
-          HingeRight.changeBeats(3).changehands(3) +
-          QuarterRight.changeBeats(3).changehands(1).skew(1.5,0.0) +
-          QuarterRight.changeBeats(3).changehands(1).skew(0.0,1.5),
+          HingeRight.changeBeats(3).changehands(Hands.BOTH) +
+          QuarterRight.changeBeats(3).changehands(Hands.LEFT).skew(1.5,0.0) +
+          QuarterRight.changeBeats(3).changehands(Hands.LEFT).skew(0.0,1.5),
 
           QuarterLeft.changeBeats(4.5).skew(0.0,-1.0) +
           HingeRight.changeBeats(3).scale(3.0,3.0) +
           HingeRight.changeBeats(3).scale(3.0,2.0) +
-          QuarterRight.changeBeats(3).changehands(2).skew(2.0,0.0),
+          QuarterRight.changeBeats(3).changehands(Hands.RIGHT).skew(2.0,0.0),
 
           ExtendLeft.changeBeats(3).scale(3.0,2.0) +
           HingeRight +
-          HingeRight.changeBeats(3).changehands(3) +
-          QuarterRight.changeBeats(3).changehands(1).skew(1.5,0.0) +
-          QuarterRight.changeBeats(3).changehands(1).skew(0.0,1.5)
+          HingeRight.changeBeats(3).changehands(Hands.BOTH) +
+          QuarterRight.changeBeats(3).changehands(Hands.LEFT).skew(1.5,0.0) +
+          QuarterRight.changeBeats(3).changehands(Hands.LEFT).skew(0.0,1.5)
       ]),
 
     AnimatedCall('All 4 Men Lead Reverse Flutterwheel',
@@ -193,25 +193,25 @@ import '../../moves.dart';
       paths:[
           ExtendRight.changeBeats(3).scale(3.0,2.0) +
           HingeLeft +
-          HingeLeft.changeBeats(3).changehands(3) +
-          QuarterLeft.changeBeats(3).changehands(2).skew(1.5,0.0) +
-          QuarterLeft.changeBeats(3).changehands(2).skew(0.0,-1.5),
+          HingeLeft.changeBeats(3).changehands(Hands.BOTH) +
+          QuarterLeft.changeBeats(3).changehands(Hands.RIGHT).skew(1.5,0.0) +
+          QuarterLeft.changeBeats(3).changehands(Hands.RIGHT).skew(0.0,-1.5),
 
           QuarterRight.changeBeats(4.5).skew(0.0,1.0) +
           HingeLeft.changeBeats(3).scale(3.0,3.0) +
           HingeLeft.changeBeats(3).scale(3.0,2.0) +
-          QuarterLeft.changeBeats(3).changehands(1).skew(2.0,0.0),
+          QuarterLeft.changeBeats(3).changehands(Hands.LEFT).skew(2.0,0.0),
 
           ExtendRight.changeBeats(3).scale(3.0,2.0) +
           HingeLeft +
-          HingeLeft.changeBeats(3).changehands(3) +
-          QuarterLeft.changeBeats(3).changehands(2).skew(1.5,0.0) +
-          QuarterLeft.changeBeats(3).changehands(2).skew(0.0,-1.5),
+          HingeLeft.changeBeats(3).changehands(Hands.BOTH) +
+          QuarterLeft.changeBeats(3).changehands(Hands.RIGHT).skew(1.5,0.0) +
+          QuarterLeft.changeBeats(3).changehands(Hands.RIGHT).skew(0.0,-1.5),
 
           QuarterRight.changeBeats(4.5).skew(0.0,1.0) +
           HingeLeft.changeBeats(3).scale(3.0,3.0) +
           HingeLeft.changeBeats(3).scale(3.0,2.0) +
-          QuarterLeft.changeBeats(3).changehands(1).skew(2.0,0.0)
+          QuarterLeft.changeBeats(3).changehands(Hands.LEFT).skew(2.0,0.0)
       ]),
   ];
 

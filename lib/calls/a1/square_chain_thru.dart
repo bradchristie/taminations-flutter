@@ -19,7 +19,7 @@
 */
 
 import '../../animated_call.dart';
-import '../../formation.dart';
+import '../../common_dart.dart';
 import '../../moves.dart';
 import '../a2/all_4_all_8.dart' as a2;
 
@@ -99,27 +99,27 @@ import '../a2/all_4_all_8.dart' as a2;
       from:'Right-Hand Waves',parts:'3;6',
       paths:[
           LeadRight.changeBeats(3).scale(0.5,3.0) +
-          SwingLeft.changehands(5).scale(0.5,0.5) +
+          SwingLeft.changehands(Hands.GRIPLEFT).scale(0.5,0.5) +
           Stand.changeBeats(3) +
-          SwingLeft.changehands(5).scale(0.5,0.5) +
+          SwingLeft.changehands(Hands.GRIPLEFT).scale(0.5,0.5) +
           ExtendLeft.changeBeats(3).scale(2.0,0.5),
 
           LeadLeft.changeBeats(3).scale(1.5,1.0) +
-          SwingLeft.changehands(5).scale(0.5,0.5) +
-          SwingRight.changehands(6).scale(0.5,0.5) +
-          SwingLeft.changehands(5).scale(0.5,0.5) +
+          SwingLeft.changehands(Hands.GRIPLEFT).scale(0.5,0.5) +
+          SwingRight.changehands(Hands.GRIPRIGHT).scale(0.5,0.5) +
+          SwingLeft.changehands(Hands.GRIPLEFT).scale(0.5,0.5) +
           ExtendLeft.changeBeats(3).scale(2.0,0.5),
 
           LeadLeft.changeBeats(3).scale(1.5,1.0) +
-          SwingLeft.changehands(5).scale(0.5,0.5) +
-          SwingRight.changehands(6).scale(0.5,0.5) +
-          SwingLeft.changehands(5).scale(0.5,0.5) +
+          SwingLeft.changehands(Hands.GRIPLEFT).scale(0.5,0.5) +
+          SwingRight.changehands(Hands.GRIPRIGHT).scale(0.5,0.5) +
+          SwingLeft.changehands(Hands.GRIPLEFT).scale(0.5,0.5) +
           ExtendLeft.changeBeats(3).scale(2.0,0.5),
 
           LeadRight.changeBeats(3).scale(0.5,3.0) +
-          SwingLeft.changehands(5).scale(0.5,0.5) +
+          SwingLeft.changehands(Hands.GRIPLEFT).scale(0.5,0.5) +
           Stand.changeBeats(3) +
-          SwingLeft.changehands(5).scale(0.5,0.5) +
+          SwingLeft.changehands(Hands.GRIPLEFT).scale(0.5,0.5) +
           ExtendLeft.changeBeats(3).scale(2.0,0.5)
       ]),
 
@@ -129,30 +129,30 @@ import '../a2/all_4_all_8.dart' as a2;
       paths:[
           PullLeft.scale(1.0,0.5) +
           LeadRight.changeBeats(2).scale(0.5,1.5) +
-          SwingLeft.changehands(5).scale(0.5,0.5) +
+          SwingLeft.changehands(Hands.GRIPLEFT).scale(0.5,0.5) +
           Stand.changeBeats(3) +
-          SwingLeft.changehands(5).scale(0.5,0.5) +
+          SwingLeft.changehands(Hands.GRIPLEFT).scale(0.5,0.5) +
           ExtendLeft.changeBeats(3).scale(2.0,0.5),
 
           PullLeft.scale(1.0,0.5) +
           LeadLeft.changeBeats(2).scale(1.5,0.5) +
-          SwingLeft.changehands(5).scale(0.5,0.5) +
-          SwingRight.changehands(6).scale(0.5,0.5) +
-          SwingLeft.changehands(5).scale(0.5,0.5) +
+          SwingLeft.changehands(Hands.GRIPLEFT).scale(0.5,0.5) +
+          SwingRight.changehands(Hands.GRIPRIGHT).scale(0.5,0.5) +
+          SwingLeft.changehands(Hands.GRIPLEFT).scale(0.5,0.5) +
           ExtendLeft.changeBeats(3).scale(2.0,0.5),
 
           PullLeft.scale(1.0,0.5) +
           LeadRight.changeBeats(2).scale(0.5,1.5) +
-          SwingLeft.changehands(5).scale(0.5,0.5) +
+          SwingLeft.changehands(Hands.GRIPLEFT).scale(0.5,0.5) +
           Stand.changeBeats(3) +
-          SwingLeft.changehands(5).scale(0.5,0.5) +
+          SwingLeft.changehands(Hands.GRIPLEFT).scale(0.5,0.5) +
           ExtendLeft.changeBeats(3).scale(2.0,0.5),
 
           PullLeft.scale(1.0,0.5) +
           LeadLeft.changeBeats(2).scale(1.5,0.5) +
-          SwingLeft.changehands(5).scale(0.5,0.5) +
-          SwingRight.changehands(6).scale(0.5,0.5) +
-          SwingLeft.changehands(5).scale(0.5,0.5) +
+          SwingLeft.changehands(Hands.GRIPLEFT).scale(0.5,0.5) +
+          SwingRight.changehands(Hands.GRIPRIGHT).scale(0.5,0.5) +
+          SwingLeft.changehands(Hands.GRIPLEFT).scale(0.5,0.5) +
           ExtendLeft.changeBeats(3).scale(2.0,0.5)
       ]),
 
@@ -189,33 +189,33 @@ import '../a2/all_4_all_8.dart' as a2;
       formation:Formation('Normal Lines'),
       from:'Lines',group:' ',parts:'6;8',
       paths:[
-          ExtendLeft.changeBeats(2).changehands(2).scale(2.0,0.5) +
+          ExtendLeft.changeBeats(2).changehands(Hands.RIGHT).scale(2.0,0.5) +
           LeadRight.changeBeats(4).scale(1.5,3.5) +
           SwingLeft.changeBeats(4).scale(0.5,0.5) +
           Stand.changeBeats(4) +
           SwingLeft.changeBeats(4).scale(0.5,0.5) +
-          ExtendLeft.changeBeats(2).changehands(2).scale(2.0,1.5),
+          ExtendLeft.changeBeats(2).changehands(Hands.RIGHT).scale(2.0,1.5),
 
-          ExtendLeft.changeBeats(2).changehands(1).scale(2.0,1.5) +
+          ExtendLeft.changeBeats(2).changehands(Hands.LEFT).scale(2.0,1.5) +
           LeadRight.changeBeats(4).scale(0.5,2.5) +
           SwingLeft.changeBeats(4).scale(1.5,1.5) +
           Stand.changeBeats(4) +
           SwingLeft.changeBeats(4).scale(1.5,1.5) +
-          ExtendLeft.changeBeats(2).changehands(1).scale(2.0,0.5),
+          ExtendLeft.changeBeats(2).changehands(Hands.LEFT).scale(2.0,0.5),
 
-          ExtendLeft.changeBeats(2).changehands(2).scale(2.0,0.5) +
+          ExtendLeft.changeBeats(2).changehands(Hands.RIGHT).scale(2.0,0.5) +
           LeadLeft.changeBeats(4).scale(2.5,0.5) +
           SwingLeft.changeBeats(4).scale(0.5,0.5) +
           SwingRight.changeBeats(4).scale(1.5,1.5) +
           SwingLeft.changeBeats(4).scale(0.5,0.5) +
-          ExtendLeft.changeBeats(2).changehands(2).scale(2.0,1.5),
+          ExtendLeft.changeBeats(2).changehands(Hands.RIGHT).scale(2.0,1.5),
 
-          ExtendLeft.changeBeats(2).changehands(1).scale(2.0,1.5) +
+          ExtendLeft.changeBeats(2).changehands(Hands.LEFT).scale(2.0,1.5) +
           LeadLeft.changeBeats(4).scale(3.5,1.5) +
           SwingLeft.changeBeats(4).scale(1.5,1.5) +
           SwingRight.changeBeats(4).scale(0.5,0.5) +
           SwingLeft.changeBeats(4).scale(1.5,1.5) +
-          ExtendLeft.changeBeats(2).changehands(1).scale(2.0,0.5)
+          ExtendLeft.changeBeats(2).changehands(Hands.LEFT).scale(2.0,0.5)
       ]),
     a2.All4All8.where((tam) =>
       tam.title == 'All 4 Couples Square Chain Thru').first.xref(title: 'All 4 Couples Square Chain Thru').xref(group: ' '),
@@ -294,27 +294,27 @@ import '../a2/all_4_all_8.dart' as a2;
       from:'Left-Hand Waves',parts:'3;6',
       paths:[
           LeadLeft.changeBeats(3).scale(0.5,3.0) +
-          SwingRight.changehands(6).scale(0.5,0.5) +
+          SwingRight.changehands(Hands.GRIPRIGHT).scale(0.5,0.5) +
           Stand.changeBeats(3) +
-          SwingRight.changehands(6).scale(0.5,0.5) +
+          SwingRight.changehands(Hands.GRIPRIGHT).scale(0.5,0.5) +
           ExtendRight.changeBeats(3).scale(2.0,0.5),
 
           LeadRight.changeBeats(3).scale(1.5,1.0) +
-          SwingRight.changehands(6).scale(0.5,0.5) +
-          SwingLeft.changehands(5).scale(0.5,0.5) +
-          SwingRight.changehands(6).scale(0.5,0.5) +
+          SwingRight.changehands(Hands.GRIPRIGHT).scale(0.5,0.5) +
+          SwingLeft.changehands(Hands.GRIPLEFT).scale(0.5,0.5) +
+          SwingRight.changehands(Hands.GRIPRIGHT).scale(0.5,0.5) +
           ExtendRight.changeBeats(3).scale(2.0,0.5),
 
           LeadRight.changeBeats(3).scale(1.5,1.0) +
-          SwingRight.changehands(6).scale(0.5,0.5) +
-          SwingLeft.changehands(5).scale(0.5,0.5) +
-          SwingRight.changehands(6).scale(0.5,0.5) +
+          SwingRight.changehands(Hands.GRIPRIGHT).scale(0.5,0.5) +
+          SwingLeft.changehands(Hands.GRIPLEFT).scale(0.5,0.5) +
+          SwingRight.changehands(Hands.GRIPRIGHT).scale(0.5,0.5) +
           ExtendRight.changeBeats(3).scale(2.0,0.5),
 
           LeadLeft.changeBeats(3).scale(0.5,3.0) +
-          SwingRight.changehands(6).scale(0.5,0.5) +
+          SwingRight.changehands(Hands.GRIPRIGHT).scale(0.5,0.5) +
           Stand.changeBeats(3) +
-          SwingRight.changehands(6).scale(0.5,0.5) +
+          SwingRight.changehands(Hands.GRIPRIGHT).scale(0.5,0.5) +
           ExtendRight.changeBeats(3).scale(2.0,0.5)
       ]),
 
@@ -384,33 +384,33 @@ import '../a2/all_4_all_8.dart' as a2;
       formation:Formation('Normal Lines'),
       from:'Lines',group:' ',
       paths:[
-          ExtendRight.changeBeats(2).changehands(2).scale(2.0,1.5) +
+          ExtendRight.changeBeats(2).changehands(Hands.RIGHT).scale(2.0,1.5) +
           LeadRight.changeBeats(4).scale(3.5,1.5) +
           SwingRight.changeBeats(4).scale(1.5,1.5) +
           SwingLeft.changeBeats(4).scale(0.5,0.5) +
           SwingRight.changeBeats(4).scale(1.5,1.5) +
-          ExtendRight.changeBeats(2).changehands(2).scale(2.0,0.5),
+          ExtendRight.changeBeats(2).changehands(Hands.RIGHT).scale(2.0,0.5),
 
-          ExtendRight.changeBeats(2).changehands(1).scale(2.0,0.5) +
+          ExtendRight.changeBeats(2).changehands(Hands.LEFT).scale(2.0,0.5) +
           LeadRight.changeBeats(4).scale(2.5,0.5) +
           SwingRight.changeBeats(4).scale(0.5,0.5) +
           SwingLeft.changeBeats(4).scale(1.5,1.5) +
           SwingRight.changeBeats(4).scale(0.5,0.5) +
-          ExtendRight.changeBeats(2).changehands(1).scale(2.0,1.5),
+          ExtendRight.changeBeats(2).changehands(Hands.LEFT).scale(2.0,1.5),
 
-          ExtendRight.changeBeats(2).changehands(2).scale(2.0,1.5) +
+          ExtendRight.changeBeats(2).changehands(Hands.RIGHT).scale(2.0,1.5) +
           LeadLeft.changeBeats(4).scale(0.5,2.5) +
           SwingRight.changeBeats(4).scale(1.5,1.5) +
           Stand.changeBeats(4) +
           SwingRight.changeBeats(4).scale(1.5,1.5) +
-          ExtendRight.changeBeats(2).changehands(2).scale(2.0,0.5),
+          ExtendRight.changeBeats(2).changehands(Hands.RIGHT).scale(2.0,0.5),
 
-          ExtendRight.changeBeats(2).changehands(1).scale(2.0,0.5) +
+          ExtendRight.changeBeats(2).changehands(Hands.LEFT).scale(2.0,0.5) +
           LeadLeft.changeBeats(4).scale(1.5,3.5) +
           SwingRight.changeBeats(4).scale(0.5,0.5) +
           Stand.changeBeats(4) +
           SwingRight.changeBeats(4).scale(0.5,0.5) +
-          ExtendRight.changeBeats(2).changehands(1).scale(2.0,1.5)
+          ExtendRight.changeBeats(2).changehands(Hands.LEFT).scale(2.0,1.5)
       ]),
   ];
 

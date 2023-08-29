@@ -20,7 +20,6 @@
 
 import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formation.dart';
 import '../../moves.dart';
 import '../c1/cross_and_turn.dart' as c1;
 import '../c1/shakedown.dart' as c1;

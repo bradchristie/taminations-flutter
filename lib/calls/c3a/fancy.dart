@@ -20,7 +20,6 @@
 
 import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> Fancy = [
@@ -42,11 +41,11 @@ import '../../moves.dart';
           UmTurnRight.changeBeats(4).skew(0.0,-2.0),
 
           Stand.changeBeats(3) +
-          Forward.changehands(1) +
+          Forward.changehands(Hands.LEFT) +
           UmTurnRight.changeBeats(4).skew(1.0,-2.0),
 
           ExtendLeft.changeBeats(3).scale(2.0,2.0) +
-          Forward.changehands(2) +
+          Forward.changehands(Hands.RIGHT) +
           UmTurnRight.changeBeats(4).skew(1.0,-2.0)
       ]),
 
@@ -55,11 +54,11 @@ import '../../moves.dart';
       from:'Left-Hand Columns',parts:'3;1',
       paths:[
           ExtendRight.changeBeats(3).scale(2.0,2.0) +
-          Forward.changehands(1) +
+          Forward.changehands(Hands.LEFT) +
           UmTurnLeft.changeBeats(4).skew(1.0,2.0),
 
           Stand.changeBeats(3) +
-          Forward.changehands(2) +
+          Forward.changehands(Hands.RIGHT) +
           UmTurnLeft.changeBeats(4).skew(1.0,2.0),
 
           ExtendRight.changeBeats(3).scale(2.0,2.0) +
@@ -76,14 +75,14 @@ import '../../moves.dart';
       paths:[
           RunRight.changeBeats(6) +
           ExtendLeft.changeBeats(3).scale(2.0,2.0) +
-          Forward.changehands(2) +
+          Forward.changehands(Hands.RIGHT) +
           UmTurnRight.changeBeats(4).skew(1.0,-2.0),
 
           ExtendRight.changeBeats(1.5).scale(1.0,0.5) +
           SwingRight.scale(0.5,0.5) +
           ExtendLeft.changeBeats(1.5).scale(1.0,0.5) +
           Stand.changeBeats(3) +
-          Forward.changehands(1) +
+          Forward.changehands(Hands.LEFT) +
           UmTurnRight.changeBeats(4).skew(1.0,-2.0),
 
           ExtendRight.changeBeats(1.5).scale(1.0,0.5) +

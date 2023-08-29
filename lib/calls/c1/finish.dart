@@ -20,7 +20,6 @@
 
 import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> Finish = [
@@ -255,7 +254,7 @@ import '../../moves.dart';
       paths:[
           Forward_2 +
           HingeRight +
-          ExtendRight.changeBeats(3).changehands(1).scale(3.0,2.0) +
+          ExtendRight.changeBeats(3).changehands(Hands.LEFT).scale(3.0,2.0) +
           Forward,
 
           LeadLeft.changeBeats(2) +
@@ -318,19 +317,19 @@ import '../../moves.dart';
           LeadRight.changeBeats(4.5).scale(3.0,3.5) +
           HingeRight.changeBeats(4).scale(3.0,1.0),
 
-          SwingLeft.changehands(5).scale(0.5,0.5) +
+          SwingLeft.changehands(Hands.GRIPLEFT).scale(0.5,0.5) +
           HingeLeft.scale(1.0,0.5) +
           LeadRight +
           LeadRight +
           LeadRight,
 
-          SwingLeft.changehands(5).scale(0.5,0.5) +
+          SwingLeft.changehands(Hands.GRIPLEFT).scale(0.5,0.5) +
           HingeLeft.scale(1.0,0.5) +
           Forward_2 +
           HingeLeft +
           Forward_2,
 
-          SwingLeft.changehands(5).scale(0.5,0.5) +
+          SwingLeft.changehands(Hands.GRIPLEFT).scale(0.5,0.5) +
           HingeLeft.scale(1.0,0.5) +
           HingeRight.changeBeats(4).scale(3.0,1.0)
       ]),
@@ -444,23 +443,23 @@ import '../../moves.dart';
       paths:[
           Stand.changeBeats(2) +
           FlipRight.changeBeats(5.5) +
-          CastLeft.changehands(5) +
+          CastLeft.changehands(Hands.GRIPLEFT) +
           SwingRight +
           CastLeft,
 
           CastLeft +
           SwingRight +
-          CastLeft.changehands(5) +
+          CastLeft.changehands(Hands.GRIPLEFT) +
           FlipRight,
 
           CastLeft +
           Stand.changeBeats(3) +
-          CastLeft.changehands(5) +
+          CastLeft.changehands(Hands.GRIPLEFT) +
           FlipRight,
 
           Stand.changeBeats(2) +
           FlipRight.changeBeats(5.5) +
-          CastLeft.changehands(5) +
+          CastLeft.changehands(Hands.GRIPLEFT) +
           Stand.changeBeats(3) +
           CastLeft
       ]),
@@ -531,20 +530,20 @@ import '../../moves.dart';
       formation:Formation('Normal Lines'),
       group:'Finish',isGenderSpecific:true,parts:'3.5',
       paths:[
-          ExtendRight.changeBeats(2).changehands(1).scale(2.0,0.5) +
+          ExtendRight.changeBeats(2).changehands(Hands.LEFT).scale(2.0,0.5) +
           QuarterLeft.changeBeats(1.5).skew(1.0,0.5),
 
-          ExtendRight.changeBeats(2).changehands(1).scale(2.0,0.5) +
+          ExtendRight.changeBeats(2).changehands(Hands.LEFT).scale(2.0,0.5) +
           QuarterRight.changeBeats(1.5).skew(1.0,0.5) +
-          ExtendLeft.changeBeats(1.5).changehands(2).scale(1.0,0.5) +
+          ExtendLeft.changeBeats(1.5).changehands(Hands.RIGHT).scale(1.0,0.5) +
           QuarterLeft.changeBeats(1.5).skew(1.0,-0.5),
 
-          ExtendRight.changeBeats(2).changehands(1).scale(2.0,0.5) +
+          ExtendRight.changeBeats(2).changehands(Hands.LEFT).scale(2.0,0.5) +
           QuarterLeft.changeBeats(1.5).skew(1.0,0.5) +
-          ExtendLeft.changeBeats(1.5).changehands(2).scale(1.0,0.5) +
+          ExtendLeft.changeBeats(1.5).changehands(Hands.RIGHT).scale(1.0,0.5) +
           QuarterRight.changeBeats(1.5).skew(1.0,-0.5),
 
-          ExtendRight.changeBeats(2).changehands(1).scale(2.0,0.5) +
+          ExtendRight.changeBeats(2).changehands(Hands.LEFT).scale(2.0,0.5) +
           QuarterRight.changeBeats(1.5).skew(1.0,0.5)
       ]),
   ];

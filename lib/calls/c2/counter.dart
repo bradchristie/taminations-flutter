@@ -19,7 +19,7 @@
 */
 
 import '../../animated_call.dart';
-import '../../formation.dart';
+import '../../common_dart.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> Counter = [
@@ -38,11 +38,11 @@ import '../../moves.dart';
 
           HingeRight +
           SwingRight.skew(1.0,0.0) +
-          CounterRotateRight_0_m2.changehands(2).skew(0.0,-0.5),
+          CounterRotateRight_0_m2.changehands(Hands.RIGHT).skew(0.0,-0.5),
 
           HingeRight +
           SwingRight.skew(-1.0,0.0) +
-          CounterRotateRight_2_0.changehands(2).skew(0.0,0.5)
+          CounterRotateRight_2_0.changehands(Hands.RIGHT).skew(0.0,0.5)
       ]),
 
     AnimatedCall('Counter',
@@ -82,11 +82,11 @@ import '../../moves.dart';
 
           HingeRight +
           SwingRight.skew(1.0,0.0) +
-          CounterRotateRight_0_m2.changehands(2).skew(0.0,-0.5),
+          CounterRotateRight_0_m2.changehands(Hands.RIGHT).skew(0.0,-0.5),
 
           HingeRight +
           SwingRight.skew(-1.0,0.0) +
-          CounterRotateRight_2_0.changehands(2).skew(0.0,0.5)
+          CounterRotateRight_2_0.changehands(Hands.RIGHT).skew(0.0,0.5)
       ]),
 
     AnimatedCall('Counter',
@@ -103,11 +103,11 @@ import '../../moves.dart';
 
           HingeLeft +
           SwingLeft.skew(1.0,0.0) +
-          CounterRotateLeft_0_2.changehands(1).skew(0.0,0.5),
+          CounterRotateLeft_0_2.changehands(Hands.LEFT).skew(0.0,0.5),
 
           HingeLeft +
           SwingLeft.skew(-1.0,0.0) +
-          CounterRotateLeft_2_0.changehands(1).skew(0.0,-0.5)
+          CounterRotateLeft_2_0.changehands(Hands.LEFT).skew(0.0,-0.5)
       ]),
 
     AnimatedCall('Counter',
@@ -147,11 +147,11 @@ import '../../moves.dart';
 
           HingeLeft +
           SwingLeft.skew(1.0,0.0) +
-          CounterRotateLeft_0_2.changehands(1).skew(0.0,0.5),
+          CounterRotateLeft_0_2.changehands(Hands.LEFT).skew(0.0,0.5),
 
           HingeLeft +
           SwingLeft.skew(-1.0,0.0) +
-          CounterRotateLeft_2_0.changehands(1).skew(0.0,-0.5)
+          CounterRotateLeft_2_0.changehands(Hands.LEFT).skew(0.0,-0.5)
       ]),
 
     AnimatedCall('Left Counter',
@@ -168,11 +168,11 @@ import '../../moves.dart';
 
           HingeRight +
           SwingRight.skew(1.0,0.0) +
-          CounterRotateRight_0_m2.changehands(2).skew(0.0,-0.5),
+          CounterRotateRight_0_m2.changehands(Hands.RIGHT).skew(0.0,-0.5),
 
           HingeRight +
           SwingRight.skew(-1.0,0.0) +
-          CounterRotateRight_2_0.changehands(2).skew(0.0,0.5)
+          CounterRotateRight_2_0.changehands(Hands.RIGHT).skew(0.0,0.5)
       ]),
 
     AnimatedCall('Left Counter',
@@ -212,11 +212,11 @@ import '../../moves.dart';
 
           HingeRight +
           SwingRight.skew(1.0,0.0) +
-          CounterRotateRight_0_m2.changehands(2).skew(0.0,-0.5),
+          CounterRotateRight_0_m2.changehands(Hands.RIGHT).skew(0.0,-0.5),
 
           HingeRight +
           SwingRight.skew(-1.0,0.0) +
-          CounterRotateRight_2_0.changehands(2).skew(0.0,0.5)
+          CounterRotateRight_2_0.changehands(Hands.RIGHT).skew(0.0,0.5)
       ]),
 
     AnimatedCall('Left Counter',
@@ -233,11 +233,11 @@ import '../../moves.dart';
 
           HingeLeft +
           SwingLeft.skew(1.0,0.0) +
-          CounterRotateLeft_0_2.changehands(1).skew(0.0,0.5),
+          CounterRotateLeft_0_2.changehands(Hands.LEFT).skew(0.0,0.5),
 
           HingeLeft +
           SwingLeft.skew(-1.0,0.0) +
-          CounterRotateLeft_2_0.changehands(1).skew(0.0,-0.5)
+          CounterRotateLeft_2_0.changehands(Hands.LEFT).skew(0.0,-0.5)
       ]),
 
     AnimatedCall('Left Counter',
@@ -277,11 +277,11 @@ import '../../moves.dart';
 
           HingeLeft +
           SwingLeft.skew(1.0,0.0) +
-          CounterRotateLeft_0_2.changehands(1).skew(0.0,0.5),
+          CounterRotateLeft_0_2.changehands(Hands.LEFT).skew(0.0,0.5),
 
           HingeLeft +
           SwingLeft.skew(-1.0,0.0) +
-          CounterRotateLeft_2_0.changehands(1).skew(0.0,-0.5)
+          CounterRotateLeft_2_0.changehands(Hands.LEFT).skew(0.0,-0.5)
       ]),
 
     AnimatedCall('Scoot and Counter',
@@ -307,14 +307,14 @@ import '../../moves.dart';
           Forward.scale(1.5,1.0) +
           HingeRight +
           SwingRight.skew(-1.0,0.0) +
-          QuarterRight.changeBeats(3).changehands(6).skew(2.0,1.0),
+          QuarterRight.changeBeats(3).changehands(Hands.GRIPRIGHT).skew(2.0,1.0),
 
           Forward.scale(1.5,1.0) +
           SwingRight.scale(0.75,0.75) +
           ExtendLeft.scale(1.5,0.5) +
           HingeRight +
           SwingRight.skew(1.0,0.0) +
-          QuarterRight.changeBeats(3).changehands(6).skew(0.0,-3.0)
+          QuarterRight.changeBeats(3).changehands(Hands.GRIPRIGHT).skew(0.0,-3.0)
       ]),
 
     AnimatedCall('Left Scoot and Counter',
@@ -340,14 +340,14 @@ import '../../moves.dart';
           Forward.scale(1.5,1.0) +
           HingeLeft +
           SwingLeft.skew(-1.0,0.0) +
-          QuarterLeft.changeBeats(3).changehands(5).skew(2.0,-1.0),
+          QuarterLeft.changeBeats(3).changehands(Hands.GRIPLEFT).skew(2.0,-1.0),
 
           Forward.scale(1.5,1.0) +
           SwingLeft.scale(0.75,0.75) +
           ExtendRight.scale(1.5,0.5) +
           HingeLeft +
           SwingLeft.skew(1.0,0.0) +
-          QuarterLeft.changeBeats(3).changehands(5).skew(0.0,3.0)
+          QuarterLeft.changeBeats(3).changehands(Hands.GRIPLEFT).skew(0.0,3.0)
       ]),
   ];
 

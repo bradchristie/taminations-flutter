@@ -20,7 +20,6 @@
 
 import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formation.dart';
 import '../../moves.dart';
 import '../c2/file_to_a_line.dart' as c2;
 import '../c2/invert_the_column.dart' as c2;

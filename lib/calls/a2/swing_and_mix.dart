@@ -19,7 +19,7 @@
 */
 
 import '../../animated_call.dart';
-import '../../formation.dart';
+import '../../common_dart.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> SwingAndMix = [
@@ -374,11 +374,11 @@ import '../../moves.dart';
       paths:[
           ExtendLeft.changeBeats(2).scale(2.0,0.5) +
           SwingRight.scale(1.5,1.5) +
-          RunLeft.changeBeats(6).changehands(6).scale(2.0,1.5),
+          RunLeft.changeBeats(6).changehands(Hands.GRIPRIGHT).scale(2.0,1.5),
 
           ExtendLeft.changeBeats(2).scale(2.0,1.5) +
           SwingRight.scale(0.5,0.5) +
-          RunLeft.changeBeats(6).changehands(5).scale(3.0,2.5),
+          RunLeft.changeBeats(6).changehands(Hands.GRIPLEFT).scale(3.0,2.5),
 
           ExtendLeft.changeBeats(2).scale(2.0,0.5) +
           SwingRight.scale(1.5,1.5) +

@@ -20,7 +20,6 @@
 
 import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> EndsBend = [
@@ -43,9 +42,9 @@ import '../../moves.dart';
       paths:[
           LeadLeft.changeBeats(2).scale(1.0,2.0),
 
-          Back.changeBeats(2).changehands(1),
+          Back.changeBeats(2).changehands(Hands.LEFT),
 
-          Back.changeBeats(2).changehands(2),
+          Back.changeBeats(2).changehands(Hands.RIGHT),
 
           LeadRight.changeBeats(2).scale(1.0,2.0)
       ]),
@@ -61,9 +60,9 @@ import '../../moves.dart';
       paths:[
           LeadLeft.changeBeats(2).scale(1.0,2.0),
 
-          Forward.changeBeats(2).changehands(2),
+          Forward.changeBeats(2).changehands(Hands.RIGHT),
 
-          Forward.changeBeats(2).changehands(1),
+          Forward.changeBeats(2).changehands(Hands.LEFT),
 
           LeadRight.changeBeats(2).scale(1.0,2.0)
       ]),

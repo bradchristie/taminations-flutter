@@ -20,7 +20,6 @@
 
 import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formation.dart';
 import '../../moves.dart';
 import '../c1/chase_your_neighbor.dart' as c1;
 import '../c1/cross_and_turn.dart' as c1;
@@ -38,7 +37,6 @@ import '../c2/cross_the_k.dart' as c2;
 import '../c2/peel_to_a_diamond.dart' as c2;
 import '../c2/turn_to_a_line.dart' as c2;
 import '../c3a/couple_up.dart' as c3a;
-
 import '../c3a/mini_chase.dart' as c3a;
 
   final List<AnimatedCall> ConcentricConcept = [
@@ -50,13 +48,13 @@ import '../c3a/mini_chase.dart' as c3a;
     Same as Counter Rotate
     ''',
       paths:[
-          CounterRotateLeft_4_m2.changeBeats(5).changehands(1),
+          CounterRotateLeft_4_m2.changeBeats(5).changehands(Hands.LEFT),
 
-          CounterRotateRight_0_m2.changeBeats(5).changehands(2),
+          CounterRotateRight_0_m2.changeBeats(5).changehands(Hands.RIGHT),
 
-          CounterRotateRight_2_0.changeBeats(5).changehands(2),
+          CounterRotateRight_2_0.changeBeats(5).changehands(Hands.RIGHT),
 
-          CounterRotateLeft_m2_4.changeBeats(5).changehands(1)
+          CounterRotateLeft_m2_4.changeBeats(5).changehands(Hands.LEFT)
       ]),
 
     AnimatedCall('Concentric Box Transfer',
@@ -117,9 +115,9 @@ import '../c3a/mini_chase.dart' as c3a;
           Stand +
           HingeLeft.scale(0.8,0.75),
 
-          ExtendLeft.changeBeats(2).changehands(2).scale(1.15,1.5) +
+          ExtendLeft.changeBeats(2).changehands(Hands.RIGHT).scale(1.15,1.5) +
           ExtendRight.changeBeats(2).scale(1.15,1.25) +
-          QuarterLeft.changehands(1).skew(0.2,0.75)
+          QuarterLeft.changehands(Hands.LEFT).skew(0.2,0.75)
       ]),
 
     AnimatedCall('Concentric Do Paso',
@@ -175,14 +173,14 @@ import '../c3a/mini_chase.dart' as c3a;
           ExtendRight.changeBeats(4).scale(3.5,2.5) +
           QuarterRight.skew(1.0,0.5),
 
-          ExtendLeft.changeBeats(1.5).changehands(2).scale(1.0,0.5) +
+          ExtendLeft.changeBeats(1.5).changehands(Hands.RIGHT).scale(1.0,0.5) +
           LeadRight.changeBeats(1.5).scale(1.0,0.5) +
-          ExtendRight.changehands(1).scale(1.0,0.5) +
+          ExtendRight.changehands(Hands.LEFT).scale(1.0,0.5) +
           LeadLeft.scale(1.0,0.5),
 
-          ExtendLeft.changeBeats(1.5).changehands(2).scale(1.0,0.5) +
+          ExtendLeft.changeBeats(1.5).changehands(Hands.RIGHT).scale(1.0,0.5) +
           QuarterLeft.changeBeats(1.5).skew(1.0,-0.5) +
-          ExtendRight.changehands(1).scale(1.0,0.5) +
+          ExtendRight.changehands(Hands.LEFT).scale(1.0,0.5) +
           QuarterRight.skew(1.0,0.5)
       ]),
 
@@ -204,21 +202,21 @@ import '../c3a/mini_chase.dart' as c3a;
       group:'(From columns) Concentric',
       paths:[
           Stand.changeBeats(8).changehands(0) +
-          ExtendLeft.changeBeats(3).changehands(2).scale(3.0,3.5) +
-          RunRight.changeBeats(4).changehands(2).scale(2.0,2.0).skew(3.0,-1.5),
+          ExtendLeft.changeBeats(3).changehands(Hands.RIGHT).scale(3.0,3.5) +
+          RunRight.changeBeats(4).changehands(Hands.RIGHT).scale(2.0,2.0).skew(3.0,-1.5),
 
           ExtendLeft.changeBeats(4).scale(3.0,4.0) +
           LeadRight.changeBeats(4).scale(2.5,3.0) +
-          LeadRight.changeBeats(3).changehands(1).scale(2.5,2.5) +
-          UmTurnRight.changeBeats(4).changehands(1).skew(3.0,-1.5),
+          LeadRight.changeBeats(3).changehands(Hands.LEFT).scale(2.5,2.5) +
+          UmTurnRight.changeBeats(4).changehands(Hands.LEFT).skew(3.0,-1.5),
 
           Stand.changeBeats(3.5).changehands(0) +
-          ExtendLeft.changeBeats(1.5).changehands(2).scale(1.0,0.5) +
-          RunRight.changehands(2).skew(1.0,-0.5),
+          ExtendLeft.changeBeats(1.5).changehands(Hands.RIGHT).scale(1.0,0.5) +
+          RunRight.changehands(Hands.RIGHT).skew(1.0,-0.5),
 
           ExtendLeft.changeBeats(2).scale(1.0,1.5) +
-          SwingRight.changehands(3).scale(0.5,0.5) +
-          UmTurnRight.changehands(1).skew(1.0,0.5)
+          SwingRight.changehands(Hands.BOTH).scale(0.5,0.5) +
+          UmTurnRight.changehands(Hands.LEFT).skew(1.0,0.5)
       ]),
 
     AnimatedCall('Concentric Follow Your Neighbor',
@@ -246,16 +244,16 @@ import '../c3a/mini_chase.dart' as c3a;
       formation:Formation('Double Pass Thru'),
       group:'(From columns) Concentric',
       paths:[
-          LeadRight.changeBeats(2).changehands(6).scale(1.0,2.0) +
-          ExtendLeft.changeBeats(4).changehands(6).scale(2.0,3.0),
+          LeadRight.changeBeats(2).changehands(Hands.GRIPRIGHT).scale(1.0,2.0) +
+          ExtendLeft.changeBeats(4).changehands(Hands.GRIPRIGHT).scale(2.0,3.0),
 
-          QuarterRight.changeBeats(2).changehands(5) +
-          ExtendLeft.changeBeats(4).changehands(5).scale(2.0,2.0),
+          QuarterRight.changeBeats(2).changehands(Hands.GRIPLEFT) +
+          ExtendLeft.changeBeats(4).changehands(Hands.GRIPLEFT).scale(2.0,2.0),
 
-          EighthRight.changeBeats(2).changehands(2).skew(0.707,-1.293) +
-          EighthRight.changeBeats(2).changehands(2).skew(1.354,0.354),
+          EighthRight.changeBeats(2).changehands(Hands.RIGHT).skew(0.707,-1.293) +
+          EighthRight.changeBeats(2).changehands(Hands.RIGHT).skew(1.354,0.354),
 
-          QuarterRight.changeBeats(4).changehands(1)
+          QuarterRight.changeBeats(4).changehands(Hands.LEFT)
       ]),
 
     AnimatedCall('Concentric Pair Off',
@@ -494,19 +492,19 @@ import '../c3a/mini_chase.dart' as c3a;
       group:'(From columns) Concentric',
       paths:[
           ExtendLeft.changeBeats(3).scale(3.0,2.5) +
-          SwingRight.changehands(6).scale(0.5,0.5) +
+          SwingRight.changehands(Hands.GRIPRIGHT).scale(0.5,0.5) +
           ExtendLeft.changeBeats(3).scale(3.0,1.5),
 
           ExtendRight.changeBeats(3).scale(3.0,1.5) +
-          SwingRight.changehands(6).scale(0.5,0.5) +
+          SwingRight.changehands(Hands.GRIPRIGHT).scale(0.5,0.5) +
           ExtendRight.changeBeats(3).scale(3.0,2.5),
 
           ExtendLeft.scale(1.0,0.5) +
-          SwingRight.changehands(6).scale(0.5,0.5) +
+          SwingRight.changehands(Hands.GRIPRIGHT).scale(0.5,0.5) +
           ExtendRight.scale(1.0,0.5),
 
           ExtendLeft.scale(1.0,0.5) +
-          SwingRight.changehands(6).scale(0.5,0.5) +
+          SwingRight.changehands(Hands.GRIPRIGHT).scale(0.5,0.5) +
           ExtendRight.scale(1.0,0.5)
       ]),
 
@@ -879,9 +877,9 @@ import '../c3a/mini_chase.dart' as c3a;
 
           QuarterRight.changeBeats(4).skew(-3.0,-0.5),
 
-          QuarterLeft.changeBeats(3).changehands(5).skew(1.0,-0.5),
+          QuarterLeft.changeBeats(3).changehands(Hands.GRIPLEFT).skew(1.0,-0.5),
 
-          QuarterLeft.changeBeats(3).changehands(6).skew(-1.0,-1.5)
+          QuarterLeft.changeBeats(3).changehands(Hands.GRIPRIGHT).skew(-1.0,-1.5)
       ]),
 
     AnimatedCall('Concentric Crossfire',
@@ -951,7 +949,7 @@ import '../c3a/mini_chase.dart' as c3a;
 
           QuarterRight.changeBeats(3).skew(3.0,0.5),
 
-          QuarterRight.changeBeats(3).changehands(2).skew(1.0,0.5),
+          QuarterRight.changeBeats(3).changehands(Hands.RIGHT).skew(1.0,0.5),
 
           HingeRight.changeBeats(3).scale(1.0,0.5).skew(0.0,-1.0)
       ]),
@@ -1033,18 +1031,18 @@ import '../c3a/mini_chase.dart' as c3a;
       formation:Formation('Tidal Wave RH BGGB'),
       group:'(From tidal formation) Concentric',
       paths:[
-          SwingRight.changehands(6).scale(0.5,0.5) +
+          SwingRight.changehands(Hands.GRIPRIGHT).scale(0.5,0.5) +
           LeadLeft.changeBeats(2).scale(2.5,2.5) +
           LeadLeft.changeBeats(2).scale(2.5,2.5) +
           LeadLeft.changeBeats(2).scale(2.5,2.5),
 
-          SwingRight.changehands(6).scale(0.5,0.5) +
+          SwingRight.changehands(Hands.GRIPRIGHT).scale(0.5,0.5) +
           LeadRight.changeBeats(6).scale(3.5,3.5),
 
-          SwingRight.changehands(6).scale(0.5,0.5) +
+          SwingRight.changehands(Hands.GRIPRIGHT).scale(0.5,0.5) +
           CastLeft.scale(0.5,0.5),
 
-          SwingRight.changehands(6).scale(0.5,0.5) +
+          SwingRight.changehands(Hands.GRIPRIGHT).scale(0.5,0.5) +
           LeadRight.changeBeats(2).scale(1.5,1.5)
       ]),
 
@@ -1052,16 +1050,16 @@ import '../c3a/mini_chase.dart' as c3a;
       formation:Formation('Tidal Wave RH BGGB'),
       group:'(From tidal formation) Concentric',
       paths:[
-          SwingRight.changehands(6).scale(0.5,0.5) +
+          SwingRight.changehands(Hands.GRIPRIGHT).scale(0.5,0.5) +
           RunLeft.changeBeats(4).scale(1.5,2.5),
 
-          SwingRight.changehands(6).scale(0.5,0.5) +
+          SwingRight.changehands(Hands.GRIPRIGHT).scale(0.5,0.5) +
           Stand.changeBeats(4).changehands(0),
 
-          SwingRight.changehands(6).scale(0.5,0.5) +
+          SwingRight.changehands(Hands.GRIPRIGHT).scale(0.5,0.5) +
           SwingLeft.changeBeats(4).scale(0.5,0.5),
 
-          SwingRight.changehands(6).scale(0.5,0.5) +
+          SwingRight.changehands(Hands.GRIPRIGHT).scale(0.5,0.5) +
           Stand.changeBeats(4).changehands(0)
       ]),
 
@@ -1096,68 +1094,68 @@ import '../c3a/mini_chase.dart' as c3a;
       group:'(From tidal formation) Concentric',
       paths:[
           Forward +
-          ExtendRight.changeBeats(3).changehands(2).scale(2.0,2.5),
+          ExtendRight.changeBeats(3).changehands(Hands.RIGHT).scale(2.0,2.5),
 
           Forward +
-          ExtendRight.changeBeats(3).changehands(1).scale(2.0,3.5),
+          ExtendRight.changeBeats(3).changehands(Hands.LEFT).scale(2.0,3.5),
 
-          ExtendRight.changeBeats(2).changehands(2).scale(1.0,0.5) +
-          Stand.changeBeats(2).changehands(2),
+          ExtendRight.changeBeats(2).changehands(Hands.RIGHT).scale(1.0,0.5) +
+          Stand.changeBeats(2).changehands(Hands.RIGHT),
 
-          ExtendRight.changeBeats(2).changehands(1).scale(1.0,1.5) +
-          Stand.changeBeats(2).changehands(1)
+          ExtendRight.changeBeats(2).changehands(Hands.LEFT).scale(1.0,1.5) +
+          Stand.changeBeats(2).changehands(Hands.LEFT)
       ]),
 
     AnimatedCall('Concentric Wheel and Deal',
       formation:Formation('Two-Faced Tidal Line RH'),
       group:'(From tidal formation) Concentric',
       paths:[
-          RunRight.changeBeats(6).changehands(2).skew(3.0,-2.5),
+          RunRight.changeBeats(6).changehands(Hands.RIGHT).skew(3.0,-2.5),
 
-          UmTurnRight.changeBeats(6).changehands(1).skew(3.0,-1.5),
+          UmTurnRight.changeBeats(6).changehands(Hands.LEFT).skew(3.0,-1.5),
 
-          RunLeft.changeBeats(4).changehands(1).skew(1.0,0.5),
+          RunLeft.changeBeats(4).changehands(Hands.LEFT).skew(1.0,0.5),
 
-          UmTurnLeft.changeBeats(4).changehands(2).skew(1.0,-0.5)
+          UmTurnLeft.changeBeats(4).changehands(Hands.RIGHT).skew(1.0,-0.5)
       ]),
 
     AnimatedCall('Concentric Wheel and Deal',
       formation:Formation('Two-Faced Tidal Line LH'),
       group:'Concentric',noDisplay: true,
       paths:[
-          RunLeft.changeBeats(6).changehands(1).skew(3.0,2.5),
+          RunLeft.changeBeats(6).changehands(Hands.LEFT).skew(3.0,2.5),
 
-          UmTurnLeft.changeBeats(6).changehands(2).skew(3.0,1.5),
+          UmTurnLeft.changeBeats(6).changehands(Hands.RIGHT).skew(3.0,1.5),
 
-          RunRight.changeBeats(4).changehands(2).skew(1.0,-0.5),
+          RunRight.changeBeats(4).changehands(Hands.RIGHT).skew(1.0,-0.5),
 
-          UmTurnRight.changeBeats(4).changehands(1).skew(1.0,0.5)
+          UmTurnRight.changeBeats(4).changehands(Hands.LEFT).skew(1.0,0.5)
       ]),
 
     AnimatedCall('Concentric Wheel and Deal',
       formation:Formation('Tidal Line RH'),
       group:'Concentric',noDisplay: true,
       paths:[
-          RunRight.changeBeats(6).changehands(2).skew(3.0,-2.5),
+          RunRight.changeBeats(6).changehands(Hands.RIGHT).skew(3.0,-2.5),
 
-          UmTurnRight.changeBeats(6).changehands(1).skew(3.0,-1.5),
+          UmTurnRight.changeBeats(6).changehands(Hands.LEFT).skew(3.0,-1.5),
 
-          RunRight.changeBeats(4).changehands(2).skew(1.0,-0.5),
+          RunRight.changeBeats(4).changehands(Hands.RIGHT).skew(1.0,-0.5),
 
-          UmTurnRight.changeBeats(4).changehands(1).skew(1.0,0.5)
+          UmTurnRight.changeBeats(4).changehands(Hands.LEFT).skew(1.0,0.5)
       ]),
 
     AnimatedCall('Concentric Wheel and Deal',
       formation:Formation('Tidal Line LH'),
       group:'Concentric',noDisplay: true,
       paths:[
-          UmTurnLeft.changeBeats(6).changehands(2).skew(3.0,1.5),
+          UmTurnLeft.changeBeats(6).changehands(Hands.RIGHT).skew(3.0,1.5),
 
-          RunLeft.changeBeats(6).changehands(1).skew(3.0,2.5),
+          RunLeft.changeBeats(6).changehands(Hands.LEFT).skew(3.0,2.5),
 
-          UmTurnLeft.changeBeats(4).changehands(2).skew(1.0,-0.5),
+          UmTurnLeft.changeBeats(4).changehands(Hands.RIGHT).skew(1.0,-0.5),
 
-          RunLeft.changeBeats(4).changehands(1).skew(1.0,0.5)
+          RunLeft.changeBeats(4).changehands(Hands.LEFT).skew(1.0,0.5)
       ]),
     c1.Recycle.where((tam) =>
       tam.title == 'Concentric 2/3 Recycle').first.xref(title: 'Concentric 2/3 Recycle').xref(group: 'Concentric (C-1)'),

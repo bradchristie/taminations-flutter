@@ -20,7 +20,6 @@
 
 import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> Bingo = [
@@ -136,19 +135,19 @@ import '../../moves.dart';
       formation:Formation('Two-Faced Lines RH'),
       group:' ',
       paths:[
-          LeadRight.changeBeats(3).changehands(2).scale(3.5,3.0) +
-          ExtendLeft.changeBeats(3).changehands(2).scale(2.0,1.5),
+          LeadRight.changeBeats(3).changehands(Hands.RIGHT).scale(3.5,3.0) +
+          ExtendLeft.changeBeats(3).changehands(Hands.RIGHT).scale(2.0,1.5),
 
-          LeadRight.changeBeats(3).changehands(1).scale(2.5,1.0) +
-          ExtendLeft.changeBeats(3).changehands(1).scale(2.0,0.5),
+          LeadRight.changeBeats(3).changehands(Hands.LEFT).scale(2.5,1.0) +
+          ExtendLeft.changeBeats(3).changehands(Hands.LEFT).scale(2.0,0.5),
 
           HingeLeft.changeBeats(2).scale(2.0,2.0).skew(0.33,-0.33) +
           HingeLeft.changeBeats(2).scale(2.0,2.0).skew(-0.33,-0.33) +
           HingeLeft.changeBeats(2).scale(2.0,2.0).skew(-0.33,0.33),
 
-          QuarterLeft.changeBeats(2).changehands(2).skew(0.33,-0.33) +
-          QuarterLeft.changeBeats(2).changehands(2).skew(-0.33,-0.33) +
-          QuarterLeft.changeBeats(2).changehands(2).skew(-0.33,0.33)
+          QuarterLeft.changeBeats(2).changehands(Hands.RIGHT).skew(0.33,-0.33) +
+          QuarterLeft.changeBeats(2).changehands(Hands.RIGHT).skew(-0.33,-0.33) +
+          QuarterLeft.changeBeats(2).changehands(Hands.RIGHT).skew(-0.33,0.33)
       ]),
 
     AnimatedCall('Tandem Bingo',

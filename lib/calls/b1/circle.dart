@@ -19,7 +19,7 @@
 */
 
 import '../../animated_call.dart';
-import '../../formation.dart';
+import '../../common_dart.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> Circle = [
@@ -32,7 +32,7 @@ import '../../moves.dart';
       However, in general dancers continue to circle left until the next call is given.
     ''',
       paths:[
-          Forward.changehands(3).scale(0.59,0.59) +
+          Forward.changehands(Hands.BOTH).scale(0.59,0.59) +
           cl +
           cl +
           cl +
@@ -41,9 +41,9 @@ import '../../moves.dart';
           cl +
           cl +
           cl +
-          Back.changehands(2).scale(0.59,0.59),
+          Back.changehands(Hands.RIGHT).scale(0.59,0.59),
 
-          EighthLeft.changeBeats(1).changehands(7).skew(0.59,0.0) +
+          EighthLeft.changeBeats(1).changehands(Hands.GRIPBOTH).skew(0.59,0.0) +
           cl +
           cl +
           cl +
@@ -52,9 +52,9 @@ import '../../moves.dart';
           cl +
           cl +
           cl +
-          EighthRight.changeBeats(1).changehands(1).skew(-0.417,0.417),
+          EighthRight.changeBeats(1).changehands(Hands.LEFT).skew(-0.417,0.417),
 
-          Forward.changehands(3).scale(0.59,1.0) +
+          Forward.changehands(Hands.BOTH).scale(0.59,1.0) +
           cl +
           cl +
           cl +
@@ -63,9 +63,9 @@ import '../../moves.dart';
           cl +
           cl +
           cl +
-          Back.changehands(2).scale(0.59,1.0),
+          Back.changehands(Hands.RIGHT).scale(0.59,1.0),
 
-          EighthLeft.changeBeats(1).changehands(7).skew(0.5,0.0) +
+          EighthLeft.changeBeats(1).changehands(Hands.GRIPBOTH).skew(0.5,0.0) +
           cl +
           cl +
           cl +
@@ -74,127 +74,127 @@ import '../../moves.dart';
           cl +
           cl +
           cl +
-          EighthRight.changeBeats(1).changehands(1).skew(-0.417,0.417)
+          EighthRight.changeBeats(1).changehands(Hands.LEFT).skew(-0.417,0.417)
       ]),
 
     AnimatedCall('Circle Left 1/8',
       formation:Formation('Static Square'),
       from:'Static Square',group:' ',noDisplay: true,
       paths:[
-          Forward.changehands(3).scale(0.59,0.59) +
+          Forward.changehands(Hands.BOTH).scale(0.59,0.59) +
           cl +
-          EighthRight.changeBeats(1).changehands(1).skew(-0.417,0.417),
+          EighthRight.changeBeats(1).changehands(Hands.LEFT).skew(-0.417,0.417),
 
-          EighthLeft.changeBeats(1).changehands(7).skew(0.59,0.0) +
+          EighthLeft.changeBeats(1).changehands(Hands.GRIPBOTH).skew(0.59,0.0) +
           cl +
-          Back.changehands(2).scale(0.59,0.59),
+          Back.changehands(Hands.RIGHT).scale(0.59,0.59),
 
-          Forward.changehands(3).scale(0.59,1.0) +
+          Forward.changehands(Hands.BOTH).scale(0.59,1.0) +
           cl +
-          EighthRight.changeBeats(1).changehands(1).skew(-0.417,0.417),
+          EighthRight.changeBeats(1).changehands(Hands.LEFT).skew(-0.417,0.417),
 
-          EighthLeft.changeBeats(1).changehands(7).skew(0.5,0.0) +
+          EighthLeft.changeBeats(1).changehands(Hands.GRIPBOTH).skew(0.5,0.0) +
           cl +
-          Back.changehands(2).scale(0.59,1.0)
+          Back.changehands(Hands.RIGHT).scale(0.59,1.0)
       ]),
 
     AnimatedCall('Circle Left 1/4',
       formation:Formation('Static Square'),
       from:'Static Square',group:' ',
       paths:[
-          Forward.changehands(3).scale(0.59,0.59) +
+          Forward.changehands(Hands.BOTH).scale(0.59,0.59) +
           cl +
           cl +
-          Back.changehands(2).scale(0.59,0.59),
+          Back.changehands(Hands.RIGHT).scale(0.59,0.59),
 
-          EighthLeft.changeBeats(1).changehands(7).skew(0.59,0.0) +
+          EighthLeft.changeBeats(1).changehands(Hands.GRIPBOTH).skew(0.59,0.0) +
           cl +
           cl +
-          EighthRight.changeBeats(1).changehands(1).skew(-0.417,0.417),
+          EighthRight.changeBeats(1).changehands(Hands.LEFT).skew(-0.417,0.417),
 
-          Forward.changehands(3).scale(0.59,1.0) +
+          Forward.changehands(Hands.BOTH).scale(0.59,1.0) +
           cl +
           cl +
-          Back.changehands(2).scale(0.59,1.0),
+          Back.changehands(Hands.RIGHT).scale(0.59,1.0),
 
-          EighthLeft.changeBeats(1).changehands(7).skew(0.5,0.0) +
+          EighthLeft.changeBeats(1).changehands(Hands.GRIPBOTH).skew(0.5,0.0) +
           cl +
           cl +
-          EighthRight.changeBeats(1).changehands(1).skew(-0.417,0.417)
+          EighthRight.changeBeats(1).changehands(Hands.LEFT).skew(-0.417,0.417)
       ]),
 
     AnimatedCall('Circle Left 1/2',
       formation:Formation('Static Square'),
       from:'Static Square',group:' ',
       paths:[
-          Forward.changehands(3).scale(0.59,0.59) +
+          Forward.changehands(Hands.BOTH).scale(0.59,0.59) +
           cl +
           cl +
           cl +
           cl +
-          Back.changehands(2).scale(0.59,0.59),
+          Back.changehands(Hands.RIGHT).scale(0.59,0.59),
 
-          EighthLeft.changeBeats(1).changehands(7).skew(0.59,0.0) +
+          EighthLeft.changeBeats(1).changehands(Hands.GRIPBOTH).skew(0.59,0.0) +
           cl +
           cl +
           cl +
           cl +
-          EighthRight.changeBeats(1).changehands(1).skew(-0.417,0.417),
+          EighthRight.changeBeats(1).changehands(Hands.LEFT).skew(-0.417,0.417),
 
-          Forward.changehands(3).scale(0.59,1.0) +
+          Forward.changehands(Hands.BOTH).scale(0.59,1.0) +
           cl +
           cl +
           cl +
           cl +
-          Back.changehands(2).scale(0.59,1.0),
+          Back.changehands(Hands.RIGHT).scale(0.59,1.0),
 
-          EighthLeft.changeBeats(1).changehands(7).skew(0.5,0.0) +
+          EighthLeft.changeBeats(1).changehands(Hands.GRIPBOTH).skew(0.5,0.0) +
           cl +
           cl +
           cl +
           cl +
-          EighthRight.changeBeats(1).changehands(1).skew(-0.417,0.417)
+          EighthRight.changeBeats(1).changehands(Hands.LEFT).skew(-0.417,0.417)
       ]),
 
     AnimatedCall('Circle Left 3/4',
       formation:Formation('Static Square'),
       from:'Static Square',group:' ',
       paths:[
-          Forward.changehands(3).scale(0.59,0.59) +
+          Forward.changehands(Hands.BOTH).scale(0.59,0.59) +
           cl +
           cl +
           cl +
           cl +
           cl +
           cl +
-          Back.changehands(2).scale(0.59,0.59),
+          Back.changehands(Hands.RIGHT).scale(0.59,0.59),
 
-          EighthLeft.changeBeats(1).changehands(7).skew(0.59,0.0) +
+          EighthLeft.changeBeats(1).changehands(Hands.GRIPBOTH).skew(0.59,0.0) +
           cl +
           cl +
           cl +
           cl +
           cl +
           cl +
-          EighthRight.changeBeats(1).changehands(1).skew(-0.417,0.417),
+          EighthRight.changeBeats(1).changehands(Hands.LEFT).skew(-0.417,0.417),
 
-          Forward.changehands(3).scale(0.59,1.0) +
+          Forward.changehands(Hands.BOTH).scale(0.59,1.0) +
           cl +
           cl +
           cl +
           cl +
           cl +
           cl +
-          Back.changehands(2).scale(0.59,1.0),
+          Back.changehands(Hands.RIGHT).scale(0.59,1.0),
 
-          EighthLeft.changeBeats(1).changehands(7).skew(0.5,0.0) +
+          EighthLeft.changeBeats(1).changehands(Hands.GRIPBOTH).skew(0.5,0.0) +
           cl +
           cl +
           cl +
           cl +
           cl +
           cl +
-          EighthRight.changeBeats(1).changehands(1).skew(-0.417,0.417)
+          EighthRight.changeBeats(1).changehands(Hands.LEFT).skew(-0.417,0.417)
       ]),
 
     AnimatedCall('Circle Right',
@@ -205,7 +205,7 @@ import '../../moves.dart';
       However, in general dancers continue to circle right until the next call is given.
     ''',
       paths:[
-          EighthRight.changeBeats(1).changehands(7).skew(0.59,0.0) +
+          EighthRight.changeBeats(1).changehands(Hands.GRIPBOTH).skew(0.59,0.0) +
           cr +
           cr +
           cr +
@@ -214,9 +214,9 @@ import '../../moves.dart';
           cr +
           cr +
           cr +
-          EighthLeft.changeBeats(1).changehands(2).skew(-0.417,-0.417),
+          EighthLeft.changeBeats(1).changehands(Hands.RIGHT).skew(-0.417,-0.417),
 
-          Forward.changehands(3).scale(0.59,1.0) +
+          Forward.changehands(Hands.BOTH).scale(0.59,1.0) +
           cr +
           cr +
           cr +
@@ -225,9 +225,9 @@ import '../../moves.dart';
           cr +
           cr +
           cr +
-          Back.changehands(1).scale(0.59,1.0),
+          Back.changehands(Hands.LEFT).scale(0.59,1.0),
 
-          EighthRight.changeBeats(1).changehands(7).skew(0.59,0.0) +
+          EighthRight.changeBeats(1).changehands(Hands.GRIPBOTH).skew(0.59,0.0) +
           cr +
           cr +
           cr +
@@ -236,9 +236,9 @@ import '../../moves.dart';
           cr +
           cr +
           cr +
-          EighthLeft.changeBeats(1).changehands(2).skew(-0.417,-0.417),
+          EighthLeft.changeBeats(1).changehands(Hands.RIGHT).skew(-0.417,-0.417),
 
-          Forward.changehands(3).scale(0.59,1.0) +
+          Forward.changehands(Hands.BOTH).scale(0.59,1.0) +
           cr +
           cr +
           cr +
@@ -247,517 +247,517 @@ import '../../moves.dart';
           cr +
           cr +
           cr +
-          Back.changehands(1).scale(0.59,1.0)
+          Back.changehands(Hands.LEFT).scale(0.59,1.0)
       ]),
 
     AnimatedCall('Circle Right 1/8',
       formation:Formation('Static Square'),
       from:'Static Square',group:' ',noDisplay: true,
       paths:[
-          EighthRight.changeBeats(1).changehands(7).skew(0.59,0.0) +
+          EighthRight.changeBeats(1).changehands(Hands.GRIPBOTH).skew(0.59,0.0) +
           cr +
-          Back.changehands(1).scale(0.59,1.0),
+          Back.changehands(Hands.LEFT).scale(0.59,1.0),
 
-          Forward.changehands(3).scale(0.59,1.0) +
+          Forward.changehands(Hands.BOTH).scale(0.59,1.0) +
           cr +
-          EighthLeft.changeBeats(1).changehands(2).skew(-0.417,-0.417),
+          EighthLeft.changeBeats(1).changehands(Hands.RIGHT).skew(-0.417,-0.417),
 
-          EighthRight.changeBeats(1).changehands(7).skew(0.59,0.0) +
+          EighthRight.changeBeats(1).changehands(Hands.GRIPBOTH).skew(0.59,0.0) +
           cr +
-          Back.changehands(1).scale(0.59,1.0),
+          Back.changehands(Hands.LEFT).scale(0.59,1.0),
 
-          Forward.changehands(3).scale(0.59,1.0) +
+          Forward.changehands(Hands.BOTH).scale(0.59,1.0) +
           cr +
-          EighthLeft.changeBeats(1).changehands(2).skew(-0.417,-0.417)
+          EighthLeft.changeBeats(1).changehands(Hands.RIGHT).skew(-0.417,-0.417)
       ]),
 
     AnimatedCall('Circle Right 1/4',
       formation:Formation('Static Square'),
       from:'Static Square',group:' ',
       paths:[
-          EighthRight.changeBeats(1).changehands(7).skew(0.59,0.0) +
+          EighthRight.changeBeats(1).changehands(Hands.GRIPBOTH).skew(0.59,0.0) +
           cr +
           cr +
-          EighthLeft.changeBeats(1).changehands(2).skew(-0.417,-0.417),
+          EighthLeft.changeBeats(1).changehands(Hands.RIGHT).skew(-0.417,-0.417),
 
-          Forward.changehands(3).scale(0.59,1.0) +
+          Forward.changehands(Hands.BOTH).scale(0.59,1.0) +
           cr +
           cr +
-          Back.changehands(1).scale(0.59,1.0),
+          Back.changehands(Hands.LEFT).scale(0.59,1.0),
 
-          EighthRight.changeBeats(1).changehands(7).skew(0.59,0.0) +
+          EighthRight.changeBeats(1).changehands(Hands.GRIPBOTH).skew(0.59,0.0) +
           cr +
           cr +
-          EighthLeft.changeBeats(1).changehands(2).skew(-0.417,-0.417),
+          EighthLeft.changeBeats(1).changehands(Hands.RIGHT).skew(-0.417,-0.417),
 
-          Forward.changehands(3).scale(0.59,1.0) +
+          Forward.changehands(Hands.BOTH).scale(0.59,1.0) +
           cr +
           cr +
-          Back.changehands(1).scale(0.59,1.0)
+          Back.changehands(Hands.LEFT).scale(0.59,1.0)
       ]),
 
     AnimatedCall('Circle Right 1/2',
       formation:Formation('Static Square'),
       from:'Static Square',group:' ',
       paths:[
-          EighthRight.changeBeats(1).changehands(7).skew(0.59,0.0) +
+          EighthRight.changeBeats(1).changehands(Hands.GRIPBOTH).skew(0.59,0.0) +
           cr +
           cr +
           cr +
           cr +
-          EighthLeft.changeBeats(1).changehands(2).skew(-0.417,-0.417),
+          EighthLeft.changeBeats(1).changehands(Hands.RIGHT).skew(-0.417,-0.417),
 
-          Forward.changehands(3).scale(0.59,1.0) +
+          Forward.changehands(Hands.BOTH).scale(0.59,1.0) +
           cr +
           cr +
           cr +
           cr +
-          Back.changehands(1).scale(0.59,1.0),
+          Back.changehands(Hands.LEFT).scale(0.59,1.0),
 
-          EighthRight.changeBeats(1).changehands(7).skew(0.59,0.0) +
+          EighthRight.changeBeats(1).changehands(Hands.GRIPBOTH).skew(0.59,0.0) +
           cr +
           cr +
           cr +
           cr +
-          EighthLeft.changeBeats(1).changehands(2).skew(-0.417,-0.417),
+          EighthLeft.changeBeats(1).changehands(Hands.RIGHT).skew(-0.417,-0.417),
 
-          Forward.changehands(3).scale(0.59,1.0) +
+          Forward.changehands(Hands.BOTH).scale(0.59,1.0) +
           cr +
           cr +
           cr +
           cr +
-          Back.changehands(1).scale(0.59,1.0)
+          Back.changehands(Hands.LEFT).scale(0.59,1.0)
       ]),
 
     AnimatedCall('Circle Right 3/4',
       formation:Formation('Static Square'),
       from:'Static Square',group:' ',
       paths:[
-          EighthRight.changeBeats(1).changehands(7).skew(0.59,0.0) +
+          EighthRight.changeBeats(1).changehands(Hands.GRIPBOTH).skew(0.59,0.0) +
           cr +
           cr +
           cr +
           cr +
           cr +
           cr +
-          EighthLeft.changeBeats(1).changehands(2).skew(-0.417,-0.417),
+          EighthLeft.changeBeats(1).changehands(Hands.RIGHT).skew(-0.417,-0.417),
 
-          Forward.changehands(3).scale(0.59,1.0) +
+          Forward.changehands(Hands.BOTH).scale(0.59,1.0) +
           cr +
           cr +
           cr +
           cr +
           cr +
           cr +
-          Back.changehands(1).scale(0.59,1.0),
+          Back.changehands(Hands.LEFT).scale(0.59,1.0),
 
-          EighthRight.changeBeats(1).changehands(7).skew(0.59,0.0) +
+          EighthRight.changeBeats(1).changehands(Hands.GRIPBOTH).skew(0.59,0.0) +
           cr +
           cr +
           cr +
           cr +
           cr +
           cr +
-          EighthLeft.changeBeats(1).changehands(2).skew(-0.417,-0.417),
+          EighthLeft.changeBeats(1).changehands(Hands.RIGHT).skew(-0.417,-0.417),
 
-          Forward.changehands(3).scale(0.59,1.0) +
+          Forward.changehands(Hands.BOTH).scale(0.59,1.0) +
           cr +
           cr +
           cr +
           cr +
           cr +
           cr +
-          Back.changehands(1).scale(0.59,1.0)
+          Back.changehands(Hands.LEFT).scale(0.59,1.0)
       ]),
 
     AnimatedCall('Circle Four Left 1/4',
       formation:Formation('Facing Couples Compact'),
       from:'Facing Couples',
       paths:[
-          EighthRight.changehands(2).skew(0.5,0.0) +
+          EighthRight.changehands(Hands.RIGHT).skew(0.5,0.0) +
           CircleLeftQuarter.scale(2.0,2.0) +
-          EighthLeft.changehands(2).skew(-0.353,-0.353),
+          EighthLeft.changehands(Hands.RIGHT).skew(-0.353,-0.353),
 
-          EighthLeft.changehands(1).skew(0.5,0.0) +
+          EighthLeft.changehands(Hands.LEFT).skew(0.5,0.0) +
           CircleLeftQuarter.scale(2.0,2.0) +
-          EighthRight.changehands(1).skew(-0.353,0.353)
+          EighthRight.changehands(Hands.LEFT).skew(-0.353,0.353)
       ]),
 
     AnimatedCall('Circle Four Left 1/4',
       formation:Formation('Normal Lines'),
       from:'Lines',
       paths:[
-          EighthRight.changehands(2).skew(1.0,0.0) +
+          EighthRight.changehands(Hands.RIGHT).skew(1.0,0.0) +
           CircleLeftQuarter.scale(2.0,2.0) +
-          EighthLeft.changehands(2),
+          EighthLeft.changehands(Hands.RIGHT),
 
-          EighthLeft.changehands(1).skew(1.0,0.0) +
+          EighthLeft.changehands(Hands.LEFT).skew(1.0,0.0) +
           CircleLeftQuarter.scale(2.0,2.0) +
-          EighthRight.changehands(1),
+          EighthRight.changehands(Hands.LEFT),
 
-          EighthRight.changehands(2).skew(1.0,0.0) +
+          EighthRight.changehands(Hands.RIGHT).skew(1.0,0.0) +
           CircleLeftQuarter.scale(2.0,2.0) +
-          EighthLeft.changehands(2),
+          EighthLeft.changehands(Hands.RIGHT),
 
-          EighthLeft.changehands(1).skew(1.0,0.0) +
+          EighthLeft.changehands(Hands.LEFT).skew(1.0,0.0) +
           CircleLeftQuarter.scale(2.0,2.0) +
-          EighthRight.changehands(1)
+          EighthRight.changehands(Hands.LEFT)
       ]),
 
     AnimatedCall('Circle Four Left 1/4',
       formation:Formation('Eight Chain Thru'),
       from:'Eight Chain Thru',
       paths:[
-          EighthRight.changehands(6) +
+          EighthRight.changehands(Hands.GRIPRIGHT) +
           CircleLeftQuarter.scale(2.0,2.0) +
-          EighthLeft.changehands(2).skew(-0.707,-0.707),
+          EighthLeft.changehands(Hands.RIGHT).skew(-0.707,-0.707),
 
-          EighthLeft.changehands(5) +
+          EighthLeft.changehands(Hands.GRIPLEFT) +
           CircleLeftQuarter.scale(2.0,2.0) +
-          EighthRight.changehands(1).skew(-0.707,0.707),
+          EighthRight.changehands(Hands.LEFT).skew(-0.707,0.707),
 
-          EighthRight.changehands(6) +
+          EighthRight.changehands(Hands.GRIPRIGHT) +
           CircleLeftQuarter.scale(2.0,2.0) +
-          EighthLeft.changehands(2).skew(-0.707,-0.707),
+          EighthLeft.changehands(Hands.RIGHT).skew(-0.707,-0.707),
 
-          EighthLeft.changehands(5) +
+          EighthLeft.changehands(Hands.GRIPLEFT) +
           CircleLeftQuarter.scale(2.0,2.0) +
-          EighthRight.changehands(1).skew(-0.707,0.707)
+          EighthRight.changehands(Hands.LEFT).skew(-0.707,0.707)
       ]),
 
     AnimatedCall('Circle Four Right 1/4',
       formation:Formation('Facing Couples Compact'),
       from:'Facing Couples',
       paths:[
-          EighthRight.changehands(2).skew(0.5,0.0) +
+          EighthRight.changehands(Hands.RIGHT).skew(0.5,0.0) +
           CircleRightQuarter.scale(2.0,2.0) +
-          EighthLeft.changehands(2).skew(-0.353,-0.353),
+          EighthLeft.changehands(Hands.RIGHT).skew(-0.353,-0.353),
 
-          EighthLeft.changehands(1).skew(0.5,0.0) +
+          EighthLeft.changehands(Hands.LEFT).skew(0.5,0.0) +
           CircleRightQuarter.scale(2.0,2.0) +
-          EighthRight.changehands(1).skew(-0.353,0.353)
+          EighthRight.changehands(Hands.LEFT).skew(-0.353,0.353)
       ]),
 
     AnimatedCall('Circle Four Right 1/4',
       formation:Formation('Normal Lines'),
       from:'Lines',
       paths:[
-          EighthRight.changehands(2).skew(1.0,0.0) +
+          EighthRight.changehands(Hands.RIGHT).skew(1.0,0.0) +
           CircleRightQuarter.scale(2.0,2.0) +
-          EighthLeft.changehands(2),
+          EighthLeft.changehands(Hands.RIGHT),
 
-          EighthLeft.changehands(1).skew(1.0,0.0) +
+          EighthLeft.changehands(Hands.LEFT).skew(1.0,0.0) +
           CircleRightQuarter.scale(2.0,2.0) +
-          EighthRight.changehands(1),
+          EighthRight.changehands(Hands.LEFT),
 
-          EighthRight.changehands(2).skew(1.0,0.0) +
+          EighthRight.changehands(Hands.RIGHT).skew(1.0,0.0) +
           CircleRightQuarter.scale(2.0,2.0) +
-          EighthLeft.changehands(2),
+          EighthLeft.changehands(Hands.RIGHT),
 
-          EighthLeft.changehands(1).skew(1.0,0.0) +
+          EighthLeft.changehands(Hands.LEFT).skew(1.0,0.0) +
           CircleRightQuarter.scale(2.0,2.0) +
-          EighthRight.changehands(1)
+          EighthRight.changehands(Hands.LEFT)
       ]),
 
     AnimatedCall('Circle Four Right 1/4',
       formation:Formation('Eight Chain Thru'),
       from:'Eight Chain Thru',
       paths:[
-          EighthRight.changehands(6) +
+          EighthRight.changehands(Hands.GRIPRIGHT) +
           CircleRightQuarter.scale(2.0,2.0) +
-          EighthLeft.changehands(2).skew(-0.707,-0.707),
+          EighthLeft.changehands(Hands.RIGHT).skew(-0.707,-0.707),
 
-          EighthLeft.changehands(5) +
+          EighthLeft.changehands(Hands.GRIPLEFT) +
           CircleRightQuarter.scale(2.0,2.0) +
-          EighthRight.changehands(1).skew(-0.707,0.707),
+          EighthRight.changehands(Hands.LEFT).skew(-0.707,0.707),
 
-          EighthRight.changehands(6) +
+          EighthRight.changehands(Hands.GRIPRIGHT) +
           CircleRightQuarter.scale(2.0,2.0) +
-          EighthLeft.changehands(2).skew(-0.707,-0.707),
+          EighthLeft.changehands(Hands.RIGHT).skew(-0.707,-0.707),
 
-          EighthLeft.changehands(5) +
+          EighthLeft.changehands(Hands.GRIPLEFT) +
           CircleRightQuarter.scale(2.0,2.0) +
-          EighthRight.changehands(1).skew(-0.707,0.707)
+          EighthRight.changehands(Hands.LEFT).skew(-0.707,0.707)
       ]),
 
     AnimatedCall('Circle Four Left 1/2',
       formation:Formation('Facing Couples Compact'),
       from:'Facing Couples',
       paths:[
-          EighthRight.changehands(2).skew(0.5,0.0) +
+          EighthRight.changehands(Hands.RIGHT).skew(0.5,0.0) +
           CircleLeftQuarter.scale(2.0,2.0) +
           CircleLeftQuarter.scale(2.0,2.0) +
-          EighthLeft.changehands(2).skew(-0.353,-0.353),
+          EighthLeft.changehands(Hands.RIGHT).skew(-0.353,-0.353),
 
-          EighthLeft.changehands(1).skew(0.5,0.0) +
+          EighthLeft.changehands(Hands.LEFT).skew(0.5,0.0) +
           CircleLeftQuarter.scale(2.0,2.0) +
           CircleLeftQuarter.scale(2.0,2.0) +
-          EighthRight.changehands(1).skew(-0.353,0.353)
+          EighthRight.changehands(Hands.LEFT).skew(-0.353,0.353)
       ]),
 
     AnimatedCall('Circle Four Left 1/2',
       formation:Formation('Normal Lines'),
       from:'Lines',
       paths:[
-          EighthRight.changehands(2).skew(1.0,0.0) +
+          EighthRight.changehands(Hands.RIGHT).skew(1.0,0.0) +
           CircleLeftQuarter.scale(2.0,2.0) +
           CircleLeftQuarter.scale(2.0,2.0) +
-          EighthLeft.changehands(2).skew(-0.707,-0.707),
+          EighthLeft.changehands(Hands.RIGHT).skew(-0.707,-0.707),
 
-          EighthLeft.changehands(1).skew(1.0,0.0) +
+          EighthLeft.changehands(Hands.LEFT).skew(1.0,0.0) +
           CircleLeftQuarter.scale(2.0,2.0) +
           CircleLeftQuarter.scale(2.0,2.0) +
-          EighthRight.changehands(1).skew(-0.707,0.707),
+          EighthRight.changehands(Hands.LEFT).skew(-0.707,0.707),
 
-          EighthRight.changehands(2).skew(1.0,0.0) +
+          EighthRight.changehands(Hands.RIGHT).skew(1.0,0.0) +
           CircleLeftQuarter.scale(2.0,2.0) +
           CircleLeftQuarter.scale(2.0,2.0) +
-          EighthLeft.changehands(2).skew(-0.707,-0.707),
+          EighthLeft.changehands(Hands.RIGHT).skew(-0.707,-0.707),
 
-          EighthLeft.changehands(1).skew(1.0,0.0) +
+          EighthLeft.changehands(Hands.LEFT).skew(1.0,0.0) +
           CircleLeftQuarter.scale(2.0,2.0) +
           CircleLeftQuarter.scale(2.0,2.0) +
-          EighthRight.changehands(1).skew(-0.707,0.707)
+          EighthRight.changehands(Hands.LEFT).skew(-0.707,0.707)
       ]),
 
     AnimatedCall('Circle Four Left 1/2',
       formation:Formation('Eight Chain Thru'),
       from:'Eight Chain Thru',
       paths:[
-          EighthRight.changehands(6) +
+          EighthRight.changehands(Hands.GRIPRIGHT) +
           CircleLeftQuarter.scale(2.0,2.0) +
           CircleLeftQuarter.scale(2.0,2.0) +
-          EighthLeft.changehands(6),
+          EighthLeft.changehands(Hands.GRIPRIGHT),
 
-          EighthLeft.changehands(5) +
+          EighthLeft.changehands(Hands.GRIPLEFT) +
           CircleLeftQuarter.scale(2.0,2.0) +
           CircleLeftQuarter.scale(2.0,2.0) +
-          EighthRight.changehands(5),
+          EighthRight.changehands(Hands.GRIPLEFT),
 
-          EighthRight.changehands(6) +
+          EighthRight.changehands(Hands.GRIPRIGHT) +
           CircleLeftQuarter.scale(2.0,2.0) +
           CircleLeftQuarter.scale(2.0,2.0) +
-          EighthLeft.changehands(6),
+          EighthLeft.changehands(Hands.GRIPRIGHT),
 
-          EighthLeft.changehands(5) +
+          EighthLeft.changehands(Hands.GRIPLEFT) +
           CircleLeftQuarter.scale(2.0,2.0) +
           CircleLeftQuarter.scale(2.0,2.0) +
-          EighthRight.changehands(5)
+          EighthRight.changehands(Hands.GRIPLEFT)
       ]),
 
     AnimatedCall('Circle Four Right 1/2',
       formation:Formation('Facing Couples Compact'),
       from:'Facing Couples',
       paths:[
-          EighthRight.changehands(2).skew(0.5,0.0) +
+          EighthRight.changehands(Hands.RIGHT).skew(0.5,0.0) +
           CircleRightQuarter.scale(2.0,2.0) +
           CircleRightQuarter.scale(2.0,2.0) +
-          EighthLeft.changehands(2).skew(-0.353,-0.353),
+          EighthLeft.changehands(Hands.RIGHT).skew(-0.353,-0.353),
 
-          EighthLeft.changehands(1).skew(0.5,0.0) +
+          EighthLeft.changehands(Hands.LEFT).skew(0.5,0.0) +
           CircleRightQuarter.scale(2.0,2.0) +
           CircleRightQuarter.scale(2.0,2.0) +
-          EighthRight.changehands(1).skew(-0.353,0.353)
+          EighthRight.changehands(Hands.LEFT).skew(-0.353,0.353)
       ]),
 
     AnimatedCall('Circle Four Right 1/2',
       formation:Formation('Normal Lines'),
       from:'Lines',
       paths:[
-          EighthRight.changehands(2).skew(1.0,0.0) +
+          EighthRight.changehands(Hands.RIGHT).skew(1.0,0.0) +
           CircleRightQuarter.scale(2.0,2.0) +
           CircleRightQuarter.scale(2.0,2.0) +
-          EighthLeft.changehands(2).skew(-0.707,-0.707),
+          EighthLeft.changehands(Hands.RIGHT).skew(-0.707,-0.707),
 
-          EighthLeft.changehands(1).skew(1.0,0.0) +
+          EighthLeft.changehands(Hands.LEFT).skew(1.0,0.0) +
           CircleRightQuarter.scale(2.0,2.0) +
           CircleRightQuarter.scale(2.0,2.0) +
-          EighthRight.changehands(1).skew(-0.707,0.707),
+          EighthRight.changehands(Hands.LEFT).skew(-0.707,0.707),
 
-          EighthRight.changehands(2).skew(1.0,0.0) +
+          EighthRight.changehands(Hands.RIGHT).skew(1.0,0.0) +
           CircleRightQuarter.scale(2.0,2.0) +
           CircleRightQuarter.scale(2.0,2.0) +
-          EighthLeft.changehands(2).skew(-0.707,-0.707),
+          EighthLeft.changehands(Hands.RIGHT).skew(-0.707,-0.707),
 
-          EighthLeft.changehands(1).skew(1.0,0.0) +
+          EighthLeft.changehands(Hands.LEFT).skew(1.0,0.0) +
           CircleRightQuarter.scale(2.0,2.0) +
           CircleRightQuarter.scale(2.0,2.0) +
-          EighthRight.changehands(1).skew(-0.707,0.707)
+          EighthRight.changehands(Hands.LEFT).skew(-0.707,0.707)
       ]),
 
     AnimatedCall('Circle Four Right 1/2',
       formation:Formation('Eight Chain Thru'),
       from:'Eight Chain Thru',
       paths:[
-          EighthRight.changehands(6) +
+          EighthRight.changehands(Hands.GRIPRIGHT) +
           CircleRightQuarter.scale(2.0,2.0) +
           CircleRightQuarter.scale(2.0,2.0) +
-          EighthLeft.changehands(6),
+          EighthLeft.changehands(Hands.GRIPRIGHT),
 
-          EighthLeft.changehands(5) +
+          EighthLeft.changehands(Hands.GRIPLEFT) +
           CircleRightQuarter.scale(2.0,2.0) +
           CircleRightQuarter.scale(2.0,2.0) +
-          EighthRight.changehands(5),
+          EighthRight.changehands(Hands.GRIPLEFT),
 
-          EighthRight.changehands(6) +
+          EighthRight.changehands(Hands.GRIPRIGHT) +
           CircleRightQuarter.scale(2.0,2.0) +
           CircleRightQuarter.scale(2.0,2.0) +
-          EighthLeft.changehands(6),
+          EighthLeft.changehands(Hands.GRIPRIGHT),
 
-          EighthLeft.changehands(5) +
+          EighthLeft.changehands(Hands.GRIPLEFT) +
           CircleRightQuarter.scale(2.0,2.0) +
           CircleRightQuarter.scale(2.0,2.0) +
-          EighthRight.changehands(5)
+          EighthRight.changehands(Hands.GRIPLEFT)
       ]),
 
     AnimatedCall('Circle Four Left 3/4',
       formation:Formation('Facing Couples Compact'),
       from:'Facing Couples',
       paths:[
-          EighthRight.changehands(2).skew(0.5,0.0) +
+          EighthRight.changehands(Hands.RIGHT).skew(0.5,0.0) +
           CircleLeftQuarter.scale(2.0,2.0) +
           CircleLeftQuarter.scale(2.0,2.0) +
           CircleLeftQuarter.scale(2.0,2.0) +
-          EighthLeft.changehands(2).skew(-0.353,-0.353),
+          EighthLeft.changehands(Hands.RIGHT).skew(-0.353,-0.353),
 
-          EighthLeft.changehands(1).skew(0.5,0.0) +
+          EighthLeft.changehands(Hands.LEFT).skew(0.5,0.0) +
           CircleLeftQuarter.scale(2.0,2.0) +
           CircleLeftQuarter.scale(2.0,2.0) +
           CircleLeftQuarter.scale(2.0,2.0) +
-          EighthRight.changehands(1).skew(-0.353,0.353)
+          EighthRight.changehands(Hands.LEFT).skew(-0.353,0.353)
       ]),
 
     AnimatedCall('Circle Four Left 3/4',
       formation:Formation('Normal Lines'),
       from:'Lines',
       paths:[
-          EighthRight.changehands(2).skew(1.0,0.0) +
+          EighthRight.changehands(Hands.RIGHT).skew(1.0,0.0) +
           CircleLeftQuarter.scale(2.0,2.0) +
           CircleLeftQuarter.scale(2.0,2.0) +
           CircleLeftQuarter.scale(2.0,2.0) +
-          EighthLeft.changehands(2),
+          EighthLeft.changehands(Hands.RIGHT),
 
-          EighthLeft.changehands(1).skew(1.0,0.0) +
+          EighthLeft.changehands(Hands.LEFT).skew(1.0,0.0) +
           CircleLeftQuarter.scale(2.0,2.0) +
           CircleLeftQuarter.scale(2.0,2.0) +
           CircleLeftQuarter.scale(2.0,2.0) +
-          EighthRight.changehands(1),
+          EighthRight.changehands(Hands.LEFT),
 
-          EighthRight.changehands(2).skew(1.0,0.0) +
+          EighthRight.changehands(Hands.RIGHT).skew(1.0,0.0) +
           CircleLeftQuarter.scale(2.0,2.0) +
           CircleLeftQuarter.scale(2.0,2.0) +
           CircleLeftQuarter.scale(2.0,2.0) +
-          EighthLeft.changehands(2),
+          EighthLeft.changehands(Hands.RIGHT),
 
-          EighthLeft.changehands(1).skew(1.0,0.0) +
+          EighthLeft.changehands(Hands.LEFT).skew(1.0,0.0) +
           CircleLeftQuarter.scale(2.0,2.0) +
           CircleLeftQuarter.scale(2.0,2.0) +
           CircleLeftQuarter.scale(2.0,2.0) +
-          EighthRight.changehands(1)
+          EighthRight.changehands(Hands.LEFT)
       ]),
 
     AnimatedCall('Circle Four Left 3/4',
       formation:Formation('Eight Chain Thru'),
       from:'Eight Chain Thru',
       paths:[
-          EighthRight.changehands(6) +
+          EighthRight.changehands(Hands.GRIPRIGHT) +
           CircleLeftQuarter.scale(2.0,2.0) +
           CircleLeftQuarter.scale(2.0,2.0) +
           CircleLeftQuarter.scale(2.0,2.0) +
-          EighthLeft.changehands(2).skew(-0.707,-0.707),
+          EighthLeft.changehands(Hands.RIGHT).skew(-0.707,-0.707),
 
-          EighthLeft.changehands(5) +
+          EighthLeft.changehands(Hands.GRIPLEFT) +
           CircleLeftQuarter.scale(2.0,2.0) +
           CircleLeftQuarter.scale(2.0,2.0) +
           CircleLeftQuarter.scale(2.0,2.0) +
-          EighthRight.changehands(1).skew(-0.707,0.707),
+          EighthRight.changehands(Hands.LEFT).skew(-0.707,0.707),
 
-          EighthRight.changehands(6) +
+          EighthRight.changehands(Hands.GRIPRIGHT) +
           CircleLeftQuarter.scale(2.0,2.0) +
           CircleLeftQuarter.scale(2.0,2.0) +
           CircleLeftQuarter.scale(2.0,2.0) +
-          EighthLeft.changehands(2).skew(-0.707,-0.707),
+          EighthLeft.changehands(Hands.RIGHT).skew(-0.707,-0.707),
 
-          EighthLeft.changehands(5) +
+          EighthLeft.changehands(Hands.GRIPLEFT) +
           CircleLeftQuarter.scale(2.0,2.0) +
           CircleLeftQuarter.scale(2.0,2.0) +
           CircleLeftQuarter.scale(2.0,2.0) +
-          EighthRight.changehands(1).skew(-0.707,0.707)
+          EighthRight.changehands(Hands.LEFT).skew(-0.707,0.707)
       ]),
 
     AnimatedCall('Circle Four Right 3/4',
       formation:Formation('Facing Couples Compact'),
       from:'Facing Couples',
       paths:[
-          EighthRight.changehands(2).skew(0.5,0.0) +
+          EighthRight.changehands(Hands.RIGHT).skew(0.5,0.0) +
           CircleRightQuarter.scale(2.0,2.0) +
           CircleRightQuarter.scale(2.0,2.0) +
           CircleRightQuarter.scale(2.0,2.0) +
-          EighthLeft.changehands(2).skew(-0.353,-0.353),
+          EighthLeft.changehands(Hands.RIGHT).skew(-0.353,-0.353),
 
-          EighthLeft.changehands(1).skew(0.5,0.0) +
+          EighthLeft.changehands(Hands.LEFT).skew(0.5,0.0) +
           CircleRightQuarter.scale(2.0,2.0) +
           CircleRightQuarter.scale(2.0,2.0) +
           CircleRightQuarter.scale(2.0,2.0) +
-          EighthRight.changehands(1).skew(-0.353,0.353)
+          EighthRight.changehands(Hands.LEFT).skew(-0.353,0.353)
       ]),
 
     AnimatedCall('Circle Four Right 3/4',
       formation:Formation('Normal Lines'),
       from:'Lines',
       paths:[
-          EighthRight.changehands(2).skew(1.0,0.0) +
+          EighthRight.changehands(Hands.RIGHT).skew(1.0,0.0) +
           CircleRightQuarter.scale(2.0,2.0) +
           CircleRightQuarter.scale(2.0,2.0) +
           CircleRightQuarter.scale(2.0,2.0) +
-          EighthLeft.changehands(2),
+          EighthLeft.changehands(Hands.RIGHT),
 
-          EighthLeft.changehands(1).skew(1.0,0.0) +
+          EighthLeft.changehands(Hands.LEFT).skew(1.0,0.0) +
           CircleRightQuarter.scale(2.0,2.0) +
           CircleRightQuarter.scale(2.0,2.0) +
           CircleRightQuarter.scale(2.0,2.0) +
-          EighthRight.changehands(1),
+          EighthRight.changehands(Hands.LEFT),
 
-          EighthRight.changehands(2).skew(1.0,0.0) +
+          EighthRight.changehands(Hands.RIGHT).skew(1.0,0.0) +
           CircleRightQuarter.scale(2.0,2.0) +
           CircleRightQuarter.scale(2.0,2.0) +
           CircleRightQuarter.scale(2.0,2.0) +
-          EighthLeft.changehands(2),
+          EighthLeft.changehands(Hands.RIGHT),
 
-          EighthLeft.changehands(1).skew(1.0,0.0) +
+          EighthLeft.changehands(Hands.LEFT).skew(1.0,0.0) +
           CircleRightQuarter.scale(2.0,2.0) +
           CircleRightQuarter.scale(2.0,2.0) +
           CircleRightQuarter.scale(2.0,2.0) +
-          EighthRight.changehands(1)
+          EighthRight.changehands(Hands.LEFT)
       ]),
 
     AnimatedCall('Circle Four Right 3/4',
       formation:Formation('Eight Chain Thru'),
       from:'Eight Chain Thru',
       paths:[
-          EighthRight.changehands(6) +
+          EighthRight.changehands(Hands.GRIPRIGHT) +
           CircleRightQuarter.scale(2.0,2.0) +
           CircleRightQuarter.scale(2.0,2.0) +
           CircleRightQuarter.scale(2.0,2.0) +
-          EighthLeft.changehands(2).skew(-0.707,-0.707),
+          EighthLeft.changehands(Hands.RIGHT).skew(-0.707,-0.707),
 
-          EighthLeft.changehands(5) +
+          EighthLeft.changehands(Hands.GRIPLEFT) +
           CircleRightQuarter.scale(2.0,2.0) +
           CircleRightQuarter.scale(2.0,2.0) +
           CircleRightQuarter.scale(2.0,2.0) +
-          EighthRight.changehands(1).skew(-0.707,0.707),
+          EighthRight.changehands(Hands.LEFT).skew(-0.707,0.707),
 
-          EighthRight.changehands(6) +
+          EighthRight.changehands(Hands.GRIPRIGHT) +
           CircleRightQuarter.scale(2.0,2.0) +
           CircleRightQuarter.scale(2.0,2.0) +
           CircleRightQuarter.scale(2.0,2.0) +
-          EighthLeft.changehands(2).skew(-0.707,-0.707),
+          EighthLeft.changehands(Hands.RIGHT).skew(-0.707,-0.707),
 
-          EighthLeft.changehands(5) +
+          EighthLeft.changehands(Hands.GRIPLEFT) +
           CircleRightQuarter.scale(2.0,2.0) +
           CircleRightQuarter.scale(2.0,2.0) +
           CircleRightQuarter.scale(2.0,2.0) +
-          EighthRight.changehands(1).skew(-0.707,0.707)
+          EighthRight.changehands(Hands.LEFT).skew(-0.707,0.707)
       ]),
 
     AnimatedCall('Single Circle Left 1/4',

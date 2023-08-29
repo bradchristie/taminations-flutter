@@ -20,7 +20,6 @@
 
 import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> PassAndRoll = [
@@ -320,27 +319,27 @@ import '../../moves.dart';
       formation:Formation('Eight Chain Thru'),
       group:' ',
       paths:[
-          ExtendLeft.changehands(2).scale(1.0,0.5) +
+          ExtendLeft.changehands(Hands.RIGHT).scale(1.0,0.5) +
           Forward_2 +
           SwingRight.scale(1.5,1.5) +
           Forward_2 +
-          RunRight.changehands(2).scale(2.25,2.25),
+          RunRight.changehands(Hands.RIGHT).scale(2.25,2.25),
 
-          ExtendLeft.changehands(1).scale(1.0,1.5) +
+          ExtendLeft.changehands(Hands.LEFT).scale(1.0,1.5) +
           Forward_2 +
           SwingRight.scale(0.5,0.5) +
           Forward_2 +
-          RunRight.changehands(1).scale(0.75,0.75),
+          RunRight.changehands(Hands.LEFT).scale(0.75,0.75),
 
-          ExtendLeft.changehands(2).scale(1.0,0.5) +
+          ExtendLeft.changehands(Hands.RIGHT).scale(1.0,0.5) +
           RunRight.changeBeats(5).scale(1.5,1.5) +
           Forward_2 +
-          ExtendLeft.changeBeats(3).changehands(2).scale(2.0,1.5),
+          ExtendLeft.changeBeats(3).changehands(Hands.RIGHT).scale(2.0,1.5),
 
-          ExtendLeft.changehands(1).scale(1.0,1.5) +
+          ExtendLeft.changehands(Hands.LEFT).scale(1.0,1.5) +
           RunRight.changeBeats(5).scale(0.5,0.5) +
           Forward_2 +
-          ExtendLeft.changeBeats(3).changehands(1).scale(2.0,0.5)
+          ExtendLeft.changeBeats(3).changehands(Hands.LEFT).scale(2.0,0.5)
       ]),
   ];
 

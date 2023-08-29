@@ -20,7 +20,6 @@
 
 import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> SquareThru = [
@@ -1456,42 +1455,42 @@ import '../../moves.dart';
           PullLeft.scale(1.0,0.5) +
           LeadRight.scale(0.5,1.5) +
           LeadRight.skew(0.5,0.5) +
-          UmTurnRight.changehands(6).skew(1.0,-0.5) +
-          Forward.changehands(6) +
+          UmTurnRight.changehands(Hands.GRIPRIGHT).skew(1.0,-0.5) +
+          Forward.changehands(Hands.GRIPRIGHT) +
           Forward.changeBeats(.5).scale(0.5,1.0) +
-          ExtendRight.changeBeats(2.5).changehands(1).scale(1.5,2.75) +
-          LeadLeft_12.changeBeats(3).changehands(2).scale(2.0,2.0).skew(0.16,1.58) +
-          LeadLeft_12.changeBeats(3).changehands(1).scale(3.0,3.0).skew(0.52,-1.2) +
+          ExtendRight.changeBeats(2.5).changehands(Hands.LEFT).scale(1.5,2.75) +
+          LeadLeft_12.changeBeats(3).changehands(Hands.RIGHT).scale(2.0,2.0).skew(0.16,1.58) +
+          LeadLeft_12.changeBeats(3).changehands(Hands.LEFT).scale(3.0,3.0).skew(0.52,-1.2) +
           LeadLeft_12.changeBeats(2),
 
           PullLeft.scale(1.0,0.5) +
           LeadLeft.skew(0.5,-0.5) +
           LeadLeft.scale(0.5,1.5) +
-          UmTurnLeft.changehands(6).skew(1.0,-0.5) +
-          ExtendLeft.changehands(6) +
-          ExtendLeft.changeBeats(3).changehands(1).scale(2.0,0.25) +
-          LeadRight_12.changeBeats(3).changehands(2).scale(3.0,3.0).skew(0.52,1.3) +
-          LeadRight_12.changeBeats(3).changehands(1).scale(2.0,2.0).skew(0.16,-1.67) +
+          UmTurnLeft.changehands(Hands.GRIPRIGHT).skew(1.0,-0.5) +
+          ExtendLeft.changehands(Hands.GRIPRIGHT) +
+          ExtendLeft.changeBeats(3).changehands(Hands.LEFT).scale(2.0,0.25) +
+          LeadRight_12.changeBeats(3).changehands(Hands.RIGHT).scale(3.0,3.0).skew(0.52,1.3) +
+          LeadRight_12.changeBeats(3).changehands(Hands.LEFT).scale(2.0,2.0).skew(0.16,-1.67) +
           LeadRight_12.changeBeats(2).skew(1.0,0.5),
 
           PullLeft.scale(1.0,0.5) +
           LeadRight.scale(0.5,1.5) +
           LeadRight.skew(0.5,0.5) +
-          UmTurnRight.changehands(6).skew(1.0,-0.5) +
-          Forward.changehands(6) +
-          LeadLeft.changeBeats(3).changehands(1).scale(1.75,1.0) +
-          LeadLeft_12.changeBeats(3).changehands(2).scale(2.0,2.0).skew(0.16,1.58) +
-          LeadLeft_12.changeBeats(3).changehands(1).scale(3.0,3.0).skew(0.52,-1.2) +
+          UmTurnRight.changehands(Hands.GRIPRIGHT).skew(1.0,-0.5) +
+          Forward.changehands(Hands.GRIPRIGHT) +
+          LeadLeft.changeBeats(3).changehands(Hands.LEFT).scale(1.75,1.0) +
+          LeadLeft_12.changeBeats(3).changehands(Hands.RIGHT).scale(2.0,2.0).skew(0.16,1.58) +
+          LeadLeft_12.changeBeats(3).changehands(Hands.LEFT).scale(3.0,3.0).skew(0.52,-1.2) +
           LeadLeft_12.changeBeats(2),
 
           PullLeft.scale(1.0,0.5) +
           LeadLeft.skew(0.5,-0.5) +
           LeadLeft.scale(0.5,1.5) +
-          UmTurnLeft.changehands(6).skew(1.0,-0.5) +
-          ExtendLeft.changehands(6) +
-          LeadRight.changeBeats(3).changehands(1).scale(0.25,2.0) +
-          LeadRight_12.changeBeats(3).changehands(2).scale(3.0,3.0).skew(0.52,1.3) +
-          LeadRight_12.changeBeats(3).changehands(1).scale(2.0,2.0).skew(0.16,-1.67) +
+          UmTurnLeft.changehands(Hands.GRIPRIGHT).skew(1.0,-0.5) +
+          ExtendLeft.changehands(Hands.GRIPRIGHT) +
+          LeadRight.changeBeats(3).changehands(Hands.LEFT).scale(0.25,2.0) +
+          LeadRight_12.changeBeats(3).changehands(Hands.RIGHT).scale(3.0,3.0).skew(0.52,1.3) +
+          LeadRight_12.changeBeats(3).changehands(Hands.LEFT).scale(2.0,2.0).skew(0.16,-1.67) +
           LeadRight_12.changeBeats(2).skew(1.0,0.5)
       ]),
 
@@ -1581,7 +1580,7 @@ import '../../moves.dart';
           PullLeft.scale(1.0,0.5) +
           LeadRight.scale(0.5,1.5) +
           LeadRight.skew(0.5,0.5) +
-          QuarterRight.changehands(2).skew(1.0,0.0),
+          QuarterRight.changehands(Hands.RIGHT).skew(1.0,0.0),
 
           Forward.scale(0.5,1.0) +
           PullLeft.scale(1.0,0.5) +
@@ -1609,7 +1608,7 @@ import '../../moves.dart';
           LeadLeft.skew(0.5,-0.5) +
           LeadLeft.scale(0.5,1.5) +
           LeadLeft.skew(0.5,-0.5) +
-          QuarterLeft.changehands(1).skew(1.0,0.0)
+          QuarterLeft.changehands(Hands.LEFT).skew(1.0,0.0)
       ]),
   ];
 

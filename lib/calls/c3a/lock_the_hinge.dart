@@ -19,7 +19,7 @@
 */
 
 import '../../animated_call.dart';
-import '../../formation.dart';
+import '../../common_dart.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> LockTheHinge = [
@@ -62,16 +62,16 @@ import '../../moves.dart';
       formation:Formation('Two-Faced Lines RH'),
       from:'Right-Hand Two-Faced Lines',parts:'3',
       paths:[
-          LeadRight.changeBeats(3).changehands(6).scale(1.5,3.0) +
+          LeadRight.changeBeats(3).changehands(Hands.GRIPRIGHT).scale(1.5,3.0) +
           LeadRight.scale(1.0,0.5),
 
-          HingeRight.changeBeats(3).changehands(7).scale(0.5,1.0) +
+          HingeRight.changeBeats(3).changehands(Hands.GRIPBOTH).scale(0.5,1.0) +
           QuarterLeft.skew(-1.0,0.5),
 
-          HingeRight.changeBeats(3).changehands(7).scale(0.5,1.0) +
+          HingeRight.changeBeats(3).changehands(Hands.GRIPBOTH).scale(0.5,1.0) +
           QuarterLeft.skew(-1.0,0.5),
 
-          LeadRight.changeBeats(3).changehands(6).scale(1.5,3.0) +
+          LeadRight.changeBeats(3).changehands(Hands.GRIPRIGHT).scale(1.5,3.0) +
           LeadRight.scale(1.0,0.5)
       ]),
 
@@ -79,16 +79,16 @@ import '../../moves.dart';
       formation:Formation('Two-Faced Lines LH'),
       from:'Left-Hand Two-Faced Lines',parts:'3',
       paths:[
-          LeadLeft.changeBeats(3).changehands(5).scale(1.5,3.0) +
+          LeadLeft.changeBeats(3).changehands(Hands.GRIPLEFT).scale(1.5,3.0) +
           QuarterLeft.skew(-1.0,0.5),
 
-          HingeLeft.changeBeats(3).changehands(7).scale(0.5,1.0) +
+          HingeLeft.changeBeats(3).changehands(Hands.GRIPBOTH).scale(0.5,1.0) +
           LeadRight.scale(1.0,0.5),
 
-          HingeLeft.changeBeats(3).changehands(7).scale(0.5,1.0) +
+          HingeLeft.changeBeats(3).changehands(Hands.GRIPBOTH).scale(0.5,1.0) +
           LeadRight.scale(1.0,0.5),
 
-          LeadLeft.changeBeats(3).changehands(5).scale(1.5,3.0) +
+          LeadLeft.changeBeats(3).changehands(Hands.GRIPLEFT).scale(1.5,3.0) +
           QuarterLeft.skew(-1.0,0.5)
       ]),
 
@@ -281,34 +281,34 @@ import '../../moves.dart';
       formation:Formation('Two-Faced Tidal Line RH'),
       group:' ',parts:'4',
       paths:[
-          LeadRight.changeBeats(4).changehands(2).scale(3.5,3.5) +
-          LeadRight.changeBeats(3).changehands(2).scale(3.0,1.5),
+          LeadRight.changeBeats(4).changehands(Hands.RIGHT).scale(3.5,3.5) +
+          LeadRight.changeBeats(3).changehands(Hands.RIGHT).scale(3.0,1.5),
 
-          LeadRight.changeBeats(4).changehands(1).scale(2.5,2.5) +
-          LeadRight.changeBeats(3).changehands(3).scale(1.0,0.5),
+          LeadRight.changeBeats(4).changehands(Hands.LEFT).scale(2.5,2.5) +
+          LeadRight.changeBeats(3).changehands(Hands.BOTH).scale(1.0,0.5),
 
           LeadLeft.changeBeats(4).scale(1.5,1.5) +
-          LeadRight.changeBeats(3).changehands(3).scale(1.0,0.5),
+          LeadRight.changeBeats(3).changehands(Hands.BOTH).scale(1.0,0.5),
 
           LeadLeft.changeBeats(4).scale(0.5,0.5) +
-          LeadRight.changeBeats(3).changehands(2).scale(3.0,1.5)
+          LeadRight.changeBeats(3).changehands(Hands.RIGHT).scale(3.0,1.5)
       ]),
 
     AnimatedCall('As Couples Hinge the Lock',
       formation:Formation('Two-Faced Lines RH'),
       group:' ',parts:'3',
       paths:[
-          LeadRight.changeBeats(3).changehands(2).scale(1.5,3.0) +
-          LeadLeft.changeBeats(3).changehands(3).scale(0.5,0.5),
+          LeadRight.changeBeats(3).changehands(Hands.RIGHT).scale(1.5,3.0) +
+          LeadLeft.changeBeats(3).changehands(Hands.BOTH).scale(0.5,0.5),
 
-          LeadRight.changeBeats(3).changehands(3).scale(0.5,1.0) +
-          LeadLeft.changeBeats(3).changehands(1).scale(1.5,1.5),
+          LeadRight.changeBeats(3).changehands(Hands.BOTH).scale(0.5,1.0) +
+          LeadLeft.changeBeats(3).changehands(Hands.LEFT).scale(1.5,1.5),
 
-          LeadRight.changeBeats(3).changehands(3).scale(0.5,1.0) +
-          LeadRight.changeBeats(3).changehands(1).scale(2.5,2.5),
+          LeadRight.changeBeats(3).changehands(Hands.BOTH).scale(0.5,1.0) +
+          LeadRight.changeBeats(3).changehands(Hands.LEFT).scale(2.5,2.5),
 
-          LeadRight.changeBeats(3).changehands(2).scale(1.5,3.0) +
-          LeadRight.changeBeats(3).changehands(2).scale(3.5,3.5)
+          LeadRight.changeBeats(3).changehands(Hands.RIGHT).scale(1.5,3.0) +
+          LeadRight.changeBeats(3).changehands(Hands.RIGHT).scale(3.5,3.5)
       ]),
 
     AnimatedCall('Tandem Lock the Hinge',
@@ -316,33 +316,33 @@ import '../../moves.dart';
       group:' ',parts:'4',
       paths:[
           CounterRotateRight_5_m1.changeBeats(4) +
-          CounterRotateRight_2_0.changeBeats(2).changehands(2).skew(1.0,0.0),
+          CounterRotateRight_2_0.changeBeats(2).changehands(Hands.RIGHT).skew(1.0,0.0),
 
           CounterRotateLeft_m1_3.changeBeats(4) +
-          CounterRotateRight_0_m2.changeBeats(2).changehands(2).skew(-1.0,0.0),
+          CounterRotateRight_0_m2.changeBeats(2).changehands(Hands.RIGHT).skew(-1.0,0.0),
 
           CounterRotateLeft_3_m1.changeBeats(4) +
-          CounterRotateRight_2_0.changeBeats(2).changehands(2).skew(1.0,0.0),
+          CounterRotateRight_2_0.changeBeats(2).changehands(Hands.RIGHT).skew(1.0,0.0),
 
           CounterRotateRight_1_m5.changeBeats(4) +
-          CounterRotateRight_0_m2.changeBeats(2).changehands(2).skew(-1.0,0.0)
+          CounterRotateRight_0_m2.changeBeats(2).changehands(Hands.RIGHT).skew(-1.0,0.0)
       ]),
 
     AnimatedCall('Tandem Hinge the Lock',
       formation:Formation('Column RH GBGB'),
       group:' ',parts:'2',
       paths:[
-          CounterRotateRight_0_m2.changehands(2) +
+          CounterRotateRight_0_m2.changehands(Hands.RIGHT) +
           CounterRotateRight_2_m4.changeBeats(4).skew(0.0,-1.0),
 
-          CounterRotateRight_2_0.changehands(2) +
+          CounterRotateRight_2_0.changehands(Hands.RIGHT) +
           CounterRotateRight_4_m2.changeBeats(4).skew(0.0,1.0),
 
-          CounterRotateRight_0_m2.changehands(2) +
-          CounterRotateLeft_0_2.changeBeats(4).changehands(1).skew(0.0,1.0),
+          CounterRotateRight_0_m2.changehands(Hands.RIGHT) +
+          CounterRotateLeft_0_2.changeBeats(4).changehands(Hands.LEFT).skew(0.0,1.0),
 
-          CounterRotateRight_2_0.changehands(2) +
-          CounterRotateLeft_2_0.changeBeats(4).changehands(1).skew(0.0,-1.0)
+          CounterRotateRight_2_0.changehands(Hands.RIGHT) +
+          CounterRotateLeft_2_0.changeBeats(4).changehands(Hands.LEFT).skew(0.0,-1.0)
       ]),
   ];
 

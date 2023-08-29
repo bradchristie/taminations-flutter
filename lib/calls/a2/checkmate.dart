@@ -20,7 +20,6 @@
 
 import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> Checkmate = [
@@ -45,11 +44,11 @@ import '../../moves.dart';
 
           Forward_3 +
           LeadRight.changeBeats(3) +
-          Forward_2.changehands(2),
+          Forward_2.changehands(Hands.RIGHT),
 
           Forward_3 +
           LeadRight.changeBeats(3) +
-          Forward_2.changehands(1)
+          Forward_2.changehands(Hands.LEFT)
       ]),
 
     AnimatedCall('Checkmate',
@@ -63,11 +62,11 @@ import '../../moves.dart';
       paths:[
           Forward_3 +
           LeadLeft.changeBeats(3) +
-          Forward_2.changehands(2),
+          Forward_2.changehands(Hands.RIGHT),
 
           Forward_3 +
           LeadLeft.changeBeats(3) +
-          Forward_2.changehands(1),
+          Forward_2.changehands(Hands.LEFT),
 
           Forward_2 +
           FlipLeft.changeBeats(2).scale(1.0,1.5) +

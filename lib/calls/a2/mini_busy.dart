@@ -20,7 +20,6 @@
 
 import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> MiniBusy = [
@@ -34,11 +33,11 @@ import '../../moves.dart';
   ]),
       from:'Right-Hand Two-Faced Lines',parts:'2;1.5',
       paths:[
-          Forward_2.changehands(2) +
+          Forward_2.changehands(Hands.RIGHT) +
           Stand.changeBeats(1.5) +
           FlipRight,
 
-          Forward_2.changehands(1) +
+          Forward_2.changehands(Hands.LEFT) +
           HingeRight +
           LeadRight.changeBeats(2.5).scale(3.0,1.0),
 
@@ -60,9 +59,9 @@ import '../../moves.dart';
   ]),
       from:'Right-Hand Two-Faced Lines',parts:'2;1.5',noDisplay: true,
       paths:[
-          Forward_2.changehands(2),
+          Forward_2.changehands(Hands.RIGHT),
 
-          Forward_2.changehands(1) +
+          Forward_2.changehands(Hands.LEFT) +
           HingeRight,
 
           QuarterRight.changeBeats(2).skew(1.0,0.0) +
@@ -86,11 +85,11 @@ import '../../moves.dart';
           Forward_2.changeBeats(1.5) +
           QuarterLeft,
 
-          Forward_2.changehands(2) +
+          Forward_2.changehands(Hands.RIGHT) +
           HingeLeft +
           LeadLeft.changeBeats(2.5).scale(3.0,1.0),
 
-          Forward_2.changehands(1) +
+          Forward_2.changehands(Hands.LEFT) +
           Stand.changeBeats(1.5) +
           FlipLeft
       ]),
@@ -107,10 +106,10 @@ import '../../moves.dart';
           Forward_2.changeBeats(1.5) +
           QuarterLeft,
 
-          Forward_2.changehands(2) +
+          Forward_2.changehands(Hands.RIGHT) +
           HingeLeft,
 
-          Forward_2.changehands(1)
+          Forward_2.changehands(Hands.LEFT)
       ]),
 
     AnimatedCall('2/3 Mini-Busy',
@@ -122,10 +121,10 @@ import '../../moves.dart';
   ]),
       from:'Right-Hand Two-Faced Lines',parts:'2;1.5',noDisplay: true,
       paths:[
-          Forward_2.changehands(2) +
+          Forward_2.changehands(Hands.RIGHT) +
           Stand.changeBeats(1.5),
 
-          Forward_2.changehands(1) +
+          Forward_2.changehands(Hands.LEFT) +
           HingeRight,
 
           QuarterRight.changeBeats(2).skew(1.0,0.0) +
@@ -145,10 +144,10 @@ import '../../moves.dart';
           QuarterLeft.changeBeats(2).skew(1.0,0.0) +
           Forward_2.changeBeats(1.5),
 
-          Forward_2.changehands(2) +
+          Forward_2.changehands(Hands.RIGHT) +
           HingeLeft,
 
-          Forward_2.changehands(1) +
+          Forward_2.changehands(Hands.LEFT) +
           Stand.changeBeats(1.5)
       ]),
   ];

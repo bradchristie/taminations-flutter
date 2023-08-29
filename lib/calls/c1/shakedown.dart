@@ -19,7 +19,7 @@
 */
 
 import '../../animated_call.dart';
-import '../../formation.dart';
+import '../../common_dart.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> Shakedown = [
@@ -136,15 +136,15 @@ import '../../moves.dart';
       from:'Lines Facing Out',group:' ',
       paths:[
           BeauWheel.scale(1.0,-1.0).skew(-2.0,-0.5) +
-          QuarterRight.changehands(1).skew(0.5,0.0),
+          QuarterRight.changehands(Hands.LEFT).skew(0.5,0.0),
 
           BelleWheel.scale(1.0,-1.0).skew(-2.0,-0.5) +
           HingeRight.scale(2.0,2.0).skew(0.5,0.0),
 
-          RunRight.changehands(1).skew(1.5,0.0) +
-          QuarterRight.changehands(1).skew(0.0,0.5),
+          RunRight.changehands(Hands.LEFT).skew(1.5,0.0) +
+          QuarterRight.changehands(Hands.LEFT).skew(0.0,0.5),
 
-          RunRight.changehands(2).scale(3.0,3.0).skew(1.5,0.0) +
+          RunRight.changehands(Hands.RIGHT).scale(3.0,3.0).skew(1.5,0.0) +
           HingeRight.scale(2.0,2.0).skew(0.0,0.5)
       ]),
 
@@ -239,17 +239,17 @@ import '../../moves.dart';
       formation:Formation('Lines Facing Out Compact'),
       from:'Lines Facing Out',group:' ',
       paths:[
-          RunLeft.changehands(1).scale(3.0,3.0).skew(1.5,0.0) +
+          RunLeft.changehands(Hands.LEFT).scale(3.0,3.0).skew(1.5,0.0) +
           HingeLeft.scale(2.0,2.0).skew(0.0,-0.5),
 
-          RunLeft.changehands(2).skew(1.5,0.0) +
-          QuarterLeft.changehands(2).skew(0.0,-0.5),
+          RunLeft.changehands(Hands.RIGHT).skew(1.5,0.0) +
+          QuarterLeft.changehands(Hands.RIGHT).skew(0.0,-0.5),
 
           BelleWheel.skew(-2.0,0.5) +
           HingeLeft.scale(2.0,2.0).skew(0.5,0.0),
 
           BeauWheel.skew(-2.0,0.5) +
-          QuarterLeft.changehands(2).skew(0.5,0.0)
+          QuarterLeft.changehands(Hands.RIGHT).skew(0.5,0.0)
       ]),
 
     AnimatedCall('Concentric Left Shakedown',

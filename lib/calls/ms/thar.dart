@@ -19,7 +19,7 @@
 */
 
 import '../../animated_call.dart';
-import '../../formation.dart';
+import '../../common_dart.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> Thar = [
@@ -28,26 +28,26 @@ import '../../moves.dart';
       formation:Formation('Thar RH Boys'),
       from:'Thar Star',group:' ',
       paths:[
-          BackHingeRight.changeBeats(3).changehands(3),
+          BackHingeRight.changeBeats(3).changehands(Hands.BOTH),
 
-          LeadLeft.changeBeats(3).changehands(1).scale(3.0,3.0),
+          LeadLeft.changeBeats(3).changehands(Hands.LEFT).scale(3.0,3.0),
 
-          BackHingeRight.changeBeats(3).changehands(3),
+          BackHingeRight.changeBeats(3).changehands(Hands.BOTH),
 
-          LeadLeft.changeBeats(3).changehands(1).scale(3.0,3.0)
+          LeadLeft.changeBeats(3).changehands(Hands.LEFT).scale(3.0,3.0)
       ]),
 
     AnimatedCall('Wrong Way Thar',
       formation:Formation('Thar LH Boys'),
       from:'Left Hand Thar Star',group:' ',
       paths:[
-          BackHingeLeft.changeBeats(3).changehands(3),
+          BackHingeLeft.changeBeats(3).changehands(Hands.BOTH),
 
-          LeadRight.changeBeats(3).changehands(2).scale(3.0,3.0),
+          LeadRight.changeBeats(3).changehands(Hands.RIGHT).scale(3.0,3.0),
 
-          BackHingeLeft.changeBeats(3).changehands(3),
+          BackHingeLeft.changeBeats(3).changehands(Hands.BOTH),
 
-          LeadRight.changeBeats(3).changehands(2).scale(3.0,3.0)
+          LeadRight.changeBeats(3).changehands(Hands.RIGHT).scale(3.0,3.0)
       ]),
 
     AnimatedCall('Allemande Left to an Allemande Thar',
@@ -90,7 +90,7 @@ import '../../moves.dart';
           Forward_2 +
           LeadLeft_12.changeBeats(3).skew(1.414,0.086) +
           SwingLeft.scale(0.5,1.0) +
-          HalfBackHingeRight.changeBeats(2).changehands(3),
+          HalfBackHingeRight.changeBeats(2).changehands(Hands.BOTH),
 
           LeadRight.changeBeats(1.5).skew(-0.5,0.0) +
           HingeLeft.scale(0.5,0.5) +
@@ -105,7 +105,7 @@ import '../../moves.dart';
           Forward_2 +
           LeadLeft_12.changeBeats(3).skew(1.414,0.086) +
           SwingLeft.scale(0.5,1.0) +
-          HalfBackHingeRight.changeBeats(2).changehands(3),
+          HalfBackHingeRight.changeBeats(2).changehands(Hands.BOTH),
 
           LeadRight.changeBeats(1.5).skew(-0.5,0.0) +
           HingeLeft.scale(0.5,0.5) +

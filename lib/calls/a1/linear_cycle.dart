@@ -19,7 +19,7 @@
 */
 
 import '../../animated_call.dart';
-import '../../formation.dart';
+import '../../common_dart.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> LinearCycle = [
@@ -469,18 +469,18 @@ import '../../moves.dart';
       paths:[
           HingeRight.changeBeats(3).scale(1.5,1.5) +
           Forward_4 +
-          RunRight.changeBeats(4).changehands(2).scale(1.5,2.25),
+          RunRight.changeBeats(4).changehands(Hands.RIGHT).scale(1.5,2.25),
 
-          HingeRight.changeBeats(3).changehands(1).scale(0.5,0.5) +
+          HingeRight.changeBeats(3).changehands(Hands.LEFT).scale(0.5,0.5) +
           Forward_4 +
-          RunRight.changeBeats(4).changehands(1).scale(0.5,0.75),
+          RunRight.changeBeats(4).changehands(Hands.LEFT).scale(0.5,0.75),
 
-          QuarterLeft.changeBeats(3).changehands(2).skew(-1.5,0.5) +
+          QuarterLeft.changeBeats(3).changehands(Hands.RIGHT).skew(-1.5,0.5) +
           RunRight.scale(1.5,1.5) +
           Forward_4 +
           BelleWheel.scale(1.0,-1.0).skew(0.0,1.5),
 
-          QuarterLeft.changeBeats(3).changehands(1).skew(-0.5,1.5) +
+          QuarterLeft.changeBeats(3).changehands(Hands.LEFT).skew(-0.5,1.5) +
           RunRight.scale(0.5,0.5) +
           Forward_4 +
           BeauWheel.scale(1.0,-1.0).skew(0.0,0.5)

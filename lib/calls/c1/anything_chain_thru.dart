@@ -19,7 +19,7 @@
 */
 
 import '../../animated_call.dart';
-import '../../formation.dart';
+import '../../common_dart.dart';
 import '../../moves.dart';
 import '../a2/diamond_chain_thru.dart' as a2;
 
@@ -203,16 +203,16 @@ import '../a2/diamond_chain_thru.dart' as a2;
       formation:Formation('Ocean Waves RH BGBG'),
       from:'Right-Hand Waves',group:' ',
       paths:[
-          UmTurnRight.changeBeats(4).changehands(6).skew(2.0,-0.5),
+          UmTurnRight.changeBeats(4).changehands(Hands.GRIPRIGHT).skew(2.0,-0.5),
 
-          RunRight.changeBeats(4).changehands(6).scale(1.5,2.0).skew(-2.0,1.5),
+          RunRight.changeBeats(4).changehands(Hands.GRIPRIGHT).scale(1.5,2.0).skew(-2.0,1.5),
 
-          UmTurnRight.changeBeats(4).changehands(6).skew(2.0,-0.5) +
+          UmTurnRight.changeBeats(4).changehands(Hands.GRIPRIGHT).skew(2.0,-0.5) +
           Stand.changeBeats(3) +
           SwingRight.scale(0.5,0.5) +
           HingeRight.scale(1.0,0.5),
 
-          RunRight.changeBeats(4).changehands(6).scale(1.5,2.0).skew(-2.0,1.5) +
+          RunRight.changeBeats(4).changehands(Hands.GRIPRIGHT).scale(1.5,2.0).skew(-2.0,1.5) +
           SwingLeft.scale(0.5,0.5) +
           SwingRight.scale(0.5,0.5) +
           HingeRight.scale(1.0,0.5)

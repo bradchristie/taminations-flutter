@@ -20,7 +20,6 @@
 
 import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> Coordinate = [
@@ -93,7 +92,7 @@ import '../../moves.dart';
           Forward_4 +
           LeadRight.changeBeats(2).scale(0.5,1.0) +
           SwingLeft.scale(0.75,0.5) +
-          DodgeLeft.changehands(1).scale(1.0,0.25),
+          DodgeLeft.changehands(Hands.LEFT).scale(1.0,0.25),
 
           RunRight.changeBeats(4) +
           Forward_2 +
@@ -104,7 +103,7 @@ import '../../moves.dart';
           ExtendRight.changeBeats(2).scale(2.0,0.5) +
           LeadLeft.changeBeats(2).scale(2.0,3.0) +
           SwingLeft.scale(0.75,1.25) +
-          DodgeRight.changehands(1).scale(1.0,0.25)
+          DodgeRight.changehands(Hands.LEFT).scale(1.0,0.25)
       ]),
 
     AnimatedCall('Coordinate',
@@ -129,13 +128,13 @@ import '../../moves.dart';
           Forward_4 +
           LeadLeft.changeBeats(2).scale(0.5,1.0) +
           RunRight.scale(0.75,0.5) +
-          DodgeRight.changehands(2).scale(1.0,0.25),
+          DodgeRight.changehands(Hands.RIGHT).scale(1.0,0.25),
 
           ExtendLeft.changeBeats(2).scale(2.0,0.5) +
           ExtendRight.changeBeats(2).scale(2.0,0.5) +
           LeadLeft.changeBeats(2).scale(2.0,3.0) +
           FlipLeft.scale(1.0,1.25) +
-          DodgeRight.changehands(1).scale(1.0,0.25)
+          DodgeRight.changehands(Hands.LEFT).scale(1.0,0.25)
       ]),
 
     AnimatedCall('Coordinate',
@@ -167,7 +166,7 @@ import '../../moves.dart';
           ExtendRight.changeBeats(2).scale(2.0,0.5) +
           LeadLeft.changeBeats(2).scale(1.5,3.0) +
           SwingLeft.scale(0.5,1.0) +
-          DodgeRight.changeBeats(3).changehands(1).scale(1.0,0.25)
+          DodgeRight.changeBeats(3).changehands(Hands.LEFT).scale(1.0,0.25)
       ]),
 
     AnimatedCall('Coordinate',
@@ -182,7 +181,7 @@ import '../../moves.dart';
           LeadLeft.changeBeats(2).scale(3.0,2.5) +
           ExtendLeft.scale(1.0,0.5) +
           SwingLeft.scale(0.5,0.5) +
-          DodgeRight.changeBeats(3).changehands(1).scale(1.0,0.25),
+          DodgeRight.changeBeats(3).changehands(Hands.LEFT).scale(1.0,0.25),
 
           QuarterLeft.changeBeats(2).skew(-0.5,1.0) +
           LeadLeft.changeBeats(2).scale(1.0,0.5) +
@@ -194,7 +193,7 @@ import '../../moves.dart';
           LeadRight.changeBeats(2).scale(1.0,1.5) +
           ExtendLeft.scale(1.0,0.5) +
           SwingLeft.scale(0.5,0.5) +
-          DodgeRight.changeBeats(3).changehands(1).scale(1.0,0.25),
+          DodgeRight.changeBeats(3).changehands(Hands.LEFT).scale(1.0,0.25),
 
           LeadRight.changeBeats(2).scale(2.5,3.0) +
           LeadRight.changeBeats(2).scale(3.0,3.5) +

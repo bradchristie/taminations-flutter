@@ -20,7 +20,6 @@
 
 import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> Sashay = [
@@ -132,73 +131,73 @@ import '../../moves.dart';
       formation:Formation('Facing Couples'),
       from:'Facing Couples',notForSequencer: true,
       paths:[
-          DodgeRight.changehands(6),
+          DodgeRight.changehands(Hands.GRIPRIGHT),
 
-          FoldLeft.changeBeats(1.5).changehands(5).scale(0.6,0.5) +
-          UmTurnLeft.changeBeats(1.5).changehands(5).skew(1.2,-1.0)
+          FoldLeft.changeBeats(1.5).changehands(Hands.GRIPLEFT).scale(0.6,0.5) +
+          UmTurnLeft.changeBeats(1.5).changehands(Hands.GRIPLEFT).skew(1.2,-1.0)
       ]),
 
     AnimatedCall('Rollaway',
       formation:Formation('Couples Facing Out'),
       from:'Couples Facing Out',
       paths:[
-          FoldLeft.changeBeats(1.5).changehands(5).scale(0.6,0.5) +
-          UmTurnLeft.changeBeats(1.5).changehands(5).skew(1.2,-1.0),
+          FoldLeft.changeBeats(1.5).changehands(Hands.GRIPLEFT).scale(0.6,0.5) +
+          UmTurnLeft.changeBeats(1.5).changehands(Hands.GRIPLEFT).skew(1.2,-1.0),
 
-          DodgeRight.changehands(6)
+          DodgeRight.changehands(Hands.GRIPRIGHT)
       ]),
 
     AnimatedCall('Rollaway',
       formation:Formation('Normal Lines'),
       from:'Lines',
       paths:[
-          DodgeRight.changehands(6),
+          DodgeRight.changehands(Hands.GRIPRIGHT),
 
-          FoldLeft.changeBeats(1.5).changehands(5).scale(0.6,0.5) +
-          UmTurnLeft.changeBeats(1.5).changehands(5).skew(1.2,-1.0),
+          FoldLeft.changeBeats(1.5).changehands(Hands.GRIPLEFT).scale(0.6,0.5) +
+          UmTurnLeft.changeBeats(1.5).changehands(Hands.GRIPLEFT).skew(1.2,-1.0),
 
-          DodgeRight.changehands(6),
+          DodgeRight.changehands(Hands.GRIPRIGHT),
 
-          FoldLeft.changeBeats(1.5).changehands(5).scale(0.6,0.5) +
-          UmTurnLeft.changeBeats(1.5).changehands(5).skew(1.2,-1.0)
+          FoldLeft.changeBeats(1.5).changehands(Hands.GRIPLEFT).scale(0.6,0.5) +
+          UmTurnLeft.changeBeats(1.5).changehands(Hands.GRIPLEFT).skew(1.2,-1.0)
       ]),
 
     AnimatedCall('Rollaway',
       formation:Formation('Circle'),
       from:'Circle Left',isGenderSpecific:true,
       paths:[
-          Stand.changeBeats(4.5).changehands(6) +
-          Stand.changeBeats(.1).changehands(3),
+          Stand.changeBeats(4.5).changehands(Hands.GRIPRIGHT) +
+          Stand.changeBeats(.1).changehands(Hands.BOTH),
 
-          EighthLeft.changehands(5).skew(0.5,0.1) +
-          QuarterLeft.changehands(5).skew(1.4,0.0) +
-          QuarterLeft.changehands(5).skew(0.0,-1.4) +
-          EighthLeft.changehands(5).skew(-0.4,-0.25) +
-          Stand.changeBeats(.1).changehands(3),
+          EighthLeft.changehands(Hands.GRIPLEFT).skew(0.5,0.1) +
+          QuarterLeft.changehands(Hands.GRIPLEFT).skew(1.4,0.0) +
+          QuarterLeft.changehands(Hands.GRIPLEFT).skew(0.0,-1.4) +
+          EighthLeft.changehands(Hands.GRIPLEFT).skew(-0.4,-0.25) +
+          Stand.changeBeats(.1).changehands(Hands.BOTH),
 
-          Stand.changeBeats(4.5).changehands(6) +
-          Stand.changeBeats(.1).changehands(3),
+          Stand.changeBeats(4.5).changehands(Hands.GRIPRIGHT) +
+          Stand.changeBeats(.1).changehands(Hands.BOTH),
 
-          EighthLeft.changehands(5).skew(0.5,0.1) +
-          QuarterLeft.changehands(5).skew(1.4,0.0) +
-          QuarterLeft.changehands(5).skew(0.0,-1.4) +
-          EighthLeft.changehands(5).skew(-0.4,-0.25) +
-          Stand.changeBeats(.1).changehands(3)
+          EighthLeft.changehands(Hands.GRIPLEFT).skew(0.5,0.1) +
+          QuarterLeft.changehands(Hands.GRIPLEFT).skew(1.4,0.0) +
+          QuarterLeft.changehands(Hands.GRIPLEFT).skew(0.0,-1.4) +
+          EighthLeft.changehands(Hands.GRIPLEFT).skew(-0.4,-0.25) +
+          Stand.changeBeats(.1).changehands(Hands.BOTH)
       ]),
 
     AnimatedCall('Rollaway',
       formation:Formation('Static Square'),
       from:'Static Square',
       paths:[
-          DodgeRight.changehands(6),
+          DodgeRight.changehands(Hands.GRIPRIGHT),
 
-          FoldLeft.changeBeats(1.5).changehands(5).scale(0.6,0.5) +
-          UmTurnLeft.changeBeats(1.5).changehands(5).skew(1.2,-1.0),
+          FoldLeft.changeBeats(1.5).changehands(Hands.GRIPLEFT).scale(0.6,0.5) +
+          UmTurnLeft.changeBeats(1.5).changehands(Hands.GRIPLEFT).skew(1.2,-1.0),
 
-          DodgeRight.changehands(6),
+          DodgeRight.changehands(Hands.GRIPRIGHT),
 
-          FoldLeft.changeBeats(1.5).changehands(5).scale(0.6,0.5) +
-          UmTurnLeft.changeBeats(1.5).changehands(5).skew(1.2,-1.0)
+          FoldLeft.changeBeats(1.5).changehands(Hands.GRIPLEFT).scale(0.6,0.5) +
+          UmTurnLeft.changeBeats(1.5).changehands(Hands.GRIPLEFT).skew(1.2,-1.0)
       ]),
   ];
 

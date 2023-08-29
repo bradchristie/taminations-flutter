@@ -20,7 +20,6 @@
 
 import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> PeelAndTrail = [
@@ -338,18 +337,18 @@ import '../../moves.dart';
           ExtendRight.changeBeats(2).scale(2.0,0.5) +
           SwingRight.changeBeats(3).scale(0.5,0.5),
 
-          BelleWheel.changeBeats(5).changehands(5).skew(-2.0,0.5),
+          BelleWheel.changeBeats(5).changehands(Hands.GRIPLEFT).skew(-2.0,0.5),
 
-          BeauWheel.changeBeats(5).changehands(6).skew(-2.0,1.5)
+          BeauWheel.changeBeats(5).changehands(Hands.GRIPRIGHT).skew(-2.0,1.5)
       ]),
 
     AnimatedCall('As Couples Peel and Trail',
       formation:Formation('Two-Faced Lines LH'),
       group:' ',noDisplay: true,
       paths:[
-          BelleReverseWheel.changeBeats(5).changehands(5).skew(-2.0,-1.5),
+          BelleReverseWheel.changeBeats(5).changehands(Hands.GRIPLEFT).skew(-2.0,-1.5),
 
-          BeauReverseWheel.changeBeats(5).changehands(6).skew(-2.0,-0.5),
+          BeauReverseWheel.changeBeats(5).changehands(Hands.GRIPRIGHT).skew(-2.0,-0.5),
 
           ExtendLeft.changeBeats(2).scale(2.0,0.5) +
           SwingLeft.changeBeats(3).scale(0.5,0.5),

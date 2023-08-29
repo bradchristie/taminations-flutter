@@ -20,7 +20,6 @@
 
 import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> CastAShadow = [
@@ -232,24 +231,24 @@ import '../../moves.dart';
   ]),
       group:' ',
       paths:[
-          Forward.changeBeats(2).changehands(1) +
+          Forward.changeBeats(2).changehands(Hands.LEFT) +
           UmTurnRight.changeBeats(.5).skew(0.0,-0.75) +
           Forward +
           SwingRight.scale(0.75,0.75) +
           LeadRight.changeBeats(3).skew(2.0,1.25),
 
-          ExtendLeft.changeBeats(2).changehands(2).scale(1.0,0.5) +
+          ExtendLeft.changeBeats(2).changehands(Hands.RIGHT).scale(1.0,0.5) +
           LeadRight.changeBeats(2).scale(2.0,1.0) +
           LeadRight.changeBeats(2).skew(1.0,0.0) +
           QuarterRight.skew(1.0,0.0) +
           Forward_2,
 
-          LeadLeft.changeBeats(2).changehands(1).scale(3.0,2.0) +
+          LeadLeft.changeBeats(2).changehands(Hands.LEFT).scale(3.0,2.0) +
           ExtendLeft.changeBeats(1.5).scale(1.0,0.75) +
           SwingRight.scale(0.75,0.75) +
           LeadRight.changeBeats(3).skew(2.0,-0.75),
 
-          LeadLeft.changeBeats(2).changehands(2).scale(1.0,0.5) +
+          LeadLeft.changeBeats(2).changehands(Hands.RIGHT).scale(1.0,0.5) +
           Forward +
           HingeLeft.changeBeats(3.5) +
           Forward_2

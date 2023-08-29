@@ -19,7 +19,7 @@
 */
 
 import '../../animated_call.dart';
-import '../../formation.dart';
+import '../../common_dart.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> FirstCoupleGo = [
@@ -28,52 +28,52 @@ import '../../moves.dart';
       formation:Formation('Completed Double Pass Thru'),
       group:' ',
       paths:[
-          RunLeft.changeBeats(4).changehands(1).scale(1.5,2.0).skew(-1.0,0.0),
+          RunLeft.changeBeats(4).changehands(Hands.LEFT).scale(1.5,2.0).skew(-1.0,0.0),
 
-          UmTurnLeft.changeBeats(4).changehands(2).skew(-1.0,0.0),
+          UmTurnLeft.changeBeats(4).changehands(Hands.RIGHT).skew(-1.0,0.0),
 
-          UmTurnRight.changeBeats(4).changehands(1).skew(1.0,0.0),
+          UmTurnRight.changeBeats(4).changehands(Hands.LEFT).skew(1.0,0.0),
 
-          RunRight.changeBeats(4).changehands(2).scale(1.5,2.0).skew(1.0,0.0)
+          RunRight.changeBeats(4).changehands(Hands.RIGHT).scale(1.5,2.0).skew(1.0,0.0)
       ]),
 
     AnimatedCall('First Couple Go Right, Next Couple Go Left',
       formation:Formation('Completed Double Pass Thru'),
       group:' ',
       paths:[
-          UmTurnRight.changeBeats(4).changehands(1).skew(-1.0,0.0),
+          UmTurnRight.changeBeats(4).changehands(Hands.LEFT).skew(-1.0,0.0),
 
-          RunRight.changeBeats(4).changehands(2).scale(1.5,2.0).skew(-1.0,0.0),
+          RunRight.changeBeats(4).changehands(Hands.RIGHT).scale(1.5,2.0).skew(-1.0,0.0),
 
-          RunLeft.changeBeats(4).changehands(1).scale(1.5,2.0).skew(1.0,0.0),
+          RunLeft.changeBeats(4).changehands(Hands.LEFT).scale(1.5,2.0).skew(1.0,0.0),
 
-          UmTurnLeft.changeBeats(4).changehands(2).skew(1.0,0.0)
+          UmTurnLeft.changeBeats(4).changehands(Hands.RIGHT).skew(1.0,0.0)
       ]),
 
     AnimatedCall('First Couple Go Left, Next Couple Go Left',
       formation:Formation('Completed Double Pass Thru'),
       group:' ',
       paths:[
-          RunLeft.changeBeats(4).changehands(1).scale(1.5,2.5).skew(-3.0,0.0),
+          RunLeft.changeBeats(4).changehands(Hands.LEFT).scale(1.5,2.5).skew(-3.0,0.0),
 
-          UmTurnLeft.changeBeats(4).changehands(2).skew(-3.0,1.0),
+          UmTurnLeft.changeBeats(4).changehands(Hands.RIGHT).skew(-3.0,1.0),
 
-          LeadLeft.changeBeats(4).changehands(1).scale(3.0,1.0),
+          LeadLeft.changeBeats(4).changehands(Hands.LEFT).scale(3.0,1.0),
 
-          QuarterLeft.changeBeats(4).changehands(2).skew(1.0,-1.0)
+          QuarterLeft.changeBeats(4).changehands(Hands.RIGHT).skew(1.0,-1.0)
       ]),
 
     AnimatedCall('First Couple Go Right, Next Couple Go Right',
       formation:Formation('Completed Double Pass Thru'),
       group:' ',
       paths:[
-          UmTurnRight.changeBeats(4).changehands(1).skew(-3.0,-1.0),
+          UmTurnRight.changeBeats(4).changehands(Hands.LEFT).skew(-3.0,-1.0),
 
-          RunRight.changeBeats(4).changehands(2).scale(1.5,2.5).skew(-3.0,0.0),
+          RunRight.changeBeats(4).changehands(Hands.RIGHT).scale(1.5,2.5).skew(-3.0,0.0),
 
-          QuarterRight.changeBeats(4).changehands(1).skew(1.0,1.0),
+          QuarterRight.changeBeats(4).changehands(Hands.LEFT).skew(1.0,1.0),
 
-          LeadRight.changeBeats(4).changehands(2).scale(3.0,1.0)
+          LeadRight.changeBeats(4).changehands(Hands.RIGHT).scale(3.0,1.0)
       ]),
   ];
 

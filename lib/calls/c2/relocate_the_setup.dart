@@ -20,7 +20,6 @@
 
 import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> RelocateTheSetup = [
@@ -42,11 +41,11 @@ import '../../moves.dart';
       formation:Formation('Diamonds RH PTP Girl Points'),
       from:'Point to Point Diamonds',
       paths:[
-          CounterRotateRight_4_2.changeBeats(4.5).changehands(2),
+          CounterRotateRight_4_2.changeBeats(4.5).changehands(Hands.RIGHT),
 
           CastLeft,
 
-          CounterRotateRight_m2_m4.changeBeats(4.5).changehands(2),
+          CounterRotateRight_m2_m4.changeBeats(4.5).changehands(Hands.RIGHT),
 
           LeadRight.changeBeats(4.5).scale(5.0,5.0)
       ]),

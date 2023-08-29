@@ -20,7 +20,6 @@
 
 import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> ForwardAndBack = [
@@ -29,39 +28,39 @@ import '../../moves.dart';
       formation:Formation('Facing Couples Compact'),
       from:'Facing Couples',
       paths:[
-          Forward.changeBeats(2).changehands(2).scale(0.7,1.0) +
-          Back.changeBeats(2).changehands(2).scale(0.7,1.0),
+          Forward.changeBeats(2).changehands(Hands.RIGHT).scale(0.7,1.0) +
+          Back.changeBeats(2).changehands(Hands.RIGHT).scale(0.7,1.0),
 
-          Forward.changeBeats(2).changehands(1).scale(0.7,1.0) +
-          Back.changeBeats(2).changehands(1).scale(0.7,1.0)
+          Forward.changeBeats(2).changehands(Hands.LEFT).scale(0.7,1.0) +
+          Back.changeBeats(2).changehands(Hands.LEFT).scale(0.7,1.0)
       ]),
 
     AnimatedCall('Forward and Back',
       formation:Formation('Normal Lines'),
       from:'Lines',
       paths:[
-          Forward.changeBeats(2).changehands(2) +
-          Back.changeBeats(2).changehands(2),
+          Forward.changeBeats(2).changehands(Hands.RIGHT) +
+          Back.changeBeats(2).changehands(Hands.RIGHT),
 
-          Forward.changeBeats(2).changehands(3) +
-          Back.changeBeats(2).changehands(3),
+          Forward.changeBeats(2).changehands(Hands.BOTH) +
+          Back.changeBeats(2).changehands(Hands.BOTH),
 
-          Forward.changeBeats(2).changehands(3) +
-          Back.changeBeats(2).changehands(3),
+          Forward.changeBeats(2).changehands(Hands.BOTH) +
+          Back.changeBeats(2).changehands(Hands.BOTH),
 
-          Forward.changeBeats(2).changehands(1) +
-          Back.changeBeats(2).changehands(1)
+          Forward.changeBeats(2).changehands(Hands.LEFT) +
+          Back.changeBeats(2).changehands(Hands.LEFT)
       ]),
 
     AnimatedCall('Heads Forward and Back',
       formation:Formation('Static Square'),
       from:'Static Square',group:' ',
       paths:[
-          Forward_2.changeBeats(4).changehands(2) +
-          Back_2.changeBeats(4).changehands(2),
+          Forward_2.changeBeats(4).changehands(Hands.RIGHT) +
+          Back_2.changeBeats(4).changehands(Hands.RIGHT),
 
-          Forward_2.changeBeats(4).changehands(1) +
-          Back_2.changeBeats(4).changehands(1),
+          Forward_2.changeBeats(4).changehands(Hands.LEFT) +
+          Back_2.changeBeats(4).changehands(Hands.LEFT),
 
           Path(),
 
@@ -76,11 +75,11 @@ import '../../moves.dart';
 
           Path(),
 
-          Forward_2.changeBeats(4).changehands(2) +
-          Back_2.changeBeats(4).changehands(2),
+          Forward_2.changeBeats(4).changehands(Hands.RIGHT) +
+          Back_2.changeBeats(4).changehands(Hands.RIGHT),
 
-          Forward_2.changeBeats(4).changehands(1) +
-          Back_2.changeBeats(4).changehands(1)
+          Forward_2.changeBeats(4).changehands(Hands.LEFT) +
+          Back_2.changeBeats(4).changehands(Hands.LEFT)
       ]),
   ];
 

@@ -19,7 +19,7 @@
 */
 
 import '../../animated_call.dart';
-import '../../formation.dart';
+import '../../common_dart.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> AlterTheWave = [
@@ -308,25 +308,25 @@ import '../../moves.dart';
       paths:[
           SwingRight +
           UmTurnRight.changeBeats(4.5) +
-          LeadLeft.changeBeats(4).changehands(1).scale(3.0,3.0) +
-          LeadLeft.changeBeats(4).changehands(1).scale(3.0,3.0) +
+          LeadLeft.changeBeats(4).changehands(Hands.LEFT).scale(3.0,3.0) +
+          LeadLeft.changeBeats(4).changehands(Hands.LEFT).scale(3.0,3.0) +
           FlipLeft.changeBeats(3.5),
 
           SwingRight +
           CastLeft +
-          SwingLeft.changeBeats(8).changehands(3) +
+          SwingLeft.changeBeats(8).changehands(Hands.BOTH) +
           Forward_2 +
           LeadLeft,
 
           SwingRight +
           UmTurnRight.changeBeats(4.5) +
-          LeadLeft.changeBeats(4).changehands(1).scale(3.0,3.0) +
-          LeadLeft.changeBeats(4).changehands(1).scale(3.0,3.0) +
+          LeadLeft.changeBeats(4).changehands(Hands.LEFT).scale(3.0,3.0) +
+          LeadLeft.changeBeats(4).changehands(Hands.LEFT).scale(3.0,3.0) +
           FlipLeft.changeBeats(3.5),
 
           SwingRight +
           CastLeft +
-          SwingLeft.changeBeats(8).changehands(3) +
+          SwingLeft.changeBeats(8).changehands(Hands.BOTH) +
           Forward_2 +
           LeadLeft
       ]),
@@ -349,12 +349,12 @@ import '../../moves.dart';
 
           SwingRight.scale(0.5,0.5) +
           CastLeft.changeBeats(9).scale(0.5,0.5) +
-          SwingLeft.changeBeats(6).changehands(3).scale(0.5,0.5) +
+          SwingLeft.changeBeats(6).changehands(Hands.BOTH).scale(0.5,0.5) +
           LeadLeft.changeBeats(3).scale(1.5,0.5),
 
           SwingRight.scale(0.5,0.5) +
           UmTurnRight.changeBeats(9) +
-          SwingLeft.changeBeats(6).changehands(2).scale(1.5,1.5) +
+          SwingLeft.changeBeats(6).changehands(Hands.RIGHT).scale(1.5,1.5) +
           RunLeft.scale(0.5,0.5)
       ]),
 
@@ -400,17 +400,17 @@ import '../../moves.dart';
       formation:Formation('Ocean Waves RH BGGB'),
       from:'Right-Hand Waves',group:' ',parts:'6;9;8',
       paths:[
-          CounterRotateRight_2_0.changeBeats(3).changehands(2).skew(1.0,0.0) +
-          CounterRotateRight_2_0.changeBeats(3).changehands(2) +
-          CounterRotateLeft_2_0.changeBeats(3).changehands(1) +
-          CounterRotateLeft_2_0.changeBeats(3).changehands(1) +
-          CounterRotateLeft_2_0.changeBeats(3).changehands(1) +
-          CounterRotateLeft_2_0.changeBeats(4).changehands(1) +
-          CounterRotateLeft_2_0.changeBeats(4).changehands(1) +
+          CounterRotateRight_2_0.changeBeats(3).changehands(Hands.RIGHT).skew(1.0,0.0) +
+          CounterRotateRight_2_0.changeBeats(3).changehands(Hands.RIGHT) +
+          CounterRotateLeft_2_0.changeBeats(3).changehands(Hands.LEFT) +
+          CounterRotateLeft_2_0.changeBeats(3).changehands(Hands.LEFT) +
+          CounterRotateLeft_2_0.changeBeats(3).changehands(Hands.LEFT) +
+          CounterRotateLeft_2_0.changeBeats(4).changehands(Hands.LEFT) +
+          CounterRotateLeft_2_0.changeBeats(4).changehands(Hands.LEFT) +
           QuarterLeft.changeBeats(5).skew(4.0,-1.0),
 
-          CounterRotateRight_0_m2.changeBeats(3).changehands(2).skew(-1.0,0.0) +
-          CounterRotateRight_0_m2.changeBeats(3).changehands(2) +
+          CounterRotateRight_0_m2.changeBeats(3).changehands(Hands.RIGHT).skew(-1.0,0.0) +
+          CounterRotateRight_0_m2.changeBeats(3).changehands(Hands.RIGHT) +
           QuarterRight.changeBeats(4.5).skew(-1.0,-0.5) +
           QuarterRight.changeBeats(4.5).skew(-0.5,-1.0) +
           CounterRotateLeft_2_4.changeBeats(4) +
@@ -418,8 +418,8 @@ import '../../moves.dart';
           RunLeft.skew(-1.0,0.0) +
           Forward_2,
 
-          CounterRotateRight_2_0.changeBeats(3).changehands(2).skew(1.0,0.0) +
-          CounterRotateRight_2_0.changeBeats(3).changehands(2) +
+          CounterRotateRight_2_0.changeBeats(3).changehands(Hands.RIGHT).skew(1.0,0.0) +
+          CounterRotateRight_2_0.changeBeats(3).changehands(Hands.RIGHT) +
           QuarterRight.changeBeats(4.5).skew(1.0,0.5) +
           QuarterRight.changeBeats(4.5).skew(0.5,1.0) +
           CounterRotateLeft_4_2.changeBeats(4) +
@@ -427,13 +427,13 @@ import '../../moves.dart';
           Forward_2 +
           RunLeft.skew(1.0,0.0),
 
-          CounterRotateRight_0_m2.changeBeats(3).changehands(2).skew(-1.0,0.0) +
-          CounterRotateRight_0_m2.changeBeats(3).changehands(2) +
-          CounterRotateLeft_0_2.changeBeats(3).changehands(1) +
-          CounterRotateLeft_0_2.changeBeats(3).changehands(1) +
-          CounterRotateLeft_0_2.changeBeats(3).changehands(1) +
-          CounterRotateLeft_0_2.changeBeats(4).changehands(1) +
-          CounterRotateLeft_0_2.changeBeats(4).changehands(1) +
+          CounterRotateRight_0_m2.changeBeats(3).changehands(Hands.RIGHT).skew(-1.0,0.0) +
+          CounterRotateRight_0_m2.changeBeats(3).changehands(Hands.RIGHT) +
+          CounterRotateLeft_0_2.changeBeats(3).changehands(Hands.LEFT) +
+          CounterRotateLeft_0_2.changeBeats(3).changehands(Hands.LEFT) +
+          CounterRotateLeft_0_2.changeBeats(3).changehands(Hands.LEFT) +
+          CounterRotateLeft_0_2.changeBeats(4).changehands(Hands.LEFT) +
+          CounterRotateLeft_0_2.changeBeats(4).changehands(Hands.LEFT) +
           LeadLeft.changeBeats(4).scale(2.0,3.0)
       ]),
   ];

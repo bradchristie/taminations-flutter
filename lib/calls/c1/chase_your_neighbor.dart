@@ -19,7 +19,7 @@
 */
 
 import '../../animated_call.dart';
-import '../../formation.dart';
+import '../../common_dart.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> ChaseYourNeighbor = [
@@ -169,23 +169,23 @@ import '../../moves.dart';
       formation:Formation('Lines Facing Out'),
       from:'Lines Facing Out',group:' ',parts:'6',
       paths:[
-          BackRunLeft.changehands(1).skew(-1.0,0.0) +
-          Forward_3.changehands(1) +
-          LeadRight.changeBeats(3).changehands(1).scale(0.5,1.0) +
+          BackRunLeft.changehands(Hands.LEFT).skew(-1.0,0.0) +
+          Forward_3.changehands(Hands.LEFT) +
+          LeadRight.changeBeats(3).changehands(Hands.LEFT).scale(0.5,1.0) +
           BackRunLeft.scale(0.5,0.5),
 
-          RunRight.changehands(2).skew(-1.0,0.0) +
-          Forward_3.changehands(2) +
-          LeadRight.changeBeats(3).changehands(2).scale(1.5,3.0) +
+          RunRight.changehands(Hands.RIGHT).skew(-1.0,0.0) +
+          Forward_3.changehands(Hands.RIGHT) +
+          LeadRight.changeBeats(3).changehands(Hands.RIGHT).scale(1.5,3.0) +
           RunRight.scale(0.5,0.5),
 
-          RunRight.changeBeats(6).changehands(1) +
-          ExtendRight.changeBeats(3).changehands(1).scale(2.0,0.5) +
+          RunRight.changeBeats(6).changehands(Hands.LEFT) +
+          ExtendRight.changeBeats(3).changehands(Hands.LEFT).scale(2.0,0.5) +
           RunRight.changeBeats(4).scale(0.5,0.5) +
           HingeRight.changeBeats(2).scale(0.5,0.5),
 
-          RunRight.changeBeats(6).changehands(2).scale(3.0,3.0) +
-          ExtendRight.changeBeats(3).changehands(2).scale(2.0,1.5) +
+          RunRight.changeBeats(6).changehands(Hands.RIGHT).scale(3.0,3.0) +
+          ExtendRight.changeBeats(3).changehands(Hands.RIGHT).scale(2.0,1.5) +
           RunRight.changeBeats(4).scale(1.5,1.5) +
           HingeRight.changeBeats(2).scale(1.5,1.5)
       ]),
@@ -222,9 +222,9 @@ import '../../moves.dart';
 
           RunRight.skew(-1.0,0.0) +
           Forward_3 +
-          QuarterRight.changeBeats(3).changehands(6).skew(0.0,-2.0) +
-          QuarterRight.changeBeats(3).changehands(6).skew(0.0,-2.0) +
-          QuarterRight.changeBeats(4).changehands(6).skew(0.0,-3.0),
+          QuarterRight.changeBeats(3).changehands(Hands.GRIPRIGHT).skew(0.0,-2.0) +
+          QuarterRight.changeBeats(3).changehands(Hands.GRIPRIGHT).skew(0.0,-2.0) +
+          QuarterRight.changeBeats(4).changehands(Hands.GRIPRIGHT).skew(0.0,-3.0),
 
           Forward_2 +
           FlipRight.skew(-2.0,0.0) +
@@ -235,9 +235,9 @@ import '../../moves.dart';
           Forward_2 +
           RunRight.skew(-1.0,0.0) +
           Forward +
-          QuarterRight.changeBeats(3).changehands(6).skew(2.0,0.0) +
-          QuarterRight.changeBeats(3).changehands(6).skew(2.0,0.0) +
-          QuarterRight.changeBeats(4).changehands(6).skew(2.0,1.0)
+          QuarterRight.changeBeats(3).changehands(Hands.GRIPRIGHT).skew(2.0,0.0) +
+          QuarterRight.changeBeats(3).changehands(Hands.GRIPRIGHT).skew(2.0,0.0) +
+          QuarterRight.changeBeats(4).changehands(Hands.GRIPRIGHT).skew(2.0,1.0)
       ]),
 
     AnimatedCall('Triple Box Chase Your Neighbor',

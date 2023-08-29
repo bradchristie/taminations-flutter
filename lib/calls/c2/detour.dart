@@ -19,7 +19,7 @@
 */
 
 import '../../animated_call.dart';
-import '../../formation.dart';
+import '../../common_dart.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> Detour = [
@@ -29,11 +29,11 @@ import '../../moves.dart';
       from:'Right-Hand Waves',
       paths:[
           Forward_2 +
-          QuarterLeft.changehands(1).skew(1.0,0.0),
+          QuarterLeft.changehands(Hands.LEFT).skew(1.0,0.0),
 
-          CounterRotateLeft_0_2.changeBeats(3.5).changehands(1).skew(-1.0,0.0),
+          CounterRotateLeft_0_2.changeBeats(3.5).changehands(Hands.LEFT).skew(-1.0,0.0),
 
-          CounterRotateLeft_2_0.changeBeats(3.5).changehands(1).skew(1.0,0.0),
+          CounterRotateLeft_2_0.changeBeats(3.5).changehands(Hands.LEFT).skew(1.0,0.0),
 
           RunLeft.changeBeats(2).skew(-2.0,-1.0) +
           HingeLeft
@@ -44,11 +44,11 @@ import '../../moves.dart';
       from:'Right-Hand Two-Faced Lines',
       paths:[
           Forward_2 +
-          QuarterLeft.changehands(1).skew(1.0,0.0),
+          QuarterLeft.changehands(Hands.LEFT).skew(1.0,0.0),
 
-          CounterRotateRight_2_0.changeBeats(3.5).changehands(2).skew(1.0,0.0),
+          CounterRotateRight_2_0.changeBeats(3.5).changehands(Hands.RIGHT).skew(1.0,0.0),
 
-          CounterRotateRight_0_m2.changeBeats(3.5).changehands(2).skew(-1.0,0.0),
+          CounterRotateRight_0_m2.changeBeats(3.5).changehands(Hands.RIGHT).skew(-1.0,0.0),
 
           RunLeft.changeBeats(2).skew(-2.0,-1.0) +
           HingeLeft
@@ -61,12 +61,12 @@ import '../../moves.dart';
           RunRight.changeBeats(2).skew(-2.0,1.0) +
           HingeRight,
 
-          CounterRotateRight_2_0.changeBeats(3.5).changehands(2).skew(1.0,0.0),
+          CounterRotateRight_2_0.changeBeats(3.5).changehands(Hands.RIGHT).skew(1.0,0.0),
 
-          CounterRotateRight_0_m2.changeBeats(3.5).changehands(2).skew(-1.0,0.0),
+          CounterRotateRight_0_m2.changeBeats(3.5).changehands(Hands.RIGHT).skew(-1.0,0.0),
 
           Forward_2 +
-          QuarterRight.changehands(2).skew(1.0,0.0)
+          QuarterRight.changehands(Hands.RIGHT).skew(1.0,0.0)
       ]),
 
     AnimatedCall('Detour',
@@ -76,12 +76,12 @@ import '../../moves.dart';
           RunRight.changeBeats(2).skew(-2.0,1.0) +
           HingeRight,
 
-          CounterRotateLeft_0_2.changeBeats(3.5).changehands(1).skew(-1.0,0.0),
+          CounterRotateLeft_0_2.changeBeats(3.5).changehands(Hands.LEFT).skew(-1.0,0.0),
 
-          CounterRotateLeft_2_0.changeBeats(3.5).changehands(1).skew(1.0,0.0),
+          CounterRotateLeft_2_0.changeBeats(3.5).changehands(Hands.LEFT).skew(1.0,0.0),
 
           Forward_2 +
-          QuarterRight.changehands(2).skew(1.0,0.0)
+          QuarterRight.changehands(Hands.RIGHT).skew(1.0,0.0)
       ]),
 
     AnimatedCall('Detour',
@@ -121,9 +121,9 @@ import '../../moves.dart';
           Forward.changeBeats(3) +
           HingeLeft.skew(0.0,-1.0),
 
-          CounterRotateLeft_2_0.changeBeats(3).changehands(1),
+          CounterRotateLeft_2_0.changeBeats(3).changehands(Hands.LEFT),
 
-          CounterRotateLeft_0_2.changeBeats(3).changehands(1),
+          CounterRotateLeft_0_2.changeBeats(3).changehands(Hands.LEFT),
 
           RunLeft.scale(1.0,0.5).skew(-1.0,0.0) +
           HingeLeft
@@ -136,9 +136,9 @@ import '../../moves.dart';
           RunRight.scale(1.0,0.5).skew(-1.0,0.0) +
           HingeRight,
 
-          CounterRotateLeft_2_0.changeBeats(3).changehands(1),
+          CounterRotateLeft_2_0.changeBeats(3).changehands(Hands.LEFT),
 
-          CounterRotateLeft_0_2.changeBeats(3).changehands(1),
+          CounterRotateLeft_0_2.changeBeats(3).changehands(Hands.LEFT),
 
           Forward.changeBeats(3) +
           HingeRight.skew(0.0,1.0)

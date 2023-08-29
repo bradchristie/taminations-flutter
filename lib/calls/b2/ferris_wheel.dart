@@ -19,7 +19,7 @@
 */
 
 import '../../animated_call.dart';
-import '../../formation.dart';
+import '../../common_dart.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> FerrisWheel = [
@@ -31,15 +31,15 @@ import '../../moves.dart';
     the Dance action description.
     ''',
       paths:[
-          Forward_2.changehands(2) +
-          RunRight.changeBeats(4).changehands(6).scale(1.0,2.0).skew(1.0,0.0),
+          Forward_2.changehands(Hands.RIGHT) +
+          RunRight.changeBeats(4).changehands(Hands.GRIPRIGHT).scale(1.0,2.0).skew(1.0,0.0),
 
-          Forward_2.changehands(1) +
-          UmTurnRight.changeBeats(4).changehands(5).skew(1.0,0.0),
+          Forward_2.changehands(Hands.LEFT) +
+          UmTurnRight.changeBeats(4).changehands(Hands.GRIPLEFT).skew(1.0,0.0),
 
-          UmTurnRight.changeBeats(4).changehands(5).skew(1.0,0.0),
+          UmTurnRight.changeBeats(4).changehands(Hands.GRIPLEFT).skew(1.0,0.0),
 
-          RunRight.changeBeats(4).changehands(6).scale(2.0,2.0).skew(1.0,0.0)
+          RunRight.changeBeats(4).changehands(Hands.GRIPRIGHT).scale(2.0,2.0).skew(1.0,0.0)
       ]),
 
     AnimatedCall('Ferris Wheel',
@@ -49,52 +49,52 @@ import '../../moves.dart';
        and a two-faced line is not formed.  This is how many dancers perform this call.
     ''',
       paths:[
-          RunRight.changeBeats(4).changehands(6).scale(2.0,2.0).skew(3.0,0.0),
+          RunRight.changeBeats(4).changehands(Hands.GRIPRIGHT).scale(2.0,2.0).skew(3.0,0.0),
 
-          UmTurnRight.changeBeats(4).changehands(5).skew(3.0,0.0),
+          UmTurnRight.changeBeats(4).changehands(Hands.GRIPLEFT).skew(3.0,0.0),
 
-          UmTurnRight.changeBeats(4).changehands(5).skew(1.0,0.0),
+          UmTurnRight.changeBeats(4).changehands(Hands.GRIPLEFT).skew(1.0,0.0),
 
-          RunRight.changeBeats(4).changehands(6).scale(2.0,2.0).skew(1.0,0.0)
+          RunRight.changeBeats(4).changehands(Hands.GRIPRIGHT).scale(2.0,2.0).skew(1.0,0.0)
       ]),
 
     AnimatedCall('Ferris Wheel',
       formation:Formation('Two-Faced Lines LH'),
       from:'Left-Handed Two-Faced Lines',difficulty: 1,
       paths:[
-          RunLeft.changeBeats(4).changehands(5).scale(2.0,2.0).skew(1.0,0.0),
+          RunLeft.changeBeats(4).changehands(Hands.GRIPLEFT).scale(2.0,2.0).skew(1.0,0.0),
 
-          UmTurnLeft.changeBeats(4).changehands(6).skew(1.0,0.0),
+          UmTurnLeft.changeBeats(4).changehands(Hands.GRIPRIGHT).skew(1.0,0.0),
 
-          UmTurnLeft.changeBeats(4).changehands(6).skew(3.0,0.0),
+          UmTurnLeft.changeBeats(4).changehands(Hands.GRIPRIGHT).skew(3.0,0.0),
 
-          RunLeft.changeBeats(4).changehands(5).scale(2.0,2.0).skew(3.0,0.0)
+          RunLeft.changeBeats(4).changehands(Hands.GRIPLEFT).scale(2.0,2.0).skew(3.0,0.0)
       ]),
 
     AnimatedCall('Ferris Wheel',
       formation:Formation('T-Bone Couples 1'),
       from:'T-Bone Couples',difficulty: 2,
       paths:[
-          RunRight.changeBeats(4).changehands(6).scale(2.0,2.0).skew(3.0,0.0),
+          RunRight.changeBeats(4).changehands(Hands.GRIPRIGHT).scale(2.0,2.0).skew(3.0,0.0),
 
-          UmTurnRight.changeBeats(4).changehands(5).skew(3.0,0.0),
+          UmTurnRight.changeBeats(4).changehands(Hands.GRIPLEFT).skew(3.0,0.0),
 
-          RunLeft.changeBeats(4).changehands(5).scale(2.0,2.0).skew(1.0,0.0),
+          RunLeft.changeBeats(4).changehands(Hands.GRIPLEFT).scale(2.0,2.0).skew(1.0,0.0),
 
-          UmTurnLeft.changeBeats(4).changehands(6).skew(1.0,0.0)
+          UmTurnLeft.changeBeats(4).changehands(Hands.GRIPRIGHT).skew(1.0,0.0)
       ]),
 
     AnimatedCall('Ferris Wheel',
       formation:Formation('T-Bone Couples 2'),
       from:'T-Bone Couples 2',difficulty: 2,
       paths:[
-          UmTurnLeft.changeBeats(4).changehands(6).skew(3.0,0.0),
+          UmTurnLeft.changeBeats(4).changehands(Hands.GRIPRIGHT).skew(3.0,0.0),
 
-          RunLeft.changeBeats(4).changehands(5).scale(2.0,2.0).skew(3.0,0.0),
+          RunLeft.changeBeats(4).changehands(Hands.GRIPLEFT).scale(2.0,2.0).skew(3.0,0.0),
 
-          UmTurnRight.changeBeats(4).changehands(5).skew(1.0,0.0),
+          UmTurnRight.changeBeats(4).changehands(Hands.GRIPLEFT).skew(1.0,0.0),
 
-          RunRight.changeBeats(4).changehands(6).scale(2.0,2.0).skew(1.0,0.0)
+          RunRight.changeBeats(4).changehands(Hands.GRIPRIGHT).scale(2.0,2.0).skew(1.0,0.0)
       ]),
   ];
 

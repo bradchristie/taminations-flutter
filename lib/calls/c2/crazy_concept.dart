@@ -20,7 +20,6 @@
 
 import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formation.dart';
 import '../../moves.dart';
 import '../c2/cross_the_k.dart' as c2;
 
@@ -139,22 +138,22 @@ import '../c2/cross_the_k.dart' as c2;
       formation:Formation('Two-Faced Tidal Line RH'),
       group:'Crazy',parts:'2;2;2',
       paths:[
-          LeadRight.changeBeats(2).changehands(2).scale(3.0,1.5).skew(0.0,-1.0) +
+          LeadRight.changeBeats(2).changehands(Hands.RIGHT).scale(3.0,1.5).skew(0.0,-1.0) +
           Stand.changeBeats(2) +
           CounterRotateRight_2_0 +
           Stand.changeBeats(2.5),
 
-          LeadRight.changeBeats(2).changehands(3).scale(1.0,0.5).skew(0.0,-1.0) +
-          CounterRotateRight_2_0.changehands(2) +
-          CounterRotateRight_0_m2.changehands(2) +
+          LeadRight.changeBeats(2).changehands(Hands.BOTH).scale(1.0,0.5).skew(0.0,-1.0) +
+          CounterRotateRight_2_0.changehands(Hands.RIGHT) +
+          CounterRotateRight_0_m2.changehands(Hands.RIGHT) +
           QuarterLeft.changeBeats(2.5).skew(0.0,2.0),
 
-          QuarterRight.changeBeats(2).changehands(3).skew(1.0,0.5) +
-          CounterRotateRight_0_m2.changehands(2) +
-          CounterRotateRight_2_0.changehands(2) +
+          QuarterRight.changeBeats(2).changehands(Hands.BOTH).skew(1.0,0.5) +
+          CounterRotateRight_0_m2.changehands(Hands.RIGHT) +
+          CounterRotateRight_2_0.changehands(Hands.RIGHT) +
           Stand.changeBeats(2.5),
 
-          QuarterRight.changeBeats(2).changehands(2).skew(3.0,-0.5) +
+          QuarterRight.changeBeats(2).changehands(Hands.RIGHT).skew(3.0,-0.5) +
           Stand.changeBeats(2) +
           CounterRotateRight_0_m2 +
           ExtendLeft +
@@ -166,47 +165,47 @@ import '../c2/cross_the_k.dart' as c2;
       group:'Crazy',parts:'8;8;8',
       paths:[
           Forward.changeBeats(3.5).changehands(0) +
-          ExtendLeft.changeBeats(1.5).changehands(2).scale(1.5,1.5) +
-          RunRight.changehands(2).scale(1.5,2.0).skew(1.5,0.5) +
+          ExtendLeft.changeBeats(1.5).changehands(Hands.RIGHT).scale(1.5,1.5) +
+          RunRight.changehands(Hands.RIGHT).scale(1.5,2.0).skew(1.5,0.5) +
           ExtendLeft.changeBeats(2).scale(1.5,1.75) +
-          SwingRight.changehands(3).scale(0.75,0.75) +
-          UmTurnRight.changehands(1).skew(1.5,0.25) +
+          SwingRight.changehands(Hands.BOTH).scale(0.75,0.75) +
+          UmTurnRight.changehands(Hands.LEFT).skew(1.5,0.25) +
           Forward.changeBeats(3.5).changehands(0) +
-          ExtendLeft.changeBeats(1.5).changehands(2).scale(1.5,1.0) +
-          RunRight.changehands(2).scale(1.5,1.75).skew(1.5,0.5) +
+          ExtendLeft.changeBeats(1.5).changehands(Hands.RIGHT).scale(1.5,1.0) +
+          RunRight.changehands(Hands.RIGHT).scale(1.5,1.75).skew(1.5,0.5) +
           Stand.changeBeats(8).changehands(0),
 
           ExtendLeft.changeBeats(2).scale(1.5,1.75) +
-          SwingRight.changehands(3).scale(0.75,0.75) +
-          UmTurnRight.changehands(1).skew(1.5,0.25) +
+          SwingRight.changehands(Hands.BOTH).scale(0.75,0.75) +
+          UmTurnRight.changehands(Hands.LEFT).skew(1.5,0.25) +
           Forward.changeBeats(3.5).changehands(0) +
-          ExtendLeft.changeBeats(1.5).changehands(2).scale(1.5,1.5) +
-          RunRight.changehands(2).scale(1.5,2.0).skew(1.5,0.5) +
+          ExtendLeft.changeBeats(1.5).changehands(Hands.RIGHT).scale(1.5,1.5) +
+          RunRight.changehands(Hands.RIGHT).scale(1.5,2.0).skew(1.5,0.5) +
           ExtendLeft.changeBeats(2).scale(1.5,1.75) +
-          SwingRight.changehands(3).scale(0.75,0.75) +
-          UmTurnRight.changehands(1).skew(1.5,0.25) +
+          SwingRight.changehands(Hands.BOTH).scale(0.75,0.75) +
+          UmTurnRight.changehands(Hands.LEFT).skew(1.5,0.25) +
           Forward.changeBeats(3.5).changehands(0) +
-          ExtendLeft.changeBeats(1.5).changehands(2).scale(1.5,1.0) +
-          RunRight.changehands(2).scale(1.5,1.75).skew(1.5,0.5),
+          ExtendLeft.changeBeats(1.5).changehands(Hands.RIGHT).scale(1.5,1.0) +
+          RunRight.changehands(Hands.RIGHT).scale(1.5,1.75).skew(1.5,0.5),
 
           Forward.changeBeats(3.5).changehands(0) +
-          ExtendLeft.changeBeats(1.5).changehands(2).scale(1.5,1.0) +
-          RunRight.changehands(2).scale(1.5,1.75).skew(1.5,0.5) +
+          ExtendLeft.changeBeats(1.5).changehands(Hands.RIGHT).scale(1.5,1.0) +
+          RunRight.changehands(Hands.RIGHT).scale(1.5,1.75).skew(1.5,0.5) +
           Stand.changeBeats(8).changehands(0) +
           Forward.changeBeats(3.5).changehands(0) +
-          ExtendLeft.changeBeats(1.5).changehands(2).scale(1.5,1.0) +
-          RunRight.changehands(2).scale(1.5,1.75).skew(1.5,0.5) +
+          ExtendLeft.changeBeats(1.5).changehands(Hands.RIGHT).scale(1.5,1.0) +
+          RunRight.changehands(Hands.RIGHT).scale(1.5,1.75).skew(1.5,0.5) +
           ExtendLeft.changeBeats(2).scale(1.5,1.75) +
-          SwingRight.changehands(3).scale(0.75,0.75) +
-          UmTurnRight.changehands(1).skew(1.5,0.25),
+          SwingRight.changehands(Hands.BOTH).scale(0.75,0.75) +
+          UmTurnRight.changehands(Hands.LEFT).skew(1.5,0.25),
 
           ExtendLeft.changeBeats(2).scale(1.5,1.75) +
-          SwingRight.changehands(3).scale(0.75,0.75) +
-          UmTurnRight.changehands(1).skew(1.5,0.25) +
+          SwingRight.changehands(Hands.BOTH).scale(0.75,0.75) +
+          UmTurnRight.changehands(Hands.LEFT).skew(1.5,0.25) +
           Stand.changeBeats(8).changehands(0) +
           ExtendLeft.changeBeats(2).scale(1.5,1.75) +
-          SwingRight.changehands(3).scale(0.75,0.75) +
-          UmTurnRight.changehands(1).skew(1.5,0.25) +
+          SwingRight.changehands(Hands.BOTH).scale(0.75,0.75) +
+          UmTurnRight.changehands(Hands.LEFT).skew(1.5,0.25) +
           Stand.changeBeats(8).changehands(0)
       ]),
 
@@ -279,10 +278,10 @@ import '../c2/cross_the_k.dart' as c2;
       paths:[
           Forward_2.changeBeats(3) +
           RunLeft.skew(-1.0,0.0) +
-          Stand.changeBeats(3).changehands(2) +
+          Stand.changeBeats(3).changehands(Hands.RIGHT) +
           RunLeft.skew(1.0,0.0),
 
-          Stand.changeBeats(3).changehands(2) +
+          Stand.changeBeats(3).changehands(Hands.RIGHT) +
           RunLeft.skew(1.0,0.0) +
           Forward_2.changeBeats(3) +
           RunLeft.skew(-1.0,0.0),
@@ -379,47 +378,47 @@ import '../c2/cross_the_k.dart' as c2;
       paths:[
           StandAlone.changeBeats(8) +
           ExtendRight.changeBeats(2).scale(1.5,1.75) +
-          SwingLeft.changehands(3).scale(0.75,0.75) +
-          UmTurnLeft.changehands(2).skew(1.5,-0.25) +
+          SwingLeft.changehands(Hands.BOTH).scale(0.75,0.75) +
+          UmTurnLeft.changehands(Hands.RIGHT).skew(1.5,-0.25) +
           StandAlone.changeBeats(8) +
           ExtendRight.changeBeats(2).scale(1.5,1.75) +
-          SwingLeft.changehands(3).scale(0.75,0.75) +
-          UmTurnLeft.changehands(2).skew(1.5,-0.25),
+          SwingLeft.changehands(Hands.BOTH).scale(0.75,0.75) +
+          UmTurnLeft.changehands(Hands.RIGHT).skew(1.5,-0.25),
 
           ExtendRight.changeBeats(2).scale(1.5,1.75) +
-          SwingLeft.changehands(3).scale(0.75,0.75) +
-          UmTurnLeft.changehands(2).skew(1.5,-0.25) +
+          SwingLeft.changehands(Hands.BOTH).scale(0.75,0.75) +
+          UmTurnLeft.changehands(Hands.RIGHT).skew(1.5,-0.25) +
           Forward.changeBeats(3.5).changehands(0) +
-          ExtendRight.changeBeats(1.5).changehands(1).scale(1.5,1.0) +
-          RunLeft.changehands(1).scale(1.5,2.0).skew(1.5,-1.0) +
+          ExtendRight.changeBeats(1.5).changehands(Hands.LEFT).scale(1.5,1.0) +
+          RunLeft.changehands(Hands.LEFT).scale(1.5,2.0).skew(1.5,-1.0) +
           StandAlone.changeBeats(8) +
           Forward.changeBeats(3.5).changehands(0) +
-          ExtendRight.changeBeats(1.5).changehands(1).scale(1.5,1.5) +
-          RunLeft.changehands(1).scale(1.5,2.0).skew(1.5,-0.5),
+          ExtendRight.changeBeats(1.5).changehands(Hands.LEFT).scale(1.5,1.5) +
+          RunLeft.changehands(Hands.LEFT).scale(1.5,2.0).skew(1.5,-0.5),
 
           Forward.changeBeats(3.5).changehands(0) +
-          ExtendRight.changeBeats(1.5).changehands(1).scale(1.5,1.5) +
-          RunLeft.changehands(1).scale(1.5,2.0).skew(1.5,-0.5) +
+          ExtendRight.changeBeats(1.5).changehands(Hands.LEFT).scale(1.5,1.5) +
+          RunLeft.changehands(Hands.LEFT).scale(1.5,2.0).skew(1.5,-0.5) +
           ExtendRight.changeBeats(2).scale(1.5,1.75) +
-          SwingLeft.changehands(3).scale(0.75,0.75) +
-          UmTurnLeft.changehands(2).skew(1.5,-0.25) +
+          SwingLeft.changehands(Hands.BOTH).scale(0.75,0.75) +
+          UmTurnLeft.changehands(Hands.RIGHT).skew(1.5,-0.25) +
           Forward.changeBeats(3.5).changehands(0) +
-          ExtendRight.changeBeats(1.5).changehands(1).scale(1.5,1.5) +
-          RunLeft.changehands(1).scale(1.5,2.0).skew(1.5,-0.5) +
+          ExtendRight.changeBeats(1.5).changehands(Hands.LEFT).scale(1.5,1.5) +
+          RunLeft.changehands(Hands.LEFT).scale(1.5,2.0).skew(1.5,-0.5) +
           ExtendRight.changeBeats(2).scale(1.5,1.75) +
-          SwingLeft.changehands(3).scale(0.75,0.75) +
-          UmTurnLeft.changehands(2).skew(1.5,-0.25),
+          SwingLeft.changehands(Hands.BOTH).scale(0.75,0.75) +
+          UmTurnLeft.changehands(Hands.RIGHT).skew(1.5,-0.25),
 
           StandAlone.changeBeats(8) +
           Forward.changeBeats(3.5).changehands(0) +
-          ExtendRight.changeBeats(1.5).changehands(1).scale(1.5,1.5) +
-          RunLeft.changehands(1).scale(1.5,2.0).skew(1.5,-0.5) +
+          ExtendRight.changeBeats(1.5).changehands(Hands.LEFT).scale(1.5,1.5) +
+          RunLeft.changehands(Hands.LEFT).scale(1.5,2.0).skew(1.5,-0.5) +
           ExtendRight.changeBeats(2).scale(1.5,1.75) +
-          SwingLeft.changehands(3).scale(0.75,0.75) +
-          UmTurnLeft.changehands(2).skew(1.5,-0.25) +
+          SwingLeft.changehands(Hands.BOTH).scale(0.75,0.75) +
+          UmTurnLeft.changehands(Hands.RIGHT).skew(1.5,-0.25) +
           Forward.changeBeats(3.5).changehands(0) +
-          ExtendRight.changeBeats(1.5).changehands(1).scale(1.5,1.0) +
-          RunLeft.changehands(1).scale(1.5,2.0).skew(1.5,-1.0)
+          ExtendRight.changeBeats(1.5).changehands(Hands.LEFT).scale(1.5,1.0) +
+          RunLeft.changehands(Hands.LEFT).scale(1.5,2.0).skew(1.5,-1.0)
       ]),
 
     AnimatedCall('1/2 Reverse Crazy Tag Back',

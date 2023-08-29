@@ -19,7 +19,7 @@
 */
 
 import '../../animated_call.dart';
-import '../../formation.dart';
+import '../../common_dart.dart';
 import '../../moves.dart';
 import '../a2/all_4_all_8.dart' as a2;
 
@@ -417,9 +417,9 @@ import '../a2/all_4_all_8.dart' as a2;
           DodgeRight +
           SwingRight.scale(0.5,0.5),
 
-          RunLeft.changeBeats(6).changehands(5).scale(3.0,2.5),
+          RunLeft.changeBeats(6).changehands(Hands.GRIPLEFT).scale(3.0,2.5),
 
-          RunLeft.changeBeats(6).changehands(6).scale(2.0,1.5)
+          RunLeft.changeBeats(6).changehands(Hands.GRIPRIGHT).scale(2.0,1.5)
       ]),
 
     AnimatedCall('As Couples Mix',
@@ -432,9 +432,9 @@ import '../a2/all_4_all_8.dart' as a2;
           DodgeLeft +
           SwingLeft.scale(0.5,0.5),
 
-          RunRight.changeBeats(6).changehands(6).scale(3.0,2.5),
+          RunRight.changeBeats(6).changehands(Hands.GRIPRIGHT).scale(3.0,2.5),
 
-          RunRight.changeBeats(6).changehands(5).scale(2.0,1.5)
+          RunRight.changeBeats(6).changehands(Hands.GRIPLEFT).scale(2.0,1.5)
       ]),
   ];
 

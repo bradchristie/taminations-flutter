@@ -20,7 +20,6 @@
 
 import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> ZipCode = [
@@ -34,9 +33,9 @@ import '../../moves.dart';
   ]),
       from:'Double Pass Thru',fractions:'5;2;4;2;4',
       paths:[
-          Forward_2.changehands(2),
+          Forward_2.changehands(Hands.RIGHT),
 
-          Forward_2.changehands(1),
+          Forward_2.changehands(Hands.LEFT),
 
           RunLeft.skew(-1.0,0.0) +
           LeadLeft.changeBeats(2).scale(1.0,2.0) +

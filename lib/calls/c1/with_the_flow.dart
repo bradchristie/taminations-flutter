@@ -19,7 +19,7 @@
 */
 
 import '../../animated_call.dart';
-import '../../formation.dart';
+import '../../common_dart.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> WithTheFlow = [
@@ -45,16 +45,16 @@ import '../../moves.dart';
       formation:Formation('Two-Faced Lines RH'),
       from:'Two-Faced Lines',group:' ',fractions:'4',
       paths:[
-          RunRight.changeBeats(4).changehands(2).scale(1.0,2.0).skew(1.0,0.0) +
+          RunRight.changeBeats(4).changehands(Hands.RIGHT).scale(1.0,2.0).skew(1.0,0.0) +
           Forward_2,
 
-          UmTurnRight.changeBeats(4).changehands(1).skew(1.0,0.0) +
+          UmTurnRight.changeBeats(4).changehands(Hands.LEFT).skew(1.0,0.0) +
           DodgeLeft.changeBeats(2),
 
-          UmTurnRight.changeBeats(4).changehands(1).skew(1.0,0.0) +
+          UmTurnRight.changeBeats(4).changehands(Hands.LEFT).skew(1.0,0.0) +
           DodgeLeft.changeBeats(2),
 
-          RunRight.changeBeats(4).changehands(2).scale(2.0,2.0).skew(1.0,0.0) +
+          RunRight.changeBeats(4).changehands(Hands.RIGHT).scale(2.0,2.0).skew(1.0,0.0) +
           Forward_2
       ]),
 

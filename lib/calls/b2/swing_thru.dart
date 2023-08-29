@@ -20,7 +20,6 @@
 
 import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> SwingThru = [
@@ -118,15 +117,15 @@ import '../../moves.dart';
        Be careful not to do Grand Swing Thru
     ''',
       paths:[
-          SwingRight.changehands(6).scale(0.75,0.5) +
-          SwingLeft.changehands(5).scale(0.75,0.5),
+          SwingRight.changehands(Hands.GRIPRIGHT).scale(0.75,0.5) +
+          SwingLeft.changehands(Hands.GRIPLEFT).scale(0.75,0.5),
 
-          SwingRight.changehands(6).scale(0.75,0.5),
+          SwingRight.changehands(Hands.GRIPRIGHT).scale(0.75,0.5),
 
-          SwingRight.changehands(6).scale(0.75,0.5),
+          SwingRight.changehands(Hands.GRIPRIGHT).scale(0.75,0.5),
 
-          SwingRight.changehands(6).scale(0.75,0.5) +
-          SwingLeft.changehands(5).scale(0.75,0.5)
+          SwingRight.changehands(Hands.GRIPRIGHT).scale(0.75,0.5) +
+          SwingLeft.changehands(Hands.GRIPLEFT).scale(0.75,0.5)
       ]),
 
     AnimatedCall('Swing Thru',
@@ -134,16 +133,16 @@ import '../../moves.dart';
       from:'Left-Hand Tidal Wave',parts:'3',difficulty: 2,
       paths:[
           Stand.changeBeats(3).changehands(0) +
-          SwingLeft.changehands(5).scale(0.75,0.5),
+          SwingLeft.changehands(Hands.GRIPLEFT).scale(0.75,0.5),
 
-          SwingRight.changehands(6).scale(0.75,0.5) +
-          SwingLeft.changehands(5).scale(0.75,0.5),
+          SwingRight.changehands(Hands.GRIPRIGHT).scale(0.75,0.5) +
+          SwingLeft.changehands(Hands.GRIPLEFT).scale(0.75,0.5),
 
-          SwingRight.changehands(6).scale(0.75,0.5) +
-          SwingLeft.changehands(5).scale(0.75,0.5),
+          SwingRight.changehands(Hands.GRIPRIGHT).scale(0.75,0.5) +
+          SwingLeft.changehands(Hands.GRIPLEFT).scale(0.75,0.5),
 
           Stand.changeBeats(3).changehands(0) +
-          SwingLeft.changehands(5).scale(0.75,0.5)
+          SwingLeft.changehands(Hands.GRIPLEFT).scale(0.75,0.5)
       ]),
 
     AnimatedCall('Swing Thru',
@@ -191,33 +190,33 @@ import '../../moves.dart';
       formation:Formation('Alamo Wave'),
       from:'Alamo Wave',parts:'3.2',difficulty: 1,
       paths:[
-          SxtnthLeft.changehands(2) +
+          SxtnthLeft.changehands(Hands.RIGHT) +
           SwingRight +
-          SxtnthLeft.changehands(2) +
-          SxtnthLeft.changehands(1) +
+          SxtnthLeft.changehands(Hands.RIGHT) +
+          SxtnthLeft.changehands(Hands.LEFT) +
           SwingLeft +
-          SxtnthLeft.changehands(1),
+          SxtnthLeft.changehands(Hands.LEFT),
 
-          SxtnthRight.changehands(2) +
+          SxtnthRight.changehands(Hands.RIGHT) +
           SwingRight +
-          SxtnthRight.changehands(2) +
-          SxtnthRight.changehands(1) +
+          SxtnthRight.changehands(Hands.RIGHT) +
+          SxtnthRight.changehands(Hands.LEFT) +
           SwingLeft +
-          SxtnthRight.changehands(1),
+          SxtnthRight.changehands(Hands.LEFT),
 
-          SxtnthLeft.changehands(2) +
+          SxtnthLeft.changehands(Hands.RIGHT) +
           SwingRight +
-          SxtnthLeft.changehands(2) +
-          SxtnthLeft.changehands(1) +
+          SxtnthLeft.changehands(Hands.RIGHT) +
+          SxtnthLeft.changehands(Hands.LEFT) +
           SwingLeft +
-          SxtnthLeft.changehands(1),
+          SxtnthLeft.changehands(Hands.LEFT),
 
-          SxtnthRight.changehands(2) +
+          SxtnthRight.changehands(Hands.RIGHT) +
           SwingRight +
-          SxtnthRight.changehands(2) +
-          SxtnthRight.changehands(1) +
+          SxtnthRight.changehands(Hands.RIGHT) +
+          SxtnthRight.changehands(Hands.LEFT) +
           SwingLeft +
-          SxtnthRight.changehands(1)
+          SxtnthRight.changehands(Hands.LEFT)
       ]),
 
     AnimatedCall('Swing Thru',
@@ -334,15 +333,15 @@ import '../../moves.dart';
       formation:Formation('Tidal Wave LH BGGB'),
       from:'Left-Hand Tidal Wave',parts:'3',difficulty: 2,
       paths:[
-          SwingLeft.changehands(5).scale(0.75,0.5) +
-          SwingRight.changehands(6).scale(0.75,0.5),
+          SwingLeft.changehands(Hands.GRIPLEFT).scale(0.75,0.5) +
+          SwingRight.changehands(Hands.GRIPRIGHT).scale(0.75,0.5),
 
-          SwingLeft.changehands(5).scale(0.75,0.5),
+          SwingLeft.changehands(Hands.GRIPLEFT).scale(0.75,0.5),
 
-          SwingLeft.changehands(5).scale(0.75,0.5),
+          SwingLeft.changehands(Hands.GRIPLEFT).scale(0.75,0.5),
 
-          SwingLeft.changehands(5).scale(0.75,0.5) +
-          SwingRight.changehands(6).scale(0.75,0.5)
+          SwingLeft.changehands(Hands.GRIPLEFT).scale(0.75,0.5) +
+          SwingRight.changehands(Hands.GRIPRIGHT).scale(0.75,0.5)
       ]),
 
     AnimatedCall('Left Swing Thru',
@@ -350,16 +349,16 @@ import '../../moves.dart';
       from:'Right-Hand Tidal Wave',parts:'3',difficulty: 2,
       paths:[
           Stand.changeBeats(3).changehands(0) +
-          SwingRight.changehands(6).scale(0.75,0.5),
+          SwingRight.changehands(Hands.GRIPRIGHT).scale(0.75,0.5),
 
-          SwingLeft.changehands(5).scale(0.75,0.5) +
-          SwingRight.changehands(6).scale(0.75,0.5),
+          SwingLeft.changehands(Hands.GRIPLEFT).scale(0.75,0.5) +
+          SwingRight.changehands(Hands.GRIPRIGHT).scale(0.75,0.5),
 
-          SwingLeft.changehands(5).scale(0.75,0.5) +
-          SwingRight.changehands(6).scale(0.75,0.5),
+          SwingLeft.changehands(Hands.GRIPLEFT).scale(0.75,0.5) +
+          SwingRight.changehands(Hands.GRIPRIGHT).scale(0.75,0.5),
 
           Stand.changeBeats(3).changehands(0) +
-          SwingRight.changehands(6).scale(0.75,0.5)
+          SwingRight.changehands(Hands.GRIPRIGHT).scale(0.75,0.5)
       ]),
 
     AnimatedCall('Left Swing Thru',
@@ -404,33 +403,33 @@ import '../../moves.dart';
       formation:Formation('Alamo Wave'),
       from:'Alamo Wave',parts:'3.2',difficulty: 2,
       paths:[
-          SxtnthRight.changehands(1) +
+          SxtnthRight.changehands(Hands.LEFT) +
           SwingLeft +
-          SxtnthRight.changehands(1) +
-          SxtnthRight.changehands(2) +
+          SxtnthRight.changehands(Hands.LEFT) +
+          SxtnthRight.changehands(Hands.RIGHT) +
           SwingRight +
-          SxtnthRight.changehands(2),
+          SxtnthRight.changehands(Hands.RIGHT),
 
-          SxtnthLeft.changehands(1) +
+          SxtnthLeft.changehands(Hands.LEFT) +
           SwingLeft +
-          SxtnthLeft.changehands(1) +
-          SxtnthLeft.changehands(2) +
+          SxtnthLeft.changehands(Hands.LEFT) +
+          SxtnthLeft.changehands(Hands.RIGHT) +
           SwingRight +
-          SxtnthLeft.changehands(2),
+          SxtnthLeft.changehands(Hands.RIGHT),
 
-          SxtnthRight.changehands(1) +
+          SxtnthRight.changehands(Hands.LEFT) +
           SwingLeft +
-          SxtnthRight.changehands(1) +
-          SxtnthRight.changehands(2) +
+          SxtnthRight.changehands(Hands.LEFT) +
+          SxtnthRight.changehands(Hands.RIGHT) +
           SwingRight +
-          SxtnthRight.changehands(2),
+          SxtnthRight.changehands(Hands.RIGHT),
 
-          SxtnthLeft.changehands(1) +
+          SxtnthLeft.changehands(Hands.LEFT) +
           SwingLeft +
-          SxtnthLeft.changehands(1) +
-          SxtnthLeft.changehands(2) +
+          SxtnthLeft.changehands(Hands.LEFT) +
+          SxtnthLeft.changehands(Hands.RIGHT) +
           SwingRight +
-          SxtnthLeft.changehands(2)
+          SxtnthLeft.changehands(Hands.RIGHT)
       ]),
 
     AnimatedCall('Left Swing Thru',

@@ -20,7 +20,6 @@
 
 import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> BoxCounterRotate = [
@@ -29,18 +28,18 @@ import '../../moves.dart';
       formation:Formation('Box RH Compact'),
       from:'Right-Hand Box',
       paths:[
-          CounterRotateRight_2p5_0p5.changeBeats(4).changehands(2),
+          CounterRotateRight_2p5_0p5.changeBeats(4).changehands(Hands.RIGHT),
 
-          CounterRotateRight_m0p5_m2p5.changeBeats(4).changehands(2)
+          CounterRotateRight_m0p5_m2p5.changeBeats(4).changehands(Hands.RIGHT)
       ]),
 
     AnimatedCall('Box Counter Rotate',
       formation:Formation('Box LH Compact'),
       from:'Left-Hand Box',
       paths:[
-          CounterRotateLeft_m0p5_2p5.changeBeats(4).changehands(5),
+          CounterRotateLeft_m0p5_2p5.changeBeats(4).changehands(Hands.GRIPLEFT),
 
-          CounterRotateLeft_2p5_m0p5.changeBeats(4).changehands(1)
+          CounterRotateLeft_2p5_m0p5.changeBeats(4).changehands(Hands.LEFT)
       ]),
 
     AnimatedCall('Box Counter Rotate',
@@ -90,13 +89,13 @@ import '../../moves.dart';
   ],asymmetric:true),
       from:'T-Bone 2',noDisplay: true,
       paths:[
-          CounterRotateLeft_0_2.changeBeats(4).changehands(1),
+          CounterRotateLeft_0_2.changeBeats(4).changehands(Hands.LEFT),
 
           CounterRotateLeft_0_2.changeBeats(4),
 
           CounterRotateLeft_0_2.changeBeats(4),
 
-          CounterRotateLeft_2_0.changeBeats(4).changehands(1)
+          CounterRotateLeft_2_0.changeBeats(4).changehands(Hands.LEFT)
       ]),
 
     AnimatedCall('Box Counter Rotate',
@@ -108,13 +107,13 @@ import '../../moves.dart';
   ],asymmetric:true),
       from:'T-Bone 3',noDisplay: true,
       paths:[
-          CounterRotateLeft_0_2.changeBeats(4).changehands(1),
+          CounterRotateLeft_0_2.changeBeats(4).changehands(Hands.LEFT),
 
           CounterRotateLeft_0_2.changeBeats(4),
 
           CounterRotateLeft_2_0.changeBeats(4),
 
-          CounterRotateLeft_2_0.changeBeats(4).changehands(1)
+          CounterRotateLeft_2_0.changeBeats(4).changehands(Hands.LEFT)
       ]),
 
     AnimatedCall('Box Counter Rotate',
@@ -126,13 +125,13 @@ import '../../moves.dart';
   ],asymmetric:true),
       from:'T-Bone 4',noDisplay: true,
       paths:[
-          CounterRotateLeft_0_2.changeBeats(4).changehands(1),
+          CounterRotateLeft_0_2.changeBeats(4).changehands(Hands.LEFT),
 
           CounterRotateLeft_2_0.changeBeats(4),
 
           CounterRotateLeft_2_0.changeBeats(4),
 
-          CounterRotateLeft_2_0.changeBeats(4).changehands(1)
+          CounterRotateLeft_2_0.changeBeats(4).changehands(Hands.LEFT)
       ]),
 
     AnimatedCall('Box Counter Rotate',
@@ -184,9 +183,9 @@ import '../../moves.dart';
 
           CounterRotateRight_0_m2.changeBeats(4),
 
-          CounterRotateRight_0_m2.changeBeats(4).changehands(2),
+          CounterRotateRight_0_m2.changeBeats(4).changehands(Hands.RIGHT),
 
-          CounterRotateRight_2_0.changeBeats(4).changehands(2)
+          CounterRotateRight_2_0.changeBeats(4).changehands(Hands.RIGHT)
       ]),
 
     AnimatedCall('Box Counter Rotate',
@@ -200,9 +199,9 @@ import '../../moves.dart';
       paths:[
           CounterRotateRight_0_m2.changeBeats(4),
 
-          CounterRotateRight_0_m2.changeBeats(4).changehands(2),
+          CounterRotateRight_0_m2.changeBeats(4).changehands(Hands.RIGHT),
 
-          CounterRotateRight_2_0.changeBeats(4).changehands(2),
+          CounterRotateRight_2_0.changeBeats(4).changehands(Hands.RIGHT),
 
           CounterRotateRight_2_0.changeBeats(4)
       ]),
@@ -216,9 +215,9 @@ import '../../moves.dart';
   ],asymmetric:true),
       from:'T-Bone 9',noDisplay: true,
       paths:[
-          CounterRotateRight_0_m2.changeBeats(4).changehands(2),
+          CounterRotateRight_0_m2.changeBeats(4).changehands(Hands.RIGHT),
 
-          CounterRotateRight_2_0.changeBeats(4).changehands(2),
+          CounterRotateRight_2_0.changeBeats(4).changehands(Hands.RIGHT),
 
           CounterRotateRight_2_0.changeBeats(4),
 
@@ -399,52 +398,52 @@ import '../../moves.dart';
       formation:Formation('Box RH'),
       from:'Right-Hand Box',fractions:'4;4',
       paths:[
-          CounterRotateRight_3_1.changeBeats(4).changehands(2) +
-          CounterRotateRight_3_1.changeBeats(4).changehands(2) +
-          CounterRotateRight_3_1.changeBeats(4).changehands(2),
+          CounterRotateRight_3_1.changeBeats(4).changehands(Hands.RIGHT) +
+          CounterRotateRight_3_1.changeBeats(4).changehands(Hands.RIGHT) +
+          CounterRotateRight_3_1.changeBeats(4).changehands(Hands.RIGHT),
 
-          CounterRotateRight_m1_m3.changeBeats(4).changehands(2) +
-          CounterRotateRight_m1_m3.changeBeats(4).changehands(2) +
-          CounterRotateRight_m1_m3.changeBeats(4).changehands(2)
+          CounterRotateRight_m1_m3.changeBeats(4).changehands(Hands.RIGHT) +
+          CounterRotateRight_m1_m3.changeBeats(4).changehands(Hands.RIGHT) +
+          CounterRotateRight_m1_m3.changeBeats(4).changehands(Hands.RIGHT)
       ]),
 
     AnimatedCall('As Couples Box Counter Rotate',
       formation:Formation('Two-Faced Lines RH'),
       from:'Two-Faced Lines',group:' ',
       paths:[
-          CounterRotateRight_5_m1.changeBeats(5).changehands(2),
+          CounterRotateRight_5_m1.changeBeats(5).changehands(Hands.RIGHT),
 
-          CounterRotateRight_3_1.changeBeats(5).changehands(3),
+          CounterRotateRight_3_1.changeBeats(5).changehands(Hands.BOTH),
 
-          CounterRotateRight_m1_m3.changeBeats(5).changehands(3),
+          CounterRotateRight_m1_m3.changeBeats(5).changehands(Hands.BOTH),
 
-          CounterRotateRight_1_m5.changeBeats(5).changehands(2)
+          CounterRotateRight_1_m5.changeBeats(5).changehands(Hands.RIGHT)
       ]),
 
     AnimatedCall('Split Counter Rotate',
       formation:Formation('Ocean Waves RH BGBG'),
       from:'Right-Hand Waves',
       paths:[
-          CounterRotateRight_2_0.changeBeats(4).changehands(2).scale(1.5,1.0),
+          CounterRotateRight_2_0.changeBeats(4).changehands(Hands.RIGHT).scale(1.5,1.0),
 
-          CounterRotateRight_0_m2.changeBeats(4).changehands(2).skew(-1.0,0.0),
+          CounterRotateRight_0_m2.changeBeats(4).changehands(Hands.RIGHT).skew(-1.0,0.0),
 
-          CounterRotateRight_2_0.changeBeats(4).changehands(2).scale(1.5,1.0),
+          CounterRotateRight_2_0.changeBeats(4).changehands(Hands.RIGHT).scale(1.5,1.0),
 
-          CounterRotateRight_0_m2.changeBeats(4).changehands(2).skew(-1.0,0.0)
+          CounterRotateRight_0_m2.changeBeats(4).changehands(Hands.RIGHT).skew(-1.0,0.0)
       ]),
 
     AnimatedCall('Split Counter Rotate',
       formation:Formation('Ocean Waves LH GBBG'),
       from:'Left-Hand Waves',
       paths:[
-          CounterRotateLeft_0_2.changeBeats(4).changehands(1).skew(-1.0,0.0),
+          CounterRotateLeft_0_2.changeBeats(4).changehands(Hands.LEFT).skew(-1.0,0.0),
 
-          CounterRotateLeft_2_0.changeBeats(4).changehands(1).scale(1.5,1.0),
+          CounterRotateLeft_2_0.changeBeats(4).changehands(Hands.LEFT).scale(1.5,1.0),
 
-          CounterRotateLeft_0_2.changeBeats(4).changehands(1).skew(-1.0,0.0),
+          CounterRotateLeft_0_2.changeBeats(4).changehands(Hands.LEFT).skew(-1.0,0.0),
 
-          CounterRotateLeft_2_0.changeBeats(4).changehands(1).scale(1.5,1.0)
+          CounterRotateLeft_2_0.changeBeats(4).changehands(Hands.LEFT).scale(1.5,1.0)
       ]),
 
     AnimatedCall('Split Counter Rotate',
@@ -456,26 +455,26 @@ import '../../moves.dart';
   ]),
       from:'Right-Hand Columns',
       paths:[
-          CounterRotateRight_0_m2.changeBeats(4).changehands(2).skew(0.0,-1.0),
+          CounterRotateRight_0_m2.changeBeats(4).changehands(Hands.RIGHT).skew(0.0,-1.0),
 
-          CounterRotateRight_2_0.changeBeats(4).changehands(2).skew(0.0,1.0),
+          CounterRotateRight_2_0.changeBeats(4).changehands(Hands.RIGHT).skew(0.0,1.0),
 
-          CounterRotateRight_0_m2.changeBeats(4).changehands(2).skew(0.0,-1.0),
+          CounterRotateRight_0_m2.changeBeats(4).changehands(Hands.RIGHT).skew(0.0,-1.0),
 
-          CounterRotateRight_2_0.changeBeats(4).changehands(2).skew(0.0,1.0)
+          CounterRotateRight_2_0.changeBeats(4).changehands(Hands.RIGHT).skew(0.0,1.0)
       ]),
 
     AnimatedCall('Split Counter Rotate',
       formation:Formation('Column LH GBGB'),
       from:'Left-Hand Columns',
       paths:[
-          CounterRotateLeft_2_0.changeBeats(4).changehands(1).skew(0.0,-1.0),
+          CounterRotateLeft_2_0.changeBeats(4).changehands(Hands.LEFT).skew(0.0,-1.0),
 
-          CounterRotateLeft_0_2.changeBeats(4).changehands(1).skew(0.0,1.0),
+          CounterRotateLeft_0_2.changeBeats(4).changehands(Hands.LEFT).skew(0.0,1.0),
 
-          CounterRotateLeft_2_0.changeBeats(4).changehands(1).skew(0.0,-1.0),
+          CounterRotateLeft_2_0.changeBeats(4).changehands(Hands.LEFT).skew(0.0,-1.0),
 
-          CounterRotateLeft_0_2.changeBeats(4).changehands(1).skew(0.0,1.0)
+          CounterRotateLeft_0_2.changeBeats(4).changehands(Hands.LEFT).skew(0.0,1.0)
       ]),
 
     AnimatedCall('Split Counter Rotate',
@@ -519,9 +518,9 @@ import '../../moves.dart';
       paths:[
           CounterRotateRight_2_0.changeBeats(4),
 
-          CounterRotateRight_2_0.changeBeats(4).changehands(2),
+          CounterRotateRight_2_0.changeBeats(4).changehands(Hands.RIGHT),
 
-          CounterRotateRight_0_m2.changeBeats(4).changehands(2),
+          CounterRotateRight_0_m2.changeBeats(4).changehands(Hands.RIGHT),
 
           CounterRotateRight_0_m2.changeBeats(4)
       ]),

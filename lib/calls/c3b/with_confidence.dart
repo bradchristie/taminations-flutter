@@ -19,7 +19,7 @@
 */
 
 import '../../animated_call.dart';
-import '../../formation.dart';
+import '../../common_dart.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> WithConfidence = [
@@ -29,20 +29,20 @@ import '../../moves.dart';
       from:'Right-Hand Waves',fractions:'3',
       paths:[
           Forward_2.changeBeats(3) +
-          Forward_2.changehands(2),
+          Forward_2.changehands(Hands.RIGHT),
 
           HingeLeft.scale(0.5,1.0) +
           Stand.changeBeats(1.5) +
           UmTurnRight.skew(-1.0,0.0) +
-          QuarterRight.changeBeats(3).changehands(1).skew(0.0,-0.5),
+          QuarterRight.changeBeats(3).changehands(Hands.LEFT).skew(0.0,-0.5),
 
           HingeLeft +
           HingeRight +
-          Forward_2.changehands(1),
+          Forward_2.changehands(Hands.LEFT),
 
           LeadRight.changeBeats(3).scale(2.0,3.0) +
           Forward.changeBeats(3) +
-          LeadRight.changeBeats(3).changehands(2).scale(2.0,2.0)
+          LeadRight.changeBeats(3).changehands(Hands.RIGHT).scale(2.0,2.0)
       ]),
 
     AnimatedCall('With Confidence',
@@ -56,14 +56,14 @@ import '../../moves.dart';
           HingeRight +
           HingeLeft +
           UmTurnRight.skew(-1.0,0.0) +
-          QuarterRight.changeBeats(2).changehands(1).skew(0.0,1.0),
+          QuarterRight.changeBeats(2).changehands(Hands.LEFT).skew(0.0,1.0),
 
           HingeRight.scale(0.5,1.0) +
           Stand.changeBeats(1.5) +
-          ExtendRight.changeBeats(3).changehands(1).scale(2.0,1.5),
+          ExtendRight.changeBeats(3).changehands(Hands.LEFT).scale(2.0,1.5),
 
           LeadRight.changeBeats(3).scale(2.0,3.0) +
-          ExtendRight.changeBeats(3).changehands(2).scale(2.0,1.0)
+          ExtendRight.changeBeats(3).changehands(Hands.RIGHT).scale(2.0,1.0)
       ]),
 
     AnimatedCall('With Confidence',
@@ -72,19 +72,19 @@ import '../../moves.dart';
       paths:[
           LeadLeft.changeBeats(3).scale(2.0,3.0) +
           Forward.changeBeats(3) +
-          LeadLeft.changeBeats(3).changehands(1).scale(2.0,2.0),
+          LeadLeft.changeBeats(3).changehands(Hands.LEFT).scale(2.0,2.0),
 
           HingeRight +
           HingeLeft +
-          Forward_2.changehands(2),
+          Forward_2.changehands(Hands.RIGHT),
 
           HingeRight.scale(0.5,1.0) +
           Stand.changeBeats(1.5) +
           UmTurnLeft.skew(-1.0,0.0) +
-          QuarterLeft.changeBeats(3).changehands(2).skew(0.0,0.5),
+          QuarterLeft.changeBeats(3).changehands(Hands.RIGHT).skew(0.0,0.5),
 
           Forward_2.changeBeats(3) +
-          Forward_2.changehands(1)
+          Forward_2.changehands(Hands.LEFT)
       ]),
 
     AnimatedCall('With Confidence',
@@ -92,16 +92,16 @@ import '../../moves.dart';
       from:'Left-Hand Two-Faced Lines',
       paths:[
           LeadLeft.changeBeats(3).scale(2.0,3.0) +
-          ExtendLeft.changeBeats(3).changehands(1).scale(2.0,1.0),
+          ExtendLeft.changeBeats(3).changehands(Hands.LEFT).scale(2.0,1.0),
 
           HingeLeft.scale(0.5,1.0) +
           Stand.changeBeats(1.5) +
-          ExtendLeft.changeBeats(3).changehands(2).scale(2.0,1.5),
+          ExtendLeft.changeBeats(3).changehands(Hands.RIGHT).scale(2.0,1.5),
 
           HingeLeft +
           HingeRight +
           UmTurnLeft.skew(-1.0,0.0) +
-          QuarterLeft.changeBeats(2).changehands(2).skew(0.0,-1.0),
+          QuarterLeft.changeBeats(2).changehands(Hands.RIGHT).skew(0.0,-1.0),
 
           Forward_2.changeBeats(3) +
           Forward.changeBeats(3) +

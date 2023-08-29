@@ -20,7 +20,6 @@
 
 import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> WheelAndAnything = [
@@ -29,39 +28,39 @@ import '../../moves.dart';
       formation:Formation('Couples Facing Out'),
       from:'Couples Facing Out',isPerimeter:true,noDisplay: true,
       paths:[
-          LeadLeft.changeBeats(3).changehands(1).scale(2.0,3.0) +
-          LeadLeft.changeBeats(3).changehands(1).scale(2.0,2.0) +
-          LeadLeft.changeBeats(3).changehands(5).scale(3.0,1.0),
+          LeadLeft.changeBeats(3).changehands(Hands.LEFT).scale(2.0,3.0) +
+          LeadLeft.changeBeats(3).changehands(Hands.LEFT).scale(2.0,2.0) +
+          LeadLeft.changeBeats(3).changehands(Hands.GRIPLEFT).scale(3.0,1.0),
 
-          LeadLeft.changeBeats(3).changehands(2) +
-          LeadLeft.changeBeats(3).changehands(2) +
-          QuarterLeft.changeBeats(3).changehands(6).skew(1.0,0.0)
+          LeadLeft.changeBeats(3).changehands(Hands.RIGHT) +
+          LeadLeft.changeBeats(3).changehands(Hands.RIGHT) +
+          QuarterLeft.changeBeats(3).changehands(Hands.GRIPRIGHT).skew(1.0,0.0)
       ]),
 
     AnimatedCall('Reverse Wheel',
       formation:Formation('Couples Facing Out'),
       from:'Couples Facing Out',isPerimeter:true,noDisplay: true,
       paths:[
-          LeadRight.changeBeats(3).changehands(1) +
-          LeadRight.changeBeats(3).changehands(1) +
-          QuarterRight.changeBeats(3).changehands(5).skew(1.0,0.0),
+          LeadRight.changeBeats(3).changehands(Hands.LEFT) +
+          LeadRight.changeBeats(3).changehands(Hands.LEFT) +
+          QuarterRight.changeBeats(3).changehands(Hands.GRIPLEFT).skew(1.0,0.0),
 
-          LeadRight.changeBeats(3).changehands(2).scale(2.0,3.0) +
-          LeadRight.changeBeats(3).changehands(2).scale(2.0,2.0) +
-          LeadRight.changeBeats(3).changehands(6).scale(3.0,1.0)
+          LeadRight.changeBeats(3).changehands(Hands.RIGHT).scale(2.0,3.0) +
+          LeadRight.changeBeats(3).changehands(Hands.RIGHT).scale(2.0,2.0) +
+          LeadRight.changeBeats(3).changehands(Hands.GRIPRIGHT).scale(3.0,1.0)
       ]),
 
     AnimatedCall('Wheel And Spin the Top',
       formation:Formation('Trade By'),
       from:'Trade By',group:'Wheel And',
       paths:[
-          LeadLeft.changeBeats(3).changehands(1).scale(1.0,3.0) +
+          LeadLeft.changeBeats(3).changehands(Hands.LEFT).scale(1.0,3.0) +
           LeadLeft.changeBeats(3).scale(2.0,2.0) +
-          LeadLeft.changeBeats(3).changehands(1).scale(3.0,1.0),
+          LeadLeft.changeBeats(3).changehands(Hands.LEFT).scale(3.0,1.0),
 
-          QuarterLeft.changeBeats(3).changehands(2).skew(0.0,1.0) +
+          QuarterLeft.changeBeats(3).changehands(Hands.RIGHT).skew(0.0,1.0) +
           LeadLeft.changeBeats(3) +
-          QuarterLeft.changeBeats(3).changehands(2).skew(1.0,0.0),
+          QuarterLeft.changeBeats(3).changehands(Hands.RIGHT).skew(1.0,0.0),
 
           Forward.changeBeats(2) +
           SwingRight +
@@ -81,13 +80,13 @@ import '../../moves.dart';
   ]),
       from:'Trade By',group:'Wheel And',
       paths:[
-          LeadLeft.changeBeats(3).changehands(1).scale(1.0,3.0) +
+          LeadLeft.changeBeats(3).changehands(Hands.LEFT).scale(1.0,3.0) +
           LeadLeft.changeBeats(3).scale(2.0,2.0) +
-          LeadLeft.changeBeats(3).changehands(1).scale(3.0,1.0),
+          LeadLeft.changeBeats(3).changehands(Hands.LEFT).scale(3.0,1.0),
 
-          QuarterLeft.changeBeats(3).changehands(2).skew(0.0,1.0) +
+          QuarterLeft.changeBeats(3).changehands(Hands.RIGHT).skew(0.0,1.0) +
           LeadLeft.changeBeats(3) +
-          QuarterLeft.changeBeats(3).changehands(2).skew(1.0,0.0),
+          QuarterLeft.changeBeats(3).changehands(Hands.RIGHT).skew(1.0,0.0),
 
           ExtendLeft.scale(1.0,0.5) +
           HingeRight.scale(1.0,0.5),
@@ -105,13 +104,13 @@ import '../../moves.dart';
   ]),
       from:'Trade By',group:'Reverse Wheel and',
       paths:[
-          QuarterRight.changeBeats(3).changehands(1).skew(0.0,-1.0) +
+          QuarterRight.changeBeats(3).changehands(Hands.LEFT).skew(0.0,-1.0) +
           LeadRight.changeBeats(3) +
-          QuarterRight.changeBeats(3).changehands(1).skew(1.0,0.0),
+          QuarterRight.changeBeats(3).changehands(Hands.LEFT).skew(1.0,0.0),
 
-          LeadRight.changeBeats(3).changehands(2).scale(1.0,3.0) +
+          LeadRight.changeBeats(3).changehands(Hands.RIGHT).scale(1.0,3.0) +
           LeadRight.changeBeats(3).scale(2.0,2.0) +
-          LeadRight.changeBeats(3).changehands(2).scale(3.0,1.0),
+          LeadRight.changeBeats(3).changehands(Hands.RIGHT).scale(3.0,1.0),
 
           ExtendLeft.scale(1.0,0.5) +
           HingeRight.scale(1.0,0.5),

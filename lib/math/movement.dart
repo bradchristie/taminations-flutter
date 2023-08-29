@@ -25,52 +25,8 @@ import '../cloneable.dart';
 import '../extensions.dart';
 import '../math/vector.dart';
 import 'bezier.dart';
+import 'hands.dart';
 import 'matrix.dart';
-
-class Hands {
-  static const int NOHANDS = 0;
-  static const int NONE = 0;
-  static const int LEFTHAND = 1;
-  static const int LEFT = 1;
-  static const int RIGHTHAND = 2;
-  static const int RIGHT = 2;
-  static const int BOTHHANDS = 3;
-  static const int BOTH = 3;
-  static const int ANYGRIP = 4;
-  static const int GRIPLEFT = 5;
-  static const int GRIPRIGHT = 6;
-  static const int GRIPBOTH = 7;
-
-  static int getHands(String h) {
-    switch (h) {
-      case 'none' : return NOHANDS;
-      case 'nohands' : return NOHANDS;
-      case 'left' : return LEFTHAND;
-      case 'right' : return RIGHTHAND;
-      case 'both' : return BOTHHANDS;
-      case 'anygrip' : return ANYGRIP;
-      case 'gripleft' : return GRIPLEFT;
-      case 'gripright' : return GRIPRIGHT;
-      case 'gripboth' : return 7;
-      default : return 0;
-    }
-  }
-
-  static String getName(int i) {
-    switch (i) {
-      case NOHANDS : return 'none';
-      case LEFTHAND : return 'left';
-      case RIGHTHAND : return 'right';
-      case BOTHHANDS : return 'both';
-      case ANYGRIP : return 'anygrip';  // not used I think
-      case GRIPLEFT : return 'gripleft';
-      case GRIPRIGHT : return 'gripright';
-      case GRIPBOTH : return 'gripboth';
-      default: return 'none';
-    }
-  }
-
-}
 
 class Movement extends Cloneable<Movement> {
 

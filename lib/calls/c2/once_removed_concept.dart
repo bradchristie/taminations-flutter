@@ -20,9 +20,7 @@
 
 import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formation.dart';
 import '../../moves.dart';
-
 import '../c2/cross_the_k.dart' as c2;
 
   final List<AnimatedCall> OnceRemovedConcept = [
@@ -75,28 +73,28 @@ import '../c2/cross_the_k.dart' as c2;
       axis has changed.
     ''',
       paths:[
-          EighthRight.changeBeats(1).changehands(2).skew(0.5,0.0) +
+          EighthRight.changeBeats(1).changehands(Hands.RIGHT).skew(0.5,0.0) +
           CircleLeftQuarter.changeBeats(4).changehands(0).scale(2.0,2.0) +
           EighthLeft.changeBeats(1) +
           Stand.changehands(0) +
           ExtendLeft.changeBeats(2) +
           SwingRight.scale(0.5,0.5),
 
-          EighthRight.changeBeats(1).changehands(2).skew(0.5,0.0) +
+          EighthRight.changeBeats(1).changehands(Hands.RIGHT).skew(0.5,0.0) +
           CircleLeftQuarter.changeBeats(4).changehands(0).scale(2.0,2.0) +
           EighthLeft.changeBeats(1) +
           ExtendLeft.scale(1.0,0.5) +
           ExtendLeft.changeBeats(2).scale(2.0,0.5) +
           SwingRight.scale(0.5,0.5),
 
-          EighthLeft.changeBeats(1).changehands(1).skew(0.5,0.0) +
+          EighthLeft.changeBeats(1).changehands(Hands.LEFT).skew(0.5,0.0) +
           CircleLeftQuarter.changeBeats(4).changehands(0).scale(4.0,4.0) +
           EighthRight.changeBeats(1) +
           Stand.changehands(0) +
           Forward.changeBeats(2) +
           SwingRight.scale(0.75,1.0),
 
-          EighthLeft.changeBeats(1).changehands(1).skew(0.5,0.0) +
+          EighthLeft.changeBeats(1).changehands(Hands.LEFT).skew(0.5,0.0) +
           CircleLeftQuarter.changeBeats(4).changehands(0).scale(4.0,4.0) +
           EighthRight.changeBeats(1) +
           ExtendLeft.scale(1.0,0.5) +
@@ -310,13 +308,13 @@ import '../c2/cross_the_k.dart' as c2;
       formation:Formation('Two-Faced Lines RH Compact'),
       group:'(From lines) Once Removed',
       paths:[
-          Forward_3.changeBeats(4).changehands(2),
+          Forward_3.changeBeats(4).changehands(Hands.RIGHT),
 
-          Forward_3.changeBeats(4).changehands(1),
+          Forward_3.changeBeats(4).changehands(Hands.LEFT),
 
-          DodgeRight.changeBeats(4).changehands(1).scale(1.0,2.0),
+          DodgeRight.changeBeats(4).changehands(Hands.LEFT).scale(1.0,2.0),
 
-          DodgeRight.changeBeats(4).changehands(2).scale(1.0,2.0)
+          DodgeRight.changeBeats(4).changehands(Hands.RIGHT).scale(1.0,2.0)
       ]),
 
     AnimatedCall('Once Removed Circulate',
@@ -674,19 +672,19 @@ import '../c2/cross_the_k.dart' as c2;
       group:'(From tidal wave) Once Removed',
       paths:[
           Forward +
-          RunRight.changeBeats(4).changehands(2).scale(2.0,2.0).skew(1.5,0.0) +
+          RunRight.changeBeats(4).changehands(Hands.RIGHT).scale(2.0,2.0).skew(1.5,0.0) +
           ExtendLeft.changeBeats(3).scale(1.0,0.5),
 
           Forward +
-          RunLeft.changeBeats(4).changehands(1).scale(1.0,2.0) +
+          RunLeft.changeBeats(4).changehands(Hands.LEFT).scale(1.0,2.0) +
           ExtendRight.changeBeats(3).scale(2.5,1.5),
 
           Forward +
-          UmTurnRight.changeBeats(4).changehands(1).skew(1.5,0.0) +
+          UmTurnRight.changeBeats(4).changehands(Hands.LEFT).skew(1.5,0.0) +
           ExtendRight.changeBeats(3).scale(1.0,1.5),
 
           Forward +
-          UmTurnLeft.changeBeats(4).changehands(2) +
+          UmTurnLeft.changeBeats(4).changehands(Hands.RIGHT) +
           ExtendLeft.changeBeats(3).scale(2.5,0.5)
       ]),
 

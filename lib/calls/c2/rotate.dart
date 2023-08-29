@@ -19,7 +19,7 @@
 */
 
 import '../../animated_call.dart';
-import '../../formation.dart';
+import '../../common_dart.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> Rotate = [
@@ -29,13 +29,13 @@ import '../../moves.dart';
       group:' ',
       paths:[
           HingeRight +
-          HingeLeft.changeBeats(3).changehands(3).scale(0.5,1.0),
+          HingeLeft.changeBeats(3).changehands(Hands.BOTH).scale(0.5,1.0),
 
           BackHingeLeft +
           HingeLeft.changeBeats(3).scale(1.5,3.0),
 
           HingeRight +
-          HingeLeft.changeBeats(3).changehands(3).scale(0.5,1.0),
+          HingeLeft.changeBeats(3).changehands(Hands.BOTH).scale(0.5,1.0),
 
           BackHingeLeft +
           HingeLeft.changeBeats(3).scale(1.5,3.0)
@@ -46,16 +46,16 @@ import '../../moves.dart';
       group:' ',fractions:'4.5',
       paths:[
           HingeRight +
-          HingeLeft.changeBeats(3).changehands(3).scale(0.5,1.0) +
-          HingeLeft.changeBeats(3).changehands(3).scale(1.0,0.5),
+          HingeLeft.changeBeats(3).changehands(Hands.BOTH).scale(0.5,1.0) +
+          HingeLeft.changeBeats(3).changehands(Hands.BOTH).scale(1.0,0.5),
 
           BackHingeLeft +
           HingeLeft.changeBeats(3).scale(1.5,3.0) +
           HingeLeft.changeBeats(3).scale(3.0,1.5),
 
           HingeRight +
-          HingeLeft.changeBeats(3).changehands(3).scale(0.5,1.0) +
-          HingeLeft.changeBeats(3).changehands(3).scale(1.0,0.5),
+          HingeLeft.changeBeats(3).changehands(Hands.BOTH).scale(0.5,1.0) +
+          HingeLeft.changeBeats(3).changehands(Hands.BOTH).scale(1.0,0.5),
 
           BackHingeLeft +
           HingeLeft.changeBeats(3).scale(1.5,3.0) +
@@ -67,9 +67,9 @@ import '../../moves.dart';
       group:' ',fractions:'4.5;3',
       paths:[
           HingeRight +
-          HingeLeft.changeBeats(3).changehands(3).scale(0.5,1.0) +
-          HingeLeft.changeBeats(3).changehands(3).scale(1.0,0.5) +
-          HingeLeft.changeBeats(3).changehands(3).scale(0.5,1.0),
+          HingeLeft.changeBeats(3).changehands(Hands.BOTH).scale(0.5,1.0) +
+          HingeLeft.changeBeats(3).changehands(Hands.BOTH).scale(1.0,0.5) +
+          HingeLeft.changeBeats(3).changehands(Hands.BOTH).scale(0.5,1.0),
 
           BackHingeLeft +
           HingeLeft.changeBeats(3).scale(1.5,3.0) +
@@ -77,9 +77,9 @@ import '../../moves.dart';
           HingeLeft.changeBeats(3).scale(1.5,3.0),
 
           HingeRight +
-          HingeLeft.changeBeats(3).changehands(3).scale(0.5,1.0) +
-          HingeLeft.changeBeats(3).changehands(3).scale(1.0,0.5) +
-          HingeLeft.changeBeats(3).changehands(3).scale(0.5,1.0),
+          HingeLeft.changeBeats(3).changehands(Hands.BOTH).scale(0.5,1.0) +
+          HingeLeft.changeBeats(3).changehands(Hands.BOTH).scale(1.0,0.5) +
+          HingeLeft.changeBeats(3).changehands(Hands.BOTH).scale(0.5,1.0),
 
           BackHingeLeft +
           HingeLeft.changeBeats(3).scale(1.5,3.0) +
@@ -92,7 +92,7 @@ import '../../moves.dart';
       group:'  ',fractions:'4.5;3',
       paths:[
           HingeRight +
-          HingeLeft.changeBeats(3).changehands(3).scale(0.5,1.0) +
+          HingeLeft.changeBeats(3).changehands(Hands.BOTH).scale(0.5,1.0) +
           LeadLeft.changeBeats(3).scale(3.0,0.5),
 
           BackHingeLeft +
@@ -100,7 +100,7 @@ import '../../moves.dart';
           LeadLeft.changeBeats(3).scale(1.0,1.5),
 
           HingeRight +
-          HingeLeft.changeBeats(3).changehands(3).scale(0.5,1.0) +
+          HingeLeft.changeBeats(3).changehands(Hands.BOTH).scale(0.5,1.0) +
           LeadLeft.changeBeats(3).scale(3.0,0.5),
 
           BackHingeLeft +
@@ -113,8 +113,8 @@ import '../../moves.dart';
       group:'  ',fractions:'4.5;3',
       paths:[
           HingeRight +
-          HingeLeft.changeBeats(3).changehands(3).scale(0.5,1.0) +
-          HingeLeft.changeBeats(3).changehands(3).scale(1.0,0.5) +
+          HingeLeft.changeBeats(3).changehands(Hands.BOTH).scale(0.5,1.0) +
+          HingeLeft.changeBeats(3).changehands(Hands.BOTH).scale(1.0,0.5) +
           QuarterLeft.changeBeats(2).skew(-1.0,0.0),
 
           BackHingeLeft +
@@ -123,8 +123,8 @@ import '../../moves.dart';
           QuarterLeft.changeBeats(2).skew(-1.0,0.0),
 
           HingeRight +
-          HingeLeft.changeBeats(3).changehands(3).scale(0.5,1.0) +
-          HingeLeft.changeBeats(3).changehands(3).scale(1.0,0.5) +
+          HingeLeft.changeBeats(3).changehands(Hands.BOTH).scale(0.5,1.0) +
+          HingeLeft.changeBeats(3).changehands(Hands.BOTH).scale(1.0,0.5) +
           QuarterLeft.changeBeats(2).skew(1.0,0.0),
 
           BackHingeLeft +
@@ -137,17 +137,17 @@ import '../../moves.dart';
       formation:Formation('Static Square'),
       group:'   ',
       paths:[
-          ExtendRight.changeBeats(4).changehands(2).scale(3.0,2.0) +
-          HingeLeft.changeBeats(4).changehands(3),
+          ExtendRight.changeBeats(4).changehands(Hands.RIGHT).scale(3.0,2.0) +
+          HingeLeft.changeBeats(4).changehands(Hands.BOTH),
 
-          ExtendRight.changeBeats(4).changehands(1).scale(3.0,2.0) +
-          HingeLeft.changeBeats(4).changehands(1).scale(3.0,3.0),
+          ExtendRight.changeBeats(4).changehands(Hands.LEFT).scale(3.0,2.0) +
+          HingeLeft.changeBeats(4).changehands(Hands.LEFT).scale(3.0,3.0),
 
-          ExtendRight.changeBeats(4).changehands(2).scale(3.0,2.0) +
-          HingeLeft.changeBeats(4).changehands(3),
+          ExtendRight.changeBeats(4).changehands(Hands.RIGHT).scale(3.0,2.0) +
+          HingeLeft.changeBeats(4).changehands(Hands.BOTH),
 
-          ExtendRight.changeBeats(4).changehands(1).scale(3.0,2.0) +
-          HingeLeft.changeBeats(4).changehands(1).scale(3.0,3.0)
+          ExtendRight.changeBeats(4).changehands(Hands.LEFT).scale(3.0,2.0) +
+          HingeLeft.changeBeats(4).changehands(Hands.LEFT).scale(3.0,3.0)
       ]),
 
     AnimatedCall('Reverse Rotate 3/4',
@@ -160,9 +160,9 @@ import '../../moves.dart';
           HingeRight.changeBeats(3).scale(1.5,3.0),
 
           HingeLeft +
-          HingeRight.changeBeats(3).changehands(3).scale(0.5,1.0) +
-          HingeRight.changeBeats(3).changehands(3).scale(1.0,0.5) +
-          HingeRight.changeBeats(3).changehands(3).scale(0.5,1.0),
+          HingeRight.changeBeats(3).changehands(Hands.BOTH).scale(0.5,1.0) +
+          HingeRight.changeBeats(3).changehands(Hands.BOTH).scale(1.0,0.5) +
+          HingeRight.changeBeats(3).changehands(Hands.BOTH).scale(0.5,1.0),
 
           BackHingeRight +
           HingeRight.changeBeats(3).scale(1.5,3.0) +
@@ -170,9 +170,9 @@ import '../../moves.dart';
           HingeRight.changeBeats(3).scale(1.5,3.0),
 
           HingeLeft +
-          HingeRight.changeBeats(3).changehands(3).scale(0.5,1.0) +
-          HingeRight.changeBeats(3).changehands(3).scale(1.0,0.5) +
-          HingeRight.changeBeats(3).changehands(3).scale(0.5,1.0)
+          HingeRight.changeBeats(3).changehands(Hands.BOTH).scale(0.5,1.0) +
+          HingeRight.changeBeats(3).changehands(Hands.BOTH).scale(1.0,0.5) +
+          HingeRight.changeBeats(3).changehands(Hands.BOTH).scale(0.5,1.0)
       ]),
 
     AnimatedCall('Single Rotate 1/4',

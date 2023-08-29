@@ -20,7 +20,6 @@
 
 import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> Boomerang = [
@@ -77,10 +76,10 @@ import '../../moves.dart';
           RunLeft.changeBeats(3).skew(-1.0,0.0) +
           RunLeft.changeBeats(3).skew(1.0,0.0),
 
-          Forward_2.changeBeats(3).changehands(1) +
+          Forward_2.changeBeats(3).changehands(Hands.LEFT) +
           FlipLeft,
 
-          Forward_2.changeBeats(3).changehands(2) +
+          Forward_2.changeBeats(3).changehands(Hands.RIGHT) +
           RunRight
       ]),
 

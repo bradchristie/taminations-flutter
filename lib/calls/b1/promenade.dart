@@ -20,7 +20,6 @@
 
 import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> Promenade = [
@@ -29,172 +28,172 @@ import '../../moves.dart';
       formation:Formation('Static Square'),
       from:'Static Square',group:' ',
       paths:[
-          ExtendRight.changeBeats(3).changehands(6).scale(2.0,4.0) +
-          Forward_2.changehands(2) +
-          RunLeft.changeBeats(3).changehands(6).skew(2.0,0.0),
+          ExtendRight.changeBeats(3).changehands(Hands.GRIPRIGHT).scale(2.0,4.0) +
+          Forward_2.changehands(Hands.RIGHT) +
+          RunLeft.changeBeats(3).changehands(Hands.GRIPRIGHT).skew(2.0,0.0),
 
-          ExtendRight.changeBeats(3).changehands(5).scale(2.0,4.0) +
-          Forward_2.changehands(1) +
-          RunLeft.changeBeats(3).changehands(5).scale(3.0,3.0).skew(2.0,0.0),
+          ExtendRight.changeBeats(3).changehands(Hands.GRIPLEFT).scale(2.0,4.0) +
+          Forward_2.changehands(Hands.LEFT) +
+          RunLeft.changeBeats(3).changehands(Hands.GRIPLEFT).scale(3.0,3.0).skew(2.0,0.0),
 
-          Forward_2.changehands(2) +
+          Forward_2.changehands(Hands.RIGHT) +
           Stand.changeBeats(3) +
-          Back_2.changehands(2),
+          Back_2.changehands(Hands.RIGHT),
 
-          Forward_2.changehands(1) +
+          Forward_2.changehands(Hands.LEFT) +
           Stand.changeBeats(3) +
-          Back_2.changehands(1)
+          Back_2.changehands(Hands.LEFT)
       ]),
 
     AnimatedCall('Sides Promenade 1/2',
       formation:Formation('Static Square'),
       from:'Static Square',group:' ',
       paths:[
-          Forward_2.changehands(2) +
+          Forward_2.changehands(Hands.RIGHT) +
           Stand.changeBeats(3) +
-          Back_2.changehands(2),
+          Back_2.changehands(Hands.RIGHT),
 
-          Forward_2.changehands(1) +
+          Forward_2.changehands(Hands.LEFT) +
           Stand.changeBeats(3) +
-          Back_2.changehands(1),
+          Back_2.changehands(Hands.LEFT),
 
-          ExtendRight.changeBeats(3).changehands(6).scale(2.0,4.0) +
-          Forward_2.changehands(2) +
-          RunLeft.changeBeats(3).changehands(6).skew(2.0,0.0),
+          ExtendRight.changeBeats(3).changehands(Hands.GRIPRIGHT).scale(2.0,4.0) +
+          Forward_2.changehands(Hands.RIGHT) +
+          RunLeft.changeBeats(3).changehands(Hands.GRIPRIGHT).skew(2.0,0.0),
 
-          ExtendRight.changeBeats(3).changehands(5).scale(2.0,4.0) +
-          Forward_2.changehands(1) +
-          RunLeft.changeBeats(3).changehands(5).scale(3.0,3.0).skew(2.0,0.0)
+          ExtendRight.changeBeats(3).changehands(Hands.GRIPLEFT).scale(2.0,4.0) +
+          Forward_2.changehands(Hands.LEFT) +
+          RunLeft.changeBeats(3).changehands(Hands.GRIPLEFT).scale(3.0,3.0).skew(2.0,0.0)
       ]),
 
     AnimatedCall('Heads Promenade 3/4',
       formation:Formation('Static Square'),
       from:'Static Square',group:' ',
       paths:[
-          ExtendRight.changeBeats(2.5).changehands(6).scale(2.0,4.0) +
-          Forward_2.changeBeats(1.5).changehands(2) +
-          LeadLeft.changeBeats(2).changehands(6).skew(1.0,0.0) +
-          Forward_3.changehands(2) +
-          RunLeft.changeBeats(3).changehands(6).skew(2.0,0.0),
+          ExtendRight.changeBeats(2.5).changehands(Hands.GRIPRIGHT).scale(2.0,4.0) +
+          Forward_2.changeBeats(1.5).changehands(Hands.RIGHT) +
+          LeadLeft.changeBeats(2).changehands(Hands.GRIPRIGHT).skew(1.0,0.0) +
+          Forward_3.changehands(Hands.RIGHT) +
+          RunLeft.changeBeats(3).changehands(Hands.GRIPRIGHT).skew(2.0,0.0),
 
-          ExtendRight.changeBeats(2.5).changehands(5).scale(2.0,4.0) +
-          Forward_2.changeBeats(1.5).changehands(1) +
-          LeadLeft.changeBeats(2).changehands(5).scale(3.0,3.0).skew(1.0,0.0) +
-          Forward_3.changehands(1) +
-          RunLeft.changeBeats(3).changehands(5).scale(3.0,3.0).skew(2.0,0.0),
+          ExtendRight.changeBeats(2.5).changehands(Hands.GRIPLEFT).scale(2.0,4.0) +
+          Forward_2.changeBeats(1.5).changehands(Hands.LEFT) +
+          LeadLeft.changeBeats(2).changehands(Hands.GRIPLEFT).scale(3.0,3.0).skew(1.0,0.0) +
+          Forward_3.changehands(Hands.LEFT) +
+          RunLeft.changeBeats(3).changehands(Hands.GRIPLEFT).scale(3.0,3.0).skew(2.0,0.0),
 
-          Forward_2.changehands(2),
+          Forward_2.changehands(Hands.RIGHT),
 
-          Forward_2.changehands(1)
+          Forward_2.changehands(Hands.LEFT)
       ]),
 
     AnimatedCall('Sides Promenade 3/4',
       formation:Formation('Static Square'),
       from:'Static Square',group:' ',
       paths:[
-          Forward_2.changehands(2),
+          Forward_2.changehands(Hands.RIGHT),
 
-          Forward_2.changehands(1),
+          Forward_2.changehands(Hands.LEFT),
 
-          ExtendRight.changeBeats(2.5).changehands(6).scale(2.0,4.0) +
-          Forward_2.changeBeats(1.5).changehands(2) +
-          LeadLeft.changeBeats(2).changehands(6).skew(1.0,0.0) +
-          Forward_3.changeBeats(2).changehands(2) +
-          RunLeft.changeBeats(3).changehands(6).skew(2.0,0.0),
+          ExtendRight.changeBeats(2.5).changehands(Hands.GRIPRIGHT).scale(2.0,4.0) +
+          Forward_2.changeBeats(1.5).changehands(Hands.RIGHT) +
+          LeadLeft.changeBeats(2).changehands(Hands.GRIPRIGHT).skew(1.0,0.0) +
+          Forward_3.changeBeats(2).changehands(Hands.RIGHT) +
+          RunLeft.changeBeats(3).changehands(Hands.GRIPRIGHT).skew(2.0,0.0),
 
-          ExtendRight.changeBeats(2.5).changehands(5).scale(2.0,4.0) +
-          Forward_2.changeBeats(1.5).changehands(1) +
-          LeadLeft.changeBeats(2).changehands(5).scale(3.0,3.0).skew(1.0,0.0) +
-          Forward_3.changeBeats(2).changehands(1) +
-          RunLeft.changeBeats(3).changehands(5).scale(3.0,3.0).skew(2.0,0.0)
+          ExtendRight.changeBeats(2.5).changehands(Hands.GRIPLEFT).scale(2.0,4.0) +
+          Forward_2.changeBeats(1.5).changehands(Hands.LEFT) +
+          LeadLeft.changeBeats(2).changehands(Hands.GRIPLEFT).scale(3.0,3.0).skew(1.0,0.0) +
+          Forward_3.changeBeats(2).changehands(Hands.LEFT) +
+          RunLeft.changeBeats(3).changehands(Hands.GRIPLEFT).scale(3.0,3.0).skew(2.0,0.0)
       ]),
 
     AnimatedCall('Heads Promenade Full',
       formation:Formation('Static Square'),
       from:'Static Square',group:' ',
       paths:[
-          ExtendRight.changeBeats(2.5).changehands(6).scale(2.0,4.0) +
-          Forward_2.changeBeats(1.5).changehands(2) +
-          LeadLeft.changeBeats(2).changehands(6).skew(1.0,0.0) +
-          Forward_3.changeBeats(2).changehands(2) +
-          LeadLeft.changeBeats(2).changehands(6).skew(1.0,0.0) +
-          Forward_3.changeBeats(2).changehands(2) +
-          RunLeft.changeBeats(3).changehands(6).skew(2.0,0.0),
+          ExtendRight.changeBeats(2.5).changehands(Hands.GRIPRIGHT).scale(2.0,4.0) +
+          Forward_2.changeBeats(1.5).changehands(Hands.RIGHT) +
+          LeadLeft.changeBeats(2).changehands(Hands.GRIPRIGHT).skew(1.0,0.0) +
+          Forward_3.changeBeats(2).changehands(Hands.RIGHT) +
+          LeadLeft.changeBeats(2).changehands(Hands.GRIPRIGHT).skew(1.0,0.0) +
+          Forward_3.changeBeats(2).changehands(Hands.RIGHT) +
+          RunLeft.changeBeats(3).changehands(Hands.GRIPRIGHT).skew(2.0,0.0),
 
-          ExtendRight.changeBeats(2.5).changehands(5).scale(2.0,4.0) +
-          Forward_2.changeBeats(1.5).changehands(1) +
-          LeadLeft.changeBeats(2).changehands(5).scale(3.0,3.0).skew(1.0,0.0) +
-          Forward_3.changeBeats(2).changehands(1) +
-          LeadLeft.changeBeats(2).changehands(5).scale(3.0,3.0).skew(1.0,0.0) +
-          Forward_3.changeBeats(2).changehands(1) +
-          RunLeft.changeBeats(3).changehands(5).scale(3.0,3.0).skew(2.0,0.0),
+          ExtendRight.changeBeats(2.5).changehands(Hands.GRIPLEFT).scale(2.0,4.0) +
+          Forward_2.changeBeats(1.5).changehands(Hands.LEFT) +
+          LeadLeft.changeBeats(2).changehands(Hands.GRIPLEFT).scale(3.0,3.0).skew(1.0,0.0) +
+          Forward_3.changeBeats(2).changehands(Hands.LEFT) +
+          LeadLeft.changeBeats(2).changehands(Hands.GRIPLEFT).scale(3.0,3.0).skew(1.0,0.0) +
+          Forward_3.changeBeats(2).changehands(Hands.LEFT) +
+          RunLeft.changeBeats(3).changehands(Hands.GRIPLEFT).scale(3.0,3.0).skew(2.0,0.0),
 
-          Forward_2.changehands(2) +
+          Forward_2.changehands(Hands.RIGHT) +
           Stand.changeBeats(11) +
-          Back_2.changehands(2),
+          Back_2.changehands(Hands.RIGHT),
 
-          Forward_2.changehands(1) +
+          Forward_2.changehands(Hands.LEFT) +
           Stand.changeBeats(11) +
-          Back_2.changehands(1)
+          Back_2.changehands(Hands.LEFT)
       ]),
 
     AnimatedCall('Sides Promenade Full',
       formation:Formation('Static Square'),
       from:'Static Square',group:' ',
       paths:[
-          Forward_2.changehands(2) +
+          Forward_2.changehands(Hands.RIGHT) +
           Stand.changeBeats(11) +
-          Back_2.changehands(2),
+          Back_2.changehands(Hands.RIGHT),
 
-          Forward_2.changehands(1) +
+          Forward_2.changehands(Hands.LEFT) +
           Stand.changeBeats(11) +
-          Back_2.changehands(1),
+          Back_2.changehands(Hands.LEFT),
 
-          ExtendRight.changeBeats(2.5).changehands(6).scale(2.0,4.0) +
-          Forward_2.changeBeats(1.5).changehands(2) +
-          LeadLeft.changeBeats(2).changehands(6).skew(1.0,0.0) +
-          Forward_3.changeBeats(2).changehands(2) +
-          LeadLeft.changeBeats(2).changehands(6).skew(1.0,0.0) +
-          Forward_3.changeBeats(2).changehands(2) +
-          RunLeft.changeBeats(3).changehands(6).skew(2.0,0.0),
+          ExtendRight.changeBeats(2.5).changehands(Hands.GRIPRIGHT).scale(2.0,4.0) +
+          Forward_2.changeBeats(1.5).changehands(Hands.RIGHT) +
+          LeadLeft.changeBeats(2).changehands(Hands.GRIPRIGHT).skew(1.0,0.0) +
+          Forward_3.changeBeats(2).changehands(Hands.RIGHT) +
+          LeadLeft.changeBeats(2).changehands(Hands.GRIPRIGHT).skew(1.0,0.0) +
+          Forward_3.changeBeats(2).changehands(Hands.RIGHT) +
+          RunLeft.changeBeats(3).changehands(Hands.GRIPRIGHT).skew(2.0,0.0),
 
-          ExtendRight.changeBeats(2.5).changehands(5).scale(2.0,4.0) +
-          Forward_2.changeBeats(1.5).changehands(1) +
-          LeadLeft.changeBeats(2).changehands(5).scale(3.0,3.0).skew(1.0,0.0) +
-          Forward_3.changeBeats(2).changehands(1) +
-          LeadLeft.changeBeats(2).changehands(5).scale(3.0,3.0).skew(1.0,0.0) +
-          Forward_3.changeBeats(2).changehands(1) +
-          RunLeft.changeBeats(3).changehands(5).scale(3.0,3.0).skew(2.0,0.0)
+          ExtendRight.changeBeats(2.5).changehands(Hands.GRIPLEFT).scale(2.0,4.0) +
+          Forward_2.changeBeats(1.5).changehands(Hands.LEFT) +
+          LeadLeft.changeBeats(2).changehands(Hands.GRIPLEFT).scale(3.0,3.0).skew(1.0,0.0) +
+          Forward_3.changeBeats(2).changehands(Hands.LEFT) +
+          LeadLeft.changeBeats(2).changehands(Hands.GRIPLEFT).scale(3.0,3.0).skew(1.0,0.0) +
+          Forward_3.changeBeats(2).changehands(Hands.LEFT) +
+          RunLeft.changeBeats(3).changehands(Hands.GRIPLEFT).scale(3.0,3.0).skew(2.0,0.0)
       ]),
 
     AnimatedCall('Heads Promenade 1/4',
       formation:Formation('Static Square'),
       from:'Static Square',group:' ',
       paths:[
-          ExtendRight.changeBeats(2).changehands(6).scale(2.0,4.0) +
-          QuarterLeft.changeBeats(2).changehands(2),
+          ExtendRight.changeBeats(2).changehands(Hands.GRIPRIGHT).scale(2.0,4.0) +
+          QuarterLeft.changeBeats(2).changehands(Hands.RIGHT),
 
-          ExtendRight.changeBeats(2).changehands(5).scale(2.0,4.0) +
-          LeadLeft.changeBeats(2).changehands(1).scale(2.0,2.0),
+          ExtendRight.changeBeats(2).changehands(Hands.GRIPLEFT).scale(2.0,4.0) +
+          LeadLeft.changeBeats(2).changehands(Hands.LEFT).scale(2.0,2.0),
 
-          Forward_2.changehands(2),
+          Forward_2.changehands(Hands.RIGHT),
 
-          Forward_2.changehands(1)
+          Forward_2.changehands(Hands.LEFT)
       ]),
 
     AnimatedCall('Sides Promenade 1/4',
       formation:Formation('Static Square'),
       from:'Static Square',group:' ',
       paths:[
-          Forward_2.changehands(2),
+          Forward_2.changehands(Hands.RIGHT),
 
-          Forward_2.changehands(1),
+          Forward_2.changehands(Hands.LEFT),
 
-          ExtendRight.changeBeats(2).changehands(6).scale(2.0,4.0) +
-          QuarterLeft.changeBeats(2).changehands(2),
+          ExtendRight.changeBeats(2).changehands(Hands.GRIPRIGHT).scale(2.0,4.0) +
+          QuarterLeft.changeBeats(2).changehands(Hands.RIGHT),
 
-          ExtendRight.changeBeats(2).changehands(5).scale(2.0,4.0) +
-          LeadLeft.changeBeats(2).changehands(1).scale(2.0,2.0)
+          ExtendRight.changeBeats(2).changehands(Hands.GRIPLEFT).scale(2.0,4.0) +
+          LeadLeft.changeBeats(2).changehands(Hands.LEFT).scale(2.0,2.0)
       ]),
 
     AnimatedCall('All 4 Couples Promenade 1/4',
@@ -202,19 +201,19 @@ import '../../moves.dart';
       from:'Static Square',group:' ',
       paths:[
           HingeRight.changeBeats(2).scale(2.0,2.0) +
-          LeadLeft.changeBeats(2).changehands(2).scale(0.5,1.0) +
+          LeadLeft.changeBeats(2).changehands(Hands.RIGHT).scale(0.5,1.0) +
           BackHingeRight.changeBeats(2).skew(0.0,-0.5),
 
-          QuarterRight.changeBeats(2).changehands(1).skew(1.0,0.0) +
-          LeadLeft.changeBeats(2).changehands(1).scale(1.5,2.0) +
+          QuarterRight.changeBeats(2).changehands(Hands.LEFT).skew(1.0,0.0) +
+          LeadLeft.changeBeats(2).changehands(Hands.LEFT).scale(1.5,2.0) +
           HingeLeft.changeBeats(2).skew(0.0,-1.5),
 
           HingeRight.changeBeats(2).scale(2.0,2.0) +
-          LeadLeft.changeBeats(2).changehands(2).scale(0.5,1.0) +
+          LeadLeft.changeBeats(2).changehands(Hands.RIGHT).scale(0.5,1.0) +
           BackHingeRight.changeBeats(2).skew(0.0,-0.5),
 
-          QuarterRight.changeBeats(2).changehands(1).skew(1.0,0.0) +
-          LeadLeft.changeBeats(2).changehands(1).scale(1.5,2.0) +
+          QuarterRight.changeBeats(2).changehands(Hands.LEFT).skew(1.0,0.0) +
+          LeadLeft.changeBeats(2).changehands(Hands.LEFT).scale(1.5,2.0) +
           HingeLeft.changeBeats(2).skew(0.0,-1.5)
       ]),
 
@@ -223,23 +222,23 @@ import '../../moves.dart';
       from:'Static Square',group:' ',
       paths:[
           HingeRight.changeBeats(2).scale(2.0,2.0) +
-          LeadLeft.changeBeats(2).changehands(2).scale(0.5,1.0) +
-          LeadLeft.changeBeats(2).changehands(2).scale(1.5,1.5) +
+          LeadLeft.changeBeats(2).changehands(Hands.RIGHT).scale(0.5,1.0) +
+          LeadLeft.changeBeats(2).changehands(Hands.RIGHT).scale(1.5,1.5) +
           BackHingeRight.changeBeats(2).skew(0.0,-0.5),
 
-          QuarterRight.changeBeats(2).changehands(1).skew(1.0,0.0) +
-          LeadLeft.changeBeats(2).changehands(1).scale(1.5,2.0) +
-          LeadLeft.changeBeats(2).changehands(1).scale(2.5,2.5) +
+          QuarterRight.changeBeats(2).changehands(Hands.LEFT).skew(1.0,0.0) +
+          LeadLeft.changeBeats(2).changehands(Hands.LEFT).scale(1.5,2.0) +
+          LeadLeft.changeBeats(2).changehands(Hands.LEFT).scale(2.5,2.5) +
           HingeLeft.changeBeats(2).skew(0.0,-1.5),
 
           HingeRight.changeBeats(2).scale(2.0,2.0) +
-          LeadLeft.changeBeats(2).changehands(2).scale(0.5,1.0) +
-          LeadLeft.changeBeats(2).changehands(2).scale(1.5,1.5) +
+          LeadLeft.changeBeats(2).changehands(Hands.RIGHT).scale(0.5,1.0) +
+          LeadLeft.changeBeats(2).changehands(Hands.RIGHT).scale(1.5,1.5) +
           BackHingeRight.changeBeats(2).skew(0.0,-0.5),
 
-          QuarterRight.changeBeats(2).changehands(1).skew(1.0,0.0) +
-          LeadLeft.changeBeats(2).changehands(1).scale(1.5,2.0) +
-          LeadLeft.changeBeats(2).changehands(1).scale(2.5,2.5) +
+          QuarterRight.changeBeats(2).changehands(Hands.LEFT).skew(1.0,0.0) +
+          LeadLeft.changeBeats(2).changehands(Hands.LEFT).scale(1.5,2.0) +
+          LeadLeft.changeBeats(2).changehands(Hands.LEFT).scale(2.5,2.5) +
           HingeLeft.changeBeats(2).skew(0.0,-1.5)
       ]),
 
@@ -248,27 +247,27 @@ import '../../moves.dart';
       from:'Static Square',group:' ',
       paths:[
           HingeRight.changeBeats(2).scale(2.0,2.0) +
-          LeadLeft.changeBeats(2).changehands(2).scale(0.5,1.0) +
-          LeadLeft.changeBeats(2).changehands(2).scale(1.5,1.5) +
-          LeadLeft.changeBeats(2).changehands(2).scale(1.5,1.5) +
+          LeadLeft.changeBeats(2).changehands(Hands.RIGHT).scale(0.5,1.0) +
+          LeadLeft.changeBeats(2).changehands(Hands.RIGHT).scale(1.5,1.5) +
+          LeadLeft.changeBeats(2).changehands(Hands.RIGHT).scale(1.5,1.5) +
           BackHingeRight.changeBeats(2).skew(0.0,-0.5),
 
-          QuarterRight.changeBeats(2).changehands(1).skew(1.0,0.0) +
-          LeadLeft.changeBeats(2).changehands(1).scale(1.5,2.0) +
-          LeadLeft.changeBeats(2).changehands(1).scale(2.5,2.5) +
-          LeadLeft.changeBeats(2).changehands(1).scale(2.5,2.5) +
+          QuarterRight.changeBeats(2).changehands(Hands.LEFT).skew(1.0,0.0) +
+          LeadLeft.changeBeats(2).changehands(Hands.LEFT).scale(1.5,2.0) +
+          LeadLeft.changeBeats(2).changehands(Hands.LEFT).scale(2.5,2.5) +
+          LeadLeft.changeBeats(2).changehands(Hands.LEFT).scale(2.5,2.5) +
           HingeLeft.changeBeats(2).skew(0.0,-1.5),
 
           HingeRight.changeBeats(2).scale(2.0,2.0) +
-          LeadLeft.changeBeats(2).changehands(2).scale(0.5,1.0) +
-          LeadLeft.changeBeats(2).changehands(2).scale(1.5,1.5) +
-          LeadLeft.changeBeats(2).changehands(2).scale(1.5,1.5) +
+          LeadLeft.changeBeats(2).changehands(Hands.RIGHT).scale(0.5,1.0) +
+          LeadLeft.changeBeats(2).changehands(Hands.RIGHT).scale(1.5,1.5) +
+          LeadLeft.changeBeats(2).changehands(Hands.RIGHT).scale(1.5,1.5) +
           BackHingeRight.changeBeats(2).skew(0.0,-0.5),
 
-          QuarterRight.changeBeats(2).changehands(1).skew(1.0,0.0) +
-          LeadLeft.changeBeats(2).changehands(1).scale(1.5,2.0) +
-          LeadLeft.changeBeats(2).changehands(1).scale(2.5,2.5) +
-          LeadLeft.changeBeats(2).changehands(1).scale(2.5,2.5) +
+          QuarterRight.changeBeats(2).changehands(Hands.LEFT).skew(1.0,0.0) +
+          LeadLeft.changeBeats(2).changehands(Hands.LEFT).scale(1.5,2.0) +
+          LeadLeft.changeBeats(2).changehands(Hands.LEFT).scale(2.5,2.5) +
+          LeadLeft.changeBeats(2).changehands(Hands.LEFT).scale(2.5,2.5) +
           HingeLeft.changeBeats(2).skew(0.0,-1.5)
       ]),
 
@@ -277,31 +276,31 @@ import '../../moves.dart';
       from:'Static Square',group:' ',
       paths:[
           HingeRight.changeBeats(2).scale(2.0,2.0) +
-          LeadLeft.changeBeats(2).changehands(2).scale(0.5,1.0) +
-          LeadLeft.changeBeats(2).changehands(2).scale(1.5,1.5) +
-          LeadLeft.changeBeats(2).changehands(2).scale(1.5,1.5) +
-          LeadLeft.changeBeats(2).changehands(2).scale(1.5,1.5) +
+          LeadLeft.changeBeats(2).changehands(Hands.RIGHT).scale(0.5,1.0) +
+          LeadLeft.changeBeats(2).changehands(Hands.RIGHT).scale(1.5,1.5) +
+          LeadLeft.changeBeats(2).changehands(Hands.RIGHT).scale(1.5,1.5) +
+          LeadLeft.changeBeats(2).changehands(Hands.RIGHT).scale(1.5,1.5) +
           BackHingeRight.changeBeats(2).skew(0.0,-0.5),
 
-          QuarterRight.changeBeats(2).changehands(1).skew(1.0,0.0) +
-          LeadLeft.changeBeats(2).changehands(1).scale(1.5,2.0) +
-          LeadLeft.changeBeats(2).changehands(1).scale(2.5,2.5) +
-          LeadLeft.changeBeats(2).changehands(1).scale(2.5,2.5) +
-          LeadLeft.changeBeats(2).changehands(1).scale(2.5,2.5) +
+          QuarterRight.changeBeats(2).changehands(Hands.LEFT).skew(1.0,0.0) +
+          LeadLeft.changeBeats(2).changehands(Hands.LEFT).scale(1.5,2.0) +
+          LeadLeft.changeBeats(2).changehands(Hands.LEFT).scale(2.5,2.5) +
+          LeadLeft.changeBeats(2).changehands(Hands.LEFT).scale(2.5,2.5) +
+          LeadLeft.changeBeats(2).changehands(Hands.LEFT).scale(2.5,2.5) +
           HingeLeft.changeBeats(2).skew(0.0,-1.5),
 
           HingeRight.changeBeats(2).scale(2.0,2.0) +
-          LeadLeft.changeBeats(2).changehands(2).scale(0.5,1.0) +
-          LeadLeft.changeBeats(2).changehands(2).scale(1.5,1.5) +
-          LeadLeft.changeBeats(2).changehands(2).scale(1.5,1.5) +
-          LeadLeft.changeBeats(2).changehands(2).scale(1.5,1.5) +
+          LeadLeft.changeBeats(2).changehands(Hands.RIGHT).scale(0.5,1.0) +
+          LeadLeft.changeBeats(2).changehands(Hands.RIGHT).scale(1.5,1.5) +
+          LeadLeft.changeBeats(2).changehands(Hands.RIGHT).scale(1.5,1.5) +
+          LeadLeft.changeBeats(2).changehands(Hands.RIGHT).scale(1.5,1.5) +
           BackHingeRight.changeBeats(2).skew(0.0,-0.5),
 
-          QuarterRight.changeBeats(2).changehands(1).skew(1.0,0.0) +
-          LeadLeft.changeBeats(2).changehands(1).scale(1.5,2.0) +
-          LeadLeft.changeBeats(2).changehands(1).scale(2.5,2.5) +
-          LeadLeft.changeBeats(2).changehands(1).scale(2.5,2.5) +
-          LeadLeft.changeBeats(2).changehands(1).scale(2.5,2.5) +
+          QuarterRight.changeBeats(2).changehands(Hands.LEFT).skew(1.0,0.0) +
+          LeadLeft.changeBeats(2).changehands(Hands.LEFT).scale(1.5,2.0) +
+          LeadLeft.changeBeats(2).changehands(Hands.LEFT).scale(2.5,2.5) +
+          LeadLeft.changeBeats(2).changehands(Hands.LEFT).scale(2.5,2.5) +
+          LeadLeft.changeBeats(2).changehands(Hands.LEFT).scale(2.5,2.5) +
           HingeLeft.changeBeats(2).skew(0.0,-1.5)
       ]),
 
@@ -398,19 +397,19 @@ import '../../moves.dart';
     ''',
       paths:[
           HingeLeft.changeBeats(3) +
-          HingeLeft.changeBeats(3).changehands(3) +
-          SwingLeft.changeBeats(6).changehands(3),
+          HingeLeft.changeBeats(3).changehands(Hands.BOTH) +
+          SwingLeft.changeBeats(6).changehands(Hands.BOTH),
 
-          LeadRight_12.changeBeats(4.5).changehands(1).skew(0.879,-0.121) +
-          LeadLeft_12.changeBeats(1.5).changehands(1).scale(2.0,2.0) +
+          LeadRight_12.changeBeats(4.5).changehands(Hands.LEFT).skew(0.879,-0.121) +
+          LeadLeft_12.changeBeats(1.5).changehands(Hands.LEFT).scale(2.0,2.0) +
           SwingLeft.changeBeats(6).scale(2.0,2.0),
 
           HingeLeft.changeBeats(3) +
-          HingeLeft.changeBeats(3).changehands(3) +
-          SwingLeft.changeBeats(6).changehands(3),
+          HingeLeft.changeBeats(3).changehands(Hands.BOTH) +
+          SwingLeft.changeBeats(6).changehands(Hands.BOTH),
 
-          LeadRight_12.changeBeats(4.5).changehands(1).skew(0.879,-0.121) +
-          LeadLeft_12.changeBeats(1.5).changehands(1).scale(2.0,2.0) +
+          LeadRight_12.changeBeats(4.5).changehands(Hands.LEFT).skew(0.879,-0.121) +
+          LeadLeft_12.changeBeats(1.5).changehands(Hands.LEFT).scale(2.0,2.0) +
           SwingLeft.changeBeats(6).scale(2.0,2.0)
       ]),
 
@@ -418,192 +417,192 @@ import '../../moves.dart';
       formation:Formation('Static Square'),
       from:'Static Square',group:' ',
       paths:[
-          ExtendLeft.changeBeats(2).changehands(6).scale(2.0,4.0) +
-          LeadRight.changeBeats(2).changehands(2).scale(2.0,2.0),
+          ExtendLeft.changeBeats(2).changehands(Hands.GRIPRIGHT).scale(2.0,4.0) +
+          LeadRight.changeBeats(2).changehands(Hands.RIGHT).scale(2.0,2.0),
 
-          ExtendLeft.changeBeats(2).changehands(5).scale(2.0,4.0) +
-          QuarterRight.changeBeats(2).changehands(1),
+          ExtendLeft.changeBeats(2).changehands(Hands.GRIPLEFT).scale(2.0,4.0) +
+          QuarterRight.changeBeats(2).changehands(Hands.LEFT),
 
-          Forward_2.changehands(2),
+          Forward_2.changehands(Hands.RIGHT),
 
-          Forward_2.changehands(1)
+          Forward_2.changehands(Hands.LEFT)
       ]),
 
     AnimatedCall('Sides Wrong Way Promenade 1/4',
       formation:Formation('Static Square'),
       from:'Static Square',group:' ',
       paths:[
-          Forward_2.changehands(2),
+          Forward_2.changehands(Hands.RIGHT),
 
-          Forward_2.changehands(1),
+          Forward_2.changehands(Hands.LEFT),
 
-          ExtendLeft.changeBeats(2).changehands(6).scale(2.0,4.0) +
-          LeadRight.changeBeats(2).changehands(2).scale(2.0,2.0),
+          ExtendLeft.changeBeats(2).changehands(Hands.GRIPRIGHT).scale(2.0,4.0) +
+          LeadRight.changeBeats(2).changehands(Hands.RIGHT).scale(2.0,2.0),
 
-          ExtendLeft.changeBeats(2).changehands(5).scale(2.0,4.0) +
-          QuarterRight.changeBeats(2).changehands(1)
+          ExtendLeft.changeBeats(2).changehands(Hands.GRIPLEFT).scale(2.0,4.0) +
+          QuarterRight.changeBeats(2).changehands(Hands.LEFT)
       ]),
 
     AnimatedCall('Heads Wrong Way Promenade 1/2',
       formation:Formation('Static Square'),
       from:'Static Square',group:' ',
       paths:[
-          ExtendLeft.changeBeats(3).changehands(6).scale(2.0,4.0) +
-          Forward_2.changehands(2) +
-          RunRight.changeBeats(3).changehands(6).scale(3.0,3.0).skew(2.0,0.0),
+          ExtendLeft.changeBeats(3).changehands(Hands.GRIPRIGHT).scale(2.0,4.0) +
+          Forward_2.changehands(Hands.RIGHT) +
+          RunRight.changeBeats(3).changehands(Hands.GRIPRIGHT).scale(3.0,3.0).skew(2.0,0.0),
 
-          ExtendLeft.changeBeats(3).changehands(5).scale(2.0,4.0) +
-          Forward_2.changehands(1) +
-          RunRight.changeBeats(3).changehands(5).skew(2.0,0.0),
+          ExtendLeft.changeBeats(3).changehands(Hands.GRIPLEFT).scale(2.0,4.0) +
+          Forward_2.changehands(Hands.LEFT) +
+          RunRight.changeBeats(3).changehands(Hands.GRIPLEFT).skew(2.0,0.0),
 
-          Forward_2.changehands(2) +
+          Forward_2.changehands(Hands.RIGHT) +
           Stand.changeBeats(3) +
-          Back_2.changehands(2),
+          Back_2.changehands(Hands.RIGHT),
 
-          Forward_2.changehands(1) +
+          Forward_2.changehands(Hands.LEFT) +
           Stand.changeBeats(3) +
-          Back_2.changehands(1)
+          Back_2.changehands(Hands.LEFT)
       ]),
 
     AnimatedCall('Sides Wrong Way Promenade 1/2',
       formation:Formation('Static Square'),
       from:'Static Square',group:' ',
       paths:[
-          Forward_2.changehands(2) +
+          Forward_2.changehands(Hands.RIGHT) +
           Stand.changeBeats(3) +
-          Back_2.changehands(2),
+          Back_2.changehands(Hands.RIGHT),
 
-          Forward_2.changehands(1) +
+          Forward_2.changehands(Hands.LEFT) +
           Stand.changeBeats(3) +
-          Back_2.changehands(1),
+          Back_2.changehands(Hands.LEFT),
 
-          ExtendLeft.changeBeats(3).changehands(6).scale(2.0,4.0) +
-          Forward_2.changehands(2) +
-          RunRight.changeBeats(3).changehands(6).scale(3.0,3.0).skew(2.0,0.0),
+          ExtendLeft.changeBeats(3).changehands(Hands.GRIPRIGHT).scale(2.0,4.0) +
+          Forward_2.changehands(Hands.RIGHT) +
+          RunRight.changeBeats(3).changehands(Hands.GRIPRIGHT).scale(3.0,3.0).skew(2.0,0.0),
 
-          ExtendLeft.changeBeats(3).changehands(5).scale(2.0,4.0) +
-          Forward_2.changehands(1) +
-          RunRight.changeBeats(3).changehands(5).skew(2.0,0.0)
+          ExtendLeft.changeBeats(3).changehands(Hands.GRIPLEFT).scale(2.0,4.0) +
+          Forward_2.changehands(Hands.LEFT) +
+          RunRight.changeBeats(3).changehands(Hands.GRIPLEFT).skew(2.0,0.0)
       ]),
 
     AnimatedCall('Heads Wrong Way Promenade 3/4',
       formation:Formation('Static Square'),
       from:'Static Square',group:' ',
       paths:[
-          ExtendLeft.changeBeats(2.5).changehands(6).scale(2.0,4.0) +
-          Forward_2.changeBeats(1.5).changehands(2) +
-          LeadRight.changeBeats(2).changehands(6).scale(3.0,3.0).skew(1.0,0.0) +
-          Forward_3.changehands(2) +
-          RunRight.changeBeats(3).changehands(6).scale(3.0,3.0).skew(2.0,0.0),
+          ExtendLeft.changeBeats(2.5).changehands(Hands.GRIPRIGHT).scale(2.0,4.0) +
+          Forward_2.changeBeats(1.5).changehands(Hands.RIGHT) +
+          LeadRight.changeBeats(2).changehands(Hands.GRIPRIGHT).scale(3.0,3.0).skew(1.0,0.0) +
+          Forward_3.changehands(Hands.RIGHT) +
+          RunRight.changeBeats(3).changehands(Hands.GRIPRIGHT).scale(3.0,3.0).skew(2.0,0.0),
 
-          ExtendLeft.changeBeats(2.5).changehands(5).scale(2.0,4.0) +
-          Forward_2.changeBeats(1.5).changehands(1) +
-          LeadRight.changeBeats(2).changehands(5).skew(1.0,0.0) +
-          Forward_3.changehands(1) +
-          RunRight.changeBeats(3).changehands(5).skew(2.0,0.0),
+          ExtendLeft.changeBeats(2.5).changehands(Hands.GRIPLEFT).scale(2.0,4.0) +
+          Forward_2.changeBeats(1.5).changehands(Hands.LEFT) +
+          LeadRight.changeBeats(2).changehands(Hands.GRIPLEFT).skew(1.0,0.0) +
+          Forward_3.changehands(Hands.LEFT) +
+          RunRight.changeBeats(3).changehands(Hands.GRIPLEFT).skew(2.0,0.0),
 
-          Forward_2.changehands(2),
+          Forward_2.changehands(Hands.RIGHT),
 
-          Forward_2.changehands(1)
+          Forward_2.changehands(Hands.LEFT)
       ]),
 
     AnimatedCall('Sides Wrong Way Promenade 3/4',
       formation:Formation('Static Square'),
       from:'Static Square',group:' ',
       paths:[
-          Forward_2.changehands(2),
+          Forward_2.changehands(Hands.RIGHT),
 
-          Forward_2.changehands(1),
+          Forward_2.changehands(Hands.LEFT),
 
-          ExtendLeft.changeBeats(2.5).changehands(6).scale(2.0,4.0) +
-          Forward_2.changeBeats(1.5).changehands(2) +
-          LeadRight.changeBeats(2).changehands(6).scale(3.0,3.0).skew(1.0,0.0) +
-          Forward_3.changehands(2) +
-          RunRight.changeBeats(3).changehands(6).scale(3.0,3.0).skew(2.0,0.0),
+          ExtendLeft.changeBeats(2.5).changehands(Hands.GRIPRIGHT).scale(2.0,4.0) +
+          Forward_2.changeBeats(1.5).changehands(Hands.RIGHT) +
+          LeadRight.changeBeats(2).changehands(Hands.GRIPRIGHT).scale(3.0,3.0).skew(1.0,0.0) +
+          Forward_3.changehands(Hands.RIGHT) +
+          RunRight.changeBeats(3).changehands(Hands.GRIPRIGHT).scale(3.0,3.0).skew(2.0,0.0),
 
-          ExtendLeft.changeBeats(2.5).changehands(5).scale(2.0,4.0) +
-          Forward_2.changeBeats(1.5).changehands(1) +
-          LeadRight.changeBeats(2).changehands(5).skew(1.0,0.0) +
-          Forward_3.changehands(1) +
-          RunRight.changeBeats(3).changehands(5).skew(2.0,0.0)
+          ExtendLeft.changeBeats(2.5).changehands(Hands.GRIPLEFT).scale(2.0,4.0) +
+          Forward_2.changeBeats(1.5).changehands(Hands.LEFT) +
+          LeadRight.changeBeats(2).changehands(Hands.GRIPLEFT).skew(1.0,0.0) +
+          Forward_3.changehands(Hands.LEFT) +
+          RunRight.changeBeats(3).changehands(Hands.GRIPLEFT).skew(2.0,0.0)
       ]),
 
     AnimatedCall('Heads Wrong Way Promenade Full',
       formation:Formation('Static Square'),
       from:'Static Square',group:' ',
       paths:[
-          ExtendLeft.changeBeats(2.5).changehands(6).scale(2.0,4.0) +
-          Forward_2.changeBeats(1.5).changehands(2) +
-          LeadRight.changeBeats(2).changehands(6).scale(3.0,3.0).skew(1.0,0.0) +
-          Forward_3.changeBeats(2).changehands(2) +
-          LeadRight.changeBeats(2).changehands(6).scale(3.0,3.0).skew(1.0,0.0) +
-          Forward_3.changeBeats(2).changehands(2) +
-          RunRight.changeBeats(3).changehands(6).scale(3.0,3.0).skew(2.0,0.0),
+          ExtendLeft.changeBeats(2.5).changehands(Hands.GRIPRIGHT).scale(2.0,4.0) +
+          Forward_2.changeBeats(1.5).changehands(Hands.RIGHT) +
+          LeadRight.changeBeats(2).changehands(Hands.GRIPRIGHT).scale(3.0,3.0).skew(1.0,0.0) +
+          Forward_3.changeBeats(2).changehands(Hands.RIGHT) +
+          LeadRight.changeBeats(2).changehands(Hands.GRIPRIGHT).scale(3.0,3.0).skew(1.0,0.0) +
+          Forward_3.changeBeats(2).changehands(Hands.RIGHT) +
+          RunRight.changeBeats(3).changehands(Hands.GRIPRIGHT).scale(3.0,3.0).skew(2.0,0.0),
 
-          ExtendLeft.changeBeats(2.5).changehands(5).scale(2.0,4.0) +
-          Forward_2.changeBeats(1.5).changehands(1) +
-          LeadRight.changeBeats(2).changehands(5).skew(1.0,0.0) +
-          Forward_3.changeBeats(2).changehands(1) +
-          LeadRight.changeBeats(2).changehands(5).skew(1.0,0.0) +
-          Forward_3.changeBeats(2).changehands(1) +
-          RunRight.changeBeats(3).changehands(5).skew(2.0,0.0),
+          ExtendLeft.changeBeats(2.5).changehands(Hands.GRIPLEFT).scale(2.0,4.0) +
+          Forward_2.changeBeats(1.5).changehands(Hands.LEFT) +
+          LeadRight.changeBeats(2).changehands(Hands.GRIPLEFT).skew(1.0,0.0) +
+          Forward_3.changeBeats(2).changehands(Hands.LEFT) +
+          LeadRight.changeBeats(2).changehands(Hands.GRIPLEFT).skew(1.0,0.0) +
+          Forward_3.changeBeats(2).changehands(Hands.LEFT) +
+          RunRight.changeBeats(3).changehands(Hands.GRIPLEFT).skew(2.0,0.0),
 
-          Forward_2.changehands(2) +
+          Forward_2.changehands(Hands.RIGHT) +
           Stand.changeBeats(11) +
-          Back_2.changehands(2),
+          Back_2.changehands(Hands.RIGHT),
 
-          Forward_2.changehands(1) +
+          Forward_2.changehands(Hands.LEFT) +
           Stand.changeBeats(11) +
-          Back_2.changehands(1)
+          Back_2.changehands(Hands.LEFT)
       ]),
 
     AnimatedCall('Sides Wrong Way Promenade Full',
       formation:Formation('Static Square'),
       from:'Static Square',group:' ',
       paths:[
-          Forward_2.changehands(2) +
+          Forward_2.changehands(Hands.RIGHT) +
           Stand.changeBeats(11) +
-          Back_2.changehands(2),
+          Back_2.changehands(Hands.RIGHT),
 
-          Forward_2.changehands(1) +
+          Forward_2.changehands(Hands.LEFT) +
           Stand.changeBeats(11) +
-          Back_2.changehands(1),
+          Back_2.changehands(Hands.LEFT),
 
-          ExtendLeft.changeBeats(2.5).changehands(6).scale(2.0,4.0) +
-          Forward_2.changeBeats(1.5).changehands(2) +
-          LeadRight.changeBeats(2).changehands(6).scale(3.0,3.0).skew(1.0,0.0) +
-          Forward_3.changeBeats(2).changehands(2) +
-          LeadRight.changeBeats(2).changehands(6).scale(3.0,3.0).skew(1.0,0.0) +
-          Forward_3.changeBeats(2).changehands(2) +
-          RunRight.changeBeats(3).changehands(6).scale(3.0,3.0).skew(2.0,0.0),
+          ExtendLeft.changeBeats(2.5).changehands(Hands.GRIPRIGHT).scale(2.0,4.0) +
+          Forward_2.changeBeats(1.5).changehands(Hands.RIGHT) +
+          LeadRight.changeBeats(2).changehands(Hands.GRIPRIGHT).scale(3.0,3.0).skew(1.0,0.0) +
+          Forward_3.changeBeats(2).changehands(Hands.RIGHT) +
+          LeadRight.changeBeats(2).changehands(Hands.GRIPRIGHT).scale(3.0,3.0).skew(1.0,0.0) +
+          Forward_3.changeBeats(2).changehands(Hands.RIGHT) +
+          RunRight.changeBeats(3).changehands(Hands.GRIPRIGHT).scale(3.0,3.0).skew(2.0,0.0),
 
-          ExtendLeft.changeBeats(2.5).changehands(5).scale(2.0,4.0) +
-          Forward_2.changeBeats(1.5).changehands(1) +
-          LeadRight.changeBeats(2).changehands(5).skew(1.0,0.0) +
-          Forward_3.changeBeats(2).changehands(1) +
-          LeadRight.changeBeats(2).changehands(5).skew(1.0,0.0) +
-          Forward_3.changeBeats(2).changehands(1) +
-          RunRight.changeBeats(3).changehands(5).skew(2.0,0.0)
+          ExtendLeft.changeBeats(2.5).changehands(Hands.GRIPLEFT).scale(2.0,4.0) +
+          Forward_2.changeBeats(1.5).changehands(Hands.LEFT) +
+          LeadRight.changeBeats(2).changehands(Hands.GRIPLEFT).skew(1.0,0.0) +
+          Forward_3.changeBeats(2).changehands(Hands.LEFT) +
+          LeadRight.changeBeats(2).changehands(Hands.GRIPLEFT).skew(1.0,0.0) +
+          Forward_3.changeBeats(2).changehands(Hands.LEFT) +
+          RunRight.changeBeats(3).changehands(Hands.GRIPLEFT).skew(2.0,0.0)
       ]),
 
     AnimatedCall('All 4 Couples Wrong Way Promenade 1/4',
       formation:Formation('Static Square'),
       from:'Static Square',group:' ',
       paths:[
-          QuarterLeft.changeBeats(2).changehands(1).skew(1.0,0.0) +
-          LeadRight.changeBeats(2).changehands(1).scale(1.5,2.0) +
+          QuarterLeft.changeBeats(2).changehands(Hands.LEFT).skew(1.0,0.0) +
+          LeadRight.changeBeats(2).changehands(Hands.LEFT).scale(1.5,2.0) +
           HingeRight.changeBeats(2).skew(0.0,1.5),
 
           HingeLeft.changeBeats(2).scale(2.0,2.0) +
-          LeadRight.changeBeats(2).changehands(2).scale(0.5,1.0) +
+          LeadRight.changeBeats(2).changehands(Hands.RIGHT).scale(0.5,1.0) +
           BackHingeLeft.changeBeats(2).skew(0.0,0.5),
 
-          QuarterLeft.changeBeats(2).changehands(1).skew(1.0,0.0) +
-          LeadRight.changeBeats(2).changehands(1).scale(1.5,2.0) +
+          QuarterLeft.changeBeats(2).changehands(Hands.LEFT).skew(1.0,0.0) +
+          LeadRight.changeBeats(2).changehands(Hands.LEFT).scale(1.5,2.0) +
           HingeRight.changeBeats(2).skew(0.0,1.5),
 
           HingeLeft.changeBeats(2).scale(2.0,2.0) +
-          LeadRight.changeBeats(2).changehands(2).scale(0.5,1.0) +
+          LeadRight.changeBeats(2).changehands(Hands.RIGHT).scale(0.5,1.0) +
           BackHingeLeft.changeBeats(2).skew(0.0,0.5)
       ]),
 
@@ -611,24 +610,24 @@ import '../../moves.dart';
       formation:Formation('Static Square'),
       from:'Static Square',group:' ',
       paths:[
-          QuarterLeft.changeBeats(2).changehands(1).skew(1.0,0.0) +
-          LeadRight.changeBeats(2).changehands(1).scale(1.5,2.0) +
-          LeadRight.changeBeats(2).changehands(1).scale(2.5,2.5) +
+          QuarterLeft.changeBeats(2).changehands(Hands.LEFT).skew(1.0,0.0) +
+          LeadRight.changeBeats(2).changehands(Hands.LEFT).scale(1.5,2.0) +
+          LeadRight.changeBeats(2).changehands(Hands.LEFT).scale(2.5,2.5) +
           HingeRight.changeBeats(2).skew(0.0,1.5),
 
           HingeLeft.changeBeats(2).scale(2.0,2.0) +
-          LeadRight.changeBeats(2).changehands(2).scale(0.5,1.0) +
-          LeadRight.changeBeats(2).changehands(2).scale(1.5,1.5) +
+          LeadRight.changeBeats(2).changehands(Hands.RIGHT).scale(0.5,1.0) +
+          LeadRight.changeBeats(2).changehands(Hands.RIGHT).scale(1.5,1.5) +
           BackHingeLeft.changeBeats(2).skew(0.0,0.5),
 
-          QuarterLeft.changeBeats(2).changehands(1).skew(1.0,0.0) +
-          LeadRight.changeBeats(2).changehands(1).scale(1.5,2.0) +
-          LeadRight.changeBeats(2).changehands(1).scale(2.5,2.5) +
+          QuarterLeft.changeBeats(2).changehands(Hands.LEFT).skew(1.0,0.0) +
+          LeadRight.changeBeats(2).changehands(Hands.LEFT).scale(1.5,2.0) +
+          LeadRight.changeBeats(2).changehands(Hands.LEFT).scale(2.5,2.5) +
           HingeRight.changeBeats(2).skew(0.0,1.5),
 
           HingeLeft.changeBeats(2).scale(2.0,2.0) +
-          LeadRight.changeBeats(2).changehands(2).scale(0.5,1.0) +
-          LeadRight.changeBeats(2).changehands(2).scale(1.5,1.5) +
+          LeadRight.changeBeats(2).changehands(Hands.RIGHT).scale(0.5,1.0) +
+          LeadRight.changeBeats(2).changehands(Hands.RIGHT).scale(1.5,1.5) +
           BackHingeLeft.changeBeats(2).skew(0.0,0.5)
       ]),
 
@@ -636,28 +635,28 @@ import '../../moves.dart';
       formation:Formation('Static Square'),
       from:'Static Square',group:' ',
       paths:[
-          QuarterLeft.changeBeats(2).changehands(1).skew(1.0,0.0) +
-          LeadRight.changeBeats(2).changehands(1).scale(1.5,2.0) +
-          LeadRight.changeBeats(2).changehands(1).scale(2.5,2.5) +
-          LeadRight.changeBeats(2).changehands(1).scale(2.5,2.5) +
+          QuarterLeft.changeBeats(2).changehands(Hands.LEFT).skew(1.0,0.0) +
+          LeadRight.changeBeats(2).changehands(Hands.LEFT).scale(1.5,2.0) +
+          LeadRight.changeBeats(2).changehands(Hands.LEFT).scale(2.5,2.5) +
+          LeadRight.changeBeats(2).changehands(Hands.LEFT).scale(2.5,2.5) +
           HingeRight.changeBeats(2).skew(0.0,1.5),
 
           HingeLeft.changeBeats(2).scale(2.0,2.0) +
-          LeadRight.changeBeats(2).changehands(2).scale(0.5,1.0) +
-          LeadRight.changeBeats(2).changehands(2).scale(1.5,1.5) +
-          LeadRight.changeBeats(2).changehands(2).scale(1.5,1.5) +
+          LeadRight.changeBeats(2).changehands(Hands.RIGHT).scale(0.5,1.0) +
+          LeadRight.changeBeats(2).changehands(Hands.RIGHT).scale(1.5,1.5) +
+          LeadRight.changeBeats(2).changehands(Hands.RIGHT).scale(1.5,1.5) +
           BackHingeLeft.changeBeats(2).skew(0.0,0.5),
 
-          QuarterLeft.changeBeats(2).changehands(1).skew(1.0,0.0) +
-          LeadRight.changeBeats(2).changehands(1).scale(1.5,2.0) +
-          LeadRight.changeBeats(2).changehands(1).scale(2.5,2.5) +
-          LeadRight.changeBeats(2).changehands(1).scale(2.5,2.5) +
+          QuarterLeft.changeBeats(2).changehands(Hands.LEFT).skew(1.0,0.0) +
+          LeadRight.changeBeats(2).changehands(Hands.LEFT).scale(1.5,2.0) +
+          LeadRight.changeBeats(2).changehands(Hands.LEFT).scale(2.5,2.5) +
+          LeadRight.changeBeats(2).changehands(Hands.LEFT).scale(2.5,2.5) +
           HingeRight.changeBeats(2).skew(0.0,1.5),
 
           HingeLeft.changeBeats(2).scale(2.0,2.0) +
-          LeadRight.changeBeats(2).changehands(2).scale(0.5,1.0) +
-          LeadRight.changeBeats(2).changehands(2).scale(1.5,1.5) +
-          LeadRight.changeBeats(2).changehands(2).scale(1.5,1.5) +
+          LeadRight.changeBeats(2).changehands(Hands.RIGHT).scale(0.5,1.0) +
+          LeadRight.changeBeats(2).changehands(Hands.RIGHT).scale(1.5,1.5) +
+          LeadRight.changeBeats(2).changehands(Hands.RIGHT).scale(1.5,1.5) +
           BackHingeLeft.changeBeats(2).skew(0.0,0.5)
       ]),
 
@@ -665,32 +664,32 @@ import '../../moves.dart';
       formation:Formation('Static Square'),
       from:'Static Square',group:' ',
       paths:[
-          QuarterLeft.changeBeats(2).changehands(1).skew(1.0,0.0) +
-          LeadRight.changeBeats(2).changehands(1).scale(1.5,2.0) +
-          LeadRight.changeBeats(2).changehands(1).scale(2.5,2.5) +
-          LeadRight.changeBeats(2).changehands(1).scale(2.5,2.5) +
-          LeadRight.changeBeats(2).changehands(1).scale(2.5,2.5) +
+          QuarterLeft.changeBeats(2).changehands(Hands.LEFT).skew(1.0,0.0) +
+          LeadRight.changeBeats(2).changehands(Hands.LEFT).scale(1.5,2.0) +
+          LeadRight.changeBeats(2).changehands(Hands.LEFT).scale(2.5,2.5) +
+          LeadRight.changeBeats(2).changehands(Hands.LEFT).scale(2.5,2.5) +
+          LeadRight.changeBeats(2).changehands(Hands.LEFT).scale(2.5,2.5) +
           HingeRight.changeBeats(2).skew(0.0,1.5),
 
           HingeLeft.changeBeats(2).scale(2.0,2.0) +
-          LeadRight.changeBeats(2).changehands(2).scale(0.5,1.0) +
-          LeadRight.changeBeats(2).changehands(2).scale(1.5,1.5) +
-          LeadRight.changeBeats(2).changehands(2).scale(1.5,1.5) +
-          LeadRight.changeBeats(2).changehands(2).scale(1.5,1.5) +
+          LeadRight.changeBeats(2).changehands(Hands.RIGHT).scale(0.5,1.0) +
+          LeadRight.changeBeats(2).changehands(Hands.RIGHT).scale(1.5,1.5) +
+          LeadRight.changeBeats(2).changehands(Hands.RIGHT).scale(1.5,1.5) +
+          LeadRight.changeBeats(2).changehands(Hands.RIGHT).scale(1.5,1.5) +
           BackHingeLeft.changeBeats(2).skew(0.0,0.5),
 
-          QuarterLeft.changeBeats(2).changehands(1).skew(1.0,0.0) +
-          LeadRight.changeBeats(2).changehands(1).scale(1.5,2.0) +
-          LeadRight.changeBeats(2).changehands(1).scale(2.5,2.5) +
-          LeadRight.changeBeats(2).changehands(1).scale(2.5,2.5) +
-          LeadRight.changeBeats(2).changehands(1).scale(2.5,2.5) +
+          QuarterLeft.changeBeats(2).changehands(Hands.LEFT).skew(1.0,0.0) +
+          LeadRight.changeBeats(2).changehands(Hands.LEFT).scale(1.5,2.0) +
+          LeadRight.changeBeats(2).changehands(Hands.LEFT).scale(2.5,2.5) +
+          LeadRight.changeBeats(2).changehands(Hands.LEFT).scale(2.5,2.5) +
+          LeadRight.changeBeats(2).changehands(Hands.LEFT).scale(2.5,2.5) +
           HingeRight.changeBeats(2).skew(0.0,1.5),
 
           HingeLeft.changeBeats(2).scale(2.0,2.0) +
-          LeadRight.changeBeats(2).changehands(2).scale(0.5,1.0) +
-          LeadRight.changeBeats(2).changehands(2).scale(1.5,1.5) +
-          LeadRight.changeBeats(2).changehands(2).scale(1.5,1.5) +
-          LeadRight.changeBeats(2).changehands(2).scale(1.5,1.5) +
+          LeadRight.changeBeats(2).changehands(Hands.RIGHT).scale(0.5,1.0) +
+          LeadRight.changeBeats(2).changehands(Hands.RIGHT).scale(1.5,1.5) +
+          LeadRight.changeBeats(2).changehands(Hands.RIGHT).scale(1.5,1.5) +
+          LeadRight.changeBeats(2).changehands(Hands.RIGHT).scale(1.5,1.5) +
           BackHingeLeft.changeBeats(2).skew(0.0,0.5)
       ]),
   ];

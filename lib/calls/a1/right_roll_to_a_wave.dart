@@ -20,9 +20,7 @@
 
 import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formation.dart';
 import '../../moves.dart';
-
 import '../a2/all_4_all_8.dart' as a2;
 
   final List<AnimatedCall> RightRollToAWave = [
@@ -244,26 +242,26 @@ import '../a2/all_4_all_8.dart' as a2;
       formation:Formation('Lines Facing Out'),
       from:'Lines Facing Out',
       paths:[
-          BeauWheel.changehands(5).scale(1.0,-1.0).skew(-2.0,-1.5),
+          BeauWheel.changehands(Hands.GRIPLEFT).scale(1.0,-1.0).skew(-2.0,-1.5),
 
-          BelleWheel.changehands(6).scale(1.0,-1.0).skew(-2.0,-0.5),
+          BelleWheel.changehands(Hands.GRIPRIGHT).scale(1.0,-1.0).skew(-2.0,-0.5),
 
-          BeauWheel.changehands(5).scale(1.0,-1.0).skew(-2.0,-1.5),
+          BeauWheel.changehands(Hands.GRIPLEFT).scale(1.0,-1.0).skew(-2.0,-1.5),
 
-          BelleWheel.changehands(6).scale(1.0,-1.0).skew(-2.0,-0.5)
+          BelleWheel.changehands(Hands.GRIPRIGHT).scale(1.0,-1.0).skew(-2.0,-0.5)
       ]),
 
     AnimatedCall('As Couples Right Roll to a Wave',
       formation:Formation('Two-Faced Lines LH'),
       from:'Two-Faced Lines',
       paths:[
-          BeauWheel.changehands(5).scale(1.0,-1.0).skew(-2.0,-1.5),
+          BeauWheel.changehands(Hands.GRIPLEFT).scale(1.0,-1.0).skew(-2.0,-1.5),
 
-          BelleWheel.changehands(6).scale(1.0,-1.0).skew(-2.0,-0.5),
+          BelleWheel.changehands(Hands.GRIPRIGHT).scale(1.0,-1.0).skew(-2.0,-0.5),
 
-          ExtendLeft.changeBeats(3).changehands(2).scale(2.0,0.5),
+          ExtendLeft.changeBeats(3).changehands(Hands.RIGHT).scale(2.0,0.5),
 
-          ExtendLeft.changeBeats(3).changehands(1).scale(2.0,1.5)
+          ExtendLeft.changeBeats(3).changehands(Hands.LEFT).scale(2.0,1.5)
       ]),
     a2.All4All8.where((tam) =>
       tam.title == 'All 8 Right Roll to a Wave' && tam.from == 'Couples Facing Out').first.xref(title: 'All 8 Right Roll to a Wave').xref(group: ' '),
@@ -473,26 +471,26 @@ import '../a2/all_4_all_8.dart' as a2;
       formation:Formation('Lines Facing Out'),
       from:'Lines Facing Out',
       paths:[
-          BelleWheel.changehands(5).skew(-2.0,0.5),
+          BelleWheel.changehands(Hands.GRIPLEFT).skew(-2.0,0.5),
 
-          BeauWheel.changehands(6).skew(-2.0,1.5),
+          BeauWheel.changehands(Hands.GRIPRIGHT).skew(-2.0,1.5),
 
-          BelleWheel.changehands(5).skew(-2.0,0.5),
+          BelleWheel.changehands(Hands.GRIPLEFT).skew(-2.0,0.5),
 
-          BeauWheel.changehands(6).skew(-2.0,1.5)
+          BeauWheel.changehands(Hands.GRIPRIGHT).skew(-2.0,1.5)
       ]),
 
     AnimatedCall('As Couples Left Roll to a Wave',
       formation:Formation('Two-Faced Lines RH'),
       from:'Two-Faced Lines',
       paths:[
-          ExtendRight.changeBeats(3).changehands(2).scale(2.0,1.5),
+          ExtendRight.changeBeats(3).changehands(Hands.RIGHT).scale(2.0,1.5),
 
-          ExtendRight.changeBeats(3).changehands(1).scale(2.0,0.5),
+          ExtendRight.changeBeats(3).changehands(Hands.LEFT).scale(2.0,0.5),
 
-          BelleWheel.changehands(5).skew(-2.0,0.5),
+          BelleWheel.changehands(Hands.GRIPLEFT).skew(-2.0,0.5),
 
-          BeauWheel.changehands(6).skew(-2.0,1.5)
+          BeauWheel.changehands(Hands.GRIPRIGHT).skew(-2.0,1.5)
       ]),
     a2.All4All8.where((tam) =>
       tam.title == 'All 8 Left Roll to a Wave').first.xref(title: 'All 8 Left Roll to a Wave').xref(group: ' '),

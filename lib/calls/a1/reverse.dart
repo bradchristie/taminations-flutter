@@ -20,7 +20,6 @@
 
 import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formation.dart';
 import '../../moves.dart';
 import '../a1/swap_around.dart' as a1;
 import '../a2/recycle.dart' as a2;
@@ -34,15 +33,15 @@ import '../ms/dixie_style.dart' as ms;
       formation:Formation('Normal Lines'),
       group:'Reverse',
       paths:[
-          FoldRight.changeBeats(1.5).changehands(6).scale(0.6,0.5) +
-          UmTurnRight.changeBeats(1.5).changehands(6).skew(1.2,1.0),
+          FoldRight.changeBeats(1.5).changehands(Hands.GRIPRIGHT).scale(0.6,0.5) +
+          UmTurnRight.changeBeats(1.5).changehands(Hands.GRIPRIGHT).skew(1.2,1.0),
 
-          DodgeLeft.changehands(5),
+          DodgeLeft.changehands(Hands.GRIPLEFT),
 
-          FoldRight.changeBeats(1.5).changehands(6).scale(0.6,0.5) +
-          UmTurnRight.changeBeats(1.5).changehands(6).skew(1.2,1.0),
+          FoldRight.changeBeats(1.5).changehands(Hands.GRIPRIGHT).scale(0.6,0.5) +
+          UmTurnRight.changeBeats(1.5).changehands(Hands.GRIPRIGHT).skew(1.2,1.0),
 
-          DodgeLeft.changehands(5)
+          DodgeLeft.changehands(Hands.GRIPLEFT)
       ]),
 
     AnimatedCall('Reverse Half Sashay',
@@ -73,24 +72,24 @@ import '../ms/dixie_style.dart' as ms;
       formation:Formation('Eight Chain Thru'),
       group:'Reverse',
       paths:[
-          EighthRight.changehands(7) +
+          EighthRight.changehands(Hands.GRIPBOTH) +
       Path.fromMovement(Movement.fromData(beats: 3, hands: Hands.GRIPBOTH, cx1: 0, cy1: -1.88, cx2: 2.83, cy2: -1.88, x2: 2.83, y2: 0, cx3: 1.33, cx4: 1.33, cy4: 2, x4: 0, y4: 2  )) +
       Path.fromMovement(Movement.fromData(beats: 1.5, hands: Hands.GRIPRIGHT, cx1: 0, cy1: -.78, cx2: .636, cy2: -1.414, x2: 1.414, y2: -1.414, cx3: .55, cx4: 1, cy4: .45, x4: 1, y4: 1  )) +
-          EighthRight.changehands(6) +
-          UmTurnRight.changehands(6).skew(1.0,-2.0),
+          EighthRight.changehands(Hands.GRIPRIGHT) +
+          UmTurnRight.changehands(Hands.GRIPRIGHT).skew(1.0,-2.0),
 
-          EighthLeft.changehands(7) +
+          EighthLeft.changehands(Hands.GRIPBOTH) +
       Path.fromMovement(Movement.fromData(beats: 3, hands: Hands.GRIPBOTH, cx1: 0, cy1: -1.88, cx2: 2.83, cy2: -1.88, x2: 2.83, y2: 0, cx3: 1.33, cx4: 1.33, cy4: 2, x4: 0, y4: 2  )) +
       Path.fromMovement(Movement.fromData(beats: 1.5, hands: Hands.GRIPBOTH, cx1: 0, cy1: -.39, cx2: .318, cy2: -.707, x2: .707, y2: -.707, cx3: .55, cx4: 1, cy4: .45, x4: 1, y4: 1  )) +
-          EighthLeft.changehands(7),
+          EighthLeft.changehands(Hands.GRIPBOTH),
 
-          EighthRight.changehands(7) +
+          EighthRight.changehands(Hands.GRIPBOTH) +
       Path.fromMovement(Movement.fromData(beats: 3, hands: Hands.GRIPBOTH, cx1: 0, cy1: -1.88, cx2: 2.83, cy2: -1.88, x2: 2.83, y2: 0, cx3: 1.33, cx4: 1.33, cy4: 2, x4: 0, y4: 2  )) +
-          EighthLeft.changeBeats(2).changehands(7).skew(2.121,-0.707),
+          EighthLeft.changeBeats(2).changehands(Hands.GRIPBOTH).skew(2.121,-0.707),
 
-          EighthLeft.changehands(7) +
+          EighthLeft.changehands(Hands.GRIPBOTH) +
       Path.fromMovement(Movement.fromData(beats: 3, hands: Hands.GRIPBOTH, cx1: 0, cy1: -1.88, cx2: 2.83, cy2: -1.88, x2: 2.83, y2: 0, cx3: 1.33, cx4: 1.33, cy4: 2, x4: 0, y4: 2  )) +
-          EighthRight.changeBeats(2).changehands(5).skew(-0.707,-2.121)
+          EighthRight.changeBeats(2).changehands(Hands.GRIPLEFT).skew(-0.707,-2.121)
       ]),
     a1.SwapAround.where((tam) =>
       tam.title == 'Reverse Swap Around' && tam.from == 'Facing Couples').first.xref(title: 'Reverse Swap Around').xref(group: 'Reverse (A-1)'),

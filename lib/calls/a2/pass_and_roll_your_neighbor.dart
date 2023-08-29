@@ -20,7 +20,6 @@
 
 import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> PassAndRollYourNeighbor = [
@@ -94,14 +93,14 @@ import '../../moves.dart';
           FlipRight.scale(1.0,0.5) +
           Forward_3 +
           SwingRight.scale(0.5,0.5) +
-          QuarterRight.changehands(2).skew(1.0,0.5),
+          QuarterRight.changehands(Hands.RIGHT).skew(1.0,0.5),
 
           ExtendLeft.scale(1.0,0.5) +
           Forward +
           FlipRight.scale(1.0,0.5) +
           Forward_3 +
           SwingRight.scale(0.5,0.5) +
-          LeadRight.changehands(2).scale(1.0,1.5)
+          LeadRight.changehands(Hands.RIGHT).scale(1.0,1.5)
       ]),
 
     AnimatedCall('Pass and Roll Your Neighbor',
@@ -243,14 +242,14 @@ import '../../moves.dart';
           FlipLeft.scale(1.0,0.5) +
           Forward_3 +
           SwingLeft.scale(0.5,0.5) +
-          LeadLeft.changehands(1).scale(1.0,1.5),
+          LeadLeft.changehands(Hands.LEFT).scale(1.0,1.5),
 
           ExtendRight.scale(1.0,0.5) +
           Forward +
           FlipLeft.scale(1.0,0.5) +
           Forward_3 +
           SwingLeft.scale(0.5,0.5) +
-          QuarterLeft.changehands(1).skew(1.0,-0.5)
+          QuarterLeft.changehands(Hands.LEFT).skew(1.0,-0.5)
       ]),
 
     AnimatedCall('Left Pass and Roll Your Neighbor',
@@ -364,27 +363,27 @@ import '../../moves.dart';
       formation:Formation('Eight Chain Thru'),
       group:' ',
       paths:[
-          ExtendLeft.changehands(2).scale(1.0,0.5) +
+          ExtendLeft.changehands(Hands.RIGHT).scale(1.0,0.5) +
           Forward_2 +
           SwingRight.scale(1.5,1.5) +
           Forward_3.changeBeats(2) +
-          RunRight.changehands(2).scale(1.5,1.5).skew(1.0,0.0) +
+          RunRight.changehands(Hands.RIGHT).scale(1.5,1.5).skew(1.0,0.0) +
           HingeRight.scale(1.5,1.5),
 
-          ExtendLeft.changehands(1).scale(1.0,1.5) +
+          ExtendLeft.changehands(Hands.LEFT).scale(1.0,1.5) +
           Forward_2 +
           SwingRight.scale(0.5,0.5) +
           Forward_3.changeBeats(2) +
-          RunRight.changehands(1).scale(0.5,0.5).skew(1.0,0.0) +
+          RunRight.changehands(Hands.LEFT).scale(0.5,0.5).skew(1.0,0.0) +
           HingeRight.scale(0.5,0.5),
 
-          ExtendLeft.changehands(2).scale(1.0,0.5) +
+          ExtendLeft.changehands(Hands.RIGHT).scale(1.0,0.5) +
           RunRight.changeBeats(5).scale(1.5,1.5) +
           Forward_2 +
           SwingRight.scale(1.5,1.5) +
           HingeRight.scale(1.5,1.5),
 
-          ExtendLeft.changehands(1).scale(1.0,1.5) +
+          ExtendLeft.changehands(Hands.LEFT).scale(1.0,1.5) +
           RunRight.changeBeats(5).scale(0.5,0.5) +
           Forward_2 +
           SwingRight.scale(0.5,0.5) +

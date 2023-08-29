@@ -20,7 +20,6 @@
 
 import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> Checkpoint = [
@@ -33,9 +32,9 @@ import '../../moves.dart';
           SwingRight +
           SwingLeft,
 
-          RunLeft.changeBeats(4).changehands(5).scale(1.0,1.75).skew(3.0,0.0),
+          RunLeft.changeBeats(4).changehands(Hands.GRIPLEFT).scale(1.0,1.75).skew(3.0,0.0),
 
-          UmTurnLeft.changeBeats(4).changehands(5).skew(-3.0,-0.5),
+          UmTurnLeft.changeBeats(4).changehands(Hands.GRIPLEFT).skew(-3.0,-0.5),
 
           DodgeRight.changeBeats(2).scale(1.0,0.25) +
           SwingRight

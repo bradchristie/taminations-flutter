@@ -20,7 +20,6 @@
 
 import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> GrandChainEight = [
@@ -47,21 +46,21 @@ import '../../moves.dart';
       formation:Formation('Double Pass Thru'),
       from:'Double Pass Thru',
       paths:[
-          Stand.changehands(2) +
+          Stand.changehands(Hands.RIGHT) +
           QuarterLeft.changeBeats(2).skew(1.0,0.0) +
-          UmTurnLeft.changehands(2).skew(1.0,-1.0),
+          UmTurnLeft.changehands(Hands.RIGHT).skew(1.0,-1.0),
 
-          Stand.changeBeats(2).changehands(1) +
+          Stand.changeBeats(2).changehands(Hands.LEFT) +
           ExtendRight.changeBeats(2) +
-          QuarterLeft.changehands(1).skew(1.0,0.0),
+          QuarterLeft.changehands(Hands.LEFT).skew(1.0,0.0),
 
           ExtendLeft.scale(1.0,0.5) +
           QuarterLeft.changeBeats(2).skew(2.0,-0.5) +
-          UmTurnLeft.changehands(2).skew(1.0,-1.0),
+          UmTurnLeft.changehands(Hands.RIGHT).skew(1.0,-1.0),
 
           ExtendLeft.scale(1.0,0.5) +
           ExtendRight.changeBeats(2).scale(2.0,1.5) +
-          QuarterLeft.changehands(1).skew(1.0,0.0)
+          QuarterLeft.changehands(Hands.LEFT).skew(1.0,0.0)
       ]),
 
     AnimatedCall('Grand Chain Eight',
@@ -99,7 +98,7 @@ import '../../moves.dart';
       paths:[
           ExtendLeft.scale(1.0,0.5) +
           ExtendRight.changeBeats(2).scale(2.0,0.5) +
-          QuarterLeft.changehands(1).skew(1.0,0.0) +
+          QuarterLeft.changehands(Hands.LEFT).skew(1.0,0.0) +
           UmTurnLeft,
 
           ExtendLeft.scale(1.0,0.5) +
@@ -120,7 +119,7 @@ import '../../moves.dart';
       from:'Right-Hand Waves',
       paths:[
           ExtendRight.changeBeats(2).scale(2.0,2.0) +
-          QuarterLeft.changehands(1).skew(1.0,0.0) +
+          QuarterLeft.changehands(Hands.LEFT).skew(1.0,0.0) +
           UmTurnLeft,
 
           Forward.scale(1.0,0.5) +
@@ -165,7 +164,7 @@ import '../../moves.dart';
 
           Stand.changeBeats(2) +
           ExtendRight.changeBeats(2.5).scale(1.0,0.5) +
-          QuarterLeft.changehands(1).skew(1.0,0.0),
+          QuarterLeft.changehands(Hands.LEFT).skew(1.0,0.0),
 
           Stand.changeBeats(1) +
           QuarterLeft.changeBeats(1.5).skew(1.0,-0.5) +
@@ -174,7 +173,7 @@ import '../../moves.dart';
 
           ExtendLeft.scale(1.0,0.5) +
           LeadLeft.changeBeats(2.5).scale(1.5,0.5) +
-          QuarterLeft.changehands(1).skew(1.0,0.0)
+          QuarterLeft.changehands(Hands.LEFT).skew(1.0,0.0)
       ]),
 
     AnimatedCall('Split Grand Chain Eight',
@@ -183,7 +182,7 @@ import '../../moves.dart';
       paths:[
           Stand.changeBeats(2) +
           ExtendRight.changeBeats(2.5).scale(1.0,0.5) +
-          QuarterLeft.changehands(1).skew(1.0,0.0),
+          QuarterLeft.changehands(Hands.LEFT).skew(1.0,0.0),
 
           Stand.changeBeats(1) +
           QuarterLeft.changeBeats(1.5).skew(1.0,-0.5) +
@@ -192,7 +191,7 @@ import '../../moves.dart';
 
           ExtendLeft.scale(1.0,0.5) +
           LeadLeft.changeBeats(2.5).scale(1.5,0.5) +
-          QuarterLeft.changehands(1).skew(1.0,0.0),
+          QuarterLeft.changehands(Hands.LEFT).skew(1.0,0.0),
 
           ExtendLeft.scale(1.0,0.5) +
           LeadRight_12.skew(0.0,-0.5) +

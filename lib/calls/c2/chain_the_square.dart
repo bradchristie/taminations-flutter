@@ -19,7 +19,7 @@
 */
 
 import '../../animated_call.dart';
-import '../../formation.dart';
+import '../../common_dart.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> ChainTheSquare = [
@@ -31,23 +31,23 @@ import '../../moves.dart';
           PullLeft.scale(1.0,0.5) +
           ExtendRight.scale(1.0,0.5) +
           ExtendRight.scale(1.0,0.5) +
-          UmTurnLeft.changeBeats(2).changehands(5).skew(1.0,1.25) +
-          UmTurnLeft.changeBeats(2).changehands(5).skew(-1.0,-1.25),
+          UmTurnLeft.changeBeats(2).changehands(Hands.GRIPLEFT).skew(1.0,1.25) +
+          UmTurnLeft.changeBeats(2).changehands(Hands.GRIPLEFT).skew(-1.0,-1.25),
 
           PullLeft.scale(1.0,0.5) +
           ExtendRight.scale(1.0,0.5) +
           ExtendRight.scale(1.0,0.5) +
-          RunLeft.changeBeats(4).changehands(5).skew(-2.0,-1.5),
+          RunLeft.changeBeats(4).changehands(Hands.GRIPLEFT).skew(-2.0,-1.5),
 
           PullLeft.scale(1.0,0.5) +
           ExtendRight.scale(1.0,0.5) +
           BeauWheel +
-          ExtendLeft.changeBeats(2).changehands(5).scale(1.0,2.0),
+          ExtendLeft.changeBeats(2).changehands(Hands.GRIPLEFT).scale(1.0,2.0),
 
           PullLeft.scale(1.0,0.5) +
           ExtendRight.scale(1.0,0.5) +
           BelleWheel +
-          ExtendLeft.changeBeats(2).changehands(6).scale(1.0,2.0)
+          ExtendLeft.changeBeats(2).changehands(Hands.GRIPRIGHT).scale(1.0,2.0)
       ]),
   ];
 

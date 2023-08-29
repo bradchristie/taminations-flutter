@@ -20,7 +20,6 @@
 
 import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> Trade = [
@@ -536,140 +535,140 @@ import '../../moves.dart';
       formation:Formation('Two-Faced Line RH'),
       from:'Right-Hand Two-Faced Line',difficulty: 1,
       paths:[
-          RunRight.changeBeats(6).changehands(6).scale(1.5,3.0),
+          RunRight.changeBeats(6).changehands(Hands.GRIPRIGHT).scale(1.5,3.0),
 
-          RunRight.changeBeats(6).changehands(7).scale(0.5,1.0)
+          RunRight.changeBeats(6).changehands(Hands.GRIPBOTH).scale(0.5,1.0)
       ]),
 
     AnimatedCall('Couples Trade',
       formation:Formation('Compact Two-Faced Line RH'),
       from:'Compact Right-Hand Two-Faced Line',difficulty: 1,noDisplay: true,
       paths:[
-          RunRight.changeBeats(6).changehands(6).scale(1.5,1.5),
+          RunRight.changeBeats(6).changehands(Hands.GRIPRIGHT).scale(1.5,1.5),
 
-          RunRight.changeBeats(6).changehands(7).scale(0.5,0.5)
+          RunRight.changeBeats(6).changehands(Hands.GRIPBOTH).scale(0.5,0.5)
       ]),
 
     AnimatedCall('Couples Trade',
       formation:Formation('Two-Faced Line LH'),
       from:'Left-Hand Two-Faced Line',difficulty: 1,
       paths:[
-          RunLeft.changeBeats(6).changehands(7).scale(0.5,1.0),
+          RunLeft.changeBeats(6).changehands(Hands.GRIPBOTH).scale(0.5,1.0),
 
-          RunLeft.changeBeats(6).changehands(5).scale(1.5,3.0)
+          RunLeft.changeBeats(6).changehands(Hands.GRIPLEFT).scale(1.5,3.0)
       ]),
 
     AnimatedCall('Couples Trade',
       formation:Formation('Compact Two-Faced Line LH'),
       from:'Compact Left-Hand Two-Faced Line',difficulty: 1,noDisplay: true,
       paths:[
-          RunLeft.changeBeats(6).changehands(7).scale(0.5,0.5),
+          RunLeft.changeBeats(6).changehands(Hands.GRIPBOTH).scale(0.5,0.5),
 
-          RunLeft.changeBeats(6).changehands(5).scale(1.5,1.5)
+          RunLeft.changeBeats(6).changehands(Hands.GRIPLEFT).scale(1.5,1.5)
       ]),
 
     AnimatedCall('Couples Trade',
       formation:Formation('Lines Facing Out'),
       from:'Lines Facing Out',difficulty: 2,
       paths:[
-          RunLeft.changeBeats(6).changehands(5).scale(1.0,3.0),
+          RunLeft.changeBeats(6).changehands(Hands.GRIPLEFT).scale(1.0,3.0),
 
-          FlipLeft.changeBeats(6).changehands(6),
+          FlipLeft.changeBeats(6).changehands(Hands.GRIPRIGHT),
 
-          RunRight.changeBeats(6).changehands(5).scale(2.0,1.0),
+          RunRight.changeBeats(6).changehands(Hands.GRIPLEFT).scale(2.0,1.0),
 
-          RunRight.changeBeats(6).changehands(6).scale(3.0,3.0)
+          RunRight.changeBeats(6).changehands(Hands.GRIPRIGHT).scale(3.0,3.0)
       ]),
 
     AnimatedCall('Couples Trade',
       formation:Formation('Normal Lines'),
       from:'Lines Facing In',difficulty: 3,
       paths:[
-          RunRight.changeBeats(6).changehands(6).scale(1.5,3.0),
+          RunRight.changeBeats(6).changehands(Hands.GRIPRIGHT).scale(1.5,3.0),
 
-          RunRight.changeBeats(6).changehands(5).scale(1.0,1.0),
+          RunRight.changeBeats(6).changehands(Hands.GRIPLEFT).scale(1.0,1.0),
 
-          FlipLeft.changeBeats(6).changehands(6),
+          FlipLeft.changeBeats(6).changehands(Hands.GRIPRIGHT),
 
-          RunLeft.changeBeats(6).changehands(5).scale(0.5,3.0)
+          RunLeft.changeBeats(6).changehands(Hands.GRIPLEFT).scale(0.5,3.0)
       ]),
 
     AnimatedCall('Couples Trade',
       formation:Formation('Two-Faced Lines RH'),
       from:'Right-Hand Two-Faced Lines',difficulty: 1,
       paths:[
-          RunRight.changeBeats(6).changehands(6).scale(1.5,3.0),
+          RunRight.changeBeats(6).changehands(Hands.GRIPRIGHT).scale(1.5,3.0),
 
-          RunRight.changeBeats(6).changehands(7).scale(0.5,1.0),
+          RunRight.changeBeats(6).changehands(Hands.GRIPBOTH).scale(0.5,1.0),
 
-          RunRight.changeBeats(6).changehands(7).scale(0.5,1.0),
+          RunRight.changeBeats(6).changehands(Hands.GRIPBOTH).scale(0.5,1.0),
 
-          RunRight.changeBeats(6).changehands(6).scale(1.5,3.0)
+          RunRight.changeBeats(6).changehands(Hands.GRIPRIGHT).scale(1.5,3.0)
       ]),
 
     AnimatedCall('Couples Trade',
       formation:Formation('Two-Faced Lines LH'),
       from:'Left-Hand Two-Faced Lines',difficulty: 1,
       paths:[
-          RunLeft.changeBeats(6).changehands(5).scale(1.5,3.0),
+          RunLeft.changeBeats(6).changehands(Hands.GRIPLEFT).scale(1.5,3.0),
 
-          RunLeft.changeBeats(6).changehands(7).scale(0.5,1.0),
+          RunLeft.changeBeats(6).changehands(Hands.GRIPBOTH).scale(0.5,1.0),
 
-          RunLeft.changeBeats(6).changehands(7).scale(0.5,1.0),
+          RunLeft.changeBeats(6).changehands(Hands.GRIPBOTH).scale(0.5,1.0),
 
-          RunLeft.changeBeats(6).changehands(5).scale(1.5,3.0)
+          RunLeft.changeBeats(6).changehands(Hands.GRIPLEFT).scale(1.5,3.0)
       ]),
 
     AnimatedCall('Couples Trade',
       formation:Formation('Two-Faced Tidal Line RH'),
       from:'Right-Hand Two-Faced Tidal Line',difficulty: 2,
       paths:[
-          RunRight.changeBeats(6).changehands(6).scale(1.5,1.5),
+          RunRight.changeBeats(6).changehands(Hands.GRIPRIGHT).scale(1.5,1.5),
 
-          RunRight.changeBeats(6).changehands(7).scale(0.5,0.5),
+          RunRight.changeBeats(6).changehands(Hands.GRIPBOTH).scale(0.5,0.5),
 
-          RunRight.changeBeats(6).changehands(7).scale(0.5,0.5),
+          RunRight.changeBeats(6).changehands(Hands.GRIPBOTH).scale(0.5,0.5),
 
-          RunRight.changeBeats(6).changehands(6).scale(1.5,1.5)
+          RunRight.changeBeats(6).changehands(Hands.GRIPRIGHT).scale(1.5,1.5)
       ]),
 
     AnimatedCall('Couples Trade',
       formation:Formation('Two-Faced Tidal Line LH'),
       from:'Left-Hand Two-Faced Tidal Line',difficulty: 2,
       paths:[
-          RunLeft.changeBeats(6).changehands(5).scale(1.5,1.5),
+          RunLeft.changeBeats(6).changehands(Hands.GRIPLEFT).scale(1.5,1.5),
 
-          RunLeft.changeBeats(6).changehands(7).scale(0.5,0.5),
+          RunLeft.changeBeats(6).changehands(Hands.GRIPBOTH).scale(0.5,0.5),
 
-          RunLeft.changeBeats(6).changehands(7).scale(0.5,0.5),
+          RunLeft.changeBeats(6).changehands(Hands.GRIPBOTH).scale(0.5,0.5),
 
-          RunLeft.changeBeats(6).changehands(5).scale(1.5,1.5)
+          RunLeft.changeBeats(6).changehands(Hands.GRIPLEFT).scale(1.5,1.5)
       ]),
 
     AnimatedCall('Couples Trade',
       formation:Formation('Tidal Line RH'),
       from:'Right-Hand Tidal Line',difficulty: 3,
       paths:[
-          RunRight.changeBeats(6).changehands(6).scale(3.0,1.5),
+          RunRight.changeBeats(6).changehands(Hands.GRIPRIGHT).scale(3.0,1.5),
 
-          RunRight.changeBeats(6).changehands(5).scale(2.0,0.5),
+          RunRight.changeBeats(6).changehands(Hands.GRIPLEFT).scale(2.0,0.5),
 
-          FlipLeft.changeBeats(6).changehands(6).scale(1.0,0.5),
+          FlipLeft.changeBeats(6).changehands(Hands.GRIPRIGHT).scale(1.0,0.5),
 
-          RunLeft.changeBeats(6).changehands(5).scale(1.0,1.5)
+          RunLeft.changeBeats(6).changehands(Hands.GRIPLEFT).scale(1.0,1.5)
       ]),
 
     AnimatedCall('Couples Trade',
       formation:Formation('Tidal Line LH'),
       from:'Left-Hand Tidal Line',difficulty: 3,
       paths:[
-          FlipLeft.changeBeats(6).changehands(6).scale(1.0,0.5),
+          FlipLeft.changeBeats(6).changehands(Hands.GRIPRIGHT).scale(1.0,0.5),
 
-          RunLeft.changeBeats(6).changehands(5).scale(1.0,1.5),
+          RunLeft.changeBeats(6).changehands(Hands.GRIPLEFT).scale(1.0,1.5),
 
-          RunRight.changeBeats(6).changehands(6).scale(3.0,1.5),
+          RunRight.changeBeats(6).changehands(Hands.GRIPRIGHT).scale(3.0,1.5),
 
-          RunRight.changeBeats(6).changehands(5).scale(2.0,0.5)
+          RunRight.changeBeats(6).changehands(Hands.GRIPLEFT).scale(2.0,0.5)
       ]),
   ];
 

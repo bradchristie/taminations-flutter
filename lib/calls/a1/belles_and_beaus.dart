@@ -20,7 +20,6 @@
 
 import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> BellesAndBeaus = [
@@ -98,12 +97,12 @@ import '../../moves.dart';
       paths:[
           Stand.changeBeats(3).changehands(0),
 
-          ExtendRight.changeBeats(2).changehands(1).scale(3.0,2.0) +
+          ExtendRight.changeBeats(2).changehands(Hands.LEFT).scale(3.0,2.0) +
           Forward,
 
-          Stand.changeBeats(3).changehands(2),
+          Stand.changeBeats(3).changehands(Hands.RIGHT),
 
-          Stand.changeBeats(3).changehands(2)
+          Stand.changeBeats(3).changehands(Hands.RIGHT)
       ]),
   ];
 

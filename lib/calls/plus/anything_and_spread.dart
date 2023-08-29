@@ -19,9 +19,8 @@
 */
 
 import '../../animated_call.dart';
-import '../../formation.dart';
+import '../../common_dart.dart';
 import '../../moves.dart';
-
 import '../plus/follow_your_neighbor.dart' as plus;
 
   final List<AnimatedCall> AnythingAndSpread = [
@@ -126,17 +125,17 @@ import '../plus/follow_your_neighbor.dart' as plus;
       formation:Formation('Two-Faced Lines RH'),
       from:'Right-Handed Two-Faced Lines',group:' ',difficulty: 1,
       paths:[
-          RunRight.changeBeats(4).changehands(2).scale(2.0,2.5).skew(3.5,0.0) +
+          RunRight.changeBeats(4).changehands(Hands.RIGHT).scale(2.0,2.5).skew(3.5,0.0) +
           DodgeLeft.changeBeats(1).scale(1.0,0.5).skew(-0.5,0.0),
 
-          UmTurnRight.changeBeats(4).changehands(1).skew(3.5,1.0) +
+          UmTurnRight.changeBeats(4).changehands(Hands.LEFT).skew(3.5,1.0) +
           DodgeRight.changeBeats(1).scale(1.0,0.5).skew(-0.5,0.0),
 
-          UmTurnRight.changeBeats(4).changehands(5).skew(1.0,0.0) +
-          Forward.changehands(1),
+          UmTurnRight.changeBeats(4).changehands(Hands.GRIPLEFT).skew(1.0,0.0) +
+          Forward.changehands(Hands.LEFT),
 
-          RunRight.changeBeats(4).changehands(6).scale(2.0,2.0).skew(1.0,0.0) +
-          Forward.changehands(2)
+          RunRight.changeBeats(4).changehands(Hands.GRIPRIGHT).scale(2.0,2.0).skew(1.0,0.0) +
+          Forward.changehands(Hands.RIGHT)
       ]),
     plus.FollowYourNeighbor.where((tam) =>
       tam.title == 'Follow Your Neighbor and Spread' && tam.from == 'Ocean Waves').first.xref(title: 'Follow Your Neighbor and Spread').xref(group: ' ').xref(difficulty: 1),
@@ -152,10 +151,10 @@ import '../plus/follow_your_neighbor.dart' as plus;
           QuarterLeft.changeBeats(3).skew(3.0,-1.5),
 
           StandRight.changeBeats(4) +
-          Forward.changeBeats(2).changehands(2),
+          Forward.changeBeats(2).changehands(Hands.RIGHT),
 
           StandLeft.changeBeats(4) +
-          Forward.changeBeats(2).changehands(1)
+          Forward.changeBeats(2).changehands(Hands.LEFT)
       ]),
 
     AnimatedCall('Heads Touch 1/4 and Spread',
@@ -171,10 +170,10 @@ import '../plus/follow_your_neighbor.dart' as plus;
           ExtendLeft.changeBeats(2).scale(1.0,2.0),
 
           StandRight.changeBeats(4.5) +
-          Forward.changeBeats(2).changehands(2),
+          Forward.changeBeats(2).changehands(Hands.RIGHT),
 
           StandLeft.changeBeats(4.5) +
-          Forward.changeBeats(2).changehands(1)
+          Forward.changeBeats(2).changehands(Hands.LEFT)
       ]),
 
     AnimatedCall('Hinge and Spread',
@@ -264,16 +263,16 @@ import '../plus/follow_your_neighbor.dart' as plus;
       formation:Formation('Lines Facing Out'),
       from:'Lines Facing Out',group:' ',difficulty: 1,
       paths:[
-          RunLeft.changeBeats(4).changehands(1).scale(1.0,2.0).skew(-1.0,0.0) +
+          RunLeft.changeBeats(4).changehands(Hands.LEFT).scale(1.0,2.0).skew(-1.0,0.0) +
           DodgeRight.changeBeats(2).skew(-1.0,0.0),
 
-          UmTurnLeft.changeBeats(4).changehands(2).skew(-1.0,0.0) +
+          UmTurnLeft.changeBeats(4).changehands(Hands.RIGHT).skew(-1.0,0.0) +
           DodgeLeft.changeBeats(2).skew(-1.0,0.0),
 
-          UmTurnRight.changeBeats(4).changehands(1).skew(1.0,0.0) +
+          UmTurnRight.changeBeats(4).changehands(Hands.LEFT).skew(1.0,0.0) +
           Forward.changeBeats(2),
 
-          RunRight.changeBeats(4).changehands(2).scale(2.0,2.0).skew(1.0,0.0) +
+          RunRight.changeBeats(4).changehands(Hands.RIGHT).scale(2.0,2.0).skew(1.0,0.0) +
           Forward.changeBeats(2)
       ]),
 
@@ -293,10 +292,10 @@ import '../plus/follow_your_neighbor.dart' as plus;
           QuarterLeft.changeBeats(1) +
           ExtendRight.changeBeats(2).scale(1.0,0.5),
 
-          Forward.changeBeats(3).changehands(1) +
+          Forward.changeBeats(3).changehands(Hands.LEFT) +
           SashayRight,
 
-          Forward.changeBeats(3).changehands(2) +
+          Forward.changeBeats(3).changehands(Hands.RIGHT) +
           SashayLeft
       ]),
   ];

@@ -20,7 +20,6 @@
 
 import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> StepAndSlide = [
@@ -75,9 +74,9 @@ import '../../moves.dart';
       paths:[
           DodgeLeft.changeBeats(4).skew(-1.0,0.0),
 
-          Forward.changeBeats(2).changehands(1),
+          Forward.changeBeats(2).changehands(Hands.LEFT),
 
-          Forward.changeBeats(2).changehands(2),
+          Forward.changeBeats(2).changehands(Hands.RIGHT),
 
           DodgeRight.changeBeats(4).skew(-1.0,0.0)
       ]),
@@ -88,9 +87,9 @@ import '../../moves.dart';
       paths:[
           DodgeRight.changeBeats(4).skew(-1.0,0.0),
 
-          Forward.changeBeats(2).changehands(2),
+          Forward.changeBeats(2).changehands(Hands.RIGHT),
 
-          Forward.changeBeats(2).changehands(1),
+          Forward.changeBeats(2).changehands(Hands.LEFT),
 
           DodgeLeft.changeBeats(4).skew(-1.0,0.0)
       ]),
@@ -101,9 +100,9 @@ import '../../moves.dart';
       paths:[
           ExtendRight.changeBeats(4).scale(1.0,2.0),
 
-          Forward.changeBeats(2).changehands(1),
+          Forward.changeBeats(2).changehands(Hands.LEFT),
 
-          Forward.changeBeats(2).changehands(2),
+          Forward.changeBeats(2).changehands(Hands.RIGHT),
 
           ExtendLeft.changeBeats(4).scale(1.0,2.0)
       ]),
@@ -114,9 +113,9 @@ import '../../moves.dart';
       paths:[
           ExtendLeft.changeBeats(4).scale(1.0,2.0),
 
-          Forward.changeBeats(2).changehands(1),
+          Forward.changeBeats(2).changehands(Hands.LEFT),
 
-          Forward.changeBeats(2).changehands(2),
+          Forward.changeBeats(2).changehands(Hands.RIGHT),
 
           ExtendRight.changeBeats(4).scale(1.0,2.0)
       ]),
@@ -179,9 +178,9 @@ import '../../moves.dart';
       paths:[
           DodgeLeft.changeBeats(4).skew(1.0,0.0),
 
-          Forward.changeBeats(4).changehands(2),
+          Forward.changeBeats(4).changehands(Hands.RIGHT),
 
-          Forward.changeBeats(4).changehands(1),
+          Forward.changeBeats(4).changehands(Hands.LEFT),
 
           DodgeLeft.changeBeats(4).skew(-1.0,0.0)
       ]),
@@ -218,9 +217,9 @@ import '../../moves.dart';
       paths:[
           DodgeRight.changeBeats(4).skew(-1.0,0.0),
 
-          Forward.changeBeats(4).changehands(2),
+          Forward.changeBeats(4).changehands(Hands.RIGHT),
 
-          Forward.changeBeats(4).changehands(1),
+          Forward.changeBeats(4).changehands(Hands.LEFT),
 
           DodgeRight.changeBeats(4).skew(1.0,0.0)
       ]),
@@ -231,9 +230,9 @@ import '../../moves.dart';
       paths:[
           DodgeRight.changeBeats(4).skew(1.0,0.0),
 
-          Forward.changeBeats(4).changehands(1),
+          Forward.changeBeats(4).changehands(Hands.LEFT),
 
-          Forward.changeBeats(4).changehands(2),
+          Forward.changeBeats(4).changehands(Hands.RIGHT),
 
           DodgeRight.changeBeats(4).skew(-1.0,0.0)
       ]),
@@ -270,9 +269,9 @@ import '../../moves.dart';
       paths:[
           DodgeLeft.changeBeats(4).skew(-1.0,0.0),
 
-          Forward.changeBeats(4).changehands(1),
+          Forward.changeBeats(4).changehands(Hands.LEFT),
 
-          Forward.changeBeats(4).changehands(2),
+          Forward.changeBeats(4).changehands(Hands.RIGHT),
 
           DodgeLeft.changeBeats(4).skew(1.0,0.0)
       ]),
@@ -283,9 +282,9 @@ import '../../moves.dart';
       paths:[
           DodgeRight.skew(0.0,1.5),
 
-          ExtendLeft.changeBeats(3).changehands(2).scale(3.0,0.5),
+          ExtendLeft.changeBeats(3).changehands(Hands.RIGHT).scale(3.0,0.5),
 
-          ExtendRight.changeBeats(3).changehands(1).scale(3.0,0.5),
+          ExtendRight.changeBeats(3).changehands(Hands.LEFT).scale(3.0,0.5),
 
           DodgeLeft.skew(0.0,-1.5)
       ]),
@@ -294,13 +293,13 @@ import '../../moves.dart';
       formation:Formation('Tidal Line LH'),
       from:'Tidal Line LH',noDisplay: true,
       paths:[
-          ExtendRight.changeBeats(3).changehands(1).scale(3.0,0.5),
+          ExtendRight.changeBeats(3).changehands(Hands.LEFT).scale(3.0,0.5),
 
           DodgeLeft.skew(0.0,-1.5),
 
           DodgeRight.skew(0.0,1.5),
 
-          ExtendLeft.changeBeats(3).changehands(2).scale(3.0,0.5)
+          ExtendLeft.changeBeats(3).changehands(Hands.RIGHT).scale(3.0,0.5)
       ]),
 
     AnimatedCall('Step and Slide',
@@ -335,9 +334,9 @@ import '../../moves.dart';
       paths:[
           DodgeRight.skew(0.0,1.5),
 
-          ExtendRight.changeBeats(3).changehands(1).scale(3.0,0.5),
+          ExtendRight.changeBeats(3).changehands(Hands.LEFT).scale(3.0,0.5),
 
-          ExtendLeft.changeBeats(3).changehands(2).scale(3.0,0.5),
+          ExtendLeft.changeBeats(3).changehands(Hands.RIGHT).scale(3.0,0.5),
 
           DodgeLeft.skew(0.0,-1.5)
       ]),
@@ -348,9 +347,9 @@ import '../../moves.dart';
       paths:[
           DodgeLeft.skew(0.0,-1.5),
 
-          ExtendLeft.changeBeats(3).changehands(2).scale(3.0,0.5),
+          ExtendLeft.changeBeats(3).changehands(Hands.RIGHT).scale(3.0,0.5),
 
-          ExtendRight.changeBeats(3).changehands(1).scale(3.0,0.5),
+          ExtendRight.changeBeats(3).changehands(Hands.LEFT).scale(3.0,0.5),
 
           DodgeRight.skew(0.0,1.5)
       ]),

@@ -20,7 +20,6 @@
 
 import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formation.dart';
 import '../../moves.dart';
 import '../c3b/scramble.dart' as c3b;
 
@@ -147,12 +146,12 @@ import '../c3b/scramble.dart' as c3b;
 
           RunLeft.changeBeats(4).scale(1.0,2.0) +
           HingeLeft +
-          ExtendLeft.changeBeats(2).changehands(2).scale(3.0,2.0) +
+          ExtendLeft.changeBeats(2).changehands(Hands.RIGHT).scale(3.0,2.0) +
           Forward,
 
           RunLeft.changeBeats(4).scale(0.5,2.0) +
           HingeLeft +
-          ExtendLeft.changeBeats(2).changehands(2).scale(3.0,2.0) +
+          ExtendLeft.changeBeats(2).changehands(Hands.RIGHT).scale(3.0,2.0) +
           Forward,
 
           RunRight.changeBeats(4).scale(2.0,2.0) +
@@ -164,16 +163,16 @@ import '../c3b/scramble.dart' as c3b;
       group:' ',fractions:'4.5',
       paths:[
           CastRight +
-          CounterRotateRight_0_m2.changehands(2).skew(-1.0,0.0),
+          CounterRotateRight_0_m2.changehands(Hands.RIGHT).skew(-1.0,0.0),
 
           CastRight +
-          CounterRotateRight_2_0.changehands(2).skew(1.0,0.0),
+          CounterRotateRight_2_0.changehands(Hands.RIGHT).skew(1.0,0.0),
 
           CastRight +
-          CounterRotateRight_2_0.changehands(2).skew(1.0,0.0),
+          CounterRotateRight_2_0.changehands(Hands.RIGHT).skew(1.0,0.0),
 
           CastRight +
-          CounterRotateRight_0_m2.changehands(2).skew(-1.0,0.0)
+          CounterRotateRight_0_m2.changehands(Hands.RIGHT).skew(-1.0,0.0)
       ]),
   ];
 

@@ -20,7 +20,6 @@
 
 import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> Ignore = [
@@ -37,7 +36,7 @@ import '../../moves.dart';
           SwingLeft.changeBeats(2.5).scale(0.5,0.5) +
           HingeLeft.scale(1.0,0.5),
 
-          Stand.changeBeats(4).changehands(1)
+          Stand.changeBeats(4).changehands(Hands.LEFT)
       ]),
 
     AnimatedCall('Ignore the Head Men, Motivate',
@@ -91,7 +90,7 @@ import '../../moves.dart';
       paths:[
           FlipRight,
 
-          Stand.changeBeats(3).changehands(1),
+          Stand.changeBeats(3).changehands(Hands.LEFT),
 
           LeadRight.changeBeats(3).scale(2.0,1.0),
 

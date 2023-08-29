@@ -20,7 +20,6 @@
 
 import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> StepAndFlip = [
@@ -31,9 +30,9 @@ import '../../moves.dart';
       paths:[
           FlipLeft.skew(-1.0,0.0),
 
-          Forward.changehands(1),
+          Forward.changehands(Hands.LEFT),
 
-          Forward.changehands(2),
+          Forward.changehands(Hands.RIGHT),
 
           FlipRight.skew(-1.0,0.0)
       ]),
@@ -44,9 +43,9 @@ import '../../moves.dart';
       paths:[
           FlipRight.skew(1.0,0.0),
 
-          Forward.changehands(1),
+          Forward.changehands(Hands.LEFT),
 
-          Forward.changehands(2),
+          Forward.changehands(Hands.RIGHT),
 
           FlipLeft.skew(1.0,0.0)
       ]),
@@ -57,9 +56,9 @@ import '../../moves.dart';
       paths:[
           FlipLeft.skew(1.0,0.0),
 
-          Forward.changehands(1),
+          Forward.changehands(Hands.LEFT),
 
-          Forward.changehands(2),
+          Forward.changehands(Hands.RIGHT),
 
           FlipRight.skew(1.0,0.0)
       ]),
@@ -122,9 +121,9 @@ import '../../moves.dart';
       paths:[
           FlipRight.skew(1.0,0.0),
 
-          Forward.changehands(1),
+          Forward.changehands(Hands.LEFT),
 
-          Forward.changehands(2),
+          Forward.changehands(Hands.RIGHT),
 
           FlipRight.skew(-1.0,0.0)
       ]),
@@ -161,9 +160,9 @@ import '../../moves.dart';
       paths:[
           FlipLeft.skew(-1.0,0.0),
 
-          Forward.changehands(1),
+          Forward.changehands(Hands.LEFT),
 
-          Forward.changehands(2),
+          Forward.changehands(Hands.RIGHT),
 
           FlipLeft.skew(1.0,0.0)
       ]),
@@ -179,24 +178,24 @@ import '../../moves.dart';
       paths:[
           FlipRight.skew(0.0,1.5),
 
-          ExtendLeft.changeBeats(3).changehands(2).scale(3.0,0.5),
+          ExtendLeft.changeBeats(3).changehands(Hands.RIGHT).scale(3.0,0.5),
 
           FlipLeft.skew(0.0,-1.5),
 
-          ExtendRight.changeBeats(3).changehands(1).scale(3.0,0.5)
+          ExtendRight.changeBeats(3).changehands(Hands.LEFT).scale(3.0,0.5)
       ]),
 
     AnimatedCall('Step and Flip',
       formation:Formation('Tidal Line LH'),
       from:'Tidal Line LH',noDisplay: true,
       paths:[
-          ExtendRight.changeBeats(3).changehands(1).scale(3.0,0.5),
+          ExtendRight.changeBeats(3).changehands(Hands.LEFT).scale(3.0,0.5),
 
           FlipLeft.skew(0.0,-1.5),
 
           FlipRight.skew(0.0,1.5),
 
-          ExtendLeft.changeBeats(3).changehands(2).scale(3.0,0.5)
+          ExtendLeft.changeBeats(3).changehands(Hands.RIGHT).scale(3.0,0.5)
       ]),
 
     AnimatedCall('Step and Flip',
@@ -205,9 +204,9 @@ import '../../moves.dart';
       paths:[
           FlipRight.skew(0.0,1.5),
 
-          ExtendRight.changeBeats(3).changehands(1).scale(3.0,0.5),
+          ExtendRight.changeBeats(3).changehands(Hands.LEFT).scale(3.0,0.5),
 
-          ExtendLeft.changeBeats(3).changehands(2).scale(3.0,0.5),
+          ExtendLeft.changeBeats(3).changehands(Hands.RIGHT).scale(3.0,0.5),
 
           FlipLeft.skew(0.0,-1.5)
       ]),
@@ -218,9 +217,9 @@ import '../../moves.dart';
       paths:[
           FlipLeft.skew(0.0,-1.5),
 
-          ExtendLeft.changeBeats(3).changehands(2).scale(3.0,0.5),
+          ExtendLeft.changeBeats(3).changehands(Hands.RIGHT).scale(3.0,0.5),
 
-          ExtendRight.changeBeats(3).changehands(1).scale(3.0,0.5),
+          ExtendRight.changeBeats(3).changehands(Hands.LEFT).scale(3.0,0.5),
 
           FlipRight.skew(0.0,1.5)
       ]),
@@ -348,9 +347,9 @@ import '../../moves.dart';
           FlipLeft.skew(-1.0,0.0) +
           QuarterLeft,
 
-          Forward.changehands(1),
+          Forward.changehands(Hands.LEFT),
 
-          Forward.changehands(2),
+          Forward.changehands(Hands.RIGHT),
 
           FlipRight.skew(-1.0,0.0) +
           QuarterRight
@@ -367,11 +366,11 @@ import '../../moves.dart';
       paths:[
           SwingRight.scale(1.0,1.25),
 
-          UmTurnRight.changehands(1).skew(0.0,0.5),
+          UmTurnRight.changehands(Hands.LEFT).skew(0.0,0.5),
 
-          ExtendLeft.changeBeats(3).changehands(1).scale(3.0,0.5),
+          ExtendLeft.changeBeats(3).changehands(Hands.LEFT).scale(3.0,0.5),
 
-          ExtendLeft.changeBeats(3).changehands(2).scale(3.0,1.5)
+          ExtendLeft.changeBeats(3).changehands(Hands.RIGHT).scale(3.0,1.5)
       ]),
 
     AnimatedCall('Stretch Step and Flip',
@@ -381,9 +380,9 @@ import '../../moves.dart';
           Forward_2 +
           RunRight.skew(1.0,0.0),
 
-          Forward.changehands(1),
+          Forward.changehands(Hands.LEFT),
 
-          Forward.changehands(2),
+          Forward.changehands(Hands.RIGHT),
 
           ExtendLeft.changeBeats(2).scale(2.0,1.0) +
           FlipLeft.scale(1.0,0.5).skew(1.0,0.0)

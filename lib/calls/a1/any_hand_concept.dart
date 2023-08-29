@@ -20,7 +20,6 @@
 
 import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formation.dart';
 import '../../moves.dart';
 import '../a2/remake.dart' as a2;
 import '../c1/swing_the_fractions.dart' as c1;

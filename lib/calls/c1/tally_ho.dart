@@ -20,7 +20,6 @@
 
 import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formation.dart';
 import '../../moves.dart';
 import '../c1/replace.dart' as c1;
 
@@ -133,7 +132,7 @@ import '../c1/replace.dart' as c1;
           LeadRight.changeBeats(4.5).scale(3.0,2.0),
 
           QuarterLeft.changeBeats(3).skew(-1.0,1.0) +
-          QuarterRight.changeBeats(1.5).changehands(2).skew(1.0,0.0) +
+          QuarterRight.changeBeats(1.5).changehands(Hands.RIGHT).skew(1.0,0.0) +
           LeadRight +
           SwingLeft.scale(0.5,0.5).skew(0.0,-0.5) +
           HingeLeft.scale(1.0,0.5),
@@ -181,7 +180,7 @@ import '../c1/replace.dart' as c1;
           CastLeft,
 
           QuarterLeft.changeBeats(2).skew(0.0,1.0) +
-          QuarterRight.changehands(2).skew(1.0,0.0) +
+          QuarterRight.changehands(Hands.RIGHT).skew(1.0,0.0) +
           LeadRight +
           Forward_2.changeBeats(4.5),
 
@@ -199,21 +198,21 @@ import '../c1/replace.dart' as c1;
       formation:Formation('Two-Faced Lines RH'),
       from:'Right-Hand Two-Faced Lines',parts:'3;3',
       paths:[
-          Forward_2.changeBeats(3).changehands(2) +
+          Forward_2.changeBeats(3).changehands(Hands.RIGHT) +
           LeadRight.changeBeats(1.5).scale(1.0,1.5) +
           Forward.changeBeats(1.5).scale(1.5,1.0) +
           CastLeft,
 
-          Forward_2.changeBeats(3).changehands(1) +
+          Forward_2.changeBeats(3).changehands(Hands.LEFT) +
           QuarterLeft.skew(-1.0,0.5) +
           LeadRight +
           ExtendLeft.changeBeats(4.5).scale(2.0,2.5),
 
-          LeadRight.changeBeats(3).changehands(1) +
+          LeadRight.changeBeats(3).changehands(Hands.LEFT) +
           FlipLeft +
           LeadLeft.changeBeats(4.5).scale(3.0,3.0),
 
-          LeadRight.changeBeats(3).changehands(2).scale(3.0,3.0) +
+          LeadRight.changeBeats(3).changehands(Hands.RIGHT).scale(3.0,3.0) +
           RunRight +
           CastLeft
       ]),
@@ -222,22 +221,22 @@ import '../c1/replace.dart' as c1;
       formation:Formation('Two-Faced Lines LH'),
       from:'Left-Hand Two-Faced Lines',parts:'3;3',
       paths:[
-          LeadLeft.changeBeats(3).changehands(1).scale(3.0,3.0) +
+          LeadLeft.changeBeats(3).changehands(Hands.LEFT).scale(3.0,3.0) +
           FlipLeft +
           BackHingeRight +
           BackHingeRight +
           BackHingeRight,
 
-          LeadLeft.changeBeats(3).changehands(2) +
+          LeadLeft.changeBeats(3).changehands(Hands.RIGHT) +
           RunRight +
           LeadRight.changeBeats(4.5).scale(3.0,3.0),
 
-          Forward_2.changeBeats(3).changehands(2) +
+          Forward_2.changeBeats(3).changehands(Hands.RIGHT) +
           LeadRight.changeBeats(1.5).scale(1.0,0.5) +
           LeadRight +
           ExtendLeft.changeBeats(4.5).scale(2.0,0.5),
 
-          Forward_2.changeBeats(3).changehands(1) +
+          Forward_2.changeBeats(3).changehands(Hands.LEFT) +
           QuarterLeft.skew(-1.0,1.5) +
           Forward.changeBeats(1.5).scale(1.5,1.0) +
           CastLeft
@@ -324,7 +323,7 @@ import '../c1/replace.dart' as c1;
           CastLeft,
 
           Forward.changeBeats(1.5) +
-          QuarterRight.changehands(2).skew(1.0,0.0) +
+          QuarterRight.changehands(Hands.RIGHT).skew(1.0,0.0) +
           LeadRight +
           ExtendLeft.changeBeats(4.5).scale(2.0,1.0),
 
@@ -352,7 +351,7 @@ import '../c1/replace.dart' as c1;
           CastRight,
 
           Forward.changeBeats(1.5) +
-          QuarterLeft.changehands(1).skew(1.0,0.0) +
+          QuarterLeft.changehands(Hands.LEFT).skew(1.0,0.0) +
           LeadLeft +
           ExtendRight.changeBeats(4.5).scale(2.0,1.0),
 

@@ -20,7 +20,6 @@
 
 import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> TripleFormations = [
@@ -38,9 +37,9 @@ import '../../moves.dart';
 
           Forward_3.changeBeats(4),
 
-          Forward_3.changeBeats(4).changehands(2),
+          Forward_3.changeBeats(4).changehands(Hands.RIGHT),
 
-          Forward_3.changeBeats(4).changehands(1)
+          Forward_3.changeBeats(4).changehands(Hands.LEFT)
       ]),
 
     AnimatedCall('Triple Lines Working Forward Link Up',
@@ -56,7 +55,7 @@ import '../../moves.dart';
           QuarterRight +
           Forward_2.changeBeats(3),
 
-          QuarterRight.changeBeats(2.5).changehands(1) +
+          QuarterRight.changeBeats(2.5).changehands(Hands.LEFT) +
           QuarterRight +
           Forward_3,
 

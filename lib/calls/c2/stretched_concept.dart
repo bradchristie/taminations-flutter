@@ -19,7 +19,7 @@
 */
 
 import '../../animated_call.dart';
-import '../../formation.dart';
+import '../../common_dart.dart';
 import '../../moves.dart';
 import '../c3a/scatter_circulate.dart' as c3a;
 
@@ -82,13 +82,13 @@ import '../c3a/scatter_circulate.dart' as c3a;
       formation:Formation('Tidal Line RH'),
       group:'Stretched Line',
       paths:[
-          RunRight.changeBeats(4).changehands(6).scale(1.5,1.25).skew(2.0,0.0),
+          RunRight.changeBeats(4).changehands(Hands.GRIPRIGHT).scale(1.5,1.25).skew(2.0,0.0),
 
-          UmTurnRight.changeBeats(4).changehands(5).skew(2.0,0.5),
+          UmTurnRight.changeBeats(4).changehands(Hands.GRIPLEFT).skew(2.0,0.5),
 
-          RunRight.changeBeats(4).changehands(6).scale(1.5,2.25).skew(2.0,0.0),
+          RunRight.changeBeats(4).changehands(Hands.GRIPRIGHT).scale(1.5,2.25).skew(2.0,0.0),
 
-          UmTurnRight.changeBeats(4).changehands(5).skew(2.0,-1.5)
+          UmTurnRight.changeBeats(4).changehands(Hands.GRIPLEFT).skew(2.0,-1.5)
       ]),
 
     AnimatedCall('Stretched Wave Explode the Wave',

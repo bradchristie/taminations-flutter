@@ -20,7 +20,6 @@
 
 import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> DixieStyle = [
@@ -32,7 +31,7 @@ import '../../moves.dart';
           DodgeRight.changeBeats(4).scale(1.0,0.875) +
           HingeLeft.scale(1.0,0.75),
 
-          ExtendLeft.changeBeats(2).changehands(2).skew(1.0,0.5) +
+          ExtendLeft.changeBeats(2).changehands(Hands.RIGHT).skew(1.0,0.5) +
           ExtendRight.changeBeats(2).scale(2.0,1.25) +
           HingeLeft.scale(1.0,0.75)
       ]),
@@ -69,14 +68,14 @@ import '../../moves.dart';
           DodgeRight.changeBeats(4).scale(1.0,0.875) +
           HingeLeft.scale(1.0,0.75),
 
-          ExtendLeft.changeBeats(2).changehands(2).skew(1.0,0.5) +
+          ExtendLeft.changeBeats(2).changehands(Hands.RIGHT).skew(1.0,0.5) +
           ExtendRight.changeBeats(2).scale(2.0,1.25) +
           HingeLeft.scale(1.0,0.75),
 
           DodgeRight.changeBeats(4).scale(1.0,0.875) +
           HingeLeft.scale(1.0,0.75),
 
-          ExtendLeft.changeBeats(2).changehands(2).skew(1.0,0.5) +
+          ExtendLeft.changeBeats(2).changehands(Hands.RIGHT).skew(1.0,0.5) +
           ExtendRight.changeBeats(2).scale(2.0,1.25) +
           HingeLeft.scale(1.0,0.75)
       ]),
@@ -89,17 +88,17 @@ import '../../moves.dart';
           Stand +
           HingeLeft.scale(0.8,0.75),
 
-          ExtendLeft.changeBeats(2).changehands(2).scale(1.15,1.5) +
+          ExtendLeft.changeBeats(2).changehands(Hands.RIGHT).scale(1.15,1.5) +
           ExtendRight.changeBeats(2).scale(1.15,1.25) +
-          QuarterLeft.changehands(1).skew(0.2,0.75),
+          QuarterLeft.changehands(Hands.LEFT).skew(0.2,0.75),
 
           DodgeRight.scale(1.0,0.875).skew(-0.3,0.0) +
           Stand +
           HingeLeft.scale(0.8,0.75),
 
-          ExtendLeft.changeBeats(2).changehands(2).scale(1.15,1.5) +
+          ExtendLeft.changeBeats(2).changehands(Hands.RIGHT).scale(1.15,1.5) +
           ExtendRight.changeBeats(2).scale(1.15,1.25) +
-          QuarterLeft.changehands(1).skew(0.2,0.75)
+          QuarterLeft.changehands(Hands.LEFT).skew(0.2,0.75)
       ]),
 
     AnimatedCall('Dixie Style to a Wave',
@@ -177,7 +176,7 @@ import '../../moves.dart';
       formation:Formation('Facing Couples'),
       from:'Facing Couples',difficulty: 2,
       paths:[
-          ExtendRight.changeBeats(2).changehands(2).skew(1.0,-0.5) +
+          ExtendRight.changeBeats(2).changehands(Hands.RIGHT).skew(1.0,-0.5) +
           ExtendLeft.changeBeats(2).scale(2.0,1.25) +
           HingeRight.scale(1.0,0.75),
 
@@ -214,14 +213,14 @@ import '../../moves.dart';
       formation:Formation('Normal Lines'),
       from:'Lines',difficulty: 2,
       paths:[
-          ExtendRight.changeBeats(2).changehands(1).skew(1.0,-0.5) +
+          ExtendRight.changeBeats(2).changehands(Hands.LEFT).skew(1.0,-0.5) +
           ExtendLeft.changeBeats(2).scale(2.0,1.25) +
           HingeRight.scale(1.0,0.75),
 
           DodgeLeft.changeBeats(4).scale(1.0,0.875) +
           HingeRight.scale(1.0,0.75),
 
-          ExtendRight.changeBeats(2).changehands(1).skew(1.0,-0.5) +
+          ExtendRight.changeBeats(2).changehands(Hands.LEFT).skew(1.0,-0.5) +
           ExtendLeft.changeBeats(2).scale(2.0,1.25) +
           HingeRight.scale(1.0,0.75),
 
@@ -233,17 +232,17 @@ import '../../moves.dart';
       formation:Formation('Eight Chain Thru'),
       from:'Eight Chain Thru',difficulty: 2,
       paths:[
-          ExtendRight.changeBeats(2).changehands(2).scale(1.15,1.5) +
+          ExtendRight.changeBeats(2).changehands(Hands.RIGHT).scale(1.15,1.5) +
           ExtendLeft.changeBeats(2).scale(1.15,1.25) +
-          QuarterRight.changehands(1).skew(0.2,-0.75),
+          QuarterRight.changehands(Hands.LEFT).skew(0.2,-0.75),
 
           DodgeLeft.scale(1.0,0.875).skew(-0.3,0.0) +
           Stand +
           HingeRight.scale(0.8,0.75),
 
-          ExtendRight.changeBeats(2).changehands(2).scale(1.15,1.5) +
+          ExtendRight.changeBeats(2).changehands(Hands.RIGHT).scale(1.15,1.5) +
           ExtendLeft.changeBeats(2).scale(1.15,1.25) +
-          QuarterRight.changehands(1).skew(0.2,-0.75),
+          QuarterRight.changehands(Hands.LEFT).skew(0.2,-0.75),
 
           DodgeLeft.scale(1.0,0.875).skew(-0.3,0.0) +
           Stand +

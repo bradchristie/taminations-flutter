@@ -20,7 +20,6 @@
 
 import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> Star = [
@@ -115,8 +114,8 @@ import '../../moves.dart';
       formation:Formation('Star Facing'),
       from:'Facing Star',
       paths:[
-          EighthLeft.changeBeats(1.5).changehands(1).skew(0.353,0.647) +
-          EighthLeft.changeBeats(1.5).changehands(1).skew(0.707,-0.207),
+          EighthLeft.changeBeats(1.5).changehands(Hands.LEFT).skew(0.353,0.647) +
+          EighthLeft.changeBeats(1.5).changehands(Hands.LEFT).skew(0.707,-0.207),
 
           EighthRight.changeBeats(1.5).skew(1.06,0.06) +
           EighthRight.changeBeats(1.5).skew(0.707,-0.793)
@@ -157,14 +156,14 @@ import '../../moves.dart';
   ]),
       from:'Facing Stars 1',noDisplay: true,
       paths:[
-          EighthLeft.changeBeats(1.5).changehands(1).skew(0.353,0.647) +
-          EighthLeft.changeBeats(1.5).changehands(1).skew(0.707,-0.207),
+          EighthLeft.changeBeats(1.5).changehands(Hands.LEFT).skew(0.353,0.647) +
+          EighthLeft.changeBeats(1.5).changehands(Hands.LEFT).skew(0.707,-0.207),
 
           EighthRight.changeBeats(1.5).skew(1.06,0.06) +
           EighthRight.changeBeats(1.5).skew(0.707,-0.793),
 
-          EighthLeft.changeBeats(1.5).changehands(1).skew(0.353,0.647) +
-          EighthLeft.changeBeats(1.5).changehands(1).skew(0.707,-0.207),
+          EighthLeft.changeBeats(1.5).changehands(Hands.LEFT).skew(0.353,0.647) +
+          EighthLeft.changeBeats(1.5).changehands(Hands.LEFT).skew(0.707,-0.207),
 
           EighthRight.changeBeats(1.5).skew(1.06,0.06) +
           EighthRight.changeBeats(1.5).skew(0.707,-0.793)
@@ -182,14 +181,14 @@ import '../../moves.dart';
           EighthRight.changeBeats(1.5).skew(1.06,0.06) +
           EighthRight.changeBeats(1.5).skew(0.707,-0.793),
 
-          EighthLeft.changeBeats(1.5).changehands(1).skew(0.353,0.647) +
-          EighthLeft.changeBeats(1.5).changehands(1).skew(0.707,-0.207),
+          EighthLeft.changeBeats(1.5).changehands(Hands.LEFT).skew(0.353,0.647) +
+          EighthLeft.changeBeats(1.5).changehands(Hands.LEFT).skew(0.707,-0.207),
 
           EighthRight.changeBeats(1.5).skew(1.06,0.06) +
           EighthRight.changeBeats(1.5).skew(0.707,-0.793),
 
-          EighthLeft.changeBeats(1.5).changehands(1).skew(0.353,0.647) +
-          EighthLeft.changeBeats(1.5).changehands(1).skew(0.707,-0.207)
+          EighthLeft.changeBeats(1.5).changehands(Hands.LEFT).skew(0.353,0.647) +
+          EighthLeft.changeBeats(1.5).changehands(Hands.LEFT).skew(0.707,-0.207)
       ]),
 
     AnimatedCall('Head Right-Hand Star All the Way Around',
@@ -291,36 +290,36 @@ import '../../moves.dart';
       Pass Thru formation, as that is commonly assumed especially for singing calls.
     ''',
       paths:[
-          Forward.changehands(2) +
-          Forward.changehands(2),
+          Forward.changehands(Hands.RIGHT) +
+          Forward.changehands(Hands.RIGHT),
 
-          QuarterLeft.changeBeats(1).changehands(2).skew(0.0,1.0) +
-          QuarterRight.changeBeats(1).changehands(2).skew(1.0,0.0),
+          QuarterLeft.changeBeats(1).changehands(Hands.RIGHT).skew(0.0,1.0) +
+          QuarterRight.changeBeats(1).changehands(Hands.RIGHT).skew(1.0,0.0),
 
-          Forward.changehands(2) +
+          Forward.changehands(Hands.RIGHT) +
           UmTurnRight.changeBeats(1).skew(1.0,0.0),
 
-          QuarterLeft.changeBeats(1).changehands(2).skew(0.0,1.0) +
-          QuarterLeft.changeBeats(1).changehands(2).skew(1.0,0.0)
+          QuarterLeft.changeBeats(1).changehands(Hands.RIGHT).skew(0.0,1.0) +
+          QuarterLeft.changeBeats(1).changehands(Hands.RIGHT).skew(1.0,0.0)
       ]),
 
     AnimatedCall('Right-Hand Star 1/2',
       formation:Formation('Eight Chain Thru'),
       group:' ',
       paths:[
-          Forward.changehands(2) +
+          Forward.changehands(Hands.RIGHT) +
           HingeRight.changeBeats(2) +
-          QuarterLeft.changeBeats(1).changehands(2).skew(1.0,0.0),
+          QuarterLeft.changeBeats(1).changehands(Hands.RIGHT).skew(1.0,0.0),
 
-          QuarterLeft.changeBeats(1).changehands(2).skew(0.0,1.0) +
+          QuarterLeft.changeBeats(1).changehands(Hands.RIGHT).skew(0.0,1.0) +
           HingeRight.changeBeats(2) +
-          Forward.changehands(2),
+          Forward.changehands(Hands.RIGHT),
 
-          Forward.changehands(2) +
+          Forward.changehands(Hands.RIGHT) +
           HingeRight.changeBeats(2) +
-          QuarterRight.changeBeats(1).changehands(2).skew(1.0,0.0),
+          QuarterRight.changeBeats(1).changehands(Hands.RIGHT).skew(1.0,0.0),
 
-          QuarterLeft.changeBeats(1).changehands(2).skew(0.0,1.0) +
+          QuarterLeft.changeBeats(1).changehands(Hands.RIGHT).skew(0.0,1.0) +
           HingeRight.changeBeats(2) +
           UmTurnRight.changeBeats(1).skew(1.0,0.0)
       ]),
@@ -329,62 +328,62 @@ import '../../moves.dart';
       formation:Formation('Eight Chain Thru'),
       group:' ',
       paths:[
-          Forward.changehands(2) +
+          Forward.changehands(Hands.RIGHT) +
           SwingRight.changeBeats(4) +
           UmTurnRight.changeBeats(1).skew(1.0,0.0),
 
-          QuarterLeft.changeBeats(1).changehands(2).skew(0.0,1.0) +
+          QuarterLeft.changeBeats(1).changehands(Hands.RIGHT).skew(0.0,1.0) +
           SwingRight.changeBeats(4) +
-          QuarterLeft.changeBeats(1).changehands(2).skew(1.0,0.0),
+          QuarterLeft.changeBeats(1).changehands(Hands.RIGHT).skew(1.0,0.0),
 
-          Forward.changehands(2) +
+          Forward.changehands(Hands.RIGHT) +
           SwingRight.changeBeats(4) +
-          Forward.changehands(2),
+          Forward.changehands(Hands.RIGHT),
 
-          QuarterLeft.changeBeats(1).changehands(2).skew(0.0,1.0) +
+          QuarterLeft.changeBeats(1).changehands(Hands.RIGHT).skew(0.0,1.0) +
           SwingRight.changeBeats(4) +
-          QuarterRight.changeBeats(1).changehands(2).skew(1.0,0.0)
+          QuarterRight.changeBeats(1).changehands(Hands.RIGHT).skew(1.0,0.0)
       ]),
 
     AnimatedCall('Right-Hand Star a Full Turn',
       formation:Formation('Eight Chain Thru'),
       group:' ',
       paths:[
-          Forward.changehands(2) +
+          Forward.changehands(Hands.RIGHT) +
           HingeRight.changeBeats(2) +
           SwingRight.changeBeats(4) +
-          QuarterRight.changeBeats(1).changehands(2).skew(1.0,0.0),
+          QuarterRight.changeBeats(1).changehands(Hands.RIGHT).skew(1.0,0.0),
 
-          QuarterLeft.changeBeats(1).changehands(2).skew(0.0,1.0) +
+          QuarterLeft.changeBeats(1).changehands(Hands.RIGHT).skew(0.0,1.0) +
           HingeRight.changeBeats(2) +
           SwingRight.changeBeats(4) +
           UmTurnRight.changeBeats(1).skew(1.0,0.0),
 
-          Forward.changehands(2) +
+          Forward.changehands(Hands.RIGHT) +
           HingeRight.changeBeats(2) +
           SwingRight.changeBeats(4) +
-          QuarterLeft.changeBeats(1).changehands(2).skew(1.0,0.0),
+          QuarterLeft.changeBeats(1).changehands(Hands.RIGHT).skew(1.0,0.0),
 
-          QuarterLeft.changeBeats(1).changehands(2).skew(0.0,1.0) +
+          QuarterLeft.changeBeats(1).changehands(Hands.RIGHT).skew(0.0,1.0) +
           HingeRight.changeBeats(2) +
           SwingRight.changeBeats(4) +
-          Forward.changehands(2)
+          Forward.changehands(Hands.RIGHT)
       ]),
 
     AnimatedCall('Left-Hand Star 1/4',
       formation:Formation('Eight Chain Thru'),
       group:' ',
       paths:[
-          QuarterRight.changeBeats(1).changehands(1).skew(0.0,-1.0) +
-          QuarterLeft.changeBeats(1).changehands(1).skew(1.0,0.0),
+          QuarterRight.changeBeats(1).changehands(Hands.LEFT).skew(0.0,-1.0) +
+          QuarterLeft.changeBeats(1).changehands(Hands.LEFT).skew(1.0,0.0),
 
-          Forward.changehands(1) +
-          Forward.changehands(1),
+          Forward.changehands(Hands.LEFT) +
+          Forward.changehands(Hands.LEFT),
 
-          QuarterRight.changeBeats(1).changehands(1).skew(0.0,-1.0) +
-          QuarterRight.changeBeats(1).changehands(1).skew(1.0,0.0),
+          QuarterRight.changeBeats(1).changehands(Hands.LEFT).skew(0.0,-1.0) +
+          QuarterRight.changeBeats(1).changehands(Hands.LEFT).skew(1.0,0.0),
 
-          Forward.changehands(1) +
+          Forward.changehands(Hands.LEFT) +
           UmTurnLeft.changeBeats(1).skew(1.0,0.0)
       ]),
 
@@ -392,67 +391,67 @@ import '../../moves.dart';
       formation:Formation('Eight Chain Thru'),
       group:' ',
       paths:[
-          QuarterRight.changeBeats(1).changehands(1).skew(0.0,-1.0) +
+          QuarterRight.changeBeats(1).changehands(Hands.LEFT).skew(0.0,-1.0) +
           HingeLeft.changeBeats(2) +
-          Forward.changehands(1),
+          Forward.changehands(Hands.LEFT),
 
-          Forward.changehands(1) +
+          Forward.changehands(Hands.LEFT) +
           HingeLeft.changeBeats(2) +
-          QuarterRight.changeBeats(1).changehands(1).skew(1.0,0.0),
+          QuarterRight.changeBeats(1).changehands(Hands.LEFT).skew(1.0,0.0),
 
-          QuarterRight.changeBeats(1).changehands(1).skew(0.0,-1.0) +
+          QuarterRight.changeBeats(1).changehands(Hands.LEFT).skew(0.0,-1.0) +
           HingeLeft.changeBeats(2) +
           UmTurnLeft.changeBeats(1).skew(1.0,0.0),
 
-          Forward.changehands(1) +
+          Forward.changehands(Hands.LEFT) +
           HingeLeft.changeBeats(2) +
-          QuarterLeft.changeBeats(1).changehands(1).skew(1.0,0.0)
+          QuarterLeft.changeBeats(1).changehands(Hands.LEFT).skew(1.0,0.0)
       ]),
 
     AnimatedCall('Left-Hand Star 3/4',
       formation:Formation('Eight Chain Thru'),
       group:' ',
       paths:[
-          QuarterRight.changeBeats(1).changehands(1).skew(0.0,-1.0) +
+          QuarterRight.changeBeats(1).changehands(Hands.LEFT).skew(0.0,-1.0) +
           SwingLeft.changeBeats(4) +
-          QuarterRight.changeBeats(1).changehands(1).skew(1.0,0.0),
+          QuarterRight.changeBeats(1).changehands(Hands.LEFT).skew(1.0,0.0),
 
-          Forward.changehands(1) +
+          Forward.changehands(Hands.LEFT) +
           SwingLeft.changeBeats(4) +
           UmTurnLeft.changeBeats(1).skew(1.0,0.0),
 
-          QuarterRight.changeBeats(1).changehands(1).skew(0.0,-1.0) +
+          QuarterRight.changeBeats(1).changehands(Hands.LEFT).skew(0.0,-1.0) +
           SwingLeft.changeBeats(4) +
-          QuarterLeft.changeBeats(1).changehands(1).skew(1.0,0.0),
+          QuarterLeft.changeBeats(1).changehands(Hands.LEFT).skew(1.0,0.0),
 
-          Forward.changehands(1) +
+          Forward.changehands(Hands.LEFT) +
           SwingLeft.changeBeats(4) +
-          Forward.changehands(1)
+          Forward.changehands(Hands.LEFT)
       ]),
 
     AnimatedCall('Left-Hand Star a Full Turn',
       formation:Formation('Eight Chain Thru'),
       group:' ',
       paths:[
-          QuarterRight.changeBeats(1).changehands(1).skew(0.0,-1.0) +
+          QuarterRight.changeBeats(1).changehands(Hands.LEFT).skew(0.0,-1.0) +
           HingeLeft.changeBeats(2) +
           SwingLeft.changeBeats(4) +
           UmTurnLeft.changeBeats(1).skew(1.0,0.0),
 
-          Forward.changehands(1) +
+          Forward.changehands(Hands.LEFT) +
           HingeLeft.changeBeats(2) +
           SwingLeft.changeBeats(4) +
-          QuarterLeft.changeBeats(1).changehands(1).skew(1.0,0.0),
+          QuarterLeft.changeBeats(1).changehands(Hands.LEFT).skew(1.0,0.0),
 
-          QuarterRight.changeBeats(1).changehands(1).skew(0.0,-1.0) +
+          QuarterRight.changeBeats(1).changehands(Hands.LEFT).skew(0.0,-1.0) +
           HingeLeft.changeBeats(2) +
           SwingLeft.changeBeats(4) +
-          Forward.changehands(1),
+          Forward.changehands(Hands.LEFT),
 
-          Forward.changehands(1) +
+          Forward.changehands(Hands.LEFT) +
           HingeLeft.changeBeats(2) +
           SwingLeft.changeBeats(4) +
-          QuarterRight.changeBeats(1).changehands(1).skew(1.0,0.0)
+          QuarterRight.changeBeats(1).changehands(Hands.LEFT).skew(1.0,0.0)
       ]),
 
 

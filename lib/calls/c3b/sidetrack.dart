@@ -20,7 +20,6 @@
 
 import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> Sidetrack = [
@@ -56,19 +55,19 @@ import '../../moves.dart';
       from:'Right-Hand Two-Faced Lines',parts:'1.5;4',
       paths:[
           QuarterLeft.skew(1.0,0.0) +
-          CounterRotateRight_m2_m4.changeBeats(4).changehands(2) +
+          CounterRotateRight_m2_m4.changeBeats(4).changehands(Hands.RIGHT) +
           QuarterRight.skew(0.0,1.0),
 
           QuarterLeft.skew(1.0,0.0) +
-          CounterRotateRight_0_m2.changeBeats(4).changehands(2) +
+          CounterRotateRight_0_m2.changeBeats(4).changehands(Hands.RIGHT) +
           QuarterRight.skew(0.0,1.0),
 
           QuarterRight.skew(-1.0,0.0) +
-          CounterRotateRight_2_0.changeBeats(4).changehands(2) +
+          CounterRotateRight_2_0.changeBeats(4).changehands(Hands.RIGHT) +
           QuarterRight.skew(0.0,1.0),
 
           QuarterRight.skew(-1.0,0.0) +
-          CounterRotateRight_4_2.changeBeats(4).changehands(2) +
+          CounterRotateRight_4_2.changeBeats(4).changehands(Hands.RIGHT) +
           QuarterRight.skew(0.0,1.0)
       ]),
 

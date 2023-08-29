@@ -20,7 +20,6 @@
 
 import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> CloverAndAnything = [
@@ -169,30 +168,30 @@ import '../../moves.dart';
           LeadLeft.changeBeats(2.5).scale(1.5,1.5) +
           LeadLeft.changeBeats(2.5).scale(1.5,1.0) +
           LeadLeft.changeBeats(2).scale(1.5,1.0) +
-          ExtendLeft.changeBeats(1.5).changehands(2).scale(1.0,0.5) +
+          ExtendLeft.changeBeats(1.5).changehands(Hands.RIGHT).scale(1.0,0.5) +
           QuarterLeft.changeBeats(1.5).skew(1.0,0.5),
 
           Forward +
           LeadRight.changeBeats(2.5).scale(1.5,1.5) +
           LeadRight.changeBeats(2.5).scale(1.5,1.0) +
           LeadRight.changeBeats(2).scale(1.5,1.0) +
-          ExtendLeft.changeBeats(1.5).changehands(2).scale(1.0,0.5) +
+          ExtendLeft.changeBeats(1.5).changehands(Hands.RIGHT).scale(1.0,0.5) +
           QuarterRight.changeBeats(1.5).skew(1.0,-1.5),
 
           Forward_2 +
-          ExtendLeft.changeBeats(1.5).changehands(2).scale(1.0,0.5) +
+          ExtendLeft.changeBeats(1.5).changehands(Hands.RIGHT).scale(1.0,0.5) +
           QuarterLeft.changeBeats(1.5).skew(1.0,-0.5) +
-          ExtendRight.changeBeats(1.5).changehands(1).scale(1.0,0.5) +
+          ExtendRight.changeBeats(1.5).changehands(Hands.LEFT).scale(1.0,0.5) +
           QuarterRight.changeBeats(1.5).skew(1.0,0.5) +
-          ExtendLeft.changeBeats(1.5).changehands(2).scale(1.0,0.5) +
+          ExtendLeft.changeBeats(1.5).changehands(Hands.RIGHT).scale(1.0,0.5) +
           QuarterLeft.changeBeats(1.5).skew(1.0,0.5),
 
           Forward_2 +
-          ExtendLeft.changeBeats(1.5).changehands(2).scale(1.0,0.5) +
+          ExtendLeft.changeBeats(1.5).changehands(Hands.RIGHT).scale(1.0,0.5) +
           QuarterRight.changeBeats(1.5).skew(1.0,-0.5) +
-          ExtendRight.changeBeats(1.5).changehands(1).scale(1.0,0.5) +
+          ExtendRight.changeBeats(1.5).changehands(Hands.LEFT).scale(1.0,0.5) +
           QuarterLeft.changeBeats(1.5).skew(1.0,0.5) +
-          ExtendLeft.changeBeats(1.5).changehands(2).scale(1.0,0.5) +
+          ExtendLeft.changeBeats(1.5).changehands(Hands.RIGHT).scale(1.0,0.5) +
           QuarterRight.changeBeats(1.5).skew(1.0,-1.5)
       ]),
 

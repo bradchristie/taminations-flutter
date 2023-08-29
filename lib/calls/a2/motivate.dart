@@ -20,7 +20,6 @@
 
 import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> Motivate = [
@@ -79,30 +78,30 @@ import '../../moves.dart';
       formation:Formation('Two-Faced Lines RH'),
       from:'Two-Faced Lines',parts:'4;4.5;3',difficulty: 3,
       paths:[
-          Forward_4.changehands(2) +
+          Forward_4.changehands(Hands.RIGHT) +
           LeadRight.changeBeats(4.5).scale(3.0,3.0) +
           RunRight +
           BeauWheel.scale(1.0,-1.0) +
           BackHingeLeft,
 
-          Forward_4.changehands(1) +
+          Forward_4.changehands(Hands.LEFT) +
           CastRight +
-          EighthLeft.changehands(1).skew(0.353,0.647) +
+          EighthLeft.changehands(Hands.LEFT).skew(0.353,0.647) +
           HingeLeft.scale(0.5,0.5) +
-          EighthLeft.changehands(1).skew(0.707,-0.207) +
+          EighthLeft.changehands(Hands.LEFT).skew(0.707,-0.207) +
           BelleWheel.scale(1.0,-1.0) +
           HingeRight,
 
-          RunRight.changeBeats(4).changehands(1) +
+          RunRight.changeBeats(4).changehands(Hands.LEFT) +
           CastRight +
           FlipLeft +
           LeadLeft.changeBeats(4.5).scale(3.0,3.0),
 
-          RunRight.changeBeats(4).changehands(2).scale(3.0,3.0) +
+          RunRight.changeBeats(4).changehands(Hands.RIGHT).scale(3.0,3.0) +
           ExtendRight.changeBeats(4.5).scale(2.0,2.0) +
           EighthRight.skew(1.06,0.06) +
           LeadRight.scale(1.5,1.5) +
-          EighthRight.changehands(2).skew(0.707,-0.707) +
+          EighthRight.changehands(Hands.RIGHT).skew(0.707,-0.707) +
           ExtendLeft.changeBeats(4.5).scale(2.0,4.0)
       ]),
 
@@ -120,7 +119,7 @@ import '../../moves.dart';
           ExtendRight.changeBeats(2) +
           EighthRight.skew(1.06,0.06) +
           LeadRight.scale(1.5,1.5) +
-          EighthRight.changehands(2).skew(0.8,-0.7) +
+          EighthRight.changehands(Hands.RIGHT).skew(0.8,-0.7) +
           ExtendLeft.changeBeats(4.5).scale(2.0,3.9),
 
           Forward_2 +
@@ -133,9 +132,9 @@ import '../../moves.dart';
           HingeRight.skew(0.5,0.0) +
           HingeRight.skew(0.0,0.25) +
           HingeRight.skew(-0.25,0.0) +
-          EighthLeft.changehands(1).skew(0.353,0.647) +
+          EighthLeft.changehands(Hands.LEFT).skew(0.353,0.647) +
           HingeLeft.scale(0.5,0.5) +
-          EighthLeft.changehands(1).skew(0.707,-0.207) +
+          EighthLeft.changehands(Hands.LEFT).skew(0.707,-0.207) +
           CastRight,
 
           Forward_2 +

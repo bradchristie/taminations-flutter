@@ -20,7 +20,6 @@
 
 import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> OwnTheAnyoneAnythingByAnything = [
@@ -100,12 +99,12 @@ import '../../moves.dart';
           UmTurnLeft +
           Forward.changeBeats(3).skew(2.0,0.0),
 
-          LeadLeft.changeBeats(3).changehands(2).scale(0.5,2.0) +
+          LeadLeft.changeBeats(3).changehands(Hands.RIGHT).scale(0.5,2.0) +
           ExtendRight.changeBeats(3).scale(0.2,0.5),
 
           Forward.changeBeats(3).skew(2.0,0.0),
 
-          LeadRight.changeBeats(3).changehands(2).scale(1.5,2.0) +
+          LeadRight.changeBeats(3).changehands(Hands.RIGHT).scale(1.5,2.0) +
           ExtendRight.changeBeats(3).scale(2.0,0.5)
       ]),
 
@@ -131,7 +130,7 @@ import '../../moves.dart';
           LeadRight.changeBeats(3).scale(3.0,1.0),
 
           Forward.changeBeats(1.5).scale(1.0,0.25) +
-          LeadLeft.changeBeats(2.5).changehands(1)
+          LeadLeft.changeBeats(2.5).changehands(Hands.LEFT)
       ]),
   ];
 

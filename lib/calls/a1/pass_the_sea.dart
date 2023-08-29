@@ -20,7 +20,6 @@
 
 import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formation.dart';
 import '../../moves.dart';
 import '../a2/all_4_all_8.dart' as a2;
 
@@ -108,16 +107,16 @@ import '../a2/all_4_all_8.dart' as a2;
       formation:Formation('Normal Lines'),
       from:'Lines',group:' ',
       paths:[
-          ExtendLeft.changeBeats(2).changehands(2).scale(2.0,0.5) +
+          ExtendLeft.changeBeats(2).changehands(Hands.RIGHT).scale(2.0,0.5) +
           LeadRight.changeBeats(4).scale(1.5,3.5),
 
-          ExtendLeft.changeBeats(2).changehands(1).scale(2.0,1.5) +
+          ExtendLeft.changeBeats(2).changehands(Hands.LEFT).scale(2.0,1.5) +
           LeadRight.changeBeats(4).scale(0.5,2.5),
 
-          ExtendLeft.changeBeats(2).changehands(2).scale(2.0,0.5) +
+          ExtendLeft.changeBeats(2).changehands(Hands.RIGHT).scale(2.0,0.5) +
           LeadLeft.changeBeats(4).scale(2.5,0.5),
 
-          ExtendLeft.changeBeats(2).changehands(1).scale(2.0,1.5) +
+          ExtendLeft.changeBeats(2).changehands(Hands.LEFT).scale(2.0,1.5) +
           LeadLeft.changeBeats(4).scale(3.5,1.5)
       ]),
     a2.All4All8.where((tam) =>

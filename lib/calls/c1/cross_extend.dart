@@ -19,8 +19,7 @@
 */
 
 import '../../animated_call.dart';
-import '../../dancer_model.dart';
-import '../../formation.dart';
+import '../../common_dart.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> CrossExtend = [
@@ -154,13 +153,13 @@ import '../../moves.dart';
       formation:Formation('Two-Faced Lines RH'),
       group:' ',
       paths:[
-          DodgeRight.changeBeats(5).changehands(2).scale(1.0,2.0).skew(2.0,0.0),
+          DodgeRight.changeBeats(5).changehands(Hands.RIGHT).scale(1.0,2.0).skew(2.0,0.0),
 
-          DodgeRight.changeBeats(5).changehands(1).scale(1.0,2.0).skew(2.0,0.0),
+          DodgeRight.changeBeats(5).changehands(Hands.LEFT).scale(1.0,2.0).skew(2.0,0.0),
 
-          DodgeRight.changehands(1).skew(1.0,0.0),
+          DodgeRight.changehands(Hands.LEFT).skew(1.0,0.0),
 
-          DodgeRight.changehands(2).skew(1.0,0.0)
+          DodgeRight.changehands(Hands.RIGHT).skew(1.0,0.0)
       ]),
 
     AnimatedCall('Tandem Cross Extend',

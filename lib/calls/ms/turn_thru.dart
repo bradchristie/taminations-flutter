@@ -20,7 +20,6 @@
 
 import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> TurnThru = [
@@ -30,11 +29,11 @@ import '../../moves.dart';
       from:'Facing Couples',
       paths:[
           ExtendLeft.scale(1.5,0.5) +
-          SwingRight.changeBeats(2).changehands(6).scale(0.5,0.5) +
+          SwingRight.changeBeats(2).changehands(Hands.GRIPRIGHT).scale(0.5,0.5) +
           ExtendRight.scale(1.5,0.5),
 
           ExtendLeft.scale(1.5,0.5) +
-          SwingRight.changeBeats(2).changehands(6).scale(0.5,0.5) +
+          SwingRight.changeBeats(2).changehands(Hands.GRIPRIGHT).scale(0.5,0.5) +
           ExtendRight.scale(1.5,0.5)
       ]),
 
@@ -69,19 +68,19 @@ import '../../moves.dart';
       from:'Lines',difficulty: 2,
       paths:[
           ExtendLeft.changeBeats(2).scale(2.0,0.5) +
-          SwingRight.changeBeats(2).changehands(6).scale(0.5,0.5) +
+          SwingRight.changeBeats(2).changehands(Hands.GRIPRIGHT).scale(0.5,0.5) +
           ExtendRight.changeBeats(2).scale(2.0,0.5),
 
           ExtendLeft.changeBeats(2).scale(2.0,0.5) +
-          SwingRight.changeBeats(2).changehands(6).scale(0.5,0.5) +
+          SwingRight.changeBeats(2).changehands(Hands.GRIPRIGHT).scale(0.5,0.5) +
           ExtendRight.changeBeats(2).scale(2.0,0.5),
 
           ExtendLeft.changeBeats(2).scale(2.0,0.5) +
-          SwingRight.changeBeats(2).changehands(6).scale(0.5,0.5) +
+          SwingRight.changeBeats(2).changehands(Hands.GRIPRIGHT).scale(0.5,0.5) +
           ExtendRight.changeBeats(2).scale(2.0,0.5),
 
           ExtendLeft.changeBeats(2).scale(2.0,0.5) +
-          SwingRight.changeBeats(2).changehands(6).scale(0.5,0.5) +
+          SwingRight.changeBeats(2).changehands(Hands.GRIPRIGHT).scale(0.5,0.5) +
           ExtendRight.changeBeats(2).scale(2.0,0.5)
       ]),
 
@@ -111,19 +110,19 @@ import '../../moves.dart';
       from:'Eight Chain Thru',difficulty: 1,
       paths:[
           ExtendLeft.scale(1.0,0.5) +
-          SwingRight.changeBeats(2).changehands(6).scale(0.5,0.5) +
+          SwingRight.changeBeats(2).changehands(Hands.GRIPRIGHT).scale(0.5,0.5) +
           ExtendRight.scale(1.0,0.5),
 
           ExtendLeft.scale(1.0,0.5) +
-          SwingRight.changeBeats(2).changehands(6).scale(0.5,0.5) +
+          SwingRight.changeBeats(2).changehands(Hands.GRIPRIGHT).scale(0.5,0.5) +
           ExtendRight.scale(1.0,0.5),
 
           ExtendLeft.scale(1.0,0.5) +
-          SwingRight.changeBeats(2).changehands(6).scale(0.5,0.5) +
+          SwingRight.changeBeats(2).changehands(Hands.GRIPRIGHT).scale(0.5,0.5) +
           ExtendRight.scale(1.0,0.5),
 
           ExtendLeft.scale(1.0,0.5) +
-          SwingRight.changeBeats(2).changehands(6).scale(0.5,0.5) +
+          SwingRight.changeBeats(2).changehands(Hands.GRIPRIGHT).scale(0.5,0.5) +
           ExtendRight.scale(1.0,0.5)
       ]),
 

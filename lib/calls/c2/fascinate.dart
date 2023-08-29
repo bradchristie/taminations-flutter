@@ -19,7 +19,7 @@
 */
 
 import '../../animated_call.dart';
-import '../../formation.dart';
+import '../../common_dart.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> Fascinate = [
@@ -30,10 +30,10 @@ import '../../moves.dart';
       paths:[
           Forward_4.changeBeats(3) +
           LeadRight.changeBeats(3).scale(3.0,3.0) +
-          RunRight.changeBeats(5).changehands(2).scale(2.0,2.0).skew(3.0,-2.0),
+          RunRight.changeBeats(5).changehands(Hands.RIGHT).scale(2.0,2.0).skew(3.0,-2.0),
 
           CastRight.changeBeats(6) +
-          UmTurnRight.changeBeats(5).changehands(1).skew(3.0,-2.0),
+          UmTurnRight.changeBeats(5).changehands(Hands.LEFT).skew(3.0,-2.0),
 
           CastRight.changeBeats(6) +
           SwingLeft.changeBeats(5),
@@ -57,11 +57,11 @@ import '../../moves.dart';
           SwingRight.changeBeats(5),
 
           CastLeft.changeBeats(6) +
-          UmTurnLeft.changeBeats(5).changehands(2).skew(3.0,2.0),
+          UmTurnLeft.changeBeats(5).changehands(Hands.RIGHT).skew(3.0,2.0),
 
           Forward_4.changeBeats(3) +
           LeadLeft.changeBeats(3).scale(3.0,3.0) +
-          RunLeft.changeBeats(5).changehands(1).scale(2.0,2.0).skew(3.0,2.0)
+          RunLeft.changeBeats(5).changehands(Hands.LEFT).scale(2.0,2.0).skew(3.0,2.0)
       ]),
 
     AnimatedCall('Fascinating Recycle',

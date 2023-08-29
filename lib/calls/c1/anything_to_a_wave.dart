@@ -20,7 +20,6 @@
 
 import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> AnythingToAWave = [
@@ -202,27 +201,27 @@ import '../../moves.dart';
       paths:[
           PullLeft.scale(1.0,0.5) +
           LeadRight.changeBeats(2).scale(0.5,1.5) +
-          SwingLeft.changehands(5).scale(0.5,0.5) +
+          SwingLeft.changehands(Hands.GRIPLEFT).scale(0.5,0.5) +
           Stand.changeBeats(3) +
-          SwingLeft.changehands(5).scale(0.5,0.5),
+          SwingLeft.changehands(Hands.GRIPLEFT).scale(0.5,0.5),
 
           PullLeft.scale(1.0,0.5) +
           LeadLeft.changeBeats(2).scale(1.5,0.5) +
-          SwingLeft.changehands(5).scale(0.5,0.5) +
-          SwingRight.changehands(6).scale(0.5,0.5) +
-          SwingLeft.changehands(5).scale(0.5,0.5),
+          SwingLeft.changehands(Hands.GRIPLEFT).scale(0.5,0.5) +
+          SwingRight.changehands(Hands.GRIPRIGHT).scale(0.5,0.5) +
+          SwingLeft.changehands(Hands.GRIPLEFT).scale(0.5,0.5),
 
           PullLeft.scale(1.0,0.5) +
           LeadRight.changeBeats(2).scale(0.5,1.5) +
-          SwingLeft.changehands(5).scale(0.5,0.5) +
+          SwingLeft.changehands(Hands.GRIPLEFT).scale(0.5,0.5) +
           Stand.changeBeats(3) +
-          SwingLeft.changehands(5).scale(0.5,0.5),
+          SwingLeft.changehands(Hands.GRIPLEFT).scale(0.5,0.5),
 
           PullLeft.scale(1.0,0.5) +
           LeadLeft.changeBeats(2).scale(1.5,0.5) +
-          SwingLeft.changehands(5).scale(0.5,0.5) +
-          SwingRight.changehands(6).scale(0.5,0.5) +
-          SwingLeft.changehands(5).scale(0.5,0.5)
+          SwingLeft.changehands(Hands.GRIPLEFT).scale(0.5,0.5) +
+          SwingRight.changehands(Hands.GRIPRIGHT).scale(0.5,0.5) +
+          SwingLeft.changehands(Hands.GRIPLEFT).scale(0.5,0.5)
       ]),
 
     AnimatedCall('Scoot Chain Thru to a Wave',
@@ -368,7 +367,7 @@ import '../../moves.dart';
           ExtendLeft.scale(1.0,0.5) +
           ExtendLeft.changeBeats(2).scale(2.0,1.0) +
           HingeRight.scale(1.0,0.75) +
-          ExtendRight.changeBeats(3).changehands(1).scale(2.75,2.0) +
+          ExtendRight.changeBeats(3).changehands(Hands.LEFT).scale(2.75,2.0) +
           Forward,
 
           ExtendLeft.scale(1.0,0.5) +
@@ -411,16 +410,16 @@ import '../../moves.dart';
       from:'Eight Chain Thru',group:' ',
       paths:[
           ExtendLeft.scale(1.0,0.5) +
-          SwingRight.changehands(6).scale(0.5,0.25),
+          SwingRight.changehands(Hands.GRIPRIGHT).scale(0.5,0.25),
 
           ExtendLeft.scale(1.0,0.5) +
-          SwingRight.changehands(6).scale(0.5,1.25),
+          SwingRight.changehands(Hands.GRIPRIGHT).scale(0.5,1.25),
 
           ExtendLeft.scale(1.0,0.5) +
-          SwingRight.changehands(6).scale(0.5,0.25),
+          SwingRight.changehands(Hands.GRIPRIGHT).scale(0.5,0.25),
 
           ExtendLeft.scale(1.0,0.5) +
-          SwingRight.changehands(6).scale(0.5,1.25)
+          SwingRight.changehands(Hands.GRIPRIGHT).scale(0.5,1.25)
       ]),
   ];
 

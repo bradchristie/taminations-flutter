@@ -20,7 +20,6 @@
 
 import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> CrossBack = [
@@ -31,7 +30,7 @@ import '../../moves.dart';
       paths:[
           UmTurnRight,
 
-          ExtendRight.changeBeats(2).changehands(1).scale(3.0,2.0) +
+          ExtendRight.changeBeats(2).changehands(Hands.LEFT).scale(3.0,2.0) +
           Forward
       ]),
 
@@ -41,7 +40,7 @@ import '../../moves.dart';
       paths:[
           UmTurnLeft,
 
-          ExtendLeft.changeBeats(2).changehands(2).scale(3.0,2.0) +
+          ExtendLeft.changeBeats(2).changehands(Hands.RIGHT).scale(3.0,2.0) +
           Forward
       ]),
 
@@ -49,12 +48,12 @@ import '../../moves.dart';
       formation:Formation('Ocean Waves RH BGGB'),
       from:'Right-Hand Waves',
       paths:[
-          ExtendRight.changeBeats(2).changehands(1).scale(3.0,2.0) +
+          ExtendRight.changeBeats(2).changehands(Hands.LEFT).scale(3.0,2.0) +
           Forward,
 
           UmTurnRight,
 
-          ExtendRight.changeBeats(2).changehands(1).scale(3.0,2.0) +
+          ExtendRight.changeBeats(2).changehands(Hands.LEFT).scale(3.0,2.0) +
           Forward,
 
           UmTurnRight
@@ -66,12 +65,12 @@ import '../../moves.dart';
       paths:[
           UmTurnLeft,
 
-          ExtendLeft.changeBeats(2).changehands(2).scale(3.0,2.0) +
+          ExtendLeft.changeBeats(2).changehands(Hands.RIGHT).scale(3.0,2.0) +
           Forward,
 
           UmTurnLeft,
 
-          ExtendLeft.changeBeats(2).changehands(2).scale(3.0,2.0) +
+          ExtendLeft.changeBeats(2).changehands(Hands.RIGHT).scale(3.0,2.0) +
           Forward
       ]),
 
@@ -81,12 +80,12 @@ import '../../moves.dart';
       paths:[
           UmTurnRight,
 
-          ExtendRight.changeBeats(2).changehands(1).scale(1.25,2.0) +
+          ExtendRight.changeBeats(2).changehands(Hands.LEFT).scale(1.25,2.0) +
           Forward.scale(0.75,1.0),
 
           UmTurnRight,
 
-          ExtendRight.changeBeats(2).changehands(1).scale(1.25,2.0) +
+          ExtendRight.changeBeats(2).changehands(Hands.LEFT).scale(1.25,2.0) +
           Forward.scale(0.75,1.0)
       ]),
 
@@ -94,12 +93,12 @@ import '../../moves.dart';
       formation:Formation('Column LH GBGB'),
       from:'Left-Hand Columns',
       paths:[
-          ExtendLeft.changeBeats(2).changehands(2).scale(1.25,2.0) +
+          ExtendLeft.changeBeats(2).changehands(Hands.RIGHT).scale(1.25,2.0) +
           Forward.scale(0.75,1.0),
 
           UmTurnLeft,
 
-          ExtendLeft.changeBeats(2).changehands(2).scale(1.25,2.0) +
+          ExtendLeft.changeBeats(2).changehands(Hands.RIGHT).scale(1.25,2.0) +
           Forward.scale(0.75,1.0),
 
           UmTurnLeft
@@ -109,12 +108,12 @@ import '../../moves.dart';
       formation:Formation('Static MiniWaves RH'),
       group:' ',
       paths:[
-          ExtendRight.changeBeats(2).changehands(1).scale(3.0,2.0) +
+          ExtendRight.changeBeats(2).changehands(Hands.LEFT).scale(3.0,2.0) +
           Forward_3,
 
           UmTurnRight,
 
-          ExtendRight.changeBeats(2).changehands(1).scale(3.0,2.0) +
+          ExtendRight.changeBeats(2).changehands(Hands.LEFT).scale(3.0,2.0) +
           Forward_3,
 
           UmTurnRight
@@ -124,11 +123,11 @@ import '../../moves.dart';
       formation:Formation('Two-Faced Lines RH'),
       group:' ',
       paths:[
-          ExtendRight.changeBeats(3).changehands(2).scale(2.0,4.0) +
-          Forward_2.changehands(2),
+          ExtendRight.changeBeats(3).changehands(Hands.RIGHT).scale(2.0,4.0) +
+          Forward_2.changehands(Hands.RIGHT),
 
-          ExtendRight.changeBeats(3).changehands(1).scale(2.0,4.0) +
-          Forward_2.changehands(1),
+          ExtendRight.changeBeats(3).changehands(Hands.LEFT).scale(2.0,4.0) +
+          Forward_2.changehands(Hands.LEFT),
 
           BelleReverseWheel,
 

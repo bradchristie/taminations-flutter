@@ -20,11 +20,9 @@
 
 import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formation.dart';
 import '../../moves.dart';
 import '../c3b/lift_off.dart' as c3b;
 import '../c3b/rip_off.dart' as c3b;
-
 import '../c3b/swap_the_top.dart' as c3b;
 
   final List<AnimatedCall> MirrorConcept = [
@@ -92,7 +90,7 @@ import '../c3b/swap_the_top.dart' as c3b;
       group:'Mirror',
       paths:[
           ExtendRight.changeBeats(2).scale(2.0,0.5) +
-          LeadRight.changeBeats(2).changehands(2).scale(1.0,0.5),
+          LeadRight.changeBeats(2).changehands(Hands.RIGHT).scale(1.0,0.5),
 
           ExtendRight.changeBeats(2).scale(2.0,0.5) +
           Forward.changeBeats(.5) +
@@ -156,13 +154,13 @@ import '../c3b/swap_the_top.dart' as c3b;
       formation:Formation('Lines Facing Out'),
       group:'Mirror',
       paths:[
-          RunLeft.changeBeats(4).changehands(1).scale(2.0,2.0).skew(1.0,0.0),
+          RunLeft.changeBeats(4).changehands(Hands.LEFT).scale(2.0,2.0).skew(1.0,0.0),
 
-          UmTurnLeft.changeBeats(4).changehands(2).skew(1.0,0.0),
+          UmTurnLeft.changeBeats(4).changehands(Hands.RIGHT).skew(1.0,0.0),
 
-          UmTurnRight.changeBeats(4).changehands(1).skew(-1.0,0.0),
+          UmTurnRight.changeBeats(4).changehands(Hands.LEFT).skew(-1.0,0.0),
 
-          RunRight.changeBeats(4).changehands(2).scale(1.0,2.0).skew(-1.0,0.0)
+          RunRight.changeBeats(4).changehands(Hands.RIGHT).scale(1.0,2.0).skew(-1.0,0.0)
       ]),
 
     AnimatedCall('Mirror Triple Star Thru',
@@ -175,25 +173,25 @@ import '../c3b/swap_the_top.dart' as c3b;
       from:'Double Pass Thru',group:'Mirror',fractions:'3;3',
       paths:[
           Stand.changeBeats(6) +
-          ExtendRight.changeBeats(1.5).changehands(1).scale(1.0,0.5) +
+          ExtendRight.changeBeats(1.5).changehands(Hands.LEFT).scale(1.0,0.5) +
           QuarterLeft.changeBeats(1.5).skew(1.0,1.5),
 
           Stand.changeBeats(6) +
-          ExtendRight.changeBeats(1.5).changehands(1).scale(1.0,0.5) +
+          ExtendRight.changeBeats(1.5).changehands(Hands.LEFT).scale(1.0,0.5) +
           QuarterRight.changeBeats(1.5).skew(1.0,-0.5),
 
-          ExtendRight.changeBeats(1.5).changehands(1).scale(1.0,0.5) +
+          ExtendRight.changeBeats(1.5).changehands(Hands.LEFT).scale(1.0,0.5) +
           QuarterLeft.changeBeats(1.5).skew(1.0,0.5) +
-          ExtendLeft.changeBeats(1.5).changehands(2).scale(1.0,0.5) +
+          ExtendLeft.changeBeats(1.5).changehands(Hands.RIGHT).scale(1.0,0.5) +
           QuarterRight.changeBeats(1.5).skew(1.0,-0.5) +
-          ExtendRight.changeBeats(1.5).changehands(1).scale(1.0,0.5) +
+          ExtendRight.changeBeats(1.5).changehands(Hands.LEFT).scale(1.0,0.5) +
           QuarterLeft.changeBeats(1.5).skew(1.0,1.5),
 
-          ExtendRight.changeBeats(1.5).changehands(1).scale(1.0,0.5) +
+          ExtendRight.changeBeats(1.5).changehands(Hands.LEFT).scale(1.0,0.5) +
           QuarterRight.changeBeats(1.5).skew(1.0,0.5) +
-          ExtendLeft.changeBeats(1.5).changehands(2).scale(1.0,0.5) +
+          ExtendLeft.changeBeats(1.5).changehands(Hands.RIGHT).scale(1.0,0.5) +
           QuarterLeft.changeBeats(1.5).skew(1.0,-0.5) +
-          ExtendRight.changeBeats(1.5).changehands(1).scale(1.0,0.5) +
+          ExtendRight.changeBeats(1.5).changehands(Hands.LEFT).scale(1.0,0.5) +
           QuarterRight.changeBeats(1.5).skew(1.0,-0.5)
       ]),
     c3b.LiftOff.where((tam) =>

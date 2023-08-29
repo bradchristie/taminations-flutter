@@ -20,7 +20,6 @@
 
 import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> TwoFacedConcept = [
@@ -119,9 +118,9 @@ import '../../moves.dart';
 
           FlipLeft +
           Stand.changeBeats(6) +
-          QuarterRight.changehands(1).skew(0.33,0.33) +
-          QuarterRight.changehands(1).skew(-0.33,0.33) +
-          QuarterRight.changehands(1).skew(-0.33,-0.33),
+          QuarterRight.changehands(Hands.LEFT).skew(0.33,0.33) +
+          QuarterRight.changehands(Hands.LEFT).skew(-0.33,0.33) +
+          QuarterRight.changehands(Hands.LEFT).skew(-0.33,-0.33),
 
           RunRight +
           SwingLeft +
@@ -138,9 +137,9 @@ import '../../moves.dart';
           RunRight.changeBeats(4).skew(-2.0,0.0) +
           ExtendLeft.scale(1.0,0.5) +
           SwingRight.scale(0.5,0.5) +
-          QuarterRight.changehands(1).skew(0.33,0.5) +
-          QuarterRight.changehands(1).skew(-0.17,0.33) +
-          QuarterRight.changehands(1).skew(-0.33,0.17),
+          QuarterRight.changehands(Hands.LEFT).skew(0.33,0.5) +
+          QuarterRight.changehands(Hands.LEFT).skew(-0.17,0.33) +
+          QuarterRight.changehands(Hands.LEFT).skew(-0.33,0.17),
 
           RunLeft.changeBeats(4).skew(-2.0,0.0) +
           ExtendLeft.scale(1.0,0.5) +
@@ -196,8 +195,8 @@ import '../../moves.dart';
       group:'Two-Faced',
       paths:[
           RunRight.scale(1.0,0.5) +
-          UmTurnRight.changehands(1) +
-          QuarterRight.changehands(1).skew(-1.0,-0.5) +
+          UmTurnRight.changehands(Hands.LEFT) +
+          QuarterRight.changehands(Hands.LEFT).skew(-1.0,-0.5) +
           Stand.changeBeats(1) +
           ExtendLeft.changeBeats(2).scale(2.0,0.5) +
           HingeLeft.changeBeats(2).scale(0.5,0.5) +
@@ -230,7 +229,7 @@ import '../../moves.dart';
           RunRight +
           CastLeft +
           EighthRight.changeBeats(1.5).skew(1.06,0.06) +
-          EighthRight.changeBeats(1.5).changehands(2).skew(0.707,-0.793) +
+          EighthRight.changeBeats(1.5).changehands(Hands.RIGHT).skew(0.707,-0.793) +
           ExtendLeft.changeBeats(4.5).scale(2.0,2.0),
 
           FlipLeft +
@@ -240,8 +239,8 @@ import '../../moves.dart';
 
           FlipLeft +
           ExtendLeft.changeBeats(4.5).scale(2.0,2.0) +
-          EighthLeft.changeBeats(1.5).changehands(1).skew(0.353,0.647) +
-          EighthLeft.changeBeats(1.5).changehands(1).skew(0.707,-0.207) +
+          EighthLeft.changeBeats(1.5).changehands(Hands.LEFT).skew(0.353,0.647) +
+          EighthLeft.changeBeats(1.5).changehands(Hands.LEFT).skew(0.707,-0.207) +
           CastRight,
 
           RunRight +

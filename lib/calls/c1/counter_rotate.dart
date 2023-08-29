@@ -20,7 +20,6 @@
 
 import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> CounterRotate = [
@@ -39,9 +38,9 @@ import '../../moves.dart';
       paths:[
           CounterRotateRight_4p5_m1p5.changeBeats(5),
 
-          CounterRotateLeft_m0p5_2p5.changeBeats(5).changehands(1),
+          CounterRotateLeft_m0p5_2p5.changeBeats(5).changehands(Hands.LEFT),
 
-          CounterRotateLeft_2p5_m0p5.changeBeats(5).changehands(1),
+          CounterRotateLeft_2p5_m0p5.changeBeats(5).changehands(Hands.LEFT),
 
           CounterRotateRight_1p5_m4p5.changeBeats(5)
       ]),
@@ -52,9 +51,9 @@ import '../../moves.dart';
       paths:[
           CounterRotateLeft_1_5.changeBeats(5),
 
-          CounterRotateRight_3_1.changeBeats(5).changehands(2),
+          CounterRotateRight_3_1.changeBeats(5).changehands(Hands.RIGHT),
 
-          CounterRotateRight_m1_m3.changeBeats(5).changehands(2),
+          CounterRotateRight_m1_m3.changeBeats(5).changehands(Hands.RIGHT),
 
           CounterRotateLeft_5_1.changeBeats(5)
       ]),
@@ -94,11 +93,11 @@ import '../../moves.dart';
       formation:Formation('Diamonds RH PTP Girl Points'),
       from:'Point to Point Diamonds',
       paths:[
-          CounterRotateRight_4_2.changeBeats(5).changehands(2),
+          CounterRotateRight_4_2.changeBeats(5).changehands(Hands.RIGHT),
 
           HingeLeft.changeBeats(5),
 
-          CounterRotateRight_m2_m4.changeBeats(5).changehands(2),
+          CounterRotateRight_m2_m4.changeBeats(5).changehands(Hands.RIGHT),
 
           LeadRight.changeBeats(5).scale(5.0,5.0)
       ]),
@@ -163,26 +162,26 @@ import '../../moves.dart';
       formation:Formation('Two-Faced Lines RH'),
       from:'Right-Hand Two-Faced Lines',
       paths:[
-          CounterRotateRight_5_m1.changeBeats(5).changehands(2),
+          CounterRotateRight_5_m1.changeBeats(5).changehands(Hands.RIGHT),
 
-          CounterRotateRight_3_1.changeBeats(5).changehands(3),
+          CounterRotateRight_3_1.changeBeats(5).changehands(Hands.BOTH),
 
-          CounterRotateRight_m1_m3.changeBeats(5).changehands(3),
+          CounterRotateRight_m1_m3.changeBeats(5).changehands(Hands.BOTH),
 
-          CounterRotateRight_1_m5.changeBeats(5).changehands(2)
+          CounterRotateRight_1_m5.changeBeats(5).changehands(Hands.RIGHT)
       ]),
 
     AnimatedCall('Counter Rotate',
       formation:Formation('Two-Faced Lines LH'),
       from:'Left-Hand Two-Faced Lines',
       paths:[
-          CounterRotateLeft_1_5.changeBeats(5).changehands(1),
+          CounterRotateLeft_1_5.changeBeats(5).changehands(Hands.LEFT),
 
-          CounterRotateLeft_m1_3.changeBeats(5).changehands(3),
+          CounterRotateLeft_m1_3.changeBeats(5).changehands(Hands.BOTH),
 
-          CounterRotateLeft_3_m1.changeBeats(5).changehands(3),
+          CounterRotateLeft_3_m1.changeBeats(5).changehands(Hands.BOTH),
 
-          CounterRotateLeft_5_1.changeBeats(5).changehands(1)
+          CounterRotateLeft_5_1.changeBeats(5).changehands(Hands.LEFT)
       ]),
 
     AnimatedCall('Counter Rotate',
@@ -217,26 +216,26 @@ import '../../moves.dart';
       formation:Formation('Column RH GBGB'),
       from:'Right-Hand Columns',
       paths:[
-          CounterRotateRight_m2_m4.changeBeats(5).changehands(2),
+          CounterRotateRight_m2_m4.changeBeats(5).changehands(Hands.RIGHT),
 
-          CounterRotateRight_0_m2.changeBeats(5).changehands(2),
+          CounterRotateRight_0_m2.changeBeats(5).changehands(Hands.RIGHT),
 
-          CounterRotateRight_2_0.changeBeats(5).changehands(2),
+          CounterRotateRight_2_0.changeBeats(5).changehands(Hands.RIGHT),
 
-          CounterRotateRight_4_2.changeBeats(5).changehands(2)
+          CounterRotateRight_4_2.changeBeats(5).changehands(Hands.RIGHT)
       ]),
 
     AnimatedCall('Counter Rotate',
       formation:Formation('Column LH GBGB'),
       from:'Left-Hand Columns',
       paths:[
-          CounterRotateLeft_4_m2.changeBeats(5).changehands(1),
+          CounterRotateLeft_4_m2.changeBeats(5).changehands(Hands.LEFT),
 
-          CounterRotateLeft_2_0.changeBeats(5).changehands(1),
+          CounterRotateLeft_2_0.changeBeats(5).changehands(Hands.LEFT),
 
-          CounterRotateLeft_0_2.changeBeats(5).changehands(1),
+          CounterRotateLeft_0_2.changeBeats(5).changehands(Hands.LEFT),
 
-          CounterRotateLeft_m2_4.changeBeats(5).changehands(1)
+          CounterRotateLeft_m2_4.changeBeats(5).changehands(Hands.LEFT)
       ]),
 
     AnimatedCall('Counter Rotate',
@@ -248,26 +247,26 @@ import '../../moves.dart';
   ]),
       from:'Magic Columns, Right-Hand Centers',
       paths:[
-          CounterRotateLeft_4_m2.changeBeats(5).changehands(1),
+          CounterRotateLeft_4_m2.changeBeats(5).changehands(Hands.LEFT),
 
-          CounterRotateRight_0_m2.changeBeats(5).changehands(2),
+          CounterRotateRight_0_m2.changeBeats(5).changehands(Hands.RIGHT),
 
-          CounterRotateRight_2_0.changeBeats(5).changehands(2),
+          CounterRotateRight_2_0.changeBeats(5).changehands(Hands.RIGHT),
 
-          CounterRotateLeft_m2_4.changeBeats(5).changehands(1)
+          CounterRotateLeft_m2_4.changeBeats(5).changehands(Hands.LEFT)
       ]),
 
     AnimatedCall('Counter Rotate',
       formation:Formation('Magic Column LH'),
       from:'Magic Columnns, Left-Hand Centers',
       paths:[
-          CounterRotateRight_m2_m4.changeBeats(5).changehands(2),
+          CounterRotateRight_m2_m4.changeBeats(5).changehands(Hands.RIGHT),
 
-          CounterRotateLeft_2_0.changeBeats(5).changehands(1),
+          CounterRotateLeft_2_0.changeBeats(5).changehands(Hands.LEFT),
 
-          CounterRotateLeft_0_2.changeBeats(5).changehands(1),
+          CounterRotateLeft_0_2.changeBeats(5).changehands(Hands.LEFT),
 
-          CounterRotateRight_4_2.changeBeats(5).changehands(2)
+          CounterRotateRight_4_2.changeBeats(5).changehands(Hands.RIGHT)
       ]),
 
     AnimatedCall('Counter Rotate',
@@ -279,9 +278,9 @@ import '../../moves.dart';
   ]),
       from:'Parallelogram',
       paths:[
-          CounterRotateRight_3_1.changehands(2),
+          CounterRotateRight_3_1.changehands(Hands.RIGHT),
 
-          CounterRotateRight_m1_m3.changehands(2),
+          CounterRotateRight_m1_m3.changehands(Hands.RIGHT),
 
           CounterRotateLeft_5_1,
 

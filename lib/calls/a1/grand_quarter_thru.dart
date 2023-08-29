@@ -20,7 +20,6 @@
 
 import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> GrandQuarterThru = [
@@ -34,16 +33,16 @@ import '../../moves.dart';
   ]),
       from:'Right-Hand Columns',parts:'2',
       paths:[
-          HingeRight.changeBeats(2).changehands(6).scale(0.5,1.0),
+          HingeRight.changeBeats(2).changehands(Hands.GRIPRIGHT).scale(0.5,1.0),
 
-          HingeRight.changeBeats(2).changehands(6).scale(0.5,1.0) +
-          SwingLeft.changeBeats(4).changehands(5).scale(0.75,0.5),
+          HingeRight.changeBeats(2).changehands(Hands.GRIPRIGHT).scale(0.5,1.0) +
+          SwingLeft.changeBeats(4).changehands(Hands.GRIPLEFT).scale(0.75,0.5),
 
-          HingeRight.changeBeats(2).changehands(6).scale(0.5,1.0) +
-          SwingLeft.changeBeats(4).changehands(5).scale(0.75,0.5),
+          HingeRight.changeBeats(2).changehands(Hands.GRIPRIGHT).scale(0.5,1.0) +
+          SwingLeft.changeBeats(4).changehands(Hands.GRIPLEFT).scale(0.75,0.5),
 
-          HingeRight.changeBeats(2).changehands(6).scale(0.5,1.0) +
-          SwingLeft.changeBeats(4).changehands(5).scale(0.75,0.5)
+          HingeRight.changeBeats(2).changehands(Hands.GRIPRIGHT).scale(0.5,1.0) +
+          SwingLeft.changeBeats(4).changehands(Hands.GRIPLEFT).scale(0.75,0.5)
       ]),
 
     AnimatedCall('Grand Quarter Thru',
@@ -54,13 +53,13 @@ import '../../moves.dart';
   ]),
       from:'Right-Hand Columns of 6',parts:'2',
       paths:[
-          HingeRight.changeBeats(2).changehands(6).scale(0.75,1.0),
+          HingeRight.changeBeats(2).changehands(Hands.GRIPRIGHT).scale(0.75,1.0),
 
-          HingeRight.changeBeats(2).changehands(6).scale(0.75,1.0) +
-          SwingLeft.changeBeats(4).changehands(5).scale(0.75,0.75),
+          HingeRight.changeBeats(2).changehands(Hands.GRIPRIGHT).scale(0.75,1.0) +
+          SwingLeft.changeBeats(4).changehands(Hands.GRIPLEFT).scale(0.75,0.75),
 
-          HingeRight.changeBeats(2).changehands(6).scale(0.75,1.0) +
-          SwingLeft.changeBeats(4).changehands(5).scale(0.75,0.75)
+          HingeRight.changeBeats(2).changehands(Hands.GRIPRIGHT).scale(0.75,1.0) +
+          SwingLeft.changeBeats(4).changehands(Hands.GRIPLEFT).scale(0.75,0.75)
       ]),
 
     AnimatedCall('Grand Quarter Thru',
@@ -82,16 +81,16 @@ import '../../moves.dart';
       formation:Formation('Column LH GBGB'),
       from:'Left-Hand Columns',parts:'2',
       paths:[
-          HingeLeft.changeBeats(2).changehands(5).scale(0.5,1.0) +
-          SwingRight.changeBeats(4).changehands(6).scale(0.75,0.5),
+          HingeLeft.changeBeats(2).changehands(Hands.GRIPLEFT).scale(0.5,1.0) +
+          SwingRight.changeBeats(4).changehands(Hands.GRIPRIGHT).scale(0.75,0.5),
 
-          HingeLeft.changeBeats(2).changehands(5).scale(0.5,1.0) +
-          SwingRight.changeBeats(4).changehands(6).scale(0.75,0.5),
+          HingeLeft.changeBeats(2).changehands(Hands.GRIPLEFT).scale(0.5,1.0) +
+          SwingRight.changeBeats(4).changehands(Hands.GRIPRIGHT).scale(0.75,0.5),
 
-          HingeLeft.changeBeats(2).changehands(5).scale(0.5,1.0) +
-          SwingRight.changeBeats(4).changehands(6).scale(0.75,0.5),
+          HingeLeft.changeBeats(2).changehands(Hands.GRIPLEFT).scale(0.5,1.0) +
+          SwingRight.changeBeats(4).changehands(Hands.GRIPRIGHT).scale(0.75,0.5),
 
-          HingeLeft.changeBeats(2).changehands(5).scale(0.5,1.0)
+          HingeLeft.changeBeats(2).changehands(Hands.GRIPLEFT).scale(0.5,1.0)
       ]),
 
     AnimatedCall('Grand Left Quarter Thru',
@@ -102,13 +101,13 @@ import '../../moves.dart';
   ]),
       from:'Left-Hand Columns of 6',
       paths:[
-          HingeLeft.changeBeats(2).changehands(5).scale(0.75,1.0) +
-          SwingRight.changeBeats(4).changehands(6).scale(0.75,0.75),
+          HingeLeft.changeBeats(2).changehands(Hands.GRIPLEFT).scale(0.75,1.0) +
+          SwingRight.changeBeats(4).changehands(Hands.GRIPRIGHT).scale(0.75,0.75),
 
-          HingeLeft.changeBeats(2).changehands(5).scale(0.75,1.0) +
-          SwingRight.changeBeats(4).changehands(6).scale(0.75,0.75),
+          HingeLeft.changeBeats(2).changehands(Hands.GRIPLEFT).scale(0.75,1.0) +
+          SwingRight.changeBeats(4).changehands(Hands.GRIPRIGHT).scale(0.75,0.75),
 
-          HingeLeft.changeBeats(2).changehands(5).scale(0.75,1.0)
+          HingeLeft.changeBeats(2).changehands(Hands.GRIPLEFT).scale(0.75,1.0)
       ]),
 
     AnimatedCall('Grand Left Quarter Thru',
@@ -130,20 +129,20 @@ import '../../moves.dart';
       formation:Formation('Column RH GBGB'),
       from:'Right-Hand Columns',parts:'4.5',
       paths:[
-          HingeRight.changehands(6).scale(0.5,1.0) +
-          SwingRight.changehands(6).scale(0.75,0.5) +
-          SwingLeft.changehands(5).scale(0.75,0.5),
+          HingeRight.changehands(Hands.GRIPRIGHT).scale(0.5,1.0) +
+          SwingRight.changehands(Hands.GRIPRIGHT).scale(0.75,0.5) +
+          SwingLeft.changehands(Hands.GRIPLEFT).scale(0.75,0.5),
 
-          HingeRight.changehands(6).scale(0.5,1.0) +
-          SwingRight.changehands(6).scale(0.75,0.5) +
-          SwingLeft.changehands(5).scale(0.75,0.5),
+          HingeRight.changehands(Hands.GRIPRIGHT).scale(0.5,1.0) +
+          SwingRight.changehands(Hands.GRIPRIGHT).scale(0.75,0.5) +
+          SwingLeft.changehands(Hands.GRIPLEFT).scale(0.75,0.5),
 
-          HingeRight.changehands(6).scale(0.5,1.0) +
-          SwingRight.changehands(6).scale(0.75,0.5) +
-          SwingLeft.changehands(5).scale(0.75,0.5),
+          HingeRight.changehands(Hands.GRIPRIGHT).scale(0.5,1.0) +
+          SwingRight.changehands(Hands.GRIPRIGHT).scale(0.75,0.5) +
+          SwingLeft.changehands(Hands.GRIPLEFT).scale(0.75,0.5),
 
-          HingeRight.changehands(6).scale(0.5,1.0) +
-          SwingRight.changehands(6).scale(0.75,0.5)
+          HingeRight.changehands(Hands.GRIPRIGHT).scale(0.5,1.0) +
+          SwingRight.changehands(Hands.GRIPRIGHT).scale(0.75,0.5)
       ]),
 
     AnimatedCall('Grand 3/4 Thru',
@@ -154,16 +153,16 @@ import '../../moves.dart';
   ]),
       from:'Right-Hand Columns of 6',parts:'4.5',
       paths:[
-          HingeRight.changehands(6).scale(0.75,1.0) +
-          SwingRight.changehands(2).scale(0.75,0.75) +
-          SwingLeft.changehands(5).scale(0.75,0.75),
+          HingeRight.changehands(Hands.GRIPRIGHT).scale(0.75,1.0) +
+          SwingRight.changehands(Hands.RIGHT).scale(0.75,0.75) +
+          SwingLeft.changehands(Hands.GRIPLEFT).scale(0.75,0.75),
 
-          HingeRight.changehands(6).scale(0.75,1.0) +
-          SwingRight.changehands(2).scale(0.75,0.75) +
-          SwingLeft.changehands(5).scale(0.75,0.75),
+          HingeRight.changehands(Hands.GRIPRIGHT).scale(0.75,1.0) +
+          SwingRight.changehands(Hands.RIGHT).scale(0.75,0.75) +
+          SwingLeft.changehands(Hands.GRIPLEFT).scale(0.75,0.75),
 
-          HingeRight.changehands(6).scale(0.75,1.0) +
-          SwingRight.changehands(2).scale(0.75,0.75)
+          HingeRight.changehands(Hands.GRIPRIGHT).scale(0.75,1.0) +
+          SwingRight.changehands(Hands.RIGHT).scale(0.75,0.75)
       ]),
 
     AnimatedCall('Grand 3/4 Thru',
@@ -188,20 +187,20 @@ import '../../moves.dart';
       formation:Formation('Column LH GBGB'),
       from:'Left-Hand Columns',parts:'4.5',
       paths:[
-          HingeLeft.changehands(5).scale(0.5,1.0) +
-          SwingLeft.changehands(5).scale(0.75,0.5),
+          HingeLeft.changehands(Hands.GRIPLEFT).scale(0.5,1.0) +
+          SwingLeft.changehands(Hands.GRIPLEFT).scale(0.75,0.5),
 
-          HingeLeft.changehands(5).scale(0.5,1.0) +
-          SwingLeft.changehands(5).scale(0.75,0.5) +
-          SwingRight.changehands(6).scale(0.75,0.5),
+          HingeLeft.changehands(Hands.GRIPLEFT).scale(0.5,1.0) +
+          SwingLeft.changehands(Hands.GRIPLEFT).scale(0.75,0.5) +
+          SwingRight.changehands(Hands.GRIPRIGHT).scale(0.75,0.5),
 
-          HingeLeft.changehands(5).scale(0.5,1.0) +
-          SwingLeft.changehands(5).scale(0.75,0.5) +
-          SwingRight.changehands(6).scale(0.75,0.5),
+          HingeLeft.changehands(Hands.GRIPLEFT).scale(0.5,1.0) +
+          SwingLeft.changehands(Hands.GRIPLEFT).scale(0.75,0.5) +
+          SwingRight.changehands(Hands.GRIPRIGHT).scale(0.75,0.5),
 
-          HingeLeft.changehands(5).scale(0.5,1.0) +
-          SwingLeft.changehands(5).scale(0.75,0.5) +
-          SwingRight.changehands(6).scale(0.75,0.5)
+          HingeLeft.changehands(Hands.GRIPLEFT).scale(0.5,1.0) +
+          SwingLeft.changehands(Hands.GRIPLEFT).scale(0.75,0.5) +
+          SwingRight.changehands(Hands.GRIPRIGHT).scale(0.75,0.5)
       ]),
 
     AnimatedCall('Grand Left 3/4 Thru',
@@ -212,16 +211,16 @@ import '../../moves.dart';
   ]),
       from:'Left-Hand Columns of 6',parts:'4.5',
       paths:[
-          HingeLeft.changeBeats(2).changehands(5).scale(0.75,1.0) +
+          HingeLeft.changeBeats(2).changehands(Hands.GRIPLEFT).scale(0.75,1.0) +
           SwingLeft.scale(0.75,0.75),
 
-          HingeLeft.changeBeats(2).changehands(5).scale(0.75,1.0) +
+          HingeLeft.changeBeats(2).changehands(Hands.GRIPLEFT).scale(0.75,1.0) +
           SwingLeft.scale(0.75,0.75) +
-          SwingRight.changeBeats(4).changehands(6).scale(0.75,0.75),
+          SwingRight.changeBeats(4).changehands(Hands.GRIPRIGHT).scale(0.75,0.75),
 
-          HingeLeft.changeBeats(2).changehands(5).scale(0.75,1.0) +
+          HingeLeft.changeBeats(2).changehands(Hands.GRIPLEFT).scale(0.75,1.0) +
           SwingLeft.scale(0.75,0.75) +
-          SwingRight.changeBeats(4).changehands(6).scale(0.75,0.75)
+          SwingRight.changeBeats(4).changehands(Hands.GRIPRIGHT).scale(0.75,0.75)
       ]),
 
     AnimatedCall('Grand Left 3/4 Thru',

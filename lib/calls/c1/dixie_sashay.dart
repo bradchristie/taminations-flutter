@@ -20,7 +20,6 @@
 
 import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> DixieSashay = [
@@ -35,7 +34,7 @@ import '../../moves.dart';
           DodgeRight.changeBeats(4).scale(1.0,0.875) +
           HingeLeft.changeBeats(3).scale(2.5,0.75),
 
-          ExtendLeft.changeBeats(2).changehands(2).skew(0.5,0.5) +
+          ExtendLeft.changeBeats(2).changehands(Hands.RIGHT).skew(0.5,0.5) +
           ExtendRight.changeBeats(2).scale(1.5,1.25) +
           HingeLeft.scale(1.5,0.75)
       ]),
@@ -50,7 +49,7 @@ import '../../moves.dart';
           DodgeRight.changeBeats(4).scale(1.0,0.875) +
           HingeLeft.changeBeats(3).scale(1.5,0.75),
 
-          ExtendLeft.changeBeats(2).changehands(2).skew(0.0,0.5) +
+          ExtendLeft.changeBeats(2).changehands(Hands.RIGHT).skew(0.0,0.5) +
           ExtendRight.changeBeats(2).scale(1.0,1.25) +
           HingeLeft.scale(0.5,0.75)
       ]),
@@ -76,14 +75,14 @@ import '../../moves.dart';
           DodgeRight.changeBeats(4).scale(1.0,0.875) +
           HingeLeft.changeBeats(3).scale(3.0,0.75),
 
-          ExtendLeft.changeBeats(2).changehands(2).skew(1.0,0.5) +
+          ExtendLeft.changeBeats(2).changehands(Hands.RIGHT).skew(1.0,0.5) +
           ExtendRight.changeBeats(2).scale(2.0,1.25) +
           HingeLeft.scale(1.0,0.75),
 
           DodgeRight.changeBeats(4).scale(1.0,0.875) +
           HingeLeft.changeBeats(3).scale(3.0,0.75),
 
-          ExtendLeft.changeBeats(2).changehands(2).skew(1.0,0.5) +
+          ExtendLeft.changeBeats(2).changehands(Hands.RIGHT).skew(1.0,0.5) +
           ExtendRight.changeBeats(2).scale(2.0,1.25) +
           HingeLeft.scale(1.0,0.75)
       ]),
@@ -96,17 +95,17 @@ import '../../moves.dart';
           Stand +
           HingeLeft.changeBeats(2).scale(1.8,0.75),
 
-          ExtendLeft.changeBeats(2).changehands(2).scale(1.15,1.5) +
+          ExtendLeft.changeBeats(2).changehands(Hands.RIGHT).scale(1.15,1.5) +
           ExtendRight.changeBeats(2).scale(1.15,1.25) +
-          QuarterLeft.changehands(1).skew(0.2,0.75),
+          QuarterLeft.changehands(Hands.LEFT).skew(0.2,0.75),
 
           DodgeRight.scale(1.0,0.875).skew(-0.3,0.0) +
           Stand +
           HingeLeft.changeBeats(2).scale(1.8,0.75),
 
-          ExtendLeft.changeBeats(2).changehands(2).scale(1.15,1.5) +
+          ExtendLeft.changeBeats(2).changehands(Hands.RIGHT).scale(1.15,1.5) +
           ExtendRight.changeBeats(2).scale(1.15,1.25) +
-          QuarterLeft.changehands(1).skew(0.2,0.75)
+          QuarterLeft.changehands(Hands.LEFT).skew(0.2,0.75)
       ]),
 
     AnimatedCall('Dixie Sashay',
@@ -204,7 +203,7 @@ import '../../moves.dart';
         paths:[
           ExtendRight.changeBeats(2).changehands(Hands.LEFT).scale(1.15,1.5) +
               ExtendLeft.changeBeats(2).scale(1.15,1.25) +
-              QuarterRight.changehands(1).skew(0.2,-0.75),
+              QuarterRight.changehands(Hands.LEFT).skew(0.2,-0.75),
 
           DodgeLeft.scale(1.0,0.875).skew(-0.3,0.0) +
               Stand +
@@ -212,7 +211,7 @@ import '../../moves.dart';
 
           ExtendRight.changeBeats(2).changehands(Hands.LEFT).scale(1.15,1.5) +
               ExtendLeft.changeBeats(2).scale(1.15,1.25) +
-              QuarterRight.changehands(1).skew(0.2,-0.75),
+              QuarterRight.changehands(Hands.LEFT).skew(0.2,-0.75),
 
           DodgeLeft.scale(1.0,0.875).skew(-0.3,0.0) +
               Stand +
@@ -247,19 +246,19 @@ import '../../moves.dart';
       group:' ',
       paths:[
           ExtendRight.changeBeats(5).scale(1.0,1.75) +
-          Forward_2.changehands(1).skew(0.0,-0.25) +
+          Forward_2.changehands(Hands.LEFT).skew(0.0,-0.25) +
           HingeLeft,
 
-          ExtendLeft.changeBeats(3).changehands(2).scale(3.0,2.0) +
-          ExtendRight.changeBeats(2).changehands(2).scale(2.0,1.75) +
+          ExtendLeft.changeBeats(3).changehands(Hands.RIGHT).scale(3.0,2.0) +
+          ExtendRight.changeBeats(2).changehands(Hands.RIGHT).scale(2.0,1.75) +
           HingeLeft.scale(1.0,0.75),
 
           ExtendRight.changeBeats(5).scale(1.0,1.75) +
-          Forward_2.changehands(1).skew(0.0,-0.25) +
+          Forward_2.changehands(Hands.LEFT).skew(0.0,-0.25) +
           HingeLeft,
 
-          ExtendLeft.changeBeats(3).changehands(2).scale(3.0,2.0) +
-          ExtendRight.changeBeats(2).changehands(2).scale(2.0,1.75) +
+          ExtendLeft.changeBeats(3).changehands(Hands.RIGHT).scale(3.0,2.0) +
+          ExtendRight.changeBeats(2).changehands(Hands.RIGHT).scale(2.0,1.75) +
           HingeLeft.scale(1.0,0.75)
       ]),
 

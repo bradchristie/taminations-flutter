@@ -20,7 +20,6 @@
 
 import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> Choice = [
@@ -94,7 +93,7 @@ import '../../moves.dart';
       group:' ',parts:'5',
       paths:[
           LeadRight.changeBeats(2).scale(2.0,1.0) +
-          Stand.changeBeats(3).changehands(1) +
+          Stand.changeBeats(3).changehands(Hands.LEFT) +
           HingeLeft.changeBeats(3).scale(0.5,0.5) +
           HingeRight.changeBeats(2),
 

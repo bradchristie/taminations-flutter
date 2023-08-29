@@ -19,7 +19,7 @@
 */
 
 import '../../animated_call.dart';
-import '../../formation.dart';
+import '../../common_dart.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> SquareChainTheTop = [
@@ -407,35 +407,35 @@ import '../../moves.dart';
       formation:Formation('Normal Lines'),
       group:' ',parts:'6;10',
       paths:[
-          ExtendLeft.changeBeats(2).changehands(2).scale(2.0,0.5) +
+          ExtendLeft.changeBeats(2).changehands(Hands.RIGHT).scale(2.0,0.5) +
           LeadRight.changeBeats(4).scale(1.5,3.5) +
           SwingLeft.changeBeats(4).scale(0.5,0.5) +
-          LeadLeft.changeBeats(6).changehands(2).scale(2.5,2.5) +
+          LeadLeft.changeBeats(6).changehands(Hands.RIGHT).scale(2.5,2.5) +
           SwingLeft.changeBeats(4).scale(0.5,0.5) +
-          ExtendLeft.changeBeats(2).changehands(2).scale(2.0,1.5),
+          ExtendLeft.changeBeats(2).changehands(Hands.RIGHT).scale(2.0,1.5),
 
-          ExtendLeft.changeBeats(2).changehands(1).scale(2.0,1.5) +
+          ExtendLeft.changeBeats(2).changehands(Hands.LEFT).scale(2.0,1.5) +
           LeadRight.changeBeats(4).scale(0.5,2.5) +
           SwingLeft.changeBeats(4).scale(1.5,1.5) +
-          LeadLeft.changeBeats(6).changehands(1).scale(3.5,3.5) +
+          LeadLeft.changeBeats(6).changehands(Hands.LEFT).scale(3.5,3.5) +
           SwingLeft.changeBeats(4).scale(1.5,1.5) +
-          ExtendLeft.changeBeats(2).changehands(1).scale(2.0,0.5),
+          ExtendLeft.changeBeats(2).changehands(Hands.LEFT).scale(2.0,0.5),
 
-          ExtendLeft.changeBeats(2).changehands(2).scale(2.0,0.5) +
+          ExtendLeft.changeBeats(2).changehands(Hands.RIGHT).scale(2.0,0.5) +
           LeadLeft.changeBeats(4).scale(2.5,0.5) +
           SwingLeft.changeBeats(4).scale(0.5,0.5) +
           SwingRight.changeBeats(4).scale(1.5,1.5) +
           HingeRight.changeBeats(2).scale(1.5,1.5) +
           SwingLeft.changeBeats(4).scale(0.5,0.5) +
-          ExtendLeft.changeBeats(2).changehands(2).scale(2.0,1.5),
+          ExtendLeft.changeBeats(2).changehands(Hands.RIGHT).scale(2.0,1.5),
 
-          ExtendLeft.changeBeats(2).changehands(1).scale(2.0,1.5) +
+          ExtendLeft.changeBeats(2).changehands(Hands.LEFT).scale(2.0,1.5) +
           LeadLeft.changeBeats(4).scale(3.5,1.5) +
           SwingLeft.changeBeats(4).scale(1.5,1.5) +
           SwingRight.changeBeats(4).scale(0.5,0.5) +
           HingeRight.changeBeats(2).scale(0.5,0.5) +
           SwingLeft.changeBeats(4).scale(1.5,1.5) +
-          ExtendLeft.changeBeats(2).changehands(1).scale(2.0,0.5)
+          ExtendLeft.changeBeats(2).changehands(Hands.LEFT).scale(2.0,0.5)
       ]),
 
     AnimatedCall('Tandem Square Chain the Top',
@@ -444,44 +444,44 @@ import '../../moves.dart';
       paths:[
           ExtendLeft.changeBeats(2).scale(2.0,1.5) +
           CounterRotateRight_2_0.changeBeats(3).skew(0.0,-1.5) +
-          CounterRotateLeft_2_0.changehands(1) +
-          CounterRotateLeft_2_0.changehands(1) +
+          CounterRotateLeft_2_0.changehands(Hands.LEFT) +
+          CounterRotateLeft_2_0.changehands(Hands.LEFT) +
           Forward_2 +
           LeadLeft.changeBeats(4).scale(2.0,2.0) +
-          CounterRotateLeft_2_0.changehands(1) +
-          CounterRotateLeft_2_0.changehands(1) +
+          CounterRotateLeft_2_0.changehands(Hands.LEFT) +
+          CounterRotateLeft_2_0.changehands(Hands.LEFT) +
           Forward_2.changeBeats(3),
 
           Forward_2 +
           CounterRotateLeft_2_0.changeBeats(3).skew(2.0,0.0) +
-          CounterRotateLeft_2_0.changehands(1) +
-          CounterRotateLeft_2_0.changehands(1) +
-          CounterRotateRight_2_0.changehands(2) +
-          CounterRotateRight_2_0.changehands(2) +
-          CounterRotateRight_2_0.changehands(2) +
-          CounterRotateLeft_2_0.changehands(1) +
-          CounterRotateLeft_2_0.changehands(1) +
+          CounterRotateLeft_2_0.changehands(Hands.LEFT) +
+          CounterRotateLeft_2_0.changehands(Hands.LEFT) +
+          CounterRotateRight_2_0.changehands(Hands.RIGHT) +
+          CounterRotateRight_2_0.changehands(Hands.RIGHT) +
+          CounterRotateRight_2_0.changehands(Hands.RIGHT) +
+          CounterRotateLeft_2_0.changehands(Hands.LEFT) +
+          CounterRotateLeft_2_0.changehands(Hands.LEFT) +
           ExtendLeft.changeBeats(3).scale(2.0,2.0),
 
           ExtendLeft.changeBeats(2).scale(2.0,1.5) +
           CounterRotateRight_0_m2.changeBeats(3).skew(0.0,-1.5) +
-          CounterRotateLeft_0_2.changehands(1) +
-          CounterRotateLeft_0_2.changehands(1) +
+          CounterRotateLeft_0_2.changehands(Hands.LEFT) +
+          CounterRotateLeft_0_2.changehands(Hands.LEFT) +
           LeadLeft.changeBeats(4).scale(2.0,2.0) +
           Forward_2 +
-          CounterRotateLeft_0_2.changehands(1) +
-          CounterRotateLeft_0_2.changehands(1) +
+          CounterRotateLeft_0_2.changehands(Hands.LEFT) +
+          CounterRotateLeft_0_2.changehands(Hands.LEFT) +
           Forward_2.changeBeats(3),
 
           Forward_2 +
           CounterRotateLeft_0_2.changeBeats(3).skew(2.0,0.0) +
-          CounterRotateLeft_0_2.changehands(1) +
-          CounterRotateLeft_0_2.changehands(1) +
-          CounterRotateRight_0_m2.changehands(2) +
-          CounterRotateRight_0_m2.changehands(2) +
-          CounterRotateRight_0_m2.changehands(2) +
-          CounterRotateLeft_0_2.changehands(1) +
-          CounterRotateLeft_0_2.changehands(1) +
+          CounterRotateLeft_0_2.changehands(Hands.LEFT) +
+          CounterRotateLeft_0_2.changehands(Hands.LEFT) +
+          CounterRotateRight_0_m2.changehands(Hands.RIGHT) +
+          CounterRotateRight_0_m2.changehands(Hands.RIGHT) +
+          CounterRotateRight_0_m2.changehands(Hands.RIGHT) +
+          CounterRotateLeft_0_2.changehands(Hands.LEFT) +
+          CounterRotateLeft_0_2.changehands(Hands.LEFT) +
           ExtendLeft.changeBeats(3).scale(2.0,2.0)
       ]),
   ];

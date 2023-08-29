@@ -20,7 +20,6 @@
 
 import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> SplitPhantomColumnsLinesWavesConcept = [
@@ -214,21 +213,21 @@ import '../../moves.dart';
   ]),
       group:'Split Phantom Waves',
       paths:[
-          CounterRotateRight_2_0.changehands(2),
+          CounterRotateRight_2_0.changehands(Hands.RIGHT),
 
-          CounterRotateRight_0_m2.changehands(2),
+          CounterRotateRight_0_m2.changehands(Hands.RIGHT),
 
-          CounterRotateRight_2_0.changehands(2),
+          CounterRotateRight_2_0.changehands(Hands.RIGHT),
 
-          CounterRotateRight_0_m2.changehands(2),
+          CounterRotateRight_0_m2.changehands(Hands.RIGHT),
 
-          CounterRotateRight_0_m2.changehands(2),
+          CounterRotateRight_0_m2.changehands(Hands.RIGHT),
 
-          CounterRotateRight_2_0.changehands(2),
+          CounterRotateRight_2_0.changehands(Hands.RIGHT),
 
-          CounterRotateRight_0_m2.changehands(2),
+          CounterRotateRight_0_m2.changehands(Hands.RIGHT),
 
-          CounterRotateRight_2_0.changehands(2)
+          CounterRotateRight_2_0.changehands(Hands.RIGHT)
       ]),
   ];
 

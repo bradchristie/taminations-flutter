@@ -20,7 +20,6 @@
 
 import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> Rotary = [
@@ -32,13 +31,13 @@ import '../../moves.dart';
           PullLeft.scale(1.0,0.5) +
           ExtendRight.scale(1.0,0.5) +
           Forward.changeBeats(2) +
-          LeadRight.changeBeats(3).changehands(2).scale(1.5,2.0) +
+          LeadRight.changeBeats(3).changehands(Hands.RIGHT).scale(1.5,2.0) +
           ExtendRight.changeBeats(2).scale(1.0,0.5),
 
           PullLeft.scale(1.0,0.5) +
           ExtendRight.scale(1.0,0.5) +
           ExtendRight.changeBeats(2).scale(1.0,2.0) +
-          LeadLeft.changeBeats(3).changehands(2).scale(0.5,2.0) +
+          LeadLeft.changeBeats(3).changehands(Hands.RIGHT).scale(0.5,2.0) +
           ExtendRight.changeBeats(2).scale(3.0,0.5),
 
           PullLeft.scale(1.0,0.5) +

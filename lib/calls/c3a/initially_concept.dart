@@ -19,7 +19,7 @@
 */
 
 import '../../animated_call.dart';
-import '../../formation.dart';
+import '../../common_dart.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> InitiallyConcept = [
@@ -31,14 +31,14 @@ import '../../moves.dart';
           HingeRight.changeBeats(2).scale(1.5,1.5) +
           HingeRight.changeBeats(2).scale(1.5,1.5),
 
-          HingeRight.changeBeats(2).changehands(1).scale(0.5,0.5) +
-          HingeRight.changeBeats(2).changehands(3).scale(0.5,0.5),
+          HingeRight.changeBeats(2).changehands(Hands.LEFT).scale(0.5,0.5) +
+          HingeRight.changeBeats(2).changehands(Hands.BOTH).scale(0.5,0.5),
 
           QuarterLeft.changeBeats(2).skew(-1.5,0.5) +
           HingeRight.changeBeats(2).scale(1.5,1.5),
 
           QuarterLeft.changeBeats(2).skew(-0.5,1.5) +
-          HingeRight.changeBeats(2).changehands(3).scale(0.5,0.5)
+          HingeRight.changeBeats(2).changehands(Hands.BOTH).scale(0.5,0.5)
       ]),
 
     AnimatedCall('Initially As Couples Lock the Hinge',
@@ -62,14 +62,14 @@ import '../../moves.dart';
       formation:Formation('Two-Faced Tidal Line RH'),
       group:'Initially As Couples',fractions:'4',
       paths:[
-          DodgeRight.changeBeats(4).changehands(2) +
+          DodgeRight.changeBeats(4).changehands(Hands.RIGHT) +
           SwingLeft.scale(0.5,0.5),
 
-          DodgeRight.changeBeats(4).changehands(1),
+          DodgeRight.changeBeats(4).changehands(Hands.LEFT),
 
-          RunLeft.changeBeats(4).changehands(1).scale(2.0,2.5),
+          RunLeft.changeBeats(4).changehands(Hands.LEFT).scale(2.0,2.5),
 
-          RunLeft.changeBeats(4).changehands(2).scale(1.0,1.5) +
+          RunLeft.changeBeats(4).changehands(Hands.RIGHT).scale(1.0,1.5) +
           SwingLeft.scale(0.5,0.5)
       ]),
 
@@ -80,11 +80,11 @@ import '../../moves.dart';
           SwingRight.changeBeats(4).scale(1.5,1.5) +
           LeadRight.changeBeats(4.5).scale(3.0,1.5),
 
-          SwingRight.changeBeats(4).changehands(3).scale(0.5,0.5) +
+          SwingRight.changeBeats(4).changehands(Hands.BOTH).scale(0.5,0.5) +
           SwingRight.scale(0.5,0.5) +
           HingeRight.scale(1.0,0.5),
 
-          SwingRight.changeBeats(4).changehands(3).scale(0.5,0.5) +
+          SwingRight.changeBeats(4).changehands(Hands.BOTH).scale(0.5,0.5) +
           SwingRight.scale(0.5,0.5) +
           HingeRight.scale(1.0,0.5),
 

@@ -19,7 +19,7 @@
 */
 
 import '../../animated_call.dart';
-import '../../formation.dart';
+import '../../common_dart.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> RimsTradeAnything = [
@@ -75,7 +75,7 @@ import '../../moves.dart';
 
           RunRight +
           ExtendLeft.changeBeats(2).scale(2.0,0.5) +
-          LeadLeft.changeBeats(2).changehands(1).scale(1.0,0.5)
+          LeadLeft.changeBeats(2).changehands(Hands.LEFT).scale(1.0,0.5)
       ]),
 
     AnimatedCall('Rims Trade Pass Thru',

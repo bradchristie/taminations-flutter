@@ -20,7 +20,6 @@
 
 import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> BusyAnything = [
@@ -29,19 +28,19 @@ import '../../moves.dart';
       formation:Formation('Two-Faced Lines RH'),
       group:'Busy',fractions:'4',
       paths:[
-          Forward_2.changeBeats(4).changehands(2) +
+          Forward_2.changeBeats(4).changehands(Hands.RIGHT) +
           LeadRight.changeBeats(4).scale(1.0,4.0) +
           QuarterRight.skew(0.0,1.0),
 
-          Forward_2.changeBeats(4).changehands(1) +
+          Forward_2.changeBeats(4).changehands(Hands.LEFT) +
           LeadRight.changeBeats(2).scale(1.0,2.0) +
           RunRight.changeBeats(2) +
           QuarterRight.skew(0.0,1.0),
 
-          RunRight.changeBeats(4).changehands(1) +
+          RunRight.changeBeats(4).changehands(Hands.LEFT) +
           DodgeLeft.changeBeats(4),
 
-          RunRight.changeBeats(4).changehands(2).scale(3.0,3.0) +
+          RunRight.changeBeats(4).changehands(Hands.RIGHT).scale(3.0,3.0) +
           Forward_4
       ]),
 
@@ -49,17 +48,17 @@ import '../../moves.dart';
       formation:Formation('Two-Faced Lines LH'),
       group:'Busy',fractions:'4',
       paths:[
-          RunLeft.changeBeats(4).changehands(1).scale(3.0,3.0) +
+          RunLeft.changeBeats(4).changehands(Hands.LEFT).scale(3.0,3.0) +
           Forward_4,
 
-          RunLeft.changeBeats(4).changehands(2) +
+          RunLeft.changeBeats(4).changehands(Hands.RIGHT) +
           DodgeRight.changeBeats(4),
 
-          Forward_2.changeBeats(4).changehands(2) +
+          Forward_2.changeBeats(4).changehands(Hands.RIGHT) +
           SwingLeft.changeBeats(2.5) +
           Forward_2.changeBeats(1.5),
 
-          Forward_2.changeBeats(4).changehands(1) +
+          Forward_2.changeBeats(4).changehands(Hands.LEFT) +
           RunLeft.changeBeats(4).scale(1.0,2.0).skew(2.0,0.0)
       ]),
 
@@ -72,17 +71,17 @@ import '../../moves.dart';
   ]),
       group:'Busy',fractions:'4',
       paths:[
-          RunRight.changeBeats(4).changehands(2).scale(3.0,3.0) +
+          RunRight.changeBeats(4).changehands(Hands.RIGHT).scale(3.0,3.0) +
           Forward_4,
 
-          RunRight.changeBeats(4).changehands(1) +
+          RunRight.changeBeats(4).changehands(Hands.LEFT) +
           DodgeLeft.changeBeats(4),
 
-          Forward_2.changeBeats(4).changehands(2) +
+          Forward_2.changeBeats(4).changehands(Hands.RIGHT) +
           DodgeRight.changeBeats(2).scale(1.0,1.167) +
           SwingRight.changeBeats(2).scale(0.667,0.667),
 
-          Forward_2.changeBeats(4).changehands(1) +
+          Forward_2.changeBeats(4).changehands(Hands.LEFT) +
           RunRight.changeBeats(4).scale(1.0,1.5)
       ]),
 
@@ -95,16 +94,16 @@ import '../../moves.dart';
   ]),
       group:'Busy',fractions:'4',
       paths:[
-          RunRight.changeBeats(4).changehands(2).scale(3.0,3.0) +
+          RunRight.changeBeats(4).changehands(Hands.RIGHT).scale(3.0,3.0) +
           Forward_4,
 
-          RunRight.changeBeats(4).changehands(1) +
+          RunRight.changeBeats(4).changehands(Hands.LEFT) +
           DodgeLeft.changeBeats(4),
 
-          Forward_2.changeBeats(4).changehands(2) +
+          Forward_2.changeBeats(4).changehands(Hands.RIGHT) +
           UmTurnRight.changeBeats(4).skew(2.0,-2.0),
 
-          Forward_2.changeBeats(4).changehands(1) +
+          Forward_2.changeBeats(4).changehands(Hands.LEFT) +
           UmTurnLeft.changeBeats(4).skew(-2.0,0.0)
       ]),
   ];

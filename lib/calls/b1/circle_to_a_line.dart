@@ -20,7 +20,6 @@
 
 import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> CircleToALine = [
@@ -29,24 +28,24 @@ import '../../moves.dart';
       formation:Formation('Eight Chain Thru'),
       from:'Eight Chain Thru',group:' ',
       paths:[
-          EighthRight.changehands(6) +
+          EighthRight.changehands(Hands.GRIPRIGHT) +
       Path.fromMovement(Movement.fromData(beats: 3, hands: Hands.GRIPRIGHT, cx1: 0, cy1: 1.88, cx2: 2.83, cy2: 1.88, x2: 2.83, y2: 0, cx3: 1.33, cx4: 1.33, cy4: -2, x4: 0, y4: -2  )) +
       Path.fromMovement(Movement.fromData(beats: 1.5, hands: Hands.GRIPRIGHT, cx1: 0, cy1: .39, cx2: .318, cy2: .707, x2: .707, y2: .707, cx3: .55, cx4: 1, cy4: -.45, x4: 1, y4: -1  )) +
-          EighthRight.changehands(6),
+          EighthRight.changehands(Hands.GRIPRIGHT),
 
-          EighthLeft.changehands(5) +
+          EighthLeft.changehands(Hands.GRIPLEFT) +
       Path.fromMovement(Movement.fromData(beats: 3, hands: Hands.GRIPLEFT, cx1: 0, cy1: 1.88, cx2: 2.83, cy2: 1.88, x2: 2.83, y2: 0, cx3: 1.33, cx4: 1.33, cy4: -2, x4: 0, y4: -2  )) +
       Path.fromMovement(Movement.fromData(beats: 1.5, hands: Hands.GRIPLEFT, cx1: 0, cy1: .78, cx2: .636, cy2: 1.414, x2: 1.414, y2: 1.414, cx3: .55, cx4: 1, cy4: -.45, x4: 1, y4: -1  )) +
-          EighthLeft.changehands(5) +
-          UmTurnLeft.changehands(5).skew(1.0,2.0),
+          EighthLeft.changehands(Hands.GRIPLEFT) +
+          UmTurnLeft.changehands(Hands.GRIPLEFT).skew(1.0,2.0),
 
-          EighthRight.changehands(6) +
+          EighthRight.changehands(Hands.GRIPRIGHT) +
       Path.fromMovement(Movement.fromData(beats: 3, hands: Hands.GRIPRIGHT, cx1: 0, cy1: 1.88, cx2: 2.83, cy2: 1.88, x2: 2.83, y2: 0, cx3: 1.33, cx4: 1.33, cy4: -2, x4: 0, y4: -2  )) +
-          EighthLeft.changeBeats(2).changehands(6).skew(-0.707,2.121),
+          EighthLeft.changeBeats(2).changehands(Hands.GRIPRIGHT).skew(-0.707,2.121),
 
-          EighthLeft.changehands(5) +
+          EighthLeft.changehands(Hands.GRIPLEFT) +
       Path.fromMovement(Movement.fromData(beats: 3, hands: Hands.GRIPLEFT, cx1: 0, cy1: 1.88, cx2: 2.83, cy2: 1.88, x2: 2.83, y2: 0, cx3: 1.33, cx4: 1.33, cy4: -2, x4: 0, y4: -2  )) +
-          EighthRight.changeBeats(2).changehands(5).skew(2.121,0.707)
+          EighthRight.changeBeats(2).changehands(Hands.GRIPLEFT).skew(2.121,0.707)
       ]),
   ];
 

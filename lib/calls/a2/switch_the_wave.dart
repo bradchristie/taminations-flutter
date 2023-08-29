@@ -19,7 +19,7 @@
 */
 
 import '../../animated_call.dart';
-import '../../formation.dart';
+import '../../common_dart.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> SwitchTheWave = [
@@ -116,13 +116,13 @@ import '../../moves.dart';
       formation:Formation('Two-Faced Tidal Line RH'),
       from:'Tidal Two-Faced Line',
       paths:[
-          RunRight.changeBeats(6).changehands(2).scale(2.5,2.5),
+          RunRight.changeBeats(6).changehands(Hands.RIGHT).scale(2.5,2.5),
 
-          RunRight.changeBeats(6).changehands(1).scale(1.5,1.5),
+          RunRight.changeBeats(6).changehands(Hands.LEFT).scale(1.5,1.5),
 
-          RunRight.changeBeats(6).changehands(1).scale(0.5,0.5),
+          RunRight.changeBeats(6).changehands(Hands.LEFT).scale(0.5,0.5),
 
-          RunRight.changeBeats(6).changehands(2).scale(1.5,1.5)
+          RunRight.changeBeats(6).changehands(Hands.RIGHT).scale(1.5,1.5)
       ]),
 
     AnimatedCall('All 8 Switch the Wave',

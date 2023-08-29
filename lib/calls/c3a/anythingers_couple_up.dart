@@ -19,7 +19,7 @@
 */
 
 import '../../animated_call.dart';
-import '../../formation.dart';
+import '../../common_dart.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> AnythingersCoupleUp = [
@@ -43,14 +43,14 @@ import '../../moves.dart';
       formation:Formation('Ocean Waves RH BGGB'),
       group:'  ',parts:'3',
       paths:[
-          CounterRotateRight_2_0.changeBeats(3).changehands(2).skew(1.0,0.0),
+          CounterRotateRight_2_0.changeBeats(3).changehands(Hands.RIGHT).skew(1.0,0.0),
 
-          CounterRotateRight_0_m2.changeBeats(3).changehands(2).skew(-1.0,0.0) +
+          CounterRotateRight_0_m2.changeBeats(3).changehands(Hands.RIGHT).skew(-1.0,0.0) +
           UmTurnRight,
 
-          CounterRotateRight_2_0.changeBeats(3).changehands(2).skew(1.0,0.0),
+          CounterRotateRight_2_0.changeBeats(3).changehands(Hands.RIGHT).skew(1.0,0.0),
 
-          CounterRotateRight_0_m2.changeBeats(3).changehands(2).skew(-1.0,0.0) +
+          CounterRotateRight_0_m2.changeBeats(3).changehands(Hands.RIGHT).skew(-1.0,0.0) +
           UmTurnRight
       ]),
 

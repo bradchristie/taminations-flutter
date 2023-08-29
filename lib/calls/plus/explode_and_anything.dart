@@ -19,9 +19,8 @@
 */
 
 import '../../animated_call.dart';
-import '../../formation.dart';
+import '../../common_dart.dart';
 import '../../moves.dart';
-
 import '../plus/anything_and_roll.dart' as plus;
 
   final List<AnimatedCall> ExplodeAndAnything = [
@@ -104,12 +103,12 @@ import '../plus/anything_and_roll.dart' as plus;
           Forward +
           QuarterLeft +
           PullLeft.scale(2.0,0.5) +
-          QuarterRight.changehands(2).skew(0.0,-0.5),
+          QuarterRight.changehands(Hands.RIGHT).skew(0.0,-0.5),
 
           Forward +
           QuarterLeft +
           PullLeft.scale(2.0,0.5) +
-          QuarterRight.changehands(2).skew(0.0,-0.5),
+          QuarterRight.changehands(Hands.RIGHT).skew(0.0,-0.5),
 
           Forward +
           QuarterRight +

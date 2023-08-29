@@ -19,7 +19,7 @@
 */
 
 import '../../animated_call.dart';
-import '../../formation.dart';
+import '../../common_dart.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> TeamUp = [
@@ -42,7 +42,7 @@ import '../../moves.dart';
       from:'Completed Double Pass Thru',
       paths:[
           QuarterLeft.skew(0.0,1.0) +
-          QuarterRight.changeBeats(1.5).changehands(2).skew(1.0,0.0),
+          QuarterRight.changeBeats(1.5).changehands(Hands.RIGHT).skew(1.0,0.0),
 
           LeadRight +
           HingeRight,
@@ -57,7 +57,7 @@ import '../../moves.dart';
       from:'Inverted Lines',
       paths:[
           LeadLeft_2.skew(-1.0,1.0) +
-          QuarterRight.changeBeats(1.5).changehands(2).skew(1.0,0.0),
+          QuarterRight.changeBeats(1.5).changehands(Hands.RIGHT).skew(1.0,0.0),
 
           RunRight.skew(1.0,0.0),
 
@@ -85,13 +85,13 @@ import '../../moves.dart';
       from:'T-Bones',
       paths:[
           Forward +
-          QuarterLeft.changeBeats(1.5).changehands(1).skew(1.0,0.0),
+          QuarterLeft.changeBeats(1.5).changehands(Hands.LEFT).skew(1.0,0.0),
 
           DodgeLeft,
 
           RunRight,
 
-          RunLeft.changehands(1)
+          RunLeft.changehands(Hands.LEFT)
       ]),
   ];
 

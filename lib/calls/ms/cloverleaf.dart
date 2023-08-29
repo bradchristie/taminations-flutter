@@ -20,7 +20,6 @@
 
 import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> Cloverleaf = [
@@ -92,9 +91,9 @@ import '../../moves.dart';
           LeadLeft.changeBeats(2).scale(2.0,1.5) +
           LeadLeft.changeBeats(2).scale(1.5,1.0),
 
-          Stand.changeBeats(6).changehands(2).skew(0.0,-0.5),
+          Stand.changeBeats(6).changehands(Hands.RIGHT).skew(0.0,-0.5),
 
-          Stand.changeBeats(6).changehands(3).skew(0.0,0.25)
+          Stand.changeBeats(6).changehands(Hands.BOTH).skew(0.0,0.25)
       ]),
 
     AnimatedCall('Cloverleaf',
@@ -114,9 +113,9 @@ import '../../moves.dart';
           LeadRight.scale(2.0,1.0) +
           LeadRight,
 
-          Forward_2.changeBeats(3).changehands(2),
+          Forward_2.changeBeats(3).changehands(Hands.RIGHT),
 
-          Forward_2.changeBeats(3).changehands(1)
+          Forward_2.changeBeats(3).changehands(Hands.LEFT)
       ]),
   ];
 

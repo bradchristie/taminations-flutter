@@ -19,7 +19,7 @@
 */
 
 import '../../animated_call.dart';
-import '../../formation.dart';
+import '../../common_dart.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> FractionalTops = [
@@ -32,14 +32,14 @@ import '../../moves.dart';
           LeadLeft_14.changeBeats(1.125).scale(3.0,3.0),
 
           SwingLeft +
-          LeadRight_12.changehands(2) +
+          LeadRight_12.changehands(Hands.RIGHT) +
           HingeRight_14,
 
           SwingLeft +
           LeadLeft_14.changeBeats(1.125).scale(3.0,3.0),
 
           SwingLeft +
-          LeadRight_12.changehands(2) +
+          LeadRight_12.changehands(Hands.RIGHT) +
           HingeRight_14
       ]),
 
@@ -51,14 +51,14 @@ import '../../moves.dart';
           LeadRight_14.changeBeats(1.125).scale(3.0,3.0),
 
           SwingRight +
-          LeadLeft_12.changehands(1) +
+          LeadLeft_12.changehands(Hands.LEFT) +
           HingeLeft_14,
 
           SwingRight +
           LeadRight_14.changeBeats(1.125).scale(3.0,3.0),
 
           SwingRight +
-          LeadLeft_12.changehands(1) +
+          LeadLeft_12.changehands(Hands.LEFT) +
           HingeLeft_14
       ]),
 
@@ -71,14 +71,14 @@ import '../../moves.dart';
 
           SwingLeft +
           HingeRight +
-          LeadRight_12.changehands(2),
+          LeadRight_12.changehands(Hands.RIGHT),
 
           SwingLeft +
           LeadLeft_12.changeBeats(2.25).scale(3.0,3.0),
 
           SwingLeft +
           HingeRight +
-          LeadRight_12.changehands(2)
+          LeadRight_12.changehands(Hands.RIGHT)
       ]),
 
     AnimatedCall('Half the Top',
@@ -90,14 +90,14 @@ import '../../moves.dart';
 
           SwingRight +
           HingeLeft +
-          LeadLeft_12.changehands(1),
+          LeadLeft_12.changehands(Hands.LEFT),
 
           SwingRight +
           LeadRight_12.changeBeats(2.25).scale(3.0,3.0),
 
           SwingRight +
           HingeLeft +
-          LeadLeft_12.changehands(1)
+          LeadLeft_12.changehands(Hands.LEFT)
       ]),
 
     AnimatedCall('3/4 the Top',

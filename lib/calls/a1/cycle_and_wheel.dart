@@ -20,7 +20,6 @@
 
 import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> CycleAndWheel = [
@@ -34,9 +33,9 @@ import '../../moves.dart';
           RunLeft.changeBeats(2).scale(0.5,0.5).skew(-0.5,0.0) +
           RunLeft.changeBeats(2).scale(0.5,0.5).skew(0.5,0.0),
 
-          UmTurnLeft.changeBeats(4).changehands(2).skew(1.0,0.0),
+          UmTurnLeft.changeBeats(4).changehands(Hands.RIGHT).skew(1.0,0.0),
 
-          RunLeft.changeBeats(4).changehands(1).scale(1.0,2.0).skew(1.0,0.0)
+          RunLeft.changeBeats(4).changehands(Hands.LEFT).scale(1.0,2.0).skew(1.0,0.0)
       ]),
 
     AnimatedCall('Cycle and Wheel',
@@ -52,9 +51,9 @@ import '../../moves.dart';
           UmTurnRight.changeBeats(2).skew(-0.5,0.0) +
           UmTurnRight.changeBeats(2).skew(0.5,0.0),
 
-          UmTurnLeft.changeBeats(4).changehands(2).skew(-1.0,0.0),
+          UmTurnLeft.changeBeats(4).changehands(Hands.RIGHT).skew(-1.0,0.0),
 
-          RunLeft.changeBeats(4).changehands(1).scale(1.0,2.0).skew(-1.0,0.0)
+          RunLeft.changeBeats(4).changehands(Hands.LEFT).scale(1.0,2.0).skew(-1.0,0.0)
       ]),
 
     AnimatedCall('Cycle and Wheel',
@@ -65,9 +64,9 @@ import '../../moves.dart';
       squeeze into the center
     ''',
       paths:[
-          RunRight.changeBeats(4).changehands(2).scale(1.0,2.0).skew(1.0,0.0),
+          RunRight.changeBeats(4).changehands(Hands.RIGHT).scale(1.0,2.0).skew(1.0,0.0),
 
-          UmTurnRight.changeBeats(4).changehands(1).skew(1.0,0.0),
+          UmTurnRight.changeBeats(4).changehands(Hands.LEFT).skew(1.0,0.0),
 
           UmTurnLeft.changeBeats(2).skew(0.5,0.0) +
           UmTurnLeft.changeBeats(2).skew(-0.5,0.0),
@@ -79,9 +78,9 @@ import '../../moves.dart';
       formation:Formation('3 and 1 Lines #4'),
       from:'3 and 1 lines #4',
       paths:[
-          RunRight.changeBeats(4).changehands(2).scale(1.0,2.0).skew(1.0,0.0),
+          RunRight.changeBeats(4).changehands(Hands.RIGHT).scale(1.0,2.0).skew(1.0,0.0),
 
-          UmTurnRight.changeBeats(4).changehands(1).skew(1.0,0.0),
+          UmTurnRight.changeBeats(4).changehands(Hands.LEFT).skew(1.0,0.0),
 
           RunRight.changeBeats(2).scale(0.5,0.5).skew(-0.5,0.0) +
           RunRight.changeBeats(2).scale(0.5,0.5).skew(0.5,0.0),
@@ -103,9 +102,9 @@ import '../../moves.dart';
           RunRight.changeBeats(2).scale(0.5,0.5).skew(-0.5,0.0) +
           RunRight.changeBeats(2).scale(0.5,0.5).skew(0.5,0.0),
 
-          UmTurnRight.changeBeats(4).changehands(1).skew(1.0,0.0),
+          UmTurnRight.changeBeats(4).changehands(Hands.LEFT).skew(1.0,0.0),
 
-          RunRight.changeBeats(4).changehands(2).scale(2.0,2.0).skew(1.0,0.0)
+          RunRight.changeBeats(4).changehands(Hands.RIGHT).scale(2.0,2.0).skew(1.0,0.0)
       ]),
 
     AnimatedCall('Cycle and Wheel',
@@ -122,9 +121,9 @@ import '../../moves.dart';
           UmTurnLeft.changeBeats(2).skew(0.5,0.0) +
           UmTurnLeft.changeBeats(2).skew(-0.5,0.0),
 
-          UmTurnRight.changeBeats(4).changehands(1).skew(1.0,0.0),
+          UmTurnRight.changeBeats(4).changehands(Hands.LEFT).skew(1.0,0.0),
 
-          RunRight.changeBeats(4).changehands(2).scale(2.0,2.0).skew(1.0,0.0)
+          RunRight.changeBeats(4).changehands(Hands.RIGHT).scale(2.0,2.0).skew(1.0,0.0)
       ]),
 
     AnimatedCall('Cycle and Wheel',
@@ -136,9 +135,9 @@ import '../../moves.dart';
   ]),
       from:'3 and 1 lines #7',
       paths:[
-          RunLeft.changeBeats(4).changehands(1).scale(1.0,2.0).skew(-1.0,0.0),
+          RunLeft.changeBeats(4).changehands(Hands.LEFT).scale(1.0,2.0).skew(-1.0,0.0),
 
-          UmTurnLeft.changeBeats(4).changehands(2).skew(-1.0,0.0),
+          UmTurnLeft.changeBeats(4).changehands(Hands.RIGHT).skew(-1.0,0.0),
 
           UmTurnRight.changeBeats(2).skew(-0.5,0.0) +
           UmTurnRight.changeBeats(2).skew(0.5,0.0),
@@ -155,9 +154,9 @@ import '../../moves.dart';
   ]),
       from:'3 and 1 lines #8',
       paths:[
-          RunLeft.changeBeats(4).changehands(1).scale(2.0,2.0).skew(1.0,0.0),
+          RunLeft.changeBeats(4).changehands(Hands.LEFT).scale(2.0,2.0).skew(1.0,0.0),
 
-          UmTurnLeft.changeBeats(4).changehands(2).skew(1.0,0.0),
+          UmTurnLeft.changeBeats(4).changehands(Hands.RIGHT).skew(1.0,0.0),
 
           RunLeft.changeBeats(2).scale(0.5,0.5).skew(-0.5,0.0) +
           RunLeft.changeBeats(2).scale(0.5,0.5).skew(0.5,0.0),
@@ -213,9 +212,9 @@ import '../../moves.dart';
           RunLeft.changeBeats(2).scale(0.5,0.75).skew(-1.0,0.0) +
           RunLeft.changeBeats(2).scale(0.5,0.5).skew(1.0,0.0),
 
-          UmTurnLeft.changeBeats(4).changehands(2).skew(2.0,-0.5),
+          UmTurnLeft.changeBeats(4).changehands(Hands.RIGHT).skew(2.0,-0.5),
 
-          RunLeft.changeBeats(4).changehands(1).scale(1.5,1.25).skew(2.0,0.0)
+          RunLeft.changeBeats(4).changehands(Hands.LEFT).scale(1.5,1.25).skew(2.0,0.0)
       ]),
 
     AnimatedCall('Cycle and Wheel',
@@ -232,9 +231,9 @@ import '../../moves.dart';
           RunRight.changeBeats(2).scale(0.5,0.75).skew(-1.0,0.0) +
           RunRight.changeBeats(2).scale(0.5,0.5).skew(1.0,0.0),
 
-          UmTurnLeft.changeBeats(4).changehands(6).skew(-2.0,-0.5),
+          UmTurnLeft.changeBeats(4).changehands(Hands.GRIPRIGHT).skew(-2.0,-0.5),
 
-          RunLeft.changeBeats(4).changehands(5).scale(1.0,1.25).skew(-2.0,0.0)
+          RunLeft.changeBeats(4).changehands(Hands.GRIPLEFT).scale(1.0,1.25).skew(-2.0,0.0)
       ]),
 
     AnimatedCall('Cycle and Wheel',
@@ -246,9 +245,9 @@ import '../../moves.dart';
   ]),
       from:'Tidal 3 and 1 Lines #3',
       paths:[
-          RunRight.changeBeats(4).changehands(2).scale(1.5,1.25).skew(2.0,0.0),
+          RunRight.changeBeats(4).changehands(Hands.RIGHT).scale(1.5,1.25).skew(2.0,0.0),
 
-          UmTurnRight.changeBeats(4).changehands(1).skew(2.0,0.5),
+          UmTurnRight.changeBeats(4).changehands(Hands.LEFT).skew(2.0,0.5),
 
           RunLeft.changeBeats(2).scale(0.5,0.5).skew(1.0,0.0) +
           RunLeft.changeBeats(2).scale(0.5,0.25).skew(-1.0,0.0),
@@ -265,9 +264,9 @@ import '../../moves.dart';
   ]),
       from:'Tidal 3 and 1 Lines #4',
       paths:[
-          RunRight.changeBeats(4).changehands(2).scale(1.5,1.25).skew(2.0,0.0),
+          RunRight.changeBeats(4).changehands(Hands.RIGHT).scale(1.5,1.25).skew(2.0,0.0),
 
-          UmTurnRight.changeBeats(4).changehands(1).skew(2.0,0.5),
+          UmTurnRight.changeBeats(4).changehands(Hands.LEFT).skew(2.0,0.5),
 
           RunRight.changeBeats(2).scale(0.5,0.75).skew(-1.0,0.0) +
           RunRight.changeBeats(2).scale(0.5,0.5).skew(1.0,0.0),
@@ -289,9 +288,9 @@ import '../../moves.dart';
           RunRight.changeBeats(2).scale(0.5,0.75).skew(-1.0,0.0) +
           RunRight.changeBeats(2).scale(0.5,0.5).skew(1.0,0.0),
 
-          UmTurnRight.changeBeats(4).changehands(1).skew(2.0,0.5),
+          UmTurnRight.changeBeats(4).changehands(Hands.LEFT).skew(2.0,0.5),
 
-          RunRight.changeBeats(4).changehands(2).scale(1.5,1.25).skew(2.0,0.0)
+          RunRight.changeBeats(4).changehands(Hands.RIGHT).scale(1.5,1.25).skew(2.0,0.0)
       ]),
 
     AnimatedCall('Cycle and Wheel',
@@ -308,9 +307,9 @@ import '../../moves.dart';
           RunLeft.changeBeats(2).scale(0.5,0.5).skew(1.0,0.0) +
           RunLeft.changeBeats(2).scale(0.5,0.25).skew(-1.0,0.0),
 
-          UmTurnRight.changeBeats(4).changehands(1).skew(2.0,0.5),
+          UmTurnRight.changeBeats(4).changehands(Hands.LEFT).skew(2.0,0.5),
 
-          RunRight.changeBeats(4).changehands(2).scale(1.5,1.25).skew(2.0,0.0)
+          RunRight.changeBeats(4).changehands(Hands.RIGHT).scale(1.5,1.25).skew(2.0,0.0)
       ]),
 
     AnimatedCall('Cycle and Wheel',
@@ -322,9 +321,9 @@ import '../../moves.dart';
   ]),
       from:'Tidal 3 and 1 Lines #7',
       paths:[
-          RunLeft.changeBeats(4).changehands(5).scale(1.0,1.25).skew(-2.0,0.0),
+          RunLeft.changeBeats(4).changehands(Hands.GRIPLEFT).scale(1.0,1.25).skew(-2.0,0.0),
 
-          UmTurnLeft.changeBeats(4).changehands(6).skew(-2.0,-0.5),
+          UmTurnLeft.changeBeats(4).changehands(Hands.GRIPRIGHT).skew(-2.0,-0.5),
 
           RunRight.changeBeats(2).scale(0.5,0.75).skew(-1.0,0.0) +
           RunRight.changeBeats(2).scale(0.5,0.5).skew(1.0,0.0),
@@ -341,9 +340,9 @@ import '../../moves.dart';
   ]),
       from:'Tidal 3 and 1 Lines #8',
       paths:[
-          RunLeft.changeBeats(4).changehands(1).scale(1.5,1.25).skew(2.0,0.0),
+          RunLeft.changeBeats(4).changehands(Hands.LEFT).scale(1.5,1.25).skew(2.0,0.0),
 
-          UmTurnLeft.changeBeats(4).changehands(2).skew(2.0,-0.5),
+          UmTurnLeft.changeBeats(4).changehands(Hands.RIGHT).skew(2.0,-0.5),
 
           RunLeft.changeBeats(2).scale(0.5,0.75).skew(-1.0,0.0) +
           RunLeft.changeBeats(2).scale(0.5,0.5).skew(1.0,0.0),

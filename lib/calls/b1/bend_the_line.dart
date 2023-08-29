@@ -19,7 +19,7 @@
 */
 
 import '../../animated_call.dart';
-import '../../formation.dart';
+import '../../common_dart.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> BendTheLine = [
@@ -98,13 +98,13 @@ import '../../moves.dart';
       formation:Formation('Two-Faced Tidal Line RH'),
       from:'Two-Faced Tidal Line',difficulty: 1,
       paths:[
-          HingeRight.changeBeats(4).changehands(6).scale(1.0,0.5),
+          HingeRight.changeBeats(4).changehands(Hands.GRIPRIGHT).scale(1.0,0.5),
 
-          BackHingeLeft.changeBeats(4).changehands(5).scale(1.0,0.5),
+          BackHingeLeft.changeBeats(4).changehands(Hands.GRIPLEFT).scale(1.0,0.5),
 
-          BackHingeLeft.changeBeats(4).changehands(5).scale(1.0,0.5),
+          BackHingeLeft.changeBeats(4).changehands(Hands.GRIPLEFT).scale(1.0,0.5),
 
-          HingeRight.changeBeats(4).changehands(6).scale(1.0,0.5)
+          HingeRight.changeBeats(4).changehands(Hands.GRIPRIGHT).scale(1.0,0.5)
       ]),
 
     AnimatedCall('Bend the Line',
@@ -150,13 +150,13 @@ import '../../moves.dart';
       formation:Formation('Tidal Line RH'),
       from:'Tidal Line',difficulty: 2,
       paths:[
-          LeadRight.changeBeats(6).changehands(6).scale(3.0,1.5),
+          LeadRight.changeBeats(6).changehands(Hands.GRIPRIGHT).scale(3.0,1.5),
 
-          LeadRight.changeBeats(6).changehands(7).scale(1.0,0.5),
+          LeadRight.changeBeats(6).changehands(Hands.GRIPBOTH).scale(1.0,0.5),
 
-          BackHingeLeft.changeBeats(6).changehands(7).scale(1.0,0.5),
+          BackHingeLeft.changeBeats(6).changehands(Hands.GRIPBOTH).scale(1.0,0.5),
 
-          BackHingeLeft.changeBeats(6).changehands(5).scale(3.0,1.5)
+          BackHingeLeft.changeBeats(6).changehands(Hands.GRIPLEFT).scale(3.0,1.5)
       ]),
   ];
 

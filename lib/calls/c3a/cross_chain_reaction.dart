@@ -20,7 +20,6 @@
 
 import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> CrossChainReaction = [
@@ -31,8 +30,8 @@ import '../../moves.dart';
       paths:[
           Stand.changeBeats(3) +
           HingeRight.changeBeats(2).scale(2.0,1.0) +
-          EighthLeft.changeBeats(1.5).changehands(1).skew(0.353,0.647) +
-          EighthLeft.changeBeats(1.5).changehands(1).skew(0.707,-0.207) +
+          EighthLeft.changeBeats(1.5).changehands(Hands.LEFT).skew(0.353,0.647) +
+          EighthLeft.changeBeats(1.5).changehands(Hands.LEFT).skew(0.707,-0.207) +
           ExtendRight.changeBeats(4.5).scale(2.0,2.0),
 
           ExtendLeft.changeBeats(2).scale(2.0,2.0) +
@@ -48,7 +47,7 @@ import '../../moves.dart';
 
           ExtendLeft.changeBeats(2).scale(2.0,2.0) +
           Forward +
-          QuarterRight.changeBeats(2).changehands(2).skew(0.0,-1.0) +
+          QuarterRight.changeBeats(2).changehands(Hands.RIGHT).skew(0.0,-1.0) +
           FlipLeft +
           LeadLeft.changeBeats(4.5).scale(3.0,3.0)
       ]),
@@ -60,8 +59,8 @@ import '../../moves.dart';
           Forward +
           ExtendRight.changeBeats(2).scale(2.0,2.0) +
           Stand.changeBeats(2) +
-          EighthLeft.changeBeats(1.5).changehands(1).skew(0.353,0.647) +
-          EighthLeft.changeBeats(1.5).changehands(1).skew(0.707,-0.207) +
+          EighthLeft.changeBeats(1.5).changehands(Hands.LEFT).skew(0.353,0.647) +
+          EighthLeft.changeBeats(1.5).changehands(Hands.LEFT).skew(0.707,-0.207) +
           CastRight,
 
           Stand.changeBeats(3) +
@@ -76,7 +75,7 @@ import '../../moves.dart';
 
           Forward +
           ExtendRight.changeBeats(2).scale(2.0,2.0) +
-          QuarterLeft.changeBeats(2).changehands(1).skew(0.0,1.0) +
+          QuarterLeft.changeBeats(2).changehands(Hands.LEFT).skew(0.0,1.0) +
           FlipRight +
           LeadRight.changeBeats(4.5).scale(3.0,3.0)
       ]),
@@ -88,8 +87,8 @@ import '../../moves.dart';
           Forward +
           ExtendRight.changeBeats(2).scale(2.0,2.0) +
           Stand.changeBeats(2) +
-          EighthLeft.changeBeats(1.5).changehands(1).skew(0.353,0.647) +
-          EighthLeft.changeBeats(1.5).changehands(1).skew(0.707,-0.207) +
+          EighthLeft.changeBeats(1.5).changehands(Hands.LEFT).skew(0.353,0.647) +
+          EighthLeft.changeBeats(1.5).changehands(Hands.LEFT).skew(0.707,-0.207) +
           CastRight,
 
           Stand.changeBeats(3) +
@@ -100,7 +99,7 @@ import '../../moves.dart';
 
           Forward +
           ExtendRight.changeBeats(2).scale(2.0,2.0) +
-          QuarterLeft.changeBeats(2).changehands(1).skew(0.0,1.0) +
+          QuarterLeft.changeBeats(2).changehands(Hands.LEFT).skew(0.0,1.0) +
           SwingRight +
           LeadRight.changeBeats(4.5).scale(3.0,3.0),
 
@@ -117,8 +116,8 @@ import '../../moves.dart';
       paths:[
           Stand.changeBeats(3) +
           HingeRight.changeBeats(2).scale(2.0,1.0) +
-          EighthLeft.changeBeats(1.5).changehands(1).skew(0.353,0.647) +
-          EighthLeft.changeBeats(1.5).changehands(1).skew(0.707,-0.207) +
+          EighthLeft.changeBeats(1.5).changehands(Hands.LEFT).skew(0.353,0.647) +
+          EighthLeft.changeBeats(1.5).changehands(Hands.LEFT).skew(0.707,-0.207) +
           ExtendRight.changeBeats(4.5).scale(2.0,2.0),
 
           ExtendLeft.changeBeats(2).scale(2.0,2.0) +
@@ -130,7 +129,7 @@ import '../../moves.dart';
 
           ExtendLeft.changeBeats(2).scale(2.0,2.0) +
           Forward +
-          QuarterRight.changeBeats(2).changehands(2).skew(0.0,-1.0) +
+          QuarterRight.changeBeats(2).changehands(Hands.RIGHT).skew(0.0,-1.0) +
           SwingLeft +
           LeadLeft.changeBeats(4.5).scale(3.0,3.0),
 
@@ -152,8 +151,8 @@ import '../../moves.dart';
       paths:[
           Stand.changeBeats(3) +
           QuarterLeft.changeBeats(2).skew(-2.0,1.0) +
-          EighthLeft.changeBeats(1.5).changehands(1).skew(0.353,0.647) +
-          EighthLeft.changeBeats(1.5).changehands(1).skew(0.707,-0.207) +
+          EighthLeft.changeBeats(1.5).changehands(Hands.LEFT).skew(0.353,0.647) +
+          EighthLeft.changeBeats(1.5).changehands(Hands.LEFT).skew(0.707,-0.207) +
           ExtendRight.changeBeats(4.5).scale(2.0,2.0),
 
           ExtendLeft.changeBeats(2).scale(2.0,2.0) +
@@ -249,8 +248,8 @@ import '../../moves.dart';
       paths:[
           Stand.changeBeats(3) +
           QuarterLeft.changeBeats(2).skew(-2.0,1.0) +
-          EighthLeft.changeBeats(1.5).changehands(1).skew(0.353,0.647) +
-          EighthLeft.changeBeats(1.5).changehands(1).skew(0.707,-0.207) +
+          EighthLeft.changeBeats(1.5).changehands(Hands.LEFT).skew(0.353,0.647) +
+          EighthLeft.changeBeats(1.5).changehands(Hands.LEFT).skew(0.707,-0.207) +
           ExtendRight.changeBeats(4.5).scale(2.0,2.0),
 
           ExtendLeft.changeBeats(2).scale(2.0,2.0) +

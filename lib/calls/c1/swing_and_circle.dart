@@ -19,8 +19,7 @@
 */
 
 import '../../animated_call.dart';
-import '../../dancer_model.dart';
-import '../../formation.dart';
+import '../../common_dart.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> SwingAndCircle = [
@@ -29,10 +28,10 @@ import '../../moves.dart';
       formation:Formation('Quarter Tag'),
       from:'Right-Hand Quarter Tag',
       paths:[
-          Stand.changeBeats(3).changehands(2) +
+          Stand.changeBeats(3).changehands(Hands.RIGHT) +
           ExtendLeft.changeBeats(4).scale(3.0,2.0),
 
-          Stand.changeBeats(3).changehands(1) +
+          Stand.changeBeats(3).changehands(Hands.LEFT) +
           DodgeLeft.changeBeats(4),
 
           SwingRight +
@@ -46,10 +45,10 @@ import '../../moves.dart';
       formation:Formation('Quarter Tag LH'),
       from:'Left-Hand Quarter Tag',
       paths:[
-          Stand.changeBeats(3).changehands(2) +
+          Stand.changeBeats(3).changehands(Hands.RIGHT) +
           DodgeRight.changeBeats(4),
 
-          Stand.changeBeats(3).changehands(1) +
+          Stand.changeBeats(3).changehands(Hands.LEFT) +
           ExtendRight.changeBeats(4).scale(3.0,2.0),
 
           SwingLeft +
@@ -63,10 +62,10 @@ import '../../moves.dart';
       formation:Formation('3/4 Tag'),
       from:'Right-Hand 3/4 Tag',
       paths:[
-          Stand.changeBeats(3).changehands(2) +
+          Stand.changeBeats(3).changehands(Hands.RIGHT) +
           RunRight.changeBeats(4).skew(-3.0,0.0),
 
-          Stand.changeBeats(3).changehands(1) +
+          Stand.changeBeats(3).changehands(Hands.LEFT) +
           FlipRight.changeBeats(4),
 
           SwingRight +
@@ -80,10 +79,10 @@ import '../../moves.dart';
       formation:Formation('3/4 Tag LH'),
       from:'Left-Hand 3/4 Tag',
       paths:[
-          Stand.changeBeats(3).changehands(2) +
+          Stand.changeBeats(3).changehands(Hands.RIGHT) +
           FlipLeft.changeBeats(4),
 
-          Stand.changeBeats(3).changehands(1) +
+          Stand.changeBeats(3).changehands(Hands.LEFT) +
           RunLeft.changeBeats(4).skew(-3.0,0.0),
 
           SwingLeft +
@@ -97,10 +96,10 @@ import '../../moves.dart';
       formation:Formation('Mixed Quarter Tag #1'),
       from:'Right-Hand Quarter Waves',
       paths:[
-          Stand.changeBeats(3).changehands(2) +
+          Stand.changeBeats(3).changehands(Hands.RIGHT) +
           ExtendLeft.changeBeats(4).scale(3.0,2.0),
 
-          Stand.changeBeats(3).changehands(1) +
+          Stand.changeBeats(3).changehands(Hands.LEFT) +
           FlipRight.changeBeats(4),
 
           SwingRight +
@@ -114,10 +113,10 @@ import '../../moves.dart';
       formation:Formation('Mixed Quarter Tag #6'),
       from:'Left-Hand Quarter Waves',
       paths:[
-          Stand.changeBeats(3).changehands(2) +
+          Stand.changeBeats(3).changehands(Hands.RIGHT) +
           FlipLeft.changeBeats(4),
 
-          Stand.changeBeats(3).changehands(1) +
+          Stand.changeBeats(3).changehands(Hands.LEFT) +
           ExtendRight.changeBeats(4).scale(3.0,2.0),
 
           SwingLeft +
@@ -134,13 +133,13 @@ import '../../moves.dart';
           SwingRight +
           SwingLeft.changeBeats(4),
 
-          Stand.changeBeats(3).changehands(1) +
+          Stand.changeBeats(3).changehands(Hands.LEFT) +
           QuarterRight.changeBeats(4).skew(3.0,0.0),
 
           SwingRight +
           UmTurnRight.changeBeats(4).skew(3.0,-2.0),
 
-          Stand.changeBeats(3).changehands(2) +
+          Stand.changeBeats(3).changehands(Hands.RIGHT) +
           LeadRight.changeBeats(4).scale(1.0,3.0)
       ]),
 
@@ -151,13 +150,13 @@ import '../../moves.dart';
           SwingLeft +
           SwingRight.changeBeats(4),
 
-          Stand.changeBeats(3).changehands(1) +
+          Stand.changeBeats(3).changehands(Hands.LEFT) +
           LeadLeft.changeBeats(4).scale(1.0,3.0),
 
           SwingLeft +
           UmTurnLeft.changeBeats(4).skew(3.0,2.0),
 
-          Stand.changeBeats(3).changehands(2) +
+          Stand.changeBeats(3).changehands(Hands.RIGHT) +
           QuarterLeft.changeBeats(4).skew(3.0,0.0)
       ]),
 
@@ -165,10 +164,10 @@ import '../../moves.dart';
       formation:Formation('Mixed Quarter Tag #5'),
       from:'Mixed Quarter Tag 1',
       paths:[
-          Stand.changeBeats(3).changehands(2) +
+          Stand.changeBeats(3).changehands(Hands.RIGHT) +
           RunRight.changeBeats(4).skew(-3.0,0.0),
 
-          Stand.changeBeats(3).changehands(1) +
+          Stand.changeBeats(3).changehands(Hands.LEFT) +
           DodgeLeft.changeBeats(4),
 
           SwingRight +
@@ -182,10 +181,10 @@ import '../../moves.dart';
       formation:Formation('Mixed Quarter Tag #2'),
       from:'Mixed Quarter Tag 2',
       paths:[
-          Stand.changeBeats(3).changehands(2) +
+          Stand.changeBeats(3).changehands(Hands.RIGHT) +
           DodgeRight.changeBeats(4),
 
-          Stand.changeBeats(3).changehands(1) +
+          Stand.changeBeats(3).changehands(Hands.LEFT) +
           RunLeft.changeBeats(4).skew(-3.0,0.0),
 
           SwingLeft +

@@ -20,7 +20,6 @@
 
 import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> StepAndFold = [
@@ -93,9 +92,9 @@ import '../../moves.dart';
       paths:[
           FlipRight.skew(1.0,0.0),
 
-          Forward.changehands(1),
+          Forward.changehands(Hands.LEFT),
 
-          Forward.changehands(2),
+          Forward.changehands(Hands.RIGHT),
 
           FlipLeft.skew(1.0,0.0)
       ]),
@@ -106,9 +105,9 @@ import '../../moves.dart';
       paths:[
           FlipLeft.skew(1.0,0.0),
 
-          Forward.changehands(2),
+          Forward.changehands(Hands.RIGHT),
 
-          Forward.changehands(1),
+          Forward.changehands(Hands.LEFT),
 
           FlipRight.skew(1.0,0.0)
       ]),
@@ -197,9 +196,9 @@ import '../../moves.dart';
       paths:[
           FlipRight.changeBeats(3).scale(1.0,0.25).skew(2.0,0.0),
 
-          ExtendRight.changeBeats(3).changehands(1).scale(2.0,0.5),
+          ExtendRight.changeBeats(3).changehands(Hands.LEFT).scale(2.0,0.5),
 
-          ExtendLeft.changeBeats(3).changehands(2).scale(2.0,0.5),
+          ExtendLeft.changeBeats(3).changehands(Hands.RIGHT).scale(2.0,0.5),
 
           FlipLeft.changeBeats(3).scale(1.0,0.25).skew(2.0,0.0)
       ]),
@@ -210,9 +209,9 @@ import '../../moves.dart';
       paths:[
           FlipLeft.changeBeats(3).scale(1.0,0.25).skew(2.0,0.0),
 
-          ExtendLeft.changeBeats(3).changehands(2).scale(2.0,0.5),
+          ExtendLeft.changeBeats(3).changehands(Hands.RIGHT).scale(2.0,0.5),
 
-          ExtendRight.changeBeats(3).changehands(1).scale(2.0,0.5),
+          ExtendRight.changeBeats(3).changehands(Hands.LEFT).scale(2.0,0.5),
 
           FlipRight.changeBeats(3).scale(1.0,0.25).skew(2.0,0.0)
       ]),
@@ -247,13 +246,13 @@ import '../../moves.dart';
       formation:Formation('Two-Faced Tidal Line RH'),
       from:'Tidal Two-Faced Line',group:' ',
       paths:[
-          RunRight.changeBeats(4).changehands(6).scale(1.0,2.0).skew(2.0,1.5),
+          RunRight.changeBeats(4).changehands(Hands.GRIPRIGHT).scale(1.0,2.0).skew(2.0,1.5),
 
-          FlipRight.changeBeats(4).changehands(5).skew(2.0,2.5),
+          FlipRight.changeBeats(4).changehands(Hands.GRIPLEFT).skew(2.0,2.5),
 
-          ExtendRight.changeBeats(4).changehands(1).scale(2.0,1.5),
+          ExtendRight.changeBeats(4).changehands(Hands.LEFT).scale(2.0,1.5),
 
-          ExtendRight.changeBeats(4).changehands(2).scale(2.0,0.5)
+          ExtendRight.changeBeats(4).changehands(Hands.RIGHT).scale(2.0,0.5)
       ]),
 
     AnimatedCall('Concentric Step and Fold',
@@ -323,9 +322,9 @@ import '../../moves.dart';
   ]),
       group:' ',
       paths:[
-          Forward.changehands(2),
+          Forward.changehands(Hands.RIGHT),
 
-          Forward.changehands(1),
+          Forward.changehands(Hands.LEFT),
 
           Forward,
 

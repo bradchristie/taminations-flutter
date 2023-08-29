@@ -20,7 +20,6 @@
 
 import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> SolidConcept = [
@@ -29,21 +28,21 @@ import '../../moves.dart';
       formation:Formation('Double Pass Thru'),
       group:' ',
       paths:[
-          ExtendLeft.changeBeats(2).changehands(2).scale(1.0,2.0) +
-          Forward.changehands(2) +
-          CounterRotateRight_4_m2.changeBeats(4).changehands(2).skew(0.0,1.0),
+          ExtendLeft.changeBeats(2).changehands(Hands.RIGHT).scale(1.0,2.0) +
+          Forward.changehands(Hands.RIGHT) +
+          CounterRotateRight_4_m2.changeBeats(4).changehands(Hands.RIGHT).skew(0.0,1.0),
 
-          ExtendLeft.changeBeats(2).changehands(1).scale(1.0,2.0) +
-          Forward.changehands(1) +
-          CounterRotateRight_2_0.changeBeats(4).changehands(3).skew(0.0,1.0),
+          ExtendLeft.changeBeats(2).changehands(Hands.LEFT).scale(1.0,2.0) +
+          Forward.changehands(Hands.LEFT) +
+          CounterRotateRight_2_0.changeBeats(4).changehands(Hands.BOTH).skew(0.0,1.0),
 
-          ExtendLeft.changeBeats(2).changehands(2).scale(1.0,2.0) +
-          Forward.changehands(2) +
-          CounterRotateRight_2_m4.changeBeats(4).changehands(2).skew(0.0,-1.0),
+          ExtendLeft.changeBeats(2).changehands(Hands.RIGHT).scale(1.0,2.0) +
+          Forward.changehands(Hands.RIGHT) +
+          CounterRotateRight_2_m4.changeBeats(4).changehands(Hands.RIGHT).skew(0.0,-1.0),
 
-          ExtendLeft.changeBeats(2).changehands(1).scale(1.0,2.0) +
-          Forward.changehands(1) +
-          CounterRotateRight_0_m2.changeBeats(4).changehands(3).skew(0.0,-1.0)
+          ExtendLeft.changeBeats(2).changehands(Hands.LEFT).scale(1.0,2.0) +
+          Forward.changehands(Hands.LEFT) +
+          CounterRotateRight_0_m2.changeBeats(4).changehands(Hands.BOTH).skew(0.0,-1.0)
       ]),
 
     AnimatedCall('Centers work Solid, all Swing Thru',
@@ -53,7 +52,7 @@ import '../../moves.dart';
           SwingRight.changeBeats(4).scale(1.5,2.0) +
           SwingLeft,
 
-          UmTurnRight.changeBeats(4).changehands(3),
+          UmTurnRight.changeBeats(4).changehands(Hands.BOTH),
 
           SwingRight.changeBeats(4).scale(1.5,2.0),
 
@@ -70,13 +69,13 @@ import '../../moves.dart';
   ]),
       group:' ',
       paths:[
-          LeadRight.changeBeats(5).changehands(2).scale(6.0,5.0),
+          LeadRight.changeBeats(5).changehands(Hands.RIGHT).scale(6.0,5.0),
 
-          LeadRight.changeBeats(5).changehands(3).scale(4.0,3.0),
+          LeadRight.changeBeats(5).changehands(Hands.BOTH).scale(4.0,3.0),
 
           LeadRight.changeBeats(5).scale(1.0,3.0),
 
-          LeadRight.changeBeats(5).changehands(1).scale(2.0,1.0)
+          LeadRight.changeBeats(5).changehands(Hands.LEFT).scale(2.0,1.0)
       ]),
 
     AnimatedCall('Outside Triangles work Solid, all Mix',
@@ -89,14 +88,14 @@ import '../../moves.dart';
       group:' ',
       paths:[
           DodgeRight +
-          CounterRotateRight_0_m2.changeBeats(3).changehands(2) +
-          CounterRotateRight_0_m2.changeBeats(3).changehands(2),
+          CounterRotateRight_0_m2.changeBeats(3).changehands(Hands.RIGHT) +
+          CounterRotateRight_0_m2.changeBeats(3).changehands(Hands.RIGHT),
 
           RunLeft.changeBeats(6).scale(3.0,3.0),
 
           DodgeRight +
-          CounterRotateRight_2_0.changeBeats(3).changehands(2) +
-          CounterRotateRight_2_0.changeBeats(3).changehands(2),
+          CounterRotateRight_2_0.changeBeats(3).changehands(Hands.RIGHT) +
+          CounterRotateRight_2_0.changeBeats(3).changehands(Hands.RIGHT),
 
           DodgeRight +
           LeadRight.changeBeats(3).scale(3.0,3.0) +

@@ -19,7 +19,7 @@
 */
 
 import '../../animated_call.dart';
-import '../../formation.dart';
+import '../../common_dart.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> CaliforniaTwirl = [
@@ -28,44 +28,44 @@ import '../../moves.dart';
       formation:Formation('Facing Couples'),
       from:'Facing Couples',notForSequencer: true,
       paths:[
-          RunRight.changehands(6),
+          RunRight.changehands(Hands.GRIPRIGHT),
 
-          FlipLeft.changehands(5)
+          FlipLeft.changehands(Hands.GRIPLEFT)
       ]),
 
     AnimatedCall('California Twirl',
       formation:Formation('Couples Facing Out'),
       from:'Couples Facing Out',notForSequencer: true,
       paths:[
-          FlipLeft.changehands(5),
+          FlipLeft.changehands(Hands.GRIPLEFT),
 
-          RunRight.changehands(6)
+          RunRight.changehands(Hands.GRIPRIGHT)
       ]),
 
     AnimatedCall('California Twirl',
       formation:Formation('Lines Facing Out'),
       from:'Lines Facing Out',isGenderSpecific:true,
       paths:[
-          FlipLeft.changehands(5),
+          FlipLeft.changehands(Hands.GRIPLEFT),
 
-          RunRight.changehands(6),
+          RunRight.changehands(Hands.GRIPRIGHT),
 
-          FlipLeft.changehands(5),
+          FlipLeft.changehands(Hands.GRIPLEFT),
 
-          RunRight.changehands(6)
+          RunRight.changehands(Hands.GRIPRIGHT)
       ]),
 
     AnimatedCall('California Twirl',
       formation:Formation('Completed Double Pass Thru'),
       from:'Completed Double Pass Thru',isGenderSpecific:true,
       paths:[
-          FlipLeft.changehands(5),
+          FlipLeft.changehands(Hands.GRIPLEFT),
 
-          RunRight.changehands(6),
+          RunRight.changehands(Hands.GRIPRIGHT),
 
-          FlipLeft.changehands(5),
+          FlipLeft.changehands(Hands.GRIPLEFT),
 
-          RunRight.changehands(6)
+          RunRight.changehands(Hands.GRIPRIGHT)
       ]),
   ];
 

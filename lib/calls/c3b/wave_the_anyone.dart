@@ -20,7 +20,6 @@
 
 import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> WaveTheAnyone = [
@@ -34,17 +33,17 @@ import '../../moves.dart';
   ]),
       group:' ',parts:'2',
       paths:[
-          Forward.changeBeats(2).changehands(2) +
+          Forward.changeBeats(2).changehands(Hands.RIGHT) +
           Forward_4,
 
-          Forward.changeBeats(2).changehands(1) +
+          Forward.changeBeats(2).changehands(Hands.LEFT) +
           DodgeLeft.changeBeats(4),
 
-          Forward_2.changehands(2) +
+          Forward_2.changehands(Hands.RIGHT) +
           RunRight.scale(1.0,1.5).skew(1.0,0.0) +
           QuarterRight.skew(1.0,0.0),
 
-          Forward_2.changehands(1) +
+          Forward_2.changehands(Hands.LEFT) +
           QuarterLeft.changeBeats(2).skew(0.0,1.0) +
           Forward_2
       ]),
@@ -86,17 +85,17 @@ import '../../moves.dart';
   ]),
       group:' ',isGenderSpecific:true,parts:'2',
       paths:[
-          Forward.changeBeats(2).changehands(2) +
+          Forward.changeBeats(2).changehands(Hands.RIGHT) +
           Forward_4,
 
-          Forward.changeBeats(2).changehands(1) +
+          Forward.changeBeats(2).changehands(Hands.LEFT) +
           DodgeLeft.changeBeats(4),
 
-          Forward_2.changehands(2) +
+          Forward_2.changehands(Hands.RIGHT) +
           QuarterRight.changeBeats(2).skew(0.0,-1.0) +
           Forward_2,
 
-          Forward_2.changehands(1) +
+          Forward_2.changehands(Hands.LEFT) +
           RunLeft.scale(1.0,1.5).skew(1.0,0.0) +
           QuarterLeft.skew(1.0,0.0)
       ]),
@@ -110,17 +109,17 @@ import '../../moves.dart';
   ]),
       group:' ',isGenderSpecific:true,parts:'2',
       paths:[
-          Forward.changeBeats(2).changehands(2) +
+          Forward.changeBeats(2).changehands(Hands.RIGHT) +
           DodgeRight.changeBeats(4),
 
-          Forward.changeBeats(2).changehands(1) +
+          Forward.changeBeats(2).changehands(Hands.LEFT) +
           Forward_4,
 
-          Forward_2.changehands(2) +
+          Forward_2.changehands(Hands.RIGHT) +
           RunRight.scale(1.0,1.5).skew(1.0,0.0) +
           QuarterRight.skew(1.0,0.0),
 
-          Forward_2.changehands(1) +
+          Forward_2.changehands(Hands.LEFT) +
           QuarterLeft.changeBeats(2).skew(0.0,1.0) +
           Forward_2
       ]),

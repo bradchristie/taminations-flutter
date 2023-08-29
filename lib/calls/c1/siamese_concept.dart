@@ -19,7 +19,7 @@
 */
 
 import '../../animated_call.dart';
-import '../../formation.dart';
+import '../../common_dart.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> SiameseConcept = [
@@ -28,11 +28,11 @@ import '../../moves.dart';
       formation:Formation('Siamese Wave'),
       group:'Siamese',
       paths:[
-          LeadRight.changeBeats(2).changehands(2).scale(2.0,2.5) +
-          Forward_3.changehands(2).skew(0.0,1.0),
+          LeadRight.changeBeats(2).changehands(Hands.RIGHT).scale(2.0,2.5) +
+          Forward_3.changehands(Hands.RIGHT).skew(0.0,1.0),
 
-          LeadRight.changeBeats(2).changehands(1).scale(1.0,1.5) +
-          Forward_3.changehands(1),
+          LeadRight.changeBeats(2).changehands(Hands.LEFT).scale(1.0,1.5) +
+          Forward_3.changehands(Hands.LEFT),
 
           CounterRotateRight_0_m2 +
           CounterRotateRight_0_m2.skew(0.0,-0.5) +
@@ -47,9 +47,9 @@ import '../../moves.dart';
       formation:Formation('Siamese Wave'),
       group:'Siamese',
       paths:[
-          RunRight.changeBeats(6).changehands(6).scale(2.0,3.25).skew(2.0,0.0),
+          RunRight.changeBeats(6).changehands(Hands.GRIPRIGHT).scale(2.0,3.25).skew(2.0,0.0),
 
-          RunRight.changeBeats(6).changehands(5).scale(1.0,1.75).skew(2.0,0.0),
+          RunRight.changeBeats(6).changehands(Hands.GRIPLEFT).scale(1.0,1.75).skew(2.0,0.0),
 
           CounterRotateRight_0_m2.changeBeats(3).skew(-1.0,0.5) +
           CounterRotateRight_0_m2.changeBeats(3).skew(-0.5,-1.0),
@@ -62,21 +62,21 @@ import '../../moves.dart';
       formation:Formation('Siamese Wave'),
       group:'Siamese',
       paths:[
-          RunRight.changeBeats(4).changehands(2).scale(1.5,1.5) +
-          HingeLeft.changehands(3).scale(0.5,0.5) +
-          HingeLeft.changehands(3).scale(0.5,0.5) +
-          HingeLeft.changehands(3).scale(0.5,0.5) +
-          HingeLeft.changeBeats(3).changehands(3).scale(0.5,0.5) +
-          HingeLeft.changeBeats(3).changehands(3).scale(0.5,0.5) +
-          LeadLeft.changeBeats(4).changehands(2).scale(2.5,0.5),
+          RunRight.changeBeats(4).changehands(Hands.RIGHT).scale(1.5,1.5) +
+          HingeLeft.changehands(Hands.BOTH).scale(0.5,0.5) +
+          HingeLeft.changehands(Hands.BOTH).scale(0.5,0.5) +
+          HingeLeft.changehands(Hands.BOTH).scale(0.5,0.5) +
+          HingeLeft.changeBeats(3).changehands(Hands.BOTH).scale(0.5,0.5) +
+          HingeLeft.changeBeats(3).changehands(Hands.BOTH).scale(0.5,0.5) +
+          LeadLeft.changeBeats(4).changehands(Hands.RIGHT).scale(2.5,0.5),
 
-          RunRight.changeBeats(4).changehands(1).scale(0.5,0.5) +
-          LeadLeft.changeBeats(1.5).changehands(1).scale(1.5,1.5) +
-          LeadLeft.changeBeats(1.5).changehands(1).scale(1.5,1.5) +
-          LeadLeft.changeBeats(1.5).changehands(1).scale(1.5,1.5) +
-          LeadLeft.changeBeats(3).changehands(1).scale(1.5,1.5) +
-          LeadLeft.changeBeats(3).changehands(1).scale(1.5,1.5) +
-          LeadLeft.changeBeats(4).changehands(1).scale(3.5,1.5),
+          RunRight.changeBeats(4).changehands(Hands.LEFT).scale(0.5,0.5) +
+          LeadLeft.changeBeats(1.5).changehands(Hands.LEFT).scale(1.5,1.5) +
+          LeadLeft.changeBeats(1.5).changehands(Hands.LEFT).scale(1.5,1.5) +
+          LeadLeft.changeBeats(1.5).changehands(Hands.LEFT).scale(1.5,1.5) +
+          LeadLeft.changeBeats(3).changehands(Hands.LEFT).scale(1.5,1.5) +
+          LeadLeft.changeBeats(3).changehands(Hands.LEFT).scale(1.5,1.5) +
+          LeadLeft.changeBeats(4).changehands(Hands.LEFT).scale(3.5,1.5),
 
           CounterRotateRight_0_m2 +
           CounterRotateRight_0_m2 +
@@ -99,9 +99,9 @@ import '../../moves.dart';
       formation:Formation('Siamese 2-Faced Line'),
       group:'Siamese',
       paths:[
-          BackHingeLeft.changeBeats(3).changehands(6).scale(1.0,0.5),
+          BackHingeLeft.changeBeats(3).changehands(Hands.GRIPRIGHT).scale(1.0,0.5),
 
-          BackHingeLeft.changeBeats(3).changehands(5).scale(3.0,1.5),
+          BackHingeLeft.changeBeats(3).changehands(Hands.GRIPLEFT).scale(3.0,1.5),
 
           CounterRotateRight_2_0.changeBeats(3).skew(1.0,0.0),
 
@@ -112,9 +112,9 @@ import '../../moves.dart';
       formation:Formation('Siamese Box 3'),
       group:'Siamese',
       paths:[
-          RunRight.changeBeats(4).changehands(2).scale(2.5,3.0),
+          RunRight.changeBeats(4).changehands(Hands.RIGHT).scale(2.5,3.0),
 
-          RunRight.changeBeats(4).changehands(1),
+          RunRight.changeBeats(4).changehands(Hands.LEFT),
 
           Forward_4,
 
@@ -125,34 +125,34 @@ import '../../moves.dart';
       formation:Formation('Siamese Box 3'),
       group:'Siamese',
       paths:[
-          LeadRight.changeBeats(4).changehands(2).scale(3.0,3.0) +
+          LeadRight.changeBeats(4).changehands(Hands.RIGHT).scale(3.0,3.0) +
           SwingRight.changeBeats(6).scale(1.5,1.25),
 
-          LeadRight.changeBeats(4).changehands(1).scale(1.5,1.0) +
-          UmTurnRight.changeBeats(6).changehands(1).skew(0.0,0.5),
+          LeadRight.changeBeats(4).changehands(Hands.LEFT).scale(1.5,1.0) +
+          UmTurnRight.changeBeats(6).changehands(Hands.LEFT).skew(0.0,0.5),
 
           ExtendRight.changeBeats(3).scale(1.0,3.0) +
           Forward +
-          CounterRotateLeft_2_0.changehands(1) +
-          CounterRotateLeft_2_0.changehands(1) +
-          CounterRotateLeft_2_0.changehands(1),
+          CounterRotateLeft_2_0.changehands(Hands.LEFT) +
+          CounterRotateLeft_2_0.changehands(Hands.LEFT) +
+          CounterRotateLeft_2_0.changehands(Hands.LEFT),
 
           ExtendRight.changeBeats(3).scale(1.0,3.0) +
           Forward +
-          CounterRotateLeft_0_2.changehands(1) +
-          CounterRotateLeft_0_2.changehands(1) +
-          CounterRotateLeft_0_2.changehands(1)
+          CounterRotateLeft_0_2.changehands(Hands.LEFT) +
+          CounterRotateLeft_0_2.changehands(Hands.LEFT) +
+          CounterRotateLeft_0_2.changehands(Hands.LEFT)
       ]),
 
     AnimatedCall('Siamese Diamond Circulate',
       formation:Formation('Interlocked Diamonds RH Girl Points'),
       group:'Siamese',
       paths:[
-          LeadRight.changeBeats(6).changehands(6).scale(5.0,3.0),
+          LeadRight.changeBeats(6).changehands(Hands.GRIPRIGHT).scale(5.0,3.0),
 
           LeadRight.changeBeats(6).scale(3.0,2.0),
 
-          LeadRight.changeBeats(6).changehands(5).scale(3.0,1.0),
+          LeadRight.changeBeats(6).changehands(Hands.GRIPLEFT).scale(3.0,1.0),
 
           QuarterRight.changeBeats(6).skew(-1.0,-4.0)
       ]),
@@ -161,13 +161,13 @@ import '../../moves.dart';
       formation:Formation('Siamese Box 2'),
       group:'Siamese',
       paths:[
-          ExtendLeft.changeBeats(3).changehands(5).scale(2.0,3.5) +
-          ExtendRight.changeBeats(3).changehands(5).scale(2.0,3.5) +
+          ExtendLeft.changeBeats(3).changehands(Hands.GRIPLEFT).scale(2.0,3.5) +
+          ExtendRight.changeBeats(3).changehands(Hands.GRIPLEFT).scale(2.0,3.5) +
           HingeLeft.changeBeats(2).scale(1.5,3.0),
 
-          ExtendLeft.changeBeats(3).changehands(6).scale(2.0,2.5) +
-          ExtendRight.changeBeats(3).changehands(6).scale(2.0,2.5) +
-          HingeLeft.changeBeats(2).changehands(3).scale(0.5,1.0),
+          ExtendLeft.changeBeats(3).changehands(Hands.GRIPRIGHT).scale(2.0,2.5) +
+          ExtendRight.changeBeats(3).changehands(Hands.GRIPRIGHT).scale(2.0,2.5) +
+          HingeLeft.changeBeats(2).changehands(Hands.BOTH).scale(0.5,1.0),
 
           DodgeRight.changeBeats(6).scale(1.0,1.5) +
           CounterRotateLeft_2_0,
@@ -180,9 +180,9 @@ import '../../moves.dart';
       formation:Formation('Siamese Box 3'),
       group:'Siamese',
       paths:[
-          LeadRight.changeBeats(5).changehands(2).scale(3.0,3.0),
+          LeadRight.changeBeats(5).changehands(Hands.RIGHT).scale(3.0,3.0),
 
-          LeadRight.changeBeats(5).changehands(1),
+          LeadRight.changeBeats(5).changehands(Hands.LEFT),
 
           Forward_2 +
           CounterRotateRight_2_0.changeBeats(3).skew(0.0,-1.0),
@@ -195,43 +195,43 @@ import '../../moves.dart';
       formation:Formation('Siamese Wave 2'),
       group:'Siamese',
       paths:[
-          RunLeft.changeBeats(4).changehands(2).scale(2.0,1.5),
+          RunLeft.changeBeats(4).changehands(Hands.RIGHT).scale(2.0,1.5),
 
-          RunLeft.changeBeats(4).changehands(1).scale(3.0,2.5),
-
-          DodgeRight +
-          CounterRotateRight_0_m2.changehands(2) +
-          CounterRotateRight_0_m2.changehands(2),
+          RunLeft.changeBeats(4).changehands(Hands.LEFT).scale(3.0,2.5),
 
           DodgeRight +
-          CounterRotateRight_2_0.changehands(2) +
-          CounterRotateRight_2_0.changehands(2)
+          CounterRotateRight_0_m2.changehands(Hands.RIGHT) +
+          CounterRotateRight_0_m2.changehands(Hands.RIGHT),
+
+          DodgeRight +
+          CounterRotateRight_2_0.changehands(Hands.RIGHT) +
+          CounterRotateRight_2_0.changehands(Hands.RIGHT)
       ]),
 
     AnimatedCall('Siamese Pass the Ocean',
       formation:Formation('Siamese Box 1'),
       group:'Siamese',
       paths:[
-          ExtendLeft.changeBeats(2).changehands(2).scale(2.0,0.5) +
-          LeadRight.changeBeats(4).changehands(2).scale(3.5,3.5),
+          ExtendLeft.changeBeats(2).changehands(Hands.RIGHT).scale(2.0,0.5) +
+          LeadRight.changeBeats(4).changehands(Hands.RIGHT).scale(3.5,3.5),
 
-          ExtendLeft.changeBeats(2).changehands(1).scale(2.0,1.5) +
-          LeadRight.changeBeats(4).changehands(1).scale(2.5,2.5),
+          ExtendLeft.changeBeats(2).changehands(Hands.LEFT).scale(2.0,1.5) +
+          LeadRight.changeBeats(4).changehands(Hands.LEFT).scale(2.5,2.5),
 
           ExtendLeft.changeBeats(2).scale(2.5,1.0) +
-          CounterRotateLeft_2_0.changeBeats(4).changehands(1).skew(-0.5,0.0),
+          CounterRotateLeft_2_0.changeBeats(4).changehands(Hands.LEFT).skew(-0.5,0.0),
 
           ExtendLeft.changeBeats(2).scale(1.5,1.0) +
-          CounterRotateLeft_0_2.changeBeats(4).changehands(1).skew(0.5,0.0)
+          CounterRotateLeft_0_2.changeBeats(4).changehands(Hands.LEFT).skew(0.5,0.0)
       ]),
 
     AnimatedCall('Siamese Recycle',
       formation:Formation('Siamese Wave'),
       group:'Siamese',
       paths:[
-          RunRight.changeBeats(8).changehands(2).scale(2.5,3.25).skew(2.0,0.0),
+          RunRight.changeBeats(8).changehands(Hands.RIGHT).scale(2.5,3.25).skew(2.0,0.0),
 
-          RunRight.changeBeats(8).changehands(1).scale(1.5,1.75).skew(2.0,0.0),
+          RunRight.changeBeats(8).changehands(Hands.LEFT).scale(1.5,1.75).skew(2.0,0.0),
 
           CounterRotateRight_0_m2.skew(-0.5,-0.25) +
           CounterRotateRight_0_m2.skew(0.25,-0.5) +
@@ -248,13 +248,13 @@ import '../../moves.dart';
       formation:Formation('Siamese Wave'),
       group:'Siamese',parts:'4',
       paths:[
-          RunRight.changeBeats(4).changehands(2).scale(1.5,1.5) +
-          RunLeft.changeBeats(3).changehands(3).scale(0.5,0.5) +
-          HingeLeft.changeBeats(1.5).changehands(3).scale(0.5,0.5),
+          RunRight.changeBeats(4).changehands(Hands.RIGHT).scale(1.5,1.5) +
+          RunLeft.changeBeats(3).changehands(Hands.BOTH).scale(0.5,0.5) +
+          HingeLeft.changeBeats(1.5).changehands(Hands.BOTH).scale(0.5,0.5),
 
-          RunRight.changeBeats(4).changehands(1).scale(0.5,0.5) +
-          RunLeft.changeBeats(3).changehands(1).scale(1.5,1.5) +
-          HingeLeft.changeBeats(1.5).changehands(1).scale(1.5,1.5),
+          RunRight.changeBeats(4).changehands(Hands.LEFT).scale(0.5,0.5) +
+          RunLeft.changeBeats(3).changehands(Hands.LEFT).scale(1.5,1.5) +
+          HingeLeft.changeBeats(1.5).changehands(Hands.LEFT).scale(1.5,1.5),
 
           CounterRotateRight_0_m2 +
           CounterRotateRight_0_m2 +
@@ -269,13 +269,13 @@ import '../../moves.dart';
       formation:Formation('Siamese Box 3'),
       group:'Siamese',
       paths:[
-          UmTurnLeft.changehands(2) +
-          Forward_2.changehands(2) +
-          LeadLeft.changeBeats(2).changehands(2),
+          UmTurnLeft.changehands(Hands.RIGHT) +
+          Forward_2.changehands(Hands.RIGHT) +
+          LeadLeft.changeBeats(2).changehands(Hands.RIGHT),
 
-          RunLeft.changehands(2).scale(1.0,1.5) +
-          Forward_2.changehands(1) +
-          LeadLeft.changeBeats(2).changehands(1).scale(3.0,2.0),
+          RunLeft.changehands(Hands.RIGHT).scale(1.0,1.5) +
+          Forward_2.changehands(Hands.LEFT) +
+          LeadLeft.changeBeats(2).changehands(Hands.LEFT).scale(3.0,2.0),
 
           Forward_2.changeBeats(4) +
           CounterRotateRight_2_0.changeBeats(3).skew(1.0,1.0),

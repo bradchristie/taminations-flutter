@@ -21,6 +21,8 @@
 export 'cloneable.dart';
 export 'dancer_model.dart';
 export 'extensions.dart';
+export 'formation.dart';
+export 'math/hands.dart';
 export 'math/matrix.dart';
 export 'math/movement.dart';
 export 'math/path.dart';

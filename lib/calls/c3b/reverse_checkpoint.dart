@@ -20,7 +20,6 @@
 
 import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> ReverseCheckpoint = [
@@ -53,7 +52,7 @@ import '../../moves.dart';
           SwingLeft.scale(0.5,0.5),
 
           HingeRight +
-          DodgeLeft.changehands(1).scale(1.0,0.25),
+          DodgeLeft.changehands(Hands.LEFT).scale(1.0,0.25),
 
           HingeRight +
           DodgeLeft.scale(1.0,0.25),

@@ -19,7 +19,7 @@
 */
 
 import '../../animated_call.dart';
-import '../../formation.dart';
+import '../../common_dart.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> CircleBy = [
@@ -59,16 +59,16 @@ import '../../moves.dart';
       group:'Circle By',
       paths:[
           ExtendLeft.changeBeats(2).scale(2.0,0.5) +
-          SwingRight.changehands(6).scale(0.5,0.5),
+          SwingRight.changehands(Hands.GRIPRIGHT).scale(0.5,0.5),
 
           ExtendLeft.changeBeats(2).scale(2.0,0.5) +
-          SwingRight.changehands(6).scale(0.5,0.5),
+          SwingRight.changehands(Hands.GRIPRIGHT).scale(0.5,0.5),
 
           ExtendLeft.changeBeats(2).scale(2.0,0.5) +
-          SwingRight.changehands(6).scale(0.5,0.5),
+          SwingRight.changehands(Hands.GRIPRIGHT).scale(0.5,0.5),
 
           ExtendLeft.changeBeats(2).scale(2.0,0.5) +
-          SwingRight.changehands(6).scale(0.5,0.5)
+          SwingRight.changehands(Hands.GRIPRIGHT).scale(0.5,0.5)
       ]),
 
     AnimatedCall('Circle By Nothing and 3/4',
@@ -76,19 +76,19 @@ import '../../moves.dart';
       group:'Circle By',
       paths:[
           ExtendLeft.changeBeats(2).scale(2.0,0.5) +
-          SwingRight.changehands(6).scale(0.5,0.5) +
+          SwingRight.changehands(Hands.GRIPRIGHT).scale(0.5,0.5) +
           HingeRight.scale(1.0,0.5),
 
           ExtendLeft.changeBeats(2).scale(2.0,0.5) +
-          SwingRight.changehands(6).scale(0.5,0.5) +
+          SwingRight.changehands(Hands.GRIPRIGHT).scale(0.5,0.5) +
           HingeRight.scale(1.0,0.5),
 
           ExtendLeft.changeBeats(2).scale(2.0,0.5) +
-          SwingRight.changehands(6).scale(0.5,0.5) +
+          SwingRight.changehands(Hands.GRIPRIGHT).scale(0.5,0.5) +
           HingeRight.scale(1.0,0.5),
 
           ExtendLeft.changeBeats(2).scale(2.0,0.5) +
-          SwingRight.changehands(6).scale(0.5,0.5) +
+          SwingRight.changehands(Hands.GRIPRIGHT).scale(0.5,0.5) +
           HingeRight.scale(1.0,0.5)
       ]),
 
@@ -96,19 +96,19 @@ import '../../moves.dart';
       formation:Formation('Normal Lines'),
       group:'Circle By',
       paths:[
-          EighthRight.changeBeats(1).changehands(2).skew(1.0,0.0) +
+          EighthRight.changeBeats(1).changehands(Hands.RIGHT).skew(1.0,0.0) +
           CircleLeftQuarter.scale(2.0,2.0) +
           EighthLeft.changeBeats(2).skew(-0.707,2.1),
 
-          EighthLeft.changeBeats(1).changehands(1).skew(1.0,0.0) +
+          EighthLeft.changeBeats(1).changehands(Hands.LEFT).skew(1.0,0.0) +
           CircleLeftQuarter.scale(2.0,2.0) +
           EighthRight.changeBeats(2).skew(0.707,-0.707),
 
-          EighthRight.changeBeats(1).changehands(2).skew(1.0,0.0) +
+          EighthRight.changeBeats(1).changehands(Hands.RIGHT).skew(1.0,0.0) +
           CircleLeftQuarter.scale(2.0,2.0) +
           EighthLeft.changeBeats(2).skew(-0.707,2.1),
 
-          EighthLeft.changeBeats(1).changehands(1).skew(1.0,0.0) +
+          EighthLeft.changeBeats(1).changehands(Hands.LEFT).skew(1.0,0.0) +
           CircleLeftQuarter.scale(2.0,2.0) +
           EighthRight.changeBeats(2).skew(0.707,-0.707)
       ]),
@@ -117,22 +117,22 @@ import '../../moves.dart';
       formation:Formation('Normal Lines'),
       group:'Circle By',parts:'4.5',
       paths:[
-          EighthRight.changeBeats(1).changehands(2).skew(1.0,0.0) +
+          EighthRight.changeBeats(1).changehands(Hands.RIGHT).skew(1.0,0.0) +
           CircleLeftQuarter.scale(2.0,2.0) +
           EighthLeft.changeBeats(2).skew(-0.707,2.1) +
           HingeRight,
 
-          EighthLeft.changeBeats(1).changehands(1).skew(1.0,0.0) +
+          EighthLeft.changeBeats(1).changehands(Hands.LEFT).skew(1.0,0.0) +
           CircleLeftQuarter.scale(2.0,2.0) +
           EighthRight.changeBeats(2).skew(0.707,-0.707) +
           HingeRight,
 
-          EighthRight.changeBeats(1).changehands(2).skew(1.0,0.0) +
+          EighthRight.changeBeats(1).changehands(Hands.RIGHT).skew(1.0,0.0) +
           CircleLeftQuarter.scale(2.0,2.0) +
           EighthLeft.changeBeats(2).skew(-0.707,2.1) +
           HingeRight,
 
-          EighthLeft.changeBeats(1).changehands(1).skew(1.0,0.0) +
+          EighthLeft.changeBeats(1).changehands(Hands.LEFT).skew(1.0,0.0) +
           CircleLeftQuarter.scale(2.0,2.0) +
           EighthRight.changeBeats(2).skew(0.707,-0.707) +
           HingeRight
@@ -142,22 +142,22 @@ import '../../moves.dart';
       formation:Formation('Normal Lines'),
       group:'Circle By',parts:'4.5',
       paths:[
-          EighthRight.changeBeats(1).changehands(2).skew(1.0,0.0) +
+          EighthRight.changeBeats(1).changehands(Hands.RIGHT).skew(1.0,0.0) +
           CircleLeftQuarter.scale(2.0,2.0) +
           EighthLeft.changeBeats(2).skew(-0.707,2.1) +
           SwingRight,
 
-          EighthLeft.changeBeats(1).changehands(1).skew(1.0,0.0) +
+          EighthLeft.changeBeats(1).changehands(Hands.LEFT).skew(1.0,0.0) +
           CircleLeftQuarter.scale(2.0,2.0) +
           EighthRight.changeBeats(2).skew(0.707,-0.707) +
           SwingRight,
 
-          EighthRight.changeBeats(1).changehands(2).skew(1.0,0.0) +
+          EighthRight.changeBeats(1).changehands(Hands.RIGHT).skew(1.0,0.0) +
           CircleLeftQuarter.scale(2.0,2.0) +
           EighthLeft.changeBeats(2).skew(-0.707,2.1) +
           SwingRight,
 
-          EighthLeft.changeBeats(1).changehands(1).skew(1.0,0.0) +
+          EighthLeft.changeBeats(1).changehands(Hands.LEFT).skew(1.0,0.0) +
           CircleLeftQuarter.scale(2.0,2.0) +
           EighthRight.changeBeats(2).skew(0.707,-0.707) +
           SwingRight
@@ -167,22 +167,22 @@ import '../../moves.dart';
       formation:Formation('Normal Lines'),
       group:'Circle By',parts:'4.5',
       paths:[
-          EighthRight.changeBeats(1).changehands(2).skew(1.0,0.0) +
+          EighthRight.changeBeats(1).changehands(Hands.RIGHT).skew(1.0,0.0) +
           CircleLeftQuarter.scale(2.0,2.0) +
           EighthLeft.changeBeats(2).skew(-0.707,2.1) +
           CastRight,
 
-          EighthLeft.changeBeats(1).changehands(1).skew(1.0,0.0) +
+          EighthLeft.changeBeats(1).changehands(Hands.LEFT).skew(1.0,0.0) +
           CircleLeftQuarter.scale(2.0,2.0) +
           EighthRight.changeBeats(2).skew(0.707,-0.707) +
           CastRight,
 
-          EighthRight.changeBeats(1).changehands(2).skew(1.0,0.0) +
+          EighthRight.changeBeats(1).changehands(Hands.RIGHT).skew(1.0,0.0) +
           CircleLeftQuarter.scale(2.0,2.0) +
           EighthLeft.changeBeats(2).skew(-0.707,2.1) +
           CastRight,
 
-          EighthLeft.changeBeats(1).changehands(1).skew(1.0,0.0) +
+          EighthLeft.changeBeats(1).changehands(Hands.LEFT).skew(1.0,0.0) +
           CircleLeftQuarter.scale(2.0,2.0) +
           EighthRight.changeBeats(2).skew(0.707,-0.707) +
           CastRight
@@ -192,22 +192,22 @@ import '../../moves.dart';
       formation:Formation('Normal Lines'),
       group:'Circle By',
       paths:[
-          EighthRight.changeBeats(1).changehands(2).skew(1.0,0.0) +
+          EighthRight.changeBeats(1).changehands(Hands.RIGHT).skew(1.0,0.0) +
           CircleLeftQuarter.scale(2.0,2.0) +
           CircleLeftQuarter.scale(2.0,2.0) +
           EighthLeft.changeBeats(2).skew(0.353,1.06),
 
-          EighthLeft.changeBeats(1).changehands(1).skew(1.0,0.0) +
+          EighthLeft.changeBeats(1).changehands(Hands.LEFT).skew(1.0,0.0) +
           CircleLeftQuarter.scale(2.0,2.0) +
           CircleLeftQuarter.scale(2.0,2.0) +
           EighthRight.changeBeats(2).skew(1.06,-0.353),
 
-          EighthRight.changeBeats(1).changehands(2).skew(1.0,0.0) +
+          EighthRight.changeBeats(1).changehands(Hands.RIGHT).skew(1.0,0.0) +
           CircleLeftQuarter.scale(2.0,2.0) +
           CircleLeftQuarter.scale(2.0,2.0) +
           EighthLeft.changeBeats(2).skew(0.353,1.06),
 
-          EighthLeft.changeBeats(1).changehands(1).skew(1.0,0.0) +
+          EighthLeft.changeBeats(1).changehands(Hands.LEFT).skew(1.0,0.0) +
           CircleLeftQuarter.scale(2.0,2.0) +
           CircleLeftQuarter.scale(2.0,2.0) +
           EighthRight.changeBeats(2).skew(1.06,-0.353)
@@ -217,25 +217,25 @@ import '../../moves.dart';
       formation:Formation('Normal Lines'),
       group:'Circle By',parts:'6',
       paths:[
-          EighthRight.changeBeats(1).changehands(2).skew(1.0,0.0) +
+          EighthRight.changeBeats(1).changehands(Hands.RIGHT).skew(1.0,0.0) +
           CircleLeftQuarter.scale(2.0,2.0) +
           CircleLeftQuarter.scale(2.0,2.0) +
           EighthLeft.changeBeats(2).skew(0.353,1.06) +
           HingeRight.scale(1.0,0.5),
 
-          EighthLeft.changeBeats(1).changehands(1).skew(1.0,0.0) +
+          EighthLeft.changeBeats(1).changehands(Hands.LEFT).skew(1.0,0.0) +
           CircleLeftQuarter.scale(2.0,2.0) +
           CircleLeftQuarter.scale(2.0,2.0) +
           EighthRight.changeBeats(2).skew(1.06,-0.353) +
           HingeRight.scale(1.0,0.5),
 
-          EighthRight.changeBeats(1).changehands(2).skew(1.0,0.0) +
+          EighthRight.changeBeats(1).changehands(Hands.RIGHT).skew(1.0,0.0) +
           CircleLeftQuarter.scale(2.0,2.0) +
           CircleLeftQuarter.scale(2.0,2.0) +
           EighthLeft.changeBeats(2).skew(0.353,1.06) +
           HingeRight.scale(1.0,0.5),
 
-          EighthLeft.changeBeats(1).changehands(1).skew(1.0,0.0) +
+          EighthLeft.changeBeats(1).changehands(Hands.LEFT).skew(1.0,0.0) +
           CircleLeftQuarter.scale(2.0,2.0) +
           CircleLeftQuarter.scale(2.0,2.0) +
           EighthRight.changeBeats(2).skew(1.06,-0.353) +
@@ -246,25 +246,25 @@ import '../../moves.dart';
       formation:Formation('Normal Lines'),
       group:'Circle By',parts:'6',
       paths:[
-          EighthRight.changeBeats(1).changehands(2).skew(1.0,0.0) +
+          EighthRight.changeBeats(1).changehands(Hands.RIGHT).skew(1.0,0.0) +
           CircleLeftQuarter.scale(2.0,2.0) +
           CircleLeftQuarter.scale(2.0,2.0) +
           EighthLeft.changeBeats(2).skew(0.353,1.06) +
           SwingRight.scale(0.75,0.5),
 
-          EighthLeft.changeBeats(1).changehands(1).skew(1.0,0.0) +
+          EighthLeft.changeBeats(1).changehands(Hands.LEFT).skew(1.0,0.0) +
           CircleLeftQuarter.scale(2.0,2.0) +
           CircleLeftQuarter.scale(2.0,2.0) +
           EighthRight.changeBeats(2).skew(1.06,-0.353) +
           SwingRight.scale(0.75,0.5),
 
-          EighthRight.changeBeats(1).changehands(2).skew(1.0,0.0) +
+          EighthRight.changeBeats(1).changehands(Hands.RIGHT).skew(1.0,0.0) +
           CircleLeftQuarter.scale(2.0,2.0) +
           CircleLeftQuarter.scale(2.0,2.0) +
           EighthLeft.changeBeats(2).skew(0.353,1.06) +
           SwingRight.scale(0.75,0.5),
 
-          EighthLeft.changeBeats(1).changehands(1).skew(1.0,0.0) +
+          EighthLeft.changeBeats(1).changehands(Hands.LEFT).skew(1.0,0.0) +
           CircleLeftQuarter.scale(2.0,2.0) +
           CircleLeftQuarter.scale(2.0,2.0) +
           EighthRight.changeBeats(2).skew(1.06,-0.353) +
@@ -275,28 +275,28 @@ import '../../moves.dart';
       formation:Formation('Normal Lines'),
       group:'Circle By',parts:'6',
       paths:[
-          EighthRight.changeBeats(1).changehands(2).skew(1.0,0.0) +
+          EighthRight.changeBeats(1).changehands(Hands.RIGHT).skew(1.0,0.0) +
           CircleLeftQuarter.scale(2.0,2.0) +
           CircleLeftQuarter.scale(2.0,2.0) +
           EighthLeft.changeBeats(2).skew(0.353,1.06) +
           SwingRight.scale(0.75,0.5) +
           HingeRight.scale(1.0,0.5),
 
-          EighthLeft.changeBeats(1).changehands(1).skew(1.0,0.0) +
+          EighthLeft.changeBeats(1).changehands(Hands.LEFT).skew(1.0,0.0) +
           CircleLeftQuarter.scale(2.0,2.0) +
           CircleLeftQuarter.scale(2.0,2.0) +
           EighthRight.changeBeats(2).skew(1.06,-0.353) +
           SwingRight.scale(0.75,0.5) +
           HingeRight.scale(1.0,0.5),
 
-          EighthRight.changeBeats(1).changehands(2).skew(1.0,0.0) +
+          EighthRight.changeBeats(1).changehands(Hands.RIGHT).skew(1.0,0.0) +
           CircleLeftQuarter.scale(2.0,2.0) +
           CircleLeftQuarter.scale(2.0,2.0) +
           EighthLeft.changeBeats(2).skew(0.353,1.06) +
           SwingRight.scale(0.75,0.5) +
           HingeRight.scale(1.0,0.5),
 
-          EighthLeft.changeBeats(1).changehands(1).skew(1.0,0.0) +
+          EighthLeft.changeBeats(1).changehands(Hands.LEFT).skew(1.0,0.0) +
           CircleLeftQuarter.scale(2.0,2.0) +
           CircleLeftQuarter.scale(2.0,2.0) +
           EighthRight.changeBeats(2).skew(1.06,-0.353) +
@@ -308,25 +308,25 @@ import '../../moves.dart';
       formation:Formation('Normal Lines'),
       group:'Circle By',
       paths:[
-          EighthRight.changeBeats(1).changehands(2).skew(1.0,0.0) +
+          EighthRight.changeBeats(1).changehands(Hands.RIGHT).skew(1.0,0.0) +
           CircleLeftQuarter.scale(2.0,2.0) +
           CircleLeftQuarter.scale(2.0,2.0) +
           CircleLeftQuarter.scale(2.0,2.0) +
           EighthLeft.changeBeats(2).skew(-0.707,2.1),
 
-          EighthLeft.changeBeats(1).changehands(1).skew(1.0,0.0) +
+          EighthLeft.changeBeats(1).changehands(Hands.LEFT).skew(1.0,0.0) +
           CircleLeftQuarter.scale(2.0,2.0) +
           CircleLeftQuarter.scale(2.0,2.0) +
           CircleLeftQuarter.scale(2.0,2.0) +
           EighthRight.changeBeats(2).skew(0.707,-0.707),
 
-          EighthRight.changeBeats(1).changehands(2).skew(1.0,0.0) +
+          EighthRight.changeBeats(1).changehands(Hands.RIGHT).skew(1.0,0.0) +
           CircleLeftQuarter.scale(2.0,2.0) +
           CircleLeftQuarter.scale(2.0,2.0) +
           CircleLeftQuarter.scale(2.0,2.0) +
           EighthLeft.changeBeats(2).skew(-0.707,2.1),
 
-          EighthLeft.changeBeats(1).changehands(1).skew(1.0,0.0) +
+          EighthLeft.changeBeats(1).changehands(Hands.LEFT).skew(1.0,0.0) +
           CircleLeftQuarter.scale(2.0,2.0) +
           CircleLeftQuarter.scale(2.0,2.0) +
           CircleLeftQuarter.scale(2.0,2.0) +
@@ -337,28 +337,28 @@ import '../../moves.dart';
       formation:Formation('Normal Lines'),
       group:'Circle By',parts:'7.5',
       paths:[
-          EighthRight.changeBeats(1).changehands(2).skew(1.0,0.0) +
+          EighthRight.changeBeats(1).changehands(Hands.RIGHT).skew(1.0,0.0) +
           CircleLeftQuarter.scale(2.0,2.0) +
           CircleLeftQuarter.scale(2.0,2.0) +
           CircleLeftQuarter.scale(2.0,2.0) +
           EighthLeft.changeBeats(2).skew(-0.707,2.1) +
           HingeRight,
 
-          EighthLeft.changeBeats(1).changehands(1).skew(1.0,0.0) +
+          EighthLeft.changeBeats(1).changehands(Hands.LEFT).skew(1.0,0.0) +
           CircleLeftQuarter.scale(2.0,2.0) +
           CircleLeftQuarter.scale(2.0,2.0) +
           CircleLeftQuarter.scale(2.0,2.0) +
           EighthRight.changeBeats(2).skew(0.707,-0.707) +
           HingeRight,
 
-          EighthRight.changeBeats(1).changehands(2).skew(1.0,0.0) +
+          EighthRight.changeBeats(1).changehands(Hands.RIGHT).skew(1.0,0.0) +
           CircleLeftQuarter.scale(2.0,2.0) +
           CircleLeftQuarter.scale(2.0,2.0) +
           CircleLeftQuarter.scale(2.0,2.0) +
           EighthLeft.changeBeats(2).skew(-0.707,2.1) +
           HingeRight,
 
-          EighthLeft.changeBeats(1).changehands(1).skew(1.0,0.0) +
+          EighthLeft.changeBeats(1).changehands(Hands.LEFT).skew(1.0,0.0) +
           CircleLeftQuarter.scale(2.0,2.0) +
           CircleLeftQuarter.scale(2.0,2.0) +
           CircleLeftQuarter.scale(2.0,2.0) +
@@ -370,28 +370,28 @@ import '../../moves.dart';
       formation:Formation('Normal Lines'),
       group:'Circle By',parts:'7.5',
       paths:[
-          EighthRight.changeBeats(1).changehands(2).skew(1.0,0.0) +
+          EighthRight.changeBeats(1).changehands(Hands.RIGHT).skew(1.0,0.0) +
           CircleLeftQuarter.scale(2.0,2.0) +
           CircleLeftQuarter.scale(2.0,2.0) +
           CircleLeftQuarter.scale(2.0,2.0) +
           EighthLeft.changeBeats(2).skew(-0.707,2.1) +
           SwingRight,
 
-          EighthLeft.changeBeats(1).changehands(1).skew(1.0,0.0) +
+          EighthLeft.changeBeats(1).changehands(Hands.LEFT).skew(1.0,0.0) +
           CircleLeftQuarter.scale(2.0,2.0) +
           CircleLeftQuarter.scale(2.0,2.0) +
           CircleLeftQuarter.scale(2.0,2.0) +
           EighthRight.changeBeats(2).skew(0.707,-0.707) +
           SwingRight,
 
-          EighthRight.changeBeats(1).changehands(2).skew(1.0,0.0) +
+          EighthRight.changeBeats(1).changehands(Hands.RIGHT).skew(1.0,0.0) +
           CircleLeftQuarter.scale(2.0,2.0) +
           CircleLeftQuarter.scale(2.0,2.0) +
           CircleLeftQuarter.scale(2.0,2.0) +
           EighthLeft.changeBeats(2).skew(-0.707,2.1) +
           SwingRight,
 
-          EighthLeft.changeBeats(1).changehands(1).skew(1.0,0.0) +
+          EighthLeft.changeBeats(1).changehands(Hands.LEFT).skew(1.0,0.0) +
           CircleLeftQuarter.scale(2.0,2.0) +
           CircleLeftQuarter.scale(2.0,2.0) +
           CircleLeftQuarter.scale(2.0,2.0) +
@@ -403,28 +403,28 @@ import '../../moves.dart';
       formation:Formation('Normal Lines'),
       group:'Circle By',parts:'7.5',
       paths:[
-          EighthRight.changeBeats(1).changehands(2).skew(1.0,0.0) +
+          EighthRight.changeBeats(1).changehands(Hands.RIGHT).skew(1.0,0.0) +
           CircleLeftQuarter.scale(2.0,2.0) +
           CircleLeftQuarter.scale(2.0,2.0) +
           CircleLeftQuarter.scale(2.0,2.0) +
           EighthLeft.changeBeats(2).skew(-0.707,2.1) +
           CastRight,
 
-          EighthLeft.changeBeats(1).changehands(1).skew(1.0,0.0) +
+          EighthLeft.changeBeats(1).changehands(Hands.LEFT).skew(1.0,0.0) +
           CircleLeftQuarter.scale(2.0,2.0) +
           CircleLeftQuarter.scale(2.0,2.0) +
           CircleLeftQuarter.scale(2.0,2.0) +
           EighthRight.changeBeats(2).skew(0.707,-0.707) +
           CastRight,
 
-          EighthRight.changeBeats(1).changehands(2).skew(1.0,0.0) +
+          EighthRight.changeBeats(1).changehands(Hands.RIGHT).skew(1.0,0.0) +
           CircleLeftQuarter.scale(2.0,2.0) +
           CircleLeftQuarter.scale(2.0,2.0) +
           CircleLeftQuarter.scale(2.0,2.0) +
           EighthLeft.changeBeats(2).skew(-0.707,2.1) +
           CastRight,
 
-          EighthLeft.changeBeats(1).changehands(1).skew(1.0,0.0) +
+          EighthLeft.changeBeats(1).changehands(Hands.LEFT).skew(1.0,0.0) +
           CircleLeftQuarter.scale(2.0,2.0) +
           CircleLeftQuarter.scale(2.0,2.0) +
           CircleLeftQuarter.scale(2.0,2.0) +

@@ -20,7 +20,6 @@
 
 import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> Recycle = [
@@ -99,9 +98,9 @@ import '../../moves.dart';
       formation:Formation('Normal Lines'),
       from:'Lines',group:' ',
       paths:[
-          RunRight.changeBeats(5).changehands(2).skew(2.0,-0.5),
+          RunRight.changeBeats(5).changehands(Hands.RIGHT).skew(2.0,-0.5),
 
-          UmTurnRight.changeBeats(5).changehands(1).skew(2.0,0.5),
+          UmTurnRight.changeBeats(5).changehands(Hands.LEFT).skew(2.0,0.5),
 
       Path.fromMovement(Movement.fromData(beats: 5, hands: Hands.GRIPRIGHT, cx1: -1, cy1: 2, cx2: 1, cy2: 4.5, x2: 2, y2: 4.5, cx3: 1, cx4: 2, cy4: 2, x4: 3, y4: 2  )),
 
@@ -116,9 +115,9 @@ import '../../moves.dart';
 
       Path.fromMovement(Movement.fromData(beats: 5, hands: Hands.GRIPLEFT, cx1: -1, cy1: -2, cx2: 1, cy2: -4.5, x2: 2, y2: -4.5, cx3: 1, cx4: 2, cy4: -2, x4: 3, y4: -2  )),
 
-          UmTurnLeft.changeBeats(5).changehands(2).skew(2.0,-0.5),
+          UmTurnLeft.changeBeats(5).changehands(Hands.RIGHT).skew(2.0,-0.5),
 
-          RunLeft.changeBeats(5).changehands(1).skew(2.0,0.5)
+          RunLeft.changeBeats(5).changehands(Hands.LEFT).skew(2.0,0.5)
       ]),
 
     AnimatedCall('All 8 Recycle',

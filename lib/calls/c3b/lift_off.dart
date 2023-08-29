@@ -20,7 +20,6 @@
 
 import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> LiftOff = [
@@ -36,24 +35,24 @@ import '../../moves.dart';
       paths:[
           HingeRight.changeBeats(3).skew(1.0,0.0) +
           Stand.changeBeats(4) +
-          Forward_2.changehands(2) +
-          RunRight.changeBeats(5).changehands(2).scale(3.0,3.0),
+          Forward_2.changehands(Hands.RIGHT) +
+          RunRight.changeBeats(5).changehands(Hands.RIGHT).scale(3.0,3.0),
 
-          QuarterRight.changeBeats(3).changehands(1).skew(0.0,1.0) +
+          QuarterRight.changeBeats(3).changehands(Hands.LEFT).skew(0.0,1.0) +
           Forward +
           RunRight.skew(2.0,0.0) +
-          Forward.changeBeats(2).changehands(1) +
-          Forward_4.changeBeats(5).changehands(1),
+          Forward.changeBeats(2).changehands(Hands.LEFT) +
+          Forward_4.changeBeats(5).changehands(Hands.LEFT),
 
-          DodgeLeft.changehands(2) +
+          DodgeLeft.changehands(Hands.RIGHT) +
           Stand.changeBeats(4) +
-          Forward.changeBeats(2).changehands(2) +
-          Forward_4.changeBeats(5).changehands(2),
+          Forward.changeBeats(2).changehands(Hands.RIGHT) +
+          Forward_4.changeBeats(5).changehands(Hands.RIGHT),
 
-          DodgeLeft.changehands(1) +
+          DodgeLeft.changehands(Hands.LEFT) +
           Forward_3.changeBeats(4) +
-          Forward_2.changehands(1) +
-          RunRight.changeBeats(5).changehands(1)
+          Forward_2.changehands(Hands.LEFT) +
+          RunRight.changeBeats(5).changehands(Hands.LEFT)
       ]),
 
     AnimatedCall('Mirror Lift Off',
@@ -65,26 +64,26 @@ import '../../moves.dart';
   ]),
       group:' ',fractions:'3;4;2',
       paths:[
-          QuarterLeft.changeBeats(3).changehands(2).skew(0.0,-1.0) +
+          QuarterLeft.changeBeats(3).changehands(Hands.RIGHT).skew(0.0,-1.0) +
           Forward +
           RunLeft.skew(2.0,0.0) +
-          Forward.changeBeats(2).changehands(2) +
-          Forward_4.changeBeats(5).changehands(2),
+          Forward.changeBeats(2).changehands(Hands.RIGHT) +
+          Forward_4.changeBeats(5).changehands(Hands.RIGHT),
 
           HingeLeft.changeBeats(3).skew(1.0,0.0) +
           Stand.changeBeats(4) +
-          Forward_2.changehands(1) +
-          RunLeft.changeBeats(5).changehands(1).scale(3.0,3.0),
+          Forward_2.changehands(Hands.LEFT) +
+          RunLeft.changeBeats(5).changehands(Hands.LEFT).scale(3.0,3.0),
 
-          DodgeRight.changehands(2) +
+          DodgeRight.changehands(Hands.RIGHT) +
           Forward_3.changeBeats(4) +
-          Forward_2.changehands(2) +
-          RunLeft.changeBeats(5).changehands(2),
+          Forward_2.changehands(Hands.RIGHT) +
+          RunLeft.changeBeats(5).changehands(Hands.RIGHT),
 
-          DodgeRight.changehands(1) +
+          DodgeRight.changehands(Hands.LEFT) +
           Stand.changeBeats(4) +
-          Forward.changeBeats(2).changehands(1) +
-          Forward_4.changeBeats(5).changehands(1)
+          Forward.changeBeats(2).changehands(Hands.LEFT) +
+          Forward_4.changeBeats(5).changehands(Hands.LEFT)
       ]),
   ];
 

@@ -20,7 +20,6 @@
 
 import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> LinkUp = [
@@ -34,18 +33,18 @@ import '../../moves.dart';
   ]),
       from:'Two-Faced Lines',fractions:'2',
       paths:[
-          Forward_2.changehands(2) +
+          Forward_2.changehands(Hands.RIGHT) +
           RunRight.changeBeats(5).scale(1.0,2.0).skew(2.0,0.0),
 
-          Forward_2.changehands(1) +
+          Forward_2.changehands(Hands.LEFT) +
           SwingRight +
           Forward_2,
 
-          LeadLeft.changeBeats(2).changehands(1).scale(2.0,2.0) +
+          LeadLeft.changeBeats(2).changehands(Hands.LEFT).scale(2.0,2.0) +
           QuarterLeft +
           Forward_2.changeBeats(3.5),
 
-          QuarterLeft.changeBeats(2).changehands(2) +
+          QuarterLeft.changeBeats(2).changehands(Hands.RIGHT) +
           QuarterLeft +
           Forward_4.changeBeats(3.5)
       ]),

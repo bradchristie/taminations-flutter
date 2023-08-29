@@ -19,7 +19,7 @@
 */
 
 import '../../animated_call.dart';
-import '../../formation.dart';
+import '../../common_dart.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> LockEmUp = [
@@ -55,22 +55,22 @@ import '../../moves.dart';
       formation:Formation('Two-Faced Lines LH'),
       from:'Two-Faced Lines',fractions:'3;1.5;4',
       paths:[
-          LeadLeft.changeBeats(3).changehands(1).scale(1.5,3.0) +
+          LeadLeft.changeBeats(3).changehands(Hands.LEFT).scale(1.5,3.0) +
           QuarterLeft.changeBeats(1.5).skew(-1.0,0.5) +
-          CounterRotateRight_4_2.changeBeats(4).changehands(2).skew(0.0,1.0) +
+          CounterRotateRight_4_2.changeBeats(4).changehands(Hands.RIGHT).skew(0.0,1.0) +
           QuarterRight.changeBeats(2).skew(-0.2,0.0),
 
-          LeadLeft.changeBeats(3).changehands(3).scale(0.5,1.0) +
+          LeadLeft.changeBeats(3).changehands(Hands.BOTH).scale(0.5,1.0) +
           LeadRight.changeBeats(1.5).scale(1.0,0.5) +
-          CounterRotateRight_m2_m4.changeBeats(4).changehands(2).skew(0.0,-1.0) +
+          CounterRotateRight_m2_m4.changeBeats(4).changehands(Hands.RIGHT).skew(0.0,-1.0) +
           QuarterRight.changeBeats(2).skew(0.2,0.0),
 
-          LeadLeft.changeBeats(3).changehands(3).scale(0.5,1.0) +
+          LeadLeft.changeBeats(3).changehands(Hands.BOTH).scale(0.5,1.0) +
           LeadRight.changeBeats(1.5).scale(1.0,0.5) +
           HingeRight.changeBeats(4).scale(0.5,1.0).skew(-0.25,0.0) +
           HingeLeft.changeBeats(2).scale(0.75,0.75),
 
-          LeadLeft.changeBeats(3).changehands(1).scale(1.5,3.0) +
+          LeadLeft.changeBeats(3).changehands(Hands.LEFT).scale(1.5,3.0) +
           QuarterLeft.changeBeats(1.5).skew(-1.0,0.5) +
           HingeRight.changeBeats(4).scale(0.5,1.0).skew(0.75,0.0) +
           LeadRight.changeBeats(2).scale(2.25,2.25)

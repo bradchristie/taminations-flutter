@@ -20,7 +20,6 @@
 
 import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> Turnstyle = [
@@ -89,9 +88,9 @@ import '../../moves.dart';
           HingeLeft.changeBeats(2).scale(2.0,2.0).skew(-0.33,-0.33) +
           HingeLeft.changeBeats(2).scale(2.0,2.0).skew(-0.33,0.33),
 
-          QuarterLeft.changeBeats(2).changehands(2).skew(0.33,-0.33) +
-          QuarterLeft.changeBeats(2).changehands(2).skew(-0.33,-0.33) +
-          QuarterLeft.changeBeats(2).changehands(2).skew(-0.33,0.33)
+          QuarterLeft.changeBeats(2).changehands(Hands.RIGHT).skew(0.33,-0.33) +
+          QuarterLeft.changeBeats(2).changehands(Hands.RIGHT).skew(-0.33,-0.33) +
+          QuarterLeft.changeBeats(2).changehands(Hands.RIGHT).skew(-0.33,0.33)
       ]),
 
     AnimatedCall('Turnstyle',
@@ -103,9 +102,9 @@ import '../../moves.dart';
   ]),
       from:'3/4 Lines',
       paths:[
-          QuarterLeft.changeBeats(2).changehands(2).skew(0.33,-0.33) +
-          QuarterLeft.changeBeats(2).changehands(2).skew(-0.33,-0.33) +
-          QuarterLeft.changeBeats(2).changehands(2).skew(-0.33,0.33),
+          QuarterLeft.changeBeats(2).changehands(Hands.RIGHT).skew(0.33,-0.33) +
+          QuarterLeft.changeBeats(2).changehands(Hands.RIGHT).skew(-0.33,-0.33) +
+          QuarterLeft.changeBeats(2).changehands(Hands.RIGHT).skew(-0.33,0.33),
 
           QuarterRight.changeBeats(6).skew(0.0,1.0),
 

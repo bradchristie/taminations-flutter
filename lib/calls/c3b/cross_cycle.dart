@@ -20,7 +20,6 @@
 
 import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> CrossCycle = [
@@ -30,11 +29,11 @@ import '../../moves.dart';
       group:' ',parts:'3;2',
       paths:[
           DodgeRight.skew(1.0,0.0) +
-          CounterRotateRight_0_m2.changehands(2) +
+          CounterRotateRight_0_m2.changehands(Hands.RIGHT) +
           QuarterRight.skew(0.0,1.0),
 
           RunRight.skew(1.0,0.0) +
-          CounterRotateRight_2_0.changehands(2) +
+          CounterRotateRight_2_0.changehands(Hands.RIGHT) +
           QuarterRight.skew(0.0,1.0)
       ]),
 
@@ -74,21 +73,21 @@ import '../../moves.dart';
       from:'Facing Couples',
       paths:[
           Forward_2 +
-          HingeRight.changehands(2) +
-          HingeRight.changeBeats(2).changehands(3),
+          HingeRight.changehands(Hands.RIGHT) +
+          HingeRight.changeBeats(2).changehands(Hands.BOTH),
 
           QuarterLeft.changeBeats(3.5).skew(0.0,1.0) +
-          LeadRight.changeBeats(2).changehands(2).scale(3.0,2.0)
+          LeadRight.changeBeats(2).changehands(Hands.RIGHT).scale(3.0,2.0)
       ]),
 
     AnimatedCall('Cross Cycle',
       formation:Formation('Box RH'),
       from:'Right-Hand Box',
       paths:[
-          UmTurnRight.changeBeats(4).changehands(6).skew(2.0,0.0) +
+          UmTurnRight.changeBeats(4).changehands(Hands.GRIPRIGHT).skew(2.0,0.0) +
           BackSashayLeft.changeBeats(2).scale(1.5,1.0),
 
-          RunRight.changeBeats(4).changehands(6).scale(2.0,2.0).skew(-2.0,0.0)
+          RunRight.changeBeats(4).changehands(Hands.GRIPRIGHT).scale(2.0,2.0).skew(-2.0,0.0)
       ]),
   ];
 

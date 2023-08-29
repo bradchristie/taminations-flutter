@@ -20,7 +20,6 @@
 
 import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> Q14Mix = [
@@ -348,12 +347,12 @@ import '../../moves.dart';
       group:'  ',parts:'2;3',
       paths:[
           HingeRight.changeBeats(2).scale(1.5,3.0) +
-          RunLeft.changeBeats(6).changehands(6).scale(2.0,1.5),
+          RunLeft.changeBeats(6).changehands(Hands.GRIPRIGHT).scale(2.0,1.5),
 
-          HingeRight.changeBeats(2).changehands(3).scale(0.5,1.0) +
-          RunLeft.changeBeats(6).changehands(5).scale(3.0,2.5),
+          HingeRight.changeBeats(2).changehands(Hands.BOTH).scale(0.5,1.0) +
+          RunLeft.changeBeats(6).changehands(Hands.GRIPLEFT).scale(3.0,2.5),
 
-          HingeRight.changeBeats(2).changehands(3).scale(0.5,1.0) +
+          HingeRight.changeBeats(2).changehands(Hands.BOTH).scale(0.5,1.0) +
           DodgeRight +
           SwingRight.scale(0.5,0.5),
 

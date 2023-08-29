@@ -19,7 +19,7 @@
 */
 
 import '../../animated_call.dart';
-import '../../formation.dart';
+import '../../common_dart.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> CrossAndTurn = [
@@ -29,7 +29,7 @@ import '../../moves.dart';
       from:'Facing Couples',
       paths:[
           Forward +
-          ExtendRight.changeBeats(2).changehands(2).scale(2.0,2.0),
+          ExtendRight.changeBeats(2).changehands(Hands.RIGHT).scale(2.0,2.0),
 
           UmTurnLeft
       ]),
@@ -39,12 +39,12 @@ import '../../moves.dart';
       from:'Lines',
       paths:[
           Forward +
-          ExtendRight.changeBeats(2).changehands(2).scale(2.0,2.0),
+          ExtendRight.changeBeats(2).changehands(Hands.RIGHT).scale(2.0,2.0),
 
           UmTurnLeft,
 
           Forward +
-          ExtendRight.changeBeats(2).changehands(2).scale(2.0,2.0),
+          ExtendRight.changeBeats(2).changehands(Hands.RIGHT).scale(2.0,2.0),
 
           UmTurnLeft
       ]),
@@ -54,12 +54,12 @@ import '../../moves.dart';
       from:'Eight Chain Thru',
       paths:[
           Forward.changeBeats(.5).scale(0.5,0.5) +
-          ExtendRight.changeBeats(2).changehands(2).scale(1.5,2.0),
+          ExtendRight.changeBeats(2).changehands(Hands.RIGHT).scale(1.5,2.0),
 
           UmTurnLeft,
 
           Forward.changeBeats(.5).scale(0.5,0.5) +
-          ExtendRight.changeBeats(2).changehands(2).scale(1.5,2.0),
+          ExtendRight.changeBeats(2).changehands(Hands.RIGHT).scale(1.5,2.0),
 
           UmTurnLeft
       ]),
@@ -68,11 +68,11 @@ import '../../moves.dart';
       formation:Formation('Normal Lines'),
       from:'Lines',group:' ',
       paths:[
-          ExtendRight.changeBeats(2).changehands(2).scale(2.0,1.5) +
-          ExtendRight.changeBeats(4).changehands(2).scale(2.0,2.5),
+          ExtendRight.changeBeats(2).changehands(Hands.RIGHT).scale(2.0,1.5) +
+          ExtendRight.changeBeats(4).changehands(Hands.RIGHT).scale(2.0,2.5),
 
-          ExtendRight.changeBeats(2).changehands(1).scale(2.0,0.5) +
-          ExtendRight.changeBeats(4).changehands(1).scale(2.0,3.5),
+          ExtendRight.changeBeats(2).changehands(Hands.LEFT).scale(2.0,0.5) +
+          ExtendRight.changeBeats(4).changehands(Hands.LEFT).scale(2.0,3.5),
 
           BeauWheel.changeBeats(6),
 
@@ -101,12 +101,12 @@ import '../../moves.dart';
       group:' ',
       paths:[
           Forward.changeBeats(.5).scale(0.5,0.5) +
-          ExtendRight.changeBeats(4).changehands(2).scale(1.5,4.0),
+          ExtendRight.changeBeats(4).changehands(Hands.RIGHT).scale(1.5,4.0),
 
           UmTurnLeft,
 
           Forward.changeBeats(.5).scale(0.5,0.5) +
-          ExtendRight.changeBeats(4).changehands(2).scale(1.5,4.0),
+          ExtendRight.changeBeats(4).changehands(Hands.RIGHT).scale(1.5,4.0),
 
           UmTurnLeft
       ]),
@@ -122,7 +122,7 @@ import '../../moves.dart';
           UmTurnLeft,
 
           Forward.changeBeats(.5).scale(0.5,0.5) +
-          ExtendRight.changeBeats(2).changehands(2).scale(1.5,2.0),
+          ExtendRight.changeBeats(2).changehands(Hands.RIGHT).scale(1.5,2.0),
 
           UmTurnLeft
       ]),
@@ -132,12 +132,12 @@ import '../../moves.dart';
       group:' ',
       paths:[
           Forward.changeBeats(.5).scale(0.5,0.5) +
-          ExtendRight.changeBeats(4).changehands(2).scale(1.5,4.0),
+          ExtendRight.changeBeats(4).changehands(Hands.RIGHT).scale(1.5,4.0),
 
           UmTurnLeft,
 
           Forward.changeBeats(.5).scale(0.5,0.5) +
-          ExtendRight.changeBeats(4).changehands(2).scale(1.5,4.0),
+          ExtendRight.changeBeats(4).changehands(Hands.RIGHT).scale(1.5,4.0),
 
           UmTurnLeft
       ]),
@@ -149,7 +149,7 @@ import '../../moves.dart';
           UmTurnRight,
 
           Forward +
-          ExtendLeft.changeBeats(2).changehands(1).scale(2.0,2.0)
+          ExtendLeft.changeBeats(2).changehands(Hands.LEFT).scale(2.0,2.0)
       ]),
 
     AnimatedCall('Reverse Cross and Turn',
@@ -159,12 +159,12 @@ import '../../moves.dart';
           UmTurnRight,
 
           Forward +
-          ExtendLeft.changeBeats(2).changehands(1).scale(3.0,2.0),
+          ExtendLeft.changeBeats(2).changehands(Hands.LEFT).scale(3.0,2.0),
 
           UmTurnRight,
 
           Forward +
-          ExtendLeft.changeBeats(2).changehands(1).scale(3.0,2.0)
+          ExtendLeft.changeBeats(2).changehands(Hands.LEFT).scale(3.0,2.0)
       ]),
 
     AnimatedCall('Reverse Cross and Turn',
@@ -174,12 +174,12 @@ import '../../moves.dart';
           UmTurnRight,
 
           Forward.changeBeats(.5).scale(0.5,0.5) +
-          ExtendLeft.changeBeats(2).changehands(1).scale(1.5,2.0),
+          ExtendLeft.changeBeats(2).changehands(Hands.LEFT).scale(1.5,2.0),
 
           UmTurnRight,
 
           Forward.changeBeats(.5).scale(0.5,0.5) +
-          ExtendLeft.changeBeats(2).changehands(1).scale(1.5,2.0)
+          ExtendLeft.changeBeats(2).changehands(Hands.LEFT).scale(1.5,2.0)
       ]),
 
     AnimatedCall('As Couples Reverse Cross and Turn',
@@ -190,11 +190,11 @@ import '../../moves.dart';
 
           BelleReverseWheel,
 
-          ExtendLeft.changeBeats(2).changehands(2).scale(2.0,0.5) +
-          ExtendLeft.changeBeats(4).changehands(2).scale(2.0,3.5),
+          ExtendLeft.changeBeats(2).changehands(Hands.RIGHT).scale(2.0,0.5) +
+          ExtendLeft.changeBeats(4).changehands(Hands.RIGHT).scale(2.0,3.5),
 
-          ExtendLeft.changeBeats(2).changehands(1).scale(2.0,1.5) +
-          ExtendLeft.changeBeats(4).changehands(1).scale(2.0,2.5)
+          ExtendLeft.changeBeats(2).changehands(Hands.LEFT).scale(2.0,1.5) +
+          ExtendLeft.changeBeats(4).changehands(Hands.LEFT).scale(2.0,2.5)
       ]),
 
     AnimatedCall('All 8 Reverse Cross and Turn',
@@ -221,12 +221,12 @@ import '../../moves.dart';
           UmTurnRight,
 
           Forward.changeBeats(.5).scale(0.5,0.5) +
-          ExtendLeft.changeBeats(4).changehands(1).scale(1.5,4.0),
+          ExtendLeft.changeBeats(4).changehands(Hands.LEFT).scale(1.5,4.0),
 
           UmTurnRight,
 
           Forward.changeBeats(.5).scale(0.5,0.5) +
-          ExtendLeft.changeBeats(4).changehands(1).scale(1.5,4.0)
+          ExtendLeft.changeBeats(4).changehands(Hands.LEFT).scale(1.5,4.0)
       ]),
 
     AnimatedCall('Concentric Reverse Cross and Turn',
@@ -242,7 +242,7 @@ import '../../moves.dart';
           UmTurnRight,
 
           Forward.changeBeats(.5).scale(0.5,0.5) +
-          ExtendLeft.changeBeats(2).changehands(1).scale(1.5,2.0)
+          ExtendLeft.changeBeats(2).changehands(Hands.LEFT).scale(1.5,2.0)
       ]),
 
     AnimatedCall('"O" Reverse Cross and Turn',
@@ -252,12 +252,12 @@ import '../../moves.dart';
           UmTurnRight,
 
           Forward.changeBeats(.5).scale(0.5,0.5) +
-          ExtendLeft.changeBeats(4).changehands(1).scale(1.5,4.0),
+          ExtendLeft.changeBeats(4).changehands(Hands.LEFT).scale(1.5,4.0),
 
           UmTurnRight,
 
           Forward.changeBeats(.5).scale(0.5,0.5) +
-          ExtendLeft.changeBeats(4).changehands(1).scale(1.5,4.0)
+          ExtendLeft.changeBeats(4).changehands(Hands.LEFT).scale(1.5,4.0)
       ]),
   ];
 

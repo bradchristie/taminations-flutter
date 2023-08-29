@@ -19,7 +19,7 @@
 */
 
 import '../../animated_call.dart';
-import '../../formation.dart';
+import '../../common_dart.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> Q14WheelTheOcean = [
@@ -32,7 +32,7 @@ import '../../moves.dart';
           Stand.changeBeats(4).changehands(0),
 
           HingeLeft +
-          ExtendLeft.changeBeats(3).changehands(2).scale(3.0,2.0) +
+          ExtendLeft.changeBeats(3).changehands(Hands.RIGHT).scale(3.0,2.0) +
           Forward
       ]),
 
@@ -41,7 +41,7 @@ import '../../moves.dart';
       from:'Left-Hand Two-Faced Lines',parts:'1.5',
       paths:[
           HingeLeft +
-          ExtendLeft.changeBeats(3).changehands(2).scale(3.0,2.0) +
+          ExtendLeft.changeBeats(3).changehands(Hands.RIGHT).scale(3.0,2.0) +
           Forward,
 
           BackHingeRight +
@@ -51,7 +51,7 @@ import '../../moves.dart';
           Stand.changeBeats(4).changehands(0),
 
           HingeLeft +
-          ExtendLeft.changeBeats(3).changehands(2).scale(3.0,2.0) +
+          ExtendLeft.changeBeats(3).changehands(Hands.RIGHT).scale(3.0,2.0) +
           Forward
       ]),
 
@@ -60,7 +60,7 @@ import '../../moves.dart';
       from:'Left-Hand Two-Faced Tidal Line',parts:'1.5',
       paths:[
           HingeLeft.scale(1.0,0.5) +
-          ExtendLeft.changeBeats(2).changehands(2).scale(1.0,2.0) +
+          ExtendLeft.changeBeats(2).changehands(Hands.RIGHT).scale(1.0,2.0) +
           Forward,
 
           BackHingeRight.scale(1.0,0.5) +
@@ -70,7 +70,7 @@ import '../../moves.dart';
           Stand.changeBeats(3).changehands(0),
 
           HingeLeft.scale(1.0,0.5) +
-          ExtendLeft.changeBeats(2).changehands(2).scale(1.0,2.0) +
+          ExtendLeft.changeBeats(2).changehands(Hands.RIGHT).scale(1.0,2.0) +
           Forward
       ]),
 
@@ -78,15 +78,15 @@ import '../../moves.dart';
       formation:Formation('Two-Faced Line RH'),
       from:'Right-Hand Two-Faced Line',parts:'6',
       paths:[
-          QuarterLeft.changeBeats(2).changehands(2).skew(0.33,-0.33) +
-          QuarterLeft.changeBeats(2).changehands(2).skew(-0.33,-0.33) +
-          QuarterLeft.changeBeats(2).changehands(2).skew(-0.33,0.33) +
+          QuarterLeft.changeBeats(2).changehands(Hands.RIGHT).skew(0.33,-0.33) +
+          QuarterLeft.changeBeats(2).changehands(Hands.RIGHT).skew(-0.33,-0.33) +
+          QuarterLeft.changeBeats(2).changehands(Hands.RIGHT).skew(-0.33,0.33) +
           Stand.changeBeats(4).changehands(0),
 
           HingeLeft.changeBeats(2).scale(2.0,2.0).skew(0.33,-0.33) +
           HingeLeft.changeBeats(2).scale(2.0,2.0).skew(-0.33,-0.33) +
           HingeLeft.changeBeats(2).scale(2.0,2.0).skew(-0.33,0.33) +
-          ExtendLeft.changeBeats(3).changehands(2).scale(3.0,2.0) +
+          ExtendLeft.changeBeats(3).changehands(Hands.RIGHT).scale(3.0,2.0) +
           Forward
       ]),
 
@@ -94,26 +94,26 @@ import '../../moves.dart';
       formation:Formation('Two-Faced Lines RH'),
       from:'Right-Hand Two-Faced Lines',parts:'6',
       paths:[
-          QuarterLeft.changeBeats(2).changehands(2).skew(0.33,-0.33) +
-          QuarterLeft.changeBeats(2).changehands(2).skew(-0.33,-0.33) +
-          QuarterLeft.changeBeats(2).changehands(2).skew(-0.33,0.33) +
+          QuarterLeft.changeBeats(2).changehands(Hands.RIGHT).skew(0.33,-0.33) +
+          QuarterLeft.changeBeats(2).changehands(Hands.RIGHT).skew(-0.33,-0.33) +
+          QuarterLeft.changeBeats(2).changehands(Hands.RIGHT).skew(-0.33,0.33) +
           Stand.changeBeats(4).changehands(0),
 
           HingeLeft.changeBeats(2).scale(2.0,2.0).skew(0.33,-0.33) +
           HingeLeft.changeBeats(2).scale(2.0,2.0).skew(-0.33,-0.33) +
           HingeLeft.changeBeats(2).scale(2.0,2.0).skew(-0.33,0.33) +
-          ExtendLeft.changeBeats(3).changehands(2).scale(3.0,2.0) +
+          ExtendLeft.changeBeats(3).changehands(Hands.RIGHT).scale(3.0,2.0) +
           Forward,
 
           HingeLeft.changeBeats(2).scale(2.0,2.0).skew(0.33,-0.33) +
           HingeLeft.changeBeats(2).scale(2.0,2.0).skew(-0.33,-0.33) +
           HingeLeft.changeBeats(2).scale(2.0,2.0).skew(-0.33,0.33) +
-          ExtendLeft.changeBeats(3).changehands(2).scale(3.0,2.0) +
+          ExtendLeft.changeBeats(3).changehands(Hands.RIGHT).scale(3.0,2.0) +
           Forward,
 
-          QuarterLeft.changeBeats(2).changehands(2).skew(0.33,-0.33) +
-          QuarterLeft.changeBeats(2).changehands(2).skew(-0.33,-0.33) +
-          QuarterLeft.changeBeats(2).changehands(2).skew(-0.33,0.33) +
+          QuarterLeft.changeBeats(2).changehands(Hands.RIGHT).skew(0.33,-0.33) +
+          QuarterLeft.changeBeats(2).changehands(Hands.RIGHT).skew(-0.33,-0.33) +
+          QuarterLeft.changeBeats(2).changehands(Hands.RIGHT).skew(-0.33,0.33) +
           Stand.changeBeats(4).changehands(0)
       ]),
 
@@ -121,24 +121,24 @@ import '../../moves.dart';
       formation:Formation('Two-Faced Tidal Line RH'),
       from:'Right-Hand Two-Faced Tidal Line',parts:'6',
       paths:[
-          QuarterLeft.changeBeats(2).changehands(2).skew(0.33,-0.17) +
-          QuarterLeft.changeBeats(2).changehands(2).skew(-0.17,-0.33) +
-          QuarterLeft.changeBeats(2).changehands(2).skew(-0.33,0.17) +
+          QuarterLeft.changeBeats(2).changehands(Hands.RIGHT).skew(0.33,-0.17) +
+          QuarterLeft.changeBeats(2).changehands(Hands.RIGHT).skew(-0.17,-0.33) +
+          QuarterLeft.changeBeats(2).changehands(Hands.RIGHT).skew(-0.33,0.17) +
           Stand.changeBeats(4).changehands(0),
 
           HingeLeft.changeBeats(2).skew(0.33,-0.17) +
           HingeLeft.changeBeats(2).skew(-0.17,-0.33) +
           HingeLeft.changeBeats(2).skew(-0.33,0.17) +
-          ExtendLeft.changeBeats(3).changehands(2).scale(2.0,1.0),
+          ExtendLeft.changeBeats(3).changehands(Hands.RIGHT).scale(2.0,1.0),
 
           HingeLeft.changeBeats(2).skew(0.33,-0.17) +
           HingeLeft.changeBeats(2).skew(-0.17,-0.33) +
           HingeLeft.changeBeats(2).skew(-0.33,0.17) +
-          ExtendLeft.changeBeats(3).changehands(2).scale(2.0,1.0),
+          ExtendLeft.changeBeats(3).changehands(Hands.RIGHT).scale(2.0,1.0),
 
-          QuarterLeft.changeBeats(2).changehands(2).skew(0.33,-0.17) +
-          QuarterLeft.changeBeats(2).changehands(2).skew(-0.17,-0.33) +
-          QuarterLeft.changeBeats(2).changehands(2).skew(-0.33,0.17) +
+          QuarterLeft.changeBeats(2).changehands(Hands.RIGHT).skew(0.33,-0.17) +
+          QuarterLeft.changeBeats(2).changehands(Hands.RIGHT).skew(-0.17,-0.33) +
+          QuarterLeft.changeBeats(2).changehands(Hands.RIGHT).skew(-0.33,0.17) +
           Stand.changeBeats(4).changehands(0)
       ]),
 
@@ -191,9 +191,9 @@ import '../../moves.dart';
       formation:Formation('Two-Faced Line RH'),
       from:'Right-Hand Two-Faced Line',parts:'4.5',
       paths:[
-          QuarterLeft.changehands(2).skew(0.33,-0.33) +
-          QuarterLeft.changehands(2).skew(-0.33,-0.33) +
-          QuarterLeft.changehands(2).skew(-0.33,0.33) +
+          QuarterLeft.changehands(Hands.RIGHT).skew(0.33,-0.33) +
+          QuarterLeft.changehands(Hands.RIGHT).skew(-0.33,-0.33) +
+          QuarterLeft.changehands(Hands.RIGHT).skew(-0.33,0.33) +
           DodgeRight.changeBeats(4),
 
           HingeLeft.scale(2.0,2.0).skew(0.33,-0.33) +
@@ -206,9 +206,9 @@ import '../../moves.dart';
       formation:Formation('Two-Faced Lines RH'),
       from:'Right-Hand Two-Faced Lines',parts:'4.5',
       paths:[
-          QuarterLeft.changehands(2).skew(0.33,-0.33) +
-          QuarterLeft.changehands(2).skew(-0.33,-0.33) +
-          QuarterLeft.changehands(2).skew(-0.33,0.33) +
+          QuarterLeft.changehands(Hands.RIGHT).skew(0.33,-0.33) +
+          QuarterLeft.changehands(Hands.RIGHT).skew(-0.33,-0.33) +
+          QuarterLeft.changehands(Hands.RIGHT).skew(-0.33,0.33) +
           DodgeRight.changeBeats(4),
 
           HingeLeft.scale(2.0,2.0).skew(0.33,-0.33) +
@@ -221,9 +221,9 @@ import '../../moves.dart';
           HingeLeft.scale(2.0,2.0).skew(-0.33,0.33) +
           Forward_4,
 
-          QuarterLeft.changehands(2).skew(0.33,-0.33) +
-          QuarterLeft.changehands(2).skew(-0.33,-0.33) +
-          QuarterLeft.changehands(2).skew(-0.33,0.33) +
+          QuarterLeft.changehands(Hands.RIGHT).skew(0.33,-0.33) +
+          QuarterLeft.changehands(Hands.RIGHT).skew(-0.33,-0.33) +
+          QuarterLeft.changehands(Hands.RIGHT).skew(-0.33,0.33) +
           DodgeRight.changeBeats(4)
       ]),
 
@@ -231,9 +231,9 @@ import '../../moves.dart';
       formation:Formation('Two-Faced Tidal Line RH'),
       from:'Right-Hand Two-Faced Tidal Line',parts:'6',
       paths:[
-          QuarterLeft.changeBeats(2).changehands(2).skew(0.33,-0.17) +
-          QuarterLeft.changeBeats(2).changehands(2).skew(-0.17,-0.33) +
-          QuarterLeft.changeBeats(2).changehands(2).skew(-0.33,0.17) +
+          QuarterLeft.changeBeats(2).changehands(Hands.RIGHT).skew(0.33,-0.17) +
+          QuarterLeft.changeBeats(2).changehands(Hands.RIGHT).skew(-0.17,-0.33) +
+          QuarterLeft.changeBeats(2).changehands(Hands.RIGHT).skew(-0.33,0.17) +
           DodgeRight,
 
           HingeLeft.changeBeats(2).skew(0.33,-0.17) +
@@ -246,9 +246,9 @@ import '../../moves.dart';
           HingeLeft.changeBeats(2).scale(2.0,1.0).skew(-0.33,0.17) +
           Forward_2.changeBeats(3),
 
-          QuarterLeft.changeBeats(2).changehands(2).skew(0.33,-0.17) +
-          QuarterLeft.changeBeats(2).changehands(2).skew(-0.17,-0.33) +
-          QuarterLeft.changeBeats(2).changehands(2).skew(-0.33,0.17) +
+          QuarterLeft.changeBeats(2).changehands(Hands.RIGHT).skew(0.33,-0.17) +
+          QuarterLeft.changeBeats(2).changehands(Hands.RIGHT).skew(-0.17,-0.33) +
+          QuarterLeft.changeBeats(2).changehands(Hands.RIGHT).skew(-0.33,0.17) +
           DodgeRight
       ]),
   ];

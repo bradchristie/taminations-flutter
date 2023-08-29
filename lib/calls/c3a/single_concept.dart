@@ -20,9 +20,7 @@
 
 import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formation.dart';
 import '../../moves.dart';
-
 import '../a2/single_wheel.dart' as a2;
 
   final List<AnimatedCall> SingleConcept = [
@@ -219,21 +217,21 @@ import '../a2/single_wheel.dart' as a2;
       formation:Formation('Two-Faced Lines RH'),
       group:' ',
       paths:[
-          Forward_2.changehands(2) +
-          LeadRight.changeBeats(4).changehands(2).scale(3.0,3.0) +
-          Forward_2.changehands(2),
+          Forward_2.changehands(Hands.RIGHT) +
+          LeadRight.changeBeats(4).changehands(Hands.RIGHT).scale(3.0,3.0) +
+          Forward_2.changehands(Hands.RIGHT),
 
-          Forward_2.changehands(1) +
-          LeadRight.changeBeats(4).changehands(1) +
-          Forward_2.changehands(1),
+          Forward_2.changehands(Hands.LEFT) +
+          LeadRight.changeBeats(4).changehands(Hands.LEFT) +
+          Forward_2.changehands(Hands.LEFT),
 
-          FlipRight.changeBeats(4).changehands(1) +
-          Forward_3.changehands(1) +
-          QuarterRight.changeBeats(2).changehands(1).skew(0.0,1.0),
+          FlipRight.changeBeats(4).changehands(Hands.LEFT) +
+          Forward_3.changehands(Hands.LEFT) +
+          QuarterRight.changeBeats(2).changehands(Hands.LEFT).skew(0.0,1.0),
 
-          RunRight.changeBeats(4).changehands(2).scale(2.0,3.0) +
-          Forward_3.changehands(2) +
-          LeadRight.changeBeats(2).changehands(2).scale(2.0,1.0)
+          RunRight.changeBeats(4).changehands(Hands.RIGHT).scale(2.0,3.0) +
+          Forward_3.changehands(Hands.RIGHT) +
+          LeadRight.changeBeats(2).changehands(Hands.RIGHT).scale(2.0,1.0)
       ]),
 
     AnimatedCall('Stretch Single Checkmate',

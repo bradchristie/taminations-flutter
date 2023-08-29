@@ -19,7 +19,7 @@
 */
 
 import '../../animated_call.dart';
-import '../../formation.dart';
+import '../../common_dart.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> TurnToALine = [
@@ -419,17 +419,17 @@ import '../../moves.dart';
       formation:Formation('Two-Faced Lines RH'),
       group:'  ',
       paths:[
-          QuarterLeft.changeBeats(2).changehands(2) +
-          QuarterLeft.changeBeats(2).changehands(2).skew(-0.5,-2.0),
+          QuarterLeft.changeBeats(2).changehands(Hands.RIGHT) +
+          QuarterLeft.changeBeats(2).changehands(Hands.RIGHT).skew(-0.5,-2.0),
 
-          LeadLeft.changeBeats(2).changehands(1).scale(2.0,2.0) +
-          QuarterLeft.changeBeats(2).changehands(1).skew(0.5,0.0),
+          LeadLeft.changeBeats(2).changehands(Hands.LEFT).scale(2.0,2.0) +
+          QuarterLeft.changeBeats(2).changehands(Hands.LEFT).skew(0.5,0.0),
 
-          QuarterRight.changeBeats(2).changehands(1).skew(-1.0,-1.0) +
-          LeadRight.changeBeats(2).changehands(1).scale(0.5,1.0),
+          QuarterRight.changeBeats(2).changehands(Hands.LEFT).skew(-1.0,-1.0) +
+          LeadRight.changeBeats(2).changehands(Hands.LEFT).scale(0.5,1.0),
 
-          LeadRight.changeBeats(2).changehands(2).scale(1.0,3.0) +
-          LeadRight.changeBeats(2).changehands(2).scale(1.5,3.0)
+          LeadRight.changeBeats(2).changehands(Hands.RIGHT).scale(1.0,3.0) +
+          LeadRight.changeBeats(2).changehands(Hands.RIGHT).scale(1.5,3.0)
       ]),
 
     AnimatedCall('Butterfly Turn to a Line',

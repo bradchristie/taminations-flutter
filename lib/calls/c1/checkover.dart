@@ -20,7 +20,6 @@
 
 import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> Checkover = [
@@ -49,13 +48,13 @@ import '../../moves.dart';
           HingeRight.scale(0.5,1.0) +
           HingeRight.scale(0.75,0.5) +
           LeadRight.changeBeats(2).scale(2.0,0.75) +
-          Forward_2.changehands(1),
+          Forward_2.changehands(Hands.LEFT),
 
           Forward_2 +
           HingeRight.scale(0.5,1.0) +
           HingeRight.scale(0.75,0.5) +
           LeadRight.changeBeats(2).scale(1.5,0.75) +
-          ExtendLeft.changeBeats(2).changehands(2).scale(2.0,0.5)
+          ExtendLeft.changeBeats(2).changehands(Hands.RIGHT).scale(2.0,0.5)
       ]),
 
     AnimatedCall('Checkover',
@@ -68,13 +67,13 @@ import '../../moves.dart';
           HingeLeft.scale(0.5,1.0) +
           HingeLeft.scale(0.75,0.5) +
           LeadLeft.changeBeats(2).scale(1.5,0.75) +
-          ExtendRight.changeBeats(2).changehands(1).scale(2.0,0.5),
+          ExtendRight.changeBeats(2).changehands(Hands.LEFT).scale(2.0,0.5),
 
           Forward_2 +
           HingeLeft.scale(0.5,1.0) +
           HingeLeft.scale(0.75,0.5) +
           LeadLeft.changeBeats(2).scale(2.0,0.75) +
-          Forward_2.changehands(2),
+          Forward_2.changehands(Hands.RIGHT),
 
           Forward_2 +
           FlipLeft.changeBeats(2).scale(1.0,1.5) +

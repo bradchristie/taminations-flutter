@@ -20,7 +20,6 @@
 
 import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> NuclearReaction = [
@@ -57,24 +56,24 @@ import '../../moves.dart';
       paths:[
           Stand.changeBeats(3) +
           Forward_5 +
-          CounterRotateRight_m1_m3.changehands(3),
+          CounterRotateRight_m1_m3.changehands(Hands.BOTH),
 
           ExtendLeft.changeBeats(1.5).scale(1.5,0.5) +
           ExtendRight.changeBeats(1.5).scale(1.5,0.5) +
           HingeRight.changeBeats(2.5) +
           QuarterRight.changeBeats(2.5).skew(1.0,1.0) +
-          CounterRotateRight_5_m1.changehands(2),
+          CounterRotateRight_5_m1.changehands(Hands.RIGHT),
 
           Stand.changeBeats(3) +
           BackHingeLeft.changeBeats(2.5) +
           LeadRight.changeBeats(2.5) +
-          CounterRotateRight_1_m5.changehands(2),
+          CounterRotateRight_1_m5.changehands(Hands.RIGHT),
 
           ExtendLeft.changeBeats(1.5).scale(1.5,0.5) +
           ExtendRight.changeBeats(1.5).scale(1.5,0.5) +
           RunRight.changeBeats(3.7) +
           Forward.changeBeats(1.3) +
-          CounterRotateRight_3_1.changehands(3)
+          CounterRotateRight_3_1.changehands(Hands.BOTH)
       ]),
 
     AnimatedCall('Nuclear Reaction',
@@ -83,7 +82,7 @@ import '../../moves.dart';
       paths:[
           Stand.changeBeats(3) +
           Forward_5 +
-          CounterRotateRight_m1_m3.changeBeats(5).changehands(2),
+          CounterRotateRight_m1_m3.changeBeats(5).changehands(Hands.RIGHT),
 
           ExtendLeft.changeBeats(1.5).scale(1.5,0.5) +
           ExtendRight.changeBeats(1.5).scale(1.5,0.5) +
@@ -96,7 +95,7 @@ import '../../moves.dart';
           ExtendRight.changeBeats(1.5).scale(1.5,0.5) +
           RunRight.changeBeats(3.7) +
           Forward.changeBeats(1.3) +
-          CounterRotateRight_3_1.changeBeats(5).changehands(2),
+          CounterRotateRight_3_1.changeBeats(5).changehands(Hands.RIGHT),
 
           Stand.changeBeats(3) +
           HingeRight.changeBeats(2.5) +
@@ -111,7 +110,7 @@ import '../../moves.dart';
       paths:[
           Stand.changeBeats(3) +
           Forward_5 +
-          CounterRotateRight_m1_m3.changehands(3),
+          CounterRotateRight_m1_m3.changehands(Hands.BOTH),
 
           ExtendLeft.changeBeats(2).scale(2.0,2.0) +
           Forward +
@@ -128,7 +127,7 @@ import '../../moves.dart';
           Forward +
           RunRight.changeBeats(3.7) +
           Forward.changeBeats(1.3) +
-          CounterRotateRight_3_1.changehands(3)
+          CounterRotateRight_3_1.changehands(Hands.BOTH)
       ]),
 
     AnimatedCall('Cross Nuclear Reaction',
@@ -150,7 +149,7 @@ import '../../moves.dart';
           ExtendRight.changeBeats(2).scale(2.0,2.0) +
           UmTurnLeft.changeBeats(2).skew(-2.0,0.0) +
           Forward_3 +
-          CounterRotateRight_m1_m3.changeBeats(5).changehands(2),
+          CounterRotateRight_m1_m3.changeBeats(5).changehands(Hands.RIGHT),
 
           Forward +
           ExtendRight.changeBeats(2).scale(2.0,2.0) +
@@ -162,7 +161,7 @@ import '../../moves.dart';
           Stand.changeBeats(3) +
           RunRight.changeBeats(3.7) +
           Forward.changeBeats(1.3) +
-          CounterRotateRight_3_1.changeBeats(5).changehands(3)
+          CounterRotateRight_3_1.changeBeats(5).changehands(Hands.BOTH)
       ]),
   ];
 

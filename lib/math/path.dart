@@ -22,6 +22,7 @@ import 'package:xml/xml.dart';
 
 import '../cloneable.dart';
 import '../extensions.dart';
+import 'hands.dart';
 import 'matrix.dart';
 import 'movement.dart';
 

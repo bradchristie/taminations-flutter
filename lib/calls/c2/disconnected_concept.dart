@@ -20,7 +20,6 @@
 
 import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> DisconnectedConcept = [
@@ -91,7 +90,7 @@ import '../../moves.dart';
           RunLeft.changeBeats(6).scale(2.0,2.0) +
           Stand,
 
-          Stand.changeBeats(7).changehands(2)
+          Stand.changeBeats(7).changehands(Hands.RIGHT)
       ]),
 
     AnimatedCall('Girls Disconnected Swing Thru',
@@ -106,7 +105,7 @@ import '../../moves.dart';
           SwingRight.scale(0.5,0.5) +
           Stand.changeBeats(4).changehands(0),
 
-          Stand.changeBeats(7).changehands(2)
+          Stand.changeBeats(7).changehands(Hands.RIGHT)
       ]),
 
     AnimatedCall('Girls Disconnected Switch the Wave',
@@ -120,7 +119,7 @@ import '../../moves.dart';
           RunRight.scale(0.5,0.5) +
           Stand.changeBeats(3).changehands(0),
 
-          Stand.changeBeats(6).changehands(2)
+          Stand.changeBeats(6).changehands(Hands.RIGHT)
       ]),
 
     AnimatedCall('Ends Disconnected Chase Right',
@@ -131,9 +130,9 @@ import '../../moves.dart';
           Forward_2 +
           RunRight.changeBeats(6).scale(2.0,3.0),
 
-          Stand.changeBeats(11).changehands(1),
+          Stand.changeBeats(11).changehands(Hands.LEFT),
 
-          Stand.changeBeats(11).changehands(2),
+          Stand.changeBeats(11).changehands(Hands.RIGHT),
 
           RunRight.changeBeats(6).scale(2.0,3.0) +
           Forward_4.changeBeats(5)
@@ -147,9 +146,9 @@ import '../../moves.dart';
           SwingRight.scale(0.75,0.75) +
           ExtendLeft.changeBeats(2).scale(2.0,2.25),
 
-          Stand.changeBeats(7).changehands(1),
+          Stand.changeBeats(7).changehands(Hands.LEFT),
 
-          Stand.changeBeats(7).changehands(1),
+          Stand.changeBeats(7).changehands(Hands.LEFT),
 
           RunRight.changeBeats(7).scale(2.0,3.0)
       ]),
@@ -160,9 +159,9 @@ import '../../moves.dart';
       paths:[
           RunRight.changeBeats(6).scale(1.5,3.0),
 
-          Stand.changeBeats(6).changehands(2),
+          Stand.changeBeats(6).changehands(Hands.RIGHT),
 
-          Stand.changeBeats(6).changehands(1),
+          Stand.changeBeats(6).changehands(Hands.LEFT),
 
           Forward_4.changeBeats(6)
       ]),

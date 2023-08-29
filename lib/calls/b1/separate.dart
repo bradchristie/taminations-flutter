@@ -20,7 +20,6 @@
 
 import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> Separate = [
@@ -33,18 +32,18 @@ import '../../moves.dart';
 
           ExtendRight.changeBeats(3).scale(2.0,2.0),
 
-          Forward_2.changeBeats(3).changehands(2),
+          Forward_2.changeBeats(3).changehands(Hands.RIGHT),
 
-          Forward_2.changeBeats(3).changehands(1)
+          Forward_2.changeBeats(3).changehands(Hands.LEFT)
       ]),
 
     AnimatedCall('Sides Separate',
       formation:Formation('Static Square'),
       group:' ',actives:'Sides',
       paths:[
-          Forward_2.changeBeats(3).changehands(2),
+          Forward_2.changeBeats(3).changehands(Hands.RIGHT),
 
-          Forward_2.changeBeats(3).changehands(1),
+          Forward_2.changeBeats(3).changehands(Hands.LEFT),
 
           ExtendLeft.changeBeats(3).scale(2.0,2.0),
 
@@ -57,15 +56,15 @@ import '../../moves.dart';
       paths:[
           ExtendLeft.changeBeats(3).scale(2.0,2.5) +
           Forward +
-          QuarterRight.changehands(6).skew(1.0,-0.5),
+          QuarterRight.changehands(Hands.GRIPRIGHT).skew(1.0,-0.5),
 
           ExtendRight.changeBeats(3).scale(2.0,1.5) +
           Forward +
-          QuarterLeft.changehands(6).skew(1.0,-0.5),
+          QuarterLeft.changehands(Hands.GRIPRIGHT).skew(1.0,-0.5),
 
-          Forward_2.changeBeats(3).changehands(2),
+          Forward_2.changeBeats(3).changehands(Hands.RIGHT),
 
-          Forward_2.changeBeats(3).changehands(1)
+          Forward_2.changeBeats(3).changehands(Hands.LEFT)
       ]),
 
     AnimatedCall('Heads Pass Thru, Separate Around 1 to a Line',
@@ -82,10 +81,10 @@ import '../../moves.dart';
           RunRight.changeBeats(4).scale(1.0,1.5) +
           LeadRight.changeBeats(3).scale(2.0,2.0),
 
-          Stand.changeBeats(9).changehands(2) +
+          Stand.changeBeats(9).changehands(Hands.RIGHT) +
           ExtendLeft.changeBeats(4).scale(1.0,2.0),
 
-          Stand.changeBeats(9).changehands(1) +
+          Stand.changeBeats(9).changehands(Hands.LEFT) +
           ExtendRight.changeBeats(4).scale(1.0,2.0)
       ]),
 
@@ -105,12 +104,12 @@ import '../../moves.dart';
           LeadRight.changeBeats(3).scale(2.0,2.0) +
           Forward,
 
-          Stand.changeBeats(8).changehands(2) +
+          Stand.changeBeats(8).changehands(Hands.RIGHT) +
           DodgeLeft.changeBeats(2).scale(1.0,0.75) +
           Stand.changeBeats(2) +
           DodgeRight.changeBeats(2).scale(1.0,0.75),
 
-          Stand.changeBeats(8).changehands(1) +
+          Stand.changeBeats(8).changehands(Hands.LEFT) +
           DodgeRight.changeBeats(2).scale(1.0,0.75) +
           Stand.changeBeats(2) +
           DodgeLeft.changeBeats(2).scale(1.0,0.75)
@@ -135,14 +134,14 @@ import '../../moves.dart';
           LeadRight.changeBeats(2).scale(1.0,2.0),
 
           Stand.changeBeats(6) +
-          Forward.changeBeats(3).changehands(2) +
+          Forward.changeBeats(3).changehands(Hands.RIGHT) +
           Stand.changeBeats(6) +
-          Back.changeBeats(2).changehands(2),
+          Back.changeBeats(2).changehands(Hands.RIGHT),
 
           Stand.changeBeats(6) +
-          Forward.changeBeats(3).changehands(1) +
+          Forward.changeBeats(3).changehands(Hands.LEFT) +
           Stand.changeBeats(6) +
-          Back.changeBeats(2).changehands(1)
+          Back.changeBeats(2).changehands(Hands.LEFT)
       ]),
 
     AnimatedCall('Heads Pass Thru, Separate Around 2 to a Line',
@@ -162,10 +161,10 @@ import '../../moves.dart';
           LeadRight.changeBeats(3).scale(3.0,2.5),
 
           Stand.changeBeats(6) +
-          Forward.changeBeats(3).changehands(2),
+          Forward.changeBeats(3).changehands(Hands.RIGHT),
 
           Stand.changeBeats(6) +
-          Forward.changeBeats(3).changehands(1)
+          Forward.changeBeats(3).changehands(Hands.LEFT)
       ]),
 
     AnimatedCall('Heads Pass Thru, Separate Around 2; Meet Your Partner and Dosado',
@@ -193,10 +192,10 @@ import '../../moves.dart';
           RetreatLeft.scale(2.0,0.5),
 
           Stand.changeBeats(6) +
-          Forward.changeBeats(3).changehands(2),
+          Forward.changeBeats(3).changehands(Hands.RIGHT),
 
           Stand.changeBeats(6) +
-          Forward.changeBeats(3).changehands(1)
+          Forward.changeBeats(3).changehands(Hands.LEFT)
       ]),
 
     AnimatedCall('Outside Couples Separate And Touch a Quarter',
@@ -226,7 +225,7 @@ import '../../moves.dart';
           BeauWheel.scale(0.67,1.0),
 
           ExtendLeft.changeBeats(3).scale(3.0,0.5) +
-          LeadLeft.changeBeats(2).changehands(1).scale(0.5,0.5) +
+          LeadLeft.changeBeats(2).changehands(Hands.LEFT).scale(0.5,0.5) +
           SwingRight.changeBeats(2).scale(0.5,0.5) +
           Stand.changeBeats(2) +
           ExtendRight.changeBeats(2).scale(2.0,0.5) +
@@ -304,9 +303,9 @@ import '../../moves.dart';
           ExtendLeft.scale(1.0,0.5) +
           LeadRight.changeBeats(3).scale(3.0,2.0),
 
-          Back.changeBeats(3).changehands(2).scale(0.5,1.0),
+          Back.changeBeats(3).changehands(Hands.RIGHT).scale(0.5,1.0),
 
-          Back.changeBeats(3).changehands(1).scale(0.5,1.0),
+          Back.changeBeats(3).changehands(Hands.LEFT).scale(0.5,1.0),
 
           ExtendLeft.scale(1.0,0.5) +
           LeadLeft.changeBeats(3).scale(3.0,1.0)
@@ -335,9 +334,9 @@ import '../../moves.dart';
           LeadRight.changeBeats(2).scale(2.5,1.5) +
           LeadRight.changeBeats(2).scale(1.0,1.5),
 
-          Back.changeBeats(3).changehands(2).scale(2.0,1.0),
+          Back.changeBeats(3).changehands(Hands.RIGHT).scale(2.0,1.0),
 
-          Back.changeBeats(3).changehands(1).scale(2.0,1.0),
+          Back.changeBeats(3).changehands(Hands.LEFT).scale(2.0,1.0),
 
           ExtendLeft.scale(1.0,0.5) +
           LeadLeft.changeBeats(2).scale(2.5,0.5) +

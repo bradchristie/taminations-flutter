@@ -19,7 +19,7 @@
 */
 
 import '../../animated_call.dart';
-import '../../formation.dart';
+import '../../common_dart.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> Crossfire = [
@@ -227,12 +227,12 @@ import '../../moves.dart';
       formation:Formation('Diamonds Facing Girl Points'),
       from:'Facing Diamonds, Right-Hand Centers',difficulty: 3,
       paths:[
-          SwingRight.changehands(6).scale(1.0,0.75) +
+          SwingRight.changehands(Hands.GRIPRIGHT).scale(1.0,0.75) +
           ExtendLeft.scale(1.0,0.5),
 
           CrossFoldLeft.scale(0.5,1.0),
 
-          SwingRight.changehands(6).scale(1.0,0.75) +
+          SwingRight.changehands(Hands.GRIPRIGHT).scale(1.0,0.75) +
           ExtendLeft.scale(1.0,0.5),
 
           CrossFoldLeft.scale(0.5,1.0)
@@ -242,12 +242,12 @@ import '../../moves.dart';
       formation:Formation('Diamonds Facing LH Girl Points'),
       from:'Facing Diamonds, Left-Hand Centers',difficulty: 3,
       paths:[
-          SwingLeft.changehands(5).scale(1.0,0.75) +
+          SwingLeft.changehands(Hands.GRIPLEFT).scale(1.0,0.75) +
           ExtendRight.scale(1.0,0.5),
 
           CrossFoldRight.scale(0.5,1.0),
 
-          SwingLeft.changehands(5).scale(1.0,0.75) +
+          SwingLeft.changehands(Hands.GRIPLEFT).scale(1.0,0.75) +
           ExtendRight.scale(1.0,0.5),
 
           CrossFoldRight.scale(0.5,1.0)
@@ -257,12 +257,12 @@ import '../../moves.dart';
       formation:Formation('Diamonds Facing PTP'),
       from:'Point-to-Point Facing Diamonds, Right-Hand Centers',difficulty: 3,
       paths:[
-          SwingRight.changehands(6).scale(1.0,0.75).skew(0.5,0.0) +
+          SwingRight.changehands(Hands.GRIPRIGHT).scale(1.0,0.75).skew(0.5,0.0) +
           ExtendLeft.scale(0.5,0.5),
 
           RunLeft.skew(1.0,0.0),
 
-          SwingRight.changehands(6).scale(1.0,0.75).skew(-0.5,0.0) +
+          SwingRight.changehands(Hands.GRIPRIGHT).scale(1.0,0.75).skew(-0.5,0.0) +
           ExtendLeft.scale(1.5,0.5),
 
           RunLeft.scale(1.0,2.0).skew(1.0,0.0)
@@ -272,12 +272,12 @@ import '../../moves.dart';
       formation:Formation('Diamonds Facing LH PTP'),
       from:'Point-to-Point Facing Diamonds, Left-Hand Centers',difficulty: 3,
       paths:[
-          SwingLeft.changehands(5).scale(1.0,0.75).skew(-0.5,0.0) +
+          SwingLeft.changehands(Hands.GRIPLEFT).scale(1.0,0.75).skew(-0.5,0.0) +
           ExtendRight.scale(1.5,0.5),
 
           RunRight.skew(1.0,0.0),
 
-          SwingLeft.changehands(5).scale(1.0,0.75).skew(0.5,0.0) +
+          SwingLeft.changehands(Hands.GRIPLEFT).scale(1.0,0.75).skew(0.5,0.0) +
           ExtendRight.scale(0.5,0.5),
 
           RunRight.scale(1.0,2.0).skew(1.0,0.0)

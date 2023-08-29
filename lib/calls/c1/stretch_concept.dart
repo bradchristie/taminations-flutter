@@ -20,7 +20,6 @@
 
 import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formation.dart';
 import '../../moves.dart';
 import '../c1/ah_so.dart' as c1;
 import '../c1/follow_thru.dart' as c1;
@@ -34,7 +33,6 @@ import '../c1/zing.dart' as c1;
 import '../c2/bounce.dart' as c2;
 import '../c2/turn_to_a_line.dart' as c2;
 import '../c3a/mini_chase.dart' as c3a;
-
 import '../c3a/single_concept.dart' as c3a;
 
   final List<AnimatedCall> StretchConcept = [
@@ -57,8 +55,8 @@ import '../c3a/single_concept.dart' as c3a;
       formation:Formation('Lines Facing Out'),
       group:'Stretch',
       paths:[
-          QuarterRight.changehands(1).skew(0.33,0.33) +
-          QuarterRight.changehands(1).skew(-0.33,0.33) +
+          QuarterRight.changehands(Hands.LEFT).skew(0.33,0.33) +
+          QuarterRight.changehands(Hands.LEFT).skew(-0.33,0.33) +
           QuarterRight.skew(-0.33,-0.33),
 
           HingeRight.scale(2.0,2.0).skew(0.33,0.33) +
@@ -70,8 +68,8 @@ import '../c3a/single_concept.dart' as c3a;
           HingeLeft.scale(2.0,2.0).skew(-0.33,-0.33) +
           LeadLeft.changeBeats(2).scale(2.0,2.0).skew(1.67,0.33),
 
-          QuarterLeft.changehands(2).skew(0.33,-0.33) +
-          QuarterLeft.changehands(2).skew(-0.33,-0.33) +
+          QuarterLeft.changehands(Hands.RIGHT).skew(0.33,-0.33) +
+          QuarterLeft.changehands(Hands.RIGHT).skew(-0.33,-0.33) +
           QuarterLeft.skew(-0.33,0.33)
       ]),
 
@@ -142,22 +140,22 @@ import '../c3a/single_concept.dart' as c3a;
       group:'Stretch',
       paths:[
           Stand.changeBeats(3.5).changehands(0) +
-          ExtendLeft.changeBeats(1.5).changehands(2).scale(1.0,0.5) +
+          ExtendLeft.changeBeats(1.5).changehands(Hands.RIGHT).scale(1.0,0.5) +
           Forward_2 +
-          RunRight.changehands(2).skew(1.0,-0.5),
+          RunRight.changehands(Hands.RIGHT).skew(1.0,-0.5),
 
           ExtendLeft.changeBeats(2).scale(1.0,1.5) +
-          SwingRight.changehands(3).scale(0.5,0.5) +
-          UmTurnRight.changehands(1).skew(1.0,0.5),
+          SwingRight.changehands(Hands.BOTH).scale(0.5,0.5) +
+          UmTurnRight.changehands(Hands.LEFT).skew(1.0,0.5),
 
           Stand.changeBeats(3.5).changehands(0) +
-          ExtendLeft.changeBeats(1.5).changehands(2).scale(1.0,0.5) +
-          RunRight.changehands(2).skew(1.0,-0.5),
+          ExtendLeft.changeBeats(1.5).changehands(Hands.RIGHT).scale(1.0,0.5) +
+          RunRight.changehands(Hands.RIGHT).skew(1.0,-0.5),
 
           ExtendLeft.changeBeats(2).scale(1.0,1.5) +
-          SwingRight.changehands(3).scale(0.5,0.5) +
+          SwingRight.changehands(Hands.BOTH).scale(0.5,0.5) +
           Forward_2 +
-          UmTurnRight.changehands(1).skew(1.0,0.5)
+          UmTurnRight.changehands(Hands.LEFT).skew(1.0,0.5)
       ]),
 
     AnimatedCall('Stretch Flutterwheel (from Lines)',
@@ -165,20 +163,20 @@ import '../c3a/single_concept.dart' as c3a;
       group:'Stretch',
       paths:[
           Forward.changeBeats(3.5).changehands(0) +
-          ExtendLeft.changeBeats(1.5).changehands(2).scale(1.5,1.5) +
-          RunRight.changehands(2).scale(1.5,2.0).skew(1.5,-1.5),
+          ExtendLeft.changeBeats(1.5).changehands(Hands.RIGHT).scale(1.5,1.5) +
+          RunRight.changehands(Hands.RIGHT).scale(1.5,2.0).skew(1.5,-1.5),
 
           ExtendLeft.changeBeats(2).scale(1.5,1.75) +
-          SwingRight.changehands(3).scale(0.75,0.75) +
-          UmTurnRight.changehands(1).skew(1.5,2.25),
+          SwingRight.changehands(Hands.BOTH).scale(0.75,0.75) +
+          UmTurnRight.changehands(Hands.LEFT).skew(1.5,2.25),
 
           Forward.changeBeats(3.5).changehands(0) +
-          ExtendLeft.changeBeats(1.5).changehands(2).scale(1.5,1.5) +
-          RunRight.changehands(2).scale(1.5,2.0).skew(1.5,0.5),
+          ExtendLeft.changeBeats(1.5).changehands(Hands.RIGHT).scale(1.5,1.5) +
+          RunRight.changehands(Hands.RIGHT).scale(1.5,2.0).skew(1.5,0.5),
 
           ExtendLeft.changeBeats(2).scale(1.5,1.75) +
-          SwingRight.changehands(3).scale(0.75,0.75) +
-          UmTurnRight.changehands(1).skew(1.5,0.25)
+          SwingRight.changehands(Hands.BOTH).scale(0.75,0.75) +
+          UmTurnRight.changehands(Hands.LEFT).skew(1.5,0.25)
       ]),
 
     AnimatedCall('Stretch Hinge',
@@ -278,22 +276,22 @@ import '../c3a/single_concept.dart' as c3a;
       group:'Stretch',
       paths:[
           ExtendRight.changeBeats(2).scale(1.0,1.5) +
-          SwingLeft.changehands(3).scale(0.5,0.5) +
-          UmTurnLeft.changehands(2).skew(1.0,-0.5),
+          SwingLeft.changehands(Hands.BOTH).scale(0.5,0.5) +
+          UmTurnLeft.changehands(Hands.RIGHT).skew(1.0,-0.5),
 
           Stand.changeBeats(3.5).changehands(0) +
-          ExtendRight.changeBeats(1.5).changehands(1).scale(1.0,0.5) +
+          ExtendRight.changeBeats(1.5).changehands(Hands.LEFT).scale(1.0,0.5) +
           Forward_2 +
-          RunLeft.changehands(1).skew(1.0,0.5),
+          RunLeft.changehands(Hands.LEFT).skew(1.0,0.5),
 
           ExtendRight.changeBeats(2).scale(1.0,1.5) +
-          SwingLeft.changehands(3).scale(0.5,0.5) +
+          SwingLeft.changehands(Hands.BOTH).scale(0.5,0.5) +
           Forward_2 +
-          UmTurnLeft.changehands(2).skew(1.0,-0.5),
+          UmTurnLeft.changehands(Hands.RIGHT).skew(1.0,-0.5),
 
           Stand.changeBeats(3.5).changehands(0) +
-          ExtendRight.changeBeats(1.5).changehands(1).scale(1.0,0.5) +
-          RunLeft.changehands(1).skew(1.0,0.5)
+          ExtendRight.changeBeats(1.5).changehands(Hands.LEFT).scale(1.0,0.5) +
+          RunLeft.changehands(Hands.LEFT).skew(1.0,0.5)
       ]),
 
     AnimatedCall('Stretch Shakedown',
@@ -377,13 +375,13 @@ import '../c3a/single_concept.dart' as c3a;
       formation:Formation('Ocean Waves RH BGBG'),
       group:'Stretch',
       paths:[
-          CounterRotateRight_2_0.changeBeats(4).changehands(2).skew(1.0,0.0),
+          CounterRotateRight_2_0.changeBeats(4).changehands(Hands.RIGHT).skew(1.0,0.0),
 
-          CounterRotateRight_0_m2.changeBeats(4).changehands(2).skew(-1.0,0.0),
+          CounterRotateRight_0_m2.changeBeats(4).changehands(Hands.RIGHT).skew(-1.0,0.0),
 
-          CounterRotateRight_3_1.changeBeats(4).changehands(2).skew(0.0,1.0),
+          CounterRotateRight_3_1.changeBeats(4).changehands(Hands.RIGHT).skew(0.0,1.0),
 
-          CounterRotateRight_m1_m3.changeBeats(4).changehands(2).skew(0.0,-1.0)
+          CounterRotateRight_m1_m3.changeBeats(4).changehands(Hands.RIGHT).skew(0.0,-1.0)
       ]),
 
     AnimatedCall('Stretch Split Transfer (from Waves)',
@@ -445,13 +443,13 @@ import '../c3a/single_concept.dart' as c3a;
       formation:Formation('Eight Chain Thru'),
       group:'Stretch',
       paths:[
-          ExtendLeft.changeBeats(2).changehands(2).scale(1.0,2.0),
+          ExtendLeft.changeBeats(2).changehands(Hands.RIGHT).scale(1.0,2.0),
 
-          ExtendLeft.changeBeats(2).changehands(1).scale(1.0,2.0),
+          ExtendLeft.changeBeats(2).changehands(Hands.LEFT).scale(1.0,2.0),
 
-          ExtendLeft.changeBeats(2).changehands(2).scale(1.0,2.0),
+          ExtendLeft.changeBeats(2).changehands(Hands.RIGHT).scale(1.0,2.0),
 
-          ExtendLeft.changeBeats(2).changehands(1).scale(1.0,2.0)
+          ExtendLeft.changeBeats(2).changehands(Hands.LEFT).scale(1.0,2.0)
       ]),
 
     AnimatedCall('Stretch Touch a Quarter',
@@ -460,13 +458,13 @@ import '../c3a/single_concept.dart' as c3a;
       paths:[
           ExtendLeft +
           Forward_2 +
-          QuarterRight.changehands(2).skew(1.0,0.0),
+          QuarterRight.changehands(Hands.RIGHT).skew(1.0,0.0),
 
           Forward_3 +
           HingeRight,
 
           ExtendLeft +
-          QuarterRight.changehands(2).skew(1.0,0.0),
+          QuarterRight.changehands(Hands.RIGHT).skew(1.0,0.0),
 
           Forward +
           HingeRight
@@ -515,28 +513,28 @@ import '../c3a/single_concept.dart' as c3a;
       formation:Formation('Normal Lines'),
       group:'Stretch',
       paths:[
-          RunRight.changeBeats(4).changehands(6).scale(1.0,2.0).skew(3.0,0.0),
+          RunRight.changeBeats(4).changehands(Hands.GRIPRIGHT).scale(1.0,2.0).skew(3.0,0.0),
 
-          UmTurnRight.changeBeats(4).changehands(5).skew(3.0,0.0),
+          UmTurnRight.changeBeats(4).changehands(Hands.GRIPLEFT).skew(3.0,0.0),
 
-          UmTurnLeft.changeBeats(4).changehands(2).skew(-1.0,0.0),
+          UmTurnLeft.changeBeats(4).changehands(Hands.RIGHT).skew(-1.0,0.0),
 
-          RunLeft.changeBeats(4).changehands(1).scale(1.0,2.0).skew(-1.0,0.0)
+          RunLeft.changeBeats(4).changehands(Hands.LEFT).scale(1.0,2.0).skew(-1.0,0.0)
       ]),
 
     AnimatedCall('Stretch Veer Right',
       formation:Formation('Two-Faced Lines RH'),
       from:'Two-Faced Lines',group:'Stretch',
       paths:[
-          Forward_2.changehands(2) +
-          ExtendRight.changeBeats(2).changehands(2).scale(1.0,2.0),
+          Forward_2.changehands(Hands.RIGHT) +
+          ExtendRight.changeBeats(2).changehands(Hands.RIGHT).scale(1.0,2.0),
 
-          Forward_2.changehands(1) +
-          ExtendRight.changeBeats(2).changehands(1).scale(1.0,2.0),
+          Forward_2.changehands(Hands.LEFT) +
+          ExtendRight.changeBeats(2).changehands(Hands.LEFT).scale(1.0,2.0),
 
-          ExtendRight.changeBeats(2).changehands(1).scale(1.0,2.0),
+          ExtendRight.changeBeats(2).changehands(Hands.LEFT).scale(1.0,2.0),
 
-          ExtendRight.changeBeats(2).changehands(2).scale(1.0,2.0)
+          ExtendRight.changeBeats(2).changehands(Hands.RIGHT).scale(1.0,2.0)
       ]),
 
     AnimatedCall('Stretch Wheel Thru',

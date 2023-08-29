@@ -19,7 +19,7 @@
 */
 
 import '../../animated_call.dart';
-import '../../formation.dart';
+import '../../common_dart.dart';
 import '../../moves.dart';
 import '../a1/partner_hinge.dart' as a1;
 import '../a1/quarter_thru.dart' as a1;
@@ -119,13 +119,13 @@ import '../plus/track_ii.dart' as plus;
       formation:Formation('Lines Facing Out'),
       group:'Left',
       paths:[
-          RunLeft.changeBeats(4).changehands(1).scale(2.0,2.0).skew(1.0,0.0),
+          RunLeft.changeBeats(4).changehands(Hands.LEFT).scale(2.0,2.0).skew(1.0,0.0),
 
-          UmTurnLeft.changeBeats(4).changehands(2).skew(1.0,0.0),
+          UmTurnLeft.changeBeats(4).changehands(Hands.RIGHT).skew(1.0,0.0),
 
-          UmTurnRight.changeBeats(4).changehands(1).skew(-1.0,0.0),
+          UmTurnRight.changeBeats(4).changehands(Hands.LEFT).skew(-1.0,0.0),
 
-          RunRight.changeBeats(4).changehands(2).scale(1.0,2.0).skew(-1.0,0.0)
+          RunRight.changeBeats(4).changehands(Hands.RIGHT).scale(1.0,2.0).skew(-1.0,0.0)
       ]),
     a1.PartnerHinge.where((tam) =>
       tam.title == 'Left Partner Hinge' && tam.from == 'Lines Facing Out').first.xref(title: 'Left Partner Hinge').xref(group: 'Left (A-1)'),

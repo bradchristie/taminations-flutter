@@ -20,7 +20,6 @@
 
 import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> Stimulate = [
@@ -44,7 +43,7 @@ import '../../moves.dart';
           Forward.changeBeats(1.5) +
           HingeRight.changeBeats(2).scale(0.5,1.0) +
           SwingLeft.scale(0.5,0.5) +
-          QuarterLeft.changeBeats(2).changehands(1).skew(1.0,-0.5),
+          QuarterLeft.changeBeats(2).changehands(Hands.LEFT).skew(1.0,-0.5),
 
           RunRight +
           Forward.changeBeats(1.5) +
@@ -66,7 +65,7 @@ import '../../moves.dart';
           Forward.changeBeats(1.5) +
           HingeLeft.changeBeats(2).scale(0.5,1.0) +
           SwingRight.scale(0.5,0.5) +
-          QuarterRight.changeBeats(2).changehands(1).skew(1.0,0.5),
+          QuarterRight.changeBeats(2).changehands(Hands.LEFT).skew(1.0,0.5),
 
           Forward_2.changeBeats(3) +
           Forward.changeBeats(1.5) +

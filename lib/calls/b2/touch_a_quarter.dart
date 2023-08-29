@@ -19,7 +19,7 @@
 */
 
 import '../../animated_call.dart';
-import '../../formation.dart';
+import '../../common_dart.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> TouchAQuarter = [
@@ -40,16 +40,16 @@ import '../../moves.dart';
       from:'Lines',difficulty: 1,
       paths:[
           ExtendLeft.scale(2.0,0.5) +
-          HingeRight.changeBeats(1).changehands(6).scale(1.0,0.5),
+          HingeRight.changeBeats(1).changehands(Hands.GRIPRIGHT).scale(1.0,0.5),
 
           ExtendLeft.scale(2.0,0.5) +
-          HingeRight.changeBeats(1).changehands(6).scale(1.0,0.5),
+          HingeRight.changeBeats(1).changehands(Hands.GRIPRIGHT).scale(1.0,0.5),
 
           ExtendLeft.scale(2.0,0.5) +
-          HingeRight.changeBeats(1).changehands(6).scale(1.0,0.5),
+          HingeRight.changeBeats(1).changehands(Hands.GRIPRIGHT).scale(1.0,0.5),
 
           ExtendLeft.scale(2.0,0.5) +
-          HingeRight.changeBeats(1).changehands(6).scale(1.0,0.5)
+          HingeRight.changeBeats(1).changehands(Hands.GRIPRIGHT).scale(1.0,0.5)
       ]),
 
     AnimatedCall('Touch a Quarter',
@@ -57,13 +57,13 @@ import '../../moves.dart';
       from:'Eight Chain Thru',difficulty: 1,
       paths:[
           ExtendLeft +
-          QuarterRight.changehands(2).skew(1.0,0.0),
+          QuarterRight.changehands(Hands.RIGHT).skew(1.0,0.0),
 
           Forward +
           HingeRight,
 
           ExtendLeft +
-          QuarterRight.changehands(2).skew(1.0,0.0),
+          QuarterRight.changehands(Hands.RIGHT).skew(1.0,0.0),
 
           Forward +
           HingeRight
@@ -85,16 +85,16 @@ import '../../moves.dart';
       from:'Lines',difficulty: 2,
       paths:[
           ExtendRight.scale(2.0,0.5) +
-          HingeLeft.changeBeats(1).changehands(5).scale(1.0,0.5),
+          HingeLeft.changeBeats(1).changehands(Hands.GRIPLEFT).scale(1.0,0.5),
 
           ExtendRight.scale(2.0,0.5) +
-          HingeLeft.changeBeats(1).changehands(5).scale(1.0,0.5),
+          HingeLeft.changeBeats(1).changehands(Hands.GRIPLEFT).scale(1.0,0.5),
 
           ExtendRight.scale(2.0,0.5) +
-          HingeLeft.changeBeats(1).changehands(5).scale(1.0,0.5),
+          HingeLeft.changeBeats(1).changehands(Hands.GRIPLEFT).scale(1.0,0.5),
 
           ExtendRight.scale(2.0,0.5) +
-          HingeLeft.changeBeats(1).changehands(5).scale(1.0,0.5)
+          HingeLeft.changeBeats(1).changehands(Hands.GRIPLEFT).scale(1.0,0.5)
       ]),
 
     AnimatedCall('Left Touch a Quarter',
@@ -105,13 +105,13 @@ import '../../moves.dart';
           HingeLeft,
 
           ExtendRight +
-          QuarterLeft.changehands(1).skew(1.0,0.0),
+          QuarterLeft.changehands(Hands.LEFT).skew(1.0,0.0),
 
           Forward +
           HingeLeft,
 
           ExtendRight +
-          QuarterLeft.changehands(1).skew(1.0,0.0)
+          QuarterLeft.changehands(Hands.LEFT).skew(1.0,0.0)
       ]),
 
     AnimatedCall('Touch a Half',

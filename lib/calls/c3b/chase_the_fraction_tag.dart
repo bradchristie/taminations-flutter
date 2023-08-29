@@ -20,7 +20,6 @@
 
 import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formation.dart';
 import '../../moves.dart';
 import '../c1/chase_your_neighbor.dart' as c1;
 import '../c3b/anything_the_top.dart' as c3b;

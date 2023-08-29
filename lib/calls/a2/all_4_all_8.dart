@@ -20,7 +20,6 @@
 
 import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formation.dart';
 import '../../moves.dart';
 import '../a2/box_transfer.dart' as a2;
 import '../a2/pass_and_roll.dart' as a2;
@@ -62,7 +61,6 @@ import '../c2/turn_to_a_line.dart' as c2;
 import '../c2/wheel_the_ocean.dart' as c2;
 import '../c3a/follow_to_a_diamond.dart' as c3a;
 import '../c3a/lock_the_hinge.dart' as c3a;
-
 import '../c3a/mini_chase.dart' as c3a;
 
   final List<AnimatedCall> All4All8 = [
@@ -354,38 +352,38 @@ import '../c3a/mini_chase.dart' as c3a;
       group:'All 4 Couples (with calls through Plus)',
       paths:[
           ExtendLeft.changeBeats(2).scale(2.0,2.0) +
-          Forward.changehands(2) +
-          LeadRight.changeBeats(4).changehands(1).scale(2.0,3.0) +
+          Forward.changehands(Hands.RIGHT) +
+          LeadRight.changeBeats(4).changehands(Hands.LEFT).scale(2.0,3.0) +
           Forward_2 +
-          LeadRight.changeBeats(2).changehands(2).scale(1.0,2.0) +
-          LeadRight.changeBeats(4).changehands(1).scale(2.0,3.0) +
+          LeadRight.changeBeats(2).changehands(Hands.RIGHT).scale(1.0,2.0) +
+          LeadRight.changeBeats(4).changehands(Hands.LEFT).scale(2.0,3.0) +
           Forward_2 +
           ExtendRight,
 
-          ExtendRight.changeBeats(3).changehands(2).scale(3.0,1.0) +
+          ExtendRight.changeBeats(3).changehands(Hands.RIGHT).scale(3.0,1.0) +
           Forward_2 +
-          LeadLeft.changeBeats(2).changehands(1).scale(1.0,2.0) +
-          LeadLeft.changeBeats(4).changehands(2).scale(2.0,3.0) +
+          LeadLeft.changeBeats(2).changehands(Hands.LEFT).scale(1.0,2.0) +
+          LeadLeft.changeBeats(4).changehands(Hands.RIGHT).scale(2.0,3.0) +
           Forward_2 +
-          LeadLeft.changeBeats(2).changehands(1).scale(1.0,2.0) +
+          LeadLeft.changeBeats(2).changehands(Hands.LEFT).scale(1.0,2.0) +
           LeadLeft +
           LeadRight.changeBeats(1.5).scale(1.0,2.0),
 
           ExtendLeft.changeBeats(2).scale(2.0,2.0) +
-          Forward.changehands(2) +
-          LeadRight.changeBeats(4).changehands(1).scale(2.0,3.0) +
+          Forward.changehands(Hands.RIGHT) +
+          LeadRight.changeBeats(4).changehands(Hands.LEFT).scale(2.0,3.0) +
           Forward_2 +
-          LeadRight.changeBeats(2).changehands(2).scale(1.0,2.0) +
-          LeadRight.changeBeats(4).changehands(1).scale(2.0,3.0) +
+          LeadRight.changeBeats(2).changehands(Hands.RIGHT).scale(1.0,2.0) +
+          LeadRight.changeBeats(4).changehands(Hands.LEFT).scale(2.0,3.0) +
           Forward_2 +
           ExtendRight,
 
-          ExtendRight.changeBeats(3).changehands(2).scale(3.0,1.0) +
+          ExtendRight.changeBeats(3).changehands(Hands.RIGHT).scale(3.0,1.0) +
           Forward_2 +
-          LeadLeft.changeBeats(2).changehands(1).scale(1.0,2.0) +
-          LeadLeft.changeBeats(4).changehands(2).scale(2.0,3.0) +
+          LeadLeft.changeBeats(2).changehands(Hands.LEFT).scale(1.0,2.0) +
+          LeadLeft.changeBeats(4).changehands(Hands.RIGHT).scale(2.0,3.0) +
           Forward_2 +
-          LeadLeft.changeBeats(2).changehands(1).scale(1.0,2.0) +
+          LeadLeft.changeBeats(2).changehands(Hands.LEFT).scale(1.0,2.0) +
           LeadLeft +
           LeadRight.changeBeats(1.5).scale(1.0,2.0)
       ]),
@@ -395,32 +393,32 @@ import '../c3a/mini_chase.dart' as c3a;
       group:'All 4 Couples (with calls through Plus)',noDisplay: true,
       paths:[
           ExtendLeft.changeBeats(2).scale(2.0,2.0) +
-          Forward.changehands(2) +
-          LeadRight.changeBeats(4).changehands(1).scale(2.0,3.0) +
+          Forward.changehands(Hands.RIGHT) +
+          LeadRight.changeBeats(4).changehands(Hands.LEFT).scale(2.0,3.0) +
           Forward_2 +
-          LeadRight.changeBeats(2).changehands(2).scale(1.0,2.0) +
+          LeadRight.changeBeats(2).changehands(Hands.RIGHT).scale(1.0,2.0) +
           LeadRight.changeBeats(4).scale(1.0,3.0),
 
-          ExtendRight.changeBeats(3).changehands(2).scale(3.0,1.0) +
+          ExtendRight.changeBeats(3).changehands(Hands.RIGHT).scale(3.0,1.0) +
           Forward_2 +
-          LeadLeft.changeBeats(2).changehands(1).scale(1.0,2.0) +
-          LeadLeft.changeBeats(4).changehands(2).scale(2.0,3.0) +
+          LeadLeft.changeBeats(2).changehands(Hands.LEFT).scale(1.0,2.0) +
+          LeadLeft.changeBeats(4).changehands(Hands.RIGHT).scale(2.0,3.0) +
           Forward_2 +
-          LeadLeft.changeBeats(2).changehands(1).scale(1.0,2.0),
+          LeadLeft.changeBeats(2).changehands(Hands.LEFT).scale(1.0,2.0),
 
           ExtendLeft.changeBeats(2).scale(2.0,2.0) +
-          Forward.changehands(2) +
-          LeadRight.changeBeats(4).changehands(1).scale(2.0,3.0) +
+          Forward.changehands(Hands.RIGHT) +
+          LeadRight.changeBeats(4).changehands(Hands.LEFT).scale(2.0,3.0) +
           Forward_2 +
-          LeadRight.changeBeats(2).changehands(2).scale(1.0,2.0) +
+          LeadRight.changeBeats(2).changehands(Hands.RIGHT).scale(1.0,2.0) +
           LeadRight.changeBeats(4).scale(1.0,3.0),
 
-          ExtendRight.changeBeats(3).changehands(2).scale(3.0,1.0) +
+          ExtendRight.changeBeats(3).changehands(Hands.RIGHT).scale(3.0,1.0) +
           Forward_2 +
-          LeadLeft.changeBeats(2).changehands(1).scale(1.0,2.0) +
-          LeadLeft.changeBeats(4).changehands(2).scale(2.0,3.0) +
+          LeadLeft.changeBeats(2).changehands(Hands.LEFT).scale(1.0,2.0) +
+          LeadLeft.changeBeats(4).changehands(Hands.RIGHT).scale(2.0,3.0) +
           Forward_2 +
-          LeadLeft.changeBeats(2).changehands(1).scale(1.0,2.0)
+          LeadLeft.changeBeats(2).changehands(Hands.LEFT).scale(1.0,2.0)
       ]),
 
     AnimatedCall('All 4 Couples Square Thru 3',
@@ -428,34 +426,34 @@ import '../c3a/mini_chase.dart' as c3a;
       group:'All 4 Couples (with calls through Plus)',noDisplay: true,
       paths:[
           ExtendLeft.changeBeats(2).scale(2.0,2.0) +
-          Forward.changehands(2) +
-          LeadRight.changeBeats(4).changehands(1).scale(2.0,3.0) +
+          Forward.changehands(Hands.RIGHT) +
+          LeadRight.changeBeats(4).changehands(Hands.LEFT).scale(2.0,3.0) +
           Forward_2 +
-          LeadRight.changeBeats(2).changehands(2).scale(1.0,2.0) +
-          LeadRight.changeBeats(2).changehands(1) +
+          LeadRight.changeBeats(2).changehands(Hands.RIGHT).scale(1.0,2.0) +
+          LeadRight.changeBeats(2).changehands(Hands.LEFT) +
           LeadLeft.changeBeats(2).scale(1.0,2.0),
 
-          ExtendRight.changeBeats(3).changehands(2).scale(3.0,1.0) +
+          ExtendRight.changeBeats(3).changehands(Hands.RIGHT).scale(3.0,1.0) +
           Forward_2 +
-          LeadLeft.changeBeats(2).changehands(1).scale(1.0,2.0) +
-          LeadLeft.changeBeats(4).changehands(2).scale(2.0,3.0) +
+          LeadLeft.changeBeats(2).changehands(Hands.LEFT).scale(1.0,2.0) +
+          LeadLeft.changeBeats(4).changehands(Hands.RIGHT).scale(2.0,3.0) +
           Forward_2 +
-          ExtendLeft.changeBeats(2).changehands(1),
+          ExtendLeft.changeBeats(2).changehands(Hands.LEFT),
 
           ExtendLeft.changeBeats(2).scale(2.0,2.0) +
-          Forward.changehands(2) +
-          LeadRight.changeBeats(4).changehands(1).scale(2.0,3.0) +
+          Forward.changehands(Hands.RIGHT) +
+          LeadRight.changeBeats(4).changehands(Hands.LEFT).scale(2.0,3.0) +
           Forward_2 +
-          LeadRight.changeBeats(2).changehands(2).scale(1.0,2.0) +
-          LeadRight.changeBeats(2).changehands(1) +
+          LeadRight.changeBeats(2).changehands(Hands.RIGHT).scale(1.0,2.0) +
+          LeadRight.changeBeats(2).changehands(Hands.LEFT) +
           LeadLeft.changeBeats(2).scale(1.0,2.0),
 
-          ExtendRight.changeBeats(3).changehands(2).scale(3.0,1.0) +
+          ExtendRight.changeBeats(3).changehands(Hands.RIGHT).scale(3.0,1.0) +
           Forward_2 +
-          LeadLeft.changeBeats(2).changehands(1).scale(1.0,2.0) +
-          LeadLeft.changeBeats(4).changehands(2).scale(2.0,3.0) +
+          LeadLeft.changeBeats(2).changehands(Hands.LEFT).scale(1.0,2.0) +
+          LeadLeft.changeBeats(4).changehands(Hands.RIGHT).scale(2.0,3.0) +
           Forward_2 +
-          ExtendLeft.changeBeats(2).changehands(1)
+          ExtendLeft.changeBeats(2).changehands(Hands.LEFT)
       ]),
 
     AnimatedCall('All 4 Couples Square Thru 3 to a Wave',
@@ -463,25 +461,25 @@ import '../c3a/mini_chase.dart' as c3a;
       group:'All 4 Couples (with calls through Plus)',noDisplay: true,
       paths:[
           ExtendLeft.changeBeats(2).scale(2.0,2.0) +
-          Forward.changehands(2) +
-          LeadRight.changeBeats(4).changehands(1).scale(2.0,3.0) +
+          Forward.changehands(Hands.RIGHT) +
+          LeadRight.changeBeats(4).changehands(Hands.LEFT).scale(2.0,3.0) +
           Forward_2 +
-          LeadRight.changeBeats(2).changehands(2).scale(1.0,2.0),
+          LeadRight.changeBeats(2).changehands(Hands.RIGHT).scale(1.0,2.0),
 
-          ExtendRight.changeBeats(3).changehands(2).scale(3.0,1.0) +
+          ExtendRight.changeBeats(3).changehands(Hands.RIGHT).scale(3.0,1.0) +
           Forward_2 +
-          LeadLeft.changeBeats(2).changehands(1).scale(1.0,2.0) +
+          LeadLeft.changeBeats(2).changehands(Hands.LEFT).scale(1.0,2.0) +
           LeadLeft.changeBeats(4).scale(1.0,3.0),
 
           ExtendLeft.changeBeats(2).scale(2.0,2.0) +
-          Forward.changehands(2) +
-          LeadRight.changeBeats(4).changehands(1).scale(2.0,3.0) +
+          Forward.changehands(Hands.RIGHT) +
+          LeadRight.changeBeats(4).changehands(Hands.LEFT).scale(2.0,3.0) +
           Forward_2 +
-          LeadRight.changeBeats(2).changehands(2).scale(1.0,2.0),
+          LeadRight.changeBeats(2).changehands(Hands.RIGHT).scale(1.0,2.0),
 
-          ExtendRight.changeBeats(3).changehands(2).scale(3.0,1.0) +
+          ExtendRight.changeBeats(3).changehands(Hands.RIGHT).scale(3.0,1.0) +
           Forward_2 +
-          LeadLeft.changeBeats(2).changehands(1).scale(1.0,2.0) +
+          LeadLeft.changeBeats(2).changehands(Hands.LEFT).scale(1.0,2.0) +
           LeadLeft.changeBeats(4).scale(1.0,3.0)
       ]),
 
@@ -490,26 +488,26 @@ import '../c3a/mini_chase.dart' as c3a;
       group:'All 4 Couples (with calls through Plus)',noDisplay: true,
       paths:[
           ExtendLeft.changeBeats(2).scale(2.0,2.0) +
-          Forward.changehands(2) +
-          LeadRight.changeBeats(4).changehands(1).scale(2.0,3.0) +
+          Forward.changehands(Hands.RIGHT) +
+          LeadRight.changeBeats(4).changehands(Hands.LEFT).scale(2.0,3.0) +
           Forward_2 +
           ExtendRight,
 
-          ExtendRight.changeBeats(3).changehands(2).scale(3.0,1.0) +
+          ExtendRight.changeBeats(3).changehands(Hands.RIGHT).scale(3.0,1.0) +
           Forward_2 +
-          LeadLeft.changeBeats(2).changehands(1).scale(1.0,2.0) +
+          LeadLeft.changeBeats(2).changehands(Hands.LEFT).scale(1.0,2.0) +
           LeadLeft +
           LeadRight.changeBeats(1.5).scale(1.0,2.0),
 
           ExtendLeft.changeBeats(2).scale(2.0,2.0) +
-          Forward.changehands(2) +
-          LeadRight.changeBeats(4).changehands(1).scale(2.0,3.0) +
+          Forward.changehands(Hands.RIGHT) +
+          LeadRight.changeBeats(4).changehands(Hands.LEFT).scale(2.0,3.0) +
           Forward_2 +
           ExtendRight,
 
-          ExtendRight.changeBeats(3).changehands(2).scale(3.0,1.0) +
+          ExtendRight.changeBeats(3).changehands(Hands.RIGHT).scale(3.0,1.0) +
           Forward_2 +
-          LeadLeft.changeBeats(2).changehands(1).scale(1.0,2.0) +
+          LeadLeft.changeBeats(2).changehands(Hands.LEFT).scale(1.0,2.0) +
           LeadLeft +
           LeadRight.changeBeats(1.5).scale(1.0,2.0)
       ]),
@@ -519,20 +517,20 @@ import '../c3a/mini_chase.dart' as c3a;
       group:'All 4 Couples (with calls through Plus)',noDisplay: true,
       paths:[
           ExtendLeft.changeBeats(2).scale(2.0,2.0) +
-          Forward.changehands(2) +
+          Forward.changehands(Hands.RIGHT) +
           LeadRight.changeBeats(4).scale(1.0,3.0),
 
-          ExtendRight.changeBeats(3).changehands(2).scale(3.0,1.0) +
+          ExtendRight.changeBeats(3).changehands(Hands.RIGHT).scale(3.0,1.0) +
           Forward_2 +
-          LeadLeft.changeBeats(2).changehands(1).scale(1.0,2.0),
+          LeadLeft.changeBeats(2).changehands(Hands.LEFT).scale(1.0,2.0),
 
           ExtendLeft.changeBeats(2).scale(2.0,2.0) +
-          Forward.changehands(2) +
+          Forward.changehands(Hands.RIGHT) +
           LeadRight.changeBeats(4).scale(1.0,3.0),
 
-          ExtendRight.changeBeats(3).changehands(2).scale(3.0,1.0) +
+          ExtendRight.changeBeats(3).changehands(Hands.RIGHT).scale(3.0,1.0) +
           Forward_2 +
-          LeadLeft.changeBeats(2).changehands(1).scale(1.0,2.0)
+          LeadLeft.changeBeats(2).changehands(Hands.LEFT).scale(1.0,2.0)
       ]),
 
     AnimatedCall('All 4 Couples Star Thru',
@@ -917,15 +915,15 @@ import '../c3a/mini_chase.dart' as c3a;
           ExtendRight.changeBeats(5).scale(1.0,1.75) +
           HingeLeft.scale(1.0,0.75),
 
-          ExtendLeft.changeBeats(3).changehands(2).scale(3.0,2.0) +
-          ExtendRight.changeBeats(2).changehands(2).scale(2.0,1.75) +
+          ExtendLeft.changeBeats(3).changehands(Hands.RIGHT).scale(3.0,2.0) +
+          ExtendRight.changeBeats(2).changehands(Hands.RIGHT).scale(2.0,1.75) +
           HingeLeft.scale(1.0,0.75),
 
           ExtendRight.changeBeats(5).scale(1.0,1.75) +
           HingeLeft.scale(1.0,0.75),
 
-          ExtendLeft.changeBeats(3).changehands(2).scale(3.0,2.0) +
-          ExtendRight.changeBeats(2).changehands(2).scale(2.0,1.75) +
+          ExtendLeft.changeBeats(3).changehands(Hands.RIGHT).scale(3.0,2.0) +
+          ExtendRight.changeBeats(2).changehands(Hands.RIGHT).scale(2.0,1.75) +
           HingeLeft.scale(1.0,0.75)
       ]),
 
@@ -933,15 +931,15 @@ import '../c3a/mini_chase.dart' as c3a;
       formation:Formation('Static Square'),
       group:'All 8 (with calls through Plus)',
       paths:[
-          ExtendRight.changeBeats(3).changehands(1).scale(3.0,2.0) +
-          ExtendLeft.changeBeats(2).changehands(1).scale(2.0,1.75) +
+          ExtendRight.changeBeats(3).changehands(Hands.LEFT).scale(3.0,2.0) +
+          ExtendLeft.changeBeats(2).changehands(Hands.LEFT).scale(2.0,1.75) +
           HingeRight.scale(1.0,0.75),
 
           ExtendLeft.changeBeats(5).scale(1.0,1.75) +
           HingeRight.scale(1.0,0.75),
 
-          ExtendRight.changeBeats(3).changehands(1).scale(3.0,2.0) +
-          ExtendLeft.changeBeats(2).changehands(1).scale(2.0,1.75) +
+          ExtendRight.changeBeats(3).changehands(Hands.LEFT).scale(3.0,2.0) +
+          ExtendLeft.changeBeats(2).changehands(Hands.LEFT).scale(2.0,1.75) +
           HingeRight.scale(1.0,0.75),
 
           ExtendLeft.changeBeats(5).scale(1.0,1.75) +
@@ -955,15 +953,15 @@ import '../c3a/mini_chase.dart' as c3a;
           ExtendRight.changeBeats(4).scale(2.0,0.75) +
           HingeLeft.scale(1.0,0.75),
 
-          ExtendLeft.changeBeats(2).changehands(2).scale(2.0,1.0) +
-          ExtendRight.changeBeats(2).changehands(2).scale(2.0,1.75) +
+          ExtendLeft.changeBeats(2).changehands(Hands.RIGHT).scale(2.0,1.0) +
+          ExtendRight.changeBeats(2).changehands(Hands.RIGHT).scale(2.0,1.75) +
           HingeLeft.scale(1.0,0.75),
 
           ExtendRight.changeBeats(4).scale(2.0,0.75) +
           HingeLeft.scale(1.0,0.75),
 
-          ExtendLeft.changeBeats(2).changehands(2).scale(2.0,1.0) +
-          ExtendRight.changeBeats(2).changehands(2).scale(2.0,1.75) +
+          ExtendLeft.changeBeats(2).changehands(Hands.RIGHT).scale(2.0,1.0) +
+          ExtendRight.changeBeats(2).changehands(Hands.RIGHT).scale(2.0,1.75) +
           HingeLeft.scale(1.0,0.75)
       ]),
 
@@ -974,15 +972,15 @@ import '../c3a/mini_chase.dart' as c3a;
           ExtendLeft.changeBeats(4).scale(2.0,0.75) +
           HingeRight.scale(1.0,0.75),
 
-          ExtendRight.changeBeats(2).changehands(1).scale(2.0,1.0) +
-          ExtendLeft.changeBeats(2).changehands(1).scale(2.0,1.75) +
+          ExtendRight.changeBeats(2).changehands(Hands.LEFT).scale(2.0,1.0) +
+          ExtendLeft.changeBeats(2).changehands(Hands.LEFT).scale(2.0,1.75) +
           HingeRight.scale(1.0,0.75),
 
           ExtendLeft.changeBeats(4).scale(2.0,0.75) +
           HingeRight.scale(1.0,0.75),
 
-          ExtendRight.changeBeats(2).changehands(1).scale(2.0,1.0) +
-          ExtendLeft.changeBeats(2).changehands(1).scale(2.0,1.75) +
+          ExtendRight.changeBeats(2).changehands(Hands.LEFT).scale(2.0,1.0) +
+          ExtendLeft.changeBeats(2).changehands(Hands.LEFT).scale(2.0,1.75) +
           HingeRight.scale(1.0,0.75)
       ]),
 
@@ -1033,24 +1031,24 @@ import '../c3a/mini_chase.dart' as c3a;
           QuarterLeft.changeBeats(4.5).skew(0.0,-1.0) +
           HingeRight.changeBeats(3).scale(3.0,3.0) +
           HingeRight.changeBeats(3).scale(3.0,2.0) +
-          QuarterRight.changeBeats(3).changehands(2).skew(2.0,0.0),
+          QuarterRight.changeBeats(3).changehands(Hands.RIGHT).skew(2.0,0.0),
 
           ExtendLeft.changeBeats(3).scale(3.0,2.0) +
           HingeRight +
-          HingeRight.changeBeats(3).changehands(3) +
-          QuarterRight.changeBeats(3).changehands(1).skew(1.5,0.0) +
-          QuarterRight.changeBeats(3).changehands(1).skew(0.0,1.5),
+          HingeRight.changeBeats(3).changehands(Hands.BOTH) +
+          QuarterRight.changeBeats(3).changehands(Hands.LEFT).skew(1.5,0.0) +
+          QuarterRight.changeBeats(3).changehands(Hands.LEFT).skew(0.0,1.5),
 
           QuarterLeft.changeBeats(4.5).skew(0.0,-1.0) +
           HingeRight.changeBeats(3).scale(3.0,3.0) +
           HingeRight.changeBeats(3).scale(3.0,2.0) +
-          QuarterRight.changeBeats(3).changehands(2).skew(2.0,0.0),
+          QuarterRight.changeBeats(3).changehands(Hands.RIGHT).skew(2.0,0.0),
 
           ExtendLeft.changeBeats(3).scale(3.0,2.0) +
           HingeRight +
-          HingeRight.changeBeats(3).changehands(3) +
-          QuarterRight.changeBeats(3).changehands(1).skew(1.5,0.0) +
-          QuarterRight.changeBeats(3).changehands(1).skew(0.0,1.5)
+          HingeRight.changeBeats(3).changehands(Hands.BOTH) +
+          QuarterRight.changeBeats(3).changehands(Hands.LEFT).skew(1.5,0.0) +
+          QuarterRight.changeBeats(3).changehands(Hands.LEFT).skew(0.0,1.5)
       ]),
 
     AnimatedCall('All 8 Follow Your Neighbor',
@@ -1236,25 +1234,25 @@ import '../c3a/mini_chase.dart' as c3a;
       paths:[
           ExtendRight.changeBeats(3).scale(3.0,2.0) +
           HingeLeft +
-          HingeLeft.changeBeats(3).changehands(3) +
-          QuarterLeft.changeBeats(3).changehands(2).skew(1.5,0.0) +
-          QuarterLeft.changeBeats(3).changehands(2).skew(0.0,-1.5),
+          HingeLeft.changeBeats(3).changehands(Hands.BOTH) +
+          QuarterLeft.changeBeats(3).changehands(Hands.RIGHT).skew(1.5,0.0) +
+          QuarterLeft.changeBeats(3).changehands(Hands.RIGHT).skew(0.0,-1.5),
 
           QuarterRight.changeBeats(4.5).skew(0.0,1.0) +
           HingeLeft.changeBeats(3).scale(3.0,3.0) +
           HingeLeft.changeBeats(3).scale(3.0,2.0) +
-          QuarterLeft.changeBeats(3).changehands(1).skew(2.0,0.0),
+          QuarterLeft.changeBeats(3).changehands(Hands.LEFT).skew(2.0,0.0),
 
           ExtendRight.changeBeats(3).scale(3.0,2.0) +
           HingeLeft +
-          HingeLeft.changeBeats(3).changehands(3) +
-          QuarterLeft.changeBeats(3).changehands(2).skew(1.5,0.0) +
-          QuarterLeft.changeBeats(3).changehands(2).skew(0.0,-1.5),
+          HingeLeft.changeBeats(3).changehands(Hands.BOTH) +
+          QuarterLeft.changeBeats(3).changehands(Hands.RIGHT).skew(1.5,0.0) +
+          QuarterLeft.changeBeats(3).changehands(Hands.RIGHT).skew(0.0,-1.5),
 
           QuarterRight.changeBeats(4.5).skew(0.0,1.0) +
           HingeLeft.changeBeats(3).scale(3.0,3.0) +
           HingeLeft.changeBeats(3).scale(3.0,2.0) +
-          QuarterLeft.changeBeats(3).changehands(1).skew(2.0,0.0)
+          QuarterLeft.changeBeats(3).changehands(Hands.LEFT).skew(2.0,0.0)
       ]),
 
     AnimatedCall('All 8 Scoot Back',
@@ -1293,13 +1291,13 @@ import '../c3a/mini_chase.dart' as c3a;
       formation:Formation('Static Square'),
       group:'All 8 (with calls through Plus)',
       paths:[
-          ExtendLeft.changeBeats(4).changehands(2).scale(3.0,2.0),
+          ExtendLeft.changeBeats(4).changehands(Hands.RIGHT).scale(3.0,2.0),
 
-          ExtendLeft.changeBeats(4).changehands(1).scale(3.0,2.0),
+          ExtendLeft.changeBeats(4).changehands(Hands.LEFT).scale(3.0,2.0),
 
-          ExtendLeft.changeBeats(4).changehands(2).scale(3.0,2.0),
+          ExtendLeft.changeBeats(4).changehands(Hands.RIGHT).scale(3.0,2.0),
 
-          ExtendLeft.changeBeats(4).changehands(1).scale(3.0,2.0)
+          ExtendLeft.changeBeats(4).changehands(Hands.LEFT).scale(3.0,2.0)
       ]),
 
     AnimatedCall('All 8 Walk and Dodge',
@@ -1567,12 +1565,12 @@ import '../c3a/mini_chase.dart' as c3a;
       formation:Formation('Static MiniWaves LH'),
       group:'All 8 (with A-1 calls)',fractions:'1.5',
       paths:[
-          QuarterLeft.changehands(1).skew(0.0,1.0),
+          QuarterLeft.changehands(Hands.LEFT).skew(0.0,1.0),
 
           HingeLeft.skew(1.0,0.0) +
           SwingRight,
 
-          QuarterLeft.changehands(1).skew(0.0,1.0),
+          QuarterLeft.changehands(Hands.LEFT).skew(0.0,1.0),
 
           HingeLeft.skew(1.0,0.0) +
           SwingRight
@@ -1724,12 +1722,12 @@ import '../c3a/mini_chase.dart' as c3a;
           HingeRight.skew(1.0,0.0) +
           SwingLeft,
 
-          QuarterRight.changehands(2).skew(0.0,-1.0),
+          QuarterRight.changehands(Hands.RIGHT).skew(0.0,-1.0),
 
           HingeRight.skew(1.0,0.0) +
           SwingLeft,
 
-          QuarterRight.changehands(2).skew(0.0,-1.0)
+          QuarterRight.changehands(Hands.RIGHT).skew(0.0,-1.0)
       ]),
 
     AnimatedCall('All 8 Reverse Swap Around',
@@ -1836,14 +1834,14 @@ import '../c3a/mini_chase.dart' as c3a;
       from:'Static Mini-Waves',group:'All 8 (with A-1 calls)',parts:'4.5',
       paths:[
           SwingRight +
-          QuarterRight.changehands(2).skew(0.0,-1.0),
+          QuarterRight.changehands(Hands.RIGHT).skew(0.0,-1.0),
 
           SwingRight +
           HingeRight.skew(1.0,0.0) +
           SwingLeft,
 
           SwingRight +
-          QuarterRight.changehands(2).skew(0.0,-1.0),
+          QuarterRight.changehands(Hands.RIGHT).skew(0.0,-1.0),
 
           SwingRight +
           HingeRight.skew(1.0,0.0) +

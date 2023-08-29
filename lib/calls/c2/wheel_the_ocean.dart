@@ -20,7 +20,6 @@
 
 import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> WheelTheOcean = [
@@ -30,7 +29,7 @@ import '../../moves.dart';
       from:'Couples Facing Out',parts:'3',
       paths:[
           BelleWheel +
-          ExtendLeft.changeBeats(3).changehands(2).scale(3.0,2.0) +
+          ExtendLeft.changeBeats(3).changehands(Hands.RIGHT).scale(3.0,2.0) +
           Forward,
 
           BeauWheel +
@@ -42,14 +41,14 @@ import '../../moves.dart';
       from:'Lines Facing Out',fractions:'3',
       paths:[
           BelleWheel +
-          ExtendLeft.changeBeats(3).changehands(2).scale(3.0,2.0) +
+          ExtendLeft.changeBeats(3).changehands(Hands.RIGHT).scale(3.0,2.0) +
           Forward,
 
           BeauWheel +
           Stand.changeBeats(4).changehands(0),
 
           BelleWheel +
-          ExtendLeft.changeBeats(3).changehands(2).scale(3.0,2.0) +
+          ExtendLeft.changeBeats(3).changehands(Hands.RIGHT).scale(3.0,2.0) +
           Forward,
 
           BeauWheel +
@@ -63,11 +62,11 @@ import '../../moves.dart';
           Stand.changeBeats(7),
 
           Stand.changeBeats(3) +
-          ExtendLeft.changeBeats(3).changehands(2).scale(3.0,2.0) +
+          ExtendLeft.changeBeats(3).changehands(Hands.RIGHT).scale(3.0,2.0) +
           Forward,
 
           BelleWheel +
-          ExtendLeft.changeBeats(3).changehands(2).scale(3.0,2.0) +
+          ExtendLeft.changeBeats(3).changehands(Hands.RIGHT).scale(3.0,2.0) +
           Forward,
 
           BeauWheel
@@ -78,7 +77,7 @@ import '../../moves.dart';
       from:'Left-Hand Two-Faced Lines',parts:'3',
       paths:[
           BelleWheel +
-          ExtendLeft.changeBeats(3).changehands(2).scale(3.0,2.0) +
+          ExtendLeft.changeBeats(3).changehands(Hands.RIGHT).scale(3.0,2.0) +
           Forward,
 
           BeauWheel,
@@ -86,7 +85,7 @@ import '../../moves.dart';
           Stand.changeBeats(7),
 
           Stand.changeBeats(3) +
-          ExtendLeft.changeBeats(3).changehands(2).scale(3.0,2.0) +
+          ExtendLeft.changeBeats(3).changehands(Hands.RIGHT).scale(3.0,2.0) +
           Forward
       ]),
 
@@ -95,13 +94,13 @@ import '../../moves.dart';
       from:'Trade By',parts:'3',
       paths:[
           BelleWheel.scale(0.5,1.0) +
-          ExtendLeft.changeBeats(2).changehands(2).scale(1.0,2.0) +
+          ExtendLeft.changeBeats(2).changehands(Hands.RIGHT).scale(1.0,2.0) +
           Forward,
 
           BeauWheel.scale(0.5,1.0),
 
           BelleWheel.scale(0.5,1.0) +
-          ExtendLeft.changeBeats(2).changehands(2).scale(1.0,2.0) +
+          ExtendLeft.changeBeats(2).changehands(Hands.RIGHT).scale(1.0,2.0) +
           Forward,
 
           BeauWheel.scale(0.5,1.0)
@@ -112,13 +111,13 @@ import '../../moves.dart';
       from:'Completed Double Pass Thru',parts:'3',
       paths:[
           BelleWheel.scale(0.5,1.0) +
-          ExtendLeft.changeBeats(2).changehands(2).scale(1.0,2.0) +
+          ExtendLeft.changeBeats(2).changehands(Hands.RIGHT).scale(1.0,2.0) +
           Forward,
 
           BeauWheel.scale(0.5,1.0),
 
           Stand.changeBeats(3) +
-          ExtendLeft.changeBeats(2).changehands(2).scale(1.0,2.0) +
+          ExtendLeft.changeBeats(2).changehands(Hands.RIGHT).scale(1.0,2.0) +
           Forward,
 
           Stand.changeBeats(3) +
@@ -133,7 +132,7 @@ import '../../moves.dart';
           Stand.changeBeats(4).changehands(0),
 
           BeauReverseWheel +
-          ExtendRight.changeBeats(3).changehands(1).scale(3.0,2.0) +
+          ExtendRight.changeBeats(3).changehands(Hands.LEFT).scale(3.0,2.0) +
           Forward
       ]),
 
@@ -145,14 +144,14 @@ import '../../moves.dart';
           Stand.changeBeats(4).changehands(0),
 
           BeauReverseWheel +
-          ExtendRight.changeBeats(3).changehands(1).scale(3.0,2.0) +
+          ExtendRight.changeBeats(3).changehands(Hands.LEFT).scale(3.0,2.0) +
           Forward,
 
           BelleReverseWheel +
           Stand.changeBeats(4).changehands(0),
 
           BeauReverseWheel +
-          ExtendRight.changeBeats(3).changehands(1).scale(3.0,2.0) +
+          ExtendRight.changeBeats(3).changehands(Hands.LEFT).scale(3.0,2.0) +
           Forward
       ]),
 
@@ -161,7 +160,7 @@ import '../../moves.dart';
       from:'Right-Hand Two-Faced Lines',parts:'3',
       paths:[
           Stand.changeBeats(3).changehands(0) +
-          ExtendRight.changeBeats(3).changehands(1).scale(3.0,2.0) +
+          ExtendRight.changeBeats(3).changehands(Hands.LEFT).scale(3.0,2.0) +
           Forward,
 
           Path(),
@@ -170,7 +169,7 @@ import '../../moves.dart';
           Stand.changeBeats(4).changehands(0),
 
           BeauReverseWheel +
-          ExtendRight.changeBeats(3).changehands(1).scale(3.0,2.0) +
+          ExtendRight.changeBeats(3).changehands(Hands.LEFT).scale(3.0,2.0) +
           Forward
       ]),
 
@@ -182,11 +181,11 @@ import '../../moves.dart';
           Stand.changeBeats(4).changehands(0),
 
           BeauReverseWheel +
-          ExtendRight.changeBeats(3).changehands(1).scale(3.0,2.0) +
+          ExtendRight.changeBeats(3).changehands(Hands.LEFT).scale(3.0,2.0) +
           Forward,
 
           Stand.changeBeats(3).changehands(0) +
-          ExtendRight.changeBeats(3).changehands(1).scale(3.0,2.0) +
+          ExtendRight.changeBeats(3).changehands(Hands.LEFT).scale(3.0,2.0) +
           Forward,
 
           Path()
@@ -199,13 +198,13 @@ import '../../moves.dart';
           BelleReverseWheel.scale(0.5,1.0),
 
           BeauReverseWheel.scale(0.5,1.0) +
-          ExtendRight.changeBeats(2).changehands(1).scale(1.0,2.0) +
+          ExtendRight.changeBeats(2).changehands(Hands.LEFT).scale(1.0,2.0) +
           Forward,
 
           BelleReverseWheel.scale(0.5,1.0),
 
           BeauReverseWheel.scale(0.5,1.0) +
-          ExtendRight.changeBeats(2).changehands(1).scale(1.0,2.0) +
+          ExtendRight.changeBeats(2).changehands(Hands.LEFT).scale(1.0,2.0) +
           Forward
       ]),
 
@@ -216,13 +215,13 @@ import '../../moves.dart';
           BelleReverseWheel.scale(0.5,1.0),
 
           BeauReverseWheel.scale(0.5,1.0) +
-          ExtendRight.changeBeats(2).changehands(1).scale(1.0,2.0) +
+          ExtendRight.changeBeats(2).changehands(Hands.LEFT).scale(1.0,2.0) +
           Forward,
 
           Path(),
 
           Stand.changeBeats(3) +
-          ExtendRight.changeBeats(2).changehands(1).scale(1.0,2.0) +
+          ExtendRight.changeBeats(2).changehands(Hands.LEFT).scale(1.0,2.0) +
           Forward
       ]),
 
@@ -236,14 +235,14 @@ import '../../moves.dart';
 
           HingeLeft.scale(1.0,0.5) +
           HalfHingeLeft +
-          ExtendLeft.changeBeats(4).changehands(2).scale(3.0,2.0).skew(-0.25,0.25) +
+          ExtendLeft.changeBeats(4).changehands(Hands.RIGHT).scale(3.0,2.0).skew(-0.25,0.25) +
           Forward,
 
           HalfBackHingeRight.changeBeats(2.25).scale(0.5,0.5) +
           Stand.changeBeats(3).skew(-0.25,0.25),
 
           HalfHingeLeft.changeBeats(2.25).scale(0.5,0.5) +
-          ExtendLeft.changeBeats(4).changehands(2).scale(3.0,2.0).skew(-0.25,-0.75) +
+          ExtendLeft.changeBeats(4).changehands(Hands.RIGHT).scale(3.0,2.0).skew(-0.25,-0.75) +
           Forward
       ]),
 
@@ -252,18 +251,18 @@ import '../../moves.dart';
       group:' ',fractions:'5',
       paths:[
           BelleWheel.changeBeats(5).scale(3.0,3.0) +
-          ExtendLeft.changeBeats(4).changehands(5).scale(2.0,4.0) +
-          Forward_2.changehands(3),
+          ExtendLeft.changeBeats(4).changehands(Hands.GRIPLEFT).scale(2.0,4.0) +
+          Forward_2.changehands(Hands.BOTH),
 
-          BelleWheel.changeBeats(5).changehands(3) +
-          ExtendLeft.changeBeats(4).changehands(6).scale(2.0,4.0) +
-          Forward_2.changehands(2),
+          BelleWheel.changeBeats(5).changehands(Hands.BOTH) +
+          ExtendLeft.changeBeats(4).changehands(Hands.GRIPRIGHT).scale(2.0,4.0) +
+          Forward_2.changehands(Hands.RIGHT),
 
-          BeauWheel.changeBeats(5).changehands(3).scale(0.5,1.0) +
-          Stand.changeBeats(6).changehands(1),
+          BeauWheel.changeBeats(5).changehands(Hands.BOTH).scale(0.5,1.0) +
+          Stand.changeBeats(6).changehands(Hands.LEFT),
 
           BeauWheel.changeBeats(5).scale(1.5,3.0) +
-          Stand.changeBeats(6).changehands(2)
+          Stand.changeBeats(6).changehands(Hands.RIGHT)
       ]),
 
     AnimatedCall('All 8 Wheel the Ocean',
@@ -520,16 +519,16 @@ import '../../moves.dart';
       group:' ',parts:'5',
       paths:[
           BelleWheel.changeBeats(5).scale(3.0,3.0) +
-          Forward_4.changehands(1),
+          Forward_4.changehands(Hands.LEFT),
 
-          BelleWheel.changeBeats(5).changehands(3) +
-          Forward_4.changehands(2),
+          BelleWheel.changeBeats(5).changehands(Hands.BOTH) +
+          Forward_4.changehands(Hands.RIGHT),
 
-          BeauWheel.changeBeats(5).changehands(3).scale(0.5,1.0) +
-          DodgeRight.changeBeats(4).changehands(1).scale(1.0,2.0),
+          BeauWheel.changeBeats(5).changehands(Hands.BOTH).scale(0.5,1.0) +
+          DodgeRight.changeBeats(4).changehands(Hands.LEFT).scale(1.0,2.0),
 
           BeauWheel.changeBeats(5).scale(1.5,3.0) +
-          DodgeRight.changeBeats(4).changehands(2).scale(1.0,2.0)
+          DodgeRight.changeBeats(4).changehands(Hands.RIGHT).scale(1.0,2.0)
       ]),
 
     AnimatedCall('All 8 Wheel the Sea',

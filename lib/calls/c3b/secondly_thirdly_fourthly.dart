@@ -20,7 +20,6 @@
 
 import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> SecondlyThirdlyFourthly = [
@@ -53,19 +52,19 @@ import '../../moves.dart';
       group:'Secondly',fractions:'3;2',
       paths:[
           SwingRight +
-          CounterRotateRight_0_m2.changehands(2).skew(-1.0,0.0) +
+          CounterRotateRight_0_m2.changehands(Hands.RIGHT).skew(-1.0,0.0) +
           HingeRight.scale(0.5,1.0),
 
           SwingRight +
-          CounterRotateRight_2_0.changehands(2).skew(1.0,0.0) +
+          CounterRotateRight_2_0.changehands(Hands.RIGHT).skew(1.0,0.0) +
           HingeRight.scale(0.5,1.0),
 
           SwingRight +
-          CounterRotateRight_0_m2.changehands(2).skew(-1.0,0.0) +
+          CounterRotateRight_0_m2.changehands(Hands.RIGHT).skew(-1.0,0.0) +
           HingeRight.scale(0.5,1.0),
 
           SwingRight +
-          CounterRotateRight_2_0.changehands(2).skew(1.0,0.0) +
+          CounterRotateRight_2_0.changehands(Hands.RIGHT).skew(1.0,0.0) +
           HingeRight.scale(0.5,1.0)
       ]),
 
@@ -79,22 +78,22 @@ import '../../moves.dart';
       group:'Secondly',fractions:'3;3;3',
       paths:[
           RunLeft.skew(-1.0,0.0) +
-          CounterRotateLeft_0_2.changeBeats(3).changehands(1).skew(-1.0,0.0) +
+          CounterRotateLeft_0_2.changeBeats(3).changehands(Hands.LEFT).skew(-1.0,0.0) +
           RunRight.skew(-1.0,0.0) +
           HingeRight.changeBeats(2),
 
           Forward.changeBeats(3) +
-          CounterRotateLeft_2_0.changeBeats(3).changehands(1).skew(1.0,0.0) +
+          CounterRotateLeft_2_0.changeBeats(3).changehands(Hands.LEFT).skew(1.0,0.0) +
           Forward.changeBeats(3) +
           HingeRight.changeBeats(2),
 
           RunLeft.skew(-1.0,0.0) +
-          CounterRotateLeft_2_0.changeBeats(3).changehands(1).skew(1.0,0.0) +
+          CounterRotateLeft_2_0.changeBeats(3).changehands(Hands.LEFT).skew(1.0,0.0) +
           Forward.changeBeats(3) +
           HingeRight.changeBeats(2),
 
           Forward.changeBeats(3) +
-          CounterRotateLeft_0_2.changeBeats(3).changehands(1).skew(-1.0,0.0) +
+          CounterRotateLeft_0_2.changeBeats(3).changehands(Hands.LEFT).skew(-1.0,0.0) +
           RunRight.skew(-1.0,0.0) +
           HingeRight.changeBeats(2)
       ]),
@@ -133,15 +132,15 @@ import '../../moves.dart';
           HingeRight.changeBeats(2) +
           SwingLeft +
           CastRight.changeBeats(5) +
-          CounterRotateLeft_2_0.changehands(1).skew(1.0,0.0) +
-          CounterRotateLeft_2_0.changehands(1).skew(0.0,-1.0) +
+          CounterRotateLeft_2_0.changehands(Hands.LEFT).skew(1.0,0.0) +
+          CounterRotateLeft_2_0.changehands(Hands.LEFT).skew(0.0,-1.0) +
           HingeRight.changeBeats(2),
 
           HingeRight.changeBeats(2) +
           Stand.changeBeats(3) +
           CastRight.changeBeats(5) +
-          CounterRotateLeft_0_2.changehands(1).skew(-1.0,0.0) +
-          CounterRotateLeft_0_2.changehands(1).skew(0.0,1.0) +
+          CounterRotateLeft_0_2.changehands(Hands.LEFT).skew(-1.0,0.0) +
+          CounterRotateLeft_0_2.changehands(Hands.LEFT).skew(0.0,1.0) +
           HingeRight.changeBeats(2),
 
           HingeRight.changeBeats(2) +

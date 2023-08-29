@@ -20,7 +20,6 @@
 
 import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> BoxTheGnat = [
@@ -38,9 +37,9 @@ import '../../moves.dart';
       formation:Formation('Wave RH'),
       from:'Right-Hand Wave',isGenderSpecific:true,
       paths:[
-          UmTurnRight.changehands(6).skew(1.0,-2.0),
+          UmTurnRight.changehands(Hands.GRIPRIGHT).skew(1.0,-2.0),
 
-          UmTurnLeft.changehands(6).skew(1.0,0.0)
+          UmTurnLeft.changehands(Hands.GRIPRIGHT).skew(1.0,0.0)
       ]),
   ];
 

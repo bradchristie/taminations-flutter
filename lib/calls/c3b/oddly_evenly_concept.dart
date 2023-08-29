@@ -20,7 +20,6 @@
 
 import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> OddlyEvenlyConcept = [
@@ -64,53 +63,53 @@ import '../../moves.dart';
   ]),
       group:'Oddly',fractions:'3;3',
       paths:[
-          CounterRotateRight_0_m2.changeBeats(3).changehands(2).skew(0.0,-1.0) +
+          CounterRotateRight_0_m2.changeBeats(3).changehands(Hands.RIGHT).skew(0.0,-1.0) +
           Stand.changeBeats(3) +
-          CounterRotateRight_0_m2.changeBeats(3).changehands(2).skew(-1.0,0.0) +
-          CounterRotateRight_0_m2.changeBeats(3).changehands(2) +
-          CounterRotateRight_0_m2.changeBeats(3).changehands(2),
+          CounterRotateRight_0_m2.changeBeats(3).changehands(Hands.RIGHT).skew(-1.0,0.0) +
+          CounterRotateRight_0_m2.changeBeats(3).changehands(Hands.RIGHT) +
+          CounterRotateRight_0_m2.changeBeats(3).changehands(Hands.RIGHT),
 
-          CounterRotateRight_2_0.changeBeats(3).changehands(2).skew(0.0,1.0) +
+          CounterRotateRight_2_0.changeBeats(3).changehands(Hands.RIGHT).skew(0.0,1.0) +
           Stand.changeBeats(3) +
-          CounterRotateRight_2_0.changeBeats(3).changehands(2).skew(1.0,0.0) +
-          CounterRotateRight_2_0.changeBeats(3).changehands(2) +
-          CounterRotateRight_2_0.changeBeats(3).changehands(2),
+          CounterRotateRight_2_0.changeBeats(3).changehands(Hands.RIGHT).skew(1.0,0.0) +
+          CounterRotateRight_2_0.changeBeats(3).changehands(Hands.RIGHT) +
+          CounterRotateRight_2_0.changeBeats(3).changehands(Hands.RIGHT),
 
-          CounterRotateRight_0_m2.changeBeats(3).changehands(2).skew(0.0,-1.0) +
+          CounterRotateRight_0_m2.changeBeats(3).changehands(Hands.RIGHT).skew(0.0,-1.0) +
           SwingLeft +
-          CounterRotateRight_2_0.changeBeats(3).changehands(2).skew(1.0,0.0) +
-          CounterRotateRight_2_0.changeBeats(3).changehands(2) +
-          CounterRotateRight_2_0.changeBeats(3).changehands(2),
+          CounterRotateRight_2_0.changeBeats(3).changehands(Hands.RIGHT).skew(1.0,0.0) +
+          CounterRotateRight_2_0.changeBeats(3).changehands(Hands.RIGHT) +
+          CounterRotateRight_2_0.changeBeats(3).changehands(Hands.RIGHT),
 
-          CounterRotateRight_2_0.changeBeats(3).changehands(2).skew(0.0,1.0) +
+          CounterRotateRight_2_0.changeBeats(3).changehands(Hands.RIGHT).skew(0.0,1.0) +
           SwingLeft +
-          CounterRotateRight_0_m2.changeBeats(3).changehands(2).skew(-1.0,0.0) +
-          CounterRotateRight_0_m2.changeBeats(3).changehands(2) +
-          CounterRotateRight_0_m2.changeBeats(3).changehands(2)
+          CounterRotateRight_0_m2.changeBeats(3).changehands(Hands.RIGHT).skew(-1.0,0.0) +
+          CounterRotateRight_0_m2.changeBeats(3).changehands(Hands.RIGHT) +
+          CounterRotateRight_0_m2.changeBeats(3).changehands(Hands.RIGHT)
       ]),
 
     AnimatedCall('Oddly Tandem Swing and Mix',
       formation:Formation('Ocean Waves RH BGGB'),
       group:'Oddly',fractions:'4;4',
       paths:[
-          CounterRotateRight_2_0.changehands(2).skew(1.0,0.0) +
-          CounterRotateRight_2_0.changehands(2).skew(0.0,1.0) +
+          CounterRotateRight_2_0.changehands(Hands.RIGHT).skew(1.0,0.0) +
+          CounterRotateRight_2_0.changehands(Hands.RIGHT).skew(0.0,1.0) +
           RunLeft.changeBeats(4).scale(1.0,2.0),
 
-          CounterRotateRight_0_m2.changehands(2).skew(-1.0,0.0) +
-          CounterRotateRight_0_m2.changehands(2).skew(0.0,-1.0) +
+          CounterRotateRight_0_m2.changehands(Hands.RIGHT).skew(-1.0,0.0) +
+          CounterRotateRight_0_m2.changehands(Hands.RIGHT).skew(0.0,-1.0) +
           DodgeRight.changeBeats(4) +
-          CounterRotateRight_0_m2.changehands(2).skew(-1.0,0.0) +
-          CounterRotateRight_0_m2.changehands(2).skew(0.0,-1.0),
+          CounterRotateRight_0_m2.changehands(Hands.RIGHT).skew(-1.0,0.0) +
+          CounterRotateRight_0_m2.changehands(Hands.RIGHT).skew(0.0,-1.0),
 
-          CounterRotateRight_2_0.changehands(2).skew(1.0,0.0) +
-          CounterRotateRight_2_0.changehands(2).skew(0.0,1.0) +
+          CounterRotateRight_2_0.changehands(Hands.RIGHT).skew(1.0,0.0) +
+          CounterRotateRight_2_0.changehands(Hands.RIGHT).skew(0.0,1.0) +
           DodgeRight.changeBeats(4) +
-          CounterRotateRight_2_0.changehands(2).skew(1.0,0.0) +
-          CounterRotateRight_2_0.changehands(2).skew(0.0,1.0),
+          CounterRotateRight_2_0.changehands(Hands.RIGHT).skew(1.0,0.0) +
+          CounterRotateRight_2_0.changehands(Hands.RIGHT).skew(0.0,1.0),
 
-          CounterRotateRight_0_m2.changehands(2).skew(-1.0,0.0) +
-          CounterRotateRight_0_m2.changehands(2).skew(0.0,-1.0) +
+          CounterRotateRight_0_m2.changehands(Hands.RIGHT).skew(-1.0,0.0) +
+          CounterRotateRight_0_m2.changehands(Hands.RIGHT).skew(0.0,-1.0) +
           RunLeft.changeBeats(4).scale(1.0,2.0)
       ]),
   ];

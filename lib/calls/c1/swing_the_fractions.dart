@@ -20,7 +20,6 @@
 
 import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formation.dart';
 import '../../moves.dart';
 import '../c1/replace.dart' as c1;
 
@@ -213,17 +212,17 @@ import '../c1/replace.dart' as c1;
 
           HingeRight +
           Stand.changeBeats(3) +
-          QuarterLeft.changehands(2).skew(0.33,-0.33) +
-          QuarterLeft.changehands(2).skew(-0.33,-0.33) +
-          QuarterLeft.changehands(2).skew(-0.33,0.33) +
+          QuarterLeft.changehands(Hands.RIGHT).skew(0.33,-0.33) +
+          QuarterLeft.changehands(Hands.RIGHT).skew(-0.33,-0.33) +
+          QuarterLeft.changehands(Hands.RIGHT).skew(-0.33,0.33) +
           Stand.changeBeats(3) +
           HingeRight,
 
           HingeLeft +
           Stand.changeBeats(3) +
-          QuarterRight.changehands(1).skew(0.33,0.33) +
-          QuarterRight.changehands(1).skew(-0.33,0.33) +
-          QuarterRight.changehands(1).skew(-0.33,-0.33) +
+          QuarterRight.changehands(Hands.LEFT).skew(0.33,0.33) +
+          QuarterRight.changehands(Hands.LEFT).skew(-0.33,0.33) +
+          QuarterRight.changehands(Hands.LEFT).skew(-0.33,-0.33) +
           Stand.changeBeats(3) +
           HingeLeft,
 
@@ -242,9 +241,9 @@ import '../c1/replace.dart' as c1;
       paths:[
           HingeLeft +
           Stand.changeBeats(3) +
-          QuarterRight.changehands(1).skew(0.0,0.5) +
-          QuarterRight.changehands(1).skew(-0.5,0.5) +
-          QuarterRight.changehands(1).skew(-0.5,0.0) +
+          QuarterRight.changehands(Hands.LEFT).skew(0.0,0.5) +
+          QuarterRight.changehands(Hands.LEFT).skew(-0.5,0.5) +
+          QuarterRight.changehands(Hands.LEFT).skew(-0.5,0.0) +
           RunRight +
           HingeLeft,
 
@@ -266,9 +265,9 @@ import '../c1/replace.dart' as c1;
 
           HingeRight +
           Stand.changeBeats(3) +
-          QuarterLeft.changehands(2).skew(0.0,-0.5) +
-          QuarterLeft.changehands(2).skew(-0.5,-0.5) +
-          QuarterLeft.changehands(2).skew(-0.5,0.0) +
+          QuarterLeft.changehands(Hands.RIGHT).skew(0.0,-0.5) +
+          QuarterLeft.changehands(Hands.RIGHT).skew(-0.5,-0.5) +
+          QuarterLeft.changehands(Hands.RIGHT).skew(-0.5,0.0) +
           FlipLeft +
           HingeRight
       ]),

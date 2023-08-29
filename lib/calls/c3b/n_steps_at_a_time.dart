@@ -20,7 +20,6 @@
 
 import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> NStepsAtATime = [
@@ -70,11 +69,11 @@ import '../../moves.dart';
 
           RunLeft.skew(-1.0,0.0) +
           Forward_2.changeBeats(3) +
-          QuarterLeft.changehands(1).skew(1.0,0.0),
+          QuarterLeft.changehands(Hands.LEFT).skew(1.0,0.0),
 
           UmTurnLeft.changeBeats(3).skew(1.0,1.0) +
           Forward_2.changeBeats(3) +
-          BackHingeRight.changehands(2)
+          BackHingeRight.changehands(Hands.RIGHT)
       ]),
 
     AnimatedCall('3 Steps at a Time',
@@ -88,7 +87,7 @@ import '../../moves.dart';
       paths:[
           UmTurnLeft.changeBeats(3).skew(2.0,1.0) +
           Forward.changeBeats(3) +
-          BackHingeRight.changeBeats(2).changehands(2).scale(2.0,1.0),
+          BackHingeRight.changeBeats(2).changehands(Hands.RIGHT).scale(2.0,1.0),
 
           Forward_3 +
           SwingRight +
@@ -100,7 +99,7 @@ import '../../moves.dart';
 
           FlipLeft +
           Forward.changeBeats(3) +
-          QuarterLeft.changeBeats(2).changehands(3)
+          QuarterLeft.changeBeats(2).changehands(Hands.BOTH)
       ]),
 
     AnimatedCall('4 Steps at a Time',
@@ -113,16 +112,16 @@ import '../../moves.dart';
       group:' ',parts:'3;0',
       paths:[
           UmTurnLeft.changeBeats(3).skew(1.0,1.0) +
-          QuarterLeft.changeBeats(3).changehands(3).skew(-1.0,0.0),
+          QuarterLeft.changeBeats(3).changehands(Hands.BOTH).skew(-1.0,0.0),
 
           UmTurnLeft.changeBeats(3).skew(3.0,0.0) +
-          BackHingeRight.changeBeats(3).changehands(2).scale(3.0,2.0).skew(0.0,1.0),
+          BackHingeRight.changeBeats(3).changehands(Hands.RIGHT).scale(3.0,2.0).skew(0.0,1.0),
 
           RunLeft.scale(1.0,1.5).skew(-3.0,0.0) +
           HingeLeft.changeBeats(3).scale(3.0,2.0),
 
           FlipLeft.skew(-1.0,0.0) +
-          HingeLeft.changeBeats(3).changehands(3)
+          HingeLeft.changeBeats(3).changehands(Hands.BOTH)
       ]),
   ];
 

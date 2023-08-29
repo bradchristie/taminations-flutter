@@ -20,7 +20,6 @@
 
 import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formation.dart';
 import '../../moves.dart';
 import '../a2/all_4_all_8.dart' as a2;
 
@@ -30,14 +29,14 @@ import '../a2/all_4_all_8.dart' as a2;
       formation:Formation('Facing Couples Compact'),
       from:'Facing Couples',isGenderSpecific:true,parts:'3',
       paths:[
-          ExtendLeft.changeBeats(1.5).changehands(2).scale(1.5,0.5) +
+          ExtendLeft.changeBeats(1.5).changehands(Hands.RIGHT).scale(1.5,0.5) +
           QuarterRight.changeBeats(1.5).skew(1.0,0.0) +
-          ExtendRight.changeBeats(1.5).changehands(1).scale(1.5,0.5) +
+          ExtendRight.changeBeats(1.5).changehands(Hands.LEFT).scale(1.5,0.5) +
           QuarterLeft.changeBeats(1.5).skew(1.0,1.0),
 
-          ExtendLeft.changeBeats(1.5).changehands(2).scale(1.5,0.5) +
+          ExtendLeft.changeBeats(1.5).changehands(Hands.RIGHT).scale(1.5,0.5) +
           QuarterLeft.changeBeats(1.5).skew(1.0,-1.0) +
-          ExtendRight.changeBeats(1.5).changehands(1).scale(1.5,0.5) +
+          ExtendRight.changeBeats(1.5).changehands(Hands.LEFT).scale(1.5,0.5) +
           QuarterRight.changeBeats(1.5).skew(1.0,0.0)
       ]),
 
@@ -45,24 +44,24 @@ import '../a2/all_4_all_8.dart' as a2;
       formation:Formation('Normal Lines'),
       from:'Lines',isGenderSpecific:true,parts:'3',
       paths:[
-          ExtendLeft.changeBeats(1.5).changehands(2).scale(2.0,0.5) +
+          ExtendLeft.changeBeats(1.5).changehands(Hands.RIGHT).scale(2.0,0.5) +
           QuarterRight.changeBeats(1.5).skew(1.0,-0.5) +
-          ExtendRight.changeBeats(1.5).changehands(1).scale(1.0,0.5) +
+          ExtendRight.changeBeats(1.5).changehands(Hands.LEFT).scale(1.0,0.5) +
           QuarterLeft.changeBeats(1.5).skew(1.0,1.5),
 
-          ExtendLeft.changeBeats(1.5).changehands(2).scale(2.0,0.5) +
+          ExtendLeft.changeBeats(1.5).changehands(Hands.RIGHT).scale(2.0,0.5) +
           QuarterLeft.changeBeats(1.5).skew(1.0,-0.5) +
-          ExtendRight.changeBeats(1.5).changehands(1).scale(1.0,0.5) +
+          ExtendRight.changeBeats(1.5).changehands(Hands.LEFT).scale(1.0,0.5) +
           QuarterRight.changeBeats(1.5).skew(1.0,-0.5),
 
-          ExtendLeft.changeBeats(1.5).changehands(2).scale(2.0,0.5) +
+          ExtendLeft.changeBeats(1.5).changehands(Hands.RIGHT).scale(2.0,0.5) +
           QuarterRight.changeBeats(1.5).skew(1.0,-0.5) +
-          ExtendRight.changeBeats(1.5).changehands(1).scale(1.0,0.5) +
+          ExtendRight.changeBeats(1.5).changehands(Hands.LEFT).scale(1.0,0.5) +
           QuarterLeft.changeBeats(1.5).skew(1.0,1.5),
 
-          ExtendLeft.changeBeats(1.5).changehands(2).scale(2.0,0.5) +
+          ExtendLeft.changeBeats(1.5).changehands(Hands.RIGHT).scale(2.0,0.5) +
           QuarterLeft.changeBeats(1.5).skew(1.0,-0.5) +
-          ExtendRight.changeBeats(1.5).changehands(1).scale(1.0,0.5) +
+          ExtendRight.changeBeats(1.5).changehands(Hands.LEFT).scale(1.0,0.5) +
           QuarterRight.changeBeats(1.5).skew(1.0,-0.5)
       ]),
 
@@ -70,24 +69,24 @@ import '../a2/all_4_all_8.dart' as a2;
       formation:Formation('Eight Chain Thru'),
       from:'Eight Chain Thru',isGenderSpecific:true,parts:'3',
       paths:[
-          ExtendLeft.changeBeats(1.5).changehands(2).scale(1.0,0.5) +
+          ExtendLeft.changeBeats(1.5).changehands(Hands.RIGHT).scale(1.0,0.5) +
           QuarterRight.changeBeats(1.5).skew(1.0,0.0) +
-          ExtendRight.changeBeats(1.5).changehands(1).scale(1.5,0.5) +
+          ExtendRight.changeBeats(1.5).changehands(Hands.LEFT).scale(1.5,0.5) +
           QuarterLeft.changeBeats(1.5).skew(1.0,0.5),
 
-          ExtendLeft.changeBeats(1.5).changehands(2).scale(1.0,0.5) +
+          ExtendLeft.changeBeats(1.5).changehands(Hands.RIGHT).scale(1.0,0.5) +
           QuarterLeft.changeBeats(1.5).skew(1.0,-1.0) +
-          ExtendRight.changeBeats(1.5).changehands(1).scale(1.5,0.5) +
+          ExtendRight.changeBeats(1.5).changehands(Hands.LEFT).scale(1.5,0.5) +
           QuarterRight.changeBeats(1.5).skew(1.0,0.5),
 
-          ExtendLeft.changeBeats(1.5).changehands(2).scale(1.0,0.5) +
+          ExtendLeft.changeBeats(1.5).changehands(Hands.RIGHT).scale(1.0,0.5) +
           QuarterRight.changeBeats(1.5).skew(1.0,0.0) +
-          ExtendRight.changeBeats(1.5).changehands(1).scale(1.5,0.5) +
+          ExtendRight.changeBeats(1.5).changehands(Hands.LEFT).scale(1.5,0.5) +
           QuarterLeft.changeBeats(1.5).skew(1.0,0.5),
 
-          ExtendLeft.changeBeats(1.5).changehands(2).scale(1.0,0.5) +
+          ExtendLeft.changeBeats(1.5).changehands(Hands.RIGHT).scale(1.0,0.5) +
           QuarterLeft.changeBeats(1.5).skew(1.0,-1.0) +
-          ExtendRight.changeBeats(1.5).changehands(1).scale(1.5,0.5) +
+          ExtendRight.changeBeats(1.5).changehands(Hands.LEFT).scale(1.5,0.5) +
           QuarterRight.changeBeats(1.5).skew(1.0,0.5)
       ]),
     a2.All4All8.where((tam) =>
@@ -103,25 +102,25 @@ import '../a2/all_4_all_8.dart' as a2;
       from:'Double Pass Thru',isGenderSpecific:true,parts:'3;3',
       paths:[
           Stand.changeBeats(6) +
-          ExtendLeft.changeBeats(1.5).changehands(2).scale(1.0,0.5) +
+          ExtendLeft.changeBeats(1.5).changehands(Hands.RIGHT).scale(1.0,0.5) +
           QuarterRight.changeBeats(1.5).skew(1.0,-1.5),
 
           Stand.changeBeats(6) +
-          ExtendLeft.changeBeats(1.5).changehands(2).scale(1.0,0.5) +
+          ExtendLeft.changeBeats(1.5).changehands(Hands.RIGHT).scale(1.0,0.5) +
           QuarterLeft.changeBeats(1.5).skew(1.0,0.5),
 
-          ExtendLeft.changeBeats(1.5).changehands(2).scale(1.0,0.5) +
+          ExtendLeft.changeBeats(1.5).changehands(Hands.RIGHT).scale(1.0,0.5) +
           QuarterRight.changeBeats(1.5).skew(1.0,-0.5) +
-          ExtendRight.changeBeats(1.5).changehands(1).scale(1.0,0.5) +
+          ExtendRight.changeBeats(1.5).changehands(Hands.LEFT).scale(1.0,0.5) +
           QuarterLeft.changeBeats(1.5).skew(1.0,0.5) +
-          ExtendLeft.changeBeats(1.5).changehands(2).scale(1.0,0.5) +
+          ExtendLeft.changeBeats(1.5).changehands(Hands.RIGHT).scale(1.0,0.5) +
           QuarterRight.changeBeats(1.5).skew(1.0,-1.5),
 
-          ExtendLeft.changeBeats(1.5).changehands(2).scale(1.0,0.5) +
+          ExtendLeft.changeBeats(1.5).changehands(Hands.RIGHT).scale(1.0,0.5) +
           QuarterLeft.changeBeats(1.5).skew(1.0,-0.5) +
-          ExtendRight.changeBeats(1.5).changehands(1).scale(1.0,0.5) +
+          ExtendRight.changeBeats(1.5).changehands(Hands.LEFT).scale(1.0,0.5) +
           QuarterRight.changeBeats(1.5).skew(1.0,0.5) +
-          ExtendLeft.changeBeats(1.5).changehands(2).scale(1.0,0.5) +
+          ExtendLeft.changeBeats(1.5).changehands(Hands.RIGHT).scale(1.0,0.5) +
           QuarterLeft.changeBeats(1.5).skew(1.0,0.5)
       ]),
 
@@ -134,28 +133,28 @@ import '../a2/all_4_all_8.dart' as a2;
   ]),
       from:'Eight Chain Thru',isGenderSpecific:true,parts:'3;3',
       paths:[
-          ExtendLeft.changeBeats(1.5).changehands(2).scale(1.0,0.5) +
+          ExtendLeft.changeBeats(1.5).changehands(Hands.RIGHT).scale(1.0,0.5) +
           QuarterRight.changeBeats(1.5).skew(1.0,-0.5) +
-          ExtendRight.changeBeats(1.5).changehands(1).scale(1.0,0.5) +
+          ExtendRight.changeBeats(1.5).changehands(Hands.LEFT).scale(1.0,0.5) +
           QuarterLeft.changeBeats(1.5).skew(1.0,0.5) +
-          ExtendLeft.changeBeats(1.5).changehands(2).scale(1.0,0.5) +
+          ExtendLeft.changeBeats(1.5).changehands(Hands.RIGHT).scale(1.0,0.5) +
           QuarterRight.changeBeats(1.5).skew(1.0,-0.5),
 
-          ExtendLeft.changeBeats(1.5).changehands(2).scale(1.0,0.5) +
+          ExtendLeft.changeBeats(1.5).changehands(Hands.RIGHT).scale(1.0,0.5) +
           QuarterLeft.changeBeats(1.5).skew(1.0,-0.5) +
-          ExtendRight.changeBeats(1.5).changehands(1).scale(1.0,0.5) +
+          ExtendRight.changeBeats(1.5).changehands(Hands.LEFT).scale(1.0,0.5) +
           QuarterRight.changeBeats(1.5).skew(1.0,0.5) +
-          ExtendLeft.changeBeats(1.5).changehands(2).scale(1.0,0.5) +
+          ExtendLeft.changeBeats(1.5).changehands(Hands.RIGHT).scale(1.0,0.5) +
           QuarterLeft.changeBeats(1.5).skew(1.0,-0.5),
 
-          ExtendLeft.changeBeats(1.5).changehands(2).scale(1.0,0.5) +
+          ExtendLeft.changeBeats(1.5).changehands(Hands.RIGHT).scale(1.0,0.5) +
           QuarterRight.changeBeats(1.5).skew(1.0,-0.5) +
-          ExtendRight.changeBeats(1.5).changehands(1).scale(1.0,0.5) +
+          ExtendRight.changeBeats(1.5).changehands(Hands.LEFT).scale(1.0,0.5) +
           QuarterLeft.changeBeats(1.5).skew(1.0,0.5),
 
-          ExtendLeft.changeBeats(1.5).changehands(2).scale(1.0,0.5) +
+          ExtendLeft.changeBeats(1.5).changehands(Hands.RIGHT).scale(1.0,0.5) +
           QuarterLeft.changeBeats(1.5).skew(1.0,-0.5) +
-          ExtendRight.changeBeats(1.5).changehands(1).scale(1.0,0.5) +
+          ExtendRight.changeBeats(1.5).changehands(Hands.LEFT).scale(1.0,0.5) +
           QuarterRight.changeBeats(1.5).skew(1.0,0.5)
       ]),
   ];

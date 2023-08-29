@@ -20,7 +20,6 @@
 
 import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> ChainReaction = [
@@ -46,7 +45,7 @@ import '../../moves.dart';
 
           ExtendLeft.changeBeats(1.5).scale(1.5,0.5) +
           ExtendRight.changeBeats(1.5).scale(1.5,0.5) +
-          QuarterLeft.changehands(1).skew(0.0,1.0) +
+          QuarterLeft.changehands(Hands.LEFT).skew(0.0,1.0) +
           SwingRight.changeBeats(2) +
           LeadRight.changeBeats(4.5).scale(3.0,3.0)
       ]),
@@ -82,7 +81,7 @@ import '../../moves.dart';
 
           ExtendLeft.changeBeats(1.5).scale(1.5,0.5) +
           ExtendRight.changeBeats(1.5).scale(1.5,0.5) +
-          QuarterRight.changehands(2).skew(0.0,-1.0) +
+          QuarterRight.changehands(Hands.RIGHT).skew(0.0,-1.0) +
           SwingLeft.changeBeats(2) +
           LeadLeft.changeBeats(4.5).scale(3.0,3.0)
       ]),
@@ -108,7 +107,7 @@ import '../../moves.dart';
 
           ExtendLeft.changeBeats(1.5).scale(1.5,0.5) +
           ExtendRight.changeBeats(1.5).scale(1.5,0.5) +
-          QuarterLeft.changehands(1).skew(0.0,1.0) +
+          QuarterLeft.changehands(Hands.LEFT).skew(0.0,1.0) +
           SwingRight +
           LeadRight.changeBeats(4.5).scale(3.0,3.0)
       ]),
@@ -134,7 +133,7 @@ import '../../moves.dart';
 
           ExtendLeft.changeBeats(1.5).scale(1.5,0.5) +
           ExtendRight.changeBeats(1.5).scale(1.5,0.5) +
-          QuarterLeft.changehands(1).skew(0.0,1.0) +
+          QuarterLeft.changehands(Hands.LEFT).skew(0.0,1.0) +
           SwingRight.changeBeats(4.5) +
           LeadRight.changeBeats(4.5).scale(3.0,3.0)
       ]),
@@ -159,7 +158,7 @@ import '../../moves.dart';
 
           ExtendLeft.changeBeats(1.5).scale(1.5,0.5) +
           ExtendRight.changeBeats(1.5).scale(1.5,0.5) +
-          QuarterLeft.changehands(1).skew(0.0,1.0) +
+          QuarterLeft.changehands(Hands.LEFT).skew(0.0,1.0) +
           SwingRight.changeBeats(2) +
           LeadRight.changeBeats(4.5).scale(3.0,3.0)
       ]),

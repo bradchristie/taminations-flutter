@@ -19,7 +19,7 @@
 */
 
 import '../../animated_call.dart';
-import '../../formation.dart';
+import '../../common_dart.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> CrissCrossYourNeighbor = [
@@ -195,19 +195,19 @@ import '../../moves.dart';
       formation:Formation('Two-Faced Lines RH'),
       group:' ',
       paths:[
-          ExtendRight.changeBeats(3).changehands(2).scale(2.0,3.5) +
+          ExtendRight.changeBeats(3).changehands(Hands.RIGHT).scale(2.0,3.5) +
           SwingLeft.scale(0.5,0.5) +
           LeadLeft.changeBeats(3).scale(2.5,0.5),
 
-          ExtendRight.changeBeats(3).changehands(1).scale(2.0,2.5) +
+          ExtendRight.changeBeats(3).changehands(Hands.LEFT).scale(2.0,2.5) +
           SwingLeft.scale(1.5,1.5) +
           LeadLeft.changeBeats(3).scale(3.5,1.5),
 
-          RunRight.changeBeats(4).changehands(5).scale(1.0,1.5) +
+          RunRight.changeBeats(4).changehands(Hands.GRIPLEFT).scale(1.0,1.5) +
           Forward_2 +
           LeadRight.changeBeats(3).scale(0.5,2.0),
 
-          RunRight.changeBeats(4).changehands(6).scale(2.0,3.0) +
+          RunRight.changeBeats(4).changehands(Hands.GRIPRIGHT).scale(2.0,3.0) +
           Forward_2 +
           LeadRight.changeBeats(3).scale(1.5,3.0)
       ]),
@@ -228,15 +228,15 @@ import '../../moves.dart';
 
           ExtendRight.changeBeats(2).scale(1.0,2.0) +
           Forward +
-          CounterRotateLeft_0_2.changehands(1) +
-          CounterRotateLeft_0_2.changehands(1) +
+          CounterRotateLeft_0_2.changehands(Hands.LEFT) +
+          CounterRotateLeft_0_2.changehands(Hands.LEFT) +
           Forward +
           LeadLeft.changeBeats(3).scale(1.0,2.0),
 
           Forward +
           ExtendRight.changeBeats(2).scale(1.0,2.0) +
-          CounterRotateLeft_2_0.changehands(1) +
-          CounterRotateLeft_2_0.changehands(1) +
+          CounterRotateLeft_2_0.changehands(Hands.LEFT) +
+          CounterRotateLeft_2_0.changehands(Hands.LEFT) +
           Forward +
           QuarterLeft.changeBeats(3).skew(3.0,0.0)
       ]),

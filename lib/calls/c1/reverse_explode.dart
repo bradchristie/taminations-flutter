@@ -19,7 +19,7 @@
 */
 
 import '../../animated_call.dart';
-import '../../formation.dart';
+import '../../common_dart.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> ReverseExplode = [
@@ -111,13 +111,13 @@ import '../../moves.dart';
       formation:Formation('Two-Faced Tidal Line RH'),
       group:' ',
       paths:[
-          QuarterLeft.changeBeats(3).changehands(2).skew(1.0,-1.5),
+          QuarterLeft.changeBeats(3).changehands(Hands.RIGHT).skew(1.0,-1.5),
 
-          QuarterLeft.changeBeats(3).changehands(1).skew(3.0,-0.5),
+          QuarterLeft.changeBeats(3).changehands(Hands.LEFT).skew(3.0,-0.5),
 
-          LeadRight.changeBeats(3).changehands(1).scale(1.0,0.5),
+          LeadRight.changeBeats(3).changehands(Hands.LEFT).scale(1.0,0.5),
 
-          LeadRight.changeBeats(3).changehands(2).scale(3.0,1.5)
+          LeadRight.changeBeats(3).changehands(Hands.RIGHT).scale(3.0,1.5)
       ]),
 
     AnimatedCall('Concentric Reverse Explode',

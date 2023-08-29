@@ -20,7 +20,6 @@
 
 import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> ScootAndPlenty = [
@@ -177,13 +176,13 @@ import '../../moves.dart';
           FlipRight.skew(0.5,-0.5) +
           ExtendLeft.scale(1.25,0.5) +
           ExtendRight.scale(1.25,1.0) +
-          CounterRotateRight_m2_m4.changeBeats(4).changehands(2) +
+          CounterRotateRight_m2_m4.changeBeats(4).changehands(Hands.RIGHT) +
           QuarterRight.skew(0.0,1.0),
 
           ExtendLeft.changeBeats(5).scale(1.0,0.5) +
           Forward_2.skew(0.5,0.0) +
           RunRight.skew(-0.5,0.0) +
-          CounterRotateRight_4_2.changeBeats(4).changehands(2) +
+          CounterRotateRight_4_2.changeBeats(4).changehands(Hands.RIGHT) +
           QuarterRight.skew(0.0,1.0)
       ]),
 

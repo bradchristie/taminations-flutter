@@ -20,7 +20,6 @@
 
 import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> AnythingAndWeave = [
@@ -146,15 +145,15 @@ import '../../moves.dart';
       formation:Formation('Two-Faced Lines RH'),
       group:' ',
       paths:[
-          ExtendRight.changeBeats(3).changehands(2).scale(2.0,3.5) +
-          LeadLeft.changeBeats(2).changehands(3).scale(0.5,0.5),
+          ExtendRight.changeBeats(3).changehands(Hands.RIGHT).scale(2.0,3.5) +
+          LeadLeft.changeBeats(2).changehands(Hands.BOTH).scale(0.5,0.5),
 
-          ExtendRight.changeBeats(3).changehands(1).scale(2.0,2.5) +
-          LeadLeft.changeBeats(2).changehands(1).scale(1.5,1.5),
+          ExtendRight.changeBeats(3).changehands(Hands.LEFT).scale(2.0,2.5) +
+          LeadLeft.changeBeats(2).changehands(Hands.LEFT).scale(1.5,1.5),
 
-          LeadRight.changeBeats(2).changehands(1).scale(0.5,1.0),
+          LeadRight.changeBeats(2).changehands(Hands.LEFT).scale(0.5,1.0),
 
-          LeadRight.changeBeats(2).changehands(2).scale(1.5,3.0)
+          LeadRight.changeBeats(2).changehands(Hands.RIGHT).scale(1.5,3.0)
       ]),
 
     AnimatedCall('All 8 Weave',

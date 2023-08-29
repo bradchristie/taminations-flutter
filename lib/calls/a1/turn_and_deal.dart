@@ -19,9 +19,8 @@
 */
 
 import '../../animated_call.dart';
-import '../../formation.dart';
+import '../../common_dart.dart';
 import '../../moves.dart';
-
 import '../a2/all_4_all_8.dart' as a2;
 
   final List<AnimatedCall> TurnAndDeal = [
@@ -417,13 +416,13 @@ import '../a2/all_4_all_8.dart' as a2;
       formation:Formation('Tidal Line RH'),
       from:'Right-Hand Tidal Line',
       paths:[
-          BelleWheel.changeBeats(4).changehands(6).scale(1.0,-0.5).skew(1.5,-1.5),
+          BelleWheel.changeBeats(4).changehands(Hands.GRIPRIGHT).scale(1.0,-0.5).skew(1.5,-1.5),
 
-          UmTurnRight.changeBeats(4).changehands(5).skew(1.5,0.5),
+          UmTurnRight.changeBeats(4).changehands(Hands.GRIPLEFT).skew(1.5,0.5),
 
-          RunRight.changeBeats(4).changehands(6).scale(1.5,2.25).skew(1.5,0.0),
+          RunRight.changeBeats(4).changehands(Hands.GRIPRIGHT).scale(1.5,2.25).skew(1.5,0.0),
 
-          RunRight.changeBeats(4).changehands(5).scale(0.5,0.75).skew(1.55,0.0)
+          RunRight.changeBeats(4).changehands(Hands.GRIPLEFT).scale(0.5,0.75).skew(1.55,0.0)
       ]),
 
     AnimatedCall('As Couples Turn and Deal',
@@ -435,10 +434,10 @@ import '../a2/all_4_all_8.dart' as a2;
           BelleWheel.changeBeats(4).scale(0.5,0.5).skew(-1.5,1.5),
 
           QuarterLeft.changeBeats(2).skew(-1.5,0.5) +
-          QuarterLeft.changeBeats(2).changehands(2).skew(1.0,0.0),
+          QuarterLeft.changeBeats(2).changehands(Hands.RIGHT).skew(1.0,0.0),
 
           QuarterLeft.changeBeats(2).skew(-0.5,1.5) +
-          LeadLeft.changeBeats(2).changehands(1).scale(3.0,1.0)
+          LeadLeft.changeBeats(2).changehands(Hands.LEFT).scale(3.0,1.0)
       ]),
 
     AnimatedCall('As Couples Turn and Deal',
@@ -450,10 +449,10 @@ import '../a2/all_4_all_8.dart' as a2;
           BeauWheel.changeBeats(4).scale(0.5,-0.5).skew(1.5,-0.5),
 
           QuarterLeft.changeBeats(2).skew(-0.5,1.5) +
-          LeadLeft.changeBeats(2).changehands(1).scale(3.0,1.0),
+          LeadLeft.changeBeats(2).changehands(Hands.LEFT).scale(3.0,1.0),
 
           QuarterLeft.changeBeats(2).skew(-1.5,0.5) +
-          QuarterLeft.changeBeats(2).changehands(2).skew(1.0,0.0)
+          QuarterLeft.changeBeats(2).changehands(Hands.RIGHT).skew(1.0,0.0)
       ]),
 
     AnimatedCall('As Couples Turn and Deal',
@@ -464,9 +463,9 @@ import '../a2/all_4_all_8.dart' as a2;
 
           BeauWheel.changeBeats(4).scale(0.5,0.5).skew(-1.5,0.5),
 
-          RunRight.changeBeats(4).changehands(6).scale(1.5,2.25).skew(1.5,0.0),
+          RunRight.changeBeats(4).changehands(Hands.GRIPRIGHT).scale(1.5,2.25).skew(1.5,0.0),
 
-          RunRight.changeBeats(4).changehands(5).scale(0.5,0.75).skew(1.55,0.0)
+          RunRight.changeBeats(4).changehands(Hands.GRIPLEFT).scale(0.5,0.75).skew(1.55,0.0)
       ]),
     a2.All4All8.where((tam) =>
       tam.title == 'All 8 Turn and Deal').first.xref(title: 'All 8 Turn and Deal'),

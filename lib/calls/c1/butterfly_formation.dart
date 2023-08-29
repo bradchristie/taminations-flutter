@@ -20,7 +20,6 @@
 
 import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formation.dart';
 import '../../moves.dart';
 import '../c1/cross_and_turn.dart' as c1;
 import '../c1/shakedown.dart' as c1;
@@ -125,11 +124,11 @@ import '../c2/turn_to_a_line.dart' as c2;
           RunRight.scale(1.0,2.0) +
           Forward +
           SwingRight.scale(0.5,1.0) +
-          Back.changeBeats(3).changehands(2),
+          Back.changeBeats(3).changehands(Hands.RIGHT),
 
           Forward_3.changeBeats(4) +
           SwingRight.scale(0.5,1.0) +
-          Forward.changeBeats(3).changehands(2),
+          Forward.changeBeats(3).changehands(Hands.RIGHT),
 
           Forward_2 +
           LeadRight.changeBeats(2) +
@@ -445,7 +444,7 @@ import '../c2/turn_to_a_line.dart' as c2;
       group:'Butterfly',
       paths:[
           ExtendRight.changeBeats(4).scale(2.0,2.0) +
-          CastRight.changeBeats(6).changehands(6).scale(0.5,1.0) +
+          CastRight.changeBeats(6).changehands(Hands.GRIPRIGHT).scale(0.5,1.0) +
           ExtendLeft.changeBeats(4).scale(3.0,1.5),
 
           RunRight.changeBeats(6).scale(1.0,3.0) +
@@ -453,7 +452,7 @@ import '../c2/turn_to_a_line.dart' as c2;
           QuarterRight.skew(1.0,0.0),
 
           Forward_2.changeBeats(4) +
-          CastRight.changeBeats(6).changehands(6).scale(0.5,1.0) +
+          CastRight.changeBeats(6).changehands(Hands.GRIPRIGHT).scale(0.5,1.0) +
           ExtendRight.scale(1.0,0.5),
 
           Forward_2.changeBeats(4) +

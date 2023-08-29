@@ -19,7 +19,7 @@
 */
 
 import '../../animated_call.dart';
-import '../../formation.dart';
+import '../../common_dart.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> Quick = [
@@ -31,12 +31,12 @@ import '../../moves.dart';
           Forward_2,
 
           Stand.changeBeats(3).changehands(0) +
-          UmTurnRight.changeBeats(4).changehands(2),
+          UmTurnRight.changeBeats(4).changehands(Hands.RIGHT),
 
           Forward_2,
 
           ExtendLeft.changeBeats(3).scale(2.0,2.0) +
-          RunRight.changeBeats(4).changehands(2).scale(2.0,2.0)
+          RunRight.changeBeats(4).changehands(Hands.RIGHT).scale(2.0,2.0)
       ]),
 
     AnimatedCall('Quick Step',
@@ -44,12 +44,12 @@ import '../../moves.dart';
       from:'Left-Hand Centers',
       paths:[
           Stand.changeBeats(3).changehands(0) +
-          UmTurnLeft.changeBeats(4).changehands(1),
+          UmTurnLeft.changeBeats(4).changehands(Hands.LEFT),
 
           Forward_2,
 
           ExtendRight.changeBeats(3).scale(2.0,2.0) +
-          RunLeft.changeBeats(4).changehands(1).scale(2.0,2.0),
+          RunLeft.changeBeats(4).changehands(Hands.LEFT).scale(2.0,2.0),
 
           Forward_2
       ]),

@@ -20,7 +20,6 @@
 
 import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formation.dart';
 import '../../moves.dart';
 import '../plus/fan_the_top.dart' as plus;
 
@@ -116,23 +115,23 @@ import '../plus/fan_the_top.dart' as plus;
       paths:[
           Stand.changeBeats(2) +
           FlipRight.changeBeats(5.5) +
-          CastLeft.changehands(5) +
+          CastLeft.changehands(Hands.GRIPLEFT) +
           SwingRight +
           CastLeft,
 
           CastLeft +
           SwingRight +
-          CastLeft.changehands(5) +
+          CastLeft.changehands(Hands.GRIPLEFT) +
           FlipRight,
 
           CastLeft +
           Stand.changeBeats(3) +
-          CastLeft.changehands(5) +
+          CastLeft.changehands(Hands.GRIPLEFT) +
           FlipRight,
 
           Stand.changeBeats(2) +
           FlipRight.changeBeats(5.5) +
-          CastLeft.changehands(5) +
+          CastLeft.changehands(Hands.GRIPLEFT) +
           Stand.changeBeats(3) +
           CastLeft
       ]),
@@ -216,21 +215,21 @@ import '../plus/fan_the_top.dart' as plus;
           DodgeRight,
 
           ExtendLeft.changeBeats(2).scale(2.0,0.5) +
-          SwingRight.changehands(6).scale(0.5,0.5) +
+          SwingRight.changehands(Hands.GRIPRIGHT).scale(0.5,0.5) +
           HingeRight.scale(1.0,0.5) +
           LeadLeft +
           LeadLeft +
           LeadLeft,
 
           ExtendLeft.changeBeats(2).scale(2.0,0.5) +
-          SwingRight.changehands(6).scale(0.5,0.5) +
+          SwingRight.changehands(Hands.GRIPRIGHT).scale(0.5,0.5) +
           HingeRight.scale(1.0,0.5) +
           Forward_2 +
           HingeRight +
           Forward_2,
 
           ExtendLeft.changeBeats(2).scale(2.0,0.5) +
-          SwingRight.changehands(6).scale(0.5,0.5) +
+          SwingRight.changehands(Hands.GRIPRIGHT).scale(0.5,0.5) +
           HingeRight.scale(1.0,0.5) +
           HingeLeft +
           DodgeRight

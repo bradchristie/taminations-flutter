@@ -20,7 +20,6 @@
 
 import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> Remake = [
@@ -225,15 +224,15 @@ import '../../moves.dart';
 
           HingeRight +
           Stand.changeBeats(3) +
-          QuarterLeft.changehands(2).skew(0.33,-0.33) +
-          QuarterLeft.changehands(2).skew(-0.33,-0.33) +
-          QuarterLeft.changehands(2).skew(-0.33,0.33),
+          QuarterLeft.changehands(Hands.RIGHT).skew(0.33,-0.33) +
+          QuarterLeft.changehands(Hands.RIGHT).skew(-0.33,-0.33) +
+          QuarterLeft.changehands(Hands.RIGHT).skew(-0.33,0.33),
 
           HingeLeft +
           Stand.changeBeats(3) +
-          QuarterRight.changehands(1).skew(0.33,0.33) +
-          QuarterRight.changehands(1).skew(-0.33,0.33) +
-          QuarterRight.changehands(1).skew(-0.33,-0.33),
+          QuarterRight.changehands(Hands.LEFT).skew(0.33,0.33) +
+          QuarterRight.changehands(Hands.LEFT).skew(-0.33,0.33) +
+          QuarterRight.changehands(Hands.LEFT).skew(-0.33,-0.33),
 
           HingeLeft +
           RunRight +
@@ -248,9 +247,9 @@ import '../../moves.dart';
       paths:[
           HingeLeft +
           Stand.changeBeats(3) +
-          QuarterRight.changehands(1).skew(0.33,0.33) +
-          QuarterRight.changehands(1).skew(-0.33,0.33) +
-          QuarterRight.changehands(1).skew(-0.33,-0.33),
+          QuarterRight.changehands(Hands.LEFT).skew(0.33,0.33) +
+          QuarterRight.changehands(Hands.LEFT).skew(-0.33,0.33) +
+          QuarterRight.changehands(Hands.LEFT).skew(-0.33,-0.33),
 
           HingeLeft +
           RunRight +
@@ -266,9 +265,9 @@ import '../../moves.dart';
 
           HingeRight +
           Stand.changeBeats(3) +
-          QuarterLeft.changehands(2).skew(0.33,-0.33) +
-          QuarterLeft.changehands(2).skew(-0.33,-0.33) +
-          QuarterLeft.changehands(2).skew(-0.33,0.33)
+          QuarterLeft.changehands(Hands.RIGHT).skew(0.33,-0.33) +
+          QuarterLeft.changehands(Hands.RIGHT).skew(-0.33,-0.33) +
+          QuarterLeft.changehands(Hands.RIGHT).skew(-0.33,0.33)
       ]),
 
     AnimatedCall('Any Hand Remake',
@@ -286,7 +285,7 @@ import '../../moves.dart';
           HingeRight.scale(1.0,0.5),
 
           HingeRight.scale(0.5,1.0) +
-          Stand.changeBeats(3).changehands(1) +
+          Stand.changeBeats(3).changehands(Hands.LEFT) +
           BackHingeRight.scale(0.5,0.5) +
           BackHingeRight.scale(0.5,0.5) +
           BackHingeRight.scale(1.0,0.5),
@@ -309,7 +308,7 @@ import '../../moves.dart';
           BackHingeRight.scale(1.0,0.5),
 
           HingeLeft.scale(0.5,1.0) +
-          Stand.changeBeats(3).changehands(2) +
+          Stand.changeBeats(3).changehands(Hands.RIGHT) +
           BackHingeLeft.scale(0.5,0.5) +
           BackHingeLeft.scale(0.5,0.5) +
           BackHingeLeft.scale(1.0,0.5),
@@ -368,27 +367,27 @@ import '../../moves.dart';
       from:'Alamo Wave',group:' ',parts:'1.5;3',
       paths:[
           SxtnthLeft +
-          HingeRight.changehands(6).skew(0.414,0.0) +
+          HingeRight.changehands(Hands.GRIPRIGHT).skew(0.414,0.0) +
           HingeLeft +
-          HingeLeft.changehands(5).skew(0.414,0.0) +
+          HingeLeft.changehands(Hands.GRIPLEFT).skew(0.414,0.0) +
           CastRight +
           SxtnthRight,
 
           SxtnthRight +
-          HingeRight.changehands(6) +
+          HingeRight.changehands(Hands.GRIPRIGHT) +
           Stand.changeBeats(3) +
           CastRight +
           SxtnthLeft,
 
           SxtnthLeft +
-          HingeRight.changehands(6).skew(0.414,0.0) +
+          HingeRight.changehands(Hands.GRIPRIGHT).skew(0.414,0.0) +
           HingeLeft +
-          HingeLeft.changehands(5).skew(0.414,0.0) +
+          HingeLeft.changehands(Hands.GRIPLEFT).skew(0.414,0.0) +
           CastRight +
           SxtnthRight,
 
           SxtnthRight +
-          HingeRight.changehands(6) +
+          HingeRight.changehands(Hands.GRIPRIGHT) +
           Stand.changeBeats(3) +
           CastRight +
           SxtnthLeft
@@ -456,25 +455,25 @@ import '../../moves.dart';
       formation:Formation('Two-Faced Lines RH'),
       from:'Two-Faced Lines',group:' ',parts:'3;4',
       paths:[
-          LeadRight.changeBeats(3).changehands(2).scale(1.5,3.0) +
+          LeadRight.changeBeats(3).changehands(Hands.RIGHT).scale(1.5,3.0) +
           SwingLeft.changeBeats(4).scale(0.5,0.5) +
           SwingRight.changeBeats(4).scale(1.5,1.5) +
-          LeadRight.changeBeats(3).changehands(2).scale(3.0,1.5),
+          LeadRight.changeBeats(3).changehands(Hands.RIGHT).scale(3.0,1.5),
 
-          LeadRight.changeBeats(3).changehands(3).scale(0.5,1.0) +
+          LeadRight.changeBeats(3).changehands(Hands.BOTH).scale(0.5,1.0) +
           SwingLeft.changeBeats(4).scale(1.5,1.5) +
           SwingRight.changeBeats(4).scale(0.5,0.5) +
-          LeadRight.changeBeats(3).changehands(3).scale(1.0,0.5),
+          LeadRight.changeBeats(3).changehands(Hands.BOTH).scale(1.0,0.5),
 
-          LeadRight.changeBeats(3).changehands(3).scale(0.5,1.0) +
+          LeadRight.changeBeats(3).changehands(Hands.BOTH).scale(0.5,1.0) +
           Stand.changeBeats(4) +
           SwingRight.changeBeats(4).scale(0.5,0.5) +
-          LeadRight.changeBeats(3).changehands(3).scale(1.0,0.5),
+          LeadRight.changeBeats(3).changehands(Hands.BOTH).scale(1.0,0.5),
 
-          LeadRight.changeBeats(3).changehands(2).scale(1.5,3.0) +
+          LeadRight.changeBeats(3).changehands(Hands.RIGHT).scale(1.5,3.0) +
           Stand.changeBeats(4) +
           SwingRight.changeBeats(4).scale(1.5,1.5) +
-          LeadRight.changeBeats(3).changehands(2).scale(3.0,1.5)
+          LeadRight.changeBeats(3).changehands(Hands.RIGHT).scale(3.0,1.5)
       ]),
 
     AnimatedCall('Grand Remake',

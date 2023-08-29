@@ -19,7 +19,7 @@
 */
 
 import '../../animated_call.dart';
-import '../../formation.dart';
+import '../../common_dart.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> ReverseCutTheGalaxy = [
@@ -28,13 +28,13 @@ import '../../moves.dart';
       formation:Formation('Galaxy RH GP'),
       from:'Right-Hand Galaxy',
       paths:[
-          SwingRight.changeBeats(4).changehands(6).scale(0.5,1.0) +
+          SwingRight.changeBeats(4).changehands(Hands.GRIPRIGHT).scale(0.5,1.0) +
           DodgeLeft.skew(-0.5,0.0),
 
           Stand.changeBeats(4) +
           LeadRight.changeBeats(3).scale(1.0,1.5),
 
-          SwingRight.changeBeats(4).changehands(6).scale(0.5,1.0) +
+          SwingRight.changeBeats(4).changehands(Hands.GRIPRIGHT).scale(0.5,1.0) +
           DodgeLeft.skew(0.5,0.0),
 
           Stand.changeBeats(4) +
@@ -45,13 +45,13 @@ import '../../moves.dart';
       formation:Formation('Galaxy LH GP'),
       from:'Left-Hand Galaxy',
       paths:[
-          SwingLeft.changeBeats(4).changehands(5).scale(0.5,1.0) +
+          SwingLeft.changeBeats(4).changehands(Hands.GRIPLEFT).scale(0.5,1.0) +
           DodgeRight.skew(0.5,0.0),
 
           Stand.changeBeats(4) +
           LeadLeft.changeBeats(3).scale(1.0,1.5),
 
-          SwingLeft.changeBeats(4).changehands(5).scale(0.5,1.0) +
+          SwingLeft.changeBeats(4).changehands(Hands.GRIPLEFT).scale(0.5,1.0) +
           DodgeRight.skew(-0.5,0.0),
 
           Stand.changeBeats(4) +
@@ -62,13 +62,13 @@ import '../../moves.dart';
       formation:Formation('Galaxy Facing RH Box'),
       from:'Facing Galaxy, Right-Hand Box',
       paths:[
-          SwingRight.changeBeats(4).changehands(6).scale(0.5,1.0) +
+          SwingRight.changeBeats(4).changehands(Hands.GRIPRIGHT).scale(0.5,1.0) +
           DodgeLeft.skew(-0.5,0.0),
 
           Stand.changeBeats(4) +
           LeadLeft.changeBeats(3).scale(1.0,1.5),
 
-          SwingRight.changeBeats(4).changehands(6).scale(0.5,1.0) +
+          SwingRight.changeBeats(4).changehands(Hands.GRIPRIGHT).scale(0.5,1.0) +
           DodgeLeft.skew(0.5,0.0),
 
           Stand.changeBeats(4) +
@@ -79,13 +79,13 @@ import '../../moves.dart';
       formation:Formation('Galaxy Facing LH Box'),
       from:'Facing Galaxy, Left-Hand Box',
       paths:[
-          SwingLeft.changeBeats(4).changehands(5).scale(0.5,1.0) +
+          SwingLeft.changeBeats(4).changehands(Hands.GRIPLEFT).scale(0.5,1.0) +
           DodgeRight.skew(0.5,0.0),
 
           Stand.changeBeats(4) +
           LeadRight.changeBeats(3).scale(1.0,1.5),
 
-          SwingLeft.changeBeats(4).changehands(5).scale(0.5,1.0) +
+          SwingLeft.changeBeats(4).changehands(Hands.GRIPLEFT).scale(0.5,1.0) +
           DodgeRight.skew(-0.5,0.0),
 
           Stand.changeBeats(4) +

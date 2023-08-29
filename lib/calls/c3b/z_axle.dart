@@ -20,7 +20,6 @@
 
 import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> ZAxle = [
@@ -36,7 +35,7 @@ import '../../moves.dart';
           SwingLeft +
           SwingRight,
 
-          Stand.changeBeats(4).changehands(2) +
+          Stand.changeBeats(4).changehands(Hands.RIGHT) +
           SwingLeft +
           Stand.changeBeats(3)
       ]),
@@ -52,7 +51,7 @@ import '../../moves.dart';
           SwingRight +
           SwingLeft,
 
-          Stand.changeBeats(4).changehands(1) +
+          Stand.changeBeats(4).changehands(Hands.LEFT) +
           SwingRight +
           Stand.changeBeats(3)
       ]),
@@ -68,7 +67,7 @@ import '../../moves.dart';
           SwingRight +
           SwingLeft,
 
-          Stand.changeBeats(4).changehands(2) +
+          Stand.changeBeats(4).changehands(Hands.RIGHT) +
           FlipLeft +
           Stand.changeBeats(3)
       ]),
@@ -84,7 +83,7 @@ import '../../moves.dart';
           FlipLeft +
           SwingRight,
 
-          Stand.changeBeats(4).changehands(1) +
+          Stand.changeBeats(4).changehands(Hands.LEFT) +
           RunRight +
           Stand.changeBeats(3)
       ]),
@@ -98,7 +97,7 @@ import '../../moves.dart';
       paths:[
           ExtendLeft.scale(1.0,0.5) +
           ExtendRight.scale(1.0,0.5) +
-          Stand.changeBeats(4).changehands(1) +
+          Stand.changeBeats(4).changehands(Hands.LEFT) +
           SwingRight +
           Stand.changeBeats(3),
 
@@ -118,7 +117,7 @@ import '../../moves.dart';
       paths:[
           ExtendLeft.scale(1.0,0.5) +
           ExtendRight.scale(1.0,0.5) +
-          Stand.changeBeats(4).changehands(1) +
+          Stand.changeBeats(4).changehands(Hands.LEFT) +
           SwingLeft +
           Stand.changeBeats(3),
 

@@ -20,7 +20,6 @@
 
 import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> DoYourPart = [
@@ -51,12 +50,12 @@ import '../../moves.dart';
           Forward_2 +
           RunRight.changeBeats(2.5).skew(1.0,0.0),
 
-          RunRight.changeBeats(6).changehands(1),
+          RunRight.changeBeats(6).changehands(Hands.LEFT),
 
           RunRight.changeBeats(2.5) +
           Forward_4.changeBeats(3.5),
 
-          RunRight.changeBeats(6).changehands(2).scale(3.0,3.0)
+          RunRight.changeBeats(6).changehands(Hands.RIGHT).scale(3.0,3.0)
       ]),
   ];
 

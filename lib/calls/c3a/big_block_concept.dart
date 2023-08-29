@@ -20,7 +20,6 @@
 
 import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> BigBlockConcept = [
@@ -58,7 +57,7 @@ import '../../moves.dart';
           CounterRotateRight_2_m4.changeBeats(4),
 
           Stand.changeBeats(2) +
-          CounterRotateLeft_2_0.changeBeats(4).changehands(1) +
+          CounterRotateLeft_2_0.changeBeats(4).changehands(Hands.LEFT) +
           Back_2,
 
           Stand.changeBeats(2) +
@@ -66,7 +65,7 @@ import '../../moves.dart';
           Back_2,
 
           Back_2 +
-          CounterRotateLeft_0_2.changeBeats(4).changehands(1)
+          CounterRotateLeft_0_2.changeBeats(4).changehands(Hands.LEFT)
       ]),
 
     AnimatedCall('Big Block Split Circulate',

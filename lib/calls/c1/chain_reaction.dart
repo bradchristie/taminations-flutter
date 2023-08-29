@@ -20,7 +20,6 @@
 
 import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formation.dart';
 import '../../moves.dart';
 import '../a1/chain_reaction.dart' as a1;
 
@@ -43,21 +42,21 @@ import '../a1/chain_reaction.dart' as a1;
           ExtendRight.changeBeats(1.5).scale(1.5,0.5) +
           Stand.changeBeats(1.5) +
           HingeLeft.changeBeats(2) +
-          HingeRight.changehands(2).scale(2.0,2.0).skew(0.0,0.33) +
-          HingeRight.changehands(2).scale(2.0,2.0).skew(-0.67,0.67) +
-          HingeRight.changehands(2).scale(2.0,2.0).skew(-0.33,0.0),
+          HingeRight.changehands(Hands.RIGHT).scale(2.0,2.0).skew(0.0,0.33) +
+          HingeRight.changehands(Hands.RIGHT).scale(2.0,2.0).skew(-0.67,0.67) +
+          HingeRight.changehands(Hands.RIGHT).scale(2.0,2.0).skew(-0.33,0.0),
 
           ExtendLeft.changeBeats(1.5).scale(1.5,0.5) +
           ExtendRight.changeBeats(1.5).scale(1.5,0.5) +
-          QuarterRight.changehands(2).skew(0.0,-1.0) +
+          QuarterRight.changehands(Hands.RIGHT).skew(0.0,-1.0) +
           FlipLeft.changeBeats(2) +
           LeadLeft.changeBeats(4.5).scale(3.0,3.0),
 
           LeadRight.changeBeats(4.5).scale(5.0,3.0) +
           RunRight.changeBeats(2) +
-          QuarterRight.changehands(1).skew(0.33,0.33) +
-          QuarterRight.changehands(1).skew(-0.33,0.33) +
-          QuarterRight.changehands(1).skew(-0.33,-0.33)
+          QuarterRight.changehands(Hands.LEFT).skew(0.33,0.33) +
+          QuarterRight.changehands(Hands.LEFT).skew(-0.33,0.33) +
+          QuarterRight.changehands(Hands.LEFT).skew(-0.33,-0.33)
       ]),
 
     AnimatedCall('Chain Reaction',
@@ -68,9 +67,9 @@ import '../a1/chain_reaction.dart' as a1;
           ExtendRight.changeBeats(1.5).scale(1.5,0.5) +
           Stand.changeBeats(1.5) +
           HingeRight.changeBeats(2) +
-          HingeLeft.changehands(1).scale(2.0,2.0).skew(0.0,-0.33) +
-          HingeLeft.changehands(1).scale(2.0,2.0).skew(-0.67,-0.67) +
-          HingeLeft.changehands(1).scale(2.0,2.0).skew(-0.33,0.0),
+          HingeLeft.changehands(Hands.LEFT).scale(2.0,2.0).skew(0.0,-0.33) +
+          HingeLeft.changehands(Hands.LEFT).scale(2.0,2.0).skew(-0.67,-0.67) +
+          HingeLeft.changehands(Hands.LEFT).scale(2.0,2.0).skew(-0.33,0.0),
 
           Stand.changeBeats(3) +
           HingeLeft.scale(2.0,1.0) +
@@ -79,15 +78,15 @@ import '../a1/chain_reaction.dart' as a1;
 
           ExtendLeft.changeBeats(1.5).scale(1.5,0.5) +
           ExtendRight.changeBeats(1.5).scale(1.5,0.5) +
-          QuarterLeft.changehands(1).skew(0.0,1.0) +
+          QuarterLeft.changehands(Hands.LEFT).skew(0.0,1.0) +
           RunRight.changeBeats(2) +
           LeadRight.changeBeats(4.5).scale(3.0,3.0),
 
           LeadLeft.changeBeats(4.5).scale(5.0,3.0) +
           FlipLeft.changeBeats(2) +
-          QuarterLeft.changehands(2).skew(0.33,-0.33) +
-          QuarterLeft.changehands(2).skew(-0.33,-0.33) +
-          QuarterLeft.changehands(2).skew(-0.33,0.33)
+          QuarterLeft.changehands(Hands.RIGHT).skew(0.33,-0.33) +
+          QuarterLeft.changehands(Hands.RIGHT).skew(-0.33,-0.33) +
+          QuarterLeft.changehands(Hands.RIGHT).skew(-0.33,0.33)
       ]),
 
     AnimatedCall('Chain Reaction',
@@ -113,8 +112,8 @@ import '../a1/chain_reaction.dart' as a1;
           ExtendLeft.changeBeats(1.5).scale(1.5,0.5) +
           ExtendRight.changeBeats(1.5).scale(1.5,0.5) +
           QuarterLeft.changeBeats(2).skew(-2.0,1.0) +
-          EighthLeft.changeBeats(1.5).changehands(1).skew(0.353,0.647) +
-          EighthLeft.changeBeats(1.5).changehands(1).skew(0.707,-0.207) +
+          EighthLeft.changeBeats(1.5).changehands(Hands.LEFT).skew(0.353,0.647) +
+          EighthLeft.changeBeats(1.5).changehands(Hands.LEFT).skew(0.707,-0.207) +
           ExtendRight.changeBeats(4.5).scale(2.0,2.0)
       ]),
 
@@ -162,9 +161,9 @@ import '../a1/chain_reaction.dart' as a1;
           ExtendRight.changeBeats(1.5).scale(1.5,0.5) +
           Stand.changeBeats(2) +
           HingeLeft.changeBeats(3) +
-          HingeRight.changehands(2).scale(2.0,2.0).skew(0.0,0.33) +
-          HingeRight.changehands(2).scale(2.0,2.0).skew(-0.67,0.67) +
-          HingeRight.changehands(2).scale(2.0,2.0).skew(-0.33,0.0),
+          HingeRight.changehands(Hands.RIGHT).scale(2.0,2.0).skew(0.0,0.33) +
+          HingeRight.changehands(Hands.RIGHT).scale(2.0,2.0).skew(-0.67,0.67) +
+          HingeRight.changehands(Hands.RIGHT).scale(2.0,2.0).skew(-0.33,0.0),
 
           ExtendLeft.changeBeats(1.5).scale(1.5,0.5) +
           ExtendRight.changeBeats(1.5).scale(1.5,0.5) +
@@ -174,9 +173,9 @@ import '../a1/chain_reaction.dart' as a1;
 
           LeadRight.changeBeats(5).scale(5.0,3.0) +
           RunRight +
-          QuarterRight.changehands(1).skew(0.33,0.33) +
-          QuarterRight.changehands(1).skew(-0.33,0.33) +
-          QuarterRight.changehands(1).skew(-0.33,-0.33)
+          QuarterRight.changehands(Hands.LEFT).skew(0.33,0.33) +
+          QuarterRight.changehands(Hands.LEFT).skew(-0.33,0.33) +
+          QuarterRight.changehands(Hands.LEFT).skew(-0.33,-0.33)
       ]),
 
     AnimatedCall('Chain Reaction',
@@ -193,9 +192,9 @@ import '../a1/chain_reaction.dart' as a1;
           Stand.changeBeats(2) +
           EighthRight.changeBeats(1.5).skew(1.06,0.06) +
           EighthRight.changeBeats(1.5).skew(0.707,-0.793) +
-          HingeLeft.changehands(1).scale(2.0,2.0).skew(0.0,-0.33) +
-          HingeLeft.changehands(1).scale(2.0,2.0).skew(-0.67,-0.67) +
-          HingeLeft.changehands(1).scale(2.0,2.0).skew(-0.33,0.0),
+          HingeLeft.changehands(Hands.LEFT).scale(2.0,2.0).skew(0.0,-0.33) +
+          HingeLeft.changehands(Hands.LEFT).scale(2.0,2.0).skew(-0.67,-0.67) +
+          HingeLeft.changehands(Hands.LEFT).scale(2.0,2.0).skew(-0.33,0.0),
 
           Stand.changeBeats(3) +
           QuarterRight.changeBeats(2).skew(0.0,-1.0) +
@@ -205,15 +204,15 @@ import '../a1/chain_reaction.dart' as a1;
           ExtendLeft.changeBeats(1.5).scale(1.5,0.5) +
           ExtendRight.changeBeats(1.5).scale(1.5,0.5) +
           QuarterLeft.changeBeats(2).skew(-2.0,1.0) +
-          EighthLeft.changeBeats(1.5).changehands(1).skew(0.353,0.647) +
-          EighthLeft.changeBeats(1.5).changehands(1).skew(0.707,-0.207) +
+          EighthLeft.changeBeats(1.5).changehands(Hands.LEFT).skew(0.353,0.647) +
+          EighthLeft.changeBeats(1.5).changehands(Hands.LEFT).skew(0.707,-0.207) +
           ExtendRight.changeBeats(4.5).scale(2.0,2.0),
 
           LeadLeft.changeBeats(5).scale(5.0,3.0) +
           SwingLeft +
-          QuarterLeft.changehands(2).skew(0.33,-0.33) +
-          QuarterLeft.changehands(2).skew(-0.33,-0.33) +
-          QuarterLeft.changehands(2).skew(-0.33,0.33)
+          QuarterLeft.changehands(Hands.RIGHT).skew(0.33,-0.33) +
+          QuarterLeft.changehands(Hands.RIGHT).skew(-0.33,-0.33) +
+          QuarterLeft.changehands(Hands.RIGHT).skew(-0.33,0.33)
       ]),
     a1.ChainReaction.where((tam) =>
       tam.title == 'Chain Reaction, Turn the Star 1/2').first.xref(title: 'Chain Reaction, Turn the Star 1/2'),
@@ -244,7 +243,7 @@ import '../a1/chain_reaction.dart' as a1;
 
           ExtendLeft.changeBeats(1.5).scale(1.5,0.5) +
           ExtendRight.changeBeats(1.5).scale(1.5,0.5) +
-          QuarterRight.changehands(2).skew(0.0,-1.0) +
+          QuarterRight.changehands(Hands.RIGHT).skew(0.0,-1.0) +
           SwingLeft +
           LeadLeft.changeBeats(4.5).scale(3.0,3.0)
       ]),
@@ -256,9 +255,9 @@ import '../a1/chain_reaction.dart' as a1;
           Stand.changeBeats(3) +
           HingeRight.changeBeats(1.5).scale(2.0,1.0) +
           SwingLeft +
-          HingeRight.changehands(2).scale(2.0,2.0).skew(0.0,0.33) +
-          HingeRight.changehands(2).scale(2.0,2.0).skew(-0.67,0.67) +
-          HingeRight.changehands(2).scale(2.0,2.0).skew(-0.33,0.0),
+          HingeRight.changehands(Hands.RIGHT).scale(2.0,2.0).skew(0.0,0.33) +
+          HingeRight.changehands(Hands.RIGHT).scale(2.0,2.0).skew(-0.67,0.67) +
+          HingeRight.changehands(Hands.RIGHT).scale(2.0,2.0).skew(-0.33,0.0),
 
           ExtendLeft.changeBeats(1.5).scale(1.5,0.5) +
           ExtendRight.changeBeats(1.5).scale(1.5,0.5) +
@@ -268,15 +267,15 @@ import '../a1/chain_reaction.dart' as a1;
 
           ExtendLeft.changeBeats(1.5).scale(1.5,0.5) +
           ExtendRight.changeBeats(1.5).scale(1.5,0.5) +
-          QuarterRight.changehands(2).skew(0.0,-1.0) +
+          QuarterRight.changehands(Hands.RIGHT).skew(0.0,-1.0) +
           FlipLeft +
           LeadLeft.changeBeats(4.5).scale(3.0,3.0),
 
           LeadRight.changeBeats(4.5).scale(5.0,3.0) +
           RunRight +
-          QuarterRight.changehands(1).skew(0.33,0.33) +
-          QuarterRight.changehands(1).skew(-0.33,0.33) +
-          QuarterRight.changehands(1).skew(-0.33,-0.33)
+          QuarterRight.changehands(Hands.LEFT).skew(0.33,0.33) +
+          QuarterRight.changehands(Hands.LEFT).skew(-0.33,0.33) +
+          QuarterRight.changehands(Hands.LEFT).skew(-0.33,-0.33)
       ]),
 
     AnimatedCall('Chain Reaction, Turn the Star 1/2',
@@ -292,21 +291,21 @@ import '../a1/chain_reaction.dart' as a1;
           Stand.changeBeats(3) +
           HingeLeft.scale(2.0,1.0) +
           SwingRight +
-          HingeLeft.changehands(1).scale(2.0,2.0).skew(0.0,-0.33) +
-          HingeLeft.changehands(1).scale(2.0,2.0).skew(-0.67,-0.67) +
-          HingeLeft.changehands(1).scale(2.0,2.0).skew(-0.33,0.0),
+          HingeLeft.changehands(Hands.LEFT).scale(2.0,2.0).skew(0.0,-0.33) +
+          HingeLeft.changehands(Hands.LEFT).scale(2.0,2.0).skew(-0.67,-0.67) +
+          HingeLeft.changehands(Hands.LEFT).scale(2.0,2.0).skew(-0.33,0.0),
 
           ExtendLeft.changeBeats(1.5).scale(1.5,0.5) +
           ExtendRight.changeBeats(1.5).scale(1.5,0.5) +
-          QuarterLeft.changehands(1).skew(0.0,1.0) +
+          QuarterLeft.changehands(Hands.LEFT).skew(0.0,1.0) +
           RunRight +
           LeadRight.changeBeats(4.5).scale(3.0,3.0),
 
           LeadLeft.changeBeats(4.5).scale(5.0,3.0) +
           FlipLeft +
-          QuarterLeft.changehands(2).skew(0.33,-0.33) +
-          QuarterLeft.changehands(2).skew(-0.33,-0.33) +
-          QuarterLeft.changehands(2).skew(-0.33,0.33)
+          QuarterLeft.changehands(Hands.RIGHT).skew(0.33,-0.33) +
+          QuarterLeft.changehands(Hands.RIGHT).skew(-0.33,-0.33) +
+          QuarterLeft.changehands(Hands.RIGHT).skew(-0.33,0.33)
       ]),
 
     AnimatedCall('Chain Reaction, Turn the Star 1/2',
@@ -328,19 +327,19 @@ import '../a1/chain_reaction.dart' as a1;
 
           LeadRight.changeBeats(5).scale(5.0,3.0) +
           RunRight.changeBeats(4.5) +
-          QuarterRight.changehands(1).skew(0.33,0.33) +
-          QuarterRight.changehands(1).skew(-0.33,0.33) +
-          QuarterRight.changehands(1).skew(-0.33,-0.33),
+          QuarterRight.changehands(Hands.LEFT).skew(0.33,0.33) +
+          QuarterRight.changehands(Hands.LEFT).skew(-0.33,0.33) +
+          QuarterRight.changehands(Hands.LEFT).skew(-0.33,-0.33),
 
           ExtendLeft.changeBeats(1.5).scale(1.5,0.5) +
           ExtendRight.changeBeats(1.5).scale(1.5,0.5) +
           QuarterLeft.changeBeats(2).skew(-2.0,1.0) +
-          EighthLeft.changeBeats(1.5).changehands(1).skew(0.353,0.647) +
+          EighthLeft.changeBeats(1.5).changehands(Hands.LEFT).skew(0.353,0.647) +
           LeadLeft.scale(0.5,0.5) +
-          EighthLeft.changeBeats(1.5).changehands(1).skew(0.707,-0.207) +
-          HingeRight.changehands(2).scale(2.0,2.0).skew(0.0,0.33) +
-          HingeRight.changehands(2).scale(2.0,2.0).skew(-0.67,0.67) +
-          HingeRight.changehands(2).scale(2.0,2.0).skew(-0.33,0.0)
+          EighthLeft.changeBeats(1.5).changehands(Hands.LEFT).skew(0.707,-0.207) +
+          HingeRight.changehands(Hands.RIGHT).scale(2.0,2.0).skew(0.0,0.33) +
+          HingeRight.changehands(Hands.RIGHT).scale(2.0,2.0).skew(-0.67,0.67) +
+          HingeRight.changehands(Hands.RIGHT).scale(2.0,2.0).skew(-0.33,0.0)
       ]),
 
     AnimatedCall('Chain Reaction, Turn the Star 1/2',
@@ -381,9 +380,9 @@ import '../a1/chain_reaction.dart' as a1;
           Stand.changeBeats(3) +
           QuarterLeft.changeBeats(2).skew(-2.0,1.0) +
           SwingLeft +
-          HingeRight.changehands(2).scale(2.0,2.0).skew(0.0,0.33) +
-          HingeRight.changehands(2).scale(2.0,2.0).skew(-0.67,0.67) +
-          HingeRight.changehands(2).scale(2.0,2.0).skew(-0.33,0.0),
+          HingeRight.changehands(Hands.RIGHT).scale(2.0,2.0).skew(0.0,0.33) +
+          HingeRight.changehands(Hands.RIGHT).scale(2.0,2.0).skew(-0.67,0.67) +
+          HingeRight.changehands(Hands.RIGHT).scale(2.0,2.0).skew(-0.33,0.0),
 
           ExtendLeft.changeBeats(1.5).scale(1.5,0.5) +
           ExtendRight.changeBeats(1.5).scale(1.5,0.5) +
@@ -399,9 +398,9 @@ import '../a1/chain_reaction.dart' as a1;
 
           LeadRight.changeBeats(5).scale(5.0,3.0) +
           RunRight +
-          QuarterRight.changehands(1).skew(0.33,0.33) +
-          QuarterRight.changehands(1).skew(-0.33,0.33) +
-          QuarterRight.changehands(1).skew(-0.33,-0.33)
+          QuarterRight.changehands(Hands.LEFT).skew(0.33,0.33) +
+          QuarterRight.changehands(Hands.LEFT).skew(-0.33,0.33) +
+          QuarterRight.changehands(Hands.LEFT).skew(-0.33,-0.33)
       ]),
 
     AnimatedCall('Chain Reaction, Turn the Star 1/2',
@@ -429,9 +428,9 @@ import '../a1/chain_reaction.dart' as a1;
           ExtendLeft.changeBeats(1.5).scale(1.5,0.5) +
           ExtendRight.changeBeats(1.5).scale(1.5,0.5) +
           QuarterLeft.changeBeats(2).skew(-2.0,1.0) +
-          EighthLeft.changeBeats(1.5).changehands(1).skew(0.353,0.647) +
+          EighthLeft.changeBeats(1.5).changehands(Hands.LEFT).skew(0.353,0.647) +
           LeadLeft.scale(0.5,0.5) +
-          EighthLeft.changeBeats(1.5).changehands(1).skew(0.707,-0.207) +
+          EighthLeft.changeBeats(1.5).changehands(Hands.LEFT).skew(0.707,-0.207) +
           CastRight,
 
           LeadLeft.changeBeats(5).scale(5.0,3.0) +

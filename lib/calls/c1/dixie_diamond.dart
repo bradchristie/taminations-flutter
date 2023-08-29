@@ -19,7 +19,7 @@
 */
 
 import '../../animated_call.dart';
-import '../../formation.dart';
+import '../../common_dart.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> DixieDiamond = [
@@ -32,7 +32,7 @@ import '../../moves.dart';
           HingeLeft.scale(1.0,0.75) +
           HingeRight,
 
-          ExtendLeft.changeBeats(2).changehands(2).skew(1.0,0.5) +
+          ExtendLeft.changeBeats(2).changehands(Hands.RIGHT).skew(1.0,0.5) +
           ExtendRight.changeBeats(2).scale(2.0,1.25) +
           HingeLeft.scale(1.0,0.75) +
           UmTurnLeft
@@ -61,7 +61,7 @@ import '../../moves.dart';
           HingeLeft.scale(1.0,0.75) +
           HingeRight,
 
-          ExtendLeft.changeBeats(2).changehands(2).skew(1.0,0.5) +
+          ExtendLeft.changeBeats(2).changehands(Hands.RIGHT).skew(1.0,0.5) +
           ExtendRight.changeBeats(2).scale(2.0,1.25) +
           HingeLeft.scale(1.0,0.75) +
           UmTurnLeft,
@@ -70,7 +70,7 @@ import '../../moves.dart';
           HingeLeft.scale(1.0,0.75) +
           HingeRight,
 
-          ExtendLeft.changeBeats(2).changehands(2).skew(1.0,0.5) +
+          ExtendLeft.changeBeats(2).changehands(Hands.RIGHT).skew(1.0,0.5) +
           ExtendRight.changeBeats(2).scale(2.0,1.25) +
           HingeLeft.scale(1.0,0.75) +
           UmTurnLeft
@@ -85,9 +85,9 @@ import '../../moves.dart';
           HingeLeft.scale(0.8,0.75) +
           HingeRight.scale(0.75,0.5),
 
-          ExtendLeft.changeBeats(2).changehands(2).scale(1.15,1.5) +
+          ExtendLeft.changeBeats(2).changehands(Hands.RIGHT).scale(1.15,1.5) +
           ExtendRight.changeBeats(2).scale(1.15,1.25) +
-          QuarterLeft.changehands(1).skew(0.2,0.75) +
+          QuarterLeft.changehands(Hands.LEFT).skew(0.2,0.75) +
           UmTurnLeft,
 
           DodgeRight.scale(1.0,0.875).skew(-0.3,0.0) +
@@ -95,9 +95,9 @@ import '../../moves.dart';
           HingeLeft.scale(0.8,0.75) +
           HingeRight.scale(0.75,0.5),
 
-          ExtendLeft.changeBeats(2).changehands(2).scale(1.15,1.5) +
+          ExtendLeft.changeBeats(2).changehands(Hands.RIGHT).scale(1.15,1.5) +
           ExtendRight.changeBeats(2).scale(1.15,1.25) +
-          QuarterLeft.changehands(1).skew(0.2,0.75) +
+          QuarterLeft.changehands(Hands.LEFT).skew(0.2,0.75) +
           UmTurnLeft
       ]),
 
@@ -134,8 +134,8 @@ import '../../moves.dart';
           HingeLeft.scale(1.0,0.75) +
           HingeRight,
 
-          ExtendLeft.changeBeats(3).changehands(2).scale(3.0,2.0) +
-          ExtendRight.changeBeats(2).changehands(2).scale(2.0,1.75) +
+          ExtendLeft.changeBeats(3).changehands(Hands.RIGHT).scale(3.0,2.0) +
+          ExtendRight.changeBeats(2).changehands(Hands.RIGHT).scale(2.0,1.75) +
           HingeLeft.scale(1.0,0.75) +
           UmTurnLeft,
 
@@ -143,8 +143,8 @@ import '../../moves.dart';
           HingeLeft.scale(1.0,0.75) +
           HingeRight,
 
-          ExtendLeft.changeBeats(3).changehands(2).scale(3.0,2.0) +
-          ExtendRight.changeBeats(2).changehands(2).scale(2.0,1.75) +
+          ExtendLeft.changeBeats(3).changehands(Hands.RIGHT).scale(3.0,2.0) +
+          ExtendRight.changeBeats(2).changehands(Hands.RIGHT).scale(2.0,1.75) +
           HingeLeft.scale(1.0,0.75) +
           UmTurnLeft
       ]),
@@ -153,21 +153,21 @@ import '../../moves.dart';
       formation:Formation('Normal Lines'),
       group:' ',parts:'8',
       paths:[
-          BackSashayRight.changeBeats(6).changehands(2).scale(1.0,2.0) +
-          HingeLeft.changeBeats(2).changehands(3).scale(0.5,1.0) +
+          BackSashayRight.changeBeats(6).changehands(Hands.RIGHT).scale(1.0,2.0) +
+          HingeLeft.changeBeats(2).changehands(Hands.BOTH).scale(0.5,1.0) +
           HingeRight.changeBeats(3).scale(3.0,1.5),
 
-          BackSashayRight.changeBeats(6).changehands(1).scale(1.0,2.0) +
+          BackSashayRight.changeBeats(6).changehands(Hands.LEFT).scale(1.0,2.0) +
           HingeLeft.changeBeats(2).scale(1.5,3.0) +
-          HingeRight.changeBeats(3).changehands(3).scale(1.0,0.5),
+          HingeRight.changeBeats(3).changehands(Hands.BOTH).scale(1.0,0.5),
 
-          ExtendLeft.changeBeats(3).changehands(6).scale(2.0,2.5) +
-          ExtendRight.changeBeats(3).changehands(6).scale(2.0,2.5) +
-          HingeLeft.changeBeats(2).changehands(3).scale(0.5,1.0) +
+          ExtendLeft.changeBeats(3).changehands(Hands.GRIPRIGHT).scale(2.0,2.5) +
+          ExtendRight.changeBeats(3).changehands(Hands.GRIPRIGHT).scale(2.0,2.5) +
+          HingeLeft.changeBeats(2).changehands(Hands.BOTH).scale(0.5,1.0) +
           BeauWheel.scale(0.75,0.75),
 
-          ExtendLeft.changeBeats(3).changehands(5).scale(2.0,3.5) +
-          ExtendRight.changeBeats(3).changehands(5).scale(2.0,3.5) +
+          ExtendLeft.changeBeats(3).changehands(Hands.GRIPLEFT).scale(2.0,3.5) +
+          ExtendRight.changeBeats(3).changehands(Hands.GRIPLEFT).scale(2.0,3.5) +
           HingeLeft.changeBeats(2).scale(1.5,3.0) +
           BelleWheel.scale(0.75,0.75)
       ]),
@@ -185,7 +185,7 @@ import '../../moves.dart';
           ExtendRight.changeBeats(2).scale(2.0,0.25) +
           UmTurnLeft,
 
-          ExtendLeft.changeBeats(2).changehands(2).skew(1.0,0.5) +
+          ExtendLeft.changeBeats(2).changehands(Hands.RIGHT).skew(1.0,0.5) +
           ExtendRight.changeBeats(2).scale(2.0,1.25) +
           HingeLeft.scale(1.0,0.75) +
           HingeLeft +
@@ -202,7 +202,7 @@ import '../../moves.dart';
           ExtendRight.changeBeats(2).scale(2.0,0.25) +
           HingeRight,
 
-          ExtendLeft.changeBeats(2).changehands(2).skew(1.0,0.5) +
+          ExtendLeft.changeBeats(2).changehands(Hands.RIGHT).skew(1.0,0.5) +
           ExtendRight.changeBeats(2).scale(2.0,1.25) +
           HingeLeft.scale(1.0,0.75) +
           HingeLeft +
@@ -215,7 +215,7 @@ import '../../moves.dart';
       formation:Formation('Facing Couples'),
       group:' ',parts:'5.5',
       paths:[
-          ExtendRight.changeBeats(2).changehands(2).skew(1.0,-0.5) +
+          ExtendRight.changeBeats(2).changehands(Hands.RIGHT).skew(1.0,-0.5) +
           ExtendLeft.changeBeats(2).scale(2.0,1.25) +
           HingeRight.scale(1.0,0.75) +
           UmTurnRight,

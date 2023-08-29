@@ -20,7 +20,6 @@
 
 import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> FollowThru = [
@@ -29,7 +28,7 @@ import '../../moves.dart';
       formation:Formation('Box RH'),
       from:'Right-Hand Box',
       paths:[
-          LeadRight.changeBeats(2).changehands(2).scale(3.0,1.0),
+          LeadRight.changeBeats(2).changehands(Hands.RIGHT).scale(3.0,1.0),
 
           LeadRight.changeBeats(2)
       ]),
@@ -40,14 +39,14 @@ import '../../moves.dart';
       paths:[
           LeadLeft.changeBeats(2),
 
-          LeadLeft.changeBeats(2).changehands(1).scale(3.0,1.0)
+          LeadLeft.changeBeats(2).changehands(Hands.LEFT).scale(3.0,1.0)
       ]),
 
     AnimatedCall('Follow Thru',
       formation:Formation('Box RH Close'),
       from:'Right-Hand Box Close',noDisplay: true,
       paths:[
-          LeadRight.changeBeats(2).changehands(2).scale(1.5,1.0),
+          LeadRight.changeBeats(2).changehands(Hands.RIGHT).scale(1.5,1.0),
 
           LeadRight.changeBeats(2).scale(0.5,1.0)
       ]),
@@ -58,7 +57,7 @@ import '../../moves.dart';
       paths:[
           LeadLeft.changeBeats(2).scale(0.5,1.0),
 
-          LeadLeft.changeBeats(2).changehands(1).scale(1.5,1.0)
+          LeadLeft.changeBeats(2).changehands(Hands.LEFT).scale(1.5,1.0)
       ]),
 
     AnimatedCall('Follow Thru',
@@ -100,11 +99,11 @@ import '../../moves.dart';
       formation:Formation('Ocean Waves RH BGBG'),
       from:'Right-Hand Waves',
       paths:[
-          LeadRight.changeBeats(2).changehands(2).scale(3.0,1.0),
+          LeadRight.changeBeats(2).changehands(Hands.RIGHT).scale(3.0,1.0),
 
           LeadRight.changeBeats(2),
 
-          LeadRight.changeBeats(2).changehands(2).scale(3.0,1.0),
+          LeadRight.changeBeats(2).changehands(Hands.RIGHT).scale(3.0,1.0),
 
           LeadRight.changeBeats(2)
       ]),
@@ -115,11 +114,11 @@ import '../../moves.dart';
       paths:[
           LeadLeft.changeBeats(2),
 
-          LeadLeft.changeBeats(2).changehands(1).scale(3.0,1.0),
+          LeadLeft.changeBeats(2).changehands(Hands.LEFT).scale(3.0,1.0),
 
           LeadLeft.changeBeats(2),
 
-          LeadLeft.changeBeats(2).changehands(1).scale(3.0,1.0)
+          LeadLeft.changeBeats(2).changehands(Hands.LEFT).scale(3.0,1.0)
       ]),
 
     AnimatedCall('Follow Thru',
@@ -153,27 +152,27 @@ import '../../moves.dart';
       from:'Quarter Tag',
       paths:[
           ExtendLeft +
-          QuarterRight.changehands(2).skew(1.0,0.0),
+          QuarterRight.changehands(Hands.RIGHT).skew(1.0,0.0),
 
-          LeadRight.changeBeats(2).changehands(2).scale(2.0,1.0),
+          LeadRight.changeBeats(2).changehands(Hands.RIGHT).scale(2.0,1.0),
 
-          LeadRight.changeBeats(2).changehands(2).scale(3.0,1.0),
+          LeadRight.changeBeats(2).changehands(Hands.RIGHT).scale(3.0,1.0),
 
-          LeadRight.changeBeats(2).changehands(2).scale(3.0,1.0)
+          LeadRight.changeBeats(2).changehands(Hands.RIGHT).scale(3.0,1.0)
       ]),
 
     AnimatedCall('Follow Thru',
       formation:Formation('Quarter Tag LH'),
       from:'Left-Hand Quarter Tag',
       paths:[
-          LeadLeft.changeBeats(2).changehands(1).scale(2.0,1.0),
+          LeadLeft.changeBeats(2).changehands(Hands.LEFT).scale(2.0,1.0),
 
           ExtendRight +
-          QuarterLeft.changehands(1).skew(1.0,0.0),
+          QuarterLeft.changehands(Hands.LEFT).skew(1.0,0.0),
 
-          LeadLeft.changeBeats(2).changehands(1).scale(3.0,1.0),
+          LeadLeft.changeBeats(2).changehands(Hands.LEFT).scale(3.0,1.0),
 
-          LeadLeft.changeBeats(2).changehands(1).scale(3.0,1.0)
+          LeadLeft.changeBeats(2).changehands(Hands.LEFT).scale(3.0,1.0)
       ]),
 
     AnimatedCall('Follow Thru',
@@ -182,11 +181,11 @@ import '../../moves.dart';
       paths:[
           LeadLeft.changeBeats(2).scale(2.0,1.0),
 
-          LeadRight.changeBeats(2).changehands(2).scale(2.0,1.0),
+          LeadRight.changeBeats(2).changehands(Hands.RIGHT).scale(2.0,1.0),
 
           LeadLeft.changeBeats(2).scale(2.0,1.0),
 
-          LeadRight.changeBeats(2).changehands(2).scale(2.0,1.0)
+          LeadRight.changeBeats(2).changehands(Hands.RIGHT).scale(2.0,1.0)
       ]),
 
     AnimatedCall('Grand Follow Thru',
@@ -234,13 +233,13 @@ import '../../moves.dart';
       formation:Formation('Two-Faced Lines RH'),
       from:'Two-Faced Lines',group:' ',
       paths:[
-          ExtendRight.changeBeats(2).changehands(2).scale(2.0,1.5) +
+          ExtendRight.changeBeats(2).changehands(Hands.RIGHT).scale(2.0,1.5) +
           HingeRight.scale(1.5,1.5),
 
-          ExtendRight.changeBeats(2).changehands(1).scale(2.0,0.5) +
-          HingeRight.changehands(3).scale(0.5,0.5),
+          ExtendRight.changeBeats(2).changehands(Hands.LEFT).scale(2.0,0.5) +
+          HingeRight.changehands(Hands.BOTH).scale(0.5,0.5),
 
-          HingeRight.changeBeats(3).changehands(1).scale(0.5,1.0),
+          HingeRight.changeBeats(3).changehands(Hands.LEFT).scale(0.5,1.0),
 
           HingeRight.changeBeats(3).scale(1.5,3.0)
       ]),
@@ -251,12 +250,12 @@ import '../../moves.dart';
       paths:[
           HingeLeft.changeBeats(3).scale(1.5,3.0),
 
-          HingeLeft.changeBeats(3).changehands(2).scale(0.5,1.0),
+          HingeLeft.changeBeats(3).changehands(Hands.RIGHT).scale(0.5,1.0),
 
-          ExtendLeft.changeBeats(2).changehands(2).scale(2.0,0.5) +
-          HingeLeft.changehands(3).scale(0.5,0.5),
+          ExtendLeft.changeBeats(2).changehands(Hands.RIGHT).scale(2.0,0.5) +
+          HingeLeft.changehands(Hands.BOTH).scale(0.5,0.5),
 
-          ExtendLeft.changeBeats(2).changehands(1).scale(2.0,1.5) +
+          ExtendLeft.changeBeats(2).changehands(Hands.LEFT).scale(2.0,1.5) +
           HingeLeft.scale(1.5,1.5)
       ]),
 
@@ -299,10 +298,10 @@ import '../../moves.dart';
           QuarterRight.changeBeats(4).skew(2.0,1.0),
 
           Forward_2 +
-          CounterRotateRight_0_m2.changeBeats(4).changehands(2).skew(0.0,-1.0),
+          CounterRotateRight_0_m2.changeBeats(4).changehands(Hands.RIGHT).skew(0.0,-1.0),
 
           Forward_2 +
-          CounterRotateRight_2_0.changeBeats(4).changehands(2).skew(0.0,1.0)
+          CounterRotateRight_2_0.changeBeats(4).changehands(Hands.RIGHT).skew(0.0,1.0)
       ]),
   ];
 

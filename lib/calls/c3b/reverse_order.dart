@@ -20,7 +20,6 @@
 
 import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> ReverseOrder = [
@@ -90,10 +89,10 @@ import '../../moves.dart';
       group:'Reverse Order',parts:'3',
       paths:[
           RunRight.skew(1.0,0.0) +
-          UmTurnLeft.changeBeats(4).changehands(5).skew(1.0,0.0),
+          UmTurnLeft.changeBeats(4).changehands(Hands.GRIPLEFT).skew(1.0,0.0),
 
           Forward.changeBeats(3) +
-          RunLeft.changeBeats(4).changehands(5).scale(2.0,2.0).skew(-1.0,0.0)
+          RunLeft.changeBeats(4).changehands(Hands.GRIPLEFT).scale(2.0,2.0).skew(-1.0,0.0)
       ]),
 
     AnimatedCall('Reverse Order Remake',
@@ -145,31 +144,31 @@ import '../../moves.dart';
           ExtendLeft.changeBeats(2).scale(2.0,0.5) +
           SwingRight.scale(0.5,0.5) +
           ExtendRight.scale(1.0,0.5) +
-          LeadLeft.changeBeats(2).changehands(1).scale(2.0,2.0).skew(0.0,-1.0),
+          LeadLeft.changeBeats(2).changehands(Hands.LEFT).scale(2.0,2.0).skew(0.0,-1.0),
 
           ExtendLeft.changeBeats(2).scale(2.0,0.5) +
       Path.fromMovement(Movement.fromData(beats: 4, hands: Hands.NONE, cx1: 1, cy1: 0, cx2: 0, cy2: -2.5, x2: 1, y2: -2.5, cx3: 1, cx4: 1, cy4: -.5, x4: 2, y4: -.5  )) +
-          QuarterLeft.changeBeats(2).changehands(2).skew(0.0,-1.0),
+          QuarterLeft.changeBeats(2).changehands(Hands.RIGHT).skew(0.0,-1.0),
 
           ExtendLeft.changeBeats(2).scale(2.0,0.5) +
       Path.fromMovement(Movement.fromData(beats: 4, hands: Hands.NONE, cx1: 1, cy1: 0, cx2: 2, cy2: 1.5, x2: 1, y2: 1.5, cx3: 1, cx4: 1, cy4: .5, x4: 2, y4: .5  )) +
-          QuarterRight.changeBeats(2).changehands(1).skew(0.0,1.0),
+          QuarterRight.changeBeats(2).changehands(Hands.LEFT).skew(0.0,1.0),
 
           ExtendLeft.changeBeats(2).scale(2.0,0.5) +
           SwingRight.scale(0.5,0.5) +
           ExtendRight.scale(1.0,0.5) +
-          LeadRight.changeBeats(2).changehands(2).scale(2.0,2.0).skew(0.0,1.0)
+          LeadRight.changeBeats(2).changehands(Hands.RIGHT).scale(2.0,2.0).skew(0.0,1.0)
       ]),
 
     AnimatedCall('Reverse Order Travel Thru',
       formation:Formation('Two-Faced Line RH'),
       group:'Reverse Order',parts:'1.5',
       paths:[
-          HingeRight.changehands(2) +
+          HingeRight.changehands(Hands.RIGHT) +
           PullLeft.scale(2.0,0.5) +
           ExtendRight.scale(2.0,0.5),
 
-          BackHingeLeft.changehands(1) +
+          BackHingeLeft.changehands(Hands.LEFT) +
           PullLeft.scale(2.0,0.5) +
           ExtendRight.scale(2.0,0.5)
       ]),

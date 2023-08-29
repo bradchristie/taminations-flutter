@@ -20,7 +20,6 @@
 
 import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> LicketySplit = [
@@ -57,9 +56,9 @@ import '../../moves.dart';
       paths:[
           RunRight,
 
-          CounterRotateRight_2_0.changeBeats(3).changehands(2),
+          CounterRotateRight_2_0.changeBeats(3).changehands(Hands.RIGHT),
 
-          CounterRotateRight_0_m2.changeBeats(3).changehands(2),
+          CounterRotateRight_0_m2.changeBeats(3).changehands(Hands.RIGHT),
 
           Forward_2.changeBeats(3)
       ]),
@@ -70,9 +69,9 @@ import '../../moves.dart';
       paths:[
           Forward_2.changeBeats(3),
 
-          CounterRotateLeft_0_2.changeBeats(3).changehands(1),
+          CounterRotateLeft_0_2.changeBeats(3).changehands(Hands.LEFT),
 
-          CounterRotateLeft_2_0.changeBeats(3).changehands(1),
+          CounterRotateLeft_2_0.changeBeats(3).changehands(Hands.LEFT),
 
           RunLeft
       ]),
@@ -88,9 +87,9 @@ import '../../moves.dart';
       paths:[
           RunRight.scale(0.5,1.0),
 
-          CounterRotateRight_0_m2.changeBeats(3).changehands(2),
+          CounterRotateRight_0_m2.changeBeats(3).changehands(Hands.RIGHT),
 
-          CounterRotateRight_2_0.changeBeats(3).changehands(2),
+          CounterRotateRight_2_0.changeBeats(3).changehands(Hands.RIGHT),
 
           Forward_2.changeBeats(3)
       ]),

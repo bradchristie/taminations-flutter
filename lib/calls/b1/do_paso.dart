@@ -20,7 +20,6 @@
 
 import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> DoPaso = [
@@ -36,8 +35,8 @@ import '../../moves.dart';
           SwingRight.scale(0.75,0.75) +
           ExtendRight.changeBeats(3).scale(2.0,2.25) +
           HingeLeft.scale(0.75,0.75) +
-          UmTurnLeft.changeBeats(1.5).changehands(5).skew(0.75,1.0) +
-          UmTurnLeft.changeBeats(1.5).changehands(5).skew(0.75,-0.75),
+          UmTurnLeft.changeBeats(1.5).changehands(Hands.GRIPLEFT).skew(0.75,1.0) +
+          UmTurnLeft.changeBeats(1.5).changehands(Hands.GRIPLEFT).skew(0.75,-0.75),
 
           QuarterLeft +
           ExtendRight.scale(1.0,0.75) +
@@ -46,7 +45,7 @@ import '../../moves.dart';
           SwingRight.scale(0.75,0.75) +
           LeadRight.changeBeats(3).scale(0.25,3.0) +
           HingeLeft.scale(0.75,0.75) +
-          BelleWheel.changehands(5).scale(1.0,0.75),
+          BelleWheel.changehands(Hands.GRIPLEFT).scale(1.0,0.75),
 
           QuarterRight +
           ExtendRight.scale(1.0,0.75) +
@@ -55,8 +54,8 @@ import '../../moves.dart';
           SwingRight.scale(0.75,0.75) +
           ExtendRight.changeBeats(3).scale(2.0,2.25) +
           HingeLeft.scale(0.75,0.75) +
-          UmTurnLeft.changeBeats(1.5).changehands(5).skew(0.75,1.0) +
-          UmTurnLeft.changeBeats(1.5).changehands(5).skew(0.75,-0.75),
+          UmTurnLeft.changeBeats(1.5).changehands(Hands.GRIPLEFT).skew(0.75,1.0) +
+          UmTurnLeft.changeBeats(1.5).changehands(Hands.GRIPLEFT).skew(0.75,-0.75),
 
           QuarterLeft +
           ExtendRight.scale(1.0,0.75) +
@@ -65,7 +64,7 @@ import '../../moves.dart';
           SwingRight.scale(0.75,0.75) +
           LeadRight.changeBeats(3).scale(0.25,3.0) +
           HingeLeft.scale(0.75,0.75) +
-          BelleWheel.changehands(5).scale(1.0,0.75)
+          BelleWheel.changehands(Hands.GRIPLEFT).scale(1.0,0.75)
       ]),
 
     AnimatedCall('Do Paso to an Allemande Thar',

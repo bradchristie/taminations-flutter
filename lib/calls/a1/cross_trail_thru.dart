@@ -20,7 +20,6 @@
 
 import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formation.dart';
 import '../../moves.dart';
 import '../a2/all_4_all_8.dart' as a2;
 
@@ -88,19 +87,19 @@ import '../a2/all_4_all_8.dart' as a2;
       formation:Formation('Normal Lines'),
       from:'Lines',group:' ',
       paths:[
-          ExtendLeft.changeBeats(2).changehands(2).scale(2.0,0.5) +
-          ExtendRight.changeBeats(4).changehands(6).scale(1.0,4.5) +
-          Forward.changehands(2),
+          ExtendLeft.changeBeats(2).changehands(Hands.RIGHT).scale(2.0,0.5) +
+          ExtendRight.changeBeats(4).changehands(Hands.GRIPRIGHT).scale(1.0,4.5) +
+          Forward.changehands(Hands.RIGHT),
 
-          ExtendLeft.changeBeats(2).changehands(1).scale(2.0,1.5) +
-          ExtendRight.changeBeats(4).changehands(5).scale(1.0,5.5) +
-          Forward.changehands(1),
+          ExtendLeft.changeBeats(2).changehands(Hands.LEFT).scale(2.0,1.5) +
+          ExtendRight.changeBeats(4).changehands(Hands.GRIPLEFT).scale(1.0,5.5) +
+          Forward.changehands(Hands.LEFT),
 
-          ExtendLeft.changeBeats(2).changehands(2).scale(2.0,0.5) +
-          ExtendLeft.changeBeats(2).changehands(6).scale(2.0,3.5),
+          ExtendLeft.changeBeats(2).changehands(Hands.RIGHT).scale(2.0,0.5) +
+          ExtendLeft.changeBeats(2).changehands(Hands.GRIPRIGHT).scale(2.0,3.5),
 
-          ExtendLeft.changeBeats(2).changehands(1).scale(2.0,1.5) +
-          ExtendLeft.changeBeats(2).changehands(5).scale(2.0,2.5)
+          ExtendLeft.changeBeats(2).changehands(Hands.LEFT).scale(2.0,1.5) +
+          ExtendLeft.changeBeats(2).changehands(Hands.GRIPLEFT).scale(2.0,2.5)
       ]),
     a2.All4All8.where((tam) =>
       tam.title == 'All 4 Couples Cross Trail Thru').first.xref(title: 'All 4 Couples Cross Trail Thru').xref(group: ' '),

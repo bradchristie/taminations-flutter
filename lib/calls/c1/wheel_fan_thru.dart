@@ -20,7 +20,6 @@
 
 import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> WheelFanThru = [
@@ -186,19 +185,19 @@ import '../../moves.dart';
       formation:Formation('Normal Lines'),
       group:' ',
       paths:[
-          ExtendRight.changeBeats(2).changehands(2).scale(2.0,1.5) +
+          ExtendRight.changeBeats(2).changehands(Hands.RIGHT).scale(2.0,1.5) +
           CastRight.scale(1.5,1.5) +
-          ExtendLeft.changeBeats(2).changehands(2).scale(2.0,1.5),
+          ExtendLeft.changeBeats(2).changehands(Hands.RIGHT).scale(2.0,1.5),
 
-          ExtendRight.changeBeats(2).changehands(1).scale(2.0,0.5) +
+          ExtendRight.changeBeats(2).changehands(Hands.LEFT).scale(2.0,0.5) +
           CastRight.scale(0.5,0.5) +
-          ExtendLeft.changeBeats(2).changehands(1).scale(2.0,0.5),
+          ExtendLeft.changeBeats(2).changehands(Hands.LEFT).scale(2.0,0.5),
 
           HingeRight.changeBeats(3) +
-          Stand.changeBeats(5.5).changehands(2),
+          Stand.changeBeats(5.5).changehands(Hands.RIGHT),
 
           BackHingeLeft.changeBeats(3) +
-          Stand.changeBeats(5.5).changehands(1)
+          Stand.changeBeats(5.5).changehands(Hands.LEFT)
       ]),
 
     AnimatedCall('All 8 Wheel Fan Thru',
@@ -281,9 +280,9 @@ import '../../moves.dart';
       group:' ',
       paths:[
           Forward_2 +
-          CounterRotateRight_2_0.changehands(2) +
-          CounterRotateRight_2_0.changehands(2) +
-          CounterRotateRight_2_0.changehands(2) +
+          CounterRotateRight_2_0.changehands(Hands.RIGHT) +
+          CounterRotateRight_2_0.changehands(Hands.RIGHT) +
+          CounterRotateRight_2_0.changehands(Hands.RIGHT) +
           Forward_2,
 
           EighthRight.changeBeats(3) +
@@ -291,9 +290,9 @@ import '../../moves.dart';
           EighthRight.changeBeats(3).skew(1.414,1.414),
 
           Forward_2 +
-          CounterRotateRight_0_m2.changehands(2) +
-          CounterRotateRight_0_m2.changehands(2) +
-          CounterRotateRight_0_m2.changehands(2) +
+          CounterRotateRight_0_m2.changehands(Hands.RIGHT) +
+          CounterRotateRight_0_m2.changehands(Hands.RIGHT) +
+          CounterRotateRight_0_m2.changehands(Hands.RIGHT) +
           Forward_2,
 
           EighthRight.changeBeats(3).skew(0.0,-2.0) +
@@ -352,13 +351,13 @@ import '../../moves.dart';
 
           HingeLeft,
 
-          ExtendLeft.changeBeats(2).changehands(2).scale(2.0,0.5) +
+          ExtendLeft.changeBeats(2).changehands(Hands.RIGHT).scale(2.0,0.5) +
           CastLeft.scale(0.5,0.5) +
-          ExtendRight.changeBeats(2).changehands(2).scale(2.0,0.5),
+          ExtendRight.changeBeats(2).changehands(Hands.RIGHT).scale(2.0,0.5),
 
-          ExtendLeft.changeBeats(2).changehands(1).scale(2.0,1.5) +
+          ExtendLeft.changeBeats(2).changehands(Hands.LEFT).scale(2.0,1.5) +
           CastLeft.scale(1.5,1.5) +
-          ExtendRight.changeBeats(2).changehands(1).scale(2.0,1.5)
+          ExtendRight.changeBeats(2).changehands(Hands.LEFT).scale(2.0,1.5)
       ]),
 
     AnimatedCall('Butterfly Left Wheel Fan Thru',
@@ -428,9 +427,9 @@ import '../../moves.dart';
           EighthLeft.changeBeats(3).skew(1.414,-1.414),
 
           Forward_2 +
-          CounterRotateLeft_2_0.changehands(1) +
-          CounterRotateLeft_2_0.changehands(1) +
-          CounterRotateLeft_2_0.changehands(1) +
+          CounterRotateLeft_2_0.changehands(Hands.LEFT) +
+          CounterRotateLeft_2_0.changehands(Hands.LEFT) +
+          CounterRotateLeft_2_0.changehands(Hands.LEFT) +
           Forward_2,
 
           EighthLeft.changeBeats(3).skew(0.0,2.0) +
@@ -438,9 +437,9 @@ import '../../moves.dart';
           EighthLeft.changeBeats(3),
 
           Forward_2 +
-          CounterRotateLeft_0_2.changehands(1) +
-          CounterRotateLeft_0_2.changehands(1) +
-          CounterRotateLeft_0_2.changehands(1) +
+          CounterRotateLeft_0_2.changehands(Hands.LEFT) +
+          CounterRotateLeft_0_2.changehands(Hands.LEFT) +
+          CounterRotateLeft_0_2.changehands(Hands.LEFT) +
           Forward_2
       ]),
 

@@ -19,7 +19,7 @@
 */
 
 import '../../animated_call.dart';
-import '../../formation.dart';
+import '../../common_dart.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> CrossCounter = [
@@ -40,11 +40,11 @@ import '../../moves.dart';
 
           RunRight.changeBeats(4).scale(1.5,1.75) +
           CastLeft.scale(0.5,0.5) +
-          QuarterLeft.changeBeats(3).changehands(5).skew(2.0,-1.5),
+          QuarterLeft.changeBeats(3).changehands(Hands.GRIPLEFT).skew(2.0,-1.5),
 
           RunLeft.changeBeats(4).scale(0.5,1.25) +
           CastLeft.scale(0.5,0.5) +
-          QuarterLeft.changeBeats(3).changehands(5).skew(0.0,2.5)
+          QuarterLeft.changeBeats(3).changehands(Hands.GRIPLEFT).skew(0.0,2.5)
       ]),
 
     AnimatedCall('Cross Counter',
@@ -63,11 +63,11 @@ import '../../moves.dart';
 
           RunLeft.changeBeats(4).scale(1.5,1.75) +
           CastRight.scale(0.5,0.5) +
-          QuarterRight.changeBeats(3).changehands(6).skew(2.0,1.5),
+          QuarterRight.changeBeats(3).changehands(Hands.GRIPRIGHT).skew(2.0,1.5),
 
           RunRight.changeBeats(4).scale(0.5,1.25) +
           CastRight.scale(0.5,0.5) +
-          QuarterRight.changeBeats(3).changehands(6).skew(0.0,-2.5)
+          QuarterRight.changeBeats(3).changehands(Hands.GRIPRIGHT).skew(0.0,-2.5)
       ]),
 
     AnimatedCall('Scoot and Cross Counter',
@@ -95,14 +95,14 @@ import '../../moves.dart';
           Forward.changeBeats(1.5).scale(1.5,1.0) +
           RunLeft.changeBeats(4).scale(0.5,1.25) +
           CastLeft.scale(0.5,0.5) +
-          QuarterLeft.changeBeats(3).changehands(5).skew(0.0,2.5),
+          QuarterLeft.changeBeats(3).changehands(Hands.GRIPLEFT).skew(0.0,2.5),
 
           Forward.changeBeats(1.5).scale(1.5,1.0) +
           SwingRight.scale(0.75,0.75) +
           ExtendLeft.changeBeats(1.5).scale(1.5,0.5) +
           RunRight.changeBeats(4).scale(1.5,1.75) +
           CastLeft.scale(0.5,0.5) +
-          QuarterLeft.changeBeats(3).changehands(5).skew(2.0,-1.5)
+          QuarterLeft.changeBeats(3).changehands(Hands.GRIPLEFT).skew(2.0,-1.5)
       ]),
 
     AnimatedCall('Left Scoot and Cross Counter',
@@ -130,14 +130,14 @@ import '../../moves.dart';
           Forward.changeBeats(1.5).scale(1.5,1.0) +
           RunRight.changeBeats(4).scale(0.5,1.25) +
           CastRight.scale(0.5,0.5) +
-          QuarterRight.changeBeats(3).changehands(6).skew(0.0,-2.5),
+          QuarterRight.changeBeats(3).changehands(Hands.GRIPRIGHT).skew(0.0,-2.5),
 
           Forward.changeBeats(1.5).scale(1.5,1.0) +
           SwingLeft.scale(0.75,0.75) +
           ExtendRight.changeBeats(1.5).scale(1.5,0.5) +
           RunLeft.changeBeats(4).scale(1.5,1.75) +
           CastRight.scale(0.5,0.5) +
-          QuarterRight.changeBeats(3).changehands(6).skew(2.0,1.5)
+          QuarterRight.changeBeats(3).changehands(Hands.GRIPRIGHT).skew(2.0,1.5)
       ]),
   ];
 

@@ -20,7 +20,6 @@
 
 import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> DixieGrand = [
@@ -100,13 +99,13 @@ import '../../moves.dart';
           ExtendRight.scale(1.0,0.5) +
           PullRight.scale(1.0,0.5) +
           ExtendLeft.scale(1.0,0.5) +
-          RunRight.changehands(2),
+          RunRight.changehands(Hands.RIGHT),
 
           PullLeft.scale(1.0,0.5) +
           ExtendRight.scale(1.0,0.5) +
           PullRight.scale(1.0,0.5) +
           ExtendLeft.scale(1.0,0.5) +
-          FlipLeft.changehands(2)
+          FlipLeft.changehands(Hands.RIGHT)
       ]),
 
     AnimatedCall('Dixie Grand',
@@ -133,12 +132,12 @@ import '../../moves.dart';
           ExtendRight.changeBeats(2).scale(1.0,2.0) +
           PullRight.scale(1.0,0.5) +
           ExtendLeft.scale(1.0,0.5) +
-          RunRight.changehands(2),
+          RunRight.changehands(Hands.RIGHT),
 
           Forward.changeBeats(2) +
           PullRight.scale(1.0,0.5) +
           ExtendLeft.scale(1.0,0.5) +
-          FlipLeft.changehands(2)
+          FlipLeft.changehands(Hands.RIGHT)
       ]),
 
     AnimatedCall('Dixie Grand',
@@ -150,13 +149,13 @@ import '../../moves.dart';
   ]),
       from:'Completed Double Pass Thru',parts:'3;3',difficulty: 1,
       paths:[
-          FlipLeft.changehands(2) +
+          FlipLeft.changehands(Hands.RIGHT) +
           PullRight.scale(1.0,0.5) +
           ExtendRight.scale(1.0,0.5) +
           PullLeft.scale(1.0,0.5) +
           ExtendRight.scale(1.0,0.5),
 
-          RunRight.changehands(2) +
+          RunRight.changehands(Hands.RIGHT) +
           PullRight.scale(1.0,0.5) +
           ExtendLeft.scale(1.0,1.5) +
           PullLeft.scale(1.0,0.5) +
@@ -165,12 +164,12 @@ import '../../moves.dart';
           Stand.changeBeats(3) +
           PullRight.scale(1.0,0.5) +
           ExtendLeft.scale(1.0,0.5) +
-          FlipLeft.changehands(2),
+          FlipLeft.changehands(Hands.RIGHT),
 
           Stand.changeBeats(3) +
           PullRight.scale(1.0,0.5) +
           ExtendLeft.scale(1.0,0.5) +
-          RunRight.changehands(2)
+          RunRight.changehands(Hands.RIGHT)
       ]),
 
     AnimatedCall('Dixie Grand',
@@ -198,13 +197,13 @@ import '../../moves.dart';
           ExtendRight.changeBeats(1.5).scale(1.0,0.5) +
           PullRight.scale(1.0,0.5) +
           ExtendLeft.scale(1.0,0.5) +
-          FlipLeft.changehands(2),
+          FlipLeft.changehands(Hands.RIGHT),
 
           PullLeft.changeBeats(1.5).scale(1.0,0.5) +
           ExtendRight.changeBeats(1.5).scale(1.0,0.5) +
           PullRight.scale(1.0,0.5) +
           ExtendLeft.scale(1.0,0.5) +
-          RunRight.changehands(2)
+          RunRight.changehands(Hands.RIGHT)
       ]),
 
     AnimatedCall('Dixie Grand',
@@ -231,12 +230,12 @@ import '../../moves.dart';
           ExtendRight.changeBeats(3).scale(1.0,2.0) +
           PullRight.scale(1.0,0.5) +
           ExtendLeft.scale(1.0,0.5) +
-          RunRight.changehands(2),
+          RunRight.changehands(Hands.RIGHT),
 
           Forward.changeBeats(3) +
           PullRight.scale(1.0,0.5) +
           ExtendLeft.scale(1.0,0.5) +
-          FlipLeft.changehands(2)
+          FlipLeft.changehands(Hands.RIGHT)
       ]),
 
     AnimatedCall('Dixie Grand',

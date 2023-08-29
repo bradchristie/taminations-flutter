@@ -20,7 +20,6 @@
 
 import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> Inlet = [
@@ -29,9 +28,9 @@ import '../../moves.dart';
       formation:Formation('Ocean Waves RH BGGB'),
       from:'Right-Hand Waves',
       paths:[
-          RunRight.changeBeats(4).changehands(6).skew(2.0,0.0),
+          RunRight.changeBeats(4).changehands(Hands.GRIPRIGHT).skew(2.0,0.0),
 
-          RunRight.changeBeats(4).changehands(6).skew(-2.0,0.0),
+          RunRight.changeBeats(4).changehands(Hands.GRIPRIGHT).skew(-2.0,0.0),
 
           RunRight.changeBeats(2).scale(0.5,0.5).skew(-0.5,0.0) +
           RunRight.changeBeats(2).scale(0.5,0.5).skew(0.5,0.0),
@@ -48,9 +47,9 @@ import '../../moves.dart';
           RunLeft.changeBeats(2).scale(0.5,0.5).skew(-0.5,0.0) +
           RunLeft.changeBeats(2).scale(0.5,0.5).skew(0.5,0.0),
 
-          RunLeft.changeBeats(4).changehands(5).skew(-2.0,0.0),
+          RunLeft.changeBeats(4).changehands(Hands.GRIPLEFT).skew(-2.0,0.0),
 
-          RunLeft.changeBeats(4).changehands(5).skew(2.0,0.0)
+          RunLeft.changeBeats(4).changehands(Hands.GRIPLEFT).skew(2.0,0.0)
       ]),
 
     AnimatedCall('Inlet',
@@ -80,9 +79,9 @@ import '../../moves.dart';
 
       Path.fromMovement(Movement.fromData(beats: 4, hands: Hands.NONE, cx1: -1, cy1: 2, cx2: 1, cy2: 4, x2: 1, y2: 4, cx3: 1, cx4: 2, cy4: 2, x4: 3, y4: 2  )),
 
-          RunRight.changeBeats(4).changehands(6).skew(2.0,0.0),
+          RunRight.changeBeats(4).changehands(Hands.GRIPRIGHT).skew(2.0,0.0),
 
-          RunRight.changeBeats(4).changehands(6).skew(-2.0,0.0)
+          RunRight.changeBeats(4).changehands(Hands.GRIPRIGHT).skew(-2.0,0.0)
       ]),
 
     AnimatedCall('Outlet',
@@ -102,22 +101,22 @@ import '../../moves.dart';
       formation:Formation('Mixed Quarter Tag #1'),
       from:'Mixed Quarter Tag 1',
       paths:[
-          UmTurnRight.changeBeats(4).changehands(6).skew(1.0,0.0),
+          UmTurnRight.changeBeats(4).changehands(Hands.GRIPRIGHT).skew(1.0,0.0),
 
-          RunRight.changeBeats(4).changehands(6).skew(-1.0,-2.0),
+          RunRight.changeBeats(4).changehands(Hands.GRIPRIGHT).skew(-1.0,-2.0),
 
-          RunRight.changeBeats(4).changehands(6).skew(2.0,0.0),
+          RunRight.changeBeats(4).changehands(Hands.GRIPRIGHT).skew(2.0,0.0),
 
-          RunRight.changeBeats(4).changehands(6).skew(-2.0,0.0)
+          RunRight.changeBeats(4).changehands(Hands.GRIPRIGHT).skew(-2.0,0.0)
       ]),
 
     AnimatedCall('Outlet',
       formation:Formation('Mixed Quarter Tag #3'),
       from:'Mixed Quarter Tag 2',
       paths:[
-          UmTurnRight.changeBeats(4).changehands(6).skew(1.0,0.0),
+          UmTurnRight.changeBeats(4).changehands(Hands.GRIPRIGHT).skew(1.0,0.0),
 
-          RunRight.changeBeats(4).changehands(6).skew(-1.0,-2.0),
+          RunRight.changeBeats(4).changehands(Hands.GRIPRIGHT).skew(-1.0,-2.0),
 
           UmTurnRight.changeBeats(4).skew(2.0,-2.0),
 
@@ -128,13 +127,13 @@ import '../../moves.dart';
       formation:Formation('Mixed Quarter Tag #6'),
       from:'Mixed Quarter Tag 3',
       paths:[
-          RunLeft.changeBeats(4).changehands(5).skew(-1.0,2.0),
+          RunLeft.changeBeats(4).changehands(Hands.GRIPLEFT).skew(-1.0,2.0),
 
-          UmTurnLeft.changeBeats(4).changehands(5).skew(1.0,0.0),
+          UmTurnLeft.changeBeats(4).changehands(Hands.GRIPLEFT).skew(1.0,0.0),
 
-          RunLeft.changeBeats(4).changehands(5).skew(2.0,0.0),
+          RunLeft.changeBeats(4).changehands(Hands.GRIPLEFT).skew(2.0,0.0),
 
-          RunLeft.changeBeats(4).changehands(5).skew(-2.0,0.0)
+          RunLeft.changeBeats(4).changehands(Hands.GRIPLEFT).skew(-2.0,0.0)
       ]),
   ];
 

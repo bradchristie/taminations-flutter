@@ -20,7 +20,6 @@
 
 import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> TripleBoxConcept = [
@@ -60,9 +59,9 @@ import '../../moves.dart';
   ]),
       group:'Triple Box',
       paths:[
-          CounterRotateRight_0_m2.changehands(2).skew(-1.0,0.0),
+          CounterRotateRight_0_m2.changehands(Hands.RIGHT).skew(-1.0,0.0),
 
-          CounterRotateRight_2_0.changehands(2).skew(1.0,0.0),
+          CounterRotateRight_2_0.changehands(Hands.RIGHT).skew(1.0,0.0),
 
           CounterRotateLeft_2_0.skew(1.0,0.0),
 
@@ -80,18 +79,18 @@ import '../../moves.dart';
           DodgeRight.changeBeats(4).scale(1.0,0.875) +
           HingeLeft.scale(1.0,0.75),
 
-          ExtendLeft.changeBeats(2).changehands(2).skew(1.0,0.5) +
+          ExtendLeft.changeBeats(2).changehands(Hands.RIGHT).skew(1.0,0.5) +
           ExtendRight.changeBeats(2).scale(2.0,1.25) +
           HingeLeft.scale(1.0,0.75),
 
           DodgeRight.changeBeats(4).scale(1.0,0.875) +
           HingeLeft.scale(1.0,0.75),
 
-          ExtendLeft.changeBeats(2).changehands(2).skew(1.0,0.5) +
+          ExtendLeft.changeBeats(2).changehands(Hands.RIGHT).skew(1.0,0.5) +
           ExtendRight.changeBeats(2).scale(2.0,1.25) +
           HingeLeft.scale(1.0,0.75),
 
-          ExtendLeft.changeBeats(2).changehands(2).skew(1.0,0.5) +
+          ExtendLeft.changeBeats(2).changehands(Hands.RIGHT).skew(1.0,0.5) +
           ExtendRight.changeBeats(2).scale(2.0,1.25) +
           HingeLeft.scale(1.0,0.75),
 
@@ -104,28 +103,28 @@ import '../../moves.dart';
       group:'Triple Box',
       paths:[
           Forward.changeBeats(3.5).changehands(0) +
-          ExtendLeft.changeBeats(1.5).changehands(2).scale(1.5,1.5) +
-          RunRight.changehands(2).scale(1.5,2.0).skew(1.5,0.5),
+          ExtendLeft.changeBeats(1.5).changehands(Hands.RIGHT).scale(1.5,1.5) +
+          RunRight.changehands(Hands.RIGHT).scale(1.5,2.0).skew(1.5,0.5),
 
           ExtendLeft.changeBeats(2).scale(1.5,1.75) +
-          SwingRight.changehands(3).scale(0.75,0.75) +
-          UmTurnRight.changehands(1).skew(1.5,0.25),
+          SwingRight.changehands(Hands.BOTH).scale(0.75,0.75) +
+          UmTurnRight.changehands(Hands.LEFT).skew(1.5,0.25),
 
           Forward.changeBeats(3.5).changehands(0) +
-          ExtendLeft.changeBeats(1.5).changehands(2).scale(1.5,1.5) +
-          RunRight.changehands(2).scale(1.5,2.0).skew(1.5,0.5),
+          ExtendLeft.changeBeats(1.5).changehands(Hands.RIGHT).scale(1.5,1.5) +
+          RunRight.changehands(Hands.RIGHT).scale(1.5,2.0).skew(1.5,0.5),
 
           ExtendLeft.changeBeats(2).scale(1.5,1.75) +
-          SwingRight.changehands(3).scale(0.75,0.75) +
-          UmTurnRight.changehands(1).skew(1.5,0.25),
+          SwingRight.changehands(Hands.BOTH).scale(0.75,0.75) +
+          UmTurnRight.changehands(Hands.LEFT).skew(1.5,0.25),
 
           ExtendLeft.changeBeats(2).scale(1.5,1.75) +
-          SwingRight.changehands(3).scale(0.75,0.75) +
-          UmTurnRight.changehands(1).skew(1.5,0.25),
+          SwingRight.changehands(Hands.BOTH).scale(0.75,0.75) +
+          UmTurnRight.changehands(Hands.LEFT).skew(1.5,0.25),
 
           Forward.changeBeats(3.5).changehands(0) +
-          ExtendLeft.changeBeats(1.5).changehands(2).scale(1.5,1.5) +
-          RunRight.changehands(2).scale(1.5,2.0).skew(1.5,0.5)
+          ExtendLeft.changeBeats(1.5).changehands(Hands.RIGHT).scale(1.5,1.5) +
+          RunRight.changehands(Hands.RIGHT).scale(1.5,2.0).skew(1.5,0.5)
       ]),
 
     AnimatedCall('Triple Box Follow Your Neighbor and Spread',

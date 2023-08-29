@@ -20,7 +20,6 @@
 
 import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> Squeeze = [
@@ -80,13 +79,13 @@ import '../../moves.dart';
           DodgeLeft.changeBeats(1).scale(1.0,0.25),
 
           DodgeRight +
-          SwingRight.changehands(6).scale(0.5,1.0),
+          SwingRight.changehands(Hands.GRIPRIGHT).scale(0.5,1.0),
 
           SwingRight +
           DodgeLeft.changeBeats(1).scale(1.0,0.25),
 
           DodgeRight +
-          SwingRight.changehands(6).scale(0.5,1.0)
+          SwingRight.changehands(Hands.GRIPRIGHT).scale(0.5,1.0)
       ]),
 
     AnimatedCall('Squeeze',
@@ -112,10 +111,10 @@ import '../../moves.dart';
       paths:[
           Path(),
 
-          CounterRotateRight_0_m2.changehands(2) +
+          CounterRotateRight_0_m2.changehands(Hands.RIGHT) +
           LeadRight.changeBeats(3).scale(2.0,2.0),
 
-          CounterRotateRight_2_0.changehands(2) +
+          CounterRotateRight_2_0.changehands(Hands.RIGHT) +
           Forward_2.changeBeats(1.5) +
           QuarterRight.changeBeats(1.5).skew(2.0,0.0),
 
@@ -128,11 +127,11 @@ import '../../moves.dart';
       paths:[
           Path(),
 
-          CounterRotateLeft_2_0.changehands(1) +
+          CounterRotateLeft_2_0.changehands(Hands.LEFT) +
           Forward_2.changeBeats(1.5) +
           QuarterLeft.changeBeats(1.5).skew(2.0,0.0),
 
-          CounterRotateLeft_0_2.changehands(1) +
+          CounterRotateLeft_0_2.changehands(Hands.LEFT) +
           LeadLeft.changeBeats(3).scale(2.0,2.0),
 
           Path()
@@ -143,12 +142,12 @@ import '../../moves.dart';
       from:'Right-Hand Hourglass',
       paths:[
           QuarterRight.changeBeats(3).skew(0.0,-3.0) +
-          HingeRight.changehands(6),
+          HingeRight.changehands(Hands.GRIPRIGHT),
 
           Stand.changeBeats(4.5).changehands(0),
 
           LeadRight.changeBeats(3).scale(1.0,3.0) +
-          QuarterRight.changehands(6).skew(1.0,0.0),
+          QuarterRight.changehands(Hands.GRIPRIGHT).skew(1.0,0.0),
 
           HingeRight.scale(0.5,1.0) +
           LeadRight.changeBeats(3).scale(3.1,0.5)
@@ -159,12 +158,12 @@ import '../../moves.dart';
       from:'Left-Hand Hourglass',
       paths:[
           LeadLeft.changeBeats(3).scale(1.0,3.0) +
-          QuarterLeft.changehands(5).skew(1.0,0.0),
+          QuarterLeft.changehands(Hands.GRIPLEFT).skew(1.0,0.0),
 
           Stand.changeBeats(4.5).changehands(0),
 
           QuarterLeft.changeBeats(3).skew(0.0,3.0) +
-          HingeLeft.changehands(5),
+          HingeLeft.changehands(Hands.GRIPLEFT),
 
           HingeLeft.scale(0.5,1.0) +
           LeadLeft.changeBeats(3).scale(3.1,0.5)
@@ -179,7 +178,7 @@ import '../../moves.dart';
 
           Stand.changeBeats(4.5).changehands(0),
 
-          QuarterRight.changehands(2).skew(0.0,-1.0) +
+          QuarterRight.changehands(Hands.RIGHT).skew(0.0,-1.0) +
           LeadRight.changeBeats(3).scale(3.0,1.0),
 
           LeadRight.changeBeats(3).scale(0.5,3.0) +
@@ -190,7 +189,7 @@ import '../../moves.dart';
       formation:Formation('Galaxy LH GP'),
       from:'Left-Hand Galaxy',
       paths:[
-          QuarterLeft.changehands(1).skew(0.0,1.0) +
+          QuarterLeft.changehands(Hands.LEFT).skew(0.0,1.0) +
           LeadLeft.changeBeats(3).scale(3.0,1.0),
 
           Stand.changeBeats(4.5).changehands(0),

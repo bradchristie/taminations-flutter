@@ -19,8 +19,7 @@
 */
 
 import '../../animated_call.dart';
-import '../../dancer_model.dart';
-import '../../formation.dart';
+import '../../common_dart.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> ScootAndWeave = [
@@ -280,21 +279,21 @@ import '../../moves.dart';
       formation:Formation('Two-Faced Lines RH'),
       from:'Two-Faced Lines',parts:'6',
       paths:[
-          ExtendRight.changeBeats(2).changehands(2).scale(2.0,1.5) +
+          ExtendRight.changeBeats(2).changehands(Hands.RIGHT).scale(2.0,1.5) +
           SwingRight.scale(1.5,1.5) +
           Forward_2 +
           HingeRight.scale(1.5,1.5),
 
-          ExtendRight.changeBeats(2).changehands(1).scale(2.0,0.5) +
+          ExtendRight.changeBeats(2).changehands(Hands.LEFT).scale(2.0,0.5) +
           SwingRight.scale(0.5,0.5) +
           Forward_2 +
           HingeRight.scale(0.5,0.5),
 
-          RunRight.changeBeats(6).changehands(1).scale(0.75,0.75) +
+          RunRight.changeBeats(6).changehands(Hands.LEFT).scale(0.75,0.75) +
           ExtendRight.changeBeats(2).scale(2.0,2.0) +
           HingeLeft.scale(1.5,1.5),
 
-          RunRight.changeBeats(6).changehands(2).scale(2.25,2.25) +
+          RunRight.changeBeats(6).changehands(Hands.RIGHT).scale(2.25,2.25) +
           ExtendRight.changeBeats(2).scale(2.0,2.0) +
           HingeLeft.scale(0.5,0.5)
       ]),

@@ -20,7 +20,6 @@
 
 import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> Circulate = [
@@ -627,40 +626,40 @@ import '../../moves.dart';
       formation:Formation('Two-Faced Lines RH'),
       from:'Right-Hand Two-Faced Lines',fractions:'2',difficulty: 1,
       paths:[
-          Forward_4.changehands(2),
+          Forward_4.changehands(Hands.RIGHT),
 
-          Forward_4.changehands(1),
+          Forward_4.changehands(Hands.LEFT),
 
-          RunRight.changeBeats(4).changehands(1),
+          RunRight.changeBeats(4).changehands(Hands.LEFT),
 
-          RunRight.changeBeats(4).changehands(2).scale(3.0,3.0)
+          RunRight.changeBeats(4).changehands(Hands.RIGHT).scale(3.0,3.0)
       ]),
 
     AnimatedCall('Couples Circulate',
       formation:Formation('Two-Faced Lines LH'),
       from:'Left-Hand Two-Faced Lines',fractions:'2',difficulty: 1,
       paths:[
-          RunLeft.changeBeats(4).changehands(1).scale(3.0,3.0),
+          RunLeft.changeBeats(4).changehands(Hands.LEFT).scale(3.0,3.0),
 
-          RunLeft.changeBeats(4).changehands(2),
+          RunLeft.changeBeats(4).changehands(Hands.RIGHT),
 
-          Forward_4.changehands(2),
+          Forward_4.changehands(Hands.RIGHT),
 
-          Forward_4.changehands(1)
+          Forward_4.changehands(Hands.LEFT)
       ]),
 
     AnimatedCall('Couples Circulate',
       formation:Formation('T-Bone Couples 1'),
       from:'T-Bone Couples',difficulty: 2,
       paths:[
-          ExtendRight.changeBeats(2).changehands(2).scale(2.0,1.0) +
-          ExtendLeft.changeBeats(2).changehands(2).scale(2.0,1.0),
+          ExtendRight.changeBeats(2).changehands(Hands.RIGHT).scale(2.0,1.0) +
+          ExtendLeft.changeBeats(2).changehands(Hands.RIGHT).scale(2.0,1.0),
 
-          Forward_4.changehands(1),
+          Forward_4.changehands(Hands.LEFT),
 
-          RunLeft.changeBeats(4).changehands(1).scale(3.0,3.0),
+          RunLeft.changeBeats(4).changehands(Hands.LEFT).scale(3.0,3.0),
 
-          RunLeft.changeBeats(4).changehands(2)
+          RunLeft.changeBeats(4).changehands(Hands.RIGHT)
       ]),
 
     AnimatedCall('Column Circulate',

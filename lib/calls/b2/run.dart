@@ -20,7 +20,6 @@
 
 import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> Run = [
@@ -488,13 +487,13 @@ import '../../moves.dart';
   ]),
       from:'T-Bones',difficulty: 3,notForSequencer: true,
       paths:[
-          Forward_2.changehands(1),
+          Forward_2.changehands(Hands.LEFT),
 
           RunRight,
 
           RunLeft,
 
-          Forward_2.changehands(2)
+          Forward_2.changehands(Hands.RIGHT)
       ]),
 
     AnimatedCall('Ends Run',

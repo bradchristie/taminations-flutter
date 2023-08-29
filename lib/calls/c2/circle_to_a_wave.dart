@@ -20,7 +20,6 @@
 
 import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> CircleToAWave = [
@@ -30,11 +29,11 @@ import '../../moves.dart';
       from:'Facing Couples',parts:'2.25',
       paths:[
           EighthRight.skew(0.5,0.0) +
-          CounterRotateLeft_1p414_1p414.changeBeats(1.5).changehands(3) +
+          CounterRotateLeft_1p414_1p414.changeBeats(1.5).changehands(Hands.BOTH) +
           EighthLeft.changeBeats(3).skew(1.767,1.767),
 
           EighthLeft.skew(0.5,0.0) +
-          CounterRotateLeft_1p414_1p414.changeBeats(1.5).changehands(3) +
+          CounterRotateLeft_1p414_1p414.changeBeats(1.5).changehands(Hands.BOTH) +
           EighthRight.changeBeats(3).skew(1.05,1.767)
       ]),
 
@@ -43,19 +42,19 @@ import '../../moves.dart';
       from:'Normal Lines',parts:'2.25',
       paths:[
           EighthRight.skew(0.5,0.0) +
-          CounterRotateLeft_1p414_1p414.changeBeats(1.5).changehands(7) +
+          CounterRotateLeft_1p414_1p414.changeBeats(1.5).changehands(Hands.GRIPBOTH) +
           EighthLeft.changeBeats(3).skew(1.414,1.414),
 
           EighthLeft.skew(0.5,0.0) +
-          CounterRotateLeft_1p414_1p414.changeBeats(1.5).changehands(7) +
+          CounterRotateLeft_1p414_1p414.changeBeats(1.5).changehands(Hands.GRIPBOTH) +
           EighthRight.changeBeats(3).skew(1.414,1.414),
 
           EighthRight.skew(0.5,0.0) +
-          CounterRotateLeft_1p414_1p414.changeBeats(1.5).changehands(7) +
+          CounterRotateLeft_1p414_1p414.changeBeats(1.5).changehands(Hands.GRIPBOTH) +
           EighthLeft.changeBeats(3).skew(1.414,1.414),
 
           EighthLeft.skew(0.5,0.0) +
-          CounterRotateLeft_1p414_1p414.changeBeats(1.5).changehands(7) +
+          CounterRotateLeft_1p414_1p414.changeBeats(1.5).changehands(Hands.GRIPBOTH) +
           EighthRight.changeBeats(3).skew(1.414,1.414)
       ]),
 
@@ -64,19 +63,19 @@ import '../../moves.dart';
       from:'Eight Chain Thru',parts:'2.25',
       paths:[
           EighthRight +
-          CounterRotateLeft_1p414_1p414.changeBeats(1.5).changehands(7) +
+          CounterRotateLeft_1p414_1p414.changeBeats(1.5).changehands(Hands.GRIPBOTH) +
           EighthLeft.changeBeats(3).skew(1.767,1.767),
 
           EighthLeft +
-          CounterRotateLeft_1p414_1p414.changeBeats(1.5).changehands(7) +
+          CounterRotateLeft_1p414_1p414.changeBeats(1.5).changehands(Hands.GRIPBOTH) +
           EighthRight.changeBeats(3).skew(1.05,1.767),
 
           EighthRight.skew(0.05,0.0) +
-          CounterRotateLeft_1p414_1p414.changeBeats(1.5).changehands(7) +
+          CounterRotateLeft_1p414_1p414.changeBeats(1.5).changehands(Hands.GRIPBOTH) +
           EighthLeft.changeBeats(3).skew(1.767,1.767),
 
           EighthLeft.skew(0.05,0.0) +
-          CounterRotateLeft_1p414_1p414.changeBeats(1.5).changehands(7) +
+          CounterRotateLeft_1p414_1p414.changeBeats(1.5).changehands(Hands.GRIPBOTH) +
           EighthRight.changeBeats(3).skew(1.05,1.767)
       ]),
 
@@ -85,13 +84,13 @@ import '../../moves.dart';
       group:' ',parts:'3.75',
       paths:[
           EighthRight.skew(0.5,0.0) +
-          CounterRotateLeft_1p414_1p414.changeBeats(1.5).changehands(3) +
-          CounterRotateLeft_1p414_1p414.changeBeats(1.5).changehands(3) +
+          CounterRotateLeft_1p414_1p414.changeBeats(1.5).changehands(Hands.BOTH) +
+          CounterRotateLeft_1p414_1p414.changeBeats(1.5).changehands(Hands.BOTH) +
           EighthLeft.changeBeats(3).skew(1.767,1.767),
 
           EighthLeft.skew(0.5,0.0) +
-          CounterRotateLeft_1p414_1p414.changeBeats(1.5).changehands(3) +
-          CounterRotateLeft_1p414_1p414.changeBeats(1.5).changehands(3) +
+          CounterRotateLeft_1p414_1p414.changeBeats(1.5).changehands(Hands.BOTH) +
+          CounterRotateLeft_1p414_1p414.changeBeats(1.5).changehands(Hands.BOTH) +
           EighthRight.changeBeats(3).skew(1.05,1.767)
       ]),
 
@@ -99,7 +98,7 @@ import '../../moves.dart';
       formation:Formation('Static Square'),
       group:' ',
       paths:[
-          Forward.changehands(3).scale(0.59,0.59) +
+          Forward.changehands(Hands.BOTH).scale(0.59,0.59) +
           cl +
           cl +
           Forward_5.scale(1.08,1.0),
@@ -110,7 +109,7 @@ import '../../moves.dart';
           EighthRight +
           DodgeLeft.skew(-0.57,0.0),
 
-          Forward.changehands(3).scale(0.59,0.59) +
+          Forward.changehands(Hands.BOTH).scale(0.59,0.59) +
           cl +
           cl +
           Forward_5.scale(1.08,1.0),
@@ -126,45 +125,45 @@ import '../../moves.dart';
       formation:Formation('Normal Lines Compact'),
       group:' ',
       paths:[
-          EighthRight.changeBeats(1).changehands(2).skew(0.5,-1.0) +
+          EighthRight.changeBeats(1).changehands(Hands.RIGHT).skew(0.5,-1.0) +
       Path.fromMovement(Movement.fromData(beats: 2, hands: Hands.BOTH, cx1: 0.354, cy1: 1.061, cx2: 1.768, cy2: 1.768, x2: 2.828, y2: 1.414, cx3: 0.55, cx4: 1, cy4: -0.45, x4: 1, y4: -1  )) +
-          EighthLeft.changeBeats(1).changehands(2).skew(-0.353,0.353) +
-          ExtendLeft.changeBeats(3).changehands(2).scale(2.5,0.5),
+          EighthLeft.changeBeats(1).changehands(Hands.RIGHT).skew(-0.353,0.353) +
+          ExtendLeft.changeBeats(3).changehands(Hands.RIGHT).scale(2.5,0.5),
 
-          EighthRight.changeBeats(1).changehands(3).skew(-0.5,0.0) +
+          EighthRight.changeBeats(1).changehands(Hands.BOTH).skew(-0.5,0.0) +
       Path.fromMovement(Movement.fromData(beats: 2, hands: Hands.BOTH, cx1: -.354, cy1: 1.061, cx2: 0.353, cy2: 2.474, x2: 1.414, y2: 2.828, cx3: 0.55, cx4: 1, cy4: -0.45, x4: 1, y4: -1  )) +
-          EighthLeft.changeBeats(1).changehands(1).skew(0.707,0.707) +
-          Forward.changeBeats(3).changehands(1).scale(2.5,1.0),
+          EighthLeft.changeBeats(1).changehands(Hands.LEFT).skew(0.707,0.707) +
+          Forward.changeBeats(3).changehands(Hands.LEFT).scale(2.5,1.0),
 
-          EighthLeft.changeBeats(1).changehands(3).skew(-0.5,0.0) +
+          EighthLeft.changeBeats(1).changehands(Hands.BOTH).skew(-0.5,0.0) +
       Path.fromMovement(Movement.fromData(beats: 2, hands: Hands.BOTH, cx1: 0.354, cy1: 1.061, cx2: 1.768, cy2: 1.768, x2: 2.828, y2: 1.414, cx3: 0.55, cx4: 1, cy4: -0.45, x4: 1, y4: -1  )) +
-          EighthRight.changeBeats(1).changehands(2).skew(0.707,0.707) +
-          DodgeLeft.changehands(2).scale(1.0,1.5).skew(0.5,0.0),
+          EighthRight.changeBeats(1).changehands(Hands.RIGHT).skew(0.707,0.707) +
+          DodgeLeft.changehands(Hands.RIGHT).scale(1.0,1.5).skew(0.5,0.0),
 
-          EighthLeft.changeBeats(1).changehands(1).skew(0.5,1.0) +
+          EighthLeft.changeBeats(1).changehands(Hands.LEFT).skew(0.5,1.0) +
       Path.fromMovement(Movement.fromData(beats: 2, hands: Hands.BOTH, cx1: -.354, cy1: 1.061, cx2: 0.353, cy2: 2.474, x2: 1.414, y2: 2.828, cx3: 0.55, cx4: 1, cy4: -0.45, x4: 1, y4: -1  )) +
-          EighthRight.changeBeats(1).changehands(1).skew(-0.353,1.061) +
-          DodgeLeft.changehands(1).scale(1.0,1.25).skew(0.5,0.0)
+          EighthRight.changeBeats(1).changehands(Hands.LEFT).skew(-0.353,1.061) +
+          DodgeLeft.changehands(Hands.LEFT).scale(1.0,1.25).skew(0.5,0.0)
       ]),
 
     AnimatedCall('Concentric Circle to a Wave',
       formation:Formation('Double Pass Thru'),
       group:' ',
       paths:[
-          CounterRotateRight_4_2.changeBeats(4).changehands(2) +
+          CounterRotateRight_4_2.changeBeats(4).changehands(Hands.RIGHT) +
           ExtendLeft.changeBeats(2).scale(2.0,1.0) +
           Forward_2 +
           ExtendRight.changeBeats(2).scale(2.0,1.0),
 
-          CounterRotateRight_2_4.changeBeats(4).changehands(1) +
+          CounterRotateRight_2_4.changeBeats(4).changehands(Hands.LEFT) +
           DodgeLeft,
 
-          EighthRight.changehands(2) +
-          CounterRotateLeft_1p414_1p414.changeBeats(1.5).changehands(3) +
+          EighthRight.changehands(Hands.RIGHT) +
+          CounterRotateLeft_1p414_1p414.changeBeats(1.5).changehands(Hands.BOTH) +
           EighthLeft.changeBeats(3).skew(1.414,1.414),
 
-          EighthLeft.changehands(1) +
-          CounterRotateLeft_1p414_1p414.changeBeats(1.5).changehands(3) +
+          EighthLeft.changehands(Hands.LEFT) +
+          CounterRotateLeft_1p414_1p414.changeBeats(1.5).changehands(Hands.BOTH) +
           EighthRight.changeBeats(3).skew(1.414,1.414)
       ]),
 
@@ -173,21 +172,21 @@ import '../../moves.dart';
       group:' ',
       paths:[
           Stand.changeBeats(5) +
-          EighthRight.changeBeats(2).changehands(2).skew(2.0,0.0) +
-          CounterRotateLeft_1p414_1p414.changeBeats(1.5).changehands(3) +
+          EighthRight.changeBeats(2).changehands(Hands.RIGHT).skew(2.0,0.0) +
+          CounterRotateLeft_1p414_1p414.changeBeats(1.5).changehands(Hands.BOTH) +
           EighthLeft.changeBeats(3).skew(1.414,1.414),
 
           Stand.changeBeats(5) +
-          EighthLeft.changeBeats(2).changehands(1).skew(2.0,0.0) +
-          CounterRotateLeft_1p414_1p414.changeBeats(1.5).changehands(3) +
+          EighthLeft.changeBeats(2).changehands(Hands.LEFT).skew(2.0,0.0) +
+          CounterRotateLeft_1p414_1p414.changeBeats(1.5).changehands(Hands.BOTH) +
           EighthRight.changeBeats(3).skew(1.414,1.414),
 
-          EighthRight.changehands(2) +
-          CounterRotateLeft_1p414_1p414.changeBeats(1.5).changehands(3) +
+          EighthRight.changehands(Hands.RIGHT) +
+          CounterRotateLeft_1p414_1p414.changeBeats(1.5).changehands(Hands.BOTH) +
           EighthLeft.changeBeats(5).skew(2.818,2.818),
 
-          EighthLeft.changehands(1) +
-          CounterRotateLeft_1p414_1p414.changeBeats(1.5).changehands(3) +
+          EighthLeft.changehands(Hands.LEFT) +
+          CounterRotateLeft_1p414_1p414.changeBeats(1.5).changehands(Hands.BOTH) +
           EighthRight.changeBeats(5).skew(0.0,2.828)
       ]),
   ];

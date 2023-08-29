@@ -20,7 +20,6 @@
 
 import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> InterlockedCounter = [
@@ -37,12 +36,12 @@ import '../../moves.dart';
           LeadRight +
           Forward +
           SwingRight +
-          CounterRotateRight_2_0.changehands(2).skew(0.0,1.0),
+          CounterRotateRight_2_0.changehands(Hands.RIGHT).skew(0.0,1.0),
 
           LeadRight +
           Forward +
           SwingRight.scale(0.5,1.0) +
-          CounterRotateRight_0_m2.changehands(2).skew(0.0,-1.0),
+          CounterRotateRight_0_m2.changehands(Hands.RIGHT).skew(0.0,-1.0),
 
           RunRight.skew(-3.0,-1.5) +
           SwingRight.scale(0.75,0.75) +
@@ -68,12 +67,12 @@ import '../../moves.dart';
           LeadLeft +
           Forward +
           SwingLeft +
-          CounterRotateLeft_2_0.changehands(1).skew(0.0,-1.0),
+          CounterRotateLeft_2_0.changehands(Hands.LEFT).skew(0.0,-1.0),
 
           LeadLeft +
           Forward +
           SwingLeft.scale(0.5,1.0) +
-          CounterRotateLeft_0_2.changehands(1).skew(0.0,1.0)
+          CounterRotateLeft_0_2.changehands(Hands.LEFT).skew(0.0,1.0)
       ]),
 
     AnimatedCall('Interlocked Counter',
@@ -89,14 +88,14 @@ import '../../moves.dart';
           RunRight.changeBeats(1.5).scale(1.0,0.75).skew(2.0,-0.5),
 
           QuarterLeft.changeBeats(3).skew(-0.5,-1.0) +
-          QuarterLeft.changehands(2).skew(0.0,-0.5) +
-          QuarterLeft.changehands(2).skew(-0.5,0.0) +
+          QuarterLeft.changehands(Hands.RIGHT).skew(0.0,-0.5) +
+          QuarterLeft.changehands(Hands.RIGHT).skew(-0.5,0.0) +
           ExtendLeft.changeBeats(2).scale(2.0,1.0) +
           QuarterRight.changeBeats(2).skew(1.0,0.5),
 
           LeadLeft.changeBeats(3).scale(0.5,3.0) +
-          LeadLeft.changehands(1).scale(1.0,0.5) +
-          LeadLeft.changehands(1).scale(0.5,1.0) +
+          LeadLeft.changehands(Hands.LEFT).scale(1.0,0.5) +
+          LeadLeft.changehands(Hands.LEFT).scale(0.5,1.0) +
           Forward_2 +
           QuarterLeft.changeBeats(2).skew(1.0,-1.5)
       ]),

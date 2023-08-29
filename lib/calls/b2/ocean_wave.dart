@@ -20,7 +20,6 @@
 
 import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formation.dart';
 import '../../moves.dart';
 import '../b2/alamo_style.dart' as b2;
 
@@ -118,51 +117,51 @@ import '../b2/alamo_style.dart' as b2;
       formation:Formation('Ocean Waves RH BGGB'),
       from:'Right-Hand Waves',difficulty: 1,
       paths:[
-          Forward.changeBeats(2).changehands(6).scale(0.35,1.0) +
-          Back.changeBeats(2).changehands(6).scale(0.35,1.0),
+          Forward.changeBeats(2).changehands(Hands.GRIPRIGHT).scale(0.35,1.0) +
+          Back.changeBeats(2).changehands(Hands.GRIPRIGHT).scale(0.35,1.0),
 
-          Forward.changeBeats(2).changehands(7).scale(0.35,1.0) +
-          Back.changeBeats(2).changehands(7).scale(0.35,1.0),
+          Forward.changeBeats(2).changehands(Hands.GRIPBOTH).scale(0.35,1.0) +
+          Back.changeBeats(2).changehands(Hands.GRIPBOTH).scale(0.35,1.0),
 
-          Forward.changeBeats(2).changehands(7).scale(0.35,1.0) +
-          Back.changeBeats(2).changehands(7).scale(0.35,1.0),
+          Forward.changeBeats(2).changehands(Hands.GRIPBOTH).scale(0.35,1.0) +
+          Back.changeBeats(2).changehands(Hands.GRIPBOTH).scale(0.35,1.0),
 
-          Forward.changeBeats(2).changehands(6).scale(0.35,1.0) +
-          Back.changeBeats(2).changehands(6).scale(0.35,1.0)
+          Forward.changeBeats(2).changehands(Hands.GRIPRIGHT).scale(0.35,1.0) +
+          Back.changeBeats(2).changehands(Hands.GRIPRIGHT).scale(0.35,1.0)
       ]),
 
     AnimatedCall('Balance',
       formation:Formation('Ocean Waves LH BGGB'),
       from:'Left-Hand Waves',difficulty: 1,
       paths:[
-          Forward.changeBeats(2).changehands(5).scale(0.35,1.0) +
-          Back.changeBeats(2).changehands(5).scale(0.35,1.0),
+          Forward.changeBeats(2).changehands(Hands.GRIPLEFT).scale(0.35,1.0) +
+          Back.changeBeats(2).changehands(Hands.GRIPLEFT).scale(0.35,1.0),
 
-          Forward.changeBeats(2).changehands(7).scale(0.35,1.0) +
-          Back.changeBeats(2).changehands(7).scale(0.35,1.0),
+          Forward.changeBeats(2).changehands(Hands.GRIPBOTH).scale(0.35,1.0) +
+          Back.changeBeats(2).changehands(Hands.GRIPBOTH).scale(0.35,1.0),
 
-          Forward.changeBeats(2).changehands(7).scale(0.35,1.0) +
-          Back.changeBeats(2).changehands(7).scale(0.35,1.0),
+          Forward.changeBeats(2).changehands(Hands.GRIPBOTH).scale(0.35,1.0) +
+          Back.changeBeats(2).changehands(Hands.GRIPBOTH).scale(0.35,1.0),
 
-          Forward.changeBeats(2).changehands(5).scale(0.35,1.0) +
-          Back.changeBeats(2).changehands(5).scale(0.35,1.0)
+          Forward.changeBeats(2).changehands(Hands.GRIPLEFT).scale(0.35,1.0) +
+          Back.changeBeats(2).changehands(Hands.GRIPLEFT).scale(0.35,1.0)
       ]),
 
     AnimatedCall('Balance',
       formation:Formation('Alamo Wave'),
       from:'Alamo Ring',difficulty: 1,
       paths:[
-          Forward.changeBeats(2).changehands(7).scale(0.35,1.0) +
-          Back.changeBeats(2).changehands(7).scale(0.35,1.0),
+          Forward.changeBeats(2).changehands(Hands.GRIPBOTH).scale(0.35,1.0) +
+          Back.changeBeats(2).changehands(Hands.GRIPBOTH).scale(0.35,1.0),
 
-          Forward.changeBeats(2).changehands(7).scale(0.35,1.0) +
-          Back.changeBeats(2).changehands(7).scale(0.35,1.0),
+          Forward.changeBeats(2).changehands(Hands.GRIPBOTH).scale(0.35,1.0) +
+          Back.changeBeats(2).changehands(Hands.GRIPBOTH).scale(0.35,1.0),
 
-          Forward.changeBeats(2).changehands(7).scale(0.35,1.0) +
-          Back.changeBeats(2).changehands(7).scale(0.35,1.0),
+          Forward.changeBeats(2).changehands(Hands.GRIPBOTH).scale(0.35,1.0) +
+          Back.changeBeats(2).changehands(Hands.GRIPBOTH).scale(0.35,1.0),
 
-          Forward.changeBeats(2).changehands(7).scale(0.35,1.0) +
-          Back.changeBeats(2).changehands(7).scale(0.35,1.0)
+          Forward.changeBeats(2).changehands(Hands.GRIPBOTH).scale(0.35,1.0) +
+          Back.changeBeats(2).changehands(Hands.GRIPBOTH).scale(0.35,1.0)
       ]),
 
     AnimatedCall('Heads Step to a Wave',

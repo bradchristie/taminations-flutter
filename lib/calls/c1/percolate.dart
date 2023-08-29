@@ -20,7 +20,6 @@
 
 import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> Percolate = [
@@ -32,7 +31,7 @@ import '../../moves.dart';
           ExtendLeft.scale(1.0,0.5) +
           ExtendLeft.changeBeats(2).scale(2.0,1.0) +
           HingeRight.scale(1.0,0.75) +
-          ExtendRight.changeBeats(3).changehands(1).scale(2.75,2.0) +
+          ExtendRight.changeBeats(3).changehands(Hands.LEFT).scale(2.75,2.0) +
           Forward,
 
           ExtendLeft.scale(1.0,0.5) +
@@ -74,7 +73,7 @@ import '../../moves.dart';
           LeadRight.changeBeats(2).scale(3.0,2.0) +
           Forward_2 +
           HingeRight +
-          ExtendRight.changeBeats(3).changehands(1).scale(3.0,2.0) +
+          ExtendRight.changeBeats(3).changehands(Hands.LEFT).scale(3.0,2.0) +
           Forward
       ]),
 
@@ -106,7 +105,7 @@ import '../../moves.dart';
           LeadLeft.changeBeats(2).scale(3.0,2.0) +
           Forward_2 +
           HingeLeft +
-          ExtendLeft.changeBeats(3).changehands(2).scale(3.0,2.0) +
+          ExtendLeft.changeBeats(3).changehands(Hands.RIGHT).scale(3.0,2.0) +
           Forward
       ]),
 
@@ -203,7 +202,7 @@ import '../../moves.dart';
 
           RunLeft.changeBeats(4) +
           Forward_2 +
-          UmTurnRight.changehands(6).skew(-1.0,0.0),
+          UmTurnRight.changehands(Hands.GRIPRIGHT).skew(-1.0,0.0),
 
           Forward_4 +
           LeadLeft.changeBeats(2) +
@@ -213,7 +212,7 @@ import '../../moves.dart';
           LeadRight.changeBeats(2).scale(2.0,3.0) +
           LeadRight.changeBeats(2).scale(3.0,2.0) +
           Forward_2 +
-          RunRight.changehands(6).scale(1.0,2.0).skew(1.0,0.0)
+          RunRight.changehands(Hands.GRIPRIGHT).scale(1.0,2.0).skew(1.0,0.0)
       ]),
 
     AnimatedCall('Percolate but Swing Thru',

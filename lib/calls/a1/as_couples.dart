@@ -20,7 +20,6 @@
 
 import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formation.dart';
 import '../../moves.dart';
 import '../a1/cross_trail_thru.dart' as a1;
 import '../a1/linear_cycle.dart' as a1;
@@ -91,7 +90,7 @@ import '../c3b/bingo.dart' as c3b;
       paths:[
           QuarterRight.changeBeats(2) +
           QuarterRight.changeBeats(2) +
-          QuarterRight.changeBeats(3).changehands(3).skew(-1.0,0.0),
+          QuarterRight.changeBeats(3).changehands(Hands.BOTH).skew(-1.0,0.0),
 
           BackHingeLeft.changeBeats(2) +
           BackHingeLeft.changeBeats(2) +
@@ -101,7 +100,7 @@ import '../c3b/bingo.dart' as c3b;
           HingeRight.changeBeats(3).scale(3.0,2.0),
 
           SwingRight.changeBeats(4) +
-          HingeRight.changeBeats(3).changehands(3)
+          HingeRight.changeBeats(3).changehands(Hands.BOTH)
       ]),
 
     AnimatedCall('As Couples Chase Right',
@@ -109,18 +108,18 @@ import '../c3b/bingo.dart' as c3b;
       group:'As Couples (with calls through Plus)',
       paths:[
           BeauWheel.scale(1.0,-1.0).skew(-2.0,0.0) +
-          Forward_2.changehands(1) +
-          RunRight.changeBeats(3).changehands(1),
+          Forward_2.changehands(Hands.LEFT) +
+          RunRight.changeBeats(3).changehands(Hands.LEFT),
 
           BelleWheel.scale(1.0,-1.0).skew(-2.0,0.0) +
-          Forward_2.changehands(2) +
-          RunRight.changeBeats(3).changehands(2).scale(3.0,3.0),
+          Forward_2.changehands(Hands.RIGHT) +
+          RunRight.changeBeats(3).changehands(Hands.RIGHT).scale(3.0,3.0),
 
-          RunRight.changeBeats(3).changehands(1) +
-          Forward_4.changehands(1),
+          RunRight.changeBeats(3).changehands(Hands.LEFT) +
+          Forward_4.changehands(Hands.LEFT),
 
-          RunRight.changeBeats(3).changehands(2).scale(3.0,3.0) +
-          Forward_4.changehands(2)
+          RunRight.changeBeats(3).changehands(Hands.RIGHT).scale(3.0,3.0) +
+          Forward_4.changehands(Hands.RIGHT)
       ]),
 
     AnimatedCall('As Couples Centers Cross Run',
@@ -131,42 +130,42 @@ import '../c3b/bingo.dart' as c3b;
 
           DodgeRight,
 
-          RunRight.changehands(2).scale(2.0,2.5),
+          RunRight.changehands(Hands.RIGHT).scale(2.0,2.5),
 
-          RunRight.changehands(1).scale(1.0,1.5)
+          RunRight.changehands(Hands.LEFT).scale(1.0,1.5)
       ]),
 
     AnimatedCall('As Couples Crossfire',
       formation:Formation('Tidal Line RH'),
       group:'As Couples (with calls through Plus)',
       paths:[
-          RunRight.changeBeats(4).changehands(2).scale(3.25,3.25).skew(2.0,0.0),
+          RunRight.changeBeats(4).changehands(Hands.RIGHT).scale(3.25,3.25).skew(2.0,0.0),
 
-          RunRight.changeBeats(4).changehands(1).scale(1.75,1.75).skew(2.0,0.0),
+          RunRight.changeBeats(4).changehands(Hands.LEFT).scale(1.75,1.75).skew(2.0,0.0),
 
           SwingRight.scale(1.5,1.5) +
-          ExtendLeft.changeBeats(2).changehands(2).scale(2.0,1.5),
+          ExtendLeft.changeBeats(2).changehands(Hands.RIGHT).scale(2.0,1.5),
 
           SwingRight.scale(0.5,0.5) +
-          ExtendLeft.changeBeats(2).changehands(1).scale(2.0,0.5)
+          ExtendLeft.changeBeats(2).changehands(Hands.LEFT).scale(2.0,0.5)
       ]),
 
     AnimatedCall('As Couples Dixie Style to a Wave',
       formation:Formation('Normal Lines'),
       group:'As Couples (with calls through Plus)',
       paths:[
-          BackSashayRight.changeBeats(6).changehands(2).scale(1.0,2.0) +
-          HingeLeft.changeBeats(2).changehands(3).scale(0.5,1.0),
+          BackSashayRight.changeBeats(6).changehands(Hands.RIGHT).scale(1.0,2.0) +
+          HingeLeft.changeBeats(2).changehands(Hands.BOTH).scale(0.5,1.0),
 
-          BackSashayRight.changeBeats(6).changehands(1).scale(1.0,2.0) +
+          BackSashayRight.changeBeats(6).changehands(Hands.LEFT).scale(1.0,2.0) +
           HingeLeft.changeBeats(2).scale(1.5,3.0),
 
-          ExtendLeft.changeBeats(3).changehands(6).scale(2.0,2.5) +
-          ExtendRight.changeBeats(3).changehands(6).scale(2.0,2.5) +
-          HingeLeft.changeBeats(2).changehands(3).scale(0.5,1.0),
+          ExtendLeft.changeBeats(3).changehands(Hands.GRIPRIGHT).scale(2.0,2.5) +
+          ExtendRight.changeBeats(3).changehands(Hands.GRIPRIGHT).scale(2.0,2.5) +
+          HingeLeft.changeBeats(2).changehands(Hands.BOTH).scale(0.5,1.0),
 
-          ExtendLeft.changeBeats(3).changehands(5).scale(2.0,3.5) +
-          ExtendRight.changeBeats(3).changehands(5).scale(2.0,3.5) +
+          ExtendLeft.changeBeats(3).changehands(Hands.GRIPLEFT).scale(2.0,3.5) +
+          ExtendRight.changeBeats(3).changehands(Hands.GRIPLEFT).scale(2.0,3.5) +
           HingeLeft.changeBeats(2).scale(1.5,3.0)
       ]),
 
@@ -175,29 +174,29 @@ import '../c3b/bingo.dart' as c3b;
       group:'As Couples (with calls through Plus)',
       paths:[
           LeadRight.changeBeats(3).scale(3.5,3.5) +
-          ExtendRight.changeBeats(2).changehands(2).scale(2.0,0.5),
+          ExtendRight.changeBeats(2).changehands(Hands.RIGHT).scale(2.0,0.5),
 
           LeadRight.changeBeats(3).scale(2.5,2.5) +
-          ExtendRight.changeBeats(2).changehands(1).scale(2.0,1.5),
+          ExtendRight.changeBeats(2).changehands(Hands.LEFT).scale(2.0,1.5),
 
           HingeLeft.changeBeats(3).scale(1.5,1.5) +
-          ExtendRight.changeBeats(2).changehands(1).scale(2.0,1.5),
+          ExtendRight.changeBeats(2).changehands(Hands.LEFT).scale(2.0,1.5),
 
           HingeLeft.changeBeats(3).scale(0.5,0.5) +
-          ExtendRight.changeBeats(2).changehands(2).scale(2.0,0.5)
+          ExtendRight.changeBeats(2).changehands(Hands.RIGHT).scale(2.0,0.5)
       ]),
 
     AnimatedCall('As Couples Extend',
       formation:Formation('Quarter Lines RH'),
       group:'As Couples (with calls through Plus)',
       paths:[
-          ExtendLeft.changeBeats(2).changehands(2).scale(1.5,2.0),
+          ExtendLeft.changeBeats(2).changehands(Hands.RIGHT).scale(1.5,2.0),
 
-          ExtendLeft.changeBeats(2).changehands(1).scale(1.5,2.0),
+          ExtendLeft.changeBeats(2).changehands(Hands.LEFT).scale(1.5,2.0),
 
-          Forward.changeBeats(2).changehands(1).scale(1.5,1.0),
+          Forward.changeBeats(2).changehands(Hands.LEFT).scale(1.5,1.0),
 
-          Forward.changeBeats(2).changehands(2).scale(1.5,1.0)
+          Forward.changeBeats(2).changehands(Hands.RIGHT).scale(1.5,1.0)
       ]),
 
     AnimatedCall('As Couples Fan the Top',
@@ -219,69 +218,69 @@ import '../c3b/bingo.dart' as c3b;
       formation:Formation('Two-Faced Tidal Line RH'),
       group:'As Couples (with calls through Plus)',
       paths:[
-          RunRight.changehands(2).skew(2.0,-0.5),
+          RunRight.changehands(Hands.RIGHT).skew(2.0,-0.5),
 
-          UmTurnRight.changehands(1).skew(2.0,0.5),
+          UmTurnRight.changehands(Hands.LEFT).skew(2.0,0.5),
 
-          DodgeRight.changehands(1).scale(1.0,0.75),
+          DodgeRight.changehands(Hands.LEFT).scale(1.0,0.75),
 
-          DodgeRight.changehands(3).scale(1.0,0.25)
+          DodgeRight.changehands(Hands.BOTH).scale(1.0,0.25)
       ]),
 
     AnimatedCall('As Couples Ends Cross Fold',
       formation:Formation('Two-Faced Tidal Line RH'),
       group:'As Couples (with calls through Plus)',
       paths:[
-          RunRight.changeBeats(5).changehands(2).skew(2.0,-4.5),
+          RunRight.changeBeats(5).changehands(Hands.RIGHT).skew(2.0,-4.5),
 
-          UmTurnRight.changeBeats(5).changehands(1).skew(2.0,-3.5),
+          UmTurnRight.changeBeats(5).changehands(Hands.LEFT).skew(2.0,-3.5),
 
-          DodgeRight.changeBeats(5).changehands(1).scale(1.0,0.75),
+          DodgeRight.changeBeats(5).changehands(Hands.LEFT).scale(1.0,0.75),
 
-          DodgeRight.changeBeats(5).changehands(3).scale(1.0,0.25)
+          DodgeRight.changeBeats(5).changehands(Hands.BOTH).scale(1.0,0.25)
       ]),
 
     AnimatedCall('As Couples Flutterwheel',
       formation:Formation('Normal Lines'),
       group:'As Couples (with calls through Plus)',
       paths:[
-          Stand.changeBeats(2).changehands(2) +
-          ExtendRight.changeBeats(3).changehands(2) +
-          CounterRotateRight_3_m1.changeBeats(3).changehands(2).skew(0.0,1.0) +
-          CounterRotateRight_3_m1.changeBeats(3).changehands(2).skew(2.0,1.0),
+          Stand.changeBeats(2).changehands(Hands.RIGHT) +
+          ExtendRight.changeBeats(3).changehands(Hands.RIGHT) +
+          CounterRotateRight_3_m1.changeBeats(3).changehands(Hands.RIGHT).skew(0.0,1.0) +
+          CounterRotateRight_3_m1.changeBeats(3).changehands(Hands.RIGHT).skew(2.0,1.0),
 
-          Stand.changeBeats(2).changehands(1) +
-          Forward.changeBeats(3).changehands(1) +
-          CounterRotateRight_2_0.changeBeats(3).changehands(3).skew(0.0,1.0) +
-          CounterRotateRight_2_0.changeBeats(3).changehands(3).skew(1.0,1.0),
+          Stand.changeBeats(2).changehands(Hands.LEFT) +
+          Forward.changeBeats(3).changehands(Hands.LEFT) +
+          CounterRotateRight_2_0.changeBeats(3).changehands(Hands.BOTH).skew(0.0,1.0) +
+          CounterRotateRight_2_0.changeBeats(3).changehands(Hands.BOTH).skew(1.0,1.0),
 
-          ExtendLeft.changeBeats(2).changehands(6).scale(2.0,2.5) +
+          ExtendLeft.changeBeats(2).changehands(Hands.GRIPRIGHT).scale(2.0,2.5) +
           BelleWheel.scale(0.5,-0.5).skew(1.0,-0.5) +
-          CounterRotateRight_1_2.changeBeats(3).changehands(3) +
-          CounterRotateRight_1_2.changeBeats(3).changehands(3),
+          CounterRotateRight_1_2.changeBeats(3).changehands(Hands.BOTH) +
+          CounterRotateRight_1_2.changeBeats(3).changehands(Hands.BOTH),
 
-          ExtendLeft.changeBeats(2).changehands(5).scale(2.0,3.5) +
+          ExtendLeft.changeBeats(2).changehands(Hands.GRIPLEFT).scale(2.0,3.5) +
           BeauWheel.scale(0.5,-0.5).skew(1.0,-0.5) +
-          CounterRotateRight_0_3.changeBeats(3).changehands(1) +
-          CounterRotateRight_0_3.changeBeats(3).changehands(1).skew(-1.0,0.0)
+          CounterRotateRight_0_3.changeBeats(3).changehands(Hands.LEFT) +
+          CounterRotateRight_0_3.changeBeats(3).changehands(Hands.LEFT).skew(-1.0,0.0)
       ]),
 
     AnimatedCall('As Couples Follow Your Neighbor',
       formation:Formation('Two-Faced Lines RH'),
       group:'As Couples (with calls through Plus)',
       paths:[
-          ExtendRight.changeBeats(2).changehands(2).scale(2.0,1.5) +
+          ExtendRight.changeBeats(2).changehands(Hands.RIGHT).scale(2.0,1.5) +
           SwingRight.scale(1.5,1.5) +
           HingeRight.scale(1.5,1.5),
 
-          ExtendRight.changeBeats(2).changehands(1).scale(2.0,0.5) +
+          ExtendRight.changeBeats(2).changehands(Hands.LEFT).scale(2.0,0.5) +
           SwingRight.scale(0.5,0.5) +
           HingeRight.scale(0.5,0.5),
 
-          LeadRight.changeBeats(2).changehands(1) +
+          LeadRight.changeBeats(2).changehands(Hands.LEFT) +
           UmTurnRight.skew(0.0,0.5),
 
-          LeadRight.changeBeats(2).changehands(2).scale(2.0,3.0) +
+          LeadRight.changeBeats(2).changehands(Hands.RIGHT).scale(2.0,3.0) +
           RunRight.skew(0.0,0.5)
       ]),
 
@@ -289,17 +288,17 @@ import '../c3b/bingo.dart' as c3b;
       formation:Formation('Two-Faced Lines LH'),
       group:'As Couples (with calls through Plus)',noDisplay: true,
       paths:[
-          LeadLeft.changeBeats(2).changehands(1).scale(2.0,3.0) +
+          LeadLeft.changeBeats(2).changehands(Hands.LEFT).scale(2.0,3.0) +
           RunLeft.skew(0.0,-0.5),
 
-          LeadLeft.changeBeats(2).changehands(2) +
+          LeadLeft.changeBeats(2).changehands(Hands.RIGHT) +
           UmTurnLeft.skew(0.0,-0.5),
 
-          ExtendLeft.changeBeats(2).changehands(2).scale(2.0,0.5) +
+          ExtendLeft.changeBeats(2).changehands(Hands.RIGHT).scale(2.0,0.5) +
           SwingLeft.scale(0.5,0.5) +
           HingeLeft.scale(0.5,0.5),
 
-          ExtendLeft.changeBeats(2).changehands(1).scale(2.0,1.5) +
+          ExtendLeft.changeBeats(2).changehands(Hands.LEFT).scale(2.0,1.5) +
           SwingLeft.scale(1.5,1.5) +
           HingeLeft.scale(1.5,1.5)
       ]),
@@ -308,13 +307,13 @@ import '../c3b/bingo.dart' as c3b;
       formation:Formation('Normal Lines'),
       group:'As Couples (with calls through Plus)',
       paths:[
-          BackSashayRight.changeBeats(6).changehands(2).scale(1.5,2.0),
+          BackSashayRight.changeBeats(6).changehands(Hands.RIGHT).scale(1.5,2.0),
 
-          BackSashayRight.changeBeats(6).changehands(1).scale(1.5,2.0),
+          BackSashayRight.changeBeats(6).changehands(Hands.LEFT).scale(1.5,2.0),
 
-          SashayLeft.changeBeats(6).changehands(2).scale(1.5,2.0),
+          SashayLeft.changeBeats(6).changehands(Hands.RIGHT).scale(1.5,2.0),
 
-          SashayLeft.changeBeats(6).changehands(1).scale(1.5,2.0)
+          SashayLeft.changeBeats(6).changehands(Hands.LEFT).scale(1.5,2.0)
       ]),
 
     AnimatedCall('As Couples Ladies Center as the Men Sashay',
@@ -333,9 +332,9 @@ import '../c3b/bingo.dart' as c3b;
           cl +
           SxtnthRight,
 
-          Forward.changeBeats(2).changehands(2).scale(2.0,1.0).skew(0.0,0.2) +
+          Forward.changeBeats(2).changehands(Hands.RIGHT).scale(2.0,1.0).skew(0.0,0.2) +
           Stand.changeBeats(.5) +
-          Back.changeBeats(2).changehands(2).scale(2.0,1.0).skew(0.0,-0.2),
+          Back.changeBeats(2).changehands(Hands.RIGHT).scale(2.0,1.0).skew(0.0,-0.2),
 
           SxtnthLeft +
           cl +
@@ -344,9 +343,9 @@ import '../c3b/bingo.dart' as c3b;
           cl +
           SxtnthRight,
 
-          Forward.changeBeats(2).changehands(1).scale(2.0,1.0).skew(0.0,-0.2) +
+          Forward.changeBeats(2).changehands(Hands.LEFT).scale(2.0,1.0).skew(0.0,-0.2) +
           Stand.changeBeats(.5) +
-          Back.changeBeats(2).changehands(1).scale(2.0,1.0).skew(0.0,0.2)
+          Back.changeBeats(2).changehands(Hands.LEFT).scale(2.0,1.0).skew(0.0,0.2)
       ]),
 
     AnimatedCall('As Couples Left Swing Thru',
@@ -370,11 +369,11 @@ import '../c3b/bingo.dart' as c3b;
       paths:[
           HingeRight.scale(1.5,1.5) +
           Forward_4 +
-          RunRight.changeBeats(4).changehands(2).scale(1.5,2.25),
+          RunRight.changeBeats(4).changehands(Hands.RIGHT).scale(1.5,2.25),
 
           HingeRight.scale(0.5,0.5) +
           Forward_4 +
-          RunRight.changeBeats(4).changehands(1).scale(0.5,0.75),
+          RunRight.changeBeats(4).changehands(Hands.LEFT).scale(0.5,0.75),
 
           HingeRight.scale(0.5,0.5) +
           RunRight.scale(0.5,0.5) +
@@ -391,48 +390,48 @@ import '../c3b/bingo.dart' as c3b;
       formation:Formation('Normal Lines'),
       group:'As Couples (with calls through Plus)',
       paths:[
-          ExtendLeft.changeBeats(2).changehands(2).scale(2.0,0.5) +
-          LeadRight.changeBeats(4).changehands(2).scale(3.5,3.5),
+          ExtendLeft.changeBeats(2).changehands(Hands.RIGHT).scale(2.0,0.5) +
+          LeadRight.changeBeats(4).changehands(Hands.RIGHT).scale(3.5,3.5),
 
-          ExtendLeft.changeBeats(2).changehands(1).scale(2.0,1.5) +
-          LeadRight.changeBeats(4).changehands(1).scale(2.5,2.5),
+          ExtendLeft.changeBeats(2).changehands(Hands.LEFT).scale(2.0,1.5) +
+          LeadRight.changeBeats(4).changehands(Hands.LEFT).scale(2.5,2.5),
 
-          ExtendLeft.changeBeats(2).changehands(2).scale(2.0,0.5) +
-          LeadLeft.changeBeats(4).changehands(2).scale(0.5,0.5),
+          ExtendLeft.changeBeats(2).changehands(Hands.RIGHT).scale(2.0,0.5) +
+          LeadLeft.changeBeats(4).changehands(Hands.RIGHT).scale(0.5,0.5),
 
-          ExtendLeft.changeBeats(2).changehands(1).scale(2.0,1.5) +
-          LeadLeft.changeBeats(4).changehands(1).scale(1.5,1.5)
+          ExtendLeft.changeBeats(2).changehands(Hands.LEFT).scale(2.0,1.5) +
+          LeadLeft.changeBeats(4).changehands(Hands.LEFT).scale(1.5,1.5)
       ]),
 
     AnimatedCall('As Couples Peel Off',
       formation:Formation('Two-Faced Lines RH'),
       group:'As Couples (with calls through Plus)',
       paths:[
-          BeauWheel.changeBeats(5).changehands(6).skew(2.0,-0.5),
+          BeauWheel.changeBeats(5).changehands(Hands.GRIPRIGHT).skew(2.0,-0.5),
 
-          BelleWheel.changeBeats(5).changehands(5).skew(2.0,-1.5),
+          BelleWheel.changeBeats(5).changehands(Hands.GRIPLEFT).skew(2.0,-1.5),
 
-          BelleWheel.changeBeats(5).changehands(5).skew(-2.0,0.5),
+          BelleWheel.changeBeats(5).changehands(Hands.GRIPLEFT).skew(-2.0,0.5),
 
-          BeauWheel.changeBeats(5).changehands(6).skew(-2.0,1.5)
+          BeauWheel.changeBeats(5).changehands(Hands.GRIPRIGHT).skew(-2.0,1.5)
       ]),
 
     AnimatedCall('As Couples Peel the Top',
       formation:Formation('Two-Faced Lines RH'),
       group:'As Couples (with calls through Plus)',
       paths:[
-          ExtendRight.changeBeats(2).changehands(2).scale(2.0,1.5) +
+          ExtendRight.changeBeats(2).changehands(Hands.RIGHT).scale(2.0,1.5) +
           SwingRight.scale(1.5,1.5) +
           HingeRight.scale(1.5,1.5),
 
-          ExtendRight.changeBeats(2).changehands(1).scale(2.0,0.5) +
+          ExtendRight.changeBeats(2).changehands(Hands.LEFT).scale(2.0,0.5) +
           SwingRight.scale(0.5,0.5) +
           HingeRight.scale(0.5,0.5),
 
-          BelleWheel.changehands(5).skew(-2.0,0.5) +
+          BelleWheel.changehands(Hands.GRIPLEFT).skew(-2.0,0.5) +
           LeadLeft.changeBeats(3.5).scale(3.5,3.5),
 
-          BeauWheel.changehands(6).skew(-2.0,1.5) +
+          BeauWheel.changehands(Hands.GRIPRIGHT).skew(-2.0,1.5) +
           LeadLeft.changeBeats(3.5).scale(2.5,2.5)
       ]),
 
@@ -441,60 +440,60 @@ import '../c3b/bingo.dart' as c3b;
       group:'As Couples (with calls through Plus)',
       paths:[
           LeadRight.changeBeats(4).scale(3.0,3.5) +
-          QuarterRight.changeBeats(4).changehands(2).skew(3.0,-1.0),
+          QuarterRight.changeBeats(4).changehands(Hands.RIGHT).skew(3.0,-1.0),
 
           LeadRight.changeBeats(4).scale(2.0,2.5) +
-          QuarterRight.changeBeats(4).changehands(1).skew(1.0,0.0),
+          QuarterRight.changeBeats(4).changehands(Hands.LEFT).skew(1.0,0.0),
 
           BeauWheel.changeBeats(4).scale(0.5,-0.5).skew(-1.0,-0.5) +
-          BeauWheel.changeBeats(4).changehands(5).scale(1.0,-1.0).skew(1.0,0.0),
+          BeauWheel.changeBeats(4).changehands(Hands.GRIPLEFT).scale(1.0,-1.0).skew(1.0,0.0),
 
           BelleWheel.changeBeats(4).scale(0.5,-0.5).skew(-1.0,-0.5) +
-          BelleWheel.changeBeats(4).changehands(6).scale(1.0,-1.0).skew(1.0,1.0)
+          BelleWheel.changeBeats(4).changehands(Hands.GRIPRIGHT).scale(1.0,-1.0).skew(1.0,1.0)
       ]),
 
     AnimatedCall('As Couples Reverse Flutterwheel',
       formation:Formation('Normal Lines'),
       group:'As Couples (with calls through Plus)',
       paths:[
-          ExtendRight.changeBeats(2).changehands(6).scale(2.0,3.5) +
+          ExtendRight.changeBeats(2).changehands(Hands.GRIPRIGHT).scale(2.0,3.5) +
           BeauWheel.scale(0.5,0.5).skew(1.0,0.5) +
-          CounterRotateLeft_0_m3.changeBeats(3).changehands(2) +
-          CounterRotateLeft_0_m3.changeBeats(3).changehands(2).skew(-1.0,0.0),
+          CounterRotateLeft_0_m3.changeBeats(3).changehands(Hands.RIGHT) +
+          CounterRotateLeft_0_m3.changeBeats(3).changehands(Hands.RIGHT).skew(-1.0,0.0),
 
-          ExtendRight.changeBeats(2).changehands(5).scale(2.0,2.5) +
+          ExtendRight.changeBeats(2).changehands(Hands.GRIPLEFT).scale(2.0,2.5) +
           BelleWheel.scale(0.5,0.5).skew(1.0,0.5) +
-          CounterRotateLeft_1_m2.changeBeats(3).changehands(3) +
-          CounterRotateLeft_1_m2.changeBeats(3).changehands(3),
+          CounterRotateLeft_1_m2.changeBeats(3).changehands(Hands.BOTH) +
+          CounterRotateLeft_1_m2.changeBeats(3).changehands(Hands.BOTH),
 
-          Stand.changeBeats(2).changehands(2) +
-          Forward.changeBeats(3).changehands(2) +
-          CounterRotateLeft_2_0.changeBeats(3).changehands(3).skew(0.0,-1.0) +
-          CounterRotateLeft_2_0.changeBeats(3).changehands(3).skew(1.0,-1.0),
+          Stand.changeBeats(2).changehands(Hands.RIGHT) +
+          Forward.changeBeats(3).changehands(Hands.RIGHT) +
+          CounterRotateLeft_2_0.changeBeats(3).changehands(Hands.BOTH).skew(0.0,-1.0) +
+          CounterRotateLeft_2_0.changeBeats(3).changehands(Hands.BOTH).skew(1.0,-1.0),
 
-          Stand.changeBeats(2).changehands(1) +
-          ExtendLeft.changeBeats(3).changehands(1) +
-          CounterRotateLeft_3_1.changeBeats(3).changehands(1).skew(0.0,-1.0) +
-          CounterRotateLeft_3_1.changeBeats(3).changehands(1).skew(2.0,-1.0)
+          Stand.changeBeats(2).changehands(Hands.LEFT) +
+          ExtendLeft.changeBeats(3).changehands(Hands.LEFT) +
+          CounterRotateLeft_3_1.changeBeats(3).changehands(Hands.LEFT).skew(0.0,-1.0) +
+          CounterRotateLeft_3_1.changeBeats(3).changehands(Hands.LEFT).skew(2.0,-1.0)
       ]),
 
     AnimatedCall('As Couples Right and Left Thru',
       formation:Formation('Normal Lines'),
       group:'As Couples (with calls through Plus)',
       paths:[
-          ExtendLeft.changeBeats(2).changehands(2).scale(2.0,0.5) +
-          ExtendRight.changeBeats(2).changehands(2).scale(2.0,2.0) +
+          ExtendLeft.changeBeats(2).changehands(Hands.RIGHT).scale(2.0,0.5) +
+          ExtendRight.changeBeats(2).changehands(Hands.RIGHT).scale(2.0,2.0) +
           BeauWheel.scale(1.75,2.25),
 
-          ExtendLeft.changeBeats(2).changehands(1).scale(2.0,1.5) +
-          ExtendRight.changeBeats(2).changehands(2).scale(2.0,2.0) +
-          BeauWheel.changehands(3).scale(0.58,0.75),
+          ExtendLeft.changeBeats(2).changehands(Hands.LEFT).scale(2.0,1.5) +
+          ExtendRight.changeBeats(2).changehands(Hands.RIGHT).scale(2.0,2.0) +
+          BeauWheel.changehands(Hands.BOTH).scale(0.58,0.75),
 
-          ExtendLeft.changeBeats(2).changehands(2).scale(2.0,0.5) +
+          ExtendLeft.changeBeats(2).changehands(Hands.RIGHT).scale(2.0,0.5) +
           Forward_2 +
-          BelleWheel.changehands(3).scale(0.58,0.75),
+          BelleWheel.changehands(Hands.BOTH).scale(0.58,0.75),
 
-          ExtendLeft.changeBeats(2).changehands(1).scale(2.0,1.5) +
+          ExtendLeft.changeBeats(2).changehands(Hands.LEFT).scale(2.0,1.5) +
           Forward_2 +
           BelleWheel.scale(1.75,2.25)
       ]),
@@ -507,43 +506,43 @@ import '../c3b/bingo.dart' as c3b;
 
           DodgeRight,
 
-          RunLeft.changehands(2).scale(1.0,0.5),
+          RunLeft.changehands(Hands.RIGHT).scale(1.0,0.5),
 
-          RunLeft.changehands(1).scale(2.0,1.5)
+          RunLeft.changehands(Hands.LEFT).scale(2.0,1.5)
       ]),
 
     AnimatedCall('As Couples Scoot Back',
       formation:Formation('Two-Faced Lines RH'),
       group:'As Couples (with calls through Plus)',
       paths:[
-          ExtendRight.changeBeats(2).changehands(2).scale(2.0,1.5) +
+          ExtendRight.changeBeats(2).changehands(Hands.RIGHT).scale(2.0,1.5) +
           SwingRight.scale(1.5,1.5) +
-          ExtendLeft.changeBeats(2).changehands(2).scale(2.0,1.5),
+          ExtendLeft.changeBeats(2).changehands(Hands.RIGHT).scale(2.0,1.5),
 
-          ExtendRight.changeBeats(2).changehands(1).scale(2.0,0.5) +
+          ExtendRight.changeBeats(2).changehands(Hands.LEFT).scale(2.0,0.5) +
           SwingRight.scale(0.5,0.5) +
-          ExtendLeft.changeBeats(2).changehands(1).scale(2.0,0.5),
+          ExtendLeft.changeBeats(2).changehands(Hands.LEFT).scale(2.0,0.5),
 
-          RunRight.changeBeats(5).changehands(1),
+          RunRight.changeBeats(5).changehands(Hands.LEFT),
 
-          RunRight.changeBeats(5).changehands(2).scale(2.5,3.0)
+          RunRight.changeBeats(5).changehands(Hands.RIGHT).scale(2.5,3.0)
       ]),
 
     AnimatedCall('As Couples Scoot Back',
       formation:Formation('Two-Faced Lines LH'),
       group:'As Couples (with calls through Plus)',noDisplay: true,
       paths:[
-          RunLeft.changeBeats(5).changehands(1).scale(2.5,3.0),
+          RunLeft.changeBeats(5).changehands(Hands.LEFT).scale(2.5,3.0),
 
-          RunLeft.changeBeats(5).changehands(2),
+          RunLeft.changeBeats(5).changehands(Hands.RIGHT),
 
-          ExtendLeft.changeBeats(2).changehands(2).scale(2.0,0.5) +
+          ExtendLeft.changeBeats(2).changehands(Hands.RIGHT).scale(2.0,0.5) +
           SwingLeft.scale(0.5,0.5) +
-          ExtendRight.changeBeats(2).changehands(2).scale(2.0,0.5),
+          ExtendRight.changeBeats(2).changehands(Hands.RIGHT).scale(2.0,0.5),
 
-          ExtendLeft.changeBeats(2).changehands(1).scale(2.0,1.5) +
+          ExtendLeft.changeBeats(2).changehands(Hands.LEFT).scale(2.0,1.5) +
           SwingLeft.scale(1.5,1.5) +
-          ExtendRight.changeBeats(2).changehands(1).scale(2.0,1.5)
+          ExtendRight.changeBeats(2).changehands(Hands.LEFT).scale(2.0,1.5)
       ]),
 
     AnimatedCall('As Couples Slide Thru',
@@ -555,17 +554,17 @@ import '../c3b/bingo.dart' as c3b;
   ]),
       group:'As Couples (with calls through Plus)',isGenderSpecific:true,
       paths:[
-          ExtendLeft.changeBeats(2).changehands(2).scale(2.0,0.5) +
-          LeadRight.changeBeats(2).changehands(2).scale(3.0,1.5),
+          ExtendLeft.changeBeats(2).changehands(Hands.RIGHT).scale(2.0,0.5) +
+          LeadRight.changeBeats(2).changehands(Hands.RIGHT).scale(3.0,1.5),
 
-          ExtendLeft.changeBeats(2).changehands(2).scale(2.0,0.5) +
-          QuarterLeft.changeBeats(2).changehands(2).skew(1.0,-1.5),
+          ExtendLeft.changeBeats(2).changehands(Hands.RIGHT).scale(2.0,0.5) +
+          QuarterLeft.changeBeats(2).changehands(Hands.RIGHT).skew(1.0,-1.5),
 
-          ExtendLeft.changeBeats(2).changehands(1).scale(2.0,1.5) +
-          LeadRight.changeBeats(2).changehands(1).scale(1.0,0.5),
+          ExtendLeft.changeBeats(2).changehands(Hands.LEFT).scale(2.0,1.5) +
+          LeadRight.changeBeats(2).changehands(Hands.LEFT).scale(1.0,0.5),
 
-          ExtendLeft.changeBeats(2).changehands(1).scale(2.0,1.5) +
-          QuarterLeft.changeBeats(2).changehands(1).skew(3.0,-0.5)
+          ExtendLeft.changeBeats(2).changehands(Hands.LEFT).scale(2.0,1.5) +
+          QuarterLeft.changeBeats(2).changehands(Hands.LEFT).skew(3.0,-0.5)
       ]),
 
     AnimatedCall('As Couples Slide Thru',
@@ -577,17 +576,17 @@ import '../c3b/bingo.dart' as c3b;
   ]),
       group:'As Couples (with calls through Plus)',isGenderSpecific:true,noDisplay: true,
       paths:[
-          ExtendLeft.changeBeats(2).changehands(2).scale(2.0,0.5) +
-          QuarterLeft.changeBeats(2).changehands(2).skew(1.0,-1.5),
+          ExtendLeft.changeBeats(2).changehands(Hands.RIGHT).scale(2.0,0.5) +
+          QuarterLeft.changeBeats(2).changehands(Hands.RIGHT).skew(1.0,-1.5),
 
-          ExtendLeft.changeBeats(2).changehands(2).scale(2.0,0.5) +
-          LeadRight.changeBeats(2).changehands(2).scale(3.0,1.5),
+          ExtendLeft.changeBeats(2).changehands(Hands.RIGHT).scale(2.0,0.5) +
+          LeadRight.changeBeats(2).changehands(Hands.RIGHT).scale(3.0,1.5),
 
-          ExtendLeft.changeBeats(2).changehands(1).scale(2.0,1.5) +
-          QuarterLeft.changeBeats(2).changehands(1).skew(3.0,-0.5),
+          ExtendLeft.changeBeats(2).changehands(Hands.LEFT).scale(2.0,1.5) +
+          QuarterLeft.changeBeats(2).changehands(Hands.LEFT).skew(3.0,-0.5),
 
-          ExtendLeft.changeBeats(2).changehands(1).scale(2.0,1.5) +
-          LeadRight.changeBeats(2).changehands(1).scale(1.0,0.5)
+          ExtendLeft.changeBeats(2).changehands(Hands.LEFT).scale(2.0,1.5) +
+          LeadRight.changeBeats(2).changehands(Hands.LEFT).scale(1.0,0.5)
       ]),
 
     AnimatedCall('As Couples Spin the Top',
@@ -613,29 +612,29 @@ import '../c3b/bingo.dart' as c3b;
       formation:Formation('Normal Lines'),
       group:'As Couples (with calls through Plus)',
       paths:[
-          ExtendLeft.changeBeats(2).changehands(2).scale(2.0,0.5) +
+          ExtendLeft.changeBeats(2).changehands(Hands.RIGHT).scale(2.0,0.5) +
           LeadRight.changeBeats(3).scale(1.5,3.5) +
           LeadRight.changeBeats(3).scale(3.5,1.5) +
           LeadRight.changeBeats(3).scale(1.5,3.5) +
-          ExtendLeft.changeBeats(2).changehands(2).scale(2.0,1.5),
+          ExtendLeft.changeBeats(2).changehands(Hands.RIGHT).scale(2.0,1.5),
 
-          ExtendLeft.changeBeats(2).changehands(1).scale(2.0,1.5) +
+          ExtendLeft.changeBeats(2).changehands(Hands.LEFT).scale(2.0,1.5) +
           LeadRight.changeBeats(3).scale(0.5,2.5) +
           LeadRight.changeBeats(3).scale(2.5,0.5) +
           LeadRight.changeBeats(3).scale(0.5,2.5) +
-          ExtendLeft.changeBeats(2).changehands(1).scale(2.0,0.5),
+          ExtendLeft.changeBeats(2).changehands(Hands.LEFT).scale(2.0,0.5),
 
-          ExtendLeft.changeBeats(2).changehands(2).scale(2.0,0.5) +
+          ExtendLeft.changeBeats(2).changehands(Hands.RIGHT).scale(2.0,0.5) +
           LeadLeft.changeBeats(3).scale(2.5,0.5) +
           LeadLeft.changeBeats(3).scale(0.5,2.5) +
           LeadLeft.changeBeats(3).scale(2.5,0.5) +
-          ExtendLeft.changeBeats(2).changehands(2).scale(2.0,1.5),
+          ExtendLeft.changeBeats(2).changehands(Hands.RIGHT).scale(2.0,1.5),
 
-          ExtendLeft.changeBeats(2).changehands(1).scale(2.0,1.5) +
+          ExtendLeft.changeBeats(2).changehands(Hands.LEFT).scale(2.0,1.5) +
           LeadLeft.changeBeats(3).scale(3.5,1.5) +
           LeadLeft.changeBeats(3).scale(1.5,3.5) +
           LeadLeft.changeBeats(3).scale(3.5,1.5) +
-          ExtendLeft.changeBeats(2).changehands(1).scale(2.0,0.5)
+          ExtendLeft.changeBeats(2).changehands(Hands.LEFT).scale(2.0,0.5)
       ]),
 
     AnimatedCall('As Couples Swing Thru',
@@ -657,43 +656,43 @@ import '../c3b/bingo.dart' as c3b;
       formation:Formation('Normal Lines'),
       group:'As Couples (with calls through Plus)',
       paths:[
-          ExtendLeft.changeBeats(2).changehands(2).scale(2.0,0.5) +
-          LeadRight.changeBeats(2).changehands(2).scale(3.0,1.5),
+          ExtendLeft.changeBeats(2).changehands(Hands.RIGHT).scale(2.0,0.5) +
+          LeadRight.changeBeats(2).changehands(Hands.RIGHT).scale(3.0,1.5),
 
-          ExtendLeft.changeBeats(2).changehands(1).scale(2.0,1.5) +
-          LeadRight.changeBeats(2).changehands(3).scale(1.0,0.5),
+          ExtendLeft.changeBeats(2).changehands(Hands.LEFT).scale(2.0,1.5) +
+          LeadRight.changeBeats(2).changehands(Hands.BOTH).scale(1.0,0.5),
 
-          ExtendLeft.changeBeats(2).changehands(2).scale(2.0,0.5) +
-          LeadRight.changeBeats(2).changehands(2).scale(3.0,1.5),
+          ExtendLeft.changeBeats(2).changehands(Hands.RIGHT).scale(2.0,0.5) +
+          LeadRight.changeBeats(2).changehands(Hands.RIGHT).scale(3.0,1.5),
 
-          ExtendLeft.changeBeats(2).changehands(1).scale(2.0,1.5) +
-          LeadRight.changeBeats(2).changehands(3).scale(1.0,0.5)
+          ExtendLeft.changeBeats(2).changehands(Hands.LEFT).scale(2.0,1.5) +
+          LeadRight.changeBeats(2).changehands(Hands.BOTH).scale(1.0,0.5)
       ]),
 
     AnimatedCall('As Couples Trade the Wave',
       formation:Formation('Two-Faced Tidal Line RH'),
       group:'As Couples (with calls through Plus)',
       paths:[
-          RunRight.changeBeats(4).changehands(2).scale(3.5,2.5),
+          RunRight.changeBeats(4).changehands(Hands.RIGHT).scale(3.5,2.5),
 
-          RunRight.changeBeats(4).changehands(1).scale(2.5,1.5),
+          RunRight.changeBeats(4).changehands(Hands.LEFT).scale(2.5,1.5),
 
-          RunLeft.changeBeats(4).changehands(2).scale(1.5,2.5),
+          RunLeft.changeBeats(4).changehands(Hands.RIGHT).scale(1.5,2.5),
 
-          RunLeft.changeBeats(4).changehands(1).scale(0.5,1.5)
+          RunLeft.changeBeats(4).changehands(Hands.LEFT).scale(0.5,1.5)
       ]),
 
     AnimatedCall('As Couples Trade the Wave',
       formation:Formation('Two-Faced Tidal Line LH'),
       group:'As Couples (with calls through Plus)',noDisplay: true,
       paths:[
-          RunLeft.changeBeats(4).changehands(2).scale(1.5,2.5),
+          RunLeft.changeBeats(4).changehands(Hands.RIGHT).scale(1.5,2.5),
 
-          RunLeft.changeBeats(4).changehands(1).scale(0.5,1.5),
+          RunLeft.changeBeats(4).changehands(Hands.LEFT).scale(0.5,1.5),
 
-          RunRight.changeBeats(4).changehands(2).scale(3.5,2.5),
+          RunRight.changeBeats(4).changehands(Hands.RIGHT).scale(3.5,2.5),
 
-          RunRight.changeBeats(4).changehands(1).scale(2.5,1.5)
+          RunRight.changeBeats(4).changehands(Hands.LEFT).scale(2.5,1.5)
       ]),
 
     AnimatedCall('As Couples U-Turn Back',
@@ -713,30 +712,30 @@ import '../c3b/bingo.dart' as c3b;
       formation:Formation('Two-Faced Lines RH'),
       group:'As Couples (with calls through Plus)',
       paths:[
-          Forward_4.changehands(2),
+          Forward_4.changehands(Hands.RIGHT),
 
-          Forward_4.changehands(1),
+          Forward_4.changehands(Hands.LEFT),
 
-          DodgeRight.changeBeats(4).changehands(5).scale(2.0,2.0),
+          DodgeRight.changeBeats(4).changehands(Hands.GRIPLEFT).scale(2.0,2.0),
 
-          DodgeRight.changeBeats(4).changehands(6).scale(2.0,2.0)
+          DodgeRight.changeBeats(4).changehands(Hands.GRIPRIGHT).scale(2.0,2.0)
       ]),
 
     AnimatedCall('As Couples Zoom',
       formation:Formation('Two-Faced Lines RH'),
       group:'As Couples (with calls through Plus)',
       paths:[
-          Forward_4.changehands(2),
+          Forward_4.changehands(Hands.RIGHT),
 
-          Forward_4.changehands(1),
+          Forward_4.changehands(Hands.LEFT),
 
-          RunLeft.changehands(1).scale(2.0,2.0) +
+          RunLeft.changehands(Hands.LEFT).scale(2.0,2.0) +
           Forward_4 +
-          RunLeft.changehands(1).scale(2.0,2.0),
+          RunLeft.changehands(Hands.LEFT).scale(2.0,2.0),
 
-          RunLeft.changehands(2).scale(0.5,0.5) +
+          RunLeft.changehands(Hands.RIGHT).scale(0.5,0.5) +
           Forward_4 +
-          RunLeft.changehands(2).scale(0.5,0.5)
+          RunLeft.changehands(Hands.RIGHT).scale(0.5,0.5)
       ]),
     a1.CrossTrailThru.where((tam) =>
       tam.title == 'As Couples Cross Trail Thru').first.xref(title: 'As Couples Cross Trail Thru').xref(group: 'As Couples (with A-1 calls)'),

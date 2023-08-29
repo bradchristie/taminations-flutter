@@ -19,7 +19,7 @@
 */
 
 import '../../animated_call.dart';
-import '../../formation.dart';
+import '../../common_dart.dart';
 import '../../moves.dart';
 import '../a2/all_4_all_8.dart' as a2;
 
@@ -119,17 +119,17 @@ import '../a2/all_4_all_8.dart' as a2;
       formation:Formation('Two-Faced Lines RH'),
       from:'Right-Hand Two-Faced Lines',group:' ',
       paths:[
-          ExtendRight.changeBeats(2).changehands(2).scale(2.0,1.5) +
+          ExtendRight.changeBeats(2).changehands(Hands.RIGHT).scale(2.0,1.5) +
           SwingRight.scale(1.5,1.5) +
-          ExtendLeft.changeBeats(2).changehands(2).scale(2.0,1.5),
+          ExtendLeft.changeBeats(2).changehands(Hands.RIGHT).scale(2.0,1.5),
 
-          ExtendRight.changeBeats(2).changehands(1).scale(2.0,0.5) +
+          ExtendRight.changeBeats(2).changehands(Hands.LEFT).scale(2.0,0.5) +
           SwingRight.scale(0.5,0.5) +
-          ExtendLeft.changeBeats(2).changehands(1).scale(2.0,0.5),
+          ExtendLeft.changeBeats(2).changehands(Hands.LEFT).scale(2.0,0.5),
 
-          DodgeRight.changeBeats(5).changehands(1).scale(1.0,2.0),
+          DodgeRight.changeBeats(5).changehands(Hands.LEFT).scale(1.0,2.0),
 
-          DodgeRight.changeBeats(5).changehands(2).scale(1.0,2.0)
+          DodgeRight.changeBeats(5).changehands(Hands.RIGHT).scale(1.0,2.0)
       ]),
     a2.All4All8.where((tam) =>
       tam.title == 'All 8 Scoot and Dodge' && tam.from == 'Static Mini-Waves').first.xref(title: 'All 8 Scoot and Dodge').xref(group: ' '),

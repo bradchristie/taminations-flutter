@@ -20,7 +20,6 @@
 
 import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> FlareOutToALine = [
@@ -29,9 +28,9 @@ import '../../moves.dart';
       formation:Formation('Two-Faced Lines RH'),
       from:'Right-Hand Two-Faced Lines',
       paths:[
-          ExtendRight.changeBeats(3).changehands(2).scale(2.0,1.5),
+          ExtendRight.changeBeats(3).changehands(Hands.RIGHT).scale(2.0,1.5),
 
-          ExtendRight.changeBeats(3).changehands(1).scale(2.0,0.5),
+          ExtendRight.changeBeats(3).changehands(Hands.LEFT).scale(2.0,0.5),
 
           FlipLeft.changeBeats(3).skew(-2.0,-0.5),
 
@@ -51,9 +50,9 @@ import '../../moves.dart';
 
           FlipRight.changeBeats(3).skew(-2.0,0.5),
 
-          ExtendLeft.changeBeats(3).changehands(1).scale(2.0,0.5),
+          ExtendLeft.changeBeats(3).changehands(Hands.LEFT).scale(2.0,0.5),
 
-          ExtendLeft.changeBeats(3).changehands(2).scale(2.0,1.5)
+          ExtendLeft.changeBeats(3).changehands(Hands.RIGHT).scale(2.0,1.5)
       ]),
   ];
 

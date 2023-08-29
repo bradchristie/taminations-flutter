@@ -20,7 +20,6 @@
 
 import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> Fold = [
@@ -181,9 +180,9 @@ import '../../moves.dart';
       paths:[
           RunLeft.changeBeats(4).scale(1.0,2.0).skew(1.0,0.0),
 
-          Back.changeBeats(3).changehands(1),
+          Back.changeBeats(3).changehands(Hands.LEFT),
 
-          Back.changeBeats(3).changehands(2),
+          Back.changeBeats(3).changehands(Hands.RIGHT),
 
           RunRight.changeBeats(4).scale(2.0,2.0).skew(1.0,0.0)
       ]),

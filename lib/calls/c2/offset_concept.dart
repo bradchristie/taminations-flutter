@@ -20,7 +20,6 @@
 
 import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formation.dart';
 import '../../moves.dart';
 import '../c2/cross_the_k.dart' as c2;
 
@@ -35,15 +34,15 @@ import '../c2/cross_the_k.dart' as c2;
   ]),
       group:'Offset Lines',
       paths:[
-          Forward_3.changeBeats(5).changehands(2),
+          Forward_3.changeBeats(5).changehands(Hands.RIGHT),
 
-          Forward_3.changeBeats(5).changehands(1),
+          Forward_3.changeBeats(5).changehands(Hands.LEFT),
 
-          RunRight.changehands(1) +
-          Forward_3.changeBeats(2).changehands(1),
+          RunRight.changehands(Hands.LEFT) +
+          Forward_3.changeBeats(2).changehands(Hands.LEFT),
 
-          RunRight.changehands(2).scale(3.0,3.0) +
-          Forward_3.changeBeats(2).changehands(2)
+          RunRight.changehands(Hands.RIGHT).scale(3.0,3.0) +
+          Forward_3.changeBeats(2).changehands(Hands.RIGHT)
       ]),
 
     AnimatedCall('Offset Lines Bend the Line',
@@ -55,13 +54,13 @@ import '../c2/cross_the_k.dart' as c2;
   ]),
       group:'Offset Lines',
       paths:[
-          HingeRight.changeBeats(2).changehands(2).scale(0.67,1.0),
+          HingeRight.changeBeats(2).changehands(Hands.RIGHT).scale(0.67,1.0),
 
-          BackHingeLeft.changeBeats(2).changehands(1).scale(0.67,1.0),
+          BackHingeLeft.changeBeats(2).changehands(Hands.LEFT).scale(0.67,1.0),
 
-          BackHingeLeft.changeBeats(2).changehands(1).scale(0.67,1.0),
+          BackHingeLeft.changeBeats(2).changehands(Hands.LEFT).scale(0.67,1.0),
 
-          HingeRight.changeBeats(2).changehands(2).scale(0.67,1.0)
+          HingeRight.changeBeats(2).changehands(Hands.RIGHT).scale(0.67,1.0)
       ]),
 
     AnimatedCall('Offset Lines Pass the Ocean',

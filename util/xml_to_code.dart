@@ -20,7 +20,7 @@
 import 'dart:io';
 
 import 'package:taminations/extensions.dart';
-import 'package:taminations/math/movement.dart';
+import 'package:taminations/math/hands.dart';
 import 'package:taminations/normalize_call.dart';
 import 'package:xml/xml.dart';
 

@@ -20,7 +20,6 @@
 
 import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formation.dart';
 import '../../moves.dart';
 import '../a2/all_4_all_8.dart' as a2;
 
@@ -110,17 +109,17 @@ import '../a2/all_4_all_8.dart' as a2;
       formation:Formation('Normal Lines'),
       from:'Lines',group:' ',
       paths:[
-          ExtendLeft.changeBeats(2).changehands(2).scale(2.0,0.5) +
-          LeadRight.changeBeats(2).changehands(2).scale(3.0,1.5),
+          ExtendLeft.changeBeats(2).changehands(Hands.RIGHT).scale(2.0,0.5) +
+          LeadRight.changeBeats(2).changehands(Hands.RIGHT).scale(3.0,1.5),
 
-          ExtendLeft.changeBeats(2).changehands(1).scale(2.0,1.5) +
-          LeadRight.changeBeats(2).changehands(1).scale(1.0,0.5),
+          ExtendLeft.changeBeats(2).changehands(Hands.LEFT).scale(2.0,1.5) +
+          LeadRight.changeBeats(2).changehands(Hands.LEFT).scale(1.0,0.5),
 
-          ExtendLeft.changeBeats(2).changehands(2).scale(2.0,0.5) +
-          QuarterLeft.changeBeats(2).changehands(6).skew(1.0,-1.5),
+          ExtendLeft.changeBeats(2).changehands(Hands.RIGHT).scale(2.0,0.5) +
+          QuarterLeft.changeBeats(2).changehands(Hands.GRIPRIGHT).skew(1.0,-1.5),
 
-          ExtendLeft.changeBeats(2).changehands(1).scale(2.0,1.5) +
-          QuarterLeft.changeBeats(2).changehands(5).skew(3.0,-0.5)
+          ExtendLeft.changeBeats(2).changehands(Hands.LEFT).scale(2.0,1.5) +
+          QuarterLeft.changeBeats(2).changehands(Hands.GRIPLEFT).skew(3.0,-0.5)
       ]),
     a2.All4All8.where((tam) =>
       tam.title == 'All 4 Couples Pass In').first.xref(title: 'All 4 Couples Pass In').xref(group: ' '),
@@ -209,17 +208,17 @@ import '../a2/all_4_all_8.dart' as a2;
       formation:Formation('Normal Lines'),
       from:'Lines',group:' ',
       paths:[
-          ExtendLeft.changeBeats(2).changehands(2).scale(2.0,0.5) +
-          QuarterLeft.changeBeats(2).changehands(6).skew(1.0,-1.5),
+          ExtendLeft.changeBeats(2).changehands(Hands.RIGHT).scale(2.0,0.5) +
+          QuarterLeft.changeBeats(2).changehands(Hands.GRIPRIGHT).skew(1.0,-1.5),
 
-          ExtendLeft.changeBeats(2).changehands(1).scale(2.0,1.5) +
-          QuarterLeft.changeBeats(2).changehands(5).skew(3.0,-0.5),
+          ExtendLeft.changeBeats(2).changehands(Hands.LEFT).scale(2.0,1.5) +
+          QuarterLeft.changeBeats(2).changehands(Hands.GRIPLEFT).skew(3.0,-0.5),
 
-          ExtendLeft.changeBeats(2).changehands(2).scale(2.0,0.5) +
-          LeadRight.changeBeats(2).changehands(2).scale(3.0,1.5),
+          ExtendLeft.changeBeats(2).changehands(Hands.RIGHT).scale(2.0,0.5) +
+          LeadRight.changeBeats(2).changehands(Hands.RIGHT).scale(3.0,1.5),
 
-          ExtendLeft.changeBeats(2).changehands(1).scale(2.0,1.5) +
-          LeadRight.changeBeats(2).changehands(1).scale(1.0,0.5)
+          ExtendLeft.changeBeats(2).changehands(Hands.LEFT).scale(2.0,1.5) +
+          LeadRight.changeBeats(2).changehands(Hands.LEFT).scale(1.0,0.5)
       ]),
     a2.All4All8.where((tam) =>
       tam.title == 'All 4 Couples Pass Out').first.xref(title: 'All 4 Couples Pass Out').xref(group: ' '),

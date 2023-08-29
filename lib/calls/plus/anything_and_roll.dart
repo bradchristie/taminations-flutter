@@ -20,7 +20,6 @@
 
 import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> AnythingAndRoll = [
@@ -37,10 +36,10 @@ import '../../moves.dart';
           HingeRight.skew(0.0,-1.0) +
           QuarterRight,
 
-          QuarterRight.changehands(1).skew(-1.0,0.0) +
+          QuarterRight.changehands(Hands.LEFT).skew(-1.0,0.0) +
           QuarterRight,
 
-          QuarterLeft.changehands(2).skew(-1.0,0.0) +
+          QuarterLeft.changehands(Hands.RIGHT).skew(-1.0,0.0) +
           QuarterLeft,
 
           HingeLeft.skew(0.0,1.0) +
@@ -51,9 +50,9 @@ import '../../moves.dart';
       formation:Formation('Lines Facing Out'),
       group:' ',difficulty: 2,
       paths:[
-          QuarterRight.changehands(1).skew(0.33,0.33) +
-          QuarterRight.changehands(1).skew(-0.33,0.33) +
-          QuarterRight.changehands(1).skew(-0.33,-0.33) +
+          QuarterRight.changehands(Hands.LEFT).skew(0.33,0.33) +
+          QuarterRight.changehands(Hands.LEFT).skew(-0.33,0.33) +
+          QuarterRight.changehands(Hands.LEFT).skew(-0.33,-0.33) +
           QuarterRight.skew(1.0,0.0),
 
           HingeRight.scale(2.0,2.0).skew(0.33,0.33) +
@@ -66,9 +65,9 @@ import '../../moves.dart';
           HingeLeft.scale(2.0,2.0).skew(-0.33,0.33) +
           QuarterLeft.skew(1.0,0.0),
 
-          QuarterLeft.changehands(2).skew(0.33,-0.33) +
-          QuarterLeft.changehands(2).skew(-0.33,-0.33) +
-          QuarterLeft.changehands(2).skew(-0.33,0.33) +
+          QuarterLeft.changehands(Hands.RIGHT).skew(0.33,-0.33) +
+          QuarterLeft.changehands(Hands.RIGHT).skew(-0.33,-0.33) +
+          QuarterLeft.changehands(Hands.RIGHT).skew(-0.33,0.33) +
           QuarterLeft.skew(1.0,0.0)
       ]),
 
@@ -209,16 +208,16 @@ import '../../moves.dart';
       formation:Formation('Two-Faced Lines RH'),
       from:'Right-Handed Two-Faced Lines',group:' ',difficulty: 2,
       paths:[
-          RunRight.changeBeats(4).changehands(6).scale(2.0,2.0).skew(3.0,0.0) +
+          RunRight.changeBeats(4).changehands(Hands.GRIPRIGHT).scale(2.0,2.0).skew(3.0,0.0) +
           QuarterRight,
 
-          UmTurnRight.changeBeats(4).changehands(5).skew(3.0,0.0) +
+          UmTurnRight.changeBeats(4).changehands(Hands.GRIPLEFT).skew(3.0,0.0) +
           QuarterRight,
 
-          UmTurnRight.changeBeats(4).changehands(5).skew(1.0,0.0) +
+          UmTurnRight.changeBeats(4).changehands(Hands.GRIPLEFT).skew(1.0,0.0) +
           QuarterRight,
 
-          RunRight.changeBeats(4).changehands(6).scale(2.0,2.0).skew(1.0,0.0) +
+          RunRight.changeBeats(4).changehands(Hands.GRIPRIGHT).scale(2.0,2.0).skew(1.0,0.0) +
           QuarterRight
       ]),
 
@@ -244,23 +243,23 @@ import '../../moves.dart';
       group:' ',difficulty: 2,
       paths:[
           Forward.changeBeats(3.5).changehands(0) +
-          ExtendLeft.changeBeats(1.5).changehands(2).scale(1.5,1.5) +
-          RunRight.changehands(2).scale(1.5,2.0).skew(0.5,0.5) +
+          ExtendLeft.changeBeats(1.5).changehands(Hands.RIGHT).scale(1.5,1.5) +
+          RunRight.changehands(Hands.RIGHT).scale(1.5,2.0).skew(0.5,0.5) +
           QuarterRight,
 
           ExtendLeft.changeBeats(2).scale(1.5,1.75) +
-          SwingRight.changehands(3).scale(0.75,0.75) +
-          UmTurnRight.changehands(1).skew(0.5,0.25) +
+          SwingRight.changehands(Hands.BOTH).scale(0.75,0.75) +
+          UmTurnRight.changehands(Hands.LEFT).skew(0.5,0.25) +
           QuarterRight,
 
           Forward.changeBeats(3.5).changehands(0) +
-          ExtendLeft.changeBeats(1.5).changehands(2).scale(1.5,1.5) +
-          RunRight.changehands(2).scale(1.5,2.0).skew(0.5,0.5) +
+          ExtendLeft.changeBeats(1.5).changehands(Hands.RIGHT).scale(1.5,1.5) +
+          RunRight.changehands(Hands.RIGHT).scale(1.5,2.0).skew(0.5,0.5) +
           QuarterRight,
 
           ExtendLeft.changeBeats(2).scale(1.5,1.75) +
-          SwingRight.changehands(3).scale(0.75,0.75) +
-          UmTurnRight.changehands(1).skew(0.5,0.25) +
+          SwingRight.changehands(Hands.BOTH).scale(0.75,0.75) +
+          UmTurnRight.changehands(Hands.LEFT).skew(0.5,0.25) +
           QuarterRight
       ]),
 
@@ -271,10 +270,10 @@ import '../../moves.dart';
           HingeRight.skew(0.0,-1.0) +
           QuarterRight,
 
-          QuarterRight.changehands(2).skew(1.0,0.0) +
+          QuarterRight.changehands(Hands.RIGHT).skew(1.0,0.0) +
           QuarterRight,
 
-          QuarterRight.changehands(2).skew(1.0,0.0) +
+          QuarterRight.changehands(Hands.RIGHT).skew(1.0,0.0) +
           QuarterRight,
 
           HingeRight.skew(0.0,-1.0) +
@@ -288,7 +287,7 @@ import '../../moves.dart';
           HingeRight.changeBeats(4).scale(0.5,0.5).skew(3.5,-1.5) +
           QuarterRight,
 
-          QuarterRight.changeBeats(4).changehands(1).skew(2.0,0.0) +
+          QuarterRight.changeBeats(4).changehands(Hands.LEFT).skew(2.0,0.0) +
           QuarterRight,
 
           Path(),
@@ -407,23 +406,23 @@ import '../../moves.dart';
       from:'Lines',group:' ',difficulty: 2,
       paths:[
           ExtendRight.changeBeats(2).scale(1.5,1.75) +
-          SwingLeft.changehands(3).scale(0.75,0.75) +
-          UmTurnLeft.changehands(2).skew(0.5,-0.25) +
+          SwingLeft.changehands(Hands.BOTH).scale(0.75,0.75) +
+          UmTurnLeft.changehands(Hands.RIGHT).skew(0.5,-0.25) +
           QuarterLeft,
 
           Forward.changeBeats(3.5).changehands(0) +
-          ExtendRight.changeBeats(1.5).changehands(1).scale(1.5,1.0) +
-          RunLeft.changehands(1).scale(1.5,2.0).skew(0.5,-1.0) +
+          ExtendRight.changeBeats(1.5).changehands(Hands.LEFT).scale(1.5,1.0) +
+          RunLeft.changehands(Hands.LEFT).scale(1.5,2.0).skew(0.5,-1.0) +
           QuarterLeft,
 
           ExtendRight.changeBeats(2).scale(1.5,1.75) +
-          SwingLeft.changehands(3).scale(0.75,0.75) +
-          UmTurnLeft.changehands(2).skew(0.5,-0.25) +
+          SwingLeft.changehands(Hands.BOTH).scale(0.75,0.75) +
+          UmTurnLeft.changehands(Hands.RIGHT).skew(0.5,-0.25) +
           QuarterLeft,
 
           Forward.changeBeats(3.5).changehands(0) +
-          ExtendRight.changeBeats(1.5).changehands(1).scale(1.5,1.5) +
-          RunLeft.changehands(1).scale(1.5,2.0).skew(0.5,-0.5) +
+          ExtendRight.changeBeats(1.5).changehands(Hands.LEFT).scale(1.5,1.5) +
+          RunLeft.changehands(Hands.LEFT).scale(1.5,2.0).skew(0.5,-0.5) +
           QuarterLeft
       ]),
 
@@ -650,16 +649,16 @@ import '../../moves.dart';
       formation:Formation('Lines Facing Out'),
       from:'Lines Facing Out',group:' ',difficulty: 2,notForSequencer: true,
       paths:[
-          RunLeft.changeBeats(4).changehands(1).scale(1.0,2.0).skew(-1.0,0.0) +
+          RunLeft.changeBeats(4).changehands(Hands.LEFT).scale(1.0,2.0).skew(-1.0,0.0) +
           QuarterLeft,
 
-          UmTurnLeft.changeBeats(4).changehands(2).skew(-1.0,0.0) +
+          UmTurnLeft.changeBeats(4).changehands(Hands.RIGHT).skew(-1.0,0.0) +
           QuarterLeft,
 
-          UmTurnRight.changeBeats(4).changehands(1).skew(1.0,0.0) +
+          UmTurnRight.changeBeats(4).changehands(Hands.LEFT).skew(1.0,0.0) +
           QuarterRight,
 
-          RunRight.changeBeats(4).changehands(2).scale(2.0,2.0).skew(1.0,0.0) +
+          RunRight.changeBeats(4).changehands(Hands.RIGHT).scale(2.0,2.0).skew(1.0,0.0) +
           QuarterRight
       ]),
 

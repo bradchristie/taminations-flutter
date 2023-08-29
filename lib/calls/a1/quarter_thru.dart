@@ -20,7 +20,6 @@
 
 import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formation.dart';
 import '../../moves.dart';
 import '../a2/all_4_all_8.dart' as a2;
 
@@ -83,18 +82,18 @@ import '../a2/all_4_all_8.dart' as a2;
       formation:Formation('Alamo Wave'),
       from:'Alamo Ring',parts:'1.6',
       paths:[
-          SxtnthLeft.changehands(2) +
+          SxtnthLeft.changehands(Hands.RIGHT) +
           HingeRight.skew(0.45,0.0) +
           SwingLeft,
 
-          SxtnthRight.changehands(2) +
+          SxtnthRight.changehands(Hands.RIGHT) +
           HingeRight.skew(-0.45,0.0),
 
-          SxtnthLeft.changehands(2) +
+          SxtnthLeft.changehands(Hands.RIGHT) +
           HingeRight.skew(0.45,0.0) +
           SwingLeft,
 
-          SxtnthRight.changehands(2) +
+          SxtnthRight.changehands(Hands.RIGHT) +
           HingeRight.skew(-0.45,0.0)
       ]),
 
@@ -200,18 +199,18 @@ import '../a2/all_4_all_8.dart' as a2;
       formation:Formation('Alamo Wave'),
       from:'Alamo Ring',parts:'1.6',
       paths:[
-          SxtnthRight.changehands(1) +
+          SxtnthRight.changehands(Hands.LEFT) +
           HingeLeft.skew(0.45,0.0) +
           SwingRight,
 
-          SxtnthLeft.changehands(1) +
+          SxtnthLeft.changehands(Hands.LEFT) +
           HingeLeft.skew(-0.45,0.0),
 
-          SxtnthRight.changehands(1) +
+          SxtnthRight.changehands(Hands.LEFT) +
           HingeLeft.skew(0.45,0.0) +
           SwingRight,
 
-          SxtnthLeft.changehands(1) +
+          SxtnthLeft.changehands(Hands.LEFT) +
           HingeLeft.skew(-0.45,0.0)
       ]),
 
@@ -261,10 +260,10 @@ import '../a2/all_4_all_8.dart' as a2;
           HingeRight.changeBeats(3).scale(1.5,3.0) +
           SwingLeft.changeBeats(4).scale(0.5,0.5),
 
-          HingeRight.changeBeats(3).changehands(3).scale(0.5,1.0) +
+          HingeRight.changeBeats(3).changehands(Hands.BOTH).scale(0.5,1.0) +
           SwingLeft.changeBeats(4).scale(1.5,1.5),
 
-          HingeRight.changeBeats(3).changehands(3).scale(0.5,1.0),
+          HingeRight.changeBeats(3).changehands(Hands.BOTH).scale(0.5,1.0),
 
           HingeRight.changeBeats(3).scale(1.5,3.0)
       ]),
@@ -315,20 +314,20 @@ import '../a2/all_4_all_8.dart' as a2;
       formation:Formation('Alamo Wave'),
       from:'Alamo Ring',parts:'4.6',
       paths:[
-          SxtnthLeft.changehands(2) +
+          SxtnthLeft.changehands(Hands.RIGHT) +
           HingeRight.skew(0.45,0.0) +
           SwingRight,
 
-          SxtnthRight.changehands(2) +
+          SxtnthRight.changehands(Hands.RIGHT) +
           HingeRight.skew(-0.45,0.0) +
           SwingRight +
           SwingLeft,
 
-          SxtnthLeft.changehands(2) +
+          SxtnthLeft.changehands(Hands.RIGHT) +
           HingeRight.skew(0.45,0.0) +
           SwingRight,
 
-          SxtnthRight.changehands(2) +
+          SxtnthRight.changehands(Hands.RIGHT) +
           HingeRight.skew(-0.45,0.0) +
           SwingRight +
           SwingLeft
@@ -428,20 +427,20 @@ import '../a2/all_4_all_8.dart' as a2;
       formation:Formation('Alamo Wave'),
       from:'Alamo Ring',parts:'1.6',
       paths:[
-          SxtnthRight.changehands(1) +
+          SxtnthRight.changehands(Hands.LEFT) +
           HingeLeft.skew(0.45,0.0) +
           SwingLeft,
 
-          SxtnthLeft.changehands(1) +
+          SxtnthLeft.changehands(Hands.LEFT) +
           HingeLeft.skew(-0.45,0.0) +
           SwingLeft +
           SwingRight,
 
-          SxtnthRight.changehands(1) +
+          SxtnthRight.changehands(Hands.LEFT) +
           HingeLeft.skew(0.45,0.0) +
           SwingLeft,
 
-          SxtnthLeft.changehands(1) +
+          SxtnthLeft.changehands(Hands.LEFT) +
           HingeLeft.skew(-0.45,0.0) +
           SwingLeft +
           SwingRight
@@ -494,9 +493,9 @@ import '../a2/all_4_all_8.dart' as a2;
       paths:[
           CastRight.changeBeats(9).scale(1.5,3.0),
 
-          CastRight.changeBeats(9).changehands(3).scale(0.5,1.0),
+          CastRight.changeBeats(9).changehands(Hands.BOTH).scale(0.5,1.0),
 
-          CastRight.changeBeats(9).changehands(3).scale(0.5,1.0) +
+          CastRight.changeBeats(9).changehands(Hands.BOTH).scale(0.5,1.0) +
           SwingLeft.changeBeats(4).scale(1.5,1.5),
 
           CastRight.changeBeats(9).scale(1.5,3.0) +

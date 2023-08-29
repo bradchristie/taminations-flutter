@@ -20,7 +20,6 @@
 
 import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> Truck = [
@@ -29,26 +28,26 @@ import '../../moves.dart';
       formation:Formation('Column RH GBGB'),
       from:'Columns',isGenderSpecific:true,
       paths:[
-          DodgeRight.changehands(2),
+          DodgeRight.changehands(Hands.RIGHT),
 
-          DodgeLeft.changehands(2),
+          DodgeLeft.changehands(Hands.RIGHT),
 
-          DodgeRight.changehands(2),
+          DodgeRight.changehands(Hands.RIGHT),
 
-          DodgeLeft.changehands(2)
+          DodgeLeft.changehands(Hands.RIGHT)
       ]),
 
     AnimatedCall('Truck',
       formation:Formation('Ocean Waves RH BGBG'),
       from:'Waves',isGenderSpecific:true,
       paths:[
-          DodgeLeft.changehands(2),
+          DodgeLeft.changehands(Hands.RIGHT),
 
-          DodgeRight.changehands(3),
+          DodgeRight.changehands(Hands.BOTH),
 
-          DodgeLeft.changehands(3),
+          DodgeLeft.changehands(Hands.BOTH),
 
-          DodgeRight.changehands(2)
+          DodgeRight.changehands(Hands.RIGHT)
       ]),
 
     AnimatedCall('Reverse Truck',
@@ -60,13 +59,13 @@ import '../../moves.dart';
   ]),
       from:'Double Pass Thru, Girls in Center',isGenderSpecific:true,
       paths:[
-          DodgeRight.changehands(2),
+          DodgeRight.changehands(Hands.RIGHT),
 
-          DodgeLeft.changehands(2),
+          DodgeLeft.changehands(Hands.RIGHT),
 
-          DodgeRight.changehands(1),
+          DodgeRight.changehands(Hands.LEFT),
 
-          DodgeLeft.changehands(1)
+          DodgeLeft.changehands(Hands.LEFT)
       ]),
   ];
 

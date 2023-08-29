@@ -20,7 +20,6 @@
 
 import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> PhantomFormation = [
@@ -80,34 +79,34 @@ import '../../moves.dart';
       formation:Formation('Phantom Formation Two-Faced'),
       group:'Phantom',
       paths:[
-          Forward_4.changehands(2),
+          Forward_4.changehands(Hands.RIGHT),
 
-          Forward_4.changehands(1),
+          Forward_4.changehands(Hands.LEFT),
 
-          RunLeft.changeBeats(4).changehands(2).scale(2.0,1.0),
+          RunLeft.changeBeats(4).changehands(Hands.RIGHT).scale(2.0,1.0),
 
-          RunLeft.changeBeats(4).changehands(1).scale(3.0,3.0),
+          RunLeft.changeBeats(4).changehands(Hands.LEFT).scale(3.0,3.0),
 
-          RunRight.changeBeats(4).changehands(1),
+          RunRight.changeBeats(4).changehands(Hands.LEFT),
 
-          RunRight.changeBeats(4).changehands(2).scale(3.0,3.0)
+          RunRight.changeBeats(4).changehands(Hands.RIGHT).scale(3.0,3.0)
       ]),
 
     AnimatedCall('Phantom Ferris Wheel',
       formation:Formation('Phantom Formation Two-Faced'),
       group:'Phantom',
       paths:[
-          RunRight.changeBeats(4).changehands(6).scale(2.0,2.0).skew(3.0,0.0),
+          RunRight.changeBeats(4).changehands(Hands.GRIPRIGHT).scale(2.0,2.0).skew(3.0,0.0),
 
-          UmTurnRight.changeBeats(4).changehands(5).skew(3.0,0.0),
+          UmTurnRight.changeBeats(4).changehands(Hands.GRIPLEFT).skew(3.0,0.0),
 
-          UmTurnLeft.changeBeats(4).changehands(6).skew(1.0,0.0),
+          UmTurnLeft.changeBeats(4).changehands(Hands.GRIPRIGHT).skew(1.0,0.0),
 
-          RunLeft.changeBeats(4).changehands(5).scale(2.0,2.0).skew(1.0,0.0),
+          RunLeft.changeBeats(4).changehands(Hands.GRIPLEFT).scale(2.0,2.0).skew(1.0,0.0),
 
-          UmTurnRight.changeBeats(4).changehands(5).skew(1.0,0.0),
+          UmTurnRight.changeBeats(4).changehands(Hands.GRIPLEFT).skew(1.0,0.0),
 
-          RunRight.changeBeats(4).changehands(6).scale(2.0,2.0).skew(1.0,0.0)
+          RunRight.changeBeats(4).changehands(Hands.GRIPRIGHT).scale(2.0,2.0).skew(1.0,0.0)
       ]),
 
     AnimatedCall('Phantom Load the Boat',
@@ -197,13 +196,13 @@ import '../../moves.dart';
       formation:Formation('Phantom Formation In'),
       group:'Phantom',
       paths:[
-          Forward_4.changehands(2),
+          Forward_4.changehands(Hands.RIGHT),
 
-          Forward_4.changehands(1),
+          Forward_4.changehands(Hands.LEFT),
 
-          Forward_4.changehands(2),
+          Forward_4.changehands(Hands.RIGHT),
 
-          Forward_4.changehands(1),
+          Forward_4.changehands(Hands.LEFT),
 
           ExtendLeft.changeBeats(2).scale(2.0,0.5) +
           ExtendRight.changeBeats(2).scale(2.0,0.5),
@@ -271,17 +270,17 @@ import '../../moves.dart';
       formation:Formation('Phantom Formation Two-Faced'),
       group:'Phantom',
       paths:[
-          RunRight.changeBeats(4).changehands(2).scale(1.0,2.0).skew(1.0,0.0),
+          RunRight.changeBeats(4).changehands(Hands.RIGHT).scale(1.0,2.0).skew(1.0,0.0),
 
-          UmTurnRight.changeBeats(4).changehands(1).skew(1.0,0.0),
+          UmTurnRight.changeBeats(4).changehands(Hands.LEFT).skew(1.0,0.0),
 
-          UmTurnLeft.changeBeats(4).changehands(2).skew(1.0,0.0),
+          UmTurnLeft.changeBeats(4).changehands(Hands.RIGHT).skew(1.0,0.0),
 
-          RunLeft.changeBeats(4).changehands(1).scale(1.0,2.0).skew(1.0,0.0),
+          RunLeft.changeBeats(4).changehands(Hands.LEFT).scale(1.0,2.0).skew(1.0,0.0),
 
-          UmTurnRight.changeBeats(4).changehands(1).skew(1.0,0.0),
+          UmTurnRight.changeBeats(4).changehands(Hands.LEFT).skew(1.0,0.0),
 
-          RunRight.changeBeats(4).changehands(2).scale(1.0,2.0).skew(1.0,0.0)
+          RunRight.changeBeats(4).changehands(Hands.RIGHT).scale(1.0,2.0).skew(1.0,0.0)
       ]),
   ];
 

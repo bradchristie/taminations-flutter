@@ -19,7 +19,7 @@
 */
 
 import '../../animated_call.dart';
-import '../../formation.dart';
+import '../../common_dart.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> WheelAround = [
@@ -76,11 +76,11 @@ import '../../moves.dart';
           HalfBackHingeRight.scale(0.5,0.5).skew(-0.35,0.35),
 
           HingeLeft.scale(0.5,0.5) +
-          EighthLeft.changeBeats(.75).changehands(1).skew(0.6,-0.1),
+          EighthLeft.changeBeats(.75).changehands(Hands.LEFT).skew(0.6,-0.1),
 
           HalfBackHingeRight.scale(0.5,0.5).skew(-0.25,0.25),
 
-          EighthLeft.changeBeats(.75).changehands(1).skew(0.71,-0.2)
+          EighthLeft.changeBeats(.75).changehands(Hands.LEFT).skew(0.71,-0.2)
       ]),
 
     AnimatedCall('Reverse Wheel Around',

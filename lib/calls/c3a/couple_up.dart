@@ -19,7 +19,7 @@
 */
 
 import '../../animated_call.dart';
-import '../../formation.dart';
+import '../../common_dart.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> CoupleUp = [
@@ -129,14 +129,14 @@ import '../../moves.dart';
       This is an application of the C-2 Anything Concept.
     ''',
       paths:[
-          CounterRotateRight_2_0.changeBeats(3).changehands(2).skew(1.0,0.0),
+          CounterRotateRight_2_0.changeBeats(3).changehands(Hands.RIGHT).skew(1.0,0.0),
 
-          CounterRotateRight_0_m2.changeBeats(3).changehands(2).skew(-1.0,0.0) +
+          CounterRotateRight_0_m2.changeBeats(3).changehands(Hands.RIGHT).skew(-1.0,0.0) +
           UmTurnRight,
 
-          CounterRotateRight_2_0.changeBeats(3).changehands(2).skew(1.0,0.0),
+          CounterRotateRight_2_0.changeBeats(3).changehands(Hands.RIGHT).skew(1.0,0.0),
 
-          CounterRotateRight_0_m2.changeBeats(3).changehands(2).skew(-1.0,0.0) +
+          CounterRotateRight_0_m2.changeBeats(3).changehands(Hands.RIGHT).skew(-1.0,0.0) +
           UmTurnRight
       ]),
 
@@ -179,15 +179,15 @@ import '../../moves.dart';
       formation:Formation('Two-Faced Lines RH'),
       group:' ',parts:'4',
       paths:[
-          Forward_4.changehands(2) +
+          Forward_4.changehands(Hands.RIGHT) +
           BeauReverseWheel.scale(0.67,1.0),
 
-          Forward_4.changehands(1) +
+          Forward_4.changehands(Hands.LEFT) +
           BelleReverseWheel.scale(0.67,1.0),
 
-          RunRight.changeBeats(4).changehands(1),
+          RunRight.changeBeats(4).changehands(Hands.LEFT),
 
-          RunRight.changeBeats(4).changehands(2).scale(3.0,3.0)
+          RunRight.changeBeats(4).changehands(Hands.RIGHT).scale(3.0,3.0)
       ]),
 
     AnimatedCall('Concentric Couple Up',

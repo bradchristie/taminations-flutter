@@ -19,7 +19,7 @@
 */
 
 import '../../animated_call.dart';
-import '../../formation.dart';
+import '../../common_dart.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> Bounce = [
@@ -28,9 +28,9 @@ import '../../moves.dart';
       formation:Formation('Two-Faced Line RH'),
       from:'Right-Hand Two-Faced Line',group:' ',parts:'2',
       paths:[
-          ExtendRight.changeBeats(2).changehands(2).scale(2.0,2.0),
+          ExtendRight.changeBeats(2).changehands(Hands.RIGHT).scale(2.0,2.0),
 
-          ExtendRight.changeBeats(2).changehands(1).scale(2.0,2.0) +
+          ExtendRight.changeBeats(2).changehands(Hands.LEFT).scale(2.0,2.0) +
           UmTurnRight
       ]),
 
@@ -38,14 +38,14 @@ import '../../moves.dart';
       formation:Formation('Two-Faced Lines RH'),
       group:' ',isGenderSpecific:true,parts:'2',
       paths:[
-          ExtendRight.changeBeats(2).changehands(1).scale(1.0,2.0) +
+          ExtendRight.changeBeats(2).changehands(Hands.LEFT).scale(1.0,2.0) +
           UmTurnRight,
 
-          ExtendRight.changeBeats(2).changehands(1).scale(1.0,2.0),
+          ExtendRight.changeBeats(2).changehands(Hands.LEFT).scale(1.0,2.0),
 
-          ExtendRight.changeBeats(2).changehands(1).scale(1.0,2.0),
+          ExtendRight.changeBeats(2).changehands(Hands.LEFT).scale(1.0,2.0),
 
-          ExtendRight.changeBeats(2).changehands(1).scale(1.0,2.0) +
+          ExtendRight.changeBeats(2).changehands(Hands.LEFT).scale(1.0,2.0) +
           UmTurnRight
       ]),
 
@@ -56,15 +56,15 @@ import '../../moves.dart';
       Note that the girls turn back in the direction of the veer.
     ''',
       paths:[
-          ExtendRight.changeBeats(2).changehands(1).scale(1.0,2.0),
+          ExtendRight.changeBeats(2).changehands(Hands.LEFT).scale(1.0,2.0),
 
-          ExtendRight.changeBeats(2).changehands(1).scale(1.0,2.0) +
+          ExtendRight.changeBeats(2).changehands(Hands.LEFT).scale(1.0,2.0) +
           UmTurnRight,
 
-          ExtendRight.changeBeats(2).changehands(1).scale(1.0,2.0) +
+          ExtendRight.changeBeats(2).changehands(Hands.LEFT).scale(1.0,2.0) +
           UmTurnRight,
 
-          ExtendRight.changeBeats(2).changehands(1).scale(1.0,2.0)
+          ExtendRight.changeBeats(2).changehands(Hands.LEFT).scale(1.0,2.0)
       ]),
 
     AnimatedCall('Bounce the Leaders',
@@ -74,14 +74,14 @@ import '../../moves.dart';
       The dancers who Bounce are the leaders before the veer.
     ''',
       paths:[
-          ExtendRight.changeBeats(2).changehands(1).scale(1.0,2.0),
+          ExtendRight.changeBeats(2).changehands(Hands.LEFT).scale(1.0,2.0),
 
-          ExtendRight.changeBeats(2).changehands(1).scale(1.0,2.0),
+          ExtendRight.changeBeats(2).changehands(Hands.LEFT).scale(1.0,2.0),
 
-          ExtendRight.changeBeats(2).changehands(1).scale(1.0,2.0) +
+          ExtendRight.changeBeats(2).changehands(Hands.LEFT).scale(1.0,2.0) +
           UmTurnRight,
 
-          ExtendRight.changeBeats(2).changehands(1).scale(1.0,2.0) +
+          ExtendRight.changeBeats(2).changehands(Hands.LEFT).scale(1.0,2.0) +
           UmTurnRight
       ]),
 
@@ -89,46 +89,46 @@ import '../../moves.dart';
       formation:Formation('Two-Faced Lines RH'),
       group:' ',parts:'2',
       paths:[
-          ExtendRight.changeBeats(2).changehands(1).scale(1.0,2.0) +
+          ExtendRight.changeBeats(2).changehands(Hands.LEFT).scale(1.0,2.0) +
           UmTurnRight,
 
-          ExtendRight.changeBeats(2).changehands(1).scale(1.0,2.0) +
+          ExtendRight.changeBeats(2).changehands(Hands.LEFT).scale(1.0,2.0) +
           UmTurnRight,
 
-          ExtendRight.changeBeats(2).changehands(1).scale(1.0,2.0),
+          ExtendRight.changeBeats(2).changehands(Hands.LEFT).scale(1.0,2.0),
 
-          ExtendRight.changeBeats(2).changehands(1).scale(1.0,2.0)
+          ExtendRight.changeBeats(2).changehands(Hands.LEFT).scale(1.0,2.0)
       ]),
 
     AnimatedCall('As Couples Bounce the Ends',
       formation:Formation('Tidal Line RH'),
       group:'  ',parts:'3',
       paths:[
-          ExtendRight.changeBeats(3).changehands(2).scale(2.0,0.5) +
+          ExtendRight.changeBeats(3).changehands(Hands.RIGHT).scale(2.0,0.5) +
           BeauReverseWheel,
 
-          ExtendRight.changeBeats(3).changehands(3).scale(2.0,1.5) +
+          ExtendRight.changeBeats(3).changehands(Hands.BOTH).scale(2.0,1.5) +
           BelleReverseWheel,
 
-          ExtendRight.changeBeats(3).changehands(3).scale(2.0,2.5),
+          ExtendRight.changeBeats(3).changehands(Hands.BOTH).scale(2.0,2.5),
 
-          ExtendRight.changeBeats(3).changehands(1).scale(2.0,3.5)
+          ExtendRight.changeBeats(3).changehands(Hands.LEFT).scale(2.0,3.5)
       ]),
 
     AnimatedCall('Concentric Bounce the Boys',
       formation:Formation('Two-Faced Tidal Line RH'),
       group:'  ',isGenderSpecific:true,
       paths:[
-          Forward.changehands(2) +
-          ExtendRight.changeBeats(3).changehands(6).scale(2.0,2.5) +
+          Forward.changehands(Hands.RIGHT) +
+          ExtendRight.changeBeats(3).changehands(Hands.GRIPRIGHT).scale(2.0,2.5) +
           UmTurnRight,
 
-          Forward.changehands(1) +
-          ExtendRight.changeBeats(3).changehands(5).scale(2.0,3.5),
+          Forward.changehands(Hands.LEFT) +
+          ExtendRight.changeBeats(3).changehands(Hands.GRIPLEFT).scale(2.0,3.5),
 
-          ExtendLeft.changeBeats(3).changehands(1).scale(1.0,0.5),
+          ExtendLeft.changeBeats(3).changehands(Hands.LEFT).scale(1.0,0.5),
 
-          ExtendLeft.changeBeats(3).changehands(2).scale(1.0,1.5) +
+          ExtendLeft.changeBeats(3).changehands(Hands.RIGHT).scale(1.0,1.5) +
           UmTurnLeft
       ]),
 
@@ -136,14 +136,14 @@ import '../../moves.dart';
       formation:Formation('Two-Faced Tidal Line RH'),
       group:'  ',isGenderSpecific:true,
       paths:[
-          ExtendRight.changeBeats(4).changehands(6).scale(1.0,2.5) +
+          ExtendRight.changeBeats(4).changehands(Hands.GRIPRIGHT).scale(1.0,2.5) +
           UmTurnRight,
 
-          ExtendRight.changeBeats(4).changehands(5).scale(1.0,3.5),
+          ExtendRight.changeBeats(4).changehands(Hands.GRIPLEFT).scale(1.0,3.5),
 
-          ExtendLeft.changeBeats(4).changehands(1).scale(3.0,0.5),
+          ExtendLeft.changeBeats(4).changehands(Hands.LEFT).scale(3.0,0.5),
 
-          ExtendLeft.changeBeats(4).changehands(2).scale(3.0,1.5) +
+          ExtendLeft.changeBeats(4).changehands(Hands.RIGHT).scale(3.0,1.5) +
           UmTurnLeft
       ]),
 
@@ -151,16 +151,16 @@ import '../../moves.dart';
       formation:Formation('Two-Faced Lines RH'),
       group:'  ',isGenderSpecific:true,
       paths:[
-          Forward_2.changehands(2) +
-          ExtendRight.changeBeats(2).changehands(1).scale(1.0,2.0) +
+          Forward_2.changehands(Hands.RIGHT) +
+          ExtendRight.changeBeats(2).changehands(Hands.LEFT).scale(1.0,2.0) +
           UmTurnRight,
 
-          Forward_2.changehands(1) +
-          ExtendRight.changeBeats(2).changehands(1).scale(1.0,2.0),
+          Forward_2.changehands(Hands.LEFT) +
+          ExtendRight.changeBeats(2).changehands(Hands.LEFT).scale(1.0,2.0),
 
-          ExtendRight.changeBeats(2).changehands(1).scale(1.0,2.0),
+          ExtendRight.changeBeats(2).changehands(Hands.LEFT).scale(1.0,2.0),
 
-          ExtendRight.changeBeats(2).changehands(1).scale(1.0,2.0) +
+          ExtendRight.changeBeats(2).changehands(Hands.LEFT).scale(1.0,2.0) +
           UmTurnRight
       ]),
 
@@ -168,17 +168,17 @@ import '../../moves.dart';
       formation:Formation('Two-Faced Lines RH Compact'),
       group:'  ',parts:'3',
       paths:[
-          Forward.changeBeats(1).changehands(2).scale(1.5,1.0) +
-          ExtendRight.changeBeats(2).changehands(2).scale(1.0,2.0),
+          Forward.changeBeats(1).changehands(Hands.RIGHT).scale(1.5,1.0) +
+          ExtendRight.changeBeats(2).changehands(Hands.RIGHT).scale(1.0,2.0),
 
-          Forward.changeBeats(1).changehands(1).scale(1.5,1.0) +
-          ExtendRight.changeBeats(2).changehands(1).scale(1.0,2.0) +
+          Forward.changeBeats(1).changehands(Hands.LEFT).scale(1.5,1.0) +
+          ExtendRight.changeBeats(2).changehands(Hands.LEFT).scale(1.0,2.0) +
           Pivotforwardleft.changeBeats(4),
 
-          ExtendRight.changeBeats(3).changehands(1).scale(1.5,2.0) +
+          ExtendRight.changeBeats(3).changehands(Hands.LEFT).scale(1.5,2.0) +
           Pivotbackwardright.changeBeats(4),
 
-          ExtendRight.changeBeats(3).changehands(2).scale(1.5,2.0)
+          ExtendRight.changeBeats(3).changehands(Hands.RIGHT).scale(1.5,2.0)
       ]),
 
     AnimatedCall('Single Bounce the Boys',

@@ -19,7 +19,7 @@
 */
 
 import '../../animated_call.dart';
-import '../../formation.dart';
+import '../../common_dart.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> FinallyConcept = [
@@ -31,13 +31,13 @@ import '../../moves.dart';
           Stand.changeBeats(8),
 
           SwingRight.scale(0.5,0.5) +
-          SwingLeft.changeBeats(5).changehands(1).scale(1.5,1.5),
+          SwingLeft.changeBeats(5).changehands(Hands.LEFT).scale(1.5,1.5),
 
           SwingRight.scale(0.5,0.5) +
           Stand.changeBeats(5),
 
           Stand.changeBeats(3) +
-          SwingLeft.changeBeats(5).changehands(3).scale(0.5,0.5)
+          SwingLeft.changeBeats(5).changehands(Hands.BOTH).scale(0.5,0.5)
       ]),
 
     AnimatedCall('Finally As Couples Mix',
@@ -47,7 +47,7 @@ import '../../moves.dart';
           DodgeRight.scale(1.0,0.5),
 
           RunRight +
-          SwingLeft.changeBeats(5).changehands(3).scale(0.5,0.5),
+          SwingLeft.changeBeats(5).changehands(Hands.BOTH).scale(0.5,0.5),
 
           RunRight,
 
@@ -62,22 +62,22 @@ import '../../moves.dart';
           ExtendLeft.changeBeats(2).scale(2.0,0.5) +
           ExtendRight.scale(1.0,0.5) +
           QuarterRight +
-          ExtendLeft.changeBeats(3).changehands(2).scale(1.0,2.0),
+          ExtendLeft.changeBeats(3).changehands(Hands.RIGHT).scale(1.0,2.0),
 
           ExtendLeft.changeBeats(2).scale(2.0,0.5) +
           ExtendRight.scale(1.0,0.5) +
           QuarterLeft +
-          ExtendLeft.changeBeats(3).changehands(1).scale(1.0,2.0),
+          ExtendLeft.changeBeats(3).changehands(Hands.LEFT).scale(1.0,2.0),
 
           ExtendLeft.changeBeats(2).scale(2.0,0.5) +
           ExtendRight.scale(1.0,0.5) +
           QuarterRight +
-          ExtendLeft.changeBeats(3).changehands(2).scale(1.0,2.0),
+          ExtendLeft.changeBeats(3).changehands(Hands.RIGHT).scale(1.0,2.0),
 
           ExtendLeft.changeBeats(2).scale(2.0,0.5) +
           ExtendRight.scale(1.0,0.5) +
           QuarterLeft +
-          ExtendLeft.changeBeats(3).changehands(1).scale(1.0,2.0)
+          ExtendLeft.changeBeats(3).changehands(Hands.LEFT).scale(1.0,2.0)
       ]),
 
     AnimatedCall('Finally As Couples Wheel the Sea',
@@ -85,16 +85,16 @@ import '../../moves.dart';
       group:'Finally As Couples',fractions:'3',
       paths:[
           BelleWheel +
-          DodgeRight.changeBeats(4).changehands(1).scale(1.0,2.0),
+          DodgeRight.changeBeats(4).changehands(Hands.LEFT).scale(1.0,2.0),
 
           BeauWheel +
-          DodgeRight.changeBeats(4).changehands(2).scale(1.0,2.0),
+          DodgeRight.changeBeats(4).changehands(Hands.RIGHT).scale(1.0,2.0),
 
           BelleWheel +
-          Forward_4.changehands(1),
+          Forward_4.changehands(Hands.LEFT),
 
           BeauWheel +
-          Forward_4.changehands(2)
+          Forward_4.changehands(Hands.RIGHT)
       ]),
 
     AnimatedCall('Finally Tandem Swing Thru',
@@ -102,16 +102,16 @@ import '../../moves.dart';
       group:'Finally Tandem',fractions:'3',
       paths:[
           SwingRight +
-          CounterRotateLeft_0_2.changehands(1).skew(-1.0,0.0) +
-          CounterRotateLeft_0_2.changehands(1).skew(0.0,1.0),
+          CounterRotateLeft_0_2.changehands(Hands.LEFT).skew(-1.0,0.0) +
+          CounterRotateLeft_0_2.changehands(Hands.LEFT).skew(0.0,1.0),
 
           SwingRight,
 
           SwingRight,
 
           SwingRight +
-          CounterRotateLeft_2_0.changehands(1).skew(1.0,0.0) +
-          CounterRotateLeft_2_0.changehands(1).skew(0.0,-1.0)
+          CounterRotateLeft_2_0.changehands(Hands.LEFT).skew(1.0,0.0) +
+          CounterRotateLeft_2_0.changehands(Hands.LEFT).skew(0.0,-1.0)
       ]),
   ];
 

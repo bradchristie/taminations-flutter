@@ -19,7 +19,7 @@
 */
 
 import '../../animated_call.dart';
-import '../../formation.dart';
+import '../../common_dart.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> AlamoStyle = [
@@ -31,24 +31,24 @@ import '../../moves.dart';
           LeadLeft.changeBeats(3).skew(0.5,0.0) +
           SwingLeft.scale(0.5,0.5) +
           HalfHingeLeft.scale(0.5,0.5).skew(0.646,-0.061) +
-          SxtnthLeft.changehands(7),
+          SxtnthLeft.changehands(Hands.GRIPBOTH),
 
           LeadRight.skew(-0.5,0.0) +
           HingeLeft.scale(0.5,0.5) +
           SwingLeft.scale(0.5,0.5) +
           HalfHingeLeft.scale(0.5,0.5).skew(0.061,-0.646) +
-          SxtnthRight.changehands(7),
+          SxtnthRight.changehands(Hands.GRIPBOTH),
 
           LeadLeft.changeBeats(3).skew(0.5,0.0) +
           SwingLeft.scale(0.5,0.5) +
           HalfHingeLeft.scale(0.5,0.5).skew(0.646,-0.061) +
-          SxtnthLeft.changehands(7),
+          SxtnthLeft.changehands(Hands.GRIPBOTH),
 
           LeadRight.skew(-0.5,0.0) +
           HingeLeft.scale(0.5,0.5) +
           SwingLeft.scale(0.5,0.5) +
           HalfHingeLeft.scale(0.5,0.5).skew(0.061,-0.646) +
-          SxtnthRight.changehands(7)
+          SxtnthRight.changehands(Hands.GRIPBOTH)
       ]),
   ];
 

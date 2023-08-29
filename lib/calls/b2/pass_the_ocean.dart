@@ -20,7 +20,6 @@
 
 import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> PassTheOcean = [
@@ -34,7 +33,7 @@ import '../../moves.dart';
           LeadRight.scale(2.0,1.5),
 
           ExtendLeft.changeBeats(2).scale(1.5,0.5) +
-          LeadLeft.changeBeats(2).changehands(1).scale(1.0,0.5)
+          LeadLeft.changeBeats(2).changehands(Hands.LEFT).scale(1.0,0.5)
       ]),
 
     AnimatedCall('Pass the Ocean',
@@ -46,7 +45,7 @@ import '../../moves.dart';
           LeadRight.scale(1.0,1.5),
 
           ExtendLeft.changeBeats(2).scale(1.0,0.5) +
-          LeadLeft.changeBeats(2).changehands(1).scale(0.5,0.5)
+          LeadLeft.changeBeats(2).changehands(Hands.LEFT).scale(0.5,0.5)
       ]),
 
     AnimatedCall('Pass the Ocean',
@@ -58,14 +57,14 @@ import '../../moves.dart';
           LeadRight.scale(2.0,1.5),
 
           ExtendLeft.changeBeats(2).scale(2.0,0.5) +
-          LeadLeft.changeBeats(2).changehands(1).scale(1.0,0.5),
+          LeadLeft.changeBeats(2).changehands(Hands.LEFT).scale(1.0,0.5),
 
           ExtendLeft.changeBeats(2).scale(2.0,0.5) +
           Forward.changeBeats(.5) +
           LeadRight.scale(2.0,1.5),
 
           ExtendLeft.changeBeats(2).scale(2.0,0.5) +
-          LeadLeft.changeBeats(2).changehands(1).scale(1.0,0.5)
+          LeadLeft.changeBeats(2).changehands(Hands.LEFT).scale(1.0,0.5)
       ]),
 
     AnimatedCall('Pass the Ocean',
@@ -76,13 +75,13 @@ import '../../moves.dart';
           LeadRight.changeBeats(2).scale(1.5,1.5),
 
           ExtendLeft.changeBeats(2).scale(1.0,0.5) +
-          LeadLeft.changeBeats(2).changehands(1).scale(0.5,0.5),
+          LeadLeft.changeBeats(2).changehands(Hands.LEFT).scale(0.5,0.5),
 
           ExtendLeft.changeBeats(2).scale(1.0,0.5) +
           LeadRight.changeBeats(2).scale(1.5,1.5),
 
           ExtendLeft.changeBeats(2).scale(1.0,0.5) +
-          LeadLeft.changeBeats(2).changehands(1).scale(0.5,0.5)
+          LeadLeft.changeBeats(2).changehands(Hands.LEFT).scale(0.5,0.5)
       ]),
 
     AnimatedCall('Pass the Ocean',
@@ -120,7 +119,7 @@ import '../../moves.dart';
           LeadRight.scale(2.0,1.5),
 
           ExtendLeft.changeBeats(2).scale(3.0,0.5) +
-          LeadLeft.changeBeats(2).changehands(1).scale(1.0,0.5),
+          LeadLeft.changeBeats(2).changehands(Hands.LEFT).scale(1.0,0.5),
 
           Path(),
 
@@ -140,7 +139,7 @@ import '../../moves.dart';
           LeadRight.scale(2.0,1.5),
 
           ExtendLeft.changeBeats(2).scale(3.0,0.5) +
-          LeadLeft.changeBeats(2).changehands(1).scale(1.0,0.5)
+          LeadLeft.changeBeats(2).changehands(Hands.LEFT).scale(1.0,0.5)
       ]),
   ];
 

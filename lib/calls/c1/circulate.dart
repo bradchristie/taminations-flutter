@@ -19,7 +19,7 @@
 */
 
 import '../../animated_call.dart';
-import '../../formation.dart';
+import '../../common_dart.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> Circulate = [
@@ -28,11 +28,11 @@ import '../../moves.dart';
       formation:Formation('Thar RH Boys'),
       from:'Thar',
       paths:[
-          LeadRight.changeBeats(4).changehands(2),
+          LeadRight.changeBeats(4).changehands(Hands.RIGHT),
 
           LeadLeft.changeBeats(4).scale(3.0,3.0),
 
-          LeadRight.changeBeats(4).changehands(2),
+          LeadRight.changeBeats(4).changehands(Hands.RIGHT),
 
           LeadLeft.changeBeats(4).scale(3.0,3.0)
       ]),
@@ -41,11 +41,11 @@ import '../../moves.dart';
       formation:Formation('Thar LH Boys'),
       from:'Wrong Way Thar',
       paths:[
-          LeadLeft.changeBeats(4).changehands(1),
+          LeadLeft.changeBeats(4).changehands(Hands.LEFT),
 
           LeadRight.changeBeats(4).scale(3.0,3.0),
 
-          LeadLeft.changeBeats(4).changehands(1),
+          LeadLeft.changeBeats(4).changehands(Hands.LEFT),
 
           LeadRight.changeBeats(4).scale(3.0,3.0)
       ]),
@@ -54,26 +54,26 @@ import '../../moves.dart';
       formation:Formation('Star Promenade'),
       from:'Star Promenade',
       paths:[
-          LeadLeft.changeBeats(4).changehands(3),
+          LeadLeft.changeBeats(4).changehands(Hands.BOTH),
 
-          LeadLeft.changeBeats(4).changehands(1).scale(3.0,3.0),
+          LeadLeft.changeBeats(4).changehands(Hands.LEFT).scale(3.0,3.0),
 
-          LeadLeft.changeBeats(4).changehands(3),
+          LeadLeft.changeBeats(4).changehands(Hands.BOTH),
 
-          LeadLeft.changeBeats(4).changehands(1).scale(3.0,3.0)
+          LeadLeft.changeBeats(4).changehands(Hands.LEFT).scale(3.0,3.0)
       ]),
 
     AnimatedCall('Circulate',
       formation:Formation('Reverse Star Promenade'),
       from:'Reverse Star Promenade',
       paths:[
-          LeadRight.changeBeats(4).changehands(2).scale(3.0,3.0),
+          LeadRight.changeBeats(4).changehands(Hands.RIGHT).scale(3.0,3.0),
 
-          LeadRight.changeBeats(4).changehands(3),
+          LeadRight.changeBeats(4).changehands(Hands.BOTH),
 
-          LeadRight.changeBeats(4).changehands(2).scale(3.0,3.0),
+          LeadRight.changeBeats(4).changehands(Hands.RIGHT).scale(3.0,3.0),
 
-          LeadRight.changeBeats(4).changehands(3)
+          LeadRight.changeBeats(4).changehands(Hands.BOTH)
       ]),
   ];
 

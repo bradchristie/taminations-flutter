@@ -20,7 +20,6 @@
 
 import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> LadiesChain = [
@@ -31,11 +30,11 @@ import '../../moves.dart';
       paths:[
           Stand.changehands(0) +
           DodgeRight.changeBeats(2) +
-          UmTurnLeft.changeBeats(2).changehands(2).skew(0.0,0.5) +
+          UmTurnLeft.changeBeats(2).changehands(Hands.RIGHT).skew(0.0,0.5) +
           BeauWheel.scale(0.5,0.75),
 
           PullLeft.changeBeats(2.5).scale(1.5,1.75) +
-          ExtendRight.changeBeats(2.5).changehands(1).scale(1.5,1.25) +
+          ExtendRight.changeBeats(2.5).changehands(Hands.LEFT).scale(1.5,1.25) +
           BelleWheel.scale(0.5,0.75)
       ]),
 
@@ -45,20 +44,20 @@ import '../../moves.dart';
       paths:[
           Stand.changehands(0) +
           DodgeRight.changeBeats(2) +
-          UmTurnLeft.changeBeats(2).changehands(2).skew(0.0,0.5) +
+          UmTurnLeft.changeBeats(2).changehands(Hands.RIGHT).skew(0.0,0.5) +
           BeauWheel.scale(0.5,0.75),
 
           PullLeft.changeBeats(2.5).scale(2.0,1.75) +
-          ExtendRight.changeBeats(2.5).changehands(1).scale(2.0,1.25) +
+          ExtendRight.changeBeats(2.5).changehands(Hands.LEFT).scale(2.0,1.25) +
           BelleWheel.scale(0.5,0.75),
 
           Stand.changehands(0) +
           DodgeRight.changeBeats(2) +
-          UmTurnLeft.changeBeats(2).changehands(2).skew(0.0,0.5) +
+          UmTurnLeft.changeBeats(2).changehands(Hands.RIGHT).skew(0.0,0.5) +
           BeauWheel.scale(0.5,0.75),
 
           PullLeft.changeBeats(2.5).scale(2.0,1.75) +
-          ExtendRight.changeBeats(2.5).changehands(1).scale(2.0,1.25) +
+          ExtendRight.changeBeats(2.5).changehands(Hands.LEFT).scale(2.0,1.25) +
           BelleWheel.scale(0.5,0.75)
       ]),
 
@@ -68,7 +67,7 @@ import '../../moves.dart';
       paths:[
           Stand +
           DodgeRight.changeBeats(2) +
-          UmTurnLeft.changeBeats(2).changehands(2).skew(0.0,0.5) +
+          UmTurnLeft.changeBeats(2).changehands(Hands.RIGHT).skew(0.0,0.5) +
           BeauWheel.scale(0.5,0.75),
 
           PullLeft.changeBeats(2.5).scale(1.0,1.5) +
@@ -77,7 +76,7 @@ import '../../moves.dart';
 
           Stand +
           DodgeRight.changeBeats(2) +
-          UmTurnLeft.changeBeats(2).changehands(2).skew(0.0,0.5) +
+          UmTurnLeft.changeBeats(2).changehands(Hands.RIGHT).skew(0.0,0.5) +
           BeauWheel.scale(0.5,0.75),
 
           PullLeft.changeBeats(2.5).scale(1.0,1.5) +
@@ -91,7 +90,7 @@ import '../../moves.dart';
       paths:[
           Stand +
           DodgeRight.changeBeats(2) +
-          UmTurnLeft.changeBeats(2).changehands(2).skew(0.0,0.5) +
+          UmTurnLeft.changeBeats(2).changehands(Hands.RIGHT).skew(0.0,0.5) +
           BeauWheel.scale(0.5,0.75),
 
           PullLeft.changeBeats(2.5).scale(3.0,1.75) +
@@ -113,7 +112,7 @@ import '../../moves.dart';
 
           Stand +
           DodgeRight.changeBeats(2) +
-          UmTurnLeft.changeBeats(2).changehands(2).skew(0.0,0.5) +
+          UmTurnLeft.changeBeats(2).changehands(Hands.RIGHT).skew(0.0,0.5) +
           BeauWheel.scale(0.5,0.75),
 
           PullLeft.changeBeats(2.5).scale(3.0,1.75) +
@@ -127,7 +126,7 @@ import '../../moves.dart';
       paths:[
           Stand +
           DodgeRight.changeBeats(2) +
-          UmTurnLeft.changeBeats(2).changehands(2).skew(0.0,0.5) +
+          UmTurnLeft.changeBeats(2).changehands(Hands.RIGHT).skew(0.0,0.5) +
           BeauWheel.scale(0.5,0.75),
 
           ExtendLeft.changeBeats(2).scale(2.0,1.0) +
@@ -136,7 +135,7 @@ import '../../moves.dart';
 
           Stand +
           DodgeRight.changeBeats(2) +
-          UmTurnLeft.changeBeats(2).changehands(2).skew(0.0,0.5) +
+          UmTurnLeft.changeBeats(2).changehands(Hands.RIGHT).skew(0.0,0.5) +
           BeauWheel.scale(0.5,0.75),
 
           ExtendLeft.changeBeats(2).scale(1.5,2.5) +
@@ -150,7 +149,7 @@ import '../../moves.dart';
       paths:[
           Stand +
           DodgeRight.changeBeats(2) +
-          UmTurnLeft.changeBeats(2).changehands(2).skew(0.0,0.5) +
+          UmTurnLeft.changeBeats(2).changehands(Hands.RIGHT).skew(0.0,0.5) +
           BeauWheel.scale(0.5,0.75),
 
           ExtendLeft.changeBeats(2).scale(1.5,2.5) +
@@ -159,7 +158,7 @@ import '../../moves.dart';
 
           Stand +
           DodgeRight.changeBeats(2) +
-          UmTurnLeft.changeBeats(2).changehands(2).skew(0.0,0.5) +
+          UmTurnLeft.changeBeats(2).changehands(Hands.RIGHT).skew(0.0,0.5) +
           BeauWheel.scale(0.5,0.75),
 
           ExtendLeft.changeBeats(2).scale(2.0,1.0) +
@@ -176,7 +175,7 @@ import '../../moves.dart';
       paths:[
           Stand +
           DodgeRight.changeBeats(2) +
-          UmTurnLeft.changeBeats(2).changehands(2).skew(0.0,0.5) +
+          UmTurnLeft.changeBeats(2).changehands(Hands.RIGHT).skew(0.0,0.5) +
           BeauWheel.scale(0.5,0.75),
 
           ExtendLeft.changeBeats(2).scale(1.5,2.5) +
@@ -185,7 +184,7 @@ import '../../moves.dart';
 
           Stand +
           DodgeRight.changeBeats(2) +
-          UmTurnLeft.changeBeats(2).changehands(2).skew(0.0,0.5) +
+          UmTurnLeft.changeBeats(2).changehands(Hands.RIGHT).skew(0.0,0.5) +
           BeauWheel.scale(0.5,0.75),
 
           ExtendLeft.changeBeats(2).scale(2.0,1.0) +
@@ -202,7 +201,7 @@ import '../../moves.dart';
       paths:[
           Stand +
           DodgeRight.changeBeats(2) +
-          UmTurnLeft.changeBeats(2).changehands(2).skew(0.0,0.5) +
+          UmTurnLeft.changeBeats(2).changehands(Hands.RIGHT).skew(0.0,0.5) +
           BeauWheel.scale(0.5,0.75),
 
           ExtendLeft.changeBeats(2).scale(2.0,1.0) +
@@ -211,7 +210,7 @@ import '../../moves.dart';
 
           Stand +
           DodgeRight.changeBeats(2) +
-          UmTurnLeft.changeBeats(2).changehands(2).skew(0.0,0.5) +
+          UmTurnLeft.changeBeats(2).changehands(Hands.RIGHT).skew(0.0,0.5) +
           BeauWheel.scale(0.5,0.75),
 
           ExtendLeft.changeBeats(2).scale(1.5,2.5) +
@@ -228,7 +227,7 @@ import '../../moves.dart';
           Path(),
 
           Stand.changeBeats(6) +
-          UmTurnLeft.changeBeats(3).changehands(2).skew(0.0,-1.0) +
+          UmTurnLeft.changeBeats(3).changehands(Hands.RIGHT).skew(0.0,-1.0) +
           BeauWheel.scale(0.5,0.5),
 
           LeadLeft +
@@ -244,7 +243,7 @@ import '../../moves.dart';
       paths:[
           Stand.changeBeats(2) +
           DodgeRight.changeBeats(4) +
-          UmTurnLeft.changeBeats(3).changehands(2).skew(0.0,1.0) +
+          UmTurnLeft.changeBeats(3).changehands(Hands.RIGHT).skew(0.0,1.0) +
           BeauWheel.scale(0.5,0.5),
 
           Forward_2.changeBeats(3.5) +
@@ -292,7 +291,7 @@ import '../../moves.dart';
       paths:[
           Stand +
           DodgeRight.changeBeats(2) +
-          UmTurnLeft.changeBeats(2).changehands(2).skew(0.0,0.5) +
+          UmTurnLeft.changeBeats(2).changehands(Hands.RIGHT).skew(0.0,0.5) +
           BeauWheel.scale(0.5,0.75),
 
           PullLeft.changeBeats(2.5).scale(3.0,1.75) +
@@ -301,7 +300,7 @@ import '../../moves.dart';
 
           Stand +
           DodgeRight.changeBeats(2) +
-          UmTurnLeft.changeBeats(2).changehands(2).skew(0.0,0.5) +
+          UmTurnLeft.changeBeats(2).changehands(Hands.RIGHT).skew(0.0,0.5) +
           BeauWheel.scale(0.5,0.75),
 
           PullLeft.changeBeats(2.5).scale(3.0,1.75) +
@@ -340,7 +339,7 @@ import '../../moves.dart';
       paths:[
           Stand +
           DodgeRight.changeBeats(3.5) +
-          UmTurnLeft.changeBeats(2).changehands(2).skew(0.0,0.5) +
+          UmTurnLeft.changeBeats(2).changehands(Hands.RIGHT).skew(0.0,0.5) +
           BeauWheel.scale(0.5,0.75),
 
           ExtendLeft.changeBeats(2.5).scale(3.0,2.0) +
@@ -350,7 +349,7 @@ import '../../moves.dart';
 
           Stand +
           DodgeRight.changeBeats(3.5) +
-          UmTurnLeft.changeBeats(2).changehands(2).skew(0.0,0.5) +
+          UmTurnLeft.changeBeats(2).changehands(Hands.RIGHT).skew(0.0,0.5) +
           BeauWheel.scale(0.5,0.75),
 
           ExtendLeft.changeBeats(2.5).scale(3.0,2.0) +
@@ -364,19 +363,19 @@ import '../../moves.dart';
       from:'Static Square',group:' ',isGenderSpecific:true,fractions:'6.5',difficulty: 2,
       paths:[
           DodgeRight.changeBeats(2) +
-          UmTurnLeft.changeBeats(2).changehands(2).skew(0.0,0.5) +
+          UmTurnLeft.changeBeats(2).changehands(Hands.RIGHT).skew(0.0,0.5) +
           BeauWheel.scale(0.5,0.75),
 
           ExtendLeft.changeBeats(2).scale(2.0,3.0) +
-          LeadLeft.changeBeats(2).changehands(1).scale(1.5,1.0) +
+          LeadLeft.changeBeats(2).changehands(Hands.LEFT).scale(1.5,1.0) +
           BelleWheel.scale(1.0,0.75),
 
           DodgeRight.changeBeats(2) +
-          UmTurnLeft.changeBeats(2).changehands(2).skew(0.0,0.5) +
+          UmTurnLeft.changeBeats(2).changehands(Hands.RIGHT).skew(0.0,0.5) +
           BeauWheel.scale(0.5,0.75),
 
           ExtendLeft.changeBeats(2).scale(2.0,3.0) +
-          LeadLeft.changeBeats(2).changehands(1).scale(1.5,1.0) +
+          LeadLeft.changeBeats(2).changehands(Hands.LEFT).scale(1.5,1.0) +
           BelleWheel.scale(1.0,0.75)
       ]),
 

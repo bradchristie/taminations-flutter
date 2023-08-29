@@ -20,7 +20,6 @@
 
 import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> BreakerAnything = [
@@ -39,11 +38,11 @@ import '../../moves.dart';
           HingeRight.skew(-0.333,0.0) +
           CastLeft,
 
-          QuarterRight.changeBeats(3).changehands(6).skew(0.0,-2.0) +
+          QuarterRight.changeBeats(3).changehands(Hands.GRIPRIGHT).skew(0.0,-2.0) +
           LeadRight +
           ExtendLeft.changeBeats(4.5).scale(2.0,1.0),
 
-          QuarterRight.changeBeats(3).changehands(6).skew(2.0,0.0) +
+          QuarterRight.changeBeats(3).changehands(Hands.GRIPRIGHT).skew(2.0,0.0) +
           Forward.changeBeats(1.5) +
           CastLeft,
 
@@ -62,11 +61,11 @@ import '../../moves.dart';
           HingeLeft.skew(0.333,0.0) +
           LeadLeft.changeBeats(4.5).scale(3.0,3.0),
 
-          QuarterLeft.changeBeats(3).changehands(5).skew(2.0,0.0) +
+          QuarterLeft.changeBeats(3).changehands(Hands.GRIPLEFT).skew(2.0,0.0) +
           Forward.changeBeats(1.5) +
           CastRight,
 
-          QuarterLeft.changeBeats(3).changehands(5).skew(0.0,2.0) +
+          QuarterLeft.changeBeats(3).changehands(Hands.GRIPLEFT).skew(0.0,2.0) +
           LeadLeft +
           ExtendRight.changeBeats(4.5).scale(2.0,1.0),
 
@@ -85,11 +84,11 @@ import '../../moves.dart';
           HingeLeft.skew(0.333,0.0) +
           LeadLeft.changeBeats(4.5).scale(3.0,3.0),
 
-          QuarterRight.changeBeats(3).changehands(6).skew(0.0,-2.0) +
+          QuarterRight.changeBeats(3).changehands(Hands.GRIPRIGHT).skew(0.0,-2.0) +
           LeadRight +
           ExtendLeft.changeBeats(4.5).scale(2.0,3.0),
 
-          QuarterRight.changeBeats(3).changehands(6).skew(2.0,0.0) +
+          QuarterRight.changeBeats(3).changehands(Hands.GRIPRIGHT).skew(2.0,0.0) +
           Forward.changeBeats(1.5) +
           CastLeft,
 
@@ -116,11 +115,11 @@ import '../../moves.dart';
           DodgeLeft +
           SwingLeft,
 
-          CounterRotateRight_0_m2.changeBeats(3).changehands(2) +
+          CounterRotateRight_0_m2.changeBeats(3).changehands(Hands.RIGHT) +
           LeadRight +
           ExtendLeft.changeBeats(4.5).scale(2.0,1.0),
 
-          CounterRotateRight_2_0.changeBeats(3).changehands(2) +
+          CounterRotateRight_2_0.changeBeats(3).changehands(Hands.RIGHT) +
           Forward.changeBeats(1.5) +
           RunRight.scale(1.0,2.0),
 

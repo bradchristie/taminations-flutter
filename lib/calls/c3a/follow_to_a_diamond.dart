@@ -20,7 +20,6 @@
 
 import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> FollowToADiamond = [
@@ -170,21 +169,21 @@ import '../../moves.dart';
       formation:Formation('Two-Faced Lines RH'),
       group:' ',
       paths:[
-          Forward_2.changehands(2) +
-          RunRight.changeBeats(5).changehands(2).scale(2.0,3.0) +
-          Forward.changehands(2) +
-          LeadRight.changeBeats(3).changehands(2).scale(3.0,3.0),
+          Forward_2.changehands(Hands.RIGHT) +
+          RunRight.changeBeats(5).changehands(Hands.RIGHT).scale(2.0,3.0) +
+          Forward.changehands(Hands.RIGHT) +
+          LeadRight.changeBeats(3).changehands(Hands.RIGHT).scale(3.0,3.0),
 
-          Forward_2.changehands(1) +
-          RunRight.changeBeats(5).changehands(1) +
-          Forward.changehands(1) +
-          LeadRight.changeBeats(3).changehands(1),
+          Forward_2.changehands(Hands.LEFT) +
+          RunRight.changeBeats(5).changehands(Hands.LEFT) +
+          Forward.changehands(Hands.LEFT) +
+          LeadRight.changeBeats(3).changehands(Hands.LEFT),
 
-          RunRight.changeBeats(8).changehands(1) +
-          Forward_2.changeBeats(3).changehands(1),
+          RunRight.changeBeats(8).changehands(Hands.LEFT) +
+          Forward_2.changeBeats(3).changehands(Hands.LEFT),
 
-          RunRight.changeBeats(8).changehands(2).scale(3.0,3.0) +
-          Forward_2.changeBeats(3).changehands(2)
+          RunRight.changeBeats(8).changehands(Hands.RIGHT).scale(3.0,3.0) +
+          Forward_2.changeBeats(3).changehands(Hands.RIGHT)
       ]),
 
     AnimatedCall('Tandem Follow to a Diamond',
@@ -199,13 +198,13 @@ import '../../moves.dart';
           Forward_2,
 
           Forward_2 +
-          CounterRotateRight_0_m2.changehands(2) +
-          CounterRotateRight_0_m2.changehands(2) +
+          CounterRotateRight_0_m2.changehands(Hands.RIGHT) +
+          CounterRotateRight_0_m2.changehands(Hands.RIGHT) +
           LeadRight.changeBeats(3).scale(2.0,2.0),
 
           Forward_2 +
-          CounterRotateRight_2_0.changehands(2) +
-          CounterRotateRight_2_0.changehands(2) +
+          CounterRotateRight_2_0.changehands(Hands.RIGHT) +
+          CounterRotateRight_2_0.changehands(Hands.RIGHT) +
           Forward_2.changeBeats(1.5) +
           QuarterRight.changeBeats(1.5).skew(2.0,0.0)
       ]),

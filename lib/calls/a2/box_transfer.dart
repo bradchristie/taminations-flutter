@@ -19,7 +19,7 @@
 */
 
 import '../../animated_call.dart';
-import '../../formation.dart';
+import '../../common_dart.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> BoxTransfer = [
@@ -75,21 +75,21 @@ import '../../moves.dart';
       formation:Formation('Two-Faced Lines RH'),
       from:'Two-Faced Lines',group:' ',
       paths:[
-          ExtendRight.changeBeats(2).changehands(2).scale(2.0,1.5) +
+          ExtendRight.changeBeats(2).changehands(Hands.RIGHT).scale(2.0,1.5) +
           CastRight.scale(1.5,1.5) +
-          ExtendLeft.changeBeats(2).changehands(2).scale(2.0,1.5),
+          ExtendLeft.changeBeats(2).changehands(Hands.RIGHT).scale(2.0,1.5),
 
-          ExtendRight.changeBeats(2).changehands(1).scale(2.0,0.5) +
+          ExtendRight.changeBeats(2).changehands(Hands.LEFT).scale(2.0,0.5) +
           CastRight.scale(0.5,0.5) +
-          ExtendLeft.changeBeats(2).changehands(1).scale(2.0,0.5),
+          ExtendLeft.changeBeats(2).changehands(Hands.LEFT).scale(2.0,0.5),
 
-          LeadRight.changeBeats(2).changehands(1) +
+          LeadRight.changeBeats(2).changehands(Hands.LEFT) +
           LeadRight.changeBeats(4).scale(3.0,3.0) +
-          LeadRight.changeBeats(2).changehands(1),
+          LeadRight.changeBeats(2).changehands(Hands.LEFT),
 
-          LeadRight.changeBeats(2).changehands(2).scale(2.0,3.0) +
+          LeadRight.changeBeats(2).changehands(Hands.RIGHT).scale(2.0,3.0) +
           LeadRight.changeBeats(4).scale(4.0,4.0) +
-          LeadRight.changeBeats(2).changehands(2).scale(3.0,2.0)
+          LeadRight.changeBeats(2).changehands(Hands.RIGHT).scale(3.0,2.0)
       ]),
 
     AnimatedCall('Split Transfer',

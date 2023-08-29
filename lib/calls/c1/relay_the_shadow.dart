@@ -19,7 +19,7 @@
 */
 
 import '../../animated_call.dart';
-import '../../formation.dart';
+import '../../common_dart.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> RelayTheShadow = [
@@ -28,24 +28,24 @@ import '../../moves.dart';
       formation:Formation('Tidal Wave RH BGGB'),
       from:'Right-Hand Tidal Wave',parts:'3;4.5',
       paths:[
-          SwingRight.changehands(6).scale(0.5,0.5) +
-          SwingLeft.changehands(5).scale(0.5,0.5) +
+          SwingRight.changehands(Hands.GRIPRIGHT).scale(0.5,0.5) +
+          SwingLeft.changehands(Hands.GRIPLEFT).scale(0.5,0.5) +
           HingeLeft.scale(1.0,0.5) +
           LeadRight +
           LeadRight +
           LeadRight,
 
-          SwingRight.changehands(6).scale(0.5,0.5) +
+          SwingRight.changehands(Hands.GRIPRIGHT).scale(0.5,0.5) +
           LeadRight.changeBeats(4.5).scale(3.0,3.5) +
           HingeRight.changeBeats(4).scale(3.0,1.0),
 
-          SwingRight.changehands(6).scale(0.5,0.5) +
-          SwingLeft.changehands(5).scale(0.5,0.5) +
+          SwingRight.changehands(Hands.GRIPRIGHT).scale(0.5,0.5) +
+          SwingLeft.changehands(Hands.GRIPLEFT).scale(0.5,0.5) +
           HingeLeft.scale(1.0,0.5) +
           HingeRight.changeBeats(4).scale(3.0,1.0),
 
-          SwingRight.changehands(6).scale(0.5,0.5) +
-          SwingLeft.changehands(5).scale(0.5,0.5) +
+          SwingRight.changehands(Hands.GRIPRIGHT).scale(0.5,0.5) +
+          SwingLeft.changehands(Hands.GRIPLEFT).scale(0.5,0.5) +
           HingeLeft.scale(1.0,0.5) +
           Forward_2 +
           HingeLeft +
@@ -56,24 +56,24 @@ import '../../moves.dart';
       formation:Formation('Tidal Wave LH BGGB'),
       from:'Left-Hand Tidal Wave',parts:'3;4.5',
       paths:[
-          SwingLeft.changehands(5).scale(0.5,0.5) +
-          SwingRight.changehands(6).scale(0.5,0.5) +
+          SwingLeft.changehands(Hands.GRIPLEFT).scale(0.5,0.5) +
+          SwingRight.changehands(Hands.GRIPRIGHT).scale(0.5,0.5) +
           HingeRight.scale(1.0,0.5) +
           LeadLeft +
           LeadLeft +
           LeadLeft,
 
-          SwingLeft.changehands(5).scale(0.5,0.5) +
+          SwingLeft.changehands(Hands.GRIPLEFT).scale(0.5,0.5) +
           LeadLeft.changeBeats(4.5).scale(3.0,3.5) +
           HingeLeft.changeBeats(4).scale(3.0,1.0),
 
-          SwingLeft.changehands(5).scale(0.5,0.5) +
-          SwingRight.changehands(6).scale(0.5,0.5) +
+          SwingLeft.changehands(Hands.GRIPLEFT).scale(0.5,0.5) +
+          SwingRight.changehands(Hands.GRIPRIGHT).scale(0.5,0.5) +
           HingeRight.scale(1.0,0.5) +
           HingeLeft.changeBeats(4).scale(3.0,1.0),
 
-          SwingLeft.changehands(5).scale(0.5,0.5) +
-          SwingRight.changehands(6).scale(0.5,0.5) +
+          SwingLeft.changehands(Hands.GRIPLEFT).scale(0.5,0.5) +
+          SwingRight.changehands(Hands.GRIPRIGHT).scale(0.5,0.5) +
           HingeRight.scale(1.0,0.5) +
           Forward_2 +
           HingeRight +
@@ -85,29 +85,29 @@ import '../../moves.dart';
       from:'Normal Lines',parts:'5;4.5',noDisplay: true,
       paths:[
           ExtendLeft.changeBeats(2).scale(2.0,0.5) +
-          SwingRight.changehands(6).scale(0.5,0.5) +
-          SwingLeft.changehands(5).scale(0.5,0.5) +
+          SwingRight.changehands(Hands.GRIPRIGHT).scale(0.5,0.5) +
+          SwingLeft.changehands(Hands.GRIPLEFT).scale(0.5,0.5) +
           HingeLeft.scale(1.0,0.5) +
           LeadRight +
           LeadRight +
           LeadRight,
 
           ExtendLeft.changeBeats(2).scale(2.0,0.5) +
-          SwingRight.changehands(6).scale(0.5,0.5) +
-          SwingLeft.changehands(5).scale(0.5,0.5) +
+          SwingRight.changehands(Hands.GRIPRIGHT).scale(0.5,0.5) +
+          SwingLeft.changehands(Hands.GRIPLEFT).scale(0.5,0.5) +
           HingeLeft.scale(1.0,0.5) +
           HingeRight.changeBeats(4).scale(3.0,1.0),
 
           ExtendLeft.changeBeats(2).scale(2.0,0.5) +
-          SwingRight.changehands(6).scale(0.5,0.5) +
-          SwingLeft.changehands(5).scale(0.5,0.5) +
+          SwingRight.changehands(Hands.GRIPRIGHT).scale(0.5,0.5) +
+          SwingLeft.changehands(Hands.GRIPLEFT).scale(0.5,0.5) +
           HingeLeft.scale(1.0,0.5) +
           Forward_2 +
           HingeLeft +
           Forward_2,
 
           ExtendLeft.changeBeats(2).scale(2.0,0.5) +
-          SwingRight.changehands(6).scale(0.5,0.5) +
+          SwingRight.changehands(Hands.GRIPRIGHT).scale(0.5,0.5) +
           LeadRight.changeBeats(4.5).scale(3.0,3.5) +
           HingeRight.changeBeats(4).scale(3.0,1.0)
       ]),

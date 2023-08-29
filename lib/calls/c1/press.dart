@@ -20,7 +20,6 @@
 
 import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> Press = [
@@ -73,13 +72,13 @@ import '../../moves.dart';
       Be sure to go one full position and not stop at 1/2 Press Ahead.
     ''',
       paths:[
-          Forward_2.changehands(2),
+          Forward_2.changehands(Hands.RIGHT),
 
-          Forward_2.changehands(1),
+          Forward_2.changehands(Hands.LEFT),
 
-          Forward_2.changehands(1),
+          Forward_2.changehands(Hands.LEFT),
 
-          Forward_2.changehands(2)
+          Forward_2.changehands(Hands.RIGHT)
       ]),
 
     AnimatedCall('Press Ahead',
@@ -91,39 +90,39 @@ import '../../moves.dart';
   ]),
       from:'Left-Hand Two-Faced Lines',
       paths:[
-          Forward_2.changehands(1),
+          Forward_2.changehands(Hands.LEFT),
 
-          Forward_2.changehands(2),
+          Forward_2.changehands(Hands.RIGHT),
 
-          Forward_2.changehands(2),
+          Forward_2.changehands(Hands.RIGHT),
 
-          Forward_2.changehands(1)
+          Forward_2.changehands(Hands.LEFT)
       ]),
 
     AnimatedCall('Press Ahead',
       formation:Formation('Column RH GBGB'),
       from:'Right-Hand Columns',
       paths:[
-          Forward_2.changehands(1),
+          Forward_2.changehands(Hands.LEFT),
 
-          Forward_2.changehands(2),
+          Forward_2.changehands(Hands.RIGHT),
 
-          Forward_2.changehands(2),
+          Forward_2.changehands(Hands.RIGHT),
 
-          Forward_2.changehands(1)
+          Forward_2.changehands(Hands.LEFT)
       ]),
 
     AnimatedCall('Press Ahead',
       formation:Formation('Column LH GBGB'),
       from:'Left-Hand Columns',
       paths:[
-          Forward_2.changehands(1),
+          Forward_2.changehands(Hands.LEFT),
 
-          Forward_2.changehands(2),
+          Forward_2.changehands(Hands.RIGHT),
 
-          Forward_2.changehands(2),
+          Forward_2.changehands(Hands.RIGHT),
 
-          Forward_2.changehands(1)
+          Forward_2.changehands(Hands.LEFT)
       ]),
 
     AnimatedCall('Ends Press Ahead',
@@ -195,26 +194,26 @@ import '../../moves.dart';
       formation:Formation('Two-Faced Lines RH'),
       from:'Right-Hand Two-Faced Lines',
       paths:[
-          Forward_2.changehands(2),
+          Forward_2.changehands(Hands.RIGHT),
 
-          Forward_2.changehands(1),
+          Forward_2.changehands(Hands.LEFT),
 
-          Forward.changeBeats(2).changehands(1),
+          Forward.changeBeats(2).changehands(Hands.LEFT),
 
-          Forward.changeBeats(2).changehands(2)
+          Forward.changeBeats(2).changehands(Hands.RIGHT)
       ]),
 
     AnimatedCall('1/2 Press Ahead',
       formation:Formation('Two-Faced Lines LH'),
       from:'Left-Hand Two-Faced Lines',
       paths:[
-          Forward.changeBeats(2).changehands(2),
+          Forward.changeBeats(2).changehands(Hands.RIGHT),
 
-          Forward.changeBeats(2).changehands(1),
+          Forward.changeBeats(2).changehands(Hands.LEFT),
 
-          Forward_2.changehands(1),
+          Forward_2.changehands(Hands.LEFT),
 
-          Forward_2.changehands(2)
+          Forward_2.changehands(Hands.RIGHT)
       ]),
   ];
 

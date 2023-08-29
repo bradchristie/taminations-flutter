@@ -20,7 +20,6 @@
 
 import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> Hinge = [
@@ -364,88 +363,88 @@ import '../../moves.dart';
 
           Path(),
 
-          HingeLeft.changeBeats(2).changehands(5).scale(1.0,0.5)
+          HingeLeft.changeBeats(2).changehands(Hands.GRIPLEFT).scale(1.0,0.5)
       ]),
 
     AnimatedCall('Couples Hinge',
       formation:Formation('Two-Faced Line RH'),
       from:'Right-Hand Two-Faced Line',difficulty: 1,
       paths:[
-          HingeRight.changeBeats(3).changehands(6).scale(3.0,3.0),
+          HingeRight.changeBeats(3).changehands(Hands.GRIPRIGHT).scale(3.0,3.0),
 
-          HingeRight.changeBeats(3).changehands(7).scale(1.0,1.0)
+          HingeRight.changeBeats(3).changehands(Hands.GRIPBOTH).scale(1.0,1.0)
       ]),
 
     AnimatedCall('Couples Hinge',
       formation:Formation('Two-Faced Line LH'),
       from:'Left-Hand Two-Faced Line',difficulty: 1,
       paths:[
-          HingeLeft.changeBeats(3).changehands(7).scale(1.0,1.0),
+          HingeLeft.changeBeats(3).changehands(Hands.GRIPBOTH).scale(1.0,1.0),
 
-          HingeLeft.changeBeats(3).changehands(5).scale(3.0,3.0)
+          HingeLeft.changeBeats(3).changehands(Hands.GRIPLEFT).scale(3.0,3.0)
       ]),
 
     AnimatedCall('Couples Hinge',
       formation:Formation('Two-Faced Lines RH'),
       from:'Right-Hand Two-Faced Lines',difficulty: 1,
       paths:[
-          HingeRight.changeBeats(3).changehands(6).scale(1.5,3.0),
+          HingeRight.changeBeats(3).changehands(Hands.GRIPRIGHT).scale(1.5,3.0),
 
-          HingeRight.changeBeats(3).changehands(7).scale(0.5,1.0),
+          HingeRight.changeBeats(3).changehands(Hands.GRIPBOTH).scale(0.5,1.0),
 
-          HingeRight.changeBeats(3).changehands(7).scale(0.5,1.0),
+          HingeRight.changeBeats(3).changehands(Hands.GRIPBOTH).scale(0.5,1.0),
 
-          HingeRight.changeBeats(3).changehands(6).scale(1.5,3.0)
+          HingeRight.changeBeats(3).changehands(Hands.GRIPRIGHT).scale(1.5,3.0)
       ]),
 
     AnimatedCall('Couples Hinge',
       formation:Formation('Two-Faced Lines LH'),
       from:'Left-Hand Two-Faced Lines',difficulty: 1,
       paths:[
-          HingeLeft.changeBeats(3).changehands(5).scale(1.5,3.0),
+          HingeLeft.changeBeats(3).changehands(Hands.GRIPLEFT).scale(1.5,3.0),
 
-          HingeLeft.changeBeats(3).changehands(7).scale(0.5,1.0),
+          HingeLeft.changeBeats(3).changehands(Hands.GRIPBOTH).scale(0.5,1.0),
 
-          HingeLeft.changeBeats(3).changehands(7).scale(0.5,1.0),
+          HingeLeft.changeBeats(3).changehands(Hands.GRIPBOTH).scale(0.5,1.0),
 
-          HingeLeft.changeBeats(3).changehands(5).scale(1.5,3.0)
+          HingeLeft.changeBeats(3).changehands(Hands.GRIPLEFT).scale(1.5,3.0)
       ]),
 
     AnimatedCall('Couples Hinge',
       formation:Formation('Two-Faced Tidal Line RH'),
       from:'Two-Faced Tidal Line',difficulty: 1,
       paths:[
-          HingeRight.changeBeats(3).changehands(6).scale(3.0,1.5),
+          HingeRight.changeBeats(3).changehands(Hands.GRIPRIGHT).scale(3.0,1.5),
 
-          HingeRight.changeBeats(3).changehands(7).scale(1.0,0.5),
+          HingeRight.changeBeats(3).changehands(Hands.GRIPBOTH).scale(1.0,0.5),
 
-          HingeRight.changeBeats(3).changehands(7).scale(1.0,0.5),
+          HingeRight.changeBeats(3).changehands(Hands.GRIPBOTH).scale(1.0,0.5),
 
-          HingeRight.changeBeats(3).changehands(6).scale(3.0,1.5)
+          HingeRight.changeBeats(3).changehands(Hands.GRIPRIGHT).scale(3.0,1.5)
       ]),
 
     AnimatedCall('Couples Hinge',
       formation:Formation('Two-Faced Tidal Line LH'),
       difficulty: 1,noDisplay: true,
       paths:[
-          HingeLeft.changeBeats(3).changehands(5).scale(3.0,1.5),
+          HingeLeft.changeBeats(3).changehands(Hands.GRIPLEFT).scale(3.0,1.5),
 
-          HingeLeft.changeBeats(3).changehands(7).scale(1.0,0.5),
+          HingeLeft.changeBeats(3).changehands(Hands.GRIPBOTH).scale(1.0,0.5),
 
-          HingeLeft.changeBeats(3).changehands(7).scale(1.0,0.5),
+          HingeLeft.changeBeats(3).changehands(Hands.GRIPBOTH).scale(1.0,0.5),
 
-          HingeLeft.changeBeats(3).changehands(5).scale(3.0,1.5)
+          HingeLeft.changeBeats(3).changehands(Hands.GRIPLEFT).scale(3.0,1.5)
       ]),
 
     AnimatedCall('Couples Hinge',
       formation:Formation('Lines Facing Out'),
       from:'Lines Facing Out',difficulty: 2,
       paths:[
-          QuarterLeft.changeBeats(3).changehands(1).skew(-0.5,3.0),
+          QuarterLeft.changeBeats(3).changehands(Hands.LEFT).skew(-0.5,3.0),
 
-          QuarterLeft.changeBeats(3).changehands(2).skew(-1.5,1.0),
+          QuarterLeft.changeBeats(3).changehands(Hands.RIGHT).skew(-1.5,1.0),
 
-          HingeRight.changeBeats(3).changehands(1).scale(0.5,1.0),
+          HingeRight.changeBeats(3).changehands(Hands.LEFT).scale(0.5,1.0),
 
           HingeRight.changeBeats(3).scale(1.5,3.0)
       ]),
@@ -456,11 +455,11 @@ import '../../moves.dart';
       paths:[
           HingeRight.changeBeats(3).scale(1.5,3.0),
 
-          HingeRight.changeBeats(3).changehands(1).scale(0.5,1.0),
+          HingeRight.changeBeats(3).changehands(Hands.LEFT).scale(0.5,1.0),
 
-          QuarterLeft.changeBeats(3).changehands(2).skew(-1.5,1.0),
+          QuarterLeft.changeBeats(3).changehands(Hands.RIGHT).skew(-1.5,1.0),
 
-          QuarterLeft.changeBeats(3).changehands(1).skew(-0.5,3.0)
+          QuarterLeft.changeBeats(3).changehands(Hands.LEFT).skew(-0.5,3.0)
       ]),
 
     AnimatedCall('Couples Hinge',
@@ -469,24 +468,24 @@ import '../../moves.dart';
       paths:[
           HingeRight.changeBeats(3).scale(3.0,1.5),
 
-          HingeRight.changeBeats(3).changehands(1).scale(1.0,0.5),
+          HingeRight.changeBeats(3).changehands(Hands.LEFT).scale(1.0,0.5),
 
-          QuarterLeft.changeBeats(3).changehands(2).skew(-3.0,0.5),
+          QuarterLeft.changeBeats(3).changehands(Hands.RIGHT).skew(-3.0,0.5),
 
-          QuarterLeft.changeBeats(3).changehands(1).skew(-1.0,1.5)
+          QuarterLeft.changeBeats(3).changehands(Hands.LEFT).skew(-1.0,1.5)
       ]),
 
     AnimatedCall('Couples Hinge',
       formation:Formation('Tidal Line LH'),
       from:'Tidal Line LH',difficulty: 2,noDisplay: true,
       paths:[
-          QuarterLeft.changeBeats(3).changehands(2).skew(-3.0,0.5),
+          QuarterLeft.changeBeats(3).changehands(Hands.RIGHT).skew(-3.0,0.5),
 
-          QuarterLeft.changeBeats(3).changehands(1).skew(-1.0,1.5),
+          QuarterLeft.changeBeats(3).changehands(Hands.LEFT).skew(-1.0,1.5),
 
           HingeRight.changeBeats(3).scale(3.0,1.5),
 
-          HingeRight.changeBeats(3).changehands(1).scale(1.0,0.5)
+          HingeRight.changeBeats(3).changehands(Hands.LEFT).scale(1.0,0.5)
       ]),
 
     AnimatedCall('Couples Hinge',
@@ -495,9 +494,9 @@ import '../../moves.dart';
       paths:[
           HingeRight.changeBeats(3).scale(3.0,1.5),
 
-          HingeRight.changeBeats(3).changehands(3).scale(1.0,0.5),
+          HingeRight.changeBeats(3).changehands(Hands.BOTH).scale(1.0,0.5),
 
-          HingeRight.changeBeats(3).changehands(3).scale(1.0,0.5),
+          HingeRight.changeBeats(3).changehands(Hands.BOTH).scale(1.0,0.5),
 
           HingeRight.changeBeats(3).scale(3.0,1.5)
       ]),
@@ -508,9 +507,9 @@ import '../../moves.dart';
       paths:[
           HingeLeft.changeBeats(3).scale(3.0,1.5),
 
-          HingeLeft.changeBeats(3).changehands(3).scale(1.0,0.5),
+          HingeLeft.changeBeats(3).changehands(Hands.BOTH).scale(1.0,0.5),
 
-          HingeLeft.changeBeats(3).changehands(3).scale(1.0,0.5),
+          HingeLeft.changeBeats(3).changehands(Hands.BOTH).scale(1.0,0.5),
 
           HingeLeft.changeBeats(3).scale(3.0,1.5)
       ]),

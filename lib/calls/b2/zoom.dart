@@ -20,7 +20,6 @@
 
 import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> Zoom = [
@@ -58,9 +57,9 @@ import '../../moves.dart';
           RunLeft.changeBeats(2).skew(-1.0,0.0) +
           RunLeft.changeBeats(2).skew(1.0,0.0),
 
-          Forward_2.changeBeats(4).changehands(1),
+          Forward_2.changeBeats(4).changehands(Hands.LEFT),
 
-          Forward_2.changeBeats(4).changehands(2)
+          Forward_2.changeBeats(4).changehands(Hands.RIGHT)
       ]),
 
     AnimatedCall('Zoom',
@@ -72,9 +71,9 @@ import '../../moves.dart';
     while the passenger climbs over the seat.
     ''',
       paths:[
-          Forward_2.changeBeats(4).changehands(2),
+          Forward_2.changeBeats(4).changehands(Hands.RIGHT),
 
-          Forward_2.changeBeats(4).changehands(1),
+          Forward_2.changeBeats(4).changehands(Hands.LEFT),
 
           RunLeft.changeBeats(2).skew(-1.0,0.0) +
           RunLeft.changeBeats(2).skew(1.0,0.0),

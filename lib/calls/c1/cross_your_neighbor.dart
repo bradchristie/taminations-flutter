@@ -20,7 +20,6 @@
 
 import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> CrossYourNeighbor = [
@@ -221,16 +220,16 @@ import '../../moves.dart';
       formation:Formation('Two-Faced Lines RH'),
       from:'Two-Faced Lines',group:' ',
       paths:[
-          ExtendRight.changeBeats(4).changehands(6).scale(2.0,3.5) +
-          CastLeft.changeBeats(6).changehands(3).scale(0.5,0.5),
+          ExtendRight.changeBeats(4).changehands(Hands.GRIPRIGHT).scale(2.0,3.5) +
+          CastLeft.changeBeats(6).changehands(Hands.BOTH).scale(0.5,0.5),
 
-          ExtendRight.changeBeats(4).changehands(5).scale(2.0,2.5) +
+          ExtendRight.changeBeats(4).changehands(Hands.GRIPLEFT).scale(2.0,2.5) +
           CastLeft.changeBeats(6).scale(1.5,1.5),
 
-          ExtendRight.changeBeats(4).changehands(1).scale(2.0,0.5) +
-          CastRight.changeBeats(6).changehands(1).scale(0.5,0.5),
+          ExtendRight.changeBeats(4).changehands(Hands.LEFT).scale(2.0,0.5) +
+          CastRight.changeBeats(6).changehands(Hands.LEFT).scale(0.5,0.5),
 
-          ExtendRight.changeBeats(4).changehands(2).scale(2.0,1.5) +
+          ExtendRight.changeBeats(4).changehands(Hands.RIGHT).scale(2.0,1.5) +
           CastRight.changeBeats(6).scale(1.5,1.5)
       ]),
 
@@ -248,14 +247,14 @@ import '../../moves.dart';
 
           ExtendRight.changeBeats(2).scale(1.0,2.0) +
           Forward +
-          CounterRotateLeft_0_2.changehands(1) +
-          CounterRotateLeft_0_2.changehands(1) +
-          CounterRotateLeft_0_2.changehands(1),
+          CounterRotateLeft_0_2.changehands(Hands.LEFT) +
+          CounterRotateLeft_0_2.changehands(Hands.LEFT) +
+          CounterRotateLeft_0_2.changehands(Hands.LEFT),
 
           ExtendRight.changeBeats(3).scale(2.0,2.0) +
-          CounterRotateLeft_2_0.changehands(1) +
-          CounterRotateLeft_2_0.changehands(1) +
-          CounterRotateLeft_2_0.changehands(1)
+          CounterRotateLeft_2_0.changehands(Hands.LEFT) +
+          CounterRotateLeft_2_0.changehands(Hands.LEFT) +
+          CounterRotateLeft_2_0.changehands(Hands.LEFT)
       ]),
 
     AnimatedCall('Pass and Roll Your Cross Neighbor',
@@ -285,7 +284,7 @@ import '../../moves.dart';
           Forward_2 +
           ExtendRight.changeBeats(2) +
           SwingLeft.scale(0.5,0.5) +
-          LeadLeft.changehands(1).scale(1.0,1.5),
+          LeadLeft.changehands(Hands.LEFT).scale(1.0,1.5),
 
           ExtendLeft.scale(1.0,0.5) +
           Forward +
@@ -293,7 +292,7 @@ import '../../moves.dart';
           Forward_2 +
           ExtendRight.changeBeats(2) +
           SwingLeft.scale(0.5,0.5) +
-          QuarterLeft.changehands(1).skew(1.0,-0.5)
+          QuarterLeft.changehands(Hands.LEFT).skew(1.0,-0.5)
       ]),
 
     AnimatedCall('Left Pass and Roll Your Cross Neighbor',
@@ -323,7 +322,7 @@ import '../../moves.dart';
           Forward_2 +
           ExtendLeft.changeBeats(2) +
           SwingRight.scale(0.5,0.5) +
-          QuarterRight.changehands(2).skew(1.0,0.5),
+          QuarterRight.changehands(Hands.RIGHT).skew(1.0,0.5),
 
           ExtendRight.scale(1.0,0.5) +
           Forward +
@@ -331,7 +330,7 @@ import '../../moves.dart';
           Forward_2 +
           ExtendLeft.changeBeats(2) +
           SwingRight.scale(0.5,0.5) +
-          LeadRight.changehands(2).scale(1.0,1.5)
+          LeadRight.changehands(Hands.RIGHT).scale(1.0,1.5)
       ]),
   ];
 

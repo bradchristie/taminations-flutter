@@ -20,7 +20,6 @@
 
 import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> CentersIn = [
@@ -33,9 +32,9 @@ import '../../moves.dart';
 
           DodgeLeft.changeBeats(2).skew(-1.0,0.0),
 
-          Forward.changeBeats(2).changehands(1),
+          Forward.changeBeats(2).changehands(Hands.LEFT),
 
-          Forward.changeBeats(2).changehands(2)
+          Forward.changeBeats(2).changehands(Hands.RIGHT)
       ]),
 
     AnimatedCall('Centers In',
@@ -46,9 +45,9 @@ import '../../moves.dart';
 
           DodgeRight.changeBeats(2).skew(1.0,0.0),
 
-          Forward.changeBeats(2).changehands(2),
+          Forward.changeBeats(2).changehands(Hands.RIGHT),
 
-          Forward.changeBeats(2).changehands(1)
+          Forward.changeBeats(2).changehands(Hands.LEFT)
       ]),
 
     AnimatedCall('Centers In',
@@ -64,9 +63,9 @@ import '../../moves.dart';
 
           DodgeLeft.changeBeats(2).skew(-1.0,0.0),
 
-          Forward.changeBeats(2).changehands(2),
+          Forward.changeBeats(2).changehands(Hands.RIGHT),
 
-          Forward.changeBeats(2).changehands(1)
+          Forward.changeBeats(2).changehands(Hands.LEFT)
       ]),
 
     AnimatedCall('Centers In',
@@ -82,9 +81,9 @@ import '../../moves.dart';
 
           DodgeRight.changeBeats(2).skew(1.0,0.0),
 
-          Forward.changeBeats(2).changehands(2),
+          Forward.changeBeats(2).changehands(Hands.RIGHT),
 
-          Forward.changeBeats(2).changehands(1)
+          Forward.changeBeats(2).changehands(Hands.LEFT)
       ]),
   ];
 

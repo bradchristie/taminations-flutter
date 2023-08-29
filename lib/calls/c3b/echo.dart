@@ -20,7 +20,6 @@
 
 import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> Echo = [
@@ -29,16 +28,16 @@ import '../../moves.dart';
       formation:Formation('Tidal Line RH'),
       group:'Echo',fractions:'3',
       paths:[
-          LeadRight.changeBeats(3).changehands(2).scale(3.0,1.5) +
+          LeadRight.changeBeats(3).changehands(Hands.RIGHT).scale(3.0,1.5) +
           LeadRight.changeBeats(3),
 
-          LeadRight.changeBeats(3).changehands(1).scale(1.0,0.5) +
+          LeadRight.changeBeats(3).changehands(Hands.LEFT).scale(1.0,0.5) +
           LeadRight.changeBeats(3).scale(1.0,3.0),
 
-          LeadRight.changeBeats(3).changehands(2).scale(3.0,3.5) +
+          LeadRight.changeBeats(3).changehands(Hands.RIGHT).scale(3.0,3.5) +
           LeadRight.changeBeats(3),
 
-          LeadRight.changeBeats(3).changehands(1).scale(1.0,2.5) +
+          LeadRight.changeBeats(3).changehands(Hands.LEFT).scale(1.0,2.5) +
           LeadRight.changeBeats(3).scale(1.0,3.0)
       ]),
 

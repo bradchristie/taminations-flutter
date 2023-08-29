@@ -20,7 +20,6 @@
 
 import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> Recycle = [
@@ -83,9 +82,9 @@ import '../../moves.dart';
       formation:Formation('Mixed Quarter Tag #1'),
       from:'Quarter Waves',
       paths:[
-          UmTurnRight.changeBeats(6).changehands(6).skew(3.0,0.0),
+          UmTurnRight.changeBeats(6).changehands(Hands.GRIPRIGHT).skew(3.0,0.0),
 
-          RunRight.changeBeats(6).changehands(6).skew(-3.0,-2.0),
+          RunRight.changeBeats(6).changehands(Hands.GRIPRIGHT).skew(-3.0,-2.0),
 
           CrossFoldRight.changeBeats(6).scale(1.5,1.0),
 
@@ -97,9 +96,9 @@ import '../../moves.dart';
       formation:Formation('Mixed Quarter Tag #6'),
       from:'Left-Hand Quarter Waves',
       paths:[
-          RunLeft.changeBeats(6).changehands(5).skew(-3.0,2.0),
+          RunLeft.changeBeats(6).changehands(Hands.GRIPLEFT).skew(-3.0,2.0),
 
-          UmTurnLeft.changeBeats(6).changehands(5).skew(3.0,0.0),
+          UmTurnLeft.changeBeats(6).changehands(Hands.GRIPLEFT).skew(3.0,0.0),
 
           CrossFoldLeft.changeBeats(6).scale(1.5,1.0),
 
@@ -116,10 +115,10 @@ import '../../moves.dart';
   ]),
       from:'I-Beam 1',
       paths:[
-          Stand.changeBeats(2).changehands(2) +
+          Stand.changeBeats(2).changehands(Hands.RIGHT) +
           UmTurnRight.changeBeats(3).skew(3.5,-0.33),
 
-          Stand.changeBeats(2).changehands(1) +
+          Stand.changeBeats(2).changehands(Hands.LEFT) +
           ExtendLeft.changeBeats(6).scale(3.5,3.0),
 
           CrossFoldRight.changeBeats(6).scale(1.75,0.75),
@@ -137,10 +136,10 @@ import '../../moves.dart';
   ]),
       from:'I-Beam 2',
       paths:[
-          Stand.changeBeats(2).changehands(2) +
+          Stand.changeBeats(2).changehands(Hands.RIGHT) +
           UmTurnRight.changeBeats(3).skew(3.5,-0.33),
 
-          Stand.changeBeats(2).changehands(1) +
+          Stand.changeBeats(2).changehands(Hands.LEFT) +
           ExtendLeft.changeBeats(6).scale(3.5,3.0),
 
           CrossFoldLeft.changeBeats(6).scale(1.75,0.75),
@@ -158,11 +157,11 @@ import '../../moves.dart';
   ]),
       from:'I-Beam 3',
       paths:[
-          Stand.changeBeats(1).changehands(2) +
-          UmTurnRight.changeBeats(6).changehands(6).skew(3.5,-0.33),
+          Stand.changeBeats(1).changehands(Hands.RIGHT) +
+          UmTurnRight.changeBeats(6).changehands(Hands.GRIPRIGHT).skew(3.5,-0.33),
 
-          Stand.changeBeats(1).changehands(1) +
-          RunRight.changeBeats(6).changehands(6).skew(-3.5,-1.0),
+          Stand.changeBeats(1).changehands(Hands.LEFT) +
+          RunRight.changeBeats(6).changehands(Hands.GRIPRIGHT).skew(-3.5,-1.0),
 
           CrossFoldRight.changeBeats(6).scale(1.75,0.75),
 
@@ -179,11 +178,11 @@ import '../../moves.dart';
   ]),
       from:'I-Beam 4',
       paths:[
-          Stand.changeBeats(1).changehands(2) +
-          RunLeft.changeBeats(6).changehands(5).skew(-3.5,1.0),
+          Stand.changeBeats(1).changehands(Hands.RIGHT) +
+          RunLeft.changeBeats(6).changehands(Hands.GRIPLEFT).skew(-3.5,1.0),
 
-          Stand.changeBeats(1).changehands(1) +
-          UmTurnLeft.changeBeats(6).changehands(5).skew(3.5,0.33),
+          Stand.changeBeats(1).changehands(Hands.LEFT) +
+          UmTurnLeft.changeBeats(6).changehands(Hands.GRIPLEFT).skew(3.5,0.33),
 
           CrossFoldLeft.changeBeats(6).scale(1.75,0.75),
 
@@ -199,9 +198,9 @@ import '../../moves.dart';
 
           ExtendLeft.changeBeats(6).scale(3.0,4.0),
 
-          UmTurnRight.changeBeats(6).changehands(5).skew(3.0,0.0),
+          UmTurnRight.changeBeats(6).changehands(Hands.GRIPLEFT).skew(3.0,0.0),
 
-          RunRight.changeBeats(6).changehands(6).scale(2.0,2.0).skew(3.0,0.0)
+          RunRight.changeBeats(6).changehands(Hands.GRIPRIGHT).scale(2.0,2.0).skew(3.0,0.0)
       ]),
 
     AnimatedCall('All 8 Cycle and Wheel',
@@ -212,36 +211,36 @@ import '../../moves.dart';
 
           ExtendLeft.changeBeats(6).scale(3.0,4.0),
 
-          QuarterLeft.changeBeats(1.5).changehands(6).skew(1.5,-1.0) +
-          QuarterLeft.changeBeats(1.5).changehands(6).skew(1.0,-1.5),
+          QuarterLeft.changeBeats(1.5).changehands(Hands.GRIPRIGHT).skew(1.5,-1.0) +
+          QuarterLeft.changeBeats(1.5).changehands(Hands.GRIPRIGHT).skew(1.0,-1.5),
 
-          RunLeft.changeBeats(4).changehands(5).scale(2.0,2.0).skew(3.0,0.0)
+          RunLeft.changeBeats(4).changehands(Hands.GRIPLEFT).scale(2.0,2.0).skew(3.0,0.0)
       ]),
 
     AnimatedCall('All 8 Cycle and Wheel',
       formation:Formation('Mixed Quarter Tag #3'),
       from:'Mixed Quarter Tag 1',
       paths:[
-          UmTurnRight.changeBeats(6).changehands(6).skew(3.0,0.0),
+          UmTurnRight.changeBeats(6).changehands(Hands.GRIPRIGHT).skew(3.0,0.0),
 
-          RunRight.changeBeats(6).changehands(6).skew(-3.0,-2.0),
+          RunRight.changeBeats(6).changehands(Hands.GRIPRIGHT).skew(-3.0,-2.0),
 
-          RunRight.changeBeats(6).changehands(6).scale(2.0,2.0).skew(3.0,0.0),
+          RunRight.changeBeats(6).changehands(Hands.GRIPRIGHT).scale(2.0,2.0).skew(3.0,0.0),
 
-          UmTurnRight.changeBeats(6).changehands(5).skew(3.0,0.0)
+          UmTurnRight.changeBeats(6).changehands(Hands.GRIPLEFT).skew(3.0,0.0)
       ]),
 
     AnimatedCall('All 8 Cycle and Wheel',
       formation:Formation('Mixed Quarter Tag #8'),
       from:'Mixed Quarter Tag 2',
       paths:[
-          RunLeft.changeBeats(6).changehands(5).skew(-3.0,2.0),
+          RunLeft.changeBeats(6).changehands(Hands.GRIPLEFT).skew(-3.0,2.0),
 
-          UmTurnLeft.changeBeats(6).changehands(5).skew(3.0,0.0),
+          UmTurnLeft.changeBeats(6).changehands(Hands.GRIPLEFT).skew(3.0,0.0),
 
-          RunLeft.changeBeats(6).changehands(5).scale(2.0,2.0).skew(3.0,0.0),
+          RunLeft.changeBeats(6).changehands(Hands.GRIPLEFT).scale(2.0,2.0).skew(3.0,0.0),
 
-          UmTurnLeft.changeBeats(6).changehands(6).skew(3.0,0.0)
+          UmTurnLeft.changeBeats(6).changehands(Hands.GRIPRIGHT).skew(3.0,0.0)
       ]),
 
     AnimatedCall('All 8 Cycle and Wheel',
@@ -253,15 +252,15 @@ import '../../moves.dart';
   ]),
       from:'I-Beam 5',
       paths:[
-          Stand.changeBeats(1).changehands(2) +
+          Stand.changeBeats(1).changehands(Hands.RIGHT) +
           UmTurnRight.changeBeats(3).skew(3.5,-0.33),
 
-          Stand.changeBeats(1).changehands(1) +
+          Stand.changeBeats(1).changehands(Hands.LEFT) +
           ExtendLeft.changeBeats(6).scale(3.5,3.0),
 
-          RunRight.changeBeats(6).changehands(6).scale(2.0,1.5).skew(3.5,0.0),
+          RunRight.changeBeats(6).changehands(Hands.GRIPRIGHT).scale(2.0,1.5).skew(3.5,0.0),
 
-          UmTurnRight.changeBeats(6).changehands(5).skew(3.5,0.33)
+          UmTurnRight.changeBeats(6).changehands(Hands.GRIPLEFT).skew(3.5,0.33)
       ]),
 
     AnimatedCall('All 8 Cycle and Wheel',
@@ -273,15 +272,15 @@ import '../../moves.dart';
   ]),
       from:'I-Beam 6',
       paths:[
-          Stand.changeBeats(1).changehands(2) +
+          Stand.changeBeats(1).changehands(Hands.RIGHT) +
           UmTurnRight.changeBeats(3).skew(3.5,-0.33),
 
-          Stand.changeBeats(1).changehands(1) +
+          Stand.changeBeats(1).changehands(Hands.LEFT) +
           ExtendLeft.changeBeats(6).scale(3.5,3.0),
 
-          RunLeft.changeBeats(4).changehands(5).scale(2.0,1.5).skew(3.5,0.0),
+          RunLeft.changeBeats(4).changehands(Hands.GRIPLEFT).scale(2.0,1.5).skew(3.5,0.0),
 
-          UmTurnLeft.changeBeats(3).changehands(6).skew(3.5,-0.33)
+          UmTurnLeft.changeBeats(3).changehands(Hands.GRIPRIGHT).skew(3.5,-0.33)
       ]),
 
     AnimatedCall('All 8 Cycle and Wheel',
@@ -293,13 +292,13 @@ import '../../moves.dart';
   ]),
       from:'I-Beam 7',
       paths:[
-          UmTurnRight.changeBeats(6).changehands(6).skew(3.5,-0.33),
+          UmTurnRight.changeBeats(6).changehands(Hands.GRIPRIGHT).skew(3.5,-0.33),
 
-          RunRight.changeBeats(6).changehands(6).skew(-3.5,-1.0),
+          RunRight.changeBeats(6).changehands(Hands.GRIPRIGHT).skew(-3.5,-1.0),
 
-          RunRight.changeBeats(6).changehands(6).scale(2.0,1.5).skew(3.5,0.0),
+          RunRight.changeBeats(6).changehands(Hands.GRIPRIGHT).scale(2.0,1.5).skew(3.5,0.0),
 
-          UmTurnRight.changeBeats(6).changehands(5).skew(3.5,0.33)
+          UmTurnRight.changeBeats(6).changehands(Hands.GRIPLEFT).skew(3.5,0.33)
       ]),
 
     AnimatedCall('All 8 Cycle and Wheel',
@@ -311,15 +310,15 @@ import '../../moves.dart';
   ]),
       from:'I-Beam 8',
       paths:[
-          Stand.changeBeats(1).changehands(2) +
-          RunLeft.changeBeats(6).changehands(5).skew(-3.5,1.0),
+          Stand.changeBeats(1).changehands(Hands.RIGHT) +
+          RunLeft.changeBeats(6).changehands(Hands.GRIPLEFT).skew(-3.5,1.0),
 
-          Stand.changeBeats(1).changehands(1) +
-          UmTurnLeft.changeBeats(6).changehands(5).skew(3.5,0.33),
+          Stand.changeBeats(1).changehands(Hands.LEFT) +
+          UmTurnLeft.changeBeats(6).changehands(Hands.GRIPLEFT).skew(3.5,0.33),
 
-          RunLeft.changeBeats(6).changehands(5).scale(2.0,1.5).skew(3.5,0.0),
+          RunLeft.changeBeats(6).changehands(Hands.GRIPLEFT).scale(2.0,1.5).skew(3.5,0.0),
 
-          UmTurnLeft.changeBeats(6).changehands(6).skew(3.5,-0.33)
+          UmTurnLeft.changeBeats(6).changehands(Hands.GRIPRIGHT).skew(3.5,-0.33)
       ]),
 
     AnimatedCall('2/3 Recycle, by definition,',
@@ -331,10 +330,10 @@ import '../../moves.dart';
     ''',
       paths:[
           ExtendRight.changeBeats(2).scale(1.5,2.0) +
-          CounterRotateRight_0_m2.changehands(2).scale(1.0,1.25).skew(-0.5,0.0),
+          CounterRotateRight_0_m2.changehands(Hands.RIGHT).scale(1.0,1.25).skew(-0.5,0.0),
 
           UmTurnRight.changeBeats(2).skew(1.5,0.0) +
-          CounterRotateRight_2_0.changehands(2).scale(1.25,1.0).skew(0.0,0.5)
+          CounterRotateRight_2_0.changehands(Hands.RIGHT).scale(1.25,1.0).skew(0.0,0.5)
       ]),
 
     AnimatedCall('2/3 Recycle, by definition,',
@@ -346,10 +345,10 @@ import '../../moves.dart';
     ''',
       paths:[
           ExtendLeft.changeBeats(2).scale(1.5,2.0) +
-          CounterRotateLeft_0_2.changehands(1).scale(1.0,1.25).skew(-0.5,0.0),
+          CounterRotateLeft_0_2.changehands(Hands.LEFT).scale(1.0,1.25).skew(-0.5,0.0),
 
           UmTurnLeft.changeBeats(2).skew(1.5,0.0) +
-          CounterRotateLeft_2_0.changehands(1).scale(1.25,1.0).skew(0.0,-0.5)
+          CounterRotateLeft_2_0.changehands(Hands.LEFT).scale(1.25,1.0).skew(0.0,-0.5)
       ]),
 
     AnimatedCall('2/3 Recycle, by definition,',
@@ -361,16 +360,16 @@ import '../../moves.dart';
     ''',
       paths:[
           ExtendRight.changeBeats(2).scale(1.0,2.0) +
-          CounterRotateRight_0_m2.changehands(2).scale(1.0,1.25),
+          CounterRotateRight_0_m2.changehands(Hands.RIGHT).scale(1.0,1.25),
 
           UmTurnRight.changeBeats(2).skew(1.0,0.0) +
-          CounterRotateRight_2_0.changehands(2).skew(0.0,0.5),
+          CounterRotateRight_2_0.changehands(Hands.RIGHT).skew(0.0,0.5),
 
           UmTurnRight.changeBeats(2).skew(1.0,0.0) +
-          CounterRotateRight_2_0.changehands(2).skew(0.0,0.5),
+          CounterRotateRight_2_0.changehands(Hands.RIGHT).skew(0.0,0.5),
 
           ExtendRight.changeBeats(2).scale(1.0,2.0) +
-          CounterRotateRight_0_m2.changehands(2).scale(1.0,1.25)
+          CounterRotateRight_0_m2.changehands(Hands.RIGHT).scale(1.0,1.25)
       ]),
 
     AnimatedCall('2/3 Recycle, by definition,',
@@ -382,16 +381,16 @@ import '../../moves.dart';
     ''',
       paths:[
           ExtendLeft.changeBeats(2).scale(1.0,2.0) +
-          CounterRotateLeft_0_2.changehands(1).scale(1.0,1.25),
+          CounterRotateLeft_0_2.changehands(Hands.LEFT).scale(1.0,1.25),
 
           UmTurnLeft.changeBeats(2).skew(1.0,0.0) +
-          CounterRotateLeft_2_0.changehands(1).skew(0.0,-0.5),
+          CounterRotateLeft_2_0.changehands(Hands.LEFT).skew(0.0,-0.5),
 
           UmTurnLeft.changeBeats(2).skew(1.0,0.0) +
-          CounterRotateLeft_2_0.changehands(1).skew(0.0,-0.5),
+          CounterRotateLeft_2_0.changehands(Hands.LEFT).skew(0.0,-0.5),
 
           ExtendLeft.changeBeats(2).scale(1.0,2.0) +
-          CounterRotateLeft_0_2.changehands(1).scale(1.0,1.25)
+          CounterRotateLeft_0_2.changehands(Hands.LEFT).scale(1.0,1.25)
       ]),
 
     AnimatedCall('2/3 Recycle, by definition,',
@@ -403,16 +402,16 @@ import '../../moves.dart';
     ''',
       paths:[
           ExtendRight.changeBeats(2).scale(1.5,0.5) +
-          CounterRotateRight_0_m2.changehands(2).skew(-0.5,0.0),
+          CounterRotateRight_0_m2.changehands(Hands.RIGHT).skew(-0.5,0.0),
 
           UmTurnRight.changeBeats(2).skew(1.5,-0.5) +
-          CounterRotateRight_2_0.changehands(2).scale(1.25,1.0),
+          CounterRotateRight_2_0.changehands(Hands.RIGHT).scale(1.25,1.0),
 
           UmTurnRight.changeBeats(2).skew(1.5,-0.5) +
-          CounterRotateRight_2_0.changehands(2).scale(1.25,1.0),
+          CounterRotateRight_2_0.changehands(Hands.RIGHT).scale(1.25,1.0),
 
           ExtendRight.changeBeats(2).scale(1.5,0.5) +
-          CounterRotateRight_0_m2.changehands(2).skew(-0.5,0.0)
+          CounterRotateRight_0_m2.changehands(Hands.RIGHT).skew(-0.5,0.0)
       ]),
 
     AnimatedCall('2/3 Recycle, by definition,',
@@ -424,16 +423,16 @@ import '../../moves.dart';
     ''',
       paths:[
           ExtendLeft.changeBeats(2).scale(1.5,0.5) +
-          CounterRotateLeft_0_2.changehands(1).skew(-0.5,0.0),
+          CounterRotateLeft_0_2.changehands(Hands.LEFT).skew(-0.5,0.0),
 
           UmTurnLeft.changeBeats(2).skew(1.5,0.5) +
-          CounterRotateLeft_2_0.changehands(1).scale(1.25,1.0),
+          CounterRotateLeft_2_0.changehands(Hands.LEFT).scale(1.25,1.0),
 
           UmTurnLeft.changeBeats(2).skew(1.5,0.5) +
-          CounterRotateLeft_2_0.changehands(1).scale(1.25,1.0),
+          CounterRotateLeft_2_0.changehands(Hands.LEFT).scale(1.25,1.0),
 
           ExtendLeft.changeBeats(2).scale(1.5,0.5) +
-          CounterRotateLeft_0_2.changehands(1).skew(-0.5,0.0)
+          CounterRotateLeft_0_2.changehands(Hands.LEFT).skew(-0.5,0.0)
       ]),
 
     AnimatedCall('2/3 Recycle',
@@ -612,15 +611,15 @@ import '../../moves.dart';
       formation:Formation('Two-Faced Tidal Line RH'),
       group:' ',
       paths:[
-          LeadRight.changeBeats(2).changehands(2).scale(3.0,2.5) +
-          Forward_3.changeBeats(2.5).changehands(2),
+          LeadRight.changeBeats(2).changehands(Hands.RIGHT).scale(3.0,2.5) +
+          Forward_3.changeBeats(2.5).changehands(Hands.RIGHT),
 
-          LeadRight.changeBeats(2).changehands(1).scale(1.0,1.5) +
-          Forward_3.changeBeats(2.5).changehands(1),
+          LeadRight.changeBeats(2).changehands(Hands.LEFT).scale(1.0,1.5) +
+          Forward_3.changeBeats(2.5).changehands(Hands.LEFT),
 
-          QuarterRight.changehands(1).skew(-0.33,-0.17) +
-          QuarterRight.changehands(1).skew(0.16,-0.34) +
-          QuarterRight.changehands(1).skew(0.33,0.17),
+          QuarterRight.changehands(Hands.LEFT).skew(-0.33,-0.17) +
+          QuarterRight.changehands(Hands.LEFT).skew(0.16,-0.34) +
+          QuarterRight.changehands(Hands.LEFT).skew(0.33,0.17),
 
           HingeRight.skew(0.0,-0.17) +
           HingeRight.scale(1.5,1.66) +
@@ -681,70 +680,70 @@ import '../../moves.dart';
       formation:Formation('Box RH'),
       from:'Right-Hand Box',
       paths:[
-          UmTurnRight.changeBeats(4).changehands(6).skew(2.0,0.0),
+          UmTurnRight.changeBeats(4).changehands(Hands.GRIPRIGHT).skew(2.0,0.0),
 
-          RunRight.changeBeats(4).changehands(6).scale(2.0,2.0).skew(-2.0,0.0)
+          RunRight.changeBeats(4).changehands(Hands.GRIPRIGHT).scale(2.0,2.0).skew(-2.0,0.0)
       ]),
 
     AnimatedCall('Box Recycle',
       formation:Formation('Box LH'),
       from:'Left-Hand Box',
       paths:[
-          RunLeft.changeBeats(4).changehands(5).scale(2.0,2.0).skew(-2.0,0.0),
+          RunLeft.changeBeats(4).changehands(Hands.GRIPLEFT).scale(2.0,2.0).skew(-2.0,0.0),
 
-          UmTurnLeft.changeBeats(4).changehands(5).skew(2.0,0.0)
+          UmTurnLeft.changeBeats(4).changehands(Hands.GRIPLEFT).skew(2.0,0.0)
       ]),
 
     AnimatedCall('Split Recycle',
       formation:Formation('Ocean Waves RH BGBG'),
       from:'Right-Hand Waves',
       paths:[
-          UmTurnRight.changeBeats(4).changehands(6).skew(2.0,-0.5),
+          UmTurnRight.changeBeats(4).changehands(Hands.GRIPRIGHT).skew(2.0,-0.5),
 
-          RunRight.changeBeats(4).changehands(6).scale(1.5,2.0).skew(-2.0,1.5),
+          RunRight.changeBeats(4).changehands(Hands.GRIPRIGHT).scale(1.5,2.0).skew(-2.0,1.5),
 
-          UmTurnRight.changeBeats(4).changehands(6).skew(2.0,-0.5),
+          UmTurnRight.changeBeats(4).changehands(Hands.GRIPRIGHT).skew(2.0,-0.5),
 
-          RunRight.changeBeats(4).changehands(6).scale(1.5,2.0).skew(-2.0,1.5)
+          RunRight.changeBeats(4).changehands(Hands.GRIPRIGHT).scale(1.5,2.0).skew(-2.0,1.5)
       ]),
 
     AnimatedCall('Split Recycle',
       formation:Formation('Ocean Waves LH BGBG'),
       from:'Left-Hand Waves',
       paths:[
-          RunLeft.changeBeats(4).changehands(5).scale(1.5,2.0).skew(-2.0,-1.5),
+          RunLeft.changeBeats(4).changehands(Hands.GRIPLEFT).scale(1.5,2.0).skew(-2.0,-1.5),
 
-          UmTurnLeft.changeBeats(4).changehands(5).skew(2.0,0.5),
+          UmTurnLeft.changeBeats(4).changehands(Hands.GRIPLEFT).skew(2.0,0.5),
 
-          RunLeft.changeBeats(4).changehands(5).scale(1.5,2.0).skew(-2.0,-1.5),
+          RunLeft.changeBeats(4).changehands(Hands.GRIPLEFT).scale(1.5,2.0).skew(-2.0,-1.5),
 
-          UmTurnLeft.changeBeats(4).changehands(5).skew(2.0,0.5)
+          UmTurnLeft.changeBeats(4).changehands(Hands.GRIPLEFT).skew(2.0,0.5)
       ]),
 
     AnimatedCall('Split Recycle',
       formation:Formation('Column RH GBGB'),
       from:'Right-Hand Columns',
       paths:[
-          RunRight.changeBeats(4).changehands(6).scale(2.0,2.0).skew(-1.0,0.0),
+          RunRight.changeBeats(4).changehands(Hands.GRIPRIGHT).scale(2.0,2.0).skew(-1.0,0.0),
 
-          UmTurnRight.changeBeats(4).changehands(6).skew(1.0,0.0),
+          UmTurnRight.changeBeats(4).changehands(Hands.GRIPRIGHT).skew(1.0,0.0),
 
-          RunRight.changeBeats(4).changehands(6).scale(1.0,2.0).skew(-1.0,0.0),
+          RunRight.changeBeats(4).changehands(Hands.GRIPRIGHT).scale(1.0,2.0).skew(-1.0,0.0),
 
-          UmTurnRight.changeBeats(4).changehands(6).skew(1.0,0.0)
+          UmTurnRight.changeBeats(4).changehands(Hands.GRIPRIGHT).skew(1.0,0.0)
       ]),
 
     AnimatedCall('Split Recycle',
       formation:Formation('Column LH GBGB'),
       from:'Left-Hand Columns',
       paths:[
-          UmTurnLeft.changeBeats(4).changehands(5).skew(1.0,0.0),
+          UmTurnLeft.changeBeats(4).changehands(Hands.GRIPLEFT).skew(1.0,0.0),
 
-          RunLeft.changeBeats(4).changehands(5).scale(1.0,2.0).skew(-1.0,0.0),
+          RunLeft.changeBeats(4).changehands(Hands.GRIPLEFT).scale(1.0,2.0).skew(-1.0,0.0),
 
-          UmTurnLeft.changeBeats(4).changehands(5).skew(1.0,0.0),
+          UmTurnLeft.changeBeats(4).changehands(Hands.GRIPLEFT).skew(1.0,0.0),
 
-          RunLeft.changeBeats(4).changehands(5).scale(2.0,2.0).skew(-1.0,0.0)
+          RunLeft.changeBeats(4).changehands(Hands.GRIPLEFT).scale(2.0,2.0).skew(-1.0,0.0)
       ]),
 
     AnimatedCall('Split Recycle',
@@ -756,9 +755,9 @@ import '../../moves.dart';
   ]),
       from:'3 and 1 Lines',
       paths:[
-          UmTurnRight.changeBeats(4).changehands(6).skew(2.0,-0.5),
+          UmTurnRight.changeBeats(4).changehands(Hands.GRIPRIGHT).skew(2.0,-0.5),
 
-          RunRight.changeBeats(4).changehands(6).scale(1.5,2.0).skew(-2.0,1.5),
+          RunRight.changeBeats(4).changehands(Hands.GRIPRIGHT).scale(1.5,2.0).skew(-2.0,1.5),
 
           UmTurnRight.changeBeats(4).skew(2.0,-0.5),
 
@@ -769,84 +768,84 @@ import '../../moves.dart';
       formation:Formation('Two-Faced Lines RH'),
       from:'Two-Faced Lines',group:' ',
       paths:[
-          RunRight.changeBeats(4).changehands(6).scale(1.0,0.5).skew(2.0,-1.5),
+          RunRight.changeBeats(4).changehands(Hands.GRIPRIGHT).scale(1.0,0.5).skew(2.0,-1.5),
 
-          BackRunLeft.changeBeats(4).changehands(7).scale(1.0,0.5).skew(2.0,-0.5),
+          BackRunLeft.changeBeats(4).changehands(Hands.GRIPBOTH).scale(1.0,0.5).skew(2.0,-0.5),
 
-          RunRight.changeBeats(4).changehands(7).scale(2.0,0.5).skew(-2.0,-2.5),
+          RunRight.changeBeats(4).changehands(Hands.GRIPBOTH).scale(2.0,0.5).skew(-2.0,-2.5),
 
-          RunRight.changeBeats(4).changehands(6).scale(3.0,0.5).skew(-2.0,-5.5)
+          RunRight.changeBeats(4).changehands(Hands.GRIPRIGHT).scale(3.0,0.5).skew(-2.0,-5.5)
       ]),
 
     AnimatedCall('All 8 Box Recycle',
       formation:Formation('Static MiniWaves RH'),
       group:' ',
       paths:[
-          UmTurnRight.changeBeats(4).changehands(6).skew(3.0,0.0),
+          UmTurnRight.changeBeats(4).changehands(Hands.GRIPRIGHT).skew(3.0,0.0),
 
-          RunRight.changeBeats(4).changehands(6).scale(2.0,2.0).skew(-3.0,0.0),
+          RunRight.changeBeats(4).changehands(Hands.GRIPRIGHT).scale(2.0,2.0).skew(-3.0,0.0),
 
-          UmTurnRight.changeBeats(4).changehands(6).skew(3.0,0.0),
+          UmTurnRight.changeBeats(4).changehands(Hands.GRIPRIGHT).skew(3.0,0.0),
 
-          RunRight.changeBeats(4).changehands(6).scale(2.0,2.0).skew(-3.0,0.0)
+          RunRight.changeBeats(4).changehands(Hands.GRIPRIGHT).scale(2.0,2.0).skew(-3.0,0.0)
       ]),
 
     AnimatedCall('All 8 Box Recycle',
       formation:Formation('Static MiniWaves LH'),
       group:' ',noDisplay: true,
       paths:[
-          RunLeft.changeBeats(4).changehands(5).scale(2.0,2.0).skew(-3.0,0.0),
+          RunLeft.changeBeats(4).changehands(Hands.GRIPLEFT).scale(2.0,2.0).skew(-3.0,0.0),
 
-          UmTurnLeft.changeBeats(4).changehands(5).skew(3.0,0.0),
+          UmTurnLeft.changeBeats(4).changehands(Hands.GRIPLEFT).skew(3.0,0.0),
 
-          RunLeft.changeBeats(4).changehands(5).scale(2.0,2.0).skew(-3.0,0.0),
+          RunLeft.changeBeats(4).changehands(Hands.GRIPLEFT).scale(2.0,2.0).skew(-3.0,0.0),
 
-          UmTurnLeft.changeBeats(4).changehands(5).skew(3.0,0.0)
+          UmTurnLeft.changeBeats(4).changehands(Hands.GRIPLEFT).skew(3.0,0.0)
       ]),
 
     AnimatedCall('Concentric Box Recycle',
       formation:Formation('Column RH GBGB'),
       group:' ',
       paths:[
-          RunRight.changeBeats(4).changehands(6).scale(2.0,2.25).skew(-3.0,0.0),
+          RunRight.changeBeats(4).changehands(Hands.GRIPRIGHT).scale(2.0,2.25).skew(-3.0,0.0),
 
-          RunRight.changeBeats(4).changehands(6).scale(1.0,2.0).skew(-1.0,1.5),
+          RunRight.changeBeats(4).changehands(Hands.GRIPRIGHT).scale(1.0,2.0).skew(-1.0,1.5),
 
-          UmTurnRight.changeBeats(4).changehands(6).skew(1.0,-0.5),
+          UmTurnRight.changeBeats(4).changehands(Hands.GRIPRIGHT).skew(1.0,-0.5),
 
-          UmTurnRight.changeBeats(4).changehands(6).skew(3.0,1.5)
+          UmTurnRight.changeBeats(4).changehands(Hands.GRIPRIGHT).skew(3.0,1.5)
       ]),
 
     AnimatedCall('Tandem Box Recycle',
       formation:Formation('Column RH GBGB'),
       group:' ',
       paths:[
-          CounterRotateRight_0_m4.changehands(2) +
-          CounterRotateRight_0_m4.changehands(2).skew(0.0,-1.0),
+          CounterRotateRight_0_m4.changehands(Hands.RIGHT) +
+          CounterRotateRight_0_m4.changehands(Hands.RIGHT).skew(0.0,-1.0),
 
-          RunRight.changeBeats(4).changehands(6).scale(2.0,2.0).skew(1.0,0.0),
+          RunRight.changeBeats(4).changehands(Hands.GRIPRIGHT).scale(2.0,2.0).skew(1.0,0.0),
 
-          UmTurnRight.changeBeats(4).changehands(6).skew(-1.0,0.0),
+          UmTurnRight.changeBeats(4).changehands(Hands.GRIPRIGHT).skew(-1.0,0.0),
 
-          CounterRotateLeft_2_2.changehands(2) +
-          CounterRotateLeft_2_2.changehands(2).skew(0.0,1.0)
+          CounterRotateLeft_2_2.changehands(Hands.RIGHT) +
+          CounterRotateLeft_2_2.changehands(Hands.RIGHT).skew(0.0,1.0)
       ]),
 
     AnimatedCall('Triple Box Recycle',
       formation:Formation('Phantom Waves RH'),
       group:' ',
       paths:[
-          UmTurnRight.changeBeats(4).changehands(6).skew(2.0,-0.5),
+          UmTurnRight.changeBeats(4).changehands(Hands.GRIPRIGHT).skew(2.0,-0.5),
 
-          RunRight.changeBeats(4).changehands(6).scale(1.5,2.0).skew(-2.0,1.5),
+          RunRight.changeBeats(4).changehands(Hands.GRIPRIGHT).scale(1.5,2.0).skew(-2.0,1.5),
 
-          UmTurnRight.changeBeats(4).changehands(6).skew(2.0,-0.5),
+          UmTurnRight.changeBeats(4).changehands(Hands.GRIPRIGHT).skew(2.0,-0.5),
 
-          RunRight.changeBeats(4).changehands(6).scale(1.5,2.0).skew(-2.0,1.5),
+          RunRight.changeBeats(4).changehands(Hands.GRIPRIGHT).scale(1.5,2.0).skew(-2.0,1.5),
 
-          RunRight.changeBeats(4).changehands(6).scale(1.5,2.0).skew(-2.0,1.5),
+          RunRight.changeBeats(4).changehands(Hands.GRIPRIGHT).scale(1.5,2.0).skew(-2.0,1.5),
 
-          UmTurnRight.changeBeats(4).changehands(6).skew(2.0,-0.5)
+          UmTurnRight.changeBeats(4).changehands(Hands.GRIPRIGHT).skew(2.0,-0.5)
       ]),
   ];
 

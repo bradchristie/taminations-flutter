@@ -20,7 +20,6 @@
 
 import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> CrossTheK = [
@@ -249,7 +248,7 @@ import '../../moves.dart';
 
           SwingLeft.scale(1.5,1.5),
 
-          SwingLeft.changehands(3).scale(0.5,0.5)
+          SwingLeft.changehands(Hands.BOTH).scale(0.5,0.5)
       ]),
 
     AnimatedCall('Concentric the K',
@@ -262,7 +261,7 @@ import '../../moves.dart';
 
           UmTurnRight.changeBeats(5),
 
-          SwingLeft.changeBeats(5).changehands(3).scale(0.5,0.5)
+          SwingLeft.changeBeats(5).changehands(Hands.BOTH).scale(0.5,0.5)
       ]),
 
     AnimatedCall('Crazy the K',
@@ -349,11 +348,11 @@ import '../../moves.dart';
       paths:[
           Pivotforwardright.changeBeats(4).scale(1.0,0.5),
 
-          CounterRotateRight_2_0.changehands(2) +
-          CounterRotateRight_2_0.changehands(2),
+          CounterRotateRight_2_0.changehands(Hands.RIGHT) +
+          CounterRotateRight_2_0.changehands(Hands.RIGHT),
 
-          CounterRotateRight_0_m2.changehands(2) +
-          CounterRotateRight_0_m2.changehands(2),
+          CounterRotateRight_0_m2.changehands(Hands.RIGHT) +
+          CounterRotateRight_0_m2.changehands(Hands.RIGHT),
 
           Pivotbackwardleft.changeBeats(4)
       ]),

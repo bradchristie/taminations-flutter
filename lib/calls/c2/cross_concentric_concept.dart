@@ -20,7 +20,6 @@
 
 import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formation.dart';
 import '../../moves.dart';
 import '../c2/bounce.dart' as c2;
 import '../c2/circle_to_a_wave.dart' as c2;
@@ -67,9 +66,9 @@ import '../c2/turn_to_a_line.dart' as c2;
       formation:Formation('Tidal Wave RH BGGB'),
       group:'Cross Concentric',
       paths:[
-          QuarterRight.changeBeats(3).changehands(2).skew(1.0,-1.5),
+          QuarterRight.changeBeats(3).changehands(Hands.RIGHT).skew(1.0,-1.5),
 
-          QuarterRight.changeBeats(3).changehands(2).skew(1.0,0.5),
+          QuarterRight.changeBeats(3).changehands(Hands.RIGHT).skew(1.0,0.5),
 
           QuarterRight.changeBeats(3).skew(3.0,0.5),
 
@@ -210,13 +209,13 @@ import '../c2/turn_to_a_line.dart' as c2;
       formation:Formation('Two-Faced Tidal Line RH'),
       group:'Cross Concentric',
       paths:[
-          RunRight.changehands(2).skew(1.0,-2.5),
+          RunRight.changehands(Hands.RIGHT).skew(1.0,-2.5),
 
-          UmTurnRight.changehands(1).skew(1.0,-1.5),
+          UmTurnRight.changehands(Hands.LEFT).skew(1.0,-1.5),
 
-          RunLeft.changehands(5).skew(3.0,0.5),
+          RunLeft.changehands(Hands.GRIPLEFT).skew(3.0,0.5),
 
-          UmTurnLeft.changehands(6).skew(3.0,-0.5)
+          UmTurnLeft.changehands(Hands.GRIPRIGHT).skew(3.0,-0.5)
       ]),
   ];
 

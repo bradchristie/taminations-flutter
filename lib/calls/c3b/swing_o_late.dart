@@ -20,7 +20,6 @@
 
 import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> SwingOLate = [
@@ -77,14 +76,14 @@ import '../../moves.dart';
           LeadRight.changeBeats(3).scale(1.0,2.5),
 
           SwingLeft +
-          RunRight.changeBeats(5).changehands(2).scale(1.0,2.0),
+          RunRight.changeBeats(5).changehands(Hands.RIGHT).scale(1.0,2.0),
 
           SwingLeft +
           UmTurnLeft.changeBeats(2).skew(0.0,0.5) +
           LeadRight.changeBeats(3).scale(1.0,2.5),
 
           SwingLeft +
-          RunRight.changeBeats(5).changehands(2).scale(1.0,2.0)
+          RunRight.changeBeats(5).changehands(Hands.RIGHT).scale(1.0,2.0)
       ]),
 
     AnimatedCall('Swing-O-Late',
@@ -96,14 +95,14 @@ import '../../moves.dart';
           LeadLeft.changeBeats(3).scale(1.0,2.5),
 
           SwingRight +
-          RunLeft.changeBeats(5).changehands(1).scale(1.0,2.0),
+          RunLeft.changeBeats(5).changehands(Hands.LEFT).scale(1.0,2.0),
 
           SwingRight +
           UmTurnRight.changeBeats(2).skew(0.0,-0.5) +
           LeadLeft.changeBeats(3).scale(1.0,2.5),
 
           SwingRight +
-          RunLeft.changeBeats(5).changehands(1).scale(1.0,2.0)
+          RunLeft.changeBeats(5).changehands(Hands.LEFT).scale(1.0,2.0)
       ]),
   ];
 

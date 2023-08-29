@@ -20,7 +20,6 @@
 
 import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> TransferAndAnything = [
@@ -79,9 +78,9 @@ import '../../moves.dart';
           Forward +
           LeadRight,
 
-          Forward.changeBeats(3).changehands(2),
+          Forward.changeBeats(3).changehands(Hands.RIGHT),
 
-          Forward.changeBeats(3).changehands(1)
+          Forward.changeBeats(3).changehands(Hands.LEFT)
       ]),
 
     AnimatedCall('Transfer and',
@@ -102,9 +101,9 @@ import '../../moves.dart';
           Forward +
           LeadLeft,
 
-          Forward.changeBeats(3).changehands(2),
+          Forward.changeBeats(3).changehands(Hands.RIGHT),
 
-          Forward.changeBeats(3).changehands(1)
+          Forward.changeBeats(3).changehands(Hands.LEFT)
       ]),
 
     AnimatedCall('Transfer and',
@@ -189,10 +188,10 @@ import '../../moves.dart';
           LeadRight,
 
           Forward_2 +
-          CounterRotateRight_0_m2.changehands(2),
+          CounterRotateRight_0_m2.changehands(Hands.RIGHT),
 
           Forward_2 +
-          CounterRotateRight_2_0.changehands(2)
+          CounterRotateRight_2_0.changehands(Hands.RIGHT)
       ]),
 
     AnimatedCall('Transfer and Box Transfer',
@@ -237,11 +236,11 @@ import '../../moves.dart';
           Forward +
           LeadRight,
 
-          Forward.changeBeats(3).changehands(2) +
+          Forward.changeBeats(3).changehands(Hands.RIGHT) +
           SwingLeft +
           Forward,
 
-          Forward.changeBeats(3).changehands(1) +
+          Forward.changeBeats(3).changehands(Hands.LEFT) +
           RunLeft.changeBeats(4).scale(1.0,2.0).skew(1.0,0.0)
       ]),
 
@@ -361,7 +360,7 @@ import '../../moves.dart';
           QuarterRight.skew(1.0,0.0),
 
           Forward_2 +
-          LeadRight.changeBeats(3).changehands(6).scale(2.0,1.0) +
+          LeadRight.changeBeats(3).changehands(Hands.GRIPRIGHT).scale(2.0,1.0) +
           Stand,
 
           Forward_2 +
@@ -370,7 +369,7 @@ import '../../moves.dart';
           QuarterRight.skew(1.0,0.0),
 
           Forward_2 +
-          QuarterRight.changeBeats(3).changehands(6).skew(0.0,-1.0) +
+          QuarterRight.changeBeats(3).changehands(Hands.GRIPRIGHT).skew(0.0,-1.0) +
           SwingLeft
       ]),
 

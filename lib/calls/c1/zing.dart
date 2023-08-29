@@ -20,7 +20,6 @@
 
 import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> Zing = [
@@ -248,19 +247,19 @@ import '../../moves.dart';
       formation:Formation('Two-Faced Lines RH'),
       group:' ',
       paths:[
-          ExtendRight.changeBeats(4).changehands(2).scale(2.0,1.0) +
-          QuarterRight.changeBeats(4).changehands(6).skew(3.0,0.0),
+          ExtendRight.changeBeats(4).changehands(Hands.RIGHT).scale(2.0,1.0) +
+          QuarterRight.changeBeats(4).changehands(Hands.GRIPRIGHT).skew(3.0,0.0),
 
-          Forward_2.changeBeats(4).changehands(1) +
-          QuarterRight.changeBeats(4).changehands(5).skew(1.0,1.0),
+          Forward_2.changeBeats(4).changehands(Hands.LEFT) +
+          QuarterRight.changeBeats(4).changehands(Hands.GRIPLEFT).skew(1.0,1.0),
 
-          RunLeft.changehands(1).scale(1.0,1.5) +
-          Forward_3.changehands(1) +
-          LeadLeft.changeBeats(2).changehands(5).scale(2.0,2.0),
+          RunLeft.changehands(Hands.LEFT).scale(1.0,1.5) +
+          Forward_3.changehands(Hands.LEFT) +
+          LeadLeft.changeBeats(2).changehands(Hands.GRIPLEFT).scale(2.0,2.0),
 
-          UmTurnLeft.changehands(2) +
-          Forward_3.changehands(2) +
-          QuarterLeft.changeBeats(2).changehands(6).skew(0.0,1.0)
+          UmTurnLeft.changehands(Hands.RIGHT) +
+          Forward_3.changehands(Hands.RIGHT) +
+          QuarterLeft.changeBeats(2).changehands(Hands.GRIPRIGHT).skew(0.0,1.0)
       ]),
 
     AnimatedCall('Butterfly Zing',

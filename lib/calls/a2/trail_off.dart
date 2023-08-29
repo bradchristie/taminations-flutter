@@ -20,7 +20,6 @@
 
 import '../../animated_call.dart';
 import '../../common_dart.dart';
-import '../../formation.dart';
 import '../../moves.dart';
 
   final List<AnimatedCall> TrailOff = [
@@ -329,15 +328,15 @@ import '../../moves.dart';
       formation:Formation('Two-Faced Lines RH'),
       from:'Two-Faced Lines',
       paths:[
-          ExtendRight.changeBeats(2).changehands(2).scale(2.0,1.5) +
+          ExtendRight.changeBeats(2).changehands(Hands.RIGHT).scale(2.0,1.5) +
           SwingRight.changeBeats(4).scale(1.5,1.5),
 
-          ExtendRight.changeBeats(2).changehands(1).scale(2.0,0.5) +
+          ExtendRight.changeBeats(2).changehands(Hands.LEFT).scale(2.0,0.5) +
           SwingRight.changeBeats(4).scale(0.5,0.5),
 
-          RunRight.changeBeats(6).changehands(1).skew(-2.0,-1.5),
+          RunRight.changeBeats(6).changehands(Hands.LEFT).skew(-2.0,-1.5),
 
-          RunRight.changeBeats(6).changehands(2).scale(2.5,2.5).skew(-2.0,-1.5)
+          RunRight.changeBeats(6).changehands(Hands.RIGHT).scale(2.5,2.5).skew(-2.0,-1.5)
       ]),
 
     AnimatedCall('All 8 Trail Off',
