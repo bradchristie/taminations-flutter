@@ -27,15 +27,19 @@ class OneCouple extends FilterActives {
   @override
   bool isActive(DancerModel d, CallContext ctx) {
     if (ctx.isSquare()) {
-      return switch (name.last) {
-        '1' => d.location.x.isAbout(-3.0),
-        '2' => d.location.y.isAbout(-3.0),
-        '3' => d.location.x.isAbout(3.0),
-        '4' => d.location.y.isAbout(3.0),
-        _ => throw CallError('Incorrect couple number')
-      };
+      if (d.location.x.isAbout(-3.0))
+        return name.contains('1');
+      else if (d.location.y.isAbout(-3.0))
+        return name.contains('2');
+      else if (d.location.x.isAbout(3.0))
+        return name.contains('3');
+      else if (d.location.y.isAbout(3.0))
+        return name.contains('4');
+      else
+        return false;
     }
-    return d.numberCouple == name.last;
+    else
+      return name.contains(d.numberCouple);
   }
 
 }

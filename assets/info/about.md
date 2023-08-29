@@ -23,22 +23,20 @@ Call pronunciations provided by
 
 ---
 
-## Taminations version 1.6.64 built 2023-07-31
+## Taminations version 1.6.65 built 2023-08-28
 Copyright 2023 by Brad Christie.  
 This is free software, and you are welcome to modify and redistribute it
 under the terms of the [GNU GPL license](http://www.gnu.org/licenses/gpl.html).  
 
 ## What's New
-* Update definition for Linear Cycle
-* Fix display of some animations for Ramble
+* Animations for Unwrap the Interlocked Diamond and Facing Diamonds
+* Force Practice to use a wide window on desktop computers
 * Animations for Reverse Dixie Sashay
 * Sequencer changes:
-  - Fix for Concentric Circulate
-  - Enable Grand Square <nn> steps
-  - Fix for some RLG after Allemande Left
-  - Fold and Cross Fold from t-bones
-  - Enable sorting abbreviations
-  - Fix Triangle Circulate from sausage formation
+  - Accept Allemande Left from more formations 
+  - Improvements to Siamese calls
+  - Select First/Last 1,2,3 dancers in a column
+  - Enable selection of specific couples, to produce asymmetric formations
 
 
 For a detailed history of changes, view the

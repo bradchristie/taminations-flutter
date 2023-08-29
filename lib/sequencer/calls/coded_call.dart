@@ -455,7 +455,7 @@ abstract class CodedCall extends Call {
 
     'O[A-Z0-9].+'.r: (name) => OFormation(name),
     '112'.ri: (name) => OneAndaHalf(name),
-    'couple(1|2|3|4)'.ri: (name) => OneCouple(name),
+    'couples?(1|2|3|4)((and)?(2|3|4))*'.ri: (name) => OneCouple(name),
     'out(er|sides?)(2|4|6)?'.ri: (name) => Outsides(name),
     'ownthe.*'.ri: (name) => OwnTheDancers(name),
 
