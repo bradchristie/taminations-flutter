@@ -203,7 +203,7 @@ class Settings extends fm.ChangeNotifier {
     else if (language == 'Japanese')
       return 'ja';
     else  //  System language
-      return fm.WidgetsBinding.instance.window.locale.languageCode;
+      return fm.WidgetsBinding.instance.platformDispatcher.locale.languageCode;
   }
 
   //  Get a language-specific link for retreiving the definition
