@@ -27,7 +27,7 @@ class Run extends Action {
   Run(String name) : super(name);
 
   void _runOne(DancerModel d, DancerModel d2, String dir) {
-    var dist = d.distanceTo(d2);
+    var dist = d.distanceTo(d2).clamp(1.0, double.infinity);
     d.path += (dir=='Left' ? RunLeft : RunRight).scale(1.0,dist/2);
     var m2 = Stand;
     if (d.isRightOf(d2)) m2 = DodgeRight;

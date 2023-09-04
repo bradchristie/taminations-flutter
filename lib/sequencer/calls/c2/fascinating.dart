@@ -45,10 +45,8 @@ class Fascinating extends Action {
       });
     });
     if (ctx.isCollision()) {
-      ctx.subContext(other2, (ctx4) {
-        //  TODO would be better to apply this as an adjustment to
-        //  the previous Counter Rotate
-        ctx4.applyCalls('Half Slide In');
+      ctx.subContext(vc+other2, (ctx4) {
+        ctx4.adjustToFormation(Formation('Compact Wave RH'));
       });
     }
   }

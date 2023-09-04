@@ -29,7 +29,6 @@ class TransferAnd extends Action {
   @override
   void perform(CallContext ctx) {
     final othercall = name.replaceFirst('Transfer\\s+and\\s*'.ri,'');
-    print('othercall: $othercall');
     if (othercall.isBlank)
       throw CallError('Transfer and what?');
     ctx.applyCalls('Transfer and');
