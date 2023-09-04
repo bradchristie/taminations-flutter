@@ -84,7 +84,7 @@ class Rotate extends Action with IsReverse, IsSingle {
     if (leaders.isNotEmpty) {
       ctx.subContext(leaders, (ctx2) {
         if (isSingle)
-          ctx2.applyCalls(isReverse ? 'Face Left' : 'Face Right');
+          ctx2.applyCalls(isReverse ? 'Face Right' : 'Face Left');
         else
           ctx2.applyCalls('Half $reverse Wheel Around');
       });
@@ -92,7 +92,7 @@ class Rotate extends Action with IsReverse, IsSingle {
     if (trailers.isNotEmpty) {
       ctx.subContext(trailers, (ctx2) {
         if (isSingle)
-          ctx2.applyCalls(isReverse ? 'Face Right' : 'Face Left');
+          ctx2.applyCalls(isReverse ? 'Face Left' : 'Face Right');
         else
         ctx2.applyCalls('Half ${isReverse ? '' : 'Reverse'} Wheel Around');
       });
