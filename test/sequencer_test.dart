@@ -3815,6 +3815,20 @@ Star Thru
 Bend the Line
 Slide Thru
 Square Thru 3
+Allemande Left''',''),
+
+  TestSequence('Dive Thru',
+'''Heads Lead Right
+Couples 1 and 2 Dive Thru
+Facing Couples Pass Thru
+Couple 3 Trade
+Double Pass Thru
+Boys Run
+Circulate
+Split Circulate
+Boys Run
+Zoom
+Centers Square Thru 3
 Allemande Left''','')
 
 ];

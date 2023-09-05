@@ -72,6 +72,7 @@ import 'b1/california_twirl.dart';
 import 'b1/chain_down_the_line.dart';
 import 'b1/circulate.dart';
 import 'b1/courtesy_turn.dart';
+import 'b1/dive_thru.dart';
 import 'b1/dosado.dart';
 import 'b1/face.dart';
 import 'b1/grand_square.dart';
@@ -374,6 +375,7 @@ abstract class CodedCall extends Call {
     'detour'.ri: (_) => Detour(),
     'diamondcirculate'.ri: (_) => DiamondCirculate(),
     '(reverse)?dixiediamond'.ri: (name) => DixieDiamond(name),
+    'divethru'.ri: (name) => DiveThru(name),
     'dodge.*'.ri: (name) => Dodge(name),
     'dothe.+?part.+'.ri: (name) => DoOnePart(name),
     'dosado(toawave)?'.ri: (name) => Dosado(name),
@@ -388,7 +390,7 @@ abstract class CodedCall extends Call {
     'explode'.ri: (_) => Explode(),
 
     'face(in|out|left|right|thecaller)'.ri: (name) => Face(name),
-    'facing'.ri: (_) => FacingDancers(),
+    'facing'.ri: (name) => FacingDancers(name),
     '(those|dancers)?facingin'.ri: (name) => FacingIn(name),
     '(those|dancers)?facingout'.ri: (name) => FacingOut(name),
     'fascinating.*'.ri: (name) => Fascinating(name),

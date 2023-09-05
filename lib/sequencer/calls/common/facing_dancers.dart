@@ -24,7 +24,7 @@ import 'fliter_actives.dart';
 
 class FacingDancers extends FilterActives {
 
-  FacingDancers() : super('Facing Dancers');
+  FacingDancers(super.name);
 
   @override
   bool isActive(DancerModel d, CallContext ctx) =>
