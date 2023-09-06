@@ -633,7 +633,7 @@ abstract class CodedCall extends Call {
         (name) => WalkAndDodge(name),
     'waveof6'.ri: (name) => WaveOfSix(name),
     '(dancersin)?waves?(dancers)?'.ri: (name) => Waves(name),
-    '(reverse)?wheeland(?!deal)'.ri: (name) => WheelAnd(name),
+    'wheeland(?!deal)'.ri: (name) => WheelAnd(name),
     '(reverse)?wheelaround'.ri: (name) => WheelAround(name),
     '(reverse)?(14|34)?(reverse)?wheelthe(ocean|sea)'.ri: (name) => WheelTheOcean(name),
     '(and)?(the)?others?.+'.ri: (name) => While(name),

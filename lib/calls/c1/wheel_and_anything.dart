@@ -24,7 +24,7 @@ import '../../moves.dart';
 
   final List<AnimatedCall> WheelAndAnything = [
 
-    AnimatedCall('Wheel',
+    AnimatedCall('_Wheel',
       formation:Formation('Couples Facing Out'),
       from:'Couples Facing Out',isPerimeter:true,noDisplay: true,
       paths:[
@@ -37,7 +37,7 @@ import '../../moves.dart';
           QuarterLeft.changeBeats(3).changehands(Hands.GRIPRIGHT).skew(1.0,0.0)
       ]),
 
-    AnimatedCall('Reverse Wheel',
+    AnimatedCall('Reverse _Wheel',
       formation:Formation('Couples Facing Out'),
       from:'Couples Facing Out',isPerimeter:true,noDisplay: true,
       paths:[

@@ -18,9 +18,11 @@
 
 */
 
-import '../common.dart';
 
-class WheelAnd extends Action {
+import '../common.dart';
+import '../common/reverse.dart';
+
+class WheelAnd extends Action with IsReverse {
 
   @override final level = LevelData.C1;
   @override var helplink = 'c1/wheel_and_anything';
@@ -28,8 +30,6 @@ class WheelAnd extends Action {
 
   @override
   void perform(CallContext ctx) {
-    final wheelCall = name.replaceFirst(' and'.ri,'');
-    final reverse = wheelCall.contains('Reverse') ? 'Reverse' : '';
     //  Find the 4 dancers to Wheel
     var facingOut = ctx.dancers.where((d) => d.isFacingOut).toList();
     if (facingOut.length > 4 && !ctx.isSquare())
@@ -45,7 +45,7 @@ class WheelAnd extends Action {
     final otherCallctx =  ctx.nextActionContext(this)
         ?? thrower(CallError('Not able to find call for Wheel And'))!;
     try {
-      ctx.applyCalls('Outer 4 $reverse Wheel');
+      ctx.applyCalls('Outer 4 $reverse _Wheel');
       var otherCenters = ctx.center(4);
       otherCallctx.dancers.forEach((d) {
         d.data.active = otherCenters.contains(d);
@@ -57,7 +57,7 @@ class WheelAnd extends Action {
       //  Maybe the call applies to all 8 dancers
       //  (although that really doesn't fit the definition)
       try {
-        ctx.applyCalls('Outer 4 $reverse Wheel');
+        ctx.applyCalls('Outer 4 $reverse _Wheel');
         otherCallctx.dancers.forEach((d) {
           d.data.active = true;
         });
