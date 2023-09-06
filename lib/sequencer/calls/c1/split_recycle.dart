@@ -18,8 +18,9 @@
  */
 
 import '../common.dart';
+import '../common/reverse.dart';
 
-class SplitRecycle extends Action {
+class SplitRecycle extends Action with IsReverse {
 
   @override var level = LevelData.C1;
   @override var help = 'You can Split Recycle from mini-wave boxes, '
@@ -32,7 +33,6 @@ class SplitRecycle extends Action {
 
   @override
   void perform(CallContext ctx) {
-    var reverse = name.contains('Reverse') ? 'Reverse' : '';
     ctx.applyCalls('Couples Do Your Part $reverse Recycle'
         ' While Wave Dancers Do Your Part Split Recycle');
   }

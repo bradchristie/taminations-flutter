@@ -20,8 +20,9 @@
 
 import '../../../moves.dart';
 import '../common.dart';
+import '../common/reverse.dart';
 
-class Truck extends Action {
+class Truck extends Action with IsReverse {
 
   @override final level = LevelData.C2;
   @override var helplink = 'c2/truck';
@@ -30,8 +31,8 @@ class Truck extends Action {
   @override
   Path performOne(DancerModel d, CallContext ctx) {
     final move = [
-      if (d.gender == Gender.BOY) name.startsWith('Reverse') ? DodgeRight : DodgeLeft,
-      if (d.gender == Gender.GIRL) name.startsWith('Reverse') ? DodgeLeft : DodgeRight,
+      if (d.gender == Gender.BOY) isReverse ? DodgeRight : DodgeLeft,
+      if (d.gender == Gender.GIRL) isReverse ? DodgeLeft : DodgeRight,
     ].firstOrNull;
     if (move == null)
       throw CallError('Attempt to Truck a phantom');

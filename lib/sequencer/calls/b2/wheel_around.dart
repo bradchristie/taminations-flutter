@@ -20,8 +20,9 @@
 
 import '../../../moves.dart';
 import '../common.dart';
+import '../common/reverse.dart';
 
-class WheelAround extends ActivesOnlyAction {
+class WheelAround extends ActivesOnlyAction with IsReverse {
 
   @override var level = LevelData.B2;
   @override var helplink = 'b2/wheel_around';
@@ -34,7 +35,7 @@ class WheelAround extends ActivesOnlyAction {
       throw CallError('Only Couples can Wheel Around.');
     var dist = d.distanceTo(d2);
     Path move;
-    if (name.startsWith('Reverse'))
+    if (isReverse)
       move = d2.isRightOf(d) ? BeauReverseWheel : BelleReverseWheel;
     else
       move = d2.isRightOf(d) ? BeauWheel : BelleWheel;

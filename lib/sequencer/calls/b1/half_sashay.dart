@@ -20,8 +20,9 @@
 
 import '../../../moves.dart';
 import '../common.dart';
+import '../common/reverse.dart';
 
-class HalfSashay extends Action {
+class HalfSashay extends Action with IsReverse {
 
   @override var help = 'Any couple can Half Sashay.'
       ' If you want the beau to go in front of the belle, use'
@@ -42,7 +43,7 @@ class HalfSashay extends Action {
     else
       throw CallError('Dancer $d has nobody to Sashay with' );
     var move = BackSashayRight;
-    if (name.toLowerCase().startsWith('reverse' ))
+    if (isReverse)
       move = d2.isLeftOf(d) ? BackSashayLeft  : SashayRight;
     else if (d2.isLeftOf(d))
       move = SashayLeft;

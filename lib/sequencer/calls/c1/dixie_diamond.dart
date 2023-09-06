@@ -18,8 +18,9 @@
  */
 
 import '../common.dart';
+import '../common/reverse.dart';
 
-class DixieDiamond extends ActivesOnlyAction with CallWithParts {
+class DixieDiamond extends ActivesOnlyAction with CallWithParts, IsReverse {
 
   @override var level = LevelData.C1;
   @override int numberOfParts = 2;
@@ -31,7 +32,6 @@ class DixieDiamond extends ActivesOnlyAction with CallWithParts {
 
   @override
    void performPart1(CallContext ctx) {
-    final reverse = name.contains('reverse'.ri) ? 'Reverse' : '';
     ctx.applyCalls('$reverse Dixie Style to a Wave');
   }
 

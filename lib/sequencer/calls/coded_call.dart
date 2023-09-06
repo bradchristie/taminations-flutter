@@ -18,11 +18,10 @@
 
 */
 
-import 'package:taminations/sequencer/calls/a1/as_couples_roll.dart';
-
 import '../../extensions.dart';
 import '../../normalize_call.dart';
 import 'a1/as_couples.dart';
+import 'a1/as_couples_roll.dart';
 import 'a1/beaus.dart';
 import 'a1/belles.dart';
 import 'a1/brace_thru.dart';
@@ -374,7 +373,7 @@ abstract class CodedCall extends Call {
     'debug.*'.ri: (name) => SetDebugSwitch(name),
     'detour'.ri: (_) => Detour(),
     'diamondcirculate'.ri: (_) => DiamondCirculate(),
-    '(reverse)?dixiediamond'.ri: (name) => DixieDiamond(name),
+    'dixiediamond'.ri: (name) => DixieDiamond(name),
     'divethru'.ri: (name) => DiveThru(name),
     'dodge.*'.ri: (name) => Dodge(name),
     'dothe.+?part.+'.ri: (name) => DoOnePart(name),
@@ -409,7 +408,7 @@ abstract class CodedCall extends Call {
         (name) => GrandSingleCrossTradeAndWheel(name),
     '((head|side)face)?grandsquare((\\d+)steps)?'.ri: (name) => GrandSquare(name),
 
-    '(reverse)?12sashay'.ri: (name) => HalfSashay(name),
+    '12sashay'.ri: (name) => HalfSashay(name),
     '(left)?12tag'.ri: (name) => HalfTag(name),
     'halfthek'.ri: (_) => HalfTheK(),
     'head'.ri: (name) => Heads(name),
@@ -501,7 +500,7 @@ abstract class CodedCall extends Call {
     'rightandleftthru'.ri: (name) => RightAndLeftThru(name),
     '(left|right)?ripple.*'.ri: (name) => Ripple(name),
     '(and)?roll'.ri: (name) => Roll(name),
-    '(reverse)?rollaway'.ri : (name) => Rollaway(name),
+    'rollaway'.ri : (name) => Rollaway(name),
     '(left|right)rolltoawave'.ri: (name) => RollToAWave(name),
     'rotary'.ri: (name) => Rotary(name),
     '(left)?rotaryspin'.ri: (name) => RotarySpin(name),
@@ -548,7 +547,7 @@ abstract class CodedCall extends Call {
     'splitcounterrotate'.ri: (name) => SplitCounterRotate(name),
     'splitdixiediamond'.ri: (name) => SplitDixieDiamond(name),
     'splitdixiestyle(toawave)?'.ri: (name) => SplitDixieStyle(name),
-    '(reverse)?splitrecycle'.ri: (name) => SplitRecycle(name),
+    'splitrecycle'.ri: (name) => SplitRecycle(name),
     'splitsquarechainthru'.ri: (name) => SplitSquareChainThru(name),
     '(left)?splitsquarethru[2-7]?'.ri: (name) => SplitSquareThru(name),
     'split(2|theoutsides?(couple))?'.ri: (name) => SplitTwo(name),
@@ -613,7 +612,7 @@ abstract class CodedCall extends Call {
     'triple(lines?|waves?|columns?).*'.ri: (name) => TripleLine(name),
     '(double|triple)starthru'.ri: (name) => TripleStarThru(name),
     'tripletrade'.ri: (name) => TripleTrade(name),
-    '(reverse)?truck'.ri: (name) => Truck(name),
+    'truck'.ri: (name) => Truck(name),
     '(left)?turnthru'.ri: (name) => TurnThru(name),
     '(left)?turnanddeal'.ri: (name) => TurnAndDeal(name),
     'u?turnback'.ri: (name) => TurnBack(name),
@@ -634,7 +633,7 @@ abstract class CodedCall extends Call {
     'waveof6'.ri: (name) => WaveOfSix(name),
     '(dancersin)?waves?(dancers)?'.ri: (name) => Waves(name),
     'wheeland(?!deal)'.ri: (name) => WheelAnd(name),
-    '(reverse)?wheelaround'.ri: (name) => WheelAround(name),
+    'wheelaround'.ri: (name) => WheelAround(name),
     '(reverse)?(14|34)?(reverse)?wheelthe(ocean|sea)'.ri: (name) => WheelTheOcean(name),
     '(and)?(the)?others?.+'.ri: (name) => While(name),
     'while(the)?(others?)?.+'.ri: (name) => While(name),

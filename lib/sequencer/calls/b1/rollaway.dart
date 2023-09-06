@@ -19,8 +19,9 @@
 
 import '../../../moves.dart';
 import '../common.dart';
+import '../common/reverse.dart';
 
-class Rollaway extends Action {
+class Rollaway extends Action with IsReverse {
 
   @override var helplink = 'b1/sashay';
   Rollaway(name) : super(name);
@@ -29,7 +30,7 @@ class Rollaway extends Action {
   Path performOne(DancerModel d, CallContext ctx) {
     final d2 = d.data.partner ?? thrower<DancerModel>('Cannot find partner of $d');
     final dist = d.distanceTo(d2);
-    if (name.toLowerCase().startsWith('reverse')) {
+    if (isReverse) {
       if (d.data.beau) {
         return FoldRight.changeBeats(1.5)
             .scale(0.6, dist/4).changehands(Hands.GRIPRIGHT) +
