@@ -168,7 +168,7 @@ import '../../moves.dart';
           RunRight.changeBeats(4).changehands(Hands.RIGHT).scale(2.0,2.0).skew(1.0,0.0)
       ]),
 
-    AnimatedCall('Sweep a Quarter Left',
+    AnimatedCall('_Sweep a Quarter Left',
       formation:Formation('Facing Couples Compact'),
       from:'Facing Couples',noDisplay: true,
       paths:[
@@ -177,7 +177,7 @@ import '../../moves.dart';
           CounterRotateRight_0_2.changehands(Hands.LEFT).skew(0.5,0.5)
       ]),
 
-    AnimatedCall('Sweep a Quarter Left',
+    AnimatedCall('_Sweep a Quarter Left',
       formation:Formation('Normal Lines Compact'),
       from:'Normal Lines',noDisplay: true,
       paths:[
@@ -190,7 +190,7 @@ import '../../moves.dart';
           CounterRotateRight_0_2.changehands(Hands.LEFT).skew(0.5,0.0)
       ]),
 
-    AnimatedCall('Sweep a Quarter Left',
+    AnimatedCall('_Sweep a Quarter Left',
       formation:Formation('Eight Chain Thru'),
       from:'Eight Chain Thru',noDisplay: true,
       paths:[
@@ -203,7 +203,7 @@ import '../../moves.dart';
           CounterRotateRight_0_2.changehands(Hands.LEFT).skew(0.0,0.5)
       ]),
 
-    AnimatedCall('Sweep a Quarter Right',
+    AnimatedCall('_Sweep a Quarter Right',
       formation:Formation('Facing Couples Compact'),
       from:'Facing Couples',noDisplay: true,
       paths:[
@@ -212,7 +212,7 @@ import '../../moves.dart';
           CounterRotateLeft_2_0.changehands(Hands.LEFT).skew(0.5,-0.5)
       ]),
 
-    AnimatedCall('Sweep a Quarter Right',
+    AnimatedCall('_Sweep a Quarter Right',
       formation:Formation('Normal Lines Compact'),
       from:'Normal Lines',noDisplay: true,
       paths:[
@@ -225,7 +225,7 @@ import '../../moves.dart';
           CounterRotateLeft_2_0.changehands(Hands.LEFT).skew(0.5,0.0)
       ]),
 
-    AnimatedCall('Sweep a Quarter Right',
+    AnimatedCall('_Sweep a Quarter Right',
       formation:Formation('Eight Chain Thru'),
       from:'Eight Chain Thru',noDisplay: true,
       paths:[
