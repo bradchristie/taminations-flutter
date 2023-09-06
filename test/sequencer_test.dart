@@ -3202,6 +3202,21 @@ Star Thru
 Ends Trade
 Allemande Left''',''),
 
+  TestSequence('Wheel And 3', '''Heads Square Thru 2
+Slide Thru
+Pass Thru
+Vertical 3/4 Tag
+Clover and Lockit
+Extend
+Boys Run
+Vertical 3/4 Tag
+Wheel and 2/3 Recycle Girls Roll
+Boys Zing and Pass the Ocean
+Flip the Diamond
+Recycle
+Right and Left Thru
+Allemande Left''', ''),
+
   TestSequence('Centers Trade the Wave',
 '''Sides Pass the Ocean
 Centers Trade the Wave

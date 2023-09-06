@@ -28,9 +28,7 @@ class WheelAnd extends Action {
 
   @override
   void perform(CallContext ctx) {
-    final divided = name.divide(' and '.r);
-    final wheelCall = divided[0];
-    final andCall = divided[1];
+    final wheelCall = name.replaceFirst(' and'.ri,'');
     final reverse = wheelCall.contains('Reverse') ? 'Reverse' : '';
     //  Find the 4 dancers to Wheel
     var facingOut = ctx.dancers.where((d) => d.isFacingOut).toList();
@@ -44,13 +42,27 @@ class WheelAnd extends Action {
     //  Check for t-bones, center 4 facing out, outer 4 facing their shoulders
     if (ctx.center(4).containsAll(facingOut))
       ctx.applyCalls('As Couples Step');
+    final otherCallctx =  ctx.nextActionContext(this)
+        ?? thrower(CallError('Not able to find call for Wheel And'))!;
     try {
-      ctx.applyCalls('Outer 4 $reverse Wheel While Center 4 $andCall');
+      ctx.applyCalls('Outer 4 $reverse Wheel');
+      var otherCenters = ctx.center(4);
+      otherCallctx.dancers.forEach((d) {
+        d.data.active = otherCenters.contains(d);
+      });
+      otherCallctx.performCall();
+      ctx.contractPaths();
+      otherCallctx.appendToSource();
     } on CallError catch (e1) {
       //  Maybe the call applies to all 8 dancers
       //  (although that really doesn't fit the definition)
       try {
-        ctx.applyCalls('Outer 4 $reverse Wheel',andCall);
+        ctx.applyCalls('Outer 4 $reverse Wheel');
+        otherCallctx.dancers.forEach((d) {
+          d.data.active = true;
+        });
+        otherCallctx.performCall();
+        otherCallctx.appendToSource();
       } on CallError {
         //  That didn't work either, throw the original error
         throw e1;
