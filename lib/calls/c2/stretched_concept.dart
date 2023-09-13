@@ -133,5 +133,50 @@ import '../c3a/scatter_circulate.dart' as c3a;
       tam.title == 'Scatter Circulate' && tam.from == 'Right-Hand Two-Faced Lines').first.xref(title: 'Stretched Box Circulate'),
     c3a.ScatterCirculate.where((tam) =>
       tam.title == 'Scatter Circulate' && tam.from == 'Left-Hand Two-Faced Lines').first.xref(title: 'Stretched Box Circulate'),
+
+    AnimatedCall('Stretched Box Peel Off',
+        group: 'Stretched Box',
+        formation: Formation('Column RH GBGB'),
+        paths: [
+          RunLeft.changeBeats(4).skew(-1, 0),
+          RunLeft.changeBeats(4).skew(-3, 0),
+          UmTurnLeft.changeBeats(4).skew(3, 0),
+          UmTurnLeft.changeBeats(4).skew(1, 0)
+        ]),
+
+    AnimatedCall('Stretched Box Peel Off',
+        group: 'Stretched Box',
+        noDisplay: true,
+        formation: Formation('Column LH GBGB'),
+        paths: [
+          UmTurnRight.changeBeats(4).skew(1, 0),
+          UmTurnRight.changeBeats(4).skew(3, 0),
+          RunRight.changeBeats(4).skew(-3, 0),
+          RunRight.changeBeats(4).skew(-1, 0),
+        ]),
+
+    AnimatedCall('Stretched Box Trail Off',
+        group: 'Stretched Box',
+        formation: Formation('Column RH GBGB'),
+        paths: [
+          RunRight.changeBeats(4).scale(1, 2).skew(-1, 0),
+          LeadRight +
+              LeadRight.changeBeats(4).scale(3, 4),
+          Forward_2 + SwingRight.skew(1, 0),
+          Forward_2 + SwingRight.skew(-1, 0)
+        ]),
+
+    AnimatedCall('Stretched Box Trail Off',
+        group: 'Stretched Box',
+        formation: Formation('Column LH GBGB'),
+        noDisplay: true,
+        paths: [
+          Forward_2 + SwingLeft.skew(-1, 0),
+          Forward_2 + SwingLeft.skew(1, 0),
+          LeadLeft +
+              LeadLeft.changeBeats(4).scale(3, 4),
+          RunLeft.changeBeats(4).scale(1, 2).skew(-1, 0)
+        ])
+
   ];
 
