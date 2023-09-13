@@ -42,11 +42,18 @@ Part 2 cannot be done with same-sex couples.''';
     ctx.analyze();
     for (final d in ctx.dancers) {
       final partner = d.data.partner.throwIfNull(CallError('Dancer $d cannot Brace Thru'));
-      if (d.gender == partner.gender)
+      if (d.gender == partner.gender && d.gender != Gender.PHANTOM)
         throw CallError('Same-sex dancers cannot Brace Thru');
     }
-    final normal = ctx.dancers.where((d) => d.data.beau ^ (d.gender == Gender.GIRL)).toList();
-    final sashay = ctx.dancers.where((d) => d.data.beau ^ (d.gender == Gender.BOY)).toList();
+    var normal = ctx.dancers.where((d) => d.data.beau ^ (d.gender == Gender.GIRL)).toList();
+    var sashay = ctx.dancers.where((d) => d.data.beau ^ (d.gender == Gender.BOY)).toList();
+    //  Handle triple boxes with phantoms
+    //  .. a bit messy, could be better?
+    //  Also, this assumes the phantoms are together as couples
+    var phantoms = ctx.dancers.where((d) => d.gender == Gender.PHANTOM).toList();
+    normal -= phantoms;
+    sashay -= phantoms;
+    normal += phantoms;
     if (normal.isNotEmpty) {
       ctx.subContext(normal, (ctx3) {
         ctx3.applyCalls('Courtesy Turn');
