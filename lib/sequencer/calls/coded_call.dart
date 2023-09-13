@@ -170,6 +170,7 @@ import 'c2/checkpoint.dart';
 import 'c2/chisel_thru.dart';
 import 'c2/crazy.dart';
 import 'c2/cross_and_wheel.dart';
+import 'c2/cross_concentric.dart';
 import 'c2/cross_ramble.dart';
 import 'c2/cross_trade_and_wheel.dart';
 import 'c2/detour.dart';
@@ -364,6 +365,7 @@ abstract class CodedCall extends Call {
     'cross'.ri: (_) => Cross(),
     '(left)?crossandwheel'.ri: (name) => CrossAndWheel(name),
     'crosschain(thru|androll)'.ri: (name) => CrossChainThru(name),
+    'crossconcentric'.ri: (name) => CrossConcentric(name),
     'crossfold'.ri: (_) => CrossFold(),
     'crossovercirculate'.ri: (_) => CrossOverCirculate(),
     'crossramble'.ri: (_) => CrossRamble(),
@@ -633,7 +635,7 @@ abstract class CodedCall extends Call {
     'waveof6'.ri: (name) => WaveOfSix(name),
     '(dancersin)?waves?(dancers)?'.ri: (name) => Waves(name),
     'wheeland(?!deal)'.ri: (name) => WheelAnd(name),
-    'wheelaround'.ri: (name) => WheelAround(name),
+     'wheelaround'.ri: (name) => WheelAround(name),
     '(reverse)?(14|34)?(reverse)?wheelthe(ocean|sea)'.ri: (name) => WheelTheOcean(name),
     '(and)?(the)?others?.+'.ri: (name) => While(name),
     'while(the)?(others?)?.+'.ri: (name) => While(name),

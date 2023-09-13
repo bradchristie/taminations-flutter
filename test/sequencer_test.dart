@@ -3844,6 +3844,16 @@ Split Circulate
 Boys Run
 Zoom
 Centers Square Thru 3
-Allemande Left''','')
+Allemande Left''',''),
+
+  TestSequence('Cross Concentric',
+'''Heads Star Thru
+Cross Concentric Slide Thru
+Cross Concentric Pass the Ocean
+Cross Concentric Explode the Wave
+Cast Off 3/4
+Star Thru
+Centers Pass Thru
+Allemande Left''', '')
 
 ];

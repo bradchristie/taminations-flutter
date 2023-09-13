@@ -1292,8 +1292,8 @@ class CallContext {
   bool isBox() =>
       //  Must have 4 dancers
       dancers.length == 4 &&
-          //  Each DancerModel must have one DancerModel at the same X coordinate
-          //  and one DancerModel at the same Y coordinate
+          //  Each dancer must have one dancer at the same X coordinate
+          //  and one dancer at the same Y coordinate
           dancers.every((d) =>
               dancers.where((it) => d.location.x.isAbout(it.location.x)).length == 2 &&
               dancers.where((it) => d.location.y.isAbout(it.location.y)).length == 2
