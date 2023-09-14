@@ -30,12 +30,22 @@ class ToAWave extends Action {
   void perform(CallContext ctx) {
     if (ctx.callstack.length < 2)
       throw CallError('What to a Wave?');
+    //  Remember the angle each dancer is facing
+    var endAngles = {
+      for (var d in ctx.actives)
+        d : d.angleFacing
+    };
     //  Assume the last move is an Extend from a wave
     ctx.contractPaths();
     for (final d in ctx.actives)
       d.path.pop();
-    //  Now let's see if they are in waves
     ctx.animateToEnd();
+    //  Check that they are all facing the final direction
+    for (var d in ctx.actives) {
+      if (d.angleFacing != endAngles[d])
+        throw CallError('Last part of call must be like Extend or Step Thru');
+    }
+    //  Now let's see if they are in waves
     ctx.analyze();
     for (final d in ctx.actives) {
       if (!ctx.isInWave(d))
