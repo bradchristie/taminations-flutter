@@ -26,6 +26,7 @@ mixin IsLeft on Call {
 
   var isLeft = false;
   String get left => isLeft ? 'Left' : '';
+  String get antiLeft => isLeft ? '' : 'Left';
   String get leftHand => isLeft ? 'Left-Hand' : '';
 
 }

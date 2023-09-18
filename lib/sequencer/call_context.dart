@@ -1043,25 +1043,25 @@ class CallContext {
   List<DancerModel> dancersInOrder(DancerModel d, [bool Function(DancerModel d)? f]) =>
       (dancers - d).where(f ?? (d)=>true).toList().sortedBy((d2) => d.distanceTo(d2) );
 
-  //  Return closest DancerModel that satisfies a given conditional
+  //  Return closest dancer that satisfies a given conditional
   DancerModel? dancerClosest(DancerModel d, bool Function(DancerModel d2) f) =>
       dancersInOrder(d,f).firstOrNull;
 
-  //  Return DancerModel directly in front of given DancerModel
+  //  Return dancer directly in front of given DancerModel
   DancerModel? dancerInFront(DancerModel d) =>
       dancerClosest(d, (d2) => d2.isInFrontOf(d));
-  //  Return DancerModel directly in back of given DancerModel
+  //  Return dancer directly in back of given DancerModel
   DancerModel? dancerInBack(DancerModel d) =>
       dancerClosest(d, (d2) => d2.isInBackOf(d));
-  //  Return DancerModel directly to the right of given DancerModel
+  //  Return dancer directly to the right of given DancerModel
   DancerModel? dancerToRight(DancerModel d, {double minDistance=99.0}) =>
       dancerClosest(d, (d2) =>
       d2.isRightOf(d) && !d2.distanceTo(d).isGreaterThan(minDistance));
-  //  Return DancerModel directly to the left of given DancerModel
+  //  Return dancer directly to the left of given DancerModel
   DancerModel? dancerToLeft(DancerModel d, {double minDistance=99.0}) =>
       dancerClosest(d, (d2)
       => d2.isLeftOf(d) && !d2.distanceTo(d).isGreaterThan(minDistance));
-  //  Return DancerModel that is facing the front of this DancerModel
+  //  Return dancer that is facing the front of this DancerModel
   DancerModel? dancerFacing(DancerModel d) {
     var d2 = dancerInFront(d);
     return d2 != null && dancerInFront(d2) == d ? d2 : null;

@@ -19,8 +19,9 @@
 */
 
 import '../common.dart';
+import '../common/left.dart';
 
-class SplitSquareThru extends Action {
+class SplitSquareThru extends Action with IsLeft {
 
   @override final level = LevelData.A1;
   @override var helplink = 'a1/split_square_thru';
@@ -28,35 +29,33 @@ class SplitSquareThru extends Action {
 
   @override
   void perform(CallContext ctx) {
-    if (ctx.actives.length < 8)
+    //  Helpful check
+    if (ctx.isSquare() && ctx.actives.length == 4)
       throw CallError('Use Heads Start or Sides Start Split Square Thru');
-    var left = 'Left';
-    var right = '';
-    if (name.startsWith('Left')) {
-      left = '';
-      right = 'Left';
-    }
+
     final count = normalizeCall(name).last.toIntOrNull() ?? 4;
     //  Might start from waves or mini-waves
-    final waveDancers = ctx.dancers.where((it) => ctx.isInWave(it));
-    if (waveDancers.length == 4) {
+    final waveDancers = ctx.dancers.where((d) => ctx.isInWave(d));
+    final facingDancers = ctx.dancers.where((d) => ctx.dancerFacing(d)!=null);
+    if (waveDancers.length == ctx.actives.length/2) {
       final explode = ctx.center(4).every((it) => waveDancers.contains(it))
           ?  'Center 4 Reverse Explode'
           : 'Outer 4 Explode';
       //  Check that we are starting with the wave handhold
-      if (left == 'Left' && !waveDancers.every((it) => it.data.beau))
-        throw CallError('Dancers must start with left hand');
-      if (left == '' && !waveDancers.every((it) => it.data.belle))
+      if (!isLeft && !waveDancers.every((it) => it.data.beau))
         throw CallError('Dancers must start with right hand');
-      ctx.applyCalls(explode,'$left Square Thru ${count - 1}');
-    } else {
+      if (isLeft && !waveDancers.every((it) => it.data.belle))
+        throw CallError('Dancers must start with left hand');
+      ctx.applyCalls(explode,'$antiLeft Square Thru ${count - 1}');
+    } else if (facingDancers.length == ctx.actives.length/2) {
       //  If the centers start, they need to face out to work with the ends
       //  Otherwise they will face in to work with the other dancers
       final face = ctx.actives.every((d) => d.data.center || ctx.dancerFacing(d) == null)
           ? 'Out' : 'In';
-      ctx.applyCalls('Facing Dancers $right Pass Thru and Face $face',
-          '$left Square Thru ${count - 1}');
-    }
+      ctx.applyCalls('Facing Dancers $left Pass Thru and Face $face',
+          '$antiLeft Square Thru ${count - 1}');
+    } else
+      throw CallError('Cannot do $name from this formation');
   }
 
 }

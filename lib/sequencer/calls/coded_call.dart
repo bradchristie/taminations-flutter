@@ -551,7 +551,7 @@ abstract class CodedCall extends Call {
     'splitdixiestyle(toawave)?'.ri: (name) => SplitDixieStyle(name),
     'splitrecycle'.ri: (name) => SplitRecycle(name),
     'splitsquarechainthru'.ri: (name) => SplitSquareChainThru(name),
-    '(left)?splitsquarethru[2-7]?'.ri: (name) => SplitSquareThru(name),
+    'splitsquarethru[2-7]?'.ri: (name) => SplitSquareThru(name),
     'split(2|theoutsides?(couple))?'.ri: (name) => SplitTwo(name),
     '(and)?spread'.ri: (name) => Spread(name),
     '(left)?squarechainthetop'.ri: (name) => SquareChainTheTop(name),
