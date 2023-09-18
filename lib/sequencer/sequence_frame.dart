@@ -341,8 +341,11 @@ class _SequencerEditLineState extends fm.State<SequencerEditLine> {
     if (!hasError)
       textFieldController.clear();
     //  And get the focus back for the next call
+    //  Android needs a double postpone
     later(() {
-      focusNode.requestFocus();
+      later((){
+        focusNode.requestFocus();
+      });
     });
   }
 
