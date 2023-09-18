@@ -23,21 +23,21 @@ Call pronunciations provided by
 
 ---
 
-## Taminations version 1.6.65 built 2023-08-28
+## Taminations version 1.6.66 built 2023-09-18
 Copyright 2023 by Brad Christie.  
 This is free software, and you are welcome to modify and redistribute it
 under the terms of the [GNU GPL license](http://www.gnu.org/licenses/gpl.html).  
 
 ## What's New
-* Animations for Unwrap the Interlocked Diamond and Facing Diamonds
-* Force Practice to use a wide window on desktop computers
-* Animations for Reverse Dixie Sashay
+* Some more animations for Stretched Concept
 * Sequencer changes:
-  - Accept Allemande Left from more formations 
-  - Improvements to Siamese calls
-  - Select First/Last 1,2,3 dancers in a column
-  - Enable selection of specific couples, to produce asymmetric formations
-
+  - Code for Cross Concentric Concept
+  - Fix crash for some Transfer And calls
+  - Fix for Wheel and Anything and Roll
+  - Check that Anything to a Wave is used properly
+  - Fix for Triple Box/Line Brace Thru
+  - Fix for Split Square Chain Thru
+  - Fix edit focus for some platforms
 
 For a detailed history of changes, view the
 [Git log](https://github.com/bradchristie/taminations-flutter/commits/main)
