@@ -139,6 +139,7 @@ import 'c1/skip.dart';
 import 'c1/split_dixie_diamond.dart';
 import 'c1/split_dixie_style.dart';
 import 'c1/split_recycle.dart';
+import 'c1/split_square_chain_the_top.dart';
 import 'c1/square_chain_the_top.dart';
 import 'c1/square_the_bases.dart';
 import 'c1/squeeze.dart';
@@ -551,6 +552,7 @@ abstract class CodedCall extends Call {
     'splitdixiestyle(toawave)?'.ri: (name) => SplitDixieStyle(name),
     'splitrecycle'.ri: (name) => SplitRecycle(name),
     'splitsquarechainthru'.ri: (name) => SplitSquareChainThru(name),
+    'splitsquarechainthetop'.ri: (name) => SplitSquareChainTheTop(name),
     'splitsquarethru[2-7]?'.ri: (name) => SplitSquareThru(name),
     'split(2|theoutsides?(couple))?'.ri: (name) => SplitTwo(name),
     '(and)?spread'.ri: (name) => Spread(name),
