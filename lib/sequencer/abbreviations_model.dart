@@ -102,44 +102,47 @@ class AbbreviationsModel extends fm.ChangeNotifier {
     }
     currentAbbreviations = [];
     for (var k in prefs.getKeys()) {
-      if (k.startsWith('abbrev '))
+      if (k.startsWith('abbrev ')) {
         currentAbbreviations.add(
-            Abbreviation(k.replaceFirst('abbrev ',''),
-            prefs.getString(k)!));
+            Abbreviation(k.replaceFirst('abbrev ', ''),
+                prefs.getString(k)!));
+      }
     }
     currentAbbreviations.add(Abbreviation('',''));
     _detectSort();
   }
 
-  void setAbbreviation(int index, String abbr) {
+  Future<void> setAbbreviation(int index, String abbr) async {
     currentAbbreviations[index].abbr = abbr;
-    _save();
+    await _save();
   }
 
-  void setExpansion(int index, String expan) {
+  Future<void> setExpansion(int index, String expan) async {
     currentAbbreviations[index].expa = expan;
-    _save();
+    await _save();
   }
 
-  void _clearStorage() {
+  Future<void> _clearStorage() async {
     for (var k in prefs.getKeys()) {
-      if (k.startsWith('abbrev '))
-        prefs.remove(k);
+      if (k.startsWith('abbrev ')) {
+        await prefs.remove(k);
+      }
     }
   }
-  void clear() {
-    _clearStorage();
+  void clear() async {
+    await _clearStorage();
     currentAbbreviations = [Abbreviation('','')];
-    _save();
+    await _save();
     notifyListeners();
   }
 
-  void _save() {
+  Future<void> _save() async {
     if (!_checkForErrors()) {
-      _clearStorage();
+      await _clearStorage();
       for (var p in currentAbbreviations) {
-        if (p.abbr.isNotBlank && !p.isError)
-          prefs.setString('abbrev ${p.abbr.trim()}', p.expa);
+        if (p.abbr.isNotBlank && !p.isError) {
+          await prefs.setString('abbrev ${p.abbr.trim()}', p.expa);
+        }
       }
     }
     _detectSort();
@@ -216,7 +219,7 @@ class AbbreviationsModel extends fm.ChangeNotifier {
       sortOrder = SortOrder.none;
   }
 
-  void sort() {
+  Future<void> sort() async {
     currentAbbreviations.sort((a,b) {
       if (a.abbr.isBlank)
         return 1;
@@ -231,8 +234,8 @@ class AbbreviationsModel extends fm.ChangeNotifier {
       };
     }
     );
-    _save();
-    _load();
+    await _save();
+    await _load();
     notifyListeners();
   }
 
@@ -243,7 +246,7 @@ class AbbreviationsModel extends fm.ChangeNotifier {
     fs.Clipboard.setData(clip);
   }
 
-  void paste(String text) {
+  Future<void> paste(String text) async {
     //  Process each line of pasted abbreviations
     for (final line in text.split('\\n'.r)) {
       final breakup = line.divide('\\s+'.r);
@@ -270,7 +273,7 @@ class AbbreviationsModel extends fm.ChangeNotifier {
         currentAbbreviations.insert(insertPoint,Abbreviation(abbr, expansion));
       }
     }
-    _save();
+    await _save();
     notifyListeners();
   }
 
@@ -284,11 +287,11 @@ class AbbreviationsModel extends fm.ChangeNotifier {
     return replaced;
   }
 
-  void defaultAbbreviations() {
-    _clearStorage();
+  Future<void> defaultAbbreviations() async {
+    await _clearStorage();
     for (var k in initialAbbreviations.keys)
-      prefs.setString('abbrev $k',initialAbbreviations[k]!);
-    _load();
+      await prefs.setString('abbrev $k',initialAbbreviations[k]!);
+    await _load();
     notifyListeners();
   }
 
