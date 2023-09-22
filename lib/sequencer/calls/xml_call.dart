@@ -28,8 +28,8 @@ class XMLCall extends Call {
   late AnimatedCall xcall;
   late List<int> xmlmap;
   late CallContext ctx2;
-  bool found = false;
   bool exact = false;
+  bool found = false;
   var perimeter = false;
   var foundLink = '';
   @override String get help => 'Look at the animations of $name to find '
@@ -44,6 +44,7 @@ class XMLCall extends Call {
   bool matchAnimatedCall(CallContext ctxwork) {
     var bestOffset = double.maxFinite;
     var fuzzy = true;
+    var foundOne = false;
     for (var tam in lookupAnimatedCall(norm)) {
       if (tam.notForSequencer)
         continue;
@@ -73,11 +74,11 @@ class XMLCall extends Call {
           ctx2 = ctx2q;
           bestOffset = totOffset;
           level = tam.level;
-          found = true;
+          foundOne = true;
         }
       }
     }
-    return found;
+    return foundOne;
   }
 
   @override
@@ -86,6 +87,7 @@ class XMLCall extends Call {
     var dc = ctx.dancers.length;
     var ac = ctx.actives.length;
     exact = dc == ac;
+    found = false;
     var ctxwork = ctx;
     if (!exact) {
       //  Don't try to match unless the actives are together
