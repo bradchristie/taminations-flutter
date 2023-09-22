@@ -25,6 +25,78 @@ import '../../moves.dart';
   final List<AnimatedCall> CycleAndWheel = [
 
     AnimatedCall('Cycle and Wheel',
+        from: 'Single Line 1',
+        formation:  Formation('', asymmetric: true, dancers:[
+        DancerModel.fromData(gender:Gender.BOY,x:0,y:-3,angle:180),
+        DancerModel.fromData(gender:Gender.GIRL,x:0,y:-1,angle:0),
+        DancerModel.fromData(gender:Gender.BOY,x:0,y:1,angle:0),
+        DancerModel.fromData(gender:Gender.GIRL,x:0,y:3,angle:0)]),
+        paths: [
+          RunRight.changeBeats(4).scale(2.0,2.0).skew(1.0,0.0),
+
+          RunRight.changeBeats(2).scale(0.5,0.5).skew(-0.5,0.0) +
+              RunRight.changeBeats(2).scale(0.5,0.5).skew(0.5,0.0),
+
+          UmTurnRight.changeBeats(4).changehands(Hands.LEFT).skew(1.0,0.0),
+
+          RunRight.changeBeats(4).changehands(Hands.RIGHT).scale(1.0,2.0).skew(1.0,0.0)
+        ]),
+
+    AnimatedCall('Cycle and Wheel',
+        from: 'Single Line 2',
+        formation:  Formation('', asymmetric: true, dancers:[
+          DancerModel.fromData(gender:Gender.BOY,x:0,y:-3,angle:0),
+          DancerModel.fromData(gender:Gender.GIRL,x:0,y:-1,angle:180),
+          DancerModel.fromData(gender:Gender.BOY,x:0,y:1,angle:0),
+          DancerModel.fromData(gender:Gender.GIRL,x:0,y:3,angle:0)]),
+        paths:[
+          RunLeft.changeBeats(4).skew(-1.0,2.0),
+
+          UmTurnLeft.changeBeats(2).skew(0.5,0.0) +
+              UmTurnLeft.changeBeats(2).skew(-0.5,0.0),
+
+          UmTurnRight.changeBeats(4).changehands(Hands.LEFT).skew(1.0,0.0),
+
+          RunRight.changeBeats(4).changehands(Hands.RIGHT).scale(1.0,2.0).skew(1.0,0.0),
+        ]),
+
+    AnimatedCall('Cycle and Wheel',
+        from: 'Single Line 3',
+        formation:  Formation('', asymmetric: true, dancers:[
+          DancerModel.fromData(gender:Gender.BOY,x:0,y:-3,angle:0),
+          DancerModel.fromData(gender:Gender.GIRL,x:0,y:-1,angle:0),
+          DancerModel.fromData(gender:Gender.BOY,x:0,y:1,angle:180),
+          DancerModel.fromData(gender:Gender.GIRL,x:0,y:3,angle:0)]),
+        paths:[
+          RunLeft.changeBeats(4).changehands(Hands.LEFT).scale(1.0,2.0).skew(-1.0,0.0),
+
+          UmTurnLeft.changeBeats(4).changehands(Hands.RIGHT).skew(-1.0,0.0),
+
+          UmTurnRight.changeBeats(2).skew(-0.5,0.0) +
+              UmTurnRight.changeBeats(2).skew(0.5,0.0),
+
+          RunRight.changeBeats(4).skew(1.0,-2.0),
+        ]),
+
+    AnimatedCall('Cycle and Wheel',
+        from: 'Single Line 4',
+        formation:  Formation('', asymmetric: true, dancers:[
+          DancerModel.fromData(gender:Gender.BOY,x:0,y:-3,angle:0),
+          DancerModel.fromData(gender:Gender.GIRL,x:0,y:-1,angle:0),
+          DancerModel.fromData(gender:Gender.BOY,x:0,y:1,angle:0),
+          DancerModel.fromData(gender:Gender.GIRL,x:0,y:3,angle:180)]),
+        paths:[
+          RunLeft.changeBeats(4).changehands(Hands.LEFT).scale(1.0,2.0).skew(1.0,0.0),
+
+          UmTurnLeft.changeBeats(4).changehands(Hands.RIGHT).skew(1.0,0.0),
+
+          RunLeft.changeBeats(2).scale(0.5,0.5).skew(-0.5,0.0) +
+              RunLeft.changeBeats(2).scale(0.5,0.5).skew(0.5,0.0),
+
+          RunLeft.changeBeats(4).skew(1.0,2.0),
+        ]),
+
+    AnimatedCall('Cycle and Wheel',
       formation:Formation('3 and 1 Lines #1'),
       from:'3 and 1 lines #1',
       paths:[
