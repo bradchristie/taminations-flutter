@@ -23,22 +23,17 @@ Call pronunciations provided by
 
 ---
 
-## Taminations version 1.6.66 built 2023-09-18
+## Taminations version 1.6.67 built 2023-09-26
 Copyright 2023 by Brad Christie.  
 This is free software, and you are welcome to modify and redistribute it
 under the terms of the [GNU GPL license](http://www.gnu.org/licenses/gpl.html).  
 
 ## What's New
-* Some more animations for Stretched Concept
+* Some more animations for Cycle and Wheel
 * Sequencer changes:
-  - Code for Cross Concentric Concept
-  - Fix crash for some Transfer And calls
-  - Fix for Wheel and Anything and Roll
-  - Check that Anything to a Wave is used properly
-  - Fix for Triple Box/Line Brace Thru
-  - Fix for Split Square Chain Thru
-  - Fix edit focus for some platforms
-
+  - Code for Split Square Chain the Top
+  - Fix bug that would occasionally erase abbreviations
+  
 For a detailed history of changes, view the
 [Git log](https://github.com/bradchristie/taminations-flutter/commits/main)
 
