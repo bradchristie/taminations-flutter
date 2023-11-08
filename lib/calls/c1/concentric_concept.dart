@@ -390,13 +390,15 @@ import '../c3a/mini_chase.dart' as c3a;
       formation:Formation('Column RH GBGB'),
       group:'(From columns) Concentric',
       paths:[
-          RunRight,
+          LeadRight.changeBeats(9).scale(2,1) +
+              LeadRight.changeBeats(9).scale(1, 2),
 
-          RunRight.changeBeats(6).scale(0.5,1.0),
+          LeadRight.changeBeats(9) +
+              LeadRight.changeBeats(9),
 
-          ExtendRight.scale(1.0,0.5) +
-          SwingRight.scale(0.5,0.5) +
-          ExtendLeft.scale(1.0,0.5),
+          ExtendRight.changeBeats(4).scale(1.0,0.5) +
+          SwingRight.changeBeats(10).scale(0.5,0.5) +
+          ExtendLeft.changeBeats(4).scale(1.0,0.5),
 
           ExtendLeft.changeBeats(4).scale(3.0,2.0) +
           LeadRight.changeBeats(5).scale(4.0,3.0) +
