@@ -462,9 +462,9 @@ class _PortraitForSmallDevices extends fm.StatefulWidget {
 
 class __PortraitForSmallDevicesState extends fm.State<_PortraitForSmallDevices> {
 
-  @override
-  void initState() {
-    super.initState();
+    @override
+    void initState() {
+      super.initState();
     later(() {
       if (isSmallDevice(context)) {
         SystemChrome.setPreferredOrientations([
