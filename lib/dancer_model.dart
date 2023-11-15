@@ -110,9 +110,11 @@ extension DancerList on List<DancerModel> {
     if (length > 0) {
       var vs = fold<Vector>(Vector(0.0,0.0), (v, d) => v + d.location);
       var va = vs / length.d;
-      forEach((d) {
-        d.setStartPosition(d.location - va);
-      });
+      if (va.length > 0.1) {
+        forEach((d) {
+          d.setStartPosition(d.location - va);
+        });
+      }
     }
     return this;
   }
@@ -138,19 +140,19 @@ extension DancerList on List<DancerModel> {
   }
 
   String show({bool arrayNumbers=false, bool coupleNumbers=false, bool genders=false}) {
-    final charMatrix = [for (var i=0; i<11; i++) [ for (var j=0; j<21; j++) ' ']];
+    final charMatrix = [for (var i=0; i<21; i++) [ for (var j=0; j<41; j++) ' ']];
+    for (var i=0; i<41; i++)
+      charMatrix[10][i] = '-';
     for (var i=0; i<21; i++)
-      charMatrix[5][i] = '-';
-    for (var i=0; i<11; i++)
-      charMatrix[i][10] = '|';
-    charMatrix[5][10] = '+';
-    charMatrix[5][0] = 'Y';
-    charMatrix[0][10] = 'X';
+      charMatrix[i][20] = '|';
+    charMatrix[10][20] = '+';
+    charMatrix[10][0] = 'Y';
+    charMatrix[0][20] = 'X';
     var i = 0;
     for (final d in this) {
-      var dx = d.location.x.round();
-      var dy = (d.location.y*2.0).round();
-      if (dx.abs() <= 5 && dy.abs() <= 10) {
+      var dx = (d.location.x*2.0).round();
+      var dy = (d.location.y*4.0).round();
+      if (dx.abs() <= 10 && dy.abs() <= 20) {
         var c = coupleNumbers ? d.numberCouple
             : arrayNumbers ? i.s : d.number;
         if (genders)
@@ -159,7 +161,7 @@ extension DancerList on List<DancerModel> {
           c = c.substring(0,1);
         if (c.isEmpty)
           c = 'X';
-        charMatrix[-dx + 5][-dy + 10] = c;
+        charMatrix[-dx + 10][-dy + 20] = c;
       }
       var dsym = '';
       if (d.angleFacing.isAround(0)) {
@@ -175,10 +177,10 @@ extension DancerList on List<DancerModel> {
         dy -= 1;
         dsym = '>';
       }
-      if (dsym.length == 1 && dx.abs() <= 5 && dy.abs() <= 10) {
-        final oldChar = charMatrix[-dx + 5][-dy + 10];
+      if (dsym.length == 1 && dx.abs() <= 10 && dy.abs() <= 20) {
+        final oldChar = charMatrix[-dx + 10][-dy + 20];
         if (oldChar == ' ' || oldChar == '-' || oldChar == '|')
-          charMatrix[-dx + 5][-dy + 10] = dsym;
+          charMatrix[-dx + 10][-dy + 20] = dsym;
       }
       i += 1;
     }

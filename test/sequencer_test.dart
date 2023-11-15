@@ -3854,6 +3854,16 @@ Cross Concentric Explode the Wave
 Cast Off 3/4
 Star Thru
 Centers Pass Thru
-Allemande Left''', '')
+Allemande Left''', ''),
+
+  TestSequence('Couples 1 and 2 Right and Left Thru',
+'''Couples 1 and 2 Right and Left Thru
+Couples 3 and 4 Right and Left Thru
+Sides Lead Right
+Veer Left
+Bend the Line
+Star Thru
+Square Thru 3
+Allemande Left''','')
 
 ];

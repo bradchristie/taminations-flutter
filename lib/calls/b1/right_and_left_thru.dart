@@ -132,6 +132,28 @@ import '../../moves.dart';
           BeauWheel.scale(0.67,1.0)
       ]),
 
+    AnimatedCall('Right and Left Thru',from:'Couples 1 and 2',
+        noDisplay: true,
+        formation: Formation('',asymmetric: true, dancers:[
+          DancerModel.fromData(gender:Gender.BOY,x:-3,y:1,angle:0),
+          DancerModel.fromData(gender:Gender.GIRL,x:-3,y:-1,angle:0),
+          DancerModel.fromData(gender:Gender.BOY,x:-1,y:-3,angle:90),
+          DancerModel.fromData(gender:Gender.GIRL,x:1,y:-3,angle:90),
+    ]),
+        paths: [
+          LeadRightPassing.changeBeats(3).scale(4, 4) +
+              BeauWheel.scale(0.67, 1),
+
+          LeadRightPassing.changeBeats(3).scale(2, 2) +
+              BelleWheel.scale(0.67, 1),
+
+          LeadLeftPassing.changeBeats(3).scale(2, 2) +
+              BeauWheel.scale(0.67, 1),
+
+          LeadLeft.changeBeats(3).scale(4, 4) +
+              BelleWheel.scale(0.67, 1)
+        ]),
+
     AnimatedCall('Heads Right and Left Thru and Back Away',
       formation:Formation('Static Square'),
       isGenderSpecific:true,noDisplay: true,

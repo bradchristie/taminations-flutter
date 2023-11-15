@@ -60,6 +60,10 @@ class XMLCall extends Call {
       var sexy = tam.isGenderSpecific;
       var ctx2q = CallContext.fromFormation(tam.formation);
       ctx2q.asymmetric = tam.isAsymmetric;
+      //  Asymmetric animations might not be centered
+      //  but we need that for mapping to work
+      if (ctx2q.asymmetric)
+        ctx2q.dancers.center();
       ctx2q.animate(0.0);
       var mm = ctxwork.matchFormations(ctx2q, sexy: sexy, fuzzy: fuzzy,
           handholds: !fuzzy, headsMatchSides: headsMatchSides);

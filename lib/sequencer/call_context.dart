@@ -677,6 +677,13 @@ class CallContext {
   bool _testMapping(CallContext ctx1, List<DancerModel> ctx1Dancers, CallContext ctx2, List<int>mapping, int i,
       {bool sexy=false, bool fuzzy=false,
         bool handholds=true, bool headsmatchsides=true}) {
+
+    //  Check for multiple mappings to the same dancer
+    for (var j=0; j<i; j++)
+      if (mapping[j] == mapping[i])
+        return false;
+
+    //  Gender check
     if (sexy && (ctx1Dancers[i].gender != ctx2.dancers[mapping[i]].gender))
       return false;
 
