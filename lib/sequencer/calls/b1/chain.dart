@@ -18,15 +18,21 @@
 
 */
 
-export '../../common_flutter.dart';
-export '../call_context.dart';
-export '../call_error.dart';
-export 'action.dart';
-export 'c1/but.dart';
-export 'common/actives_only_action.dart';
-export 'common/actives_with_partners_action.dart';
-export 'common/call_with_parts.dart';
-export 'common/fliter_actives.dart';
-export 'common/four_dancer_concept.dart';
-export 'common/modified_formation_concept.dart';
-export 'common/turn_the_star.dart';
+import '../common.dart';
+
+class Chain extends ActivesWithPartnersAction {
+
+  Chain(super.name);
+
+  @override
+  void performCall(CallContext ctx) {
+    if (ctx.actives.length*2 < ctx.dancers.length)
+      super.performCall(ctx);
+    else {
+      for (var d in ctx.dancers)
+        d.data.active = true;
+      ctx.applyCalls('_Chain');
+    }
+  }
+
+}

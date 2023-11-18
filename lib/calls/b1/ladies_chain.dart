@@ -237,6 +237,53 @@ import '../../moves.dart';
           BelleWheel
       ]),
 
+    AnimatedCall('_Chain', from: 'End Ladies',
+        formation: Formation('',dancers:[
+          DancerModel.fromData(gender:Gender.BOY,x:-2,y:-1,angle:0),
+          DancerModel.fromData(gender:Gender.GIRL,x:-2,y:-3,angle:0),
+        ]),
+        group:' ',isGenderSpecific:true,difficulty: 2,noDisplay: true,
+        paths:[
+          Stand.changeBeats(6) +
+              UmTurnLeft.changeBeats(3).changehands(Hands.RIGHT).skew(0.0,-1.0) +
+              BeauWheel.scale(0.5,0.5),
+
+          LeadLeft +
+              Forward_2 +
+              HingeRight.changeBeats(2) +
+              Forward_2.changeBeats(3.5) +
+              BelleWheel
+        ]),
+
+    AnimatedCall('_Chain',from:'Couples 1 and 2',
+        formation: Formation('',asymmetric: true, dancers:[
+          DancerModel.fromData(gender:Gender.BOY,x:-3,y:1,angle:0),
+          DancerModel.fromData(gender:Gender.GIRL,x:-3,y:-1,angle:0),
+          DancerModel.fromData(gender:Gender.BOY,x:-1,y:-3,angle:90),
+          DancerModel.fromData(gender:Gender.GIRL,x:1,y:-3,angle:90),
+        ]),
+        group:' ',isGenderSpecific:true,difficulty: 2,noDisplay: true,
+        paths: [
+          Stand +
+              DodgeRight.changeBeats(2) +
+              UmTurnLeft.changeBeats(2).changehands(Hands.RIGHT).skew(0.0,0.5) +
+              BeauWheel.scale(0.5,0.75),
+
+          ExtendLeft.changeBeats(2).scale(2.0,1.0) +
+              LeadRight.changeBeats(3).scale(0.5,3.0) +
+              BelleWheel.scale(0.75,0.75),
+
+          Stand +
+              DodgeRight.changeBeats(2) +
+              UmTurnLeft.changeBeats(2).changehands(Hands.RIGHT).skew(0.0,0.5) +
+              BeauWheel.scale(0.5,0.75),
+
+          ExtendLeft.changeBeats(2).scale(1.5,2.5) +
+              LeadLeft.changeBeats(3).scale(2.0,1.5) +
+              BelleWheel.scale(0.75,0.75)
+        ]),
+
+
     AnimatedCall('Center Ladies Chain on a Diagonal',
       formation:Formation('Normal Lines'),
       group:' ',isGenderSpecific:true,difficulty: 3,
