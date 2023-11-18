@@ -29,11 +29,22 @@ class SwingThru extends ActivesOnlyAction with CallWithParts {
   @override var helplink = 'b2/swing_thru';
   bool isGrand;
   bool isLeft;
-  List<DancerModel>? part1dancers;
   SwingThru(String name) :
         isGrand=name.contains('Grand'),
         isLeft=name.contains('Left'),
         super(name);
+
+  List<DancerModel> _dancersWhoCanDoBothParts(CallContext ctx) {
+    var whoCan = <DancerModel>[];
+    for (var d in ctx.dancers) {
+      var dl = ctx.dancerToRight(d);
+      var dr = ctx.dancerToLeft(d);
+      if (dl != null && ctx.isInWave(d,dl) &&
+          dr != null && ctx.isInWave(d,dr))
+        whoCan.add(d);
+    }
+    return whoCan;
+  }
 
   @override
    void performPart1(CallContext ctx) {
@@ -43,26 +54,41 @@ class SwingThru extends ActivesOnlyAction with CallWithParts {
       } on CallError catch(_) { }
       ctx.analyze();
     }
-    ctx.subContext(ctx.dancersHoldingSameHands(isRight: !isLeft, isGrand: isGrand),
-            (ctx2) {
-              if (ctx2.actives.isEmpty)
-                throw CallError('Noone to do part 1 of Swing Thru');
-              part1dancers = ctx2.actives;
-              ctx2.applyCalls('Trade');
+    var canDoBoth = _dancersWhoCanDoBothParts(ctx);
+    ctx.subContext(ctx.dancersHoldingSameHands(isRight: !isLeft, isGrand: isGrand),(ctx2) {
+      for (var d in ctx2.actives.copy()) {
+        if (!canDoBoth.contains(d)) {
+          var d2 = isLeft
+              ? ctx.dancerToLeft(d)
+              : ctx.dancerToRight(d);
+          if (!canDoBoth.contains(d2))
+            d.data.active = false;
+        }
+      }
+      if (ctx2.actives.isEmpty)
+        throw CallError('Noone to do part 1 of Swing Thru');
+      ctx2.applyCalls('Trade');
     });
   }
 
   @override
    void performPart2(CallContext ctx) {
+    var canDoBoth = _dancersWhoCanDoBothParts(ctx);
     ctx.subContext(ctx.dancersHoldingSameHands(isRight: isLeft, isGrand: isGrand),
             (ctx2) {
-              if (ctx2.actives.isEmpty)
-                throw CallError('Noone to do part 2 of Swing Thru');
-              if (part1dancers != null && !part1dancers!.any((d) => ctx2.actives.contains(d)))
-                throw CallError('No dancers doing both parts of Swing Thru');
-              ctx2.applyCalls('Trade');
-    });
+        for (var d in ctx2.actives.copy()) {
+          if (!canDoBoth.contains(d)) {
+          var d2 = isLeft
+              ? ctx.dancerToRight(d)
+              : ctx.dancerToLeft(d);
+          if (!canDoBoth.contains(d2))
+            d.data.active = false;
+        }
+      }
+      if (ctx2.actives.isEmpty)
+        throw CallError('Noone to do part 2 of Swing Thru');
+      ctx2.applyCalls('Trade');
+            });
   }
-
 
 }
