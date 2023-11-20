@@ -6,16 +6,14 @@ Taminations for Android, iOS, MacOS, Windows, Web coded in Flutter
 
 - Install [git](https://git-scm.com/) and [flutter](https://flutter.dev/)
 - Create a directory for your project and `cd` into it.
-- Get this code with `git clone https://github.com/bradchristie/taminations-flutter.git`
+- Get this code with `git clone https://github.com/bradchristie/taminations-flutter.git .`
 - Then you can fetch the extra packages Taminations uses.
 ```
 flutter pub get
 ```
-- Before building the program, you need to run the code-generation program which
-builds classes from the xml files.  This is a Dart command-line program:
-```
-dart util/xml_to_code.dart
-```
+
+- For most platforms, you can now just enter `flutter run` and choose the
+appropriate platform from those listed.
 
 - For iOS, build and run with these commands
 ```
