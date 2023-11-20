@@ -23,16 +23,20 @@ Call pronunciations provided by
 
 ---
 
-## Taminations version 1.6.67 built 2023-09-26
+## Taminations version 1.6.68 built 2023-11-20
 Copyright 2023 by Brad Christie.  
 This is free software, and you are welcome to modify and redistribute it
 under the terms of the [GNU GPL license](http://www.gnu.org/licenses/gpl.html).  
 
 ## What's New
-* Some more animations for Cycle and Wheel
+* Update C-1 definitions from Callerlab
+* Better animation for Concentric Scoot Back from columns
 * Sequencer changes:
-  - Code for Split Square Chain the Top
-  - Fix bug that would occasionally erase abbreviations
+  - Fix for Cross Ramble
+  - Fix for Swing Thru for waves of 3
+  - Allow Couples 1 and 2 Right and Left Thru
+  - Add selector Dancers Facing the Caller
+  - Allow Ladies Chain from more formations, including Couples 1 and 2
   
 For a detailed history of changes, view the
 [Git log](https://github.com/bradchristie/taminations-flutter/commits/main)

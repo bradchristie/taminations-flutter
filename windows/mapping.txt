@@ -1,2 +1,2 @@
 [Files]
-"p:\taminations_flutter\build\windows\runner\Release\taminations.msix"	"taminations.msix"
+"p:\taminations_flutter\build\windows\x64\runner\Release\taminations.msix"	"taminations.msix"
