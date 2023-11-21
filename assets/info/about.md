@@ -23,7 +23,7 @@ Call pronunciations provided by
 
 ---
 
-## Taminations version 1.6.68 built 2023-11-20
+## Taminations version 1.6.69 built 2023-11-21
 Copyright 2023 by Brad Christie.  
 This is free software, and you are welcome to modify and redistribute it
 under the terms of the [GNU GPL license](http://www.gnu.org/licenses/gpl.html).  
