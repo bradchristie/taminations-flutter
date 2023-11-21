@@ -389,6 +389,7 @@ import '../c3a/mini_chase.dart' as c3a;
     AnimatedCall('Concentric Scoot Back',
       formation:Formation('Column RH GBGB'),
       group:'(From columns) Concentric',
+      fractions: '9',
       paths:[
           LeadRight.changeBeats(9).scale(2,1) +
               LeadRight.changeBeats(9).scale(1, 2),
