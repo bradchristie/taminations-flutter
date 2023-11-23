@@ -23,7 +23,7 @@ Call pronunciations provided by
 
 ---
 
-## Taminations version 1.6.69 built 2023-11-21
+## Taminations version 1.6.70 built 2023-11-23
 Copyright 2023 by Brad Christie.  
 This is free software, and you are welcome to modify and redistribute it
 under the terms of the [GNU GPL license](http://www.gnu.org/licenses/gpl.html).  
@@ -32,6 +32,7 @@ under the terms of the [GNU GPL license](http://www.gnu.org/licenses/gpl.html).
 * Update C-1 definitions from Callerlab
 * Better animation for Concentric Scoot Back from columns
 * Sequencer changes:
+  - Fix problem displaying list of sequence calls
   - Fix for Cross Ramble
   - Fix for Swing Thru for waves of 3
   - Allow Couples 1 and 2 Right and Left Thru
