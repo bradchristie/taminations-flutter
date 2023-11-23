@@ -60,7 +60,9 @@ class _SequenceFrameState extends fm.State<SequenceFrame> {
                          itemBuilder: itemBuilder,
                        )
                    ),
-                 fm.Expanded(child: fm.Text(model.errorString,key: fm.Key('Error text'),style: fm.TextStyle(fontSize: 0.01)))
+                 fm.Container(
+                   constraints: const fm.BoxConstraints.expand(height: 1),
+                     child: fm.Text(model.errorString,key: fm.Key('Error text'),style: fm.TextStyle(fontSize: 0.01)))
                ],
              ),
            );
