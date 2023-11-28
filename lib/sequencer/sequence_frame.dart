@@ -257,7 +257,7 @@ class _SequencerEditLineState extends fm.State<SequencerEditLine> {
                           color: model.errorString.contains('Note') ? fm.Colors.blue : fm.Colors.red),
                       errorMaxLines: 20,
                       errorText: model.errorString.isEmpty ? null : model.errorString),
-                  enableSuggestions: false,
+                  enableSuggestions: true,
                   style: fm.TextStyle(fontSize: 24),
                   //  Code to run when user presses Enter
                   onSubmitted: (value) {
