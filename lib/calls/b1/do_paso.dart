@@ -28,43 +28,43 @@ import '../../moves.dart';
       formation:Formation('Static Square'),
       group:' ',
       paths:[
-          QuarterRight +
+          QuarterRight.changeBeats(0.5) +
           ExtendRight.scale(1.0,0.75) +
-          SwingLeft.scale(0.75,0.75) +
-          ExtendLeft.changeBeats(2).scale(2.0,0.75) +
-          SwingRight.scale(0.75,0.75) +
-          ExtendRight.changeBeats(3).scale(2.0,2.25) +
-          HingeLeft.scale(0.75,0.75) +
-          UmTurnLeft.changeBeats(1.5).changehands(Hands.GRIPLEFT).skew(0.75,1.0) +
-          UmTurnLeft.changeBeats(1.5).changehands(Hands.GRIPLEFT).skew(0.75,-0.75),
+          SwingLeft.changeBeats(2).scale(0.75,0.75) +
+          ExtendLeft.changeBeats(1.5).scale(2.0,0.75) +
+          SwingRight.changeBeats(2).scale(0.75,0.75) +
+          ExtendRight.changeBeats(2).scale(2.0,2.25) +
+          HingeLeft.changeBeats(1).scale(0.75,0.75) +
+          UmTurnLeft.changeBeats(1).changehands(Hands.GRIPLEFT).skew(0.75,1.0) +
+          UmTurnLeft.changeBeats(1).changehands(Hands.GRIPLEFT).skew(0.75,-0.75),
 
-          QuarterLeft +
+          QuarterLeft.changeBeats(0.5) +
           ExtendRight.scale(1.0,0.75) +
-          SwingLeft.scale(0.75,0.75) +
-          LeadLeft.changeBeats(2).scale(1.5,1.75) +
-          SwingRight.scale(0.75,0.75) +
-          LeadRight.changeBeats(3).scale(0.25,3.0) +
-          HingeLeft.scale(0.75,0.75) +
-          BelleWheel.changehands(Hands.GRIPLEFT).scale(1.0,0.75),
+          SwingLeft.changeBeats(2).scale(0.75,0.75) +
+          LeadLeft.changeBeats(1.5).scale(1.5,1.75) +
+          SwingRight.changeBeats(2).scale(0.75,0.75) +
+          LeadRight.changeBeats(2).scale(0.25,3.0) +
+          HingeLeft.changeBeats(1).scale(0.75,0.75) +
+          BelleWheel.changeBeats(2).changehands(Hands.GRIPLEFT).scale(1.0,0.875),
 
-          QuarterRight +
+          QuarterRight.changeBeats(0.5) +
           ExtendRight.scale(1.0,0.75) +
-          SwingLeft.scale(0.75,0.75) +
-          ExtendLeft.changeBeats(2).scale(2.0,0.75) +
-          SwingRight.scale(0.75,0.75) +
-          ExtendRight.changeBeats(3).scale(2.0,2.25) +
-          HingeLeft.scale(0.75,0.75) +
-          UmTurnLeft.changeBeats(1.5).changehands(Hands.GRIPLEFT).skew(0.75,1.0) +
-          UmTurnLeft.changeBeats(1.5).changehands(Hands.GRIPLEFT).skew(0.75,-0.75),
+          SwingLeft.changeBeats(2).scale(0.75,0.75) +
+          ExtendLeft.changeBeats(1.5).scale(2.0,0.75) +
+          SwingRight.changeBeats(2).scale(0.75,0.75) +
+          ExtendRight.changeBeats(2).scale(2.0,2.25) +
+          HingeLeft.changeBeats(1).scale(0.75,0.75) +
+          UmTurnLeft.changeBeats(1).changehands(Hands.GRIPLEFT).skew(0.75,1.0) +
+          UmTurnLeft.changeBeats(1).changehands(Hands.GRIPLEFT).skew(0.75,-0.75),
 
-          QuarterLeft +
+          QuarterLeft.changeBeats(0.5) +
           ExtendRight.scale(1.0,0.75) +
-          SwingLeft.scale(0.75,0.75) +
-          LeadLeft.changeBeats(2).scale(1.5,1.75) +
-          SwingRight.scale(0.75,0.75) +
-          LeadRight.changeBeats(3).scale(0.25,3.0) +
-          HingeLeft.scale(0.75,0.75) +
-          BelleWheel.changehands(Hands.GRIPLEFT).scale(1.0,0.75)
+          SwingLeft.changeBeats(2).scale(0.75,0.75) +
+          LeadLeft.changeBeats(1.5).scale(1.5,1.75) +
+          SwingRight.changeBeats(2).scale(0.75,0.75) +
+          LeadRight.changeBeats(2).scale(0.25,3.0) +
+          HingeLeft.changeBeats(1).scale(0.75,0.75) +
+          BelleWheel.changeBeats(2).changehands(Hands.GRIPLEFT).scale(1.0,0.875)
       ]),
 
     AnimatedCall('Do Paso to an Allemande Thar',
