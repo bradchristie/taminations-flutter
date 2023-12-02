@@ -83,7 +83,8 @@ class AnimatedCall {
       throw ArgumentError('Animated Call length mismatch: ${paths.length} ${formation.dancers.length}.');
   }
 
-  AnimatedCall xref({ String? title, String? group, int? difficulty }) {
+  AnimatedCall xref({ String? title, String? group,
+    int? difficulty, bool? notForSequencer }) {
     return AnimatedCall(title ?? this.title,
       formation: formation,
       paths: paths,
@@ -97,7 +98,7 @@ class AnimatedCall {
       isExact: isExact,
       isAsymmetric: isAsymmetric,
       isGenderSpecific: isGenderSpecific,
-      notForSequencer: notForSequencer,
+      notForSequencer: notForSequencer ?? this.notForSequencer,
       noDisplay: noDisplay,
       numbers: numbers,
       coupleNumbers: coupleNumbers

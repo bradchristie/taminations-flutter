@@ -145,6 +145,7 @@ import '../c3b/anything_the_top.dart' as c3b;
           SwingRight +
           Forward_2
       ]),
+
     c3b.AnythingTheTop.where((tam) =>
       tam.title == 'Chase the Top').first.xref(title: 'Chase the Top').xref(group: ' '),
 
@@ -179,8 +180,9 @@ import '../c3b/anything_the_top.dart' as c3b;
           HingeRight.skew(0.0,0.25) +
           Forward_3
       ]),
+
     c1.ChaseYourNeighbor.where((tam) =>
-      tam.title == 'Chase Your Neighbor' && tam.from == 'Lines Facing Out').first.xref(title: 'Chase Your Neighbor').xref(group: ' '),
+      tam.title == 'Chase Your Neighbor' && tam.from == 'Lines Facing Out').first.xref(title: 'Chase Your Neighbor', group: ' ', notForSequencer: true),
 
     AnimatedCall('Chaser\'s Delight',
       formation:Formation('Lines Facing Out'),
@@ -214,4 +216,3 @@ import '../c3b/anything_the_top.dart' as c3b;
           CastRight
       ]),
   ];
-
