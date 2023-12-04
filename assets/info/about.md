@@ -23,21 +23,18 @@ Call pronunciations provided by
 
 ---
 
-## Taminations version 1.6.70 built 2023-11-23
+## Taminations version 1.6.71 built 2023-12-04
 Copyright 2023 by Brad Christie.  
 This is free software, and you are welcome to modify and redistribute it
 under the terms of the [GNU GPL license](http://www.gnu.org/licenses/gpl.html).  
 
 ## What's New
-* Update C-1 definitions from Callerlab
-* Better animation for Concentric Scoot Back from columns
+* Better animation and timing for Do Paso
 * Sequencer changes:
-  - Fix problem displaying list of sequence calls
-  - Fix for Cross Ramble
-  - Fix for Swing Thru for waves of 3
-  - Allow Couples 1 and 2 Right and Left Thru
-  - Add selector Dancers Facing the Caller
-  - Allow Ladies Chain from more formations, including Couples 1 and 2
+  - Enable keyboard suggestions
+  - Improvements for All 8 calls
+  - Fix for doing some calls 1 1/2 times
+  - Correctly mark Chase Your Neighbor as a C-1 call
   
 For a detailed history of changes, view the
 [Git log](https://github.com/bradchristie/taminations-flutter/commits/main)
