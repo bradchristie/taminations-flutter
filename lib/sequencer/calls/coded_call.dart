@@ -18,6 +18,7 @@
 
 */
 
+import 'common/select_location.dart';
 import '../../extensions.dart';
 import '../../normalize_call.dart';
 import 'a1/as_couples.dart';
@@ -526,6 +527,8 @@ abstract class CodedCall extends Call {
     //  as Centers Star
     'centerstarthru'.ri: (name) => CentersStarThru(name),
     '(center|inside|middle|out(er|side))(diamond|star)'.ri: (name) => SelectDiamond(name),
+    '(near|far|left|right)(box|line|wave|diamond|star|\\d)?'.ri:
+        (name) => SelectLocation(name),
     'separate'.ri: (name) => Separate(name),
     'shazam'.ri: (name) => Shazam(name),
     'siamese.*'.ri: (name) => Siamese(name),

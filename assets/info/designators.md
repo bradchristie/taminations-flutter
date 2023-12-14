@@ -22,3 +22,4 @@ Otherwise, the original heads or sides.
 * **First 1/2/3, Last 1/2/3** - Select dancers in columns
 * **Couple 1/2/3/4** - Select one specific couple to do a call, which will then produce an asymmetric formation.  For a squared set, this will select the couple on the respective spot on the floor.  For other formations, it will select the couple that started at that spot.  These formations have had only limited testing, so you are likely to find many calls that do not work.
 * **Dancers Facing the Caller** - The caller position is at the bottom of the display. This is for creating asymmetric formations.
+* **Near/Far/Left/Right Line/Wave/Box/[n]** - Select dancers based on location from the caller.
