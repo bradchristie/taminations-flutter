@@ -747,7 +747,7 @@ class CallContext {
   //  Perform calls by popping them off the stack until the stack is empty.
   //  This doesn't run an animation, rather it takes the stack of calls
   //  and builds the DancerModel movements.
-  void performCall({bool tryDoYourPart=false}) {
+  CallContext performCall({bool tryDoYourPart=false}) {
     //  Some calls alter the callstack, so save and restore
     final saveCallstack = callstack.copy();
     for (final d in dancers) {
@@ -769,6 +769,7 @@ class CallContext {
         extendPaths();
     }
     callstack = saveCallstack;
+    return this;
   }
 
   //  For calls that just apply to the centers, make sure they

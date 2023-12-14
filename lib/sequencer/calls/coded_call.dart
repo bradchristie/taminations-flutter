@@ -309,7 +309,7 @@ abstract class CodedCall extends Call {
   static final Map<RegExp, CodedCall Function(String norm)> normCallMap = {
     'aceydeucey'.ri: (_) => AceyDeucey(),
     'adjust(to)?.*'.ri: (name) => Adjust(name),
-    'all8(?!circulate)(?!recycle).*'.ri: (name) => AllEight(name),
+    'all8(?!circulate)(?!recycle)'.ri: (name) => AllEight(name),
     'AllemandeLeft'.r: (name) => AllemandeLeft(name),
     'alterandcirculate'.ri: (_) => AlterAndCirculate(),
     'alterthewave'.ri: (name) => AlterTheWave(name),

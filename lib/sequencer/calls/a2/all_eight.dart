@@ -35,24 +35,21 @@ class AllEight extends Action {
 
   @override
   void perform(CallContext ctx) {
-    final all8call = name.replaceAll('All (8|Eight)'.ri, '').trim();
     if (ctx.isThar()) {
       final xDancers = ctx.dancers.where((d) => d.isOnXAxis).toList();
       final yDancers = ctx.dancers.where((d) => d.isOnYAxis).toList();
-      ctx.subContext(xDancers, (xctx) =>
-          xctx.applyCalls(all8call)
-      );
-      ctx.subContext(yDancers, (yctx) =>
-          yctx.applyCalls(all8call)
-      );
+      final saveStack = ctx.callstack.copy();
+      var ctx2 = ctx.nextActionContext(this,dancers:xDancers)
+          ?? thrower(CallError('All 8 what?'))!;
+      ctx2.performCall().appendToSource();
+      ctx.callstack = saveStack;
+      ctx.nextActionContext(this,dancers:yDancers)?.performCall().appendToSource();
     } else if (ctx.isSquare()) {
       //  Might be able to do the All 8 call
       //  the same way as it's done without All 8
-      try {
-        ctx.applyCalls(all8call);
-      } on CallError {
-        throw CallError('Unable to do $name from this formation.');
-      }
+      var ctx2 = ctx.nextActionContext(this)
+          ?? thrower(CallError('All 8 what?'))!;
+      ctx2.performCall().appendToSource();
     } else
       throw CallError('All 8 calls must start from a Thar or Static Square');
   }
