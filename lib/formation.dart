@@ -1161,6 +1161,13 @@ class Formation {
       DancerModel.fromData(gender:Gender.GIRL,x:1,y:0,angle:0),
     ]),
 
+    Formation('Outrigger', dancers:[
+      DancerModel.fromData(gender:Gender.BOY,x:2.5,y:0,angle:90),
+      DancerModel.fromData(gender:Gender.GIRL,x:3.5,y:0,angle:270),
+      DancerModel.fromData(gender:Gender.BOY,x:1,y:1,angle:180),
+      DancerModel.fromData(gender:Gender.GIRL,x:-1,y:1,angle:0),
+    ]),
+
     Formation('Hourglass RH BP', dancers:[
       DancerModel.fromData(gender:Gender.BOY,x:-2,y:-3,angle:180),
       DancerModel.fromData(gender:Gender.GIRL,x:-3,y:0,angle:90),
@@ -1730,6 +1737,7 @@ class Formation {
     '.*circle'.ri : Formation('Circle'),
     '.*alamo'.ri : Formation('Alamo Wave'),  // actually, same as Circle
     '.*blocks'.ri : Formation('Blocks'),
+    '.*sausage'.ri : Formation('Sausage RH'),
     //  two couples
     '.*box'.ri : Formation('Facing Couples')
   };

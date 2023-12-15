@@ -37,7 +37,10 @@ Formations you can use include
      Hourglass
      Galaxy
      Butterfly
-     O''';
+     O
+     Sausage (Column of 6 with lone dancers at each end)
+     Outrigger (Tidal Wave after center 4 Hinge)
+     ''';
   Adjust(String name) : super(name);
 
   @override
@@ -46,7 +49,10 @@ Formations you can use include
     var formation = Formation(fname);
     var ctx2 = CallContext.fromFormation(formation);
     var isSubset = ctx2.dancers.length > ctx.dancers.length;
-    var rotate = formation.name == 'Blocks' ? 90 : 180;
+    var rotate = switch(formation.name) {
+      'Blocks' || 'Outrigger' => 90,
+      _ => 180
+    };
     var mapping = ctx.matchFormations(ctx2,sexy:false,fuzzy:true,rotate:rotate,handholds:false,subformation: isSubset, maxError : 3.0, delta: 0.3, maxAngle: 0.5)
         ?? thrower(CallError('Unable to match formation to $fname'));
     if (!ctx.adjustToFormationMatch(mapping!.match))
