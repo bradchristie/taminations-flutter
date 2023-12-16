@@ -25,15 +25,15 @@ import '../../moves.dart';
   final List<AnimatedCall> ChaseRight = [
 
     AnimatedCall('Chase Right',
-      formation:Formation('Couples Facing Out'),
+      formation:Formation('Couples Facing Out Compact'),
       from:'Couples Facing Out',difficulty: 1,
       paths:[
-          UmTurnRight.changeBeats(1.5).skew(-1.0,0.0) +
+          UmTurnRight.changeBeats(1.5).skew(-.5,0.0) +
           Forward_2 +
-          RunRight.changeBeats(2.5).skew(1.0,0.0),
+          RunRight.changeBeats(2.5).skew(.5,0.0),
 
           RunRight.changeBeats(2.5) +
-          Forward_4.changeBeats(3.5)
+          Forward_3.changeBeats(3.5)
       ]),
 
     AnimatedCall('Chase Right',
@@ -159,16 +159,16 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left Chase',
-      formation:Formation('Couples Facing Out'),
+      formation:Formation('Couples Facing Out Compact'),
       from:'Couples Facing Out',difficulty: 2,
-      paths:[
-          RunLeft +
-          Forward_4.changeBeats(3),
+        paths:[
+          RunLeft.changeBeats(2.5) +
+              Forward_3.changeBeats(3.5),
 
-          UmTurnLeft.changeBeats(1.5) +
-          Forward_4.changeBeats(3) +
-          FlipLeft.changeBeats(1.5)
-      ]),
+          UmTurnLeft.changeBeats(1.5).skew(-.5,0.0) +
+              Forward_2 +
+              RunLeft.changeBeats(2.5).skew(.5,0.0)
+        ]),
 
     AnimatedCall('Left Chase',
       formation:Formation('Couples Facing Out Far'),

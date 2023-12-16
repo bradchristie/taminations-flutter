@@ -28,10 +28,10 @@ import '../../moves.dart';
       formation:Formation('Two-Faced Line RH'),
       from:'Right-Hand Two-Faced Line',difficulty: 1,
       paths:[
-          RunRight.changeBeats(6).scale(2.0,2.0).skew(2.0,0.0),
+          RunRight.changeBeats(6).scale(2.0,2.0).skew(1.5,0.0),
 
           SwingRight.changeBeats(3.5) +
-          Forward_2.changeBeats(2.5)
+          Forward_1p5.changeBeats(2.5)
       ]),
 
     AnimatedCall('Crossfire',
@@ -39,9 +39,9 @@ import '../../moves.dart';
       from:'Left-Hand Two-Faced Line',difficulty: 2,
       paths:[
           SwingLeft.changeBeats(3.5) +
-          Forward_2.changeBeats(2.5),
+          Forward_1p5.changeBeats(2.5),
 
-          RunLeft.changeBeats(6).scale(2.0,2.0).skew(2.0,0.0)
+          RunLeft.changeBeats(6).scale(2.0,2.0).skew(1.5,0.0)
       ]),
 
     AnimatedCall('Crossfire',

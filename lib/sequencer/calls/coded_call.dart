@@ -290,7 +290,9 @@ import 'ms/three_quarters_tag.dart';
 import 'ms/turn_thru.dart';
 import 'ms/walk_and_dodge.dart';
 import 'plus/acey_deucey.dart';
+import 'plus/chase_right.dart';
 import 'plus/coordinate.dart';
+import 'plus/crossfire.dart';
 import 'plus/diamond_circulate.dart';
 import 'plus/double_scoot.dart';
 import 'plus/explode.dart';
@@ -356,6 +358,7 @@ abstract class CodedCall extends Call {
     'chaindowntheline'.ri: (name) => ChainDownTheLine(name),
     'chainreaction'.ri: (_) => ChainReaction(),
     'changethe(centers?|wave)'.ri: (name) => ChangeTheCenters(name),
+    'chaseright'.ri: (name) => ChaseRight(name),
     'checkpoint((.+)by(.*))?'.ri: (name) => Checkpoint(name),
     'chiselthru'.ri: (_) => ChiselThru(),
     'circleby((14|12|34|nothing)and(14|12|34|nothing))?'.ri: (name) => CircleBy(name),
@@ -374,6 +377,7 @@ abstract class CodedCall extends Call {
     '(left)?crossandwheel'.ri: (name) => CrossAndWheel(name),
     'crosschain(thru|androll)'.ri: (name) => CrossChainThru(name),
     'crossconcentric'.ri: (name) => CrossConcentric(name),
+    'crossfire'.ri: (name) => Crossfire(name),
     'crossfold'.ri: (_) => CrossFold(),
     'crossovercirculate'.ri: (_) => CrossOverCirculate(),
     'crossramble'.ri: (_) => CrossRamble(),
