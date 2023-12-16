@@ -29,10 +29,10 @@ import '../../moves.dart';
       from:'Right-Hand Wave',difficulty: 1,
       paths:[
           LeadRight.changeBeats(3).scale(1.5,2.0) +
-          ExtendRight.changeBeats(3).scale(3.0,0.5),
+          ExtendRight.changeBeats(3).scale(2.5,0.5),
 
           LeadLeft.changeBeats(3).scale(0.5,2.0) +
-          ExtendRight.changeBeats(3).scale(1.0,0.5)
+          ExtendRight.changeBeats(3).scale(0.5,0.5)
       ]),
 
     AnimatedCall('Explode the Wave',
@@ -40,10 +40,10 @@ import '../../moves.dart';
       from:'Left-Hand Wave',difficulty: 1,
       paths:[
           LeadRight.changeBeats(3).scale(1.5,2.0) +
-          ExtendRight.changeBeats(3).scale(1.0,0.5),
+          ExtendRight.changeBeats(3).scale(0.5,0.5),
 
           LeadLeft.changeBeats(3).scale(0.5,2.0) +
-          ExtendRight.changeBeats(3).scale(3.0,0.5)
+          ExtendRight.changeBeats(3).scale(2.5,0.5)
       ]),
 
     AnimatedCall('Explode the Wave',

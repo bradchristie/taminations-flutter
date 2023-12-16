@@ -34,8 +34,8 @@ class Touch extends Action {
       return ctx.dancerCannotPerform(d,name);
     var dist = d.distanceTo(d2);
     var move = name.contains('Left') ? ExtendRight : ExtendLeft;
-    //  Touch to handhold in between wide and narrow
-    return move.scale(dist/2,0.75);
+    //  Make sure there is room for any adjacent dancers to Touch
+    return move.scale(dist/2,0.5);
   }
 
   @override

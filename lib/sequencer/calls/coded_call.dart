@@ -18,6 +18,9 @@
 
 */
 
+import 'package:taminations/sequencer/calls/plus/explode_the_wave.dart';
+import 'package:taminations/sequencer/calls/plus/fan_the_top.dart';
+
 import 'common/select_location.dart';
 import '../../extensions.dart';
 import '../../normalize_call.dart';
@@ -394,12 +397,14 @@ abstract class CodedCall extends Call {
     '(then)?every(one|body)'.ri: (name) => Everyone(name),
     'except(the)?$specifier'.ri: (name) => Except(name),
     'explode'.ri: (_) => Explode(),
+    'explodethewave'.ri: (name) => ExplodeTheWave(name),
 
     'face(in|out|left|right|thecaller)'.ri: (name) => Face(name),
     'facing'.ri: (name) => FacingDancers(name),
     '(those|dancers)?facingin'.ri: (name) => FacingIn(name),
     '(those|dancers)?facingout'.ri: (name) => FacingOut(name),
     '(those|dancers)?facingthecaller'.ri: (name) => FacingTheCaller(name),
+    'fanthetop'.ri: (name) => FanTheTop(name),
     'fascinating.*'.ri: (name) => Fascinating(name),
     'finish.*'.ri: (name) => Finish(name),
     'first(1|2|3)'.ri : (name) => First(name),

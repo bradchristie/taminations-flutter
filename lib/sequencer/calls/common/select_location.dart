@@ -40,9 +40,14 @@ class SelectLocation extends FilterActives {
     var dnum = 4;
     if (norm.matches('.*\\d'.r))
       dnum = norm.last.i;
-    //  Sort the dancers by location and take that number
-    var dorder = ctx.dancers.sortedBy(selector).take(dnum);
-    return dorder.contains(d);
+    //  Sort the dancers by location
+    var dorder = ctx.dancers.sortedBy(selector);
+    //  Make sure the dancers to select is not ambiguous
+    var a = selector(dorder[dnum-1]);
+    var b = selector(dorder[dnum]);
+    if (a.isAbout(b))
+      throw CallError('Cannot find $name dancers');
+    return dorder.take(dnum).contains(d);
   }
 
 }
