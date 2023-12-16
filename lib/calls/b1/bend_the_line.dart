@@ -28,18 +28,18 @@ import '../../moves.dart';
       formation:Formation('Two-Faced Line RH'),
       from:'Right-Hand Two-Faced Line',difficulty: 1,
       paths:[
-          HingeRight.changeBeats(4),
+          HingeRight.changeBeats(4).skew(0, -.5),
 
-          BackHingeLeft.changeBeats(4)
+          BackHingeLeft.changeBeats(4).skew(0, -.5)
       ]),
 
     AnimatedCall('Bend the Line',
       formation:Formation('Two-Faced Line LH'),
       from:'Left-Hand Two-Faced Line',difficulty: 1,
       paths:[
-          BackHingeRight.changeBeats(4),
+          BackHingeRight.changeBeats(4).skew(0, .5),
 
-          HingeLeft.changeBeats(4)
+          HingeLeft.changeBeats(4).skew(0, -.5)
       ]),
 
     AnimatedCall('Bend the Line',

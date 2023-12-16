@@ -1309,9 +1309,9 @@ class CallContext {
 
   //  Return true if 8 dancers are in 2 general lines of 4 dancers each
   //  Also works for 4 dancers in 1 line
-  bool isLines() => dancers.every((d) =>
-      dancersToRight(d).length + dancersToLeft(d).length == 3
-  );
+  bool isInLine(DancerModel d) =>
+      dancersToRight(d).length + dancersToLeft(d).length == 3;
+  bool isLines() => dancers.every((d) => isInLine(d));
 
   bool isWaves() => dancers.every((d) {
     var dr = dancerToRight(d,minDistance: 2.0);

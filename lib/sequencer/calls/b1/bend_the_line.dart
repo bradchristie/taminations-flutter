@@ -32,16 +32,31 @@ class BendTheLine extends Action {
     if (!ctx.isInCouple(d) || !d.data.partner!.data.active)
       throw CallError('Only couples can Bend the Line' );
     var ys = d.distanceTo(d.data.partner!)/2.0;
-    if (d.data.beau) {
-      if (d.isCenterRight)
-        return HingeRight.scale(1.0,ys);
-      else if (d.isCenterLeft)
-        return BackHingeRight.scale(1.0,ys);
-    } else if (d.data.belle) {
-      if (d.isCenterRight)
-        return BackHingeLeft.scale(1.0,ys);
-      else if (d.isCenterLeft)
-        return HingeLeft.scale(1.0,ys);
+    var yk = ys - 0.5;
+    //  If in a line of 4, be sure to turn towards the center of the line
+    if (ctx.isInLine(d)) {
+      if (d.data.beau) {
+        return ctx.dancerToLeft(d) != null
+            ? BackHingeRight.scale(1.0, ys).skew(0, yk)
+            : HingeRight.scale(1.0, ys).skew(0, -yk);
+      } else if (d.data.belle) {
+        return ctx.dancerToRight(d) != null
+            ? BackHingeLeft.scale(1.0, ys).skew(0, -yk)
+            : HingeLeft.scale(1.0, ys).skew(0, yk);
+      }
+      //  Otherwise, turn towards the center of the set
+    } else {
+      if (d.data.beau) {
+        if (d.isCenterRight)
+          return HingeRight.scale(1.0, ys);
+        else if (d.isCenterLeft)
+          return BackHingeRight.scale(1.0, ys);
+      } else if (d.data.belle) {
+        if (d.isCenterRight)
+          return BackHingeLeft.scale(1.0, ys);
+        else if (d.isCenterLeft)
+          return HingeLeft.scale(1.0, ys);
+      }
     }
     throw CallError('Cannot figure out how to Bend the Line' );
   }
