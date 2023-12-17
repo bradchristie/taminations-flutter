@@ -66,7 +66,7 @@ class DoYourPart extends Action {
         final sexy = tam.isGenderSpecific;
         final ctx2 = CallContext.fromFormation(tam.formation);
         final mapping = dypctx.matchFormations(ctx2, sexy: sexy,
-            subformation: true, handholds: false, maxError: 2.9);
+            subformation: true, handholds: false, maxError: 2.9, delta: 0.3);
         if (mapping != null) {
           var matchResult = mapping.match;
           var totOffset = matchResult.offsets.fold<double>(0.0, (s, v) => s + v.length);

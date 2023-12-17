@@ -53,7 +53,7 @@ import '../../moves.dart';
 
     AnimatedCall('Hinge',
       formation:Formation('Wave LH'),
-      from:'Left-Hand Wave',difficulty: 1,
+      from:'Left-Hand Wave',difficulty: 1,notForSequencer: true,
       paths:[
           HingeLeft.changeBeats(2),
 

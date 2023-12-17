@@ -3864,6 +3864,16 @@ Veer Left
 Bend the Line
 Star Thru
 Square Thru 3
+Allemande Left''',''),
+
+  TestSequence('Asymmetric Bend the Line',
+'''Sides Pair Off
+Near Box Pass the Ocean Far Box Touch
+Boys Run
+Fan the Top
+Bend the Line
+Far Box Star Thru
+Slide Thru
 Allemande Left''','')
 
 ];

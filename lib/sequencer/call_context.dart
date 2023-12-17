@@ -165,7 +165,7 @@ class CallContext {
     if (f.asymmetric) {
       geometryType = Geometry.ASYMMETRIC;
       geometryCount = 1;
-      dancers = f.dancers.copy();
+      dancers = f.dancers.map((d) => d.clone()).toList();
     } else {
       var geometry = Geometry(geometryType);
       dancers = [for (var d in f.dancers) for (var g = 0; g < geometryType; g++)

@@ -524,6 +524,13 @@ class Formation {
       DancerModel.fromData(gender:Gender.GIRL,x:-2,y:-3,angle:0),
     ]),
 
+    Formation('Two-Faced Lines LH Compact', dancers:[
+      DancerModel.fromData(gender:Gender.GIRL,x:-1.5,y:3,angle:180),
+      DancerModel.fromData(gender:Gender.BOY,x:-1.5,y:1,angle:180),
+      DancerModel.fromData(gender:Gender.BOY,x:-1.5,y:-1,angle:0),
+      DancerModel.fromData(gender:Gender.GIRL,x:-1.5,y:-3,angle:0),
+    ]),
+
     Formation('Thar LH Boys', dancers:[
       DancerModel.fromData(gender:Gender.BOY,x:-1,y:0,angle:270),
       DancerModel.fromData(gender:Gender.GIRL,x:-3,y:0,angle:90),
