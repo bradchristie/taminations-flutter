@@ -129,7 +129,7 @@ import '../../moves.dart';
       formation:Formation('Ocean Waves RH BGGB'),
       from:'Ocean Waves',
       paths:[
-          FoldRight,
+          FoldRight.scale(.75, 1),
 
           Path(),
 
@@ -192,7 +192,7 @@ import '../../moves.dart';
       from:'Ocean Waves',
       paths:[
           LeadRight.scale(1.5,3.0) +
-          QuarterRight.skew(1.0,0.5),
+          QuarterRight.skew(1.0,0),
 
           Path(),
 
