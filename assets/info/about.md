@@ -29,12 +29,11 @@ This is free software, and you are welcome to modify and redistribute it
 under the terms of the [GNU GPL license](http://www.gnu.org/licenses/gpl.html).  
 
 ## What's New
-* Better animation and timing for Do Paso
+* Better animation for Fold and Cross Fold from waves
 * Sequencer changes:
-  - Enable keyboard suggestions
-  - Improvements for All 8 calls
-  - Fix for doing some calls 1 1/2 times
-  - Correctly mark Chase Your Neighbor as a C-1 call
+  - Add Sausage and Outrigger formations to Adjust command
+  - Select Near/Far/Left/Right groups of dancers for asymmetric choreography
+  - Fix for All 8 (anything) and Roll
   
 For a detailed history of changes, view the
 [Git log](https://github.com/bradchristie/taminations-flutter/commits/main)
