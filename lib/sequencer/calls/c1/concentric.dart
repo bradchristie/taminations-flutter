@@ -95,7 +95,9 @@ class Concentric extends Action {
       throw CallError('Concentric what?');
     if (ctx.actives.length == 8) {
       ctx.canDoYourPart = false;
-      ctx.applyCalls('Center 4 $realCall');
+      ctx.subContext(ctx.center(4),(centerCtx) {
+        centerCtx.applyCalls(realCall);
+      });
       ctx.checkCenters();
       ctx.contractPaths();
       ctx.applyCalls('Outer 4 $name');
