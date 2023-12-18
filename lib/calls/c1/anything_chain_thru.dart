@@ -62,8 +62,9 @@ import '../a2/diamond_chain_thru.dart' as a2;
 
           ExtendRight.changeBeats(2).scale(1.0,2.0)
       ]),
+
     a2.DiamondChainThru.where((tam) =>
-      tam.title == 'Diamond Chain Thru' && tam.from == 'Right-Hand Diamonds').first.xref(title: 'Diamond Chain Thru').xref(group: ' '),
+      tam.title == 'Diamond Chain Thru' && tam.from == 'Right-Hand Diamonds').first.xref(title: 'Diamond Chain Thru',group: ' ',notForSequencer: true),
 
     AnimatedCall('Inside Triangle Chain Thru',
       formation:Formation('Diamonds RH Girl Points'),
