@@ -533,31 +533,31 @@ import '../../moves.dart';
         DancerModel.fromData(gender:Gender.BOY,x:3,y:1,angle:270),
   ]),
       from:'Grand Circle',isGenderSpecific:true,
-      paths:[
+        paths:[
           PullLeft.scale(1.0,0.75) +
-          LeadLeft_12.changeBeats(3).changehands(Hands.LEFT).scale(3.0,3.0).skew(0.52,-1.2) +
-          LeadLeft_12.changeBeats(3).changehands(Hands.RIGHT).scale(2.0,2.0).skew(0.16,1.58) +
-          LeadLeft_12.changeBeats(3).changehands(Hands.LEFT).scale(3.0,3.0).skew(0.52,-1.2) +
-          LeadLeft_12.changeBeats(3).changehands(Hands.RIGHT).scale(2.0,2.0).skew(0.16,1.58),
+              LeadLeft_12.changeBeats(3).changehands(Hands.LEFT).scale(3.0,3.0).skew(0.52,-1.2) +
+              LeadLeft_12.changeBeats(3).changehands(Hands.RIGHT).scale(2.0,2.0).skew(0.16,1.58) +
+              LeadLeft_12.changeBeats(3).changehands(Hands.LEFT).scale(3.0,3.0).skew(0.52,-1.2) +
+              LeadLeft_12.changeBeats(3).changehands(Hands.RIGHT).scale(2.0,2.0).skew(-0.1,0.3),
 
           PullLeft.scale(1.0,0.75) +
-          LeadRight_12.changeBeats(3).changehands(Hands.LEFT).scale(2.0,2.0).skew(0.16,-1.67) +
-          LeadRight_12.changeBeats(3).changehands(Hands.RIGHT).scale(3.0,3.0).skew(0.52,1.3) +
-          LeadRight_12.changeBeats(3).changehands(Hands.LEFT).scale(2.0,2.0).skew(0.16,-1.67) +
-          LeadRight_12.changeBeats(3).changehands(Hands.RIGHT).scale(3.0,3.0).skew(0.52,1.3),
+              LeadRight_12.changeBeats(3).changehands(Hands.LEFT).scale(2.0,2.0).skew(0.16,-1.67) +
+              LeadRight_12.changeBeats(3).changehands(Hands.RIGHT).scale(3.0,3.0).skew(0.52,1.3) +
+              LeadRight_12.changeBeats(3).changehands(Hands.LEFT).scale(2.0,2.0).skew(0.16,-1.67) +
+              LeadRight_12.changeBeats(3).changehands(Hands.RIGHT).scale(2.0,2.0).skew(-0.1,1.2),
 
           PullLeft.scale(1.0,0.75) +
-          LeadLeft_12.changeBeats(3).changehands(Hands.LEFT).scale(3.0,3.0).skew(0.52,-1.2) +
-          LeadLeft_12.changeBeats(3).changehands(Hands.RIGHT).scale(2.0,2.0).skew(0.16,1.58) +
-          LeadLeft_12.changeBeats(3).changehands(Hands.LEFT).scale(3.0,3.0).skew(0.52,-1.2) +
-          LeadLeft_12.changeBeats(3).changehands(Hands.RIGHT).scale(2.0,2.0).skew(0.16,1.58),
+              LeadLeft_12.changeBeats(3).changehands(Hands.LEFT).scale(3.0,3.0).skew(0.52,-1.2) +
+              LeadLeft_12.changeBeats(3).changehands(Hands.RIGHT).scale(2.0,2.0).skew(0.16,1.58) +
+              LeadLeft_12.changeBeats(3).changehands(Hands.LEFT).scale(3.0,3.0).skew(0.52,-1.2) +
+              LeadLeft_12.changeBeats(3).changehands(Hands.RIGHT).scale(2.0,2.0).skew(-0.1,0.3),
 
           PullLeft.scale(1.0,0.75) +
-          LeadRight_12.changeBeats(3).changehands(Hands.LEFT).scale(2.0,2.0).skew(0.16,-1.67) +
-          LeadRight_12.changeBeats(3).changehands(Hands.RIGHT).scale(3.0,3.0).skew(0.52,1.3) +
-          LeadRight_12.changeBeats(3).changehands(Hands.LEFT).scale(2.0,2.0).skew(0.16,-1.67) +
-          LeadRight_12.changeBeats(3).changehands(Hands.RIGHT).scale(3.0,3.0).skew(0.52,1.3)
-      ]),
+              LeadRight_12.changeBeats(3).changehands(Hands.LEFT).scale(2.0,2.0).skew(0.16,-1.67) +
+              LeadRight_12.changeBeats(3).changehands(Hands.RIGHT).scale(3.0,3.0).skew(0.52,1.3) +
+              LeadRight_12.changeBeats(3).changehands(Hands.LEFT).scale(2.0,2.0).skew(0.16,-1.67) +
+              LeadRight_12.changeBeats(3).changehands(Hands.RIGHT).scale(2.0,2.0).skew(-0.1,1.2)
+        ]),
 
     AnimatedCall('Wrong Way Grand',
       formation:Formation('', dancers:[
