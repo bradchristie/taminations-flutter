@@ -25,16 +25,16 @@ import '../../moves.dart';
   final List<AnimatedCall> Cloverleaf = [
 
     AnimatedCall('Cloverleaf',
-      formation:Formation('Couples Facing Out'),
+      formation:Formation('Couples Facing Out Compact'),
       from:'Couples Facing Out',isExact:true,
       paths:[
-          LeadRight +
-          LeadRight +
-          LeadRight,
+          LeadRight.scale(.5,.5) +
+          LeadRight.scale(.5,.5) +
+          LeadRight.scale(.5,.5),
 
-          LeadLeft +
-          LeadLeft +
-          LeadLeft
+          LeadLeft.scale(.5,.5) +
+          LeadLeft.scale(.5,.5) +
+          LeadLeft.scale(.5,.5)
       ]),
 
     AnimatedCall('Cloverleaf',

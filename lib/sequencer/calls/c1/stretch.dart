@@ -49,7 +49,7 @@ class Stretch extends Action {
         error = e;
       }
     }
-    if (stretchctx.dancers.none((d) => d.isOnYAxis)) {
+    if (!found && stretchctx.dancers.none((d) => d.isOnYAxis)) {
       try {
         stretchctx.dancers.partition((d) => d.location.y < 0).forEach((xgroup) {
           var groupctx = CallContext.fromContext(stretchctx, dancers: xgroup, withCalls: true);
