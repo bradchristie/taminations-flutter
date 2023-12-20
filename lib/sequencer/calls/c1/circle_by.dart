@@ -18,13 +18,15 @@
 
 */
 
+import 'package:taminations/sequencer/calls/common/reverse.dart';
+
 import '../common.dart';
 
-class CircleBy extends Action with CallWithParts {
+class CircleBy extends Action with CallWithParts, IsReverse {
 
   @override final level = LevelData.C1;
   @override var numberOfParts = 2;
-  @override var help = 'Circle By (fraction) and (fraction or call)';
+  @override var help = '(Reverse) Circle By (fraction) and (fraction or call)';
   @override var helplink = 'c1/circle_by';
   late String frac1;
   late String frac2;
@@ -47,7 +49,7 @@ class CircleBy extends Action with CallWithParts {
     _setup();
     //  Do the first fraction
     if (frac1.matches('(14|12|34)'.r))
-      ctx.applyCalls('Circle Four Left $frac1');
+      ctx.applyCalls('Circle Four ${isReverse ? 'Right' : 'Left'} $frac1');
     else if (frac1 != 'Nothing')
       throw CallError('Circle by what?');
     //  Step to a Wave
@@ -55,7 +57,7 @@ class CircleBy extends Action with CallWithParts {
     final compact = (ctx.dancers.length == 8 && ctx.actives.length == 4)
         ? 'Compact'
         : '';
-    ctx.applyCalls('Step to a $compact Wave');
+    ctx.applyCalls('Step to a $compact ${isReverse ? 'Left-Hand' : ''} Wave');
   }
 
   @override
