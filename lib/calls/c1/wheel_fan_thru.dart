@@ -32,8 +32,7 @@ import '../../moves.dart';
           SwingRight.scale(0.707,0.707) +
           HalfHingeRight.changeBeats(2).skew(1.1,-0.8),
 
-          QuarterRight.changeBeats(3).skew(0.5,-0.5) +
-          Stand.changeBeats(4).changehands(0)
+          QuarterRight.changeBeats(3).skew(0.5,-0.5)
       ]),
 
     AnimatedCall('Wheel Fan Thru',
@@ -44,15 +43,13 @@ import '../../moves.dart';
           SwingRight.scale(0.5,0.5) +
           HalfHingeRight.changeBeats(2).skew(0.7,-0.3),
 
-          QuarterRight.changeBeats(3).skew(1.0,0.0) +
-          Stand.changeBeats(4).changehands(0),
+          QuarterRight.changeBeats(3).skew(1.0,0.0),
 
           HalfHingeRight.changeBeats(2).skew(1.6,-0.4) +
           SwingRight.scale(0.5,0.5) +
           HalfHingeRight.changeBeats(2).skew(0.7,-0.3),
 
-          QuarterRight.changeBeats(3).skew(1.0,0.0) +
-          Stand.changeBeats(4).changehands(0)
+          QuarterRight.changeBeats(3).skew(1.0,0.0)
       ]),
 
     AnimatedCall('Wheel Fan Thru',
@@ -125,8 +122,7 @@ import '../../moves.dart';
           SwingRight.scale(0.5,0.5) +
           HalfHingeRight.changeBeats(2).skew(0.7,-0.3),
 
-          QuarterRight.changeBeats(3).skew(2.0,0.0) +
-          Stand.changeBeats(4).changehands(0),
+          QuarterRight.changeBeats(3).skew(2.0,0.0),
 
           Path(),
 
@@ -145,16 +141,14 @@ import '../../moves.dart';
           SwingRight.scale(0.5,0.5) +
           HalfHingeRight.changeBeats(2).skew(0.7,-0.3),
 
-          QuarterRight.changeBeats(3).skew(2.0,0.0) +
-          Stand.changeBeats(4).changehands(0)
+          QuarterRight.changeBeats(3).skew(2.0,0.0)
       ]),
 
     AnimatedCall('Heads Left Wheel Fan Thru',
       formation:Formation('Static Square'),
       group:'  ',
       paths:[
-          QuarterLeft.changeBeats(3).skew(2.0,0.0) +
-          Stand.changeBeats(4).changehands(0),
+          QuarterLeft.changeBeats(3).skew(2.0,0.0),
 
           HalfHingeLeft.changeBeats(2).skew(2.6,0.4) +
           SwingLeft.scale(0.5,0.5) +
@@ -173,8 +167,7 @@ import '../../moves.dart';
 
           Path(),
 
-          QuarterLeft.changeBeats(3).skew(2.0,0.0) +
-          Stand.changeBeats(4).changehands(0),
+          QuarterLeft.changeBeats(3).skew(2.0,0.0),
 
           HalfHingeLeft.changeBeats(2).skew(2.6,0.4) +
           SwingLeft.scale(0.5,0.5) +
@@ -193,11 +186,9 @@ import '../../moves.dart';
           CastRight.scale(0.5,0.5) +
           ExtendLeft.changeBeats(2).changehands(Hands.LEFT).scale(2.0,0.5),
 
-          HingeRight.changeBeats(3) +
-          Stand.changeBeats(5.5).changehands(Hands.RIGHT),
+          HingeRight.changeBeats(3),
 
-          BackHingeLeft.changeBeats(3) +
-          Stand.changeBeats(5.5).changehands(Hands.LEFT)
+          BackHingeLeft.changeBeats(3)
       ]),
 
     AnimatedCall('All 8 Wheel Fan Thru',
@@ -225,15 +216,13 @@ import '../../moves.dart';
           SwingRight.scale(0.5,0.5) +
           HalfHingeRight.changeBeats(2).skew(1.05,-1.35),
 
-          QuarterRight +
-          Stand.changeBeats(5.5).changehands(0),
+          QuarterRight,
 
           HalfHingeRight.changeBeats(2).skew(1.1,-1.4) +
           SwingRight.scale(0.5,0.5) +
           HalfHingeRight.changeBeats(2).skew(1.75,-0.65),
 
-          QuarterRight +
-          Stand.changeBeats(5.5).changehands(0)
+          QuarterRight
       ]),
 
     AnimatedCall('"O" Wheel Fan Thru',
@@ -244,15 +233,13 @@ import '../../moves.dart';
           SwingRight.scale(0.5,0.5) +
           HalfHingeRight.changeBeats(2).skew(1.75,-0.65),
 
-          QuarterRight +
-          Stand.changeBeats(5.5).changehands(0),
+          QuarterRight,
 
           HalfHingeRight.changeBeats(2).skew(0.1,-1.4) +
           SwingRight.scale(0.5,0.5) +
           HalfHingeRight.changeBeats(2).skew(1.05,-1.35),
 
-          QuarterRight +
-          Stand.changeBeats(5.5).changehands(0)
+          QuarterRight
       ]),
 
     AnimatedCall('Stretch Wheel Fan Thru',
@@ -263,16 +250,14 @@ import '../../moves.dart';
           SwingRight.scale(0.5,0.5) +
           HalfHingeRight.changeBeats(2).skew(0.7,-0.3),
 
-          LeadRight.changeBeats(3).scale(1.0,2.0) +
-          Stand.changeBeats(4).changehands(0),
+          LeadRight.changeBeats(3).scale(1.0,2.0),
 
           HalfHingeRight.changeBeats(2).skew(1.6,-0.4) +
           SwingRight.scale(0.5,0.5) +
           HalfHingeRight.changeBeats(2).skew(0.0,-1.0) +
           ExtendLeft.changeBeats(3).scale(2.0,1.0),
 
-          QuarterRight.changeBeats(3).skew(1.0,0.0) +
-          Stand.changeBeats(4).changehands(0)
+          QuarterRight.changeBeats(3).skew(1.0,0.0)
       ]),
 
     AnimatedCall('Tandem Wheel Fan Thru',
@@ -308,18 +293,15 @@ import '../../moves.dart';
           SwingRight.scale(0.5,0.5) +
           HalfHingeRight.changeBeats(2).skew(0.7,-0.3),
 
-          QuarterRight.changeBeats(3).skew(1.0,0.0) +
-          Stand.changeBeats(4).changehands(0),
+          QuarterRight.changeBeats(3).skew(1.0,0.0),
 
           HalfHingeRight.changeBeats(2).skew(1.6,-0.4) +
           SwingRight.scale(0.5,0.5) +
           HalfHingeRight.changeBeats(2).skew(0.7,-0.3),
 
-          QuarterRight.changeBeats(3).skew(1.0,0.0) +
-          Stand.changeBeats(4).changehands(0),
+          QuarterRight.changeBeats(3).skew(1.0,0.0),
 
-          QuarterRight.changeBeats(3).skew(1.0,0.0) +
-          Stand.changeBeats(4).changehands(0),
+          QuarterRight.changeBeats(3).skew(1.0,0.0),
 
           HalfHingeRight.changeBeats(2).skew(1.6,-0.4) +
           SwingRight.scale(0.5,0.5) +
@@ -364,15 +346,13 @@ import '../../moves.dart';
       formation:Formation('Butterfly Chain Thru'),
       group:' ',
       paths:[
-          QuarterLeft +
-          Stand.changeBeats(5.5).changehands(0),
+          QuarterLeft,
 
           HalfHingeLeft.changeBeats(2).skew(0.1,1.4) +
           SwingLeft.scale(0.5,0.5) +
           HalfHingeLeft.changeBeats(2).skew(1.05,1.35),
 
-          QuarterLeft +
-          Stand.changeBeats(5.5).changehands(0),
+          QuarterLeft,
 
           HalfHingeLeft.changeBeats(2).skew(1.1,1.4) +
           SwingLeft.scale(0.5,0.5) +
@@ -383,15 +363,13 @@ import '../../moves.dart';
       formation:Formation('O Eight Chain Thru'),
       group:' ',
       paths:[
-          QuarterLeft +
-          Stand.changeBeats(5.5).changehands(0),
+          QuarterLeft,
 
           HalfHingeLeft.changeBeats(2).skew(1.1,1.4) +
           SwingLeft.scale(0.5,0.5) +
           HalfHingeLeft.changeBeats(2).skew(1.75,0.65),
 
-          QuarterLeft +
-          Stand.changeBeats(5.5).changehands(0),
+          QuarterLeft,
 
           HalfHingeLeft.changeBeats(2).skew(0.1,1.4) +
           SwingLeft.scale(0.5,0.5) +
@@ -402,16 +380,14 @@ import '../../moves.dart';
       formation:Formation('Normal Lines'),
       group:' ',
       paths:[
-          QuarterLeft.changeBeats(3).skew(1.0,0.0) +
-          Stand.changeBeats(4).changehands(0),
+          QuarterLeft.changeBeats(3).skew(1.0,0.0),
 
           HalfHingeLeft.changeBeats(2).skew(1.6,0.4) +
           SwingLeft.scale(0.5,0.5) +
           HalfHingeLeft.changeBeats(2).skew(0.0,1.0) +
           ExtendRight.changeBeats(3).scale(2.0,1.0),
 
-          LeadLeft.changeBeats(3).scale(1.0,2.0) +
-          Stand.changeBeats(4).changehands(0),
+          LeadLeft.changeBeats(3).scale(1.0,2.0),
 
           HalfHingeLeft.changeBeats(2).skew(1.6,0.4) +
           SwingLeft.scale(0.5,0.5) +
@@ -447,15 +423,13 @@ import '../../moves.dart';
       formation:Formation('Phantom Lines In'),
       group:' ',
       paths:[
-          QuarterLeft.changeBeats(3).skew(1.0,0.0) +
-          Stand.changeBeats(4).changehands(0),
+          QuarterLeft.changeBeats(3).skew(1.0,0.0),
 
           HalfHingeLeft.changeBeats(2).skew(1.6,0.4) +
           SwingLeft.scale(0.5,0.5) +
           HalfHingeLeft.changeBeats(2).skew(0.7,0.3),
 
-          QuarterLeft.changeBeats(3).skew(1.0,0.0) +
-          Stand.changeBeats(4).changehands(0),
+          QuarterLeft.changeBeats(3).skew(1.0,0.0),
 
           HalfHingeLeft.changeBeats(2).skew(1.6,0.4) +
           SwingLeft.scale(0.5,0.5) +
@@ -465,8 +439,7 @@ import '../../moves.dart';
           SwingLeft.scale(0.5,0.5) +
           HalfHingeLeft.changeBeats(2).skew(0.7,0.3),
 
-          QuarterLeft.changeBeats(3).skew(1.0,0.0) +
-          Stand.changeBeats(4).changehands(0)
+          QuarterLeft.changeBeats(3).skew(1.0,0.0)
       ]),
   ];
 
