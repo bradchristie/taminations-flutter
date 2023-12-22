@@ -27,6 +27,7 @@ import '../../moves.dart';
     AnimatedCall('Bend the Line',
       formation:Formation('Two-Faced Line RH'),
       from:'Right-Hand Two-Faced Line',difficulty: 1,
+      notForSequencer: true,
       paths:[
           HingeRight.changeBeats(4).skew(0, -.5),
 
@@ -36,10 +37,11 @@ import '../../moves.dart';
     AnimatedCall('Bend the Line',
       formation:Formation('Two-Faced Line LH'),
       from:'Left-Hand Two-Faced Line',difficulty: 1,
+      notForSequencer: true,
       paths:[
           BackHingeRight.changeBeats(4).skew(0, .5),
 
-          HingeLeft.changeBeats(4).skew(0, -.5)
+          HingeLeft.changeBeats(4).skew(0, .5)
       ]),
 
     AnimatedCall('Bend the Line',
