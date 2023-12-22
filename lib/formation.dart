@@ -1721,8 +1721,6 @@ class Formation {
       DancerModel.fromData(gender:Gender.GIRL,x:1,y:-1,angle:270),
     ]),
 
-
-
   ];
 
   static final formationIndex = <String,Formation>{};
@@ -1733,10 +1731,10 @@ class Formation {
     '.*thar'.ri : Formation('Thar RH Boys'),
     '.*square(d)?(set)?'.ri : Formation('Squared Set'),
     '.*boxes'.ri : Formation('Eight Chain Thru'),
-    '.*columns?'.ri : Formation('Eight Chain Thru'),
+    '.*columns?'.ri : Formation('Column RH GBGB'),
     '.*(1|3)4tag'.ri : Formation('Quarter Tag'),
     '.*diamonds?'.ri : Formation('Diamonds RH Girl Points'),
-    '.*tidal(wave|line)?'.ri : Formation('Tidal Line RH'),
+    '.*tidal(wave|line)?'.ri : Formation('Tidal Wave RH BGGB'),
     '.*hourglass'.ri : Formation('Hourglass RH BP'),
     '.*galaxy'.ri : Formation('Galaxy RH GP'),
     '.*butterfly'.ri : Formation('Butterfly RH'),
