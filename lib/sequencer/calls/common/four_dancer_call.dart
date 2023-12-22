@@ -42,7 +42,8 @@ abstract class FourDancerCall extends ActivesOnlyAction {
         }
       }
     } else
-      throw FormationNotFoundError(name);
+      super.perform(ctx);
+      //throw FormationNotFoundError(name);
   }
 
 }

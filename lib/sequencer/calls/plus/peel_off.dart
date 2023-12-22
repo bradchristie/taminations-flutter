@@ -22,7 +22,7 @@ import 'package:taminations/moves.dart';
 
 import '../common.dart';
 
-class PeelOff extends ActivesOnlyAction {
+class PeelOff extends FourDancerCall {
 
   @override var level = LevelData.PLUS;
   PeelOff(String name) : super(name);
@@ -53,6 +53,5 @@ class PeelOff extends ActivesOnlyAction {
     }
     throw CallError('Dancer $d cannot Peel Off');
   }
-
 
 }

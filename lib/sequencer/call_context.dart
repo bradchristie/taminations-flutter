@@ -658,9 +658,10 @@ class CallContext {
           var matchAngle = matchResult.transform.angle.angleOff90;
           var matchAngleDiff1 = angleOff90.angleDiff(ctx2.angleOff90).angleDiff(matchAngle);
           var matchAngleDiff2 = angleOff90.angleDiff(ctx2.angleOff90).angleDiff(-matchAngle);
-          var angleOK = matchAngle.isAround(0.0,delta:0.2) ||
-              matchAngleDiff1.isAround(0.0,delta:0.2) ||
-              matchAngleDiff2.isAround(0.0,delta:0.2);
+          //print('$matchAngle  $matchAngleDiff1  $matchAngleDiff2');
+          var angleOK = matchAngle.isAround(0.0,delta:0.15) ||
+              matchAngleDiff1.isAround(0.0,delta:0.15) ||
+              matchAngleDiff2.isAround(0.0,delta:0.15);
           if (maxOffset.length < maxError && angleOK) {
             var totOffset = matchResult.offsets.fold<double>(0.0, (s, v) => s + v.length);
             if (bestMapping == null || totOffset < bestMapping.totalOffset)

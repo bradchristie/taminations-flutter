@@ -106,6 +106,7 @@ class XMLCall extends Call {
     //  or punted to a coded call
     found = matchAnimatedCall(ctxwork);
     if (found) {
+      DebugSwitch.perform.log('Applying ${xcall.title} from ${xcall.from}');
       if (['Allemande Left',
         'Dixie Grand',
         'Right and Left Grand'].contains(name)) {
@@ -158,7 +159,7 @@ class XMLCall extends Call {
     }
 
     ctxwork.animate(endbeat);
-    var matchResult = ctxwork.computeFormationOffsets(ctx2, xmlmap, delta: 0.05);
+    var matchResult = ctxwork.computeFormationOffsets(ctx2, xmlmap, delta: 0.2);
     ctxwork.adjustToFormationMatch(matchResult,adjustFirstMovement: true);
     ctxwork.animateToEnd();
 

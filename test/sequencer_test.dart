@@ -243,8 +243,8 @@ Allemande Left''',''),
 Extend
 Girls Cross Fold
 Boys Trade and Roll and Roll
+Adjust to Columns
 Peel Off
-Adjust to Lines
 Boys Cross Fold
 Peel and Trail
 Spin the Top
@@ -347,7 +347,6 @@ Trail Off
 Boys Run
 Girls Fold
 Peel Off
-Adjust to Tidal Line
 Crossfire
 In-Roll Circulate
 Girls Run
