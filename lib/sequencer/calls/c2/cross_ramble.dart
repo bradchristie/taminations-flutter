@@ -32,8 +32,9 @@ class CrossRamble extends Action with CallWithParts {
 
   @override
    void performPart1(CallContext ctx) {
+
     ctx.applyCalls('Outer 4 Cross Cast Back '
-        'While Others Pass Thru and Trade');
+        'While Others Step Thru and Trade');
   }
 
   @override

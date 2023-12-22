@@ -3873,6 +3873,14 @@ Fan the Top
 Bend the Line
 Far Box Star Thru
 Slide Thru
+Allemande Left''',''),
+
+  TestSequence('Cross Ramble',
+'''Heads Pass the Sea
+Extend
+Extend
+Cross Ramble
+Centers Pass Thru
 Allemande Left''','')
 
 ];
