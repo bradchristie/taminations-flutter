@@ -23,7 +23,7 @@ import '../common.dart';
 //  This is a class for 4-dancer calls that don't have specific code
 //  to deal with asymmetric formations.
 //  Classes that inherit from this will generally not have their
-//  own methods for performing calls.
+//  own methods for performing calls with 8 dancers.
 //  The formation is split and the call performed on each side.
 abstract class FourDancerCall extends ActivesOnlyAction {
 
@@ -43,7 +43,11 @@ abstract class FourDancerCall extends ActivesOnlyAction {
       }
     } else
       super.perform(ctx);
-      //throw FormationNotFoundError(name);
+  }
+
+  @override
+  Path performOne(DancerModel d, CallContext ctx) {
+    throw FormationNotFoundError(name);
   }
 
 }

@@ -26,26 +26,48 @@ import '../../moves.dart';
 
     AnimatedCall('Weave',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:1,y:2,angle:270),
-        DancerModel.fromData(gender:Gender.GIRL,x:-1,y:2,angle:90),
+        DancerModel.fromData(gender:Gender.BOY,x:1,y:1.5,angle:270),
+        DancerModel.fromData(gender:Gender.GIRL,x:-1,y:1.5,angle:90),
   ]),
       from:'Right-Hand Box',
       paths:[
-          ExtendRight.changeBeats(2).scale(2.0,1.5) +
+          ExtendRight.changeBeats(2).scale(1.5,1.5) +
           HingeLeft.scale(1.0,0.5),
 
-          LeadRight
+          LeadRight.scale(1.5, 1)
       ]),
 
     AnimatedCall('Weave',
-      formation:Formation('Box LH'),
+      formation:Formation('Box LH Compact'),
       from:'Left-Hand Box',
       paths:[
-          LeadLeft,
+          LeadLeft.scale(1.5, 1),
 
-          ExtendLeft.changeBeats(2).scale(2.0,1.5) +
+          ExtendLeft.changeBeats(2).scale(1.5,1.5) +
           HingeRight.scale(1.0,0.5)
       ]),
+
+    AnimatedCall('Weave', formation: Formation('',dancers:[
+      DancerModel.fromData(gender:Gender.BOY,x:1,y:1,angle:0),
+      DancerModel.fromData(gender:Gender.GIRL,x:-1,y:1,angle:270),
+    ]),
+        from: 'T-Bone 1',
+        paths: [
+          LeadRight.scale(1.5, 1),
+          ExtendLeft.changeBeats(2).scale(1,1.5) +
+              HingeRight.scale(1.0,0.5)
+        ]),
+
+    AnimatedCall('Weave', formation: Formation('',dancers:[
+      DancerModel.fromData(gender:Gender.BOY,x:1,y:1,angle:90),
+      DancerModel.fromData(gender:Gender.GIRL,x:-1,y:1,angle:0),
+    ]),
+        from: 'T-Bone 2',
+        paths: [
+          LeadLeft.scale(1.5, 1),
+          ExtendRight.changeBeats(2).scale(1,1.5) +
+              HingeLeft.scale(1.0,0.5)
+        ]),
 
     AnimatedCall('Weave',
       formation:Formation('', dancers:[
@@ -140,6 +162,37 @@ import '../../moves.dart';
           Forward +
           LeadRight
       ]),
+
+    AnimatedCall('Weave',
+        formation: Formation('T-Bone URUR'),
+        from: 'T-Bones 1',
+        paths: [
+          ExtendRight.changeBeats(2) +
+              HingeLeft.scale(1.0,0.5),
+
+          LeadLeft.scale(.5, 1),
+
+          ExtendRight.changeBeats(2).scale(1,2) +
+              HingeLeft.scale(1.0,0.5),
+
+          LeadLeft.scale(1.5, 1),
+    ]),
+
+    AnimatedCall('Weave',
+        formation: Formation('T-Bone LULU'),
+        from: 'T-Bones 2',
+        paths: [
+          LeadRight.scale(1.5, 1),
+
+          ExtendLeft.changeBeats(2).scale(1,2) +
+              HingeRight.scale(1.0,0.5),
+
+          LeadRight.scale(.5, 1),
+
+          ExtendLeft.changeBeats(2) +
+              HingeRight.scale(1.0,0.5)
+        ]),
+
 
     AnimatedCall('As Couples Weave',
       formation:Formation('Two-Faced Lines RH'),

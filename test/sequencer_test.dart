@@ -3881,6 +3881,19 @@ Extend
 Extend
 Cross Ramble
 Centers Pass Thru
-Allemande Left''','')
+Allemande Left''',''),
+
+  TestSequence('Scoot and Weave from T-Bones',
+'''Heads Wheel Thru
+Boys Do Your Part Wheel Thru
+Scoot and Weave
+Flip the Diamond
+Recycle
+Touch 1/4 Girls Roll
+Scoot and Weave
+Cut the Diamond
+Cast Off 3/4
+Partner Tag
+Allemande Left''', '')
 
 ];

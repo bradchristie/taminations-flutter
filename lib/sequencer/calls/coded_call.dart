@@ -18,9 +18,8 @@
 
 */
 
-import 'package:taminations/sequencer/calls/plus/explode_the_wave.dart';
-import 'package:taminations/sequencer/calls/plus/fan_the_top.dart';
 
+import 'c1/weave.dart';
 import 'common/select_location.dart';
 import '../../extensions.dart';
 import '../../normalize_call.dart';
@@ -282,6 +281,7 @@ import 'ms/half_tag.dart';
 import 'ms/hinge.dart';
 import 'ms/pass_to_the_center.dart';
 import 'ms/quarter_tag.dart';
+import 'ms/scoot_back.dart';
 import 'ms/slide_thru.dart';
 import 'ms/spin_chain_thru.dart';
 import 'ms/spin_the_top.dart';
@@ -296,6 +296,8 @@ import 'plus/crossfire.dart';
 import 'plus/diamond_circulate.dart';
 import 'plus/double_scoot.dart';
 import 'plus/explode.dart';
+import 'plus/explode_the_wave.dart';
+import 'plus/fan_the_top.dart';
 import 'plus/linear_cycle.dart';
 import 'plus/load_the_boat.dart';
 import 'plus/peel_off.dart';
@@ -529,6 +531,7 @@ abstract class CodedCall extends Call {
     'scootandplenty'.ri: (name) => ScootAndPlenty(name),
     'scootandramble'.ri: (name) => ScootAndRamble(name),
     'scootandweave'.ri: (name) => ScootAndWeave(name),
+    'scootback'.ri: (name) => ScootBack(name),
     //  Accept Scoot Chain Thru Centers so user can say e.g.
     //  Centers Skip the 3rd Part
     '(scatter)?scootchainthru(center)?'.ri: (name) => ScootChainThru(name),
@@ -652,6 +655,7 @@ abstract class CodedCall extends Call {
         (name) => WalkAndDodge(name),
     'waveof6'.ri: (name) => WaveOfSix(name),
     '(dancersin)?waves?(dancers)?'.ri: (name) => Waves(name),
+    'weave'.ri: (name) => Weave(name),
     'wheeland(?!deal)'.ri: (name) => WheelAnd(name),
      'wheelaround'.ri: (name) => WheelAround(name),
     '(reverse)?(14|34)?(reverse)?wheelthe(ocean|sea)'.ri: (name) => WheelTheOcean(name),
