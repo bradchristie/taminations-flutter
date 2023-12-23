@@ -37,6 +37,7 @@ class SqueezeTheGalaxy extends Action {
     ctx.dancers[mm.map[2]].data.active = false;
     ctx.dancers[mm.map[3]].data.active = false;
     ctx.applyCalls('Squeeze');
+    ctx.adjustToFormation(Formation('Hourglass RH BP'));
   }
 
 }
