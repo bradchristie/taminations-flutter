@@ -35,7 +35,7 @@ class AllEight extends Action {
 
   @override
   void perform(CallContext ctx) {
-    if (ctx.isThar()) {
+    if (ctx.isThar(tandemsOK: true)) {
       final xDancers = ctx.dancers.where((d) => d.isOnXAxis).toList();
       final yDancers = ctx.dancers.where((d) => d.isOnYAxis).toList();
       final saveStack = ctx.callstack.copy();

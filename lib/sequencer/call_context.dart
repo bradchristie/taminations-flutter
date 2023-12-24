@@ -1358,7 +1358,7 @@ class CallContext {
   bool isOnAxis() => isOnXAxis() || isOnYAxis();
 
   //  Dancers in any kind of thar
-  bool isThar() => isLines() &&
+  bool isThar({bool tandemsOK=false}) => (tandemsOK || isLines()) &&
       dancers.where((d) => d.isOnXAxis).length == 4 &&
       dancers.where((d) => d.isOnYAxis).length == 4;
 
