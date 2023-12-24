@@ -1481,6 +1481,20 @@ class CallContext {
     }
   }
 
+  //  For calls where the Facing Couples Rule applies.
+  //  This puts the appropriate facing dancers into waves.
+  void applyFacingCouplesRule() {
+    if (dancers.where((d) => !isInWave(d)).isNotEmpty) {
+      try {
+        if (dancers.where((d) => isInWave(d)).isEmpty)
+          applyCalls('Facing Dancers Step to a Wave');
+        else
+          applyCalls('Wave Dancers Nothing While Others Facing Dancers Step to a Wave');
+      } on CallError catch(_) { }
+      analyze();
+    }
+  }
+
   //  Move a dancer to a specific position (location and angle)
   //  Location and angle are in the dance floor space
   Path moveToPosition(DancerModel d, Vector location, double angle) {

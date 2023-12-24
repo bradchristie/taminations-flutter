@@ -34,6 +34,7 @@ class AlterTheWave extends Action with CallWithParts, CallWithStars {
 
   @override
    void performPart1(CallContext ctx) {
+    ctx.applyFacingCouplesRule();
     ctx.applyCalls('Swing');
   }
 
