@@ -87,13 +87,26 @@ import '../../moves.dart';
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:1,angle:270),
         DancerModel.fromData(gender:Gender.GIRL,x:1,y:1,angle:0),
   ]),
-      from:'Single T-Bone',
+      from:'Single T-Bone 1',
       paths:[
           Forward +
           HingeLeft,
 
           LeadRight.changeBeats(2).scale(2.0,1.0)
       ]),
+
+    AnimatedCall('Follow Thru',
+        formation:Formation('', dancers:[
+          DancerModel.fromData(gender:Gender.BOY,x:-1,y:1,angle:0),
+          DancerModel.fromData(gender:Gender.GIRL,x:1,y:1,angle:90),
+        ]),
+        from:'Single T-Bone 2',
+        paths:[
+          Forward +
+              HingeRight,
+
+          LeadLeft.changeBeats(2).scale(2.0,1.0)
+        ]),
 
     AnimatedCall('Follow Thru',
       formation:Formation('Ocean Waves RH BGBG'),

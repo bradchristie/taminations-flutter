@@ -19,6 +19,7 @@
 */
 
 
+import 'c1/follow_thru.dart';
 import 'c1/weave.dart';
 import 'common/select_location.dart';
 import '../../extensions.dart';
@@ -418,6 +419,7 @@ abstract class CodedCall extends Call {
     'flipback'.ri: (_) => FlipBack(),
     'flipyour(criss)?(cross)?neighbor'.ri: (name) => FlipYourNeighbor(name),
     'fold'.ri: (_) => Fold(),
+    'followthru'.ri: (name) => FollowThru(name),
     '\\d\\d'.ri: (name) => Fraction(name),
 
     'girl|ladies|lady'.ri: (_) => Girls(),
