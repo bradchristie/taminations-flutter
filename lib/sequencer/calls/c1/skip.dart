@@ -23,7 +23,8 @@ class Skip extends Action {
 
   @override final level = LevelData.C1;
   @override var help = 'You can skip any one part of a Call with Parts '
-      'with Skip the nth Part';
+      'with Skip the nth Part.\n'
+  'Also accepted is Skip the Last <n> Parts.';
   @override var helplink = 'c1/replace';
   Skip(String name) : super(name);
 
@@ -35,11 +36,18 @@ class Skip extends Action {
         throw CallError('Unable to find $callName as a Call with Parts');
       if (ctx2.callstack.last is CallWithParts) {
         final call = ctx2.callstack.last as CallWithParts;
-        final partName = name.replaceFirst('.*(skip|delete)( the)?'.ri,'').trim();
-        final partNumber = CallWithParts.partNumberFromCall(call,partName);
-        if (partNumber == 0)
-          throw CallError('Unable to figure out what to Skip');
-        call.replacePart[partNumber] = (ctx) { };
+        var matchN = 'last(\\d)part'.ri.firstMatch(norm);
+        if (matchN != null) {
+          var n = matchN.group(1)!.i;
+          for (var i=0; i<n; i++)
+            call.replacePart[call.numberOfParts-i] = (ctx) { };
+        } else {
+          final partName = name.replaceFirst('.*(skip|delete)( the)?'.ri, '').trim();
+          final partNumber = CallWithParts.partNumberFromCall(call, partName);
+          if (partNumber == 0)
+            throw CallError('Unable to figure out what to Skip');
+          call.replacePart[partNumber] = (ctx) {};
+        }
       }
       else
         throw CallError('Can only Skip in a call with Parts');
