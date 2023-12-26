@@ -3894,6 +3894,23 @@ Scoot and Weave
 Cut the Diamond
 Cast Off 3/4
 Partner Tag
+Allemande Left''', ''),
+
+  TestSequence('Vertical',
+'''Heads Lead Right
+Pass Thru
+Left Vertical Reverse Dixie Style to a Wave
+Grand Swing Thru
+Boys Run
+Crossfire
+Vertical Checkmate
+Vertical Trail Off
+Vertical 1/4 Out
+Vertical Triple Star Thru
+Vertical Peel and Trail
+Wheel and Deal
+Zoom
+Centers Cross Trail Thru
 Allemande Left''', '')
 
 ];

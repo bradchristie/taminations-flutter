@@ -21,6 +21,7 @@
 
 import 'c1/follow_thru.dart';
 import 'c1/weave.dart';
+import 'c2/vertical.dart';
 import 'common/select_location.dart';
 import '../../extensions.dart';
 import '../../normalize_call.dart';
@@ -646,6 +647,7 @@ abstract class CodedCall extends Call {
     '(go)?twice'.ri: (name) => Twice(name),
     'twist(theline|and.+)'.ri: (name) => TwistAnything(name),
 
+    'vertical'.ri: (name) => Vertical(name),
     '(left)?vertical(left)?(14|12|34)?tag'.ri: (name) => VerticalTag(name),
     '(left)?verticaltagback(toawave)?'.ri: (name) => VerticalTagBack(name),
     'verycenter'.ri: (name) => VeryCenters(name),
