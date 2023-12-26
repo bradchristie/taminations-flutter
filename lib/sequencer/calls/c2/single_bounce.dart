@@ -38,6 +38,7 @@ class SingleBounce extends ActivesOnlyAction with CallWithParts {
     if (who.isBlank)
       throw CallError('Bounce who?');
     final whoctx = CallContext.fromContext(ctx,dancers:ctx.actives);
+    whoctx.analyze();
     if (!who.matches('No\\s*(body|one)'.ri))
       whoctx.applySpecifier(who);
     beaudancers = whoctx.actives.where((d) => d.data.beau).toList();

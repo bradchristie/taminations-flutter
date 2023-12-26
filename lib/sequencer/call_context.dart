@@ -334,9 +334,14 @@ class CallContext {
       throw CallError('$calltext does nothing.');
   }
 
-  void applySpecifier(String calltext) {
-    interpretCall(calltext,noAction: true);
-    performCall();
+  void applySpecifier(String calltext,{bool negate=false}) {
+    var ctx2 = CallContext.fromContext(this);
+    ctx2.interpretCall(calltext,noAction: true);
+    ctx2.performCall();
+    for (var d in actives) {
+      if (ctx2.inActives.contains(d) ^ negate)
+        d.data.active = false;
+    }
   }
 
   void _applyCall(String call) {

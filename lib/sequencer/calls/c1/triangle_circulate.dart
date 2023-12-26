@@ -137,10 +137,11 @@ You do not need to use one of these if the triangles are unambiguous (as in a sa
   void perform(CallContext ctx) {
     final triangleType = name.replaceFirst(rootName, '');
     //  Find the 6 dancers to circulate
-    var specCtx = CallContext.fromContext(ctx);
-    specCtx.applySpecifier('$triangleType Triangle');
-    for (var d in ctx.dancers)
-      d.data.active = specCtx.actives.contains(d);
+    ctx.applySpecifier('$triangleType Triangle');
+    //var specCtx = CallContext.fromContext(ctx);
+    //specCtx.applySpecifier('$triangleType Triangle');
+    //for (var d in ctx.dancers)
+    //  d.data.active = specCtx.actives.contains(d);
     if (ctx.actives.length != 6) {
       if (triangleType.isBlank)
         throw CallError('You need to identify the triangle');
