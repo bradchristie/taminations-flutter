@@ -81,7 +81,7 @@ class DanceModel extends fm.ChangeNotifier {
     Color.BLACK,
     Color.BLUE,
     Color.CYAN,
-    Color.GRAY,
+    //  Color.GRAY,  reserved for phantoms only
     Color.GREEN,
     Color.MAGENTA,
     Color.ORANGE,
@@ -148,6 +148,8 @@ class DanceModel extends fm.ChangeNotifier {
     if (value != _randomColors) {
       _randomColors = value;
       _randomColorList.shuffle();
+    }
+    if (value) {
       for (var i=0; i<dancers.length; i++) {
         final d = dancers[i];
         d.showColor = true;

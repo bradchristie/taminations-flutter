@@ -108,6 +108,9 @@ class SequencerModel extends fm.ChangeNotifier {
     }
     else if (command.matches('color random'.r)) {
       settings.showDancerColors = 'Random';
+      //  Force dance model to re-shuffle colors
+      animation.setRandomColors(false);
+      animation.setRandomColors(true);
     }
     else if (command.matches('color on'.r)) {
       settings.showDancerColors = 'By Couple';
@@ -366,7 +369,7 @@ class SequencerModel extends fm.ChangeNotifier {
       //  But not if just one XML call, as it knows how it should end
       final firstCall = cctx.callstack.first;
       cctx.animateToEnd();
-      if (cctx.callstack.length > 0 ||
+      if (cctx.callstack.isNotEmpty ||
           firstCall is CodedCall ||
           (firstCall is XMLCall && !firstCall.found)) {
         if (!DebugSwitch.nosnap.enabled)
