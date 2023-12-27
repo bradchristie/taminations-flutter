@@ -170,10 +170,15 @@ class _SequencerEditLineState extends fm.State<SequencerEditLine> {
             SpeechToTextProvider,
             VirtualKeyboardVisible>(
     builder: (context, model, abbreviations, speech, virtualKeyboard, child) {
+      later(() {
+        later((){
+          focusNode.requestFocus();
+        });
+      });
+
       //  If doing voice input, show errors in the snack bar
       //  because the error text of the EditText is not visible
       if (_isVoiceCall && model.errorString.isNotBlank && model.errorString != _lastError) {
-        //print('Error: ${model.errorString}');
         _lastError = model.errorString;
         model.errorString = '';
         later(() {
