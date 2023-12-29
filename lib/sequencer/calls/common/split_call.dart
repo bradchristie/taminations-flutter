@@ -20,23 +20,24 @@
 
 import '../common.dart';
 
-//  This is a class for 4-dancer calls that don't have specific code
+//  This is a class for 3- or  4-dancer calls that don't have specific code
 //  to deal with asymmetric formations.
 //  Classes that inherit from this will generally not have their
-//  own methods for performing calls with 8 dancers.
+//  own methods for performing calls with 6 or 8 dancers.
 //  The formation is split and the call performed on each side.
-abstract class FourDancerCall extends ActivesOnlyAction {
+abstract class SplitCall extends ActivesOnlyAction {
 
-  FourDancerCall(super.name);
+  SplitCall(super.name);
 
   @override
   void perform(CallContext ctx) {
-    if (ctx.dancers.length == 8) {
+    var splitAmount = ctx.dancers.length ~/ 2;
+    if (ctx.dancers.length > 4) {
       try {
-        ctx.applyCalls('Near 4 $name While Far 4 $name');
+        ctx.applyCalls('Near $splitAmount $name While Far $splitAmount $name');
       } on CallError {
         try {
-          ctx.applyCalls('Left 4 $name While Right 4 $name');
+          ctx.applyCalls('Left $splitAmount $name While Right $splitAmount $name');
         } on CallError {
           throw FormationNotFoundError(name);
         }

@@ -20,7 +20,7 @@
 
 import '../common.dart';
 
-class ChaseRight extends FourDancerCall {
+class ChaseRight extends SplitCall {
 
   @override var level = LevelData.PLUS;
 

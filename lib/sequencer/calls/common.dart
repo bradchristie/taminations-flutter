@@ -27,7 +27,7 @@ export 'common/actives_only_action.dart';
 export 'common/actives_with_partners_action.dart';
 export 'common/call_with_parts.dart';
 export 'common/fliter_actives.dart';
-export 'common/four_dancer_call.dart';
+export 'common/split_call.dart';
 export 'common/four_dancer_concept.dart';
 export 'common/modified_formation_concept.dart';
 export 'common/turn_the_star.dart';

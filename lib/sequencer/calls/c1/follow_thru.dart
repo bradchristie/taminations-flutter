@@ -20,7 +20,7 @@
 
 import '../common.dart';
 
-class FollowThru extends FourDancerCall {
+class FollowThru extends SplitCall {
 
   @override var level = LevelData.C1;
   FollowThru(super.name);

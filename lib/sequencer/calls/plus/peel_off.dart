@@ -22,7 +22,7 @@ import 'package:taminations/moves.dart';
 
 import '../common.dart';
 
-class PeelOff extends FourDancerCall {
+class PeelOff extends SplitCall {
 
   @override var level = LevelData.PLUS;
   PeelOff(String name) : super(name);

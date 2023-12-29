@@ -20,7 +20,7 @@
 
 import '../common.dart';
 
-class ExplodeTheWave extends FourDancerCall {
+class ExplodeTheWave extends SplitCall {
 
   @override var level = LevelData.PLUS;
 
