@@ -21,7 +21,7 @@
 import '../../../moves.dart';
 import '../common.dart';
 
-class Balance extends ActivesOnlyAction {
+class Balance extends Action with ActivesOnly {
 
   @override var level = LevelData.B2;
   @override var help = 'Move slightly forward and back.  Dancers must be in waves.';

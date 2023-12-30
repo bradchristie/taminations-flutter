@@ -20,7 +20,7 @@
 
 import '../common.dart';
 
-class BraceThru extends ActivesOnlyAction with CallWithParts {
+class BraceThru extends Action with ActivesOnly, CallWithParts {
 
   @override final level = LevelData.A1;
   @override int numberOfParts = 2;

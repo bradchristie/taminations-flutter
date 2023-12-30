@@ -277,6 +277,15 @@ class CallContext {
     return ctx.appendToSource(this);
   }
 
+  //  Create a new CallContext from a selection of the current context
+  bool selectContext(Call filter, void Function(CallContext) block) {
+    var savedActives = saveActives();
+    filter.performCall(this);
+    var retval = subContext(actives,block);
+    restoreActives(savedActives);
+    return retval;
+  }
+
   //  Build a CallContext from the next calls on the stack
   //  up to and including the next Action.
   //  Used for concepts and modifications.

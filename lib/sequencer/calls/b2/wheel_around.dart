@@ -22,7 +22,7 @@ import '../../../moves.dart';
 import '../common.dart';
 import '../common/reverse.dart';
 
-class WheelAround extends ActivesOnlyAction with IsReverse {
+class WheelAround extends Action with ActivesOnly, IsReverse {
 
   @override var level = LevelData.B2;
   @override var helplink = 'b2/wheel_around';

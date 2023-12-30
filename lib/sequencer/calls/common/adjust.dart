@@ -20,7 +20,7 @@
 
 import '../common.dart';
 
-class Adjust extends ActivesOnlyAction {
+class Adjust extends Action with ActivesOnly {
 
   @override var level = LevelData.NONE;
   @override var help = '''Adjust moves the dancers to a specific formation.

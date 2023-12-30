@@ -46,7 +46,7 @@ Line of (6 or 8) [Left] Turn and Deal''';
 
 }
 
-class BigLineTurnAndDeal extends ActivesOnlyAction {
+class BigLineTurnAndDeal extends Action with ActivesOnly {
 
   @override final level = LevelData.A1;
   @override var help = TurnAndDeal('').help;

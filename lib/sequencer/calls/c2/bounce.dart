@@ -20,7 +20,7 @@
 
 import '../common.dart';
 
-class Bounce extends ActivesOnlyAction with CallWithParts {
+class Bounce extends Action with ActivesOnly, CallWithParts {
 
   @override final level = LevelData.C2;
   @override int numberOfParts = 2;

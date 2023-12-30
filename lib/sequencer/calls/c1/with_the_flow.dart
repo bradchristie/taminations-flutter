@@ -20,7 +20,7 @@
 
 import '../common.dart';
 
-class WithTheFlow extends ActivesOnlyAction {
+class WithTheFlow extends Action with ActivesOnly {
 
   @override final level = LevelData.C1;
   @override var helplink = 'c1/with_the_flow';

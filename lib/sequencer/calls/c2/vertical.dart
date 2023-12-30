@@ -22,7 +22,7 @@ import '../../../moves.dart';
 import '../common.dart';
 import '../common/left.dart';
 
-class Vertical extends ActivesOnlyAction with IsLeft {
+class Vertical extends Action with ActivesOnly, IsLeft {
 
   Vertical(super.name);
 

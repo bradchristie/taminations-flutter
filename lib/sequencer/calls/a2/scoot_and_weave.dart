@@ -19,7 +19,7 @@
 
 import '../common.dart';
 
-class ScootAndWeave extends ActivesOnlyAction with CallWithParts {
+class ScootAndWeave extends Action with ActivesOnly, CallWithParts {
 
   @override var level = LevelData.A2;
   @override var numberOfParts = 2;

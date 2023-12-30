@@ -20,7 +20,7 @@
 import '../../../moves.dart';
 import '../common.dart';
 
-class StackTheLine extends ActivesOnlyAction with CallWithParts {
+class StackTheLine extends Action with ActivesOnly, CallWithParts {
 
   @override var level = LevelData.C2;
   @override var numberOfParts = 2;

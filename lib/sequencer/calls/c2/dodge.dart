@@ -19,7 +19,7 @@
 
 import '../common.dart';
 
-class Dodge extends ActivesOnlyAction {
+class Dodge extends Action with ActivesOnly {
 
   @override var level = LevelData.C2;
   @override var help = 'Dodge (call): Centers Walk and Dodge, '

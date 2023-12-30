@@ -21,9 +21,7 @@
 import '../../call_context.dart';
 import '../action.dart';
 
-abstract class ActivesOnlyAction extends Action {
-
-  ActivesOnlyAction(String name) : super(name);
+mixin ActivesOnly on Action {
 
   @override
    void performCall(CallContext ctx) {

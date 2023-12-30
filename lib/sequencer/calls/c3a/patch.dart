@@ -22,7 +22,7 @@ import 'package:taminations/moves.dart';
 
 import '../common.dart';
 
-class Patch extends ActivesOnlyAction with CallWithParts {
+class Patch extends Action with ActivesOnly, CallWithParts {
 
   @override var level = LevelData.C3A;
   @override int numberOfParts = 2;

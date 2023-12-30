@@ -21,7 +21,7 @@
 import '../../../moves.dart';
 import '../common.dart';
 
-class CrossRun extends ActivesOnlyAction {
+class CrossRun extends Action with ActivesOnly {
 
   @override var level = LevelData.B2;
   @override var help = 'Cross Run dancers must be either all centers'

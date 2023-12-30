@@ -22,7 +22,7 @@ import '../../../moves.dart';
 import '../common.dart';
 import '../common/left.dart';
 
-class LinearCycle extends ActivesOnlyAction  with CallWithParts, IsLeft {
+class LinearCycle extends Action with ActivesOnly, CallWithParts, IsLeft {
 
   @override int numberOfParts = 3;
   @override var level = LevelData.PLUS;

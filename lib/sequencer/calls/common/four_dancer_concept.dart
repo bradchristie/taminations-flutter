@@ -25,7 +25,7 @@ import '../common.dart';
 //  dancers in a way that they perform a 4-dancer call.
 //  The concept maps the 4-dancer call to the real dancers.
 //  Primary examples are As Couples Concept and Tandem Concept
-abstract class FourDancerConcept extends ActivesOnlyAction {
+abstract class FourDancerConcept extends Action with ActivesOnly {
 
   FourDancerConcept(String name) : super(name);
 

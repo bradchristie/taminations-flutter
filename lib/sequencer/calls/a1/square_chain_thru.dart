@@ -19,7 +19,7 @@
 
 import '../common.dart';
 
-class SquareChainThru extends ActivesOnlyAction with CallWithParts {
+class SquareChainThru extends Action with ActivesOnly, CallWithParts {
 
   @override var level = LevelData.A1;
   @override var numberOfParts = 3;

@@ -21,7 +21,7 @@
 import '../../../moves.dart';
 import '../common.dart';
 
-class ChainDownTheLine extends ActivesOnlyAction {
+class ChainDownTheLine extends Action with ActivesOnly {
 
   @override var help = 'Chain Down the Line will work with any formation'
   ' where the centers are holding right hands and the ends are to their left.'

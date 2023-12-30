@@ -19,7 +19,7 @@
 
 import '../common.dart';
 
-class Sidetrack extends ActivesOnlyAction with CallWithParts {
+class Sidetrack extends Action with ActivesOnly, CallWithParts {
 
   @override var level = LevelData.C3B;
   @override var numberOfParts = 3;

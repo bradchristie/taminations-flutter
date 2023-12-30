@@ -22,7 +22,7 @@ import '../../../moves.dart';
 import '../common.dart';
 
 //  This class implements both Zoom and Zing
-class Zoom extends ActivesOnlyAction {
+class Zoom extends Action with ActivesOnly {
 
   @override LevelData get level => name == 'Zing'  ? LevelData.C1 : LevelData.B2;
   @override String get helplink => name == 'Zing'  ? 'c1/zing' : 'b2/zoom';

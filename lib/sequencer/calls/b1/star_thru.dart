@@ -21,7 +21,7 @@
 import '../../../moves.dart';
 import '../common.dart';
 
-class StarThru extends ActivesOnlyAction {
+class StarThru extends Action with ActivesOnly {
 
   @override var help = 'Star Thru is limited to a boy and girl facing.';
   @override var helplink = 'b1/star_thru';

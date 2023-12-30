@@ -21,7 +21,7 @@
 import '../../../moves.dart';
 import '../common.dart';
 
-class SlideThru extends ActivesOnlyAction {
+class SlideThru extends Action with ActivesOnly {
 
   @override var level = LevelData.MS;
   @override var help = 'Unlike Star Thru, you can do Slide Thru with '

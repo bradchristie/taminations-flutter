@@ -42,7 +42,7 @@ Line of (6 or 8) [Left] [Half] Tag the Line
 
 }
 
-class BigLineTagTheLine extends ActivesOnlyAction {
+class BigLineTagTheLine extends Action with ActivesOnly {
 
   @override var level = LevelData.MS;
   @override var help = TagTheLine('').help;

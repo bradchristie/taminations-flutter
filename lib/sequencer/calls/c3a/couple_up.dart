@@ -19,7 +19,7 @@
 
 import '../common.dart';
 
-class CoupleUp extends ActivesOnlyAction with CallWithParts {
+class CoupleUp extends Action with ActivesOnly, CallWithParts {
 
   @override final level = LevelData.C3A;
   @override var numberOfParts = 2;
@@ -46,7 +46,7 @@ class CoupleUp extends ActivesOnlyAction with CallWithParts {
 
 }
 
-class LikeACoupleUp extends ActivesOnlyAction {
+class LikeACoupleUp extends Action with ActivesOnly {
 
   @override final level = LevelData.C3A;
   @override var help = CoupleUp().help;

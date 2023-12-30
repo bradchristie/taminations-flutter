@@ -21,7 +21,7 @@ import '../common.dart';
 
 //  All the common cases are covered by explicit animations.
 //  This is used mainly for its individual parts.
-class PassTheOcean extends ActivesOnlyAction with CallWithParts {
+class PassTheOcean extends Action with ActivesOnly, CallWithParts {
 
   @override var level = LevelData.B2;
   @override int numberOfParts = 3;

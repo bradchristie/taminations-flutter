@@ -20,7 +20,7 @@
 import '../common.dart';
 import '../common/reverse.dart';
 
-class DixieDiamond extends ActivesOnlyAction with CallWithParts, IsReverse {
+class DixieDiamond extends Action with ActivesOnly, CallWithParts, IsReverse {
 
   @override var level = LevelData.C1;
   @override int numberOfParts = 2;

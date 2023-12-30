@@ -22,7 +22,7 @@ import '../../../moves.dart';
 import '../common.dart';
 import '../common/left.dart';
 
-class Dosado extends ActivesOnlyAction with IsLeft {
+class Dosado extends Action with ActivesOnly, IsLeft {
 
   @override var helplink = 'b1/dosado';
   Dosado(String name) : super(name);

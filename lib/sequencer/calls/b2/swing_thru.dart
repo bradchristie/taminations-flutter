@@ -19,7 +19,7 @@
 
 import '../common.dart';
 
-class SwingThru extends ActivesOnlyAction with CallWithParts {
+class SwingThru extends Action with ActivesOnly, CallWithParts {
 
   @override int numberOfParts = 2;
   @override LevelData get level => isGrand ? LevelData.PLUS : LevelData.B2;

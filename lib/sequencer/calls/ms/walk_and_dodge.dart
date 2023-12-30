@@ -25,7 +25,7 @@ import '../common.dart';
 //  This handles both generic Walk and Dodge
 //  and directed (somebody) Walk (somebody else) Dodge
 
-class WalkAndDodge extends ActivesOnlyAction {
+class WalkAndDodge extends Action with ActivesOnly {
 
   @override var level = LevelData.MS;
   @override var helplink = 'ms/walk_and_dodge';

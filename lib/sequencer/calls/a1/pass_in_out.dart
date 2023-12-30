@@ -20,7 +20,7 @@
 
 import '../common.dart';
 
-class PassInOut extends ActivesOnlyAction with CallWithParts {
+class PassInOut extends Action with ActivesOnly, CallWithParts {
 
   @override final level = LevelData.A1;
   @override var numberOfParts = 2;

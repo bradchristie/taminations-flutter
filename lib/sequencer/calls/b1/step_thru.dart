@@ -20,7 +20,7 @@
 import '../../../moves.dart';
 import '../common.dart';
 
-class StepThru extends ActivesOnlyAction {
+class StepThru extends Action with ActivesOnly {
 
   @override var helplink = 'b1/step_thru';
   StepThru(String name) : super(name);

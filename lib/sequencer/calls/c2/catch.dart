@@ -20,7 +20,7 @@
 
 import '../common.dart';
 
-class Catch extends ActivesOnlyAction with CallWithParts {
+class Catch extends Action with ActivesOnly, CallWithParts {
 
   @override int numberOfParts = 3;
   @override var level = LevelData.C2;

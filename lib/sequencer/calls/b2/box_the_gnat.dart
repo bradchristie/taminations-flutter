@@ -22,7 +22,7 @@ import '../../../math/bezier.dart';
 import '../../../moves.dart';
 import '../common.dart';
 
-class BoxTheGnat extends ActivesOnlyAction {
+class BoxTheGnat extends Action with ActivesOnly {
 
   @override var level = LevelData.B2;
   @override var help = 'Box the Gnat works with facing dancers and'

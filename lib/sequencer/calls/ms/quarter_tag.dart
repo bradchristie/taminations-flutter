@@ -20,7 +20,7 @@
 
 import '../common.dart';
 
-class QuarterTag extends ActivesOnlyAction {
+class QuarterTag extends Action with ActivesOnly {
 
   @override
   var level = LevelData.MS;

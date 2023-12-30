@@ -20,7 +20,7 @@
 
 import '../common.dart';
 
-class CastOffThreeQuarters extends ActivesOnlyAction {
+class CastOffThreeQuarters extends Action with ActivesOnly {
 
   @override var level = LevelData.MS;
   @override var help = '''Cast Off (fraction)

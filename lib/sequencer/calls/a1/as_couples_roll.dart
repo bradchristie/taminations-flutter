@@ -21,7 +21,7 @@
 import 'package:taminations/moves.dart';
 import '../common.dart';
 
-class AsCouplesRoll extends ActivesOnlyAction {
+class AsCouplesRoll extends Action with ActivesOnly {
 
   @override var level = LevelData.A1;
 

@@ -21,7 +21,7 @@
 import '../../../moves.dart';
 import '../common.dart';
 
-class ZigZag extends ActivesOnlyAction {
+class ZigZag extends Action with ActivesOnly {
 
   @override final level = LevelData.A2;
   @override var helplink = 'a2/zig_and_zag';

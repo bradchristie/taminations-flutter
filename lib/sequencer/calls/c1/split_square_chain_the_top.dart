@@ -21,7 +21,7 @@
 import '../common.dart';
 import '../common/left.dart';
 
-class SplitSquareChainTheTop extends ActivesOnlyAction with CallWithParts, IsLeft {
+class SplitSquareChainTheTop extends Action with ActivesOnly, CallWithParts, IsLeft {
 
   @override var level = LevelData.C1;
   @override var numberOfParts = 3;

@@ -19,7 +19,7 @@
 
 import '../common.dart';
 
-class TrailToADiamond extends ActivesOnlyAction {
+class TrailToADiamond extends Action with ActivesOnly {
 
   @override final level = LevelData.C2;
   @override var help = 'Leaders Trail Off, Trailers meet and Hinge';
