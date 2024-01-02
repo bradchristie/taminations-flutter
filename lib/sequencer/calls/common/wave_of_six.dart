@@ -33,7 +33,7 @@ class WaveOfSix extends CodedCall {
     else if (yDancers.length == 6)
       ctx.dancers.forEach((d) { d.data.active = yDancers.contains(d); });
     else
-      throw CallError('Unable to identify Wave of Six');
+      throw CallError('Unable to identify $name');
   }
 
 }

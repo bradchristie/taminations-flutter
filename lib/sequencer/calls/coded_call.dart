@@ -657,7 +657,7 @@ abstract class CodedCall extends Call {
     '${specifier}walk(and)?${specifier}dodge'.ri: (name) => WalkAndDodge(name),
     '$specifier${specifier}walk(and)?$specifier${specifier}dodge'.ri:
         (name) => WalkAndDodge(name),
-    'waveof6'.ri: (name) => WaveOfSix(name),
+    '(wave|line)of6'.ri: (name) => WaveOfSix(name),
     '(dancersin)?waves?(dancers)?'.ri: (name) => Waves(name),
     'weave'.ri: (name) => Weave(name),
     'wheeland(?!deal)'.ri: (name) => WheelAnd(name),
