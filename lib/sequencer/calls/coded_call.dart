@@ -354,7 +354,7 @@ abstract class CodedCall extends Call {
     'castashadow(center(go|cast)?34)?'.ri: (name) => CastAShadow(name),
     '(cross)?castback'.ri: (name) => CastBack(name),
     'castoff(14|12|34)'.ri: (name) => CastOffThreeQuarters(name),
-    '(all4couples)?(left)?(split)?catch.*?(1|2|3|4)?'.ri: (name) => Catch(name),
+    '(all4couples)?(left)?(split)?catch.*?(1|2|3|4)'.ri: (name) => Catch(name),
     'center'.ri: (_) => Centers(),
     'center6'.ri: (_) => CenterSix(),
     'center(line|wave)(of4)?'.ri: (name) => CenterWaveOfFour(name),
