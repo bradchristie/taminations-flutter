@@ -191,7 +191,6 @@ import 'c2/half_the_k.dart';
 import 'c2/hocus_pocus.dart';
 import 'c2/hubs_trade.dart';
 import 'c2/kick_off.dart';
-import 'c2/lateral_substitute.dart';
 import 'c2/lines_anything_thru.dart';
 import 'c2/loop.dart';
 import 'c2/peel_to_a_diamond.dart';
@@ -451,7 +450,6 @@ abstract class CodedCall extends Call {
     '(cross)?kickoff'.ri: (name) => KickOff(name),
 
     'last(1|2|3)'.ri: (name) => Last(name),
-    'lateralsubstitute'.ri: (name) => LateralSubstitute(name),
     'lead(er)?s?'.ri: (name) => Leaders(name),
     'left'.ri: (name) => Left(name),
     'likeacoupleup'.ri: (_) => LikeACoupleUp(),
@@ -599,7 +597,7 @@ abstract class CodedCall extends Call {
     'steptoacompact(lefthand)?wave'.ri: (name) => StepToACompactWave(name),
     //  Stretch not Stretched
     'stretch(?!ed)'.ri: (name) => Stretch(name),
-    'substitute'.ri: (name) => Substitute(name),
+    '(lateral)?substitute'.ri: (name) => Substitute(name),
     'swap'.ri: (name) => SwapAround(name),
     'sweep14'.ri: (name) => SweepAQuarter(name),
     'swing'.ri: (name) => Swing(name),

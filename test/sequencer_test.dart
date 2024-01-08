@@ -3530,7 +3530,7 @@ Allemande Left''',''),
 Veer Left
 Boys 1/2 Circulate
 Galaxy Circulate
-Lateral Substitute
+Tandem-Based Triangle Lateral Substitute
 Tandem Based Triangle Lateral Substitute
 Boys Hinge
 Center Diamond Cut the Diamond
@@ -3547,7 +3547,7 @@ Allemande Left''', ''),
 Veer Left
 Boys 1/2 Circulate
 Galaxy Circulate
-Lateral Substitute
+Tandem-Based Triangle Lateral Substitute
 Tandem Based Triangle Lateral Substitute
 Boys Hinge
 Center Diamond Cut the Diamond
@@ -3562,7 +3562,7 @@ Allemande Left''', ''),
   TestSequence('Lateral Substitute 2a',
 '''Heads Move In
 Sides Hinge
-Lateral Substitute
+Inside Triangle Lateral Substitute
 Outside Triangle Lateral Substitute
 Center Wave Recycle
 Pass the Ocean
@@ -3578,7 +3578,7 @@ Allemande Left''', ''),
   TestSequence('Lateral Substitute 2b',
 '''Sides Move In
 Heads Hinge
-Lateral Substitute
+Inside Triangle Lateral Substitute
 Outside Triangle Lateral Substitute
 Center Wave Recycle
 Pass the Ocean
@@ -3594,7 +3594,7 @@ Allemande Left''', ''),
   TestSequence('Lateral Substitute 3',
 '''Heads Move In
 Boys Run
-Lateral Substitute
+Centers Lateral Substitute
 Counter Rotate
 Outer 4 Lateral Substitute
 Girls Run
