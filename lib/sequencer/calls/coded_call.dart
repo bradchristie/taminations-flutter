@@ -540,7 +540,7 @@ abstract class CodedCall extends Call {
     //  as Centers Star
     'centerstarthru'.ri: (name) => CentersStarThru(name),
     '(center|inside|middle|out(er|side))(diamond|star)'.ri: (name) => SelectDiamond(name),
-    '(near|far|left|right)(box|line|wave|diamond|star|\\d)?'.ri:
+    '(near|far|left|right)(box|line|wave|diamond|star|\\d)'.ri:
         (name) => SelectLocation(name),
     'separate'.ri: (name) => Separate(name),
     'shazam'.ri: (name) => Shazam(name),
