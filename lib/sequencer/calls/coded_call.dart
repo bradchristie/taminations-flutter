@@ -21,6 +21,7 @@
 
 import 'c1/follow_thru.dart';
 import 'c1/weave.dart';
+import 'c2/cross_concentric_cycle_and_wheel.dart';
 import 'c2/vertical.dart';
 import 'common/select_location.dart';
 import '../../extensions.dart';
@@ -380,6 +381,7 @@ abstract class CodedCall extends Call {
     '(left)?crossandwheel'.ri: (name) => CrossAndWheel(name),
     'crosschain(thru|androll)'.ri: (name) => CrossChainThru(name),
     'crossconcentric'.ri: (name) => CrossConcentric(name),
+    'crossconcentriccycleandwheel'.ri: (name) => CrossConcentricCycleAndWheel(name),
     'crossfire'.ri: (name) => Crossfire(name),
     'crossfold'.ri: (_) => CrossFold(),
     'crossovercirculate'.ri: (_) => CrossOverCirculate(),
