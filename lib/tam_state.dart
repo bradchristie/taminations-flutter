@@ -18,7 +18,6 @@
 
 */
 
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart' as fm;
 import 'package:taminations/common_flutter.dart';
 
@@ -38,7 +37,7 @@ enum MainPage {
   TUTORIAL
 }
 extension MainPageEx on String {
-  MainPage toMainPage() => MainPage.values.firstWhere((d) => describeEnum(d) == this);
+  MainPage toMainPage() => MainPage.values.firstWhere((d) => d.name == this);
 }
 
 enum DetailPage {
@@ -50,7 +49,7 @@ enum DetailPage {
   ABBREVIATIONS
 }
 extension DetailPageEx on String {
-  DetailPage toDetailPage() => DetailPage.values.firstWhere((d) => describeEnum(d) == this);
+  DetailPage toDetailPage() => DetailPage.values.firstWhere((d) => d.name == this);
 }
 
 //  This class holds state information used to
@@ -144,9 +143,9 @@ class TamState extends fm.ChangeNotifier {
     if (animnum >= 0) 'animnum=$animnum',
     if ((animname ?? '').isNotBlank) 'animname=$animname',
     if (link != null && link!.isNotEmpty) 'link=$link',
-    if (mainPage != null) 'main=${describeEnum(mainPage!)}',
+    if (mainPage != null) 'main=${mainPage!.name}',
     if (detailPage != null && detailPage!=DetailPage.NONE)
-      'detail=${describeEnum(detailPage!)}',
+      'detail=${detailPage!.name}',
     if (embed) 'embed',
     if (play) 'play',
     if (loop) 'loop',
