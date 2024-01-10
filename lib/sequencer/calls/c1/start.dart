@@ -19,8 +19,6 @@
 */
 
 import '../common.dart';
-import '../common/do_one_part.dart';
-import '../common/do_your_part.dart';
 
 class Start extends Action {
 
@@ -55,22 +53,7 @@ class Start extends Action {
       if (ctx.actives.length >= ctx.dancers.length)
         throw CallError('Who is supposed to start?');
 
-      ctx.subContext(ctx.actives, (dypctx) {
-        //  Run DYP for the call, but save the intermediate context
-        final p = DoYourPart(finishCall).findYourPart(dypctx);
-        //  Run Do the 1st Part (which is a CodedCall)
-        //  of the call on the starting formation
-        //  of the intermediate context.
-        final pctx = p.firstValue;
-        final mapping = p.secondValue;
-        DoOnePart('Do the First Part of $finishCall').perform(pctx);
-        //  Copy path movements from call to sequence
-        for (var i = 0; i < mapping.length; i++) {
-          final m = mapping[i];
-          // TODO check for asymmetric call!
-          dypctx.dancers[i].path += pctx.dancers[m].path;
-        }
-      });
+      ctx.applyCalls('Do the First Part $finishCall');
 
       //  Extend paths of all dancers so others don' start
       //  until the selected dancers have finished the 1st part

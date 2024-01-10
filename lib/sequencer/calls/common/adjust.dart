@@ -50,7 +50,7 @@ Formations you can use include
     var ctx2 = CallContext.fromFormation(formation);
     var isSubset = ctx2.dancers.length > ctx.dancers.length;
     var rotate = switch(formation.name) {
-      'Blocks' || 'Outrigger' => 90,
+      'Blocks' || 'Outrigger' || 'Squared Set' => 90,
       _ => 180
     };
     var mapping = ctx.matchFormations(ctx2,sexy:false,fuzzy:true,rotate:rotate,handholds:false,subformation: isSubset, maxError : 3.0, delta: 0.3, maxAngle: 0.5)
