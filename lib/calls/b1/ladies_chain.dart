@@ -332,6 +332,151 @@ import '../../moves.dart';
           BelleWheel.scale(0.5,0.5)
       ]),
 
+    AnimatedCall('Head Ladies Chain 3/4',
+        formation:Formation('Static Square'),
+        from:'Static Square',group:' ',isGenderSpecific:true,difficulty: 1,
+        paths:[
+          Stand +
+              DodgeRight.changeBeats(3.5).scale(1, 0.5),
+
+          ExtendLeft.changeBeats(2.5).scale(3.0,1.75) +
+              HingeRight.scale(0.75,0.75) +
+              ExtendRight.changeBeats(2.5).scale(3.0,1.75) +
+              BelleWheel.scale(0.5,0.5),
+
+          Stand +
+              DodgeRight.changeBeats(3.5).scale(1, 0.5) +
+              UmTurnLeft.changeBeats(2).changehands(Hands.RIGHT) +
+              BeauWheel.scale(0.5,0.75),
+
+          Stand.changeBeats(6.5) +
+              DodgeRight.scale(1, 0.25)
+        ]),
+
+    AnimatedCall('Head Ladies Chain 3/4 and Half Sashay',
+        formation:Formation('Static Square'),
+        from:'Static Square',group:' ',isGenderSpecific:true,difficulty: 1,
+        paths:[
+          Stand +
+              DodgeRight.changeBeats(3.5).scale(1, 0.5),
+
+          ExtendLeft.changeBeats(2.5).scale(3.0,1.75) +
+              HingeRight.scale(0.75,0.75) +
+              ExtendRight.changeBeats(2.5).scale(3.0,1.75) +
+              BelleWheel.scale(0.5,0.5) +
+              SashayLeft.scale(1,0.75),
+
+          Stand +
+              DodgeRight.changeBeats(3.5).scale(1, 0.5) +
+              UmTurnLeft.changeBeats(2).changehands(Hands.RIGHT) +
+              BeauWheel.scale(0.5,0.75) +
+              BackSashayRight.scale(1.0,0.75),
+
+          Stand.changeBeats(6.5) +
+              DodgeRight.scale(1, 0.25)
+        ]),
+
+    AnimatedCall('Head Ladies Chain 3/4 and Rollaway',
+        formation:Formation('Static Square'),
+        from:'Static Square',group:' ',isGenderSpecific:true,difficulty: 1,
+        paths:[
+          Stand +
+              DodgeRight.changeBeats(3.5).scale(1, 0.5),
+
+          ExtendLeft.changeBeats(2.5).scale(3.0,1.75) +
+              HingeRight.scale(0.75,0.75) +
+              ExtendRight.changeBeats(2.5).scale(3.0,1.75) +
+              BelleWheel.scale(0.5,0.5) +
+              FoldLeft.changeBeats(1.5).changehands(Hands.GRIPLEFT).scale(0.6,0.375) +
+              UmTurnLeft.changeBeats(1.5).changehands(Hands.GRIPLEFT).skew(1.2,-.75),
+
+          Stand +
+              DodgeRight.changeBeats(3.5).scale(1, 0.5) +
+              UmTurnLeft.changeBeats(2).changehands(Hands.RIGHT) +
+              BeauWheel.scale(0.5,0.75) +
+              DodgeRight.changehands(Hands.GRIPRIGHT).scale(1,0.75),
+
+          Stand.changeBeats(6.5) +
+              DodgeRight.scale(1, 0.25)
+        ]),
+
+    AnimatedCall('Side Ladies Chain 3/4',
+        formation:Formation('Static Square'),
+        from:'Static Square',group:' ',
+        isGenderSpecific:true,
+        difficulty: 1,
+        noDisplay: true,
+        paths:[
+          Stand +
+              DodgeRight.changeBeats(3.5).scale(1, 0.5) +
+              UmTurnLeft.changeBeats(2).changehands(Hands.RIGHT) +
+              BeauWheel.scale(0.5,0.75),
+
+          Stand.changeBeats(6.5) +
+              DodgeRight.scale(1, 0.25),
+
+          Stand +
+              DodgeRight.changeBeats(3.5).scale(1, 0.5),
+
+          ExtendLeft.changeBeats(2.5).scale(3.0,1.75) +
+              HingeRight.scale(0.75,0.75) +
+              ExtendRight.changeBeats(2.5).scale(3.0,1.75) +
+              BelleWheel.scale(0.5,0.5),
+        ]),
+
+    AnimatedCall('Side Ladies Chain 3/4 and Half Sashay',
+        formation:Formation('Static Square'),
+        from:'Static Square',group:' ',
+        isGenderSpecific:true,
+        difficulty: 1,
+        noDisplay: true,
+        paths:[
+          Stand +
+              DodgeRight.changeBeats(3.5).scale(1, 0.5) +
+              UmTurnLeft.changeBeats(2).changehands(Hands.RIGHT) +
+              BeauWheel.scale(0.5,0.75) +
+              BackSashayRight.scale(1.0,0.75),
+
+          Stand.changeBeats(6.5) +
+              DodgeRight.scale(1, 0.25),
+
+          Stand +
+              DodgeRight.changeBeats(3.5).scale(1, 0.5),
+
+          ExtendLeft.changeBeats(2.5).scale(3.0,1.75) +
+              HingeRight.scale(0.75,0.75) +
+              ExtendRight.changeBeats(2.5).scale(3.0,1.75) +
+              BelleWheel.scale(0.5,0.5) +
+              SashayLeft.scale(1,0.75),
+        ]),
+
+    AnimatedCall('Side Ladies Chain 3/4 and Rollaway',
+        formation:Formation('Static Square'),
+        from:'Static Square',group:' ',
+        isGenderSpecific:true,
+        difficulty: 1,
+        noDisplay: true,
+        paths:[
+          Stand +
+              DodgeRight.changeBeats(3.5).scale(1, 0.5) +
+              UmTurnLeft.changeBeats(2).changehands(Hands.RIGHT) +
+              BeauWheel.scale(0.5,0.75) +
+              DodgeRight.changehands(Hands.GRIPRIGHT).scale(1,0.75),
+
+          Stand.changeBeats(6.5) +
+              DodgeRight.scale(1, 0.25),
+
+          Stand +
+              DodgeRight.changeBeats(3.5).scale(1, 0.5),
+
+          ExtendLeft.changeBeats(2.5).scale(3.0,1.75) +
+              HingeRight.scale(0.75,0.75) +
+              ExtendRight.changeBeats(2.5).scale(3.0,1.75) +
+              BelleWheel.scale(0.5,0.5) +
+              FoldLeft.changeBeats(1.5).changehands(Hands.GRIPLEFT).scale(0.6,0.375) +
+              UmTurnLeft.changeBeats(1.5).changehands(Hands.GRIPLEFT).skew(1.2,-.75),
+        ]),
+
     AnimatedCall('Four Ladies Chain',
       formation:Formation('Static Square'),
       from:'Static Square',isGenderSpecific:true,fractions:'5',difficulty: 1,
