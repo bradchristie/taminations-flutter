@@ -1399,7 +1399,7 @@ var titleIndex = <String,String>{
     'c1/dixie_sashay' : 'Dixie Sashay',
     'ms/dixie_style' : 'Dixie Style to an Ocean Wave',
     'b1/do_paso' : 'Do Paso',
-    'a1/do_your_part' : 'Double Star Thru',
+    'a1/do_your_part' : 'Do Your Part',
     'c2/dodge_anything' : 'Dodge Anything',
     'b1/dosado' : 'Dosado',
     'a1/triple_cross' : 'Triple Cross',
