@@ -45,6 +45,7 @@ class XMLCall extends Call {
     var bestOffset = double.maxFinite;
     var fuzzy = true;
     var foundOne = false;
+    ctxwork.dancers.center();
     for (var tam in lookupAnimatedCall(norm)) {
       if (tam.notForSequencer)
         continue;

@@ -3911,6 +3911,18 @@ Vertical Peel and Trail
 Wheel and Deal
 Zoom
 Centers Cross Trail Thru
-Allemande Left''', '')
+Allemande Left''', ''),
+
+  TestSequence('In Your Block Zing',
+'''Single Rotate 1/4  
+Sides Squeeze
+Outsides Zing
+Boys Spread
+In Your Block Boys Zing
+In Your Block Girls Pass In
+Boys Half Press Ahead
+Star Thru
+Box the Gnat
+Allemande Left''',''),
 
 ];

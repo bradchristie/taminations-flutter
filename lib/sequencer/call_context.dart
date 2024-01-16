@@ -147,7 +147,7 @@ class CallContext {
       }) {
     dancers ??= source.dancers;
     dancers.forEach((d) { d.animate(beat); });
-    this.dancers = dancers.clone().center();
+    this.dancers = dancers.clone();
     if (!source.asymmetric && !dancers.areDancersOrdered())
       this.dancers = this.dancers.inOrder();
     asymmetric = !dancers.areDancersOrdered();

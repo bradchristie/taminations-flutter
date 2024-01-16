@@ -35,6 +35,7 @@ class QuarterInOut extends Action {
     if (boxes != null) {
       for (final box in boxes) {
         ctx.subContext(box, (ctx2) {
+          ctx2.dancers.center();
           super.perform(ctx2);
         });
       }
