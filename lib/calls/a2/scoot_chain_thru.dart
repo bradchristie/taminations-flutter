@@ -34,8 +34,7 @@ import '../../moves.dart';
           SwingRight +
           Forward_2,
 
-          Stand.changeBeats(2) +
-          RunRight,
+          RunRight.changeBeats(13),
 
           Forward_2 +
           SwingRight +
@@ -43,16 +42,14 @@ import '../../moves.dart';
           SwingRight +
           Forward_2,
 
-          Stand.changeBeats(2) +
-          RunRight
+          RunRight.changeBeats(13)
       ]),
 
     AnimatedCall('Scoot Chain Thru',
       formation:Formation('Ocean Waves LH BGBG'),
       from:'Left-Hand Waves',parts:'2;3;3;3',
       paths:[
-          Stand.changeBeats(2) +
-          RunLeft,
+          RunLeft.changeBeats(13),
 
           Forward_2 +
           SwingLeft +
@@ -60,8 +57,7 @@ import '../../moves.dart';
           SwingLeft +
           Forward_2,
 
-          Stand.changeBeats(2) +
-          RunLeft,
+          RunLeft.changeBeats(13),
 
           Forward_2 +
           SwingLeft +
