@@ -27,109 +27,135 @@ import '../../moves.dart';
     AnimatedCall('Stack the Line',
       formation:Formation('Two-Faced Lines RH'),
       from:'Right-Hand Two-Faced Lines',
+      parts: '1.5',
       paths:[
-          QuarterRight.changeBeats(3).skew(3.0,0.0),
+          QuarterRight.skew(1,0) +
+              DodgeLeft,
 
-          QuarterLeft.changeBeats(3).skew(1.0,0.0),
+          QuarterLeft.skew(1,0),
 
-          QuarterLeft.changeBeats(3).skew(-3.0,2.0),
+          QuarterLeft.skew(-1,0) +
+              ExtendLeft.scale(2, 2).changeBeats(3),
 
-          QuarterRight.changeBeats(3).skew(-1.0,-2.0)
+          QuarterRight.skew(-1,0) +
+              Forward_2.changeBeats(3)
       ]),
 
     AnimatedCall('Stack the Line',
       formation:Formation('Two-Faced Lines LH'),
       from:'Left-Hand Two-Faced Lines',
+      parts: '1.5',
       paths:[
-          QuarterLeft.changeBeats(3).skew(-3.0,2.0),
+          QuarterLeft.skew(-1, 0) +
+              ExtendLeft.scale(2, 2).changeBeats(3),
 
-          QuarterRight.changeBeats(3).skew(-1.0,-2.0),
+        QuarterRight.skew(-1, 0) +
+            Forward_2.changeBeats(3),
 
-          QuarterRight.changeBeats(3).skew(3.0,0.0),
+          QuarterRight.skew(1, 0) +
+              DodgeLeft,
 
-          QuarterLeft.changeBeats(3).skew(1.0,0.0)
+          QuarterLeft.skew(1,0)
       ]),
 
     AnimatedCall('Stack the Line',
       formation:Formation('Ocean Waves RH BGBG'),
       from:'Right-Hand Waves',
       paths:[
-          QuarterRight.changeBeats(3).skew(3.0,0.0),
+          QuarterRight.skew(1,0) +
+              DodgeLeft,
 
-          QuarterRight.changeBeats(3).skew(-1.0,-2.0),
+          QuarterRight.skew(-1,0) +
+              Forward_2.changeBeats(3),
 
-          QuarterRight.changeBeats(3).skew(3.0,0.0),
+          QuarterRight.skew(1,0) +
+              DodgeLeft,
 
-          QuarterRight.changeBeats(3).skew(-1.0,-2.0)
+          QuarterRight.skew(-1,0) +
+              Forward_2.changeBeats(3)
       ]),
 
     AnimatedCall('Stack the Line',
       formation:Formation('Ocean Waves LH BGBG'),
       from:'Left-Hand Waves',
+      parts: '1.5',
       paths:[
-          QuarterLeft.changeBeats(2).skew(-2.0,0.0) +
-          ExtendLeft.changeBeats(2).scale(2.0,1.0),
+        QuarterLeft.skew(-1.0,0.0) +
+            CrossLeft.changehands(Hands.NONE),
 
-          QuarterLeft.changeBeats(4).skew(1.0,0.0),
+        QuarterLeft.skew(1.0,0.0),
 
-          QuarterLeft.changeBeats(2).skew(-2.0,0.0) +
-          ExtendLeft.changeBeats(2).scale(2.0,1.0),
+        QuarterLeft.skew(-1.0,0.0) +
+            CrossLeft.changehands(Hands.NONE),
 
-          QuarterLeft.changeBeats(4).skew(1.0,0.0)
+        QuarterLeft.skew(1.0,0.0)
       ]),
 
     AnimatedCall('Stack the Line',
       formation:Formation('Double Pass Thru'),
       from:'Double Pass Thru',
+      parts: '1.5',
       paths:[
-          QuarterRight.changeBeats(3).skew(2.0,0.5),
+        QuarterRight.skew(0, 0.5) +
+              DodgeLeft,
 
-          QuarterLeft.changeBeats(3).skew(0.0,-0.5),
+        QuarterLeft.skew(0, -0.5),
 
-          QuarterRight.changeBeats(3).skew(0.0,-2.5),
+        QuarterRight.skew(0, 0.5) +
+            Forward_3,
 
-          QuarterLeft.changeBeats(3).skew(-2.0,2.5)
+        QuarterLeft.skew(0, -0.5) +
+            ExtendLeft.changeBeats(3).scale(3, 2)
       ]),
 
     AnimatedCall('Stack the Line',
       formation:Formation('Completed Double Pass Thru'),
       from:'Completed Double Pass Thru',
+      parts: '1.5',
       paths:[
-          QuarterLeft.changeBeats(3).skew(-2.0,2.5),
+          QuarterLeft.skew(0, -0.5) +
+              ExtendLeft.changeBeats(3).scale(3, 2),
 
-          QuarterRight.changeBeats(3).skew(0.0,-2.5),
+          QuarterRight.skew(0, 0.5) +
+              Forward_3,
 
-          QuarterLeft.changeBeats(3).skew(0.0,-0.5),
+          QuarterLeft.skew(0, -0.5),
 
-          QuarterRight.changeBeats(3).skew(2.0,0.5)
+          QuarterRight.skew(0, 0.5) +
+              DodgeLeft
       ]),
 
     AnimatedCall('Stack the Line',
       formation:Formation('Column RH GBGB'),
       from:'Right-Hand Columns',
+      parts: '1.5',
       paths:[
-          QuarterRight.changeBeats(3).skew(0.0,-2.5),
+        QuarterRight.skew(0,.5) +
+            Forward_3,
 
-          QuarterRight.changeBeats(3).skew(2.0,0.5),
+        QuarterRight.skew(0,.5) +
+            DodgeLeft,
 
-          QuarterRight.changeBeats(3).skew(0.0,-2.5),
+        QuarterRight.skew(0,.5) +
+            Forward_3,
 
-          QuarterRight.changeBeats(3).skew(2.0,0.5)
+        QuarterRight.skew(0,.5) +
+            DodgeLeft
       ]),
 
     AnimatedCall('Stack the Line',
       formation:Formation('Column LH GBGB'),
       from:'Left-Hand Columns',
       paths:[
-          QuarterLeft.changeBeats(3).skew(0.0,-0.5),
+        QuarterLeft.skew(0, -0.5),
 
-          QuarterLeft.changeBeats(1).skew(-1.0,0.0) +
-          ExtendLeft.changeBeats(2).scale(2.5,1.0),
+        QuarterLeft.skew(0, -0.5) +
+            CrossLeft.changehands(Hands.NONE).scale(1.5, 1),
 
-          QuarterLeft.changeBeats(3).skew(0.0,-0.5),
+        QuarterLeft.skew(0, -0.5),
 
-          QuarterLeft.changeBeats(1).skew(-1.0,0.0) +
-          ExtendLeft.changeBeats(2).scale(2.5,1.0)
+        QuarterLeft.skew(0, -0.5) +
+            CrossLeft.changehands(Hands.NONE).scale(1.5, 1),
       ]),
 
     AnimatedCall('Stack the Line',
@@ -149,4 +175,3 @@ import '../../moves.dart';
           DodgeLeft.changeBeats(2)
       ]),
   ];
-
