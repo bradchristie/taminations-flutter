@@ -19,6 +19,7 @@
 */
 
 
+import 'a2/diamond_chain_thru.dart';
 import 'c1/follow_thru.dart';
 import 'c1/weave.dart';
 import 'c2/cross_concentric_cycle_and_wheel.dart';
@@ -391,6 +392,7 @@ abstract class CodedCall extends Call {
 
     'debug.*'.ri: (name) => SetDebugSwitch(name),
     'detour'.ri: (_) => Detour(),
+    'diamondchainthru'.ri: (name) => DiamondChainThru(name),
     'diamondcirculate'.ri: (_) => DiamondCirculate(),
     'dixiediamond'.ri: (name) => DixieDiamond(name),
     'divethru'.ri: (name) => DiveThru(name),
