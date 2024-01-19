@@ -75,7 +75,24 @@ import '../../moves.dart';
           ExtendRight.changeBeats(1.5).changehands(Hands.LEFT).scale(2.0,0.5)
       ]),
 
-    AnimatedCall('Substitute',
+    AnimatedCall('Centers Substitute',
+        formation: Formation('Trade By'),
+        from: 'Trade By',
+        paths: [
+          RetreatLeft.changehands(Hands.GRIPLEFT).scale(1.0,0.5) +
+              RetreatRight.changehands(Hands.GRIPLEFT).scale(1.0,0.5),
+
+          RetreatRight.changehands(Hands.GRIPRIGHT).scale(1.0,0.5) +
+              RetreatLeft.changehands(Hands.GRIPRIGHT).scale(1.0,0.5),
+
+          RetreatRight.changehands(Hands.GRIPLEFT).scale(1.0,0.5) +
+              RetreatLeft.changehands(Hands.GRIPLEFT).scale(1.0,0.5),
+
+          RetreatLeft.changehands(Hands.GRIPRIGHT).scale(1.0,0.5) +
+              RetreatRight.changehands(Hands.GRIPRIGHT).scale(1.0,0.5),
+        ]),
+
+    AnimatedCall('Centers Substitute',
       formation:Formation('Galaxy RH GP'),
       from:'Galaxy',
       paths:[
@@ -89,5 +106,29 @@ import '../../moves.dart';
 
           Path()
       ]),
+
+    AnimatedCall('Heads Touch 1/4 and Substitute',
+        group: ' ',
+        formation: Formation('Static Square'),
+        paths: [
+          ExtendLeft.changeBeats(3).scale(3, 0.5) +
+              HingeRight.scale(1, 0.5) +
+          RetreatLeft.changehands(Hands.GRIPRIGHT).scale(1.0,0.5) +
+              RetreatRight.changehands(Hands.GRIPRIGHT).scale(1.0,0.5),
+
+          ExtendLeft.changeBeats(3).scale(3, 0.5) +
+              HingeRight.scale(1, 0.5) +
+              ExtendLeft.changehands(Hands.GRIPRIGHT).scale(1.0,0.5) +
+              ExtendRight.changehands(Hands.GRIPRIGHT).scale(1.0,0.5),
+
+          Stand.changeBeats(4.5) +
+              ExtendRight.changehands(Hands.GRIPRIGHT).scale(1.0,0.5) +
+              ExtendLeft.changehands(Hands.GRIPRIGHT).scale(1.0,0.5),
+
+          Stand.changeBeats(4.5) +
+              ExtendLeft.changehands(Hands.GRIPLEFT).scale(1.0,0.5) +
+              ExtendRight.changehands(Hands.GRIPLEFT).scale(1.0,0.5),
+
+        ])
   ];
 
