@@ -31,7 +31,7 @@ class ReverseOrder extends Action with ActivesOnly {
     final reverseCall = name.replaceFirst('Reverse Order '.ri, '');
     final codedCall = CodedCall.fromName(reverseCall);
     if (codedCall is CallWithParts) {
-      (codedCall as CallWithParts).reverseOrder(ctx);
+      codedCall.reverseOrder(ctx);
       return;
     }
 

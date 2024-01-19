@@ -67,7 +67,7 @@ class Finish extends Action {
     //  If that didn't work, try a coded call
     final codedCall = CodedCall.fromName(finishCall);
     if (codedCall is CallWithParts) {
-      (codedCall as CallWithParts).finish(ctx);
+      codedCall.finish(ctx);
       return;
     }
 

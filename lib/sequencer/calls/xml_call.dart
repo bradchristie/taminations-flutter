@@ -41,10 +41,11 @@ class XMLCall extends Call {
       TamUtils.normalizedCallIndex[norm] ?? [];
   XMLCall(String title) : super(title);
 
-  bool matchAnimatedCall(CallContext ctxwork) {
+  bool matchAnimatedCall(CallContext ctx) {
     var bestOffset = double.maxFinite;
     var fuzzy = true;
     var foundOne = false;
+    var ctxwork = CallContext.fromContext(ctx);
     ctxwork.dancers.center();
     for (var tam in lookupAnimatedCall(norm)) {
       if (tam.notForSequencer)
@@ -93,7 +94,7 @@ class XMLCall extends Call {
     var ac = ctx.actives.length;
     exact = dc == ac;
     found = false;
-    var ctxwork = ctx;
+    CallContext ctxwork;
     if (!exact) {
       //  Don't try to match unless the actives are together
       if (ctx.actives.any((d) =>
@@ -101,7 +102,10 @@ class XMLCall extends Call {
       ))
         perimeter = true;
       ctxwork = CallContext.fromContext(ctx,dancers:ctx.actives);
-    }
+    } else
+      ctxwork = CallContext.fromContext(ctx);
+    //  Needs to be centered since we are comparing to other calls that are centered
+    ctxwork.dancers.center();
 
     //  Need to save this result so sequencer model knows if this is really XML
     //  or punted to a coded call
@@ -195,9 +199,8 @@ class XMLCall extends Call {
       d.data.active = false;
     });
 
-    if (!exact) {
-      ctxwork.appendToSource();
-    }
+    ctxwork.appendToSource();
+
   }
 
 }

@@ -31,7 +31,7 @@ class SplitCounterRotate extends Action {
     final boxes = ctx.boxes() ??
         thrower(CallError('Must have boxes for Split Counter Rotate'))!;
     for (final boxDancers in boxes) {
-      ctx.subContext(boxDancers, (ctx2) {
+      ctx.subContext(boxDancers..center(), (ctx2) {
         ctx2.applyCalls('Box Counter Rotate');
       });
     }

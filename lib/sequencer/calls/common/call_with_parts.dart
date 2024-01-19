@@ -20,7 +20,7 @@
 import '../common.dart';
 import '../xml_call.dart';
 
-mixin CallWithParts {
+mixin CallWithParts on Action {
 
   //  Classes with parts will override this
   int numberOfParts = 1;
@@ -87,6 +87,7 @@ mixin CallWithParts {
   void Function(CallContext ctx)? get lastPart => replacePart[numberOfParts];
   set lastPart(value) { replacePart[numberOfParts] = value; }
 
+  @override
   void perform(CallContext ctx) {
     for (var part=1; part<=numberOfParts; part++) {
       ctx.extendPaths();

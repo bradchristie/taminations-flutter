@@ -23,6 +23,10 @@ import 'package:taminations/sequencer/calls/coded_call.dart';
 import '../common.dart';
 import '../xml_call.dart';
 
+mixin CallWithFractions on Action {
+
+}
+
 //  This class is for a fraction before a call
 //  such as "3/4 Load the Boat"
 class Fraction extends Action {
@@ -51,13 +55,13 @@ class Fraction extends Action {
     if (call is XMLCall) {
       final codedCall = CodedCall.fromName(call.name);
       if (codedCall is CallWithParts) {
-        call = codedCall!;
+        call = codedCall;
         fracctx.callstack.last = codedCall;
       }
     }
 
     if (call is CallWithParts) {
-      final cwp = call as CallWithParts;
+      final cwp = call;
       if (cwp.numberOfParts % _denominator != 0)
         throw CallError('Unable to divide ${call.name} into $_denominator parts.' );
       cwp.numberOfParts = cwp.numberOfParts * _numerator ~/ _denominator;
