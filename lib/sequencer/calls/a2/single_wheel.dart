@@ -20,7 +20,7 @@
 
 import '../common.dart';
 
-class SingleWheel extends Action {
+class SingleWheel extends Action with IsLeft {
 
   @override final level = LevelData.A2;
   @override var helplink = 'a2/single_wheel';
@@ -29,7 +29,7 @@ class SingleWheel extends Action {
   @override
   void perform(CallContext ctx) {
     //  Accept both Single Wheel and Left Single Wheel
-    ctx.applyCalls(name.replaceFirst('Single Wheel','Hinge and Roll'));
+    ctx.applyCalls('$left Hinge and Roll');
   }
 
 }

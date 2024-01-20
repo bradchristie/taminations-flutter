@@ -26,7 +26,7 @@ import 'c2/cross_concentric_cycle_and_wheel.dart';
 import 'c2/vertical.dart';
 import 'common/select_location.dart';
 import '../../extensions.dart';
-import '../../normalize_call.dart';
+import '../normalize_call.dart';
 import 'a1/as_couples.dart';
 import 'a1/as_couples_roll.dart';
 import 'a1/beaus.dart';
@@ -379,7 +379,7 @@ abstract class CodedCall extends Call {
     'courtesyturn'.ri: (_) => CourtesyTurn(),
     '(14|12|34)?(reverse)?crazy.*'.ri: (name) => Crazy(name),
     'cross'.ri: (_) => Cross(),
-    '(left)?crossandwheel'.ri: (name) => CrossAndWheel(name),
+    'crossandwheel'.ri: (name) => CrossAndWheel(name),
     'crosschain(thru|androll)'.ri: (name) => CrossChainThru(name),
     'crossconcentric'.ri: (name) => CrossConcentric(name),
     'crossconcentriccycleandwheel'.ri: (name) => CrossConcentricCycleAndWheel(name),
@@ -388,7 +388,7 @@ abstract class CodedCall extends Call {
     'crossovercirculate'.ri: (_) => CrossOverCirculate(),
     'crossramble'.ri: (_) => CrossRamble(),
     '($specifier)*crossrun'.ri: (name) => CrossRun(name),
-    '(left)?crosstradeandwheel'.ri: (name) => CrossTradeAndWheel(name),
+    'crosstradeandwheel'.ri: (name) => CrossTradeAndWheel(name),
 
     'debug.*'.ri: (name) => SetDebugSwitch(name),
     'detour'.ri: (_) => Detour(),
@@ -427,10 +427,9 @@ abstract class CodedCall extends Call {
     '\\d\\d'.ri: (name) => Fraction(name),
 
     'girl|ladies|lady'.ri: (_) => Girls(),
-    '(left)?grandcrosstradeandwheel'.ri: (name) => GrandCrossTradeAndWheel(name),
-    '(left)?grandsinglecrossandwheel'.ri: (name) => GrandSingleCrossAndWheel(name),
-    '(left)?grandsinglecrosstradeandwheel'.ri:
-        (name) => GrandSingleCrossTradeAndWheel(name),
+    'grandcrosstradeandwheel'.ri: (name) => GrandCrossTradeAndWheel(name),
+    'grandsinglecrossandwheel'.ri: (name) => GrandSingleCrossAndWheel(name),
+    'grandsinglecrosstradeandwheel'.ri: (name) => GrandSingleCrossTradeAndWheel(name),
     '((head|side)face)?grandsquare((\\d+)steps)?'.ri: (name) => GrandSquare(name),
 
     '12sashay'.ri: (name) => HalfSashay(name),
@@ -553,9 +552,9 @@ abstract class CodedCall extends Call {
     '(single)?(split)?sidetrack'.ri: (name) => Sidetrack(name),
     'single'.ri: (name) => Single(name),
     'singlebounce(the)?($specifier)?'.ri: (name) => SingleBounce(name),
-    '(left)?singlecrossandwheel'.ri: (name) => SingleCrossAndWheel(name),
-    '(left)?singlecrosstradeandwheel'.ri: (name) => SingleCrossTradeAndWheel(name),
-    '(left)?singlewheel'.ri: (name) => SingleWheel(name),
+    'singlecrossandwheel'.ri: (name) => SingleCrossAndWheel(name),
+    'singlecrosstradeandwheel'.ri: (name) => SingleCrossTradeAndWheel(name),
+    'singlewheel'.ri: (name) => SingleWheel(name),
     '62aceydeucey'.ri: (name) => SixTwoAceyDeucey(name),
     '.*(skip|delete).*'.ri: (name) => Skip(name),
     'slide'.ri: (name) => Slide(name),

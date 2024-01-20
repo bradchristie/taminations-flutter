@@ -27,4 +27,4 @@ export 'math/matrix.dart';
 export 'math/movement.dart';
 export 'math/path.dart';
 export 'math/vector.dart';
-export 'normalize_call.dart';
+export 'sequencer/normalize_call.dart';

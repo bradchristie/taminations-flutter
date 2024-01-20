@@ -20,7 +20,7 @@
 
 import '../common.dart';
 
-class SingleCrossAndWheel extends Action with CallWithParts {
+class SingleCrossAndWheel extends Action with IsLeft, CallWithParts {
 
   @override final level = LevelData.C2;
   @override int numberOfParts = 2;
@@ -33,7 +33,6 @@ You can make couples do a Left Hinge with Left Single Cross and Wheel''';
 
   @override
    void performPart1(CallContext ctx) {
-    final left = name.startsWith('Left') ? 'Left' : '';
     ctx.applyCalls('$left Hinge');
   }
 

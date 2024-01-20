@@ -20,7 +20,7 @@
 
 import '../common.dart';
 
-class CrossTradeAndWheel extends Action with CallWithParts {
+class CrossTradeAndWheel extends Action with IsLeft, CallWithParts {
 
   @override final level = LevelData.C2;
   @override int numberOfParts = 3;
@@ -33,7 +33,6 @@ class CrossTradeAndWheel extends Action with CallWithParts {
 
   @override
    void performPart1(CallContext ctx) {
-    final left = name.startsWith('Left') ? 'Left' : '';
     ctx.applyCalls('As Couples $left Hinge');
   }
 

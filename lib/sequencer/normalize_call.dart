@@ -18,7 +18,7 @@
 
 */
 
-import 'extensions.dart';
+import '../extensions.dart';
 
 /// Standardize a call name to match against other names  */
 String normalizeCall(String callname) =>
@@ -61,6 +61,7 @@ String normalizeCall(String callname) =>
         .replaceAll('\\bforth\\b'.ri,'fourth')
         .replaceAll('5th'.ri,'fifth')
         .replaceAll('6th'.ri,'sixth')
+        .replaceAll('2x'.ri, 'twice')
     //  Decimal fractions 2.5, 3.5 etc
         .replaceAllMapped('\\b([1-9])\\.5'.ri,
             (m) => '${m[1]}12')

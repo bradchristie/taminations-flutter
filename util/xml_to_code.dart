@@ -21,7 +21,7 @@ import 'dart:io';
 
 import 'package:taminations/extensions.dart';
 import 'package:taminations/math/hands.dart';
-import 'package:taminations/normalize_call.dart';
+import 'package:taminations/sequencer/normalize_call.dart';
 import 'package:xml/xml.dart';
 
 //  This program generates Dart classes from the XML animations

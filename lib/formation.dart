@@ -22,7 +22,7 @@ import 'package:xml/xml.dart';
 
 import 'dancer_model.dart';
 import 'extensions.dart';
-import 'normalize_call.dart';
+import 'sequencer/normalize_call.dart';
 import 'sequencer/call_error.dart';
 
 class Formation {
