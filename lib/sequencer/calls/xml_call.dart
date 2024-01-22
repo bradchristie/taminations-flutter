@@ -28,12 +28,16 @@ class XMLCall extends Call {
   late AnimatedCall xcall;
   late List<int> xmlmap;
   late CallContext ctx2;
+  CallContext? codedContext;
   bool exact = false;
   bool found = false;
   var perimeter = false;
   var foundLink = '';
   @override String get help => 'Look at the animations of $name to find '
       'what the sequencer will accept';
+
+  @override
+  String toString() => 'XMLCall:$name';
 
   static const noInactiveCalls = ['slip','slither'];
 

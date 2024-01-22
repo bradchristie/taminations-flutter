@@ -30,39 +30,29 @@ class Skip extends Action {
   Skip(String name) : super(name);
 
   @override
-  void perform(CallContext ctx) {
-    final callName = name.replaceFirst('(but )?(${CodedCall.specifier})?(skip|delete) .+'.ri,'').trim();
-    ctx.subContext(ctx.dancers, (ctx2) {
-      if (!ctx2.matchCodedCall(callName))
-        throw CallError('Unable to find $callName as a Call with Parts');
-      if (ctx2.callstack.last is CallWithParts) {
-        final call = ctx2.callstack.last as CallWithParts;
-        var whoSkip = CodedCall.specifier.ri.firstMatch(name);
-        var matchN = 'last(\\d)part'.ri.firstMatch(norm);
-        if (matchN != null) {
-          var n = matchN.group(1)!.i;
-          for (var i=0; i<n; i++)
-            call.replacePart[call.numberOfParts-i] = (ctx) { };
-        } else {
-          final partName = name.replaceFirst('.*(skip|delete)( the)?'.ri, '').trim();
-          final partNumber = CallWithParts.partNumberFromCall(call, partName);
-          if (partNumber == 0)
-            throw CallError('Unable to figure out what to Skip');
-          if (whoSkip == null)
-            call.replacePart[partNumber] = (ctx) { };
-          else {
-            var savePart = call.performPart(partNumber);
-            call.replacePart[partNumber] = (ctx) {
-              ctx.applySpecifier(whoSkip[0]!,negate: true);
-              savePart(ctx);
-            };
-          }
-        }
+  void addToStack(CallContext ctx) {
+    var callWithParts = ctx.findImplementor<CallWithParts>(startFrom:ctx.callstack.last);
+    var whoSkip = CodedCall.specifier.ri.firstMatch(name);
+    var matchN = 'last(\\d)part'.ri.firstMatch(norm);
+    if (matchN != null) {
+      var n = matchN.group(1)!.i;
+      for (var i=0; i<n; i++)
+        callWithParts.replacePart[callWithParts.numberOfParts-i] = (ctx) { };
+    } else {
+      final partName = name.replaceFirst('.*(skip|delete)( the)?'.ri, '').trim();
+      final partNumber = CallWithParts.partNumberFromCall(callWithParts, partName);
+      if (partNumber == 0)
+        throw CallError('Unable to figure out what to Skip');
+      if (whoSkip == null)
+        callWithParts.replacePart[partNumber] = (_) { };
+      else {
+        var savePart = callWithParts.performPart(partNumber);
+        callWithParts.replacePart[partNumber] = (ctx2) {
+          ctx2.applySpecifier(whoSkip[0]!,negate: true);
+          savePart(ctx);
+        };
       }
-      else
-        throw CallError('Can only Skip in a call with Parts');
-      ctx2.performCall();
-    });
+    }
   }
 
 }

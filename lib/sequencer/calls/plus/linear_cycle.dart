@@ -20,7 +20,6 @@
 
 import '../../../moves.dart';
 import '../common.dart';
-import '../common/left.dart';
 
 class LinearCycle extends Action with ActivesOnly, CallWithParts, IsLeft {
 

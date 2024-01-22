@@ -19,7 +19,6 @@
 */
 
 import '../common.dart';
-import '../common/left.dart';
 
 class SplitSquareChainThru extends Action with IsLeft, CallWithParts {
 

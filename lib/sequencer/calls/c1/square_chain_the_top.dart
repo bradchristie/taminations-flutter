@@ -19,7 +19,7 @@
 
 import '../common.dart';
 
-class SquareChainTheTop extends Action with ActivesOnly, CallWithParts {
+class SquareChainTheTop extends Action with ActivesOnly, IsLeft, CallWithParts {
 
   @override var level = LevelData.C1;
   @override var numberOfParts = 3;
@@ -33,20 +33,17 @@ The hands can be swapped with Left Square Chain the Top''';
 
   @override
    void performPart1(CallContext ctx) {
-    final pullBy = name.contains('Left') ? 'Left Pull By' : 'Pull By';
-    ctx.applyCalls(pullBy,'Quarter In');
+    ctx.applyCalls('$left Pull By','Quarter In');
   }
 
   @override
    void performPart2(CallContext ctx) {
-    final left = name.contains('Left') ? '' : 'Left';
-    ctx.applyCalls('$left Spin the Top');
+    ctx.applyCalls('$antiLeft Spin the Top');
   }
 
   @override
    void performPart3(CallContext ctx) {
-    final left = name.contains('Left') ? '' : 'Left';
-    ctx.applyCalls('$left Turn Thru');
+    ctx.applyCalls('$antiLeft Turn Thru');
   }
 
 }

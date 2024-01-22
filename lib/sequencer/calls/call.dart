@@ -31,6 +31,10 @@ abstract class Call {
 
   Call(String s) : name=s.capWords();
 
+  void addToStack(CallContext ctx) {
+    ctx.callstack.add(this);
+  }
+
   void performCall(CallContext ctx);
 
   void raiseLevel(LevelData newLevel) {

@@ -19,7 +19,6 @@
 */
 
 import '../common.dart';
-import '../common/left.dart';
 
 class SplitSquareChainTheTop extends Action with ActivesOnly, CallWithParts, IsLeft {
 

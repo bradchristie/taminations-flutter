@@ -19,7 +19,7 @@
 
 import '../common.dart';
 
-class SquareChainThru extends Action with ActivesOnly, CallWithParts {
+class SquareChainThru extends Action with ActivesOnly, IsLeft, CallWithParts {
 
   @override var level = LevelData.A1;
   @override var numberOfParts = 3;
@@ -33,19 +33,16 @@ The hands can be swapped with Left Square Chain Thru''';
 
   @override
    void performPart1(CallContext ctx) {
-    final pullBy = name.contains('Left') ? 'Left Pull By' : 'Pull By';
-    ctx.applyCalls(pullBy,'Quarter In');
+    ctx.applyCalls('$Left Pull By','Quarter In');
   }
 
   @override
    void performPart2(CallContext ctx) {
-    final left = name.contains('Left') ? '' : 'Left';
     ctx.applyCalls('$left Swing Thru');
   }
 
   @override
    void performPart3(CallContext ctx) {
-    final left = name.contains('Left') ? '' : 'Left';
     ctx.applyCalls('$left Turn Thru');
   }
 

@@ -19,7 +19,6 @@
 */
 
 import '../common.dart';
-import '../common/left.dart';
 
 class SwingAndCircle extends Action with IsLeft {
 

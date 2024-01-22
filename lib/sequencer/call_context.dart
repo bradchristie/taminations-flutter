@@ -188,10 +188,24 @@ class CallContext {
   }
 
   T findImplementor<T>({Call? startFrom}) {
-    var skip = callstack.indexOf(startFrom ?? callstack.first);
-    for (var c in callstack.skip(skip)) {
-      if (c is T)
-        return c as T;
+    var startIndex = callstack.indexOf(startFrom ?? callstack.first);
+    for (var i=0; i<callstack.length*2; i++) {
+      var ix = (i ~/ 2) * (i.isOdd ? 1 : -1) + startIndex;
+      if (ix >= 0 && ix < callstack.length) {
+        var call = callstack[ix];
+        if (call is T) {
+          return call as T;
+        }
+        else if (call is XMLCall && call.codedContext != null) {
+          try {
+            var innerCall = call.codedContext!.findImplementor<T>();
+            callstack.replaceRange(ix,ix+1,call.codedContext!.callstack);
+            return innerCall;
+          } on CallError {
+            continue;
+          }
+        }
+      }
     }
     throw CallError('Unable to find call that implements $T');
   }
@@ -302,26 +316,6 @@ class CallContext {
         return actionctx;
     }
     return greedy ? actionctx : null;
-  }
-
-  void insertAfterNextAction(Call thisCall, Call insertCall) {
-    //  Find out where we are
-    final i = callstack.indexOf(thisCall);
-    if (i < 0)
-      throw CallError('Unable to find $thisCall in call stack');
-    //  Make sure it's not already inserted
-    for (var j=i+1; j<callstack.length; j += 1) {
-      if (insertCall.name == callstack[j].name)
-        return;
-    }
-    //  Find the next action and insert the call
-    for (var j=i+1; j<callstack.length; j += 1) {
-      if (callstack[j] is Action) {
-        callstack.insert(j, insertCall);
-        return;
-      }
-    }
-    throw CallError('Unable to find Action to insert $insertCall');
   }
 
   void thoseWhoCanOnly() {
@@ -482,7 +476,13 @@ class CallContext {
     var norm = normalizeCall(calltext);
     if (XMLCall.lookupAnimatedCall(norm).isNotEmpty) {
       final xmlCall = XMLCall(calltext);
-      callstack.add(xmlCall);
+      try {
+        xmlCall.codedContext = CallContext.fromContext(this)
+          ..interpretCall(calltext, skipFirstXML: true);
+      } on CallError {
+        xmlCall.codedContext = null;
+      }
+      xmlCall.addToStack(this);
       callname += xmlCall.name + ' ';
       return true;
     }
@@ -752,7 +752,7 @@ class CallContext {
   bool matchCodedCall(String callname) {
     var call = CodedCall.fromName(callname);
     if (call != null) {
-      callstack.add(call);
+      call.addToStack(this);
       this.callname += call.name + ' ';
       return true;
     }

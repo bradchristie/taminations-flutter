@@ -18,7 +18,6 @@
  */
 
 import '../common.dart';
-import '../common/left.dart';
 
 class SpinTheTop extends Action with ActivesOnly, CallWithParts, IsLeft {
 
