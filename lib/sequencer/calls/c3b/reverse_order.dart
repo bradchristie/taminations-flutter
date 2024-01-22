@@ -17,10 +17,9 @@
  *     along with Taminations.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import '../coded_call.dart';
 import '../common.dart';
 
-class ReverseOrder extends Action with ActivesOnly {
+class ReverseOrder extends Action {
 
   @override final level = LevelData.C3B;
   @override var helplink = 'c3b/reverse_order';
@@ -28,16 +27,8 @@ class ReverseOrder extends Action with ActivesOnly {
 
   @override
   void perform(CallContext ctx) {
-    final reverseCall = name.replaceFirst('Reverse Order '.ri, '');
-    final codedCall = CodedCall.fromName(reverseCall);
-    if (codedCall is CallWithParts) {
-      codedCall.reverseOrder(ctx);
-      return;
-    }
-
-    //  Nothing worked
-    throw CallError('Could not figure out how to Reverse Order $reverseCall');
-
+    var reverseCall = ctx.findImplementor<CallWithParts>();
+    reverseCall.reverseParts(ctx);
   }
 
 }

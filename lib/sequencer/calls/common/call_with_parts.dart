@@ -101,10 +101,11 @@ mixin CallWithParts on Action {
     return perform(ctx);
   }
 
-  void reverseOrder(CallContext ctx) {
-    for (var part=numberOfParts; part>=1; part--) {
-      ctx.extendPaths();
-      (replacePart[part]??performPart(part))(ctx);
+  void reverseParts(CallContext ctx) {
+    var originalParts = replacePart.copy();
+    for (var part=1; part<=numberOfParts; part++) {
+      var otherPart = numberOfParts - part + 1;
+      replacePart[part] = originalParts[otherPart] ?? performPart(otherPart);
     }
   }
 

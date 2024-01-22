@@ -29,7 +29,7 @@ class LinearCycle extends Action with ActivesOnly, CallWithParts, IsLeft {
   1.  Hinge
   2.  Leaders Fold and all Double Pass Thru
   3.  Peel in direction of Hinge''';
-  @override var helplink = 'plus/acey_deucey';
+  @override var helplink = 'plus/linear_cycle';
   var saveBelles = <DancerModel>{};
   LinearCycle(String name) : super(name);
 

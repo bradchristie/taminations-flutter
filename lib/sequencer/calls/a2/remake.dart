@@ -19,12 +19,10 @@
 
 import '../common.dart';
 
-class Remake extends Action with ActivesOnly, CallWithParts {
+class Remake extends Action with ActivesOnly, CallWithParts, IsLeft, IsGrand {
 
   @override int numberOfParts = 3;
   @override final level = LevelData.A2;
-  bool isGrand;
-  bool isLeft;
   List<DancerModel>? part1dancers;
   List<DancerModel>? part2dancers;
   @override var help = '''Remake is a 3-part call:
@@ -34,10 +32,8 @@ class Remake extends Action with ActivesOnly, CallWithParts {
 Switch hands with Left Remake
 Allow very centers to work with each other with Grand Remake''';
   @override var helplink = 'a2/remake';
-  Remake(String name) :
-        isGrand=name.contains('Grand'),
-        isLeft=name.contains('Left'),
-        super(name);
+
+  Remake(String name) : super(name);
 
   @override
    void performPart1(CallContext ctx) {

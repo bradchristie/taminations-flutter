@@ -19,13 +19,11 @@
 
 import '../common.dart';
 
-class QuarterThru extends Action with ActivesOnly, CallWithParts {
+class QuarterThru extends Action with ActivesOnly, CallWithParts, IsLeft, IsGrand {
 
   @override var level = LevelData.A1;
   @override var numberOfParts = 2;
   List<DancerModel>? part1dancers;
-  bool isGrand;
-  bool isLeft;
   bool isThree;
   @override var help = '''1/4 Thru is a 2-part call:
   1.  Hinge
@@ -33,8 +31,6 @@ class QuarterThru extends Action with ActivesOnly, CallWithParts {
   @override var helplink = 'a1/quarter_thru';
 
   QuarterThru(String name) :
-        isGrand=name.contains('Grand'),
-        isLeft=name.contains('Left'),
         isThree=normalizeCall(name).contains('34'),
         super(name);
 

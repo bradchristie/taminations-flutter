@@ -18,18 +18,28 @@
 
 */
 
+import '../call.dart';
+import '../coded_call.dart';
 import '../common.dart';
 
-class HalfTag extends Action with IsLeft {
+mixin IsGrand on Call {
 
-  @override var level = LevelData.MS;
-  @override var help = 'To pass left shoulders, use Left Half Tag';
-  @override var helplink = 'ms/fraction_tag';
-  HalfTag(String name) : super(name);
+  var isGrand = false;
+  String get grand => isGrand ? 'Grand' : '';
+
+}
+
+class Grand extends CodedCall {
+
+  @override var nextCallCoded = true;
+
+  Grand(String name) : super(name);
 
   @override
-   void perform(CallContext ctx, [int i = 0]) {
-    ctx.applyCalls('$left Quarter Tag','Extend');
+  void performCall(CallContext ctx) {
+    var grandCall = ctx.findImplementor<IsGrand>(startFrom:this);
+    grandCall.isGrand = true;
+    return;
   }
 
 }

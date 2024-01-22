@@ -24,6 +24,7 @@ import 'c1/follow_thru.dart';
 import 'c1/weave.dart';
 import 'c2/cross_concentric_cycle_and_wheel.dart';
 import 'c2/vertical.dart';
+import 'common/grand.dart';
 import 'common/select_location.dart';
 import '../../extensions.dart';
 import '../normalize_call.dart';
@@ -427,16 +428,17 @@ abstract class CodedCall extends Call {
     '\\d\\d'.ri: (name) => Fraction(name),
 
     'girl|ladies|lady'.ri: (_) => Girls(),
+    'grand'.ri: (name) => Grand(name),
     'grandcrosstradeandwheel'.ri: (name) => GrandCrossTradeAndWheel(name),
     'grandsinglecrossandwheel'.ri: (name) => GrandSingleCrossAndWheel(name),
     'grandsinglecrosstradeandwheel'.ri: (name) => GrandSingleCrossTradeAndWheel(name),
     '((head|side)face)?grandsquare((\\d+)steps)?'.ri: (name) => GrandSquare(name),
 
     '12sashay'.ri: (name) => HalfSashay(name),
-    '(left)?12tag'.ri: (name) => HalfTag(name),
+    '12tag'.ri: (name) => HalfTag(name),
     'halfthek'.ri: (_) => HalfTheK(),
     'head'.ri: (name) => Heads(name),
-    '(left)?(single|partner)?hinge'.ri: (name) => Hinge(name),
+    '(single|partner)?hinge'.ri: (name) => Hinge(name),
     '(magic)?hocuspocus'.ri: (name) => HocusPocus(name),
     'horseshoeturn'.ri: (_) => HorseshoeTurn(),
     '(hubs|rims)trade.*'.ri: (name) => HubsTrade(name),
@@ -507,19 +509,19 @@ abstract class CodedCall extends Call {
     'anda?14more'.ri: (_) => QuarterMore(),
     '(left)?14tag'.ri: (name) => QuarterTag(name),
     '(grand)?(left)?(14|34)mix'.ri: (name) => QuarterMix(name),
-    '(grand)?(left)?(14|34)thru'.ri: (name) => QuarterThru(name),
+    '(14|34)thru'.ri: (name) => QuarterThru(name),
 
     'ramble'.ri: (_) => Ramble(),
     'regroup'.ri: (name) => Regroup(name),
     'relocate(.*)'.ri: (name) => Relocate(name),
     'relaythetop'.ri: (name) => RelayTheTop(name),
-    '(left)?(grand)?remake'.ri: (name) => Remake(name),
+    'remake'.ri: (name) => Remake(name),
     '.*(but)?replace.*'.ri: (name) => Replace(name),
     '((inside|outside|inpoint|outpoint|tandembased|wavebased)?triangles?)?reshape(thetriangle)?'.ri:
         (name) => Reshape(name),
     'reverse'.ri: (name) => Reverse(name),
     'reverseexplode'.ri: (name) => ReverseExplode(name),
-    'reverseorder.*'.ri: (name) => ReverseOrder(name),
+    'reverseorder'.ri: (name) => ReverseOrder(name),
     'rightandleftthru'.ri: (name) => RightAndLeftThru(name),
     '(left|right)?ripple.*'.ri: (name) => Ripple(name),
     '(and)?roll'.ri: (name) => Roll(name),

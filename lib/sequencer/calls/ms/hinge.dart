@@ -21,7 +21,7 @@
 import '../../../moves.dart';
 import '../common.dart';
 
-class Hinge extends Action {
+class Hinge extends Action with IsLeft {
 
   @override var level = LevelData.MS;
   @override var help = 'Hinge can be either from a mini-wave (Mainstream)'
@@ -57,14 +57,14 @@ class Hinge extends Action {
     if (db != null && !db.distanceTo(d).isGreaterThan(2.0))
       xScale = 0.5;
     if (ctx.isInWave(d,d2)) {
-      if (name.startsWith('Left') && d2.isRightOf(d))
+      if (isLeft && d2.isRightOf(d))
         throw CallError('Cannot Left Hinge with right hands');
       return (d2.isRightOf(d) ? HingeRight : HingeLeft).scale(xScale, dist/2);
     }
     //  Left Partner Hinge
-    else if (ctx.isInCouple(d,d2) && d2.isRightOf(d) && name.startsWith('Left'))
+    else if (ctx.isInCouple(d,d2) && d2.isRightOf(d) && isLeft)
       return QuarterRight.skew(-xScale,-dist/2);
-    else if (ctx.isInCouple(d,d2) && d2.isLeftOf(d) && name.startsWith('Left'))
+    else if (ctx.isInCouple(d,d2) && d2.isLeftOf(d) && isLeft)
       return LeadLeft.scale(xScale,dist/2);
     //  Partner Hinge
     else if (ctx.isInCouple(d,d2) && d2.isRightOf(d))
