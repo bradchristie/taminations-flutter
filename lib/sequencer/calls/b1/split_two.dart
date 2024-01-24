@@ -27,7 +27,7 @@ class SplitTwo extends Action {
   var _activesAreCouples = true;
 
   @override
-  void perform(CallContext ctx) {
+  void performCall(CallContext ctx) {
     _activesAreCouples = ctx.actives.every((d) => ctx.isInCouple(d));
     for (var d in ctx.dancers) {
       var path = performOne(d, ctx);

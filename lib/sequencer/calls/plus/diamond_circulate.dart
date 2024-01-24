@@ -32,10 +32,10 @@ class DiamondCirculate extends Action {
   DiamondCirculate() : super('Diamond Circulate');
 
   @override
-  void perform(CallContext ctx) {
+  void performCall(CallContext ctx) {
     if (ctx.actives.length != 4)
       throw CallError('Unable to calculate Diamond Circulate');
-    super.perform(ctx);
+    super.performCall(ctx);
   }
 
   @override

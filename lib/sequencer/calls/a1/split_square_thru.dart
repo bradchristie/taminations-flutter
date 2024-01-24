@@ -27,7 +27,7 @@ class SplitSquareThru extends Action with IsLeft {
   SplitSquareThru(String name) : super(name);
 
   @override
-  void perform(CallContext ctx) {
+  void performCall(CallContext ctx) {
     //  Helpful check
     if (ctx.isSquare() && ctx.actives.length == 4)
       throw CallError('Use Heads Start or Sides Start Split Square Thru');

@@ -30,7 +30,7 @@ class CastOffThreeQuarters extends Action with ActivesOnly {
   CastOffThreeQuarters(String name) : super(name);
 
   @override
-  void perform(CallContext ctx) {
+  void performCall(CallContext ctx) {
     var waveDancers = ctx.actives.where((d) => ctx.isInWave(d)).toList();
     var couplesLeft = ctx.actives.where((d) =>
     ctx.isInCouple(d) && d.isCenterLeft &&

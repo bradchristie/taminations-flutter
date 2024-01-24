@@ -21,95 +21,89 @@
 import '../../../moves.dart';
 import '../common.dart';
 
-class CrossRun extends Action with ActivesOnly {
-
-  @override var level = LevelData.B2;
-  @override var help = 'Cross Run dancers must be either all centers'
+class CrossRun extends Action {
+  @override
+  var level = LevelData.B2;
+  @override
+  var help = 'Cross Run dancers must be either all centers'
       ' or all ends of general lines.';
-  @override var helplink = 'b2/run';
+  @override
+  var helplink = 'b2/run';
+
   CrossRun(String name) : super(name);
 
   @override
-  void perform(CallContext ctx) {
-    var spec = name.replaceFirst('Cross\\s*Run'.ri , '' );
-    if (spec.isBlank)
-      throw CallError('Who is going to Cross Run?');
-    var specCtx = CallContext.fromContext(ctx);
-    specCtx.applySpecifier(spec);
-    var runners = ctx.actives.where((d) => specCtx.actives.contains(d));
-    var dodgers = ctx.actives.where((d) => !runners.contains(d));
-    if (runners.length > dodgers.length)
-      throw CallError('Not valid arrangement for Cross Run');
-    //  Runners must be all ends or all centers
-    //  In a 1/4 tag, center 4 are all centers, and the ends of that wave
-    //  are also ends, which makes this check a little trickier
-    var endsOnly = runners.where((d) => d.data.end && !d.data.center);
-    var centersOnly = runners.where((d) => d.data.center && !d.data.end);
-    if (endsOnly.isNotEmpty && centersOnly.isNotEmpty)
-      throw CallError('Cross Run dancers must be all ends or all centers');
-    var realDodgers = <DancerModel>[];
-    for (var d in runners) {
-      var dright = ctx.dancersToRight(d);
-      var dleft = ctx.dancersToLeft(d);
-      var numright = dright.length;
-      var numleft = dleft.length;
-      //  Runners must be in general lines of 4 or 8
-      if (numright+numleft != 3 && numright+numleft != 7)
-        throw CallError('Dancers must be in waves of 4 or 8');
-      if (numright == 2 || numright == 3 || numright == 6 || numright == 7) {
-        final d2 = dright[1];
-        if (!runners.contains(d2))
-          realDodgers.add(d2);
-        final dist = d.distanceTo(d2);
-        //  If centers are running and facing same direction,
-        //  dancer on right goes in front (half-sashay action)
-        if (d.data.center && ctx.dancerToRight(d)!.angleFacing.isAround(d.angleFacing)) {
-          d.path =
-              DodgeRight.scale(1.0,0.5).changeBeats(1.0) +
-              RunRight.scale(1.0, dist/2).skew(0.0,1.0);
-        } else {
-          //  Pass right shoulders
-          var scaleX = 1.0;
-          if (d.data.end && numright > 2 &&
-              dright[2].angleFacing.isAround(d.angleFacing))
-            scaleX = 2.0;
-          d.path = RunRight.scale(scaleX, dist / 2);
-        }
+  void performCall(CallContext ctx0) {
+    ctx0.activesContext((ctx) {
+      var spec = name.replaceFirst('Cross\\s*Run'.ri, '');
+      if (spec.isBlank) throw CallError('Who is going to Cross Run?');
+      var specCtx = CallContext.fromContext(ctx);
+      specCtx.applySpecifier(spec);
+      var runners = ctx.actives.where((d) => specCtx.actives.contains(d));
+      var dodgers = ctx.actives.where((d) => !runners.contains(d));
+      if (runners.length > dodgers.length) throw CallError('Not valid arrangement for Cross Run');
+      //  Runners must be all ends or all centers
+      //  In a 1/4 tag, center 4 are all centers, and the ends of that wave
+      //  are also ends, which makes this check a little trickier
+      var endsOnly = runners.where((d) => d.data.end && !d.data.center);
+      var centersOnly = runners.where((d) => d.data.center && !d.data.end);
+      if (endsOnly.isNotEmpty && centersOnly.isNotEmpty)
+        throw CallError('Cross Run dancers must be all ends or all centers');
+      var realDodgers = <DancerModel>[];
+      for (var d in runners) {
+        var dright = ctx.dancersToRight(d);
+        var dleft = ctx.dancersToLeft(d);
+        var numright = dright.length;
+        var numleft = dleft.length;
+        //  Runners must be in general lines of 4 or 8
+        if (numright + numleft != 3 && numright + numleft != 7)
+          throw CallError('Dancers must be in waves of 4 or 8');
+        if (numright == 2 || numright == 3 || numright == 6 || numright == 7) {
+          final d2 = dright[1];
+          if (!runners.contains(d2)) realDodgers.add(d2);
+          final dist = d.distanceTo(d2);
+          //  If centers are running and facing same direction,
+          //  dancer on right goes in front (half-sashay action)
+          if (d.data.center && ctx.dancerToRight(d)!.angleFacing.isAround(d.angleFacing)) {
+            d.path = DodgeRight.scale(1.0, 0.5).changeBeats(1.0) +
+                RunRight.scale(1.0, dist / 2).skew(0.0, 1.0);
+          } else {
+            //  Pass right shoulders
+            var scaleX = 1.0;
+            if (d.data.end && numright > 2 && dright[2].angleFacing.isAround(d.angleFacing))
+              scaleX = 2.0;
+            d.path = RunRight.scale(scaleX, dist / 2);
+          }
+        } else if (numleft == 2 || numleft == 3 || numleft == 6 || numleft == 7) {
+          final d2 = dleft[1];
+          if (!runners.contains(d2)) realDodgers.add(d2);
+          final dist = d.distanceTo(d2);
+          d.path = RunLeft.scale(1.0, dist / 2);
+        } else
+          throw CallError('Error calculating Cross Run');
       }
-      else if (numleft == 2 || numleft == 3 || numleft == 6 || numleft == 7) {
-        final d2 = dleft[1];
-        if (!runners.contains(d2))
-          realDodgers.add(d2);
-        final dist = d.distanceTo(d2);
-        d.path = RunLeft.scale(1.0,dist/2);
+      if (realDodgers.length != runners.length) throw CallError('Error calculating Cross Run');
+
+      for (var d in realDodgers) {
+        //  Find a direction they can move to a runner's spot
+        //  I don't think there can be more than one
+        //  in a symmetric formation
+        var dright = ctx.dancerToRight(d);
+        var dleft = ctx.dancerToLeft(d);
+        var dfront = ctx.dancerInFront(d);
+        var dback = ctx.dancerInBack(d);
+        //  Dodge or move forward/back to that spot
+        if (runners.contains(dright))
+          d.path = DodgeRight.scale(1.0, d.distanceTo(dright!) / 2);
+        else if (runners.contains(dleft))
+          d.path = DodgeLeft.scale(1.0, d.distanceTo(dleft!) / 2);
+        else if (runners.contains(dfront))
+          d.path = Forward.changeBeats(3.0).scale(d.distanceTo(dfront!), 1.0);
+        else if (runners.contains(dback))
+          d.path = Back.changeBeats(3.0).scale(d.distanceTo(dback!), 1.0);
+        else
+          throw CallError('Unable to calculate Cross Run for dancer $d');
       }
-      else
-        throw CallError('Error calculating Cross Run');
-    }
-    if (realDodgers.length != runners.length)
-      throw CallError('Error calculating Cross Run');
-
-    for (var d in realDodgers) {
-      //  Find a direction they can move to a runner's spot
-      //  I don't think there can be more than one
-      //  in a symmetric formation
-      var dright = ctx.dancerToRight(d);
-      var dleft = ctx.dancerToLeft(d);
-      var dfront = ctx.dancerInFront(d);
-      var dback = ctx.dancerInBack(d);
-      //  Dodge or move forward/back to that spot
-      if (runners.contains(dright))
-        d.path = DodgeRight.scale(1.0,d.distanceTo(dright!)/2);
-      else if (runners.contains(dleft))
-        d.path = DodgeLeft.scale(1.0,d.distanceTo(dleft!)/2);
-      else if (runners.contains(dfront))
-        d.path = Forward.changeBeats(3.0).scale(d.distanceTo(dfront!),1.0);
-      else if (runners.contains(dback))
-        d.path = Back.changeBeats(3.0).scale(d.distanceTo(dback!),1.0);
-      else
-        throw CallError('Unable to calculate Cross Run for dancer $d');
-    }
-
+    });
   }
-
 }

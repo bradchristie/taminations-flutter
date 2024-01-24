@@ -33,7 +33,7 @@ Line of (6 or 8) [Left] [Half] Tag the Line
   TagTheLine(name) : super(name);
 
   @override
-   void perform(CallContext ctx, [int i = 0]) {
+   void performCall(CallContext ctx, [int i = 0]) {
     final left = name.startsWith('Left') ? 'Left' : '';
     ctx.applyCalls('$left 34tag');
     ctx.contractPaths();
@@ -42,7 +42,7 @@ Line of (6 or 8) [Left] [Half] Tag the Line
 
 }
 
-class BigLineTagTheLine extends Action with ActivesOnly {
+class BigLineTagTheLine extends Action {
 
   @override var level = LevelData.MS;
   @override var help = TagTheLine('').help;
@@ -61,24 +61,26 @@ class BigLineTagTheLine extends Action with ActivesOnly {
   BigLineTagTheLine(String name) : isLeft=name.contains('Left'), super(name) ;
 
   @override
-  void perform(CallContext ctx) {
-    _isHalfTag = norm.contains('12');
-    final length = norm.contains('6') ? '6' : '8';
-    if (length == '6' && ctx.dancers.length > 6)
-      ctx.applyCalls('Wave of 6 $name');
-    else {
-      _minDist = ctx.dancers.fold<double>(9.9, (prev, d) => min(prev,d.location.length));
-      _maxDist = ctx.dancers.fold<double>(0.0, (prev, d) => max(prev,d.location.length));
-      super.perform(ctx);
-      if (ctx.dancers.length == 6 && _isHalfTag) {
-        ctx.animateToEnd();
-        var ctx2 = CallContext.fromFormation(ColumnsOf3);
-        var mapping = ctx.matchFormations(ctx2,sexy:false,fuzzy:true,rotate:180,
-            handholds:false, maxError : 3.0, delta: 0.3, maxAngle: 0.5);
-        if (mapping != null)
-          ctx.adjustToFormationMatch(mapping.match);
+  void performCall(CallContext ctx) {
+    ctx.activesContext((ctx2) {
+      _isHalfTag = norm.contains('12');
+      final length = norm.contains('6') ? '6' : '8';
+      if (length == '6' && ctx2.dancers.length > 6)
+        ctx2.applyCalls('Wave of 6 $name');
+      else {
+        _minDist = ctx2.dancers.fold<double>(9.9, (prev, d) => min(prev,d.location.length));
+        _maxDist = ctx2.dancers.fold<double>(0.0, (prev, d) => max(prev,d.location.length));
+        super.performCall(ctx2);
+        if (ctx2.dancers.length == 6 && _isHalfTag) {
+          ctx2.animateToEnd();
+          var ctx3 = CallContext.fromFormation(ColumnsOf3);
+          var mapping = ctx2.matchFormations(ctx3,sexy:false,fuzzy:true,rotate:180,
+              handholds:false, maxError : 3.0, delta: 0.3, maxAngle: 0.5);
+          if (mapping != null)
+            ctx2.adjustToFormationMatch(mapping.match);
+        }
       }
-    }
+    });
   }
 
   @override

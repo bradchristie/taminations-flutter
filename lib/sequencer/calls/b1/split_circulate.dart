@@ -27,10 +27,10 @@ class SplitCirculate extends Action {
   SplitCirculate(String name) : super(name);
 
   @override
-  void perform(CallContext ctx) {
+  void performCall(CallContext ctx) {
     if (!ctx.isTBone())
       throw CallError('Only 2 boxes of 4 can Split Circulate.' );
-    super.perform(ctx);
+    super.performCall(ctx);
   }
 
   @override

@@ -29,7 +29,7 @@ class Relocate extends Action {
 
 
   @override
-  void perform(CallContext ctx) {
+  void performCall(CallContext ctx) {
     ctx.applyCalls('Outer 6 Counter Rotate While Very Centers Cast Off 3/4');
   }
 

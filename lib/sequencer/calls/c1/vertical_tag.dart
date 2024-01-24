@@ -28,10 +28,10 @@ class VerticalTag extends Action {
   VerticalTag(String name) : super(name);
 
   @override
-  void perform(CallContext ctx) {
+  void performCall(CallContext ctx) {
     ctx.analyzeActives();
     //  This calls performOne below, which performs Vertical 1/4 Tag
-    super.perform(ctx);
+    super.performCall(ctx);
     //  Now extend as requested
     final norm = normalizeCall(name);
     if (norm.contains('12'))

@@ -38,7 +38,7 @@ class Run extends Action {
   }
 
   @override
-  void perform(CallContext ctx) {
+  void performCall(CallContext ctx) {
     var dancersToRun = ctx.dancers.where((d) => d.isActive).toSet();
     var dancersToWalk = ctx.dancers.where((d) => d.isNotActive).toSet();
     var usePartner = false;

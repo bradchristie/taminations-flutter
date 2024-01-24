@@ -32,7 +32,7 @@ class SplitRecycle extends Action with IsReverse {
   SplitRecycle(String name) : super(name);
 
   @override
-  void perform(CallContext ctx) {
+  void performCall(CallContext ctx) {
     ctx.applyCalls('Couples Do Your Part $reverse Recycle'
         ' While Wave Dancers Do Your Part Split Recycle');
   }

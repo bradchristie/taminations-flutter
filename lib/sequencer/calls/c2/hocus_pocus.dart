@@ -28,7 +28,7 @@ class HocusPocus extends Action {
   HocusPocus(name) : super(name);
 
   @override
-  void perform(CallContext ctx) {
+  void performCall(CallContext ctx) {
     final outer4 = CallContext.fromContext(ctx,dancers: ctx.outer(4).inOrder());
     ctx.subContext(outer4.dancers, (ctx2) {
       final magic = name.contains('Magic') ? 'Magic' : '';

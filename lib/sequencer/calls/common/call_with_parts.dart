@@ -88,7 +88,7 @@ mixin CallWithParts on Action {
   set lastPart(value) { replacePart[numberOfParts] = value; }
 
   @override
-  void perform(CallContext ctx) {
+  void performCall(CallContext ctx) {
     for (var part=1; part<=numberOfParts; part++) {
       ctx.extendPaths();
       ctx.analyze();
@@ -98,7 +98,7 @@ mixin CallWithParts on Action {
 
   void finish(CallContext ctx) {
     replacePart[1] = (ctx) { };
-    return perform(ctx);
+    return performCall(ctx);
   }
 
   void reverseParts(CallContext ctx) {

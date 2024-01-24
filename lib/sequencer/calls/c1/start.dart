@@ -30,7 +30,7 @@ class Start extends Action {
   Start(String name) : super(name);
 
   @override
-  void perform(CallContext ctx) {
+  void performCall(CallContext ctx) {
     final finishCall = name.replaceFirst('^start\\s+'.ri, '');
     if (finishCall.isBlank)
       throw CallError('Start what?');

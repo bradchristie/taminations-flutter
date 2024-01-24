@@ -28,10 +28,10 @@ class ZigZag extends Action with ActivesOnly {
   ZigZag(String name) : super(name);
 
   @override
-  void perform(CallContext ctx) {
+  void performCall(CallContext ctx) {
     if (ctx.dancers.none((d) => d.data.trailer))
       throw CallError('No trailers in this formation');
-    super.perform(ctx);
+    super.performCall(ctx);
   }
 
   @override

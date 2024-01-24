@@ -35,9 +35,9 @@ class QuarterThru extends Action with ActivesOnly, CallWithParts, IsLeft, IsGran
         super(name);
 
   @override
-  void perform(CallContext ctx) {
+  void performCall(CallContext ctx) {
     ctx.canDoYourPart = false;
-    super.perform(ctx);
+    super.performCall(ctx);
   }
 
   @override

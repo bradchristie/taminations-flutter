@@ -31,7 +31,7 @@ class Circulate extends Action {
   Circulate(name) : super(name);
 
   @override
-  void perform(CallContext ctx) {
+  void performCall(CallContext ctx) {
     //  If just 4 dancers, try Box Circulate
     if (ctx.actives.length == 4) {
       //  As a convenience, if diamond do a diamond circulate
@@ -45,11 +45,11 @@ class Circulate extends Action {
             ctx2.applyCalls('Box Circulate');
           } on CallError {
             //  That didn't work, try to find a circulate path for each dancer
-            super.perform(ctx);
+            super.performCall(ctx);
           }
         } else {
           //  Dancers not in center, go on and try to calculate the circulate
-          super.perform(ctx);
+          super.performCall(ctx);
         }
       });
     }
@@ -70,7 +70,7 @@ class Circulate extends Action {
       ctx.applyCalls('Column Circulate' );
     //  If none of these, but t-bones or 6 dancers, calculate paths
     else if (ctx.actives.length == 6 || ctx.isTBone()) {
-      super.perform(ctx);
+      super.performCall(ctx);
       if (ctx.isCollision())
         throw CallError('Cannot handle dancer collision here.' );
     }

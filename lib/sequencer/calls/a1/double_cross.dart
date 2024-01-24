@@ -28,7 +28,7 @@ class DoubleCross extends Action {
   DoubleCross() : super('Double Cross');
 
   @override
-  void perform(CallContext ctx) {
+  void performCall(CallContext ctx) {
     var crossCount  = 0;
     //  Ignore the outer 2 dancers
     ctx.subContext(ctx.center6(), (ctx2) {

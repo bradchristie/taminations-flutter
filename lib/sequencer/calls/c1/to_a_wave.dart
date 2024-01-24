@@ -27,7 +27,7 @@ class ToAWave extends Action {
   ToAWave(String name) : super(name);
 
   @override
-  void perform(CallContext ctx) {
+  void performCall(CallContext ctx) {
     if (ctx.callstack.length < 2)
       throw CallError('What to a Wave?');
     //  Remember the angle each dancer is facing

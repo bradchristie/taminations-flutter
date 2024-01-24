@@ -31,7 +31,7 @@ abstract class SplitCall extends Action {
   SplitCall(super.name);
 
   @override
-  void perform(CallContext ctx) {
+  void performCall(CallContext ctx) {
     var splitAmount = ctx.dancers.length ~/ 2;
     if (ctx.dancers.length > 4) {
       try {
@@ -63,7 +63,7 @@ abstract class SplitCall extends Action {
         }
       }
     } else
-      super.perform(ctx);
+      super.performCall(ctx);
   }
 
   //  Derived classes need to implement this method

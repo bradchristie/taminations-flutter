@@ -30,10 +30,10 @@ class Zig extends Action {
   Zig(String name) : super(name);
 
   @override
-  void perform(CallContext ctx) {
+  void performCall(CallContext ctx) {
     if (ctx.dancers.none((d) => d.data.leader))
       throw CallError('No leaders in this formation');
-    super.perform(ctx);
+    super.performCall(ctx);
   }
 
   @override

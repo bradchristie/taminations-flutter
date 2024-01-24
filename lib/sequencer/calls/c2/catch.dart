@@ -37,11 +37,6 @@ class Catch extends Action with ActivesOnly, CallWithParts {
       ?? thrower(CallError('Catch how much?'));
 
   @override
-  void perform(CallContext ctx) {
-    super.perform(ctx);
-  }
-
-  @override
    void performPart1(CallContext ctx) {
     ctx.applyCalls('$all4 $direction $split Square Thru $count to a Wave');
   }

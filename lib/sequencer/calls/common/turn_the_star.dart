@@ -31,7 +31,7 @@ class TurnTheStar extends Action {
   TurnTheStar(String name) : super(name);
 
   @override
-  void perform(CallContext ctx) {
+  void performCall(CallContext ctx) {
     final callName = name.replaceFirst('(do not )?turn the star.*'.ri, '').trim();
     ctx.subContext(ctx.dancers, (ctx2) {
       if (!ctx2.matchCodedCall(callName))

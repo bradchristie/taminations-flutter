@@ -27,7 +27,7 @@ class WithTheFlow extends Action with ActivesOnly {
   WithTheFlow(String name) : super(name);
 
   @override
-  void perform(CallContext ctx) {
+  void performCall(CallContext ctx) {
     if (ctx.dancers.any((d) => !ctx.isInCouple(d)))
       throw CallError('Only couples can do With the Flow');
     var isLeft = true;

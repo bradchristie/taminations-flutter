@@ -31,7 +31,7 @@ class SquareThru extends Action {
   SquareThru(String name) : super(name);
 
   @override
-   void perform(CallContext ctx, [int i=0]) {
+   void performCall(CallContext ctx, [int i=0]) {
     //  Set up alternating hands
     var left = 'Left-Hand' ;
     var right = '' ;

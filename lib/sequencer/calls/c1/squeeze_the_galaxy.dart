@@ -27,7 +27,7 @@ class SqueezeTheGalaxy extends Action {
   SqueezeTheGalaxy(String name) : super(name);
 
   @override
-  void perform(CallContext ctx) {
+  void performCall(CallContext ctx) {
     //  Match to any galaxy
     final galaxy = CallContext.fromFormation(Formation('Galaxy RH GP'));
     final mm = galaxy.matchFormations(ctx,rotate:180);

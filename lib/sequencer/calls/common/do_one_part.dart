@@ -24,7 +24,7 @@ class DoOnePart extends Action {
   DoOnePart(String name) : super(name);
 
   @override
-  void perform(CallContext ctx) {
+  void performCall(CallContext ctx) {
     final callName = name.replaceFirst('do the .* part (of)?'.ri, '').trim();
     ctx.subContext(ctx.dancers, (ctx2) {
       ctx2.analyze();

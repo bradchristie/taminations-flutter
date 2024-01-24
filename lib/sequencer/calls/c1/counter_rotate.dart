@@ -31,8 +31,8 @@ class CounterRotate extends Action {
   CounterRotate() : super('Counter Rotate');
 
   @override
-  void perform(CallContext ctx) {
-    super.perform(ctx);
+  void performCall(CallContext ctx) {
+    super.performCall(ctx);
     //  Looks much better if dancers all take the same time
     var maxBeats = ctx.dancers.maxOf((d) => d.path.beats);
     for (var d in ctx.dancers) {

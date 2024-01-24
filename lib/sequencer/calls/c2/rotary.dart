@@ -27,7 +27,7 @@ class Rotary extends Action {
   Rotary(String name) : super(name);
 
   @override
-  void perform(CallContext ctx) {
+  void performCall(CallContext ctx) {
     ctx.applyCalls('Pull By');
     ctx.analyze();
     ctx.subContext(ctx.outer(4), (ctx2) {

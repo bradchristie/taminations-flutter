@@ -30,7 +30,7 @@ class Finish extends Action {
   Finish(String name) : super(name);
 
   @override
-  void perform(CallContext ctx) {
+  void performCall(CallContext ctx) {
     final finishCall = name.replaceFirst('Finish\\s+'.ri,' ');
     if (finishCall.isBlank)
       throw CallError('Finish what?');

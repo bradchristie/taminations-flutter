@@ -28,7 +28,7 @@ class HorseshoeTurn extends Action {
   HorseshoeTurn() : super('Horseshoe Turn');
 
   @override
-  void perform(CallContext ctx) {
+  void performCall(CallContext ctx) {
     ctx.applyCalls('Clover and Partner Tag');
   }
 

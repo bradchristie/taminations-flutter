@@ -29,7 +29,7 @@ class WheelAnd extends Action with IsReverse {
   WheelAnd(String name) : super(name);
 
   @override
-  void perform(CallContext ctx) {
+  void performCall(CallContext ctx) {
     //  Find the 4 dancers to Wheel
     var facingOut = ctx.dancers.where((d) => d.isFacingOut).toList();
     if (facingOut.length > 4 && !ctx.isSquare())

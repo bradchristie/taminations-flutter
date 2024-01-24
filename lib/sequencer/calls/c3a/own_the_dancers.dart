@@ -26,7 +26,7 @@ class OwnTheDancers extends Action {
   OwnTheDancers(String name) : super(name);
 
   @override
-  void perform(CallContext ctx) {
+  void performCall(CallContext ctx) {
     //  For now we will assume the specifier is just one word
     final match = 'Own the (\\w+) (.*) by (.*)'.ri.firstMatch(name);
     if (match == null || match.groupCount < 3)

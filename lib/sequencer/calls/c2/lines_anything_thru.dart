@@ -27,7 +27,7 @@ class LinesAnythingThru extends Action {
   LinesAnythingThru(String name) : super(name);
 
   @override
-  void perform(CallContext ctx) {
+  void performCall(CallContext ctx) {
     var anyCall = name.replaceMatch('Lines\\s*(.*)\\s*Thru'.r, '\\1');
     if (anyCall.isBlank)
       throw CallError('Lines what Thru?');

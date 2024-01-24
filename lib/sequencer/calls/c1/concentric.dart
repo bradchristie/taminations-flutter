@@ -90,7 +90,7 @@ class Concentric extends Action {
   }
 
   @override
-  void perform(CallContext ctx) {
+  void performCall(CallContext ctx) {
     if (realCall.isBlank)
       throw CallError('Concentric what?');
     if (ctx.actives.length == 8) {

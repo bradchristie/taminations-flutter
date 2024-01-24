@@ -26,7 +26,7 @@ class SqueezeTheHourglass extends Action {
   SqueezeTheHourglass(String name) : super(name);
 
   @override
-  void perform(CallContext ctx) {
+  void performCall(CallContext ctx) {
     //  Match to any hourglass
     final hourglass = CallContext.fromFormation(Formation('Hourglass RH BP'));
     final mm = hourglass.matchFormations(ctx,rotate:180);

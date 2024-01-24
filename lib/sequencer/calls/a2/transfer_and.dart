@@ -27,7 +27,7 @@ class TransferAnd extends Action {
   TransferAnd(String name) : super(name);
 
   @override
-  void perform(CallContext ctx) {
+  void performCall(CallContext ctx) {
     final othercall = name.replaceFirst('Transfer\\s+and\\s*'.ri,'');
     if (othercall.isBlank)
       throw CallError('Transfer and what?');

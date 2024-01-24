@@ -30,10 +30,10 @@ class HubsTrade extends Action with ActivesOnly, CallWithParts {
   HubsTrade(String name) : super(name);
 
   @override
-  void perform(CallContext ctx) {
+  void performCall(CallContext ctx) {
     if (!ctx.isLines() && !ctx.isThar())
       throw CallError('Cannot do $name from here');
-    super.perform(ctx);
+    super.performCall(ctx);
   }
 
   @override

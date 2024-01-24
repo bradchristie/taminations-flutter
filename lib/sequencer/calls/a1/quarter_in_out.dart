@@ -28,19 +28,19 @@ class QuarterInOut extends Action {
   QuarterInOut(String name) : super(name);
 
   @override
-  void perform(CallContext ctx) {
+  void performCall(CallContext ctx) {
     if (ctx.dancers.length == 4)
-      return super.perform(ctx);
+      return super.performCall(ctx);
     final boxes = ctx.boxes();
     if (boxes != null) {
       for (final box in boxes) {
         ctx.subContext(box, (ctx2) {
           ctx2.dancers.center();
-          super.perform(ctx2);
+          super.performCall(ctx2);
         });
       }
     } else {
-      super.perform(ctx);
+      super.performCall(ctx);
     }
   }
 

@@ -81,7 +81,7 @@ class Phantom extends Action {
   }
 
   @override
-  void perform(CallContext ctx) {
+  void performCall(CallContext ctx) {
     final phantomSnapFormations = {
       PhantomSnapFormation_1 : 1.0,
       PhantomSnapFormation_2 : 1.0

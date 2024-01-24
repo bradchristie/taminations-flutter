@@ -48,7 +48,7 @@ class Spread extends Action {
    */
 
   @override
-  void perform(CallContext ctx) {
+  void performCall(CallContext ctx) {
     //  Is this spread from waves, tandem, actives?
     Action spreader;
     ctx.analyze();
@@ -70,7 +70,7 @@ class Spread extends Action {
     } else
       throw CallError('Unable to find case for Spread');
     level = spreader.level;
-    spreader.perform(ctx);
+    spreader.performCall(ctx);
   }
 
 }
@@ -79,7 +79,7 @@ class _Case1 extends Action {
   _Case1() : super('and Spread');
 
   @override
-  void perform(CallContext ctx) {
+  void performCall(CallContext ctx) {
     ctx.extendPaths();
     for (var d in ctx.dancers) {
       if (d.isActive) {
@@ -109,9 +109,9 @@ class _Case2 extends Action {
   _Case2() : super('and Spread');
 
   @override
-  void perform(CallContext ctx) {
+  void performCall(CallContext ctx) {
     ctx.extendPaths();
-    super.perform(ctx);
+    super.performCall(ctx);
   }
 
   @override
@@ -138,7 +138,7 @@ class _Case2 extends Action {
 class _Case3 extends _Case1 {
 
   @override
-  void perform(CallContext ctx) {
+  void performCall(CallContext ctx) {
     //  Must be tandem couples
     if (ctx.dancers.any((d) => !ctx.isInTandem(d) || !ctx.isInCouple(d)))
       throw CallError('Invalid formation for Spread');
@@ -146,7 +146,7 @@ class _Case3 extends _Case1 {
     for (var d in ctx.dancers)
       d.data.active = d.data.leader;
     //  And forward to Case1, actives spread
-    super.perform(ctx);
+    super.performCall(ctx);
   }
 
 }
@@ -158,7 +158,7 @@ class _Case4 extends Action {
   _Case4() : super('and Spread');
 
   @override
-  void perform(CallContext ctx) {
+  void performCall(CallContext ctx) {
     ctx.extendPaths();
     for (var d in ctx.dancers) {
       if (d.isActive) {

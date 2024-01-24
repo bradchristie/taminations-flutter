@@ -84,7 +84,7 @@ abstract class TripleFormation extends Action {
   String subCall;
 
   @override
-  void perform(CallContext ctx) {
+  void performCall(CallContext ctx) {
     if (subCall.isBlank) throw CallError('$name what?');
     isXaxis = findAxis(ctx);
     //  Add phantoms in spots not occupied by dancers

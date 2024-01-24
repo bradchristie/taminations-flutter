@@ -21,6 +21,9 @@
 import '../../call_context.dart';
 import '../action.dart';
 
+//  Convenience mixin for calls that have no affect on incactive dancers
+//  Don't use this with performCall, just performOne
+//  For performCall use ctx.activesContext()
 mixin ActivesOnly on Action {
 
   @override

@@ -27,7 +27,7 @@ class TheK extends Action {
   TheK(String name) : super(name);
 
   @override
-  void perform(CallContext ctx) {
+  void performCall(CallContext ctx) {
     if (ctx.dancers.where((d) => d.data.center).length == 4 &&
         ctx.dancers.where((d) => d.data.end).length == 4)
       ctx.applyCalls('Centers Trade While Ends Quarter Out and Roll');

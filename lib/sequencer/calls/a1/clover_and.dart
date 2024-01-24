@@ -29,7 +29,7 @@ class Cloverleaf extends Action {
   //  We get here only if standard Cloverleaf with all 8 dancers active fails.
   //  So do a 4-dancer cloverleaf
   @override
-  void perform(CallContext ctx) {
+  void performCall(CallContext ctx) {
     final adjust = ctx.is2x4() && ctx.center(4).every((d) => d.isFacingOut)
         ? 'Adjust to a Box' : 'Nothing';
     ctx.applyCalls('Clover and $adjust');
@@ -46,7 +46,7 @@ class CloverAnd extends Action {
   CloverAnd(String name) : super(name);
 
   @override
-  void perform(CallContext ctx) {
+  void performCall(CallContext ctx) {
     //  Find the 4 dancers to Cloverleaf
     //  First check the outer 4
     final outer4 = ctx.dancers.sortedBy((d) => d.location.length).drop(4).toList();

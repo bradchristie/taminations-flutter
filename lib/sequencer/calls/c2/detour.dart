@@ -28,7 +28,7 @@ class Detour extends Action {
   Detour() : super('Detour');
 
   @override
-  void perform(CallContext ctx) {
+  void performCall(CallContext ctx) {
     ctx.subContext(ctx.center(4), (ctx2) {
       ctx2.applyCalls('Box Counter Rotate');
     });

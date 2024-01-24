@@ -36,7 +36,7 @@ class QuarterTag extends Action with ActivesOnly {
           .every((d) => ctx.dancerToRight(d)?.data.center ?? false);
 
   @override
-   void perform(CallContext ctx, [int i = 0]) {
+   void performCall(CallContext ctx, [int i = 0]) {
     var dir = name.startsWith('Left') ? 'Left' : '';
     if (ctx.isTidal())
       ctx.applyCalls('Center 4 Face Out While Outer 4 Face In','Facing Dancers $dir Touch');

@@ -27,7 +27,7 @@ class SnapTheLock extends Action {
   SnapTheLock(name) : super(name);
 
   @override
-  void perform(CallContext ctx) {
+  void performCall(CallContext ctx) {
     try {
       ctx.applyCalls('Partner Tag',
           'Outsides Partner Tag While Centers Step to a Wave Lockit Step Thru');

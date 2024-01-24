@@ -44,7 +44,7 @@ class WalkAndDodge extends Action with ActivesOnly {
       d != null && dodgectx.actives.map((dd) => dd.number).contains(d.number);
 
   @override
-  void perform(CallContext ctx) {
+  void performCall(CallContext ctx) {
     //  Figure out who is a walker and who is a dodger.
     //  Save the results in call contexts
     walkctx = CallContext.fromContext(ctx);
@@ -75,7 +75,7 @@ class WalkAndDodge extends Action with ActivesOnly {
     //  If dancer is not in either set then it is inactive
     for (var d in ctx.dancers)
       d.data.active = isWalker(d) || isDodger(d);
-    super.perform(ctx);
+    super.performCall(ctx);
   }
 
   @override

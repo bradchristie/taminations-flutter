@@ -41,7 +41,7 @@ abstract class ModifiedFormationConcept extends Action {
       ctx.adjustToFormation(baseFormation,rotate:90,delta:0.3);
 
   @override
-  void perform(CallContext ctx) {
+  void performCall(CallContext ctx) {
     //  Check that the formation matches
     if (!checkFormation(ctx))
       throw CallError('Not $conceptName formation' );

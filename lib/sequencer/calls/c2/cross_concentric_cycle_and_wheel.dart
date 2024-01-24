@@ -27,7 +27,7 @@ class CrossConcentricCycleAndWheel extends Action {
 
 
   @override
-  void perform(CallContext ctx) {
+  void performCall(CallContext ctx) {
     ctx.applyCalls('All 8 Cycle and Wheel');
   }
 

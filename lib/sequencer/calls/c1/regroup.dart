@@ -26,7 +26,7 @@ class Regroup extends Action {
   Regroup(String name) : super(name);
 
   @override
-  void perform(CallContext ctx) {
+  void performCall(CallContext ctx) {
     ctx.applyCalls('Ends 1/4 Out Trade Do Your Part O Circulate '
         'While Centers Trade and Roll');
   }

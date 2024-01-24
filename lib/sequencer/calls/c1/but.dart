@@ -32,7 +32,7 @@ class But extends Action {
   But(String name) : super(name);
 
   @override
-  void perform(CallContext ctx) {
+  void performCall(CallContext ctx) {
     final callName = name.replaceFirst(' but\\b.*'.ri, '').trim();
     ctx.subContext(ctx.dancers, (ctx2) {
       if (!ctx2.matchCodedCall(callName))

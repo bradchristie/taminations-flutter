@@ -27,7 +27,7 @@ class ThreeByTwoAceyDeucey extends Action {
   ThreeByTwoAceyDeucey(String name) : super(name);
 
   @override
-  void perform(CallContext ctx) {
+  void performCall(CallContext ctx) {
     ctx.applyCalls('Outside Triangle Circulate While Very Centers Trade');
   }
 

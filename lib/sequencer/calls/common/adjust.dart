@@ -44,7 +44,7 @@ Formations you can use include
   Adjust(String name) : super(name);
 
   @override
-  void perform(CallContext ctx) {
+  void performCall(CallContext ctx) {
     var fname = name.replaceFirst('Adjust to( an?)? '.ri, '' );
     var formation = Formation(fname);
     var ctx2 = CallContext.fromFormation(formation);

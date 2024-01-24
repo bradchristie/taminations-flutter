@@ -27,7 +27,7 @@ class TripleTrade extends Action {
   TripleTrade(String name) : super(name);
 
   @override
-  void perform(CallContext ctx) {
+  void performCall(CallContext ctx) {
     //  Check to see if there's a line of 6
     //  If so, do it with those dancers
     final lineOf6 = ctx.dancers.where((d) =>

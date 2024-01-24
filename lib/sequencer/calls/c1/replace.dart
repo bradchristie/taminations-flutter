@@ -29,7 +29,7 @@ class Replace extends Action {
   Replace(String name) : super(name);
 
   @override
-  void perform(CallContext ctx) {
+  void performCall(CallContext ctx) {
     final callName = name.replaceFirst('(but )?replace .*'.ri,'').trim();
     if (callName.isBlank)
       throw CallError('Replace what?');

@@ -29,7 +29,7 @@ class TouchBy extends Action {
   TouchBy(super.name);
 
   @override
-  void perform(CallContext ctx) {
+  void performCall(CallContext ctx) {
     var fraction = norm.substring(7,9);
     var secondCall = name.replaceFirst('Touch By .*? By '.ri,'');
     if (secondCall.norm.matches('14|12|34'.r))

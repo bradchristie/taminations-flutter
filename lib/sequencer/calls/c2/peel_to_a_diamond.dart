@@ -28,7 +28,7 @@ class PeelToADiamond extends Action {
   PeelToADiamond(name) : super(name);
 
   @override
-  void perform(CallContext ctx) {
+  void performCall(CallContext ctx) {
     final trailers = ctx.dancers.where((d) => d.data.trailer).toList();
     ctx.applyCalls('Half Zoom');
     ctx.subContext(trailers, (ctx2) {

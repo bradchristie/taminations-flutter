@@ -27,7 +27,7 @@ class SpinTheWindmill extends Action {
   SpinTheWindmill(String name) : super(name);
 
   @override
-  void perform(CallContext ctx) {
+  void performCall(CallContext ctx) {
     var anycall = name.replaceFirst('the Windmill.*'.r,'').trim();
     var prefix = '';
     //  Get the center 4 dancers
@@ -64,7 +64,7 @@ class WindmillX extends Action {
   WindmillX(String name) : super(name);
 
   @override
-  void perform(CallContext ctx) {
+  void performCall(CallContext ctx) {
     //  Get the direction
     final dir = name.replaceFirst('_windmill'.ri,'').trim().toLowerCase();
     //  Face that way and do two circulates

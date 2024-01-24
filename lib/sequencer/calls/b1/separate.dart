@@ -29,7 +29,7 @@ class Separate extends Action {
   //  We need to look at all the dancers, not just actives
   //  because sometimes the inactives need to move in
   @override
-   void perform(CallContext ctx, [int i = 0]) {
+   void performCall(CallContext ctx, [int i = 0]) {
     if (ctx.actives.length != 4)
       throw CallError('Who is going to Separate?' );
 

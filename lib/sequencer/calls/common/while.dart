@@ -25,7 +25,7 @@ class While extends Action {
   While(String name) : super(name);
 
   @override
-   void perform(CallContext ctx, [int i = 0]) {
+   void performCall(CallContext ctx, [int i = 0]) {
 
     //  First strip off extra beats added to the inactive dancers
     ctx.contractPaths();

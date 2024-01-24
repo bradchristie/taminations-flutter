@@ -26,7 +26,7 @@ class MagicTransferAnd extends Action {
   MagicTransferAnd(String name) : super(name);
 
   @override
-  void perform(CallContext ctx) {
+  void performCall(CallContext ctx) {
     final othercall = name.replaceFirst('Magic (Column )?Transfer and'.ri,'').trim();
     ctx.applyCalls('Magic Column Transfer and');
     ctx.contractPaths();

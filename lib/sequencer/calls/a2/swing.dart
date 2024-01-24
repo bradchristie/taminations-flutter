@@ -33,7 +33,7 @@ Promenade Corner''';
   Swing(String name) : super(name);
 
   @override
-  void perform(CallContext ctx) {
+  void performCall(CallContext ctx) {
     //  If single wave in center, just those 4 Swing
     if (!ctx.subContext(ctx.center(4), (ctx2) {
       if (ctx.dancers.length > 4 && ctx2.isLines() && ctx2.isWaves() && !ctx.isTidal()) {

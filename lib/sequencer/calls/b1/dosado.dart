@@ -21,7 +21,7 @@
 import '../../../moves.dart';
 import '../common.dart';
 
-class Dosado extends Action with ActivesOnly, IsLeft {
+class Dosado extends Action with IsLeft {
 
   @override var helplink = 'b1/dosado';
   Dosado(String name) : super(name);
@@ -31,9 +31,11 @@ class Dosado extends Action with ActivesOnly, IsLeft {
   @override
   void performCall(CallContext ctx) {
     level = LevelData.B1;
-    super.perform(ctx);
-    if (name.endsWith('to a Wave'))
-      ctx.applyCalls('Step to a $leftHand Wave');
+    ctx.activesContext((ctx2) {
+      super.performCall(ctx2);
+      if (name.endsWith('to a Wave'))
+        ctx2.applyCalls('Step to a $leftHand Wave');
+    });
   }
 
   @override

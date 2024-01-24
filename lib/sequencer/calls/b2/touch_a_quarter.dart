@@ -28,7 +28,7 @@ class TouchAQuarter extends Action with ActivesOnly {
   TouchAQuarter(String name) : super(name);
 
   @override
-  void perform(CallContext ctx) {
+  void performCall(CallContext ctx) {
     var left = name.startsWith('Left') ? 'Left-Hand' : '';
     ctx.applyCalls('Step to a $left Wave');
     if (norm.endsWith('34'))

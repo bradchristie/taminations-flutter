@@ -29,7 +29,7 @@ class BlockFormation extends Action {
   BlockFormation(String name) : super(name);
 
   @override
-  void perform(CallContext ctx) {
+  void performCall(CallContext ctx) {
     final blockCall = name.replaceAll('.*?block'.ri, '').trim();
     final blockFormation = CallContext.fromFormation(Formation('Blocks'));
     final match = blockFormation.matchFormations(ctx,rotate:90);

@@ -28,7 +28,7 @@ class CourtesyTurn extends Action {
   CourtesyTurn() : super('Courtesy Turn');
 
   @override
-  void perform(CallContext ctx) {
+  void performCall(CallContext ctx) {
     for (var d in ctx.actives) {
       if (d.gender == Gender.BOY && !d.data.beau ||
           d.gender == Gender.GIRL && !d.data.belle) {

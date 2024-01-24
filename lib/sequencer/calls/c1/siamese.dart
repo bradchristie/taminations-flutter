@@ -40,9 +40,9 @@ class Siamese extends FourDancerConcept {
   };
 
   @override
-  void perform(CallContext ctx) {
+  void performCall(CallContext ctx) {
     ctx.matchFormationList(siameseFormations, delta:0.2);
-    super.perform(ctx);
+    super.performCall(ctx);
     ctx.matchFormationList(siameseFormations, maxOffset: 10.1, delta:0.2);
   }
 

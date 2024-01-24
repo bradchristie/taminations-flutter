@@ -27,7 +27,7 @@ class Slip extends Action with ActivesOnly {
   Slip(name) : super(name);
 
   @override
-  void perform(CallContext ctx) {
+  void performCall(CallContext ctx) {
     //  If single wave in center, then very centers trade
     final ctx4 = CallContext.fromContext(ctx,dancers: ctx.center(4));
     ctx4.analyze();

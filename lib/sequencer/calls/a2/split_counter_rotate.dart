@@ -26,7 +26,7 @@ class SplitCounterRotate extends Action {
   SplitCounterRotate(name) : super(name);
 
   @override
-  void perform(CallContext ctx) {
+  void performCall(CallContext ctx) {
     //  TODO diamonds, etc
     final boxes = ctx.boxes() ??
         thrower(CallError('Must have boxes for Split Counter Rotate'))!;

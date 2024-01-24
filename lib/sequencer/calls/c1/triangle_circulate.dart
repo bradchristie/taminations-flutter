@@ -134,7 +134,7 @@ You do not need to use one of these if the triangles are unambiguous (as in a sa
   }
 
   @override
-  void perform(CallContext ctx) {
+  void performCall(CallContext ctx) {
     final triangleType = name.replaceFirst(rootName, '');
     //  Find the 6 dancers to circulate
     ctx.applySpecifier('$triangleType Triangle');

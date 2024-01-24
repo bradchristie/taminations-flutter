@@ -28,7 +28,7 @@ class KickOff extends Action {
   KickOff(String name) : super(name);
 
   @override
-  void perform(CallContext ctx) {
+  void performCall(CallContext ctx) {
     //  Active dancers [Cross] Run and Roll
     final cross = name.startsWith('Cross') ? 'Cross' : '';
     final inactives = ctx.dancers.where((d) => !d.isActive).toList();

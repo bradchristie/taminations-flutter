@@ -32,10 +32,10 @@ class CrossOverCirculate extends Action {
   //  All 8-dancer versions are coded in XML
   //  This code just handles 4 dancers
   @override
-  void perform(CallContext ctx) {
+  void performCall(CallContext ctx) {
     if (ctx.actives.length != 4)
       throw CallError('No animation for Cross Over Circulate from this formation');
-    super.perform(ctx);
+    super.performCall(ctx);
   }
 
   @override

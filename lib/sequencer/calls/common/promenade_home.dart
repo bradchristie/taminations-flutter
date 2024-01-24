@@ -47,7 +47,7 @@ Promenade Corner''';
   var _startPoints = <Vector>[];
 
   @override
-  void perform(CallContext ctx) {
+  void performCall(CallContext ctx) {
     if (ctx.dancers.length != 8)
       throw CallError('Only for 4 couples at this point.');
     //   Compute the center point of each couple
@@ -86,7 +86,7 @@ Promenade Corner''';
         throw CallError('Dancers are not resolved, cannot promenade home.');
     }
     //  Now get each dancer to move to the calculated promenade position
-    super.perform(ctx);
+    super.performCall(ctx);
     //  Promenade to home
     var dc = ctx.actives.first;
     var a = (dc.numberCouple.i + 1.0) * pi / 2.0;

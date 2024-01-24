@@ -31,10 +31,10 @@ class Shazam extends Action with ActivesOnly, CallWithParts {
   Shazam(name) : super(name);
 
   @override
-  void perform(CallContext ctx) {
+  void performCall(CallContext ctx) {
     if (ctx.dancers.any((d) => !ctx.isInWave(d)))
       throw CallError('All dancers must be in a Wave');
-    super.perform(ctx);
+    super.performCall(ctx);
   }
 
   @override

@@ -54,7 +54,7 @@ class LikeACoupleUp extends Action with ActivesOnly {
   LikeACoupleUp() : super('Like A Couple Up');
 
   @override
-  void perform(CallContext ctx) {
+  void performCall(CallContext ctx) {
     ctx.applyCalls('Finish Couple Up');
   }
 

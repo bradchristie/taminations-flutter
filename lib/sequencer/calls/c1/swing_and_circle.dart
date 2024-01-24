@@ -27,7 +27,7 @@ class SwingAndCircle extends Action with IsLeft {
   SwingAndCircle(String name) : super(name);
 
   @override
-  void perform(CallContext ctx) {
+  void performCall(CallContext ctx) {
     final norm = normalizeCall(name);
     //  Facing Couples rule
     if (ctx.center(4).every((d) => ctx.isInCouple(d))) {
@@ -61,7 +61,7 @@ class AnythingAndCircle extends Action {
   AnythingAndCircle(String name) : super(name);
 
   @override
-  void perform(CallContext ctx) {
+  void performCall(CallContext ctx) {
     var anyCall = name.replaceFirst(' and circle.*'.ri, '');
     var count = ['14','12','34'].indexOf(norm.substring(norm.length-2)) + 1;
     ctx.canDoYourPart = false;

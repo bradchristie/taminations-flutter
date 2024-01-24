@@ -39,7 +39,7 @@ class Touch extends Action {
   }
 
   @override
-  void perform(CallContext ctx) {
+  void performCall(CallContext ctx) {
     //  First try Step to a Wave, which has some good XML animations
     if (name.contains('Touch')) {
       try {
@@ -49,7 +49,7 @@ class Touch extends Action {
         // ignore: empty_catches
       } on CallError { }
     }
-    super.perform(ctx);
+    super.performCall(ctx);
   }
 
 }

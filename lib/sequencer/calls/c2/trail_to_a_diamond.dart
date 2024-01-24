@@ -27,7 +27,7 @@ class TrailToADiamond extends Action with ActivesOnly {
   TrailToADiamond(name) : super(name);
 
   @override
-  void perform(CallContext ctx) {
+  void performCall(CallContext ctx) {
     //  All boxes, waves, columns are covered in XML
     //  so we only need to handle t-bones here
     ctx.applyCalls('Leaders Do Your Part Trail to a Diamond'

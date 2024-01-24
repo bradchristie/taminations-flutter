@@ -28,7 +28,7 @@ class Checkpoint extends Action {
   Checkpoint(String name) : super(name);
 
   @override
-  void perform(CallContext ctx) {
+  void performCall(CallContext ctx) {
     //  Parse out the two calls
     final firstCall = name.replaceMatch('Checkpoint (.+) by (.+)'.ri,'\\1');
     final secondCall = name.replaceMatch('Checkpoint (.+) by (.+)'.ri,'\\2');

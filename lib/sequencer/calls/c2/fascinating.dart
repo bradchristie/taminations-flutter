@@ -26,7 +26,7 @@ class Fascinating extends Action {
   Fascinating(String name) : super(name);
 
   @override
-  void perform(CallContext ctx) {
+  void performCall(CallContext ctx) {
     var what = name.replaceFirst('Fascinating', '').trim();
     ctx.applyCalls('Centers Cast Off 3/4 While Ends Circulate 1.5');
     ctx.analyze();

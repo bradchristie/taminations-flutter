@@ -29,7 +29,7 @@ class Squeeze extends Action {
   Squeeze(String name) : super(name);
 
   @override
-  void perform(CallContext ctx) {
+  void performCall(CallContext ctx) {
     if (name.lc.endsWith('butterfly')) {
       final ctx2 = CallContext.fromFormation(Formation('Butterfly RH'));
       if (ctx.matchFormations(ctx2,rotate: 180) == null)
@@ -40,7 +40,7 @@ class Squeeze extends Action {
       if (ctx.matchFormations(ctx2,rotate: 180) == null)
         throw CallError('Formation is not an O');
     }
-    return super.perform(ctx);
+    return super.performCall(ctx);
   }
 
   @override

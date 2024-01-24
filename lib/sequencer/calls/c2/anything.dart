@@ -28,7 +28,7 @@ class Anything extends Action {
   Anything(String name) : super(name);
 
   @override
-  void perform(CallContext ctx) {
+  void performCall(CallContext ctx) {
     var firstCall =
     name.replaceMatch('(.*)(motivate|coordinate|couple up|percolate|perk up)'.ri,'\\1').trim();
     final secondCall =

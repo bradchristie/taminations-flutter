@@ -27,7 +27,7 @@ class Stretch extends Action {
   Stretch(String name) : super(name);
 
   @override
-  void perform(CallContext ctx) {
+  void performCall(CallContext ctx) {
 
     //  Find out what we are stretching
     var stretchctx = ctx.nextActionContext(this)

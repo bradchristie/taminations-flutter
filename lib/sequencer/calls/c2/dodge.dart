@@ -28,7 +28,7 @@ class Dodge extends Action with ActivesOnly {
   Dodge(String name) : super(name);
 
   @override
-  void perform(CallContext ctx) {
+  void performCall(CallContext ctx) {
     var anyCall = name.replaceFirst('dodge'.ri, '').trim();
     if (anyCall.isBlank)
       throw CallError('Dodge what?');

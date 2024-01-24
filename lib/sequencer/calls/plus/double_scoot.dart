@@ -27,7 +27,7 @@ class DoubleScoot extends Action {
   DoubleScoot() : super('Double Scoot');
 
   @override
-  void perform(CallContext ctx) {
+  void performCall(CallContext ctx) {
     //  There are XML animations for 6-dancer Double Scoot
     if (ctx.actives.length > 6) {
       ctx.applyCalls('Center 6 Double Scoot');

@@ -36,10 +36,10 @@ class Substitute extends SplitCall {
   static var lateralFound = false;
 
   @override
-  void perform(CallContext ctx) {
+  void performCall(CallContext ctx) {
     lateralFound = false;
     if (ctx.dancers.length <= 4) {
-      super.perform(ctx);
+      super.performCall(ctx);
     }
     else {
       if (ctx.actives.length*2 == ctx.dancers.length) {
@@ -56,7 +56,7 @@ class Substitute extends SplitCall {
       //  and the base of the triangle is arching over the point.
       //  Now defer to SplitCall will now break the formation into groups of 3 or 4
       ctx.subContext(ctx.actives, (ctx2) {
-        super.perform(ctx2);
+        super.performCall(ctx2);
       });
     }
     if (lateralFound && !name.contains('Lateral'))

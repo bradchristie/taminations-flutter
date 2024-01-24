@@ -46,7 +46,7 @@ You can specify the direction with Left Ripple or Right Ripple.''';
   }
 
   @override
-  void perform(CallContext ctx) {
+  void performCall(CallContext ctx) {
     final actives = ctx.actives.copy();
     if (actives.length == ctx.dancers.length)
       throw CallError('Who is going to Ripple?');

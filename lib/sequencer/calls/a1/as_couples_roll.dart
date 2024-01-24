@@ -28,14 +28,14 @@ class AsCouplesRoll extends Action with ActivesOnly {
   AsCouplesRoll(super.name);
 
   @override
-  void perform(CallContext ctx) {
+  void performCall(CallContext ctx) {
     //  Check that all dancers are couples
     ctx.dancers.forEach((d) {
       print('$d ${ctx.roll(d)}');
       if (!ctx.isInCouple(d))
         throw CallError('Dancer $d is not part of a Couple');
     });
-    super.perform(ctx);
+    super.performCall(ctx);
   }
 
   @override

@@ -31,7 +31,7 @@ class AroundToALine extends Action {
   AroundToALine(String name) : super(name);
 
   @override
-  void perform(CallContext ctx) {
+  void performCall(CallContext ctx) {
     if (ctx.actives.length < ctx.dancers.length) {
       ctx.matchStandardFormation();
       for (var d in ctx.dancers)

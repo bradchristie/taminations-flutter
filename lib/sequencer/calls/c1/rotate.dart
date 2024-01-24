@@ -33,7 +33,7 @@ class Rotate extends Action with IsReverse, IsSingle {
   Rotate(String name) : super(name);
 
   @override
-  void perform(CallContext ctx) {
+  void performCall(CallContext ctx) {
     if (!norm.matches('.+(14|12|34)'.r))
       throw CallError('All Rotates must end with a fraction');
     if (ctx.isSquare() || ctx.outer(4).containsAll(ctx.actives))

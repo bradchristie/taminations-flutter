@@ -28,7 +28,7 @@ class HalfTheK extends Action {
   HalfTheK() : super('Half the K');
 
   @override
-  void perform(CallContext ctx) {
+  void performCall(CallContext ctx) {
     if (ctx.dancers.where((d) => d.data.center).length == 4 &&
         ctx.dancers.where((d) => d.data.end).length == 4)
       ctx.applyCalls('Centers Hinge While Ends Quarter Out');

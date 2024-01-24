@@ -26,7 +26,7 @@ class MiniBusyBut extends Action {
   MiniBusyBut(String name) : super(name);
 
   @override
-  void perform(CallContext ctx) {
+  void performCall(CallContext ctx) {
      ctx.applyCalls('_Mini-Busy But','Center 4 '+name.replaceFirst('.*But'.r,''));
   }
 

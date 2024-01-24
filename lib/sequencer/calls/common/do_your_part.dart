@@ -48,7 +48,7 @@ class DoYourPart extends Action {
   }
 
   @override
-  void perform(CallContext ctx) {
+  void performCall(CallContext ctx) {
     final callName = name.replaceFirst('Do Your Part'.ri,'').trim();
     if (callName.isBlank)
       throw CallError('Do Your Part of what?');

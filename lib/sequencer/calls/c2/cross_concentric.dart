@@ -29,7 +29,7 @@ class CrossConcentric extends Action {
   CrossConcentric(super.name);
 
   @override
-  void perform(CallContext ctx) {
+  void performCall(CallContext ctx) {
     var startsFromLines = ctx.isLines();
     var startsFromColumns = ctx.isColumns();
     var beatsToWait = 0.0;

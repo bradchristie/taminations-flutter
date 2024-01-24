@@ -28,13 +28,13 @@ class MakeMagic extends Action {
   MakeMagic() : super('Make Magic');
 
   @override
-  void perform(CallContext ctx) {
+  void performCall(CallContext ctx) {
     //  If center 4 dancers are facing each other, they do a Cross Trail Thru
     if (ctx.center(4).every((d) => d.isFacingIn))
       ctx.applyCalls('Center 4 Cross Trail Thru');
     else {
       //  Otherwise, process each dancer
-      super.perform(ctx);
+      super.performCall(ctx);
       if (ctx.dancers.every((d) => d.path.movelist.isEmpty))
         throw CallError('Make Magic does nothing');
     }

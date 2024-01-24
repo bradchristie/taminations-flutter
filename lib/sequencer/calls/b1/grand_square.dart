@@ -27,7 +27,7 @@ class GrandSquare extends Action {
   @override var helplink = 'b1/grand_square';
   GrandSquare(super.name);
 
-  @override void perform(CallContext ctx) {
+  @override void performCall(CallContext ctx) {
     if (norm.startsWith('headface'.ri))
       ctx.applyCalls('Heads Face In');
     else if (norm.startsWith('sideface'.ri))

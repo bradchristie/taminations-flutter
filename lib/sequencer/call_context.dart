@@ -287,8 +287,16 @@ class CallContext {
   //  Return true if anything new was added.
   bool subContext(List<DancerModel> dancers, void Function(CallContext) block) {
     var ctx = CallContext.fromContext(this,dancers:dancers.inOrder());
+    ctx.analyze();
     block(ctx);
     return ctx.appendToSource(this);
+  }
+
+  void activesContext(void Function(CallContext) block) {
+    if (actives.length == dancers.length)
+      block(this);
+    else
+      subContext(actives,block);
   }
 
   //  Create a new CallContext from a selection of the current context

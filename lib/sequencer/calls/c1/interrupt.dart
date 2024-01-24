@@ -31,7 +31,7 @@ It can be used in these ways:
   Interrupt(String name) : super(name);
 
   @override
-  void perform(CallContext ctx) {
+  void performCall(CallContext ctx) {
 
     //  Parse out the call with parts we are interrupting
     final callName = name.replaceFirst('interrupt .+'.ri,'').trim();

@@ -31,7 +31,7 @@ class ChainDownTheLine extends Action with ActivesOnly {
   ChainDownTheLine(super.name);
 
   @override
-  void perform(CallContext ctx) {
+  void performCall(CallContext ctx) {
     //  Centers must be holding right hands
     ctx.dancers.where((d) => d.data.center).forEach((d) {
       var d2 = ctx.dancerToRight(d);

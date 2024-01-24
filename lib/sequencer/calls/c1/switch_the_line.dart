@@ -28,7 +28,7 @@ class SwitchTheLine extends Action {
   SwitchTheLine(String name) : super(name);
 
   @override
-  void perform(CallContext ctx) {
+  void performCall(CallContext ctx) {
     //  Start with Ends Cross Run
     ctx.applyCalls('Ends Cross Run');
     //  And now make tne centers Run instead of Dodge

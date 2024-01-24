@@ -27,7 +27,7 @@ class Little extends Action {
   Little(String name) : super(name);
 
   @override
-  void perform(CallContext ctx) {
+  void performCall(CallContext ctx) {
 
     //  Do the Scoot Back of Scoot and Little
     if (name.startsWith('Scoot and'))

@@ -28,7 +28,7 @@ class AceyDeucey extends Action {
   AceyDeucey() : super('Acey Deucey');
 
   @override
-   void perform(CallContext ctx, [int i = 0]) {
+   void performCall(CallContext ctx, [int i = 0]) {
     if (ctx.actives.length != 8)
       throw CallError('Acey Deucey must involve all 8 dancers');
     if (CallContext.fromDancers(ctx.outer(4)).isDiamond())

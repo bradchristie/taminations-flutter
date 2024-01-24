@@ -36,7 +36,7 @@ class TwistAnything extends Action {
   ]);
 
   @override
-  void perform(CallContext ctx) {
+  void performCall(CallContext ctx) {
     //  Get "Anything" call
     final anyCall = (name == 'Twist the Line')
         ? 'Star Thru'

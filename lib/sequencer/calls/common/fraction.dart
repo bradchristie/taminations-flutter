@@ -45,7 +45,7 @@ class Fraction extends Action {
   }
 
   @override
-  void perform(CallContext ctx) {
+  void performCall(CallContext ctx) {
 
     final fracctx = ctx.nextActionContext(this) ??
         thrower(CallError('Not able to find call for fraction $name'))!;

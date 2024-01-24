@@ -27,7 +27,7 @@ class SingleWheel extends Action with IsLeft {
   SingleWheel(String name) : super(name);
 
   @override
-  void perform(CallContext ctx) {
+  void performCall(CallContext ctx) {
     //  Accept both Single Wheel and Left Single Wheel
     ctx.applyCalls('$left Hinge and Roll');
   }

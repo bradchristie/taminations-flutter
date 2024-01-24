@@ -25,7 +25,7 @@ class InTheCenter extends Action {
   InTheCenter() : super('In the Center');
 
   @override
-  void perform(CallContext ctx) {
+  void performCall(CallContext ctx) {
     ctx.checkCenters();
   }
 

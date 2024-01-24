@@ -32,7 +32,7 @@ class Fold extends Action {
   //  because partners of the folders need to adjust
   //  so we get a standard formation that can be used for more calls
   @override
-  void perform(CallContext ctx) {
+  void performCall(CallContext ctx) {
     for (var d in ctx.actives) {
       //  Find dancer to fold in front of
       //  Usually it's the partner

@@ -29,10 +29,10 @@ class Roll extends Action {
   Roll(String name) : super(name);
 
   @override
-  void perform(CallContext ctx) {
+  void performCall(CallContext ctx) {
     if (ctx.callstack.indexOf(this) <= 0 && ctx.parent == null)
       throw CallError('"and Roll" must follow another call.');
-    super.perform(ctx);
+    super.performCall(ctx);
   }
 
   @override

@@ -25,7 +25,7 @@ import '../common.dart';
 //  dancers in a way that they perform a 4-dancer call.
 //  The concept maps the 4-dancer call to the real dancers.
 //  Primary examples are As Couples Concept and Tandem Concept
-abstract class FourDancerConcept extends Action with ActivesOnly {
+abstract class FourDancerConcept extends Action {
 
   FourDancerConcept(String name) : super(name);
 
@@ -56,7 +56,8 @@ abstract class FourDancerConcept extends Action with ActivesOnly {
   void postAdjustment(CallContext ctx, DancerModel cd, List<DancerModel> group) { }
 
   @override
-  void perform(CallContext ctx) {
+  void performCall(CallContext ctx0) {
+    ctx0.activesContext((ctx) {
     //  Get dancer groups
     var groups = dancerGroups(ctx);
     //  Create a concept dancer for each group dancer
@@ -94,8 +95,6 @@ abstract class FourDancerConcept extends Action with ActivesOnly {
     conceptctx.animate(0.0);
     analyzeConceptResult(conceptctx, ctx);
 
-
-
     //  Get the paths and apply to the original dancers
     for (var ci=0; ci<conceptctx.dancers.length; ci++) {
       var cd = conceptctx.dancers[ci];
@@ -130,6 +129,7 @@ abstract class FourDancerConcept extends Action with ActivesOnly {
     ctx.animateToEnd();
     conceptctx.dancers.forEachIndexed((ci, cd) {
       postAdjustment(ctx,cd,groups[ci]);
+    });
     });
 
   }

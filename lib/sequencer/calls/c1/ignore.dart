@@ -30,7 +30,7 @@ class Ignore extends Action {
   Ignore(String name) : super(name);
 
   @override
-  void perform(CallContext ctx) {
+  void performCall(CallContext ctx) {
     //  Who should we ignore?
     final regex = 'ignore (?:the )?((?:${CodedCall.specifier} )+)(?:and )?(?:for a )?(.+)'.ri;
     final match = regex.firstMatch(name);

@@ -26,7 +26,7 @@ class ReverseOrder extends Action {
   ReverseOrder(String name) : super(name);
 
   @override
-  void perform(CallContext ctx) {
+  void performCall(CallContext ctx) {
     var reverseCall = ctx.findImplementor<CallWithParts>();
     reverseCall.reverseParts(ctx);
   }

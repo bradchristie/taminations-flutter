@@ -28,7 +28,7 @@ class ThreeQuartersTag extends Action {
   ThreeQuartersTag(String name) : super(name);
 
   @override
-  void perform(CallContext ctx) {
+  void performCall(CallContext ctx) {
     var dir = (name.startsWith('Left')) ? 'Left' : '';
     //  All the 4-dancer formations are in Taminations
     if (ctx.actives.length < 8 && !ctx.isAsym()) {
@@ -45,7 +45,7 @@ class ThreeQuartersTag extends Action {
     else if (ctx.isAsym())
       ctx.applyCalls('Face In','Centers Step to a Wave','Extend','Extend');
     else
-      super.perform(ctx);
+      super.performCall(ctx);
   }
 
   @override

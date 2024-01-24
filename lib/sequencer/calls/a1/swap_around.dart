@@ -49,15 +49,15 @@ class SwapAround extends Action with ActivesOnly, IsReverse {
   }
 
   @override
-  void perform(CallContext ctx) {
+  void performCall(CallContext ctx) {
     if (ctx.dancers.length == 4)
-      super.perform(ctx);
+      super.performCall(ctx);
     else {
       var boxes = ctx.boxes()
           ?? thrower(CallError('Cannot Swap Around from this formation'));
       for (var box in boxes!) {
         ctx.subContext(box, (ctx2) {
-          super.perform(ctx2);
+          super.performCall(ctx2);
         });
       }
     }

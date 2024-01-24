@@ -37,10 +37,10 @@ You can replace Parts 2 and 3 with But <another call>''';
   //  Other modifications can change the number of parts,
   //  so subtract one from whatever that might have done
   @override
-  void perform(CallContext ctx) {
+  void performCall(CallContext ctx) {
     if (!butCall.isBlank)
       numberOfParts -= 1;
-    super.perform(ctx);
+    super.performCall(ctx);
   }
 
   @override

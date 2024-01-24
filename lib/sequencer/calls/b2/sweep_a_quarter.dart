@@ -30,7 +30,7 @@ class SweepAQuarter extends Action {
   SweepAQuarter(String name) : super(name);
 
   @override
-  void perform(CallContext ctx) {
+  void performCall(CallContext ctx) {
     ctx.analyze();
     if (ctx.actives.any((d) => !ctx.isInCouple(d)))
       throw CallError('Only couples can Sweep a Quarter' );
