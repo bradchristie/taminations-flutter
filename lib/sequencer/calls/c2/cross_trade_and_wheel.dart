@@ -20,13 +20,13 @@
 
 import '../common.dart';
 
-class CrossTradeAndWheel extends Action with IsLeft, CallWithParts {
+class CrossTradeAndWheel extends Action with IsLeft, IsGrand, CallWithParts {
 
   @override final level = LevelData.C2;
   @override int numberOfParts = 3;
-  @override var help = '''Cross Trade and Wheel is a 3-part call:
+  @override var help = '''(Grand) Cross Trade and Wheel is a 3-part call:
   1.  As Couples Hinge
-  2.  Very Centers Trade
+  2.  if Grand, Triple Trade, else Very Centers Trade
   3.  As Couples Step and Fold''';
   @override var helplink = 'c2/cross_and_wheel';
   CrossTradeAndWheel(String name) : super(name);
@@ -38,7 +38,7 @@ class CrossTradeAndWheel extends Action with IsLeft, CallWithParts {
 
   @override
    void performPart2(CallContext ctx) {
-    ctx.applyCalls('Very Centers Trade');
+    ctx.applyCalls(isGrand ? 'Triple Trade' : 'Very Centers Trade');
   }
 
   @override

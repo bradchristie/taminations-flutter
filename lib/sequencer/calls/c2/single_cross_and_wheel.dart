@@ -20,13 +20,13 @@
 
 import '../common.dart';
 
-class SingleCrossAndWheel extends Action with IsLeft, CallWithParts {
+class SingleCrossAndWheel extends Action with IsLeft, IsGrand, CallWithParts {
 
   @override final level = LevelData.C2;
   @override int numberOfParts = 2;
-  @override var help = '''Single Cross and Wheel has 2 parts:
+  @override var help = '''(Grand) Single Cross and Wheel has 2 parts:
   1.  Hinge
-  2.  Step and Fold
+  2.  (Grand) Step and Fold
 You can make couples do a Left Hinge with Left Single Cross and Wheel''';
   @override var helplink = 'c2/cross_and_wheel';
   SingleCrossAndWheel(name) : super(name);
@@ -38,7 +38,12 @@ You can make couples do a Left Hinge with Left Single Cross and Wheel''';
 
   @override
    void performPart2(CallContext ctx) {
-    ctx.applyCalls('Step and Fold');
+    if (isGrand) {
+      ctx.analyze();
+      ctx.applyCalls('Center 6 Step While Very Ends Fold');
+    }
+    else
+      ctx.applyCalls('Step and Fold');
   }
 
 }

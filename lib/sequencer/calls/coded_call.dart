@@ -187,9 +187,6 @@ import 'c2/detour.dart';
 import 'c2/dodge.dart';
 import 'c2/fascinating.dart';
 import 'c2/flip_your_neighbor.dart';
-import 'c2/grand_cross_trade_and_wheel.dart';
-import 'c2/grand_single_cross_and_wheel.dart';
-import 'c2/grand_single_cross_trade_and_wheel.dart';
 import 'c2/half_the_k.dart';
 import 'c2/hocus_pocus.dart';
 import 'c2/hubs_trade.dart';
@@ -429,9 +426,6 @@ abstract class CodedCall extends Call {
 
     'girl|ladies|lady'.ri: (_) => Girls(),
     'grand'.ri: (name) => Grand(name),
-    'grandcrosstradeandwheel'.ri: (name) => GrandCrossTradeAndWheel(name),
-    'grandsinglecrossandwheel'.ri: (name) => GrandSingleCrossAndWheel(name),
-    'grandsinglecrosstradeandwheel'.ri: (name) => GrandSingleCrossTradeAndWheel(name),
     '((head|side)face)?grandsquare((\\d+)steps)?'.ri: (name) => GrandSquare(name),
 
     '12sashay'.ri: (name) => HalfSashay(name),
