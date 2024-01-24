@@ -346,7 +346,7 @@ import '../../moves.dart';
         DancerModel.fromData(gender:Gender.GIRL,x:1,y:-1,angle:0),
         DancerModel.fromData(gender:Gender.BOY,x:-3,y:-1,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:1,y:1,angle:180),
-  ]),
+      ]),
       from:'Magic Columns Left-Hand Centers',parts:'2;3',difficulty: 2,
       paths:[
           ExtendLeft.scale(1.0,0.5) +
@@ -373,5 +373,42 @@ import '../../moves.dart';
           ExtendLeft.scale(1.0,0.5) +
           QuarterLeft.skew(1.0,-0.5)
       ]),
+
+    AnimatedCall('Dixie Grand', formation: Formation('',dancers:[
+      DancerModel.fromData(gender:Gender.BOY,x:-2,y:-3,angle:180),
+      DancerModel.fromData(gender:Gender.GIRL,x:3,y:0,angle:90),
+      DancerModel.fromData(gender:Gender.BOY,x:2,y:-3,angle:180),
+      DancerModel.fromData(gender:Gender.GIRL,x:0,y:1,angle:180),
+    ]),
+        from: 'Facing Hourglass',parts:'2;2',difficulty: 2,
+        paths: [
+          LeadRight.changeBeats(1.5).scale(2, 2.5) +
+              LeadRight.changeBeats(.5).scale(1.5, 1) +
+              ExtendLeft.changeBeats(1) +
+              Forward +
+              ExtendLeft.scale(1, .5) +
+              ExtendRight.scale(1,.5),
+
+          Forward.scale(.5, 1) +
+              QuarterLeft.changeBeats(1).skew(.5, 0) +
+              Forward +
+              ExtendRight.changeBeats(1) +
+              ExtendLeft.scale(1, .5) +
+              ExtendRight.scale(1,.5),
+
+          ExtendRight.scale(1.5,0.5) +
+              ExtendRight.scale(1.5,0.5) +
+              Forward +
+              ExtendRight.changeBeats(1) +
+              RunRight.changeBeats(2),
+
+          ExtendRight.scale(.5,0.5) +
+              ExtendRight.scale(.5,0.5) +
+              ExtendLeft.changeBeats(1) +
+              Forward +
+              FlipLeft.changeBeats(2)
+
+        ]),
+
   ];
 

@@ -19,13 +19,12 @@
 
 import '../common.dart';
 
-class PassAndRoll extends Action with CallWithParts {
+class PassAndRoll extends Action with CallWithParts, IsLeft {
 
   @override int numberOfParts = 4;
   @override var level = LevelData.A2;
   final bool isNeighbor;
   final String dir;
-  final String left;
   final bool isCross;
   @override var help = '''Pass and Roll is a 4-part call:
   1.  Pass Thru
@@ -43,7 +42,6 @@ Variations: (Left) Pass and Roll (Your (Cross) Neighbor)''';
   }
   PassAndRoll(String name) :
         dir = name.startsWith('Left') ? 'Left' : 'Right',
-        left =  name.startsWith('Left') ? 'Left' : '',
         isNeighbor = name.endsWith('Neighbor'),
         isCross = name.contains('Cross'),
         super(name) {
@@ -70,7 +68,7 @@ Variations: (Left) Pass and Roll (Your (Cross) Neighbor)''';
   @override
    void performPart4(CallContext ctx) {
     final n = ctx.dancers.length ~/ 2;
-    final cross = isCross ^ (left.isNotBlank) ? 'left' : '';
+    final cross = isCross ^ isLeft ? 'left' : '';
     if (isNeighbor)
       ctx.applyCalls('Center $n $cross Touch and Cast Off 3/4 '
           'While Outer $n Face $dir Face $dir Face $dir');

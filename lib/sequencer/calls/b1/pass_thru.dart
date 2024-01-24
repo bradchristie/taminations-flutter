@@ -21,7 +21,7 @@
 import '../../../moves.dart';
 import '../common.dart';
 
-class PassThru extends Action {
+class PassThru extends Action with IsLeft {
 
   @override var helplink = 'b1/pass_thru';
   PassThru(String name) : super(name);
@@ -41,7 +41,7 @@ class PassThru extends Action {
       }
       if (d2.data.active) {
         var dist = d.distanceTo(d2);
-        if (name.toLowerCase().startsWith('left' )) {
+        if (isLeft) {
           if (d2.isLeftOf(d))
             return ExtendLeft.scale(1.0, dist/2.0);
         } else if (d2.isRightOf(d))
@@ -60,7 +60,7 @@ class PassThru extends Action {
     //  If both dancers are on squared set spots, pass thru and stay in the center
     //if (d.isOnSSSpot && d2.isOnSSSpot)
     //  dist = 4.0;
-    if (name.toLowerCase().startsWith('left' ))
+    if (isLeft)
       return ExtendRight.scale(dist/2,0.5) +
              ExtendLeft.scale(dist/2,0.5);
     else
