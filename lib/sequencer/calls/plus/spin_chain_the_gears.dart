@@ -19,7 +19,8 @@
 
 import '../common.dart';
 
-class SpinChainTheGears extends Action with CallWithParts, CallWithStars {
+class SpinChainTheGears extends Action with CallWithParts, CallWithStars,
+    IsLeft, FacingCouplesRule {
 
   @override int numberOfParts = 6;
   @override final level = LevelData.PLUS;
@@ -45,6 +46,7 @@ Use "A Full Turn" to turn it all the way around.''';
 
   @override
    void performPart1(CallContext ctx) {
+    applyFacingCouplesRule(ctx);
     ctx.applyCalls('Swing');
   }
 

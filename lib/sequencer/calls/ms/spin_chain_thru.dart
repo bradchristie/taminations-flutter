@@ -19,7 +19,7 @@
 
 import '../common.dart';
 
-class SpinChainThru extends Action with CallWithParts {
+class SpinChainThru extends Action with CallWithParts, IsLeft, FacingCouplesRule {
 
   @override int numberOfParts = 4;
   @override var level = LevelData.MS;
@@ -33,6 +33,7 @@ class SpinChainThru extends Action with CallWithParts {
 
   @override
    void performPart1(CallContext ctx) {
+    applyFacingCouplesRule(ctx);
     ctx.applyCalls('Swing');
   }
 

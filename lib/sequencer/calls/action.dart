@@ -28,6 +28,9 @@ class Action extends CodedCall {
 
   Action(String name) : super(name);
 
+  //  Default method to perform call
+  //  This is what subclasses should override
+  //  If no override, eventually performOne is called on each dancer
   @override
    void performCall(CallContext ctx) {
     perform(ctx);
@@ -40,7 +43,7 @@ class Action extends CodedCall {
   //  Default method to perform one call
   //  Pass the call on to each active dancer
   //  Then append the returned paths to each dancer
-  //  While this does not have any calls, overrides might.
+  //  This method is not commonly overridden
   void perform(CallContext ctx) {
     //  Get all the paths with performOne calls
     for (var d in ctx.actives) {

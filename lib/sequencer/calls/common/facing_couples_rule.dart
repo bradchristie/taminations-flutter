@@ -18,19 +18,18 @@
 
 */
 
-export '../../common_flutter.dart';
-export '../call_context.dart';
-export '../call_error.dart';
-export 'action.dart';
-export 'c1/but.dart';
-export 'common/actives_only_action.dart';
-export 'common/actives_with_partners_action.dart';
-export 'common/call_with_parts.dart';
-export 'common/facing_couples_rule.dart';
-export 'common/fliter_actives.dart';
-export 'common/grand.dart';
-export 'common/left.dart';
-export 'common/split_call.dart';
-export 'common/four_dancer_concept.dart';
-export 'common/modified_formation_concept.dart';
-export 'common/turn_the_star.dart';
+import '../common.dart';
+
+//  Add this to a class after adding IsLeft,
+//  then call applyFacingCouplesRule at the start of performCall or performPart1
+mixin FacingCouplesRule on IsLeft {
+
+  void applyFacingCouplesRule(CallContext ctx) {
+    if (ctx.dancers.any((d) => ctx.dancerFacing(d) != null))
+      ctx.applyCalls('Facing Dancers Step to a $leftHand Wave');
+    else if (isLeft)
+      throw CallError('Left $name only applies to facing dancers');
+  }
+
+}
+
