@@ -19,7 +19,7 @@
 
 import '../common.dart';
 
-class LoadTheBoat extends Action with CallWithParts, ButCall {
+class LoadTheBoat extends Action with CallWithParts, ButCall, IsToAWave {
 
   @override int numberOfParts = 4;
   @override var level = LevelData.PLUS;
@@ -71,6 +71,8 @@ Part 4 for the Centers can be replaced with But (another call)''';
   @override
    void performPart4(CallContext ctx) {
     ctx.analyze();
+    if (isToAWave)
+      butCall = 'Step to a Wave';
     ctx.applyCalls('Ends Face In While Center 4 $butCall');
   }
 

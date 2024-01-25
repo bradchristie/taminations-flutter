@@ -330,7 +330,38 @@ import '../../moves.dart';
           Forward.changeBeats(1.5).scale(1,1.0).skew(0.0,0.25) +
               SwingLeft.scale(0.5,0.75) +
               Forward.changeBeats(1.5).scale(1,1.0).skew(0.0,-0.25)
+        ]),
+
+    AnimatedCall('Scoot Back Centers to a Wave',
+        from: 'Right-Hand Waves',
+        formation: Formation('Ocean Waves RH BGBG'),
+        paths: [
+          ExtendRight.changeBeats(1.5).scale(2.0,0.25) +
+              SwingRight.scale(0.75,0.875),
+
+          UmTurnRight.changeBeats(4.5).skew(1, 0),
+
+          ExtendRight.changeBeats(1.5).scale(2.0,0.25) +
+              SwingRight.scale(0.75,0.875),
+
+          FlipRight.changeBeats(4.5).skew(1, 0)
+        ]),
+
+    AnimatedCall('Scoot Back Centers to a Wave',
+        from: 'Left-Hand Waves',
+        formation: Formation('Ocean Waves LH BGBG'),
+        paths: [
+          FlipLeft.changeBeats(4.5).skew(1, 0),
+
+          ExtendLeft.changeBeats(1.5).scale(2.0,0.25) +
+              SwingLeft.scale(0.75,0.875),
+
+          UmTurnLeft.changeBeats(4.5).skew(1, 0),
+
+          ExtendLeft.changeBeats(1.5).scale(2.0,0.25) +
+              SwingLeft.scale(0.75,0.875)
         ])
+
 
   ];
 

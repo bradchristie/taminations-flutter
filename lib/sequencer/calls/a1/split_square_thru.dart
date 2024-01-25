@@ -20,7 +20,7 @@
 
 import '../common.dart';
 
-class SplitSquareThru extends Action with IsLeft {
+class SplitSquareThru extends Action with IsLeft, IsToAWave {
 
   @override final level = LevelData.A1;
   @override var helplink = 'a1/split_square_thru';
@@ -45,14 +45,14 @@ class SplitSquareThru extends Action with IsLeft {
         throw CallError('Dancers must start with right hand');
       if (isLeft && !waveDancers.every((it) => it.data.belle))
         throw CallError('Dancers must start with left hand');
-      ctx.applyCalls(explode,'$antiLeft Square Thru ${count - 1}');
+      ctx.applyCalls(explode,'$antiLeft Square Thru ${count - 1} $toAWave');
     } else if (facingDancers.length == ctx.actives.length/2) {
       //  If the centers start, they need to face out to work with the ends
       //  Otherwise they will face in to work with the other dancers
       final face = ctx.actives.every((d) => d.data.center || ctx.dancerFacing(d) == null)
           ? 'Out' : 'In';
       ctx.applyCalls('Facing Dancers $left Pass Thru and Face $face',
-          '$antiLeft Square Thru ${count - 1}');
+          '$antiLeft Square Thru ${count - 1} $toAWave');
     } else
       throw CallError('Cannot do $name from this formation');
   }

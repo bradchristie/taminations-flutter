@@ -78,6 +78,12 @@ mixin CallWithParts on Action {
     }
   }
 
+  //  Some calls have only selected dancers perform parts
+  //  such as Scoot Chain Thru.
+  //  Those calls need to ignore the specifier for
+  //  skipping or adjusting parts.
+  var ignoreSpecifier = false;
+
   //  When a call with parts is modified with Replace, But, Interrupt etc.
   //  the modification is placed in this array.
   final List<void Function(CallContext ctx)?> replacePart =

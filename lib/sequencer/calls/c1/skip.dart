@@ -43,7 +43,7 @@ class Skip extends Action {
       final partNumber = CallWithParts.partNumberFromCall(callWithParts, partName);
       if (partNumber == 0)
         throw CallError('Unable to figure out what to Skip');
-      if (whoSkip == null)
+      if (whoSkip == null || callWithParts.ignoreSpecifier)
         callWithParts.replacePart[partNumber] = (_) { };
       else {
         var savePart = callWithParts.performPart(partNumber);

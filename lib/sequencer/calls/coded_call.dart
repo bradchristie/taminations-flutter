@@ -534,7 +534,7 @@ abstract class CodedCall extends Call {
     'scootback'.ri: (name) => ScootBack(name),
     //  Accept Scoot Chain Thru Centers so user can say e.g.
     //  Centers Skip the 3rd Part
-    '(scatter)?scootchainthru(center)?'.ri: (name) => ScootChainThru(name),
+    '(scatter)?scootchainthru'.ri: (name) => ScootChainThru(name),
     //  Special hack for Centers Star Thru, otherwise it gets parsed
     //  as Centers Star
     'centerstarthru'.ri: (name) => CentersStarThru(name),
@@ -618,7 +618,7 @@ abstract class CodedCall extends Call {
     'thosewhocan'.ri: (name) => ThoseWhoCan(name),
     '32aceydeucey'.ri: (name) => ThreeByTwoAceyDeucey(name),
     '(left)?34tag(theline)?'.ri : (name) => ThreeQuartersTag(name),
-    'toawave'.ri: (name) => ToAWave(name),
+    '($specifier)?toawave'.ri: (name) => ToAWave(name),
     '(left)?touch'.ri: (name) => Touch(name),
     'steptoa(lefthand)?wave'.ri: (name) => Touch(name),
     '(left)?touch(14|12|34)'.ri: (name) => TouchAQuarter(name),

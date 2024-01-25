@@ -19,9 +19,10 @@
 
 import '../common.dart';
 
-class ScootChainThru extends Action with CallWithParts {
+class ScootChainThru extends Action with CallWithParts, IsToAWave {
 
   @override var numberOfParts = 5;
+  @override var ignoreSpecifier = true;
   @override var level = LevelData.A2;
   @override var helplink = 'a2/scoot_chain_thru';
   @override String get help => '''$name is a 5-part call:
@@ -73,8 +74,14 @@ class ScootChainThru extends Action with CallWithParts {
    void performPart5(CallContext ctx) {
     if (ctx.isWaves())
       ctx.applyCalls('Extend');
-    else
-      ctx.applyCalls('Center Wave of 4 Step');
+    else {
+      if (isToAWave) {
+        print('Attempting to adjust to 1/4 tag');
+        ctx.applyCalls('Adjust to 1/4 Tag');
+      }
+      else
+        ctx.applyCalls('Center Wave of 4 Step');
+    }
   }
 
 }

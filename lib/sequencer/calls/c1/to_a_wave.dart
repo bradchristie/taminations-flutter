@@ -18,39 +18,38 @@
 
 */
 
+import '../coded_call.dart';
 import '../common.dart';
 
-class ToAWave extends Action {
+mixin IsToAWave on Action {
 
-  @override final level = LevelData.C1;
-  @override var helplink = 'c1/anything_to_a_wave';
-  ToAWave(String name) : super(name);
+  var isToAWave = false;
+  var toAWave = '';
+
+
+  void putDancersBackToWave(CallContext ctx, List<DancerModel> dancers) {
+    //  Assume the last move is an Extend from a wave
+    ctx.contractPaths();
+    for (final d in dancers)
+      d.path.pop();
+  }
+
+}
+
+class ToAWave extends CodedCall {
+
+  ToAWave(super.name);
+
+  @override
+  void addToStack(CallContext ctx) {
+    var toawaveCall = ctx.findImplementor<IsToAWave>();
+    toawaveCall.isToAWave = true;
+    toawaveCall.toAWave = name;
+    toawaveCall.raiseLevel(LevelData.C1);
+  }
 
   @override
   void performCall(CallContext ctx) {
-    if (ctx.callstack.length < 2)
-      throw CallError('What to a Wave?');
-    //  Remember the angle each dancer is facing
-    var endAngles = {
-      for (var d in ctx.actives)
-        d : d.angleFacing
-    };
-    //  Assume the last move is an Extend from a wave
-    ctx.contractPaths();
-    for (final d in ctx.actives)
-      d.path.pop();
-    ctx.animateToEnd();
-    //  Check that they are all facing the final direction
-    for (var d in ctx.actives) {
-      if (d.angleFacing != endAngles[d])
-        throw CallError('Last part of call must be like Extend or Step Thru');
-    }
-    //  Now let's see if they are in waves
-    ctx.analyze();
-    for (final d in ctx.actives) {
-      if (!ctx.isInWave(d))
-        throw CallError('Unable to end in Wave');
-    }
   }
 
 }

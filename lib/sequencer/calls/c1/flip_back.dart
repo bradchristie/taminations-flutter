@@ -19,7 +19,7 @@
 
 import '../common.dart';
 
-class FlipBack extends Action with CallWithParts {
+class FlipBack extends Action with CallWithParts, IsToAWave {
 
   @override final level = LevelData.C1;
   @override var help = '''Flip Back is a 2-part call:
@@ -36,7 +36,7 @@ class FlipBack extends Action with CallWithParts {
 
   @override
    void performPart2(CallContext ctx) {
-    ctx.applyCalls('Scoot Back');
+    ctx.applyCalls('Scoot Back $toAWave');
   }
 
 }
