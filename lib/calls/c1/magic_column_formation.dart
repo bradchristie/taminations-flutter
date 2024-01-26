@@ -132,6 +132,29 @@ import '../c2/invert_the_column.dart' as c2;
           LeadLeft.changeBeats(3.5).scale(2.0,1.0)
       ]),
 
+    AnimatedCall('Magic Column Transfer the Column Centers to a Wave',
+        formation:Formation('Magic Column RH'),
+        group:'(Right-Hand Centers)', noDisplay: true,
+        paths:[
+          Forward.changeBeats(2) +
+              ExtendLeft.changeBeats(2).scale(1.0,2.0) +
+              SwingRight.scale(0.5,1.0).skew(-.5,0) +
+              HingeRight.skew(.5,0),
+
+          ExtendRight.changeBeats(2).scale(1.0,2.0) +
+              Forward.changeBeats(2) +
+              RunLeft.changeBeats(3.5).scale(1.0,2.0).skew(-1,0) +
+              QuarterLeft.changeBeats(1).skew(1,0),
+
+          Forward_2.changeBeats(4) +
+              SwingRight.scale(0.5,1.0).skew(.5,0) +
+              HingeRight.skew(-.5,0),
+
+          RunLeft.changeBeats(4).scale(1.0,2.0) +
+              Forward_3 +
+              QuarterLeft.changeBeats(1.5).skew(1,0),
+        ]),
+
     AnimatedCall('Magic Column Transfer and',
       formation:Formation('Magic Column RH'),
       group:'(Right-Hand Centers)',noDisplay: true,
@@ -271,6 +294,34 @@ import '../c2/invert_the_column.dart' as c2;
           HingeLeft.scale(0.5,1.0) +
           ExtendRight.changeBeats(2).scale(2.0,1.5)
       ]),
+
+    AnimatedCall('Magic Column Transfer the Column Centers to a Wave',
+        formation:Formation('', dancers:[
+          DancerModel.fromData(gender:Gender.GIRL,x:-1,y:1,angle:270),
+          DancerModel.fromData(gender:Gender.BOY,x:1,y:1,angle:90),
+          DancerModel.fromData(gender:Gender.GIRL,x:-1,y:3,angle:90),
+          DancerModel.fromData(gender:Gender.BOY,x:1,y:3,angle:270),
+        ]),
+        group:'(Left-Hand Centers)', noDisplay: true,
+        paths:[
+          Forward_2.changeBeats(4) +
+              SwingLeft.scale(0.5,1.0).skew(.5,0) +
+              HingeLeft.skew(-.5,0),
+
+          ExtendLeft.changeBeats(2).scale(1.0,2.0) +
+              Forward.changeBeats(2) +
+              RunRight.changeBeats(3.5).scale(1.0,2.0).skew(-1,0) +
+              QuarterRight.changeBeats(1).skew(1,0),
+
+          RunRight.changeBeats(4).scale(1.0,2.0) +
+              Forward_3 +
+              QuarterRight.changeBeats(1.5).skew(1,0),
+
+          Forward.changeBeats(2) +
+              ExtendRight.changeBeats(2).scale(1.0,2.0) +
+              SwingLeft.scale(0.5,1.0).skew(-.5,0) +
+              HingeLeft.skew(.5,0)
+        ]),
 
     AnimatedCall('Magic Column Transfer and',
       formation:Formation('', dancers:[

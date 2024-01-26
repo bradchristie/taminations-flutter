@@ -20,20 +20,10 @@
 
 import '../common.dart';
 
-class ScootBack extends SplitCall with IsToAWave {
+class ScootBack extends SplitCall {
 
   @override var level = LevelData.MS;
 
   ScootBack(super.name);
-
-  @override
-  void performCall(CallContext ctx) {
-    super.performCall(ctx);
-    if (isToAWave) {
-      ctx.analyze();
-      var leaders = ctx.dancers.where((d) => d.data.leader).toList();
-      putDancersBackToWave(ctx, leaders);
-    }
-  }
 
 }

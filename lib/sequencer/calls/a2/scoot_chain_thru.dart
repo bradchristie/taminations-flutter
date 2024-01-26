@@ -76,7 +76,6 @@ class ScootChainThru extends Action with CallWithParts, IsToAWave {
       ctx.applyCalls('Extend');
     else {
       if (isToAWave) {
-        print('Attempting to adjust to 1/4 tag');
         ctx.applyCalls('Adjust to 1/4 Tag');
       }
       else

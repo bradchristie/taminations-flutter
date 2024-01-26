@@ -20,7 +20,7 @@
 
 import '../common.dart';
 
-class TagBack extends Action with CallWithParts {
+class TagBack extends Action with CallWithParts, IsToAWave {
 
   @override final level = LevelData.C1;
   @override var numberOfParts = 2;
@@ -38,7 +38,7 @@ class TagBack extends Action with CallWithParts {
 
   @override
    void performPart2(CallContext ctx) {
-    ctx.applyCalls('Scoot Back');
+    ctx.applyCalls('Scoot Back $toAWave');
   }
 
 }

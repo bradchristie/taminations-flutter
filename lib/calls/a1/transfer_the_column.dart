@@ -79,5 +79,61 @@ import '../../moves.dart';
           HingeLeft.scale(0.5,1.0) +
           ExtendRight.changeBeats(2).scale(2.0,1.5)
       ]),
+
+    AnimatedCall('Transfer the Column Centers to a Wave',
+        formation:Formation('', dancers:[
+          DancerModel.fromData(gender:Gender.GIRL,x:-1,y:3,angle:90),
+          DancerModel.fromData(gender:Gender.GIRL,x:-1,y:-1,angle:90),
+          DancerModel.fromData(gender:Gender.BOY,x:-1,y:1,angle:90),
+          DancerModel.fromData(gender:Gender.BOY,x:-1,y:-3,angle:90),
+        ]),
+        from:'Right-Hand Columns',
+        noDisplay: true,
+        paths:[
+          RunRight.changeBeats(3).scale(1.0,2.0) +
+              Forward_2 +
+              QuarterRight.changeBeats(2).skew(2, 0),
+
+
+          Forward_2 +
+              SwingRight.scale(0.5,1.0).skew(.5, 0) +
+              HingeRight.skew(-.5, 0),
+
+          Forward_2 +
+              RunRight.changeBeats(3).scale(1.0,2.0) +
+              QuarterRight.changeBeats(2).skew(2, 0),
+
+          Forward_2 +
+              SwingRight.scale(0.5,1.0).skew(-.5, 0) +
+              HingeRight.skew(.5, 0)
+        ]),
+
+    AnimatedCall('Transfer the Column Centers to a Wave',
+        formation:Formation('', dancers:[
+          DancerModel.fromData(gender:Gender.BOY,x:-1,y:-3,angle:270),
+          DancerModel.fromData(gender:Gender.BOY,x:-1,y:1,angle:270),
+          DancerModel.fromData(gender:Gender.GIRL,x:-1,y:-1,angle:270),
+          DancerModel.fromData(gender:Gender.GIRL,x:-1,y:3,angle:270),
+        ]),
+        from:'Left-Hand Columns',
+        noDisplay: true,
+        paths:[
+          RunLeft.changeBeats(3).scale(1.0,2.0) +
+              Forward_2 +
+              QuarterLeft.changeBeats(2).skew(2, 0),
+
+          Forward_2 +
+              SwingLeft.scale(0.5,1.0).skew(.5, 0) +
+              HingeLeft.skew(-.5, 0),
+
+          Forward_2 +
+              RunLeft.changeBeats(3).scale(1.0,2.0) +
+              QuarterLeft.changeBeats(2).skew(2, 0),
+
+          Forward_2 +
+              SwingLeft.scale(0.5,1.0).skew(-.5, 0) +
+              HingeLeft.skew(.5, 0)
+        ]),
+
   ];
 
