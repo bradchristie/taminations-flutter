@@ -19,11 +19,12 @@
 
 import '../common.dart';
 
-class Percolate extends Action with CallWithParts, ButCall {
+class Percolate extends Action with CallWithParts, ButCall, IsToAWave {
 
   @override int numberOfParts = 3;
   @override final level = LevelData.C1;
   @override var butCall = 'Hinge and Cross';
+  @override var ignoreSpecifier = true;
   @override var help = '''Percolate is a 3-part call:
   1.  Circulate
   2.  1/2 Circulate
@@ -45,8 +46,10 @@ The Hinge and Cross can be replaced with But (another call)''';
   @override
    void performPart3(CallContext ctx) {
     ctx.analyze();
-    final turnCall = ctx.outer(4).every((d) => d.data.belle)
+    var turnCall = ctx.outer(4).every((d) => d.data.belle)
         ? 'Left Turn Thru' : 'Turn Thru';
+    if (isToAWave)
+      turnCall = 'Trade';
     ctx.applyCalls('Center Wave of 4 $butCall While Others $turnCall');
   }
 
