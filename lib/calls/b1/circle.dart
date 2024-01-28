@@ -761,6 +761,14 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Single Circle Left 1/4',
+        formation: Formation('Facing Dancers'),
+        from:'Facing Dancers',
+        paths: [
+          Forward.scale(0.8,1.0) +
+              ssqtr.skew(0.0,0.8)
+        ]),
+
+    AnimatedCall('Single Circle Left 1/4',
       formation:Formation('Facing Couples Compact'),
       from:'Facing Couples',
       paths:[
@@ -804,6 +812,15 @@ import '../../moves.dart';
           Forward.scale(0.3,1.0) +
           ssqtr.skew(-1.0,-0.7)
       ]),
+
+    AnimatedCall('Single Circle Left 1/2',
+        formation: Formation('Facing Dancers'),
+        from:'Facing Dancers',
+        paths: [
+          Forward.scale(0.8,1.0) +
+              ssqtr +
+              ssqtr.skew(0.0,0.8)
+        ]),
 
     AnimatedCall('Single Circle Left 1/2',
       formation:Formation('Facing Couples Compact'),
@@ -859,6 +876,16 @@ import '../../moves.dart';
           ssqtr +
           ssqtr.skew(0.0,0.3)
       ]),
+
+    AnimatedCall('Single Circle Left 3/4',
+        formation: Formation('Facing Dancers'),
+        from:'Facing Dancers',
+        paths: [
+          Forward.scale(0.8,1.0) +
+              ssqtr +
+              ssqtr +
+              ssqtr.skew(0.0,0.8)
+        ]),
 
     AnimatedCall('Single Circle Left 3/4',
       formation:Formation('Facing Couples Compact'),
@@ -926,6 +953,14 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Single Circle Right 1/4',
+        formation: Formation('Facing Dancers'),
+        from:'Facing Dancers',
+        paths: [
+          Forward.scale(0.8,1.0) +
+              ssqtrright.skew(0.0,-0.8)
+        ]),
+
+    AnimatedCall('Single Circle Right 1/4',
       formation:Formation('Facing Couples Compact'),
       from:'Facing Couples',
       paths:[
@@ -969,6 +1004,15 @@ import '../../moves.dart';
           Forward.scale(0.3,1.0) +
           ssqtrright.skew(-1.0,-1.3)
       ]),
+
+    AnimatedCall('Single Circle Right 1/2',
+        formation: Formation('Facing Dancers'),
+        from:'Facing Dancers',
+        paths: [
+          Forward.scale(0.8,1.0) +
+              ssqtrright +
+              ssqtrright.skew(0.0,-0.8)
+        ]),
 
     AnimatedCall('Single Circle Right 1/2',
       formation:Formation('Facing Couples Compact'),
@@ -1024,6 +1068,16 @@ import '../../moves.dart';
           ssqtrright +
           ssqtrright.skew(0.0,-0.3)
       ]),
+
+    AnimatedCall('Single Circle Right 3/4',
+        formation: Formation('Facing Dancers'),
+        from:'Facing Dancers',
+        paths: [
+          Forward.scale(0.8,1.0) +
+              ssqtrright +
+              ssqtrright +
+              ssqtrright.skew(0.0,-0.8)
+        ]),
 
     AnimatedCall('Single Circle Right 3/4',
       formation:Formation('Facing Couples Compact'),

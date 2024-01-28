@@ -33,6 +33,10 @@ class Formation {
 
   static final List<Formation> formations = [
 
+    Formation('Facing Dancers', dancers:[
+      DancerModel.fromData(gender:Gender.BOY,x:-1.5,y:0,angle:0)
+    ]),
+
     Formation('Facing Couples', dancers:[
       DancerModel.fromData(gender:Gender.BOY,x:-2,y:1,angle:0),
       DancerModel.fromData(gender:Gender.GIRL,x:-2,y:-1,angle:0),

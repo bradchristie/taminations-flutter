@@ -173,7 +173,7 @@ final Path incircle3 = incircle2.scale(1,-1)..name='incircle3';
 final Path ssqtr = Path([
       Movement.fromData(beats: 1, hands: Hands.NONE, cx1: 0, cy1: 0.385, cx2: 0.315, cy2: 0.7, x2: 0.7, y2: 0.7, cx3: 0.55, cx4: 1, cy4: -0.45, x4: 1, y4: -1  )],'ssqtr');
 final Path ssqtrright = Path([
-      Movement.fromData(beats: 1, hands: Hands.NONE, cx1: 0, cy1: 0.385, cx2: 0.315, cy2: -0.7, x2: 0.7, y2: -0.7, cx3: 0.55, cx4: 1, cy4: 0.45, x4: 1, y4: 1  )],'ssqtr right');
+      Movement.fromData(beats: 1, hands: Hands.NONE, cx1: 0, cy1: -0.385, cx2: 0.315, cy2: -0.7, x2: 0.7, y2: -0.7, cx3: 0.55, cx4: 1, cy4: 0.45, x4: 1, y4: 1  )],'ssqtr right');
 final Path Pivotforwardleft = Path([
       Movement.fromData(beats: 3, hands: Hands.NONE, cx1: 0, cy1: 1.333, cx2: 2, cy2: 1.333, x2: 2, y2: 0, cx3: 1.333, cx4: 1.333, cy4: -2, x4: 0, y4: -2  )],'Pivot forward left');
 final Path Pivotforwardright = Pivotforwardleft.scale(1,-1)..name='Pivot forward right';

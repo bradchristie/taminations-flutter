@@ -25,6 +25,16 @@ import '../../moves.dart';
   final List<AnimatedCall> SingleCircleToAWave = [
 
     AnimatedCall('Single Circle to a Wave',
+        formation: Formation('Facing Dancers'),
+        from: 'Facing Dancers', difficulty: 1,
+        paths: [
+          Forward.scale(0.8,1.0) +
+              ssqtr +
+              ssqtr +
+              ExtendLeft.scale(0.7,1.0)
+        ]),
+
+    AnimatedCall('Single Circle to a Wave',
       formation:Formation('Facing Couples'),
       from:'Facing Couples',difficulty: 1,
       paths:[
@@ -88,6 +98,17 @@ import '../../moves.dart';
           ssqtr +
           ExtendLeft.scale(0.7,0.5)
       ]),
+
+    AnimatedCall('Single Circle 3/4 to a Wave',
+        formation: Formation('Facing Dancers'),
+        from: 'Facing Dancers', difficulty: 2,
+        paths: [
+          Forward.scale(0.8,1.0) +
+              ssqtr +
+              ssqtr +
+              ssqtr +
+              ExtendLeft.scale(0.7,1.0)
+        ]),
 
     AnimatedCall('Single Circle 3/4 to a Wave',
       formation:Formation('Facing Couples'),
@@ -165,6 +186,16 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Reverse Single Circle to a Wave',
+        formation: Formation('Facing Dancers'),
+        from: 'Facing Dancers', difficulty: 2,
+        paths: [
+          Forward.scale(0.8,1.0) +
+              ssqtrright +
+              ssqtrright +
+              ExtendRight.scale(0.7,1.0)
+        ]),
+
+    AnimatedCall('Reverse Single Circle to a Wave',
       formation:Formation('Facing Couples'),
       from:'Facing Couples',difficulty: 2,
       paths:[
@@ -228,6 +259,17 @@ import '../../moves.dart';
           ssqtr.scale(1.0,-1.0) +
           ExtendRight.scale(0.7,0.5)
       ]),
+
+    AnimatedCall('Reverse Single Circle 3/4 to a Wave',
+        formation: Formation('Facing Dancers'),
+        from: 'Facing Dancers', difficulty: 3,
+        paths: [
+          Forward.scale(0.8,1.0) +
+              ssqtrright +
+              ssqtrright +
+              ssqtrright +
+              ExtendRight.scale(0.7,1.0)
+        ]),
 
     AnimatedCall('Reverse Single Circle 3/4 to a Wave',
       formation:Formation('Facing Couples'),

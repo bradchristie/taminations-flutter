@@ -20,6 +20,7 @@
 
 
 import 'a2/diamond_chain_thru.dart';
+import 'b1/single_circle.dart';
 import 'c1/follow_thru.dart';
 import 'c1/weave.dart';
 import 'c2/cross_concentric_cycle_and_wheel.dart';
@@ -304,6 +305,7 @@ import 'plus/load_the_boat.dart';
 import 'plus/peel_off.dart';
 import 'plus/points.dart';
 import 'plus/roll.dart';
+import 'plus/single_circle_to_a_wave.dart';
 import 'plus/spin_chain_and_exchange_the_gears.dart';
 import 'plus/spin_chain_the_gears.dart';
 import 'plus/spread.dart';
@@ -548,6 +550,8 @@ abstract class CodedCall extends Call {
     '(single)?(split)?sidetrack'.ri: (name) => Sidetrack(name),
     'single'.ri: (name) => Single(name),
     'singlebounce(the)?($specifier)?'.ri: (name) => SingleBounce(name),
+    'singlecircle(left|right)(14|12|34)'.ri: (name) => SingleCircle(name),
+    '(reverse)?singlecircle(34)?toawave'.ri: (name) => SingleCircleToAWave(name),
     'singlecrossandwheel'.ri: (name) => SingleCrossAndWheel(name),
     'singlecrosstradeandwheel'.ri: (name) => SingleCrossTradeAndWheel(name),
     'singlewheel'.ri: (name) => SingleWheel(name),
