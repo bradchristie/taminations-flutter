@@ -275,6 +275,7 @@ class CallContext {
     if (_source != null && _source!.level < level)
       _source!.level = level;
     ctx?.didYourPart |= didYourPart;
+    ctx?.asymmetric |= dancers.areDancersOrdered();
     return didSomething;
   }
 
