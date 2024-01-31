@@ -572,7 +572,7 @@ abstract class CodedCall extends Call {
     'splitcirculate'.ri: (name) => SplitCirculate(name),
     'splitcounterrotate'.ri: (name) => SplitCounterRotate(name),
     'splitdixiediamond'.ri: (name) => SplitDixieDiamond(name),
-    'splitdixiestyle(toawave)?'.ri: (name) => SplitDixieStyle(name),
+    'splitdixie(sashay|style(toawave)?)'.ri: (name) => SplitDixieStyle(name),
     'splitrecycle'.ri: (name) => SplitRecycle(name),
     'splitsquarechainthru'.ri: (name) => SplitSquareChainThru(name),
     'splitsquarechainthetop'.ri: (name) => SplitSquareChainTheTop(name),

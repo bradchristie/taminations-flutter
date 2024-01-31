@@ -44,7 +44,8 @@ class SplitDixieStyle extends Action with CallWithParts {
 
   @override
    void performPart2(CallContext ctx) {
-    ctx.applyCalls('Left Touch 1/4');
+    var stretch = name.contains('Sashay') ? 'Stretch' : '';
+    ctx.applyCalls('$stretch Left Touch 1/4');
   }
 
 }
