@@ -25,6 +25,7 @@ import 'c1/follow_thru.dart';
 import 'c1/weave.dart';
 import 'c2/cross_concentric_cycle_and_wheel.dart';
 import 'c2/vertical.dart';
+import 'common/double_selector.dart';
 import 'common/grand.dart';
 import 'common/select_location.dart';
 import '../../extensions.dart';
@@ -315,7 +316,11 @@ abstract class CodedCall extends Call {
 
   CodedCall(String name) : super(name);
 
-  static const specifier = '\\s*(?:boys?|girls?|beaus?|belles?|centers?|ends?|lead(?:er)?s?|trail(?:er)?s?|heads?|sides?|very ?centers?|every(?:one|body)|no(?:one|body))\\s*';
+  static const specifier =
+      '\\s*(?:boys?|girls?|beaus?|belles?|centers?|ends?|'
+      'lead(?:er)?s?|trail(?:er)?s?|heads?|sides?|very ?centers?|'
+      'every(?:one|body)|no(?:one|body)|'
+      '(?:(?:near|far|left|right)(?:box|line|wave|diamond|star|\\d)))\\s*';
 
   static final Map<RegExp, CodedCall Function(String norm)> normCallMap = {
     'aceydeucey'.ri: (_) => AceyDeucey(),
@@ -401,6 +406,7 @@ abstract class CodedCall extends Call {
     'dosado(toawave)?'.ri: (name) => Dosado(name),
     'doublecross'.ri: (_) => DoubleCross(),
     'doublescoot'.ri: (_) => DoubleScoot(),
+    '($specifier)+and($specifier)+'.ri: (name) => DoubleSelector(name),
     'doyourpart.*'.ri: (name) => DoYourPart(name),
 
     '8chain(1|2|3|4|5|6|7|thru)'.ri: (name) => EightChain(name),

@@ -3891,7 +3891,7 @@ Centers Cross Trail Thru
 Allemande Left''', ''),
 
   TestSequence('In Your Block Zing',
-'''Single Rotate 1/4  
+'''Single Rotate 1/4
 Sides Squeeze
 Outsides Zing
 Boys Spread
@@ -3900,6 +3900,21 @@ In Your Block Girls Pass In
 Boys Half Press Ahead
 Star Thru
 Box the Gnat
+Allemande Left''',''),
+
+  TestSequence('Double Selection',
+'''Heads Lead Right
+Star Thru
+Near Line Girls and Far Line Boys Pass Thru
+Couples 2 and 3 Pass Thru
+Cast Off 3/4
+Star Thru
+Outside Beau and Center Belle Pass Thru
+Magic Column Circulate
+Face In
+Box the Gnat
+Star Thru
+Right and Left Thru
 Allemande Left''',''),
 
 ];
