@@ -23,34 +23,18 @@ Call pronunciations provided by
 
 ---
 
-## Taminations version 1.6.73 built 2024-01-08
+## Taminations version 1.6.74 built 2024-01-31
 Copyright 2024 by Brad Christie.  
 This is free software, and you are welcome to modify and redistribute it
 under the terms of the [GNU GPL license](http://www.gnu.org/licenses/gpl.html).  
 
 ## What's New
-* Fix animation for Wrong Way Grand
-* Fix one animation for Bend the Line
-* More animations for Reshape
+* Better animations for Scoot Chain Thru and Stack the Line
 * Sequencer changes:
-  - Set keyboard focus back on edit line after tapping Undo or Reset
-  - Fix level for Diamond Chain Thru
-  - Fix Concentric 1/4 In from lines facing out
-  - Fix Stretch Half Tag
-  - Enable Reverse Circle By
-  - Fixes for Peel Off and related calls
-  - Fix setting starting formation to Columns
-  - Fix for Cross Ramble with center left-hand wave
-  - Enable Scoot and Weave from appropriate t-bones
-  - Adjust Squeeze the Hourglass/Galaxy to snap to other formation
-  - Enable All 8 Dixie Diamond from static tandems
-  - Enable Alter the Wave from facing dancers
-  - Enable Follow Thru from appropriate t-bones
-  - Accept Skip the Last <n> Parts
-  - Enable <selected dancers> Skip <some part>
-  - Code for Vertical
-  - Fixes for how Random Colors works
-  - Improvements for Substitute
+  - Improvements for Start
+  - Add Head/Side Ladies Chain 3/4 with optional Half Sashay or Rollaway
+  - Fixes for Block concept
+  - To a Wave for more calls, especially Scoot Back variations
   
 For a detailed history of changes, view the
 [Git log](https://github.com/bradchristie/taminations-flutter/commits/main)
