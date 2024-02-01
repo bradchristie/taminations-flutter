@@ -306,6 +306,90 @@ import '../../moves.dart';
           Forward_2.changeBeats(4)
       ]),
 
+    AnimatedCall('2 by 1 Walk and Dodge',
+        from: 'Right-Hand Columns of 3',
+        difficulty: 3,
+        formation:Formation('', dancers:[
+          DancerModel.fromData(gender:Gender.BOY,x:-2,y:-1,angle:180),
+          DancerModel.fromData(gender:Gender.GIRL,x:0,y:-1,angle:180),
+          DancerModel.fromData(gender:Gender.BOY,x:2,y:-1,angle:180),
+        ]),
+        paths: [
+          DodgeRight.changeBeats(4),
+          Forward_2.changeBeats(4),
+          Forward_2.changeBeats(4)
+        ]),
+
+    AnimatedCall('2 by 1 Walk and Dodge',
+        from: 'Left-Hand Columns of 3',
+        difficulty: 3,
+        formation:Formation('', dancers:[
+          DancerModel.fromData(gender:Gender.BOY,x:-2,y:1,angle:180),
+          DancerModel.fromData(gender:Gender.GIRL,x:0,y:1,angle:180),
+          DancerModel.fromData(gender:Gender.BOY,x:2,y:1,angle:180),
+        ]),
+        paths: [
+          DodgeLeft.changeBeats(4),
+          Forward_2.changeBeats(4),
+          Forward_2.changeBeats(4)
+        ]),
+
+    AnimatedCall('1 by 2 Walk and Dodge',
+        from: 'Lines of 3 1',
+        difficulty: 3,
+        formation:Formation('', dancers:[
+          DancerModel.fromData(gender:Gender.BOY,x:1.5,y:-2,angle:180),
+          DancerModel.fromData(gender:Gender.GIRL,x:1.5,y:0,angle:180),
+          DancerModel.fromData(gender:Gender.BOY,x:1.5,y:2,angle:0),
+        ]),
+        paths: [
+          Forward_3.changeBeats(4),
+          DodgeLeft.changeBeats(4),
+          DodgeRight.changeBeats(4)
+        ]),
+
+    AnimatedCall('1 by 2 Walk and Dodge',
+        from: 'Lines of 3 2',
+        difficulty: 3,
+        formation:Formation('', dancers:[
+          DancerModel.fromData(gender:Gender.BOY,x:1.5,y:-2,angle:180),
+          DancerModel.fromData(gender:Gender.GIRL,x:1.5,y:0,angle:0),
+          DancerModel.fromData(gender:Gender.BOY,x:1.5,y:2,angle:0),
+        ]),
+        paths: [
+          Forward_3.changeBeats(4),
+          DodgeRight.changeBeats(4),
+          DodgeRight.changeBeats(4)
+        ]),
+
+    AnimatedCall('1 by 2 Walk and Dodge',
+        from: 'Lines of 3 3',
+        difficulty: 3,
+        formation:Formation('', dancers:[
+          DancerModel.fromData(gender:Gender.BOY,x:1.5,y:-2,angle:0),
+          DancerModel.fromData(gender:Gender.GIRL,x:1.5,y:0,angle:0),
+          DancerModel.fromData(gender:Gender.BOY,x:1.5,y:2,angle:180),
+        ]),
+        paths: [
+          DodgeLeft.changeBeats(4),
+          DodgeLeft.changeBeats(4),
+          Forward_3.changeBeats(4)
+        ]),
+
+    AnimatedCall('1 by 2 Walk and Dodge',
+        from: 'Lines of 3 4',
+        difficulty: 3,
+        formation:Formation('', dancers:[
+          DancerModel.fromData(gender:Gender.BOY,x:1.5,y:-2,angle:0),
+          DancerModel.fromData(gender:Gender.GIRL,x:1.5,y:0,angle:180),
+          DancerModel.fromData(gender:Gender.BOY,x:1.5,y:2,angle:180),
+        ]),
+        paths: [
+          DodgeLeft.changeBeats(4),
+          DodgeRight.changeBeats(4),
+          Forward_3.changeBeats(4)
+        ]),
+
     AnimatedCall('3 by 1 Walk and Dodge',
       formation:Formation('Column LH GBGB'),
       from:'Left-Hand Columns',difficulty: 3,
