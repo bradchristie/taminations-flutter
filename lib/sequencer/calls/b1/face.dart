@@ -62,6 +62,7 @@ class Face extends Action {
         move = UmTurnRight;
       else
         move = Stand;
+      ctx.asymmetric = true;
       }
 
     else
