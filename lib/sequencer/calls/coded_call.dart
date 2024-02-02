@@ -449,7 +449,7 @@ abstract class CodedCall extends Call {
     'individually'.ri: (_) => Nothing('Individually'),
     'center(2|4|6)'.ri: (name) => Insides(name),
     'in(ner|sides?)(2|4|6)?'.ri: (name) => Insides(name),
-    '.*interrupt.*'.ri: (name) => Interrupt(name),
+    'interrupt.*'.ri: (name) => Interrupt(name),
     'inthecenter'.ri: (_) => InTheCenter(),
 
     'jaywalk'.ri: (_) => Jaywalk(),
@@ -510,7 +510,7 @@ abstract class CodedCall extends Call {
     '14(in|out)'.ri: (name) => QuarterInOut(name),
     'anda?14more'.ri: (_) => QuarterMore(),
     '(left)?14tag'.ri: (name) => QuarterTag(name),
-    '(grand)?(left)?(14|34)mix'.ri: (name) => QuarterMix(name),
+    '(14|34)mix'.ri: (name) => QuarterMix(name),
     '(14|34)thru'.ri: (name) => QuarterThru(name),
 
     'ramble'.ri: (_) => Ramble(),

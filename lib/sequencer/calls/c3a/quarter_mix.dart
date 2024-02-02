@@ -19,12 +19,10 @@
 
 import '../common.dart';
 
-class QuarterMix extends Action with CallWithParts {
+class QuarterMix extends Action with CallWithParts, IsLeft, IsGrand {
 
   @override var level = LevelData.C3A;
   @override var numberOfParts = 3;
-  bool isGrand;
-  bool isLeft;
   bool isThree;
   @override var help = '''1/4 Mix is a 3-part call:
   1.  Hinge
@@ -33,8 +31,6 @@ class QuarterMix extends Action with CallWithParts {
   @override var helplink = 'c3a/1_4_mix';
 
   QuarterMix(name) :
-        isGrand=name.contains('Grand'),
-        isLeft=name.contains('Left'),
         isThree=normalizeCall(name).contains('34'),
         super(name);
 
