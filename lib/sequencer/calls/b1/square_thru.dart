@@ -21,7 +21,7 @@
 import '../../../moves.dart';
 import '../common.dart';
 
-class SquareThru extends Action {
+class SquareThru extends Action with IsLeft, IsToAWave {
 
   @override var help = 'In addition to the common use of Square Thru, the'
       ' program accepts these variatons:\n'
@@ -33,12 +33,8 @@ class SquareThru extends Action {
   @override
    void performCall(CallContext ctx, [int i=0]) {
     //  Set up alternating hands
-    var left = 'Left-Hand' ;
-    var right = '' ;
-    if (name.toLowerCase().startsWith('left' )) {
-      left = '' ;
-      right = 'Left-Hand' ;
-    }
+    var left = isLeft ? '' : 'Left-Hand';
+    var right = isLeft ? 'Left-Hand' : '';
     //  Find out how many hands
     var norm = normalizeCall(name).toLowerCase();
     var extra = '';
@@ -82,7 +78,7 @@ class SquareThru extends Action {
       ctx.level = LevelData.B1;  // override Explode (Plus)
     }
     //  Finish back-to-back unless C-1 concept 'to a Wave'  added
-    if (norm.endsWith('toawave' ))
+    if (isToAWave)
       level = LevelData.C1;
     else if (onHand <= 0)  //  on the nth hand ...
       ctx.applyCalls('Step Thru' );
