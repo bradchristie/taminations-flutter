@@ -19,7 +19,7 @@
 
 import '../common.dart';
 
-class RotarySpin extends Action with CallWithParts {
+class RotarySpin extends Action with CallWithParts, IsLeft {
 
   @override int numberOfParts = 2;
   @override final level = LevelData.C1;
@@ -28,8 +28,8 @@ class RotarySpin extends Action with CallWithParts {
   2.  Centers Step to a Left-Hand Wave and Cast Off 3/4, others Courtesy Turn and Roll
 You can switch the hands with Left Rotary Spin''';
   @override var helplink = 'c1/rotary_spin';
-  final bool isLeft;
-  RotarySpin(String name) : isLeft=name.startsWith('Left'), super(name);
+
+  RotarySpin(String name) : super(name);
 
   @override
    void performPart1(CallContext ctx) {

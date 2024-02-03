@@ -20,7 +20,7 @@
 import '../coded_call.dart';
 import '../common.dart';
 
-class SwingTheFractions extends Action with CallWithParts {
+class SwingTheFractions extends Action with CallWithParts, IsLeft {
 
   @override int numberOfParts = 5;
   @override var level = LevelData.C1;
@@ -32,14 +32,12 @@ class SwingTheFractions extends Action with CallWithParts {
   5.  Right Hinge
 The hands can be swapped with Left Swing the Fractions''';
   @override var helplink = 'c1/swing_the_fractions';
-  bool isLeft;
+
   List<DancerModel>? part1dancers;
   List<DancerModel>? part2dancers;
   List<DancerModel>? part3dancers;
   List<DancerModel>? part4dancers;
-  SwingTheFractions(String name) :
-        isLeft=name.contains('Left'),
-        super(name);
+  SwingTheFractions(String name) : super(name);
 
   @override
    void performPart1(CallContext ctx) {
@@ -47,9 +45,7 @@ The hands can be swapped with Left Swing the Fractions''';
     ctx.subContext(ctx.dancersHoldingSameHands(isRight: !isLeft), (ctx2) {
       part1dancers = ctx2.dancers;
       CodedCall.fromName('Hinge')!.performCall(ctx2);
-      //await ctx2.applyCalls('Hinge');
-    }
-    );
+    });
   }
 
   @override

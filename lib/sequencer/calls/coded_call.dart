@@ -530,7 +530,7 @@ abstract class CodedCall extends Call {
     'rollaway'.ri : (name) => Rollaway(name),
     '(left|right)rolltoawave'.ri: (name) => RollToAWave(name),
     'rotary'.ri: (name) => Rotary(name),
-    '(left)?rotaryspin'.ri: (name) => RotarySpin(name),
+    'rotaryspin'.ri: (name) => RotarySpin(name),
     'rotate(14|12|34)?'.ri: (name) => Rotate(name),
     'run(left|right)?'.ri: (name) => Run(name),
 
@@ -612,8 +612,8 @@ abstract class CodedCall extends Call {
     'swing'.ri: (name) => Swing(name),
     'swingandcircle(14|12|34)'.ri: (name) => SwingAndCircle(name),
     'swingandmix'.ri: (name) => SwingAndMix(name),
-    '(left)?swingthefractions'.ri: (name) => SwingTheFractions(name),
-    '(grand)?(left)?swingthru'.ri: (name) => SwingThru(name),
+    'swingthefractions'.ri: (name) => SwingTheFractions(name),
+    'swingthru'.ri: (name) => SwingThru(name),
     'switch(theline)?'.ri: (name) => SwitchTheLine(name),
 
     '(left)?tagback(toawave)?'.ri: (name) => TagBack(name),

@@ -19,7 +19,7 @@
 
 import '../common.dart';
 
-class SwingThru extends Action with ActivesOnly, CallWithParts {
+class SwingThru extends Action with ActivesOnly, CallWithParts, IsLeft, IsGrand {
 
   @override int numberOfParts = 2;
   @override LevelData get level => isGrand ? LevelData.PLUS : LevelData.B2;
@@ -27,12 +27,8 @@ class SwingThru extends Action with ActivesOnly, CallWithParts {
   1.  Trade with the right hand
   2.  Trade with the left hand''';
   @override var helplink = 'b2/swing_thru';
-  bool isGrand;
-  bool isLeft;
-  SwingThru(String name) :
-        isGrand=name.contains('Grand'),
-        isLeft=name.contains('Left'),
-        super(name);
+
+  SwingThru(String name) : super(name);
 
   List<DancerModel> _dancersWhoCanDoBothParts(CallContext ctx) {
     var whoCan = <DancerModel>[];
