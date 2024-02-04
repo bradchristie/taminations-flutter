@@ -21,6 +21,7 @@
 
 import 'a2/diamond_chain_thru.dart';
 import 'b1/single_circle.dart';
+import 'b1/weave_the_ring.dart';
 import 'c1/follow_thru.dart';
 import 'c1/weave.dart';
 import 'c2/cross_concentric_cycle_and_wheel.dart';
@@ -667,6 +668,7 @@ abstract class CodedCall extends Call {
     '(wave|line)of6'.ri: (name) => WaveOfSix(name),
     '(dancersin)?waves?(dancers)?'.ri: (name) => Waves(name),
     'weave'.ri: (name) => Weave(name),
+    'weavethering'.ri: (name) => WeaveTheRing(name),
     'wheeland(?!deal)'.ri: (name) => WheelAnd(name),
      'wheelaround'.ri: (name) => WheelAround(name),
     '(reverse)?(14|34)?(reverse)?wheelthe(ocean|sea)'.ri: (name) => WheelTheOcean(name),
