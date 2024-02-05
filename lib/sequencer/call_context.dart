@@ -1431,11 +1431,12 @@ class CallContext {
       dancers.where((d) => d.location == spot).firstOrNull;
 
   //  Are two dancers on the same spot?
-  bool isCollision() => dancers.any((d) =>
+  List<DancerModel> collidingDancers() => dancers.where((d) =>
       dancers.any((d2) =>
       d != d2 && d.location == d2.location
       )
-  );
+  ).toList();
+  bool isCollision() => collidingDancers().isNotEmpty;
 
   //  Get direction dancer would Roll
   Rolling roll(DancerModel dv) {

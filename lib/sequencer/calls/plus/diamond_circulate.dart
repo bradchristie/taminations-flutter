@@ -22,7 +22,7 @@ import '../../../math/bezier.dart';
 import '../../../moves.dart';
 import '../common.dart';
 
-class DiamondCirculate extends Action {
+class DiamondCirculate extends SplitCall with ActivesOnly {
 
   @override var level = LevelData.PLUS;
   @override var help = 'In addition to Twin Diamonds and Point-to-Point'
@@ -33,9 +33,13 @@ class DiamondCirculate extends Action {
 
   @override
   void performCall(CallContext ctx) {
-    if (ctx.actives.length != 4)
-      throw CallError('Unable to calculate Diamond Circulate');
     super.performCall(ctx);
+    //  Look for collisions
+    var cd = ctx.collidingDancers();
+    //  Adjust colliding dancers to the left so they join right hands
+    for (var d in cd) {
+      d.path = d.path.skewFromEnd(0, 0.5);
+    }
   }
 
   @override
