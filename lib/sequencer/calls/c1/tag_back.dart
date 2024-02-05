@@ -20,7 +20,7 @@
 
 import '../common.dart';
 
-class TagBack extends Action with CallWithParts, IsToAWave {
+class TagBack extends Action with CallWithParts, IsToAWave, IsLeft {
 
   @override final level = LevelData.C1;
   @override var numberOfParts = 2;
@@ -28,11 +28,11 @@ class TagBack extends Action with CallWithParts, IsToAWave {
   1.  Half Tag
   2.  Scoot Back''';
   @override var helplink = 'c1/tagging_calls_back_to_a_wave';
+
   TagBack(String name) : super(name);
 
   @override
    void performPart1(CallContext ctx) {
-    final left = name.startsWith('Left') ? 'Left' : '';
     ctx.applyCalls('$left Half Tag');
   }
 

@@ -21,7 +21,7 @@
 import '../../../moves.dart';
 import '../common.dart';
 
-class TurnAndDeal extends Action {
+class TurnAndDeal extends Action with IsLeft {
 
   @override final level = LevelData.A1;
   @override var help = '''[Left] Turn and Deal
@@ -41,7 +41,7 @@ Line of (6 or 8) [Left] Turn and Deal''';
     d.data.center ? 1.5 : 0.5;
     final sign = (dir=='Left') ? 1.0 : -1.0;
     return (dir=='Left' ? UmTurnLeft : UmTurnRight)
-        .skew(sign*(name.startsWith('Left') ? amount : -amount),dist*sign);
+        .skew(sign*(isLeft ? amount : -amount),dist*sign);
   }
 
 }

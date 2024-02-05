@@ -20,7 +20,7 @@
 import '../../../moves.dart';
 import '../common.dart';
 
-class StackTheLine extends Action with ActivesOnly, CallWithParts {
+class StackTheLine extends Action with ActivesOnly, CallWithParts, IsLeft {
 
   @override var level = LevelData.C2;
   @override var numberOfParts = 2;
@@ -29,8 +29,8 @@ class StackTheLine extends Action with ActivesOnly, CallWithParts {
   2.  Original Leaders Step and all adjust to make a Right-Hand Box''';
   @override var helplink = 'c2/stack_the_line';
   List<DancerModel> originalLeads = [];
-  final bool isLeft;
-  StackTheLine(String name) : isLeft=name.startsWith('Left'), super(name);
+
+  StackTheLine(String name) : super(name);
 
   @override
    void performPart1(CallContext ctx) {

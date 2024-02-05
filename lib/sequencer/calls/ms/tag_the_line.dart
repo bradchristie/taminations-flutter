@@ -21,7 +21,7 @@
 import '../../../moves.dart';
 import '../common.dart';
 
-class TagTheLine extends Action {
+class TagTheLine extends Action with IsLeft {
 
   @override var level = LevelData.MS;
   @override var help = '''[Left] [fraction] Tag the Line
@@ -34,7 +34,6 @@ Line of (6 or 8) [Left] [Half] Tag the Line
 
   @override
    void performCall(CallContext ctx, [int i = 0]) {
-    final left = name.startsWith('Left') ? 'Left' : '';
     ctx.applyCalls('$left 34tag');
     ctx.contractPaths();
     ctx.applyCalls('extend');

@@ -21,7 +21,7 @@
 import '../../../moves.dart';
 import '../common.dart';
 
-class ThreeQuartersTag extends Action {
+class ThreeQuartersTag extends Action with IsLeft {
 
   @override var level = LevelData.MS;
   @override var helplink = 'ms/fraction_tag';
@@ -29,18 +29,17 @@ class ThreeQuartersTag extends Action {
 
   @override
   void performCall(CallContext ctx) {
-    var dir = (name.startsWith('Left')) ? 'Left' : '';
     //  All the 4-dancer formations are in Taminations
     if (ctx.actives.length < 8 && !ctx.isAsym()) {
       ctx.adjustToFormation(Formation('Two-Faced Line RH'),rotate: 90, maxError: 6.1);
       print(ctx.dancers.show());
-      ctx.applyCalls('$dir 3/4 Tag the Line');
+      ctx.applyCalls('$left 3/4 Tag the Line');
     }
     else if (ctx.isTidal())
-      ctx.applyCalls('$dir Quarter Tag','Extend','Extend');
+      ctx.applyCalls('$left Quarter Tag','Extend','Extend');
     else if (!ctx.isLines())
       throw CallError('Dancers must be in lines');
-    else if (dir == 'Left')
+    else if (isLeft)
       ctx.applyCalls('Face In','Centers Step to a Left-Hand Wave','Extend','Extend');
     else if (ctx.isAsym())
       ctx.applyCalls('Face In','Centers Step to a Wave','Extend','Extend');

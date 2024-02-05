@@ -20,7 +20,7 @@
 
 import '../common.dart';
 
-class TouchAQuarter extends Action with ActivesOnly {
+class TouchAQuarter extends Action with ActivesOnly, IsLeft {
 
   @override var level = LevelData.B2;
   @override var help = 'The sequencer also accepts Touch 1/2 and Touch 3/4';
@@ -29,8 +29,7 @@ class TouchAQuarter extends Action with ActivesOnly {
 
   @override
   void performCall(CallContext ctx) {
-    var left = name.startsWith('Left') ? 'Left-Hand' : '';
-    ctx.applyCalls('Step to a $left Wave');
+    ctx.applyCalls('Step to a $leftHand Wave');
     if (norm.endsWith('34'))
       ctx.applyCalls('Cast Off 3/4');
     else if (norm.endsWith('12'))

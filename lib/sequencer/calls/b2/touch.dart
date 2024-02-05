@@ -21,7 +21,7 @@
 import '../../../moves.dart';
 import '../common.dart';
 
-class Touch extends Action {
+class Touch extends Action with IsLeft {
 
   @override
   var level = LevelData.B2;
@@ -40,11 +40,13 @@ class Touch extends Action {
 
   @override
   void performCall(CallContext ctx) {
+    //  Check for 'Step to a Left-Hand Wave'
+    if (name.contains('left'.ri))
+      isLeft = true;
     //  First try Step to a Wave, which has some good XML animations
     if (name.contains('Touch')) {
       try {
-        var hand =  name.startsWith('Left') ? 'Left-Hand' : '';
-        ctx.applyCalls('Step to a $hand Wave');
+        ctx.applyCalls('Step to a $leftHand Wave');
         return;
         // ignore: empty_catches
       } on CallError { }

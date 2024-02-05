@@ -21,7 +21,7 @@
 import '../../../moves.dart';
 import '../common.dart';
 
-class TurnThru extends Action {
+class TurnThru extends Action with IsLeft {
 
   @override var level = LevelData.MS;
   @override var helplink = 'ms/turn_thru';
@@ -32,7 +32,7 @@ class TurnThru extends Action {
     var move1 = ExtendLeft;
     var move2 = SwingRight;
     var move3 = ExtendRight;
-    if (name.startsWith('Left')) {
+    if (isLeft) {
       move1 = ExtendRight;
       move2 = SwingLeft;
       move3 = ExtendLeft;
@@ -41,7 +41,7 @@ class TurnThru extends Action {
     if (ctx.isInWave(d)) {
       //  If in waves, Turn Thru has to be right-handed,
       //  Left Turn Thru left-handed
-      var d2 = (name.startsWith('Left')) ? ctx.dancerToLeft(d) : ctx.dancerToRight(d);
+      var d2 = isLeft ? ctx.dancerToLeft(d) : ctx.dancerToRight(d);
       if (d2 != null && d2.data.active) {
         var dist = d.distanceTo(d2);
         return move2.scale(0.5,dist/4+0.25) +
