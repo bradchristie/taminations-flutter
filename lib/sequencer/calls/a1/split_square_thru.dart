@@ -49,9 +49,7 @@ class SplitSquareThru extends Action with IsLeft, IsToAWave {
     } else if (facingDancers.length == ctx.actives.length/2) {
       //  If the centers start, they need to face out to work with the ends
       //  Otherwise they will face in to work with the other dancers
-      final face = ctx.actives.every((d) => d.data.center || ctx.dancerFacing(d) == null)
-          ? 'Out' : 'In';
-      ctx.applyCalls('Facing Dancers $left Pass Thru and Face $face',
+      ctx.applyCalls('Facing Dancers $left Pass Thru and Quarter In',
           '$antiLeft Square Thru ${count - 1} $toAWave');
     } else
       throw CallError('Cannot do $name from this formation');
