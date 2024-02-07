@@ -1287,6 +1287,23 @@ import '../c3a/mini_chase.dart' as c3a;
           SwingLeft
       ]),
 
+    AnimatedCall('All 8 Turn Thru',
+        formation:Formation('Thar LH Girls'),
+        from: 'Thar',
+        group:'All 8 (with calls through Plus)',
+        paths: [
+          SwingRight +
+              Forward_2 +
+              ExtendRight.changeBeats(2).scale(1,2),
+          SwingRight +
+              Forward_3.changeBeats(4),
+          SwingRight +
+              Forward_2 +
+              ExtendRight.changeBeats(2).scale(1, 2),
+          SwingRight +
+              Forward_3.changeBeats(4),
+        ]),
+
     AnimatedCall('All 8 Veer Left',
       formation:Formation('Static Square'),
       group:'All 8 (with calls through Plus)',
