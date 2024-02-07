@@ -48,6 +48,7 @@ class LevelData implements Comparable<LevelData> {
   static final List<LevelData> _data = [
     LevelData.BMS,
     LevelData.B1,
+    LevelData.NONE,
     LevelData.B2,
     LevelData.MS,
     LevelData.SSD,
@@ -61,7 +62,6 @@ class LevelData implements Comparable<LevelData> {
     LevelData.C3A,
     LevelData.C3B,
     LevelData.INDEX,
-    LevelData.NONE
   ];
 
   static LevelData? find(String s) {

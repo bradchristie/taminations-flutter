@@ -171,7 +171,7 @@ Allemande Left''',''),
   TestSequence('Cloverleaf',
   '''Heads Pair Off and Spread
 Circulate
-Cloverleaf
+Centers Cloverleaf
 Centers Pass Thru and Cloverleaf
 Centers Pass Thru
 Allemande Left
@@ -229,14 +229,13 @@ Centers Girls Cross''',''),
   '''Heads Touch a Quarter and Cross
 Slide Thru
 Step and Slide
-Cloverleaf
+Outsides Cloverleaf
 Split Square Thru
 Trade By
 Veer Left
 Bend the Line
 Square Thru 2
 Allemande Left''',''),
-
 
   TestSequence('Cross Fold',
   '''Heads Pass the Ocean

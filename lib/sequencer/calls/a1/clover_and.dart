@@ -22,17 +22,20 @@ import '../common.dart';
 
 class Cloverleaf extends Action {
 
-  @override final level = LevelData.MS;
+  @override var level = LevelData.MS;
   @override var helplink = 'ms/cloverleaf';
   Cloverleaf() : super('Cloverleaf');
 
-  //  We get here only if standard Cloverleaf with all 8 dancers active fails.
-  //  So do a 4-dancer cloverleaf
+  //  We get here only if standard Cloverleaf with all 8 dancers fails.
+  //  So try a 4-dancer cloverleaf
   @override
   void performCall(CallContext ctx) {
     final adjust = ctx.is2x4() && ctx.center(4).every((d) => d.isFacingOut)
         ? 'Adjust to a Box' : 'Nothing';
-    ctx.applyCalls('Clover and $adjust');
+    if (ctx.actives.length < ctx.dancers.length)
+      ctx.applyCalls('Clover and $adjust');
+    else
+      throw CallError('Not all dancers can Cloverleaf');
   }
 
 }
@@ -57,7 +60,9 @@ class CloverAnd extends Action {
     //  Don't use outer4 directly, instead filter facingOut
     //  This preserves the original order, required for mapping
     var othersStep = false;
-    if (outer4.every((d) => facingOut.contains(d)))
+    if (ctx.actives.length < ctx.dancers.length)
+      clovers = ctx.actives;
+    else if (outer4.every((d) => facingOut.contains(d)))
       clovers = facingOut.where((d) => outer4.contains(d)).toList();
     else if (facingOut.length == 4) {
       clovers = facingOut;

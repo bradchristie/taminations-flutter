@@ -62,7 +62,7 @@ import '../../moves.dart';
           LeadLeft.scale(1.5,0.5)
       ]),
 
-    AnimatedCall('Cloverleaf',
+    AnimatedCall('Outsides Cloverleaf',
       formation:Formation('Trade By'),
       from:'Trade By',
       paths:[
@@ -79,7 +79,7 @@ import '../../moves.dart';
           Path()
       ]),
 
-    AnimatedCall('Cloverleaf',
+    AnimatedCall('Outsides Cloverleaf',
       formation:Formation('3/4 Tag'),
       from:'3/4 Tag',
       paths:[
@@ -96,7 +96,7 @@ import '../../moves.dart';
           Stand.changeBeats(6).changehands(Hands.BOTH).skew(0.0,0.25)
       ]),
 
-    AnimatedCall('Cloverleaf',
+    AnimatedCall('Centers Cloverleaf',
       formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:1,y:1,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:1,y:-1,angle:0),
