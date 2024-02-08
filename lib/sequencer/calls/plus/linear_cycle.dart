@@ -47,12 +47,21 @@ class LinearCycle extends Action with ActivesOnly, CallWithParts, IsLeft {
     }
     var allBelles = saveBelles.length == ctx.dancers.length;
     var boxes = ctx.boxes();
+    var isColumns = ctx.isColumns();
     if (boxes != null) {
       for (var box in boxes) {
         ctx.subContext(box, (ctx2) {
+          ctx2.analyze();
+          var leaders = ctx2.dancers.where((d) => d.data.leader).toList();
           ctx2.applyCalls('Leaders Fold');
-          for (var d in ctx2.dancers)
-            d.path += Forward_2;
+          //  The forward amount here is tweaked to make sure
+          //  the dancers end in offset tandems
+          for (var d in ctx2.dancers) {
+            if (isColumns)
+              d.path += Forward_2.scale(leaders.contains(d) ? 1.5 : 1.25,1);
+            else
+              d.path += Forward_2;
+          }
         });
       }
     } else {
