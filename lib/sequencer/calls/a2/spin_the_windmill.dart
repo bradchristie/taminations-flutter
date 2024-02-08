@@ -66,12 +66,33 @@ class WindmillX extends Action {
   @override
   void performCall(CallContext ctx) {
     //  Get the direction
-    final dir = name.replaceFirst('_windmill'.ri,'').trim().toLowerCase();
-    //  Face that way and do two circulates
-    if (dir == 'forward')
-      ctx.applyCalls('Circulate','Circulate');
-    else
-      ctx.applyCalls('Face $dir','Circulate','Circulate');
+    final dir = name.replaceFirst('.*windmill '.ri,'').split(' ')[0];
+    //  Look for a circulate variation
+    var amount = '2';
+    if (name.contains('Circulate')) {
+      var amountstr = name.replaceFirst('.*Circulate '.ri, '');
+      amount = amountstr.norm.replaceAll('[a-z]'.ri, '');
+      //  Check that the outer 4 are circulating
+      var who = name.replaceFirst('.*windmill $dir'.ri,'')
+          .replaceFirst('circulate.*'.ri,'').trim();
+      if (who.norm != 'outside') {
+        ctx.applySpecifier(who);
+        if (ctx.actives.length != 4)
+          throw CallError('Only the outsides can Circulate');
+      }
+    }
+    //  Face that way and do the circulates
+    if (dir != 'Forward')
+      ctx.applyCalls('Face $dir');
+    switch (amount) {
+      case '1' : ctx.applyCalls('Circulate'); break;
+      case '112' : ctx.applyCalls('Circulate','1/2 Circulate'); break;
+      case '2' : ctx.applyCalls('Circulate','Circulate'); break;
+      case '212' : ctx.applyCalls('Circulate','Circulate','1/2 Circulate'); break;
+      case '3' : ctx.applyCalls('Circulate','Circulate','Circulate'); break;
+      case '312' : ctx.applyCalls('Circulate','Circulate','Circulate','1/2 Circulate'); break;
+      default : throw CallError('Circulate how much? ($amount)');
+    }
   }
 
 }

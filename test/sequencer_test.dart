@@ -3916,4 +3916,18 @@ Star Thru
 Right and Left Thru
 Allemande Left''',''),
 
+  TestSequence('Spin the Windmill and Circulate',
+'''Heads Star Thru and Spread
+Pass Thru
+Wheel and Deal
+Spin the Windmill Left Boys Circulate 3x
+Girls Hinge
+Mix the Windmill Forward Boys Circulate 1.5
+Cut the Galaxy
+All 8 Recycle
+Heads Pass the Ocean
+Extend
+Trade
+Right and Left Grand''',''),
+
 ];

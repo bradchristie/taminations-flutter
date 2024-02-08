@@ -20,8 +20,9 @@
 
 import '../../../moves.dart';
 import '../common.dart';
+import '../coded_call.dart';
 
-class CrossRun extends Action {
+class CrossRun extends Action with ActivesOnly {
   @override
   var level = LevelData.B2;
   @override
@@ -33,8 +34,27 @@ class CrossRun extends Action {
   CrossRun(String name) : super(name);
 
   @override
-  void performCall(CallContext ctx0) {
-    ctx0.activesContext((ctx) {
+  void performCall(CallContext ctx) {
+    //  If there are two spec the first one could be a spec
+    //  for the line of 4 dancers, or it could be part of
+    //  the spec for the dancers to Cross Run.
+    //  So we have to try it both ways.
+    var doublespec = '(${CodedCall.specifier})(${CodedCall.specifier})'.ri.firstMatch(norm);
+    if (doublespec != null) {
+      try {
+        ctx.applySpecifier(doublespec.group(1)!);
+        ctx.activesContext((ctx2) {
+          ctx2.applyCalls(doublespec.group(2)! + ' Cross Run');
+        });
+        return;
+      } on CallError {
+        // Fall through to applying both specifiers below
+      }
+    }
+    performCallWithSpec(ctx);
+  }
+
+  void performCallWithSpec(CallContext ctx) {
       var spec = name.replaceFirst('Cross\\s*Run'.ri, '');
       if (spec.isBlank) throw CallError('Who is going to Cross Run?');
       var specCtx = CallContext.fromContext(ctx);
@@ -104,6 +124,5 @@ class CrossRun extends Action {
         else
           throw CallError('Unable to calculate Cross Run for dancer $d');
       }
-    });
   }
 }

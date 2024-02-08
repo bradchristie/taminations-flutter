@@ -318,9 +318,10 @@ abstract class CodedCall extends Call {
   CodedCall(String name) : super(name);
 
   static const specifier =
-      '\\s*(?:boys?|girls?|beaus?|belles?|centers?|ends?|'
+      '\\s*(?:boys?|girls?|beaus?|belles?|center\\d?|ends?|'
       'lead(?:er)?s?|trail(?:er)?s?|heads?|sides?|very ?centers?|'
       'every(?:one|body)|no(?:one|body)|'
+      'outer\\d|outside|'
       '(?:(?:near|far|left|right)(?:box|line|wave|diamond|star|\\d)))\\s*';
 
   static final Map<RegExp, CodedCall Function(String norm)> normCallMap = {
@@ -393,7 +394,7 @@ abstract class CodedCall extends Call {
     'crossfold'.ri: (_) => CrossFold(),
     'crossovercirculate'.ri: (_) => CrossOverCirculate(),
     'crossramble'.ri: (_) => CrossRamble(),
-    '($specifier)*crossrun'.ri: (name) => CrossRun(name),
+    '($specifier)+crossrun'.ri: (name) => CrossRun(name),
     'crosstradeandwheel'.ri: (name) => CrossTradeAndWheel(name),
 
     'debug.*'.ri: (name) => SetDebugSwitch(name),
@@ -575,7 +576,7 @@ abstract class CodedCall extends Call {
     'spinchainthru'.ri: (name) => SpinChainThru(name),
     '(spin)?thepulley'.ri: (name) => SpinThePulley(name),
     'spinthetop'.ri: (name) => SpinTheTop(name),
-    '(.+)thewindmill(left|right|in|out|forward)'.ri: (name) => SpinTheWindmill(name),
+    '(.+)thewindmill(left|right|in|out|forward)(${specifier}circulate.+)?'.ri: (name) => SpinTheWindmill(name),
     'splitcirculate'.ri: (name) => SplitCirculate(name),
     'splitcounterrotate'.ri: (name) => SplitCounterRotate(name),
     'splitdixiediamond'.ri: (name) => SplitDixieDiamond(name),
@@ -674,7 +675,7 @@ abstract class CodedCall extends Call {
     '(reverse)?(14|34)?(reverse)?wheelthe(ocean|sea)'.ri: (name) => WheelTheOcean(name),
     '(and)?(the)?others?.+'.ri: (name) => While(name),
     'while(the)?(others?)?.+'.ri: (name) => While(name),
-    '_windmill(in|out|left|right|forward)'.ri: (name) => WindmillX(name),
+    '_windmill(in|out|left|right|forward)(${specifier}circulate.+)?'.ri: (name) => WindmillX(name),
     'withtheflow'.ri: (name) => WithTheFlow(name),
 
     'z[ai]g'.ri: (name) => Zig(name),
