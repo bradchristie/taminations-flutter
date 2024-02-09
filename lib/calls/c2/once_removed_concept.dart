@@ -565,6 +565,39 @@ import '../c2/cross_the_k.dart' as c2;
           LeadRight.changeBeats(2).scale(1.0,0.5)
       ]),
 
+    AnimatedCall('Once Removed Spin the Top',
+        formation: Formation('Two-Faced Tidal Line RH'),
+        group:'(From tidal line) Once Removed',
+        paths: [
+          LeadRight.scale(0.5,0.5) +
+              Forward +
+              LeadRight.scale(0.5,0.5) +
+              LeadLeft.scale(0.5,0.5) +
+              Forward +
+              LeadLeft.scale(0.5,0.5) +
+              LeadLeft +
+              Forward,
+
+          LeadRight.scale(0.5,0.5) +
+              Forward +
+              LeadRight.scale(0.5,0.5) +
+              LeadLeft.scale(0.5,0.5) +
+              Forward +
+              LeadLeft.scale(0.5,0.5) +
+              QuarterLeft.skew(1, 0),
+
+          LeadRight.scale(0.5,0.5) +
+              Forward +
+              LeadRight.scale(0.5,0.5) +
+              LeadRight.changeBeats(4).scale(3,2),
+
+          LeadRight.scale(0.5,0.5) +
+              Forward +
+              LeadRight.scale(0.5,0.5) +
+              LeadRight.changeBeats(4).scale(3,4)
+
+        ]),
+
     AnimatedCall('Once Removed Swing Thru',
       formation:Formation('Two-Faced Tidal Line RH'),
       group:'(From tidal line) Once Removed',
