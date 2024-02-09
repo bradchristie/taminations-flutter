@@ -54,7 +54,7 @@ import '../../moves.dart';
 
     AnimatedCall('Pass Thru',
       formation:Formation('Eight Chain Thru'),
-      from:'Eight Chain Thru',difficulty: 1,
+      from:'Eight Chain Thru',difficulty: 1, notForSequencer: true,
       paths:[
           ExtendLeft.scale(1.0,0.5) +
           ExtendRight.scale(1.0,0.5),

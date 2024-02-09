@@ -24,6 +24,7 @@ import '../common.dart';
 class PassThru extends Action with IsLeft {
 
   @override var helplink = 'b1/pass_thru';
+
   PassThru(String name) : super(name);
 
   @override
