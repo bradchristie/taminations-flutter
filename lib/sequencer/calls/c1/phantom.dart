@@ -86,7 +86,9 @@ class Phantom extends Action {
       PhantomSnapFormation_1 : 1.0,
       PhantomSnapFormation_2 : 1.0
     };
-    ctx.matchFormationList(phantomSnapFormations);
+    //  Generous matching to handle skew in some formations
+    //  Such as after Beaus Peel Off from DPT
+    ctx.matchFormationList(phantomSnapFormations,delta: 0.2);
     //  Split the dancers into two groups
     //  by the axis the dancers are facing
     final groups = ctx.dancers.partition((item) =>
