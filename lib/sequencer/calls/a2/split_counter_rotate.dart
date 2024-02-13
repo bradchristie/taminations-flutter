@@ -37,3 +37,40 @@ class SplitCounterRotate extends Action {
     }
   }
 }
+
+class SplitCounterRotateFraction extends Action {
+
+  @override final level = LevelData.A2;
+  SplitCounterRotateFraction(super.name);
+
+  @override
+  void performCall(CallContext ctx) {
+    if (norm.contains('14'))
+      ctx.applyCalls('Split Counter Rotate');
+    else if (norm.contains('12'))
+      ctx.applyCalls('Split Counter Rotate','Split Counter Rotate');
+    else if (norm.contains('34'))
+      ctx.applyCalls('Split Counter Rotate','Split Counter Rotate','Split Counter Rotate');
+    else
+      throw CallError('Bad fraction for Split Counter Rotate');
+  }
+
+}
+
+class BoxCounterRotateFraction extends Action {
+
+  BoxCounterRotateFraction(super.name);
+
+  @override
+  void performCall(CallContext ctx) {
+    if (norm.contains('14'))
+      ctx.applyCalls('Box Counter Rotate');
+    else if (norm.contains('12'))
+      ctx.applyCalls('Box Counter Rotate','Box Counter Rotate');
+    else if (norm.contains('34'))
+      ctx.applyCalls('Box Counter Rotate','Box Counter Rotate','Box Counter Rotate');
+    else
+      throw CallError('Bad fraction for Box Counter Rotate');
+  }
+
+}
