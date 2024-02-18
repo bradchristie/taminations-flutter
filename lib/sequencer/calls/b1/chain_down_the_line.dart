@@ -21,7 +21,7 @@
 import '../../../moves.dart';
 import '../common.dart';
 
-class ChainDownTheLine extends Action with ActivesOnly {
+class ChainDownTheLine extends Action {
 
   @override var help = 'Chain Down the Line will work with any formation'
   ' where the centers are holding right hands and the ends are to their left.'
@@ -31,41 +31,43 @@ class ChainDownTheLine extends Action with ActivesOnly {
   ChainDownTheLine(super.name);
 
   @override
-  void performCall(CallContext ctx) {
-    //  Centers must be holding right hands
-    ctx.dancers.where((d) => d.data.center).forEach((d) {
-      var d2 = ctx.dancerToRight(d);
-      if (d2 == null || !d2.data.center)
-        throw CallError('Centers must be holding right hands');
+  void performCall(CallContext ctx0) {
+    ctx0.activesContext((ctx) {
+
+      //  Centers must be holding right hands
+      ctx.dancers.where((d) => d.data.center).forEach((d) {
+        var d2 = ctx.dancerToRight(d);
+        if (d2 == null || !d2.data.center)
+          throw CallError('Centers must be holding right hands');
+      });
+      //  If not boy turning girl then level is Plus
+      if (ctx.dancers.any((d) => d.data.center && d.gender != Gender.GIRL) ||
+          ctx.dancers.any((d) => d.data.end && d.gender != Gender.BOY))
+        level = LevelData.PLUS;
+
+      //  Centers (girls) trade
+      for (var dg in ctx.dancers.where((d) => d.data.center)) {
+        var dist = ctx.dancerToRight(dg)!.distanceTo(dg);
+        dg.path += SwingRight.scale(dist/2, dist/2);
+      }
+      //  Ends (boys) position to Courtesy Turn the girls
+      for (var db in ctx.dancers.where((d) => !d.data.center)) {
+        var dg = ctx.dancerClosest(db, (d) => d.data.center)!;
+        if (dg.isInFrontOf(db))
+          db.path += QuarterLeft.changeBeats(3.0);
+        else if (dg.isLeftOf(db))
+          db.path += UmTurnLeft.changeBeats(3.0);
+        else if (dg.isRightOf(db))
+          db.path += Stand.changeBeats(3.0);
+        else if (dg.isInBackOf(db))
+          throw CallError('Ends cannot have their backs to the Centers');
+        else
+          throw CallError('Unable to calculate Chain Down the Line');
+      }
+      //  Finish with the Courtesy Turn
+      ctx.matchStandardFormation();
+      ctx.applyCalls('Courtesy Turn and 1/4 More');
     });
-    //  If not boy turning girl then level is Plus
-    if (ctx.dancers.any((d) => d.data.center && d.gender != Gender.GIRL) ||
-        ctx.dancers.any((d) => d.data.end && d.gender != Gender.BOY))
-      level = LevelData.PLUS;
-
-    //  Centers (girls) trade
-    for (var dg in ctx.dancers.where((d) => d.data.center)) {
-      var dist = ctx.dancerToRight(dg)!.distanceTo(dg);
-      dg.path += SwingRight.scale(dist/2, dist/2);
-    }
-    //  Ends (boys) position to Courtesy Turn the girls
-    for (var db in ctx.dancers.where((d) => !d.data.center)) {
-      var dg = ctx.dancerClosest(db, (d) => d.data.center)!;
-      if (dg.isInFrontOf(db))
-        db.path += QuarterLeft.changeBeats(3.0);
-      else if (dg.isLeftOf(db))
-        db.path += UmTurnLeft.changeBeats(3.0);
-      else if (dg.isRightOf(db))
-        db.path += Stand.changeBeats(3.0);
-      else if (dg.isInBackOf(db))
-        throw CallError('Ends cannot have their backs to the Centers');
-      else
-        throw CallError('Unable to calculate Chain Down the Line');
-    }
-    //  Finish with the Courtesy Turn
-    ctx.matchStandardFormation();
-    ctx.applyCalls('Courtesy Turn and 1/4 More');
   }
-
 
 }

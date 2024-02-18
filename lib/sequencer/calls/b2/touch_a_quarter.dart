@@ -20,7 +20,7 @@
 
 import '../common.dart';
 
-class TouchAQuarter extends Action with ActivesOnly, IsLeft {
+class TouchAQuarter extends Action with IsLeft {
 
   @override var level = LevelData.B2;
   @override var help = 'The sequencer also accepts Touch 1/2 and Touch 3/4';
