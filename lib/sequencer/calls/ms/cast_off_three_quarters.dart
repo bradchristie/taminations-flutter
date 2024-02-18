@@ -49,7 +49,6 @@ class CastOffThreeQuarters extends Action {
           .toList();
 
       //  Dancers in mini-waves hinge three times
-      print('Wave dancers: $waveDancers');
       if (waveDancers.isNotEmpty) {
         ctx.subContext(waveDancers, (ctx2) {
           if (norm.endsWith('14'))

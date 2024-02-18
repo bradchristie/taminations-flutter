@@ -296,7 +296,7 @@ class SequencerModel extends fm.ChangeNotifier {
       if (!isComment(lastCall.name)) {
         var totalBeats = calls.fold<double>(0.0,(a,b) => a + b.beats);
         for (var d in animation.dancers) {
-          while (d.path.beats > totalBeats)
+          while (d.path.beats.isGreaterThan(totalBeats))
             d.path.pop();
         }
       }
