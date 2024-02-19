@@ -29,12 +29,13 @@ This is free software, and you are welcome to modify and redistribute it
 under the terms of the [GNU GPL license](http://www.gnu.org/licenses/gpl.html).  
 
 ## What's New
-* Better animations for Scoot Chain Thru and Stack the Line
+* Animation for Once Removed Spin the Top
 * Sequencer changes:
-  - Improvements for Start
-  - Add Head/Side Ladies Chain 3/4 with optional Half Sashay or Rollaway
-  - Fixes for Block concept
-  - To a Wave for more calls, especially Scoot Back variations
+  - Fix some cases of Cross Run, Cast Off 3/4
+  - Accept Circulate options for Spin the Windmill
+  - Make sure 2/3 Linear Cycle ends in offset tandems
+  - Handle collisions with Diamond Circulate
+  - Accept selection of two groups of dancers e.g. Head Boys and Side Girls Jaywalk
   
 For a detailed history of changes, view the
 [Git log](https://github.com/bradchristie/taminations-flutter/commits/main)
