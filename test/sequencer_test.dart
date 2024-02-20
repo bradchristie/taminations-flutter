@@ -3930,4 +3930,23 @@ Extend
 Trade
 Right and Left Grand''',''),
 
+  TestSequence('Run Around More than One',
+'''Heads Lead Right
+Veer Left
+Head Boys Run Around 2
+Cycle and Wheel
+Hinge
+Side Boys Run Left Around 2
+Very Centers Run Around 3
+Grand Swing Thru
+Explode the Wave
+Right Roll to a Wave
+Hinge
+Centers Circulate
+Boys Run
+Pass Thru
+Wheel and Deal
+Centers Reverse Swap
+Allemande Left''', ''),
+
 ];
