@@ -19,10 +19,13 @@
 */
 
 
+import 'a2/in_roll_circulate.dart';
 import 'a2/diamond_chain_thru.dart';
+import 'a2/out_roll_circulate.dart';
 import 'b1/single_circle.dart';
 import 'b1/weave_the_ring.dart';
 import 'c1/follow_thru.dart';
+import 'c1/prefer.dart';
 import 'c1/weave.dart';
 import 'c2/cross_concentric_cycle_and_wheel.dart';
 import 'c2/vertical.dart';
@@ -450,6 +453,7 @@ abstract class CodedCall extends Call {
 
     'ignore.*'.ri: (name) => Ignore(name),
     'individually'.ri: (_) => Nothing('Individually'),
+    'inrollcirculate'.ri: (name) => InRollCirculate(name),
     'center(2|4|6)'.ri: (name) => Insides(name),
     'in(ner|sides?)(2|4|6)?'.ri: (name) => Insides(name),
     'interrupt.*'.ri: (name) => Interrupt(name),
@@ -460,7 +464,7 @@ abstract class CodedCall extends Call {
     '(cross)?kickoff'.ri: (name) => KickOff(name),
 
     'last(1|2|3)'.ri: (name) => Last(name),
-    'lead(er)?s?'.ri: (name) => Leaders(name),
+    'lead(er|ing)?s?'.ri: (name) => Leaders(name),
     'left'.ri: (name) => Left(name),
     'likeacoupleup'.ri: (_) => LikeACoupleUp(),
     'linearaction'.ri: (_) => LinearAction(),
@@ -487,6 +491,7 @@ abstract class CodedCall extends Call {
     'O[A-Z0-9].+'.r: (name) => OFormation(name),
     '112'.ri: (name) => OneAndaHalf(name),
     'couples?(1|2|3|4)((and)?(2|3|4))*'.ri: (name) => OneCouple(name),
+    'outrollcirculate'.ri: (name) => OutRollCirculate(name),
     'out(er|sides?)(2|4|6)?'.ri: (name) => Outsides(name),
     'ownthe.*'.ri: (name) => OwnTheDancers(name),
 
@@ -505,6 +510,7 @@ abstract class CodedCall extends Call {
     'phantom.+'.ri: (name) => Phantom(name),
     'plenty'.ri: (name) => Plenty(name),
     'point'.ri: (_) => Points(),
+    'prefer(the)($specifier)+'.ri: (name) => Prefer(name),
     'promenade(home)?'.ri: (name) => PromenadeHome(name),
     'swing(your)?corner(and)?promenade(home)?'.ri: (name) => PromenadeHome(name),
     'promenade(home)?(with)?(your)?corner'.ri: (name) => PromenadeHome(name),

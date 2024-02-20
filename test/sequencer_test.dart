@@ -3949,4 +3949,19 @@ Wheel and Deal
 Centers Reverse Swap
 Allemande Left''', ''),
 
+  TestSequence('Prefer In/Out Roll Circulate',
+'''Heads Pass the Ocean
+Extend
+Fan the Top
+Prefer the Very Centers Out Roll Circulate
+Recycle
+Prefer the End Girl In Roll Circulate
+Prefer the Head Girls Out Roll Circulate
+Pass the Ocean
+Swing Thru
+Boys Run
+Star Thru
+Pass Thru
+Allemande Left''',''),
+
 ];

@@ -18,21 +18,26 @@
 
 */
 
-export '../../common_flutter.dart';
-export '../call_context.dart';
-export '../call_error.dart';
-export 'action.dart';
-export 'c1/but.dart';
-export 'c1/prefer.dart';
-export 'c1/to_a_wave.dart';
-export 'common/actives_only_action.dart';
-export 'common/actives_with_partners_action.dart';
-export 'common/call_with_parts.dart';
-export 'common/facing_couples_rule.dart';
-export 'common/fliter_actives.dart';
-export 'common/grand.dart';
-export 'common/left.dart';
-export 'common/split_call.dart';
-export 'common/four_dancer_concept.dart';
-export 'common/modified_formation_concept.dart';
-export 'common/turn_the_star.dart';
+import '../call.dart';
+import '../coded_call.dart';
+import '../common.dart';
+
+mixin IsPrefer on Call {
+
+  var prefer = '';
+
+}
+
+class Prefer extends CodedCall {
+
+  @override var level = LevelData.C1;
+
+  Prefer(super.name);
+
+  @override
+  void performCall(CallContext ctx) {
+    var preferCall = ctx.findImplementor<IsPrefer>(startFrom: this);
+    preferCall.prefer = name.replaceFirst('Prefer (the )?'.ri, '');
+  }
+
+}
