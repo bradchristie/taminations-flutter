@@ -369,7 +369,7 @@ class SequencerModel extends fm.ChangeNotifier {
       //  But not if just one XML call, as it knows how it should end
       final firstCall = cctx.callstack.first;
       cctx.animateToEnd();
-      if (cctx.callstack.isNotEmpty ||
+      if (cctx.callstack.length > 1 ||
           firstCall is CodedCall ||
           (firstCall is XMLCall && !firstCall.found)) {
         if (!DebugSwitch.nosnap.enabled)
