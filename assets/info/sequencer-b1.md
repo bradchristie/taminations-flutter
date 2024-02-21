@@ -13,3 +13,4 @@ or **Around 1 And Come Into The Middle**.  Most common usage is from a squared s
 Right and Left Thru or Ladies Chain
 - **Right and Left Thru** - is a 2-part call
 - **Square Thru** - it accepts **[Left] Square Thru \<n> [To a Wave]**, and also **[Left] Square Thru (on the <nth> Hand|on \<n>) \<anything>**.  If you use **To a Wave** it will mark the call as C-1 since that's a C-1 concept.
+- **Stars** - To get a facing couple to star across, ending in back-to-back couples, use for example **Right-Hand Star 1/2 Across**.

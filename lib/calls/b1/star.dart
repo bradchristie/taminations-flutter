@@ -456,7 +456,7 @@ import '../../moves.dart';
 
 
     //  Stars for sequencer
-    AnimatedCall('Star Right 1/4 Across',
+    AnimatedCall('Right-Hand Star 1/4 Across',
         group: ' ',
         formation: Formation('Facing Couples Close'),
         noDisplay: true,
@@ -468,7 +468,7 @@ import '../../moves.dart';
               QuarterLeft.changeBeats(1).skew(1, 0)
         ]),
 
-    AnimatedCall('Star Right 1/2 Across',
+    AnimatedCall('Right-Hand Star 1/2 Across',
         group: ' ',
         formation: Formation('Facing Couples Close'),
         noDisplay: true,
@@ -482,7 +482,7 @@ import '../../moves.dart';
               Forward
         ]),
 
-    AnimatedCall('Star Right 3/4 Across',
+    AnimatedCall('Right-Hand Star 3/4 Across',
         group: ' ',
         formation: Formation('Facing Couples Close'),
         noDisplay: true,
@@ -496,7 +496,7 @@ import '../../moves.dart';
               QuarterLeft.changeBeats(1).skew(1, 0)
         ]),
 
-    AnimatedCall('Star Right Full Across',
+    AnimatedCall('Right-Hand Star Full Across',
         group: ' ',
         formation: Formation('Facing Couples Close'),
         noDisplay: true,
@@ -512,7 +512,7 @@ import '../../moves.dart';
               Forward
         ]),
 
-    AnimatedCall('Star Left 1/4 Across',
+    AnimatedCall('Left-Hand Star 1/4 Across',
         group: ' ',
         formation: Formation('Facing Couples Close'),
         noDisplay: true,
@@ -524,7 +524,7 @@ import '../../moves.dart';
               Forward
         ]),
 
-    AnimatedCall('Star Left 1/2 Across',
+    AnimatedCall('Left-Hand Star 1/2 Across',
         group: ' ',
         formation: Formation('Facing Couples Close'),
         noDisplay: true,
@@ -538,7 +538,7 @@ import '../../moves.dart';
               QuarterRight.changeBeats(1).skew(1, 0)
         ]),
 
-    AnimatedCall('Star Left 3/4 Across',
+    AnimatedCall('Left-Hand Star 3/4 Across',
         group: ' ',
         formation: Formation('Facing Couples Close'),
         noDisplay: true,
@@ -552,7 +552,7 @@ import '../../moves.dart';
               Forward
         ]),
 
-    AnimatedCall('Star Left Full Across',
+    AnimatedCall('Left-Hand Star Full Across',
         group: ' ',
         formation: Formation('Facing Couples Close'),
         noDisplay: true,
@@ -570,7 +570,7 @@ import '../../moves.dart';
 
 
 
-    AnimatedCall('Star Right 1/4 Across and Roll',
+    AnimatedCall('Right-Hand Star 1/4 Across and Roll',
         group: ' ',
         formation: Formation('Facing Couples Close'),
         noDisplay: true,
@@ -582,7 +582,7 @@ import '../../moves.dart';
               Forward
         ]),
 
-    AnimatedCall('Star Right 1/2 Across and Roll',
+    AnimatedCall('Right-Hand Star 1/2 Across and Roll',
         group: ' ',
         formation: Formation('Facing Couples Close'),
         noDisplay: true,
@@ -596,7 +596,7 @@ import '../../moves.dart';
               QuarterRight.changeBeats(1).skew(1, 0)
         ]),
 
-    AnimatedCall('Star Right 3/4 Across and Roll',
+    AnimatedCall('Right-Hand Star 3/4 Across and Roll',
         group: ' ',
         formation: Formation('Facing Couples Close'),
         noDisplay: true,
@@ -610,7 +610,7 @@ import '../../moves.dart';
               Forward
         ]),
 
-    AnimatedCall('Star Right Full Across and Roll',
+    AnimatedCall('Right-Hand Star Full Across and Roll',
         group: ' ',
         formation: Formation('Facing Couples Close'),
         noDisplay: true,
@@ -626,7 +626,7 @@ import '../../moves.dart';
               QuarterRight.changeBeats(1).skew(1, 0),
         ]),
 
-    AnimatedCall('Star Left 1/4 Across and Roll',
+    AnimatedCall('Left-Hand Star 1/4 Across and Roll',
         group: ' ',
         formation: Formation('Facing Couples Close'),
         noDisplay: true,
@@ -638,7 +638,7 @@ import '../../moves.dart';
               QuarterLeft.changeBeats(1).skew(1, 0),
         ]),
 
-    AnimatedCall('Star Left 1/2 Across and Roll',
+    AnimatedCall('Left-Hand Star 1/2 Across and Roll',
         group: ' ',
         formation: Formation('Facing Couples Close'),
         noDisplay: true,
@@ -652,7 +652,7 @@ import '../../moves.dart';
               Forward
         ]),
 
-    AnimatedCall('Star Left 3/4 Across and Roll',
+    AnimatedCall('Left-Hand Star 3/4 Across and Roll',
         group: ' ',
         formation: Formation('Facing Couples Close'),
         noDisplay: true,
@@ -666,7 +666,7 @@ import '../../moves.dart';
               QuarterLeft.changeBeats(1).skew(1, 0)
         ]),
 
-    AnimatedCall('Star Left Full Across and Roll',
+    AnimatedCall('Left-Hand Star Full Across and Roll',
         group: ' ',
         formation: Formation('Facing Couples Close'),
         noDisplay: true,
