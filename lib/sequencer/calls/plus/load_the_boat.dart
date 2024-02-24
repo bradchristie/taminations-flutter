@@ -73,7 +73,10 @@ Part 4 for the Centers can be replaced with But (another call)''';
     ctx.analyze();
     if (isToAWave)
       butCall = 'Step to a Wave';
-    ctx.applyCalls('Ends Face In While Center 4 $butCall');
+    if (ctx.actives.any((d) => d.data.end))
+      ctx.applyCalls('Ends Face In');
+    if (ctx.actives.any((d) => d.data.center))
+      ctx.applyCalls('Center 4 $butCall');
   }
 
 }

@@ -197,6 +197,7 @@ extension TamList<E> on List<E> {
   List<T> mapIndexed<T>(T Function(int index, E item) mapFun) =>
       List.generate(length,(i)=>i).map((i) => mapFun(i,this[i])).toList();
   bool containsAll(List<E> list2) => list2.every((element) => contains(element));
+  bool containsAny(List<E> list2) => list2.any((element) => contains(element));
   List<E> sortedWith(int Function(E e1, E e2) compare) {
     var list2 = copy();
     list2.sort(compare);
