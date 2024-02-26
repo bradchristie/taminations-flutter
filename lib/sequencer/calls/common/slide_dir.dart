@@ -28,6 +28,12 @@ class SlideDir extends Action {
   SlideDir(String name) : super(name);
 
   @override
+  void performCall(CallContext ctx) {
+    ctx.noSnap(recurse: false);
+    super.performCall(ctx);
+  }
+
+  @override
   Path performOne(DancerModel d, CallContext ctx) {
     Path move;
     if (name == 'Slide Left' )
