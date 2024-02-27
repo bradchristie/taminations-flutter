@@ -25,7 +25,8 @@ class CourtesyTurn extends Action {
   @override var help = 'At levels below Plus, Courtesy Turn is limited'
   ' to a boy turning a girl';
   @override var helplink = 'b1/courtesy_turn';
-  CourtesyTurn() : super('Courtesy Turn');
+
+  CourtesyTurn(super.name);
 
   @override
   void performCall(CallContext ctx) {

@@ -28,7 +28,8 @@ class CastAShadow extends Action {
   @override final level = LevelData.A1;
   @override var help = 'Cast a Shadow - can be modified with Centers Go 3/4';
   @override var helplink = 'a1/cast_a_shadow';
-  CastAShadow(String name) : super(name);
+
+  CastAShadow(super.name);
 
   @override
   void performCall(CallContext ctx) {

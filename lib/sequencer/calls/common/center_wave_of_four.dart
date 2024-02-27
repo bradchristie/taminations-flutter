@@ -22,7 +22,7 @@ import '../common.dart';
 
 class CenterWaveOfFour extends CodedCall {
 
-  CenterWaveOfFour(name) : super(name);
+  CenterWaveOfFour(super.name);
 
   @override
    void performCall(CallContext ctx) {

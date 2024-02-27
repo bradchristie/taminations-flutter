@@ -23,6 +23,7 @@ import '../common.dart';
 class CrossConcentricCycleAndWheel extends Action {
 
   @override var level = LevelData.C2;
+
   CrossConcentricCycleAndWheel(super.name);
 
 

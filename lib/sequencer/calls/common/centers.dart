@@ -26,7 +26,7 @@ import 'fliter_actives.dart';
 
 class Centers extends FilterActives {
 
-  Centers() : super('Centers');
+  Centers(super.name);
 
   @override
   bool isActive(DancerModel d, CallContext ctx) => d.data.center;

@@ -39,10 +39,10 @@ class Crazy extends Action with CallWithParts {
 
   bool isReverse;
   String crazyCall;
-  Crazy(String name) :
+
+  Crazy(super.name) :
         isReverse = name.contains('Reverse Crazy'),
-        crazyCall = name.replaceFirst('.*Crazy '.r, ''),
-        super(name) {
+        crazyCall = name.replaceFirst('.*Crazy '.r, '') {
     //  Find out how crazy we are
     final norm = normalizeCall(name);
     if (norm.startsWith('14'))

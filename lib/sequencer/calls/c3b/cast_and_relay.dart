@@ -32,6 +32,7 @@ class CastAndRelay extends Action with CallWithParts, ButCall, CallWithStars {
 The turn amount for Part 3 can be changed by appending Turn the Star (amount).
 The centers part for Part 4 can be changed with But (another call).''';
   @override var helplink = 'c3b/fraction_cast_and_relay';
+
   String fraction;
   static final fractionCall = {
     '14' : 'Hinge',
@@ -43,9 +44,8 @@ The centers part for Part 4 can be changed with But (another call).''';
     '12' : 2,
     '34' : 3
   };
-  CastAndRelay(String name) :
-        fraction=normalizeCall(name).substring(0,2),
-        super(name);
+
+  CastAndRelay(super.name) : fraction=normalizeCall(name).substring(0,2);
 
   @override
    void performPart1(CallContext ctx) {

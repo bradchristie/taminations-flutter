@@ -27,9 +27,8 @@ class Concentric extends Action {
       ' you can have 4 dancers perform a Concentric call outside the other 4.';
   @override var helplink = 'c1/concentric_concept';
   final String realCall;
-  Concentric(String name) :
-        realCall=name.replaceFirst('Concentric', '').trim(),
-        super(name);
+
+  Concentric(super.name) : realCall=name.replaceFirst('Concentric', '').trim();
 
   void _performConcentric(CallContext ctx) {
     //  Move the dancers closer to the center

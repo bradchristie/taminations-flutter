@@ -27,7 +27,8 @@ class CrossOverCirculate extends Action {
   @override var help = '4 dancers can Cross Over Circulate if they match'
       ' one of the circulate paths.';
   @override var helplink = 'a1/cross_over_circulate';
-  CrossOverCirculate() : super('Cross Over Circulate');
+
+  CrossOverCirculate(super.name);
 
   //  All 8-dancer versions are coded in XML
   //  This code just handles 4 dancers

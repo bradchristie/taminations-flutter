@@ -30,7 +30,8 @@ class ChangeTheCenters extends Action with ActivesOnly, CallWithParts {
   3.  Centers Cross Run
   4.  Slip (Change the Centers) or Swing (Change the Wave)''';
   @override var helplink = 'c3b/change_the_centers';
-  ChangeTheCenters(String name) : super(name);
+
+  ChangeTheCenters(super.name);
 
   @override
    void performPart1(CallContext ctx) {

@@ -32,7 +32,7 @@ class CircleBy extends Action with CallWithParts, IsReverse {
   late String frac2;
   late String name2;
 
-  CircleBy(String name) : super(name);
+  CircleBy(super.name);
 
   void _setup() {
     //  Make sure we have "Circle By <fraction> and <something>"

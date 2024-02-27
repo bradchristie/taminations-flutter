@@ -29,12 +29,14 @@ class Catch extends Action with ActivesOnly, CallWithParts {
   2.  Centers Trade.  At C-3A this can be replaced by giving another call between Catch and (n).
   3.  Step and Fold''';
   @override var helplink = 'c2/catch';
-  Catch(String name) : super(name);
+
   late String direction = name.contains('Left') ? 'Left' : '';
   late String split = name.contains('Split') ? 'Split' : '';
   late String all4 = norm.contains('All4Couples') ? 'All 4 Couples' : '';
   late int count = normalizeCall(name).last.toIntOrNull()
       ?? thrower(CallError('Catch how much?'));
+
+  Catch(super.name);
 
   @override
    void performPart1(CallContext ctx) {

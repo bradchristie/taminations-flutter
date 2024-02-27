@@ -25,7 +25,8 @@ class Checkpoint extends Action {
   @override final level = LevelData.C2;
   @override var help = 'Checkpoint (centers call) by (others call)';
   @override var helplink = 'c2/checkpoint';
-  Checkpoint(String name) : super(name);
+
+  Checkpoint(super.name);
 
   @override
   void performCall(CallContext ctx) {

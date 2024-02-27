@@ -23,7 +23,7 @@ import '../common.dart';
 
 class CenterSix extends CodedCall {
 
-  CenterSix() : super('Center 6');
+  CenterSix(super.name);
 
   @override
    void performCall(CallContext ctx) {
