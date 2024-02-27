@@ -28,7 +28,8 @@ class BoxTheGnat extends Action with ActivesOnly {
   @override var help = 'Box the Gnat works with facing dancers and'
   ' right-hand waves. Must be opposite genders.';
   @override var helplink  = 'b2/box_the_gnat';
-  BoxTheGnat() : super('Box the Gnat');
+
+  BoxTheGnat(super.name);
 
   DancerModel? _checkOtherDancer(DancerModel d, DancerModel? d2) {
     if (d2 == null)

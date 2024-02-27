@@ -39,7 +39,8 @@ class Butterfly extends ModifiedFormationConcept {
   'You can skip the final re-adjustment to the Butterfly formation '
       'by appending To Lines / Waves / Columns';
   @override var helplink = 'c1/butterfly_formation';
-  Butterfly(String name) : super(name);
+
+  Butterfly(super.name);
 
   @override
   bool reformFormation(CallContext ctx) {

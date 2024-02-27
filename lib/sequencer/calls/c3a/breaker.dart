@@ -27,7 +27,8 @@ class Breaker extends Action with CallWithParts {
   1.  Ends Cast Off 3/4 While Center 4 Box Couunter Rotate and 1/2 Box Circulate
   2.  Center Wave/Line Cast Off n/4 While Others Hourglass Circulate''';
   @override var helplink = 'c3a/breaker_anything';
-  Breaker(String name) : super(name);
+
+  Breaker(super.name);
 
   @override
    void performPart1(CallContext ctx) {

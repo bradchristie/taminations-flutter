@@ -321,11 +321,11 @@ abstract class CodedCall extends Call {
   CodedCall(super.name);
 
   static const specifier =
-      '\\s*(?:boys?|girls?|beaus?|belles?|center\\d?|ends?|'
-      'lead(?:er)?s?|trail(?:er)?s?|heads?|sides?|very ?centers?|'
-      'every(?:one|body)|no(?:one|body)|'
-      'outer\\d|outside|'
-      '(?:(?:near|far|left|right)(?:box|line|wave|diamond|star|\\d)))\\s*';
+      '\\s*(?:Boys?|Girls?|Beaus?|Belles?|Center\\d?|Ends?|'
+      'Lead(?:er)?s?|Trail(?:er)?s?|Heads?|Sides?|Very ?Centers?|'
+      'Every(?:one|body)|No(?:one|body)|'
+      'Outer\\d|Outside|'
+      '(?:(?:Near|Far|Left|Right)(?:Box|Line|Wave|Diamond|Star|\\d)))\\s*';
 
   static final Map<RegExp, CodedCall Function(String norm)> normCallMap = {
     'AceyDeucey'.r: (name) => AceyDeucey(name),
@@ -344,21 +344,21 @@ abstract class CodedCall extends Call {
     'AsCouplesRoll'.r: (name) => AsCouplesRoll(name),
 
     'back(away|up)'.ri: (name) => BackAway(name),
-    'balance'.ri: (name) => Balance(name),
-    'beau'.ri: (_) => Beaus(),
-    'belle'.ri: (_) => Belles(),
-    'bendtheline'.ri: (_) => BendTheLine(),
-    '(line|wave)of(6|8)(left)?(12)?tag(theline)?'.ri: (name) => BigLineTagTheLine(name),
-    '(line|wave)of(6|8)(left)?turnanddeal'.ri: (name) => BigLineTurnAndDeal(name),
-    '(inyour)?block.*'.ri: (name) => BlockFormation(name),
-    'bounce(the)?($specifier)?'.ri: (name) => Bounce(name),
-    'boy'.ri: (_) => Boys(),
-    'boxcounterrotate(14|12|34)'.ri: (name) => BoxCounterRotateFraction(name),
-    'boxthegnat'.ri: (_) => BoxTheGnat(),
-    'bracethru'.ri: (_) => BraceThru(),
-    'breaker(1|2|3)?'.ri: (name) => Breaker(name),
+    'Balance'.r: (name) => Balance(name),
+    'Beau'.r: (name) => Beaus(name),
+    'Belle'.r: (name) => Belles(name),
+    'BendtheLine'.ri: (name) => BendTheLine(name),
+    '(Line|Wave)of(6|8)(Left)?(12)?Tag(theLine)?'.r: (name) => BigLineTagTheLine(name),
+    '(Line|Wave)of(6|8)(Left)?TurnandDeal'.r: (name) => BigLineTurnAndDeal(name),
+    '(InYour)?Block.*'.r: (name) => BlockFormation(name),
+    'Bounce(the)?($specifier)?'.r: (name) => Bounce(name),
+    'Boy'.ri: (name) => Boys(name),
+    'BoxCounterRotate(14|12|34)'.ri: (name) => BoxCounterRotateFraction(name),
+    'BoxtheGnat'.r: (name) => BoxTheGnat(name),
+    'BraceThru'.r: (name) => BraceThru(name),
+    'Breaker(1|2|3)?'.ri: (name) => Breaker(name),
     '.*But(?![a-z]).*'.r: (name) => But(name),
-    'butterfly.*'.ri: (name) => Butterfly(name),
+    'Butterfly.*'.r: (name) => Butterfly(name),
 
     'californiatwirl'.ri: (_) => CaliforniaTwirl(),
     '(14|12|34)?castandrelay'.ri: (name) => CastAndRelay(name),

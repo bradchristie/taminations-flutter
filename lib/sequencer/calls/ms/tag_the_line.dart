@@ -57,7 +57,8 @@ class BigLineTagTheLine extends Action {
       DancerModel.fromData(gender:Gender.GIRL,x:2,y:-1,angle:180),
   ]);
 
-  BigLineTagTheLine(String name) : isLeft=name.contains('Left'), super(name) ;
+
+  BigLineTagTheLine(super.name) : isLeft=name.contains('Left');
 
   @override
   void performCall(CallContext ctx) {

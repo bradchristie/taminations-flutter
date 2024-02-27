@@ -30,7 +30,8 @@ class Bounce extends Action with ActivesOnly, CallWithParts {
   @override var helplink = 'c2/bounce';
   var direction = 'Right';
   var whodancers = <DancerModel>[];
-  Bounce(String name) : super(name);
+
+  Bounce(super.name);
 
   @override
    void performPart1(CallContext ctx) {

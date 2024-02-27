@@ -26,7 +26,8 @@ class BlockFormation extends Action {
       'Dancers must be in Blocks, and the call must work for '
       'dancers in a box.';
   @override var helplink = 'c1/block_formation';
-  BlockFormation(String name) : super(name);
+
+  BlockFormation(super.name);
 
   @override
   void performCall(CallContext ctx) {

@@ -24,7 +24,7 @@ import 'fliter_actives.dart';
 
 class Boys extends FilterActives {
 
-  Boys() : super('Boys');
+  Boys(super.name);
 
   @override
   bool isActive(DancerModel d, CallContext ctx) => d.gender == Gender.BOY;
