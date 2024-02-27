@@ -382,7 +382,7 @@ abstract class CodedCall extends Call {
     '(box)?circulate'.ri: (name) => Circulate(name),
     '(cross)?cloverand(\\w.*)'.ri: (name) => CloverAnd(name),
     'cloverleaf'.ri: (_) => Cloverleaf(),
-    'concentric.*'.ri: (name) => Concentric(name),
+    'concentric'.ri: (name) => Concentric(name),
     'coordinate'.ri: (_) => Coordinate(),
     'counterrotate'.ri: (_) => CounterRotate(),
     '(dancersin)?couples'.ri: (name) => Couples(name),
