@@ -318,7 +318,7 @@ import 'set_debug_switches.dart';
 
 abstract class CodedCall extends Call {
 
-  CodedCall(String name) : super(name);
+  CodedCall(super.name);
 
   static const specifier =
       '\\s*(?:boys?|girls?|beaus?|belles?|center\\d?|ends?|'
@@ -328,24 +328,23 @@ abstract class CodedCall extends Call {
       '(?:(?:near|far|left|right)(?:box|line|wave|diamond|star|\\d)))\\s*';
 
   static final Map<RegExp, CodedCall Function(String norm)> normCallMap = {
-    'aceydeucey'.ri: (_) => AceyDeucey(),
-    'adjust(to)?.*'.ri: (name) => Adjust(name),
-    'all8(?!circulate)(?!recycle)'.ri: (name) => AllEight(name),
+    'AceyDeucey'.r: (name) => AceyDeucey(name),
+    'Adjust(to)?.*'.r: (name) => Adjust(name),
+    'All8(?!Circulate)(?!Recycle)'.r: (name) => AllEight(name),
     'AllemandeLeft'.r: (name) => AllemandeLeft(name),
-    'alterandcirculate'.ri: (_) => AlterAndCirculate(),
-    'alterthewave'.ri: (name) => AlterTheWave(name),
-    'and'.ri: (_) => And(),
-    '.*(?<!(swing))andcircle(14|12|34)'.ri: (name) => AnythingAndCircle(name),
+    'AlterandCirculate'.r: (name) => AlterAndCirculate(name),
+    'AltertheWave'.r: (name) => AlterTheWave(name),
+    'and'.r: (name) => And(name),
+    '.*(?<!(Swing))andCircle(14|12|34)'.r: (name) => AnythingAndCircle(name),
     'InterlockedDiamondChainThru'.r: (name) => AnythingChainThru(name),
-    'around1andcomeintothemiddle'.ri: (_) =>
-        AroundToALine('Around One and Come Into the Middle'),
-    'around1toaline'.ri: (_) => AroundToALine('Around One to a Line'),
-    'around2toaline'.ri: (_) => AroundToALine('Around Two to a Line'),
+    'Around1andComeIntotheMiddle'.ri: (name) => AroundToALine(name),
+    'Around1toaLine'.ri: (name) => AroundToALine(name),
+    'Around2toaLine'.ri: (name) => AroundToALine(name),
     'AsCouples(?!Roll).*'.r: (name) => AsCouples(name),
     'AsCouplesRoll'.r: (name) => AsCouplesRoll(name),
 
-    'back(away|up)'.ri: (_) => BackAway(),
-    'balance'.ri: (_) => Balance(),
+    'back(away|up)'.ri: (name) => BackAway(name),
+    'balance'.ri: (name) => Balance(name),
     'beau'.ri: (_) => Beaus(),
     'belle'.ri: (_) => Belles(),
     'bendtheline'.ri: (_) => BendTheLine(),

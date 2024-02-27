@@ -26,7 +26,7 @@ import '../call_context.dart';
 
 class Action extends CodedCall {
 
-  Action(String name) : super(name);
+  Action(super.name);
 
   //  Default method to perform call
   //  This is what subclasses should override

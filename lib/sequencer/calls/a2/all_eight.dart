@@ -17,7 +17,6 @@
  *     along with Taminations.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-
 import '../common.dart';
 
 class AllEight extends Action {
@@ -31,7 +30,8 @@ class AllEight extends Action {
   ' Otherwise the sequencer will look up the call'
   ' from the All 8 animations.';
   @override var helplink = 'a2/all_4_all_8';
-  AllEight(String name) : super(name);
+
+  AllEight(super.name);
 
   @override
   void performCall(CallContext ctx) {

@@ -27,7 +27,8 @@ class BackAway extends Action {
 '''Back Away or Back Up
 Move backwards one full position.  (This is not a real call.)
 ''';
-  BackAway() : super('Back Away');
+
+  BackAway(super.name);
 
   @override
   Path performOne(DancerModel d, CallContext ctx) {

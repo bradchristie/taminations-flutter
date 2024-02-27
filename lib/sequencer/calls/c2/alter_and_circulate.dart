@@ -32,7 +32,8 @@ class AlterAndCirculate extends Action with CallWithParts, CallWithStars {
   @override int numberOfParts = 5;
   @override var turnStarAmount = 2;
   @override var turnStarCall = 'Split Counter Rotate';
-  AlterAndCirculate() : super('Alter and Circulate');
+
+  AlterAndCirculate(super.name);
 
   @override
    void performPart1(CallContext ctx) {

@@ -29,6 +29,7 @@ class AsCouples extends FourDancerConcept {
       ' At this time all the dancers must be As Couples,'
       ' for example you cannot say Boys As Couples (some call).';
   @override var helplink = 'a1/as_couples';
+
   AsCouples(String name) : super(name.replaceAll('As Couples?'.ri, 'As Couples'));
 
   @override

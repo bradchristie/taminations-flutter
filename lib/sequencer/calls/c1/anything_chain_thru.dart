@@ -29,9 +29,9 @@ class AnythingChainThru extends Action with CallWithParts, ButCall {
   2.  Very Centers Trade
   3.  Center 4 Cast Off 3/4 - can be replaced with But''';
   String firstCall;
-  AnythingChainThru(String name) :
-        firstCall = name.replaceFirst('Chain\\s*Thru'.ri,'').trim(),
-        super(name) {
+
+  AnythingChainThru(super.name) :
+        firstCall = name.replaceFirst('Chain\\s*Thru'.ri,'').trim() {
     if (firstCall.endsWith('Triangle') ||
         firstCall == 'Ping Pong' ||
         firstCall == 'Diamond' ||

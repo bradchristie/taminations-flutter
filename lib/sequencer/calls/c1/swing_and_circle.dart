@@ -24,7 +24,8 @@ class SwingAndCircle extends Action with IsLeft {
 
   @override final level = LevelData.C1;
   @override var helplink = 'c1/swing_and_circle';
-  SwingAndCircle(String name) : super(name);
+
+  SwingAndCircle(super.name);
 
   @override
   void performCall(CallContext ctx) {
@@ -58,7 +59,8 @@ class AnythingAndCircle extends Action {
 
   @override final level = LevelData.C2;
   @override var helplink = 'c2/anything_and_circle';
-  AnythingAndCircle(String name) : super(name);
+
+  AnythingAndCircle(super.name);
 
   @override
   void performCall(CallContext ctx) {
