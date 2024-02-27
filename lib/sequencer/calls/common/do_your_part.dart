@@ -29,7 +29,8 @@ class DoYourPart extends Action {
       ' and assuming phantom dancers as needed to do their part of the call.'
       ' The other dancers do not move unless given another call.';
   @override var helplink = 'a1/do_your_part';
-  DoYourPart(String name) : super(name);
+
+  DoYourPart(super.name);
 
   Pair<CallContext,List<int>> findYourPart(CallContext dypctx) {
     final callName = name.replaceFirst('Do Your Part'.ri,'').trim();

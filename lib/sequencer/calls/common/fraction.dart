@@ -35,7 +35,7 @@ class Fraction extends Action {
   int _numerator = 0;
   int _denominator = 1;
 
-  Fraction(String name) : super(name) {
+  Fraction(super.name) {
     //  Convert "half", "quarter", "3/5" etc into "12","14","35"
     var norm = normalizeCall(name);
     _numerator = norm[0].i;

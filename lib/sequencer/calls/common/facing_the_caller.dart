@@ -26,7 +26,7 @@ import 'fliter_actives.dart';
 
 class FacingTheCaller extends FilterActives {
 
-  FacingTheCaller(String name) : super(name);
+  FacingTheCaller(super.name);
 
   @override
   bool isActive(DancerModel d, CallContext ctx) => d.angleFacing.isAround(pi);

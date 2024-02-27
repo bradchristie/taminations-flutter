@@ -27,7 +27,8 @@ class Finish extends Action {
   @override final level = LevelData.C1;
   @override var help = 'Finish is the same as Skip the First Part';
   @override var helplink = 'c1/finish';
-  Finish(String name) : super(name);
+
+  Finish(super.name);
 
   @override
   void performCall(CallContext ctx) {

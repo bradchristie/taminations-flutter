@@ -24,7 +24,8 @@ class DoubleScoot extends Action {
   @override var level = LevelData.PLUS;
   @override var help = '3 by 2 columns can Double Scoot';
   @override var helplink = 'plus/triple_scoot';
-  DoubleScoot() : super('Double Scoot');
+
+  DoubleScoot(super.name);
 
   @override
   void performCall(CallContext ctx) {

@@ -24,7 +24,8 @@ class EightChain extends Action with CallWithParts {
   @override final level = LevelData.MS;
   @override var help = 'Eight Chain (n) has n parts.';
   @override var helplink = 'ms/eight_chain_thru';
-  EightChain(String name) : super(name) {
+
+  EightChain(super.name) {
     var howMuch = normalizeCall(name.replaceFirst('Eight Chain '.ri, ''));
     numberOfParts = howMuch == 'Thru' ? 8 : int.tryParse(howMuch) ?? 0;
     if (numberOfParts <= 0)

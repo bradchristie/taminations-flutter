@@ -22,7 +22,7 @@ import '../common.dart';
 
 class Except extends CodedCall {
 
-  Except(String name) : super(name);
+  Except(super.name);
 
   @override
    void performCall(CallContext ctx) {

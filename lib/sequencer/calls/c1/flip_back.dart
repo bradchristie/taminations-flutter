@@ -27,7 +27,8 @@ class FlipBack extends Action with CallWithParts, IsToAWave {
   2.  Scoot Back''';
   @override var helplink = 'c1/tagging_calls_back_to_a_wave';
   @override var numberOfParts = 2;
-  FlipBack() : super('Flip Back');
+
+  FlipBack(super.name);
 
   @override
    void performPart1(CallContext ctx) {

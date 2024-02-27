@@ -25,7 +25,8 @@ import '../common.dart';
 class Face extends Action {
 
   @override var helplink = 'b1/face';
-  Face(String name) : super(name);
+
+  Face(super.name);
 
   @override
   Path performOne(DancerModel d, CallContext ctx) {

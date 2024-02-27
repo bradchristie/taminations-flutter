@@ -21,7 +21,7 @@ import '../common.dart';
 
 class DoOnePart extends Action {
 
-  DoOnePart(String name) : super(name);
+  DoOnePart(super.name);
 
   @override
   void performCall(CallContext ctx) {

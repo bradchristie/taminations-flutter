@@ -23,7 +23,8 @@ class Fascinating extends Action {
 
   @override var level = LevelData.C2;
   @override var helplink = 'c2/fascinate';
-  Fascinating(String name) : super(name);
+
+  Fascinating(super.name);
 
   @override
   void performCall(CallContext ctx) {
