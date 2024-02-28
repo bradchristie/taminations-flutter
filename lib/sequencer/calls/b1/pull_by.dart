@@ -24,7 +24,8 @@ import 'pass_thru.dart';
 class PullBy extends PassThru {
 
   @override var helplink = 'b1/pull_by';
-  PullBy(String name) : super(name);
+
+  PullBy(super.name);
 
   @override
   Path performOne(DancerModel d, CallContext ctx) =>

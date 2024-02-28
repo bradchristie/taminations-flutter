@@ -24,7 +24,8 @@ class Run extends Action {
 
   @override var level = LevelData.B2;
   @override var helplink = 'b2/run';
-  Run(String name) : super(name);
+
+  Run(super.name);
 
   //  Generate paths for one set of dancers
   //  d : dancer who is running

@@ -25,7 +25,8 @@ class QuarterInOut extends Action {
 
   @override final level = LevelData.A1;
   @override var helplink = 'a1/quarter_in';
-  QuarterInOut(String name) : super(name);
+
+  QuarterInOut(super.name);
 
   @override
   void performCall(CallContext ctx) {

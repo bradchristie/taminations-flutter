@@ -26,7 +26,8 @@ class Replace extends Action {
       ' Currently you need to refer to the part to replace by number, such as:'
       ' "Replace the 3rd part woth (call)" ';
   @override var helplink = 'c1/replace';
-  Replace(String name) : super(name);
+
+  Replace(super.name);
 
   @override
   void performCall(CallContext ctx) {

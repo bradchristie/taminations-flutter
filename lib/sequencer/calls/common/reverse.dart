@@ -33,7 +33,7 @@ class Reverse extends CodedCall {
 
   @override var nextCallCoded = true;
 
-  Reverse(String name) : super(name);
+  Reverse(super.name);
 
   @override
   void performCall(CallContext ctx) {

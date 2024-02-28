@@ -28,7 +28,8 @@ class PassInOut extends Action with CallWithParts {
   1.  Pass Thru
   2.  Face In or Out''';
   @override var helplink = 'a1/pass_in';
-  PassInOut(String name) : super(name);
+
+  PassInOut(super.name);
 
   @override
    void performPart1(CallContext ctx) {

@@ -26,9 +26,9 @@ class Phantom extends Action {
   final String _subcall;
   @override var help = 'Currently the program only supports C-1 Phantom formations';
   @override var helplink = 'c1/phantom_formation';
-  Phantom(String name) :
-        _subcall = name.replaceFirst('Phantom'.ri, '').trim(),
-        super(name);
+
+  Phantom(super.name) :
+        _subcall = name.replaceFirst('Phantom'.ri, '').trim();
 
   static final Formation PhantomSnapFormation_1 = Formation('', dancers:[
     DancerModel.fromData(gender:Gender.BOY,x:-2,y:3,angle:0),

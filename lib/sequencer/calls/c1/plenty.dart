@@ -31,7 +31,8 @@ class Plenty extends Action with CallWithParts, CallWithStars {
   3.  Center 4 1/2 Zoom, others Counter Rotate and Roll
 The number of Split Circulates can be changed with Turn the Star (fraction)''';
   @override var helplink = 'c1/plenty';
-  Plenty(String name) : super(name);
+
+  Plenty(super.name);
 
   @override
   int partNumberForName(String name) {

@@ -23,7 +23,8 @@ class ReverseOrder extends Action {
 
   @override final level = LevelData.C3B;
   @override var helplink = 'c3b/reverse_order';
-  ReverseOrder(String name) : super(name);
+
+  ReverseOrder(super.name);
 
   @override
   void performCall(CallContext ctx) {

@@ -27,7 +27,8 @@ class PassToTheCenter extends Action with CallWithParts {
   1.  Pass Thru
   2.  Outer 4 Trade''';
   @override var helplink = 'ms/pass_to_the_center';
-  PassToTheCenter(name) : super(name);
+
+  PassToTheCenter(super.name);
 
   @override
    void performPart1(CallContext ctx) {

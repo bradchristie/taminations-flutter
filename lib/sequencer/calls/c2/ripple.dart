@@ -26,8 +26,10 @@ class Ripple extends Action {
   @override var help = '''The sequencer can do Ripple but not Like a Ripple.
 You can specify the direction with Left Ripple or Right Ripple.''';
   @override var helplink = 'c2/ripple_the_wave';
-  Ripple(String name) : super(name);
   late Map<DancerModel,bool> _isRight;
+
+  Ripple(super.name);
+
 
   List<DancerModel> _findTraders(CallContext ctx, List<DancerModel> actives) {
     final traders = actives.copy();

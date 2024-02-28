@@ -23,7 +23,8 @@ class Regroup extends Action {
 
   @override var level = LevelData.C1;
   @override var helplink = 'c1/regroup';
-  Regroup(String name) : super(name);
+
+  Regroup(super.name);
 
   @override
   void performCall(CallContext ctx) {

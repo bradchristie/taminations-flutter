@@ -24,7 +24,8 @@ class Rotary extends Action {
 
   @override final level = LevelData.C2;
   @override var helplink = 'c2/rotary';
-  Rotary(String name) : super(name);
+
+  Rotary(super.name);
 
   @override
   void performCall(CallContext ctx) {

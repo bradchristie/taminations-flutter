@@ -24,7 +24,8 @@ import '../common/reverse.dart';
 class Rollaway extends Action with IsReverse {
 
   @override var helplink = 'b1/sashay';
-  Rollaway(name) : super(name);
+
+  Rollaway(super.name);
 
   @override
   Path performOne(DancerModel d, CallContext ctx) {
