@@ -25,7 +25,8 @@ class SquareTheSet extends Action {
 
   @override var helplink = 'Square the Set moves all the dancers to '
       'their original squared set locations.  This is not a real call.';
-  SquareTheSet() : super('Square the Set' );
+
+  SquareTheSet(super.name);
 
   @override
   Path performOne(DancerModel d, CallContext ctx) {

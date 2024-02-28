@@ -24,7 +24,8 @@ class SplitSquareThru extends Action with IsLeft, IsToAWave {
 
   @override final level = LevelData.A1;
   @override var helplink = 'a1/split_square_thru';
-  SplitSquareThru(String name) : super(name);
+
+  SplitSquareThru(super.name);
 
   @override
   void performCall(CallContext ctx) {

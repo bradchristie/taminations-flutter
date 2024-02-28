@@ -31,7 +31,8 @@ class SquareTheBases extends Action with CallWithParts, ButCall {
 You can replace Parts 2 and 3 with But <another call>''';
 
   @override var helplink = 'c1/square_the_bases';
-  SquareTheBases() : super('Square the Bases');
+
+  SquareTheBases(super.name);
 
   //  'But' call replaces both parts 2 and 3
   //  Other modifications can change the number of parts,

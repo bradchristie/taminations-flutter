@@ -27,7 +27,8 @@ class SlideThru extends Action with ActivesOnly {
   @override var help = 'Unlike Star Thru, you can do Slide Thru with '
       'the same gender facing.';
   @override var helplink = 'ms/slide_thru';
-  SlideThru(name) : super(name);
+
+  SlideThru(super.name);
 
   @override
   Path performOne(DancerModel d, CallContext ctx) {

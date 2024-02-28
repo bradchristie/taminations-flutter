@@ -28,7 +28,8 @@ class Shazam extends Action with ActivesOnly, CallWithParts {
   1.  Hinge
   2.  Turn Back''';
   @override var helplink = 'c2/shazam';
-  Shazam(name) : super(name);
+
+  Shazam(super.name);
 
   @override
   void performCall(CallContext ctx) {

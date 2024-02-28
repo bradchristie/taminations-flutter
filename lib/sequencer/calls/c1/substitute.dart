@@ -29,11 +29,13 @@ class Substitute extends SplitCall {
   For 2 dancers Substitute over 1 other dancer, specify the triangle.
   Be sure to add Lateral if any of the active dancers ("archers") are moving sideways.
   ''';
-  Substitute(String name) : super(name);
+
   //  archers needs to be static because it's a separate instance
   //  of Subsitute that uses it (yes a bit of a hack)
   static var archers = <DancerModel>[];
   static var lateralFound = false;
+
+  Substitute(super.name);
 
   @override
   void performCall(CallContext ctx) {

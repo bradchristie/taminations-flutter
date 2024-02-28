@@ -24,7 +24,8 @@ class SnapTheLock extends Action {
 
   @override final level = LevelData.C3A;
   @override var helplink = 'c3a/snap_the_lock';
-  SnapTheLock(name) : super(name);
+
+  SnapTheLock(super.name);
 
   @override
   void performCall(CallContext ctx) {

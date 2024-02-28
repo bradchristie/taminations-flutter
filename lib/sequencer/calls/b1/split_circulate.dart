@@ -24,7 +24,8 @@ import '../common.dart';
 class SplitCirculate extends Action {
 
   @override var helplink = 'b1/circulate';
-  SplitCirculate(String name) : super(name);
+
+  SplitCirculate(super.name);
 
   @override
   void performCall(CallContext ctx) {

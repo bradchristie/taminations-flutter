@@ -33,7 +33,7 @@ class Single extends CodedCall {
 
   @override var nextCallCoded = true;
 
-  Single(String name) : super(name);
+  Single(super.name);
 
   @override
   void performCall(CallContext ctx) {

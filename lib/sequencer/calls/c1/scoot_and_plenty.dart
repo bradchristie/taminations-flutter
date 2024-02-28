@@ -33,7 +33,8 @@ class ScootAndPlenty extends Action with CallWithParts, CallWithStars {
 The number of Split Circulates can be modified with "Split Circulate n" or "Turn the Star n"''';
   @override var helplink = 'c1/scoot_and_plenty';
   String dir = 'Right';
-  ScootAndPlenty(String name) : super(name);
+
+  ScootAndPlenty(super.name);
 
   @override
   int partNumberForName(String name) {

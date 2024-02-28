@@ -34,7 +34,8 @@ You can change the star turn of Part 4 by adding Turn the Star (fraction).
 Use "A Full Turn" to turn it all the way around.''';
   @override var helplink = 'plus/spin_chain_and_exchange_the_gears';
   var turnAmount = 3;
-  SpinChainAndExchangeTheGears(String name) : super(name);
+
+  SpinChainAndExchangeTheGears(super.name);
 
   @override
    void performPart1(CallContext ctx) {

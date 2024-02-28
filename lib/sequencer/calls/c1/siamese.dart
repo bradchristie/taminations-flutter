@@ -27,7 +27,8 @@ class Siamese extends FourDancerConcept {
   @override var helplink = 'c1/siamese_concept';
   late List<List<DancerModel>> couples;
   late List<List<DancerModel>> tandems;
-  Siamese(String name) : super(name);
+
+  Siamese(super.name);
 
   static var siameseFormations = {
     Formation('Siamese Box 1'): 1.0,

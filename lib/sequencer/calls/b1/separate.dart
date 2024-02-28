@@ -24,7 +24,8 @@ import '../common.dart';
 class Separate extends Action {
 
   @override var helplink = 'b1/separate';
-  Separate(name) : super(name);
+
+  Separate(super.name);
 
   //  We need to look at all the dancers, not just actives
   //  because sometimes the inactives need to move in

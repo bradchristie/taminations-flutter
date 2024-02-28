@@ -25,7 +25,8 @@ class StarThru extends Action with ActivesOnly {
 
   @override var help = 'Star Thru is limited to a boy and girl facing.';
   @override var helplink = 'b1/star_thru';
-  StarThru(name) : super(name);
+
+  StarThru(super.name);
 
   @override
   Path performOne(DancerModel d, CallContext ctx) {
@@ -52,7 +53,7 @@ class StarThru extends Action with ActivesOnly {
 //  parses as 'Centers Star' which fails
 class CentersStarThru extends Action {
 
-  CentersStarThru(String name) : super(name);
+  CentersStarThru(super.name);
 
   @override
   void performCall(CallContext ctx) {

@@ -27,7 +27,8 @@ class ScootAndWeave extends Action with ActivesOnly, CallWithParts {
   1.  Scoot Back
   2. Weave''';
   @override var helplink = 'a2/scoot_and_weave';
-  ScootAndWeave(name) : super(name);
+
+  ScootAndWeave(super.name);
 
   @override
    void performPart1(CallContext ctx) {

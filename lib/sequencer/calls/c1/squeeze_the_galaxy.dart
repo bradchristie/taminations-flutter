@@ -24,7 +24,8 @@ class SqueezeTheGalaxy extends Action {
 
   @override final level = LevelData.C1;
   @override var helplink = 'c1/squeeze';
-  SqueezeTheGalaxy(String name) : super(name);
+
+  SqueezeTheGalaxy(super.name);
 
   @override
   void performCall(CallContext ctx) {

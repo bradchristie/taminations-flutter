@@ -31,7 +31,8 @@ class SpinThePulley extends Action with CallWithParts, ButCall {
 You can replace Part 3 by adding But (another call).
 Skip Part 1 with the call The Pulley.''';
   @override var helplink = 'c3a/spin_the_pulley';
-  SpinThePulley(String name) : super(name);
+
+  SpinThePulley(super.name);
 
   @override
    void performPart1(CallContext ctx) {

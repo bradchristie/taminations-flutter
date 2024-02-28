@@ -24,7 +24,7 @@ import '../common.dart';
 //  Can also select inner and outer diamonds from a thar
 class SelectDiamond extends FilterActives {
 
-  SelectDiamond(String name) : super(name);
+  SelectDiamond(super.name);
 
   @override
   bool isActive(DancerModel d, CallContext ctx) {

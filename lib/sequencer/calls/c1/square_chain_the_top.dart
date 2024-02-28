@@ -30,7 +30,8 @@ class SquareChainTheTop extends Action
   3.  Left Turn Thru
 The hands can be swapped with Left Square Chain the Top''';
   @override var helplink = 'c1/square_chain_the_top';
-  SquareChainTheTop(String name) : super(name);
+
+  SquareChainTheTop(super.name);
 
   @override
    void performPart1(CallContext ctx) {

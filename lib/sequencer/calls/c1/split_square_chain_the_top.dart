@@ -30,7 +30,8 @@ class SplitSquareChainTheTop extends Action with ActivesOnly, CallWithParts, IsL
   3.  Left Turn Thru
 The hands can be swapped with Left Split Square Chain the Top''';
   @override var helplink = 'c1/split_square_thru_variations';
-  SplitSquareChainTheTop(String name) : super(name);
+
+  SplitSquareChainTheTop(super.name);
 
   @override
   void performPart1(CallContext ctx) {

@@ -27,7 +27,8 @@ class SweepAQuarter extends Action {
 
   @override var level = LevelData.B2;
   @override var helplink = 'b2/sweep_a_quarter';
-  SweepAQuarter(String name) : super(name);
+
+  SweepAQuarter(super.name);
 
   @override
   void performCall(CallContext ctx) {

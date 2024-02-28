@@ -31,7 +31,8 @@ Variations
   Single Sidetrack - replace Part 2 with Lockit
   Split Sidetrack - replace Part 2 with Split Counter Rotate''';
   @override var helplink = 'c3b/sidetrack';
-  Sidetrack(String name) : super(name);
+
+  Sidetrack(super.name);
 
   @override
    void performPart1(CallContext ctx) {

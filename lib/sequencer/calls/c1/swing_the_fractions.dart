@@ -37,7 +37,8 @@ The hands can be swapped with Left Swing the Fractions''';
   List<DancerModel>? part2dancers;
   List<DancerModel>? part3dancers;
   List<DancerModel>? part4dancers;
-  SwingTheFractions(String name) : super(name);
+
+  SwingTheFractions(super.name);
 
   @override
    void performPart1(CallContext ctx) {

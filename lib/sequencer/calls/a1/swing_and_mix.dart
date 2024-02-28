@@ -28,7 +28,8 @@ class SwingAndMix extends Action with CallWithParts {
   2.  Centers Cross Run
   3.  New Centers Trade''';
   @override var helplink = 'a2/swing_and_mix';
-  SwingAndMix(String name) : super(name);
+
+  SwingAndMix(super.name);
 
   @override
    void performPart1(CallContext ctx) {

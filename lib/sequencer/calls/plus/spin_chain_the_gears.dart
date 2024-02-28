@@ -35,7 +35,8 @@ class SpinChainTheGears extends Action with CallWithParts, CallWithStars,
 You can change the star turn of Part 4 by adding Turn the Star (fraction).
 Use "A Full Turn" to turn it all the way around.''';
   @override var helplink = 'plus/spin_chain_the_gears';
-  SpinChainTheGears(String name) : super(name);
+
+  SpinChainTheGears(super.name);
 
   @override
   int partNumberForName(String name) {

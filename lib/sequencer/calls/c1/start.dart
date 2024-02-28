@@ -27,7 +27,8 @@ class Start extends Action {
       'The designated dancers do Part 1 of the call, then all the'
       ' dancers finish the call';
   @override var helplink = 'c1/start';
-  Start(String name) : super(name);
+
+  Start(super.name);
 
   @override
   void performCall(CallContext ctx) {

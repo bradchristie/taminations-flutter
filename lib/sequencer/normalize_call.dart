@@ -96,11 +96,11 @@ String normalizeCall(String callname) =>
         .replaceAllMapped('interlocked (flip|cut) the'.ri,
             (m) => '${m[1]} the Interlocked')
         .replaceAll('walk around your corner'.ri,'Walk Around the Corner')
-        .replaceAll('on the second hand'.ri,'on 2')
-        .replaceAll('on the third hand'.ri,'on 3')
-        .replaceAll('on the fou?rth hand'.ri,'on 4')
-        .replaceAll('on the fifth hand'.ri,'on 5')
-        .replaceAll('on the sixth hand'.ri,'on 6')
+        .replaceAll('on the second hand'.ri,'On 2')
+        .replaceAll('on the third hand'.ri,'On 3')
+        .replaceAll('on the fou?rth hand'.ri,'On 4')
+        .replaceAll('on the fifth hand'.ri,'On 5')
+        .replaceAll('on the sixth hand'.ri,'On 6')
         .replaceAllMapped('left (split )?dixie'.ri,(m)=>'Reverse ${m[1]??''}Dixie')
     //  Remove superfluous Buts, so not to confuse the real But
         .replaceAllMapped('but (skip|replace|delete|interrupt)'.ri, (m) => m[1]!)

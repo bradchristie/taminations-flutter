@@ -23,8 +23,9 @@ import '../common.dart';
 class SplitTwo extends Action {
 
   @override var helplink = 'b1/split_the_outside_couple';
-  SplitTwo(String name) : super(name);
   var _activesAreCouples = true;
+
+  SplitTwo(super.name);
 
   @override
   void performCall(CallContext ctx) {

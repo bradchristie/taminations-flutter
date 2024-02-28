@@ -27,7 +27,8 @@ class SpinTheTop extends Action with ActivesOnly, CallWithParts, IsLeft {
   1.  Swing
   2.  Fan the Top''';
   @override var helplink = 'ms/spin_the_top';
-  SpinTheTop(name) : super(name);
+
+  SpinTheTop(super.name);
 
   @override
    void performPart1(CallContext ctx) {

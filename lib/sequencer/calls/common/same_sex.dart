@@ -24,7 +24,7 @@ import '../action.dart';
 
 class SameSex extends Action {
 
-  SameSex(String name) : super(name);
+  SameSex(super.name);
 
   @override
    void performCall(CallContext ctx) {

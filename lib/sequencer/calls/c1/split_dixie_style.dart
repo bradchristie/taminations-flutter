@@ -27,7 +27,8 @@ class SplitDixieStyle extends Action with CallWithParts {
   1.  Facing dancers Pull By and 1/4 In
   2.  Left Touch 1/4''';
   @override var helplink = 'c1/split_square_thru_variations';
-  SplitDixieStyle(String name) : super(name);
+
+  SplitDixieStyle(super.name);
 
   @override
    void performPart1(CallContext ctx) {

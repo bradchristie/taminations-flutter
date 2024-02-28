@@ -26,7 +26,8 @@ class Stagger extends ModifiedFormationConcept {
   @override final conceptName = 'Stagger';
   @override final modifiedFormation = Formation('Double Pass Thru');
   @override var helplink = 'c2/stagger_concept';
-  Stagger(String name) : super(name);
+
+  Stagger(super.name);
 
   late Formation _startFormation;
   @override Formation get baseFormation => _startFormation;

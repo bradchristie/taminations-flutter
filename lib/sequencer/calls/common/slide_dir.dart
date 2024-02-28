@@ -25,7 +25,8 @@ class SlideDir extends Action {
 
   @override var help = 'You can adust dancers without changing their facing '
       'direction with Slide In/Out/Left/Right.  This is not a real square dance call.';
-  SlideDir(String name) : super(name);
+
+  SlideDir(super.name);
 
   @override
   void performCall(CallContext ctx) {
