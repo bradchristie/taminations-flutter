@@ -462,37 +462,37 @@ abstract class CodedCall extends Call {
 
     '(Cross)?Kick[Oo]ff'.r: (name) => KickOff(name),
 
-    'last(1|2|3)'.ri: (name) => Last(name),
-    'lead(er|ing)?s?'.ri: (name) => Leaders(name),
-    'left'.ri: (name) => Left(name),
-    'likeacoupleup'.ri: (_) => LikeACoupleUp(),
-    'linearaction'.ri: (_) => LinearAction(),
-    'linearcycle'.ri: (name) => LinearCycle(name),
-    'Lines.*Thru'.ri: (name) => LinesAnythingThru(name),
+    'Last(1|2|3)'.r: (name) => Last(name),
+    'Lead(er|ing)?s?'.r: (name) => Leaders(name),
+    'Left'.r: (name) => Left(name),
+    'LikeaCoupleUp'.r: (name) => LikeACoupleUp(name),
+    'LinearAction'.r: (name) => LinearAction(name),
+    'LinearCycle'.r: (name) => LinearCycle(name),
+    'Lines.*Thru'.r: (name) => LinesAnythingThru(name),
     //  Little needs two regexes
     //  to handle both <something> Little and Little <something>
-    '(scootand)?(outside|point)?(out|in|left|right|(go)?(forward|asyouare))?little'.ri:
+    '(Scootand)?(Outside|Point)?(Out|In|Left|Right|(Go)?(Forward|AsYouAre))?Little'.r:
         (name) => Little(name),
-    '(scootand)?little(outside|point)(in|out|left|right|(go)?(forward|asyouare))?'.ri:
+    '(Scootand)?Little(Outside|Point)(In|Out|Left|Right|(Go)?(Forward|AsYouAre))?'.r:
         (name) => Little(name),
-    'loadtheboat'.ri: (_) => LoadTheBoat(),
-    '(left|right|in|out)?loop(0|1|2|3)?'.ri: (name) => Loop(name),
+    'LoadtheBoat'.r: (name) => LoadTheBoat(name),
+    '(Left|Right|In|Out)?Loop(0|1|2|3)?'.r: (name) => Loop(name),
 
-    'magictransferand.+'.ri: (name) => MagicTransferAnd(name),
-    'makemagic'.ri: (_) => MakeMagic(),
-    'minibusy'.ri: (_) => MiniBusy(),
-    'mix'.ri: (_) => Mix(),
-    'motivate'.ri: (_) => Motivate(),
+    'MagicTransferand.+'.r: (name) => MagicTransferAnd(name),
+    'MakeMagic'.r: (name) => MakeMagic(name),
+    'Mini[Bb]usy'.r: (name) => MiniBusy(name),
+    'Mix'.r: (name) => Mix(name),
+    'Motivate'.r: (name) => Motivate(name),
 
-    'no(body|one)'.ri: (_) => Nobody(),
-    'nothing'.ri: (_) => Nothing('Nothing'),
+    'No(body|one)'.r: (name) => Nobody(name),
+    'Nothing'.r: (name) => Nothing(name),
 
     'O[A-Z0-9].+'.r: (name) => OFormation(name),
-    '112'.ri: (name) => OneAndaHalf(name),
-    'couples?(1|2|3|4)((and)?(2|3|4))*'.ri: (name) => OneCouple(name),
-    'outrollcirculate'.ri: (name) => OutRollCirculate(name),
-    'out(er|sides?)(2|4|6)?'.ri: (name) => Outsides(name),
-    'ownthe.*'.ri: (name) => OwnTheDancers(name),
+    '112'.r: (name) => OneAndaHalf(name),
+    'Couples?(1|2|3|4)((and)?(2|3|4))*'.r: (name) => OneCouple(name),
+    'Out[Rr]ollCirculate'.r: (name) => OutRollCirculate(name),
+    'Out(er|sides?)(2|4|6)?'.r: (name) => Outsides(name),
+    'Ownthe.*'.r: (name) => OwnTheDancers(name),
 
     'partnertag'.ri: (_) => PartnerTag(),
     'passandroll(your(cross)?neighbor)?'.ri: (name) => PassAndRoll(name),

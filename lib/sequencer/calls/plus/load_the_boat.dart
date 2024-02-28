@@ -32,7 +32,7 @@ class LoadTheBoat extends Action with CallWithParts, ButCall, IsToAWave {
 Part 4 for the Centers can be replaced with But (another call)''';
   @override var helplink = 'plus/load_the_boat';
 
-  LoadTheBoat() : super('Load the Boat');
+  LoadTheBoat(super.name);
 
   String _endsPart(CallContext ctx) {
     if (ctx.outer(4).every((d) => d.isFacingIn) ||

@@ -25,7 +25,8 @@ class MakeMagic extends Action {
 
   @override final level = LevelData.C1;
   @override var helplink = 'c1/make_magic';
-  MakeMagic() : super('Make Magic');
+
+  MakeMagic(super.name);
 
   @override
   void performCall(CallContext ctx) {

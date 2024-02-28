@@ -31,7 +31,8 @@ The final Cast Off 3/4 can be replaced with But (another call)''';
   @override var helplink = 'c1/linear_action';
   List<DancerModel> centerDancers = [];
   List<DancerModel> outerDancers = [];
-  LinearAction() : super('Linear Cycle');
+
+  LinearAction(super.name);
 
   @override
    void performPart1(CallContext ctx) {

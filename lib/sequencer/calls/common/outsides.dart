@@ -23,7 +23,7 @@ import '../common.dart';
 
 class Outsides extends CodedCall {
 
-  Outsides(String name) : super(name);
+  Outsides(super.name);
 
   @override
    void performCall(CallContext ctx) {

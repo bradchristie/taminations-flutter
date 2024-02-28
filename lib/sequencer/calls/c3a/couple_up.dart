@@ -52,7 +52,8 @@ class LikeACoupleUp extends Action with ActivesOnly {
   @override final level = LevelData.C3A;
   @override var help = CoupleUp('').help;
   @override var helplink = CoupleUp('').helplink;
-  LikeACoupleUp() : super('Like A Couple Up');
+
+  LikeACoupleUp(super.name);
 
   @override
   void performCall(CallContext ctx) {

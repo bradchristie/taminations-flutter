@@ -22,7 +22,7 @@ import '../common.dart';
 
 class Nobody extends CodedCall {
 
-  Nobody() : super('Nobody');
+  Nobody(super.name);
 
   @override
    void performCall(CallContext ctx) {

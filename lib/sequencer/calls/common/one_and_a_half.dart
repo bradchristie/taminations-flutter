@@ -24,7 +24,7 @@ import '../coded_call.dart';
 
 class OneAndaHalf extends CodedCall {
 
-  OneAndaHalf(String name) : super(name);
+  OneAndaHalf(super.name);
 
   @override
    void performCall(CallContext ctx) {
