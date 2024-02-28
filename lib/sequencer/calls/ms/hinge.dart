@@ -27,7 +27,8 @@ class Hinge extends Action with IsLeft {
   @override var help = 'Hinge can be either from a mini-wave (Mainstream)'
       ' or from a couple (A-1)';
   @override var helplink = 'ms/hinge';
-  Hinge(String name) : super(name);
+
+  Hinge(super.name);
 
   @override
   Path performOne(DancerModel d, CallContext ctx) {

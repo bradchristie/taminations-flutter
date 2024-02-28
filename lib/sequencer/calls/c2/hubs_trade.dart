@@ -27,7 +27,8 @@ class HubsTrade extends Action with ActivesOnly, CallWithParts {
   1.  Partner Trade
   2.  Original Centers (Hubs) or Outsides (Rims) do the given call''';
   @override var helplink = 'c2/rims_trade_anything';
-  HubsTrade(String name) : super(name);
+
+  HubsTrade(super.name);
 
   @override
   void performCall(CallContext ctx) {

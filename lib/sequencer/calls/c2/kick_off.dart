@@ -25,7 +25,8 @@ class KickOff extends Action {
 
   @override final level = LevelData.C2;
   @override var helplink = 'c2/kickoff';
-  KickOff(String name) : super(name);
+
+  KickOff(super.name);
 
   @override
   void performCall(CallContext ctx) {

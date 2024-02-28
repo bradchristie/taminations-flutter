@@ -25,7 +25,8 @@ class HalfTag extends Action with IsLeft {
   @override var level = LevelData.MS;
   @override var help = 'To pass left shoulders, use Left Half Tag';
   @override var helplink = 'ms/fraction_tag';
-  HalfTag(String name) : super(name);
+
+  HalfTag(super.name);
 
   @override
    void performCall(CallContext ctx, [int i = 0]) {

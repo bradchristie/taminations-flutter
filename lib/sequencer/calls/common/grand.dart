@@ -33,7 +33,7 @@ class Grand extends CodedCall {
 
   @override var nextCallCoded = true;
 
-  Grand(String name) : super(name);
+  Grand(super.name);
 
   @override
   void performCall(CallContext ctx) {

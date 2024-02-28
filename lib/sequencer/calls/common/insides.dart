@@ -22,7 +22,7 @@ import '../common.dart';
 
 class Insides extends Action {
 
-  Insides(String name) : super(name);
+  Insides(super.name);
 
   @override
    void performCall(CallContext ctx) {

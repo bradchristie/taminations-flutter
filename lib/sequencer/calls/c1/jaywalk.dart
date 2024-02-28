@@ -25,7 +25,8 @@ class Jaywalk extends Action {
 
   @override final level = LevelData.C1;
   @override var helplink = 'c1/jaywalk';
-  Jaywalk() : super('Jaywalk');
+
+  Jaywalk(super.name);
 
   //  Find dancer to Jaywalk with this dancer
   //  Only looks from this dancer's perspective

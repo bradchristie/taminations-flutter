@@ -27,7 +27,8 @@ class Ignore extends Action {
   @override var help = 'Ignore (dancers) means the designated dancers do not'
       ' move while all other dancers do their part of the call.';
   @override var helplink = 'c1/ignore';
-  Ignore(String name) : super(name);
+
+  Ignore(super.name);
 
   @override
   void performCall(CallContext ctx) {

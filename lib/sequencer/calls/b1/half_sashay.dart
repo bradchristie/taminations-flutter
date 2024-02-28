@@ -28,7 +28,8 @@ class HalfSashay extends Action with IsReverse {
       ' If you want the beau to go in front of the belle, use'
       ' Reverse Half Sashay.';
   @override var helplink = 'b1/sashay';
-  HalfSashay(String name) : super(name);
+
+  HalfSashay(super.name);
 
   @override
   Path performOne(DancerModel d, CallContext ctx) {
