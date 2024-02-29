@@ -569,7 +569,7 @@ abstract class CodedCall extends Call {
     '62AceyDeucey'.ri: (name) => SixTwoAceyDeucey(name),
     '(But)?($specifier)?(Skip|Delete).+Parts?'.ri: (name) => Skip(name),
     'Slide'.ri: (name) => Slide(name),
-    'Slide(In|Out|Left|Right)'.ri: (name) => SlideDir(name),
+    '(12)?Slide(In|Out|Left|Right)'.ri: (name) => SlideDir(name),
     'SlideThru'.ri: (name) => SlideThru(name),
     'Slip'.ri: (name) => Slip(name),
     'Slither'.ri: (name) => Slither(name),

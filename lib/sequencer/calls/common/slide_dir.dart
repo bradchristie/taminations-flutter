@@ -37,16 +37,18 @@ class SlideDir extends Action {
   @override
   Path performOne(DancerModel d, CallContext ctx) {
     Path move;
-    if (name == 'Slide Left' )
+    if (name.endsWith('Slide Left' ))
       move = DodgeLeft;
-    else if (name == 'Slide Right' )
+    else if (name.endsWith('Slide Right' ))
       move = DodgeRight;
-    else if (name == 'Slide In' )
+    else if (name.endsWith('Slide In' ))
       move = d.isCenterLeft ? DodgeLeft  : DodgeRight;
-    else if (name == 'Slide Out' )
+    else if (name.endsWith('Slide Out' ))
       move = d.isCenterLeft ? DodgeRight  : DodgeLeft;
     else
       throw CallError('Slide how?' );
+    if (name.contains('Half'))
+      move = move.scale(0.5,0.5);
     return move;
   }
 
