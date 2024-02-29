@@ -26,7 +26,8 @@ class WheelAround extends Action with ActivesOnly, IsReverse {
 
   @override var level = LevelData.B2;
   @override var helplink = 'b2/wheel_around';
-  WheelAround(String name) : super(name);
+
+  WheelAround(super.name);
 
   @override
   Path performOne(DancerModel d, CallContext ctx) {

@@ -22,7 +22,7 @@ import '../common.dart';
 
 class While extends Action {
 
-  While(String name) : super(name);
+  While(super.name);
 
   @override
    void performCall(CallContext ctx, [int i = 0]) {

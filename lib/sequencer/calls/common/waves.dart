@@ -21,7 +21,7 @@ import '../common.dart';
 
 class Waves extends FilterActives {
 
-  Waves(String name) : super(name);
+  Waves(super.name);
 
   @override
   bool isActive(DancerModel d, CallContext ctx) => ctx.isInWave(d);

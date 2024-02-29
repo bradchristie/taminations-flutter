@@ -22,7 +22,7 @@ import '../common.dart';
 
 class WaveOfSix extends CodedCall {
 
-  WaveOfSix(String name) : super(name);
+  WaveOfSix(super.name);
 
   @override
    void performCall(CallContext ctx) {

@@ -28,7 +28,8 @@ class VerticalTagBack extends Action with CallWithParts, IsToAWave {
   1.  Vertical Half Tag
   2.  Scoot Back''';
   @override var helplink = 'c1/tagging_calls_back_to_a_wave';
-  VerticalTagBack(String name) : super(name);
+
+  VerticalTagBack(super.name);
 
   @override
    void performPart1(CallContext ctx) {

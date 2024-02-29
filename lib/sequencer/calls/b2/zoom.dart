@@ -26,7 +26,8 @@ class Zoom extends Action with ActivesOnly {
 
   @override LevelData get level => name == 'Zing'  ? LevelData.C1 : LevelData.B2;
   @override String get helplink => name == 'Zing'  ? 'c1/zing' : 'b2/zoom';
-  Zoom(String name) : super(name);
+
+  Zoom(super.name);
 
   @override
   Path performOne(DancerModel d, CallContext ctx) {

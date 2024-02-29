@@ -660,32 +660,32 @@ abstract class CodedCall extends Call {
     '(Go)?Twice'.r: (name) => Twice(name),
     'Twist(theLine|and.+)'.r: (name) => TwistAnything(name),
 
-    'vertical'.ri: (name) => Vertical(name),
-    '(left)?vertical(left)?(14|12|34)?tag'.ri: (name) => VerticalTag(name),
-    '(left)?verticaltagback(toawave)?'.ri: (name) => VerticalTagBack(name),
-    'verycenter'.ri: (name) => VeryCenters(name),
-    'veryend'.ri: (name) => VeryEnds(name),
+    'Vertical'.r: (name) => Vertical(name),
+    '(Left)?Vertical(Left)?(14|12|34)?Tag'.r: (name) => VerticalTag(name),
+    '(Left)?VerticalTagBack(toaWave)?'.r: (name) => VerticalTagBack(name),
+    'VeryCenter'.r: (name) => VeryCenters(name),
+    'VeryEnd'.r: (name) => VeryEnds(name),
 
-    'walkanddodge'.ri: (name) => WalkAndDodge(name),
-    '${specifier}walk(and)?${specifier}dodge'.ri: (name) => WalkAndDodge(name),
-    '$specifier${specifier}walk(and)?$specifier${specifier}dodge'.ri:
+    'WalkandDodge'.r: (name) => WalkAndDodge(name),
+    '${specifier}Walk(and)?${specifier}Dodge'.r: (name) => WalkAndDodge(name),
+    '$specifier${specifier}Walk(and)?$specifier${specifier}Dodge'.r:
         (name) => WalkAndDodge(name),
-    '(wave|line)of6'.ri: (name) => WaveOfSix(name),
-    '(dancersin)?waves?(dancers)?'.ri: (name) => Waves(name),
-    'weave'.ri: (name) => Weave(name),
-    'weavethering'.ri: (name) => WeaveTheRing(name),
-    'wheeland(?!deal)'.ri: (name) => WheelAnd(name),
-     'wheelaround'.ri: (name) => WheelAround(name),
-    '(reverse)?(14|34)?(reverse)?wheelthe(ocean|sea)'.ri: (name) => WheelTheOcean(name),
-    '(and)?(the)?others?.+'.ri: (name) => While(name),
-    'while(the)?(others?)?.+'.ri: (name) => While(name),
-    '_windmill(in|out|left|right|forward)(${specifier}circulate.+)?'.ri: (name) => WindmillX(name),
-    'withtheflow'.ri: (name) => WithTheFlow(name),
+    '(Wave|Line)of6'.r: (name) => WaveOfSix(name),
+    '(Dancersin)?Waves?(Dancers)?'.r: (name) => Waves(name),
+    'Weave'.r: (name) => Weave(name),
+    'WeavetheRing'.r: (name) => WeaveTheRing(name),
+    'Wheeland(?!Deal)'.r: (name) => WheelAnd(name),
+     'WheelAround'.r: (name) => WheelAround(name),
+    '(Reverse)?(14|34)?(Reverse)?Wheelthe(Ocean|Sea)'.r: (name) => WheelTheOcean(name),
+    '(and)?(the)?Others?.+'.r: (name) => While(name),
+    'While(the)?(Others?)?.+'.r: (name) => While(name),
+    '_windmill(In|Out|Left|Right|Forward)(${specifier}Circulate.+)?'.r: (name) => WindmillX(name),
+    'WiththeFlow'.r: (name) => WithTheFlow(name),
 
-    'z[ai]g'.ri: (name) => Zig(name),
-    'z[ai]gz[ai]g'.ri: (name) => ZigZag(name),
-    'zipcode\\d'.ri: (name) => ZipCode(name),
-    'zing|zoom'.ri: (name) => Zoom(name)
+    'Z[ai]g'.r: (name) => Zig(name),
+    'Z[ai]gZ[ai]g'.r: (name) => ZigZag(name),
+    'ZipCode\\d'.r: (name) => ZipCode(name),
+    'Zing|Zoom'.r: (name) => Zoom(name)
 
   };
 

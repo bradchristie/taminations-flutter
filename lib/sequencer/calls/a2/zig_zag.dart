@@ -25,7 +25,8 @@ class ZigZag extends Action with ActivesOnly {
 
   @override final level = LevelData.A2;
   @override var helplink = 'a2/zig_and_zag';
-  ZigZag(String name) : super(name);
+
+  ZigZag(super.name);
 
   @override
   void performCall(CallContext ctx) {
