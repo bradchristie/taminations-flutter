@@ -24,7 +24,8 @@ class TripleTrade extends Action {
 
   @override final level = LevelData.A1;
   @override var helplink = 'a1/triple_trade';
-  TripleTrade(String name) : super(name);
+
+  TripleTrade(super.name);
 
   @override
   void performCall(CallContext ctx) {

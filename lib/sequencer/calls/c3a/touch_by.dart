@@ -26,6 +26,7 @@ class TouchBy extends Action {
   @override var help = '''You can use Touch By <fraction> By <fraction>, 
   and Touch By <fraction> By <another call>.
   Touch By for facing columns of 6 or 8 dancers not yet supported.''';
+
   TouchBy(super.name);
 
   @override

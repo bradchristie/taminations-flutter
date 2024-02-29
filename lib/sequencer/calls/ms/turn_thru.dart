@@ -25,7 +25,8 @@ class TurnThru extends Action with IsLeft {
 
   @override var level = LevelData.MS;
   @override var helplink = 'ms/turn_thru';
-  TurnThru(String name) : super(name);
+
+  TurnThru(super.name);
 
   @override
   Path performOne(DancerModel d, CallContext ctx) {

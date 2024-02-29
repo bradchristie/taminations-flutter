@@ -25,7 +25,8 @@ class Touch extends Action with IsLeft {
 
   @override
   var level = LevelData.B2;
-  Touch(String name) : super(name);
+
+  Touch(super.name);
 
   @override
   Path performOne(DancerModel d, CallContext ctx) {

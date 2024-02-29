@@ -25,7 +25,8 @@ class Tandem extends FourDancerConcept {
   @override final level = LevelData.C1;
   @override final conceptName = 'Tandem';
   @override var helplink = 'c1/tandem_concept';
-  Tandem(String name) : super(name);
+
+  Tandem(super.name);
 
   //  Build list of (leader, trailer) tandems
   @override

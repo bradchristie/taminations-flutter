@@ -24,7 +24,7 @@ import '../common.dart';
 
 class SelectTriangle extends CodedCall {
 
-  SelectTriangle(String name) : super(name);
+  SelectTriangle(super.name);
 
   @override
   void performCall(CallContext ctx) {
@@ -110,7 +110,8 @@ class TriangleCirculate extends Action {
 You do not need to use one of these if the triangles are unambiguous (as in a sausage formation)''';
   @override var helplink = 'c1/triangle_circulate';
   var rootName = 'Triangle Circulate'.r;
-  TriangleCirculate(String name) : super(name);
+
+  TriangleCirculate(super.name);
 
   //  Calculate circulate path to next triangle dancer
   //  d2 is the spot where dancer d is to circulate

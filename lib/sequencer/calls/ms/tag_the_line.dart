@@ -30,11 +30,12 @@ For larger lines, use
 Line of (6 or 8) [Left] [Half] Tag the Line
 ''';
   @override var helplink = 'ms/tag';
-  TagTheLine(name) : super(name);
+
+  TagTheLine(super.name);
 
   @override
    void performCall(CallContext ctx, [int i = 0]) {
-    ctx.applyCalls('$left 34tag');
+    ctx.applyCalls('$left 34 Tag');
     ctx.contractPaths();
     ctx.applyCalls('extend');
   }

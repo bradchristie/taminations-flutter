@@ -24,7 +24,8 @@ class TransferAnd extends Action {
 
   @override final level = LevelData.A2;
   @override var helplink = 'a2/transfer_and_anything';
-  TransferAnd(String name) : super(name);
+
+  TransferAnd(super.name);
 
   @override
   void performCall(CallContext ctx) {

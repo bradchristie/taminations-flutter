@@ -25,7 +25,8 @@ class ThreeQuartersTag extends Action with IsLeft {
 
   @override var level = LevelData.MS;
   @override var helplink = 'ms/fraction_tag';
-  ThreeQuartersTag(String name) : super(name);
+
+  ThreeQuartersTag(super.name);
 
   @override
   void performCall(CallContext ctx) {

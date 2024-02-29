@@ -28,7 +28,7 @@ mixin CallWithStars {
 
 class TurnTheStar extends Action {
 
-  TurnTheStar(String name) : super(name);
+  TurnTheStar(super.name);
 
   @override
   void performCall(CallContext ctx) {

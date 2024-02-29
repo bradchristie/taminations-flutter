@@ -68,7 +68,8 @@ class TheAxle extends Action with CallWithParts, ButCall {
   3.  Centers Trade
 Part 2 can be replaced with But (another call)''';
   @override var helplink = 'c1/pass_the_axle';
-  TheAxle(String name) : super(name);
+
+  TheAxle(super.name);
 
   @override
    void performPart1(CallContext ctx) {

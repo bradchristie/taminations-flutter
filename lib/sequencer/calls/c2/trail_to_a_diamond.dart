@@ -24,7 +24,8 @@ class TrailToADiamond extends Action with ActivesOnly {
   @override final level = LevelData.C2;
   @override var help = 'Leaders Trail Off, Trailers meet and Hinge';
   @override var helplink = 'c2/peel_to_a_diamond';
-  TrailToADiamond(name) : super(name);
+
+  TrailToADiamond(super.name);
 
   @override
   void performCall(CallContext ctx) {

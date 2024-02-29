@@ -23,7 +23,7 @@ import '../coded_call.dart';
 
 class ThoseWhoCan extends CodedCall {
 
-  ThoseWhoCan(String name) : super(name);
+  ThoseWhoCan(super.name);
 
   @override
    void performCall(CallContext ctx) {

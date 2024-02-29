@@ -29,7 +29,8 @@ class TallyHo extends Action with CallWithParts, ButCall {
   3.  Center wave of 4 Cast Off 3/4, others Hourglass Circulate
 The final Cast Off 3/4 can be replaced with But (another call)''';
   @override var helplink = 'c1/tally_ho';
-  TallyHo(String name) : super(name);
+
+  TallyHo(super.name);
 
   @override
    void performPart1(CallContext ctx) {
