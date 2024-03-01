@@ -84,6 +84,7 @@ String normalizeCall(String callname) =>
         .replaceAll('\\bcross\\s+\\fire\\b'.ri,'Crossfire')
         .replaceAll('crossover'.ri, 'Cross Over')
         .replaceAll('dopaso'.ri,'Do Paso')
+        .replaceAll('all 8 recycle center (go )?23'.ri,'Center Go 23 All 8 Recycle')
     //  .replaceAll('\\blead(er)?(ing)?s?\\b'.ri,'Lead')
         .replaceAll('\\btrail(er)?(ing)?s?\\b'.ri,'Trail')
         .replaceAll('\\bcentres?\\b'.ri,'Center')
