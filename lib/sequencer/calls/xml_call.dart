@@ -42,7 +42,7 @@ class XMLCall extends Call {
   static const noInactiveCalls = ['slip','slither'];
 
   static List<AnimatedCall> lookupAnimatedCall(String norm) =>
-      TamUtils.normalizedCallIndex[norm] ?? [];
+      TamUtils.normalizedCallIndex[norm.lc] ?? [];
   XMLCall(String title) : super(title);
 
   bool matchAnimatedCall(CallContext ctx) {
@@ -54,7 +54,7 @@ class XMLCall extends Call {
     for (var tam in lookupAnimatedCall(norm)) {
       if (tam.notForSequencer)
         continue;
-      if (normalizeCall(tam.title) != norm)
+      if (normalizeCall(tam.title).lc != norm.lc)
         continue;
       //  Check for 4-dancer calls that do not work for 8 dancers
       if (tam.isExact && !exact)
