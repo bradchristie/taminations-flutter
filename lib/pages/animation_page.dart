@@ -206,7 +206,7 @@ class _AnimationFrameState extends fm.State<AnimationFrame>
                           ? settings.dancerShapes : true);
                       danceModel.showPhantoms = settings.phantoms;
                       var note = danceModel.animationNote;
-                      final setGeometry = appState.mainPage == MainPage.SEQUENCER ? Geometry.SQUARE : Geometry.fromString(settings.geometry).geometry;
+                      final setGeometry = Geometry.fromString(settings.geometry).geometry;
                       if (setGeometry != Geometry.SQUARE && danceModel.asymmetric)
                         note = 'Special Geometry not available for asymmetric animations';
                       else
