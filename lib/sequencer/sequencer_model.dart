@@ -324,6 +324,8 @@ class SequencerModel extends fm.ChangeNotifier {
     else {
       for (var i=0; i<8; i++)
         ctx.dancers[i].path = animation.dancers[i].path.clone();
+      ctx.animateToEnd();
+      ctx.asymmetric = !ctx.dancers.areDancersOrdered();
     }
     ctx.animateToEnd();
     return CallContext.fromContext(ctx);
