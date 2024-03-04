@@ -320,6 +320,9 @@ class SequencerModel extends fm.ChangeNotifier {
     } else if (settings.geometry == 'Hexagon') {
       for (var i=0; i<8; i++)
         ctx.dancers[i].path = animation.dancers[(i~/2)*3].path.clone();
+    } else if (settings.geometry == 'Hashtag') {
+      for (var i=0; i<8; i++)
+        ctx.dancers[i].path = animation.dancers[i*2].path.clone();
     }
     else {
       for (var i=0; i<8; i++)
@@ -339,6 +342,10 @@ class SequencerModel extends fm.ChangeNotifier {
     } else if (settings.geometry == 'Bi-Gon') {
       for (var i=0; i<4; i++)
         animation.dancers[i].path += ctx.dancers[i*2].path;
+    } else if (settings.geometry == 'Hashtag') {
+      for (var i=0; i<16; i++) {
+        animation.dancers[i].path += ctx.dancers[i ~/ c2].path;
+      }
     }
     else {
       for (var i=0; i<8; i++)
