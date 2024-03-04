@@ -344,7 +344,7 @@ class SequencerModel extends fm.ChangeNotifier {
         animation.dancers[i].path += ctx.dancers[i*2].path;
     } else if (settings.geometry == 'Hashtag') {
       for (var i=0; i<16; i++) {
-        animation.dancers[i].path += ctx.dancers[i ~/ c2].path;
+        animation.dancers[i].path += ctx.dancers[i ~/ 2].path;
       }
     }
     else {
