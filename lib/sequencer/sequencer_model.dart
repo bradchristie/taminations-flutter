@@ -316,7 +316,7 @@ class SequencerModel extends fm.ChangeNotifier {
     var ctx = CallContext.fromFormation(Formation(startingFormation));
     if (settings.geometry == 'Bi-Gon') {
       for (var i=0; i<8; i++)
-        ctx.dancers[i].path = animation.dancers[i % 2].path.clone();
+        ctx.dancers[i].path = animation.dancers[i ~/ 2].path.clone();
     } else if (settings.geometry == 'Hexagon') {
       for (var i=0; i<8; i++)
         ctx.dancers[i].path = animation.dancers[(i~/2)*3].path.clone();
@@ -337,7 +337,8 @@ class SequencerModel extends fm.ChangeNotifier {
       for (var i=0; i<12; i++)
         animation.dancers[i].path += ctx.dancers[(i~/3)*2].path;
     } else if (settings.geometry == 'Bi-Gon') {
-
+      for (var i=0; i<4; i++)
+        animation.dancers[i].path += ctx.dancers[i*2].path;
     }
     else {
       for (var i=0; i<8; i++)
