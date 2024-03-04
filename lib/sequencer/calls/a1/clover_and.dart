@@ -24,7 +24,8 @@ class Cloverleaf extends Action {
 
   @override var level = LevelData.MS;
   @override var helplink = 'ms/cloverleaf';
-  Cloverleaf() : super('Cloverleaf');
+
+  Cloverleaf(super.name);
 
   //  We get here only if standard Cloverleaf with all 8 dancers fails.
   //  So try a 4-dancer cloverleaf
@@ -46,7 +47,8 @@ class CloverAnd extends Action {
   LevelData get level => (name == 'Clover and Nothing' ||
       name == 'Clover and Adjust to a Box')
       ? LevelData.MS : LevelData.A1;
-  CloverAnd(String name) : super(name);
+
+  CloverAnd(super.name);
 
   @override
   void performCall(CallContext ctx) {

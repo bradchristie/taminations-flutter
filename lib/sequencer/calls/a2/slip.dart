@@ -24,7 +24,8 @@ class Slip extends Action {
 
   @override final level = LevelData.A2;
   @override var helplink = 'a2/slip';
-  Slip(name) : super(name);
+
+  Slip(super.name);
 
   @override
   void performCall(CallContext ctx) {

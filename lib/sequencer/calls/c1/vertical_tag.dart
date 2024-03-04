@@ -25,7 +25,8 @@ class VerticalTag extends Action {
 
   @override final level = LevelData.C1;
   @override var helplink = 'c1/vertical_tag';
-  VerticalTag(String name) : super(name);
+
+  VerticalTag(super.name);
 
   @override
   void performCall(CallContext ctx) {

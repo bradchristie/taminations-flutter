@@ -22,6 +22,6 @@ import '../action.dart';
 
 class Nothing extends Action {
 
-  Nothing(name) : super(name);
+  Nothing(super.name);
 
 }

@@ -28,7 +28,8 @@ class CrossAndWheel extends Action with IsLeft, CallWithParts {
   2.  As Couples Step and Fold''';
   @override var helplink = 'c2/cross_and_wheel';
   @override int numberOfParts = 2;
-  CrossAndWheel(name) : super(name);
+
+  CrossAndWheel(super.name);
 
   @override
    void performPart1(CallContext ctx) {

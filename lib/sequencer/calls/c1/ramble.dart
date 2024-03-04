@@ -28,7 +28,8 @@ class Ramble extends Action with CallWithParts {
   1.  Center 4 Single Wheel, others Separate
   2.  Slide Thru''';
   @override var helplink = 'c1/scoot_and_ramble';
-  Ramble() : super('Ramble');
+
+  Ramble(super.name);
 
   @override
    void performPart1(CallContext ctx) {

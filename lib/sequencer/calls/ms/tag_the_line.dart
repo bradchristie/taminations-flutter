@@ -30,11 +30,12 @@ For larger lines, use
 Line of (6 or 8) [Left] [Half] Tag the Line
 ''';
   @override var helplink = 'ms/tag';
-  TagTheLine(name) : super(name);
+
+  TagTheLine(super.name);
 
   @override
    void performCall(CallContext ctx, [int i = 0]) {
-    ctx.applyCalls('$left 34tag');
+    ctx.applyCalls('$left 34 Tag');
     ctx.contractPaths();
     ctx.applyCalls('extend');
   }
@@ -57,7 +58,8 @@ class BigLineTagTheLine extends Action {
       DancerModel.fromData(gender:Gender.GIRL,x:2,y:-1,angle:180),
   ]);
 
-  BigLineTagTheLine(String name) : isLeft=name.contains('Left'), super(name) ;
+
+  BigLineTagTheLine(super.name) : isLeft=name.contains('Left');
 
   @override
   void performCall(CallContext ctx) {

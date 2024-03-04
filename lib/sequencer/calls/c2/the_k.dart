@@ -24,7 +24,8 @@ class TheK extends Action {
 
   @override final level = LevelData.C2;
   @override var helplink = 'c2/cross_the_k';
-  TheK(String name) : super(name);
+
+  TheK(super.name);
 
   @override
   void performCall(CallContext ctx) {

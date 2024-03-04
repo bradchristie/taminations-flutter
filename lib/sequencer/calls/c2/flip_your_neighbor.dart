@@ -29,7 +29,8 @@ class FlipYourNeighbor extends Action with CallWithParts {
   1.  Flip the Line 1/2
   2.  Follow / Cross / Criss Cross Your Neighbor''';
   @override var helplink = 'c2/any_tagging_call_your_neighbor';
-  FlipYourNeighbor(String name) : super(name);
+
+  FlipYourNeighbor(super.name);
 
   static const flipTypes = {
     'Flip Your Neighbor' : 'Follow Your Neighbor',

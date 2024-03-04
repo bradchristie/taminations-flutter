@@ -206,7 +206,8 @@ class _AnimationFrameState extends fm.State<AnimationFrame>
                           ? settings.dancerShapes : true);
                       danceModel.showPhantoms = settings.phantoms;
                       var note = danceModel.animationNote;
-                      final setGeometry = appState.mainPage == MainPage.SEQUENCER ? Geometry.SQUARE : Geometry.fromString(settings.geometry).geometry;
+                      final setGeometry = Geometry.fromString(settings.geometry).geometry;
+                      var geometryChanged = setGeometry != danceModel.geometryType;
                       if (setGeometry != Geometry.SQUARE && danceModel.asymmetric)
                         note = 'Special Geometry not available for asymmetric animations';
                       else
@@ -260,6 +261,8 @@ class _AnimationFrameState extends fm.State<AnimationFrame>
                         final bb = danceModel.beater.beat.i.clamp(0, tb);
                         beatStr = '$bb of $tb';
                       }
+                      if (isSequencer && geometryChanged)
+                        sequencerModel.reset();
 
                       //  Wrap dance area with widget to detect pointer events
                       //  Hook up mouse wheel

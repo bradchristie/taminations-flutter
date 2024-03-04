@@ -24,7 +24,7 @@ import '../action.dart';
 
 class QuarterMore extends Action {
 
-  QuarterMore() : super('and a Quarter More' );
+  QuarterMore(super.name);
 
   @override
    void performCall(CallContext ctx) {

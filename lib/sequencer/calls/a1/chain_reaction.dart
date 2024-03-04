@@ -32,7 +32,8 @@ class ChainReaction extends Action with CallWithParts, CallWithStars, ButCall {
 The star turn amount can be changed with Turn the Star (fraction).
 The centers part of Part 4 can be changed with But (another call).  
   ''';
-  ChainReaction() : super('Chain Reaction');
+
+  ChainReaction(super.name);
 
   @override
    void performPart1(CallContext ctx) {

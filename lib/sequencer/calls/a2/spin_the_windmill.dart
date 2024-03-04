@@ -24,7 +24,8 @@ class SpinTheWindmill extends Action {
 
   @override final level = LevelData.A2;
   @override var helplink = 'a2/spin_the_windmill';
-  SpinTheWindmill(String name) : super(name);
+
+  SpinTheWindmill(super.name);
 
   @override
   void performCall(CallContext ctx) {
@@ -61,7 +62,7 @@ class SpinTheWindmill extends Action {
 
 class WindmillX extends Action {
 
-  WindmillX(String name) : super(name);
+  WindmillX(super.name);
 
   @override
   void performCall(CallContext ctx) {

@@ -25,7 +25,8 @@ class HorseshoeTurn extends Action {
   @override final level = LevelData.A1;
   @override var help = 'Same as Clover and Partner Tag';
   @override var helplink = 'a1/horseshoe_turn';
-  HorseshoeTurn() : super('Horseshoe Turn');
+
+  HorseshoeTurn(super.name);
 
   @override
   void performCall(CallContext ctx) {

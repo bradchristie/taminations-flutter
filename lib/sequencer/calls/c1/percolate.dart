@@ -31,7 +31,8 @@ class Percolate extends Action with CallWithParts, ButCall, IsToAWave {
   3.  Center 4 Hinge and Cross, others Turn Thru
 The Hinge and Cross can be replaced with But (another call)''';
   @override var helplink = 'c1/percolate';
-  Percolate(String name) : super(name);
+
+  Percolate(super.name);
 
   @override
    void performPart1(CallContext ctx) {

@@ -31,7 +31,7 @@ class CrossRun extends Action with ActivesOnly {
   @override
   var helplink = 'b2/run';
 
-  CrossRun(String name) : super(name);
+  CrossRun(super.name);
 
   @override
   void performCall(CallContext ctx) {

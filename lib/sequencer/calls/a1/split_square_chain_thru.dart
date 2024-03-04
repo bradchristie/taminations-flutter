@@ -31,7 +31,7 @@ class SplitSquareChainThru extends Action with IsLeft, CallWithParts {
 The hands can be swapped with Left Split Square Chain Thru''';
   @override var helplink = 'a1/split_square_chain_thru';
 
-  SplitSquareChainThru(String name) : super(name);
+  SplitSquareChainThru(super.name);
 
   @override
   void performPart1(CallContext ctx) {

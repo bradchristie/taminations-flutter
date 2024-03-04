@@ -18,7 +18,6 @@
 
 */
 
-
 import '../../../moves.dart';
 import '../common.dart';
 
@@ -28,7 +27,7 @@ class Circulate extends Action {
       ' Column Circulate, Couples Circulate, and, for 4 dancers, Box Circulate.';
   @override var helplink = 'b1/circulate';
 
-  Circulate(name) : super(name);
+  Circulate(super.name);
 
   @override
   void performCall(CallContext ctx) {

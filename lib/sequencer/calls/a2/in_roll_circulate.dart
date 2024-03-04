@@ -25,6 +25,7 @@ import '../common.dart';
 class InRollCirculate extends Action with IsPrefer {
 
   @override var level = LevelData.A2;
+
   InRollCirculate(super.name);
 
   @override

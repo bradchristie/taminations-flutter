@@ -26,7 +26,8 @@ class Truck extends Action with IsReverse {
 
   @override final level = LevelData.C2;
   @override var helplink = 'c2/truck';
-  Truck(String name) : super(name);
+
+  Truck(super.name);
 
   @override
   Path performOne(DancerModel d, CallContext ctx) {

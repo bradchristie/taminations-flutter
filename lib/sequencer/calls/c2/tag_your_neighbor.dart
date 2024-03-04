@@ -30,7 +30,8 @@ class TagYourNeighbor extends Action with CallWithParts {
   2.  Follow Your Neighbor
 Variations: (Left) (Vertical) Tag Your (Criss) (Cross) Neighbor''';
   @override var helplink = 'c2/any_tagging_call_your_neighbor';
-  TagYourNeighbor(String name) : super(name);
+
+  TagYourNeighbor(super.name);
 
   @override
    void performPart1(CallContext ctx) {

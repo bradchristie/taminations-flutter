@@ -23,19 +23,18 @@ Call pronunciations provided by
 
 ---
 
-## Taminations version 1.6.75 built 2024-02-19
+## Taminations version 1.6.76 built 2024-03-04
 Copyright 2024 by Brad Christie.  
 This is free software, and you are welcome to modify and redistribute it
 under the terms of the [GNU GPL license](http://www.gnu.org/licenses/gpl.html).  
 
 ## What's New
-* Animation for Once Removed Spin the Top
+* Animation for All 8 Recycle Centers 2/3
 * Sequencer changes:
-  - Fix some cases of Cross Run, Cast Off 3/4
-  - Accept Circulate options for Spin the Windmill
-  - Make sure 2/3 Linear Cycle ends in offset tandems
-  - Handle collisions with Diamond Circulate
-  - Accept selection of two groups of dancers e.g. Head Boys and Side Girls Jaywalk
+  - Enable non-square geometry
+  - Accept Run around more than 1 dancer
+  - Accept Prefer option for In/Out Roll Circulate
+  - Fix Concentric call and Roll
   
 For a detailed history of changes, view the
 [Git log](https://github.com/bradchristie/taminations-flutter/commits/main)

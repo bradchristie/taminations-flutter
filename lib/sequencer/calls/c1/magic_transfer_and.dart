@@ -23,7 +23,8 @@ class MagicTransferAnd extends Action {
 
   @override final level = LevelData.C1;
   @override var helplink = 'c1/magic_column_formation';
-  MagicTransferAnd(String name) : super(name);
+
+  MagicTransferAnd(super.name);
 
   @override
   void performCall(CallContext ctx) {

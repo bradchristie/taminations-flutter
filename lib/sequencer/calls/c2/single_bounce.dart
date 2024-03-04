@@ -29,7 +29,8 @@ class SingleBounce extends Action with ActivesOnly, CallWithParts {
   @override var helplink = 'c2/bounce';
   var beaudancers = <DancerModel>[];
   var belledancers = <DancerModel>[];
-  SingleBounce(String name) : super(name);
+
+  SingleBounce(super.name);
 
   @override
    void performPart1(CallContext ctx) {

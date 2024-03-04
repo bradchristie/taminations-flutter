@@ -25,7 +25,8 @@ class TouchAQuarter extends Action with IsLeft {
   @override var level = LevelData.B2;
   @override var help = 'The sequencer also accepts Touch 1/2 and Touch 3/4';
   @override var helplink = 'b2/touch_a_quarter';
-  TouchAQuarter(String name) : super(name);
+
+  TouchAQuarter(super.name);
 
   @override
   void performCall(CallContext ctx) {

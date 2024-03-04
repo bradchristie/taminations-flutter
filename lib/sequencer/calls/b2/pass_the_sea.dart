@@ -30,7 +30,8 @@ class PassTheSea extends Action with ActivesOnly, CallWithParts {
   2.  Quarter In
   3.  Step to a Left-Hand Wave''';
   @override var helplink = 'a1/pass_the_sea';
-  PassTheSea() : super('Pass the Sea');
+
+  PassTheSea(super.name);
 
   @override
    void performPart1(CallContext ctx) {

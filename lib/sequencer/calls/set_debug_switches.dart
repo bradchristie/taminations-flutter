@@ -30,7 +30,7 @@ NoSnap
 Parsing
 Perform''';
 
-  SetDebugSwitch(String name) : super(name);
+  SetDebugSwitch(super.name);
 
   @override
   void performCall(CallContext ctx) {

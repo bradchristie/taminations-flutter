@@ -27,7 +27,8 @@ class CastOffThreeQuarters extends Action {
   You can use 1/4, 1/2, 3/4 for the fraction.
   Dancers must be couples or mini-waves not centered on an axis.''';
   @override var helplink = 'ms/cast_off_three_quarters';
-  CastOffThreeQuarters(String name) : super(name);
+
+  CastOffThreeQuarters(super.name);
 
   @override
   void performCall(CallContext ctx0) {

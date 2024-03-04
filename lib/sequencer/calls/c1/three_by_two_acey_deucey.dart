@@ -24,7 +24,8 @@ class ThreeByTwoAceyDeucey extends Action {
 
   @override final level = LevelData.C1;
   @override var helplink = 'c1/three_by_two_acey_deucey';
-  ThreeByTwoAceyDeucey(String name) : super(name);
+
+  ThreeByTwoAceyDeucey(super.name);
 
   @override
   void performCall(CallContext ctx) {

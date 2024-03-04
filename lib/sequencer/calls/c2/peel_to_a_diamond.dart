@@ -25,7 +25,8 @@ class PeelToADiamond extends Action {
   @override final level = LevelData.C2;
   @override var help = 'Leaders Peel Off, Trailers meet and Hinge';
   @override var helplink = 'c2/peel_to_a_diamond';
-  PeelToADiamond(name) : super(name);
+
+  PeelToADiamond(super.name);
 
   @override
   void performCall(CallContext ctx) {

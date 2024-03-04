@@ -24,7 +24,7 @@ import 'fliter_actives.dart';
 
 class Ends extends FilterActives {
 
-  Ends() : super('Ends');
+  Ends(super.name);
 
   @override
   bool isActive(DancerModel d, CallContext ctx) => d.data.end;

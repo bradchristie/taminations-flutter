@@ -25,7 +25,8 @@ class CrossFold extends Action {
 
   @override var level = LevelData.MS;
   @override var helplink = 'ms/fold';
-  CrossFold() : super('Cross Fold');
+
+  CrossFold(super.name);
 
   @override
   void performCall(CallContext ctx) {

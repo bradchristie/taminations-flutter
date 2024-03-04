@@ -28,7 +28,8 @@ class CoupleUp extends Action with ActivesOnly, CallWithParts {
   2.  Leaders Turn Back
 (anything) Like a Couple Up: Do the (anything) call, then leaders Turn Back.''';
   @override var helplink = 'c3a/couple_up';
-  CoupleUp() : super('Couple Up');
+
+  CoupleUp(super.name);
 
   @override
    void performPart1(CallContext ctx) {
@@ -49,9 +50,10 @@ class CoupleUp extends Action with ActivesOnly, CallWithParts {
 class LikeACoupleUp extends Action with ActivesOnly {
 
   @override final level = LevelData.C3A;
-  @override var help = CoupleUp().help;
-  @override var helplink = CoupleUp().helplink;
-  LikeACoupleUp() : super('Like A Couple Up');
+  @override var help = CoupleUp('').help;
+  @override var helplink = CoupleUp('').helplink;
+
+  LikeACoupleUp(super.name);
 
   @override
   void performCall(CallContext ctx) {

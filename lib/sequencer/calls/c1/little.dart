@@ -24,7 +24,8 @@ class Little extends Action {
 
   @override final level = LevelData.C1;
   @override var helplink = 'c1/scoot_and_little';
-  Little(String name) : super(name);
+
+  Little(super.name);
 
   @override
   void performCall(CallContext ctx) {

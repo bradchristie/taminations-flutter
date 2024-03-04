@@ -40,11 +40,10 @@ Variations: (Left) Pass and Roll (Your (Cross) Neighbor)''';
     else
       return 'a2/pass_and_roll';
   }
-  PassAndRoll(String name) :
+  PassAndRoll(super.name) :
         dir = name.startsWith('Left') ? 'Left' : 'Right',
         isNeighbor = name.endsWith('Neighbor'),
-        isCross = name.contains('Cross'),
-        super(name) {
+        isCross = name.contains('Cross') {
     if (isCross)
       level = LevelData.C1;
   }

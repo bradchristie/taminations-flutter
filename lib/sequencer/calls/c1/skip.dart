@@ -27,7 +27,8 @@ class Skip extends Action {
       'with Skip the nth Part.\n'
   'Also accepted is Skip the Last <n> Parts.';
   @override var helplink = 'c1/replace';
-  Skip(String name) : super(name);
+
+  Skip(super.name);
 
   @override
   void addToStack(CallContext ctx) {

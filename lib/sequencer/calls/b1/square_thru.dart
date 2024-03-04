@@ -28,7 +28,8 @@ class SquareThru extends Action with IsLeft, IsToAWave {
       'Square Thru (n) to a Wave\n'
       'Square Thru on the (nth) Hand (some call)';
   @override var helplink = 'b1/square_thru';
-  SquareThru(String name) : super(name);
+
+  SquareThru(super.name);
 
   @override
    void performCall(CallContext ctx, [int i=0]) {
@@ -90,7 +91,7 @@ class SquareThru extends Action with IsLeft, IsToAWave {
 
 class StepToACompactWave extends Action {
 
-  StepToACompactWave(String name) : super(name);
+  StepToACompactWave(super.name);
 
   @override
   Path performOne(DancerModel d, CallContext ctx) {

@@ -26,7 +26,8 @@ class Loop extends Action {
   @override final level = LevelData.C2;
   @override var help = '';
   @override var helplink = 'c2/loop';
-  Loop(String name) : super(name);
+
+  Loop(super.name);
 
   @override
   Path performOne(DancerModel d, CallContext ctx) {

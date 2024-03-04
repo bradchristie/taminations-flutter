@@ -28,7 +28,8 @@ class CrossRamble extends Action with CallWithParts {
   1.  Outer 4 Cross Cast Back, others Extend and Trade
   2.  Everyone Slide Thru''';
   @override var helplink = 'c2/cross_ramble';
-  CrossRamble() : super('Cross Ramble');
+
+  CrossRamble(super.name);
 
   @override
    void performPart1(CallContext ctx) {

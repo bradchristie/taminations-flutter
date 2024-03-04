@@ -35,7 +35,7 @@ class Left extends CodedCall {
 
   @override var nextCallCoded = true;
 
-  Left(String name) : super(name);
+  Left(super.name);
 
   @override
   void performCall(CallContext ctx) {

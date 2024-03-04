@@ -25,7 +25,8 @@ class DoubleCross extends Action {
   @override var level = LevelData.A1;
   @override var help = '3 by 2 columns can Double Cross';
   @override var helplink = 'a1/triple_cross';
-  DoubleCross() : super('Double Cross');
+
+  DoubleCross(super.name);
 
   @override
   void performCall(CallContext ctx) {

@@ -28,7 +28,8 @@ class DixieDiamond extends Action with ActivesOnly, CallWithParts, IsReverse {
   1.  Dixie Style to a Wave
   2.  Centers Hinge, Ends Turn Back''';
   @override var helplink = 'c1/dixie_diamond';
-  DixieDiamond(String name) : super(name);
+
+  DixieDiamond(super.name);
 
   @override
    void performPart1(CallContext ctx) {

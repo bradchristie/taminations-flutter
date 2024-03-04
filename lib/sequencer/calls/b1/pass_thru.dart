@@ -25,7 +25,7 @@ class PassThru extends Action with IsLeft {
 
   @override var helplink = 'b1/pass_thru';
 
-  PassThru(String name) : super(name);
+  PassThru(super.name);
 
   @override
   Path performOne(DancerModel d, CallContext ctx) {

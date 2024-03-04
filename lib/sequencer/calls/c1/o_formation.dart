@@ -39,7 +39,8 @@ class OFormation extends ModifiedFormationConcept {
       'You can skip the final re-adjustment to the O formation '
       'by appending To Lines / Waves / Columns';
   @override var helplink = 'c1/o_formation';
-  OFormation(String name) : super(name);
+
+  OFormation(super.name);
 
   @override
   bool reformFormation(CallContext ctx) {

@@ -30,7 +30,8 @@ You can also finish a singing call sequencer with
 Swing Corner and Promenade
 Or, skip the Swing with
 Promenade Corner''';
-  Swing(String name) : super(name);
+
+  Swing(super.name);
 
   @override
   void performCall(CallContext ctx) {

@@ -29,7 +29,7 @@ class TagBack extends Action with CallWithParts, IsToAWave, IsLeft {
   2.  Scoot Back''';
   @override var helplink = 'c1/tagging_calls_back_to_a_wave';
 
-  TagBack(String name) : super(name);
+  TagBack(super.name);
 
   @override
    void performPart1(CallContext ctx) {

@@ -26,7 +26,8 @@ class Fold extends Action {
   @override
   var level = LevelData.MS;
   @override var helplink = 'ms/fold';
-  Fold() : super('Fold');
+
+  Fold(super.name);
 
   //  We need to work with all the dancers, not just actives
   //  because partners of the folders need to adjust

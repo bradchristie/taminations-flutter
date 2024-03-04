@@ -28,7 +28,8 @@ class ChiselThru extends Action with CallWithParts {
   2.  Pass Thru and 1/4 In
   3.  Pass In''';
   @override var helplink = 'c2/chisel_thru';
-  ChiselThru() : super('Chisel Thru');
+
+  ChiselThru(super.name);
 
   @override
    void performPart1(CallContext ctx) {

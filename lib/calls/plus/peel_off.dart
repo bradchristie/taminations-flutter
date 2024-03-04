@@ -93,6 +93,20 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Peel Off',
+        from: 'Tandem Couples', noDisplay: true,
+        formation:Formation('', asymmetric: true, dancers:[
+          DancerModel.fromData(gender:Gender.BOY,x:1.5,y:1,angle:0),
+          DancerModel.fromData(gender:Gender.GIRL,x:1.5,y:-1,angle:0),
+          DancerModel.fromData(gender:Gender.BOY,x:-1.5,y:1,angle:0),
+        DancerModel.fromData(gender:Gender.GIRL,x:-1.5,y:-1,angle:0)]),
+        paths: [
+          RunLeft.scale(0.5,0.25).skew(-1.5, 0),
+          RunRight.scale(0.5,0.25).skew(-1.5, 0),
+          UmTurnLeft.skew(1.5,-.5),
+          UmTurnRight.skew(1.5,.5),
+        ]),
+
+    AnimatedCall('Peel Off',
       formation:Formation('Double Pass Thru'),
       from:'Double Pass Thru',difficulty: 2,
       paths:[

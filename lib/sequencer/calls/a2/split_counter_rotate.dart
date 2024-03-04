@@ -23,7 +23,8 @@ class SplitCounterRotate extends Action {
 
   @override final level = LevelData.A2;
   @override var helplink = 'a2/box_counter_rotate';
-  SplitCounterRotate(name) : super(name);
+
+  SplitCounterRotate(super.name);
 
   @override
   void performCall(CallContext ctx) {
@@ -41,6 +42,7 @@ class SplitCounterRotate extends Action {
 class SplitCounterRotateFraction extends Action {
 
   @override final level = LevelData.A2;
+
   SplitCounterRotateFraction(super.name);
 
   @override

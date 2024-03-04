@@ -23,7 +23,7 @@ import '../action.dart';
 
 class Everyone extends Action {
 
-  Everyone(String name) : super(name);
+  Everyone(super.name);
 
   @override
    void performCall(CallContext ctx) {

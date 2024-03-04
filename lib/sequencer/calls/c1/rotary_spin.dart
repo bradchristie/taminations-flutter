@@ -29,7 +29,7 @@ class RotarySpin extends Action with CallWithParts, IsLeft {
 You can switch the hands with Left Rotary Spin''';
   @override var helplink = 'c1/rotary_spin';
 
-  RotarySpin(String name) : super(name);
+  RotarySpin(super.name);
 
   @override
    void performPart1(CallContext ctx) {

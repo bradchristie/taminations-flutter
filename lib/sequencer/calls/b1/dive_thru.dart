@@ -24,6 +24,7 @@ import '../common.dart';
 class DiveThru extends Action with CallWithParts {
 
   @override var numberOfParts = 2;
+
   DiveThru(super.name);
 
   @override

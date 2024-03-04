@@ -41,7 +41,8 @@ Formations you can use include
      Sausage (Column of 6 with lone dancers at each end)
      Outrigger (Tidal Wave after center 4 Hinge)
      ''';
-  Adjust(String name) : super(name);
+
+  Adjust(super.name);
 
   @override
   void performCall(CallContext ctx) {

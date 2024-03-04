@@ -22,7 +22,7 @@ import '../common.dart';
 class InTheCenter extends Action {
 
 
-  InTheCenter() : super('In the Center');
+  InTheCenter(super.name);
 
   @override
   void performCall(CallContext ctx) {

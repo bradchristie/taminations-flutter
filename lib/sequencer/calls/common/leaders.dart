@@ -24,7 +24,7 @@ import 'fliter_actives.dart';
 
 class Leaders extends FilterActives {
 
-  Leaders(name) : super(name);
+  Leaders(super.name);
 
   @override
   bool isActive(DancerModel d, CallContext ctx) => d.data.leader;

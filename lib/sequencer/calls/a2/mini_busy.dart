@@ -29,7 +29,8 @@ class MiniBusy extends Action with CallWithParts, ButCall {
   Trailers (1) As Couples Extend (2) Very Centers Hinge (3) Flip the Diamond
 Trailers part 3 can be replace with But (another call)''';
   @override var helplink = 'a2/mini_busy';
-  MiniBusy() : super('Mini-Busy');
+
+  MiniBusy(super.name);
 
   @override
    void performPart1(CallContext ctx) {

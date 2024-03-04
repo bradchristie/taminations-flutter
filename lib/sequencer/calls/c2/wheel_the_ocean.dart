@@ -32,7 +32,8 @@ class WheelTheOcean extends Action with CallWithParts {
   1.  ${_wheelAmount()}
   2.  ${_passCall()}''';
   @override var numberOfParts = 2;
-  WheelTheOcean(String name) : super(name);
+
+  WheelTheOcean(super.name);
 
   String _wheelAmount() {
     var reverse = name.contains('Reverse') ? ' Reverse' : '';

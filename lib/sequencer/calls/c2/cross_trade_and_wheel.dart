@@ -29,7 +29,8 @@ class CrossTradeAndWheel extends Action with IsLeft, IsGrand, CallWithParts {
   2.  if Grand, Triple Trade, else Very Centers Trade
   3.  As Couples Step and Fold''';
   @override var helplink = 'c2/cross_and_wheel';
-  CrossTradeAndWheel(String name) : super(name);
+
+  CrossTradeAndWheel(super.name);
 
   @override
    void performPart1(CallContext ctx) {

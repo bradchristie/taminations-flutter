@@ -21,7 +21,7 @@ import '../common.dart';
 
 class Couples extends FilterActives {
 
-  Couples(String name) : super(name);
+  Couples(super.name);
 
   @override
   bool isActive(DancerModel d, CallContext ctx) => ctx.isInCouple(d);

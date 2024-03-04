@@ -29,7 +29,8 @@ class SingleCrossAndWheel extends Action with IsLeft, IsGrand, CallWithParts {
   2.  (Grand) Step and Fold
 You can make couples do a Left Hinge with Left Single Cross and Wheel''';
   @override var helplink = 'c2/cross_and_wheel';
-  SingleCrossAndWheel(name) : super(name);
+
+  SingleCrossAndWheel(super.name);
 
   @override
    void performPart1(CallContext ctx) {

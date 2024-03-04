@@ -32,7 +32,8 @@ class Motivate extends Action with CallWithParts, CallWithStars, ButCall {
 The star amount can be changed with Turn the Star (fraction).
 The final Cast Off 3/4 can be replaced with But (another call).''';
   @override var helplink = 'a2/motivate';
-  Motivate() : super('Motivate');
+
+  Motivate(super.name);
 
   @override
    void performPart1(CallContext ctx) {

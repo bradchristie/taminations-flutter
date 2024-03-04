@@ -26,7 +26,8 @@ class WheelAnd extends Action with IsReverse {
 
   @override final level = LevelData.C1;
   @override var helplink = 'c1/wheel_and_anything';
-  WheelAnd(String name) : super(name);
+
+  WheelAnd(super.name);
 
   @override
   void performCall(CallContext ctx) {

@@ -29,7 +29,8 @@ class ScootAndCrossRamble extends Action with CallWithParts {
   2.  Outer 4 Cross Cast Back, others Extend and Trade
   3.  Slide Thru''';
   @override var helplink = 'c2/cross_ramble';
-  ScootAndCrossRamble(name) : super(name);
+
+  ScootAndCrossRamble(super.name);
 
   @override
    void performPart1(CallContext ctx) {

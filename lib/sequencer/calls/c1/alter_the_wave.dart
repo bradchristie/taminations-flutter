@@ -30,7 +30,8 @@ class AlterTheWave extends Action with CallWithParts, CallWithStars {
   3.  Turn the Star (Split Counter Rotate) Twice - amount can be changed
   4.  Flip the Diamond''';
   @override var helplink = 'c1/alter_the_wave';
-  AlterTheWave(String name) : super(name);
+
+  AlterTheWave(super.name);
 
   @override
    void performPart1(CallContext ctx) {

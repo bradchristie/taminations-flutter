@@ -29,7 +29,8 @@ class Coordinate extends Action with CallWithParts {
   3.  Center 6 Trade
   4.  Center 2 and Outer 2 move up''';
   @override var helplink = 'plus/coordinate';
-  Coordinate() : super('Coordinate');
+
+  Coordinate(super.name);
 
   @override
    void performPart1(CallContext ctx) {

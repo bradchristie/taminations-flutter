@@ -24,7 +24,7 @@ import 'fliter_actives.dart';
 
 class FacingIn extends FilterActives {
 
-  FacingIn(String name) : super(name);
+  FacingIn(super.name);
 
   @override
   bool isActive(DancerModel d, CallContext ctx) => d.isFacingIn;

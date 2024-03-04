@@ -29,7 +29,8 @@ class But extends Action {
   @override var help = 'But (something) replaces a specific part of a call. '
       'See the definition or Help info for calls that support But.';
   @override var helplink = 'c1/replace';
-  But(String name) : super(name);
+
+  But(super.name);
 
   @override
   void performCall(CallContext ctx) {

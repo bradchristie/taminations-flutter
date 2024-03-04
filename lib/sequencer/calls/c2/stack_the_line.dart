@@ -30,7 +30,7 @@ class StackTheLine extends Action with ActivesOnly, CallWithParts, IsLeft {
   @override var helplink = 'c2/stack_the_line';
   List<DancerModel> originalLeads = [];
 
-  StackTheLine(String name) : super(name);
+  StackTheLine(super.name);
 
   @override
    void performPart1(CallContext ctx) {

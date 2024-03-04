@@ -28,7 +28,8 @@ class ScootAndRamble extends Action with CallWithParts {
   1.  Scoot Back
   2.  Ramble''';
   @override var helplink = 'c1/scoot_and_ramble';
-  ScootAndRamble(name) : super(name);
+
+  ScootAndRamble(super.name);
 
   @override
    void performPart1(CallContext ctx) {

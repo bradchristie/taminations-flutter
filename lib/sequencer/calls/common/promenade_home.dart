@@ -42,7 +42,8 @@ Swing Corner and Promenade
 Or, skip the Swing with
 Promenade Corner''';
   @override var helplink = 'b1/promenade';
-  PromenadeHome(String name) : super(name);
+
+  PromenadeHome(super.name);
 
   var _startPoints = <Vector>[];
 

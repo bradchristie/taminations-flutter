@@ -71,7 +71,7 @@ import '../../moves.dart';
 
     AnimatedCall('Left Touch a Quarter',
       formation:Formation('Facing Couples Compact'),
-      from:'Facing Couples',difficulty: 2,notForSequencer: true,
+      from:'Facing Couples',difficulty: 2,
       paths:[
           ExtendRight.scale(1.5,0.5) +
           HingeLeft.changeBeats(1),

@@ -25,7 +25,9 @@ class RollToAWave extends Action {
 
   @override final level = LevelData.A1;
   @override var helplink = 'a1/right_roll_to_a_wave';
-  RollToAWave(String name) : super(name);
+
+  RollToAWave(super.name);
+
   @override
   Path performOne(DancerModel d, CallContext ctx) {
     final flip = name.startsWith('Left') ? FlipLeft : FlipRight;

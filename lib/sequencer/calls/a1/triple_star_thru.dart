@@ -24,7 +24,8 @@ class TripleStarThru extends Action with CallWithParts {
 
   @override final level = LevelData.A1;
   @override var helplink = 'a1/double_star_thru';
-  TripleStarThru(String name) : super(name) {
+
+  TripleStarThru(super.name) {
     numberOfParts = name.contains('Triple') ? 3 : 2;
   }
 

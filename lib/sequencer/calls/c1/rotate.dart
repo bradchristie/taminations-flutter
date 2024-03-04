@@ -30,7 +30,7 @@ class Rotate extends Action with IsReverse, IsSingle {
       'You can modify with both Reverse and Single.';
   @override var helplink = 'c1/rotate';
 
-  Rotate(String name) : super(name);
+  Rotate(super.name);
 
   @override
   void performCall(CallContext ctx) {

@@ -30,9 +30,7 @@ class QuarterMix extends Action with CallWithParts, IsLeft, IsGrand {
   3.  New Centers Trade''';
   @override var helplink = 'c3a/1_4_mix';
 
-  QuarterMix(name) :
-        isThree=normalizeCall(name).contains('34'),
-        super(name);
+  QuarterMix(super.name) : isThree=normalizeCall(name).contains('34');
 
   @override
    void performPart1(CallContext ctx) {

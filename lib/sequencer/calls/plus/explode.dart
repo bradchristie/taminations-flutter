@@ -28,7 +28,8 @@ class Explode extends Action {
   @override var level = LevelData.PLUS;
   @override var help = 'You can use Explode for Explode and Nothing';
   @override var helplink = 'plus/explode_and_anything';
-  Explode() : super('Explode');
+
+  Explode(super.name);
 
   @override
   Path performOne(DancerModel d, CallContext ctx) {

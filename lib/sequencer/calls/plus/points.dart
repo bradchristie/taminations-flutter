@@ -23,7 +23,7 @@ import '../common.dart';
 
 class Points extends CodedCall {
 
-  Points() : super('Points');
+  Points(super.name);
 
   @override
    void performCall(CallContext ctx) {

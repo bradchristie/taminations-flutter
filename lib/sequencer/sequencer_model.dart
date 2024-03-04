@@ -311,6 +311,48 @@ class SequencerModel extends fm.ChangeNotifier {
       undoReset();
   }
 
+  CallContext _contextFromAnimation() {
+    final settings = Settings();
+    var ctx = CallContext.fromFormation(Formation(startingFormation));
+    if (settings.geometry == 'Bi-Gon') {
+      for (var i=0; i<8; i++)
+        ctx.dancers[i].path = animation.dancers[i ~/ 2].path.clone();
+    } else if (settings.geometry == 'Hexagon') {
+      for (var i=0; i<8; i++)
+        ctx.dancers[i].path = animation.dancers[(i~/2)*3].path.clone();
+    } else if (settings.geometry == 'Hashtag') {
+      for (var i=0; i<8; i++)
+        ctx.dancers[i].path = animation.dancers[i*2].path.clone();
+    }
+    else {
+      for (var i=0; i<8; i++)
+        ctx.dancers[i].path = animation.dancers[i].path.clone();
+      ctx.animateToEnd();
+      ctx.asymmetric = !ctx.dancers.areDancersOrdered();
+    }
+    ctx.animateToEnd();
+    return CallContext.fromContext(ctx);
+  }
+
+  void _applyContextToAnimation(CallContext ctx) {
+    final settings = Settings();
+    if (settings.geometry == 'Hexagon') {
+      for (var i=0; i<12; i++)
+        animation.dancers[i].path += ctx.dancers[(i~/3)*2].path;
+    } else if (settings.geometry == 'Bi-Gon') {
+      for (var i=0; i<4; i++)
+        animation.dancers[i].path += ctx.dancers[i*2].path;
+    } else if (settings.geometry == 'Hashtag') {
+      for (var i=0; i<16; i++) {
+        animation.dancers[i].path += ctx.dancers[i ~/ 2].path;
+      }
+    }
+    else {
+      for (var i=0; i<8; i++)
+        animation.dancers[i].path += ctx.dancers[i].path;
+    }
+  }
+
   void _interpretOneCall(String call) {
     if (call.isBlank)
       return;
@@ -359,7 +401,7 @@ class SequencerModel extends fm.ChangeNotifier {
 
     else {
       var prevbeats = animation.beats;
-      var cctx = CallContext.fromDancers(animation.dancers);
+      var cctx = _contextFromAnimation();
       cctx.interpretCall(call);
       cctx.performCall(tryDoYourPart: true);
       if (!cctx.callname.contains('(move in|step|gnat|back\\s*(up|away))'.ri))
@@ -379,13 +421,16 @@ class SequencerModel extends fm.ChangeNotifier {
         if (cctx.isCollision())
           throw CallError('Unable to calculate valid animation.');
       }
+      if (!(settings.geometry == 'None')) {
+        if (!cctx.dancers.areDancersOrdered())
+          throw CallError('Asymmetry only possible with square geometry');
+      }
       if (cctx.resolutionError)
         errorString = 'Warning: Dancers are not resolved';
       if (cctx.didYourPart)
         errorString = 'Note: Assuming Do Your Part';
       cctx.extendPaths();
-      cctx.appendToSource();
-      cctx.animateToEnd();
+      _applyContextToAnimation(cctx);
       animation.recalculate();
       var newbeats = animation.beats;
       if (newbeats > prevbeats) {
@@ -409,7 +454,8 @@ class SequencerModel extends fm.ChangeNotifier {
   void _startSequence() {
     var formation = Formation(startingFormation);
     var paths = [for (var _ in formation.dancers) Path()];
-    animation.setAnimatedCall(AnimatedCall('',formation:formation,paths:paths));
+    animation.setAnimatedCall(AnimatedCall('',formation:formation,paths:paths),
+        geometryType: Geometry.fromString(Settings().geometry).geometry);
     animation.recalculate();
     _updateParts();
   }

@@ -22,7 +22,7 @@ import '../common.dart';
 
 class OneCouple extends FilterActives {
 
-  OneCouple(String name) : super(name);
+  OneCouple(super.name);
 
   @override
   bool isActive(DancerModel d, CallContext ctx) {

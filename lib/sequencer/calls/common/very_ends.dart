@@ -26,7 +26,7 @@ import 'fliter_actives.dart';
 
 class VeryEnds extends FilterActives {
 
-  VeryEnds(String name) : super(name);
+  VeryEnds(super.name);
 
   @override
   bool isActive(DancerModel d, CallContext ctx) {

@@ -29,7 +29,8 @@ class SpinChainThru extends Action with CallWithParts, IsLeft, FacingCouplesRule
   3.  Very Centers Trade
   4.  Centers Cast Off 3/4''';
   @override var helplink = 'ms/spin_chain_thru';
-  SpinChainThru(name) : super(name);
+
+  SpinChainThru(super.name);
 
   @override
    void performPart1(CallContext ctx) {

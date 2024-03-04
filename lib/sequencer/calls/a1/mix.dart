@@ -27,7 +27,8 @@ class Mix extends Action with CallWithParts {
 1.  Centers Cross Run
 2.  New Centers Trade''';
   @override var helplink = 'a1/mix';
-  Mix() : super('Mix');
+
+  Mix(super.name);
 
   @override
    void performPart1(CallContext ctx) {

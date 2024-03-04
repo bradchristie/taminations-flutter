@@ -25,7 +25,8 @@ class Slither extends Action {
 
   @override final level = LevelData.A2;
   @override var helplink = 'a2/slip';
-  Slither(name) : super(name);
+
+  Slither(super.name);
 
   @override
   void performCall(CallContext ctx) {

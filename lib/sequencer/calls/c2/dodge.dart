@@ -25,7 +25,8 @@ class Dodge extends Action with ActivesOnly {
   @override var help = 'Dodge (call): Centers Walk and Dodge, '
       'others do their part of the call';
   @override var helplink = 'c2/dodge_anything';
-  Dodge(String name) : super(name);
+
+  Dodge(super.name);
 
   @override
   void performCall(CallContext ctx) {

@@ -30,7 +30,8 @@ class SquareChainThru extends Action
   3.  Left Turn Thru
 The hands can be swapped with Left Square Chain Thru''';
   @override var helplink = 'a1/square_chain_thru';
-  SquareChainThru(String name) : super(name);
+
+  SquareChainThru(super.name);
 
   @override
    void performPart1(CallContext ctx) {

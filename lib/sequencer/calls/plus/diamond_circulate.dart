@@ -29,7 +29,8 @@ class DiamondCirculate extends SplitCall with ActivesOnly {
       ' Diamonds, any 4 dancers arranged in a Diamond'
       ' can Diamond Circulate';
   @override var helplink = 'plus/diamond_circulate';
-  DiamondCirculate() : super('Diamond Circulate');
+
+  DiamondCirculate(super.name);
 
   @override
   void performCall(CallContext ctx) {

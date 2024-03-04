@@ -24,7 +24,8 @@ class SingleWheel extends Action with IsLeft {
 
   @override final level = LevelData.A2;
   @override var helplink = 'a2/single_wheel';
-  SingleWheel(String name) : super(name);
+
+  SingleWheel(super.name);
 
   @override
   void performCall(CallContext ctx) {

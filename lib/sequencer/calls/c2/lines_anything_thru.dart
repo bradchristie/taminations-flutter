@@ -24,7 +24,8 @@ class LinesAnythingThru extends Action {
   @override var level = LevelData.C2;
   @override var help = 'Lines (call) Thru: Centers do the call, others Circulate';
   @override var helplink = 'c2/lines_anything_thru';
-  LinesAnythingThru(String name) : super(name);
+
+  LinesAnythingThru(super.name);
 
   @override
   void performCall(CallContext ctx) {

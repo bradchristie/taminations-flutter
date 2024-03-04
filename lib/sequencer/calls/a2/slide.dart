@@ -25,7 +25,8 @@ class Slide extends Action {
 
   @override final level = LevelData.A2;
   @override var helplink = 'a2/slip';
-  Slide(String name) : super(name);
+
+  Slide(super.name);
 
   @override
   void performCall(CallContext ctx) {

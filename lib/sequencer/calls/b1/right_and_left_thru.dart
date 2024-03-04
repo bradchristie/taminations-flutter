@@ -27,7 +27,8 @@ class RightAndLeftThru extends Action with ActivesOnly, CallWithParts {
   2.  Courtesy Turn
 If the Courtesy Turn is not a boy turning a girl, the level will be marked Plus.''';
   @override var helplink = 'b1/right_and_left_thru';
-  RightAndLeftThru(String name) : super(name);
+
+  RightAndLeftThru(super.name);
 
   @override
    void performPart1(CallContext ctx) {

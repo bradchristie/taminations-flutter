@@ -1598,7 +1598,8 @@ Pass Thru
 Allemande Left''',''),
  */
 
-  TestSequence('Concentric 1', '''Heads Pass the Ocean
+  TestSequence('Concentric 1',
+'''Heads Pass the Ocean
 Extend
 Centers Box Counter Rotate
 Concentric Circulate
@@ -1612,7 +1613,7 @@ Box the Gnat
 Right and Left Grand''', ''),
 
   TestSequence('Checkpoint',
-  '''Heads Pass the Ocean
+'''Heads Pass the Ocean
 Extend
 Swing Thru
 Fan the Top
@@ -3963,5 +3964,13 @@ Boys Run
 Star Thru
 Pass Thru
 Allemande Left''',''),
+
+  TestSequence('Concentric and Roll',
+'''Heads Pass In
+Concentric Left Touch 1/4 and Roll
+Right and Left Thru
+Star Thru
+Centers Pass Thru
+Allemande Left''', ''),
 
 ];

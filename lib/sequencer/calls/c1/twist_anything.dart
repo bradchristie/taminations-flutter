@@ -24,7 +24,8 @@ class TwistAnything extends Action {
 
   @override final level = LevelData.C1;
   @override var helplink = 'c1/twist_the_line';
-  TwistAnything(String name) : super(name);
+
+  TwistAnything(super.name);
 
   static final Formation TripleLines = Formation('', dancers:[
     DancerModel.fromData(gender:Gender.BOY,x:0,y:3,angle:180),

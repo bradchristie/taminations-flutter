@@ -25,7 +25,8 @@ class Trade extends Action {
 
   @override var level = LevelData.B2;
   @override var helplink = 'b2/trade';
-  Trade(String name) : super(name);
+
+  Trade(super.name);
 
   @override
   Path performOne(DancerModel d, CallContext ctx) {

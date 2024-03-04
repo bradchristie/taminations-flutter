@@ -25,7 +25,8 @@ class SwitchTheLine extends Action {
 
   @override final level = LevelData.C1;
   @override var helplink = 'c1/switch_the_line';
-  SwitchTheLine(String name) : super(name);
+
+  SwitchTheLine(super.name);
 
   @override
   void performCall(CallContext ctx) {

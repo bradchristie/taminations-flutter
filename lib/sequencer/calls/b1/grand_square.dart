@@ -25,6 +25,7 @@ class GrandSquare extends Action {
   @override var help = '''You can do a fraction of Grand Square with
   Grand Square <nn> Steps.  One common use is 6 Steps, which gives normal lines.''';
   @override var helplink = 'b1/grand_square';
+
   GrandSquare(super.name);
 
   @override void performCall(CallContext ctx) {

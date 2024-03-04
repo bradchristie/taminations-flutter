@@ -220,6 +220,10 @@ class CallContext {
 
   //  Get the active dancers, e.g. for 'Boys Trade' the boys are active
   List<DancerModel> get actives => dancers.where( (d) => d.data.active ).toList();
+  set actives(List<DancerModel> from) {
+    for (var d in dancers)
+      d.data.active = from.contains(d);
+  }
   List<DancerModel> get inActives => dancers.where( (d) => !d.data.active ).toList();
   void allActive() {
     for (var d in dancers)

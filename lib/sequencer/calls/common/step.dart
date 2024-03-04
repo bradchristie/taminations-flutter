@@ -29,7 +29,7 @@ class Step extends Action {
   @override String get helplink =>
       name.contains('Press') ? 'c1/press' : super.helplink;
 
-  Step(String name) : super(name);
+  Step(super.name);
 
   @override
   Path performOne(DancerModel d, CallContext ctx) {

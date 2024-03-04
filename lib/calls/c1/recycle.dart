@@ -190,6 +190,151 @@ import '../../moves.dart';
           RunLeft.scale(1.0,0.375).skew(1.75,0.0)
       ]),
 
+
+
+    AnimatedCall('Centers Go 2/3, All Eight Recycle',
+        formation:Formation('Quarter Tag'),
+        from:'Quarter Tag',
+        paths:[
+          UmTurnRight.changeBeats(3).skew(3.0,0.0),
+
+          ExtendLeft.changeBeats(6).scale(3.0,4.0),
+
+          LeadRight.changeBeats(6).scale(3,5),
+
+          RunRight.skew(-1,0) +
+              LeadRight.changeBeats(3).scale(2,1)
+        ]),
+
+    AnimatedCall('Centers Go 2/3, All Eight Recycle',
+        formation:Formation('Quarter Tag LH'),
+        from:'Left-Hand Quarter Tag',
+        paths:[
+          UmTurnRight.changeBeats(3).skew(3.0,0.0),
+
+          ExtendLeft.changeBeats(6).scale(3.0,4.0),
+
+          LeadLeft.changeBeats(6).scale(3,5),
+
+          RunLeft.skew(-1,0) +
+              LeadLeft.changeBeats(3).scale(2, 1)
+        ]),
+
+    AnimatedCall('Centers Go 2/3, All Eight Recycle',
+        formation:Formation('Mixed Quarter Tag #1'),
+        from:'Quarter Waves',
+        paths:[
+          UmTurnRight.changeBeats(6).changehands(Hands.GRIPRIGHT).skew(3.0,0.0),
+
+          RunRight.changeBeats(6).changehands(Hands.GRIPRIGHT).skew(-3.0,-2.0),
+
+          LeadRight.changeBeats(6).scale(3,5),
+
+          RunRight.skew(-1,0) +
+              LeadRight.changeBeats(3).scale(2,1)
+        ]),
+
+    AnimatedCall('Centers Go 2/3, All Eight Recycle',
+        formation:Formation('Mixed Quarter Tag #6'),
+        from:'Left-Hand Quarter Waves',
+        paths:[
+          RunLeft.changeBeats(6).changehands(Hands.GRIPLEFT).skew(-3.0,2.0),
+
+          UmTurnLeft.changeBeats(6).changehands(Hands.GRIPLEFT).skew(3.0,0.0),
+
+          LeadLeft.changeBeats(6).scale(3,5),
+
+          RunLeft.skew(-1,0) +
+              LeadLeft.changeBeats(3).scale(2, 1)
+        ]),
+
+    AnimatedCall('Centers Go 2/3, All Eight Recycle',
+        formation:Formation('', dancers:[
+          DancerModel.fromData(gender:Gender.BOY,x:-1,y:-3.5,angle:90),
+          DancerModel.fromData(gender:Gender.GIRL,x:1,y:-3.5,angle:90),
+          DancerModel.fromData(gender:Gender.BOY,x:0,y:-2,angle:180),
+          DancerModel.fromData(gender:Gender.GIRL,x:0,y:-.67,angle:0),
+        ]),
+        from:'I-Beam 1',
+        paths:[
+          Stand.changeBeats(2).changehands(Hands.RIGHT) +
+              UmTurnRight.changeBeats(3).skew(3.5,-0.33),
+
+          Stand.changeBeats(2).changehands(Hands.LEFT) +
+              ExtendLeft.changeBeats(6).scale(3.5,3.0),
+
+          LeadRight.changeBeats(6).scale(3.5,3),
+
+          RunRight.scale(1, 0.5).skew(-1,0) +
+              LeadRight.changeBeats(3).scale(2.5,0.5)
+        ]),
+
+    AnimatedCall('Centers Go 2/3, All Eight Recycle',
+        formation:Formation('', dancers:[
+          DancerModel.fromData(gender:Gender.BOY,x:-1,y:-3.5,angle:90),
+          DancerModel.fromData(gender:Gender.GIRL,x:1,y:-3.5,angle:90),
+          DancerModel.fromData(gender:Gender.BOY,x:0,y:-2,angle:0),
+          DancerModel.fromData(gender:Gender.GIRL,x:0,y:-.67,angle:180),
+        ]),
+        from:'I-Beam 2',
+        paths:[
+          Stand.changeBeats(2).changehands(Hands.RIGHT) +
+              UmTurnRight.changeBeats(3).skew(3.5,-0.33),
+
+          Stand.changeBeats(2).changehands(Hands.LEFT) +
+              ExtendLeft.changeBeats(6).scale(3.5,3.0),
+
+          LeadLeft.changeBeats(6).scale(3.5,3),
+
+          RunLeft.scale(1, 0.5).skew(-1,0) +
+              LeadLeft.changeBeats(3).scale(2.5,0.5)
+        ]),
+
+    AnimatedCall('Centers Go 2/3, All Eight Recycle',
+        formation:Formation('', dancers:[
+          DancerModel.fromData(gender:Gender.BOY,x:-1,y:-3.5,angle:90),
+          DancerModel.fromData(gender:Gender.GIRL,x:1,y:-3.5,angle:270),
+          DancerModel.fromData(gender:Gender.BOY,x:0,y:-2,angle:180),
+          DancerModel.fromData(gender:Gender.GIRL,x:0,y:-.67,angle:0),
+        ]),
+        from:'I-Beam 3',
+        paths:[
+          Stand.changeBeats(1).changehands(Hands.RIGHT) +
+              UmTurnRight.changeBeats(6).changehands(Hands.GRIPRIGHT).skew(3.5,-0.33),
+
+          Stand.changeBeats(1).changehands(Hands.LEFT) +
+              RunRight.changeBeats(6).changehands(Hands.GRIPRIGHT).skew(-3.5,-1.0),
+
+          LeadRight.changeBeats(6).scale(3.5,3),
+
+          RunRight.scale(1, 0.5).skew(-1,0) +
+              LeadRight.changeBeats(3).scale(2.5,0.5)
+        ]),
+
+    AnimatedCall('Centers Go 2/3, All Eight Recycle',
+        formation:Formation('', dancers:[
+          DancerModel.fromData(gender:Gender.BOY,x:-1,y:-3.5,angle:270),
+          DancerModel.fromData(gender:Gender.GIRL,x:1,y:-3.5,angle:90),
+          DancerModel.fromData(gender:Gender.BOY,x:0,y:-2,angle:0),
+          DancerModel.fromData(gender:Gender.GIRL,x:0,y:-.67,angle:180),
+        ]),
+        from:'I-Beam 4',
+        paths:[
+          Stand.changeBeats(1).changehands(Hands.RIGHT) +
+              RunLeft.changeBeats(6).changehands(Hands.GRIPLEFT).skew(-3.5,1.0),
+
+          Stand.changeBeats(1).changehands(Hands.LEFT) +
+              UmTurnLeft.changeBeats(6).changehands(Hands.GRIPLEFT).skew(3.5,0.33),
+
+          LeadLeft.changeBeats(6).scale(3.5,3),
+
+          RunLeft.scale(1, 0.5).skew(-1,0) +
+              LeadLeft.changeBeats(3).scale(2.5,0.5)
+        ]),
+
+
+
+
     AnimatedCall('All 8 Cycle and Wheel',
       formation:Formation('Quarter Lines RH'),
       from:'Quarter Lines',

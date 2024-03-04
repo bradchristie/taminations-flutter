@@ -30,9 +30,7 @@ class QuarterThru extends Action with ActivesOnly, CallWithParts, IsLeft, IsGran
   2.  Centers Trade''';
   @override var helplink = 'a1/quarter_thru';
 
-  QuarterThru(String name) :
-        isThree=normalizeCall(name).contains('34'),
-        super(name);
+  QuarterThru(super.name) : isThree=normalizeCall(name).contains('34');
 
   @override
   void performCall(CallContext ctx) {

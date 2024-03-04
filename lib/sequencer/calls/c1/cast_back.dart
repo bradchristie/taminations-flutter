@@ -28,7 +28,8 @@ class CastBack extends Action {
   @override var help = 'If dancers are not in tandems, you must say who is'
       ' going to (Cross) Cast Back';
   @override var helplink = 'c1/cast_back';
-  CastBack(String name) : super(name);
+
+  CastBack(super.name);
 
   @override
   void performCall(CallContext ctx) {

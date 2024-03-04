@@ -28,7 +28,7 @@ class SwingThru extends Action with ActivesOnly, CallWithParts, IsLeft, IsGrand 
   2.  Trade with the left hand''';
   @override var helplink = 'b2/swing_thru';
 
-  SwingThru(String name) : super(name);
+  SwingThru(super.name);
 
   List<DancerModel> _dancersWhoCanDoBothParts(CallContext ctx) {
     var whoCan = <DancerModel>[];

@@ -29,7 +29,7 @@ It can be used in these ways:
   (call) Interrupt after part (n) with (action) -- For n = 2, call 1-2-3 is done as 1-2-action-3''';
   @override var helplink = 'c1/interrupt';
 
-  Interrupt(String name) : super(name);
+  Interrupt(super.name);
 
   @override
   void addToStack(CallContext ctx) {

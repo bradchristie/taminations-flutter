@@ -25,7 +25,7 @@ import 'fliter_actives.dart';
 
 class Sides extends FilterActives {
 
-  Sides(String name) : super(name);
+  Sides(super.name);
 
   @override
   bool isActive(DancerModel d, CallContext ctx) =>

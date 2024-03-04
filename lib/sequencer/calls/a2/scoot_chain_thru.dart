@@ -32,7 +32,8 @@ class ScootChainThru extends Action with CallWithParts, IsToAWave {
   3.  Wave dancers Slip
   4.  Wave dancers Swing
   5.  Wave dancers Extend''';
-  ScootChainThru(String name) : super(name);
+
+  ScootChainThru(super.name);
 
   @override
    void performPart1(CallContext ctx) {

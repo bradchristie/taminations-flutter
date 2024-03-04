@@ -29,7 +29,8 @@ Works with one or two Lines of 4.  A tidal formation is two Lines of 4.
 For larger lines, use
 Line of (6 or 8) [Left] Turn and Deal''';
   @override var helplink = 'a1/turn_and_deal';
-  TurnAndDeal(String name) : super(name);
+
+  TurnAndDeal(super.name);
 
   @override
   Path performOne(DancerModel d, CallContext ctx) {
@@ -50,7 +51,8 @@ class BigLineTurnAndDeal extends Action with ActivesOnly {
 
   @override final level = LevelData.A1;
   @override var help = TurnAndDeal('').help;
-  BigLineTurnAndDeal(String name) : super(name);
+
+  BigLineTurnAndDeal(super.name);
 
   @override
   void performCall(CallContext ctx) {

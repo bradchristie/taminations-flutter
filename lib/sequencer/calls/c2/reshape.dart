@@ -27,7 +27,8 @@ class Reshape extends TriangleCirculate {
   @override var rootName = '(Triangle )?Reshape( The Triangle)?'.ri;
   @override var help = TriangleCirculate('').help;
   @override var helplink = 'c2/reshape_the_triangle';
-  Reshape(String name) : super(name);
+
+  Reshape(super.name);
 
   @override
   Path oneCirculatePath(DancerModel d, DancerModel d2, DancerModel d3) {

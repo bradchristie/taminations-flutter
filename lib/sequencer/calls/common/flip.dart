@@ -25,7 +25,8 @@ class Flip extends Action {
   @override var help = 'You can have dancers Flip Left, Right, In, or Out.'
       ' Flip is a run around a phantom.'
       ' This is not a real call.';
-  Flip(String name) : super(name);
+
+  Flip(super.name);
 
   @override
   Path performOne(DancerModel d, CallContext ctx) {

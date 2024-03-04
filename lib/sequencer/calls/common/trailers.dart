@@ -24,7 +24,7 @@ import 'fliter_actives.dart';
 
 class Trailers extends FilterActives {
 
-  Trailers(name) : super(name);
+  Trailers(super.name);
 
   @override
   bool isActive(DancerModel d, CallContext ctx) => d.data.trailer;

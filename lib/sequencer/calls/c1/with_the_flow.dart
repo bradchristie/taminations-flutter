@@ -24,7 +24,8 @@ class WithTheFlow extends Action with ActivesOnly {
 
   @override final level = LevelData.C1;
   @override var helplink = 'c1/with_the_flow';
-  WithTheFlow(String name) : super(name);
+
+  WithTheFlow(super.name);
 
   @override
   void performCall(CallContext ctx) {

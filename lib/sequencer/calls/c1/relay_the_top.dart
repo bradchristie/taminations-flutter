@@ -31,7 +31,8 @@ class RelayTheTop extends Action with CallWithParts, CallWithStars, ButCall {
 The star can be modified with Turn the Star (fraction)
 Cast Off 3/4 in Part 4 can be replaced with But (another call)''';
   @override var helplink = 'c1/relay_the_top';
-  RelayTheTop(String name) : super(name);
+
+  RelayTheTop(super.name);
 
   @override
    void performPart1(CallContext ctx) {

@@ -23,7 +23,8 @@ class SixTwoAceyDeucey extends Action {
 
   @override var level = LevelData.A1;
   @override var helplink = 'a1/six_two_acey_deucey';
-  SixTwoAceyDeucey(name) : super(name);
+
+  SixTwoAceyDeucey(super.name);
 
   @override
    void performCall(CallContext ctx, [int i = 0]) {

@@ -118,7 +118,7 @@ extension TamString on String {
   //  Capitalize words except for common small words
   String capWords() => split('\\s+'.r).map((s) => s.capitalize()).join(' ')
       .replaceAllMapped('\\W\\w'.r, (m) => m[0]!.toUpperCase())
-      .replaceAllMapped('\\b(A|An|At|And|To|The)\\b'.r, (m) => m[1]!.toLowerCase());
+      .replaceAllMapped('\\b(A|An|At|And|Of|To|The)\\b'.r, (m) => m[1]!.toLowerCase());
   //  Matches is true if the regexp matches the entire string
   bool matches(RegExp e) => (e.stringMatch(this)?.length ?? -1) == length;
   //  Divide is split with a limit of 2
@@ -197,6 +197,7 @@ extension TamList<E> on List<E> {
   List<T> mapIndexed<T>(T Function(int index, E item) mapFun) =>
       List.generate(length,(i)=>i).map((i) => mapFun(i,this[i])).toList();
   bool containsAll(List<E> list2) => list2.every((element) => contains(element));
+  bool containsAny(List<E> list2) => list2.any((element) => contains(element));
   List<E> sortedWith(int Function(E e1, E e2) compare) {
     var list2 = copy();
     list2.sort(compare);

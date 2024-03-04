@@ -33,7 +33,7 @@ Switch hands with Left Remake
 Allow very centers to work with each other with Grand Remake''';
   @override var helplink = 'a2/remake';
 
-  Remake(String name) : super(name);
+  Remake(super.name);
 
   @override
    void performPart1(CallContext ctx) {

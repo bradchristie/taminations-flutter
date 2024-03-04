@@ -138,7 +138,7 @@ abstract class TripleFormation extends Action {
 //  which is 12 spots arranged in a 2 x 6
 class TripleBox extends TripleFormation {
 
-  TripleBox(String name) : super(name);
+  TripleBox(super.name);
 
   @override
   List<double> majorValues(CallContext ctx) => [-5.0, -3.0, -1.0, 1.0, 3.0, 5.0];
@@ -170,7 +170,7 @@ class TripleBox extends TripleFormation {
 
 class TripleLine extends TripleFormation {
 
-  TripleLine(String name) : super(name);
+  TripleLine(super.name);
 
   @override
   List<double> majorValues(CallContext ctx) =>

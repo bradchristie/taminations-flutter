@@ -27,7 +27,8 @@ class SplitDixieDiamond extends Action with CallWithParts {
   1.  Split Dixie Style to a Wave
   2.  Centers Hinge, others Turn Back''';
   @override var helplink = 'c1/split_square_thru_variations';
-  SplitDixieDiamond(String name) : super(name);
+
+  SplitDixieDiamond(super.name);
 
   @override
    void performPart1(CallContext ctx) {

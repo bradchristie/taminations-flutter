@@ -222,7 +222,7 @@ class TamUtils {
           if (data.level != 'ssd')
             call.level = LevelData.find(data.level)!;
           if (!call.notForSequencer) {
-            var norm = call.title.norm;
+            var norm = call.title.norm.lc;
             normalizedCallIndex.putIfAbsent(norm, () => []).add(call);
           }
         }

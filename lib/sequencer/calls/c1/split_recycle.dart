@@ -29,7 +29,8 @@ class SplitRecycle extends Action with IsReverse {
   @override var helplink = 'c1/recycle';
   //  This code is for mixed couples and mini-waves
   //  All mini-wave formations are in XML
-  SplitRecycle(String name) : super(name);
+
+  SplitRecycle(super.name);
 
   @override
   void performCall(CallContext ctx) {
