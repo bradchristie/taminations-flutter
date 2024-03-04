@@ -88,7 +88,7 @@ class SequencerSettingsFrame extends fm.StatelessWidget {
                 SequencerDancerColorsWidget(),
                 DancerShapesWidget(),
                 DancerIdentificationWidget(),
-                //  GeometrySettingWidget(),   //  TODO
+                GeometrySettingWidget(),
                 JoinCallsWithWidget()
               ]));
         });

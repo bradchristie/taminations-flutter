@@ -413,13 +413,15 @@ class SequencerModel extends fm.ChangeNotifier {
         if (cctx.isCollision())
           throw CallError('Unable to calculate valid animation.');
       }
+      if (!(settings.geometry == 'None')) {
+        if (!cctx.dancers.areDancersOrdered())
+          throw CallError('Asymmetry only possible with square geometry');
+      }
       if (cctx.resolutionError)
         errorString = 'Warning: Dancers are not resolved';
       if (cctx.didYourPart)
         errorString = 'Note: Assuming Do Your Part';
       cctx.extendPaths();
-      //cctx.appendToSource();
-      //cctx.animateToEnd();
       _applyContextToAnimation(cctx);
       animation.recalculate();
       var newbeats = animation.beats;
