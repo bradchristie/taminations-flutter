@@ -17,7 +17,8 @@
  *     along with Taminations.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import '../coded_call.dart';
+import 'package:taminations/sequencer/calls/ms/hinge.dart';
+
 import '../common.dart';
 
 class SwingTheFractions extends Action with CallWithParts, IsLeft {
@@ -45,7 +46,7 @@ The hands can be swapped with Left Swing the Fractions''';
     ctx.analyze();
     ctx.subContext(ctx.dancersHoldingSameHands(isRight: !isLeft), (ctx2) {
       part1dancers = ctx2.dancers;
-      CodedCall.fromName('Hinge')!.performCall(ctx2);
+      Hinge('Hinge').performCall(ctx2);
     });
   }
 

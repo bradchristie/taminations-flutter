@@ -468,6 +468,7 @@ abstract class CodedCall extends Call {
     'LikeaCoupleUp'.ri: (name) => LikeACoupleUp(name),
     'LinearAction'.ri: (name) => LinearAction(name),
     'LinearCycle'.ri: (name) => LinearCycle(name),
+    'LineOf6BendtheLine'.ri: (name) => LineofSixBendTheLine(name),
     'Lines.*Thru'.ri: (name) => LinesAnythingThru(name),
     //  Little needs two regexes
     //  to handle both <something> Little and Little <something>
