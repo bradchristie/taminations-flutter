@@ -357,9 +357,8 @@ abstract class CodedCall extends Call {
     'BoxtheGnat'.ri: (name) => BoxTheGnat(name),
     'BraceThru'.ri: (name) => BraceThru(name),
     'Breaker(1|2|3)?'.ri: (name) => Breaker(name),
-    '.*But(?![a-z]).*'.r: (name) => But(name),
+    'But(?![a-z]).*'.r: (name) => But(name),
     'Butterfly.*'.ri: (name) => Butterfly(name),
-
     'CaliforniaTwirl'.ri: (name) => CaliforniaTwirl(name),
     '(14|12|34)?CastandRelay'.ri: (name) => CastAndRelay(name),
     'CastaShadow(Center(Go|Cast)?34)?'.ri: (name) => CastAShadow(name),
@@ -656,8 +655,8 @@ abstract class CodedCall extends Call {
     'TurnThru'.ri: (name) => TurnThru(name),
     'TurnandDeal'.ri: (name) => TurnAndDeal(name),
     'U?TurnBack'.ri: (name) => TurnBack(name),
-    '.*TurntheStars?(14|12|34|aFullTurn)'.ri: (name) => TurnTheStar(name),
-    '.*DoNotTurntheStars?'.ri: (name) => TurnTheStar(name),
+    'TurntheStars?(14|12|34|aFullTurn)'.ri: (name) => TurnTheStar(name),
+    'DoNotTurntheStars?'.ri: (name) => TurnTheStar(name),
     '(Go)?Twice'.ri: (name) => Twice(name),
     'Twist(theLine|and.+)'.ri: (name) => TwistAnything(name),
 
@@ -694,7 +693,7 @@ abstract class CodedCall extends Call {
     //  Anything Motivate does not include Start or Finish Motivate
     //  and should not be "(some call) and Motivate"
     //  Anything Couple Up does not include Like A Couple Up
-    '.+(?<!(start|finish|likea|part|and|$specifier))(motivate|coordinate|coupleup|percolate|perkup)'.ri: (name) => Anything(name),
+    '.+(?<!(start|finish|likea|part|and|$specifier))(motivate|coordinate|coupleup|percolate|perkup).*'.ri: (name) => Anything(name),
     //  Anything Chain Thru should not match Square Chain Thru or others
     '.*(?<!(cross|startdiamond|8|peel|scatter|scoot|spin|square|swing|tag))chainthru'.ri:
         (name) => AnythingChainThru(name),

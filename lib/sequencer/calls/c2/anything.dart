@@ -30,7 +30,7 @@ class Anything extends Action {
   @override
   void performCall(CallContext ctx) {
     var firstCall =
-    name.replaceMatch('(.*)(motivate|coordinate|couple up|percolate|perk up)'.ri,'\\1').trim();
+    name.replaceMatch('(.*)(motivate|coordinate|couple up|percolate|perk up).*'.ri,'\\1').trim();
     final secondCall =
     name.replaceMatch('(.*)(motivate|coordinate|couple up|percolate|perk up)'.ri,'\\2');
     //  If the first call is Counter Rotate or Split Counter Rotate

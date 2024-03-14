@@ -19,10 +19,10 @@
 
 import '../common.dart';
 
-mixin CallWithStars {
+mixin CallWithStars on CallWithParts {
   var turnStarAmount = 1;
   var turnStarCall = 'Turn the Star';
-  String get starTurns =>
+  String get starTurns => turnStarAmount == 0 ? 'Nothing' :
       [ for (var i=0; i<turnStarAmount; i++) turnStarCall ].join(' ');
 }
 
@@ -31,41 +31,30 @@ class TurnTheStar extends Action {
   TurnTheStar(super.name);
 
   @override
-  void performCall(CallContext ctx) {
-    final callName = name.replaceFirst('(do not )?turn the star.*'.ri, '').trim();
-    ctx.subContext(ctx.dancers, (ctx2) {
-      if (!ctx2.matchCodedCall(callName))
-        throw CallError('Unable to find $callName as a Call with Parts');
-      if (ctx2.callstack.last is CallWithStars) {
-        final call = ctx2.callstack.last as CallWithStars;
-        final amountText = normalizeCall(name.replaceFirst(callName,''));
-        if (amountText.contains('donot'.ri))
-          call.turnStarAmount = 0;
-        //  First check for fractions 1/4 1/2 3/4
-        else if (amountText.contains('14'))
-          call.turnStarAmount = 1;
-        else if (amountText.contains('12'))
-          call.turnStarAmount = 2;
-        else if (amountText.contains('34'))
-          call.turnStarAmount = 3;
-        else if (amountText.contains('Full'))
-          call.turnStarAmount = 4;
-        //  Also check for number of times 1, 2, 3, 4
-        else if (amountText.contains('1'))
-          call.turnStarAmount = 1;
-        else if (amountText.contains('2'))
-          call.turnStarAmount = 2;
-        else if (amountText.contains('3'))
-          call.turnStarAmount = 3;
-        else if (amountText.contains('4'))
-          call.turnStarAmount = 4;
-        else
-          throw CallError('Turn the Star how much?');
-        ctx2.performCall();
-      } else {
-        throw CallError('$callName not recognized as a call with stars');
-      }
-    });
+  void addToStack(CallContext ctx) {
+    var callWithStars = ctx.findImplementor<CallWithStars>(startFrom: ctx.callstack.last);
+    if (norm.contains('donot'.ri))
+      callWithStars.turnStarAmount = 0;
+    //  First check for fractions 1/4 1/2 3/4
+    else if (norm.contains('14'))
+      callWithStars.turnStarAmount = 1;
+    else if (norm.contains('12'))
+      callWithStars.turnStarAmount = 2;
+    else if (norm.contains('34'))
+      callWithStars.turnStarAmount = 3;
+    else if (norm.contains('Full'))
+      callWithStars.turnStarAmount = 4;
+    //  Also check for number of times 1, 2, 3, 4
+    else if (norm.contains('1'))
+      callWithStars.turnStarAmount = 1;
+    else if (norm.contains('2'))
+      callWithStars.turnStarAmount = 2;
+    else if (norm.contains('3'))
+      callWithStars.turnStarAmount = 3;
+    else if (norm.contains('4'))
+      callWithStars.turnStarAmount = 4;
+    else
+      throw CallError('Turn the Star how much?');
   }
 
 }

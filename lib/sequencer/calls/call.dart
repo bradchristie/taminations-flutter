@@ -22,7 +22,7 @@ import 'common.dart';
 
 abstract class Call {
 
-  String name;
+  final String name;
   String get help => 'No specific help for $name';
   String get helplink => 'info/sequencer';
   String get norm => normalizeCall(name);

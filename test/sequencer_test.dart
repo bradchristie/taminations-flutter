@@ -4001,4 +4001,17 @@ Ferris Wheel
 Centers Square Thru 3
 Allemande Left''', ''),
 
+  TestSequence('Multiple Modifications',
+'''Sides Pass the Ocean
+Extend
+Hinge Motivate Do Not Turn the Star But Recycle
+Boys Counter Rotate
+Cycle and Wheel
+Veer Left
+Bend the Line
+Right and Left Thru
+Star Thru
+Pass Thru
+Allemande Left''', ''),
+
 ];

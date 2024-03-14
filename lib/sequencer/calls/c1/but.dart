@@ -19,7 +19,7 @@
 
 import '../common.dart';
 
-mixin ButCall {
+mixin ButCall on CallWithParts {
   var butCall = 'Cast Off 3/4';
 }
 
@@ -27,25 +27,17 @@ class But extends Action {
 
   @override final level = LevelData.C1;
   @override var help = 'But (something) replaces a specific part of a call. '
-      'See the definition or Help info for calls that support But.';
+      'See the definition or Help info for calls that support But. '
+      'If you are applying mutliple modifications to a call, be sure to put But last, as '
+      'everything after But is assumed to be part of the replacement call.';
   @override var helplink = 'c1/replace';
 
   But(super.name);
 
   @override
-  void performCall(CallContext ctx) {
-    final callName = name.replaceFirst(' but\\b.*'.ri, '').trim();
-    ctx.subContext(ctx.dancers, (ctx2) {
-      if (!ctx2.matchCodedCall(callName))
-        throw CallError('Unable to find $callName as a Call with Parts');
-      if (ctx2.callstack.last is ButCall) {
-        final call = ctx2.callstack.last as ButCall;
-        call.butCall = name.replaceFirst('.* but '.ri, '');
-        ctx2.performCall();
-      }
-      else
-        throw CallError('$callName does not recognize But');
-    });
+  void addToStack(CallContext ctx) {
+    var butCall = ctx.findImplementor<ButCall>(startFrom: ctx.callstack.last);
+    butCall.butCall = name.replaceFirst('but '.ri, '');
   }
 
 }
