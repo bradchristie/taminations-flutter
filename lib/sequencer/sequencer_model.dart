@@ -315,17 +315,17 @@ class SequencerModel extends fm.ChangeNotifier {
     final settings = Settings();
     var ctx = CallContext.fromFormation(Formation(startingFormation));
     if (settings.geometry == 'Bi-Gon') {
-      for (var i=0; i<8; i++)
+      for (var i=0; i<ctx.dancers.length; i++)
         ctx.dancers[i].path = animation.dancers[i ~/ 2].path.clone();
     } else if (settings.geometry == 'Hexagon') {
-      for (var i=0; i<8; i++)
+      for (var i=0; i<ctx.dancers.length; i++)
         ctx.dancers[i].path = animation.dancers[(i~/2)*3].path.clone();
     } else if (settings.geometry == 'Hashtag') {
-      for (var i=0; i<8; i++)
+      for (var i=0; i<ctx.dancers.length; i++)
         ctx.dancers[i].path = animation.dancers[i*2].path.clone();
     }
     else {
-      for (var i=0; i<8; i++)
+      for (var i=0; i<ctx.dancers.length; i++)
         ctx.dancers[i].path = animation.dancers[i].path.clone();
       ctx.animateToEnd();
       ctx.asymmetric = !ctx.dancers.areDancersOrdered();
@@ -337,18 +337,18 @@ class SequencerModel extends fm.ChangeNotifier {
   void _applyContextToAnimation(CallContext ctx) {
     final settings = Settings();
     if (settings.geometry == 'Hexagon') {
-      for (var i=0; i<12; i++)
+      for (var i=0; i<(ctx.dancers.length ~/ 2) * 3 ; i++)
         animation.dancers[i].path += ctx.dancers[(i~/3)*2].path;
     } else if (settings.geometry == 'Bi-Gon') {
-      for (var i=0; i<4; i++)
+      for (var i=0; i<ctx.dancers.length ~/ 2; i++)
         animation.dancers[i].path += ctx.dancers[i*2].path;
     } else if (settings.geometry == 'Hashtag') {
-      for (var i=0; i<16; i++) {
+      for (var i=0; i<ctx.dancers.length*2; i++) {
         animation.dancers[i].path += ctx.dancers[i ~/ 2].path;
       }
     }
     else {
-      for (var i=0; i<8; i++)
+      for (var i=0; i<ctx.dancers.length; i++)
         animation.dancers[i].path += ctx.dancers[i].path;
     }
   }

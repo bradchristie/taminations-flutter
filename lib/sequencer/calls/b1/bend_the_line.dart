@@ -23,7 +23,8 @@ import '../common.dart';
 
 class BendTheLine extends Action {
 
-  @override var help = 'Any couple not centered on an axis can Bend the Line';
+  @override var help = '''Any couple not centered on an axis can Bend the Line.
+For groups of 3 (or 4) dancers working together, use Line of 6 (or 8) Bend the Line.''';
   @override var helplink = 'b1/bend_the_line';
 
   BendTheLine(super.name);
@@ -60,6 +61,25 @@ class BendTheLine extends Action {
       }
     }
     throw CallError('Cannot figure out how to Bend the Line' );
+  }
+
+}
+
+//  This handles Line of 6 Bend the Line with 8 dancers
+class LineofSixBendTheLine extends Action {
+
+  LineofSixBendTheLine(super.name);
+
+  @override
+  void performCall(CallContext ctx) {
+    if (ctx.dancers.length == 8) {
+      var lineOf6 = ctx.waveOf6() ??
+          thrower('Cannot find Line of 6')!;
+      ctx.subContext(lineOf6, (ctx2) {
+        ctx2.applyCalls('Line of 6 Bend the Line');
+      });
+    } else
+      throw CallError('Unable to Bend the Line of 6 with this formation');
   }
 
 }

@@ -3973,4 +3973,45 @@ Star Thru
 Centers Pass Thru
 Allemande Left''', ''),
 
+  TestSequence('Line of 6 Bend the Line',
+'''Heads Lead Right
+Veer Left
+Acey Deucey 1.5
+Very Centers Turn Back
+Line of 6 Bend the Line
+Facing Dancers Touch 1/4
+Outer 2 Boys Counter Rotate
+6x2 Acey Deucey
+Boys Run
+Extend
+Mix
+Acey Deucey 1.5
+Line of 6 Girls Run Left
+Line of 6 Bend the Line
+Facing Dancers Left Touch 1/4
+Outer 2 Girls Counter Rotate
+Center Line Wheel and Deal
+Outer 4 Boys Run
+Centers Pass Thru
+Touch 1/4
+Split Circulate
+Swing Thru
+Boys Run
+Ferris Wheel
+Centers Square Thru 3
+Allemande Left''', ''),
+
+  TestSequence('Multiple Modifications',
+'''Sides Pass the Ocean
+Extend
+Hinge Motivate Do Not Turn the Star But Recycle
+Boys Counter Rotate
+Cycle and Wheel
+Veer Left
+Bend the Line
+Right and Left Thru
+Star Thru
+Pass Thru
+Allemande Left''', ''),
+
 ];

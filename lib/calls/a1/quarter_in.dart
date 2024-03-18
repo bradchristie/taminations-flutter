@@ -28,6 +28,7 @@ import '../a2/all_4_all_8.dart' as a2;
     AnimatedCall('Quarter In',
       formation:Formation('Facing Couples Compact'),
       from:'Facing Couples',
+      notForSequencer: true,
       paths:[
           QuarterRight.changeBeats(2).skew(0.5,0.5),
 
@@ -205,6 +206,7 @@ import '../a2/all_4_all_8.dart' as a2;
     AnimatedCall('Quarter Out',
       formation:Formation('Facing Couples Compact'),
       from:'Facing Couples',
+      notForSequencer: true,
       paths:[
           QuarterLeft.changeBeats(2).skew(0.5,0.5),
 

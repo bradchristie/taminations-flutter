@@ -18,7 +18,6 @@
 
 */
 
-import '../coded_call.dart';
 import '../common.dart';
 import '../xml_call.dart';
 
@@ -66,14 +65,20 @@ class Finish extends Action {
     }
 
     //  If that didn't work, try a coded call
-    final codedCall = CodedCall.fromName(finishCall);
-    if (codedCall is CallWithParts) {
-      codedCall.finish(ctx);
-      return;
-    }
+    var found = false;
+    ctx.subContext(ctx.dancers,(ctx2) {
+      ctx2.interpretCall(finishCall,skipFirstXML: true);
+      var codedCall = ctx2.callstack.firstOrNull ??
+          thrower('Finish what?')!;
+      if (codedCall is CallWithParts) {
+        codedCall.finish(ctx2);
+        found = true;
+      }
+    });
 
     //  Nothing worked
-    throw CallError('Could not figure out how to Finish $finishCall');
+    if (!found)
+      throw CallError('Could not figure out how to Finish $finishCall');
   }
 
 }

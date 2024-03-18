@@ -146,10 +146,10 @@ class _SequencerEditLineState extends fm.State<SequencerEditLine> {
   @override
   void initState() {
     super.initState();
-    later(() {
-      if (!TamUtils.isTouchDevice)
+    if (!TamUtils.isTouchDevice)
+      later(() {
         focusNode.requestFocus();
-    });
+      });
     speechProvider = SpeechToTextProvider(SpeechToText());
   }
 
@@ -170,11 +170,12 @@ class _SequencerEditLineState extends fm.State<SequencerEditLine> {
             SpeechToTextProvider,
             VirtualKeyboardVisible>(
     builder: (context, model, abbreviations, speech, virtualKeyboard, child) {
-      later(() {
-        later((){
-          focusNode.requestFocus();
+      if (!TamUtils.isTouchDevice)
+        later(() {
+          later((){
+            focusNode.requestFocus();
+          });
         });
-      });
 
       //  If doing voice input, show errors in the snack bar
       //  because the error text of the EditText is not visible
