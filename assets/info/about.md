@@ -23,18 +23,17 @@ Call pronunciations provided by
 
 ---
 
-## Taminations version 1.6.76 built 2024-03-04
+## Taminations version 1.6.77 built 2024-03-18
 Copyright 2024 by Brad Christie.  
 This is free software, and you are welcome to modify and redistribute it
 under the terms of the [GNU GPL license](http://www.gnu.org/licenses/gpl.html).  
 
 ## What's New
-* Animation for All 8 Recycle Centers 2/3
+* Animations for Line of 6 or 8 Bend the Line
 * Sequencer changes:
-  - Enable non-square geometry
-  - Accept Run around more than 1 dancer
-  - Accept Prefer option for In/Out Roll Circulate
-  - Fix Concentric call and Roll
+  - Fix for two-couple starting formation
+  - Better handling of keyboard for touch devices
+  - Improvements for modifications of multi-part calls
   
 For a detailed history of changes, view the
 [Git log](https://github.com/bradchristie/taminations-flutter/commits/main)
