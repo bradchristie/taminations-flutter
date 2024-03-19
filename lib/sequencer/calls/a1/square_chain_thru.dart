@@ -40,7 +40,7 @@ The hands can be swapped with Left Square Chain Thru''';
 
   @override
    void performPart2(CallContext ctx) {
-    ctx.applyCalls('$left Swing Thru');
+    ctx.applyCalls('$antiLeft Swing Thru');
   }
 
   @override
@@ -48,7 +48,7 @@ The hands can be swapped with Left Square Chain Thru''';
     if (isToAWave)
       ctx.applyCalls('Trade');
     else
-      ctx.applyCalls('$left Turn Thru');
+      ctx.applyCalls('$antiLeft Turn Thru');
   }
 
 }
