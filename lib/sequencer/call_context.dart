@@ -615,7 +615,7 @@ class CallContext {
     bool headsMatchSides=true,
     bool subformation=false,  //  don't need to match all the dancers of ctx2
     double maxError=1.9,
-    double delta = 0.1,
+    double delta = 0.2,
     double maxAngle = 0.2
   }) {
     DebugSwitch.mapping.log('matchFormations ${dancers.length}  ${ctx2.dancers.length}');
