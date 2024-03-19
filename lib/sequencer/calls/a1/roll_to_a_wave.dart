@@ -21,7 +21,7 @@
 import '../../../moves.dart';
 import '../common.dart';
 
-class RollToAWave extends Action {
+class RollToAWave extends Action with ActivesOnly {
 
   @override final level = LevelData.A1;
   @override var helplink = 'a1/right_roll_to_a_wave';
