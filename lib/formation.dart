@@ -1735,6 +1735,7 @@ class Formation {
     '.*thar'.ri : Formation('Thar RH Boys'),
     '.*square(d)?(set)?'.ri : Formation('Squared Set'),
     '.*boxes'.ri : Formation('Eight Chain Thru'),
+    '.*bones'.ri: Formation('Eight Chain Thru'),
     '.*columns?'.ri : Formation('Column RH GBGB'),
     '.*(1|3)4tag'.ri : Formation('Quarter Tag'),
     '.*diamonds?'.ri : Formation('Diamonds RH Girl Points'),
