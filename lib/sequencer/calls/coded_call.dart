@@ -647,7 +647,7 @@ abstract class CodedCall extends Call {
         (name) => TriangleCirculate(name),
     '(Inside|Outside|Inpoint|Outpoint|TandemBased|WaveBased)?Triangle'.ri:
         (name) => SelectTriangle(name),
-    'TripleBox.*'.ri: (name) => TripleBox(name),
+    'TripleBox(es)?.*'.r: (name) => TripleBox(name),
     'Triple(Lines?|Waves?|Columns?).*'.ri: (name) => TripleLine(name),
     '(Double|Triple)StarThru'.ri: (name) => TripleStarThru(name),
     'TripleTrade'.ri: (name) => TripleTrade(name),
