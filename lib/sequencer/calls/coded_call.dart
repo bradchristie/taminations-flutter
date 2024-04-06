@@ -598,7 +598,7 @@ abstract class CodedCall extends Call {
     'Squeeze(the(Butterfly|O))?'.ri: (name) => Squeeze(name),
     'SqueezetheGalaxy'.ri: (name) => SqueezeTheGalaxy(name),
     'SqueezetheHourglass'.ri: (name) => SqueezeTheHourglass(name),
-    'SquareThru(1|2|3|4|5|6|7)'.ri: (name) => SquareThru(name),
+    'SquareThru(1|2|3|4|5|6|7)?'.ri: (name) => SquareThru(name),
     'SquareThruOn(2|3|4|5|6)(.+)'.ri: (name) => SquareThru(name),
     'StacktheLine'.ri: (name) => StackTheLine(name),
     'Stagger.*'.ri: (name) => Stagger(name),
