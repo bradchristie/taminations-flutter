@@ -4014,4 +4014,13 @@ Star Thru
 Pass Thru
 Allemande Left''', ''),
 
+  TestSequence('Outer 4 squeeze the centers',
+'''Sides Pass the Ocean
+Heads Separate and Single Circle to a Wave
+Recycle
+Cross Trail Thru
+Wheel and Deal
+Centers Square Thru 3
+Allemande Left''',''),
+
 ];
