@@ -71,9 +71,9 @@ abstract class FourDancerConcept extends Action {
       //  Select the couple number for the concept dancer
       //  Needed for e.g. <concept> Heads Run
       var nc = '0' ;
-      if (group.every((it) => it.numberCouple.matches('[13]{2}' .r)))
+      if (group.every((it) => it.numberCouple.matches('[13]'.r)))
         nc = '1' ;
-      if (group.every((it) => it.numberCouple.matches('[24]{2}' .r)))
+      if (group.every((it) => it.numberCouple.matches('[24]'.r)))
         nc = '2' ;
       //  Create the concept dancer
       var dsingle = DancerModel.cloneWithOptions(group.first, gender:g, numberCouple:nc);

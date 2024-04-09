@@ -4023,4 +4023,15 @@ Wheel and Deal
 Centers Square Thru 3
 Allemande Left''',''),
 
+  TestSequence('As Couples Heads',
+'''Heads Pair Off
+Veer Left
+Bend the Line
+As Couples Heads Cross
+As Couples Heads Run
+Pass Thru
+Wheel and Deal
+Centers Square Thru 3
+Allemande Left''', ''),
+
 ];
