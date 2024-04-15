@@ -14,7 +14,7 @@ Taminations is not affiliated with
 [CALLERLAB](http://www.callerlab.org/). For official and complete
 definitions, refer to the
 [CALLERLAB documents](https://www.callerlab.org/dance-programs/).
-For Challenge definitions, the web site and books by
+For Challenge definitions, the website and books by
 [Vic Ceder](https://www.ceder.net/def/)
 are another important reference.
 
@@ -23,17 +23,18 @@ Call pronunciations provided by
 
 ---
 
-## Taminations version 1.6.77 built 2024-03-18
+## Taminations version 1.6.78 built 2024-04-15
 Copyright 2024 by Brad Christie.  
 This is free software, and you are welcome to modify and redistribute it
 under the terms of the [GNU GPL license](http://www.gnu.org/licenses/gpl.html).  
 
 ## What's New
-* Animations for Line of 6 or 8 Bend the Line
 * Sequencer changes:
-  - Fix for two-couple starting formation
-  - Better handling of keyboard for touch devices
-  - Improvements for modifications of multi-part calls
+  - Fix for Cast Off 3/4 from some tidal lines
+  - Dismiss soft keyboard by tapping outside text input field
+  - Accept Square Thru for Square Thru 4
+  - Adjust to Boxes also adjusts t-bones
+  - Accept As Couples Heads/Sides
   
 For a detailed history of changes, view the
 [Git log](https://github.com/bradchristie/taminations-flutter/commits/main)
