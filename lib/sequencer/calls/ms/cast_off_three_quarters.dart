@@ -20,7 +20,7 @@
 
 import '../common.dart';
 
-class CastOffThreeQuarters extends Action {
+class CastOffThreeQuarters extends SplitCall {
 
   @override var level = LevelData.MS;
   @override var help = '''Cast Off (fraction)
@@ -32,21 +32,30 @@ class CastOffThreeQuarters extends Action {
 
   @override
   void performCall(CallContext ctx0) {
+    if (ctx0.actives.length == 8) {
+      try {
+        //  This will fail if formation is a thar or similar
+        super.performCall(ctx0);
+        return;
+      } on CallError {
+        //  Fall through to code below
+      }
+    }
     ctx0.activesContext((ctx) {
       var waveDancers = ctx.actives.where((d) => ctx.isInWave(d)).toList();
       var couplesLeft = ctx.actives
           .where((d) =>
-              ctx.isInCouple(d) &&
-              d.isCenterLeft &&
-              d.data.partner!.isActive &&
-              d.data.partner!.isCenterLeft)
+      ctx.isInCouple(d) &&
+          d.isCenterLeft &&
+          d.data.partner!.isActive &&
+          d.data.partner!.isCenterLeft)
           .toList();
       var couplesRight = ctx.actives
           .where((d) =>
-              ctx.isInCouple(d) &&
-              d.isCenterRight &&
-              d.data.partner!.isActive &&
-              d.data.partner!.isCenterRight)
+      ctx.isInCouple(d) &&
+          d.isCenterRight &&
+          d.data.partner!.isActive &&
+          d.data.partner!.isCenterRight)
           .toList();
 
       //  Dancers in mini-waves hinge three times

@@ -290,8 +290,8 @@ class CallContext {
   //  Apply a function as a method of the new CallContext.
   //  Then transfer any new calls from the created CallContext to this CallContext.
   //  Return true if anything new was added.
-  bool subContext(List<DancerModel> dancers, void Function(CallContext) block) {
-    var ctx = CallContext.fromContext(this,dancers:dancers.inOrder());
+  bool subContext(Iterable<DancerModel> dancers, void Function(CallContext) block) {
+    var ctx = CallContext.fromContext(this,dancers:dancers.toList().inOrder());
     ctx.analyze();
     block(ctx);
     return ctx.appendToSource(this);
@@ -615,7 +615,7 @@ class CallContext {
     bool headsMatchSides=true,
     bool subformation=false,  //  don't need to match all the dancers of ctx2
     double maxError=1.9,
-    double delta = 0.1,
+    double delta = 0.2,
     double maxAngle = 0.2
   }) {
     DebugSwitch.mapping.log('matchFormations ${dancers.length}  ${ctx2.dancers.length}');
@@ -802,6 +802,8 @@ class CallContext {
 
   //  For calls that just apply to the centers, make sure they
   //  stay in the center and don't collide with the other dancers
+  //  Also checks if the outer 4 are doing a call that collides
+  //  with the centers
   void checkCenters({bool force=false}) {
     if (dancers.length == 8) {
       animate(0.0);
@@ -809,22 +811,33 @@ class CallContext {
       final moving = force ? center(4) : movingDancers();
       final cw4 = centerWaveOf4();
       final cd4 = centerDiamond();
+      final out4 = outer(4);
+      //  Make sure that we really have a center 4
       final groupsOK = groups.length > 1 && (groups[0].length == 4 ||
           (groups[0].length == 2 && groups[1].length == 2));
+      //  And those are the only dancers performing the call,
+      //  or the outer 4 are the only dancers performing the call
       if (moving.length == 4 && (
           (cw4?.containsAll(moving) ?? false) ||
           (cd4?.containsAll(moving) ?? false) ||
+          out4.containsAll(moving) ||
           (groupsOK && center(4).containsAll(moving)))) {
+        //  Now check if there's a collision between center dancers
+        //  and outer dancers
         animateToEnd();
         var minDist = actives.minOf((d) =>
             dancerClosest(d, (d2) => !moving.contains(d2))!.distanceTo(d));
         if (minDist.isGreaterThan(1.0)) {
           if (center(4).containsAll(moving) ||
+              out4.containsAll(moving) ||
               (centerWaveOf4()?.containsAll(moving) ?? false) ||
               (centerDiamond()?.containsAll(moving) ?? false))
             return;
         }
-        final ctx2 = CallContext.fromDancers(moving,withPaths: true);
+        //  Collision likely - squeeze the original center 4 into
+        //  a more compact formation
+        final ctx2 = CallContext.fromDancers(
+            out4.containsAll(moving) ? dancers - moving : moving, withPaths: true);
         if (ctx2.isLines()) {
           ctx2.adjustToFormation(Formation('Compact Wave RH'));
         } else if (ctx2.isDiamond()) {
@@ -1405,7 +1418,7 @@ class CallContext {
   }
   bool is2x4() => dancers.length == 8 && (isLines() || isTBone());
 
-  bool isDiamond() => dancers.every((d) => dancers.where((d2) {
+  bool isDiamond() => dancers.length==4 && dancers.every((d) => dancers.where((d2) {
       if (d2 == d)
         return false;
       var a = d.angleToDancer(d2).abs();

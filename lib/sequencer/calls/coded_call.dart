@@ -513,7 +513,7 @@ abstract class CodedCall extends Call {
     'Promenade(Home)?'.ri: (name) => PromenadeHome(name),
     'Swing(Your)?Corner(and)?Promenade(Home)?'.ri: (name) => PromenadeHome(name),
     'Promenade(Home)?(With)?(Your)?Corner'.ri: (name) => PromenadeHome(name),
-    '(Left|Right)?PullBy'.ri: (name) => PullBy(name),
+    '(Right)?PullBy'.ri: (name) => PullBy(name),
 
     '14(In|Out)'.ri: (name) => QuarterInOut(name),
     'anda?14More'.ri: (name) => QuarterMore(name),
@@ -598,7 +598,7 @@ abstract class CodedCall extends Call {
     'Squeeze(the(Butterfly|O))?'.ri: (name) => Squeeze(name),
     'SqueezetheGalaxy'.ri: (name) => SqueezeTheGalaxy(name),
     'SqueezetheHourglass'.ri: (name) => SqueezeTheHourglass(name),
-    'SquareThru(1|2|3|4|5|6|7)'.ri: (name) => SquareThru(name),
+    'SquareThru(1|2|3|4|5|6|7)?'.ri: (name) => SquareThru(name),
     'SquareThruOn(2|3|4|5|6)(.+)'.ri: (name) => SquareThru(name),
     'StacktheLine'.ri: (name) => StackTheLine(name),
     'Stagger.*'.ri: (name) => Stagger(name),
@@ -647,7 +647,7 @@ abstract class CodedCall extends Call {
         (name) => TriangleCirculate(name),
     '(Inside|Outside|Inpoint|Outpoint|TandemBased|WaveBased)?Triangle'.ri:
         (name) => SelectTriangle(name),
-    'TripleBox.*'.ri: (name) => TripleBox(name),
+    'TripleBox(es)?.*'.r: (name) => TripleBox(name),
     'Triple(Lines?|Waves?|Columns?).*'.ri: (name) => TripleLine(name),
     '(Double|Triple)StarThru'.ri: (name) => TripleStarThru(name),
     'TripleTrade'.ri: (name) => TripleTrade(name),

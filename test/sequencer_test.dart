@@ -4014,4 +4014,38 @@ Star Thru
 Pass Thru
 Allemande Left''', ''),
 
+  TestSequence('Outer 4 squeeze the centers',
+'''Sides Pass the Ocean
+Heads Separate and Single Circle to a Wave
+Recycle
+Cross Trail Thru
+Wheel and Deal
+Centers Square Thru 3
+Allemande Left''',''),
+
+  TestSequence('As Couples Heads',
+'''Heads Pair Off
+Veer Left
+Bend the Line
+As Couples Heads Cross
+As Couples Heads Run
+Pass Thru
+Wheel and Deal
+Centers Square Thru 3
+Allemande Left''', ''),
+
+  TestSequence('Cast Off 3/4 from Tidal 3 and 1 Line',
+'''Heads Pass Out
+Spin the Top
+Center 4 Switch the Wave
+Cast Off 3/4
+Facing Dancers Pass Thru
+Center Girls Run
+Track 2
+Girls Circulate
+Boys Run
+Ferris Wheel
+Centers Square Thru 3
+Allemande Left''',''),
+
 ];

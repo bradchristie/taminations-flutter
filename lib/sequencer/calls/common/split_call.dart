@@ -33,6 +33,7 @@ abstract class SplitCall extends Action {
   @override
   void performCall(CallContext ctx) {
     var splitAmount = ctx.dancers.length ~/ 2;
+    var splitName = name.replaceFirst('Split', '');
     if (ctx.dancers.length > 4) {
       try {
         //  First try splitting on the horizontal axis into
@@ -40,10 +41,12 @@ abstract class SplitCall extends Action {
         //  Use a subcontext so if this fails it doesn't mess up our context
         ctx.subContext(ctx.dancers, (ctx2) {
           ctx2.selectContext(SelectLocation('Near $splitAmount'), (ctx3) {
-            ctx3.applyCalls(name);
+            ctx3.dancers.center();
+            ctx3.applyCalls(splitName);
           });
           ctx2.selectContext(SelectLocation('Far $splitAmount'), (ctx3) {
-            ctx3.applyCalls(name);
+            ctx3.dancers.center();
+            ctx3.applyCalls(splitName);
           });
         });
       } on CallError {
@@ -52,14 +55,16 @@ abstract class SplitCall extends Action {
         try {
           ctx.subContext(ctx.dancers, (ctx2) {
             ctx2.selectContext(SelectLocation('Left $splitAmount'), (ctx3) {
-              ctx3.applyCalls(name);
+              ctx3.dancers.center();
+              ctx3.applyCalls(splitName);
             });
             ctx2.selectContext(SelectLocation('Right $splitAmount'), (ctx3) {
-              ctx3.applyCalls(name);
+              ctx3.dancers.center();
+              ctx3.applyCalls(splitName);
             });
           });
         } on CallError {
-          throw FormationNotFoundError(name);
+          throw FormationNotFoundError(splitName);
         }
       }
     } else

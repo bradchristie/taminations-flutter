@@ -26,7 +26,7 @@ abstract class TripleFormation extends Action {
   @override final level = LevelData.C1;
   @override var helplink = 'c1/triple_box_concept';
   TripleFormation(String name) :
-        subCall = name.replaceFirst('Triple (Box|Lines?|Waves?|Columns?)'.r,''),
+        subCall = name.replaceFirst('Triple (Box(es)?|Lines?|Waves?|Columns?)'.r,''),
         super(name);
 
   static final Formation TripleBoxes = Formation('', dancers:[
