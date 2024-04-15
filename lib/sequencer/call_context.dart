@@ -290,8 +290,8 @@ class CallContext {
   //  Apply a function as a method of the new CallContext.
   //  Then transfer any new calls from the created CallContext to this CallContext.
   //  Return true if anything new was added.
-  bool subContext(List<DancerModel> dancers, void Function(CallContext) block) {
-    var ctx = CallContext.fromContext(this,dancers:dancers.inOrder());
+  bool subContext(Iterable<DancerModel> dancers, void Function(CallContext) block) {
+    var ctx = CallContext.fromContext(this,dancers:dancers.toList().inOrder());
     ctx.analyze();
     block(ctx);
     return ctx.appendToSource(this);
@@ -1418,7 +1418,7 @@ class CallContext {
   }
   bool is2x4() => dancers.length == 8 && (isLines() || isTBone());
 
-  bool isDiamond() => dancers.every((d) => dancers.where((d2) {
+  bool isDiamond() => dancers.length==4 && dancers.every((d) => dancers.where((d2) {
       if (d2 == d)
         return false;
       var a = d.angleToDancer(d2).abs();

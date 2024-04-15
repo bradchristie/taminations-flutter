@@ -19,7 +19,7 @@
 
 import '../common.dart';
 
-class SplitCounterRotate extends Action {
+class SplitCounterRotate extends SplitCall {
 
   @override final level = LevelData.A2;
   @override var helplink = 'a2/box_counter_rotate';
@@ -28,13 +28,15 @@ class SplitCounterRotate extends Action {
 
   @override
   void performCall(CallContext ctx) {
-    //  TODO diamonds, etc
-    final boxes = ctx.boxes() ??
-        thrower(CallError('Must have boxes for Split Counter Rotate'))!;
-    for (final boxDancers in boxes) {
-      ctx.subContext(boxDancers..center(), (ctx2) {
-        ctx2.applyCalls('Box Counter Rotate');
-      });
+    final boxes = ctx.boxes();
+    if (boxes != null) {
+      for (final boxDancers in boxes) {
+        ctx.subContext(boxDancers..center(), (ctx2) {
+          ctx2.applyCalls('Box Counter Rotate');
+        });
+      }
+    } else {
+      super.performCall(ctx);
     }
   }
 }
