@@ -253,6 +253,9 @@ class _SequencerEditLineState extends fm.State<SequencerEditLine> {
                   key: fm.Key('Sequencer Input'),
                   focusNode: focusNode,
                   controller: textFieldController,
+                  onTapOutside: (event) {
+                    fm.FocusManager.instance.primaryFocus?.unfocus();
+                  },
                   decoration: fm.InputDecoration(
                       hintText: 'Enter calls',
                       suffixIcon: fm.IconButton(
