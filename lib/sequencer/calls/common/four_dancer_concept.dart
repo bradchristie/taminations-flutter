@@ -60,6 +60,8 @@ abstract class FourDancerConcept extends Action {
     ctx0.activesContext((ctx) {
     //  Get dancer groups
     var groups = dancerGroups(ctx);
+    //  Create index for group dancer to its group
+    var groupIndex = <DancerModel,List<DancerModel>>{};
     //  Create a concept dancer for each group dancer
     var singles = groups.map((group) {
       //  Select the gender for the concept dancer
@@ -80,6 +82,7 @@ abstract class FourDancerConcept extends Action {
       //  Set the location for the concept dancer
       var newpos = startPosition(group);
       dsingle.setStartPosition(newpos);
+      groupIndex[dsingle] = group;
       return dsingle;
     }).toList();
 
@@ -98,7 +101,8 @@ abstract class FourDancerConcept extends Action {
     //  Get the paths and apply to the original dancers
     for (var ci=0; ci<conceptctx.dancers.length; ci++) {
       var cd = conceptctx.dancers[ci];
-      var group = groups[ci];
+      //var group = groups[ci];
+      var group = groupIndex[cd]!;
       //  Compute movement for each real dancer for each movement
       //  based on the concept dancer
       var cdbeat = 0.0;
