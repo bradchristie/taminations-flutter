@@ -27,8 +27,8 @@ import '../../moves.dart';
     AnimatedCall('Those Facing, Start Right and Left Thru',
       formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.GIRL,x:-2,y:3,angle:180),
-        DancerModel.fromData(gender:Gender.GIRL,x:-2,y:1,angle:0),
         DancerModel.fromData(gender:Gender.BOY,x:-2,y:-1,angle:0),
+        DancerModel.fromData(gender:Gender.GIRL,x:-2,y:1,angle:0),
         DancerModel.fromData(gender:Gender.BOY,x:-2,y:-3,angle:180),
   ]),
       group:' ',fractions:'3',
@@ -37,12 +37,12 @@ import '../../moves.dart';
           BelleWheel,
 
           PullBy.changeBeats(3).scale(2.0,1.0) +
-          BelleWheel,
-
-          PullBy.changeBeats(3).scale(2.0,1.0) +
           BeauWheel,
 
-          Stand.changeBeats(3).changehands(0) +
+        PullBy.changeBeats(3).scale(2.0,1.0) +
+            BelleWheel,
+
+        Stand.changeBeats(3).changehands(0) +
           BeauWheel
       ]),
 
@@ -122,8 +122,8 @@ import '../../moves.dart';
     AnimatedCall('Girls Start, Spin the Top',
       formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.GIRL,x:-2,y:3,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:-2,y:1,angle:180),
         DancerModel.fromData(gender:Gender.BOY,x:-2,y:-1,angle:0),
+        DancerModel.fromData(gender:Gender.GIRL,x:-2,y:1,angle:180),
         DancerModel.fromData(gender:Gender.BOY,x:-2,y:-3,angle:180),
   ]),
       group:' ',isGenderSpecific:true,fractions:'3',
@@ -133,15 +133,15 @@ import '../../moves.dart';
           HingeLeft +
           HingeLeft.scale(0.5,1.0),
 
-          SwingRight +
-          LeadRight.changeBeats(4.5).scale(1.5,3.0),
-
           Stand.changeBeats(3) +
           HingeLeft +
           HingeLeft +
           HingeLeft.scale(0.5,1.0),
 
-          Stand.changeBeats(3) +
+        SwingRight +
+            LeadRight.changeBeats(4.5).scale(1.5,3.0),
+
+        Stand.changeBeats(3) +
           LeadRight.changeBeats(4.5).scale(1.5,3.0)
       ]),
   ];
