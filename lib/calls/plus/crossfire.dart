@@ -45,6 +45,31 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Crossfire',
+        formation: Formation('Diamond Facing'),
+        from: 'Facing Diamond, Left-Hand Centers',
+        difficulty: 3,
+        paths: [
+          CrossFoldRight.changeBeats(4) +
+              Forward.changeBeats(2),
+
+          SwingLeft.changehands(Hands.GRIPLEFT).scale(1.0,0.75).changeBeats(4) +
+              ExtendRight.scale(1.0,0.5).changeBeats(2),
+        ]),
+
+    AnimatedCall('Crossfire',
+        formation: Formation('Diamond Facing RH'),
+        from: 'Facing Diamond, Right-Hand Centers',
+        difficulty: 3,
+        paths: [
+          CrossFoldLeft.changeBeats(4) +
+              Forward.changeBeats(2),
+
+          SwingRight.changehands(Hands.GRIPLEFT).scale(1.0,0.75).changeBeats(4) +
+              ExtendLeft.scale(1.0,0.5).changeBeats(2),
+        ]),
+
+
+    AnimatedCall('Crossfire',
       formation:Formation('Two-Faced Lines RH'),
       from:'Right-Hand Two-Faced Lines',difficulty: 1,
       paths:[
