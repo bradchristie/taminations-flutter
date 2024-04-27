@@ -102,7 +102,10 @@ function setAnimation(title,link,name) {
   document.getElementById('animation').src =
       'https://www.tamtwirlers.org/taminations/#?main=ANIMATIONS&link=' + link + '&animname=' + name + '&embed';
   //  Load the definition
-  document.getElementById('definition').src = 'https://www.tamtwirlers.org/taminations/html/'+link+'.html';
+  var lang = '';
+  if (navigator.language.indexOf('de') >= 0)
+    lang = '.lang-de';
+  document.getElementById('definition').src = 'https://www.tamtwirlers.org/taminations/html/'+link+lang+'.html';
   //  On small screens, show the animation frame
   showAnimation();
 }
