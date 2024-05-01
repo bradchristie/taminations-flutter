@@ -280,6 +280,7 @@ class CallContext {
       _source!.level = level;
     ctx?.didYourPart |= didYourPart;
     ctx?.asymmetric |= dancers.areDancersOrdered();
+    ctx?.resolutionError |= resolutionError;
     return didSomething;
   }
 

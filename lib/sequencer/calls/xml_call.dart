@@ -120,7 +120,7 @@ class XMLCall extends Call {
         'Dixie Grand',
         'Right and Left Grand'].contains(name)) {
         if (!ctxwork.checkResolution(ctx2, xmlmap)) {
-          ctxwork.resolutionError = true;
+          ctx.resolutionError = true;
         }
       }
     } else {
