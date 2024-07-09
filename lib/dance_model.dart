@@ -153,9 +153,10 @@ class DanceModel extends fm.ChangeNotifier {
       for (var i=0; i<dancers.length; i++) {
         final d = dancers[i];
         d.showColor = true;
+        final j = dancers.length > 8 ? d.numberCouple.i-1 : i;
         d.fillColor = d.gender == Gender.PHANTOM
             ? Color.LIGHTGRAY
-            : _randomColorList[i];
+            : _randomColorList[j];
       }
     }
   }
