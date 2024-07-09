@@ -4048,4 +4048,14 @@ Ferris Wheel
 Centers Square Thru 3
 Allemande Left''',''),
 
+  TestSequence('Travel Thru',
+'''Heads Lead Right
+Travel Thru
+Wheel and Deal
+Left Travel Thru
+Bend the Line
+Star Thru
+Pass Thru
+Allemande Left''','')
+
 ];

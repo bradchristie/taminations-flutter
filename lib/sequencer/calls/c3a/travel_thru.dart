@@ -18,32 +18,28 @@
 
 */
 
-import '../call.dart';
-import '../coded_call.dart';
 import '../common.dart';
 
-mixin IsLeft on Call {
+class TravelThru extends Action with CallWithParts, IsLeft {
 
-  var isLeft = false;
-  String get left => isLeft ? 'Left' : '';
-  String get antiLeft => isLeft ? '' : 'Left';
-  String get leftHand => isLeft ? 'Left-Hand' : '';
-  String get whichWay => isLeft ? 'Left' : 'Right';
+  @override var level = LevelData.C3A;
+  @override var numberOfParts = 2;
+  @override var help = '''Travel Thru is a 2-part call:
+  1.  Pass Thru
+  2.  As Couples Quarter Right''';
+  @override var helplink = 'c3a/travel_thru';
 
-}
-
-class Left extends CodedCall {
-
-  @override var nextCallCoded = true;
-
-  Left(super.name);
+  TravelThru(super.name);
 
   @override
-  void performCall(CallContext ctx) {
-    var leftCall = ctx.findImplementor<IsLeft>(startFrom:this);
-    leftCall.isLeft = true;
-    leftCall.raiseLevel(LevelData.A1);
-    return;
+  void performPart1(CallContext ctx) {
+    ctx.applyCalls('$left Pass Thru');
   }
+
+  @override
+  void performPart2(CallContext ctx) {
+    ctx.applyCalls('As Couples Face $whichWay');
+  }
+
 
 }

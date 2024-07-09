@@ -29,6 +29,7 @@ import 'c1/prefer.dart';
 import 'c1/weave.dart';
 import 'c2/cross_concentric_cycle_and_wheel.dart';
 import 'c2/vertical.dart';
+import 'c3a/travel_thru.dart';
 import 'common/double_selector.dart';
 import 'common/grand.dart';
 import 'common/select_location.dart';
@@ -643,6 +644,7 @@ abstract class CodedCall extends Call {
     'Trail'.ri: (name) => Trailers(name),
     'TrailtoaDiamond'.ri: (name) => TrailToADiamond(name),
     'Transferand.*'.ri: (name) => TransferAnd(name),
+    'TravelThru'.ri: (name) => TravelThru(name),
     '(Inside|Outside|Inpoint|Outpoint|TandemBased|WaveBased)?TriangleCirculate'.ri:
         (name) => TriangleCirculate(name),
     '(Inside|Outside|Inpoint|Outpoint|TandemBased|WaveBased)?Triangle'.ri:
