@@ -29,6 +29,7 @@ import 'c1/prefer.dart';
 import 'c1/weave.dart';
 import 'c2/cross_concentric_cycle_and_wheel.dart';
 import 'c2/vertical.dart';
+import 'c3a/eight_by_anything.dart';
 import 'c3a/travel_thru.dart';
 import 'common/double_selector.dart';
 import 'common/grand.dart';
@@ -414,6 +415,7 @@ abstract class CodedCall extends Call {
     '($specifier)+and($specifier)+'.ri: (name) => DoubleSelector(name),
     'DoYourPart.*'.ri: (name) => DoYourPart(name),
 
+    '8By.*'.ri: (name) => EightByAnything(name),
     '8Chain(1|2|3|4|5|6|7|Thru)'.ri: (name) => EightChain(name),
     'End'.ri: (name) => Ends(name),
     '(Then)?Every(one|body)'.ri: (name) => Everyone(name),

@@ -4056,6 +4056,21 @@ Left Travel Thru
 Bend the Line
 Star Thru
 Pass Thru
+Allemande Left''',''),
+
+  TestSequence('Eight By Anything',
+'''Sides Star Thru and Spread
+Eight By Left Wheel Thru
+Right Roll to a Wave
+Eight By Recycle
+Centers Swing Thru
+Flip the Diamond
+Split Circulate
+Boys Run
+Cast Off 3/4
+Right and Left Thru
+Star Thru
+Pass Thru
 Allemande Left''','')
 
 ];
