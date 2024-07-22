@@ -21,7 +21,6 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../moves.dart';
-import '../plus/fan_the_top.dart' as plus;
 
   final List<AnimatedCall> FanConcept = [
 
@@ -255,8 +254,6 @@ import '../plus/fan_the_top.dart' as plus;
           SwingRight +
           CastLeft
       ]),
-    plus.FanTheTop.where((tam) =>
-      tam.title == 'Fan the Top' && tam.from == 'Right-Hand Wave').first.xref(title: 'Fan the Top').xref(group: ' '),
 
     AnimatedCall('Fan 1/2 Cast and Relay',
       formation:Formation('Ocean Waves RH BGGB'),
