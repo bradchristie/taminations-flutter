@@ -33,7 +33,7 @@ class SpinChainAndExchangeTheGears extends Action with CallWithParts, CallWithSt
 You can change the star turn of Part 4 by adding Turn the Star (fraction).
 Use "A Full Turn" to turn it all the way around.''';
   @override var helplink = 'plus/spin_chain_and_exchange_the_gears';
-  var turnAmount = 3;
+  @override var turnStarAmount = 3;
 
   SpinChainAndExchangeTheGears(super.name);
 
@@ -55,7 +55,7 @@ Use "A Full Turn" to turn it all the way around.''';
 
   @override
    void performPart4(CallContext ctx) {
-    for (var i=0; i<turnAmount; i++)
+    for (var i=0; i<turnStarAmount; i++)
       ctx.applyCalls('Turn the Stars');
   }
 
