@@ -74,6 +74,8 @@ class Fraction extends Action {
         //  Figure out how many beats are in the fractional call
         //  Calls could have either "parts" or "fractions"
         var parts = call.xcall.parts;
+        if (parts.isEmpty)
+          parts = call.xcall.fractions;
         if (parts.isNotEmpty) {
           var partnums = parts.split(';');
           var numParts = partnums.length + 1;

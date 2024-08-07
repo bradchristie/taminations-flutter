@@ -342,7 +342,7 @@ class DanceModel extends fm.ChangeNotifier {
     _interactiveDancer = practiceGender;
     _interactiveRandom = practiceIsRandom;
     _resetAnimatedCall();
-    partstr = call.parts;
+    partstr = call.parts + call.fractions;
     hasParts = call.parts.isNotBlank;
     later(() {
       notifyListeners();
