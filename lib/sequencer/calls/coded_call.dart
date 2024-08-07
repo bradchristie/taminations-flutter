@@ -28,6 +28,7 @@ import 'c1/follow_thru.dart';
 import 'c1/prefer.dart';
 import 'c1/weave.dart';
 import 'c2/cross_concentric_cycle_and_wheel.dart';
+import 'c2/perk_up.dart';
 import 'c2/vertical.dart';
 import 'c3a/eight_by_anything.dart';
 import 'c3a/travel_thru.dart';
@@ -509,6 +510,7 @@ abstract class CodedCall extends Call {
     'Peel(Off|Left|Right)'.ri: (name) => PeelOff(name),
     'PeeltoaDiamond'.ri: (name) => PeelToADiamond(name),
     'Percolate'.ri: (name) => Percolate(name),
+    'PerkUp'.ri: (name) => PerkUp(name),
     'Phantom.+'.ri: (name) => Phantom(name),
     'Plenty'.ri: (name) => Plenty(name),
     'Point'.ri: (name) => Points(name),

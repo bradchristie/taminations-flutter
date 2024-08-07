@@ -4071,6 +4071,18 @@ Cast Off 3/4
 Right and Left Thru
 Star Thru
 Pass Thru
-Allemande Left''','')
+Allemande Left''',''),
+
+  TestSequence('Perk Up',
+'''Heads Pass the Ocean
+Extend
+Perk Up Interrupt After Part 2 With Diamond Circulate
+Acey Deucey Ends Go 2x
+Wheel and Deal
+Star Thru
+Girls Circulate
+Ferris Wheel
+Centers Pass Thru
+Allemande Left''',''),
 
 ];
