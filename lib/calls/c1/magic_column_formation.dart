@@ -29,8 +29,8 @@ import '../c2/invert_the_column.dart' as c2;
     AnimatedCall('Magic Column Circulate',
       formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-3,y:-1,angle:0),
-        DancerModel.fromData(gender:Gender.BOY,x:-1,y:-1,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:1,y:-1,angle:180),
+        DancerModel.fromData(gender:Gender.BOY,x:-1,y:-1,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:3,y:-1,angle:0),
   ]),
       group:'(Right-Hand Centers)',fractions:'2',
@@ -38,29 +38,28 @@ import '../c2/invert_the_column.dart' as c2;
           Forward.changeBeats(2) +
           ExtendLeft.changeBeats(2).scale(1.0,2.0),
 
-          ExtendRight.changeBeats(2).scale(1.0,2.0) +
-          Forward.changeBeats(2),
-
           Forward_2.changeBeats(4),
 
-          FlipLeft.changeBeats(4)
+        ExtendRight.changeBeats(2).scale(1.0,2.0) +
+            Forward.changeBeats(2),
+
+        FlipLeft.changeBeats(4)
       ]),
 
     AnimatedCall('Magic Column Circulate (6 dancers)',
       formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-2,y:-1,angle:0),
-        DancerModel.fromData(gender:Gender.BOY,x:0,y:-1,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:2,y:-1,angle:0),
+        DancerModel.fromData(gender:Gender.BOY,x:0,y:-1,angle:180),
   ]),
       group:'(Right-Hand Centers)',fractions:'2',
       paths:[
           Forward.changeBeats(2) +
           ExtendLeft.changeBeats(2).scale(1.0,2.0),
 
+          RunLeft.changeBeats(4),
           ExtendRight.changeBeats(2).scale(1.0,2.0) +
-          Forward.changeBeats(2),
-
-          RunLeft.changeBeats(4)
+          Forward.changeBeats(2)
       ]),
 
     AnimatedCall('Magic Column Coordinate',
@@ -207,18 +206,18 @@ import '../c2/invert_the_column.dart' as c2;
     AnimatedCall('Magic Column Circulate (6 dancers)',
       formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-2,y:-1,angle:180),
-        DancerModel.fromData(gender:Gender.BOY,x:0,y:-1,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:2,y:-1,angle:180),
+        DancerModel.fromData(gender:Gender.BOY,x:0,y:-1,angle:0),
   ]),
       group:'(Left-Hand Centers)',fractions:'2',
       paths:[
           RunRight.changeBeats(4),
 
+          Forward.changeBeats(2) +
+          ExtendRight.changeBeats(2).scale(1.0,2.0),
+
           ExtendLeft.changeBeats(2).scale(1.0,2.0) +
           Forward.changeBeats(2),
-
-          Forward.changeBeats(2) +
-          ExtendRight.changeBeats(2).scale(1.0,2.0)
       ]),
 
     AnimatedCall('Magic Column Coordinate',
