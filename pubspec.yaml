@@ -15,8 +15,8 @@ dependencies:
     sdk: flutter
   auto_size_text: ^3.0.0-nullsafety
   bezier: any
-  flutter_markdown: ^0.6.2
-  google_fonts: ^5.1.0
+  flutter_markdown: ^0.7.3
+  google_fonts: ^6.2.0
   just_audio: ^0.9.11
   markdown: ^7.0.1
   provider: ^6.0.0
