@@ -384,28 +384,27 @@ import '../../moves.dart';
         paths: [
           LeadRight.changeBeats(1.5).scale(2, 2.5) +
               LeadRight.changeBeats(.5).scale(1.5, 1) +
-              ExtendLeft.changeBeats(1) +
               Forward +
+              ExtendLeft.changeBeats(1) +
               ExtendLeft.scale(1, .5) +
               ExtendRight.scale(1,.5),
 
           Forward.scale(.5, 1) +
               QuarterLeft.changeBeats(1).skew(.5, 0) +
-              Forward +
               ExtendRight.changeBeats(1) +
+              Forward +
               ExtendLeft.scale(1, .5) +
               ExtendRight.scale(1,.5),
 
           ExtendRight.scale(1.5,0.5) +
               ExtendRight.scale(1.5,0.5) +
-              Forward +
               ExtendRight.changeBeats(1) +
+              Forward +
               RunRight.changeBeats(2),
 
           ExtendRight.scale(.5,0.5) +
-              ExtendRight.scale(.5,0.5) +
+              ExtendRight.changeBeats(2).scale(1.5,0.5) +
               ExtendLeft.changeBeats(1) +
-              Forward +
               FlipLeft.changeBeats(2)
 
         ]),
