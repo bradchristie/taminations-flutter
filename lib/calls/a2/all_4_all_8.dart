@@ -1998,7 +1998,7 @@ import '../c3a/mini_chase.dart' as c3a;
     c1.VerticalTag.where((tam) =>
       tam.title == 'All 8 Vertical 1/2 Tag').first.xref(title: 'All 8 Vertical 1/2 Tag').xref(group: 'All 8 (C-1)'),
     c1.TaggingCallsBackToAWave.where((tam) =>
-      tam.title == 'All 8 Vertical Tag Back to a Wave').first.xref(title: 'All 8 Vertical Tag Back to a Wave').xref(group: 'All 8 (C-1)'),
+      tam.title == 'All 8 Vertical Tag Back').first.xref(title: 'All 8 Vertical Tag Back').xref(group: 'All 8 (C-1)'),
     c1.AnythingAndWeave.where((tam) =>
       tam.title == 'All 8 Weave').first.xref(title: 'All 8 Weave').xref(group: 'All 8 (C-1)'),
     c1.WheelFanThru.where((tam) =>

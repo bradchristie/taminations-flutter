@@ -154,7 +154,7 @@ import '../../moves.dart';
           RunLeft.changeBeats(6)
       ]),
 
-    AnimatedCall('Tag Back to a Wave',
+    AnimatedCall('Tag Back',
       formation:Formation('Normal Lines'),
       from:'Lines',parts:'3',
       paths:[
@@ -177,7 +177,7 @@ import '../../moves.dart';
           ExtendLeft.changeBeats(1.5).scale(2.0,0.25)
       ]),
 
-    AnimatedCall('Tag Back to a Wave',
+    AnimatedCall('Tag Back',
       formation:Formation('Two-Faced Lines RH'),
       from:'Two-Faced Lines',parts:'3',
       paths:[
@@ -200,7 +200,7 @@ import '../../moves.dart';
           ExtendLeft.changeBeats(1.5).scale(2.0,0.25)
       ]),
 
-    AnimatedCall('Vertical Tag Back to a Wave',
+    AnimatedCall('Vertical Tag Back',
       formation:Formation('Facing Couples Compact'),
       from:'Facing Couples',parts:'3',
       paths:[
@@ -214,7 +214,7 @@ import '../../moves.dart';
           RunRight
       ]),
 
-    AnimatedCall('All 8 Vertical Tag Back to a Wave',
+    AnimatedCall('All 8 Vertical Tag Back',
       formation:Formation('Static Square'),
       from:'Static Square',parts:'6',
       paths:[

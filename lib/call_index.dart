@@ -1155,7 +1155,7 @@ var callIndex = [
   CallEntry('Switch to an Interlocked Diamond','c1','c1/switch_to_an_interlocked_diamond',c1.SwitchToAnInterlockedDiamond,[]),
 
   CallEntry('T-Bone Formation','c1','c1/t_bone_formation',c1.TBoneFormation,[]),
-  CallEntry('Tag Back to a Wave','c1','c1/tagging_calls_back_to_a_wave',c1.TaggingCallsBackToAWave,[]),
+  CallEntry('Tag Back','c1','c1/tagging_calls_back_to_a_wave',c1.TaggingCallsBackToAWave,[]),
   CallEntry('Tag Chain Thru','c3a','c3a/any_tagging_call_chain_thru',c3a.AnyTaggingCallChainThru,[]),
   CallEntry('Tag the Line','ms','ms/tag',ms.Tag,['lang-de','lang-ja'],'ms/tag_the_line.mp3'),
   CallEntry('Tag the Line','ssd','ssd/tag',ssd.Tag,['lang-de','lang-ja']),
@@ -1224,7 +1224,7 @@ var callIndex = [
   CallEntry('Veer Left / Right','ssd','ssd/veer',ssd.Veer,['lang-de','lang-ja']),
   CallEntry('Vertical <anything>','c2','c2/vertical_anything',c2.VerticalAnything,[]),
   CallEntry('Vertical Tag','c1','c1/vertical_tag',c1.VerticalTag,[]),
-  CallEntry('Vertical Tag Back to a Wave','c1','c1/tagging_calls_back_to_a_wave',c1.TaggingCallsBackToAWave,[]),
+  CallEntry('Vertical Tag Back','c1','c1/tagging_calls_back_to_a_wave',c1.TaggingCallsBackToAWave,[]),
   CallEntry('Vertical Tag Your Neighbor','c2','c2/any_tagging_call_your_neighbor',c2.AnyTaggingCallYourNeighbor,[]),
 
   CallEntry('Walk and Dodge','ms','ms/walk_and_dodge',ms.WalkAndDodge,['lang-de','lang-ja'],'ms/walk_and_dodge.mp3'),
