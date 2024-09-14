@@ -84,4 +84,66 @@ final List<AnimatedCall> ChaseYourCrossNeighbor = [
             HingeLeft.scale(0.5,0.5)
       ]),
 
+  AnimatedCall('Left Chase Your Cross Neighbor',
+      formation:Formation('Couples Facing Out'),
+      from:'Couples Facing Out',parts:'3.7',
+      paths:[
+        FlipLeft +
+            ExtendLeft.changeBeats(2).scale(2.0,1.75) +
+            SwingRight.scale(0.75,0.75) +
+            HingeRight.skew(0.0,0.25),
+
+        UmTurnLeft.skew(-2.0,0.0) +
+            LeadLeft.changeBeats(3.5).scale(3.5,1.5) +
+            UmTurnLeft.skew(-0.5,0.5)
+      ]),
+
+  AnimatedCall('Left Chase Your Cross Neighbor',
+      formation:Formation('Lines Facing Out'),
+      from:'Lines Facing Out',parts:'3.7',
+      paths:[
+        FlipLeft +
+            ExtendLeft.changeBeats(2).scale(2.0,1.75) +
+            SwingRight.scale(0.75,0.75) +
+            HingeRight.skew(0.0,0.25),
+
+        UmTurnLeft.skew(-2.0,0.0) +
+            LeadLeft.changeBeats(3.5).scale(3.5,1.5) +
+            UmTurnLeft.skew(-0.5,0.5),
+
+        FlipLeft +
+            ExtendLeft.changeBeats(2).scale(2.0,1.75) +
+            SwingRight.scale(0.75,0.75) +
+            HingeRight.skew(0.0,0.25),
+
+        UmTurnLeft.skew(-2.0,0.0) +
+            LeadLeft.changeBeats(3.5).scale(3.5,1.5) +
+            UmTurnLeft.skew(-0.5,0.5),
+
+      ]),
+
+  AnimatedCall('Left Chase Your Cross Neighbor',
+      formation:Formation('Trade By'),
+      from:'Trade By',parts:'3',
+      paths:[
+        FlipLeft +
+            ExtendLeft.scale(1.0,1.5) +
+            SwingRight.scale(0.5,0.5) +
+            HingeRight.scale(0.5,0.5),
+
+        UmTurnLeft.skew(-2.0,0.0) +
+            LeadLeft.changeBeats(2).scale(0.5,1.0) +
+            UmTurnLeft,
+
+        FlipLeft +
+            ExtendLeft.scale(1.0,1.5) +
+            SwingRight.scale(0.5,0.5) +
+            HingeRight.scale(0.5,0.5),
+
+        UmTurnLeft.skew(-2.0,0.0) +
+            LeadLeft.changeBeats(2).scale(0.5,1.0) +
+            UmTurnLeft,
+
+      ]),
+
   ];
