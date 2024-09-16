@@ -1,8 +1,8 @@
 
 # Cross Roll to a Wave / Line
 
-From a Line or Wave: The centers [Cross Run](../b2/run.md) while the
-ends [Run](../b2/run.md). The centers pass outside of the ends as they
+From a Line or Wave: The Centers [Cross Run](../b2/run.md) while the
+Ends [Run](../b2/run.md). The Centers pass outside of the Ends as they
 Cross Run.
 
 > 

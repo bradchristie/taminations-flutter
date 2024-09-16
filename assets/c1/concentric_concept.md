@@ -2,8 +2,8 @@
 # Concentric Concept
 
 From any appropriate formation (half the dancers must
-be centers and half must be outsides): The centers do the
-call in their group, while the outsides work with each
+be Centers and half must be Outsides): The Centers do the
+call in their group, while the Outsides work with each
 other and do the call around the outside. The 
 diagrams show who works with whom on a Concentric
 call:
@@ -17,13 +17,13 @@ grouping on the left is used if the caller only says
 "Concentric..." and the Concentric call can be done from a 1x4.
 The grouping on the right is used when the caller says
 "Concentric Diamond..." or when the Concentric
-call can only be done from Diamonds (for example, Concentric 
-[Diamond Circulate](../plus/diamond_circulate.md) or
-Concentric [Flip the Diamond](../plus/flip_the_diamond.md)).
+call can only be done from Diamonds (for example, "Concentric 
+[Diamond Circulate](../plus/diamond_circulate.md)" or
+"Concentric [Flip the Diamond](../plus/flip_the_diamond.md)").
 
 If the Concentric call starts and ends in a 2x2
 Box (for example, "Concentric Star Thru"), the following rule
-applies: If the outsides begin as though in Columns, they
+applies: If the Outsides begin as though in Columns, they
 finish as though in Columns; if they begin as though in Lines, they
 finish as though in Lines.
 
@@ -37,7 +37,7 @@ Concentric [Star Thru](../b1/star_thru.md):
 
 If the Concentric call ends in a 2x2 Box but starts
 elsewhere (for example, "Concentric [Recycle](../ms/recycle.md)" from a Tidal Wave), the
-following rule applies: The outside dancers finish so that
+following rule applies: The Outside dancers finish so that
 the long axis of their ending formation is at right angles to
 the long axis of their starting formation.
 
@@ -84,8 +84,9 @@ Concentric Diamonds, [ Step and Fold](step_and_fold.md):
 > ![alt](concentric_9b.png)
 >
 
-If the Concentric call does not end in a 2x2 Box, then it is not necessary to apply either of the
-above rules. The outsides simply finish in the outside 1x4 or Diamond.
+If the Concentric call does not end in a 2x2 Box, 
+then it is not necessary to apply either of the
+above rules. The Outsides simply finish in the outside 1x4 or Diamond.
 
 Concentric [Trade the Wave](../plus/trade_the_wave.md):
 

@@ -47,9 +47,9 @@ Notes:
 5. Some calls that do have a "clear last part for the Centers" may be confusing 
    to use with the simple "But" because they have been traditionally modified 
    in a different way. For example:
-   - Spin the Windmill. The Centers do have a clear last part (Cast Off 3/4) 
+   - "Spin the Windmill". The Centers do have a clear last part (Cast Off 3/4) 
      but callers more frequently modify the Outsides’ part.
-   - Plenty. The Centers do have a clear last part (1/2 Zoom), 
+   - "Plenty". The Centers do have a clear last part (1/2 Zoom), 
      but callers more frequently modify the Split Circulates.
    
    Using a simple "But" with these calls to replace the Centers’ last part 

@@ -6,9 +6,9 @@ toward or away from the flagpole center: Each dancer
 moves forward the designated number of quarters (1/4
 unless otherwise specified) around the flagpole center of
 the formation, staying the same distance from that
-center as though he were on a wheel turning about that
-center. With each quarter he Counter Rotates, the
-dancer faces a new wall (that is, he turns 90 degrees).
+center as though moving on a wheel turning about that
+center. With each quarter a dancer Counter Rotates, the
+dancer faces a new wall (turns 90 degrees).
 
 > 
 > ![alt](counter_rotate_1a.png)
@@ -30,5 +30,8 @@ original centers always finish as centers. For example,
 [Split Counter Rotate](../a2/box_counter_rotate.md). Describing the action, from that
 formation only, as "[Concentric](concentric_concept.md) 
 [Box Counter Rotate](../a2/box_counter_rotate.md)" helps a great deal.
+
+Also see the C-1 extension for
+[Split Counter Rotate](split_counter_rotate.md).
 
 ###### @ Copyright 1983, 1986-1988, 1995-2023 Bill Davis, John Sybalsky and CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed nor revised in any derivation or publication.

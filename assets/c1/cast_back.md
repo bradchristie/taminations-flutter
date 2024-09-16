@@ -3,9 +3,9 @@
 
 ## Cast Back
 
-From any formation with definite leads, who must not be
+From any formation with definite Leaders, who must not be
 facing directly toward or away from the flagpole center:
-Starting in a Tandem, the lead dancer always does the call;
+Starting in a Tandem, the Lead dancer always does the call;
 elsewhere, the caller must designate a dancer. The
 designated dancer does a
 [Peel Off](../plus/peel_off.md) and steps forward to stand beside
@@ -20,7 +20,7 @@ cannot be fractionalized.
 ## Cross Cast Back
 
 From a couple facing out of a 2x2 formation: Starting in
-Tandem Couples, the lead dancers always do the call;
+Tandem Couples, the Lead dancers always do the call;
 elsewhere, the dancers must be designated. The designated
 dancers [Trail Off](../a2/trail_off.md) and step forward to stand beside the
 other dancers. The others do not move. This call cannot be

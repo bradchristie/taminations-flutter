@@ -3,9 +3,9 @@
 
 At Advanced,
 [this call is done from a wave only](../a2/switch_to_a_diamond.md); at
-C-1, it may start from a general line. If the ends are facing the same way
+C-1, it may start from a General Line. If the Ends are facing the same way
 at the start, they meet with right hands, and adjust so the call ends in a
-diamond (rather than having the centers offset).
+Diamond (rather than having the centers offset).
 
 > 
 > ![alt](switch_to_a_diamond_1a.png)

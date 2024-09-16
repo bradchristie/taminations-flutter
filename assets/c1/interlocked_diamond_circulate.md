@@ -1,7 +1,7 @@
 
 # Interlocked Diamond Formation
 
-Two adjacent Diamonds in which the very centers work with the
+Two adjacent Diamonds in which the Very Centers work with the
 furthest other 3 dancers.
 
 > 
@@ -24,8 +24,8 @@ Diamond Circulate to the next position in your Interlocked Diamond.
 
 ## Cut the Interlocked Diamond
 
-From Interlocked Diamonds (Twin): The points
-[Cut the Diamond](../plus/cut_the_diamond.md), while the centers
+From Interlocked Diamonds (Twin): The Points
+[Cut the Diamond](../plus/cut_the_diamond.md), while the Centers
 Interlocked Diamond Circulate.
 
 >
@@ -34,8 +34,8 @@ Interlocked Diamond Circulate.
 
 ## Flip the Interlocked Diamond
 
-From Interlocked Diamonds (Twin): The points
-[Flip the Diamond](../plus/flip_the_diamond.md), while the centers
+From Interlocked Diamonds (Twin): The Points
+[Flip the Diamond](../plus/flip_the_diamond.md), while the Centers
 Interlocked Diamond Circulate.
 
 >

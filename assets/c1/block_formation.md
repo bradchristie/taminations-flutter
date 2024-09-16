@@ -2,7 +2,7 @@
 # Block Formation
 
 A Block is a 4x4 matrix in which no 2 real bodies have a
-real body between them. There is 1 space between all
+real body between them. There is one space between all
 bodies in a Block: in front, in back, left and right.
 
 In Blocks you can do only 4-person calls (or sequences of
@@ -12,20 +12,20 @@ calls) that start and end in a 2x2 formation. for example, [Partner Trade](../b2
 [Star Thru](../b1/star_thru.md), [Square Thru](../b1/square_thru.md), 
 [Wheel Thru](../a1/wheel_thru.md), etc. When doing a call in a
 block, dancers work only with the dancers in their own
-block; all Block calls start and end on the same 4 spots on
+Block; all Block calls start and end on the same 4 spots on
 the floor,
-for example, In Your Block, [Walk and Dodge](../ms/walk_and_dodge.md):
+for example, "In Your Block, [Walk and Dodge](../ms/walk_and_dodge.md)":
 
 > 
 > ![alt](block_formation_1a.png)
 > ![alt](block_formation_1b.png)
 > 
 
-For some calls, for example, In Your Block, [Square Chain Thru](../a1/square_chain_thru.md),
-the dancers are working in a wave during the call's action.
+For some calls,
+the dancers are working in a Wave during the call's action.
 In that case, the Waves are slightly offset from each other,
 just as the Blocks are slightly offset.
-e.g., In Your Block, [Square Chain Thru](../a1/square_chain_thru.md):
+for example, "In Your Block, [Square Chain Thru](../a1/square_chain_thru.md)":
 
 > 
 > ![alt](block_formation_2a.png)

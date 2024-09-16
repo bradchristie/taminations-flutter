@@ -3,10 +3,10 @@
 
 ## Cross Chain Thru
 
-From Eight Chain Thru: All [Right Pull By](../b1/pull_by.md), then the ends
-[Courtesy Turn](../b1/courtesy_turn.md) while the centers [Left Hand Star 1/2](../b1/star.md) to
-end in another Eight Chain Thru formation. The star ends
-as though the centers had done a [Cross Trail Thru](../a1/cross_trail_thru.md).
+From Eight Chain Thru: All [Right Pull By](../b1/pull_by.md), then the Ends
+[Courtesy Turn](../b1/courtesy_turn.md) while the Centers [Left Hand Star 1/2](../b1/star.md) to
+end in another Eight Chain Thru formation. The Star ends
+as though the Centers had done a [Cross Trail Thru](../a1/cross_trail_thru.md).
 
 > 
 > ![alt](cross_chain_thru.png)
@@ -17,9 +17,9 @@ same as Cross Chain and Roll.
 
 ## Cross Chain And Roll
 
-From Eight Chain Thru: All [Right Pull By](../b1/pull_by.md). The outsides
+From Eight Chain Thru: All [Right Pull By](../b1/pull_by.md). The Outsides
 [Courtesy Turn](../b1/courtesy_turn.md) and
-[Roll](../plus/anything_and_roll.md) while the centers
+[Roll](../plus/anything_and_roll.md) while the Centers
 [Left Hand Star 1/2](../b1/star.md), to end in Parallel Waves.
 
 >

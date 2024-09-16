@@ -2,14 +2,14 @@
 # Split Counter Rotate
 
 At Advanced, [Split Counter Rotate](../a2/box_counter_rotate.md) is proper
-only from a 2x4 formation(for example, Parallel Waves or Columns), 
+only from a 2x4 formation (for example, Parallel Waves or Columns), 
 or from Twin or Point-to-Point Diamonds. At C-1, this
 restriction is removed. The call can begin from any setup that can be divided
 across its long axis into two side-by-side four-dancer formations 
 with no dancers facing directly toward or away from the center point 
 of their group of four. Each such four-dancer group does a Counter Rotate around
 the center point of their formation. 
-For example, Split Counter Rotate from a Tidal Wave ends in Parallel Waves.
+For example, "Split Counter Rotate" from a Tidal Wave ends in Parallel Waves.
 
 > 
 > ![alt](split_counter_rotate-1.png)

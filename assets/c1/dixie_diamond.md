@@ -3,7 +3,7 @@
 
 From Facing Couples or Facing Tandems: 
 ***[Dixie Style to a Wave](../ms/dixie_style.md)***; 
-***the centers [Hinge](../ms/hinge.md) while the ends
+***the Centers [Hinge](../ms/hinge.md) while the Ends
 [U-Turn Back](../b1/turn_back.md)***
 (turning toward each other). Ends in a Right-Hand Diamond.
 

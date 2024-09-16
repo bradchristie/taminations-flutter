@@ -2,8 +2,8 @@
 # Chase Your Neighbor
 
 From Back-to-Back Couples only: 
-In one smooth motion, Belles U-Turn Back to the right and all Box Circulate; 
-Follow Your Neighbor. 
+In one smooth motion, Belles U-Turn Back to the right
+and all Box Circulate; Follow Your Neighbor. 
 Ends in a Left-Hand Wave. This call feels like beginning a
 [Chase Right](../plus/chase_right.md) and blending into a
 [Follow Your Neighbor](../plus/follow_your_neighbor.md).

@@ -5,7 +5,7 @@ From a Thar, Wrong-Way Thar, or Parallel Waves:
 1/2 [Circulate](../b1/circulate.md),
 [Sashaying](../b1/sashay.md) as you go, and joining opposite
 hands from initial handhold. Ends in a Wrong-Way Thar,
-Thar, or Ocean Wave between vertical Mini-Waves.
+Thar, or Wave between vertical Mini-Waves.
 
 > 
 > ![alt](cross_by.png)

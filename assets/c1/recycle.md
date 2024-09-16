@@ -3,9 +3,12 @@
 
 ## Recycle
 
-At C-1, the version of this call that starts from a wave is defined to have three parts:
-First, the centers Fold and all adjust to make a box-circulate formation. Then all Box Counter
-Rotate 1/4. Then all Roll. The result is the same as the Mainstream definition.
+At C-1, the version of this call that starts from a wave
+is defined to have three parts:
+First, the centers Fold and all adjust
+to make a Box-Circulate formation. Then all Box Counter
+Rotate 1/4. Then all Roll. 
+The result is the same as the Mainstream definition.
 
 ## All 8 Recycle
 

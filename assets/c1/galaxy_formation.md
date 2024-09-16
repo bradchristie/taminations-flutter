@@ -3,12 +3,12 @@
 
 ## Galaxy Formation
 
-A Galaxy is composed of a center Box and an outside Diamond.
+A Galaxy is composed of a Center Box and an Outside Diamond.
 
 ## Galaxy Circulate
 
 From a Galaxy: Each dancer moves forward one spot
-along the circulate path shown below.
+along the circulate path as shown.
 
 >
 > ![alt](galaxy_circulate_1a.png)
@@ -19,12 +19,12 @@ along the circulate path shown below.
 
 ## Cut the Galaxy
 
-From a Galaxy: Centers Galaxy Circulate while the points slide together and
+From a Galaxy: Centers Galaxy Circulate while the Points slide together and
 [Trade](../b2/trade.md) (Star 1/2). Finishes in a Thar Star or Promenade.
 
 ## Flip the Galaxy
 
-From a Galaxy: Centers Galaxy Circulate while the points
+From a Galaxy: Centers Galaxy Circulate while the Points
 [Run](../b2/run.md) to the nearest
 center. Finishes in a Thar Star or Promenade.
 
