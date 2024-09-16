@@ -1,9 +1,9 @@
 
 # O Formation / Concept
 
-An "O" is a column formation with the centers spread
+An "O" is a Column formation with the Centers spread
 apart (2 spaces between them). Any call that can be done
-from General Columns (Columns, Double Pass Thru,
+from General Columns (Columns, Double Pass Thru formation,
 etc.), and which ends in General Lines or General Columns,
 can be done from "O" Formation.
 
@@ -16,9 +16,9 @@ From an O: Each dancer moves forward one spot along the circulate path shown bel
 
 ## Other O Calls  
 Any call which can be done from
-General Columns (Columns, Double Pass Thru, etc.), and which ends in
+General Columns (Columns, Double Pass Thru formation, etc.), and that ends in
 General Lines or General Columns, can be
-done from an O. The dancers act as though the centers
+done from an O. The dancers act as though the Centers
 were close together; however, they end on the same 8 spots
 on the floor. 
 
@@ -53,8 +53,8 @@ In order for O Swing Thru to
 work the General Column must be an Eight Chain Thru formation.
 
 The effect of an O call is exactly the same as having the
-centers slide together, doing the call, and having the new
-centers slide apart so that the original 8 spots on the
+Centers slide together, doing the call, and having the new
+Centers slide apart so that the original 8 spots on the
 floor are again occupied.
 
 Common applications include Circulate, Split Circulate, and Walk and Dodge.

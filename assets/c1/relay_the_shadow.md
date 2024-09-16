@@ -3,13 +3,13 @@
 
 From a Tidal Wave:
 ***All [Swing](../a2/slip.md)***.
-***The center six [Cast 3/4](../ms/cast_off_three_quarters.md),
-while the ends [Counter Rotate 1/4](../a2/box_counter_rotate.md),
-meet the very centers,***
+***The Center six [Cast 3/4](../ms/cast_off_three_quarters.md),
+while the Ends [Counter Rotate 1/4](../a2/box_counter_rotate.md),
+meet the Very Centers,***
 ***Single [Hinge](../ms/hinge.md) &
 [Spread](../plus/anything_and_spread.md).
-The other four do the centers' part
-of a [Cast a Shadow](relay_the_shadow.md)*** (that is, leaders "shadow", trailers
+The other four do the Centers' part
+of a [Cast a Shadow](relay_the_shadow.md)*** (that is, Leaders "Shadow", Trailers
 [Extend](../b2/extend.md), [Hinge](../ms/hinge.md), and
 [Extend](../b2/extend.md)).
 

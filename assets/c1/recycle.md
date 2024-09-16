@@ -3,7 +3,7 @@
 
 ## Recycle
 
-At C-1, the version of this call that starts from a wave
+At C-1, the version of this call that starts from a Wave
 is defined to have three parts:
 First, the centers Fold and all adjust
 to make a Box-Circulate formation. Then all Box Counter
@@ -13,9 +13,9 @@ The result is the same as the Mainstream definition.
 ## All 8 Recycle
 
 From a 1/4 Tag, or Wave between Parallel Mini-Waves: 
-The centers do a [Recycle](../ms/recycle.md), working
+The Centers do a [Recycle](../ms/recycle.md), working
 wider than normal, and ending on the outside.
-Meanwhile, the outsides move into the center and Recycle
+Meanwhile, the Outsides move into the center and Recycle
 ([Facing Couples Recycle](../a2/recycle.md) or
 Box Recycle, as appropriate),
 ending in the center. This ends in a 1/4 Tag.
@@ -26,7 +26,7 @@ ending in the center. This ends in a 1/4 Tag.
 
 ## 2/3 Recycle
 
-From a wave only: Do the first two parts of Recycle, that is,
+From a Wave only: Do the first two parts of Recycle, that is,
 [Centers Fold](../ms/fold.md) (and all adjust to a Box Circulate formation),
 then [Box Counter Rotate 1/4](../a2/box_counter_rotate.md).
 
@@ -37,10 +37,10 @@ then [Box Counter Rotate 1/4](../a2/box_counter_rotate.md).
 ## Split / Box Recycle
 
 From Box Circulate formation:
-Without letting go hands with the leaders, the trailers
+Without letting go hands with the Leaders, the Trailers
 [Extend](../b2/extend.md) and
 [U-Turn Back](../b1/turn_back.md), to end with their original
-outside hands joined. The leaders follow along, becoming
+outside hands joined. The Leaders follow along, becoming
 the ends of the resulting Wave.
 
 >
@@ -63,11 +63,12 @@ This can't be done when the Mini-Wave is left-handed:
 > ![alt](box_split_recycle_3.png)
 >
 
-The name “Split Recycle” is used from a 2x4 formation to specify that each 2x2 Box does a Box
-Recycle.
+The name “Split Recycle” is used from a 2x4 formation
+to specify that each 2x2 Box does a Box Recycle.
 
 Where not otherwise ambiguous, it is permissible to call
-simply, "Recycle" when you mean "Split Recycle", "Box Recycle" or "Facing Recycle".
+simply, "Recycle" when you mean "Split Recycle", "Box Recycle" 
+or "Facing Recycle".
 For example, from Columns, you could call
 "Outsides [Partner Tag](../a1/partner_tag.md)
 while the centers Recycle" and the meaning is clear.

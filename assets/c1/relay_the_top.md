@@ -3,11 +3,11 @@
 
 From Parallel Waves:
 ***All [Swing](../a2/slip.md)***.
-***The centers Arm Turn 3/4
-while the ends 1/2 Circulate***, to create a star between two mini-waves.
-***The star turns 1/4,
+***The Centers Arm Turn 3/4
+while the Ends 1/2 Circulate***, to create a Star between two Mini-Waves.
+***The Star turns 1/4,
 while the others [Trade](../b2/trade.md)***.
-***The center four dancers in the 6-person wave now
+***The Center four dancers in the 6-person Wave now
 [Cast Off 3/4](../ms/cast_off_three_quarters.md),
 while the others move up***
 (as in [Hourglass Circulate](../a2/hourglass_circulate.md)).

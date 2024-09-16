@@ -5,18 +5,18 @@
 
 From Eight Chain Thru:
 ***All [Pass Thru](../b1/pass_thru.md)***,
-***the centers [Pass Thru](../b1/pass_thru.md) 
-while the ends [Cross Cast Back](cast_back.md)***.
+***the Centers [Pass Thru](../b1/pass_thru.md) 
+while the Ends [Cross Cast Back](cast_back.md)***.
 ***All [Swing](../a2/slip.md)***,
-and ***the new centers [Trade](../b2/trade.md)***.
+and ***the new Centers [Trade](../b2/trade.md)***.
 
 ## The Axle
 
 From Trade-By or Completed Double Pass Thru:
-***The centers [Pass Thru](../b1/pass_thru.md), if they can,
-while the ends [Cross Cast Back](cast_back.md)***.
+***The Centers [Pass Thru](../b1/pass_thru.md), if they can,
+while the Ends [Cross Cast Back](cast_back.md)***.
 ***All [Swing](../a2/slip.md)***,
-and ***the new centers [Trade](../b2/trade.md)***.
+and ***the new Centers [Trade](../b2/trade.md)***.
 
 ## (Pass) The Axle (but) Cast (Off) N/4
 Replace the Swing with Cast Off N/4. Some callers prefer to omit
