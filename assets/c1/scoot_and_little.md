@@ -19,8 +19,8 @@ the outsides may be specified, as in "Left Little" or "Right Little"
 From Diamonds, there are many ways to direct the points to
 Counter Rotate without turning first, including: "Little, points go as
 you are", "Little, Points go forward", and "Centers Start, Little".
-(See Glossary of Modifying Terms: [Start](start.md).) The command "Little" (with
-no direction given) requires the points to 1/4 Right before they
+(See Glossary of Modifying Terms: [Start](start.md).) The command "Little"
+(with no direction given) requires the points to 1/4 Right before they
 Counter Rotate. See the historical note below.
 
 Consider the following two cases:

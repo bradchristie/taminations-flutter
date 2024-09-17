@@ -1,7 +1,7 @@
 
 # Switch to an Interlocked Diamond
 
-From Parallel Waves or Lines: Centers [Run](../b2/run.md), while the ends do
+From Parallel Waves or Lines: Centers [Run](../b2/run.md), while the Ends do
 their part of [Interlocked Diamond Circulate](interlocked_diamond_circulate.md).
 
 > 

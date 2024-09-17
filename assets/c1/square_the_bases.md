@@ -2,7 +2,7 @@
 # Square the Bases
 
 From Facing Lines: (This call has 3 parts.)
-1. The centers [Square Thru 3](../b1/square_thru.md) while the ends [Pass Thru](../b1/pass_thru.md) and [Ends Bend](../a1/ends_bend.md) 
+1. Centers [Square Thru 3](../b1/square_thru.md) while the Ends [Pass Thru](../b1/pass_thru.md) and [Ends Bend](../a1/ends_bend.md) 
 2. [Split Square Thru 2](../a1/split_square_thru.md)
 3. [Trade By](../b2/trade_by.md).
 Ends in an Eight Chain Thru formation.

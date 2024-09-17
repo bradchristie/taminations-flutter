@@ -4,9 +4,9 @@
 ## Ramble
 
 From a 1/4 Tag or 3/4 Tag:
-***The outsides separate*** and
+***The Outsides separate*** and
 ***[Slide Thru](../ms/slide_thru.md)*** with each other, while
-***the centers [Single Wheel](../a2/single_wheel.md)*** and
+***the Centers [Single Wheel](../a2/single_wheel.md)*** and
 ***[Slide Thru](../ms/slide_thru.md)***.
 
 >

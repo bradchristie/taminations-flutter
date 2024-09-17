@@ -1,12 +1,12 @@
 
 # Swing and Circle (1/4, 1/2, 3/4, Full)
 
-From 1/4 tag, 3/4 tag, a Wave Between Parallel Mini-Waves, or Diamonds (but not
-Facing Diamonds):
-The dancers in the wave [Swing](../a2/slip.md). The very center
-dancers [Trade](../b2/trade.md) while the outer six move
+From 1/4 tag, 3/4 tag, a Wave Between Parallel Mini-Waves,
+or Diamonds (but not Facing Diamonds):
+The dancers in the Wave [Swing](../a2/slip.md). The Very Center
+dancers [Trade](../b2/trade.md) while the Outer Six move
 one position, in the direction shown in the
-diagrams below (i.e., as determined by the ends of the wave),
+diagrams below (that is, as determined by the Ends of the Wave),
 turning as necessary to end in a 1/4 Tag.
 This ends Swing and Circle 1/4.
 
@@ -20,7 +20,7 @@ Repeat the entire above action, if necessary:
 - twice more, for Swing and Circle 3/4
 - three more times, for a full Swing and circle
 
-The [Facing Couples Rule](../b2/facing_couples_rule.md) applies to the centers.
+The [Facing Couples Rule](../b2/facing_couples_rule.md) applies to the Centers.
 
 Swing and Circle 1/4:
 
@@ -30,9 +30,9 @@ Swing and Circle 1/4:
 > ![alt](swing_and_circle_3.png)
 > 
 
-Note: Dancers who end in the outer six can roll
+Note: Dancers who end in the Outer Six can Roll
 if their facing direction changed in the final part of the call.
-For example, Swing and Circle 1/4 and Roll:
+For example, "Swing and Circle 1/4 and Roll":
 
 > 
 > ![alt](swing_and_circle_4.png)

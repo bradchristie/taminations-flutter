@@ -3,6 +3,7 @@
 From a General Line: The Centers step forward as the Ends Squeeze. 
 A Line with Centers facing the same direction ends in a Box (2×2);
 a Line with Centers facing opposite directions ends in a “Z” (2×3).
+
 Note: This call always ends in the same general formation 
 (2×2, 2×3 (Z), 3×4, or others) as [Step and Flip](step_and_flip.md), 
 when used with the same facing directions. 

@@ -2,8 +2,8 @@
 # Step and Fold
 
 From an Inverted Line, a Wave, or a Right-Hand or Left-Hand Diamond only: The
-centers step forward and the ends [Fold](../ms/fold.md) to end in a Box
-Circulate formation, Tandem Couples, or T-Bone.
+Centers step forward and the Ends [Fold](../ms/fold.md) to end in a Box
+Circulate formation, Tandem Couples, or T-Bone Box.
 
 Examples of Step and Fold:
 

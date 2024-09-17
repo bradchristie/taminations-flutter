@@ -35,9 +35,11 @@ Ends in a Left-Hand Box.
 
 ## Split Dixie Diamond
 From appropriate T-Bone Boxes:
-Split Dixie Style to a Wave; the centers Hinge while the ends
-U-Turn Back (turning toward each other). From a T-bone setup with centers facing each other
-and ends facing in as a couple, Split Dixie Diamond ends in Right-Hand Twin Diamonds.
+Split Dixie Style to a Wave; the Centers Hinge while the Ends
+U-Turn Back (turning toward each other). 
+From a T-bone setup with Centers facing each other
+and Ends facing in as a couple, 
+Split Dixie Diamond ends in Right-Hand Twin Diamonds.
 
 ## Split Dixie Sashay
 From appropriate T-Bone Boxes: Split Dixie Style to a Wave; Slither.

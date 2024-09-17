@@ -36,10 +36,10 @@ or Stretch Touch:
 > ![alt](stretch_concept_5.png)
 > 
 
-If the centers cannot move along the long axis of the
-formation to get away from the ends they had been working
-with, then the call is improper. For example, Stretch
-Swing Thru is not proper from here:
+If the Centers cannot move along the long axis of the
+formation to get away from the Ends they had been working
+with, then the call is improper. For example, "Stretch
+Swing Thru" is not proper from here:
 
 > 
 > ![alt](stretch_concept_6.png)
@@ -49,7 +49,7 @@ because after the Swing Thru, the centers would have to
 move along the short axis of the formation to get away
 from the ends.
 
-Similarly, one may not call Centers Stretch Touch 1/4
+Similarly, one may not call "Centers Stretch Touch 1/4"
 from here
 
 > 
@@ -61,11 +61,11 @@ the Touch 1/4.
 
 Note: The examples above are here only to clarify the
 definition. They don't necessarily represent good usage--
-particularly Stretch Turn and Deal from left-hand
-two-faced lines. 
+particularly "Stretch Turn and Deal" from Left-Hand
+Two-Faced Lines. 
 
 Common applications include
-Recycle, Ah So, and Turn and Deal (from Right-Hand Two-Faced Lines).
+"Recycle", "Ah So", and "Turn and Deal" (from Right-Hand Two-Faced Lines).
 
 *Teaching Hint:* This call is usually danced with those
 coming to the center actually going to the far center spots,

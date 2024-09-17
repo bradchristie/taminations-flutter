@@ -1,7 +1,7 @@
 
 # Shakedown
 
-From a 2x2 formation with everyone as leaders only: As one continuous
+From a 2x2 formation with everyone as Leaders only: As one continuous
 move, Quarter Right, [Box Counter Rotate 1/4](../a2/box_counter_rotate.md),
 and [Roll](../plus/anything_and_roll.md).
 This call can not be fractionalized.
