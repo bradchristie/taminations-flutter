@@ -3,19 +3,21 @@
 
 ## Twist the Line
 
-From a Line, centers facing the same way, and sexes
-arranged appropriately: The centers step forward and 
-[Partner Trade](../b2/trade.md) while the ends face, move in, and 
+From a Line, centers facing the same way, and genders
+arranged appropriately: The Centers step forward and 
+[Partner Trade](../b2/trade.md) while the Ends Face, move in, and 
 [Star Thru](../b1/star_thru.md). This is a gender-dependent call (because of the Star
 Thru).
 
 ## Twist and \<anything>
 
-From a Line, centers facing the
-same way: The centers step forward and [Partner Trade](../b2/trade.md)
-while the ends face, move in, and do the \<anything> call--which will involve 
-only the original ends unless otherwise
-specified For example, "Twist and [Square Thru 2](../b1/square_thru.md)":
+From a Line, centers facing the same way: 
+The Centers step forward and [Partner Trade](../b2/trade.md)
+while the Ends Face, move in, and do the \<anything> call--which will involve 
+only the original Ends unless otherwise
+specified For example, 
+
+Twist and [Square Thru 2](../b1/square_thru.md):
 
 >
 > ![alt](twist_and_anything_1a.png)
@@ -46,4 +48,4 @@ Twist and Nothing:
 > ![alt](twist_and_anything_4b.png)
 >
 
-###### @ Copyright 1983, 1986-1988, 1995-2023 Bill Davis, John Sybalsky and CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed nor revised in any derivation or publication.
+###### @ Copyright 1983, 1986-1988, 1995-2024 Bill Davis, John Sybalsky and CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed nor revised in any derivation or publication.

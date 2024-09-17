@@ -31,10 +31,10 @@ should use additional words for clarity,
 such as "Tag Back, Centers to a Wave". 
 This avoids confusion with the old call names (Vertical) Tag
 Back to a Wave. See the Historical Note in the definition of 
-[<Tag> Back](tagging_calls_back_to_a_wave.md).
+[\<Tag> Back](tagging_calls_back_to_a_wave.md).
 
 Do not be confused by calls which contain "to a Wave" as part of their
 name (for example, "Single Circle to a Wave", "Right Roll to a Wave",
 "Cross Roll to a Wave").
 
-###### @ Copyright 1983, 1986-1988, 1995-2023 Bill Davis, John Sybalsky and CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed nor revised in any derivation or publication.
+###### @ Copyright 1983, 1986-1988, 1995-2024 Bill Davis, John Sybalsky and CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed nor revised in any derivation or publication.

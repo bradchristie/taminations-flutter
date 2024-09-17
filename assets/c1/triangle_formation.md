@@ -3,11 +3,15 @@
 
 ## Triangle Formation
 
-A Triangle is a formation of 3 dancers. One is the apex and the other two form the base.
-The apex dancer must be the same distance from each of the base dancers. If the base
-dancers are aligned in a General Column, the triangle is called a Tandem-Based Triangle. If the base
-dancers are aligned in a General Line, the triangle is called a Wave-Based Triangle. In some triangles all 3
-dancers may not be adjacent to each other. Triangles are found as parts of a Galaxy,
+A Triangle is a formation of 3 dancers. 
+One is the apex and the other two form the base.
+The apex dancer must be the same distance from each of the base dancers.
+If the base dancers are aligned in a General Column, 
+the triangle is called a Tandem-Based Triangle. If the base
+dancers are aligned in a General Line, 
+the triangle is called a Wave-Based Triangle. In some triangles all 3
+dancers may not be adjacent to each other. 
+Triangles are found as parts of a Galaxy,
 Hourglass, Twin Diamonds and various other formations.
 
 ## Triangle Circulate
@@ -23,12 +27,16 @@ along one of the circulate paths shown below:
 inside of the triangle. After Triangle Circulate, that same
 shoulder is still toward the center.
 
-Note: On Triangle Circulate from a T-boned triangle (base dancers are T-boned to each other), base dancers
-use their own starting position to determine whether to treat the triangle as tandem-based or wave-based,
-whereas apex dancers use the starting position of the spot to which they Circulate.
+Note: On Triangle Circulate from a T-Bone Triangle 
+(base dancers are T-Boned to each other), base dancers
+use their own starting position to determine whether to treat the Triangle
+as Tandem-Based or Wave-Based,
+whereas Apex dancers use the starting position of the spot
+to which they Circulate.
 
 ## Inside / Outside Triangles
-Various formations, including Twin Diamonds and Point-to-Point Diamonds, contain Triangles
+Various formations, including Twin Diamonds and Point-to-Point Diamonds,
+contain Triangles
 
 **Inside Triangle**: The Center 6 form the Triangles.
 
@@ -46,17 +54,18 @@ Various formations, including Twin Diamonds and Point-to-Point Diamonds, contain
 > 
 
 ## Inpoint / Outpoint Triangles
-The footprints of twin diamonds, with the outside 4 in tandem, contain additional Triangles. Each of
+The footprints of Twin Diamonds, with the outside 4 in Tandem, 
+contain additional Triangles. Each of
 these triangles has one point as the apex and two of the center 4 as the base.
 
-**Inpoint Triangle**:Each point facing in is an apex.
+**Inpoint Triangle**:Each point facing in is an Apex.
 
 > 
 > ![alt](triangle_3a.png)
 > ![alt](triangle_3b.png)
 > 
 
-**Outpoint Triangle**: Each point facing out is an apex.
+**Outpoint Triangle**: Each point facing out is an Apex.
 
 > 
 > ![alt](triangle_4a.png)
@@ -67,8 +76,8 @@ these triangles has one point as the apex and two of the center 4 as the base.
 Various formations, especially a Galaxy, contain triangles that may be
 identified by the formation of their “base”. A Wave-Based Triangle has
 the dancers in the base usually in a Mini-Wave (also possible: a
-couple). A Tandem-Based Triangle has the dancers in the base usually in
-a tandem (also possible: facing or back-to-back dancers).
+Couple). A Tandem-Based Triangle has the dancers in the base usually in
+a tandem (also possible: Facing or Back-to-Back dancers).
 
 > 
 > ![alt](triangle_5a.png)
@@ -84,4 +93,4 @@ Examples of various Triangle Circulates:
 > ![alt](triangle_6d.png)
 > 
 
-###### @ Copyright 1983, 1986-1988, 1995-2023 Bill Davis, John Sybalsky and CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed nor revised in any derivation or publication.
+###### @ Copyright 1983, 1986-1988, 1995-2024 Bill Davis, John Sybalsky and CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed nor revised in any derivation or publication.
