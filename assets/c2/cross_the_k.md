@@ -3,19 +3,18 @@
 
 # Cross the K
 
-From Facing Lines of four:
+From Facing Lines of Four:
 ***[Cross Trail Thru](../a1/cross_trail_thru.md) to form Lines of Four Facing Out,***
-***centers [Trade](../b2/trade.md), ends [U-Turn Back](../b1/turn_back.md)
-*away from the center* to*** form Facing Lines of
-four.
+***Centers [Trade](../b2/trade.md), Ends [U-Turn Back](../b1/turn_back.md)
+*away from the center* to*** form Facing Lines of Four.
 
 # The K
 
 Do the \<anything> call, then
-centers Trade as ends U-Turn Back
+Centers Trade as Ends U-Turn Back
 *away from the center* (as above).
-If the \<anything> call ends in a tidal setup: The centers of
-each line Trade, and the ends of each line turn back away from the center of
+If the \<anything> call ends in a Tidal formation: The Centers of
+each Line Trade, and the Ends of each Line turn back away from the center of
 their side.
 
 Cross Trail Thru the K:

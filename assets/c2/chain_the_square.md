@@ -1,14 +1,14 @@
 
 # Chain the Square
 
-From Eight Chain Thru: All Right [Pull By](../b1/pull_by.md); outsides
+From Eight Chain Thru: All Right [Pull By](../b1/pull_by.md); Outsides
 [Courtesy Turn](../b1/courtesy_turn.md) and 
-[Veer Left](../b1/veer.md); centers Left Touch, and the centers 
-[Courtesy Turn](../b1/courtesy_turn.md) the ends to finish
-facing the same way the centers were originally facing, then
+[Veer Left](../b1/veer.md); Centers Left Touch, and the Centers 
+[Courtesy Turn](../b1/courtesy_turn.md) the Ends to finish
+facing the same way the Centers were originally facing, then
 [As Couples](../a1/as_couples.md)
 [Extend](../b2/extend.md),
-to form two-faced lines.
+to form Two-Faced Lines.
 
 > 
 > ![alt](chain_the_square.png)

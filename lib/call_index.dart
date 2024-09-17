@@ -636,6 +636,7 @@ var callIndex = [
   CallEntry('Change Your Image','c3b','c3b/change_your_image',c3b.ChangeYourImage,[]),
   CallEntry('Chase Right','plus','plus/chase_right',plus.ChaseRight,['lang-ja'],'plus/chase_right.mp3'),
   CallEntry('Chase the fraction Tag','c3b','c3b/chase_the_fraction_tag',c3b.ChaseTheFractionTag,[]),
+  CallEntry('Chase Your Criss Cross Neighbor','c2','c2/criss_cross_your_neighbor',c2.CrissCrossYourNeighbor,[]),
   CallEntry('Chase Your Cross Neighbor','c1','c1/chase_your_cross_neighbor',c1.ChaseYourCrossNeighbor,[]),
   CallEntry('Chase Your Neighbor','c1','c1/chase_your_neighbor',c1.ChaseYourNeighbor,[]),
   CallEntry('Checkerboard <anything>','c3a','c3a/checkerboard_anything',c3a.CheckerboardAnything,[]),

@@ -1,9 +1,9 @@
 
 # Checkpoint \<anything> by \<anything>
 
-From any appropriate formation: The centers of each side (shown in black
-below) do Call #1, and, if it ends in a box, there is a mandatory axis change.
-The remaining outside dancers slide inward, and the new centers do Call #2 and
+From any appropriate formation: The Centers of each side (shown in black
+below) do Call #1, and, if it ends in a Box, there is a mandatory axis change.
+The remaining Outside dancers slide inward, and the new Centers do Call #2 and
 stay in the center. 
 
 > 

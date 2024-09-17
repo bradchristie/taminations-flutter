@@ -3,7 +3,7 @@
 
 ## Bounce the \<anyone>
 
-From a two-faced line only:
+From a Two-Faced Line only:
 ***[Veer Left](../b1/veer.md) or [Veer Right](../b1/veer.md)***
 (whichever is toward the center of the line).
 Then the ***designated dancers do a 

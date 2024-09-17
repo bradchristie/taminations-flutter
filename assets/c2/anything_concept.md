@@ -7,8 +7,8 @@ modified by replacing the initial Circulate with another call. For
 example, [Chase Right](../plus/chase_right.md)
 [Perk Up](../c2/perk_up.md) means Chase Right then complete the
 remainder of Perk Up following the initial Circulate. A caller may add
-"-er's" to the first call to emphasize it is all one call, e.g. Chase
-Right-er's Perk Up.
+"-er's" to the first call to emphasize it is all one call, 
+for example, Chase Right-er's Perk Up.
 
 When the first call is some type of Circulate, the
 word "Circulate" is conventionally omitted. For example,
@@ -22,9 +22,8 @@ the "Rotate" is conventionally omitted. For
 example, "Split Counter Coordinate" means Split Counter Rotate then
 complete the remainder of Coordinate following the initial Circulate.
 
-
 Calls modified in this way have the same number of parts as the base
-call, with the entire \<anything> call replacing the first circulate.
+call, with the entire \<anything> call replacing the first Circulate.
 This concept may be applied to any call that begins with a circulate
 action, even if Circulate is not formally defined as the first part of
 the call.

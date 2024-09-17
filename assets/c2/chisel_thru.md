@@ -2,7 +2,7 @@
 # Chisel Thru
 
 From Facing Lines: [Concentric Pass In](../c1/concentric_concept.md). 
-Then the ends [Pass In](../a1/pass_in.md) as the centers 
+Then the Ends [Pass In](../a1/pass_in.md) as the Centers 
 [Pass Out](../a1/pass_in.md). Then all [Pass In](../a1/pass_in.md). 
 Finishes in Facing Lines. This is a 3-part call.
 

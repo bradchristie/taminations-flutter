@@ -36,15 +36,15 @@ centers [Trade](../b2/trade.md),
 
 ## Grand Single Cross and Wheel
 
-From Columns, Eight Chain Thru or Trade-By: All Hinge, center six step ahead
-as ends of the grand wave Fold, and all adjust to end in Parallel 3-and-1 Lines.
+From Columns, Eight Chain Thru or Trade-By: All Hinge, Center Six step ahead
+as Ends of the Grand Wave Fold, and all adjust to end in Parallel 3-and-1 Lines.
 
 ## Grand Single Cross Trade and Wheel
 
 From Columns, Eight Chain Thru or Trade-By:
 All [Hinge](../ms/hinge.md),
-center six [Trade](../b2/trade.md) and
-step forward, as ends of the grand wave [Fold](../ms/fold.md),
+Center Six [Trade](../b2/trade.md) and
+Step Forward, as Ends of the Grand Wave [Fold](../ms/fold.md),
 and all adjust to end in Parallel 3-and-1 Lines.
 
 ###### @ Copyright 1983, 1986-1988, 1995-2022 Bill Davis, John Sybalsky and CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed nor revised in any derivation or publication.

@@ -1,8 +1,9 @@
 
 # Cross-Concentric Concept
 
-From any appropriate formation (there must be a center 4): The center 4 do
-the call in their group and move to the outside, while the outsides work with
+From any appropriate formation (there must be a Center Four):
+The Center Four do
+the call in their group and move to the outside, while the Outsides work with
 each other and do the call as they move into the center. The diagrams
 show who works with whom on a Cross-Concentric call: 
 
@@ -11,16 +12,19 @@ show who works with whom on a Cross-Concentric call:
 > 
 
 The last two formations shown are really the same; the grouping on the left is
-used if the caller only says "Cross-Concentric..." and the Cross Concentric call
+used if the caller only says "Cross-Concentric..."
+and the Cross Concentric call
 can be done from a 1x4. The grouping on the right is used
 when the caller says "Cross-Concentric Diamond..." or when the
-Cross-Concentric call can only be done from diamonds (for example, "Cross-Concentric
-Diamond Circulate" or "Cross Concentric Flip the Diamond"). 
+Cross-Concentric call can only be done from Diamonds 
+(for example, "Cross-Concentric Diamond Circulate" or 
+"Cross Concentric Flip the Diamond"). 
 
 If the Cross-Concentric call starts and ends in a 2x2 Box (for example, 
 "Cross-Concentric Star Thru"), the following rule applies: If the original
-centers begin as though in Columns,
-they finish (on the outside) as though in Columns; if they begin in Lines, they finish
+Centers begin as though in Columns,
+they finish (on the outside) as though in Columns;
+if they begin in Lines, they finish
 as though in Lines.
 
 Cross-Concentric [Star Thru](../b1/star_thru.md):
@@ -32,9 +36,11 @@ Cross-Concentric [Star Thru](../b1/star_thru.md):
 > 
 
 If the Cross-Concentric call ends in a 2x2 Box but starts
-elsewhere (for example, Cross-Concentric [Recycle](../ms/recycle.md) from a Tidal Wave), the following rule
-applies: The new outside dancers (the original centers) finish so that the long
-axis of their resulting (disconnected) Box is at right angles to the long axis of their
+elsewhere (for example, "Cross-Concentric [Recycle](../ms/recycle.md)" from a Tidal Wave),
+the following rule applies: 
+The new Outside dancers (the original Centers) finish so that the long
+axis of their resulting (disconnected) Box is at right angles
+to the long axis of their
 4-dancer starting formation.
 
 Cross-Concentric [Wheel and Deal](../b2/wheel_and_deal.md):
