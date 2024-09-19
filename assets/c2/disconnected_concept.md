@@ -2,8 +2,9 @@
 # Disconnected Concept
 
 From any appropriate formation: The dancers specified, who needn't be
-together, act as though they had slid together, done the call, then slid apart.
-If the call changes the formation, stay near the original centers' spots.
+together, act as though they had slid together, 
+done the call, then slid apart.
+If the call changes the formation, stay near the original Centers' spots.
 Dancers adjust to close up any gaps that were created (as in the Disconnected 
 [Crossfire](../plus/crossfire.md), below). 
 
@@ -28,4 +29,4 @@ Common applications include
 [Cross Roll to a Wave](../c1/cross_roll.md), and
 [Crossfire](../plus/crossfire.md).
 
-###### @ Copyright 1983, 1986-1988, 1995-2022 Bill Davis, John Sybalsky and CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed nor revised in any derivation or publication.
+###### @ Copyright 1983, 1986-1988, 1995-2024 Bill Davis, John Sybalsky and CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed nor revised in any derivation or publication.
