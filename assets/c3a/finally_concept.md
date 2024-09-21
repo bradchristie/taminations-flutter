@@ -1,8 +1,10 @@
 
-# Finally <concept> <anything>
+# Finally \<concept> \<anything>
+
 **META-CONCEPT**   
 
-Do the <anything> call applying the given <concept> only to the last part of the call.
+Do the \<anything> call applying the given \<concept>
+only to the last part of the call.
 
 > 
 > ![alt](finally-1.png)

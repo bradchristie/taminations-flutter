@@ -1,11 +1,11 @@
+# Initially \<concept> \<anything>
 
-# Initially <concept> <anything>
+**META-CONCEPT**
 
-
-Do the <anything> call applying the given <concept> only to the first part of the call.
-(This is equivalent to doing the first part of <anything> using the given <concept>,
-then doing Finish
-<anything>.)
+Do the \<anything> call applying the given \<concept>
+only to the first part of the call.
+(This is equivalent to doing the first part of \<anything>
+using the given \<concept>, then doing Finish \<anything>.)
 
 > 
 > ![alt](initially-1.png)

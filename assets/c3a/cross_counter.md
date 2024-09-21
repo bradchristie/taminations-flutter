@@ -2,8 +2,8 @@
 # Cross Counter
 
 ## Cross Counter
-**Parts:** 3  
 
+**Parts:** 3  
 
 From a 3/4 Tag or other applicable formations:
 ***Centers [Trade The Wave](../plus/trade_the_wave.md)***,
@@ -17,7 +17,10 @@ a L-H 3/4 Tag. Ends in Parallel L-H Waves.
 
 ## Scoot and Cross Counter
 
-From a 1/4 Tag: Scoot Back, then the three parts of Cross Counter. Ends in Parallel Lines.
+**Parts:** 4
+
+From a 1/4 Tag: Scoot Back, then the three parts of Cross Counter.
+Ends in Parallel Lines.
 
 > 
 > ![alt](cross_counter-1.png)

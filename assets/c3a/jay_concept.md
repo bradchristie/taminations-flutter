@@ -1,19 +1,18 @@
+# Jay \<anything>
 
-# Jay <anything>
 **CONCEPT**   
 
-
 From a Generalized 1/4 Tag or other applicable formations: Jay
-identifies distorted boxes, each consisting of two dancers from a
-center 1x4 (e.g., line or column) and two outside dancers. The
-outsides with whom each center dancer should work is most commonly
-determined by the facing direction of the center dancers; the facing
-direction of the outside dancers does not matter.
+identifies distorted Boxes, each consisting of two dancers from a
+Center 1x4 (for example, line or column) and two Outside dancers. The
+Outsides with whom each Center dancer should work is most commonly
+determined by the facing direction of the Center dancers; the facing
+direction of the Outside dancers does not matter.
 
-Front Jay means that the centers work in a box with the
-outsides toward whom they are facing, Back Jay means that they work
-with the outsides who are behind them, Left Jay means that they work
-with the outsides who are to their left; similarly for Right Jay. If
+Front Jay means that the Centers work in a box with the
+Outsides toward whom they are facing, Back Jay means that they work
+with the Outsides who are behind them, Left Jay means that they work
+with the Outsides who are to their left; similarly for Right Jay. If
 no direction is specified, the default is Front.
 
 > 
@@ -23,17 +22,17 @@ no direction is specified, the default is Front.
 > ![alt](jay-4.png)
 > 
 
-Same Jay means to do the call in the same distorted box as for
+Same Jay means to do the call in the same distorted Box as for
 the previous call, regardless of the current facing direction of the
-centers. Change Jays means that the centers work with the outsides
+Centers. Change Jays means that the Centers work with the Outsides
 with whom they were not working for the previous call.
 
-The resulting formation for each box must be either a box, in
+The resulting formation for each Box must be either a Box, in
 which case they end on the same four spots, or a 1x4 perpendicular to
-the original center 1x4. In the latter case, the resulting 1x4s are
+the original Center 1x4. In the latter case, the resulting 1x4s are
 also distorted, with the halves of each 1x4 that are closest to the
 center of the square offset in the same direction that the members of
-their group were offset in the original center 1x4, and forming a box
+their group were offset in the original center 1x4, and forming a Box
 with each other.
 
 > 

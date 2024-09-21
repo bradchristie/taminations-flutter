@@ -5,10 +5,12 @@
 
 ## 1/4 Wheel the Ocean / Sea
 
-From a L-H Two-Faced Line:Left Cast 1/4 (1/2 Wheel Around, ending in Facing Couples);
+From a L-H Two-Faced Line:Left Cast 1/4 (1/2 Wheel Around, 
+ending in Facing Couples);
 Finish Wheel the Ocean/Sea.
 (Ocean: Belles diagonally R-H Pull By; Sea:
-Belles Walk as Beaus Dodge.) Ends in a Mini-Wave Box. (Ocean: R-H Box; Sea: LH Box.)
+Belles Walk as Beaus Dodge.) Ends in a Mini-Wave Box. 
+(Ocean: R-H Box; Sea: LH Box.)
 
 > 
 > ![alt](1_4_wheel-1.png)

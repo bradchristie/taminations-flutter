@@ -4,11 +4,11 @@
 ## Breaker 1,2,3
 
 From Columns, Magic Columns, or applicable T-Bone 2x4s: Ends Cast Off
-3/4 as Centers Box Counter Rotate 1/4 and 1/2 Box Circulate; Center Wave (or Line)
-Cast Off the given number of quarters (e.g., for Breaker 3, Cast Off
-3/4) as the others move up (Phantom Hourglass Circulate). From
-Columns, Breaker 1 or 3 ends in Ocean Waves; Breaker 2 ends in Facing
-Diamonds.
+3/4 as Centers Box Counter Rotate 1/4 and 1/2 Box Circulate; 
+Center Wave (or Line) Cast Off the given number of quarters
+(for example, for Breaker 3, Cast Off 3/4)
+as the others move up (Phantom Hourglass Circulate). From Columns,
+Breaker 1 or 3 ends in Ocean Waves; Breaker 2 ends in Facing Diamonds.
 
 > 
 > ![alt](breaker-1.png)
@@ -21,9 +21,9 @@ Diamonds.
 From Columns, Magic Columns, or applicable T-Bone 2x4s: Ends Cast Off
 3/4 as Centers Box Counter Rotate 1/4 and 1/2 Box Circulate; Center
 Wave (or Line) does the
-<anything> call as the others move up (Phantom Hourglass
+\<anything> call as the others move up (Phantom Hourglass
 Circulate). Usually ends in Parallel Lines, Twin Diamonds, or an
-Hourglass depending upon the <anything> call.
+Hourglass depending upon the \<anything> call.
 
 > 
 > ![alt](breaker-4.png)

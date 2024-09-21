@@ -1,10 +1,10 @@
 
-# Eight By <anything>
+# Eight By \<anything>
 
 From applicable formations:
 Outsides [Grand Chain Eight](../c2/grand_chain_eight.md) and
 [Roll](../plus/anything_and_roll.md) as Centers do the
-<anything> call (working in the Center).
+\<anything> call (working in the Center).
 
 > 
 > ![alt](eight_by_anything-1.png)

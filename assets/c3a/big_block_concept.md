@@ -4,7 +4,7 @@
 **CONCEPT**   
 
 From Interlocked Blocks, Butterfly, “O”, or other applicable
-formations in a 4x4 matrix (e.g., Leaders Press Ahead from Two-Faced
+formations in a 4x4 matrix (for example, Leaders Press Ahead from Two-Faced
 Lines): Execute the given call working in distorted Parallel Lines,
 and ending with each dancer occupying one of the footprints of the
 original formation.

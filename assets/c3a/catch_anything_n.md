@@ -1,10 +1,10 @@
 
-# Catch <anything> 1, 2, 3, 4
+# Catch \<anything> 1, 2, 3, 4
 
 **Parts:** 3  
 
 From applicable formations: Square Thru the given number of hands to a Wave;
-do the <anything> call; Step and Fold.
+do the \<anything> call; Step and Fold.
 
 > 
 > ![alt](catch-1.png)

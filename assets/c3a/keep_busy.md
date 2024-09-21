@@ -1,5 +1,5 @@
-
 # Keep Busy
+
 **Parts for Trailers:** 4  
 
 From Parallel Two-Faced Lines:
@@ -17,8 +17,8 @@ Ends in Parallel Waves.
 > 
 
 ### Teaching Notes
- Unlike Mini Busy, where the Leaders turn
-individually, in Keep Busy they start moving together as a couple.
+Unlike Mini Busy, where the Leaders turn
+individually, in Keep Busy they start moving together as a Couple.
 But for the original Trailers, this is just Mini Busy followed by
 Step and Fold.
 

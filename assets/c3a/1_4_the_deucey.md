@@ -1,7 +1,7 @@
 
 # 1/4 (or 3/4) the Deucey
 
-From Parallel Ocean Waves.
+From Parallel Waves.
 
 ## 1/4 the Deucey
 
@@ -25,7 +25,7 @@ Waves.
 
 ## 3/4 the Deucey
 
-Same as 1/4 the Deucey except each of the four 1/4 turns is replaced with a 3/4
-turn. Ends in Parallel Waves.
+Same as 1/4 the Deucey except each of the four 1/4 turns 
+is replaced with a 3/4 turn. Ends in Parallel Waves.
 
 ###### @ Copyright 2004-2022 Vic Ceder and CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed nor revised in any derivation or publication.

@@ -1,7 +1,8 @@
 
 # Interlocked Extend 
 
-From a 1/4 Line only: In one smooth motion, As Couples Extend and each line Slither.
+From a 1/4 Line only: In one smooth motion,
+As Couples Extend and each Line Slither.
 Ends in Parallel Waves.
 
 >

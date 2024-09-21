@@ -1,9 +1,9 @@
-
 # Interlocked Scoot Chain Thru
 
 **Parts:** 5
 
-From a 1/4 Line only: Interlocked Extend; Swing; Slip; Swing; in one smooth motion,
+From a 1/4 Line only: 
+Interlocked Extend; Swing; Slip; Swing; in one smooth motion,
 Extend and Center Wave Slither. Ends in a 3/4 Line.
 
 >

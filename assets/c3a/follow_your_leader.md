@@ -1,5 +1,6 @@
 
 # Follow Your Leader
+
 ## Follow Your Leader
 
 From Parallel Waves: Leaders 1/2 Split Circulate and Tandem
@@ -10,12 +11,12 @@ Cross Fold as Trailers Follow Your Neighbor (Extend and Arm Turn
 > ![alt](follow_your_leader-1.png)
 > ![alt](follow_your_leader-2.png)
 > 
-## <tag> Your Leader
+## \<tag> Your Leader
+
 **Parts:** 2  
 
-
-Starting position depends on the <tag> action. Do the
-<tag> action to the 1/2 Tag Position; Follow Your Leader.
+Starting position depends on the \<tag> action. Do the
+\<tag> action to the 1/2 Tag Position; Follow Your Leader.
 
 > 
 > ![alt](follow_your_leader-3.png)

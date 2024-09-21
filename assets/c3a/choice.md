@@ -7,13 +7,13 @@ From a Generalized Tidal Line or other applicable formations:
 Center Line Lockit as Others Trade; Center Line Hinge as Others Step and Fold.
 
 ## Lockers Choice
+
 **Parts:** 3
-
-
 
 From Parallel Waves or other applicable formations:
 Lockit; Center Line Lockit as Others Trade;
-Center Line Hinge as Others Step and Fold. Parallel Waves end in opposite-handed Parallel Waves.
+Center Line Hinge as Others Step and Fold.
+Parallel Waves end in opposite-handed Parallel Waves.
 
 
 >
@@ -23,14 +23,14 @@ Center Line Hinge as Others Step and Fold. Parallel Waves end in opposite-handed
 > ![alt](lockers_choice-4.png)
 >
 
-# <anything> Choice
+# \<anything> Choice
 
-**Parts:** 2
+**Parts:** 3
 
-From any applicable formation: Do the <anything> call
+From any applicable formation: Do the \<anything> call
 followed by the two parts of Choice (Center Line Lockit as Others Trade;
 Center Line Hinge as Others Step and Fold).
-Usually, to make clear that the <anything> call
+Usually, to make clear that the \<anything> call
 is to be treated as part of the larger call,
 it will be spoken with the suffix "er’s", e.g., "Spin the Topper’s Choice".
 

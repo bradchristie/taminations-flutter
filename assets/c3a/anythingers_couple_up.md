@@ -3,10 +3,12 @@
 
 **Parts:** 2  
 
-From any applicable formation: Do the \<anything> call, then the Leaders U-Turn Back.
+From any applicable formation: 
+Do the \<anything> call, then the Leaders U-Turn Back.
 If the \<anything> is a type of Circulate or Counter Rotate,
-it may be abbreviated in the same way as for the "anything concept" [C-2],
-e.g. "Inroll Couple Up" or "Split Counter Couple Up".
+it may be abbreviated in the same way as for the 
+"[anything concept](../c2/anything_concept.md)" [C-2],
+for example. "Inroll Couple Up" or "Split Counter Couple Up".
 
 > 
 > ![alt](anythingers_couple_up-1.png)

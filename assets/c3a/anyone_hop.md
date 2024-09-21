@@ -1,9 +1,9 @@
 
-# <anyone> Hop
+# \<anyone> Hop
 
 **Parts:** 2  
 
-From any applicable non T-Bone 2x2 (usually Facing Couples):
+From any applicable Non-T-Bone 2x2 (usually Facing Couples):
 ***Designated dancers Walk as others Dodge***;
 ***all Hinge***. Ends in a Wave or Inverted Line.
 

@@ -8,7 +8,7 @@ From Columns: ***Trailers (#2 and #4 dancers)
 ***Trailing Couples [1/2 Press Ahead](../c1/press.md)***;
 ***Outsides work Phantom: all
 [Turn & Deal](../a1/turn_and_deal.md)***
-or Left Turn and Deal, depending on the handedness of the column.
+or Left Turn and Deal, depending on the handedness of the Column.
 Ends in a Double Pass Thru.
 
 > 
@@ -18,6 +18,7 @@ Ends in a Double Pass Thru.
 > 
  
 ## Scoot and Fancy
+
 **Parts:** 2  
 
 From Columns: Triple Scoot; Fancy.

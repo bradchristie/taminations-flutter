@@ -1,10 +1,11 @@
-
 # Interlocked Little More
+
 ## Interlocked Little More
 
 From a Generalized 1/4 Line or other applicable formations:
 Interlocked Little; centers Box Circulate. A Generalized 1/4 Line
 ends in Parallel Lines.
+
 ## Interlocked Scoot and Little More
 
 From a 1/4 Line: Interlocked Scoot Back, then Interlocked

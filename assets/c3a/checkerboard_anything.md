@@ -1,7 +1,5 @@
 
-# Checker Board/Box
-
-**CONCEPT**   
+# Checker Board / Box \<anything>
 
 From a 2x4 (or other applicable formations) with precisely two
 dancers in each 1x4 oriented as Leaders in Lines. In the following
@@ -18,7 +16,8 @@ any direction other than the same direction as the dancers designated
 ## Checker Board \<anything>
 
 The Leaders in each Line (“L” dancers) Trade with each other
-as the others (“O” dancers) do the \<anything> call working in a distorted 1x4. 
+as the others (“O” dancers) do the \<anything> call
+working in a distorted 1x4. 
 Ends in a 2x4.
 
 > 
@@ -40,7 +39,7 @@ Note that although the four dancers start in a distorted 1x4, the
 result of the
 \<anything> call may be some other four-person formation,
 such as a 2x2 or a Diamond, but they still end in the same four spots
-(e.g., as a distorted 2x2).
+(for example, as a distorted 2x2).
 
 ## Checker Box \<anything>
 
@@ -58,19 +57,20 @@ do the \<anything> call working in a distorted 2x2. Ends in a 2x4.
 
 
 Note that although the four dancers start in a distorted 2x2,
-the result of the <anything> call may be some other four-person formation,
-such as a 1x4 or a Diamond, but they still end in the same four spots (e.g., as a distorted 1x4).
+the result of the \<anything> call may be some other four-person formation,
+such as a 1x4 or a Diamond, but they still end in the same four spots
+(for example, as a distorted 1x4).
 
 ### Teaching Notes
  For both Checker Board
-and Checker Box, the dancers doing the trade typically move toward
+and Checker Box, the dancers doing the Trade typically move toward
 their new locations and point at the other spots as a way of helping
 the other dancers keep track of the spots where they should be ending
 up. While in principle the other dancers are doing their call
 "working in" that set of four spots (which doesn’t change as a result
-of the trade by the Leaders), and for simple calls it is best that
+of the Trade by the Leaders), and for simple calls it is best that
 they do it that way, for many calls they will find it easier to first
-form a non-distorted 1x4 or box, do the call, and then slide back
+form a non-distorted 1x4 or Box, do the call, and then slide back
 into the original spots. In these cases, especially, such "pointing"
 can be very helpful. In these cases the dancers doing the trade will
 also typically stand back slightly, to leave room for the others to

@@ -2,10 +2,12 @@
 # Grand Mix / Grand Swing and Mix / Grand 1/4 (or 3/4) Mix
 
 ## Grand Mix
+
 **Parts:** 2  
 
+From a Generalized Tidal Line:
 ***Center pairs of dancers (3 pairs from an 8-dancer Tidal
-Line, 2 pairs from a 6-dancer Tidal Line) "Grand [Cross Run](../b2/run.md)***"
+Line, 2 pairs from a 6-dancer Tidal Line) "Grand Cross Run***"
 ***new Center pairs of dancers
 [Trade](../b2/trade.md)***.
 "Grand Cross Run"
@@ -20,7 +22,7 @@ they were the center pair of their own 4-person Line. Ends in a Tidal Line.
 > 
 
 ### Teaching Notes
- From an 8-dancer line, the second part is
+From an 8-dancer line, the second part is
 simply Triple Trade. Some dancers find it easier to think about the
 first part as Center pairs trade (typically Triple Trade), and all
 Spread. So, when getting the correct part division is not an issue,
@@ -29,11 +31,14 @@ all Spread, and Triple Trade. Note, however, that this will not give
 the correct rolling direction for the very ends.
 
 ## Grand Swing and Mix
+
 **Parts:** 3  
 
-From a Generalized Tidal Line: Swing, then do the parts of a Grand Mix. Ends in a Tidal Line.
+From a Generalized Tidal Line: 
+Swing, then do the parts of a Grand Mix. Ends in a Tidal Line.
 
 ## Grand 1/4 (or 3 /4) Mix
+
 **Parts:** 3  
 
 From a R-H Column, or other applicable formations: Those who

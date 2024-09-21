@@ -12,12 +12,14 @@ Diamond footprints). Ends in a 3/4 Line.
 
 Note: There are two traffic patterns commonly considered for this call: 
 
-- Interlocked Extend, Swing, and in one smooth motion, Extend and Center Wave Slither,
+- Interlocked Extend, Swing, and in one smooth motion, 
+Extend and Center Wave Slither,
 - Interlocked Extend, Swing & Slither, and As Couples Extend.
 
 The first traffic pattern is more consistent with the definitions of 
 Scoot Back and Interlocked Scoot Chain Thru. 
 However, in practice, the second traffic pattern is widely used.
+
 Regardless of the traffic pattern used for Interlocked Scoot Back, 
 the call “Interlocked Scoot Back to a Wave” is 
 Interlocked Extend and Swing, ending in Parallel Waves

@@ -2,9 +2,9 @@
 # Like a Couple Up
 
 
-From any applicable formation: Do the last part of a Couple Up (i.e.,
+From any applicable formation: Do the last part of a Couple Up (that is,
 Leaders U-Turn Back). So the examples illustrated above under
-"<anything> er’s Couple Up" could al- ternatively be
+"\<anything> er’s Couple Up" could alternatively be
 expressed as "Split Trade Circulate Like a Couple Up" and "Split
 Transfer Like a Couple Up".
 

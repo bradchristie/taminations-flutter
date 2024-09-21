@@ -1,12 +1,14 @@
-
 # Interlocked Plenty
+
 ## Interlocked Plenty
+
 **Parts:** 3  
 
 From a Generalized 1/4 Line or other applicable formations:
 Interlocked Little; do your part of two Split Circulates, passing
 right shoulders as necessary; Outsides Counter Rotate 1/4 and Roll as
 the Centers 1/2 Zoom in the center. Usually ends in a 1/4 Tag.
+
 ## Interlocked Scoot and Plenty
 
 From a 1/4 Line: Interlocked Scoot Back, then Interlocked

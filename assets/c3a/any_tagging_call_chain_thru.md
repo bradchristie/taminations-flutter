@@ -1,11 +1,11 @@
 
-# <tag> Chain Thru
+# \<tag> Chain Thru
 
 **Parts:** 2  
 
-Starting formation is determined by the <tag> action.
-Do the designated type of <tag> action
-(e.g., "Flip", "Tag", "Vertical Tag")
+Starting formation is determined by the \<tag> action.
+Do the designated type of \<tag> action
+(for example, "Flip", "Tag", "Vertical Tag", "Chase")
 to the 1/2 Tag position; Scoot Chain Thru. Ends in Parallel Waves
 
 > 
