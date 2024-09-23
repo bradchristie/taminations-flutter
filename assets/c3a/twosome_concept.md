@@ -1,5 +1,5 @@
 
-# (Couples / Tandem / Siamese) Twosome <anything>
+# (Couples / Tandem / Siamese) Twosome \<anything>
 **CONCEPT**   
 
 From formations with pairs of adjacent dancers facing the same
@@ -7,16 +7,17 @@ direction: Do the given call with each pair of dancers acting as a
 unit, as in As Couples, Tandem, or Siamese, but with the members of
 each pair moving individually and maintaining a constant displacement
 from each other (staying the same distance and the same direction
-from each other, e.g., if one is closer to the caller and the other
+from each other, for example, if one is closer to the caller and the other
 further from the caller, they remain so). The pairs may start as any
-mix of couples and tandems. If the pairing is ambiguous, the concept
+mix of Couples and Tandems. If the pairing is ambiguous, the concept
 must be specified as "Couples Twosome", "Tandem Twosome",
-or "Siamese Twosome" as appropriate. If the pairing is unambiguous, "Twosome"
+or "Siamese Twosome" as appropriate.
+If the pairing is unambiguous, "Twosome"
 alone is sufficient. As in As Couples, Tandem, and so on, the dancers
 in each pair remain adjacent throughout the call and do not allow any
 other dancers to pass between them. Note: If the call causes a pair
-to turn an odd number of quarters (e.g., 1/4, 3/4), a couple will
-become a tandem, and vice versa.
+to turn an odd number of quarters (e.g., 1/4, 3/4), a Couple will
+become a Tandem, and vice versa.
 
 > 
 > ![alt](twosome-1.png)

@@ -12,12 +12,12 @@ in a 1/4 Tag.
 > ![alt](slant_touch_and_wheel-2.png)
 >
 
-## Slant <anything> By <anything>
+## Slant \<anything> By \<anything>
 
 From Parallel Two-Faced Lines and other applicable formations:
 Trailers Veer inward to form Facing Couples and do
-the first <anything> call (working in the center) as Leaders
-do their part of the second <anything> call.
+the first \<anything> call (working in the center) as Leaders
+do their part of the second \<anything> call.
 
 >
 > ![alt](slant_anything_by_anything-1.png)

@@ -1,13 +1,13 @@
 
 # Trade the Deucey
 
-From Parallel Lines, Twin
-Diamonds, a Generalized Thar, or other applicable
-formations:
+From Parallel Lines, Twin Diamonds, a Generalized Thar,
+or other applicable formations:
 Centers [Trade](../b2/trade.md)
 and [Spread](../plus/anything_and_spread.md)
 as the Ends [Cross Over Circulate](../a1/cross_over_circulate.md).
-Parallel Lines end in Parallel Lines, Twin Diamonds end in Point-to-Point Diamonds.
+Parallel Lines end in Parallel Lines,
+Twin Diamonds end in Point-to-Point Diamonds.
 
 > 
 > ![alt](trade_the_deucey-1.png)

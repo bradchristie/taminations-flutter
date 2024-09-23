@@ -2,7 +2,7 @@
 # Recoil
 **Parts:** 2  
 
-From an applicable non T-Bone 2 x 2:
+From an applicable Non-T-Bone 2 x 2:
 ***[Box Recycle](../c1/recycle.md)***;
 ***[Step & Fold](../c1/step_and_fold.md)***.
 Ends in a Mini-Wave Box.

@@ -1,8 +1,8 @@
 
-# Own the <anyone> <anything> by <anything>
+# Own the \<anyone> \<anything> by \<anything>
 
 Designated dancers do their part of the first
-<anything> call as the others do their part of the second <anything>
+\<anything> call as the others do their part of the second \<anything>
 call. Everyone uses their position in the overall setup to determine
 their part of the call, even though other dancers may be doing a
 different call. In particular, from a 2x4, for a four-person call
@@ -11,10 +11,9 @@ characteristics of the dancers in one group do not have to be
 consistent with the call that the other group is doing. Such
 information about members of the other group may in certain situations
 need to be used to resolve cases where there would otherwise not be
-enough information to do the call (e.g., where even without applying
+enough information to do the call (for example, where even without applying
 any special "rule" a call could be done from more than one formation),
 but is otherwise ignored.
-
 
 > 
 > ![alt](own_the_anyone_anything_by_anything-1.png)

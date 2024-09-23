@@ -1,7 +1,6 @@
 
 # Stampede
-**Parts for Centers: 3  Parts for Ends: 2**  
-
+**Parts for Centers: 3;  Parts for Ends: 2**
 
 From a 3/4 Tag or other applicable formations:
 Centers [Trade The Wave](../plus/trade_the_wave.md),

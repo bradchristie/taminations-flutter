@@ -5,11 +5,12 @@ From Twin Diamonds or an Hourglass:
 Outside four 1/2 [Zoom](../b2/zoom.md) and
 [Trade](../b2/trade.md) as the Very Centers
 [Cast Off 3/4](../ms/cast_off_three_quarters.md)
-as the Other Centers (on the outside)
-[Counter Rotate](../c1/counter_rotate.md) 1/4 to end
-as the Very Outside dancer.
+as the Other Centers
+[Counter Rotate](../c1/counter_rotate.md) 1/4 on the outside to end
+as the Very Outside dancers.
 Strip The Diamond ends in a Tidal Line.
-Strip the Hourglass ends in two Lines of 3 with a perpendicular Mini-Wave between them.
+Strip the Hourglass ends in two Lines of 3
+with a perpendicular Mini-Wave between them.
 
 >
 > ![alt](strip_the_diamond-1.png)

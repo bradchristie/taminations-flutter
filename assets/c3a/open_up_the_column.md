@@ -1,13 +1,13 @@
-
 # Open Up
+
 ## Open Up the Column
 
-From Columns: #1 dancers [Trail Off](../a2/trail_off.md) &
+From Columns: #1 dancers [Trail Off](../a2/trail_off.md) and
 [Roll](../plus/anything_and_roll.md)
 as #2 dancers [Circulate](../b1/circulate.md),
 [Peel Off](../plus/peel_off.md)
 and [Roll](../plus/anything_and_roll.md)
-as #3 and #4 dancers [Circulate](../b1/circulate.md);
+as #3 and #4 dancers [Circulate](../b1/circulate.md) and
 Centers [Cast Off 3/4](../ms/cast_off_three_quarters.md);
 all [Extend](../b2/extend.md).
 Ends in Parallel Waves.
@@ -17,12 +17,12 @@ Ends in Parallel Waves.
 > ![alt](open_up-2.png)
 > 
 
-## Open Up and <anything>
+## Open Up and \<anything>
 
 From Columns or other applicable formations: #1 dancers Trail Off and
 Roll as #2 dancers Circulate, Peel Off and Roll as the other dancers
-walk forward to form a box (or other compact formation) in the center
-and do the <anything> call. 
+walk forward to form a Box (or other compact formation) in the center
+and do the \<anything> call. 
 
 > 
 > ![alt](open_up-3.png)

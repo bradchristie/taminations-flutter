@@ -1,10 +1,9 @@
 
-# Triple Diamond <anything>
+# Triple Diamond \<anything>
 **CONCEPT**   
 
 Triple Diamonds consist of three adjacent Diamond formations
 some of which have positions occupied by phantoms.
-
 The two most common types of Triple Diamonds are illustrated
 below.
 
@@ -13,7 +12,8 @@ below.
 > ![alt](triple_diamond-2.png)
 > 
 
-Triple Diamonds are analogous to Triple Boxes/Columns/Lines/Waves [C-1].
+Triple Diamonds are analogous to
+Triple Boxes / Columns / Lines / Waves [C-1].
 The named call is executed within each group of four.
 
 > 

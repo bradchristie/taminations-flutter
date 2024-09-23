@@ -4,12 +4,11 @@
 From Parallel Two-Faced
 Lines and other applicable 2 x 4 formations (such as Facing
 Lines, Back-to-Back Lines, and some T-Bones):
-
 Ends [Split Circulate](../b1/circulate.md)
-as those facing out of the center box
+as those facing out of the center Box
 [Crossover Circulate](../a1/cross_over_circulate.md)
-as those facing into the center box do a
-Crossover Circulate within that box.
+as those facing into the center Box do a
+Crossover Circulate within that Box.
 Parallel Two-Faced Lines end in Parallel Waves.
 
 > 

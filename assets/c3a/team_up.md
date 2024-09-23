@@ -1,7 +1,8 @@
 
 # Team Up
 
-From any applicable formation (e.g., Lines Facing Out, Trade By, Inverted Lines):
+From any applicable formation (for example, Lines Facing Out,
+Trade By, Inverted Lines):
 Ends 1/2 [Circulate](../b1/circulate.md)
 and [Hinge](../ms/hinge.md) as Centers (working in the
 Center) do a Beaus [Run](../b2/run.md) as Belles Dodge.

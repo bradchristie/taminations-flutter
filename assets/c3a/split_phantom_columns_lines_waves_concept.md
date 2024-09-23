@@ -1,10 +1,10 @@
 
-# Split Phantom Columns / Lines / Waves <anything>
+# Split Phantom Columns / Lines / Waves \<anything>
 **CONCEPT**   
 
 From a 4x4 Matrix, visualized as 4 adjacent
-Columns/Lines/Waves: Split the 4x4 Matrix into two pairs of adjacent
-Columns/Lines/Waves and work in the resulting 2x4 Matrix on each
+Columns / Lines / Waves: Split the 4x4 Matrix into two pairs of adjacent
+Columns / Lines / Waves and work in the resulting 2x4 Matrix on each
 side.
 
 > 
@@ -14,7 +14,7 @@ side.
 
 Note that Split Phantom Lines only means that the dancers
 should consider themselves to be in General Lines; it does not imply
-any particular type of lines (e.g., two-faced, waves). Similarly,
+any particular type of lines (for example, Two-Faced, Waves). Similarly,
 Split Phantom Columns only means that the dancers should consider
 themselves to be in General Columns.
 

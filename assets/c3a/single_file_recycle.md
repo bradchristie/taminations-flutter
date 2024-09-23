@@ -4,9 +4,8 @@
 From a Single Double Pass Thru:
 Centers act as Beaus while Ends act as Belles to do a
 [facing Recycle](../a2/recycle.md)
-(i.e., Centers Touch and Right-face U-Turn Back
-as Ends Veer Left to become the Ends of a
-R-H Wave).
+(that is, Centers Touch and Right-face U-Turn Back
+as Ends Veer Left to become the Ends of a R-H Wave).
 
 > 
 > ![alt](single_file_recycle-1.png)

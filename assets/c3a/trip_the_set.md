@@ -3,8 +3,7 @@
 **Parts:** 2  
 
 From Parallel Lines with the
-ends back-to-back, or other applicable formations:
-
+Ends Back-To-Back, or other applicable formations:
 Ends [Cross Fold](../ms/fold.md)
 and [Roll](../plus/anything_and_roll.md)
 as Centers ([Concentric](../c1/concentric_concept.md))

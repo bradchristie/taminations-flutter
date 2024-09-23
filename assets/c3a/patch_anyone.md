@@ -1,9 +1,9 @@
+# Patch the \<anyone>
 
-# Patch the <anyone>
 **Parts:** 2  
 
 From a Couple or Mini-Wave: Hinge; *original* designated dancers
-U-Turn Back in flow direction (i.e., Roll twice). Ends in a Couple or
+U-Turn Back in flow direction (that is, Roll twice). Ends in a Couple or
 Mini-Wave.
 
 > 

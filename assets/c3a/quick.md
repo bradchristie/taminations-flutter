@@ -10,11 +10,10 @@ A 1/4 Box ends in Columns.
 > ![alt](quick-2.png)
 > 
 
-## Quick <anything>
+## Quick \<anything>
 
 From a 1/4 Box or other applicable formations: #2 dancer Press Out
-and do the
-<anything> call with the dancer they meet (working Phantom
+and do the \<anything> call with the dancer they meet (working Phantom
 if necessary) as the Others Circulate. Phantoms are removed at the
 end of the call to eliminate any empty planes between the Outsides
 and the Centers.

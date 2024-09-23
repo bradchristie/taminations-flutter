@@ -1,12 +1,10 @@
 
 # Polly Wally
 
-Starting formation - Generalized Columns.
-
-Ends 1/4 To Promenade, Step Ahead, Turn another 1/4
+From Generalized Columns:
+Ends turn 1/4 To Promenade, Step Ahead, turn another 1/4
 toward their initial turning direction, and adjust to end in
 Parallel Lines.
-
 Centers turn 1/4 To Promenade, Step Ahead, turn 1/4 To Promenade,
 and Step Ahead (to become Leaders in Parallel Lines).
 

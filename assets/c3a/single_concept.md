@@ -8,10 +8,10 @@ are "half size" versions of the original calls, involving half as
 many dancers (4 instead of 8, or 2 instead of 4).
 
 Note that there are other calls that have a similar
-relationship (e.g., "Single Wheel" is the 2-dancer version of Wheel
+relationship (for example, "Single Wheel" is the 2-dancer version of Wheel
 and Deal), but there are also calls with names beginning with the
 word "Single" that do not relate to another call in the same way
-(e.g., "Single Circle to a Wave"). Refer to the definition of each
+(for example, "Single Circle to a Wave"). Refer to the definition of each
 individual call to find out its meaning. Also note that the two-word
 combination "Single File" has a different meaning.
 
@@ -61,12 +61,13 @@ the center of the column.
 For Single Polly
 Wally, the action for the Ends is equivalent to Reverse Single Turn
 to a Line. For Reverse Single Polly Wally, the action for the Ends is
-equiva- lent to Single Turn to a Line.
+equivalent to Single Turn to a Line.
+
 ## Single Rotary Spin
 
 From a Single Eight Chain Thru: Right Pull By; centers Left
 Touch 3/4 while the ends 3/4 Left (turn in place to the left for 3/4
-of a turn). Ends in a R-H Ocean Wave.
+of a turn). Ends in a R-H Wave.
 
 > 
 > ![alt](single-7.png)
@@ -75,12 +76,13 @@ of a turn). Ends in a R-H Ocean Wave.
 
 ## Single Shakedown
 
-From dancers back-to-back only: In one smooth motion, Quarter Right, two-person
+From dancers back-to-back only:
+In one smooth motion, Quarter Right, two-person
 Counter Rotate, and Roll. This call cannot be fractionalized.
 
-Comment: “Two-person Counter Rotate” is equivalent to a Mini-Wave Hinge, but
-does not imply hand contact. This choice of wording emphasizes the relationship to
-Shakedown.
+Comment: "Two-person Counter Rotate" is equivalent
+to a Mini-Wave Hinge, but does not imply hand contact.
+This choice of wording emphasizes the relationship to Shakedown.
 
 > 
 > ![alt](single-11.png)
@@ -88,12 +90,13 @@ Shakedown.
 
 ## Single Turn and Deal
 
-From a Couple or Mini-Wave: In one smooth motion, Partner Half Tag, and turn
-another quarter in the same direction as when starting the Partner Half Tag. This
-call cannot be fractionalized.
+From a Couple or Mini-Wave:
+In one smooth motion, Partner Half Tag, and turn another quarter
+in the same direction as when starting the Partner Half Tag. 
+This call cannot be fractionalized.
 
-Comment: “Partner Half Tag” is equivalent to Quarter In and Touch. This choice of
-wording emphasizes the relationship to Turn and Deal.
+Comment: "Partner Half Tag" is equivalent to Quarter In and Touch. 
+This choice of wording emphasizes the relationship to Turn and Deal.
 
 > 
 > ![alt](single-12.png)

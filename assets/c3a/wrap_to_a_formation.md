@@ -1,20 +1,20 @@
 
-# Wrap To a <formation>
+# Wrap To a \<formation>
 
-From Columns; <formation> will be some kind of Diamond,
+From Columns; \<formation> will be some kind of Diamond,
 Galaxy, or Hourglass:
 
 
-\#1 dancer: 1/2 [Split Circulate](../b1/circulate.md) and Phantom <formation> Circulate 2.  
-\#2 dancer: Circulate, 1/2 Split Circulate, and Phantom <formation> Circulate.  
+\#1 dancer: 1/2 [Split Circulate](../b1/circulate.md) and Phantom \<formation> Circulate 2.  
+\#2 dancer: Circulate, 1/2 Split Circulate, and Phantom \<formation> Circulate.  
 \#3 dancer: Circulate 2 & 1/2.  
 \#4 dancer: Circulate 3.  
 
 All adjust as necessary to end in the given formation.
 
 That is, everyone does Column Circulates until they reach the
-front of the column, and then they do <formation> Circulates,
-for a total of 3 Circulates. When they reach the front of the column,
+front of the column, and then they do \<formation> Circulates,
+for a total of 3 Circulates. When they reach the front of the Column,
 they are the lead points for Twin Diamonds or an Hourglass, or the
 lead centers for a Galaxy or Point-to-Point Diamonds.
 
