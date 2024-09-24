@@ -1,8 +1,8 @@
 
-# How to Put Taminations on Your Web Site
+# How to Put Taminations on Your Website
 
-For web site authors, class teachers, and callers,
-you can put any animation or sequence on your web site.
+For website authors, class teachers, and callers,
+you can put any animation or sequence on your website.
 The basic concept is to set up an
 [iframe](https://www.w3schools.com/html/html_iframe.asp"),
 link it to a specific animation or sequence,
@@ -45,11 +45,11 @@ the Settings page, case and spacing are important.
 Here is an example.  The source link is (broken up and commented)  
 ```
      The Taminations link
-https://www.tamtwirlers.org/taminations/
+https://www.tamtwirlers.org/taminations/#/
      Parameters for an animation
      These are from copying and pasting an animation link
      Don't worry about the details
-#link=plus/fan_the_top
+?link=plus/fan_the_top
 &animname=FantheTopfromRightHandWaves
 &level=Plus
 &animnum=7

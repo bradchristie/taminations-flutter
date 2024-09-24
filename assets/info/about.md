@@ -23,19 +23,17 @@ Call pronunciations provided by
 
 ---
 
-## Taminations version 1.6.79 built 2024-08-05
+## Taminations version 1.6.80 built 2024-09-23
 Copyright 2024 by Brad Christie.  
 This is free software, and you are welcome to modify and redistribute it
 under the terms of the [GNU GPL license](http://www.gnu.org/licenses/gpl.html).  
 
 ## What's New
+* Update definitions for all Challenge levels
+* Fix display of fractions for appropriate calls
+* Fix some animations for Dixie Grand and Magic Column Circulate
 * Sequencer changes:
-  - Fix Turn the Star modification for Spin Chain and Exchange the Gears
-  - Code for Eight by (anything)
-  - Fix for Bounce on a center line
-  - Code for Travel Thru
-  - Fix for As Couples for some asymmetric formations
-  - Fix for Ends Run on a center wave
+  - Add code to handle Perk Up
   
 For a detailed history of changes, view the
 [Git log](https://github.com/bradchristie/taminations-flutter/commits/main)
@@ -60,7 +58,7 @@ and [for the Mac program](https://apps.apple.com/us/app/taminations/id613793359)
 
 [Details on Using Taminations](how_to_use.md)
 
-[How to put Taminations on your web site](embed.md)
+[How to put Taminations on your website](embed.md)
 
 ***
 

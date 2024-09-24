@@ -413,6 +413,7 @@ class TaminationsRouteInformationParser extends fm.RouteInformationParser<TamSta
   @override
   Future<TamState>
   parseRouteInformation(fm.RouteInformation routeInformation) async {
+    print('Uri: ${routeInformation.uri}');
     final params = routeInformation.uri.queryParameters;
     var mainPage = params['main']?.toMainPage();
     var detailPage = params['detail']?.toDetailPage();
