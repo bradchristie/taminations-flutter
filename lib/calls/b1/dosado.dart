@@ -28,81 +28,81 @@ import '../../moves.dart';
       formation:Formation('Facing Couples Compact'),
       from:'Facing Couples',difficulty: 1,
       paths:[
-          ExtendLeft.scale(1.5,0.5) +
-          ExtendRight.scale(1.0,0.5) +
-          RetreatRight.scale(1.0,0.5) +
-          RetreatLeft.scale(1.5,0.5),
+          ExtendLeft.changeBeats(1.5).scale(1.5,0.5) +
+          ExtendRight.changeBeats(1.5).scale(1.0,0.5) +
+          RetreatRight.changeBeats(1.5).scale(1.0,0.5) +
+          RetreatLeft.changeBeats(1.5).scale(1.5,0.5),
 
-          ExtendLeft.scale(1.5,0.5) +
-          ExtendRight.scale(1.0,0.5) +
-          RetreatRight.scale(1.0,0.5) +
-          RetreatLeft.scale(1.5,0.5)
+          ExtendLeft.changeBeats(1.5).scale(1.5,0.5) +
+          ExtendRight.changeBeats(1.5).scale(1.0,0.5) +
+          RetreatRight.changeBeats(1.5).scale(1.0,0.5) +
+          RetreatLeft.changeBeats(1.5).scale(1.5,0.5)
       ]),
 
     AnimatedCall('Dosado',
       formation:Formation('Normal Lines'),
       from:'Normal Lines',difficulty: 2,
       paths:[
-          ExtendLeft.scale(2.0,0.5) +
-          ExtendRight.scale(1.0,0.5) +
-          RetreatRight.scale(1.0,0.5) +
-          RetreatLeft.scale(2.0,0.5),
+          ExtendLeft.changeBeats(1.5).scale(2.0,0.5) +
+          ExtendRight.changeBeats(1.5).scale(1.0,0.5) +
+          RetreatRight.changeBeats(1.5).scale(1.0,0.5) +
+          RetreatLeft.changeBeats(1.5).scale(2.0,0.5),
 
-          ExtendLeft.scale(2.0,0.5) +
-          ExtendRight.scale(1.0,0.5) +
-          RetreatRight.scale(1.0,0.5) +
-          RetreatLeft.scale(2.0,0.5),
+          ExtendLeft.changeBeats(1.5).scale(2.0,0.5) +
+          ExtendRight.changeBeats(1.5).scale(1.0,0.5) +
+          RetreatRight.changeBeats(1.5).scale(1.0,0.5) +
+          RetreatLeft.changeBeats(1.5).scale(2.0,0.5),
 
-          ExtendLeft.scale(2.0,0.5) +
-          ExtendRight.scale(1.0,0.5) +
-          RetreatRight.scale(1.0,0.5) +
-          RetreatLeft.scale(2.0,0.5),
+          ExtendLeft.changeBeats(1.5).scale(2.0,0.5) +
+          ExtendRight.changeBeats(1.5).scale(1.0,0.5) +
+          RetreatRight.changeBeats(1.5).scale(1.0,0.5) +
+          RetreatLeft.changeBeats(1.5).scale(2.0,0.5),
 
-          ExtendLeft.scale(2.0,0.5) +
-          ExtendRight.scale(1.0,0.5) +
-          RetreatRight.scale(1.0,0.5) +
-          RetreatLeft.scale(2.0,0.5)
+          ExtendLeft.changeBeats(1.5).scale(2.0,0.5) +
+          ExtendRight.changeBeats(1.5).scale(1.0,0.5) +
+          RetreatRight.changeBeats(1.5).scale(1.0,0.5) +
+          RetreatLeft.changeBeats(1.5).scale(2.0,0.5)
       ]),
 
     AnimatedCall('Dosado',
       formation:Formation('Eight Chain Thru'),
       from:'Eight Chain Thru',difficulty: 1,
       paths:[
-          ExtendLeft.scale(1.0,0.5) +
-          ExtendRight.scale(1.0,0.5) +
-          RetreatRight.scale(1.0,0.5) +
-          RetreatLeft.scale(1.0,0.5),
+          ExtendLeft.changeBeats(1.5).scale(1.0,0.5) +
+          ExtendRight.changeBeats(1.5).scale(1.0,0.5) +
+          RetreatRight.changeBeats(1.5).scale(1.0,0.5) +
+          RetreatLeft.changeBeats(1.5).scale(1.0,0.5),
 
-          ExtendLeft.scale(1.0,0.5) +
-          ExtendRight.scale(1.0,0.5) +
-          RetreatRight.scale(1.0,0.5) +
-          RetreatLeft.scale(1.0,0.5),
+          ExtendLeft.changeBeats(1.5).scale(1.0,0.5) +
+          ExtendRight.changeBeats(1.5).scale(1.0,0.5) +
+          RetreatRight.changeBeats(1.5).scale(1.0,0.5) +
+          RetreatLeft.changeBeats(1.5).scale(1.0,0.5),
 
-          ExtendLeft.scale(1.0,0.5) +
-          ExtendRight.scale(1.0,0.5) +
-          RetreatRight.scale(1.0,0.5) +
-          RetreatLeft.scale(1.0,0.5),
+          ExtendLeft.changeBeats(1.5).scale(1.0,0.5) +
+          ExtendRight.changeBeats(1.5).scale(1.0,0.5) +
+          RetreatRight.changeBeats(1.5).scale(1.0,0.5) +
+          RetreatLeft.changeBeats(1.5).scale(1.0,0.5),
 
-          ExtendLeft.scale(1.0,0.5) +
-          ExtendRight.scale(1.0,0.5) +
-          RetreatRight.scale(1.0,0.5) +
-          RetreatLeft.scale(1.0,0.5)
+          ExtendLeft.changeBeats(1.5).scale(1.0,0.5) +
+          ExtendRight.changeBeats(1.5).scale(1.0,0.5) +
+          RetreatRight.changeBeats(1.5).scale(1.0,0.5) +
+          RetreatLeft.changeBeats(1.5).scale(1.0,0.5)
       ]),
 
     AnimatedCall('Dosado to a Wave',
       formation:Formation('Facing Couples Compact'),
       from:'Facing Couples',difficulty: 2,
       paths:[
-          ExtendLeft.scale(1.5,0.5) +
-          ExtendRight.scale(1.0,0.5) +
-          RetreatRight.scale(1.0,0.5) +
-          RetreatLeft.scale(1.0,0.5) +
-          ExtendLeft.changeBeats(2).scale(1.0,2.0),
+          ExtendLeft.changeBeats(1.5).scale(1.5,0.5) +
+          ExtendRight.changeBeats(1.5).scale(1.0,0.5) +
+          RetreatRight.changeBeats(1.5).scale(1.0,0.5) +
+          RetreatLeft.changeBeats(1.5).scale(1.0,0.5) +
+          ExtendLeft.changeBeats(2).changeBeats(1.5).scale(1.0,2.0),
 
-          ExtendLeft.scale(1.5,0.5) +
-          ExtendRight.scale(1.0,0.5) +
-          RetreatRight.scale(1.0,0.5) +
-          RetreatLeft.scale(1.0,0.5) +
+          ExtendLeft.changeBeats(1.5).scale(1.5,0.5) +
+          ExtendRight.changeBeats(1.5).scale(1.0,0.5) +
+          RetreatRight.changeBeats(1.5).scale(1.0,0.5) +
+          RetreatLeft.changeBeats(1.5).scale(1.0,0.5) +
           Forward.changeBeats(2)
       ]),
 
@@ -110,57 +110,57 @@ import '../../moves.dart';
       formation:Formation('Normal Lines'),
       from:'Normal Lines',difficulty: 3,
       paths:[
-          ExtendLeft.scale(2.0,0.5) +
-          ExtendRight.scale(1.0,0.5) +
-          RetreatRight.scale(1.0,0.5) +
-          RetreatLeft.scale(1.0,0.5) +
-          ExtendLeft.changeBeats(2).scale(1.0,0.5),
+          ExtendLeft.changeBeats(1.5).scale(2.0,0.5) +
+          ExtendRight.changeBeats(1.5).scale(1.0,0.5) +
+          RetreatRight.changeBeats(1.5).scale(1.0,0.5) +
+          RetreatLeft.changeBeats(1.5).scale(1.0,0.5) +
+          ExtendLeft.changeBeats(2).changeBeats(1.5).scale(1.0,0.5),
 
-          ExtendLeft.scale(2.0,0.5) +
-          ExtendRight.scale(1.0,0.5) +
-          RetreatRight.scale(1.0,0.5) +
-          RetreatLeft.scale(1.0,0.5) +
-          ExtendLeft.changeBeats(2).scale(1.0,0.5),
+          ExtendLeft.changeBeats(1.5).scale(2.0,0.5) +
+          ExtendRight.changeBeats(1.5).scale(1.0,0.5) +
+          RetreatRight.changeBeats(1.5).scale(1.0,0.5) +
+          RetreatLeft.changeBeats(1.5).scale(1.0,0.5) +
+          ExtendLeft.changeBeats(2).changeBeats(1.5).scale(1.0,0.5),
 
-          ExtendLeft.scale(2.0,0.5) +
-          ExtendRight.scale(1.0,0.5) +
-          RetreatRight.scale(1.0,0.5) +
-          RetreatLeft.scale(1.0,0.5) +
-          ExtendLeft.changeBeats(2).scale(1.0,0.5),
+          ExtendLeft.changeBeats(1.5).scale(2.0,0.5) +
+          ExtendRight.changeBeats(1.5).scale(1.0,0.5) +
+          RetreatRight.changeBeats(1.5).scale(1.0,0.5) +
+          RetreatLeft.changeBeats(1.5).scale(1.0,0.5) +
+          ExtendLeft.changeBeats(2).changeBeats(1.5).scale(1.0,0.5),
 
-          ExtendLeft.scale(2.0,0.5) +
-          ExtendRight.scale(1.0,0.5) +
-          RetreatRight.scale(1.0,0.5) +
-          RetreatLeft.scale(1.0,0.5) +
-          ExtendLeft.changeBeats(2).scale(1.0,0.5)
+          ExtendLeft.changeBeats(1.5).scale(2.0,0.5) +
+          ExtendRight.changeBeats(1.5).scale(1.0,0.5) +
+          RetreatRight.changeBeats(1.5).scale(1.0,0.5) +
+          RetreatLeft.changeBeats(1.5).scale(1.0,0.5) +
+          ExtendLeft.changeBeats(2).changeBeats(1.5).scale(1.0,0.5)
       ]),
 
     AnimatedCall('Dosado to a Wave',
       formation:Formation('Eight Chain Thru'),
       from:'Eight Chain Thru',difficulty: 2,
       paths:[
-          ExtendLeft.scale(1.0,0.5) +
-          ExtendRight.scale(1.0,0.5) +
-          RetreatRight.scale(1.0,0.5) +
-          RetreatLeft.scale(1.0,0.5) +
-          ExtendLeft.changeBeats(2).scale(1.0,2.0),
+          ExtendLeft.changeBeats(1.5).scale(1.0,0.5) +
+          ExtendRight.changeBeats(1.5).scale(1.0,0.5) +
+          RetreatRight.changeBeats(1.5).scale(1.0,0.5) +
+          RetreatLeft.changeBeats(1.5).scale(1.0,0.5) +
+          ExtendLeft.changeBeats(2).changeBeats(1.5).scale(1.0,2.0),
 
-          ExtendLeft.scale(1.0,0.5) +
-          ExtendRight.scale(1.0,0.5) +
-          RetreatRight.scale(1.0,0.5) +
-          RetreatLeft.scale(1.0,0.5) +
+          ExtendLeft.changeBeats(1.5).scale(1.0,0.5) +
+          ExtendRight.changeBeats(1.5).scale(1.0,0.5) +
+          RetreatRight.changeBeats(1.5).scale(1.0,0.5) +
+          RetreatLeft.changeBeats(1.5).scale(1.0,0.5) +
           Forward.changeBeats(2),
 
-          ExtendLeft.scale(1.0,0.5) +
-          ExtendRight.scale(1.0,0.5) +
-          RetreatRight.scale(1.0,0.5) +
-          RetreatLeft.scale(1.0,0.5) +
-          ExtendLeft.changeBeats(2).scale(1.0,2.0),
+          ExtendLeft.changeBeats(1.5).scale(1.0,0.5) +
+          ExtendRight.changeBeats(1.5).scale(1.0,0.5) +
+          RetreatRight.changeBeats(1.5).scale(1.0,0.5) +
+          RetreatLeft.changeBeats(1.5).scale(1.0,0.5) +
+          ExtendLeft.changeBeats(2).changeBeats(1.5).scale(1.0,2.0),
 
-          ExtendLeft.scale(1.0,0.5) +
-          ExtendRight.scale(1.0,0.5) +
-          RetreatRight.scale(1.0,0.5) +
-          RetreatLeft.scale(1.0,0.5) +
+          ExtendLeft.changeBeats(1.5).scale(1.0,0.5) +
+          ExtendRight.changeBeats(1.5).scale(1.0,0.5) +
+          RetreatRight.changeBeats(1.5).scale(1.0,0.5) +
+          RetreatLeft.changeBeats(1.5).scale(1.0,0.5) +
           Forward.changeBeats(2)
       ]),
   ];

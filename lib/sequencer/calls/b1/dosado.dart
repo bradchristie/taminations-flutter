@@ -43,13 +43,14 @@ class Dosado extends Action with IsLeft {
     var d2 = ctx.dancerFacing(d) ??
         thrower(CallError('Dancer $d has no one to Dosado with.' ));
     var dist = d.distanceTo(d2!);
+    print(dist);
     var moves = isLeft
         ? [ ExtendRight, ExtendLeft, RetreatLeft, RetreatRight ]
         : [ ExtendLeft, ExtendRight, RetreatRight, RetreatLeft ];
-    return moves[0].scale(dist/2.0,0.5).changeBeats(dist/2.0) +
-           moves[1].scale(1.0,0.5) +
-           moves[2].scale(1.0,0.5) +
-           moves[3].scale(1.0,0.5);
+    return moves[0].scale(dist/2.0,0.5).changeBeats(dist > 4.0 ? 3.5 : 1.5) +
+           moves[1].changeBeats(1.5).scale(1.0,0.5) +
+           moves[2].changeBeats(1.5).scale(1.0,0.5) +
+           moves[3].changeBeats(1.5).scale(1.0,0.5);
   }
 
 }
