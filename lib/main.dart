@@ -97,7 +97,7 @@ class _TaminationsAppState extends fm.State<TaminationsApp> {
                   fontFamily: 'Roboto',
                   textTheme: GoogleFonts.robotoTextTheme(),
                   scrollbarTheme: fm.ScrollbarThemeData(
-                    thumbColor: fm.MaterialStateColor.resolveWith((states) =>
+                    thumbColor: fm.WidgetStateColor.resolveWith((states) =>
                     Color.TRANSPARENTGREY),
                   ),
                 ),
@@ -286,10 +286,7 @@ class TaminationsRouterDelegate extends fm.RouterDelegate<TamState>
 
                         //  onPopPage
                         //  Calculate popped config based on current config
-                        onPopPage: (route, result) {
-                          if (!route.didPop(result)) {
-                            return false;
-                          }
+                        onDidRemovePage: (page) {
                           pp.Provider.of<VirtualKeyboardVisible>(context,listen: false)
                               .isVisible = false;
                           if (_orientation == fm.Orientation.landscape) {
@@ -354,9 +351,6 @@ class TaminationsRouterDelegate extends fm.RouterDelegate<TamState>
                                   detailPage: DetailPage.NONE);
 
                           }
-
-                          notifyListeners();
-                          return true;
                         });
                   });
             })
@@ -413,7 +407,6 @@ class TaminationsRouteInformationParser extends fm.RouteInformationParser<TamSta
   @override
   Future<TamState>
   parseRouteInformation(fm.RouteInformation routeInformation) async {
-    print('Uri: ${routeInformation.uri}');
     final params = routeInformation.uri.queryParameters;
     var mainPage = params['main']?.toMainPage();
     var detailPage = params['detail']?.toDetailPage();
