@@ -49,6 +49,7 @@ class SequencerModel extends fm.ChangeNotifier {
   DanceModel animation;
   int currentCall = -1;
   String helplink = '';
+  double animateFrom = 0.0;
 
   SequencerModel([fm.BuildContext? context]) :
         animation = DanceModel(context) {
@@ -74,6 +75,7 @@ class SequencerModel extends fm.ChangeNotifier {
     currentCall = -1;
     helplink = 'info/sequencer';
     _startSequence();
+    animateFrom = 0.0;
     later(() {
       notifyListeners();
     });
@@ -280,7 +282,7 @@ class SequencerModel extends fm.ChangeNotifier {
   bool loadOneCall(String call) {
     errorString = '';
     try {
-      _interpretOneCall(call);
+      _interpretOneLine(call);
     } on CallError catch(e) {
       errorString = e.toString();
       notifyListeners();
@@ -353,21 +355,28 @@ class SequencerModel extends fm.ChangeNotifier {
     }
   }
 
+  void _interpretOneLine(String line) {
+    //  Replace abbreviations
+    line = AbbreviationsModel.replaceAbbreviations(line);
+    //  Remember the current beat, we will animate from here
+    //  once all interpretation is done
+    //  Will be reset to 0 if 'reset' is part of the line
+    animateFrom = animation.beats;
+    //  If call now has multiple lines (separated by semi-colons)
+    //  run each one separately
+    for (var oneCall in line.split(';'))
+      _interpretOneCall(oneCall);
+    //  Play whatever has been added
+    animation.goToBeat(animateFrom);
+    animation.doPlay();
+  }
+
   void _interpretOneCall(String call) {
     if (call.isBlank)
       return;
     if (isComment(call)) {
       calls.add(SequencerCall(call,beats:0.0,level:null));
       notifyListeners();
-      return;
-    }
-    //  Replace abbreviations
-    call = AbbreviationsModel.replaceAbbreviations(call);
-    //  If call now has multiple lines (separated by semi-colons)
-    //  run each one separately
-    if (call.contains(';')) {
-      for (var oneCall in call.split(';'))
-        _interpretOneCall(oneCall);
       return;
     }
     //  Remove any underscores, which are reserved for internal calls only

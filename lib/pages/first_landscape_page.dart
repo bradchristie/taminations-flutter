@@ -19,6 +19,7 @@
 */
 
 import 'package:flutter/material.dart' as fm;
+import 'package:flutter_resizable_container/flutter_resizable_container.dart';
 import 'package:provider/provider.dart' as pp;
 
 import '../common_flutter.dart';
@@ -55,12 +56,17 @@ class FirstLandscapeFrame extends fm.StatelessWidget {
 
   @override
   fm.Widget build(fm.BuildContext context) {
-    return fm.Row(
-      crossAxisAlignment: fm.CrossAxisAlignment.stretch,
+    return ResizableContainer(
+      direction: fm.Axis.horizontal,
+      divider: ResizableDivider(
+        thickness: 5.0,
+        color: fm.Colors.black,
+      ),
       children: [
-        fm.Expanded(flex: 1, child:LevelFrame()),
-        fm.VerticalDivider(color: Color.BLACK, width: 2.0,),
-        fm.Expanded(flex: 3, child:rightChild)
+        ResizableChild(child: LevelFrame()),
+        ResizableChild(
+            size: ResizableSize.expand(flex: 3),
+            child:rightChild)
       ],
     );
   }

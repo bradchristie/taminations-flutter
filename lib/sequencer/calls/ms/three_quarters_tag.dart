@@ -33,7 +33,6 @@ class ThreeQuartersTag extends Action with IsLeft {
     //  All the 4-dancer formations are in Taminations
     if (ctx.actives.length < 8 && !ctx.isAsym()) {
       ctx.adjustToFormation(Formation('Two-Faced Line RH'),rotate: 90, maxError: 6.1);
-      print(ctx.dancers.show());
       ctx.applyCalls('$left 3/4 Tag the Line');
     }
     else if (ctx.isTidal())

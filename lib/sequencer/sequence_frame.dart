@@ -332,21 +332,16 @@ class _SequencerEditLineState extends fm.State<SequencerEditLine> {
   }
 
   void _sendOneLine(SequencerModel model, String value) async {
-    final oldbeats = model.animation.movingBeats;
     var hasError = false;
-    //  Accept more than one call separated by semi colons
-    for (final call in value.split(';')) {
-      //  Process the call
-      if (!(model.loadOneCall(call))) {
-        hasError = true;
-        break;
-      }
+    //  Process the call
+    if (!(model.loadOneCall(value))) {
+      hasError = true;
     }
     //  Animate from the previous position
-    if (model.animation.movingBeats > oldbeats) {
-      model.animation.beater.beat = oldbeats;
-      model.animation.doPlay();
-    }
+    //if (model.animation.movingBeats > oldbeats) {
+    //  model.animation.beater.beat = oldbeats;
+    //  model.animation.doPlay();
+    //}
     //  Erase it from the the text field, unless there's an error
     //  that the user might want to fix
     if (!hasError)

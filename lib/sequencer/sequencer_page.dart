@@ -19,6 +19,7 @@
 */
 
 import 'package:flutter/material.dart' as fm;
+import 'package:flutter_resizable_container/flutter_resizable_container.dart';
 import 'package:provider/provider.dart' as pp;
 import 'package:taminations/beat_notifier.dart';
 
@@ -130,32 +131,41 @@ class _SequencerPageState extends fm.State<SequencerPage> {
                 );
               }
               //  landscape
-              return fm.Row(
+              return ResizableContainer(
+                direction: fm.Axis.horizontal,
+                divider: ResizableDivider(
+                  thickness: 5.0,
+                  color: fm.Colors.black,
+                ),
                 children: [
-                  fm.Expanded(child: fm.Column(
-                    children: [
-                      fm.Expanded(child: SequenceFrame()),
-                      SequenceEditButtons(),
-                    ],
-                  )),
-                  fm.VerticalDivider(color: Color.BLACK, width: 2.0,),
-                  fm.Expanded(child: SequencerAnimationFrame()),
-                  fm.VerticalDivider(color: Color.BLACK, width: 2.0,),
+                  ResizableChild(
+                    child: fm.Column(
+                      children: [
+                        fm.Expanded(child: SequenceFrame()),
+                        SequenceEditButtons(),
+                      ],
+                    ),
+                  ),
+                  //fm.VerticalDivider(color: Color.BLACK, width: 2.0,),
+                  ResizableChild(child: SequencerAnimationFrame()),
+                  //fm.VerticalDivider(color: Color.BLACK, width: 2.0,),
                   //  Dummy title model to intercept titles we don't want to show
-                  pp.ChangeNotifierProvider(
-                    create: (_) => TitleModel(),
-                    child: fm.Expanded(child: pp.Consumer<TamState>(
-                        builder: (context,tamState,_) {
-                          if (tamState.detailPage == DetailPage.CALLS)
-                            return SequencerCallsFrame();
-                          else if (tamState.detailPage == DetailPage.ABBREVIATIONS)
-                            return AbbreviationsFrame();
-                          else if (tamState.detailPage == DetailPage.SETTINGS)
-                            return SequencerSettingsFrame();
-                          else
-                            return MarkdownFrame(tamState.helplink ?? 'info/sequencer');
-                        }
-                    )),
+                  ResizableChild(
+                    child: pp.ChangeNotifierProvider(
+                      create: (_) => TitleModel(),
+                      child: pp.Consumer<TamState>(
+                          builder: (context,tamState,_) {
+                            if (tamState.detailPage == DetailPage.CALLS)
+                              return SequencerCallsFrame();
+                            else if (tamState.detailPage == DetailPage.ABBREVIATIONS)
+                              return AbbreviationsFrame();
+                            else if (tamState.detailPage == DetailPage.SETTINGS)
+                              return SequencerSettingsFrame();
+                            else
+                              return MarkdownFrame(tamState.helplink ?? 'info/sequencer');
+                          }
+                      ),
+                    ),
                   )
                 ],
               );

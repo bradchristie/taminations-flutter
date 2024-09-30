@@ -247,6 +247,10 @@ class DanceModel extends fm.ChangeNotifier {
     beater.beat = -leadin;
   }
 
+  void goToBeat(double b) {
+    beater.beat = b - leadin;
+  }
+
   void goToEnd() {
     beater.beat = _beats;
   }

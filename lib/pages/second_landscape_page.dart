@@ -19,6 +19,7 @@
 */
 
 import 'package:flutter/material.dart' as fm;
+import 'package:flutter_resizable_container/flutter_resizable_container.dart';
 import 'package:provider/provider.dart' as pp;
 
 import '../call_index.dart';
@@ -118,19 +119,26 @@ class SecondLandscapeFrame extends fm.StatelessWidget {
 
   @override
   fm.Widget build(fm.BuildContext context) {
-    return fm.Row(
-      crossAxisAlignment: fm.CrossAxisAlignment.stretch,
+    return ResizableContainer(
+      direction: fm.Axis.horizontal,
+      divider: ResizableDivider(
+        thickness: 5.0,
+        color: fm.Colors.black,
+      ),
+      //crossAxisAlignment: fm.CrossAxisAlignment.stretch,
       children: [
-        fm.Expanded(flex: 1, child: leftChild),
-        fm.VerticalDivider(color: Color.BLACK, width: 2.0,),
+        ResizableChild(child: leftChild),
+        //fm.VerticalDivider(color: Color.BLACK, width: 2.0,),
         //  We want the animation list (which is the left child)
         //  to control the title.  So add dummy titles
         //  to intercept consumers from center and right children
-        fm.Expanded(flex: 1, child: centerChild),
-        fm.VerticalDivider(color: Color.BLACK, width: 2.0,),
-        pp.ChangeNotifierProvider(
-            create: (_) => TitleModel(),
-            child: fm.Expanded(flex: 1, child: rightChild)
+        ResizableChild(child: centerChild),
+        //fm.VerticalDivider(color: Color.BLACK, width: 2.0,),
+        ResizableChild(
+          child: pp.ChangeNotifierProvider(
+              create: (_) => TitleModel(),
+              child: rightChild
+          ),
         )
       ],
     );
