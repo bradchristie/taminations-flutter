@@ -92,17 +92,17 @@ import '../../moves.dart';
       formation:Formation('Eight Chain Thru'),
       from:'Eight Chain Thru',isGenderSpecific:true,
       paths:[
-          ExtendLeft.changehands(Hands.GRIPRIGHT).scale(1.0,0.5) +
-          QuarterRight.changehands(Hands.GRIPRIGHT).skew(1.0,0.5),
+          ExtendLeft.changeBeats(2).changehands(Hands.GRIPRIGHT).scale(1.0,0.5) +
+          QuarterRight.changeBeats(2).changehands(Hands.GRIPRIGHT).skew(1.0,0.5),
 
-          ExtendLeft.changehands(Hands.GRIPRIGHT).scale(1.0,0.5) +
-          QuarterLeft.changehands(Hands.GRIPRIGHT).skew(1.0,-1.5),
+          ExtendLeft.changeBeats(2).changehands(Hands.GRIPRIGHT).scale(1.0,0.5) +
+          QuarterLeft.changeBeats(2).changehands(Hands.GRIPRIGHT).skew(1.0,-1.5),
 
-          ExtendLeft.changehands(Hands.GRIPRIGHT).scale(1.0,0.5) +
-          QuarterRight.changehands(Hands.GRIPRIGHT).skew(1.0,0.5),
+          ExtendLeft.changeBeats(2).changehands(Hands.GRIPRIGHT).scale(1.0,0.5) +
+          QuarterRight.changeBeats(2).changehands(Hands.GRIPRIGHT).skew(1.0,0.5),
 
-          ExtendLeft.changehands(Hands.GRIPRIGHT).scale(1.0,0.5) +
-          QuarterLeft.changehands(Hands.GRIPRIGHT).skew(1.0,-1.5)
+          ExtendLeft.changeBeats(2).changehands(Hands.GRIPRIGHT).scale(1.0,0.5) +
+          QuarterLeft.changeBeats(2).changehands(Hands.GRIPRIGHT).skew(1.0,-1.5)
       ]),
 
     AnimatedCall('Heads Star Thru',
