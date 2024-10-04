@@ -25,13 +25,38 @@ import '../../moves.dart';
   final List<AnimatedCall> WaveTheAnyone = [
 
     AnimatedCall('Wave the Beaus',
+        from: 'Eight Chain Thru',
+        formation:Formation('Eight Chain Thru'),
+        parts:'2',
+        paths:[
+          ExtendLeft.scale(1.0,0.5) +
+              ExtendRight.scale(1.0,0.5) +
+              Forward_2,
+
+          ExtendLeft.scale(1.0,0.5) +
+              ExtendRight.scale(1.0,0.5) +
+              DodgeLeft,
+
+          ExtendLeft.scale(1.0,0.5) +
+              ExtendRight.scale(1.0,0.5) +
+              RunRight.skew(1.0,0.0) +
+              QuarterRight.skew(1.0,0.0),
+
+          ExtendLeft.scale(1.0,0.5) +
+              ExtendRight.scale(1.0,0.5) +
+              QuarterLeft.skew(0.0,1.0) +
+              Forward,
+        ]),
+
+    AnimatedCall('Wave the Beaus',
+      from: 'T-Bones',
       formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:1,y:3,angle:270),
         DancerModel.fromData(gender:Gender.GIRL,x:-1,y:3,angle:270),
         DancerModel.fromData(gender:Gender.BOY,x:1,y:1,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:1,y:-1,angle:0),
   ]),
-      group:' ',parts:'2',
+      parts:'2',
       paths:[
           Forward.changeBeats(2).changehands(Hands.RIGHT) +
           Forward_4,
@@ -49,13 +74,9 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Wave the Belles',
-      formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:1,y:3,angle:270),
-        DancerModel.fromData(gender:Gender.GIRL,x:-1,y:3,angle:270),
-        DancerModel.fromData(gender:Gender.BOY,x:-1,y:1,angle:90),
-        DancerModel.fromData(gender:Gender.GIRL,x:1,y:1,angle:90),
-  ]),
-      group:' ',parts:'2',
+      from: 'Eight Chain Thru',
+      formation:Formation('Eight Chain Thru'),
+      parts:'2',
       paths:[
           ExtendLeft.scale(1.0,0.5) +
           ExtendRight.scale(1.0,0.5) +
@@ -76,52 +97,259 @@ import '../../moves.dart';
           QuarterLeft.skew(1.0,0.0)
       ]),
 
-    AnimatedCall('Wave the Boys',
-      formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:1,y:3,angle:270),
-        DancerModel.fromData(gender:Gender.GIRL,x:-1,y:3,angle:270),
-        DancerModel.fromData(gender:Gender.GIRL,x:1,y:1,angle:0),
-        DancerModel.fromData(gender:Gender.BOY,x:1,y:-1,angle:0),
-  ]),
-      group:' ',isGenderSpecific:true,parts:'2',
-      paths:[
+    AnimatedCall('Wave the Belles',
+        from: 'T-Bones',
+        formation:Formation('', dancers:[
+          DancerModel.fromData(gender:Gender.BOY,x:1,y:3,angle:270),
+          DancerModel.fromData(gender:Gender.GIRL,x:-1,y:3,angle:270),
+          DancerModel.fromData(gender:Gender.BOY,x:1,y:1,angle:0),
+          DancerModel.fromData(gender:Gender.GIRL,x:1,y:-1,angle:0),
+        ]),
+        parts:'2',
+        paths:[
           Forward.changeBeats(2).changehands(Hands.RIGHT) +
-          Forward_4,
+              DodgeRight.changeBeats(4),
 
           Forward.changeBeats(2).changehands(Hands.LEFT) +
-          DodgeLeft.changeBeats(4),
+              Forward_4,
 
           Forward_2.changehands(Hands.RIGHT) +
-          QuarterRight.changeBeats(2).skew(0.0,-1.0) +
-          Forward_2,
+              QuarterRight.changeBeats(2).skew(0.0,-1.0) +
+              Forward_2,
 
           Forward_2.changehands(Hands.LEFT) +
-          RunLeft.scale(1.0,1.5).skew(1.0,0.0) +
-          QuarterLeft.skew(1.0,0.0)
+              RunLeft.scale(1.0,1.5).skew(1.0,0.0) +
+              QuarterLeft.skew(1.0,0.0),
+        ]),
+
+    AnimatedCall('Wave the Boys',
+      from: 'Eight Chain Thru, Boys in Center',
+      formation:Formation('', dancers:[
+        DancerModel.fromData(gender:Gender.BOY,x:1,y:1,angle:90),
+        DancerModel.fromData(gender:Gender.GIRL,x:1,y:3,angle:270),
+        DancerModel.fromData(gender:Gender.BOY,x:-1,y:1,angle:90),
+        DancerModel.fromData(gender:Gender.GIRL,x:-1,y:3,angle:270),
+  ]),
+      isGenderSpecific:true,parts:'2',
+      paths:[
+        ExtendLeft.scale(1.0,0.5) +
+            ExtendRight.scale(1.0,0.5) +
+            FlipLeft +
+            QuarterLeft,
+
+        ExtendLeft.scale(1.0,0.5) +
+            ExtendRight.scale(1.0,0.5) +
+            BackSashayRight.changeBeats(4),
+
+        ExtendLeft.scale(1.0,0.5) +
+            ExtendRight.scale(1.0,0.5) +
+            RunRight +
+            QuarterRight,
+
+        ExtendLeft.scale(1.0,0.5) +
+            ExtendRight.scale(1.0,0.5) +
+            SashayLeft.changeBeats(4)
       ]),
+
+    AnimatedCall('Wave the Boys',
+        from: 'Eight Chain Thru, Boys Outside',
+        formation:Formation('', dancers:[
+          DancerModel.fromData(gender:Gender.GIRL,x:1,y:1,angle:90),
+          DancerModel.fromData(gender:Gender.BOY,x:1,y:3,angle:270),
+          DancerModel.fromData(gender:Gender.GIRL,x:-1,y:1,angle:90),
+          DancerModel.fromData(gender:Gender.BOY,x:-1,y:3,angle:270),
+        ]),
+        isGenderSpecific:true,parts:'2',
+        paths:[
+          ExtendLeft.scale(1.0,0.5) +
+              ExtendRight.scale(1.0,0.5) +
+              QuarterLeft.changeBeats(1).skew(-0.5,1) +
+              ExtendRight.scale(1.0,0.5),
+
+          ExtendLeft.scale(1.0,0.5) +
+              ExtendRight.scale(1.0,0.5) +
+              ExtendLeft.scale(1.0,0.5) +
+              ExtendRight.scale(1.0,0.5),
+
+          ExtendLeft.scale(1.0,0.5) +
+              ExtendRight.scale(1.0,0.5) +
+              LeadRight.changeBeats(1).scale(.5, 1) +
+              ExtendRight.scale(1.0,0.5),
+
+
+          ExtendLeft.scale(1.0,0.5) +
+              ExtendRight.scale(1.0,0.5) +
+              ExtendLeft.scale(1.0,0.5) +
+              ExtendRight.scale(1.0,0.5),
+        ]),
 
     AnimatedCall('Wave the Girls',
-      formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:1,y:3,angle:270),
-        DancerModel.fromData(gender:Gender.GIRL,x:-1,y:3,angle:270),
-        DancerModel.fromData(gender:Gender.GIRL,x:1,y:1,angle:0),
-        DancerModel.fromData(gender:Gender.BOY,x:1,y:-1,angle:0),
-  ]),
-      group:' ',isGenderSpecific:true,parts:'2',
-      paths:[
+        from: 'Eight Chain Thru, Girls In Center',
+        formation:Formation('', dancers:[
+          DancerModel.fromData(gender:Gender.GIRL,x:1,y:1,angle:90),
+          DancerModel.fromData(gender:Gender.BOY,x:1,y:3,angle:270),
+          DancerModel.fromData(gender:Gender.GIRL,x:-1,y:1,angle:90),
+          DancerModel.fromData(gender:Gender.BOY,x:-1,y:3,angle:270),
+        ]),
+        isGenderSpecific:true,parts:'2',
+        paths:[
+          ExtendLeft.scale(1.0,0.5) +
+              ExtendRight.scale(1.0,0.5) +
+              FlipLeft +
+              QuarterLeft,
+
+          ExtendLeft.scale(1.0,0.5) +
+              ExtendRight.scale(1.0,0.5) +
+              BackSashayRight.changeBeats(4),
+
+          ExtendLeft.scale(1.0,0.5) +
+              ExtendRight.scale(1.0,0.5) +
+              RunRight +
+              QuarterRight,
+
+          ExtendLeft.scale(1.0,0.5) +
+              ExtendRight.scale(1.0,0.5) +
+              SashayLeft.changeBeats(4)
+        ]),
+
+    AnimatedCall('Wave the Girls',
+        from: 'Eight Chain Thru, Girls Outside',
+        formation:Formation('', dancers:[
+          DancerModel.fromData(gender:Gender.BOY,x:1,y:1,angle:90),
+          DancerModel.fromData(gender:Gender.GIRL,x:1,y:3,angle:270),
+          DancerModel.fromData(gender:Gender.BOY,x:-1,y:1,angle:90),
+          DancerModel.fromData(gender:Gender.GIRL,x:-1,y:3,angle:270),
+        ]),
+        isGenderSpecific:true,parts:'2',
+        paths:[
+          ExtendLeft.scale(1.0,0.5) +
+              ExtendRight.scale(1.0,0.5) +
+              QuarterLeft.changeBeats(1).skew(-0.5,1) +
+              ExtendRight.scale(1.0,0.5),
+
+          ExtendLeft.scale(1.0,0.5) +
+              ExtendRight.scale(1.0,0.5) +
+              ExtendLeft.scale(1.0,0.5) +
+              ExtendRight.scale(1.0,0.5),
+
+          ExtendLeft.scale(1.0,0.5) +
+              ExtendRight.scale(1.0,0.5) +
+              LeadRight.changeBeats(1).scale(.5, 1) +
+              ExtendRight.scale(1.0,0.5),
+
+
+          ExtendLeft.scale(1.0,0.5) +
+              ExtendRight.scale(1.0,0.5) +
+              ExtendLeft.scale(1.0,0.5) +
+              ExtendRight.scale(1.0,0.5),
+        ]),
+
+    AnimatedCall('Wave Everybody',
+        from: 'Eight Chain Thru',
+        formation:Formation('Eight Chain Thru'),
+        parts:'2',
+        paths:[
+          ExtendLeft.scale(1.0,0.5) +
+              ExtendRight.scale(1.0,0.5) +
+              ExtendLeft.scale(1.0,0.5) +
+              ExtendRight.scale(1.0,0.5),
+
+          ExtendLeft.scale(1.0,0.5) +
+              ExtendRight.scale(1.0,0.5) +
+              ExtendLeft.scale(1.0,0.5) +
+              ExtendRight.scale(1.0,0.5),
+
+          ExtendLeft.scale(1.0,0.5) +
+              ExtendRight.scale(1.0,0.5) +
+              RunRight +
+              QuarterRight,
+
+          ExtendLeft.scale(1.0,0.5) +
+              ExtendRight.scale(1.0,0.5) +
+              FlipLeft +
+              QuarterLeft,
+
+        ]),
+
+    AnimatedCall('Wave Everybody',
+        from: 'T-Bones',
+        formation:Formation('', dancers:[
+          DancerModel.fromData(gender:Gender.BOY,x:1,y:3,angle:270),
+          DancerModel.fromData(gender:Gender.GIRL,x:-1,y:3,angle:270),
+          DancerModel.fromData(gender:Gender.BOY,x:1,y:1,angle:0),
+          DancerModel.fromData(gender:Gender.GIRL,x:1,y:-1,angle:0),
+        ]),
+        parts:'2',
+        paths:[
           Forward.changeBeats(2).changehands(Hands.RIGHT) +
-          DodgeRight.changeBeats(4),
+              ExtendLeft.changeBeats(2).scale(1.75,.5) +
+              ExtendRight.changeBeats(2).scale(1.75,.5),
 
           Forward.changeBeats(2).changehands(Hands.LEFT) +
-          Forward_4,
+              ExtendLeft.changeBeats(2).scale(1.75,.5) +
+              ExtendRight.changeBeats(2).scale(1.75,.5),
 
           Forward_2.changehands(Hands.RIGHT) +
-          RunRight.scale(1.0,1.5).skew(1.0,0.0) +
-          QuarterRight.skew(1.0,0.0),
+              RunRight.scale(1.0,1.25) +
+              QuarterRight,
 
           Forward_2.changehands(Hands.LEFT) +
-          QuarterLeft.changeBeats(2).skew(0.0,1.0) +
-          Forward_2
-      ]),
+              FlipLeft.scale(1.0,1.25) +
+              QuarterLeft,
+
+        ]),
+
+    AnimatedCall('Wave Nobody',
+        from: 'Eight Chain Thru',
+        formation:Formation('Eight Chain Thru'),
+        parts:'2',
+        paths:[
+          ExtendLeft.scale(1.0,0.5) +
+              ExtendRight.scale(1.0,0.5) +
+              BackSashayRight.changeBeats(4),
+
+          ExtendLeft.scale(1.0,0.5) +
+              ExtendRight.scale(1.0,0.5) +
+              SashayLeft.changeBeats(4),
+
+          ExtendLeft.scale(1.0,0.5) +
+              ExtendRight.scale(1.0,0.5) +
+              LeadRight.changeBeats(1).scale(.5, 1) +
+              ExtendRight.scale(1.0,0.5),
+
+          ExtendLeft.scale(1.0,0.5) +
+              ExtendRight.scale(1.0,0.5) +
+              QuarterLeft.changeBeats(1).skew(-0.5,1) +
+              ExtendRight.scale(1.0,0.5),
+
+        ]),
+
+    AnimatedCall('Wave Nobody',
+        from: 'T-Bones',
+        formation:Formation('', dancers:[
+          DancerModel.fromData(gender:Gender.BOY,x:1,y:3,angle:270),
+          DancerModel.fromData(gender:Gender.GIRL,x:-1,y:3,angle:270),
+          DancerModel.fromData(gender:Gender.BOY,x:1,y:1,angle:0),
+          DancerModel.fromData(gender:Gender.GIRL,x:1,y:-1,angle:0),
+        ]),
+        parts:'2',
+        paths:[
+          Forward.changeBeats(2).changehands(Hands.RIGHT) +
+              BackSashayRight.changeBeats(4).skew(.5, 0),
+
+          Forward.changeBeats(2).changehands(Hands.LEFT) +
+              SashayLeft.changeBeats(4).skew(.5, 0),
+
+          Forward_2.changehands(Hands.RIGHT) +
+              LeadRight.changeBeats(2).scale(.5, 1) +
+              ExtendRight.changeBeats(2).scale(1.5,0.5),
+
+          Forward_2.changehands(Hands.LEFT) +
+              QuarterLeft.changeBeats(2).skew(-0.5,1) +
+              ExtendRight.changeBeats(2).scale(1.5,0.5),
+
+        ]),
+
+
   ];
 
