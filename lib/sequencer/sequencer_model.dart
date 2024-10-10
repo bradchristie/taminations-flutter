@@ -367,8 +367,10 @@ class SequencerModel extends fm.ChangeNotifier {
     for (var oneCall in line.split(';'))
       _interpretOneCall(oneCall);
     //  Play whatever has been added
-    animation.goToBeat(animateFrom);
-    animation.doPlay();
+    if (animation.beats > animateFrom) {
+      animation.goToBeat(animateFrom);
+      animation.doPlay();
+    }
   }
 
   void _interpretOneCall(String call) {
