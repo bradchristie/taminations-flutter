@@ -875,7 +875,9 @@ class CallContext {
         case 'Squared Set' :
         rot = 90; break;
       }
-      var mapping = matchFormations(ctx2,sexy:false,fuzzy:true,rotate:rot,handholds:false, delta: delta);
+      var mapping = matchFormations(ctx2,sexy:false,fuzzy:true,
+          subformation: dancers.length < ctx2.dancers.length,
+          rotate:rot,handholds:false, delta: delta);
       if (mapping != null) {
         //  If it does, get the offsets
         var matchResult = mapping.match;

@@ -85,7 +85,10 @@ abstract class TripleFormation extends Action {
 
   @override
   void performCall(CallContext ctx) {
-    if (subCall.isBlank) throw CallError('$name what?');
+    if (subCall.isBlank)
+      throw CallError('$name what?');
+    ctx.matchFormationList(tripleBoxFormations,
+        delta: 0.3, maxOffset: 12.1);
     isXaxis = findAxis(ctx);
     //  Add phantoms in spots not occupied by dancers
     final phantoms = <DancerModel>[];
@@ -127,7 +130,7 @@ abstract class TripleFormation extends Action {
     tripleBoxCtx.animateToEnd();
     tripleBoxCtx.matchFormationList(tripleBoxFormations, maxOffset: 12.1);
     for (final boxd in tripleBoxCtx.dancers.where((d) => d.gender != Gender.PHANTOM)) {
-      ctx.dancers.firstWhere((d) => d == boxd).path = boxd.path;
+      ctx.dancers.firstWhere((d) => d == boxd).path += boxd.path;
     }
     ctx.noSnap();
   }
