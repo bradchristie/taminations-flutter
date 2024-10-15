@@ -23,17 +23,17 @@ Call pronunciations provided by
 
 ---
 
-## Taminations version 1.6.80 built 2024-09-23
+## Taminations version 1.6.81 built 2024-10-14
 Copyright 2024 by Brad Christie.  
 This is free software, and you are welcome to modify and redistribute it
 under the terms of the [GNU GPL license](http://www.gnu.org/licenses/gpl.html).  
 
 ## What's New
-* Update definitions for all Challenge levels
-* Fix display of fractions for appropriate calls
-* Fix some animations for Dixie Grand and Magic Column Circulate
+* Panels in landscape mode can now be resized
+* More animations for Wave the \<anyone>
+* Fix timings on some animations for Star Thru and Dosado
 * Sequencer changes:
-  - Add code to handle Perk Up
+  - Improvements for Triple formation calls
   
 For a detailed history of changes, view the
 [Git log](https://github.com/bradchristie/taminations-flutter/commits/main)

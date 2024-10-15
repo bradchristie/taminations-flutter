@@ -1725,6 +1725,16 @@ class Formation {
       DancerModel.fromData(gender:Gender.GIRL,x:1,y:-1,angle:270),
     ]),
 
+    Formation('Triple Boxes', dancers:[
+      DancerModel.fromData(gender:Gender.BOY,x:1.5,y:3,angle:0),
+      DancerModel.fromData(gender:Gender.GIRL,x:1.5,y:1,angle:0),
+      DancerModel.fromData(gender:Gender.GIRL,x:-1.5,y:1,angle:0),
+      DancerModel.fromData(gender:Gender.BOY,x:-1.5,y:3,angle:0),
+      DancerModel.fromData(gender:Gender.PHANTOM,x:1.5,y:5,angle:180),
+      DancerModel.fromData(gender:Gender.PHANTOM,x:1.5,y:-5,angle:0),
+    ]),
+
+
   ];
 
   static final formationIndex = <String,Formation>{};
