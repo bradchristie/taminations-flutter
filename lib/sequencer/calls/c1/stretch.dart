@@ -35,36 +35,7 @@ class Stretch extends Action {
         ?? thrower(CallError('Not able to find call for Stretch'))!;
 
     //  First perform the call normally, with each set of 4 dancers
-    var found = false;
-    CallError? error;
-    if (stretchctx.dancers.none((d) => d.isOnXAxis)) {
-      try {
-        stretchctx.dancers.partition((d) => d.location.x < 0).forEach((xgroup) {
-          var groupctx = CallContext.fromContext(stretchctx, dancers: xgroup, withCalls: true);
-          groupctx.canDoYourPart = false;
-          groupctx.performCall();
-          groupctx.appendToSource();
-          found = true;
-        });
-      } on CallError catch (e) {
-        error = e;
-      }
-    }
-    if (!found && stretchctx.dancers.none((d) => d.isOnYAxis)) {
-      try {
-        stretchctx.dancers.partition((d) => d.location.y < 0).forEach((xgroup) {
-          var groupctx = CallContext.fromContext(stretchctx, dancers: xgroup, withCalls: true);
-          groupctx.canDoYourPart = false;
-          groupctx.performCall();
-          groupctx.appendToSource();
-          found = true;
-        });
-      } on CallError catch (e) {
-        error = e;
-      }
-    }
-    if (!found)
-      throw error!;
+    stretchctx.performCall();
 
     //  Now shift the new centers to their stretch positions
     stretchctx.matchStandardFormation();
@@ -107,6 +78,7 @@ class Stretch extends Action {
     } else
       throw CallError('Unable to calculate Stretch 5');
 
+    stretchctx.animateToEnd();
     stretchctx.appendToSource();
 
   }
