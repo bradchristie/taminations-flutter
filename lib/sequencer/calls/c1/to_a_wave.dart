@@ -25,7 +25,7 @@ mixin IsToAWave on Action {
 
   var isToAWave = false;
   var toAWave = '';
-
+  var dancersToaWave = <DancerModel>[];
 
   void putDancersBackToWave(CallContext ctx, List<DancerModel> dancers) {
     //  Assume the last move is an Extend from a wave
@@ -46,10 +46,16 @@ class ToAWave extends CodedCall {
     toawaveCall.isToAWave = true;
     toawaveCall.toAWave = name;
     toawaveCall.raiseLevel(LevelData.C1);
+    super.addToStack(ctx);
   }
 
   @override
   void performCall(CallContext ctx) {
+    //  If the implementing class specified some dancers that
+    //  go to a wave, check that
+    var toawaveCall = ctx.findImplementor<IsToAWave>();
+    if (!ctx.actives.containsAll(toawaveCall.dancersToaWave))
+      throw CallError('Wrong dancers asked to go To a Wave');
   }
 
 }

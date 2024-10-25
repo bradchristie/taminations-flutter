@@ -21,7 +21,8 @@
 import '../../../moves.dart';
 import '../common.dart';
 
-class LinearCycle extends Action with ActivesOnly, CallWithParts, IsLeft {
+class LinearCycle extends Action
+    with ActivesOnly, CallWithParts, IsLeft, IsToAWave {
 
   @override int numberOfParts = 3;
   @override var level = LevelData.PLUS;
@@ -31,6 +32,7 @@ class LinearCycle extends Action with ActivesOnly, CallWithParts, IsLeft {
   3.  Peel in direction of Hinge''';
   @override var helplink = 'plus/linear_cycle';
   var saveBelles = <DancerModel>{};
+  var otherDancers = <DancerModel>[];
 
   LinearCycle(super.name);
 
@@ -46,6 +48,14 @@ class LinearCycle extends Action with ActivesOnly, CallWithParts, IsLeft {
       if (d.data.belle)
         saveBelles.add(d);
     }
+
+    if (isToAWave) {
+      dancersToaWave = ctx.dancers.where((d) => d.data.trailer).toList();
+      otherDancers = ctx.dancers - dancersToaWave;
+      ctx.applyCalls('Extend');
+      return;
+    }
+
     var allBelles = saveBelles.length == ctx.dancers.length;
     var boxes = ctx.boxes();
     var isColumns = ctx.isColumns();
@@ -79,10 +89,20 @@ class LinearCycle extends Action with ActivesOnly, CallWithParts, IsLeft {
   @override
   void performPart3(CallContext ctx) {
     //  Peel in direction of hinge
-    if (saveBelles.length == ctx.dancers.length)
-      ctx.applyCalls('Peel Left');
-    else if (saveBelles.isEmpty)
-      ctx.applyCalls('Peel Right');
+    if (saveBelles.length == ctx.dancers.length) {
+      if (isToAWave)
+        ctx.subContext(ctx.dancers - dancersToaWave,
+                (ctx2) => ctx2.applyCalls('Face Left Twice'));
+      else
+        ctx.applyCalls('Peel Left');
+    }
+    else if (saveBelles.isEmpty) {
+      if (isToAWave)
+        ctx.subContext(ctx.dancers - dancersToaWave,
+                (ctx2) => ctx2.applyCalls('Face Right Twice'));
+      else
+        ctx.applyCalls('Peel Right');
+    }
     else {
       var belles = ctx.dancers.where((d) => saveBelles.contains(d));
       var beaus = ctx.dancers.where((d) => !(saveBelles.contains(d)));

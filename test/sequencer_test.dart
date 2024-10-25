@@ -4085,4 +4085,18 @@ Ferris Wheel
 Centers Pass Thru
 Allemande Left''',''),
 
+  TestSequence('Linear Cycle to a Wave',
+'''Heads Pass the Ocean
+Extend
+Linear Cycle Boys to a Wave
+Extend
+1/4 Thru
+Spin the Top and Spread
+Linear Cycle Boys to a Wave Girls Roll
+Cut the Diamond
+Recycle
+Star Thru
+Trade By
+Allemande Left''', ''),
+
 ];
