@@ -491,6 +491,7 @@ import '../../moves.dart';
     AnimatedCall('Slide Thru and Roll',
       formation:Formation('Eight Chain Thru'),
       from:'Eight Chain Thru',group:' ',difficulty: 1,
+      isGenderSpecific: true,
       paths:[
           ExtendLeft.changeBeats(2).scale(1.0,0.5) +
           QuarterRight.changeBeats(2).skew(1.0,-0.5) +
