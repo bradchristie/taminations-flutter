@@ -231,7 +231,7 @@ import '../../moves.dart';
 
     AnimatedCall('Unwrap the Interlocked Diamond',
         formation:Formation('Interlocked Diamonds RH Girl Points'),
-        from:'Right-Hand Diamonds',
+        from:'Right-Hand Interlocked Diamonds',
         paths:[
           LeadRight.changeBeats(4) +
               Forward_3.changeBeats(4),
@@ -247,7 +247,7 @@ import '../../moves.dart';
 
     AnimatedCall('Unwrap the Interlocked Diamond',
         formation:Formation('Interlocked Diamonds LH Girl Points'),
-        from:'Left-Hand Diamonds',
+        from:'Left-Hand Interlocked Diamonds',
         paths:[
           LeadLeft.changeBeats(4) +
               Forward_3.changeBeats(4),
@@ -261,7 +261,7 @@ import '../../moves.dart';
           ExtendLeft.changeBeats(8).scale(5.0,2.0)
         ]),
 
-    AnimatedCall('Unwrap the Diamond',
+    AnimatedCall('Unwrap the Interlocked Diamond',
         formation:Formation('Interlocked Diamonds RH PTP Girl Points'),
         from:'Right-Hand Interlocked Point-to-Point Diamonds',
         paths:[
@@ -279,7 +279,7 @@ import '../../moves.dart';
               Forward_4
         ]),
 
-    AnimatedCall('Unwrap the Diamond',
+    AnimatedCall('Unwrap the Interlocked Diamond',
         formation:Formation('Interlocked Diamonds LH PTP Girl Points'),
         from:'Left-Hand Interlocked Point-to-Point Diamonds',
         paths:[
