@@ -27,6 +27,7 @@ import '../../moves.dart';
     AnimatedCall('U-Turn Back',
       formation:Formation('Facing Couples Compact'),
       from:'Facing Couples',fractions:'1.5',
+      notForSequencer: true,
       paths:[
           UmTurnRight,
 
@@ -48,6 +49,7 @@ import '../../moves.dart';
     AnimatedCall('U-Turn Back',
       formation:Formation('Couples Facing Out'),
       from:'Couples Facing Out',fractions:'1.5',
+        notForSequencer: true,
       paths:[
           UmTurnLeft,
 
@@ -57,6 +59,7 @@ import '../../moves.dart';
     AnimatedCall('U-Turn Back',
       formation:Formation('Normal Lines'),
       from:'Lines',fractions:'1.5',
+        notForSequencer: true,
       paths:[
           UmTurnRight,
 
@@ -70,6 +73,7 @@ import '../../moves.dart';
     AnimatedCall('U-Turn Back',
       formation:Formation('Lines Facing Out'),
       from:'Lines Facing Out',fractions:'1.5',
+        notForSequencer: true,
       paths:[
           UmTurnLeft,
 
@@ -83,6 +87,7 @@ import '../../moves.dart';
     AnimatedCall('U-Turn Back',
       formation:Formation('Ocean Waves RH BGGB'),
       from:'Right-Hand Waves',fractions:'1.5',
+        notForSequencer: true,
       paths:[
           UmTurnRight,
 
@@ -96,6 +101,7 @@ import '../../moves.dart';
     AnimatedCall('U-Turn Back',
       formation:Formation('Ocean Waves LH BGGB'),
       from:'Left-Hand Waves',fractions:'1.5',
+        notForSequencer: true,
       paths:[
           UmTurnLeft,
 
