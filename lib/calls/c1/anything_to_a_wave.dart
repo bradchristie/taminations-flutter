@@ -384,7 +384,7 @@ import '../../moves.dart';
           SwingRight.scale(0.5,0.75)
       ]),
 
-    AnimatedCall('Tag Back to a Wave to a Wave',
+    AnimatedCall('Tag Back to a Wave',
       formation:Formation('Normal Lines'),
       from:'Lines',group:' ',fractions:'3',
       paths:[
