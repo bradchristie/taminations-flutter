@@ -34,32 +34,6 @@ class StartPracticePage extends fm.StatefulWidget {
 class _StartPracticePageState extends fm.State<StartPracticePage> {
 
   @override
-  void initState() {
-    super.initState();
-    SystemChrome.setPreferredOrientations([
-      DeviceOrientation.landscapeRight,
-      DeviceOrientation.landscapeLeft
-    ]);
-  }
-
-  @override
-  void dispose() {
-    if (isSmallDevice(context))
-      SystemChrome.setPreferredOrientations([
-        DeviceOrientation.portraitUp,
-        DeviceOrientation.portraitDown
-      ]);
-    else
-      SystemChrome.setPreferredOrientations([
-        DeviceOrientation.portraitUp,
-        DeviceOrientation.portraitDown,
-        DeviceOrientation.landscapeLeft,
-        DeviceOrientation.landscapeRight
-      ]);
-    super.dispose();
-  }
-
-  @override
   fm.Widget build(fm.BuildContext context) {
     return  Page(
         child: StartPracticeFrame()

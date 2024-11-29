@@ -150,6 +150,25 @@ class TaminationsRouterDelegate extends fm.RouterDelegate<TamState>
               _orientation = orientation;
               return pp.Consumer<TamState>(
                   builder: (context,appState,_) {
+
+                    //  For small devices, force Practice in landscape,
+                    //  other pages in portrait
+                    if (isSmallDevice(context)) {
+                      later(() {
+                        if (appState.mainPage == MainPage.STARTPRACTICE ||
+                            appState.mainPage == MainPage.PRACTICE)
+                          SystemChrome.setPreferredOrientations([
+                            DeviceOrientation.landscapeRight,
+                            DeviceOrientation.landscapeLeft
+                          ]);
+                        else
+                          SystemChrome.setPreferredOrientations([
+                            DeviceOrientation.portraitDown,
+                            DeviceOrientation.portraitUp
+                          ]);
+                      });
+                    }
+
                     return fm.Navigator(
                         key: navigatorKey,
 
@@ -289,6 +308,15 @@ class TaminationsRouterDelegate extends fm.RouterDelegate<TamState>
                         onDidRemovePage: (page) {
                           pp.Provider.of<VirtualKeyboardVisible>(context,listen: false)
                               .isVisible = false;
+
+                          //  Going to Practice from the main page
+                          //  on small devices triggers this callback,
+                          //  but we don't want to change the state.
+                          //  So check for this.
+                          if (isSmallDevice(context) &&
+                              page.key == ValueKey('LevelPage'))
+                            return;
+
                           if (_orientation == fm.Orientation.landscape) {
                             //  Pop landscape page
                             if (appState.mainPage == MainPage.SEQUENCER ||
