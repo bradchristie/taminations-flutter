@@ -32,7 +32,6 @@ import '../a2/slip.dart' as a2;
 import '../a2/swing_and_mix.dart' as a2;
 import '../a2/switch_the_wave.dart' as a2;
 import '../a2/trail_off.dart' as a2;
-import '../b2/flutterwheel.dart' as b2;
 import '../c1/alter_the_wave.dart' as c1;
 import '../c1/anything_and_weave.dart' as c1;
 import '../c1/chase_your_neighbor.dart' as c1;
