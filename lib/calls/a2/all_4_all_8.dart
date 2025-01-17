@@ -1225,8 +1225,6 @@ import '../c3a/mini_chase.dart' as c3a;
 
           RunLeft.changeBeats(4).skew(3.0,2.0)
       ]),
-    b2.Flutterwheel.where((tam) =>
-      tam.title == 'All 4 Men Lead Reverse Flutterwheel').first.xref(title: 'All 8 Reverse Flutterwheel').xref(group: 'All 8 (with calls through Plus)'),
 
     AnimatedCall('All 8 Reverse Flutterwheel',
       formation:Formation('Static Square'),
