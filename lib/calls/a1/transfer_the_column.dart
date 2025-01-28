@@ -27,8 +27,8 @@ import '../../moves.dart';
     AnimatedCall('Transfer the Column',
       formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.GIRL,x:-1,y:3,angle:90),
-        DancerModel.fromData(gender:Gender.GIRL,x:-1,y:-1,angle:90),
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:1,angle:90),
+        DancerModel.fromData(gender:Gender.GIRL,x:-1,y:-1,angle:90),
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:-3,angle:90),
   ]),
       from:'Right-Hand Columns',
@@ -38,15 +38,15 @@ import '../../moves.dart';
           LeadRight.changeBeats(2).scale(2.0,1.0),
 
           Forward_2 +
-          SwingRight.scale(0.5,1.0) +
-          HingeRight.scale(0.5,1.0) +
-          ExtendRight.changeBeats(2).scale(2.0,0.5),
-
-          Forward_2 +
           RunRight.changeBeats(3).scale(1.0,2.0) +
           LeadRight.changeBeats(2).scale(2.0,1.0),
 
-          Forward_2 +
+        Forward_2 +
+            SwingRight.scale(0.5,1.0) +
+            HingeRight.scale(0.5,1.0) +
+            ExtendRight.changeBeats(2).scale(2.0,0.5),
+
+        Forward_2 +
           SwingRight.scale(0.5,1.0) +
           HingeRight.scale(0.5,1.0) +
           ExtendLeft.changeBeats(2).scale(2.0,1.5)
