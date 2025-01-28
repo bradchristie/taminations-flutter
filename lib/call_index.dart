@@ -1,5 +1,7 @@
 import 'call_entry.dart';
 import 'calls/c3b/reverse_cut_flip_the_3_by_1_triangle.dart' as c3b;
+import 'calls/c3b/reverse_cut_flip_the_z.dart' as c3b;
+import 'calls/c3b/reverse_echo.dart' as c3b;
 import 'calls/c3b/first_last_half_concept.dart' as c3b;
 import 'calls/c3b/contour_the_line.dart' as c3b;
 import 'calls/c3b/counterpoint.dart' as c3b;
@@ -993,6 +995,8 @@ var callIndex = [
   CallEntry('Reverse Cut/Flip the 3 by 1 Triangle','c3b','c3b/reverse_cut_flip_the_3_by_1_triangle',c3b.ReverseCutFlipThe3by1Triangle,[]),
   CallEntry('Reverse Cut/Flip the Diamond','c2','c2/reverse_cut_the_diamond',c2.ReverseCutTheDiamond,[]),
   CallEntry('Reverse Cut/Flip the Galaxy','c2','c2/reverse_cut_the_galaxy',c2.ReverseCutTheGalaxy,[]),
+  CallEntry('Reverse Cut/Flip the Z','c3b','c3b/reverse_cut_flip_the_z',c3b.ReverseCutFlipTheZ,[]),
+  CallEntry('Reverse Echo','c3b','c3b/reverse_echo',c3b.ReverseEcho,[]),
   CallEntry('Reverse Explode','c1','c1/reverse_explode',c1.ReverseExplode,[]),
   CallEntry('Reverse Flutterwheel','b2','b2/flutterwheel',b2.Flutterwheel,['lang-ja'],'b2/reverseflutterwheel.mp3'),
   CallEntry('Reverse Flutterwheel','ssd','ssd/flutterwheel',ssd.Flutterwheel,['lang-ja']),
