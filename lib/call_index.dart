@@ -1,4 +1,8 @@
 import 'call_entry.dart';
+import 'calls/c3b/reverse_cut_flip_the_3_by_1_triangle.dart' as c3b;
+import 'calls/c3b/first_last_half_concept.dart' as c3b;
+import 'calls/c3b/contour_the_line.dart' as c3b;
+import 'calls/c3b/counterpoint.dart' as c3b;
 import 'calls/a1/any_hand_concept.dart' as a1;
 import 'calls/a1/anything_and_cross.dart' as a1;
 import 'calls/a1/as_couples.dart' as a1;
@@ -658,8 +662,10 @@ var callIndex = [
   CallEntry('Clover and <anything>','a1','a1/clover_and_anything',a1.CloverAndAnything,[]),
   CallEntry('Cloverleaf','ms','ms/cloverleaf',ms.Cloverleaf,['lang-de','lang-ja'],'ms/cloverleaf.mp3'),
   CallEntry('Concentric Concept','c1','c1/concentric_concept',c1.ConcentricConcept,[]),
+  CallEntry('Contour the Line','c3b','c3b/contour_the_line',c3b.ContourTheLine,[]),
   CallEntry('Coordinate','plus','plus/coordinate',plus.Coordinate,['lang-ja'],'plus/coordinate.mp3'),
   CallEntry('Counter','c2','c2/counter',c2.Counter,[]),
+  CallEntry('Counterpoint','c3b','c3b/counterpoint',c3b.Counterpoint,[]),
   CallEntry('Counter Rotate','c1','c1/counter_rotate',c1.CounterRotate,[]),
   CallEntry('Couple Up','c3a','c3a/couple_up',c3a.CoupleUp,[]),
   CallEntry('Courtesy Turn','b1','b1/courtesy_turn',b1.CourtesyTurn,['lang-de','lang-ja'],'b1/courtesy_turn.mp3'),
@@ -768,6 +774,8 @@ var callIndex = [
   CallEntry('Finish','c1','c1/finish',c1.Finish,[]),
   CallEntry('First Couple Go Left/Right, Next Couple Go Left/Right','b1','b1/first_couple_go',b1.FirstCoupleGo,['lang-ja']),
   CallEntry('First Couple Go Left/Right, Next Couple Go Left/Right','ssd','ssd/first_couple_go',ssd.FirstCoupleGo,['lang-ja']),
+  CallEntry('First Half Concept','c3b','c3b/first_last_half_concept',
+      c3b.FirstLastHalfConcept,[]),
   CallEntry('Flare Out to a Line','c3a','c3a/flare_out_to_a_line',c3a.FlareOutToALine,[]),
   CallEntry('Flip Back','c1','c1/tagging_calls_back_to_a_wave',c1.TaggingCallsBackToAWave,[]),
   CallEntry('Flip the Diamond','plus','plus/flip_the_diamond',plus.FlipTheDiamond,['lang-ja'],'plus/flip_the_diamond.mp3'),
@@ -982,6 +990,7 @@ var callIndex = [
   CallEntry('Reverse Checkpoint <anything> By <anything>','c3b','c3b/reverse_checkpoint',c3b.ReverseCheckpoint,[]),
   CallEntry('Reverse Crazy Concept','c2','c2/crazy_concept',c2.CrazyConcept,[]),
   CallEntry('Reverse Cross and Turn','c1','c1/cross_and_turn',c1.CrossAndTurn,[]),
+  CallEntry('Reverse Cut/Flip the 3 by 1 Triangle','c3b','c3b/reverse_cut_flip_the_3_by_1_triangle',c3b.ReverseCutFlipThe3by1Triangle,[]),
   CallEntry('Reverse Cut/Flip the Diamond','c2','c2/reverse_cut_the_diamond',c2.ReverseCutTheDiamond,[]),
   CallEntry('Reverse Cut/Flip the Galaxy','c2','c2/reverse_cut_the_galaxy',c2.ReverseCutTheGalaxy,[]),
   CallEntry('Reverse Explode','c1','c1/reverse_explode',c1.ReverseExplode,[]),

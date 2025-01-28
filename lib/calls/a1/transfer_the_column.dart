@@ -44,7 +44,7 @@ import '../../moves.dart';
         Forward_2 +
             SwingRight.scale(0.5,1.0) +
             HingeRight.scale(0.5,1.0) +
-            ExtendRight.changeBeats(2).scale(2.0,0.5),
+            ExtendRight.changeBeats(2).ascale(2.0,0.5),
 
         Forward_2 +
           SwingRight.scale(0.5,1.0) +
