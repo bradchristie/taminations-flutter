@@ -52,6 +52,7 @@ class Spread extends Action {
   void performCall(CallContext ctx) {
     //  Is this spread from waves, tandem, actives?
     Action spreader;
+    ctx.animateToEnd();
     ctx.analyze();
     if (ctx.actives.length == ctx.dancers.length / 2) {
       if (CallContext.fromContext(ctx,dancers:ctx.actives).isLines())
