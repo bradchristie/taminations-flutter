@@ -1,7 +1,9 @@
 import 'call_entry.dart';
+import 'calls/c3b/single_file_cross_cycle.dart' as c3b;
 import 'calls/c3b/reverse_cut_flip_the_3_by_1_triangle.dart' as c3b;
 import 'calls/c3b/reverse_cut_flip_the_z.dart' as c3b;
 import 'calls/c3b/reverse_echo.dart' as c3b;
+import 'calls/c3b/single_shake_and_rattle.dart' as c3b;
 import 'calls/c3b/first_last_half_concept.dart' as c3b;
 import 'calls/c3b/contour_the_line.dart' as c3b;
 import 'calls/c3b/counterpoint.dart' as c3b;
@@ -1070,10 +1072,13 @@ var callIndex = [
   CallEntry('Single Concept','c3a','c3a/single_concept',c3a.SingleConcept,[]),
   CallEntry('Single Cross and Wheel','c2','c2/cross_and_wheel',c2.CrossAndWheel,[]),
   CallEntry('Single Cross Trade and Wheel','c2','c2/cross_and_wheel',c2.CrossAndWheel,[]),
+  CallEntry('Single File Cross Cycle','c3b','c3b/single_file_cross_cycle',c3b.SingleFileCrossCycle,[]),
   CallEntry('Single File Recoil','c3a','c3a/single_file_recoil',c3a.SingleFileRecoil,[]),
   CallEntry('Single File Recycle','c3a','c3a/single_file_recycle',c3a.SingleFileRecycle,[]),
   CallEntry('Single Rotate','c1','c1/rotate',c1.Rotate,[]),
   CallEntry('Single Rotate','c2','c2/rotate',c2.Rotate,[]),
+  CallEntry('Single Shake and Rattle','c3b',
+      'c3b/single_shake_and_rattle',c3b.SingleShakeAndRattle,[]),
   CallEntry('Single Wheel','a2','a2/single_wheel',a2.SingleWheel,[],'a2/single_wheel.mp3'),
   CallEntry('Six-Two Acey Deucey','a1','a1/six_two_acey_deucey',a1.SixTwoAceyDeucey,[]),
   CallEntry('Skip','c1','c1/replace',c1.Replace,[]),

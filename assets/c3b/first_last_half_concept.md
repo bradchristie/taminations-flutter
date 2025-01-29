@@ -14,3 +14,5 @@ Do the first 1/2 of the call, then apply the given concept to the remainder of t
 4-part calls are easiest.
 1-part and 3-part calls can be more challenging.
 For a 2-part calls, it's preferable to use Initially and Finally
+
+###### @ Vic Ceder. All Rights Reserved.  Used with permission.

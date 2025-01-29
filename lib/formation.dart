@@ -212,6 +212,16 @@ class Formation {
       DancerModel.fromData(gender:Gender.GIRL,x:-1,y:0,angle:0),
     ]),
 
+    Formation('Completed Single Double Pass Thru', dancers:[
+      DancerModel.fromData(gender:Gender.BOY,x:-3,y:0,angle:180),
+      DancerModel.fromData(gender:Gender.GIRL,x:-1,y:0,angle:180),
+    ]),
+
+    Formation('Single Column Facing', dancers:[
+      DancerModel.fromData(gender:Gender.BOY,x:-3,y:0,angle:0),
+      DancerModel.fromData(gender:Gender.GIRL,x:-1,y:0,angle:180),
+    ]),
+
     Formation('Single Double Pass Thru Close', dancers:[
       DancerModel.fromData(gender:Gender.BOY,x:-1.5,y:0,angle:0),
       DancerModel.fromData(gender:Gender.GIRL,x:-.5,y:0,angle:0),

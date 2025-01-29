@@ -7,3 +7,5 @@ Center 4 Recycle as Others Counter Rotate.
 ## Cross Counterpoint
 
 Center 4 Cross Cycle as Others Counter Rotate.
+
+###### @ Vic Ceder. All Rights Reserved.  Used with permission.
