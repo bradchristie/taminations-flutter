@@ -23,16 +23,13 @@ Call pronunciations provided by
 
 ---
 
-## Taminations version 1.6.82 built 2024-12-02
-Copyright 2024 by Brad Christie.  
+## Taminations version 1.6.83 built 2025-01-29
+Copyright 2025 by Brad Christie.  
 This is free software, and you are welcome to modify and redistribute it
 under the terms of the [GNU GPL license](http://www.gnu.org/licenses/gpl.html).  
 
 ## What's New
-* Fix Practice mode for small devices
-* Sequencer changes:
-  - Improvements for Stretch
-  - Implement Linear Cycle to a Wave
+* Add new calls for C-3B
 
 For a detailed history of changes, view the
 [Git log](https://github.com/bradchristie/taminations-flutter/commits/main)
