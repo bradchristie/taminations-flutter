@@ -4099,4 +4099,21 @@ Star Thru
 Trade By
 Allemande Left''', ''),
 
+  TestSequence('Hop',
+'''Heads Lead Right
+Boys Hop
+Girls Hop
+Nobody Hop
+Trade By
+Centers Chase Right
+Beaus Hop
+Circulate
+Girls Run
+Right and Left Thru
+Nobody Hop
+Veer Left
+Acey Deucey
+Wheel and Deal
+Allemande Left''', ''),
+
 ];

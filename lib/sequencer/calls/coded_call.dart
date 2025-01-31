@@ -31,6 +31,7 @@ import 'c2/cross_concentric_cycle_and_wheel.dart';
 import 'c2/perk_up.dart';
 import 'c2/vertical.dart';
 import 'c3a/eight_by_anything.dart';
+import 'c3a/hop.dart';
 import 'c3a/travel_thru.dart';
 import 'common/double_selector.dart';
 import 'common/grand.dart';
@@ -450,6 +451,7 @@ abstract class CodedCall extends Call {
     'Head'.ri: (name) => Heads(name),
     '(Single|Partner)?Hinge'.ri: (name) => Hinge(name),
     '(Magic)?HocusPocus'.ri: (name) => HocusPocus(name),
+    'Hop'.ri: (name) => Hop(name),
     'HorseshoeTurn'.ri: (name) => HorseshoeTurn(name),
     '(Hubs|Rims)Trade.*'.ri: (name) => HubsTrade(name),
 
