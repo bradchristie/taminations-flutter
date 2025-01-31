@@ -314,6 +314,8 @@ import '../../moves.dart';
         DancerModel.fromData(gender:Gender.GIRL,x:3,y:1,angle:180),
   ]),
       from:'Magic Columns Right-Hand Centers',parts:'2;3',difficulty: 2,
+      taminator: 'To remove any ambiguity, this could be called as '
+          'Facing Dancers Start Dixie Grand',
       paths:[
           Stand.changeBeats(2) +
           ExtendRight.changeBeats(1.5).scale(1.0,0.5) +
@@ -348,6 +350,8 @@ import '../../moves.dart';
         DancerModel.fromData(gender:Gender.GIRL,x:1,y:1,angle:180),
       ]),
       from:'Magic Columns Left-Hand Centers',parts:'2;3',difficulty: 2,
+        taminator: 'To remove any ambiguity, this could be called as '
+            'Facing Dancers Start Dixie Grand',
       paths:[
           ExtendLeft.scale(1.0,0.5) +
           ExtendRight.scale(1.0,0.5) +
