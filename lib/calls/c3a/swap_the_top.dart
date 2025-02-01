@@ -22,17 +22,54 @@ import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../moves.dart';
 
-  final List<AnimatedCall> SwapTheTop = [
+final List<AnimatedCall> SwapTheTop = [
 
-    AnimatedCall('Swap the Top',
+  AnimatedCall('Swap the Top',
       formation:Formation('Facing Couples'),
       from:'Facing Couples',
       paths:[
-          FlipRight.changeBeats(4.5) +
-          LeadRight.changeBeats(2),
+        FlipRight.changeBeats(4.5) +
+            LeadRight.changeBeats(2),
 
-          Forward_2 +
-          CastLeft
+        Forward_2 +
+            CastLeft
       ]),
-  ];
+
+  AnimatedCall('Swap the Top',
+      formation:Formation('Normal Lines'),
+      from:'Normal Lines',
+      paths:[
+        FlipRight.changeBeats(4.5) +
+            LeadRight.changeBeats(2),
+
+        Forward_2 +
+            CastLeft,
+
+        FlipRight.changeBeats(4.5) +
+            LeadRight.changeBeats(2),
+
+        Forward_2 +
+            CastLeft
+
+      ]),
+
+  AnimatedCall('Swap the Top',
+      formation:Formation('Eight Chain Thru'),
+      from:'Eight Chain Thru',
+      paths:[
+        FlipRight.changeBeats(4.5) +
+            LeadRight.changeBeats(2).scale(.5, 1),
+
+        ExtendLeft.changeBeats(2).scale(1, .5) +
+            CastLeft.scale(.5,.5),
+
+        FlipRight.changeBeats(4.5) +
+            LeadRight.changeBeats(2).scale(.5, 1),
+
+        ExtendLeft.changeBeats(2).scale(1, .5) +
+            CastLeft.scale(.5,.5),
+
+      ]),
+
+];
 
