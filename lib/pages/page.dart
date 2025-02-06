@@ -38,9 +38,13 @@ class Page extends fm.StatelessWidget {
           appBar: fm.PreferredSize(
               preferredSize: fm.Size.fromHeight(56.0),
               child: TitleBar()),
-          body: fm.LayoutBuilder(
-              builder: (context,constraints) =>
-              AppLayoutSize(constraints: constraints, child: child)
+          //  Use SafeArea to adjust screen area for soft buttons
+          //  such as on Pixel with 3-button navigation on
+          body: fm.SafeArea(
+            child: fm.LayoutBuilder(
+                builder: (context,constraints) =>
+                AppLayoutSize(constraints: constraints, child: child)
+            ),
           ))
     );
   }
