@@ -18,13 +18,32 @@
 
 */
 
-import 'package:taminations/moves.dart';
-
 import '../common.dart';
+import '../../../moves.dart';
 
-class Hop extends Action {
+class Hop extends Action with CallWithParts {
+
+  @override var level = LevelData.C3A;
+  @override var numberOfParts = 2;
 
   Hop(super.name);
+
+  @override
+  void performPart1(CallContext ctx) {
+    var hop1 = _Hop1();
+    hop1.performCall(ctx);
+  }
+
+  @override
+  void performPart2(CallContext ctx) {
+    ctx.applyCalls('Hinge');
+  }
+
+}
+
+class _Hop1 extends Action {
+
+  _Hop1() : super('');
 
   @override var level = LevelData.C3A;
   var walkers = <DancerModel>[];
@@ -53,6 +72,7 @@ class Hop extends Action {
     }
   }
 
+  //  Only used for Part1
   @override
   Path performOne(DancerModel d, CallContext ctx) {
     //  Code for walkers (Hoppers)
