@@ -65,7 +65,7 @@ class AnimListPage extends fm.StatelessWidget {
       child: pp.Consumer<TamState>(
         builder: (context, tamState, _) {
           pp.Provider.of<TitleModel>(context,listen: false).title =
-              titleIndex[tamState.link] ?? '';
+              titleFromLink(tamState.link);
           return fm.Column(
               children: [
                 fm.Expanded(

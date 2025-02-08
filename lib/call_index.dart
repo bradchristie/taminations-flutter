@@ -1767,4 +1767,19 @@ var titleIndex = <String,String>{
     'c1/zing' : 'Zing',
     'c2/zip_code' : 'Zip Code 1-6',
     'b2/zoom' : 'Zoom',
+    'c3b/contour_the_line' : 'Contour the Line',
+    'c3b/counterpoint' : 'Counterpoint',
+    'c3b/first_last_half_concept' : 'First / Last Half Concept',
+    'c3b/reverse_cut_flip_the_3_by_1_triangle' :
+        'Reverse Cut / Flip the 3 by 1 Triangle',
+    'c3b/reverse_echo' : 'Reverse Echo',
+    'c3b/single_shake_and_rattle' : 'Single Shake and Rattle',
+    'c3b/single_file_cross_cycle' : 'Single File Cross Cycle',
 };
+
+String titleFromLink(String? link) {
+  return titleIndex[link] ??
+      titleIndex[link?.replaceAll('ssd', 'b1')] ??
+      titleIndex[link?.replaceAll('ssd', 'b2')] ??
+      titleIndex[link?.replaceAll('ssd', 'ms')] ?? '';
+}
