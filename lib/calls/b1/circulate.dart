@@ -466,6 +466,20 @@ import '../../moves.dart';
           ExtendRight.changeBeats(2.7).scale(2.0,0.5)
       ]),
 
+    AnimatedCall('Circulate',
+        formation:Formation('Completed Double Pass Thru'),
+        from:'Double Pass Thru', noDisplay: true,
+        paths:[
+          FlipLeft.changeBeats(4).skew(-1, 0),
+
+          RunRight.changeBeats(4).scale(1, 2).skew(-1, 0),
+
+          Forward.changeBeats(4),
+
+          ExtendLeft.changeBeats(4).scale(1.0,2)
+
+        ]),
+
     AnimatedCall('Split Circulate',
       formation:Formation('Ocean Waves RH BGGB'),
       from:'Right-Hand Waves',fractions:'2',difficulty: 1,

@@ -63,7 +63,11 @@ class Circulate extends Action {
       ctx.applyCalls('Couples Circulate' );
     else if (ctx.isLines())
       ctx.applyCalls('All 8 Circulate' );
-    else if (ctx.isColumns())
+    else if (ctx.matchFormations(CallContext.fromFormation(
+        Formation('Column RH GBGB'))) != null)
+      ctx.applyCalls('Column Circulate' );
+    else if (ctx.matchFormations(CallContext.fromFormation(
+        Formation('Column LH GBGB'))) != null)
       ctx.applyCalls('Column Circulate' );
     else if (ctx.actives.length == 6 && ctx.isColumns(3))
       ctx.applyCalls('Column Circulate' );
