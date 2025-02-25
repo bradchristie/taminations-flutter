@@ -352,7 +352,6 @@ class DancerModel implements Comparable<DancerModel>, Cloneable<DancerModel> {
   void animateComputed(double beat) {
     hands = path.hands(beat);
     tx = starttx * path.animate(beat);
-    //tx = _geom.pathMatrix(starttx, tx, beat) * tx;
   }
   void animate(double beat) => animateComputed(beat);
   void animateToEnd() => animate(beats);
@@ -370,6 +369,26 @@ class DancerModel implements Comparable<DancerModel>, Cloneable<DancerModel> {
     tx = starttx.clone();
     return this;
   }
+
+  /// Given a beat, return the angle
+  /// the dancer orbits around the origin at that beat
+  /// Needed to figure out hexagon transform
+  double orbitAngle(double beat) {
+    var a = starttx.location.angle;
+    var b = 0.1;
+    do {
+      var a2 = (starttx * path.animate(b)).location.angle;
+      while (a2 > a + pi)
+        a2 -= 2 * pi;
+      while (a2 < a - pi)
+        a2 += 2 * pi;
+      a = a2;
+      b = min(b + 0.1, beat);
+    } while (b < beat);
+    return a - starttx.location.angle;
+  }
+
+
 
   //  Note that this takes an angle in degrees
   DancerModel rotateStartAngle(double angle) {

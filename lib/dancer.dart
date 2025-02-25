@@ -107,8 +107,16 @@ class Dancer extends DancerModel {
 
   @override
   void animate(double beat) {
+    //  Get transform for square geometry
     animateComputed(beat);
-    tx = geometry.pathMatrix(starttx, tx, beat) * tx;
+    //  Apply any special geometry
+    if (geometry.geometry == Geometry.HEXAGON) {
+      //  For hexagon, only move 2/3 of the orbit
+      //  So subtract 1/3
+      var a = orbitAngle(beat);
+      tx = Matrix.getRotation(-a/3) * tx;
+    } else
+      tx = geometry.pathMatrix(starttx, tx, beat) * tx;
   }
 
 

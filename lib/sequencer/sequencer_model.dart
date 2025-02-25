@@ -353,6 +353,12 @@ class SequencerModel extends fm.ChangeNotifier {
       for (var i=0; i<ctx.dancers.length; i++)
         animation.dancers[i].path += ctx.dancers[i].path;
     }
+    animation.recalculate();
+    /*
+    for (var d in animation.dancers) {
+      var a = d.orbitAngle(animation.beats).toDegrees.s;
+      print('Orbit Angle $d = $a');
+    } */
   }
 
   void _interpretOneLine(String line) {
@@ -442,7 +448,6 @@ class SequencerModel extends fm.ChangeNotifier {
         errorString = 'Note: Assuming Do Your Part';
       cctx.extendPaths();
       _applyContextToAnimation(cctx);
-      animation.recalculate();
       var newbeats = animation.beats;
       if (newbeats > prevbeats) {
         //  Call worked, add it to the list

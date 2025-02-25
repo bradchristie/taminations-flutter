@@ -45,7 +45,7 @@ class DancePainter extends fm.CustomPainter  {
   String partstr = '';
 
   DancePainter(this.model) : super(repaint:model.beater) {
-    _prevbeat = model.beater.beat;
+    _prevbeat = 0; // model.beater.beat;
   }
 
   //  Convert widget x and y to dance floor coordinates
@@ -83,8 +83,6 @@ class DancePainter extends fm.CustomPainter  {
   /// Called at the start of onDraw().
   void _updateDancers() {
     //  Move dancers
-    //  For big jumps, move incrementally -
-    //  this helps hexagon and bigon compute the right location
     var delta = model.beater.beat - _prevbeat;
     var incs = delta.abs().ceil();
     for (var j = 1; j <= incs; j++)

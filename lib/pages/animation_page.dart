@@ -184,6 +184,7 @@ class _AnimationFrameState extends fm.State<AnimationFrame>
           final isSmall = constraints.maxHeight < 350;
           final iconSize = isSmall ? 16.0 : 24.0;
           final beater = pp.Provider.of<BeatNotifier>(context,listen: false);
+//          print('Creating new painter');
           final painter = DancePainter(danceModel);
           final isSequencer = appState.mainPage == MainPage.SEQUENCER;
           //  Update current part which will notify definition to change highlights
