@@ -66,9 +66,6 @@ abstract class Geometry {
   /// Generate a transform to apply to a dancer's start position
   Matrix startMatrix(Matrix mat, int rotnum);
 
-  /// Convert transform for a dancer's current position
-  Matrix pathMatrix(Matrix starttx, Matrix tx, double beat);
-
   /// Draw a dancer-sized grid of the specific geometry
   /// @param ctx  Canvas to draw grid on
   void drawGrid(fm.Canvas ctx);
@@ -125,24 +122,6 @@ class BigonGeometry extends Geometry {
   }
 
   @override
-  Matrix pathMatrix(Matrix starttx, Matrix tx, double beat) {
-    //  Get dancer's start angle and current angle
-    var x = starttx.m31;
-    var y = starttx.m32;
-    var a0 = atan2(y, x);
-    var x2 = tx.m31;
-    var y2 = tx.m32;
-    var a1 = atan2(y2, x2);
-    if (beat <= 0.0)
-      prevangle = a1;
-    var wrap = ((a1 - prevangle) / (pi * 2)).round();
-    var a2 = a1 - wrap * pi * 2;
-    var a3 = a2 - a0;
-    prevangle = a2;
-    return Matrix.getRotation(a3);
-  }
-
-  @override
   Matrix startMatrix(Matrix mat, int rotnum) {
     var x = mat.m31;
     var y = mat.m32;
@@ -194,10 +173,6 @@ class SquareGeometry extends Geometry {
     p.color = Color.BLUE;
     ctx.drawLine(fm.Offset(0.0,-length), fm.Offset(0.0,length), p);
   }
-
-  @override
-  Matrix pathMatrix(Matrix starttx, Matrix tx, double beat) =>
-      Matrix.getIdentity();
 
   @override
   Matrix startMatrix(Matrix mat, int rotnum) =>
@@ -258,26 +233,6 @@ class HexagonGeometry extends Geometry {
     ctx.drawLine(fm.Offset(0.0,0.0), fm.Offset(-tanlength,-length), p);
   }
 
-  /// Convert transform for a dancer's current position
-  @override
-  Matrix pathMatrix(Matrix starttx, Matrix tx, double beat) {
-    //  Get dancer's start angle and current angle
-    var x = starttx.m31;
-    var y = starttx.m32;
-    var a0 = atan2(y,x);
-    var x2 = tx.m31;
-    var y2 = tx.m32;
-    var a1 = atan2(y2,x2);
-    //  Correct for wrapping around +/- pi
-    if (beat <= 0)
-      prevangle = a1;
-    var wrap = ((a1-prevangle)/(pi*2)).round();
-    var a2 = a1 - wrap * pi * 2;
-    var a3 = -(a2-a0)/3;
-    prevangle = a2;
-    return Matrix.getRotation(a3);
-  }
-
   /// Generate a transform to apply to a dancer's start position
   @override
   Matrix startMatrix(Matrix mat, int rotnum) {
@@ -335,11 +290,6 @@ class HashtagGeometry extends Geometry {
     p.color = Color.BLUE;
     ctx.drawLine(fm.Offset(0.0,-length), fm.Offset(0.0,length), p);
   }
-
-  //  Paths the same as square geometry
-  @override
-  Matrix pathMatrix(Matrix starttx, Matrix tx, double beat) =>
-    Matrix.getIdentity();
 
   @override
   Matrix startMatrix(Matrix mat, int rotnum) =>

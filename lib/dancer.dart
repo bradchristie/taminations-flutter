@@ -115,19 +115,22 @@ class Dancer extends DancerModel {
       //  So subtract 1/3
       var a = orbitAngle(beat);
       tx = Matrix.getRotation(-a/3) * tx;
-    } else
-      tx = geometry.pathMatrix(starttx, tx, beat) * tx;
+    } else if (geometry.geometry == Geometry.BIGON) {
+      //  Bigon geometry goes twice as far
+      var a = orbitAngle(beat);
+      tx = Matrix.getRotation(a) * tx;
+    }
   }
 
 
   // Compute points of path for drawing path
   void computePath() {
-    animateComputed(0);
+    animate(0);
     var loc = location;
     _pathPath = fm.Path();
     _pathPath!.moveTo(loc.x, loc.y);
     for (var beat = 0.1; beat <= beats; beat += 0.1) {
-      animateComputed(beat);
+      animate(beat);
       loc = location;
       _pathPath!.lineTo(loc.x, loc.y);
     }
