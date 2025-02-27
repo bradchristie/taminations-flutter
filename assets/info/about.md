@@ -23,15 +23,14 @@ Call pronunciations provided by
 
 ---
 
-## Taminations version 1.6.84 built 2025-02-09
+## Taminations version 1.6.85 built 2025-02-26
 Copyright 2025 by Brad Christie.  
 This is free software, and you are welcome to modify and redistribute it
 under the terms of the [GNU GPL license](http://www.gnu.org/licenses/gpl.html).  
 
 ## What's New
-* Fix display on some devices overlapping navigation buttons
-* More animations for Swap the Top
-* Sequencer: add code for Hop
+* Fixes for display of hexagon and bi-gon geometry
+* Sequencer: fix crash for Circulate from some uncommon formations
 
 For a detailed history of changes, view the
 [Git log](https://github.com/bradchristie/taminations-flutter/commits/main)
