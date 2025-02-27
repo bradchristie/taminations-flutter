@@ -20,7 +20,7 @@
 
 import '../common.dart';
 
-class SplitSquareChainTheTop extends Action with ActivesOnly, CallWithParts, IsLeft {
+class SplitSquareChainTheTop extends Action with ActivesOnly, CallWithParts, IsLeft, IsToAWave {
 
   @override var level = LevelData.C1;
   @override var numberOfParts = 3;
@@ -45,7 +45,10 @@ The hands can be swapped with Left Split Square Chain the Top''';
 
   @override
   void performPart3(CallContext ctx) {
-    ctx.applyCalls('$antiLeft Turn Thru');
+    if (isToAWave)
+      ctx.applyCalls('Trade');
+    else
+      ctx.applyCalls('$antiLeft Turn Thru');
   }
 
 }
