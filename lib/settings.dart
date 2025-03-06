@@ -235,7 +235,6 @@ class Settings extends fm.ChangeNotifier {
   static String get windowRect =>
       _instance._prefs.getString('Window Rect') ?? '';
   static set windowRect(String value) {
-    print('Setting window rect to $value');
     _instance._prefs.setString('Window Rect', value);
     //  no need to notify listeners
   }

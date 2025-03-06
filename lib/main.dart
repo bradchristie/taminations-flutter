@@ -60,21 +60,16 @@ void main() async {
   fm.runApp(TaminationsApp());
 }
 
-
 //  TaminationsApp is the top-level widget.
 //  Here it is just a wrapper for the router and its delegate (below),
 //  which does all the work
 //  Also holds global state and initialization futures
 class TaminationsApp extends fm.StatefulWidget {
-
   @override
   fm.State<fm.StatefulWidget> createState() => _TaminationsAppState();
-
 }
 
-class _TaminationsAppState
-    extends fm.State<TaminationsApp> with WindowListener {
-
+class _TaminationsAppState extends fm.State<TaminationsApp> with WindowListener {
   final TaminationsRouterDelegate _routerDelegate = TaminationsRouterDelegate();
   final TaminationsRouteInformationParser _routeInformationParser =
       TaminationsRouteInformationParser();
@@ -89,59 +84,60 @@ class _TaminationsAppState
   fm.Widget build(fm.BuildContext context) {
     //  Start with various setup chores
     return fm.FutureBuilder<bool>(
-      //  Read saved user settings
-      future: Settings.init().whenComplete(() {
-        //  Read initialization files
-        TamUtils.init();
-        //  Restore main window to last size and position
-        windowManager.ensureInitialized().whenComplete(() {
-          var w = Settings.windowRect;
-          if (w == 'Maximized')
-            windowManager.maximize();
-          else {
-            var nums = w.split(' ');
-            if (nums.length == 4)
-              windowManager.setBounds(fm.Rect.fromLTRB
-                (nums[0].d, nums[1].d, nums[2].d, nums[3].d));
+        //  Read saved user settings
+        future: Settings.init().whenComplete(() {
+          //  Read initialization files
+          TamUtils.init();
+          //  Restore main window to last size and position
+          if (TamUtils.isWindowDevice) {  //  i.e., Windows, MacOS
+            windowManager.ensureInitialized().whenComplete(() {
+              var w = Settings.windowRect;
+              if (w == 'Maximized')
+                windowManager.maximize();
+              else {
+                var nums = w.split(' ');
+                if (nums.length == 4)
+                  windowManager.setBounds(fm.Rect.fromLTRB(
+                      nums[0].d, nums[1].d, nums[2].d, nums[3].d));
+              }
+              //  and listen for when user changes the window size
+              windowManager.addListener(this);
+            });
           }
-          //  and listen for when user changes the window size
-          windowManager.addListener(this);
-        });
-      }),
-      builder: (context,snapshot) =>
-      snapshot.hasData ?
-      //  Wrap the Settings around the top of the program
-      //  so everybody has access to them
-      pp.ChangeNotifierProvider(
-          create: (_) => BeatNotifier(),  // needed for some of the below
-          child: pp.MultiProvider(
-              providers: [
-                pp.ChangeNotifierProvider(create: (_) => Settings()),
-                pp.ChangeNotifierProvider(create: (_) => AnimationState()),
-                pp.ChangeNotifierProvider(create: (_) => AbbreviationsModel()),
-                pp.ChangeNotifierProvider(create: (context) => SequencerModel(context)),
-                pp.ChangeNotifierProvider(create: (_) => HighlightState()),
-                pp.Provider(create: (_) => VirtualKeyboardVisible())
-              ],
-              child: fm.MaterialApp.router(
-        debugShowCheckedModeBanner: false,
-        theme: fm.ThemeData(
-          fontFamily: 'Roboto',
-          textTheme: GoogleFonts.robotoTextTheme(),
-          scrollbarTheme: fm.ScrollbarThemeData(
-            thumbColor: fm.WidgetStateColor.resolveWith((states) =>
-            Color.TRANSPARENTGREY),
-          ),
-        ),
-        title: 'Taminations',
-        routerDelegate: _routerDelegate,
-        routeInformationParser: _routeInformationParser,
-      )))
-      //  Future not ready yet
-      : fm.Container(
-          color: Color.FLOOR,
-          child: fm.Center(child: fm.Image.asset('assets/src/tam87.png')))
-    );
+        }),
+        builder: (context, snapshot) => snapshot.hasData
+            ?
+            //  Wrap the Settings around the top of the program
+            //  so everybody has access to them
+            pp.ChangeNotifierProvider(
+                create: (_) => BeatNotifier(), // needed for some of the below
+                child: pp.MultiProvider(
+                    providers: [
+                      pp.ChangeNotifierProvider(create: (_) => Settings()),
+                      pp.ChangeNotifierProvider(create: (_) => AnimationState()),
+                      pp.ChangeNotifierProvider(create: (_) => AbbreviationsModel()),
+                      pp.ChangeNotifierProvider(create: (context) => SequencerModel(context)),
+                      pp.ChangeNotifierProvider(create: (_) => HighlightState()),
+                      pp.Provider(create: (_) => VirtualKeyboardVisible())
+                    ],
+                    child: fm.MaterialApp.router(
+                      debugShowCheckedModeBanner: false,
+                      theme: fm.ThemeData(
+                        fontFamily: 'Roboto',
+                        textTheme: GoogleFonts.robotoTextTheme(),
+                        scrollbarTheme: fm.ScrollbarThemeData(
+                          thumbColor:
+                              fm.WidgetStateColor.resolveWith((states) => Color.TRANSPARENTGREY),
+                        ),
+                      ),
+                      title: 'Taminations',
+                      routerDelegate: _routerDelegate,
+                      routeInformationParser: _routeInformationParser,
+                    )))
+            //  Future not ready yet
+            : fm.Container(
+                color: Color.FLOOR,
+                child: fm.Center(child: fm.Image.asset('assets/src/tam87.png'))));
   }
 
   //  Whenever user changes the window size, save it in the settings
@@ -150,23 +146,23 @@ class _TaminationsAppState
   void onWindowMaximize() {
     Settings.windowRect = 'Maximized';
   }
+
   @override
   void onWindowUnmaximize() async {
     onWindowResize();
   }
+
   @override
   void onWindowResize() async {
     var b = await windowManager.getBounds();
     Settings.windowRect = '${b.left} ${b.top} ${b.right} ${b.bottom}';
   }
-
 }
 
 //  Router Delegate
 //  Handles all requests to change the layout
 class TaminationsRouterDelegate extends fm.RouterDelegate<TamState>
     with fm.ChangeNotifier, fm.PopNavigatorRouterDelegateMixin<TamState> {
-
   @override
   final fm.GlobalKey<fm.NavigatorState> navigatorKey;
   TaminationsRouterDelegate() : navigatorKey = fm.GlobalKey<fm.NavigatorState>();
@@ -181,256 +177,186 @@ class TaminationsRouterDelegate extends fm.RouterDelegate<TamState>
   fm.Widget build(fm.BuildContext context) {
     if (appState.embed && appState.definition)
       return pp.ChangeNotifierProvider.value(
-          value: appState,
-          child: MarkdownFrame(appState.link ?? '')
-      );
+          value: appState, child: MarkdownFrame(appState.link ?? ''));
     if (appState.embed) {
-      return pp.ChangeNotifierProvider.value(
-          value: appState,
-          child: AnimationForEmbed()
-      );
+      return pp.ChangeNotifierProvider.value(value: appState, child: AnimationForEmbed());
     }
     return _PortraitForSmallDevices(
       child: pp.ChangeNotifierProvider.value(
-        value: appState,
-        child: fm.OrientationBuilder(
-            builder: (context, orientation) {
-              _orientation = orientation;
-              return pp.Consumer<TamState>(
-                  builder: (context,appState,_) {
+          value: appState,
+          child: fm.OrientationBuilder(builder: (context, orientation) {
+            _orientation = orientation;
+            return pp.Consumer<TamState>(builder: (context, appState, _) {
+              //  For small devices, force Practice in landscape,
+              //  other pages in portrait
+              if (isSmallDevice(context)) {
+                later(() {
+                  if (appState.mainPage == MainPage.STARTPRACTICE ||
+                      appState.mainPage == MainPage.PRACTICE)
+                    SystemChrome.setPreferredOrientations(
+                        [DeviceOrientation.landscapeRight, DeviceOrientation.landscapeLeft]);
+                  else
+                    SystemChrome.setPreferredOrientations(
+                        [DeviceOrientation.portraitDown, DeviceOrientation.portraitUp]);
+                });
+              }
 
-                    //  For small devices, force Practice in landscape,
-                    //  other pages in portrait
-                    if (isSmallDevice(context)) {
-                      later(() {
-                        if (appState.mainPage == MainPage.STARTPRACTICE ||
-                            appState.mainPage == MainPage.PRACTICE)
-                          SystemChrome.setPreferredOrientations([
-                            DeviceOrientation.landscapeRight,
-                            DeviceOrientation.landscapeLeft
-                          ]);
-                        else
-                          SystemChrome.setPreferredOrientations([
-                            DeviceOrientation.portraitDown,
-                            DeviceOrientation.portraitUp
-                          ]);
-                      });
-                    }
+              return fm.Navigator(
+                  key: navigatorKey,
 
-                    return fm.Navigator(
-                        key: navigatorKey,
-
-                        //  Pages for landscape - first and second, Sequencer, Practice
-                        pages: (orientation == fm.Orientation.landscape)
-                            ? [
-                              fm.MaterialPage(
-                            key: fm.ValueKey('First Landscape Page'),
-                            child: FirstLandscapePage()
-                        ),
+                  //  Pages for landscape - first and second, Sequencer, Practice
+                  pages: (orientation == fm.Orientation.landscape)
+                      ? [
+                          fm.MaterialPage(
+                              key: fm.ValueKey('First Landscape Page'),
+                              child: FirstLandscapePage()),
                           if (appState.mainPage == MainPage.ANIMLIST ||
                               appState.mainPage == MainPage.ANIMATIONS)
                             fm.MaterialPage(
                                 key: fm.ValueKey('Second Landscape Page'),
-                                child: SecondLandscapePage()
-                            ),
+                                child: SecondLandscapePage()),
                           if (appState.mainPage == MainPage.PRACTICE ||
                               appState.mainPage == MainPage.TUTORIAL ||
                               appState.mainPage == MainPage.STARTPRACTICE)
                             fm.MaterialPage(
-                                key: fm.ValueKey('Start Practice'),
-                                child: StartPracticePage()
-                            ),
+                                key: fm.ValueKey('Start Practice'), child: StartPracticePage()),
                           if (appState.mainPage == MainPage.TUTORIAL)
-                            fm.MaterialPage(
-                                key: fm.ValueKey('Tutorial'),
-                                child: TutorialPage()
-                            ),
+                            fm.MaterialPage(key: fm.ValueKey('Tutorial'), child: TutorialPage()),
                           if (appState.mainPage == MainPage.PRACTICE)
-                            fm.MaterialPage(
-                                key: fm.ValueKey('Practice'),
-                                child: PracticePage()
-                            ),
+                            fm.MaterialPage(key: fm.ValueKey('Practice'), child: PracticePage()),
                           if (appState.mainPage == MainPage.SEQUENCER)
-                            fm.MaterialPage(
-                                key: fm.ValueKey('Sequencer'),
-                                child: SequencerPage()
-                            ),
+                            fm.MaterialPage(key: fm.ValueKey('Sequencer'), child: SequencerPage()),
                         ]
 
-                        //  Pages for portrait - Level, Animlist, Animation, Settings, etc
-                            : [
+                      //  Pages for portrait - Level, Animlist, Animation, Settings, etc
+                      : [
                           //  Root of all portrait pages shows the levels
-                          fm.MaterialPage(
-                              key: fm.ValueKey('LevelPage'),
-                              child: LevelPage()
-                          ),
+                          fm.MaterialPage(key: fm.ValueKey('LevelPage'), child: LevelPage()),
                           //  Settings, Help single pages just below the main page
                           if (appState.mainPage == MainPage.LEVELS &&
                               appState.detailPage == DetailPage.HELP)
                             fm.MaterialPage(
-                                key: fm.ValueKey('About'),
-                                child: MarkdownPage('info/about.html')
-                            ),
+                                key: fm.ValueKey('About'), child: MarkdownPage('info/about.html')),
                           if (appState.mainPage == MainPage.LEVELS &&
                               appState.detailPage == DetailPage.SETTINGS)
-                            fm.MaterialPage(
-                                key: fm.ValueKey('Settings'),
-                                child: SettingsPage()
-                            ),
+                            fm.MaterialPage(key: fm.ValueKey('Settings'), child: SettingsPage()),
 
                           //  Pages leading to animations
                           if ((appState.mainPage == MainPage.LEVELS &&
-                              appState.detailPage == DetailPage.CALLS) ||
+                                  appState.detailPage == DetailPage.CALLS) ||
                               appState.mainPage == MainPage.ANIMLIST ||
                               appState.mainPage == MainPage.ANIMATIONS)
-                            fm.MaterialPage(
-                                key: fm.ValueKey(appState.level),
-                                child: CallsPage()
-                            ),
+                            fm.MaterialPage(key: fm.ValueKey(appState.level), child: CallsPage()),
                           if (appState.mainPage == MainPage.ANIMLIST ||
                               appState.mainPage == MainPage.ANIMATIONS)
-                            fm.MaterialPage(
-                                key: fm.ValueKey(appState.link),
-                                child: AnimListPage()
-                            ),
+                            fm.MaterialPage(key: fm.ValueKey(appState.link), child: AnimListPage()),
                           if (appState.mainPage == MainPage.ANIMATIONS)
                             fm.MaterialPage(
                                 key: fm.ValueKey(appState.link! + ' animation'),
-                                child: AnimationPage()
-                            ),
+                                child: AnimationPage()),
                           if (appState.detailPage == DetailPage.DEFINITION)
                             fm.MaterialPage(
-                                key: fm.ValueKey(
-                                    appState.link! + ' definition'),
-                                child: MarkdownPage(appState.link!)
-                            ),
+                                key: fm.ValueKey(appState.link! + ' definition'),
+                                child: MarkdownPage(appState.link!)),
                           if (appState.mainPage != MainPage.LEVELS &&
                               appState.detailPage == DetailPage.SETTINGS)
-                            fm.MaterialPage(
-                                key: fm.ValueKey('Settings'),
-                                child: SettingsPage()
-                            ),
+                            fm.MaterialPage(key: fm.ValueKey('Settings'), child: SettingsPage()),
 
                           if (appState.mainPage == MainPage.SEQUENCER)
-                            fm.MaterialPage(
-                                key: fm.ValueKey('Sequencer'),
-                                child: SequencerPage()
-                            ),
+                            fm.MaterialPage(key: fm.ValueKey('Sequencer'), child: SequencerPage()),
                           if (appState.mainPage == MainPage.SEQUENCER &&
                               appState.detailPage == DetailPage.HELP)
                             fm.MaterialPage(
                                 key: fm.ValueKey('Sequencer Help'),
-                                child: MarkdownPage('info/sequencer.html')
-                            ),
+                                child: MarkdownPage('info/sequencer.html')),
                           if (appState.mainPage == MainPage.SEQUENCER &&
                               appState.detailPage == DetailPage.ABBREVIATIONS)
                             fm.MaterialPage(
                                 key: fm.ValueKey('Sequencer Abbreviations'),
-                                child: AbbreviationsPage()
-                            ),
+                                child: AbbreviationsPage()),
                           if (appState.mainPage == MainPage.SEQUENCER &&
                               appState.detailPage == DetailPage.SETTINGS)
                             fm.MaterialPage(
                                 key: fm.ValueKey('Sequencer Settings'),
-                                child: SequencerSettingsPage()
-                            ),
+                                child: SequencerSettingsPage()),
                           if (appState.mainPage == MainPage.SEQUENCER &&
                               appState.detailPage == DetailPage.CALLS)
                             fm.MaterialPage(
-                                key: fm.ValueKey('Sequencer Calls'),
-                                child: SequencerCallsPage()
-                            ),
-
+                                key: fm.ValueKey('Sequencer Calls'), child: SequencerCallsPage()),
 
                           //  Displaying the StartPractice page will trigger
                           //  a rotation to landscape
                           if (appState.mainPage == MainPage.STARTPRACTICE)
                             fm.MaterialPage(
-                                key: fm.ValueKey('Start Practice'),
-                                child: StartPracticePage()
-                            ),
+                                key: fm.ValueKey('Start Practice'), child: StartPracticePage()),
                         ],
 
-                        //  onPopPage
-                        //  Calculate popped config based on current config
-                        onDidRemovePage: (page) {
-                          pp.Provider.of<VirtualKeyboardVisible>(context,listen: false)
-                              .isVisible = false;
+                  //  onPopPage
+                  //  Calculate popped config based on current config
+                  onDidRemovePage: (page) {
+                    pp.Provider.of<VirtualKeyboardVisible>(context, listen: false).isVisible =
+                        false;
 
-                          //  Going to Practice from the main page
-                          //  on small devices triggers this callback,
-                          //  but we don't want to change the state.
-                          //  So check for this.
-                          if (isSmallDevice(context) &&
-                              page.key == ValueKey('LevelPage'))
-                            return;
+                    //  Going to Practice from the main page
+                    //  on small devices triggers this callback,
+                    //  but we don't want to change the state.
+                    //  So check for this.
+                    if (isSmallDevice(context) && page.key == ValueKey('LevelPage')) return;
 
-                          if (_orientation == fm.Orientation.landscape) {
-                            //  Pop landscape page
-                            if (appState.mainPage == MainPage.SEQUENCER ||
-                                appState.mainPage == MainPage.STARTPRACTICE)
-                              appState.change(mainPage: MainPage.LEVELS,
-                                  animnum: -1,
-                                  detailPage: DetailPage.NONE,
-                                  formation: '',
-                                  calls: '');
-                            else if (appState.mainPage == MainPage.ANIMATIONS ||
-                                appState.mainPage == MainPage.ANIMLIST) {
-                              appState.change(mainPage: MainPage.LEVELS,
-                                  animnum: -1,
-                                  link: '',
-                                  detailPage: DetailPage.CALLS);
-                            }
-                            else if (appState.mainPage == MainPage.PRACTICE ||
-                                appState.mainPage == MainPage.TUTORIAL)
-                              appState.change(mainPage:MainPage.STARTPRACTICE);
-                          }
-
-                          else {  // portrait
-                            if (appState.mainPage == MainPage.LEVELS) {
-                              if (appState.detailPage == DetailPage.SETTINGS ||
-                                  appState.detailPage == DetailPage.HELP ||
-                                  appState.detailPage == DetailPage.CALLS)
-                                appState.change(detailPage: DetailPage.NONE);
-                            }
-                            else if (appState.mainPage == MainPage.ANIMLIST) {
-                              if (appState.detailPage == DetailPage.SETTINGS ||
-                                  appState.detailPage == DetailPage.DEFINITION)
-                                appState.change(detailPage: DetailPage.NONE);
-                              else
-                                appState.change(mainPage: MainPage.LEVELS,
-                                    detailPage: DetailPage.CALLS);
-                            }
-
-                            else if (appState.mainPage == MainPage.ANIMATIONS) {
-                              if (appState.detailPage == DetailPage.SETTINGS ||
-                                  appState.detailPage == DetailPage.DEFINITION)
-                                appState.change(detailPage: DetailPage.NONE);
-                              else
-                                appState.change(mainPage: MainPage.ANIMLIST);
-                            }
-
-                            else if (appState.mainPage == MainPage.SEQUENCER) {
-                              if (appState.detailPage == DetailPage.HELP ||
-                              appState.detailPage == DetailPage.ABBREVIATIONS ||
-                              appState.detailPage == DetailPage.SETTINGS ||
-                              appState.detailPage == DetailPage.CALLS)
-                                appState.change(mainPage:MainPage.SEQUENCER,
-                                    detailPage: DetailPage.NONE);
-                              else
-                                appState.change(mainPage: MainPage.LEVELS,
-                                    detailPage: DetailPage.NONE);
-                            }
-
-                            else
-                              appState.change(mainPage: MainPage.LEVELS,
-                                  detailPage: DetailPage.NONE);
-
-                          }
-                        });
+                    if (_orientation == fm.Orientation.landscape) {
+                      //  Pop landscape page
+                      if (appState.mainPage == MainPage.SEQUENCER ||
+                          appState.mainPage == MainPage.STARTPRACTICE)
+                        appState.change(
+                            mainPage: MainPage.LEVELS,
+                            animnum: -1,
+                            detailPage: DetailPage.NONE,
+                            formation: '',
+                            calls: '');
+                      else if (appState.mainPage == MainPage.ANIMATIONS ||
+                          appState.mainPage == MainPage.ANIMLIST) {
+                        appState.change(
+                            mainPage: MainPage.LEVELS,
+                            animnum: -1,
+                            link: '',
+                            detailPage: DetailPage.CALLS);
+                      } else if (appState.mainPage == MainPage.PRACTICE ||
+                          appState.mainPage == MainPage.TUTORIAL)
+                        appState.change(mainPage: MainPage.STARTPRACTICE);
+                    } else {
+                      // portrait
+                      if (appState.mainPage == MainPage.LEVELS) {
+                        if (appState.detailPage == DetailPage.SETTINGS ||
+                            appState.detailPage == DetailPage.HELP ||
+                            appState.detailPage == DetailPage.CALLS)
+                          appState.change(detailPage: DetailPage.NONE);
+                      } else if (appState.mainPage == MainPage.ANIMLIST) {
+                        if (appState.detailPage == DetailPage.SETTINGS ||
+                            appState.detailPage == DetailPage.DEFINITION)
+                          appState.change(detailPage: DetailPage.NONE);
+                        else
+                          appState.change(mainPage: MainPage.LEVELS, detailPage: DetailPage.CALLS);
+                      } else if (appState.mainPage == MainPage.ANIMATIONS) {
+                        if (appState.detailPage == DetailPage.SETTINGS ||
+                            appState.detailPage == DetailPage.DEFINITION)
+                          appState.change(detailPage: DetailPage.NONE);
+                        else
+                          appState.change(mainPage: MainPage.ANIMLIST);
+                      } else if (appState.mainPage == MainPage.SEQUENCER) {
+                        if (appState.detailPage == DetailPage.HELP ||
+                            appState.detailPage == DetailPage.ABBREVIATIONS ||
+                            appState.detailPage == DetailPage.SETTINGS ||
+                            appState.detailPage == DetailPage.CALLS)
+                          appState.change(
+                              mainPage: MainPage.SEQUENCER, detailPage: DetailPage.NONE);
+                        else
+                          appState.change(mainPage: MainPage.LEVELS, detailPage: DetailPage.NONE);
+                      } else
+                        appState.change(mainPage: MainPage.LEVELS, detailPage: DetailPage.NONE);
+                    }
                   });
-            })
-      ),
+            });
+          })),
     );
   }
 
@@ -441,13 +367,12 @@ class TaminationsRouterDelegate extends fm.RouterDelegate<TamState>
         link: configuration.link,
         animnum: configuration.animnum,
         animname: configuration.animname,
-        mainPage:configuration.mainPage,
+        mainPage: configuration.mainPage,
         detailPage: configuration.detailPage,
         embed: configuration.embed,
         definition: configuration.definition,
         formation: configuration.formation,
-        calls: configuration.calls
-    );
+        calls: configuration.calls);
     appState.addListener(() {
       //setNewRoutePath(appState);
       notifyListeners();
@@ -461,7 +386,7 @@ class TaminationsRouterDelegate extends fm.RouterDelegate<TamState>
         link: configuration.link,
         animnum: configuration.animnum,
         animname: configuration.animname,
-        mainPage:configuration.mainPage,
+        mainPage: configuration.mainPage,
         detailPage: configuration.detailPage,
         embed: configuration.embed,
         play: configuration.play,
@@ -469,8 +394,7 @@ class TaminationsRouterDelegate extends fm.RouterDelegate<TamState>
         grid: configuration.grid,
         definition: configuration.definition,
         formation: configuration.formation,
-        calls: configuration.calls
-    );
+        calls: configuration.calls);
     notifyListeners();
   }
 }
@@ -479,10 +403,8 @@ class TaminationsRouterDelegate extends fm.RouterDelegate<TamState>
 //  TaminationsRoutePath
 //  Used by web browser implementation
 class TaminationsRouteInformationParser extends fm.RouteInformationParser<TamState> {
-
   @override
-  Future<TamState>
-  parseRouteInformation(fm.RouteInformation routeInformation) async {
+  Future<TamState> parseRouteInformation(fm.RouteInformation routeInformation) async {
     final params = routeInformation.uri.queryParameters;
     var mainPage = params['main']?.toMainPage();
     var detailPage = params['detail']?.toDetailPage();
@@ -508,19 +430,27 @@ class TaminationsRouteInformationParser extends fm.RouteInformationParser<TamSta
       detailPage = DetailPage.DEFINITION;
       level = LevelData.find(link)!.dir;
     }
-    return TamState(mainPage: mainPage, detailPage: detailPage, level:level,
-      link:link,animnum:animnum,animname:animname,
-      embed:embed, play:play, loop:loop, grid:grid, definition: definition,
-      formation: formation, calls: calls
-    );
+    return TamState(
+        mainPage: mainPage,
+        detailPage: detailPage,
+        level: level,
+        link: link,
+        animnum: animnum,
+        animname: animname,
+        embed: embed,
+        play: play,
+        loop: loop,
+        grid: grid,
+        definition: definition,
+        formation: formation,
+        calls: calls);
   }
 
   @override
   fm.RouteInformation restoreRouteInformation(TamState path) {
     var location = path.toString();
-    return fm.RouteInformation(uri:Uri.parse('?$location'));
+    return fm.RouteInformation(uri: Uri.parse('?$location'));
   }
-
 }
 
 class _PortraitForSmallDevices extends fm.StatefulWidget {
@@ -531,16 +461,13 @@ class _PortraitForSmallDevices extends fm.StatefulWidget {
 }
 
 class __PortraitForSmallDevicesState extends fm.State<_PortraitForSmallDevices> {
-
-    @override
-    void initState() {
-      super.initState();
+  @override
+  void initState() {
+    super.initState();
     later(() {
       if (isSmallDevice(context)) {
-        SystemChrome.setPreferredOrientations([
-          DeviceOrientation.portraitUp,
-          DeviceOrientation.portraitDown
-        ]);
+        SystemChrome.setPreferredOrientations(
+            [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
       }
     });
   }
