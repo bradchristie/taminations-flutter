@@ -128,20 +128,20 @@ class _PracticeFrameState extends fm.State<PracticeFrame>
   fm.Widget build(fm.BuildContext context) {
     final dancePainter = DancePainter(danceModel);
     _focusNode.requestFocus();
-    return fm.RawKeyboardListener(
-      onKey: (event) {
+    return fm.KeyboardListener(
+      onKeyEvent: (event) {
         if (event.physicalKey == PhysicalKeyboardKey.shiftLeft ||
             event.physicalKey == PhysicalKeyboardKey.shiftRight) {
-          if (event is RawKeyDownEvent)
+          if (event is KeyDownEvent)
             danceModel.practiceDancer!.shiftDown = true;
-          else if (event is RawKeyUpEvent)
+          else if (event is KeyUpEvent)
             danceModel.practiceDancer!.shiftDown = false;
         }
         if (event.physicalKey == PhysicalKeyboardKey.controlLeft ||
             event.physicalKey == PhysicalKeyboardKey.controlRight) {
-          if (event is RawKeyDownEvent)
+          if (event is KeyDownEvent)
             danceModel.practiceDancer!.ctlDown = true;
-          else if (event is RawKeyUpEvent)
+          else if (event is KeyUpEvent)
             danceModel.practiceDancer!.ctlDown = false;
         }
 
