@@ -19,7 +19,6 @@
 */
 
 import 'package:flutter/material.dart' as fm;
-import 'package:provider/provider.dart' as pp;
 import 'package:taminations/animated_call.dart';
 import 'package:taminations/moves.dart';
 
@@ -118,10 +117,9 @@ class TutorialModel extends PracticeModel {
   @override
   void nextDialog(fm.BuildContext context, DanceModel danceModel) {
     final hints = TamUtils.isTouchDevice ? touchHints : mouseHints;
-    final settings = pp.Provider.of<Settings>(context,listen: false);
     final fingers = [
-      (settings.primaryControl=='Left Finger') ? 'Left' : 'Right',
-      (settings.primaryControl=='Left Finger') ? 'Right' : 'Left',
+      (Settings.primaryControl=='Left Finger') ? 'Left' : 'Right',
+      (Settings.primaryControl=='Left Finger') ? 'Right' : 'Left',
     ];
     final hint = hints[lessonNumber]
         .replaceAll('%1', fingers[0])
@@ -153,9 +151,8 @@ class TutorialModel extends PracticeModel {
 
   @override
   Future<bool> firstAnimation(fm.BuildContext context, DanceModel danceModel) async {
-    final settings = pp.Provider.of<Settings>(context,listen: false);
     danceModel.setAnimatedCall(calls[lessonNumber],
-        practiceGender: settings.practiceGender=='Boy' ? Gender.BOY : Gender.GIRL,
+        practiceGender: Settings.practiceGender=='Boy' ? Gender.BOY : Gender.GIRL,
         practiceIsRandom: false);
     return true;
   }

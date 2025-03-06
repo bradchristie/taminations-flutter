@@ -387,10 +387,9 @@ class SequencerCopyButton extends fm.StatelessWidget {
   @override
   fm.Widget build(fm.BuildContext context) {
     final model = pp.Provider.of<SequencerModel>(context,listen: false);
-    final settings = pp.Provider.of<Settings>(context,listen: false);
     return fm.Expanded(
         child: Button('Copy',onPressed: () {
-          model.copy(settings);
+          model.copy();
           final count = model.calls.length;
           final countText = count == 1 ? '1 call' : '$count calls';
           fm.ScaffoldMessenger.of(context).showSnackBar(fm.SnackBar(

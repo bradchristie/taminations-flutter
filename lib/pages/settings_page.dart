@@ -297,10 +297,10 @@ class DancerSpeedSettingWidget extends fm.StatelessWidget {
           children: [
         _SettingTitle('Dancer Speed'),
         _SettingRadioGroup(
-            groupValue: settings.speed,
+            groupValue: Settings.speed,
             values: ['Slow', 'Normal', 'Fast'],
             onChanged: (value) {
-              settings.speed = value;
+              Settings.speed = value;
             }),
       ]),
     );
@@ -313,9 +313,9 @@ class LoopSettingWidget extends fm.StatelessWidget {
     return pp.Consumer<Settings>(
       builder: (context,settings,child) => _SettingCheckbox(
         name:'Loop',
-        value: settings.loop,
+        value: Settings.loop,
         onChanged: (value) {
-          settings.loop = value;
+          Settings.loop = value;
         },
       ),
     );
@@ -332,17 +332,17 @@ class GridSettingWidget extends fm.StatelessWidget {
           children: [
             _SettingCheckbox(
               name:'Grid',
-              value: settings.grid,
+              value: Settings.grid,
               onChanged: (value) {
-                settings.grid = value;
+                Settings.grid = value;
               },
             ),
             fm.Container(width: 40),
             _SettingCheckbox(
               name:'Paths',
-              value: settings.paths,
+              value: Settings.paths,
               onChanged: (value) {
-                settings.paths = value;
+                Settings.paths = value;
               }
             )
           ]
@@ -361,10 +361,10 @@ class AxesSettingWidget extends fm.StatelessWidget {
           children: [
             _SettingTitle('Axes'),
             _SettingRadioGroup(
-                groupValue: settings.axes,
+                groupValue: Settings.axes,
                 values: ['None', 'Short', 'Long'],
                 onChanged: (value) {
-                  settings.axes = value;
+                  Settings.axes = value;
                 }),
           ]),
     );
@@ -377,9 +377,9 @@ class PhantomsSettingWidget extends fm.StatelessWidget {
     return pp.Consumer<Settings>(
       builder: (context,settings,child) => _SettingCheckbox(
         name:'Phantoms',
-        value: settings.phantoms,
+        value: Settings.phantoms,
         onChanged: (value) {
-          settings.phantoms = value;
+          Settings.phantoms = value;
         },
       ),
     );
@@ -395,10 +395,10 @@ class NumbersSettingWidget extends fm.StatelessWidget {
           children: [
             _SettingTitle('Numbers'),
             _SettingRadioGroup(
-                groupValue: settings.numbers,
+                groupValue: Settings.numbers,
                 values: ['None', '1-8', '1-4'],
                 onChanged: (value) {
-                  settings.numbers = value;
+                  Settings.numbers = value;
                 }),
           ]),
     );
@@ -414,10 +414,10 @@ class GeometrySettingWidget extends fm.StatelessWidget {
           children: [
             _SettingTitle('Special Geometry'),
             _SettingRadioGroup(
-                groupValue: settings.geometry,
+                groupValue: Settings.geometry,
                 values: ['None', 'Hexagon', 'Bi-Gon', 'Hashtag'],
                 onChanged: (value) {
-                  settings.geometry = value;
+                  Settings.geometry = value;
                 }),
           ]),
     );
@@ -433,10 +433,10 @@ class LanguageSettingWidget extends fm.StatelessWidget {
           children: [
             _SettingTitle('Language for Definitions'),
             _SettingRadioGroup(
-                groupValue: settings.language,
+                groupValue: Settings.language,
                 values: ['System', 'English', 'German', 'Japanese'],
                 onChanged: (value) {
-                  settings.language = value;
+                  Settings.language = value;
                 }),
           ]),
     );
@@ -456,11 +456,11 @@ class StartingFormationDropdownWidget extends fm.StatelessWidget {
               padding: fm.EdgeInsets.only(left: 20),
               margin: fm.EdgeInsets.only(bottom:3),
               child: fm.DropdownButton<String>(
-                value: settings.startingFormation,
+                value: Settings.startingFormation,
                 style: GoogleFonts.roboto(fontSize: 20, color: Color.BLACK),
                 underline: fm.Container( height: 0, width:0 ),
                 onChanged: (newValue) {
-                  settings.startingFormation = newValue ?? '';
+                  Settings.startingFormation = newValue ?? '';
                 },
                 items: [
                   'Facing Couples',
@@ -492,10 +492,10 @@ class DancerIdentificationWidget extends fm.StatelessWidget {
           children: [
             _SettingTitle('Dancer Identification'),
             _SettingRadioGroup(
-                groupValue: settings.dancerIdentification,
+                groupValue: Settings.dancerIdentification,
                 values: ['None', 'Dancer Numbers', 'Couple Numbers', 'Names'],
                 onChanged: (value) {
-                  settings.dancerIdentification = value;
+                  Settings.dancerIdentification = value;
                 }),
           ]),
     );
@@ -508,9 +508,9 @@ class DancerShapesWidget extends fm.StatelessWidget {
     return pp.Consumer<Settings>(
       builder: (context,settings,child) => _SettingCheckbox(
         name:'Dancer Shapes',
-        value: settings.dancerShapes,
+        value: Settings.dancerShapes,
         onChanged: (value) {
-          settings.dancerShapes = value;
+          Settings.dancerShapes = value;
         },
       ),
     );
@@ -541,10 +541,10 @@ class _DancerColorsSettingWidgetState extends fm.State<DancerColorsSettingWidget
                       fm.Container(
                           margin: fm.EdgeInsets.fromLTRB(10, 2, 10, 2),
                           child:_SettingsColorDropDown(
-                            currentValue: settings.coupleColor(i),
+                            currentValue: Settings.coupleColor(i),
                             onChanged: (String value) {
                               setState(() {
-                                settings.setCoupleColor(i, value);
+                                Settings.setCoupleColor(i, value);
                               });
                             },
                           )
@@ -571,13 +571,13 @@ class _SequencerDancerColorsWidgetState extends fm.State<SequencerDancerColorsWi
             _SettingTitle('Dancer Colors'),
             _SettingRadioGroup(
               bottomMargin: 0,
-              groupValue: settings.showDancerColors,
+              groupValue: Settings.showDancerColors,
               values: ['By Couple','Random','None'],
               onChanged: (value) {
-                settings.showDancerColors = value;
+                Settings.showDancerColors = value;
               },
             ),
-            if (settings.showDancerColors == 'By Couple')
+            if (Settings.showDancerColors == 'By Couple')
             fm.Container(
                 color: fm.Colors.white,
                 alignment: fm.Alignment(-1.0,0.0),
@@ -587,17 +587,17 @@ class _SequencerDancerColorsWidgetState extends fm.State<SequencerDancerColorsWi
                       fm.Container(
                           margin: fm.EdgeInsets.fromLTRB(10, 2, 10, 2),
                           child:_SettingsColorDropDown(
-                            currentValue: settings.coupleColor(i),
+                            currentValue: Settings.coupleColor(i),
                             onChanged: (String value) {
                               setState(() {
-                                settings.setCoupleColor(i, value);
+                                Settings.setCoupleColor(i, value);
                               });
                             },
                           )
                       ),
                   ],
                 )),
-            if (settings.showDancerColors == 'By Couple')
+            if (Settings.showDancerColors == 'By Couple')
                 _SettingText('You can also set a single dancer color by ' +
                     (TamUtils.isTouchDevice ? 'long-pressing' : 'right-clicking') +
                     ' on the dancer.'),
@@ -619,10 +619,10 @@ class JoinCallsWithWidget extends fm.StatelessWidget {
           children: [
             _SettingTitle('On Copy, Join Calls With'),
             _SettingRadioGroup(
-                groupValue: settings.joinCallsWith,
+                groupValue: Settings.joinCallsWith,
                 values: ['New Line','Semi-Colon','Comma'],
                 onChanged: (value) {
-                  settings.joinCallsWith = value;
+                  Settings.joinCallsWith = value;
                 }),
           ]),
     );

@@ -242,6 +242,8 @@ class TamUtils {
   }
 
   static bool get isTouchDevice => platform().matches('(android|ios)'.r);
+  static bool get isWindowDevice =>
+      platform().matches('(windows|macos)'.r);
   static bool get canListen => platform().matches('(android|ios)'.r);
   static bool get canSpeak => platform().matches('(android|ios|web|macos)'.r);
 

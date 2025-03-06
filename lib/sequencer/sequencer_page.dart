@@ -75,7 +75,6 @@ class _SequencerPageState extends fm.State<SequencerPage> {
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
-    final settings = pp.Provider.of<Settings>(context,listen: false);
     final tamState = pp.Provider.of<TamState>(context,listen: false);
     model = pp.Provider.of<SequencerModel>(context,listen: false);
     if (tamState.formation != null && tamState.formation!.isNotBlank) {
@@ -90,7 +89,7 @@ class _SequencerPageState extends fm.State<SequencerPage> {
       }
     }
     else {
-      model.setStartingFormation(settings.startingFormation);
+      model.setStartingFormation(Settings.startingFormation);
       model.reset();
     }
     model.addListener(() {
@@ -113,7 +112,7 @@ class _SequencerPageState extends fm.State<SequencerPage> {
               //  Setting the formation here if also set above
               //  can clobber calls passed in by the URL
               if (!formationSetByState)
-                model.setStartingFormation(settings.startingFormation);
+                model.setStartingFormation(Settings.startingFormation);
               titleModel.title = 'Sequencer';
               //  Portrait only for small devices
               if (isSmallDevice(context)) {

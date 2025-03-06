@@ -44,7 +44,6 @@ class AnimationState extends fm.ChangeNotifier {
 
 void _startModel(fm.BuildContext context, TamState tamState, TitleModel? titleModel) {
   final model = pp.Provider.of<DanceModel>(context,listen:false);
-  final settings = pp.Provider.of<Settings>(context, listen: false);
   var callEntry = callIndex.firstWhere((element) => element.link == tamState.link);
   var tamList = callEntry.calls
       .where((it) => DebugSwitch.showHiddenAnimations.enabled || !it.noDisplay).toList();
@@ -59,7 +58,7 @@ void _startModel(fm.BuildContext context, TamState tamState, TitleModel? titleMo
       fullname = fullname.replaceAll('[^a-zA-Z0-9]'.r, '');
       return fullname == tamState.animname;
     },orElse: () => tam);
-  model.setAnimatedCall(tam, geometryType: Geometry.fromString(settings.geometry).geometry);
+  model.setAnimatedCall(tam, geometryType: Geometry.fromString(Settings.geometry).geometry);
   if (titleModel != null)
     titleModel.title = tam.title;
 }
@@ -197,17 +196,17 @@ class _AnimationFrameState extends fm.State<AnimationFrame>
                     builder: (context, settings, sequencerModel, child) {
 
                       //  Send current settings to the dance model
-                      danceModel.gridVisibility = settings.grid || appState.grid;
-                      danceModel.axesVisibility = settings.axes;
-                      danceModel.setNumbers(appState.mainPage == MainPage.SEQUENCER  ? settings.dancerIdentification : settings.numbers);
-                      danceModel.setSpeed(settings.speed);
-                      danceModel.showPaths =settings.paths;
-                      danceModel.looping = appState.mainPage == MainPage.SEQUENCER ? false : (settings.loop || appState.loop);
+                      danceModel.gridVisibility = Settings.grid || appState.grid;
+                      danceModel.axesVisibility = Settings.axes;
+                      danceModel.setNumbers(appState.mainPage == MainPage.SEQUENCER  ? Settings.dancerIdentification : Settings.numbers);
+                      danceModel.setSpeed(Settings.speed);
+                      danceModel.showPaths = Settings.paths;
+                      danceModel.looping = appState.mainPage == MainPage.SEQUENCER ? false : (Settings.loop || appState.loop);
                       danceModel.setShapes(appState.mainPage == MainPage.SEQUENCER
-                          ? settings.dancerShapes : true);
-                      danceModel.showPhantoms = settings.phantoms;
+                          ? Settings.dancerShapes : true);
+                      danceModel.showPhantoms = Settings.phantoms;
                       var note = danceModel.animationNote;
-                      final setGeometry = Geometry.fromString(settings.geometry).geometry;
+                      final setGeometry = Geometry.fromString(Settings.geometry).geometry;
                       var geometryChanged = setGeometry != danceModel.geometryType;
                       if (setGeometry != Geometry.SQUARE && danceModel.asymmetric)
                         note = 'Special Geometry not available for asymmetric animations';
@@ -215,21 +214,21 @@ class _AnimationFrameState extends fm.State<AnimationFrame>
                         danceModel.geometry =  setGeometry;
                       //  Dancer colors - first check individual color, then couple color
                       danceModel.setColors(appState.mainPage == MainPage.SEQUENCER
-                          ? settings.showDancerColors!='None' : true);
-                      if (isSequencer && settings.showDancerColors == 'Random')
+                          ? Settings.showDancerColors!='None' : true);
+                      if (isSequencer && Settings.showDancerColors == 'Random')
                         danceModel.setRandomColors(true);
                       else {
                         danceModel.setRandomColors(false);
                       }
                       if (appState.mainPage != MainPage.SEQUENCER ||
-                          settings.showDancerColors == 'By Couple') {
+                          Settings.showDancerColors == 'By Couple') {
                         for (var i=1; i <= 6; i++) {
-                          final coupleColor = settings.coupleColor(i);
+                          final coupleColor = Settings.coupleColor(i);
                           danceModel.setDancerColor(
                               i, Color.fromName(coupleColor), byCouple: true);
                         }
                         for (var i = 1; i <= 12; i++) {
-                          final individualColor = settings.dancerColor(i);
+                          final individualColor = Settings.dancerColor(i);
                           if (individualColor != 'default')
                             danceModel.setDancerColor(
                                 i, Color.fromName(individualColor));
@@ -247,10 +246,10 @@ class _AnimationFrameState extends fm.State<AnimationFrame>
                       final longPressHandler = () {
                         if (dancerTapped != null) {
                           _showColorPopup(
-                              context, settings.dancerColor(dancerTapped!.number.i))
+                              context, Settings.dancerColor(dancerTapped!.number.i))
                               .then((value) {
                             if (value != null)
-                              settings.setDancerColor(dancerTapped!.number.i, value);
+                              Settings.setDancerColor(dancerTapped!.number.i, value);
                           });
                         }
                       };
@@ -315,7 +314,7 @@ class _AnimationFrameState extends fm.State<AnimationFrame>
                                     right: 0.0,
                                     child: fm.Text(
                                         beatStr + ' ' +
-                                        settings.speed.replaceFirst('Normal','') +
+                                        Settings.speed.replaceFirst('Normal','') +
                                             (danceModel.looping ? ' Loop' : ''),
                                         style:fm.TextStyle(fontSize:24)
                                     )

@@ -99,23 +99,23 @@ class SequencerModel extends fm.ChangeNotifier {
     final command = c.toLowerCase();
     final coupleColors = <String>[ 'Red', 'Green', 'Blue', 'Yellow', 'Magenta', 'Cyan' ];
     if (command.matches('color (off|none)'.r)) {
-      settings.showDancerColors = 'None';
+      Settings.showDancerColors = 'None';
     }
     else if (command.matches('color reset'.r)) {
-      settings.showDancerColors = 'By Couple';
+      Settings.showDancerColors = 'By Couple';
       for (var i=1; i<=12; i++)
-        settings.setDancerColor(i, 'default');
+        Settings.setDancerColor(i, 'default');
       for (var i=1; i<=6; i++)
-        settings.setCoupleColor(i, coupleColors[i-1]);
+        Settings.setCoupleColor(i, coupleColors[i-1]);
     }
     else if (command.matches('color random'.r)) {
-      settings.showDancerColors = 'Random';
+      Settings.showDancerColors = 'Random';
       //  Force dance model to re-shuffle colors
       animation.setRandomColors(false);
       animation.setRandomColors(true);
     }
     else if (command.matches('color on'.r)) {
-      settings.showDancerColors = 'By Couple';
+      Settings.showDancerColors = 'By Couple';
     } else {
       final match = 'color (dancer|couple) ([1-8]) (.*)'.r.firstMatch(command);
       if (match == null)
@@ -130,12 +130,12 @@ class SequencerModel extends fm.ChangeNotifier {
           errorString = 'Invalid color: $color';
         else {
           if (isCouple) {
-            settings.setDancerColor(num * 2 - 1, 'default');
-            settings.setDancerColor(num * 2, 'default');
-            settings.setCoupleColor(num, color.capitalize());
+            Settings.setDancerColor(num * 2 - 1, 'default');
+            Settings.setDancerColor(num * 2, 'default');
+            Settings.setCoupleColor(num, color.capitalize());
           }
           else
-            settings.setDancerColor(num, color.capitalize());
+            Settings.setDancerColor(num, color.capitalize());
         }
       }
     }
@@ -147,16 +147,16 @@ class SequencerModel extends fm.ChangeNotifier {
   void setId(String c, Settings settings) {
     final command = c.toLowerCase();
     if (command.matches('id none'.r)) {
-      settings.dancerIdentification = 'None';
+      Settings.dancerIdentification = 'None';
     }
     else if (command.matches('id dancer.*'.r)) {
-      settings.dancerIdentification = 'Dancer Numbers';
+      Settings.dancerIdentification = 'Dancer Numbers';
     }
     else if (command.matches('id couple.*'.r)) {
-      settings.dancerIdentification = 'Couple Numbers';
+      Settings.dancerIdentification = 'Couple Numbers';
     }
     else if (command.matches('id name.*'.r)) {
-      settings.dancerIdentification = 'Names';
+      Settings.dancerIdentification = 'Names';
       if (command.lc.contains('shuffle')) {
         Dancer.shuffleNames();
         reset();
@@ -174,16 +174,16 @@ class SequencerModel extends fm.ChangeNotifier {
     final command = c.toLowerCase().replaceAll('speed','').trim();
     switch (command) {
       case 'slow' :
-        settings.speed = 'Slow';
+        Settings.speed = 'Slow';
         break;
       case 'normal' :
-        settings.speed = 'Normal';
+        Settings.speed = 'Normal';
         break;
       case 'fast' :
-        settings.speed = 'Fast';
+        Settings.speed = 'Fast';
         break;
       case 'ludicrous' :
-        settings.speed = 'Ludicrous';
+        Settings.speed = 'Ludicrous';
         break;
       default :
         errorString = 'Invalid speed';
@@ -196,13 +196,13 @@ class SequencerModel extends fm.ChangeNotifier {
     switch (command) {
       case 'off' :
       case 'none' :
-        settings.axes = 'None';
+        Settings.axes = 'None';
         break;
       case 'short' :
-        settings.axes = 'Short';
+        Settings.axes = 'Short';
         break;
       case 'long' :
-        settings.axes = 'Long';
+        Settings.axes = 'Long';
         break;
       default:
         errorString = 'Invalid axes setting';
@@ -216,10 +216,10 @@ class SequencerModel extends fm.ChangeNotifier {
     switch (command) {
       case 'off' :
       case 'none' :
-        settings.grid = false;
+        Settings.grid = false;
         break;
       case 'on' :
-        settings.grid = true;
+        Settings.grid = true;
         break;
       default :
         errorString = 'Invalid grid setting';
@@ -314,15 +314,14 @@ class SequencerModel extends fm.ChangeNotifier {
   }
 
   CallContext _contextFromAnimation() {
-    final settings = Settings();
     var ctx = CallContext.fromFormation(Formation(startingFormation));
-    if (settings.geometry == 'Bi-Gon') {
+    if (Settings.geometry == 'Bi-Gon') {
       for (var i=0; i<ctx.dancers.length; i++)
         ctx.dancers[i].path = animation.dancers[i ~/ 2].path.clone();
-    } else if (settings.geometry == 'Hexagon') {
+    } else if (Settings.geometry == 'Hexagon') {
       for (var i=0; i<ctx.dancers.length; i++)
         ctx.dancers[i].path = animation.dancers[(i~/2)*3].path.clone();
-    } else if (settings.geometry == 'Hashtag') {
+    } else if (Settings.geometry == 'Hashtag') {
       for (var i=0; i<ctx.dancers.length; i++)
         ctx.dancers[i].path = animation.dancers[i*2].path.clone();
     }
@@ -337,14 +336,13 @@ class SequencerModel extends fm.ChangeNotifier {
   }
 
   void _applyContextToAnimation(CallContext ctx) {
-    final settings = Settings();
-    if (settings.geometry == 'Hexagon') {
+    if (Settings.geometry == 'Hexagon') {
       for (var i=0; i<(ctx.dancers.length ~/ 2) * 3 ; i++)
         animation.dancers[i].path += ctx.dancers[(i~/3)*2].path;
-    } else if (settings.geometry == 'Bi-Gon') {
+    } else if (Settings.geometry == 'Bi-Gon') {
       for (var i=0; i<ctx.dancers.length ~/ 2; i++)
         animation.dancers[i].path += ctx.dancers[i*2].path;
-    } else if (settings.geometry == 'Hashtag') {
+    } else if (Settings.geometry == 'Hashtag') {
       for (var i=0; i<ctx.dancers.length*2; i++) {
         animation.dancers[i].path += ctx.dancers[i ~/ 2].path;
       }
@@ -438,7 +436,7 @@ class SequencerModel extends fm.ChangeNotifier {
         if (cctx.isCollision())
           throw CallError('Unable to calculate valid animation.');
       }
-      if (!(settings.geometry == 'None')) {
+      if (!(Settings.geometry == 'None')) {
         if (!cctx.dancers.areDancersOrdered())
           throw CallError('Asymmetry only possible with square geometry');
       }
@@ -471,7 +469,7 @@ class SequencerModel extends fm.ChangeNotifier {
     var formation = Formation(startingFormation);
     var paths = [for (var _ in formation.dancers) Path()];
     animation.setAnimatedCall(AnimatedCall('',formation:formation,paths:paths),
-        geometryType: Geometry.fromString(Settings().geometry).geometry);
+        geometryType: Geometry.fromString(Settings.geometry).geometry);
     animation.recalculate();
     _updateParts();
   }
@@ -514,11 +512,11 @@ class SequencerModel extends fm.ChangeNotifier {
     return -1;
   }
 
-  void copy(Settings settings) {
+  void copy() {
     var joiner = '\n';
-    if (settings.joinCallsWith == 'Semi-Colon')
+    if (Settings.joinCallsWith == 'Semi-Colon')
       joiner = '; ';
-    if (settings.joinCallsWith == 'Comma')
+    if (Settings.joinCallsWith == 'Comma')
       joiner = ', ';
     final text = calls.map((call) => call.name).join(joiner);
     final clip = fs.ClipboardData(text:text);

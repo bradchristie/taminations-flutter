@@ -162,21 +162,21 @@ class _StartPracticeFrameState extends fm.State<StartPracticeFrame> {
                             fm.Text(
                                 'Choose a Gender', style: fm.TextStyle(fontSize: 20)),
                             _StartPracticeRadioGroup(
-                                groupValue: settings.practiceGender,
+                                groupValue: Settings.practiceGender,
                                 values: ['Boy', 'Girl'],
                                 onChanged: (value) {
                                   setState(() {
-                                    settings.practiceGender = value ?? 'Boy';
+                                    Settings.practiceGender = value ?? 'Boy';
                                   });
                                 }),
                             fm.Text('Speed for Practice',
                                 style: fm.TextStyle(fontSize: 20)),
                             _StartPracticeRadioGroup(
-                                groupValue: settings.practiceSpeed,
+                                groupValue: Settings.practiceSpeed,
                                 values: ['Slow', 'Moderate', 'Normal'],
                                 onChanged: (value) {
                                   setState(() {
-                                    settings.practiceSpeed = value ?? 'Slow';
+                                    Settings.practiceSpeed = value ?? 'Slow';
                                   });
                                 }),
                             if (TamUtils.isTouchDevice)
@@ -184,11 +184,11 @@ class _StartPracticeFrameState extends fm.State<StartPracticeFrame> {
                                   'Primary Control', style: fm.TextStyle(fontSize: 20)),
                             if (TamUtils.isTouchDevice)
                               _StartPracticeRadioGroup(
-                                  groupValue: settings.primaryControl,
+                                  groupValue: Settings.primaryControl,
                                   values: ['Left Finger', 'Right Finger'],
                                   onChanged: (value) {
                                     setState(() {
-                                      settings.primaryControl = value ?? 'Right Finger';
+                                      Settings.primaryControl = value ?? 'Right Finger';
                                     });
                                   }),
                             if (!TamUtils.isTouchDevice)
@@ -196,12 +196,12 @@ class _StartPracticeFrameState extends fm.State<StartPracticeFrame> {
                                   'Mouse Control', style: fm.TextStyle(fontSize: 20)),
                             if (!TamUtils.isTouchDevice)
                               _StartPracticeRadioGroup(
-                                  groupValue: settings.mouseControl,
+                                  groupValue: Settings.mouseControl,
                                   values: ['Press mouse button to move',
                                     'Release mouse button to move'],
                                   onChanged: (value) {
                                     setState(() {
-                                      settings.mouseControl = value ?? 'Press mouse button to move';
+                                      Settings.mouseControl = value ?? 'Press mouse button to move';
                                     });
                                   }),
                           ],

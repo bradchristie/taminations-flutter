@@ -19,183 +19,133 @@
 */
 
 import 'package:flutter/material.dart' as fm;
-import 'package:flutter/services.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-
+import 'package:shared_preferences/util/legacy_to_async_migration_util.dart';
 import 'call_index.dart';
 import 'common_flutter.dart';
 
 class Settings extends fm.ChangeNotifier {
 
-  bool _preferencesRead = false;
-  String _speed = 'Normal';
-  bool _loop = false;
-  bool _grid = false;
-  String _axes = 'None';
-  bool _paths = false;
-  String _numbers = 'None';
-  final List<String> _coupleColors = [ 'Red', 'Green', 'Blue', 'Yellow', 'Magenta', 'Cyan' ];
-  final List<String> _dancerColors = [ for (var i=1; i<=12; i++) 'default' ];
-  bool _phantoms = false;
-  String _geometry = 'None';
-  String _language = 'System';
-  bool _isAbbrev = true;
-  String _practiceGender = 'Boy';
-  String _practiceSpeed = 'Slow';
-  String _primaryControl = 'Left Finger';
-  String _mouseControl = 'Pressed';
-  String _startingFormation = 'Squared Set';
-  bool _dancerShapes = true;
-  String _dancerIdentification = 'None';
-  String _showDancerColors = 'By Couple';
-  String _joinCallsWith = 'New Line';
+  static final List<String> _dancerColors = [ for (var i=1; i<=12; i++) 'default' ];
+  static final List<String> _coupleColors =
+      [ 'Red', 'Green', 'Blue', 'Yellow', 'Magenta', 'Cyan' ];
 
-  static final Settings _instance = Settings._internal();
+  static bool _init = false;
+  static late Settings _instance;
+  SharedPreferencesWithCache _prefs;
 
-  late SharedPreferences prefs;
-
-  factory Settings() {
-    return _instance;
+  //  This is boilerplate from Flutter docs
+  static Future<void> _migratePreferences() async {
+    // #docregion migrate
+    const sharedPreferencesOptions =
+    SharedPreferencesOptions();
+    final prefs = await SharedPreferences.getInstance();
+    await migrateLegacySharedPreferencesToSharedPreferencesAsyncIfNecessary(
+      legacySharedPreferencesInstance: prefs,
+      sharedPreferencesAsyncOptions: sharedPreferencesOptions,
+      migrationCompletedKey: 'migrationCompleted',
+    );
+    // #enddocregion migrate
   }
 
-  Settings._internal() {
-    getSettings();
-  }
-
-  Future<bool> getSettings() async {
-    if (!_preferencesRead)
-      return _getPreferences().then( (b) => true);
-    return Future.value(true);
-  }
-
-  Future<bool> _getPreferences() async {
-    try {
-      prefs = await SharedPreferences.getInstance();
-      _speed = prefs.getString('Dancer Speed') ?? 'Normal';
-      _loop = prefs.getBool('Loop') ?? false;
-      _grid = prefs.getBool('Grid') ?? false;
-      _axes = prefs.getString('Axes') ?? 'None';
-      _paths = prefs.getBool('Paths') ?? false;
-      _numbers = prefs.getString('Numbers') ?? 'None';
-      for (var i = 1; i <= 6; i++) {
-        _coupleColors[i - 1] =
-            prefs.getString('Couple $i') ?? _coupleColors[i - 1];
-      }
-      for (var i = 1; i <= 12; i++) {
-        _dancerColors[i - 1] =
-            prefs.getString('Dancer $i') ?? _dancerColors[i - 1];
-      }
-      _phantoms = prefs.getBool('Phantoms') ?? false;
-      _geometry = prefs.getString('Special Geometry') ?? 'None';
-      _language = prefs.getString('Language for Definitions') ?? 'System';
-      _preferencesRead = true;
-      _isAbbrev = prefs.getBool('DefinitionAbbrev') ?? true;
-      _practiceGender = prefs.getString('PracticeGender') ?? 'Boy';
-      _practiceSpeed = prefs.getString('PracticeSpeed') ?? 'Slow';
-      _primaryControl = prefs.getString('PrimaryControl') ?? 'Left Finger';
-      _mouseControl = prefs.getString('MouseControl') ??
-          'Press mouse button to move';
-      _startingFormation =
-          prefs.getString('Starting Formation') ?? 'Squared Set';
-      if (_startingFormation == 'Eight Chain Thru')
-        _startingFormation = 'Zero Box';
-      _dancerShapes = prefs.getBool('Dancer Shapes') ?? true;
-      _dancerIdentification =
-          prefs.getString('Dancer Identification') ?? 'None';
-      _showDancerColors = prefs.getString('Dancer Colors') ?? 'By Couple';
-      _joinCallsWith = prefs.getString('Join Calls With') ?? 'New Line';
-      notifyListeners();
-      //  This is so testing will work, it's Dart and doesn't have\
-      //  the SharedPreferences plugin
-    } on MissingPluginException catch (_) { }
+  static Future<bool> init() async {
+    if (!_init) {
+      await _migratePreferences().whenComplete(() {
+        SharedPreferencesWithCache.create(
+            cacheOptions: SharedPreferencesWithCacheOptions())
+            .then((SharedPreferencesWithCache value) {
+          _instance = Settings._internal(value);
+          ;
+        });
+      });
+      _init = true;
+    }
     return true;
   }
 
-  String get speed => _speed;
-  set speed(String value) {
-    _speed = value;
-    prefs.setString('Dancer Speed',value);
-    notifyListeners();
+  //  Only the code above can create the singleton object
+  Settings._internal(this._prefs);
+  //  Default constructor returns singleton object
+  factory Settings() => _instance;
+
+  static String get speed =>
+      _instance._prefs.getString('Dancer Speed') ?? 'Normal Speed';
+  static set speed(String value) {
+    _instance._prefs.setString('Dancer Speed', value);
+    _instance.notifyListeners();
   }
 
-  bool get loop => _loop;
-  set loop(bool value) {
-    _loop = value;
-    prefs.setBool('Loop',value);
-    notifyListeners();
+  static bool get loop =>
+      _instance._prefs.getBool('Loop') ?? false;
+  static set loop(bool value) {
+    _instance._prefs.setBool('Loop', value);
+    _instance.notifyListeners();
   }
 
-  bool get grid => _grid;
-  set grid(bool value) {
-    _grid = value;
-    prefs.setBool('Grid', value);
-    notifyListeners();
+  static bool get grid =>
+      _instance._prefs.getBool('Grid') ?? false;
+  static set grid(bool value) {
+    _instance._prefs.setBool('Grid', value);
+    _instance.notifyListeners();
   }
 
-  String get axes => _axes;
-  set axes(String value) {
-    _axes = value;
-    prefs.setString('Axes', value);
-    notifyListeners();
+  static String get axes =>
+      _instance._prefs.getString('Axes') ?? 'None';
+  static set axes(String value) {
+    _instance._prefs.setString('Axes', value);
+    _instance.notifyListeners();
   }
 
-  bool get paths => _paths;
-  set paths(bool value) {
-    _paths = value;
-    prefs.setBool('Paths', value);
-    notifyListeners();
+  static bool get paths =>
+      _instance._prefs.getBool('Paths') ?? false;
+  static set paths(bool value) {
+    _instance._prefs.setBool('Paths', value);
+    _instance.notifyListeners();
   }
 
-  String get numbers => _numbers;
-  set numbers(String value) {
-    _numbers = value;
-    prefs.setString('Numbers',value);
-    notifyListeners();
+  static String get numbers =>
+      _instance._prefs.getString('Numbers') ?? 'None';
+  static set numbers(String value) {
+    _instance._prefs.setString('Numbers', value);
+    _instance.notifyListeners();
   }
 
-  String coupleColor(int i) => _coupleColors[i-1];
-  void setCoupleColor(int i, String value) {
-    _coupleColors[i-1] = value;
-    prefs.setString('Couple $i',value);
-    notifyListeners();
+  static String coupleColor(int i) =>
+      _instance._prefs.getString('Couple $i') ?? _coupleColors[i-1];
+  static void setCoupleColor(int i, String value) {
+    _instance._prefs.setString('Couple $i', value);
+    _instance.notifyListeners();
   }
 
-  String dancerColor(int i) => _dancerColors[i-1];
-  void setDancerColor(int i, String value) {
-    _dancerColors[i-1] = value;
-    prefs.setString('Dancer $i',value);
-    notifyListeners();
+  static String dancerColor(int i) =>
+      _instance._prefs.getString('Dancer $i') ?? _dancerColors[i-1];
+  static void setDancerColor(int i, String value) {
+    _instance._prefs.setString('Dancer $i', value);
+    _instance.notifyListeners();
   }
 
-  bool get phantoms => _phantoms;
-  set phantoms(bool value) {
-    _phantoms = value;
-    prefs.setBool('Phantoms',value);
-    notifyListeners();
+  static bool get phantoms =>
+      _instance._prefs.getBool('Phantoms') ?? false;
+  static set phantoms(bool value) {
+    _instance._prefs.setBool('Phantoms', value);
+    _instance.notifyListeners();
   }
 
-  String get geometry => _geometry;
-  set geometry(String value) {
-    _geometry = value;
-    prefs.setString('Special Geometry',value);
-    notifyListeners();
+  static String get geometry =>
+      _instance._prefs.getString('Special Geometry') ?? 'None';
+  static set geometry(String value) {
+    _instance._prefs.setString('Special Geometry', value);
+    _instance.notifyListeners();
   }
 
-  bool get isAbbrev => _isAbbrev;
-  set isAbbrev(bool value) {
-    _isAbbrev = value;
-    prefs.setBool('DefinitionAbbrev', value);
-    notifyListeners();
+  static String get language =>
+      _instance._prefs.getString('Language for Definitions') ?? 'System';
+  static set language(String value) {
+    _instance._prefs.setString('Language for Definitions',value);
+    _instance.notifyListeners();
   }
 
-  String get language => _language;
-  set language(String value) {
-    _language = value;
-    prefs.setString('Language for Definitions',value);
-    notifyListeners();
-  }
-
-  String get languageCode {
+  static String get languageCode {
     if (language == 'English')
       return 'en';
     else if (language == 'German')
@@ -207,7 +157,7 @@ class Settings extends fm.ChangeNotifier {
   }
 
   //  Get a language-specific link for retreiving the definition
-  String getLanguageLink(String link) {
+  static String getLanguageLink(String link) {
     var code = languageCode;
     if (code != 'en') {
       var call = callIndex.firstWhereOrNull((e) =>
@@ -218,68 +168,76 @@ class Settings extends fm.ChangeNotifier {
     return link;
   }
 
-  String get practiceGender => _practiceGender;
-  set practiceGender(String value) {
-    _practiceGender = value;
-    prefs.setString('PracticeGender',value);
-    notifyListeners();
+  static String get practiceGender =>
+      _instance._prefs.getString('PracticeGender') ?? 'Boy';
+  static set practiceGender(String value) {
+    _instance._prefs.setString('PracticeGender',value);
+    _instance.notifyListeners();
   }
 
-  String get practiceSpeed => _practiceSpeed;
-  set practiceSpeed(String value) {
-    _practiceSpeed = value;
-    prefs.setString('PracticeSpeed',value);
-    notifyListeners();
+  static String get practiceSpeed =>
+      _instance._prefs.getString('PracticeSpeed') ?? 'Slow';
+  static set practiceSpeed(String value) {
+    _instance._prefs.setString('PracticeSpeed',value);
+    _instance.notifyListeners();
   }
 
-  String get primaryControl => _primaryControl;
-  set primaryControl(String value) {
-    _primaryControl = value;
-    prefs.setString('PrimaryControl',value);
-    notifyListeners();
+  static String get primaryControl =>
+  _instance._prefs.getString('PrimaryControl') ?? 'Left Finger';
+  static set primaryControl(String value) {
+    _instance._prefs.setString('PrimaryControl',value);
+    _instance.notifyListeners();
   }
 
-  String get mouseControl => _mouseControl;
-  set mouseControl(String value) {
-    _mouseControl = value;
-    prefs.setString('MouseControl',value);
-    notifyListeners();
+  static String get mouseControl =>
+      _instance._prefs.getString('MouseControl') ?? 'Pressed';
+  static set mouseControl(String value) {
+    _instance._prefs.setString('MouseControl',value);
+    _instance.notifyListeners();
   }
 
-  String get startingFormation => _startingFormation;
-  set startingFormation(String value) {
-    _startingFormation = value;
-    prefs.setString('Starting Formation',value);
-    notifyListeners();
+  static String get startingFormation =>
+      _instance._prefs.getString('Starting Formation') ?? 'Squared Set';
+  static set startingFormation(String value) {
+    _instance._prefs.setString('Starting Formation',value);
+    _instance.notifyListeners();
   }
 
-  bool get dancerShapes => _dancerShapes;
-  set dancerShapes(bool value) {
-    _dancerShapes = value;
-    prefs.setBool('Dancer Shapes', value);
-    notifyListeners();
+  static bool get dancerShapes =>
+      _instance._prefs.getBool('Dancer Shapes') ?? true;
+  static set dancerShapes(bool value) {
+    _instance._prefs.setBool('Dancer Shapes', value);
+    _instance.notifyListeners();
   }
 
-  String get dancerIdentification => _dancerIdentification;
-  set dancerIdentification(String value) {
-    _dancerIdentification = value;
-    prefs.setString('Dancer Identification',value);
-    notifyListeners();
+  static String get dancerIdentification =>
+      _instance._prefs.getString('Dancer Identification') ?? 'None';
+  static set dancerIdentification(String value) {
+    _instance._prefs.setString('Dancer Identification',value);
+    _instance.notifyListeners();
   }
 
-  String get showDancerColors => _showDancerColors;
-  set showDancerColors(String value) {
-    _showDancerColors = value;
-    prefs.setString('Dancer Colors',value);
-    notifyListeners();
+  static String get showDancerColors =>
+      _instance._prefs.getString('Dancer Colors') ?? 'By Couple';
+  static set showDancerColors(String value) {
+    _instance._prefs.setString('Dancer Colors',value);
+    _instance.notifyListeners();
   }
 
-  String get joinCallsWith => _joinCallsWith;
-  set joinCallsWith(String value) {
-    _joinCallsWith = value;
-    prefs.setString('Join Calls With', value);
-    notifyListeners();
+  static String get joinCallsWith =>
+      _instance._prefs.getString('Join Calls With') ?? 'New Line';
+  static set joinCallsWith(String value) {
+    _instance._prefs.setString('Join Calls With', value);
+    _instance.notifyListeners();
   }
 
+  //  Window dimensions are internal, set when user resizes the window
+  static String get windowRect =>
+      _instance._prefs.getString('Window Rect') ?? '';
+  static set windowRect(String value) {
+    print('Setting window rect to $value');
+    _instance._prefs.setString('Window Rect', value);
+    //  no need to notify listeners
+  }
 
 }

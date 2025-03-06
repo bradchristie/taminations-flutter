@@ -25,6 +25,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart' as pp;
 import 'package:taminations/beat_notifier.dart';
 import 'package:taminations/sequencer/sequencer_model.dart';
+import 'package:window_manager/window_manager.dart';
 
 import 'common_flutter.dart';
 import 'pages/anim_list_page.dart';
@@ -45,11 +46,17 @@ import 'sequencer/sequencer_calls_page.dart';
 import 'sequencer/sequencer_page.dart';
 
 ///  Main routine
-void main() {
+void main() async {
   LicenseRegistry.addLicense(() async* {
     final license = await rootBundle.loadString('google_fonts/LICENSE.txt');
     yield LicenseEntryWithLineBreaks(['google_fonts'], license);
   });
+  // Start up window manager so we can set and detect window size
+  //  on desktop platforms
+  fm.WidgetsFlutterBinding.ensureInitialized();
+  if (TamUtils.isWindowDevice) {
+    await windowManager.ensureInitialized();
+  }
   fm.runApp(TaminationsApp());
 }
 
@@ -65,51 +72,92 @@ class TaminationsApp extends fm.StatefulWidget {
 
 }
 
-class _TaminationsAppState extends fm.State<TaminationsApp> {
+class _TaminationsAppState
+    extends fm.State<TaminationsApp> with WindowListener {
 
   final TaminationsRouterDelegate _routerDelegate = TaminationsRouterDelegate();
   final TaminationsRouteInformationParser _routeInformationParser =
       TaminationsRouteInformationParser();
 
   @override
-  fm.Widget build(fm.BuildContext context) {
-    //  Wrap the Settings around the top of the program
-    //  so everybody has access to them
-    return pp.ChangeNotifierProvider(
-        create: (_) => BeatNotifier(),  // needed for some of the below
-        child: pp.MultiProvider(
-            providers: [
-              pp.ChangeNotifierProvider(create: (_) => Settings()),
-              pp.ChangeNotifierProvider(create: (_) => AnimationState()),
-              pp.ChangeNotifierProvider(create: (_) => AbbreviationsModel()),
-              pp.ChangeNotifierProvider(create: (context) => SequencerModel(context)),
-              pp.ChangeNotifierProvider(create: (_) => HighlightState()),
-              pp.Provider(create: (_) => VirtualKeyboardVisible())
-            ],
-            //  Read initialization files
-            child: fm.FutureBuilder<bool>(
-              future: TamUtils.init(),
-              builder: (context,snapshot) =>
-              snapshot.hasData ?
-              fm.MaterialApp.router(
-                debugShowCheckedModeBanner: false,
-                theme: fm.ThemeData(
-                  fontFamily: 'Roboto',
-                  textTheme: GoogleFonts.robotoTextTheme(),
-                  scrollbarTheme: fm.ScrollbarThemeData(
-                    thumbColor: fm.WidgetStateColor.resolveWith((states) =>
-                    Color.TRANSPARENTGREY),
-                  ),
-                ),
+  void dispose() {
+    windowManager.removeListener(this);
+    super.dispose();
+  }
 
-                title: 'Taminations',
-                routerDelegate: _routerDelegate,
-                routeInformationParser: _routeInformationParser,
-              ) : fm.Container(
-                color: Color.FLOOR,
-                child: fm.Center(child: fm.Image.asset('assets/src/tam87.png')),
-              ),
-            )));
+  @override
+  fm.Widget build(fm.BuildContext context) {
+    //  Start with various setup chores
+    return fm.FutureBuilder<bool>(
+      //  Read saved user settings
+      future: Settings.init().whenComplete(() {
+        //  Read initialization files
+        TamUtils.init();
+        //  Restore main window to last size and position
+        windowManager.ensureInitialized().whenComplete(() {
+          var w = Settings.windowRect;
+          if (w == 'Maximized')
+            windowManager.maximize();
+          else {
+            var nums = w.split(' ');
+            if (nums.length == 4)
+              windowManager.setBounds(fm.Rect.fromLTRB
+                (nums[0].d, nums[1].d, nums[2].d, nums[3].d));
+          }
+          //  and listen for when user changes the window size
+          windowManager.addListener(this);
+        });
+      }),
+      builder: (context,snapshot) =>
+      snapshot.hasData ?
+      //  Wrap the Settings around the top of the program
+      //  so everybody has access to them
+      pp.ChangeNotifierProvider(
+          create: (_) => BeatNotifier(),  // needed for some of the below
+          child: pp.MultiProvider(
+              providers: [
+                pp.ChangeNotifierProvider(create: (_) => Settings()),
+                pp.ChangeNotifierProvider(create: (_) => AnimationState()),
+                pp.ChangeNotifierProvider(create: (_) => AbbreviationsModel()),
+                pp.ChangeNotifierProvider(create: (context) => SequencerModel(context)),
+                pp.ChangeNotifierProvider(create: (_) => HighlightState()),
+                pp.Provider(create: (_) => VirtualKeyboardVisible())
+              ],
+              child: fm.MaterialApp.router(
+        debugShowCheckedModeBanner: false,
+        theme: fm.ThemeData(
+          fontFamily: 'Roboto',
+          textTheme: GoogleFonts.robotoTextTheme(),
+          scrollbarTheme: fm.ScrollbarThemeData(
+            thumbColor: fm.WidgetStateColor.resolveWith((states) =>
+            Color.TRANSPARENTGREY),
+          ),
+        ),
+        title: 'Taminations',
+        routerDelegate: _routerDelegate,
+        routeInformationParser: _routeInformationParser,
+      )))
+      //  Future not ready yet
+      : fm.Container(
+          color: Color.FLOOR,
+          child: fm.Center(child: fm.Image.asset('assets/src/tam87.png')))
+    );
+  }
+
+  //  Whenever user changes the window size, save it in the settings
+  //  so it can be restored next time
+  @override
+  void onWindowMaximize() {
+    Settings.windowRect = 'Maximized';
+  }
+  @override
+  void onWindowUnmaximize() async {
+    onWindowResize();
+  }
+  @override
+  void onWindowResize() async {
+    var b = await windowManager.getBounds();
+    Settings.windowRect = '${b.left} ${b.top} ${b.right} ${b.bottom}';
   }
 
 }

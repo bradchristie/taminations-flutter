@@ -128,7 +128,7 @@ class TitleBar extends fm.StatelessWidget {
                 //  Level text (button?)
                 if (titleModel.level.isNotEmpty)
                   fm.TextButton(onPressed: () => {}, child: fm.Text(titleModel.level,
-                      style: fm.TextStyle(color: Color.WHITE, fontSize: 20)))
+                      style: fm.TextStyle(color: Color.WHITE, fontSize: 20))),
               ]);},
             )
         )

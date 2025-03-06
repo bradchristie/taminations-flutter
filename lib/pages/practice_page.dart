@@ -59,7 +59,6 @@ class PracticeModel {
     //  Choose a random call from the selected level
     final appState = pp.Provider.of<TamState>(context,listen: false);
     final titleModel = pp.Provider.of<TitleModel>(context,listen: false);
-    final settings = pp.Provider.of<Settings>(context,listen: false);
     final levelDatum = LevelData.find(appState.level!)!;
     final levelCalls = _callsForLevel(levelDatum);
     //  Load that call and choose a random animation
@@ -70,7 +69,7 @@ class PracticeModel {
     titleModel.title = randomAnim.title;
     titleModel.level = levelDatum.name;
     danceModel.setAnimatedCall(randomAnim,
-        practiceGender: settings.practiceGender=='Boy' ? Gender.BOY : Gender.GIRL);
+        practiceGender: Settings.practiceGender=='Boy' ? Gender.BOY : Gender.GIRL);
     danceModel.doPlay();
     return true;
   }
@@ -159,11 +158,11 @@ class _PracticeFrameState extends fm.State<PracticeFrame>
                 titleModel.title = danceModel.title;
                 danceModel.gridVisibility = true;
                 danceModel.looping = false;
-                danceModel.setSpeed(settings.practiceSpeed);
+                danceModel.setSpeed(Settings.practiceSpeed);
                 danceModel.practiceDancer!.primaryIsLeft =
-                    settings.primaryControl == 'Left Finger';
+                    Settings.primaryControl == 'Left Finger';
                 danceModel.practiceDancer!.practiceMousePressed =
-                    settings.mouseControl.contains('Press');
+                    Settings.mouseControl.contains('Press');
                 return fm.Listener(
                     onPointerDown: (event) {
                       danceModel.practiceDancer!.touchDown(

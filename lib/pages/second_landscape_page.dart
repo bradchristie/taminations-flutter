@@ -45,7 +45,6 @@ class SecondLandscapePage extends fm.StatelessWidget {
                 return fm.Container();
               final titleModel = pp.Provider.of<TitleModel>(context, listen: false);
               final model = pp.Provider.of<DanceModel>(context, listen: false);
-              final settings = pp.Provider.of<Settings>(context, listen: false);
 
               //  TODO this duplicates the same code in animation_page _startModel
               var callEntry = callIndex.firstWhere((element) => element.link == tamState.link);
@@ -63,7 +62,7 @@ class SecondLandscapePage extends fm.StatelessWidget {
                   return fullname == tamState.animname;
                 },orElse: () => tam);
               model.setAnimatedCall(tam,
-                  geometryType: Geometry.fromString(settings.geometry).geometry);
+                  geometryType: Geometry.fromString(Settings.geometry).geometry);
               titleModel.title = tam.title;
               titleModel.level = LevelData.find(tamState.link!)?.name ?? '';
 

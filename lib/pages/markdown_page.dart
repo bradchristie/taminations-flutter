@@ -71,14 +71,13 @@ class _MarkdownFrameState extends fm.State<MarkdownFrame> {
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
-    var settings  = pp.Provider.of<Settings>(context);
-    _loadMdFromAssets(settings,currentLink);
+    _loadMdFromAssets(currentLink);
   }
 
   @override
   fm.Widget build(fm.BuildContext context) {
     final markdownStyle = MarkdownStyleSheet(
-      textScaleFactor: 1.2,
+      textScaler: fm.TextScaler.linear(1.2),
       blockSpacing: 0,
       //  H1 used for main headings
       h1: fm.TextStyle(fontSize:20,color: Color.RED, fontWeight: fm.FontWeight.bold,
@@ -110,8 +109,8 @@ class _MarkdownFrameState extends fm.State<MarkdownFrame> {
       //  Padding at end of each paragraph
       pPadding: fm.EdgeInsets.only(bottom:10.0)
     );
-    return pp.Consumer3<Settings,TamState,HighlightState>(
-        builder: (context, settings,  tamState, highlightState, child) {
+    return pp.Consumer2<TamState,HighlightState>(
+        builder: (context, tamState, highlightState, child) {
           return fm.FutureBuilder(
               future:  _mdFuture,
               builder: (context,snapshot) {
@@ -131,7 +130,7 @@ class _MarkdownFrameState extends fm.State<MarkdownFrame> {
                                 Button('Back', onPressed: () {
                                   var link = linkStack.removeLast();
                                   titleStack.removeLast();
-                                  _loadMdFromAssets(settings, link);
+                                  _loadMdFromAssets(link);
                                 }),
                                 fm.Text(' to ${titleStack.lastOrNull ?? ''}',
                                     style: fm.TextStyle(fontSize: 20))
@@ -168,8 +167,7 @@ class _MarkdownFrameState extends fm.State<MarkdownFrame> {
                                           if (!abslink.contains('/'))
                                             abslink = '$_dir/$abslink';
                                           setState(() {
-                                            _loadMdFromAssets(
-                                                settings, abslink);
+                                            _loadMdFromAssets(abslink);
                                           });
                                         }
                                       }
@@ -186,8 +184,8 @@ class _MarkdownFrameState extends fm.State<MarkdownFrame> {
         });
   }
 
-  void _loadMdFromAssets(Settings settings,String htmllink) async {
-    final localizedAssetName = settings.getLanguageLink(htmllink.replaceFirst('\\.(html|md)'.r, '')) + '.md';
+  void _loadMdFromAssets(String htmllink) async {
+    final localizedAssetName = Settings.getLanguageLink(htmllink.replaceFirst('\\.(html|md)'.r, '')) + '.md';
     setState(() {
       _mdFuture = TamUtils.getAsset(localizedAssetName);
       currentLink = htmllink;
