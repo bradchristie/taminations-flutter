@@ -32,6 +32,7 @@ import 'c2/perk_up.dart';
 import 'c2/vertical.dart';
 import 'c3a/eight_by_anything.dart';
 import 'c3a/hop.dart';
+import 'c3a/recoil.dart';
 import 'c3a/travel_thru.dart';
 import 'common/double_selector.dart';
 import 'common/grand.dart';
@@ -529,6 +530,7 @@ abstract class CodedCall extends Call {
     '(14|34)Thru'.ri: (name) => QuarterThru(name),
 
     'Ramble'.ri: (name) => Ramble(name),
+    'Recoil'.ri: (name) => Recoil(name),
     'Regroup'.ri: (name) => Regroup(name),
     'Relocate(.*)'.ri: (name) => Relocate(name),
     'RelaytheTop'.ri: (name) => RelayTheTop(name),
