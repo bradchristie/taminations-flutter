@@ -32,7 +32,8 @@ class TurnTheStar extends Action {
 
   @override
   void addToStack(CallContext ctx) {
-    var callWithStars = ctx.findImplementor<CallWithStars>(startFrom: ctx.callstack.last);
+    var callWithStars = ctx.findImplementor<CallWithStars>(startFrom: ctx.callstack.last)
+    ?? thrower<CallWithStars>(CallError('Unable to find call with Stars'));
     if (norm.contains('donot'.ri))
       callWithStars.turnStarAmount = 0;
     //  First check for fractions 1/4 1/2 3/4

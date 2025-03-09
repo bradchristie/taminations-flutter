@@ -187,7 +187,7 @@ class CallContext {
     }
   }
 
-  T findImplementor<T>({Call? startFrom}) {
+  T? findImplementor<T>({Call? startFrom}) {
     var startIndex = callstack.indexOf(startFrom ?? callstack.first);
     for (var i=0; i<callstack.length*2; i++) {
       var ix = (i ~/ 2) * (i.isOdd ? 1 : -1) + startIndex;
@@ -207,7 +207,7 @@ class CallContext {
         }
       }
     }
-    throw CallError('Unable to find call that implements $T');
+    return null;
   }
 
   void noSnap({bool recurse=true}) {

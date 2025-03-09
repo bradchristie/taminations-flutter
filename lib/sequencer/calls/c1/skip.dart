@@ -32,7 +32,8 @@ class Skip extends Action {
 
   @override
   void addToStack(CallContext ctx) {
-    var callWithParts = ctx.findImplementor<CallWithParts>(startFrom:ctx.callstack.last);
+    var callWithParts = ctx.findImplementor<CallWithParts>(startFrom:ctx.callstack.last)
+    ?? thrower<CallWithParts>(CallError('Unable to find call with parts to Skip'));
     var whoSkip = CodedCall.specifier.ri.firstMatch(name);
     var matchN = 'last(\\d)part'.ri.firstMatch(norm);
     if (matchN != null) {

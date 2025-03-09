@@ -36,7 +36,8 @@ class Prefer extends CodedCall {
 
   @override
   void performCall(CallContext ctx) {
-    var preferCall = ctx.findImplementor<IsPrefer>(startFrom: this);
+    var preferCall = ctx.findImplementor<IsPrefer>(startFrom: this)
+    ?? thrower<IsPrefer>(CallError('Unable to find call that implements Prefer'));
     preferCall.prefer = name.replaceFirst('Prefer (the )?'.ri, '');
   }
 

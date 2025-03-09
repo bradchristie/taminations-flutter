@@ -37,7 +37,8 @@ class Grand extends CodedCall {
 
   @override
   void performCall(CallContext ctx) {
-    var grandCall = ctx.findImplementor<IsGrand>(startFrom:this);
+    var grandCall = ctx.findImplementor<IsGrand>(startFrom:this)
+    ?? thrower<IsGrand>(CallError('Unable to find call to apply Grand'));
     grandCall.isGrand = true;
     return;
   }

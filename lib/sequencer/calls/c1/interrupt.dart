@@ -34,7 +34,8 @@ It can be used in these ways:
   @override
   void addToStack(CallContext ctx) {
     final interruptName = name.replaceFirst('interrupt .+? with a?n?\\b'.ri,'').trim();
-    final call = ctx.findImplementor<CallWithParts>();
+    final call = ctx.findImplementor<CallWithParts>()
+        ?? thrower<CallWithParts>(CallError('Unable to find call with parts to Interrupt'));
     //  Find out where we are interrupting
     //  Special cases - after/between each part
     if (name.contains('(after|between) (each|every) part'.ri)) {

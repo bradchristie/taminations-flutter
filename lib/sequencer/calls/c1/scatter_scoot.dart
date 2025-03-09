@@ -1,7 +1,7 @@
 /*
 
   Taminations Square Dance Animations
-  Copyright (C) 2024 Brad Christie
+  Copyright (C) 2025 Brad Christie
 
   This program is free software: you can redistribute it and/or modify
   it under the terms of the GNU General Public License as published by
@@ -18,29 +18,19 @@
 
 */
 
-import '../call.dart';
-import '../coded_call.dart';
 import '../common.dart';
 
-mixin IsSingle on Call {
+class ScatterScoot extends Action with IsToAWave {
 
-  var isSingle = false;
-  String get single => isSingle ? 'Single' : '';
+  @override var level = LevelData.C1;
 
-}
-
-class Single extends CodedCall {
-
-  @override var nextCallCoded = true;
-
-  Single(super.name);
+  ScatterScoot(super.name);
 
   @override
   void performCall(CallContext ctx) {
-    var singleCall = ctx.findImplementor<IsSingle>(startFrom:this)
-    ?? thrower<IsSingle>(CallError('Unable to find call that accepts Single'));
-    singleCall.isSingle = true;
-    return;
+    ctx.applyCalls('Scatter Scoot to a Wave');
+    ctx.analyze();
+    dancersToaWave = ctx.center(4);
   }
 
 }

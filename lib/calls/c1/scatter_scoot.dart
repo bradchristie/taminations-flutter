@@ -94,6 +94,38 @@ import '../../moves.dart';
           ExtendLeft.changeBeats(1.5).scale(1.0,0.25)
       ]),
 
+    AnimatedCall('Scatter Scoot to a Wave',
+        formation:Formation('Ocean Waves RH BGGB'),
+        from:'Right-Hand Waves',
+        paths:[
+          ExtendRight.changeBeats(1.5).scale(2.0,0.25) +
+              SwingRight.scale(0.75,0.875),
+
+          RunLeft.changeBeats(6).skew(1, 0),
+
+          ExtendRight.changeBeats(1.5).scale(2.0,0.25) +
+              SwingRight.scale(0.75,0.875),
+
+          LeadRight.changeBeats(3).scale(2.5,3.0) +
+              LeadRight.changeBeats(3).scale(1.0,1.5)
+        ]),
+
+    AnimatedCall('Scatter Scoot to a Wave',
+        formation:Formation('Ocean Waves LH BGBG'),
+        from:'Left-Hand Waves',
+        paths:[
+          LeadLeft.changeBeats(3).scale(2.5,3.0) +
+              LeadLeft.changeBeats(3).scale(1.0,1.5),
+
+          ExtendLeft.changeBeats(1.5).scale(2.0,0.25) +
+              SwingLeft.scale(0.75,0.875),
+
+          RunRight.changeBeats(6).skew(1,0),
+
+          ExtendLeft.changeBeats(1.5).scale(2.0,0.25) +
+              SwingLeft.scale(0.75,0.875)
+        ]),
+
     AnimatedCall('Scatter Scoot Chain Thru',
       formation:Formation('Ocean Waves RH BGBG'),
       from:'Right-Hand Waves',parts:'2;3;3;3',

@@ -26,6 +26,7 @@ import 'b1/single_circle.dart';
 import 'b1/weave_the_ring.dart';
 import 'c1/follow_thru.dart';
 import 'c1/prefer.dart';
+import 'c1/scatter_scoot.dart';
 import 'c1/weave.dart';
 import 'c2/cross_concentric_cycle_and_wheel.dart';
 import 'c2/perk_up.dart';
@@ -551,6 +552,7 @@ abstract class CodedCall extends Call {
     'Run(Left|Right)?(Around\\d)?'.ri: (name) => Run(name),
 
     'SameSex(es)?.+'.ri: (name) => SameSex(name),
+    'ScatterScoot'.ri: (name) => ScatterScoot(name),
     'ScootandCrossRamble'.ri: (name) => ScootAndCrossRamble(name),
     'ScootandPlenty'.ri: (name) => ScootAndPlenty(name),
     'ScootandRamble'.ri: (name) => ScootAndRamble(name),

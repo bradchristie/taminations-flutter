@@ -28,7 +28,8 @@ class ReverseOrder extends Action {
 
   @override
   void performCall(CallContext ctx) {
-    var reverseCall = ctx.findImplementor<CallWithParts>();
+    var reverseCall = ctx.findImplementor<CallWithParts>()
+    ?? thrower<CallWithParts>(CallError('Unable to find call with parts to Reverse'));
     reverseCall.reverseParts(ctx);
   }
 

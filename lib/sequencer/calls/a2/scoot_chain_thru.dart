@@ -26,7 +26,7 @@ class ScootChainThru extends Action with CallWithParts, IsToAWave {
   @override var level = LevelData.A2;
   @override var helplink = 'a2/scoot_chain_thru';
   @override String get help => '''$name is a 5-part call:
-  1.  From waves, leaders${name.contains('Scatter')?'':'Scplit'} Circulate while trailers Extend
+  1.  From waves, leaders${name.contains('Scatter')?'':'Split'} Circulate while trailers Extend
       From 1/4 Tag, everyone Extend
   2.  Wave dancers Swing
   3.  Wave dancers Slip
