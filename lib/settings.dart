@@ -24,6 +24,33 @@ import 'package:shared_preferences/util/legacy_to_async_migration_util.dart';
 import 'call_index.dart';
 import 'common_flutter.dart';
 
+abstract class _BaseSettings {
+  bool? getBool(String key);
+  void setBool(String key, bool value);
+  String? getString(String key);
+  void setString(String key, String value);
+}
+
+class _MockSettings extends _BaseSettings {
+  @override bool? getBool(String key) => null;
+  @override void setBool(String key, bool value) { }
+  @override String? getString(String key) => null;
+  @override void setString(String key, String value) { }
+}
+
+class _ProxySettings extends _BaseSettings {
+  final SharedPreferencesWithCache proxy;
+  _ProxySettings(this.proxy);
+  @override bool? getBool(String key) => proxy.getBool(key);
+  @override void setBool(String key, bool value) {
+    proxy.setBool(key, value);
+  }
+  @override String? getString(String key) => proxy.getString(key);
+  @override void setString(String key, String value) {
+    proxy.setString(key, value);
+  }
+}
+
 class Settings extends fm.ChangeNotifier {
 
   static final List<String> _dancerColors = [ for (var i=1; i<=12; i++) 'default' ];
@@ -32,7 +59,7 @@ class Settings extends fm.ChangeNotifier {
 
   static bool _init = false;
   static late Settings _instance;
-  SharedPreferencesWithCache _prefs;
+  _BaseSettings proxy;
 
   //  This is boilerplate from Flutter docs
   static Future<void> _migratePreferences() async {
@@ -54,7 +81,7 @@ class Settings extends fm.ChangeNotifier {
         SharedPreferencesWithCache.create(
             cacheOptions: SharedPreferencesWithCacheOptions())
             .then((SharedPreferencesWithCache value) {
-          _instance = Settings._internal(value);
+               _instance = Settings._internal( _ProxySettings(value));
           ;
         });
       });
@@ -63,85 +90,89 @@ class Settings extends fm.ChangeNotifier {
     return true;
   }
 
+  static void mockInit() {
+    _instance = Settings._internal(_MockSettings());
+  }
+
   //  Only the code above can create the singleton object
-  Settings._internal(this._prefs);
+  Settings._internal(this.proxy);
   //  Default constructor returns singleton object
   factory Settings() => _instance;
 
   static String get speed =>
-      _instance._prefs.getString('Dancer Speed') ?? 'Normal Speed';
+      _instance.proxy.getString('Dancer Speed') ?? 'Normal Speed';
   static set speed(String value) {
-    _instance._prefs.setString('Dancer Speed', value);
+    _instance.proxy.setString('Dancer Speed', value);
     _instance.notifyListeners();
   }
 
   static bool get loop =>
-      _instance._prefs.getBool('Loop') ?? false;
+      _instance.proxy.getBool('Loop') ?? false;
   static set loop(bool value) {
-    _instance._prefs.setBool('Loop', value);
+    _instance.proxy.setBool('Loop', value);
     _instance.notifyListeners();
   }
 
   static bool get grid =>
-      _instance._prefs.getBool('Grid') ?? false;
+      _instance.proxy.getBool('Grid') ?? false;
   static set grid(bool value) {
-    _instance._prefs.setBool('Grid', value);
+    _instance.proxy.setBool('Grid', value);
     _instance.notifyListeners();
   }
 
   static String get axes =>
-      _instance._prefs.getString('Axes') ?? 'None';
+      _instance.proxy.getString('Axes') ?? 'None';
   static set axes(String value) {
-    _instance._prefs.setString('Axes', value);
+    _instance.proxy.setString('Axes', value);
     _instance.notifyListeners();
   }
 
   static bool get paths =>
-      _instance._prefs.getBool('Paths') ?? false;
+      _instance.proxy.getBool('Paths') ?? false;
   static set paths(bool value) {
-    _instance._prefs.setBool('Paths', value);
+    _instance.proxy.setBool('Paths', value);
     _instance.notifyListeners();
   }
 
   static String get numbers =>
-      _instance._prefs.getString('Numbers') ?? 'None';
+      _instance.proxy.getString('Numbers') ?? 'None';
   static set numbers(String value) {
-    _instance._prefs.setString('Numbers', value);
+    _instance.proxy.setString('Numbers', value);
     _instance.notifyListeners();
   }
 
   static String coupleColor(int i) =>
-      _instance._prefs.getString('Couple $i') ?? _coupleColors[i-1];
+      _instance.proxy.getString('Couple $i') ?? _coupleColors[i-1];
   static void setCoupleColor(int i, String value) {
-    _instance._prefs.setString('Couple $i', value);
+    _instance.proxy.setString('Couple $i', value);
     _instance.notifyListeners();
   }
 
   static String dancerColor(int i) =>
-      _instance._prefs.getString('Dancer $i') ?? _dancerColors[i-1];
+      _instance.proxy.getString('Dancer $i') ?? _dancerColors[i-1];
   static void setDancerColor(int i, String value) {
-    _instance._prefs.setString('Dancer $i', value);
+    _instance.proxy.setString('Dancer $i', value);
     _instance.notifyListeners();
   }
 
   static bool get phantoms =>
-      _instance._prefs.getBool('Phantoms') ?? false;
+      _instance.proxy.getBool('Phantoms') ?? false;
   static set phantoms(bool value) {
-    _instance._prefs.setBool('Phantoms', value);
+    _instance.proxy.setBool('Phantoms', value);
     _instance.notifyListeners();
   }
 
   static String get geometry =>
-      _instance._prefs.getString('Special Geometry') ?? 'None';
+      _instance.proxy.getString('Special Geometry') ?? 'None';
   static set geometry(String value) {
-    _instance._prefs.setString('Special Geometry', value);
+    _instance.proxy.setString('Special Geometry', value);
     _instance.notifyListeners();
   }
 
   static String get language =>
-      _instance._prefs.getString('Language for Definitions') ?? 'System';
+      _instance.proxy.getString('Language for Definitions') ?? 'System';
   static set language(String value) {
-    _instance._prefs.setString('Language for Definitions',value);
+    _instance.proxy.setString('Language for Definitions',value);
     _instance.notifyListeners();
   }
 
@@ -169,73 +200,73 @@ class Settings extends fm.ChangeNotifier {
   }
 
   static String get practiceGender =>
-      _instance._prefs.getString('PracticeGender') ?? 'Boy';
+      _instance.proxy.getString('PracticeGender') ?? 'Boy';
   static set practiceGender(String value) {
-    _instance._prefs.setString('PracticeGender',value);
+    _instance.proxy.setString('PracticeGender',value);
     _instance.notifyListeners();
   }
 
   static String get practiceSpeed =>
-      _instance._prefs.getString('PracticeSpeed') ?? 'Slow';
+      _instance.proxy.getString('PracticeSpeed') ?? 'Slow';
   static set practiceSpeed(String value) {
-    _instance._prefs.setString('PracticeSpeed',value);
+    _instance.proxy.setString('PracticeSpeed',value);
     _instance.notifyListeners();
   }
 
   static String get primaryControl =>
-  _instance._prefs.getString('PrimaryControl') ?? 'Left Finger';
+  _instance.proxy.getString('PrimaryControl') ?? 'Left Finger';
   static set primaryControl(String value) {
-    _instance._prefs.setString('PrimaryControl',value);
+    _instance.proxy.setString('PrimaryControl',value);
     _instance.notifyListeners();
   }
 
   static String get mouseControl =>
-      _instance._prefs.getString('MouseControl') ?? 'Pressed';
+      _instance.proxy.getString('MouseControl') ?? 'Pressed';
   static set mouseControl(String value) {
-    _instance._prefs.setString('MouseControl',value);
+    _instance.proxy.setString('MouseControl',value);
     _instance.notifyListeners();
   }
 
   static String get startingFormation =>
-      _instance._prefs.getString('Starting Formation') ?? 'Squared Set';
+      _instance.proxy.getString('Starting Formation') ?? 'Squared Set';
   static set startingFormation(String value) {
-    _instance._prefs.setString('Starting Formation',value);
+    _instance.proxy.setString('Starting Formation',value);
     _instance.notifyListeners();
   }
 
   static bool get dancerShapes =>
-      _instance._prefs.getBool('Dancer Shapes') ?? true;
+      _instance.proxy.getBool('Dancer Shapes') ?? true;
   static set dancerShapes(bool value) {
-    _instance._prefs.setBool('Dancer Shapes', value);
+    _instance.proxy.setBool('Dancer Shapes', value);
     _instance.notifyListeners();
   }
 
   static String get dancerIdentification =>
-      _instance._prefs.getString('Dancer Identification') ?? 'None';
+      _instance.proxy.getString('Dancer Identification') ?? 'None';
   static set dancerIdentification(String value) {
-    _instance._prefs.setString('Dancer Identification',value);
+    _instance.proxy.setString('Dancer Identification',value);
     _instance.notifyListeners();
   }
 
   static String get showDancerColors =>
-      _instance._prefs.getString('Dancer Colors') ?? 'By Couple';
+      _instance.proxy.getString('Dancer Colors') ?? 'By Couple';
   static set showDancerColors(String value) {
-    _instance._prefs.setString('Dancer Colors',value);
+    _instance.proxy.setString('Dancer Colors',value);
     _instance.notifyListeners();
   }
 
   static String get joinCallsWith =>
-      _instance._prefs.getString('Join Calls With') ?? 'New Line';
+      _instance.proxy.getString('Join Calls With') ?? 'New Line';
   static set joinCallsWith(String value) {
-    _instance._prefs.setString('Join Calls With', value);
+    _instance.proxy.setString('Join Calls With', value);
     _instance.notifyListeners();
   }
 
   //  Window dimensions are internal, set when user resizes the window
   static String get windowRect =>
-      _instance._prefs.getString('Window Rect') ?? '';
+      _instance.proxy.getString('Window Rect') ?? '';
   static set windowRect(String value) {
-    _instance._prefs.setString('Window Rect', value);
+    _instance.proxy.setString('Window Rect', value);
     //  no need to notify listeners
   }
 
