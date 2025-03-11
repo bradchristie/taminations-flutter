@@ -30,17 +30,21 @@ class CourtesyTurn extends Action {
 
   @override
   void performCall(CallContext ctx) {
-    for (var d in ctx.actives) {
-      if (d.gender == Gender.BOY && !d.data.beau ||
-          d.gender == Gender.GIRL && !d.data.belle) {
-        ctx.level = LevelData.PLUS;
+    //  Courtesy Turn is Plus if not a boy turning a girl
+    //  Check for that and set the level accordingly
+    ctx.activesContext((ctx2) {
+      for (var d in ctx2.dancers) {
+        if (d.gender == Gender.BOY && !d.data.beau ||
+            d.gender == Gender.GIRL && !d.data.belle) {
+          ctx.level = LevelData.PLUS;
+        }
       }
-    }
-    try {
-      ctx.applyCalls('Wheel Around');
-    } on CallError catch(e) {
-      throw CallError(e.description.replaceAll('Wheel Around', 'Courtesy Turn'));
-    }
+      try {
+        ctx2.applyCalls('Wheel Around');
+      } on CallError catch(e) {
+        throw CallError(e.description.replaceAll('Wheel Around', 'Courtesy Turn'));
+      }
+    });
   }
 
 }
