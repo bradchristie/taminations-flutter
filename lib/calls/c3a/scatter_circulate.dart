@@ -81,11 +81,81 @@ import '../../moves.dart';
 
           RunLeft.changeBeats(4).scale(1.0,2.0),
 
-          Forward +
-          ExtendLeft.changeBeats(3).scale(3.0,2.0),
+        ExtendLeft.changeBeats(3).scale(3.0,2.0) +
+            Forward,
 
           Forward_4
       ]),
+
+    AnimatedCall('Scatter Circulate',
+        formation: Formation('Eight Chain Thru'),
+        from: 'Eight Chain Thru',
+        paths: [
+          ExtendLeft.scale(1, 0.5) +
+              ExtendRight.scale(1,0.5),
+          ExtendLeft.scale(1, 0.5) +
+              ExtendRight.scale(1,0.5),
+          ExtendLeft.scale(1.5, 0.5) +
+              BackSashayRight.skew(0.5, -0.5),
+          ExtendLeft.scale(1.5, 0.5) +
+              SashayLeft.skew(0.5, -0.5)
+        ]),
+
+    AnimatedCall('Scatter Circulate',
+        formation: Formation('Trade By'),
+        from: 'Trade By',
+        paths: [
+          FlipLeft,
+          RunRight,
+          ExtendLeft.scale(1.5, 0.5) +
+              SashayLeft.skew(0.5, -0.5),
+          ExtendLeft.scale(1.5, 0.5) +
+              BackSashayRight.skew(0.5, -0.5),
+        ]),
+
+    AnimatedCall('Scatter Circulate',
+        formation: Formation('Magic Column RH'),
+        from: 'Magic Columns, Right-Hand Centers',
+        paths: [
+          Forward_2,
+          ExtendRight_2,
+          Forward +
+              ExtendRight.changeBeats(2).scale(1,2),
+          RunLeft
+        ]),
+
+    AnimatedCall('Scatter Circulate',
+        formation: Formation('Magic Column LH'),
+        from: 'Magic Columns, Left-Hand Centers',
+        paths: [
+          RunRight,
+          Forward +
+              ExtendLeft.changeBeats(2).scale(1,2),
+          ExtendLeft_2,
+          Forward_2,
+        ]),
+
+    AnimatedCall('Scatter Circulate',
+        formation: Formation('T-Bone LUUR'),
+        from: 'T-Bones 1',
+        paths: [
+          RunRight,
+          FlipLeft,
+          ExtendLeft.scale(1.5, 0.5) +
+              BackSashayRight.skew(0.5, -0.5),
+          ExtendLeft.scale(1.5, 0.5) +
+              SashayLeft.skew(0.5, -0.5),
+        ]),
+
+    AnimatedCall('Scatter Circulate',
+        formation: Formation('T-Bone RDDL'),
+        from: 'T-Bones 2',
+        paths: [
+          Forward_2,
+          Forward_2,
+          RunLeft.changeBeats(4).scale(1.0,2.0),
+          RunRight.changeBeats(4).scale(2.0,2.0),
+        ]),
 
     AnimatedCall('Scatter Circulate',
       formation:Formation('', dancers:[
@@ -94,7 +164,7 @@ import '../../moves.dart';
         DancerModel.fromData(gender:Gender.BOY,x:-1,y:3,angle:270),
         DancerModel.fromData(gender:Gender.GIRL,x:-1,y:1,angle:180),
   ]),
-      from:'T-Bone Lines',
+      from:'T-Bones 3',
       paths:[
           Forward_2,
 
@@ -105,5 +175,22 @@ import '../../moves.dart';
 
           RunLeft.scale(1.0,2.0)
       ]),
+
+    AnimatedCall('Scatter Circulate',
+        formation:Formation('', dancers:[
+          DancerModel.fromData(gender:Gender.BOY,x:1,y:3,angle:270),
+          DancerModel.fromData(gender:Gender.GIRL,x:1,y:1,angle:0),
+          DancerModel.fromData(gender:Gender.BOY,x:-1,y:3,angle:0),
+          DancerModel.fromData(gender:Gender.GIRL,x:-1,y:1,angle:270),
+        ]),
+        from:'T-Bones 4',
+        paths:[
+          Forward_2,
+          RunRight.scale(1.0,2.0),
+          Forward_2,
+          ExtendLeft.changeBeats(1.5).scale(1.0,1.5) +
+              ExtendLeft.scale(1.0,0.5)
+        ]),
+
   ];
 
