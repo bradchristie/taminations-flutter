@@ -23,14 +23,18 @@ Call pronunciations provided by
 
 ---
 
-## Taminations version 1.6.85 built 2025-02-26
+## Taminations version 1.6.86 built 2025-03-17
 Copyright 2025 by Brad Christie.  
 This is free software, and you are welcome to modify and redistribute it
 under the terms of the [GNU GPL license](http://www.gnu.org/licenses/gpl.html).  
 
 ## What's New
-* Fixes for display of hexagon and bi-gon geometry
-* Sequencer: fix crash for Circulate from some uncommon formations
+* Remember window size between sessions
+* More animations for Scatter Circulate
+* Sequencer: 
+  * Implement Split Square Chain Thru / the Top to a Wave
+  * Code for Recoil
+  * Fix some cases of Courtesy Turn incorrectly marked as Plus
 
 For a detailed history of changes, view the
 [Git log](https://github.com/bradchristie/taminations-flutter/commits/main)
