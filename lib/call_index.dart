@@ -1,4 +1,6 @@
 import 'call_entry.dart';
+import 'calls/a1/touch_12.dart' as a1;
+import 'calls/a1/cast_off_14.dart' as a1;
 import 'calls/c3b/single_file_cross_cycle.dart' as c3b;
 import 'calls/c3b/reverse_cut_flip_the_3_by_1_triangle.dart' as c3b;
 import 'calls/c3b/reverse_cut_flip_the_z.dart' as c3b;
@@ -627,6 +629,7 @@ var callIndex = [
   CallEntry('Cast a Shadow','a1','a1/cast_a_shadow',a1.CastAShadow,[],'a1/cast_a_shadow.mp3'),
   CallEntry('Cast and Relay','c3b','c3b/fraction_cast_and_relay',c3b.FractionCastAndRelay,[]),
   CallEntry('Cast Back','c1','c1/cast_back',c1.CastBack,[]),
+  CallEntry('Cast Off One Quarter / One Half','a1','a1/cast_off_14',  a1.CastOffOneQuarter,[]),
   CallEntry('Cast Off Three Quarters','ms','ms/cast_off_three_quarters',ms.CastOffThreeQuarters,['lang-de','lang-ja'],'ms/cast_off_three_quarters.mp3'),
   CallEntry('Cast Off Three Quarters','ssd','ssd/cast_off_three_quarters',ssd.CastOffThreeQuarters,['lang-de','lang-ja']),
   CallEntry('Catch 1, 2, 3, 4','c2','c2/catch',c2.Catch,[]),
@@ -1195,6 +1198,8 @@ var callIndex = [
   CallEntry('Three Quarter Tag','ms','ms/fraction_tag',ms.FractionTag,['lang-de','lang-ja']),
   CallEntry('Three Quarter Thru','a1','a1/quarter_thru',a1.QuarterThru,[]),
   CallEntry('Touch a Quarter','b2','b2/touch_a_quarter',b2.TouchAQuarter,['lang-ja','lang-de'],'b2/touch_a_quarter.mp3'),
+  CallEntry('Touch a Half / Three Quarters','a1','a1/touch_12',
+      a1.Touch_12,[]),
   CallEntry('Touch a Quarter','ssd','ssd/touch_a_quarter',ssd.TouchAQuarter,['lang-ja','lang-de']),
   CallEntry('Touch By','c3a','c3a/touch_by',c3a.TouchBy,[]),
   CallEntry('Track (0,1,2,3,4)','c1','c1/track_n',c1.TrackN,[]),

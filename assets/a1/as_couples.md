@@ -15,7 +15,9 @@ in, and the couples facing out, take the part of single dancers facing out. The 
 as shown:
 
 > 
-> ![alt](as_couples_1a.png)![alt](as_couples_1b.png)![alt](as_couples_1c.png)
+> ![alt](as_couples_1a.png)
+> ![alt](as_couples_1b.png)
+> ![alt](as_couples_1c.png)
 > 
 
 For Teaching: No one should let go of his partner during an As Couples call.
