@@ -27,11 +27,12 @@ import '../../moves.dart';
     AnimatedCall('Interlocked Scoot Back',
       formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-3,y:1,angle:0),
-        DancerModel.fromData(gender:Gender.BOY,x:-3,y:-1,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:0,y:1,angle:0),
+        DancerModel.fromData(gender:Gender.GIRL,x:-3,y:-1,angle:0),
+        DancerModel.fromData(gender:Gender.BOY,x:0,y:1,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:0,y:3,angle:0),
   ]),
       from:'Right-Hand Quarter Line',
+      numbers: ['1','8','2','7','4','5','3','6'],
       taminator: '''
       Some dance this instead as Couples Twosome Scoot Back
     ''',
@@ -74,4 +75,3 @@ import '../../moves.dart';
           ExtendRight.changeBeats(3).scale(1.5,2.0)
       ]),
   ];
-
