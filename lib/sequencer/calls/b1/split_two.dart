@@ -29,6 +29,10 @@ class SplitTwo extends Action {
 
   @override
   void performCall(CallContext ctx) {
+    //  Check that some dancers are inactive, not everyone
+    //  can be a splitter
+    if (ctx.dancers.every((d) => d.isActive))
+      throw CallError('Not everyone can Split');
     _activesAreCouples = ctx.actives.every((d) => ctx.isInCouple(d));
     for (var d in ctx.dancers) {
       var path = performOne(d, ctx);
