@@ -251,5 +251,215 @@ import '../../moves.dart';
           QuarterLeft.changeBeats(2).changehands(Hands.RIGHT).skew(-0.33,0.17) +
           DodgeRight
       ]),
+
+
+
+
+
+    AnimatedCall('Reverse 1/4 Wheel the Ocean',
+        formation:Formation('Two-Faced Line RH'),
+        from:'Right-Hand Two-Faced Line',parts:'1.5',
+        paths:[
+          HingeRight +
+              ExtendRight.changeBeats(3).changehands(Hands.LEFT).scale(3.0,2.0) +
+              Forward,
+          BackHingeLeft +
+              Stand.changeBeats(4).changehands(Hands.NONE),
+        ]),
+
+    AnimatedCall('Reverse 1/4 Wheel the Ocean',
+        formation:Formation('Two-Faced Lines RH'),
+        from:'Right-Hand Two-Faced Lines',parts:'1.5',
+        paths:[
+          HingeRight +
+              ExtendRight.changeBeats(3).changehands(Hands.LEFT).scale(3.0,2.0) +
+              Forward,
+          BackHingeLeft +
+              Stand.changeBeats(4).changehands(Hands.NONE),
+          BackHingeLeft +
+              Stand.changeBeats(4).changehands(Hands.NONE),
+          HingeRight +
+              ExtendRight.changeBeats(3).changehands(Hands.LEFT).scale(3.0,2.0) +
+              Forward,
+        ]),
+
+    AnimatedCall('Reverse 1/4 Wheel the Ocean',
+        formation:Formation('Two-Faced Tidal Line RH'),
+        from:'Right-Hand Two-Faced Tidal Line',parts:'1.5',
+        paths:[
+          HingeRight.scale(1.0,0.5) +
+              ExtendRight.changeBeats(2).changehands(Hands.LEFT).scale(1.0,2.0) +
+              Forward,
+
+          BackHingeLeft.scale(1.0,0.5) +
+              Stand.changeBeats(3).changehands(Hands.NONE),
+
+          BackHingeLeft.scale(1.0,0.5) +
+              Stand.changeBeats(3).changehands(Hands.NONE),
+
+          HingeRight.scale(1.0,0.5) +
+              ExtendRight.changeBeats(2).changehands(Hands.LEFT).scale(1.0,2.0) +
+              Forward
+        ]),
+
+    AnimatedCall('Reverse 3/4 Wheel the Ocean',
+        formation:Formation('Two-Faced Line LH'),
+        from:'Left-Hand Two-Faced Line',parts:'6',
+        paths:[
+          HingeRight.changeBeats(2).scale(2.0,2.0).skew(0.33,0.33) +
+              HingeRight.changeBeats(2).scale(2.0,2.0).skew(-0.33,0.33) +
+              HingeRight.changeBeats(2).scale(2.0,2.0).skew(-0.33,-0.33) +
+              ExtendRight.changeBeats(3).changehands(Hands.RIGHT).scale(3.0,2.0) +
+              Forward,
+          QuarterRight.changeBeats(2).changehands(Hands.LEFT).skew(0.33,0.33) +
+              QuarterRight.changeBeats(2).changehands(Hands.LEFT).skew(-0.33,0.33) +
+              QuarterRight.changeBeats(2).changehands(Hands.LEFT).skew(-0.33,-0.33) +
+              Stand.changeBeats(4).changehands(0),
+        ]),
+
+    AnimatedCall('Reverse 3/4 Wheel the Ocean',
+        formation:Formation('Two-Faced Lines LH'),
+        from:'Left-Hand Two-Faced Lines',parts:'6',
+        paths:[
+          QuarterRight.changeBeats(2).changehands(Hands.LEFT).skew(0.33,0.33) +
+              QuarterRight.changeBeats(2).changehands(Hands.LEFT).skew(-0.33,0.33) +
+              QuarterRight.changeBeats(2).changehands(Hands.LEFT).skew(-0.33,-0.33) +
+              Stand.changeBeats(4).changehands(0),
+          HingeRight.changeBeats(2).scale(2.0,2.0).skew(0.33,0.33) +
+              HingeRight.changeBeats(2).scale(2.0,2.0).skew(-0.33,0.33) +
+              HingeRight.changeBeats(2).scale(2.0,2.0).skew(-0.33,-0.33) +
+              ExtendRight.changeBeats(3).changehands(Hands.RIGHT).scale(3.0,2.0) +
+              Forward,
+          HingeRight.changeBeats(2).scale(2.0,2.0).skew(0.33,0.33) +
+              HingeRight.changeBeats(2).scale(2.0,2.0).skew(-0.33,0.33) +
+              HingeRight.changeBeats(2).scale(2.0,2.0).skew(-0.33,-0.33) +
+              ExtendRight.changeBeats(3).changehands(Hands.RIGHT).scale(3.0,2.0) +
+              Forward,
+          QuarterRight.changeBeats(2).changehands(Hands.LEFT).skew(0.33,0.33) +
+              QuarterRight.changeBeats(2).changehands(Hands.LEFT).skew(-0.33,0.33) +
+              QuarterRight.changeBeats(2).changehands(Hands.LEFT).skew(-0.33,-0.33) +
+              Stand.changeBeats(4).changehands(0),
+        ]),
+
+    AnimatedCall('Reverse 3/4 Wheel the Ocean',
+        formation:Formation('Two-Faced Tidal Line LH'),
+        from:'Left-Hand Two-Faced Tidal Line',parts:'6',
+        paths:[
+          QuarterRight.changeBeats(2).changehands(Hands.LEFT).skew(0.33,0.17) +
+              QuarterRight.changeBeats(2).changehands(Hands.LEFT).skew(-0.17,0.33) +
+              QuarterRight.changeBeats(2).changehands(Hands.LEFT).skew(-0.33,-0.17) +
+              Stand.changeBeats(4).changehands(0),
+          HingeRight.changeBeats(2).skew(0.33,0.17) +
+              HingeRight.changeBeats(2).skew(-0.17,0.33) +
+              HingeRight.changeBeats(2).skew(-0.33,-0.17) +
+              ExtendRight.changeBeats(3).changehands(Hands.LEFT).scale(2.0,1.0),
+          HingeRight.changeBeats(2).skew(0.33,0.17) +
+              HingeRight.changeBeats(2).skew(-0.17,0.33) +
+              HingeRight.changeBeats(2).skew(-0.33,-0.17) +
+              ExtendRight.changeBeats(3).changehands(Hands.LEFT).scale(2.0,1.0),
+          QuarterRight.changeBeats(2).changehands(Hands.LEFT).skew(0.33,0.17) +
+              QuarterRight.changeBeats(2).changehands(Hands.LEFT).skew(-0.17,0.33) +
+              QuarterRight.changeBeats(2).changehands(Hands.LEFT).skew(-0.33,-0.17) +
+              Stand.changeBeats(4).changehands(0),
+        ]),
+
+    AnimatedCall('Reverse 1/4 Wheel the Sea',
+        formation:Formation('Two-Faced Line RH'),
+        from:'Right-Hand Two-Faced Line',parts:'1.5',
+        paths:[
+          HingeRight +
+              Forward_4,
+          BackHingeLeft +
+              DodgeLeft.changeBeats(4),
+        ]),
+
+    AnimatedCall('Reverse 1/4 Wheel the Sea',
+        formation:Formation('Two-Faced Lines RH'),
+        from:'Right-Hand Two-Faced Lines',parts:'1.5',
+        paths:[
+          HingeRight +
+              Forward_4,
+          BackHingeLeft +
+              DodgeLeft.changeBeats(4),
+          BackHingeLeft +
+              DodgeLeft.changeBeats(4),
+          HingeRight +
+              Forward_4,
+        ]),
+
+    AnimatedCall('Reverse 1/4 Wheel the Sea',
+        formation:Formation('Two-Faced Tidal Line RH'),
+        from:'Right-Hand Two-Faced Tidal Line',parts:'1.5',
+        paths:[
+          HingeRight.scale(1.0,0.5) +
+              Forward_2.changeBeats(3),
+          BackHingeLeft.scale(1.0,0.5) +
+              DodgeLeft,
+          BackHingeLeft.scale(1.0,0.5) +
+              DodgeLeft,
+          HingeRight.scale(1.0,0.5) +
+              Forward_2.changeBeats(3),
+        ]),
+
+    AnimatedCall('Reverse 3/4 Wheel the Sea',
+        formation:Formation('Two-Faced Line LH'),
+        from:'Left-Hand Two-Faced Line',parts:'4.5',
+        paths:[
+          HingeRight.scale(2.0,2.0).skew(0.33,0.33) +
+              HingeRight.scale(2.0,2.0).skew(-0.33,0.33) +
+              HingeRight.scale(2.0,2.0).skew(-0.33,-0.33) +
+              Forward_4,
+          QuarterRight.changehands(Hands.LEFT).skew(0.33,0.33) +
+              QuarterRight.changehands(Hands.LEFT).skew(-0.33,0.33) +
+              QuarterRight.changehands(Hands.LEFT).skew(-0.33,-0.33) +
+              DodgeLeft.changeBeats(4),
+        ]),
+
+    AnimatedCall('Reverse 3/4 Wheel the Sea',
+        formation:Formation('Two-Faced Lines LH'),
+        from:'Left-Hand Two-Faced Lines',parts:'4.5',
+        paths:[
+          QuarterRight.changehands(Hands.LEFT).skew(0.33,0.33) +
+              QuarterRight.changehands(Hands.LEFT).skew(-0.33,0.33) +
+              QuarterRight.changehands(Hands.LEFT).skew(-0.33,-0.33) +
+              DodgeLeft.changeBeats(4),
+          HingeRight.scale(2.0,2.0).skew(0.33,0.33) +
+              HingeRight.scale(2.0,2.0).skew(-0.33,0.33) +
+              HingeRight.scale(2.0,2.0).skew(-0.33,-0.33) +
+              Forward_4,
+          HingeRight.scale(2.0,2.0).skew(0.33,0.33) +
+              HingeRight.scale(2.0,2.0).skew(-0.33,0.33) +
+              HingeRight.scale(2.0,2.0).skew(-0.33,-0.33) +
+              Forward_4,
+          QuarterRight.changehands(Hands.LEFT).skew(0.33,0.33) +
+              QuarterRight.changehands(Hands.LEFT).skew(-0.33,0.33) +
+              QuarterRight.changehands(Hands.LEFT).skew(-0.33,-0.33) +
+              DodgeLeft.changeBeats(4),
+        ]),
+
+    AnimatedCall('Reverse 3/4 Wheel the Sea',
+        formation:Formation('Two-Faced Tidal Line LH'),
+        from:'Left-Hand Two-Faced Tidal Line',parts:'6',
+        paths:[
+          QuarterRight.changeBeats(2).changehands(Hands.LEFT).skew(0.33,0.17) +
+              QuarterRight.changeBeats(2).changehands(Hands.LEFT).skew(-0.17,0.33) +
+              QuarterRight.changeBeats(2).changehands(Hands.LEFT).skew(-0.33,-0.17) +
+              DodgeLeft,
+          HingeRight.changeBeats(2).skew(0.33,0.17) +
+              HingeRight.changeBeats(2).skew(-0.17,0.33) +
+              HingeRight.changeBeats(2).scale(2.0,1.0).skew(-0.33,-0.17) +
+              Forward_2.changeBeats(3),
+          HingeRight.changeBeats(2).skew(0.33,0.17) +
+              HingeRight.changeBeats(2).skew(-0.17,0.33) +
+              HingeRight.changeBeats(2).scale(2.0,1.0).skew(-0.33,-0.17) +
+              Forward_2.changeBeats(3),
+          QuarterRight.changeBeats(2).changehands(Hands.LEFT).skew(0.33,0.17) +
+              QuarterRight.changeBeats(2).changehands(Hands.LEFT).skew(-0.17,0.33) +
+              QuarterRight.changeBeats(2).changehands(Hands.LEFT).skew(-0.33,-0.17) +
+              DodgeLeft,
+        ]),
+
+
+
   ];
 
