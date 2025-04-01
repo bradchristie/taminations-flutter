@@ -146,9 +146,6 @@ import '../c3b/anything_the_top.dart' as c3b;
           Forward_2
       ]),
 
-    c3b.AnythingTheTop.where((tam) =>
-      tam.title == 'Chase the Top').first.xref(title: 'Chase the Top').xref(group: ' '),
-
     AnimatedCall('Chase Your Leader',
       formation:Formation('Lines Facing Out'),
       group:' ',
