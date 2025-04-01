@@ -107,10 +107,10 @@ import '../../moves.dart';
 
     AnimatedCall('Motivate',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.GIRL,x:3,y:1,angle:270),
-        DancerModel.fromData(gender:Gender.GIRL,x:1,y:1,angle:0),
-        DancerModel.fromData(gender:Gender.BOY,x:-1,y:1,angle:0),
-        DancerModel.fromData(gender:Gender.BOY,x:-3,y:1,angle:0),
+        DancerModel.fromData(gender:Gender.BOY,x:3,y:1,angle:270),
+        DancerModel.fromData(gender:Gender.GIRL,x:-1,y:1,angle:0),
+        DancerModel.fromData(gender:Gender.BOY,x:1,y:1,angle:0),
+        DancerModel.fromData(gender:Gender.GIRL,x:-3,y:1,angle:0),
   ]),
       from:'T-Bones',parts:'2;4.5;3',difficulty: 3,
       paths:[
@@ -123,12 +123,6 @@ import '../../moves.dart';
           ExtendLeft.changeBeats(4.5).scale(2.0,3.9),
 
           Forward_2 +
-          LeadRight.changeBeats(4.5).scale(2.0,1.0) +
-          RunRight +
-          BelleReverseWheel +
-          BackHingeLeft,
-
-          Forward_2 +
           HingeRight.skew(0.5,0.0) +
           HingeRight.skew(0.0,0.25) +
           HingeRight.skew(-0.25,0.0) +
@@ -137,7 +131,13 @@ import '../../moves.dart';
           EighthLeft.changehands(Hands.LEFT).skew(0.707,-0.207) +
           CastRight,
 
-          Forward_2 +
+        Forward_2 +
+            LeadRight.changeBeats(4.5).scale(2.0,1.0) +
+            RunRight +
+            BelleReverseWheel +
+            BackHingeLeft,
+
+        Forward_2 +
           HingeRight.skew(-0.5,0.0) +
           HingeRight.skew(0.0,-0.25) +
           HingeRight.skew(0.25,0.0) +
