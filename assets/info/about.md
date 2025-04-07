@@ -23,18 +23,19 @@ Call pronunciations provided by
 
 ---
 
-## Taminations version 1.6.86 built 2025-03-17
+## Taminations version 1.6.87 built 2025-04-07
 Copyright 2025 by Brad Christie.  
 This is free software, and you are welcome to modify and redistribute it
 under the terms of the [GNU GPL license](http://www.gnu.org/licenses/gpl.html).  
 
 ## What's New
-* Remember window size between sessions
-* More animations for Scatter Circulate
+* Animations for Reverse 1/4, 3/4 Wheel the Ocean, Sea
+* Animations for Touch 1/2, 3/4, and Cast Off 1/4, 1/2
+* Fix animation for Interlocked Scoot Back
+* Attempt to fix startup crash on some platforms
 * Sequencer: 
-  * Implement Split Square Chain Thru / the Top to a Wave
-  * Code for Recoil
-  * Fix some cases of Courtesy Turn incorrectly marked as Plus
+  * Better code for Split Two
+  * Handle less common applications of Dive Thru
 
 For a detailed history of changes, view the
 [Git log](https://github.com/bradchristie/taminations-flutter/commits/main)
