@@ -76,7 +76,8 @@ class _TaminationsAppState extends fm.State<TaminationsApp> with WindowListener 
 
   @override
   void dispose() {
-    windowManager.removeListener(this);
+    if (TamUtils.isWindowDevice)
+      windowManager.removeListener(this);
     super.dispose();
   }
 
@@ -154,8 +155,10 @@ class _TaminationsAppState extends fm.State<TaminationsApp> with WindowListener 
 
   @override
   void onWindowResize() async {
-    var b = await windowManager.getBounds();
-    Settings.windowRect = '${b.left} ${b.top} ${b.right} ${b.bottom}';
+    if (TamUtils.isWindowDevice) {
+      var b = await windowManager.getBounds();
+      Settings.windowRect = '${b.left} ${b.top} ${b.right} ${b.bottom}';
+    }
   }
 }
 
