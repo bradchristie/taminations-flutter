@@ -215,6 +215,9 @@ class _MarkdownFrameState extends fm.State<MarkdownFrame> {
     //  Links don't seem to format properly in embed pages
     if (tamState.embed)
       md = md.replaceAllMapped('\\[(.*?)\\]\\(.*?md\\)'.r, (m) => m[1]!);
+    //  Remove web-specific info from apps
+    if (TamUtils.platform() != 'web')
+      md = md.replaceAll(r'\[web only\].*\[end web only\]: #'.rd,'');
     return md
     //  Title is uppercase
         .replaceAllMapped('^# (.*)'.rm,(m) => '# ${m[1]!.toUpperCase()}')

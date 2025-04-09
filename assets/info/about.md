@@ -40,7 +40,7 @@ under the terms of the [GNU GPL license](http://www.gnu.org/licenses/gpl.html).
 For a detailed history of changes, view the
 [Git log](https://github.com/bradchristie/taminations-flutter/commits/main)
 
-
+[web only]: #
 ***
 ## Recommended Browsers
 
@@ -55,6 +55,7 @@ Or you can use these links
 [for the Windows program](https://www.microsoft.com/en-us/p/taminations/9nblggh5gghh)
 and [for the Mac program](https://apps.apple.com/us/app/taminations/id613793359).
 
+[end web only]: #
 
 ## More Information
 
