@@ -148,30 +148,30 @@ import '../../moves.dart';
 
     AnimatedCall('Ends Zoom',
       formation:Formation('Two-Faced Lines RH'),
-      from:'Two-Faced Lines',fractions:'3',difficulty: 2,
+      from:'Two-Faced Lines',fractions:'2',difficulty: 2,
       paths:[
-          Forward_4.changeBeats(6),
+          Forward_4.changeBeats(4),
 
           Path(),
 
           Path(),
 
-          RunLeft.skew(-2.0,0.0) +
-          RunLeft.skew(2.0,0.0)
+          RunLeft.changeBeats(2).skew(-2.0,0.0) +
+          RunLeft.changeBeats(2).skew(2.0,0.0)
       ]),
 
     AnimatedCall('Points Zoom',
       formation:Formation('Diamonds RH Girl Points'),
-      from:'Diamonds',fractions:'3',difficulty: 2,
+      from:'Diamonds',fractions:'2',difficulty: 2,
       paths:[
           Path(),
 
-          Forward_4.changeBeats(6),
+          Forward_4.changeBeats(4),
 
           Path(),
 
-          RunLeft.skew(-2.0,0.0) +
-          RunLeft.skew(2.0,0.0)
+          RunLeft.changeBeats(2).skew(-2.0,0.0) +
+          RunLeft.changeBeats(2).skew(2.0,0.0)
       ]),
   ];
 
