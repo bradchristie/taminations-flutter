@@ -1,4 +1,5 @@
 import 'call_entry.dart';
+import 'calls/c1/step_and_squeeze.dart' as c1;
 import 'calls/a1/touch_12.dart' as a1;
 import 'calls/a1/cast_off_14.dart' as a1;
 import 'calls/c3b/single_file_cross_cycle.dart' as c3b;
@@ -1140,6 +1141,7 @@ var callIndex = [
   CallEntry('Step and Flip','c1','c1/step_and_flip',c1.StepAndFlip,[]),
   CallEntry('Step and Fold','c1','c1/step_and_fold',c1.StepAndFold,[]),
   CallEntry('Step and Slide','a1','a1/step_and_slide',a1.StepAndSlide,[],'a1/step_and_slide.mp3'),
+  CallEntry('Step and Squeeze','c1','c1/step_and_squeeze',c1.StepAndSqueeze,[]),
   CallEntry('Step Thru','b1','b1/step_thru',b1.StepThru,['lang-de'],'b1/step_thru.mp3'),
   CallEntry('Step Thru','ssd','ssd/step_thru',ssd.StepThru,['lang-de'],'b1/step_thru.mp3'),
   CallEntry('Step to a Wave','b2','b2/ocean_wave',b2.OceanWave,['lang-de','lang-ja']),

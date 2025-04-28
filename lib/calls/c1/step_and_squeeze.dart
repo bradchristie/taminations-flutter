@@ -28,13 +28,15 @@ final List<AnimatedCall> StepAndSqueeze = [
       formation:Formation('Lines Facing Out'),
       from:'Lines Facing Out',
       paths:[
-        FlipLeft.skew(-1.0,0.0),
+        DodgeLeft.skew(-1,0) +
+            FlipLeft,
 
         Forward.changehands(Hands.LEFT),
 
         Forward.changehands(Hands.RIGHT),
 
-        FlipRight.skew(-1.0,0.0)
+        DodgeRight.skew(-1,0) +
+            RunRight,
       ]),
 
 
