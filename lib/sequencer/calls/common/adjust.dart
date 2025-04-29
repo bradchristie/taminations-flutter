@@ -58,6 +58,7 @@ Formations you can use include
         ?? thrower(CallError('Unable to match formation to $fname'));
     if (!ctx.adjustToFormationMatch(mapping!.match))
       throw CallError('No adjustment to $fname needed.');
+    ctx.dancers.forEach((d) { d.path = d.path.setFromCall(true); });
     ctx.noSnap(recurse: false);
   }
 

@@ -134,7 +134,7 @@ class Movement extends Cloneable<Movement> {
   //  Return a new movement by changing the hands
   Movement useHands(int h) => Movement(beats,h,btranslate,brotate,fromCall: fromCall);
 
-  Movement notFromCall() => Movement(beats,hands,btranslate,brotate,fromCall: false);
+  Movement setFromCall(bool isFrom) => Movement(beats,hands,btranslate,brotate,fromCall: isFrom);
 
   /// Return a new Movement scaled by x and y factors.
   /// If y is negative hands are also switched.
@@ -152,7 +152,7 @@ class Movement extends Cloneable<Movement> {
   /// Return a new Movement with the end point shifted by x and y
   /// Coords are dancer space at dancer's start position
   Movement skew(double x, double y) =>
-      Movement(beats,hands,btranslate.skew(x, y), brotate); //, fromCall: fromCall);
+      Movement(beats,hands,btranslate.skew(x, y), brotate, fromCall: fromCall);
 
   /// Return a new Movement with the final facing position turned
   /// by a specific radians

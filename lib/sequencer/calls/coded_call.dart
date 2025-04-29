@@ -156,6 +156,7 @@ import 'c1/squeeze.dart';
 import 'c1/squeeze_the_galaxy.dart';
 import 'c1/squeeze_the_hourglass.dart';
 import 'c1/start.dart';
+import 'c1/step_and_fold.dart';
 import 'c1/stretch.dart';
 import 'c1/substitute.dart';
 import 'c1/swing_and_circle.dart';
@@ -217,6 +218,7 @@ import 'c2/vertical.dart';
 import 'c2/wheel_the_ocean.dart';
 import 'c2/zip_code.dart';
 import 'c3a/breaker.dart';
+import 'c3a/choice.dart';
 import 'c3a/couple_up.dart';
 import 'c3a/delight_dilemma.dart';
 import 'c3a/eight_by_anything.dart';
@@ -382,6 +384,7 @@ abstract class CodedCall extends Call {
     'ChaseRight'.ri: (name) => ChaseRight(name),
     'Checkpoint((.+)By(.*))?'.ri: (name) => Checkpoint(name),
     'ChiselThru'.ri: (name) => ChiselThru(name),
+    'Choice'.ri: (name) => Choice(name),
     'CircleBy((14|12|34|Nothing)and(14|12|34|Nothing))?'.ri: (name) => CircleBy(name),
     'CircleBy(14|12|34|Nothing)and(?!(14|12|34|Nothing)).*'.ri: (name) => CircleBy(name),
     '(Box)?Circulate'.ri: (name) => Circulate(name),
@@ -621,6 +624,7 @@ abstract class CodedCall extends Call {
     'Step(Ahead)?'.ri: (name) => Step(name),
     'PressAhead'.ri: (name) => Step(name),
     'MoveIn(totheCenter)?'.ri: (name) => Step(name),
+    'StepandFold'.ri: (name) => StepAndFold(name),
     'StepThru'.ri: (name) => StepThru(name),
     'SteptoaCompact(LeftHand)?Wave'.ri: (name) => StepToACompactWave(name),
     //  Stretch not Stretched

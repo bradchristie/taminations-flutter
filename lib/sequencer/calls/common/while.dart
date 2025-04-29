@@ -29,9 +29,21 @@ class While extends Action {
 
     //  First strip off extra beats added to the inactive dancers
     ctx.contractPaths();
+    //  Often the two groups are centers and ends
+    //  Make sure they don't overlap
+    //  First we find out if the first group are centers
+    var firstGroupCenters = false;
+    if (ctx.actives.length == 4) {
+      ctx.animate(0);
+      if (ctx.center(4).containsAll(ctx.actives) ||
+          (ctx.centerWaveOf4()??[]).containsAll(ctx.actives) ||
+          (ctx.centerDiamond()??[]).containsAll(ctx.actives))
+        firstGroupCenters = true;
+    }
+    var saveActives = ctx.actives;
 
     //  Use another context to do the rest of the call
-    var ctx2 = CallContext.fromContext(ctx,beat:0.0)..noSnap(recurse: false);
+    var ctx2 = CallContext.fromContext(ctx,beat: 0)..noSnap(recurse: false);
     if (name.toLowerCase().contains('others')) {
       for (var d in ctx2.dancers) {
         d.data.active = !d.data.active;
@@ -46,10 +58,13 @@ class While extends Action {
         .replaceAll('while (the )?'.r,'')
         .replaceAll('(the )?others? '.r,'');
     ctx2.applyCalls(whilecall);
+    //ctx2.checkCenters();
     //  Check that nobody is active on both sides of while
     if (ctx.movingDancers().toSet().intersection(ctx2.movingDancers().toSet()).isNotEmpty)
       throw CallError('Cannot have dancers active on both sides of While');
     ctx2.appendToSource();
+    if (firstGroupCenters)
+      ctx.checkCenters(centersToCheck: saveActives);
 
     //  Mark all the dancers active so post-processing doesn't
     //  think just the non-while dancers are moving

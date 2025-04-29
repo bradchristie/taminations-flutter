@@ -4122,4 +4122,14 @@ Pass the Ocean
 Left Swing Thru 1.5
 Right and Left Grand''', ''),
 
+  TestSequence('Choice','''Sides Pass the Ocean
+Extend
+1/2 Circulate
+Choice
+Outer 4 Counter Rotate
+All 8 Circulate
+Split Circulate
+Cast Off 3/4 and Roll
+Right and Left Grand''',''),
+
 ];

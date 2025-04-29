@@ -167,8 +167,8 @@ class Path implements Cloneable<Path> {
     return this;
   }
 
-  Path notFromCall() {
-    return Path(movelist.map((it) => it.notFromCall()).toList());
+  Path setFromCall(bool isFrom) {
+    return Path(movelist.map((it) => it.setFromCall(isFrom)).toList());
   }
 
   /// Return a transform for a specific point of time

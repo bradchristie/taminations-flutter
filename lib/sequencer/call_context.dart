@@ -686,7 +686,6 @@ class CallContext {
           var matchAngle = matchResult.transform.angle.angleOff90;
           var matchAngleDiff1 = angleOff90.angleDiff(ctx2.angleOff90).angleDiff(matchAngle);
           var matchAngleDiff2 = angleOff90.angleDiff(ctx2.angleOff90).angleDiff(-matchAngle);
-          //print('$matchAngle  $matchAngleDiff1  $matchAngleDiff2');
           var angleOK = matchAngle.isAround(0.0,delta:0.15) ||
               matchAngleDiff1.isAround(0.0,delta:0.15) ||
               matchAngleDiff2.isAround(0.0,delta:0.15);
@@ -805,11 +804,11 @@ class CallContext {
   //  stay in the center and don't collide with the other dancers
   //  Also checks if the outer 4 are doing a call that collides
   //  with the centers
-  void checkCenters({bool force=false}) {
+  void checkCenters({List<DancerModel>? centersToCheck}) {
     if (dancers.length == 8) {
       animate(0.0);
       analyze();
-      final moving = force ? center(4) : movingDancers();
+      final moving = centersToCheck ?? movingDancers();
       final cw4 = centerWaveOf4();
       final cd4 = centerDiamond();
       final out4 = outer(4);
@@ -962,7 +961,7 @@ class CallContext {
         else
           m = StandAhead
             .changeBeats(match.offsets[i].length)
-            .notFromCall().pop();
+            .setFromCall(false).pop();
         //  Transform the offset to the DancerModel's angle
         if (adjustFirstMovement)
           d.animate(0);
@@ -1485,11 +1484,11 @@ class CallContext {
       var b = maxb - d.path.beats;
       if (b > 0) {
         if (b < 1 && d.path.movelist.isNotEmpty) {
-          //  Small change - ust change the length
+          //  Small change - just change the length
           d.path = d.path.changeBeats(d.path.beats + b);
         } else {
           //  Large change - add that number as needed by using the 'Stand' move
-          d.path = d.path + Stand.changeBeats(b).notFromCall();
+          d.path = d.path + Stand.changeBeats(b).setFromCall(false);
         }
       }
     }
@@ -1498,7 +1497,9 @@ class CallContext {
   //  Strip off extra beats added by extendPaths
   void contractPaths() {
     for (var d in dancers) {
-      while (d.path.movelist.isNotEmpty && d.path.movelist.last.fromCall == false) {
+      while (d.path.movelist.isNotEmpty &&
+          d.path.movelist.last.isStand() &&
+          !d.path.movelist.last.fromCall) {
         d.path.pop();
       }
     }

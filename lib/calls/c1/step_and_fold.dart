@@ -27,6 +27,7 @@ import '../../moves.dart';
     AnimatedCall('Step and Fold',
       formation:Formation('Wave RH'),
       from:'Right-Hand Wave',
+        notForSequencer: true,
       paths:[
           RunRight.skew(1.5,0.0),
 
@@ -36,6 +37,7 @@ import '../../moves.dart';
     AnimatedCall('Step and Fold',
       formation:Formation('Wave LH'),
       from:'Left-Hand Wave',
+        notForSequencer: true,
       paths:[
           RunLeft.skew(1.5,0.0),
 
