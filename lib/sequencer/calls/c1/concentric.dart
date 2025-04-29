@@ -117,7 +117,7 @@ class Concentric extends Action {
     _performConcentric(outerCtx);
     outerCtx.appendToSource();
     //  Another check that the centers and outside do not collide
-    ctx.checkCenters(force:true);
+    ctx.checkCenters(centersToCheck: ctx.center(4));
     ctx.appendToSource();
     //  Make sure we end with the same active dancers, so ".. and Roll" will work
     ctx0.actives = saveActives;

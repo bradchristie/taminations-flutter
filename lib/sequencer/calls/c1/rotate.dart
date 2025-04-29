@@ -73,7 +73,7 @@ class Rotate extends Action with IsReverse, IsSingle {
     if (norm.endsWith('34'))
       ctx.applyCalls('Counter Rotate');
     ctx.contractPaths();
-    ctx.checkCenters(force: true);
+    ctx.checkCenters(centersToCheck: ctx.center(4));
   }
 
   void perform_C2(CallContext ctx) {
