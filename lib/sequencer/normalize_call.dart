@@ -103,6 +103,10 @@ String normalizeCall(String callname) =>
         .replaceAll('on the fifth hand'.ri,'On 5')
         .replaceAll('on the sixth hand'.ri,'On 6')
         .replaceAllMapped('left (split )?dixie'.ri,(m)=>'Reverse ${m[1]??''}Dixie')
+    //  Some expressions to handle quirks of Split 2
+        .replaceAll('split the outside?s( couple)?'.ri,'Split 2')
+        .replaceAll('split 2( separate)?( go)? around 1 to a line'.ri,
+            'split 2 separate')
     //  Remove superfluous Buts, so not to confuse the real But
         .replaceAllMapped('but (skip|replace|delete|interrupt)'.ri, (m) => m[1]!)
     //  'Dixie Style' -> 'Dixie Style to a Wave'

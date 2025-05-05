@@ -170,12 +170,13 @@ class XMLCall extends Call {
     ctxwork.animate(endbeat);
     var matchResult = ctxwork.computeFormationOffsets(ctx2, xmlmap, delta: 0.2);
     ctxwork.adjustToFormationMatch(matchResult,adjustFirstMovement: true);
-    ctxwork.animateToEnd();
 
     //  Mark dancers that had no XML move as inactive
     //  Needed for post-call modifications e.g. spread
     //  But first check if actives are specifically flagged in the animation
     var inactives = <DancerModel>[];
+    ctxwork.animate(0);
+    ctxwork.analyze();
     switch (xcall.actives) {
       case 'Heads' :
         inactives = ctxwork.dancers.where((d) => d.isSide).toList();

@@ -38,6 +38,12 @@ class SplitTwo extends Action {
       var path = performOne(d, ctx);
       d.path += path;
     }
+    //  normalizeCall handles variations like
+    //  'Go Around 1 to a Line'
+    //  replacing with Separate
+    if (norm.endsWith('separate')) {
+      ctx.applyCalls('Separate');
+    }
   }
 
   @override

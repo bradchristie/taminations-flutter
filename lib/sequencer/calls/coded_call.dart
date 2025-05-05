@@ -605,7 +605,9 @@ abstract class CodedCall extends Call {
     'SplitSquareChainThru'.ri: (name) => SplitSquareChainThru(name),
     'SplitSquareChaintheTop'.ri: (name) => SplitSquareChainTheTop(name),
     'SplitSquareThru[2-7]?'.ri: (name) => SplitSquareThru(name),
-    'Split(2|theOutsides?(Couple))?'.ri: (name) => SplitTwo(name),
+    'Split(2|theOutsides?(Couple)?)'
+        '(Separate)?(and)?(Go)?(Around1toaLine)?'.ri:
+        (name) => SplitTwo(name),
     '(and)?Spread'.ri: (name) => Spread(name),
     'SquareChaintheTop'.ri: (name) => SquareChainTheTop(name),
     'SquareChainThru'.ri: (name) => SquareChainThru(name),
