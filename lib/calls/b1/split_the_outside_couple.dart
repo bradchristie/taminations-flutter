@@ -26,24 +26,7 @@ import '../../moves.dart';
 
     AnimatedCall('Centers Split the Outside Couple',
       formation:Formation('Eight Chain Thru'),
-      group:' ',actives:'Centers',
-      paths:[
-          ExtendLeft.scale(1.0,0.5) +
-          ExtendRight.scale(1.0,0.5),
-
-          ExtendRight.scale(1.0,0.5) +
-          ExtendLeft.scale(1.0,0.5),
-
-          ExtendRight.scale(1.0,0.5) +
-          ExtendLeft.scale(1.0,0.5),
-
-          ExtendLeft.scale(1.0,0.5) +
-          ExtendRight.scale(1.0,0.5)
-      ]),
-
-    AnimatedCall('Centers Split Two',
-      formation:Formation('Eight Chain Thru'),
-      group:' ',actives:'Centers',noDisplay: true,
+      group:' ',actives:'Centers', notForSequencer: true,
       paths:[
           ExtendLeft.scale(1.0,0.5) +
           ExtendRight.scale(1.0,0.5),
@@ -74,5 +57,47 @@ import '../../moves.dart';
           ExtendLeft.skew(0.5,-0.5) +
           RunRight.skew(-0.5,-0.5)
       ]),
+
+    AnimatedCall('Centers Split 2,'
+        ' Go Around One and Come Into the Middle',
+        formation:Formation('Eight Chain Thru'),
+        from:'Pass Thru',group:' ',actives:'Centers',
+        paths:[
+          DodgeLeft.changeBeats(1).scale(0.25,0.25).skew(0.5,0.0) +
+              DodgeRight.changeBeats(1).scale(0.25,0.25).skew(0.5,0.0) +
+              Stand.changeBeats(2) +
+              Back.changehands(Hands.RIGHT),
+
+          DodgeRight.changeBeats(1).scale(0.25,0.25).skew(0.5,0.0) +
+              DodgeLeft.changeBeats(1).scale(0.25,0.25).skew(0.5,0.0) +
+              Stand.changeBeats(2) +
+              Back.changehands(Hands.LEFT),
+
+          ExtendRight.skew(0.5,0.5) +
+              RunLeft.skew(-0.5,0.5) +
+              LeadLeft.scale(1, 2).changeBeats(2),
+
+          ExtendLeft.skew(0.5,-0.5) +
+              RunRight.skew(-0.5,-0.5) +
+              LeadRight.scale(1, 2).changeBeats(2),
+        ]),
+
+    AnimatedCall('Around One and Come Into the Middle',
+        formation:Formation('Trade By'),
+        from:'Trade By',group:' ',actives:'Centers',
+        paths:[
+              RunRight.skew(-1,0) +
+              LeadRight.scale(1, 2).changeBeats(2),
+
+          RunLeft.skew(-1,0) +
+              LeadLeft.scale(1, 2).changeBeats(2),
+
+          Stand.changeBeats(2) +
+              Back_2.changehands(Hands.LEFT),
+
+          Stand.changeBeats(2) +
+              Back_2.changehands(Hands.RIGHT),
+
+        ]),
   ];
 

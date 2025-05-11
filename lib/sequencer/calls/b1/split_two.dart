@@ -41,7 +41,9 @@ class SplitTwo extends Action {
     //  normalizeCall handles variations like
     //  'Go Around 1 to a Line'
     //  replacing with Separate
-    if (norm.endsWith('separate')) {
+    if (norm.contains('intothemiddle'))
+      ctx.applyCalls('Around 1 and Come Into the Middle');
+    else if (norm.contains('separate')) {
       ctx.applyCalls('Separate');
     }
   }
