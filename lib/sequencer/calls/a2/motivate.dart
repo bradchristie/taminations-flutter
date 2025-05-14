@@ -32,6 +32,13 @@ class Motivate extends Action with CallWithParts, CallWithStars, ButCall {
 The star amount can be changed with Turn the Star (fraction).
 The final Cast Off 3/4 can be replaced with But (another call).''';
   @override var helplink = 'a2/motivate';
+    var StarFormation = Formation('', dancers:[
+    DancerModel.fromData(gender:Gender.BOY,x:1,y:0,angle:270),
+    DancerModel.fromData(gender:Gender.GIRL,x:3,y:0,angle:90),
+    DancerModel.fromData(gender:Gender.BOY,x:5,y:0,angle:270),
+    DancerModel.fromData(gender:Gender.GIRL,x:0,y:1,angle:0),
+  ]);
+
 
   Motivate(super.name);
 
@@ -43,7 +50,8 @@ The final Cast Off 3/4 can be replaced with But (another call).''';
   @override
    void performPart2(CallContext ctx) {
     ctx.applyCalls('Center 4 Cast Off 3/4 '
-        'While Others Do Your Part Big Hourglass Circulate');
+        'While Others Half Circulate');
+    ctx.adjustToFormation(StarFormation);
   }
 
   @override
