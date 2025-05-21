@@ -15,7 +15,7 @@ dependencies:
     sdk: flutter
   auto_size_text: ^3.0.0-nullsafety
   bezier: any
-  flutter_markdown: ^0.7.3
+  flutter_markdown_plus: ^1.0.3
   google_fonts: ^6.2.0
   just_audio: ^0.9.11
   markdown: ^7.0.1
@@ -69,7 +69,7 @@ flutter:
 #  This is for building a Windows release:
 #  dart run msix:create
 #  Then to make a bundle, from the windows directory:
-#  makeappx.exe bundle  /f mapping.txt /p taminations.msixbundle /bv 1.6.88.0
+# as
 msix_config:
   display_name: Taminations
   publisher_display_name: Brad Christie
