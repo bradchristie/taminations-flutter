@@ -53,6 +53,7 @@ import '../../moves.dart';
     AnimatedCall('Cast Off Three Quarters',
       formation:Formation('Wave RH'),
       from:'Right-Hand Wave',difficulty: 1,
+      notForSequencer: true,
       paths:[
           SwingRight +
           HingeRight.skew(0.0,0.5),

@@ -4132,4 +4132,16 @@ Split Circulate
 Cast Off 3/4 and Roll
 Right and Left Grand''',''),
 
+  TestSequence('Latch On','''Sides Pass the Ocean
+Extend
+Ends Latch On 1/2
+Girls Latch On 1/2
+Hinge
+Circulate
+Boys Left Latch On
+Girls Left Latch On 3/4
+Split Circulate
+Cast Off 3/4 and Roll
+Right and Left Grand''' , ''),
+
 ];

@@ -223,6 +223,7 @@ import 'c3a/couple_up.dart';
 import 'c3a/delight_dilemma.dart';
 import 'c3a/eight_by_anything.dart';
 import 'c3a/hop.dart';
+import 'c3a/latch_on.dart';
 import 'c3a/own_the_dancers.dart';
 import 'c3a/patch.dart';
 import 'c3a/quarter_mix.dart';
@@ -475,6 +476,7 @@ abstract class CodedCall extends Call {
     '(Cross)?KickOff'.ri: (name) => KickOff(name),
 
     'Last(1|2|3)'.ri: (name) => Last(name),
+    'LatchOn(14|12|34)?'.ri : (name) => LatchOn(name),
     'Lead(er|ing)?s?'.ri: (name) => Leaders(name),
     'Left'.ri: (name) => Left(name),
     'LikeaCoupleUp'.ri: (name) => LikeACoupleUp(name),
