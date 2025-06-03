@@ -21,13 +21,13 @@
 
 import 'package:flutter/material.dart' as fm;
 
-import 'extensions.dart';
-
 class Color extends fm.Color {
 
   const Color(int value) : super(value);
   const Color.fromARGB(int alpha, int red, int green, int blue) :
         super.fromARGB(alpha,red,green,blue);
+  const Color.from(double a, double r, double g, double b) :
+        super.from(alpha:a,red:r,green:g,blue:b);
 
   static Color fromName(String name) {
     switch (name.toLowerCase()) {
@@ -81,15 +81,11 @@ class Color extends fm.Color {
   static const Color LIGHTGRAY = Color(0xffc0c0c0);
   static const Color MAROON = Color(0xff800000);
 
-  Color invert() => Color.fromARGB(alpha,255-red,255-green,255-blue);
+  Color invert() => Color.from(a,1-r,1-g,1-b);
+
   Color darker([double f = 0.7]) =>
-      Color.fromARGB(alpha, (red*f).i, (green*f).i, (blue*f).i);
+      Color.from(a,r*f,g*f,b*f);
   Color brighter([double f = 0.7]) => invert().darker().invert();
   Color veryBright() => brighter().brighter().brighter().brighter();
-  Color vivid() => Color.fromARGB(alpha,
-      red > 127 ? 255 : red,
-      green > 127 ? 255 : green,
-      blue > 127 ? 255 : blue);
-
 
 }
