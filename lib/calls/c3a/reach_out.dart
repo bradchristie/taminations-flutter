@@ -25,26 +25,43 @@ import '../../moves.dart';
   final List<AnimatedCall> ReachOut = [
 
     AnimatedCall('Reach Out',
-      formation:Formation('Box RH Boys Lead'),
+      formation:Formation('Box RH Compact'),
       from:'Right-Hand Box',
       paths:[
-          RunRight +
-          Forward_2,
-
-          Forward_2 +
-          RunLeft
+        Forward_1p5 + RunLeft,
+        RunRight + Forward_1p5,
       ]),
 
     AnimatedCall('Reach Out',
-      formation:Formation('Box LH'),
+      formation:Formation('Box LH Compact'),
       from:'Left-Hand Box',
       paths:[
           RunLeft +
-          Forward_2,
+          Forward_1p5,
 
-          Forward_2 +
+          Forward_1p5 +
           RunRight
       ]),
+
+    AnimatedCall('Reach Out',from: 'T-Bone Box 1',
+        formation: Formation('', dancers:[
+          DancerModel.fromData(gender:Gender.BOY,x:-1,y:1,angle:0),
+          DancerModel.fromData(gender:Gender.GIRL,x:-1,y:-1,angle:270),
+    ]),
+        paths: [
+          Forward + RunLeft,
+          RunLeft + Forward,
+        ]),
+
+    AnimatedCall('Reach Out',from: 'T-Bone Box 2',
+        formation: Formation('', dancers:[
+          DancerModel.fromData(gender:Gender.BOY,x:-1,y:-1,angle:0),
+          DancerModel.fromData(gender:Gender.GIRL,x:-1,y:1,angle:90),
+        ]),
+        paths: [
+          Forward + RunRight,
+          RunRight + Forward,
+        ]),
 
     AnimatedCall('Reach Out',
       formation:Formation('Ocean Waves RH BGBG'),
@@ -96,6 +113,50 @@ import '../../moves.dart';
           RunRight +
           ExtendRight.changeBeats(2).scale(2.0,0.5)
       ]),
+
+    AnimatedCall('Reach Out',
+        formation:Formation('Two-Faced Lines LH'),
+        from:'Left-Hand Two-Faced Lines',
+        paths:[
+          FlipLeft +
+              ExtendLeft.changeBeats(2).scale(2.0,0.5),
+
+          RunRight +
+              ExtendRight.changeBeats(2).scale(2.0,0.5),
+
+          Forward_2 +
+              FlipLeft.scale(1.0,0.25),
+
+          Forward_2 +
+              FlipRight.scale(1.0,0.25),
+
+        ]),
+
+    AnimatedCall('Reach Out',
+        formation:Formation('Double Pass Thru'),
+        from:'Double Pass Thru',
+        paths:[
+          Forward + FlipLeft,
+
+          Forward + FlipRight,
+
+          RunRight + Forward.changeBeats(2),
+
+          FlipLeft + Forward.changeBeats(2),
+        ]),
+
+    AnimatedCall('Reach Out',
+        formation:Formation('Completed Double Pass Thru'),
+        from:'Completed Double Pass Thru',
+        paths:[
+          FlipLeft + Forward.changeBeats(2),
+
+          RunRight + Forward.changeBeats(2),
+
+          Forward + FlipRight,
+
+          Forward + FlipLeft,
+        ]),
 
     AnimatedCall('Reach Out',
       formation:Formation('T-Bone DLDL'),

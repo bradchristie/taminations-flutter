@@ -227,6 +227,7 @@ import 'c3a/latch_on.dart';
 import 'c3a/own_the_dancers.dart';
 import 'c3a/patch.dart';
 import 'c3a/quarter_mix.dart';
+import 'c3a/reach_out.dart';
 import 'c3a/recoil.dart';
 import 'c3a/snap_the_lock.dart';
 import 'c3a/spin_the_pulley.dart';
@@ -538,6 +539,7 @@ abstract class CodedCall extends Call {
     '(14|34)Thru'.ri: (name) => QuarterThru(name),
 
     'Ramble'.ri: (name) => Ramble(name),
+    'ReachOut'.ri: (name) => ReachOut(name),
     'Recoil'.ri: (name) => Recoil(name),
     'Regroup'.ri: (name) => Regroup(name),
     'Relocate(.*)'.ri: (name) => Relocate(name),
