@@ -50,6 +50,21 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Single Circle to a Wave',
+        formation:Formation('Single Eight Chain Thru'),
+        from:'Single Eight Chain Thru',difficulty: 1,
+        paths:[
+          Forward.scale(0.3,0.3) +
+              ssqtr +
+              ssqtr +
+              ExtendLeft.scale(0.7,1.0),
+
+          Forward.scale(0.3,0.3) +
+              ssqtr +
+              ssqtr +
+              ExtendLeft.scale(0.7,1.0),
+        ]),
+
+    AnimatedCall('Single Circle to a Wave',
       formation:Formation('Eight Chain Thru'),
       from:'Eight Chain Thru',difficulty: 1,
       paths:[
@@ -126,6 +141,23 @@ import '../../moves.dart';
           ssqtr +
           DodgeLeft.changeBeats(1).scale(1.0,0.5).skew(0.2,0.0)
       ]),
+
+    AnimatedCall('Single Circle 3/4 to a Wave',
+        formation:Formation('Single Eight Chain Thru'),
+        from:'Single Eight Chain Thru',difficulty: 2,
+        paths:[
+          Forward.scale(0.3,0.3) +
+              ssqtr +
+              ssqtr +
+              ssqtr +
+              ExtendLeft.scale(0.7,1.0),
+
+          Forward.scale(0.3,0.3) +
+              ssqtr +
+              ssqtr +
+              ssqtr +
+              ExtendLeft.scale(0.7,1.0),
+        ]),
 
     AnimatedCall('Single Circle 3/4 to a Wave',
       formation:Formation('Eight Chain Thru'),
@@ -211,6 +243,21 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Reverse Single Circle to a Wave',
+        formation:Formation('Single Eight Chain Thru'),
+        from:'Single Eight Chain Thru',difficulty: 2,
+        paths:[
+          Forward.scale(0.3,0.3) +
+              ssqtr.reflect() +
+              ssqtr.reflect() +
+              ExtendRight.scale(0.7,1.0),
+
+          Forward.scale(0.3,0.3) +
+              ssqtr.reflect() +
+              ssqtr.reflect() +
+              ExtendRight.scale(0.7,1.0),
+        ]),
+
+    AnimatedCall('Reverse Single Circle to a Wave',
       formation:Formation('Eight Chain Thru'),
       from:'Eight Chain Thru',difficulty: 2,
       paths:[
@@ -287,6 +334,23 @@ import '../../moves.dart';
           ssqtr.scale(1.0,-1.0) +
           ExtendRight.scale(1.2,1.0)
       ]),
+
+    AnimatedCall('Reverse Single Circle 3/4 to a Wave',
+        formation:Formation('Single Eight Chain Thru'),
+        from:'Single Eight Chain Thru',difficulty: 3,
+        paths:[
+          Forward.scale(0.3,0.3) +
+              ssqtr.reflect() +
+              ssqtr.reflect() +
+              ssqtr.reflect() +
+              ExtendRight.scale(0.7,1.0),
+
+          Forward.scale(0.3,0.3) +
+              ssqtr.reflect() +
+              ssqtr.reflect() +
+              ssqtr.reflect() +
+              ExtendRight.scale(0.7,1.0),
+        ]),
 
     AnimatedCall('Reverse Single Circle 3/4 to a Wave',
       formation:Formation('Eight Chain Thru'),
