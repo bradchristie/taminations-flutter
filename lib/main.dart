@@ -87,8 +87,6 @@ class _TaminationsAppState extends fm.State<TaminationsApp> with WindowListener 
     return fm.FutureBuilder<bool>(
         //  Read saved user settings
         future: Settings.init().whenComplete(() {
-          //  Read initialization files
-          TamUtils.init();
           //  Restore main window to last size and position
           if (TamUtils.isWindowDevice) {  //  i.e., Windows, MacOS
             windowManager.ensureInitialized().whenComplete(() {

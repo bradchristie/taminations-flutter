@@ -39,18 +39,6 @@ class CallListDatum {
 //  Class of static methods and data, this class is not instantiated
 class TamUtils {
 
-  //  Keep a set of all words used in calls.
-  //  Used to check sequencer abbreviations - don't let the use make
-  //  an abbreviation for a real word.
-  //  Start out with a few that are commonly returned by normalizeCall
-  //  to help with the sequencer voice recognition.
-  static Set<String> words = {
-    'head', 'side', 'leader', 'trailer', 'boy', 'girl',
-    'center', 'end', 'very', 'couple', 'home', 'undo', 'reset',
-    'color', 'dancer', 'black', 'blue', 'cyan', 'gray', 'grey',
-    'green', 'magenta', 'orange', 'red', 'white', 'yellow'
-  };
-
   static Map<String,List<AnimatedCall>> normalizedCallIndex = {};
 
   //  Link ssd assets to assets in b1/b2/ms
@@ -205,32 +193,6 @@ class TamUtils {
   static Future<String> getAsset(String filename) async =>
       rootBundle.loadString('assets/${linkSSD(filename)}');
 
-  //  Read data at start of program
-  static Future<bool> init() async {
-
-    //  Add words in each call to set of all words
-    if (words.length < 50) {
-      for (var data in callIndex) {
-        var dataWords = data.title.split('\\s+'.r).map((w) => w.toLowerCase());
-        words.addAll(dataWords);
-      }
-    }
-    //  Build index of normalized animated calls for sequencer
-    if (normalizedCallIndex.isEmpty) {
-      for (var data in callIndex) {
-        for (var call in data.calls) {
-          if (data.level != 'ssd')
-            call.level = LevelData.find(data.level)!;
-          if (!call.notForSequencer) {
-            var norm = call.title.norm.lc;
-            normalizedCallIndex.putIfAbsent(norm, () => []).add(call);
-          }
-        }
-      }
-    }
-    return true;
-  }
-
   static String platform() {
     try {
       final platform = LocalPlatform();
@@ -247,8 +209,4 @@ class TamUtils {
   static bool get canListen => platform().matches('(android|ios)'.r);
   static bool get canSpeak => platform().matches('(android|ios|web|macos)'.r);
 
-}
-
-extension TamUtilsString on String {
-  String get norm => normalizeCall(this);
 }

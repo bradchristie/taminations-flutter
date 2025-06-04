@@ -48,6 +48,20 @@ class DancePainter extends fm.CustomPainter  {
     _prevbeat = 0; // model.beater.beat;
   }
 
+  @override
+  bool shouldRepaint(covariant fm.CustomPainter oldDelegate) {
+    return true;
+  }
+
+  @override
+  bool? hitTest(fm.Offset position) => null;
+
+  @override
+  fm.SemanticsBuilderCallback? get semanticsBuilder => null;
+
+  @override
+  bool shouldRebuildSemantics(covariant fm.CustomPainter oldDelegate) => shouldRepaint(oldDelegate);
+
   //  Convert widget x and y to dance floor coordinates
   Vector mouse2dance(Vector wc) {
     var range = min(_size.x,_size.y);
@@ -200,10 +214,10 @@ class DancePainter extends fm.CustomPainter  {
     ctx.rotate(pi/2);
     //  Draw grid if on
     if (model.gridVisibility) {
-      Geometry(model.geometryType).drawGrid(ctx);
+      drawGrid(ctx,model.geometryType);
     }
     if (model.axesVisibility!='None') {
-      Geometry(model.geometryType).drawAxes(ctx,short:(model.axesVisibility=='Short'));
+      drawAxes(ctx, model.geometryType, short:(model.axesVisibility=='Short'));
     }
     //  Always show bigon center mark
     if (model.geometryType == Geometry.BIGON) {
@@ -258,17 +272,119 @@ class DancePainter extends fm.CustomPainter  {
     ctx.restore();
   }
 
-  @override
-  bool shouldRepaint(covariant fm.CustomPainter oldDelegate) {
-    return true;
+  //  Draw grids
+  void drawGrid(fm.Canvas ctx, int geometryType) {
+    var p = fm.Paint()
+      ..color = Color.LIGHTGREY
+      ..style = fm.PaintingStyle.stroke
+      ..strokeWidth = 0;
+
+    switch (geometryType) {
+      case Geometry.BIGON :
+        for (var xs = -1; xs <= 1; xs += 2) {
+          ctx.save();
+          ctx.scale(xs.d,1.0);
+          for (var xi = -75; xi <= 75; xi += 10) {
+            var x1 = xi / 10.0;
+            var path = fm.Path();
+            path.moveTo(x1.abs(), 0.0);
+            for (var yi = 2; yi <= 75; yi += 2) {
+              var y1 = yi / 10.0;
+              var a = 2.0 * atan2(y1,x1);
+              var r = sqrt(x1*x1 + y1*y1);
+              var x = r * cos(a);
+              var y = r * sin(a);
+              path.lineTo(x, y);
+            }
+            ctx.drawPath(path, p);
+          }
+          ctx.restore();
+        }
+        break;
+
+      case Geometry.SQUARE :
+      case Geometry.HASHTAG :
+      case Geometry.ASYMMETRIC :
+        for (var x = -75; x <= 75; x += 10) {
+          var path = fm.Path();
+          path.moveTo(x/10.0, -7.5);
+          path.lineTo(x/10.0, 7.5);
+          ctx.drawPath(path,p);
+        }
+        for (var y = -75; y <= 75; y += 10) {
+          var path = fm.Path();
+          path.moveTo(-7.5, y/10.0);
+          path.lineTo(7.5, y/10.0);
+          ctx.drawPath(path,p);
+        }
+        break;
+
+      case Geometry.HEXAGON :
+        for (var yscale = -1; yscale <= 1; yscale += 2) {
+          for (var a=0; a<=6; a++) {
+            ctx.save();
+            ctx.rotate(pi/6 + a*pi/3);
+            ctx.scale(1.0, yscale.d);
+            for (var xi=5; xi<=85; xi+=10) {
+              var x0 = xi / 10.0;
+              var path = fm.Path();
+              path.moveTo(0.0, x0);
+              for (var yi=5; yi<=85; yi++) {
+                var y0 = yi / 10.0;
+                var aa = atan2(y0,x0) * 2 / 3;
+                var r = sqrt(x0*x0 + y0*y0);
+                var x = r * sin(aa);
+                var y = r * cos(aa);
+                path.lineTo(x, y);
+              }
+              ctx.drawPath(path, p);
+            }
+            ctx.restore();
+          }
+        }
+        break;
+    }
   }
 
-  @override
-  bool? hitTest(fm.Offset position) => null;
-  @override
-  fm.SemanticsBuilderCallback? get semanticsBuilder => null;
+  //  Draw axes
+  void drawAxes(fm.Canvas ctx, int geometryType, {bool short = false}) {
+    var p = fm.Paint()
+      ..color = Color.LIGHTGREY
+      ..style = fm.PaintingStyle.stroke
+      ..strokeWidth = 0;
 
-  @override
-  bool shouldRebuildSemantics(covariant fm.CustomPainter oldDelegate) => shouldRepaint(oldDelegate);
+    switch (geometryType) {
+      case Geometry.BIGON :
+        final length = short ? 2.0 : 7.5;
+        p.color = Color.RED;
+        ctx.drawLine(fm.Offset(0.0,0.0), fm.Offset(-length,0.0), p);
+        p.color = Color.BLUE;
+        ctx.drawLine(fm.Offset(0.0,0.0), fm.Offset(length,0.0), p);
+        break;
+
+      case Geometry.SQUARE :
+      case Geometry.HASHTAG :
+      case Geometry.ASYMMETRIC :
+        final length = short ? 2.0 : 7.5;
+        p.color = Color.RED;
+        ctx.drawLine(fm.Offset(-length,0.0), fm.Offset(length,0.0), p);
+        p.color = Color.BLUE;
+        ctx.drawLine(fm.Offset(0.0,-length), fm.Offset(0.0,length), p);
+        break;
+
+      case Geometry.HEXAGON :
+        final length = short ? 2.0 : 7.5;
+        final tanlength = length * tan(pi/6);
+        p.color = Color.RED;
+        ctx.drawLine(fm.Offset(0.0,0.0), fm.Offset(-length,0.0), p);
+        ctx.drawLine(fm.Offset(0.0,0.0), fm.Offset(tanlength,length), p);
+        ctx.drawLine(fm.Offset(0.0,0.0), fm.Offset(tanlength,-length), p);
+        p.color = Color.BLUE;
+        ctx.drawLine(fm.Offset(0.0,0.0), fm.Offset(length,0.0), p);
+        ctx.drawLine(fm.Offset(0.0,0.0), fm.Offset(-tanlength,length), p);
+        ctx.drawLine(fm.Offset(0.0,0.0), fm.Offset(-tanlength,-length), p);
+        break;
+    }
+  }
 
 }

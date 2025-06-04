@@ -20,6 +20,8 @@
 
 
 import '../../animated_call.dart';
+import '../../debug_switch.dart';
+import '../words.dart';
 import 'call.dart';
 import 'common.dart';
 
@@ -42,7 +44,7 @@ class XMLCall extends Call {
   static const noInactiveCalls = ['slip','slither'];
 
   static List<AnimatedCall> lookupAnimatedCall(String norm) =>
-      TamUtils.normalizedCallIndex[norm.lc] ?? [];
+      Words.normalizedCallIndex[norm.lc] ?? [];
   XMLCall(String title) : super(title);
 
   bool matchAnimatedCall(CallContext ctx) {

@@ -32,6 +32,7 @@ import '../pages/calls_page.dart';
 import '../pages/page.dart';
 import 'abbreviations_model.dart';
 import 'sequencer_model.dart';
+import 'words.dart';
 
 class SequenceFrame extends fm.StatefulWidget {
   @override
@@ -204,7 +205,7 @@ class _SequencerEditLineState extends fm.State<SequencerEditLine> {
           var call = speech.lastResult!.alternates[i].recognizedWords.replaceAll('\\W'.r, ' ');
           var words = call.split('\\s+'.r)
               .map((w) => normalizeCall(w).toLowerCase());
-          if (words.every((word) => TamUtils.words.contains(word))) {
+          if (words.every((word) => Words.words.contains(word))) {
             //print('Found call in alternative $i: $call');
             later( () {
               _isVoiceCall = true;

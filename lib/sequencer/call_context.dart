@@ -18,7 +18,13 @@
 
 */
 
-import '../common_flutter.dart';
+//import '../common_flutter.dart';
+import 'dart:math';
+
+import '../common_dart.dart';
+import '../debug_switch.dart';
+import '../geometry.dart';
+import '../level_data.dart';
 import '../moves.dart';
 import 'call_error.dart';
 import 'calls/action.dart';
@@ -160,7 +166,8 @@ class CallContext {
   }
 
   CallContext.fromFormation(Formation f,
-      {List<Path>? withPaths, int geometryType=Geometry.SQUARE}) {
+      {List<Path>? withPaths, }) {
+    int geometryType=Geometry.SQUARE;
     var geometryCount = geometryType;
     if (f.asymmetric) {
       geometryType = Geometry.ASYMMETRIC;

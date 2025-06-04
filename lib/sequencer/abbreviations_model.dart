@@ -21,6 +21,7 @@
 import 'package:flutter/material.dart' as fm;
 import 'package:flutter/services.dart' as fs;
 import 'package:shared_preferences/shared_preferences.dart';
+import 'words.dart';
 
 import '../common_flutter.dart';
 
@@ -161,7 +162,7 @@ class AbbreviationsModel extends fm.ChangeNotifier {
           p.isError = true;
       }
       //  Check for words used in calling
-      if (TamUtils.words.contains(p.abbr))
+      if (Words.words.contains(p.abbr))
         p.isError = true;
       //  Check for duplicates
       //  Assumes abbreviations have already been lowercased
@@ -257,7 +258,7 @@ class AbbreviationsModel extends fm.ChangeNotifier {
       //  Check for valid abbreviation
       if (abbr.isBlank || expansion.isBlank)
         continue;
-      if (TamUtils.words.contains(abbr.toLowerCase()))
+      if (Words.words.contains(abbr.toLowerCase()))
         continue;
       //  Look for and replace existing abbreviation
       var found = false;

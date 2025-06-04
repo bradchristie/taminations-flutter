@@ -29,6 +29,7 @@ import 'call_context.dart';
 import 'call_error.dart';
 import 'calls/coded_call.dart';
 import 'calls/xml_call.dart';
+import 'words.dart';
 
 class SequencerCall {
   final String name;
@@ -57,6 +58,7 @@ class SequencerModel extends fm.ChangeNotifier {
       _updateCurrentCall();
     });
     Dancer.shuffleNames();
+    Words.init();
   }
 
   void setStartingFormation(String formation) {

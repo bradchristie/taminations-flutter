@@ -40,9 +40,8 @@
 
 import 'dart:math';
 
-import 'package:taminations/extensions.dart';
-
 import 'cloneable.dart';
+import 'extensions.dart';
 import 'math/hands.dart';
 import 'math/matrix.dart';
 import 'math/movement.dart';

@@ -20,6 +20,10 @@
 
 import '../extensions.dart';
 
+extension NormalizeCallString on String {
+  String get norm => normalizeCall(this);
+}
+
 /// Standardize a call name to match against other names  */
 String normalizeCall(String callname) =>
     callname.capWords().trim()
