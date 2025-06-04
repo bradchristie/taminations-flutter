@@ -29,7 +29,7 @@ class Sides extends FilterActives {
 
   @override
   bool isActive(DancerModel d, CallContext ctx) =>
-      ctx.isSquare()
+      ctx.isSquare() && !name.startsWith('Original')
           ? d.location.y.abs().isAbout(3.0)
           : d.numberCouple=='2' || d.numberCouple=='4';
 

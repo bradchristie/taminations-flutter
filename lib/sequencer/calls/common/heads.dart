@@ -32,7 +32,7 @@ class Heads extends FilterActives {
 
   @override
   bool isActive(DancerModel d, CallContext ctx) =>
-      ctx.isSquare()
+      ctx.isSquare() && !name.startsWith('Original')
           ? d.location.x.abs().isAbout(3.0)
           : d.numberCouple=='1' || d.numberCouple=='3';
 
