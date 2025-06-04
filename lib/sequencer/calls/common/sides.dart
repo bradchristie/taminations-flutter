@@ -25,6 +25,10 @@ import 'fliter_actives.dart';
 
 class Sides extends FilterActives {
 
+  @override var help = 'If the dancers are a squared set, Sides refers to those'
+      ' at the side positions, unless prefixed with "Original".'
+      ' Otherwise, Sides refers to the original sides.';
+
   Sides(super.name);
 
   @override
