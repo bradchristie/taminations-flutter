@@ -29,7 +29,7 @@ import '../../moves.dart';
         DancerModel.fromData(gender:Gender.BOY,x:-3,y:0,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:-1,y:0,angle:180),
   ]),
-      from:'Single Column',
+      from:'Single Eight Chain Thru',
       paths:[
           ExtendLeft.scale(1.0,0.5) +
           Forward_2 +
@@ -118,6 +118,30 @@ import '../../moves.dart';
           Forward_3 +
           ExtendLeft.changeBeats(2).scale(2.0,0.5)
       ]),
+
+    AnimatedCall('Pass and Roll',
+        formation:Formation('Column RH GBGB'),
+        from:'Right-Hand Columns',
+        paths:[
+          RunRight.scale(0.5,0.75).changeBeats(5.5) +
+              Forward +
+              ExtendLeft.changeBeats(1.5).scale(1.0,0.5),
+
+          Forward +
+              SwingRight.scale(0.5,0.75) +
+              Forward +
+              RunRight.scale(0.5, 0.75),
+
+          RunRight.scale(0.5,0.75).changeBeats(5.5) +
+              Forward +
+              ExtendLeft.changeBeats(1.5).scale(1.0,0.5),
+
+          Forward +
+              SwingRight.scale(0.5,0.75) +
+              Forward +
+              RunRight.scale(1, 0.75),
+
+        ]),
 
     AnimatedCall('Pass and Roll',
         from:'Tidal Column',
@@ -248,6 +272,30 @@ import '../../moves.dart';
           ExtendLeft.scale(1.0,0.5) +
           UmTurnLeft.skew(0.0,1.0)
       ]),
+
+    AnimatedCall('Left Pass and Roll',
+        formation:Formation('Column LH GBGB'),
+        from:'Left-Hand Columns',
+        paths:[
+          Forward +
+              SwingLeft.scale(0.5,0.75) +
+              Forward +
+              RunLeft.scale(1, 0.75),
+
+          RunLeft.scale(0.5,0.75).changeBeats(5.5) +
+              Forward +
+              ExtendRight.changeBeats(1.5).scale(1.0,0.5),
+
+          Forward +
+              SwingLeft.scale(0.5,0.75) +
+              Forward +
+              RunLeft.scale(0.5, 0.75),
+
+          RunLeft.scale(0.5,0.75).changeBeats(5.5) +
+              Forward +
+              ExtendRight.changeBeats(1.5).scale(1.0,0.5),
+
+        ]),
 
     AnimatedCall('Left Pass and Roll',
         from:'Tidal Column',
