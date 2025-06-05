@@ -50,6 +50,21 @@ import '../../moves.dart';
           DodgeRight.changehands(Hands.RIGHT)
       ]),
 
+    AnimatedCall('Girls Truck',
+        formation:    Formation('', dancers:[
+          DancerModel.fromData(gender:Gender.BOY,x:-1,y:-1,angle:0),
+          DancerModel.fromData(gender:Gender.GIRL,x:-1,y:3,angle:0),
+          DancerModel.fromData(gender:Gender.BOY,x:-3,y:1,angle:180),
+          DancerModel.fromData(gender:Gender.GIRL,x:-3,y:-3,angle:180),
+        ]),
+        from:'Blocks',isGenderSpecific:true,group: ' ',
+        paths:[
+          Path(),
+          DodgeRight,
+          Path(),
+          DodgeRight,
+         ]),
+
     AnimatedCall('Reverse Truck',
       formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.BOY,x:-3,y:1,angle:0),
@@ -57,7 +72,7 @@ import '../../moves.dart';
         DancerModel.fromData(gender:Gender.BOY,x:-3,y:-1,angle:0),
         DancerModel.fromData(gender:Gender.GIRL,x:-1,y:-1,angle:0),
   ]),
-      from:'Double Pass Thru, Girls in Center',isGenderSpecific:true,
+      from:'Double Pass Thru, Girls in Center',isGenderSpecific:true, group: ' ',
       paths:[
           DodgeRight.changehands(Hands.RIGHT),
 
@@ -67,5 +82,21 @@ import '../../moves.dart';
 
           DodgeLeft.changehands(Hands.LEFT)
       ]),
+
+    AnimatedCall('Boys Reverse Truck',
+        formation:    Formation('', dancers:[
+          DancerModel.fromData(gender:Gender.BOY,x:-3,y:3,angle:0),
+          DancerModel.fromData(gender:Gender.GIRL,x:-3,y:-1,angle:0),
+          DancerModel.fromData(gender:Gender.BOY,x:-1,y:-3,angle:180),
+          DancerModel.fromData(gender:Gender.GIRL,x:-1,y:1,angle:180),
+        ]),
+        from:'Blocks',isGenderSpecific:true, group: ' ',
+        paths:[
+          DodgeRight,
+          Path(),
+          DodgeRight,
+          Path(),
+        ]),
+
   ];
 
