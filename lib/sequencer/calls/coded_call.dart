@@ -369,6 +369,7 @@ abstract class CodedCall extends Call {
     'Breaker(1|2|3)?'.ri: (name) => Breaker(name),
     'But(?![a-z]).*'.r: (name) => But(name),
     'Butterfly.*'.ri: (name) => Butterfly(name),
+
     'CaliforniaTwirl'.ri: (name) => CaliforniaTwirl(name),
     '(14|12|34)?CastandRelay'.ri: (name) => CastAndRelay(name),
     'CastaShadow(Center(Go|Cast)?34)?'.ri: (name) => CastAShadow(name),
@@ -377,7 +378,7 @@ abstract class CodedCall extends Call {
     '(All4Couples)?(Left)?(Split)?Catch.*?(1|2|3|4)'.ri: (name) => Catch(name),
     'Center'.ri: (name) => Centers(name),
     'Center6'.ri: (name) => CenterSix(name),
-    'Center(Line|Wave)(of4)?'.ri: (name) => CenterWaveOfFour(name),
+    'Center(Line|Wave)(of4)?(End)?'.ri: (name) => CenterWaveOfFour(name),
     'Chain'.ri: (name) => Chain(name),
     'ChainDowntheLine'.ri: (name) => ChainDownTheLine(name),
     'ChainReaction'.ri: (name) => ChainReaction(name),

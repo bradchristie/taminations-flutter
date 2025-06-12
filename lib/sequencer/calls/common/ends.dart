@@ -27,15 +27,4 @@ class Ends extends FilterActives {
   @override
   bool isActive(DancerModel d, CallContext ctx) => d.data.end;
 
-  @override
-  void performCall(CallContext ctx) {
-    //  Don't do the following if the ends are the ones already active
-    //  In that case, just leave as is
-    if (!ctx.actives.containsAll(ctx.dancers.where((d) => d.data.end).toList())) {
-      //  This is so Center Wave Ends .. works
-      ctx.analyzeActives();
-    }
-    super.performCall(ctx);
-  }
-
 }

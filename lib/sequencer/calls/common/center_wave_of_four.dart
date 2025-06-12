@@ -28,7 +28,11 @@ class CenterWaveOfFour extends CodedCall {
    void performCall(CallContext ctx) {
     var waveOf4 = ctx.centerWaveOf4()
         ?? thrower(CallError('Unable to identify $name'))!;
-    ctx.dancers.forEach((d) { d.data.active = waveOf4.contains(d); });
+    ctx.dancers.forEach((d) {
+      d.data.active = waveOf4.contains(d) &&
+          //  Handle the awkward Center Wave Ends .. here
+          (!norm.endsWith('End') || !d.data.verycenter);
+    });
   }
 
 }

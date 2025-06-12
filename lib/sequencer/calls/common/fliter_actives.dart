@@ -35,7 +35,7 @@ abstract class FilterActives extends CodedCall {
   bool isActive(DancerModel d, CallContext ctx);
 
   @override
-   void performCall(CallContext ctx) {
+  void performCall(CallContext ctx) {
     var actives = ctx.actives.copy();
     for (var d in actives) {
       d.data.active = isActive(d,ctx);
