@@ -167,7 +167,7 @@ class CallContext {
 
   CallContext.fromFormation(Formation f,
       {List<Path>? withPaths, }) {
-    int geometryType=Geometry.SQUARE;
+    var geometryType = Geometry.SQUARE;
     var geometryCount = geometryType;
     if (f.asymmetric) {
       geometryType = Geometry.ASYMMETRIC;

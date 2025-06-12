@@ -24,7 +24,6 @@ import 'package:flutter/services.dart' show rootBundle;
 import 'package:platform/platform.dart';
 
 import 'animated_call.dart';
-import 'call_index.dart';
 import 'common_flutter.dart';
 
 class CallListDatum {
