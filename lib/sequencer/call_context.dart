@@ -1535,13 +1535,14 @@ class CallContext {
 
   //  For calls where the Facing Couples Rule applies.
   //  This puts the appropriate facing dancers into waves.
-  void applyFacingCouplesRule() {
+  void applyFacingCouplesRule({bool isLeft=false}) {
+    var lefthand = isLeft ? 'Left Hand' : '';
     if (dancers.where((d) => !isInWave(d)).isNotEmpty) {
       try {
         if (dancers.where((d) => isInWave(d)).isEmpty)
-          applyCalls('Facing Dancers Step to a Wave');
+          applyCalls('Facing Dancers Step to a $lefthand Wave');
         else
-          applyCalls('Wave Dancers Nothing While Others Facing Dancers Step to a Wave');
+          applyCalls('Wave Dancers Nothing While Others Facing Dancers Step to a $lefthand Wave');
       } on CallError catch(_) { }
       analyze();
     }

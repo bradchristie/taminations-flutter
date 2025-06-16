@@ -452,7 +452,7 @@ abstract class CodedCall extends Call {
 
     'Girl|Ladies|Lady'.ri: (name) => Girls(name),
     'Grand'.ri: (name) => Grand(name),
-    '((Head|Side)Face)?GrandSquare((\\d+)Steps)?'.ri: (name) => GrandSquare(name),
+    '((Head|Side)Face)?GrandSquare(\\d+)Steps'.ri: (name) => GrandSquare(name),
 
     '12Sashay'.ri: (name) => HalfSashay(name),
     '12Tag'.ri: (name) => HalfTag(name),

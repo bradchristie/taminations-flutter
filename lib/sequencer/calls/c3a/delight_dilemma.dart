@@ -20,7 +20,7 @@
 
 import '../common.dart';
 
-class Delight_Dilemma extends Action {
+class Delight_Dilemma extends Action with IsLeft {
 
   @override var level = LevelData.C3A;
 
@@ -34,7 +34,7 @@ class Delight_Dilemma extends Action {
       ctx2.applyCalls('Face $dir Circulate Twice');
     });
     ctx.subContext(ctx.center(4), (ctx2) {
-      ctx2.applyFacingCouplesRule();
+      ctx2.applyFacingCouplesRule(isLeft: isLeft);
       ctx2.applyCalls('Swing Slip Slip Cast Off 3/4');
     });
   }

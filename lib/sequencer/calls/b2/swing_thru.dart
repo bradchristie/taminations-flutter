@@ -44,7 +44,7 @@ class SwingThru extends Action with ActivesOnly, CallWithParts, IsLeft, IsGrand 
 
   @override
    void performPart1(CallContext ctx) {
-    ctx.applyFacingCouplesRule();
+    ctx.applyFacingCouplesRule(isLeft: isLeft);
     var canDoBoth = _dancersWhoCanDoBothParts(ctx);
     ctx.subContext(ctx.dancersHoldingSameHands(isRight: !isLeft, isGrand: isGrand),(ctx2) {
       for (var d in ctx2.actives.copy()) {

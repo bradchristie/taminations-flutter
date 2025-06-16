@@ -19,7 +19,8 @@
 
 import '../common.dart';
 
-class AlterTheWave extends Action with CallWithParts, CallWithStars {
+class AlterTheWave extends Action
+    with CallWithParts, CallWithStars, IsLeft {
 
   @override int numberOfParts = 4;
   @override final level = LevelData.C1;
@@ -35,7 +36,7 @@ class AlterTheWave extends Action with CallWithParts, CallWithStars {
 
   @override
    void performPart1(CallContext ctx) {
-    ctx.applyFacingCouplesRule();
+    ctx.applyFacingCouplesRule(isLeft: isLeft);
     ctx.applyCalls('Swing');
   }
 
