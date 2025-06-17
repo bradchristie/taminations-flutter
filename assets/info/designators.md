@@ -12,7 +12,7 @@ dancers with partner on the left are Belles
   Note that for tidal formations, Centers is not the same as Center 4.
 * **Center / Middle / Outside Diamond** - Selects specified diamond from formations with
   a center wave or line of 4 or 6.  Center and Outside Diamond can also be used with thars.
-* **Heads / Sides** - in a squared set, refers to dancers in those positions.
+* **Heads / Sides** - in a squared set, refers to dancers in those positions, unless prefixed with "Original".
 Otherwise, the original heads or sides.
 * **Couples / Waves** - dancers that are couples (facing the same direction),
   or dancers in waves or mini-waves (facing opposite directions).  You can
@@ -20,6 +20,6 @@ Otherwise, the original heads or sides.
 * **Center Line / Wave or Diamond / Star of 4** - necessary to select center dancers in less common formations that have both lines and stars in the center.
 * **Wave of 6**
 * **First 1/2/3, Last 1/2/3** - Select dancers in columns
-* **Couple 1/2/3/4** - Select one specific couple to do a call, which will then produce an asymmetric formation.  For a squared set, this will select the couple on the respective spot on the floor.  For other formations, it will select the couple that started at that spot.  These formations have had only limited testing, so you are likely to find many calls that do not work.
+* **Couple 1/2/3/4** - Select one specific couple to do a call, which will then produce an asymmetric formation.  For a squared set, this will select the couple on the respective spot on the floor.  For other formations, it will select the couple that started at that spot.  Asymmetric formations have had only limited testing, so you are likely to find many calls that do not work.
 * **Dancers Facing the Caller** - The caller position is at the bottom of the display. This is for creating asymmetric formations.
 * **Near/Far/Left/Right Line/Wave/Box/[n]** - Select dancers based on location from the caller.

@@ -22,37 +22,61 @@ import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../moves.dart';
 
-  final List<AnimatedCall> Loop = [
+final List<AnimatedCall> Loop = [
+  AnimatedCall('End Girls Right Loop 3',
+      formation: Formation('Ocean Waves RH BGBG'),
+      from: 'Waves',
+      group: ' ',
+      isGenderSpecific: true,
+      paths: [Path(), Path(), Path(), RunRight.changeBeats(6).scale(1.5, 4.0)]),
 
-    AnimatedCall('End Girls Right Loop 3',
-      formation:Formation('Ocean Waves RH BGBG'),
-      from:'Waves',group:' ',isGenderSpecific:true,
-      paths:[
-          Path(),
-
-          Path(),
-
-          Path(),
-
-          RunRight.changeBeats(6).scale(1.5,4.0)
+  AnimatedCall('Boys In Loop 2',
+      formation: Formation('', dancers: [
+        DancerModel.fromData(gender: Gender.GIRL, x: -3, y: 1, angle: 180),
+        DancerModel.fromData(gender: Gender.BOY, x: -3, y: -3, angle: 180),
+        DancerModel.fromData(gender: Gender.BOY, x: -1, y: 3, angle: 180),
+        DancerModel.fromData(gender: Gender.GIRL, x: -1, y: -1, angle: 180),
+      ]),
+      from: 'Blocks',
+      group: ' ',
+      isGenderSpecific: true,
+      paths: [
+        Path(),
+        RunRight.changeBeats(6).scale(1.0, 3.0),
+        RunLeft.changeBeats(6).scale(1.0, 3.0),
+        Path()
       ]),
 
-    AnimatedCall('Boys In Loop 2',
-      formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.GIRL,x:-3,y:1,angle:180),
-        DancerModel.fromData(gender:Gender.BOY,x:-3,y:-3,angle:180),
-        DancerModel.fromData(gender:Gender.BOY,x:-1,y:3,angle:180),
-        DancerModel.fromData(gender:Gender.GIRL,x:-1,y:-1,angle:180),
-  ]),
-      from:'Blocks',group:' ',isGenderSpecific:true,
-      paths:[
-          Path(),
-
-          RunRight.changeBeats(6).scale(1.0,3.0),
-
-          RunLeft.changeBeats(6).scale(1.0,3.0),
-
-          Path()
+  AnimatedCall('Boys Left Loop 1',
+      formation: Formation('', dancers: [
+        DancerModel.fromData(gender: Gender.BOY, x: -1.5, y: 5, angle: 180),
+        DancerModel.fromData(gender: Gender.GIRL, x: -1.5, y: 3, angle: 180),
+        DancerModel.fromData(gender: Gender.BOY, x: -1.5, y: 1, angle: 180),
+        DancerModel.fromData(gender: Gender.GIRL, x: -1.5, y: -1, angle: 180),
       ]),
-  ];
+      group: ' ',
+      isGenderSpecific: true,
+      paths: [
+        RunLeft.changeBeats(6).scale(1.0, 2.0),
+        Path(),
+        RunLeft.changeBeats(6).scale(1.0, 2.0),
+        Path(),
+      ]),
 
+  AnimatedCall('Everyone Left Loop 0',
+      formation: Formation('', dancers: [
+        DancerModel.fromData(gender: Gender.BOY, x: -1.5, y: 5, angle: 180),
+        DancerModel.fromData(gender: Gender.GIRL, x: -1.5, y: 3, angle: 180),
+        DancerModel.fromData(gender: Gender.BOY, x: -1.5, y: 1, angle: 180),
+        DancerModel.fromData(gender: Gender.GIRL, x: -1.5, y: -1, angle: 180),
+      ]),
+      group: ' ',
+      isGenderSpecific: true,
+      paths: [
+        RunLeft.scale(0.5,1),
+        RunLeft.scale(0.5,1),
+        RunLeft.scale(0.5,1),
+        RunLeft.scale(0.5,1),
+      ]),
+
+];

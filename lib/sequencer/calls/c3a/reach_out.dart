@@ -18,23 +18,12 @@
 
 */
 
-import '../../../dancer_model.dart';
-import '../../../extensions.dart';
-import '../../call_context.dart';
-import 'fliter_actives.dart';
+import '../common.dart';
 
-class Heads extends FilterActives {
+class ReachOut extends SplitCall {
 
-  @override var help = 'If the dancers are a squared set, Heads refers to those'
-      ' at the head positions, unless prefixed with "Original".'
-      ' Otherwise, Heads refers to the original heads.';
+  @override var level = LevelData.C3A;
 
-  Heads(super.name);
-
-  @override
-  bool isActive(DancerModel d, CallContext ctx) =>
-      ctx.isSquare() && !name.startsWith('Original')
-          ? d.location.x.abs().isAbout(3.0)
-          : d.numberCouple=='1' || d.numberCouple=='3';
+  ReachOut(super.name);
 
 }

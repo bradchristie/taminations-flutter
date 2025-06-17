@@ -227,6 +227,7 @@ import 'c3a/latch_on.dart';
 import 'c3a/own_the_dancers.dart';
 import 'c3a/patch.dart';
 import 'c3a/quarter_mix.dart';
+import 'c3a/reach_out.dart';
 import 'c3a/recoil.dart';
 import 'c3a/snap_the_lock.dart';
 import 'c3a/spin_the_pulley.dart';
@@ -457,7 +458,7 @@ abstract class CodedCall extends Call {
     '12Sashay'.ri: (name) => HalfSashay(name),
     '12Tag'.ri: (name) => HalfTag(name),
     'HalftheK'.ri: (name) => HalfTheK(name),
-    'Head'.ri: (name) => Heads(name),
+    '(Original)?Head'.ri: (name) => Heads(name),
     '(Single|Partner)?Hinge'.ri: (name) => Hinge(name),
     '(Magic)?HocusPocus'.ri: (name) => HocusPocus(name),
     'Hop'.ri: (name) => Hop(name),
@@ -539,6 +540,7 @@ abstract class CodedCall extends Call {
     '(14|34)Thru'.ri: (name) => QuarterThru(name),
 
     'Ramble'.ri: (name) => Ramble(name),
+    'ReachOut'.ri: (name) => ReachOut(name),
     'Recoil'.ri: (name) => Recoil(name),
     'Regroup'.ri: (name) => Regroup(name),
     'Relocate(.*)'.ri: (name) => Relocate(name),
@@ -576,7 +578,7 @@ abstract class CodedCall extends Call {
     'Separate'.ri: (name) => Separate(name),
     'Shazam'.ri: (name) => Shazam(name),
     'Siamese.*'.ri: (name) => Siamese(name),
-    'Side'.ri: (name) => Sides(name),
+    '(Original)?Side'.ri: (name) => Sides(name),
     '(Single)?(Split)?Sidetrack'.ri: (name) => Sidetrack(name),
     'Single'.ri: (name) => Single(name),
     'SingleBounce(the)?($specifier)?'.ri: (name) => SingleBounce(name),
