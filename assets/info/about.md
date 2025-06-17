@@ -23,17 +23,17 @@ Call pronunciations provided by
 
 ---
 
-## Taminations version 1.6.88 built 2025-05-13
+## Taminations version 1.6.89 built 2025-06-16
 Copyright 2025 by Brad Christie.  
 This is free software, and you are welcome to modify and redistribute it
 under the terms of the [GNU GPL license](http://www.gnu.org/licenses/gpl.html).  
 
 ## What's New
-* Animations for Reverse Swap the Wave
 * Sequencer: 
-  * Code for Delight / Dilemma, Choice
-  * Fix Step and Squeeze
-  * Code for Split 2 with variations
+  * Fix Squeeze from point-to-point diamonds
+  * Code for Latch On
+  * Fix for Near Box Ends Zoom
+  * Fix Left Grand Swing Thru from facing lines
 
 For a detailed history of changes, view the
 [Git log](https://github.com/bradchristie/taminations-flutter/commits/main)
