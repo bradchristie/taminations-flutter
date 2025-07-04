@@ -64,6 +64,19 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Step and Flip',
+        formation:Formation('Normal Lines'),
+        from:'Lines Facing In',
+        paths:[
+          FlipRight.skew(-1.0,0.0),
+
+          Forward.changehands(Hands.LEFT),
+
+          Forward.changehands(Hands.RIGHT),
+
+          FlipLeft.skew(-1.0,0.0),
+        ]),
+
+    AnimatedCall('Step and Flip',
         formation:Formation('3 and 1 Lines #1'),
         from:'3 and 1 Lines #1',
         paths:[
