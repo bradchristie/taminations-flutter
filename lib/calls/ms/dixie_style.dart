@@ -319,5 +319,26 @@ import '../../moves.dart';
           ExtendLeft.changeBeats(2).scale(1.0,1.0) +
           HingeRight.scale(0.5,0.5)
       ]),
+
+    AnimatedCall('All 4 Ladies Lead Dixie Style to a Wave',
+        formation:Formation('Static Square'),
+        group:' ',
+        difficulty: 2,
+        paths:[
+          ExtendRight.changeBeats(5).scale(1.0,1.75) +
+              HingeLeft.scale(1.0,0.75),
+
+          ExtendLeft.changeBeats(3).changehands(Hands.RIGHT).scale(3.0,2.0) +
+              ExtendRight.changeBeats(2).changehands(Hands.RIGHT).scale(2.0,1.75) +
+              HingeLeft.scale(1.0,0.75),
+
+          ExtendRight.changeBeats(5).scale(1.0,1.75) +
+              HingeLeft.scale(1.0,0.75),
+
+          ExtendLeft.changeBeats(3).changehands(Hands.RIGHT).scale(3.0,2.0) +
+              ExtendRight.changeBeats(2).changehands(Hands.RIGHT).scale(2.0,1.75) +
+              HingeLeft.scale(1.0,0.75)
+        ]),
+
   ];
 
