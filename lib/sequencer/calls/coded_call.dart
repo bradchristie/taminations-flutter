@@ -609,7 +609,7 @@ abstract class CodedCall extends Call {
     'SplitRecycle'.ri: (name) => SplitRecycle(name),
     'SplitSquareChainThru'.ri: (name) => SplitSquareChainThru(name),
     'SplitSquareChaintheTop'.ri: (name) => SplitSquareChainTheTop(name),
-    'SplitSquareThru[2-7]?'.ri: (name) => SplitSquareThru(name),
+    'SplitSquareThru[1-7]*'.ri: (name) => SplitSquareThru(name),
     'Split(2|theOutsides?(Couple)?)'
         '(Separate)?(and)?(Go)?(Around1(toaLine)?|(and)?come(into|down)theMiddle)?'.ri:
         (name) => SplitTwo(name),

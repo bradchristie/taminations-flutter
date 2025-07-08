@@ -33,7 +33,17 @@ class SplitSquareThru extends Action with IsLeft, IsToAWave {
     if (ctx.isSquare() && ctx.actives.length == 4)
       throw CallError('Use Heads Start or Sides Start Split Square Thru');
 
-    final count = normalizeCall(name).last.toIntOrNull() ?? 4;
+    var count = norm.replaceAll('[a-zA-Z]'.r,'').toIntOrNull() ?? 4;
+    switch (count) {
+      case 12 : count = 2;
+      case 34 : count = 3;
+      case 112 : count = 2; toAWave = 'to a Wave';
+      case 212 : count = 3; toAWave = 'to a Wave';
+      case 312 : count = 4;  toAWave = 'to a Wave';
+      case 412 : count = 5;  toAWave = 'to a Wave';
+      case 512 : count = 6;  toAWave = 'to a Wave';
+      default :
+    }
     //  Might start from waves or mini-waves
     final waveDancers = ctx.dancers.where((d) => ctx.isInWave(d));
     final facingDancers = ctx.dancers.where((d) => ctx.dancerFacing(d)!=null);
