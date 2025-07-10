@@ -132,10 +132,6 @@ class _SequencerPageState extends fm.State<SequencerPage> {
               //  landscape
               return ResizableContainer(
                 direction: fm.Axis.horizontal,
-                divider: ResizableDivider(
-                  thickness: 5.0,
-                  color: fm.Colors.black,
-                ),
                 children: [
                   ResizableChild(
                     child: fm.Column(
@@ -144,9 +140,18 @@ class _SequencerPageState extends fm.State<SequencerPage> {
                         SequenceEditButtons(),
                       ],
                     ),
+                    divider: ResizableDivider(
+                      thickness: 5.0,
+                      color: fm.Colors.black,
+                    ),
                   ),
                   //fm.VerticalDivider(color: Color.BLACK, width: 2.0,),
-                  ResizableChild(child: SequencerAnimationFrame()),
+                  ResizableChild(child: SequencerAnimationFrame(),
+                    divider: ResizableDivider(
+                      thickness: 5.0,
+                      color: fm.Colors.black,
+                    ),
+                  ),
                   //fm.VerticalDivider(color: Color.BLACK, width: 2.0,),
                   //  Dummy title model to intercept titles we don't want to show
                   ResizableChild(

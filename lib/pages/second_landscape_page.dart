@@ -120,18 +120,22 @@ class SecondLandscapeFrame extends fm.StatelessWidget {
   fm.Widget build(fm.BuildContext context) {
     return ResizableContainer(
       direction: fm.Axis.horizontal,
-      divider: ResizableDivider(
-        thickness: 5.0,
-        color: fm.Colors.black,
-      ),
       //crossAxisAlignment: fm.CrossAxisAlignment.stretch,
       children: [
-        ResizableChild(child: leftChild),
+        ResizableChild(child: leftChild,       divider: ResizableDivider(
+          thickness: 5.0,
+          color: fm.Colors.black,
+        ),
+        ),
         //fm.VerticalDivider(color: Color.BLACK, width: 2.0,),
         //  We want the animation list (which is the left child)
         //  to control the title.  So add dummy titles
         //  to intercept consumers from center and right children
-        ResizableChild(child: centerChild),
+        ResizableChild(child: centerChild,       divider: ResizableDivider(
+          thickness: 5.0,
+          color: fm.Colors.black,
+        ),
+        ),
         //fm.VerticalDivider(color: Color.BLACK, width: 2.0,),
         ResizableChild(
           child: pp.ChangeNotifierProvider(

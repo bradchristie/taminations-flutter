@@ -58,12 +58,13 @@ class FirstLandscapeFrame extends fm.StatelessWidget {
   fm.Widget build(fm.BuildContext context) {
     return ResizableContainer(
       direction: fm.Axis.horizontal,
-      divider: ResizableDivider(
-        thickness: 5.0,
-        color: fm.Colors.black,
-      ),
       children: [
-        ResizableChild(child: LevelFrame()),
+        ResizableChild(child: LevelFrame(),
+          divider: ResizableDivider(
+            thickness: 5.0,
+            color: fm.Colors.black,
+          ),
+        ),
         ResizableChild(
             size: ResizableSize.expand(flex: 3),
             child:rightChild)
