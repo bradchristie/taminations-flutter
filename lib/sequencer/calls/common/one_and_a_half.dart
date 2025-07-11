@@ -21,6 +21,7 @@
 import '../../call_context.dart';
 import '../../call_error.dart';
 import '../coded_call.dart';
+import 'fraction.dart';
 
 class OneAndaHalf extends CodedCall {
 
@@ -34,8 +35,12 @@ class OneAndaHalf extends CodedCall {
     //  Be sure everyone waits until the call is complete
     ctx.extendPaths();
     //  Now do half of it again
-    var prevCall = ctx.callstack[ctx.callstack.length - 2].name;
-    ctx.applyCalls('Half $prevCall');
+    ctx.subContext(ctx.dancers, (halfctx) {
+      halfctx.callstack.add(Fraction('Half'));
+      halfctx.callstack.add(ctx.callstack[ctx.callstack.length - 2]);
+      halfctx.performCall();
+    });
+    //ctx.applyCalls('Half $prevCall');
   }
 
 }
