@@ -31,7 +31,7 @@ import '../../moves.dart';
         DancerModel.fromData(gender:Gender.GIRL,x:-2,y:-1,angle:180),
         DancerModel.fromData(gender:Gender.BOY,x:-2,y:-3,angle:180),
   ]),
-      from:'Two-Faced Lines',fractions:'2',
+      from:'Right-Hand Two-Faced Lines',fractions:'2',
       paths:[
           Forward_2.changehands(Hands.RIGHT) +
           RunRight.changeBeats(5).scale(1.0,2.0).skew(2.0,0.0),
@@ -48,5 +48,26 @@ import '../../moves.dart';
           QuarterLeft +
           Forward_4.changeBeats(3.5)
       ]),
+
+    AnimatedCall('Link Up',
+        formation: Formation('Two-Faced Lines LH'),
+        from:'Left-Hand Two-Faced Lines',fractions:'2',
+        paths:[
+          QuarterRight.changeBeats(2).changehands(Hands.LEFT) +
+              QuarterRight +
+              Forward_4.changeBeats(3.5),
+
+          LeadRight.changeBeats(2).changehands(Hands.RIGHT).scale(2.0,2.0) +
+              QuarterRight +
+              Forward_2.changeBeats(3.5),
+
+          Forward_2.changehands(Hands.RIGHT) +
+              SwingLeft +
+              Forward_2,
+
+          Forward_2.changehands(Hands.LEFT) +
+              RunLeft.changeBeats(5).scale(1.0,2.0).skew(2.0,0.0),
+        ]),
+
   ];
 

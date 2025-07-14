@@ -88,5 +88,129 @@ import '../../moves.dart';
           FlipLeft +
           Forward_3
       ]),
+
+    AnimatedCall('Polly Wally',
+        formation:Formation('Eight Chain Thru'),
+        from:'Eight Chain Thru',
+        paths:[
+          FlipRight.changeBeats(6).skew(1.0,0.0),
+
+          FlipRight.changeBeats(6).skew(1.0,0.0),
+
+          FlipLeft +
+              Forward_3,
+
+          FlipLeft +
+              Forward_3
+        ]),
+
+    AnimatedCall('Polly Wally',
+        formation:Formation('Trade By'),
+        from:'Trade By',
+        paths:[
+          FlipLeft.changeBeats(6).skew(-1.0,0.0),
+
+          FlipLeft.changeBeats(6).skew(-1.0,0.0),
+
+          ExtendRight.changeBeats(3).scale(0.5,2.0) +
+              Forward.changeBeats(3).scale(2.5,1.0),
+
+          ExtendRight.changeBeats(3).scale(0.5,2.0) +
+              Forward.changeBeats(3).scale(2.5,1.0),
+        ]),
+
+
+
+    AnimatedCall('Reverse Polly Wally',
+        formation:Formation('Column RH GBGB'),
+        from:'Right-Hand Columns',
+        paths:[
+          FlipRight.changeBeats(6).skew(-1.0,0.0),
+
+          FlipRight +
+              Forward_3,
+
+          ExtendLeft.changeBeats(3).scale(0.5,2.0) +
+              Forward.changeBeats(3).scale(2.5,1.0),
+
+          FlipLeft.changeBeats(6).skew(1.0,0.0)
+        ]),
+
+    AnimatedCall('Reverse Polly Wally',
+        formation:Formation('Column LH GBGB'),
+        from:'Left-Hand Columns',
+        paths:[
+          FlipLeft.changeBeats(6).skew(1.0,0.0),
+
+          ExtendLeft.changeBeats(3).scale(0.5,2.0) +
+              Forward.changeBeats(3).scale(2.5,1.0),
+
+          FlipRight +
+              Forward_3,
+
+          FlipRight.changeBeats(6).skew(-1.0,0.0)
+        ]),
+
+    AnimatedCall('Reverse Polly Wally',
+        formation:Formation('Double Pass Thru'),
+        from:'Double Pass Thru',
+        paths:[
+          FlipLeft.changeBeats(6).skew(1.0,0.0),
+
+          FlipLeft.changeBeats(6).skew(1.0,0.0),
+
+          ExtendLeft.changeBeats(3).scale(0.5,2.0) +
+              Forward.changeBeats(3).scale(2.5,1.0),
+
+          ExtendLeft.changeBeats(3).scale(0.5,2.0) +
+              Forward.changeBeats(3).scale(2.5,1.0)
+        ]),
+
+    AnimatedCall('Reverse Polly Wally',
+        formation:Formation('Completed Double Pass Thru'),
+        from:'Completed Double Pass Thru',
+        paths:[
+          FlipRight.changeBeats(6).skew(-1.0,0.0),
+
+          FlipRight.changeBeats(6).skew(-1.0,0.0),
+
+          FlipRight +
+              Forward_3,
+
+          FlipRight +
+              Forward_3
+        ]),
+
+    AnimatedCall('Reverse Polly Wally',
+        formation:Formation('Eight Chain Thru'),
+        from:'Eight Chain Thru',
+        paths:[
+          FlipLeft.changeBeats(6).skew(1.0,0.0),
+
+          FlipLeft.changeBeats(6).skew(1.0,0.0),
+
+          FlipRight +
+              Forward_3,
+
+          FlipRight +
+              Forward_3
+        ]),
+
+    AnimatedCall('Reverse Polly Wally',
+        formation:Formation('Trade By'),
+        from:'Trade By',
+        paths:[
+          FlipRight.changeBeats(6).skew(-1.0,0.0),
+
+          FlipRight.changeBeats(6).skew(-1.0,0.0),
+
+          ExtendLeft.changeBeats(3).scale(0.5,2.0) +
+              Forward.changeBeats(3).scale(2.5,1.0),
+
+          ExtendLeft.changeBeats(3).scale(0.5,2.0) +
+              Forward.changeBeats(3).scale(2.5,1.0),
+        ]),
+
+
   ];
 

@@ -221,7 +221,7 @@ class Settings extends fm.ChangeNotifier {
   }
 
   static String get mouseControl =>
-      _instance.proxy.getString('MouseControl') ?? 'Pressed';
+      _instance.proxy.getString('MouseControl') ?? 'Press mouse button to move';
   static set mouseControl(String value) {
     _instance.proxy.setString('MouseControl',value);
     _instance.notifyListeners();
