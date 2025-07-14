@@ -314,7 +314,7 @@ class _AnimationFrameState extends fm.State<AnimationFrame>
                                     right: 0.0,
                                     child: fm.Text(
                                         beatStr + ' ' +
-                                        Settings.speed.replaceFirst('Normal','') +
+                                        Settings.speed.replaceFirst('Normal( Speed)?'.r,'') +
                                             (danceModel.looping ? ' Loop' : ''),
                                         style:fm.TextStyle(fontSize:24)
                                     )
