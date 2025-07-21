@@ -26,21 +26,66 @@ import '../../moves.dart';
 
     AnimatedCall('Something New',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:-3,y:-1,angle:180),
-        DancerModel.fromData(gender:Gender.BOY,x:-1,y:-1,angle:180),
-        DancerModel.fromData(gender:Gender.GIRL,x:1,y:-1,angle:180),
-        DancerModel.fromData(gender:Gender.GIRL,x:3,y:-1,angle:180),
+        DancerModel.fromData(gender:Gender.BOY,x:-3,y:1,angle:0),
+        DancerModel.fromData(gender:Gender.GIRL,x:-3,y:-1,angle:180),
+        DancerModel.fromData(gender:Gender.BOY,x:-1,y:1,angle:0),
+        DancerModel.fromData(gender:Gender.GIRL,x:-1,y:-1,angle:180),
   ]),
       from:'Right-Hand Columns',
+      numbers: ['1','8','2','7','3','6','4','5'],
       paths:[
-          RunRight,
+        ExtendLeft.changeBeats(3).scale(3.0,2.0),
+
+        RunRight,
+
+        UmTurnRight.changeBeats(3).skew(1.0,0.0),
+
+        Forward +
+            UmTurnRight.changeBeats(2).skew(1.0,0.0),
+      ]),
+
+    AnimatedCall('Something New',
+        formation: Formation('Column LH GBGB'),
+        from: 'Left-Hand Columns',
+        paths: [
+          ExtendRight.changeBeats(3).scale(3.0,2.0),
+
+          UmTurnLeft.changeBeats(3).skew(1.0,0.0),
 
           Forward +
-          UmTurnRight.changeBeats(2).skew(1.0,0.0),
+              UmTurnLeft.changeBeats(2).skew(1.0,0.0),
+
+          RunLeft,
+        ]),
+
+    AnimatedCall('Magic Something New',
+        formation: Formation('Magic Column RH'),
+        from: 'Magic Column RH Centers',
+        paths: [
+          Forward.changeBeats(2) +
+              ExtendLeft.changeBeats(3).scale(2.0,4.0),
+
+          ExtendRight.changeBeats(2).scale(1.0,2.0) +
+              UmTurnLeft.changeBeats(3).skew(1.0,0.0),
+
+          UmTurnLeft.changeBeats(3).skew(1.0,0.0),
+
+          RunLeft,
+        ]),
+
+    AnimatedCall('Magic Something New',
+        formation: Formation('Magic Column LH'),
+        from: 'Magic Column LH Centers',
+        paths: [
+          RunRight,
 
           UmTurnRight.changeBeats(3).skew(1.0,0.0),
 
-          ExtendLeft.changeBeats(3).scale(3.0,2.0)
-      ]),
-  ];
+          ExtendLeft.changeBeats(2).scale(1.0,2.0) +
+              UmTurnRight.changeBeats(3).skew(1.0,0.0),
 
+          Forward.changeBeats(2) +
+              ExtendRight.changeBeats(3).scale(2.0,4.0),
+        ]),
+
+  ];
