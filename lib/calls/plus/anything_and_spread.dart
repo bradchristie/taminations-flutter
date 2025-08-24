@@ -277,14 +277,14 @@ import '../plus/follow_your_neighbor.dart' as plus;
       ]),
 
     AnimatedCall('Zoom and Spread',
-      formation:Formation('Completed Double Pass Thru'),
-      from:'Completed Double Pass Thru',group:' ',difficulty: 2,
+      formation:Formation('Double Pass Thru'),
+      from:'Double Pass Thru',group:' ',difficulty: 2,
       paths:[
-          FlipRight.changeBeats(1).scale(0.5,0.5) +
-          Forward +
-          LeadRight.changeBeats(1).scale(1.0,0.5) +
-          QuarterRight.changeBeats(1) +
-          ExtendLeft.changeBeats(2).scale(1.0,0.5),
+        Forward.changeBeats(3).changehands(Hands.RIGHT) +
+            SashayLeft,
+
+        Forward.changeBeats(3).changehands(Hands.LEFT) +
+            SashayRight,
 
           FlipLeft.changeBeats(1).scale(0.5,0.5) +
           Forward +
@@ -292,11 +292,12 @@ import '../plus/follow_your_neighbor.dart' as plus;
           QuarterLeft.changeBeats(1) +
           ExtendRight.changeBeats(2).scale(1.0,0.5),
 
-          Forward.changeBeats(3).changehands(Hands.LEFT) +
-          SashayRight,
+        FlipRight.changeBeats(1).scale(0.5,0.5) +
+            Forward +
+            LeadRight.changeBeats(1).scale(1.0,0.5) +
+            QuarterRight.changeBeats(1) +
+            ExtendLeft.changeBeats(2).scale(1.0,0.5),
 
-          Forward.changeBeats(3).changehands(Hands.RIGHT) +
-          SashayLeft
       ]),
   ];
 

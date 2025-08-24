@@ -107,7 +107,7 @@ class _MarkdownFrameState extends fm.State<MarkdownFrame> {
       //  Table style
       tableHead: fm.TextStyle(fontWeight: fm.FontWeight.normal),
       //  Padding at end of each paragraph
-      pPadding: fm.EdgeInsets.only(bottom:10.0)
+      pPadding: fm.EdgeInsets.only(top:6.0,bottom:6.0)
     );
     return pp.Consumer2<TamState,HighlightState>(
         builder: (context, tamState, highlightState, child) {
