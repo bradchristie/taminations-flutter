@@ -60,17 +60,17 @@ class Circulate extends Action {
     else if (ctx.isThar())
       ctx.applyCalls('Inside Diamond Circulate While Outside Diamond Circulate');
     else if (ctx.isTwoFacedLines())
-      ctx.applyCalls('Couples Circulate' );
+      ctx.applyAnimatedCall('Couples Circulate' );
     else if (ctx.isLines())
-      ctx.applyCalls('All 8 Circulate' );
+      ctx.applyAnimatedCall('All 8 Circulate' );
     else if (ctx.matchFormations(CallContext.fromFormation(
         Formation('Column RH GBGB'))) != null)
-      ctx.applyCalls('Column Circulate' );
+      ctx.applyAnimatedCall('Column Circulate' );
     else if (ctx.matchFormations(CallContext.fromFormation(
         Formation('Column LH GBGB'))) != null)
-      ctx.applyCalls('Column Circulate' );
+      ctx.applyAnimatedCall('Column Circulate' );
     else if (ctx.actives.length == 6 && ctx.isColumns(3))
-      ctx.applyCalls('Column Circulate' );
+      ctx.applyAnimatedCall('Column Circulate' );
     //  If none of these, but t-bones or 6 dancers, calculate paths
     else if (ctx.actives.length == 6 || ctx.isTBone()) {
       super.performCall(ctx);

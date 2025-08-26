@@ -384,6 +384,15 @@ class CallContext {
     }
   }
 
+  //  Perform an animated (not coded) call
+  void applyAnimatedCall(String call) {
+    //  First check that we can do the animated call
+    var xmlCall = XMLCall(call);
+    if (!xmlCall.matchAnimatedCall(this))
+      throw CallError('Unable to do $call from this formation');
+    _applyCall(call);
+  }
+
   void applyCodedCall(String call) {
     var ctx2 = CallContext.fromContext(this);
     ctx2.interpretCall(call,skipFirstXML: true);
