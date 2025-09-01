@@ -21,7 +21,7 @@
 import '../../../moves.dart';
 import '../common.dart';
 
-class TurnThru extends Action with IsLeft {
+class TurnThru extends Action with IsLeft, IsToAWave {
 
   @override var level = LevelData.MS;
   @override var helplink = 'ms/turn_thru';
@@ -38,6 +38,8 @@ class TurnThru extends Action with IsLeft {
       move2 = SwingLeft;
       move3 = ExtendLeft;
     }
+    if (isToAWave)
+      move3 = Path();
     //  Check for dancers in mini-wave
     if (ctx.isInWave(d)) {
       //  If in waves, Turn Thru has to be right-handed,

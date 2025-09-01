@@ -4122,7 +4122,7 @@ Left Swing Thru 1.5
 Right and Left Grand''', '');});
 
     test('Choice',() { testOneSequence( '''Sides Pass the Ocean
-Extend
+    Extend
 1/2 Circulate
 Choice
 Outer 4 Counter Rotate
