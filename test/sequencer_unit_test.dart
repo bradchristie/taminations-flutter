@@ -4121,7 +4121,6 @@ Pass the Ocean
 Left Swing Thru 1.5
 Right and Left Grand''', '');});
 
-
     test('Choice',() { testOneSequence( '''Sides Pass the Ocean
 Extend
 1/2 Circulate
@@ -4144,5 +4143,17 @@ Split Circulate
 Cast Off 3/4 and Roll
 Right and Left Grand''', '');});
 
+  test('Hinge the Top',() { testOneSequence('''Sides Pass the Ocean
+Extend
+Hinge the Top
+Hinge
+Hinge the Top
+Trade the Wave
+Hinge the Top
+Recycle
+Star Thru
+Trade By
+Right and Left Thru
+Allemande Left''', '');});
 
 }

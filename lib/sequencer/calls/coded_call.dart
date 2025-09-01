@@ -222,6 +222,7 @@ import 'c3a/choice.dart';
 import 'c3a/couple_up.dart';
 import 'c3a/delight_dilemma.dart';
 import 'c3a/eight_by_anything.dart';
+import 'c3a/hinge_the_top.dart';
 import 'c3a/hop.dart';
 import 'c3a/latch_on.dart';
 import 'c3a/own_the_dancers.dart';
@@ -460,6 +461,7 @@ abstract class CodedCall extends Call {
     'HalftheK'.ri: (name) => HalfTheK(name),
     '(Original)?Head'.ri: (name) => Heads(name),
     '(Single|Partner)?Hinge'.ri: (name) => Hinge(name),
+    'HingeTheTop'.ri: (name) => HingeTheTop(name),
     '(Magic)?HocusPocus'.ri: (name) => HocusPocus(name),
     'Hop'.ri: (name) => Hop(name),
     'HorseshoeTurn'.ri: (name) => HorseshoeTurn(name),
