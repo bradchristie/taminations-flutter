@@ -18,23 +18,33 @@
 
 */
 
-import '../../../dancer_model.dart';
-import '../../../extensions.dart';
-import '../../call_context.dart';
-import 'fliter_actives.dart';
+import '../common.dart';
 
 class Heads extends FilterActives {
 
-  @override var help = 'If the dancers are a squared set, Heads refers to those'
-      ' at the head positions, unless prefixed with "Original".'
-      ' Otherwise, Heads refers to the original heads.';
+  @override var help =''' 
+  In a Squared Set, use either Original Heads or Head Position
+  if just Heads is ambiguous.''';
 
   Heads(super.name);
 
   @override
-  bool isActive(DancerModel d, CallContext ctx) =>
-      ctx.isSquare() && !name.startsWith('Original')
-          ? d.location.x.abs().isAbout(3.0)
-          : d.numberCouple=='1' || d.numberCouple=='3';
+  bool isActive(DancerModel d, CallContext ctx) {
+    if (ctx.isSquare()) {
+      var originalHead = d.numberCouple == '1' || d.numberCouple == '3';
+      var headPosition = d.location.x.abs().isAbout(3.0);
+      if (name.startsWith('Original'))
+        return originalHead;
+      else if (name.contains('Position'))
+        return headPosition;
+      else if (originalHead == headPosition)
+        return originalHead;
+      else
+        throw CallError('Ambiguous -Use Original Heads or Head Positions');
+    }
+    if (name.contains('Position'))
+      throw CallError('Not in Squared Set');
+    return d.numberCouple == '1' || d.numberCouple == '3';
+  }
 
 }

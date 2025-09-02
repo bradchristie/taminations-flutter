@@ -990,7 +990,7 @@ Galaxy Circulate
 Flip the Galaxy
 All 8 Swing Thru
 All 8 Recycle
-Heads Slide Thru
+Head Position Slide Thru
 Slide Thru
 Pass Thru
 Wheel and Deal
@@ -3893,7 +3893,7 @@ Allemande Left''', '');});
 
     test('In Your Block Zing',() { testOneSequence(
         '''Single Rotate 1/4
-Sides Squeeze
+Side Position Squeeze
 Outsides Zing
 Boys Spread
 In Your Block Boys Zing

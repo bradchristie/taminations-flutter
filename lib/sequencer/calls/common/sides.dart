@@ -18,23 +18,33 @@
 
 */
 
-import '../../../dancer_model.dart';
-import '../../../extensions.dart';
-import '../../call_context.dart';
-import 'fliter_actives.dart';
+import '../common.dart';
 
 class Sides extends FilterActives {
 
-  @override var help = 'If the dancers are a squared set, Sides refers to those'
-      ' at the side positions, unless prefixed with "Original".'
-      ' Otherwise, Sides refers to the original sides.';
+  @override var help =''' 
+  In a Squared Set, use either Original Sides or Side Position
+  if just Sides is ambiguous.''';
 
   Sides(super.name);
 
   @override
-  bool isActive(DancerModel d, CallContext ctx) =>
-      ctx.isSquare() && !name.startsWith('Original')
-          ? d.location.y.abs().isAbout(3.0)
-          : d.numberCouple=='2' || d.numberCouple=='4';
+  bool isActive(DancerModel d, CallContext ctx) {
+    if (ctx.isSquare()) {
+      var originalSide = d.numberCouple == '2' || d.numberCouple == '4';
+      var sidePosition = d.location.y.abs().isAbout(3.0);
+      if (name.startsWith('Original'))
+        return originalSide;
+      else if (name.contains('Position'))
+        return sidePosition;
+      else if (originalSide == sidePosition)
+        return originalSide;
+      else
+        throw CallError('Ambiguous -Use Original Sides or Side Positions');
+    }
+    if (name.contains('Position'))
+      throw CallError('Not in Squared Set');
+    return d.numberCouple == '2' || d.numberCouple == '4';
+  }
 
 }
