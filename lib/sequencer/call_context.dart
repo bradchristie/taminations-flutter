@@ -206,8 +206,10 @@ class CallContext {
         else if (call is XMLCall && call.codedContext != null) {
           try {
             var innerCall = call.codedContext!.findImplementor<T>();
-            callstack.replaceRange(ix,ix+1,call.codedContext!.callstack);
-            return innerCall;
+            if (innerCall != null) {
+              callstack.replaceRange(ix, ix + 1, call.codedContext!.callstack);
+              return innerCall;
+            }
           } on CallError {
             continue;
           }
