@@ -70,6 +70,17 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Pass Thru',
+        formation:Formation('Wave RH'),
+        from:'Ocean Wave',difficulty: 2,
+        paths:[
+          ExtendRight.changeBeats(2).scale(1.5,2.0),
+
+          Forward.changeBeats(2).scale(1.5,1.0),
+
+        ]),
+
+
+    AnimatedCall('Pass Thru',
       formation:Formation('Ocean Waves RH BGGB'),
       from:'Ocean Waves',difficulty: 2,
       taminator: '''

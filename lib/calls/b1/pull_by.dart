@@ -27,6 +27,7 @@ import '../../moves.dart';
     AnimatedCall('Right Pull By',
       formation:Formation('Facing Couples Compact'),
       group:' ',
+      difficulty: 1,
       paths:[
           PullLeft.changeBeats(2).scale(1.5,0.5) +
           ExtendRight.changeBeats(2).scale(1.5,0.5),
@@ -38,6 +39,7 @@ import '../../moves.dart';
     AnimatedCall('Left Pull By',
       formation:Formation('Facing Couples Compact'),
       group:' ',
+      difficulty: 2,
       paths:[
           PullRight.changeBeats(2).scale(1.5,0.5) +
           ExtendLeft.changeBeats(2).scale(1.5,0.5),
@@ -45,5 +47,26 @@ import '../../moves.dart';
           PullRight.changeBeats(2).scale(1.5,0.5) +
           ExtendLeft.changeBeats(2).scale(1.5,0.5)
       ]),
+
+    AnimatedCall('Pull By',
+        formation:Formation('Wave RH'),
+        from:'Right-Hand Wave',difficulty: 2,
+        paths:[
+          ExtendRight.changeBeats(2).scale(1.5,2.0),
+
+          Forward.changeBeats(2).scale(1.5,1.0),
+
+        ]),
+
+    AnimatedCall('Pull By',
+        formation:Formation('Wave LH'),
+        from:'Left-Hand Wave',difficulty: 2,
+        paths:[
+          ExtendLeft.changeBeats(2).scale(1.5,2.0),
+
+          Forward.changeBeats(2).scale(1.5,1.0),
+
+        ]),
+
   ];
 
