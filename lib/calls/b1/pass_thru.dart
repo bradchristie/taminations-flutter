@@ -71,7 +71,7 @@ import '../../moves.dart';
 
     AnimatedCall('Pass Thru',
         formation:Formation('Wave RH'),
-        from:'Ocean Wave',difficulty: 2,
+        from:'Ocean Wave',difficulty: 2, notForSequencer: true,
         paths:[
           ExtendRight.changeBeats(2).scale(1.5,2.0),
 
