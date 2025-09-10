@@ -42,7 +42,8 @@ import '../../moves.dart';
           SwingRight.changehands(Hands.GRIPRIGHT).scale(0.5,0.5) +
           SwingLeft.changehands(Hands.GRIPLEFT).scale(0.5,0.5) +
           HingeLeft.scale(1.0,0.5) +
-          HingeRight.changeBeats(4).scale(3.0,1.0),
+          Forward.changehands(Hands.GRIPRIGHT).changeBeats(0.5).scale(0.5,1.0) +
+          LeadRight.changeBeats(3.5).scale(2.5, 1.0),
 
           SwingRight.changehands(Hands.GRIPRIGHT).scale(0.5,0.5) +
           SwingLeft.changehands(Hands.GRIPLEFT).scale(0.5,0.5) +
@@ -65,7 +66,8 @@ import '../../moves.dart';
 
           SwingLeft.changehands(Hands.GRIPLEFT).scale(0.5,0.5) +
           LeadLeft.changeBeats(4.5).scale(3.0,3.5) +
-          HingeLeft.changeBeats(4).scale(3.0,1.0),
+              Forward.changehands(Hands.GRIPLEFT).changeBeats(0.5).scale(0.5,1.0) +
+              LeadLeft.changeBeats(3.5).scale(2.5, 1.0),
 
           SwingLeft.changehands(Hands.GRIPLEFT).scale(0.5,0.5) +
           SwingRight.changehands(Hands.GRIPRIGHT).scale(0.5,0.5) +
