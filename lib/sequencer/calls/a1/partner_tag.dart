@@ -18,29 +18,27 @@
 
 */
 
-import '../../../moves.dart';
 import '../common.dart';
 
-class PartnerTag extends Action {
+class PartnerTag extends Action with CallWithParts, ActivesOnly {
 
+  @override int numberOfParts = 2;
   @override final level = LevelData.A1;
   @override var helplink = 'a1/partner_tag';
-
+  @override var help = '''Partner Tag is a two-part call:
+  1.  Quarter In
+  2.  Pass Thru''';
   PartnerTag(super.name);
 
+
   @override
-  Path performOne(DancerModel d, CallContext ctx) {
-    //  Generally Partner Tag is with partner, but there can be exceptions
-    final d2 = [d.data.partner, ctx.dancerToRight(d), ctx.dancerToLeft(d)]
-    .where((it) => it != null && it.isActive).firstOrNull
-     .throwIfNull(CallError('Dancer $d cannnot Partner Tag'));
-    final dist = d.distanceTo(d2);
-    if (d2.isRightOf(d))
-      return LeadRight.scale(0.5,dist/2) +
-             ExtendRight.scale(dist/2,0.5);
-    else
-      return QuarterLeft.skew(-0.5,dist/2) +
-             ExtendRight.scale(dist/2,0.5);
+  void performPart1(CallContext ctx) {
+    ctx.applyCalls('Quarter In');
+  }
+
+  @override
+  void performPart2(CallContext ctx) {
+    ctx.applyCalls('Pass Thru');
   }
 
 }
