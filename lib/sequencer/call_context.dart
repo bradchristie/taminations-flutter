@@ -69,7 +69,8 @@ class CallContext {
     Formation('Double Pass Thru'): 1.0,
     Formation('Quarter Tag') : 1.5,
     Formation('Tidal Line RH') : 1.0,
-    Formation('Squared Set') : 1.0
+    Formation('Squared Set') : 1.0,
+    Formation('I-Beam') : 1.0
   };
 
   static var twoCoupleFormations = {
@@ -849,8 +850,10 @@ class CallContext {
           if (center(4).containsAll(moving) ||
               out4.containsAll(moving) ||
               (centerWaveOf4()?.containsAll(moving) ?? false) ||
-              (centerDiamond()?.containsAll(moving) ?? false))
+              (centerDiamond()?.containsAll(moving) ?? false)) {
+            repairFormation(Formation('Misshapen I-Beam'), Formation('I-Beam'));
             return;
+          }
         }
         //  Collision likely - squeeze the original center 4 into
         //  a more compact formation
@@ -929,7 +932,7 @@ class CallContext {
       if (dancers.length == 8) {
         matchFormationList(standardFormations);
         //  One more check for bad I-Beam
-        repairFormation(Formation('Misshapen I-Beam'), Formation('I-Beam'));
+     //   repairFormation(Formation('Misshapen I-Beam'), Formation('I-Beam'));
         repairFormation(Formation('Misshapen X-Beam'), Formation('X-Beam'));
         var ctxLines = CallContext.fromFormation(Formation('Normal Lines'));
         if (matchFormations(ctxLines,rotate: 180) == null &&

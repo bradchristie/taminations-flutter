@@ -1182,6 +1182,13 @@ class Formation {
       DancerModel.fromData(gender:Gender.GIRL,x:1,y:0,angle:0),
     ]),
 
+    Formation('H Zero',dancers:[
+      DancerModel.fromData(gender:Gender.BOY,x:0,y:1,angle:0),
+      DancerModel.fromData(gender:Gender.GIRL,x:0,y:3,angle:0),
+      DancerModel.fromData(gender:Gender.BOY,x:2,y:3,angle:0),
+      DancerModel.fromData(gender:Gender.GIRL,x:-2,y:3,angle:0),
+    ]),
+
     Formation('Outrigger', dancers:[
       DancerModel.fromData(gender:Gender.BOY,x:2.5,y:0,angle:90),
       DancerModel.fromData(gender:Gender.GIRL,x:3.5,y:0,angle:270),
