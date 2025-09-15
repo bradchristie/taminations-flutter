@@ -95,7 +95,7 @@ import '../c3b/scramble.dart' as c3b;
         DancerModel.fromData(gender:Gender.BOY,x:-2,y:1,angle:180),
         DancerModel.fromData(gender:Gender.GIRL,x:-2,y:-3,angle:180),
   ]),
-      group:'Central',
+      group:'Central', isGenderSpecific: true,
       paths:[
           FlipRight.scale(1.0,0.5).skew(1.0,0.0) +
           ExtendLeft.scale(1.0,0.5) +
