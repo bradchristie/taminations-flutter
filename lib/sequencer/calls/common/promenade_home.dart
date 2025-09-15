@@ -49,6 +49,8 @@ Promenade Corner''';
 
   @override
   void performCall(CallContext ctx) {
+    if (!name.endsWith('Home') && !name.contains('Corner'))
+      throw CallError('Use either Promenade Home or Promenade <fraction>');
     if (ctx.dancers.length != 8)
       throw CallError('Only for 4 couples at this point.');
     //   Compute the center point of each couple
