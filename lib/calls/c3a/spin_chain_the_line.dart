@@ -26,12 +26,12 @@ import '../../moves.dart';
 
     AnimatedCall('Spin Chain the Line',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:-3.5,y:0,angle:90),
-        DancerModel.fromData(gender:Gender.GIRL,x:-2.5,y:0,angle:270),
-        DancerModel.fromData(gender:Gender.GIRL,x:-1.5,y:0,angle:90),
-        DancerModel.fromData(gender:Gender.BOY,x:-.5,y:0,angle:270),
+        DancerModel.fromData(gender:Gender.BOY,y:3.5,x:0,angle:0),
+        DancerModel.fromData(gender:Gender.GIRL,y:2.5,x:0,angle:180),
+        DancerModel.fromData(gender:Gender.GIRL,y:1.5,x:0,angle:0),
+        DancerModel.fromData(gender:Gender.BOY,y:.5,x:0,angle:180),
   ]),
-      from:'Tidal Wave',
+      from:'Right-Hand Tidal Wave',
       paths:[
           SwingRight.scale(0.5,0.5) +
           SwingLeft.scale(0.5,0.5) +
@@ -51,5 +51,33 @@ import '../../moves.dart';
           SwingLeft.scale(0.5,0.5) +
           LeadLeft.changeBeats(3).scale(3.0,0.5)
       ]),
-  ];
 
+    AnimatedCall('Spin Chain the Line',
+        formation:Formation('', dancers:[
+          DancerModel.fromData(gender:Gender.BOY,y:3.5,x:0,angle:180),
+          DancerModel.fromData(gender:Gender.GIRL,y:2.5,x:0,angle:0),
+          DancerModel.fromData(gender:Gender.GIRL,y:1.5,x:0,angle:180),
+          DancerModel.fromData(gender:Gender.BOY,y:.5,x:0,angle:0),
+        ]),
+        from:'Left-Hand Tidal Wave',
+        paths:[
+          SwingLeft.scale(0.5,0.5) +
+              SwingRight.scale(0.5,0.5) +
+              LeadRight.changeBeats(3).scale(3.0,0.5),
+
+          SwingLeft.scale(0.5,0.5) +
+              Stand.changeBeats(3) +
+              DodgeLeft.changeBeats(1).scale(1.0,0.25) +
+              CastLeft,
+
+          SwingLeft.scale(0.5,0.5) +
+              SwingRight.scale(0.5,0.5) +
+              DodgeLeft.changeBeats(1).scale(1.0,0.25) +
+              CastLeft,
+
+          SwingLeft.scale(0.5,0.5) +
+              SwingRight.scale(0.5,0.5) +
+              LeadRight.changeBeats(3).scale(3.0,0.5)
+        ]),
+
+  ];
