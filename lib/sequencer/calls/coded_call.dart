@@ -517,7 +517,7 @@ abstract class CodedCall extends Call {
     'PartnerTag'.ri: (name) => PartnerTag(name),
     'PassandRoll(Your(Cross)?Neighbor)?'.ri: (name) => PassAndRoll(name),
     'Pass(In|Out)'.ri: (name) => PassInOut(name),
-    'PasstheAxle'.ri: (name) => PassTheAxle(name),
+    'PasstheAxle(CastOff34)?'.ri: (name) => PassTheAxle(name),
     'PasstheOcean'.ri: (name) => PassTheOcean(name),
     'PasstheSea'.ri: (name) => PassTheSea(name),
     'PassThru'.ri: (name) => PassThru(name),
@@ -657,7 +657,7 @@ abstract class CodedCall extends Call {
     'TallyHo'.ri: (name) => TallyHo(name),
     //  Tandem concept not tandem-based triangle
     'Tandem(?!Based).+'.ri: (name) => Tandem(name),
-    'theAxle'.ri: (name) => TheAxle(name),
+    'theAxle(CastOff34)?'.ri: (name) => TheAxle(name),
     'theK'.ri: (name) => TheK(name),
     'ThoseWhoCan'.ri: (name) => ThoseWhoCan(name),
     '32AceyDeucey'.ri: (name) => ThreeByTwoAceyDeucey(name),

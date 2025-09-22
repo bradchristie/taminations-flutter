@@ -29,7 +29,8 @@ class PassTheAxle extends Action with CallWithParts, ButCall {
   2.  Centers Pass Thru, others Cross Cast Back
   3.  Swing
   4.  Centers Trade
-Part 3 can be replaced with But (another call)''';
+Part 3 can be replace with [But] Cast Off 3/4
+Part 4 can be replaced with But (another call)''';
   @override var helplink = 'c1/pass_the_axle';
 
   PassTheAxle(super.name);
@@ -47,12 +48,19 @@ Part 3 can be replaced with But (another call)''';
 
   @override
    void performPart3(CallContext ctx) {
-    ctx.applyCalls(butCall);
+    if (norm.endsWith('CastOff34') ||
+        butCall.norm.endsWith('CastOff34'))
+      ctx.applyCalls('Cast Off 3/4');
+    else
+      ctx.applyCalls('Swing');
   }
 
   @override
-   void performPart4(CallContext ctx) {
-    ctx.applyCalls('Centers Trade');
+  void performPart4(CallContext ctx) {
+    if (butCall.norm != 'CastOff34')
+      ctx.applyCalls('Centers $butCall');
+    else
+      ctx.applyCalls('Centers Trade');
   }
 
 }
@@ -61,12 +69,13 @@ class TheAxle extends Action with CallWithParts, ButCall {
 
   @override int numberOfParts = 3;
   @override final level = LevelData.C1;
-  @override var butCall = 'Trade';
+  @override var butCall = 'Swing';
   @override var help = '''The Axle is a 3-part call:
   1.  Centers Pass Thru, others Cross Cast Back
   2.  Swing
   3.  Centers Trade
-Part 2 can be replaced with But (another call)''';
+Part 2 can be replace with [But] Cast Off 3/4
+Part 3 can be replaced with But (another call)''';
   @override var helplink = 'c1/pass_the_axle';
 
   TheAxle(super.name);
@@ -78,13 +87,20 @@ Part 2 can be replaced with But (another call)''';
   }
 
   @override
-   void performPart2(CallContext ctx) {
-    ctx.applyCalls(butCall);
+  void performPart2(CallContext ctx) {
+    if (norm.endsWith('CastOff34') ||
+        butCall.norm.endsWith('CastOff34'))
+      ctx.applyCalls('Cast Off 3/4');
+    else
+      ctx.applyCalls('Swing');
   }
 
   @override
-   void performPart3(CallContext ctx) {
-    ctx.applyCalls('Centers Trade');
+  void performPart3(CallContext ctx) {
+    if (butCall.norm != 'CastOff34')
+      ctx.applyCalls('Centers $butCall');
+    else
+      ctx.applyCalls('Centers Trade');
   }
 
 }
