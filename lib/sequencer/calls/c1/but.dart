@@ -37,7 +37,7 @@ class But extends Action {
   @override
   void addToStack(CallContext ctx) {
     var butCall = ctx.findImplementor<ButCall>(startFrom: ctx.callstack.last) ??
-        thrower<ButCall>('Unable to find call that implements But');
+        thrower<ButCall>(CallError('Unable to find call that implements But'));
     butCall.butCall = name.replaceFirst('but '.ri, '');
   }
 
