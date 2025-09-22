@@ -193,6 +193,7 @@ import 'calls/c1/anything_chain_thru.dart' as c1;
 import 'calls/c1/anything_the_windmill.dart' as c1;
 import 'calls/c1/anything_to_a_wave.dart' as c1;
 import 'calls/c1/block_formation.dart' as c1;
+import 'calls/c1/but.dart' as c1;
 import 'calls/c1/butterfly_formation.dart' as c1;
 import 'calls/c1/cast_back.dart' as c1;
 import 'calls/c1/chain_reaction.dart' as c1;
@@ -622,7 +623,7 @@ var callIndex = [
   CallEntry('Brace Thru','a1','a1/brace_thru',a1.BraceThru,[],'a1/brace_thru.mp3'),
   CallEntry('Breaker <anything>','c3a','c3a/breaker_anything',c3a.BreakerAnything,[]),
   CallEntry('Busy <anything>','c3b','c3b/busy_anything',c3b.BusyAnything,[]),
-  CallEntry('But','c1','c1/replace',c1.Replace,[]),
+  CallEntry('But','c1','c1/but',c1.But,[]),
   CallEntry('Butterfly Formation / Concept','c1','c1/butterfly_formation',c1.ButterflyFormation,[]),
 
   CallEntry('California Twirl','b1','b1/california_twirl',b1.CaliforniaTwirl,['lang-de','lang-ja'],'b1/california_twirl.mp3'),
@@ -1337,6 +1338,7 @@ var titleIndex = <String,String>{
     'a1/brace_thru' : 'Brace Thru',
     'c3a/breaker_anything' : 'Breaker Anything',
     'c3b/busy_anything' : 'Busy anything',
+    'c1/but' : 'But',
     'c1/replace' : 'Replace / But / Skip / Delete',
     'c1/butterfly_formation' : 'Butterfly Formation / Concept',
     'b1/california_twirl' : 'California Twirl',

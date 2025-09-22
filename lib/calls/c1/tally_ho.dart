@@ -21,7 +21,7 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../moves.dart';
-import '../c1/replace.dart' as c1;
+import '../c1/but.dart' as c1;
 
   final List<AnimatedCall> TallyHo = [
 
@@ -359,7 +359,7 @@ import '../c1/replace.dart' as c1;
           SwingLeft.scale(0.5,0.5) +
           CastRight
       ]),
-    c1.Replace.where((tam) =>
+    c1.But.where((tam) =>
       tam.title == 'Tally Ho, But Explode the Wave').first.xref(title: 'Tally Ho, But Explode the Wave').xref(group: ' '),
   ];
 
