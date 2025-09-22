@@ -23,19 +23,18 @@ Call pronunciations provided by
 
 ---
 
-## Taminations version 1.6.90 built 2025-09-01
+## Taminations version 1.6.91 built 2025-09-22
 Copyright 2025 by Brad Christie.  
 This is free software, and you are welcome to modify and redistribute it
 under the terms of the [GNU GPL license](http://www.gnu.org/licenses/gpl.html).  
 
 ## What's New
-* Update definition for Spread
-* More animations for Something New, Link Up, Polly Wally, Step and Squeeze, All 4 Ladies Dixie Style
+* Spin Chain the Line from left-hand tidal wave
 * Sequencer: 
-  * Accept fractions for Square Thru
-  * Fix for Reverse Half Sashay 1 1/2
-  * Accept Turn Thru to a Wave
-  * Code for Hinge the Top
+  * Better info on how to use Promenade
+  * Fix for 3/4 Invert the Column
+  * Fix Pass Thru and Right and Left Thru from a wave
+  * Heads/Sides needs clarification where ambiguous
 
 For a detailed history of changes, view the
 [Git log](https://github.com/bradchristie/taminations-flutter/commits/main)
