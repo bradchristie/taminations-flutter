@@ -26,13 +26,14 @@ class DoOnePart extends Action {
   @override
   void performCall(CallContext ctx) {
     final callName = name.replaceFirst('do the .* part (of)?'.ri, '').trim();
+    final partName = name.replaceFirst(' part .*'.ri, '');
     ctx.subContext(ctx.dancers, (ctx2) {
       ctx2.analyze();
       if (!ctx2.matchCodedCall(callName))
         throw CallError('Unable to find $callName as a Call with Parts');
       if (ctx2.callstack.last is CallWithParts) {
         final call = ctx2.callstack.last as CallWithParts;
-        final partNumber = CallWithParts.partNumberFromCall(call, name);
+        final partNumber = CallWithParts.partNumberFromCall(call, partName);
         if (partNumber == 0)
           throw CallError('Unable to figure out what Part to do');
         call.performPart(partNumber)(ctx2);

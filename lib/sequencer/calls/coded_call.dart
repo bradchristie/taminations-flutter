@@ -228,6 +228,7 @@ import 'c3a/latch_on.dart';
 import 'c3a/own_the_dancers.dart';
 import 'c3a/patch.dart';
 import 'c3a/quarter_mix.dart';
+import 'c3a/quarter_the_deucey.dart';
 import 'c3a/reach_out.dart';
 import 'c3a/recoil.dart';
 import 'c3a/snap_the_lock.dart';
@@ -540,6 +541,7 @@ abstract class CodedCall extends Call {
     'anda?14More'.ri: (name) => QuarterMore(name),
     '(Left)?14Tag'.ri: (name) => QuarterTag(name),
     '(14|34)Mix'.ri: (name) => QuarterMix(name),
+    '(14|34)TheDeucey'.ri: (name) => QuarterTheDeucey(name),
     '(14|34)Thru'.ri: (name) => QuarterThru(name),
 
     'Ramble'.ri: (name) => Ramble(name),

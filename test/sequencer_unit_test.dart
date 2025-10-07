@@ -34,7 +34,7 @@ void testOneSequence(String calls, String result) {
     cctx.interpretCall(call);
     cctx.performCall(tryDoYourPart: true);
     if (!cctx.callname.contains('(move in|step|gnat|back\\s*(up|away))'.ri))
-      cctx.adjustForSquaredSetCovention();
+      cctx.adjustForSquaredSetConvention();
     cctx.checkCenters();
     final firstCall = cctx.callstack.first;
     cctx.animateToEnd();
@@ -4155,5 +4155,17 @@ Star Thru
 Trade By
 Right and Left Thru
 Allemande Left''', '');});
+
+  test('1/4 the Deucey',() { testOneSequence('''Sides Pass the Ocean
+Extend
+Quarter the Deucey Turn the Star 1/2 But Recycle
+Centers Left Touch 1/4
+3/4 the Deucey Turn the Star 1/4
+Boys Run
+Right and Left Thru
+Pass Thru
+Wheel and Deal
+Centers Pass Thru
+Allemande Left ''', '');});
 
 }

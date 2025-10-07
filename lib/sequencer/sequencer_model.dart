@@ -422,7 +422,7 @@ class SequencerModel extends fm.ChangeNotifier {
       cctx.interpretCall(call);
       cctx.performCall(tryDoYourPart: true);
       if (!cctx.callname.contains('(move in|step|gnat|back\\s*(up|away))'.ri))
-        cctx.adjustForSquaredSetCovention();
+        cctx.adjustForSquaredSetConvention();
       cctx.checkCenters();
       //  Snap to a standard formation so subsequent calls will work
       //  But not if just one XML call, as it knows how it should end

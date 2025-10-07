@@ -23,32 +23,32 @@ class QuarterMix extends Action with CallWithParts, IsLeft, IsGrand {
 
   @override var level = LevelData.C3A;
   @override var numberOfParts = 3;
-  bool isThree;
+  bool is34;
   @override var help = '''1/4 Mix is a 3-part call:
   1.  Hinge
   2.  Centers Cross Run
   3.  New Centers Trade''';
   @override var helplink = 'c3a/1_4_mix';
 
-  QuarterMix(super.name) : isThree=normalizeCall(name).contains('34');
+  QuarterMix(super.name) : is34=normalizeCall(name).contains('34');
 
   @override
-   void performPart1(CallContext ctx) {
+  void performPart1(CallContext ctx) {
     ctx.subContext(ctx.dancersHoldingSameHands(isRight: !isLeft, isGrand: isGrand), (ctx2) {
       if (ctx2.dancers.isEmpty)
         throw CallError('No dancers able to do Part 1 of $name');
-      ctx2.applyCalls(isThree ? 'Cast Off 3/4' : 'Hinge');
+      ctx2.applyCalls(is34 ? 'Cast Off 3/4' : 'Hinge');
     }
     );
   }
 
   @override
-   void performPart2(CallContext ctx) {
+  void performPart2(CallContext ctx) {
     ctx.applyCalls('Centers Cross Run');
   }
 
   @override
-   void performPart3(CallContext ctx) {
+  void performPart3(CallContext ctx) {
     ctx.applyCalls('Centers Trade');
   }
 

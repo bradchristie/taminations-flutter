@@ -1021,7 +1021,7 @@ class CallContext {
   }
 
   //  Follow the Squared Set convention
-  void adjustForSquaredSetCovention() {
+  void adjustForSquaredSetConvention() {
     //  First see if we are starting from a squared set
     animate(0.0);
     final ss = CallContext.fromFormation(Formation('Squared Set'));
@@ -1110,7 +1110,7 @@ class CallContext {
   //  Return max number of beats among all the dancers
   double maxBeats() => dancers.fold(0.0, (v, d) => max(v,d.path.beats));
 
-  //  Return all dancers, ordered by distance from another DancerModel,
+  //  Return all dancers, ordered by distance from another dancer,
   //  that satisfies a conditional
   List<DancerModel> dancersInOrder(DancerModel d, [bool Function(DancerModel d)? f]) =>
       (dancers - d).where(f ?? (d)=>true).toList().sortedBy((d2) => d.distanceTo(d2) );
@@ -1269,14 +1269,24 @@ class CallContext {
     //  Get the dancers on each axis
     final xd = dancers.where((d) => d.location.x.isAbout(0.0)).toList();
     final yd = dancers.where((d) => d.location.y.isAbout(0.0)).toList();
+    final xMax = xd.maxOf((d) { return d.location.length; });
+    final yMax = yd.maxOf((d) { return d.location.length; });
     //  If there are 6 or 8 dancers on one axis,
     //  the center 4 of those is the Center Wave of 4
-    if (xd.length > 4)
+    var useX = xd.length > 4;
+    var useY = yd.length > 4;
+    if (xd.length == 4 && yd.length < 4 &&  !xMax.isGreaterThan(3.0))
+      useX = true;
+    if (yd.length == 4 && xd.length < 4 && !yMax.isGreaterThan(3.0))
+      useY = true;
+    if (useX)
       waveOf4 = xd.sortedWith((d1, d2) => d1.location.length.compareTo(d2.location.length))
           .take(4).toList();
-    else if (yd.length > 4)
+    else if (useY)
       waveOf4 = yd.sortedWith((d1, d2) => d1.location.length.compareTo(d2.location.length))
           .take(4).toList();
+    //  If there are 4 dancers on one axis, < 4 on the other,
+    //  and those 4 are close to the center, that's the center wave
     else {
       //  Otherwise, find the 2 dancers in the very center
       //  Those and their adjacent dancers make the center wave of 4
@@ -1293,7 +1303,7 @@ class CallContext {
     //  Check that these are in a wave or line
     if (waveOf4.length == 4) {
       if (waveOf4.every((d) =>
-                (dancersToRight(d)+dancersToLeft(d)).where((d2) => waveOf4.contains(d2)).length ==3))
+                (dancersToRight(d)+dancersToLeft(d)).where((d2) => waveOf4.contains(d2)).length == 3))
         return waveOf4;
     }
     return null;

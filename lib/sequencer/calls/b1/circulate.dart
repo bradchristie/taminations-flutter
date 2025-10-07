@@ -53,6 +53,9 @@ class Circulate extends Action {
       });
     }
 
+    else if (ctx.actives.length != 8)
+      super.performCall(ctx);
+
     //  All 8 dancers active
     else if (name == 'Box Circulate')
       throw CallError('Cannot do Box Circulate with 8 dancers');
