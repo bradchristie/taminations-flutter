@@ -111,7 +111,12 @@ class AnimationForEmbed extends fm.StatelessWidget {
         child: pp.Consumer<TamState>(
             builder: (context, tamState, _) {
               _startModel(context,tamState,null);
-              return fm.Card(child: AnimationFrame());
+              //  Need to stack up a few necessary Flutter widgets here
+              return fm.Navigator(
+                  pages:[fm.MaterialPage(child:fm.Material(child:AnimationFrame()))],
+                  onDidRemovePage: (page) { }
+              );
+              //return fm.Card(child: AnimationFrame());
             }
         ),
     );
