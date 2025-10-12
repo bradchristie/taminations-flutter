@@ -32,10 +32,10 @@ class Zoom extends Action with ActivesOnly {
   @override
   Path performOne(DancerModel d, CallContext ctx) {
     var a = d.angleToOrigin;
-    var centerLeft = ctx.dancersToRight(d).length == 2 &&
-        ctx.dancersToLeft(d).length == 1;
-    var centerRight = ctx.dancersToRight(d).length == 1 &&
-        ctx.dancersToLeft(d).length == 2;
+    var centerLeft = ctx.dancersToRight(d).length % 2 == 0 &&
+        ctx.dancersToLeft(d).length % 2 == 1;
+    var centerRight = ctx.dancersToRight(d).length % 2 == 1 &&
+        ctx.dancersToLeft(d).length % 2 == 0;
     Path c,c2,c3;
     if (centerLeft || (!centerRight && a > 0)) {
       c = RunRight;
