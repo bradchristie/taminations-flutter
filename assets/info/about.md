@@ -23,18 +23,17 @@ Call pronunciations provided by
 
 ---
 
-## Taminations version 1.6.91 built 2025-09-22
+## Taminations version 1.6.92 built 2025-10-13
 Copyright 2025 by Brad Christie.  
 This is free software, and you are welcome to modify and redistribute it
 under the terms of the [GNU GPL license](http://www.gnu.org/licenses/gpl.html).  
 
 ## What's New
-* Spin Chain the Line from left-hand tidal wave
+* Fix web embed feature and SSD web page
 * Sequencer: 
-  * Better info on how to use Promenade
-  * Fix for 3/4 Invert the Column
-  * Fix Pass Thru and Right and Left Thru from a wave
-  * Heads/Sides needs clarification where ambiguous
+  * Fix crash on But error
+  * Code for 1/4, 3/4 the Deucey
+  * Fix for Triple Box Zing
 
 For a detailed history of changes, view the
 [Git log](https://github.com/bradchristie/taminations-flutter/commits/main)
