@@ -82,36 +82,5 @@ import '../../moves.dart';
           Forward_2
       ]),
 
-    AnimatedCall('Relay the Shadow',
-      formation:Formation('Normal Lines'),
-      from:'Normal Lines',parts:'5;4.5',noDisplay: true,
-      paths:[
-          ExtendLeft.changeBeats(2).scale(2.0,0.5) +
-          SwingRight.changehands(Hands.GRIPRIGHT).scale(0.5,0.5) +
-          SwingLeft.changehands(Hands.GRIPLEFT).scale(0.5,0.5) +
-          HingeLeft.scale(1.0,0.5) +
-          LeadRight +
-          LeadRight +
-          LeadRight,
-
-          ExtendLeft.changeBeats(2).scale(2.0,0.5) +
-          SwingRight.changehands(Hands.GRIPRIGHT).scale(0.5,0.5) +
-          SwingLeft.changehands(Hands.GRIPLEFT).scale(0.5,0.5) +
-          HingeLeft.scale(1.0,0.5) +
-          HingeRight.changeBeats(4).scale(3.0,1.0),
-
-          ExtendLeft.changeBeats(2).scale(2.0,0.5) +
-          SwingRight.changehands(Hands.GRIPRIGHT).scale(0.5,0.5) +
-          SwingLeft.changehands(Hands.GRIPLEFT).scale(0.5,0.5) +
-          HingeLeft.scale(1.0,0.5) +
-          Forward_2 +
-          HingeLeft +
-          Forward_2,
-
-          ExtendLeft.changeBeats(2).scale(2.0,0.5) +
-          SwingRight.changehands(Hands.GRIPRIGHT).scale(0.5,0.5) +
-          LeadRight.changeBeats(4.5).scale(3.0,3.5) +
-          HingeRight.changeBeats(4).scale(3.0,1.0)
-      ]),
   ];
 

@@ -102,6 +102,87 @@ import '../../moves.dart';
           UmTurnLeft.changeBeats(4).skew(-1.0,0.5)
       ]),
 
+
+
+    AnimatedCall('Left Rally',
+        formation:Formation('Quarter Tag'),
+        from:'1/4 Tag',parts:'3',
+        paths:[
+          ExtendLeft.changeBeats(2).scale(1.0,2.0) +
+              Forward_2 +
+              RunRight.changeBeats(3).scale(0.5,0.25),
+
+          ExtendLeft.changeBeats(4).scale(1.0,4.0) +
+              ExtendLeft.changeBeats(3).scale(2.0,0.5),
+
+          RunRight.skew(1.0,0.0) +
+              ExtendLeft.scale(1.0,0.5) +
+              SwingLeft.scale(0.5,0.5),
+
+          Forward.changeBeats(3) +
+              UmTurnRight.changeBeats(4).skew(-1.0,-0.5)
+        ]),
+
+    AnimatedCall('Left Rally',
+        formation:Formation('3/4 Tag'),
+        from:'3/4 Tag',parts:'3',
+        paths:[
+          QuarterLeft.skew(-0.5,1.0) +
+              Forward_2 +
+              LeadLeft.changeBeats(3.5).scale(1.5,2.5),
+
+          QuarterLeft.skew(-0.5,1.0) +
+              LeadLeft.changeBeats(3).scale(1.5,2.5) +
+              RunLeft.changeBeats(2.5).scale(0.5,0.5),
+
+          RunRight.skew(1.0,0.0) +
+              ExtendLeft.scale(1.0,0.5) +
+              SwingLeft.scale(0.5,0.5),
+
+          Forward.changeBeats(3) +
+              UmTurnRight.changeBeats(4).skew(-1.0,-0.5)
+        ]),
+
+    AnimatedCall('Left Rally',
+        formation:Formation('Quarter Tag LH'),
+        from:'Left-Hand 1/4 Tag',parts:'3',
+        paths:[
+          ExtendLeft.changeBeats(2).scale(1.0,2.0) +
+              Forward_2 +
+              RunRight.changeBeats(3).scale(0.5,0.25),
+
+          ExtendLeft.changeBeats(4).scale(1.0,4.0) +
+              ExtendLeft.changeBeats(3).scale(2.0,0.5),
+
+          RunLeft.skew(1.0,0.0) +
+              ExtendRight.scale(1.0,0.5) +
+              SwingRight.scale(0.5,0.5),
+
+          Forward.changeBeats(3) +
+              UmTurnLeft.changeBeats(4).skew(-1.0,0.5)
+        ]),
+
+    AnimatedCall('Left Rally',
+        formation:Formation('3/4 Tag LH'),
+        from:'Left-Hand 3/4 Tag',parts:'3',
+        paths:[
+          QuarterLeft.skew(-0.5,1.0) +
+              Forward_2 +
+              LeadLeft.changeBeats(3.5).scale(1.5,2.5),
+
+          QuarterLeft.skew(-0.5,1.0) +
+              LeadLeft.changeBeats(3).scale(1.5,2.5) +
+              RunLeft.changeBeats(2.5).scale(0.5,0.5),
+
+          RunLeft.skew(1.0,0.0) +
+              ExtendRight.scale(1.0,0.5) +
+              SwingRight.scale(0.5,0.5),
+
+          Forward.changeBeats(3) +
+              UmTurnLeft.changeBeats(4).skew(-1.0,0.5)
+        ]),
+
+
     AnimatedCall('Scoot and Rally',
       formation:Formation('Quarter Tag'),
       from:'1/4 Tag',parts:'5;3',
@@ -169,5 +250,38 @@ import '../../moves.dart';
           ExtendRight.scale(1.0,0.5) +
           SwingRight.scale(0.5,0.5)
       ]),
+
+    AnimatedCall('Left Scoot and Rally',
+        formation:Formation('Quarter Tag'),
+        from:'1/4 Tag',parts:'5;3',
+        paths:[
+          ExtendLeft.scale(1.5,1.5) +
+              SwingRight.scale(0.75,0.75) +
+              Forward.scale(1.5,1.0) +
+              QuarterLeft.skew(-0.5,1.0) +
+              Forward_2 +
+              LeadLeft.changeBeats(3.5).scale(1.5,2.5),
+
+          Forward.scale(1.5,1.0) +
+              SwingRight.scale(0.75,0.75) +
+              ExtendRight.scale(1.5,1.5) +
+              QuarterLeft.skew(-0.5,1.0) +
+              LeadLeft.changeBeats(3).scale(1.5,2.5) +
+              RunLeft.changeBeats(2.5).scale(0.5,0.5),
+
+          ExtendRight.scale(1.5,0.5) +
+              SwingRight.scale(0.75,0.75) +
+              Forward.scale(1.5,1.0) +
+              Forward.changeBeats(3) +
+              UmTurnRight.changeBeats(4).skew(-1.0,-0.5),
+
+          Forward.scale(1.5,1.0) +
+              SwingRight.scale(0.75,0.75) +
+              ExtendLeft.scale(1.5,0.5) +
+              RunRight.skew(1.0,0.0) +
+              ExtendLeft.scale(1.0,0.5) +
+              SwingLeft.scale(0.5,0.5)
+        ]),
+
   ];
 
