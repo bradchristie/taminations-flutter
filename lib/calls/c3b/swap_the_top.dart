@@ -35,17 +35,6 @@ import '../../moves.dart';
           CastRight
       ]),
 
-    AnimatedCall('Mirror Swap the Top',
-      formation:Formation('Facing Couples'),
-      from:'Facing Couples',group:' ',
-      paths:[
-          Forward_2 +
-          CastRight,
-
-          FlipLeft.changeBeats(4.5) +
-          LeadLeft.changeBeats(2)
-      ]),
-
     AnimatedCall('Mirror Cross Swap the Top',
       formation:Formation('Facing Couples'),
       from:'Facing Couples',group:' ',

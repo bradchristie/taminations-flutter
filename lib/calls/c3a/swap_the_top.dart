@@ -71,5 +71,51 @@ final List<AnimatedCall> SwapTheTop = [
 
       ]),
 
+  AnimatedCall('Reverse Swap the Top',
+      formation:Formation('Facing Couples'),
+      from:'Facing Couples',
+      paths:[
+        Forward_2 +
+            CastRight,
+
+        FlipLeft.changeBeats(4.5) +
+            LeadLeft.changeBeats(2)
+      ]),
+
+  AnimatedCall('Reverse Swap the Top',
+      formation:Formation('Normal Lines'),
+      from:'Normal Lines',
+      paths:[
+        Forward_2 +
+            CastRight,
+
+        FlipLeft.changeBeats(4.5) +
+            LeadLeft.changeBeats(2),
+
+        Forward_2 +
+            CastRight,
+
+        FlipLeft.changeBeats(4.5) +
+            LeadLeft.changeBeats(2),
+
+      ]),
+
+  AnimatedCall('Reverse Swap the Top',
+      formation:Formation('Eight Chain Thru'),
+      from:'Eight Chain Thru',
+      paths:[
+        ExtendRight.changeBeats(2).scale(1, .5) +
+            CastRight.scale(.5,.5),
+
+        FlipLeft.changeBeats(4.5) +
+            LeadLeft.changeBeats(2).scale(.5, 1),
+
+        ExtendRight.changeBeats(2).scale(1, .5) +
+            CastRight.scale(.5,.5),
+
+        FlipLeft.changeBeats(4.5) +
+            LeadLeft.changeBeats(2).scale(.5, 1),
+
+      ]),
 ];
 

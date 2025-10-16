@@ -23,6 +23,7 @@ import '../../common_dart.dart';
 import '../../moves.dart';
 import '../c3b/lift_off.dart' as c3b;
 import '../c3b/rip_off.dart' as c3b;
+import '../c3a/swap_the_top.dart' as c3a;
 import '../c3b/swap_the_top.dart' as c3b;
 
   final List<AnimatedCall> MirrorConcept = [
@@ -150,6 +151,9 @@ import '../c3b/swap_the_top.dart' as c3b;
           QuarterRight.changeBeats(2).skew(1.0,0.0)
       ]),
 
+    c3a.SwapTheTop.where((tam) =>
+    tam.title == 'Reverse Swap the Top').first.xref(title: 'Mirror Swap the Top').xref(group: 'Mirror'),
+
     AnimatedCall('Mirror Wheel and Deal',
       formation:Formation('Lines Facing Out'),
       group:'Mirror',
@@ -200,8 +204,6 @@ import '../c3b/swap_the_top.dart' as c3b;
       tam.title == 'Mirror Rip Off' && tam.from == 'Completed Double Pass Thru').first.xref(title: 'Mirror Rip Off (from completed double pass thru)').xref(group: 'Mirror (C-3B)'),
     c3b.RipOff.where((tam) =>
       tam.title == 'Mirror Rip Off' && tam.from == 'Magic Columns').first.xref(title: 'Mirror Rip Off (from magic columns)').xref(group: 'Mirror (C-3B)'),
-    c3b.SwapTheTop.where((tam) =>
-      tam.title == 'Mirror Swap the Top').first.xref(title: 'Mirror Swap the Top').xref(group: 'Mirror (C-3B)'),
     c3b.SwapTheTop.where((tam) =>
       tam.title == 'Mirror Cross Swap the Top').first.xref(title: 'Mirror Cross Swap the Top').xref(group: 'Mirror (C-3B)'),
   ];
