@@ -635,6 +635,22 @@ import '../c3a/mini_chase.dart' as c3a;
           SwingRight
       ]),
 
+    AnimatedCall('All 4 Couples Touch',
+        formation:Formation('Static Square'),
+        group:'All 4 Couples (with calls through Plus)',
+        noDisplay: true,
+        paths:[
+          ExtendLeft.changeBeats(2).scale(2.0,2.0) +
+              Forward,
+
+          Forward_3,
+
+          ExtendLeft.changeBeats(2).scale(2.0,2.0) +
+              Forward,
+
+          Forward_3
+        ]),
+
     AnimatedCall('All 4 Couples Touch a Quarter',
       formation:Formation('Static Square'),
       group:'All 4 Couples (with calls through Plus)',
