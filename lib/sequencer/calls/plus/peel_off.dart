@@ -22,7 +22,7 @@ import 'package:taminations/moves.dart';
 
 import '../common.dart';
 
-class PeelOff extends SplitCall {
+class PeelOff extends SplitCall with ActivesOnly {
 
   @override var level = LevelData.PLUS;
 
