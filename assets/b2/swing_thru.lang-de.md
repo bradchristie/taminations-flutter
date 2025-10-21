@@ -56,7 +56,7 @@ Tänzer zusammenarbeiten, so ist das besonders heikel und sollte nur mit großer
 auf acht Tänzer ist normalerweise für Tanzprogramme reserviert, in denen es für diese Tanzaktion ein
 anderes Kommando [[Grand Swing Thru](../plus/grand_swing_thru.md)] gibt.
 
-###### @ Copyright 1994, 2000-2017 by CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed nor revised in any derivation or publication.
+###### @ Copyright 1994, 2000-2020 by CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed nor revised in any derivation or publication.
 
 <!-- Parts
 SwingThru1

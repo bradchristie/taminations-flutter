@@ -15,6 +15,7 @@ Squared Set, Infacing Circle Of 8
 #### Circle Right, The Other Way Back
 #### (während eines Circle Left) Reverse, and Circle Right the other way back
 #### Circle
+#### (from Facing Lines) Join 16 hands, Circle to the Left until you get back home
 
 ### Tanzaktion
 
@@ -76,6 +77,15 @@ Facing Couples
 
 Daselbe wie oben; der Grapevine Step wird in einem Circle mit 4 Tänzern nicht empfohlen.
 
+### Bemerkungen 
+
+Von Facing Lines aus sollte der Caller deutlich machen, 
+ob er einen Circle mit 8 Tänzern, zwei
+Circles mit 4 Tänzern oder vier Circles mit 2 Tänzern möchte.
+Im englischsprachigen Raum wird häufig eine
+größere Vielfalt an Kommandobeispielen verwendet 
+(z. B. „Circle up 4, go 3/4 round; Right and Left Thru“).
+
 ## Fall 3: 2 Tänzer
 
 ### Startformation
@@ -84,16 +94,23 @@ Facing Dancers
 
 ### Kommandobeispiele
 
-#### Join 2 Hands And Circle Left Halfway
-#### Make Circles of 2 and Circle Left Halfway
-#### With the person in front of you circle 1/4, 1/2, 3/4, or full around
-#### Allemande Left; Dosado; with your Partner Circle 1/2 and Star Thru
-#### Head Ladies Step Into The Center and Circle 1/2 With Each Other
-#### With the one you face, join both hands and circle 1/2, 3/4 or full around
+#### Single Circle Full Around
+#### Single Circle Left Halfway
+#### Single Circle Left 1/2; Pass Thru
+#### Head Ladies Single Circle full around and back out at home
+#### Those facing join both hands, Single Circle Left three-quarters
+#### To the Right, Single Circle 3/4
+#### Heads Square Thru 4; with your Corner Dosado; then Single Circle half, and Star Thru
+#### Heads Lead Left; Single Circle Right 3/4; Step to a Left-Hand Ocean Wave
 
 ### Tanzaktion
 
-Dieselbe wie oben.
+Die sich anschauenden Tänzer fassen beide Hände und bewegen 
+sich um den Mittelpunkt zwischen
+ihnen in die angegebene Richtung oder nach links, 
+wenn keine Richtung angegeben wurde.
+Die Bewegungslänge wird als Bruchteil eines vollen 
+Kreises angegeben (es gibt keine Vorgabe).
 
 ### Schlussformation
 
@@ -101,17 +118,28 @@ Facing Dancers
 
 ### Timing
 
-1/2: 4, 3/4: 5
+1/2: 4, 3/4: 5, Full: 7
 
 ### Styling
 
-In einem Circle mit gemischten Geschlechtern: Männer Handflächen nach oben, Frauen nach unten. In einem gleichgeschlechtlichen Circle: Rechte Handfläche nach oben, linke nach unten. In einigen Gegenden wird das letztere Styling ständig verwendet.
+Die Tänzer legen ihre rechte Hand an ihre linke Hand
+und ihre linke Hand an ihre rechte Hand. In einem
+Circle mit gemischten Geschlechtern: 
+Männer Handflächen nach oben, Frauen nach unten. In einem
+gleichgeschlechtlichen Circle: 
+Rechte Handfläche nach oben, linke nach unten. 
+In einigen Gegenden wird das
+letztere Styling ständig verwendet. 
+Am Ende des Calls lassen die Tänzer ihre Hände los oder passen die
+Handhaltung je nach nächstem Call an.
 
 ### Bemerkungen
 
-Obwohl das Konzept des Circling mit 2 oder mehr Personen Teil des Mainstream Programms ist, gibt es keine klar festgelegte Terminologie. Caller, die Circle of 2 verwenden wollen, müssen eine Terminologie verwenden, die ihren Tänzern bekannt ist.
+"Single Circle" ist ein historischer Name
+für diese Aktion und entspricht anderen Calls, bei denen
+eine größere Aktion auf nur zwei Tänzer reduziert wird.
+Im englischsprachigen Raum wird häufig eine größere Vielfalt 
+an Kommandobeispielen verwendet 
+(z. B. "Circle up 2, go halfway round").
 
-Manche Caller verwenden das Kommando "Single Circle" für Circles mit 2 Tänzern (z. B. Single Circle ¾ to a Star Thru). Das Kommando "Single Circle" ist nicht explizit aufgelistet und wird im Mainstream Programm
-nicht unterrichtet. Daher kann der Gebrauch hiervon Kommunikationsprobleme verursachen. Ausserdem ist das Kommando "Single Circle" sehr ähnlich mit dem Call "Single Circle to a Wave", welcher Bestandteil eines anderen Tanzprogramms ist. Einige Caller finden, dass der Gebrauch des Kommandos "Single Circle" im Mainstream Programm unangebracht ist.
-
-###### @ Copyright 1994, 2000-2017 by CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed nor revised in any derivation or publication.
+###### @ Copyright 1994, 2000-2020 by CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed nor revised in any derivation or publication.

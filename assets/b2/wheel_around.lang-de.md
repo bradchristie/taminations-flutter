@@ -15,11 +15,21 @@ Couple
 #### Pass Thru; Wheel and Deal; Centers Wheel Around
 #### Heads Slide Thru and Square Thru 3; Left Touch 1/4; Walk and Dodge; Wheel Around
 #### Sides Star Thru; Double Pass Thru; Centers In; Boys Wheel Around; Couples Circulate
+#### Heads Pass Thru and Reverse Wheel Around and Lead Right
+#### Heads Pass Thru and Reverse Wheel Around and Reverse Flutterwheel
+#### Sides Star Thru; Double Pass Thru; Centers In; Girls Reverse Wheel Around; Couples Circulate
+
 
 ### Tanzaktion
 
-Das Paar dreht sich als Einheit nach links um (180°). Der Tänzer links geht rückwärts, der Tänzer
-rechts geht vorwärts. Der Drehpunkt ist die Handverbindung zwischen den Tänzern.
+Das Paar dreht sich als Einheit nach links um (180°). 
+Der Tänzer links geht rückwärts, der Tänzer rechts geht vorwärts. 
+Der Drehpunkt ist die Handverbindung zwischen den Tänzern.
+
+Für ein Reverse Wheel Around dreht sich das Paar als Einheit
+nach rechts um (180°). Der Tänzer rechts geht rückwärts, 
+der Tänzer links geht vorwärts. 
+Der Drehpunkt ist die Handverbindung zwischen den Tänzern
 
 ### Schlussformation
 
@@ -46,7 +56,5 @@ So ist die resultierende Formation ohne weitere Anpassungen ebenfalls parallel z
 Zu weiteren Informationen wie Tänzer für Wheel Around während einer Promenade angesprochen werden
 können, siehe „Allgemeines: Wege, Tänzer zu benennen: Heads / Sides“.
 
-Die Variante, bei der Tänzer sich in die andere Richtung drehen, heißt Reverse Wheel Around. Siehe
-"Zusätzliche Angaben: Kommandos: Erweiterungen wie Reverse Wheel Around".
 
 ###### © 1994, 2000-2020 by CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed or revised in any derivation or publication.
