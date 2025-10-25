@@ -200,21 +200,22 @@ class __SettingRadioGroupState extends fm.State<_SettingRadioGroup> {
                       widget.onChanged(v);
                     });
                   },
+                  child: fm.RadioGroup<String>(
+                      groupValue: widget.groupValue,
+                      onChanged: (value) {
+                        setState(() {
+                          widget.onChanged(value ?? '');
+                        });
+                      },
                   child: fm.Row(
                       mainAxisSize: fm.MainAxisSize.min,
                       children:[
                         fm.Radio<String>(
                             key: fm.Key(v),
                             value: v,
-                            groupValue: widget.groupValue,
-                            onChanged: (value) {
-                              setState(() {
-                                widget.onChanged(value ?? '');
-                              });
-                            }
                         ),
                         fm.Text(v,style: fm.TextStyle(fontSize: 18))
-                      ]),
+                      ])),
                 )).toList()
         ));
   }
