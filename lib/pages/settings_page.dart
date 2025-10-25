@@ -434,7 +434,7 @@ class LanguageSettingWidget extends fm.StatelessWidget {
             _SettingTitle('Language for Definitions'),
             _SettingRadioGroup(
                 groupValue: Settings.language,
-                values: ['System', 'English', 'German', 'Japanese'],
+                values: ['System', 'English', 'German', 'Italian', 'Japanese'],
                 onChanged: (value) {
                   Settings.language = value;
                 }),

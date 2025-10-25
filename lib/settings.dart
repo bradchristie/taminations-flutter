@@ -181,13 +181,15 @@ class Settings extends fm.ChangeNotifier {
       return 'en';
     else if (language == 'German')
       return 'de';
+    else if (language == 'Italian')
+      return 'it';
     else if (language == 'Japanese')
       return 'ja';
     else  //  System language
       return fm.WidgetsBinding.instance.platformDispatcher.locale.languageCode;
   }
 
-  //  Get a language-specific link for retreiving the definition
+  //  Get a language-specific link for retrieving the definition
   static String getLanguageLink(String link) {
     var code = languageCode;
     if (code != 'en') {
