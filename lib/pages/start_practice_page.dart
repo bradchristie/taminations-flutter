@@ -112,15 +112,17 @@ class _StartPracticeRadioGroup extends fm.StatelessWidget {
     return fm.Container(
         color: Color.FLOOR,
         margin: fm.EdgeInsets.only(left:20, bottom:10),
-        child: fm.Row (
-            children: values.map((v) => [
-              fm.Radio<String>(
-                  value: v,
-                  groupValue: groupValue,
-                  onChanged: onChanged
-              ),
-              fm.Text(v)
-            ]).expand((e) => e).toList()
+        child: fm.RadioGroup(
+          onChanged: onChanged,
+          groupValue: groupValue,
+          child: fm.Row (
+              children: values.map((v) => [
+                fm.Radio<String>(
+                    value: v,
+                ),
+                fm.Text(v)
+              ]).expand((e) => e).toList()
+          ),
         ));
   }
 }

@@ -20,7 +20,6 @@
 
 import '../../../moves.dart';
 import '../common.dart';
-import '../coded_call.dart';
 
 class CrossRun extends Action with ActivesOnly {
   @override
