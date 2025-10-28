@@ -193,6 +193,9 @@ extension TamList<E> on List<E> {
       : (e is List<E>)
       ? where((element) => !e.contains(element)).toList()
       : thrower(ArgumentError(e));
+  List<E> operator *(dynamic e) => (e is List<E>)
+      ? toSet().intersection(e.toSet()).toList()
+      : thrower(ArgumentError(e));
   List<E> copy() => toList();
   List<T> mapIndexed<T>(T Function(int index, E item) mapFun) =>
       List.generate(length,(i)=>i).map((i) => mapFun(i,this[i])).toList();

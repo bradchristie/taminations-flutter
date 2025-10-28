@@ -4168,4 +4168,19 @@ Wheel and Deal
 Centers Pass Thru
 Allemande Left ''', '');});
 
+  test('Cross Kickoff',() { testOneSequence('''Heads Pair Off
+Left Touch
+Men Cross Kickoff
+Girls Cross Trail Thru
+Star Thru
+Girls Cross Kickoff
+Trade By
+Star Thru
+Boys Circulate
+Bend the Line
+Right and Left Thru
+Star Thru
+Pass Thru
+Allemande Left ''', ''); });
+
 }

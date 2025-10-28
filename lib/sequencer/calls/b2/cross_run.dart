@@ -34,7 +34,7 @@ class CrossRun extends Action with ActivesOnly {
   CrossRun(super.name);
 
   @override
-  void performCall(CallContext ctx) {
+  void performCallx(CallContext ctx) {
     //  If there are two spec the first one could be a spec
     //  for the line of 4 dancers, or it could be part of
     //  the spec for the dancers to Cross Run.
@@ -51,16 +51,13 @@ class CrossRun extends Action with ActivesOnly {
         // Fall through to applying both specifiers below
       }
     }
-    performCallWithSpec(ctx);
+    //performCallWithSpec(ctx);
   }
 
-  void performCallWithSpec(CallContext ctx) {
-      var spec = name.replaceFirst('Cross\\s*Run'.ri, '');
-      if (spec.isBlank) throw CallError('Who is going to Cross Run?');
-      var specCtx = CallContext.fromContext(ctx);
-      specCtx.applySpecifier(spec);
-      var runners = ctx.actives.where((d) => specCtx.actives.contains(d));
-      var dodgers = ctx.actives.where((d) => !runners.contains(d));
+  @override
+  void performCall(CallContext ctx) {
+      var runners = ctx.actives;
+      var dodgers = ctx.actives.map((d) => d.data.partner);
       if (runners.length > dodgers.length) throw CallError('Not valid arrangement for Cross Run');
       //  Runners must be all ends or all centers
       //  In a 1/4 tag, center 4 are all centers, and the ends of that wave
@@ -69,18 +66,16 @@ class CrossRun extends Action with ActivesOnly {
       var centersOnly = runners.where((d) => d.data.center && !d.data.end);
       if (endsOnly.isNotEmpty && centersOnly.isNotEmpty)
         throw CallError('Cross Run dancers must be all ends or all centers');
-      var realDodgers = <DancerModel>[];
+      var realDodgers = runners.map((d) => d.data.partner).nonNulls.toList();
+      if (realDodgers.length != runners.length) throw CallError('Error calculating Cross Run');
       for (var d in runners) {
         var dright = ctx.dancersToRight(d);
         var dleft = ctx.dancersToLeft(d);
         var numright = dright.length;
-        var numleft = dleft.length;
-        //  Runners must be in general lines of 4 or 8
-        if (numright + numleft != 3 && numright + numleft != 7)
-          throw CallError('Dancers must be in waves of 4 or 8');
-        if (numright == 2 || numright == 3 || numright == 6 || numright == 7) {
+        var runright = dright * runners;
+        var runleft = dleft * runners;
+        if (runright.length == 1 || runright.length == 3) {
           final d2 = dright[1];
-          if (!runners.contains(d2)) realDodgers.add(d2);
           final dist = d.distanceTo(d2);
           //  If centers are running and facing same direction,
           //  dancer on right goes in front (half-sashay action)
@@ -94,15 +89,13 @@ class CrossRun extends Action with ActivesOnly {
               scaleX = 2.0;
             d.path += RunRight.scale(scaleX, dist / 2);
           }
-        } else if (numleft == 2 || numleft == 3 || numleft == 6 || numleft == 7) {
+        } else if (runleft.length == 1 || runleft.length ==3) {
           final d2 = dleft[1];
-          if (!runners.contains(d2)) realDodgers.add(d2);
           final dist = d.distanceTo(d2);
           d.path += RunLeft.scale(1.0, dist / 2);
         } else
           throw CallError('Error calculating Cross Run');
       }
-      if (realDodgers.length != runners.length) throw CallError('Error calculating Cross Run');
 
       for (var d in realDodgers) {
         //  Find a direction they can move to a runner's spot
