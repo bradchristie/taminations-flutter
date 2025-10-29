@@ -189,8 +189,9 @@ class TamUtils {
   }
 
   //  Read an XML file or other from the assets
-  static Future<String> getAsset(String filename) async =>
-      rootBundle.loadString('assets/${linkSSD(filename)}');
+  static Future<String> getAsset(String filename) async {
+    return rootBundle.loadString('assets/${linkSSD(filename)}');
+  }
 
   static String platform() {
     try {

@@ -61,10 +61,10 @@ class _MarkdownFrameState extends fm.State<MarkdownFrame> {
 
   String currentLink;
   String title = '';
+  String md = '';
   List<String> linkStack = [];
   List<String> titleStack = [];
   _MarkdownFrameState(this.currentLink);
-  Future<String>? _mdFuture;
   String get _dir => currentLink.replaceFirst(r'/.*'.r,'');
   final scrollController = fm.ScrollController();
 
@@ -111,11 +111,7 @@ class _MarkdownFrameState extends fm.State<MarkdownFrame> {
     );
     return pp.Consumer2<TamState,HighlightState>(
         builder: (context, tamState, highlightState, child) {
-          return fm.FutureBuilder(
-              future:  _mdFuture,
-              builder: (context,snapshot) {
-                if (snapshot.hasData) {
-                  final md = snapshot.data!.toString();
+
                   title = md.replaceMatch('# (.+?)\\n.*'.rd, '\\1').trim();
                   return fm.Column(
                       children: [
@@ -145,7 +141,7 @@ class _MarkdownFrameState extends fm.State<MarkdownFrame> {
                                   thickness: 16,
                                   controller: scrollController,
                                   child: Markdown(
-                                    data: adjustMarkdown(snapshot.data!.toString(), tamState, highlightState),
+                                    data: adjustMarkdown(md, tamState, highlightState),
                                     selectable: true,
                                     styleSheet: markdownStyle,
                                     controller: scrollController,
@@ -176,18 +172,19 @@ class _MarkdownFrameState extends fm.State<MarkdownFrame> {
                                 ))
                         ),
                       ]);
-                }  // if snapshot.hasData (future is resolved)
-                else
-                  return fm.Container();
-              }
-          );
         });
   }
 
   void _loadMdFromAssets(String htmllink) async {
-    final localizedAssetName = Settings.getLanguageLink(htmllink.replaceFirst('\\.(html|md)'.r, '')) + '.md';
+    var assetName = htmllink.replaceFirst('\\.(html|md)'.r, '');
+    final localizedAssetName = Settings.getLanguageLink(assetName);
+    try {
+      md = await TamUtils.getAsset(localizedAssetName + '.md');
+    } catch (err) {
+      md = await TamUtils.getAsset(assetName + '.md');
+    }
     setState(() {
-      _mdFuture = TamUtils.getAsset(localizedAssetName);
+      //_mdFuture = TamUtils.getAsset(localizedAssetName);
       currentLink = htmllink;
     });
   }

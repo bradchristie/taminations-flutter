@@ -25,10 +25,9 @@ class CallEntry {
   String title;
   String level;
   String link;
-  List<String> languages;
   String? audio;
   List<AnimatedCall> calls;
 
-  CallEntry(this.title,this.level,this.link,this.calls,this.languages,[this.audio]);
+  CallEntry(this.title,this.level,this.link,this.calls,[this.audio]);
 
 }

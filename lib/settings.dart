@@ -21,8 +21,6 @@
 import 'package:flutter/material.dart' as fm;
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:shared_preferences/util/legacy_to_async_migration_util.dart';
-import 'call_index.dart';
-import 'common_flutter.dart';
 
 abstract class _BaseSettings {
   bool? getBool(String key);
@@ -193,10 +191,7 @@ class Settings extends fm.ChangeNotifier {
   static String getLanguageLink(String link) {
     var code = languageCode;
     if (code != 'en') {
-      var call = callIndex.firstWhereOrNull((e) =>
-      e.link == link && e.languages.contains('lang-$code'));
-      if (call != null)
-        link += '.lang-$code';
+      link += '.lang-$code';
     }
     return link;
   }
