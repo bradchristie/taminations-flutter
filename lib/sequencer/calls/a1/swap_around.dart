@@ -22,7 +22,6 @@
 import 'package:taminations/moves.dart';
 
 import '../common.dart';
-import '../common/reverse.dart';
 
 class SwapAround extends Action with ActivesOnly, IsReverse {
 

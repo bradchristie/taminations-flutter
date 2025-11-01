@@ -18,7 +18,6 @@
  */
 
 import '../common.dart';
-import '../common/reverse.dart';
 
 class SplitRecycle extends Action with IsReverse {
 

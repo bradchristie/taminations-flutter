@@ -69,7 +69,11 @@ class AnythingAndCircle extends Action {
     ctx.canDoYourPart = false;
     for (var i=0; i<count; i++) {
       try {
-        ctx.applyCalls('Centers $anyCall', 'Outer 6 and_Circle 1/4');
+        ctx.subContext(ctx.centerWaveOf4()!,
+            (ctx2) => ctx2.applyCalls(anyCall)
+        );
+        ctx.extendPaths();
+        ctx.applyCalls('Outer 6 and_Circle 1/4');
       } on CallError catch (_) {
         ctx.applyCalls(anyCall, 'Outer 6 and_Circle 1/4');
       }

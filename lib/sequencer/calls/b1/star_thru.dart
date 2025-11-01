@@ -21,7 +21,7 @@
 import '../../../moves.dart';
 import '../common.dart';
 
-class StarThru extends Action with ActivesOnly {
+class StarThru extends Action with ActivesOnly, IsMirror {
 
   @override var help = 'Star Thru is limited to a boy and girl facing.';
   @override var helplink = 'b1/star_thru';
@@ -42,7 +42,7 @@ class StarThru extends Action with ActivesOnly {
         ? LeadRight.scale(1.0,0.5)
         : QuarterLeft.skew(1.0,-.5);
     //  Double and Triple Star Thru use "Left Star Thru"
-    if (name.toLowerCase().contains('left' ))
+    if (name.toLowerCase().contains('left' ) ^ isMirror)
       move = move.reflect();
     return move.changeBeats(4.0);
   }

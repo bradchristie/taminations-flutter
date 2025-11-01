@@ -21,7 +21,7 @@
 import '../../../moves.dart';
 import '../common.dart';
 
-class SlideThru extends Action with ActivesOnly {
+class SlideThru extends Action with ActivesOnly, IsMirror {
 
   @override var level = LevelData.MS;
   @override var help = 'Unlike Star Thru, you can do Slide Thru with '
@@ -33,24 +33,28 @@ class SlideThru extends Action with ActivesOnly {
   @override
   Path performOne(DancerModel d, CallContext ctx) {
     //  Check if in wave, slide thru with adj dancer
+    Path move;
     var d2 = ctx.dancerFacing(d);
     if (d2 == null && ctx.isInWave(d) && d.data.beau && ctx.dancerToRight(d)!.data.active) {
       var dist = d.distanceTo(ctx.dancerToRight(d)!);
       if (d.gender == Gender.BOY)
-        return LeadRight.scale(1.0,dist/2.0);
+        move = LeadRight.scale(1.0,dist/2.0);
       else
-        return QuarterLeft.skew(1.0, -dist/2.0);
+        move = QuarterLeft.skew(1.0, -dist/2.0);
     } else {
       //  Not in wave
       //  Must be facing dancers
       if (d2 == null)
           return ctx.dancerCannotPerform(d,name);
       var dist = d.distanceTo(d2);
-      return ExtendLeft.scale(dist / 2, 0.5) +
+      move = ExtendLeft.scale(dist / 2, 0.5) +
           (d.gender == Gender.BOY
               ? LeadRight.scale(1.0, 0.5)
               : QuarterLeft.skew(1.0, -0.5));
     }
+    if (isMirror)
+      move = move.reflect();
+    return move;
 
   }
 

@@ -53,6 +53,8 @@ class CrossRun extends Action with ActivesOnly {
         var runright = dright * runners;
         var runleft = dleft * runners;
         if (runright.length == 1 || runright.length == 3) {
+          if (dright.length < 2)
+            throw CallError('Unable to Cross Run from here');
           final d2 = dright[1];
           final dist = d.distanceTo(d2);
           //  If centers are running and facing same direction,
@@ -68,6 +70,8 @@ class CrossRun extends Action with ActivesOnly {
             d.path += RunRight.scale(scaleX, dist / 2);
           }
         } else if (runleft.length == 1 || runleft.length ==3) {
+          if (dleft.length < 2)
+            throw CallError('Unable to Cross Run from here');
           final d2 = dleft[1];
           final dist = d.distanceTo(d2);
           d.path += RunLeft.scale(1.0, dist / 2);

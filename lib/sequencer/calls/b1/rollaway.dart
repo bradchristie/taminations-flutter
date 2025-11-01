@@ -19,7 +19,6 @@
 
 import '../../../moves.dart';
 import '../common.dart';
-import '../common/reverse.dart';
 
 class Rollaway extends Action with IsReverse {
 

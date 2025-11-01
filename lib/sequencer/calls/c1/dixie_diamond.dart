@@ -18,7 +18,6 @@
  */
 
 import '../common.dart';
-import '../common/reverse.dart';
 
 class DixieDiamond extends Action with ActivesOnly, CallWithParts, IsReverse {
 

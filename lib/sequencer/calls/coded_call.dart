@@ -225,6 +225,7 @@ import 'c3a/eight_by_anything.dart';
 import 'c3a/hinge_the_top.dart';
 import 'c3a/hop.dart';
 import 'c3a/latch_on.dart';
+import 'c3a/mirror.dart';
 import 'c3a/own_the_dancers.dart';
 import 'c3a/patch.dart';
 import 'c3a/quarter_mix.dart';
@@ -502,6 +503,7 @@ abstract class CodedCall extends Call {
     'MagicTransferand.+'.ri: (name) => MagicTransferAnd(name),
     'MakeMagic'.ri: (name) => MakeMagic(name),
     'MiniBusy'.ri: (name) => MiniBusy(name),
+    'Mirror'.ri: (name) => Mirror(name),
     'Mix'.ri: (name) => Mix(name),
     'Motivate'.ri: (name) => Motivate(name),
 
