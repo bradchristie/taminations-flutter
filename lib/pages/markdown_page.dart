@@ -183,10 +183,11 @@ class _MarkdownFrameState extends fm.State<MarkdownFrame> {
     } catch (err) {
       md = await TamUtils.getAsset(assetName + '.md');
     }
-    setState(() {
-      //_mdFuture = TamUtils.getAsset(localizedAssetName);
-      currentLink = htmllink;
-    });
+    if (mounted)  // check we're not working with a removed widget
+      setState(() {
+        //_mdFuture = TamUtils.getAsset(localizedAssetName);
+        currentLink = htmllink;
+      });
   }
 
   //  Simple converter for just the tags we use

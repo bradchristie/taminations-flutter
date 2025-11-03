@@ -23,17 +23,16 @@ Call pronunciations provided by
 
 ---
 
-## Taminations version 1.6.92 built 2025-10-13
+## Taminations version 1.6.93 built 2025-11-03
 Copyright 2025 by Brad Christie.  
 This is free software, and you are welcome to modify and redistribute it
 under the terms of the [GNU GPL license](http://www.gnu.org/licenses/gpl.html).  
 
 ## What's New
-* Fix web embed feature and SSD web page
+* Italian and updated German Basic translations
+* Animations for Left Rally, Scoot and Rally
 * Sequencer: 
-  * Fix crash on But error
-  * Code for 1/4, 3/4 the Deucey
-  * Fix for Triple Box Zing
+  * Fixes for Ends Peel Off, Cross Run, Cross Kickoff, (anything) and Circle
 
 For a detailed history of changes, view the
 [Git log](https://github.com/bradchristie/taminations-flutter/commits/main)
