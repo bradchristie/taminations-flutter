@@ -20,7 +20,7 @@
 
 import '../common.dart';
 
-class Shazam extends Action with ActivesOnly, CallWithParts {
+class Shazam extends Action with CallWithParts, ActivesOnly {
 
   @override final level = LevelData.C2;
   @override int numberOfParts = 2;
@@ -32,14 +32,9 @@ class Shazam extends Action with ActivesOnly, CallWithParts {
   Shazam(super.name);
 
   @override
-  void performCall(CallContext ctx) {
+   void performPart1(CallContext ctx) {
     if (ctx.dancers.any((d) => !ctx.isInWave(d)))
       throw CallError('All dancers must be in a Wave');
-    super.performCall(ctx);
-  }
-
-  @override
-   void performPart1(CallContext ctx) {
     ctx.applyCalls('Hinge');
   }
 
