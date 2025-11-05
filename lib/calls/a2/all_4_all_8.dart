@@ -275,6 +275,26 @@ import '../c3a/mini_chase.dart' as c3a;
           QuarterLeft.skew(1.0,-1.0)
       ]),
 
+    AnimatedCall('All 4 Couples Box Counter Rotate',
+        formation:Formation('Static Square'),
+        group:'All 4 Couples (with calls through Plus)',
+        noDisplay: true,
+        paths:[
+          ExtendLeft.changeBeats(2).scale(2.0,2.0) +
+              Forward +
+              QuarterRight.skew(1.0,0.0),
+
+          ExtendRight.changeBeats(3).scale(3.0,1.0) +
+              QuarterLeft.skew(1.0,-1.0),
+
+          ExtendLeft.changeBeats(2).scale(2.0,2.0) +
+              Forward +
+              QuarterRight.skew(1.0,0.0),
+
+          ExtendRight.changeBeats(3).scale(3.0,1.0) +
+              QuarterLeft.skew(1.0,-1.0)
+        ]),
+
     AnimatedCall('All 4 Couples Slide Thru',
       formation:Formation('', dancers:[
         DancerModel.fromData(gender:Gender.GIRL,x:-3,y:1,angle:0),

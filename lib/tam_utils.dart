@@ -179,11 +179,11 @@ class TamUtils {
     'zoom' : 'b2'
   };
   static String linkSSD(String filename) {
-    if (filename.startsWith('ssd/')) {
-      final name = filename.replaceFirst('ssd/','')
+    if (filename.startsWith('(ssd|m26)/'.r)) {
+      final name = filename.replaceFirst('(ssd|m26)/'.r,'')
           .replaceFirst('\\..*'.r, '');
       final dir = ssdDir[name] ?? 'ssd';
-      return filename.replaceFirst('ssd', dir);
+      return filename.replaceFirst('(ssd|m26)'.r, dir);
     }
     return filename;
   }

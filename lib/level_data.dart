@@ -33,6 +33,7 @@ class LevelData implements Comparable<LevelData> {
   static final B2 = LevelData('Basic 2', 'b2', 'b2');
   static final MS = LevelData('Mainstream', 'ms', 'ms');
   static final SSD = LevelData('SSD', 'ssd', 'ssd');
+  static final MS26 = LevelData('Mainstream 2026','m26','m26');
   static final PLUS = LevelData('Plus', 'plus', 'plus');
   static final ADV = LevelData('Advanced', 'adv', 'a');
   static final A1 = LevelData('A-1', 'a1', 'a1');
@@ -52,6 +53,7 @@ class LevelData implements Comparable<LevelData> {
     LevelData.B2,
     LevelData.MS,
     LevelData.SSD,
+    LevelData.MS26,
     LevelData.PLUS,
     LevelData.ADV,
     LevelData.A1,

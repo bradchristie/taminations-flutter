@@ -205,6 +205,10 @@ class LevelFrame extends fm.StatelessWidget {
                 text:'Mainstream' ,
                 background:Color.MS,
                 indented:Color.BMS),
+            _IndentedLineWidget(
+                text:'Mainstream 2026' ,
+                background:Color.MS,
+                indented:Color.BMS),
             _FullLineWidget(text:'Plus' ,
                 background:Color.PLUS),
             _FullLineWidget(
