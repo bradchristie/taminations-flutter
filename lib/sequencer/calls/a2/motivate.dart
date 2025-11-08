@@ -26,7 +26,7 @@ class Motivate extends Action with CallWithParts, CallWithStars, ButCall {
   @override var turnStarAmount = 2;
   @override var help = '''Motivate is a 4-part call:
   1.  Circulate
-  2.  Center 4 Cast Off 3/4, others Hourglass Circulate
+  2.  Center 4 Cast Off 3/4, others 1/2 Circulate
   3.  Center 4 Turn the Star 1/2, others Trade
   4.  Wave of 4 in the center Cast Off 3/4, others Hourglass Circulate
 The star amount can be changed with Turn the Star (fraction).

@@ -116,6 +116,7 @@ import '../../moves.dart';
     AnimatedCall('Extend',
       formation:Formation('Double Pass Thru'),
       from:'Double Pass Thru',difficulty: 2,
+      actives: 'All',
       paths:[
           Path(),
 
