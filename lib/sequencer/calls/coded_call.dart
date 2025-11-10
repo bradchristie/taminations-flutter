@@ -550,7 +550,7 @@ abstract class CodedCall extends Call {
     'ReachOut'.ri: (name) => ReachOut(name),
     'Recoil'.ri: (name) => Recoil(name),
     'Regroup'.ri: (name) => Regroup(name),
-    'Relocate(.*)'.ri: (name) => Relocate(name),
+    'Relocate(.*)(line|wave|diamond|hourglass|tag)s?'.ri: (name) => Relocate(name),
     'RelaytheTop'.ri: (name) => RelayTheTop(name),
     'Remake'.ri: (name) => Remake(name),
     '.*(But)?Replace.*'.ri: (name) => Replace(name),
