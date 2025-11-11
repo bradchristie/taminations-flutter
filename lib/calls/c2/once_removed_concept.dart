@@ -70,8 +70,7 @@ import '../c2/cross_the_k.dart' as c2;
       group:'(From lines) Once Removed',
       taminator: '''
       Dancers are not Once Removed at the end of the call because the formation
-      axis has changed.
-    ''',
+      axis has changed.''',
       paths:[
           EighthRight.changeBeats(1).changehands(Hands.RIGHT).skew(0.5,0.0) +
           CircleLeftQuarter.changeBeats(4).changehands(0).scale(2.0,2.0) +
@@ -476,6 +475,7 @@ import '../c2/cross_the_k.dart' as c2;
     AnimatedCall('Once Removed Slide Thru',
       formation:Formation('Double Pass Thru'),
       group:'(From double pass thru) Once Removed',
+      isGenderSpecific: true,
       paths:[
           ExtendLeft.scale(1.0,0.5) +
           Forward_2 +

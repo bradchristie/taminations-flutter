@@ -189,6 +189,7 @@ import 'c2/cross_ramble.dart';
 import 'c2/cross_trade_and_wheel.dart';
 import 'c2/detour.dart';
 import 'c2/dodge.dart';
+import 'c2/drop.dart';
 import 'c2/fascinating.dart';
 import 'c2/flip_your_neighbor.dart';
 import 'c2/half_the_k.dart';
@@ -429,6 +430,7 @@ abstract class CodedCall extends Call {
     'DoubleScoot'.ri: (name) => DoubleScoot(name),
     '($specifier)+and($specifier)+'.ri: (name) => DoubleSelector(name),
     'DoYourPart.*'.ri: (name) => DoYourPart(name),
+    'Drop(In|Out|Left|Right)'.ri: (name) => Drop(name),
 
     '8By.*'.ri: (name) => EightByAnything(name),
     '8Chain(1|2|3|4|5|6|7|Thru)'.ri: (name) => EightChain(name),

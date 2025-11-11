@@ -4183,4 +4183,23 @@ Star Thru
 Pass Thru
 Allemande Left ''', ''); });
 
+  test('Drop',() { testOneSequence('''Sides Pass the Ocean
+Drop Right
+All 8 Circulate
+Girls Run and Roll
+Centers Right Roll to a Wave
+Drop Right
+Girls Hinge
+Drop Left
+Centers Hinge
+Drop In
+Centers Hinge
+Split Counter Rotate
+Drop Left
+Trade By
+Star Thru
+Ferris Wheel
+Centers Square Thru 3
+Allemande Left''',''); });
+
 }
