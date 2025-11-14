@@ -40,6 +40,7 @@ import '../../moves.dart';
       formation:Formation('Facing Couples Compact'),
       group:' ',
       difficulty: 2,
+      notForSequencer: true,
       paths:[
           PullRight.changeBeats(2).scale(1.5,0.5) +
           ExtendLeft.changeBeats(2).scale(1.5,0.5),
