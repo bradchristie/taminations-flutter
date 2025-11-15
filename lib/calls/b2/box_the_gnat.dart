@@ -27,6 +27,7 @@ import '../../moves.dart';
     AnimatedCall('Box the Gnat',
       formation:Formation('Facing Couples Compact'),
       from:'Facing Couples',isGenderSpecific:true,
+      difficulty: 1,
       taminator: 'Handholds are not shown properly due to limitations in the program',
       paths:[
       Path.fromMovement(Movement.fromData(beats: 4, hands: Hands.GRIPLEFT, cx1: 1, cy1: 1, cx2: 2, cy2: 1, x2: 2.5, y2: 0, cx3: 1.3, cx4: 1.3, cy4: -2, x4: 0, y4: -2  )),
@@ -35,13 +36,26 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Box the Gnat',
-      formation:Formation('Wave RH'),
-      from:'Right-Hand Wave',isGenderSpecific:true,
-        taminator: 'Handholds are not shown properly due to limitations in the program',
+        formation:Formation('Wave RH'),
+        from:'Right-Hand Wave',isGenderSpecific:true,
+        difficulty: 2,
+        taminator: 'This is an application of the Ocean Wave Rule',
       paths:[
           UmTurnRight.changehands(Hands.GRIPRIGHT).skew(1.0,-2.0),
 
           UmTurnLeft.changehands(Hands.GRIPRIGHT).skew(1.0,0.0)
       ]),
+
+    AnimatedCall('Left Box the Gnat',
+        formation:Formation('Facing Couples Compact'),
+        from:'Facing Couples',isGenderSpecific:true,
+        difficulty: 2,
+        taminator: 'Can be called at Mainstream and Plus',
+        paths:[
+          Path.fromMovement(Movement.fromData(beats: 4, hands: Hands.GRIPLEFT, cx1: 1, cy1: 1, cx2: 2, cy2: 1, x2: 2.5, y2: 0, cx3: 1.3, cx4: 1.3, cy4: -2, x4: 0, y4: -2  ).reflect()),
+
+          Path.fromMovement(Movement.fromData(beats: 4, hands: Hands.GRIPRIGHT, cx1: 1, cy1: .1, cx2: 2, cy2: .1, x2: 2.5, y2: 0, cx3: 1.3, cx4: 1.3, cy4: 2, x4: 0, y4: 2  ).reflect())
+        ]),
+
   ];
 
