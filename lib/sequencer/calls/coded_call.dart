@@ -668,7 +668,7 @@ abstract class CodedCall extends Call {
     'ThoseWhoCan'.ri: (name) => ThoseWhoCan(name),
     '32AceyDeucey'.ri: (name) => ThreeByTwoAceyDeucey(name),
     '34Tag(theLine)?'.r : (name) => ThreeQuartersTag(name),
-    'toaWave'.ri: (name) => ToAWave(name),
+    '(Center)?toaWave'.ri: (name) => ToAWave(name),
     'Touch'.ri: (name) => Touch(name),
     'Steptoa(LeftHand)?Wave'.ri: (name) => Touch(name),
     'Touch(14|12|34)'.ri: (name) => TouchAQuarter(name),

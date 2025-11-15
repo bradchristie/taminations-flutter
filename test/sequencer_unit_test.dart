@@ -4202,4 +4202,17 @@ Ferris Wheel
 Centers Square Thru 3
 Allemande Left''',''); });
 
+  test('Centers to a Wave',() {
+    testOneSequence('''Heads Lead Right
+Veer Left
+Tag Back Centers to a Wave
+Cross Extend
+Flip Back Centers to a Wave
+Scoot Back to a Wave
+Vertical Tag Back Centers to a Wave
+Centers Recycle
+Half Sashay
+Centers Square Thru 3
+Allemande Left''',''); });
+
 }

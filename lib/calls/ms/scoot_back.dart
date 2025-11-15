@@ -335,6 +335,7 @@ import '../../moves.dart';
     AnimatedCall('Scoot Back Centers to a Wave',
         from: 'Right-Hand Waves',
         formation: Formation('Ocean Waves RH BGBG'),
+        noDisplay: true,
         paths: [
           ExtendRight.changeBeats(1.5).scale(2.0,0.25) +
               SwingRight.scale(0.75,0.875),
@@ -350,6 +351,7 @@ import '../../moves.dart';
     AnimatedCall('Scoot Back Centers to a Wave',
         from: 'Left-Hand Waves',
         formation: Formation('Ocean Waves LH BGBG'),
+        noDisplay: true,
         paths: [
           FlipLeft.changeBeats(4.5).skew(1, 0),
 
@@ -360,8 +362,89 @@ import '../../moves.dart';
 
           ExtendLeft.changeBeats(1.5).scale(2.0,0.25) +
               SwingLeft.scale(0.75,0.875)
-        ])
+        ]),
 
+    AnimatedCall('Scoot Back Centers to a Wave',
+        from: 'Right-Hand Box',
+        formation: Formation('Box RH'),
+        noDisplay: true,
+        paths: [
+          ExtendRight.changeBeats(1.5).scale(2.0,0.25) +
+              SwingRight.scale(0.75,0.875),
+
+          UmTurnRight.changeBeats(4.5).skew(1, -1),
+        ]),
+
+    AnimatedCall('Scoot Back Centers to a Wave',
+        from: 'Left-Hand Box',
+        formation: Formation('Box LH'),
+        noDisplay: true,
+        paths: [
+          UmTurnLeft.changeBeats(4.5).skew(1, 1),
+
+          ExtendLeft.changeBeats(1.5).scale(2.0,0.25) +
+              SwingLeft.scale(0.75,0.875),
+        ]),
+
+    AnimatedCall('Scoot Back to a Wave',
+        formation:Formation('Single Quarter Tag'),
+        from:'Single Quarter Tag',fractions:'3',difficulty: 2,
+        noDisplay: true,
+        paths:[
+          ExtendLeft.changeBeats(1.5).scale(1.5,0.75) +
+              SwingRight.scale(0.75,0.875),
+
+          Forward_1p5.skew(0, -0.25) +
+              SwingRight.scale(0.75,0.875),
+        ]),
+
+    AnimatedCall('Scoot Back to a Wave',
+        formation:Formation('Single Left Quarter Tag'),
+        from:'Single Left Quarter Tag',fractions:'3',difficulty: 2,
+        noDisplay: true,
+        paths:[
+          ExtendRight.changeBeats(1.5).scale(1.5,0.75) +
+              SwingLeft.scale(0.75,0.875),
+
+          Forward_1p5.skew(0, 0.25) +
+              SwingLeft.scale(0.75,0.875),
+        ]),
+
+    AnimatedCall('Scoot Back to a Wave',
+        formation:Formation('Quarter Tag'),
+        from:'Quarter Tag',fractions:'3',difficulty: 2,
+        noDisplay: true,
+        paths:[
+          ExtendLeft.changeBeats(1.5).scale(1.5,1.5) +
+              SwingRight.scale(0.75,0.75),
+
+          Forward.changeBeats(1.5).scale(1.5,1.0) +
+              SwingRight.scale(0.75,1),
+
+          ExtendRight.changeBeats(1.5).scale(1.5,0.5) +
+              SwingRight.scale(0.75,0.75),
+
+          Forward.changeBeats(1.5).scale(1.5,1.0) +
+              SwingRight.scale(0.75,1),
+        ]),
+
+    AnimatedCall('Scoot Back to a Wave',
+        formation:Formation('Quarter Tag LH'),
+        from:'Left-Hand Quarter Tag',fractions:'3',difficulty: 3,
+        noDisplay: true,
+        paths:[
+          Forward.changeBeats(1.5).scale(1.5,1.0) +
+              SwingLeft.scale(0.75,1),
+
+          ExtendRight.changeBeats(1.5).scale(1.5,1.5) +
+              SwingLeft.scale(0.75,0.75),
+
+          ExtendLeft.changeBeats(1.5).scale(1.5,0.5) +
+              SwingLeft.scale(0.75,0.75),
+
+          Forward.changeBeats(1.5).scale(1.5,1.0) +
+              SwingLeft.scale(0.75,1),
+        ]),
 
   ];
 
