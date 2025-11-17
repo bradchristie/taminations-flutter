@@ -23,16 +23,18 @@ Call pronunciations provided by
 
 ---
 
-## Taminations version 1.6.93 built 2025-11-03
+## Taminations version 1.6.94 built 2025-11-17
 Copyright 2025 by Brad Christie.  
 This is free software, and you are welcome to modify and redistribute it
 under the terms of the [GNU GPL license](http://www.gnu.org/licenses/gpl.html).  
 
 ## What's New
-* Italian and updated German Basic translations
-* Animations for Left Rally, Scoot and Rally
-* Sequencer: 
-  * Fixes for Ends Peel Off, Cross Run, Cross Kickoff, (anything) and Circle
+* Italian Mainstream translations
+* Mainstream 2026 list added
+* Animation for Left Box the Gnat
+* Sequencer:
+  * Code for Drop In/Out/Left/Right
+  * Fixes for tag back call to a Wave
 
 For a detailed history of changes, view the
 [Git log](https://github.com/bradchristie/taminations-flutter/commits/main)
