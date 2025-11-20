@@ -582,6 +582,7 @@ var callIndex = [
   CallEntry('All Eight Recycle','c1','c1/recycle',c1.Recycle,),
   CallEntry('Allemande Left','b1','b1/allemande',b1.Allemande,'b1/allemande.mp3'),
   CallEntry('Allemande Left','ssd','ssd/allemande',ssd.Allemande,),
+  CallEntry('Allemande Left','m26','ssd/allemande',ssd.Allemande,),
   CallEntry('Allemande Thar','ms','ms/thar',ms.Thar,'ms/allemande_thar.mp3'),
   CallEntry('Along','c2','c2/swing_along',c2.SwingAlong,),
   CallEntry('Alter and Circulate','c2','c2/alter_and_circulate',c2.AlterAndCirculate,),
