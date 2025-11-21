@@ -28,6 +28,7 @@ abstract class Call {
   String get norm => normalizeCall(name);
   bool nextCallCoded = false;
   var level = LevelData.B1;
+  Rolling roll = Rolling.ANY;
 
   Call(String s) : name=s.capWords();
 

@@ -74,6 +74,13 @@ class DancerData {
   DancerModel? partner;
 }
 
+enum Rolling {
+  LEFT,   // Dancer will roll to its left
+  RIGHT,  // Dancer will roll to its right
+  NONE,   // Dancer will not or cannot roll
+  ANY     // Dancer is able to roll (default value)
+}
+
 //  Dancer Space is a coordinate system where the dancer
 //  is at (0,0) and looking down the X axis.
 //  Convert a point from world space to dancer space
@@ -219,6 +226,7 @@ class DancerModel implements Comparable<DancerModel>, Cloneable<DancerModel> {
   bool leftHandVisibility = false;
   bool rightHandNewVisibility = false;
   bool leftHandNewVisibility = false;
+  Rolling roll = Rolling.ANY;
   var data = DancerData();
 
   DancerModel(this.number,this.numberCouple, this.gender,
@@ -234,6 +242,7 @@ class DancerModel implements Comparable<DancerModel>, Cloneable<DancerModel> {
   factory DancerModel.fromData({required int gender,
     String number='', String couple='',
     required double x, required double y, required double angle,
+    Rolling roll = Rolling.ANY,
     List<Movement> path = const <Movement>[]
   }) {
     final mat = Matrix.getTranslation(x,y) *

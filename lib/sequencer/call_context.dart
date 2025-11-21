@@ -33,12 +33,6 @@ import 'calls/coded_call.dart';
 import 'calls/set_debug_switches.dart';
 import 'calls/xml_call.dart';
 
-enum Rolling {
-  LEFT,
-  RIGHT,
-  NONE
-}
-
 class FormationMatchResult {
 
   final Matrix transform;
@@ -284,6 +278,8 @@ class CallContext {
         original.animateToEnd();
         if (!clone.isActive)
           original.data.active = false;
+        if (clone.roll != Rolling.ANY)
+          original.roll = clone.roll;
       }
     });
     if (_source != null && _source!.level < level)
@@ -1498,11 +1494,15 @@ class CallContext {
       d = mySource.dancers.firstWhere((d2) => d2 == dv);
       mySource = mySource._source;
     }
-    var move = d.path.movelist.where((m) => m.fromCall).lastOrNull;
-    if ((move?.brotate.rolling() ?? 0.0) > 0.1)
-      return Rolling.LEFT;
-    else if ((move?.brotate.rolling() ?? 0.0) < -0.1)
-      return Rolling.RIGHT;
+    if (d.roll != Rolling.NONE) {
+      var move = d.path.movelist
+          .where((m) => m.fromCall)
+          .lastOrNull;
+      if ((move?.brotate.rolling() ?? 0.0) > 0.1)
+        return Rolling.LEFT;
+      else if ((move?.brotate.rolling() ?? 0.0) < -0.1)
+        return Rolling.RIGHT;
+    }
     return Rolling.NONE;
   }
 

@@ -167,6 +167,8 @@ class XMLCall extends Call {
       var p = Path.fromPath(allPaths[m]);
       //  Add XML path to dancer
       ctxwork.actives[i3].path += p;
+      //  Remember any special roll
+      ctxwork.actives[i3].roll = xcall.roll;
     }
 
     ctxwork.animate(endbeat);

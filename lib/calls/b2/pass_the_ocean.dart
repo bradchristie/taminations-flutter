@@ -27,6 +27,7 @@ import '../../moves.dart';
     AnimatedCall('Pass the Ocean',
       formation:Formation('Facing Couples Compact'),
       from:'Facing Couples',difficulty: 1,
+      roll: Rolling.NONE,
       paths:[
           ExtendLeft.changeBeats(2).scale(1.5,0.5) +
           Forward.changeBeats(.5) +
@@ -39,6 +40,7 @@ import '../../moves.dart';
     AnimatedCall('Pass the Ocean',
       formation:Formation('Facing Couples Close'),
       from:'Close Couples',noDisplay: true,
+      roll: Rolling.NONE,
       paths:[
           ExtendLeft.changeBeats(2).scale(1.0,0.5) +
           Forward.changeBeats(.5).scale(0.5,1.0) +
@@ -51,6 +53,7 @@ import '../../moves.dart';
     AnimatedCall('Pass the Ocean',
       formation:Formation('Normal Lines'),
       from:'Lines',difficulty: 1,
+      roll: Rolling.NONE,
       paths:[
           ExtendLeft.changeBeats(2).scale(2.0,0.5) +
           Forward.changeBeats(.5) +
@@ -70,6 +73,7 @@ import '../../moves.dart';
     AnimatedCall('Pass the Ocean',
       formation:Formation('Eight Chain Thru'),
       from:'Eight Chain Thru',difficulty: 1,
+      roll: Rolling.NONE,
       paths:[
           ExtendLeft.changeBeats(2).scale(1.0,0.5) +
           LeadRight.changeBeats(2).scale(1.5,1.5),
@@ -87,6 +91,7 @@ import '../../moves.dart';
     AnimatedCall('Pass the Ocean',
       formation:Formation('Ocean Waves RH BGGB'),
       from:'Right-Hand Waves',difficulty: 3,
+      roll: Rolling.NONE,
       paths:[
           LeadRight.changeBeats(4).scale(1.5,3.0),
 
@@ -113,6 +118,7 @@ import '../../moves.dart';
     AnimatedCall('Heads Pass the Ocean',
       formation:Formation('Static Square'),
       from:'Static Square',group:' ',difficulty: 1,
+      roll: Rolling.NONE,
       paths:[
           ExtendLeft.changeBeats(2).scale(3.0,0.5) +
           Forward.changeBeats(.5) +
@@ -129,6 +135,7 @@ import '../../moves.dart';
     AnimatedCall('Sides Pass the Ocean',
       formation:Formation('Static Square'),
       from:'Static Square',group:' ',difficulty: 1,
+      roll: Rolling.NONE,
       paths:[
           Path(),
 
