@@ -35,6 +35,14 @@ Skip Part 1 with the call The Pulley.''';
   SpinThePulley(super.name);
 
   @override
+  void performCall(CallContext ctx) {
+    if (!name.contains('Spin'))
+      ctx.applyCalls('Finish Spin the Pulley');
+    else
+      super.performCall(ctx);
+  }
+
+  @override
    void performPart1(CallContext ctx) {
     if (ctx.dancers.none((d) => ctx.isInWave(d))) {
       if (ctx.actives.length < ctx.dancers.length)
