@@ -1494,7 +1494,7 @@ class CallContext {
       d = mySource.dancers.firstWhere((d2) => d2 == dv);
       mySource = mySource._source;
     }
-    if (d.roll != Rolling.NONE) {
+    if (d.roll != .NONE) {
       var move = d.path.movelist
           .where((m) => m.fromCall)
           .lastOrNull;

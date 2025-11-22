@@ -4215,4 +4215,15 @@ Half Sashay
 Centers Square Thru 3
 Allemande Left''',''); });
 
+  test('Rally But',() {
+    testOneSequence('''Sides Pass the Ocean
+Left Rally But Peel Off
+Cycle and Wheel
+Bend the Line
+Box the Gnat
+Star Thru
+Pass Thru
+Allemande Left''',''); });
+
+
 }

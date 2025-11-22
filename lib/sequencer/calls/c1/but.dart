@@ -19,7 +19,7 @@
 
 import '../common.dart';
 
-mixin ButCall on CallWithParts {
+mixin ButCall on Action {
   var butCall = 'Cast Off 3/4';
 }
 
