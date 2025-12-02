@@ -4225,5 +4225,19 @@ Star Thru
 Pass Thru
 Allemande Left''',''); });
 
+  test('Line of 6 Turn and Deal',() {
+    testOneSequence('''Sides Pass the Ocean
+Extend
+Acey Deucey 1.5
+Line of 6 Turn and Deal
+Side Boys Face In
+Touch 1/4
+Boys Run
+As Couples Extend
+Girls Trade
+Circulate
+Wheel and Deal
+Allemande Left''',''); });
+
 
 }

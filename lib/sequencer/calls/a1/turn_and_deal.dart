@@ -58,8 +58,11 @@ class BigLineTurnAndDeal extends Action with ActivesOnly {
   void performCall(CallContext ctx) {
     final left = name.contains('Left') ? 'Left' : '';
     final length = norm.contains('6') ? '6' : '8';
-    if (length == '6' && ctx.dancers.length > 6)
-      ctx.applyCalls('Wave of 6 $name');
+    if (length == '6' && ctx.dancers.length > 6) {
+      var line6 = ctx.waveOf6() ??
+          thrower<List<DancerModel>>(CallError('Unable to find line of 6'));
+      ctx.subContext(line6, (ctx2) => ctx2.applyCalls('Wave of 6 $name'));
+    }
     else {
       ctx.applyCalls('Line of $length $left Half Tag');
       super.performCall(ctx);
