@@ -168,6 +168,250 @@ import '../../moves.dart';
           LeadRight.changeBeats(3).scale(2.5,0.5)
       ]),
 
+
+    AnimatedCall('Chase Your Criss Cross Neighbor',
+    formation: Formation('Couples Facing Out Compact'),
+    from: 'Back-to-Back Couples',
+    paths: [
+      UmTurnRight.skew(-3, 0) +
+          RunRight.scale(1.0,1.5) +
+          Forward_1p5 +
+          LeadRight.changeBeats(3).scale(1.0,2.0),
+
+      RunRight +
+          ExtendRight.changeBeats(2).scale(1.5,1.75) +
+          SwingLeft.scale(0.75,0.75) +
+          LeadLeft.changeBeats(3).scale(3.0,0.75),
+
+    ]),
+
+    AnimatedCall('Chase Your Criss Cross Neighbor',
+        formation: Formation('Lines Facing Out Compact'),
+        from: 'Lines Facing Out',
+        paths: [
+          UmTurnRight.skew(-3, 0) +
+              RunRight.scale(1.0,1.25) +
+              Forward_1p5 +
+              LeadRight.changeBeats(3).scale(1.0,1.5),
+
+          RunRight +
+              ExtendRight.changeBeats(2).scale(1.5,1.75) +
+              SwingLeft.scale(0.75,0.75) +
+              LeadLeft.changeBeats(3).scale(3.0,0.75),
+
+          UmTurnRight.skew(-3, 0) +
+              RunRight.scale(1.0,1.5) +
+              Forward_1p5 +
+              LeadRight.changeBeats(3).scale(1.0,2.0),
+
+          RunRight +
+              ExtendRight.changeBeats(2).scale(1.5,1.75) +
+              SwingLeft.scale(0.75,0.75) +
+              LeadLeft.changeBeats(3).scale(3.0,0.75),
+
+        ]),
+
+    AnimatedCall('Chase Your Criss Cross Neighbor',
+        formation: Formation('Trade By'),
+        from: 'Trade By',
+        paths: [
+          UmTurnRight.skew(-1.5, 0) +
+              RunRight.changeBeats(5).scale(1.0,1.5) +
+              LeadRight.changeBeats(3).scale(1.0,2.0),
+
+          RunRight +
+              ExtendRight.changeBeats(2).scale(1,1.75) +
+              SwingLeft.scale(0.75,0.75) +
+              LeadLeft.changeBeats(3).scale(1.5,0.75),
+
+          UmTurnRight.skew(-2, 0) +
+              RunRight.changeBeats(4.5).scale(1.0,1.5) +
+              Forwardp5 +
+              LeadRight.changeBeats(3).scale(1.0,2.0),
+
+          RunRight.scale(.5, 1) +
+              ExtendRight.changeBeats(2).scale(1,1.75) +
+              SwingLeft.scale(0.75,0.75) +
+              LeadLeft.changeBeats(3).scale(1.5,0.75),
+
+        ]),
+
+    AnimatedCall('Left Chase Your Criss Cross Neighbor',
+        formation: Formation('Couples Facing Out Compact'),
+        from: 'Back-to-Back Couples',
+        paths: [
+          RunLeft +
+              ExtendLeft.changeBeats(2).scale(1.5,1.75) +
+              SwingRight.scale(0.75,0.75) +
+              LeadRight.changeBeats(3).scale(3.0,0.75),
+
+          UmTurnLeft.skew(-3, 0) +
+              RunLeft.scale(1.0,1.5) +
+              Forward_1p5 +
+              LeadLeft.changeBeats(3).scale(1.0,2.0),
+
+        ]),
+
+    AnimatedCall('Left Chase Your Criss Cross Neighbor',
+        formation: Formation('Lines Facing Out Compact'),
+        from: 'Lines Facing Out',
+        paths: [
+          RunLeft +
+              ExtendLeft.changeBeats(2).scale(1.5,1.75) +
+              SwingRight.scale(0.75,0.75) +
+              LeadRight.changeBeats(3).scale(3.0,0.75),
+
+          UmTurnLeft.skew(-3, 0) +
+              RunLeft.scale(1.0,1.5) +
+              Forward_1p5 +
+              LeadLeft.changeBeats(3).scale(1.0,2.0),
+
+          RunLeft +
+              ExtendLeft.changeBeats(2).scale(1.5,1.75) +
+              SwingRight.scale(0.75,0.75) +
+              LeadRight.changeBeats(3).scale(3.0,0.75),
+
+          UmTurnLeft.skew(-3, 0) +
+              RunLeft.scale(1.0,1.25) +
+              Forward_1p5 +
+              LeadLeft.changeBeats(3).scale(1.0,1.5),
+
+        ]),
+
+    AnimatedCall('Left Chase Your Criss Cross Neighbor',
+        formation: Formation('Trade By'),
+        from: 'Trade By',
+        paths: [
+          RunLeft +
+              ExtendLeft.changeBeats(2).scale(1,1.75) +
+              SwingRight.scale(0.75,0.75) +
+              LeadRight.changeBeats(3).scale(1.5,0.75),
+
+          UmTurnLeft.skew(-1.5, 0) +
+              RunLeft.changeBeats(5).scale(1.0,1.5) +
+              LeadLeft.changeBeats(3).scale(1.0,2.0),
+
+          RunLeft.scale(.5, 1) +
+              ExtendLeft.changeBeats(2).scale(1,1.75) +
+              SwingRight.scale(0.75,0.75) +
+              LeadRight.changeBeats(3).scale(1.5,0.75),
+
+          UmTurnLeft.skew(-2, 0) +
+              RunLeft.changeBeats(4.5).scale(1.0,1.5) +
+              Forwardp5 +
+              LeadLeft.changeBeats(3).scale(1.0,2.0),
+
+        ]),
+
+    AnimatedCall('Pass and Roll Your Criss Cross Neighbor',
+        formation: Formation('Single Eight Chain Thru'),
+        from: 'Single Eight Chain Thru',
+        paths: [
+          ExtendLeft.scale(1,.5) +
+              Forward_2 +
+              SwingRight.scale(.5, .5) +
+              Forward +
+              LeadRight +
+              RunRight.changeBeats(4.5).scale(1.5, 1.5).skew(-.5, 0),
+
+          ExtendLeft.scale(1,.5) +
+              RunRight.changeBeats(5).scale(.5,.5) +
+              Forward +
+              ExtendRight +
+              SwingLeft.scale(.5, .5) +
+              LeadLeft.changeBeats(2).scale(3,.5)
+
+        ]),
+
+    AnimatedCall('Pass and Roll Your Criss Cross Neighbor',
+        formation: Formation('Eight Chain Thru'),
+        from: 'Eight Chain Thru',
+        paths: [
+          ExtendLeft +
+              Forward_2 +
+              SwingRight.scale(.5, .5) +
+              Forward +
+              LeadRight +
+              RunRight.changeBeats(4.5).scale(1.5, 1.5).skew(-.5, 0),
+
+          Forward +
+              Forward_2 +
+              SwingRight.scale(.5, .5) +
+              Forward +
+              LeadRight +
+              RunRight.changeBeats(4.5).scale(1.5, 1.5).skew(-.5, 0),
+
+          ExtendLeft +
+              RunRight.changeBeats(5).scale(.5,.5) +
+              Forward +
+              ExtendRight +
+              SwingLeft.scale(.5, .5) +
+              LeadLeft.changeBeats(2).scale(3,.5),
+
+          Forward +
+              RunRight.changeBeats(5).scale(.5,.5) +
+              Forward +
+              ExtendRight +
+              SwingLeft.scale(.5, .5) +
+              LeadLeft.changeBeats(2).scale(3,.5)
+
+        ]),
+
+    AnimatedCall('Left Pass and Roll Your Criss Cross Neighbor',
+        formation: Formation('Single Eight Chain Thru'),
+        from: 'Single Eight Chain Thru',
+        paths: [
+          ExtendRight.scale(1,.5) +
+              Forward_2 +
+              SwingLeft.scale(.5, .5) +
+              Forward +
+              LeadLeft +
+              RunLeft.changeBeats(4.5).scale(1.5, 1.5).skew(-.5, 0),
+
+          ExtendRight.scale(1,.5) +
+              RunLeft.changeBeats(5).scale(.5,.5) +
+              Forward +
+              ExtendLeft +
+              SwingRight.scale(.5, .5) +
+              LeadRight.changeBeats(2).scale(3,.5)
+
+        ]),
+
+    AnimatedCall('Left Pass and Roll Your Criss Cross Neighbor',
+        formation: Formation('Eight Chain Thru'),
+        from: 'Eight Chain Thru',
+        paths: [
+          Forward +
+              Forward_2 +
+              SwingLeft.scale(.5, .5) +
+              Forward +
+              LeadLeft +
+              RunLeft.changeBeats(4.5).scale(1.5, 1.5).skew(-.5, 0),
+
+          ExtendRight +
+              Forward_2 +
+              SwingLeft.scale(.5, .5) +
+              Forward +
+              LeadLeft +
+              RunLeft.changeBeats(4.5).scale(1.5, 1.5).skew(-.5, 0),
+
+          Forward +
+              RunLeft.changeBeats(5).scale(.5,.5) +
+              Forward +
+              ExtendLeft +
+              SwingRight.scale(.5, .5) +
+              LeadRight.changeBeats(2).scale(3,.5),
+
+          ExtendRight +
+              RunLeft.changeBeats(5).scale(.5,.5) +
+              Forward +
+              ExtendLeft +
+              SwingRight.scale(.5, .5) +
+              LeadRight.changeBeats(2).scale(3,.5)
+
+        ]),
+
+
     AnimatedCall('All 8 Criss Cross Your Neighbor',
       formation:Formation('Static MiniWaves RH'),
       group:' ',

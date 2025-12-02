@@ -26,7 +26,7 @@ Criss Cross Your Neighbor.
 ## Pass and Roll Your Criss Cross Neighbor
 
 From Single Eight Chain Thru: All Pass Thru. 
-The Centers Turn Thru while the Putsides
+The Centers Turn Thru while the Outsides
 do a right-face U-Turn Back. 
 All begin a Pass Thru, blending smoothly into Criss Cross
 Your Neighbor (equivalent to Pass Thru; 
