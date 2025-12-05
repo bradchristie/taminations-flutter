@@ -197,7 +197,9 @@ import '../../moves.dart';
 
     AnimatedCall('Centers Hinge',
       formation:Formation('Two-Faced Line RH'),
-      from:'Right-Hand Two-Faced Line',difficulty: 1,
+      from:'Right-Hand Two-Faced Line',
+        difficulty: 1,
+      notForSequencer: true,
       paths:[
           Path(),
 
@@ -207,6 +209,7 @@ import '../../moves.dart';
     AnimatedCall('Centers Hinge',
       formation:Formation('Two-Faced Line LH'),
       from:'Left-Hand Two-Faced Line',difficulty: 2,
+        notForSequencer: true,
       paths:[
           HingeLeft.changeBeats(2),
 
@@ -216,6 +219,7 @@ import '../../moves.dart';
     AnimatedCall('Centers Hinge',
       formation:Formation('Wave RH'),
       from:'Right-Hand Wave',difficulty: 1,
+        notForSequencer: true,
       paths:[
           Path(),
 
@@ -225,6 +229,7 @@ import '../../moves.dart';
     AnimatedCall('Centers Hinge',
       formation:Formation('Wave LH'),
       from:'Left-Hand Wave',difficulty: 1,
+        notForSequencer: true,
       paths:[
           Path(),
 
@@ -234,6 +239,7 @@ import '../../moves.dart';
     AnimatedCall('Centers Hinge',
       formation:Formation('Diamond RH'),
       from:'Right-Hand Diamond',difficulty: 2,
+        notForSequencer: true,
       paths:[
           Path(),
 
@@ -243,6 +249,7 @@ import '../../moves.dart';
     AnimatedCall('Centers Hinge',
       formation:Formation('Diamond LH'),
       from:'Left-Hand Diamond',difficulty: 2,
+        notForSequencer: true,
       paths:[
           Path(),
 
@@ -252,6 +259,7 @@ import '../../moves.dart';
     AnimatedCall('Centers Hinge',
       formation:Formation('Two-Faced Lines RH'),
       from:'Right-Hand Two-Faced Lines',difficulty: 1,
+        notForSequencer: true,
       paths:[
           Path(),
 
@@ -265,6 +273,7 @@ import '../../moves.dart';
     AnimatedCall('Centers Hinge',
       formation:Formation('Two-Faced Lines LH'),
       from:'Left-Hand Two-Faced Lines',difficulty: 2,
+        notForSequencer: true,
       paths:[
           Path(),
 
@@ -278,6 +287,7 @@ import '../../moves.dart';
     AnimatedCall('Centers Hinge',
       formation:Formation('Diamonds RH Girl Points'),
       from:'Right-Hand Diamonds',difficulty: 2,
+        notForSequencer: true,
       paths:[
           HingeRight.changeBeats(2),
 
@@ -291,6 +301,7 @@ import '../../moves.dart';
     AnimatedCall('Centers Hinge',
       formation:Formation('Diamonds LH Girl Points'),
       from:'Left-Hand Diamonds',difficulty: 2,
+        notForSequencer: true,
       paths:[
           HingeLeft.changeBeats(2),
 
@@ -304,6 +315,7 @@ import '../../moves.dart';
     AnimatedCall('Centers Hinge',
       formation:Formation('Quarter Tag'),
       from:'Quarter Tag',difficulty: 2,
+        notForSequencer: true,
       paths:[
           Path(),
 
@@ -317,6 +329,7 @@ import '../../moves.dart';
     AnimatedCall('Very Centers Hinge',
       formation:Formation('Diamonds RH Girl Points'),
       from:'Right-Hand Diamonds',difficulty: 2,
+        notForSequencer: true,
       paths:[
           Path(),
 
@@ -330,6 +343,7 @@ import '../../moves.dart';
     AnimatedCall('Very Centers Hinge',
       formation:Formation('Diamonds LH Girl Points'),
       from:'Left-Hand Diamonds',difficulty: 2,
+        notForSequencer: true,
       paths:[
           Path(),
 
@@ -343,6 +357,7 @@ import '../../moves.dart';
     AnimatedCall('Very Centers Hinge',
       formation:Formation('Quarter Tag'),
       from:'Quarter Tag',difficulty: 2,
+        notForSequencer: true,
       paths:[
           Path(),
 
@@ -356,6 +371,7 @@ import '../../moves.dart';
     AnimatedCall('Very Centers Hinge',
       formation:Formation('Tidal Wave RH BGGB'),
       from:'Right-Hand Tidal Wave',difficulty: 2,
+        notForSequencer: true,
       paths:[
           Path(),
 
