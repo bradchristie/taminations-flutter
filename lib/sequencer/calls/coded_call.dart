@@ -495,9 +495,9 @@ abstract class CodedCall extends Call {
     'Lines.*Thru'.ri: (name) => LinesAnythingThru(name),
     //  Little needs two regexes
     //  to handle both <something> Little and Little <something>
-    '(Scootand)?(Outside|Point)?(Out|In|Left|Right|(Go)?(Forward|AsYouAre))?(Little|Rally)'.ri:
+    '(Scootand)?(Outside|Point)?(Out|In|Left|Right|(Go)?(Forward|AsYouAre))?(Little(More)?|Rally)'.ri:
         (name) => Little(name),
-    '(Scootand)?(Little|Rally)(Outside|Point)(In|Out|Left|Right|(Go)?(Forward|AsYouAre))?'.ri:
+    '(Scootand)?(Little(More)?|Rally)(Outside|Point)(In|Out|Left|Right|(Go)?(Forward|AsYouAre))?'.ri:
         (name) => Little(name),
     'LoadtheBoat'.ri: (name) => LoadTheBoat(name),
     '(Left|Right|In|Out)?Loop(0|1|2|3)?'.ri: (name) => Loop(name),

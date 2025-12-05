@@ -61,6 +61,11 @@ class Little extends Action with ButCall {
       throw CallError('Unable to do Little from this formation.');
     }
 
+    //  Little More
+    if(name.contains('More')) {
+      ctx.applyCalls('Centers Box Circulate');
+    }
+
     //  More to do for Rally
     if (name.contains('Rally')) {
       var isRight = ctx.outer(4).every((d) => d.isCenterRight);
