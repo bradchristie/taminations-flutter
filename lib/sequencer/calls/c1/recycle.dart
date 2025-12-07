@@ -20,26 +20,43 @@
 
 import '../common.dart';
 
-class Ramble extends Action with CallWithParts {
+class Recycle extends Action with ActivesOnly, CallWithParts {
 
-  @override int numberOfParts = 2;
+  @override int numberOfParts = 3;
   @override final level = LevelData.C1;
-  @override var help = '''Ramble is a 2-part call:
-  1.  Center 4 Single Wheel, others Separate
-  2.  Slide Thru''';
-  @override var helplink = 'c1/scoot_and_ramble';
+  @override var help = '''Recycle is defined at C-1 as a 3-part call:
+  1.  Centers Fold and all adjust to a box
+  2.  Box Counter Rotate
+  3.  Roll
+  ''';
+  @override var helplink = 'c1/recycle';
 
-  Ramble(super.name);
+  Recycle(super.name);
 
   @override
   void performPart1(CallContext ctx) {
-    ctx.applyCalls('Center 4 Single Wheel While Outer 4 Separate');
-    ctx.matchStandardFormation(); // So "I" formations work
+    try {
+      ctx.applyAnimatedCall('1/3 Recycle');
+    } on CallError {
+      throw CallError('Unable to Recycle from this formation');
+    }
   }
 
   @override
   void performPart2(CallContext ctx) {
-    ctx.applyCalls('Slide Thru');
+    if (ctx.dancers.length == 8)
+      ctx.applyCalls('Split Counter Rotate');
+    else
+      ctx.applyCalls('Box Counter Rotate');
   }
+
+  @override
+  void performPart3(CallContext ctx) {
+    //  I think Quarter In should be the same as Roll for all cases
+    //  That way we don't need to save rolling direction
+    //  from Part 2
+    ctx.applyCalls('Quarter In');
+  }
+
 
 }

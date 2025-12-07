@@ -21,6 +21,7 @@
 
 import '../../extensions.dart';
 import '../normalize_call.dart';
+import 'c1/recycle.dart';
 import 'a1/as_couples.dart';
 import 'a1/as_couples_roll.dart';
 import 'a1/beaus.dart';
@@ -551,6 +552,7 @@ abstract class CodedCall extends Call {
     'Ramble'.ri: (name) => Ramble(name),
     'ReachOut'.ri: (name) => ReachOut(name),
     'Recoil'.ri: (name) => Recoil(name),
+    'Recycle'.ri: (name)  => Recycle(name),
     'Regroup'.ri: (name) => Regroup(name),
     'Relocate(.*)(line|wave|diamond|hourglass|tag)s?'.ri: (name) => Relocate(name),
     'RelaytheTop'.ri: (name) => RelayTheTop(name),

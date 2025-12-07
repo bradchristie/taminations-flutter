@@ -4239,5 +4239,14 @@ Circulate
 Wheel and Deal
 Allemande Left''',''); });
 
+  test('Recycle in 3 Parts',() {
+    testOneSequence('''Sides Pass the Ocean
+Extend
+Finish Recycle
+Pass the Sea
+Recycle Skip the Last Part
+Extend
+Centers Hinge and Roll Others Trade and Roll
+Right and Left Grand''',''); });
 
 }
