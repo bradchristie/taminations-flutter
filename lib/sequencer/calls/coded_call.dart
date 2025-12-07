@@ -212,6 +212,7 @@ import 'c2/single_cross_and_wheel.dart';
 import 'c2/single_cross_trade_and_wheel.dart';
 import 'c2/stack_the_line.dart';
 import 'c2/stagger.dart';
+import 'c2/swing_along.dart';
 import 'c2/tag_your_neighbor.dart';
 import 'c2/the_k.dart';
 import 'c2/trail_to_a_diamond.dart';
@@ -652,6 +653,7 @@ abstract class CodedCall extends Call {
     'Swap'.ri: (name) => SwapAround(name),
     'Sweep14'.ri: (name) => SweepAQuarter(name),
     'Swing'.ri: (name) => Swing(name),
+    'SwingAlong'.ri: (name) => SwingAlong(name),
     'SwingandCircle(14|12|34)'.ri: (name) => SwingAndCircle(name),
     'SwingandMix'.ri: (name) => SwingAndMix(name),
     'SwingtheFractions'.ri: (name) => SwingTheFractions(name),

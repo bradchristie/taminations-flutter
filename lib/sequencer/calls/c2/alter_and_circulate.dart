@@ -19,7 +19,7 @@
 
 import '../common.dart';
 
-class AlterAndCirculate extends Action with CallWithParts, CallWithStars {
+class AlterAndCirculate extends Action with CallWithParts, CallWithStars, IsLeft {
 
   @override final level = LevelData.C2;
   @override var help = '''Alter and Circulate is a 5-part call. Parts can be changed with Skip and Replace.
@@ -37,6 +37,7 @@ class AlterAndCirculate extends Action with CallWithParts, CallWithStars {
 
   @override
    void performPart1(CallContext ctx) {
+    ctx.applyFacingCouplesRule(isLeft: isLeft);
     ctx.applyCalls('Swing');
   }
 
