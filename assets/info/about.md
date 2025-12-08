@@ -29,11 +29,13 @@ This is free software, and you are welcome to modify and redistribute it
 under the terms of the [GNU GPL license](http://www.gnu.org/licenses/gpl.html).  
 
 ## What's New
-* Add Allemande Left to Mainstream 2026 list
+* Animations for Chase Your Criss Cross Neighbor, Pass and Roll Your Criss Cross Neighbor
 * Sequencer:
-  * Don't label calls as Mainstream 2026
-  * Don't Roll after Pass the Ocean
-  * Code for Rally
+  * Apply Facing Couples Rule and Ocean Wave Rule to applicable C-2 calls 
+  * Handle separate parts for Recycle
+  * Fix for Centers Hinge the Lock
+  * Code for Scoot and Little More with variations
+  * Fix for Line of 6 Turn and Deal
 
 For a detailed history of changes, view the
 [Git log](https://github.com/bradchristie/taminations-flutter/commits/main)
