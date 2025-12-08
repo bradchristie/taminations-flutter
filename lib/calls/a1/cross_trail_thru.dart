@@ -83,6 +83,21 @@ import '../a2/all_4_all_8.dart' as a2;
       Path.fromMovement(Movement.fromData(beats: 4, hands: Hands.NONE, cx1: 1, cy1: 0, cx2: 0, cy2: -4, x2: 1, y2: -4, cx3: 1, cx4: 1, cy4: -.5, x4: 2, y4: -.5  ))
       ]),
 
+    AnimatedCall('Cross Trail Thru',
+        formation:Formation('Tidal Wave RH BGGB'),
+        from:'Tidal Wave',
+        paths:[
+          Path.fromMovement(Movement.fromData(beats: 4, hands: Hands.NONE, cx1: 1, cy1: 0, cx2: 0, cy2: -2.5, x2: 2, y2: -2.5, cx3: 1, cx4: 1, cy4: -.5, x4: 2, y4: -.5  )),
+
+          Path.fromMovement(Movement.fromData(beats: 4, hands: Hands.NONE, cx1: 1, cy1: 0, cx2: 1.5, cy2: 1.5, x2: 2, y2: 1.5, cx3: 1, cx4: 1, cy4: .5, x4: 2, y4: .5  )),
+
+          Path.fromMovement(Movement.fromData(beats: 4, hands: Hands.NONE, cx1: 1, cy1: 0, cx2: 1.5, cy2: 1.5, x2: 2, y2: 1.5, cx3: 1, cx4: 1, cy4: .5, x4: 2, y4: .5  )),
+
+          Path.fromMovement(Movement.fromData(beats: 4, hands: Hands.NONE, cx1: 1, cy1: 0, cx2: 0, cy2: -2.5, x2: 2, y2: -2.5, cx3: 1, cx4: 1, cy4: -.5, x4: 2, y4: -.5  )),
+
+        ]),
+
+
     AnimatedCall('As Couples Cross Trail Thru',
       formation:Formation('Normal Lines'),
       from:'Lines',group:' ',

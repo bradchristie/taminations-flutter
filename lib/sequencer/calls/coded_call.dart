@@ -187,6 +187,7 @@ import 'c2/cross_and_wheel.dart';
 import 'c2/cross_concentric.dart';
 import 'c2/cross_concentric_cycle_and_wheel.dart';
 import 'c2/cross_ramble.dart';
+import 'c2/cross_the_k.dart';
 import 'c2/cross_trade_and_wheel.dart';
 import 'c2/detour.dart';
 import 'c2/dodge.dart';
@@ -416,6 +417,7 @@ abstract class CodedCall extends Call {
     'CrossOverCirculate'.ri: (name) => CrossOverCirculate(name),
     'CrossRamble'.ri: (name) => CrossRamble(name),
     'CrossRun'.ri: (name) => CrossRun(name),
+    'CrossTheK'.ri: (name) => CrossTheK(name),
     'CrossTradeandWheel'.ri: (name) => CrossTradeAndWheel(name),
 
     'Debug.*'.ri: (name) => SetDebugSwitch(name),
@@ -494,7 +496,7 @@ abstract class CodedCall extends Call {
     'LinearAction'.ri: (name) => LinearAction(name),
     'LinearCycle'.ri: (name) => LinearCycle(name),
     'LineOf6BendtheLine'.ri: (name) => LineofSixBendTheLine(name),
-    'Lines.*Thru'.ri: (name) => LinesAnythingThru(name),
+    'Line.*Thru'.ri: (name) => LinesAnythingThru(name),
     //  Little needs two regexes
     //  to handle both <something> Little and Little <something>
     '(Scootand)?(Outside|Point)?(Out|In|Left|Right|(Go)?(Forward|AsYouAre))?(Little(More)?|Rally)'.ri:

@@ -77,7 +77,8 @@ String normalizeCall(String callname) =>
         .replaceAll('(three|3)\\s*(by)?x?-?\\s*(one|1)'.ri,'31')
         .replaceAll('(one|1)\\s*(by)?x?-?\\s*(three|3)'.ri,'13')
     //  Use singular form
-        .replaceAllMapped('\\b(boy|girl|beau|belle|center|end|point|head|(out)?side)s\\b'.ri, (m) => m[1]!)
+        .replaceAllMapped('\\b(boy|girl|beau|belle|center|end|point|head|(out)?side|triangle|line|wave|column)s\\b'.ri, (m) => m[1]!)
+        .replaceAll('boxes'.ri, 'box')
     //  Misc other variations
         .replaceAll('magic column'.ri,'Magic ') //  'Column' of Magic Column is optional
         .replaceAll('\\bswap(\\s+around)?\\b'.ri,'Swap')

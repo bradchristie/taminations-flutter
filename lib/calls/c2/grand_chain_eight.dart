@@ -133,6 +133,24 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Grand Chain Eight',
+        formation:Formation('Quarter Tag'),
+        from:'Quarter Tag',
+        paths:[
+          QuarterLeft.changeBeats(2).skew(1.0,0.0) +
+              UmTurnLeft.changehands(Hands.RIGHT).skew(1.0,-1.0),
+
+          Stand.changehands(Hands.LEFT) +
+              ExtendRight.changeBeats(2) +
+              QuarterLeft.changehands(Hands.LEFT).skew(1.0,0.0),
+
+          QuarterLeft.changeBeats(2).skew(2.0,-2) +
+              UmTurnLeft.changehands(Hands.RIGHT).skew(1.0,-1.0),
+
+          ExtendRight.changeBeats(2).scale(2.0,1) +
+              QuarterLeft.changehands(Hands.LEFT).skew(1.0,0.0)
+        ]),
+
+    AnimatedCall('Grand Chain Eight',
       formation:Formation('Tidal Wave RH BGGB'),
       from:'Tidal Wave',
       paths:[

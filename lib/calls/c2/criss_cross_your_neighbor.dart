@@ -303,6 +303,7 @@ import '../../moves.dart';
 
         ]),
 
+
     AnimatedCall('Pass and Roll Your Criss Cross Neighbor',
         formation: Formation('Single Eight Chain Thru'),
         from: 'Single Eight Chain Thru',
@@ -354,6 +355,36 @@ import '../../moves.dart';
               ExtendRight +
               SwingLeft.scale(.5, .5) +
               LeadLeft.changeBeats(2).scale(3,.5)
+
+        ]),
+
+    AnimatedCall('Pass and Roll Your Criss Cross Neighbor',
+        formation: Formation('Ocean Waves RH BGGB'),
+        from: 'Right-Hand Waves',
+        paths: [
+          ExtendRight.changeBeats(2).scale(2, 1) +
+              SwingRight.scale(.5, .5) +
+              Forward +
+              LeadRight +
+              RunRight.changeBeats(4.5).scale(1.5, 1.5).skew(-.5, 0),
+
+          RunRight.changeBeats(5).scale(.5,.5) +
+              Forward +
+              ExtendRight +
+              SwingLeft.scale(.5, .5) +
+              LeadLeft.changeBeats(2).scale(3,.5),
+
+          Forward_2 +
+              SwingRight.scale(.5, .5) +
+              Forward +
+              LeadRight +
+              RunRight.changeBeats(4.5).scale(1.5, 1.5).skew(-.5, 0),
+
+          RunRight.changeBeats(5).scale(.5,1) +
+              Forward +
+              ExtendRight +
+              SwingLeft.scale(.5, .5) +
+              LeadLeft.changeBeats(2).scale(3,.5),
 
         ]),
 
@@ -411,6 +442,35 @@ import '../../moves.dart';
 
         ]),
 
+    AnimatedCall('Left Pass and Roll Your Criss Cross Neighbor',
+        formation: Formation('Ocean Waves LH BGGB'),
+        from: 'Left-Hand Waves',
+        paths: [
+          RunLeft.changeBeats(5).scale(.5,1) +
+              Forward +
+              ExtendLeft +
+              SwingRight.scale(.5, .5) +
+              LeadRight.changeBeats(2).scale(3,.5),
+
+          Forward_2 +
+              SwingLeft.scale(.5, .5) +
+              Forward +
+              LeadLeft +
+              RunLeft.changeBeats(4.5).scale(1.5, 1.5).skew(-.5, 0),
+
+          RunLeft.changeBeats(5).scale(.5,.5) +
+              Forward +
+              ExtendLeft +
+              SwingRight.scale(.5, .5) +
+              LeadRight.changeBeats(2).scale(3,.5),
+
+          ExtendLeft.changeBeats(2).scale(2, 1) +
+              SwingLeft.scale(.5, .5) +
+              Forward +
+              LeadLeft +
+              RunLeft.changeBeats(4.5).scale(1.5, 1.5).skew(-.5, 0),
+
+        ]),
 
     AnimatedCall('All 8 Criss Cross Your Neighbor',
       formation:Formation('Static MiniWaves RH'),

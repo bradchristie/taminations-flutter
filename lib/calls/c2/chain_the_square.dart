@@ -49,5 +49,77 @@ import '../../moves.dart';
           BelleWheel +
           ExtendLeft.changeBeats(2).changehands(Hands.GRIPRIGHT).scale(1.0,2.0)
       ]),
+
+    AnimatedCall('Chain the Square',
+        formation:Formation('Ocean Waves RH BGGB'),
+        from:'Right-Hand Waves',
+        paths:[
+              ExtendRight.scale(1.0,2) +
+              ExtendRight.scale(1.0,0.5) +
+              UmTurnLeft.changeBeats(2).changehands(Hands.GRIPLEFT).skew(1.0,1.25) +
+              UmTurnLeft.changeBeats(2).changehands(Hands.GRIPLEFT).skew(-1.0,-1.25),
+
+          ExtendRight.scale(1.0,2) +
+              BelleWheel +
+              ExtendLeft.changeBeats(2).changehands(Hands.GRIPRIGHT).scale(1.0,2.0),
+
+          Forward +
+              ExtendRight.scale(1.0,0.5) +
+              RunLeft.changeBeats(4).changehands(Hands.GRIPLEFT).skew(-2.0,-1.5),
+
+          Forward +
+              BeauWheel +
+              ExtendLeft.changeBeats(2).changehands(Hands.GRIPLEFT).scale(1.0,2.0),
+        ]),
+
+    AnimatedCall('Left Chain the Square',
+        formation:Formation('Eight Chain Thru'),
+        from:'Eight Chain Thru',
+        paths:[
+          PullRight.scale(1.0,0.5) +
+              ExtendLeft.scale(1.0,0.5) +
+              ExtendLeft.scale(1.0,0.5) +
+              RunRight.changeBeats(4).changehands(Hands.GRIPRIGHT).skew(-2.0,1.5),
+
+          PullRight.scale(1.0,0.5) +
+              ExtendLeft.scale(1.0,0.5) +
+              ExtendLeft.scale(1.0,0.5) +
+              UmTurnRight.changeBeats(2).changehands(Hands.GRIPRIGHT).skew(1.0,-1.25) +
+              UmTurnRight.changeBeats(2).changehands(Hands.GRIPRIGHT).skew(-1.0,1.25),
+
+          PullRight.scale(1.0,0.5) +
+              ExtendLeft.scale(1.0,0.5) +
+              BeauReverseWheel +
+              ExtendRight.changeBeats(2).changehands(Hands.GRIPRIGHT).scale(1.0,2.0),
+
+          PullRight.scale(1.0,0.5) +
+              ExtendLeft.scale(1.0,0.5) +
+              BelleReverseWheel +
+              ExtendRight.changeBeats(2).changehands(Hands.GRIPLEFT).scale(1.0,2.0)
+        ]),
+
+    AnimatedCall('Left Chain the Square',
+        formation:Formation('Ocean Waves LH BGGB'),
+        from:'Left-Hand Waves',
+        paths:[
+          ExtendLeft.scale(1.0,2) +
+              BelleReverseWheel +
+              ExtendRight.changeBeats(2).changehands(Hands.GRIPLEFT).scale(1.0,2.0),
+
+          Forward +
+              ExtendLeft.scale(1.0,0.5) +
+              RunRight.changeBeats(4).changehands(Hands.GRIPRIGHT).skew(-2.0,1.5),
+
+          Forward +
+              BeauReverseWheel +
+              ExtendRight.changeBeats(2).changehands(Hands.GRIPRIGHT).scale(1.0,2.0),
+
+          ExtendLeft.scale(1.0,2) +
+              ExtendLeft.scale(1.0,0.5) +
+              UmTurnRight.changeBeats(2).changehands(Hands.GRIPRIGHT).skew(1.0,-1.25) +
+              UmTurnRight.changeBeats(2).changehands(Hands.GRIPRIGHT).skew(-1.0,1.25),
+
+        ]),
+
   ];
 
