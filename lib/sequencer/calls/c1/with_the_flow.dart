@@ -20,7 +20,7 @@
 
 import '../common.dart';
 
-class WithTheFlow extends Action with ActivesOnly {
+class WithTheFlow extends Action {
 
   @override final level = LevelData.C1;
   @override var helplink = 'c1/with_the_flow';
@@ -28,25 +28,31 @@ class WithTheFlow extends Action with ActivesOnly {
   WithTheFlow(super.name);
 
   @override
-  void performCall(CallContext ctx) {
-    if (ctx.dancers.any((d) => !ctx.isInCouple(d)))
-      throw CallError('Only couples can do With the Flow');
-    var isLeft = true;
-    var isRight = true;
-    for (final d in ctx.actives) {
-      final roll = ctx.roll(d);
-      if (roll != Rolling.LEFT)
-        isLeft = false;
-      if (roll != Rolling.RIGHT)
-        isRight = false;
-    }
-    //  Rolling direction determines who walks and who dodges
-    if (isRight)
-      ctx.applyCalls('Beau Walk Belle Dodge');
-    else if (isLeft)
-      ctx.applyCalls('Belle Walk Beau Dodge');
-    else
-      throw CallError('All dancers must be moving the same direction for With the Flow');
+  void performCall(CallContext ctx0) {
+    //  Use a context with just the actives, for
+    //  e.g. Centers With the Flow
+    ctx0.activesContext((ctx) {
+      if (ctx.dancers.any((d) => !ctx.isInCouple(d)))
+        throw CallError('Only couples can do With the Flow');
+      //  Find out which way the couples are moving sideways
+      //  All dancers have to be moving in the same direction
+      var isLeft = true;
+      var isRight = true;
+      for (final d in ctx.actives) {
+        final roll = ctx.roll(d);
+        if (roll != Rolling.LEFT)
+          isLeft = false;
+        if (roll != Rolling.RIGHT)
+          isRight = false;
+      }
+      //  Rolling direction determines who walks and who dodges
+      if (isRight)
+        ctx.applyCalls('Beau Walk Belle Dodge');
+      else if (isLeft)
+        ctx.applyCalls('Belle Walk Beau Dodge');
+      else
+        throw CallError('All dancers must be moving the same direction for With the Flow');
+    });
   }
 
 }
