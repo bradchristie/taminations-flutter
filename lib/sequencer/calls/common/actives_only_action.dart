@@ -24,6 +24,9 @@ import '../action.dart';
 //  Convenience mixin for calls that have no affect on inactive dancers
 //  Don't use this with performCall, just performOne
 //  For performCall use ctx.activesContext()
+//
+//  Put this after CallWithParts if you are mixing both
+
 mixin ActivesOnly on Action {
 
   @override

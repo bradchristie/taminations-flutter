@@ -20,7 +20,7 @@
 import '../common.dart';
 
 class AlterTheWave extends Action
-    with CallWithParts, CallWithStars, IsLeft {
+    with CallWithParts, CallWithStars, IsLeft, ActivesOnly {
 
   @override int numberOfParts = 4;
   @override final level = LevelData.C1;
@@ -47,8 +47,12 @@ class AlterTheWave extends Action
 
   @override
    void performPart3(CallContext ctx) {
-    for (var i=0; i<turnStarAmount; i++)
-      ctx.applyCalls('Split Counter Rotate');
+    for (var i=0; i<turnStarAmount; i++) {
+      if (ctx.dancers.length == 4)
+        ctx.applyCalls('Counter Rotate');
+      else
+        ctx.applyCalls('Split Counter Rotate');
+    }
   }
 
   @override
