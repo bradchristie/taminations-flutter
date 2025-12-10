@@ -29,47 +29,37 @@ class Spread extends Action {
 
   Spread(super.name);
 
-  /*
-   * 1. If only some of the dancers are directed to Spread (e.g., from a
-   * static square, Heads Star Thru & Spread), they slide apart sideways to
-   * become ends, as the inactive dancers step forward between them.
-   *
-   * 2. If the (Anything) call finishes in lines or waves (e.g., Follow Your Neighbor),
-   * the centers anticipate the Spread action by sliding apart sideways to
-   * become the new ends, while the original ends anticipate the Spread action
-   * by moving into the nearest center position.
-   *
-   * 3. If the (Anything) call finishes in tandem couples
-   *  (e.g., Wheel & Deal from a line of four), the lead dancers slide apart sideways,
-   *  while the trailing dancers step forward between them.
-   *
-   * 4. (C-1) If specific dancers are directed to Spread (e.g., Everyone Trade, Boys
-   *  Spread), they slide away from the adjacent dancer one position. The inactive
-   *  dancers do not move.
-   */
 
   @override
   void performCall(CallContext ctx) {
     //  Is this spread from waves, tandem, actives?
     Action spreader;
-    ctx.animateToEnd();
-    ctx.analyze();
-    if (ctx.actives.length == ctx.dancers.length / 2) {
-      if (CallContext.fromContext(ctx,dancers:ctx.actives).isLines())
-        //  Case 2: Active dancers in line or wave spread among themselves
-        spreader = _Case2();
-      else if (ctx.actives.every((d) => d.data.partner?.isActive ?? false) &&
-          ctx.dancers.every((d) =>
-              d.isActive || (ctx.dancerInFront(d)?.isActive ?? false)))
-        //  Case 1: Active dancers spread and let in the others
-        spreader = _Case1();
+    //  As a convenience check that we are not trying to Spread from CDPT
+    var cdpt = CallContext.fromFormation(Formation('Completed Double Pass Thru'));
+    if (ctx.matchFormations(cdpt) != null)
+      throw CallError('Do not Spread from this formation - use Centers In instead');
+    if (ctx.actives.length < ctx.dancers.length) {
+      //  If the centers are told to spread, could be two cases
+      if (ctx.actives.every((d) => d.data.center)) {
+        //  Maybe the centers are in a line or wave, and spread among themselves
+        if (CallContext.fromDancers(ctx.actives).isLines())
+          spreader = _SpreadFromLines();
+        //  Or it's just a hint for them to slide out as the ends move in
+        //  e.g. Heads Slide Thru and Spread
+        else
+          spreader = _SpreadFromBoxes();
+      }
+      //  Not the centers told to spread - must be C-1 spread
       else
         spreader = _Case4();
-    } else if (ctx.isLines() || ctx.isTidal()) {
-      spreader = _Case2();
-    } else if (ctx.dancers.every((d) => ctx.isInTandem(d))) {
-      spreader = _Case3();
-    } else
+    }
+    else if (ctx.isLines() || ctx.isTidal())
+      //  Lines - Centers slide out, ends slide in
+      spreader = _SpreadFromLines();
+    else if (ctx.isColumns())
+      //  Boxes - Centers slide out, ends move in
+      spreader = _SpreadFromBoxes();
+    else
       throw CallError('Unable to find case for Spread');
     level = spreader.level;
     spreader.performCall(ctx);
@@ -77,15 +67,15 @@ class Spread extends Action {
 
 }
 
-class _Case1 extends Action {
-  _Case1() : super('and Spread');
+class _SpreadFromBoxes extends Action {
+  _SpreadFromBoxes() : super('and Spread');
 
   @override
   void performCall(CallContext ctx) {
     ctx.extendPaths();
     for (var d in ctx.dancers) {
-      if (d.isActive) {
-        //  Active dancers spread apart
+      if (d.data.center) {
+        //  Center dancers spread apart
         Path m;
         if (ctx.dancersToRight(d).isEmpty)
           m = DodgeRight;
@@ -101,14 +91,16 @@ class _Case1 extends Action {
           var dist = min(d.distanceTo(d2),2.0);
           d.path += Forward.scale(dist,1.0).changeBeats(2.0);
         }
+        else
+          throw CallError('Unable to Spread from this formation');
       }
     }
   }
 
 }
 
-class _Case2 extends Action {
-  _Case2() : super('and Spread');
+class _SpreadFromLines extends Action {
+  _SpreadFromLines() : super('and Spread');
 
   @override
   void performCall(CallContext ctx) {
@@ -118,7 +110,6 @@ class _Case2 extends Action {
 
   @override
   Path performOne(DancerModel d, CallContext ctx) {
-    //  This is for waves only
     //  Compute offset for spread
     var v = Vector();
     if (d.data.belle)
@@ -137,21 +128,6 @@ class _Case2 extends Action {
   }
 }
 
-class _Case3 extends _Case1 {
-
-  @override
-  void performCall(CallContext ctx) {
-    //  Must be tandem couples
-    if (ctx.dancers.any((d) => !ctx.isInTandem(d) || !ctx.isInCouple(d)))
-      throw CallError('Invalid formation for Spread');
-    //  Mark the leaders as active
-    for (var d in ctx.dancers)
-      d.data.active = d.data.leader;
-    //  And forward to Case1, actives spread
-    super.performCall(ctx);
-  }
-
-}
 
 class _Case4 extends Action {
 

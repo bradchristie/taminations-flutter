@@ -623,20 +623,42 @@ Centers Chase Right
 Centers Girls Cross
 Allemande Left''', '');});
 
-    test('Spread',() { testOneSequence(
-        '''Heads Touch a Quarter and Spread
-Centers Pass the Ocean
-Flip the Diamond
-In-Roll Circulate and Spread
-Split Circulate
-Recycle
-Pass to the Center
-Double Pass Thru and Spread
-Hinge
-Boys Run
+//     test('Spread Old',() { testOneSequence(
+//         '''Heads Touch a Quarter and Spread
+// Centers Pass the Ocean
+// Flip the Diamond
+// In-Roll Circulate and Spread
+// Split Circulate
+// Recycle
+// Pass to the Center
+// Double Pass Thru and Spread
+// Hinge
+// Boys Run
+// Pass Thru
+// Wheel and Deal
+// Centers Reverse Swap Around
+// Allemande Left''', 'Do not Spread from this formation - use Centers In instead');});
+
+  test('Spread',() { testOneSequence(
+      '''Head Square Thru 4
+Veer Left
+Bend the Line
+Star Thru and Spread
+Ends Cross Fold
+Centers Pass Thru
+Slide Thru
 Pass Thru
 Wheel and Deal
-Centers Reverse Swap Around
+Centers Pass Thru
+Allemande Left''', '');});
+
+  test('Spread 2',() { testOneSequence(
+      '''Sides Spin the Top Recycle and Spread
+Star Thru
+Trade By and Spread
+Ends Fold and Everybody Spread
+Slide Thru and Spread
+Ends Cross Fold Centers Trade
 Allemande Left''', '');});
 
     test('Square the Set',() { testOneSequence(
@@ -4255,5 +4277,7 @@ Centers Alter the Wave Turn the Star 1/4
 Centers Left Swing Thru
 Centers Explode the Wave
 Allemande Left''',''); });
+
+  print('All Tests Completed');
 
 }
