@@ -250,6 +250,7 @@ import '../c2/turn_to_a_line.dart' as c2;
     AnimatedCall('"O" Slide Thru',
       formation:Formation('O Eight Chain Thru'),
       group:'"O"',
+      isGenderSpecific: true,
       paths:[
           ExtendLeft.changeBeats(2).scale(1.0,2.0) +
           QuarterRight.skew(1.0,0.0),

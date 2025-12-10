@@ -4249,4 +4249,11 @@ Extend
 Centers Hinge and Roll Others Trade and Roll
 Right and Left Grand''',''); });
 
+  test('Centers Alter the Wave',() {
+    testOneSequence('''Sides Pass the Ocean
+Centers Alter the Wave Turn the Star 1/4
+Centers Left Swing Thru
+Centers Explode the Wave
+Allemande Left''',''); });
+
 }
