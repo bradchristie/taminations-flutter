@@ -65,6 +65,7 @@ class TwistAnything extends Action {
     //  First try original ends
     try {
       ctx.subContext(outers, (ctx2) {
+        ctx2.canDoYourPart = false;
         ctx2.applyCalls(anyCall);
       });
     } on CallError {

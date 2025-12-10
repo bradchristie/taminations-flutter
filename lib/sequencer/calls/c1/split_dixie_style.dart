@@ -31,6 +31,13 @@ class SplitDixieStyle extends Action with CallWithParts {
   SplitDixieStyle(super.name);
 
   @override
+  void performCall(CallContext ctx) {
+    if (ctx.actives.length < 8)
+      throw CallError('Not enough dancers');
+    super.performCall(ctx);
+  }
+
+  @override
    void performPart1(CallContext ctx) {
     if (ctx.dancers.any((d) => ctx.isInWave(d))) {
       final face = ctx.dancers.where((d) => ctx.isInWave(d)).every((d) => d.data.center)

@@ -34,6 +34,13 @@ The hands can be swapped with Left Split Square Chain the Top''';
   SplitSquareChainTheTop(super.name);
 
   @override
+  void performCall(CallContext ctx) {
+    if (ctx.actives.length < 8)
+      throw CallError('Not enough dancers');
+    super.performCall(ctx);
+  }
+
+  @override
   void performPart1(CallContext ctx) {
     ctx.applyCalls('Facing Dancers $left Pull By and Quarter In');
   }
