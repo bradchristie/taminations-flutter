@@ -29,7 +29,7 @@ class PassTheAxle extends Action with CallWithParts, ButCall {
   2.  Centers Pass Thru, others Cross Cast Back
   3.  Swing
   4.  Centers Trade
-Part 3 can be replace with [But] Cast Off 3/4
+Part 3 can be replaced with [But] Cast Off n/4
 Part 4 can be replaced with But (another call)''';
   @override var helplink = 'c1/pass_the_axle';
 
@@ -51,13 +51,16 @@ Part 4 can be replaced with But (another call)''';
     if (norm.endsWith('CastOff34') ||
         butCall.norm.endsWith('CastOff34'))
       ctx.applyCalls('Cast Off 3/4');
+    else if (norm.endsWith('CastOff14') ||
+        butCall.norm.endsWith('CastOff14'))
+      ctx.applyCalls('Hinge');
     else
       ctx.applyCalls('Swing');
   }
 
   @override
   void performPart4(CallContext ctx) {
-    if (butCall.norm != 'CastOff34')
+    if (!butCall.norm.matches('CastOff(3|1)4'.ri))
       ctx.applyCalls('Centers $butCall');
     else
       ctx.applyCalls('Centers Trade');
