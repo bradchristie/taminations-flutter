@@ -23,19 +23,18 @@ Call pronunciations provided by
 
 ---
 
-## Taminations version 1.6.95 built 2025-11-24
+## Taminations version 1.6.97 built 2025-12-15
 Copyright 2025 by Brad Christie.  
 This is free software, and you are welcome to modify and redistribute it
 under the terms of the [GNU GPL license](http://www.gnu.org/licenses/gpl.html).  
 
 ## What's New
-* Animations for Chase Your Criss Cross Neighbor, Pass and Roll Your Criss Cross Neighbor
+* More animations for Spread to match examples in the new definition
 * Sequencer:
-  * Apply Facing Couples Rule and Ocean Wave Rule to applicable C-2 calls 
-  * Handle separate parts for Recycle
-  * Fix for Centers Hinge the Lock
-  * Code for Scoot and Little More with variations
-  * Fix for Line of 6 Turn and Deal
+  * Re-code Spread to match the new definition
+  * Fix for Centers With the Flow
+  * Fix for O Slide Thru
+  * Fix for Twist and Split calls
 
 For a detailed history of changes, view the
 [Git log](https://github.com/bradchristie/taminations-flutter/commits/main)

@@ -4278,6 +4278,20 @@ Centers Left Swing Thru
 Centers Explode the Wave
 Allemande Left''',''); });
 
+  test('Circle By the Windmill',() {
+    testOneSequence('''Heads Star Thru
+Circle By 1/2 and 1/2 the Windmill Right
+In Roll Circulate
+Girls Run
+Bend the Line
+Star Thru Pass Thru
+Allemande Left''',''); });
+
+/*
+test('',() {
+  testOneSequence('''''',''); });
+*/
+
   print('All Tests Completed');
 
 }
