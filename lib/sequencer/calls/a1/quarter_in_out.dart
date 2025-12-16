@@ -30,8 +30,10 @@ class QuarterInOut extends Action {
 
   @override
   void performCall(CallContext ctx) {
-    if (ctx.dancers.length == 4)
+    if (ctx.dancers.length == 4) {
+      ctx.dancers.center();
       return super.performCall(ctx);
+    }
     final boxes = ctx.boxes();
     if (boxes != null) {
       for (final box in boxes) {
