@@ -198,6 +198,53 @@ import '../../moves.dart';
           ExtendRight.scale(1,1.5).changeBeats(3)
         ]),
 
+    AnimatedCall('Transfer and',
+        formation:Formation('', dancers:[
+          DancerModel.fromData(gender:Gender.GIRL,x:2,y:3,angle:90),
+          DancerModel.fromData(gender:Gender.BOY,x:2,y:1,angle:90),
+          DancerModel.fromData(gender:Gender.GIRL,x:-1,y:1,angle:270),
+          DancerModel.fromData(gender:Gender.BOY,x:-3,y:1,angle:270),
+        ]),
+        from:'Pinwheel 1a',
+        noDisplay: true,
+        paths:[
+          RunLeft.changeBeats(4).scale(1.0,3.0) +
+              Forward_3 +
+              LeadLeft,
+
+          Forward_2 +
+              RunLeft.changeBeats(4).scale(1.0,3.0) +
+              Forward +
+              LeadLeft,
+
+          ExtendLeft.scale(1,.5).changeBeats(3),
+
+          ExtendLeft.scale(1,1.5).changeBeats(3)
+        ]),
+
+    AnimatedCall('Transfer and',
+        formation:Formation('', dancers:[
+          DancerModel.fromData(gender:Gender.GIRL,x:-2,y:3,angle:90),
+          DancerModel.fromData(gender:Gender.BOY,x:-2,y:1,angle:90),
+          DancerModel.fromData(gender:Gender.GIRL,x:1,y:1,angle:270),
+          DancerModel.fromData(gender:Gender.BOY,x:3,y:1,angle:270),
+        ]),
+        from:'Pinwheel 2a',
+        noDisplay: true,
+        paths:[
+          RunRight.changeBeats(4).scale(1.0,3.0) +
+              Forward_3 +
+              LeadRight,
+
+          Forward_2 +
+              RunRight.changeBeats(4).scale(1.0,3.0) +
+              Forward +
+              LeadRight,
+
+          ExtendRight.scale(1,.5).changeBeats(3),
+
+          ExtendRight.scale(1,1.5).changeBeats(3)
+        ]),
 
 
     AnimatedCall('Transfer and Box Circulate Twice',
