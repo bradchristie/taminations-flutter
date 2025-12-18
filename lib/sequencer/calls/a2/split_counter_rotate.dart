@@ -49,12 +49,13 @@ class SplitCounterRotateFraction extends Action {
 
   @override
   void performCall(CallContext ctx) {
+    var oneRotate = ctx.isTidal() ? 'Lockit' : 'Split Counter Rotate';
     if (norm.contains('14'))
-      ctx.applyCalls('Split Counter Rotate');
+      ctx.applyCalls('$oneRotate');
     else if (norm.contains('12'))
-      ctx.applyCalls('Split Counter Rotate','Split Counter Rotate');
+      ctx.applyCalls('$oneRotate $oneRotate');
     else if (norm.contains('34'))
-      ctx.applyCalls('Split Counter Rotate','Split Counter Rotate','Split Counter Rotate');
+      ctx.applyCalls('$oneRotate $oneRotate $oneRotate');
     else
       throw CallError('Bad fraction for Split Counter Rotate');
   }
