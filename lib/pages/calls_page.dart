@@ -159,37 +159,46 @@ class _CallsFrameState extends fm.State<CallsFrame> {
           border: fm.Border(top: fm.BorderSide(width: 1, color: Color.BLACK))),
      // padding: FM.EdgeInsets.only(left: 20.0, top:4, bottom:4),
       child: pp.Consumer<TamState>(
-        builder: (context,tamState,_) =>
-         fm.Material(
+        builder: (context,tamState,_) {
+          var onTapFunction = () {
+            tamState.change(
+                mainPage: MainPage.ANIMLIST,
+                link: callsSearched[index].link
+            );
+          };
+         return fm.Material(
           //  Color the item according the the level
           color: LevelData.find(callsSearched[index].level)!.color,
-          child: fm.InkWell(
-            highlightColor: LevelData.find(callsSearched[index].level)!.color.darker(),
-              onTap: () {
-                tamState.change(
-                    mainPage: MainPage.ANIMLIST,
-                    link: callsSearched[index].link
-                );
-              },
-              child:fm.Row(
-                children: [
-                  fm.Flexible(
-                    child: fm.Container(
-                        alignment: fm.Alignment.centerLeft,
-                        padding: fm.EdgeInsets.only(bottom:4,top:4,left: 10.0),
-                        child: AutoSizeText(callsSearched[index].title,style: fm.TextStyle(fontSize:
-                            20))),
-                  ),
-                  if (showLevel)
-                    fm.Container(
-                        alignment: fm.Alignment.topRight,
-                        padding: fm.EdgeInsets.only(top:2,right:2),
-                        child: fm.Text(LevelData.find(callsSearched[index].link)!.name)
-                  )
-                ],
-              )
+          child: fm.Semantics(
+            button: true,
+            enabled: true,
+            label: callsSearched[index].title,
+            excludeSemantics: true,
+            onTap: onTapFunction,
+            child: fm.InkWell(
+              highlightColor: LevelData.find(callsSearched[index].level)!.color.darker(),
+                onTap: onTapFunction,
+                child:fm.Row(
+                  children: [
+                    fm.Flexible(
+                      child: fm.Container(
+                          alignment: fm.Alignment.centerLeft,
+                          padding: fm.EdgeInsets.only(bottom:4,top:4,left: 10.0),
+                          child: AutoSizeText(callsSearched[index].title,style: fm.TextStyle(fontSize:
+                              20))),
+                    ),
+                    if (showLevel)
+                      fm.Container(
+                          alignment: fm.Alignment.topRight,
+                          padding: fm.EdgeInsets.only(top:2,right:2),
+                          child: fm.Text(LevelData.find(callsSearched[index].link)!.name)
+                    )
+                  ],
+                )
+            ),
           ),
-        ),
+        ); },
+
       )
     );
   }

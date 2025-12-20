@@ -45,27 +45,35 @@ class Button extends fm.StatelessWidget {
             shadowColor: Color.BLACK,
             shape: fm.RoundedRectangleBorder(
                 borderRadius: fm.BorderRadius.circular(10)),
-          child:fm.InkWell(
-              onTap: () {
-                if (onPressed != null) {
-                  onPressed!();
-                }
-              },
-              child:fm.Container(
-                  decoration: fm.ShapeDecoration(
-                      shape: fm.RoundedRectangleBorder(
-                          side: fm.BorderSide(color: Color.GRAY.darker()),
-                          borderRadius: fm.BorderRadius.circular(10)
-                      ),
-                      gradient: fm.LinearGradient(
-                          begin: fm.Alignment.topCenter,
-                          end: fm.Alignment.bottomCenter,
-                          colors: [Color(0xffffffff), Color(0xffa0a0a0)]
-                      )
-                  ),
-                  padding: fm.EdgeInsets.all(6.0),
-                  child: fm.Center(child: child)
-              )
+          child:fm.Semantics(
+            button: true,
+            enabled: onPressed != null,
+            label: name,
+            excludeSemantics: true,
+            identifier: name,
+            onTap: () { onPressed!(); },
+            child: fm.InkWell(
+                onTap: () {
+                  if (onPressed != null) {
+                    onPressed!();
+                  }
+                },
+                child:fm.Container(
+                    decoration: fm.ShapeDecoration(
+                        shape: fm.RoundedRectangleBorder(
+                            side: fm.BorderSide(color: Color.GRAY.darker()),
+                            borderRadius: fm.BorderRadius.circular(10)
+                        ),
+                        gradient: fm.LinearGradient(
+                            begin: fm.Alignment.topCenter,
+                            end: fm.Alignment.bottomCenter,
+                            colors: [Color(0xffffffff), Color(0xffa0a0a0)]
+                        )
+                    ),
+                    padding: fm.EdgeInsets.all(6.0),
+                    child: fm.Center(child: child)
+                )
+            ),
           )
         )
   );

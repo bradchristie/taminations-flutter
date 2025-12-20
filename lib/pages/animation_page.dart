@@ -370,14 +370,14 @@ class _AnimationFrameState extends fm.State<AnimationFrame>
                   child: fm.Row(
                       children: [
                         fm.Expanded(
-                            child: Button('Start',
+                            child: Button('Back One Part',
                                 onPressed: () {
                                   danceModel.goToPreviousPart();
                                 },
                                 child: fm.Icon(fm.Icons.skip_previous,size:iconSize))),
                         fm.Expanded(
                             child:
-                            Button('Back',
+                            Button('Back 0.1 Step',
                                 onPressed: () {
                                   danceModel.stepBack();
                                 },
@@ -401,12 +401,12 @@ class _AnimationFrameState extends fm.State<AnimationFrame>
                                     size:iconSize)
                             )),
                         fm.Expanded(
-                            child: Button('Forward',
+                            child: Button('Forward 0.1 Step',
                                 onPressed: () {
                                   danceModel.stepForward();
                                 },
                                 child: fm.Icon(fm.Icons.navigate_next,size:iconSize))),
-                        fm.Expanded(child: Button('End',
+                        fm.Expanded(child: Button('Forward One Part',
                             onPressed: () {
                               danceModel.goToNextPart();
                             },

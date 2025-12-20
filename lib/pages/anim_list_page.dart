@@ -274,48 +274,69 @@ class _AnimListState extends fm.State<AnimListFrame> {
                                     _selectAnimListItem(index, tamState, highlightState);
                                   }
                                 }
+                                var onTapFunction = () {
+                                  setState(() {
+                                    _selectAnimListItem(
+                                        index, tamState, highlightState);
+                                  });
+                                  tamState.change(
+                                      mainPage: MainPage.ANIMATIONS,
+                                      animnum: item.animnumber
+                                  );
+                                  pp.Provider
+                                      .of<BeatNotifier>(
+                                      context, listen: false)
+                                      .beat = 0.0;
+                                };
                                 return fm.Material(
                                   color: widget.highlightSelected && selectedItem == index
                                       ? Color.BLUE
                                       : backColor,
-                                  child: fm.InkWell(
-                                    highlightColor: backColor.darker(),
-                                    onTap: () {
-                                      setState(() {
-                                        _selectAnimListItem(
-                                            index, tamState, highlightState);
-                                      });
-                                      tamState.change(
-                                          mainPage: MainPage.ANIMATIONS,
-                                          animnum: item.animnumber
-                                      );
-                                      pp.Provider
-                                          .of<BeatNotifier>(
-                                          context, listen: false)
-                                          .beat = 0.0;
-                                    },
-                                    child: fm.Container(
-                                      decoration: fm.BoxDecoration(
-                                          border: fm.Border(
-                                              bottom: fm.BorderSide(
-                                                  width: 1,
-                                                  color: fm.Colors.black))),
-                                      padding: fm.EdgeInsets.only(
-                                          left: item.celltype ==
-                                              CellType.Indented
-                                              ? 40.0
-                                              : 20.0,
-                                          top: 4,
-                                          bottom: 4),
-                                      child: fm.Text(item.name,
-                                          style: fm.TextStyle(
-                                              color: widget
-                                                  .highlightSelected &&
-                                                  selectedItem == index
-                                                  ? backColor
-                                                  : Color.BLACK,
-                                              fontSize: 20
-                                          )),
+                                  child: fm.Semantics(
+                                    button: true,
+                                    enabled: true,
+                                    excludeSemantics: true,
+                                    label: item.group.replaceAll(r'\(.*?\)'.r, '') + ' ' + item.name,
+                                    onTap: onTapFunction,
+                                    child: fm.InkWell(
+                                      highlightColor: backColor.darker(),
+                                      onTap: () {
+                                        setState(() {
+                                          _selectAnimListItem(
+                                              index, tamState, highlightState);
+                                        });
+                                        tamState.change(
+                                            mainPage: MainPage.ANIMATIONS,
+                                            animnum: item.animnumber
+                                        );
+                                        pp.Provider
+                                            .of<BeatNotifier>(
+                                            context, listen: false)
+                                            .beat = 0.0;
+                                      },
+                                      child: fm.Container(
+                                        decoration: fm.BoxDecoration(
+                                            border: fm.Border(
+                                                bottom: fm.BorderSide(
+                                                    width: 1,
+                                                    color: fm.Colors.black))),
+                                        padding: fm.EdgeInsets.only(
+                                            left: item.celltype ==
+                                                CellType.Indented
+                                                ? 40.0
+                                                : 20.0,
+                                            top: 4,
+                                            bottom: 4),
+                                        child: fm.Text(item.name,
+                                            style: fm.TextStyle(
+                                                color: widget
+                                                    .highlightSelected &&
+                                                    selectedItem == index
+                                                    ? backColor
+                                                    : Color.BLACK,
+                                                fontSize: 20
+                                            )),
+                                      ),
                                     ),
                                   ),
                                 );

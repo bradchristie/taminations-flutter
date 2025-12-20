@@ -50,24 +50,33 @@ class _TapDetector extends fm.StatelessWidget {
   fm.Widget build(fm.BuildContext context) =>
       pp.Consumer<TamState>(
           builder: (context,appState,_) {
+            var onTapFunction =  () {
+              if (text == 'Practice')
+                appState.change(mainPage: MainPage.STARTPRACTICE);
+              else if (text == 'Sequencer')
+                appState.change(mainPage: MainPage.SEQUENCER,
+                    detailPage: DetailPage.NONE);
+              else if (text == 'Settings')
+                appState.change(detailPage: DetailPage.SETTINGS);
+              else if (text == 'About')
+                appState.change(detailPage: DetailPage.HELP);
+              else
+                appState.change(detailPage: DetailPage.CALLS, level: text);
+            };
             return fm.Material(
               color: color,
-              child: fm.InkWell(
-                  highlightColor: color.darker(),
-                  onTap: () {
-                    if (text == 'Practice')
-                      appState.change(mainPage: MainPage.STARTPRACTICE);
-                    else if (text == 'Sequencer')
-                      appState.change(mainPage: MainPage.SEQUENCER,
-                          detailPage: DetailPage.NONE);
-                    else if (text == 'Settings')
-                      appState.change(detailPage: DetailPage.SETTINGS);
-                    else if (text == 'About')
-                      appState.change(detailPage: DetailPage.HELP);
-                    else
-                      appState.change(detailPage: DetailPage.CALLS, level: text);
-                  },
-                  child:child
+              child: fm.Semantics(
+                button: true,
+                enabled: true,
+                label: text,
+                identifier: text,
+                excludeSemantics: true,
+                onTap: onTapFunction,
+                child: fm.InkWell(
+                    highlightColor: color.darker(),
+                    onTap: onTapFunction,
+                    child:child
+                ),
               ),
             );
           });

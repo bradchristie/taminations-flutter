@@ -155,6 +155,7 @@ class __SettingCheckboxState extends fm.State<_SettingCheckbox> {
           onTap: () { widget.onChanged(!widget.value); },
           child: fm.Row (
               children: [fm.Checkbox(
+                  semanticLabel: widget.name,
                   value: widget.value,
                   onChanged: (value) {
                     setState(() {
@@ -171,11 +172,13 @@ class __SettingCheckboxState extends fm.State<_SettingCheckbox> {
 //  Class for radio button setting
 class _SettingRadioGroup extends fm.StatefulWidget {
 
+  final String groupName;
   final String groupValue;
   final List<String> values;
   final void Function(String value) onChanged;
   final double bottomMargin;
   _SettingRadioGroup({
+    required this.groupName,
     required this.groupValue,
     required this.values,
     required this.onChanged,
@@ -210,9 +213,14 @@ class __SettingRadioGroupState extends fm.State<_SettingRadioGroup> {
                   child: fm.Row(
                       mainAxisSize: fm.MainAxisSize.min,
                       children:[
-                        fm.Radio<String>(
-                            key: fm.Key(v),
-                            value: v,
+                        fm.Semantics(
+                          button: true,
+                          enabled: true,
+                          label: '${widget.groupName}: ',
+                          child: fm.Radio<String>(
+                              key: fm.Key(v),
+                              value: v,
+                          ),
                         ),
                         fm.Text(v,style: fm.TextStyle(fontSize: 18))
                       ])),
@@ -224,9 +232,11 @@ class __SettingRadioGroupState extends fm.State<_SettingRadioGroup> {
 //  Class for one dancer color drop-down
 class _SettingsColorDropDown extends fm.StatefulWidget {
 
+  final int dancerNumber;
   final void Function(String value) onChanged;
   final String currentValue;
   _SettingsColorDropDown({
+    required this.dancerNumber,
     required this.onChanged,
     required this.currentValue
   });
@@ -259,31 +269,37 @@ class _SettingsColorDropDownState extends fm.State<_SettingsColorDropDown> {
 
   @override
   fm.Widget build(fm.BuildContext context) {
-    return fm.DropdownButton<String>(
-      onChanged: (String? c) {
-        setState(() {
-          dropdownValue = c ?? '';
-          onChanged(c ?? '');
-        });
-      },
-      underline: fm.Container( height: 0, width:0 ),
-      hint: fm.Container( height: 0, width:0 ),
-      disabledHint: fm.Container( height: 0, width:0 ),
-      icon: fm.Container( height: 0, width:0 ),
-      dropdownColor: Color(0),
-      value: dropdownValue,
-      items: [
-        oneItem('Black',Color.BLACK),
-        oneItem('Blue',Color.BLUE),
-        oneItem('Cyan',Color.CYAN),
-        oneItem('Gray',Color.GRAY),
-        oneItem('Green',Color.GREEN),
-        oneItem('Magenta',Color.MAGENTA),
-        oneItem('Orange',Color.ORANGE),
-        oneItem('Red',Color.RED),
-        oneItem('White',Color.WHITE),
-        oneItem('Yellow',Color.YELLOW)
-      ],
+    return fm.Semantics(
+      button: true,
+      enabled: true,
+      label: 'Dancer ${widget.dancerNumber} Color Menu',
+      excludeSemantics: true,
+      child: fm.DropdownButton<String>(
+        onChanged: (String? c) {
+          setState(() {
+            dropdownValue = c ?? '';
+            onChanged(c ?? '');
+          });
+        },
+        underline: fm.Container( height: 0, width:0 ),
+        hint: fm.Container( height: 0, width:0 ),
+        disabledHint: fm.Container( height: 0, width:0 ),
+        icon: fm.Container( height: 0, width:0 ),
+        dropdownColor: Color(0),
+        value: dropdownValue,
+        items: [
+          oneItem('Black',Color.BLACK),
+          oneItem('Blue',Color.BLUE),
+          oneItem('Cyan',Color.CYAN),
+          oneItem('Gray',Color.GRAY),
+          oneItem('Green',Color.GREEN),
+          oneItem('Magenta',Color.MAGENTA),
+          oneItem('Orange',Color.ORANGE),
+          oneItem('Red',Color.RED),
+          oneItem('White',Color.WHITE),
+          oneItem('Yellow',Color.YELLOW)
+        ],
+      ),
     );
   }
 
@@ -298,6 +314,7 @@ class DancerSpeedSettingWidget extends fm.StatelessWidget {
           children: [
         _SettingTitle('Dancer Speed'),
         _SettingRadioGroup(
+            groupName: 'Dancer Speed',
             groupValue: Settings.speed,
             values: ['Slow', 'Normal', 'Fast'],
             onChanged: (value) {
@@ -362,6 +379,7 @@ class AxesSettingWidget extends fm.StatelessWidget {
           children: [
             _SettingTitle('Axes'),
             _SettingRadioGroup(
+                groupName: 'Axes',
                 groupValue: Settings.axes,
                 values: ['None', 'Short', 'Long'],
                 onChanged: (value) {
@@ -396,6 +414,7 @@ class NumbersSettingWidget extends fm.StatelessWidget {
           children: [
             _SettingTitle('Numbers'),
             _SettingRadioGroup(
+                groupName: 'Numbers',
                 groupValue: Settings.numbers,
                 values: ['None', '1-8', '1-4'],
                 onChanged: (value) {
@@ -415,6 +434,7 @@ class GeometrySettingWidget extends fm.StatelessWidget {
           children: [
             _SettingTitle('Special Geometry'),
             _SettingRadioGroup(
+                groupName: 'Special Geometry',
                 groupValue: Settings.geometry,
                 values: ['None', 'Hexagon', 'Bi-Gon', 'Hashtag'],
                 onChanged: (value) {
@@ -434,6 +454,7 @@ class LanguageSettingWidget extends fm.StatelessWidget {
           children: [
             _SettingTitle('Language for Definitions'),
             _SettingRadioGroup(
+                groupName: 'Language for Definitions',
                 groupValue: Settings.language,
                 values: ['System', 'English', 'German', 'Italian', 'Japanese'],
                 onChanged: (value) {
@@ -493,6 +514,7 @@ class DancerIdentificationWidget extends fm.StatelessWidget {
           children: [
             _SettingTitle('Dancer Identification'),
             _SettingRadioGroup(
+                groupName: 'Dancer Identification',
                 groupValue: Settings.dancerIdentification,
                 values: ['None', 'Dancer Numbers', 'Couple Numbers', 'Names'],
                 onChanged: (value) {
@@ -542,6 +564,7 @@ class _DancerColorsSettingWidgetState extends fm.State<DancerColorsSettingWidget
                       fm.Container(
                           margin: fm.EdgeInsets.fromLTRB(10, 2, 10, 2),
                           child:_SettingsColorDropDown(
+                            dancerNumber: i,
                             currentValue: Settings.coupleColor(i),
                             onChanged: (String value) {
                               setState(() {
@@ -571,10 +594,11 @@ class _SequencerDancerColorsWidgetState extends fm.State<SequencerDancerColorsWi
           children: [
             _SettingTitle('Dancer Colors'),
             _SettingRadioGroup(
-              bottomMargin: 0,
-              groupValue: Settings.showDancerColors,
-              values: ['By Couple','Random','None'],
-              onChanged: (value) {
+                groupName: 'Dancer Colors',
+                bottomMargin: 0,
+                groupValue: Settings.showDancerColors,
+                values: ['By Couple','Random','None'],
+                onChanged: (value) {
                 Settings.showDancerColors = value;
               },
             ),
@@ -588,6 +612,7 @@ class _SequencerDancerColorsWidgetState extends fm.State<SequencerDancerColorsWi
                       fm.Container(
                           margin: fm.EdgeInsets.fromLTRB(10, 2, 10, 2),
                           child:_SettingsColorDropDown(
+                            dancerNumber: i,
                             currentValue: Settings.coupleColor(i),
                             onChanged: (String value) {
                               setState(() {
@@ -620,6 +645,7 @@ class JoinCallsWithWidget extends fm.StatelessWidget {
           children: [
             _SettingTitle('On Copy, Join Calls With'),
             _SettingRadioGroup(
+                groupName: 'On Copy, Join Calls With',
                 groupValue: Settings.joinCallsWith,
                 values: ['New Line','Semi-Colon','Comma'],
                 onChanged: (value) {
