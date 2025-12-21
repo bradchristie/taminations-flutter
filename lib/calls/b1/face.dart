@@ -71,7 +71,8 @@ import '../../moves.dart';
 
     AnimatedCall('Face In',
       formation:Formation('Couples Facing Out Close'),
-      from:'Couples Facing Out',notForSequencer: true,
+      from:'Couples Facing Out',
+      notForSequencer: true,
       paths:[
           QuarterLeft,
 
@@ -81,6 +82,7 @@ import '../../moves.dart';
     AnimatedCall('Face In',
       formation:Formation('Completed Double Pass Thru'),
       from:'Completed Double Pass Thru',
+        notForSequencer: true,
       paths:[
           QuarterLeft.skew(0.0,-0.5),
 
@@ -94,6 +96,7 @@ import '../../moves.dart';
     AnimatedCall('Face In',
       formation:Formation('Lines Facing Out Compact'),
       from:'Lines Facing Out',
+        notForSequencer: true,
       paths:[
           QuarterLeft.skew(-0.5,0.0),
 
@@ -107,6 +110,7 @@ import '../../moves.dart';
     AnimatedCall('Face Out',
       formation:Formation('Facing Couples Close'),
       from:'Facing Couples',
+        notForSequencer: true,
       paths:[
           QuarterLeft,
 
@@ -116,6 +120,7 @@ import '../../moves.dart';
     AnimatedCall('Face Out',
       formation:Formation('Couples Facing Out Close'),
       from:'Couples Facing Out',
+        notForSequencer: true,
       paths:[
           QuarterRight,
 
@@ -125,6 +130,7 @@ import '../../moves.dart';
     AnimatedCall('Face Out',
       formation:Formation('Completed Double Pass Thru'),
       from:'Completed Double Pass Thru',
+        notForSequencer: true,
       paths:[
           QuarterRight.skew(0.0,-0.5),
 
@@ -138,6 +144,7 @@ import '../../moves.dart';
     AnimatedCall('Face Out',
       formation:Formation('Lines Facing Out Compact'),
       from:'Lines Facing Out',
+        notForSequencer: true,
       paths:[
           QuarterRight.skew(-0.5,0.0),
 
