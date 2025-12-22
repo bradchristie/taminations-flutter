@@ -23,18 +23,19 @@ Call pronunciations provided by
 
 ---
 
-## Taminations version 1.6.97 built 2025-12-15
+## Taminations version 1.6.98 built 2025-12-22
 Copyright 2025 by Brad Christie.  
 This is free software, and you are welcome to modify and redistribute it
 under the terms of the [GNU GPL license](http://www.gnu.org/licenses/gpl.html).  
 
 ## What's New
-* More animations for Spread to match examples in the new definition
+* Animations for Box/Split Transfer from T-bones
+* Correct Triple Box Pass In
+* Add semantic info to code to support accessibility and 3rd party automation tools
 * Sequencer:
-  * Re-code Spread to match the new definition
-  * Fix for Centers With the Flow
-  * Fix for O Slide Thru
-  * Fix for Twist and Split calls
+  * Fix Triple Box Counter Rotate
+  * Fix Split Counter Rotate 1/2 from tidal formation
+  * Enable Zig/Zag for a selection of dancers
 
 For a detailed history of changes, view the
 [Git log](https://github.com/bradchristie/taminations-flutter/commits/main)
