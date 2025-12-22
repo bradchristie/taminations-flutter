@@ -214,8 +214,11 @@ import '../a1/chain_reaction.dart' as a1;
           QuarterLeft.changehands(Hands.RIGHT).skew(-0.33,-0.33) +
           QuarterLeft.changehands(Hands.RIGHT).skew(-0.33,0.33)
       ]),
+
+
     a1.ChainReaction.where((tam) =>
-      tam.title == 'Chain Reaction, Turn the Star 1/2').first.xref(title: 'Chain Reaction, Turn the Star 1/2'),
+      tam.title == 'Chain Reaction, Turn the Star 1/2').first.xref(title:
+          'Chain Reaction, Turn the Star 1/2')..group='',
 
     AnimatedCall('Chain Reaction, Turn the Star 1/2',
       formation:Formation('', dancers:[
