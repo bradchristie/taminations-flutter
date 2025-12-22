@@ -25,30 +25,63 @@ import '../../moves.dart';
   final List<AnimatedCall> BoxTransfer = [
 
     AnimatedCall('Box Transfer',
-      formation:Formation('Box RH'),
+      formation:Formation('Box RH Compact'),
       from:'Right-Hand Box',
       paths:[
-          ExtendRight.changeBeats(1.5).scale(2.0,0.25) +
+          ExtendRight.changeBeats(1.5).scale(1.5,0.25) +
           CastRight.scale(0.75,0.75) +
-          ExtendLeft.changeBeats(1.5).scale(2.0,0.25),
+          ExtendLeft.changeBeats(1.5).scale(1.5,0.25),
 
-          RunRight.changeBeats(4).scale(0.5,1.75) +
-          Forward_2 +
+          RunRight.changeBeats(4).scale(0.5,1.5) +
+          Forward_1p5.changeBeats(2) +
           LeadRight.scale(1.0,0.5)
       ]),
 
     AnimatedCall('Box Transfer',
-      formation:Formation('Box LH Girls Lead'),
+      formation:Formation('Box LH Compact'),
       from:'Left-Hand Box',
       paths:[
-          ExtendLeft.changeBeats(1.5).scale(2.0,0.25) +
-          CastLeft.scale(0.75,0.75) +
-          ExtendRight.changeBeats(1.5).scale(2.0,0.25),
+        RunLeft.changeBeats(4).scale(0.5,1.5) +
+            Forward_1p5.changeBeats(2) +
+            LeadLeft.scale(1.0,0.5),
 
-          RunLeft.changeBeats(4).scale(0.5,1.75) +
-          Forward_2 +
-          LeadLeft.scale(1.0,0.5)
+        ExtendLeft.changeBeats(1.5).scale(1.5,0.25) +
+            CastLeft.scale(0.75,0.75) +
+            ExtendRight.changeBeats(1.5).scale(1.5,0.25),
+
       ]),
+
+    AnimatedCall('Box Transfer',
+        formation: Formation('', dancers:[
+          DancerModel.fromData(gender:Gender.BOY,x:-1,y:1,angle:0),
+          DancerModel.fromData(gender:Gender.GIRL,x:-1,y:-1,angle:270),
+        ]),
+        from:'T-Bone 1',
+        paths:[
+          ExtendRight.changeBeats(1.5).scale(1,0.25) +
+              CastRight.scale(0.75,0.75) +
+              ExtendLeft.changeBeats(1.5).scale(1,0.25),
+
+          RunLeft.changeBeats(4).scale(0.5,1.25) +
+              Forward.changeBeats(2) +
+              LeadLeft.scale(1.0,0.5)
+        ]),
+
+    AnimatedCall('Box Transfer',
+        formation: Formation('', dancers:[
+          DancerModel.fromData(gender:Gender.BOY,x:-1,y:-1,angle:180),
+          DancerModel.fromData(gender:Gender.GIRL,x:-1,y:1,angle:270),
+        ]),
+        from:'T-Bone 2',
+        paths:[
+          RunRight.changeBeats(4).scale(0.5,1.25) +
+              Forward.changeBeats(2) +
+              LeadRight.scale(1.0,0.5),
+
+          ExtendLeft.changeBeats(1.5).scale(1,0.25) +
+              CastLeft.scale(0.75,0.75) +
+              ExtendRight.changeBeats(1.5).scale(1,0.25),
+        ]),
 
     AnimatedCall('All 8 Box Transfer',
       formation:Formation('Static MiniWaves RH'),
@@ -175,5 +208,90 @@ import '../../moves.dart';
           Forward +
           LeadLeft.scale(1.0,0.5)
       ]),
+
+    AnimatedCall('Split Transfer',
+        formation:Formation('T-Bone URUR'),
+        from:'T-Bones 1',
+        paths:[
+          ExtendRight.changeBeats(1.5).scale(1,0.25) +
+              CastRight.scale(0.75,0.75) +
+              ExtendLeft.changeBeats(1.5).scale(1,0.25),
+
+          RunLeft.changeBeats(4).scale(0.5,1.25) +
+              Forward.changeBeats(2) +
+              LeadLeft.scale(1.0,0.5),
+
+          ExtendRight.changeBeats(1.5).scale(1,0.25) +
+              CastRight.scale(0.75,0.75) +
+              ExtendLeft.changeBeats(1.5).scale(1,0.25),
+
+          RunLeft.changeBeats(4).scale(0.5,1.25) +
+              Forward.changeBeats(2) +
+              LeadLeft.scale(1.0,0.5)
+        ]),
+
+    AnimatedCall('Split Transfer',
+        formation:Formation('T-Bone LULU'),
+        from:'T-Bones 2',
+        paths:[
+          RunRight.changeBeats(4).scale(0.5,1.25) +
+              Forward.changeBeats(2) +
+              LeadRight.scale(1.0,0.5),
+
+          ExtendLeft.changeBeats(1.5).scale(1,0.25) +
+              CastLeft.scale(0.75,0.75) +
+              ExtendRight.changeBeats(1.5).scale(1,0.25),
+
+          RunRight.changeBeats(4).scale(0.5,1.25) +
+              Forward.changeBeats(2) +
+              LeadRight.scale(1.0,0.5),
+
+          ExtendLeft.changeBeats(1.5).scale(1,0.25) +
+              CastLeft.scale(0.75,0.75) +
+              ExtendRight.changeBeats(1.5).scale(1,0.25),
+        ]),
+
+    AnimatedCall('Split Transfer',
+        formation:Formation('T-Bone DLDL'),
+        from:'T-Bones 3',
+        paths:[
+          RunLeft.changeBeats(4).scale(0.5,1.25) +
+              Forward.changeBeats(2) +
+              LeadLeft.scale(1.0,0.5),
+
+          ExtendRight.changeBeats(1.5).scale(1,0.25) +
+              CastRight.scale(0.75,0.75) +
+              ExtendLeft.changeBeats(1.5).scale(1,0.25),
+
+          RunLeft.changeBeats(4).scale(0.5,1.25) +
+              Forward.changeBeats(2) +
+              LeadLeft.scale(1.0,0.5),
+
+          ExtendRight.changeBeats(1.5).scale(1,0.25) +
+              CastRight.scale(0.75,0.75) +
+              ExtendLeft.changeBeats(1.5).scale(1,0.25),
+        ]),
+
+    AnimatedCall('Split Transfer',
+        formation:Formation('T-Bone RDRD'),
+        from:'T-Bones 4',
+        paths:[
+          RunRight.changeBeats(4).scale(0.5,1.25) +
+              Forward.changeBeats(2) +
+              LeadRight.scale(1.0,0.5),
+
+          ExtendLeft.changeBeats(1.5).scale(1,0.25) +
+              CastLeft.scale(0.75,0.75) +
+              ExtendRight.changeBeats(1.5).scale(1,0.25),
+
+          RunRight.changeBeats(4).scale(0.5,1.25) +
+              Forward.changeBeats(2) +
+              LeadRight.scale(1.0,0.5),
+
+          ExtendLeft.changeBeats(1.5).scale(1,0.25) +
+              CastLeft.scale(0.75,0.75) +
+              ExtendRight.changeBeats(1.5).scale(1,0.25),
+        ]),
+
   ];
 
