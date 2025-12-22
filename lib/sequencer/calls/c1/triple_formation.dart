@@ -20,14 +20,18 @@
 
 import '../common.dart';
 
-
 abstract class TripleFormation extends Action {
 
   @override final level = LevelData.C1;
   @override var helplink = 'c1/triple_box_concept';
   TripleFormation(String name) :
-        subCall = name.replaceFirst('Triple (Box(es)?|Lines?|Waves?|Columns?)'.r,''),
-        super(name);
+        subCall = name.replaceFirst('Triple (Box(es)?|Lines?|Waves?|Columns?)'.r,'').trim(),
+        super(name) {
+    //  A few calls have an implied 'Box', put that in here
+    //  so calls on each box work properly
+    if (subCall == 'Counter Rotate' || subCall == 'Transfer')
+      subCall = 'Box ' + subCall;
+  }
 
   static final Formation TripleBoxes = Formation('', dancers:[
     DancerModel.fromData(gender:Gender.BOY,x:1.5,y:3,angle:0),
