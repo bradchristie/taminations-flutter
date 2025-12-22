@@ -716,6 +716,11 @@ class CallContext {
     }
     return bestMapping;
   }
+  //  Convenience function to call above passing a formation
+  bool matchNamedFormation(String formation) {
+    var ctx2 = CallContext.fromFormation(Formation(formation));
+    return matchFormations(ctx2) != null;
+  }
 
   bool _testMapping(CallContext ctx1, List<DancerModel> ctx1Dancers, CallContext ctx2, List<int>mapping, int i,
       {bool sexy=false, bool fuzzy=false,

@@ -46,37 +46,50 @@ class WalkAndDodge extends Action with ActivesOnly {
 
   @override
   void performCall(CallContext ctx) {
-    //  Figure out who is a walker and who is a dodger.
-    //  Save the results in call contexts
-    walkctx = CallContext.fromContext(ctx);
-    walkctx.analyze();
-    dodgectx = CallContext.fromContext(ctx);
-    dodgectx.analyze();
-    var walkers = 'trailers';
-    var dodgers = 'leaders';
-    if (norm != 'WalkandDodge') {
-      var match = RegExp('(.+) walk(?: and|&)? (.+) dodge').firstMatch(name.toLowerCase());
-      if (match == null)
-        throw CallError('Error parsing Walk and Dodge');
-      walkers = match.group(1)!;
-      dodgers = match.group(2)!;
+    //  Special handling for Facing Couples (all walk)
+    //  or Couples Facing Out (all dodge)
+    //  Primarily used at Challenge for triple boxes (so I hear)
+    if ((name == 'Walk and Dodge') &&
+        ctx.matchNamedFormation('Facing Couples Compact')) {
+      ctx.applyCalls('Pass Thru');
     }
-    for (var call in walkers.split('\\s+'.r)) {
-      var codedCall = CodedCall.fromName(call);
-      if (codedCall == null)
-        throw CallError('Error parsing Walk and Dodge');
-      codedCall.performCall(walkctx);
+    else if (name == 'Walk and Dodge' &&
+        ctx.matchNamedFormation('Couples Facing Out Compact'))
+      ctx.applyCalls('Half Sashay');
+
+    else {
+      //  Figure out who is a walker and who is a dodger.
+      //  Save the results in call contexts
+      walkctx = CallContext.fromContext(ctx);
+      walkctx.analyze();
+      dodgectx = CallContext.fromContext(ctx);
+      dodgectx.analyze();
+      var walkers = 'trailers';
+      var dodgers = 'leaders';
+      if (norm != 'WalkandDodge') {
+        var match = RegExp('(.+) walk(?: and|&)? (.+) dodge').firstMatch(name.toLowerCase());
+        if (match == null)
+          throw CallError('Error parsing Walk and Dodge');
+        walkers = match.group(1)!;
+        dodgers = match.group(2)!;
+      }
+      for (var call in walkers.split('\\s+'.r)) {
+        var codedCall = CodedCall.fromName(call);
+        if (codedCall == null)
+          throw CallError('Error parsing Walk and Dodge');
+        codedCall.performCall(walkctx);
+      }
+      for (var call in dodgers.split('\\s+'.r)) {
+        var codedCall = CodedCall.fromName(call);
+        if (codedCall == null)
+          throw CallError('Error parsing Walk and Dodge');
+        codedCall.performCall(dodgectx);
+      }
+      //  If dancer is not in either set then it is inactive
+      for (var d in ctx.dancers)
+        d.data.active = isWalker(d) || isDodger(d);
+      super.performCall(ctx);
     }
-    for (var call in dodgers.split('\\s+'.r)) {
-      var codedCall = CodedCall.fromName(call);
-      if (codedCall == null)
-        throw CallError('Error parsing Walk and Dodge');
-      codedCall.performCall(dodgectx);
-    }
-    //  If dancer is not in either set then it is inactive
-    for (var d in ctx.dancers)
-      d.data.active = isWalker(d) || isDodger(d);
-    super.performCall(ctx);
   }
 
   @override

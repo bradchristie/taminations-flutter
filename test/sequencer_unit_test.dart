@@ -4287,6 +4287,19 @@ Bend the Line
 Star Thru Pass Thru
 Allemande Left''',''); });
 
+test('Triple Box Walk and Dodge',() {
+  testOneSequence('''Sides As Couples Touch 1/4
+Boys Run
+Chain Reaction Turn the Star 1/2
+Triple Box Walk and Dodge
+Bend the Line
+Star Thru
+Trade By
+Pass Thru
+Trade By
+Allemande Left''',''); });
+
+
 /*
 test('',() {
   testOneSequence('''''',''); });
