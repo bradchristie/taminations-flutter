@@ -56,7 +56,7 @@ class Settings extends fm.ChangeNotifier {
       [ 'Red', 'Green', 'Blue', 'Yellow', 'Magenta', 'Cyan' ];
 
   static bool _init = false;
-  static late Settings _instance;
+  static Settings _instance = Settings._internal(_MockSettings());
   _BaseSettings proxy;
 
   //  This is boilerplate from Flutter docs
@@ -168,7 +168,7 @@ class Settings extends fm.ChangeNotifier {
   }
 
   static String get language =>
-      _instance.proxy.getString('Language for Definitions') ?? 'System';
+    _instance.proxy.getString('Language for Definitions') ?? 'System';
   static set language(String value) {
     _instance.proxy.setString('Language for Definitions',value);
     _instance.notifyListeners();
