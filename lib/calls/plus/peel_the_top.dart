@@ -77,6 +77,41 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Peel the Top',
+        formation: Formation('', dancers:[
+          DancerModel.fromData(gender:Gender.BOY,x:-1,y:1,angle:0),
+          DancerModel.fromData(gender:Gender.GIRL,x:-1,y:-1,angle:270),
+        ]),
+        from:'T-Bone 1',
+        difficulty: 3,
+        paths:[
+          Forward +
+              SwingRight +
+              HingeRight,
+
+          RunRight.skew(-2.0,0.0) +
+              LeadRight.changeBeats(3).scale(2.0,3.0),
+        ]),
+
+    AnimatedCall('Peel the Top',
+        formation: Formation('', dancers:[
+          DancerModel.fromData(gender:Gender.BOY,x:-1,y:-1,angle:180),
+          DancerModel.fromData(gender:Gender.GIRL,x:-1,y:1,angle:270),
+        ]),
+        from:'T-Bone 2',
+        difficulty: 3,
+        paths:[
+          RunLeft.skew(-2.0,0.0) +
+              LeadLeft.changeBeats(3).scale(2.0,3.0),
+
+          Forward +
+              SwingLeft +
+              HingeLeft,
+        ]),
+
+
+
+
+    AnimatedCall('Peel the Top',
       formation:Formation('Left-Hand Zs'),
       from:'Left-Hand Zs',parts:'2',difficulty: 1,
       taminator: '''
@@ -267,5 +302,44 @@ import '../../moves.dart';
           SwingRight.scale(0.75,1.0) +
           HingeRight
       ]),
+
+    AnimatedCall('Peel the Top',
+        formation:Formation('T-Bone URUR'),
+        from:'T-Bones 3',parts:'2',difficulty: 3,
+        paths:[
+          Forward.changeBeats(2) +
+              SwingRight.changeBeats(2.5).skew(0.0,1.0) +
+              HingeRight.changeBeats(1.5),
+
+          RunRight.changeBeats(2).skew(-1.0,0.0) +
+              LeadRight.changeBeats(4).scale(3.0,3.0),
+
+          Forward.changeBeats(2) +
+              SwingRight.changeBeats(2.5).skew(0.0,-1.0) +
+              HingeRight.changeBeats(1.5),
+
+          RunRight.changeBeats(2).skew(-1.0,0.0) +
+              LeadRight.changeBeats(4).scale(1.0,3.0),
+        ]),
+
+    AnimatedCall('Peel the Top',
+        formation:Formation('T-Bone RDRD'),
+        from:'T-Bones 4',difficulty: 3,
+        paths:[
+          RunLeft.skew(-2.0,0.0) +
+              LeadLeft.changeBeats(3).scale(2.0,3.0),
+
+          Forward +
+              SwingLeft +
+              HingeLeft,
+
+          RunLeft.scale(1.0,0.25).skew(-1.0,0.0) +
+              LeadLeft.changeBeats(3).scale(3.0,1.5),
+
+          Forward +
+              SwingLeft.scale(0.75,1.0) +
+              HingeLeft
+        ]),
+
   ];
 
