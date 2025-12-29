@@ -117,15 +117,64 @@ import '../../moves.dart';
       from:'Eight Chain Thru',
       paths:[
           Stand.changeBeats(2) +
-          ExtendRight.changeBeats(2).scale(2.0,2.0),
+          ExtendRight.changeBeats(2).scale(1.5,2.0),
 
           Stand +
-          ExtendLeft.changeBeats(3).scale(2.0,2.0),
+          ExtendLeft.changeBeats(3).scale(1.5,2.0),
 
-          RunRight.changeBeats(4).scale(1.0,2.0),
+          RunRight.changeBeats(4).scale(1.0,2.0).skew(.5, 0),
 
-          FlipLeft.changeBeats(4).scale(1.0,2.0)
+          FlipLeft.changeBeats(4).scale(1.0,2.0).skew(.5, 0),
       ]),
+
+    AnimatedCall('Trade the Deucey',
+        formation:Formation('Double Pass Thru'),
+        from:'Double Pass Thru',
+        paths:[
+          Stand.changeBeats(2) +
+              ExtendRight.changeBeats(2).scale(1.5,2.0),
+
+          Stand +
+              ExtendLeft.changeBeats(3).scale(1.5,2.0),
+
+          RunRight.changeBeats(4).scale(1.0,2.0).skew(-.5, 0),
+
+          FlipLeft.changeBeats(4).scale(1.0,2.0).skew(-.5, 0),
+        ]),
+
+    AnimatedCall('Trade the Deucey',
+        formation:Formation('Mixed Columns RH Ends In'),
+        from:'Mixed Columns 1',
+        paths:[
+          Stand.changeBeats(2) +
+              ExtendRight.changeBeats(2).scale(1.5,2.0),
+
+          Stand +
+              ExtendLeft.changeBeats(3).scale(1.5,2.0),
+
+          HingeRight.scale(0.5,1) +
+              LeadRight.changeBeats(2.5).scale(3,1),
+
+          HingeRight.scale(0.5,1) +
+              QuarterRight.changeBeats(2.5).skew(3,0),
+        ]),
+
+    AnimatedCall('Trade the Deucey',
+        formation:Formation('Mixed Columns LH Ends In'),
+        from:'Mixed Columns 2',
+        paths:[
+          Stand.changeBeats(2) +
+              ExtendRight.changeBeats(2).scale(1.5,2.0),
+
+          Stand +
+              ExtendLeft.changeBeats(3).scale(1.5,2.0),
+
+          HingeLeft.scale(0.5,1) +
+              QuarterLeft.changeBeats(2.5).skew(3,0),
+
+          HingeLeft.scale(0.5,1) +
+              LeadLeft.changeBeats(2.5).scale(3,1),
+        ]),
 
     AnimatedCall('Trade the Deucey',
       formation:Formation('Diamonds RH Girl Points'),
