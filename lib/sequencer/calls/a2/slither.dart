@@ -30,25 +30,20 @@ class Slither extends Action {
 
   @override
   void performCall(CallContext ctx) {
+    var slithers = ctx.dancers.where((d) => d.data.center).toList();
     //  If single wave in center, then very centers slither
-    final ctx4 = CallContext.fromContext(ctx,dancers: ctx.center(4));
-    if (ctx.dancers.length == 8 && ctx4.isLines() && !ctx.isTidal()) {
-      ctx.dancers.where((it) => !it.data.verycenter).forEach((it) {
-        it.data.active = false;
-      });
-    }
-    else {
-      //  Otherwise, all centers slither
-      //  Check that it's not a partner trade
-      ctx.activesContext((ctxa) {
-        final ctxc = CallContext.fromContext(ctxa,dancers:ctx.dancers.where((it) => it.data.center).toList());
-        if (!ctxc.isWaves())
-          throw CallError('Centers must be in a mini-wave.');
-        ctxa.dancers.where((it) => !it.data.center).forEach((it) {
-          it.data.active = false;
-        });
-      });
-    }
+    if (ctx.centerWaveOf4()!=null && !ctx.isTidal())
+      slithers = ctx.center(2);
+    //  Check that dancers are in mini-waves
+    if (!CallContext.fromContext(ctx,dancers: slithers).isWaves())
+      throw CallError('Centers must be in a mini-wave.');
+    //  If only some dancers were selected, make sure they are
+    //  the ones to slither
+    if (ctx.actives.length < ctx.dancers.length &&
+        ctx.actives.containsAll(slithers))
+      throw CallError('Wrong dancers selected for Slither');
+    //  Tell performOne which dancers to slither
+    ctx.actives = slithers;
     super.performCall(ctx);
   }
 
@@ -61,7 +56,7 @@ class Slither extends Action {
       return BackSashayLeft
           .scale(1.0,d.distanceTo(ctx.dancerToLeft(d)!)/2.0);
     else
-      throw CallError('Unable to calculate Sither.');
+      throw CallError('Unable to calculate Slither.');
   }
 
 }
