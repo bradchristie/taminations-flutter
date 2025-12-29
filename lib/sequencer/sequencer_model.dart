@@ -354,11 +354,6 @@ class SequencerModel extends fm.ChangeNotifier {
         animation.dancers[i].path += ctx.dancers[i].path;
     }
     animation.recalculate();
-    /*
-    for (var d in animation.dancers) {
-      var a = d.orbitAngle(animation.beats).toDegrees.s;
-      print('Orbit Angle $d = $a');
-    } */
   }
 
   void _interpretOneLine(String line) {
@@ -372,11 +367,6 @@ class SequencerModel extends fm.ChangeNotifier {
     //  run each one separately
     for (var oneCall in line.split(';'))
       _interpretOneCall(oneCall);
-    //  Play whatever has been added
-    if (animation.beats > animateFrom) {
-      animation.goToBeat(animateFrom);
-      animation.doPlay();
-    }
   }
 
   void _interpretOneCall(String call) {
@@ -456,7 +446,12 @@ class SequencerModel extends fm.ChangeNotifier {
             level: cctx.level));
         _updateParts();
         _savedCalls = [];
+      } else {
+        errorString = 'That did not do anything';
       }
+      //  Play whatever has been added
+      animation.goToBeat(animateFrom);
+      animation.doPlay();
       later(() {
         notifyListeners();
       });
