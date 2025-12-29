@@ -17,9 +17,12 @@
  *     along with Taminations.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+import 'package:taminations/sequencer/calls/common/call_with_named_parts.dart';
+
 import '../common.dart';
 
-class ScootAndPlenty extends Action with CallWithParts, CallWithStars {
+class ScootAndPlenty extends Action with
+    CallWithParts, CallWithStars, CallWithNamedParts {
 
   @override int numberOfParts = 4;
   @override final level = LevelData.C1;
@@ -34,7 +37,9 @@ The number of Split Circulates can be modified with "Split Circulate n" or "Turn
   @override var helplink = 'c1/scoot_and_plenty';
   String dir = 'Right';
 
-  ScootAndPlenty(super.name);
+  ScootAndPlenty(super.name) {
+    namedParts = { 'Stars' : (ctx) { ctx.applyCalls(starTurns); } };
+  }
 
   @override
   int partNumberForName(String name) {
@@ -59,7 +64,7 @@ The number of Split Circulates can be modified with "Split Circulate n" or "Turn
 
   @override
    void performPart3(CallContext ctx) {
-    ctx.applyCalls(starTurns);
+    namedParts['Stars']!(ctx);
   }
 
   @override

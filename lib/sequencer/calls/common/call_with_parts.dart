@@ -131,18 +131,21 @@ mixin CallWithParts on Action {
     'Eighth?|8(th)?'.ri : 8,
     'Last'.ri : -1
   };
+  static int partNumberFromName(String name) {
+    for (var r in partMap.keys) {
+      if (name.contains(r)) {
+        return partMap[r]!;
+      }
+    }
+    return 0;
+  }
+
   static int partNumberFromCall(CallWithParts call, String name) {
     var partNumber = call.partNumberForName(name);
     if (partNumber == 0) {
-      for (var r in partMap.keys) {
-        if (name.contains(r)) {
-          partNumber = partMap[r]!;
-        }
-      }
+      partNumber = partNumberFromName(name);
       if (partNumber < 0)
         partNumber = call.numberOfParts;
-      if (partNumber == 0)
-        partNumber = call.partNumberForName(name);
     }
     return partNumber;
   }

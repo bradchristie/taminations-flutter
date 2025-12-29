@@ -43,8 +43,8 @@ class SquareThru extends Action with IsLeft, IsToAWave {
     if (onHand > 0) {
       extra = name.replaceFirst('.*(2(nd)?|3(rd)?|4(th)?|5(th)?|6(th)?|second|third|fou?rth|fifth|sixth) (hand)?'.ri, '').trim();
       norm = norm.substring(0,onHand+3);
-      if (extra.norm.matches('(left)?touch14'.ri))
-        extra = 'Hinge';
+      //if (extra.norm.matches('(left)?touch14'.ri))
+      //  extra = 'Hinge';
     }
 
     var count = norm.replaceAll('toawave' , '')
@@ -83,8 +83,24 @@ class SquareThru extends Action with IsLeft, IsToAWave {
       level = LevelData.C1;
     else if (onHand <= 0)  //  on the nth hand ...
       ctx.applyCalls('Step Thru' );
-    if (extra.isNotBlank)
+    if (extra.isNotBlank) {
+      // Special handling for Touch .., which is an
+      // exception to the rule that the extra call must apply
+      // the Facing Couples or Ocean Wave rule
+      if (extra.contains('Touch')) {
+        //  Check that the correct hand is used
+        ctx.analyze();
+        if (extra.norm.contains('LeftTouch') ^ ctx.isLeftHandWave(ctx.actives))
+          throw CallError('Wrong hand for $extra');
+        extra = switch (extra.norm.replaceAll('Left', '')) {
+          'Touch14' => 'Hinge',
+          'Touch12' => 'Trade',
+          'Touch34' => 'Cast Off 3/4',
+          String() => throw CallError('Unable to do $extra')
+        };
+      }
       ctx.applyCalls(extra);
+    }
   }
 
 }

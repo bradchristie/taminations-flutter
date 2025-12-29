@@ -17,6 +17,8 @@
  *     along with Taminations.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+import 'package:taminations/sequencer/calls/common/call_with_named_parts.dart';
+
 import '../common.dart';
 
 class Replace extends Action {
@@ -24,11 +26,41 @@ class Replace extends Action {
   @override final level = LevelData.C1;
   @override var help = 'Use Replace to change one part of a call with parts.'
       ' Currently you need to refer to the part to replace by number, such as:'
-      ' "Replace the 3rd part woth (call)" ';
+      ' "Replace the 3rd part with (call)" ';
   @override var helplink = 'c1/replace';
 
   Replace(super.name);
 
+  @override
+  void addToStack(CallContext ctx) {
+    var replacementName = name.replaceFirst('.* with'.ri, '').trim();
+    var partName = name.replaceFirst('.*replace( the)?'.ri,'').replaceFirst('with.*'.ri,'').trim();
+    var partNumber = CallWithParts.partNumberFromName(partName);
+    if (partNumber != 0) {
+      //  Replacing a numbered part
+      var call = ctx.findImplementor<CallWithParts>()
+          ?? thrower<CallWithParts>(CallError('Unable to find call with parts to Replace Part $partNumber'));
+      if (partNumber > call.numberOfParts)
+        throw CallError('${call.name} only has ${call.numberOfParts} parts');
+      if (partNumber < 0)
+        partNumber = call.numberOfParts;
+      call.replacePart[partNumber] =  (CallContext ctx3) {
+        ctx3.applyCalls(replacementName);
+      };
+    }
+    else {
+      //  Replacing a named part
+      var call = ctx.findImplementor<CallWithNamedParts>()
+          ?? thrower<CallWithNamedParts>(CallError('Unable to find call with parts to Replace $partName'));
+      if (call.namedParts.containsKey(partName))
+        call.namedParts[partName] =
+            (ctx) { ctx.applyCalls(replacementName); };
+      else
+        throw CallError('${call.name} does not have a part called $partName');
+    }
+  }
+
+/*
   @override
   void performCall(CallContext ctx) {
     final callName = name.replaceFirst('(but )?replace .*'.ri,'').trim();
@@ -57,5 +89,5 @@ class Replace extends Action {
       ctx2.performCall();
     });
   }
-
+*/
 }

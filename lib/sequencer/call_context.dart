@@ -190,6 +190,8 @@ class CallContext {
   }
 
   T? findImplementor<T>({Call? startFrom}) {
+    if (callstack.isEmpty)
+      return null;
     var startIndex = callstack.indexOf(startFrom ?? callstack.first);
     for (var i=0; i<callstack.length*2; i++) {
       var ix = (i ~/ 2) * (i.isOdd ? 1 : -1) + startIndex;
@@ -1388,7 +1390,8 @@ class CallContext {
       dancersToRight(d).length + dancersToLeft(d).length == 3;
   bool isLines() => dancers.every((d) => isInLine(d));
 
-  bool isWaves() => dancers.every((d) {
+  bool isWaves([List<DancerModel>?theseDancers]) =>
+      (theseDancers ?? dancers).every((d) {
     var dr = dancerToRight(d,minDistance: 2.0);
     var dl = dancerToLeft(d,minDistance: 2.0);
     if (dr == null && dl == null)
@@ -1399,6 +1402,10 @@ class CallContext {
       return false;
     return true;
   });
+
+  bool isLeftHandWave([List<DancerModel>?theseDancers]) =>
+      isWaves(theseDancers) &&
+          (theseDancers ?? dancers).every((d) => d.data.belle);
 
   //  Return true if 8 dancers are in 2 general columns of 4 dancers each
   //  Or 1 column of 4 dancers

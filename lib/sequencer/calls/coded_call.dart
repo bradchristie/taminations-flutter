@@ -238,6 +238,7 @@ import 'c3a/reach_out.dart';
 import 'c3a/recoil.dart';
 import 'c3a/snap_the_lock.dart';
 import 'c3a/spin_the_pulley.dart';
+import 'c3a/the_gamut.dart';
 import 'c3a/touch_by.dart';
 import 'c3a/travel_thru.dart';
 import 'c3b/cast_and_relay.dart';
@@ -560,7 +561,7 @@ abstract class CodedCall extends Call {
     'Relocate(.*)(line|wave|diamond|hourglass|tag)s?'.ri: (name) => Relocate(name),
     'RelaytheTop'.ri: (name) => RelayTheTop(name),
     'Remake'.ri: (name) => Remake(name),
-    '.*(But)?Replace.*'.ri: (name) => Replace(name),
+    'Replace.*'.ri: (name) => Replace(name),
     '((Inside|Outside|Inpoint|Outpoint|TandemBased|WaveBased)?Triangles?)?Reshape(theTriangle)?'.ri: (name) => Reshape(name),
     'Reverse'.ri: (name) => Reverse(name),
     'ReverseExplode'.ri: (name) => ReverseExplode(name),
@@ -670,6 +671,7 @@ abstract class CodedCall extends Call {
     //  Tandem concept not tandem-based triangle
     'Tandem(?!Based).+'.ri: (name) => Tandem(name),
     'theAxle(CastOff34)?'.ri: (name) => TheAxle(name),
+    '(Swing)?theGamut'.ri: (name) => TheGamut(name),
     'theK'.ri: (name) => TheK(name),
     'ThoseWhoCan'.ri: (name) => ThoseWhoCan(name),
     '32AceyDeucey'.ri: (name) => ThreeByTwoAceyDeucey(name),

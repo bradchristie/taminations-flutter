@@ -17,9 +17,12 @@
  *     along with Taminations.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+import 'package:taminations/sequencer/calls/common/call_with_named_parts.dart';
+
 import '../common.dart';
 
-class Percolate extends Action with CallWithParts, ButCall, IsToAWave {
+class Percolate extends Action with
+    CallWithParts, CallWithNamedParts, ButCall, IsToAWave {
 
   @override int numberOfParts = 3;
   @override final level = LevelData.C1;
@@ -32,7 +35,13 @@ class Percolate extends Action with CallWithParts, ButCall, IsToAWave {
 The Hinge and Cross can be replaced with But (another call)''';
   @override var helplink = 'c1/percolate';
 
-  Percolate(super.name);
+  Percolate(super.name) {
+    namedParts = { 'Turn Thru' : (ctx) {
+      var turnCall = ctx.outer(4).every((d) => d.data.belle)
+          ? 'Left Turn Thru' : 'Turn Thru';
+      ctx.applyCalls(turnCall);
+    } };
+  }
 
   @override
    void performPart1(CallContext ctx) {
@@ -51,7 +60,14 @@ The Hinge and Cross can be replaced with But (another call)''';
         ? 'Left Turn Thru' : 'Turn Thru';
     if (isToAWave)
       turnCall = 'Trade';
-    ctx.applyCalls('Center Wave of 4 $butCall While Others $turnCall');
+    var waveOf4 = ctx.centerWaveOf4() ??
+        thrower<List<DancerModel>>('');
+    ctx.subContext(waveOf4, (ctx2) {
+      ctx2.applyCalls(butCall);
+    });
+    ctx.subContext(ctx.dancers-waveOf4, (ctx3) {
+      namedParts['Turn Thru']!(ctx3);
+    });
   }
 
 }

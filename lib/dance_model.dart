@@ -323,7 +323,7 @@ class DanceModel extends fm.ChangeNotifier {
     else {
       _currentPart = _partsValues().lastIndexWhere((b) => b < beater.beat);
     }
-    //  Notifiy if part changes to update definition highlight
+    //  Notify if part changes to update definition highlight
     //  Notify if at end to update play/pause button
     if (currentPart != previousPart || beater.isFinished)
       notifyListeners();
