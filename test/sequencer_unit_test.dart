@@ -4299,6 +4299,17 @@ Pass Thru
 Trade By
 Allemande Left''',''); });
 
+test('Left Relay the Shadow',() {
+  testOneSequence('''Heads Pass the Sea
+Sides Separate
+Left Relay the Shadow
+Centers Trade
+Recycle
+Brace Thru
+Pass Thru
+Trade By
+Allemande Left''',''); });
+
 
 /*
 test('',() {

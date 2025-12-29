@@ -137,6 +137,7 @@ import 'c1/plenty.dart';
 import 'c1/prefer.dart';
 import 'c1/ramble.dart';
 import 'c1/regroup.dart';
+import 'c1/relay_the_shadow.dart';
 import 'c1/relay_the_top.dart';
 import 'c1/replace.dart';
 import 'c1/reverse_explode.dart';
@@ -558,8 +559,9 @@ abstract class CodedCall extends Call {
     'Recoil'.ri: (name) => Recoil(name),
     'Recycle'.ri: (name)  => Recycle(name),
     'Regroup'.ri: (name) => Regroup(name),
-    'Relocate(.*)(line|wave|diamond|hourglass|tag)s?'.ri: (name) => Relocate(name),
+    'RelaytheShadow'.ri: (name) => RelayTheShadow(name),
     'RelaytheTop'.ri: (name) => RelayTheTop(name),
+    'Relocate(.*)(line|wave|diamond|hourglass|tag)s?'.ri: (name) => Relocate(name),
     'Remake'.ri: (name) => Remake(name),
     'Replace.*'.ri: (name) => Replace(name),
     '((Inside|Outside|Inpoint|Outpoint|TandemBased|WaveBased)?Triangles?)?Reshape(theTriangle)?'.ri: (name) => Reshape(name),
