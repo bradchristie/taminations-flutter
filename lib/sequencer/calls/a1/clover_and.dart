@@ -76,6 +76,9 @@ class CloverAnd extends Action {
     if (ctx.dancers.every((d) {
       if (clovers.contains(d))
         return true;
+      if (d.isFacingOut) {
+        return false;
+      }
       if (d.location.length > 3.0) {
         var d2 = ctx.dancerInFront(d);
         if (d2 == null || clovers.contains(d2))
@@ -87,7 +90,8 @@ class CloverAnd extends Action {
 
     final ss = CallContext.fromFormation(Formation('Squared Set'));
     final m = ctx.matchFormations(ss,rotate: 180);
-    if (m != null) {
+    if (m != null &&
+        ctx.dancers.every((d) => clovers.contains(d) || d.isFacingIn)) {
       othersStep = true;
     }
 
