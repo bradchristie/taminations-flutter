@@ -126,22 +126,24 @@ class XMLCall extends Call {
         }
       }
     } else {
-        try {
-          ctx.applyCodedCall(name);
-          return;
-        } on CallNotFoundError {
-          //  Found the call but no code and formations did not match
-          throw FormationNotFoundError(name);
-        } on CallError {
-          //  See if it works with an implied "Do Your Part"
-          if (ctx.actives.length < ctx.dancers.length && ctx.canDoYourPart) {
-            ctx.applyCalls('Do Your Part $name');
-            ctx.didYourPart = true;
-          } else
-            rethrow;
-          return;  //  DYP CodedCall that worked
-        }
+      if (ctx.noCode)
+        throw FormationNotFoundError(name);
+      try {
+        ctx.applyCodedCall(name);
+        return;
+      } on CallNotFoundError {
+        //  Found the call but no code and formations did not match
+        throw FormationNotFoundError(name);
+      } on CallError {
+        //  See if it works with an implied "Do Your Part"
+        if (ctx.actives.length < ctx.dancers.length && ctx.canDoYourPart) {
+          ctx.applyCalls('Do Your Part $name');
+          ctx.didYourPart = true;
+        } else
+          rethrow;
+        return; //  DYP CodedCall that worked
       }
+    }
 
     final allPaths = CallContext.fromFormation(xcall.formation,withPaths: xcall.paths)
         .dancers.map((d) => d.path).toList();

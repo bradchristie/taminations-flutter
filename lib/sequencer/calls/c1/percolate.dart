@@ -39,6 +39,8 @@ The Hinge and Cross can be replaced with But (another call)''';
     namedParts = { 'Turn Thru' : (ctx) {
       var turnCall = ctx.outer(4).every((d) => d.data.belle)
           ? 'Left Turn Thru' : 'Turn Thru';
+      if (isToAWave)
+        turnCall = 'Trade';
       ctx.applyCalls(turnCall);
     } };
   }
@@ -56,10 +58,6 @@ The Hinge and Cross can be replaced with But (another call)''';
   @override
    void performPart3(CallContext ctx) {
     ctx.analyze();
-    var turnCall = ctx.outer(4).every((d) => d.data.belle)
-        ? 'Left Turn Thru' : 'Turn Thru';
-    if (isToAWave)
-      turnCall = 'Trade';
     var waveOf4 = ctx.centerWaveOf4() ??
         thrower<List<DancerModel>>('');
     ctx.subContext(waveOf4, (ctx2) {

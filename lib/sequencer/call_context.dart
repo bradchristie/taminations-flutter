@@ -122,6 +122,7 @@ class CallContext {
   bool resolutionError = false;
   bool asymmetric = false;
   bool didYourPart = false;
+  bool noCode = false;
   int geometry = Geometry.SQUARE;
 
   //  Create a context from an array of dancers
@@ -155,6 +156,7 @@ class CallContext {
     _source = source;
     _thoseWhoCan = source._thoseWhoCan;
     _snap = source._snap;
+    noCode = source.noCode;
     canDoYourPart = source.canDoYourPart;
     if (withCalls)
       callstack = source.callstack.copy();
@@ -388,9 +390,7 @@ class CallContext {
   //  Perform an animated (not coded) call
   void applyAnimatedCall(String call) {
     //  First check that we can do the animated call
-    var xmlCall = XMLCall(call);
-    if (!xmlCall.matchAnimatedCall(this))
-      throw CallError('Unable to do $call from this formation');
+    noCode = true;
     _applyCall(call);
   }
 
