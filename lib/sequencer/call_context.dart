@@ -1654,6 +1654,11 @@ class CallContext {
         d1.data.partner = bestright;
         d1.data.beau = true;
       }
+      //  If we haven't found belle/beau try again without mismatch check
+      if (!d1.data.beau && !d1.data.belle) {
+        d1.data.beau = rightcount % 2 == 1 && leftcount % 2 == 0;
+        d1.data.belle = rightcount % 2 == 0 && leftcount % 2 == 1;
+      }
       if (frontcount % 2 == 0 && backcount % 2 == 1)
         d1.data.leader = true;
       else if (frontcount % 2 == 1 && backcount % 2 == 0)

@@ -22,11 +22,19 @@ import '../common.dart';
 
 class Beaus extends FilterActives {
 
-  @override final level = LevelData.A1;
+  @override var level = LevelData.A1;
   @override var help = 'A Beau is a dancer with their partner to the right';
   @override var helplink = 'a1/belles_and_beaus';
 
   Beaus(super.name);
+
+  @override
+  void performCall(CallContext ctx) {
+    //  Belles/Beaus for t-bones is not defined until C-1
+    super.performCall(ctx);
+    if (ctx.dancers.any((d) => d.data.beau && (d.data.partner==null)))
+      level = LevelData.C1;
+  }
 
   @override
   bool isActive(DancerModel d, CallContext ctx) => d.data.beau;

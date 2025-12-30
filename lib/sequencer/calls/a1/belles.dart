@@ -29,6 +29,14 @@ class Belles extends FilterActives {
   Belles(super.name);
 
   @override
+  void performCall(CallContext ctx) {
+    //  Belles/Beaus for t-bones is not defined until C-1
+    super.performCall(ctx);
+    if (ctx.dancers.any((d) => d.data.belle && (d.data.partner==null)))
+      level = LevelData.C1;
+  }
+
+  @override
   bool isActive(DancerModel d, CallContext ctx) => d.data.belle;
 
 }
