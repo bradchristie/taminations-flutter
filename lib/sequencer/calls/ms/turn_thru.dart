@@ -41,7 +41,10 @@ class TurnThru extends Action with IsLeft, IsToAWave {
     if (isToAWave)
       move3 = Path();
     //  Check for dancers in mini-wave
-    if (ctx.isInWave(d)) {
+    var d2 = ctx.dancerFacing(d);
+    if (d2!=null && ctx.isInWave(d2))
+      d2 = null;
+    if (ctx.isInWave(d) && d2==null) {
       //  If in waves, Turn Thru has to be right-handed,
       //  Left Turn Thru left-handed
       var d2 = isLeft ? ctx.dancerToLeft(d) : ctx.dancerToRight(d);
@@ -52,7 +55,7 @@ class TurnThru extends Action with IsLeft, IsToAWave {
       }
     }
     //  Otherwise has to be facing dancers
-    var d2 = ctx.dancerFacing(d);
+    d2 = ctx.dancerFacing(d);
     if (d2 == null || !d2.data.active || ctx.dancerInFront(d2) != d)
       return ctx.dancerCannotPerform(d,name);
     var dist = d.distanceTo(d2);
