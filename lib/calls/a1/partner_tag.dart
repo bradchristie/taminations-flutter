@@ -124,10 +124,10 @@ import '../../moves.dart';
       from:'Quarter Tag',
       paths:[
           LeadRight.scale(0.5,1.0) +
-          ExtendLeft.changeBeats(2).scale(2.0,0.5),
+          ExtendLeft.changeBeats(2).scale(1.0,0.5),
 
           QuarterLeft.skew(-0.5,1.0) +
-          ExtendRight.changeBeats(2).scale(2.0,1.5),
+          ExtendRight.changeBeats(2).scale(1.0,1.5),
 
           LeadRight.scale(0.5,1.0) +
           ExtendRight.changeBeats(2).scale(1.0,0.5),
