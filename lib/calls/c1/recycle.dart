@@ -93,9 +93,9 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('All Eight Recycle',
-      formation:Formation('Mixed Quarter Tag #6'),
-      from:'Left-Hand Quarter Waves',
-      paths:[
+        formation:Formation('Mixed Quarter Tag #6'),
+        from:'Left-Hand Quarter Waves',
+        paths:[
           RunLeft.changeBeats(6).changehands(Hands.GRIPLEFT).skew(-3.0,2.0),
 
           UmTurnLeft.changeBeats(6).changehands(Hands.GRIPLEFT).skew(3.0,0.0),
@@ -103,8 +103,38 @@ import '../../moves.dart';
           CrossFoldLeft.changeBeats(6).scale(1.5,1.0),
 
           RunLeft.scale(1.0,0.5).skew(-1.5,0.0) +
-          RunLeft.scale(1.0,0.5).skew(1.5,0.0)
-      ]),
+              RunLeft.scale(1.0,0.5).skew(1.5,0.0)
+        ]),
+
+    AnimatedCall('All Eight Recycle',
+        formation:Formation('Mixed Quarter Tag #2'),
+        from:'Mixed Quarter Waves 1',
+        paths:[
+          UmTurnRight.changeBeats(6).changehands(Hands.GRIPRIGHT).skew(3.0,0.0),
+
+          RunRight.changeBeats(6).changehands(Hands.GRIPRIGHT).skew(-3.0,-2.0),
+
+          Forward_2 +
+              CrossFoldLeft.changeBeats(4).scale(.5,1.0),
+
+          RunLeft.skew(-1.5,0.0) +
+              RunLeft.skew(1.5,0.0)
+        ]),
+
+    AnimatedCall('All Eight Recycle',
+        formation:Formation('Mixed Quarter Tag #5'),
+        from:'Mixed Quarter Waves 2',
+        paths:[
+          RunLeft.changeBeats(6).changehands(Hands.GRIPLEFT).skew(-3.0,2.0),
+
+          UmTurnLeft.changeBeats(6).changehands(Hands.GRIPLEFT).skew(3.0,0.0),
+
+          Forward_2 +
+          CrossFoldRight.changeBeats(4).scale(.5,1.0),
+
+          RunRight.skew(-1.5,0.0) +
+              RunRight.skew(1.5,0.0)
+        ]),
 
     AnimatedCall('All Eight Recycle',
       formation:Formation('', dancers:[
