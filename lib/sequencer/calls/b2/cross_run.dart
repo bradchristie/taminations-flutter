@@ -21,7 +21,7 @@
 import '../../../moves.dart';
 import '../common.dart';
 
-class CrossRun extends Action with ActivesOnly {
+class CrossRun extends Action {
   @override
   var level = LevelData.B2;
   @override
@@ -35,8 +35,6 @@ class CrossRun extends Action with ActivesOnly {
   @override
   void performCall(CallContext ctx) {
       var runners = ctx.actives;
-      var dodgers = ctx.actives.map((d) => d.data.partner);
-      if (runners.length > dodgers.length) throw CallError('Not valid arrangement for Cross Run');
       //  Runners must be all ends or all centers
       //  In a 1/4 tag, center 4 are all centers, and the ends of that wave
       //  are also ends, which makes this check a little trickier
@@ -44,8 +42,22 @@ class CrossRun extends Action with ActivesOnly {
       var centersOnly = runners.where((d) => d.data.center && !d.data.end);
       if (endsOnly.isNotEmpty && centersOnly.isNotEmpty)
         throw CallError('Cross Run dancers must be all ends or all centers');
-      var realDodgers = runners.map((d) => d.data.partner).nonNulls.toList();
-      if (realDodgers.length != runners.length) throw CallError('Error calculating Cross Run');
+      var dodgers = <DancerModel>[];
+      for (var d in runners) {
+        var dleft = ctx.dancerToLeft(d);
+        var dright = ctx.dancerToRight(d);
+        if (dright != null && (dleft == null || runners.contains(dleft)))
+          dodgers.add(dright);
+        else if (dleft != null &&
+            (dright == null || runners.contains(dright)))
+          dodgers.add(dleft);
+        else
+          throw CallError('Error calculating $name');
+      }
+
+      if (runners.length > dodgers.length) throw CallError('Not valid arrangement for Cross Run');
+
+      if (dodgers.length != runners.length) throw CallError('Error calculating Cross Run');
       for (var d in runners) {
         var dright = ctx.dancersToRight(d);
         var dleft = ctx.dancersToLeft(d);
@@ -79,7 +91,7 @@ class CrossRun extends Action with ActivesOnly {
           throw CallError('Error calculating Cross Run');
       }
 
-      for (var d in realDodgers) {
+      for (var d in dodgers) {
         //  Find a direction they can move to a runner's spot
         //  I don't think there can be more than one
         //  in a symmetric formation
