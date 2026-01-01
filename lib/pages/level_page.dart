@@ -220,6 +220,8 @@ class LevelFrame extends fm.StatelessWidget {
                 indented:Color.BMS),
             _FullLineWidget(text:'Plus' ,
                 background:Color.PLUS),
+            _FullLineWidget(text:'Plus 2026' ,
+                background:Color.PLUS),
             _FullLineWidget(
                 text:'Advanced' ,
                 background:Color.ADV),

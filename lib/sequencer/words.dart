@@ -54,9 +54,9 @@ class Words {
     if (normalizedCallIndex.isEmpty) {
       for (var data in callIndex) {
         for (var call in data.calls) {
-          //  Don't show levels SSD or Mainstream 2026
+          //  Don't show levels SSD or Mainstream 2026 or Plus 2026
           //  as the level for a call
-          if (data.level != 'ssd' && data.level != 'm26')
+          if (data.level != 'ssd' && data.level != 'm26' && data.level != 'p26')
             call.level = LevelData.find(data.level)!;
           if (!call.notForSequencer) {
             var norm = call.title.norm.lc;

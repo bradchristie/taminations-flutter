@@ -35,6 +35,7 @@ final _levelColor = {
   LevelData.SSD : Color.MS,
   LevelData.MS26 : Color.MS,
   LevelData.PLUS : Color.PLUS,
+  LevelData.P26 : Color.PLUS,
   LevelData.A1 : Color.A1,
   LevelData.A2 : Color.A2,
   LevelData.ADV : Color.ADV,
