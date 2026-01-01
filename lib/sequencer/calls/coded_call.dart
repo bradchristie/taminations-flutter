@@ -571,7 +571,7 @@ abstract class CodedCall extends Call {
     'RightandLeftThru'.ri: (name) => RightAndLeftThru(name),
     '(Left|Right)?Ripple.*'.ri: (name) => Ripple(name),
     '(and)?Roll'.ri: (name) => Roll(name),
-    'RollAway'.r : (name) => Rollaway(name),
+    'RollAway'.ri : (name) => Rollaway(name),
     '(Left|Right)RolltoaWave'.ri: (name) => RollToAWave(name),
     'Rotary'.ri: (name) => Rotary(name),
     'RotarySpin'.ri: (name) => RotarySpin(name),
