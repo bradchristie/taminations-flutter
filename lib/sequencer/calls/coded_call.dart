@@ -518,7 +518,7 @@ abstract class CodedCall extends Call {
     'No(body|one)'.ri: (name) => Nobody(name),
     'Nothing'.ri: (name) => Nothing(name),
 
-    'O[A-Z0-9].+'.r: (name) => OFormation(name),
+    'O(the)?[A-Z0-9].+'.r: (name) => OFormation(name),
     '112'.ri: (name) => OneAndaHalf(name),
     'Couples?(1|2|3|4)((and)?(2|3|4))*'.ri: (name) => OneCouple(name),
     'OutRollCirculate'.ri: (name) => OutRollCirculate(name),
