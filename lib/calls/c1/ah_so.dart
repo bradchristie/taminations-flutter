@@ -70,7 +70,7 @@ import '../../moves.dart';
 
     AnimatedCall('Ah So',
       formation:Formation('Inverted Lines Ends Facing Out'),
-      from:'Inverted Lines',
+      from:'Inverted Lines Ends Facing Out',
       paths:[
           RunLeft.changehands(Hands.GRIPLEFT).scale(1.0,2.0).skew(-1.0,0.0),
 
@@ -80,6 +80,19 @@ import '../../moves.dart';
 
           RunRight.changehands(Hands.GRIPRIGHT).scale(1.0,2.0).skew(1.0,0.0)
       ]),
+
+    AnimatedCall('Ah So',
+        formation:Formation('Inverted Lines Ends Facing In'),
+        from:'Inverted Lines Ends Facing In',
+        paths:[
+          RunRight.changehands(Hands.GRIPRIGHT).scale(1.0,2.0).skew(1.0,0.0),
+
+          UmTurnRight.changehands(Hands.GRIPRIGHT).skew(-1.0,0.0),
+
+          UmTurnLeft.changehands(Hands.GRIPLEFT).skew(1.0,0.0),
+
+          RunLeft.changehands(Hands.GRIPLEFT).scale(1.0,2.0).skew(-1.0,0.0),
+        ]),
 
     AnimatedCall('Ah So',
       formation:Formation('3 and 1 Lines #1'),
