@@ -23,8 +23,8 @@ Call pronunciations provided by
 
 ---
 
-## Taminations version 1.6.98 built 2025-12-22
-Copyright 2025 by Brad Christie.  
+## Taminations version 1.6.99 built 2026-01-05
+Copyright 2026 by Brad Christie.  
 This is free software, and you are welcome to modify and redistribute it
 under the terms of the [GNU GPL license](http://www.gnu.org/licenses/gpl.html).  
 
