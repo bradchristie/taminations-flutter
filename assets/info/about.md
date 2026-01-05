@@ -29,13 +29,16 @@ This is free software, and you are welcome to modify and redistribute it
 under the terms of the [GNU GPL license](http://www.gnu.org/licenses/gpl.html).  
 
 ## What's New
-* Animations for Box/Split Transfer from T-bones
-* Correct Triple Box Pass In
-* Add semantic info to code to support accessibility and 3rd party automation tools
+* Add list for Plus 2026 effective September 1
+* Animations for Peel the Top from t-bones
+* More animations for Trade the Deucey
+* More animations for All 8 Recycle
 * Sequencer:
-  * Fix Triple Box Counter Rotate
-  * Fix Split Counter Rotate 1/2 from tidal formation
-  * Enable Zig/Zag for a selection of dancers
+  * Better check for calls that don't do anything
+  * Code for The Gamut
+  * Better code for Slip/Slither
+  * Identify Belles/Beaus in t-bones according to C-1 rules
+  * Fix for Siamese calls
 
 For a detailed history of changes, view the
 [Git log](https://github.com/bradchristie/taminations-flutter/commits/main)
