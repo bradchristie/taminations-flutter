@@ -40,8 +40,8 @@ import '../../moves.dart';
           LeadRight.scale(1.5,0.5),
 
           SwingRight +
-          FlipRight.changeBeats(4.5) +
           Stand.changeBeats(3) +
+          FlipRight.changeBeats(4.5) +
           CastLeft +
           HalfHingeRight.changehands(0).skew(-0.4,-0.45) +
           Forward.changeBeats(3).scale(1.52,1.0) +
@@ -52,8 +52,8 @@ import '../../moves.dart';
           SwingRight.changehands(0).skew(-0.5,0.0),
 
           SwingRight +
-          FlipRight.changeBeats(4.5) +
           Stand.changeBeats(3) +
+          FlipRight.changeBeats(4.5) +
           CastLeft +
           HingeLeft +
           HalfHingeLeft +
@@ -88,8 +88,8 @@ import '../../moves.dart';
           HalfHingeLeft.changeBeats(1.5).skew(0.3,-0.3),
 
           SwingLeft +
-          FlipLeft.changeBeats(4.5) +
           Stand.changeBeats(3) +
+          FlipLeft.changeBeats(4.5) +
           CastRight +
           HingeRight +
           HalfHingeRight +
@@ -99,8 +99,8 @@ import '../../moves.dart';
           QuarterLeft,
 
           SwingLeft +
-          FlipLeft.changeBeats(4.5) +
           Stand.changeBeats(3) +
+          FlipLeft.changeBeats(4.5) +
           CastRight +
           HalfHingeLeft.changehands(0).skew(-0.4,0.45) +
           Forward.changeBeats(3).scale(1.52,1.0) +
