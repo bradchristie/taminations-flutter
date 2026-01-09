@@ -468,6 +468,8 @@ class LanguageSettingWidget extends fm.StatelessWidget {
 class StartingFormationDropdownWidget extends fm.StatelessWidget {
   @override
   fm.Widget build(fm.BuildContext context) {
+    var randomFormation = Settings.startingFormation.startsWith('Random')
+        ? Settings.startingFormation : 'Random Lines';
     return pp.Consumer<Settings>(
       builder: (context,settings,child) => fm.Column(
           crossAxisAlignment: fm.CrossAxisAlignment.stretch,
@@ -482,7 +484,11 @@ class StartingFormationDropdownWidget extends fm.StatelessWidget {
                 style: GoogleFonts.roboto(fontSize: 20, color: Color.BLACK),
                 underline: fm.Container( height: 0, width:0 ),
                 onChanged: (newValue) {
-                  Settings.startingFormation = newValue ?? '';
+                  if (newValue == 'Random Lines')
+                    Settings.startingFormation =
+                        Formation.randomFormationName('');
+                  else
+                    Settings.startingFormation = newValue ?? '';
                 },
                 items: [
                   'Facing Couples',
@@ -496,7 +502,8 @@ class StartingFormationDropdownWidget extends fm.StatelessWidget {
                   'Quarter Tag',
                   'Columns',
                   'Tidal Wave',
-                  'Blocks'
+                  'Blocks',
+                  randomFormation
                 ].map((v) => fm.DropdownMenuItem(value:v, child:fm.Text(v))).toList(),
               ),
             )

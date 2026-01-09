@@ -42,7 +42,7 @@ class SequencerModel extends fm.ChangeNotifier {
 
   List<SequencerCall> calls = [];
   List<SequencerCall> _savedCalls = [];
-  String _startingFormation = 'Squared Set'; // overriden by Settings
+  String _startingFormation = 'Squared Set'; // overridden by Settings
   String _savedStartingFormation = '';
   String get startingFormation => _startingFormation;
   String partString = '';
@@ -405,6 +405,8 @@ class SequencerModel extends fm.ChangeNotifier {
       setPaths(call, settings);
     else if (call.lc.trim().startsWith('help'))
       showHelp(call);
+    else if (call.lc.trim().startsWith('random'))
+      randomLines(call);
 
     else {
       var prevbeats = animation.beats;
@@ -530,6 +532,15 @@ class SequencerModel extends fm.ChangeNotifier {
       }
     }
     animation.goToEnd();
+  }
+
+  //  Set the starting formation to random facing lines
+  void randomLines(String call) {
+    if (Formation.checkRandomDancers(call)) {
+      Settings.startingFormation = Formation.randomFormationName(call);
+      reset();
+    } else
+      throw CallError('Dancer numbers not valid');
   }
 
 }

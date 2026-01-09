@@ -18,6 +18,8 @@
  */
 
 
+import 'dart:math';
+
 import 'package:xml/xml.dart';
 
 import 'dancer_model.dart';
@@ -1779,6 +1781,10 @@ class Formation {
     '.*box'.ri : Formation('Facing Couples')
   };
 
+
+  Formation._internal(this.name,this.dancers, {this.asymmetric=false});
+
+  //  Create a named formation
   factory Formation(String name,
       { List<DancerModel> dancers=const [], bool asymmetric=false}) {
     if (dancers.isEmpty)
@@ -1791,11 +1797,14 @@ class Formation {
     return f;
   }
 
-  Formation._internal(this.name,this.dancers, {this.asymmetric=false});
-
+  //  Look up a named formation,
+  //  or create a random arrangement of facing lines
   factory Formation.fromName(String name) {
     var fnorm = normalizeCall(name);
     Formation? f;
+    //  Random lines?
+    if (fnorm.startsWith('Random'))
+      return _randomFormation(fnorm);
     //  First try a specific match to any formation
     if (formationIndex.containsKey(name))
       return formationIndex[name]!;
@@ -1811,6 +1820,71 @@ class Formation {
       throw CallError('Unable to find formation for $name');
     return f;
   }
+
+  //  Create a random line of dancers that does not violate symmetry
+  static List<int> generateRandomDancers() {
+    //  Start with dancers 1 through 4
+    var randomOrder = [1,2,3,4];
+    //  Put them in a random order
+    randomOrder.shuffle();
+    //  And randomly replace each with their diagonal opposite
+    randomOrder = randomOrder.map((n) =>
+        Random().nextBool() ? n : n+4).toList();
+    return randomOrder;
+  }
+
+  //  Look for a set of numbered dancers in the given formation
+  //  If not found, generate a random set
+  static List<int> parseRandomDancers(String formation) {
+    var dancerNumbers = formation.replaceAll('[^1-8]'.r, '').split('')
+        .map((s) => s.i).toList();
+    if (dancerNumbers.length != 4)
+      dancerNumbers = generateRandomDancers();
+    return dancerNumbers;
+  }
+
+  //  Check that the given set of dancers does not
+  //  contain duplicates or violates symmetry
+  static bool checkRandomDancers(String formation) {
+    var numbers = parseRandomDancers(formation);
+    //  Reduce out any diagonal opposites
+    numbers = numbers.map((d) => (d-1) % 4 + 1).toList();
+    //  Sort the result
+    numbers.sort();
+    //  and it must be dancers 1-4 in order
+    return numbers.join() == '1234';
+  }
+
+  //  Normalize a given random formation name,
+  //  generating random dancers if not given
+  static String randomFormationName(String formation) =>
+      'Random ' + parseRandomDancers(formation).join('');
+
+  //  Build and return facing lines in random order
+  //  given the name
+  static Formation _randomFormation(String formation) {
+    var dancerNumbers = parseRandomDancers(formation);
+    var dancers = <DancerModel>[];
+    //  Position dancers near caller from left to right
+    //  But switch to diagonal opposite location for dancers 5-8
+    var y = 3.0;
+    for (var n in dancerNumbers) {
+      var dx = n > 4 ? 1.5 : -1.5;
+      var dy = n > 4 ? -y : y;
+      var di = n > 4 ? n-4 : n;
+      var da = n > 4 ? 180.0 : 0.0;
+      dancers.add(DancerModel.fromData(
+        //  Odd-numbered dancers are boys, even are girls
+          gender: n%2==1?Gender.BOY:Gender.GIRL,
+          number: di.s, couple: ((di+1)~/2).s,
+          x: dx, y: dy, angle: da ));
+      y -= 2.0;
+    }
+    //  Some code (not sure?) expects the dancers to be in order
+    dancers.sort();
+    return Formation._internal(formation,dancers);
+  }
+
 
   Formation copy() {
     var dcopy = dancers.clone();
