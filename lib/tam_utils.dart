@@ -203,6 +203,7 @@ class TamUtils {
     'scoot_and_dodge' : 'a1',
     'see_saw' : 'b1',
     'shoot_the_star' : 'ms',
+    'single_circle_to_a_wave' : 'plus',
     'slip_the_clutch' : 'ms',
     'spin_chain_and_exchange_the_gears' : 'plus',
     'spin_chain_the_gears' : 'plus',
