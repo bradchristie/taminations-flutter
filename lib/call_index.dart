@@ -1929,5 +1929,15 @@ String titleFromLink(String? link) {
   return titleIndex[link] ??
       titleIndex[link?.replaceAll('ssd', 'b1')] ??
       titleIndex[link?.replaceAll('ssd', 'b2')] ??
-      titleIndex[link?.replaceAll('ssd', 'ms')] ?? '';
+      titleIndex[link?.replaceAll('ssd', 'ms')] ??
+      titleIndex[link?.replaceAll('m26', 'b1')] ??
+      titleIndex[link?.replaceAll('m26', 'b2')] ??
+      titleIndex[link?.replaceAll('m26', 'ms')] ??
+      titleIndex[link?.replaceAll('m26', 'plus')] ??
+      titleIndex[link?.replaceAll('p26', 'b1')] ??
+      titleIndex[link?.replaceAll('p26', 'b2')] ??
+      titleIndex[link?.replaceAll('p26', 'ms')] ??
+      titleIndex[link?.replaceAll('p26', 'plus')] ??
+      titleIndex[link?.replaceAll('p26', 'a1')] ??
+      '';
 }
