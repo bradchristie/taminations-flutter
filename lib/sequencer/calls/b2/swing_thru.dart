@@ -19,7 +19,7 @@
 
 import '../common.dart';
 
-class SwingThru extends Action with ActivesOnly, CallWithParts, IsLeft, IsGrand {
+class SwingThru extends Action with CallWithParts, ActivesOnly, IsLeft, IsGrand {
 
   @override int numberOfParts = 2;
   @override LevelData get level => isGrand ? LevelData.PLUS : LevelData.B2;
@@ -57,7 +57,7 @@ class SwingThru extends Action with ActivesOnly, CallWithParts, IsLeft, IsGrand 
         }
       }
       if (ctx2.actives.isEmpty)
-        throw CallError('Noone to do part 1 of Swing Thru');
+        throw CallError('No dancer can do part 1 of Swing Thru');
       ctx2.applyCalls('Trade');
     });
   }
