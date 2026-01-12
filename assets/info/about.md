@@ -23,22 +23,18 @@ Call pronunciations provided by
 
 ---
 
-## Taminations version 1.6.99 built 2026-01-05
+## Taminations version 1.6.100 built 2026-01-12
 Copyright 2026 by Brad Christie.  
 This is free software, and you are welcome to modify and redistribute it
 under the terms of the [GNU GPL license](http://www.gnu.org/licenses/gpl.html).  
 
 ## What's New
-* Add list for Plus 2026 effective September 1
-* Animations for Peel the Top from t-bones
-* More animations for Trade the Deucey
-* More animations for All 8 Recycle
+* Improve animation for Spin Chain and Exchange the Gears
+* Restore call title display for 2026 calls
+* Fix definition display for Mainstream 2026 Single Circle to a Wave
 * Sequencer:
-  * Better check for calls that don't do anything
-  * Code for The Gamut
-  * Better code for Slip/Slither
-  * Identify Belles/Beaus in t-bones according to C-1 rules
-  * Fix for Siamese calls
+  * Random command to generate random facing lines
+  * Fix for some fractions such as Heads Swing Thru Once and a Half
 
 For a detailed history of changes, view the
 [Git log](https://github.com/bradchristie/taminations-flutter/commits/main)
