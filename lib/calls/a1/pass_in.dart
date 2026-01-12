@@ -28,9 +28,6 @@ import '../a2/all_4_all_8.dart' as a2;
     AnimatedCall('Pass In',
       formation:Formation('Facing Couples Compact'),
       from:'Facing Couples',
-        //  Disable sequencer use else Triple Box Pass In
-        //  fails for the outer boxes
-      notForSequencer: true,
       paths:[
           ExtendLeft.changeBeats(2).scale(1.5,0.5) +
           QuarterRight.changeBeats(2).skew(1.0,0.0),
@@ -130,7 +127,6 @@ import '../a2/all_4_all_8.dart' as a2;
     AnimatedCall('Pass Out',
       formation:Formation('Facing Couples Compact'),
       from:'Facing Couples',
-      notForSequencer: true,
       paths:[
           ExtendLeft.changeBeats(2).scale(1.5,0.5) +
           QuarterLeft.changeBeats(2).skew(1.0,0.0),
