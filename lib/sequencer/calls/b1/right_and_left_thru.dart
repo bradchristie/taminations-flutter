@@ -33,7 +33,7 @@ If the Courtesy Turn is not a boy turning a girl, the level will be marked Plus.
   @override
    void performPart1(CallContext ctx) {
     ctx.applyCalls('Pull By');
-  }
+    ctx.changeBeats(ctx.isSquare() ? 5 : 3);  }
 
   @override
    void performPart2(CallContext ctx) {

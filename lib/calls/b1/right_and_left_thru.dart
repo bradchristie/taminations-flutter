@@ -71,22 +71,22 @@ import '../../moves.dart';
 
     AnimatedCall('Right and Left Thru',
       formation:Formation('Eight Chain Thru'),
-      from:'Eight Chain Thru',isGenderSpecific:true,parts:'2',difficulty: 1,
+      from:'Eight Chain Thru',isGenderSpecific:true,parts:'3',difficulty: 1,
       paths:[
-          PullLeft.scale(1.0,0.5) +
-          ExtendRight.scale(1.0,0.5) +
+          PullLeft.changeBeats(1.5).scale(1.0,0.5) +
+          ExtendRight.changeBeats(1.5).scale(1.0,0.5) +
           BeauWheel.scale(0.5,1.0),
 
-          PullLeft.scale(1.0,0.5) +
-          ExtendRight.scale(1.0,0.5) +
+          PullLeft.changeBeats(1.5).scale(1.0,0.5) +
+          ExtendRight.changeBeats(1.5).scale(1.0,0.5) +
           BelleWheel.scale(0.5,1.0),
 
-          PullLeft.scale(1.0,0.5) +
-          ExtendRight.scale(1.0,0.5) +
+          PullLeft.changeBeats(1.5).scale(1.0,0.5) +
+          ExtendRight.changeBeats(1.5).scale(1.0,0.5) +
           BeauWheel.scale(0.67,1.0),
 
-          PullLeft.scale(1.0,0.5) +
-          ExtendRight.scale(1.0,0.5) +
+          PullLeft.changeBeats(1.5).scale(1.0,0.5) +
+          ExtendRight.changeBeats(1.5).scale(1.0,0.5) +
           BelleWheel.scale(0.67,1.0)
       ]),
 
