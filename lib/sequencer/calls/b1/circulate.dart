@@ -129,19 +129,25 @@ class Circulate extends Action {
       );
       if (d2 != null) {
         var v = d.vectorToDancer(d2);
-        if (d.angleFacing.isAround(d2.angleFacing))
+        if (d.angleFacing.isAround(d2.angleFacing)) {
           return ExtendLeft
               .changeBeats(3)
               .scale(v.x,v.y);
-        else if (d.angleFacing.isAround(d2.angleFacing+pi/2))
-          return LeadLeft
-            .changeBeats(3.0)
-            .scale(v.x,v.y);
-        else if (d.angleFacing.isAround(d2.angleFacing-pi/2))
-          return LeadRight
-              .changeBeats(3.0)
-              .scale(v.x,-v.y);
-        else
+        } else if (d.angleFacing.isAround(d2.angleFacing+pi/2)) {
+          if (v.y.isAbout(0))
+            return QuarterRight.changeBeats(3).skew(v.x,0);
+          else
+            return LeadRight
+                .changeBeats(3.0)
+                .scale(v.x, -v.y);
+        } else if (d.angleFacing.isAround(d2.angleFacing-pi/2)) {
+          if (v.y.isAbout(0))
+            return QuarterLeft.changeBeats(3).skew(v.x,0);
+          else
+            return LeadLeft
+                .changeBeats(3.0)
+                .scale(v.x, v.y);
+        } else
           throw CallError('Unable to calculate Circulate path.' );
       } else {
         //  Otherwise look for a dancer to the side
