@@ -568,17 +568,22 @@ class _DancerColorsSettingWidgetState extends fm.State<DancerColorsSettingWidget
                 child: fm.Wrap (
                   children: [
                     for (var i in [1,2,3,4])
-                      fm.Container(
-                          margin: fm.EdgeInsets.fromLTRB(10, 2, 10, 2),
-                          child:_SettingsColorDropDown(
-                            dancerNumber: i,
-                            currentValue: Settings.coupleColor(i),
-                            onChanged: (String value) {
-                              setState(() {
-                                Settings.setCoupleColor(i, value);
-                              });
-                            },
-                          )
+                      fm.Column(
+                        children: [
+                          fm.Container(
+                              margin: fm.EdgeInsets.fromLTRB(10, 2, 10, 2),
+                              child:_SettingsColorDropDown(
+                                dancerNumber: i,
+                                currentValue: Settings.coupleColor(i),
+                                onChanged: (String value) {
+                                  setState(() {
+                                    Settings.setCoupleColor(i, value);
+                                  });
+                                },
+                              )
+                          ),
+                          fm.Text('Couple $i')
+                        ],
                       ),
                   ],
                 )),
@@ -616,17 +621,22 @@ class _SequencerDancerColorsWidgetState extends fm.State<SequencerDancerColorsWi
                 child: fm.Wrap (
                   children: [
                     for (var i in [1,2,3,4])
-                      fm.Container(
-                          margin: fm.EdgeInsets.fromLTRB(10, 2, 10, 2),
-                          child:_SettingsColorDropDown(
-                            dancerNumber: i,
-                            currentValue: Settings.coupleColor(i),
-                            onChanged: (String value) {
-                              setState(() {
-                                Settings.setCoupleColor(i, value);
-                              });
-                            },
-                          )
+                      fm.Column(
+                        children: [
+                          fm.Container(
+                              margin: fm.EdgeInsets.fromLTRB(10, 2, 10, 2),
+                              child:_SettingsColorDropDown(
+                                dancerNumber: i,
+                                currentValue: Settings.coupleColor(i),
+                                onChanged: (String value) {
+                                  setState(() {
+                                    Settings.setCoupleColor(i, value);
+                                  });
+                                },
+                              )
+                          ),
+                          fm.Text('Couple $i')
+                        ],
                       ),
                   ],
                 )),
