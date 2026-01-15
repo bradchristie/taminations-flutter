@@ -987,6 +987,8 @@ var callIndex = [
   CallEntry('Ocean Wave','ssd','ssd/ocean_wave',ssd.OceanWave,),
   CallEntry('Ocean Wave','m26','m26/ocean_wave',ssd.OceanWave,),
   CallEntry('Ocean Wave Rule','b2','b2/ocean_wave_rule',b2.OceanWaveRule,),
+  CallEntry('Ocean Wave Rule','ssd','ssd/ocean_wave_rule',b2.OceanWaveRule,),
+  CallEntry('Ocean Wave Rule','m26','m26/ocean_wave_rule',b2.OceanWaveRule,),
   CallEntry('Oddly | Evenly Concept','c3b','c3b/oddly_evenly_concept',c3b.OddlyEvenlyConcept,),
   CallEntry('Offset Concept','c2','c2/offset_concept',c2.OffsetConcept,),
   CallEntry('Once Removed Concept','c2','c2/once_removed_concept',c2.OnceRemovedConcept,),
