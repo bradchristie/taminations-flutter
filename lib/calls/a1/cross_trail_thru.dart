@@ -37,6 +37,16 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Cross Trail Thru',
+        formation:Formation('Wave RH'),
+        from:'Right-Hand Wave',
+        paths:[
+              Path.fromMovement(Movement.fromData(beats: 4, hands: Hands.NONE, cx1: 1, cy1: 0, cx2: 0, cy2: -4.0, x2: 1.5, y2: -4.0, cx3: 1, cx4: 1, cy4: -.5, x4: 2, y4: -.5  )),
+
+              Path.fromMovement(Movement.fromData(beats: 4, hands: Hands.NONE, cx1: 1, cy1: 0, cx2: 1.5, cy2: 2.0, x2: 1.5, y2: 2.0, cx3: 1, cx4: 1, cy4: .5, x4: 2, y4: .5  ))
+        ]),
+
+
+    AnimatedCall('Cross Trail Thru',
       formation:Formation('Normal Lines'),
       from:'Lines',
       paths:[
