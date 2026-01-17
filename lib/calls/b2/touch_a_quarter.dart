@@ -124,5 +124,20 @@ import '../../moves.dart';
           Forward.changeBeats(3).scale(1.5,1.0) +
           SwingRight
       ]),
+
+    AnimatedCall('Heads Touch 1/4',
+        formation:Formation('Static Square'),
+        from:'Facing Couples',difficulty: 1, group: ' ',
+        paths:[
+          ExtendLeft.changeBeats(2.5).scale(3,0.5) +
+              HingeRight.scale(1,0.5),
+
+          ExtendLeft.changeBeats(2.5).scale(3,0.5) +
+              HingeRight.scale(1,0.5),
+
+          Stand,
+
+          Stand
+        ]),
   ];
 

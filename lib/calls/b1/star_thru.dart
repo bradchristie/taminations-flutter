@@ -27,6 +27,7 @@ import '../../moves.dart';
     AnimatedCall('Star Thru',
       formation:Formation('Facing Couples Compact'),
       from:'Facing Couples',isGenderSpecific:true,
+      difficulty: 1,
       paths:[
           ExtendLeft.changeBeats(2).changehands(Hands.GRIPRIGHT).scale(1.5,0.5) +
           QuarterRight.changeBeats(2).changehands(Hands.GRIPRIGHT).skew(1.0,0.0),
@@ -41,6 +42,7 @@ import '../../moves.dart';
         DancerModel.fromData(gender:Gender.GIRL,x:-1.5,y:1,angle:0),
   ]),
       from:'Sashayed Couples',isGenderSpecific:true,
+      difficulty: 2,
       paths:[
           ExtendLeft.changeBeats(2).changehands(Hands.GRIPRIGHT).scale(1.5,0.5) +
           QuarterRight.changeBeats(2).changehands(Hands.GRIPRIGHT).skew(1.0,-1.0),
@@ -52,6 +54,7 @@ import '../../moves.dart';
     AnimatedCall('Star Thru',
       formation:Formation('Normal Lines'),
       from:'Lines',isGenderSpecific:true,
+      difficulty: 1,
       paths:[
           ExtendLeft.changeBeats(2).changehands(Hands.GRIPRIGHT).scale(2.0,0.5) +
           QuarterRight.changeBeats(2).changehands(Hands.GRIPRIGHT).skew(1.0,-0.5),
@@ -74,6 +77,7 @@ import '../../moves.dart';
         DancerModel.fromData(gender:Gender.GIRL,x:-2,y:-1,angle:0),
   ]),
       from:'Sashayed Lines',isGenderSpecific:true,
+      difficulty: 2,
       paths:[
           ExtendLeft.changeBeats(2).changehands(Hands.GRIPRIGHT).scale(2.0,0.5) +
           QuarterRight.changeBeats(2).changehands(Hands.GRIPRIGHT).skew(1.0,-0.5),
@@ -91,6 +95,7 @@ import '../../moves.dart';
     AnimatedCall('Star Thru',
       formation:Formation('Eight Chain Thru'),
       from:'Eight Chain Thru',isGenderSpecific:true,
+      difficulty: 1,
       paths:[
           ExtendLeft.changeBeats(2).changehands(Hands.GRIPRIGHT).scale(1.0,0.5) +
           QuarterRight.changeBeats(2).changehands(Hands.GRIPRIGHT).skew(1.0,0.5),
@@ -108,6 +113,7 @@ import '../../moves.dart';
     AnimatedCall('Heads Star Thru',
       formation:Formation('Static Square'),
       group:' ',isGenderSpecific:true,
+      difficulty: 1,
       paths:[
           ExtendLeft.changeBeats(3).changehands(Hands.GRIPRIGHT).scale(3.0,0.5) +
           QuarterRight.changeBeats(2).changehands(Hands.GRIPRIGHT).skew(1.0,-0.5),

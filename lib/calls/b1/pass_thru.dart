@@ -95,5 +95,22 @@ import '../../moves.dart';
 
           ExtendRight.changeBeats(2).scale(1.0,2.0)
       ]),
+
+    AnimatedCall('Heads Pass Thru',
+        formation:Formation('Static Square'),
+        from:'Facing Couples',group: ' ', difficulty: 1
+        ,notForSequencer: true,
+        paths:[
+          ExtendLeft.scale(3,0.5).changeBeats(3) +
+              ExtendRight.scale(3,0.5).changeBeats(3),
+
+          ExtendLeft.scale(3,0.5).changeBeats(3) +
+              ExtendRight.scale(3,0.5).changeBeats(3),
+
+          Stand,
+
+          Stand
+        ]),
+
   ];
 

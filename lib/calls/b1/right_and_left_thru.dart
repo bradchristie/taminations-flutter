@@ -154,25 +154,6 @@ import '../../moves.dart';
               BelleWheel.scale(0.67, 1)
         ]),
 
-    AnimatedCall('Heads Right and Left Thru and Back Away',
-      formation:Formation('Static Square'),
-      isGenderSpecific:true,noDisplay: true,
-      paths:[
-          Forward +
-          PullLeft.changeBeats(1.5).scale(2.0,0.5) +
-          ExtendRight.changeBeats(1.5).scale(2.0,0.5) +
-          BeauWheel.scale(0.67,1.0).skew(1.0,0.0),
-
-          Forward +
-          PullLeft.changeBeats(1.5).scale(2.0,0.5) +
-          ExtendRight.changeBeats(1.5).scale(2.0,0.5) +
-          BelleWheel.scale(0.67,1.0).skew(1.0,0.0),
-
-          Path(),
-
-          Path()
-      ]),
-
     AnimatedCall('Sides Right and Left Thru and Back Away',
       formation:Formation('Static Square'),
       isGenderSpecific:true,noDisplay: true,
@@ -191,6 +172,26 @@ import '../../moves.dart';
           ExtendRight.changeBeats(1.5).scale(2.0,0.5) +
           BelleWheel.scale(0.67,1.0).skew(1.0,0.0)
       ]),
+
+    AnimatedCall('Heads Right and Left Thru',
+        formation:Formation('Static Square'),
+        group: ' ', difficulty: 1,
+        isGenderSpecific:true,
+        paths:[
+          Forward +
+              PullLeft.changeBeats(1.5).scale(2.0,0.5) +
+              ExtendRight.changeBeats(1.5).scale(2.0,0.5) +
+              BeauWheel.scale(0.67,1.0).skew(1.0,0.0),
+
+          Forward +
+              PullLeft.changeBeats(1.5).scale(2.0,0.5) +
+              ExtendRight.changeBeats(1.5).scale(2.0,0.5) +
+              BelleWheel.scale(0.67,1.0).skew(1.0,0.0),
+
+          Path(),
+
+          Path()
+        ]),
 
     AnimatedCall('Right and Left Thru and a Quarter More',
       formation:Formation('Normal Lines'),

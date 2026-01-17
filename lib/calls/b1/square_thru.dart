@@ -891,18 +891,39 @@ import '../../moves.dart';
           PullLeft.scale(1.0,0.5) +
           LeadRight.scale(0.5,1.5) +
           LeadRight.skew(0.5,0.5) +
-          ExtendRight.scale(1.0,0.5),
+          ExtendRight.changeBeats(3).scale(3.0,0.5),
 
           Forward_2 +
           PullLeft.scale(1.0,0.5) +
           LeadLeft.skew(0.5,-0.5) +
           LeadLeft.scale(0.5,1.5) +
-          ExtendRight.scale(1.0,0.5),
+          ExtendRight.changeBeats(3).scale(3.0,0.5),
 
           Path(),
 
           Path()
       ]),
+
+    AnimatedCall('Heads Move In and Square Thru 3',
+        formation:Formation('Static Square'),
+        from:'Static Square',group:' ',difficulty: 1,notForSequencer: true,
+        paths:[
+          Forward_2 +
+              PullLeft.scale(1.0,0.5) +
+              LeadRight.scale(0.5,1.5) +
+              LeadRight.skew(0.5,0.5) +
+              ExtendRight.scale(1.0,0.5),
+
+          Forward_2 +
+              PullLeft.scale(1.0,0.5) +
+              LeadLeft.skew(0.5,-0.5) +
+              LeadLeft.scale(0.5,1.5) +
+              ExtendRight.scale(1.0,0.5),
+
+          Path(),
+
+          Path()
+        ]),
 
     AnimatedCall('Heads Square Thru 4',
       formation:Formation('Static Square'),

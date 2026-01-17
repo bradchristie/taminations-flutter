@@ -1,4 +1,6 @@
 import 'call_entry.dart';
+import 'calls/b1/squared_set_convention.dart' as b1;
+import 'calls/b1/circle_rule.dart' as b1;
 import 'calls/c1/step_and_squeeze.dart' as c1;
 import 'calls/a1/touch_12.dart' as a1;
 import 'calls/a1/cast_off_14.dart' as a1;
@@ -680,6 +682,9 @@ var callIndex = [
   CallEntry('Circle Left / Right','b1','b1/circle',b1.Circle,),
   CallEntry('Circle Left / Right','ssd','ssd/circle',ssd.Circle,),
   CallEntry('Circle Left / Right','m26','m26/circle',ssd.Circle,),
+  CallEntry('Circle Rule','b1','b1/circle_rule',b1.CircleRule),
+  CallEntry('Circle Rule','ssd','ssd/circle_rule',b1.CircleRule),
+  CallEntry('Circle Rule','m26','m26/circle_rule',b1.CircleRule),
   CallEntry('Circle to a Line','b1','b1/circle_to_a_line',b1.CircleToALine,'b1/circle_to_a_line.mp3'),
   CallEntry('Circle to a Line','p26','b1/circle_to_a_line',b1.CircleToALine,'b1/circle_to_a_line.mp3'),
   CallEntry('Circle to a Line','ssd','ssd/circle_to_a_line',ssd.CircleToALine,),
@@ -811,8 +816,10 @@ var callIndex = [
 
   CallEntry('Face Left / Right / In / Out','b1','b1/face',b1.Face,),
   CallEntry('Face Left / Right / In / Out','ssd','ssd/face',ssd.Face,),
+  CallEntry('Face Left / Right / In / Out','m26','m26/face',ssd.Face,),
   CallEntry('Facing Couples Rule','b2','b2/facing_couples_rule',b2.FacingCouplesRule,),
   CallEntry('Facing Couples Rule','ssd','ssd/facing_couples_rule',ssd.FacingCouplesRule,),
+  CallEntry('Facing Couples Rule','m26','m26/facing_couples_rule',ssd.FacingCouplesRule,),
   CallEntry('Fan Concept','c3b','c3b/fan_concept',c3b.FanConcept,),
   CallEntry('Fan the Top','plus','plus/fan_the_top',plus.FanTheTop,'plus/fan_the_top.mp3'),
   CallEntry('Fan the Top','p26','p26/fan_the_top',plus.FanTheTop,'plus/fan_the_top.mp3'),
@@ -855,6 +862,7 @@ var callIndex = [
   CallEntry('Follow Your Neighbor','p26','p26/follow_your_neighbor',plus.FollowYourNeighbor,'plus/follow_your_neighbor.mp3'),
   CallEntry('Forward and Back','b1','b1/forward_and_back',b1.ForwardAndBack,'b1/forward_and_back.mp3'),
   CallEntry('Forward and Back','ssd','ssd/forward_and_back',ssd.ForwardAndBack,),
+  CallEntry('Forward and Back','m26','m26/forward_and_back',ssd.ForwardAndBack,),
   CallEntry('Fourthly','c3b','c3b/secondly_thirdly_fourthly',c3b.SecondlyThirdlyFourthly,),
   CallEntry('Fractional Tops','a1','a1/fractional_tops',a1.FractionalTops,),
   CallEntry('Funny Concept','c2','c2/funny_concept',c2.FunnyConcept,),
@@ -941,6 +949,7 @@ var callIndex = [
   CallEntry('Left','a1','a1/left',a1.Left,),
   CallEntry('Left Arm Turn','b1','b1/arm_turns',b1.ArmTurns,),
   CallEntry('Left Arm Turn','ssd','ssd/arm_turns',ssd.ArmTurns,),
+  CallEntry('Left Arm Turn','m26','m26/arm_turns',ssd.ArmTurns,),
   CallEntry('Left Chase','plus','plus/chase_right',plus.ChaseRight,'plus/chase_right.mp3'),
   CallEntry('Left Chase','p26','p26/chase_right',plus.ChaseRight,'plus/chase_right.mp3'),
   CallEntry('Left Roll to a Wave','a1','a1/right_roll_to_a_wave',a1.RightRollToAWave,'a1/left_roll_to_a_wave.mp3'),
@@ -1049,6 +1058,8 @@ var callIndex = [
       'b1/pull_by.mp3'),
   CallEntry('Pull By','ssd','ssd/pull_by',ssd.PullBy,
       'b1/pull_by.mp3'),
+  CallEntry('Pull By','m26','m26/pull_by',ssd.PullBy,
+      'b1/pull_by.mp3'),
 
   CallEntry('Quadruple Formation Concept','c3b','c3b/quadruple_formation',c3b.QuadrupleFormation,),
   CallEntry('Quarter In','a1','a1/quarter_in',a1.QuarterIn,'a1/quarter_in.mp3'),
@@ -1115,6 +1126,7 @@ var callIndex = [
   CallEntry('Right and Left Thru','m26','m26/right_and_left_thru',ssd.RightAndLeftThru,),
   CallEntry('Right Arm Turn','b1','b1/arm_turns',b1.ArmTurns,),
   CallEntry('Right Arm Turn','ssd','ssd/arm_turns',ssd.ArmTurns,),
+  CallEntry('Right Arm Turn','m26','m26/arm_turns',ssd.ArmTurns,),
   CallEntry('Right / Left Hand Star','b1','b1/star',b1.Star,),
   CallEntry('Right / Left Hand Star','ssd','ssd/star',ssd.Star,),
   CallEntry('Right / Left Hand Star','m26','m26/star',ssd.Star,),
@@ -1236,6 +1248,12 @@ var callIndex = [
   CallEntry('Square Thru','b1','b1/square_thru',b1.SquareThru,),
   CallEntry('Square Thru','ssd','ssd/square_thru',ssd.SquareThru,),
   CallEntry('Square Thru','m26','m26/square_thru',ssd.SquareThru,),
+  CallEntry('Squared Set Convention','b1','b1/squared_set_convention',
+      b1.SquaredSetConvention),
+  CallEntry('Squared Set Convention','ssd','ssd/squared_set_convention',
+      b1.SquaredSetConvention),
+  CallEntry('Squared Set Convention','m26','m26/squared_set_convention',
+      b1.SquaredSetConvention),
   CallEntry('Squeeze','c1','c1/squeeze',c1.Squeeze,),
   CallEntry('Squeeze the Galaxy','c1','c1/squeeze',c1.Squeeze,),
   CallEntry('Squeeze the Hourglass','c1','c1/squeeze',c1.Squeeze,),
@@ -1245,6 +1263,7 @@ var callIndex = [
   CallEntry('Stampede','c3a','c3a/stampede',c3a.Stampede,),
   CallEntry('Star Promenade','b1','b1/promenade',b1.Promenade,),
   CallEntry('Star Promenade','ssd','ssd/promenade',ssd.Promenade,),
+  CallEntry('Star Promenade','m26','m26/promenade',ssd.Promenade,),
   CallEntry('Star Thru','b1','b1/star_thru',
       b1.StarThru,'b1/star_thru.mp3'),
   CallEntry('Star Thru','ssd','ssd/star_thru',ssd.StarThru,),
@@ -1256,6 +1275,7 @@ var callIndex = [
   CallEntry('Step and Squeeze','c1','c1/step_and_squeeze',c1.StepAndSqueeze,),
   CallEntry('Step Thru','b1','b1/step_thru',b1.StepThru,'b1/step_thru.mp3'),
   CallEntry('Step Thru','ssd','ssd/step_thru',ssd.StepThru,'b1/step_thru.mp3'),
+  CallEntry('Step Thru','m26','m26/step_thru',ssd.StepThru,'b1/step_thru.mp3'),
   CallEntry('Step to a Wave','b2','b2/ocean_wave',b2.OceanWave,),
   CallEntry('Step to a Wave','ssd','ssd/ocean_wave',ssd.OceanWave,),
   CallEntry('Step to a Wave','m26','m26/ocean_wave',ssd.OceanWave,),
