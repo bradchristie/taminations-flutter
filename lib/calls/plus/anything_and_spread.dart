@@ -240,7 +240,7 @@ final List<AnimatedCall> AnythingAndSpread = [
               DodgeRight.scale(1,.5),
 
           SwingRight.scale(.5,.5) +
-              DodgeRight.scale(1,.5),
+              RunLeft,
 
           SwingRight.scale(.5,.5) +
               RunLeft,
