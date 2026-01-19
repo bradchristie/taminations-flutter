@@ -128,6 +128,7 @@ import '../../moves.dart';
     AnimatedCall('Heads Touch 1/4',
         formation:Formation('Static Square'),
         from:'Facing Couples',difficulty: 1, group: ' ',
+        notForSequencer: true,
         paths:[
           ExtendLeft.changeBeats(2.5).scale(3,0.5) +
               HingeRight.scale(1,0.5),

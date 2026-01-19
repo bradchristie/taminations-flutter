@@ -62,8 +62,14 @@ The final Cast Off 3/4 can be replaced with But (another call).''';
 
   @override
    void performPart4(CallContext ctx) {
-    ctx.applyCalls('Center Wave $butCall '
-        'While Others Do Your Part Hourglass Circulate');
+    var cw4 = ctx.centerWaveOf4() ??
+        thrower<List<DancerModel>>(CallError('Unable to calculate Motivate'));
+    ctx.subContext(cw4, (ctx2) {
+      ctx2.applyCalls(butCall);
+    });
+    ctx.subContext(ctx.dancers-cw4, (ctx3) {
+      ctx3.applyCalls('Do Your Part Hourglass Circulate');
+    });
   }
 
 }
