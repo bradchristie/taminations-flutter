@@ -33,7 +33,7 @@ class SpinTheWindmill extends Action {
     var prefix = '';
     //  Get the center 4 dancers
     //  Note that if tidal it's not the same as the "centers"
-    final centers = ctx.center(4);
+    var centers = ctx.centerWaveOf4() ?? ctx.center(4);
     //  Step to a wave if facing couples
     final ctxCenters = CallContext.fromContext(ctx, dancers:centers);
     ctxCenters.analyze();
@@ -47,11 +47,23 @@ class SpinTheWindmill extends Action {
     final outerPart = 'Outer 4 _Windmill '+name.replaceFirst('.*windmill'.ri,'');
     //  If there's an 'any' call, first try it with the center 4
     try {
-      ctx.applyCalls('$outerPart while $centerPart');
+      ctx.subContext(centers, (ctx2) {
+        ctx2.applyCalls(centerPart);
+      });
+      ctx.subContext(ctx.dancers - centers, (ctx2) {
+        ctx2.applyCalls(outerPart);
+      });
     } on CallError catch (e) {
       //  If that failed, try the 'any' call with all 8 dancers
       try {
-        ctx.applyCalls(anycall, '$outerPart While Centers Cast Off 3/4');
+        ctx.applyCalls(anycall);
+        centers = ctx.centerWaveOf4() ?? ctx.center(4);
+        ctx.subContext(centers, (ctx2) {
+          ctx2.applyCalls('Cast Off 3/4');
+        });
+        ctx.subContext(ctx.dancers - centers, (ctx2) {
+          ctx2.applyCalls(outerPart);
+        });
       } on CallError catch(_) {
         throw(e);
       }

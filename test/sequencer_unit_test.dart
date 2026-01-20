@@ -4310,6 +4310,27 @@ Pass Thru
 Trade By
 Allemande Left''',''); });
 
+test('Unusual Spin the Windmill',() {
+  testOneSequence('''Heads Dixie Diamond
+Girls Jaywalk
+Centers Flip the Diamond
+Center 6 Grand 3/4 Thru
+Spin the Windmill Forward
+Galaxy Circulate
+Boys 1/4 Thru
+Grand Left Swing Thru
+Girls Cut the Diamond
+Boys Hinge
+Center 6 Circulate
+Girls Run
+Chain Reaction
+Hinge
+Boys Run
+Cross Over Circulate
+Wheel and Deal
+Allemande Left''',''); });
+
+
 
 /*
 test('',() {
