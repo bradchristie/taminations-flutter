@@ -95,6 +95,42 @@ final List<AnimatedCall> AnythingAndSpread = [
             SashayRight
       ]),
 
+  AnimatedCall('Bend the Line and Spread (from Right-Hand Two-Faced Lines)',
+      formation:Formation('Two-Faced Lines RH'),
+      from:'Facing Lines',group:' ',difficulty: 2,
+      noDisplay: true,
+      paths:[
+        HingeRight +
+            SashayRight,
+
+        BackHingeLeft +
+            BackSashayLeft,
+
+        BackHingeLeft +
+            BackSashayLeft,
+
+        HingeRight +
+            SashayRight,
+      ]),
+
+  AnimatedCall('Bend the Line and Spread (from Left-Hand Two-Face Lines)',
+      formation:Formation('Two-Faced Lines LH'),
+      from:'Facing Lines',group:' ',difficulty: 2,
+      noDisplay: true,
+      paths:[
+        HingeLeft +
+            SashayLeft,
+
+        BackHingeRight +
+            BackSashayRight,
+
+        BackHingeRight +
+            BackSashayRight,
+
+        HingeLeft +
+            SashayLeft
+      ]),
+
     AnimatedCall('Cloverleaf and Spread',
       formation:Formation('Completed Double Pass Thru'),
       from:'Completed Double Pass Thru',group:' ',difficulty: 2,
