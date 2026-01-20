@@ -24,29 +24,42 @@ import '../../moves.dart';
 
 final List<AnimatedCall> CircleRule = [
 
-  AnimatedCall('Circle Left 1/4',
+  AnimatedCall('Heads Half Sashay; All Circle Left; 4 Boys Spin the Top',
       formation:Formation('Static Square'),
-      from:'Static Square',group:' ',
+      from:'Static Square',group:' ',parts: '3;3',
       paths:[
-        Forward.changehands(Hands.BOTH).scale(0.59,0.59) +
+        BackSashayRight +
+            EighthLeft.changeBeats(1).changehands(Hands.GRIPBOTH).skew(0.59,0.0) +
             cl +
             cl +
-            Back.changehands(Hands.RIGHT).scale(0.59,0.59),
+            Forward.changehands(Hands.RIGHT).scale(0.41,1.0) +
+            ExtendLeft.changeBeats(2).scale(2,0.5) +
+            SwingRight.scale(.5,.5) +
+            SwingLeft.scale(.5,.5) +
+            HingeLeft.scale(1,.5),
 
-        EighthLeft.changeBeats(1).changehands(Hands.GRIPBOTH).skew(0.59,0.0) +
+        SashayLeft +
+            Forward.changehands(Hands.BOTH).scale(0.59,0.59) +
             cl +
             cl +
             EighthRight.changeBeats(1).changehands(Hands.LEFT).skew(-0.417,0.417),
 
+        Stand.changeBeats(3) +
         Forward.changehands(Hands.BOTH).scale(0.59,1.0) +
             cl +
             cl +
-            Back.changehands(Hands.RIGHT).scale(0.59,1.0),
+            EighthRight.changeBeats(1).changehands(Hands.LEFT)
+                .skew(0.29,-0.29) +
+            ExtendLeft.changeBeats(2).scale(2,0.5) +
+            SwingRight.scale(.5,.5) +
+            LeadRight.changeBeats(4.5).scale(3, 1.5),
 
+
+        Stand.changeBeats(3) +
         EighthLeft.changeBeats(1).changehands(Hands.GRIPBOTH).skew(0.5,0.0) +
             cl +
             cl +
-            EighthRight.changeBeats(1).changehands(Hands.LEFT).skew(-0.417,0.417)
+            Back.changehands(Hands.RIGHT).scale(0.59,1.0),
       ]),
 
 ];
