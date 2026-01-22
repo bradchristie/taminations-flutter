@@ -227,6 +227,38 @@ import '../../moves.dart';
           LeadLeft.changeBeats(2).scale(0.5,1.0)
       ]),
 
+    AnimatedCall('Grand Follow Thru',
+        formation:    Formation('', dancers:[
+          DancerModel.fromData(gender:Gender.GIRL,x:-2,y:-1,angle:180),
+          DancerModel.fromData(gender:Gender.BOY,x:0,y:-1,angle:180),
+          DancerModel.fromData(gender:Gender.GIRL,x:2,y:-1,angle:180),
+        ]),
+        from:'Right-Hand Columns of 3',
+        noDisplay: true,
+        paths:[
+          LeadRight.changeBeats(2).scale(0.5,1.0),
+
+          LeadRight.changeBeats(2).scale(1.5,1.0),
+
+          LeadRight.changeBeats(2).scale(1.5,1.0),
+        ]),
+
+    AnimatedCall('Grand Follow Thru',
+        formation:    Formation('', dancers:[
+          DancerModel.fromData(gender:Gender.BOY,x:-2,y:-1,angle:0),
+          DancerModel.fromData(gender:Gender.GIRL,x:0,y:-1,angle:0),
+          DancerModel.fromData(gender:Gender.BOY,x:2,y:-1,angle:0),
+        ]),
+        from:'Left-Hand Columns of 3',
+        noDisplay: true,
+        paths:[
+          LeadLeft.changeBeats(2).scale(1.5,1.0),
+
+          LeadLeft.changeBeats(2).scale(1.5,1.0),
+
+          LeadLeft.changeBeats(2).scale(0.5,1.0)
+        ]),
+
     AnimatedCall('All 8 Follow Thru',
       formation:Formation('Static MiniWaves RH'),
       from:'Squared Mini-Waves',group:' ',
