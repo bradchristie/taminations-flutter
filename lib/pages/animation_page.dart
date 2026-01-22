@@ -20,9 +20,11 @@
 
 import 'package:flutter/gestures.dart' as fg;
 import 'package:flutter/material.dart' as fm;
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart' as pp;
-import 'package:taminations/sequencer/sequencer_model.dart';
+import 'package:widgets_to_png/widgets_to_png.dart';
 
+import '../sequencer/sequencer_model.dart';
 import '../beat_notifier.dart';
 import '../call_index.dart';
 import '../common_flutter.dart';
@@ -71,8 +73,8 @@ class AnimationPage extends fm.StatelessWidget {
     return Page(
       child: pp.ChangeNotifierProvider(
         create: (_) => DanceModel(context),
-        child: pp.Consumer2<TamState,TitleModel>(
-            builder: (context, tamState, titleModel, _) {
+        child: pp.Consumer3<TamState,TitleModel,DanceModel>(
+            builder: (context, tamState, titleModel, danceModel, _) {
               _startModel(context,tamState,titleModel);
               return fm.Column(
                 children: [
@@ -88,7 +90,17 @@ class AnimationPage extends fm.StatelessWidget {
                         fm.Expanded(
                             child: Button('Settings',onPressed: () {
                               tamState.change(detailPage: DetailPage.SETTINGS);
-                            }))
+                            })),
+                        fm.Expanded(
+                            child: Button('Copy Image',onPressed: () async {
+                              var msg = await danceModel.copyImageToClipboard();
+                              fm.ScaffoldMessenger.of(context).showSnackBar(fm.SnackBar(
+                                  backgroundColor: Color.BLUE,
+                                  duration: Duration(seconds: 2),
+                                  content: fm.Text(msg,
+                                      style: GoogleFonts.roboto(fontSize: 20))
+                              ));
+                            })),
                       ],
                     ),
                   )
@@ -188,7 +200,6 @@ class _AnimationFrameState extends fm.State<AnimationFrame>
           final isSmall = constraints.maxHeight < 350;
           final iconSize = isSmall ? 16.0 : 24.0;
           final beater = pp.Provider.of<BeatNotifier>(context,listen: false);
-//          print('Creating new painter');
           final painter = DancePainter(danceModel);
           final isSequencer = appState.mainPage == MainPage.SEQUENCER;
           //  Update current part which will notify definition to change highlights
@@ -298,9 +309,12 @@ class _AnimationFrameState extends fm.State<AnimationFrame>
                             child: fm.Stack(
                                 children: [
                                   //  Finally here is the dance area widget
-                                  fm.CustomPaint(
-                                    painter: painter,
-                                    child: fm.Center(), // so CustomPaint gets sized correctly
+                                  WidgetToPng(
+                                    keyToCapture: danceModel.keyForImageCopy,
+                                    child: fm.CustomPaint(
+                                      painter: painter,
+                                      child: fm.Center(), // so CustomPaint gets sized correctly
+                                    ),
                                   ),
                                   //  Note that fades out as animation starts
                                   if (note.isNotBlank)

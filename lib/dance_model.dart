@@ -17,9 +17,13 @@
  *     along with Taminations.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+import 'dart:ui' as ui;
+
 import 'package:flutter/material.dart' as fm;
+import 'package:flutter/rendering.dart';
 import 'package:provider/provider.dart' as pp;
 import 'package:taminations/beat_notifier.dart';
+import 'package:super_clipboard/super_clipboard.dart';
 
 import 'animated_call.dart';
 import 'common_flutter.dart';
@@ -66,6 +70,7 @@ class DanceModel extends fm.ChangeNotifier {
   var _practiceScore = 0.0;
   String get animationNote => (_call?.taminator ?? '').replaceAll(r'\s+'.r, ' ');
   String get title => _call?.title ?? '';
+  final fm.GlobalKey keyForImageCopy = fm.GlobalKey();
 
   //  Except for the phantoms, these are the standard colors
   //  used for teaching callers
@@ -99,6 +104,27 @@ class DanceModel extends fm.ChangeNotifier {
   void dispose() {
     beater.removeListener(_updateCurrentPart);
     super.dispose();
+  }
+
+  //  Copy the animation screen to the clipboard as a png image
+  Future<String> copyImageToClipboard() async {
+    //  Get the image with some magical system calls
+    var boundary = keyForImageCopy.currentContext!.findRenderObject()!
+        as RenderRepaintBoundary;
+    var image = await boundary.toImage(pixelRatio:2.0);
+    var byteData = await image.toByteData(format: ui.ImageByteFormat.png);
+    var imageBytes = byteData?.buffer.asUint8List();
+    //  Send the image to the system clipboard
+    if (imageBytes != null) {
+      final clipboard = SystemClipboard.instance;
+      if (clipboard != null) {
+        final item = DataWriterItem();
+        item.add(Formats.png(imageBytes));
+        await clipboard.write([item]);
+        return 'Image copied to Clipboard';
+      }
+    }
+    return 'Error copying image';
   }
 
   bool get gridVisibility => _showGrid;

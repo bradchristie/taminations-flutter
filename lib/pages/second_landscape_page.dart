@@ -20,6 +20,7 @@
 
 import 'package:flutter/material.dart' as fm;
 import 'package:flutter_resizable_container/flutter_resizable_container.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart' as pp;
 
 import '../call_index.dart';
@@ -90,6 +91,16 @@ class SecondLandscapePage extends fm.StatelessWidget {
                                         child: Button('Settings', onPressed: () {
                                           tamState.change(
                                               detailPage: DetailPage.SETTINGS);
+                                        })),
+                                    fm.Expanded(
+                                        child: Button('Copy Image', onPressed: () async {
+                                          var msg = await model.copyImageToClipboard();
+                                          fm.ScaffoldMessenger.of(context).showSnackBar(fm.SnackBar(
+                                              backgroundColor: Color.BLUE,
+                                              duration: Duration(seconds: 2),
+                                              content: fm.Text(msg,
+                                                  style: GoogleFonts.roboto(fontSize: 20))
+                                          ));
                                         })),
                                   ],
                                 ),
