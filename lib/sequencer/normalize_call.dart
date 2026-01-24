@@ -125,6 +125,9 @@ String normalizeCall(String callname) =>
     //  Change (fraction) Circle Left/Right to Circle Left/Right (fraction)
         .replaceAllMapped('(14|12|34) circle (left|right)'.ri,
             (m) => 'Circle ${m[2]} ${m[1]}')
+    //  Handle All 4 Couples and All 8 as the same
+    //  because some calls are ambiguous which to use
+        .replaceAll('all 4 couples'.ri, 'all 8')
     //  Accept optional 'dancers' e.g. 'head dancers' == 'heads'
         .replaceAll('\\bdancers?\\b'.ri,'')
     //  Also handle 'Lead Couples' as 'Leads'
