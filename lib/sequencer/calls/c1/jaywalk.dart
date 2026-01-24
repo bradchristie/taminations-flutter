@@ -67,8 +67,8 @@ class Jaywalk extends Action {
       return LeadRightPassing.scale(v.x,-v.y);
     return (v.y > 0)
     //   Pass right shoulders
-        ? ExtendLeft.scale(v.x-1,v.y).changeBeats(v.length.ceil()-1.0) + Forward
-        : Forward + ExtendRight.changeBeats(v.length.ceil()-1.0).scale(v.x-1,-v.y);
+        ? ExtendLeft.scale(v.x/1.5,v.y).changeBeats(v.length.ceil()-1.0) + Forward.scale(v.x/3,1)
+        : Forward.scale(v.x/3,1) + ExtendRight.changeBeats(v.length.ceil()-1.0).scale(v.x/1.5,-v.y);
   }
 
 }
