@@ -29,6 +29,17 @@ class Spread extends Action {
 
   Spread(super.name);
 
+  bool isPlusSpreadFromBoxes(CallContext ctx) =>
+      ctx.outer(4).every((d2) {
+        if (ctx.dancerInFront(d2)?.data.center ?? false)
+          return true;
+        if (ctx.dancerToRight(d2)?.data.center ?? false)
+          return true;
+        if (ctx.dancerToLeft(d2)?.data.center ?? false)
+          return true;
+        return false;
+    });
+
 
   @override
   void performCall(CallContext ctx) {
@@ -46,19 +57,37 @@ class Spread extends Action {
           spreader = _SpreadFromLines();
         //  Or it's just a hint for them to slide out as the ends move in
         //  e.g. Heads Slide Thru and Spread
-        else
-          spreader = _SpreadFromBoxes();
+        else {
+          //  The inactives must be able to move forward or sideways
+          //  to the actives location
+          //  If not, then it must be a C-1 spread
+          if (isPlusSpreadFromBoxes(ctx)) {
+            //print('Check ok for Plus Spread');
+            spreader = _SpreadFromBoxes();
+          }
+          else {
+            //print('Check not ok for Plus Spread');
+            spreader = _DirectedDancersSpread();
+          }
+        }
       }
       //  Not the centers told to spread - must be C-1 spread
       else
-        spreader = _Case4();
+        spreader = _DirectedDancersSpread();
     }
     else if (ctx.isLines() || ctx.isTidal())
       //  Lines - Centers slide out, ends slide in
       spreader = _SpreadFromLines();
     else if (ctx.isColumns())
       //  Boxes - Centers slide out, ends move in
-      spreader = _SpreadFromBoxes();
+      if (isPlusSpreadFromBoxes(ctx)) {
+        //print('Check worked for Plus Spread');
+        spreader = _SpreadFromBoxes();
+      }
+      else {
+        //print('Check failed for Plus Spread');
+        spreader = _DirectedDancersSpread();
+      }
     else
       throw CallError('Unable to find case for Spread');
     level = spreader.level;
@@ -68,6 +97,8 @@ class Spread extends Action {
 }
 
 class _SpreadFromBoxes extends Action {
+  @override
+  var level = LevelData.PLUS;
   _SpreadFromBoxes() : super('and Spread');
 
   @override
@@ -85,11 +116,21 @@ class _SpreadFromBoxes extends Action {
           throw CallError('Cannot figure out how to Spread');
         d.path += m.changeBeats(2.0);
       } else {
-        //  Inactive dancers move forward
-        var d2 = ctx.dancerInFront(d);
-        if (d2 != null) {
-          var dist = min(d.distanceTo(d2),2.0);
+        //  Inactive dancers move forward or sideways
+        var df = ctx.dancerInFront(d);
+        var dr = ctx.dancerToRight(d);
+        var dl = ctx.dancerToLeft(d);
+        if (df != null && df.data.center) {
+          var dist = min(d.distanceTo(df),2.0);
           d.path += Forward.scale(dist,1.0).changeBeats(2.0);
+        }
+        else if (dr != null && dr.data.center) {
+          var dist = min(d.distanceTo(dr),2.0);
+          d.path += DodgeRight.scale(dist/2,1.0).changeBeats(2.0);
+        }
+        else if (dl != null && dl.data.center) {
+          var dist = min(d.distanceTo(dl),2.0);
+          d.path += DodgeLeft.scale(dist/2,1.0).changeBeats(2.0);
         }
         else
           throw CallError('Unable to Spread from this formation');
@@ -100,6 +141,8 @@ class _SpreadFromBoxes extends Action {
 }
 
 class _SpreadFromLines extends Action {
+  @override
+  var level = LevelData.PLUS;
   _SpreadFromLines() : super('and Spread');
 
   @override
@@ -129,11 +172,10 @@ class _SpreadFromLines extends Action {
 }
 
 
-class _Case4 extends Action {
-
+class _DirectedDancersSpread extends Action {
   @override
   var level = LevelData.C1;
-  _Case4() : super('and Spread');
+  _DirectedDancersSpread() : super('and Spread');
 
   @override
   void performCall(CallContext ctx) {
