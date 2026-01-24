@@ -1146,6 +1146,33 @@ import '../c3a/mini_chase.dart' as c3a;
           QuarterRight.changeBeats(3).skew(1.0,0.0)
       ]),
 
+    AnimatedCall('All 8 Lead Right',
+        formation: Formation('Static Square'),
+        group:'All 8 (with calls through Plus)',
+        paths: [
+          HingeRight.changeBeats(4).scale(0.5,0.5).skew(3.5,-3.5),
+
+          LeadRight.changeBeats(4).changehands(Hands.LEFT).scale(2.0,2.0),
+
+          HingeRight.changeBeats(4).scale(0.5,0.5).skew(3.5,-3.5),
+
+          LeadRight.changeBeats(4).changehands(Hands.LEFT).scale(2.0,2.0),
+        ]),
+
+    AnimatedCall('All 8 Lead Left',
+        formation: Formation('Static Square'),
+        group:'All 8 (with calls through Plus)',
+        noDisplay: true,
+        paths: [
+          LeadLeft.changeBeats(4).changehands(Hands.RIGHT).scale(2.0,2.0),
+
+          HingeLeft.changeBeats(4).scale(0.5,0.5).skew(3.5,3.5),
+
+          LeadLeft.changeBeats(4).changehands(Hands.RIGHT).scale(2.0,2.0),
+
+          HingeLeft.changeBeats(4).scale(0.5,0.5).skew(3.5,3.5),
+        ]),
+
     AnimatedCall('All 8 Left Swing Thru',
       formation:Formation('Thar RH Boys'),
       group:'All 8 (with calls through Plus)',
