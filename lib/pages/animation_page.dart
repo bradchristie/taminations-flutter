@@ -22,7 +22,6 @@ import 'package:flutter/gestures.dart' as fg;
 import 'package:flutter/material.dart' as fm;
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart' as pp;
-import 'package:widgets_to_png/widgets_to_png.dart';
 
 import '../sequencer/sequencer_model.dart';
 import '../beat_notifier.dart';
@@ -309,8 +308,8 @@ class _AnimationFrameState extends fm.State<AnimationFrame>
                             child: fm.Stack(
                                 children: [
                                   //  Finally here is the dance area widget
-                                  WidgetToPng(
-                                    keyToCapture: danceModel.keyForImageCopy,
+                                  fm.RepaintBoundary(
+                                    key: danceModel.keyForImageCopy,
                                     child: fm.CustomPaint(
                                       painter: painter,
                                       child: fm.Center(), // so CustomPaint gets sized correctly
