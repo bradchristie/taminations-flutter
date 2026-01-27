@@ -111,7 +111,7 @@ class DanceModel extends fm.ChangeNotifier {
     //  Get the image with some magical system calls
     var boundary = keyForImageCopy.currentContext!.findRenderObject()!
         as RenderRepaintBoundary;
-    var image = await boundary.toImage(pixelRatio:2.0);
+    var image = await boundary.toImage(pixelRatio:1.0);
     var byteData = await image.toByteData(format: ui.ImageByteFormat.png);
     var imageBytes = byteData?.buffer.asUint8List();
     //  Send the image to the system clipboard
