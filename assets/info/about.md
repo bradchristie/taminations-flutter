@@ -23,18 +23,20 @@ Call pronunciations provided by
 
 ---
 
-## Taminations version 1.6.100 built 2026-01-12
+## Taminations version 1.6.101 built 2026-01-27
 Copyright 2026 by Brad Christie.  
 This is free software, and you are welcome to modify and redistribute it
 under the terms of the [GNU GPL license](http://www.gnu.org/licenses/gpl.html).  
 
 ## What's New
-* Improve animation for Spin Chain and Exchange the Gears
-* Restore call title display for 2026 calls
-* Fix definition display for Mainstream 2026 Single Circle to a Wave
+* Add button to copy animation image to clipboard
+* Add Squared Set Convention
+* Add Circle Rule
+* Add Ocean Wave Rule to SSD and Mainstream 2026
+* Fix animation for Grand Swing Thru and Spread
 * Sequencer:
-  * Random command to generate random facing lines
-  * Fix for some fractions such as Heads Swing Thru Once and a Half
+  * Fixes for Spread
+  * Fix for Jaywalk when dancers are near each other
 
 For a detailed history of changes, view the
 [Git log](https://github.com/bradchristie/taminations-flutter/commits/main)
