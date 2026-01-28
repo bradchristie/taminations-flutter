@@ -67,13 +67,15 @@ void _startModel(fm.BuildContext context, TamState tamState, TitleModel? titleMo
 
 class AnimationPage extends fm.StatelessWidget {
 
+  static DanceModel? dm;  // TODO probably not the right way to do this
+
   @override
   fm.Widget build(fm.BuildContext context) {
     return Page(
       child: pp.ChangeNotifierProvider(
-        create: (_) => DanceModel(context),
-        child: pp.Consumer3<TamState,TitleModel,DanceModel>(
-            builder: (context, tamState, titleModel, danceModel, _) {
+        create: (_) { dm = DanceModel(context); return dm; },
+        child: pp.Consumer2<TamState,TitleModel>(
+            builder: (context, tamState, titleModel, _) {
               _startModel(context,tamState,titleModel);
               return fm.Column(
                 children: [
@@ -92,7 +94,7 @@ class AnimationPage extends fm.StatelessWidget {
                             })),
                         fm.Expanded(
                             child: Button('Copy Image',onPressed: () async {
-                              var msg = await danceModel.copyImageToClipboard();
+                              var msg = await dm!.copyImageToClipboard();
                               fm.ScaffoldMessenger.of(context).showSnackBar(fm.SnackBar(
                                   backgroundColor: Color.BLUE,
                                   duration: Duration(seconds: 2),
