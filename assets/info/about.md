@@ -23,12 +23,13 @@ Call pronunciations provided by
 
 ---
 
-## Taminations version 1.6.101 built 2026-01-27
+## Taminations version 1.6.102 built 2026-01-28
 Copyright 2026 by Brad Christie.  
 This is free software, and you are welcome to modify and redistribute it
 under the terms of the [GNU GPL license](http://www.gnu.org/licenses/gpl.html).  
 
 ## What's New
+* Fix broken animation on small devices
 * Add button to copy animation image to clipboard
 * Add Squared Set Convention
 * Add Circle Rule
