@@ -26,12 +26,20 @@ dependencies:
   speech_to_text: ^7.3.0
   tuple: ^2.0.0
   url_launcher: ^6.1.5
-  xml: ^6.5.0
+  xml: ^6.3.0
   flutter_resizable_container: ^4.0.0
   window_manager: ^0.5.0
   vector_math: any
   platform: any
-  super_clipboard: ^0.9.1
+  # package irondash_engine_context has not been compiled
+  # for 16K page boundaries, which Google requires for Android
+  # super_clipboard depends on irondash_engine_context
+  # This is a workaround which compiles irondash_engine_context
+  # from scratch.  Rust is required.
+  super_clipboard:
+    git:
+      url: https://github.com/FlutterSuperX-009/super_clipboard-0.9.1-16KB-Android
+      ref: main
 dev_dependencies:
   pedantic: ^1.9.0
 #  effective_dart: ^1.3.0
