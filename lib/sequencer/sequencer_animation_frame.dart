@@ -38,10 +38,11 @@ class SequencerAnimationFrame extends fm.StatelessWidget {
           color: Color.FLOOR,
           child: fm.Row(
             children: [
-              SequencerHelpButton(),
-              SequencerSettingsButton(),
-              SequencerAbbrevButton(),
-              SequencerCallsButton()
+              _SequencerHelpButton(),
+              _SequencerSettingsButton(),
+              _SequencerAbbrevButton(),
+              _SequencerCallsButton(),
+              CopyImageButton()  // from animation_page
             ]
           )
         )
@@ -72,10 +73,10 @@ class PortraitSequencerAnimationFrame extends fm.StatelessWidget {
                   SequencerPasteButton(),
                   if (constraints.maxHeight > 50)
                     ...[fm.Divider(color: Color.GRAY, height: 8),
-                  SequencerHelpButton(),
-                  SequencerSettingsButton(),
-                  SequencerAbbrevButton(),
-                  SequencerCallsButton()]
+                  _SequencerHelpButton(),
+                  _SequencerSettingsButton(),
+                  _SequencerAbbrevButton(),
+                  _SequencerCallsButton()]
                 ]
               ); }
             ),
@@ -113,7 +114,7 @@ class BasicSequencerAnimation extends fm.StatelessWidget {
 }
 
 
-class SequencerHelpButton extends fm.StatelessWidget {
+class _SequencerHelpButton extends fm.StatelessWidget {
   @override
   fm.Widget build(fm.BuildContext context) {
     final appState = pp.Provider.of<TamState>(context,listen: false);
@@ -125,7 +126,7 @@ class SequencerHelpButton extends fm.StatelessWidget {
   }
 }
 
-class SequencerSettingsButton extends fm.StatelessWidget {
+class _SequencerSettingsButton extends fm.StatelessWidget {
   @override
   fm.Widget build(fm.BuildContext context) {
     final appState = pp.Provider.of<TamState>(context,listen: false);
@@ -137,7 +138,7 @@ class SequencerSettingsButton extends fm.StatelessWidget {
   }
 }
 
-class SequencerAbbrevButton extends fm.StatelessWidget {
+class _SequencerAbbrevButton extends fm.StatelessWidget {
   @override
   fm.Widget build(fm.BuildContext context) {
     final appState = pp.Provider.of<TamState>(context,listen: false);
@@ -149,7 +150,7 @@ class SequencerAbbrevButton extends fm.StatelessWidget {
   }
 }
 
-class SequencerCallsButton extends fm.StatelessWidget {
+class _SequencerCallsButton extends fm.StatelessWidget {
   @override
   fm.Widget build(fm.BuildContext context) {
     final appState = pp.Provider.of<TamState>(context,listen: false);
