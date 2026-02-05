@@ -175,7 +175,7 @@ class CallContext {
       dancers = [for (var d in f.dancers) for (var g = 0; g < geometryType; g++)
         Dancer.cloneWithGeometry(d, geometry.startMatrix(d.starttx, g))];
     }
-    //  Set default DancerModel numbers
+    //  Set default Dancer numbers
     var numbers = ['1', '5', '2', '6', '3', '7', '4', '8'];
     var couples = ['1', '3', '1', '3', '2', '4', '2', '4'];
     for (var i=0; i<min(dancers.length,numbers.length); i++) {
@@ -666,7 +666,7 @@ class CallContext {
         mapping[mapindex] = -1;
         if (!asymmetric && !ctx2.asymmetric)
           mapping[mapindex + 1] = -1;
-        //  If requested, try rotating this DancerModel
+        //  If requested, try rotating this Dancer
         if (rotate > 0 && rotated[mapindex] + rotate < 360) {
           workctx.dancers[mapindex].rotateStartAngle(rotate.d);
           rotated[mapindex] += rotate;
@@ -687,7 +687,7 @@ class CallContext {
           mapindex -= asymmetric || ctx2.asymmetric ? 1 : 2;
         }
       } else {
-        //  Mapping for this DancerModel found
+        //  Mapping for this Dancer found
         DebugSwitch.mapping.log('Dancer ${dancers[mapindex]} mapped to ${ctx2.dancers[mapping[mapindex]]}');
         mapindex += asymmetric || ctx2.asymmetric ? 1 : 2;
         if (mapindex >= workctx.dancers.length) {
@@ -796,7 +796,7 @@ class CallContext {
 
   //  Perform calls by popping them off the stack until the stack is empty.
   //  This doesn't run an animation, rather it takes the stack of calls
-  //  and builds the DancerModel movements.
+  //  and builds the Dancer movements.
   CallContext performCall({bool tryDoYourPart=false}) {
     //  Some calls alter the callstack, so save and restore
     final saveCallstack = callstack.copy();
@@ -877,7 +877,7 @@ class CallContext {
     }
   }
 
-  //  See if the current DancerModel positions resemble a standard formation
+  //  See if the current Dancer positions resemble a standard formation
   //  and, if so, snap to the standard
   //  Returns true if a match was found
   bool matchFormationList(Map<Formation,double> formations,
@@ -965,7 +965,7 @@ class CallContext {
     }
   }
 
-  //  Given a match to a formation, adjust the DancerModel's last move
+  //  Given a match to a formation, adjust the Dancer's last move
   //  so it ends with that formation.
   //  Returns true if any adjustment was made.
   bool adjustToFormationMatch(FormationMatchResult match,
@@ -986,7 +986,7 @@ class CallContext {
           m = StandAhead
             .changeBeats(match.offsets[i].length)
             .setFromCall(false).pop();
-        //  Transform the offset to the DancerModel's angle
+        //  Transform the offset to the Dancer's angle
         if (adjustFirstMovement)
           d.animate(0);
         else
@@ -1122,21 +1122,21 @@ class CallContext {
   Dancer? dancerClosest(Dancer d, bool Function(Dancer d2) f) =>
       dancersInOrder(d,f).firstOrNull;
 
-  //  Return dancer directly in front of given DancerModel
+  //  Return dancer directly in front of given Dancer
   Dancer? dancerInFront(Dancer d) =>
       dancerClosest(d, (d2) => d2.isInFrontOf(d));
-  //  Return dancer directly in back of given DancerModel
+  //  Return dancer directly in back of given Dancer
   Dancer? dancerInBack(Dancer d) =>
       dancerClosest(d, (d2) => d2.isInBackOf(d));
-  //  Return dancer directly to the right of given DancerModel
+  //  Return dancer directly to the right of given Dancer
   Dancer? dancerToRight(Dancer d, {double minDistance=99.0}) =>
       dancerClosest(d, (d2) =>
       d2.isRightOf(d) && !d2.distanceTo(d).isGreaterThan(minDistance));
-  //  Return dancer directly to the left of given DancerModel
+  //  Return dancer directly to the left of given Dancer
   Dancer? dancerToLeft(Dancer d, {double minDistance=99.0}) =>
       dancerClosest(d, (d2)
       => d2.isLeftOf(d) && !d2.distanceTo(d).isGreaterThan(minDistance));
-  //  Return dancer that is facing the front of this DancerModel
+  //  Return dancer that is facing the front of this Dancer
   Dancer? dancerFacing(Dancer d) {
     var d2 = dancerInFront(d);
     return d2 != null && dancerInFront(d2) == d ? d2 : null;
@@ -1362,7 +1362,7 @@ class CallContext {
     return d2 != null && isFacingSameDirection(d,d2);
   }
 
-  //  Return true if this dancer is in tandem with another DancerModel
+  //  Return true if this dancer is in tandem with another Dancer
   Dancer? tandemDancer(Dancer d) {
     if (d.data.trailer && (dancerInFront(d)?.data.leader ?? false))
       return dancerInFront(d);
