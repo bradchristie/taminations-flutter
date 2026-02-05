@@ -29,7 +29,7 @@ class Sides extends FilterActives {
   Sides(super.name);
 
   @override
-  bool isActive(DancerModel d, CallContext ctx) {
+  bool isActive(Dancer d, CallContext ctx) {
     if (ctx.isSquare()) {
       var originalSide = d.numberCouple == '2' || d.numberCouple == '4';
       var sidePosition = d.location.y.abs().isAbout(3.0);

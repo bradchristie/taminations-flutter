@@ -31,11 +31,11 @@ class Hinge extends Action with IsLeft {
   Hinge(super.name);
 
   @override
-  Path performOne(DancerModel d, CallContext ctx) {
+  Path performOne(Dancer d, CallContext ctx) {
     //  Find the dancer to hinge with
     var leftCount = ctx.dancersToLeft(d).where((it) => it.isActive).length;
     var rightCount = ctx.dancersToRight(d).where((it) => it.isActive).length;
-    DancerModel d2;
+    Dancer d2;
     if (leftCount.isOdd && rightCount.isEven)
       d2 = ctx.dancerToLeft(d)!;
     else if (leftCount.isEven && rightCount.isOdd)

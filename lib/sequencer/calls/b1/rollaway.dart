@@ -27,8 +27,8 @@ class Rollaway extends Action with IsReverse {
   Rollaway(super.name);
 
   @override
-  Path performOne(DancerModel d, CallContext ctx) {
-    final d2 = d.data.partner ?? thrower<DancerModel>('Cannot find partner of $d');
+  Path performOne(Dancer d, CallContext ctx) {
+    final d2 = d.data.partner ?? thrower<Dancer>('Cannot find partner of $d');
     final dist = d.distanceTo(d2);
     if (isReverse) {
       if (d.data.beau) {

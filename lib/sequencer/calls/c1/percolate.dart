@@ -59,7 +59,7 @@ The Hinge and Cross can be replaced with But (another call)''';
    void performPart3(CallContext ctx) {
     ctx.analyze();
     var waveOf4 = ctx.centerWaveOf4() ??
-        thrower<List<DancerModel>>('');
+        thrower<List<Dancer>>('');
     ctx.subContext(waveOf4, (ctx2) {
       ctx2.applyCalls(butCall);
     });

@@ -74,7 +74,7 @@ abstract class SplitCall extends Action {
   //  Derived classes need to implement this method
   //  working with the dancers from each split side
   @override
-  Path performOne(DancerModel d, CallContext ctx) {
+  Path performOne(Dancer d, CallContext ctx) {
     throw FormationNotFoundError(name);
   }
 

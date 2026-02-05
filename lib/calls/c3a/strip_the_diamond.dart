@@ -26,10 +26,10 @@ import '../../moves.dart';
 
     AnimatedCall('Strip the Diamond',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.GIRL,x:-3,y:0,angle:90),
-        DancerModel.fromData(gender:Gender.BOY,x:-2,y:3,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:-1,y:0,angle:270),
-        DancerModel.fromData(gender:Gender.BOY,x:-2,y:-3,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:-3,y:0,angle:90),
+        Dancer.fromData(gender:Gender.BOY,x:-2,y:3,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:-1,y:0,angle:270),
+        Dancer.fromData(gender:Gender.BOY,x:-2,y:-3,angle:180),
   ]),
       from:'Right-Hand Diamonds',
       paths:[

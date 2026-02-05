@@ -39,10 +39,10 @@ import '../../moves.dart';
 
     AnimatedCall('Allemande Left',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:-3,y:1,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:-3,y:-1,angle:0),
-        DancerModel.fromData(gender:Gender.BOY,x:-1,y:-1,angle:180),
-        DancerModel.fromData(gender:Gender.GIRL,x:1,y:-1,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:-3,y:1,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:-3,y:-1,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:-1,y:-1,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:1,y:-1,angle:0),
   ]),
       from:'Eight Chain Thru',isGenderSpecific:true,
       paths:[
@@ -65,10 +65,10 @@ import '../../moves.dart';
 
     AnimatedCall('Allemande Left',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:-3,y:1,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:-3,y:-1,angle:0),
-        DancerModel.fromData(gender:Gender.BOY,x:-1,y:-2,angle:180),
-        DancerModel.fromData(gender:Gender.GIRL,x:1,y:-2,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:-3,y:1,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:-3,y:-1,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:-1,y:-2,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:1,y:-2,angle:0),
   ]),
       from:'after Dixie Grand',isGenderSpecific:true,noDisplay: true,
       paths:[
@@ -91,10 +91,10 @@ import '../../moves.dart';
 
     AnimatedCall('Allemande Left',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:-3,y:-1,angle:180),
-        DancerModel.fromData(gender:Gender.GIRL,x:-1,y:-1,angle:0),
-        DancerModel.fromData(gender:Gender.BOY,x:1,y:-1,angle:180),
-        DancerModel.fromData(gender:Gender.GIRL,x:3,y:-1,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:-3,y:-1,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:-1,y:-1,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:1,y:-1,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:3,y:-1,angle:0),
   ]),
       from:'Trade By',isGenderSpecific:true,
       paths:[
@@ -138,10 +138,10 @@ import '../../moves.dart';
 
     AnimatedCall('Allemande Left',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:-2,y:1,angle:180),
-        DancerModel.fromData(gender:Gender.GIRL,x:-2,y:-1,angle:180),
-        DancerModel.fromData(gender:Gender.BOY,x:-2,y:-3,angle:180),
-        DancerModel.fromData(gender:Gender.GIRL,x:2,y:-3,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:-2,y:1,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:-2,y:-1,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:-2,y:-3,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:2,y:-3,angle:0),
   ]),
       from:'Lines Facing Out',isGenderSpecific:true,
       paths:[
@@ -164,10 +164,10 @@ import '../../moves.dart';
 
     AnimatedCall('Allemande Left',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:-2,y:1,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:-2,y:-3,angle:0),
-        DancerModel.fromData(gender:Gender.BOY,x:-2,y:-1,angle:180),
-        DancerModel.fromData(gender:Gender.GIRL,x:2,y:-3,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:-2,y:1,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:-2,y:-3,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:-2,y:-1,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:2,y:-3,angle:0),
   ]),
       from:'Left-Hand Waves',isGenderSpecific:true,
       paths:[
@@ -190,10 +190,10 @@ import '../../moves.dart';
 
     AnimatedCall('Allemande Left',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:-1,y:3,angle:90),
-        DancerModel.fromData(gender:Gender.GIRL,x:-3,y:0,angle:270),
-        DancerModel.fromData(gender:Gender.BOY,x:-1,y:0,angle:90),
-        DancerModel.fromData(gender:Gender.GIRL,x:-1,y:-3,angle:270),
+        Dancer.fromData(gender:Gender.BOY,x:-1,y:3,angle:90),
+        Dancer.fromData(gender:Gender.GIRL,x:-3,y:0,angle:270),
+        Dancer.fromData(gender:Gender.BOY,x:-1,y:0,angle:90),
+        Dancer.fromData(gender:Gender.GIRL,x:-1,y:-3,angle:270),
   ]),
       from:'Left-Hand 3/4 Tag',isGenderSpecific:true,
       paths:[
@@ -237,10 +237,10 @@ import '../../moves.dart';
 
     AnimatedCall('Allemande Left',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:-2.45,y:1,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:-2.45,y:-1,angle:45),
-        DancerModel.fromData(gender:Gender.BOY,x:-1,y:-2.45,angle:90),
-        DancerModel.fromData(gender:Gender.GIRL,x:1,y:-2.45,angle:135),
+        Dancer.fromData(gender:Gender.BOY,x:-2.45,y:1,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:-2.45,y:-1,angle:45),
+        Dancer.fromData(gender:Gender.BOY,x:-1,y:-2.45,angle:90),
+        Dancer.fromData(gender:Gender.GIRL,x:1,y:-2.45,angle:135),
   ]),
       from:'Circle Left',isGenderSpecific:true,
       paths:[
@@ -265,10 +265,10 @@ import '../../moves.dart';
 
     AnimatedCall('Allemande Left',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:-1,y:0,angle:90),
-        DancerModel.fromData(gender:Gender.GIRL,x:0,y:-3,angle:0),
-        DancerModel.fromData(gender:Gender.BOY,x:0,y:-1,angle:180),
-        DancerModel.fromData(gender:Gender.GIRL,x:3,y:0,angle:90),
+        Dancer.fromData(gender:Gender.BOY,x:-1,y:0,angle:90),
+        Dancer.fromData(gender:Gender.GIRL,x:0,y:-3,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:0,y:-1,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:3,y:0,angle:90),
   ]),
       from:'Thar',isGenderSpecific:true,
       paths:[
@@ -287,10 +287,10 @@ import '../../moves.dart';
 
     AnimatedCall('Allemande Left',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:3,y:1,angle:270),
-        DancerModel.fromData(gender:Gender.GIRL,x:1,y:1.5,angle:180),
-        DancerModel.fromData(gender:Gender.BOY,x:-1,y:1.5,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:-3,y:1,angle:270),
+        Dancer.fromData(gender:Gender.BOY,x:3,y:1,angle:270),
+        Dancer.fromData(gender:Gender.GIRL,x:1,y:1.5,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:-1,y:1.5,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:-3,y:1,angle:270),
   ]),
       from:'Grand Circle',isGenderSpecific:true,noDisplay: true,
       paths:[

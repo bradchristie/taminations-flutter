@@ -31,17 +31,17 @@ class Phantom extends Action {
         _subcall = name.replaceFirst('Phantom'.ri, '').trim();
 
   static final Formation PhantomSnapFormation_1 = Formation('', dancers:[
-    DancerModel.fromData(gender:Gender.BOY,x:-2,y:3,angle:0),
-    DancerModel.fromData(gender:Gender.GIRL,x:-2,y:1,angle:0),
-    DancerModel.fromData(gender:Gender.BOY,x:3,y:2,angle:270),
-    DancerModel.fromData(gender:Gender.GIRL,x:1,y:2,angle:270),
+    Dancer.fromData(gender:Gender.BOY,x:-2,y:3,angle:0),
+    Dancer.fromData(gender:Gender.GIRL,x:-2,y:1,angle:0),
+    Dancer.fromData(gender:Gender.BOY,x:3,y:2,angle:270),
+    Dancer.fromData(gender:Gender.GIRL,x:1,y:2,angle:270),
   ]);
 
   static final Formation PhantomSnapFormation_2 = Formation('', dancers:[
-    DancerModel.fromData(gender:Gender.BOY,x:-2,y:-1,angle:0),
-    DancerModel.fromData(gender:Gender.GIRL,x:-2,y:-3,angle:0),
-    DancerModel.fromData(gender:Gender.BOY,x:3,y:-2,angle:90),
-    DancerModel.fromData(gender:Gender.GIRL,x:1,y:-2,angle:90),
+    Dancer.fromData(gender:Gender.BOY,x:-2,y:-1,angle:0),
+    Dancer.fromData(gender:Gender.GIRL,x:-2,y:-3,angle:0),
+    Dancer.fromData(gender:Gender.BOY,x:3,y:-2,angle:90),
+    Dancer.fromData(gender:Gender.GIRL,x:1,y:-2,angle:90),
   ]);
 
   CallContext _addPhantoms(CallContext ctx) {
@@ -64,7 +64,7 @@ class Phantom extends Action {
             (v) => ctx.dancers.none((d) => d.location.isAbout(v))).toList();
     //  Put phantoms in those positions
     final phantoms = phantomPositions.mapIndexed((index, v) =>
-        DancerModel.cloneWithOptions(ctx.dancers.first,
+        Dancer.cloneWithOptions(ctx.dancers.first,
             gender: Gender.PHANTOM,
             number: 'P${index+1}')
             .setStartPosition(v)

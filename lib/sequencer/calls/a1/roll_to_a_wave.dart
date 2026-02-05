@@ -29,7 +29,7 @@ class RollToAWave extends Action with ActivesOnly {
   RollToAWave(super.name);
 
   @override
-  Path performOne(DancerModel d, CallContext ctx) {
+  Path performOne(Dancer d, CallContext ctx) {
     final flip = name.startsWith('Left') ? FlipLeft : FlipRight;
     final extend = name.startsWith('Left') ? ExtendRight :ExtendLeft;
     if (d.data.leader) {

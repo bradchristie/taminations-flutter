@@ -149,10 +149,10 @@ import '../../moves.dart';
 
     AnimatedCall('Turn Thru',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:-3,y:1,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:-3,y:-1,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:0,y:-3,angle:180),
-        DancerModel.fromData(gender:Gender.BOY,x:0,y:-1,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:-3,y:1,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:-3,y:-1,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:0,y:-3,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:0,y:-1,angle:0),
   ]),
       from:'Quarter Tag',difficulty: 1,
       taminator: '''

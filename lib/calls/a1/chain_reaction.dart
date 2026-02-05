@@ -52,10 +52,10 @@ import '../../moves.dart';
 
     AnimatedCall('Chain Reaction',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:-3,y:1,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:-3,y:-1,angle:0),
-        DancerModel.fromData(gender:Gender.BOY,x:0,y:-3,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:0,y:-1,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:-3,y:1,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:-3,y:-1,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:0,y:-3,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:0,y:-1,angle:180),
   ]),
       from:'Left-Hand Quarter Tag',fractions:'3;1.5;2',
       taminator: '''

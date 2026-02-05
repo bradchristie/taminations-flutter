@@ -31,6 +31,12 @@ import 'practice_dancer.dart';
 
 class DanceModel extends fm.ChangeNotifier {
 
+  static const NUMBERS_OFF = 0;
+  static const NUMBERS_DANCERS = 1;
+  static const NUMBERS_COUPLES = 2;
+  static const NUMBERS_NAMES = 3;   //  sequencer only
+  static const NUMBER_HEIGHT = 8.0;
+
   static const SLOWSPEED = 1500.0;
   static const MODERATESPEED = 1000.0;
   static const NORMALSPEED = 500.0;
@@ -62,7 +68,7 @@ class DanceModel extends fm.ChangeNotifier {
   var _showGrid = false;
   var _showAxes = 'None';
   var _showPaths = false;
-  var _showNumbers = Dancer.NUMBERS_OFF;
+  var _showNumbers = NUMBERS_OFF;
   var _showPhantoms = false;
   var _geometryType = Geometry.SQUARE;
   final _asymmetric = false;
@@ -145,16 +151,16 @@ class DanceModel extends fm.ChangeNotifier {
   void setNumbers(String value) {
     if (_interactiveDancer >= 0) {
       value = 'None';
-      _showNumbers = Dancer.NUMBERS_OFF;
+      _showNumbers = NUMBERS_OFF;
     }
     else if (value == 'None')
-      _showNumbers = Dancer.NUMBERS_OFF;
+      _showNumbers = NUMBERS_OFF;
     else if (value == '1-8' || value == 'Dancer Numbers')
-      _showNumbers = Dancer.NUMBERS_DANCERS;
+      _showNumbers = NUMBERS_DANCERS;
     else if (value == '1-4' || value == 'Couple Numbers')
-      _showNumbers = Dancer.NUMBERS_COUPLES;
+      _showNumbers = NUMBERS_COUPLES;
     else if (value == 'Names') {
-      _showNumbers = Dancer.NUMBERS_NAMES;
+      _showNumbers = NUMBERS_NAMES;
     }
     for (var d in dancers) {
       if (d.showNumber != _showNumbers) {
@@ -417,16 +423,16 @@ class DanceModel extends fm.ChangeNotifier {
             .entries)
           for (var g = 0; g < sym; g++)
             Dancer(
-                numbers[ent.key * sym + g],
-                couples[ent.key * sym + g],
-                ent.value.gender,
-                ent.value.gender == Gender.PHANTOM
+                number: numbers[ent.key * sym + g],
+                numberCouple: couples[ent.key * sym + g],
+                gender: ent.value.gender,
+                fillColor: ent.value.gender == Gender.PHANTOM
                   ? Color.GRAY
                   : _dancerColor[couples[ent.key * sym + g].i],
                 // real color will be set later
-                geometry.startMatrix(ent.value.starttx, g),
-                geometry.clone(),
-                mycall.paths[ent.key].movelist)
+                startPosition: geometry.startMatrix(ent.value.starttx, g),
+                geometryType:  geometry.geometry,
+                moves:  mycall.paths[ent.key].movelist)
         ];
 
         //  For practice, replace one of the dancers with an interactive dancer
@@ -452,7 +458,6 @@ class DanceModel extends fm.ChangeNotifier {
             d.starttx = iangleTx * d.starttx;
         }  // practice dancer
 
-
       leadin = 2.0;
       leadout = 2.0;
       _beats = 0.0;
@@ -471,7 +476,6 @@ class DanceModel extends fm.ChangeNotifier {
   void recalculate() {
     _beats = 0.0;
     for (var d in dancers) {
-      d.computePath();
       _beats = max(_beats, d.beats + leadout);
     }
     beater.setTimes(-leadin, _beats);

@@ -148,8 +148,8 @@ import '../../moves.dart';
 
     AnimatedCall('Square Chain Thru to a Wave',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:1,y:1.5,angle:270),
-        DancerModel.fromData(gender:Gender.GIRL,x:-1,y:1.5,angle:270),
+        Dancer.fromData(gender:Gender.BOY,x:1,y:1.5,angle:270),
+        Dancer.fromData(gender:Gender.GIRL,x:-1,y:1.5,angle:270),
   ]),
       from:'Facing Couples',
       paths:[

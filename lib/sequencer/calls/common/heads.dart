@@ -29,7 +29,7 @@ class Heads extends FilterActives {
   Heads(super.name);
 
   @override
-  bool isActive(DancerModel d, CallContext ctx) {
+  bool isActive(Dancer d, CallContext ctx) {
     if (ctx.isSquare()) {
       var originalHead = d.numberCouple == '1' || d.numberCouple == '3';
       var headPosition = d.location.x.abs().isAbout(3.0);

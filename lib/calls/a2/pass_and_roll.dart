@@ -26,8 +26,8 @@ import '../../moves.dart';
 
     AnimatedCall('Pass and Roll',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:-3,y:0,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:-1,y:0,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:-3,y:0,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:-1,y:0,angle:180),
   ]),
       from:'Single Eight Chain Thru',
       paths:[
@@ -146,10 +146,10 @@ import '../../moves.dart';
     AnimatedCall('Pass and Roll',
         from:'Tidal Column',
         formation: Formation('',dancers:[
-          DancerModel.fromData(gender: Gender.BOY, x: .5, y: 0, angle: 0),
-          DancerModel.fromData(gender: Gender.GIRL, x: 1.5, y: 0, angle: 180),
-          DancerModel.fromData(gender: Gender.BOY, x: 2.5, y: 0, angle: 0),
-          DancerModel.fromData(gender: Gender.GIRL, x: 3.5, y: 0, angle: 180),
+          Dancer.fromData(gender: Gender.BOY, x: .5, y: 0, angle: 0),
+          Dancer.fromData(gender: Gender.GIRL, x: 1.5, y: 0, angle: 180),
+          Dancer.fromData(gender: Gender.BOY, x: 2.5, y: 0, angle: 0),
+          Dancer.fromData(gender: Gender.GIRL, x: 3.5, y: 0, angle: 180),
         ]),
         paths: [
           ExtendLeft.scale(.5,0.5) +
@@ -180,8 +180,8 @@ import '../../moves.dart';
 
     AnimatedCall('Left Pass and Roll',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:-3,y:0,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:-1,y:0,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:-3,y:0,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:-1,y:0,angle:180),
   ]),
       from:'Single Column',
       paths:[
@@ -300,10 +300,10 @@ import '../../moves.dart';
     AnimatedCall('Left Pass and Roll',
         from:'Tidal Column',
         formation: Formation('',dancers:[
-          DancerModel.fromData(gender: Gender.BOY, x: .5, y: 0, angle: 0),
-          DancerModel.fromData(gender: Gender.GIRL, x: 1.5, y: 0, angle: 180),
-          DancerModel.fromData(gender: Gender.BOY, x: 2.5, y: 0, angle: 0),
-          DancerModel.fromData(gender: Gender.GIRL, x: 3.5, y: 0, angle: 180),
+          Dancer.fromData(gender: Gender.BOY, x: .5, y: 0, angle: 0),
+          Dancer.fromData(gender: Gender.GIRL, x: 1.5, y: 0, angle: 180),
+          Dancer.fromData(gender: Gender.BOY, x: 2.5, y: 0, angle: 0),
+          Dancer.fromData(gender: Gender.GIRL, x: 3.5, y: 0, angle: 180),
         ]),
         paths: [
           ExtendRight.scale(.5,0.5) +

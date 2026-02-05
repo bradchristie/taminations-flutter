@@ -30,7 +30,7 @@ class Run extends Action {
   //  Generate paths for one set of dancers
   //  d : dancer who is running
   //  d2 : dancer(s) that d is running around
-  void _runOne(DancerModel d, List<DancerModel> dlist, String dir) {
+  void _runOne(Dancer d, List<Dancer> dlist, String dir) {
     for (var i=0; i<dlist.length; i++) {
       var d2 = dlist[i];
       var dprev = i==0 ? d : dlist[i-1];
@@ -63,7 +63,7 @@ class Run extends Action {
     var usePartner = false;
     while (dancersToRun.isNotEmpty) {
       var foundRunner = false;
-      var runnersRunned = <DancerModel>{};
+      var runnersRunned = <Dancer>{};
       for (var d in dancersToRun) {
         var dleft = ctx.dancersToLeft(d).take(runAround).toList();
         if (dleft.length < runAround || dleft.any((dx) => dx.isActive))

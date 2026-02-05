@@ -44,7 +44,7 @@ class AllemandeLeft extends Action {
   }
 
   @override
-  Path performOne(DancerModel d, CallContext ctx) {
+  Path performOne(Dancer d, CallContext ctx) {
     var num = (d.gender == Gender.GIRL)
         ? d.numberCouple.i % 4 + 1
         : d.numberCouple.i;

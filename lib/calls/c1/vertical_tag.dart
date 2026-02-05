@@ -38,8 +38,8 @@ import '../../moves.dart';
 
     AnimatedCall('Vertical Tag',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.GIRL,x:1,y:2,angle:90),
-        DancerModel.fromData(gender:Gender.BOY,x:-1,y:2,angle:90),
+        Dancer.fromData(gender:Gender.GIRL,x:1,y:2,angle:90),
+        Dancer.fromData(gender:Gender.BOY,x:-1,y:2,angle:90),
   ]),
       from:'Couples Facing Out',
       paths:[
@@ -66,8 +66,8 @@ import '../../moves.dart';
 
     AnimatedCall('Vertical Tag',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:1,y:2,angle:90),
-        DancerModel.fromData(gender:Gender.GIRL,x:-1,y:2,angle:270),
+        Dancer.fromData(gender:Gender.BOY,x:1,y:2,angle:90),
+        Dancer.fromData(gender:Gender.GIRL,x:-1,y:2,angle:270),
   ]),
       from:'Left-Hand Box',
       taminator: '''Note that the dancers pass right shoulders.
@@ -121,8 +121,8 @@ import '../../moves.dart';
 
     AnimatedCall('Vertical 1/2 Tag',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:1,y:1.5,angle:270),
-        DancerModel.fromData(gender:Gender.GIRL,x:-1,y:1.5,angle:270),
+        Dancer.fromData(gender:Gender.BOY,x:1,y:1.5,angle:270),
+        Dancer.fromData(gender:Gender.GIRL,x:-1,y:1.5,angle:270),
   ]),
       from:'Facing Couples',
       taminator: '''Compare this with Belles Cross.''',
@@ -156,8 +156,8 @@ import '../../moves.dart';
 
     AnimatedCall('Vertical 1/2 Tag',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:1,y:2,angle:90),
-        DancerModel.fromData(gender:Gender.GIRL,x:-1,y:2,angle:270),
+        Dancer.fromData(gender:Gender.BOY,x:1,y:2,angle:90),
+        Dancer.fromData(gender:Gender.GIRL,x:-1,y:2,angle:270),
   ]),
       from:'Left-Hand Box',
       paths:[

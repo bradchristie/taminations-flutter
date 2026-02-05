@@ -29,6 +29,6 @@ class FacingTheCaller extends FilterActives {
   FacingTheCaller(super.name);
 
   @override
-  bool isActive(DancerModel d, CallContext ctx) => d.angleFacing.isAround(pi);
+  bool isActive(Dancer d, CallContext ctx) => d.angleFacing.isAround(pi);
 
 }

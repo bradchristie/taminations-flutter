@@ -26,10 +26,10 @@ import '../../moves.dart';
 
     AnimatedCall('Counter Rotate',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:3,y:1.5,angle:270),
-        DancerModel.fromData(gender:Gender.GIRL,x:1,y:1.5,angle:90),
-        DancerModel.fromData(gender:Gender.GIRL,x:-1,y:1.5,angle:270),
-        DancerModel.fromData(gender:Gender.BOY,x:-3,y:1.5,angle:90),
+        Dancer.fromData(gender:Gender.BOY,x:3,y:1.5,angle:270),
+        Dancer.fromData(gender:Gender.GIRL,x:1,y:1.5,angle:90),
+        Dancer.fromData(gender:Gender.GIRL,x:-1,y:1.5,angle:270),
+        Dancer.fromData(gender:Gender.BOY,x:-3,y:1.5,angle:90),
   ]),
       from:'Right-Hand Waves',
       taminator: '''
@@ -60,10 +60,10 @@ import '../../moves.dart';
 
     AnimatedCall('Counter Rotate',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:-3.5,y:0,angle:90),
-        DancerModel.fromData(gender:Gender.GIRL,x:-2.5,y:0,angle:270),
-        DancerModel.fromData(gender:Gender.GIRL,x:-1.5,y:0,angle:90),
-        DancerModel.fromData(gender:Gender.BOY,x:-.5,y:0,angle:270),
+        Dancer.fromData(gender:Gender.BOY,x:-3.5,y:0,angle:90),
+        Dancer.fromData(gender:Gender.GIRL,x:-2.5,y:0,angle:270),
+        Dancer.fromData(gender:Gender.GIRL,x:-1.5,y:0,angle:90),
+        Dancer.fromData(gender:Gender.BOY,x:-.5,y:0,angle:270),
   ]),
       from:'Right-Hand Tidal Wave',
       paths:[
@@ -240,10 +240,10 @@ import '../../moves.dart';
 
     AnimatedCall('Counter Rotate',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.GIRL,x:-1,y:3,angle:270),
-        DancerModel.fromData(gender:Gender.GIRL,x:-1,y:1,angle:90),
-        DancerModel.fromData(gender:Gender.BOY,x:-1,y:-1,angle:90),
-        DancerModel.fromData(gender:Gender.BOY,x:-1,y:-3,angle:270),
+        Dancer.fromData(gender:Gender.GIRL,x:-1,y:3,angle:270),
+        Dancer.fromData(gender:Gender.GIRL,x:-1,y:1,angle:90),
+        Dancer.fromData(gender:Gender.BOY,x:-1,y:-1,angle:90),
+        Dancer.fromData(gender:Gender.BOY,x:-1,y:-3,angle:270),
   ]),
       from:'Magic Columns, Right-Hand Centers',
       paths:[
@@ -271,10 +271,10 @@ import '../../moves.dart';
 
     AnimatedCall('Counter Rotate',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:-2,y:1,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:-2,y:-1,angle:180),
-        DancerModel.fromData(gender:Gender.GIRL,x:-2,y:-3,angle:0),
-        DancerModel.fromData(gender:Gender.BOY,x:-2,y:-5,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:-2,y:1,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:-2,y:-1,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:-2,y:-3,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:-2,y:-5,angle:180),
   ]),
       from:'Parallelogram',
       paths:[

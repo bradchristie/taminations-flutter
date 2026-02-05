@@ -27,7 +27,7 @@ import '../b2/alamo_style.dart' as b2;
 
     AnimatedCall('Step to a Wave',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:1.5,y:0,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:1.5,y:0,angle:180),
   ]),
       from:'Facing Dancers',difficulty: 2,
       paths:[
@@ -71,7 +71,7 @@ import '../b2/alamo_style.dart' as b2;
 
     AnimatedCall('Step to a Left-Hand Wave',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:1.5,y:0,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:1.5,y:0,angle:180),
   ]),
       from:'Facing Dancers',difficulty: 2,
       paths:[

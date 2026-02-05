@@ -48,7 +48,7 @@ class QuarterInOut extends Action {
   }
 
   @override
-  Path performOne(DancerModel d, CallContext ctx) {
+  Path performOne(Dancer d, CallContext ctx) {
     final isOut = name.matches('.*out'.ri);
     if (ctx.isBox()) {
       if (d.isCenterLeft)

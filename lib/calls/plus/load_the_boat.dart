@@ -26,8 +26,8 @@ import '../../moves.dart';
 
     AnimatedCall('Load the Boat',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:-2,y:3,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:-2,y:-3,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:-2,y:3,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:-2,y:-3,angle:0),
   ]),
       from:'Ends Facing Only',isPerimeter:true,noDisplay: true,
       paths:[
@@ -46,8 +46,8 @@ import '../../moves.dart';
 
     AnimatedCall('Load the Boat',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:-2,y:3,angle:180),
-        DancerModel.fromData(gender:Gender.GIRL,x:-2,y:-3,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:-2,y:3,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:-2,y:-3,angle:180),
   ]),
       from:'Ends Back-to-Back Only',isPerimeter:true,noDisplay: true,
       paths:[
@@ -62,8 +62,8 @@ import '../../moves.dart';
 
     AnimatedCall('Load the Boat',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:0,y:3.5,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:0,y:-2.5,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:0,y:3.5,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:0,y:-2.5,angle:0),
   ]),
       from:'Ends in Mini-Waves',isPerimeter:true,noDisplay: true,
       paths:[
@@ -209,10 +209,10 @@ import '../../moves.dart';
 
     AnimatedCall('Load the Boat',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:0,y:-3,angle:180),
-        DancerModel.fromData(gender:Gender.GIRL,x:-3,y:-2,angle:90),
-        DancerModel.fromData(gender:Gender.BOY,x:0,y:-1,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:3,y:-2,angle:90),
+        Dancer.fromData(gender:Gender.BOY,x:0,y:-3,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:-3,y:-2,angle:90),
+        Dancer.fromData(gender:Gender.BOY,x:0,y:-1,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:3,y:-2,angle:90),
   ]),
       from:'Diamonds, Points Facing',parts:'3;3;3',difficulty: 3,
       paths:[
@@ -291,10 +291,10 @@ import '../../moves.dart';
 
     AnimatedCall('Load the Boat',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:-1,y:-3,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:-1,y:1,angle:270),
-        DancerModel.fromData(gender:Gender.BOY,x:-1,y:-1,angle:90),
-        DancerModel.fromData(gender:Gender.GIRL,x:-1,y:3,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:-1,y:-3,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:-1,y:1,angle:270),
+        Dancer.fromData(gender:Gender.BOY,x:-1,y:-1,angle:90),
+        Dancer.fromData(gender:Gender.GIRL,x:-1,y:3,angle:0),
   ]),
       from:'T-Bones, Ends Facing In',parts:'3;3;3',difficulty: 3,
       paths:[
@@ -321,10 +321,10 @@ import '../../moves.dart';
 
     AnimatedCall('Load the Boat',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:-1,y:-3,angle:180),
-        DancerModel.fromData(gender:Gender.GIRL,x:-1,y:1,angle:270),
-        DancerModel.fromData(gender:Gender.BOY,x:-1,y:-1,angle:90),
-        DancerModel.fromData(gender:Gender.GIRL,x:-1,y:3,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:-1,y:-3,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:-1,y:1,angle:270),
+        Dancer.fromData(gender:Gender.BOY,x:-1,y:-1,angle:90),
+        Dancer.fromData(gender:Gender.GIRL,x:-1,y:3,angle:180),
   ]),
       from:'T-Bones, Ends Facing Out',parts:'3;3;3',difficulty: 3,
       paths:[

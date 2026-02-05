@@ -26,12 +26,12 @@ import '../../moves.dart';
 
     AnimatedCall('Triple Diamond Circulate',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:2,y:0,angle:270),
-        DancerModel.fromData(gender:Gender.GIRL,x:0,y:-5,angle:180),
-        DancerModel.fromData(gender:Gender.GIRL,x:0,y:-3,angle:0),
-        DancerModel.fromData(gender:Gender.BOY,x:0,y:-1,angle:180),
-        DancerModel.fromData(gender:Gender.PHANTOM,x:2,y:4,angle:270),
-        DancerModel.fromData(gender:Gender.PHANTOM,x:-2,y:4,angle:90),
+        Dancer.fromData(gender:Gender.BOY,x:2,y:0,angle:270),
+        Dancer.fromData(gender:Gender.GIRL,x:0,y:-5,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:0,y:-3,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:0,y:-1,angle:180),
+        Dancer.fromData(gender:Gender.PHANTOM,x:2,y:4,angle:270),
+        Dancer.fromData(gender:Gender.PHANTOM,x:-2,y:4,angle:90),
   ]),
       from:'Triple Diamonds',
       paths:[

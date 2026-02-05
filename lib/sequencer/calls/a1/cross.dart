@@ -49,9 +49,9 @@ class Cross extends Action {
   }
 
   @override
-  Path performOne(DancerModel d, CallContext ctx) {
+  Path performOne(Dancer d, CallContext ctx) {
     //  Find the other dancer to cross with
-    DancerModel? d2;
+    Dancer? d2;
     for (var it in ctx.actives) {
       //  Not too far away
       if (d.data.end && it.data.end && d.distanceTo(it) > 6.0)

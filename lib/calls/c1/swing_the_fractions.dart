@@ -81,10 +81,10 @@ import '../c1/replace.dart' as c1;
 
     AnimatedCall('Swing the Fractions',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:-3,y:0,angle:90),
-        DancerModel.fromData(gender:Gender.GIRL,x:-2,y:3,angle:180),
-        DancerModel.fromData(gender:Gender.BOY,x:-1,y:0,angle:270),
-        DancerModel.fromData(gender:Gender.GIRL,x:-2,y:-3,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:-3,y:0,angle:90),
+        Dancer.fromData(gender:Gender.GIRL,x:-2,y:3,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:-1,y:0,angle:270),
+        Dancer.fromData(gender:Gender.GIRL,x:-2,y:-3,angle:0),
   ]),
       from:'Facing Diamonds',parts:'1.5;3;4.5;3',
       paths:[
@@ -165,10 +165,10 @@ import '../c1/replace.dart' as c1;
 
     AnimatedCall('Left Swing the Fractions',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:-3,y:0,angle:270),
-        DancerModel.fromData(gender:Gender.GIRL,x:-2,y:3,angle:0),
-        DancerModel.fromData(gender:Gender.BOY,x:-1,y:0,angle:90),
-        DancerModel.fromData(gender:Gender.GIRL,x:-2,y:-3,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:-3,y:0,angle:270),
+        Dancer.fromData(gender:Gender.GIRL,x:-2,y:3,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:-1,y:0,angle:90),
+        Dancer.fromData(gender:Gender.GIRL,x:-2,y:-3,angle:180),
   ]),
       from:'Facing Diamonds',parts:'1.5;3;4.5;3',
       paths:[
@@ -195,10 +195,10 @@ import '../c1/replace.dart' as c1;
 
     AnimatedCall('Any Hand Swing the Fractions',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:3,y:2,angle:270),
-        DancerModel.fromData(gender:Gender.GIRL,x:1,y:2,angle:90),
-        DancerModel.fromData(gender:Gender.BOY,x:-1,y:2,angle:90),
-        DancerModel.fromData(gender:Gender.GIRL,x:-3,y:2,angle:270),
+        Dancer.fromData(gender:Gender.BOY,x:3,y:2,angle:270),
+        Dancer.fromData(gender:Gender.GIRL,x:1,y:2,angle:90),
+        Dancer.fromData(gender:Gender.BOY,x:-1,y:2,angle:90),
+        Dancer.fromData(gender:Gender.GIRL,x:-3,y:2,angle:270),
   ]),
       from:'Inverted Line Ends Facing In',group:' ',parts:'1.5;3;4.5;3',
       paths:[

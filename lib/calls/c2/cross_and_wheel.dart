@@ -45,10 +45,10 @@ import '../../moves.dart';
 
     AnimatedCall('Cross and Wheel',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:3,y:2,angle:270),
-        DancerModel.fromData(gender:Gender.GIRL,x:1,y:2,angle:270),
-        DancerModel.fromData(gender:Gender.GIRL,x:-1,y:2,angle:90),
-        DancerModel.fromData(gender:Gender.BOY,x:-3,y:2,angle:90),
+        Dancer.fromData(gender:Gender.BOY,x:3,y:2,angle:270),
+        Dancer.fromData(gender:Gender.GIRL,x:1,y:2,angle:270),
+        Dancer.fromData(gender:Gender.GIRL,x:-1,y:2,angle:90),
+        Dancer.fromData(gender:Gender.BOY,x:-3,y:2,angle:90),
   ]),
       from:'Right-Hand Two-Faced Lines',parts:'3',
       paths:[
@@ -630,10 +630,10 @@ import '../../moves.dart';
 
     AnimatedCall('Grand Single Cross Trade and Wheel',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.GIRL,x:-1,y:3,angle:90),
-        DancerModel.fromData(gender:Gender.BOY,x:-1,y:1,angle:90),
-        DancerModel.fromData(gender:Gender.GIRL,x:-1,y:-1,angle:90),
-        DancerModel.fromData(gender:Gender.BOY,x:-1,y:-3,angle:90),
+        Dancer.fromData(gender:Gender.GIRL,x:-1,y:3,angle:90),
+        Dancer.fromData(gender:Gender.BOY,x:-1,y:1,angle:90),
+        Dancer.fromData(gender:Gender.GIRL,x:-1,y:-1,angle:90),
+        Dancer.fromData(gender:Gender.BOY,x:-1,y:-3,angle:90),
   ]),
       from:'Right-Hand Columns',parts:'1.5;3',
       paths:[

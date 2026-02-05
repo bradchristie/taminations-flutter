@@ -26,8 +26,8 @@ import '../../moves.dart';
 
     AnimatedCall('Boomerang',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:1,y:2,angle:270),
-        DancerModel.fromData(gender:Gender.GIRL,x:1,y:-2,angle:270),
+        Dancer.fromData(gender:Gender.BOY,x:1,y:2,angle:270),
+        Dancer.fromData(gender:Gender.GIRL,x:1,y:-2,angle:270),
   ]),
       from:'Right-Hand Box',fractions:'3',
       paths:[
@@ -53,8 +53,8 @@ import '../../moves.dart';
 
     AnimatedCall('Boomerang',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:1,y:1,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:1,y:-1,angle:90),
+        Dancer.fromData(gender:Gender.BOY,x:1,y:1,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:1,y:-1,angle:90),
   ]),
       from:'T-Bone Box',fractions:'3',
       paths:[

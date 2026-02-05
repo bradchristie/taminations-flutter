@@ -181,10 +181,10 @@ import '../../moves.dart';
 
     AnimatedCall('Extend',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:-1,y:-2,angle:90),
-        DancerModel.fromData(gender:Gender.GIRL,x:0,y:-.5,angle:270),
-        DancerModel.fromData(gender:Gender.BOY,x:1,y:-2,angle:270),
-        DancerModel.fromData(gender:Gender.GIRL,x:0,y:-3.5,angle:90),
+        Dancer.fromData(gender:Gender.BOY,x:-1,y:-2,angle:90),
+        Dancer.fromData(gender:Gender.GIRL,x:0,y:-.5,angle:270),
+        Dancer.fromData(gender:Gender.BOY,x:1,y:-2,angle:270),
+        Dancer.fromData(gender:Gender.GIRL,x:0,y:-3.5,angle:90),
   ]),
       from:'Tidal Quarter Tag',difficulty: 3,
       paths:[
@@ -199,10 +199,10 @@ import '../../moves.dart';
 
     AnimatedCall('Extend',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:-1,y:-2,angle:270),
-        DancerModel.fromData(gender:Gender.GIRL,x:0,y:-.5,angle:270),
-        DancerModel.fromData(gender:Gender.BOY,x:1,y:-2,angle:90),
-        DancerModel.fromData(gender:Gender.GIRL,x:0,y:-3.5,angle:90),
+        Dancer.fromData(gender:Gender.BOY,x:-1,y:-2,angle:270),
+        Dancer.fromData(gender:Gender.GIRL,x:0,y:-.5,angle:270),
+        Dancer.fromData(gender:Gender.BOY,x:1,y:-2,angle:90),
+        Dancer.fromData(gender:Gender.GIRL,x:0,y:-3.5,angle:90),
   ]),
       from:'Tidal Left Quarter Tag',difficulty: 3,
       paths:[
@@ -243,10 +243,10 @@ import '../../moves.dart';
 
     AnimatedCall('Extend',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:-1,y:-2,angle:90),
-        DancerModel.fromData(gender:Gender.GIRL,x:0,y:-.5,angle:90),
-        DancerModel.fromData(gender:Gender.BOY,x:1,y:-2,angle:270),
-        DancerModel.fromData(gender:Gender.GIRL,x:0,y:-3.5,angle:270),
+        Dancer.fromData(gender:Gender.BOY,x:-1,y:-2,angle:90),
+        Dancer.fromData(gender:Gender.GIRL,x:0,y:-.5,angle:90),
+        Dancer.fromData(gender:Gender.BOY,x:1,y:-2,angle:270),
+        Dancer.fromData(gender:Gender.GIRL,x:0,y:-3.5,angle:270),
   ]),
       from:'Tidal 3/4 Tag',difficulty: 3,
       paths:[
@@ -261,10 +261,10 @@ import '../../moves.dart';
 
     AnimatedCall('Extend',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:-1,y:-2,angle:270),
-        DancerModel.fromData(gender:Gender.GIRL,x:0,y:-.5,angle:90),
-        DancerModel.fromData(gender:Gender.BOY,x:1,y:-2,angle:90),
-        DancerModel.fromData(gender:Gender.GIRL,x:0,y:-3.5,angle:270),
+        Dancer.fromData(gender:Gender.BOY,x:-1,y:-2,angle:270),
+        Dancer.fromData(gender:Gender.GIRL,x:0,y:-.5,angle:90),
+        Dancer.fromData(gender:Gender.BOY,x:1,y:-2,angle:90),
+        Dancer.fromData(gender:Gender.GIRL,x:0,y:-3.5,angle:270),
   ]),
       from:'Tidal Left 3/4 Tag',difficulty: 3,
       paths:[

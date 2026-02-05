@@ -318,10 +318,10 @@ import '../c3b/bingo.dart' as c3b;
 
     AnimatedCall('As Couples Ladies Center as the Men Sashay',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:-2.414,y:1,angle:-22.5),
-        DancerModel.fromData(gender:Gender.GIRL,x:1,y:2.414,angle:247.5),
-        DancerModel.fromData(gender:Gender.BOY,x:-2.414,y:-1,angle:22.5),
-        DancerModel.fromData(gender:Gender.GIRL,x:-1,y:2.414,angle:292.5),
+        Dancer.fromData(gender:Gender.BOY,x:-2.414,y:1,angle:-22.5),
+        Dancer.fromData(gender:Gender.GIRL,x:1,y:2.414,angle:247.5),
+        Dancer.fromData(gender:Gender.BOY,x:-2.414,y:-1,angle:22.5),
+        Dancer.fromData(gender:Gender.GIRL,x:-1,y:2.414,angle:292.5),
   ]),
       group:'As Couples (with calls through Plus)',
       paths:[
@@ -547,10 +547,10 @@ import '../c3b/bingo.dart' as c3b;
 
     AnimatedCall('As Couples Slide Thru',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:-2,y:3,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:-2,y:-1,angle:0),
-        DancerModel.fromData(gender:Gender.BOY,x:-2,y:1,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:-2,y:-3,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:-2,y:3,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:-2,y:-1,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:-2,y:1,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:-2,y:-3,angle:0),
   ]),
       group:'As Couples (with calls through Plus)',isGenderSpecific:true,
       paths:[
@@ -569,10 +569,10 @@ import '../c3b/bingo.dart' as c3b;
 
     AnimatedCall('As Couples Slide Thru',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.GIRL,x:-2,y:3,angle:0),
-        DancerModel.fromData(gender:Gender.BOY,x:-2,y:-1,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:-2,y:1,angle:0),
-        DancerModel.fromData(gender:Gender.BOY,x:-2,y:-3,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:-2,y:3,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:-2,y:-1,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:-2,y:1,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:-2,y:-3,angle:0),
   ]),
       group:'As Couples (with calls through Plus)',isGenderSpecific:true,noDisplay: true,
       paths:[

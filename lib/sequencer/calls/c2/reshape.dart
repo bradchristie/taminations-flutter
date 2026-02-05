@@ -31,7 +31,7 @@ class Reshape extends TriangleCirculate {
   Reshape(super.name);
 
   @override
-  Path oneCirculatePath(DancerModel d, DancerModel d2, DancerModel d3) {
+  Path oneCirculatePath(Dancer d, Dancer d2, Dancer d3) {
     final dist = d.distanceTo(d2);
     final v = d.vectorToDancer(d2);
     //  Trailer of tandem-based triangle

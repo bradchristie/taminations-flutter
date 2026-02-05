@@ -26,10 +26,10 @@ import '../../moves.dart';
 
     AnimatedCall('Link Up',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.GIRL,x:-2,y:3,angle:0),
-        DancerModel.fromData(gender:Gender.BOY,x:-2,y:1,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:-2,y:-1,angle:180),
-        DancerModel.fromData(gender:Gender.BOY,x:-2,y:-3,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:-2,y:3,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:-2,y:1,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:-2,y:-1,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:-2,y:-3,angle:180),
   ]),
       from:'Right-Hand Two-Faced Lines',fractions:'2',
       paths:[

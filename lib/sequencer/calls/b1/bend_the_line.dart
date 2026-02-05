@@ -30,7 +30,7 @@ For groups of 3 (or 4) dancers working together, use Line of 6 (or 8) Bend the L
   BendTheLine(super.name);
 
   @override
-  Path performOne(DancerModel d, CallContext ctx) {
+  Path performOne(Dancer d, CallContext ctx) {
     if (!ctx.isInCouple(d) || !d.data.partner!.data.active)
       throw CallError('Only couples can Bend the Line' );
     var ys = d.distanceTo(d.data.partner!)/2.0;

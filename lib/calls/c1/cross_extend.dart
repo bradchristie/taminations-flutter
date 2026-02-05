@@ -115,10 +115,10 @@ import '../../moves.dart';
     AnimatedCall('Cross Extend',
         from: 'Point-to-Point 1/4 Tag',
         formation: Formation('', dancers:[
-          DancerModel.fromData(gender:Gender.BOY,x:0,y:1,angle:90),
-          DancerModel.fromData(gender:Gender.GIRL,x:1,y:3,angle:270),
-          DancerModel.fromData(gender:Gender.BOY,x:0,y:5,angle:270),
-          DancerModel.fromData(gender:Gender.GIRL,x:-1,y:3,angle:90),
+          Dancer.fromData(gender:Gender.BOY,x:0,y:1,angle:90),
+          Dancer.fromData(gender:Gender.GIRL,x:1,y:3,angle:270),
+          Dancer.fromData(gender:Gender.BOY,x:0,y:5,angle:270),
+          Dancer.fromData(gender:Gender.GIRL,x:-1,y:3,angle:90),
         ]),
         paths: [
           ExtendRight.changeBeats(2).skew(-1, 0),
@@ -133,10 +133,10 @@ import '../../moves.dart';
     AnimatedCall('Cross Extend',
         from: 'Point-to-Point Left-Hand 1/4 Tag',
         formation: Formation('', dancers:[
-          DancerModel.fromData(gender:Gender.BOY,x:0,y:1,angle:90),
-          DancerModel.fromData(gender:Gender.GIRL,x:1,y:3,angle:90),
-          DancerModel.fromData(gender:Gender.BOY,x:0,y:5,angle:270),
-          DancerModel.fromData(gender:Gender.GIRL,x:-1,y:3,angle:270),
+          Dancer.fromData(gender:Gender.BOY,x:0,y:1,angle:90),
+          Dancer.fromData(gender:Gender.GIRL,x:1,y:3,angle:90),
+          Dancer.fromData(gender:Gender.BOY,x:0,y:5,angle:270),
+          Dancer.fromData(gender:Gender.GIRL,x:-1,y:3,angle:270),
         ]),
         paths: [
           ExtendLeft.changeBeats(2).skew(-1, 0),

@@ -26,10 +26,10 @@ import '../../moves.dart';
 
     AnimatedCall('Those Facing, Start Right and Left Thru',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.GIRL,x:-2,y:3,angle:180),
-        DancerModel.fromData(gender:Gender.BOY,x:-2,y:-1,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:-2,y:1,angle:0),
-        DancerModel.fromData(gender:Gender.BOY,x:-2,y:-3,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:-2,y:3,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:-2,y:-1,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:-2,y:1,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:-2,y:-3,angle:180),
   ]),
       group:' ',fractions:'3',
       paths:[
@@ -48,10 +48,10 @@ import '../../moves.dart';
 
     AnimatedCall('Men Start, Pass the Ocean',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.GIRL,x:-2,y:3,angle:180),
-        DancerModel.fromData(gender:Gender.BOY,x:-2,y:1,angle:0),
-        DancerModel.fromData(gender:Gender.BOY,x:-2,y:-1,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:-2,y:-3,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:-2,y:3,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:-2,y:1,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:-2,y:-1,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:-2,y:-3,angle:180),
   ]),
       group:' ',isGenderSpecific:true,fractions:'3',
       paths:[
@@ -97,10 +97,10 @@ import '../../moves.dart';
 
     AnimatedCall('Ladies Start, Touch 1/4 and Cross',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:-1,y:3,angle:90),
-        DancerModel.fromData(gender:Gender.GIRL,x:-1,y:1,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:-1,y:-1,angle:0),
-        DancerModel.fromData(gender:Gender.BOY,x:-1,y:-3,angle:90),
+        Dancer.fromData(gender:Gender.BOY,x:-1,y:3,angle:90),
+        Dancer.fromData(gender:Gender.GIRL,x:-1,y:1,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:-1,y:-1,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:-1,y:-3,angle:90),
   ]),
       group:' ',isGenderSpecific:true,fractions:'2.5',
       paths:[
@@ -121,10 +121,10 @@ import '../../moves.dart';
 
     AnimatedCall('Girls Start, Spin the Top',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.GIRL,x:-2,y:3,angle:0),
-        DancerModel.fromData(gender:Gender.BOY,x:-2,y:-1,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:-2,y:1,angle:180),
-        DancerModel.fromData(gender:Gender.BOY,x:-2,y:-3,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:-2,y:3,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:-2,y:-1,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:-2,y:1,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:-2,y:-3,angle:180),
   ]),
       group:' ',isGenderSpecific:true,fractions:'3',
       paths:[

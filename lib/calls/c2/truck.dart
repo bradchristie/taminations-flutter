@@ -52,10 +52,10 @@ import '../../moves.dart';
 
     AnimatedCall('Girls Truck',
         formation:    Formation('', dancers:[
-          DancerModel.fromData(gender:Gender.BOY,x:-1,y:-1,angle:0),
-          DancerModel.fromData(gender:Gender.GIRL,x:-1,y:3,angle:0),
-          DancerModel.fromData(gender:Gender.BOY,x:-3,y:1,angle:180),
-          DancerModel.fromData(gender:Gender.GIRL,x:-3,y:-3,angle:180),
+          Dancer.fromData(gender:Gender.BOY,x:-1,y:-1,angle:0),
+          Dancer.fromData(gender:Gender.GIRL,x:-1,y:3,angle:0),
+          Dancer.fromData(gender:Gender.BOY,x:-3,y:1,angle:180),
+          Dancer.fromData(gender:Gender.GIRL,x:-3,y:-3,angle:180),
         ]),
         from:'Blocks',isGenderSpecific:true,group: ' ',
         paths:[
@@ -67,10 +67,10 @@ import '../../moves.dart';
 
     AnimatedCall('Reverse Truck',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:-3,y:1,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:-1,y:1,angle:0),
-        DancerModel.fromData(gender:Gender.BOY,x:-3,y:-1,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:-1,y:-1,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:-3,y:1,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:-1,y:1,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:-3,y:-1,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:-1,y:-1,angle:0),
   ]),
       from:'Double Pass Thru, Girls in Center',isGenderSpecific:true, group: ' ',
       paths:[
@@ -85,10 +85,10 @@ import '../../moves.dart';
 
     AnimatedCall('Boys Reverse Truck',
         formation:    Formation('', dancers:[
-          DancerModel.fromData(gender:Gender.BOY,x:-3,y:3,angle:0),
-          DancerModel.fromData(gender:Gender.GIRL,x:-3,y:-1,angle:0),
-          DancerModel.fromData(gender:Gender.BOY,x:-1,y:-3,angle:180),
-          DancerModel.fromData(gender:Gender.GIRL,x:-1,y:1,angle:180),
+          Dancer.fromData(gender:Gender.BOY,x:-3,y:3,angle:0),
+          Dancer.fromData(gender:Gender.GIRL,x:-3,y:-1,angle:0),
+          Dancer.fromData(gender:Gender.BOY,x:-1,y:-3,angle:180),
+          Dancer.fromData(gender:Gender.GIRL,x:-1,y:1,angle:180),
         ]),
         from:'Blocks',isGenderSpecific:true, group: ' ',
         paths:[

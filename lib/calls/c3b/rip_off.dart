@@ -78,10 +78,10 @@ import '../../moves.dart';
 
     AnimatedCall('Rip Off',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:3,y:1,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:1,y:1,angle:180),
-        DancerModel.fromData(gender:Gender.BOY,x:1,y:-1,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:3,y:-1,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:3,y:1,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:1,y:1,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:1,y:-1,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:3,y:-1,angle:180),
   ]),
       from:'Magic Columns',
       paths:[
@@ -111,10 +111,10 @@ import '../../moves.dart';
 
     AnimatedCall('Mirror Rip Off',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:3,y:1,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:1,y:1,angle:180),
-        DancerModel.fromData(gender:Gender.BOY,x:1,y:-1,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:3,y:-1,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:3,y:1,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:1,y:1,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:1,y:-1,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:3,y:-1,angle:180),
   ]),
       from:'Magic Columns',
       paths:[

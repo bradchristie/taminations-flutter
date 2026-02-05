@@ -38,7 +38,7 @@ class Zig extends Action {
   }
 
   @override
-  Path performOne(DancerModel d, CallContext ctx) {
+  Path performOne(Dancer d, CallContext ctx) {
     var move = Stand;
     if (d.data.leader && name == 'Zig')
       move = QuarterRight;

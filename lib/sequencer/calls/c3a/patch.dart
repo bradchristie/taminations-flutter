@@ -26,8 +26,8 @@ class Patch extends Action with ActivesOnly, CallWithParts {
 
   @override var level = LevelData.C3A;
   @override int numberOfParts = 2;
-  var origBeaus = <DancerModel>[];
-  var origBelles = <DancerModel>[];
+  var origBeaus = <Dancer>[];
+  var origBelles = <Dancer>[];
 
   Patch(super.name);
 

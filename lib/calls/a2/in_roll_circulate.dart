@@ -108,10 +108,10 @@ import '../../moves.dart';
 
     AnimatedCall('In-Roll Circulate',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:-2,y:3,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:-2,y:1,angle:180),
-        DancerModel.fromData(gender:Gender.GIRL,x:-2,y:-1,angle:180),
-        DancerModel.fromData(gender:Gender.BOY,x:-2,y:-3,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:-2,y:3,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:-2,y:1,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:-2,y:-1,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:-2,y:-3,angle:180),
   ]),
       from:'3 and 1 Lines #5',fractions:'2',
       taminator: '''
@@ -224,10 +224,10 @@ import '../../moves.dart';
 
     AnimatedCall('Out-Roll Circulate',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:-2,y:3,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:-2,y:1,angle:180),
-        DancerModel.fromData(gender:Gender.GIRL,x:-2,y:-1,angle:180),
-        DancerModel.fromData(gender:Gender.BOY,x:-2,y:-3,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:-2,y:3,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:-2,y:1,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:-2,y:-1,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:-2,y:-3,angle:180),
   ]),
       from:'3 and 1 Lines #5',fractions:'3',
       taminator: '''

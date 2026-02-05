@@ -26,10 +26,10 @@ import '../../moves.dart';
 
     AnimatedCall('Boys Disconnected Crossfire',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:0,y:3,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:0,y:-.6,angle:0),
-        DancerModel.fromData(gender:Gender.BOY,x:0,y:1.8,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:0,y:4.2,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:0,y:3,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:0,y:-.6,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:0,y:1.8,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:0,y:4.2,angle:0),
   ]),
       group:'Boys Disconnected',isGenderSpecific:true,
       paths:[
@@ -61,10 +61,10 @@ import '../../moves.dart';
 
     AnimatedCall('Girls Disconnected Crossfire',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.GIRL,x:0,y:-2.5,angle:0),
-        DancerModel.fromData(gender:Gender.BOY,x:0,y:-3.5,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:0,y:-.5,angle:0),
-        DancerModel.fromData(gender:Gender.BOY,x:0,y:-1.5,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:0,y:-2.5,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:0,y:-3.5,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:0,y:-.5,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:0,y:-1.5,angle:0),
   ]),
       group:'Girls Disconnected',isGenderSpecific:true,
       paths:[
@@ -168,10 +168,10 @@ import '../../moves.dart';
 
     AnimatedCall('Same Sex Disconnected Crossfire',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.GIRL,x:0,y:3.5,angle:0),
-        DancerModel.fromData(gender:Gender.BOY,x:0,y:2.5,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:0,y:.5,angle:0),
-        DancerModel.fromData(gender:Gender.BOY,x:0,y:1.5,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:0,y:3.5,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:0,y:2.5,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:0,y:.5,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:0,y:1.5,angle:0),
   ]),
       group:' ',isGenderSpecific:true,
       paths:[
@@ -192,10 +192,10 @@ import '../../moves.dart';
 
     AnimatedCall('Disconnected Columns of 3 Circulate',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:1,y:4,angle:270),
-        DancerModel.fromData(gender:Gender.GIRL,x:1,y:0,angle:270),
-        DancerModel.fromData(gender:Gender.BOY,x:1,y:-4,angle:270),
-        DancerModel.fromData(gender:Gender.GIRL,x:0,y:2,angle:270),
+        Dancer.fromData(gender:Gender.BOY,x:1,y:4,angle:270),
+        Dancer.fromData(gender:Gender.GIRL,x:1,y:0,angle:270),
+        Dancer.fromData(gender:Gender.BOY,x:1,y:-4,angle:270),
+        Dancer.fromData(gender:Gender.GIRL,x:0,y:2,angle:270),
   ]),
       group:' ',
       paths:[

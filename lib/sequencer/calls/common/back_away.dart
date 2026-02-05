@@ -31,7 +31,7 @@ Move backwards one full position.  (This is not a real call.)
   BackAway(super.name);
 
   @override
-  Path performOne(DancerModel d, CallContext ctx) {
+  Path performOne(Dancer d, CallContext ctx) {
     //  TODO hold hands with partner?
     return Back_2;
   }

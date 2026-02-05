@@ -18,7 +18,7 @@
 
 */
 
-import '../../../dancer_model.dart';
+import '../../../dancer.dart';
 import '../../../extensions.dart';
 import '../../call_context.dart';
 import '../../call_error.dart';
@@ -29,7 +29,7 @@ class First extends FilterActives {
   First(super.name);
 
   @override
-  bool isActive(DancerModel d, CallContext ctx) {
+  bool isActive(Dancer d, CallContext ctx) {
     if (!ctx.isColumns())
       throw CallError('First n is only for Columns');
     var n = name.last.i;
@@ -44,7 +44,7 @@ class Last extends FilterActives {
   Last(super.name);
 
   @override
-  bool isActive(DancerModel d, CallContext ctx) {
+  bool isActive(Dancer d, CallContext ctx) {
     if (!ctx.isColumns())
       throw CallError('Last n is only for Columns');
     var n = name.last.i;

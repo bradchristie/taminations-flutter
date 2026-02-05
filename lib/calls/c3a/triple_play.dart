@@ -26,10 +26,10 @@ import '../../moves.dart';
 
     AnimatedCall('Triple Play',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.GIRL,x:-1,y:3,angle:90),
-        DancerModel.fromData(gender:Gender.BOY,x:-1,y:1,angle:90),
-        DancerModel.fromData(gender:Gender.GIRL,x:-1,y:-1,angle:90),
-        DancerModel.fromData(gender:Gender.BOY,x:-1,y:-3,angle:90),
+        Dancer.fromData(gender:Gender.GIRL,x:-1,y:3,angle:90),
+        Dancer.fromData(gender:Gender.BOY,x:-1,y:1,angle:90),
+        Dancer.fromData(gender:Gender.GIRL,x:-1,y:-1,angle:90),
+        Dancer.fromData(gender:Gender.BOY,x:-1,y:-3,angle:90),
   ]),
       from:'Right-Hand Columns',
       paths:[
@@ -109,10 +109,10 @@ import '../../moves.dart';
 
     AnimatedCall('Magic Column Triple Play',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.GIRL,x:-1,y:3,angle:90),
-        DancerModel.fromData(gender:Gender.BOY,x:-1,y:1,angle:270),
-        DancerModel.fromData(gender:Gender.GIRL,x:-1,y:-1,angle:270),
-        DancerModel.fromData(gender:Gender.BOY,x:-1,y:-3,angle:90),
+        Dancer.fromData(gender:Gender.GIRL,x:-1,y:3,angle:90),
+        Dancer.fromData(gender:Gender.BOY,x:-1,y:1,angle:270),
+        Dancer.fromData(gender:Gender.GIRL,x:-1,y:-1,angle:270),
+        Dancer.fromData(gender:Gender.BOY,x:-1,y:-3,angle:90),
   ]),
       from:'Magic Columns Left-Hand Centers',
       paths:[

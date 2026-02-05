@@ -107,10 +107,10 @@ import '../../moves.dart';
 
     AnimatedCall('Motivate',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:3,y:1,angle:270),
-        DancerModel.fromData(gender:Gender.GIRL,x:-1,y:1,angle:0),
-        DancerModel.fromData(gender:Gender.BOY,x:1,y:1,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:-3,y:1,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:3,y:1,angle:270),
+        Dancer.fromData(gender:Gender.GIRL,x:-1,y:1,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:1,y:1,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:-3,y:1,angle:0),
   ]),
       from:'T-Bones',parts:'2;4.5;3',difficulty: 3,
       paths:[

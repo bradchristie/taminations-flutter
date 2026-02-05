@@ -70,10 +70,10 @@ import '../../moves.dart';
 
     AnimatedCall('Secondly Tandem Reset',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.GIRL,x:1,y:1,angle:270),
-        DancerModel.fromData(gender:Gender.BOY,x:1,y:3,angle:270),
-        DancerModel.fromData(gender:Gender.GIRL,x:-1,y:3,angle:90),
-        DancerModel.fromData(gender:Gender.BOY,x:-1,y:1,angle:90),
+        Dancer.fromData(gender:Gender.GIRL,x:1,y:1,angle:270),
+        Dancer.fromData(gender:Gender.BOY,x:1,y:3,angle:270),
+        Dancer.fromData(gender:Gender.GIRL,x:-1,y:3,angle:90),
+        Dancer.fromData(gender:Gender.BOY,x:-1,y:1,angle:90),
   ]),
       group:'Secondly',fractions:'3;3;3',
       paths:[

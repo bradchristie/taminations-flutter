@@ -94,10 +94,10 @@ import '../a2/all_4_all_8.dart' as a2;
 
     AnimatedCall('Triple Star Thru',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:-3,y:-1,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:-3,y:1,angle:0),
-        DancerModel.fromData(gender:Gender.BOY,x:-1,y:1,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:-1,y:-1,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:-3,y:-1,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:-3,y:1,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:-1,y:1,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:-1,y:-1,angle:0),
   ]),
       from:'Double Pass Thru',isGenderSpecific:true,parts:'3;3',
       paths:[
@@ -126,10 +126,10 @@ import '../a2/all_4_all_8.dart' as a2;
 
     AnimatedCall('Triple Star Thru',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:-3,y:1,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:-3,y:-1,angle:0),
-        DancerModel.fromData(gender:Gender.BOY,x:-1,y:-1,angle:180),
-        DancerModel.fromData(gender:Gender.GIRL,x:-1,y:1,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:-3,y:1,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:-3,y:-1,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:-1,y:-1,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:-1,y:1,angle:180),
   ]),
       from:'Eight Chain Thru',isGenderSpecific:true,parts:'3;3',
       paths:[

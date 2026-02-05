@@ -26,10 +26,10 @@ import '../../moves.dart';
 
     AnimatedCall('Something New',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:-3,y:1,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:-3,y:-1,angle:180),
-        DancerModel.fromData(gender:Gender.BOY,x:-1,y:1,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:-1,y:-1,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:-3,y:1,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:-3,y:-1,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:-1,y:1,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:-1,y:-1,angle:180),
   ]),
       from:'Right-Hand Columns',
       numbers: ['1','8','2','7','3','6','4','5'],

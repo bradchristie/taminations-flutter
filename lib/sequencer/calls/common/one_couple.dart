@@ -25,7 +25,7 @@ class OneCouple extends FilterActives {
   OneCouple(super.name);
 
   @override
-  bool isActive(DancerModel d, CallContext ctx) {
+  bool isActive(Dancer d, CallContext ctx) {
     if (ctx.isSquare()) {
       if (d.location.x.isAbout(-3.0))
         return name.contains('1');

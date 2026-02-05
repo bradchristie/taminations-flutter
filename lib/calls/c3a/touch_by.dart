@@ -26,8 +26,8 @@ import '../../moves.dart';
 
     AnimatedCall('Touch By 1/2 By 1/4',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:0,y:3,angle:270),
-        DancerModel.fromData(gender:Gender.GIRL,x:0,y:1,angle:270),
+        Dancer.fromData(gender:Gender.BOY,x:0,y:3,angle:270),
+        Dancer.fromData(gender:Gender.GIRL,x:0,y:1,angle:270),
   ]),
       group:' ',parts:'6',
       paths:[
@@ -42,8 +42,8 @@ import '../../moves.dart';
 
     AnimatedCall('Touch By 1/4 By 1/2',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:0,y:3,angle:270),
-        DancerModel.fromData(gender:Gender.GIRL,x:0,y:1,angle:270),
+        Dancer.fromData(gender:Gender.BOY,x:0,y:3,angle:270),
+        Dancer.fromData(gender:Gender.GIRL,x:0,y:1,angle:270),
   ]),
       group:' ',parts:'5',
       paths:[
@@ -57,10 +57,10 @@ import '../../moves.dart';
 
     AnimatedCall('Touch By 1/4 By Swing Thru',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:1,y:3,angle:270),
-        DancerModel.fromData(gender:Gender.GIRL,x:1,y:1,angle:270),
-        DancerModel.fromData(gender:Gender.BOY,x:1,y:-1,angle:90),
-        DancerModel.fromData(gender:Gender.GIRL,x:1,y:-3,angle:90),
+        Dancer.fromData(gender:Gender.BOY,x:1,y:3,angle:270),
+        Dancer.fromData(gender:Gender.GIRL,x:1,y:1,angle:270),
+        Dancer.fromData(gender:Gender.BOY,x:1,y:-1,angle:90),
+        Dancer.fromData(gender:Gender.GIRL,x:1,y:-3,angle:90),
   ]),
       group:' ',
       paths:[

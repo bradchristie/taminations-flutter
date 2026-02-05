@@ -23,7 +23,7 @@ class QuarterThru extends Action with ActivesOnly, CallWithParts, IsLeft, IsGran
 
   @override var level = LevelData.A1;
   @override var numberOfParts = 2;
-  List<DancerModel>? part1dancers;
+  List<Dancer>? part1dancers;
   bool isThree;
   @override var help = '''1/4 Thru is a 2-part call:
   1.  Hinge

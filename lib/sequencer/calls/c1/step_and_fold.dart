@@ -28,7 +28,7 @@ class StepAndFold extends Action with ActivesOnly {
   StepAndFold(super.name);
 
   @override
-  Path performOne(DancerModel d, CallContext ctx) {
+  Path performOne(Dancer d, CallContext ctx) {
     if (d.data.center) {
       return Forward;
     } else if (d.data.end) {

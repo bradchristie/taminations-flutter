@@ -150,10 +150,10 @@ import '../../moves.dart';
 
     AnimatedCall('Line of 6 Bend the Line', group: ' ', difficulty: 2,
         formation: Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:-3,y:0,angle:90),
-        DancerModel.fromData(gender:Gender.GIRL,x:0,y:1,angle:180),
-        DancerModel.fromData(gender:Gender.BOY,x:0,y:3,angle:180),
-        DancerModel.fromData(gender:Gender.GIRL,x:0,y:5,angle:180)]),
+        Dancer.fromData(gender:Gender.BOY,x:-3,y:0,angle:90),
+        Dancer.fromData(gender:Gender.GIRL,x:0,y:1,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:0,y:3,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:0,y:5,angle:180)]),
         paths: [
           Stand,
           BackHingeRight.skew(-1, 0),
@@ -164,9 +164,9 @@ import '../../moves.dart';
     //  For sequencer, all possible lines of just 6 dancers BTL
     AnimatedCall('Line of 6 Bend the Line', group: ' ', difficulty: 2,
         formation: Formation('', dancers:[
-          DancerModel.fromData(gender:Gender.GIRL,x:0,y:1,angle:180),
-          DancerModel.fromData(gender:Gender.BOY,x:0,y:3,angle:180),
-          DancerModel.fromData(gender:Gender.GIRL,x:0,y:5,angle:180)]),
+          Dancer.fromData(gender:Gender.GIRL,x:0,y:1,angle:180),
+          Dancer.fromData(gender:Gender.BOY,x:0,y:3,angle:180),
+          Dancer.fromData(gender:Gender.GIRL,x:0,y:5,angle:180)]),
         paths: [
           BackHingeRight.skew(-1, 0),
           HingeLeft.changehands(Hands.BOTH).skew(-1, 0),
@@ -175,9 +175,9 @@ import '../../moves.dart';
 
     AnimatedCall('Line of 6 Bend the Line', group: ' ', difficulty: 2,
         formation: Formation('', dancers:[
-          DancerModel.fromData(gender:Gender.GIRL,x:0,y:1,angle:0),
-          DancerModel.fromData(gender:Gender.BOY,x:0,y:3,angle:0),
-          DancerModel.fromData(gender:Gender.GIRL,x:0,y:5,angle:0)]),
+          Dancer.fromData(gender:Gender.GIRL,x:0,y:1,angle:0),
+          Dancer.fromData(gender:Gender.BOY,x:0,y:3,angle:0),
+          Dancer.fromData(gender:Gender.GIRL,x:0,y:5,angle:0)]),
         paths: [
           BackHingeLeft.skew(-1, 0),
           HingeRight.changehands(Hands.BOTH).skew(-1, 0),
@@ -186,12 +186,12 @@ import '../../moves.dart';
 
     AnimatedCall('Line of 6 Bend the Line', group: ' ', difficulty: 2,
         formation: Formation('',asymmetric: true, dancers:[
-          DancerModel.fromData(gender:Gender.GIRL,x:0,y:1,angle:0),
-          DancerModel.fromData(gender:Gender.BOY,x:0,y:3,angle:0),
-          DancerModel.fromData(gender:Gender.GIRL,x:0,y:5,angle:0),
-          DancerModel.fromData(gender:Gender.BOY,x:0,y:-1,angle:0),
-          DancerModel.fromData(gender:Gender.GIRL,x:0,y:-3,angle:0),
-          DancerModel.fromData(gender:Gender.BOY,x:0,y:-5,angle:0)]),
+          Dancer.fromData(gender:Gender.GIRL,x:0,y:1,angle:0),
+          Dancer.fromData(gender:Gender.BOY,x:0,y:3,angle:0),
+          Dancer.fromData(gender:Gender.GIRL,x:0,y:5,angle:0),
+          Dancer.fromData(gender:Gender.BOY,x:0,y:-1,angle:0),
+          Dancer.fromData(gender:Gender.GIRL,x:0,y:-3,angle:0),
+          Dancer.fromData(gender:Gender.BOY,x:0,y:-5,angle:0)]),
         paths: [
           BackHingeLeft.skew(-1, 0),
           HingeRight.changehands(Hands.BOTH).skew(-1, 0),
@@ -232,14 +232,14 @@ import '../../moves.dart';
     AnimatedCall('Line of 8 Bend the Line',
         formation:
         Formation('',asymmetric: true, dancers:[
-          DancerModel.fromData(gender:Gender.BOY,x:0,y:-3.5,angle:180),
-          DancerModel.fromData(gender:Gender.GIRL,x:0,y:-2.5,angle:180),
-          DancerModel.fromData(gender:Gender.BOY,x:0,y:-1.5,angle:180),
-          DancerModel.fromData(gender:Gender.GIRL,x:0,y:-.5,angle:180),
-          DancerModel.fromData(gender:Gender.BOY,x:0,y:3.5,angle:180),
-          DancerModel.fromData(gender:Gender.GIRL,x:0,y:2.5,angle:180),
-          DancerModel.fromData(gender:Gender.BOY,x:0,y:1.5,angle:180),
-          DancerModel.fromData(gender:Gender.GIRL,x:0,y:.5,angle:180),
+          Dancer.fromData(gender:Gender.BOY,x:0,y:-3.5,angle:180),
+          Dancer.fromData(gender:Gender.GIRL,x:0,y:-2.5,angle:180),
+          Dancer.fromData(gender:Gender.BOY,x:0,y:-1.5,angle:180),
+          Dancer.fromData(gender:Gender.GIRL,x:0,y:-.5,angle:180),
+          Dancer.fromData(gender:Gender.BOY,x:0,y:3.5,angle:180),
+          Dancer.fromData(gender:Gender.GIRL,x:0,y:2.5,angle:180),
+          Dancer.fromData(gender:Gender.BOY,x:0,y:1.5,angle:180),
+          Dancer.fromData(gender:Gender.GIRL,x:0,y:.5,angle:180),
         ]),
         from:'Tidal Line One-Faced',difficulty: 2, noDisplay: true,
         paths:[

@@ -76,10 +76,10 @@ import '../../moves.dart';
 
     AnimatedCall('Cast a Shadow',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:3,y:2,angle:270),
-        DancerModel.fromData(gender:Gender.GIRL,x:1,y:2,angle:270),
-        DancerModel.fromData(gender:Gender.GIRL,x:-1,y:2,angle:90),
-        DancerModel.fromData(gender:Gender.BOY,x:-3,y:2,angle:90),
+        Dancer.fromData(gender:Gender.BOY,x:3,y:2,angle:270),
+        Dancer.fromData(gender:Gender.GIRL,x:1,y:2,angle:270),
+        Dancer.fromData(gender:Gender.GIRL,x:-1,y:2,angle:90),
+        Dancer.fromData(gender:Gender.BOY,x:-3,y:2,angle:90),
   ]),
       from:'Right-Hand Two-Faced Lines',
       paths:[
@@ -104,10 +104,10 @@ import '../../moves.dart';
 
     AnimatedCall('Cast a Shadow',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.GIRL,x:3,y:2,angle:90),
-        DancerModel.fromData(gender:Gender.BOY,x:1,y:2,angle:90),
-        DancerModel.fromData(gender:Gender.BOY,x:-1,y:2,angle:270),
-        DancerModel.fromData(gender:Gender.GIRL,x:-3,y:2,angle:270),
+        Dancer.fromData(gender:Gender.GIRL,x:3,y:2,angle:90),
+        Dancer.fromData(gender:Gender.BOY,x:1,y:2,angle:90),
+        Dancer.fromData(gender:Gender.BOY,x:-1,y:2,angle:270),
+        Dancer.fromData(gender:Gender.GIRL,x:-3,y:2,angle:270),
   ]),
       from:'Left-Hand Two-Faced Lines',
       paths:[
@@ -224,10 +224,10 @@ import '../../moves.dart';
 
     AnimatedCall('Heads Cast a Shadow',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.GIRL,x:0,y:3,angle:180),
-        DancerModel.fromData(gender:Gender.BOY,x:0,y:1.5,angle:180),
-        DancerModel.fromData(gender:Gender.GIRL,x:-3,y:0,angle:270),
-        DancerModel.fromData(gender:Gender.BOY,x:-1.5,y:0,angle:270),
+        Dancer.fromData(gender:Gender.GIRL,x:0,y:3,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:0,y:1.5,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:-3,y:0,angle:270),
+        Dancer.fromData(gender:Gender.BOY,x:-1.5,y:0,angle:270),
   ]),
       group:' ',
       paths:[

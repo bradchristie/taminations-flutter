@@ -20,11 +20,20 @@
 
 
 import 'package:flutter/material.dart' as fm;
+import 'package:flutter/painting.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import 'common_flutter.dart';
 import 'dance_model.dart';
 
 class DancePainter extends fm.CustomPainter  {
+
+  //  Shapes for drawing dancers
+  static const rect = fm.Rect.fromLTWH(-0.5, -0.5, 1.0, 1.0);
+  static var rrect = fm.RRect.fromRectAndRadius(rect,
+      fm.Radius.circular(0.3));
+  static const NUMBER_HEIGHT = 8.0;
+
 
   DanceModel model;
 
@@ -43,9 +52,11 @@ class DancePainter extends fm.CustomPainter  {
   var hasParts = false;
   var hasCalls = false;
   String partstr = '';
+  Map<Dancer,fm.Path> paths = {};
 
   DancePainter(this.model) : super(repaint:model.beater) {
     _prevbeat = 0; // model.beater.beat;
+    computePaths();
   }
 
   @override
@@ -90,8 +101,32 @@ class DancePainter extends fm.CustomPainter  {
         (d.location - hhloc).length < 0.5 );
   }
 
+  // Compute points of paths for drawing path
+  void computePaths() {
+    for (var d in model.dancers) {
+      d.animate(0);
+      var loc = d.location;
+      var path = fm.Path();
+      path.moveTo(loc.x, loc.y);
+      for (var beat = 0.1; beat <= d.beats; beat += 0.1) {
+        d.animate(beat);
+        loc = d.location;
+        path.lineTo(loc.x, loc.y);
+      }
+      paths[d] = path;
+    }
+  }
 
-
+  ///   Draw the entire Dancer's path as a translucent colored line
+  /// @param c  Canvas to draw to
+  void drawPath(fm.Canvas c, Dancer d) {
+    //  The path color is a partly transparent version of the draw color
+    var p = fm.Paint()
+      ..color = d.drawColor.withAlpha(128)
+      ..style = fm.PaintingStyle.stroke
+      ..strokeWidth = 0.1;
+    c.drawPath(paths[d]!, p);
+  }
 
   /// Updates dancers positions based on the passage of realtime.
   /// Called at the start of onDraw().
@@ -230,7 +265,7 @@ class DancePainter extends fm.CustomPainter  {
     //  Draw paths if requested
     model.dancers.forEach((d) {
       if (!d.hidden && (model.showPaths || d.showPath))
-        d.drawPath(ctx);
+        drawPath(ctx,d);
     });
 
     //  Draw handholds
@@ -267,7 +302,7 @@ class DancePainter extends fm.CustomPainter  {
 
     //  Draw dancers
     model.dancers.where((d) => !d.hidden).forEach((d) {
-      d.draw(ctx);
+      drawDancer(ctx,d);
     });
     ctx.restore();
   }
@@ -386,5 +421,67 @@ class DancePainter extends fm.CustomPainter  {
         break;
     }
   }
+
+  //  Draw the Dancer at its current position
+  //  The Canvas is already transformed to the Dancer's position and orientation
+  //  and scaled to the Dancer's size
+  void drawDancer(fm.Canvas c, Dancer d) {
+    var dc = d.showColor ? d.drawColor : Color.GRAY;
+    var fc = d.showColor ? d.fillColor : Color.LIGHTGREY;
+    c.save();
+    //ctx.transform(d.tx);  not available on Flutter
+    c.translate(d.location.x,d.location.y);
+    c.rotate(d.tx.angle);
+    //  Draw the head
+    var p = fm.Paint()..color = dc;
+    c.drawCircle(fm.Offset(0.5,0.0), 0.33, p);
+    //  Draw the body
+    final reallyShowNumbers =
+        d.showNumber != Dancer.NUMBERS_OFF &&
+            d.gender != Gender.PHANTOM &&
+            d.fillColor != Color.GRAY;
+    p.color = reallyShowNumbers ? fc.veryBright() : fc;
+    var g = d.showShape ? d.gender : Gender.PHANTOM;
+    if (g == Gender.BOY)
+      c.drawRect(rect, p);
+    else if (g == Gender.GIRL)
+      c.drawCircle(fm.Offset(0,0), 0.5, p);
+    else
+      c.drawRRect(rrect, p);
+    //  Draw the body outline
+    p.strokeWidth = 0.1;
+    p.color = dc;
+    p.style = fm.PaintingStyle.stroke;
+    if (g == Gender.BOY)
+      c.drawRect(rect, p);
+    else if (g == Gender.GIRL)
+      c.drawCircle(fm.Offset(0,0), 0.5, p);
+    else
+      c.drawRRect(rrect, p);
+    //  Draw number if on
+    if (reallyShowNumbers) {
+      //  The Dancer is rotated relative to the display, but of course
+      //  the Dancer number should not be rotated.
+      //  So the number needs to be transformed back
+      var angle = atan2(d.tx.m12,d.tx.m22);
+      var txtext = Matrix.getRotation(-angle + pi/2);
+      c.translate(txtext.location.x,txtext.location.y);
+      c.rotate(txtext.angle);
+      c.scale(-0.1,0.1);
+      var t = '';
+      if (d.showNumber == Dancer.NUMBERS_DANCERS) t = d.number;
+      if (d.showNumber == Dancer.NUMBERS_COUPLES) t = d.numberCouple;
+      if (d.showNumber == Dancer.NUMBERS_NAMES) t = d.name;
+      var _span = TextSpan(text: t,
+          style:GoogleFonts.roboto(fontSize: NUMBER_HEIGHT, color: fm.Colors.black));
+      var _tp = TextPainter(text: _span,
+          textAlign: TextAlign.center,
+          textDirection: fm.TextDirection.ltr)..layout();
+
+      _tp.paint(c, fm.Offset(-_tp.width/2,-_tp.height/2));
+    }
+    c.restore();
+  }
+
 
 }

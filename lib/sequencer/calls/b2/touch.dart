@@ -29,7 +29,7 @@ class Touch extends Action with IsLeft {
   Touch(super.name);
 
   @override
-  Path performOne(DancerModel d, CallContext ctx) {
+  Path performOne(Dancer d, CallContext ctx) {
     var d2 = ctx.dancerFacing(d);
     if (d2 == null || !d2.data.active)
       return ctx.dancerCannotPerform(d,name);

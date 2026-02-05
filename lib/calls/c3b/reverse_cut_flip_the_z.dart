@@ -27,8 +27,8 @@ final List<AnimatedCall> ReverseCutFlipTheZ = [
   AnimatedCall('Reverse Cut the "Z"',
       from: 'Right-Hand Z 1',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:-3,y:1,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:0,y:1,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:-3,y:1,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:0,y:1,angle:0),
       ]),
       paths: [
         Stand.changeBeats(3) +
@@ -42,8 +42,8 @@ final List<AnimatedCall> ReverseCutFlipTheZ = [
   AnimatedCall('Reverse Cut the "Z"',
       from: 'Right-Hand Z 2',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:-3,y:-1,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:0,y:1,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:-3,y:-1,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:0,y:1,angle:0),
       ]),
       paths: [
         Stand.changeBeats(3) +
@@ -57,8 +57,8 @@ final List<AnimatedCall> ReverseCutFlipTheZ = [
   AnimatedCall('Reverse Cut the "Z"',
       from: 'Right-Hand Z 3',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:-3,y:1,angle:180),
-        DancerModel.fromData(gender:Gender.GIRL,x:0,y:1,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:-3,y:1,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:0,y:1,angle:0),
       ]),
       paths: [
         RunLeft.changeBeats(6).skew(-3, 0),
@@ -71,8 +71,8 @@ final List<AnimatedCall> ReverseCutFlipTheZ = [
   AnimatedCall('Reverse Cut the "Z"',
       from: 'Right-Hand Z 4',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:-3,y:-1,angle:180),
-        DancerModel.fromData(gender:Gender.GIRL,x:0,y:1,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:-3,y:-1,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:0,y:1,angle:0),
       ]),
       paths: [
         RunRight.changeBeats(6).skew(-3, 0),
@@ -85,8 +85,8 @@ final List<AnimatedCall> ReverseCutFlipTheZ = [
   AnimatedCall('Reverse Cut the "Z"',
       from: 'Left-Hand Z 1',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:-3,y:-1,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:0,y:1,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:-3,y:-1,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:0,y:1,angle:180),
       ]),
       paths: [
         Stand.changeBeats(3) +
@@ -100,8 +100,8 @@ final List<AnimatedCall> ReverseCutFlipTheZ = [
   AnimatedCall('Reverse Cut the "Z"',
       from: 'Left-Hand Z 2',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:-3,y:1,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:0,y:1,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:-3,y:1,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:0,y:1,angle:180),
       ]),
       paths: [
         Stand.changeBeats(3) +
@@ -115,8 +115,8 @@ final List<AnimatedCall> ReverseCutFlipTheZ = [
   AnimatedCall('Reverse Cut the "Z"',
       from: 'Left-Hand Z 3',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:-3,y:-1,angle:180),
-        DancerModel.fromData(gender:Gender.GIRL,x:0,y:1,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:-3,y:-1,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:0,y:1,angle:180),
       ]),
       paths: [
         RunRight.changeBeats(6).skew(-3, 0),
@@ -129,8 +129,8 @@ final List<AnimatedCall> ReverseCutFlipTheZ = [
   AnimatedCall('Reverse Cut the "Z"',
       from: 'Left-Hand Z 4',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:-3,y:1,angle:180),
-        DancerModel.fromData(gender:Gender.GIRL,x:0,y:1,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:-3,y:1,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:0,y:1,angle:180),
       ]),
       paths: [
         RunLeft.changeBeats(6).skew(-3, 0),
@@ -145,8 +145,8 @@ final List<AnimatedCall> ReverseCutFlipTheZ = [
   AnimatedCall('Reverse Flip the "Z"',
       from: 'Right-Hand Z 1',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:-3,y:1,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:0,y:1,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:-3,y:1,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:0,y:1,angle:0),
       ]),
       paths: [
         Forward_3,
@@ -158,8 +158,8 @@ final List<AnimatedCall> ReverseCutFlipTheZ = [
   AnimatedCall('Reverse Flip the "Z"',
       from: 'Right-Hand Z 2',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:-3,y:-1,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:0,y:1,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:-3,y:-1,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:0,y:1,angle:0),
       ]),
       paths: [
         Forward_3,
@@ -171,8 +171,8 @@ final List<AnimatedCall> ReverseCutFlipTheZ = [
   AnimatedCall('Reverse Flip the "Z"',
       from: 'Right-Hand Z 3',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:-3,y:1,angle:180),
-        DancerModel.fromData(gender:Gender.GIRL,x:0,y:1,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:-3,y:1,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:0,y:1,angle:0),
       ]),
       paths: [
         RunLeft.changeBeats(6).skew(-3, 0),
@@ -184,8 +184,8 @@ final List<AnimatedCall> ReverseCutFlipTheZ = [
   AnimatedCall('Reverse Flip the "Z"',
       from: 'Right-Hand Z 4',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:-3,y:-1,angle:180),
-        DancerModel.fromData(gender:Gender.GIRL,x:0,y:1,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:-3,y:-1,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:0,y:1,angle:0),
       ]),
       paths: [
         RunRight.changeBeats(6).skew(-3, 0),
@@ -197,8 +197,8 @@ final List<AnimatedCall> ReverseCutFlipTheZ = [
   AnimatedCall('Reverse Flip the "Z"',
       from: 'Left-Hand Z 1',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:-3,y:-1,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:0,y:1,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:-3,y:-1,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:0,y:1,angle:180),
       ]),
       paths: [
         Forward_3,
@@ -211,8 +211,8 @@ final List<AnimatedCall> ReverseCutFlipTheZ = [
   AnimatedCall('Reverse Flip the "Z"',
       from: 'Left-Hand Z 2',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:-3,y:1,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:0,y:1,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:-3,y:1,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:0,y:1,angle:180),
       ]),
       paths: [
         Forward_3,
@@ -224,8 +224,8 @@ final List<AnimatedCall> ReverseCutFlipTheZ = [
   AnimatedCall('Reverse Flip the "Z"',
       from: 'Left-Hand Z 3',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:-3,y:-1,angle:180),
-        DancerModel.fromData(gender:Gender.GIRL,x:0,y:1,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:-3,y:-1,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:0,y:1,angle:180),
       ]),
       paths: [
         RunRight.changeBeats(6).skew(-3, 0),
@@ -237,8 +237,8 @@ final List<AnimatedCall> ReverseCutFlipTheZ = [
   AnimatedCall('Reverse Flip the "Z"',
       from: 'Left-Hand Z 4',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:-3,y:1,angle:180),
-        DancerModel.fromData(gender:Gender.GIRL,x:0,y:1,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:-3,y:1,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:0,y:1,angle:180),
       ]),
       paths: [
         RunLeft.changeBeats(6).skew(-3, 0),

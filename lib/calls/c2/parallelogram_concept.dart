@@ -26,10 +26,10 @@ import '../../moves.dart';
 
     AnimatedCall('Parallelogram Acey Deucey',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:-2,y:1,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:-2,y:-1,angle:180),
-        DancerModel.fromData(gender:Gender.GIRL,x:-2,y:-3,angle:0),
-        DancerModel.fromData(gender:Gender.BOY,x:-2,y:-5,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:-2,y:1,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:-2,y:-1,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:-2,y:-3,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:-2,y:-5,angle:180),
   ]),
       group:'Parallelogram',
       paths:[
@@ -44,10 +44,10 @@ import '../../moves.dart';
 
     AnimatedCall('Parallelogram Bend the Line',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.GIRL,x:-2,y:1,angle:180),
-        DancerModel.fromData(gender:Gender.BOY,x:-2,y:-1,angle:180),
-        DancerModel.fromData(gender:Gender.BOY,x:-2,y:-3,angle:180),
-        DancerModel.fromData(gender:Gender.GIRL,x:-2,y:-5,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:-2,y:1,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:-2,y:-1,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:-2,y:-3,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:-2,y:-5,angle:180),
   ]),
       group:'Parallelogram',
       paths:[
@@ -62,10 +62,10 @@ import '../../moves.dart';
 
     AnimatedCall('Parallelogram Cast Off 3/4',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:-2,y:1,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:-2,y:-1,angle:180),
-        DancerModel.fromData(gender:Gender.GIRL,x:-2,y:-3,angle:0),
-        DancerModel.fromData(gender:Gender.BOY,x:-2,y:-5,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:-2,y:1,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:-2,y:-1,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:-2,y:-3,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:-2,y:-5,angle:180),
   ]),
       group:'Parallelogram',
       paths:[
@@ -80,10 +80,10 @@ import '../../moves.dart';
 
     AnimatedCall('Parallelogram In Roll Circulate',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:-2,y:1,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:-2,y:-1,angle:180),
-        DancerModel.fromData(gender:Gender.GIRL,x:-2,y:-3,angle:0),
-        DancerModel.fromData(gender:Gender.BOY,x:-2,y:-5,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:-2,y:1,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:-2,y:-1,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:-2,y:-3,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:-2,y:-5,angle:180),
   ]),
       group:'Parallelogram',
       paths:[
@@ -98,10 +98,10 @@ import '../../moves.dart';
 
     AnimatedCall('Parallelogram Pass the Ocean',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:-2,y:1,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:-2,y:-1,angle:0),
-        DancerModel.fromData(gender:Gender.BOY,x:-2,y:-3,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:-2,y:-5,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:-2,y:1,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:-2,y:-1,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:-2,y:-3,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:-2,y:-5,angle:0),
   ]),
       group:'Parallelogram',
       paths:[
@@ -120,10 +120,10 @@ import '../../moves.dart';
 
     AnimatedCall('Parallelogram Recycle',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:-2,y:1,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:-2,y:-1,angle:180),
-        DancerModel.fromData(gender:Gender.GIRL,x:-2,y:-3,angle:0),
-        DancerModel.fromData(gender:Gender.BOY,x:-2,y:-5,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:-2,y:1,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:-2,y:-1,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:-2,y:-3,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:-2,y:-5,angle:180),
   ]),
       group:'Parallelogram',
       paths:[
@@ -140,10 +140,10 @@ import '../../moves.dart';
 
     AnimatedCall('Parallelogram Scoot Back',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:-2,y:1,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:-2,y:-1,angle:180),
-        DancerModel.fromData(gender:Gender.GIRL,x:-2,y:-3,angle:0),
-        DancerModel.fromData(gender:Gender.BOY,x:-2,y:-5,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:-2,y:1,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:-2,y:-1,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:-2,y:-3,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:-2,y:-5,angle:180),
   ]),
       group:'Parallelogram',
       paths:[
@@ -162,10 +162,10 @@ import '../../moves.dart';
 
     AnimatedCall('Parallelogram Slide Thru',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:-2,y:1,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:-2,y:-1,angle:0),
-        DancerModel.fromData(gender:Gender.BOY,x:-2,y:-3,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:-2,y:-5,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:-2,y:1,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:-2,y:-1,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:-2,y:-3,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:-2,y:-5,angle:0),
   ]),
       group:'Parallelogram',
       paths:[
@@ -184,10 +184,10 @@ import '../../moves.dart';
 
     AnimatedCall('Parallelogram Split Circulate',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:-2,y:1,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:-2,y:-1,angle:180),
-        DancerModel.fromData(gender:Gender.GIRL,x:-2,y:-3,angle:0),
-        DancerModel.fromData(gender:Gender.BOY,x:-2,y:-5,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:-2,y:1,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:-2,y:-1,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:-2,y:-3,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:-2,y:-5,angle:180),
   ]),
       group:'Parallelogram',
       paths:[
@@ -202,10 +202,10 @@ import '../../moves.dart';
 
     AnimatedCall('Parallelogram Walk and Dodge',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:-2,y:1,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:-2,y:-1,angle:180),
-        DancerModel.fromData(gender:Gender.GIRL,x:-2,y:-3,angle:0),
-        DancerModel.fromData(gender:Gender.BOY,x:-2,y:-5,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:-2,y:1,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:-2,y:-1,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:-2,y:-3,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:-2,y:-5,angle:180),
   ]),
       group:'Parallelogram',
       paths:[

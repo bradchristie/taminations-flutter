@@ -56,10 +56,10 @@ import '../../moves.dart';
 
     AnimatedCall('Scatter Circulate',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.GIRL,x:-2,y:3,angle:0),
-        DancerModel.fromData(gender:Gender.BOY,x:-2,y:1,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:-2,y:-1,angle:180),
-        DancerModel.fromData(gender:Gender.BOY,x:-2,y:-3,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:-2,y:3,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:-2,y:1,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:-2,y:-1,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:-2,y:-3,angle:180),
   ]),
       from:'Right-Hand Two-Faced Lines',
       paths:[
@@ -159,10 +159,10 @@ import '../../moves.dart';
 
     AnimatedCall('Scatter Circulate',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:1,y:3,angle:180),
-        DancerModel.fromData(gender:Gender.GIRL,x:1,y:1,angle:270),
-        DancerModel.fromData(gender:Gender.BOY,x:-1,y:3,angle:270),
-        DancerModel.fromData(gender:Gender.GIRL,x:-1,y:1,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:1,y:3,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:1,y:1,angle:270),
+        Dancer.fromData(gender:Gender.BOY,x:-1,y:3,angle:270),
+        Dancer.fromData(gender:Gender.GIRL,x:-1,y:1,angle:180),
   ]),
       from:'T-Bones 3',
       paths:[
@@ -178,10 +178,10 @@ import '../../moves.dart';
 
     AnimatedCall('Scatter Circulate',
         formation:Formation('', dancers:[
-          DancerModel.fromData(gender:Gender.BOY,x:1,y:3,angle:270),
-          DancerModel.fromData(gender:Gender.GIRL,x:1,y:1,angle:0),
-          DancerModel.fromData(gender:Gender.BOY,x:-1,y:3,angle:0),
-          DancerModel.fromData(gender:Gender.GIRL,x:-1,y:1,angle:270),
+          Dancer.fromData(gender:Gender.BOY,x:1,y:3,angle:270),
+          Dancer.fromData(gender:Gender.GIRL,x:1,y:1,angle:0),
+          Dancer.fromData(gender:Gender.BOY,x:-1,y:3,angle:0),
+          Dancer.fromData(gender:Gender.GIRL,x:-1,y:1,angle:270),
         ]),
         from:'T-Bones 4',
         paths:[

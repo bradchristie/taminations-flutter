@@ -24,7 +24,7 @@ import '../common.dart';
 //  Head Boys and Side Girls
 class DoubleSelector extends FilterActives {
 
-  var selectedDancers = <DancerModel>[];
+  var selectedDancers = <Dancer>[];
 
   DoubleSelector(super.name);
 
@@ -49,7 +49,7 @@ class DoubleSelector extends FilterActives {
   }
 
   @override
-  bool isActive(DancerModel d, CallContext ctx) {
+  bool isActive(Dancer d, CallContext ctx) {
     return selectedDancers.contains(d);
   }
 

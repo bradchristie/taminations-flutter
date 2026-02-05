@@ -29,7 +29,7 @@ class CaliforniaTwirl extends Action {
   CaliforniaTwirl(super.name);
 
   @override
-  Path performOne(DancerModel d, CallContext ctx) {
+  Path performOne(Dancer d, CallContext ctx) {
     if (d.gender == Gender.BOY) {
       var d2 = ctx.dancerToRight(d);
       if (d2 == null || d2.gender != Gender.GIRL || !d2.data.active)

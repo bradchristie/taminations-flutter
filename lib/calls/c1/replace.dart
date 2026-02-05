@@ -50,10 +50,10 @@ import '../../moves.dart';
 
     AnimatedCall('Coordinate, Replace Trade with a Remake',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:-3,y:1,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:-1,y:1,angle:0),
-        DancerModel.fromData(gender:Gender.BOY,x:1,y:1,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:3,y:1,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:-3,y:1,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:-1,y:1,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:1,y:1,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:3,y:1,angle:0),
   ]),
       group:' ',
       paths:[
@@ -133,10 +133,10 @@ import '../../moves.dart';
 
     AnimatedCall('Pass the Axle, Skip the Third Part',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:1,y:3,angle:270),
-        DancerModel.fromData(gender:Gender.GIRL,x:-1,y:3,angle:270),
-        DancerModel.fromData(gender:Gender.BOY,x:-1,y:1,angle:90),
-        DancerModel.fromData(gender:Gender.GIRL,x:1,y:1,angle:90),
+        Dancer.fromData(gender:Gender.BOY,x:1,y:3,angle:270),
+        Dancer.fromData(gender:Gender.GIRL,x:-1,y:3,angle:270),
+        Dancer.fromData(gender:Gender.BOY,x:-1,y:1,angle:90),
+        Dancer.fromData(gender:Gender.GIRL,x:1,y:1,angle:90),
   ]),
       group:' ',fractions:'2;4',
       paths:[

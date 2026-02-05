@@ -29,7 +29,7 @@ class TurnThru extends Action with IsLeft, IsToAWave {
   TurnThru(super.name);
 
   @override
-  Path performOne(DancerModel d, CallContext ctx) {
+  Path performOne(Dancer d, CallContext ctx) {
     var move1 = ExtendLeft;
     var move2 = SwingRight;
     var move3 = ExtendRight;

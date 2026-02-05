@@ -27,12 +27,12 @@ class SelectLocation extends FilterActives {
   SelectLocation(super.name);
 
   @override
-  bool isActive(DancerModel d, CallContext ctx) {
+  bool isActive(Dancer d, CallContext ctx) {
     var selector = switch (name.split(' ').first) {
-      'Near' => (DancerModel d2) => d2.location.x,
-      'Far' => (DancerModel d2) => -d2.location.x,
-      'Left' => (DancerModel d2) => -d2.location.y,
-      'Right' => (DancerModel d2) => d2.location.y,
+      'Near' => (Dancer d2) => d2.location.x,
+      'Far' => (Dancer d2) => -d2.location.x,
+      'Left' => (Dancer d2) => -d2.location.y,
+      'Right' => (Dancer d2) => d2.location.y,
       _ => throw CallError('Parse Error')
     };
 

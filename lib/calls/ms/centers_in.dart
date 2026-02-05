@@ -52,10 +52,10 @@ import '../../moves.dart';
 
     AnimatedCall('Centers In',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.GIRL,x:-3,y:1,angle:0),
-        DancerModel.fromData(gender:Gender.BOY,x:-3,y:-1,angle:180),
-        DancerModel.fromData(gender:Gender.GIRL,x:-1,y:1,angle:180),
-        DancerModel.fromData(gender:Gender.BOY,x:-1,y:-1,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:-3,y:1,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:-3,y:-1,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:-1,y:1,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:-1,y:-1,angle:180),
   ]),
       from:'Outer Right-Hand Mini-Wave',noDisplay: true,
       paths:[
@@ -70,10 +70,10 @@ import '../../moves.dart';
 
     AnimatedCall('Centers In',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.GIRL,x:-3,y:1,angle:180),
-        DancerModel.fromData(gender:Gender.BOY,x:-3,y:-1,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:-1,y:1,angle:180),
-        DancerModel.fromData(gender:Gender.BOY,x:-1,y:-1,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:-3,y:1,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:-3,y:-1,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:-1,y:1,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:-1,y:-1,angle:180),
   ]),
       from:'Outer Left-Hand Mini-Wave',noDisplay: true,
       paths:[

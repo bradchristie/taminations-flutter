@@ -26,10 +26,10 @@ import '../../moves.dart';
 
     AnimatedCall('Chisel Thru',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:3,y:2,angle:270),
-        DancerModel.fromData(gender:Gender.GIRL,x:1,y:2,angle:270),
-        DancerModel.fromData(gender:Gender.BOY,x:-1,y:2,angle:270),
-        DancerModel.fromData(gender:Gender.GIRL,x:-3,y:2,angle:270),
+        Dancer.fromData(gender:Gender.BOY,x:3,y:2,angle:270),
+        Dancer.fromData(gender:Gender.GIRL,x:1,y:2,angle:270),
+        Dancer.fromData(gender:Gender.BOY,x:-1,y:2,angle:270),
+        Dancer.fromData(gender:Gender.GIRL,x:-3,y:2,angle:270),
   ]),
       from:'Normal Lines',parts:'5;2.5',
       paths:[

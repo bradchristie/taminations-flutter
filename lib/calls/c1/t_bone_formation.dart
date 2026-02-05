@@ -26,10 +26,10 @@ import '../../moves.dart';
 
     AnimatedCall('Circulate',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.GIRL,x:-1,y:3,angle:90),
-        DancerModel.fromData(gender:Gender.BOY,x:-1,y:1,angle:180),
-        DancerModel.fromData(gender:Gender.GIRL,x:-1,y:-1,angle:90),
-        DancerModel.fromData(gender:Gender.BOY,x:-1,y:-3,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:-1,y:3,angle:90),
+        Dancer.fromData(gender:Gender.BOY,x:-1,y:1,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:-1,y:-1,angle:90),
+        Dancer.fromData(gender:Gender.BOY,x:-1,y:-3,angle:180),
   ]),
       group:'(T-Bone)',
       paths:[
@@ -44,10 +44,10 @@ import '../../moves.dart';
 
     AnimatedCall('Split Circulate',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.GIRL,x:-1,y:3,angle:90),
-        DancerModel.fromData(gender:Gender.BOY,x:-1,y:1,angle:180),
-        DancerModel.fromData(gender:Gender.GIRL,x:-1,y:-1,angle:90),
-        DancerModel.fromData(gender:Gender.BOY,x:-1,y:-3,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:-1,y:3,angle:90),
+        Dancer.fromData(gender:Gender.BOY,x:-1,y:1,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:-1,y:-1,angle:90),
+        Dancer.fromData(gender:Gender.BOY,x:-1,y:-3,angle:180),
   ]),
       group:'(T-Bone)',
       paths:[
@@ -62,10 +62,10 @@ import '../../moves.dart';
 
     AnimatedCall('Scoot Back',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.GIRL,x:-1,y:3,angle:0),
-        DancerModel.fromData(gender:Gender.BOY,x:-1,y:1,angle:270),
-        DancerModel.fromData(gender:Gender.GIRL,x:-1,y:-1,angle:0),
-        DancerModel.fromData(gender:Gender.BOY,x:-1,y:-3,angle:270),
+        Dancer.fromData(gender:Gender.GIRL,x:-1,y:3,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:-1,y:1,angle:270),
+        Dancer.fromData(gender:Gender.GIRL,x:-1,y:-1,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:-1,y:-3,angle:270),
   ]),
       group:'(T-Bone)',
       paths:[
@@ -84,10 +84,10 @@ import '../../moves.dart';
 
     AnimatedCall('Follow Your Neighbor',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.GIRL,x:1,y:3,angle:0),
-        DancerModel.fromData(gender:Gender.BOY,x:1,y:1,angle:90),
-        DancerModel.fromData(gender:Gender.GIRL,x:1,y:-1,angle:0),
-        DancerModel.fromData(gender:Gender.BOY,x:1,y:-3,angle:90),
+        Dancer.fromData(gender:Gender.GIRL,x:1,y:3,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:1,y:1,angle:90),
+        Dancer.fromData(gender:Gender.GIRL,x:1,y:-1,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:1,y:-3,angle:90),
   ]),
       from:'Left-Handed T-Bone',group:'(T-Bone)',
       paths:[

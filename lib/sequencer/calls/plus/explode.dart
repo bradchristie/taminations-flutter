@@ -32,7 +32,7 @@ class Explode extends Action {
   Explode(super.name);
 
   @override
-  Path performOne(DancerModel d, CallContext ctx) {
+  Path performOne(Dancer d, CallContext ctx) {
     var d2 = d.data.partner;
     if (d2 != null) {
       var dist = d.distanceTo(d2);

@@ -32,7 +32,7 @@ class Substitute extends SplitCall {
 
   //  archers needs to be static because it's a separate instance
   //  of Subsitute that uses it (yes a bit of a hack)
-  static var archers = <DancerModel>[];
+  static var archers = <Dancer>[];
   static var lateralFound = false;
 
   Substitute(super.name);
@@ -70,7 +70,7 @@ class Substitute extends SplitCall {
   }
 
   @override
-  Path performOne(DancerModel d, CallContext ctx) {
+  Path performOne(Dancer d, CallContext ctx) {
     //  Squares
     if (ctx.dancers.length == 4) {
       var (fx,fy) = (1.0,1.0);

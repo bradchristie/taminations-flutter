@@ -19,7 +19,7 @@
 */
 
 export 'cloneable.dart';
-export 'dancer_model.dart';
+export 'dancer.dart';
 export 'extensions.dart';
 export 'formation.dart';
 export 'math/hands.dart';

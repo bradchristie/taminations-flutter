@@ -46,8 +46,8 @@ class _Hop1 extends Action {
   _Hop1() : super('');
 
   @override var level = LevelData.C3A;
-  var walkers = <DancerModel>[];
-  var dodgers = <DancerModel>[];
+  var walkers = <Dancer>[];
+  var dodgers = <Dancer>[];
 
   @override
   void performCall(CallContext ctx) {
@@ -74,12 +74,12 @@ class _Hop1 extends Action {
 
   //  Only used for Part1
   @override
-  Path performOne(DancerModel d, CallContext ctx) {
+  Path performOne(Dancer d, CallContext ctx) {
     //  Code for walkers (Hoppers)
     //  Only works and checks for another dancer in front where it can "Hop" to
     if (walkers.contains(d)) {
       var d2 = ctx.dancerInFront(d)
-          ?? thrower<DancerModel>(CallError('Dancer $d cannot Hop'));
+          ?? thrower<Dancer>(CallError('Dancer $d cannot Hop'));
       var dist = d.distanceTo(d2);
       if (ctx.dancerInFront(d2) == d && walkers.contains(d2))
         return (ExtendLeft.scale(dist/2, 0.5) +
@@ -91,7 +91,7 @@ class _Hop1 extends Action {
       //  Must have a partner that is either hopping or dodging
     } else if (dodgers.contains(d)) {
       var d2 = d.data.partner
-          ?? thrower<DancerModel>(CallError('Dancer $d cannot Dodge'));
+          ?? thrower<Dancer>(CallError('Dancer $d cannot Dodge'));
       var dist = d.distanceTo(d2);
       if (ctx.dancerToRight(d) == d2) {
         if (dodgers.contains(d2))

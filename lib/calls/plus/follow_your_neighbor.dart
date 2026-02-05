@@ -76,8 +76,8 @@ import '../../moves.dart';
 
     AnimatedCall('Follow Your Neighbor',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:-1.0,y:1,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:-1.0,y:-1,angle:270),
+        Dancer.fromData(gender:Gender.BOY,x:-1.0,y:1,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:-1.0,y:-1,angle:270),
   ]),
       noDisplay: true,
       paths:[
@@ -91,8 +91,8 @@ import '../../moves.dart';
 
     AnimatedCall('Follow Your Neighbor',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:-1.0,y:-1,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:-1.0,y:1,angle:90),
+        Dancer.fromData(gender:Gender.BOY,x:-1.0,y:-1,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:-1.0,y:1,angle:90),
   ]),
       noDisplay: true,
       paths:[

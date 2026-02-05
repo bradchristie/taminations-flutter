@@ -44,7 +44,7 @@ class DiamondCirculate extends SplitCall with ActivesOnly {
   }
 
   @override
-  Path performOne(DancerModel d, CallContext ctx) {
+  Path performOne(Dancer d, CallContext ctx) {
     //  Should be exactly 1 other active dancer
     //  in front of this dancer within 90 degrees
     var offset = 0.5;

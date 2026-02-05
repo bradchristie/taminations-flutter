@@ -33,10 +33,10 @@ The star amount can be changed with Turn the Star (fraction).
 The final Cast Off 3/4 can be replaced with But (another call).''';
   @override var helplink = 'a2/motivate';
     var StarFormation = Formation('', dancers:[
-    DancerModel.fromData(gender:Gender.BOY,x:1,y:0,angle:270),
-    DancerModel.fromData(gender:Gender.GIRL,x:3,y:0,angle:90),
-    DancerModel.fromData(gender:Gender.BOY,x:5,y:0,angle:270),
-    DancerModel.fromData(gender:Gender.GIRL,x:0,y:1,angle:0),
+    Dancer.fromData(gender:Gender.BOY,x:1,y:0,angle:270),
+    Dancer.fromData(gender:Gender.GIRL,x:3,y:0,angle:90),
+    Dancer.fromData(gender:Gender.BOY,x:5,y:0,angle:270),
+    Dancer.fromData(gender:Gender.GIRL,x:0,y:1,angle:0),
   ]);
 
 
@@ -63,7 +63,7 @@ The final Cast Off 3/4 can be replaced with But (another call).''';
   @override
    void performPart4(CallContext ctx) {
     var cw4 = ctx.centerWaveOf4() ??
-        thrower<List<DancerModel>>(CallError('Unable to calculate Motivate'));
+        thrower<List<Dancer>>(CallError('Unable to calculate Motivate'));
     ctx.subContext(cw4, (ctx2) {
       ctx2.applyCalls(butCall);
     });

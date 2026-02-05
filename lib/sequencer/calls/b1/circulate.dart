@@ -85,7 +85,7 @@ class Circulate extends Action {
   }
 
   @override
-  Path performOne(DancerModel d, CallContext ctx) {
+  Path performOne(Dancer d, CallContext ctx) {
 
     //  The 'easier'  case - 4 dancer in any type of box
     if (ctx.actives.length == 4) {

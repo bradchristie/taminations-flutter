@@ -110,10 +110,10 @@ import '../../moves.dart';
 
     AnimatedCall('Own the Outsides: Linear Cycle by Pass the Ocean',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:0,y:5,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:0,y:3,angle:180),
-        DancerModel.fromData(gender:Gender.BOY,x:-1,y:1,angle:90),
-        DancerModel.fromData(gender:Gender.GIRL,x:1,y:1,angle:90),
+        Dancer.fromData(gender:Gender.BOY,x:0,y:5,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:0,y:3,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:-1,y:1,angle:90),
+        Dancer.fromData(gender:Gender.GIRL,x:1,y:1,angle:90),
   ]),
       from:'Right-Hand Tidal Wave',group:' ',
       paths:[

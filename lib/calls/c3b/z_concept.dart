@@ -26,10 +26,10 @@ import '../../moves.dart';
 
     AnimatedCall('(From offset lines) "Z" Chase Right',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:-1.5,y:2,angle:180),
-        DancerModel.fromData(gender:Gender.GIRL,x:-1.5,y:0,angle:180),
-        DancerModel.fromData(gender:Gender.GIRL,x:-1.5,y:-2,angle:180),
-        DancerModel.fromData(gender:Gender.BOY,x:-1.5,y:-4,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:-1.5,y:2,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:-1.5,y:0,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:-1.5,y:-2,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:-1.5,y:-4,angle:180),
   ]),
       group:'(From offset lines)',
       paths:[
@@ -51,10 +51,10 @@ import '../../moves.dart';
 
     AnimatedCall('(From offset lines) "Z" Shakedown',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:-1.5,y:2,angle:180),
-        DancerModel.fromData(gender:Gender.GIRL,x:-1.5,y:0,angle:180),
-        DancerModel.fromData(gender:Gender.GIRL,x:-1.5,y:-2,angle:180),
-        DancerModel.fromData(gender:Gender.BOY,x:-1.5,y:-4,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:-1.5,y:2,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:-1.5,y:0,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:-1.5,y:-2,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:-1.5,y:-4,angle:180),
   ]),
       group:'(From offset lines)',
       paths:[
@@ -73,10 +73,10 @@ import '../../moves.dart';
 
     AnimatedCall('(From offset lines) "Z" Split Circulate',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:-1.5,y:2,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:-1.5,y:0,angle:180),
-        DancerModel.fromData(gender:Gender.GIRL,x:-1.5,y:-2,angle:0),
-        DancerModel.fromData(gender:Gender.BOY,x:-1.5,y:-4,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:-1.5,y:2,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:-1.5,y:0,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:-1.5,y:-2,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:-1.5,y:-4,angle:180),
   ]),
       group:'(From offset lines)',
       paths:[
@@ -91,10 +91,10 @@ import '../../moves.dart';
 
     AnimatedCall('(From offset lines) "Z" Split Counter Rotate',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:-1.5,y:2,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:-1.5,y:0,angle:180),
-        DancerModel.fromData(gender:Gender.GIRL,x:-1.5,y:-2,angle:0),
-        DancerModel.fromData(gender:Gender.BOY,x:-1.5,y:-4,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:-1.5,y:2,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:-1.5,y:0,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:-1.5,y:-2,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:-1.5,y:-4,angle:180),
   ]),
       group:'(From offset lines)',
       paths:[
@@ -109,10 +109,10 @@ import '../../moves.dart';
 
     AnimatedCall('(From offset lines) "Z" Swap Around',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:-1.5,y:2,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:-1.5,y:0,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:-1.5,y:-2,angle:0),
-        DancerModel.fromData(gender:Gender.BOY,x:-1.5,y:-4,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:-1.5,y:2,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:-1.5,y:0,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:-1.5,y:-2,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:-1.5,y:-4,angle:0),
   ]),
       group:'(From offset lines)',
       paths:[
@@ -127,10 +127,10 @@ import '../../moves.dart';
 
     AnimatedCall('(From offset lines) "Z" Walk and Dodge',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:-1.5,y:2,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:-1.5,y:0,angle:180),
-        DancerModel.fromData(gender:Gender.GIRL,x:-1.5,y:-2,angle:0),
-        DancerModel.fromData(gender:Gender.BOY,x:-1.5,y:-4,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:-1.5,y:2,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:-1.5,y:0,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:-1.5,y:-2,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:-1.5,y:-4,angle:180),
   ]),
       group:'(From offset lines)',
       paths:[
@@ -145,10 +145,10 @@ import '../../moves.dart';
 
     AnimatedCall('(From offset columns) "Z" Split Circulate',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.GIRL,x:-2,y:-1,angle:180),
-        DancerModel.fromData(gender:Gender.BOY,x:0,y:-1,angle:180),
-        DancerModel.fromData(gender:Gender.GIRL,x:2,y:-1,angle:180),
-        DancerModel.fromData(gender:Gender.BOY,x:4,y:-1,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:-2,y:-1,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:0,y:-1,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:2,y:-1,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:4,y:-1,angle:180),
   ]),
       group:'(From offset columns)',
       paths:[
@@ -163,10 +163,10 @@ import '../../moves.dart';
 
     AnimatedCall('(From offset columns) "Z" Split Counter Rotate',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.GIRL,x:-2,y:-1,angle:180),
-        DancerModel.fromData(gender:Gender.BOY,x:0,y:-1,angle:180),
-        DancerModel.fromData(gender:Gender.GIRL,x:2,y:-1,angle:180),
-        DancerModel.fromData(gender:Gender.BOY,x:4,y:-1,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:-2,y:-1,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:0,y:-1,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:2,y:-1,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:4,y:-1,angle:180),
   ]),
       group:'(From offset columns)',
       paths:[
@@ -181,10 +181,10 @@ import '../../moves.dart';
 
     AnimatedCall('(From offset columns) "Z" Split Sidetrack',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.GIRL,x:-2,y:-1,angle:180),
-        DancerModel.fromData(gender:Gender.BOY,x:0,y:-1,angle:180),
-        DancerModel.fromData(gender:Gender.GIRL,x:2,y:-1,angle:180),
-        DancerModel.fromData(gender:Gender.BOY,x:4,y:-1,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:-2,y:-1,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:0,y:-1,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:2,y:-1,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:4,y:-1,angle:180),
   ]),
       group:'(From offset columns)',
       paths:[
@@ -207,10 +207,10 @@ import '../../moves.dart';
 
     AnimatedCall('(From offset columns) "Z" Walk and Dodge',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.GIRL,x:-2,y:-1,angle:180),
-        DancerModel.fromData(gender:Gender.BOY,x:0,y:-1,angle:180),
-        DancerModel.fromData(gender:Gender.GIRL,x:2,y:-1,angle:180),
-        DancerModel.fromData(gender:Gender.BOY,x:4,y:-1,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:-2,y:-1,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:0,y:-1,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:2,y:-1,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:4,y:-1,angle:180),
   ]),
       group:'(From offset columns)',
       paths:[

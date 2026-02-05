@@ -45,7 +45,7 @@ class Squeeze extends Action {
   }
 
   @override
-  Path performOne(DancerModel d, CallContext ctx) {
+  Path performOne(Dancer d, CallContext ctx) {
     var d2 = ctx.dancerToLeft(d) ?? ctx.dancerToRight(d);
     //  check for wave dancers in PTP diamonds
     if (ctx.dancersToLeft(d).length==2 &&

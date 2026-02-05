@@ -18,7 +18,7 @@
 
 */
 
-import '../../../dancer_model.dart';
+import '../../../dancer.dart';
 import '../../../formation.dart';
 import '../../call_context.dart';
 import '../../call_error.dart';
@@ -29,7 +29,7 @@ class Centers extends FilterActives {
   Centers(super.name);
 
   @override
-  bool isActive(DancerModel d, CallContext ctx) => d.data.center;
+  bool isActive(Dancer d, CallContext ctx) => d.data.center;
 
   @override
    void performCall(CallContext ctx) {

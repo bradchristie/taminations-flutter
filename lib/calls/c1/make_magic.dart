@@ -26,10 +26,10 @@ import '../../moves.dart';
 
     AnimatedCall('Make Magic',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:-3,y:1,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:-3,y:-1,angle:0),
-        DancerModel.fromData(gender:Gender.BOY,x:-1,y:1,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:-1,y:-1,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:-3,y:1,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:-3,y:-1,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:-1,y:1,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:-1,y:-1,angle:180),
   ]),
       from:'Centers Right-Hand Box',
       paths:[
@@ -45,10 +45,10 @@ import '../../moves.dart';
 
     AnimatedCall('Make Magic',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:1,y:3,angle:270),
-        DancerModel.fromData(gender:Gender.GIRL,x:-1,y:3,angle:270),
-        DancerModel.fromData(gender:Gender.BOY,x:1,y:1,angle:90),
-        DancerModel.fromData(gender:Gender.GIRL,x:-1,y:1,angle:270),
+        Dancer.fromData(gender:Gender.BOY,x:1,y:3,angle:270),
+        Dancer.fromData(gender:Gender.GIRL,x:-1,y:3,angle:270),
+        Dancer.fromData(gender:Gender.BOY,x:1,y:1,angle:90),
+        Dancer.fromData(gender:Gender.GIRL,x:-1,y:1,angle:270),
   ]),
       from:'Centers Left-Hand Box',
       paths:[

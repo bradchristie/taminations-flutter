@@ -47,7 +47,7 @@ class CastBack extends Action {
   }
 
   @override
-  Path performOne(DancerModel d, CallContext ctx) {
+  Path performOne(Dancer d, CallContext ctx) {
     Path move;
     if (name == 'Cross Cast Back')
       move = d.isCenterRight ? FlipRight : RunLeft;

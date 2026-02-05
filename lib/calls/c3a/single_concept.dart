@@ -27,8 +27,8 @@ import '../a2/single_wheel.dart' as a2;
 
     AnimatedCall('Single Checkmate',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:1,y:2,angle:270),
-        DancerModel.fromData(gender:Gender.GIRL,x:-1,y:2,angle:90),
+        Dancer.fromData(gender:Gender.BOY,x:1,y:2,angle:270),
+        Dancer.fromData(gender:Gender.GIRL,x:-1,y:2,angle:90),
   ]),
       from:'Right-Hand Box',
       paths:[
@@ -323,8 +323,8 @@ import '../a2/single_wheel.dart' as a2;
 
     AnimatedCall('Single Rotary Spin',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:0,y:3,angle:270),
-        DancerModel.fromData(gender:Gender.GIRL,x:0,y:1,angle:90),
+        Dancer.fromData(gender:Gender.BOY,x:0,y:3,angle:270),
+        Dancer.fromData(gender:Gender.GIRL,x:0,y:1,angle:90),
   ]),
       group:'Single',
       paths:[

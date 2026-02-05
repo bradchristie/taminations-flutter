@@ -28,10 +28,10 @@ import '../c2/invert_the_column.dart' as c2;
 
     AnimatedCall('Magic Column Circulate',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:-3,y:-1,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:1,y:-1,angle:180),
-        DancerModel.fromData(gender:Gender.BOY,x:-1,y:-1,angle:180),
-        DancerModel.fromData(gender:Gender.GIRL,x:3,y:-1,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:-3,y:-1,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:1,y:-1,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:-1,y:-1,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:3,y:-1,angle:0),
   ]),
       group:'(Right-Hand Centers)',fractions:'2',
       paths:[
@@ -48,9 +48,9 @@ import '../c2/invert_the_column.dart' as c2;
 
     AnimatedCall('Magic Column Circulate (6 dancers)',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:-2,y:-1,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:2,y:-1,angle:0),
-        DancerModel.fromData(gender:Gender.BOY,x:0,y:-1,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:-2,y:-1,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:2,y:-1,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:0,y:-1,angle:180),
   ]),
       group:'(Right-Hand Centers)',fractions:'2',
       paths:[
@@ -64,10 +64,10 @@ import '../c2/invert_the_column.dart' as c2;
 
     AnimatedCall('Magic Column Coordinate',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.GIRL,x:-1,y:1,angle:90),
-        DancerModel.fromData(gender:Gender.BOY,x:1,y:3,angle:90),
-        DancerModel.fromData(gender:Gender.GIRL,x:1,y:-3,angle:90),
-        DancerModel.fromData(gender:Gender.BOY,x:-1,y:-1,angle:90),
+        Dancer.fromData(gender:Gender.GIRL,x:-1,y:1,angle:90),
+        Dancer.fromData(gender:Gender.BOY,x:1,y:3,angle:90),
+        Dancer.fromData(gender:Gender.GIRL,x:1,y:-3,angle:90),
+        Dancer.fromData(gender:Gender.BOY,x:-1,y:-1,angle:90),
   ]),
       group:'(Right-Hand Centers)',fractions:'6;3',
       paths:[
@@ -205,9 +205,9 @@ import '../c2/invert_the_column.dart' as c2;
 
     AnimatedCall('Magic Column Circulate (6 dancers)',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:-2,y:-1,angle:180),
-        DancerModel.fromData(gender:Gender.GIRL,x:2,y:-1,angle:180),
-        DancerModel.fromData(gender:Gender.BOY,x:0,y:-1,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:-2,y:-1,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:2,y:-1,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:0,y:-1,angle:0),
   ]),
       group:'(Left-Hand Centers)',fractions:'2',
       paths:[
@@ -222,10 +222,10 @@ import '../c2/invert_the_column.dart' as c2;
 
     AnimatedCall('Magic Column Coordinate',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.GIRL,x:-1,y:1,angle:270),
-        DancerModel.fromData(gender:Gender.BOY,x:1,y:3,angle:270),
-        DancerModel.fromData(gender:Gender.GIRL,x:1,y:-3,angle:270),
-        DancerModel.fromData(gender:Gender.BOY,x:-1,y:-1,angle:270),
+        Dancer.fromData(gender:Gender.GIRL,x:-1,y:1,angle:270),
+        Dancer.fromData(gender:Gender.BOY,x:1,y:3,angle:270),
+        Dancer.fromData(gender:Gender.GIRL,x:1,y:-3,angle:270),
+        Dancer.fromData(gender:Gender.BOY,x:-1,y:-1,angle:270),
   ]),
       group:'(Left-Hand Centers)',fractions:'6;3',
       paths:[
@@ -266,10 +266,10 @@ import '../c2/invert_the_column.dart' as c2;
 
     AnimatedCall('Magic Column Transfer the Column',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.GIRL,x:-1,y:1,angle:270),
-        DancerModel.fromData(gender:Gender.BOY,x:1,y:1,angle:90),
-        DancerModel.fromData(gender:Gender.GIRL,x:-1,y:3,angle:90),
-        DancerModel.fromData(gender:Gender.BOY,x:1,y:3,angle:270),
+        Dancer.fromData(gender:Gender.GIRL,x:-1,y:1,angle:270),
+        Dancer.fromData(gender:Gender.BOY,x:1,y:1,angle:90),
+        Dancer.fromData(gender:Gender.GIRL,x:-1,y:3,angle:90),
+        Dancer.fromData(gender:Gender.BOY,x:1,y:3,angle:270),
   ]),
       group:'(Left-Hand Centers)',
       paths:[
@@ -296,10 +296,10 @@ import '../c2/invert_the_column.dart' as c2;
 
     AnimatedCall('Magic Column Transfer the Column Centers to a Wave',
         formation:Formation('', dancers:[
-          DancerModel.fromData(gender:Gender.GIRL,x:-1,y:1,angle:270),
-          DancerModel.fromData(gender:Gender.BOY,x:1,y:1,angle:90),
-          DancerModel.fromData(gender:Gender.GIRL,x:-1,y:3,angle:90),
-          DancerModel.fromData(gender:Gender.BOY,x:1,y:3,angle:270),
+          Dancer.fromData(gender:Gender.GIRL,x:-1,y:1,angle:270),
+          Dancer.fromData(gender:Gender.BOY,x:1,y:1,angle:90),
+          Dancer.fromData(gender:Gender.GIRL,x:-1,y:3,angle:90),
+          Dancer.fromData(gender:Gender.BOY,x:1,y:3,angle:270),
         ]),
         group:'(Left-Hand Centers)', noDisplay: true,
         paths:[
@@ -324,10 +324,10 @@ import '../c2/invert_the_column.dart' as c2;
 
     AnimatedCall('Magic Column Transfer and',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.GIRL,x:-1,y:1,angle:270),
-        DancerModel.fromData(gender:Gender.BOY,x:1,y:1,angle:90),
-        DancerModel.fromData(gender:Gender.GIRL,x:-1,y:3,angle:90),
-        DancerModel.fromData(gender:Gender.BOY,x:1,y:3,angle:270),
+        Dancer.fromData(gender:Gender.GIRL,x:-1,y:1,angle:270),
+        Dancer.fromData(gender:Gender.BOY,x:1,y:1,angle:90),
+        Dancer.fromData(gender:Gender.GIRL,x:-1,y:3,angle:90),
+        Dancer.fromData(gender:Gender.BOY,x:1,y:3,angle:270),
   ]),
       group:'(Left-Hand Centers)',noDisplay: true,
       paths:[

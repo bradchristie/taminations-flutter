@@ -106,10 +106,10 @@ import '../../moves.dart';
 
     AnimatedCall('Six-Two Acey Deucey',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:-3,y:-1,angle:180),
-        DancerModel.fromData(gender:Gender.GIRL,x:0,y:-3,angle:180),
-        DancerModel.fromData(gender:Gender.BOY,x:3,y:-1,angle:180),
-        DancerModel.fromData(gender:Gender.GIRL,x:0,y:-1,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:-3,y:-1,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:0,y:-3,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:3,y:-1,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:0,y:-1,angle:0),
   ]),
       from:'Wave and Mini-Waves, Right-Handed',
       paths:[
@@ -124,10 +124,10 @@ import '../../moves.dart';
 
     AnimatedCall('Six-Two Acey Deucey',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:-3,y:-1,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:0,y:-3,angle:0),
-        DancerModel.fromData(gender:Gender.BOY,x:3,y:-1,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:0,y:-1,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:-3,y:-1,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:0,y:-3,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:3,y:-1,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:0,y:-1,angle:180),
   ]),
       from:'Wave and Mini-Waves, Left-Handed',
       paths:[
@@ -142,10 +142,10 @@ import '../../moves.dart';
 
     AnimatedCall('Six-Two Acey Deucey',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:-3,y:-1,angle:180),
-        DancerModel.fromData(gender:Gender.GIRL,x:0,y:-3,angle:180),
-        DancerModel.fromData(gender:Gender.BOY,x:3,y:-1,angle:180),
-        DancerModel.fromData(gender:Gender.GIRL,x:0,y:-1,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:-3,y:-1,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:0,y:-3,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:3,y:-1,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:0,y:-1,angle:180),
   ]),
       from:'Two-Faced Line and Mini-Waves, Right-Handed',noDisplay: true,
       paths:[
@@ -160,10 +160,10 @@ import '../../moves.dart';
 
     AnimatedCall('Six-Two Acey Deucey',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:-3,y:-1,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:0,y:-3,angle:0),
-        DancerModel.fromData(gender:Gender.BOY,x:3,y:-1,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:0,y:-1,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:-3,y:-1,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:0,y:-3,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:3,y:-1,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:0,y:-1,angle:0),
   ]),
       from:'Two-Faced Line and Mini-Waves, Left-Handed',noDisplay: true,
       paths:[

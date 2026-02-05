@@ -94,10 +94,10 @@ import '../../moves.dart';
 
     AnimatedCall('Double Pass Thru',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:3.5,y:0,angle:180),
-        DancerModel.fromData(gender:Gender.GIRL,x:2.5,y:0,angle:180),
-        DancerModel.fromData(gender:Gender.BOY,x:1.5,y:0,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:0.5,y:0,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:3.5,y:0,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:2.5,y:0,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:1.5,y:0,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:0.5,y:0,angle:0),
   ]),
       from:'Tidal Column',difficulty: 2,
       paths:[
@@ -161,10 +161,10 @@ import '../../moves.dart';
 
     AnimatedCall('Left Double Pass Thru',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:3.5,y:0,angle:180),
-        DancerModel.fromData(gender:Gender.GIRL,x:2.5,y:0,angle:180),
-        DancerModel.fromData(gender:Gender.BOY,x:1.5,y:0,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:0.5,y:0,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:3.5,y:0,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:2.5,y:0,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:1.5,y:0,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:0.5,y:0,angle:0),
   ]),
       from:'Tidal Column',difficulty: 3, noDisplay: true,
       paths:[
@@ -216,8 +216,8 @@ import '../../moves.dart';
 
     AnimatedCall('On a Diagonal Double Pass Thru',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:-3,y:1,angle:0),
-        DancerModel.fromData(gender:Gender.BOY,x:-1,y:1,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:-3,y:1,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:-1,y:1,angle:0),
   ]),
       from:'Beaus Only',noDisplay: true,
       paths:[
@@ -229,8 +229,8 @@ import '../../moves.dart';
 
     AnimatedCall('On a Diagonal Double Pass Thru',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.GIRL,x:-3,y:-1,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:-1,y:-1,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:-3,y:-1,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:-1,y:-1,angle:0),
   ]),
       from:'Belles Only',noDisplay: true,
       paths:[

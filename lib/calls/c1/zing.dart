@@ -48,8 +48,8 @@ import '../../moves.dart';
 
     AnimatedCall('Zing',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:1,y:1,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:1,y:-1,angle:90),
+        Dancer.fromData(gender:Gender.BOY,x:1,y:1,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:1,y:-1,angle:90),
   ]),
       from:'T-Bone 1',
       paths:[
@@ -62,8 +62,8 @@ import '../../moves.dart';
 
     AnimatedCall('Zing',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:1,y:-1,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:1,y:1,angle:270),
+        Dancer.fromData(gender:Gender.BOY,x:1,y:-1,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:1,y:1,angle:270),
   ]),
       from:'T-Bone 2',
       paths:[

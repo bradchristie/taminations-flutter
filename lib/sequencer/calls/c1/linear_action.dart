@@ -29,8 +29,8 @@ class LinearAction extends Action with CallWithParts, ButCall {
   3.  Center wave of 4 Cast Off 3/4, others Hourglass Circulate
 The final Cast Off 3/4 can be replaced with But (another call)''';
   @override var helplink = 'c1/linear_action';
-  List<DancerModel> centerDancers = [];
-  List<DancerModel> outerDancers = [];
+  List<Dancer> centerDancers = [];
+  List<Dancer> outerDancers = [];
 
   LinearAction(super.name);
 

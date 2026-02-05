@@ -48,10 +48,10 @@ import '../../moves.dart';
 
     AnimatedCall('Cross Ramble',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.GIRL,x:-3,y:1,angle:180),
-        DancerModel.fromData(gender:Gender.BOY,x:0,y:-3,angle:180),
-        DancerModel.fromData(gender:Gender.GIRL,x:-3,y:-1,angle:180),
-        DancerModel.fromData(gender:Gender.BOY,x:0,y:-1,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:-3,y:1,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:0,y:-3,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:-3,y:-1,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:0,y:-1,angle:0),
   ]),
       from:'3/4 Tag, Boys in Center',isGenderSpecific:true,parts:'4',
       paths:[
@@ -75,10 +75,10 @@ import '../../moves.dart';
 
     AnimatedCall('Cross Ramble',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:-3,y:1,angle:180),
-        DancerModel.fromData(gender:Gender.GIRL,x:0,y:-3,angle:180),
-        DancerModel.fromData(gender:Gender.BOY,x:-3,y:-1,angle:180),
-        DancerModel.fromData(gender:Gender.GIRL,x:0,y:-1,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:-3,y:1,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:0,y:-3,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:-3,y:-1,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:0,y:-1,angle:0),
   ]),
       from:'3/4 Tag, Girls in Center',isGenderSpecific:true,parts:'4',
       paths:[
@@ -164,10 +164,10 @@ import '../../moves.dart';
 
     AnimatedCall('Scoot and Cross Ramble',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.GIRL,x:-3,y:1,angle:0),
-        DancerModel.fromData(gender:Gender.BOY,x:0,y:-3,angle:180),
-        DancerModel.fromData(gender:Gender.GIRL,x:-3,y:-1,angle:0),
-        DancerModel.fromData(gender:Gender.BOY,x:0,y:-1,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:-3,y:1,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:0,y:-3,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:-3,y:-1,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:0,y:-1,angle:0),
   ]),
       from:'Quarter Tag, Boys in Center',isGenderSpecific:true,parts:'5;4',
       paths:[
@@ -203,10 +203,10 @@ import '../../moves.dart';
 
     AnimatedCall('Scoot and Cross Ramble',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:-3,y:1,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:0,y:-3,angle:180),
-        DancerModel.fromData(gender:Gender.BOY,x:-3,y:-1,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:0,y:-1,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:-3,y:1,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:0,y:-3,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:-3,y:-1,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:0,y:-1,angle:0),
   ]),
       from:'Quarter Tag, Girls in Center',isGenderSpecific:true,parts:'5;4',
       paths:[

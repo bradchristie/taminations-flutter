@@ -124,10 +124,10 @@ import '../../moves.dart';
 
     AnimatedCall('Outfacing Points Like a Ripple Jaywalk, Swing, Slip, Cast Off 3/4',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:0,y:-3,angle:180),
-        DancerModel.fromData(gender:Gender.GIRL,x:-3,y:-2,angle:270),
-        DancerModel.fromData(gender:Gender.BOY,x:0,y:-1,angle:180),
-        DancerModel.fromData(gender:Gender.GIRL,x:3,y:-2,angle:90),
+        Dancer.fromData(gender:Gender.BOY,x:0,y:-3,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:-3,y:-2,angle:270),
+        Dancer.fromData(gender:Gender.BOY,x:0,y:-1,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:3,y:-2,angle:90),
   ]),
       group:' ',fractions:'3;3;3',
       paths:[

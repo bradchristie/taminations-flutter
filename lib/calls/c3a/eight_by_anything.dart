@@ -116,10 +116,10 @@ import '../../moves.dart';
 
     AnimatedCall('Eight by Flip the Diamond',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:0,y:6,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:1,y:0,angle:270),
-        DancerModel.fromData(gender:Gender.BOY,x:0,y:-2,angle:180),
-        DancerModel.fromData(gender:Gender.GIRL,x:0,y:-4,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:0,y:6,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:1,y:0,angle:270),
+        Dancer.fromData(gender:Gender.BOY,x:0,y:-2,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:0,y:-4,angle:0),
   ]),
       group:'Eight by',
       paths:[

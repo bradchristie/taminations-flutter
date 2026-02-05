@@ -29,7 +29,7 @@ class Bounce extends Action with CallWithParts, ActivesOnly {
   2.  (somebody) U-Turn in flow direction''';
   @override var helplink = 'c2/bounce';
   var direction = 'Right';
-  var whodancers = <DancerModel>[];
+  var whodancers = <Dancer>[];
 
   Bounce(super.name);
 

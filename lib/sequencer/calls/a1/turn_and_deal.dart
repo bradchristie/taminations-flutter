@@ -33,7 +33,7 @@ Line of (6 or 8) [Left] Turn and Deal''';
   TurnAndDeal(super.name);
 
   @override
-  Path performOne(DancerModel d, CallContext ctx) {
+  Path performOne(Dancer d, CallContext ctx) {
     final dir = ctx.tagDirection(d);
     if (dir.isBlank)
       throw CallError('Unable to calculate Turn and Deal');
@@ -60,7 +60,7 @@ class BigLineTurnAndDeal extends Action with ActivesOnly {
     final length = norm.contains('6') ? '6' : '8';
     if (length == '6' && ctx.dancers.length > 6) {
       var line6 = ctx.waveOf6() ??
-          thrower<List<DancerModel>>(CallError('Unable to find line of 6'));
+          thrower<List<Dancer>>(CallError('Unable to find line of 6'));
       ctx.subContext(line6, (ctx2) => ctx2.applyCalls('Wave of 6 $name'));
     }
     else {
@@ -70,7 +70,7 @@ class BigLineTurnAndDeal extends Action with ActivesOnly {
   }
 
   @override
-  Path performOne(DancerModel d, CallContext ctx) {
+  Path performOne(Dancer d, CallContext ctx) {
     d.animate(0.0);
     return d.isCenterRight ? QuarterRight : QuarterLeft;
   }

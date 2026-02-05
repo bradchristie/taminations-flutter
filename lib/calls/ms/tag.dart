@@ -223,10 +223,10 @@ import '../../moves.dart';
 
     AnimatedCall('_Finish Line of 8 Tag the Line',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:3.5,y:-.5,angle:180),
-        DancerModel.fromData(gender:Gender.GIRL,x:2.5,y:-.5,angle:180),
-        DancerModel.fromData(gender:Gender.BOY,x:1.5,y:-.5,angle:180),
-        DancerModel.fromData(gender:Gender.GIRL,x:.5,y:-.5,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:3.5,y:-.5,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:2.5,y:-.5,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:1.5,y:-.5,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:.5,y:-.5,angle:180),
   ]),
       noDisplay: true,
       paths:[
@@ -245,10 +245,10 @@ import '../../moves.dart';
 
     AnimatedCall('_Finish Line of 8 Left Tag the Line',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:3.5,y:.5,angle:180),
-        DancerModel.fromData(gender:Gender.GIRL,x:2.5,y:.5,angle:180),
-        DancerModel.fromData(gender:Gender.BOY,x:1.5,y:.5,angle:180),
-        DancerModel.fromData(gender:Gender.GIRL,x:.5,y:.5,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:3.5,y:.5,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:2.5,y:.5,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:1.5,y:.5,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:.5,y:.5,angle:180),
   ]),
       noDisplay: true,
       paths:[
@@ -267,10 +267,10 @@ import '../../moves.dart';
 
     AnimatedCall('_Finish Line of 8 Half Tag',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:3.5,y:-.5,angle:180),
-        DancerModel.fromData(gender:Gender.GIRL,x:2.5,y:-.5,angle:180),
-        DancerModel.fromData(gender:Gender.BOY,x:1.5,y:-.5,angle:180),
-        DancerModel.fromData(gender:Gender.GIRL,x:.5,y:-.5,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:3.5,y:-.5,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:2.5,y:-.5,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:1.5,y:-.5,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:.5,y:-.5,angle:180),
   ]),
       noDisplay: true,
       paths:[
@@ -285,10 +285,10 @@ import '../../moves.dart';
 
     AnimatedCall('_Finish Line of 8 Left Half Tag',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:3.5,y:.5,angle:180),
-        DancerModel.fromData(gender:Gender.GIRL,x:2.5,y:.5,angle:180),
-        DancerModel.fromData(gender:Gender.BOY,x:1.5,y:.5,angle:180),
-        DancerModel.fromData(gender:Gender.GIRL,x:.5,y:.5,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:3.5,y:.5,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:2.5,y:.5,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:1.5,y:.5,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:.5,y:.5,angle:180),
   ]),
       noDisplay: true,
       paths:[
@@ -303,9 +303,9 @@ import '../../moves.dart';
 
     AnimatedCall('_Finish Line of 6 Tag the Line',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:3.75,y:-.5,angle:180),
-        DancerModel.fromData(gender:Gender.GIRL,x:2.25,y:-.5,angle:180),
-        DancerModel.fromData(gender:Gender.BOY,x:0.75,y:-.5,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:3.75,y:-.5,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:2.25,y:-.5,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:0.75,y:-.5,angle:180),
   ]),
       noDisplay: true,
       paths:[
@@ -321,9 +321,9 @@ import '../../moves.dart';
 
     AnimatedCall('_Finish Line of 6 Left Tag the Line',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:3.75,y:.5,angle:180),
-        DancerModel.fromData(gender:Gender.GIRL,x:2.25,y:.5,angle:180),
-        DancerModel.fromData(gender:Gender.BOY,x:0.75,y:.5,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:3.75,y:.5,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:2.25,y:.5,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:0.75,y:.5,angle:180),
   ]),
       noDisplay: true,
       paths:[
@@ -339,9 +339,9 @@ import '../../moves.dart';
 
     AnimatedCall('_Finish Line of 6 Half Tag',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:3.75,y:-.5,angle:180),
-        DancerModel.fromData(gender:Gender.GIRL,x:2.25,y:-.5,angle:180),
-        DancerModel.fromData(gender:Gender.BOY,x:0.75,y:-.5,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:3.75,y:-.5,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:2.25,y:-.5,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:0.75,y:-.5,angle:180),
   ]),
       noDisplay: true,
       paths:[
@@ -354,9 +354,9 @@ import '../../moves.dart';
 
     AnimatedCall('_Finish Line of 6 Left Half Tag',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:3.75,y:.5,angle:180),
-        DancerModel.fromData(gender:Gender.GIRL,x:2.25,y:.5,angle:180),
-        DancerModel.fromData(gender:Gender.BOY,x:0.75,y:.5,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:3.75,y:.5,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:2.25,y:.5,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:0.75,y:.5,angle:180),
   ]),
       noDisplay: true,
       paths:[

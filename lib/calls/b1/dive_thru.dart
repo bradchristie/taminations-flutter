@@ -63,10 +63,10 @@ import '../../moves.dart';
     //  Heads on right side of line
     AnimatedCall('Heads Arch, Sides Dive Thru',
         formation:    Formation('', dancers:[
-          DancerModel.fromData(gender:Gender.BOY,x:-2,y:-1,angle:0),
-          DancerModel.fromData(gender:Gender.GIRL,x:-2,y:-3,angle:0),
-          DancerModel.fromData(gender:Gender.BOY,x:-2,y:3,angle:0),
-          DancerModel.fromData(gender:Gender.GIRL,x:-2,y:1,angle:0),
+          Dancer.fromData(gender:Gender.BOY,x:-2,y:-1,angle:0),
+          Dancer.fromData(gender:Gender.GIRL,x:-2,y:-3,angle:0),
+          Dancer.fromData(gender:Gender.BOY,x:-2,y:3,angle:0),
+          Dancer.fromData(gender:Gender.GIRL,x:-2,y:1,angle:0),
         ]),
         group:' ',difficulty: 2, isGenderSpecific: true, noDisplay: true,
         paths: [
@@ -85,10 +85,10 @@ import '../../moves.dart';
     //  Heads on left side of line, sides sashayed
     AnimatedCall('Heads Arch, Sides Dive Thru', noDisplay: true,
         formation:    Formation('', dancers:[
-          DancerModel.fromData(gender:Gender.BOY,x:-2,y:3,angle:0),
-          DancerModel.fromData(gender:Gender.GIRL,x:-2,y:1,angle:0),
-          DancerModel.fromData(gender:Gender.BOY,x:-2,y:-3,angle:0),
-          DancerModel.fromData(gender:Gender.GIRL,x:-2,y:-1,angle:0),
+          Dancer.fromData(gender:Gender.BOY,x:-2,y:3,angle:0),
+          Dancer.fromData(gender:Gender.GIRL,x:-2,y:1,angle:0),
+          Dancer.fromData(gender:Gender.BOY,x:-2,y:-3,angle:0),
+          Dancer.fromData(gender:Gender.GIRL,x:-2,y:-1,angle:0),
         ]),
         group:' ',difficulty: 2, isGenderSpecific: true,
         paths: [
@@ -107,10 +107,10 @@ import '../../moves.dart';
     //  Heads on right side of line, sides sashayed
     AnimatedCall('Heads Arch, Sides Dive Thru', noDisplay: true,
         formation:    Formation('', dancers:[
-          DancerModel.fromData(gender:Gender.BOY,x:-2,y:-1,angle:0),
-          DancerModel.fromData(gender:Gender.GIRL,x:-2,y:-3,angle:0),
-          DancerModel.fromData(gender:Gender.BOY,x:-2,y:1,angle:0),
-          DancerModel.fromData(gender:Gender.GIRL,x:-2,y:3,angle:0),
+          Dancer.fromData(gender:Gender.BOY,x:-2,y:-1,angle:0),
+          Dancer.fromData(gender:Gender.GIRL,x:-2,y:-3,angle:0),
+          Dancer.fromData(gender:Gender.BOY,x:-2,y:1,angle:0),
+          Dancer.fromData(gender:Gender.GIRL,x:-2,y:3,angle:0),
         ]),
         group:' ',difficulty: 2, isGenderSpecific: true,
         paths: [
@@ -144,10 +144,10 @@ import '../../moves.dart';
         ]),
     AnimatedCall('Sides Arch, Heads Dive Thru', noDisplay: true,
         formation:    Formation('', dancers:[
-          DancerModel.fromData(gender:Gender.BOY,x:-2,y:-1,angle:0),
-          DancerModel.fromData(gender:Gender.GIRL,x:-2,y:-3,angle:0),
-          DancerModel.fromData(gender:Gender.BOY,x:-2,y:3,angle:0),
-          DancerModel.fromData(gender:Gender.GIRL,x:-2,y:1,angle:0),
+          Dancer.fromData(gender:Gender.BOY,x:-2,y:-1,angle:0),
+          Dancer.fromData(gender:Gender.GIRL,x:-2,y:-3,angle:0),
+          Dancer.fromData(gender:Gender.BOY,x:-2,y:3,angle:0),
+          Dancer.fromData(gender:Gender.GIRL,x:-2,y:1,angle:0),
         ]),
         group:' ',difficulty: 2, isGenderSpecific: true,
         paths: [
@@ -164,10 +164,10 @@ import '../../moves.dart';
         ]),
     AnimatedCall('Sides Arch, Heads Dive Thru',
         formation:    Formation('', dancers:[
-          DancerModel.fromData(gender:Gender.BOY,x:-2,y:1,angle:0),
-          DancerModel.fromData(gender:Gender.GIRL,x:-2,y:3,angle:0),
-          DancerModel.fromData(gender:Gender.BOY,x:-2,y:-1,angle:0),
-          DancerModel.fromData(gender:Gender.GIRL,x:-2,y:-3,angle:0),
+          Dancer.fromData(gender:Gender.BOY,x:-2,y:1,angle:0),
+          Dancer.fromData(gender:Gender.GIRL,x:-2,y:3,angle:0),
+          Dancer.fromData(gender:Gender.BOY,x:-2,y:-1,angle:0),
+          Dancer.fromData(gender:Gender.GIRL,x:-2,y:-3,angle:0),
         ]),
         group:' ',difficulty: 2, isGenderSpecific: true, noDisplay: true,
         paths: [
@@ -184,10 +184,10 @@ import '../../moves.dart';
         ]),
     AnimatedCall('Sides Arch, Heads Dive Thru',
         formation:    Formation('', dancers:[
-          DancerModel.fromData(gender:Gender.BOY,x:-2,y:-3,angle:0),
-          DancerModel.fromData(gender:Gender.GIRL,x:-2,y:-1,angle:0),
-          DancerModel.fromData(gender:Gender.BOY,x:-2,y:3,angle:0),
-          DancerModel.fromData(gender:Gender.GIRL,x:-2,y:1,angle:0),
+          Dancer.fromData(gender:Gender.BOY,x:-2,y:-3,angle:0),
+          Dancer.fromData(gender:Gender.GIRL,x:-2,y:-1,angle:0),
+          Dancer.fromData(gender:Gender.BOY,x:-2,y:3,angle:0),
+          Dancer.fromData(gender:Gender.GIRL,x:-2,y:1,angle:0),
         ]),
         group:' ',difficulty: 2, isGenderSpecific: true, noDisplay: true,
         paths: [

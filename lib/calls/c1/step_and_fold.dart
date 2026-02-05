@@ -315,12 +315,12 @@ import '../../moves.dart';
 
     AnimatedCall('Triple Line Step and Fold',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:-4,y:1,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:-4,y:-1,angle:0),
-        DancerModel.fromData(gender:Gender.BOY,x:0,y:1,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:0,y:3,angle:180),
-        DancerModel.fromData(gender:Gender.PHANTOM,x:-4,y:3,angle:180),
-        DancerModel.fromData(gender:Gender.PHANTOM,x:-4,y:-3,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:-4,y:1,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:-4,y:-1,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:0,y:1,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:0,y:3,angle:180),
+        Dancer.fromData(gender:Gender.PHANTOM,x:-4,y:3,angle:180),
+        Dancer.fromData(gender:Gender.PHANTOM,x:-4,y:-3,angle:180),
   ]),
       group:' ',
       paths:[

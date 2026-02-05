@@ -165,10 +165,10 @@ import '../../moves.dart';
 
     AnimatedCall('The K',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:-1,y:3,angle:90),
-        DancerModel.fromData(gender:Gender.GIRL,x:-1,y:1,angle:90),
-        DancerModel.fromData(gender:Gender.BOY,x:1,y:1,angle:270),
-        DancerModel.fromData(gender:Gender.GIRL,x:1,y:3,angle:270),
+        Dancer.fromData(gender:Gender.BOY,x:-1,y:3,angle:90),
+        Dancer.fromData(gender:Gender.GIRL,x:-1,y:1,angle:90),
+        Dancer.fromData(gender:Gender.BOY,x:1,y:1,angle:270),
+        Dancer.fromData(gender:Gender.GIRL,x:1,y:3,angle:270),
   ]),
       from:'Right-Hand Columns',fractions:'1.5',
       paths:[
@@ -222,10 +222,10 @@ import '../../moves.dart';
 
     AnimatedCall('The K',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.GIRL,x:1,y:1,angle:270),
-        DancerModel.fromData(gender:Gender.BOY,x:0,y:3,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:1,y:-1,angle:270),
-        DancerModel.fromData(gender:Gender.BOY,x:3.1,y:0,angle:270),
+        Dancer.fromData(gender:Gender.GIRL,x:1,y:1,angle:270),
+        Dancer.fromData(gender:Gender.BOY,x:0,y:3,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:1,y:-1,angle:270),
+        Dancer.fromData(gender:Gender.BOY,x:3.1,y:0,angle:270),
   ]),
       from:'Galaxy',fractions:'1.5',
       paths:[
@@ -306,10 +306,10 @@ import '../../moves.dart';
 
     AnimatedCall('Offset Lines the K',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:0,y:3,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:0,y:1,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:-2,y:-1,angle:180),
-        DancerModel.fromData(gender:Gender.BOY,x:-2,y:-3,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:0,y:3,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:0,y:1,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:-2,y:-1,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:-2,y:-3,angle:180),
   ]),
       group:' ',fractions:'1.5',
       paths:[
@@ -339,10 +339,10 @@ import '../../moves.dart';
 
     AnimatedCall('Tandem the K',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:-1,y:3,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:-1,y:1,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:-1,y:-1,angle:180),
-        DancerModel.fromData(gender:Gender.BOY,x:-1,y:-3,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:-1,y:3,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:-1,y:1,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:-1,y:-1,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:-1,y:-3,angle:180),
   ]),
       group:' ',fractions:'2',
       paths:[

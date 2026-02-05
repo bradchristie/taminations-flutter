@@ -183,10 +183,10 @@ final List<AnimatedCall> StepAndSqueeze = [
 
   AnimatedCall('Step and Squeeze',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:0,y:3.5,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:0,y:2.5,angle:0),
-        DancerModel.fromData(gender:Gender.BOY,x:0,y:.5,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:0,y:1.5,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:0,y:3.5,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:0,y:2.5,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:0,y:.5,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:0,y:1.5,angle:0),
       ]),
       from:'Tidal Line',
       paths:[

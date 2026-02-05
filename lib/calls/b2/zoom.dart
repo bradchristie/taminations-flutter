@@ -114,10 +114,10 @@ import '../../moves.dart';
 
     AnimatedCall('Zoom',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.GIRL,x:-3,y:-1,angle:90),
-        DancerModel.fromData(gender:Gender.BOY,x:-1,y:-1,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:1,y:-1,angle:90),
-        DancerModel.fromData(gender:Gender.BOY,x:3,y:-1,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:-3,y:-1,angle:90),
+        Dancer.fromData(gender:Gender.BOY,x:-1,y:-1,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:1,y:-1,angle:90),
+        Dancer.fromData(gender:Gender.BOY,x:3,y:-1,angle:0),
   ]),
       from:'T-Bones',fractions:'2',difficulty: 3,
       paths:[

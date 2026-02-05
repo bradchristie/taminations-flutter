@@ -132,10 +132,10 @@ import '../../moves.dart';
 
     AnimatedCall('Cross Nuclear Reaction',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:0,y:3,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:0,y:1,angle:0),
-        DancerModel.fromData(gender:Gender.BOY,x:-3,y:1,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:-3,y:-1,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:0,y:3,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:0,y:1,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:-3,y:1,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:-3,y:-1,angle:180),
   ]),
       from:'Two-Faced Line Between Mini-Waves',parts:'3;5',
       paths:[

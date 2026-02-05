@@ -232,10 +232,10 @@ import '../a1/quarter_thru.dart' as a1;
 
     AnimatedCall('Stingy Split Square Chain Thru',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:-1,y:3,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:1,y:3,angle:180),
-        DancerModel.fromData(gender:Gender.BOY,x:-1,y:1,angle:90),
-        DancerModel.fromData(gender:Gender.GIRL,x:1,y:1,angle:90),
+        Dancer.fromData(gender:Gender.BOY,x:-1,y:3,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:1,y:3,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:-1,y:1,angle:90),
+        Dancer.fromData(gender:Gender.GIRL,x:1,y:1,angle:90),
   ]),
       group:'Stingy',fractions:'1;2;6',
       paths:[

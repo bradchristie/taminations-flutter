@@ -34,39 +34,39 @@ abstract class TripleFormation extends Action {
   }
 
   static final Formation TripleBoxes = Formation('', dancers:[
-    DancerModel.fromData(gender:Gender.BOY,x:1.5,y:3,angle:0),
-    DancerModel.fromData(gender:Gender.GIRL,x:1.5,y:1,angle:0),
-    DancerModel.fromData(gender:Gender.GIRL,x:-1.5,y:1,angle:0),
-    DancerModel.fromData(gender:Gender.BOY,x:-1.5,y:3,angle:0),
-    DancerModel.fromData(gender:Gender.PHANTOM,x:1.5,y:5,angle:180),
-    DancerModel.fromData(gender:Gender.PHANTOM,x:1.5,y:-5,angle:0),
+    Dancer.fromData(gender:Gender.BOY,x:1.5,y:3,angle:0),
+    Dancer.fromData(gender:Gender.GIRL,x:1.5,y:1,angle:0),
+    Dancer.fromData(gender:Gender.GIRL,x:-1.5,y:1,angle:0),
+    Dancer.fromData(gender:Gender.BOY,x:-1.5,y:3,angle:0),
+    Dancer.fromData(gender:Gender.PHANTOM,x:1.5,y:5,angle:180),
+    Dancer.fromData(gender:Gender.PHANTOM,x:1.5,y:-5,angle:0),
   ]);
 
   static final Formation TripleBoxesClose = Formation('', dancers:[
-    DancerModel.fromData(gender:Gender.BOY,x:1,y:3,angle:90),
-    DancerModel.fromData(gender:Gender.GIRL,x:1,y:1,angle:90),
-    DancerModel.fromData(gender:Gender.GIRL,x:-1,y:1,angle:90),
-    DancerModel.fromData(gender:Gender.BOY,x:-1,y:3,angle:90),
-    DancerModel.fromData(gender:Gender.PHANTOM,x:1,y:5,angle:270),
-    DancerModel.fromData(gender:Gender.PHANTOM,x:1,y:-5,angle:90),
+    Dancer.fromData(gender:Gender.BOY,x:1,y:3,angle:90),
+    Dancer.fromData(gender:Gender.GIRL,x:1,y:1,angle:90),
+    Dancer.fromData(gender:Gender.GIRL,x:-1,y:1,angle:90),
+    Dancer.fromData(gender:Gender.BOY,x:-1,y:3,angle:90),
+    Dancer.fromData(gender:Gender.PHANTOM,x:1,y:5,angle:270),
+    Dancer.fromData(gender:Gender.PHANTOM,x:1,y:-5,angle:90),
   ]);
 
   static final Formation TripleLines = Formation('', dancers:[
-    DancerModel.fromData(gender:Gender.BOY,x:0,y:3,angle:180),
-    DancerModel.fromData(gender:Gender.GIRL,x:0,y:1,angle:0),
-    DancerModel.fromData(gender:Gender.GIRL,x:3,y:1,angle:180),
-    DancerModel.fromData(gender:Gender.BOY,x:3,y:3,angle:0),
-    DancerModel.fromData(gender:Gender.PHANTOM,x:3,y:-1,angle:0),
-    DancerModel.fromData(gender:Gender.PHANTOM,x:3,y:-3,angle:180),
+    Dancer.fromData(gender:Gender.BOY,x:0,y:3,angle:180),
+    Dancer.fromData(gender:Gender.GIRL,x:0,y:1,angle:0),
+    Dancer.fromData(gender:Gender.GIRL,x:3,y:1,angle:180),
+    Dancer.fromData(gender:Gender.BOY,x:3,y:3,angle:0),
+    Dancer.fromData(gender:Gender.PHANTOM,x:3,y:-1,angle:0),
+    Dancer.fromData(gender:Gender.PHANTOM,x:3,y:-3,angle:180),
   ]);
 
   static final Formation TripleColumns = Formation('', dancers:[
-    DancerModel.fromData(gender:Gender.BOY,x:3,y:3,angle:180),
-    DancerModel.fromData(gender:Gender.GIRL,x:3,y:0,angle:180),
-    DancerModel.fromData(gender:Gender.GIRL,x:1,y:0,angle:0),
-    DancerModel.fromData(gender:Gender.BOY,x:1,y:3,angle:0),
-    DancerModel.fromData(gender:Gender.PHANTOM,x:1,y:-3,angle:0),
-    DancerModel.fromData(gender:Gender.PHANTOM,x:3,y:-3,angle:180),
+    Dancer.fromData(gender:Gender.BOY,x:3,y:3,angle:180),
+    Dancer.fromData(gender:Gender.GIRL,x:3,y:0,angle:180),
+    Dancer.fromData(gender:Gender.GIRL,x:1,y:0,angle:0),
+    Dancer.fromData(gender:Gender.BOY,x:1,y:3,angle:0),
+    Dancer.fromData(gender:Gender.PHANTOM,x:1,y:-3,angle:0),
+    Dancer.fromData(gender:Gender.PHANTOM,x:3,y:-3,angle:180),
   ]);
 
   static var tripleBoxFormations = {
@@ -95,12 +95,12 @@ abstract class TripleFormation extends Action {
         delta: 0.3, maxOffset: 12.1);
     isXaxis = findAxis(ctx);
     //  Add phantoms in spots not occupied by dancers
-    final phantoms = <DancerModel>[];
+    final phantoms = <Dancer>[];
     for (final c1 in majorValues(ctx)) {
       for (final c2 in minorValues(ctx)) {
         final v = isXaxis ? [c1, c2].v : [c2, c1].v;
         if (ctx.dancerAt(v) == null) {
-          final phantomDancer = DancerModel.cloneWithOptions(ctx.dancers.first,
+          final phantomDancer = Dancer.cloneWithOptions(ctx.dancers.first,
               gender: Gender.PHANTOM, number: 'P${phantoms.length + 1}');
           phantomDancer.setStartPosition(v);
           phantoms.add(phantomDancer);

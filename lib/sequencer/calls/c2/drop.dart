@@ -42,7 +42,7 @@ class Drop extends SplitCall with ActivesOnly {
   }
 
   @override
-  Path performOne(DancerModel d, CallContext ctx) {
+  Path performOne(Dancer d, CallContext ctx) {
     //  Because we are derived from SplitCall
     //  we are only working with 4 dancers
     //  So the outer 2 are the points

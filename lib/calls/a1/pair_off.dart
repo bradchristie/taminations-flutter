@@ -49,10 +49,10 @@ import '../a2/all_4_all_8.dart' as a2;
 
     AnimatedCall('Pair Off',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:1,y:3,angle:270),
-        DancerModel.fromData(gender:Gender.GIRL,x:-1,y:3,angle:270),
-        DancerModel.fromData(gender:Gender.BOY,x:-1,y:1,angle:90),
-        DancerModel.fromData(gender:Gender.GIRL,x:1,y:1,angle:90),
+        Dancer.fromData(gender:Gender.BOY,x:1,y:3,angle:270),
+        Dancer.fromData(gender:Gender.GIRL,x:-1,y:3,angle:270),
+        Dancer.fromData(gender:Gender.BOY,x:-1,y:1,angle:90),
+        Dancer.fromData(gender:Gender.GIRL,x:1,y:1,angle:90),
   ]),
       from:'Eight Chain Thru',
       paths:[

@@ -26,10 +26,10 @@ import '../../moves.dart';
 
     AnimatedCall('Grand Follow Your Neighbor',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.GIRL,x:1,y:-3,angle:270),
-        DancerModel.fromData(gender:Gender.BOY,x:1,y:-1,angle:270),
-        DancerModel.fromData(gender:Gender.GIRL,x:1,y:1,angle:270),
-        DancerModel.fromData(gender:Gender.BOY,x:1,y:3,angle:270),
+        Dancer.fromData(gender:Gender.GIRL,x:1,y:-3,angle:270),
+        Dancer.fromData(gender:Gender.BOY,x:1,y:-1,angle:270),
+        Dancer.fromData(gender:Gender.GIRL,x:1,y:1,angle:270),
+        Dancer.fromData(gender:Gender.BOY,x:1,y:3,angle:270),
   ]),
       from:'Right-Hand Columns',
       paths:[
@@ -77,9 +77,9 @@ import '../../moves.dart';
 
     AnimatedCall('Grand Follow Your Neighbor',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.GIRL,x:1,y:-2,angle:270),
-        DancerModel.fromData(gender:Gender.BOY,x:1,y:0,angle:270),
-        DancerModel.fromData(gender:Gender.GIRL,x:1,y:2,angle:270),
+        Dancer.fromData(gender:Gender.GIRL,x:1,y:-2,angle:270),
+        Dancer.fromData(gender:Gender.BOY,x:1,y:0,angle:270),
+        Dancer.fromData(gender:Gender.GIRL,x:1,y:2,angle:270),
   ]),
       from:'Right-Hand Columns of 6',
       paths:[
@@ -99,9 +99,9 @@ import '../../moves.dart';
 
     AnimatedCall('Grand Follow Your Neighbor',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.GIRL,x:1,y:-2,angle:90),
-        DancerModel.fromData(gender:Gender.BOY,x:1,y:0,angle:90),
-        DancerModel.fromData(gender:Gender.GIRL,x:1,y:2,angle:90),
+        Dancer.fromData(gender:Gender.GIRL,x:1,y:-2,angle:90),
+        Dancer.fromData(gender:Gender.BOY,x:1,y:0,angle:90),
+        Dancer.fromData(gender:Gender.GIRL,x:1,y:2,angle:90),
   ]),
       from:'Left-Hand Columns of 6',
       paths:[
@@ -121,10 +121,10 @@ import '../../moves.dart';
 
     AnimatedCall('Grand Follow Your Neighbor and Spread',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.GIRL,x:1,y:-3,angle:270),
-        DancerModel.fromData(gender:Gender.BOY,x:1,y:-1,angle:270),
-        DancerModel.fromData(gender:Gender.GIRL,x:1,y:1,angle:270),
-        DancerModel.fromData(gender:Gender.BOY,x:1,y:3,angle:270),
+        Dancer.fromData(gender:Gender.GIRL,x:1,y:-3,angle:270),
+        Dancer.fromData(gender:Gender.BOY,x:1,y:-1,angle:270),
+        Dancer.fromData(gender:Gender.GIRL,x:1,y:1,angle:270),
+        Dancer.fromData(gender:Gender.BOY,x:1,y:3,angle:270),
   ]),
       from:'Right-Hand Columns',
       paths:[

@@ -30,7 +30,7 @@ class Loop extends Action {
   Loop(super.name);
 
   @override
-  Path performOne(DancerModel d, CallContext ctx) {
+  Path performOne(Dancer d, CallContext ctx) {
     Path move;
     if (name.startsWith('Left'))
       move = RunLeft;

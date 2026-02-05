@@ -25,6 +25,6 @@ class Ends extends FilterActives {
   Ends(super.name);
 
   @override
-  bool isActive(DancerModel d, CallContext ctx) => d.data.end;
+  bool isActive(Dancer d, CallContext ctx) => d.data.end;
 
 }

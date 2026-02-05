@@ -31,8 +31,8 @@ class LinearCycle extends Action
   2.  Leaders Fold and all Double Pass Thru
   3.  Peel in direction of Hinge''';
   @override var helplink = 'plus/linear_cycle';
-  var saveBelles = <DancerModel>{};
-  var otherDancers = <DancerModel>[];
+  var saveBelles = <Dancer>{};
+  var otherDancers = <Dancer>[];
 
   LinearCycle(super.name);
 

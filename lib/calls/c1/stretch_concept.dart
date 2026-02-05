@@ -75,10 +75,10 @@ import '../c3a/single_concept.dart' as c3a;
 
     AnimatedCall('Stretch Chase Right',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.GIRL,x:1,y:3,angle:90),
-        DancerModel.fromData(gender:Gender.BOY,x:-1,y:3,angle:90),
-        DancerModel.fromData(gender:Gender.GIRL,x:-1,y:1,angle:270),
-        DancerModel.fromData(gender:Gender.BOY,x:1,y:1,angle:270),
+        Dancer.fromData(gender:Gender.GIRL,x:1,y:3,angle:90),
+        Dancer.fromData(gender:Gender.BOY,x:-1,y:3,angle:90),
+        Dancer.fromData(gender:Gender.GIRL,x:-1,y:1,angle:270),
+        Dancer.fromData(gender:Gender.BOY,x:1,y:1,angle:270),
   ]),
       group:'Stretch',
       paths:[
@@ -296,10 +296,10 @@ import '../c3a/single_concept.dart' as c3a;
 
     AnimatedCall('Stretch Shakedown',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.GIRL,x:3,y:2,angle:90),
-        DancerModel.fromData(gender:Gender.BOY,x:1,y:2,angle:90),
-        DancerModel.fromData(gender:Gender.GIRL,x:-1,y:2,angle:90),
-        DancerModel.fromData(gender:Gender.BOY,x:-3,y:2,angle:90),
+        Dancer.fromData(gender:Gender.GIRL,x:3,y:2,angle:90),
+        Dancer.fromData(gender:Gender.BOY,x:1,y:2,angle:90),
+        Dancer.fromData(gender:Gender.GIRL,x:-1,y:2,angle:90),
+        Dancer.fromData(gender:Gender.BOY,x:-3,y:2,angle:90),
   ]),
       from:'Lines Facing Out',group:'Stretch',
       paths:[

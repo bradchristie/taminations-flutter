@@ -29,7 +29,7 @@ class Face extends Action {
   Face(super.name);
 
   @override
-  Path performOne(DancerModel d, CallContext ctx) {
+  Path performOne(Dancer d, CallContext ctx) {
     Path move;
     if (name == 'Face In' ) {
       if (d.angleToOrigin.isLessThan(0))

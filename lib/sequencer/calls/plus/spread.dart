@@ -152,7 +152,7 @@ class _SpreadFromLines extends Action {
   }
 
   @override
-  Path performOne(DancerModel d, CallContext ctx) {
+  Path performOne(Dancer d, CallContext ctx) {
     //  Compute offset for spread
     var v = Vector();
     if (d.data.belle)

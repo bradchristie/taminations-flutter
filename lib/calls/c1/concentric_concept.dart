@@ -726,10 +726,10 @@ import '../c3a/mini_chase.dart' as c3a;
 
     AnimatedCall('Concentric Slide Thru',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:-2,y:3,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:-2,y:-1,angle:0),
-        DancerModel.fromData(gender:Gender.BOY,x:-2,y:1,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:-2,y:-3,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:-2,y:3,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:-2,y:-1,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:-2,y:1,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:-2,y:-3,angle:0),
   ]),
       group:'(From lines) Concentric',isGenderSpecific:true,
       paths:[
@@ -749,10 +749,10 @@ import '../c3a/mini_chase.dart' as c3a;
 
     AnimatedCall('Concentric Star Thru',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:3,y:2,angle:270),
-        DancerModel.fromData(gender:Gender.GIRL,x:-1,y:2,angle:270),
-        DancerModel.fromData(gender:Gender.BOY,x:1,y:2,angle:270),
-        DancerModel.fromData(gender:Gender.GIRL,x:-3,y:2,angle:270),
+        Dancer.fromData(gender:Gender.BOY,x:3,y:2,angle:270),
+        Dancer.fromData(gender:Gender.GIRL,x:-1,y:2,angle:270),
+        Dancer.fromData(gender:Gender.BOY,x:1,y:2,angle:270),
+        Dancer.fromData(gender:Gender.GIRL,x:-3,y:2,angle:270),
   ]),
       group:'(From lines) Concentric',isGenderSpecific:true,
       paths:[
@@ -835,10 +835,10 @@ import '../c3a/mini_chase.dart' as c3a;
 
     AnimatedCall('Concentric Star Thru',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:3,y:1,angle:270),
-        DancerModel.fromData(gender:Gender.GIRL,x:-1,y:1,angle:0),
-        DancerModel.fromData(gender:Gender.BOY,x:1,y:1,angle:180),
-        DancerModel.fromData(gender:Gender.GIRL,x:-3,y:1,angle:270),
+        Dancer.fromData(gender:Gender.BOY,x:3,y:1,angle:270),
+        Dancer.fromData(gender:Gender.GIRL,x:-1,y:1,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:1,y:1,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:-3,y:1,angle:270),
   ]),
       group:'(From T-Bones) Concentric',
       paths:[
@@ -959,10 +959,10 @@ import '../c3a/mini_chase.dart' as c3a;
 
     AnimatedCall('Concentric Linear Cycle',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:0,y:-3.5,angle:180),
-        DancerModel.fromData(gender:Gender.GIRL,x:0,y:-2.5,angle:0),
-        DancerModel.fromData(gender:Gender.BOY,x:0,y:-1.5,angle:180),
-        DancerModel.fromData(gender:Gender.GIRL,x:0,y:-.5,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:0,y:-3.5,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:0,y:-2.5,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:0,y:-1.5,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:0,y:-.5,angle:0),
   ]),
       group:'(From tidal formation) Concentric',
       paths:[

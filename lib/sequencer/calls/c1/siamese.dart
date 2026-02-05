@@ -25,8 +25,8 @@ class Siamese extends FourDancerConcept {
   @override final level = LevelData.C1;
   @override final conceptName = 'Siamese';
   @override var helplink = 'c1/siamese_concept';
-  late List<List<DancerModel>> couples;
-  late List<List<DancerModel>> tandems;
+  late List<List<Dancer>> couples;
+  late List<List<Dancer>> tandems;
 
   Siamese(super.name);
 
@@ -49,7 +49,7 @@ class Siamese extends FourDancerConcept {
   }
 
   @override
-  List<List<DancerModel>> dancerGroups(CallContext ctx) {
+  List<List<Dancer>> dancerGroups(CallContext ctx) {
     //  First find couples
     couples = ctx.dancers.where((d) =>
         d.data.beau && (d.data.partner?.data.belle ?? false) &&
@@ -71,11 +71,11 @@ class Siamese extends FourDancerConcept {
   }
 
   @override
-  Vector startPosition(List<DancerModel> group) =>
+  Vector startPosition(List<Dancer> group) =>
       (group[0].location + group[1].location).scale(0.5, 0.5);
 
   @override
-  Vector computeLocation(DancerModel d, Movement m, int mi, double beat, int groupIndex) {
+  Vector computeLocation(Dancer d, Movement m, int mi, double beat, int groupIndex) {
     final pos = m.translate(beat).location;
     final offset = 0.5;
     final isFirst = groupIndex == 0;
@@ -90,7 +90,7 @@ class Siamese extends FourDancerConcept {
   }
 
   @override
-  void postAdjustment(CallContext ctx, DancerModel cd, List<DancerModel> group) {
+  void postAdjustment(CallContext ctx, Dancer cd, List<Dancer> group) {
     //  This covers most all the formations you get from tandem calls
     var tandemFormations = {
       Formation('Normal Lines Compact'): 1.0,

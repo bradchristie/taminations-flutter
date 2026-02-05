@@ -185,15 +185,15 @@ import '../../moves.dart';
 
     AnimatedCall('Wheel and Deal', noDisplay: true,
         formation:  Formation('', asymmetric: true, dancers:[
-          DancerModel.fromData(gender:Gender.BOY,x:-2,y:3,angle:0),
-          DancerModel.fromData(gender:Gender.GIRL,x:-2,y:1,angle:0),
-          DancerModel.fromData(gender:Gender.GIRL,x:-2,y:-1,angle:180),
-          DancerModel.fromData(gender:Gender.BOY,x:-2,y:-3,angle:180),
+          Dancer.fromData(gender:Gender.BOY,x:-2,y:3,angle:0),
+          Dancer.fromData(gender:Gender.GIRL,x:-2,y:1,angle:0),
+          Dancer.fromData(gender:Gender.GIRL,x:-2,y:-1,angle:180),
+          Dancer.fromData(gender:Gender.BOY,x:-2,y:-3,angle:180),
 
-          DancerModel.fromData(gender:Gender.BOY,x:2,y:-3,angle:0),
-          DancerModel.fromData(gender:Gender.GIRL,x:2,y:-1,angle:0),
-          DancerModel.fromData(gender:Gender.GIRL,x:2,y:1,angle:0),
-          DancerModel.fromData(gender:Gender.BOY,x:2,y:3,angle:0),
+          Dancer.fromData(gender:Gender.BOY,x:2,y:-3,angle:0),
+          Dancer.fromData(gender:Gender.GIRL,x:2,y:-1,angle:0),
+          Dancer.fromData(gender:Gender.GIRL,x:2,y:1,angle:0),
+          Dancer.fromData(gender:Gender.BOY,x:2,y:3,angle:0),
         ]),
         from:'Asymmetric 1',difficulty: 2,
         paths:[
@@ -218,15 +218,15 @@ import '../../moves.dart';
 
     AnimatedCall('Wheel and Deal', noDisplay: true,
         formation:  Formation('', asymmetric: true, dancers:[
-          DancerModel.fromData(gender:Gender.BOY,x:-2,y:3,angle:180),
-          DancerModel.fromData(gender:Gender.GIRL,x:-2,y:1,angle:180),
-          DancerModel.fromData(gender:Gender.GIRL,x:-2,y:-1,angle:0),
-          DancerModel.fromData(gender:Gender.BOY,x:-2,y:-3,angle:0),
+          Dancer.fromData(gender:Gender.BOY,x:-2,y:3,angle:180),
+          Dancer.fromData(gender:Gender.GIRL,x:-2,y:1,angle:180),
+          Dancer.fromData(gender:Gender.GIRL,x:-2,y:-1,angle:0),
+          Dancer.fromData(gender:Gender.BOY,x:-2,y:-3,angle:0),
 
-          DancerModel.fromData(gender:Gender.BOY,x:2,y:-3,angle:0),
-          DancerModel.fromData(gender:Gender.GIRL,x:2,y:-1,angle:0),
-          DancerModel.fromData(gender:Gender.GIRL,x:2,y:1,angle:0),
-          DancerModel.fromData(gender:Gender.BOY,x:2,y:3,angle:0),
+          Dancer.fromData(gender:Gender.BOY,x:2,y:-3,angle:0),
+          Dancer.fromData(gender:Gender.GIRL,x:2,y:-1,angle:0),
+          Dancer.fromData(gender:Gender.GIRL,x:2,y:1,angle:0),
+          Dancer.fromData(gender:Gender.BOY,x:2,y:3,angle:0),
         ]),
         from:'Asymmetric 2',difficulty: 2,
         paths:[
@@ -250,15 +250,15 @@ import '../../moves.dart';
 
     AnimatedCall('Wheel and Deal', noDisplay: true,
         formation:  Formation('', asymmetric: true, dancers:[
-          DancerModel.fromData(gender:Gender.BOY,x:-2,y:3,angle:180),
-          DancerModel.fromData(gender:Gender.GIRL,x:-2,y:1,angle:180),
-          DancerModel.fromData(gender:Gender.GIRL,x:-2,y:-1,angle:0),
-          DancerModel.fromData(gender:Gender.BOY,x:-2,y:-3,angle:0),
+          Dancer.fromData(gender:Gender.BOY,x:-2,y:3,angle:180),
+          Dancer.fromData(gender:Gender.GIRL,x:-2,y:1,angle:180),
+          Dancer.fromData(gender:Gender.GIRL,x:-2,y:-1,angle:0),
+          Dancer.fromData(gender:Gender.BOY,x:-2,y:-3,angle:0),
 
-          DancerModel.fromData(gender:Gender.BOY,x:2,y:-3,angle:180),
-          DancerModel.fromData(gender:Gender.GIRL,x:2,y:-1,angle:180),
-          DancerModel.fromData(gender:Gender.GIRL,x:2,y:1,angle:0),
-          DancerModel.fromData(gender:Gender.BOY,x:2,y:3,angle:0),
+          Dancer.fromData(gender:Gender.BOY,x:2,y:-3,angle:180),
+          Dancer.fromData(gender:Gender.GIRL,x:2,y:-1,angle:180),
+          Dancer.fromData(gender:Gender.GIRL,x:2,y:1,angle:0),
+          Dancer.fromData(gender:Gender.BOY,x:2,y:3,angle:0),
         ]),
         from:'Asymmetric 3',difficulty: 2,
         paths:[
@@ -282,15 +282,15 @@ import '../../moves.dart';
 
     AnimatedCall('Wheel and Deal', noDisplay: true,
         formation:  Formation('', asymmetric: true, dancers:[
-          DancerModel.fromData(gender:Gender.BOY,x:-2,y:3,angle:180),
-          DancerModel.fromData(gender:Gender.GIRL,x:-2,y:1,angle:180),
-          DancerModel.fromData(gender:Gender.GIRL,x:-2,y:-1,angle:0),
-          DancerModel.fromData(gender:Gender.BOY,x:-2,y:-3,angle:0),
+          Dancer.fromData(gender:Gender.BOY,x:-2,y:3,angle:180),
+          Dancer.fromData(gender:Gender.GIRL,x:-2,y:1,angle:180),
+          Dancer.fromData(gender:Gender.GIRL,x:-2,y:-1,angle:0),
+          Dancer.fromData(gender:Gender.BOY,x:-2,y:-3,angle:0),
 
-          DancerModel.fromData(gender:Gender.BOY,x:2,y:-3,angle:180),
-          DancerModel.fromData(gender:Gender.GIRL,x:2,y:-1,angle:180),
-          DancerModel.fromData(gender:Gender.GIRL,x:2,y:1,angle:180),
-          DancerModel.fromData(gender:Gender.BOY,x:2,y:3,angle:180),
+          Dancer.fromData(gender:Gender.BOY,x:2,y:-3,angle:180),
+          Dancer.fromData(gender:Gender.GIRL,x:2,y:-1,angle:180),
+          Dancer.fromData(gender:Gender.GIRL,x:2,y:1,angle:180),
+          Dancer.fromData(gender:Gender.BOY,x:2,y:3,angle:180),
         ]),
         from:'Asymmetric 4',difficulty: 2,
         paths:[
@@ -314,15 +314,15 @@ import '../../moves.dart';
 
     AnimatedCall('Wheel and Deal', noDisplay: true,
         formation:  Formation('', asymmetric: true, dancers:[
-          DancerModel.fromData(gender:Gender.BOY,x:-2,y:3,angle:0),
-          DancerModel.fromData(gender:Gender.GIRL,x:-2,y:1,angle:0),
-          DancerModel.fromData(gender:Gender.GIRL,x:-2,y:-1,angle:180),
-          DancerModel.fromData(gender:Gender.BOY,x:-2,y:-3,angle:180),
+          Dancer.fromData(gender:Gender.BOY,x:-2,y:3,angle:0),
+          Dancer.fromData(gender:Gender.GIRL,x:-2,y:1,angle:0),
+          Dancer.fromData(gender:Gender.GIRL,x:-2,y:-1,angle:180),
+          Dancer.fromData(gender:Gender.BOY,x:-2,y:-3,angle:180),
 
-          DancerModel.fromData(gender:Gender.BOY,x:2,y:-3,angle:180),
-          DancerModel.fromData(gender:Gender.GIRL,x:2,y:-1,angle:180),
-          DancerModel.fromData(gender:Gender.GIRL,x:2,y:1,angle:180),
-          DancerModel.fromData(gender:Gender.BOY,x:2,y:3,angle:180),
+          Dancer.fromData(gender:Gender.BOY,x:2,y:-3,angle:180),
+          Dancer.fromData(gender:Gender.GIRL,x:2,y:-1,angle:180),
+          Dancer.fromData(gender:Gender.GIRL,x:2,y:1,angle:180),
+          Dancer.fromData(gender:Gender.BOY,x:2,y:3,angle:180),
         ]),
         from:'Asymmetric 5',difficulty: 2,
         paths:[
@@ -346,15 +346,15 @@ import '../../moves.dart';
 
     AnimatedCall('Wheel and Deal', noDisplay: true,
         formation:  Formation('', asymmetric: true, dancers:[
-          DancerModel.fromData(gender:Gender.BOY,x:-2,y:3,angle:180),
-          DancerModel.fromData(gender:Gender.GIRL,x:-2,y:1,angle:180),
-          DancerModel.fromData(gender:Gender.GIRL,x:-2,y:-1,angle:180),
-          DancerModel.fromData(gender:Gender.BOY,x:-2,y:-3,angle:180),
+          Dancer.fromData(gender:Gender.BOY,x:-2,y:3,angle:180),
+          Dancer.fromData(gender:Gender.GIRL,x:-2,y:1,angle:180),
+          Dancer.fromData(gender:Gender.GIRL,x:-2,y:-1,angle:180),
+          Dancer.fromData(gender:Gender.BOY,x:-2,y:-3,angle:180),
 
-          DancerModel.fromData(gender:Gender.BOY,x:2,y:-3,angle:180),
-          DancerModel.fromData(gender:Gender.GIRL,x:2,y:-1,angle:180),
-          DancerModel.fromData(gender:Gender.GIRL,x:2,y:1,angle:180),
-          DancerModel.fromData(gender:Gender.BOY,x:2,y:3,angle:180),
+          Dancer.fromData(gender:Gender.BOY,x:2,y:-3,angle:180),
+          Dancer.fromData(gender:Gender.GIRL,x:2,y:-1,angle:180),
+          Dancer.fromData(gender:Gender.GIRL,x:2,y:1,angle:180),
+          Dancer.fromData(gender:Gender.BOY,x:2,y:3,angle:180),
         ]),
         from:'Asymmetric 6',difficulty: 2,
         paths:[

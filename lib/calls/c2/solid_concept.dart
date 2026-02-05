@@ -62,10 +62,10 @@ import '../../moves.dart';
 
     AnimatedCall('Lines of 3 work Solid, all Diamond Circulate',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:0,y:5,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:0,y:3,angle:0),
-        DancerModel.fromData(gender:Gender.BOY,x:3,y:0,angle:270),
-        DancerModel.fromData(gender:Gender.GIRL,x:0,y:1,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:0,y:5,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:0,y:3,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:3,y:0,angle:270),
+        Dancer.fromData(gender:Gender.GIRL,x:0,y:1,angle:0),
   ]),
       group:' ',
       paths:[
@@ -80,10 +80,10 @@ import '../../moves.dart';
 
     AnimatedCall('Outside Triangles work Solid, all Mix',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:-1,y:-3,angle:180),
-        DancerModel.fromData(gender:Gender.GIRL,x:0,y:-1,angle:0),
-        DancerModel.fromData(gender:Gender.BOY,x:1,y:-3,angle:180),
-        DancerModel.fromData(gender:Gender.GIRL,x:0,y:-5,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:-1,y:-3,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:0,y:-1,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:1,y:-3,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:0,y:-5,angle:180),
   ]),
       group:' ',
       paths:[

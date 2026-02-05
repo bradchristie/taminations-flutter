@@ -149,12 +149,12 @@ import '../../moves.dart';
 
     AnimatedCall('Phantom Motivate',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:-2,y:3,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:-2,y:1,angle:180),
-        DancerModel.fromData(gender:Gender.BOY,x:3,y:2,angle:90),
-        DancerModel.fromData(gender:Gender.GIRL,x:1,y:2,angle:270),
-        DancerModel.fromData(gender:Gender.PHANTOM,x:-2,y:-1,angle:0),
-        DancerModel.fromData(gender:Gender.PHANTOM,x:-2,y:-3,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:-2,y:3,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:-2,y:1,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:3,y:2,angle:90),
+        Dancer.fromData(gender:Gender.GIRL,x:1,y:2,angle:270),
+        Dancer.fromData(gender:Gender.PHANTOM,x:-2,y:-1,angle:0),
+        Dancer.fromData(gender:Gender.PHANTOM,x:-2,y:-3,angle:180),
   ]),
       group:'Phantom',fractions:'4;4.5;3',
       paths:[
@@ -213,12 +213,12 @@ import '../../moves.dart';
 
     AnimatedCall('Phantom Tally Ho',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:-2,y:-3,angle:180),
-        DancerModel.fromData(gender:Gender.GIRL,x:-2,y:1,angle:180),
-        DancerModel.fromData(gender:Gender.BOY,x:-3,y:2,angle:90),
-        DancerModel.fromData(gender:Gender.GIRL,x:1,y:2,angle:90),
-        DancerModel.fromData(gender:Gender.PHANTOM,x:-2,y:-1,angle:0),
-        DancerModel.fromData(gender:Gender.PHANTOM,x:-2,y:3,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:-2,y:-3,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:-2,y:1,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:-3,y:2,angle:90),
+        Dancer.fromData(gender:Gender.GIRL,x:1,y:2,angle:90),
+        Dancer.fromData(gender:Gender.PHANTOM,x:-2,y:-1,angle:0),
+        Dancer.fromData(gender:Gender.PHANTOM,x:-2,y:3,angle:0),
   ]),
       group:'Phantom',fractions:'2',
       paths:[

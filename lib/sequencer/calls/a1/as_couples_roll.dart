@@ -38,7 +38,7 @@ class AsCouplesRoll extends Action with ActivesOnly {
   }
 
   @override
-  Path performOne(DancerModel d, CallContext ctx) {
+  Path performOne(Dancer d, CallContext ctx) {
     var d2 = d.data.partner!;
     var r1 = ctx.roll(d);
     var r2 = ctx.roll(d2);

@@ -110,7 +110,7 @@ class StepToACompactWave extends Action {
   StepToACompactWave(super.name);
 
   @override
-  Path performOne(DancerModel d, CallContext ctx) {
+  Path performOne(Dancer d, CallContext ctx) {
     var d2 = ctx.dancerFacing(d).throwIfNull(CallError('Cannot find dancer facing $d' ));
     var dist = d.distanceTo(d2);
     var move = (name.toLowerCase().contains('left' )) ? ExtendRight  : ExtendLeft;

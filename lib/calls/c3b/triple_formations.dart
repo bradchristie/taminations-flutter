@@ -26,10 +26,10 @@ import '../../moves.dart';
 
     AnimatedCall('Triple Lines Working Forward Circulate',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:3,y:-1,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:3,y:1,angle:180),
-        DancerModel.fromData(gender:Gender.BOY,x:0,y:-1,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:0,y:-3,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:3,y:-1,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:3,y:1,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:0,y:-1,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:0,y:-3,angle:0),
   ]),
       group:'Triple Lines Working Forward',
       paths:[
@@ -44,10 +44,10 @@ import '../../moves.dart';
 
     AnimatedCall('Triple Lines Working Forward Link Up',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:3,y:-1,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:3,y:-3,angle:0),
-        DancerModel.fromData(gender:Gender.BOY,x:0,y:-1,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:-3,y:-1,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:3,y:-1,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:3,y:-3,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:0,y:-1,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:-3,y:-1,angle:0),
   ]),
       group:'Triple Lines Working Forward',
       paths:[
@@ -70,10 +70,10 @@ import '../../moves.dart';
 
     AnimatedCall('Triple Lines Working Forward Load the Boat',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:0,y:-3,angle:180),
-        DancerModel.fromData(gender:Gender.GIRL,x:3,y:-1,angle:180),
-        DancerModel.fromData(gender:Gender.BOY,x:0,y:-1,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:-3,y:-1,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:0,y:-3,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:3,y:-1,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:0,y:-1,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:-3,y:-1,angle:0),
   ]),
       group:'Triple Lines Working Forward',
       paths:[
@@ -105,10 +105,10 @@ import '../../moves.dart';
 
     AnimatedCall('Triple Lines Working Backward Chase Right',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:3,y:-1,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:3,y:-3,angle:0),
-        DancerModel.fromData(gender:Gender.BOY,x:0,y:-1,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:0,y:-3,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:3,y:-1,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:3,y:-3,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:0,y:-1,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:0,y:-3,angle:180),
   ]),
       group:'Triple Lines Working Backward',
       paths:[
@@ -128,10 +128,10 @@ import '../../moves.dart';
 
     AnimatedCall('Triple Lines Working Backward Vertical Tag the Line',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:3,y:0,angle:270),
-        DancerModel.fromData(gender:Gender.GIRL,x:1,y:0,angle:270),
-        DancerModel.fromData(gender:Gender.BOY,x:-1,y:2,angle:270),
-        DancerModel.fromData(gender:Gender.GIRL,x:-3,y:2,angle:270),
+        Dancer.fromData(gender:Gender.BOY,x:3,y:0,angle:270),
+        Dancer.fromData(gender:Gender.GIRL,x:1,y:0,angle:270),
+        Dancer.fromData(gender:Gender.BOY,x:-1,y:2,angle:270),
+        Dancer.fromData(gender:Gender.GIRL,x:-3,y:2,angle:270),
   ]),
       group:'Triple Lines Working Backward',
       paths:[
@@ -151,10 +151,10 @@ import '../../moves.dart';
 
     AnimatedCall('Triple Boxes Working Left Trade Circulate',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:2,y:5,angle:180),
-        DancerModel.fromData(gender:Gender.GIRL,x:2,y:3,angle:0),
-        DancerModel.fromData(gender:Gender.BOY,x:2,y:1,angle:180),
-        DancerModel.fromData(gender:Gender.GIRL,x:2,y:-1,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:2,y:5,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:2,y:3,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:2,y:1,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:2,y:-1,angle:0),
   ]),
       group:'Triple Boxes Working Left',
       paths:[
@@ -170,10 +170,10 @@ import '../../moves.dart';
 
     AnimatedCall('Triple Boxes Working Left Regroup',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:1,y:5,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:1,y:3,angle:0),
-        DancerModel.fromData(gender:Gender.BOY,x:1,y:1,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:1,y:-1,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:1,y:5,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:1,y:3,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:1,y:1,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:1,y:-1,angle:0),
   ]),
       group:'Triple Boxes Working Left',
       paths:[
@@ -194,10 +194,10 @@ import '../../moves.dart';
 
     AnimatedCall('Triple Boxes Working Right Trade Circulate',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:2,y:5,angle:180),
-        DancerModel.fromData(gender:Gender.GIRL,x:2,y:3,angle:0),
-        DancerModel.fromData(gender:Gender.BOY,x:2,y:1,angle:180),
-        DancerModel.fromData(gender:Gender.GIRL,x:2,y:-1,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:2,y:5,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:2,y:3,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:2,y:1,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:2,y:-1,angle:0),
   ]),
       group:'Triple Boxes Working Right',
       paths:[

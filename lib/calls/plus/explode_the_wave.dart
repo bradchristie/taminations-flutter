@@ -125,8 +125,8 @@ import '../../moves.dart';
 
     AnimatedCall('Explode',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:0,y:1.5,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:0,y:0.5,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:0,y:1.5,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:0,y:0.5,angle:180),
   ]),
       from:'Compact Right-Hand Wave',noDisplay: true,
       paths:[
@@ -146,8 +146,8 @@ import '../../moves.dart';
 
     AnimatedCall('Explode',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:0,y:1.5,angle:180),
-        DancerModel.fromData(gender:Gender.GIRL,x:0,y:0.5,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:0,y:1.5,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:0,y:0.5,angle:0),
   ]),
       from:'Compact Left-Hand Wave',noDisplay: true,
       paths:[
@@ -171,10 +171,10 @@ import '../../moves.dart';
 
     AnimatedCall('Explode',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:-2,y:1.5,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:-2,y:0.5,angle:180),
-        DancerModel.fromData(gender:Gender.GIRL,x:-2,y:-0.5,angle:0),
-        DancerModel.fromData(gender:Gender.BOY,x:-2,y:-1.5,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:-2,y:1.5,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:-2,y:0.5,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:-2,y:-0.5,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:-2,y:-1.5,angle:180),
   ]),
       from:'Compact Right-Hand Waves',noDisplay: true,
       paths:[
@@ -202,10 +202,10 @@ import '../../moves.dart';
 
     AnimatedCall('Explode',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:-2,y:1.5,angle:180),
-        DancerModel.fromData(gender:Gender.GIRL,x:-2,y:0.5,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:-2,y:-0.5,angle:180),
-        DancerModel.fromData(gender:Gender.BOY,x:-2,y:-1.5,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:-2,y:1.5,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:-2,y:0.5,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:-2,y:-0.5,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:-2,y:-1.5,angle:0),
   ]),
       from:'Compact Left-Hand Waves',noDisplay: true,
       paths:[

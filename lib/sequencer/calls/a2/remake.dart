@@ -23,8 +23,8 @@ class Remake extends Action with ActivesOnly, CallWithParts, IsLeft, IsGrand {
 
   @override int numberOfParts = 3;
   @override final level = LevelData.A2;
-  List<DancerModel>? part1dancers;
-  List<DancerModel>? part2dancers;
+  List<Dancer>? part1dancers;
+  List<Dancer>? part2dancers;
   @override var help = '''Remake is a 3-part call:
   1.  Right-hand Hinge
   2.  Left-hand Trade

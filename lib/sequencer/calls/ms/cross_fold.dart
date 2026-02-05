@@ -42,7 +42,7 @@ class CrossFold extends Action {
       //  Determine direction of Cross Fold
       var dleft = ctx.dancersToLeft(d);
       var dright = ctx.dancersToRight(d);
-      DancerModel d2;
+      Dancer d2;
       var isRight = true;
       if (dright.length < 2)
         isRight = false;

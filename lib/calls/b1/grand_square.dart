@@ -96,10 +96,10 @@ import '../../moves.dart';
     //  This is for the sequence to calculate Grand Square <nn> Steps
     AnimatedCall('Grand Square',
         formation:Formation('', dancers:[
-          DancerModel.fromData(gender:Gender.BOY,x:-3,y:1,angle:0),
-          DancerModel.fromData(gender:Gender.GIRL,x:-3,y:-1,angle:0),
-          DancerModel.fromData(gender:Gender.BOY,x:-1,y:-3,angle:0),
-          DancerModel.fromData(gender:Gender.GIRL,x:1,y:-3,angle:180),
+          Dancer.fromData(gender:Gender.BOY,x:-3,y:1,angle:0),
+          Dancer.fromData(gender:Gender.GIRL,x:-3,y:-1,angle:0),
+          Dancer.fromData(gender:Gender.BOY,x:-1,y:-3,angle:0),
+          Dancer.fromData(gender:Gender.GIRL,x:1,y:-3,angle:180),
         ]),
         from:'Static Square, Sides Face',group:' ',
         parts:'4;4;4;4;4;4;4',difficulty: 1, noDisplay: true,

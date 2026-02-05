@@ -34,10 +34,10 @@ class SwingTheFractions extends Action with CallWithParts, IsLeft {
 The hands can be swapped with Left Swing the Fractions''';
   @override var helplink = 'c1/swing_the_fractions';
 
-  List<DancerModel>? part1dancers;
-  List<DancerModel>? part2dancers;
-  List<DancerModel>? part3dancers;
-  List<DancerModel>? part4dancers;
+  List<Dancer>? part1dancers;
+  List<Dancer>? part2dancers;
+  List<Dancer>? part3dancers;
+  List<Dancer>? part4dancers;
 
   SwingTheFractions(super.name);
 

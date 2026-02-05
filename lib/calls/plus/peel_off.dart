@@ -46,8 +46,8 @@ import '../../moves.dart';
 
     AnimatedCall('Peel Off',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:0,y:-1,angle:180),
-        DancerModel.fromData(gender:Gender.GIRL,x:2,y:-1,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:0,y:-1,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:2,y:-1,angle:180),
   ]),
       from:'Right-Hand Z Facing In',difficulty: 1,
       paths:[
@@ -58,8 +58,8 @@ import '../../moves.dart';
 
     AnimatedCall('Peel Off',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:0,y:1,angle:180),
-        DancerModel.fromData(gender:Gender.GIRL,x:2,y:1,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:0,y:1,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:2,y:1,angle:180),
   ]),
       from:'Left-Hand Z Facing In',difficulty: 1,
       paths:[
@@ -70,8 +70,8 @@ import '../../moves.dart';
 
     AnimatedCall('Peel Off',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:0,y:1,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:2,y:1,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:0,y:1,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:2,y:1,angle:0),
   ]),
       from:'Right-Hand Z Facing Out',difficulty: 2,
       paths:[
@@ -82,8 +82,8 @@ import '../../moves.dart';
 
     AnimatedCall('Peel Off',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:0,y:-1,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:2,y:-1,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:0,y:-1,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:2,y:-1,angle:0),
   ]),
       from:'Left-Hand Z Facing Out',difficulty: 2,
       paths:[
@@ -95,10 +95,10 @@ import '../../moves.dart';
     AnimatedCall('Peel Off',
         from: 'Tandem Couples', noDisplay: true,
         formation:Formation('', asymmetric: true, dancers:[
-          DancerModel.fromData(gender:Gender.BOY,x:1.5,y:1,angle:0),
-          DancerModel.fromData(gender:Gender.GIRL,x:1.5,y:-1,angle:0),
-          DancerModel.fromData(gender:Gender.BOY,x:-1.5,y:1,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:-1.5,y:-1,angle:0)]),
+          Dancer.fromData(gender:Gender.BOY,x:1.5,y:1,angle:0),
+          Dancer.fromData(gender:Gender.GIRL,x:1.5,y:-1,angle:0),
+          Dancer.fromData(gender:Gender.BOY,x:-1.5,y:1,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:-1.5,y:-1,angle:0)]),
         paths: [
           RunLeft.scale(0.5,0.25).skew(-1.5, 0),
           RunRight.scale(0.5,0.25).skew(-1.5, 0),

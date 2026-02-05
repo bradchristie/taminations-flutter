@@ -27,8 +27,8 @@ import '../a2/all_4_all_8.dart' as a2;
 
     AnimatedCall('Pass the Sea',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:1,y:2,angle:270),
-        DancerModel.fromData(gender:Gender.GIRL,x:-1,y:2,angle:270),
+        Dancer.fromData(gender:Gender.BOY,x:1,y:2,angle:270),
+        Dancer.fromData(gender:Gender.GIRL,x:-1,y:2,angle:270),
   ]),
       from:'Facing Couples',
       paths:[

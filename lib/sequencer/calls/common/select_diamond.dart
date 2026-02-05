@@ -27,8 +27,8 @@ class SelectDiamond extends FilterActives {
   SelectDiamond(super.name);
 
   @override
-  bool isActive(DancerModel d, CallContext ctx) {
-    var axisDancers = <DancerModel>[];
+  bool isActive(Dancer d, CallContext ctx) {
+    var axisDancers = <Dancer>[];
     if (d.isOnXAxis) {
       axisDancers = ctx.dancers.where((d2) => d2.isOnXAxis).toList();
     } else if (d.isOnYAxis) {

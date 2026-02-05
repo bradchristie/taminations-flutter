@@ -120,10 +120,10 @@ import '../c1/swing_the_fractions.dart' as c1;
 
     AnimatedCall('Any Hand Quarter Thru',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:3,y:2,angle:90),
-        DancerModel.fromData(gender:Gender.GIRL,x:1,y:2,angle:270),
-        DancerModel.fromData(gender:Gender.BOY,x:-1,y:2,angle:270),
-        DancerModel.fromData(gender:Gender.GIRL,x:-3,y:2,angle:90),
+        Dancer.fromData(gender:Gender.BOY,x:3,y:2,angle:90),
+        Dancer.fromData(gender:Gender.GIRL,x:1,y:2,angle:270),
+        Dancer.fromData(gender:Gender.BOY,x:-1,y:2,angle:270),
+        Dancer.fromData(gender:Gender.GIRL,x:-3,y:2,angle:90),
   ]),
       from:'Inverted Lines, Ends Facing Out',parts:'1.5',
       paths:[
@@ -241,10 +241,10 @@ import '../c1/swing_the_fractions.dart' as c1;
 
     AnimatedCall('Any Hand Quarter Thru',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:0,y:-3,angle:180),
-        DancerModel.fromData(gender:Gender.GIRL,x:-3,y:-2,angle:90),
-        DancerModel.fromData(gender:Gender.BOY,x:0,y:-1,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:3,y:-2,angle:90),
+        Dancer.fromData(gender:Gender.BOY,x:0,y:-3,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:-3,y:-2,angle:90),
+        Dancer.fromData(gender:Gender.BOY,x:0,y:-1,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:3,y:-2,angle:90),
   ]),
       from:'Diamonds 3',parts:'1.5',
       paths:[
@@ -263,10 +263,10 @@ import '../c1/swing_the_fractions.dart' as c1;
 
     AnimatedCall('Any Hand Quarter Thru',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:0,y:-3,angle:180),
-        DancerModel.fromData(gender:Gender.GIRL,x:-3,y:-2,angle:270),
-        DancerModel.fromData(gender:Gender.BOY,x:0,y:-1,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:3,y:-2,angle:270),
+        Dancer.fromData(gender:Gender.BOY,x:0,y:-3,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:-3,y:-2,angle:270),
+        Dancer.fromData(gender:Gender.BOY,x:0,y:-1,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:3,y:-2,angle:270),
   ]),
       from:'Diamonds 4',parts:'1.5',
       paths:[
@@ -285,10 +285,10 @@ import '../c1/swing_the_fractions.dart' as c1;
 
     AnimatedCall('Any Hand Quarter Thru',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:0,y:-3,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:-3,y:-2,angle:90),
-        DancerModel.fromData(gender:Gender.BOY,x:0,y:-1,angle:180),
-        DancerModel.fromData(gender:Gender.GIRL,x:3,y:-2,angle:90),
+        Dancer.fromData(gender:Gender.BOY,x:0,y:-3,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:-3,y:-2,angle:90),
+        Dancer.fromData(gender:Gender.BOY,x:0,y:-1,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:3,y:-2,angle:90),
   ]),
       from:'Diamonds 5',parts:'1.5',
       paths:[
@@ -307,10 +307,10 @@ import '../c1/swing_the_fractions.dart' as c1;
 
     AnimatedCall('Any Hand Quarter Thru',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:0,y:-3,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:-3,y:-2,angle:270),
-        DancerModel.fromData(gender:Gender.BOY,x:0,y:-1,angle:180),
-        DancerModel.fromData(gender:Gender.GIRL,x:3,y:-2,angle:270),
+        Dancer.fromData(gender:Gender.BOY,x:0,y:-3,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:-3,y:-2,angle:270),
+        Dancer.fromData(gender:Gender.BOY,x:0,y:-1,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:3,y:-2,angle:270),
   ]),
       from:'Diamonds 6',parts:'1.5',
       paths:[
@@ -487,10 +487,10 @@ import '../c1/swing_the_fractions.dart' as c1;
 
     AnimatedCall('Any Hand 3/4 Thru',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:0,y:-3,angle:180),
-        DancerModel.fromData(gender:Gender.GIRL,x:-3,y:-2,angle:90),
-        DancerModel.fromData(gender:Gender.BOY,x:0,y:-1,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:3,y:-2,angle:90),
+        Dancer.fromData(gender:Gender.BOY,x:0,y:-3,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:-3,y:-2,angle:90),
+        Dancer.fromData(gender:Gender.BOY,x:0,y:-1,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:3,y:-2,angle:90),
   ]),
       from:'Diamonds 3',parts:'4.5',
       paths:[
@@ -509,10 +509,10 @@ import '../c1/swing_the_fractions.dart' as c1;
 
     AnimatedCall('Any Hand 3/4 Thru',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:0,y:-3,angle:180),
-        DancerModel.fromData(gender:Gender.GIRL,x:-3,y:-2,angle:270),
-        DancerModel.fromData(gender:Gender.BOY,x:0,y:-1,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:3,y:-2,angle:270),
+        Dancer.fromData(gender:Gender.BOY,x:0,y:-3,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:-3,y:-2,angle:270),
+        Dancer.fromData(gender:Gender.BOY,x:0,y:-1,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:3,y:-2,angle:270),
   ]),
       from:'Diamonds 4',parts:'4.5',
       paths:[
@@ -531,10 +531,10 @@ import '../c1/swing_the_fractions.dart' as c1;
 
     AnimatedCall('Any Hand 3/4 Thru',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:0,y:-3,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:-3,y:-2,angle:90),
-        DancerModel.fromData(gender:Gender.BOY,x:0,y:-1,angle:180),
-        DancerModel.fromData(gender:Gender.GIRL,x:3,y:-2,angle:90),
+        Dancer.fromData(gender:Gender.BOY,x:0,y:-3,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:-3,y:-2,angle:90),
+        Dancer.fromData(gender:Gender.BOY,x:0,y:-1,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:3,y:-2,angle:90),
   ]),
       from:'Diamonds 5',parts:'4.5',
       paths:[
@@ -553,10 +553,10 @@ import '../c1/swing_the_fractions.dart' as c1;
 
     AnimatedCall('Any Hand 3/4 Thru',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:0,y:-3,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:-3,y:-2,angle:270),
-        DancerModel.fromData(gender:Gender.BOY,x:0,y:-1,angle:180),
-        DancerModel.fromData(gender:Gender.GIRL,x:3,y:-2,angle:270),
+        Dancer.fromData(gender:Gender.BOY,x:0,y:-3,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:-3,y:-2,angle:270),
+        Dancer.fromData(gender:Gender.BOY,x:0,y:-1,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:3,y:-2,angle:270),
   ]),
       from:'Diamonds 6',parts:'4.5',
       paths:[

@@ -25,10 +25,10 @@ import '../../moves.dart';
 final List<AnimatedCall> PerkUp = [
   AnimatedCall('Perk Up',
       formation: Formation('', dancers: [
-        DancerModel.fromData(gender: Gender.GIRL, x: 3, y: 2, angle: 270),
-        DancerModel.fromData(gender: Gender.BOY, x: 1, y: 2, angle: 90),
-        DancerModel.fromData(gender: Gender.GIRL, x: -1, y: 2, angle: 270),
-        DancerModel.fromData(gender: Gender.BOY, x: -3, y: 2, angle: 90),
+        Dancer.fromData(gender: Gender.GIRL, x: 3, y: 2, angle: 270),
+        Dancer.fromData(gender: Gender.BOY, x: 1, y: 2, angle: 90),
+        Dancer.fromData(gender: Gender.GIRL, x: -1, y: 2, angle: 270),
+        Dancer.fromData(gender: Gender.BOY, x: -3, y: 2, angle: 90),
       ]),
       from: 'Right-Hand Waves',
       fractions: '4;2',

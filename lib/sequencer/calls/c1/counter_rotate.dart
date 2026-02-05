@@ -42,7 +42,7 @@ class CounterRotate extends Action {
   }
 
   @override
-  Path performOne(DancerModel d, CallContext ctx) {
+  Path performOne(Dancer d, CallContext ctx) {
     var da = d.angleToOrigin;
     //  Counter Rotate not possible if dancer is looking
     //  directly at the center of the square

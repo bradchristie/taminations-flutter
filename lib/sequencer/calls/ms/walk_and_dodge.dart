@@ -39,9 +39,9 @@ class WalkAndDodge extends Action with ActivesOnly {
   late CallContext walkctx;
   late CallContext dodgectx;
 
-  bool isWalker(DancerModel? d) =>
+  bool isWalker(Dancer? d) =>
       d != null && walkctx.actives.map((wd) => wd.number).contains(d.number);
-  bool isDodger(DancerModel? d) =>
+  bool isDodger(Dancer? d) =>
       d != null && dodgectx.actives.map((dd) => dd.number).contains(d.number);
 
   @override
@@ -93,7 +93,7 @@ class WalkAndDodge extends Action with ActivesOnly {
   }
 
   @override
-  Path performOne(DancerModel d, CallContext ctx) {
+  Path performOne(Dancer d, CallContext ctx) {
     if (isDodger(d)) {
       //  A Dodger.  Figure out which way to dodge.
       final dRight = ctx.dancerToRight(d);

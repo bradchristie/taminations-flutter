@@ -28,7 +28,7 @@ class PullBy extends PassThru {
   PullBy(super.name);
 
   @override
-  Path performOne(DancerModel d, CallContext ctx) =>
+  Path performOne(Dancer d, CallContext ctx) =>
       super.performOne(d, ctx)
         .changehands(isLeft ? Hands.LEFTHAND : Hands.RIGHTHAND);
 

@@ -108,10 +108,10 @@ import '../../moves.dart';
 
     AnimatedCall('Inpoint Triangle Reshape',
         formation:Formation('', dancers:[
-          DancerModel.fromData(gender:Gender.BOY,x:0,y:-3,angle:270),
-          DancerModel.fromData(gender:Gender.GIRL,x:-3,y:-2,angle:90),
-          DancerModel.fromData(gender:Gender.BOY,x:0,y:-1,angle:270),
-          DancerModel.fromData(gender:Gender.GIRL,x:3,y:-2,angle:270),
+          Dancer.fromData(gender:Gender.BOY,x:0,y:-3,angle:270),
+          Dancer.fromData(gender:Gender.GIRL,x:-3,y:-2,angle:90),
+          Dancer.fromData(gender:Gender.BOY,x:0,y:-1,angle:270),
+          Dancer.fromData(gender:Gender.GIRL,x:3,y:-2,angle:270),
         ]),
         from:'Tandem Centers',
         paths:[
@@ -219,10 +219,10 @@ import '../../moves.dart';
 
     AnimatedCall('Tandem-Based Triangle Reshape',
         formation:Formation('', dancers:[
-          DancerModel.fromData(gender:Gender.BOY,x:-2,y:-3,angle:180),
-          DancerModel.fromData(gender:Gender.GIRL,x:-3,y:0,angle:90),
-          DancerModel.fromData(gender:Gender.BOY,x:-2,y:3,angle:0),
-          DancerModel.fromData(gender:Gender.GIRL,x:0,y:1,angle:180),
+          Dancer.fromData(gender:Gender.BOY,x:-2,y:-3,angle:180),
+          Dancer.fromData(gender:Gender.GIRL,x:-3,y:0,angle:90),
+          Dancer.fromData(gender:Gender.BOY,x:-2,y:3,angle:0),
+          Dancer.fromData(gender:Gender.GIRL,x:0,y:1,angle:180),
         ]),
         from:'Hourglass with Right-Hand Tandem Triangles',
         paths:[
@@ -238,10 +238,10 @@ import '../../moves.dart';
 
     AnimatedCall('Tandem-Based Triangle Reshape',
         formation:Formation('', dancers:[
-          DancerModel.fromData(gender:Gender.BOY,x:-2,y:-3,angle:0),
-          DancerModel.fromData(gender:Gender.GIRL,x:-3,y:0,angle:90),
-          DancerModel.fromData(gender:Gender.BOY,x:-2,y:3,angle:180),
-          DancerModel.fromData(gender:Gender.GIRL,x:0,y:1,angle:0),
+          Dancer.fromData(gender:Gender.BOY,x:-2,y:-3,angle:0),
+          Dancer.fromData(gender:Gender.GIRL,x:-3,y:0,angle:90),
+          Dancer.fromData(gender:Gender.BOY,x:-2,y:3,angle:180),
+          Dancer.fromData(gender:Gender.GIRL,x:0,y:1,angle:0),
         ]),
         from:'Hourglass with Left-Hand Tandem Triangles',
         paths:[
@@ -256,10 +256,10 @@ import '../../moves.dart';
 
     AnimatedCall('Tandem-Based Triangle Reshape',
         formation:Formation('', dancers:[
-          DancerModel.fromData(gender:Gender.BOY,x:-1,y:-1,angle:0),
-          DancerModel.fromData(gender:Gender.GIRL,x:-3,y:0,angle:90),
-          DancerModel.fromData(gender:Gender.BOY,x:-1,y:1,angle:180),
-          DancerModel.fromData(gender:Gender.GIRL,x:0,y:3.1,angle:0),
+          Dancer.fromData(gender:Gender.BOY,x:-1,y:-1,angle:0),
+          Dancer.fromData(gender:Gender.GIRL,x:-3,y:0,angle:90),
+          Dancer.fromData(gender:Gender.BOY,x:-1,y:1,angle:180),
+          Dancer.fromData(gender:Gender.GIRL,x:0,y:3.1,angle:0),
         ]),
         from:'Galaxy with Right-Hand Tandem Triangles',
         paths:[
@@ -274,10 +274,10 @@ import '../../moves.dart';
 
     AnimatedCall('Tandem-Based Triangle Reshape',
         formation:Formation('', dancers:[
-          DancerModel.fromData(gender:Gender.BOY,x:-1,y:-1,angle:180),
-          DancerModel.fromData(gender:Gender.GIRL,x:-3,y:0,angle:270),
-          DancerModel.fromData(gender:Gender.BOY,x:-1,y:1,angle:0),
-          DancerModel.fromData(gender:Gender.GIRL,x:0,y:3.1,angle:180),
+          Dancer.fromData(gender:Gender.BOY,x:-1,y:-1,angle:180),
+          Dancer.fromData(gender:Gender.GIRL,x:-3,y:0,angle:270),
+          Dancer.fromData(gender:Gender.BOY,x:-1,y:1,angle:0),
+          Dancer.fromData(gender:Gender.GIRL,x:0,y:3.1,angle:180),
         ]),
         from:'Galaxy with Left-Hand Tandem Triangles',
         paths:[

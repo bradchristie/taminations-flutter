@@ -26,8 +26,8 @@ import '../../moves.dart';
 
     AnimatedCall('Peel the Top',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:0,y:1,angle:180),
-        DancerModel.fromData(gender:Gender.GIRL,x:2,y:1,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:0,y:1,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:2,y:1,angle:180),
   ]),
       from:'Left-Hand Z',parts:'3',difficulty: 1,
       paths:[
@@ -41,8 +41,8 @@ import '../../moves.dart';
 
     AnimatedCall('Peel the Top',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:0,y:-1,angle:180),
-        DancerModel.fromData(gender:Gender.GIRL,x:2,y:-1,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:0,y:-1,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:2,y:-1,angle:180),
   ]),
       from:'Right-Hand Z',parts:'3',difficulty: 1,
       paths:[
@@ -78,8 +78,8 @@ import '../../moves.dart';
 
     AnimatedCall('Peel the Top',
         formation: Formation('', dancers:[
-          DancerModel.fromData(gender:Gender.BOY,x:-1,y:1,angle:0),
-          DancerModel.fromData(gender:Gender.GIRL,x:-1,y:-1,angle:270),
+          Dancer.fromData(gender:Gender.BOY,x:-1,y:1,angle:0),
+          Dancer.fromData(gender:Gender.GIRL,x:-1,y:-1,angle:270),
         ]),
         from:'T-Bone 1',
         difficulty: 3,
@@ -94,8 +94,8 @@ import '../../moves.dart';
 
     AnimatedCall('Peel the Top',
         formation: Formation('', dancers:[
-          DancerModel.fromData(gender:Gender.BOY,x:-1,y:-1,angle:180),
-          DancerModel.fromData(gender:Gender.GIRL,x:-1,y:1,angle:270),
+          Dancer.fromData(gender:Gender.BOY,x:-1,y:-1,angle:180),
+          Dancer.fromData(gender:Gender.GIRL,x:-1,y:1,angle:270),
         ]),
         from:'T-Bone 2',
         difficulty: 3,

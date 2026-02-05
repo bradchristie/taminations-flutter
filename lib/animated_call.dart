@@ -21,7 +21,7 @@
 
 import 'package:xml/xml.dart';
 
-import 'dancer_model.dart';
+import 'dancer.dart';
 import 'extensions.dart';
 import 'formation.dart';
 import 'level_data.dart';

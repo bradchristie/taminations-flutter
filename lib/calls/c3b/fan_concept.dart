@@ -202,10 +202,10 @@ import '../../moves.dart';
 
     AnimatedCall('Fan Relay the Shadow',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:0,y:3.5,angle:180),
-        DancerModel.fromData(gender:Gender.GIRL,x:-2,y:2,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:-2,y:-2,angle:0),
-        DancerModel.fromData(gender:Gender.BOY,x:-2,y:0,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:0,y:3.5,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:-2,y:2,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:-2,y:-2,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:-2,y:0,angle:0),
   ]),
       group:' ',
       paths:[

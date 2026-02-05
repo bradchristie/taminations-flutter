@@ -30,7 +30,7 @@ class Balance extends Action with ActivesOnly {
   Balance(super.name);
 
   @override
-  Path performOne(DancerModel d, CallContext ctx) {
+  Path performOne(Dancer d, CallContext ctx) {
     if (ctx.isInWave(d)) {
       return Forward.changeBeats(2.0).addhands(Hands.GRIPBOTH).scale(0.3,1.0) +
              Back.changeBeats(2.0).addhands(Hands.GRIPBOTH).scale(0.3,1.0);

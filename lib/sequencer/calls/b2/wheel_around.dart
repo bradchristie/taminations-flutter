@@ -29,7 +29,7 @@ class WheelAround extends Action with ActivesOnly, IsReverse {
   WheelAround(super.name);
 
   @override
-  Path performOne(DancerModel d, CallContext ctx) {
+  Path performOne(Dancer d, CallContext ctx) {
     var d2 = d.data.partner.throwIfNull(CallError('Dancer $d must Wheel Around with partner'));
     if (!ctx.isInCouple(d,d2))
       throw CallError('Only Couples can Wheel Around.');

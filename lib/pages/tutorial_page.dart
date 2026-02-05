@@ -45,10 +45,10 @@ class TutorialModel extends PracticeModel {
   static final calls = [
     AnimatedCall('Couples Circulate',
         formation:Formation('', dancers:[
-          DancerModel.fromData(gender:Gender.BOY,x:-2,y:3,angle:0),
-          DancerModel.fromData(gender:Gender.GIRL,x:-2,y:1,angle:0),
-          DancerModel.fromData(gender:Gender.BOY,x:-2,y:-1,angle:180),
-          DancerModel.fromData(gender:Gender.GIRL,x:-2,y:-3,angle:180)]),
+          Dancer.fromData(gender:Gender.BOY,x:-2,y:3,angle:0),
+          Dancer.fromData(gender:Gender.GIRL,x:-2,y:1,angle:0),
+          Dancer.fromData(gender:Gender.BOY,x:-2,y:-1,angle:180),
+          Dancer.fromData(gender:Gender.GIRL,x:-2,y:-3,angle:180)]),
         paths: [
           Forward_4.changehands(Hands.RIGHT),
           Forward_4.changehands(Hands.LEFT),

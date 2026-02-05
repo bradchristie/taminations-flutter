@@ -26,10 +26,10 @@ import '../../moves.dart';
 
     AnimatedCall('Scramble',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.GIRL,x:2,y:1,angle:0),
-        DancerModel.fromData(gender:Gender.BOY,x:2,y:3,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:-2,y:3,angle:180),
-        DancerModel.fromData(gender:Gender.BOY,x:-2,y:1,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:2,y:1,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:2,y:3,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:-2,y:3,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:-2,y:1,angle:180),
   ]),
       from:'Lines Facing Out',parts:'2',
       paths:[
@@ -56,10 +56,10 @@ import '../../moves.dart';
 
     AnimatedCall('Scramble',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.GIRL,x:2,y:1,angle:180),
-        DancerModel.fromData(gender:Gender.BOY,x:2,y:3,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:-2,y:3,angle:180),
-        DancerModel.fromData(gender:Gender.BOY,x:-2,y:1,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:2,y:1,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:2,y:3,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:-2,y:3,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:-2,y:1,angle:0),
   ]),
       from:'Inverted Lines, Ends Facing Out',parts:'2',
       paths:[

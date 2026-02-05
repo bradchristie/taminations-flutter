@@ -18,7 +18,7 @@
 
 */
 
-import '../../../dancer_model.dart';
+import '../../../dancer.dart';
 import '../../call_context.dart';
 import 'fliter_actives.dart';
 
@@ -27,6 +27,6 @@ class VeryCenters extends FilterActives {
   VeryCenters(super.name);
 
   @override
-  bool isActive(DancerModel d, CallContext ctx) => d.data.verycenter;
+  bool isActive(Dancer d, CallContext ctx) => d.data.verycenter;
 
 }

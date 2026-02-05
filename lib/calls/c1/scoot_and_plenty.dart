@@ -154,10 +154,10 @@ import '../../moves.dart';
 
     AnimatedCall('Plenty',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:-3,y:1,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:-3,y:-1,angle:0),
-        DancerModel.fromData(gender:Gender.BOY,x:1.5,y:0,angle:90),
-        DancerModel.fromData(gender:Gender.GIRL,x:.5,y:0,angle:270),
+        Dancer.fromData(gender:Gender.BOY,x:-3,y:1,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:-3,y:-1,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:1.5,y:0,angle:90),
+        Dancer.fromData(gender:Gender.GIRL,x:.5,y:0,angle:270),
   ]),
       from:'"I" formation',parts:'5;5',
       paths:[

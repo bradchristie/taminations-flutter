@@ -40,8 +40,8 @@ import '../../moves.dart';
 
     AnimatedCall('Slide Thru',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:-1.5,y:-1,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:-1.5,y:1,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:-1.5,y:-1,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:-1.5,y:1,angle:0),
   ]),
       from:'Sashayed Couples',isGenderSpecific:true,difficulty: 2,
       paths:[
@@ -71,10 +71,10 @@ import '../../moves.dart';
 
     AnimatedCall('Slide Thru',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:-2,y:1,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:-2,y:3,angle:0),
-        DancerModel.fromData(gender:Gender.BOY,x:-2,y:-3,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:-2,y:-1,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:-2,y:1,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:-2,y:3,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:-2,y:-3,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:-2,y:-1,angle:0),
   ]),
       from:'Sashayed Lines',isGenderSpecific:true,difficulty: 2,
       paths:[
@@ -126,10 +126,10 @@ import '../../moves.dart';
 
     AnimatedCall('Slide Thru',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:-2,y:3,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:-2,y:1,angle:0),
-        DancerModel.fromData(gender:Gender.BOY,x:-2,y:-3,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:-2,y:-1,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:-2,y:3,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:-2,y:1,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:-2,y:-3,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:-2,y:-1,angle:0),
   ]),
       from:'Same Sex Facing',isGenderSpecific:true,difficulty: 2,
       taminator: '''

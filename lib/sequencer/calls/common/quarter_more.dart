@@ -18,7 +18,7 @@
 
 */
 
-import '../../../dancer_model.dart';
+import '../../../dancer.dart';
 import '../../call_context.dart';
 import '../../call_error.dart';
 import '../action.dart';

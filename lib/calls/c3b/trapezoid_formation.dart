@@ -66,10 +66,10 @@ import '../../moves.dart';
 
     AnimatedCall('Trapezoid Couple Up',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.GIRL,x:1,y:1,angle:270),
-        DancerModel.fromData(gender:Gender.BOY,x:1,y:3,angle:270),
-        DancerModel.fromData(gender:Gender.GIRL,x:1,y:-3,angle:270),
-        DancerModel.fromData(gender:Gender.BOY,x:1,y:-1,angle:270),
+        Dancer.fromData(gender:Gender.GIRL,x:1,y:1,angle:270),
+        Dancer.fromData(gender:Gender.BOY,x:1,y:3,angle:270),
+        Dancer.fromData(gender:Gender.GIRL,x:1,y:-3,angle:270),
+        Dancer.fromData(gender:Gender.BOY,x:1,y:-1,angle:270),
   ]),
       group:'Trapezoid',
       paths:[

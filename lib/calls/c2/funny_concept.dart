@@ -26,10 +26,10 @@ import '../../moves.dart';
 
     AnimatedCall('Funny Split Circulate 2',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:3,y:2,angle:270),
-        DancerModel.fromData(gender:Gender.GIRL,x:1,y:2,angle:270),
-        DancerModel.fromData(gender:Gender.GIRL,x:-1,y:2,angle:180),
-        DancerModel.fromData(gender:Gender.BOY,x:-3,y:2,angle:90),
+        Dancer.fromData(gender:Gender.BOY,x:3,y:2,angle:270),
+        Dancer.fromData(gender:Gender.GIRL,x:1,y:2,angle:270),
+        Dancer.fromData(gender:Gender.GIRL,x:-1,y:2,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:-3,y:2,angle:90),
   ]),
       group:'Funny',parts:'3',
       paths:[
@@ -50,10 +50,10 @@ import '../../moves.dart';
 
     AnimatedCall('Funny Diamond Circulate',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:-3,y:0,angle:90),
-        DancerModel.fromData(gender:Gender.GIRL,x:-2,y:3,angle:0),
-        DancerModel.fromData(gender:Gender.BOY,x:-1,y:0,angle:270),
-        DancerModel.fromData(gender:Gender.GIRL,x:-2,y:-3,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:-3,y:0,angle:90),
+        Dancer.fromData(gender:Gender.GIRL,x:-2,y:3,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:-1,y:0,angle:270),
+        Dancer.fromData(gender:Gender.GIRL,x:-2,y:-3,angle:0),
   ]),
       group:'Funny',
       paths:[
@@ -71,10 +71,10 @@ import '../../moves.dart';
 
     AnimatedCall('Funny Slide Thru 9 Times',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.GIRL,x:-3,y:1,angle:0),
-        DancerModel.fromData(gender:Gender.BOY,x:0,y:-3,angle:90),
-        DancerModel.fromData(gender:Gender.GIRL,x:-3,y:-1,angle:0),
-        DancerModel.fromData(gender:Gender.BOY,x:0,y:-1,angle:90),
+        Dancer.fromData(gender:Gender.GIRL,x:-3,y:1,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:0,y:-3,angle:90),
+        Dancer.fromData(gender:Gender.GIRL,x:-3,y:-1,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:0,y:-1,angle:90),
   ]),
       group:'Funny',isGenderSpecific:true,parts:'3;3;3;3;3;3;3;3',
       taminator: '''
@@ -139,10 +139,10 @@ import '../../moves.dart';
 
     AnimatedCall('Funny Square Thru 3',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:3,y:2,angle:270),
-        DancerModel.fromData(gender:Gender.GIRL,x:1,y:2,angle:270),
-        DancerModel.fromData(gender:Gender.GIRL,x:-1,y:2,angle:180),
-        DancerModel.fromData(gender:Gender.BOY,x:-3,y:2,angle:270),
+        Dancer.fromData(gender:Gender.BOY,x:3,y:2,angle:270),
+        Dancer.fromData(gender:Gender.GIRL,x:1,y:2,angle:270),
+        Dancer.fromData(gender:Gender.GIRL,x:-1,y:2,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:-3,y:2,angle:270),
   ]),
       from:'Funny Lines',group:'Funny',parts:'4;2.5',
       paths:[

@@ -31,9 +31,9 @@ class HalfSashay extends Action with IsReverse {
   HalfSashay(super.name);
 
   @override
-  Path performOne(DancerModel d, CallContext ctx) {
+  Path performOne(Dancer d, CallContext ctx) {
     //  Figure out who we sashay with
-    DancerModel d2;
+    Dancer d2;
     if (ctx.actives.contains(d.data.partner) && (d.data.beau || d.data.belle))
       d2 = d.data.partner!;
     else if (ctx.dancerToRight(d)?.data.active ?? false)

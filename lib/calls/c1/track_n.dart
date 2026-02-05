@@ -26,10 +26,10 @@ import '../../moves.dart';
 
     AnimatedCall('Track Zero',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.GIRL,x:1,y:3,angle:90),
-        DancerModel.fromData(gender:Gender.BOY,x:-1,y:3,angle:90),
-        DancerModel.fromData(gender:Gender.GIRL,x:1,y:1,angle:90),
-        DancerModel.fromData(gender:Gender.BOY,x:-1,y:1,angle:90),
+        Dancer.fromData(gender:Gender.GIRL,x:1,y:3,angle:90),
+        Dancer.fromData(gender:Gender.BOY,x:-1,y:3,angle:90),
+        Dancer.fromData(gender:Gender.GIRL,x:1,y:1,angle:90),
+        Dancer.fromData(gender:Gender.BOY,x:-1,y:1,angle:90),
   ]),
       group:' ',
       paths:[
@@ -48,10 +48,10 @@ import '../../moves.dart';
 
     AnimatedCall('Track One',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.GIRL,x:1,y:3,angle:90),
-        DancerModel.fromData(gender:Gender.BOY,x:-1,y:3,angle:90),
-        DancerModel.fromData(gender:Gender.GIRL,x:1,y:1,angle:90),
-        DancerModel.fromData(gender:Gender.BOY,x:-1,y:1,angle:90),
+        Dancer.fromData(gender:Gender.GIRL,x:1,y:3,angle:90),
+        Dancer.fromData(gender:Gender.BOY,x:-1,y:3,angle:90),
+        Dancer.fromData(gender:Gender.GIRL,x:1,y:1,angle:90),
+        Dancer.fromData(gender:Gender.BOY,x:-1,y:1,angle:90),
   ]),
       group:' ',
       paths:[
@@ -70,10 +70,10 @@ import '../../moves.dart';
 
     AnimatedCall('Track Two',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.GIRL,x:1,y:3,angle:90),
-        DancerModel.fromData(gender:Gender.BOY,x:-1,y:3,angle:90),
-        DancerModel.fromData(gender:Gender.GIRL,x:1,y:1,angle:90),
-        DancerModel.fromData(gender:Gender.BOY,x:-1,y:1,angle:90),
+        Dancer.fromData(gender:Gender.GIRL,x:1,y:3,angle:90),
+        Dancer.fromData(gender:Gender.BOY,x:-1,y:3,angle:90),
+        Dancer.fromData(gender:Gender.GIRL,x:1,y:1,angle:90),
+        Dancer.fromData(gender:Gender.BOY,x:-1,y:1,angle:90),
   ]),
       group:' ',notForSequencer: true,
       paths:[
@@ -93,10 +93,10 @@ import '../../moves.dart';
 
     AnimatedCall('Track Three',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.GIRL,x:1,y:3,angle:90),
-        DancerModel.fromData(gender:Gender.BOY,x:-1,y:3,angle:90),
-        DancerModel.fromData(gender:Gender.GIRL,x:1,y:1,angle:90),
-        DancerModel.fromData(gender:Gender.BOY,x:-1,y:1,angle:90),
+        Dancer.fromData(gender:Gender.GIRL,x:1,y:3,angle:90),
+        Dancer.fromData(gender:Gender.BOY,x:-1,y:3,angle:90),
+        Dancer.fromData(gender:Gender.GIRL,x:1,y:1,angle:90),
+        Dancer.fromData(gender:Gender.BOY,x:-1,y:1,angle:90),
   ]),
       group:' ',
       paths:[
@@ -118,10 +118,10 @@ import '../../moves.dart';
 
     AnimatedCall('Track Four',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.GIRL,x:1,y:3,angle:90),
-        DancerModel.fromData(gender:Gender.BOY,x:-1,y:3,angle:90),
-        DancerModel.fromData(gender:Gender.GIRL,x:1,y:1,angle:90),
-        DancerModel.fromData(gender:Gender.BOY,x:-1,y:1,angle:90),
+        Dancer.fromData(gender:Gender.GIRL,x:1,y:3,angle:90),
+        Dancer.fromData(gender:Gender.BOY,x:-1,y:3,angle:90),
+        Dancer.fromData(gender:Gender.GIRL,x:1,y:1,angle:90),
+        Dancer.fromData(gender:Gender.BOY,x:-1,y:1,angle:90),
   ]),
       group:' ',
       paths:[

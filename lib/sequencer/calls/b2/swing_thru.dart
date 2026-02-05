@@ -30,8 +30,8 @@ class SwingThru extends Action with CallWithParts, ActivesOnly, IsLeft, IsGrand 
 
   SwingThru(super.name);
 
-  List<DancerModel> _dancersWhoCanDoBothParts(CallContext ctx) {
-    var whoCan = <DancerModel>[];
+  List<Dancer> _dancersWhoCanDoBothParts(CallContext ctx) {
+    var whoCan = <Dancer>[];
     for (var d in ctx.dancers) {
       var dl = ctx.dancerToRight(d);
       var dr = ctx.dancerToLeft(d);

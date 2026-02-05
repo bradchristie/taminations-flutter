@@ -26,10 +26,10 @@ import '../../moves.dart';
 
     AnimatedCall('Mini-Busy',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.GIRL,x:-2,y:3,angle:0),
-        DancerModel.fromData(gender:Gender.BOY,x:-2,y:1,angle:0),
-        DancerModel.fromData(gender:Gender.BOY,x:-2,y:-1,angle:180),
-        DancerModel.fromData(gender:Gender.GIRL,x:-2,y:-3,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:-2,y:3,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:-2,y:1,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:-2,y:-1,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:-2,y:-3,angle:180),
   ]),
       from:'Right-Hand Two-Faced Lines',parts:'2;1.5',
       paths:[
@@ -52,10 +52,10 @@ import '../../moves.dart';
 
     AnimatedCall('_Mini-Busy But',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.GIRL,x:-2,y:3,angle:0),
-        DancerModel.fromData(gender:Gender.BOY,x:-2,y:1,angle:0),
-        DancerModel.fromData(gender:Gender.BOY,x:-2,y:-1,angle:180),
-        DancerModel.fromData(gender:Gender.GIRL,x:-2,y:-3,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:-2,y:3,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:-2,y:1,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:-2,y:-1,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:-2,y:-3,angle:180),
   ]),
       from:'Right-Hand Two-Faced Lines',parts:'2;1.5',noDisplay: true,
       paths:[
@@ -114,10 +114,10 @@ import '../../moves.dart';
 
     AnimatedCall('2/3 Mini-Busy',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.GIRL,x:-2,y:3,angle:0),
-        DancerModel.fromData(gender:Gender.BOY,x:-2,y:1,angle:0),
-        DancerModel.fromData(gender:Gender.BOY,x:-2,y:-1,angle:180),
-        DancerModel.fromData(gender:Gender.GIRL,x:-2,y:-3,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:-2,y:3,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:-2,y:1,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:-2,y:-1,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:-2,y:-3,angle:180),
   ]),
       from:'Right-Hand Two-Faced Lines',parts:'2;1.5',noDisplay: true,
       paths:[

@@ -78,10 +78,10 @@ import '../../moves.dart';
 
     AnimatedCall('Columns of 3 Invert the Column',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:-2,y:1,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:0,y:1,angle:0),
-        DancerModel.fromData(gender:Gender.BOY,x:2,y:1,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:-4,y:0,angle:90),
+        Dancer.fromData(gender:Gender.BOY,x:-2,y:1,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:0,y:1,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:2,y:1,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:-4,y:0,angle:90),
   ]),
       group:' ',fractions:'4;3',
       taminator: '''
@@ -107,10 +107,10 @@ import '../../moves.dart';
 
     AnimatedCall('Magic Column Invert the Column',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:-3,y:1,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:-1,y:-1,angle:0),
-        DancerModel.fromData(gender:Gender.BOY,x:1,y:-1,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:3,y:1,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:-3,y:1,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:-1,y:-1,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:1,y:-1,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:3,y:1,angle:0),
   ]),
       group:' ',fractions:'5;3;4',
       paths:[
@@ -138,10 +138,10 @@ import '../../moves.dart';
 
     AnimatedCall('Magic Column Invert the Column',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:-3,y:1,angle:180),
-        DancerModel.fromData(gender:Gender.GIRL,x:-1,y:-1,angle:180),
-        DancerModel.fromData(gender:Gender.BOY,x:1,y:-1,angle:180),
-        DancerModel.fromData(gender:Gender.GIRL,x:3,y:1,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:-3,y:1,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:-1,y:-1,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:1,y:-1,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:3,y:1,angle:180),
   ]),
       group:' ',fractions:'5;3;4',noDisplay: true,
       paths:[

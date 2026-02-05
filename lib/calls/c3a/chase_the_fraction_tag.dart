@@ -27,8 +27,8 @@ import '../c1/chase_your_neighbor.dart' as c1;
 
     AnimatedCall('Chase the Tag',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:1,y:2,angle:90),
-        DancerModel.fromData(gender:Gender.GIRL,x:-1,y:2,angle:90),
+        Dancer.fromData(gender:Gender.BOY,x:1,y:2,angle:90),
+        Dancer.fromData(gender:Gender.GIRL,x:-1,y:2,angle:90),
   ]),
       from:'Back to Back Couples',fractions:'3;2;2',
       paths:[

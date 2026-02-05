@@ -130,10 +130,10 @@ import '../../moves.dart';
 
     AnimatedCall('Invert and Scatter',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:3,y:1,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:1,y:1,angle:0),
-        DancerModel.fromData(gender:Gender.BOY,x:1,y:-1,angle:180),
-        DancerModel.fromData(gender:Gender.GIRL,x:3,y:-1,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:3,y:1,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:1,y:1,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:1,y:-1,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:3,y:-1,angle:180),
   ]),
       group:' ',fractions:'6',
       paths:[

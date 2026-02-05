@@ -43,10 +43,10 @@ import '../../moves.dart';
 
     AnimatedCall('Diamond Circulate and Circle 1/4',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:0,y:3,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:1,y:0,angle:270),
-        DancerModel.fromData(gender:Gender.BOY,x:-3,y:1,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:-3,y:-1,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:0,y:3,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:1,y:0,angle:270),
+        Dancer.fromData(gender:Gender.BOY,x:-3,y:1,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:-3,y:-1,angle:0),
   ]),
       group:' ',parts:'3',
       paths:[
@@ -120,10 +120,10 @@ import '../../moves.dart';
 
     AnimatedCall('Switch and Circle 1/2',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:0,y:3,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:0,y:1,angle:0),
-        DancerModel.fromData(gender:Gender.BOY,x:-3,y:1,angle:180),
-        DancerModel.fromData(gender:Gender.GIRL,x:-3,y:-1,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:0,y:3,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:0,y:1,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:-3,y:1,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:-3,y:-1,angle:0),
   ]),
       group:' ',parts:'4;4;4',
       paths:[

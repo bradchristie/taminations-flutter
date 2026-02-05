@@ -32,10 +32,10 @@ final List<AnimatedCall> Loop = [
 
   AnimatedCall('Boys In Loop 2',
       formation: Formation('', dancers: [
-        DancerModel.fromData(gender: Gender.GIRL, x: -3, y: 1, angle: 180),
-        DancerModel.fromData(gender: Gender.BOY, x: -3, y: -3, angle: 180),
-        DancerModel.fromData(gender: Gender.BOY, x: -1, y: 3, angle: 180),
-        DancerModel.fromData(gender: Gender.GIRL, x: -1, y: -1, angle: 180),
+        Dancer.fromData(gender: Gender.GIRL, x: -3, y: 1, angle: 180),
+        Dancer.fromData(gender: Gender.BOY, x: -3, y: -3, angle: 180),
+        Dancer.fromData(gender: Gender.BOY, x: -1, y: 3, angle: 180),
+        Dancer.fromData(gender: Gender.GIRL, x: -1, y: -1, angle: 180),
       ]),
       from: 'Blocks',
       group: ' ',
@@ -49,10 +49,10 @@ final List<AnimatedCall> Loop = [
 
   AnimatedCall('Boys Left Loop 1',
       formation: Formation('', dancers: [
-        DancerModel.fromData(gender: Gender.BOY, x: -1.5, y: 5, angle: 180),
-        DancerModel.fromData(gender: Gender.GIRL, x: -1.5, y: 3, angle: 180),
-        DancerModel.fromData(gender: Gender.BOY, x: -1.5, y: 1, angle: 180),
-        DancerModel.fromData(gender: Gender.GIRL, x: -1.5, y: -1, angle: 180),
+        Dancer.fromData(gender: Gender.BOY, x: -1.5, y: 5, angle: 180),
+        Dancer.fromData(gender: Gender.GIRL, x: -1.5, y: 3, angle: 180),
+        Dancer.fromData(gender: Gender.BOY, x: -1.5, y: 1, angle: 180),
+        Dancer.fromData(gender: Gender.GIRL, x: -1.5, y: -1, angle: 180),
       ]),
       group: ' ',
       isGenderSpecific: true,
@@ -65,10 +65,10 @@ final List<AnimatedCall> Loop = [
 
   AnimatedCall('Everyone Left Loop 0',
       formation: Formation('', dancers: [
-        DancerModel.fromData(gender: Gender.BOY, x: -1.5, y: 5, angle: 180),
-        DancerModel.fromData(gender: Gender.GIRL, x: -1.5, y: 3, angle: 180),
-        DancerModel.fromData(gender: Gender.BOY, x: -1.5, y: 1, angle: 180),
-        DancerModel.fromData(gender: Gender.GIRL, x: -1.5, y: -1, angle: 180),
+        Dancer.fromData(gender: Gender.BOY, x: -1.5, y: 5, angle: 180),
+        Dancer.fromData(gender: Gender.GIRL, x: -1.5, y: 3, angle: 180),
+        Dancer.fromData(gender: Gender.BOY, x: -1.5, y: 1, angle: 180),
+        Dancer.fromData(gender: Gender.GIRL, x: -1.5, y: -1, angle: 180),
       ]),
       group: ' ',
       isGenderSpecific: true,

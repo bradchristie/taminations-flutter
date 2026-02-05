@@ -35,7 +35,7 @@ class SplitCirculate extends Action {
   }
 
   @override
-  Path performOne(DancerModel d, CallContext ctx) {
+  Path performOne(Dancer d, CallContext ctx) {
     if (d.data.trailer)
       return Forward_2.changeBeats(3.0);
     else if (d.data.leader) {

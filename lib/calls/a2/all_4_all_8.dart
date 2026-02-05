@@ -297,10 +297,10 @@ import '../c3a/mini_chase.dart' as c3a;
 
     AnimatedCall('All 4 Couples Slide Thru',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.GIRL,x:-3,y:1,angle:0),
-        DancerModel.fromData(gender:Gender.BOY,x:-3,y:-1,angle:0),
-        DancerModel.fromData(gender:Gender.BOY,x:-1,y:-3,angle:90),
-        DancerModel.fromData(gender:Gender.GIRL,x:1,y:-3,angle:90),
+        Dancer.fromData(gender:Gender.GIRL,x:-3,y:1,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:-3,y:-1,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:-1,y:-3,angle:90),
+        Dancer.fromData(gender:Gender.GIRL,x:1,y:-3,angle:90),
   ]),
       group:'All 4 Couples (with calls through Plus)',isGenderSpecific:true,noDisplay: true,
       paths:[
@@ -321,10 +321,10 @@ import '../c3a/mini_chase.dart' as c3a;
 
     AnimatedCall('All 4 Couples Slide Thru',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.GIRL,x:-3,y:1,angle:0),
-        DancerModel.fromData(gender:Gender.BOY,x:-3,y:-1,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:-1,y:-3,angle:90),
-        DancerModel.fromData(gender:Gender.BOY,x:1,y:-3,angle:90),
+        Dancer.fromData(gender:Gender.GIRL,x:-3,y:1,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:-3,y:-1,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:-1,y:-3,angle:90),
+        Dancer.fromData(gender:Gender.BOY,x:1,y:-3,angle:90),
   ]),
       group:'All 4 Couples (with calls through Plus)',isGenderSpecific:true,noDisplay: true,
       paths:[
@@ -573,10 +573,10 @@ import '../c3a/mini_chase.dart' as c3a;
 
     AnimatedCall('All 4 Couples Star Thru',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.GIRL,x:-3,y:1,angle:0),
-        DancerModel.fromData(gender:Gender.BOY,x:-3,y:-1,angle:0),
-        DancerModel.fromData(gender:Gender.BOY,x:-1,y:-3,angle:90),
-        DancerModel.fromData(gender:Gender.GIRL,x:1,y:-3,angle:90),
+        Dancer.fromData(gender:Gender.GIRL,x:-3,y:1,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:-3,y:-1,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:-1,y:-3,angle:90),
+        Dancer.fromData(gender:Gender.GIRL,x:1,y:-3,angle:90),
   ]),
       group:'All 4 Couples (with calls through Plus)',isGenderSpecific:true,noDisplay: true,
       paths:[
@@ -597,10 +597,10 @@ import '../c3a/mini_chase.dart' as c3a;
 
     AnimatedCall('All 4 Couples Star Thru',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.GIRL,x:-3,y:1,angle:0),
-        DancerModel.fromData(gender:Gender.BOY,x:-3,y:-1,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:-1,y:-3,angle:90),
-        DancerModel.fromData(gender:Gender.BOY,x:1,y:-3,angle:90),
+        Dancer.fromData(gender:Gender.GIRL,x:-3,y:1,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:-3,y:-1,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:-1,y:-3,angle:90),
+        Dancer.fromData(gender:Gender.BOY,x:1,y:-3,angle:90),
   ]),
       group:'All 4 Couples (with calls through Plus)',isGenderSpecific:true,noDisplay: true,
       paths:[
@@ -768,10 +768,10 @@ import '../c3a/mini_chase.dart' as c3a;
 
     AnimatedCall('All 8 Chain Down the Line',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.GIRL,x:-1,y:0,angle:90),
-        DancerModel.fromData(gender:Gender.BOY,x:-3,y:0,angle:90),
-        DancerModel.fromData(gender:Gender.GIRL,x:0,y:-1,angle:180),
-        DancerModel.fromData(gender:Gender.BOY,x:0,y:-3,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:-1,y:0,angle:90),
+        Dancer.fromData(gender:Gender.BOY,x:-3,y:0,angle:90),
+        Dancer.fromData(gender:Gender.GIRL,x:0,y:-1,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:0,y:-3,angle:180),
   ]),
       group:'All 8 (with calls through Plus)',noDisplay: true,
       paths:[
@@ -836,10 +836,10 @@ import '../c3a/mini_chase.dart' as c3a;
 
     AnimatedCall('All 8 Crossfire',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.GIRL,x:-1,y:0,angle:90),
-        DancerModel.fromData(gender:Gender.BOY,x:-3,y:0,angle:90),
-        DancerModel.fromData(gender:Gender.GIRL,x:0,y:-1,angle:180),
-        DancerModel.fromData(gender:Gender.BOY,x:0,y:-3,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:-1,y:0,angle:90),
+        Dancer.fromData(gender:Gender.BOY,x:-3,y:0,angle:90),
+        Dancer.fromData(gender:Gender.GIRL,x:0,y:-1,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:0,y:-3,angle:180),
   ]),
       group:'All 8 (with calls through Plus)',
       paths:[
@@ -856,10 +856,10 @@ import '../c3a/mini_chase.dart' as c3a;
 
     AnimatedCall('All 8 Crossfire',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.GIRL,x:-1,y:0,angle:270),
-        DancerModel.fromData(gender:Gender.BOY,x:-3,y:0,angle:270),
-        DancerModel.fromData(gender:Gender.GIRL,x:0,y:-1,angle:0),
-        DancerModel.fromData(gender:Gender.BOY,x:0,y:-3,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:-1,y:0,angle:270),
+        Dancer.fromData(gender:Gender.BOY,x:-3,y:0,angle:270),
+        Dancer.fromData(gender:Gender.GIRL,x:0,y:-1,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:0,y:-3,angle:0),
   ]),
       group:'All 8 (with calls through Plus)',noDisplay: true,
       paths:[
@@ -1128,10 +1128,10 @@ import '../c3a/mini_chase.dart' as c3a;
 
     AnimatedCall('All 8 Half Tag',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:-1,y:0,angle:90),
-        DancerModel.fromData(gender:Gender.GIRL,x:-3,y:0,angle:90),
-        DancerModel.fromData(gender:Gender.BOY,x:0,y:-1,angle:180),
-        DancerModel.fromData(gender:Gender.GIRL,x:0,y:-3,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:-1,y:0,angle:90),
+        Dancer.fromData(gender:Gender.GIRL,x:-3,y:0,angle:90),
+        Dancer.fromData(gender:Gender.BOY,x:0,y:-1,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:0,y:-3,angle:180),
   ]),
       group:'All 8 (with calls through Plus)',
       paths:[
@@ -1411,10 +1411,10 @@ import '../c3a/mini_chase.dart' as c3a;
 
     AnimatedCall('All 4 Couples Brace Thru',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:-3,y:1,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:-3,y:-1,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:-1,y:-3,angle:90),
-        DancerModel.fromData(gender:Gender.BOY,x:1,y:-3,angle:90),
+        Dancer.fromData(gender:Gender.BOY,x:-3,y:1,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:-3,y:-1,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:-1,y:-3,angle:90),
+        Dancer.fromData(gender:Gender.BOY,x:1,y:-3,angle:90),
   ]),
       group:'All 4 Couples (with A-1 calls)',isGenderSpecific:true,
       paths:[

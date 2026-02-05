@@ -26,10 +26,10 @@ import '../../moves.dart';
 
     AnimatedCall('3 by 1 Triangle Circulate',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:-3,y:1,angle:180),
-        DancerModel.fromData(gender:Gender.GIRL,x:-3,y:-1,angle:0),
-        DancerModel.fromData(gender:Gender.BOY,x:0,y:-3,angle:180),
-        DancerModel.fromData(gender:Gender.GIRL,x:0,y:-1,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:-3,y:1,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:-3,y:-1,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:0,y:-3,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:0,y:-1,angle:0),
   ]),
       from:'Right-Hand Wave Between Mini-Waves',
       paths:[
@@ -44,10 +44,10 @@ import '../../moves.dart';
 
     AnimatedCall('3 by 1 Triangle Circulate',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:-3,y:1,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:-3,y:-1,angle:180),
-        DancerModel.fromData(gender:Gender.BOY,x:0,y:-3,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:0,y:-1,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:-3,y:1,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:-3,y:-1,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:0,y:-3,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:0,y:-1,angle:180),
   ]),
       from:'Left-Hand Wave Between Mini-Waves',
       paths:[
@@ -62,10 +62,10 @@ import '../../moves.dart';
 
     AnimatedCall('3 by 1 Triangle Circulate',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:-3,y:1,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:-3,y:-1,angle:180),
-        DancerModel.fromData(gender:Gender.BOY,x:0,y:-3,angle:180),
-        DancerModel.fromData(gender:Gender.GIRL,x:0,y:-1,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:-3,y:1,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:-3,y:-1,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:0,y:-3,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:0,y:-1,angle:0),
   ]),
       from:'Right-Hand Wave Between Mini-Waves, Facing Triangles',
       paths:[
@@ -83,10 +83,10 @@ import '../../moves.dart';
 
     AnimatedCall('3 by 1 Triangle Circulate',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.GIRL,x:-3,y:3,angle:0),
-        DancerModel.fromData(gender:Gender.BOY,x:-3,y:-3,angle:180),
-        DancerModel.fromData(gender:Gender.BOY,x:0,y:1,angle:180),
-        DancerModel.fromData(gender:Gender.GIRL,x:0,y:-3,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:-3,y:3,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:-3,y:-3,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:0,y:1,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:0,y:-3,angle:180),
   ]),
       from:'"H" formation',
       paths:[
@@ -101,10 +101,10 @@ import '../../moves.dart';
 
     AnimatedCall('3 by 1 Interlocked Triangle Circulate',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:-3,y:1,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:-3,y:-1,angle:180),
-        DancerModel.fromData(gender:Gender.BOY,x:0,y:-1,angle:180),
-        DancerModel.fromData(gender:Gender.GIRL,x:0,y:-3,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:-3,y:1,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:-3,y:-1,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:0,y:-1,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:0,y:-3,angle:180),
   ]),
       from:'Interlocked 3 by 1 Triangles',
       paths:[
@@ -119,10 +119,10 @@ import '../../moves.dart';
 
     AnimatedCall('3 by 1 Interlocked Triangle Circulate',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.GIRL,x:-3,y:3,angle:0),
-        DancerModel.fromData(gender:Gender.BOY,x:-3,y:-3,angle:180),
-        DancerModel.fromData(gender:Gender.BOY,x:0,y:-1,angle:180),
-        DancerModel.fromData(gender:Gender.GIRL,x:0,y:-3,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:-3,y:3,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:-3,y:-3,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:0,y:-1,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:0,y:-3,angle:180),
   ]),
       from:'"H" formation',
       paths:[

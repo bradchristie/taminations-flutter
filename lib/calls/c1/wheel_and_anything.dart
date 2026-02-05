@@ -73,10 +73,10 @@ import '../../moves.dart';
 
     AnimatedCall('Wheel And Touch 1/4',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.GIRL,x:1,y:3,angle:90),
-        DancerModel.fromData(gender:Gender.BOY,x:-1,y:3,angle:90),
-        DancerModel.fromData(gender:Gender.GIRL,x:-1,y:1,angle:270),
-        DancerModel.fromData(gender:Gender.BOY,x:1,y:1,angle:270),
+        Dancer.fromData(gender:Gender.GIRL,x:1,y:3,angle:90),
+        Dancer.fromData(gender:Gender.BOY,x:-1,y:3,angle:90),
+        Dancer.fromData(gender:Gender.GIRL,x:-1,y:1,angle:270),
+        Dancer.fromData(gender:Gender.BOY,x:1,y:1,angle:270),
   ]),
       from:'Trade By',group:'Wheel And',
       paths:[
@@ -97,10 +97,10 @@ import '../../moves.dart';
 
     AnimatedCall('Reverse Wheel and Touch a Quarter',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.GIRL,x:1,y:3,angle:90),
-        DancerModel.fromData(gender:Gender.BOY,x:-1,y:3,angle:90),
-        DancerModel.fromData(gender:Gender.GIRL,x:-1,y:1,angle:270),
-        DancerModel.fromData(gender:Gender.BOY,x:1,y:1,angle:270),
+        Dancer.fromData(gender:Gender.GIRL,x:1,y:3,angle:90),
+        Dancer.fromData(gender:Gender.BOY,x:-1,y:3,angle:90),
+        Dancer.fromData(gender:Gender.GIRL,x:-1,y:1,angle:270),
+        Dancer.fromData(gender:Gender.BOY,x:1,y:1,angle:270),
   ]),
       from:'Trade By',group:'Reverse Wheel and',
       paths:[

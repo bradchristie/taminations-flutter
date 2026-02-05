@@ -44,7 +44,7 @@ class VerticalTag extends Action {
   }
 
   @override
-  Path performOne(DancerModel d, CallContext ctx) {
+  Path performOne(Dancer d, CallContext ctx) {
     if (!d.data.beau && !d.data.belle)
       throw CallError('Dancer $d is not part of a couple');
     if (!d.data.leader && !d.data.trailer)

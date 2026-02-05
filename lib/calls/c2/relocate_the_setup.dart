@@ -52,10 +52,10 @@ import '../../moves.dart';
 
     AnimatedCall('Relocate the Hourglass',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.GIRL,x:-3,y:2,angle:90),
-        DancerModel.fromData(gender:Gender.BOY,x:0,y:3,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:3,y:2,angle:270),
-        DancerModel.fromData(gender:Gender.BOY,x:1,y:0,angle:270),
+        Dancer.fromData(gender:Gender.GIRL,x:-3,y:2,angle:90),
+        Dancer.fromData(gender:Gender.BOY,x:0,y:3,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:3,y:2,angle:270),
+        Dancer.fromData(gender:Gender.BOY,x:1,y:0,angle:270),
   ]),
       from:'Right-Hand Hourglass',
       paths:[

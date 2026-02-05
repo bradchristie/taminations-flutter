@@ -124,10 +124,10 @@ import '../../moves.dart';
 
     AnimatedCall('In Your Block Square Chain the Top',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:1,y:1,angle:270),
-        DancerModel.fromData(gender:Gender.GIRL,x:-3,y:1,angle:270),
-        DancerModel.fromData(gender:Gender.BOY,x:3,y:3,angle:270),
-        DancerModel.fromData(gender:Gender.GIRL,x:-1,y:3,angle:270),
+        Dancer.fromData(gender:Gender.BOY,x:1,y:1,angle:270),
+        Dancer.fromData(gender:Gender.GIRL,x:-3,y:1,angle:270),
+        Dancer.fromData(gender:Gender.BOY,x:3,y:3,angle:270),
+        Dancer.fromData(gender:Gender.GIRL,x:-1,y:3,angle:270),
   ]),
       group:'In Your Block',
       paths:[
@@ -162,10 +162,10 @@ import '../../moves.dart';
 
     AnimatedCall('In Your Block Square Chain Thru',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:1,y:1,angle:270),
-        DancerModel.fromData(gender:Gender.GIRL,x:-3,y:1,angle:270),
-        DancerModel.fromData(gender:Gender.BOY,x:3,y:3,angle:270),
-        DancerModel.fromData(gender:Gender.GIRL,x:-1,y:3,angle:270),
+        Dancer.fromData(gender:Gender.BOY,x:1,y:1,angle:270),
+        Dancer.fromData(gender:Gender.GIRL,x:-3,y:1,angle:270),
+        Dancer.fromData(gender:Gender.BOY,x:3,y:3,angle:270),
+        Dancer.fromData(gender:Gender.GIRL,x:-1,y:3,angle:270),
   ]),
       group:'In Your Block',fractions:'3.5;3;3;3',
       paths:[

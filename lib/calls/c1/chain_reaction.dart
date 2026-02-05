@@ -145,10 +145,10 @@ import '../a1/chain_reaction.dart' as a1;
 
     AnimatedCall('Chain Reaction',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:-3,y:1,angle:180),
-        DancerModel.fromData(gender:Gender.GIRL,x:-3,y:-1,angle:0),
-        DancerModel.fromData(gender:Gender.BOY,x:0,y:1,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:0,y:3,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:-3,y:1,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:-3,y:-1,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:0,y:1,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:0,y:3,angle:0),
   ]),
       from:'Right-Hand Two-Faced Line between Mini-Waves',fractions:'3;2;3',
       paths:[
@@ -180,10 +180,10 @@ import '../a1/chain_reaction.dart' as a1;
 
     AnimatedCall('Chain Reaction',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:-3,y:1,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:-3,y:-1,angle:180),
-        DancerModel.fromData(gender:Gender.BOY,x:0,y:1,angle:180),
-        DancerModel.fromData(gender:Gender.GIRL,x:0,y:3,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:-3,y:1,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:-3,y:-1,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:0,y:1,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:0,y:3,angle:180),
   ]),
       from:'Left-Hand Two-Faced Line between Mini-Waves',fractions:'3;2;3',
       paths:[
@@ -222,10 +222,10 @@ import '../a1/chain_reaction.dart' as a1;
 
     AnimatedCall('Chain Reaction, Turn the Star 1/2',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:-3,y:1,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:-3,y:-1,angle:0),
-        DancerModel.fromData(gender:Gender.BOY,x:0,y:-3,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:0,y:-1,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:-3,y:1,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:-3,y:-1,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:0,y:-3,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:0,y:-1,angle:180),
   ]),
       from:'Left-Hand Quarter Tag',fractions:'3;1.5;3',
       paths:[
@@ -373,10 +373,10 @@ import '../a1/chain_reaction.dart' as a1;
 
     AnimatedCall('Chain Reaction, Turn the Star 1/2',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:-3,y:1,angle:180),
-        DancerModel.fromData(gender:Gender.GIRL,x:-3,y:-1,angle:0),
-        DancerModel.fromData(gender:Gender.BOY,x:0,y:1,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:0,y:3,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:-3,y:1,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:-3,y:-1,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:0,y:1,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:0,y:3,angle:0),
   ]),
       from:'Right-Hand Two-Faced Line between Mini-Waves',fractions:'3;2;3',
       paths:[
@@ -408,10 +408,10 @@ import '../a1/chain_reaction.dart' as a1;
 
     AnimatedCall('Chain Reaction, Turn the Star 1/2',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:-3,y:1,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:-3,y:-1,angle:180),
-        DancerModel.fromData(gender:Gender.BOY,x:0,y:1,angle:180),
-        DancerModel.fromData(gender:Gender.GIRL,x:0,y:3,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:-3,y:1,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:-3,y:-1,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:0,y:1,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:0,y:3,angle:180),
   ]),
       from:'Left-Hand Two-Faced Line between Mini-Waves',fractions:'3;2;3',
       paths:[

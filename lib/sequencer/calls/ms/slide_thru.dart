@@ -31,7 +31,7 @@ class SlideThru extends Action with ActivesOnly, IsMirror {
   SlideThru(super.name);
 
   @override
-  Path performOne(DancerModel d, CallContext ctx) {
+  Path performOne(Dancer d, CallContext ctx) {
     //  Check if in wave, slide thru with adj dancer
     Path move;
     var d2 = ctx.dancerFacing(d);

@@ -39,21 +39,21 @@ abstract class FourDancerConcept extends Action {
   //  List must have 4 sub-lists
   //  Each sub-list has 2 or more real (or phantom) dancers
   //  For example, the groups for As Couples are the 4 couples
-  List<List<DancerModel>> dancerGroups(CallContext ctx);
+  List<List<Dancer>> dancerGroups(CallContext ctx);
 
   //  Return start position of concept dancer for one group
-  Vector startPosition(List<DancerModel> group);
+  Vector startPosition(List<Dancer> group);
 
   //  Compute location for a real dancer at a specific beat
   //  given location of the concept dancer
-  Vector computeLocation(DancerModel d, Movement m, int mi, double beat, int groupIndex);
+  Vector computeLocation(Dancer d, Movement m, int mi, double beat, int groupIndex);
 
   //  Any analysis or processing after call is applied to concept dancers
   //  but before application to real dancers
   void analyzeConceptResult(CallContext conceptctx, CallContext realctx) { }
 
   //  Make any changes to the final result (optional)
-  void postAdjustment(CallContext ctx, DancerModel cd, List<DancerModel> group) { }
+  void postAdjustment(CallContext ctx, Dancer cd, List<Dancer> group) { }
 
   @override
   void performCall(CallContext ctx0) {
@@ -61,7 +61,7 @@ abstract class FourDancerConcept extends Action {
     //  Get dancer groups
     var groups = dancerGroups(ctx);
     //  Create index for group dancer to its group
-    var groupIndex = <DancerModel,List<DancerModel>>{};
+    var groupIndex = <Dancer,List<Dancer>>{};
     //  Create a concept dancer for each group dancer
     var singles = groups.map((group) {
       //  Select the gender for the concept dancer
@@ -78,7 +78,7 @@ abstract class FourDancerConcept extends Action {
       if (group.every((it) => it.numberCouple.matches('[24]'.r)))
         nc = '2' ;
       //  Create the concept dancer
-      var dsingle = DancerModel.cloneWithOptions(group.first, gender:g, numberCouple:nc);
+      var dsingle = Dancer.cloneWithOptions(group.first, gender:g, numberCouple:nc);
       //  Set the location for the concept dancer
       var newpos = startPosition(group);
       dsingle.setStartPosition(newpos);

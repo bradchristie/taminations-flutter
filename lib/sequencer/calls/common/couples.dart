@@ -24,6 +24,6 @@ class Couples extends FilterActives {
   Couples(super.name);
 
   @override
-  bool isActive(DancerModel d, CallContext ctx) => ctx.isInCouple(d);
+  bool isActive(Dancer d, CallContext ctx) => ctx.isInCouple(d);
 
 }

@@ -149,10 +149,10 @@ import '../../moves.dart';
 
     AnimatedCall('Turn the Stars',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:3,y:0,angle:90),
-        DancerModel.fromData(gender:Gender.GIRL,x:2,y:1,angle:0),
-        DancerModel.fromData(gender:Gender.BOY,x:-1,y:0,angle:90),
-        DancerModel.fromData(gender:Gender.GIRL,x:-2,y:1,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:3,y:0,angle:90),
+        Dancer.fromData(gender:Gender.GIRL,x:2,y:1,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:-1,y:0,angle:90),
+        Dancer.fromData(gender:Gender.GIRL,x:-2,y:1,angle:0),
   ]),
       from:'Facing Stars 1',noDisplay: true,
       paths:[
@@ -171,10 +171,10 @@ import '../../moves.dart';
 
     AnimatedCall('Turn the Stars',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:3,y:0,angle:270),
-        DancerModel.fromData(gender:Gender.GIRL,x:2,y:1,angle:180),
-        DancerModel.fromData(gender:Gender.BOY,x:-1,y:0,angle:270),
-        DancerModel.fromData(gender:Gender.GIRL,x:-2,y:1,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:3,y:0,angle:270),
+        Dancer.fromData(gender:Gender.GIRL,x:2,y:1,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:-1,y:0,angle:270),
+        Dancer.fromData(gender:Gender.GIRL,x:-2,y:1,angle:180),
   ]),
       from:'Facing Stars 2',noDisplay: true,
       paths:[

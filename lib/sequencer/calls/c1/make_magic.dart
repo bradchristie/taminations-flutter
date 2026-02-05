@@ -42,7 +42,7 @@ class MakeMagic extends Action {
   }
 
   @override
-  Path performOne(DancerModel d, CallContext ctx) {
+  Path performOne(Dancer d, CallContext ctx) {
     //  Center and outside dancers facing each other pass thru
     final d2 = ctx.dancerFacing(d);
     if (d2 != null) {

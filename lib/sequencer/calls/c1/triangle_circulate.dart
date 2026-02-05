@@ -61,7 +61,7 @@ class SelectTriangle extends CodedCall {
         final tandems = ctx.dancers.where((d2) => ctx.isInTandem(d2)).toList();
         //  Find the dancer closest to each tandem
         //  We don't want dancers further out to get involved
-        final tandemPoints = <DancerModel>{};
+        final tandemPoints = <Dancer>{};
         for (final d in tandems) {
           var d2 = ctx.tandemDancer(d)!;
           var d3 = ctx.dancers.where((dq) => !tandems.contains(dq) &&
@@ -116,7 +116,7 @@ You do not need to use one of these if the triangles are unambiguous (as in a sa
   //  Calculate circulate path to next triangle dancer
   //  d2 is the spot where dancer d is to circulate
   //  d3 is the 3rd dancer of the triangle
-  Path oneCirculatePath(DancerModel d, DancerModel d2, DancerModel d3) {
+  Path oneCirculatePath(Dancer d, Dancer d2, Dancer d3) {
     if (d2.isInFrontOf(d)) {
       //  Path is forward
       final dist = d.distanceTo(d2);
@@ -150,7 +150,7 @@ You do not need to use one of these if the triangles are unambiguous (as in a sa
         throw CallError('Unable to find dancers to circulate');
     }
     //  Should be able to split the square to 2 3-dancer triangles
-    List<List<DancerModel>> triangles;
+    List<List<Dancer>> triangles;
     if (ctx.actives.none((d) => d.location.x.isAbout(0)))
       triangles = ctx.actives.partition((d) => d.location.x < 0);
     else if (ctx.actives.none((d) => d.location.y.isAbout(0)))

@@ -100,8 +100,8 @@ import '../../moves.dart';
 
     AnimatedCall('Box Circulate',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:-1,y:1,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:-1,y:-1,angle:270),
+        Dancer.fromData(gender:Gender.BOY,x:-1,y:1,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:-1,y:-1,angle:270),
   ]),
       from:'T-Bone 1',noDisplay: true,
       paths:[
@@ -112,8 +112,8 @@ import '../../moves.dart';
 
     AnimatedCall('Box Circulate',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:-1,y:1,angle:270),
-        DancerModel.fromData(gender:Gender.GIRL,x:-1,y:-1,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:-1,y:1,angle:270),
+        Dancer.fromData(gender:Gender.GIRL,x:-1,y:-1,angle:180),
   ]),
       from:'T-Bone 2',noDisplay: true,
       paths:[
@@ -690,9 +690,9 @@ import '../../moves.dart';
 
     AnimatedCall('Column Circulate',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.GIRL,x:-2,y:-1,angle:180),
-        DancerModel.fromData(gender:Gender.BOY,x:0,y:-1,angle:180),
-        DancerModel.fromData(gender:Gender.GIRL,x:2,y:-1,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:-2,y:-1,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:0,y:-1,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:2,y:-1,angle:180),
   ]),
       from:'Right-Hand Columns of 3',fractions:'1.5',difficulty: 2,
       paths:[
@@ -705,9 +705,9 @@ import '../../moves.dart';
 
     AnimatedCall('Column Circulate',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.GIRL,x:-2,y:-1,angle:0),
-        DancerModel.fromData(gender:Gender.BOY,x:0,y:-1,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:2,y:-1,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:-2,y:-1,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:0,y:-1,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:2,y:-1,angle:0),
   ]),
       from:'Left-Hand Columns of 3',fractions:'1.5',difficulty: 2,
       paths:[

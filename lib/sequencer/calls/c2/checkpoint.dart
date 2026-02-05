@@ -37,7 +37,7 @@ class Checkpoint extends Action {
       throw CallError('Checkpoint what?');
 
     //  Figure out who does the first call
-    List<DancerModel> centers;
+    List<Dancer> centers;
     if (ctx.groupstr == '2222')
       centers = ctx.groups[1] + ctx.groups[2];
     else if (ctx.groupstr.matches('(242|422|224)'.r))

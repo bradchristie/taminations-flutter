@@ -48,7 +48,7 @@ class ThreeQuartersTag extends Action with IsLeft {
   }
 
   @override
-  Path performOne(DancerModel d, CallContext ctx) {
+  Path performOne(Dancer d, CallContext ctx) {
     var d2 = (ctx.dancerInBack(d) ?? ctx.dancerInFront(d))
         .throwIfNull(CallError('Error calculating movement for dancer $d'));
     var dist = d.distanceTo(d2)/2.0;

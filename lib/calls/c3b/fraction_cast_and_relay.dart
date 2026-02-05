@@ -26,10 +26,10 @@ import '../../moves.dart';
 
     AnimatedCall('1/4 Cast and Relay',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:3,y:2,angle:270),
-        DancerModel.fromData(gender:Gender.GIRL,x:1,y:2,angle:90),
-        DancerModel.fromData(gender:Gender.BOY,x:-1,y:2,angle:270),
-        DancerModel.fromData(gender:Gender.GIRL,x:-3,y:2,angle:90),
+        Dancer.fromData(gender:Gender.BOY,x:3,y:2,angle:270),
+        Dancer.fromData(gender:Gender.GIRL,x:1,y:2,angle:90),
+        Dancer.fromData(gender:Gender.BOY,x:-1,y:2,angle:270),
+        Dancer.fromData(gender:Gender.GIRL,x:-3,y:2,angle:90),
   ]),
       from:'Right-Hand Waves',parts:'1.5;4.5;3',
       paths:[

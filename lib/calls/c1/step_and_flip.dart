@@ -182,10 +182,10 @@ import '../../moves.dart';
 
     AnimatedCall('Step and Flip',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:0,y:3.5,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:0,y:2.5,angle:0),
-        DancerModel.fromData(gender:Gender.BOY,x:0,y:.5,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:0,y:1.5,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:0,y:3.5,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:0,y:2.5,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:0,y:.5,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:0,y:1.5,angle:0),
   ]),
       from:'Tidal Line',
       paths:[
@@ -370,10 +370,10 @@ import '../../moves.dart';
 
     AnimatedCall('As Couples Step and Flip',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:0,y:3.5,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:0,y:2.5,angle:0),
-        DancerModel.fromData(gender:Gender.BOY,x:0,y:.5,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:0,y:1.5,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:0,y:3.5,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:0,y:2.5,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:0,y:.5,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:0,y:1.5,angle:0),
   ]),
       group:' ',
       paths:[

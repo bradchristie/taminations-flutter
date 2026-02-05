@@ -25,7 +25,7 @@ mixin IsToAWave on Action {
 
   var isToAWave = false;
   var toAWave = '';
-  var dancersToaWave = <DancerModel>[];
+  var dancersToaWave = <Dancer>[];
 
 }
 

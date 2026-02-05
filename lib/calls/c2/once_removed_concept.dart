@@ -27,10 +27,10 @@ import '../c2/cross_the_k.dart' as c2;
 
     AnimatedCall('Once Removed Boys Run',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.GIRL,x:-1.5,y:3,angle:0),
-        DancerModel.fromData(gender:Gender.BOY,x:-1.5,y:-1,angle:180),
-        DancerModel.fromData(gender:Gender.GIRL,x:-1.5,y:1,angle:0),
-        DancerModel.fromData(gender:Gender.BOY,x:-1.5,y:-3,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:-1.5,y:3,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:-1.5,y:-1,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:-1.5,y:1,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:-1.5,y:-3,angle:180),
   ]),
       group:'(From lines) Once Removed',isGenderSpecific:true,
       taminator: '''
@@ -178,10 +178,10 @@ import '../c2/cross_the_k.dart' as c2;
 
     AnimatedCall('Once Removed Shakedown',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.GIRL,x:-1.5,y:3,angle:180),
-        DancerModel.fromData(gender:Gender.BOY,x:-1.5,y:1,angle:180),
-        DancerModel.fromData(gender:Gender.GIRL,x:-1.5,y:-1,angle:180),
-        DancerModel.fromData(gender:Gender.BOY,x:-1.5,y:-3,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:-1.5,y:3,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:-1.5,y:1,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:-1.5,y:-1,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:-1.5,y:-3,angle:180),
   ]),
       group:'(From lines) Once Removed',
       paths:[
@@ -393,10 +393,10 @@ import '../c2/cross_the_k.dart' as c2;
 
     AnimatedCall('Once Removed Walk and Dodge',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.GIRL,x:-1,y:3,angle:90),
-        DancerModel.fromData(gender:Gender.BOY,x:-1,y:1,angle:90),
-        DancerModel.fromData(gender:Gender.GIRL,x:-1,y:-1,angle:90),
-        DancerModel.fromData(gender:Gender.BOY,x:-1,y:-3,angle:90),
+        Dancer.fromData(gender:Gender.GIRL,x:-1,y:3,angle:90),
+        Dancer.fromData(gender:Gender.BOY,x:-1,y:1,angle:90),
+        Dancer.fromData(gender:Gender.GIRL,x:-1,y:-1,angle:90),
+        Dancer.fromData(gender:Gender.BOY,x:-1,y:-3,angle:90),
   ]),
       group:'(From columns) Once Removed',
       paths:[
@@ -496,10 +496,10 @@ import '../c2/cross_the_k.dart' as c2;
 
     AnimatedCall('Once Removed Touch a Quarter',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:1,y:3,angle:270),
-        DancerModel.fromData(gender:Gender.GIRL,x:-1,y:3,angle:270),
-        DancerModel.fromData(gender:Gender.BOY,x:1,y:1,angle:270),
-        DancerModel.fromData(gender:Gender.GIRL,x:-1,y:1,angle:270),
+        Dancer.fromData(gender:Gender.BOY,x:1,y:3,angle:270),
+        Dancer.fromData(gender:Gender.GIRL,x:-1,y:3,angle:270),
+        Dancer.fromData(gender:Gender.BOY,x:1,y:1,angle:270),
+        Dancer.fromData(gender:Gender.GIRL,x:-1,y:1,angle:270),
   ]),
       group:'(From double pass thru) Once Removed',
       paths:[

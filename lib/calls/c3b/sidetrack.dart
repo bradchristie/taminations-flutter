@@ -26,10 +26,10 @@ import '../../moves.dart';
 
     AnimatedCall('Sidetrack',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:3,y:1,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:3,y:-1,angle:180),
-        DancerModel.fromData(gender:Gender.GIRL,x:1,y:-1,angle:180),
-        DancerModel.fromData(gender:Gender.BOY,x:1,y:1,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:3,y:1,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:3,y:-1,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:1,y:-1,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:1,y:1,angle:0),
   ]),
       from:'Right-Hand Columns',parts:'1.5;4',
       paths:[
@@ -73,10 +73,10 @@ import '../../moves.dart';
 
     AnimatedCall('Single Sidetrack',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:3,y:1,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:3,y:-1,angle:180),
-        DancerModel.fromData(gender:Gender.GIRL,x:1,y:-1,angle:180),
-        DancerModel.fromData(gender:Gender.BOY,x:1,y:1,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:3,y:1,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:3,y:-1,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:1,y:-1,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:1,y:1,angle:0),
   ]),
       from:'Right-Hand Columns',parts:'1.5;4',
       paths:[
@@ -99,10 +99,10 @@ import '../../moves.dart';
 
     AnimatedCall('Single Sidetrack',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:4.2,y:0,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:3.0,y:0,angle:0),
-        DancerModel.fromData(gender:Gender.BOY,x:1.8,y:0,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:0.6,y:0,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:4.2,y:0,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:3.0,y:0,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:1.8,y:0,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:0.6,y:0,angle:0),
   ]),
       from:'Column of 8',parts:'1.5;4',
       paths:[
@@ -125,10 +125,10 @@ import '../../moves.dart';
 
     AnimatedCall('Split Sidetrack',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:3,y:1,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:3,y:-1,angle:180),
-        DancerModel.fromData(gender:Gender.GIRL,x:1,y:-1,angle:180),
-        DancerModel.fromData(gender:Gender.BOY,x:1,y:1,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:3,y:1,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:3,y:-1,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:1,y:-1,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:1,y:1,angle:0),
   ]),
       from:'Right-Hand Columns',parts:'1.5;2',
       paths:[

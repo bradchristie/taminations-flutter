@@ -50,10 +50,10 @@ import '../c2/turn_to_a_line.dart' as c2;
 
     AnimatedCall('"O" Circulate (Right-Hand O)',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.GIRL,x:-3,y:1,angle:0),
-        DancerModel.fromData(gender:Gender.BOY,x:-3,y:-1,angle:180),
-        DancerModel.fromData(gender:Gender.BOY,x:-1,y:3,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:-1,y:-3,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:-3,y:1,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:-3,y:-1,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:-1,y:3,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:-1,y:-3,angle:180),
   ]),
       from:'Right-Hand O',group:'"O"',fractions:'1.5',
       paths:[
@@ -402,10 +402,10 @@ import '../c2/turn_to_a_line.dart' as c2;
 
     AnimatedCall('"O" Transfer the Column',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.GIRL,x:-3,y:1,angle:0),
-        DancerModel.fromData(gender:Gender.BOY,x:-3,y:-1,angle:180),
-        DancerModel.fromData(gender:Gender.BOY,x:-1,y:3,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:-1,y:-3,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:-3,y:1,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:-3,y:-1,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:-1,y:3,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:-1,y:-3,angle:180),
   ]),
       group:'"O"',
       paths:[
@@ -499,10 +499,10 @@ import '../c2/turn_to_a_line.dart' as c2;
 
     AnimatedCall('Magic "O" Circulate',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:-3,y:1,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:-3,y:-1,angle:180),
-        DancerModel.fromData(gender:Gender.BOY,x:-1,y:3,angle:180),
-        DancerModel.fromData(gender:Gender.GIRL,x:-1,y:-3,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:-3,y:1,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:-3,y:-1,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:-1,y:3,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:-1,y:-3,angle:0),
   ]),
       group:'Magic "O" (C-1)',
       paths:[
@@ -517,10 +517,10 @@ import '../c2/turn_to_a_line.dart' as c2;
 
     AnimatedCall('Magic "O" Circulate',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:-3,y:1,angle:180),
-        DancerModel.fromData(gender:Gender.GIRL,x:-3,y:-1,angle:0),
-        DancerModel.fromData(gender:Gender.BOY,x:-1,y:3,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:-1,y:-3,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:-3,y:1,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:-3,y:-1,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:-1,y:3,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:-1,y:-3,angle:180),
   ]),
       group:'Magic "O" (C-1)',noDisplay: true,
       paths:[
@@ -535,10 +535,10 @@ import '../c2/turn_to_a_line.dart' as c2;
 
     AnimatedCall('Magic "O" Walk and Dodge',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:-3,y:1,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:-3,y:-1,angle:180),
-        DancerModel.fromData(gender:Gender.BOY,x:-1,y:3,angle:180),
-        DancerModel.fromData(gender:Gender.GIRL,x:-1,y:-3,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:-3,y:1,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:-3,y:-1,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:-1,y:3,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:-1,y:-3,angle:0),
   ]),
       group:'Magic "O" (C-1)',
       paths:[

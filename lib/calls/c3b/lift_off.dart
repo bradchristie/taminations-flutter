@@ -26,10 +26,10 @@ import '../../moves.dart';
 
     AnimatedCall('Lift Off',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:1,y:1,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:1,y:-1,angle:0),
-        DancerModel.fromData(gender:Gender.BOY,x:-1,y:-3,angle:90),
-        DancerModel.fromData(gender:Gender.GIRL,x:1,y:-3,angle:90),
+        Dancer.fromData(gender:Gender.BOY,x:1,y:1,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:1,y:-1,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:-1,y:-3,angle:90),
+        Dancer.fromData(gender:Gender.GIRL,x:1,y:-3,angle:90),
   ]),
       group:' ',fractions:'3;4;2',
       paths:[
@@ -57,10 +57,10 @@ import '../../moves.dart';
 
     AnimatedCall('Mirror Lift Off',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:1,y:1,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:1,y:-1,angle:0),
-        DancerModel.fromData(gender:Gender.BOY,x:-1,y:-3,angle:90),
-        DancerModel.fromData(gender:Gender.GIRL,x:1,y:-3,angle:90),
+        Dancer.fromData(gender:Gender.BOY,x:1,y:1,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:1,y:-1,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:-1,y:-3,angle:90),
+        Dancer.fromData(gender:Gender.GIRL,x:1,y:-3,angle:90),
   ]),
       group:' ',fractions:'3;4;2',
       paths:[

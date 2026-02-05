@@ -29,7 +29,7 @@ class StarThru extends Action with ActivesOnly, IsMirror {
   StarThru(super.name);
 
   @override
-  Path performOne(DancerModel d, CallContext ctx) {
+  Path performOne(Dancer d, CallContext ctx) {
     //  Must be facing dancers, opposite gender
     var d2 = ctx.dancerFacing(d);
     if (d2 == null)

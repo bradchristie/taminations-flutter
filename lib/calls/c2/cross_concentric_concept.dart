@@ -146,10 +146,10 @@ import '../c2/turn_to_a_line.dart' as c2;
 
     AnimatedCall('Cross Concentric Star Thru (example 2)',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:3,y:2,angle:270),
-        DancerModel.fromData(gender:Gender.GIRL,x:-1,y:2,angle:270),
-        DancerModel.fromData(gender:Gender.BOY,x:1,y:2,angle:270),
-        DancerModel.fromData(gender:Gender.GIRL,x:-3,y:2,angle:270),
+        Dancer.fromData(gender:Gender.BOY,x:3,y:2,angle:270),
+        Dancer.fromData(gender:Gender.GIRL,x:-1,y:2,angle:270),
+        Dancer.fromData(gender:Gender.BOY,x:1,y:2,angle:270),
+        Dancer.fromData(gender:Gender.GIRL,x:-3,y:2,angle:270),
   ]),
       group:'Cross Concentric',
       paths:[
@@ -168,10 +168,10 @@ import '../c2/turn_to_a_line.dart' as c2;
 
     AnimatedCall('Cross Concentric Star Thru (example 3)',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:3,y:1,angle:270),
-        DancerModel.fromData(gender:Gender.GIRL,x:-1,y:1,angle:0),
-        DancerModel.fromData(gender:Gender.BOY,x:1,y:1,angle:180),
-        DancerModel.fromData(gender:Gender.GIRL,x:-3,y:1,angle:270),
+        Dancer.fromData(gender:Gender.BOY,x:3,y:1,angle:270),
+        Dancer.fromData(gender:Gender.GIRL,x:-1,y:1,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:1,y:1,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:-3,y:1,angle:270),
   ]),
       group:'Cross Concentric',
       paths:[

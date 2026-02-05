@@ -26,8 +26,8 @@ import '../../moves.dart';
 
     AnimatedCall('Vertical Dixie Style to a Wave',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.GIRL,x:1,y:2,angle:90),
-        DancerModel.fromData(gender:Gender.BOY,x:-1,y:2,angle:90),
+        Dancer.fromData(gender:Gender.GIRL,x:1,y:2,angle:90),
+        Dancer.fromData(gender:Gender.BOY,x:-1,y:2,angle:90),
   ]),
       group:'Vertical',
       paths:[
@@ -44,10 +44,10 @@ import '../../moves.dart';
 
     AnimatedCall('Vertical Grand Chain Eight',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.GIRL,x:3,y:2,angle:90),
-        DancerModel.fromData(gender:Gender.BOY,x:1,y:2,angle:90),
-        DancerModel.fromData(gender:Gender.GIRL,x:-1,y:2,angle:90),
-        DancerModel.fromData(gender:Gender.BOY,x:-3,y:2,angle:90),
+        Dancer.fromData(gender:Gender.GIRL,x:3,y:2,angle:90),
+        Dancer.fromData(gender:Gender.BOY,x:1,y:2,angle:90),
+        Dancer.fromData(gender:Gender.GIRL,x:-1,y:2,angle:90),
+        Dancer.fromData(gender:Gender.BOY,x:-3,y:2,angle:90),
   ]),
       group:'Vertical',
       paths:[

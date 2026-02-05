@@ -45,8 +45,8 @@ import '../../moves.dart';
 
     AnimatedCall('Reach Out',from: 'T-Bone Box 1',
         formation: Formation('', dancers:[
-          DancerModel.fromData(gender:Gender.BOY,x:-1,y:1,angle:0),
-          DancerModel.fromData(gender:Gender.GIRL,x:-1,y:-1,angle:270),
+          Dancer.fromData(gender:Gender.BOY,x:-1,y:1,angle:0),
+          Dancer.fromData(gender:Gender.GIRL,x:-1,y:-1,angle:270),
     ]),
         paths: [
           Forward + RunLeft,
@@ -55,8 +55,8 @@ import '../../moves.dart';
 
     AnimatedCall('Reach Out',from: 'T-Bone Box 2',
         formation: Formation('', dancers:[
-          DancerModel.fromData(gender:Gender.BOY,x:-1,y:-1,angle:0),
-          DancerModel.fromData(gender:Gender.GIRL,x:-1,y:1,angle:90),
+          Dancer.fromData(gender:Gender.BOY,x:-1,y:-1,angle:0),
+          Dancer.fromData(gender:Gender.GIRL,x:-1,y:1,angle:90),
         ]),
         paths: [
           Forward + RunRight,

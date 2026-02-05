@@ -103,10 +103,10 @@ import '../../moves.dart';
 
     AnimatedCall('Walk and Dodge',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.GIRL,x:-3,y:-1,angle:180),
-        DancerModel.fromData(gender:Gender.BOY,x:-1,y:-1,angle:180),
-        DancerModel.fromData(gender:Gender.GIRL,x:1,y:-1,angle:90),
-        DancerModel.fromData(gender:Gender.BOY,x:3,y:-1,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:-3,y:-1,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:-1,y:-1,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:1,y:-1,angle:90),
+        Dancer.fromData(gender:Gender.BOY,x:3,y:-1,angle:180),
   ]),
       from:'T-Bones',difficulty: 3,
       paths:[
@@ -310,9 +310,9 @@ import '../../moves.dart';
         from: 'Right-Hand Columns of 3',
         difficulty: 3,
         formation:Formation('', dancers:[
-          DancerModel.fromData(gender:Gender.BOY,x:-2,y:-1,angle:180),
-          DancerModel.fromData(gender:Gender.GIRL,x:0,y:-1,angle:180),
-          DancerModel.fromData(gender:Gender.BOY,x:2,y:-1,angle:180),
+          Dancer.fromData(gender:Gender.BOY,x:-2,y:-1,angle:180),
+          Dancer.fromData(gender:Gender.GIRL,x:0,y:-1,angle:180),
+          Dancer.fromData(gender:Gender.BOY,x:2,y:-1,angle:180),
         ]),
         paths: [
           DodgeRight.changeBeats(4),
@@ -324,9 +324,9 @@ import '../../moves.dart';
         from: 'Left-Hand Columns of 3',
         difficulty: 3,
         formation:Formation('', dancers:[
-          DancerModel.fromData(gender:Gender.BOY,x:-2,y:1,angle:180),
-          DancerModel.fromData(gender:Gender.GIRL,x:0,y:1,angle:180),
-          DancerModel.fromData(gender:Gender.BOY,x:2,y:1,angle:180),
+          Dancer.fromData(gender:Gender.BOY,x:-2,y:1,angle:180),
+          Dancer.fromData(gender:Gender.GIRL,x:0,y:1,angle:180),
+          Dancer.fromData(gender:Gender.BOY,x:2,y:1,angle:180),
         ]),
         paths: [
           DodgeLeft.changeBeats(4),
@@ -338,9 +338,9 @@ import '../../moves.dart';
         from: 'Lines of 3 1',
         difficulty: 3,
         formation:Formation('', dancers:[
-          DancerModel.fromData(gender:Gender.BOY,x:1.5,y:-2,angle:180),
-          DancerModel.fromData(gender:Gender.GIRL,x:1.5,y:0,angle:180),
-          DancerModel.fromData(gender:Gender.BOY,x:1.5,y:2,angle:0),
+          Dancer.fromData(gender:Gender.BOY,x:1.5,y:-2,angle:180),
+          Dancer.fromData(gender:Gender.GIRL,x:1.5,y:0,angle:180),
+          Dancer.fromData(gender:Gender.BOY,x:1.5,y:2,angle:0),
         ]),
         paths: [
           Forward_3.changeBeats(4),
@@ -352,9 +352,9 @@ import '../../moves.dart';
         from: 'Lines of 3 2',
         difficulty: 3,
         formation:Formation('', dancers:[
-          DancerModel.fromData(gender:Gender.BOY,x:1.5,y:-2,angle:180),
-          DancerModel.fromData(gender:Gender.GIRL,x:1.5,y:0,angle:0),
-          DancerModel.fromData(gender:Gender.BOY,x:1.5,y:2,angle:0),
+          Dancer.fromData(gender:Gender.BOY,x:1.5,y:-2,angle:180),
+          Dancer.fromData(gender:Gender.GIRL,x:1.5,y:0,angle:0),
+          Dancer.fromData(gender:Gender.BOY,x:1.5,y:2,angle:0),
         ]),
         paths: [
           Forward_3.changeBeats(4),
@@ -366,9 +366,9 @@ import '../../moves.dart';
         from: 'Lines of 3 3',
         difficulty: 3,
         formation:Formation('', dancers:[
-          DancerModel.fromData(gender:Gender.BOY,x:1.5,y:-2,angle:0),
-          DancerModel.fromData(gender:Gender.GIRL,x:1.5,y:0,angle:0),
-          DancerModel.fromData(gender:Gender.BOY,x:1.5,y:2,angle:180),
+          Dancer.fromData(gender:Gender.BOY,x:1.5,y:-2,angle:0),
+          Dancer.fromData(gender:Gender.GIRL,x:1.5,y:0,angle:0),
+          Dancer.fromData(gender:Gender.BOY,x:1.5,y:2,angle:180),
         ]),
         paths: [
           DodgeLeft.changeBeats(4),
@@ -380,9 +380,9 @@ import '../../moves.dart';
         from: 'Lines of 3 4',
         difficulty: 3,
         formation:Formation('', dancers:[
-          DancerModel.fromData(gender:Gender.BOY,x:1.5,y:-2,angle:0),
-          DancerModel.fromData(gender:Gender.GIRL,x:1.5,y:0,angle:180),
-          DancerModel.fromData(gender:Gender.BOY,x:1.5,y:2,angle:180),
+          Dancer.fromData(gender:Gender.BOY,x:1.5,y:-2,angle:0),
+          Dancer.fromData(gender:Gender.GIRL,x:1.5,y:0,angle:180),
+          Dancer.fromData(gender:Gender.BOY,x:1.5,y:2,angle:180),
         ]),
         paths: [
           DodgeLeft.changeBeats(4),
@@ -487,10 +487,10 @@ import '../../moves.dart';
 
     AnimatedCall('1 by 3 Walk and Dodge',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:-2,y:3,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:-2,y:1,angle:180),
-        DancerModel.fromData(gender:Gender.GIRL,x:-2,y:-1,angle:180),
-        DancerModel.fromData(gender:Gender.BOY,x:-2,y:-3,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:-2,y:3,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:-2,y:1,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:-2,y:-1,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:-2,y:-3,angle:180),
   ]),
       from:'3 and 1 Lines #5',difficulty: 3,
       taminator: '''
@@ -521,10 +521,10 @@ import '../../moves.dart';
 
     AnimatedCall('Side Girls Dodge and Others Walk',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:1,y:1,angle:270),
-        DancerModel.fromData(gender:Gender.GIRL,x:1,y:-1,angle:270),
-        DancerModel.fromData(gender:Gender.GIRL,x:1,y:-3,angle:90),
-        DancerModel.fromData(gender:Gender.BOY,x:-1,y:-3,angle:90),
+        Dancer.fromData(gender:Gender.BOY,x:1,y:1,angle:270),
+        Dancer.fromData(gender:Gender.GIRL,x:1,y:-1,angle:270),
+        Dancer.fromData(gender:Gender.GIRL,x:1,y:-3,angle:90),
+        Dancer.fromData(gender:Gender.BOY,x:-1,y:-3,angle:90),
   ]),
       group:' ',difficulty: 2,
       paths:[

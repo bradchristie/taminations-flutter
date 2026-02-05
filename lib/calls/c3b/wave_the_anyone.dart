@@ -51,10 +51,10 @@ import '../../moves.dart';
     AnimatedCall('Wave the Beaus',
       from: 'T-Bones',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:1,y:3,angle:270),
-        DancerModel.fromData(gender:Gender.GIRL,x:-1,y:3,angle:270),
-        DancerModel.fromData(gender:Gender.BOY,x:1,y:1,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:1,y:-1,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:1,y:3,angle:270),
+        Dancer.fromData(gender:Gender.GIRL,x:-1,y:3,angle:270),
+        Dancer.fromData(gender:Gender.BOY,x:1,y:1,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:1,y:-1,angle:0),
   ]),
       parts:'2',
       paths:[
@@ -100,10 +100,10 @@ import '../../moves.dart';
     AnimatedCall('Wave the Belles',
         from: 'T-Bones',
         formation:Formation('', dancers:[
-          DancerModel.fromData(gender:Gender.BOY,x:1,y:3,angle:270),
-          DancerModel.fromData(gender:Gender.GIRL,x:-1,y:3,angle:270),
-          DancerModel.fromData(gender:Gender.BOY,x:1,y:1,angle:0),
-          DancerModel.fromData(gender:Gender.GIRL,x:1,y:-1,angle:0),
+          Dancer.fromData(gender:Gender.BOY,x:1,y:3,angle:270),
+          Dancer.fromData(gender:Gender.GIRL,x:-1,y:3,angle:270),
+          Dancer.fromData(gender:Gender.BOY,x:1,y:1,angle:0),
+          Dancer.fromData(gender:Gender.GIRL,x:1,y:-1,angle:0),
         ]),
         parts:'2',
         paths:[
@@ -125,10 +125,10 @@ import '../../moves.dart';
     AnimatedCall('Wave the Boys',
       from: 'Eight Chain Thru, Boys in Center',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:1,y:1,angle:90),
-        DancerModel.fromData(gender:Gender.GIRL,x:1,y:3,angle:270),
-        DancerModel.fromData(gender:Gender.BOY,x:-1,y:1,angle:90),
-        DancerModel.fromData(gender:Gender.GIRL,x:-1,y:3,angle:270),
+        Dancer.fromData(gender:Gender.BOY,x:1,y:1,angle:90),
+        Dancer.fromData(gender:Gender.GIRL,x:1,y:3,angle:270),
+        Dancer.fromData(gender:Gender.BOY,x:-1,y:1,angle:90),
+        Dancer.fromData(gender:Gender.GIRL,x:-1,y:3,angle:270),
   ]),
       isGenderSpecific:true,parts:'2',
       paths:[
@@ -154,10 +154,10 @@ import '../../moves.dart';
     AnimatedCall('Wave the Boys',
         from: 'Eight Chain Thru, Boys Outside',
         formation:Formation('', dancers:[
-          DancerModel.fromData(gender:Gender.GIRL,x:1,y:1,angle:90),
-          DancerModel.fromData(gender:Gender.BOY,x:1,y:3,angle:270),
-          DancerModel.fromData(gender:Gender.GIRL,x:-1,y:1,angle:90),
-          DancerModel.fromData(gender:Gender.BOY,x:-1,y:3,angle:270),
+          Dancer.fromData(gender:Gender.GIRL,x:1,y:1,angle:90),
+          Dancer.fromData(gender:Gender.BOY,x:1,y:3,angle:270),
+          Dancer.fromData(gender:Gender.GIRL,x:-1,y:1,angle:90),
+          Dancer.fromData(gender:Gender.BOY,x:-1,y:3,angle:270),
         ]),
         isGenderSpecific:true,parts:'2',
         paths:[
@@ -186,10 +186,10 @@ import '../../moves.dart';
     AnimatedCall('Wave the Girls',
         from: 'Eight Chain Thru, Girls In Center',
         formation:Formation('', dancers:[
-          DancerModel.fromData(gender:Gender.GIRL,x:1,y:1,angle:90),
-          DancerModel.fromData(gender:Gender.BOY,x:1,y:3,angle:270),
-          DancerModel.fromData(gender:Gender.GIRL,x:-1,y:1,angle:90),
-          DancerModel.fromData(gender:Gender.BOY,x:-1,y:3,angle:270),
+          Dancer.fromData(gender:Gender.GIRL,x:1,y:1,angle:90),
+          Dancer.fromData(gender:Gender.BOY,x:1,y:3,angle:270),
+          Dancer.fromData(gender:Gender.GIRL,x:-1,y:1,angle:90),
+          Dancer.fromData(gender:Gender.BOY,x:-1,y:3,angle:270),
         ]),
         isGenderSpecific:true,parts:'2',
         paths:[
@@ -215,10 +215,10 @@ import '../../moves.dart';
     AnimatedCall('Wave the Girls',
         from: 'Eight Chain Thru, Girls Outside',
         formation:Formation('', dancers:[
-          DancerModel.fromData(gender:Gender.BOY,x:1,y:1,angle:90),
-          DancerModel.fromData(gender:Gender.GIRL,x:1,y:3,angle:270),
-          DancerModel.fromData(gender:Gender.BOY,x:-1,y:1,angle:90),
-          DancerModel.fromData(gender:Gender.GIRL,x:-1,y:3,angle:270),
+          Dancer.fromData(gender:Gender.BOY,x:1,y:1,angle:90),
+          Dancer.fromData(gender:Gender.GIRL,x:1,y:3,angle:270),
+          Dancer.fromData(gender:Gender.BOY,x:-1,y:1,angle:90),
+          Dancer.fromData(gender:Gender.GIRL,x:-1,y:3,angle:270),
         ]),
         isGenderSpecific:true,parts:'2',
         paths:[
@@ -274,10 +274,10 @@ import '../../moves.dart';
     AnimatedCall('Wave Everybody',
         from: 'T-Bones',
         formation:Formation('', dancers:[
-          DancerModel.fromData(gender:Gender.BOY,x:1,y:3,angle:270),
-          DancerModel.fromData(gender:Gender.GIRL,x:-1,y:3,angle:270),
-          DancerModel.fromData(gender:Gender.BOY,x:1,y:1,angle:0),
-          DancerModel.fromData(gender:Gender.GIRL,x:1,y:-1,angle:0),
+          Dancer.fromData(gender:Gender.BOY,x:1,y:3,angle:270),
+          Dancer.fromData(gender:Gender.GIRL,x:-1,y:3,angle:270),
+          Dancer.fromData(gender:Gender.BOY,x:1,y:1,angle:0),
+          Dancer.fromData(gender:Gender.GIRL,x:1,y:-1,angle:0),
         ]),
         parts:'2',
         paths:[
@@ -327,10 +327,10 @@ import '../../moves.dart';
     AnimatedCall('Wave Nobody',
         from: 'T-Bones',
         formation:Formation('', dancers:[
-          DancerModel.fromData(gender:Gender.BOY,x:1,y:3,angle:270),
-          DancerModel.fromData(gender:Gender.GIRL,x:-1,y:3,angle:270),
-          DancerModel.fromData(gender:Gender.BOY,x:1,y:1,angle:0),
-          DancerModel.fromData(gender:Gender.GIRL,x:1,y:-1,angle:0),
+          Dancer.fromData(gender:Gender.BOY,x:1,y:3,angle:270),
+          Dancer.fromData(gender:Gender.GIRL,x:-1,y:3,angle:270),
+          Dancer.fromData(gender:Gender.BOY,x:1,y:1,angle:0),
+          Dancer.fromData(gender:Gender.GIRL,x:1,y:-1,angle:0),
         ]),
         parts:'2',
         paths:[

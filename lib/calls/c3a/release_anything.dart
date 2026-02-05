@@ -43,10 +43,10 @@ import '../../moves.dart';
 
     AnimatedCall('Release Crossfire',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:-3,y:1,angle:180),
-        DancerModel.fromData(gender:Gender.GIRL,x:-3,y:-1,angle:0),
-        DancerModel.fromData(gender:Gender.BOY,x:0,y:-1,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:0,y:-3,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:-3,y:1,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:-3,y:-1,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:0,y:-1,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:0,y:-3,angle:0),
   ]),
       group:'Release',fractions:'3',
       paths:[
@@ -67,10 +67,10 @@ import '../../moves.dart';
 
     AnimatedCall('Release Cycle and Wheel',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.GIRL,x:0,y:1,angle:0),
-        DancerModel.fromData(gender:Gender.BOY,x:0,y:3,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:3,y:-1,angle:180),
-        DancerModel.fromData(gender:Gender.BOY,x:3,y:1,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:0,y:1,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:0,y:3,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:3,y:-1,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:3,y:1,angle:180),
   ]),
       group:'Release',fractions:'3',
       paths:[
@@ -90,10 +90,10 @@ import '../../moves.dart';
 
     AnimatedCall('Release Left Turn and Deal',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:-3,y:1,angle:180),
-        DancerModel.fromData(gender:Gender.GIRL,x:-3,y:-1,angle:0),
-        DancerModel.fromData(gender:Gender.BOY,x:0,y:-1,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:0,y:-3,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:-3,y:1,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:-3,y:-1,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:0,y:-1,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:0,y:-3,angle:0),
   ]),
       group:'Release',fractions:'3',
       paths:[
@@ -139,10 +139,10 @@ import '../../moves.dart';
 
     AnimatedCall('Release Offset Waves Out Roll Circulate',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.GIRL,x:0,y:1,angle:180),
-        DancerModel.fromData(gender:Gender.BOY,x:0,y:3,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:3,y:-1,angle:180),
-        DancerModel.fromData(gender:Gender.BOY,x:3,y:1,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:0,y:1,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:0,y:3,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:3,y:-1,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:3,y:1,angle:180),
   ]),
       group:'Release',fractions:'3',
       paths:[

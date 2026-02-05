@@ -214,10 +214,10 @@ import '../a2/all_4_all_8.dart' as a2;
 
     AnimatedCall('Right Roll to a Wave Three Times',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:-2.5,y:0,angle:180),
-        DancerModel.fromData(gender:Gender.GIRL,x:-3.5,y:0,angle:180),
-        DancerModel.fromData(gender:Gender.BOY,x:-1.5,y:0,angle:180),
-        DancerModel.fromData(gender:Gender.GIRL,x:-.5,y:0,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:-2.5,y:0,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:-3.5,y:0,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:-1.5,y:0,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:-.5,y:0,angle:180),
   ]),
       from:'Single File Dancers',fractions:'2;3',
       paths:[

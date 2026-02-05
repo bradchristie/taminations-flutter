@@ -31,7 +31,7 @@ class BoxTheGnat extends Action with ActivesOnly {
 
   BoxTheGnat(super.name);
 
-  DancerModel? _checkOtherDancer(DancerModel d, DancerModel? d2) {
+  Dancer? _checkOtherDancer(Dancer d, Dancer? d2) {
     if (d2 == null)
       return null;
     if (!d2.data.active)
@@ -42,7 +42,7 @@ class BoxTheGnat extends Action with ActivesOnly {
   }
 
   @override
-  Path performOne(DancerModel d, CallContext ctx) {
+  Path performOne(Dancer d, CallContext ctx) {
     //  First try facing dancers
     var d2 = _checkOtherDancer(d, ctx.dancerFacing(d));
     if (d2 != null) {

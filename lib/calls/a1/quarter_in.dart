@@ -146,10 +146,10 @@ import '../a2/all_4_all_8.dart' as a2;
 
     AnimatedCall('Quarter In',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:0,y:5.25,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:0,y:3.75,angle:180),
-        DancerModel.fromData(gender:Gender.GIRL,x:0,y:2.25,angle:0),
-        DancerModel.fromData(gender:Gender.BOY,x:0,y:.75,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:0,y:5.25,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:0,y:3.75,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:0,y:2.25,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:0,y:.75,angle:180),
   ]),
       from:'Tidal Wave',
       paths:[
@@ -306,10 +306,10 @@ import '../a2/all_4_all_8.dart' as a2;
 
     AnimatedCall('Quarter Out',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:-3,y:1,angle:90),
-        DancerModel.fromData(gender:Gender.GIRL,x:-3,y:-1,angle:90),
-        DancerModel.fromData(gender:Gender.BOY,x:1,y:3,angle:270),
-        DancerModel.fromData(gender:Gender.GIRL,x:-1,y:3,angle:270),
+        Dancer.fromData(gender:Gender.BOY,x:-3,y:1,angle:90),
+        Dancer.fromData(gender:Gender.GIRL,x:-3,y:-1,angle:90),
+        Dancer.fromData(gender:Gender.BOY,x:1,y:3,angle:270),
+        Dancer.fromData(gender:Gender.GIRL,x:-1,y:3,angle:270),
   ]),
       from:'Heads Facing Left',
       paths:[

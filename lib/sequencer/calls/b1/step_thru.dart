@@ -27,7 +27,7 @@ class StepThru extends Action with ActivesOnly {
   StepThru(super.name);
 
   @override
-  Path performOne(DancerModel d, CallContext ctx) {
+  Path performOne(Dancer d, CallContext ctx) {
     if (!ctx.isInWave(d))
       throw CallError('Dancer $d cannot Step Thru');
     final move = d.data.beau ? ExtendRight : ExtendLeft;

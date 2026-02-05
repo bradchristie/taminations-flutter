@@ -26,8 +26,8 @@ import '../../moves.dart';
 
     AnimatedCall('Reverse Cut the Diamond',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:3,y:0,angle:270),
-        DancerModel.fromData(gender:Gender.GIRL,x:0,y:-1,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:3,y:0,angle:270),
+        Dancer.fromData(gender:Gender.GIRL,x:0,y:-1,angle:180),
   ]),
       from:'Right-Hand Diamond',
       paths:[
@@ -155,10 +155,10 @@ import '../../moves.dart';
 
     AnimatedCall('Reverse Cut the Diamond',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:0,y:-3,angle:180),
-        DancerModel.fromData(gender:Gender.GIRL,x:-3,y:-2,angle:270),
-        DancerModel.fromData(gender:Gender.BOY,x:0,y:-1,angle:180),
-        DancerModel.fromData(gender:Gender.GIRL,x:3,y:-2,angle:90),
+        Dancer.fromData(gender:Gender.BOY,x:0,y:-3,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:-3,y:-2,angle:270),
+        Dancer.fromData(gender:Gender.BOY,x:0,y:-1,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:3,y:-2,angle:90),
   ]),
       from:'Interlocked Diamonds 3',
       paths:[
@@ -173,10 +173,10 @@ import '../../moves.dart';
 
     AnimatedCall('Reverse Cut the Diamond',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:0,y:-3,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:-3,y:-2,angle:90),
-        DancerModel.fromData(gender:Gender.BOY,x:0,y:-1,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:3,y:-2,angle:270),
+        Dancer.fromData(gender:Gender.BOY,x:0,y:-3,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:-3,y:-2,angle:90),
+        Dancer.fromData(gender:Gender.BOY,x:0,y:-1,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:3,y:-2,angle:270),
   ]),
       from:'Interlocked Diamonds 4',
       paths:[
@@ -221,10 +221,10 @@ import '../../moves.dart';
 
     AnimatedCall('Reverse Cut the Diamond',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:-1,y:-3,angle:90),
-        DancerModel.fromData(gender:Gender.GIRL,x:0,y:-1,angle:180),
-        DancerModel.fromData(gender:Gender.BOY,x:1,y:-3,angle:270),
-        DancerModel.fromData(gender:Gender.GIRL,x:0,y:-5,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:-1,y:-3,angle:90),
+        Dancer.fromData(gender:Gender.GIRL,x:0,y:-1,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:1,y:-3,angle:270),
+        Dancer.fromData(gender:Gender.GIRL,x:0,y:-5,angle:0),
   ]),
       from:'Facing Point-to-Point Diamonds, Right-Hand Centers',
       paths:[
@@ -241,10 +241,10 @@ import '../../moves.dart';
 
     AnimatedCall('Reverse Cut the Diamond',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:-1,y:-3,angle:270),
-        DancerModel.fromData(gender:Gender.GIRL,x:0,y:-1,angle:0),
-        DancerModel.fromData(gender:Gender.BOY,x:1,y:-3,angle:90),
-        DancerModel.fromData(gender:Gender.GIRL,x:0,y:-5,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:-1,y:-3,angle:270),
+        Dancer.fromData(gender:Gender.GIRL,x:0,y:-1,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:1,y:-3,angle:90),
+        Dancer.fromData(gender:Gender.GIRL,x:0,y:-5,angle:180),
   ]),
       from:'Facing Point-to-Point Diamonds, Left-Hand Centers',
       paths:[
@@ -261,10 +261,10 @@ import '../../moves.dart';
 
     AnimatedCall('Reverse Cut the Diamond',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:-1,y:-3,angle:90),
-        DancerModel.fromData(gender:Gender.GIRL,x:0,y:-1,angle:0),
-        DancerModel.fromData(gender:Gender.BOY,x:1,y:-3,angle:90),
-        DancerModel.fromData(gender:Gender.GIRL,x:0,y:-5,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:-1,y:-3,angle:90),
+        Dancer.fromData(gender:Gender.GIRL,x:0,y:-1,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:1,y:-3,angle:90),
+        Dancer.fromData(gender:Gender.GIRL,x:0,y:-5,angle:180),
   ]),
       from:'Point-to-Point Diamonds 3',
       paths:[
@@ -280,10 +280,10 @@ import '../../moves.dart';
 
     AnimatedCall('Reverse Cut the Diamond',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:-1,y:-3,angle:270),
-        DancerModel.fromData(gender:Gender.GIRL,x:0,y:-1,angle:0),
-        DancerModel.fromData(gender:Gender.BOY,x:1,y:-3,angle:270),
-        DancerModel.fromData(gender:Gender.GIRL,x:0,y:-5,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:-1,y:-3,angle:270),
+        Dancer.fromData(gender:Gender.GIRL,x:0,y:-1,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:1,y:-3,angle:270),
+        Dancer.fromData(gender:Gender.GIRL,x:0,y:-5,angle:180),
   ]),
       from:'Point-to-Point Diamonds 4',
       paths:[
@@ -298,10 +298,10 @@ import '../../moves.dart';
 
     AnimatedCall('Reverse Cut the Diamond',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:-1,y:-3,angle:270),
-        DancerModel.fromData(gender:Gender.GIRL,x:0,y:-1,angle:180),
-        DancerModel.fromData(gender:Gender.BOY,x:1,y:-3,angle:270),
-        DancerModel.fromData(gender:Gender.GIRL,x:0,y:-5,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:-1,y:-3,angle:270),
+        Dancer.fromData(gender:Gender.GIRL,x:0,y:-1,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:1,y:-3,angle:270),
+        Dancer.fromData(gender:Gender.GIRL,x:0,y:-5,angle:0),
   ]),
       from:'Point-to-Point Diamonds 5',
       paths:[
@@ -316,10 +316,10 @@ import '../../moves.dart';
 
     AnimatedCall('Reverse Cut the Diamond',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:-1,y:-3,angle:90),
-        DancerModel.fromData(gender:Gender.GIRL,x:0,y:-1,angle:180),
-        DancerModel.fromData(gender:Gender.BOY,x:1,y:-3,angle:90),
-        DancerModel.fromData(gender:Gender.GIRL,x:0,y:-5,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:-1,y:-3,angle:90),
+        Dancer.fromData(gender:Gender.GIRL,x:0,y:-1,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:1,y:-3,angle:90),
+        Dancer.fromData(gender:Gender.GIRL,x:0,y:-5,angle:0),
   ]),
       from:'Point-to-Point Diamonds 6',
       paths:[
@@ -334,8 +334,8 @@ import '../../moves.dart';
 
     AnimatedCall('Reverse Flip the Diamond',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:3,y:0,angle:270),
-        DancerModel.fromData(gender:Gender.GIRL,x:0,y:-1,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:3,y:0,angle:270),
+        Dancer.fromData(gender:Gender.GIRL,x:0,y:-1,angle:180),
   ]),
       from:'Right-Hand Diamond',
       paths:[
@@ -451,10 +451,10 @@ import '../../moves.dart';
 
     AnimatedCall('Reverse Flip the Diamond',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:0,y:-3,angle:180),
-        DancerModel.fromData(gender:Gender.GIRL,x:-3,y:-2,angle:270),
-        DancerModel.fromData(gender:Gender.BOY,x:0,y:-1,angle:180),
-        DancerModel.fromData(gender:Gender.GIRL,x:3,y:-2,angle:90),
+        Dancer.fromData(gender:Gender.BOY,x:0,y:-3,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:-3,y:-2,angle:270),
+        Dancer.fromData(gender:Gender.BOY,x:0,y:-1,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:3,y:-2,angle:90),
   ]),
       from:'Interlocked Diamonds 3',
       paths:[
@@ -469,10 +469,10 @@ import '../../moves.dart';
 
     AnimatedCall('Reverse Flip the Diamond',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:0,y:-3,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:-3,y:-2,angle:90),
-        DancerModel.fromData(gender:Gender.BOY,x:0,y:-1,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:3,y:-2,angle:270),
+        Dancer.fromData(gender:Gender.BOY,x:0,y:-3,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:-3,y:-2,angle:90),
+        Dancer.fromData(gender:Gender.BOY,x:0,y:-1,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:3,y:-2,angle:270),
   ]),
       from:'Interlocked Diamonds 4',
       paths:[
@@ -513,10 +513,10 @@ import '../../moves.dart';
 
     AnimatedCall('Reverse Flip the Diamond',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:-1,y:-3,angle:90),
-        DancerModel.fromData(gender:Gender.GIRL,x:0,y:-1,angle:180),
-        DancerModel.fromData(gender:Gender.BOY,x:1,y:-3,angle:270),
-        DancerModel.fromData(gender:Gender.GIRL,x:0,y:-5,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:-1,y:-3,angle:90),
+        Dancer.fromData(gender:Gender.GIRL,x:0,y:-1,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:1,y:-3,angle:270),
+        Dancer.fromData(gender:Gender.GIRL,x:0,y:-5,angle:0),
   ]),
       from:'Facing Point-to-Point Diamonds, Right-Hand Centers',
       paths:[
@@ -531,10 +531,10 @@ import '../../moves.dart';
 
     AnimatedCall('Reverse Flip the Diamond',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:-1,y:-3,angle:270),
-        DancerModel.fromData(gender:Gender.GIRL,x:0,y:-1,angle:0),
-        DancerModel.fromData(gender:Gender.BOY,x:1,y:-3,angle:90),
-        DancerModel.fromData(gender:Gender.GIRL,x:0,y:-5,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:-1,y:-3,angle:270),
+        Dancer.fromData(gender:Gender.GIRL,x:0,y:-1,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:1,y:-3,angle:90),
+        Dancer.fromData(gender:Gender.GIRL,x:0,y:-5,angle:180),
   ]),
       from:'Facing Point-to-Point Diamonds, Left-Hand Centers',
       paths:[
@@ -549,10 +549,10 @@ import '../../moves.dart';
 
     AnimatedCall('Reverse Flip the Diamond',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:-1,y:-3,angle:90),
-        DancerModel.fromData(gender:Gender.GIRL,x:0,y:-1,angle:0),
-        DancerModel.fromData(gender:Gender.BOY,x:1,y:-3,angle:90),
-        DancerModel.fromData(gender:Gender.GIRL,x:0,y:-5,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:-1,y:-3,angle:90),
+        Dancer.fromData(gender:Gender.GIRL,x:0,y:-1,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:1,y:-3,angle:90),
+        Dancer.fromData(gender:Gender.GIRL,x:0,y:-5,angle:180),
   ]),
       from:'Point-to-Point Diamonds 3',
       paths:[
@@ -567,10 +567,10 @@ import '../../moves.dart';
 
     AnimatedCall('Reverse Flip the Diamond',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:-1,y:-3,angle:270),
-        DancerModel.fromData(gender:Gender.GIRL,x:0,y:-1,angle:0),
-        DancerModel.fromData(gender:Gender.BOY,x:1,y:-3,angle:270),
-        DancerModel.fromData(gender:Gender.GIRL,x:0,y:-5,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:-1,y:-3,angle:270),
+        Dancer.fromData(gender:Gender.GIRL,x:0,y:-1,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:1,y:-3,angle:270),
+        Dancer.fromData(gender:Gender.GIRL,x:0,y:-5,angle:180),
   ]),
       from:'Point-to-Point Diamonds 4',
       paths:[
@@ -585,10 +585,10 @@ import '../../moves.dart';
 
     AnimatedCall('Reverse Flip the Diamond',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:-1,y:-3,angle:270),
-        DancerModel.fromData(gender:Gender.GIRL,x:0,y:-1,angle:180),
-        DancerModel.fromData(gender:Gender.BOY,x:1,y:-3,angle:270),
-        DancerModel.fromData(gender:Gender.GIRL,x:0,y:-5,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:-1,y:-3,angle:270),
+        Dancer.fromData(gender:Gender.GIRL,x:0,y:-1,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:1,y:-3,angle:270),
+        Dancer.fromData(gender:Gender.GIRL,x:0,y:-5,angle:0),
   ]),
       from:'Point-to-Point Diamonds 5',
       paths:[
@@ -603,10 +603,10 @@ import '../../moves.dart';
 
     AnimatedCall('Reverse Flip the Diamond',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:-1,y:-3,angle:90),
-        DancerModel.fromData(gender:Gender.GIRL,x:0,y:-1,angle:180),
-        DancerModel.fromData(gender:Gender.BOY,x:1,y:-3,angle:90),
-        DancerModel.fromData(gender:Gender.GIRL,x:0,y:-5,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:-1,y:-3,angle:90),
+        Dancer.fromData(gender:Gender.GIRL,x:0,y:-1,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:1,y:-3,angle:90),
+        Dancer.fromData(gender:Gender.GIRL,x:0,y:-5,angle:0),
   ]),
       from:'Point-to-Point Diamonds 6',
       paths:[

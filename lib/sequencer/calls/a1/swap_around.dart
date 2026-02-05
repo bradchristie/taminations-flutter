@@ -28,7 +28,7 @@ class SwapAround extends Action with ActivesOnly, IsReverse {
   SwapAround(super.name);
 
   @override
-  Path performOne(DancerModel d, CallContext ctx) {
+  Path performOne(Dancer d, CallContext ctx) {
     var d1 = ctx.dancerInFront(d);
     if (d1 == null)
       throw CallError('All dancers must be trailers');

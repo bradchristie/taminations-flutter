@@ -29,7 +29,7 @@ class Truck extends Action with IsReverse {
   Truck(super.name);
 
   @override
-  Path performOne(DancerModel d, CallContext ctx) {
+  Path performOne(Dancer d, CallContext ctx) {
     final move = [
       if (d.gender == Gender.BOY) isReverse ? DodgeRight : DodgeLeft,
       if (d.gender == Gender.GIRL) isReverse ? DodgeLeft : DodgeRight,

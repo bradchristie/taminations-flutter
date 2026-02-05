@@ -93,10 +93,10 @@ import '../../moves.dart';
 
     AnimatedCall('Couples Twosome Single Wheel',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.GIRL,x:-2,y:3,angle:0),
-        DancerModel.fromData(gender:Gender.BOY,x:2,y:3,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:-2,y:-1,angle:180),
-        DancerModel.fromData(gender:Gender.BOY,x:2,y:-1,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:-2,y:3,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:2,y:3,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:-2,y:-1,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:2,y:-1,angle:180),
   ]),
       group:'Couples Twosome',
       taminator: '''
@@ -180,10 +180,10 @@ import '../../moves.dart';
 
     AnimatedCall('Tandem Twosome Single Wheel',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.GIRL,x:-2,y:3,angle:0),
-        DancerModel.fromData(gender:Gender.BOY,x:2,y:3,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:-2,y:-1,angle:180),
-        DancerModel.fromData(gender:Gender.BOY,x:2,y:-1,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:-2,y:3,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:2,y:3,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:-2,y:-1,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:2,y:-1,angle:180),
   ]),
       group:'Tandem Twosome',
       paths:[
@@ -215,10 +215,10 @@ import '../../moves.dart';
 
     AnimatedCall('Tandem, Tandem Twosome Touch a Quarter',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.GIRL,x:.8,y:0,angle:180),
-        DancerModel.fromData(gender:Gender.BOY,x:3.6,y:0,angle:180),
-        DancerModel.fromData(gender:Gender.GIRL,x:2.2,y:0,angle:180),
-        DancerModel.fromData(gender:Gender.BOY,x:5.0,y:0,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:.8,y:0,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:3.6,y:0,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:2.2,y:0,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:5.0,y:0,angle:180),
   ]),
       group:'Tandem, Tandem Twosome',
       paths:[

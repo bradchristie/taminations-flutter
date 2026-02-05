@@ -60,10 +60,10 @@ import '../../moves.dart';
 
     AnimatedCall('All 8 Spin the Top',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:-1,y:-3,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:1,y:-3,angle:180),
-        DancerModel.fromData(gender:Gender.BOY,x:-3,y:1,angle:270),
-        DancerModel.fromData(gender:Gender.GIRL,x:-3,y:-1,angle:90),
+        Dancer.fromData(gender:Gender.BOY,x:-1,y:-3,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:1,y:-3,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:-3,y:1,angle:270),
+        Dancer.fromData(gender:Gender.GIRL,x:-3,y:-1,angle:90),
   ]),
       from:'Grand Circle',parts:'5',difficulty: 1,
       paths:[
@@ -86,10 +86,10 @@ import '../../moves.dart';
 
     AnimatedCall('All 8 Left Spin the Top',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:-1,y:-3,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:1,y:-3,angle:180),
-        DancerModel.fromData(gender:Gender.BOY,x:-3,y:1,angle:270),
-        DancerModel.fromData(gender:Gender.GIRL,x:-3,y:-1,angle:90),
+        Dancer.fromData(gender:Gender.BOY,x:-1,y:-3,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:1,y:-3,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:-3,y:1,angle:270),
+        Dancer.fromData(gender:Gender.GIRL,x:-3,y:-1,angle:90),
   ]),
       from:'Grand Circle',parts:'5',difficulty: 2,
       paths:[

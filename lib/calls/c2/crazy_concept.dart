@@ -269,10 +269,10 @@ import '../c2/cross_the_k.dart' as c2;
 
     AnimatedCall('Crazy Triangle Circulate',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:-1,y:-3,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:0,y:-1,angle:180),
-        DancerModel.fromData(gender:Gender.BOY,x:1,y:-3,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:0,y:-5,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:-1,y:-3,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:0,y:-1,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:1,y:-3,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:0,y:-5,angle:180),
   ]),
       group:'Crazy',parts:'3;3;3',
       paths:[
@@ -299,10 +299,10 @@ import '../c2/cross_the_k.dart' as c2;
 
     AnimatedCall('1/2 Crazy Quarter Thru',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.GIRL,x:3,y:3,angle:270),
-        DancerModel.fromData(gender:Gender.BOY,x:1,y:3,angle:90),
-        DancerModel.fromData(gender:Gender.GIRL,x:-1,y:0,angle:270),
-        DancerModel.fromData(gender:Gender.BOY,x:-3,y:0,angle:90),
+        Dancer.fromData(gender:Gender.GIRL,x:3,y:3,angle:270),
+        Dancer.fromData(gender:Gender.BOY,x:1,y:3,angle:90),
+        Dancer.fromData(gender:Gender.GIRL,x:-1,y:0,angle:270),
+        Dancer.fromData(gender:Gender.BOY,x:-3,y:0,angle:90),
   ]),
       group:' ',parts:'4.5',
       paths:[
@@ -423,10 +423,10 @@ import '../c2/cross_the_k.dart' as c2;
 
     AnimatedCall('1/2 Reverse Crazy Tag Back',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:3,y:0,angle:270),
-        DancerModel.fromData(gender:Gender.GIRL,x:1,y:0,angle:270),
-        DancerModel.fromData(gender:Gender.BOY,x:-2,y:3,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:2,y:3,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:3,y:0,angle:270),
+        Dancer.fromData(gender:Gender.GIRL,x:1,y:0,angle:270),
+        Dancer.fromData(gender:Gender.BOY,x:-2,y:3,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:2,y:3,angle:0),
   ]),
       group:'1/2 Reverse Crazy',parts:'8.5',
       paths:[
@@ -481,10 +481,10 @@ import '../c2/cross_the_k.dart' as c2;
 
     AnimatedCall('3/4 Reverse Crazy Follow Thru',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:3,y:0,angle:180),
-        DancerModel.fromData(gender:Gender.GIRL,x:0,y:1,angle:0),
-        DancerModel.fromData(gender:Gender.BOY,x:1,y:3,angle:270),
-        DancerModel.fromData(gender:Gender.GIRL,x:-1,y:3,angle:270),
+        Dancer.fromData(gender:Gender.BOY,x:3,y:0,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:0,y:1,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:1,y:3,angle:270),
+        Dancer.fromData(gender:Gender.GIRL,x:-1,y:3,angle:270),
   ]),
       group:'3/4 Reverse Crazy',parts:'3;3',
       paths:[

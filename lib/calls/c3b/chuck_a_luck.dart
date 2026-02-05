@@ -26,10 +26,10 @@ import '../../moves.dart';
 
     AnimatedCall('Chuck-A-Luck',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.GIRL,x:2,y:1,angle:0),
-        DancerModel.fromData(gender:Gender.BOY,x:2,y:3,angle:0),
-        DancerModel.fromData(gender:Gender.BOY,x:-2,y:3,angle:180),
-        DancerModel.fromData(gender:Gender.GIRL,x:-2,y:1,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:2,y:1,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:2,y:3,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:-2,y:3,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:-2,y:1,angle:180),
   ]),
       group:' ',parts:'3',
       paths:[
@@ -52,10 +52,10 @@ import '../../moves.dart';
 
     AnimatedCall('Cross Chuck-A-Luck',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.GIRL,x:2,y:1,angle:0),
-        DancerModel.fromData(gender:Gender.BOY,x:2,y:3,angle:0),
-        DancerModel.fromData(gender:Gender.BOY,x:-2,y:3,angle:180),
-        DancerModel.fromData(gender:Gender.GIRL,x:-2,y:1,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:2,y:1,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:2,y:3,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:-2,y:3,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:-2,y:1,angle:180),
   ]),
       group:' ',parts:'4',
       paths:[

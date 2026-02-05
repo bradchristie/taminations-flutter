@@ -26,8 +26,8 @@ import '../../moves.dart';
 
     AnimatedCall('Ping Pong Circulate',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.GIRL,x:1,y:-3,angle:90),
-        DancerModel.fromData(gender:Gender.GIRL,x:1,y:0,angle:90),
+        Dancer.fromData(gender:Gender.GIRL,x:1,y:-3,angle:90),
+        Dancer.fromData(gender:Gender.GIRL,x:1,y:0,angle:90),
   ]),
       from:'Center 4 Dancers',noDisplay: true,
       paths:[
@@ -39,8 +39,8 @@ import '../../moves.dart';
 
     AnimatedCall('Ping Pong Circulate',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:-1,y:-3,angle:90),
-        DancerModel.fromData(gender:Gender.BOY,x:1,y:0,angle:270),
+        Dancer.fromData(gender:Gender.BOY,x:-1,y:-3,angle:90),
+        Dancer.fromData(gender:Gender.BOY,x:1,y:0,angle:270),
   ]),
       from:'Center 4 Dancers LH',noDisplay: true,
       paths:[
@@ -52,8 +52,8 @@ import '../../moves.dart';
 
     AnimatedCall('Ping Pong Circulate',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:-1,y:-3,angle:90),
-        DancerModel.fromData(gender:Gender.BOY,x:3,y:0,angle:270),
+        Dancer.fromData(gender:Gender.BOY,x:-1,y:-3,angle:90),
+        Dancer.fromData(gender:Gender.BOY,x:3,y:0,angle:270),
   ]),
       from:'Outer 4 Dancers',isPerimeter:true,noDisplay: true,
       paths:[
@@ -66,8 +66,8 @@ import '../../moves.dart';
 
     AnimatedCall('Ping Pong Circulate',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.GIRL,x:1,y:-3,angle:90),
-        DancerModel.fromData(gender:Gender.GIRL,x:3,y:0,angle:90),
+        Dancer.fromData(gender:Gender.GIRL,x:1,y:-3,angle:90),
+        Dancer.fromData(gender:Gender.GIRL,x:3,y:0,angle:90),
   ]),
       from:'Outer 4 Dancers LH',isPerimeter:true,noDisplay: true,
       paths:[
@@ -80,10 +80,10 @@ import '../../moves.dart';
 
     AnimatedCall('Ping Pong Circulate',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:-1,y:-3,angle:90),
-        DancerModel.fromData(gender:Gender.GIRL,x:1,y:-3,angle:90),
-        DancerModel.fromData(gender:Gender.BOY,x:3,y:0,angle:270),
-        DancerModel.fromData(gender:Gender.GIRL,x:1,y:0,angle:90),
+        Dancer.fromData(gender:Gender.BOY,x:-1,y:-3,angle:90),
+        Dancer.fromData(gender:Gender.GIRL,x:1,y:-3,angle:90),
+        Dancer.fromData(gender:Gender.BOY,x:3,y:0,angle:270),
+        Dancer.fromData(gender:Gender.GIRL,x:1,y:0,angle:90),
   ]),
       from:'Quarter Tag',difficulty: 1,
       paths:[
@@ -101,10 +101,10 @@ import '../../moves.dart';
 
     AnimatedCall('Ping Pong Circulate',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:-1,y:-3,angle:90),
-        DancerModel.fromData(gender:Gender.GIRL,x:1,y:-3,angle:90),
-        DancerModel.fromData(gender:Gender.GIRL,x:3,y:0,angle:90),
-        DancerModel.fromData(gender:Gender.BOY,x:1,y:0,angle:270),
+        Dancer.fromData(gender:Gender.BOY,x:-1,y:-3,angle:90),
+        Dancer.fromData(gender:Gender.GIRL,x:1,y:-3,angle:90),
+        Dancer.fromData(gender:Gender.GIRL,x:3,y:0,angle:90),
+        Dancer.fromData(gender:Gender.BOY,x:1,y:0,angle:270),
   ]),
       from:'Left-Handed Quarter Tag',difficulty: 2,
       paths:[
@@ -137,10 +137,10 @@ import '../../moves.dart';
 
     AnimatedCall('Boys Ping Pong Circulate',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:-1,y:-3,angle:90),
-        DancerModel.fromData(gender:Gender.GIRL,x:1,y:-3,angle:90),
-        DancerModel.fromData(gender:Gender.GIRL,x:3,y:0,angle:90),
-        DancerModel.fromData(gender:Gender.BOY,x:1,y:0,angle:270),
+        Dancer.fromData(gender:Gender.BOY,x:-1,y:-3,angle:90),
+        Dancer.fromData(gender:Gender.GIRL,x:1,y:-3,angle:90),
+        Dancer.fromData(gender:Gender.GIRL,x:3,y:0,angle:90),
+        Dancer.fromData(gender:Gender.BOY,x:1,y:0,angle:270),
   ]),
       from:'Left-Handed Quarter Tag',isGenderSpecific:true,difficulty: 2,
       paths:[
@@ -170,10 +170,10 @@ import '../../moves.dart';
 
     AnimatedCall('Girls Ping Pong Circulate',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:-1,y:-3,angle:90),
-        DancerModel.fromData(gender:Gender.GIRL,x:1,y:-3,angle:90),
-        DancerModel.fromData(gender:Gender.GIRL,x:3,y:0,angle:90),
-        DancerModel.fromData(gender:Gender.BOY,x:1,y:0,angle:270),
+        Dancer.fromData(gender:Gender.BOY,x:-1,y:-3,angle:90),
+        Dancer.fromData(gender:Gender.GIRL,x:1,y:-3,angle:90),
+        Dancer.fromData(gender:Gender.GIRL,x:3,y:0,angle:90),
+        Dancer.fromData(gender:Gender.BOY,x:1,y:0,angle:270),
   ]),
       from:'Left-Handed Quarter Tag',isGenderSpecific:true,difficulty: 2,
       paths:[
@@ -190,10 +190,10 @@ import '../../moves.dart';
 
     AnimatedCall('Inside Path Ping Pong Circulate',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:-3,y:1,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:0,y:-3,angle:180),
-        DancerModel.fromData(gender:Gender.BOY,x:-3,y:-1,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:0,y:-1,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:-3,y:1,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:0,y:-3,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:-3,y:-1,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:0,y:-1,angle:0),
   ]),
       from:'Quarter Tag',difficulty: 2,
       paths:[
@@ -209,10 +209,10 @@ import '../../moves.dart';
 
     AnimatedCall('Inside Path Ping Pong Circulate',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:-1,y:-3,angle:90),
-        DancerModel.fromData(gender:Gender.GIRL,x:1,y:-3,angle:90),
-        DancerModel.fromData(gender:Gender.BOY,x:3,y:0,angle:90),
-        DancerModel.fromData(gender:Gender.GIRL,x:1,y:0,angle:270),
+        Dancer.fromData(gender:Gender.BOY,x:-1,y:-3,angle:90),
+        Dancer.fromData(gender:Gender.GIRL,x:1,y:-3,angle:90),
+        Dancer.fromData(gender:Gender.BOY,x:3,y:0,angle:90),
+        Dancer.fromData(gender:Gender.GIRL,x:1,y:0,angle:270),
   ]),
       from:'Left-Handed Quarter Tag',difficulty: 2,
       paths:[
@@ -228,10 +228,10 @@ import '../../moves.dart';
 
     AnimatedCall('Outside Path Ping Pong Circulate',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:-3,y:1,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:0,y:-3,angle:180),
-        DancerModel.fromData(gender:Gender.BOY,x:-3,y:-1,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:0,y:-1,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:-3,y:1,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:0,y:-3,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:-3,y:-1,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:0,y:-1,angle:0),
   ]),
       from:'Quarter Tag',difficulty: 2,
       paths:[
@@ -248,10 +248,10 @@ import '../../moves.dart';
 
     AnimatedCall('Outside Path Ping Pong Circulate',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:-1,y:-3,angle:90),
-        DancerModel.fromData(gender:Gender.GIRL,x:1,y:-3,angle:90),
-        DancerModel.fromData(gender:Gender.BOY,x:3,y:0,angle:90),
-        DancerModel.fromData(gender:Gender.GIRL,x:1,y:0,angle:270),
+        Dancer.fromData(gender:Gender.BOY,x:-1,y:-3,angle:90),
+        Dancer.fromData(gender:Gender.GIRL,x:1,y:-3,angle:90),
+        Dancer.fromData(gender:Gender.BOY,x:3,y:0,angle:90),
+        Dancer.fromData(gender:Gender.GIRL,x:1,y:0,angle:270),
   ]),
       from:'Left-Handed Quarter Tag',difficulty: 2,
       paths:[

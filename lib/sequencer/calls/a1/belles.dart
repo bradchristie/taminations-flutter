@@ -37,6 +37,6 @@ class Belles extends FilterActives {
   }
 
   @override
-  bool isActive(DancerModel d, CallContext ctx) => d.data.belle;
+  bool isActive(Dancer d, CallContext ctx) => d.data.belle;
 
 }

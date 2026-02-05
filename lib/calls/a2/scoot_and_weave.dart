@@ -221,10 +221,10 @@ import '../../moves.dart';
     AnimatedCall('Scoot and Weave',
         from: 'Point-to-Point 1/4 Tag',
         formation: Formation('', dancers:[
-          DancerModel.fromData(gender:Gender.BOY,x:0,y:1,angle:90),
-          DancerModel.fromData(gender:Gender.GIRL,x:1,y:3,angle:270),
-          DancerModel.fromData(gender:Gender.BOY,x:0,y:5,angle:270),
-          DancerModel.fromData(gender:Gender.GIRL,x:-1,y:3,angle:90),
+          Dancer.fromData(gender:Gender.BOY,x:0,y:1,angle:90),
+          Dancer.fromData(gender:Gender.GIRL,x:1,y:3,angle:270),
+          Dancer.fromData(gender:Gender.BOY,x:0,y:5,angle:270),
+          Dancer.fromData(gender:Gender.GIRL,x:-1,y:3,angle:90),
         ]),
         paths: [
           ExtendLeft.changeBeats(1.5).scale(1,0.75) +
@@ -249,10 +249,10 @@ import '../../moves.dart';
     AnimatedCall('Scoot and Weave',
         from: 'Point-to-Point Left-Hand 1/4 Tag',
         formation: Formation('', dancers:[
-          DancerModel.fromData(gender:Gender.BOY,x:0,y:1,angle:90),
-          DancerModel.fromData(gender:Gender.GIRL,x:1,y:3,angle:90),
-          DancerModel.fromData(gender:Gender.BOY,x:0,y:5,angle:270),
-          DancerModel.fromData(gender:Gender.GIRL,x:-1,y:3,angle:270),
+          Dancer.fromData(gender:Gender.BOY,x:0,y:1,angle:90),
+          Dancer.fromData(gender:Gender.GIRL,x:1,y:3,angle:90),
+          Dancer.fromData(gender:Gender.BOY,x:0,y:5,angle:270),
+          Dancer.fromData(gender:Gender.GIRL,x:-1,y:3,angle:270),
         ]),
         paths: [
           ExtendRight.changeBeats(1.5).scale(1,0.75) +

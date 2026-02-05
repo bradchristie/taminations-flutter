@@ -385,10 +385,10 @@ import '../../moves.dart';
 
     AnimatedCall('Star Promenade',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:0,y:1,angle:180),
-        DancerModel.fromData(gender:Gender.GIRL,x:-3,y:-1,angle:0),
-        DancerModel.fromData(gender:Gender.BOY,x:1,y:0,angle:90),
-        DancerModel.fromData(gender:Gender.GIRL,x:-1,y:3,angle:270),
+        Dancer.fromData(gender:Gender.BOY,x:0,y:1,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:-3,y:-1,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:1,y:0,angle:90),
+        Dancer.fromData(gender:Gender.GIRL,x:-1,y:3,angle:270),
   ]),
       group:' ',
       taminator: '''

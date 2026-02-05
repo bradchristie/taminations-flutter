@@ -103,10 +103,10 @@ import '../../moves.dart';
 
     AnimatedCall('Dixie Style to a Wave',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:-3,y:1,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:-1,y:1,angle:0),
-        DancerModel.fromData(gender:Gender.BOY,x:-3,y:-1,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:-1,y:-1,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:-3,y:1,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:-1,y:1,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:-3,y:-1,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:-1,y:-1,angle:0),
   ]),
       from:'Double Pass Thru',difficulty: 1,
       paths:[
@@ -148,10 +148,10 @@ import '../../moves.dart';
 
     AnimatedCall('Dixie Style to a Wave',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:0,y:-3.5,angle:90),
-        DancerModel.fromData(gender:Gender.GIRL,x:0,y:-2.5,angle:90),
-        DancerModel.fromData(gender:Gender.BOY,x:0,y:-0.5,angle:270),
-        DancerModel.fromData(gender:Gender.GIRL,x:0,y:-1.5,angle:270),
+        Dancer.fromData(gender:Gender.BOY,x:0,y:-3.5,angle:90),
+        Dancer.fromData(gender:Gender.GIRL,x:0,y:-2.5,angle:90),
+        Dancer.fromData(gender:Gender.BOY,x:0,y:-0.5,angle:270),
+        Dancer.fromData(gender:Gender.GIRL,x:0,y:-1.5,angle:270),
   ]),
       from:'Tidal Column',difficulty: 3,
       paths:[
@@ -251,10 +251,10 @@ import '../../moves.dart';
 
     AnimatedCall('Reverse Dixie Style to a Wave',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:-3,y:1,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:-1,y:1,angle:0),
-        DancerModel.fromData(gender:Gender.BOY,x:-3,y:-1,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:-1,y:-1,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:-3,y:1,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:-1,y:1,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:-3,y:-1,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:-1,y:-1,angle:0),
   ]),
       from:'Double Pass Thru',difficulty: 2,
       paths:[
@@ -296,10 +296,10 @@ import '../../moves.dart';
 
     AnimatedCall('Reverse Dixie Style to a Wave',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:0,y:-3.5,angle:90),
-        DancerModel.fromData(gender:Gender.GIRL,x:0,y:-2.5,angle:90),
-        DancerModel.fromData(gender:Gender.BOY,x:0,y:-0.5,angle:270),
-        DancerModel.fromData(gender:Gender.GIRL,x:0,y:-1.5,angle:270),
+        Dancer.fromData(gender:Gender.BOY,x:0,y:-3.5,angle:90),
+        Dancer.fromData(gender:Gender.GIRL,x:0,y:-2.5,angle:90),
+        Dancer.fromData(gender:Gender.BOY,x:0,y:-0.5,angle:270),
+        Dancer.fromData(gender:Gender.GIRL,x:0,y:-1.5,angle:270),
   ]),
       from:'Tidal Column',difficulty: 3,
       paths:[

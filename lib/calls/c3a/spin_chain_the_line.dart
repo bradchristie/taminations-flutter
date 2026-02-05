@@ -26,10 +26,10 @@ import '../../moves.dart';
 
     AnimatedCall('Spin Chain the Line',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,y:3.5,x:0,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,y:2.5,x:0,angle:180),
-        DancerModel.fromData(gender:Gender.GIRL,y:1.5,x:0,angle:0),
-        DancerModel.fromData(gender:Gender.BOY,y:.5,x:0,angle:180),
+        Dancer.fromData(gender:Gender.BOY,y:3.5,x:0,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,y:2.5,x:0,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,y:1.5,x:0,angle:0),
+        Dancer.fromData(gender:Gender.BOY,y:.5,x:0,angle:180),
   ]),
       from:'Right-Hand Tidal Wave',
       paths:[
@@ -54,10 +54,10 @@ import '../../moves.dart';
 
     AnimatedCall('Spin Chain the Line',
         formation:Formation('', dancers:[
-          DancerModel.fromData(gender:Gender.BOY,y:3.5,x:0,angle:180),
-          DancerModel.fromData(gender:Gender.GIRL,y:2.5,x:0,angle:0),
-          DancerModel.fromData(gender:Gender.GIRL,y:1.5,x:0,angle:180),
-          DancerModel.fromData(gender:Gender.BOY,y:.5,x:0,angle:0),
+          Dancer.fromData(gender:Gender.BOY,y:3.5,x:0,angle:180),
+          Dancer.fromData(gender:Gender.GIRL,y:2.5,x:0,angle:0),
+          Dancer.fromData(gender:Gender.GIRL,y:1.5,x:0,angle:180),
+          Dancer.fromData(gender:Gender.BOY,y:.5,x:0,angle:0),
         ]),
         from:'Left-Hand Tidal Wave',
         paths:[

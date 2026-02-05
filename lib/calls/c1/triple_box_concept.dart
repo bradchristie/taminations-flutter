@@ -26,12 +26,12 @@ import '../../moves.dart';
 
     AnimatedCall('Triple Box Circulate',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:2,y:3,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:2,y:1,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:-2,y:1,angle:0),
-        DancerModel.fromData(gender:Gender.BOY,x:-2,y:3,angle:0),
-        DancerModel.fromData(gender:Gender.PHANTOM,x:2,y:5,angle:180),
-        DancerModel.fromData(gender:Gender.PHANTOM,x:2,y:-5,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:2,y:3,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:2,y:1,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:-2,y:1,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:-2,y:3,angle:0),
+        Dancer.fromData(gender:Gender.PHANTOM,x:2,y:5,angle:180),
+        Dancer.fromData(gender:Gender.PHANTOM,x:2,y:-5,angle:0),
   ]),
       group:'Triple Box',
       paths:[
@@ -50,12 +50,12 @@ import '../../moves.dart';
 
     AnimatedCall('Triple Box Counter Rotate',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:2,y:5,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:2,y:3,angle:180),
-        DancerModel.fromData(gender:Gender.GIRL,x:2,y:1,angle:180),
-        DancerModel.fromData(gender:Gender.BOY,x:-2,y:5,angle:0),
-        DancerModel.fromData(gender:Gender.PHANTOM,x:-2,y:3,angle:180),
-        DancerModel.fromData(gender:Gender.PHANTOM,x:-2,y:1,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:2,y:5,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:2,y:3,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:2,y:1,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:-2,y:5,angle:0),
+        Dancer.fromData(gender:Gender.PHANTOM,x:-2,y:3,angle:180),
+        Dancer.fromData(gender:Gender.PHANTOM,x:-2,y:1,angle:180),
   ]),
       group:'Triple Box',
       paths:[
@@ -183,12 +183,12 @@ import '../../moves.dart';
 
     AnimatedCall('Triple Box Pass the Ocean',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:1,y:5,angle:270),
-        DancerModel.fromData(gender:Gender.GIRL,x:-1,y:5,angle:270),
-        DancerModel.fromData(gender:Gender.BOY,x:1,y:1,angle:270),
-        DancerModel.fromData(gender:Gender.GIRL,x:-1,y:1,angle:270),
-        DancerModel.fromData(gender:Gender.PHANTOM,x:1,y:3,angle:90),
-        DancerModel.fromData(gender:Gender.PHANTOM,x:-1,y:3,angle:90),
+        Dancer.fromData(gender:Gender.BOY,x:1,y:5,angle:270),
+        Dancer.fromData(gender:Gender.GIRL,x:-1,y:5,angle:270),
+        Dancer.fromData(gender:Gender.BOY,x:1,y:1,angle:270),
+        Dancer.fromData(gender:Gender.GIRL,x:-1,y:1,angle:270),
+        Dancer.fromData(gender:Gender.PHANTOM,x:1,y:3,angle:90),
+        Dancer.fromData(gender:Gender.PHANTOM,x:-1,y:3,angle:90),
   ]),
       group:'Triple Box',
       paths:[
@@ -213,12 +213,12 @@ import '../../moves.dart';
 
     AnimatedCall('Triple Box Peel and Trail',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:-1,y:5,angle:90),
-        DancerModel.fromData(gender:Gender.GIRL,x:-1,y:3,angle:90),
-        DancerModel.fromData(gender:Gender.BOY,x:-1,y:1,angle:90),
-        DancerModel.fromData(gender:Gender.GIRL,x:-1,y:-1,angle:90),
-        DancerModel.fromData(gender:Gender.PHANTOM,x:1,y:5,angle:270),
-        DancerModel.fromData(gender:Gender.PHANTOM,x:1,y:3,angle:270),
+        Dancer.fromData(gender:Gender.BOY,x:-1,y:5,angle:90),
+        Dancer.fromData(gender:Gender.GIRL,x:-1,y:3,angle:90),
+        Dancer.fromData(gender:Gender.BOY,x:-1,y:1,angle:90),
+        Dancer.fromData(gender:Gender.GIRL,x:-1,y:-1,angle:90),
+        Dancer.fromData(gender:Gender.PHANTOM,x:1,y:5,angle:270),
+        Dancer.fromData(gender:Gender.PHANTOM,x:1,y:3,angle:270),
   ]),
       group:'Triple Box',
       paths:[
@@ -390,12 +390,12 @@ import '../../moves.dart';
 
     AnimatedCall('Triple Column Pass and Roll',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:3,y:2,angle:180),
-        DancerModel.fromData(gender:Gender.GIRL,x:3,y:0,angle:180),
-        DancerModel.fromData(gender:Gender.GIRL,x:1,y:0,angle:0),
-        DancerModel.fromData(gender:Gender.BOY,x:1,y:2,angle:0),
-        DancerModel.fromData(gender:Gender.PHANTOM,x:1,y:-2,angle:0),
-        DancerModel.fromData(gender:Gender.PHANTOM,x:3,y:-2,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:3,y:2,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:3,y:0,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:1,y:0,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:1,y:2,angle:0),
+        Dancer.fromData(gender:Gender.PHANTOM,x:1,y:-2,angle:0),
+        Dancer.fromData(gender:Gender.PHANTOM,x:3,y:-2,angle:180),
   ]),
       group:'Triple Column',
       paths:[
@@ -439,12 +439,12 @@ import '../../moves.dart';
 
     AnimatedCall('Triple Line Turn and Deal',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:4,y:3,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:4,y:1,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:0,y:1,angle:0),
-        DancerModel.fromData(gender:Gender.BOY,x:0,y:3,angle:0),
-        DancerModel.fromData(gender:Gender.PHANTOM,x:4,y:-1,angle:180),
-        DancerModel.fromData(gender:Gender.PHANTOM,x:4,y:-3,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:4,y:3,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:4,y:1,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:0,y:1,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:0,y:3,angle:0),
+        Dancer.fromData(gender:Gender.PHANTOM,x:4,y:-1,angle:180),
+        Dancer.fromData(gender:Gender.PHANTOM,x:4,y:-3,angle:180),
   ]),
       group:'Triple Line',
       paths:[
@@ -463,12 +463,12 @@ import '../../moves.dart';
 
     AnimatedCall('Triple Wave 2/3 Recycle',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:4,y:-1,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:4,y:-3,angle:180),
-        DancerModel.fromData(gender:Gender.GIRL,x:0,y:1,angle:180),
-        DancerModel.fromData(gender:Gender.BOY,x:0,y:3,angle:0),
-        DancerModel.fromData(gender:Gender.PHANTOM,x:4,y:1,angle:180),
-        DancerModel.fromData(gender:Gender.PHANTOM,x:4,y:3,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:4,y:-1,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:4,y:-3,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:0,y:1,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:0,y:3,angle:0),
+        Dancer.fromData(gender:Gender.PHANTOM,x:4,y:1,angle:180),
+        Dancer.fromData(gender:Gender.PHANTOM,x:4,y:3,angle:0),
   ]),
       group:'Triple Wave',
       paths:[
@@ -487,12 +487,12 @@ import '../../moves.dart';
 
     AnimatedCall('Triple Wave Recycle',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:0,y:3.5,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:0,y:2.5,angle:180),
-        DancerModel.fromData(gender:Gender.GIRL,x:0,y:1.5,angle:0),
-        DancerModel.fromData(gender:Gender.BOY,x:0,y:.5,angle:180),
-        DancerModel.fromData(gender:Gender.PHANTOM,x:0,y:5.5,angle:0),
-        DancerModel.fromData(gender:Gender.PHANTOM,x:0,y:4.5,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:0,y:3.5,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:0,y:2.5,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:0,y:1.5,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:0,y:.5,angle:180),
+        Dancer.fromData(gender:Gender.PHANTOM,x:0,y:5.5,angle:0),
+        Dancer.fromData(gender:Gender.PHANTOM,x:0,y:4.5,angle:180),
   ]),
       group:'Triple Wave',
       paths:[
@@ -514,12 +514,12 @@ import '../../moves.dart';
 
     AnimatedCall('Triple Wave Swing Thru',
       formation:Formation('', dancers:[
-        DancerModel.fromData(gender:Gender.BOY,x:0,y:3,angle:180),
-        DancerModel.fromData(gender:Gender.GIRL,x:0,y:1,angle:0),
-        DancerModel.fromData(gender:Gender.GIRL,x:4,y:1,angle:180),
-        DancerModel.fromData(gender:Gender.BOY,x:4,y:3,angle:0),
-        DancerModel.fromData(gender:Gender.PHANTOM,x:4,y:-1,angle:0),
-        DancerModel.fromData(gender:Gender.PHANTOM,x:4,y:-3,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:0,y:3,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:0,y:1,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:4,y:1,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:4,y:3,angle:0),
+        Dancer.fromData(gender:Gender.PHANTOM,x:4,y:-1,angle:0),
+        Dancer.fromData(gender:Gender.PHANTOM,x:4,y:-3,angle:180),
   ]),
       group:'Triple Wave',
       paths:[
