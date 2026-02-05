@@ -19,39 +19,41 @@
 
 import '../common.dart';
 
-class SpinChainThru extends Action
-    with CallWithParts, IsLeft, FacingCouplesRule, ButCall {
+class SwingChainThru extends Action
+    with CallWithParts, ButCall, IsLeft, FacingCouplesRule {
 
-  @override int numberOfParts = 4;
-  @override var level = LevelData.MS;
-  @override var help = '''Spin Chain Thru has 4 parts:
+  @override var level = LevelData.C3A;
+  @override var numberOfParts = 4;
+  @override var butCall = 'Hinge';
+  @override var help = '''Swing Chain Thru is a 4-part call:
   1.  Arm Turn 1/2
-  2.  Centers Cast Off 3/4
+  2.  Centers Cast Off 1/4
   3.  Very Centers Trade
-  4.  Centers Cast Off 3/4''';
-  @override var helplink = 'ms/spin_chain_thru';
+  4.  Centers Cast Off 1/4''';
+  @override var helplink = 'c3a/swing_chain_thru';
 
-  SpinChainThru(super.name);
+  SwingChainThru(super.name);
 
   @override
-   void performPart1(CallContext ctx) {
+  void performPart1(CallContext ctx) {
     applyFacingCouplesRule(ctx);
     ctx.applyCalls('Swing');
   }
 
   @override
-   void performPart2(CallContext ctx) {
-    ctx.applyCalls('Centers Cast Off 3/4');
+  void performPart2(CallContext ctx) {
+    ctx.applyCalls('Centers Hinge');
   }
 
   @override
-   void performPart3(CallContext ctx) {
+  void performPart3(CallContext ctx) {
     ctx.applyCalls('Very Centers Trade');
   }
 
   @override
-   void performPart4(CallContext ctx) {
+  void performPart4(CallContext ctx) {
     ctx.applyCalls('Centers $butCall');
   }
 
 }
+

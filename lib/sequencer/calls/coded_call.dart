@@ -239,6 +239,7 @@ import 'c3a/reach_out.dart';
 import 'c3a/recoil.dart';
 import 'c3a/snap_the_lock.dart';
 import 'c3a/spin_the_pulley.dart';
+import 'c3a/swing_chain_thru.dart';
 import 'c3a/the_gamut.dart';
 import 'c3a/touch_by.dart';
 import 'c3a/travel_thru.dart';
@@ -661,6 +662,7 @@ abstract class CodedCall extends Call {
     'SwingAlong'.ri: (name) => SwingAlong(name),
     'SwingandCircle(14|12|34)'.ri: (name) => SwingAndCircle(name),
     'SwingandMix'.ri: (name) => SwingAndMix(name),
+    'SwingChainThru'.ri: (name) => SwingChainThru(name),
     'SwingtheFractions'.ri: (name) => SwingTheFractions(name),
     'SwingThru'.ri: (name) => SwingThru(name),
     'Switch(theLine)?'.ri: (name) => SwitchTheLine(name),
