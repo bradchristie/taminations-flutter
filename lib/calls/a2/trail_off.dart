@@ -189,7 +189,7 @@ import '../../moves.dart';
 
     AnimatedCall('Trail Off',
       formation:Formation('Two-Faced Lines RH'),
-      from:'Two-Faced Lines',
+      from:'Right-Hand Two-Faced Lines',
       paths:[
           Forward +
           FlipRight.skew(1.0,0.5),
@@ -203,6 +203,23 @@ import '../../moves.dart';
           FlipRight.skew(-1.0,-0.5) +
           Forward
       ]),
+
+    AnimatedCall('Trail Off',
+        formation:Formation('Two-Faced Lines LH'),
+        from:'Left-Hand Two-Faced Lines',
+        paths:[
+          RunLeft.skew(-1.0,0.5) +
+              Forward,
+
+          FlipRight.skew(-1.0,-0.5) +
+              Forward,
+
+          Forward +
+              FlipRight.skew(1.0,0.5),
+
+          Forward +
+              RunLeft.skew(1.0,-0.5),
+        ]),
 
     AnimatedCall('Trail Off',
       formation:Formation('Ocean Waves RH BGBG'),
