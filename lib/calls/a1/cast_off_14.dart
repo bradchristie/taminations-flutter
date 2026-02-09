@@ -505,8 +505,8 @@ final List<AnimatedCall> CastOffOneQuarter = [
       paths:[
         UmTurnRight.changehands(Hands.LEFT).skew(0,1),
         SwingRight.scale(1,.5),
-        UmTurnLeft.changehands(Hands.RIGHT).skew(0,-1),
-        SwingLeft.scale(1,.5),
+        SwingRight.scale(1,.5),
+        UmTurnRight.changehands(Hands.LEFT).skew(0,1),
       ]),
 
   AnimatedCall('Cast Off One Half',
