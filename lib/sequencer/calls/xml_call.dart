@@ -18,7 +18,6 @@
 
 */
 
-
 import '../../animated_call.dart';
 import '../../debug_switch.dart';
 import '../words.dart';
@@ -170,7 +169,7 @@ class XMLCall extends Call {
       //  Add XML path to dancer
       ctxwork.actives[i3].path += p;
       //  Remember any special roll
-      ctxwork.actives[i3].roll = xcall.roll;
+      ctxwork.actives[i3].roll = p.roll;
     }
 
     ctxwork.animate(endbeat);

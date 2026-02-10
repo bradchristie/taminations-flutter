@@ -26,11 +26,20 @@ import 'hands.dart';
 import 'matrix.dart';
 import 'movement.dart';
 
+enum Rolling {
+  LEFT,   // Dancer will roll to its left
+  RIGHT,  // Dancer will roll to its right
+  NONE,   // Dancer will not or cannot roll
+  ANY     // Dancer is able to roll (default value)
+}
+
+
 class Path implements Cloneable<Path> {
 
   String name = '';
   List<Movement> movelist = [];
   List<Matrix> _transformlist = [];
+  Rolling roll = Rolling.ANY;
 
   bool get isEmpty => movelist.isEmpty;
 
@@ -55,6 +64,7 @@ class Path implements Cloneable<Path> {
 
   Path.fromPath(Path p) {
     movelist = p.movelist.map((m) => m.clone()).toList();
+    roll = p.roll;
     recalculate();
   }
 
@@ -72,7 +82,9 @@ class Path implements Cloneable<Path> {
 
   Path add(dynamic mp) {
     if (mp is Path) {
-      return Path(movelist + mp.movelist);
+      var newPath = Path(movelist + mp.movelist);
+      newPath.roll = mp.roll;
+      return newPath;
     } else if (mp is Movement) {
       return Path(movelist.copy()..add(mp));
     } else throw ArgumentError();
@@ -118,6 +130,12 @@ class Path implements Cloneable<Path> {
 
   Path scale(double x, double y) =>
     Path(movelist.map((it) => it.scale(x, y)).toList());
+
+  Path changeRoll(Rolling r) {
+    Path newPath = clone();
+    newPath.roll = r;
+    return newPath;
+  }
 
   Path clip(double beat) {
     var newpath = clone();

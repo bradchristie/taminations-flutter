@@ -27,105 +27,99 @@ import '../../moves.dart';
     AnimatedCall('Pass the Ocean',
       formation:Formation('Facing Couples Compact'),
       from:'Facing Couples',difficulty: 1,
-      roll: Rolling.NONE,
       paths:[
           ExtendLeft.changeBeats(2).scale(1.5,0.5) +
           Forward.changeBeats(.5) +
-          LeadRight.scale(2.0,1.5),
+          LeadRight.scale(2.0,1.5).changeRoll(.NONE),
 
           ExtendLeft.changeBeats(2).scale(1.5,0.5) +
-          LeadLeft.changeBeats(2).changehands(Hands.LEFT).scale(1.0,0.5)
+          LeadLeft.changeBeats(2).changehands(Hands.LEFT).scale(1.0,0.5).changeRoll(.NONE)
       ]),
 
     AnimatedCall('Pass the Ocean',
       formation:Formation('Facing Couples Close'),
       from:'Close Couples',noDisplay: true,
-      roll: Rolling.NONE,
       paths:[
           ExtendLeft.changeBeats(2).scale(1.0,0.5) +
           Forward.changeBeats(.5).scale(0.5,1.0) +
-          LeadRight.scale(1.0,1.5),
+          LeadRight.scale(1.0,1.5).changeRoll(.NONE),
 
           ExtendLeft.changeBeats(2).scale(1.0,0.5) +
-          LeadLeft.changeBeats(2).changehands(Hands.LEFT).scale(0.5,0.5)
+          LeadLeft.changeBeats(2).changehands(Hands.LEFT).scale(0.5,0.5).changeRoll(.NONE)
       ]),
 
     AnimatedCall('Pass the Ocean',
       formation:Formation('Normal Lines'),
       from:'Lines',difficulty: 1,
-      roll: Rolling.NONE,
       paths:[
           ExtendLeft.changeBeats(2).scale(2.0,0.5) +
           Forward.changeBeats(.5) +
-          LeadRight.scale(2.0,1.5),
+          LeadRight.scale(2.0,1.5).changeRoll(.NONE),
 
           ExtendLeft.changeBeats(2).scale(2.0,0.5) +
-          LeadLeft.changeBeats(2).changehands(Hands.LEFT).scale(1.0,0.5),
+          LeadLeft.changeBeats(2).changehands(Hands.LEFT).scale(1.0,0.5).changeRoll(.NONE),
 
           ExtendLeft.changeBeats(2).scale(2.0,0.5) +
           Forward.changeBeats(.5) +
-          LeadRight.scale(2.0,1.5),
+          LeadRight.scale(2.0,1.5).changeRoll(.NONE),
 
           ExtendLeft.changeBeats(2).scale(2.0,0.5) +
-          LeadLeft.changeBeats(2).changehands(Hands.LEFT).scale(1.0,0.5)
+          LeadLeft.changeBeats(2).changehands(Hands.LEFT).scale(1.0,0.5).changeRoll(.NONE)
       ]),
 
     AnimatedCall('Pass the Ocean',
       formation:Formation('Eight Chain Thru'),
       from:'Eight Chain Thru',difficulty: 1,
-      roll: Rolling.NONE,
       paths:[
           ExtendLeft.changeBeats(2).scale(1.0,0.5) +
-          LeadRight.changeBeats(2).scale(1.5,1.5),
+          LeadRight.changeBeats(2).scale(1.5,1.5).changeRoll(.NONE),
 
           ExtendLeft.changeBeats(2).scale(1.0,0.5) +
-          LeadLeft.changeBeats(2).changehands(Hands.LEFT).scale(0.5,0.5),
+          LeadLeft.changeBeats(2).changehands(Hands.LEFT).scale(0.5,0.5).changeRoll(.NONE),
 
           ExtendLeft.changeBeats(2).scale(1.0,0.5) +
-          LeadRight.changeBeats(2).scale(1.5,1.5),
+          LeadRight.changeBeats(2).scale(1.5,1.5).changeRoll(.NONE),
 
           ExtendLeft.changeBeats(2).scale(1.0,0.5) +
-          LeadLeft.changeBeats(2).changehands(Hands.LEFT).scale(0.5,0.5)
+          LeadLeft.changeBeats(2).changehands(Hands.LEFT).scale(0.5,0.5).changeRoll(.NONE)
       ]),
 
     AnimatedCall('Pass the Ocean',
       formation:Formation('Ocean Waves RH BGGB'),
       from:'Right-Hand Waves',difficulty: 3,
-      roll: Rolling.NONE,
       paths:[
-          LeadRight.changeBeats(4).scale(1.5,3.0),
+          LeadRight.changeBeats(4).scale(1.5,3.0).changeRoll(.NONE),
 
-          HingeLeft.scale(0.5,1.0),
+          HingeLeft.scale(0.5,1.0).changeRoll(.NONE),
 
-          HingeLeft.scale(0.5,1.0),
+          HingeLeft.scale(0.5,1.0).changeRoll(.NONE),
 
-          LeadRight.changeBeats(4).scale(1.5,3.0)
+          LeadRight.changeBeats(4).scale(1.5,3.0).changeRoll(.NONE)
       ]),
 
     AnimatedCall('Pass the Ocean',
       formation:Formation('Tidal Wave RH BGGB'),
       from:'Right-Hand Tidal Wave',difficulty: 3,
       paths:[
-          LeadRight.changeBeats(4).scale(3.0,1.5),
+          LeadRight.changeBeats(4).scale(3.0,1.5).changeRoll(.NONE),
 
-          HingeLeft.scale(1.0,0.5),
+          HingeLeft.scale(1.0,0.5).changeRoll(.NONE),
 
-          HingeLeft.scale(1.0,0.5),
+          HingeLeft.scale(1.0,0.5).changeRoll(.NONE),
 
-          LeadRight.changeBeats(4).scale(3.0,1.5)
+          LeadRight.changeBeats(4).scale(3.0,1.5).changeRoll(.NONE)
       ]),
 
     AnimatedCall('Heads Pass the Ocean',
       formation:Formation('Static Square'),
       from:'Static Square',group:' ',difficulty: 1,
-      roll: Rolling.NONE,
       paths:[
           ExtendLeft.changeBeats(2).scale(3.0,0.5) +
           Forward.changeBeats(.5) +
-          LeadRight.scale(2.0,1.5),
+          LeadRight.scale(2.0,1.5).changeRoll(.NONE),
 
           ExtendLeft.changeBeats(2).scale(3.0,0.5) +
-          LeadLeft.changeBeats(2).changehands(Hands.LEFT).scale(1.0,0.5),
+          LeadLeft.changeBeats(2).changehands(Hands.LEFT).scale(1.0,0.5).changeRoll(.NONE),
 
           Path(),
 
@@ -135,7 +129,6 @@ import '../../moves.dart';
     AnimatedCall('Sides Pass the Ocean',
       formation:Formation('Static Square'),
       from:'Static Square',group:' ',difficulty: 1,
-      roll: Rolling.NONE,
       paths:[
           Path(),
 
@@ -143,10 +136,10 @@ import '../../moves.dart';
 
           ExtendLeft.changeBeats(2).scale(3.0,0.5) +
           Forward.changeBeats(.5) +
-          LeadRight.scale(2.0,1.5),
+          LeadRight.scale(2.0,1.5).changeRoll(.NONE),
 
           ExtendLeft.changeBeats(2).scale(3.0,0.5) +
-          LeadLeft.changeBeats(2).changehands(Hands.LEFT).scale(1.0,0.5)
+          LeadLeft.changeBeats(2).changehands(Hands.LEFT).scale(1.0,0.5).changeRoll(.NONE)
       ]),
   ];
 

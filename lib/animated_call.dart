@@ -21,7 +21,6 @@
 
 import 'package:xml/xml.dart';
 
-import 'dancer.dart';
 import 'extensions.dart';
 import 'formation.dart';
 import 'level_data.dart';
@@ -47,7 +46,6 @@ class AnimatedCall {
   String fractions;
   List<String> numbers;
   List<String> coupleNumbers;
-  Rolling roll;
   String taminator;
 
   AnimatedCall(this.title,
@@ -70,7 +68,6 @@ class AnimatedCall {
           ' ',' ',' ',' ',' ',' ',' ',' '],
         this.coupleNumbers = const ['1', '3', '1', '3', '2', '4', '2', '4',
           ' ',' ',' ',' ',' ',' ',' ',' '],
-        this.roll = Rolling.ANY,
         this.taminator = ''
       })
       : formation = formation.copy(), paths = paths.clone() {
