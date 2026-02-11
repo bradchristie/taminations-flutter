@@ -232,7 +232,6 @@ class _AnimationFrameState extends fm.State<AnimationFrame>
       builder: (context,appState,highlightState,danceModel,_) => fm.LayoutBuilder(
         builder: (context, constraints) {
           final isSmall = constraints.maxHeight < 350;
-          final painter = DancePainter(danceModel);
           final isSequencer = appState.mainPage == MainPage.SEQUENCER;
           //  Update current part which will notify definition to change highlights
           later(() {
@@ -242,7 +241,7 @@ class _AnimationFrameState extends fm.State<AnimationFrame>
                 //  Dance area with animations
                 fm.Expanded(child: pp.Consumer2<Settings,SequencerModel>(
                     builder: (context, settings, sequencerModel, child) {
-
+                      final painter = DancePainter(danceModel);
                       //  Send current settings to the dance model
                       danceModel.gridVisibility = Settings.grid || appState.grid;
                       danceModel.axesVisibility = Settings.axes;
@@ -264,6 +263,7 @@ class _AnimationFrameState extends fm.State<AnimationFrame>
                       else {
                         danceModel.setRandomColors(false);
                       }
+
                       if (appState.mainPage != MainPage.SEQUENCER ||
                           Settings.showDancerColors == 'By Couple') {
                         for (var i=1; i <= 6; i++) {
@@ -299,12 +299,6 @@ class _AnimationFrameState extends fm.State<AnimationFrame>
                       };
 
                       //  For sequencer show beats
-                      var beatStr = '';
-                      if (isSequencer && sequencerModel.calls.isNotEmpty) {
-                        final tb = sequencerModel.totalBeats().i;
-                        final bb = danceModel.beater.beat.i.clamp(0, tb);
-                        beatStr = '$bb of $tb';
-                      }
                       if (isSequencer && geometryChanged)
                         sequencerModel.reset();
 
@@ -345,15 +339,19 @@ class _AnimationFrameState extends fm.State<AnimationFrame>
                                     ),
                                     //  Note that fades out as animation starts
                                     _Note(),
-                                    //  Show if Loop or Speed are set other than default
+                                    //  Info to show at bottom right
+                                    //  Sequencer Beat, Speed, Looping
                                     fm.Positioned(
                                       bottom: 0.0,
                                       right: 0.0,
-                                      child: fm.Text(
-                                          beatStr + ' ' +
-                                          Settings.speed.replaceFirst('Normal( Speed)?'.r,'') +
-                                              (danceModel.looping ? ' Loop' : ''),
-                                          style:fm.TextStyle(fontSize:24)
+                                      child: fm.Row(
+                                        spacing: 10,
+                                        children: [
+                                          if (isSequencer)
+                                            _BeatText(),
+                                          _SpeedText(),
+                                          _LoopText()
+                                        ],
                                       )
                                     )
                                   ]),
@@ -375,6 +373,37 @@ class _AnimationFrameState extends fm.State<AnimationFrame>
       )
     );
   }
+}
+
+//  Sequence beat info to show at lower right
+class _BeatText extends fm.StatelessWidget {
+  @override
+  fm.Widget build(fm.BuildContext context) =>
+      pp.Consumer2<SequencerModel,DanceModel>(builder: (
+          context, sequencerModel, danceModel,_) {
+        final tb = sequencerModel.totalBeats().i;
+        final bb = danceModel.beater.beat.i.clamp(0, tb);
+        return fm.Text('$bb of $tb',style:fm.TextStyle(fontSize:24));
+      });
+}
+
+//  Speed shown at lower right if not the default Normal
+class _SpeedText extends fm.StatelessWidget {
+  @override
+  fm.Widget build(fm.BuildContext context) {
+    var speedText = Settings.speed.replaceFirst('Normal( Speed)?'.r,'');
+    return fm.Text(speedText,style:fm.TextStyle(fontSize:24));
+  }
+}
+
+//  If looping is on, show at lower right
+class _LoopText extends fm.StatelessWidget {
+  @override
+  fm.Widget build(fm.BuildContext context) =>
+      pp.Consumer<DanceModel>(builder: (context, danceModel,_) {
+        var loopText = danceModel.looping ? ' Loop' : '';
+        return fm.Text(loopText, style:fm.TextStyle(fontSize:24));
+      });
 }
 
 //  Note to show at the top of the animation
