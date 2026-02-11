@@ -132,7 +132,7 @@ class Path implements Cloneable<Path> {
     Path(movelist.map((it) => it.scale(x, y)).toList());
 
   Path changeRoll(Rolling r) {
-    Path newPath = clone();
+    var newPath = clone();
     newPath.roll = r;
     return newPath;
   }

@@ -29,11 +29,14 @@ import 'dance_model.dart';
 class DancePainter extends fm.CustomPainter  {
 
   //  Shapes for drawing dancers
+  //  rectangle for boys
   static const rect = fm.Rect.fromLTWH(-0.5, -0.5, 1.0, 1.0);
+  //  rounded rectangle for phantoms (no gender)
   static var rrect = fm.RRect.fromRectAndRadius(rect,
       fm.Radius.circular(0.3));
+  //  Circles for girls and everybody's head don't need
+  //  predefined shapes
   static const NUMBER_HEIGHT = 8.0;
-
 
   DanceModel model;
 
@@ -41,12 +44,6 @@ class DancePainter extends fm.CustomPainter  {
   var leadin = 2.0;
   var leadout = 2.0;
   var _prevbeat = 0.0;
-  //var _beat = 0.0;
-  //double get beat => _beat;
-  //set beat(value) {
-  //  _beat = value;
-  //  notifyListeners();
-  //}
   //  currentPart is 0 if not in animation, 1 to n otherwise
   var currentPart = 0;
   var hasParts = false;
@@ -54,6 +51,9 @@ class DancePainter extends fm.CustomPainter  {
   String partstr = '';
   Map<Dancer,fm.Path> paths = {};
 
+  //  Create the painter by passing the animation beater
+  //  This will make it repaint every animation frame whenever
+  //  the beater is ticking
   DancePainter(this.model) : super(repaint:model.beater) {
     _prevbeat = 0; // model.beater.beat;
     computePaths();
@@ -238,6 +238,7 @@ class DancePainter extends fm.CustomPainter  {
     ctx.save();
     ctx.drawRect(fm.Rect.fromLTWH(0,0,size.width,size.height),
         fm.Paint()..color = Color.FLOOR);
+    //  Save floor dimensions for calculating mouse coords to dancer
     _size = size.v;
     var range = min(size.width,size.height);
     //  Scale coordinate system to dancer's size
