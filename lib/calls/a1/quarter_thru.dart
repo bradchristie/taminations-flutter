@@ -98,6 +98,39 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('Quarter Thru',
+        formation:Formation('Thar RH Boys'),
+        from:'Thar',parts:'1.5',
+        paths:[
+          HingeRight + SwingLeft,
+          Stand.changeBeats(1.5) + SwingLeft,
+          HingeRight + SwingLeft,
+          Stand.changeBeats(1.5) + SwingLeft,
+        ]),
+
+
+    AnimatedCall('Quarter Thru',
+        formation:Formation('Thar LH Boys'),
+        from:'Wrong Way Thar',parts:'1.875',
+        paths:[
+          HingeRight.scale(1,1.414) +
+              EighthLeft +
+              SwingLeft +
+              SxtnthLeft,
+          HingeRight.skew(0,0.414) +
+              EighthRight +
+              SwingLeft +
+              SxtnthRight,
+          HingeRight.scale(1,1.414) +
+              EighthLeft +
+              SwingLeft +
+              SxtnthLeft,
+          HingeRight.skew(0,0.414) +
+              EighthRight +
+              SwingLeft +
+              SxtnthRight
+        ]),
+
+    AnimatedCall('Quarter Thru',
       formation:Formation('Diamonds Facing Girl Points'),
       from:'Facing Diamonds',parts:'1.5',
       paths:[
@@ -144,6 +177,8 @@ import '../a2/all_4_all_8.dart' as a2;
 
           Path()
       ]),
+
+
 
     AnimatedCall('Left Quarter Thru',
       formation:Formation('Box LH'),
@@ -213,6 +248,39 @@ import '../a2/all_4_all_8.dart' as a2;
           SxtnthLeft.changehands(Hands.LEFT) +
           HingeLeft.skew(-0.45,0.0)
       ]),
+
+    AnimatedCall('Left Quarter Thru',
+        formation:Formation('Thar RH Boys'),
+        from:'Thar',parts:'1.5',
+        paths:[
+          HingeLeft.scale(1,1.414) +
+              EighthRight +
+              SwingRight +
+              SxtnthRight,
+          HingeLeft.skew(0,-0.414) +
+              EighthLeft +
+              SwingRight +
+              SxtnthLeft,
+          HingeLeft.scale(1,1.414) +
+              EighthRight +
+              SwingRight +
+              SxtnthRight,
+          HingeLeft.skew(0,-0.414) +
+              EighthLeft +
+              SwingRight +
+              SxtnthLeft,
+        ]),
+
+    AnimatedCall('Left Quarter Thru',
+        formation:Formation('Thar LH Boys'),
+        from:'Wrong Way Thar',parts:'1.875',
+        paths:[
+          HingeLeft + SwingRight,
+          Stand.changeBeats(1.5) + SwingRight,
+          HingeLeft + SwingRight,
+          Stand.changeBeats(1.5) + SwingRight,
+        ]),
+
 
     AnimatedCall('Left Quarter Thru',
       formation:Formation('', dancers:[
@@ -334,6 +402,44 @@ import '../a2/all_4_all_8.dart' as a2;
       ]),
 
     AnimatedCall('3/4 Thru',
+        formation:Formation('Thar RH Boys'),
+        from:'Thar',parts:'1.5',
+        paths:[
+          SwingRight + HingeRight + SwingLeft,
+          Stand.changeBeats(4.5) + SwingLeft,
+          SwingRight + HingeRight + SwingLeft,
+          Stand.changeBeats(4.5) + SwingLeft,
+        ]),
+
+
+    AnimatedCall('3/4 Thru',
+        formation:Formation('Thar LH Boys'),
+        from:'Wrong Way Thar',parts:'1.875',
+        paths:[
+          SwingRight +
+              HingeRight.skew(0,0.414) +
+              EighthRight +
+              SwingLeft +
+              SxtnthRight,
+          SwingRight +
+              HingeRight.scale(1,1.414) +
+              EighthLeft +
+              SwingLeft +
+              SxtnthLeft,
+          SwingRight +
+              HingeRight.skew(0,0.414) +
+              EighthRight +
+              SwingLeft +
+              SxtnthRight,
+          SwingRight +
+              HingeRight.scale(1,1.414) +
+              EighthLeft +
+              SwingLeft +
+              SxtnthLeft,
+        ]),
+
+
+    AnimatedCall('3/4 Thru',
       formation:Formation('Diamonds Facing Girl Points'),
       from:'Facing Diamonds',parts:'4.5',
       paths:[
@@ -445,6 +551,42 @@ import '../a2/all_4_all_8.dart' as a2;
           SwingLeft +
           SwingRight
       ]),
+
+    AnimatedCall('Left 3/4 Thru',
+        formation:Formation('Thar RH Boys'),
+        from:'Thar',parts:'1.5',
+        paths:[
+          SwingLeft +
+              HingeLeft.skew(0,-0.414) +
+              EighthLeft +
+              SwingRight +
+              SxtnthLeft,
+          SwingLeft +
+              HingeLeft.scale(1,1.414) +
+              EighthRight +
+              SwingRight +
+              SxtnthRight,
+          SwingLeft +
+              HingeLeft.skew(0,-0.414) +
+              EighthLeft +
+              SwingRight +
+              SxtnthLeft,
+          SwingLeft +
+              HingeLeft.scale(1,1.414) +
+              EighthRight +
+              SwingRight +
+              SxtnthRight,
+        ]),
+
+    AnimatedCall('Left 3/4 Thru',
+        formation:Formation('Thar LH Boys'),
+        from:'Wrong Way Thar',parts:'1.875',
+        paths:[
+          SwingLeft + HingeLeft + SwingRight,
+          Stand.changeBeats(4.5) + SwingRight,
+          SwingLeft + HingeLeft + SwingRight,
+          Stand.changeBeats(4.5) + SwingRight,
+        ]),
 
     AnimatedCall('Left 3/4 Thru',
       formation:Formation('', dancers:[

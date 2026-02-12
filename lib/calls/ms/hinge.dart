@@ -195,6 +195,38 @@ import '../../moves.dart';
           HingeLeft.changeBeats(2).scale(1.0,0.5)
       ]),
 
+    AnimatedCall('Hinge',
+        formation:Formation('Thar RH Boys'),
+        from:'Thar',parts:'1.5',
+        difficulty: 2,
+        paths:[
+          HingeLeft.scale(1,1.414) +
+              SxtnthRight,
+          HingeLeft.skew(0,-0.414) +
+              SxtnthLeft,
+          HingeLeft.scale(1,1.414) +
+              SxtnthRight,
+          HingeLeft.skew(0,-0.414) +
+              SxtnthLeft,
+        ]),
+
+    AnimatedCall('Hinge',
+        formation:Formation('Thar LH Boys'),
+        from:'Wrong Way Thar',parts:'1.875',
+        difficulty: 2,
+        paths:[
+          HingeRight.scale(1,1.414) +
+              SxtnthLeft,
+          HingeRight.skew(0,0.414) +
+              SxtnthRight,
+          HingeRight.scale(1,1.414) +
+              SxtnthLeft,
+          HingeRight.skew(0,0.414) +
+              SxtnthRight
+        ]),
+
+
+
     AnimatedCall('Centers Hinge',
       formation:Formation('Two-Faced Line RH'),
       from:'Right-Hand Two-Faced Line',
