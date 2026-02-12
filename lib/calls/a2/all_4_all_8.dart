@@ -1377,6 +1377,20 @@ import '../c3a/mini_chase.dart' as c3a;
           ExtendLeft.changeBeats(4).changehands(Hands.LEFT).scale(3.0,2.0)
       ]),
 
+    AnimatedCall('All 8 Veer Right',
+        formation:Formation('Static Square'),
+        group:'All 8 (with calls through Plus)',
+        noDisplay: true,
+        paths:[
+          ExtendRight.changeBeats(4).changehands(Hands.RIGHT).scale(3.0,2.0),
+
+          ExtendRight.changeBeats(4).changehands(Hands.LEFT).scale(3.0,2.0),
+
+          ExtendRight.changeBeats(4).changehands(Hands.RIGHT).scale(3.0,2.0),
+
+          ExtendRight.changeBeats(4).changehands(Hands.LEFT).scale(3.0,2.0)
+        ]),
+
     AnimatedCall('All 8 Walk and Dodge',
       formation:Formation('Static MiniWaves RH'),
       group:'All 8 (with calls through Plus)',
@@ -1391,6 +1405,41 @@ import '../c3a/mini_chase.dart' as c3a;
 
           DodgeRight
       ]),
+
+    AnimatedCall('All 8 Wheel and Deal',
+        formation:Formation('', dancers:[
+          Dancer.fromData(gender:Gender.BOY,x:-3,y:0,angle:90),
+          Dancer.fromData(gender:Gender.GIRL,x:-1,y:0,angle:90),
+          Dancer.fromData(gender:Gender.BOY,x:0,y:-3,angle:180),
+          Dancer.fromData(gender:Gender.GIRL,x:0,y:-1,angle:180)]),
+        group:'All 8 (with calls through Plus)',
+        paths:[
+          RunRight.changeBeats(4).changehands(Hands.RIGHT).scale(2.0,2.0).skew(3,0),
+
+          UmTurnRight.changeBeats(4).changehands(Hands.LEFT).skew(3,0),
+
+          RunRight.changeBeats(4).changehands(Hands.RIGHT).scale(2.0,2.0).skew(3,0),
+
+          UmTurnRight.changeBeats(4).changehands(Hands.LEFT).skew(3,0),
+        ]),
+
+    AnimatedCall('All 8 Wheel and Deal',
+        formation:Formation('', dancers:[
+          Dancer.fromData(gender:Gender.BOY,x:-1,y:0,angle:270),
+          Dancer.fromData(gender:Gender.GIRL,x:-3,y:0,angle:270),
+          Dancer.fromData(gender:Gender.BOY,x:0,y:-1,angle:0),
+          Dancer.fromData(gender:Gender.GIRL,x:0,y:-3,angle:0)]),
+        group:'All 8 (with calls through Plus)',
+        noDisplay: true,
+        paths:[
+          UmTurnLeft.changeBeats(4).changehands(Hands.RIGHT).skew(3,0),
+
+          RunLeft.changeBeats(4).changehands(Hands.LEFT).scale(2.0,2.0).skew(3,0),
+
+          UmTurnLeft.changeBeats(4).changehands(Hands.RIGHT).skew(3,0),
+
+          RunLeft.changeBeats(4).changehands(Hands.LEFT).scale(2.0,2.0).skew(3,0),
+        ]),
 
     AnimatedCall('All 8 Zoom',
       formation:Formation('Static MiniWaves RH'),
