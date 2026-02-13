@@ -193,8 +193,23 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Trade the Deucey',
+        formation:Formation('Thar RH Boys'),
+        from:'Thar',
+        paths:[
+          RunRight.changeBeats(6).scale(1.0,2.0),
+
+          LeadLeft.changeBeats(4).scale(2.0,2.0) +
+              ExtendLeft.changeBeats(2),
+
+          RunRight.changeBeats(6).scale(1.0,2.0),
+
+          LeadLeft.changeBeats(4).scale(2.0,2.0) +
+              ExtendLeft.changeBeats(2),
+        ]),
+
+    AnimatedCall('Trade the Deucey',
       formation:Formation('Thar LH Boys'),
-      from:'Thar',
+      from:'Wrong WayThar',
       paths:[
           RunLeft.changeBeats(6).scale(1.0,2.0),
 
@@ -206,5 +221,6 @@ import '../../moves.dart';
           LeadRight.changeBeats(4).scale(2.0,2.0) +
           ExtendRight.changeBeats(2)
       ]),
+
   ];
 
