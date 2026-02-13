@@ -9,14 +9,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "91.0.0"
-  adaptive_number:
-    dependency: transitive
-    description:
-      name: adaptive_number
-      sha256: "3a567544e9b5c9c803006f51140ad544aedc79604fd4f3f2c1380003f97c1d77"
-      url: "https://pub.dev"
-    source: hosted
-    version: "1.0.0"
   analyzer:
     dependency: transitive
     description:
@@ -81,31 +73,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.1.2"
-  build_tool:
-    dependency: transitive
-    description:
-      path: "super_native_extensions-0.9.1/cargokit/build_tool"
-      ref: "559ac96113ed979fb69961549f29030b096b1b18"
-      resolved-ref: "559ac96113ed979fb69961549f29030b096b1b18"
-      url: "https://github.com/FlutterSuperX-009/super_clipboard-0.9.1-16KB-Android"
-    source: git
-    version: "1.0.0"
   characters:
     dependency: transitive
     description:
       name: characters
-      sha256: f71061c654a3380576a52b451dd5532377954cf9dbd272a78fc8479606670803
+      sha256: faf38497bda5ead2a8c7615f4f7939df04333478bf32e4173fcb06d428b5716b
       url: "https://pub.dev"
     source: hosted
-    version: "1.4.0"
-  checked_yaml:
-    dependency: transitive
-    description:
-      name: checked_yaml
-      sha256: "959525d3162f249993882720d52b7e0c833978df229be20702b33d48d91de70f"
-      url: "https://pub.dev"
-    source: hosted
-    version: "2.0.4"
+    version: "1.4.1"
   cli_config:
     dependency: transitive
     description:
@@ -158,10 +133,10 @@ packages:
     dependency: transitive
     description:
       name: coverage
-      sha256: "4b8701e48a58f7712492c9b1f7ba0bb9d525644dd66d023b62e1fc8cdb560c8a"
+      sha256: "5da775aa218eaf2151c721b16c01c7676fbfdd99cebba2bf64e8b807a28ff94d"
       url: "https://pub.dev"
     source: hosted
-    version: "1.14.0"
+    version: "1.15.0"
   crypto:
     dependency: transitive
     description:
@@ -194,14 +169,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "7.0.3"
-  ed25519_edwards:
-    dependency: transitive
-    description:
-      name: ed25519_edwards
-      sha256: "6ce0112d131327ec6d42beede1e5dfd526069b18ad45dcf654f15074ad9276cd"
-      url: "https://pub.dev"
-    source: hosted
-    version: "0.3.1"
   equatable:
     dependency: transitive
     description:
@@ -299,14 +266,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "9.2.0"
-  github:
-    dependency: transitive
-    description:
-      name: github
-      sha256: "9966bc13bf612342e916b0a343e95e5f046c88f602a14476440e9b75d2295411"
-      url: "https://pub.dev"
-    source: hosted
-    version: "9.17.0"
   glob:
     dependency: transitive
     description:
@@ -323,14 +282,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "6.3.3"
-  hex:
-    dependency: transitive
-    description:
-      name: hex
-      sha256: "4e7cd54e4b59ba026432a6be2dd9d96e4c5205725194997193bf871703b82c4a"
-      url: "https://pub.dev"
-    source: hosted
-    version: "0.2.0"
   http:
     dependency: transitive
     description:
@@ -387,11 +338,10 @@ packages:
   irondash_engine_context:
     dependency: transitive
     description:
-      path: "super_native_extensions-0.9.1/irondash_engine_context-0.5.5"
-      ref: "559ac96113ed979fb69961549f29030b096b1b18"
-      resolved-ref: "559ac96113ed979fb69961549f29030b096b1b18"
-      url: "https://github.com/FlutterSuperX-009/super_clipboard-0.9.1-16KB-Android"
-    source: git
+      name: irondash_engine_context
+      sha256: "2bb0bc13dfda9f5aaef8dde06ecc5feb1379f5bb387d59716d799554f3f305d7"
+      url: "https://pub.dev"
+    source: hosted
     version: "0.5.5"
   irondash_message_channel:
     dependency: transitive
@@ -401,14 +351,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.7.0"
-  js:
-    dependency: transitive
-    description:
-      name: js
-      sha256: f2c445dce49627136094980615a031419f7f3eb393237e4ecd97ac15dea343f3
-      url: "https://pub.dev"
-    source: hosted
-    version: "0.6.7"
   json_annotation:
     dependency: transitive
     description:
@@ -485,18 +427,18 @@ packages:
     dependency: transitive
     description:
       name: matcher
-      sha256: dc58c723c3c24bf8d3e2d3ad3f2f9d7bd9cf43ec6feaa64181775e60190153f2
+      sha256: "12956d0ad8390bbcc63ca2e1469c0619946ccb52809807067a7020d57e647aa6"
       url: "https://pub.dev"
     source: hosted
-    version: "0.12.17"
+    version: "0.12.18"
   material_color_utilities:
     dependency: transitive
     description:
       name: material_color_utilities
-      sha256: f7142bb1154231d7ea5f96bc7bde4bda2a0945d2806bb11670e30b850d56bdec
+      sha256: "9c337007e82b1889149c82ed242ed1cb24a66044e30979c44912381e9be4c48b"
       url: "https://pub.dev"
     source: hosted
-    version: "0.11.1"
+    version: "0.13.0"
   meta:
     dependency: transitive
     description:
@@ -681,14 +623,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.2.0"
-  pubspec_parse:
-    dependency: transitive
-    description:
-      name: pubspec_parse
-      sha256: "0560ba233314abbed0a48a2956f7f022cce7c3e1e73df540277da7544cad4082"
-      url: "https://pub.dev"
-    source: hosted
-    version: "1.5.0"
   rational:
     dependency: transitive
     description:
@@ -929,20 +863,18 @@ packages:
   super_clipboard:
     dependency: "direct main"
     description:
-      path: "."
-      ref: main
-      resolved-ref: "559ac96113ed979fb69961549f29030b096b1b18"
-      url: "https://github.com/FlutterSuperX-009/super_clipboard-0.9.1-16KB-Android"
-    source: git
+      name: super_clipboard
+      sha256: e73f3bb7e66cc9260efa1dc507f979138e7e106c3521e2dda2d0311f6d728a16
+      url: "https://pub.dev"
+    source: hosted
     version: "0.9.1"
   super_native_extensions:
     dependency: transitive
     description:
-      path: "super_native_extensions-0.9.1"
-      ref: "559ac96113ed979fb69961549f29030b096b1b18"
-      resolved-ref: "559ac96113ed979fb69961549f29030b096b1b18"
-      url: "https://github.com/FlutterSuperX-009/super_clipboard-0.9.1-16KB-Android"
-    source: git
+      name: super_native_extensions
+      sha256: b9611dcb68f1047d6f3ef11af25e4e68a21b1a705bbcc3eb8cb4e9f5c3148569
+      url: "https://pub.dev"
+    source: hosted
     version: "0.9.1"
   sync_http:
     dependency: transitive
@@ -972,34 +904,26 @@ packages:
     dependency: "direct dev"
     description:
       name: test
-      sha256: "75906bf273541b676716d1ca7627a17e4c4070a3a16272b7a3dc7da3b9f3f6b7"
+      sha256: "77cc98ea27006c84e71a7356cf3daf9ddbde2d91d84f77dbfe64cf0e4d9611ae"
       url: "https://pub.dev"
     source: hosted
-    version: "1.26.3"
+    version: "1.28.0"
   test_api:
     dependency: transitive
     description:
       name: test_api
-      sha256: ab2726c1a94d3176a45960b6234466ec367179b87dd74f1611adb1f3b5fb9d55
+      sha256: "19a78f63e83d3a61f00826d09bc2f60e191bf3504183c001262be6ac75589fb8"
       url: "https://pub.dev"
     source: hosted
-    version: "0.7.7"
+    version: "0.7.8"
   test_core:
     dependency: transitive
     description:
       name: test_core
-      sha256: "0cc24b5ff94b38d2ae73e1eb43cc302b77964fbf67abad1e296025b78deb53d0"
+      sha256: f1072617a6657e5fc09662e721307f7fb009b4ed89b19f47175d11d5254a62d4
       url: "https://pub.dev"
     source: hosted
-    version: "0.6.12"
-  toml:
-    dependency: transitive
-    description:
-      name: toml
-      sha256: "157c5dca5160fced243f3ce984117f729c788bb5e475504f3dbcda881accee44"
-      url: "https://pub.dev"
-    source: hosted
-    version: "0.14.0"
+    version: "0.6.14"
   tuple:
     dependency: "direct main"
     description:
@@ -1096,14 +1020,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.2.0"
-  version:
-    dependency: transitive
-    description:
-      name: version
-      sha256: "2307e23a45b43f96469eeab946208ed63293e8afca9c28cd8b5241ff31c55f55"
-      url: "https://pub.dev"
-    source: hosted
-    version: "3.0.0"
   vm_service:
     dependency: transitive
     description:
@@ -1204,10 +1120,10 @@ packages:
     dependency: transitive
     description:
       name: yaml
-      sha256: "75769501ea3489fca56601ff33454fe45507ea3bfb014161abc3b43ae25989d5"
+      sha256: b9da305ac7c39faa3f030eccd175340f968459dae4af175130b3fc47e40d76ce
       url: "https://pub.dev"
     source: hosted
-    version: "3.1.2"
+    version: "3.1.3"
 sdks:
   dart: ">=3.10.0 <4.0.0"
   flutter: ">=3.38.0"
