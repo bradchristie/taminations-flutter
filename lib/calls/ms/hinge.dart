@@ -197,7 +197,7 @@ import '../../moves.dart';
 
     AnimatedCall('Hinge',
         formation:Formation('Thar RH Boys'),
-        from:'Thar',parts:'1.5',
+        from:'Thar',
         difficulty: 2,
         paths:[
           HingeLeft.scale(1,1.414) +
@@ -212,7 +212,7 @@ import '../../moves.dart';
 
     AnimatedCall('Hinge',
         formation:Formation('Thar LH Boys'),
-        from:'Wrong Way Thar',parts:'1.875',
+        from:'Wrong Way Thar',
         difficulty: 2,
         paths:[
           HingeRight.scale(1,1.414) +
@@ -223,6 +223,50 @@ import '../../moves.dart';
               SxtnthLeft,
           HingeRight.skew(0,0.414) +
               SxtnthRight
+        ]),
+
+    //  Wave between mini-waves
+    //  Coded here otherwise the program matches a wave between
+    //  mini-waves to a thar, ending incorrectly as a squared set
+    AnimatedCall('Hinge',
+        formation:Formation('', dancers:[
+          Dancer.fromData(gender:Gender.BOY,x:0,y:1.5,angle:0),
+          Dancer.fromData(gender:Gender.GIRL,x:0,y:0.5,angle:180),
+          Dancer.fromData(gender:Gender.BOY,x:-2.5,y:0,angle:270),
+          Dancer.fromData(gender:Gender.GIRL,x:-3.5,y:0,angle:90),
+        ]),
+        from:'Mini-Waves 1',
+        difficulty: 2,
+        noDisplay: true,
+        paths:[
+          HingeRight.changeBeats(2).scale(1.0,0.5),
+
+          HingeRight.changeBeats(2).scale(1.0,0.5),
+
+          HingeRight.changeBeats(2).scale(1.0,0.5),
+
+          HingeRight.changeBeats(2).scale(1.0,0.5)
+        ]),
+
+    //  Left-hand version of previous
+    AnimatedCall('Hinge',
+        formation:Formation('', dancers:[
+          Dancer.fromData(gender:Gender.BOY,x:0,y:1.5,angle:180),
+          Dancer.fromData(gender:Gender.GIRL,x:0,y:0.5,angle:0),
+          Dancer.fromData(gender:Gender.BOY,x:-2.5,y:0,angle:90),
+          Dancer.fromData(gender:Gender.GIRL,x:-3.5,y:0,angle:270),
+        ]),
+        from:'Mini-Waves 2',
+        difficulty: 2,
+        noDisplay: true,
+        paths:[
+          HingeLeft.changeBeats(2).scale(1.0,0.5),
+
+          HingeLeft.changeBeats(2).scale(1.0,0.5),
+
+          HingeLeft.changeBeats(2).scale(1.0,0.5),
+
+          HingeLeft.changeBeats(2).scale(1.0,0.5),
         ]),
 
 
