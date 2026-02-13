@@ -4330,6 +4330,17 @@ Cross Over Circulate
 Wheel and Deal
 Allemande Left''',''); });
 
+test('Ease Off',() {
+  testOneSequence('''Heads Dixie Diamond
+Sides Face Left
+Ease Off
+Very Centers Single Circle Left 1/4
+Center 4 Pass and Roll Your Neighbor
+Center 4 Wheel and Deal
+Ends Face Right
+Ease Off
+Centers Partner Tag
+Allemande Left''',''); });
 
 
 /*

@@ -226,6 +226,7 @@ import 'c3a/breaker.dart';
 import 'c3a/choice.dart';
 import 'c3a/couple_up.dart';
 import 'c3a/delight_dilemma.dart';
+import 'c3a/ease_off.dart';
 import 'c3a/eight_by_anything.dart';
 import 'c3a/hinge_the_top.dart';
 import 'c3a/hop.dart';
@@ -439,6 +440,7 @@ abstract class CodedCall extends Call {
     'DoYourPart.*'.ri: (name) => DoYourPart(name),
     'Drop(In|Out|Left|Right)'.ri: (name) => Drop(name),
 
+    'EaseOff'.ri: (name) => EaseOff(name),
     '8By.*'.ri: (name) => EightByAnything(name),
     '8Chain(1|2|3|4|5|6|7|Thru)'.ri: (name) => EightChain(name),
     'End'.ri: (name) => Ends(name),
