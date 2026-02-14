@@ -21,7 +21,7 @@
 import '../../../moves.dart';
 import '../common.dart';
 
-class Hinge extends Action with IsLeft {
+class Hinge extends Action with ActivesOnly, IsLeft {
 
   @override var level = LevelData.MS;
   @override var help = 'Hinge can be either from a mini-wave (Mainstream)'
@@ -35,13 +35,17 @@ class Hinge extends Action with IsLeft {
     //  Find the dancer to hinge with
     var leftCount = ctx.dancersToLeft(d).where((it) => it.isActive).length;
     var rightCount = ctx.dancersToRight(d).where((it) => it.isActive).length;
-    Dancer d2;
-    if (leftCount.isOdd && rightCount.isEven)
-      d2 = ctx.dancerToLeft(d)!;
-    else if (leftCount.isEven && rightCount.isOdd)
-      d2 = ctx.dancerToRight(d)!;
-    else
-      return ctx.dancerCannotPerform(d, name);
+    var d2 = d.data.partner;
+    //  Almost all the time hinge is what the program has calculated
+    //  as the partner.  Following is for rare exceptions.
+    if (d2 == null || !d2.isActive) {
+      if (leftCount.isOdd && rightCount.isEven)
+        d2 = ctx.dancerToLeft(d)!;
+      else if (leftCount.isEven && rightCount.isOdd)
+        d2 = ctx.dancerToRight(d)!;
+      else
+        return ctx.dancerCannotPerform(d, name);
+    }
 
     if (d2.isNotActive)
       return ctx.dancerCannotPerform(d, name);
