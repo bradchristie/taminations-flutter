@@ -20,7 +20,7 @@
 import '../common.dart';
 
 //  Also handles Change the Wave
-class ChangeTheCenters extends Action with ActivesOnly, CallWithParts {
+class ChangeTheCenters extends Action with CallWithParts, ActivesOnly {
 
   @override var level = LevelData.C3B;
   @override var numberOfParts = 4;

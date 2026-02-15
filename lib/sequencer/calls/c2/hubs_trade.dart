@@ -19,7 +19,7 @@
 
 import '../common.dart';
 
-class HubsTrade extends Action with ActivesOnly, CallWithParts {
+class HubsTrade extends Action with CallWithParts, ActivesOnly {
 
   @override final level = LevelData.C2;
   @override int numberOfParts = 2;

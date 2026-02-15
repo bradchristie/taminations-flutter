@@ -19,7 +19,8 @@
 
 import '../common.dart';
 
-class Remake extends Action with ActivesOnly, CallWithParts, IsLeft, IsGrand {
+class Remake extends Action
+    with CallWithParts, IsLeft, IsGrand, ActivesOnly {
 
   @override int numberOfParts = 3;
   @override final level = LevelData.A2;

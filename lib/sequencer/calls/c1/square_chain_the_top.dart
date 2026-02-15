@@ -20,7 +20,7 @@
 import '../common.dart';
 
 class SquareChainTheTop extends Action
-    with ActivesOnly, IsLeft, CallWithParts, IsToAWave {
+    with IsLeft, CallWithParts, IsToAWave, ActivesOnly {
 
   @override var level = LevelData.C1;
   @override var numberOfParts = 3;

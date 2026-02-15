@@ -19,7 +19,7 @@
 
 import '../common.dart';
 
-class RightAndLeftThru extends Action with ActivesOnly, CallWithParts {
+class RightAndLeftThru extends Action with CallWithParts, ActivesOnly {
 
   @override int numberOfParts = 2;
   @override var help = '''Right and Left Thru has 2 parts:

@@ -20,7 +20,7 @@
 
 import '../common.dart';
 
-class Recycle extends Action with ActivesOnly, CallWithParts {
+class Recycle extends Action with CallWithParts, ActivesOnly {
 
   @override int numberOfParts = 3;
   @override final level = LevelData.C1;

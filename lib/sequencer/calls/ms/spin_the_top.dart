@@ -19,7 +19,7 @@
 
 import '../common.dart';
 
-class SpinTheTop extends Action with ActivesOnly, CallWithParts, IsLeft {
+class SpinTheTop extends Action with CallWithParts, IsLeft, ActivesOnly {
 
   @override int numberOfParts = 2;
   @override var level = LevelData.MS;

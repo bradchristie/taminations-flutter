@@ -19,7 +19,7 @@
 
 import '../common.dart';
 
-class QuarterThru extends Action with ActivesOnly, CallWithParts, IsLeft, IsGrand {
+class QuarterThru extends Action with CallWithParts, IsLeft, IsGrand, ActivesOnly {
 
   @override var level = LevelData.A1;
   @override var numberOfParts = 2;

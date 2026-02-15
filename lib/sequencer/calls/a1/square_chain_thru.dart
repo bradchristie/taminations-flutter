@@ -20,7 +20,7 @@
 import '../common.dart';
 
 class SquareChainThru extends Action
-    with ActivesOnly, IsLeft, CallWithParts, IsToAWave {
+    with IsLeft, CallWithParts, IsToAWave, ActivesOnly {
 
   @override var level = LevelData.A1;
   @override var numberOfParts = 3;

@@ -33,6 +33,12 @@ enum Rolling {
   ANY     // Dancer is able to roll (default value)
 }
 
+extension PathList on List<Path> {
+
+  List<Path> changeRoll(Rolling roll) =>
+      map((p) => p.changeRoll(roll)).toList();
+
+}
 
 class Path implements Cloneable<Path> {
 

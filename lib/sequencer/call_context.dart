@@ -1503,19 +1503,20 @@ class CallContext {
     //  If nothing in this context, dive into parent contexts
     //  to find something to base the roll direction
     var mySource = _source;
-    while (d.path.movelist.isEmpty && mySource != null) {
+    while (d.roll == .ANY && d.path.movelist.isEmpty && mySource != null) {
       d = mySource.dancers.firstWhere((d2) => d2 == dv);
       mySource = mySource._source;
     }
-    if (d.roll != .NONE) {
-      var move = d.path.movelist
-          .where((m) => m.fromCall)
-          .lastOrNull;
-      if ((move?.brotate.rolling() ?? 0.0) > 0.1)
-        return Rolling.LEFT;
-      else if ((move?.brotate.rolling() ?? 0.0) < -0.1)
-        return Rolling.RIGHT;
-    }
+    if (d.roll != .ANY)
+      return d.roll;
+    var move = d.path.movelist
+        .where((m) => m.fromCall)
+        .lastOrNull;
+    if ((move?.brotate.rolling() ?? 0.0) > 0.1)
+      return Rolling.LEFT;
+    else if ((move?.brotate.rolling() ?? 0.0) < -0.1)
+      return Rolling.RIGHT;
+
     return Rolling.NONE;
   }
 
