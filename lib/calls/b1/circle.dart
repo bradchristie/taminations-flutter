@@ -75,7 +75,7 @@ import '../../moves.dart';
           cl +
           cl +
           EighthRight.changeBeats(1).changehands(Hands.LEFT).skew(-0.417,0.417)
-      ]),
+      ].changeRoll(.RIGHT)),
 
     AnimatedCall('Circle Left 1/8',
       formation:Formation('Static Square'),
@@ -96,7 +96,7 @@ import '../../moves.dart';
           EighthLeft.changeBeats(1).changehands(Hands.GRIPBOTH).skew(0.5,0.0) +
           cl +
           Back.changehands(Hands.RIGHT).scale(0.59,1.0)
-      ]),
+      ].changeRoll(.RIGHT)),
 
     AnimatedCall('Circle Left 1/4',
       formation:Formation('Static Square'),
@@ -121,7 +121,7 @@ import '../../moves.dart';
           cl +
           cl +
           EighthRight.changeBeats(1).changehands(Hands.LEFT).skew(-0.417,0.417)
-      ]),
+      ].changeRoll(.RIGHT)),
 
     AnimatedCall('Circle Left 1/2',
       formation:Formation('Static Square'),
@@ -154,7 +154,7 @@ import '../../moves.dart';
           cl +
           cl +
           EighthRight.changeBeats(1).changehands(Hands.LEFT).skew(-0.417,0.417)
-      ]),
+      ].changeRoll(.RIGHT)),
 
     AnimatedCall('Circle Left 3/4',
       formation:Formation('Static Square'),
@@ -195,7 +195,7 @@ import '../../moves.dart';
           cl +
           cl +
           EighthRight.changeBeats(1).changehands(Hands.LEFT).skew(-0.417,0.417)
-      ]),
+      ].changeRoll(.RIGHT)),
 
     AnimatedCall('Circle Right',
       formation:Formation('Static Square'),
@@ -248,7 +248,7 @@ import '../../moves.dart';
           cr +
           cr +
           Back.changehands(Hands.LEFT).scale(0.59,1.0)
-      ]),
+      ].changeRoll(.LEFT)),
 
     AnimatedCall('Circle Right 1/8',
       formation:Formation('Static Square'),
@@ -269,7 +269,7 @@ import '../../moves.dart';
           Forward.changehands(Hands.BOTH).scale(0.59,1.0) +
           cr +
           EighthLeft.changeBeats(1).changehands(Hands.RIGHT).skew(-0.417,-0.417)
-      ]),
+      ].changeRoll(.LEFT)),
 
     AnimatedCall('Circle Right 1/4',
       formation:Formation('Static Square'),
@@ -294,7 +294,7 @@ import '../../moves.dart';
           cr +
           cr +
           Back.changehands(Hands.LEFT).scale(0.59,1.0)
-      ]),
+      ].changeRoll(.LEFT)),
 
     AnimatedCall('Circle Right 1/2',
       formation:Formation('Static Square'),
@@ -327,7 +327,7 @@ import '../../moves.dart';
           cr +
           cr +
           Back.changehands(Hands.LEFT).scale(0.59,1.0)
-      ]),
+      ].changeRoll(.LEFT)),
 
     AnimatedCall('Circle Right 3/4',
       formation:Formation('Static Square'),
@@ -368,7 +368,7 @@ import '../../moves.dart';
           cr +
           cr +
           Back.changehands(Hands.LEFT).scale(0.59,1.0)
-      ]),
+      ].changeRoll(.LEFT)),
 
     AnimatedCall('Circle Four Left 1/4',
       formation:Formation('Facing Couples Compact'),
@@ -381,7 +381,7 @@ import '../../moves.dart';
           EighthLeft.changehands(Hands.LEFT).skew(0.5,0.0) +
           CircleLeftQuarter.scale(2.0,2.0) +
           EighthRight.changehands(Hands.LEFT).skew(-0.353,0.353)
-      ]),
+      ].changeRoll(.RIGHT)),
 
     AnimatedCall('Circle Four Left 1/4',
       formation:Formation('Normal Lines'),
@@ -402,7 +402,7 @@ import '../../moves.dart';
           EighthLeft.changehands(Hands.LEFT).skew(1.0,0.0) +
           CircleLeftQuarter.scale(2.0,2.0) +
           EighthRight.changehands(Hands.LEFT)
-      ]),
+      ].changeRoll(.RIGHT)),
 
     AnimatedCall('Circle Four Left 1/4',
       formation:Formation('Eight Chain Thru'),
@@ -423,7 +423,7 @@ import '../../moves.dart';
           EighthLeft.changehands(Hands.GRIPLEFT) +
           CircleLeftQuarter.scale(2.0,2.0) +
           EighthRight.changehands(Hands.LEFT).skew(-0.707,0.707)
-      ]),
+      ].changeRoll(.RIGHT)),
 
     AnimatedCall('Circle Four Right 1/4',
       formation:Formation('Facing Couples Compact'),
@@ -436,7 +436,7 @@ import '../../moves.dart';
           EighthLeft.changehands(Hands.LEFT).skew(0.5,0.0) +
           CircleRightQuarter.scale(2.0,2.0) +
           EighthRight.changehands(Hands.LEFT).skew(-0.353,0.353)
-      ]),
+      ].changeRoll(.LEFT)),
 
     AnimatedCall('Circle Four Right 1/4',
       formation:Formation('Normal Lines'),
@@ -457,7 +457,7 @@ import '../../moves.dart';
           EighthLeft.changehands(Hands.LEFT).skew(1.0,0.0) +
           CircleRightQuarter.scale(2.0,2.0) +
           EighthRight.changehands(Hands.LEFT)
-      ]),
+      ].changeRoll(.LEFT)),
 
     AnimatedCall('Circle Four Right 1/4',
       formation:Formation('Eight Chain Thru'),
@@ -478,7 +478,7 @@ import '../../moves.dart';
           EighthLeft.changehands(Hands.GRIPLEFT) +
           CircleRightQuarter.scale(2.0,2.0) +
           EighthRight.changehands(Hands.LEFT).skew(-0.707,0.707)
-      ]),
+      ].changeRoll(.LEFT)),
 
     AnimatedCall('Circle Four Left 1/2',
       formation:Formation('Facing Couples Compact'),
@@ -493,7 +493,7 @@ import '../../moves.dart';
           CircleLeftQuarter.scale(2.0,2.0) +
           CircleLeftQuarter.scale(2.0,2.0) +
           EighthRight.changehands(Hands.LEFT).skew(-0.353,0.353)
-      ]),
+      ].changeRoll(.RIGHT)),
 
     AnimatedCall('Circle Four Left 1/2',
       formation:Formation('Normal Lines'),
@@ -518,7 +518,7 @@ import '../../moves.dart';
           CircleLeftQuarter.scale(2.0,2.0) +
           CircleLeftQuarter.scale(2.0,2.0) +
           EighthRight.changehands(Hands.LEFT).skew(-0.707,0.707)
-      ]),
+      ].changeRoll(.RIGHT)),
 
     AnimatedCall('Circle Four Left 1/2',
       formation:Formation('Eight Chain Thru'),
@@ -543,7 +543,7 @@ import '../../moves.dart';
           CircleLeftQuarter.scale(2.0,2.0) +
           CircleLeftQuarter.scale(2.0,2.0) +
           EighthRight.changehands(Hands.GRIPLEFT)
-      ]),
+      ].changeRoll(.RIGHT)),
 
     AnimatedCall('Circle Four Right 1/2',
       formation:Formation('Facing Couples Compact'),
@@ -558,7 +558,7 @@ import '../../moves.dart';
           CircleRightQuarter.scale(2.0,2.0) +
           CircleRightQuarter.scale(2.0,2.0) +
           EighthRight.changehands(Hands.LEFT).skew(-0.353,0.353)
-      ]),
+      ].changeRoll(.LEFT)),
 
     AnimatedCall('Circle Four Right 1/2',
       formation:Formation('Normal Lines'),
@@ -583,7 +583,7 @@ import '../../moves.dart';
           CircleRightQuarter.scale(2.0,2.0) +
           CircleRightQuarter.scale(2.0,2.0) +
           EighthRight.changehands(Hands.LEFT).skew(-0.707,0.707)
-      ]),
+      ].changeRoll(.LEFT)),
 
     AnimatedCall('Circle Four Right 1/2',
       formation:Formation('Eight Chain Thru'),
@@ -608,7 +608,7 @@ import '../../moves.dart';
           CircleRightQuarter.scale(2.0,2.0) +
           CircleRightQuarter.scale(2.0,2.0) +
           EighthRight.changehands(Hands.GRIPLEFT)
-      ]),
+      ].changeRoll(.LEFT)),
 
     AnimatedCall('Circle Four Left 3/4',
       formation:Formation('Facing Couples Compact'),
@@ -625,7 +625,7 @@ import '../../moves.dart';
           CircleLeftQuarter.scale(2.0,2.0) +
           CircleLeftQuarter.scale(2.0,2.0) +
           EighthRight.changehands(Hands.LEFT).skew(-0.353,0.353)
-      ]),
+      ].changeRoll(.RIGHT)),
 
     AnimatedCall('Circle Four Left 3/4',
       formation:Formation('Normal Lines'),
@@ -654,7 +654,7 @@ import '../../moves.dart';
           CircleLeftQuarter.scale(2.0,2.0) +
           CircleLeftQuarter.scale(2.0,2.0) +
           EighthRight.changehands(Hands.LEFT)
-      ]),
+      ].changeRoll(.RIGHT)),
 
     AnimatedCall('Circle Four Left 3/4',
       formation:Formation('Eight Chain Thru'),
@@ -683,7 +683,7 @@ import '../../moves.dart';
           CircleLeftQuarter.scale(2.0,2.0) +
           CircleLeftQuarter.scale(2.0,2.0) +
           EighthRight.changehands(Hands.LEFT).skew(-0.707,0.707)
-      ]),
+      ].changeRoll(.RIGHT)),
 
     AnimatedCall('Circle Four Right 3/4',
       formation:Formation('Facing Couples Compact'),
@@ -700,7 +700,7 @@ import '../../moves.dart';
           CircleRightQuarter.scale(2.0,2.0) +
           CircleRightQuarter.scale(2.0,2.0) +
           EighthRight.changehands(Hands.LEFT).skew(-0.353,0.353)
-      ]),
+      ].changeRoll(.LEFT)),
 
     AnimatedCall('Circle Four Right 3/4',
       formation:Formation('Normal Lines'),
@@ -729,7 +729,7 @@ import '../../moves.dart';
           CircleRightQuarter.scale(2.0,2.0) +
           CircleRightQuarter.scale(2.0,2.0) +
           EighthRight.changehands(Hands.LEFT)
-      ]),
+      ].changeRoll(.LEFT)),
 
     AnimatedCall('Circle Four Right 3/4',
       formation:Formation('Eight Chain Thru'),
@@ -758,7 +758,7 @@ import '../../moves.dart';
           CircleRightQuarter.scale(2.0,2.0) +
           CircleRightQuarter.scale(2.0,2.0) +
           EighthRight.changehands(Hands.LEFT).skew(-0.707,0.707)
-      ]),
+      ].changeRoll(.LEFT)),
 
     AnimatedCall('Single Circle Left 1/4',
         formation: Formation('Facing Dancers'),
