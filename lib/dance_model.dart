@@ -29,6 +29,24 @@ import 'animated_call.dart';
 import 'common_flutter.dart';
 import 'practice_dancer.dart';
 
+class SequencerDanceModel extends DanceModel {
+
+  SequencerDanceModel([fm.BuildContext? context]) : super(context);
+
+  @override bool get looping => false;
+
+}
+
+class PracticeDanceModel extends DanceModel {
+
+  PracticeDanceModel([fm.BuildContext? context]) : super(context);
+
+  @override bool get gridVisibility => true;
+  @override bool get looping => false;
+  @override String get speed => Settings.practiceSpeed;
+
+}
+
 class DanceModel extends fm.ChangeNotifier {
 
   static const NUMBERS_OFF = 0;
@@ -63,13 +81,8 @@ class DanceModel extends fm.ChangeNotifier {
   double get practiceScore => _practiceScore;
   List<Dancer> dancers = [];
   PracticeDancer? practiceDancer;
-  var _looping = false;
-  var _speed = NORMALSPEED;
-  var _showGrid = false;
-  var _showAxes = 'None';
-  var _showPaths = false;
+  var speed = Settings.speed;
   var _showNumbers = NUMBERS_OFF;
-  var _showPhantoms = false;
   var _geometryType = Geometry.SQUARE;
   final _asymmetric = false;
   var _randomColors = false;
@@ -133,19 +146,10 @@ class DanceModel extends fm.ChangeNotifier {
     return 'Error copying image';
   }
 
-  bool get gridVisibility => _showGrid;
-  set gridVisibility(bool show) {
-    if (show != _showGrid) {
-      _showGrid = show;
-    }
-  }
-
-  String get axesVisibility => _showAxes;
-  set axesVisibility(String show) {
-    if (show != _showAxes) {
-      _showAxes = show;
-    }
-  }
+  bool get gridVisibility => Settings.grid;
+  String get axesVisibility => Settings.axes;
+  bool get showPaths => Settings.paths;
+  bool get looping => Settings.loop;
 
   int get showNumbers => _showNumbers;
   void setNumbers(String value) {
@@ -209,42 +213,8 @@ class DanceModel extends fm.ChangeNotifier {
       d.showShape = value;
   }
 
-  void setSpeed(String speed) {
-    final newSpeed = {
-      'Slow':SLOWSPEED,
-      'Moderate':MODERATESPEED,
-      'Fast':FASTSPEED,
-      'Ludicrous':LUDICROUSSPEED
-    }[speed] ?? NORMALSPEED;
-    _speed = newSpeed;
-    beater.speed = _speed;
-  }
-
-  bool get showPaths => _showPaths;
-  set showPaths(bool show) {
-    if (_showPaths !=show) {
-      _showPaths = show;
-    }
-  }
-
   void togglePath(Dancer d) {
     d.showPath = !d.showPath;
-  }
-
-  bool get looping => _looping;
-  set looping(bool loop) {
-    _looping = loop;
-    beater.loop = loop;
-  }
-
-  bool get showPhantoms => _showPhantoms;
-  set showPhantoms(bool show) {
-    if (_showPhantoms != show) {
-      _showPhantoms = show;
-      for (final d in dancers) {
-        d.hidden = d.isPhantom && !show;
-      }
-    }
   }
 
   int get geometryType => _geometryType;
@@ -464,7 +434,6 @@ class DanceModel extends fm.ChangeNotifier {
       for (var d in dancers) {
         _beats = max(_beats, d.beats + leadout);
         d.showNumber = _showNumbers;
-        d.hidden = d.isPhantom && !_showPhantoms;
       }
       beater.setTimes(-leadin, _beats);
       later(() {

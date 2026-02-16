@@ -154,10 +154,10 @@ class DancePainter extends fm.CustomPainter  {
     });
     for (var i1 = 0; i1 < model.dancers.length - 1; i1++) {
       var d1 = model.dancers[i1];
-      if (!d1.isPhantom || model.showPhantoms) {
+      if (!d1.hidden) {
         for (var i2 = i1 + 1; i2 < model.dancers.length; i2++) {
           var d2 = model.dancers[i2];
-          if (!d2.isPhantom || model.showPhantoms) {
+          if (!d2.hidden) {
             var hh = Handhold.create(d1, d2, model.geometryType);
             if (hh != null)
               hhlist.add(hh);

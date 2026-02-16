@@ -115,7 +115,7 @@ class _PracticeFrameState extends fm.State<PracticeFrame>
   @override
   void initState() {
     super.initState();
-    danceModel = DanceModel(context);
+    danceModel = PracticeDanceModel(context);
   }
 
   @override
@@ -156,9 +156,6 @@ class _PracticeFrameState extends fm.State<PracticeFrame>
           return pp.Consumer2<TitleModel, Settings>(
               builder: (context, titleModel, settings, _) {
                 titleModel.title = danceModel.title;
-                danceModel.gridVisibility = true;
-                danceModel.looping = false;
-                danceModel.setSpeed(Settings.practiceSpeed);
                 danceModel.practiceDancer!.primaryIsLeft =
                     Settings.primaryControl == 'Left Finger';
                 danceModel.practiceDancer!.practiceMousePressed =

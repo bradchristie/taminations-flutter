@@ -243,15 +243,9 @@ class _AnimationFrameState extends fm.State<AnimationFrame>
                     builder: (context, settings, sequencerModel, child) {
                       final painter = DancePainter(danceModel);
                       //  Send current settings to the dance model
-                      danceModel.gridVisibility = Settings.grid || appState.grid;
-                      danceModel.axesVisibility = Settings.axes;
                       danceModel.setNumbers(appState.mainPage == MainPage.SEQUENCER  ? Settings.dancerIdentification : Settings.numbers);
-                      danceModel.setSpeed(Settings.speed);
-                      danceModel.showPaths = Settings.paths;
-                      danceModel.looping = appState.mainPage == MainPage.SEQUENCER ? false : (Settings.loop || appState.loop);
                       danceModel.setShapes(appState.mainPage == MainPage.SEQUENCER
                           ? Settings.dancerShapes : true);
-                      danceModel.showPhantoms = Settings.phantoms;
                       final setGeometry = Geometry.fromString(Settings.geometry).geometry;
                       var geometryChanged = setGeometry != danceModel.geometryType;
                       danceModel.geometry =  setGeometry;

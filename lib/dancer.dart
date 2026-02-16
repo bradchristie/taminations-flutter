@@ -49,6 +49,7 @@ import 'math/matrix.dart';
 import 'math/movement.dart';
 import 'math/path.dart';
 import 'math/vector.dart';
+import 'settings.dart';
 
 class Gender {
   static const BOY = 1;
@@ -238,7 +239,7 @@ class Dancer implements Comparable<Dancer>, Cloneable<Dancer> {
   int showNumber = Dancer.NUMBERS_DANCERS;
   bool showColor = true;
   bool showShape = true;
-  bool hidden = false;
+  bool get hidden => (gender == Gender.PHANTOM) && !Settings.phantoms;
   bool showPath = false;
   var name = '';  // for sequencer
 
