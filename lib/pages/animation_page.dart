@@ -243,15 +243,12 @@ class _AnimationFrameState extends fm.State<AnimationFrame>
                     builder: (context, settings, sequencerModel, child) {
                       final painter = DancePainter(danceModel);
                       //  Send current settings to the dance model
-                      danceModel.setNumbers(appState.mainPage == MainPage.SEQUENCER  ? Settings.dancerIdentification : Settings.numbers);
-                      danceModel.setShapes(appState.mainPage == MainPage.SEQUENCER
-                          ? Settings.dancerShapes : true);
                       final setGeometry = Geometry.fromString(Settings.geometry).geometry;
                       var geometryChanged = setGeometry != danceModel.geometryType;
                       danceModel.geometry =  setGeometry;
-                      //  Dancer colors - first check individual color, then couple color
-                      danceModel.setColors(appState.mainPage == MainPage.SEQUENCER
-                          ? Settings.showDancerColors!='None' : true);
+
+                      //  TODO this is still needed
+                      //  because SequencerModel is built at the very top
                       if (isSequencer && Settings.showDancerColors == 'Random')
                         danceModel.setRandomColors(true);
                       else {

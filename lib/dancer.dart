@@ -236,9 +236,6 @@ class Dancer implements Comparable<Dancer>, Cloneable<Dancer> {
   var data = DancerData();
   Color fillColor;  //  Passed into default constructor
   Color get drawColor => fillColor.darker();
-  int showNumber = Dancer.NUMBERS_DANCERS;
-  bool showColor = true;
-  bool showShape = true;
   bool get hidden => (gender == Gender.PHANTOM) && !Settings.phantoms;
   bool showPath = false;
   var name = '';  // for sequencer

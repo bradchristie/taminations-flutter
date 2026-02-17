@@ -31,9 +31,16 @@ import 'practice_dancer.dart';
 
 class SequencerDanceModel extends DanceModel {
 
-  SequencerDanceModel([fm.BuildContext? context]) : super(context);
+  SequencerDanceModel([fm.BuildContext? context]) : super(context) {
+    if (randomColors)
+      setRandomColors(true);
+  }
 
   @override bool get looping => false;
+  @override String get showNumbers => Settings.dancerIdentification;
+  @override bool get showShapes => Settings.dancerShapes;
+  @override bool get showColors => Settings.showDancerColors != 'None';
+  @override bool get randomColors => Settings.showDancerColors == 'Random';
 
 }
 
@@ -44,16 +51,11 @@ class PracticeDanceModel extends DanceModel {
   @override bool get gridVisibility => true;
   @override bool get looping => false;
   @override String get speed => Settings.practiceSpeed;
+  @override String get showNumbers => 'None';
 
 }
 
 class DanceModel extends fm.ChangeNotifier {
-
-  static const NUMBERS_OFF = 0;
-  static const NUMBERS_DANCERS = 1;
-  static const NUMBERS_COUPLES = 2;
-  static const NUMBERS_NAMES = 3;   //  sequencer only
-  static const NUMBER_HEIGHT = 8.0;
 
   static const SLOWSPEED = 1500.0;
   static const MODERATESPEED = 1000.0;
@@ -82,7 +84,6 @@ class DanceModel extends fm.ChangeNotifier {
   List<Dancer> dancers = [];
   PracticeDancer? practiceDancer;
   var speed = Settings.speed;
-  var _showNumbers = NUMBERS_OFF;
   var _geometryType = Geometry.SQUARE;
   final _asymmetric = false;
   var _randomColors = false;
@@ -150,35 +151,10 @@ class DanceModel extends fm.ChangeNotifier {
   String get axesVisibility => Settings.axes;
   bool get showPaths => Settings.paths;
   bool get looping => Settings.loop;
-
-  int get showNumbers => _showNumbers;
-  void setNumbers(String value) {
-    if (_interactiveDancer >= 0) {
-      value = 'None';
-      _showNumbers = NUMBERS_OFF;
-    }
-    else if (value == 'None')
-      _showNumbers = NUMBERS_OFF;
-    else if (value == '1-8' || value == 'Dancer Numbers')
-      _showNumbers = NUMBERS_DANCERS;
-    else if (value == '1-4' || value == 'Couple Numbers')
-      _showNumbers = NUMBERS_COUPLES;
-    else if (value == 'Names') {
-      _showNumbers = NUMBERS_NAMES;
-    }
-    for (var d in dancers) {
-      if (d.showNumber != _showNumbers) {
-        d.showNumber = _showNumbers;
-      }
-    }
-  }
-
-  void setColors(bool isOn) {
-    for (final d in dancers) {
-      if (d.showColor != isOn)
-        d.showColor = isOn;
-    }
-  }
+  String get showNumbers => Settings.numbers;
+  bool get showShapes => true;
+  bool get showColors => true;
+  bool get randomColors => false;
 
   void setRandomColors(bool value) {
     if (value != _randomColors) {
@@ -188,7 +164,6 @@ class DanceModel extends fm.ChangeNotifier {
     if (value) {
       for (var i=0; i<dancers.length; i++) {
         final d = dancers[i];
-        d.showColor = true;
         final j = dancers.length > 8 ? d.numberCouple.i-1 : i;
         d.fillColor = d.gender == Gender.PHANTOM
             ? Color.LIGHTGRAY
@@ -206,11 +181,6 @@ class DanceModel extends fm.ChangeNotifier {
         }
       });
     }
-  }
-
-  void setShapes(bool value) {
-    for (final d in dancers)
-      d.showShape = value;
   }
 
   void togglePath(Dancer d) {
@@ -433,7 +403,6 @@ class DanceModel extends fm.ChangeNotifier {
       _beats = 0.0;
       for (var d in dancers) {
         _beats = max(_beats, d.beats + leadout);
-        d.showNumber = _showNumbers;
       }
       beater.setTimes(-leadin, _beats);
       later(() {

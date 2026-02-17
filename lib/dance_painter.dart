@@ -427,8 +427,8 @@ class DancePainter extends fm.CustomPainter  {
   //  The Canvas is already transformed to the Dancer's position and orientation
   //  and scaled to the Dancer's size
   void drawDancer(fm.Canvas c, Dancer d) {
-    var dc = d.showColor ? d.drawColor : Color.GRAY;
-    var fc = d.showColor ? d.fillColor : Color.LIGHTGREY;
+    var dc = model.showColors ? d.drawColor : Color.GRAY;
+    var fc = model.showColors ? d.fillColor : Color.LIGHTGREY;
     c.save();
     //ctx.transform(d.tx);  not available on Flutter
     c.translate(d.location.x,d.location.y);
@@ -438,11 +438,11 @@ class DancePainter extends fm.CustomPainter  {
     c.drawCircle(fm.Offset(0.5,0.0), 0.33, p);
     //  Draw the body
     final reallyShowNumbers =
-        d.showNumber != Dancer.NUMBERS_OFF &&
+        model.showNumbers != 'None' &&
             d.gender != Gender.PHANTOM &&
             d.fillColor != Color.GRAY;
     p.color = reallyShowNumbers ? fc.veryBright() : fc;
-    var g = d.showShape ? d.gender : Gender.PHANTOM;
+    var g = model.showShapes ? d.gender : Gender.PHANTOM;
     if (g == Gender.BOY)
       c.drawRect(rect, p);
     else if (g == Gender.GIRL)
@@ -470,9 +470,14 @@ class DancePainter extends fm.CustomPainter  {
       c.rotate(txtext.angle);
       c.scale(-0.1,0.1);
       var t = '';
-      if (d.showNumber == Dancer.NUMBERS_DANCERS) t = d.number;
-      if (d.showNumber == Dancer.NUMBERS_COUPLES) t = d.numberCouple;
-      if (d.showNumber == Dancer.NUMBERS_NAMES) t = d.name;
+      if (model.showNumbers == '1-8' ||
+          model.showNumbers == 'Dancer Numbers')
+        t = d.number;
+      else if (model.showNumbers == '1-4' ||
+          model.showNumbers == 'Couple Numbers')
+        t = d.numberCouple;
+      else if (model.showNumbers == 'Names')
+        t = d.name;
       var _span = TextSpan(text: t,
           style:GoogleFonts.roboto(fontSize: NUMBER_HEIGHT, color: fm.Colors.black));
       var _tp = TextPainter(text: _span,
