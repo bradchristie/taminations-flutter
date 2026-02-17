@@ -59,7 +59,7 @@ import '../../moves.dart';
               UmTurnLeft.changeBeats(2).changehands(Hands.GRIPLEFT).skew(1.0,1.25) +
               UmTurnLeft.changeBeats(2).changehands(Hands.GRIPLEFT).skew(-1.0,-1.25),
 
-          ExtendRight.scale(1.0,2) +
+          Forward +
               BelleWheel +
               ExtendLeft.changeBeats(2).changehands(Hands.GRIPRIGHT).scale(1.0,2.0),
 
@@ -67,7 +67,7 @@ import '../../moves.dart';
               ExtendRight.scale(1.0,0.5) +
               RunLeft.changeBeats(4).changehands(Hands.GRIPLEFT).skew(-2.0,-1.5),
 
-          Forward +
+          ExtendRight.scale(1.0,2) +
               BeauWheel +
               ExtendLeft.changeBeats(2).changehands(Hands.GRIPLEFT).scale(1.0,2.0),
         ]),
