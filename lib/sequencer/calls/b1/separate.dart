@@ -69,7 +69,7 @@ class Separate extends Action {
         //  without a big gap between them
         var d3 = ctx.dancerInBack(d);
         var dist3 = d3?.distanceTo(d) ?? 1.0;
-        if (!dist3.isLessThan(2.0))
+        if (dist3.isGreaterThan(2.0))
           d.path += Forward.scale((dist3-2)/2,1.0);
       }
       //  Other dancers need to move in
