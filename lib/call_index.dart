@@ -1435,6 +1435,9 @@ var callIndex = [
   CallEntry('Wrong Way Grand','b1','b1/right_and_left_grand',b1.RightAndLeftGrand,'b1/wrong_way_grand.mp3'),
   CallEntry('Wrong Way Grand','ssd','ssd/right_and_left_grand',ssd.RightAndLeftGrand,),
   CallEntry('Wrong Way Grand','m26','m26/right_and_left_grand',ssd.RightAndLeftGrand,),
+  CallEntry('Wrong Way Promenade','b1','b1/promenade',b1.Promenade,),
+  CallEntry('Wrong Way Promenade','ssd','ssd/promenade',ssd.Promenade,),
+  CallEntry('Wrong Way Promenade','m26','m26/promenade',ssd.Promenade,),
   CallEntry('Wrong Way Thar','ms','ms/thar',ms.Thar,),
   CallEntry('Wrong Way Thar','p26','p26/thar',ms.Thar,),
 
