@@ -24,7 +24,7 @@ class Recoil extends Action with CallWithParts {
 
   @override var level = LevelData.C3A;
   @override var numberOfParts = 2;
-  @override var help = '''Recoil is a 3-part call:
+  @override var help = '''Recoil is a 2-part call:
   1. Box/Split Recycle
   2. Step and Fold''';
 
