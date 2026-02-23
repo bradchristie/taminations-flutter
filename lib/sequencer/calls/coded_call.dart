@@ -228,9 +228,11 @@ import 'c3a/couple_up.dart';
 import 'c3a/delight_dilemma.dart';
 import 'c3a/ease_off.dart';
 import 'c3a/eight_by_anything.dart';
+import 'c3a/hinge_the_lock.dart';
 import 'c3a/hinge_the_top.dart';
 import 'c3a/hop.dart';
 import 'c3a/latch_on.dart';
+import 'c3a/lock_the_hinge.dart';
 import 'c3a/mirror.dart';
 import 'c3a/own_the_dancers.dart';
 import 'c3a/patch.dart';
@@ -475,6 +477,7 @@ abstract class CodedCall extends Call {
     '(Original)?Head'.ri: (name) => Heads(name),
     '(ThoseAtThe)?Heads?Positions?'.ri: (name) => Heads(name),
     '(Single|Partner)?Hinge'.ri: (name) => Hinge(name),
+    'HingeTheLock'.ri: (name) => HingeTheLock(name),
     'HingeTheTop'.ri: (name) => HingeTheTop(name),
     '(Magic)?HocusPocus'.ri: (name) => HocusPocus(name),
     'Hop'.ri: (name) => Hop(name),
@@ -509,6 +512,7 @@ abstract class CodedCall extends Call {
     '(Scootand)?(Little(More)?|Rally)(Outside|Point)(In|Out|Left|Right|(Go)?(Forward|AsYouAre))?'.ri:
         (name) => Little(name),
     'LoadtheBoat'.ri: (name) => LoadTheBoat(name),
+    'LocktheHinge'.ri: (name) => LockTheHinge(name),
     '(Left|Right|In|Out)?Loop(0|1|2|3)?'.ri: (name) => Loop(name),
 
     'MagicTransferand.+'.ri: (name) => MagicTransferAnd(name),
