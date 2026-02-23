@@ -33,8 +33,14 @@ class SplitRecycle extends Action with IsReverse {
 
   @override
   void performCall(CallContext ctx) {
-    ctx.applyCalls('Couples Do Your Part $reverse Recycle'
-        ' While Wave Dancers Do Your Part Split Recycle');
+    //  If only couples then we are doing a Facing Couples Recycle
+    var waves = ctx.dancers.where((d) => ctx.isInWave(d));
+    if (waves.isEmpty)
+      ctx.applyCalls('Recycle');
+    else
+      //  Otherwise some dancers are in waves and Box/Split Recycle applies
+      ctx.applyCalls('Couples Do Your Part $reverse Recycle'
+          ' While Wave Dancers Do Your Part Split Recycle');
   }
 
 }

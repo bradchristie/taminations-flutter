@@ -869,6 +869,27 @@ import '../../moves.dart';
           UmTurnLeft.changeBeats(4).changehands(Hands.GRIPLEFT).skew(2.0,0.0)
       ]),
 
+    AnimatedCall('Box Recycle',
+        formation:Formation('Facing Couples Compact'),
+        from:'Facing Couples',
+        noDisplay: true,
+        paths:[
+          UmTurnRight.changeBeats(3).skew(1.5,0.0),
+
+          Path.fromMovement(Movement.fromData(beats: 3, hands: Hands.NONE, cx1: -.5, cy1: 0, cx2: 0, cy2: 4, x2: 1.5, y2: 4, cx3: 1, cx4: 2, cy4: 2, x4: 3, y4: 2  ))
+        ]),
+
+    AnimatedCall('Reverse Box Recycle',
+        formation:Formation('Facing Couples Compact'),
+        from:'Facing Couples',
+        noDisplay: true,
+        paths:[
+          Path.fromMovement(Movement.fromData(beats: 3, hands: Hands.NONE, cx1: -.5, cy1: 0, cx2: 0, cy2: -4, x2: 1.5, y2: -4, cx3: 1, cx4: 2, cy4: -2, x4: 3, y4: -2  )),
+
+          UmTurnLeft.changeBeats(3).skew(1.5,0.0)
+        ]),
+
+
     AnimatedCall('Split Recycle',
       formation:Formation('Ocean Waves RH BGBG'),
       from:'Right-Hand Waves',
