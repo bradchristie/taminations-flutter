@@ -18,6 +18,8 @@
 
 */
 
+import 'package:taminations/sequencer/calls/plus/roll.dart';
+
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../moves.dart';
@@ -35,7 +37,7 @@ import '../../moves.dart';
           Forward_5.changeBeats(3),
 
           Forward_2.changeBeats(2) +
-          RunLeft.changeBeats(4).skew(-1.0,0.0),
+          RunLeft.changeBeats(4).skew(-1.0,0.0).changeRoll(.NONE),
 
           Forward_2.changeBeats(1.5) +
           RunRight.changeBeats(4.5).scale(2.0,2.0) +
@@ -57,7 +59,7 @@ import '../../moves.dart';
           Forward,
 
           Forward_2.changeBeats(2) +
-          RunRight.changeBeats(4).skew(-1.0,0.0)
+          RunRight.changeBeats(4).skew(-1.0,0.0).changeRoll(.NONE)
       ]),
   ];
 
