@@ -291,20 +291,25 @@ import '../a2/single_wheel.dart' as a2;
       ]),
 
     AnimatedCall('Single Ferris Wheel',
-      formation:Formation('Ocean Waves RH BGBG'),
+      formation:Formation('Box RH Compact'),
       group:'Single',
       paths:[
-          Forward_2 +
-          LeadRight +
-          QuarterRight.skew(1.0,0.0),
-
-          UmTurnRight.skew(1.0,0.0),
-
-          Forward_2 +
-          UmTurnRight.skew(1.0,0.0),
-
-          RunRight.skew(1.0,0.0)
+        Forward_2 +
+            FlipRight.scale(.5,.5).skew(0.5, 0),
+        Forward +
+            RunRight.scale(.5,.5).skew(0.5, 0)
       ]),
+
+    AnimatedCall('Single Ferris Wheel',
+        formation:Formation('Box LH Compact'),
+        group:'Single',
+        noDisplay: true,
+        paths:[
+          Forward +
+              RunLeft.scale(.5,.5).skew(0.5, 0),
+          Forward_2 +
+              FlipLeft.scale(.5,.5).skew(0.5, 0),
+        ]),
 
     AnimatedCall('Single Polly Wally',
       formation:Formation('Eight Chain Thru'),

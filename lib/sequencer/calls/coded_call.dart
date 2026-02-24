@@ -240,6 +240,7 @@ import 'c3a/quarter_mix.dart';
 import 'c3a/quarter_the_deucey.dart';
 import 'c3a/reach_out.dart';
 import 'c3a/recoil.dart';
+import 'c3a/single_ferris_wheel.dart';
 import 'c3a/snap_the_lock.dart';
 import 'c3a/spin_the_pulley.dart';
 import 'c3a/swing_chain_thru.dart';
@@ -611,6 +612,7 @@ abstract class CodedCall extends Call {
     '(Reverse)?SingleCircle(34)?toaWave'.ri: (name) => SingleCircleToAWave(name),
     'SingleCrossandWheel'.ri: (name) => SingleCrossAndWheel(name),
     'SingleCrossTradeandWheel'.ri: (name) => SingleCrossTradeAndWheel(name),
+    'SingleFerrisWheel'.ri: (name) => SingleFerrisWheel(name),
     'SingleWheel'.ri: (name) => SingleWheel(name),
     '62AceyDeucey'.ri: (name) => SixTwoAceyDeucey(name),
     '(But)?($specifier)?(Skip|Delete).+Parts?'.ri: (name) => Skip(name),
