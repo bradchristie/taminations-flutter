@@ -195,9 +195,7 @@ class CallContext {
     if (callstack.isEmpty)
       return null;
     var startIndex = callstack.indexOf(startFrom ?? callstack.first);
-    for (var i=0; i<callstack.length*2; i++) {
-      var ix = (i ~/ 2) * (i.isOdd ? 1 : -1) + startIndex;
-      if (ix >= 0 && ix < callstack.length) {
+      for (var ix=startIndex; ix<callstack.length; ix++) {
         var call = callstack[ix];
         if (call is T) {
           return call as T;
@@ -214,9 +212,8 @@ class CallContext {
           }
         }
       }
+      return null;
     }
-    return null;
-  }
 
   void noSnap({bool recurse=true}) {
     _snap = false;

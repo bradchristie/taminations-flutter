@@ -19,30 +19,22 @@
 
 import '../common.dart';
 
-class CoupleUp extends Action with CallWithParts, ActivesOnly {
+class Like_a extends Action {
 
   @override final level = LevelData.C3A;
-  @override var numberOfParts = 2;
-  @override var help = '''Couple Up is a 2-part call:
-  1.  Box or Split Circulate
-  2.  Leaders Turn Back
-(anything) Like a Couple Up: Do the (anything) call, then leaders Turn Back.''';
-  @override var helplink = 'c3a/couple_up';
+  @override String help = '''Like a <call> performs the last part of <call>.
+  Common uses are Like a Couple Up, Like a Recoil, and Like a Travel Thru.''';
 
-  CoupleUp(super.name);
+  Like_a(super.name);
 
   @override
-   void performPart1(CallContext ctx) {
-    if (ctx.dancers.length == 8)
-      ctx.applyCalls('Split Circulate');
-    else
-      ctx.applyCalls('Box Circulate');
-  }
-
-  @override
-   void performPart2(CallContext ctx) {
-    ctx.analyze();
-    ctx.applyCalls('Leaders Turn Back');
+  void performCall(CallContext ctx) {
+    var call = ctx.findImplementor<CallWithParts>(startFrom: this)
+        ?? thrower<CallWithParts>(CallError('Unable to find call with parts for Like a'));
+    for (var part=1; part<=call.numberOfParts-1; part++) {
+      print('Skipping part $part');
+      call.skipPart(part);
+    }
   }
 
 }

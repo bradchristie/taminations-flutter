@@ -232,6 +232,7 @@ import 'c3a/hinge_the_lock.dart';
 import 'c3a/hinge_the_top.dart';
 import 'c3a/hop.dart';
 import 'c3a/latch_on.dart';
+import 'c3a/like_a.dart';
 import 'c3a/lock_the_hinge.dart';
 import 'c3a/mirror.dart';
 import 'c3a/own_the_dancers.dart';
@@ -281,6 +282,7 @@ import 'common/insides.dart';
 import 'common/leaders.dart';
 import 'common/left.dart';
 import 'common/nobody.dart';
+import 'common/not_implemented.dart';
 import 'common/nothing.dart';
 import 'common/one_and_a_half.dart';
 import 'common/one_couple.dart';
@@ -501,7 +503,8 @@ abstract class CodedCall extends Call {
     'LatchOn(14|12|34)?'.ri : (name) => LatchOn(name),
     'Lead(er|ing)?s?'.ri: (name) => Leaders(name),
     'Left'.ri: (name) => Left(name),
-    'LikeaCoupleUp'.ri: (name) => LikeACoupleUp(name),
+    'LikeA'.ri: (name) => Like_a(name),
+    'LikeARipple'.ri: (name) => NotImplemented(name),
     'LinearAction'.ri: (name) => LinearAction(name),
     'LinearCycle'.ri: (name) => LinearCycle(name),
     'LineOf6BendtheLine'.ri: (name) => LineofSixBendTheLine(name),

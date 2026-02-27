@@ -20,7 +20,8 @@
 
 import '../common.dart';
 
-class TravelThru extends Action with CallWithParts, IsLeft {
+class TravelThru extends Action
+    with CallWithParts, IsLeft, ActivesOnly {
 
   @override var level = LevelData.C3A;
   @override var numberOfParts = 2;

@@ -115,6 +115,10 @@ mixin CallWithParts on Action {
     }
   }
 
+  void skipPart(int partNo) {
+    replacePart[partNo] = (ctx) { };
+  }
+
   //  Classes override this to provide a part number for a named
   //  call part, like "stars" or "circulates"
   int partNumberForName(String name) => 0;
