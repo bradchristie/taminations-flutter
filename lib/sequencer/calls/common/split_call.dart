@@ -30,6 +30,13 @@ abstract class SplitCall extends Action {
 
   SplitCall(super.name);
 
+  //  If the length is too long for this split side,
+  //  compact in that direction
+  void _checkLength(CallContext ctx, double short, double long) {
+    if (short.isAbout(0) && long.isGreaterThan(2))
+      ctx.adjustToFormation(Formation('Compact Wave RH'));
+  }
+
   @override
   void performCall(CallContext ctx) {
     var splitAmount = ctx.dancers.length ~/ 2;
@@ -43,10 +50,14 @@ abstract class SplitCall extends Action {
           ctx2.selectContext(SelectLocation('Near $splitAmount'), (ctx3) {
             ctx3.dancers.center();
             ctx3.applyCalls(splitName);
+            var b = ctx3.bounds();
+            _checkLength(ctx3, b.y, b.x);
           });
           ctx2.selectContext(SelectLocation('Far $splitAmount'), (ctx3) {
             ctx3.dancers.center();
             ctx3.applyCalls(splitName);
+            var b = ctx3.bounds();
+            _checkLength(ctx3, b.y, b.x);
           });
         });
       } on CallError {
@@ -57,16 +68,23 @@ abstract class SplitCall extends Action {
             ctx2.selectContext(SelectLocation('Left $splitAmount'), (ctx3) {
               ctx3.dancers.center();
               ctx3.applyCalls(splitName);
+              var b = ctx3.bounds();
+              _checkLength(ctx3, b.x, b.y);
             });
             ctx2.selectContext(SelectLocation('Right $splitAmount'), (ctx3) {
               ctx3.dancers.center();
               ctx3.applyCalls(splitName);
+              var b = ctx3.bounds();
+              _checkLength(ctx3, b.x, b.y);
             });
           });
         } on CallError {
           throw FormationNotFoundError(splitName);
         }
       }
+
+
+
     } else
       super.performCall(ctx);
   }

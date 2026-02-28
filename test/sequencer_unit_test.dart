@@ -4342,6 +4342,15 @@ Ease Off
 Centers Partner Tag
 Allemande Left''',''); });
 
+test('Split Call with Adjust',() {
+  testOneSequence('''Heads Lead Right
+Veer Left
+Bend the Line
+Pass Thru
+Girls Face Left
+Follow to a Diamond
+Recycle
+Allemande Left''',''); });
 
 /*
 test('',() {

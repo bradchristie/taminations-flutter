@@ -127,24 +127,36 @@ import '../../moves.dart';
           Forward
       ]),
 
+
     AnimatedCall('Follow to a Diamond',
-      formation:Formation('T-Bone URUR'),
-      from:'T-Bones',
-      paths:[
+        formation:Formation('', dancers:[
+          Dancer.fromData(gender:Gender.BOY,x:-1,y:1,angle:0),
+          Dancer.fromData(gender:Gender.GIRL,x:-1,y:-1,angle:270),
+        ]),
+        from:'T-Bone 1',
+        paths:[
           Forward.changeBeats(1.5).skew(0.0,-0.25) +
-          SwingRight.scale(0.75,0.75) +
-          LeadRight.changeBeats(2).skew(2.0,0.25),
+              SwingRight.scale(0.75,0.75) +
+              LeadRight.changeBeats(2).skew(2.0,0.25),
 
           RunLeft.changeBeats(5).scale(0.5,1.0) +
-          Forward,
+              Forward,
+        ]),
 
-          Forward.changeBeats(1.5).skew(0.0,-0.25) +
-          SwingRight.scale(0.75,0.75) +
-          LeadRight.changeBeats(2).skew(2.0,0.25),
+    AnimatedCall('Follow to a Diamond',
+        formation:Formation('', dancers:[
+          Dancer.fromData(gender:Gender.BOY,x:-1,y:-1,angle:0),
+          Dancer.fromData(gender:Gender.GIRL,x:1,y:-1,angle:270),
+        ]),
+        from:'T-Bone 2',
+        paths:[
+          Forward.changeBeats(1.5).skew(0.0,0.25) +
+              SwingLeft.scale(0.75,0.75) +
+              LeadLeft.changeBeats(2).skew(2.0,-0.25),
 
-          RunLeft.changeBeats(5) +
-          Forward
-      ]),
+          RunRight.changeBeats(5).scale(0.5,1.0) +
+              Forward,
+        ]),
 
     AnimatedCall('All 8 Follow to a Diamond',
       formation:Formation('Static MiniWaves RH'),

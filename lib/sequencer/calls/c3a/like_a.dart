@@ -32,7 +32,6 @@ class Like_a extends Action {
     var call = ctx.findImplementor<CallWithParts>(startFrom: this)
         ?? thrower<CallWithParts>(CallError('Unable to find call with parts for Like a'));
     for (var part=1; part<=call.numberOfParts-1; part++) {
-      print('Skipping part $part');
       call.skipPart(part);
     }
   }

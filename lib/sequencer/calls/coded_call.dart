@@ -228,6 +228,7 @@ import 'c3a/couple_up.dart';
 import 'c3a/delight_dilemma.dart';
 import 'c3a/ease_off.dart';
 import 'c3a/eight_by_anything.dart';
+import 'c3a/follow_to_a_diamond.dart';
 import 'c3a/hinge_the_lock.dart';
 import 'c3a/hinge_the_top.dart';
 import 'c3a/hop.dart';
@@ -468,6 +469,7 @@ abstract class CodedCall extends Call {
     'FlipYour(Criss)?(Cross)?Neighbor'.ri: (name) => FlipYourNeighbor(name),
     'Fold'.ri: (name) => Fold(name),
     'FollowThru'.ri: (name) => FollowThru(name),
+    'FollowToADiamond'.ri: (name) => FollowToADiamond(name),
     '\\d\\d'.ri: (name) => Fraction(name),
 
     'Girl|Ladies|Lady'.ri: (name) => Girls(name),

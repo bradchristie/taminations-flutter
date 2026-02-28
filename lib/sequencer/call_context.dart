@@ -247,6 +247,18 @@ class CallContext {
    //   dancers.map((d) => d.angleFacing.angleOff90)
    //       .fold<double>(0.0, (a, b) => a.abs() + b.abs()) / dancers.length;
 
+  //  Return the x and y range of the dancers as a vector
+  //  Assumes the dancers are centered
+  Vector bounds() {
+    var maxX = 0.0;
+    var maxY = 0.0;
+    for (var d in dancers) {
+      maxX = max(maxX,d.location.x.abs());
+      maxY = max(maxY,d.location.y.abs());
+    }
+    return Vector(maxX,maxY);
+  }
+
 
   /// Append the result of processing this CallContext to its source.
   /// The CallContext must have been previously cloned from the source.
