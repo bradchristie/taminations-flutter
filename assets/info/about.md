@@ -23,18 +23,18 @@ Call pronunciations provided by
 
 ---
 
-## Taminations version 1.6.103 built 2026-02-15
+## Taminations version 1.6.104 built 2026-03-02
 Copyright 2026 by Brad Christie.  
 This is free software, and you are welcome to modify and redistribute it
 under the terms of the [GNU GPL license](http://www.gnu.org/licenses/gpl.html).  
 
 ## What's New
-* Trade the Deucey from thars
-* 1/4 Thru family from thars
+* Fix Chain the Square from RH waves
+* More animations for Recoil
 * Sequencer:
-  * Fixes for Hinge from uncommon formations
-  * Code for Ease Off
-  * Several improvements for Roll 
+  * Fix random glitch in Separate
+  * Code for Hinge the Lock, Lock the Hinge
+  * Code for Single Ferris Wheel
 
 For a detailed history of changes, view the
 [Git log](https://github.com/bradchristie/taminations-flutter/commits/main)
