@@ -25,6 +25,26 @@ import '../c1/chase_your_neighbor.dart' as c1;
 
   final List<AnimatedCall> ChaseTheFractionTag = [
 
+    AnimatedCall('Chase the 1/2 Tag',
+        formation:Formation('Couples Facing Out Compact'),
+        from:'Couples Facing Out', noDisplay: true,
+        paths:[
+          UmTurnRight.changeBeats(1.5).skew(-1,0.0) +
+              Forward_2.changeBeats(1.5),
+
+          RunRight
+        ]),
+
+    AnimatedCall('LChase the 1/2 Tag',
+        formation:Formation('Couples Facing Out Compact'),
+        from:'Couples Facing Out', noDisplay: true,
+        paths:[
+          RunLeft,
+
+          UmTurnLeft.changeBeats(1.5).skew(-1,0.0) +
+              Forward_2.changeBeats(1.5),
+        ]),
+
     AnimatedCall('Chase the Tag',
       formation:Formation('', dancers:[
         Dancer.fromData(gender:Gender.BOY,x:1,y:2,angle:90),

@@ -20,13 +20,13 @@
 import '../../../moves.dart';
 import '../common.dart';
 
-class Flip extends Action {
+class FlipDirection extends Action {
 
   @override var help = 'You can have dancers Flip Left, Right, In, or Out.'
       ' Flip is a run around a phantom.'
       ' This is not a real call.';
 
-  Flip(super.name);
+  FlipDirection(super.name);
 
   @override
   Path performOne(Dancer d, CallContext ctx) {

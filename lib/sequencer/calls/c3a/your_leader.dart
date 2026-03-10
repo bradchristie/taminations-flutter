@@ -20,26 +20,12 @@
 
 import '../common.dart';
 
-class ScatterScoot extends Action with IsToAWave {
-
-  @override var level = LevelData.C1;
-
-  ScatterScoot(super.name);
-
-  @override
-  void performCall(CallContext ctx) {
-    ctx.applyCalls('Scatter Scoot to a Wave');
-    ctx.analyze();
-    dancersToaWave = ctx.center(4);
-  }
-
-}
-
-class Scatter extends Action
-    with UsesTaggingCall, CallWithParts, IsToAWave {
+class YourLeader extends Action
+    with UsesTaggingCall, CallWithParts {
 
   @override var numberOfParts = 2;
-  Scatter(super.name);
+
+  YourLeader(super.name);
 
   @override
   void performPart1(CallContext ctx) {
@@ -48,8 +34,7 @@ class Scatter extends Action
 
   @override
   void performPart2(CallContext ctx) {
-    ctx.applyCalls('Scatter Scoot $toAWave');
+    ctx.applyCalls('Follow Your Leader');
   }
-
 
 }

@@ -21,6 +21,17 @@
 import '../../../moves.dart';
 import '../common.dart';
 
+class Tag extends TaggingCall with IsLeft {
+
+  Tag(super.name);
+
+  @override
+  void performTag(CallContext ctx) {
+    ctx.applyCalls('$left Half Tag');
+  }
+}
+
+
 class TagTheLine extends Action with IsLeft {
 
   @override var level = LevelData.MS;

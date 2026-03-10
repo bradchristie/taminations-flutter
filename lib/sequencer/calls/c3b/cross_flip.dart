@@ -20,26 +20,12 @@
 
 import '../common.dart';
 
-class VerticalTagBack extends Action with CallWithParts, IsToAWave {
+class CrossFlip extends TaggingCall {
 
-  @override final level = LevelData.C1;
-  @override var numberOfParts = 2;
-  @override var help = '''Vertical Tag Back to a Wave has 2 parts:
-  1.  Vertical Half Tag
-  2.  Scoot Back''';
-  @override var helplink = 'c1/tagging_calls_back_to_a_wave';
-
-  VerticalTagBack(super.name);
+  CrossFlip(super.name);
 
   @override
-   void performPart1(CallContext ctx) {
-    final left = name.contains('Left') ? 'Left' : '';
-    ctx.applyCalls('$left Vertical 1/2 Tag');
+  void performTag(CallContext ctx) {
+    ctx.applyCalls('Cross Flip the Line 1/2');
   }
-
-  @override
-   void performPart2(CallContext ctx) {
-    ctx.applyCalls('Scoot Back $toAWave');
-  }
-
 }

@@ -20,33 +20,36 @@
 
 import '../common.dart';
 
-//  This class handles all the variations of Flip Your Neighbor
-class FlipYourNeighbor extends Action with CallWithParts {
+class YourNeighbor extends Action
+    with UsesTaggingCall, CallWithParts {
 
-  @override final level = LevelData.C2;
   @override var numberOfParts = 2;
-  @override var help = '''Flip Your (Criss) (Cross) Neighbor is a 2-part call:
-  1.  Flip the Line 1/2
-  2.  Follow / Cross / Criss Cross Your Neighbor''';
-  @override var helplink = 'c2/any_tagging_call_your_neighbor';
-
-  FlipYourNeighbor(super.name);
-
-  static const flipTypes = {
-    'Flip Your Neighbor' : 'Follow Your Neighbor',
-    'Flip Your Cross Neighbor' : 'Cross Your Neighbor',
-    'Flip Your Criss Cross Neighbor' : 'Criss Cross Your Neighbor'
-  };
+  YourNeighbor(super.name);
 
   @override
-   void performPart1(CallContext ctx) {
-    ctx.applyCalls('Flip the Line 1/2');
+  void performPart1(CallContext ctx) {
+    getTaggingCall().performTag(ctx);
   }
 
   @override
-   void performPart2(CallContext ctx) {
-    final secondCall = flipTypes[name] ?? thrower(CallError('Incorrect Flip call'))!;
-    ctx.applyCalls(secondCall);
+  void performPart2(CallContext ctx) {
+    if (name.contains('Criss'))
+      ctx.applyCalls('Criss Cross Your Neighbor');
+    else if (name.contains('Cross'))
+      ctx.applyCalls('Cross Your Neighbor');
+    else
+      ctx.applyCalls('Follow Your Neighbor');
+  }
+
+}
+
+class Flip extends TaggingCall {
+
+  Flip(super.name);
+
+  @override
+  void performTag(CallContext ctx) {
+    ctx.applyCalls('Flip the Line 1/2');
   }
 
 }

@@ -27,3 +27,22 @@ class ScootBack extends SplitCall {
   ScootBack(super.name);
 
 }
+
+class Back extends Action
+    with UsesTaggingCall, CallWithParts, IsToAWave {
+
+  @override var numberOfParts = 2;
+  Back(super.name);
+
+  @override
+  void performPart1(CallContext ctx) {
+    getTaggingCall().performTag(ctx);
+  }
+
+  @override
+  void performPart2(CallContext ctx) {
+    ctx.applyCalls('Scoot Back $toAWave');
+  }
+
+
+}

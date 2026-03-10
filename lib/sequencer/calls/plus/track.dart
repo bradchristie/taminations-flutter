@@ -20,36 +20,12 @@
 
 import '../common.dart';
 
-class ScatterScoot extends Action with IsToAWave {
+class Track extends TaggingCall {
 
-  @override var level = LevelData.C1;
-
-  ScatterScoot(super.name);
+  Track(super.name);
 
   @override
-  void performCall(CallContext ctx) {
-    ctx.applyCalls('Scatter Scoot to a Wave');
-    ctx.analyze();
-    dancersToaWave = ctx.center(4);
+  void performTag(CallContext ctx) {
+    ctx.applyCalls('Track 2');
   }
-
-}
-
-class Scatter extends Action
-    with UsesTaggingCall, CallWithParts, IsToAWave {
-
-  @override var numberOfParts = 2;
-  Scatter(super.name);
-
-  @override
-  void performPart1(CallContext ctx) {
-    getTaggingCall().performTag(ctx);
-  }
-
-  @override
-  void performPart2(CallContext ctx) {
-    ctx.applyCalls('Scatter Scoot $toAWave');
-  }
-
-
 }

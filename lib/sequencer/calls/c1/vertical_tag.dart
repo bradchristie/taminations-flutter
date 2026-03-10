@@ -18,82 +18,46 @@
 
 */
 
-import '../../../moves.dart';
 import '../common.dart';
 
-class VerticalTag extends Action {
+class VerticalTag extends TaggingCall with IsLeft {
 
-  @override final level = LevelData.C1;
-  @override var helplink = 'c1/vertical_tag';
-
+  @override var standalone = true;
   VerticalTag(super.name);
 
   @override
-  void performCall(CallContext ctx) {
-    ctx.analyzeActives();
-    //  This calls performOne below, which performs Vertical 1/4 Tag
-    super.performCall(ctx);
-    //  Now extend as requested
-    final norm = normalizeCall(name);
-    if (norm.contains('12'))
-      ctx.applyCalls('Extend');
-    else if (norm.contains('34'))
-      ctx.applyCalls('Extend','Extend');
-    else if (!norm.contains('14'))
-      ctx.applyCalls('Extend','Extend','Extend');
+  void performTag(CallContext ctx) {
+    ctx.applyCalls('$left Vertical 1/2 Tag');
   }
 
   @override
-  Path performOne(Dancer d, CallContext ctx) {
-    if (!d.data.beau && !d.data.belle)
-      throw CallError('Dancer $d is not part of a couple');
-    if (!d.data.leader && !d.data.trailer)
-      throw CallError('Dancer $d is not in a box');
-    final dp = d.data.partner
-        .throwIfNull(CallError('Cannot find partner for $d'));
-    final dt = (d.data.leader ? ctx.dancerInBack(d) : ctx.dancerInFront(d))
-        .throwIfNull(CallError('Cannot find dancer in front or behind $d'));
-    //  Distance from this dancer to center point of box
-    final w = d.distanceTo(dp) / 2.0;
-    final h = d.distanceTo(dt) / 2.0;
+  void performStandaloneCall(CallContext ctx) {
+    ctx.applyCalls('Vertical Tag the Line');
+  }
+}
 
-    if (name.contains('Left')) {
-      if (d.data.leader) {
-        if (d.data.beau && dp.data.belle)
-          return FlipRight.skew(-h, 3.0 - w);
-        else if (d.data.belle)
-          return FlipLeft.skew(0.5, w - 2.0);
-        else
-          return FlipRight.skew(0.5, 2.0 - w);
-      } else {  //  trailer
-        if (d.data.belle && dp.data.beau)
-          return DodgeLeft.changeBeats(3.0).skew(-0.5, w - 2.0);
-        else if (d.data.belle)
-          return Forward.changeBeats(3.0).skew(h - 1.0, w - 1.0);
-        else
-          return ExtendRight.changeBeats(3.0).skew(h - 1.0, w - 2.0);
-      }
-    }
 
-    else {
-      if (d.data.leader) {
-        //  Leader always goes behind unless belle of a couple facing out
-        if (d.data.belle && dp.data.beau)
-          return FlipLeft.skew(-h, w - 3.0);
-        else if (d.data.beau)
-          return FlipRight.skew(0.5, 2.0 - w);
-        else
-          return FlipLeft.skew(0.5, w - 2.0);
-      } else {  // trailer
-        //  Trailer always goes in front unless beau of a couple facing in
-        if (d.data.beau && dp.data.belle)
-          return DodgeRight.changeBeats(3.0).skew(-0.5, 2.0 - w);
-        else if (d.data.beau)
-          return Forward.changeBeats(3.0).skew(h - 1.0, 1.0 - w);
-        else
-          return ExtendLeft.changeBeats(3.0).skew(h - 1.0, w);
-      }
-    }
+
+class SaveVerticalTag extends Action with CallWithParts, IsToAWave {
+
+  @override final level = LevelData.C1;
+  @override var numberOfParts = 2;
+  @override var help = '''Vertical Tag Back to a Wave has 2 parts:
+  1.  Vertical Half Tag
+  2.  Scoot Back''';
+  @override var helplink = 'c1/tagging_calls_back_to_a_wave';
+
+  SaveVerticalTag(super.name);
+
+  @override
+   void performPart1(CallContext ctx) {
+    final left = name.contains('Left') ? 'Left' : '';
+    ctx.applyCalls('$left Vertical 1/2 Tag');
+  }
+
+  @override
+   void performPart2(CallContext ctx) {
+    ctx.applyCalls('Scoot Back $toAWave');
   }
 
 }

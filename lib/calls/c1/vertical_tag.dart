@@ -24,7 +24,7 @@ import '../../moves.dart';
 
   final List<AnimatedCall> VerticalTag = [
 
-    AnimatedCall('Vertical Tag',
+    AnimatedCall('Vertical Tag the Line',
       formation:Formation('Facing Couples'),
       from:'Facing Couples',
       paths:[
@@ -36,7 +36,7 @@ import '../../moves.dart';
           ExtendRight.changeBeats(3).scale(3.0,0.5)
       ]),
 
-    AnimatedCall('Vertical Tag',
+    AnimatedCall('Vertical Tag the Line',
       formation:Formation('', dancers:[
         Dancer.fromData(gender:Gender.GIRL,x:1,y:2,angle:90),
         Dancer.fromData(gender:Gender.BOY,x:-1,y:2,angle:90),
@@ -52,7 +52,7 @@ import '../../moves.dart';
           ExtendRight.changeBeats(1.5).scale(1.5,0.5)
       ]),
 
-    AnimatedCall('Vertical Tag',
+    AnimatedCall('Vertical Tag the Line',
       formation:Formation('Box RH'),
       from:'Right-Hand Box',
       paths:[
@@ -64,7 +64,7 @@ import '../../moves.dart';
           ExtendRight.changeBeats(2).scale(2.0,1.0)
       ]),
 
-    AnimatedCall('Vertical Tag',
+    AnimatedCall('Vertical Tag the Line',
       formation:Formation('', dancers:[
         Dancer.fromData(gender:Gender.BOY,x:1,y:2,angle:90),
         Dancer.fromData(gender:Gender.GIRL,x:-1,y:2,angle:270),

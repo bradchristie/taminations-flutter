@@ -20,36 +20,30 @@
 
 import '../common.dart';
 
-class ScatterScoot extends Action with IsToAWave {
-
-  @override var level = LevelData.C1;
-
-  ScatterScoot(super.name);
-
-  @override
-  void performCall(CallContext ctx) {
-    ctx.applyCalls('Scatter Scoot to a Wave');
-    ctx.analyze();
-    dancersToaWave = ctx.center(4);
-  }
-
-}
-
-class Scatter extends Action
-    with UsesTaggingCall, CallWithParts, IsToAWave {
+class TheTop extends Action
+    with UsesTaggingCall, CallWithParts {
 
   @override var numberOfParts = 2;
-  Scatter(super.name);
+  TheTop(super.name);
 
   @override
   void performPart1(CallContext ctx) {
     getTaggingCall().performTag(ctx);
+    ctx.applyCalls('Extend');  // to 3/4 tag
   }
 
   @override
   void performPart2(CallContext ctx) {
-    ctx.applyCalls('Scatter Scoot $toAWave');
+    var centers = ctx.centerWaveOf4() ??
+        thrower<List<Dancer>>(CallError('Error calculating The Top'));
+    var outers = ctx.dancers - centers;
+    ctx.subContext(centers, (ctx2) {
+      ctx2.applyCalls('Spin the Top');
+    });
+    ctx.subContext(outers, (ctx2) {
+      ctx2.applyCalls('Hinge and Trade');
+    });
+    ctx.checkCenters(centersToCheck: centers);
   }
-
 
 }
