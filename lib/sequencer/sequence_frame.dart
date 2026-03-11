@@ -172,12 +172,6 @@ class _SequencerEditLineState extends fm.State<SequencerEditLine> {
             SpeechToTextProvider,
             VirtualKeyboardVisible>(
     builder: (context, model, abbreviations, speech, virtualKeyboard, child) {
-      if (!TamUtils.isTouchDevice)
-        later(() {
-          later((){
-            focusNode.requestFocus();
-          });
-        });
 
       //  If doing voice input, show errors in the snack bar
       //  because the error text of the EditText is not visible
