@@ -23,6 +23,8 @@ import '../../debug_switch.dart';
 import '../words.dart';
 import 'call.dart';
 import 'common.dart';
+import 'common/heads.dart';
+import 'common/sides.dart';
 
 class XMLCall extends Call {
 
@@ -184,10 +186,12 @@ class XMLCall extends Call {
     ctxwork.analyze();
     switch (xcall.actives) {
       case 'Heads' :
-        inactives = ctxwork.dancers.where((d) => d.isSide).toList();
+        inactives = ctxwork.dancers.where((d) =>
+            !Heads('Head Position').isActive(d, ctxwork)).toList();
         break;
       case 'Sides' :
-        inactives = ctxwork.dancers.where((d) => d.isHead).toList();
+        inactives = ctxwork.dancers.where((d) =>
+            !Sides('Side Position').isActive(d, ctxwork)).toList();
         break;
       case 'Centers' :
         inactives = ctxwork.dancers.where((d) => !d.data.center).toList();
