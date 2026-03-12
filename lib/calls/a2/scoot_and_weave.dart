@@ -320,5 +320,30 @@ import '../../moves.dart';
           ExtendRight.changeBeats(4).scale(3.0,2.0) +
           HingeLeft
       ]),
+
+    AnimatedCall('All 8 Scoot and Weave',
+        formation:Formation('Static MiniWaves LH'),
+        from:'Squared Mini-Waves',parts:'7',
+        noDisplay: true,
+        paths:[
+          RunLeft.changeBeats(6) +
+              ExtendLeft.changeBeats(4).scale(3.0,2.0) +
+              HingeRight,
+
+          Forward_3 +
+              SwingLeft +
+              Forward_2 +
+              LeadLeft,
+
+          RunLeft.changeBeats(6) +
+              ExtendLeft.changeBeats(4).scale(3.0,2.0) +
+              HingeRight,
+
+          Forward_3 +
+              SwingLeft +
+              Forward_2 +
+              LeadLeft,
+        ]),
+
   ];
 
