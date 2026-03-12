@@ -256,6 +256,7 @@ import 'c3a/your_leader.dart';
 import 'c3b/cast_and_relay.dart';
 import 'c3b/change_the_centers.dart';
 import 'c3b/cross_flip.dart';
+import 'c3b/loop.dart';
 import 'c3b/reverse_order.dart';
 import 'c3b/sidetrack.dart';
 import 'c3b/the_top.dart';
@@ -367,12 +368,12 @@ abstract class CodedCall extends Call {
     'Adjust(to)?.*'.ri: (name) => Adjust(name),
     'All8(?!Circulate)(?!Recycle)'.ri: (name) => AllEight(name),
     'AllemandeLeft'.ri: (name) => AllemandeLeft(name),
-    'AlterandCirculate'.ri: (name) => AlterAndCirculate(name),
-    'AltertheWave'.ri: (name) => AlterTheWave(name),
+    'AlterAndCirculate'.ri: (name) => AlterAndCirculate(name),
+    'AlterTheWave'.ri: (name) => AlterTheWave(name),
     'and'.ri: (name) => And(name),
     '.*(?<!(Swing))andCircle(14|12|34)'.ri: (name) => AnythingAndCircle(name),
     'InterlockedDiamondChainThru'.ri: (name) => AnythingChainThru(name),
-    'Around1andComeIntotheMiddle'.ri: (name) => AroundToALine(name),
+    'Around1andComeIntoTheMiddle'.ri: (name) => AroundToALine(name),
     'Around1toaLine'.ri: (name) => AroundToALine(name),
     'Around2toaLine'.ri: (name) => AroundToALine(name),
     'AsCouples(?!Roll).*'.ri: (name) => AsCouples(name),
@@ -534,7 +535,9 @@ abstract class CodedCall extends Call {
         (name) => Little(name),
     'LoadtheBoat'.ri: (name) => LoadTheBoat(name),
     'LocktheHinge'.ri: (name) => LockTheHinge(name),
-    '(Left|Right|In|Out)?Loop(0|1|2|3)?'.ri: (name) => Loop(name),
+    '(Left|Right|In|Out)?Loop(0|1|2|3)'.ri: (name) => Loop(name),
+    '(Cross)?LoopAnd12Tag'.ri: (name) => LoopAndHalfTag(name),
+    '(Cross)?Loop'.ri: (name) => LoopTheTag(name),
 
     'MagicTransferand.+'.ri: (name) => MagicTransferAnd(name),
     'MakeMagic'.ri: (name) => MakeMagic(name),
