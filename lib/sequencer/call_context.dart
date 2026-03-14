@@ -1223,6 +1223,8 @@ class CallContext {
     }
   }
 
+  List<Dancer> veryCenters() =>
+      dancers.where((d) => d.data.verycenter).toList();
 
   //  Returns points of a diamond formations
   //  Formation to match must have girl points

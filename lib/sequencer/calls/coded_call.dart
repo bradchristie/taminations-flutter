@@ -257,6 +257,8 @@ import 'c3b/cast_and_relay.dart';
 import 'c3b/change_the_centers.dart';
 import 'c3b/cross_flip.dart';
 import 'c3b/loop.dart';
+import 'c3b/nuclear_reaction.dart';
+import 'c3b/reactivate.dart';
 import 'c3b/reverse_order.dart';
 import 'c3b/sidetrack.dart';
 import 'c3b/the_top.dart';
@@ -548,6 +550,7 @@ abstract class CodedCall extends Call {
 
     'No(body|one)'.ri: (name) => Nobody(name),
     'Nothing'.ri: (name) => Nothing(name),
+    '(Cross)?NuclearReaction'.ri: (name) => NuclearReaction(name),
 
     'O(the)?[A-Z0-9].+'.r: (name) => OFormation(name),
     '112'.ri: (name) => OneAndaHalf(name),
@@ -587,6 +590,7 @@ abstract class CodedCall extends Call {
 
     'Ramble'.ri: (name) => Ramble(name),
     'ReachOut'.ri: (name) => ReachOut(name),
+    '(Cross)?Reactivate'.ri: (name) => Reactivate(name),
     'Recoil'.ri: (name) => Recoil(name),
     'Recycle'.ri: (name)  => Recycle(name),
     'Regroup'.ri: (name) => Regroup(name),
