@@ -23,6 +23,7 @@ import '../common.dart';
 class NuclearReaction extends Action
     with UsesTaggingCall, CallWithParts {
 
+  @override var level = LevelData.C3B;
   @override var numberOfParts = 3;
   NuclearReaction(super.name);
 
