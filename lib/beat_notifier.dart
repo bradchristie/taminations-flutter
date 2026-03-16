@@ -46,7 +46,6 @@ class BeatNotifier extends fm.ChangeNotifier {
   double get endBeat => _endBeat;
   double get totalBeats => _endBeat - _startBeat;
   DateTime _lastTime = DateTime.now();
-  var loop = false;
   bool get isRunning => _ticker.isTicking;
   var isFinished = false;
 
@@ -57,7 +56,7 @@ class BeatNotifier extends fm.ChangeNotifier {
       final speed = speedNames[Settings.speed] ?? NORMALSPEED;
       _beat += diff / speed;
       if (_beat > _endBeat) {
-        if (loop)
+        if (Settings.loop)
           _beat = _startBeat;
         else {
           stop();
