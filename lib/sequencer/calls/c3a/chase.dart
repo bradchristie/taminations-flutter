@@ -45,16 +45,13 @@ class LeftChase extends TaggingCall {
 
   @override
   void addToStack(CallContext ctx) {
-    print('Left Chase addToStack');
     var ctx2 = CallContext.fromContext(ctx);
     var otherCalls = name.replaceFirst('Left Chase ', '');
-    print('otherCalls: $otherCalls');
     ctx2.interpretCall(otherCalls);
     if (ctx2.findImplementor<UsesTaggingCall>() == null) {
       ctx2.interpretCall('Left Chase');
       ctx2.interpretCall(otherCalls);
     } else {
-      print('Left Chase parsing ok');
       super.addToStack(ctx);
     }
     ctx.callstack.addAll(ctx2.callstack);

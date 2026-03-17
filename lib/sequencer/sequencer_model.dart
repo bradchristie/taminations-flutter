@@ -357,6 +357,8 @@ class SequencerModel extends fm.ChangeNotifier {
   }
 
   void _interpretOneLine(String line) {
+    //  Remove quotes
+    line = line.replaceAll('[\'"]'.ri, '');
     //  Replace abbreviations
     line = AbbreviationsModel.replaceAbbreviations(line);
     //  Remember the current beat, we will animate from here

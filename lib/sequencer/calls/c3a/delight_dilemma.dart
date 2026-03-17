@@ -20,7 +20,7 @@
 
 import '../common.dart';
 
-class Delight_Dilemma extends Action with IsLeft {
+class Delight_Dilemma extends Action with UsesTaggingCall, IsLeft {
 
   @override var level = LevelData.C3A;
 
@@ -29,6 +29,14 @@ class Delight_Dilemma extends Action with IsLeft {
   // TODO break centers into 4 parts
   @override
   void performCall(CallContext ctx) {
+
+    if (taggingCall != null) {
+      getTaggingCall().performTag(ctx);
+      //  Tagging call goes to 1/2 tag position
+      //  So do an extend to get 3/4 tag
+      ctx.applyCalls('Extend');
+    }
+
     var dir = name == 'Delight' ? 'Right' : 'Left';
     ctx.subContext(ctx.outer(4), (ctx2) {
       ctx2.applyCalls('Face $dir Circulate Twice');
