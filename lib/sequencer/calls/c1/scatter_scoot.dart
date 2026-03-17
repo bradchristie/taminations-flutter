@@ -38,6 +38,7 @@ class ScatterScoot extends Action with IsToAWave {
 class Scatter extends Action
     with UsesTaggingCall, CallWithParts, IsToAWave {
 
+  @override var level = LevelData.C3B;
   @override var numberOfParts = 2;
   Scatter(super.name);
 
