@@ -96,13 +96,14 @@ class Concentric extends Action {
     //  while the other do the call outside the centers.
     //  If only some of the dancers are active, then we will assume they
     //  are the outer dancer doing the call outside of the centers.
+    var centers = ctx.center(4);
     if (ctx.actives.length == 8) {
       //  All dancers active
       //
       var saveStack = ctx.callstack.copy();
       ctx.canDoYourPart = false;
       //  Centers do the call
-      var centerCtx = CallContext.fromContext(ctx,dancers:ctx.center(4),withCalls: true);
+      var centerCtx = CallContext.fromContext(ctx,dancers:centers,withCalls: true);
       centerCtx.performCall();
       centerCtx.appendToSource();
       //  Make sure the centers have not collided with the outsides
@@ -117,7 +118,7 @@ class Concentric extends Action {
     _performConcentric(outerCtx);
     outerCtx.appendToSource();
     //  Another check that the centers and outside do not collide
-    ctx.checkCenters(centersToCheck: ctx.center(4));
+    ctx.checkCenters(centersToCheck: centers);
     ctx.appendToSource();
     //  Make sure we end with the same active dancers, so ".. and Roll" will work
     ctx0.actives = saveActives;

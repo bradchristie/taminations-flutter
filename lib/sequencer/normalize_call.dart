@@ -114,6 +114,8 @@ String normalizeCall(String callname) =>
         .replaceAll('\\bchasers\\b'.ri,'chase')
         .replaceAll('\\bflippers\\b'.ri,'flip')
         .replaceAll('\\btaggers\\b'.ri,'tag')
+        .replaceAll('\\binverters\\b'.ri,'invert')
+        .replaceAll('\\btrackers\\b'.ri,'track')
     //  Some expressions to handle quirks of Split 2
         .replaceAll('split the outside?s( couple)?'.ri,'Split 2')
         .replaceAll('split 2( separate)?( go)? around 1 to a line'.ri,

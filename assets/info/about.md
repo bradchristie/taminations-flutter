@@ -23,18 +23,16 @@ Call pronunciations provided by
 
 ---
 
-## Taminations version 1.6.104 built 2026-03-02
+## Taminations version 1.6.105 built 2026-03-17
 Copyright 2026 by Brad Christie.  
 This is free software, and you are welcome to modify and redistribute it
 under the terms of the [GNU GPL license](http://www.gnu.org/licenses/gpl.html).  
 
 ## What's New
-* Fix Chain the Square from RH waves
-* More animations for Recoil
+* Fix Loop setting
 * Sequencer:
-  * Fix random glitch in Separate
-  * Code for Hinge the Lock, Lock the Hinge
-  * Code for Single Ferris Wheel
+  * Fix keyboard focus when entering abbreviations
+  * Code for tagging call combinations
 
 For a detailed history of changes, view the
 [Git log](https://github.com/bradchristie/taminations-flutter/commits/main)

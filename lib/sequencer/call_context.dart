@@ -843,16 +843,23 @@ class CallContext {
       final cw4 = centerWaveOf4();
       final cd4 = centerDiamond();
       final out4 = outer(4);
-      //  Make sure that we really have a center 4
-      final groupsOK = groups.length > 1 && (groups[0].length == 4 ||
-          (groups[0].length == 2 && groups[1].length == 2));
-      //  And those are the only dancers performing the call,
-      //  or the outer 4 are the only dancers performing the call
-      if (moving.length == 4 && (
-          (cw4?.containsAll(moving) ?? false) ||
-          (cd4?.containsAll(moving) ?? false) ||
-          out4.containsAll(moving) ||
-          (groupsOK && center(4).containsAll(moving)))) {
+      //  Make sure that we really have a center 4 if not given
+      var continueCheck = true;
+      if (centersToCheck == null) {
+        final groupsOK = groups.length > 1 && (groups[0].length == 4 ||
+            (groups[0].length == 2 && groups[1].length == 2));
+        //  And those are the only dancers performing the call,
+        //  or the outer 4 are the only dancers performing the call
+        if (moving.length != 4)
+          continueCheck = false;
+        if (!(cw4?.containsAll(moving) ?? false) &&
+            !(cd4?.containsAll(moving) ?? false) &&
+            !out4.containsAll(moving) &&
+            !(groupsOK && center(4).containsAll(moving)))
+          continueCheck = false;
+      }
+
+      if (continueCheck) {
         //  Now check if there's a collision between center dancers
         //  and outer dancers
         animateToEnd();
