@@ -201,11 +201,11 @@ import '../../moves.dart';
         difficulty: 2,
         paths:[
           HingeLeft.scale(1,1.414) +
-              SxtnthRight,
+              SxtnthRight.changeRoll(.LEFT),
           HingeLeft.skew(0,-0.414) +
               SxtnthLeft,
           HingeLeft.scale(1,1.414) +
-              SxtnthRight,
+              SxtnthRight.changeRoll(.LEFT),
           HingeLeft.skew(0,-0.414) +
               SxtnthLeft,
         ]),
@@ -216,11 +216,11 @@ import '../../moves.dart';
         difficulty: 2,
         paths:[
           HingeRight.scale(1,1.414) +
-              SxtnthLeft,
+              SxtnthLeft.changeRoll(.RIGHT), // TODO calculate turn instead of this hack
           HingeRight.skew(0,0.414) +
               SxtnthRight,
           HingeRight.scale(1,1.414) +
-              SxtnthLeft,
+              SxtnthLeft.changeRoll(.RIGHT),
           HingeRight.skew(0,0.414) +
               SxtnthRight
         ]),
