@@ -239,6 +239,7 @@ import 'c3a/latch_on.dart';
 import 'c3a/like_a.dart';
 import 'c3a/lock_the_hinge.dart';
 import 'c3a/mirror.dart';
+import 'c3a/open_up_and.dart';
 import 'c3a/own_the_dancers.dart';
 import 'c3a/patch.dart';
 import 'c3a/quarter_mix.dart';
@@ -555,6 +556,7 @@ abstract class CodedCall extends Call {
     'O(the)?[A-Z0-9].+'.r: (name) => OFormation(name),
     '112'.ri: (name) => OneAndaHalf(name),
     'Couples?(1|2|3|4)((and)?(2|3|4))*'.ri: (name) => OneCouple(name),
+    'OpenUpAnd.*'.ri: (name) => OpenUpAnd(name),
     'OutRollCirculate'.ri: (name) => OutRollCirculate(name),
     'Out(er|sides?)(2|4|6)?'.ri: (name) => Outsides(name),
     'Ownthe.*'.ri: (name) => OwnTheDancers(name),

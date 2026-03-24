@@ -88,5 +88,40 @@ import '../../moves.dart';
           RunRight.changeBeats(6).scale(1.0,1.5) +
           QuarterRight.changeBeats(3.5)
       ]),
+
+    AnimatedCall('Open Up and',
+        formation:Formation('Column RH GBGB'),
+        from:'Right-Hand Columns',fractions:'3;4.5',
+        paths:[
+          RunRight.changeBeats(6).scale(2.0,2.5) +
+              LeadRight.changeBeats(3.5).scale(2.0,1.0),
+
+          Forward_2 +
+              RunLeft.changeBeats(5).scale(1.0,1.5) +
+              LeadLeft.changeBeats(2.5).scale(2,1),
+
+          Forward_2,
+
+          Forward_2
+        ]),
+
+    AnimatedCall('Open Up and',
+        formation:Formation('Column LH GBGB'),
+        from:'Left-Hand Columns',fractions:'3;4.5',
+        paths:[
+          Forward_2,
+
+          Forward_2,
+
+          Forward_2 +
+              RunRight.changeBeats(5).scale(1.0,1.5) +
+              LeadRight.changeBeats(2.5).scale(2,1),
+
+          RunLeft.changeBeats(6).scale(2.0,2.5) +
+              LeadLeft.changeBeats(3.5).scale(2.0,1.0),
+
+        ]),
+
+
   ];
 
