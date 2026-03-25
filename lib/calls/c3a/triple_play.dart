@@ -81,6 +81,58 @@ import '../../moves.dart';
           LeadLeft
       ]),
 
+    AnimatedCall('_Triple Play But',
+        formation:Formation('', dancers:[
+          Dancer.fromData(gender:Gender.GIRL,x:-1,y:3,angle:90),
+          Dancer.fromData(gender:Gender.BOY,x:-1,y:1,angle:90),
+          Dancer.fromData(gender:Gender.GIRL,x:-1,y:-1,angle:90),
+          Dancer.fromData(gender:Gender.BOY,x:-1,y:-3,angle:90),
+        ]),
+        from:'Right-Hand Columns',
+        noDisplay: true,
+        paths:[
+          RunRight.changeBeats(4).scale(1.0,2.0) +
+              Forward_3 +
+              QuarterRight.skew(1, 0),
+
+          Forward +
+              SwingRight.scale(0.5,1.0) +
+              Forward,
+
+          Forward +
+              SwingRight.scale(0.5,1.0) +
+              Forward,
+
+          Forward +
+              SwingRight.scale(0.5,1.0) +
+              RunRight.changeBeats(4).scale(1.0,2.0) +
+              QuarterRight.skew(1, 0)
+        ]),
+
+    AnimatedCall('_Triple Play But',
+        formation:Formation('Column LH GBGB'),
+        from:'Left-Hand Columns',
+        noDisplay: true,
+        paths:[
+          Forward +
+              SwingLeft.scale(0.5,1.0) +
+              RunLeft.changeBeats(4).scale(1.0,2.0) +
+              QuarterLeft.skew(1,0),
+
+          Forward +
+              SwingLeft.scale(0.5,1.0) +
+              Forward,
+
+          Forward +
+              SwingLeft.scale(0.5,1.0) +
+              Forward,
+
+          RunLeft.changeBeats(4).scale(1.0,2.0) +
+              Forward_3 +
+              QuarterLeft.skew(1,0)
+        ]),
+
+
     AnimatedCall('Magic Column Triple Play',
       formation:Formation('Magic Column RH'),
       from:'Magic Columns Right-Hand Centers',

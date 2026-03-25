@@ -253,6 +253,7 @@ import 'c3a/swing_chain_thru.dart';
 import 'c3a/the_gamut.dart';
 import 'c3a/touch_by.dart';
 import 'c3a/travel_thru.dart';
+import 'c3a/triple_play.dart';
 import 'c3a/your_leader.dart';
 import 'c3b/cast_and_relay.dart';
 import 'c3b/change_the_centers.dart';
@@ -735,6 +736,7 @@ abstract class CodedCall extends Call {
         (name) => SelectTriangle(name),
     'TripleBox(es)?.*'.r: (name) => TripleBox(name),
     'Triple(Lines?|Waves?|Columns?).*'.ri: (name) => TripleLine(name),
+    'TriplePlay'.ri: (name) => TriplePlay(name),
     '(Double|Triple)StarThru'.ri: (name) => TripleStarThru(name),
     'TripleTrade'.ri: (name) => TripleTrade(name),
     'Truck'.ri: (name) => Truck(name),
