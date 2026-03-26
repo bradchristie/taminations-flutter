@@ -68,7 +68,7 @@ import '../../moves.dart';
           ExtendRight.changeBeats(2).scale(1.0,2.0) +
               UmTurnLeft.changeBeats(3).skew(1.0,0.0),
 
-          UmTurnLeft.changeBeats(3).skew(1.0,0.0),
+          UmTurnRight.changeBeats(3).skew(1.0,0.0),
 
           RunLeft,
         ]),
@@ -79,7 +79,7 @@ import '../../moves.dart';
         paths: [
           RunRight,
 
-          UmTurnRight.changeBeats(3).skew(1.0,0.0),
+          UmTurnLeft.changeBeats(3).skew(1.0,0.0),
 
           ExtendLeft.changeBeats(2).scale(1.0,2.0) +
               UmTurnRight.changeBeats(3).skew(1.0,0.0),
