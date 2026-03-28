@@ -213,6 +213,7 @@ import '../../moves.dart';
     AnimatedCall('Explode the Line',
       formation:Formation('Tidal Line RH'),
       from:'Tidal Line, Right-Hand Centers',
+      taminator: 'The ending formation is not generally agreed upon. It could be offset boxes.',
       paths:[
           QuarterRight.changeBeats(2).skew(-1.0,-0.5) +
           ExtendLeft.scale(1.0,0.5) +
@@ -234,6 +235,7 @@ import '../../moves.dart';
     AnimatedCall('Explode the Line',
       formation:Formation('Tidal Line LH'),
       from:'Tidal Line, Left-Hand Centers',
+        taminator: 'The ending formation is not generally agreed upon. It could be offset boxes.',
       paths:[
           QuarterLeft.changeBeats(2).skew(1.0,-0.5) +
           ExtendLeft.scale(1.0,0.5) +

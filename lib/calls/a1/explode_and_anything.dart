@@ -95,6 +95,7 @@ import '../../moves.dart';
     AnimatedCall('Explode and Roll',
       formation:Formation('Tidal Inverted Line LH'),
       from:'Tidal Inverted Line',
+        taminator: 'The ending formation is not generally agreed upon. It could be offset boxes.',
       paths:[
           QuarterLeft.skew(1.0,0.5) +
           QuarterLeft,
