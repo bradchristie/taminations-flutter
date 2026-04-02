@@ -47,8 +47,8 @@ class QuarterTag extends Action with ActivesOnly {
         ctx.applyCalls('Center 4 Hinge and Spread While Ends Face In');
       else
         ctx.applyCalls('Centers $dir Hinge While Ends Face In');
+      ctx.level = .MS;  // was clobbered by Spread
     }
   }
 
 }
-
