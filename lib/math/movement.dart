@@ -156,26 +156,15 @@ class Movement extends Cloneable<Movement> {
 
   /// Return a new Movement with the final facing position turned
   /// by a specific radians
-  Movement twist(double a) {
-    late Bezier brot;
-    if (a.abs() < 0.01)
+  Movement twist(double adif) {
+    if (adif.abs() < 0.01)
       return clone();
-    if (brotate.x2.abs() < 0.1 && brotate.y2.abs() < 0.1) {
-      //  No rotate bezier (e.g. Stand movement)
-      //  Make a rotation bezier of the requested amount
-      var y2 = a > 0 ? 2.0 : -2.0;
-      //  This is a rotation of 180 degrees
-      var bez = Bezier([[0.0,0.0].v,[4.0/3.0,0.0].v,[4.0/3.0,y2].v,[0.0,y2].v]);
-      brot = bez.clip(a.abs()/pi);
-    } else {
-      //  Spin the 2nd control point around the end point
-      //  by the requested angle
-      var d = (brotate.points[3] - brotate.points[2]).length;
-      var a1 = (brotate.points[3] - (brotate.points[2])).v.angle;
-      var a2 = a1 + a;
-      var p2 = brotate.points[3].v - Vector(d*cos(a2),d*sin(a2));
-      brot = Bezier([brotate.points[0].v,brotate.points[1].v,p2,brotate.points[3].v]);
-    }
+    var a = brotate.angle(1.0) + adif;
+    var p1 = Vector(0,0);
+    var cp1 = Vector(0.55,0);
+    var p2 = Vector(sin(a)*a.sign,(1-cos(a))*a.sign);
+    var cp2 = p2 - Vector(0.55*cos(a),0.55*sin(a));
+    var brot = Bezier([p1,cp1,cp2,p2]);
     return Movement(beats,hands,btranslate,brot,fromCall:fromCall);
   }
 

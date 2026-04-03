@@ -64,20 +64,20 @@ class Bezier extends CubicBezier implements Cloneable<Bezier> {
   double get x2 => points[3].x;
   double get y2 => points[3].y;
 
-  double _angle(double t) {
+  double angle(double t) {
     var v = derivativeAt(t);
     return atan2(v.y,v.x);
   }
   Matrix translate(double t) => Matrix.getTranslation(pointAt(t).v);
-  Matrix rotate(double t) => Matrix.getRotation(_angle(t));
+  Matrix rotate(double t) => Matrix.getRotation(angle(t));
 
   //  Return turn direction at end of curve
   double rolling() {
     //  Check angle at end
-    var theta = _angle(1.0);
+    var theta = angle(1.0);
     //  If it's 180 then use angle at halfway point
     if (theta.isAround(pi)) {
-      theta = _angle(0.5);
+      theta = angle(0.5);
     }
     //  If angle is 0 then no turn
     return theta.isAround(0.0) ? 0.0 : theta;

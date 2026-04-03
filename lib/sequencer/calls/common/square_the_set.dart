@@ -70,31 +70,14 @@ class SquareTheSet extends Action {
       ahome = pi*3/2;
 
     //  Calculate the difference to that position and angle
-    //  from dancer's current location and facing direction
+    //  from dancer's current location and facing directiown
     var tohome = [xhome,yhome].v - d.location;
     var angle = d.tx.angle;
     tohome = tohome.rotate(-angle);
     var adiff = ahome.angleDiff(angle);
-    var turn = Stand;
-    if (adiff.isAround(0.0))
-      turn = Stand;
-    else if (adiff.isAround(pi/4))
-      turn = EighthLeft;
-    else if (adiff.isAround(pi/2))
-      turn = QuarterLeft;
-    else if (adiff.isAround(pi*3/4))
-      turn = n38Left;
-    else if (adiff.isAround(pi))
-      turn = UmTurnRight;
-    else if (adiff.isAround(-pi*3/4))
-      turn = n38Right;
-    else if (adiff.isAround(-pi/2))
-      turn = QuarterRight;
-    else if (adiff.isAround(-pi/4))
-      turn = EighthRight;
-
-    //  Can now move to home
-    return turn.changeBeats(2.0).skew(tohome.x,tohome.y);
+    var turn = Stand.skew(tohome.x,tohome.y);
+    var move = turn.pop().twist(adiff);
+    return Path.fromMovement(move).changeBeats(2);
   }
 
 }
