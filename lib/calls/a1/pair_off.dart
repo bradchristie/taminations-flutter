@@ -21,7 +21,6 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../moves.dart';
-import '../a2/all_4_all_8.dart' as a2;
 
   final List<AnimatedCall> PairOff = [
 
