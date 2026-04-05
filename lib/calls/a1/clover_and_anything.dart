@@ -40,6 +40,7 @@ import '../../moves.dart';
     AnimatedCall('Clover and Lock It',
       formation:Formation('3/4 Tag'),
       group:' ',
+      taminator: 'Not in Plus 2026',
       paths:[
           LeadRight.scale(1.0,1.5) +
           LeadRight.scale(1.5,1.5) +
@@ -114,6 +115,7 @@ import '../../moves.dart';
     AnimatedCall('Clover and Square Chain Thru',
       formation:Formation('Trade By'),
       group:' ',
+        taminator: 'Not in Plus 2026',
       paths:[
           LeadRight.scale(1.0,1.5) +
           LeadRight.scale(1.5,1.5) +
@@ -163,6 +165,7 @@ import '../../moves.dart';
         Dancer.fromData(gender:Gender.BOY,x:-1,y:-3,angle:90),
   ]),
       group:' ',isGenderSpecific:true,
+        taminator: 'Not in Plus 2026',
       paths:[
           Forward +
           LeadLeft.changeBeats(2.5).scale(1.5,1.5) +
@@ -211,6 +214,7 @@ import '../../moves.dart';
     AnimatedCall('Cross Clover and Swap Around',
       formation:Formation('Trade By'),
       group:' ',
+        taminator: 'Not in Plus 2026',
       paths:[
           LeadLeft.changeBeats(3).scale(2.0,3.5) +
           LeadLeft.scale(1.5,2.5) +

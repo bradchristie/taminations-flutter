@@ -98,6 +98,7 @@ import '../a2/all_4_all_8.dart' as a2;
     AnimatedCall('As Couples Pair Off',
       formation:Formation('Normal Lines'),
       from:'Lines',group:' ',
+      taminator: 'Not in Plus 2026',
       paths:[
           BackHingeRight,
 
@@ -107,7 +108,5 @@ import '../a2/all_4_all_8.dart' as a2;
 
           BackHingeLeft
       ]),
-    a2.All4All8.where((tam) =>
-      tam.title == 'All 4 Couples Pair Off').first.xref(title: 'All 4 Couples Pair Off').xref(group: ' '),
   ];
 
