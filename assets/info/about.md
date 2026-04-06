@@ -23,16 +23,19 @@ Call pronunciations provided by
 
 ---
 
-## Taminations version 1.6.105 built 2026-03-17
+## Taminations version 1.6.106 built 2026-04-06
 Copyright 2026 by Brad Christie.  
 This is free software, and you are welcome to modify and redistribute it
 under the terms of the [GNU GPL license](http://www.gnu.org/licenses/gpl.html).  
 
 ## What's New
-* Fix Loop setting
+* Note that Explode the Line from tidal formations is ambiguous
+* Note some animations in Plus 2026 are A-1 only
+* Fix animation for Magic Something New
 * Sequencer:
-  * Fix keyboard focus when entering abbreviations
-  * Code for tagging call combinations
+  * Fix Square the Set from dancers facing arbitrary angles
+  * Code for Triple Play But (something), Open Up and (anything)
+  * Fix Single Wheel from thar
 
 For a detailed history of changes, view the
 [Git log](https://github.com/bradchristie/taminations-flutter/commits/main)
