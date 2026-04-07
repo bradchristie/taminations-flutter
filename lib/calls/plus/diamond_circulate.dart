@@ -25,8 +25,12 @@ import '../../moves.dart';
   final List<AnimatedCall> DiamondCirculate = [
 
     AnimatedCall('Diamond Circulate',
-      formation:Formation('Diamond RH'),
-      from:'Right-Hand Diamond',difficulty: 1,
+        formation:Formation('Diamond RH'),
+        from:'Right-Hand Diamond',
+        difficulty: 1,
+        //  Disable sequencer as it does a better job of calculating
+        //  for unusual embedded diamonds
+        notForSequencer: true,
       paths:[
           LeadRight.changeBeats(3).scale(1.0,3.0),
 
@@ -36,6 +40,7 @@ import '../../moves.dart';
     AnimatedCall('Diamond Circulate',
       formation:Formation('Diamond LH'),
       from:'Left-Hand Diamond',difficulty: 1,
+        notForSequencer: true,
       paths:[
           LeadLeft.changeBeats(3).scale(1.0,3.0),
 
@@ -45,6 +50,7 @@ import '../../moves.dart';
     AnimatedCall('Diamond Circulate',
       formation:Formation('Diamond Facing RH'),
       from:'Facing Diamond, Right-Hand Centers',difficulty: 2,
+        notForSequencer: true,
       taminator: '''
     Note that dancers pass right shoulders.
     ''',
@@ -57,6 +63,7 @@ import '../../moves.dart';
     AnimatedCall('Diamond Circulate',
       formation:Formation('Diamond Facing'),
       from:'Facing Diamond, Left-Hand Centers',difficulty: 2,
+        notForSequencer: true,
       taminator: '''
     Again, dancers pass right shoulders.
     Note that the flow is slightly different than the previous animation.
