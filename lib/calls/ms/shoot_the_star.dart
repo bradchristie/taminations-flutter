@@ -29,16 +29,16 @@ import '../../moves.dart';
       from:'Thar',
       paths:[
           SwingLeft +
-          SxtnthLeft.changeBeats(2).changehands(0).skew(0.7,1.0),
+          SxtnthLeft.changeBeats(2).changehands(0).skew(1,0.586),
 
           SwingLeft +
-          SxtnthRight.changeBeats(2).changehands(0).skew(0.7,1.0),
+          SxtnthRight.changeBeats(2).changehands(0).skew(1,1.414),
 
           SwingLeft +
-          SxtnthLeft.changeBeats(2).changehands(0).skew(0.7,1.0),
+          SxtnthLeft.changeBeats(2).changehands(0).skew(1,0.586),
 
           SwingLeft +
-          SxtnthRight.changeBeats(2).changehands(0).skew(0.7,1.0)
+          SxtnthRight.changeBeats(2).changehands(0).skew(1,1.414)
       ]),
 
     AnimatedCall('Shoot the Star',
@@ -46,16 +46,16 @@ import '../../moves.dart';
       from:'Wrong Way Thar',
       paths:[
           SwingRight +
-          SxtnthRight.changeBeats(2).changehands(0).skew(0.7,-1.0),
+          SxtnthRight.changeBeats(2).changehands(0).skew(1,-0.586),
 
           SwingRight +
-          SxtnthLeft.changeBeats(2).changehands(0).skew(0.7,-1.0),
+          SxtnthLeft.changeBeats(2).changehands(0).skew(1,-1.414),
 
           SwingRight +
-          SxtnthRight.changeBeats(2).changehands(0).skew(0.7,-1.0),
+          SxtnthRight.changeBeats(2).changehands(0).skew(1,-0.586),
 
           SwingRight +
-          SxtnthLeft.changeBeats(2).changehands(0).skew(0.7,-1.0)
+          SxtnthLeft.changeBeats(2).changehands(0).skew(1,-1.414)
       ]),
 
     AnimatedCall('Shoot the Star 3/4 to an Alamo Ring',
@@ -106,19 +106,19 @@ import '../../moves.dart';
       paths:[
           SwingLeft +
           SwingLeft +
-          SxtnthRight.changeBeats(2).changehands(0).skew(0.7,1.0),
+          SxtnthRight.changeBeats(2).changehands(0).skew(1,1.414),
 
           SwingLeft +
           SwingLeft +
-          SxtnthLeft.changeBeats(2).changehands(0).skew(0.7,1.0),
+          SxtnthLeft.changeBeats(2).changehands(0).skew(1,0.586),
 
           SwingLeft +
           SwingLeft +
-          SxtnthRight.changeBeats(2).changehands(0).skew(0.7,1.0),
+          SxtnthRight.changeBeats(2).changehands(0).skew(1,1.414),
 
           SwingLeft +
           SwingLeft +
-          SxtnthLeft.changeBeats(2).changehands(0).skew(0.7,1.0)
+          SxtnthLeft.changeBeats(2).changehands(0).skew(1,0.586)
       ]),
 
     AnimatedCall('Shoot the Star All the Way Around',
@@ -127,19 +127,19 @@ import '../../moves.dart';
       paths:[
           SwingRight +
           SwingRight +
-          SxtnthLeft.changeBeats(2).changehands(0).skew(0.7,-1.0),
+          SxtnthLeft.changeBeats(2).changehands(0).skew(1,-1.414),
 
           SwingRight +
           SwingRight +
-          SxtnthRight.changeBeats(2).changehands(0).skew(0.7,-1.0),
+          SxtnthRight.changeBeats(2).changehands(0).skew(1,-0.586),
 
           SwingRight +
           SwingRight +
-          SxtnthLeft.changeBeats(2).changehands(0).skew(0.7,-1.0),
+          SxtnthLeft.changeBeats(2).changehands(0).skew(1,-1.414),
 
           SwingRight +
           SwingRight +
-          SxtnthRight.changeBeats(2).changehands(0).skew(0.7,-1.0)
+          SxtnthRight.changeBeats(2).changehands(0).skew(1,-0.586)
       ]),
   ];
 
