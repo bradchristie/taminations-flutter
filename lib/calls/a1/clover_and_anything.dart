@@ -37,7 +37,7 @@ import '../../moves.dart';
           LeadLeft
       ]),
 
-    AnimatedCall('Clover and Lock It',
+    AnimatedCall('Clover and Lockit',
       formation:Formation('3/4 Tag'),
       group:' ',
       taminator: 'Not in Plus 2026',

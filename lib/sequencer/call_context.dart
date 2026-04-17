@@ -64,7 +64,8 @@ class CallContext {
     Formation('Quarter Tag') : 1.5,
     Formation('Tidal Line RH') : 1.0,
     Formation('Squared Set') : 1.0,
-    Formation('I-Beam') : 1.0
+    Formation('I-Beam') : 1.0,
+    Formation('Separated Columns') : 1.0,
   };
 
   static var twoCoupleFormations = {
@@ -951,13 +952,7 @@ class CallContext {
       if (dancers.length == 8) {
         matchFormationList(standardFormations);
         //  One more check for bad I-Beam
-     //   repairFormation(Formation('Misshapen I-Beam'), Formation('I-Beam'));
         repairFormation(Formation('Misshapen X-Beam'), Formation('X-Beam'));
-        var ctxLines = CallContext.fromFormation(Formation('Normal Lines'));
-        if (matchFormations(ctxLines,rotate: 180) == null &&
-            matchFormations(ctxLines,rotate:90) != null) {
-          adjustToFormation(Formation('Double Pass Thru'),rotate: 90);
-        }
       } else
         matchFormationList(twoCoupleFormations,maxOffset: 2.1);
     }

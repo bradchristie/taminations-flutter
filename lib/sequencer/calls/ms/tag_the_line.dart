@@ -58,8 +58,6 @@ class BigLineTagTheLine extends Action {
   @override var level = LevelData.MS;
   @override var help = TagTheLine('').help;
   var isLeft;
-  var _minDist = 0.0;
-  var _maxDist = 0.0;
   var _isHalfTag;
 
   static final Formation ColumnsOf3 =
@@ -80,10 +78,8 @@ class BigLineTagTheLine extends Action {
       if (length == '6' && ctx2.dancers.length > 6)
         ctx2.applyCalls('Wave of 6 $name');
       else {
-        _minDist = ctx2.dancers.fold<double>(9.9, (prev, d) => min(prev,d.location.length));
-        _maxDist = ctx2.dancers.fold<double>(0.0, (prev, d) => max(prev,d.location.length));
         super.performCall(ctx2);
-        if (ctx2.dancers.length == 6 && _isHalfTag) {
+        if (ctx2.dancers.length == 66 && _isHalfTag) {
           ctx2.animateToEnd();
           var ctx3 = CallContext.fromFormation(ColumnsOf3);
           var mapping = ctx2.matchFormations(ctx3,sexy:false,fuzzy:true,rotate:180,
@@ -98,6 +94,7 @@ class BigLineTagTheLine extends Action {
   @override
   Path performOne(Dancer d, CallContext ctx) {
     Path p1, p2, p3;
+    //  Compute first move - moving forward and turning left/right
     var skewAmount = _isHalfTag ? 1.0 : 0.5;
     if (isLeft) {
       if (d.isCenterRight)
@@ -110,16 +107,22 @@ class BigLineTagTheLine extends Action {
       else
         p1 = QuarterLeft.skew(-skewAmount, 0);
     }
-    var howMuch = _isHalfTag
-        ? (_minDist + _maxDist) / 2.0
-        : _minDist + _maxDist - 0.5;
+    //  Compute 2nd move - forward half or full tag amount
+    var numOutside = d.isCenterRight
+        ? ctx.dancersToLeft(d).length
+        : ctx.dancersToRight(d).length;
+    var howMuch = d.location.length + (_isHalfTag
+        ? numOutside * 2 - ctx.dancers.length/2 + 1
+        : numOutside);
     p2 = Forward.scale(howMuch,1.0).changeBeats(howMuch);
+    //  Compute 3rd move - adjust to single column (full tag only)
     if (_isHalfTag)
       p3 = Path();
     else if (isLeft)
       p3 = ExtendLeft.scale(.5,.5);
     else
       p3 = ExtendRight.scale(.5,.5);
+    //  Put it all together
     return p1 + p2 + p3;
   }
 

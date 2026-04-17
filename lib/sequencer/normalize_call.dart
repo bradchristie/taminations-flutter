@@ -120,6 +120,7 @@ String normalizeCall(String callname) =>
         .replaceAll('split the outside?s( couple)?'.ri,'Split 2')
         .replaceAll('split 2( separate)?( go)? around 1 to a line'.ri,
             'split 2 separate')
+        .replaceAll('go around'.ri,'around')
     //  Remove superfluous Buts, so not to confuse the real But
         .replaceAllMapped('but (skip|replace|delete|interrupt)'.ri, (m) => m[1]!)
     //  'Dixie Style' -> 'Dixie Style to a Wave'

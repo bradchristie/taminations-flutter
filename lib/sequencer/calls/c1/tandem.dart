@@ -76,7 +76,7 @@ class Tandem extends FourDancerConcept {
       Formation('Double Pass Thru'): 1.0,
       Formation('Quarter Tag') : 1.5,
     };
-    ctx.matchFormationList(tandemFormations,maxOffset: 9.0);
+    ctx.matchFormationList(tandemFormations,maxOffset: 12.0);
   }
 
 }
