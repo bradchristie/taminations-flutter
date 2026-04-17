@@ -39,7 +39,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Ladies Chain',
-      formation:Formation('Normal Lines'),
+      formation:Formation('Normal Lines Compact'),
       from:'Normal Lines',isGenderSpecific:true,fractions:'5',difficulty: 1,
       paths:[
           Stand.changehands(0) +
@@ -47,8 +47,8 @@ import '../../moves.dart';
           UmTurnLeft.changeBeats(2).changehands(Hands.RIGHT).skew(0.0,0.5) +
           BeauWheel.scale(0.5,0.75),
 
-          PullLeft.changeBeats(2.5).scale(2.0,1.75) +
-          ExtendRight.changeBeats(2.5).changehands(Hands.LEFT).scale(2.0,1.25) +
+          PullLeft.changeBeats(2.5).scale(1.5,1.75) +
+          ExtendRight.changeBeats(2.5).changehands(Hands.LEFT).scale(1.5,1.25) +
           BelleWheel.scale(0.5,0.75),
 
           Stand.changehands(0) +
@@ -56,8 +56,8 @@ import '../../moves.dart';
           UmTurnLeft.changeBeats(2).changehands(Hands.RIGHT).skew(0.0,0.5) +
           BeauWheel.scale(0.5,0.75),
 
-          PullLeft.changeBeats(2.5).scale(2.0,1.75) +
-          ExtendRight.changeBeats(2.5).changehands(Hands.LEFT).scale(2.0,1.25) +
+          PullLeft.changeBeats(2.5).scale(1.5,1.75) +
+          ExtendRight.changeBeats(2.5).changehands(Hands.LEFT).scale(1.5,1.25) +
           BelleWheel.scale(0.5,0.75)
       ]),
 
@@ -219,7 +219,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('End Ladies Chain on a Diagonal',
-      formation:Formation('Normal Lines'),
+      formation:Formation('Normal Lines Compact'),
       group:' ',isGenderSpecific:true,difficulty: 2,
       paths:[
           Path(),
@@ -232,15 +232,15 @@ import '../../moves.dart';
 
           LeadLeft +
           Forward_2 +
-          HingeRight.changeBeats(2) +
-          Forward_2.changeBeats(3.5) +
-          BelleWheel
+          HingeRight.changeBeats(2).scale(.5,.5) +
+          Forward_1p5.changeBeats(3.5) +
+          BelleWheel.scale(1,1.25)
       ]),
 
     AnimatedCall('_Chain', from: 'End Ladies',
         formation: Formation('',dancers:[
-          Dancer.fromData(gender:Gender.BOY,x:-2,y:-1,angle:0),
-          Dancer.fromData(gender:Gender.GIRL,x:-2,y:-3,angle:0),
+          Dancer.fromData(gender:Gender.BOY,x:-1.5,y:-1,angle:0),
+          Dancer.fromData(gender:Gender.GIRL,x:-1.5,y:-3,angle:0),
         ]),
         group:' ',isGenderSpecific:true,difficulty: 2,noDisplay: true,
         paths:[
@@ -250,9 +250,9 @@ import '../../moves.dart';
 
           LeadLeft +
               Forward_2 +
-              HingeRight.changeBeats(2) +
-              Forward_2.changeBeats(3.5) +
-              BelleWheel
+              HingeRight.changeBeats(2).scale(.5,.5) +
+              Forward_1p5.changeBeats(3.5) +
+              BelleWheel.scale(1,1.25)
         ]),
 
     AnimatedCall('_Chain',from:'Couples 1 and 2',
@@ -285,7 +285,7 @@ import '../../moves.dart';
 
 
     AnimatedCall('Center Ladies Chain on a Diagonal',
-      formation:Formation('Normal Lines'),
+      formation:Formation('Normal Lines Compact'),
       group:' ',isGenderSpecific:true,difficulty: 3,
       paths:[
           Stand.changeBeats(2) +
@@ -293,8 +293,8 @@ import '../../moves.dart';
           UmTurnLeft.changeBeats(3).changehands(Hands.RIGHT).skew(0.0,1.0) +
           BeauWheel.scale(0.5,0.5),
 
-          Forward_2.changeBeats(3.5) +
-          HingeRight.changeBeats(2) +
+          Forward_1p5.changeBeats(3.5) +
+          HingeRight.changeBeats(2).scale(0.5,1) +
           Forward_2 +
           LeadLeft +
           BelleWheel,
@@ -313,21 +313,21 @@ import '../../moves.dart';
   ]),
       from:'Double Pass Thru',group:' ',isGenderSpecific:true,difficulty: 2,
       paths:[
-          Forward.changeBeats(3).scale(0.5,1.0) +
+          Forward.changeBeats(3) +
           UmTurnLeft.changeBeats(2).skew(0.5,0.0) +
           BeauWheel.scale(0.5,1.0),
 
-          Forward.changeBeats(3).scale(0.5,1.0) +
+          Forward.changeBeats(3) +
           UmTurnLeft.changeBeats(2).skew(0.5,-1.0) +
           BeauWheel.scale(0.5,0.5),
 
           PullLeft.scale(1.0,0.5) +
-          ExtendRight.changeBeats(2).scale(1.5,1.0) +
+          ExtendRight.changeBeats(2) +
           ExtendLeft.changeBeats(2).scale(0.5,0.5) +
           BelleWheel.scale(0.5,1.0),
 
           PullLeft.scale(1.0,0.5) +
-          ExtendRight.changeBeats(2).scale(1.5,1.0) +
+          ExtendRight.changeBeats(2) +
           ExtendRight.changeBeats(2).scale(0.5,0.5) +
           BelleWheel.scale(0.5,0.5)
       ]),
@@ -578,16 +578,16 @@ import '../../moves.dart';
       paths:[
           QuarterRight.changeBeats(3).skew(0.0,-1.0) +
           UmTurnLeft.changeBeats(1.5) +
-          BeauWheel.scale(0.5,0.5),
+          BeauWheel.scale(0.5,0.5).skew(-.5,0),
 
           SwingRight +
           HingeLeft +
-          BelleWheel
+          BelleWheel.skew(-.5,0)
       ]),
 
     AnimatedCall('Chain Down the Line',
       formation:Formation('Compact Two-Faced Line RH'),
-      from:'Compact Two-Faced Line',fractions:'3',difficulty: 1,noDisplay: true,
+      from:'Compact Two-Faced Line',fractions:'3',difficulty: 1, noDisplay: true,
         isGenderSpecific: true,
       paths:[
           QuarterRight.changeBeats(3) +
@@ -606,55 +606,55 @@ import '../../moves.dart';
       paths:[
           QuarterLeft.changeBeats(3).skew(0.0,1.0) +
           UmTurnLeft.changeBeats(1.5) +
-          BeauWheel.scale(0.5,0.5),
+          BeauWheel.scale(0.5,0.5).skew(-.5,0),
 
           SwingRight +
           HingeLeft +
-          BelleWheel
+          BelleWheel.skew(-.5,0)
       ]),
 
     AnimatedCall('Chain Down the Line',
-      formation:Formation('Two-Faced Lines RH'),
+      formation:Formation('Two-Faced Lines RH Compact'),
       from:'Two-Faced Lines',fractions:'3',difficulty: 1,
         isGenderSpecific: true,
       paths:[
           QuarterRight.changeBeats(3).skew(0.0,-1.0) +
           UmTurnLeft.changeBeats(1.5) +
-          BeauWheel.scale(0.5,0.5),
+          BeauWheel.scale(0.5,0.5).skew(-.5,.5),
 
           SwingRight +
           HingeLeft +
-          BelleWheel,
+          BelleWheel.skew(-.5,-.5),
 
           SwingRight +
           HingeLeft +
-          BelleWheel,
+          BelleWheel.skew(-.5,.5),
 
           QuarterRight.changeBeats(3).skew(0.0,-1.0) +
           UmTurnLeft.changeBeats(1.5) +
-          BeauWheel.scale(0.5,0.5)
+          BeauWheel.scale(0.5,0.5).skew(-.5,-.5),
       ]),
 
     AnimatedCall('Chain Down the Line',
-      formation:Formation('Ocean Waves LH BGGB'),
+      formation:Formation('Ocean Waves LH BGGB Compact'),
         isGenderSpecific: true,
       from:'Left-Hand Waves',fractions:'3',difficulty: 1,
       paths:[
           QuarterLeft.changeBeats(3).skew(0.0,1.0) +
           UmTurnLeft.changeBeats(1.5) +
-          BeauWheel.scale(0.5,0.5),
+          BeauWheel.scale(0.5,0.5).skew(-.5,.5),
 
           SwingRight +
           HingeLeft +
-          BelleWheel,
+          BelleWheel.skew(-.5,-.5),
 
           SwingRight +
           HingeLeft +
-          BelleWheel,
+          BelleWheel.skew(-.5,.5),
 
           QuarterLeft.changeBeats(3).skew(0.0,1.0) +
           UmTurnLeft.changeBeats(1.5) +
-          BeauWheel.scale(0.5,0.5)
+          BeauWheel.scale(0.5,0.5).skew(-.5,-.5),
       ]),
 
     AnimatedCall('Chain Down the Line',

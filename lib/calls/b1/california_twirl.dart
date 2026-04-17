@@ -25,7 +25,7 @@ import '../../moves.dart';
   final List<AnimatedCall> CaliforniaTwirl = [
 
     AnimatedCall('California Twirl',
-      formation:Formation('Facing Couples'),
+      formation:Formation('Facing Couples Compact'),
       from:'Facing Couples',notForSequencer: true,
       paths:[
           RunRight.changehands(Hands.GRIPRIGHT),
@@ -34,7 +34,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('California Twirl',
-      formation:Formation('Couples Facing Out'),
+      formation:Formation('Couples Facing Out Compact'),
       from:'Couples Facing Out',notForSequencer: true,
       paths:[
           FlipLeft.changehands(Hands.GRIPLEFT),
@@ -43,7 +43,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('California Twirl',
-      formation:Formation('Lines Facing Out'),
+      formation:Formation('Lines Facing Out Compact'),
       from:'Lines Facing Out',isGenderSpecific:true,
       paths:[
           FlipLeft.changehands(Hands.GRIPLEFT),

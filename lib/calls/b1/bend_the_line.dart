@@ -45,55 +45,55 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Bend the Line',
-      formation:Formation('Normal Lines'),
+      formation:Formation('Normal Lines Compact'),
       from:'Lines Facing In',difficulty: 2,
       paths:[
-          HingeRight.changeBeats(4),
+          HingeRight.changeBeats(4).skew(-.5,-.5),
 
-          BackHingeLeft.changeBeats(4),
+          BackHingeLeft.changeBeats(4).skew(-.5,-.5),
 
-          BackHingeRight.changeBeats(4),
+          BackHingeRight.changeBeats(4).skew(-.5,.5),
 
-          HingeLeft.changeBeats(4)
+          HingeLeft.changeBeats(4).skew(-.5,.5)
       ]),
 
     AnimatedCall('Bend the Line',
-      formation:Formation('Lines Facing Out'),
+      formation:Formation('Lines Facing Out Compact'),
       from:'Lines Facing Out',difficulty: 1,
       paths:[
-          HingeLeft.changeBeats(4),
+          HingeLeft.changeBeats(4).skew(.5,.5),
 
-          BackHingeRight.changeBeats(4),
+          BackHingeRight.changeBeats(4).skew(.5,.5),
 
-          BackHingeLeft.changeBeats(4),
+          BackHingeLeft.changeBeats(4).skew(.5,-.5),
 
-          HingeRight.changeBeats(4)
+          HingeRight.changeBeats(4).skew(.5,-.5)
       ]),
 
     AnimatedCall('Bend the Line',
-      formation:Formation('Two-Faced Lines RH'),
+      formation:Formation('Two-Faced Lines RH Compact'),
       from:'Right-Hand Two-Faced Lines',difficulty: 1,
       paths:[
-          HingeRight.changeBeats(4),
+          HingeRight.changeBeats(4).skew(-.5,-.5),
 
-          BackHingeLeft.changeBeats(4),
+          BackHingeLeft.changeBeats(4).skew(-.5,-.5),
 
-          BackHingeLeft.changeBeats(4),
+          BackHingeLeft.changeBeats(4).skew(.5,-.5),
 
-          HingeRight.changeBeats(4)
+          HingeRight.changeBeats(4).skew(.5,-.5)
       ]),
 
     AnimatedCall('Bend the Line',
-      formation:Formation('Two-Faced Lines LH'),
+      formation:Formation('Two-Faced Lines LH Compact'),
       from:'Left-Hand Two-Faced Lines',difficulty: 1,
       paths:[
-          HingeLeft.changeBeats(4),
+          HingeLeft.changeBeats(4).skew(.5,.5),
 
-          BackHingeRight.changeBeats(4),
+          BackHingeRight.changeBeats(4).skew(.5,.5),
 
-          BackHingeRight.changeBeats(4),
+          BackHingeRight.changeBeats(4).skew(-.5,.5),
 
-          HingeLeft.changeBeats(4)
+          HingeLeft.changeBeats(4).skew(-.5,.5)
       ]),
 
     AnimatedCall('Bend the Line',
@@ -154,6 +154,7 @@ import '../../moves.dart';
         Dancer.fromData(gender:Gender.GIRL,x:0,y:1,angle:180),
         Dancer.fromData(gender:Gender.BOY,x:0,y:3,angle:180),
         Dancer.fromData(gender:Gender.GIRL,x:0,y:5,angle:180)]),
+        noDisplay: true,
         paths: [
           Stand,
           BackHingeRight.skew(-1, 0),
@@ -167,6 +168,7 @@ import '../../moves.dart';
           Dancer.fromData(gender:Gender.GIRL,x:0,y:1,angle:180),
           Dancer.fromData(gender:Gender.BOY,x:0,y:3,angle:180),
           Dancer.fromData(gender:Gender.GIRL,x:0,y:5,angle:180)]),
+        noDisplay: true,
         paths: [
           BackHingeRight.skew(-1, 0),
           HingeLeft.changehands(Hands.BOTH).skew(-1, 0),
@@ -178,6 +180,7 @@ import '../../moves.dart';
           Dancer.fromData(gender:Gender.GIRL,x:0,y:1,angle:0),
           Dancer.fromData(gender:Gender.BOY,x:0,y:3,angle:0),
           Dancer.fromData(gender:Gender.GIRL,x:0,y:5,angle:0)]),
+        noDisplay: true,
         paths: [
           BackHingeLeft.skew(-1, 0),
           HingeRight.changehands(Hands.BOTH).skew(-1, 0),
@@ -192,6 +195,7 @@ import '../../moves.dart';
           Dancer.fromData(gender:Gender.BOY,x:0,y:-1,angle:0),
           Dancer.fromData(gender:Gender.GIRL,x:0,y:-3,angle:0),
           Dancer.fromData(gender:Gender.BOY,x:0,y:-5,angle:0)]),
+        noDisplay: true,
         paths: [
           BackHingeLeft.skew(-1, 0),
           HingeRight.changehands(Hands.BOTH).skew(-1, 0),
@@ -205,13 +209,13 @@ import '../../moves.dart';
       formation:Formation('Tidal Line RH'),
       from:'Tidal Line',difficulty: 2,
       paths:[
-          LeadRight.changeBeats(6).changehands(Hands.GRIPRIGHT).scale(3.0,1.5),
+          LeadRight.changeBeats(6).changehands(Hands.GRIPRIGHT).scale(3.0,2),
 
-          LeadRight.changeBeats(6).changehands(Hands.GRIPBOTH).scale(1.0,0.5),
+          LeadRight.changeBeats(6).changehands(Hands.GRIPBOTH),
 
-          BackHingeLeft.changeBeats(6).changehands(Hands.GRIPBOTH).scale(1.0,0.5),
+          QuarterRight.changeBeats(6).changehands(Hands.GRIPBOTH).skew(-1,0),
 
-          BackHingeLeft.changeBeats(6).changehands(Hands.GRIPLEFT).scale(3.0,1.5)
+          BackHingeLeft.changeBeats(6).changehands(Hands.GRIPLEFT).scale(3,1)
       ]),
 
 
@@ -220,13 +224,13 @@ import '../../moves.dart';
         formation:Formation('Tidal Line LH'),
         from:'Tidal Line LH',difficulty: 2, noDisplay: true,
         paths:[
-          LeadLeft.changeBeats(6).changehands(Hands.GRIPBOTH).scale(1.0,0.5),
+          LeadLeft.changeBeats(6).changehands(Hands.GRIPBOTH),
 
-          LeadLeft.changeBeats(6).changehands(Hands.GRIPLEFT).scale(3.0,1.5),
+          LeadLeft.changeBeats(6).changehands(Hands.GRIPLEFT).scale(3,2),
 
-          BackHingeRight.changeBeats(6).changehands(Hands.GRIPRIGHT).scale(3.0,1.5),
+          BackHingeRight.changeBeats(6).changehands(Hands.GRIPRIGHT).scale(3,1),
 
-          BackHingeRight.changeBeats(6).changehands(Hands.GRIPBOTH).scale(1.0,0.5)
+          QuarterLeft.changeBeats(6).changehands(Hands.GRIPBOTH).skew(-1,0)
         ]),
 
     AnimatedCall('Line of 8 Bend the Line',
@@ -243,21 +247,21 @@ import '../../moves.dart';
         ]),
         from:'Tidal Line One-Faced',difficulty: 2, noDisplay: true,
         paths:[
-          LeadRight.changeBeats(6).changehands(Hands.GRIPRIGHT).scale(3.0,1.5),
+          LeadRight.changeBeats(6).changehands(Hands.GRIPRIGHT).scale(3,2),
 
-          LeadRight.changeBeats(6).changehands(Hands.GRIPBOTH).scale(1.0,0.5),
+          LeadRight.changeBeats(6).changehands(Hands.GRIPBOTH),
 
-          BackHingeLeft.changeBeats(6).changehands(Hands.GRIPBOTH).scale(1.0,0.5),
+          QuarterRight.changeBeats(6).changehands(Hands.GRIPBOTH).skew(-1,0),
 
-          BackHingeLeft.changeBeats(6).changehands(Hands.GRIPLEFT).scale(3.0,1.5),
+          BackHingeLeft.changeBeats(6).changehands(Hands.GRIPLEFT).scale(3,1),
 
-          LeadLeft.changeBeats(6).changehands(Hands.GRIPLEFT).scale(3.0,1.5),
+          LeadLeft.changeBeats(6).changehands(Hands.GRIPLEFT).scale(3,2),
 
-          LeadLeft.changeBeats(6).changehands(Hands.GRIPBOTH).scale(1.0,0.5),
+          LeadLeft.changeBeats(6).changehands(Hands.GRIPBOTH),
 
-          BackHingeRight.changeBeats(6).changehands(Hands.GRIPBOTH).scale(1.0,0.5),
+          QuarterLeft.changeBeats(6).changehands(Hands.GRIPBOTH).skew(-1,0),
 
-          BackHingeRight.changeBeats(6).changehands(Hands.GRIPRIGHT).scale(3.0,1.5)
+          BackHingeRight.changeBeats(6).changehands(Hands.GRIPRIGHT).scale(3,1)
         ]),
 
 
