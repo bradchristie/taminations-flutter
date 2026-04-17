@@ -74,6 +74,7 @@ partnertrade : { title:'Partner Trade', link:'ssd/trade', animation:'PartnerTrad
 tradeby : { title:'Trade By', link:'ssd/trade_by', animation:'TradeByfromTradeBy' },
 boxthegnat : { title:'Box the Gnat', link:'ssd/box_the_gnat', animation:'BoxtheGnatfromFacingCouples' },
 hinge : { title:'Hinge', link:'ssd/hinge', animation:'HingefromRightHandWaves' },
+coupleshinge : { title:'Hinge', link:'ssd/hinge', animation:'CouplesHingefromRightHandTwoFacedLines' },
 touch14 : { title:'Touch 1/4', link:'ssd/touch_a_quarter', animation:'TouchaQuarterfromLines' },
 all8circulate : { title:'All 8 Circulate', link:'ssd/circulate', animation:'All8CirculatefromRightHandWaves' },
 singlefilecirculate : { title:'Single File Circulate', link:'ssd/circulate', animation:'ColumnCirculatefromRightHandColumns' },
