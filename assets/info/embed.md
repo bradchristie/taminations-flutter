@@ -4,7 +4,7 @@
 For website authors, class teachers, and callers,
 you can put any animation or sequence on your website.
 The basic concept is to set up an
-[iframe](https://www.w3schools.com/html/html_iframe.asp"),
+[iframe](https://www.w3schools.com/html/html_iframe.asp),
 link it to a specific animation or sequence,
 and add the parameter "embed".
 That tells Taminations to strip away everything except the

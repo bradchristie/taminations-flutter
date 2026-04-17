@@ -456,6 +456,13 @@ class Formation {
       Dancer.fromData(gender:Gender.BOY,x:-2,y:-3,angle:0),
     ]),
 
+    Formation('Ocean Waves LH BGGB Compact', dancers:[
+      Dancer.fromData(gender:Gender.BOY,x:-1.5,y:3,angle:180),
+      Dancer.fromData(gender:Gender.GIRL,x:-1.5,y:1,angle:0),
+      Dancer.fromData(gender:Gender.GIRL,x:-1.5,y:-1,angle:180),
+      Dancer.fromData(gender:Gender.BOY,x:-1.5,y:-3,angle:0),
+    ]),
+
     Formation('Ocean Waves RH GBBG', dancers:[
       Dancer.fromData(gender:Gender.GIRL,x:-2,y:3,angle:0),
       Dancer.fromData(gender:Gender.BOY,x:-2,y:1,angle:180),
@@ -1014,6 +1021,13 @@ class Formation {
       Dancer.fromData(gender:Gender.GIRL,x:-3,y:-1,angle:0),
       Dancer.fromData(gender:Gender.BOY,x:-1,y:1,angle:180),
       Dancer.fromData(gender:Gender.GIRL,x:-1,y:-1,angle:180),
+    ]),
+
+    Formation('Separated Columns', dancers:[
+      Dancer.fromData(gender:Gender.GIRL,x:-3,y:-3,angle:180),
+      Dancer.fromData(gender:Gender.BOY,x:-1,y:-3,angle:180),
+      Dancer.fromData(gender:Gender.GIRL,x:1,y:-3,angle:180),
+      Dancer.fromData(gender:Gender.BOY,x:3,y:-3,angle:180),
     ]),
 
    Formation('Two-Faced Tidal Line RH', dancers:[

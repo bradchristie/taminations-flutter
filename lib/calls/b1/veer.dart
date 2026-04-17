@@ -46,13 +46,13 @@ import '../../moves.dart';
       formation:Formation('Eight Chain Thru'),
       from:'Eight Chain Thru',difficulty: 1,
       paths:[
-          ExtendLeft.changeBeats(2).changehands(Hands.GRIPRIGHT).scale(1.0,2.0),
+          ExtendLeft.changeBeats(2).changehands(Hands.GRIPRIGHT).scale(1.5,2.0),
 
-          ExtendLeft.changeBeats(2).changehands(Hands.GRIPLEFT).scale(1.0,2.0),
+          ExtendLeft.changeBeats(2).changehands(Hands.GRIPLEFT).scale(1.5,2.0),
 
-          ExtendLeft.changeBeats(2).changehands(Hands.GRIPRIGHT).scale(1.0,2.0),
+          ExtendLeft.changeBeats(2).changehands(Hands.GRIPRIGHT).scale(0.5,2.0),
 
-          ExtendLeft.changeBeats(2).changehands(Hands.GRIPLEFT).scale(1.0,2.0)
+          ExtendLeft.changeBeats(2).changehands(Hands.GRIPLEFT).scale(0.5,2.0)
       ]),
 
     AnimatedCall('Veer Left',

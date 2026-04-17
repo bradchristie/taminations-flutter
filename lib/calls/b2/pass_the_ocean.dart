@@ -49,22 +49,22 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Pass the Ocean',
-      formation:Formation('Normal Lines'),
+      formation:Formation('Normal Lines Compact'),
       from:'Lines',difficulty: 1,
       paths:[
-          ExtendLeft.changeBeats(2).scale(2.0,0.5) +
+          ExtendLeft.changeBeats(2).scale(1.5,0.5) +
           Forward.changeBeats(.5) +
-          LeadRight.scale(2.0,1.5).changeRoll(.NONE),
+          LeadRight.scale(2,2).changeRoll(.NONE),
 
-          ExtendLeft.changeBeats(2).scale(2.0,0.5) +
-          LeadLeft.changeBeats(2).changehands(Hands.LEFT).scale(1.0,0.5).changeRoll(.NONE),
+          ExtendLeft.changeBeats(2).scale(1.5,0.5) +
+          HingeLeft.changeBeats(2).skew(0,-1).changeRoll(.NONE),
 
-          ExtendLeft.changeBeats(2).scale(2.0,0.5) +
+          ExtendLeft.changeBeats(2).scale(1.5,0.5) +
           Forward.changeBeats(.5) +
-          LeadRight.scale(2.0,1.5).changeRoll(.NONE),
+          LeadRight.scale(2,1).changeRoll(.NONE),
 
-          ExtendLeft.changeBeats(2).scale(2.0,0.5) +
-          LeadLeft.changeBeats(2).changehands(Hands.LEFT).scale(1.0,0.5).changeRoll(.NONE)
+          ExtendLeft.changeBeats(2).scale(1.5,0.5) +
+          HingeLeft.changeBeats(2).changeRoll(.NONE)
       ]),
 
     AnimatedCall('Pass the Ocean',

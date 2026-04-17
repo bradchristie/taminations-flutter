@@ -36,20 +36,20 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Pass Thru',
-      formation:Formation('Normal Lines'),
+      formation:Formation('Normal Lines Compact'),
       from:'Lines',difficulty: 1,
       paths:[
-          ExtendLeft.scale(2.0,0.5) +
-          ExtendRight.scale(2.0,0.5),
+          ExtendLeft.scale(1.5,0.5) +
+          ExtendRight.scale(1.5,0.5),
 
-          ExtendLeft.scale(2.0,0.5) +
-          ExtendRight.scale(2.0,0.5),
+          ExtendLeft.scale(1.5,0.5) +
+          ExtendRight.scale(1.5,0.5),
 
-          ExtendLeft.scale(2.0,0.5) +
-          ExtendRight.scale(2.0,0.5),
+          ExtendLeft.scale(1.5,0.5) +
+          ExtendRight.scale(1.5,0.5),
 
-          ExtendLeft.scale(2.0,0.5) +
-          ExtendRight.scale(2.0,0.5)
+          ExtendLeft.scale(1.5,0.5) +
+          ExtendRight.scale(1.5,0.5)
       ]),
 
     AnimatedCall('Pass Thru',

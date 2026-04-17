@@ -47,7 +47,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('U-Turn Back',
-      formation:Formation('Couples Facing Out'),
+      formation:Formation('Couples Facing Out Compact'),
       from:'Couples Facing Out',fractions:'1.5',
         notForSequencer: true,
       paths:[
@@ -57,7 +57,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('U-Turn Back',
-      formation:Formation('Normal Lines'),
+      formation:Formation('Normal Lines Compact'),
       from:'Lines',fractions:'1.5',
         notForSequencer: true,
       paths:[
@@ -71,7 +71,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('U-Turn Back',
-      formation:Formation('Lines Facing Out'),
+      formation:Formation('Lines Facing Out Compact'),
       from:'Lines Facing Out',fractions:'1.5',
         notForSequencer: true,
       paths:[
@@ -85,7 +85,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('U-Turn Back',
-      formation:Formation('Ocean Waves RH BGGB'),
+      formation:Formation('Ocean Waves RH BGGB Compact'),
       from:'Right-Hand Waves',fractions:'1.5',
         notForSequencer: true,
       paths:[
@@ -99,7 +99,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('U-Turn Back',
-      formation:Formation('Ocean Waves LH BGGB'),
+      formation:Formation('Ocean Waves LH BGGB Compact'),
       from:'Left-Hand Waves',fractions:'1.5',
         notForSequencer: true,
       paths:[
@@ -122,7 +122,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Boys Turn Back',
-      formation:Formation('Box RH'),
+      formation:Formation('Box RH Compact'),
       from:'Right-Hand Box',notForSequencer: true,
       paths:[
           UmTurnRight,
@@ -140,7 +140,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Girls Turn Back',
-      formation:Formation('Box RH'),
+      formation:Formation('Box RH Compact'),
       from:'Right-Hand Box',notForSequencer: true,
       paths:[
           Path(),
