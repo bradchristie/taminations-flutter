@@ -25,10 +25,10 @@ import '../../moves.dart';
   final List<AnimatedCall> SwingAndMix = [
 
     AnimatedCall('Swing and Mix',
-      formation:Formation('Facing Couples'),
+      formation:Formation('Facing Couples Compact'),
       from:'Facing Couples',parts:'5;3',
       paths:[
-          ExtendLeft.changeBeats(2).scale(2.0,2.0) +
+          ExtendLeft.changeBeats(2).scale(1.5,2.0) +
           SwingRight +
           RunLeft.scale(1.0,2.0),
 
@@ -63,30 +63,30 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Swing and Mix',
-      formation:Formation('Normal Lines'),
+      formation:Formation('Normal Lines Compact'),
       from:'Lines',parts:'5;3',
       paths:[
-          ExtendLeft.changeBeats(2).scale(2.0,0.5) +
+          ExtendLeft.changeBeats(2).scale(1.5,0.5) +
           SwingRight.scale(0.5,0.5) +
           RunLeft,
 
-          ExtendLeft.changeBeats(2).scale(2.0,0.5) +
+          ExtendLeft.changeBeats(2).scale(1.5,0.5) +
           SwingRight.scale(0.5,0.5) +
           DodgeRight.scale(1.0,0.5) +
           SwingRight.scale(0.5,0.5),
 
-          ExtendLeft.changeBeats(2).scale(2.0,0.5) +
+          ExtendLeft.changeBeats(2).scale(1.5,0.5) +
           SwingRight.scale(0.5,0.5) +
           RunLeft,
 
-          ExtendLeft.changeBeats(2).scale(2.0,0.5) +
+          ExtendLeft.changeBeats(2).scale(1.5,0.5) +
           SwingRight.scale(0.5,0.5) +
           DodgeRight.scale(1.0,0.5) +
           SwingRight.scale(0.5,0.5)
       ]),
 
     AnimatedCall('Swing and Mix',
-      formation:Formation('Ocean Waves RH BGGB'),
+      formation:Formation('Ocean Waves RH BGGB Compact'),
       from:'Right-Hand Waves',parts:'3;3',
       paths:[
           SwingRight +
@@ -105,7 +105,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Swing and Mix',
-      formation:Formation('Ocean Waves LH BGGB'),
+      formation:Formation('Ocean Waves LH BGGB Compact'),
       from:'Left-Hand Waves',parts:'3;3',
       paths:[
           SwingLeft +
@@ -124,11 +124,11 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Swing and Mix',
-      formation:Formation('Inverted Lines Ends Facing In'),
+      formation:Formation('Inverted Lines Ends Facing In Compact'),
       from:'Inverted Lines, Ends Facing In',parts:'3;3',
       paths:[
           SwingRight +
-          RunLeft.scale(1.0,2.0),
+          RunLeft.scale(2.0,2.0),
 
           SwingRight +
           DodgeRight +
@@ -139,7 +139,7 @@ import '../../moves.dart';
           FlipLeft,
 
           SwingLeft +
-          RunRight.scale(2.0,2.0)
+          RunRight.scale(1.0,2.0)
       ]),
 
     AnimatedCall('Swing and Mix',
@@ -147,7 +147,7 @@ import '../../moves.dart';
       from:'Inverted Lines, Ends Facing Out',parts:'3;3',
       paths:[
           SwingLeft +
-          RunRight.scale(2.0,2.0),
+          RunRight.scale(1.0,2.0),
 
           SwingLeft +
           DodgeLeft +
@@ -158,27 +158,27 @@ import '../../moves.dart';
           RunRight,
 
           SwingRight +
-          RunLeft.scale(1.0,2.0)
+          RunLeft.scale(2.0,2.0)
       ]),
 
     AnimatedCall('Swing and Mix',
       formation:Formation('Eight Chain Thru'),
       from:'Eight Chain Thru',parts:'5;3',
       paths:[
-          ExtendLeft.changeBeats(2).scale(1.0,2.0) +
+          ExtendLeft.changeBeats(2).scale(1.5,2.0) +
           SwingRight +
           RunLeft.scale(1.0,2.0),
 
-          Forward.changeBeats(2) +
+          Forward_1p5.changeBeats(2) +
           SwingRight +
           DodgeRight +
           SwingRight,
 
-          ExtendLeft.changeBeats(2).scale(1.0,2.0) +
+          ExtendLeft.changeBeats(2).scale(0.5,2.0) +
           SwingRight +
           RunLeft.scale(1.0,2.0),
 
-          Forward.changeBeats(2) +
+          Forwardp5.changeBeats(2) +
           SwingRight +
           DodgeRight +
           SwingRight
@@ -227,7 +227,8 @@ import '../../moves.dart';
       from:'Tidal Inverted Line',parts:'3;3',
       paths:[
           SwingRight.scale(0.5,0.5) +
-          RunLeft,
+          Forward.changeBeats(.5) +
+          RunLeft.changeBeats(2.5).skew(-1,0),
 
           SwingRight.scale(0.5,0.5) +
           DodgeRight.scale(1.0,0.5) +
@@ -238,8 +239,7 @@ import '../../moves.dart';
           FlipLeft.scale(1.0,0.5),
 
           SwingLeft.scale(0.5,0.5) +
-          Forward.changeBeats(.5) +
-          RunRight.changeBeats(2.5).skew(-1.0,0.0)
+          RunRight
       ]),
 
     AnimatedCall('Swing and Mix',
@@ -247,8 +247,7 @@ import '../../moves.dart';
       from:'Tidal Inverted Line',parts:'3;3',noDisplay: true,
       paths:[
           SwingLeft.scale(0.5,0.5) +
-          Forward.changeBeats(.5) +
-          RunRight.changeBeats(2.5).skew(-1.0,0.0),
+          RunRight,
 
           SwingLeft.scale(0.5,0.5) +
           DodgeLeft.scale(1.0,0.5) +
@@ -259,42 +258,43 @@ import '../../moves.dart';
           RunRight.scale(1.0,0.5),
 
           SwingRight.scale(0.5,0.5) +
-          RunLeft
+          Forward.changeBeats(.5) +
+          RunLeft.changeBeats(2.5).skew(-1.0,0.0),
       ]),
 
     AnimatedCall('Left Swing and Mix',
-      formation:Formation('Facing Couples'),
+      formation:Formation('Facing Couples Compact'),
       from:'Facing Couples',parts:'5;3',
       paths:[
-          Forward_2 +
+          Forward_1p5 +
           SwingLeft +
           DodgeLeft +
           SwingLeft,
 
-          ExtendRight.changeBeats(2).scale(2.0,2.0) +
+          ExtendRight.changeBeats(2).scale(1.5,2.0) +
           SwingLeft +
           RunRight.scale(1.0,2.0)
       ]),
 
     AnimatedCall('Left Swing and Mix',
-      formation:Formation('Normal Lines'),
+      formation:Formation('Normal Lines Compact'),
       from:'Lines',parts:'5;3',
       paths:[
-          ExtendRight.changeBeats(2).scale(2.0,0.5) +
+          ExtendRight.changeBeats(2).scale(1.5,0.5) +
           SwingLeft.scale(0.5,0.5) +
           DodgeLeft.scale(1.0,0.5) +
           SwingLeft.scale(0.5,0.5),
 
-          ExtendRight.changeBeats(2).scale(2.0,0.5) +
+          ExtendRight.changeBeats(2).scale(1.5,0.5) +
           SwingLeft.scale(0.5,0.5) +
           RunRight,
 
-          ExtendRight.changeBeats(2).scale(2.0,0.5) +
+          ExtendRight.changeBeats(2).scale(1.5,0.5) +
           SwingLeft.scale(0.5,0.5) +
           DodgeLeft.scale(1.0,0.5) +
           SwingLeft.scale(0.5,0.5),
 
-          ExtendRight.changeBeats(2).scale(2.0,0.5) +
+          ExtendRight.changeBeats(2).scale(1.5,0.5) +
           SwingLeft.scale(0.5,0.5) +
           RunRight
       ]),
@@ -303,21 +303,21 @@ import '../../moves.dart';
       formation:Formation('Eight Chain Thru'),
       from:'Eight Chain Thru',parts:'5;3',
       paths:[
-          Forward.changeBeats(2) +
+          Forward_1p5.changeBeats(2) +
           SwingLeft +
           DodgeLeft +
           SwingLeft,
 
-          ExtendRight.changeBeats(2).scale(1.0,2.0) +
+          ExtendRight.changeBeats(2).scale(1.5,2.0) +
           SwingLeft +
           RunRight.scale(1.0,2.0),
 
-          Forward.changeBeats(2) +
+          Forwardp5.changeBeats(2) +
           SwingLeft +
           DodgeLeft +
           SwingLeft,
 
-          ExtendRight.changeBeats(2).scale(1.0,2.0) +
+          ExtendRight.changeBeats(2).scale(0.5,2.0) +
           SwingLeft +
           RunRight.scale(1.0,2.0)
       ]),
