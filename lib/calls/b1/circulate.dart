@@ -43,7 +43,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Box Circulate',
-      formation:Formation('Couples Facing Out'),
+      formation:Formation('Couples Facing Out Compact'),
       from:'Couples Facing Out',fractions:'1.5',difficulty: 3,
       paths:[
           FlipLeft,
@@ -123,25 +123,25 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Centers Circulate',
-      formation:Formation('Ocean Waves RH BGGB'),
+      formation:Formation('Ocean Waves RH BGGB Compact'),
       from:'Right-Hand Waves',fractions:'2',difficulty: 1,
       paths:[
           Path(),
 
           RunLeft.changeBeats(4),
 
-          Forward_4,
+          Forward_3.changeBeats(4),
 
           Path()
       ]),
 
     AnimatedCall('Centers Circulate',
-      formation:Formation('Ocean Waves LH BGGB'),
+      formation:Formation('Ocean Waves LH BGGB Compact'),
       from:'Left-Hand Waves',fractions:'2',difficulty: 1,
       paths:[
           Path(),
 
-          Forward_4,
+          Forward_3.changeBeats(4),
 
           RunRight.changeBeats(4),
 
@@ -149,12 +149,12 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Centers Circulate',
-      formation:Formation('Two-Faced Lines RH'),
+      formation:Formation('Two-Faced Lines RH Compact'),
       from:'Two-Faced Lines',fractions:'2',difficulty: 1,
       paths:[
           Path(),
 
-          Forward_4,
+          Forward_3.changeBeats(4),
 
           RunRight.changeBeats(4),
 
@@ -162,10 +162,10 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Ends Circulate',
-      formation:Formation('Ocean Waves RH BGGB'),
+      formation:Formation('Ocean Waves RH BGGB Compact'),
       from:'Right-Hand Waves',fractions:'2',difficulty: 1,
       paths:[
-          Forward_4,
+          Forward_3.changeBeats(4),
 
           Path(),
 
@@ -175,7 +175,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Ends Circulate',
-      formation:Formation('Ocean Waves LH BGGB'),
+      formation:Formation('Ocean Waves LH BGGB Compact'),
       from:'Left-Hand Waves',fractions:'2',difficulty: 1,
       paths:[
           RunLeft.changeBeats(4).scale(2.0,3.0),
@@ -184,14 +184,14 @@ import '../../moves.dart';
 
           Path(),
 
-          Forward_4
+          Forward_3.changeBeats(4)
       ]),
 
     AnimatedCall('Ends Circulate',
-      formation:Formation('Two-Faced Lines RH'),
+      formation:Formation('Two-Faced Lines RH Compact'),
       from:'Two-Faced Lines',fractions:'2',difficulty: 1,
       paths:[
-          Forward_4,
+          Forward_3.changeBeats(4),
 
           Path(),
 
@@ -201,96 +201,96 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('All 8 Circulate',
-      formation:Formation('Ocean Waves RH BGGB'),
+      formation:Formation('Ocean Waves RH BGGB Compact'),
       from:'Right-Hand Waves',fractions:'2',difficulty: 1,
       paths:[
-          Forward_4,
+          Forward_3.changeBeats(4),
 
           RunLeft.changeBeats(4),
 
-          Forward_4,
+          Forward_3.changeBeats(4),
 
           RunRight.changeBeats(4).scale(2.0,3.0)
       ]),
 
     AnimatedCall('All 8 Circulate',
-      formation:Formation('Ocean Waves LH BGGB'),
+      formation:Formation('Ocean Waves LH BGGB Compact'),
       from:'Left-Hand Waves',fractions:'2',difficulty: 1,
       paths:[
           RunLeft.changeBeats(4).scale(2.0,3.0),
 
-          Forward_4,
+          Forward_3.changeBeats(4),
 
           RunRight.changeBeats(4),
 
-          Forward_4
+          Forward_3.changeBeats(4)
       ]),
 
     AnimatedCall('All 8 Circulate',
-      formation:Formation('3 and 1 Lines #1'),
+      formation:Formation('3 and 1 Lines #1 Compact'),
       from:'3 and 1 Lines #1',fractions:'2',difficulty: 2,
       paths:[
           RunLeft.changeBeats(4).scale(2.0,3.0),
 
-          ExtendLeft.changeBeats(2).scale(2.0,0.5) +
-          ExtendRight.changeBeats(2).scale(2.0,0.5),
+          ExtendLeft.changeBeats(2).scale(1.5,0.5) +
+          ExtendRight.changeBeats(2).scale(1.5,0.5),
 
-          ExtendLeft.changeBeats(2).scale(2.0,0.5) +
-          ExtendRight.changeBeats(2).scale(2.0,0.5),
+          ExtendLeft.changeBeats(2).scale(1.5,0.5) +
+          ExtendRight.changeBeats(2).scale(1.5,0.5),
 
-          Forward_4
+          Forward_3.changeBeats(4)
       ]),
 
     AnimatedCall('All 8 Circulate',
-      formation:Formation('3 and 1 Lines #2'),
+      formation:Formation('3 and 1 Lines #2 Compact'),
       from:'3 and 1 Lines #2',fractions:'2',difficulty: 2,
       paths:[
-          ExtendLeft.changeBeats(2).scale(2.0,0.5) +
-          ExtendRight.changeBeats(2).scale(2.0,0.5),
+          ExtendLeft.changeBeats(2).scale(1.5,0.5) +
+          ExtendRight.changeBeats(2).scale(1.5,0.5),
 
           RunLeft.changeBeats(4),
 
-          Forward_4,
+          Forward_3.changeBeats(4),
 
-          ExtendLeft.changeBeats(2).scale(2.0,0.5) +
-          ExtendRight.changeBeats(2).scale(2.0,0.5)
+          ExtendLeft.changeBeats(2).scale(1.5,0.5) +
+          ExtendRight.changeBeats(2).scale(1.5,0.5)
       ]),
 
     AnimatedCall('All 8 Circulate',
-      formation:Formation('3 and 1 Lines #3'),
+      formation:Formation('3 and 1 Lines #3 Compact'),
       from:'3 and 1 Lines #3',fractions:'2',difficulty: 2,
       paths:[
-          ExtendLeft.changeBeats(2).scale(2.0,0.5) +
-          ExtendRight.changeBeats(2).scale(2.0,0.5),
+          ExtendLeft.changeBeats(2).scale(1.5,0.5) +
+          ExtendRight.changeBeats(2).scale(1.5,0.5),
 
-          Forward_4,
+          Forward_3.changeBeats(4),
 
           RunRight.changeBeats(4),
 
-          ExtendLeft.changeBeats(2).scale(2.0,0.5) +
-          ExtendRight.changeBeats(2).scale(2.0,0.5)
+          ExtendLeft.changeBeats(2).scale(1.5,0.5) +
+          ExtendRight.changeBeats(2).scale(1.5,0.5)
       ]),
 
     AnimatedCall('All 8 Circulate',
-      formation:Formation('3 and 1 Lines #4'),
+      formation:Formation('3 and 1 Lines #4 Compact'),
       from:'3 and 1 Lines #4',fractions:'2',difficulty: 2,
       paths:[
-          Forward_4,
+          Forward_3.changeBeats(4),
 
-          ExtendLeft.changeBeats(2).scale(2.0,0.5) +
-          ExtendRight.changeBeats(2).scale(2.0,0.5),
+          ExtendLeft.changeBeats(2).scale(1.5,0.5) +
+          ExtendRight.changeBeats(2).scale(1.5,0.5),
 
-          ExtendLeft.changeBeats(2).scale(2.0,0.5) +
-          ExtendRight.changeBeats(2).scale(2.0,0.5),
+          ExtendLeft.changeBeats(2).scale(1.5,0.5) +
+          ExtendRight.changeBeats(2).scale(1.5,0.5),
 
           RunRight.changeBeats(4).scale(2.0,3.0)
       ]),
 
     AnimatedCall('All 8 Circulate',
-      formation:Formation('3 and 1 Lines #5'),
+      formation:Formation('3 and 1 Lines #5 Compact'),
       from:'3 and 1 Lines #5',fractions:'2',difficulty: 2,
       paths:[
-          Forward_4,
+          Forward_3.changeBeats(4),
 
           FlipLeft.changeBeats(4),
 
@@ -300,12 +300,12 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('All 8 Circulate',
-      formation:Formation('3 and 1 Lines #6'),
+      formation:Formation('3 and 1 Lines #6 Compact'),
       from:'3 and 1 Lines #6',fractions:'2',difficulty: 2,
       paths:[
           RunLeft.changeBeats(4).scale(2.0,3.0),
 
-          Forward_4,
+          Forward_3.changeBeats(4),
 
           RunRight.changeBeats(4),
 
@@ -313,20 +313,20 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('All 8 Circulate',
-      formation:Formation('3 and 1 Lines #7'),
+      formation:Formation('3 and 1 Lines #7 Compact'),
       from:'3 and 1 Lines #7',fractions:'2',difficulty: 2,
       paths:[
           RunLeft.changeBeats(4).scale(2.0,3.0),
 
           RunLeft.changeBeats(4),
 
-          Forward_4,
+          Forward_3.changeBeats(4),
 
           RunRight.changeBeats(4).scale(3.0,3.0)
       ]),
 
     AnimatedCall('All 8 Circulate',
-      formation:Formation('3 and 1 Lines #8'),
+      formation:Formation('3 and 1 Lines #8 Compact'),
       from:'3 and 1 Lines #8',fractions:'2',difficulty: 2,
       paths:[
           RunLeft.changeBeats(4).scale(2.0,3.0),
@@ -335,41 +335,41 @@ import '../../moves.dart';
 
           RunRight.changeBeats(4),
 
-          Forward_4
+          Forward_3.changeBeats(4)
       ]),
 
     AnimatedCall('All 8 Circulate',
-      formation:Formation('Inverted Lines Ends Facing In'),
+      formation:Formation('Inverted Lines Ends Facing In Compact'),
       from:'Inverted Lines, Ends Facing In',difficulty: 2,
       paths:[
-          ExtendLeft.changeBeats(2).scale(2.0,0.5) +
-          ExtendRight.changeBeats(2).scale(2.0,0.5),
+          ExtendLeft.changeBeats(2).scale(1.5,0.5) +
+          ExtendRight.changeBeats(2).scale(1.5,0.5),
 
           FlipLeft.changeBeats(4),
 
           RunRight.changeBeats(4),
 
-          ExtendLeft.changeBeats(2).scale(2.0,0.5) +
-          ExtendRight.changeBeats(2).scale(2.0,0.5)
+          ExtendLeft.changeBeats(2).scale(1.5,0.5) +
+          ExtendRight.changeBeats(2).scale(1.5,0.5)
       ]),
 
     AnimatedCall('All 8 Circulate',
-      formation:Formation('Inverted Lines Ends Facing Out'),
+      formation:Formation('Inverted Lines Ends Facing Out Compact'),
       from:'Inverted Lines, Ends Facing Out',difficulty: 2,
       paths:[
           RunLeft.changeBeats(4).scale(1.5,3.0),
 
-          ExtendLeft.changeBeats(2).scale(2.0,0.5) +
-          ExtendRight.changeBeats(2).scale(2.0,0.5),
+          ExtendLeft.changeBeats(2).scale(1.5,0.5) +
+          ExtendRight.changeBeats(2).scale(1.5,0.5),
 
-          ExtendLeft.changeBeats(2).scale(2.0,0.5) +
-          ExtendRight.changeBeats(2).scale(2.0,0.5),
+          ExtendLeft.changeBeats(2).scale(1.5,0.5) +
+          ExtendRight.changeBeats(2).scale(1.5,0.5),
 
           RunRight.changeBeats(4).scale(2.5,3.0)
       ]),
 
     AnimatedCall('All 8 Circulate',
-      formation:Formation('Lines Facing Out'),
+      formation:Formation('Lines Facing Out Compact'),
       from:'Lines Facing Out',fractions:'2',difficulty: 2,
       taminator: '''
       The result is the same as Couples Trade, but the traffic pattern
@@ -386,20 +386,20 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('All 8 Circulate',
-      formation:Formation('Normal Lines'),
+      formation:Formation('Normal Lines Compact'),
       from:'Lines Facing In',fractions:'2',difficulty: 2,
       paths:[
-          ExtendLeft.changeBeats(2).scale(2.0,0.5) +
-          ExtendRight.changeBeats(2).scale(2.0,0.5),
+          ExtendLeft.changeBeats(2).scale(1.5,0.5) +
+          ExtendRight.changeBeats(2).scale(1.5,0.5),
 
-          ExtendLeft.changeBeats(2).scale(2.0,0.5) +
-          ExtendRight.changeBeats(2).scale(2.0,0.5),
+          ExtendLeft.changeBeats(2).scale(1.5,0.5) +
+          ExtendRight.changeBeats(2).scale(1.5,0.5),
 
-          ExtendLeft.changeBeats(2).scale(2.0,0.5) +
-          ExtendRight.changeBeats(2).scale(2.0,0.5),
+          ExtendLeft.changeBeats(2).scale(1.5,0.5) +
+          ExtendRight.changeBeats(2).scale(1.5,0.5),
 
-          ExtendLeft.changeBeats(2).scale(2.0,0.5) +
-          ExtendRight.changeBeats(2).scale(2.0,0.5)
+          ExtendLeft.changeBeats(2).scale(1.5,0.5) +
+          ExtendRight.changeBeats(2).scale(1.5,0.5)
       ]),
 
     AnimatedCall('All 8 Circulate',
@@ -455,41 +455,41 @@ import '../../moves.dart';
       formation:Formation('Double Pass Thru'),
       from:'Double Pass Thru',noDisplay: true,
       paths:[
-          ExtendLeft.changeBeats(4).scale(1.0,2.0),
+          ExtendLeft.changeBeats(4).scale(1.5,2.0),
 
-          Forward.changeBeats(4),
-
-          ExtendLeft.changeBeats(1.3).scale(1.0,0.5) +
-          ExtendLeft.changeBeats(2.7).scale(2.0,1.5),
+          Forward.changeBeats(4).scale(1.5,1),
 
           ExtendLeft.changeBeats(1.3).scale(1.0,0.5) +
-          ExtendRight.changeBeats(2.7).scale(2.0,0.5)
+          ExtendLeft.changeBeats(2.7).scale(1.5,1.5),
+
+          ExtendLeft.changeBeats(1.3).scale(1.0,0.5) +
+          ExtendRight.changeBeats(2.7).scale(1.5,0.5)
       ]),
 
     AnimatedCall('Split Circulate',
-      formation:Formation('Ocean Waves RH BGGB'),
+      formation:Formation('Ocean Waves RH BGGB Compact'),
       from:'Right-Hand Waves',fractions:'2',difficulty: 1,
       paths:[
-          Forward_4,
+          Forward_3.changeBeats(4),
 
           RunRight.changeBeats(4),
 
-          Forward_4,
+          Forward_3.changeBeats(4),
 
           RunRight.changeBeats(4)
       ]),
 
     AnimatedCall('Split Circulate',
-      formation:Formation('Ocean Waves LH BGGB'),
+      formation:Formation('Ocean Waves LH BGGB Compact'),
       from:'Left-Hand Waves',fractions:'2',difficulty: 2,
       paths:[
           RunLeft.changeBeats(4),
 
-          Forward_4,
+          Forward_3.changeBeats(4),
 
           RunLeft.changeBeats(4),
 
-          Forward_4
+          Forward_3.changeBeats(4)
       ]),
 
     AnimatedCall('Split Circulate',
@@ -519,7 +519,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Split Circulate',
-      formation:Formation('Lines Facing Out'),
+      formation:Formation('Lines Facing Out Compact'),
       from:'Lines Facing Out',fractions:'1.5',difficulty: 3,
       paths:[
           FlipLeft,
@@ -532,20 +532,20 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Split Circulate',
-      formation:Formation('Normal Lines'),
+      formation:Formation('Normal Lines Compact'),
       from:'Lines Facing In',fractions:'2',difficulty: 2,
       paths:[
-          ExtendLeft.changeBeats(2).scale(2.0,0.5) +
-          ExtendRight.changeBeats(2).scale(2.0,0.5),
+          ExtendLeft.changeBeats(2).scale(1.5,0.5) +
+          ExtendRight.changeBeats(2).scale(1.5,0.5),
 
-          ExtendLeft.changeBeats(2).scale(2.0,0.5) +
-          ExtendRight.changeBeats(2).scale(2.0,0.5),
+          ExtendLeft.changeBeats(2).scale(1.5,0.5) +
+          ExtendRight.changeBeats(2).scale(1.5,0.5),
 
-          ExtendLeft.changeBeats(2).scale(2.0,0.5) +
-          ExtendRight.changeBeats(2).scale(2.0,0.5),
+          ExtendLeft.changeBeats(2).scale(1.5,0.5) +
+          ExtendRight.changeBeats(2).scale(1.5,0.5),
 
-          ExtendLeft.changeBeats(2).scale(2.0,0.5) +
-          ExtendRight.changeBeats(2).scale(2.0,0.5)
+          ExtendLeft.changeBeats(2).scale(1.5,0.5) +
+          ExtendRight.changeBeats(2).scale(1.5,0.5)
       ]),
 
     AnimatedCall('Split Circulate',
@@ -596,39 +596,39 @@ import '../../moves.dart';
       formation:Formation('Completed Double Pass Thru'),
       from:'Completed Double Pass Thru',difficulty: 3,
       paths:[
-          FlipLeft.skew(-1.0,0.0),
+          FlipLeft.skew(-1.5,0.0),
 
-          RunRight.scale(1.0,2.0).skew(-1.0,0.0),
+          RunRight.scale(1.0,2.0).skew(-1.5,0.0),
 
-          Forward.changeBeats(3),
+          Forward.changeBeats(3).scale(0.5, 1),
 
-          ExtendLeft.changeBeats(3).scale(1.0,2.0)
+          ExtendLeft.changeBeats(3).scale(0.5,2.0)
       ]),
 
     AnimatedCall('Split Circulate 1 1/2',
-      formation:Formation('Ocean Waves RH BGGB'),
+      formation:Formation('Ocean Waves RH BGGB Compact'),
       from:'Waves',fractions:'2;2',difficulty: 2,
       paths:[
-          Forward_4 +
-          LeadRight,
+          Forward_3.changeBeats(4) +
+          LeadRight.scale(1.5,1),
 
           RunRight.changeBeats(4) +
-          Forward_2,
+          Forward_1p5.changeBeats(2),
 
-          Forward_4 +
-          LeadRight,
+          Forward_3.changeBeats(4) +
+          LeadRight.scale(1.5,1),
 
           RunRight.changeBeats(4) +
-          Forward_2
+          Forward_1p5.changeBeats(2)
       ]),
 
     AnimatedCall('Couples Circulate',
-      formation:Formation('Two-Faced Lines RH'),
+      formation:Formation('Two-Faced Lines RH Compact'),
       from:'Right-Hand Two-Faced Lines',fractions:'2',difficulty: 1,
       paths:[
-          Forward_4.changehands(Hands.RIGHT),
+          Forward_3.changeBeats(4).changehands(Hands.RIGHT),
 
-          Forward_4.changehands(Hands.LEFT),
+          Forward_3.changeBeats(4).changehands(Hands.LEFT),
 
           RunRight.changeBeats(4).changehands(Hands.LEFT),
 
@@ -636,16 +636,16 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Couples Circulate',
-      formation:Formation('Two-Faced Lines LH'),
+      formation:Formation('Two-Faced Lines LH Compact'),
       from:'Left-Hand Two-Faced Lines',fractions:'2',difficulty: 1,
       paths:[
           RunLeft.changeBeats(4).changehands(Hands.LEFT).scale(3.0,3.0),
 
           RunLeft.changeBeats(4).changehands(Hands.RIGHT),
 
-          Forward_4.changehands(Hands.RIGHT),
+          Forward_3.changeBeats(4).changehands(Hands.RIGHT),
 
-          Forward_4.changehands(Hands.LEFT)
+          Forward_3.changeBeats(4).changehands(Hands.LEFT)
       ]),
 
     AnimatedCall('Couples Circulate',

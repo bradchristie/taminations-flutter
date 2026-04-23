@@ -59,7 +59,7 @@ class CallContext {
 
   static var standardFormations = {
     Formation('Normal Lines Compact'): 1.0,
-    Formation('Normal Lines'): 1.0,
+    //Formation('Normal Lines'): 1.0,
     Formation('Double Pass Thru'): 1.0,
     Formation('Quarter Tag') : 1.5,
     Formation('Tidal Line RH') : 1.0,

@@ -42,10 +42,10 @@ import '../../moves.dart';
       from:'Right-Hand Wave',difficulty: 2,
       paths:[
           LeadRight.changeBeats(3).scale(0.5,3.0) +
-          ExtendLeft.changeBeats(2).scale(2.0,0.5),
+          ExtendLeft.changeBeats(2).scale(1.5,0.5),
 
           LeadLeft.changeBeats(3).skew(0.5,0.0) +
-          ExtendLeft.changeBeats(2).scale(2.0,0.5)
+          ExtendLeft.changeBeats(2).scale(1.5,0.5)
       ]),
 
     AnimatedCall('Square Thru 2',
@@ -54,61 +54,61 @@ import '../../moves.dart';
       paths:[
           PullLeft.scale(1.0,0.5) +
           LeadRight.scale(0.5,1.5) +
-          ExtendLeft.changeBeats(2).scale(2.0,0.5),
+          ExtendLeft.changeBeats(2).scale(1.5,0.5),
 
           PullLeft.scale(1.0,0.5) +
           LeadLeft.skew(0.5,-0.5) +
-          ExtendLeft.changeBeats(2).scale(2.0,0.5),
+          ExtendLeft.changeBeats(2).scale(1.5,0.5),
 
           PullLeft.scale(1.0,0.5) +
           LeadRight.scale(0.5,1.5) +
-          ExtendLeft.changeBeats(2).scale(2.0,0.5),
+          ExtendLeft.changeBeats(2).scale(1.5,0.5),
 
           PullLeft.scale(1.0,0.5) +
           LeadLeft.skew(0.5,-0.5) +
-          ExtendLeft.changeBeats(2).scale(2.0,0.5)
+          ExtendLeft.changeBeats(2).scale(1.5,0.5)
       ]),
 
     AnimatedCall('Square Thru 2',
-      formation:Formation('Normal Lines'),
+      formation:Formation('Normal Lines Compact'),
       from:'Lines',difficulty: 1,
       paths:[
-          Forward +
+          Forwardp5 +
           PullLeft.scale(1.0,0.5) +
           LeadRight.scale(0.5,1.5) +
           ExtendLeft.scale(1.0,0.5),
 
-          Forward +
+          Forwardp5 +
           PullLeft.scale(1.0,0.5) +
           LeadLeft.skew(0.5,-0.5) +
           ExtendLeft.scale(1.0,0.5),
 
-          Forward +
+          Forwardp5 +
           PullLeft.scale(1.0,0.5) +
           LeadRight.scale(0.5,1.5) +
           ExtendLeft.scale(1.0,0.5),
 
-          Forward +
+          Forwardp5 +
           PullLeft.scale(1.0,0.5) +
           LeadLeft.skew(0.5,-0.5) +
           ExtendLeft.scale(1.0,0.5)
       ]),
 
     AnimatedCall('Square Thru 2',
-      formation:Formation('Ocean Waves RH BGGB'),
+      formation:Formation('Ocean Waves RH BGGB Compact'),
       from:'Right-Hand Waves',difficulty: 2,
       paths:[
-          LeadRight.changeBeats(3).scale(0.5,3.0) +
-          ExtendLeft.changeBeats(2).scale(2.0,0.5),
+          QuarterRight.changeBeats(3).skew(0,-3) +
+          ExtendLeft.changeBeats(2).scale(1.5,0.5),
 
-          LeadLeft.changeBeats(3).skew(0.5,0.0) +
-          ExtendLeft.changeBeats(2).scale(2.0,0.5),
+          LeadLeft.changeBeats(3).scale(2,1) +
+          ExtendLeft.changeBeats(2).scale(1.5,0.5),
 
-          LeadLeft.changeBeats(3).skew(0.5,0.0) +
-          ExtendLeft.changeBeats(2).scale(2.0,0.5),
+          LeadLeft.changeBeats(3) +
+          ExtendLeft.changeBeats(2).scale(1.5,0.5),
 
-          LeadRight.changeBeats(3).scale(0.5,3.0) +
-          ExtendLeft.changeBeats(2).scale(2.0,0.5)
+          LeadRight.changeBeats(3).scale(1,3) +
+          ExtendLeft.changeBeats(2).scale(1.5,0.5)
       ]),
 
     AnimatedCall('Square Thru 2',
@@ -149,11 +149,11 @@ import '../../moves.dart';
       paths:[
           LeadRight.changeBeats(3).scale(0.5,3.0) +
           LeadRight.skew(0.5,0.5) +
-          ExtendRight.changeBeats(2).scale(2.0,0.5),
+          ExtendRight.changeBeats(2).scale(1.5,0.5),
 
           LeadLeft.changeBeats(3).skew(0.5,0.0) +
           LeadLeft.scale(0.5,1.5) +
-          ExtendRight.changeBeats(2).scale(2.0,0.5)
+          ExtendRight.changeBeats(2).scale(1.5,0.5)
       ]),
 
     AnimatedCall('Square Thru 3',
@@ -182,51 +182,51 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Square Thru 3',
-      formation:Formation('Normal Lines'),
+      formation:Formation('Normal Lines Compact'),
       from:'Lines',difficulty: 1,
       paths:[
-          Forward +
+          Forwardp5 +
           PullLeft.scale(1.0,0.5) +
           LeadRight.scale(0.5,1.5) +
           LeadRight.skew(0.5,0.5) +
-          ExtendRight.changeBeats(2).scale(2.0,0.5),
+          ExtendRight.changeBeats(2).scale(1.5,0.5),
 
-          Forward +
+          Forwardp5 +
           PullLeft.scale(1.0,0.5) +
           LeadLeft.skew(0.5,-0.5) +
           LeadLeft.scale(0.5,1.5) +
-          ExtendRight.changeBeats(2).scale(2.0,0.5),
+          ExtendRight.changeBeats(2).scale(1.5,0.5),
 
-          Forward +
+          Forwardp5 +
           PullLeft.scale(1.0,0.5) +
           LeadRight.scale(0.5,1.5) +
           LeadRight.skew(0.5,0.5) +
-          ExtendRight.changeBeats(2).scale(2.0,0.5),
+          ExtendRight.changeBeats(2).scale(1.5,0.5),
 
-          Forward +
+          Forwardp5 +
           PullLeft.scale(1.0,0.5) +
           LeadLeft.skew(0.5,-0.5) +
           LeadLeft.scale(0.5,1.5) +
-          ExtendRight.changeBeats(2).scale(2.0,0.5)
+          ExtendRight.changeBeats(2).scale(1.5,0.5)
       ]),
 
     AnimatedCall('Square Thru 3',
-      formation:Formation('Ocean Waves RH BGGB'),
+      formation:Formation('Ocean Waves RH BGGB Compact'),
       from:'Right-Hand Waves',difficulty: 2,
       paths:[
-          LeadRight.changeBeats(3).scale(0.5,3.0) +
+          QuarterRight.changeBeats(3).skew(0,-3) +
           LeadRight.skew(0.5,0.5) +
           ExtendRight.scale(1.0,0.5),
 
-          LeadLeft.changeBeats(3).skew(0.5,0.0) +
+          LeadLeft.changeBeats(3).skew(1,0) +
           LeadLeft.scale(0.5,1.5) +
           ExtendRight.scale(1.0,0.5),
 
-          LeadLeft.changeBeats(3).skew(0.5,0.0) +
+          LeadLeft.changeBeats(3) +
           LeadLeft.scale(0.5,1.5) +
           ExtendRight.scale(1.0,0.5),
 
-          LeadRight.changeBeats(3).scale(0.5,3.0) +
+          LeadRight.changeBeats(3).scale(1,3) +
           LeadRight.skew(0.5,0.5) +
           ExtendRight.scale(1.0,0.5)
       ]),
@@ -276,12 +276,12 @@ import '../../moves.dart';
           LeadRight.changeBeats(3).scale(0.5,3.0) +
           LeadRight.skew(0.5,0.5) +
           LeadRight.scale(0.5,1.5) +
-          ExtendLeft.changeBeats(2).scale(2.0,0.5),
+          ExtendLeft.changeBeats(2).scale(1.5,0.5),
 
           LeadLeft.changeBeats(3).skew(0.5,0.0) +
           LeadLeft.scale(0.5,1.5) +
           LeadLeft.skew(0.5,-0.5) +
-          ExtendLeft.changeBeats(2).scale(2.0,0.5)
+          ExtendLeft.changeBeats(2).scale(1.5,0.5)
       ]),
 
     AnimatedCall('Square Thru 4',
@@ -292,53 +292,53 @@ import '../../moves.dart';
           LeadRight.scale(0.5,1.5) +
           LeadRight.skew(0.5,0.5) +
           LeadRight.scale(0.5,1.5) +
-          ExtendLeft.changeBeats(2).scale(2.0,0.5),
+          ExtendLeft.changeBeats(2).scale(1.5,0.5),
 
           PullLeft.scale(1.0,0.5) +
           LeadLeft.skew(0.5,-0.5) +
           LeadLeft.scale(0.5,1.5) +
           LeadLeft.skew(0.5,-0.5) +
-          ExtendLeft.changeBeats(2).scale(2.0,0.5),
+          ExtendLeft.changeBeats(2).scale(1.5,0.5),
 
           PullLeft.scale(1.0,0.5) +
           LeadRight.scale(0.5,1.5) +
           LeadRight.skew(0.5,0.5) +
           LeadRight.scale(0.5,1.5) +
-          ExtendLeft.changeBeats(2).scale(2.0,0.5),
+          ExtendLeft.changeBeats(2).scale(1.5,0.5),
 
           PullLeft.scale(1.0,0.5) +
           LeadLeft.skew(0.5,-0.5) +
           LeadLeft.scale(0.5,1.5) +
           LeadLeft.skew(0.5,-0.5) +
-          ExtendLeft.changeBeats(2).scale(2.0,0.5)
+          ExtendLeft.changeBeats(2).scale(1.5,0.5)
       ]),
 
     AnimatedCall('Square Thru 4',
-      formation:Formation('Normal Lines'),
+      formation:Formation('Normal Lines Compact'),
       from:'Lines',difficulty: 1,
       paths:[
-          Forward +
+          Forwardp5 +
           PullLeft.scale(1.0,0.5) +
           LeadRight.scale(0.5,1.5) +
           LeadRight.skew(0.5,0.5) +
           LeadRight.scale(0.5,1.5) +
           ExtendLeft.scale(1.0,0.5),
 
-          Forward +
+          Forwardp5 +
           PullLeft.scale(1.0,0.5) +
           LeadLeft.skew(0.5,-0.5) +
           LeadLeft.scale(0.5,1.5) +
           LeadLeft.skew(0.5,-0.5) +
           ExtendLeft.scale(1.0,0.5),
 
-          Forward +
+          Forwardp5 +
           PullLeft.scale(1.0,0.5) +
           LeadRight.scale(0.5,1.5) +
           LeadRight.skew(0.5,0.5) +
           LeadRight.scale(0.5,1.5) +
           ExtendLeft.scale(1.0,0.5),
 
-          Forward +
+          Forwardp5 +
           PullLeft.scale(1.0,0.5) +
           LeadLeft.skew(0.5,-0.5) +
           LeadLeft.scale(0.5,1.5) +
@@ -347,28 +347,28 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Square Thru 4',
-      formation:Formation('Ocean Waves RH BGGB'),
+      formation:Formation('Ocean Waves RH BGGB Compact'),
       from:'Right-Hand Waves',difficulty: 2,
       paths:[
-          LeadRight.changeBeats(3).scale(0.5,3.0) +
+          QuarterRight.changeBeats(3).skew(0,-3) +
           LeadRight.skew(0.5,0.5) +
           LeadRight.scale(0.5,1.5) +
-          ExtendLeft.changeBeats(2).scale(2.0,0.5),
+          ExtendLeft.changeBeats(2).scale(1.5,0.5),
 
-          LeadLeft.changeBeats(3).skew(0.5,0.0) +
+          LeadLeft.changeBeats(3).scale(2,1) +
           LeadLeft.scale(0.5,1.5) +
           LeadLeft.skew(0.5,-0.5) +
-          ExtendLeft.changeBeats(2).scale(2.0,0.5),
+          ExtendLeft.changeBeats(2).scale(1.5,0.5),
 
-          LeadLeft.changeBeats(3).skew(0.5,0.0) +
+          LeadLeft.changeBeats(3) +
           LeadLeft.scale(0.5,1.5) +
           LeadLeft.skew(0.5,-0.5) +
-          ExtendLeft.changeBeats(2).scale(2.0,0.5),
+          ExtendLeft.changeBeats(2).scale(1.5,0.5),
 
-          LeadRight.changeBeats(3).scale(0.5,3.0) +
+          LeadRight.changeBeats(3).scale(1,3) +
           LeadRight.skew(0.5,0.5) +
           LeadRight.scale(0.5,1.5) +
-          ExtendLeft.changeBeats(2).scale(2.0,0.5)
+          ExtendLeft.changeBeats(2).scale(1.5,0.5)
       ]),
 
     AnimatedCall('Square Thru 4',
@@ -422,12 +422,12 @@ import '../../moves.dart';
           LeadLeft.changeBeats(3).scale(0.5,3.0) +
           LeadLeft.skew(0.5,-0.5) +
           LeadLeft.scale(0.5,1.5) +
-          ExtendRight.changeBeats(2).scale(2.0,0.5),
+          ExtendRight.changeBeats(2).scale(1.5,0.5),
 
           LeadRight.changeBeats(3).skew(0.5,0.0) +
           LeadRight.scale(0.5,1.5) +
           LeadRight.skew(0.5,0.5) +
-          ExtendRight.changeBeats(2).scale(2.0,0.5)
+          ExtendRight.changeBeats(2).scale(1.5,0.5)
       ]),
 
     AnimatedCall('Left Square Thru 4',
@@ -438,53 +438,53 @@ import '../../moves.dart';
           LeadRight.skew(0.5,0.5) +
           LeadRight.scale(0.5,1.5) +
           LeadRight.skew(0.5,0.5) +
-          ExtendRight.changeBeats(2).scale(2.0,0.5),
+          ExtendRight.changeBeats(2).scale(1.5,0.5),
 
           PullRight.scale(1.0,0.5) +
           LeadLeft.scale(0.5,1.5) +
           LeadLeft.skew(0.5,-0.5) +
           LeadLeft.scale(0.5,1.5) +
-          ExtendRight.changeBeats(2).scale(2.0,0.5),
+          ExtendRight.changeBeats(2).scale(1.5,0.5),
 
           PullRight.scale(1.0,0.5) +
           LeadRight.skew(0.5,0.5) +
           LeadRight.scale(0.5,1.5) +
           LeadRight.skew(0.5,0.5) +
-          ExtendRight.changeBeats(2).scale(2.0,0.5),
+          ExtendRight.changeBeats(2).scale(1.5,0.5),
 
           PullRight.scale(1.0,0.5) +
           LeadLeft.scale(0.5,1.5) +
           LeadLeft.skew(0.5,-0.5) +
           LeadLeft.scale(0.5,1.5) +
-          ExtendRight.changeBeats(2).scale(2.0,0.5)
+          ExtendRight.changeBeats(2).scale(1.5,0.5)
       ]),
 
     AnimatedCall('Left Square Thru 4',
-      formation:Formation('Normal Lines'),
+      formation:Formation('Normal Lines Compact'),
       from:'Lines',difficulty: 2,noDisplay: true,
       paths:[
-          Forward +
+          Forwardp5 +
           PullRight.scale(1.0,0.5) +
           LeadRight.skew(0.5,0.5) +
           LeadRight.scale(0.5,1.5) +
           LeadRight.skew(0.5,0.5) +
           ExtendRight.scale(1.0,0.5),
 
-          Forward +
+          Forwardp5 +
           PullRight.scale(1.0,0.5) +
           LeadLeft.scale(0.5,1.5) +
           LeadLeft.skew(0.5,-0.5) +
           LeadLeft.scale(0.5,1.5) +
           ExtendRight.scale(1.0,0.5),
 
-          Forward +
+          Forwardp5 +
           PullRight.scale(1.0,0.5) +
           LeadRight.skew(0.5,0.5) +
           LeadRight.scale(0.5,1.5) +
           LeadRight.skew(0.5,0.5) +
           ExtendRight.scale(1.0,0.5),
 
-          Forward +
+          Forwardp5 +
           PullRight.scale(1.0,0.5) +
           LeadLeft.scale(0.5,1.5) +
           LeadLeft.skew(0.5,-0.5) +
@@ -515,11 +515,11 @@ import '../../moves.dart';
       paths:[
           LeadLeft.changeBeats(3).scale(0.5,3.0) +
           LeadLeft.skew(0.5,-0.5) +
-          LeadLeft.scale(3.0,1.5),
+          LeadLeft.scale(1.0,1.5),
 
           LeadRight.changeBeats(3).skew(0.5,0.0) +
           LeadRight.scale(0.5,1.5) +
-          LeadRight.skew(0.0,0.5)
+          LeadRight.scale(3,0.5)
       ]),
 
     AnimatedCall('Left Square Thru 3 1/2',
@@ -548,32 +548,32 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left Square Thru 3 1/2',
-      formation:Formation('Normal Lines'),
+      formation:Formation('Normal Lines Compact'),
       from:'Lines',difficulty: 2,noDisplay: true,
       paths:[
-          Forward +
+          Forwardp5 +
           PullRight.scale(1.0,0.5) +
           LeadRight.skew(0.5,0.5) +
           LeadRight.scale(0.5,1.5) +
-          LeadRight.scale(3.0,1.0).skew(0.0,0.5),
+          QuarterRight.skew(3,0),
 
-          Forward +
+          Forwardp5 +
           PullRight.scale(1.0,0.5) +
           LeadLeft.scale(0.5,1.5) +
           LeadLeft.skew(0.5,-0.5) +
-          LeadLeft.scale(1.0,1.5),
+          LeadLeft.scale(1,2),
 
-          Forward +
+          Forwardp5 +
           PullRight.scale(1.0,0.5) +
           LeadRight.skew(0.5,0.5) +
           LeadRight.scale(0.5,1.5) +
-          LeadRight.scale(3.0,1.0).skew(0.0,0.5),
+          LeadRight.scale(3,1),
 
-          Forward +
+          Forwardp5 +
           PullRight.scale(1.0,0.5) +
           LeadLeft.scale(0.5,1.5) +
           LeadLeft.skew(0.5,-0.5) +
-          LeadLeft.scale(1.0,1.5)
+          LeadLeft
       ]),
 
     AnimatedCall('Left Square Thru 3',
@@ -632,32 +632,32 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left Square Thru 3',
-      formation:Formation('Normal Lines'),
+      formation:Formation('Normal Lines Compact'),
       from:'Lines',difficulty: 2,noDisplay: true,
       paths:[
-          Forward +
+          Forwardp5 +
           PullRight.scale(1.0,0.5) +
           LeadRight.skew(0.5,0.5) +
           LeadRight.scale(0.5,1.5) +
-          ExtendLeft.changeBeats(2).scale(2.0,0.5),
+          ExtendLeft.changeBeats(2).scale(1.5,0.5),
 
-          Forward +
+          Forwardp5 +
           PullRight.scale(1.0,0.5) +
           LeadLeft.scale(0.5,1.5) +
           LeadLeft.skew(0.5,-0.5) +
-          ExtendLeft.changeBeats(2).scale(2.0,0.5),
+          ExtendLeft.changeBeats(2).scale(1.5,0.5),
 
-          Forward +
+          Forwardp5 +
           PullRight.scale(1.0,0.5) +
           LeadRight.skew(0.5,0.5) +
           LeadRight.scale(0.5,1.5) +
-          ExtendLeft.changeBeats(2).scale(2.0,0.5),
+          ExtendLeft.changeBeats(2).scale(1.5,0.5),
 
-          Forward +
+          Forwardp5 +
           PullRight.scale(1.0,0.5) +
           LeadLeft.scale(0.5,1.5) +
           LeadLeft.skew(0.5,-0.5) +
-          ExtendLeft.changeBeats(2).scale(2.0,0.5)
+          ExtendLeft.changeBeats(2).scale(1.5,0.5)
       ]),
 
     AnimatedCall('Left Square Thru 2 1/2',
@@ -667,12 +667,12 @@ import '../../moves.dart';
           Forward.scale(0.5,1.0) +
           PullRight.scale(1.0,0.5) +
           LeadRight.skew(0.5,0.5) +
-          LeadRight.scale(3.0,1.5),
+          LeadRight.scale(1.0,1.5),
 
           Forward.scale(0.5,1.0) +
           PullRight.scale(1.0,0.5) +
           LeadLeft.scale(0.5,1.5) +
-          LeadLeft.skew(0.0,-0.5)
+          LeadLeft.scale(3,0.5)
       ]),
 
     AnimatedCall('Left Square Thru 2 1/2',
@@ -680,10 +680,10 @@ import '../../moves.dart';
       from:'Left-Hand Wave',difficulty: 2,noDisplay: true,
       paths:[
           LeadLeft.changeBeats(3).scale(0.5,3.0) +
-          LeadLeft.skew(0.0,-0.5),
+          LeadLeft.scale(3,0.5),
 
           LeadRight.changeBeats(3).skew(0.5,0.0) +
-          LeadRight.scale(3.0,1.5)
+          LeadRight.scale(1.0,1.5)
       ]),
 
     AnimatedCall('Left Square Thru 2 1/2',
@@ -692,41 +692,41 @@ import '../../moves.dart';
       paths:[
           PullRight.scale(1.0,0.5) +
           LeadRight.skew(0.5,0.5) +
-          LeadRight.scale(3.0,1.5),
+          LeadRight,
 
           PullRight.scale(1.0,0.5) +
           LeadLeft.scale(0.5,1.5) +
-          LeadLeft.skew(0.0,-0.5),
+          QuarterLeft.skew(3,0),
 
           PullRight.scale(1.0,0.5) +
           LeadRight.skew(0.5,0.5) +
-          LeadRight.scale(3.0,1.5),
+          LeadRight.scale(1,2),
 
           PullRight.scale(1.0,0.5) +
           LeadLeft.scale(0.5,1.5) +
-          LeadLeft.skew(0.0,-0.5)
+          LeadLeft.scale(3,1)
       ]),
 
     AnimatedCall('Left Square Thru 2 1/2',
-      formation:Formation('Normal Lines'),
+      formation:Formation('Normal Lines Compact'),
       from:'Lines',difficulty: 2,noDisplay: true,
       paths:[
-          Forward +
+          Forwardp5 +
           PullRight.scale(1.0,0.5) +
           LeadRight.skew(0.5,0.5) +
           LeadRight.scale(0.5,1.5),
 
-          Forward +
+          Forwardp5 +
           PullRight.scale(1.0,0.5) +
           LeadLeft.scale(0.5,1.5) +
           LeadLeft.skew(0.5,-0.5),
 
-          Forward +
+          Forwardp5 +
           PullRight.scale(1.0,0.5) +
           LeadRight.skew(0.5,0.5) +
           LeadRight.scale(0.5,1.5),
 
-          Forward +
+          Forwardp5 +
           PullRight.scale(1.0,0.5) +
           LeadLeft.scale(0.5,1.5) +
           LeadLeft.skew(0.5,-0.5)
@@ -752,10 +752,10 @@ import '../../moves.dart';
       from:'Left-Hand Wave',difficulty: 2,noDisplay: true,
       paths:[
           LeadLeft.changeBeats(3).scale(0.5,3.0) +
-          ExtendRight.changeBeats(2).scale(2.0,0.5),
+          ExtendRight.changeBeats(2).scale(1.5,0.5),
 
           LeadRight.changeBeats(3).skew(0.5,0.0) +
-          ExtendRight.changeBeats(2).scale(2.0,0.5)
+          ExtendRight.changeBeats(2).scale(1.5,0.5)
       ]),
 
     AnimatedCall('Left Square Thru 2',
@@ -764,41 +764,41 @@ import '../../moves.dart';
       paths:[
           PullRight.scale(1.0,0.5) +
           LeadRight.skew(0.5,0.5) +
-          ExtendRight.changeBeats(2).scale(2.0,0.5),
+          ExtendRight.changeBeats(2).scale(1.5,0.5),
 
           PullRight.scale(1.0,0.5) +
           LeadLeft.scale(0.5,1.5) +
-          ExtendRight.changeBeats(2).scale(2.0,0.5),
+          ExtendRight.changeBeats(2).scale(1.5,0.5),
 
           PullRight.scale(1.0,0.5) +
           LeadRight.skew(0.5,0.5) +
-          ExtendRight.changeBeats(2).scale(2.0,0.5),
+          ExtendRight.changeBeats(2).scale(1.5,0.5),
 
           PullRight.scale(1.0,0.5) +
           LeadLeft.scale(0.5,1.5) +
-          ExtendRight.changeBeats(2).scale(2.0,0.5)
+          ExtendRight.changeBeats(2).scale(1.5,0.5)
       ]),
 
     AnimatedCall('Left Square Thru 2',
-      formation:Formation('Normal Lines'),
+      formation:Formation('Normal Lines Compact'),
       from:'Lines',difficulty: 2,noDisplay: true,
       paths:[
-          Forward +
+          Forwardp5 +
           PullRight.scale(1.0,0.5) +
           LeadRight.skew(0.5,0.5) +
           ExtendRight.scale(1.0,0.5),
 
-          Forward +
+          Forwardp5 +
           PullRight.scale(1.0,0.5) +
           LeadLeft.scale(0.5,1.5) +
           ExtendRight.scale(1.0,0.5),
 
-          Forward +
+          Forwardp5 +
           PullRight.scale(1.0,0.5) +
           LeadRight.skew(0.5,0.5) +
           ExtendRight.scale(1.0,0.5),
 
-          Forward +
+          Forwardp5 +
           PullRight.scale(1.0,0.5) +
           LeadLeft.scale(0.5,1.5) +
           ExtendRight.scale(1.0,0.5)
@@ -844,24 +844,24 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left Square Thru 1 1/2',
-      formation:Formation('Normal Lines'),
+      formation:Formation('Normal Lines Compact'),
       from:'Lines',difficulty: 2,noDisplay: true,
       paths:[
-          Forward +
+          Forwardp5 +
           PullRight.scale(1.0,0.5) +
-          LeadRight.scale(3.0,1.0).skew(0.0,0.5),
+          LeadRight.scale(3.0,1.0),
 
-          Forward +
+          Forwardp5 +
           PullRight.scale(1.0,0.5) +
-          LeadLeft.scale(1.0,1.5),
+          LeadLeft,
 
-          Forward +
+          Forwardp5 +
           PullRight.scale(1.0,0.5) +
-          LeadRight.scale(3.0,1.0).skew(0.0,0.5),
+          QuarterRight.skew(3,0),
 
-          Forward +
+          Forwardp5 +
           PullRight.scale(1.0,0.5) +
-          LeadLeft.scale(1.0,1.5)
+          LeadLeft.scale(1,2)
       ]),
 
     AnimatedCall('Heads Square Thru 2',
@@ -1097,50 +1097,50 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Square Thru 1 1/2',
-      formation:Formation('Normal Lines'),
+      formation:Formation('Normal Lines Compact'),
       from:'Lines',difficulty: 2,
       paths:[
-          Forward +
+          Forwardp5 +
           PullLeft.scale(1.0,0.5) +
-          LeadRight.scale(0.5,1.5),
+          LeadRight.scale(1,2),
 
-          Forward +
+          Forwardp5 +
           PullLeft.scale(1.0,0.5) +
-          LeadLeft.skew(0.5,-0.5),
+          QuarterLeft.skew(3,0),
 
-          Forward +
-          PullLeft.scale(1.0,0.5) +
-          LeadRight.scale(0.5,1.5),
+          Forwardp5 +
+          PullLeft.scale(1,0.5) +
+          LeadRight.scale(1,2),
 
-          Forward +
+          Forwardp5 +
           PullLeft.scale(1.0,0.5) +
-          LeadLeft.skew(0.5,-0.5)
+          LeadLeft.scale(3,1)
       ]),
 
     AnimatedCall('Square Thru 1 1/2',
-      formation:Formation('Ocean Waves RH BGGB'),
+      formation:Formation('Ocean Waves RH BGGB Compact'),
       from:'Right-Hand Waves',difficulty: 3,
       paths:[
-          LeadRight.changeBeats(3).scale(0.5,3.0),
+          QuarterRight.changeBeats(3).skew(0,-3),
 
-          LeadLeft.changeBeats(3).skew(0.5,0.0),
+          LeadLeft.changeBeats(3).scale(2,1),
 
-          LeadLeft.changeBeats(3).skew(0.5,0.0),
+          LeadLeft.changeBeats(3),
 
-          LeadRight.changeBeats(3).scale(0.5,3.0)
+          LeadRight.changeBeats(3).scale(1,3)
       ]),
 
     AnimatedCall('Square Thru 1 1/2',
       formation:Formation('Tidal Wave RH BGGB'),
       from:'Right-Hand Tidal Wave',difficulty: 3,
       paths:[
-          LeadRight.changeBeats(2).scale(0.5,1.5),
+          LeadRight.changeBeats(2).scale(1,2),
 
-          LeadLeft.changeBeats(2).scale(1.0,0.5).skew(0.5,0.0),
+          LeadLeft.changeBeats(2).scale(3,1),
 
-          LeadLeft.changeBeats(2).scale(1.0,0.5).skew(0.5,0.0),
+          QuarterLeft.changeBeats(2).skew(3,0),
 
-          LeadRight.changeBeats(2).scale(0.5,1.5)
+          LeadRight.changeBeats(2)
       ]),
 
     AnimatedCall('Square Thru 2 1/2',
@@ -1150,12 +1150,12 @@ import '../../moves.dart';
           Forward.scale(0.5,1.0) +
           PullLeft.scale(1.0,0.5) +
           LeadRight.scale(0.5,1.5) +
-          LeadRight.skew(0.5,0.5),
+          LeadRight.scale(3,0.5),
 
           Forward.scale(0.5,1.0) +
           PullLeft.scale(1.0,0.5) +
           LeadLeft.skew(0.5,-0.5) +
-          LeadLeft.scale(0.5,1.5)
+          LeadLeft.scale(1,1.5)
       ]),
 
     AnimatedCall('Square Thru 2 1/2',
@@ -1163,10 +1163,10 @@ import '../../moves.dart';
       from:'Right-Hand Wave',difficulty: 3,
       paths:[
           LeadRight.changeBeats(3).scale(0.5,3.0) +
-          LeadRight.skew(0.5,0.5),
+          LeadRight.scale(3,0.5),
 
           LeadLeft.changeBeats(3).skew(0.5,0.0) +
-          LeadLeft.scale(0.5,1.5)
+          LeadLeft.scale(1,1.5)
       ]),
 
     AnimatedCall('Square Thru 2 1/2',
@@ -1175,61 +1175,61 @@ import '../../moves.dart';
       paths:[
           PullLeft.scale(1.0,0.5) +
           LeadRight.scale(0.5,1.5) +
-          LeadRight.skew(0.5,0.5),
+          QuarterRight.skew(3,0),
 
           PullLeft.scale(1.0,0.5) +
           LeadLeft.skew(0.5,-0.5) +
-          LeadLeft.scale(0.5,1.5),
+          LeadLeft,
 
           PullLeft.scale(1.0,0.5) +
           LeadRight.scale(0.5,1.5) +
-          LeadRight.skew(0.5,0.5),
+          LeadRight.scale(3,1),
 
           PullLeft.scale(1.0,0.5) +
           LeadLeft.skew(0.5,-0.5) +
-          LeadLeft.scale(0.5,1.5)
+          LeadLeft.scale(1,2)
       ]),
 
     AnimatedCall('Square Thru 2 1/2',
-      formation:Formation('Normal Lines'),
+      formation:Formation('Normal Lines Compact'),
       from:'Lines',difficulty: 2,
       paths:[
-          Forward +
+          Forwardp5 +
           PullLeft.scale(1.0,0.5) +
           LeadRight.scale(0.5,1.5) +
           LeadRight.skew(0.5,0.5),
 
-          Forward +
+          Forwardp5 +
           PullLeft.scale(1.0,0.5) +
           LeadLeft.skew(0.5,-0.5) +
           LeadLeft.scale(0.5,1.5),
 
-          Forward +
+          Forwardp5 +
           PullLeft.scale(1.0,0.5) +
           LeadRight.scale(0.5,1.5) +
           LeadRight.skew(0.5,0.5),
 
-          Forward +
+          Forwardp5 +
           PullLeft.scale(1.0,0.5) +
           LeadLeft.skew(0.5,-0.5) +
           LeadLeft.scale(0.5,1.5)
       ]),
 
     AnimatedCall('Square Thru 2 1/2',
-      formation:Formation('Ocean Waves RH BGGB'),
+      formation:Formation('Ocean Waves RH BGGB Compact'),
       from:'Right-Hand Waves',difficulty: 3,
       paths:[
-          LeadRight.changeBeats(3).scale(0.5,3.0) +
-          LeadRight.skew(0.5,0.5),
+          QuarterRight.changeBeats(2).skew(0,-3) +
+          QuarterRight.changeBeats(2).skew(3,0),
 
-          LeadLeft.changeBeats(3).skew(0.5,0.0) +
-          LeadLeft.scale(0.5,1.5),
+          LeadLeft.changeBeats(2).scale(2,1) +
+          LeadLeft.changeBeats(2).scale(1,2),
 
-          LeadLeft.changeBeats(3).skew(0.5,0.0) +
-          LeadLeft.scale(0.5,1.5),
+          LeadLeft.changeBeats(2) +
+          LeadLeft.changeBeats(2),
 
-          LeadRight.changeBeats(3).scale(0.5,3.0) +
-          LeadRight.skew(0.5,0.5)
+          LeadRight.changeBeats(2).scale(1,3) +
+          LeadRight.changeBeats(2).scale(3,1)
       ]),
 
     AnimatedCall('Square Thru 2 1/2',
@@ -1257,13 +1257,13 @@ import '../../moves.dart';
           PullLeft.scale(1.0,0.5) +
           LeadRight.scale(0.5,1.5) +
           LeadRight.skew(0.5,0.5) +
-          LeadRight.scale(0.5,1.5),
+          LeadRight.scale(1,1.5),
 
           Forward.scale(0.5,1.0) +
           PullLeft.scale(1.0,0.5) +
           LeadLeft.skew(0.5,-0.5) +
           LeadLeft.scale(0.5,1.5) +
-          LeadLeft.skew(0.5,-0.5)
+          LeadLeft.scale(3,0.5)
       ]),
 
     AnimatedCall('Square Thru 3 1/2',
@@ -1272,11 +1272,11 @@ import '../../moves.dart';
       paths:[
           LeadRight.changeBeats(3).scale(0.5,3.0) +
           LeadRight.skew(0.5,0.5) +
-          LeadRight.scale(0.5,1.5),
+          LeadRight.scale(1,1.5),
 
           LeadLeft.changeBeats(3).skew(0.5,0.0) +
           LeadLeft.scale(0.5,1.5) +
-          LeadLeft.skew(0.5,-0.5)
+          LeadLeft.scale(3,0.5)
       ]),
 
     AnimatedCall('Square Thru 3 1/2',
@@ -1305,51 +1305,51 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Square Thru 3 1/2',
-      formation:Formation('Normal Lines'),
+      formation:Formation('Normal Lines Compact'),
       from:'Lines',difficulty: 2,
       paths:[
-          Forward +
+          Forwardp5 +
           PullLeft.scale(1.0,0.5) +
           LeadRight.scale(0.5,1.5) +
           LeadRight.skew(0.5,0.5) +
-          LeadRight.scale(0.5,1.5),
+          LeadRight,
 
-          Forward +
+          Forwardp5 +
           PullLeft.scale(1.0,0.5) +
           LeadLeft.skew(0.5,-0.5) +
           LeadLeft.scale(0.5,1.5) +
-          LeadLeft.skew(0.5,-0.5),
+          LeadLeft.scale(3,1),
 
-          Forward +
+          Forwardp5 +
           PullLeft.scale(1.0,0.5) +
           LeadRight.scale(0.5,1.5) +
           LeadRight.skew(0.5,0.5) +
-          LeadRight.scale(0.5,1.5),
+          LeadRight.scale(1,2),
 
-          Forward +
+          Forwardp5 +
           PullLeft.scale(1.0,0.5) +
           LeadLeft.skew(0.5,-0.5) +
           LeadLeft.scale(0.5,1.5) +
-          LeadLeft.skew(0.5,-0.5)
+          QuarterLeft.skew(3,0)
       ]),
 
     AnimatedCall('Square Thru 3 1/2',
-      formation:Formation('Ocean Waves RH BGGB'),
+      formation:Formation('Ocean Waves RH BGGB Compact'),
       from:'Right-Hand Waves',difficulty: 3,
       paths:[
-          LeadRight.changeBeats(3).scale(0.5,3.0) +
+          QuarterRight.changeBeats(3).skew(0,-3) +
           LeadRight.skew(0.5,0.5) +
           LeadRight.scale(0.5,1.5),
 
-          LeadLeft.changeBeats(3).skew(0.5,0.0) +
+          LeadLeft.changeBeats(3).scale(2,1) +
           LeadLeft.scale(0.5,1.5) +
           LeadLeft.skew(0.5,-0.5),
 
-          LeadLeft.changeBeats(3).skew(0.5,0.0) +
+          LeadLeft.changeBeats(3) +
           LeadLeft.scale(0.5,1.5) +
           LeadLeft.skew(0.5,-0.5),
 
-          LeadRight.changeBeats(3).scale(0.5,3.0) +
+          LeadRight.changeBeats(3).scale(1,3) +
           LeadRight.skew(0.5,0.5) +
           LeadRight.scale(0.5,1.5)
       ]),
@@ -1360,57 +1360,57 @@ import '../../moves.dart';
       paths:[
           LeadRight.changeBeats(2).scale(0.5,1.5) +
           LeadRight.skew(0.5,0.5) +
-          LeadRight.scale(0.5,1.5),
+          LeadRight,
 
           LeadLeft.changeBeats(2).scale(1.0,0.5).skew(0.5,0.0) +
           LeadLeft.scale(0.5,1.5) +
-          LeadLeft.skew(0.5,-0.5),
+          QuarterLeft.skew(3,0),
 
           LeadLeft.changeBeats(2).scale(1.0,0.5).skew(0.5,0.0) +
           LeadLeft.scale(0.5,1.5) +
-          LeadLeft.skew(0.5,-0.5),
+          LeadLeft.scale(3,1),
 
           LeadRight.changeBeats(2).scale(0.5,1.5) +
           LeadRight.skew(0.5,0.5) +
-          LeadRight.scale(0.5,1.5)
+          LeadRight.scale(1,2)
       ]),
 
     AnimatedCall('Square Thru, on the Third Hand Spin the Top',
-      formation:Formation('Normal Lines'),
+      formation:Formation('Normal Lines Compact'),
       group:'   ',parts:'5;3',difficulty: 2,
       taminator: '''
       Spin the Top is in the Mainstream program.
     ''',
       paths:[
-          Forward +
+          Forwardp5 +
           PullLeft.scale(1.0,0.5) +
           LeadRight.scale(0.5,1.5) +
           LeadRight.skew(0.5,0.5) +
           SwingRight.scale(0.5,0.5) +
           SwingLeft.scale(0.5,0.5) +
-          HingeLeft.scale(1.0,0.5),
+          HingeLeft.scale(1.0,0.5).skew(0,0.5),
 
-          Forward +
+          Forwardp5 +
           PullLeft.scale(1.0,0.5) +
           LeadLeft.skew(0.5,-0.5) +
           LeadLeft.scale(0.5,1.5) +
           SwingRight.scale(0.5,0.5) +
-          LeadRight.changeBeats(4.5).scale(3.0,1.5),
+          LeadRight.changeBeats(4.5).scale(3,2),
 
-          Forward +
+          Forwardp5 +
           PullLeft.scale(1.0,0.5) +
           LeadRight.scale(0.5,1.5) +
           LeadRight.skew(0.5,0.5) +
           SwingRight.scale(0.5,0.5) +
           SwingLeft.scale(0.5,0.5) +
-          HingeLeft.scale(1.0,0.5),
+          HingeLeft.scale(1.0,0.5).skew(0,-0.5),
 
-          Forward +
+          Forwardp5 +
           PullLeft.scale(1.0,0.5) +
           LeadLeft.skew(0.5,-0.5) +
           LeadLeft.scale(0.5,1.5) +
           SwingRight.scale(0.5,0.5) +
-          LeadRight.changeBeats(4.5).scale(3.0,1.5)
+          LeadRight.changeBeats(4.5).scale(3,1)
       ]),
 
     AnimatedCall('Square Thru, on the Third Hand Eight Chain 5',
@@ -1516,41 +1516,41 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Square Thru, on the Fourth Hand Left Swing Thru',
-      formation:Formation('Normal Lines'),
+      formation:Formation('Normal Lines Compact'),
       group:'   ',difficulty: 2,
       taminator: '''
       Swing Thru is in Basic 2.
     ''',
       paths:[
-          Forward +
+          Forwardp5 +
           PullLeft.scale(1.0,0.5) +
           LeadRight.scale(0.5,1.5) +
           LeadRight.skew(0.5,0.5) +
-          LeadRight.scale(0.5,1.5) +
-          SwingLeft.scale(0.6,1.0),
+          LeadRight.scale(0.5,1) +
+          SwingLeft.scale(0.6,1.25),
 
-          Forward +
+          Forwardp5 +
           PullLeft.scale(1.0,0.5) +
           LeadLeft.skew(0.5,-0.5) +
           LeadLeft.scale(0.5,1.5) +
-          LeadLeft.skew(0.5,-0.5) +
+          LeadLeft.scale(1.5,1) +
           SwingLeft.scale(0.6,0.4) +
-          SwingRight.scale(0.7,0.7),
+          SwingRight.scale(0.9,0.9),
 
-          Forward +
+          Forwardp5 +
           PullLeft.scale(1.0,0.5) +
           LeadRight.scale(0.5,1.5) +
           LeadRight.skew(0.5,0.5) +
-          LeadRight.scale(0.5,1.5) +
-          SwingLeft.scale(0.6,1.0),
+          LeadRight.scale(0.5,2) +
+          SwingLeft.scale(0.6,1.25),
 
-          Forward +
+          Forwardp5 +
           PullLeft.scale(1.0,0.5) +
           LeadLeft.skew(0.5,-0.5) +
           LeadLeft.scale(0.5,1.5) +
-          LeadLeft.skew(0.5,-0.5) +
+          QuarterLeft.skew(1.5,0) +
           SwingLeft.scale(0.6,0.4) +
-          SwingRight.scale(0.7,0.7)
+          SwingRight.scale(0.9,0.9)
       ]),
 
     AnimatedCall('Square Thru, on the Fourth Hand Left Allemande',

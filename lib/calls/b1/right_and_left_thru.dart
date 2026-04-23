@@ -41,31 +41,31 @@ import '../../moves.dart';
       formation:Formation('Wave RH'),
       from:'Right-Hand Wave',isGenderSpecific:true,parts:'2',difficulty: 1,
       paths:[
-          ExtendRight.changeBeats(2).scale(2.0,2.0) +
+          ExtendRight.changeBeats(2).scale(1.5,2.0) +
           BeauWheel.scale(0.67,1.0),
 
-          Forward_2 +
+          Forward_1p5.changeBeats(2) +
           BelleWheel.scale(0.67,1.0)
       ]),
 
     AnimatedCall('Right and Left Thru',
-      formation:Formation('Normal Lines'),
+      formation:Formation('Normal Lines Compact'),
       from:'Lines',isGenderSpecific:true,parts:'3',difficulty: 1,
       paths:[
-          PullLeft.changeBeats(1.5).scale(2.0,0.5) +
-          ExtendRight.changeBeats(1.5).scale(2.0,0.5) +
+          PullLeft.changeBeats(1.5).scale(1.5,0.5) +
+          ExtendRight.changeBeats(1.5).scale(1.5,0.5) +
           BeauWheel.scale(0.67,1.0),
 
-          PullLeft.changeBeats(1.5).scale(2.0,0.5) +
-          ExtendRight.changeBeats(1.5).scale(2.0,0.5) +
+          PullLeft.changeBeats(1.5).scale(1.5,0.5) +
+          ExtendRight.changeBeats(1.5).scale(1.5,0.5) +
           BelleWheel.scale(0.67,1.0),
 
-          PullLeft.changeBeats(1.5).scale(2.0,0.5) +
-          ExtendRight.changeBeats(1.5).scale(2.0,0.5) +
+          PullLeft.changeBeats(1.5).scale(1.5,0.5) +
+          ExtendRight.changeBeats(1.5).scale(1.5,0.5) +
           BeauWheel.scale(0.67,1.0),
 
-          PullLeft.changeBeats(1.5).scale(2.0,0.5) +
-          ExtendRight.changeBeats(1.5).scale(2.0,0.5) +
+          PullLeft.changeBeats(1.5).scale(1.5,0.5) +
+          ExtendRight.changeBeats(1.5).scale(1.5,0.5) +
           BelleWheel.scale(0.67,1.0)
       ]),
 
@@ -91,23 +91,22 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Right and Left Thru',
-      formation:Formation('Ocean Waves RH BGGB'),
+      formation:Formation('Ocean Waves RH BGGB Compact'),
       from:'Right-Hand Waves',isGenderSpecific:true,parts:'2',difficulty: 1,
       taminator: '''
-      Common after Spin the Top.
       This is an example of the Ocean Wave Rule.
     ''',
       paths:[
-          ExtendRight.changeBeats(2).scale(1.0,2.0) +
+          ExtendRight.changeBeats(2).scale(0.5,2.0) +
           BeauWheel.scale(0.5,1.0),
 
-          Forward.changeBeats(2) +
+          Forward_1p5.changeBeats(2) +
           BelleWheel.scale(0.67,1.0),
 
-          Forward.changeBeats(2) +
+          Forwardp5.changeBeats(2) +
           BelleWheel.scale(0.5,1.0),
 
-          ExtendRight.changeBeats(2).scale(1.0,2.0) +
+          ExtendRight.changeBeats(2).scale(1.5,2.0) +
           BeauWheel.scale(0.67,1.0)
       ]),
 
@@ -119,16 +118,16 @@ import '../../moves.dart';
       This is common after Spin the Top.
     ''',
       paths:[
-          ExtendRight.changeBeats(2).scale(2.0,0.5) +
+          ExtendRight.changeBeats(2).scale(1.5,0.5) +
           BeauWheel.scale(0.67,1.0),
 
-          ExtendRight.changeBeats(2).scale(2.0,0.5) +
+          ExtendRight.changeBeats(2).scale(1.5,0.5) +
           BelleWheel.scale(0.67,1.0),
 
-          ExtendRight.changeBeats(2).scale(2.0,0.5) +
+          ExtendRight.changeBeats(2).scale(1.5,0.5) +
           BelleWheel.scale(0.67,1.0),
 
-          ExtendRight.changeBeats(2).scale(2.0,0.5) +
+          ExtendRight.changeBeats(2).scale(1.5,0.5) +
           BeauWheel.scale(0.67,1.0)
       ]),
 
@@ -194,28 +193,28 @@ import '../../moves.dart';
         ]),
 
     AnimatedCall('Right and Left Thru and a Quarter More',
-      formation:Formation('Normal Lines'),
+      formation:Formation('Normal Lines Compact'),
       group:' ',isGenderSpecific:true,parts:'3',difficulty: 2,
       paths:[
-          PullLeft.scale(2.0,0.5) +
-          ExtendRight.scale(2.0,0.5) +
+          PullLeft.scale(1.5,0.5) +
+          ExtendRight.scale(1.5,0.5) +
           BeauWheel.scale(0.67,1.0) +
-          BackHingeRight,
+          BackHingeRight.skew(-0.5,0.5),
 
-          PullLeft.scale(2.0,0.5) +
-          ExtendRight.scale(2.0,0.5) +
+          PullLeft.scale(1.5,0.5) +
+          ExtendRight.scale(1.5,0.5) +
           BelleWheel.scale(0.67,1.0) +
-          HingeLeft,
+          HingeLeft.skew(-0.5,0.5),
 
-          PullLeft.scale(2.0,0.5) +
-          ExtendRight.scale(2.0,0.5) +
+          PullLeft.scale(1.5,0.5) +
+          ExtendRight.scale(1.5,0.5) +
           BeauWheel.scale(0.67,1.0) +
-          BackHingeRight,
+          BackHingeRight.skew(-0.5,-0.5),
 
-          PullLeft.scale(2.0,0.5) +
-          ExtendRight.scale(2.0,0.5) +
+          PullLeft.scale(1.5,0.5) +
+          ExtendRight.scale(1.5,0.5) +
           BelleWheel.scale(0.67,1.0) +
-          HingeLeft
+          HingeLeft.skew(-0.5,-0.5)
       ]),
 
     AnimatedCall('Right and Left Thru and a Quarter More',

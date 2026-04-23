@@ -45,161 +45,187 @@ import '../../moves.dart';
 
     //  Heads on left side of line
     AnimatedCall('Heads Arch, Sides Dive Thru',
-      formation:Formation('Normal Lines'),
+      formation:Formation('Normal Lines Compact'),
       group:' ',difficulty: 2, isGenderSpecific: true,
       paths: [
-        ExtendLeft.changeBeats(1.5).changehands(Hands.GRIPRIGHT).scale(2.0, 0.5) +
-            ExtendRight.changeBeats(1.5).changehands(Hands.GRIPRIGHT).scale(2.0, 0.5) +
+        ExtendLeft.changeBeats(1.5).changehands(Hands.GRIPRIGHT).scale(1.5, 0.5) +
+            ExtendRight.changeBeats(1.5).changehands(Hands.GRIPRIGHT).scale(1.5, 0.5) +
             RunRight.changehands(Hands.GRIPRIGHT),
-        ExtendRight.changeBeats(1.5).changehands(Hands.GRIPLEFT).scale(2.0, 0.5) +
-            ExtendLeft.changeBeats(1.5).changehands(Hands.GRIPLEFT).scale(2.0, 0.5) +
+
+        ExtendRight.changeBeats(1.5).changehands(Hands.GRIPLEFT).scale(1.5, 0.5) +
+            ExtendLeft.changeBeats(1.5).changehands(Hands.GRIPLEFT).scale(1.5, 0.5) +
             FlipLeft.changehands(Hands.GRIPLEFT),
-        ExtendRight.changeBeats(1.5).changehands(Hands.RIGHT).scale(2.0, 0.5) +
-            ExtendLeft.changeBeats(1.5).changehands(Hands.RIGHT).scale(2.0, 0.5),
-        ExtendLeft.changeBeats(1.5).changehands(Hands.LEFT).scale(2.0, 0.5) +
-            ExtendRight.changeBeats(1.5).changehands(Hands.LEFT).scale(2.0, 0.5)
+
+        ExtendRight.changeBeats(1.5).changehands(Hands.RIGHT).scale(1.5, 0.5) +
+            ExtendLeft.changeBeats(1.5).changehands(Hands.RIGHT).scale(1.5, 0.5),
+
+        ExtendLeft.changeBeats(1.5).changehands(Hands.LEFT).scale(1.5, 0.5) +
+            ExtendRight.changeBeats(1.5).changehands(Hands.LEFT).scale(1.5, 0.5)
       ]),
 
     //  Heads on right side of line
     AnimatedCall('Heads Arch, Sides Dive Thru',
         formation:    Formation('', dancers:[
-          Dancer.fromData(gender:Gender.BOY,x:-2,y:-1,angle:0),
-          Dancer.fromData(gender:Gender.GIRL,x:-2,y:-3,angle:0),
-          Dancer.fromData(gender:Gender.BOY,x:-2,y:3,angle:0),
-          Dancer.fromData(gender:Gender.GIRL,x:-2,y:1,angle:0),
+          Dancer.fromData(gender:Gender.BOY,x:-1.5,y:-1,angle:0),
+          Dancer.fromData(gender:Gender.GIRL,x:-1.5,y:-3,angle:0),
+          Dancer.fromData(gender:Gender.BOY,x:-1.5,y:3,angle:0),
+          Dancer.fromData(gender:Gender.GIRL,x:-1.5,y:1,angle:0),
         ]),
         group:' ',difficulty: 2, isGenderSpecific: true, noDisplay: true,
         paths: [
-          ExtendLeft.changeBeats(1.5).changehands(Hands.GRIPRIGHT).scale(2.0, 0.5) +
-              ExtendRight.changeBeats(1.5).changehands(Hands.GRIPRIGHT).scale(2.0, 0.5) +
+          ExtendLeft.changeBeats(1.5).changehands(Hands.GRIPRIGHT).scale(1.5, 0.5) +
+              ExtendRight.changeBeats(1.5).changehands(Hands.GRIPRIGHT).scale(1.5, 0.5) +
               RunRight.changehands(Hands.GRIPRIGHT),
-          ExtendRight.changeBeats(1.5).changehands(Hands.GRIPLEFT).scale(2.0, 0.5) +
-              ExtendLeft.changeBeats(1.5).changehands(Hands.GRIPLEFT).scale(2.0, 0.5) +
+
+          ExtendRight.changeBeats(1.5).changehands(Hands.GRIPLEFT).scale(1.5, 0.5) +
+              ExtendLeft.changeBeats(1.5).changehands(Hands.GRIPLEFT).scale(1.5, 0.5) +
               FlipLeft.changehands(Hands.GRIPLEFT),
-          ExtendRight.changeBeats(1.5).changehands(Hands.RIGHT).scale(2.0, 0.5) +
-              ExtendLeft.changeBeats(1.5).changehands(Hands.RIGHT).scale(2.0, 0.5),
-          ExtendLeft.changeBeats(1.5).changehands(Hands.LEFT).scale(2.0, 0.5) +
-              ExtendRight.changeBeats(1.5).changehands(Hands.LEFT).scale(2.0, 0.5)
+
+          ExtendRight.changeBeats(1.5).changehands(Hands.RIGHT).scale(1.5, 0.5) +
+              ExtendLeft.changeBeats(1.5).changehands(Hands.RIGHT).scale(1.5, 0.5),
+
+          ExtendLeft.changeBeats(1.5).changehands(Hands.LEFT).scale(1.5, 0.5) +
+              ExtendRight.changeBeats(1.5).changehands(Hands.LEFT).scale(1.5, 0.5)
         ]),
 
     //  Heads on left side of line, sides sashayed
     AnimatedCall('Heads Arch, Sides Dive Thru', noDisplay: true,
         formation:    Formation('', dancers:[
-          Dancer.fromData(gender:Gender.BOY,x:-2,y:3,angle:0),
-          Dancer.fromData(gender:Gender.GIRL,x:-2,y:1,angle:0),
-          Dancer.fromData(gender:Gender.BOY,x:-2,y:-3,angle:0),
-          Dancer.fromData(gender:Gender.GIRL,x:-2,y:-1,angle:0),
+          Dancer.fromData(gender:Gender.BOY,x:-1.5,y:3,angle:0),
+          Dancer.fromData(gender:Gender.GIRL,x:-1.5,y:1,angle:0),
+          Dancer.fromData(gender:Gender.BOY,x:-1.5,y:-3,angle:0),
+          Dancer.fromData(gender:Gender.GIRL,x:-1.5,y:-1,angle:0),
         ]),
         group:' ',difficulty: 2, isGenderSpecific: true,
         paths: [
-          ExtendLeft.changeBeats(1.5).changehands(Hands.GRIPRIGHT).scale(2.0, 0.5) +
-              ExtendRight.changeBeats(1.5).changehands(Hands.GRIPRIGHT).scale(2.0, 0.5) +
+          ExtendLeft.changeBeats(1.5).changehands(Hands.GRIPRIGHT).scale(1.5, 0.5) +
+              ExtendRight.changeBeats(1.5).changehands(Hands.GRIPRIGHT).scale(1.5, 0.5) +
               RunRight.changehands(Hands.GRIPRIGHT),
-          ExtendRight.changeBeats(1.5).changehands(Hands.GRIPLEFT).scale(2.0, 0.5) +
-              ExtendLeft.changeBeats(1.5).changehands(Hands.GRIPLEFT).scale(2.0, 0.5) +
+
+          ExtendRight.changeBeats(1.5).changehands(Hands.GRIPLEFT).scale(1.5, 0.5) +
+              ExtendLeft.changeBeats(1.5).changehands(Hands.GRIPLEFT).scale(1.5, 0.5) +
               FlipLeft.changehands(Hands.GRIPLEFT),
-          ExtendLeft.changeBeats(1.5).changehands(Hands.LEFT).scale(2.0, 0.5) +
-              ExtendRight.changeBeats(1.5).changehands(Hands.LEFT).scale(2.0, 0.5),
-          ExtendRight.changeBeats(1.5).changehands(Hands.RIGHT).scale(2.0, 0.5) +
-              ExtendLeft.changeBeats(1.5).changehands(Hands.RIGHT).scale(2.0, 0.5),
+
+          ExtendLeft.changeBeats(1.5).changehands(Hands.LEFT).scale(1.5, 0.5) +
+              ExtendRight.changeBeats(1.5).changehands(Hands.LEFT).scale(1.5, 0.5),
+
+          ExtendRight.changeBeats(1.5).changehands(Hands.RIGHT).scale(1.5, 0.5) +
+              ExtendLeft.changeBeats(1.5).changehands(Hands.RIGHT).scale(1.5, 0.5),
         ]),
 
     //  Heads on right side of line, sides sashayed
     AnimatedCall('Heads Arch, Sides Dive Thru', noDisplay: true,
         formation:    Formation('', dancers:[
-          Dancer.fromData(gender:Gender.BOY,x:-2,y:-1,angle:0),
-          Dancer.fromData(gender:Gender.GIRL,x:-2,y:-3,angle:0),
-          Dancer.fromData(gender:Gender.BOY,x:-2,y:1,angle:0),
-          Dancer.fromData(gender:Gender.GIRL,x:-2,y:3,angle:0),
+          Dancer.fromData(gender:Gender.BOY,x:-1.5,y:-1,angle:0),
+          Dancer.fromData(gender:Gender.GIRL,x:-1.5,y:-3,angle:0),
+          Dancer.fromData(gender:Gender.BOY,x:-1.5,y:1,angle:0),
+          Dancer.fromData(gender:Gender.GIRL,x:-1.5,y:3,angle:0),
         ]),
         group:' ',difficulty: 2, isGenderSpecific: true,
         paths: [
-          ExtendLeft.changeBeats(1.5).changehands(Hands.GRIPRIGHT).scale(2.0, 0.5) +
-              ExtendRight.changeBeats(1.5).changehands(Hands.GRIPRIGHT).scale(2.0, 0.5) +
+          ExtendLeft.changeBeats(1.5).changehands(Hands.GRIPRIGHT).scale(1.5, 0.5) +
+              ExtendRight.changeBeats(1.5).changehands(Hands.GRIPRIGHT).scale(1.5, 0.5) +
               RunRight.changehands(Hands.GRIPRIGHT),
-          ExtendRight.changeBeats(1.5).changehands(Hands.GRIPLEFT).scale(2.0, 0.5) +
-              ExtendLeft.changeBeats(1.5).changehands(Hands.GRIPLEFT).scale(2.0, 0.5) +
+
+          ExtendRight.changeBeats(1.5).changehands(Hands.GRIPLEFT).scale(1.5, 0.5) +
+              ExtendLeft.changeBeats(1.5).changehands(Hands.GRIPLEFT).scale(1.5, 0.5) +
               FlipLeft.changehands(Hands.GRIPLEFT),
-          ExtendLeft.changeBeats(1.5).changehands(Hands.LEFT).scale(2.0, 0.5) +
-              ExtendRight.changeBeats(1.5).changehands(Hands.LEFT).scale(2.0, 0.5),
-          ExtendRight.changeBeats(1.5).changehands(Hands.RIGHT).scale(2.0, 0.5) +
-              ExtendLeft.changeBeats(1.5).changehands(Hands.RIGHT).scale(2.0, 0.5),
+
+          ExtendLeft.changeBeats(1.5).changehands(Hands.LEFT).scale(1.5, 0.5) +
+              ExtendRight.changeBeats(1.5).changehands(Hands.LEFT).scale(1.5, 0.5),
+          ExtendRight.changeBeats(1.5).changehands(Hands.RIGHT).scale(1.5, 0.5) +
+              ExtendLeft.changeBeats(1.5).changehands(Hands.RIGHT).scale(1.5, 0.5),
         ]),
 
     //  Now all of that again with the sides
     AnimatedCall('Sides Arch, Heads Dive Thru',
-        formation:Formation('Normal Lines'),
+        formation:Formation('Normal Lines Compact'),
         group:' ',difficulty: 2, isGenderSpecific: true,
         paths: [
-          ExtendRight.changeBeats(1.5).changehands(Hands.RIGHT).scale(2.0, 0.5) +
-              ExtendLeft.changeBeats(1.5).changehands(Hands.RIGHT).scale(2.0, 0.5),
-          ExtendLeft.changeBeats(1.5).changehands(Hands.LEFT).scale(2.0, 0.5) +
-              ExtendRight.changeBeats(1.5).changehands(Hands.LEFT).scale(2.0, 0.5),
-          ExtendLeft.changeBeats(1.5).changehands(Hands.GRIPRIGHT).scale(2.0, 0.5) +
-              ExtendRight.changeBeats(1.5).changehands(Hands.GRIPRIGHT).scale(2.0, 0.5) +
+          ExtendRight.changeBeats(1.5).changehands(Hands.RIGHT).scale(1.5, 0.5) +
+              ExtendLeft.changeBeats(1.5).changehands(Hands.RIGHT).scale(1.5, 0.5),
+
+          ExtendLeft.changeBeats(1.5).changehands(Hands.LEFT).scale(1.5, 0.5) +
+              ExtendRight.changeBeats(1.5).changehands(Hands.LEFT).scale(1.5, 0.5),
+
+          ExtendLeft.changeBeats(1.5).changehands(Hands.GRIPRIGHT).scale(1.5, 0.5) +
+              ExtendRight.changeBeats(1.5).changehands(Hands.GRIPRIGHT).scale(1.5, 0.5) +
               RunRight.changehands(Hands.GRIPRIGHT),
-          ExtendRight.changeBeats(1.5).changehands(Hands.GRIPLEFT).scale(2.0, 0.5) +
-              ExtendLeft.changeBeats(1.5).changehands(Hands.GRIPLEFT).scale(2.0, 0.5) +
+
+          ExtendRight.changeBeats(1.5).changehands(Hands.GRIPLEFT).scale(1.5, 0.5) +
+              ExtendLeft.changeBeats(1.5).changehands(Hands.GRIPLEFT).scale(1.5, 0.5) +
               FlipLeft.changehands(Hands.GRIPLEFT),
         ]),
+
     AnimatedCall('Sides Arch, Heads Dive Thru', noDisplay: true,
         formation:    Formation('', dancers:[
-          Dancer.fromData(gender:Gender.BOY,x:-2,y:-1,angle:0),
-          Dancer.fromData(gender:Gender.GIRL,x:-2,y:-3,angle:0),
-          Dancer.fromData(gender:Gender.BOY,x:-2,y:3,angle:0),
-          Dancer.fromData(gender:Gender.GIRL,x:-2,y:1,angle:0),
+          Dancer.fromData(gender:Gender.BOY,x:-1.5,y:-1,angle:0),
+          Dancer.fromData(gender:Gender.GIRL,x:-1.5,y:-3,angle:0),
+          Dancer.fromData(gender:Gender.BOY,x:-1.5,y:3,angle:0),
+          Dancer.fromData(gender:Gender.GIRL,x:-1.5,y:1,angle:0),
         ]),
         group:' ',difficulty: 2, isGenderSpecific: true,
         paths: [
-          ExtendRight.changeBeats(1.5).changehands(Hands.RIGHT).scale(2.0, 0.5) +
-              ExtendLeft.changeBeats(1.5).changehands(Hands.RIGHT).scale(2.0, 0.5),
-          ExtendLeft.changeBeats(1.5).changehands(Hands.LEFT).scale(2.0, 0.5) +
-              ExtendRight.changeBeats(1.5).changehands(Hands.LEFT).scale(2.0, 0.5),
-          ExtendLeft.changeBeats(1.5).changehands(Hands.GRIPRIGHT).scale(2.0, 0.5) +
-              ExtendRight.changeBeats(1.5).changehands(Hands.GRIPRIGHT).scale(2.0, 0.5) +
+          ExtendRight.changeBeats(1.5).changehands(Hands.RIGHT).scale(1.5, 0.5) +
+              ExtendLeft.changeBeats(1.5).changehands(Hands.RIGHT).scale(1.5, 0.5),
+
+          ExtendLeft.changeBeats(1.5).changehands(Hands.LEFT).scale(1.5, 0.5) +
+              ExtendRight.changeBeats(1.5).changehands(Hands.LEFT).scale(1.5, 0.5),
+
+          ExtendLeft.changeBeats(1.5).changehands(Hands.GRIPRIGHT).scale(1.5, 0.5) +
+              ExtendRight.changeBeats(1.5).changehands(Hands.GRIPRIGHT).scale(1.5, 0.5) +
               RunRight.changehands(Hands.GRIPRIGHT),
-          ExtendRight.changeBeats(1.5).changehands(Hands.GRIPLEFT).scale(2.0, 0.5) +
-              ExtendLeft.changeBeats(1.5).changehands(Hands.GRIPLEFT).scale(2.0, 0.5) +
+
+          ExtendRight.changeBeats(1.5).changehands(Hands.GRIPLEFT).scale(1.5, 0.5) +
+              ExtendLeft.changeBeats(1.5).changehands(Hands.GRIPLEFT).scale(1.5, 0.5) +
               FlipLeft.changehands(Hands.GRIPLEFT),
         ]),
+
     AnimatedCall('Sides Arch, Heads Dive Thru',
         formation:    Formation('', dancers:[
-          Dancer.fromData(gender:Gender.BOY,x:-2,y:1,angle:0),
-          Dancer.fromData(gender:Gender.GIRL,x:-2,y:3,angle:0),
-          Dancer.fromData(gender:Gender.BOY,x:-2,y:-1,angle:0),
-          Dancer.fromData(gender:Gender.GIRL,x:-2,y:-3,angle:0),
+          Dancer.fromData(gender:Gender.BOY,x:-1.5,y:1,angle:0),
+          Dancer.fromData(gender:Gender.GIRL,x:-1.5,y:3,angle:0),
+          Dancer.fromData(gender:Gender.BOY,x:-1.5,y:-1,angle:0),
+          Dancer.fromData(gender:Gender.GIRL,x:-1.5,y:-3,angle:0),
         ]),
         group:' ',difficulty: 2, isGenderSpecific: true, noDisplay: true,
         paths: [
-          ExtendLeft.changeBeats(1.5).changehands(Hands.LEFT).scale(2.0, 0.5) +
-              ExtendRight.changeBeats(1.5).changehands(Hands.LEFT).scale(2.0, 0.5),
-          ExtendRight.changeBeats(1.5).changehands(Hands.RIGHT).scale(2.0, 0.5) +
-              ExtendLeft.changeBeats(1.5).changehands(Hands.RIGHT).scale(2.0, 0.5),
-          ExtendLeft.changeBeats(1.5).changehands(Hands.GRIPRIGHT).scale(2.0, 0.5) +
-              ExtendRight.changeBeats(1.5).changehands(Hands.GRIPRIGHT).scale(2.0, 0.5) +
+          ExtendLeft.changeBeats(1.5).changehands(Hands.LEFT).scale(1.5, 0.5) +
+              ExtendRight.changeBeats(1.5).changehands(Hands.LEFT).scale(1.5, 0.5),
+
+          ExtendRight.changeBeats(1.5).changehands(Hands.RIGHT).scale(1.5, 0.5) +
+              ExtendLeft.changeBeats(1.5).changehands(Hands.RIGHT).scale(1.5, 0.5),
+
+          ExtendLeft.changeBeats(1.5).changehands(Hands.GRIPRIGHT).scale(1.5, 0.5) +
+              ExtendRight.changeBeats(1.5).changehands(Hands.GRIPRIGHT).scale(1.5, 0.5) +
               RunRight.changehands(Hands.GRIPRIGHT),
-          ExtendRight.changeBeats(1.5).changehands(Hands.GRIPLEFT).scale(2.0, 0.5) +
-              ExtendLeft.changeBeats(1.5).changehands(Hands.GRIPLEFT).scale(2.0, 0.5) +
+
+          ExtendRight.changeBeats(1.5).changehands(Hands.GRIPLEFT).scale(1.5, 0.5) +
+              ExtendLeft.changeBeats(1.5).changehands(Hands.GRIPLEFT).scale(1.5, 0.5) +
               FlipLeft.changehands(Hands.GRIPLEFT),
         ]),
+
     AnimatedCall('Sides Arch, Heads Dive Thru',
         formation:    Formation('', dancers:[
-          Dancer.fromData(gender:Gender.BOY,x:-2,y:-3,angle:0),
-          Dancer.fromData(gender:Gender.GIRL,x:-2,y:-1,angle:0),
-          Dancer.fromData(gender:Gender.BOY,x:-2,y:3,angle:0),
-          Dancer.fromData(gender:Gender.GIRL,x:-2,y:1,angle:0),
+          Dancer.fromData(gender:Gender.BOY,x:-1.5,y:-3,angle:0),
+          Dancer.fromData(gender:Gender.GIRL,x:-1.5,y:-1,angle:0),
+          Dancer.fromData(gender:Gender.BOY,x:-1.5,y:3,angle:0),
+          Dancer.fromData(gender:Gender.GIRL,x:-1.5,y:1,angle:0),
         ]),
         group:' ',difficulty: 2, isGenderSpecific: true, noDisplay: true,
         paths: [
-          ExtendLeft.changeBeats(1.5).changehands(Hands.LEFT).scale(2.0, 0.5) +
-              ExtendRight.changeBeats(1.5).changehands(Hands.LEFT).scale(2.0, 0.5),
-          ExtendRight.changeBeats(1.5).changehands(Hands.RIGHT).scale(2.0, 0.5) +
-              ExtendLeft.changeBeats(1.5).changehands(Hands.RIGHT).scale(2.0, 0.5),
-          ExtendLeft.changeBeats(1.5).changehands(Hands.GRIPRIGHT).scale(2.0, 0.5) +
-              ExtendRight.changeBeats(1.5).changehands(Hands.GRIPRIGHT).scale(2.0, 0.5) +
+          ExtendLeft.changeBeats(1.5).changehands(Hands.LEFT).scale(1.5, 0.5) +
+              ExtendRight.changeBeats(1.5).changehands(Hands.LEFT).scale(1.5, 0.5),
+
+          ExtendRight.changeBeats(1.5).changehands(Hands.RIGHT).scale(1.5, 0.5) +
+              ExtendLeft.changeBeats(1.5).changehands(Hands.RIGHT).scale(1.5, 0.5),
+
+          ExtendLeft.changeBeats(1.5).changehands(Hands.GRIPRIGHT).scale(1.5, 0.5) +
+              ExtendRight.changeBeats(1.5).changehands(Hands.GRIPRIGHT).scale(1.5, 0.5) +
               RunRight.changehands(Hands.GRIPRIGHT),
-          ExtendRight.changeBeats(1.5).changehands(Hands.GRIPLEFT).scale(2.0, 0.5) +
-              ExtendLeft.changeBeats(1.5).changehands(Hands.GRIPLEFT).scale(2.0, 0.5) +
+
+          ExtendRight.changeBeats(1.5).changehands(Hands.GRIPLEFT).scale(1.5, 0.5) +
+              ExtendLeft.changeBeats(1.5).changehands(Hands.GRIPLEFT).scale(1.5, 0.5) +
               FlipLeft.changehands(Hands.GRIPLEFT),
         ]),
 

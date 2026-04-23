@@ -52,43 +52,43 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Star Thru',
-      formation:Formation('Normal Lines'),
+      formation:Formation('Normal Lines Compact'),
       from:'Lines',isGenderSpecific:true,
       difficulty: 1,
       paths:[
-          ExtendLeft.changeBeats(2).changehands(Hands.GRIPRIGHT).scale(2.0,0.5) +
+          ExtendLeft.changeBeats(2).changehands(Hands.GRIPRIGHT).scale(1.5,0.5) +
           QuarterRight.changeBeats(2).changehands(Hands.GRIPRIGHT).skew(1.0,-0.5),
 
-          ExtendLeft.changeBeats(2).changehands(Hands.GRIPRIGHT).scale(2.0,0.5) +
+          ExtendLeft.changeBeats(2).changehands(Hands.GRIPRIGHT).scale(1.5,0.5) +
           QuarterLeft.changeBeats(2).changehands(Hands.GRIPRIGHT).skew(1.0,-0.5),
 
-          ExtendLeft.changeBeats(2).changehands(Hands.GRIPRIGHT).scale(2.0,0.5) +
+          ExtendLeft.changeBeats(2).changehands(Hands.GRIPRIGHT).scale(1.5,0.5) +
           QuarterRight.changeBeats(2).changehands(Hands.GRIPRIGHT).skew(1.0,-0.5),
 
-          ExtendLeft.changeBeats(2).changehands(Hands.GRIPRIGHT).scale(2.0,0.5) +
+          ExtendLeft.changeBeats(2).changehands(Hands.GRIPRIGHT).scale(1.5,0.5) +
           QuarterLeft.changeBeats(2).changehands(Hands.GRIPRIGHT).skew(1.0,-0.5)
       ]),
 
     AnimatedCall('Star Thru',
       formation:Formation('', dancers:[
-        Dancer.fromData(gender:Gender.BOY,x:-2,y:1,angle:0),
-        Dancer.fromData(gender:Gender.GIRL,x:-2,y:3,angle:0),
-        Dancer.fromData(gender:Gender.BOY,x:-2,y:-3,angle:0),
-        Dancer.fromData(gender:Gender.GIRL,x:-2,y:-1,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:-1.5,y:1,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:-1.5,y:3,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:-1.5,y:-3,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:-1.5,y:-1,angle:0),
   ]),
       from:'Sashayed Lines',isGenderSpecific:true,
       difficulty: 2,
       paths:[
-          ExtendLeft.changeBeats(2).changehands(Hands.GRIPRIGHT).scale(2.0,0.5) +
+          ExtendLeft.changeBeats(2).changehands(Hands.GRIPRIGHT).scale(1.5,0.5) +
           QuarterRight.changeBeats(2).changehands(Hands.GRIPRIGHT).skew(1.0,-0.5),
 
-          ExtendLeft.changeBeats(2).changehands(Hands.GRIPRIGHT).scale(2.0,0.5) +
+          ExtendLeft.changeBeats(2).changehands(Hands.GRIPRIGHT).scale(1.5,0.5) +
           QuarterLeft.changeBeats(2).changehands(Hands.GRIPRIGHT).skew(1.0,-0.5),
 
-          ExtendLeft.changeBeats(2).changehands(Hands.GRIPRIGHT).scale(2.0,0.5) +
+          ExtendLeft.changeBeats(2).changehands(Hands.GRIPRIGHT).scale(1.5,0.5) +
           QuarterRight.changeBeats(2).changehands(Hands.GRIPRIGHT).skew(1.0,-0.5),
 
-          ExtendLeft.changeBeats(2).changehands(Hands.GRIPRIGHT).scale(2.0,0.5) +
+          ExtendLeft.changeBeats(2).changehands(Hands.GRIPRIGHT).scale(1.5,0.5) +
           QuarterLeft.changeBeats(2).changehands(Hands.GRIPRIGHT).skew(1.0,-0.5)
       ]),
 
@@ -98,16 +98,16 @@ import '../../moves.dart';
       difficulty: 1,
       paths:[
           ExtendLeft.changeBeats(2).changehands(Hands.GRIPRIGHT).scale(1.0,0.5) +
-          QuarterRight.changeBeats(2).changehands(Hands.GRIPRIGHT).skew(1.0,0.5),
+          QuarterRight.changeBeats(2).changehands(Hands.GRIPRIGHT).skew(1,0),
 
           ExtendLeft.changeBeats(2).changehands(Hands.GRIPRIGHT).scale(1.0,0.5) +
-          QuarterLeft.changeBeats(2).changehands(Hands.GRIPRIGHT).skew(1.0,-1.5),
+          QuarterLeft.changeBeats(2).changehands(Hands.GRIPRIGHT).skew(1,-1),
 
           ExtendLeft.changeBeats(2).changehands(Hands.GRIPRIGHT).scale(1.0,0.5) +
-          QuarterRight.changeBeats(2).changehands(Hands.GRIPRIGHT).skew(1.0,0.5),
+          QuarterRight.changeBeats(2).changehands(Hands.GRIPRIGHT).skew(1,0),
 
           ExtendLeft.changeBeats(2).changehands(Hands.GRIPRIGHT).scale(1.0,0.5) +
-          QuarterLeft.changeBeats(2).changehands(Hands.GRIPRIGHT).skew(1.0,-1.5)
+          QuarterLeft.changeBeats(2).changehands(Hands.GRIPRIGHT).skew(1,-1)
       ]),
 
     AnimatedCall('Heads Star Thru',

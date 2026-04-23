@@ -36,7 +36,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Forward and Back',
-      formation:Formation('Normal Lines'),
+      formation:Formation('Normal Lines Compact'),
       from:'Lines',
       paths:[
           Forward.changeBeats(2).changehands(Hands.RIGHT) +

@@ -46,16 +46,16 @@ import '../../moves.dart';
       from:'Pass Thru',group:' ',actives:'Centers',
       paths:[
           DodgeLeft.changeBeats(1).scale(0.25,0.25).skew(0.5,0.0) +
-          DodgeRight.changeBeats(1).scale(0.25,0.25).skew(0.5,0.0),
+          DodgeRight.changeBeats(1).scale(0.25,0.25).skew(1,0),
 
           DodgeRight.changeBeats(1).scale(0.25,0.25).skew(0.5,0.0) +
-          DodgeLeft.changeBeats(1).scale(0.25,0.25).skew(0.5,0.0),
+          DodgeLeft.changeBeats(1).scale(0.25,0.25).skew(1,0),
 
           ExtendRight.skew(0.5,0.5) +
-          RunLeft.skew(-0.5,0.5),
+          RunLeft.skew(-1,0.5),
 
           ExtendLeft.skew(0.5,-0.5) +
-          RunRight.skew(-0.5,-0.5)
+          RunRight.skew(-1,-0.5)
       ]),
 
     AnimatedCall('Centers Split 2,'

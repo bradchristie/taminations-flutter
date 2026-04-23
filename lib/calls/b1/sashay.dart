@@ -34,7 +34,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Half Sashay',
-      formation:Formation('Normal Lines'),
+      formation:Formation('Normal Lines Compact'),
       from:'Lines',
       paths:[
           BackSashayRight.changeBeats(4),
@@ -138,7 +138,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Rollaway',
-      formation:Formation('Couples Facing Out'),
+      formation:Formation('Couples Facing Out Compact'),
       from:'Couples Facing Out',
       paths:[
           FoldLeft.changeBeats(1.5).changehands(Hands.GRIPLEFT).scale(0.6,0.5) +
@@ -148,12 +148,12 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Rollaway',
-      formation:Formation('Normal Lines'),
+      formation:Formation('Normal Lines Compact'),
       from:'Lines',
       paths:[
           DodgeRight.changehands(Hands.GRIPRIGHT),
 
-          FoldLeft.changeBeats(1.5).changehands(Hands.GRIPLEFT).scale(0.6,0.5) +
+          UmTurnLeft.changeBeats(1.5).changehands(Hands.GRIPLEFT).skew(1.2,1.0) +
           UmTurnLeft.changeBeats(1.5).changehands(Hands.GRIPLEFT).skew(1.2,-1.0),
 
           DodgeRight.changehands(Hands.GRIPRIGHT),

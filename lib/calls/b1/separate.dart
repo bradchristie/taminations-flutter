@@ -74,18 +74,18 @@ import '../../moves.dart';
           ExtendLeft.changeBeats(3).scale(3.0,0.5) +
           ExtendRight.changeBeats(3).scale(3.0,0.5) +
           RunLeft.changeBeats(4).scale(1.0,1.5) +
-          LeadLeft.changeBeats(3).scale(2.0,2.0),
+          LeadLeft.changeBeats(3).scale(2.0,2.5),
 
           ExtendLeft.changeBeats(3).scale(3.0,0.5) +
           ExtendRight.changeBeats(3).scale(3.0,0.5) +
           RunRight.changeBeats(4).scale(1.0,1.5) +
-          LeadRight.changeBeats(3).scale(2.0,2.0),
+          LeadRight.changeBeats(3).scale(2.0,2.5),
 
           Stand.changeBeats(9).changehands(Hands.RIGHT) +
-          ExtendLeft.changeBeats(4).scale(1.0,2.0),
+          ExtendLeft.changeBeats(4).scale(1.5,2.0),
 
           Stand.changeBeats(9).changehands(Hands.LEFT) +
-          ExtendRight.changeBeats(4).scale(1.0,2.0)
+          ExtendRight.changeBeats(4).scale(1.5,2.0)
       ]),
 
     AnimatedCall('Heads Pass Thru, Separate Around 1 and Come Into the Middle',
@@ -152,19 +152,19 @@ import '../../moves.dart';
           ExtendRight.changeBeats(3).scale(3.0,0.5) +
           RunLeft.changeBeats(4).scale(1.0,1.5).skew(-1.0,0.0) +
           ExtendLeft.changeBeats(2).scale(2.0,0.5) +
-          LeadLeft.changeBeats(3).scale(3.0,1.5),
+          LeadLeft.changeBeats(3).scale(3,2),
 
           ExtendLeft.changeBeats(3).scale(3.0,0.5) +
           ExtendRight.changeBeats(3).scale(3.0,0.5) +
           RunRight.changeBeats(4).scale(1.0,1.5).skew(-1.0,0.0) +
           ExtendLeft.changeBeats(2).scale(2.0,0.5) +
-          LeadRight.changeBeats(3).scale(3.0,2.5),
+          LeadRight.changeBeats(3).scale(3,3),
 
           Stand.changeBeats(6) +
-          Forward.changeBeats(3).changehands(Hands.RIGHT),
+          Forward_1p5.changeBeats(3).changehands(Hands.RIGHT),
 
           Stand.changeBeats(6) +
-          Forward.changeBeats(3).changehands(Hands.LEFT)
+          Forward_1p5.changeBeats(3).changehands(Hands.LEFT)
       ]),
 
     AnimatedCall('Heads Pass Thru, Separate Around 2; Meet Your Partner and Dosado',
@@ -179,7 +179,7 @@ import '../../moves.dart';
           ExtendLeft.scale(2.0,0.5) +
           ExtendRight.scale(1.0,0.5) +
           RetreatRight.scale(1.0,0.5) +
-          RetreatLeft.scale(2.0,0.5),
+          RetreatLeft.scale(1.5,0.5),
 
           ExtendLeft.changeBeats(3).scale(3.0,0.5) +
           ExtendRight.changeBeats(3).scale(3.0,0.5) +
@@ -189,13 +189,13 @@ import '../../moves.dart';
           ExtendLeft.scale(2.0,0.5) +
           ExtendRight.scale(1.0,0.5) +
           RetreatRight.scale(1.0,0.5) +
-          RetreatLeft.scale(2.0,0.5),
+          RetreatLeft.scale(1.5,0.5),
 
           Stand.changeBeats(6) +
-          Forward.changeBeats(3).changehands(Hands.RIGHT),
+          Forward_1p5.changeBeats(3).changehands(Hands.RIGHT),
 
           Stand.changeBeats(6) +
-          Forward.changeBeats(3).changehands(Hands.LEFT)
+          Forward_1p5.changeBeats(3).changehands(Hands.LEFT)
       ]),
 
     AnimatedCall('Outside Couples Separate And Touch a Quarter',
@@ -221,26 +221,26 @@ import '../../moves.dart';
           LeadRight.changeBeats(2).scale(1.5,1.5) +
           SwingRight.changeBeats(2).scale(0.5,0.5) +
           SwingLeft.changeBeats(2).scale(0.5,0.5) +
-          ExtendRight.changeBeats(2).scale(2.0,0.5) +
+          ExtendRight.changeBeats(2).scale(1.5,0.5) +
           BeauWheel.scale(0.67,1.0),
 
           ExtendLeft.changeBeats(3).scale(3.0,0.5) +
           LeadLeft.changeBeats(2).changehands(Hands.LEFT).scale(0.5,0.5) +
           SwingRight.changeBeats(2).scale(0.5,0.5) +
           Stand.changeBeats(2) +
-          ExtendRight.changeBeats(2).scale(2.0,0.5) +
+          ExtendRight.changeBeats(2).scale(1.5,0.5) +
           BelleWheel.scale(0.67,1.0),
 
           QuarterLeft.changeBeats(3).skew(0.0,1.0) +
           LeadRight.changeBeats(5).scale(1.5,3.0) +
           Stand +
-          ExtendRight.changeBeats(2).scale(2.0,0.5) +
+          ExtendRight.changeBeats(2).scale(1.5,0.5) +
           BeauWheel.scale(0.67,1.0),
 
           QuarterRight.changeBeats(3).skew(0.0,-1.0) +
           LeadLeft.changeBeats(5).scale(0.5,3.0) +
           Stand +
-          ExtendRight.changeBeats(2).scale(2.0,0.5) +
+          ExtendRight.changeBeats(2).scale(1.5,0.5) +
           BelleWheel.scale(0.67,1.0)
       ]),
 

@@ -40,28 +40,28 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Dosado',
-      formation:Formation('Normal Lines'),
+      formation:Formation('Normal Lines Compact'),
       from:'Normal Lines',difficulty: 2,
       paths:[
-          ExtendLeft.changeBeats(1.5).scale(2.0,0.5) +
+          ExtendLeft.changeBeats(1.5).scale(1.5,0.5) +
           ExtendRight.changeBeats(1.5).scale(1.0,0.5) +
           RetreatRight.changeBeats(1.5).scale(1.0,0.5) +
-          RetreatLeft.changeBeats(1.5).scale(2.0,0.5),
+          RetreatLeft.changeBeats(1.5).scale(1.5,0.5),
 
-          ExtendLeft.changeBeats(1.5).scale(2.0,0.5) +
+          ExtendLeft.changeBeats(1.5).scale(1.5,0.5) +
           ExtendRight.changeBeats(1.5).scale(1.0,0.5) +
           RetreatRight.changeBeats(1.5).scale(1.0,0.5) +
-          RetreatLeft.changeBeats(1.5).scale(2.0,0.5),
+          RetreatLeft.changeBeats(1.5).scale(1.5,0.5),
 
-          ExtendLeft.changeBeats(1.5).scale(2.0,0.5) +
+          ExtendLeft.changeBeats(1.5).scale(1.5,0.5) +
           ExtendRight.changeBeats(1.5).scale(1.0,0.5) +
           RetreatRight.changeBeats(1.5).scale(1.0,0.5) +
-          RetreatLeft.changeBeats(1.5).scale(2.0,0.5),
+          RetreatLeft.changeBeats(1.5).scale(1.5,0.5),
 
-          ExtendLeft.changeBeats(1.5).scale(2.0,0.5) +
+          ExtendLeft.changeBeats(1.5).scale(1.5,0.5) +
           ExtendRight.changeBeats(1.5).scale(1.0,0.5) +
           RetreatRight.changeBeats(1.5).scale(1.0,0.5) +
-          RetreatLeft.changeBeats(1.5).scale(2.0,0.5)
+          RetreatLeft.changeBeats(1.5).scale(1.5,0.5)
       ]),
 
     AnimatedCall('Dosado',
@@ -107,28 +107,28 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Dosado to a Wave',
-      formation:Formation('Normal Lines'),
+      formation:Formation('Normal Lines Compact'),
       from:'Normal Lines',difficulty: 3,
       paths:[
-          ExtendLeft.changeBeats(1.5).scale(2.0,0.5) +
+          ExtendLeft.changeBeats(1.5).scale(1.5,0.5) +
           ExtendRight.changeBeats(1.5).scale(1.0,0.5) +
           RetreatRight.changeBeats(1.5).scale(1.0,0.5) +
           RetreatLeft.changeBeats(1.5).scale(1.0,0.5) +
           ExtendLeft.changeBeats(2).changeBeats(1.5).scale(1.0,0.5),
 
-          ExtendLeft.changeBeats(1.5).scale(2.0,0.5) +
+          ExtendLeft.changeBeats(1.5).scale(1.5,0.5) +
           ExtendRight.changeBeats(1.5).scale(1.0,0.5) +
           RetreatRight.changeBeats(1.5).scale(1.0,0.5) +
           RetreatLeft.changeBeats(1.5).scale(1.0,0.5) +
           ExtendLeft.changeBeats(2).changeBeats(1.5).scale(1.0,0.5),
 
-          ExtendLeft.changeBeats(1.5).scale(2.0,0.5) +
+          ExtendLeft.changeBeats(1.5).scale(1.5,0.5) +
           ExtendRight.changeBeats(1.5).scale(1.0,0.5) +
           RetreatRight.changeBeats(1.5).scale(1.0,0.5) +
           RetreatLeft.changeBeats(1.5).scale(1.0,0.5) +
           ExtendLeft.changeBeats(2).changeBeats(1.5).scale(1.0,0.5),
 
-          ExtendLeft.changeBeats(1.5).scale(2.0,0.5) +
+          ExtendLeft.changeBeats(1.5).scale(1.5,0.5) +
           ExtendRight.changeBeats(1.5).scale(1.0,0.5) +
           RetreatRight.changeBeats(1.5).scale(1.0,0.5) +
           RetreatLeft.changeBeats(1.5).scale(1.0,0.5) +

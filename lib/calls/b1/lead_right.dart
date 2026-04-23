@@ -38,27 +38,29 @@ import '../../moves.dart';
       from:'Eight Chain Thru',difficulty: 2,
       paths:[
           EighthRight.changeBeats(2).changehands(Hands.RIGHT).skew(0.5,-1.5) +
-          EighthRight.changeBeats(2).changehands(Hands.RIGHT).skew(2.1,0.0),
+          EighthRight.changeBeats(2).changehands(Hands.RIGHT).skew(1.75,0.35),
 
-          QuarterRight.changeBeats(4).changehands(Hands.LEFT).skew(0.0,-1.0),
+          QuarterRight.changeBeats(4).changehands(Hands.LEFT).skew(0.0,-0.5),
 
           EighthRight.changeBeats(2).changehands(Hands.RIGHT).skew(0.5,-1.5) +
-          EighthRight.changeBeats(2).changehands(Hands.RIGHT).skew(2.1,0.0),
+          EighthRight.changeBeats(2).changehands(Hands.RIGHT).skew(1.75,0.35),
 
-          QuarterRight.changeBeats(4).changehands(Hands.LEFT).skew(0.0,-1.0)
+          QuarterRight.changeBeats(4).changehands(Hands.LEFT).skew(0.0,-0.5)
       ]),
 
     AnimatedCall('Lead Right',
-      formation:Formation('Normal Lines'),
+      formation:Formation('Normal Lines Compact'),
       from:'Lines',difficulty: 2,
       paths:[
-          HingeRight.changeBeats(4).scale(0.5,0.5).skew(2.5,-1.5),
+        EighthRight.changeBeats(2).changehands(Hands.RIGHT).skew(1.0,-1.5) +
+            EighthRight.changeBeats(2).changehands(Hands.RIGHT).skew(1.4,0.7),
 
-          QuarterRight.changeBeats(4).changehands(Hands.LEFT).skew(1.0,0.0),
+          QuarterRight.changeBeats(4).changehands(Hands.LEFT).skew(0.5,0.0),
 
-          HingeRight.changeBeats(4).scale(0.5,0.5).skew(2.5,-1.5),
+        EighthRight.changeBeats(2).changehands(Hands.RIGHT).skew(1.0,-1.5) +
+            EighthRight.changeBeats(2).changehands(Hands.RIGHT).skew(1.4,0.7),
 
-          QuarterRight.changeBeats(4).changehands(Hands.LEFT).skew(1.0,0.0)
+          QuarterRight.changeBeats(4).changehands(Hands.LEFT).skew(0.5,0.0)
       ]),
 
     AnimatedCall('Lead Left',
@@ -74,28 +76,30 @@ import '../../moves.dart';
       formation:Formation('Eight Chain Thru'),
       from:'Eight Chain Thru',difficulty: 2,
       paths:[
-          QuarterLeft.changeBeats(4).changehands(Hands.RIGHT).skew(0.0,1.0),
+          QuarterLeft.changeBeats(4).changehands(Hands.RIGHT).skew(0.0,0.5),
 
           EighthLeft.changeBeats(2).changehands(Hands.LEFT).skew(0.5,1.5) +
-          EighthLeft.changeBeats(2).changehands(Hands.LEFT).skew(2.1,0.0),
+          EighthLeft.changeBeats(2).changehands(Hands.LEFT).skew(1.75,-0.35),
 
-          QuarterLeft.changeBeats(4).changehands(Hands.RIGHT).skew(0.0,1.0),
+          QuarterLeft.changeBeats(4).changehands(Hands.RIGHT).skew(0.0,0.5),
 
           EighthLeft.changeBeats(2).changehands(Hands.LEFT).skew(0.5,1.5) +
-          EighthLeft.changeBeats(2).changehands(Hands.LEFT).skew(2.1,0.0)
+          EighthLeft.changeBeats(2).changehands(Hands.LEFT).skew(1.75,-0.35)
       ]),
 
     AnimatedCall('Lead Left',
-      formation:Formation('Normal Lines'),
+      formation:Formation('Normal Lines Compact'),
       from:'Lines',difficulty: 2,
       paths:[
-          QuarterLeft.changeBeats(4).changehands(Hands.RIGHT).skew(1.0,0.0),
+          QuarterLeft.changeBeats(4).changehands(Hands.RIGHT).skew(0.5,0.0),
 
-          HingeLeft.changeBeats(4).scale(0.5,0.5).skew(2.5,1.5),
+        EighthLeft.changeBeats(2).changehands(Hands.LEFT).skew(1.0,1.5) +
+            EighthLeft.changeBeats(2).changehands(Hands.LEFT).skew(1.4,-0.7),
 
-          QuarterLeft.changeBeats(4).changehands(Hands.RIGHT).skew(1.0,0.0),
+          QuarterLeft.changeBeats(4).changehands(Hands.RIGHT).skew(0.5,0.0),
 
-          HingeLeft.changeBeats(4).scale(0.5,0.5).skew(2.5,1.5)
+        EighthLeft.changeBeats(2).changehands(Hands.LEFT).skew(1.0,1.5) +
+            EighthLeft.changeBeats(2).changehands(Hands.LEFT).skew(1.4,-0.7),
       ]),
 
     AnimatedCall('Heads Lead Right',

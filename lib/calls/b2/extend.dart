@@ -91,13 +91,13 @@ import '../../moves.dart';
       formation:Formation('Quarter Tag'),
       from:'Right-Hand 1/4 Tag',difficulty: 1,
       paths:[
-          ExtendLeft.changeBeats(2).scale(1.0,2.0),
+          ExtendLeft.changeBeats(2).scale(1.5,2.0),
 
-          Forward.changeBeats(2),
+          Forward_1p5.changeBeats(2),
 
-          Forward_2,
+          Forward_1p5.changeBeats(2),
 
-          Forward_2
+          Forward_1p5.changeBeats(2)
       ]),
 
     AnimatedCall('Extend',

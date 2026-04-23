@@ -25,7 +25,7 @@ import '../../moves.dart';
   final List<AnimatedCall> CourtesyTurn = [
 
     AnimatedCall('Courtesy Turn',
-      formation:Formation('Couples Facing Out'),
+      formation:Formation('Couples Facing Out Compact'),
       from:'Couples Facing Out',notForSequencer: true,
       paths:[
           BelleWheel.scale(0.67,1.0),
@@ -34,7 +34,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Courtesy Turn',
-      formation:Formation('Lines Facing Out'),
+      formation:Formation('Lines Facing Out Compact'),
       from:'Lines Facing Out',isGenderSpecific:true,
       paths:[
           BelleWheel.scale(0.67,1.0),
@@ -60,27 +60,27 @@ import '../../moves.dart';
     ''',
       paths:[
           UmTurnLeft.skew(1.0,-0.5) +
-          BeauWheel.scale(0.5,1.25),
+          BeauWheel.scale(0.5,1.25).skew(-0.5,0),
 
           ExtendRight.changeBeats(3).scale(1.0,0.5) +
-          BelleWheel.scale(0.5,0.25),
+          BelleWheel.scale(0.5,0.25).skew(-0.5,0),
 
           UmTurnLeft.skew(1.0,-0.5) +
-          BeauWheel.scale(0.5,0.25),
+          BeauWheel.scale(0.5,0.25).skew(-0.5,0),
 
           ExtendRight.changeBeats(3).scale(1.0,0.5) +
-          BelleWheel.scale(0.5,1.25)
+          BelleWheel.scale(0.5,1.25).skew(-0.5,0)
       ]),
 
     AnimatedCall('Courtesy Turn and a Quarter More',
-      formation:Formation('Couples Facing Out'),
+      formation:Formation('Couples Facing Out Compact'),
       from:'Couples Facing Out',group:' ',isGenderSpecific:true,
       paths:[
           BelleWheel.scale(0.67,1.0) +
-          HingeLeft,
+          HingeLeft.skew(-0.5,0),
 
           BeauWheel.scale(0.67,1.0) +
-          BackHingeRight
+          BackHingeRight.skew(-0.5,0)
       ]),
 
     AnimatedCall('Heads Pass Thru and Courtesy Turn',

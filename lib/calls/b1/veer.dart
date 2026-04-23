@@ -37,9 +37,9 @@ import '../../moves.dart';
       formation:Formation('Two-Faced Line LH'),
       from:'Left-Hand Two-Faced Line',difficulty: 1,
       paths:[
-          ExtendLeft.changeBeats(2).changehands(Hands.RIGHT).scale(2.0,2.0),
+          ExtendLeft.changeBeats(2).changehands(Hands.RIGHT).scale(1.5,2.0),
 
-          ExtendLeft.changeBeats(2).changehands(Hands.LEFT).scale(2.0,2.0)
+          ExtendLeft.changeBeats(2).changehands(Hands.LEFT).scale(1.5,2.0)
       ]),
 
     AnimatedCall('Veer Left',
@@ -56,42 +56,42 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Veer Left',
-      formation:Formation('Two-Faced Lines LH'),
+      formation:Formation('Two-Faced Lines LH Compact'),
       from:'Two-Faced Lines',difficulty: 1,
       paths:[
-          ExtendLeft.changeBeats(2).changehands(Hands.GRIPLEFT).scale(1.0,2.0),
+          ExtendLeft.changeBeats(2).changehands(Hands.GRIPLEFT).scale(1.5,2.0),
 
-          ExtendLeft.changeBeats(2).changehands(Hands.GRIPRIGHT).scale(1.0,2.0),
+          ExtendLeft.changeBeats(2).changehands(Hands.GRIPRIGHT).scale(1.5,2.0),
 
-          ExtendLeft.changeBeats(2).changehands(Hands.GRIPRIGHT).scale(1.0,2.0),
+          ExtendLeft.changeBeats(2).changehands(Hands.GRIPRIGHT).scale(0.5,2.0),
 
-          ExtendLeft.changeBeats(2).changehands(Hands.GRIPLEFT).scale(1.0,2.0)
+          ExtendLeft.changeBeats(2).changehands(Hands.GRIPLEFT).scale(0.5,2.0)
       ]),
 
     AnimatedCall('Veer Left',
       formation:Formation('Two-Faced Tidal Line LH'),
       from:'Two-Faced Tidal Line',difficulty: 2,
       paths:[
-          ExtendLeft.changeBeats(2).changehands(Hands.GRIPLEFT).scale(2.0,0.5),
+          ExtendLeft.changeBeats(2).changehands(Hands.GRIPLEFT).scale(1.5,0.5),
 
-          ExtendLeft.changeBeats(2).changehands(Hands.GRIPRIGHT).scale(2.0,1.5),
+          ExtendLeft.changeBeats(2).changehands(Hands.GRIPRIGHT).scale(1.5,1.5),
 
-          ExtendLeft.changeBeats(2).changehands(Hands.GRIPRIGHT).scale(2.0,1.5),
+          ExtendLeft.changeBeats(2).changehands(Hands.GRIPRIGHT).scale(1.5,1.5),
 
-          ExtendLeft.changeBeats(2).changehands(Hands.GRIPLEFT).scale(2.0,0.5)
+          ExtendLeft.changeBeats(2).changehands(Hands.GRIPLEFT).scale(1.5,0.5)
       ]),
 
     AnimatedCall('Veer Left',
-      formation:Formation('Normal Lines'),
+      formation:Formation('Normal Lines Compact'),
       from:'Normal Lines',difficulty: 2,
       paths:[
-          ExtendLeft.changeBeats(2).changehands(Hands.RIGHT).scale(2.0,0.5),
+          ExtendLeft.changeBeats(2).changehands(Hands.RIGHT).scale(1.5,0.5),
 
-          ExtendLeft.changeBeats(2).changehands(Hands.LEFT).scale(2.0,1.5),
+          ExtendLeft.changeBeats(2).changehands(Hands.LEFT).scale(1.5,1.5),
 
-          ExtendLeft.changeBeats(2).changehands(Hands.RIGHT).scale(2.0,0.5),
+          ExtendLeft.changeBeats(2).changehands(Hands.RIGHT).scale(1.5,0.5),
 
-          ExtendLeft.changeBeats(2).changehands(Hands.LEFT).scale(2.0,1.5)
+          ExtendLeft.changeBeats(2).changehands(Hands.LEFT).scale(1.5,1.5)
       ]),
 
     AnimatedCall('Veer Right',
@@ -107,61 +107,61 @@ import '../../moves.dart';
       formation:Formation('Two-Faced Line RH'),
       from:'Right-Hand Two-Faced Line',difficulty: 1,
       paths:[
-          ExtendRight.changeBeats(2).changehands(Hands.RIGHT).scale(2.0,2.0),
+          ExtendRight.changeBeats(2).changehands(Hands.RIGHT).scale(1.5,2.0),
 
-          ExtendRight.changeBeats(2).changehands(Hands.LEFT).scale(2.0,2.0)
+          ExtendRight.changeBeats(2).changehands(Hands.LEFT).scale(1.5,2.0)
       ]),
 
     AnimatedCall('Veer Right',
       formation:Formation('Eight Chain Thru'),
       from:'Eight Chain Thru',difficulty: 1,
       paths:[
-          ExtendRight.changeBeats(2).changehands(Hands.GRIPRIGHT).scale(1.0,2.0),
+          ExtendRight.changeBeats(2).changehands(Hands.GRIPRIGHT).scale(1.5,2.0),
 
-          ExtendRight.changeBeats(2).changehands(Hands.GRIPLEFT).scale(1.0,2.0),
+          ExtendRight.changeBeats(2).changehands(Hands.GRIPLEFT).scale(1.5,2.0),
 
-          ExtendRight.changeBeats(2).changehands(Hands.GRIPRIGHT).scale(1.0,2.0),
+          ExtendRight.changeBeats(2).changehands(Hands.GRIPRIGHT).scale(0.5,2.0),
 
-          ExtendRight.changeBeats(2).changehands(Hands.GRIPLEFT).scale(1.0,2.0)
+          ExtendRight.changeBeats(2).changehands(Hands.GRIPLEFT).scale(0.5,2.0)
       ]),
 
     AnimatedCall('Veer Right',
-      formation:Formation('Two-Faced Lines RH'),
+      formation:Formation('Two-Faced Lines RH Compact'),
       from:'Two-Faced Lines',difficulty: 1,
       paths:[
-          ExtendRight.changeBeats(2).changehands(Hands.GRIPRIGHT).scale(1.0,2.0),
+          ExtendRight.changeBeats(2).changehands(Hands.GRIPRIGHT).scale(0.5,2.0),
 
-          ExtendRight.changeBeats(2).changehands(Hands.GRIPLEFT).scale(1.0,2.0),
+          ExtendRight.changeBeats(2).changehands(Hands.GRIPLEFT).scale(0.5,2.0),
 
-          ExtendRight.changeBeats(2).changehands(Hands.GRIPLEFT).scale(1.0,2.0),
+          ExtendRight.changeBeats(2).changehands(Hands.GRIPLEFT).scale(1.5,2.0),
 
-          ExtendRight.changeBeats(2).changehands(Hands.GRIPRIGHT).scale(1.0,2.0)
+          ExtendRight.changeBeats(2).changehands(Hands.GRIPRIGHT).scale(1.5,2.0)
       ]),
 
     AnimatedCall('Veer Right',
       formation:Formation('Two-Faced Tidal Line RH'),
       from:'Tidal Two-Faced Line',difficulty: 2,
       paths:[
-          ExtendRight.changeBeats(2).changehands(Hands.GRIPRIGHT).scale(2.0,0.5),
+          ExtendRight.changeBeats(2).changehands(Hands.GRIPRIGHT).scale(1.5,0.5),
 
-          ExtendRight.changeBeats(2).changehands(Hands.GRIPLEFT).scale(2.0,1.5),
+          ExtendRight.changeBeats(2).changehands(Hands.GRIPLEFT).scale(1.5,1.5),
 
-          ExtendRight.changeBeats(2).changehands(Hands.GRIPLEFT).scale(2.0,1.5),
+          ExtendRight.changeBeats(2).changehands(Hands.GRIPLEFT).scale(1.5,1.5),
 
-          ExtendRight.changeBeats(2).changehands(Hands.GRIPRIGHT).scale(2.0,0.5)
+          ExtendRight.changeBeats(2).changehands(Hands.GRIPRIGHT).scale(1.5,0.5)
       ]),
 
     AnimatedCall('Veer Right',
-      formation:Formation('Normal Lines'),
+      formation:Formation('Normal Lines Compact'),
       from:'Normal Lines',difficulty: 2,
       paths:[
-          ExtendRight.changeBeats(2).changehands(Hands.RIGHT).scale(2.0,1.5),
+          ExtendRight.changeBeats(2).changehands(Hands.RIGHT).scale(1.5,1.5),
 
-          ExtendRight.changeBeats(2).changehands(Hands.LEFT).scale(2.0,0.5),
+          ExtendRight.changeBeats(2).changehands(Hands.LEFT).scale(1.5,0.5),
 
-          ExtendRight.changeBeats(2).changehands(Hands.RIGHT).scale(2.0,1.5),
+          ExtendRight.changeBeats(2).changehands(Hands.RIGHT).scale(1.5,1.5),
 
-          ExtendRight.changeBeats(2).changehands(Hands.LEFT).scale(2.0,0.5)
+          ExtendRight.changeBeats(2).changehands(Hands.LEFT).scale(1.5,0.5)
       ]),
   ];
 

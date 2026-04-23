@@ -28,9 +28,9 @@ import '../../moves.dart';
       formation:Formation('Wave RH'),
       from:'Right-Hand Wave',
       paths:[
-          ExtendRight.changeBeats(2).scale(2.0,2.0),
+          ExtendRight.changeBeats(2).scale(1.5,2.0),
 
-          Forward_2
+          Forward_1p5
       ]),
 
     AnimatedCall('Step Thru',
@@ -61,43 +61,43 @@ import '../../moves.dart';
       formation:Formation('Wave LH'),
       from:'Left-Hand Wave',
       paths:[
-          ExtendLeft.changeBeats(2).scale(2.0,2.0),
+          ExtendLeft.changeBeats(2).scale(1.5,2.0),
 
-          Forward_2
+          Forward_1p5
       ]),
 
     AnimatedCall('Step Thru',
-      formation:Formation('Box RH'),
+      formation:Formation('Box RH Compact'),
       from:'Right-Hand Box',
       paths:[
-          ExtendRight,
+          ExtendRight.scale(0.5,1),
 
-          ExtendRight
+          ExtendRight.scale(1.5,1)
       ]),
 
     AnimatedCall('Step Thru',
-      formation:Formation('Box LH'),
+      formation:Formation('Box LH Compact'),
       from:'Left-Hand Box',
       paths:[
-          ExtendLeft,
+          ExtendLeft.scale(1.5,1),
 
-          ExtendLeft
+          ExtendLeft.scale(0.5,1)
       ]),
 
     AnimatedCall('Step Thru',
-      formation:Formation('Ocean Waves RH BGBG'),
+      formation:Formation('Ocean Waves RH BGBG Compact'),
       from:'Right-Hand Waves',
       taminator: '''
       Note how this is different from Extend
     ''',
       paths:[
-          ExtendRight.changeBeats(2).scale(1.0,2.0),
+          ExtendRight.changeBeats(2).scale(0.5,2.0),
 
-          Forward.changeBeats(2),
+          Forward_1p5.changeBeats(2),
 
-          Forward.changeBeats(2),
+          Forwardp5.changeBeats(2),
 
-          ExtendRight.changeBeats(2).scale(1.0,2.0)
+          ExtendRight.changeBeats(2).scale(1.5,2.0)
       ]),
 
     AnimatedCall('Step Thru',
@@ -119,16 +119,16 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Step Thru',
-      formation:Formation('Ocean Waves LH BGBG'),
+      formation:Formation('Ocean Waves LH BGBG Compact'),
       from:'Left-Hand Waves',
       paths:[
-          ExtendLeft.changeBeats(2).scale(1.0,2.0),
+          ExtendLeft.changeBeats(2).scale(1.5,2.0),
 
-          Forward.changeBeats(2),
+          Forwardp5.changeBeats(2),
 
-          Forward.changeBeats(2),
+          Forward_1p5.changeBeats(2),
 
-          ExtendLeft.changeBeats(2).scale(1.0,2.0)
+          ExtendLeft.changeBeats(2).scale(0.5,2.0)
       ]),
 
     AnimatedCall('Step Thru',
@@ -153,26 +153,26 @@ import '../../moves.dart';
       formation:Formation('Tidal Wave RH BGBG'),
       from:'Tidal Wave',
       paths:[
-          ExtendRight.changeBeats(2).scale(2.0,0.5),
+          ExtendRight.changeBeats(2).scale(1.5,0.5),
 
-          ExtendRight.changeBeats(2).scale(2.0,0.5),
+          ExtendRight.changeBeats(2).scale(1.5,0.5),
 
-          ExtendRight.changeBeats(2).scale(2.0,0.5),
+          ExtendRight.changeBeats(2).scale(1.5,0.5),
 
-          ExtendRight.changeBeats(2).scale(2.0,0.5)
+          ExtendRight.changeBeats(2).scale(1.5,0.5)
       ]),
 
     AnimatedCall('Step Thru',
       formation:Formation('Tidal Wave LH BGGB'),
       from:'Left-Hand Tidal Wave',
       paths:[
-          ExtendLeft.changeBeats(2).scale(2.0,0.5),
+          ExtendLeft.changeBeats(2).scale(1.5,0.5),
 
-          ExtendLeft.changeBeats(2).scale(2.0,0.5),
+          ExtendLeft.changeBeats(2).scale(1.5,0.5),
 
-          ExtendLeft.changeBeats(2).scale(2.0,0.5),
+          ExtendLeft.changeBeats(2).scale(1.5,0.5),
 
-          ExtendLeft.changeBeats(2).scale(2.0,0.5)
+          ExtendLeft.changeBeats(2).scale(1.5,0.5)
       ]),
 
     AnimatedCall('Step Thru',

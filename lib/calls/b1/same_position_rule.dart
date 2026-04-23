@@ -25,34 +25,34 @@ import '../../moves.dart';
   final List<AnimatedCall> SamePositionRule = [
 
     AnimatedCall('Circulate 1 1/2',
-      formation:Formation('Lines Facing Out'),
+      formation:Formation('Lines Facing Out Compact'),
       from:'Lines Facing Out',fractions:'4',
       paths:[
           RunLeft.changeBeats(4).scale(2.0,3.0) +
-          ExtendLeft.changeBeats(2).scale(2.0,0.5),
+          ExtendLeft.changeBeats(2).scale(1.5,0.5),
 
           FlipLeft.changeBeats(4) +
-          ExtendLeft.changeBeats(2).scale(2.0,0.5),
+          ExtendLeft.changeBeats(2).scale(1.5,0.5),
 
           RunRight.changeBeats(4) +
-          ExtendLeft.changeBeats(2).scale(2.0,0.5),
+          ExtendLeft.changeBeats(2).scale(1.5,0.5),
 
           RunRight.changeBeats(4).scale(3.0,3.0) +
-          ExtendLeft.changeBeats(2).scale(2.0,0.5)
+          ExtendLeft.changeBeats(2).scale(1.5,0.5)
       ]),
 
     AnimatedCall('Split Circulate',
-      formation:Formation('Inverted Lines Ends Facing Out'),
+      formation:Formation('Inverted Lines Ends Facing Out Compact'),
       from:'Inverted Lines',
       paths:[
           LeadLeft.changeBeats(2).scale(1.0,0.5) +
           QuarterLeft.changeBeats(2).skew(-0.5,1.0),
 
-          ExtendLeft.changeBeats(2).scale(2.0,0.5) +
-          ExtendLeft.changeBeats(2).scale(2.0,1.5),
+          ExtendLeft.changeBeats(2).scale(1.5,0.5) +
+          ExtendLeft.changeBeats(2).scale(1.5,1.5),
 
-          ExtendLeft.changeBeats(2).scale(2.0,0.5) +
-          ExtendRight.changeBeats(2).scale(2.0,0.5),
+          ExtendLeft.changeBeats(2).scale(1.5,0.5) +
+          ExtendRight.changeBeats(2).scale(1.5,0.5),
 
           RunRight.changeBeats(4)
       ]),
