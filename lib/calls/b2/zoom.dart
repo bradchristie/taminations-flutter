@@ -25,23 +25,23 @@ import '../../moves.dart';
   final List<AnimatedCall> Zoom = [
 
     AnimatedCall('Zoom',
-      formation:Formation('Box RH'),
-      from:'Right-Hand Box',fractions:'3',difficulty: 2,
+      formation:Formation('Box RH Compact'),
+      from:'Right-Hand Box',fractions:'2',difficulty: 2,
       paths:[
-          Forward_4.changeBeats(6),
+          Forward_3.changeBeats(4),
 
-          RunLeft.skew(-2.0,0.0) +
-          RunLeft.skew(2.0,0.0)
+          RunLeft.changeBeats(2).skew(-1.5,0.0) +
+          RunLeft.changeBeats(2).skew(1.5,0.0)
       ]),
 
     AnimatedCall('Zoom',
-      formation:Formation('Box LH'),
-      from:'Left-Hand Box',fractions:'3',difficulty: 2,
+      formation:Formation('Box LH Compact'),
+      from:'Left-Hand Box',fractions:'2',difficulty: 2,
       paths:[
-          RunRight.skew(-2.0,0.0) +
-          RunRight.skew(2.0,0.0),
+          RunRight.changeBeats(2).skew(-1.5,0.0) +
+          RunRight.changeBeats(2).skew(1.5,0.0),
 
-          Forward_4.changeBeats(6)
+          Forward_3.changeBeats(4)
       ]),
 
     AnimatedCall('Zoom',
@@ -147,17 +147,17 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Ends Zoom',
-      formation:Formation('Two-Faced Lines RH'),
+      formation:Formation('Two-Faced Lines RH Compact'),
       from:'Two-Faced Lines',fractions:'2',difficulty: 2,
       paths:[
-          Forward_4.changeBeats(4),
+          Forward_3.changeBeats(4),
 
           Path(),
 
           Path(),
 
-          RunLeft.changeBeats(2).skew(-2.0,0.0) +
-          RunLeft.changeBeats(2).skew(2.0,0.0)
+          RunLeft.changeBeats(2).skew(-1.5,0.0) +
+          RunLeft.changeBeats(2).skew(1.5,0.0)
       ]),
 
     AnimatedCall('Points Zoom',

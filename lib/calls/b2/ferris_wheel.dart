@@ -25,50 +25,50 @@ import '../../moves.dart';
   final List<AnimatedCall> FerrisWheel = [
 
     AnimatedCall('Ferris Wheel',
-      formation:Formation('Two-Faced Lines RH'),
+      formation:Formation('Two-Faced Lines RH Compact'),
       from:'Right-Handed Two-Faced Lines, strictly',difficulty: 1,
       taminator: '''The center couples form a momentary two-faced line, following
     the Dance action description.
     ''',
       paths:[
-          Forward_2.changehands(Hands.RIGHT) +
+          Forward_1p5.changehands(Hands.RIGHT).changeBeats(2) +
           RunRight.changeBeats(4).changehands(Hands.GRIPRIGHT).scale(1.0,2.0).skew(1.0,0.0),
 
-          Forward_2.changehands(Hands.LEFT) +
+          Forward_1p5.changehands(Hands.LEFT).changeBeats(2) +
           UmTurnRight.changeBeats(4).changehands(Hands.GRIPLEFT).skew(1.0,0.0),
 
-          UmTurnRight.changeBeats(4).changehands(Hands.GRIPLEFT).skew(1.0,0.0),
+          UmTurnRight.changeBeats(4).changehands(Hands.GRIPLEFT).skew(1.5,0.0),
 
-          RunRight.changeBeats(4).changehands(Hands.GRIPRIGHT).scale(2.0,2.0).skew(1.0,0.0)
+          RunRight.changeBeats(4).changehands(Hands.GRIPRIGHT).scale(2.0,2.0).skew(1.5,0.0)
       ]),
 
     AnimatedCall('Ferris Wheel',
-      formation:Formation('Two-Faced Lines RH'),
+      formation:Formation('Two-Faced Lines RH Compact'),
       from:'Right-Handed Two-Faced Lines',difficulty: 1,
-      taminator: '''The center dancers start the Wheel and Deal action immmediately,
+      taminator: '''The center dancers start the Wheel and Deal action immediately,
        and a two-faced line is not formed.  This is how many dancers perform this call.
     ''',
       paths:[
-          RunRight.changeBeats(4).changehands(Hands.GRIPRIGHT).scale(2.0,2.0).skew(3.0,0.0),
+          RunRight.changeBeats(4).changehands(Hands.GRIPRIGHT).scale(1.5,2.0).skew(2.5,0.0),
 
-          UmTurnRight.changeBeats(4).changehands(Hands.GRIPLEFT).skew(3.0,0.0),
+          UmTurnRight.changeBeats(4).changehands(Hands.GRIPLEFT).skew(2.5,0.0),
 
-          UmTurnRight.changeBeats(4).changehands(Hands.GRIPLEFT).skew(1.0,0.0),
+          UmTurnRight.changeBeats(4).changehands(Hands.GRIPLEFT).skew(1.5,0.0),
 
-          RunRight.changeBeats(4).changehands(Hands.GRIPRIGHT).scale(2.0,2.0).skew(1.0,0.0)
+          RunRight.changeBeats(4).changehands(Hands.GRIPRIGHT).scale(2.0,2.0).skew(1.5,0.0)
       ]),
 
     AnimatedCall('Ferris Wheel',
-      formation:Formation('Two-Faced Lines LH'),
+      formation:Formation('Two-Faced Lines LH Compact'),
       from:'Left-Handed Two-Faced Lines',difficulty: 1,
       paths:[
-          RunLeft.changeBeats(4).changehands(Hands.GRIPLEFT).scale(2.0,2.0).skew(1.0,0.0),
+          RunLeft.changeBeats(4).changehands(Hands.GRIPLEFT).scale(2.0,2.0).skew(1.5,0.0),
 
-          UmTurnLeft.changeBeats(4).changehands(Hands.GRIPRIGHT).skew(1.0,0.0),
+          UmTurnLeft.changeBeats(4).changehands(Hands.GRIPRIGHT).skew(1.5,0.0),
 
-          UmTurnLeft.changeBeats(4).changehands(Hands.GRIPRIGHT).skew(3.0,0.0),
+          UmTurnLeft.changeBeats(4).changehands(Hands.GRIPRIGHT).skew(2.5,0.0),
 
-          RunLeft.changeBeats(4).changehands(Hands.GRIPLEFT).scale(2.0,2.0).skew(3.0,0.0)
+          RunLeft.changeBeats(4).changehands(Hands.GRIPLEFT).scale(1.5,2.0).skew(2.5,0.0)
       ]),
 
     AnimatedCall('Ferris Wheel',

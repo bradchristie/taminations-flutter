@@ -28,26 +28,26 @@ import '../../moves.dart';
       formation:Formation('Two-Faced Line RH'),
       from:'Right-Hand Two-Faced Line',difficulty: 2,
       paths:[
-          QuarterLeft.changeBeats(2).changehands(Hands.RIGHT).skew(0.33,-0.83) +
-          QuarterLeft.changeBeats(2).changehands(Hands.RIGHT).skew(-0.33,-0.33) +
-          QuarterLeft.changeBeats(2).changehands(Hands.RIGHT).skew(-0.33,0.33),
+          QuarterLeft.changeBeats(2).changehands(Hands.RIGHT).skew(0.333,-0.83) +
+          QuarterLeft.changeBeats(2).changehands(Hands.RIGHT).skew(-0.333,-0.333) +
+          QuarterLeft.changeBeats(2).changehands(Hands.RIGHT).skew(-0.333,0.333),
 
-          HingeLeft.changeBeats(2).scale(2.0,2.0).skew(0.33,-0.83) +
-          HingeLeft.changeBeats(2).scale(2.0,2.0).skew(-0.33,-0.33) +
-          HingeLeft.changeBeats(2).scale(2.0,2.0).skew(-0.33,0.33)
+          HingeLeft.changeBeats(2).scale(2.0,2.0).skew(0.333,-0.83) +
+          HingeLeft.changeBeats(2).scale(2.0,2.0).skew(-0.333,-0.333) +
+          HingeLeft.changeBeats(2).scale(2.0,2.0).skew(-0.333,0.333)
       ]),
 
     AnimatedCall('Cast Off Three Quarters',
       formation:Formation('Two-Faced Line LH'),
       from:'Left-Hand Two-Faced Line',difficulty: 2,
       paths:[
-          HingeRight.scale(2.0,2.0).skew(0.33,0.83) +
-          HingeRight.scale(2.0,2.0).skew(-0.33,0.33) +
-          HingeRight.scale(2.0,2.0).skew(-0.33,-0.33),
+          HingeRight.changeBeats(2).scale(2.0,2.0).skew(0.333,0.83) +
+          HingeRight.changeBeats(2).scale(2.0,2.0).skew(-0.333,0.333) +
+          HingeRight.changeBeats(2).scale(2.0,2.0).skew(-0.333,-0.333),
 
-          QuarterRight.changehands(Hands.LEFT).skew(0.33,0.83) +
-          QuarterRight.changehands(Hands.LEFT).skew(-0.33,0.33) +
-          QuarterRight.changehands(Hands.LEFT).skew(-0.33,-0.33)
+          QuarterRight.changeBeats(2).changehands(Hands.LEFT).skew(0.333,0.83) +
+          QuarterRight.changeBeats(2).changehands(Hands.LEFT).skew(-0.333,0.333) +
+          QuarterRight.changeBeats(2).changehands(Hands.LEFT).skew(-0.333,-0.333)
       ]),
 
     AnimatedCall('Cast Off Three Quarters',
@@ -55,400 +55,441 @@ import '../../moves.dart';
       from:'Right-Hand Wave',difficulty: 1,
       notForSequencer: true,
       paths:[
-          SwingRight +
-          HingeRight.skew(0.0,0.5),
+          SwingRight.changeBeats(4) +
+          HingeRight.changeBeats(2).skew(0.0,0.5),
 
-          SwingRight +
-          HingeRight.skew(0.0,-0.5)
+          SwingRight.changeBeats(4) +
+          HingeRight.changeBeats(2).skew(0.0,-0.5)
       ]),
 
     AnimatedCall('Cast Off Three Quarters',
       formation:Formation('Wave LH'),
       from:'Left-Hand Wave',difficulty: 1,
       paths:[
-          SwingLeft +
-          HingeLeft.skew(0.0,-0.5),
+          SwingLeft.changeBeats(4) +
+          HingeLeft.changeBeats(2).skew(0.0,-0.5),
 
-          SwingLeft +
-          HingeLeft.skew(0.0,0.5)
+          SwingLeft.changeBeats(4) +
+          HingeLeft.changeBeats(2).skew(0.0,0.5)
       ]),
 
     AnimatedCall('Cast Off Three Quarters',
-      formation:Formation('Lines Facing Out'),
+      formation:Formation('Lines Facing Out Compact'),
       from:'Lines Facing Out',difficulty: 1,
       paths:[
-          QuarterRight.changehands(Hands.LEFT).skew(0.33,0.33) +
-          QuarterRight.changehands(Hands.LEFT).skew(-0.33,0.33) +
-          QuarterRight.changehands(Hands.LEFT).skew(-0.33,-0.33),
+          QuarterRight.changeBeats(2).changehands(Hands.LEFT).skew(0.5,0.5) +
+          QuarterRight.changeBeats(2).changehands(Hands.LEFT).skew(-0.5,0.5) +
+          QuarterRight.changeBeats(2).changehands(Hands.LEFT).skew(-0.5,-0.5),
 
-          HingeRight.scale(2.0,2.0).skew(0.33,0.33) +
-          HingeRight.scale(2.0,2.0).skew(-0.33,0.33) +
-          HingeRight.scale(2.0,2.0).skew(-0.33,-0.33),
+          HingeRight.changeBeats(2).scale(2.0,2.0).skew(0.5,0.5) +
+          HingeRight.changeBeats(2).scale(2.0,2.0).skew(-0.5,0.5) +
+          HingeRight.changeBeats(2).scale(2.0,2.0).skew(-0.5,-0.5),
 
-          HingeLeft.scale(2.0,2.0).skew(0.33,-0.33) +
-          HingeLeft.scale(2.0,2.0).skew(-0.33,-0.33) +
-          HingeLeft.scale(2.0,2.0).skew(-0.33,0.33),
+          HingeLeft.changeBeats(2).scale(2.0,2.0).skew(0.5,-0.5) +
+          HingeLeft.changeBeats(2).scale(2.0,2.0).skew(-0.5,-0.5) +
+          HingeLeft.changeBeats(2).scale(2.0,2.0).skew(-0.5,0.5),
 
-          QuarterLeft.changehands(Hands.RIGHT).skew(0.33,-0.33) +
-          QuarterLeft.changehands(Hands.RIGHT).skew(-0.33,-0.33) +
-          QuarterLeft.changehands(Hands.RIGHT).skew(-0.33,0.33)
+          QuarterLeft.changeBeats(2).changehands(Hands.RIGHT).skew(0.5,-0.5) +
+          QuarterLeft.changeBeats(2).changehands(Hands.RIGHT).skew(-0.5,-0.5) +
+          QuarterLeft.changeBeats(2).changehands(Hands.RIGHT).skew(-0.5,0.5)
       ]),
 
     AnimatedCall('Cast Off Three Quarters',
-      formation:Formation('Box RH'),
+      formation:Formation('Box RH Compact'),
       from:'Right-Hand Box',difficulty: 1,notForSequencer: true,
       paths:[
-          CastRight,
+        HingeRight.changeBeats(2).skew(-0.167,0) +
+            HingeRight.changeBeats(2).skew(0,-0.167) +
+            HingeRight.changeBeats(2).skew(0.167,0),
 
-          CastRight
+        HingeRight.changeBeats(2).skew(0.167,0) +
+            HingeRight.changeBeats(2).skew(0,0.167) +
+            HingeRight.changeBeats(2).skew(-0.167,0),
+
       ]),
 
     AnimatedCall('Cast Off Three Quarters',
-      formation:Formation('Box LH'),
+      formation:Formation('Box LH Compact'),
       from:'Left-Hand Box',difficulty: 1,notForSequencer: true,
       paths:[
-          CastLeft,
+        HingeLeft.changeBeats(2).skew(0.167,0) +
+            HingeLeft.changeBeats(2).skew(0,-0.167) +
+            HingeLeft.changeBeats(2).skew(-0.167,0),
 
-          CastLeft
+        HingeLeft.changeBeats(2).skew(-0.167,0) +
+            HingeLeft.changeBeats(2).skew(0,0.167) +
+            HingeLeft.changeBeats(2).skew(0.167,0),
       ]),
 
     AnimatedCall('Cast Off Three Quarters',
       formation:Formation('Normal Lines'),
       from:'Lines Facing In',difficulty: 2,noDisplay: true,
       paths:[
-          BackHingeRight +
-          BackHingeRight +
-          BackHingeRight,
+          BackHingeRight.changeBeats(2) +
+          BackHingeRight.changeBeats(2) +
+          BackHingeRight.changeBeats(2),
 
-          CastLeft,
+          CastLeft.changeBeats(6),
 
-          CastRight,
+          CastRight.changeBeats(6),
 
-          BackHingeLeft +
-          BackHingeLeft +
-          BackHingeLeft
+          BackHingeLeft.changeBeats(2) +
+          BackHingeLeft.changeBeats(2) +
+          BackHingeLeft.changeBeats(2)
       ]),
 
     AnimatedCall('Cast Off Three Quarters',
-      formation:Formation('Two-Faced Lines RH'),
+      formation:Formation('Two-Faced Lines RH Compact'),
       from:'Right-Hand Two-Faced Lines',difficulty: 2,
       taminator: '''
       Remember, the centers push, the ends are the pivot.
       Resist the instinct to turn towards the center of the square.
     ''',
       paths:[
-          QuarterLeft.changehands(Hands.RIGHT).skew(0.33,-0.33) +
-          QuarterLeft.changehands(Hands.RIGHT).skew(-0.33,-0.33) +
-          QuarterLeft.changehands(Hands.RIGHT).skew(-0.33,0.33),
+          QuarterLeft.changeBeats(2).changehands(Hands.RIGHT).skew(0.167,-0.5) +
+          QuarterLeft.changeBeats(2).changehands(Hands.RIGHT).skew(-0.5,-0.167) +
+          QuarterLeft.changeBeats(2).changehands(Hands.RIGHT).skew(-0.167,0.5),
 
-          HingeLeft.scale(2.0,2.0).skew(0.33,-0.33) +
-          HingeLeft.scale(2.0,2.0).skew(-0.33,-0.33) +
-          HingeLeft.scale(2.0,2.0).skew(-0.33,0.33),
+          HingeLeft.changeBeats(2).scale(2.0,2.0).skew(0.167,-0.5) +
+          HingeLeft.changeBeats(2).scale(2.0,2.0).skew(-0.5,-0.167) +
+          HingeLeft.changeBeats(2).scale(2.0,2.0).skew(-0.167,0.5),
 
-          HingeLeft.scale(2.0,2.0).skew(0.33,-0.33) +
-          HingeLeft.scale(2.0,2.0).skew(-0.33,-0.33) +
-          HingeLeft.scale(2.0,2.0).skew(-0.33,0.33),
+          HingeLeft.changeBeats(2).scale(2.0,2.0).skew(0.5,-0.5) +
+          HingeLeft.changeBeats(2).scale(2.0,2.0).skew(-0.5,-0.5) +
+          HingeLeft.changeBeats(2).scale(2.0,2.0).skew(-0.5,0.5),
 
-          QuarterLeft.changehands(Hands.RIGHT).skew(0.33,-0.33) +
-          QuarterLeft.changehands(Hands.RIGHT).skew(-0.33,-0.33) +
-          QuarterLeft.changehands(Hands.RIGHT).skew(-0.33,0.33)
+          QuarterLeft.changeBeats(2).changehands(Hands.RIGHT).skew(0.5,-0.5) +
+          QuarterLeft.changeBeats(2).changehands(Hands.RIGHT).skew(-0.5,-0.5) +
+          QuarterLeft.changeBeats(2).changehands(Hands.RIGHT).skew(-0.5,0.5)
       ]),
 
     AnimatedCall('Cast Off Three Quarters',
-      formation:Formation('Two-Faced Lines LH'),
+      formation:Formation('Two-Faced Lines LH Compact'),
       from:'Left-Hand Two-Faced Lines',difficulty: 2,
       taminator: '''
       Remember, the centers push, the ends are the pivot.
       Resist the instinct to turn towards the center of the square.
     ''',
       paths:[
-          QuarterRight.changehands(Hands.LEFT).skew(0.33,0.33) +
-          QuarterRight.changehands(Hands.LEFT).skew(-0.33,0.33) +
-          QuarterRight.changehands(Hands.LEFT).skew(-0.33,-0.33),
+          QuarterRight.changeBeats(2).changehands(Hands.LEFT).skew(0.5,0.5) +
+          QuarterRight.changeBeats(2).changehands(Hands.LEFT).skew(-0.5,0.5) +
+          QuarterRight.changeBeats(2).changehands(Hands.LEFT).skew(-0.5,-0.5),
 
-          HingeRight.scale(2.0,2.0).skew(0.33,0.33) +
-          HingeRight.scale(2.0,2.0).skew(-0.33,0.33) +
-          HingeRight.scale(2.0,2.0).skew(-0.33,-0.33),
+          HingeRight.changeBeats(2).scale(2.0,2.0).skew(0.5,0.5) +
+          HingeRight.changeBeats(2).scale(2.0,2.0).skew(-0.5,0.5) +
+          HingeRight.changeBeats(2).scale(2.0,2.0).skew(-0.5,-0.5),
 
-          HingeRight.scale(2.0,2.0).skew(0.33,0.33) +
-          HingeRight.scale(2.0,2.0).skew(-0.33,0.33) +
-          HingeRight.scale(2.0,2.0).skew(-0.33,-0.33),
+          HingeRight.changeBeats(2).scale(2.0,2.0).skew(0.167,0.5) +
+          HingeRight.changeBeats(2).scale(2.0,2.0).skew(-0.5,0.167) +
+          HingeRight.changeBeats(2).scale(2.0,2.0).skew(-0.167,-0.5),
 
-          QuarterRight.changehands(Hands.LEFT).skew(0.33,0.33) +
-          QuarterRight.changehands(Hands.LEFT).skew(-0.33,0.33) +
-          QuarterRight.changehands(Hands.LEFT).skew(-0.33,-0.33)
+          QuarterRight.changeBeats(2).changehands(Hands.LEFT).skew(0.167,0.5) +
+          QuarterRight.changeBeats(2).changehands(Hands.LEFT).skew(-0.5,0.167) +
+          QuarterRight.changeBeats(2).changehands(Hands.LEFT).skew(-0.167,-0.5)
       ]),
 
     AnimatedCall('Cast Off Three Quarters',
-      formation:Formation('Ocean Waves RH BGGB'),
+      formation:Formation('Ocean Waves RH BGGB Compact'),
       from:'Right-Hand Waves',difficulty: 1,
       paths:[
-          CastRight,
+        HingeRight.changeBeats(2).skew(-0.167,-0.167) +
+            HingeRight.changeBeats(2).skew(0.167,-0.167) +
+            HingeRight.changeBeats(2).skew(0.167,0.167),
 
-          CastRight,
+        HingeRight.changeBeats(2).skew(0.167,0.167) +
+            HingeRight.changeBeats(2).skew(-0.167,0.167) +
+            HingeRight.changeBeats(2).skew(-0.167,-0.167),
 
-          CastRight,
+        HingeRight.changeBeats(2).skew(-0.167,0.167) +
+            HingeRight.changeBeats(2).skew(-0.167,-0.167) +
+            HingeRight.changeBeats(2).skew(0.167,-0.167),
 
-          CastRight
+        HingeRight.changeBeats(2).skew(0.167,-0.167) +
+            HingeRight.changeBeats(2).skew(0.167,0.167) +
+            HingeRight.changeBeats(2).skew(-0.167,0.167),
       ]),
 
     AnimatedCall('Cast Off Three Quarters',
-      formation:Formation('Ocean Waves LH BGGB'),
+      formation:Formation('Ocean Waves LH BGGB Compact'),
       from:'Left-Hand Waves',difficulty: 1,
       paths:[
-          CastLeft,
+          HingeLeft.changeBeats(2).skew(0.167,0.167) +
+              HingeLeft.changeBeats(2).skew(0.167,-0.167) +
+              HingeLeft.changeBeats(2).skew(-0.167,-0.167),
 
-          CastLeft,
+        HingeLeft.changeBeats(2).skew(-0.167,-0.167) +
+            HingeLeft.changeBeats(2).skew(-0.167,0.167) +
+            HingeLeft.changeBeats(2).skew(0.167,0.167),
 
-          CastLeft,
+        HingeLeft.changeBeats(2).skew(0.167,-0.167) +
+            HingeLeft.changeBeats(2).skew(-0.167,-0.167) +
+            HingeLeft.changeBeats(2).skew(-0.167,0.167),
 
-          CastLeft
+        HingeLeft.changeBeats(2).skew(-0.167,0.167) +
+            HingeLeft.changeBeats(2).skew(0.167,0.167) +
+            HingeLeft.changeBeats(2).skew(0.167,-0.167),
       ]),
 
     AnimatedCall('Cast Off Three Quarters',
-      formation:Formation('Inverted Lines Ends Facing Out'),
+      formation:Formation('Inverted Lines Ends Facing Out Compact'),
       from:'Inverted Lines, Centers Facing',difficulty: 2,
       paths:[
-          CastLeft,
+        HingeLeft.changeBeats(2).skew(0.167,0.167) +
+            HingeLeft.changeBeats(2).skew(0.167,-0.167) +
+            HingeLeft.changeBeats(2).skew(-0.167,-0.167),
 
-          CastLeft,
+        HingeLeft.changeBeats(2).skew(-0.167,-0.167) +
+            HingeLeft.changeBeats(2).skew(-0.167,0.167) +
+            HingeLeft.changeBeats(2).skew(0.167,0.167),
 
-          CastRight,
+        HingeRight.changeBeats(2).skew(-0.167,0.167) +
+            HingeRight.changeBeats(2).skew(-0.167,-0.167) +
+            HingeRight.changeBeats(2).skew(0.167,-0.167),
 
-          CastRight
+        HingeRight.changeBeats(2).skew(0.167,-0.167) +
+            HingeRight.changeBeats(2).skew(0.167,0.167) +
+            HingeRight.changeBeats(2).skew(-0.167,0.167),
       ]),
 
     AnimatedCall('Cast Off Three Quarters',
-      formation:Formation('Inverted Lines Ends Facing In'),
+      formation:Formation('Inverted Lines Ends Facing In Compact'),
       from:'Inverted Lines, Ends Facing',difficulty: 2,
       paths:[
-          CastRight,
+        HingeRight.changeBeats(2).skew(-0.167,-0.167) +
+            HingeRight.changeBeats(2).skew(0.167,-0.167) +
+            HingeRight.changeBeats(2).skew(0.167,0.167),
 
-          CastRight,
+        HingeRight.changeBeats(2).skew(0.167,0.167) +
+            HingeRight.changeBeats(2).skew(-0.167,0.167) +
+            HingeRight.changeBeats(2).skew(-0.167,-0.167),
 
-          CastLeft,
+        HingeLeft.changeBeats(2).skew(0.167,-0.167) +
+            HingeLeft.changeBeats(2).skew(-0.167,-0.167) +
+            HingeLeft.changeBeats(2).skew(-0.167,0.167),
 
-          CastLeft
+        HingeLeft.changeBeats(2).skew(-0.167,0.167) +
+            HingeLeft.changeBeats(2).skew(0.167,0.167) +
+            HingeLeft.changeBeats(2).skew(0.167,-0.167),
       ]),
 
     AnimatedCall('Cast Off Three Quarters',
       formation:Formation('Tidal Wave RH BGBG'),
       from:'Right-Hand Tidal Wave',difficulty: 2,
       paths:[
-          SwingRight.scale(0.5,0.5) +
-          HingeRight.scale(1.0,0.5),
+          SwingRight.changeBeats(4).scale(0.5,0.5) +
+          HingeRight.changeBeats(2).scale(1.0,0.5),
 
-          SwingRight.scale(0.5,0.5) +
-          HingeRight.scale(1.0,0.5),
+          SwingRight.changeBeats(4).scale(0.5,0.5) +
+          HingeRight.changeBeats(2).scale(1.0,0.5),
 
-          SwingRight.scale(0.5,0.5) +
-          HingeRight.scale(1.0,0.5),
+          SwingRight.changeBeats(4).scale(0.5,0.5) +
+          HingeRight.changeBeats(2).scale(1.0,0.5),
 
-          SwingRight.scale(0.5,0.5) +
-          HingeRight.scale(1.0,0.5)
+          SwingRight.changeBeats(4).scale(0.5,0.5) +
+          HingeRight.changeBeats(2).scale(1.0,0.5)
       ]),
 
     AnimatedCall('Cast Off Three Quarters',
       formation:Formation('Tidal Wave LH BGGB'),
       from:'Left-Hand Tidal Wave',difficulty: 2,
       paths:[
-          SwingLeft.scale(0.5,0.5) +
-          HingeLeft.scale(1.0,0.5),
+          SwingLeft.changeBeats(4).scale(0.5,0.5) +
+          HingeLeft.changeBeats(2).scale(1.0,0.5),
 
-          SwingLeft.scale(0.5,0.5) +
-          HingeLeft.scale(1.0,0.5),
+          SwingLeft.changeBeats(4).scale(0.5,0.5) +
+          HingeLeft.changeBeats(2).scale(1.0,0.5),
 
-          SwingLeft.scale(0.5,0.5) +
-          HingeLeft.scale(1.0,0.5),
+          SwingLeft.changeBeats(4).scale(0.5,0.5) +
+          HingeLeft.changeBeats(2).scale(1.0,0.5),
 
-          SwingLeft.scale(0.5,0.5) +
-          HingeLeft.scale(1.0,0.5)
+          SwingLeft.changeBeats(4).scale(0.5,0.5) +
+          HingeLeft.changeBeats(2).scale(1.0,0.5)
       ]),
 
     AnimatedCall('Cast Off Three Quarters',
       formation:Formation('Tidal Line RH'),
       from:'Right-Hand Tidal Line',difficulty: 2,
       paths:[
-          QuarterLeft.changehands(Hands.RIGHT).skew(0.33,-0.17) +
-          QuarterLeft.changehands(Hands.RIGHT).skew(-0.17,-0.33) +
-          QuarterLeft.changehands(Hands.RIGHT).skew(-0.33,0.17),
+          QuarterLeft.changeBeats(2).changehands(Hands.RIGHT).skew(0.333,-0.17) +
+          QuarterLeft.changeBeats(2).changehands(Hands.RIGHT).skew(-0.17,-0.333) +
+          QuarterLeft.changeBeats(2).changehands(Hands.RIGHT).skew(-0.333,0.17),
 
-          HingeLeft.skew(0.33,-0.17) +
-          HingeLeft.skew(0.33,-0.33) +
-          HingeLeft.skew(0.67,0.67),
+          HingeLeft.changeBeats(2).skew(0.333,-0.17) +
+          HingeLeft.changeBeats(2).skew(0.333,-0.333) +
+          HingeLeft.changeBeats(2).skew(0.67,0.67),
 
-          HingeRight.skew(0.33,0.5) +
-          HingeRight.skew(-0.17,0.33) +
-          HingeRight.skew(0.67,0.17),
+          HingeRight.changeBeats(2).skew(0.333,0.5) +
+          HingeRight.changeBeats(2).skew(-0.17,0.333) +
+          HingeRight.changeBeats(2).skew(0.67,0.17),
 
-          QuarterRight.changehands(Hands.LEFT).skew(0.33,0.5) +
-          QuarterRight.changehands(Hands.LEFT).skew(-0.17,0.33) +
-          QuarterRight.changehands(Hands.LEFT).skew(-0.33,0.17)
+          QuarterRight.changeBeats(2).changehands(Hands.LEFT).skew(0.333,0.5) +
+          QuarterRight.changeBeats(2).changehands(Hands.LEFT).skew(-0.17,0.333) +
+          QuarterRight.changeBeats(2).changehands(Hands.LEFT).skew(-0.333,0.17)
       ]),
 
     AnimatedCall('Cast Off Three Quarters',
       formation:Formation('Tidal Line LH'),
       from:'Left-Hand Tidal Line',difficulty: 2,
       paths:[
-          HingeRight.skew(0.33,0.17) +
-          HingeRight.skew(0.33,0.33) +
-          HingeRight.skew(0.67,-0.67),
+          HingeRight.changeBeats(2).skew(0.333,0.17) +
+          HingeRight.changeBeats(2).skew(0.333,0.333) +
+          HingeRight.changeBeats(2).skew(0.67,-0.67),
 
-          QuarterRight.changehands(Hands.LEFT).skew(0.33,0.17) +
-          QuarterRight.changehands(Hands.LEFT).skew(-0.17,0.33) +
-          QuarterRight.changehands(Hands.LEFT).skew(-0.33,-0.17),
+          QuarterRight.changeBeats(2).changehands(Hands.LEFT).skew(0.333,0.17) +
+          QuarterRight.changeBeats(2).changehands(Hands.LEFT).skew(-0.17,0.333) +
+          QuarterRight.changeBeats(2).changehands(Hands.LEFT).skew(-0.333,-0.17),
 
-          QuarterLeft.changehands(Hands.RIGHT).skew(0.33,-0.5) +
-          QuarterLeft.changehands(Hands.RIGHT).skew(-0.17,-0.33) +
-          QuarterLeft.changehands(Hands.RIGHT).skew(-0.33,-0.17),
+          QuarterLeft.changeBeats(2).changehands(Hands.RIGHT).skew(0.333,-0.5) +
+          QuarterLeft.changeBeats(2).changehands(Hands.RIGHT).skew(-0.17,-0.333) +
+          QuarterLeft.changeBeats(2).changehands(Hands.RIGHT).skew(-0.333,-0.17),
 
-          HingeLeft.skew(0.33,-0.5) +
-          HingeLeft.skew(-0.17,-0.33) +
-          HingeLeft.skew(0.67,-0.17)
+          HingeLeft.changeBeats(2).skew(0.333,-0.5) +
+          HingeLeft.changeBeats(2).skew(-0.17,-0.333) +
+          HingeLeft.changeBeats(2).skew(0.67,-0.17)
       ]),
 
     AnimatedCall('Cast Off Three Quarters',
       formation:Formation('Two-Faced Tidal Line RH'),
       from:'Right-Hand Two-Faced Tidal Line',difficulty: 2,
       paths:[
-          QuarterLeft.changehands(Hands.RIGHT).skew(0.33,-0.17) +
-          QuarterLeft.changehands(Hands.RIGHT).skew(-0.17,-0.33) +
-          QuarterLeft.changehands(Hands.RIGHT).skew(-0.33,0.17),
+          QuarterLeft.changeBeats(2).changehands(Hands.RIGHT).skew(0.333,-0.17) +
+          QuarterLeft.changeBeats(2).changehands(Hands.RIGHT).skew(-0.17,-0.333) +
+          QuarterLeft.changeBeats(2).changehands(Hands.RIGHT).skew(-0.333,0.17),
 
-          HingeLeft.skew(0.33,-0.17) +
-          HingeLeft.skew(0.33,-0.33) +
-          HingeLeft.skew(0.67,0.67),
+          HingeLeft.changeBeats(2).skew(0.333,-0.17) +
+          HingeLeft.changeBeats(2).skew(0.333,-0.333) +
+          HingeLeft.changeBeats(2).skew(0.67,0.67),
 
-          HingeLeft.skew(0.33,-0.5) +
-          HingeLeft.skew(-0.17,-0.33) +
-          HingeLeft.skew(0.67,-0.17),
+          HingeLeft.changeBeats(2).skew(0.333,-0.5) +
+          HingeLeft.changeBeats(2).skew(-0.17,-0.333) +
+          HingeLeft.changeBeats(2).skew(0.67,-0.17),
 
-          QuarterLeft.changehands(Hands.RIGHT).skew(0.33,-0.5) +
-          QuarterLeft.changehands(Hands.RIGHT).skew(-0.17,-0.33) +
-          QuarterLeft.changehands(Hands.RIGHT).skew(-0.33,-0.17)
+          QuarterLeft.changeBeats(2).changehands(Hands.RIGHT).skew(0.333,-0.5) +
+          QuarterLeft.changeBeats(2).changehands(Hands.RIGHT).skew(-0.17,-0.333) +
+          QuarterLeft.changeBeats(2).changehands(Hands.RIGHT).skew(-0.333,-0.17)
       ]),
 
     AnimatedCall('Cast Off Three Quarters',
       formation:Formation('Two-Faced Tidal Line LH'),
       from:'Left-Hand Two-Faced Tidal Line',difficulty: 2,
       paths:[
-          QuarterRight.changehands(Hands.LEFT).skew(0.33,0.17) +
-          QuarterRight.changehands(Hands.LEFT).skew(-0.17,0.33) +
-          QuarterRight.changehands(Hands.LEFT).skew(-0.33,-0.17),
+          QuarterRight.changeBeats(2).changehands(Hands.LEFT).skew(0.333,0.17) +
+          QuarterRight.changeBeats(2).changehands(Hands.LEFT).skew(-0.17,0.333) +
+          QuarterRight.changeBeats(2).changehands(Hands.LEFT).skew(-0.333,-0.17),
 
-          HingeRight.skew(0.33,0.17) +
-          HingeRight.skew(0.33,0.33) +
-          HingeRight.skew(0.67,-0.67),
+          HingeRight.changeBeats(2).skew(0.333,0.17) +
+          HingeRight.changeBeats(2).skew(0.333,0.333) +
+          HingeRight.changeBeats(2).skew(0.67,-0.67),
 
-          HingeRight.skew(0.33,0.5) +
-          HingeRight.skew(-0.17,0.33) +
-          HingeRight.skew(0.67,0.17),
+          HingeRight.changeBeats(2).skew(0.333,0.5) +
+          HingeRight.changeBeats(2).skew(-0.17,0.333) +
+          HingeRight.changeBeats(2).skew(0.67,0.17),
 
-          QuarterRight.changehands(Hands.LEFT).skew(0.33,0.5) +
-          QuarterRight.changehands(Hands.LEFT).skew(-0.17,0.33) +
-          QuarterRight.changehands(Hands.LEFT).skew(-0.33,0.17)
+          QuarterRight.changeBeats(2).changehands(Hands.LEFT).skew(0.333,0.5) +
+          QuarterRight.changeBeats(2).changehands(Hands.LEFT).skew(-0.17,0.333) +
+          QuarterRight.changeBeats(2).changehands(Hands.LEFT).skew(-0.333,0.17)
       ]),
 
     AnimatedCall('Cast Off Three Quarters',
       formation:Formation('Inverted Tidal Line RH'),
       from:'Right-Hand Inverted Tidal Line',difficulty: 2,
       paths:[
-          SwingRight.scale(0.5,0.5) +
-          HingeRight.scale(1.0,0.5),
+          SwingRight.changeBeats(4).scale(0.5,0.5) +
+          HingeRight.changeBeats(2).scale(1.0,0.5),
 
-          SwingRight.scale(0.5,0.5) +
-          HingeRight.scale(1.0,0.5),
+          SwingRight.changeBeats(4).scale(0.5,0.5) +
+          HingeRight.changeBeats(2).scale(1.0,0.5),
 
-          SwingLeft.scale(0.5,0.5) +
-          HingeLeft.scale(1.0,0.5),
+          SwingLeft.changeBeats(4).scale(0.5,0.5) +
+          HingeLeft.changeBeats(2).scale(1.0,0.5),
 
-          SwingLeft.scale(0.5,0.5) +
-          HingeLeft.scale(1.0,0.5)
+          SwingLeft.changeBeats(4).scale(0.5,0.5) +
+          HingeLeft.changeBeats(2).scale(1.0,0.5)
       ]),
 
     AnimatedCall('Cast Off Three Quarters',
       formation:Formation('Inverted Tidal Line LH'),
       from:'Left-Hand Inverted Tidal Line',difficulty: 2,
       paths:[
-          SwingLeft.scale(0.5,0.5) +
-          HingeLeft.scale(1.0,0.5),
+          SwingLeft.changeBeats(4).scale(0.5,0.5) +
+          HingeLeft.changeBeats(2).scale(1.0,0.5),
 
-          SwingLeft.scale(0.5,0.5) +
-          HingeLeft.scale(1.0,0.5),
+          SwingLeft.changeBeats(4).scale(0.5,0.5) +
+          HingeLeft.changeBeats(2).scale(1.0,0.5),
 
-          SwingRight.scale(0.5,0.5) +
-          HingeRight.scale(1.0,0.5),
+          SwingRight.changeBeats(4).scale(0.5,0.5) +
+          HingeRight.changeBeats(2).scale(1.0,0.5),
 
-          SwingRight.scale(0.5,0.5) +
-          HingeRight.scale(1.0,0.5)
+          SwingRight.changeBeats(4).scale(0.5,0.5) +
+          HingeRight.changeBeats(2).scale(1.0,0.5)
       ]),
 
     AnimatedCall('Cast Off Three Quarters',
       formation:Formation('Column RH GBGB'),
       from:'Right-Hand Columns',difficulty: 2,
       paths:[
-          HingeRight.scale(0.5,1.0) +
-          SwingRight.scale(0.5,0.5),
+          HingeRight.changeBeats(2).scale(0.5,1.0) +
+          SwingRight.changeBeats(4).scale(0.5,0.5),
 
-          HingeRight.scale(0.5,1.0) +
-          SwingRight.scale(0.5,0.5),
+          HingeRight.changeBeats(2).scale(0.5,1.0) +
+          SwingRight.changeBeats(4).scale(0.5,0.5),
 
-          HingeRight.scale(0.5,1.0) +
-          SwingRight.scale(0.5,0.5),
+          HingeRight.changeBeats(2).scale(0.5,1.0) +
+          SwingRight.changeBeats(4).scale(0.5,0.5),
 
-          HingeRight.scale(0.5,1.0) +
-          SwingRight.scale(0.5,0.5)
+          HingeRight.changeBeats(2).scale(0.5,1.0) +
+          SwingRight.changeBeats(4).scale(0.5,0.5)
       ]),
 
     AnimatedCall('Cast Off Three Quarters',
       formation:Formation('Column LH GBGB'),
       from:'Left-Hand Columns',difficulty: 2,
       paths:[
-          HingeLeft.scale(0.5,1.0) +
-          SwingLeft.scale(0.5,0.5),
+          HingeLeft.changeBeats(2).scale(0.5,1.0) +
+          SwingLeft.changeBeats(4).scale(0.5,0.5),
 
-          HingeLeft.scale(0.5,1.0) +
-          SwingLeft.scale(0.5,0.5),
+          HingeLeft.changeBeats(2).scale(0.5,1.0) +
+          SwingLeft.changeBeats(4).scale(0.5,0.5),
 
-          HingeLeft.scale(0.5,1.0) +
-          SwingLeft.scale(0.5,0.5),
+          HingeLeft.changeBeats(2).scale(0.5,1.0) +
+          SwingLeft.changeBeats(4).scale(0.5,0.5),
 
-          HingeLeft.scale(0.5,1.0) +
-          SwingLeft.scale(0.5,0.5)
+          HingeLeft.changeBeats(2).scale(0.5,1.0) +
+          SwingLeft.changeBeats(4).scale(0.5,0.5)
       ]),
 
     AnimatedCall('Cast Off Three Quarters',
       formation:Formation('Magic Column RH'),
       from:'Magic Columns Right-Hand Centers',difficulty: 2,
       paths:[
-          HingeLeft.scale(0.5,1.0) +
-          SwingLeft.scale(0.5,0.5),
+          HingeLeft.changeBeats(2).scale(0.5,1.0) +
+          SwingLeft.changeBeats(4).scale(0.5,0.5),
 
-          HingeRight.scale(0.5,1.0) +
-          SwingRight.scale(0.5,0.5),
+          HingeRight.changeBeats(2).scale(0.5,1.0) +
+          SwingRight.changeBeats(4).scale(0.5,0.5),
 
-          HingeRight.scale(0.5,1.0) +
-          SwingRight.scale(0.5,0.5),
+          HingeRight.changeBeats(2).scale(0.5,1.0) +
+          SwingRight.changeBeats(4).scale(0.5,0.5),
 
-          HingeLeft.scale(0.5,1.0) +
-          SwingLeft.scale(0.5,0.5)
+          HingeLeft.changeBeats(2).scale(0.5,1.0) +
+          SwingLeft.changeBeats(4).scale(0.5,0.5)
       ]),
 
     AnimatedCall('Cast Off Three Quarters',
       formation:Formation('Magic Column LH'),
       from:'Magic Columns Left-Hand Centers',difficulty: 2,
       paths:[
-          HingeRight.scale(0.5,1.0) +
-          SwingRight.scale(0.5,0.5),
+          HingeRight.changeBeats(2).scale(0.5,1.0) +
+          SwingRight.changeBeats(4).scale(0.5,0.5),
 
-          HingeLeft.scale(0.5,1.0) +
-          SwingLeft.scale(0.5,0.5),
+          HingeLeft.changeBeats(2).scale(0.5,1.0) +
+          SwingLeft.changeBeats(4).scale(0.5,0.5),
 
-          HingeLeft.scale(0.5,1.0) +
-          SwingLeft.scale(0.5,0.5),
+          HingeLeft.changeBeats(2).scale(0.5,1.0) +
+          SwingLeft.changeBeats(4).scale(0.5,0.5),
 
-          HingeRight.scale(0.5,1.0) +
-          SwingRight.scale(0.5,0.5)
+          HingeRight.changeBeats(2).scale(0.5,1.0) +
+          SwingRight.changeBeats(4).scale(0.5,0.5)
       ]),
 
     AnimatedCall('Cast Off Three Quarters',
@@ -456,161 +497,209 @@ import '../../moves.dart';
       from:'Alamo Wave',difficulty: 2,
       paths:[
           SxtnthLeft +
-          SwingRight +
-          HingeRight.skew(-0.414,0.0),
+          SwingRight.changeBeats(3.9) +
+          HingeRight.changeBeats(2).skew(-0.414,0.0),
 
           SxtnthRight +
-          SwingRight +
-          HingeRight.skew(0.414,0.0),
+          SwingRight.changeBeats(3.9) +
+          HingeRight.changeBeats(2).skew(0.414,0.0),
 
           SxtnthLeft +
-          SwingRight +
-          HingeRight.skew(-0.414,0.0),
+          SwingRight.changeBeats(3.9) +
+          HingeRight.changeBeats(2).skew(-0.414,0.0),
 
           SxtnthRight +
-          SwingRight +
-          HingeRight.skew(0.414,0.0)
+          SwingRight.changeBeats(3.9) +
+          HingeRight.changeBeats(2).skew(0.414,0.0)
       ]),
 
     AnimatedCall('Cast Off Three Quarters',
       formation:Formation('Thar LH Boys'),
       from:'Thar',difficulty: 2,
       paths:[
-          SwingRight +
-          HingeRight.skew(0.0,0.414) +
+          SwingRight.changeBeats(3.9) +
+          HingeRight.changeBeats(2).skew(0.0,0.414) +
           SxtnthRight,
 
-          SwingRight +
-          HingeRight.skew(0.0,-0.414) +
+          SwingRight.changeBeats(3.9) +
+          HingeRight.changeBeats(2).skew(0.0,-0.414) +
           SxtnthLeft,
 
-          SwingRight +
-          HingeRight.skew(0.0,0.414) +
+          SwingRight.changeBeats(3.9) +
+          HingeRight.changeBeats(2).skew(0.0,0.414) +
           SxtnthRight,
 
-          SwingRight +
-          HingeRight.skew(0.0,-0.414) +
+          SwingRight.changeBeats(3.9) +
+          HingeRight.changeBeats(2).skew(0.0,-0.414) +
           SxtnthLeft
       ]),
 
     AnimatedCall('Cast Off Three Quarters',
-      formation:Formation('3 and 1 Lines #1'),
+      formation:Formation('3 and 1 Lines #1 Compact'),
       from:'3 and 1 Lines #1',noDisplay: true,
       paths:[
-          CastLeft,
+        HingeLeft.changeBeats(2).skew(0.167,0.167) +
+            HingeLeft.changeBeats(2).skew(0.167,-0.167) +
+            HingeLeft.changeBeats(2).skew(-0.167,-0.167),
 
-          CastLeft,
+        HingeLeft.changeBeats(2).skew(-0.167,-0.167) +
+            HingeLeft.changeBeats(2).skew(-0.167,0.167) +
+            HingeLeft.changeBeats(2).skew(0.167,0.167),
 
-          CastRight,
+        HingeRight.changeBeats(2).scale(2.0,2.0).skew(0.167,0.5) +
+            HingeRight.changeBeats(2).scale(2.0,2.0).skew(-0.5,0.167) +
+            HingeRight.changeBeats(2).scale(2.0,2.0).skew(-0.167,-0.5),
 
-          BackHingeLeft +
-          BackHingeLeft +
-          BackHingeLeft
+        QuarterRight.changeBeats(2).changehands(Hands.LEFT).skew(0.167,0.5) +
+            QuarterRight.changeBeats(2).changehands(Hands.LEFT).skew(-0.5,0.167,) +
+            QuarterRight.changeBeats(2).changehands(Hands.LEFT).skew(-0.167,-0.5)
       ]),
 
     AnimatedCall('Cast Off Three Quarters',
-      formation:Formation('3 and 1 Lines #2'),
+      formation:Formation('3 and 1 Lines #2 Compact'),
       from:'3 and 1 Lines #2',noDisplay: true,
       paths:[
-          CastRight,
+        HingeRight.changeBeats(2).skew(-0.167,-0.167) +
+            HingeRight.changeBeats(2).skew(0.167,-0.167) +
+            HingeRight.changeBeats(2).skew(0.167,0.167),
 
-          CastRight,
+        HingeRight.changeBeats(2).skew(0.167,0.167) +
+            HingeRight.changeBeats(2).skew(-0.167,0.167) +
+            HingeRight.changeBeats(2).skew(-0.167,-0.167),
 
-          CastRight,
+        HingeRight.changeBeats(2).scale(2.0,2.0).skew(0.167,0.5) +
+            HingeRight.changeBeats(2).scale(2.0,2.0).skew(-0.5,0.167) +
+            HingeRight.changeBeats(2).scale(2.0,2.0).skew(-0.167,-0.5),
 
-          BackHingeLeft +
-          BackHingeLeft +
-          BackHingeLeft
+        QuarterRight.changeBeats(2).changehands(Hands.LEFT).skew(0.167,0.5) +
+            QuarterRight.changeBeats(2).changehands(Hands.LEFT).skew(-0.5,0.167,) +
+            QuarterRight.changeBeats(2).changehands(Hands.LEFT).skew(-0.167,-0.5)
       ]),
 
     AnimatedCall('Cast Off Three Quarters',
-      formation:Formation('3 and 1 Lines #3'),
+      formation:Formation('3 and 1 Lines #3 Compact'),
       from:'3 and 1 Lines #3',noDisplay: true,
       paths:[
-          BackHingeRight +
-          BackHingeRight +
-          BackHingeRight,
+        QuarterLeft.changeBeats(2).changehands(Hands.RIGHT).skew(0.167,-0.5) +
+            QuarterLeft.changeBeats(2).changehands(Hands.RIGHT).skew(-0.5,-0.167,) +
+            QuarterLeft.changeBeats(2).changehands(Hands.RIGHT).skew(-0.167,0.5),
 
-          CastLeft,
+        HingeLeft.changeBeats(2).scale(2.0,2.0).skew(0.167,-0.5) +
+            HingeLeft.changeBeats(2).scale(2.0,2.0).skew(-0.5,-0.167) +
+            HingeLeft.changeBeats(2).scale(2.0,2.0).skew(-0.167,0.5),
 
-          CastLeft,
+        HingeLeft.changeBeats(2).skew(0.167,-0.167) +
+            HingeLeft.changeBeats(2).skew(-0.167,-0.167) +
+            HingeLeft.changeBeats(2).skew(-0.167,0.167),
 
-          CastLeft
+        HingeLeft.changeBeats(2).skew(-0.167,0.167) +
+            HingeLeft.changeBeats(2).skew(0.167,0.167) +
+            HingeLeft.changeBeats(2).skew(0.167,-0.167),
       ]),
 
     AnimatedCall('Cast Off Three Quarters',
-      formation:Formation('3 and 1 Lines #4'),
+      formation:Formation('3 and 1 Lines #4 Compact'),
       from:'3 and 1 Lines #4',noDisplay: true,
       paths:[
-          BackHingeRight +
-          BackHingeRight +
-          BackHingeRight,
+        QuarterLeft.changeBeats(2).changehands(Hands.RIGHT).skew(0.167,-0.5) +
+            QuarterLeft.changeBeats(2).changehands(Hands.RIGHT).skew(-0.5,-0.167,) +
+            QuarterLeft.changeBeats(2).changehands(Hands.RIGHT).skew(-0.167,0.5),
 
-          CastLeft,
+        HingeLeft.changeBeats(2).scale(2.0,2.0).skew(0.167,-0.5) +
+            HingeLeft.changeBeats(2).scale(2.0,2.0).skew(-0.5,-0.167) +
+            HingeLeft.changeBeats(2).scale(2.0,2.0).skew(-0.167,0.5),
 
-          CastRight,
+        HingeRight.changeBeats(2).skew(-0.167,0.167) +
+            HingeRight.changeBeats(2).skew(-0.167,-0.167) +
+            HingeRight.changeBeats(2).skew(0.167,-0.167),
 
-          CastRight
+        HingeRight.changeBeats(2).skew(0.167,-0.167) +
+            HingeRight.changeBeats(2).skew(0.167,0.167) +
+            HingeRight.changeBeats(2).skew(-0.167,0.167),
       ]),
 
     AnimatedCall('Cast Off Three Quarters',
-      formation:Formation('3 and 1 Lines #5'),
+      formation:Formation('3 and 1 Lines #5 Compact'),
       from:'3 and 1 Lines #5',noDisplay: true,
       paths:[
-          CastRight,
+        HingeRight.changeBeats(2).skew(-0.167,-0.167) +
+            HingeRight.changeBeats(2).skew(0.167,-0.167) +
+            HingeRight.changeBeats(2).skew(0.167,0.167),
 
-          CastRight,
+        HingeRight.changeBeats(2).skew(0.167,0.167) +
+            HingeRight.changeBeats(2).skew(-0.167,0.167) +
+            HingeRight.changeBeats(2).skew(-0.167,-0.167),
 
-          CastLeft,
+        HingeLeft.changeBeats(2).scale(2.0,2.0).skew(0.5,-0.5) +
+            HingeLeft.changeBeats(2).scale(2.0,2.0).skew(-0.5,-0.5) +
+            HingeLeft.changeBeats(2).scale(2.0,2.0).skew(-0.5,0.5),
 
-          BackHingeRight +
-          BackHingeRight +
-          BackHingeRight
+        QuarterLeft.changeBeats(2).changehands(Hands.RIGHT).skew(0.5,-0.5) +
+            QuarterLeft.changeBeats(2).changehands(Hands.RIGHT).skew(-0.5,-0.5) +
+            QuarterLeft.changeBeats(2).changehands(Hands.RIGHT).skew(-0.5,0.5)
       ]),
 
     AnimatedCall('Cast Off Three Quarters',
-      formation:Formation('3 and 1 Lines #6'),
+      formation:Formation('3 and 1 Lines #6 Compact'),
       from:'3 and 1 Lines #6',noDisplay: true,
       paths:[
-          CastLeft,
+        HingeLeft.changeBeats(2).skew(0.167,0.167) +
+            HingeLeft.changeBeats(2).skew(0.167,-0.167) +
+            HingeLeft.changeBeats(2).skew(-0.167,-0.167),
 
-          CastLeft,
+        HingeLeft.changeBeats(2).skew(-0.167,-0.167) +
+            HingeLeft.changeBeats(2).skew(-0.167,0.167) +
+            HingeLeft.changeBeats(2).skew(0.167,0.167),
 
-          CastLeft,
+        HingeLeft.changeBeats(2).scale(2.0,2.0).skew(0.5,-0.5) +
+            HingeLeft.changeBeats(2).scale(2.0,2.0).skew(-0.5,-0.5) +
+            HingeLeft.changeBeats(2).scale(2.0,2.0).skew(-0.5,0.5),
 
-          BackHingeRight +
-          BackHingeRight +
-          BackHingeRight
+        QuarterLeft.changeBeats(2).changehands(Hands.RIGHT).skew(0.5,-0.5) +
+            QuarterLeft.changeBeats(2).changehands(Hands.RIGHT).skew(-0.5,-0.5) +
+            QuarterLeft.changeBeats(2).changehands(Hands.RIGHT).skew(-0.5,0.5)
       ]),
 
     AnimatedCall('Cast Off Three Quarters',
-      formation:Formation('3 and 1 Lines #7'),
+      formation:Formation('3 and 1 Lines #7 Compact'),
       from:'3 and 1 Lines #7',noDisplay: true,
       paths:[
-          BackHingeLeft +
-          BackHingeLeft +
-          BackHingeLeft,
+        QuarterRight.changeBeats(2).changehands(Hands.LEFT).skew(0.5,0.5) +
+            QuarterRight.changeBeats(2).changehands(Hands.LEFT).skew(-0.5,0.5) +
+            QuarterRight.changeBeats(2).changehands(Hands.LEFT).skew(-0.5,-0.5),
 
-          CastRight,
+        HingeRight.changeBeats(2).scale(2.0,2.0).skew(0.5,0.5) +
+            HingeRight.changeBeats(2).scale(2.0,2.0).skew(-0.5,0.5) +
+            HingeRight.changeBeats(2).scale(2.0,2.0).skew(-0.5,-0.5),
 
-          CastRight,
+        HingeRight.changeBeats(2).skew(-0.167,0.167) +
+            HingeRight.changeBeats(2).skew(-0.167,-0.167) +
+            HingeRight.changeBeats(2).skew(0.167,-0.167),
 
-          CastRight
+        HingeRight.changeBeats(2).skew(0.167,-0.167) +
+            HingeRight.changeBeats(2).skew(0.167,0.167) +
+            HingeRight.changeBeats(2).skew(-0.167,0.167),
       ]),
 
     AnimatedCall('Cast Off Three Quarters',
-      formation:Formation('3 and 1 Lines #8'),
+      formation:Formation('3 and 1 Lines #8 Compact'),
       from:'3 and 1 Lines #8',noDisplay: true,
       paths:[
-          BackHingeLeft +
-          BackHingeLeft +
-          BackHingeLeft,
+        QuarterRight.changeBeats(2).changehands(Hands.LEFT).skew(0.5,0.5) +
+            QuarterRight.changeBeats(2).changehands(Hands.LEFT).skew(-0.5,0.5) +
+            QuarterRight.changeBeats(2).changehands(Hands.LEFT).skew(-0.5,-0.5),
 
-          CastRight,
+        HingeRight.changeBeats(2).scale(2.0,2.0).skew(0.5,0.5) +
+            HingeRight.changeBeats(2).scale(2.0,2.0).skew(-0.5,0.5) +
+            HingeRight.changeBeats(2).scale(2.0,2.0).skew(-0.5,-0.5),
 
-          CastLeft,
+        HingeLeft.changeBeats(2).skew(0.167,-0.167) +
+            HingeLeft.changeBeats(2).skew(-0.167,-0.167) +
+            HingeLeft.changeBeats(2).skew(-0.167,0.167),
 
-          CastLeft
+        HingeLeft.changeBeats(2).skew(-0.167,0.167) +
+            HingeLeft.changeBeats(2).skew(0.167,0.167) +
+            HingeLeft.changeBeats(2).skew(0.167,-0.167),
       ]),
 
     AnimatedCall('Centers Cast Off Three Quarters',
@@ -619,14 +708,14 @@ import '../../moves.dart';
       paths:[
           Path(),
 
-          CastRight
+          CastRight.changeBeats(6)
       ]),
 
     AnimatedCall('Centers Cast Off Three Quarters',
       formation:Formation('Two-Faced Line LH'),
       from:'Left-Hand Two-Faced Line',difficulty: 1,notForSequencer: true,
       paths:[
-          CastLeft,
+          CastLeft.changeBeats(6),
 
           Path()
       ]),
@@ -637,7 +726,7 @@ import '../../moves.dart';
       paths:[
           Path(),
 
-          CastLeft
+          CastLeft.changeBeats(6)
       ]),
 
     AnimatedCall('Centers Cast Off Three Quarters',
@@ -646,7 +735,7 @@ import '../../moves.dart';
       paths:[
           Path(),
 
-          CastRight
+          CastRight.changeBeats(6)
       ]),
 
     AnimatedCall('Centers Cast Off Three Quarters',
@@ -655,7 +744,7 @@ import '../../moves.dart';
       paths:[
           Path(),
 
-          CastRight
+          CastRight.changeBeats(6)
       ]),
 
     AnimatedCall('Centers Cast Off Three Quarters',
@@ -664,70 +753,86 @@ import '../../moves.dart';
       paths:[
           Path(),
 
-          CastLeft
+          CastLeft.changeBeats(6)
       ]),
 
     AnimatedCall('Centers Cast Off Three Quarters',
-      formation:Formation('Two-Faced Lines RH'),
+      formation:Formation('Two-Faced Lines RH Compact'),
       from:'Right-Hand Two-Faced Lines',difficulty: 1,notForSequencer: true,
       paths:[
-          Path(),
+        Path(),
 
-          CastRight,
+        HingeRight.changeBeats(2).changeBeats(2).skew(-0.167,0) +
+            HingeRight.changeBeats(2).changeBeats(2).skew(0,-0.167) +
+            HingeRight.changeBeats(2).changeBeats(2).skew(0.167,0),
 
-          CastRight,
+        HingeRight.changeBeats(2).changeBeats(2).skew(0.167,0) +
+            HingeRight.changeBeats(2).changeBeats(2).skew(0,0.167) +
+            HingeRight.changeBeats(2).changeBeats(2).skew(-0.167,0),
 
-          Path()
+        Path()
       ]),
 
     AnimatedCall('Centers Cast Off Three Quarters',
-      formation:Formation('Two-Faced Lines LH'),
+      formation:Formation('Two-Faced Lines LH Compact'),
       from:'Left-Hand Two-Faced Lines',difficulty: 1,notForSequencer: true,
       paths:[
-          Path(),
+        Path(),
 
-          CastLeft,
+        HingeLeft.changeBeats(2).changeBeats(2).skew(0.167,0) +
+            HingeLeft.changeBeats(2).changeBeats(2).skew(0,-0.167) +
+            HingeLeft.changeBeats(2).changeBeats(2).skew(-0.167,0),
 
-          CastLeft,
+        HingeLeft.changeBeats(2).changeBeats(2).skew(-0.167,0) +
+            HingeLeft.changeBeats(2).changeBeats(2).skew(0,0.167) +
+            HingeLeft.changeBeats(2).changeBeats(2).skew(0.167,0),
 
-          Path()
+        Path()
       ]),
 
     AnimatedCall('Centers Cast Off Three Quarters',
-      formation:Formation('Ocean Waves RH BGGB'),
+      formation:Formation('Ocean Waves RH BGGB Compact'),
       from:'Right-Hand Waves',difficulty: 1,notForSequencer: true,
       paths:[
-          Path(),
+        Path(),
 
-          CastLeft,
+        HingeLeft.changeBeats(2).changeBeats(2).skew(0.167,0) +
+            HingeLeft.changeBeats(2).changeBeats(2).skew(0,-0.167) +
+            HingeLeft.changeBeats(2).changeBeats(2).skew(-0.167,0),
 
-          CastLeft,
+        HingeLeft.changeBeats(2).changeBeats(2).skew(-0.167,0) +
+            HingeLeft.changeBeats(2).changeBeats(2).skew(0,0.167) +
+            HingeLeft.changeBeats(2).changeBeats(2).skew(0.167,0),
 
-          Path()
+        Path()
       ]),
 
     AnimatedCall('Centers Cast Off Three Quarters',
-      formation:Formation('Ocean Waves LH BGGB'),
+      formation:Formation('Ocean Waves LH BGGB Compact'),
       from:'Left-Hand Waves',difficulty: 1,notForSequencer: true,
       paths:[
-          Path(),
+        Path(),
 
-          CastRight,
+        HingeRight.changeBeats(2).changeBeats(2).skew(-0.167,0) +
+            HingeRight.changeBeats(2).changeBeats(2).skew(0,-0.167) +
+            HingeRight.changeBeats(2).changeBeats(2).skew(0.167,0),
 
-          CastRight,
+        HingeRight.changeBeats(2).changeBeats(2).skew(0.167,0) +
+            HingeRight.changeBeats(2).changeBeats(2).skew(0,0.167) +
+            HingeRight.changeBeats(2).changeBeats(2).skew(-0.167,0),
 
-          Path()
+        Path()
       ]),
 
     AnimatedCall('Centers Cast Off Three Quarters',
       formation:Formation('Diamonds RH Girl Points'),
       from:'Right-Hand Diamonds',difficulty: 1,notForSequencer: true,
       paths:[
-          CastRight,
+          CastRight.changeBeats(6),
 
           Path(),
 
-          CastRight,
+          CastRight.changeBeats(6),
 
           Path()
       ]),
@@ -736,11 +841,11 @@ import '../../moves.dart';
       formation:Formation('Diamonds LH Girl Points'),
       from:'Left-Hand Diamonds',difficulty: 1,notForSequencer: true,
       paths:[
-          CastLeft,
+          CastLeft.changeBeats(6),
 
           Path(),
 
-          CastLeft,
+          CastLeft.changeBeats(6),
 
           Path()
       ]),
@@ -753,7 +858,7 @@ import '../../moves.dart';
 
           Path(),
 
-          CastLeft,
+          CastLeft.changeBeats(6),
 
           Path()
       ]),
@@ -766,7 +871,7 @@ import '../../moves.dart';
 
           Path(),
 
-          CastRight,
+          CastRight.changeBeats(6),
 
           Path()
       ]),

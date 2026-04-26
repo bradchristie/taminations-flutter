@@ -45,7 +45,13 @@ class Path implements Cloneable<Path> {
   String name = '';
   List<Movement> movelist = [];
   List<Matrix> _transformlist = [];
+  //  By default roll is computed from the last movement of the path.
+  //  But it can be overridden by setting this to another value
+  //  with the changeRoll method.
   Rolling roll = Rolling.ANY;
+  //  Sometimes an inactive dancer will move slightly because of
+  //  square breathing.
+  bool isJustBreathing = false;
 
   bool get isEmpty => movelist.isEmpty;
 
@@ -71,6 +77,7 @@ class Path implements Cloneable<Path> {
   Path.fromPath(Path p) {
     movelist = p.movelist.map((m) => m.clone()).toList();
     roll = p.roll;
+    isJustBreathing = p.isJustBreathing;
     recalculate();
   }
 
@@ -140,6 +147,12 @@ class Path implements Cloneable<Path> {
   Path changeRoll(Rolling r) {
     var newPath = clone();
     newPath.roll = r;
+    return newPath;
+  }
+
+  Path justBreathing() {
+    var newPath = clone();
+    newPath.isJustBreathing = true;
     return newPath;
   }
 

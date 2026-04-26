@@ -34,7 +34,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Boys Run',
-      formation:Formation('Box RH Boys Lead'),
+      formation:Formation('Box RH Boys Lead Compact'),
       from:'Right-Hand Box, Boys Lead',notForSequencer: true,
       paths:[
           RunRight.changeBeats(4),
@@ -43,7 +43,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Boys Run',
-      formation:Formation('Box RH'),
+      formation:Formation('Box RH Compact'),
       from:'Right-Hand Box, Girls Lead',notForSequencer: true,
       paths:[
           RunRight.changeBeats(4),
@@ -52,7 +52,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Boys Run',
-      formation:Formation('Box LH'),
+      formation:Formation('Box LH Compact'),
       from:'Left-Hand Box, Boys Lead',notForSequencer: true,
       paths:[
           RunLeft.changeBeats(4),
@@ -61,7 +61,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Boys Run',
-      formation:Formation('Box LH Girls Lead'),
+      formation:Formation('Box LH Girls Lead Compact'),
       from:'Left-Hand Box, Girls Lead',notForSequencer: true,
       paths:[
           RunLeft.changeBeats(4),
@@ -70,7 +70,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Boys Run',
-      formation:Formation('Couples Facing Out'),
+      formation:Formation('Couples Facing Out Compact'),
       from:'Couples Facing Out',notForSequencer: true,
       paths:[
           DodgeLeft.changeBeats(4),
@@ -115,7 +115,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Boys Run',
-      formation:Formation('Normal Lines'),
+      formation:Formation('Normal Lines Compact'),
       from:'Lines',difficulty: 2,notForSequencer: true,
       paths:[
           RunRight.changeBeats(4),
@@ -128,7 +128,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Boys Run',
-      formation:Formation('Ocean Waves RH GBBG'),
+      formation:Formation('Ocean Waves RH GBBG Compact'),
       from:'Right-Hand Waves',difficulty: 1,notForSequencer: true,
       paths:[
           DodgeRight.changeBeats(4),
@@ -141,7 +141,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Boys Run',
-      formation:Formation('Ocean Waves LH BGBG'),
+      formation:Formation('Ocean Waves LH BGBG Compact'),
       from:'Left-Hand Waves',difficulty: 1,notForSequencer: true,
       paths:[
           RunLeft.changeBeats(4),
@@ -202,7 +202,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Girls Run',
-      formation:Formation('Box RH Boys Lead'),
+      formation:Formation('Box RH Boys Lead Compact'),
       from:'Right-Hand Box, Boys Lead',notForSequencer: true,
       paths:[
           DodgeRight.changeBeats(4),
@@ -211,7 +211,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Girls Run',
-      formation:Formation('Box RH'),
+      formation:Formation('Box RH Compact'),
       from:'Right-Hand Box, Girls Lead',notForSequencer: true,
       paths:[
           DodgeRight.changeBeats(4),
@@ -220,7 +220,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Girls Run',
-      formation:Formation('Box LH'),
+      formation:Formation('Box LH Compact'),
       from:'Left-Hand Box, Boys Lead',notForSequencer: true,
       paths:[
           DodgeLeft.changeBeats(4),
@@ -229,7 +229,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Girls Run',
-      formation:Formation('Box LH Girls Lead'),
+      formation:Formation('Box LH Girls Lead Compact'),
       from:'Left-Hand Box, Girls Lead',notForSequencer: true,
       paths:[
           DodgeLeft.changeBeats(4),
@@ -238,7 +238,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Girls Run',
-      formation:Formation('Couples Facing Out'),
+      formation:Formation('Couples Facing Out Compact'),
       from:'Couples Facing Out',notForSequencer: true,
       paths:[
           RunLeft.changeBeats(4),
@@ -283,7 +283,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Girls Run',
-      formation:Formation('Normal Lines'),
+      formation:Formation('Normal Lines Compact'),
       from:'Lines',difficulty: 2,notForSequencer: true,
       paths:[
           DodgeRight.changeBeats(4),
@@ -296,7 +296,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Girls Run',
-      formation:Formation('Ocean Waves RH BGBG'),
+      formation:Formation('Ocean Waves RH BGBG Compact'),
       from:'Right-Hand Waves',difficulty: 1,notForSequencer: true,
       paths:[
           DodgeRight.changeBeats(4),
@@ -309,7 +309,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Girls Run',
-      formation:Formation('Ocean Waves LH BGGB'),
+      formation:Formation('Ocean Waves LH BGGB Compact'),
       from:'Left-Hand Waves',difficulty: 1,notForSequencer: true,
       paths:[
           DodgeLeft.changeBeats(4),
@@ -401,7 +401,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Centers Run',
-      formation:Formation('Normal Lines'),
+      formation:Formation('Normal Lines Compact'),
       from:'Lines',difficulty: 2,notForSequencer: true,
       paths:[
           DodgeRight.changeBeats(4),
@@ -414,7 +414,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Centers Run',
-      formation:Formation('Lines Facing Out'),
+      formation:Formation('Lines Facing Out Compact'),
       from:'Lines Facing Out',difficulty: 2,notForSequencer: true,
       paths:[
           DodgeLeft.changeBeats(4),
@@ -427,7 +427,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Centers Run',
-      formation:Formation('Ocean Waves RH BGBG'),
+      formation:Formation('Ocean Waves RH BGBG Compact'),
       from:'Right-Hand Waves',difficulty: 1,notForSequencer: true,
       paths:[
           DodgeRight.changeBeats(4),
@@ -440,7 +440,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Centers Run',
-      formation:Formation('Ocean Waves LH BGBG'),
+      formation:Formation('Ocean Waves LH BGBG Compact'),
       from:'Left-Hand Waves',difficulty: 1,notForSequencer: true,
       paths:[
           DodgeLeft.changeBeats(4),
@@ -453,7 +453,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Centers Run',
-      formation:Formation('Two-Faced Lines RH'),
+      formation:Formation('Two-Faced Lines RH Compact'),
       from:'Right-Hand Two-Faced Lines',difficulty: 2,notForSequencer: true,
       paths:[
           DodgeRight.changeBeats(4),
@@ -466,7 +466,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Centers Run',
-      formation:Formation('Two-Faced Lines LH'),
+      formation:Formation('Two-Faced Lines LH Compact'),
       from:'Left-Hand Two-Faced Lines',difficulty: 2,notForSequencer: true,
       paths:[
           DodgeLeft.changeBeats(4),
@@ -524,7 +524,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Ends Run',
-      formation:Formation('Normal Lines'),
+      formation:Formation('Normal Lines Compact'),
       from:'Lines',difficulty: 2,notForSequencer: true,
       paths:[
           RunRight.changeBeats(4),
@@ -537,7 +537,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Ends Run',
-      formation:Formation('Lines Facing Out'),
+      formation:Formation('Lines Facing Out Compact'),
       from:'Lines Facing Out',difficulty: 2,notForSequencer: true,
       paths:[
           RunLeft.changeBeats(4),
@@ -550,7 +550,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Ends Run',
-      formation:Formation('Ocean Waves RH BGGB'),
+      formation:Formation('Ocean Waves RH BGGB Compact'),
       from:'Right-Hand Waves',difficulty: 1,notForSequencer: true,
       paths:[
           RunRight.changeBeats(4),
@@ -563,7 +563,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Ends Run',
-      formation:Formation('Ocean Waves LH BGGB'),
+      formation:Formation('Ocean Waves LH BGGB Compact'),
       from:'Left-Hand Waves',difficulty: 1,notForSequencer: true,
       paths:[
           RunLeft.changeBeats(4),
@@ -576,7 +576,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Ends Run',
-      formation:Formation('Two-Faced Lines RH'),
+      formation:Formation('Two-Faced Lines RH Compact'),
       from:'Right-Hand Two-Faced Lines',difficulty: 2,notForSequencer: true,
       paths:[
           RunRight.changeBeats(4),
@@ -589,7 +589,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Ends Run',
-      formation:Formation('Two-Faced Lines LH'),
+      formation:Formation('Two-Faced Lines LH Compact'),
       from:'Left-Hand Two-Faced Lines',difficulty: 2,notForSequencer: true,
       paths:[
           RunLeft.changeBeats(4),
@@ -638,7 +638,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Centers Cross Run',
-      formation:Formation('Lines Facing Out'),
+      formation:Formation('Lines Facing Out Compact'),
       from:'Lines Facing Out',difficulty: 2,notForSequencer: true,
       taminator: '''
       Centers pass each other with a Half Sashay
@@ -655,7 +655,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Centers Cross Run',
-      formation:Formation('Ocean Waves RH BGGB'),
+      formation:Formation('Ocean Waves RH BGGB Compact'),
       from:'Right-Hand Waves',difficulty: 1,notForSequencer: true,
       paths:[
           DodgeRight.changeBeats(6),
@@ -668,7 +668,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Centers Cross Run',
-      formation:Formation('Ocean Waves LH GBBG'),
+      formation:Formation('Ocean Waves LH GBBG Compact'),
       from:'Left-Hand Waves',difficulty: 1,notForSequencer: true,
       paths:[
           DodgeLeft.changeBeats(6),
@@ -681,7 +681,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Centers Cross Run',
-      formation:Formation('Two-Faced Lines RH'),
+      formation:Formation('Two-Faced Lines RH Compact'),
       from:'Right-Hand Two-Faced Lines',difficulty: 2,notForSequencer: true,
       paths:[
           DodgeRight.changeBeats(6),
@@ -694,7 +694,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Centers Cross Run',
-      formation:Formation('Two-Faced Lines LH'),
+      formation:Formation('Two-Faced Lines LH Compact'),
       from:'Left-Hand Two-Faced Lines',difficulty: 2,notForSequencer: true,
       paths:[
           DodgeLeft.changeBeats(6),
@@ -743,7 +743,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Ends Cross Run',
-      formation:Formation('Lines Facing Out'),
+      formation:Formation('Lines Facing Out Compact'),
       from:'Lines Facing Out',difficulty: 2,notForSequencer: true,
       paths:[
           RunLeft.changeBeats(6).scale(1.0,2.0),
@@ -756,7 +756,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Ends Cross Run',
-      formation:Formation('Ocean Waves RH BGGB'),
+      formation:Formation('Ocean Waves RH BGGB Compact'),
       from:'Right-Hand Waves',difficulty: 2,notForSequencer: true,
       paths:[
           RunRight.changeBeats(6).scale(1.0,2.0),
@@ -769,7 +769,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Ends Cross Run',
-      formation:Formation('Ocean Waves LH BGGB'),
+      formation:Formation('Ocean Waves LH BGGB Compact'),
       from:'Left-Hand Waves',difficulty: 2,notForSequencer: true,
       paths:[
           RunLeft.changeBeats(6).scale(1.0,2.0),
@@ -782,7 +782,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Ends Cross Run',
-      formation:Formation('Two-Faced Lines RH'),
+      formation:Formation('Two-Faced Lines RH Compact'),
       from:'Right-Hand Two-Faced Lines',difficulty: 2,notForSequencer: true,
       paths:[
           RunRight.changeBeats(6).scale(1.0,2.0),
@@ -795,7 +795,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Ends Cross Run',
-      formation:Formation('Two-Faced Lines LH'),
+      formation:Formation('Two-Faced Lines LH Compact'),
       from:'Left-Hand Two-Faced Lines',difficulty: 2,notForSequencer: true,
       paths:[
           RunLeft.changeBeats(6).scale(1.0,2.0),
@@ -808,7 +808,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Ends Cross Run and Run',
-      formation:Formation('Ocean Waves RH BGGB'),
+      formation:Formation('Ocean Waves RH BGGB Compact'),
       from:'Ocean Waves',
       paths:[
           RunRight.changeBeats(6).scale(1.0,2.0) +

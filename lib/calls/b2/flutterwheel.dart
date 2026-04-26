@@ -51,24 +51,24 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Flutterwheel',
-      formation:Formation('Normal Lines'),
+      formation:Formation('Normal Lines Compact'),
       from:'Lines',difficulty: 1,
       paths:[
-          Forward.changeBeats(3.5).changehands(0) +
-          ExtendLeft.changeBeats(1.5).changehands(Hands.RIGHT).scale(1.5,1.5) +
-          RunRight.changehands(Hands.RIGHT).scale(1.5,2.0).skew(1.5,0.5),
+        Forwardp5.changeBeats(3.5).changehands(0) +
+            ExtendLeft.changeBeats(1.5).changehands(Hands.RIGHT).scale(1.5,1.5) +
+            RunRight.changehands(Hands.RIGHT).scale(1.5,2.0).skew(1,0.5),
 
-          ExtendLeft.changeBeats(2).scale(1.5,1.75) +
-          SwingRight.changehands(Hands.BOTH).scale(0.75,0.75) +
-          UmTurnRight.changehands(Hands.LEFT).skew(1.5,0.25),
+        ExtendLeft.changeBeats(2).scale(1.5,1.75) +
+            SwingRight.changehands(Hands.BOTH).scale(0.75,0.75) +
+            UmTurnRight.changehands(Hands.LEFT).skew(1.5,0.25),
 
-          Forward.changeBeats(3.5).changehands(0) +
-          ExtendLeft.changeBeats(1.5).changehands(Hands.RIGHT).scale(1.5,1.0) +
-          RunRight.changehands(Hands.RIGHT).scale(1.5,1.75).skew(1.5,0.5),
+        Forwardp5.changeBeats(3.5).changehands(0) +
+            ExtendLeft.changeBeats(1.5).changehands(Hands.RIGHT).scale(1.5,0.5) +
+            RunRight.changehands(Hands.RIGHT).scale(1.5,1.5).skew(1,0.5),
 
-          ExtendLeft.changeBeats(2).scale(1.5,1.75) +
-          SwingRight.changehands(Hands.BOTH).scale(0.75,0.75) +
-          UmTurnRight.changehands(Hands.LEFT).skew(1.5,0.25)
+        ExtendLeft.changeBeats(2).scale(1.5,1.75) +
+            SwingRight.changehands(Hands.BOTH).scale(0.75,0.75) +
+            UmTurnRight.changehands(Hands.LEFT).skew(1.5,0.25),
       ]),
 
     AnimatedCall('Flutterwheel',
@@ -119,24 +119,24 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Reverse Flutterwheel',
-      formation:Formation('Normal Lines'),
+      formation:Formation('Normal Lines Compact'),
       from:'Lines',difficulty: 1,
       paths:[
-          ExtendRight.changeBeats(2).scale(1.5,1.75) +
-          SwingLeft.changehands(Hands.BOTH).scale(0.75,0.75) +
-          UmTurnLeft.changehands(Hands.RIGHT).skew(1.5,-0.25),
+        ExtendRight.changeBeats(2).scale(1.5,1.75) +
+            SwingLeft.changehands(Hands.BOTH).scale(0.75,0.75) +
+            UmTurnLeft.changehands(Hands.RIGHT).skew(1.5,-0.25),
 
-          Forward.changeBeats(3.5).changehands(0) +
-          ExtendRight.changeBeats(1.5).changehands(Hands.LEFT).scale(1.5,1.0) +
-          RunLeft.changehands(Hands.LEFT).scale(1.5,2.0).skew(1.5,-1.0),
+        Forwardp5.changeBeats(3.5).changehands(Hands.NONE) +
+            ExtendRight.changeBeats(1.5).changehands(Hands.LEFT).scale(1.5,0.5) +
+            RunLeft.changehands(Hands.LEFT).scale(1.5,1.5).skew(1,-0.5),
 
-          ExtendRight.changeBeats(2).scale(1.5,1.75) +
-          SwingLeft.changehands(Hands.BOTH).scale(0.75,0.75) +
-          UmTurnLeft.changehands(Hands.RIGHT).skew(1.5,-0.25),
+        ExtendRight.changeBeats(2).scale(1.5,1.75) +
+            SwingLeft.changehands(Hands.BOTH).scale(0.75,0.75) +
+            UmTurnLeft.changehands(Hands.RIGHT).skew(1.5,-0.25),
 
-          Forward.changeBeats(3.5).changehands(0) +
-          ExtendRight.changeBeats(1.5).changehands(Hands.LEFT).scale(1.5,1.5) +
-          RunLeft.changehands(Hands.LEFT).scale(1.5,2.0).skew(1.5,-0.5)
+        Forwardp5.changeBeats(3.5).changehands(Hands.NONE) +
+            ExtendRight.changeBeats(1.5).changehands(Hands.LEFT).scale(1.5,1.5) +
+            RunLeft.changehands(Hands.LEFT).scale(1.5,2.0).skew(1,-0.5),
       ]),
 
     AnimatedCall('Reverse Flutterwheel',

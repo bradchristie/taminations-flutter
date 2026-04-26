@@ -79,7 +79,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Swing Thru',
-      formation:Formation('Ocean Waves RH BGGB'),
+      formation:Formation('Ocean Waves RH BGGB Compact'),
       from:'Right-Hand Waves',parts:'3',difficulty: 1,
       paths:[
           SwingRight +
@@ -94,7 +94,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Swing Thru',
-      formation:Formation('Ocean Waves LH BGGB'),
+      formation:Formation('Ocean Waves LH BGGB Compact'),
       from:'Left-Hand Waves',parts:'3',difficulty: 2,
       paths:[
           Stand.changeBeats(3) +
@@ -152,18 +152,18 @@ import '../../moves.dart';
       This is an example of the Facing Couples rule.
     ''',
       paths:[
-          ExtendLeft.scale(1.0,2.0) +
+          ExtendLeft.scale(1.5,2.0) +
           SwingRight +
           SwingLeft,
 
-          Forward +
+          Forward_1p5.changeBeats(1) +
           SwingRight,
 
-          ExtendLeft.scale(1.0,2.0) +
+          ExtendLeft.scale(0.5,2.0) +
           SwingRight +
           SwingLeft,
 
-          Forward +
+          Forwardp5.changeBeats(1) +
           SwingRight
       ]),
 
@@ -220,21 +220,21 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Swing Thru',
-      formation:Formation('Normal Lines'),
+      formation:Formation('Normal Lines Compact'),
       from:'Facing Lines',parts:'5',difficulty: 2,
       paths:[
-          ExtendLeft.changeBeats(2).scale(2.0,0.5) +
+          ExtendLeft.changeBeats(2).scale(1.5,0.5) +
           SwingRight.scale(0.5,0.5) +
           SwingLeft.scale(0.5,0.5),
 
-          ExtendLeft.changeBeats(2).scale(2.0,0.5) +
+          ExtendLeft.changeBeats(2).scale(1.5,0.5) +
           SwingRight.scale(0.5,0.5),
 
-          ExtendLeft.changeBeats(2).scale(2.0,0.5) +
+          ExtendLeft.changeBeats(2).scale(1.5,0.5) +
           SwingRight.scale(0.5,0.5) +
           SwingLeft.scale(0.5,0.5),
 
-          ExtendLeft.changeBeats(2).scale(2.0,0.5) +
+          ExtendLeft.changeBeats(2).scale(1.5,0.5) +
           SwingRight.scale(0.5,0.5)
       ]),
 
@@ -298,7 +298,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left Swing Thru',
-      formation:Formation('Ocean Waves LH BGGB'),
+      formation:Formation('Ocean Waves LH BGGB Compact'),
       from:'Left-Hand Waves',parts:'3',difficulty: 1,
       paths:[
           SwingLeft +
@@ -313,7 +313,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left Swing Thru',
-      formation:Formation('Ocean Waves RH BGGB'),
+      formation:Formation('Ocean Waves RH BGGB Compact'),
       from:'Right-Hand Waves',parts:'3',difficulty: 2,
       paths:[
           Stand.changeBeats(3) +
@@ -370,17 +370,17 @@ import '../../moves.dart';
       a Left-Hand Wave.
     ''',
       paths:[
-          Forward +
+          Forward_1p5.changeBeats(1) +
           SwingLeft,
 
-          ExtendRight.scale(1.0,2.0) +
+          ExtendRight.scale(1.5,2.0) +
           SwingLeft +
           SwingRight,
 
-          Forward +
+          Forwardp5.changeBeats(1) +
           SwingLeft,
 
-          ExtendRight.scale(1.0,2.0) +
+          ExtendRight.scale(0.5,2.0) +
           SwingLeft +
           SwingRight
       ]),
@@ -433,20 +433,20 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left Swing Thru',
-      formation:Formation('Normal Lines'),
+      formation:Formation('Normal Lines Compact'),
       from:'Facing Lines',parts:'5',difficulty: 2,
       paths:[
-          ExtendRight.changeBeats(2).scale(2.0,0.5) +
+          ExtendRight.changeBeats(2).scale(1.5,0.5) +
           SwingLeft.scale(0.5,0.5),
 
-          ExtendRight.changeBeats(2).scale(2.0,0.5) +
+          ExtendRight.changeBeats(2).scale(1.5,0.5) +
           SwingLeft.scale(0.5,0.5) +
           SwingRight.scale(0.5,0.5),
 
-          ExtendRight.changeBeats(2).scale(2.0,0.5) +
+          ExtendRight.changeBeats(2).scale(1.5,0.5) +
           SwingLeft.scale(0.5,0.5),
 
-          ExtendRight.changeBeats(2).scale(2.0,0.5) +
+          ExtendRight.changeBeats(2).scale(1.5,0.5) +
           SwingLeft.scale(0.5,0.5) +
           SwingRight.scale(0.5,0.5)
       ]),

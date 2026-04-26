@@ -36,19 +36,19 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Touch a Quarter',
-      formation:Formation('Normal Lines'),
+      formation:Formation('Normal Lines Compact'),
       from:'Lines',difficulty: 1,
       paths:[
-          ExtendLeft.scale(2.0,0.5) +
+          ExtendLeft.scale(1.5,0.5) +
           HingeRight.changeBeats(1).changehands(Hands.GRIPRIGHT).scale(1.0,0.5),
 
-          ExtendLeft.scale(2.0,0.5) +
+          ExtendLeft.scale(1.5,0.5) +
           HingeRight.changeBeats(1).changehands(Hands.GRIPRIGHT).scale(1.0,0.5),
 
-          ExtendLeft.scale(2.0,0.5) +
+          ExtendLeft.scale(1.5,0.5) +
           HingeRight.changeBeats(1).changehands(Hands.GRIPRIGHT).scale(1.0,0.5),
 
-          ExtendLeft.scale(2.0,0.5) +
+          ExtendLeft.scale(1.5,0.5) +
           HingeRight.changeBeats(1).changehands(Hands.GRIPRIGHT).scale(1.0,0.5)
       ]),
 
@@ -57,16 +57,16 @@ import '../../moves.dart';
       from:'Eight Chain Thru',difficulty: 1,
       paths:[
           ExtendLeft +
-          QuarterRight.changehands(Hands.RIGHT).skew(1.0,0.0),
+          QuarterRight.changehands(Hands.RIGHT).skew(1,-0.5),
 
           Forward +
-          HingeRight,
+          HingeRight.scale(1,0.5),
 
           ExtendLeft +
-          QuarterRight.changehands(Hands.RIGHT).skew(1.0,0.0),
+          QuarterRight.changehands(Hands.RIGHT).skew(1,-0.5),
 
           Forward +
-          HingeRight
+          HingeRight.scale(1,0.5)
       ]),
 
     AnimatedCall('Left Touch a Quarter',
@@ -81,19 +81,19 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left Touch a Quarter',
-      formation:Formation('Normal Lines'),
+      formation:Formation('Normal Lines Compact'),
       from:'Lines',difficulty: 2,
       paths:[
-          ExtendRight.scale(2.0,0.5) +
+          ExtendRight.scale(1.5,0.5) +
           HingeLeft.changeBeats(1).changehands(Hands.GRIPLEFT).scale(1.0,0.5),
 
-          ExtendRight.scale(2.0,0.5) +
+          ExtendRight.scale(1.5,0.5) +
           HingeLeft.changeBeats(1).changehands(Hands.GRIPLEFT).scale(1.0,0.5),
 
-          ExtendRight.scale(2.0,0.5) +
+          ExtendRight.scale(1.5,0.5) +
           HingeLeft.changeBeats(1).changehands(Hands.GRIPLEFT).scale(1.0,0.5),
 
-          ExtendRight.scale(2.0,0.5) +
+          ExtendRight.scale(1.5,0.5) +
           HingeLeft.changeBeats(1).changehands(Hands.GRIPLEFT).scale(1.0,0.5)
       ]),
 
@@ -102,16 +102,16 @@ import '../../moves.dart';
       from:'Eight Chain Thru',difficulty: 2,
       paths:[
           Forward +
-          HingeLeft,
+              HingeLeft.scale(1,0.5),
 
           ExtendRight +
-          QuarterLeft.changehands(Hands.LEFT).skew(1.0,0.0),
+              HingeLeft.scale(1,0.5),
 
           Forward +
-          HingeLeft,
+          HingeLeft.scale(1,0.5),
 
           ExtendRight +
-          QuarterLeft.changehands(Hands.LEFT).skew(1.0,0.0)
+              HingeLeft.scale(1,0.5),
       ]),
 
     AnimatedCall('Touch a Half',

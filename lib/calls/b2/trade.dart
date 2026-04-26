@@ -79,20 +79,20 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Boys Trade',
-      formation:Formation('Normal Lines'),
+      formation:Formation('Normal Lines Compact'),
       from:'Lines',difficulty: 2,notForSequencer: true,
       paths:[
-          RunRight.scale(2.0,2.0),
+          RunRight.scale(1.5,2.0),
 
           Path(),
 
-          RunLeft.scale(1.0,2.0),
+          RunLeft.scale(0.75,2.0),
 
           Path()
       ]),
 
     AnimatedCall('Boys Trade',
-      formation:Formation('Lines Facing Out'),
+      formation:Formation('Lines Facing Out Compact'),
       from:'Lines Facing Out',difficulty: 2,notForSequencer: true,
       paths:[
           Path(),
@@ -105,20 +105,20 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Boys Trade',
-      formation:Formation('Two-Faced Lines RH'),
+      formation:Formation('Two-Faced Lines RH Compact'),
       from:'Right-Hand Two-Faced Lines',difficulty: 1,notForSequencer: true,
       paths:[
-          RunRight.changeBeats(4).scale(1.5,3.0),
+          RunRight.changeBeats(4).scale(1,3.0),
 
           Path(),
 
           Path(),
 
-          RunRight.changeBeats(4).scale(1.5,3.0)
+          RunRight.changeBeats(4).scale(1,3.0)
       ]),
 
     AnimatedCall('Boys Trade',
-      formation:Formation('Two-Faced Lines LH'),
+      formation:Formation('Two-Faced Lines LH Compact'),
       from:'Left-Hand Two-Faced Lines',difficulty: 1,notForSequencer: true,
       paths:[
           Path(),
@@ -131,7 +131,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Boys Trade',
-      formation:Formation('Ocean Waves RH GBBG'),
+      formation:Formation('Ocean Waves RH GBBG Compact'),
       from:'Waves, Boys in Center',difficulty: 1,notForSequencer: true,
       paths:[
           Path(),
@@ -144,7 +144,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Boys Trade',
-      formation:Formation('Ocean Waves RH GBGB'),
+      formation:Formation('Ocean Waves RH GBGB Compact'),
       from:'Waves, Boys Facing Out',difficulty: 1,notForSequencer: true,
       paths:[
           Path(),
@@ -211,20 +211,20 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Girls Trade',
-      formation:Formation('Normal Lines'),
+      formation:Formation('Normal Lines Compact'),
       from:'Lines',difficulty: 2,notForSequencer: true,
       paths:[
           Path(),
 
-          RunRight.scale(2.0,2.0),
+          RunRight.scale(1.5,2.0),
 
           Path(),
 
-          RunLeft.scale(1.0,2.0)
+          RunLeft.scale(0.75,2.0)
       ]),
 
     AnimatedCall('Girls Trade',
-      formation:Formation('Lines Facing Out'),
+      formation:Formation('Lines Facing Out Compact'),
       from:'Lines Facing Out',difficulty: 2,notForSequencer: true,
       paths:[
           RunLeft.scale(1.0,2.0),
@@ -237,7 +237,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Girls Trade',
-      formation:Formation('Two-Faced Lines RH'),
+      formation:Formation('Two-Faced Lines RH Compact'),
       from:'Right-Hand Two-Faced Lines',difficulty: 1,notForSequencer: true,
       paths:[
           Path(),
@@ -250,20 +250,20 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Girls Trade',
-      formation:Formation('Two-Faced Lines LH'),
+      formation:Formation('Two-Faced Lines LH Compact'),
       from:'Left-Hand Two-Faced Lines',difficulty: 1,notForSequencer: true,
       paths:[
-          RunLeft.changeBeats(4).scale(1.5,3.0),
+          RunLeft.changeBeats(4).scale(1,3.0),
 
           Path(),
 
           Path(),
 
-          RunLeft.changeBeats(4).scale(1.5,3.0)
+          RunLeft.changeBeats(4).scale(1,3.0)
       ]),
 
     AnimatedCall('Girls Trade',
-      formation:Formation('Ocean Waves RH BGBG'),
+      formation:Formation('Ocean Waves RH BGBG Compact'),
       from:'Waves, Girls Facing Out',difficulty: 1,notForSequencer: true,
       paths:[
           Path(),
@@ -312,7 +312,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Centers Trade',
-      formation:Formation('Normal Lines'),
+      formation:Formation('Normal Lines Compact'),
       from:'Lines',difficulty: 2,notForSequencer: true,
       paths:[
           Path(),
@@ -326,10 +326,10 @@ import '../../moves.dart';
 
     AnimatedCall('Centers Trade',
       formation:Formation('', dancers:[
-        Dancer.fromData(gender:Gender.GIRL,x:-2,y:3,angle:180),
-        Dancer.fromData(gender:Gender.GIRL,x:-2,y:1,angle:180),
-        Dancer.fromData(gender:Gender.BOY,x:-2,y:-1,angle:180),
-        Dancer.fromData(gender:Gender.BOY,x:-2,y:-3,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:-1.5,y:3,angle:180),
+        Dancer.fromData(gender:Gender.GIRL,x:-1.5,y:1,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:-1.5,y:-1,angle:180),
+        Dancer.fromData(gender:Gender.BOY,x:-1.5,y:-3,angle:180),
   ]),
       from:'Lines Facing Out',difficulty: 1,notForSequencer: true,
       paths:[
@@ -343,7 +343,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Centers Trade',
-      formation:Formation('Ocean Waves RH BGBG'),
+      formation:Formation('Ocean Waves RH BGBG Compact'),
       from:'Waves',difficulty: 1,notForSequencer: true,
       paths:[
           Path(),
@@ -369,7 +369,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Trade',
-      formation:Formation('Ocean Waves RH BGGB'),
+      formation:Formation('Ocean Waves RH BGGB Compact'),
       from:'Right-Hand Waves',difficulty: 1,notForSequencer: true,
       paths:[
           SwingRight,
@@ -382,7 +382,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Trade',
-      formation:Formation('Ocean Waves LH BGGB'),
+      formation:Formation('Ocean Waves LH BGGB Compact'),
       from:'Left-Hand Waves',difficulty: 1,notForSequencer: true,
       paths:[
           SwingLeft,
@@ -395,7 +395,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Trade',
-      formation:Formation('Inverted Lines Ends Facing Out'),
+      formation:Formation('Inverted Lines Ends Facing Out Compact'),
       from:'Inverted Lines',difficulty: 2,notForSequencer: true,
       paths:[
           SwingLeft,
@@ -417,7 +417,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Partner Trade',
-      formation:Formation('Couples Facing Out'),
+      formation:Formation('Couples Facing Out Compact'),
       from:'Couples Facing Out',difficulty: 1,notForSequencer: true,
       paths:[
           FlipLeft,
@@ -426,7 +426,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Partner Trade',
-      formation:Formation('Box RH'),
+      formation:Formation('Box RH Compact'),
       from:'Right-Hand Box',difficulty: 2,notForSequencer: true,
       paths:[
           SwingRight,
@@ -435,7 +435,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Partner Trade',
-      formation:Formation('Box LH'),
+      formation:Formation('Box LH Compact'),
       from:'Left-Hand Box',difficulty: 2,notForSequencer: true,
       paths:[
           SwingLeft,
@@ -444,7 +444,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Partner Trade',
-      formation:Formation('Lines Facing Out'),
+      formation:Formation('Lines Facing Out Compact'),
       from:'Lines Facing Out',difficulty: 1,
       paths:[
           FlipLeft,
@@ -506,7 +506,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Ends Trade',
-      formation:Formation('Lines Facing Out'),
+      formation:Formation('Lines Facing Out Compact'),
       from:'Lines Facing Out',difficulty: 1,
       paths:[
           RunLeft.scale(1.0,3.0),
@@ -519,7 +519,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Ends Trade',
-      formation:Formation('Ocean Waves RH BGBG'),
+      formation:Formation('Ocean Waves RH BGBG Compact'),
       from:'Waves',difficulty: 1,notForSequencer: true,
       paths:[
           RunRight.scale(1.0,3.0),
@@ -568,7 +568,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Couples Trade',
-      formation:Formation('Lines Facing Out'),
+      formation:Formation('Lines Facing Out Compact'),
       from:'Lines Facing Out',difficulty: 2,
       paths:[
           RunLeft.changeBeats(6).changehands(Hands.GRIPLEFT).scale(1.0,3.0),

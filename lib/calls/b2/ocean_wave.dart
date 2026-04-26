@@ -47,26 +47,26 @@ import '../b2/alamo_style.dart' as b2;
       formation:Formation('Eight Chain Thru'),
       from:'Eight Chain Thru',difficulty: 1,
       paths:[
-          ExtendLeft.changeBeats(2).scale(1.0,2.0),
+          ExtendLeft.changeBeats(2).scale(1.5,2.0),
 
-          Forward.changeBeats(2),
+          Forward_1p5.changeBeats(2),
 
-          ExtendLeft.changeBeats(2).scale(1.0,2.0),
+          ExtendLeft.changeBeats(2).scale(0.5,2.0),
 
-          Forward.changeBeats(2)
+          Forwardp5.changeBeats(2)
       ]),
 
     AnimatedCall('Step to a Wave',
-      formation:Formation('Normal Lines'),
+      formation:Formation('Normal Lines Compact'),
       from:'Facing Lines',difficulty: 2,
       paths:[
-          ExtendLeft.changeBeats(2).scale(2.0,0.5),
+          ExtendLeft.changeBeats(2).scale(1.5,0.5),
 
-          ExtendLeft.changeBeats(2).scale(2.0,0.5),
+          ExtendLeft.changeBeats(2).scale(1.5,0.5),
 
-          ExtendLeft.changeBeats(2).scale(2.0,0.5),
+          ExtendLeft.changeBeats(2).scale(1.5,0.5),
 
-          ExtendLeft.changeBeats(2).scale(2.0,0.5)
+          ExtendLeft.changeBeats(2).scale(1.5,0.5)
       ]),
 
     AnimatedCall('Step to a Left-Hand Wave',
@@ -91,30 +91,30 @@ import '../b2/alamo_style.dart' as b2;
       formation:Formation('Eight Chain Thru'),
       from:'Eight Chain Thru',difficulty: 2,
       paths:[
-          Forward.changeBeats(2),
+          Forward_1p5.changeBeats(2),
 
-          ExtendRight.changeBeats(2).scale(1.0,2.0),
+          ExtendRight.changeBeats(2).scale(1.5,2.0),
 
-          Forward.changeBeats(2),
+          Forwardp5.changeBeats(2),
 
-          ExtendRight.changeBeats(2).scale(1.0,2.0)
+          ExtendRight.changeBeats(2).scale(0.5,2.0)
       ]),
 
     AnimatedCall('Step to a Left-Hand Wave',
-      formation:Formation('Normal Lines'),
+      formation:Formation('Normal Lines Compact'),
       from:'Facing Lines',difficulty: 2,
       paths:[
-          ExtendRight.changeBeats(2).scale(2.0,0.5),
+          ExtendRight.changeBeats(2).scale(1.5,0.5),
 
-          ExtendRight.changeBeats(2).scale(2.0,0.5),
+          ExtendRight.changeBeats(2).scale(1.5,0.5),
 
-          ExtendRight.changeBeats(2).scale(2.0,0.5),
+          ExtendRight.changeBeats(2).scale(1.5,0.5),
 
-          ExtendRight.changeBeats(2).scale(2.0,0.5)
+          ExtendRight.changeBeats(2).scale(1.5,0.5)
       ]),
 
     AnimatedCall('Balance',
-      formation:Formation('Ocean Waves RH BGGB'),
+      formation:Formation('Ocean Waves RH BGGB Compact'),
       from:'Right-Hand Waves',difficulty: 1,
       paths:[
           Forward.changeBeats(2).changehands(Hands.GRIPRIGHT).scale(0.35,1.0) +
@@ -131,7 +131,7 @@ import '../b2/alamo_style.dart' as b2;
       ]),
 
     AnimatedCall('Balance',
-      formation:Formation('Ocean Waves LH BGGB'),
+      formation:Formation('Ocean Waves LH BGGB Compact'),
       from:'Left-Hand Waves',difficulty: 1,
       paths:[
           Forward.changeBeats(2).changehands(Hands.GRIPLEFT).scale(0.35,1.0) +

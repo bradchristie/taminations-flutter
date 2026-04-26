@@ -43,7 +43,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Wheel Around',
-      formation:Formation('Normal Lines'),
+      formation:Formation('Normal Lines Compact'),
       from:'Lines',
       paths:[
           BeauWheel,
@@ -102,7 +102,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Reverse Wheel Around',
-      formation:Formation('Normal Lines'),
+      formation:Formation('Normal Lines Compact'),
       from:'Lines',
       paths:[
           BelleWheel.scale(1.0,-1.0),

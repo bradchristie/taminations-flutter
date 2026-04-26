@@ -85,29 +85,29 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Pass the Ocean',
-      formation:Formation('Ocean Waves RH BGGB'),
+      formation:Formation('Ocean Waves RH BGGB Compact'),
       from:'Right-Hand Waves',difficulty: 3,
       paths:[
-          LeadRight.changeBeats(4).scale(1.5,3.0).changeRoll(.NONE),
+          LeadRight.changeBeats(4).scale(1,3).changeRoll(.NONE),
 
-          HingeLeft.scale(0.5,1.0).changeRoll(.NONE),
+          HingeLeft.changeBeats(4).changeRoll(.NONE),
 
-          HingeLeft.scale(0.5,1.0).changeRoll(.NONE),
+          QuarterLeft.changeBeats(4).changehands(Hands.LEFT).skew(0,1).changeRoll(.NONE),
 
-          LeadRight.changeBeats(4).scale(1.5,3.0).changeRoll(.NONE)
+          LeadRight.changeBeats(4).scale(2,3).changeRoll(.NONE)
       ]),
 
     AnimatedCall('Pass the Ocean',
       formation:Formation('Tidal Wave RH BGGB'),
       from:'Right-Hand Tidal Wave',difficulty: 3,
       paths:[
-          LeadRight.changeBeats(4).scale(3.0,1.5).changeRoll(.NONE),
+          LeadRight.changeBeats(4).scale(3,2).changeRoll(.NONE),
 
-          HingeLeft.scale(1.0,0.5).changeRoll(.NONE),
+          HingeLeft.changeBeats(4).changeRoll(.NONE),
 
-          HingeLeft.scale(1.0,0.5).changeRoll(.NONE),
+          QuarterLeft.changeBeats(4).changehands(Hands.LEFT).skew(1,0).changeRoll(.NONE),
 
-          LeadRight.changeBeats(4).scale(3.0,1.5).changeRoll(.NONE)
+          LeadRight.changeBeats(4).scale(3,1).changeRoll(.NONE)
       ]),
 
     AnimatedCall('Heads Pass the Ocean',

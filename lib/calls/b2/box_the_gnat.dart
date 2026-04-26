@@ -50,7 +50,7 @@ import '../../moves.dart';
         formation:Formation('Facing Couples Compact'),
         from:'Facing Couples',isGenderSpecific:true,
         difficulty: 2,
-        taminator: 'Can be called at Mainstream and Plus',
+        taminator: 'Historically known as Swat the Flea. Can be called at Mainstream and Plus',
         paths:[
           Path.fromMovement(Movement.fromData(beats: 4, hands: Hands.GRIPLEFT, cx1: 1, cy1: 1, cx2: 2, cy2: 1, x2: 2.5, y2: 0, cx3: 1.3, cx4: 1.3, cy4: -2, x4: 0, y4: -2  ).reflect()),
 

@@ -28,36 +28,36 @@ import '../../moves.dart';
       formation:Formation('Single Quarter Tag'),
       from:'Single Quarter Tag',difficulty: 2,
       paths:[
-          ExtendLeft.changeBeats(2),
+          ExtendLeft.changeBeats(2).scale(1.5,1),
 
-          Forward_2
+          Forward_1p5.changeBeats(2)
       ]),
 
     AnimatedCall('Extend',
       formation:Formation('Single Left Quarter Tag'),
       from:'Single Left Quarter Tag',difficulty: 2,
       paths:[
-          ExtendRight.changeBeats(2),
+          ExtendRight.changeBeats(2).scale(1.5,1),
 
-          Forward_2
+          Forward_1p5.changeBeats(2)
       ]),
 
     AnimatedCall('Extend',
-      formation:Formation('Box RH'),
+      formation:Formation('Box RH Compact'),
       from:'Right-Hand Box',difficulty: 2,
       paths:[
-          Forward_2,
+          Forward_1p5.changeBeats(2),
 
-          ExtendRight.changeBeats(2)
+          ExtendRight.changeBeats(2).scale(1.5,1)
       ]),
 
     AnimatedCall('Extend',
-      formation:Formation('Box LH'),
+      formation:Formation('Box LH Compact'),
       from:'Left-Hand Box',difficulty: 2,
       paths:[
-          ExtendLeft.changeBeats(2),
+          ExtendLeft.changeBeats(2).scale(1.5,1),
 
-          Forward_2
+          Forward_1p5.changeBeats(2)
       ]),
 
     AnimatedCall('Extend',
@@ -104,13 +104,13 @@ import '../../moves.dart';
       formation:Formation('Quarter Tag LH'),
       from:'Left-Hand 1/4 Tag',difficulty: 2,
       paths:[
-          Forward.changeBeats(2),
+          Forward_1p5.changeBeats(2),
 
-          ExtendRight.changeBeats(2).scale(1.0,2.0),
+          ExtendRight.changeBeats(2).scale(1.5,2.0),
 
-          Forward_2,
+          Forward_1p5.changeBeats(2),
 
-          Forward_2
+          Forward_1p5.changeBeats(2)
       ]),
 
     AnimatedCall('Extend',
@@ -128,29 +128,29 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Extend',
-      formation:Formation('Ocean Waves RH BGGB'),
+      formation:Formation('Ocean Waves RH BGGB Compact'),
       from:'Right-Hand Waves',difficulty: 1,
       paths:[
-          Forward_2,
+          Forward_1p5.changeBeats(2),
 
-          Forward,
+          Forward_1p5.changeBeats(2),
 
-          Forward_2,
+          Forward_1p5.changeBeats(2),
 
-          ExtendRight.changeBeats(2).scale(1.0,2.0)
+          ExtendRight.changeBeats(2).scale(1.5,2.0)
       ]),
 
     AnimatedCall('Extend',
-      formation:Formation('Ocean Waves LH BGGB'),
+      formation:Formation('Ocean Waves LH BGGB Compact'),
       from:'Left-Hand Waves',difficulty: 2,
       paths:[
-          ExtendLeft.changeBeats(2).scale(1.0,2.0),
+          ExtendLeft.changeBeats(2).scale(1.5,2.0),
 
-          Forward_2,
+          Forward_1p5.changeBeats(2),
 
-          Forward,
+          Forward_1p5.changeBeats(2),
 
-          Forward_2
+          Forward_1p5.changeBeats(2)
       ]),
 
     AnimatedCall('Extend',
