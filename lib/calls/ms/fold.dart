@@ -25,7 +25,7 @@ import '../../moves.dart';
   final List<AnimatedCall> Fold = [
 
     AnimatedCall('Boys Fold',
-      formation:Formation('Lines Facing Out'),
+      formation:Formation('Lines Facing Out Compact'),
       from:'Lines Facing Out',notForSequencer: true,
       paths:[
           Path(),
@@ -38,7 +38,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Boys Fold',
-      formation:Formation('Ocean Waves LH BGBG'),
+      formation:Formation('Ocean Waves LH BGBG Compact'),
       from:'Ocean Waves',notForSequencer: true,
       paths:[
           FoldLeft,
@@ -51,7 +51,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Girls Fold',
-      formation:Formation('Lines Facing Out'),
+      formation:Formation('Lines Facing Out Compact'),
       from:'Lines Facing Out',notForSequencer: true,
       paths:[
           FoldLeft,
@@ -64,7 +64,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Girls Fold',
-      formation:Formation('Ocean Waves RH BGBG'),
+      formation:Formation('Ocean Waves RH BGBG Compact'),
       from:'Ocean Waves',notForSequencer: true,
       paths:[
           Path(),
@@ -113,29 +113,29 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Ends Fold',
-      formation:Formation('Lines Facing Out'),
+      formation:Formation('Lines Facing Out Compact'),
       from:'Lines Facing Out',
       paths:[
-          FoldLeft.skew(-1.0,0.0),
+          FoldLeft.skew(-0.5,0.0),
 
-          Back.changeBeats(2),
+          Back.changeBeats(2).scale(0.5,1),
 
-          Back.changeBeats(2),
+          Back.changeBeats(2).scale(0.5,1),
 
-          FoldRight.skew(-1.0,0.0)
+          FoldRight.skew(-0.5,0.0)
       ]),
 
     AnimatedCall('Ends Fold',
-      formation:Formation('Ocean Waves RH BGGB'),
+      formation:Formation('Ocean Waves RH BGGB Compact'),
       from:'Ocean Waves',
       paths:[
+          FoldRight.scale(.5, 1),
+
+          Path(),
+
+          Path(),
+
           FoldRight.scale(.75, 1),
-
-          Path(),
-
-          Path(),
-
-          FoldRight
       ]),
 
     AnimatedCall('Ends Cross Fold',
@@ -175,30 +175,35 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Ends Cross Fold',
-      formation:Formation('Lines Facing Out'),
+      formation:Formation('Lines Facing Out Compact'),
       from:'Lines Facing Out',
       paths:[
-          RunLeft.changeBeats(4).scale(1.0,2.0).skew(1.0,0.0),
+          RunLeft.changeBeats(4).scale(1.0,2.0).skew(1.5,0.0),
 
-          Back.changeBeats(3).changehands(Hands.LEFT),
+          Back.changeBeats(3).changehands(Hands.LEFT).scale(0.5,1),
 
-          Back.changeBeats(3).changehands(Hands.RIGHT),
+          Back.changeBeats(3).changehands(Hands.RIGHT).scale(0.5,1),
 
-          RunRight.changeBeats(4).scale(2.0,2.0).skew(1.0,0.0)
+          RunRight.changeBeats(4).scale(2.0,2.0).skew(1.5,0.0)
       ]),
 
+    //  Display of this is poor, very centers of the ending formation should
+    //  probably not be holding hands
+/*
     AnimatedCall('Ends Cross Fold',
-      formation:Formation('Ocean Waves RH BGGB'),
+      formation:Formation('Ocean Waves RH BGGB Compact'),
       from:'Ocean Waves',
       paths:[
-          LeadRight.scale(1.5,3.0) +
-          QuarterRight.skew(1.0,0),
+        LeadRight.scale(1.75,3.0) +
+            QuarterRight.skew(1,-0.5),
 
-          Path(),
+        Path(),
 
-          Path(),
+        Path(),
 
-          FoldRight.scale(1.0,2.0)
+        FoldRight.scale(0.75,2.0)
       ]),
+*/
+
   ];
 

@@ -28,26 +28,26 @@ import '../../moves.dart';
       formation:Formation('Completed Double Pass Thru'),
       from:'Completed Double Pass Thru',difficulty: 1,
       paths:[
-          DodgeRight.changeBeats(2).skew(-1.0,0.0),
+          DodgeRight.changeBeats(2).skew(-1.5,0.0),
 
-          DodgeLeft.changeBeats(2).skew(-1.0,0.0),
+          DodgeLeft.changeBeats(2).skew(-1.5,0.0),
 
-          Forward.changeBeats(2).changehands(Hands.LEFT),
+          Forwardp5.changeBeats(2).changehands(Hands.LEFT),
 
-          Forward.changeBeats(2).changehands(Hands.RIGHT)
+          Forwardp5.changeBeats(2).changehands(Hands.RIGHT)
       ]),
 
     AnimatedCall('Centers In',
       formation:Formation('Eight Chain Thru'),
       from:'Eight Chain Thru',difficulty: 2,
       paths:[
-          DodgeLeft.changeBeats(2).skew(1.0,0.0),
+          DodgeLeft.changeBeats(2).skew(1.5,0.0),
 
-          DodgeRight.changeBeats(2).skew(1.0,0.0),
+          DodgeRight.changeBeats(2).skew(1.5,0.0),
 
-          Forward.changeBeats(2).changehands(Hands.RIGHT),
+          Forwardp5.changeBeats(2).changehands(Hands.RIGHT),
 
-          Forward.changeBeats(2).changehands(Hands.LEFT)
+          Forwardp5.changeBeats(2).changehands(Hands.LEFT)
       ]),
 
     AnimatedCall('Centers In',
@@ -59,13 +59,13 @@ import '../../moves.dart';
   ]),
       from:'Outer Right-Hand Mini-Wave',noDisplay: true,
       paths:[
-          DodgeLeft.changeBeats(2).skew(1.0,0.0),
+          DodgeLeft.changeBeats(2).skew(1.5,0.0),
 
-          DodgeLeft.changeBeats(2).skew(-1.0,0.0),
+          DodgeLeft.changeBeats(2).skew(-1.5,0.0),
 
-          Forward.changeBeats(2).changehands(Hands.RIGHT),
+          Forwardp5.changeBeats(2).changehands(Hands.RIGHT),
 
-          Forward.changeBeats(2).changehands(Hands.LEFT)
+          Forwardp5.changeBeats(2).changehands(Hands.LEFT)
       ]),
 
     AnimatedCall('Centers In',
@@ -77,13 +77,13 @@ import '../../moves.dart';
   ]),
       from:'Outer Left-Hand Mini-Wave',noDisplay: true,
       paths:[
-          DodgeRight.changeBeats(2).skew(-1.0,0.0),
+          DodgeRight.changeBeats(2).skew(-1.5,0.0),
 
-          DodgeRight.changeBeats(2).skew(1.0,0.0),
+          DodgeRight.changeBeats(2).skew(1.5,0.0),
 
-          Forward.changeBeats(2).changehands(Hands.RIGHT),
+          Forwardp5.changeBeats(2).changehands(Hands.RIGHT),
 
-          Forward.changeBeats(2).changehands(Hands.LEFT)
+          Forwardp5.changeBeats(2).changehands(Hands.LEFT)
       ]),
   ];
 

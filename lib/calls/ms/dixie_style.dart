@@ -25,15 +25,15 @@ import '../../moves.dart';
   final List<AnimatedCall> DixieStyle = [
 
     AnimatedCall('Dixie Style to a Wave',
-      formation:Formation('Facing Couples'),
+      formation:Formation('Facing Couples Compact'),
       from:'Facing Couples',difficulty: 1,
       paths:[
           DodgeRight.changeBeats(4).scale(1.0,0.875) +
-          HingeLeft.scale(1.0,0.75),
+          HingeLeft.scale(0.5,0.75),
 
-          ExtendLeft.changeBeats(2).changehands(Hands.RIGHT).skew(1.0,0.5) +
-          ExtendRight.changeBeats(2).scale(2.0,1.25) +
-          HingeLeft.scale(1.0,0.75)
+          ExtendLeft.changeBeats(2).changehands(Hands.RIGHT).skew(0.5,0.5) +
+          ExtendRight.changeBeats(2).scale(1.5,1.25) +
+          HingeLeft.scale(1.5,0.75)
       ]),
 
     AnimatedCall('Dixie Style to a Wave',
@@ -62,22 +62,22 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Dixie Style to a Wave',
-      formation:Formation('Normal Lines'),
+      formation:Formation('Normal Lines Compact'),
       from:'Lines',difficulty: 1,
       paths:[
-          DodgeRight.changeBeats(4).scale(1.0,0.875) +
-          HingeLeft.scale(1.0,0.75),
+        DodgeRight.changeBeats(4).scale(1.0,0.875) +
+            HingeLeft.scale(0.5,0.25),
 
-          ExtendLeft.changeBeats(2).changehands(Hands.RIGHT).skew(1.0,0.5) +
-          ExtendRight.changeBeats(2).scale(2.0,1.25) +
-          HingeLeft.scale(1.0,0.75),
+        ExtendLeft.changeBeats(2).changehands(Hands.RIGHT).skew(0.5,0.5) +
+            ExtendRight.changeBeats(2).scale(1.5,1.25) +
+            HingeLeft.scale(1.5,0.25),
 
-          DodgeRight.changeBeats(4).scale(1.0,0.875) +
-          HingeLeft.scale(1.0,0.75),
+        DodgeRight.changeBeats(4).scale(1.0,0.875) +
+            HingeLeft.scale(0.5,1.25),
 
-          ExtendLeft.changeBeats(2).changehands(Hands.RIGHT).skew(1.0,0.5) +
-          ExtendRight.changeBeats(2).scale(2.0,1.25) +
-          HingeLeft.scale(1.0,0.75)
+        ExtendLeft.changeBeats(2).changehands(Hands.RIGHT).skew(0.5,0.5) +
+            ExtendRight.changeBeats(2).scale(1.5,1.25) +
+            HingeLeft.scale(1.5,1.25)
       ]),
 
     AnimatedCall('Dixie Style to a Wave',
@@ -109,41 +109,41 @@ import '../../moves.dart';
         Dancer.fromData(gender:Gender.GIRL,x:-1,y:-1,angle:0),
   ]),
       from:'Double Pass Thru',difficulty: 1,
-      paths:[
+        paths: [
           Stand.changeBeats(2) +
-          ExtendRight.scale(1.0,0.5) +
-          HingeLeft.scale(1.0,0.5),
+              ExtendRight.scale(1.0, 0.5) +
+              HingeLeft,
 
-          ExtendLeft.scale(1.0,0.5) +
-          ExtendRight.changeBeats(2).scale(2.0,1.0) +
-          HingeLeft.scale(1.0,0.5),
+          ExtendLeft.scale(1.0, 0.5) +
+              ExtendRight.changeBeats(2).scale(2.0, 1.0) +
+              HingeLeft,
 
           Stand.changeBeats(2) +
-          ExtendRight.scale(1.0,0.5) +
-          HingeLeft.scale(1.0,0.5),
+              ExtendRight.scale(1.0, 0.5) +
+              QuarterLeft.changehands(Hands.LEFT).skew(1, 0),
 
-          ExtendLeft.scale(1.0,0.5) +
-          ExtendRight.changeBeats(2).scale(2.0,1.0) +
-          HingeLeft.scale(1.0,0.5)
-      ]),
+          ExtendLeft.scale(1.0, 0.5) +
+              ExtendRight.changeBeats(2).scale(2.0, 1.0) +
+              QuarterLeft.changehands(Hands.LEFT).skew(1, 0),
+        ]),
 
     AnimatedCall('Dixie Style to a Wave',
       formation:Formation('Quarter Tag'),
       from:'Quarter Tag',difficulty: 2,
       paths:[
-          Stand.changeBeats(2) +
-          ExtendRight.scale(1.0,0.5) +
-          HingeLeft.scale(1.0,0.5),
+        Stand.changeBeats(2) +
+            ExtendRight.scale(1.0, 0.5) +
+            HingeLeft,
 
-          Stand.changeBeats(2) +
-          ExtendRight.scale(1.0,0.5) +
-          HingeLeft.scale(1.0,0.5),
+        Stand.changeBeats(2) +
+            ExtendRight.scale(1.0, 0.5) +
+            QuarterLeft.changehands(Hands.LEFT).skew(1, 0),
 
-          ExtendRight.changeBeats(3).scale(2.0,2.5) +
-          HingeLeft.scale(1.0,0.5),
+        ExtendRight.changeBeats(3).scale(2.0, 2.5) +
+            HingeLeft,
 
-          ExtendRight.changeBeats(3).scale(2.0,0.5) +
-          HingeLeft.scale(1.0,0.5)
+        ExtendRight.changeBeats(3).scale(2.0, 0.5) +
+            QuarterLeft.changehands(Hands.LEFT).skew(1, 0),
       ]),
 
     AnimatedCall('Dixie Style to a Wave',
@@ -210,22 +210,22 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Reverse Dixie Style to a Wave',
-      formation:Formation('Normal Lines'),
+      formation:Formation('Normal Lines Compact'),
       from:'Lines',difficulty: 2,
       paths:[
-          ExtendRight.changeBeats(2).changehands(Hands.LEFT).skew(1.0,-0.5) +
-          ExtendLeft.changeBeats(2).scale(2.0,1.25) +
-          HingeRight.scale(1.0,0.75),
+          ExtendRight.changeBeats(2).changehands(Hands.LEFT).skew(0.5,-0.5) +
+          ExtendLeft.changeBeats(2).scale(1.5,1.25) +
+          HingeRight.scale(1.5,1.25),
 
           DodgeLeft.changeBeats(4).scale(1.0,0.875) +
-          HingeRight.scale(1.0,0.75),
+          HingeRight.scale(0.5,1.25),
 
-          ExtendRight.changeBeats(2).changehands(Hands.LEFT).skew(1.0,-0.5) +
-          ExtendLeft.changeBeats(2).scale(2.0,1.25) +
-          HingeRight.scale(1.0,0.75),
+          ExtendRight.changeBeats(2).changehands(Hands.LEFT).skew(0.5,-0.5) +
+          ExtendLeft.changeBeats(2).scale(1.5,1.25) +
+          HingeRight.scale(1.5,0.25),
 
           DodgeLeft.changeBeats(4).scale(1.0,0.875) +
-          HingeRight.scale(1.0,0.75)
+          HingeRight.scale(0.5,0.25)
       ]),
 
     AnimatedCall('Reverse Dixie Style to a Wave',
@@ -257,42 +257,42 @@ import '../../moves.dart';
         Dancer.fromData(gender:Gender.GIRL,x:-1,y:-1,angle:0),
   ]),
       from:'Double Pass Thru',difficulty: 2,
-      paths:[
+        paths: [
           Stand.changeBeats(2) +
-          ExtendLeft.scale(1.0,0.5) +
-          HingeRight.scale(1.0,0.5),
+              ExtendLeft.scale(1.0, 0.5) +
+              QuarterRight.changehands(Hands.RIGHT).skew(1, 0),
 
-          ExtendRight.scale(1.0,0.5) +
-          ExtendLeft.changeBeats(2).scale(2.0,1.0) +
-          HingeRight.scale(1.0,0.5),
+          ExtendRight.scale(1.0, 0.5) +
+              ExtendLeft.changeBeats(2).scale(2.0, 1.0) +
+              QuarterRight.changehands(Hands.RIGHT).skew(1, 0),
 
           Stand.changeBeats(2) +
-          ExtendLeft.scale(1.0,0.5) +
-          HingeRight.scale(1.0,0.5),
+              ExtendLeft.scale(1.0, 0.5) +
+              HingeRight,
 
-          ExtendRight.scale(1.0,0.5) +
-          ExtendLeft.changeBeats(2).scale(2.0,1.0) +
-          HingeRight.scale(1.0,0.5)
-      ]),
+          ExtendRight.scale(1.0, 0.5) +
+              ExtendLeft.changeBeats(2).scale(2.0, 1.0) +
+              HingeRight
+        ]),
 
     AnimatedCall('Reverse Dixie Style to a Wave',
       formation:Formation('Quarter Tag LH'),
       from:'Left-Hand Quarter Tag',difficulty: 2,
-      paths:[
+        paths: [
           Stand.changeBeats(2) +
-          ExtendLeft.scale(1.0,0.5) +
-          HingeRight.scale(1.0,0.5),
+              ExtendLeft.scale(1.0, 0.5) +
+              QuarterRight.changehands(Hands.RIGHT).skew(1, 0),
 
           Stand.changeBeats(2) +
-          ExtendLeft.scale(1.0,0.5) +
-          HingeRight.scale(1.0,0.5),
+              ExtendLeft.scale(1.0, 0.5) +
+              HingeRight,
 
-          ExtendLeft.changeBeats(3).scale(2.0,2.5) +
-          HingeRight.scale(1.0,0.5),
+          ExtendLeft.changeBeats(3).scale(2.0, 2.5) +
+              HingeRight,
 
-          ExtendLeft.changeBeats(3).scale(2.0,0.5) +
-          HingeRight.scale(1.0,0.5)
-      ]),
+          ExtendLeft.changeBeats(3).scale(2.0, 0.5) +
+              QuarterRight.changehands(Hands.RIGHT).skew(1, 0),
+        ]),
 
     AnimatedCall('Reverse Dixie Style to a Wave',
       formation:Formation('', dancers:[

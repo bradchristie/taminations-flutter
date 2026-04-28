@@ -677,23 +677,23 @@ import '../../moves.dart';
           ExtendRight.changeBeats(1.25).scale(1.0,0.5) +
           PullRight.changeBeats(1.25).scale(1.0,0.5) +
           ExtendLeft.changeBeats(1.25).scale(1.0,0.5) +
-          ExtendLeft.changeBeats(1.25).scale(1.0,2.0),
+          ExtendLeft.changeBeats(1.25).scale(0.5,2.0),
 
           PullLeft.changeBeats(1.25).scale(1.0,0.5) +
           ExtendRight.changeBeats(1.25).scale(1.0,0.5) +
           PullRight.changeBeats(1.25).scale(1.0,0.5) +
           ExtendLeft.changeBeats(1.25).scale(1.0,0.5) +
-          Forward.changeBeats(1.25),
+          Forwardp5.changeBeats(1.25),
 
           PullLeft.changeBeats(1.25).scale(1.0,0.5) +
           ExtendRight.changeBeats(1.25).scale(1.0,0.5) +
           BeauWheel.changeBeats(2.5) +
-          ExtendLeft.changeBeats(1.25).scale(1.0,2.0),
+          ExtendLeft.changeBeats(1.25).scale(1.5,2.0),
 
           PullLeft.changeBeats(1.25).scale(1.0,0.5) +
           ExtendRight.changeBeats(1.25).scale(1.0,0.5) +
           BelleWheel.changeBeats(2.5) +
-          Forward.changeBeats(1.25)
+          Forward_1p5.changeBeats(1.25)
       ]),
 
     AnimatedCall('Eight Chain Three and a Half',
@@ -742,7 +742,7 @@ import '../../moves.dart';
           PullLeft.changeBeats(1.25).scale(1.0,0.5) +
           ExtendRight.changeBeats(1.25).scale(1.0,0.5) +
           BeauWheel.changeBeats(2.5) +
-          ExtendLeft.changeBeats(1.25).scale(1.0,2.0),
+          ExtendLeft.changeBeats(1.25).scale(1.5,2.0),
 
           PullLeft.changeBeats(1.25).scale(1.0,0.5) +
           ExtendRight.changeBeats(1.25).scale(1.0,0.5) +
@@ -751,7 +751,7 @@ import '../../moves.dart';
           PullLeft.changeBeats(1.25).scale(1.0,0.5) +
           ExtendRight.changeBeats(1.25).scale(1.0,0.5) +
           BelleWheel.changeBeats(2.5) +
-          Forward.changeBeats(1.25),
+          Forward_1p5.changeBeats(1.25),
 
           PullLeft.changeBeats(1.25).scale(1.0,0.5) +
           ExtendRight.changeBeats(1.25).scale(1.0,0.5) +
@@ -760,7 +760,7 @@ import '../../moves.dart';
           ExtendRight.changeBeats(1.25).scale(1.0,0.5) +
           PullRight.changeBeats(1.25).scale(1.0,0.5) +
           ExtendLeft.changeBeats(1.25).scale(1.0,0.5) +
-          ExtendLeft.changeBeats(1.25).scale(1.0,2.0),
+          ExtendLeft.changeBeats(1.25).scale(0.5,2.0),
 
           PullLeft.changeBeats(1.25).scale(1.0,0.5) +
           ExtendRight.changeBeats(1.25).scale(1.0,0.5) +
@@ -769,7 +769,7 @@ import '../../moves.dart';
           ExtendRight.changeBeats(1.25).scale(1.0,0.5) +
           PullRight.changeBeats(1.25).scale(1.0,0.5) +
           ExtendLeft.changeBeats(1.25).scale(1.0,0.5) +
-          Forward.changeBeats(1.25)
+          Forwardp5.changeBeats(1.25)
       ]),
 
     AnimatedCall('Eight Chain Five and a Half',
@@ -836,7 +836,7 @@ import '../../moves.dart';
           ExtendRight.changeBeats(1.25).scale(1.0,0.5) +
           PullRight.changeBeats(1.25).scale(1.0,0.5) +
           ExtendLeft.changeBeats(1.25).scale(1.0,0.5) +
-          ExtendLeft.changeBeats(1.25).scale(1.0,2.0),
+          ExtendLeft.changeBeats(1.25).scale(0.5,2.0),
 
           PullLeft.changeBeats(1.25).scale(1.0,0.5) +
           ExtendRight.changeBeats(1.25).scale(1.0,0.5) +
@@ -849,7 +849,7 @@ import '../../moves.dart';
           ExtendRight.changeBeats(1.25).scale(1.0,0.5) +
           PullRight.changeBeats(1.25).scale(1.0,0.5) +
           ExtendLeft.changeBeats(1.25).scale(1.0,0.5) +
-          Forward.changeBeats(1.25),
+          Forwardp5.changeBeats(1.25),
 
           PullLeft.changeBeats(1.25).scale(1.0,0.5) +
           ExtendRight.changeBeats(1.25).scale(1.0,0.5) +
@@ -861,7 +861,7 @@ import '../../moves.dart';
           PullLeft.changeBeats(1.25).scale(1.0,0.5) +
           ExtendRight.changeBeats(1.25).scale(1.0,0.5) +
           BeauWheel.changeBeats(2.5) +
-          ExtendLeft.changeBeats(1.25).scale(1.0,2.0),
+          ExtendLeft.changeBeats(1.25).scale(1.5,2.0),
 
           PullLeft.changeBeats(1.25).scale(1.0,0.5) +
           ExtendRight.changeBeats(1.25).scale(1.0,0.5) +
@@ -873,7 +873,7 @@ import '../../moves.dart';
           PullLeft.changeBeats(1.25).scale(1.0,0.5) +
           ExtendRight.changeBeats(1.25).scale(1.0,0.5) +
           BelleWheel.changeBeats(2.5) +
-          Forward.changeBeats(1.25)
+          Forward_1p5.changeBeats(1.25)
       ]),
 
     AnimatedCall('Eight Chain Seven and a Half',
