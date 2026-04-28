@@ -56,12 +56,8 @@ class BeatNotifier extends fm.ChangeNotifier {
       final speed = speedNames[Settings.speed] ?? NORMALSPEED;
       _beat += diff / speed;
       if (_beat > _endBeat) {
-        if (Settings.loop)
-          _beat = _startBeat;
-        else {
-          stop();
-          isFinished = true;
-        }
+        stop();
+        isFinished = true;
       }
       _lastTime = now;
       notifyListeners();

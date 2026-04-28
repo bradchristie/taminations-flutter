@@ -290,6 +290,13 @@ class DanceModel extends fm.ChangeNotifier {
   //  by the beater
   void _updateCurrentPart() {
     final previousPart = _currentPart;
+    //  Loop ?
+    if (beater.isFinished && looping) {
+      goToStart();
+      beater.start();
+    }
+
+
     if (beater.beat < 0 || beater.beat > beats-leadout || partstr.isBlank)
       _currentPart = 0;
     else {
