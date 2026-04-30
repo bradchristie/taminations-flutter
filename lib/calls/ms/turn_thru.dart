@@ -38,16 +38,16 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Turn Thru',
-      formation:Formation('Box RH'),
+      formation:Formation('Box RH Compact'),
       from:'Right-Hand Box',
       paths:[
           HingeRight.scale(0.75,1.0) +
           HingeRight.scale(0.75,0.75) +
-          ExtendRight.scale(1.0,0.75),
+          ExtendRight.scale(1.5,0.75),
 
           HingeRight.scale(0.75,1.0) +
           HingeRight.scale(0.75,0.75) +
-          ExtendRight.scale(1.0,0.75)
+          ExtendRight.scale(0.5,0.75)
       ]),
 
     AnimatedCall('Turn Thru',
@@ -56,53 +56,53 @@ import '../../moves.dart';
       paths:[
           HingeRight.scale(0.75,1.0) +
           HingeRight.scale(0.75,0.75) +
-          ExtendLeft.scale(1.0,0.25),
+          ExtendLeft.scale(1.5,0.25),
 
           HingeRight.scale(0.75,1.0) +
           HingeRight.scale(0.75,0.75) +
-          ExtendRight.changeBeats(2).scale(1.0,1.75)
+          ExtendRight.changeBeats(2).scale(1.5,1.75)
       ]),
 
     AnimatedCall('Turn Thru',
-      formation:Formation('Normal Lines'),
+      formation:Formation('Normal Lines Compact'),
       from:'Lines',difficulty: 2,
       paths:[
-          ExtendLeft.changeBeats(2).scale(2.0,0.5) +
+          ExtendLeft.changeBeats(2).scale(1.5,0.5) +
           SwingRight.changeBeats(2).changehands(Hands.GRIPRIGHT).scale(0.5,0.5) +
-          ExtendRight.changeBeats(2).scale(2.0,0.5),
+          ExtendRight.changeBeats(2).scale(1.5,0.5),
 
-          ExtendLeft.changeBeats(2).scale(2.0,0.5) +
+          ExtendLeft.changeBeats(2).scale(1.5,0.5) +
           SwingRight.changeBeats(2).changehands(Hands.GRIPRIGHT).scale(0.5,0.5) +
-          ExtendRight.changeBeats(2).scale(2.0,0.5),
+          ExtendRight.changeBeats(2).scale(1.5,0.5),
 
-          ExtendLeft.changeBeats(2).scale(2.0,0.5) +
+          ExtendLeft.changeBeats(2).scale(1.5,0.5) +
           SwingRight.changeBeats(2).changehands(Hands.GRIPRIGHT).scale(0.5,0.5) +
-          ExtendRight.changeBeats(2).scale(2.0,0.5),
+          ExtendRight.changeBeats(2).scale(1.5,0.5),
 
-          ExtendLeft.changeBeats(2).scale(2.0,0.5) +
+          ExtendLeft.changeBeats(2).scale(1.5,0.5) +
           SwingRight.changeBeats(2).changehands(Hands.GRIPRIGHT).scale(0.5,0.5) +
-          ExtendRight.changeBeats(2).scale(2.0,0.5)
+          ExtendRight.changeBeats(2).scale(1.5,0.5)
       ]),
 
     AnimatedCall('Turn Thru',
-      formation:Formation('Ocean Waves RH GBBG'),
+      formation:Formation('Ocean Waves RH GBBG Compact'),
       from:'Waves',difficulty: 1,
       paths:[
           HingeRight.scale(0.75,1.0) +
           HingeRight.scale(0.75,0.75) +
-          ExtendLeft.scale(1.0,0.25),
+          ExtendLeft.scale(1.5,0.25),
 
           HingeRight.scale(0.75,1.0) +
           HingeRight.scale(0.75,0.75) +
-          ExtendRight.changeBeats(2).scale(1.0,1.75),
+          ExtendRight.changeBeats(2).scale(0.5,1.75),
 
           HingeRight.scale(0.75,1.0) +
           HingeRight.scale(0.75,0.75) +
-          ExtendRight.changeBeats(2).scale(1.0,1.75),
+          ExtendRight.changeBeats(2).scale(1.5,1.75),
 
           HingeRight.scale(0.75,1.0) +
           HingeRight.scale(0.75,0.75) +
-          ExtendLeft.scale(1.0,0.25)
+          ExtendLeft.scale(0.5,0.25)
       ]),
 
     AnimatedCall('Turn Thru',

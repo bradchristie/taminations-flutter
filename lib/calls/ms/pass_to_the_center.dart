@@ -33,25 +33,25 @@ import '../../moves.dart';
           PassThru,
 
           PassThru +
-          RunRight,
+          RunRight.changeBeats(4),
 
           PassThru +
-          FlipLeft
+          FlipLeft.changeBeats(4)
       ]),
 
     AnimatedCall('Pass to the Center',
-      formation:Formation('Ocean Waves RH BGGB'),
-      from:'Right-Hand Waves',difficulty: 3,
+      formation:Formation('Ocean Waves RH BGGB Compact'),
+      from:'Right-Hand Waves',parts: '2',difficulty: 3,
       paths:[
-          ExtendRight.changeBeats(2).scale(1.0,2.0),
+          ExtendRight.changeBeats(2).scale(0.5,2.0),
 
-          LeadLeft +
-          QuarterLeft.skew(1.0,0.0),
+          Forward_1p5.changeBeats(2) +
+          FlipLeft.changeBeats(4),
 
-          Forward,
+          Forwardp5.changeBeats(2),
 
-          LeadRight.changeBeats(2).scale(2.0,2.0) +
-          LeadRight.scale(2.0,1.0)
+          ExtendRight.changeBeats(2).scale(1.5,2) +
+              RunRight.changeBeats(4)
       ]),
   ];
 

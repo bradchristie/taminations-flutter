@@ -51,14 +51,14 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Spin the Top',
-      formation:Formation('Facing Couples'),
+      formation:Formation('Facing Couples Compact'),
       from:'Facing Couples',parts:'5',difficulty: 2,
       paths:[
-          ExtendLeft.changeBeats(2).scale(2.0,2.0) +
+          ExtendLeft.changeBeats(2).scale(1.5,2.0) +
           SwingRight +
           CastLeft,
 
-          Forward_2 +
+          Forward_1p5.changeBeats(2) +
           SwingRight +
           LeadRight.changeBeats(4.5).scale(3.0,3.0)
       ]),
@@ -77,43 +77,43 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Spin the Top',
-      formation:Formation('Ocean Waves RH GBBG'),
+      formation:Formation('Ocean Waves RH GBBG Compact'),
       from:'Right-Hand Waves',parts:'3',difficulty: 1,
       paths:[
           SwingRight +
-          HingeLeft +
+          HingeLeft.skew(0.5,0) +
           HingeLeft +
           HingeLeft.scale(0.5,1.0),
 
           SwingRight +
-          LeadRight.changeBeats(4.5).scale(1.5,3.0),
+          LeadRight.changeBeats(4.5).scale(1,3),
 
           SwingRight +
-          LeadRight.changeBeats(4.5).scale(1.5,3.0),
+          LeadRight.changeBeats(4.5).scale(2,3),
 
           SwingRight +
-          HingeLeft +
+          HingeLeft.skew(-0.5,0) +
           HingeLeft +
           HingeLeft.scale(0.5,1.0)
       ]),
 
     AnimatedCall('Spin the Top',
-      formation:Formation('Ocean Waves LH GBBG'),
+      formation:Formation('Ocean Waves LH GBBG Compact'),
       from:'Left-Hand Waves',parts:'3',difficulty: 2,
       paths:[
           SwingLeft +
-          HingeRight +
+          HingeRight.skew(-0.5,0) +
           HingeRight +
           HingeRight.scale(0.5,1.0),
 
           SwingLeft +
-          LeadLeft.changeBeats(4.5).scale(1.5,3.0),
+          LeadLeft.changeBeats(4.5).scale(2,3),
 
           SwingLeft +
-          LeadLeft.changeBeats(4.5).scale(1.5,3.0),
+          LeadLeft.changeBeats(4.5).scale(1,3),
 
           SwingLeft +
-          HingeRight +
+          HingeRight.skew(0.5,0) +
           HingeRight +
           HingeRight.scale(0.5,1.0)
       ]),
@@ -124,17 +124,17 @@ import '../../moves.dart';
       paths:[
           SwingRight.changehands(Hands.GRIPRIGHT).scale(0.5,0.5) +
           HingeLeft.scale(1.0,0.5) +
-          SwingLeft,
+          SwingLeft.skew(0.5,0),
 
           SwingRight.changehands(Hands.GRIPRIGHT).scale(0.5,0.5) +
-          LeadRight.changeBeats(4.5).scale(3.0,1.5),
+          LeadRight.changeBeats(4.5).scale(3,2),
 
           SwingRight.changehands(Hands.GRIPRIGHT).scale(0.5,0.5) +
-          LeadRight.changeBeats(4.5).scale(3.0,1.5),
+          LeadRight.changeBeats(4.5).scale(3,1),
 
           SwingRight.changehands(Hands.GRIPRIGHT).scale(0.5,0.5) +
           HingeLeft.scale(1.0,0.5) +
-          SwingLeft
+          SwingLeft.skew(-0.5,0)
       ]),
 
     AnimatedCall('Spin the Top',
@@ -143,17 +143,17 @@ import '../../moves.dart';
       paths:[
           SwingLeft.changehands(Hands.GRIPLEFT).scale(0.5,0.5) +
           HingeRight.scale(1.0,0.5) +
-          SwingRight,
+          SwingRight.skew(0.5,0),
 
           SwingLeft.changehands(Hands.GRIPLEFT).scale(0.5,0.5) +
-          LeadLeft.changeBeats(4.5).scale(3.0,1.5),
+          LeadLeft.changeBeats(4.5).scale(3,2),
 
           SwingLeft.changehands(Hands.GRIPLEFT).scale(0.5,0.5) +
-          LeadLeft.changeBeats(4.5).scale(3.0,1.5),
+          LeadLeft.changeBeats(4.5).scale(3,1),
 
           SwingLeft.changehands(Hands.GRIPLEFT).scale(0.5,0.5) +
           HingeRight.scale(1.0,0.5) +
-          SwingRight
+          SwingRight.skew(-0.5,0)
       ]),
 
     AnimatedCall('Spin the Top',
@@ -178,37 +178,37 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Spin the Top',
-      formation:Formation('Normal Lines'),
+      formation:Formation('Normal Lines Compact'),
       from:'Lines',parts:'5',difficulty: 3,
       paths:[
-          ExtendLeft.changeBeats(2).scale(2.0,0.5) +
+          ExtendLeft.changeBeats(2).scale(1.5,0.5) +
           SwingRight.changehands(Hands.GRIPRIGHT).scale(0.5,0.5) +
           HingeLeft.scale(1.0,0.5) +
-          SwingLeft,
+          SwingLeft.skew(0.5,0),
 
-          ExtendLeft.changeBeats(2).scale(2.0,0.5) +
+          ExtendLeft.changeBeats(2).scale(1.5,0.5) +
           SwingRight.changehands(Hands.GRIPRIGHT).scale(0.5,0.5) +
-          LeadRight.changeBeats(4.5).scale(3.0,1.5),
+          LeadRight.changeBeats(4.5).scale(3,1),
 
-          ExtendLeft.changeBeats(2).scale(2.0,0.5) +
+          ExtendLeft.changeBeats(2).scale(1.5,0.5) +
           SwingRight.changehands(Hands.GRIPRIGHT).scale(0.5,0.5) +
           HingeLeft.scale(1.0,0.5) +
-          SwingLeft,
+          SwingLeft.skew(-0.5,0),
 
-          ExtendLeft.changeBeats(2).scale(2.0,0.5) +
+          ExtendLeft.changeBeats(2).scale(1.5,0.5) +
           SwingRight.changehands(Hands.GRIPRIGHT).scale(0.5,0.5) +
-          LeadRight.changeBeats(4.5).scale(3.0,1.5)
+          LeadRight.changeBeats(4.5).scale(3,2)
       ]),
 
     AnimatedCall('Left Spin the Top',
-      formation:Formation('Facing Couples'),
+      formation:Formation('Facing Couples Compact'),
       from:'Facing Couples',parts:'5',difficulty: 3,
       paths:[
-          Forward_2 +
+          Forward_1p5.changeBeats(2) +
           SwingLeft +
           LeadLeft.changeBeats(4.5).scale(3.0,3.0),
 
-          ExtendRight.changeBeats(2).scale(2.0,2.0) +
+          ExtendRight.changeBeats(2).scale(1.5,2.0) +
           SwingLeft +
           CastRight
       ]),
@@ -248,26 +248,26 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left Spin the Top',
-      formation:Formation('Normal Lines'),
+      formation:Formation('Normal Lines Compact'),
       from:'Lines',parts:'5',difficulty: 3,
       paths:[
-          ExtendRight.changeBeats(2).scale(2.0,0.5) +
+          ExtendRight.changeBeats(2).scale(1.5,0.5) +
           SwingLeft.changehands(Hands.GRIPLEFT).scale(0.5,0.5) +
-          LeadLeft.changeBeats(4.5).scale(3.0,1.5),
+          LeadLeft.changeBeats(4.5).scale(3,2),
 
-          ExtendRight.changeBeats(2).scale(2.0,0.5) +
+          ExtendRight.changeBeats(2).scale(1.5,0.5) +
           SwingLeft.changehands(Hands.GRIPLEFT).scale(0.5,0.5) +
           HingeRight.scale(1.0,0.5) +
-          SwingRight,
+          SwingRight.skew(-0.5,0),
 
-          ExtendRight.changeBeats(2).scale(2.0,0.5) +
+          ExtendRight.changeBeats(2).scale(1.5,0.5) +
           SwingLeft.changehands(Hands.GRIPLEFT).scale(0.5,0.5) +
-          LeadLeft.changeBeats(4.5).scale(3.0,1.5),
+          LeadLeft.changeBeats(4.5).scale(3,1),
 
-          ExtendRight.changeBeats(2).scale(2.0,0.5) +
+          ExtendRight.changeBeats(2).scale(1.5,0.5) +
           SwingLeft.changehands(Hands.GRIPLEFT).scale(0.5,0.5) +
           HingeRight.scale(1.0,0.5) +
-          SwingRight
+          SwingRight.skew(0.5,0)
       ]),
 
     AnimatedCall('Heads Spin the Top',

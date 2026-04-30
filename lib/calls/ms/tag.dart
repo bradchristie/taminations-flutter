@@ -77,107 +77,115 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Tag the Line',
-      formation:Formation('Normal Lines'),
+      formation:Formation('Normal Lines Compact'),
       from:'Lines Facing In',difficulty: 2,
       paths:[
-          QuarterRight.skew(1.0,0.0) +
-          Forward_4,
+        QuarterRight.skew(1.0, 0.0) +
+            Forward_3 +
+            ExtendRight.scale(1, 0.5),
 
-          QuarterRight.skew(1.0,0.0) +
-          Forward_4,
+        QuarterRight.skew(1.0, 0.0) +
+            Forward_3 +
+            ExtendRight.scale(1, 0.5),
 
-          QuarterLeft +
-          Forward_3 +
-          ExtendRight,
+        QuarterLeft +
+            Forward_3 +
+            ExtendRight.scale(1, 0.5),
 
-          QuarterLeft +
-          Forward_3 +
-          ExtendRight
+        QuarterLeft +
+            Forward_3 +
+            ExtendRight.scale(1, 0.5)
       ]),
 
     AnimatedCall('Tag the Line',
-      formation:Formation('Lines Facing Out'),
+      formation:Formation('Lines Facing Out Compact'),
       from:'Lines Facing Out',difficulty: 1,
       paths:[
-          QuarterLeft.skew(-1.0,0.0) +
-          Forward_4,
+        QuarterLeft.skew(-1.0, 0.0) +
+            Forward_3 +
+            ExtendRight.scale(1, 0.5),
 
-          QuarterLeft.skew(-1.0,0.0) +
-          Forward_4,
+        QuarterLeft.skew(-1.0, 0.0) +
+            Forward_3 +
+            ExtendRight.scale(1, 0.5),
 
-          QuarterRight +
-          Forward_3 +
-          ExtendRight,
+        QuarterRight +
+            Forward_3 +
+            ExtendRight.scale(1, 0.5),
 
-          QuarterRight +
-          Forward_3 +
-          ExtendRight
+        QuarterRight +
+            Forward_3 +
+            ExtendRight.scale(1, 0.5),
       ]),
 
     AnimatedCall('Tag the Line',
-      formation:Formation('Two-Faced Lines RH'),
+      formation:Formation('Two-Faced Lines RH Compact'),
       from:'Right-Hand Two-Faced Lines',difficulty: 1,
       paths:[
-          QuarterRight.skew(1.0,0.0) +
-          Forward_4,
+        QuarterRight.skew(1.0, 0.0) +
+            Forward_3 +
+            ExtendRight.scale(1, 0.5),
 
-          QuarterRight.skew(1.0,0.0) +
-          Forward_4,
+        QuarterRight.skew(1.0, 0.0) +
+            Forward_3 +
+            ExtendRight.scale(1, 0.5),
 
-          QuarterRight +
-          Forward_3 +
-          ExtendRight,
+        QuarterRight +
+            Forward_3 +
+            ExtendRight.scale(1, 0.5),
 
-          QuarterRight +
-          Forward_3 +
-          ExtendRight
+        QuarterRight +
+            Forward_3 +
+            ExtendRight.scale(1, 0.5),
       ]),
 
     AnimatedCall('Tag the Line',
-      formation:Formation('Two-Faced Lines LH'),
+      formation:Formation('Two-Faced Lines LH Compact'),
       from:'Left-Hand Two-Faced Lines',difficulty: 2,
       paths:[
-          QuarterLeft.skew(-1.0,0.0) +
-          Forward_4,
+        QuarterLeft.skew(-1.0, 0.0) +
+            Forward_3 +
+            ExtendRight.scale(1, 0.5),
 
-          QuarterLeft.skew(-1.0,0.0) +
-          Forward_4,
+        QuarterLeft.skew(-1.0, 0.0) +
+            Forward_3 +
+            ExtendRight.scale(1, 0.5),
 
-          QuarterLeft +
-          Forward_3 +
-          ExtendRight,
+        QuarterLeft +
+            Forward_3 +
+            ExtendRight.scale(1, 0.5),
 
-          QuarterLeft +
-          Forward_3 +
-          ExtendRight
+        QuarterLeft +
+            Forward_3 +
+            ExtendRight.scale(1, 0.5),
       ]),
 
     AnimatedCall('Tag the Line',
-      formation:Formation('Ocean Waves RH BGGB'),
+      formation:Formation('Ocean Waves RH BGGB Compact'),
       from:'Right-Hand Ocean Waves',difficulty: 2,
       paths:[
-          QuarterRight.skew(1.0,0.0) +
-          Forward_4,
+        QuarterRight.skew(1.0, 0.0) +
+            Forward_3 +
+            ExtendRight.scale(1, 0.5),
 
-          QuarterLeft.skew(-1.0,0.0) +
-          Forward_4,
+        QuarterLeft.skew(-1.0, 0.0) +
+            Forward_3 +
+            ExtendRight.scale(1, 0.5),
 
-          QuarterLeft +
-          Forward_3 +
-          ExtendRight,
+        QuarterLeft +
+            Forward_3 +
+            ExtendRight.scale(1, 0.5),
 
-          QuarterRight +
-          Forward_3 +
-          ExtendRight
+        QuarterRight +
+            Forward_3 +
+            ExtendRight.scale(1, 0.5),
       ]),
 
     AnimatedCall('Tag the Line',
       formation:Formation('Tidal Line RH'),
       from:'Tidal Line',difficulty: 2,
-      taminator: '''
-    Although not clear from the current definition, Tag the Line is a
-    4-dancer call.  Each side of the Tidal Line works independently.
-    ''',
+      taminator: '''Tag the Line is a 4-dancer call.  
+      Each side of the Tidal Line works independently.''',
       paths:[
           QuarterRight.changeBeats(2).skew(0.5,0.0) +
           Forward.changeBeats(2) +

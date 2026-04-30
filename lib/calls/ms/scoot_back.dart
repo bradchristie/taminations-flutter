@@ -25,25 +25,25 @@ import '../../moves.dart';
   final List<AnimatedCall> ScootBack = [
 
     AnimatedCall('Scoot Back',
-      formation:Formation('Box RH'),
+      formation:Formation('Box RH Compact'),
       from:'Right-Hand Box',fractions:'3',difficulty: 1,
       paths:[
-          ExtendRight.changeBeats(1.5).scale(2.0,0.25) +
+          ExtendRight.changeBeats(1.5).scale(1.5,0.25) +
           SwingRight.scale(0.75,0.75) +
-          ExtendLeft.changeBeats(1.5).scale(2.0,0.25),
+          ExtendLeft.changeBeats(1.5).scale(1.5,0.25),
 
           RunRight.changeBeats(6)
       ]),
 
     AnimatedCall('Scoot Back',
-      formation:Formation('Box LH'),
+      formation:Formation('Box LH Compact'),
       from:'Left-Hand Box',fractions:'3',difficulty: 2,
       paths:[
           FlipLeft.changeBeats(6),
 
-          ExtendLeft.changeBeats(1.5).scale(2.0,0.25) +
+          ExtendLeft.changeBeats(1.5).scale(1.5,0.25) +
           SwingLeft.scale(0.75,0.75) +
-          ExtendRight.changeBeats(1.5).scale(2.0,0.25)
+          ExtendRight.changeBeats(1.5).scale(1.5,0.25)
       ]),
 
     AnimatedCall('Scoot Back',
@@ -101,37 +101,37 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Scoot Back',
-      formation:Formation('Ocean Waves RH BGBG'),
+      formation:Formation('Ocean Waves RH BGBG Compact'),
       from:'Right-Hand Waves',fractions:'3',difficulty: 1,
       paths:[
-          ExtendRight.changeBeats(1.5).scale(2.0,0.25) +
+          ExtendRight.changeBeats(1.5).scale(1.5,0.25) +
           SwingRight.scale(0.75,0.75) +
-          ExtendLeft.changeBeats(1.5).scale(2.0,0.25),
+          ExtendLeft.changeBeats(1.5).scale(1.5,0.25),
 
-          FlipRight.changeBeats(6),
+          RunRight.changeBeats(6),
 
-          ExtendRight.changeBeats(1.5).scale(2.0,0.25) +
+          ExtendRight.changeBeats(1.5).scale(1.5,0.25) +
           SwingRight.scale(0.75,0.75) +
-          ExtendLeft.changeBeats(1.5).scale(2.0,0.25),
+          ExtendLeft.changeBeats(1.5).scale(1.5,0.25),
 
-          FlipRight.changeBeats(6)
+          RunRight.changeBeats(6)
       ]),
 
     AnimatedCall('Scoot Back',
-      formation:Formation('Ocean Waves LH BGBG'),
+      formation:Formation('Ocean Waves LH BGBG Compact'),
       from:'Left-Hand Waves',fractions:'3',difficulty: 2,
       paths:[
-          FlipLeft.changeBeats(6),
+          RunLeft.changeBeats(6),
 
-          ExtendLeft.changeBeats(1.5).scale(2.0,0.25) +
+          ExtendLeft.changeBeats(1.5).scale(1.5,0.25) +
           SwingLeft.scale(0.75,0.75) +
-          ExtendRight.changeBeats(1.5).scale(2.0,0.25),
+          ExtendRight.changeBeats(1.5).scale(1.5,0.25),
 
-          FlipLeft.changeBeats(6),
+          RunLeft.changeBeats(6),
 
-          ExtendLeft.changeBeats(1.5).scale(2.0,0.25) +
+          ExtendLeft.changeBeats(1.5).scale(1.5,0.25) +
           SwingLeft.scale(0.75,0.75) +
-          ExtendRight.changeBeats(1.5).scale(2.0,0.25)
+          ExtendRight.changeBeats(1.5).scale(1.5,0.25)
       ]),
 
     AnimatedCall('Scoot Back',

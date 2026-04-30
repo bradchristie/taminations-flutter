@@ -26,50 +26,50 @@ import '../../moves.dart';
 
     AnimatedCall('Walk and Dodge',
       formation:Formation('Box RH'),
-      from:'Right-Hand Box',difficulty: 1,notForSequencer: true,
+      from:'Right-Hand Box Compact',difficulty: 1,notForSequencer: true,
       paths:[
-          Forward_4,
+          Forward_3.changeBeats(4),
 
           DodgeRight.changeBeats(4)
       ]),
 
     AnimatedCall('Walk and Dodge',
-      formation:Formation('Box LH'),
+      formation:Formation('Box LH Compact'),
       from:'Left-Hand Box',difficulty: 2,
       paths:[
           DodgeLeft.changeBeats(4),
 
-          Forward_4
+          Forward_3.changeBeats(4)
       ]),
 
     AnimatedCall('Walk and Dodge',
-      formation:Formation('Ocean Waves RH BGGB'),
+      formation:Formation('Ocean Waves RH BGGB Compact'),
       from:'Right-Hand Waves',difficulty: 1,notForSequencer: true,
       taminator: '''
     An analogy is loading a package in a mini-van.
     The door slides open (dodger), the package goes in (walker).
     ''',
       paths:[
-          Forward_4,
+          Forward_3.changeBeats(4),
 
           DodgeRight.changeBeats(4),
 
-          Forward_4,
+          Forward_3.changeBeats(4),
 
           DodgeRight.changeBeats(4)
       ]),
 
     AnimatedCall('Walk and Dodge',
-      formation:Formation('Ocean Waves LH BGGB'),
+      formation:Formation('Ocean Waves LH BGGB Compact'),
       from:'Left-Hand Waves',difficulty: 2,
       paths:[
-          DodgeLeft,
+          DodgeLeft.changeBeats(4),
 
-          Forward_4,
+          Forward_3.changeBeats(4),
 
-          DodgeLeft,
+          DodgeLeft.changeBeats(4),
 
-          Forward_4
+          Forward_3.changeBeats(4)
       ]),
 
     AnimatedCall('Walk and Dodge',
@@ -129,14 +129,14 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Boys Walk, Girls Dodge',
-      formation:Formation('Normal Lines'),
+      formation:Formation('Normal Lines Compact'),
       from:'Lines',isGenderSpecific:true,difficulty: 1,
       paths:[
-          Forward_4,
+          Forward_3.changeBeats(4),
 
           DodgeLeft.changeBeats(4),
 
-          Forward_4,
+          Forward_3.changeBeats(4),
 
           DodgeLeft.changeBeats(4)
       ]),
@@ -164,16 +164,16 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Girls Walk, Boys Dodge',
-      formation:Formation('Normal Lines'),
+      formation:Formation('Normal Lines Compact'),
       from:'Lines',isGenderSpecific:true,difficulty: 1,
       paths:[
           DodgeRight.changeBeats(4),
 
-          Forward_4,
+          Forward_3.changeBeats(4),
 
           DodgeRight.changeBeats(4),
 
-          Forward_4
+          Forward_3.changeBeats(4)
       ]),
 
     AnimatedCall('Girls Walk, Boys Dodge',
@@ -417,7 +417,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('1 by 3 Walk and Dodge',
-      formation:Formation('Ocean Waves LH BGGB'),
+      formation:Formation('Ocean Waves LH BGGB Compact'),
       from:'Left-Hand Waves',difficulty: 3,
       paths:[
           DodgeLeft.changeBeats(4),
@@ -426,14 +426,14 @@ import '../../moves.dart';
 
           DodgeLeft.changeBeats(4),
 
-          Forward_4
+          Forward_3.changeBeats(4)
       ]),
 
     AnimatedCall('1 by 3 Walk and Dodge',
-      formation:Formation('Two-Faced Lines RH'),
+      formation:Formation('Two-Faced Lines RH Compact'),
       from:'Right-Hand Two-Faced Lines',difficulty: 3,
       paths:[
-          Forward_4,
+          Forward_3.changeBeats(4),
 
           DodgeLeft.changeBeats(4),
 
@@ -443,7 +443,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('1 by 3 Walk and Dodge',
-      formation:Formation('Two-Faced Lines LH'),
+      formation:Formation('Two-Faced Lines LH Compact'),
       from:'Left-Hand Two-Faced Lines',difficulty: 3,
       paths:[
           DodgeLeft.changeBeats(4),
@@ -452,11 +452,11 @@ import '../../moves.dart';
 
           DodgeRight.changeBeats(4),
 
-          Forward_4
+          Forward_3.changeBeats(4)
       ]),
 
     AnimatedCall('1 by 3 Walk and Dodge',
-      formation:Formation('3 and 1 Lines #1'),
+      formation:Formation('3 and 1 Lines #1 Compact'),
       from:'3 and 1 Lines #1',difficulty: 3,
       paths:[
           DodgeLeft.changeBeats(4),
@@ -465,18 +465,18 @@ import '../../moves.dart';
 
           DodgeRight.changeBeats(4),
 
-          Forward_4
+          Forward_3.changeBeats(4)
       ]),
 
     AnimatedCall('1 by 3 Walk and Dodge',
-      formation:Formation('3 and 1 Lines #4'),
+      formation:Formation('3 and 1 Lines #4 Compact'),
       from:'3 and 1 Lines #4',difficulty: 3,
       taminator: '''
       There are 8 different 3 and 1 lines, but only half of them
       have the ends in tandem required for 1 by 3 Walk and Dodge.
     ''',
       paths:[
-          Forward_4,
+          Forward_3.changeBeats(4),
 
           DodgeLeft.changeBeats(4),
 
@@ -486,18 +486,10 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('1 by 3 Walk and Dodge',
-      formation:Formation('', dancers:[
-        Dancer.fromData(gender:Gender.BOY,x:-2,y:3,angle:0),
-        Dancer.fromData(gender:Gender.GIRL,x:-2,y:1,angle:180),
-        Dancer.fromData(gender:Gender.GIRL,x:-2,y:-1,angle:180),
-        Dancer.fromData(gender:Gender.BOY,x:-2,y:-3,angle:180),
-  ]),
+      formation:Formation('3 and 1 Lines #5 Compact'),
       from:'3 and 1 Lines #5',difficulty: 3,
-      taminator: '''
-      This is the third illustrated example in the defintion.
-    ''',
       paths:[
-          Forward_4,
+          Forward_3.changeBeats(4),
 
           DodgeRight.changeBeats(4),
 
@@ -507,7 +499,7 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('1 by 3 Walk and Dodge',
-      formation:Formation('3 and 1 Lines #8'),
+      formation:Formation('3 and 1 Lines #8 Compact'),
       from:'3 and 1 Lines #8',difficulty: 3,
       paths:[
           DodgeLeft.changeBeats(4),
@@ -516,7 +508,7 @@ import '../../moves.dart';
 
           DodgeLeft.changeBeats(4),
 
-          Forward_4
+          Forward_3.changeBeats(4)
       ]),
 
     AnimatedCall('Side Girls Dodge and Others Walk',

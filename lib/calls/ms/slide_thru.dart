@@ -53,41 +53,41 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Slide Thru',
-      formation:Formation('Normal Lines'),
+      formation:Formation('Normal Lines Compact'),
       from:'Lines',isGenderSpecific:true,difficulty: 1,
       paths:[
-          ExtendLeft.changeBeats(2).scale(2.0,0.5) +
+          ExtendLeft.changeBeats(2).scale(1.5,0.5) +
           QuarterRight.changeBeats(2).skew(1.0,-0.5),
 
-          ExtendLeft.changeBeats(2).scale(2.0,0.5) +
+          ExtendLeft.changeBeats(2).scale(1.5,0.5) +
           QuarterLeft.changeBeats(2).skew(1.0,-0.5),
 
-          ExtendLeft.changeBeats(2).scale(2.0,0.5) +
+          ExtendLeft.changeBeats(2).scale(1.5,0.5) +
           QuarterRight.changeBeats(2).skew(1.0,-0.5),
 
-          ExtendLeft.changeBeats(2).scale(2.0,0.5) +
+          ExtendLeft.changeBeats(2).scale(1.5,0.5) +
           QuarterLeft.changeBeats(2).skew(1.0,-0.5)
       ]),
 
     AnimatedCall('Slide Thru',
       formation:Formation('', dancers:[
-        Dancer.fromData(gender:Gender.BOY,x:-2,y:1,angle:0),
-        Dancer.fromData(gender:Gender.GIRL,x:-2,y:3,angle:0),
-        Dancer.fromData(gender:Gender.BOY,x:-2,y:-3,angle:0),
-        Dancer.fromData(gender:Gender.GIRL,x:-2,y:-1,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:-1.5,y:1,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:-1.5,y:3,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:-1.5,y:-3,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:-1.5,y:-1,angle:0),
   ]),
       from:'Sashayed Lines',isGenderSpecific:true,difficulty: 2,
       paths:[
-          ExtendLeft.changeBeats(2).scale(2.0,0.5) +
+          ExtendLeft.changeBeats(2).scale(1.5,0.5) +
           QuarterRight.changeBeats(2).skew(1.0,-0.5),
 
-          ExtendLeft.changeBeats(2).scale(2.0,0.5) +
+          ExtendLeft.changeBeats(2).scale(1.5,0.5) +
           QuarterLeft.changeBeats(2).skew(1.0,-0.5),
 
-          ExtendLeft.changeBeats(2).scale(2.0,0.5) +
+          ExtendLeft.changeBeats(2).scale(1.5,0.5) +
           QuarterRight.changeBeats(2).skew(1.0,-0.5),
 
-          ExtendLeft.changeBeats(2).scale(2.0,0.5) +
+          ExtendLeft.changeBeats(2).scale(1.5,0.5) +
           QuarterLeft.changeBeats(2).skew(1.0,-0.5)
       ]),
 
@@ -96,40 +96,40 @@ import '../../moves.dart';
       from:'Eight Chain Thru',isGenderSpecific:true,difficulty: 2,
       paths:[
           ExtendLeft.changeBeats(2).scale(1.0,0.5) +
-          QuarterRight.changeBeats(2).skew(1.0,0.5),
+          QuarterRight.changeBeats(2).skew(1,0),
 
           ExtendLeft.changeBeats(2).scale(1.0,0.5) +
-          QuarterLeft.changeBeats(2).skew(1.0,-1.5),
+          QuarterLeft.changeBeats(2).skew(1,-1),
 
           ExtendLeft.changeBeats(2).scale(1.0,0.5) +
-          QuarterRight.changeBeats(2).skew(1.0,0.5),
+          QuarterRight.changeBeats(2).skew(1,0),
 
           ExtendLeft.changeBeats(2).scale(1.0,0.5) +
-          QuarterLeft.changeBeats(2).skew(1.0,-1.5)
+          QuarterLeft.changeBeats(2).skew(1,-1)
       ]),
 
     AnimatedCall('Slide Thru',
-      formation:Formation('Ocean Waves RH BGBG'),
+      formation:Formation('Ocean Waves RH BGBG Compact'),
       from:'Ocean Waves',isGenderSpecific:true,difficulty: 2,
       taminator: '''
       This is an example of the Ocean Wave Rule.
     ''',
       paths:[
-          LeadRight.changeBeats(2),
+          LeadRight.changeBeats(2).scale(0.5,1.5),
 
-          QuarterLeft.changeBeats(2).skew(1.0,-1.0),
+          QuarterLeft.changeBeats(2).skew(1.5,-0.5),
 
-          LeadRight.changeBeats(2),
+          LeadRight.changeBeats(2).scale(0.5,0.5),
 
-          QuarterLeft.changeBeats(2).skew(1.0,-1.0)
+          QuarterLeft.changeBeats(2).skew(1.5,-1.5)
       ]),
 
     AnimatedCall('Slide Thru',
       formation:Formation('', dancers:[
-        Dancer.fromData(gender:Gender.BOY,x:-2,y:3,angle:0),
-        Dancer.fromData(gender:Gender.GIRL,x:-2,y:1,angle:0),
-        Dancer.fromData(gender:Gender.BOY,x:-2,y:-3,angle:0),
-        Dancer.fromData(gender:Gender.GIRL,x:-2,y:-1,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:-1.5,y:3,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:-1.5,y:1,angle:0),
+        Dancer.fromData(gender:Gender.BOY,x:-1.5,y:-3,angle:0),
+        Dancer.fromData(gender:Gender.GIRL,x:-1.5,y:-1,angle:0),
   ]),
       from:'Same Sex Facing',isGenderSpecific:true,difficulty: 2,
       taminator: '''
@@ -138,16 +138,16 @@ import '../../moves.dart';
     The girls pass thru and face left.
     ''',
       paths:[
-          ExtendLeft.changeBeats(2).scale(2.0,0.5) +
+          ExtendLeft.changeBeats(2).scale(1.5,0.5) +
           QuarterRight.changeBeats(2).skew(1.0,-0.5),
 
-          ExtendLeft.changeBeats(2).scale(2.0,0.5) +
+          ExtendLeft.changeBeats(2).scale(1.5,0.5) +
           QuarterLeft.changeBeats(2).skew(1.0,-0.5),
 
-          ExtendLeft.changeBeats(2).scale(2.0,0.5) +
+          ExtendLeft.changeBeats(2).scale(1.5,0.5) +
           QuarterRight.changeBeats(2).skew(1.0,-0.5),
 
-          ExtendLeft.changeBeats(2).scale(2.0,0.5) +
+          ExtendLeft.changeBeats(2).scale(1.5,0.5) +
           QuarterLeft.changeBeats(2).skew(1.0,-0.5)
       ]),
   ];

@@ -25,41 +25,49 @@ import '../../moves.dart';
   final List<AnimatedCall> SpinChainThru = [
 
     AnimatedCall('Spin Chain Thru',
-      formation:Formation('Ocean Waves RH BGGB'),
+      formation:Formation('Ocean Waves RH BGGB Compact'),
       from:'Right-Hand Waves',parts:'3;4.5;3',difficulty: 1,
       paths:[
-          SwingRight +
-          CastLeft +
-          SwingRight +
-          CastLeft,
+        SwingRight +
+            HingeLeft.scale(0.75,1) +
+            SwingLeft.scale(0.75,0.75) +
+            SwingRight.scale(0.75,0.75) +
+            SwingLeft.scale(0.75,0.75) +
+            HingeLeft.scale(1,0.75),
 
-          SwingRight,
+        SwingRight,
 
-          SwingRight,
+        SwingRight,
 
-          SwingRight +
-          CastLeft +
-          Stand.changeBeats(3) +
-          CastLeft
+        SwingRight +
+            HingeLeft.scale(0.75,1) +
+            SwingLeft.scale(0.75,0.75) +
+            Stand.changeBeats(3) +
+            SwingLeft.scale(0.75,0.75) +
+            HingeLeft.scale(1,0.75),
       ]),
 
     AnimatedCall('Spin Chain Thru',
-      formation:Formation('Ocean Waves LH BGGB'),
+      formation:Formation('Ocean Waves LH BGGB Compact'),
       from:'Left-Hand Waves',parts:'3;4.5;3',difficulty: 2,
       paths:[
-          SwingLeft +
-          CastRight +
-          Stand.changeBeats(3) +
-          CastRight,
+        SwingLeft +
+            HingeRight.scale(0.75,1) +
+            SwingRight.scale(0.75,0.75) +
+            Stand.changeBeats(3) +
+            SwingRight.scale(0.75,0.75) +
+            HingeRight.scale(1,0.75),
 
-          SwingLeft,
+        SwingLeft,
 
-          SwingLeft,
+        SwingLeft,
 
-          SwingLeft +
-          CastRight +
-          SwingLeft +
-          CastRight
+        SwingLeft +
+            HingeRight.scale(0.75,1) +
+            SwingRight.scale(0.75,0.75) +
+            SwingLeft.scale(0.75,0.75) +
+            SwingRight.scale(0.75,0.75) +
+            HingeRight.scale(1,0.75)
       ]),
 
     AnimatedCall('Spin Chain Thru',
@@ -69,23 +77,27 @@ import '../../moves.dart';
     The Facing Couples rule applies here.
     ''',
       paths:[
-          ExtendLeft.changeBeats(2).scale(1.0,2.0) +
-          SwingRight +
-          CastLeft +
-          SwingRight +
-          CastLeft,
+        ExtendLeft.changeBeats(2).scale(1.5, 2) +
+            SwingRight +
+            HingeLeft.scale(0.75, 1) +
+            SwingLeft.scale(0.75, 0.75) +
+            SwingRight.scale(0.75, 0.75) +
+            SwingLeft.scale(0.75, 0.75) +
+            HingeLeft.scale(1, 0.75),
 
-          Forward.changeBeats(2) +
-          SwingRight,
+        Forward_1p5.changeBeats(2) +
+            SwingRight,
 
-          ExtendLeft.changeBeats(2).scale(1.0,2.0) +
-          SwingRight +
-          CastLeft +
-          Stand.changeBeats(3) +
-          CastLeft,
+        ExtendLeft.changeBeats(2).scale(0.5, 2) +
+            SwingRight +
+            HingeLeft.scale(0.75, 1) +
+            SwingLeft.scale(0.75, 0.75) +
+            Stand.changeBeats(3) +
+            SwingLeft.scale(0.75, 0.75) +
+            HingeLeft.scale(1, 0.75),
 
-          Forward.changeBeats(2) +
-          SwingRight
+        Forwardp5.changeBeats(2) +
+            SwingRight,
       ]),
 
     AnimatedCall('Left Spin Chain Thru',
@@ -96,23 +108,28 @@ import '../../moves.dart';
       The caller says Left so everyone steps to a left-hand wave.
     ''',
       paths:[
-          Forward.changeBeats(2) +
-          SwingLeft,
+        Forward_1p5.changeBeats(2) +
+            SwingLeft,
 
-          ExtendRight.changeBeats(2).scale(1.0,2.0) +
-          SwingLeft +
-          CastRight +
-          SwingLeft +
-          CastRight,
+        ExtendRight.changeBeats(2).scale(1.5,2) +
+            SwingLeft +
+            HingeRight.scale(0.75,1) +
+            SwingRight.scale(0.75,0.75) +
+            SwingLeft.scale(0.75,0.75) +
+            SwingRight.scale(0.75,0.75) +
+            HingeRight.scale(1,0.75),
 
-          Forward.changeBeats(2) +
-          SwingLeft,
+        Forwardp5.changeBeats(2) +
+            SwingLeft,
 
-          ExtendRight.changeBeats(2).scale(1.0,2.0) +
-          SwingLeft +
-          CastRight +
-          Stand.changeBeats(3) +
-          CastRight
+        ExtendRight.changeBeats(2).scale(0.5,2) +
+            SwingLeft +
+            HingeRight.scale(0.75,1) +
+            SwingRight.scale(0.75,0.75) +
+            Stand.changeBeats(3) +
+            SwingRight.scale(0.75,0.75) +
+            HingeRight.scale(1,0.75),
+
       ]),
   ];
 
