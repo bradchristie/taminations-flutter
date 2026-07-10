@@ -35,8 +35,10 @@ class WheelAround extends Action with ActivesOnly, IsReverse {
       throw CallError('Only Couples can Wheel Around.');
     var dist = d.distanceTo(d2);
     Path move;
-    if (isReverse)
+    if (isReverse) {
       move = d2.isRightOf(d) ? BeauReverseWheel : BelleReverseWheel;
+      level = LevelData.B2;  // otherwise Reverse takes it to A-1
+    }
     else
       move = d2.isRightOf(d) ? BeauWheel : BelleWheel;
     return move.scale(dist/2,dist/2);
