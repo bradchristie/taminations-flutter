@@ -1,3 +1,5 @@
+import 'common_dart.dart';
+import 'dart:math';
 import 'math/hands.dart';
 import 'math/movement.dart';
 import 'math/path.dart';
@@ -92,78 +94,58 @@ final Path CrossLeftSave = Path([
 final Path CrossLeft = Path([
       Movement.fromData(beats: 2, hands: Hands.RIGHT, cx1: 1, cy1: 0, cx2: -.5, cy2: 2, x2: 2, y2: 2, cx3: 1, cx4: 1, cy4: .4, x4: 2, y4: .4  )],'Cross Left');
 final Path CrossRight = CrossLeft.scale(1,-1)..name='Cross Right';
-final Path CounterRotateRight_2_0 = Path([
-      Movement.fromData(beats: 2, hands: Hands.NONE, cx1: 0.5, cy1: 0.5, cx2: 1.5, cy2: 0.5, x2: 2, y2: 0, cx3: 0.55, cx4: 1, cy4: -0.45, x4: 1, y4: -1  )],'Counter Rotate Right 2 0');
-final Path CounterRotateLeft_2_0 = CounterRotateRight_2_0.scale(1,-1)..name='Counter Rotate Left 2 0';
-final Path CounterRotateLeft_0_2 = Path([
-      Movement.fromData(beats: 2, hands: Hands.NONE, cx1: 0.5, cy1: 0.5, cx2: 0.5, cy2: 1.5, x2: 0, y2: 2, cx3: 0.55, cx4: 1, cy4: 0.45, x4: 1, y4: 1  )],'Counter Rotate Left 0 2');
-final Path CounterRotateRight_0_m2 = CounterRotateLeft_0_2.scale(1,-1)..name='Counter Rotate Right 0 -2';
-final Path CounterRotateRight_0_m4 = CounterRotateRight_0_m2.scale(2,2)..name='Counter Rotate Right 0 -4';
-final Path CounterRotateLeft_1_2 = Path([
-      Movement.fromData(beats: 2, hands: Hands.NONE, cx1: .75, cy1: 0.25, cx2: 1.25, cy2: 1.25, x2: 1, y2: 2, cx3: 0.55, cx4: 1, cy4: 0.45, x4: 1, y4: 1  )],'Counter Rotate Left 1 2');
-final Path CounterRotateLeft_2_4 = CounterRotateLeft_1_2.scale(2,2)..name='Counter Rotate Left 2 4';
-final Path CounterRotateRight_1_m2 = CounterRotateLeft_1_2.scale(1,-1)..name='Counter Rotate Right 1 -2';
-final Path CounterRotateRight_0_2 = Path([
-      Movement.fromData(beats: 2, hands: Hands.NONE, cx1: -0.5, cy1: 0.5, cx2: -0.5, cy2: 1.5, x2: 0, y2: 2, cx3: 0.55, cx4: 1, cy4: -0.45, x4: 1, y4: -1  )],'Counter Rotate Right 0 2');
-final Path CounterRotateLeft_0_m2 = CounterRotateRight_0_2.scale(1,-1)..name='Counter Rotate Left 0 -2';
-final Path CounterRotateRight_1_2 = Path([
-      Movement.fromData(beats: 2, hands: Hands.NONE, cx1: 0, cy1: 0.5, cx2: 0, cy2: 2, x2: 1, y2: 2, cx3: 0.55, cx4: 1, cy4: -0.45, x4: 1, y4: -1  )],'Counter Rotate Right 1 2');
-final Path CounterRotateLeft_1_m2 = CounterRotateRight_1_2.scale(1,-1)..name='Counter Rotate Left 1 -2';
-final Path CounterRotateLeft_m2_0 = Path([
-      Movement.fromData(beats: 2, hands: Hands.NONE, cx1: -0.5, cy1: 0.5, cx2: -1.5, cy2: 0.5, x2: -2, y2: 0, cx3: 0.55, cx4: 1, cy4: 0.45, x4: 1, y4: 1  )],'Counter Rotate Left -2 0');
-final Path CounterRotateRight_m2_0 = CounterRotateLeft_m2_0.scale(1,-1)..name='Counter Rotate Right -2 0';
-final Path CounterRotateRight_3_1 = Path([
-      Movement.fromData(beats: 2, hands: Hands.NONE, cx1: 0.5, cy1: 1, cx2: 2, cy2: 1.5, x2: 3, y2: 1, cx3: 0.55, cx4: 1, cy4: -0.45, x4: 1, y4: -1  )],'Counter Rotate Right 3 1');
-final Path CounterRotateLeft_3_m1 = CounterRotateRight_3_1.scale(1,-1)..name='Counter Rotate Left 3 -1';
-final Path CounterRotateRight_3_m1 = Path([
-      Movement.fromData(beats: 2, hands: Hands.NONE, cx1: 1, cy1: 1, cx2: 2.5, cy2: 0, x2: 3, y2: -1, cx3: 0.55, cx4: 1, cy4: -0.45, x4: 1, y4: -1  )],'Counter Rotate Right 3 -1');
-final Path CounterRotateLeft_3_1 = CounterRotateRight_3_m1.scale(1,-1)..name='Counter Rotate Left 3 1';
-final Path CounterRotateRight_0_3 = Path([
-      Movement.fromData(beats: 2, hands: Hands.NONE, cx1: -0.5, cy1: 0.5, cx2: -1, cy2: 2.5, x2: 0, y2: 3, cx3: 0.55, cx4: 1, cy4: -0.45, x4: 1, y4: -1  )],'Counter Rotate Right 0 3');
-final Path CounterRotateLeft_0_m3 = CounterRotateRight_0_3.scale(1,-1)..name='Counter Rotate Left 0 -3';
-final Path CounterRotateRight_5_1 = Path([
-      Movement.fromData(beats: 2, hands: Hands.NONE, cx1: 0.5, cy1: 1, cx2: 4, cy2: 1.5, x2: 5, y2: 1, cx3: 0.55, cx4: 1, cy4: -0.45, x4: 1, y4: -1  )],'Counter Rotate Right 5 1');
-final Path CounterRotateLeft_5_m1 = CounterRotateRight_5_1.scale(1,-1)..name='Counter Rotate Left 5 -1';
-final Path CounterRotateRight_5_m1 = Path([
-      Movement.fromData(beats: 2, hands: Hands.NONE, cx1: 1.5, cy1: 1, cx2: 4, cy2: 0.5, x2: 5, y2: -1, cx3: 0.55, cx4: 1, cy4: -0.45, x4: 1, y4: -1  )],'Counter Rotate Right 5 -1');
-final Path CounterRotateRight_4p5_m1p5 = Path([
-      Movement.fromData(beats: 2, hands: Hands.NONE, cx1: 1.5, cy1: 0.75, cx2: 3.75, cy2: 0, x2: 4.5, y2: -1.5, cx3: 0.55, cx4: 1, cy4: -0.45, x4: 1, y4: -1  )],'Counter Rotate Right 4.5 -1.5');
-final Path CounterRotateRight_1p5_m4p5 = Path([
-      Movement.fromData(beats: 2, hands: Hands.NONE, cx1: 1.5, cy1: -0.75, cx2: 2.25, cy2: -3, x2: 1.5, y2: -4.5, cx3: 0.55, cx4: 1, cy4: -0.45, x4: 1, y4: -1  )],'Counter Rotate Right 1.5 -4.5');
-final Path CounterRotateLeft_m0p5_2p5 = Path([
-      Movement.fromData(beats: 2, hands: Hands.NONE, cx1: .5, cy1: 0.75, cx2: 0.25, cy2: 1.75, x2: -0.5, y2: 2.5, cx3: 0.55, cx4: 1, cy4: 0.45, x4: 1, y4: 1  )],'Counter Rotate Left -0.5 2.5');
-final Path CounterRotateRight_m0p5_m2p5 = CounterRotateLeft_m0p5_2p5.scale(1,-1)..name='Counter Rotate Right -0.5 -2.5';
-final Path CounterRotateLeft_2p5_m0p5 = Path([
-      Movement.fromData(beats: 2, hands: Hands.NONE, cx1: .5, cy1: -0.75, cx2: 1.75, cy2: -1, x2: 2.5, y2: -0.5, cx3: 0.55, cx4: 1, cy4: 0.45, x4: 1, y4: 1  )],'Counter Rotate Left 2.5 -0.5');
-final Path CounterRotateRight_2p5_0p5 = CounterRotateLeft_2p5_m0p5.scale(1,-1)..name='Counter Rotate Right 2.5 0.5';
-final Path CounterRotateRight_1p5_3p5 = Path([
-      Movement.fromData(beats: 2, hands: Hands.NONE, cx1: -0.5, cy1: 1.25, cx2: 0.25, cy2: 3.0, x2: 1.5, y2: 3.5, cx3: 0.55, cx4: 1, cy4: -0.45, x4: 1, y4: -1  )],'Counter Rotate Right 1.5 3.5');
-final Path CounterRotateRight_3p5_1p5 = Path([
-      Movement.fromData(beats: 2, hands: Hands.NONE, cx1: 0.5, cy1: 1.25, cx2: 2.25, cy2: 2.0, x2: 3.5, y2: 1.5, cx3: 0.55, cx4: 1, cy4: -0.45, x4: 1, y4: -1  )],'Counter Rotate Right 3.5 1.5');
-final Path CounterRotateLeft_5_1 = CounterRotateRight_5_m1.scale(1,-1)..name='Counter Rotate Left 5 1';
-final Path CounterRotateRight_1_m5 = Path([
-      Movement.fromData(beats: 2, hands: Hands.NONE, cx1: 1.5, cy1: -1, cx2: 2, cy2: -3.5, x2: 1, y2: -5, cx3: 0.55, cx4: 1, cy4: -0.45, x4: 1, y4: -1  )],'Counter Rotate Right 1 -5');
-final Path CounterRotateLeft_1_5 = CounterRotateRight_1_m5.scale(1,-1)..name='Counter Rotate Left 1 5';
-final Path CounterRotateLeft_m1_3 = Path([
-      Movement.fromData(beats: 2, hands: Hands.NONE, cx1: 0.5, cy1: 1, cx2: 0, cy2: 2.5, x2: -1, y2: 3, cx3: 0.55, cx4: 1, cy4: 0.45, x4: 1, y4: 1  )],'Counter Rotate Left -1 3');
-final Path CounterRotateRight_m1_m3 = CounterRotateLeft_m1_3.scale(1,-1)..name='Counter Rotate Right -1 -3';
-final Path CounterRotateRight_4_2 = Path([
-      Movement.fromData(beats: 2, hands: Hands.NONE, cx1: 0.5, cy1: 1.5, cx2: 2.5, cy2: 2.5, x2: 4, y2: 2, cx3: 0.55, cx4: 1, cy4: -0.45, x4: 1, y4: -1  )],'Counter Rotate Right 4 2');
-final Path CounterRotateRight_2_4 = Path([
-      Movement.fromData(beats: 2, hands: Hands.NONE, cx1: -0.5, cy1: 1.5, cx2: 0.5, cy2: 3.5, x2: 2, y2: 4, cx3: 0.55, cx4: 1, cy4: -0.45, x4: 1, y4: -1  )],'Counter Rotate Right 2 4');
-final Path CounterRotateLeft_4_m2 = CounterRotateRight_4_2.scale(1,-1)..name='Counter Rotate Left 4 -2';
-final Path CounterRotateRight_m2_m4 = Path([
-      Movement.fromData(beats: 2, hands: Hands.NONE, cx1: 0.5, cy1: -1.5, cx2: -0.5, cy2: -3.5, x2: -2, y2: -4, cx3: 0.55, cx4: 1, cy4: -0.45, x4: 1, y4: -1  )],'Counter Rotate Right -2 -4');
-final Path CounterRotateLeft_m2_4 = CounterRotateRight_m2_m4.scale(1,-1)..name='Counter Rotate Left -2 4';
-final Path CounterRotateRight_4_m2 = Path([
-      Movement.fromData(beats: 2, hands: Hands.NONE, cx1: 1.5, cy1: 0.5, cx2: 3.5, cy2: -0.5, x2: 4, y2: -2, cx3: 0.55, cx4: 1, cy4: -0.45, x4: 1, y4: -1  )],'Counter Rotate Right 4 -2');
-final Path CounterRotateLeft_4_2 = CounterRotateRight_4_m2.scale(1,-1)..name='Counter Rotate Left 4 2';
-final Path CounterRotateRight_2_m4 = Path([
-      Movement.fromData(beats: 2, hands: Hands.NONE, cx1: 1.5, cy1: -0.5, cx2: 2.5, cy2: -2.5, x2: 2, y2: -4, cx3: 0.55, cx4: 1, cy4: -0.45, x4: 1, y4: -1  )],'Counter Rotate Right 2 -4');
-final Path CounterRotateLeft_1_1 = Path([
-      Movement.fromData(beats: 2, hands: Hands.NONE, cx1: 0, cy1: 0.5, cx2: 0.5, cy2: 1, x2: 1, y2: 1, cx3: 0.55, cx4: 1, cy4: -0.45, x4: 1, y4: -1  )],'Counter Rotate Left 1 1');
-final Path CounterRotateLeft_2_2 = CounterRotateLeft_1_1.scale(2,2)..name='Counter Rotate Left 2 2';
-final Path CounterRotateLeft_1p414_1p414 = CounterRotateLeft_1_1.scale(1.414,1.414)..name='Counter Rotate Left 1.414 1.414';
+
+//  General case for Counter Rotate with a turn to the left
+//  Note dancer is actually moving in an arc to the right while turning left
+Path CounterRotateLeft(double x, double y) {
+      final d = Vector(x,y).length;  // point-to-point distance of move
+      final a = atan2(y,x);  // angle from star to end
+      final acp1 = a - pi/4;  // angle from start to 1st control point
+      final acp2 = a - 3*pi/4;  // angle from end to 2nd control point
+      final dcp = d * 0.4;  // distance from point to control point
+      return Path([Movement.fromData(
+          beats: 2,
+          cx1: dcp * cos(acp1),
+          cy1: dcp * sin(acp1),
+          cx2: x + dcp * cos(acp2),
+          cy2: y + dcp * sin(acp2),
+          x2: x,
+          y2: y,
+          //  Values below are from Face Left
+          cx3: 0.55,
+          cx4: 1,
+          cy4: 0.45,
+          x4: 1,
+          y4: 1)
+      ]);
+}
+
+//  General case for Counter Rotate with a turn to the right
+//  Note dancer is actually moving in an arc to the left while turning right
+Path CounterRotateRight(double x, double y) {
+      final d = Vector(x,y).length;  // point-to-point distance of move
+      final a = atan2(y,x);  // angle from star to end
+      final acp1 = a + pi/4;  // angle from start to 1st control point
+      final acp2 = a + 3*pi/4;  // angle from end to 2nd control point
+      final dcp = d * 0.4;  // distance from point to control point
+      return Path([Movement.fromData(
+          beats: 2,
+          cx1: dcp * cos(acp1),
+          cy1: dcp * sin(acp1),
+          cx2: x + dcp * cos(acp2),
+          cy2: y + dcp * sin(acp2),
+          x2: x,
+          y2: y,
+          //  Values below are from Face Right
+          cx3: 0.55,
+          cx4: 1,
+          cy4: -0.45,
+          x4: 1,
+          y4: -1)
+      ]);
+}
+
+
 final Path cl = Path([
       Movement.fromData(beats: 1, hands: Hands.GRIPBOTH, cx1: 0.27, cy1: 0.64, cx2: 0.77, cy2: 1.14, x2: 1.41, y2: 1.41, cx3: 0.265, cx4: 0.52, cy4: -0.105, x4: 0.707, y4: -0.293  )],'cl');
 final Path cr = cl.scale(1,-1)..name='cr';
@@ -229,4 +211,4 @@ final Path BeauCross = Path([
 final Path BelleCross = Path([
       Movement.fromData(beats: 2, hands: Hands.RIGHT, cx1: 1, cy1: 0, cx2: .8, cy2: 2, x2: 4, y2: 2, cx3: 1, cx4: 1, cy4: .4, x4: 2, y4: .4  )],'Belle Cross');
 
-final List<Path> AllMoves = [Stand,StandAhead,StandAlone,StandLeft,StandRight,FinalStand,FinalLeft,FinalRight,Forward,Back,RunLeft,RunRight,UmTurnLeft,UmTurnRight,FlipLeft,FlipRight,DodgeLeft,DodgeRight,ExtendLeft,ExtendRight,RetreatLeft,RetreatRight,QuarterLeft,QuarterRight,HingeLeft,HingeRight,BackHingeLeft,BackHingeRight,HalfHingeLeft,HalfHingeRight,HalfBackHingeLeft,HalfBackHingeRight,BackRunLeft,BackRunRight,FoldLeft,FoldRight,CrossFoldLeft,CrossFoldRight,LeadLeft,LeadLeftPassing,LeadRightPassing,LeadRight,WheelThruRight,WheelThruLeft,EighthLeft,EighthRight,n38Left,n38Right,LeadLeft_12,LeadRight_12,SashayLeft,SashayRight,BackSashayLeft,BackSashayRight,SxtnthLeft,SxtnthRight,CrossLeftSave,CrossLeft,CrossRight,CounterRotateRight_2_0,CounterRotateLeft_2_0,CounterRotateLeft_0_2,CounterRotateRight_0_m2,CounterRotateRight_0_m4,CounterRotateLeft_1_2,CounterRotateLeft_2_4,CounterRotateRight_1_m2,CounterRotateRight_0_2,CounterRotateLeft_0_m2,CounterRotateRight_1_2,CounterRotateLeft_1_m2,CounterRotateLeft_m2_0,CounterRotateRight_m2_0,CounterRotateRight_3_1,CounterRotateLeft_3_m1,CounterRotateRight_3_m1,CounterRotateLeft_3_1,CounterRotateRight_0_3,CounterRotateLeft_0_m3,CounterRotateRight_5_1,CounterRotateLeft_5_m1,CounterRotateRight_5_m1,CounterRotateRight_4p5_m1p5,CounterRotateRight_1p5_m4p5,CounterRotateLeft_m0p5_2p5,CounterRotateRight_m0p5_m2p5,CounterRotateLeft_2p5_m0p5,CounterRotateRight_2p5_0p5,CounterRotateRight_1p5_3p5,CounterRotateRight_3p5_1p5,CounterRotateLeft_5_1,CounterRotateRight_1_m5,CounterRotateLeft_1_5,CounterRotateLeft_m1_3,CounterRotateRight_m1_m3,CounterRotateRight_4_2,CounterRotateRight_2_4,CounterRotateLeft_4_m2,CounterRotateRight_m2_m4,CounterRotateLeft_m2_4,CounterRotateRight_4_m2,CounterRotateLeft_4_2,CounterRotateRight_2_m4,CounterRotateLeft_1_1,CounterRotateLeft_2_2,CounterRotateLeft_1p414_1p414,cl,cr,incircle2,incircle3,ssqtr,ssqtrright,Pivotforwardleft,Pivotforwardright,Pivotbackwardleft,Pivotbackwardright,Sxtnth,LeadLeft_14,LeadRight_14,HingeLeft_14,HingeRight_14,CircleLeftHalf,CircleLeftQuarter,CircleRightQuarter,Forwardp5,Forward_1p5,Forward_2,Forward_3,Forward_4,Forward_5,Forward_6,Back_2,SlowForward,SlowForward_2,ExtendLeft_2,ExtendRight_2,ExtendLeft_4,ExtendRight_4,PullLeft,PullRight,PassThru,PullBy,SwingLeft,SwingRight,CastLeft,CastRight,LeadLeft_2,LeadRight_2,LeadLeft_3,LeadRight_3,BeauWheel,BelleWheel,BeauReverseWheel,BelleReverseWheel,BeauCross,BelleCross];
+final List<Path> AllMoves = [Stand,StandAhead,StandAlone,StandLeft,StandRight,FinalStand,FinalLeft,FinalRight,Forward,Back,RunLeft,RunRight,UmTurnLeft,UmTurnRight,FlipLeft,FlipRight,DodgeLeft,DodgeRight,ExtendLeft,ExtendRight,RetreatLeft,RetreatRight,QuarterLeft,QuarterRight,HingeLeft,HingeRight,BackHingeLeft,BackHingeRight,HalfHingeLeft,HalfHingeRight,HalfBackHingeLeft,HalfBackHingeRight,BackRunLeft,BackRunRight,FoldLeft,FoldRight,CrossFoldLeft,CrossFoldRight,LeadLeft,LeadLeftPassing,LeadRightPassing,LeadRight,WheelThruRight,WheelThruLeft,EighthLeft,EighthRight,n38Left,n38Right,LeadLeft_12,LeadRight_12,SashayLeft,SashayRight,BackSashayLeft,BackSashayRight,SxtnthLeft,SxtnthRight,CrossLeftSave,CrossLeft,CrossRight,cl,cr,incircle2,incircle3,ssqtr,ssqtrright,Pivotforwardleft,Pivotforwardright,Pivotbackwardleft,Pivotbackwardright,Sxtnth,LeadLeft_14,LeadRight_14,HingeLeft_14,HingeRight_14,CircleLeftHalf,CircleLeftQuarter,CircleRightQuarter,Forwardp5,Forward_1p5,Forward_2,Forward_3,Forward_4,Forward_5,Forward_6,Back_2,SlowForward,SlowForward_2,ExtendLeft_2,ExtendRight_2,ExtendLeft_4,ExtendRight_4,PullLeft,PullRight,PassThru,PullBy,SwingLeft,SwingRight,CastLeft,CastRight,LeadLeft_2,LeadRight_2,LeadLeft_3,LeadRight_3,BeauWheel,BelleWheel,BeauReverseWheel,BelleReverseWheel,BeauCross,BelleCross];

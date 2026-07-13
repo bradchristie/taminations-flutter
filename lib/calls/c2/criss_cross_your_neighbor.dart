@@ -532,15 +532,15 @@ import '../../moves.dart';
 
           ExtendRight.changeBeats(2).scale(1.0,2.0) +
           Forward +
-          CounterRotateLeft_0_2.changehands(Hands.LEFT) +
-          CounterRotateLeft_0_2.changehands(Hands.LEFT) +
+          CounterRotateLeft(0,2).changehands(Hands.LEFT) +
+          CounterRotateLeft(0,2).changehands(Hands.LEFT) +
           Forward +
           LeadLeft.changeBeats(3).scale(1.0,2.0),
 
           Forward +
           ExtendRight.changeBeats(2).scale(1.0,2.0) +
-          CounterRotateLeft_2_0.changehands(Hands.LEFT) +
-          CounterRotateLeft_2_0.changehands(Hands.LEFT) +
+          CounterRotateLeft(2,0).changehands(Hands.LEFT) +
+          CounterRotateLeft(2,0).changehands(Hands.LEFT) +
           Forward +
           QuarterLeft.changeBeats(3).skew(3.0,0.0)
       ]),

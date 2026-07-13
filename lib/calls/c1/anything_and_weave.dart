@@ -228,16 +228,16 @@ import '../../moves.dart';
       formation:Formation('Column RH GBGB'),
       group:' ',
       paths:[
-          CounterRotateRight_0_m2.changeBeats(3).skew(0.0,-0.5),
+          CounterRotateRight(0,-2).changeBeats(3).skew(0.0,-0.5),
 
-          CounterRotateRight_2_0.changeBeats(3).skew(0.0,0.5),
+          CounterRotateRight(2,0).changeBeats(3).skew(0.0,0.5),
 
           ExtendRight.scale(1.0,1.5) +
           Forward +
-          CounterRotateLeft_0_2,
+          CounterRotateLeft(0,2),
 
           ExtendRight.changeBeats(2).scale(2.0,1.5) +
-          CounterRotateLeft_2_0.skew(0.0,-1.0)
+          CounterRotateLeft(2,0).skew(0.0,-1.0)
       ]),
 
     AnimatedCall('Tandem Weave',
@@ -245,15 +245,15 @@ import '../../moves.dart';
       group:' ',noDisplay: true,
       paths:[
           ExtendLeft.changeBeats(2).scale(2.0,1.5) +
-          CounterRotateRight_2_0.skew(0.0,1.0),
+          CounterRotateRight(2,0).skew(0.0,1.0),
 
           ExtendLeft.scale(1.0,1.5) +
           Forward +
-          CounterRotateRight_0_m2,
+          CounterRotateRight(0,-2),
 
-          CounterRotateLeft_2_0.changeBeats(3).skew(0.0,-0.5),
+          CounterRotateLeft(2,0).changeBeats(3).skew(0.0,-0.5),
 
-          CounterRotateLeft_0_2.changeBeats(3).skew(0.0,0.5)
+          CounterRotateLeft(0,2).changeBeats(3).skew(0.0,0.5)
       ]),
   ];
 

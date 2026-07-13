@@ -443,45 +443,45 @@ import '../../moves.dart';
       group:' ',parts:'5;11',
       paths:[
           ExtendLeft.changeBeats(2).scale(2.0,1.5) +
-          CounterRotateRight_2_0.changeBeats(3).skew(0.0,-1.5) +
-          CounterRotateLeft_2_0.changehands(Hands.LEFT) +
-          CounterRotateLeft_2_0.changehands(Hands.LEFT) +
+          CounterRotateRight(2,0).changeBeats(3).skew(0.0,-1.5) +
+          CounterRotateLeft(2,0).changehands(Hands.LEFT) +
+          CounterRotateLeft(2,0).changehands(Hands.LEFT) +
           Forward_2 +
           LeadLeft.changeBeats(4).scale(2.0,2.0) +
-          CounterRotateLeft_2_0.changehands(Hands.LEFT) +
-          CounterRotateLeft_2_0.changehands(Hands.LEFT) +
+          CounterRotateLeft(2,0).changehands(Hands.LEFT) +
+          CounterRotateLeft(2,0).changehands(Hands.LEFT) +
           Forward_2.changeBeats(3),
 
           Forward_2 +
-          CounterRotateLeft_2_0.changeBeats(3).skew(2.0,0.0) +
-          CounterRotateLeft_2_0.changehands(Hands.LEFT) +
-          CounterRotateLeft_2_0.changehands(Hands.LEFT) +
-          CounterRotateRight_2_0.changehands(Hands.RIGHT) +
-          CounterRotateRight_2_0.changehands(Hands.RIGHT) +
-          CounterRotateRight_2_0.changehands(Hands.RIGHT) +
-          CounterRotateLeft_2_0.changehands(Hands.LEFT) +
-          CounterRotateLeft_2_0.changehands(Hands.LEFT) +
+          CounterRotateLeft(2,0).changeBeats(3).skew(2.0,0.0) +
+          CounterRotateLeft(2,0).changehands(Hands.LEFT) +
+          CounterRotateLeft(2,0).changehands(Hands.LEFT) +
+          CounterRotateRight(2,0).changehands(Hands.RIGHT) +
+          CounterRotateRight(2,0).changehands(Hands.RIGHT) +
+          CounterRotateRight(2,0).changehands(Hands.RIGHT) +
+          CounterRotateLeft(2,0).changehands(Hands.LEFT) +
+          CounterRotateLeft(2,0).changehands(Hands.LEFT) +
           ExtendLeft.changeBeats(3).scale(2.0,2.0),
 
           ExtendLeft.changeBeats(2).scale(2.0,1.5) +
-          CounterRotateRight_0_m2.changeBeats(3).skew(0.0,-1.5) +
-          CounterRotateLeft_0_2.changehands(Hands.LEFT) +
-          CounterRotateLeft_0_2.changehands(Hands.LEFT) +
+          CounterRotateRight(0,-2).changeBeats(3).skew(0.0,-1.5) +
+          CounterRotateLeft(0,2).changehands(Hands.LEFT) +
+          CounterRotateLeft(0,2).changehands(Hands.LEFT) +
           LeadLeft.changeBeats(4).scale(2.0,2.0) +
           Forward_2 +
-          CounterRotateLeft_0_2.changehands(Hands.LEFT) +
-          CounterRotateLeft_0_2.changehands(Hands.LEFT) +
+          CounterRotateLeft(0,2).changehands(Hands.LEFT) +
+          CounterRotateLeft(0,2).changehands(Hands.LEFT) +
           Forward_2.changeBeats(3),
 
           Forward_2 +
-          CounterRotateLeft_0_2.changeBeats(3).skew(2.0,0.0) +
-          CounterRotateLeft_0_2.changehands(Hands.LEFT) +
-          CounterRotateLeft_0_2.changehands(Hands.LEFT) +
-          CounterRotateRight_0_m2.changehands(Hands.RIGHT) +
-          CounterRotateRight_0_m2.changehands(Hands.RIGHT) +
-          CounterRotateRight_0_m2.changehands(Hands.RIGHT) +
-          CounterRotateLeft_0_2.changehands(Hands.LEFT) +
-          CounterRotateLeft_0_2.changehands(Hands.LEFT) +
+          CounterRotateLeft(0,2).changeBeats(3).skew(2.0,0.0) +
+          CounterRotateLeft(0,2).changehands(Hands.LEFT) +
+          CounterRotateLeft(0,2).changehands(Hands.LEFT) +
+          CounterRotateRight(0,-2).changehands(Hands.RIGHT) +
+          CounterRotateRight(0,-2).changehands(Hands.RIGHT) +
+          CounterRotateRight(0,-2).changehands(Hands.RIGHT) +
+          CounterRotateLeft(0,2).changehands(Hands.LEFT) +
+          CounterRotateLeft(0,2).changehands(Hands.LEFT) +
           ExtendLeft.changeBeats(3).scale(2.0,2.0)
       ]),
   ];

@@ -274,10 +274,10 @@ import '../../moves.dart';
       formation:Formation('Box RH'),
       group:'Finish',parts:'2',
       paths:[
-          CounterRotateRight_3_1.skew(0.0,-1.0) +
+          CounterRotateRight(3,1).skew(0.0,-1.0) +
           QuarterRight.changeBeats(2),
 
-          CounterRotateRight_m1_m3.skew(0.0,1.0) +
+          CounterRotateRight(-1,-3).skew(0.0,1.0) +
           QuarterRight.changeBeats(2)
       ]),
 

@@ -343,10 +343,10 @@ import '../../moves.dart';
           QuarterRight.changeBeats(4).skew(2.0,1.0),
 
           Forward_2 +
-          CounterRotateRight_0_m2.changeBeats(4).changehands(Hands.RIGHT).skew(0.0,-1.0),
+          CounterRotateRight(0,-2).changeBeats(4).changehands(Hands.RIGHT).skew(0.0,-1.0),
 
           Forward_2 +
-          CounterRotateRight_2_0.changeBeats(4).changehands(Hands.RIGHT).skew(0.0,1.0)
+          CounterRotateRight(2,0).changeBeats(4).changehands(Hands.RIGHT).skew(0.0,1.0)
       ]),
   ];
 

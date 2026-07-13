@@ -54,18 +54,18 @@ import '../../moves.dart';
       group:'Big Block',
       paths:[
           Back_2 +
-          CounterRotateRight_2_m4.changeBeats(4),
+          CounterRotateRight(2,-4).changeBeats(4),
 
           Stand.changeBeats(2) +
-          CounterRotateLeft_2_0.changeBeats(4).changehands(Hands.LEFT) +
+          CounterRotateLeft(2,0).changeBeats(4).changehands(Hands.LEFT) +
           Back_2,
 
           Stand.changeBeats(2) +
-          CounterRotateRight_4_m2.changeBeats(4) +
+          CounterRotateRight(4,-2).changeBeats(4) +
           Back_2,
 
           Back_2 +
-          CounterRotateLeft_0_2.changeBeats(4).changehands(Hands.LEFT)
+          CounterRotateLeft(0,2).changeBeats(4).changehands(Hands.LEFT)
       ]),
 
     AnimatedCall('Big Block Split Circulate',
@@ -97,13 +97,13 @@ import '../../moves.dart';
   ]),
       group:'Big Block',
       paths:[
-          CounterRotateRight_0_m2.changeBeats(4).skew(-2.0,0.0),
+          CounterRotateRight(0,-2).changeBeats(4).skew(-2.0,0.0),
 
-          CounterRotateRight_2_0.changeBeats(4).skew(2.0,0.0),
+          CounterRotateRight(2,0).changeBeats(4).skew(2.0,0.0),
 
-          CounterRotateRight_2_0.changeBeats(4).skew(2.0,0.0),
+          CounterRotateRight(2,0).changeBeats(4).skew(2.0,0.0),
 
-          CounterRotateRight_0_m2.changeBeats(4).skew(-2.0,0.0)
+          CounterRotateRight(0,-2).changeBeats(4).skew(-2.0,0.0)
       ]),
 
     AnimatedCall('Big Block In Roll Circulate',

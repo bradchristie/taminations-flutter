@@ -111,10 +111,10 @@ import '../../moves.dart';
       paths:[
           Path(),
 
-          CounterRotateRight_0_m2.changehands(Hands.RIGHT) +
+          CounterRotateRight(0,-2).changehands(Hands.RIGHT) +
           LeadRight.changeBeats(3).scale(2.0,2.0),
 
-          CounterRotateRight_2_0.changehands(Hands.RIGHT) +
+          CounterRotateRight(2,0).changehands(Hands.RIGHT) +
           Forward_2.changeBeats(1.5) +
           QuarterRight.changeBeats(1.5).skew(2.0,0.0),
 
@@ -127,11 +127,11 @@ import '../../moves.dart';
       paths:[
           Path(),
 
-          CounterRotateLeft_2_0.changehands(Hands.LEFT) +
+          CounterRotateLeft(2,0).changehands(Hands.LEFT) +
           Forward_2.changeBeats(1.5) +
           QuarterLeft.changeBeats(1.5).skew(2.0,0.0),
 
-          CounterRotateLeft_0_2.changehands(Hands.LEFT) +
+          CounterRotateLeft(0,2).changehands(Hands.LEFT) +
           LeadLeft.changeBeats(3).scale(2.0,2.0),
 
           Path()

@@ -31,12 +31,12 @@ import '../../moves.dart';
           Forward.changeBeats(3.5).changehands(0).scale(0.5,1.0) +
           ExtendLeft.changeBeats(1.5).changehands(Hands.RIGHT).scale(1.5,1.5) +
           RunRight.changehands(Hands.RIGHT).scale(1.5,2.0).skew(1.0,0.5) +
-          CounterRotateRight_2_0.changeBeats(4).changehands(Hands.RIGHT).skew(0.5,0.5),
+          CounterRotateRight(2,0).changeBeats(4).changehands(Hands.RIGHT).skew(0.5,0.5),
 
           ExtendLeft.changeBeats(2).scale(1.0,1.75) +
           SwingRight.changehands(Hands.BOTH).scale(0.75,0.75) +
           UmTurnRight.changehands(Hands.LEFT).skew(1.0,0.25) +
-          CounterRotateRight_0_2.changeBeats(4).changehands(Hands.LEFT).skew(0.5,0.5)
+          CounterRotateRight(0,2).changeBeats(4).changehands(Hands.LEFT).skew(0.5,0.5)
       ]),
 
     AnimatedCall('Reverse Flutterwheel and Sweep a Quarter',
@@ -46,12 +46,12 @@ import '../../moves.dart';
           ExtendRight.changeBeats(2).scale(1.5,1.75) +
           SwingLeft.changehands(Hands.BOTH).scale(0.75,0.75) +
           UmTurnLeft.changehands(Hands.RIGHT).skew(1.5,-0.25) +
-          CounterRotateLeft_0_m2.changeBeats(4).changehands(Hands.RIGHT).skew(0.5,-0.5),
+          CounterRotateLeft(0,-2).changeBeats(4).changehands(Hands.RIGHT).skew(0.5,-0.5),
 
           Stand.changeBeats(3.5).changehands(0) +
           ExtendRight.changeBeats(1.5).changehands(Hands.LEFT).scale(1.5,1.5) +
           RunLeft.changehands(Hands.LEFT).scale(1.5,2.0).skew(1.5,-0.5) +
-          CounterRotateLeft_2_0.changeBeats(4).changehands(Hands.LEFT).skew(0.5,-0.5)
+          CounterRotateLeft(2,0).changeBeats(4).changehands(Hands.LEFT).skew(0.5,-0.5)
       ]),
 
     AnimatedCall('Ferris Wheel, Centers Sweep a Quarter',
@@ -59,10 +59,10 @@ import '../../moves.dart';
       from:'Right-Handed Two-Faced Lines',group:' ',
       paths:[
         RunRight.changeBeats(4).changehands(Hands.GRIPRIGHT).scale(1.5, 2.0).skew(2.5, 0.0) +
-            CounterRotateRight_2_0.changehands(Hands.RIGHT),
+            CounterRotateRight(2,0).changehands(Hands.RIGHT),
 
         UmTurnRight.changeBeats(4).changehands(Hands.GRIPLEFT).skew(2.5, 0.0) +
-            CounterRotateRight_0_2.changehands(Hands.LEFT),
+            CounterRotateRight(0,2).changehands(Hands.LEFT),
 
         UmTurnRight.changeBeats(4).changehands(Hands.GRIPLEFT).skew(1.5, 0.0),
 
@@ -78,10 +78,10 @@ import '../../moves.dart';
           UmTurnLeft.changeBeats(4).changehands(Hands.GRIPRIGHT).skew(1.0,0.0),
 
           UmTurnLeft.changeBeats(4).changehands(Hands.GRIPRIGHT).skew(3.0,0.0) +
-          CounterRotateLeft_0_m2.changehands(Hands.RIGHT),
+          CounterRotateLeft(0,-2).changehands(Hands.RIGHT),
 
           RunLeft.changeBeats(4).changehands(Hands.GRIPLEFT).scale(2.0,2.0).skew(3.0,0.0) +
-          CounterRotateLeft_2_0.changehands(Hands.LEFT)
+          CounterRotateLeft(2,0).changehands(Hands.LEFT)
       ]),
 
     AnimatedCall('Flutterwheel and Sweep a Quarter',
@@ -91,22 +91,22 @@ import '../../moves.dart';
         Forwardp5.changeBeats(3.5).changehands(0) +
             ExtendLeft.changeBeats(1.5).changehands(Hands.RIGHT).scale(1.5,1.5) +
             RunRight.changehands(Hands.RIGHT).scale(1.5,2.0).skew(1,0.5) +
-            CounterRotateRight_2_0.changeBeats(4).changehands(Hands.RIGHT).scale(1.25,1.0),
+            CounterRotateRight(2,0).changeBeats(4).changehands(Hands.RIGHT).scale(1.25,1.0),
 
         ExtendLeft.changeBeats(2).scale(1.5,1.75) +
             SwingRight.changehands(Hands.BOTH).scale(0.75,0.75) +
             UmTurnRight.changehands(Hands.LEFT).skew(1.5,0.25) +
-            CounterRotateRight_0_2.changeBeats(4).changehands(Hands.LEFT).skew(0.5,0.0),
+            CounterRotateRight(0,2).changeBeats(4).changehands(Hands.LEFT).skew(0.5,0.0),
 
         Forwardp5.changeBeats(3.5).changehands(0) +
             ExtendLeft.changeBeats(1.5).changehands(Hands.RIGHT).scale(1.5,0.5) +
             RunRight.changehands(Hands.RIGHT).scale(1.5,1.5).skew(1,0.5) +
-            CounterRotateRight_2_0.changeBeats(4).changehands(Hands.RIGHT).scale(1.25,1.0),
+            CounterRotateRight(2,0).changeBeats(4).changehands(Hands.RIGHT).scale(1.25,1.0),
 
         ExtendLeft.changeBeats(2).scale(1.5,1.75) +
             SwingRight.changehands(Hands.BOTH).scale(0.75,0.75) +
             UmTurnRight.changehands(Hands.LEFT).skew(1.5,0.25) +
-            CounterRotateRight_0_2.changeBeats(4).changehands(Hands.LEFT).skew(0.5,0.0)
+            CounterRotateRight(0,2).changeBeats(4).changehands(Hands.LEFT).skew(0.5,0.0)
       ]),
 
     AnimatedCall('Recycle and Sweep a Quarter',
@@ -114,18 +114,18 @@ import '../../moves.dart';
       from:'Ocean Waves',group:' ',fractions:'4',
       paths:[
           RunRight.changeBeats(4).skew(0.5,-2.0) +
-          CounterRotateRight_2_0.changehands(Hands.RIGHT).skew(0.0,0.5),
+          CounterRotateRight(2,0).changehands(Hands.RIGHT).skew(0.0,0.5),
 
           RunRight.changeBeats(2).scale(0.5,0.5) +
           RunRight.changeBeats(2).scale(0.5,0.5).skew(0.5,0.0) +
-          CounterRotateRight_0_2.changehands(Hands.LEFT).skew(0.0,0.5),
+          CounterRotateRight(0,2).changehands(Hands.LEFT).skew(0.0,0.5),
 
           RunRight.changeBeats(2).scale(0.5,0.5).skew(-1,0) +
           RunRight.changeBeats(2).scale(0.5,0.5).skew(0.5,0.0) +
-          CounterRotateRight_0_2.changehands(Hands.LEFT).skew(0.0,0.5),
+          CounterRotateRight(0,2).changehands(Hands.LEFT).skew(0.0,0.5),
 
           RunRight.changeBeats(4).skew(1.5,-2) +
-          CounterRotateRight_2_0.changehands(Hands.RIGHT).skew(0.0,0.5)
+          CounterRotateRight(2,0).changehands(Hands.RIGHT).skew(0.0,0.5)
       ]),
 
     AnimatedCall('Reverse Flutterwheel and Sweep a Quarter',
@@ -135,22 +135,22 @@ import '../../moves.dart';
           ExtendRight.changeBeats(2).scale(1.0,1.5) +
           SwingLeft.changehands(Hands.BOTH).scale(0.5,0.5) +
           UmTurnLeft.changehands(Hands.RIGHT).skew(1.0,-0.5) +
-          CounterRotateLeft_0_m2.changeBeats(4).changehands(Hands.RIGHT).skew(0.0,-0.5),
+          CounterRotateLeft(0,-2).changeBeats(4).changehands(Hands.RIGHT).skew(0.0,-0.5),
 
           Stand.changeBeats(3.5).changehands(0) +
           ExtendRight.changeBeats(1.5).changehands(Hands.LEFT).scale(1.0,0.5) +
           RunLeft.changehands(Hands.LEFT).skew(1.0,0.5) +
-          CounterRotateLeft_2_0.changeBeats(4).changehands(Hands.LEFT).skew(0.0,-0.5),
+          CounterRotateLeft(2,0).changeBeats(4).changehands(Hands.LEFT).skew(0.0,-0.5),
 
           ExtendRight.changeBeats(2).scale(1.0,1.5) +
           SwingLeft.changehands(Hands.BOTH).scale(0.5,0.5) +
           UmTurnLeft.changehands(Hands.RIGHT).skew(1.0,-0.5) +
-          CounterRotateLeft_0_m2.changeBeats(4).changehands(Hands.RIGHT).skew(0.0,-0.5),
+          CounterRotateLeft(0,-2).changeBeats(4).changehands(Hands.RIGHT).skew(0.0,-0.5),
 
           Stand.changeBeats(3.5).changehands(0) +
           ExtendRight.changeBeats(1.5).changehands(Hands.LEFT).scale(1.0,0.5) +
           RunLeft.changehands(Hands.LEFT).skew(1.0,0.5) +
-          CounterRotateLeft_2_0.changeBeats(4).changehands(Hands.LEFT).skew(0.0,-0.5)
+          CounterRotateLeft(2,0).changeBeats(4).changehands(Hands.LEFT).skew(0.0,-0.5)
       ]),
 
     AnimatedCall('Wheel and Deal, Centers Sweep a Quarter',
@@ -158,10 +158,10 @@ import '../../moves.dart';
       from:'Lines Facing Out',group:' ',fractions:'4',
       paths:[
           RunLeft.changeBeats(4).changehands(Hands.LEFT).scale(1.0,2.0).skew(-0.5,0.0) +
-          CounterRotateLeft_2_0.changehands(Hands.LEFT),
+          CounterRotateLeft(2,0).changehands(Hands.LEFT),
 
           UmTurnLeft.changeBeats(4).changehands(Hands.RIGHT).skew(-0.5,0.0) +
-          CounterRotateLeft_0_m2.changehands(Hands.RIGHT),
+          CounterRotateLeft(0,-2).changehands(Hands.RIGHT),
 
           UmTurnRight.changeBeats(4).changehands(Hands.LEFT).skew(1.5,0.0),
 
@@ -172,70 +172,70 @@ import '../../moves.dart';
       formation:Formation('Facing Couples Compact'),
       from:'Facing Couples',noDisplay: true,
       paths:[
-          CounterRotateRight_2_0.changehands(Hands.RIGHT).skew(0.5,0.5),
+          CounterRotateRight(2,0).changehands(Hands.RIGHT).skew(0.5,0.5),
 
-          CounterRotateRight_0_2.changehands(Hands.LEFT).skew(0.5,0.5)
+          CounterRotateRight(0,2).changehands(Hands.LEFT).skew(0.5,0.5)
       ]),
 
     AnimatedCall('_Sweep a Quarter Left',
       formation:Formation('Normal Lines Compact'),
       from:'Normal Lines',noDisplay: true,
       paths:[
-          CounterRotateRight_2_0.changehands(Hands.RIGHT).skew(0.5,0.0),
+          CounterRotateRight(2,0).changehands(Hands.RIGHT).skew(0.5,0.0),
 
-          CounterRotateRight_0_2.changehands(Hands.LEFT).skew(0.5,0.0),
+          CounterRotateRight(0,2).changehands(Hands.LEFT).skew(0.5,0.0),
 
-          CounterRotateRight_2_0.changehands(Hands.RIGHT).skew(0.5,0.0),
+          CounterRotateRight(2,0).changehands(Hands.RIGHT).skew(0.5,0.0),
 
-          CounterRotateRight_0_2.changehands(Hands.LEFT).skew(0.5,0.0)
+          CounterRotateRight(0,2).changehands(Hands.LEFT).skew(0.5,0.0)
       ]),
 
     AnimatedCall('_Sweep a Quarter Left',
       formation:Formation('Eight Chain Thru'),
       from:'Eight Chain Thru',noDisplay: true,
       paths:[
-          CounterRotateRight_2_0.changehands(Hands.RIGHT).skew(0.0,0.5),
+          CounterRotateRight(2,0).changehands(Hands.RIGHT).skew(0.0,0.5),
 
-          CounterRotateRight_0_2.changehands(Hands.LEFT).skew(0.0,0.5),
+          CounterRotateRight(0,2).changehands(Hands.LEFT).skew(0.0,0.5),
 
-          CounterRotateRight_2_0.changehands(Hands.RIGHT).skew(0.0,0.5),
+          CounterRotateRight(2,0).changehands(Hands.RIGHT).skew(0.0,0.5),
 
-          CounterRotateRight_0_2.changehands(Hands.LEFT).skew(0.0,0.5)
+          CounterRotateRight(0,2).changehands(Hands.LEFT).skew(0.0,0.5)
       ]),
 
     AnimatedCall('_Sweep a Quarter Right',
       formation:Formation('Facing Couples Compact'),
       from:'Facing Couples',noDisplay: true,
       paths:[
-          CounterRotateLeft_0_m2.changehands(Hands.RIGHT).skew(0.5,-0.5),
+          CounterRotateLeft(0,-2).changehands(Hands.RIGHT).skew(0.5,-0.5),
 
-          CounterRotateLeft_2_0.changehands(Hands.LEFT).skew(0.5,-0.5)
+          CounterRotateLeft(2,0).changehands(Hands.LEFT).skew(0.5,-0.5)
       ]),
 
     AnimatedCall('_Sweep a Quarter Right',
       formation:Formation('Normal Lines Compact'),
       from:'Normal Lines',noDisplay: true,
       paths:[
-          CounterRotateLeft_0_m2.changehands(Hands.RIGHT).skew(0.5,0.0),
+          CounterRotateLeft(0,-2).changehands(Hands.RIGHT).skew(0.5,0.0),
 
-          CounterRotateLeft_2_0.changehands(Hands.LEFT).skew(0.5,0.0),
+          CounterRotateLeft(2,0).changehands(Hands.LEFT).skew(0.5,0.0),
 
-          CounterRotateLeft_0_m2.changehands(Hands.RIGHT).skew(0.5,0.0),
+          CounterRotateLeft(0,-2).changehands(Hands.RIGHT).skew(0.5,0.0),
 
-          CounterRotateLeft_2_0.changehands(Hands.LEFT).skew(0.5,0.0)
+          CounterRotateLeft(2,0).changehands(Hands.LEFT).skew(0.5,0.0)
       ]),
 
     AnimatedCall('_Sweep a Quarter Right',
       formation:Formation('Eight Chain Thru'),
       from:'Eight Chain Thru',noDisplay: true,
       paths:[
-          CounterRotateLeft_0_m2.changehands(Hands.RIGHT).skew(0.0,-0.5),
+          CounterRotateLeft(0,-2).changehands(Hands.RIGHT).skew(0.0,-0.5),
 
-          CounterRotateLeft_2_0.changehands(Hands.LEFT).skew(0.0,-0.5),
+          CounterRotateLeft(2,0).changehands(Hands.LEFT).skew(0.0,-0.5),
 
-          CounterRotateLeft_0_m2.changehands(Hands.RIGHT).skew(0.0,-0.5),
+          CounterRotateLeft(0,-2).changehands(Hands.RIGHT).skew(0.0,-0.5),
 
-          CounterRotateLeft_2_0.changehands(Hands.LEFT).skew(0.0,-0.5)
+          CounterRotateLeft(2,0).changehands(Hands.LEFT).skew(0.0,-0.5)
       ]),
   ];
 

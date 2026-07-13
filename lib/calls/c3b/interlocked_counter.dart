@@ -36,12 +36,12 @@ import '../../moves.dart';
           LeadRight +
           Forward +
           SwingRight +
-          CounterRotateRight_2_0.changehands(Hands.RIGHT).skew(0.0,1.0),
+          CounterRotateRight(2,0).changehands(Hands.RIGHT).skew(0.0,1.0),
 
           LeadRight +
           Forward +
           SwingRight.scale(0.5,1.0) +
-          CounterRotateRight_0_m2.changehands(Hands.RIGHT).skew(0.0,-1.0),
+          CounterRotateRight(0,-2).changehands(Hands.RIGHT).skew(0.0,-1.0),
 
           RunRight.skew(-3.0,-1.5) +
           SwingRight.scale(0.75,0.75) +
@@ -67,12 +67,12 @@ import '../../moves.dart';
           LeadLeft +
           Forward +
           SwingLeft +
-          CounterRotateLeft_2_0.changehands(Hands.LEFT).skew(0.0,-1.0),
+          CounterRotateLeft(2,0).changehands(Hands.LEFT).skew(0.0,-1.0),
 
           LeadLeft +
           Forward +
           SwingLeft.scale(0.5,1.0) +
-          CounterRotateLeft_0_2.changehands(Hands.LEFT).skew(0.0,1.0)
+          CounterRotateLeft(0,2).changehands(Hands.LEFT).skew(0.0,1.0)
       ]),
 
     AnimatedCall('Interlocked Counter',

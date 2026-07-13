@@ -29,11 +29,11 @@ import '../../moves.dart';
       from:'Right-Hand Wave',parts:'2;2',
       paths:[
           ExtendRight.changeBeats(2).scale(1.5,1.5) +
-          CounterRotateRight_0_m2.scale(1.5,1.5) +
+          CounterRotateRight(0,-2).scale(1.5,1.5) +
           QuarterRight.changeBeats(2).skew(-0.5,0.0),
 
           FoldRight.scale(0.75,0.25) +
-          CounterRotateRight_2_0.scale(1.5,1.5) +
+          CounterRotateRight(2,0).scale(1.5,1.5) +
           QuarterRight.changeBeats(2).skew(0.5,0.0)
       ]),
 
@@ -42,11 +42,11 @@ import '../../moves.dart';
       from:'Left-Hand Wave',parts:'2;2',
       paths:[
           ExtendLeft.changeBeats(2).scale(1.5,1.5) +
-          CounterRotateLeft_0_2.scale(1.5,1.5) +
+          CounterRotateLeft(0,2).scale(1.5,1.5) +
           QuarterLeft.changeBeats(2).skew(-0.5,0.0),
 
           FoldLeft.scale(0.75,0.25) +
-          CounterRotateLeft_2_0.scale(1.5,1.5) +
+          CounterRotateLeft(2,0).scale(1.5,1.5) +
           QuarterLeft.changeBeats(2).skew(0.5,0.0)
       ]),
 
@@ -505,10 +505,10 @@ import '../../moves.dart';
     ''',
       paths:[
           ExtendRight.changeBeats(2).scale(1.5,2.0) +
-          CounterRotateRight_0_m2.changehands(Hands.RIGHT).scale(1.0,1.25).skew(-0.5,0.0),
+          CounterRotateRight(0,-2).changehands(Hands.RIGHT).scale(1.0,1.25).skew(-0.5,0.0),
 
           UmTurnRight.changeBeats(2).skew(1.5,0.0) +
-          CounterRotateRight_2_0.changehands(Hands.RIGHT).scale(1.25,1.0).skew(0.0,0.5)
+          CounterRotateRight(2,0).changehands(Hands.RIGHT).scale(1.25,1.0).skew(0.0,0.5)
       ]),
 
     AnimatedCall('2/3 Recycle, by definition,',
@@ -520,10 +520,10 @@ import '../../moves.dart';
     ''',
       paths:[
           ExtendLeft.changeBeats(2).scale(1.5,2.0) +
-          CounterRotateLeft_0_2.changehands(Hands.LEFT).scale(1.0,1.25).skew(-0.5,0.0),
+          CounterRotateLeft(0,2).changehands(Hands.LEFT).scale(1.0,1.25).skew(-0.5,0.0),
 
           UmTurnLeft.changeBeats(2).skew(1.5,0.0) +
-          CounterRotateLeft_2_0.changehands(Hands.LEFT).scale(1.25,1.0).skew(0.0,-0.5)
+          CounterRotateLeft(2,0).changehands(Hands.LEFT).scale(1.25,1.0).skew(0.0,-0.5)
       ]),
 
     AnimatedCall('2/3 Recycle, by definition,',
@@ -535,16 +535,16 @@ import '../../moves.dart';
     ''',
       paths:[
           ExtendRight.changeBeats(2).scale(1.0,2.0) +
-          CounterRotateRight_0_m2.changehands(Hands.RIGHT).scale(1.0,1.25),
+          CounterRotateRight(0,-2).changehands(Hands.RIGHT).scale(1.0,1.25),
 
           UmTurnRight.changeBeats(2).skew(1.0,0.0) +
-          CounterRotateRight_2_0.changehands(Hands.RIGHT).skew(0.0,0.5),
+          CounterRotateRight(2,0).changehands(Hands.RIGHT).skew(0.0,0.5),
 
           UmTurnRight.changeBeats(2).skew(1.0,0.0) +
-          CounterRotateRight_2_0.changehands(Hands.RIGHT).skew(0.0,0.5),
+          CounterRotateRight(2,0).changehands(Hands.RIGHT).skew(0.0,0.5),
 
           ExtendRight.changeBeats(2).scale(1.0,2.0) +
-          CounterRotateRight_0_m2.changehands(Hands.RIGHT).scale(1.0,1.25)
+          CounterRotateRight(0,-2).changehands(Hands.RIGHT).scale(1.0,1.25)
       ]),
 
     AnimatedCall('2/3 Recycle, by definition,',
@@ -556,16 +556,16 @@ import '../../moves.dart';
     ''',
       paths:[
           ExtendLeft.changeBeats(2).scale(1.0,2.0) +
-          CounterRotateLeft_0_2.changehands(Hands.LEFT).scale(1.0,1.25),
+          CounterRotateLeft(0,2).changehands(Hands.LEFT).scale(1.0,1.25),
 
           UmTurnLeft.changeBeats(2).skew(1.0,0.0) +
-          CounterRotateLeft_2_0.changehands(Hands.LEFT).skew(0.0,-0.5),
+          CounterRotateLeft(2,0).changehands(Hands.LEFT).skew(0.0,-0.5),
 
           UmTurnLeft.changeBeats(2).skew(1.0,0.0) +
-          CounterRotateLeft_2_0.changehands(Hands.LEFT).skew(0.0,-0.5),
+          CounterRotateLeft(2,0).changehands(Hands.LEFT).skew(0.0,-0.5),
 
           ExtendLeft.changeBeats(2).scale(1.0,2.0) +
-          CounterRotateLeft_0_2.changehands(Hands.LEFT).scale(1.0,1.25)
+          CounterRotateLeft(0,2).changehands(Hands.LEFT).scale(1.0,1.25)
       ]),
 
     AnimatedCall('2/3 Recycle, by definition,',
@@ -577,16 +577,16 @@ import '../../moves.dart';
     ''',
       paths:[
           ExtendRight.changeBeats(2).scale(1.5,0.5) +
-          CounterRotateRight_0_m2.changehands(Hands.RIGHT).skew(-0.5,0.0),
+          CounterRotateRight(0,-2).changehands(Hands.RIGHT).skew(-0.5,0.0),
 
           UmTurnRight.changeBeats(2).skew(1.5,-0.5) +
-          CounterRotateRight_2_0.changehands(Hands.RIGHT).scale(1.25,1.0),
+          CounterRotateRight(2,0).changehands(Hands.RIGHT).scale(1.25,1.0),
 
           UmTurnRight.changeBeats(2).skew(1.5,-0.5) +
-          CounterRotateRight_2_0.changehands(Hands.RIGHT).scale(1.25,1.0),
+          CounterRotateRight(2,0).changehands(Hands.RIGHT).scale(1.25,1.0),
 
           ExtendRight.changeBeats(2).scale(1.5,0.5) +
-          CounterRotateRight_0_m2.changehands(Hands.RIGHT).skew(-0.5,0.0)
+          CounterRotateRight(0,-2).changehands(Hands.RIGHT).skew(-0.5,0.0)
       ]),
 
     AnimatedCall('2/3 Recycle, by definition,',
@@ -598,16 +598,16 @@ import '../../moves.dart';
     ''',
       paths:[
           ExtendLeft.changeBeats(2).scale(1.5,0.5) +
-          CounterRotateLeft_0_2.changehands(Hands.LEFT).skew(-0.5,0.0),
+          CounterRotateLeft(0,2).changehands(Hands.LEFT).skew(-0.5,0.0),
 
           UmTurnLeft.changeBeats(2).skew(1.5,0.5) +
-          CounterRotateLeft_2_0.changehands(Hands.LEFT).scale(1.25,1.0),
+          CounterRotateLeft(2,0).changehands(Hands.LEFT).scale(1.25,1.0),
 
           UmTurnLeft.changeBeats(2).skew(1.5,0.5) +
-          CounterRotateLeft_2_0.changehands(Hands.LEFT).scale(1.25,1.0),
+          CounterRotateLeft(2,0).changehands(Hands.LEFT).scale(1.25,1.0),
 
           ExtendLeft.changeBeats(2).scale(1.5,0.5) +
-          CounterRotateLeft_0_2.changehands(Hands.LEFT).skew(-0.5,0.0)
+          CounterRotateLeft(0,2).changehands(Hands.LEFT).skew(-0.5,0.0)
       ]),
 
     AnimatedCall('2/3 Recycle',
@@ -1016,15 +1016,15 @@ import '../../moves.dart';
       formation:Formation('Column RH GBGB'),
       group:' ',
       paths:[
-          CounterRotateRight_0_m4.changehands(Hands.RIGHT) +
-          CounterRotateRight_0_m4.changehands(Hands.RIGHT).skew(0.0,-1.0),
+          CounterRotateRight(0,-4).changehands(Hands.RIGHT) +
+          CounterRotateRight(0,-4).changehands(Hands.RIGHT).skew(0.0,-1.0),
 
           RunRight.changeBeats(4).changehands(Hands.GRIPRIGHT).scale(2.0,2.0).skew(1.0,0.0),
 
           UmTurnRight.changeBeats(4).changehands(Hands.GRIPRIGHT).skew(-1.0,0.0),
 
-          CounterRotateLeft_2_2.changehands(Hands.RIGHT) +
-          CounterRotateLeft_2_2.changehands(Hands.RIGHT).skew(0.0,1.0)
+          CounterRotateLeft(2,2).changehands(Hands.RIGHT) +
+          CounterRotateLeft(2,2).changehands(Hands.RIGHT).skew(0.0,1.0)
       ]),
 
     AnimatedCall('Triple Box Recycle',

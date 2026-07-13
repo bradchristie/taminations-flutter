@@ -34,19 +34,19 @@ import '../../moves.dart';
       from:'Right-Hand Columns',parts:'1.5;4',
       paths:[
           QuarterRight.skew(0.0,1.0) +
-          CounterRotateRight_5_m1.changeBeats(4) +
+          CounterRotateRight(5,-1).changeBeats(4) +
           QuarterRight.skew(1.0,0.0),
 
           QuarterLeft.skew(0.0,1.0) +
-          CounterRotateRight_1_m5.changeBeats(4) +
+          CounterRotateRight(1,-5).changeBeats(4) +
           QuarterRight.skew(-1.0,0.0),
 
           QuarterRight.skew(0.0,1.0) +
-          CounterRotateLeft_3_m1.changeBeats(4) +
+          CounterRotateLeft(3,-1).changeBeats(4) +
           QuarterLeft.skew(1.0,0.0),
 
           QuarterLeft.skew(0.0,1.0) +
-          CounterRotateLeft_m1_3.changeBeats(4) +
+          CounterRotateLeft(-1,3).changeBeats(4) +
           QuarterLeft.skew(-1.0,0.0)
       ]),
 
@@ -55,19 +55,19 @@ import '../../moves.dart';
       from:'Right-Hand Two-Faced Lines',parts:'1.5;4',
       paths:[
           QuarterLeft.skew(1.0,0.0) +
-          CounterRotateRight_m2_m4.changeBeats(4).changehands(Hands.RIGHT) +
+          CounterRotateRight(-2,-4).changeBeats(4).changehands(Hands.RIGHT) +
           QuarterRight.skew(0.0,1.0),
 
           QuarterLeft.skew(1.0,0.0) +
-          CounterRotateRight_0_m2.changeBeats(4).changehands(Hands.RIGHT) +
+          CounterRotateRight(0,-2).changeBeats(4).changehands(Hands.RIGHT) +
           QuarterRight.skew(0.0,1.0),
 
           QuarterRight.skew(-1.0,0.0) +
-          CounterRotateRight_2_0.changeBeats(4).changehands(Hands.RIGHT) +
+          CounterRotateRight(2,0).changeBeats(4).changehands(Hands.RIGHT) +
           QuarterRight.skew(0.0,1.0),
 
           QuarterRight.skew(-1.0,0.0) +
-          CounterRotateRight_4_2.changeBeats(4).changehands(Hands.RIGHT) +
+          CounterRotateRight(4,2).changeBeats(4).changehands(Hands.RIGHT) +
           QuarterRight.skew(0.0,1.0)
       ]),
 
@@ -133,19 +133,19 @@ import '../../moves.dart';
       from:'Right-Hand Columns',parts:'1.5;2',
       paths:[
           QuarterRight +
-          CounterRotateRight_2_0 +
+          CounterRotateRight(2,0) +
           QuarterRight.skew(0.0,1.0),
 
           QuarterLeft +
-          CounterRotateRight_0_m2 +
+          CounterRotateRight(0,-2) +
           QuarterRight.skew(0.0,1.0),
 
           QuarterRight +
-          CounterRotateRight_2_0 +
+          CounterRotateRight(2,0) +
           QuarterRight.skew(0.0,1.0),
 
           QuarterLeft +
-          CounterRotateRight_0_m2 +
+          CounterRotateRight(0,-2) +
           QuarterRight.skew(0.0,1.0)
       ]),
 
@@ -154,19 +154,19 @@ import '../../moves.dart';
       from:'Right-Hand Waves',parts:'1.5;2',
       paths:[
           QuarterLeft.skew(1.0,0.0) +
-          CounterRotateRight_0_m2 +
+          CounterRotateRight(0,-2) +
           QuarterRight,
 
           QuarterRight.skew(-1.0,0.0) +
-          CounterRotateRight_2_0 +
+          CounterRotateRight(2,0) +
           QuarterRight,
 
           QuarterLeft.skew(1.0,0.0) +
-          CounterRotateRight_0_m2 +
+          CounterRotateRight(0,-2) +
           QuarterRight,
 
           QuarterRight.skew(-1.0,0.0) +
-          CounterRotateRight_2_0 +
+          CounterRotateRight(2,0) +
           QuarterRight
       ]),
   ];

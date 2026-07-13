@@ -261,19 +261,19 @@ import '../a2/single_wheel.dart' as a2;
       paths:[
           RunRight.scale(1.0,1.5) +
           Forward_4 +
-          CounterRotateRight_0_m2.skew(0.0,1.0),
+          CounterRotateRight(0,-2).skew(0.0,1.0),
 
           Forward_2 +
           RunRight.scale(1.0,1.5) +
           Forward_2 +
-          CounterRotateRight_2_0.skew(0.0,1.0),
+          CounterRotateRight(2,0).skew(0.0,1.0),
 
           Forward_2 +
-          CounterRotateRight_0_m2.changeBeats(5) +
+          CounterRotateRight(0,-2).changeBeats(5) +
           Forward_2,
 
           Forward_2 +
-          CounterRotateRight_2_0.changeBeats(5) +
+          CounterRotateRight(2,0).changeBeats(5) +
           Forward_2
       ]),
     a2.SingleWheel.where((tam) =>

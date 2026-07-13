@@ -163,16 +163,16 @@ import '../c3b/scramble.dart' as c3b;
       group:' ',fractions:'4.5',
       paths:[
           CastRight +
-          CounterRotateRight_0_m2.changehands(Hands.RIGHT).skew(-1.0,0.0),
+          CounterRotateRight(0,-2).changehands(Hands.RIGHT).skew(-1.0,0.0),
 
           CastRight +
-          CounterRotateRight_2_0.changehands(Hands.RIGHT).skew(1.0,0.0),
+          CounterRotateRight(2,0).changehands(Hands.RIGHT).skew(1.0,0.0),
 
           CastRight +
-          CounterRotateRight_2_0.changehands(Hands.RIGHT).skew(1.0,0.0),
+          CounterRotateRight(2,0).changehands(Hands.RIGHT).skew(1.0,0.0),
 
           CastRight +
-          CounterRotateRight_0_m2.changehands(Hands.RIGHT).skew(-1.0,0.0)
+          CounterRotateRight(0,-2).changehands(Hands.RIGHT).skew(-1.0,0.0)
       ]),
   ];
 

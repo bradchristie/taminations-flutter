@@ -102,16 +102,16 @@ import '../../moves.dart';
       group:'Finally Tandem',fractions:'3',
       paths:[
           SwingRight +
-          CounterRotateLeft_0_2.changehands(Hands.LEFT).skew(-1.0,0.0) +
-          CounterRotateLeft_0_2.changehands(Hands.LEFT).skew(0.0,1.0),
+          CounterRotateLeft(0,2).changehands(Hands.LEFT).skew(-1.0,0.0) +
+          CounterRotateLeft(0,2).changehands(Hands.LEFT).skew(0.0,1.0),
 
           SwingRight,
 
           SwingRight,
 
           SwingRight +
-          CounterRotateLeft_2_0.changehands(Hands.LEFT).skew(1.0,0.0) +
-          CounterRotateLeft_2_0.changehands(Hands.LEFT).skew(0.0,-1.0)
+          CounterRotateLeft(2,0).changehands(Hands.LEFT).skew(1.0,0.0) +
+          CounterRotateLeft(2,0).changehands(Hands.LEFT).skew(0.0,-1.0)
       ]),
   ];
 

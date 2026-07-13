@@ -180,16 +180,16 @@ import '../../moves.dart';
       from:'Lines',
       paths:[
           QuarterRight +
-          CounterRotateLeft_2_0.changeBeats(3),
+          CounterRotateLeft(2,0).changeBeats(3),
 
           QuarterRight +
-          CounterRotateLeft_0_2.changeBeats(3).skew(0.0,2.0),
+          CounterRotateLeft(0,2).changeBeats(3).skew(0.0,2.0),
 
           QuarterRight +
-          CounterRotateLeft_2_0.changeBeats(3),
+          CounterRotateLeft(2,0).changeBeats(3),
 
           QuarterRight +
-          CounterRotateLeft_0_2.changeBeats(3).skew(0.0,2.0)
+          CounterRotateLeft(0,2).changeBeats(3).skew(0.0,2.0)
       ]),
 
     AnimatedCall('Single Rotate 1/4',
@@ -197,16 +197,16 @@ import '../../moves.dart';
       from:'Waves',
       paths:[
           QuarterRight +
-          CounterRotateLeft_2_0.changeBeats(3),
+          CounterRotateLeft(2,0).changeBeats(3),
 
           QuarterLeft +
-          CounterRotateLeft_0_2.changeBeats(3).skew(0.0,2.0),
+          CounterRotateLeft(0,2).changeBeats(3).skew(0.0,2.0),
 
           QuarterRight +
-          CounterRotateLeft_2_0.changeBeats(3),
+          CounterRotateLeft(2,0).changeBeats(3),
 
           QuarterLeft +
-          CounterRotateLeft_0_2.changeBeats(3).skew(0.0,2.0)
+          CounterRotateLeft(0,2).changeBeats(3).skew(0.0,2.0)
       ]),
 
     AnimatedCall('Reverse Single Rotate 1/4',
@@ -214,16 +214,16 @@ import '../../moves.dart';
       from:'Lines',
       paths:[
           QuarterLeft +
-          CounterRotateRight_0_m2.changeBeats(3).skew(0.0,-2.0),
+          CounterRotateRight(0,-2).changeBeats(3).skew(0.0,-2.0),
 
           QuarterLeft +
-          CounterRotateRight_2_0.changeBeats(3),
+          CounterRotateRight(2,0).changeBeats(3),
 
           QuarterLeft +
-          CounterRotateRight_0_m2.changeBeats(3).skew(0.0,-2.0),
+          CounterRotateRight(0,-2).changeBeats(3).skew(0.0,-2.0),
 
           QuarterLeft +
-          CounterRotateRight_2_0.changeBeats(3)
+          CounterRotateRight(2,0).changeBeats(3)
       ]),
 
     AnimatedCall('Reverse Single Rotate 1/4',
@@ -231,16 +231,16 @@ import '../../moves.dart';
       from:'Waves',
       paths:[
           QuarterLeft +
-          CounterRotateRight_0_m2.changeBeats(3).skew(0.0,-2.0),
+          CounterRotateRight(0,-2).changeBeats(3).skew(0.0,-2.0),
 
           QuarterRight +
-          CounterRotateRight_2_0.changeBeats(3),
+          CounterRotateRight(2,0).changeBeats(3),
 
           QuarterLeft +
-          CounterRotateRight_0_m2.changeBeats(3).skew(0.0,-2.0),
+          CounterRotateRight(0,-2).changeBeats(3).skew(0.0,-2.0),
 
           QuarterRight +
-          CounterRotateRight_2_0.changeBeats(3)
+          CounterRotateRight(2,0).changeBeats(3)
       ]),
   ];
 

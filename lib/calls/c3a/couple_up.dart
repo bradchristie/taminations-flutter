@@ -111,14 +111,14 @@ import '../../moves.dart';
       This is an application of the C-2 Anything Concept.
     ''',
       paths:[
-          CounterRotateRight_5_m1.changeBeats(4),
+          CounterRotateRight(5,-1).changeBeats(4),
 
-          CounterRotateLeft_m1_3.changeBeats(4) +
+          CounterRotateLeft(-1,3).changeBeats(4) +
           UmTurnRight,
 
-          CounterRotateLeft_3_m1.changeBeats(4),
+          CounterRotateLeft(3,-1).changeBeats(4),
 
-          CounterRotateRight_1_m5.changeBeats(4) +
+          CounterRotateRight(1,-5).changeBeats(4) +
           UmTurnRight
       ]),
 
@@ -129,14 +129,14 @@ import '../../moves.dart';
       This is an application of the C-2 Anything Concept.
     ''',
       paths:[
-          CounterRotateRight_2_0.changeBeats(3).changehands(Hands.RIGHT).skew(1.0,0.0),
+          CounterRotateRight(2,0).changeBeats(3).changehands(Hands.RIGHT).skew(1.0,0.0),
 
-          CounterRotateRight_0_m2.changeBeats(3).changehands(Hands.RIGHT).skew(-1.0,0.0) +
+          CounterRotateRight(0,-2).changeBeats(3).changehands(Hands.RIGHT).skew(-1.0,0.0) +
           UmTurnRight,
 
-          CounterRotateRight_2_0.changeBeats(3).changehands(Hands.RIGHT).skew(1.0,0.0),
+          CounterRotateRight(2,0).changeBeats(3).changehands(Hands.RIGHT).skew(1.0,0.0),
 
-          CounterRotateRight_0_m2.changeBeats(3).changehands(Hands.RIGHT).skew(-1.0,0.0) +
+          CounterRotateRight(0,-2).changeBeats(3).changehands(Hands.RIGHT).skew(-1.0,0.0) +
           UmTurnRight
       ]),
 

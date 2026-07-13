@@ -375,13 +375,13 @@ import '../c3a/single_concept.dart' as c3a;
       formation:Formation('Ocean Waves RH BGBG'),
       group:'Stretch',
       paths:[
-          CounterRotateRight_2_0.changeBeats(4).changehands(Hands.RIGHT).skew(1.0,0.0),
+          CounterRotateRight(2,0).changeBeats(4).changehands(Hands.RIGHT).skew(1.0,0.0),
 
-          CounterRotateRight_0_m2.changeBeats(4).changehands(Hands.RIGHT).skew(-1.0,0.0),
+          CounterRotateRight(0,-2).changeBeats(4).changehands(Hands.RIGHT).skew(-1.0,0.0),
 
-          CounterRotateRight_3_1.changeBeats(4).changehands(Hands.RIGHT).skew(0.0,1.0),
+          CounterRotateRight(3,1).changeBeats(4).changehands(Hands.RIGHT).skew(0.0,1.0),
 
-          CounterRotateRight_m1_m3.changeBeats(4).changehands(Hands.RIGHT).skew(0.0,-1.0)
+          CounterRotateRight(-1,-3).changeBeats(4).changehands(Hands.RIGHT).skew(0.0,-1.0)
       ]),
 
     AnimatedCall('Stretch Split Transfer (from Waves)',

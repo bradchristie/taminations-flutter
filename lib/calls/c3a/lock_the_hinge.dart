@@ -315,34 +315,34 @@ import '../../moves.dart';
       formation:Formation('Ocean Waves RH BGGB'),
       group:' ',parts:'4',
       paths:[
-          CounterRotateRight_5_m1.changeBeats(4) +
-          CounterRotateRight_2_0.changeBeats(2).changehands(Hands.RIGHT).skew(1.0,0.0),
+          CounterRotateRight(5,-1).changeBeats(4) +
+          CounterRotateRight(2,0).changeBeats(2).changehands(Hands.RIGHT).skew(1.0,0.0),
 
-          CounterRotateLeft_m1_3.changeBeats(4) +
-          CounterRotateRight_0_m2.changeBeats(2).changehands(Hands.RIGHT).skew(-1.0,0.0),
+          CounterRotateLeft(-1,3).changeBeats(4) +
+          CounterRotateRight(0,-2).changeBeats(2).changehands(Hands.RIGHT).skew(-1.0,0.0),
 
-          CounterRotateLeft_3_m1.changeBeats(4) +
-          CounterRotateRight_2_0.changeBeats(2).changehands(Hands.RIGHT).skew(1.0,0.0),
+          CounterRotateLeft(3,-1).changeBeats(4) +
+          CounterRotateRight(2,0).changeBeats(2).changehands(Hands.RIGHT).skew(1.0,0.0),
 
-          CounterRotateRight_1_m5.changeBeats(4) +
-          CounterRotateRight_0_m2.changeBeats(2).changehands(Hands.RIGHT).skew(-1.0,0.0)
+          CounterRotateRight(1,-5).changeBeats(4) +
+          CounterRotateRight(0,-2).changeBeats(2).changehands(Hands.RIGHT).skew(-1.0,0.0)
       ]),
 
     AnimatedCall('Tandem Hinge the Lock',
       formation:Formation('Column RH GBGB'),
       group:' ',parts:'2',
       paths:[
-          CounterRotateRight_0_m2.changehands(Hands.RIGHT) +
-          CounterRotateRight_2_m4.changeBeats(4).skew(0.0,-1.0),
+          CounterRotateRight(0,-2).changehands(Hands.RIGHT) +
+          CounterRotateRight(2,-4).changeBeats(4).skew(0.0,-1.0),
 
-          CounterRotateRight_2_0.changehands(Hands.RIGHT) +
-          CounterRotateRight_4_m2.changeBeats(4).skew(0.0,1.0),
+          CounterRotateRight(2,0).changehands(Hands.RIGHT) +
+          CounterRotateRight(4,-2).changeBeats(4).skew(0.0,1.0),
 
-          CounterRotateRight_0_m2.changehands(Hands.RIGHT) +
-          CounterRotateLeft_0_2.changeBeats(4).changehands(Hands.LEFT).skew(0.0,1.0),
+          CounterRotateRight(0,-2).changehands(Hands.RIGHT) +
+          CounterRotateLeft(0,2).changeBeats(4).changehands(Hands.LEFT).skew(0.0,1.0),
 
-          CounterRotateRight_2_0.changehands(Hands.RIGHT) +
-          CounterRotateLeft_2_0.changeBeats(4).changehands(Hands.LEFT).skew(0.0,-1.0)
+          CounterRotateRight(2,0).changehands(Hands.RIGHT) +
+          CounterRotateLeft(2,0).changeBeats(4).changehands(Hands.LEFT).skew(0.0,-1.0)
       ]),
   ];
 

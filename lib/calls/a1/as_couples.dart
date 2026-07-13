@@ -246,23 +246,23 @@ import '../c3b/bingo.dart' as c3b;
       paths:[
           Stand.changeBeats(2).changehands(Hands.RIGHT) +
           ExtendRight.changeBeats(3).changehands(Hands.RIGHT) +
-          CounterRotateRight_3_m1.changeBeats(3).changehands(Hands.RIGHT).skew(0.0,1.0) +
-          CounterRotateRight_3_m1.changeBeats(3).changehands(Hands.RIGHT).skew(2.0,1.0),
+          CounterRotateRight(3,-1).changeBeats(3).changehands(Hands.RIGHT).skew(0.0,1.0) +
+          CounterRotateRight(3,-1).changeBeats(3).changehands(Hands.RIGHT).skew(2.0,1.0),
 
           Stand.changeBeats(2).changehands(Hands.LEFT) +
           Forward.changeBeats(3).changehands(Hands.LEFT) +
-          CounterRotateRight_2_0.changeBeats(3).changehands(Hands.BOTH).skew(0.0,1.0) +
-          CounterRotateRight_2_0.changeBeats(3).changehands(Hands.BOTH).skew(1.0,1.0),
+          CounterRotateRight(2,0).changeBeats(3).changehands(Hands.BOTH).skew(0.0,1.0) +
+          CounterRotateRight(2,0).changeBeats(3).changehands(Hands.BOTH).skew(1.0,1.0),
 
           ExtendLeft.changeBeats(2).changehands(Hands.GRIPRIGHT).scale(2.0,2.5) +
           BelleWheel.scale(0.5,-0.5).skew(1.0,-0.5) +
-          CounterRotateRight_1_2.changeBeats(3).changehands(Hands.BOTH) +
-          CounterRotateRight_1_2.changeBeats(3).changehands(Hands.BOTH),
+          CounterRotateRight(1,2).changeBeats(3).changehands(Hands.BOTH) +
+          CounterRotateRight(1,2).changeBeats(3).changehands(Hands.BOTH),
 
           ExtendLeft.changeBeats(2).changehands(Hands.GRIPLEFT).scale(2.0,3.5) +
           BeauWheel.scale(0.5,-0.5).skew(1.0,-0.5) +
-          CounterRotateRight_0_3.changeBeats(3).changehands(Hands.LEFT) +
-          CounterRotateRight_0_3.changeBeats(3).changehands(Hands.LEFT).skew(-1.0,0.0)
+          CounterRotateRight(0,3).changeBeats(3).changehands(Hands.LEFT) +
+          CounterRotateRight(0,3).changeBeats(3).changehands(Hands.LEFT).skew(-1.0,0.0)
       ]),
 
     AnimatedCall('As Couples Follow Your Neighbor',
@@ -458,23 +458,23 @@ import '../c3b/bingo.dart' as c3b;
       paths:[
           ExtendRight.changeBeats(2).changehands(Hands.GRIPRIGHT).scale(2.0,3.5) +
           BeauWheel.scale(0.5,0.5).skew(1.0,0.5) +
-          CounterRotateLeft_0_m3.changeBeats(3).changehands(Hands.RIGHT) +
-          CounterRotateLeft_0_m3.changeBeats(3).changehands(Hands.RIGHT).skew(-1.0,0.0),
+          CounterRotateLeft(0,-3).changeBeats(3).changehands(Hands.RIGHT) +
+          CounterRotateLeft(0,-3).changeBeats(3).changehands(Hands.RIGHT).skew(-1.0,0.0),
 
           ExtendRight.changeBeats(2).changehands(Hands.GRIPLEFT).scale(2.0,2.5) +
           BelleWheel.scale(0.5,0.5).skew(1.0,0.5) +
-          CounterRotateLeft_1_m2.changeBeats(3).changehands(Hands.BOTH) +
-          CounterRotateLeft_1_m2.changeBeats(3).changehands(Hands.BOTH),
+          CounterRotateLeft(1,-2).changeBeats(3).changehands(Hands.BOTH) +
+          CounterRotateLeft(1,-2).changeBeats(3).changehands(Hands.BOTH),
 
           Stand.changeBeats(2).changehands(Hands.RIGHT) +
           Forward.changeBeats(3).changehands(Hands.RIGHT) +
-          CounterRotateLeft_2_0.changeBeats(3).changehands(Hands.BOTH).skew(0.0,-1.0) +
-          CounterRotateLeft_2_0.changeBeats(3).changehands(Hands.BOTH).skew(1.0,-1.0),
+          CounterRotateLeft(2,0).changeBeats(3).changehands(Hands.BOTH).skew(0.0,-1.0) +
+          CounterRotateLeft(2,0).changeBeats(3).changehands(Hands.BOTH).skew(1.0,-1.0),
 
           Stand.changeBeats(2).changehands(Hands.LEFT) +
           ExtendLeft.changeBeats(3).changehands(Hands.LEFT) +
-          CounterRotateLeft_3_1.changeBeats(3).changehands(Hands.LEFT).skew(0.0,-1.0) +
-          CounterRotateLeft_3_1.changeBeats(3).changehands(Hands.LEFT).skew(2.0,-1.0)
+          CounterRotateLeft(3,1).changeBeats(3).changehands(Hands.LEFT).skew(0.0,-1.0) +
+          CounterRotateLeft(3,1).changeBeats(3).changehands(Hands.LEFT).skew(2.0,-1.0)
       ]),
 
     AnimatedCall('As Couples Right and Left Thru',

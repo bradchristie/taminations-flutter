@@ -48,13 +48,13 @@ import '../c3a/mini_chase.dart' as c3a;
     Same as Counter Rotate
     ''',
       paths:[
-          CounterRotateLeft_4_m2.changeBeats(5).changehands(Hands.LEFT),
+          CounterRotateLeft(4,-2).changeBeats(5).changehands(Hands.LEFT),
 
-          CounterRotateRight_0_m2.changeBeats(5).changehands(Hands.RIGHT),
+          CounterRotateRight(0,-2).changeBeats(5).changehands(Hands.RIGHT),
 
-          CounterRotateRight_2_0.changeBeats(5).changehands(Hands.RIGHT),
+          CounterRotateRight(2,0).changeBeats(5).changehands(Hands.RIGHT),
 
-          CounterRotateLeft_m2_4.changeBeats(5).changehands(Hands.LEFT)
+          CounterRotateLeft(-2,4).changeBeats(5).changehands(Hands.LEFT)
       ]),
 
     AnimatedCall('Concentric Box Transfer',

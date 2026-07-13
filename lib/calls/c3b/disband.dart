@@ -33,10 +33,10 @@ import '../../moves.dart';
           RunLeft +
           Forward,
 
-          CounterRotateLeft_0_2.changeBeats(3.5).changehands(Hands.LEFT).skew(-1.0,0.0) +
+          CounterRotateLeft(0,2).changeBeats(3.5).changehands(Hands.LEFT).skew(-1.0,0.0) +
           FlipRight.skew(1.0,0.0),
 
-          CounterRotateLeft_2_0.changeBeats(3.5).changehands(Hands.LEFT).skew(1.0,0.0) +
+          CounterRotateLeft(2,0).changeBeats(3.5).changehands(Hands.LEFT).skew(1.0,0.0) +
           FlipRight.skew(-1.0,0.0),
 
           RunLeft.changeBeats(2).skew(-2.0,-1.0) +
@@ -52,10 +52,10 @@ import '../../moves.dart';
           HingeRight +
           Forward_5,
 
-          CounterRotateRight_2_0.changeBeats(3.5).changehands(Hands.RIGHT).skew(1.0,0.0) +
+          CounterRotateRight(2,0).changeBeats(3.5).changehands(Hands.RIGHT).skew(1.0,0.0) +
           FlipLeft.skew(-1.0,0.0),
 
-          CounterRotateRight_0_m2.changeBeats(3.5).changehands(Hands.RIGHT).skew(-1.0,0.0) +
+          CounterRotateRight(0,-2).changeBeats(3.5).changehands(Hands.RIGHT).skew(-1.0,0.0) +
           FlipLeft.skew(1.0,0.0),
 
           Forward_2 +
@@ -73,10 +73,10 @@ import '../../moves.dart';
           RunLeft +
           Forward,
 
-          CounterRotateRight_2_0.changeBeats(3.5).changehands(Hands.RIGHT).skew(1.0,0.0) +
+          CounterRotateRight(2,0).changeBeats(3.5).changehands(Hands.RIGHT).skew(1.0,0.0) +
           FlipLeft.skew(-1.0,0.0),
 
-          CounterRotateRight_0_m2.changeBeats(3.5).changehands(Hands.RIGHT).skew(-1.0,0.0) +
+          CounterRotateRight(0,-2).changeBeats(3.5).changehands(Hands.RIGHT).skew(-1.0,0.0) +
           FlipLeft.skew(1.0,0.0),
 
           RunLeft.changeBeats(2).skew(-2.0,-1.0) +
@@ -92,10 +92,10 @@ import '../../moves.dart';
           HingeRight +
           Forward_5,
 
-          CounterRotateLeft_0_2.changeBeats(3.5).changehands(Hands.LEFT).skew(-1.0,0.0) +
+          CounterRotateLeft(0,2).changeBeats(3.5).changehands(Hands.LEFT).skew(-1.0,0.0) +
           FlipRight.skew(1.0,0.0),
 
-          CounterRotateLeft_2_0.changeBeats(3.5).changehands(Hands.LEFT).skew(1.0,0.0) +
+          CounterRotateLeft(2,0).changeBeats(3.5).changehands(Hands.LEFT).skew(1.0,0.0) +
           FlipRight.skew(-1.0,0.0),
 
           Forward_2 +
@@ -112,10 +112,10 @@ import '../../moves.dart';
           HingeLeft.changeBeats(1).scale(1.0,0.5) +
           Forward_5,
 
-          CounterRotateRight_0_m2.changeBeats(4).changehands(Hands.RIGHT) +
+          CounterRotateRight(0,-2).changeBeats(4).changehands(Hands.RIGHT) +
           FlipLeft.skew(1.0,0.0),
 
-          CounterRotateRight_2_0.changeBeats(4).changehands(Hands.RIGHT) +
+          CounterRotateRight(2,0).changeBeats(4).changehands(Hands.RIGHT) +
           FlipLeft.skew(-1.0,0.0),
 
           ExtendLeft.changeBeats(3).scale(3.0,1.5) +
@@ -137,7 +137,7 @@ import '../../moves.dart';
           HingeRight.changeBeats(1).scale(1.0,0.5) +
           Forward_5,
 
-          CounterRotateLeft_0_2.changeBeats(4).changehands(Hands.LEFT) +
+          CounterRotateLeft(0,2).changeBeats(4).changehands(Hands.LEFT) +
           FlipRight.skew(1.0,0.0),
 
           ExtendRight.changeBeats(3).scale(3.0,1.5) +
@@ -145,7 +145,7 @@ import '../../moves.dart';
           RunRight +
           Forward,
 
-          CounterRotateLeft_2_0.changeBeats(4).changehands(Hands.LEFT) +
+          CounterRotateLeft(2,0).changeBeats(4).changehands(Hands.LEFT) +
           FlipRight.skew(-1.0,0.0)
       ]),
   ];

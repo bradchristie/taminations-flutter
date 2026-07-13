@@ -38,11 +38,11 @@ import '../../moves.dart';
 
           HingeRight +
           SwingRight.skew(1.0,0.0) +
-          CounterRotateRight_0_m2.changehands(Hands.RIGHT).skew(0.0,-0.5),
+          CounterRotateRight(0,-2).changehands(Hands.RIGHT).skew(0.0,-0.5),
 
           HingeRight +
           SwingRight.skew(-1.0,0.0) +
-          CounterRotateRight_2_0.changehands(Hands.RIGHT).skew(0.0,0.5)
+          CounterRotateRight(2,0).changehands(Hands.RIGHT).skew(0.0,0.5)
       ]),
 
     AnimatedCall('Counter',
@@ -82,11 +82,11 @@ import '../../moves.dart';
 
           HingeRight +
           SwingRight.skew(1.0,0.0) +
-          CounterRotateRight_0_m2.changehands(Hands.RIGHT).skew(0.0,-0.5),
+          CounterRotateRight(0,-2).changehands(Hands.RIGHT).skew(0.0,-0.5),
 
           HingeRight +
           SwingRight.skew(-1.0,0.0) +
-          CounterRotateRight_2_0.changehands(Hands.RIGHT).skew(0.0,0.5)
+          CounterRotateRight(2,0).changehands(Hands.RIGHT).skew(0.0,0.5)
       ]),
 
     AnimatedCall('Counter',
@@ -103,11 +103,11 @@ import '../../moves.dart';
 
           HingeLeft +
           SwingLeft.skew(1.0,0.0) +
-          CounterRotateLeft_0_2.changehands(Hands.LEFT).skew(0.0,0.5),
+          CounterRotateLeft(0,2).changehands(Hands.LEFT).skew(0.0,0.5),
 
           HingeLeft +
           SwingLeft.skew(-1.0,0.0) +
-          CounterRotateLeft_2_0.changehands(Hands.LEFT).skew(0.0,-0.5)
+          CounterRotateLeft(2,0).changehands(Hands.LEFT).skew(0.0,-0.5)
       ]),
 
     AnimatedCall('Counter',
@@ -147,11 +147,11 @@ import '../../moves.dart';
 
           HingeLeft +
           SwingLeft.skew(1.0,0.0) +
-          CounterRotateLeft_0_2.changehands(Hands.LEFT).skew(0.0,0.5),
+          CounterRotateLeft(0,2).changehands(Hands.LEFT).skew(0.0,0.5),
 
           HingeLeft +
           SwingLeft.skew(-1.0,0.0) +
-          CounterRotateLeft_2_0.changehands(Hands.LEFT).skew(0.0,-0.5)
+          CounterRotateLeft(2,0).changehands(Hands.LEFT).skew(0.0,-0.5)
       ]),
 
     AnimatedCall('Left Counter',
@@ -168,11 +168,11 @@ import '../../moves.dart';
 
           HingeRight +
           SwingRight.skew(1.0,0.0) +
-          CounterRotateRight_0_m2.changehands(Hands.RIGHT).skew(0.0,-0.5),
+          CounterRotateRight(0,-2).changehands(Hands.RIGHT).skew(0.0,-0.5),
 
           HingeRight +
           SwingRight.skew(-1.0,0.0) +
-          CounterRotateRight_2_0.changehands(Hands.RIGHT).skew(0.0,0.5)
+          CounterRotateRight(2,0).changehands(Hands.RIGHT).skew(0.0,0.5)
       ]),
 
     AnimatedCall('Left Counter',
@@ -212,11 +212,11 @@ import '../../moves.dart';
 
           HingeRight +
           SwingRight.skew(1.0,0.0) +
-          CounterRotateRight_0_m2.changehands(Hands.RIGHT).skew(0.0,-0.5),
+          CounterRotateRight(0,-2).changehands(Hands.RIGHT).skew(0.0,-0.5),
 
           HingeRight +
           SwingRight.skew(-1.0,0.0) +
-          CounterRotateRight_2_0.changehands(Hands.RIGHT).skew(0.0,0.5)
+          CounterRotateRight(2,0).changehands(Hands.RIGHT).skew(0.0,0.5)
       ]),
 
     AnimatedCall('Left Counter',
@@ -233,11 +233,11 @@ import '../../moves.dart';
 
           HingeLeft +
           SwingLeft.skew(1.0,0.0) +
-          CounterRotateLeft_0_2.changehands(Hands.LEFT).skew(0.0,0.5),
+          CounterRotateLeft(0,2).changehands(Hands.LEFT).skew(0.0,0.5),
 
           HingeLeft +
           SwingLeft.skew(-1.0,0.0) +
-          CounterRotateLeft_2_0.changehands(Hands.LEFT).skew(0.0,-0.5)
+          CounterRotateLeft(2,0).changehands(Hands.LEFT).skew(0.0,-0.5)
       ]),
 
     AnimatedCall('Left Counter',
@@ -277,11 +277,11 @@ import '../../moves.dart';
 
           HingeLeft +
           SwingLeft.skew(1.0,0.0) +
-          CounterRotateLeft_0_2.changehands(Hands.LEFT).skew(0.0,0.5),
+          CounterRotateLeft(0,2).changehands(Hands.LEFT).skew(0.0,0.5),
 
           HingeLeft +
           SwingLeft.skew(-1.0,0.0) +
-          CounterRotateLeft_2_0.changehands(Hands.LEFT).skew(0.0,-0.5)
+          CounterRotateLeft(2,0).changehands(Hands.LEFT).skew(0.0,-0.5)
       ]),
 
     AnimatedCall('Scoot and Counter',

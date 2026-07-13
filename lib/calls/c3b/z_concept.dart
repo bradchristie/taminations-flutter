@@ -98,13 +98,13 @@ import '../../moves.dart';
   ]),
       group:'(From offset lines)',
       paths:[
-          CounterRotateRight_2_0.changeBeats(3).scale(1.25,1.0).skew(0.0,2.0),
+          CounterRotateRight(2,0).changeBeats(3).scale(1.25,1.0).skew(0.0,2.0),
 
-          CounterRotateRight_0_m2.changeBeats(3).skew(-0.5,0.0),
+          CounterRotateRight(0,-2).changeBeats(3).skew(-0.5,0.0),
 
-          CounterRotateRight_2_0.changeBeats(3).scale(1.25,1.0).skew(0.0,2.0),
+          CounterRotateRight(2,0).changeBeats(3).scale(1.25,1.0).skew(0.0,2.0),
 
-          CounterRotateRight_0_m2.changeBeats(3).skew(-0.5,0.0)
+          CounterRotateRight(0,-2).changeBeats(3).skew(-0.5,0.0)
       ]),
 
     AnimatedCall('(From offset lines) "Z" Swap Around',
@@ -170,13 +170,13 @@ import '../../moves.dart';
   ]),
       group:'(From offset columns)',
       paths:[
-          CounterRotateRight_0_m2.changeBeats(3).skew(2.0,-0.5),
+          CounterRotateRight(0,-2).changeBeats(3).skew(2.0,-0.5),
 
-          CounterRotateRight_2_0.changeBeats(3).skew(0.0,0.5),
+          CounterRotateRight(2,0).changeBeats(3).skew(0.0,0.5),
 
-          CounterRotateRight_2_0.changeBeats(3).skew(0.0,-2.5),
+          CounterRotateRight(2,0).changeBeats(3).skew(0.0,-2.5),
 
-          CounterRotateRight_2_0.changeBeats(3).skew(0.0,0.5)
+          CounterRotateRight(2,0).changeBeats(3).skew(0.0,0.5)
       ]),
 
     AnimatedCall('(From offset columns) "Z" Split Sidetrack',
@@ -189,19 +189,19 @@ import '../../moves.dart';
       group:'(From offset columns)',
       paths:[
           QuarterRight.skew(0.0,0.5) +
-          CounterRotateRight_2_0.changeBeats(3).skew(0.5,2.0) +
+          CounterRotateRight(2,0).changeBeats(3).skew(0.5,2.0) +
           QuarterRight.skew(0.0,0.5),
 
           QuarterLeft.skew(0.0,0.5) +
-          CounterRotateRight_0_m2.changeBeats(3).skew(-0.5,0.0) +
+          CounterRotateRight(0,-2).changeBeats(3).skew(-0.5,0.0) +
           QuarterRight.skew(0.0,0.5),
 
           QuarterRight.skew(0.0,0.5) +
-          CounterRotateRight_2_0.changeBeats(3).skew(0.5,2.0) +
+          CounterRotateRight(2,0).changeBeats(3).skew(0.5,2.0) +
           QuarterRight.skew(0.0,0.5),
 
           QuarterLeft.skew(0.0,0.5) +
-          CounterRotateRight_0_m2.changeBeats(3).skew(-0.5,0.0) +
+          CounterRotateRight(0,-2).changeBeats(3).skew(-0.5,0.0) +
           QuarterRight.skew(0.0,0.5)
       ]),
 

@@ -33,29 +33,23 @@ import '../../moves.dart';
   ]),
       from:'Right-Hand Waves',
       taminator: '''
-    Click the Paths button to see the concentric circles the dancers follow.
+    Turn on Paths in Settings to see the concentric circles the dancers follow.
     ''',
       paths:[
-          CounterRotateRight_4p5_m1p5.changeBeats(5),
-
-          CounterRotateLeft_m0p5_2p5.changeBeats(5).changehands(Hands.LEFT),
-
-          CounterRotateLeft_2p5_m0p5.changeBeats(5).changehands(Hands.LEFT),
-
-          CounterRotateRight_1p5_m4p5.changeBeats(5)
+        CounterRotateRight(4.5,-1.5).changeBeats(5),
+        CounterRotateLeft(-0.5,2.5).changeBeats(5).changehands(Hands.LEFT),
+        CounterRotateLeft(2.5,-0.5).changeBeats(5).changehands(Hands.LEFT),
+        CounterRotateRight(1.5,-4.5).changeBeats(5)
       ]),
 
     AnimatedCall('Counter Rotate',
-      formation:Formation('Ocean Waves LH BGGB'),
+      formation:Formation('Ocean Waves LH BGGB Compact'),
       from:'Left-Hand Waves',
       paths:[
-          CounterRotateLeft_1_5.changeBeats(5),
-
-          CounterRotateRight_3_1.changeBeats(5).changehands(Hands.RIGHT),
-
-          CounterRotateRight_m1_m3.changeBeats(5).changehands(Hands.RIGHT),
-
-          CounterRotateLeft_5_1.changeBeats(5)
+        CounterRotateLeft(1.5,4.5).changeBeats(5),
+        CounterRotateRight(2.5,0.5).changeBeats(5).changehands(Hands.RIGHT),
+        CounterRotateRight(-0.5,-2.5).changeBeats(5).changehands(Hands.RIGHT),
+        CounterRotateLeft(4.5,1.5).changeBeats(5)
       ]),
 
     AnimatedCall('Counter Rotate',
@@ -82,22 +76,22 @@ import '../../moves.dart';
       paths:[
           LeadRight.changeBeats(5).scale(3.0,3.0),
 
-          CounterRotateRight_5_m1.changeBeats(5),
+          CounterRotateRight(5,-1).changeBeats(5),
 
           HingeLeft.changeBeats(5),
 
-          CounterRotateRight_1_m5.changeBeats(5)
+          CounterRotateRight(1,-5).changeBeats(5)
       ]),
 
     AnimatedCall('Counter Rotate',
       formation:Formation('Diamonds RH PTP Girl Points'),
       from:'Point to Point Diamonds',
       paths:[
-          CounterRotateRight_4_2.changeBeats(5).changehands(Hands.RIGHT),
+          CounterRotateRight(4,2).changeBeats(5).changehands(Hands.RIGHT),
 
           HingeLeft.changeBeats(5),
 
-          CounterRotateRight_m2_m4.changeBeats(5).changehands(Hands.RIGHT),
+          CounterRotateRight(-2,-4).changeBeats(5).changehands(Hands.RIGHT),
 
           LeadRight.changeBeats(5).scale(5.0,5.0)
       ]),
@@ -162,26 +156,26 @@ import '../../moves.dart';
       formation:Formation('Two-Faced Lines RH'),
       from:'Right-Hand Two-Faced Lines',
       paths:[
-          CounterRotateRight_5_m1.changeBeats(5).changehands(Hands.RIGHT),
+          CounterRotateRight(5,-1).changeBeats(5).changehands(Hands.RIGHT),
 
-          CounterRotateRight_3_1.changeBeats(5).changehands(Hands.BOTH),
+          CounterRotateRight(3,1).changeBeats(5).changehands(Hands.BOTH),
 
-          CounterRotateRight_m1_m3.changeBeats(5).changehands(Hands.BOTH),
+          CounterRotateRight(-1,-3).changeBeats(5).changehands(Hands.BOTH),
 
-          CounterRotateRight_1_m5.changeBeats(5).changehands(Hands.RIGHT)
+          CounterRotateRight(1,-5).changeBeats(5).changehands(Hands.RIGHT)
       ]),
 
     AnimatedCall('Counter Rotate',
       formation:Formation('Two-Faced Lines LH'),
       from:'Left-Hand Two-Faced Lines',
       paths:[
-          CounterRotateLeft_1_5.changeBeats(5).changehands(Hands.LEFT),
+          CounterRotateLeft(1,5).changeBeats(5).changehands(Hands.LEFT),
 
-          CounterRotateLeft_m1_3.changeBeats(5).changehands(Hands.BOTH),
+          CounterRotateLeft(-1,3).changeBeats(5).changehands(Hands.BOTH),
 
-          CounterRotateLeft_3_m1.changeBeats(5).changehands(Hands.BOTH),
+          CounterRotateLeft(3,-1).changeBeats(5).changehands(Hands.BOTH),
 
-          CounterRotateLeft_5_1.changeBeats(5).changehands(Hands.LEFT)
+          CounterRotateLeft(5,1).changeBeats(5).changehands(Hands.LEFT)
       ]),
 
     AnimatedCall('Counter Rotate',
@@ -203,11 +197,11 @@ import '../../moves.dart';
       formation:Formation('Hourglass Facing RH Box'),
       from:'Facing Hourglass',
       paths:[
-          CounterRotateRight_1_m5.changeBeats(5),
+          CounterRotateRight(1,-5).changeBeats(5),
 
           LeadLeft.changeBeats(5).scale(3.0,3.0),
 
-          CounterRotateRight_5_m1.changeBeats(5),
+          CounterRotateRight(5,-1).changeBeats(5),
 
           HingeLeft.changeBeats(5)
       ]),
@@ -216,26 +210,26 @@ import '../../moves.dart';
       formation:Formation('Column RH GBGB'),
       from:'Right-Hand Columns',
       paths:[
-          CounterRotateRight_m2_m4.changeBeats(5).changehands(Hands.RIGHT),
+          CounterRotateRight(-2,-4).changeBeats(5).changehands(Hands.RIGHT),
 
-          CounterRotateRight_0_m2.changeBeats(5).changehands(Hands.RIGHT),
+          CounterRotateRight(0,-2).changeBeats(5).changehands(Hands.RIGHT),
 
-          CounterRotateRight_2_0.changeBeats(5).changehands(Hands.RIGHT),
+          CounterRotateRight(2,0).changeBeats(5).changehands(Hands.RIGHT),
 
-          CounterRotateRight_4_2.changeBeats(5).changehands(Hands.RIGHT)
+          CounterRotateRight(4,2).changeBeats(5).changehands(Hands.RIGHT)
       ]),
 
     AnimatedCall('Counter Rotate',
       formation:Formation('Column LH GBGB'),
       from:'Left-Hand Columns',
       paths:[
-          CounterRotateLeft_4_m2.changeBeats(5).changehands(Hands.LEFT),
+          CounterRotateLeft(4,-2).changeBeats(5).changehands(Hands.LEFT),
 
-          CounterRotateLeft_2_0.changeBeats(5).changehands(Hands.LEFT),
+          CounterRotateLeft(2,0).changeBeats(5).changehands(Hands.LEFT),
 
-          CounterRotateLeft_0_2.changeBeats(5).changehands(Hands.LEFT),
+          CounterRotateLeft(0,2).changeBeats(5).changehands(Hands.LEFT),
 
-          CounterRotateLeft_m2_4.changeBeats(5).changehands(Hands.LEFT)
+          CounterRotateLeft(-2,4).changeBeats(5).changehands(Hands.LEFT)
       ]),
 
     AnimatedCall('Counter Rotate',
@@ -247,26 +241,26 @@ import '../../moves.dart';
   ]),
       from:'Magic Columns, Right-Hand Centers',
       paths:[
-          CounterRotateLeft_4_m2.changeBeats(5).changehands(Hands.LEFT),
+          CounterRotateLeft(4,-2).changeBeats(5).changehands(Hands.LEFT),
 
-          CounterRotateRight_0_m2.changeBeats(5).changehands(Hands.RIGHT),
+          CounterRotateRight(0,-2).changeBeats(5).changehands(Hands.RIGHT),
 
-          CounterRotateRight_2_0.changeBeats(5).changehands(Hands.RIGHT),
+          CounterRotateRight(2,0).changeBeats(5).changehands(Hands.RIGHT),
 
-          CounterRotateLeft_m2_4.changeBeats(5).changehands(Hands.LEFT)
+          CounterRotateLeft(-2,4).changeBeats(5).changehands(Hands.LEFT)
       ]),
 
     AnimatedCall('Counter Rotate',
       formation:Formation('Magic Column LH'),
       from:'Magic Columnns, Left-Hand Centers',
       paths:[
-          CounterRotateRight_m2_m4.changeBeats(5).changehands(Hands.RIGHT),
+          CounterRotateRight(-2,-4).changeBeats(5).changehands(Hands.RIGHT),
 
-          CounterRotateLeft_2_0.changeBeats(5).changehands(Hands.LEFT),
+          CounterRotateLeft(2,0).changeBeats(5).changehands(Hands.LEFT),
 
-          CounterRotateLeft_0_2.changeBeats(5).changehands(Hands.LEFT),
+          CounterRotateLeft(0,2).changeBeats(5).changehands(Hands.LEFT),
 
-          CounterRotateRight_4_2.changeBeats(5).changehands(Hands.RIGHT)
+          CounterRotateRight(4,2).changeBeats(5).changehands(Hands.RIGHT)
       ]),
 
     AnimatedCall('Counter Rotate',
@@ -278,13 +272,13 @@ import '../../moves.dart';
   ]),
       from:'Parallelogram',
       paths:[
-          CounterRotateRight_3_1.changehands(Hands.RIGHT),
+          CounterRotateRight(3,1).changehands(Hands.RIGHT),
 
-          CounterRotateRight_m1_m3.changehands(Hands.RIGHT),
+          CounterRotateRight(-1,-3).changehands(Hands.RIGHT),
 
-          CounterRotateLeft_5_1,
+          CounterRotateLeft(5,1),
 
-          CounterRotateRight_2_m4.scale(1.5,1.75)
+          CounterRotateRight(2,-4).scale(1.5,1.75)
       ]),
 
     AnimatedCall('Points Counter Rotate',
@@ -293,11 +287,11 @@ import '../../moves.dart';
       paths:[
           Path(),
 
-          CounterRotateRight_5_m1.changeBeats(5).skew(1.0,0.0),
+          CounterRotateRight(5,-1).changeBeats(5).skew(1.0,0.0),
 
           Path(),
 
-          CounterRotateRight_1_m5.changeBeats(5).skew(1.0,0.0)
+          CounterRotateRight(1,-5).changeBeats(5).skew(1.0,0.0)
       ]),
   ];
 

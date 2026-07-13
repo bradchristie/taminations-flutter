@@ -30,19 +30,19 @@ import '../../moves.dart';
       paths:[
           ExtendLeft.changeBeats(2).changehands(Hands.RIGHT).scale(1.0,2.0) +
           Forward.changehands(Hands.RIGHT) +
-          CounterRotateRight_4_m2.changeBeats(4).changehands(Hands.RIGHT).skew(0.0,1.0),
+          CounterRotateRight(4,-2).changeBeats(4).changehands(Hands.RIGHT).skew(0.0,1.0),
 
           ExtendLeft.changeBeats(2).changehands(Hands.LEFT).scale(1.0,2.0) +
           Forward.changehands(Hands.LEFT) +
-          CounterRotateRight_2_0.changeBeats(4).changehands(Hands.BOTH).skew(0.0,1.0),
+          CounterRotateRight(2,0).changeBeats(4).changehands(Hands.BOTH).skew(0.0,1.0),
 
           ExtendLeft.changeBeats(2).changehands(Hands.RIGHT).scale(1.0,2.0) +
           Forward.changehands(Hands.RIGHT) +
-          CounterRotateRight_2_m4.changeBeats(4).changehands(Hands.RIGHT).skew(0.0,-1.0),
+          CounterRotateRight(2,-4).changeBeats(4).changehands(Hands.RIGHT).skew(0.0,-1.0),
 
           ExtendLeft.changeBeats(2).changehands(Hands.LEFT).scale(1.0,2.0) +
           Forward.changehands(Hands.LEFT) +
-          CounterRotateRight_0_m2.changeBeats(4).changehands(Hands.BOTH).skew(0.0,-1.0)
+          CounterRotateRight(0,-2).changeBeats(4).changehands(Hands.BOTH).skew(0.0,-1.0)
       ]),
 
     AnimatedCall('Centers work Solid, all Swing Thru',
@@ -88,14 +88,14 @@ import '../../moves.dart';
       group:' ',
       paths:[
           DodgeRight +
-          CounterRotateRight_0_m2.changeBeats(3).changehands(Hands.RIGHT) +
-          CounterRotateRight_0_m2.changeBeats(3).changehands(Hands.RIGHT),
+          CounterRotateRight(0,-2).changeBeats(3).changehands(Hands.RIGHT) +
+          CounterRotateRight(0,-2).changeBeats(3).changehands(Hands.RIGHT),
 
           RunLeft.changeBeats(6).scale(3.0,3.0),
 
           DodgeRight +
-          CounterRotateRight_2_0.changeBeats(3).changehands(Hands.RIGHT) +
-          CounterRotateRight_2_0.changeBeats(3).changehands(Hands.RIGHT),
+          CounterRotateRight(2,0).changeBeats(3).changehands(Hands.RIGHT) +
+          CounterRotateRight(2,0).changeBeats(3).changehands(Hands.RIGHT),
 
           DodgeRight +
           LeadRight.changeBeats(3).scale(3.0,3.0) +
@@ -106,11 +106,11 @@ import '../../moves.dart';
       formation:Formation('Galaxy RH GP'),
       from:'Galaxy',group:' ',
       paths:[
-          CounterRotateRight_0_m2.changeBeats(4).skew(2.0,0.0),
+          CounterRotateRight(0,-2).changeBeats(4).skew(2.0,0.0),
 
           RunRight.changeBeats(4),
 
-          CounterRotateRight_2_0.changeBeats(4).skew(2.0,0.0),
+          CounterRotateRight(2,0).changeBeats(4).skew(2.0,0.0),
 
           LeadRight.changeBeats(4).scale(5.2,3.1)
       ]),

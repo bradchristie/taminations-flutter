@@ -107,16 +107,16 @@ import '../../moves.dart';
       formation:Formation('Lines Facing Out'),
       group:' ',
       paths:[
-          CounterRotateRight_m2_0.changehands(Hands.LEFT) +
+          CounterRotateRight(-2,0).changehands(Hands.LEFT) +
           UmTurnRight.changeBeats(3).changehands(Hands.LEFT).skew(-1.0,-1.0),
 
-          CounterRotateRight_0_m2.changehands(Hands.RIGHT) +
+          CounterRotateRight(0,-2).changehands(Hands.RIGHT) +
           RunRight.changehands(Hands.RIGHT).scale(2.0,2.0).skew(-1.0,-1.0),
 
-          CounterRotateRight_m2_0.changehands(Hands.LEFT).skew(1.0,-1.0) +
+          CounterRotateRight(-2,0).changehands(Hands.LEFT).skew(1.0,-1.0) +
           Forward_2.changeBeats(3).changehands(Hands.LEFT),
 
-          CounterRotateRight_0_m2.changehands(Hands.RIGHT).skew(1.0,-1.0) +
+          CounterRotateRight(0,-2).changehands(Hands.RIGHT).skew(1.0,-1.0) +
           Forward_2.changeBeats(3).changehands(Hands.RIGHT)
       ]),
 
