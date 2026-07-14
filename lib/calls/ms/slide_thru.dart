@@ -28,7 +28,7 @@ import '../../moves.dart';
       formation:Formation('Facing Couples Compact'),
       from:'Facing Couples',isGenderSpecific:true,difficulty: 1,
       taminator: '''
-      Slide Thru is just Star Thru with no hands.
+      For boys facing girls, Slide Thru is just Star Thru with no hands.
     ''',
       paths:[
           ExtendLeft.changeBeats(2).scale(1.5,0.5) +
