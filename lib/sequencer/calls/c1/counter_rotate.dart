@@ -39,6 +39,7 @@ class CounterRotate extends Action {
     for (var d in ctx.dancers) {
       d.path = d.path.changeBeats(maxBeats);
     }
+    ctx.noSnap();
   }
 
   @override

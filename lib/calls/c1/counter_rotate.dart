@@ -32,6 +32,7 @@ import '../../moves.dart';
         Dancer.fromData(gender:Gender.BOY,x:-3,y:1.5,angle:90),
   ]),
       from:'Right-Hand Waves',
+        notForSequencer: true,
       taminator: '''
     Turn on Paths in Settings to see the concentric circles the dancers follow.
     ''',
@@ -45,6 +46,7 @@ import '../../moves.dart';
     AnimatedCall('Counter Rotate',
       formation:Formation('Ocean Waves LH BGGB Compact'),
       from:'Left-Hand Waves',
+        notForSequencer: true,
       paths:[
         CounterRotateLeft(1.5,4.5).changeBeats(5),
         CounterRotateRight(2.5,0.5).changeBeats(5).changehands(Hands.RIGHT),
