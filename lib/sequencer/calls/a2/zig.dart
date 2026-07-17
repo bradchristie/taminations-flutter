@@ -21,7 +21,7 @@
 import '../../../moves.dart';
 import '../common.dart';
 
-//  This is for the one-word calls Zig and Zag
+//  This is for the now-obsolete one-word calls Zig and Zag
 //  Zig-Zag etc are handled in another class
 class Zig extends Action {
 
@@ -32,19 +32,9 @@ class Zig extends Action {
 
   @override
   void performCall(CallContext ctx) {
-    if (ctx.dancers.none((d) => d.data.leader))
-      throw CallError('No leaders in this formation');
-    super.performCall(ctx);
-  }
-
-  @override
-  Path performOne(Dancer d, CallContext ctx) {
-    var move = Stand;
-    if (d.data.leader && name == 'Zig')
-      move = QuarterRight;
-    if (d.data.leader && name == 'Zag')
-      move = QuarterLeft;
-    return move;
+    throw CallError('Zig and Zag cannot be used alone. '
+        'Instead use Leaders Face Right or Left.'
+    );
   }
 
 }
