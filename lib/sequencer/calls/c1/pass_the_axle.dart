@@ -74,7 +74,7 @@ class TheAxle extends Action with CallWithParts, ButCall {
   @override final level = LevelData.C1;
   @override var butCall = 'Swing';
   @override var help = '''The Axle is a 3-part call:
-  1.  Centers Pass Thru, others Cross Cast Back
+  1.  Centers Pass Thru if they can, others Cross Cast Back
   2.  Swing
   3.  Centers Trade
 Part 2 can be replace with [But] Cast Off 3/4
@@ -85,7 +85,10 @@ Part 3 can be replaced with But (another call)''';
 
   @override
    void performPart1(CallContext ctx) {
-    ctx.applyCalls('Centers Pass Thru While Ends Cross Cast Back');
+    if (ctx.center(4).every((d) => d.isFacingIn))
+      ctx.applyCalls('Centers Pass Thru While Ends Cross Cast Back');
+    else
+      ctx.applyCalls('Ends Cross Cast Back');
     ctx.matchStandardFormation();
   }
 
