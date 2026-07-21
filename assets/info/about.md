@@ -23,16 +23,17 @@ Call pronunciations provided by
 
 ---
 
-## Taminations version 1.6.108 built 2026-06-03
+## Taminations version 1.6.109 built 2026-07-20
 Copyright 2026 by Brad Christie.  
 This is free software, and you are welcome to modify and redistribute it
 under the terms of the [GNU GPL license](http://www.gnu.org/licenses/gpl.html).  
 
 ## What's New
-* Better animations for Grand Chain Eight
+* Update definition and animations for Zig Zag
+* Minor improvements for some animations for Counter Rotate and Tandem Concept
 * Sequencer:
-  * Don't try to repair unusual formations after Fold/Cross Fold
-  * Fix some uses of Fascinating
+  * Fix for some variations of The Axle
+  * Mark Reverse Wheel Around as Basic-2 not A-1
 
 For a detailed history of changes, view the
 [Git log](https://github.com/bradchristie/taminations-flutter/commits/main)

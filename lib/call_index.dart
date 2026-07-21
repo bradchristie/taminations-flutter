@@ -1443,7 +1443,7 @@ var callIndex = [
 
   CallEntry('Z Axle','c3b','c3b/z_axle',c3b.ZAxle,),
   CallEntry('Z Concept','c3b','c3b/z_concept',c3b.ZConcept,),
-  CallEntry('Zig and Zag','a2','a2/zig_and_zag',a2.ZigAndZag,),
+  CallEntry('Zig Zag','a2','a2/zig_and_zag',a2.ZigAndZag,),
   CallEntry('Zing','c1','c1/zing',c1.Zing,),
   CallEntry('Zip Code','c2','c2/zip_code',c2.ZipCode,),
   CallEntry('Zoom','b2','b2/zoom',b2.Zoom,'b2/zoom.mp3'),
