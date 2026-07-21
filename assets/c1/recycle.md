@@ -70,7 +70,7 @@ Where not otherwise ambiguous, it is permissible to call
 simply, "Recycle" when you mean "Split Recycle", "Box Recycle" 
 or "Facing Recycle".
 For example, from Columns, you could call
-"Outsides [Partner Tag](../a1/partner_tag.md)
+"Outsides [Partner Tag](../plus/partner_tag.md)
 while the centers Recycle" and the meaning is clear.
 From Parallel Waves, though, "Recycle" and "Split Recycle"
 are different because the first applies Recycle to

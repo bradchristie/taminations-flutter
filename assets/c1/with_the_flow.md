@@ -4,7 +4,7 @@
 From Facing Couples, with each couple having sideways body flow--as a
 couple--resulting from the previous call or with exactly one dancer in each
 couple moving forward: This is a flowing 
-[Walk and Dodge](../ms/walk_and_dodge.md). The leading dancer in
+[Walk and Dodge](../plus/walk_and_dodge.md). The leading dancer in
 flow direction walks forward, as the other dancer dodges into the space being
 vacated.
 

@@ -23,7 +23,7 @@ From a appropriate T-Bone Box:
 Those facing right [Pull By](../b1/pull_by.md) and
 [Quarter In](../a1/quarter_in.md);
 all Left [Spin the Top](../ms/spin_the_top.md);
-all Left [Turn Thru](../ms/turn_thru.md).
+all Left [Turn Thru](../plus/turn_thru.md).
 Ends in Back-to-Back Couples.
 
 ## Split Dixie Style to a Wave

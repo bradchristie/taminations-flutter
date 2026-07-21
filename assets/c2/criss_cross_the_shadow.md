@@ -7,7 +7,7 @@ with their original inside hands, [Cast 3/4](../ms/cast_off_three_quarters.md) a
 [Spread](../plus/anything_and_spread.md); Centers Facing In Cross Extend, 
 [Hinge](../ms/hinge.md) with each other, and 
 [Extend](../b2/extend.md); Centers Facing Out
-[Cloverleaf](../ms/cloverleaf.md) but
+[Cloverleaf](../plus/cloverleaf.md) but
 Cross to the other center. 
 Centers remain Centers and Ends remain Ends. 
 

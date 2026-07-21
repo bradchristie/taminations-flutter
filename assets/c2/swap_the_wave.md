@@ -4,7 +4,7 @@
 ## Swap the Wave
 
 From a Right-Hand Wave: Centers step forward while the Ends
-[Tag the Line](../a1/partner_tag.md)
+[Tag the Line](../plus/partner_tag.md)
 Face Right, and step forward. Finishes as Back-to-Back Couples.
 
 From a Left-Hand Wave: Ends Step Thru while the Centers 

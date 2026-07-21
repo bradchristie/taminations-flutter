@@ -15,7 +15,7 @@ Common applications include
 [Circulate](../b1/circulate.md),
 [Split Circulate](../b1/circulate.md),
 [In Roll Circulate](../a2/in_roll_circulate.md),
-[Walk and Dodge](../ms/walk_and_dodge.md),
+[Walk and Dodge](../plus/walk_and_dodge.md),
 [Scoot Back](../ms/scoot_back.md), and
 [Acey Deucey](../plus/acey_deucey.md).
 

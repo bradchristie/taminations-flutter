@@ -3,7 +3,7 @@
 
 From a line or wave: Designated dancers [Cross Run](../b2/run.md) and
 [Roll](../plus/anything_and_roll.md); 
-others [Partner Tag](../a1/partner_tag.md) 
+others [Partner Tag](../plus/partner_tag.md) 
 (i.e., face the adjacent cross-runner and step forward to fill the vacated spot).
 
 > 

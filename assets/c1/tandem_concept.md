@@ -12,7 +12,7 @@ between the dancers in a tandem. For example,
 > ![alt](tandem_concept_1c.png)
 > 
 
-or "Tandem [Quarter Thru](../a1/quarter_thru.md)":
+or "Tandem [Quarter Thru](../plus/quarter_thru.md)":
 
 > 
 > ![alt](tandem_concept_2a.png)

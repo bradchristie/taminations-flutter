@@ -18,7 +18,7 @@ From Parallel Lines or Two-Faced Lines composed entirely of Couples:
 
 From Parallel Lines or Two-Faced Lines, composed entirely of Couples:
 ***[Couples Hinge](../ms/hinge.md);***
-***[Triple Trade](../a1/triple_trade.md);***
+***[Triple Trade](../plus/triple_trade.md);***
 ***[As Couples](../a1/as_couples.md) [Step and Fold](../c1/step_and_fold.md)***.
 
 ## Single Cross and Wheel

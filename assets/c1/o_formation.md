@@ -28,7 +28,7 @@ For example, "O [Double Pass Thru](../b1/double_pass_thru.md)":
 > ![alt](o_formation_2.png)
 > 
 
-O [Walk and Dodge](../ms/walk_and_dodge.md):
+O [Walk and Dodge](../plus/walk_and_dodge.md):
 
 
 > 

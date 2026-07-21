@@ -6,7 +6,7 @@
 * **[Beaus and Belles](../a1/belles_and_beaus.md)** - follows the A-1 definition
 * **[Cast a Shadow](../a1/cast_a_shadow.md)** - you can tell the Centers to Go 3/4
 * **[Chain Reaction](../a1/cast_a_shadow.md)** - is a 4-Part Call with a Star and But
-* **[(Cross) Clover and Anything](../a1/clover_and_anything.md)** - 
+* **[(Cross) Clover and Anything](../plus/clover_and_anything.md)** - 
 the Anything call must apply to the center 4 dancers only.
 * **[Cross](../a1/anything_and_cross.md)** -
 You can give Cross as an independent call, or
@@ -16,8 +16,8 @@ By default the trailers Cross or you can designate the dancers to Cross.
 in addition to any general line, can also be applied to 4 selected dancers. 
 Of course these dancers need to form a Cross Over Circulate path.
 * **[Mix](../a1/mix.md)** - is a 2-Part Call
-* **[Pass the Sea](../a1/pass_the_sea.md)** - is a 3-Part Call
-* **[(Grand) (Left) (Three) Quarter Thru](../a1/quarter_thru.md)** -
+* **[Pass the Sea](../plus/pass_the_sea.md)** - is a 3-Part Call
+* **[(Grand) (Left) (Three) Quarter Thru](../plus/quarter_thru.md)** -
 is a 2-Part Call
 * **[Square Chain Thru](../a1/square_chain_thru.md)** - is a 3-Part Call:
   Pass Thru and 1/4 In; Left Swing Thru; Left Turn Thru

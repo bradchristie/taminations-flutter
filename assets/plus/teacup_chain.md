@@ -2,7 +2,7 @@
 # Teacup Chain
 
 Starting formation - Static Square, or proceeding from everyone
-doing a [Left Arm Turn](../ms/turn_thru.md) with partner. 
+doing a [Left Arm Turn](turn_thru.md) with partner. 
 
 The caller will specify two ladies to move to the center at the start of the call,
 e.g., "Head ladies center for a Teacup Chain". For the rest of the definition,
@@ -10,9 +10,9 @@ these two ladies will be called the "specified ladies".
 
 ***The specified ladies (both Head ladies or both Side ladies) move to the center and
 [Star Right](../b1/star.md) three-quarters to meet their corners for a
-[Left Arm Turn](../ms/turn_thru.md). At the same time, the other two ladies move to the right
+[Left Arm Turn](turn_thru.md). At the same time, the other two ladies move to the right
 around the perimeter of the square to their corners,
-and do a [Right Arm Turn](../ms/turn_thru.md).***
+and do a [Right Arm Turn](turn_thru.md).***
 
 ***Following the Arm Turns, the specified ladies move around the perimeter of the square
 to their new corners for a Right Arm Turn, while the other ladies go to the center and

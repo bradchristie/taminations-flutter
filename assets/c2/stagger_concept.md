@@ -31,7 +31,7 @@ path
 Common calls used with the Stagger Concept include
 [Circulate](../b1/circulate.md),
 [Split Circulate](../b1/circulate.md),
-[Walk and Dodge](../ms/walk_and_dodge.md),
+[Walk and Dodge](../plus/walk_and_dodge.md),
 [Peel and Trail](../a2/peel_and_trail.md),
 and [Trade By](../b2/trade_by.md).
 

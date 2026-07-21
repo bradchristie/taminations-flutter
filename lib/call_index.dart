@@ -19,7 +19,8 @@ import 'calls/a1/belles_and_beaus.dart' as a1;
 import 'calls/a1/brace_thru.dart' as a1;
 import 'calls/a1/cast_a_shadow.dart' as a1;
 import 'calls/a1/chain_reaction.dart' as a1;
-import 'calls/a1/clover_and_anything.dart' as a1;
+import 'calls/plus/clover_and_anything.dart' as plus;
+import 'calls/a1/cross_clover_and_anything.dart' as a1;
 import 'calls/a1/cross_over_circulate.dart' as a1;
 import 'calls/a1/cross_trail_thru.dart' as a1;
 import 'calls/a1/cycle_and_wheel.dart' as a1;
@@ -30,22 +31,22 @@ import 'calls/a1/explode_and_anything.dart' as a1;
 import 'calls/a1/explode_the_line.dart' as a1;
 import 'calls/a1/fractional_tops.dart' as a1;
 import 'calls/a1/grand_follow_your_neighbor.dart' as a1;
-import 'calls/a1/grand_quarter_thru.dart' as a1;
+import 'calls/plus/grand_quarter_thru.dart' as plus;
 import 'calls/a1/horseshoe_turn.dart' as a1;
 import 'calls/a1/left.dart' as a1;
 import 'calls/a1/linear_cycle.dart' as a1;
 import 'calls/a1/lock_it.dart' as a1;
 import 'calls/a1/mix.dart' as a1;
 import 'calls/a1/pair_off.dart' as a1;
-import 'calls/a1/partner_hinge.dart' as a1;
-import 'calls/a1/partner_tag.dart' as a1;
+import 'calls/plus/partner_hinge.dart' as plus;
+import 'calls/plus/partner_tag.dart' as plus;
 import 'calls/a1/pass_in.dart' as a1;
-import 'calls/a1/pass_the_sea.dart' as a1;
+import 'calls/plus/pass_the_sea.dart' as plus;
 import 'calls/a1/quarter_in.dart' as a1;
-import 'calls/a1/quarter_thru.dart' as a1;
+import 'calls/plus/quarter_thru.dart' as plus;
 import 'calls/a1/reverse.dart' as a1;
 import 'calls/a1/right_roll_to_a_wave.dart' as a1;
-import 'calls/a1/scoot_and_dodge.dart' as a1;
+import 'calls/plus/scoot_and_dodge.dart' as plus;
 import 'calls/a1/six_two_acey_deucey.dart' as a1;
 import 'calls/a1/split_square_chain_thru.dart' as a1;
 import 'calls/a1/split_square_thru.dart' as a1;
@@ -54,7 +55,7 @@ import 'calls/a1/step_and_slide.dart' as a1;
 import 'calls/a1/swap_around.dart' as a1;
 import 'calls/a1/transfer_the_column.dart' as a1;
 import 'calls/a1/triple_cross.dart' as a1;
-import 'calls/a1/triple_trade.dart' as a1;
+import 'calls/plus/triple_trade.dart' as plus;
 import 'calls/a1/turn_and_deal.dart' as a1;
 import 'calls/a1/wheel_thru.dart' as a1;
 import 'calls/a2/all_4_all_8.dart' as a2;
@@ -83,7 +84,7 @@ import 'calls/a2/trade_circulate.dart' as a2;
 import 'calls/a2/trail_off.dart' as a2;
 import 'calls/a2/transfer_and_anything.dart' as a2;
 import 'calls/a2/zig_and_zag.dart' as a2;
-import 'calls/b1/all_around_the_corner.dart' as b1;
+import 'calls/plus/all_around_the_corner.dart' as plus;
 import 'calls/b1/allemande.dart' as b1;
 import 'calls/b1/allemande.dart' as ssd;
 import 'calls/b1/arm_turns.dart' as b1;
@@ -94,15 +95,14 @@ import 'calls/b1/california_twirl.dart' as b1;
 import 'calls/b1/california_twirl.dart' as ssd;
 import 'calls/b1/circle.dart' as b1;
 import 'calls/b1/circle.dart' as ssd;
-import 'calls/b1/circle_to_a_line.dart' as b1;
-import 'calls/b1/circle_to_a_line.dart' as ssd;
+import 'calls/plus/circle_to_a_line.dart' as plus;
 import 'calls/b1/circulate.dart' as b1;
 import 'calls/b1/circulate.dart' as ssd;
 import 'calls/b1/courtesy_turn.dart' as b1;
 import 'calls/b1/courtesy_turn.dart' as ssd;
 import 'calls/b1/dive_thru.dart' as b1;
 import 'calls/b1/dive_thru.dart' as ssd;
-import 'calls/b1/do_paso.dart' as b1;
+import 'calls/plus/do_paso.dart' as plus;
 import 'calls/b1/dosado.dart' as b1;
 import 'calls/b1/dosado.dart' as ssd;
 import 'calls/b1/double_pass_thru.dart' as b1;
@@ -133,7 +133,7 @@ import 'calls/b1/right_and_left_thru.dart' as ssd;
 import 'calls/b1/same_position_rule.dart' as b1;
 import 'calls/b1/sashay.dart' as b1;
 import 'calls/b1/sashay.dart' as ssd;
-import 'calls/b1/see_saw.dart' as b1;
+import 'calls/plus/see_saw.dart' as plus;
 import 'calls/b1/separate.dart' as b1;
 import 'calls/b1/separate.dart' as ssd;
 import 'calls/b1/split_the_outside_couple.dart' as b1;
@@ -504,31 +504,31 @@ import 'calls/ms/cast_off_three_quarters.dart' as ms;
 import 'calls/ms/cast_off_three_quarters.dart' as ssd;
 import 'calls/ms/centers_in.dart' as ms;
 import 'calls/ms/centers_in.dart' as ssd;
-import 'calls/ms/cloverleaf.dart' as ms;
+import 'calls/plus/cloverleaf.dart' as plus;
 import 'calls/ms/dixie_style.dart' as ms;
-import 'calls/ms/eight_chain_thru.dart' as ms;
+import 'calls/plus/eight_chain_thru.dart' as plus;
 import 'calls/ms/fold.dart' as ms;
 import 'calls/ms/fold.dart' as ssd;
 import 'calls/ms/fraction_tag.dart' as ms;
 import 'calls/ms/fraction_tag.dart' as ssd;
 import 'calls/ms/hinge.dart' as ms;
 import 'calls/ms/hinge.dart' as ssd;
-import 'calls/ms/pass_to_the_center.dart' as ms;
+import 'calls/plus/pass_to_the_center.dart' as plus;
 import 'calls/ms/recycle.dart' as ms;
 import 'calls/ms/recycle.dart' as ssd;
 import 'calls/ms/scoot_back.dart' as ms;
 import 'calls/ms/scoot_back.dart' as ssd;
-import 'calls/ms/shoot_the_star.dart' as ms;
+import 'calls/plus/shoot_the_star.dart' as plus;
 import 'calls/ms/slide_thru.dart' as ms;
 import 'calls/ms/slide_thru.dart' as ssd;
-import 'calls/ms/slip_the_clutch.dart' as ms;
-import 'calls/ms/spin_chain_thru.dart' as ms;
+import 'calls/plus/slip_the_clutch.dart' as plus;
+import 'calls/plus/spin_chain_thru.dart' as plus;
 import 'calls/ms/spin_the_top.dart' as ms;
 import 'calls/ms/tag.dart' as ms;
 import 'calls/ms/tag.dart' as ssd;
-import 'calls/ms/thar.dart' as ms;
-import 'calls/ms/turn_thru.dart' as ms;
-import 'calls/ms/walk_and_dodge.dart' as ms;
+import 'calls/plus/thar.dart' as plus;
+import 'calls/plus/turn_thru.dart' as plus;
+import 'calls/plus/walk_and_dodge.dart' as plus;
 import 'calls/plus/acey_deucey.dart' as plus;
 import 'calls/plus/all_8_spin_the_top.dart' as plus;
 import 'calls/plus/anything_and_roll.dart' as plus;
@@ -574,7 +574,6 @@ var callIndex = [
   CallEntry('3/4 Wheel the Sea','c3a','c3a/1_4_wheel_the_ocean',c3a.Q14WheelTheOcean,),
 
   CallEntry('Acey Deucey','plus','plus/acey_deucey',plus.AceyDeucey,'plus/acey_deucey.mp3'),
-  CallEntry('Acey Deucey','p26','p26/acey_deucey',plus.AceyDeucey,'plus/acey_deucey.mp3'),
   CallEntry('Ah So','c1','c1/ah_so',c1.AhSo,),
   CallEntry('Alamo Style','b2','b2/alamo_style',
       b2.AlamoStyle,'b2/alamo_style.mp3'),
@@ -582,13 +581,11 @@ var callIndex = [
   CallEntry('Alamo Style','m26','m26/alamo_style',ssd.AlamoStyle,),
   CallEntry('All 4 Couples / All 8 concepts','a2','a2/all_4_all_8',a2.All4All8,),
   CallEntry('All 8 Spin the Top','plus','plus/all_8_spin_the_top',plus.All8SpinTheTop,'plus/all_8_spin_the_top.mp3'),
-  CallEntry('All 8 Spin the Top','p26','p26/all_8_spin_the_top',plus.All8SpinTheTop,'plus/all_8_spin_the_top.mp3'),
   CallEntry('All Eight Recycle','c1','c1/recycle',c1.Recycle,),
   CallEntry('Allemande Left','b1','b1/allemande',b1.Allemande,'b1/allemande.mp3'),
   CallEntry('Allemande Left','ssd','ssd/allemande',ssd.Allemande,),
   CallEntry('Allemande Left','m26','ssd/allemande',ssd.Allemande,),
-  CallEntry('Allemande Thar','ms','ms/thar',ms.Thar,'ms/allemande_thar.mp3'),
-  CallEntry('Allemande Thar','p26','p26/thar',ms.Thar,'ms/allemande_thar.mp3'),
+  CallEntry('Allemande Thar','plus','plus/thar',plus.Thar,'plus/allemande_thar.mp3'),
   CallEntry('Along','c2','c2/swing_along',c2.SwingAlong,),
   CallEntry('Alter and Circulate','c2','c2/alter_and_circulate',c2.AlterAndCirculate,),
   CallEntry('Alter the Wave','c1','c1/alter_the_wave',c1.AlterTheWave,),
@@ -598,9 +595,7 @@ var callIndex = [
   CallEntry('Anyone Hop','c3a','c3a/anyone_hop',c3a.AnyoneHop,),
   CallEntry('<anything> and Circle','c2','c2/anything_and_circle',c2.AnythingAndCircle,),
   CallEntry('<anything> and Roll','plus','plus/anything_and_roll',plus.AnythingAndRoll,),
-  CallEntry('<anything> and Roll','p26','p26/anything_and_roll',plus.AnythingAndRoll,),
   CallEntry('<anything> and Spread','plus','plus/anything_and_spread',plus.AnythingAndSpread,),
-  CallEntry('<anything> and Spread','p26','p26/anything_and_spread',plus.AnythingAndSpread,),
   CallEntry('<anything> and Spread','c1','c1/anything_and_spread',c1.AnythingAndSpread,),
   CallEntry('<anything> Chain Thru','c1','c1/anything_chain_thru',c1.AnythingChainThru,),
   CallEntry('<anything> Choice','c3a','c3a/choice',c3a.Choice,),
@@ -666,7 +661,6 @@ var callIndex = [
   CallEntry('Change the Centers / Wave','c3b','c3b/change_the_centers',c3b.ChangeTheCenters,),
   CallEntry('Change Your Image','c3b','c3b/change_your_image',c3b.ChangeYourImage,),
   CallEntry('Chase Right','plus','plus/chase_right',plus.ChaseRight,'plus/chase_right.mp3'),
-  CallEntry('Chase Right','p26','p26/chase_right',plus.ChaseRight,'plus/chase_right.mp3'),
   CallEntry('Chase the fraction Tag','c3a','c3a/chase_the_fraction_tag',c3b.ChaseTheFractionTag,),
   CallEntry('Chase Your Criss Cross Neighbor','c2','c2/criss_cross_your_neighbor',c2.CrissCrossYourNeighbor,),
   CallEntry('Chase Your Cross Neighbor','c1','c1/chase_your_cross_neighbor',c1.ChaseYourCrossNeighbor,),
@@ -685,22 +679,17 @@ var callIndex = [
   CallEntry('Circle Rule','b1','b1/circle_rule',b1.CircleRule),
   CallEntry('Circle Rule','ssd','ssd/circle_rule',b1.CircleRule),
   CallEntry('Circle Rule','m26','m26/circle_rule',b1.CircleRule),
-  CallEntry('Circle to a Line','b1','b1/circle_to_a_line',b1.CircleToALine,'b1/circle_to_a_line.mp3'),
-  CallEntry('Circle to a Line','p26','b1/circle_to_a_line',b1.CircleToALine,'b1/circle_to_a_line.mp3'),
-  CallEntry('Circle to a Line','ssd','ssd/circle_to_a_line',ssd.CircleToALine,),
+  CallEntry('Circle to a Line','plus','plus/circle_to_a_line',plus.CircleToALine,'plus/circle_to_a_line.mp3'),
   CallEntry('Circle to a Wave','c2','c2/circle_to_a_wave',c2.CircleToAWave,),
   CallEntry('Circulate','b1','b1/circulate',b1.Circulate,),
   CallEntry('Circulate','ssd','ssd/circulate',ssd.Circulate,),
   CallEntry('Circulate','m26','m26/circulate',ssd.Circulate,),
   CallEntry('Circulate','c1','c1/circulate',c1.Circulate,),
-  CallEntry('Clover and <anything>','a1','a1/clover_and_anything',a1.CloverAndAnything,),
-  CallEntry('Clover and <anything>','p26','p26/clover_and_anything',a1.CloverAndAnything,),
-  CallEntry('Cloverleaf','ms','ms/cloverleaf',ms.Cloverleaf,'ms/cloverleaf.mp3'),
-  CallEntry('Cloverleaf','p26','p26/cloverleaf',ms.Cloverleaf,'ms/cloverleaf.mp3'),
+  CallEntry('Clover and <anything>','plus','plus/clover_and_anything',plus.CloverAndAnything,),
+  CallEntry('Cloverleaf','plus','plus/cloverleaf',plus.Cloverleaf,'plus/cloverleaf.mp3'),
   CallEntry('Concentric Concept','c1','c1/concentric_concept',c1.ConcentricConcept,),
   CallEntry('Contour the Line','c3b','c3b/contour_the_line',c3b.ContourTheLine,),
   CallEntry('Coordinate','plus','plus/coordinate',plus.Coordinate,'plus/coordinate.mp3'),
-  CallEntry('Coordinate','p26','p26/coordinate',plus.Coordinate,'plus/coordinate.mp3'),
   CallEntry('Counter','c2','c2/counter',c2.Counter,),
   CallEntry('Counterpoint','c3b','c3b/counterpoint',c3b.Counterpoint,),
   CallEntry('Counter Rotate','c1','c1/counter_rotate',c1.CounterRotate,),
@@ -722,7 +711,7 @@ var callIndex = [
   CallEntry('Cross Chain Reaction','c3a','c3a/cross_chain_reaction',c3a.CrossChainReaction,),
   CallEntry('Cross Chain Thru','c1','c1/cross_chain_thru',c1.CrossChainThru,),
   CallEntry('Cross Chuck-A-Luck','c3b','c3b/chuck_a_luck',c3b.ChuckALuck,),
-  CallEntry('Cross Clover and <anything>','a1','a1/clover_and_anything',a1.CloverAndAnything,),
+  CallEntry('Cross Clover and <anything>','a1','a1/cross_clover_and_anything',a1.CrossCloverAndAnything,),
   CallEntry('Cross Concentric Concept','c2','c2/cross_concentric_concept',c2.CrossConcentricConcept,),
   CallEntry('Cross Counter','c3a','c3a/cross_counter',c3a.CrossCounter,),
   CallEntry('Cross Cycle','c3b','c3b/cross_cycle',c3b.CrossCycle,),
@@ -747,9 +736,7 @@ var callIndex = [
   CallEntry('Cross Trail Thru','a1','a1/cross_trail_thru',a1.CrossTrailThru,'a1/cross_trail_thru.mp3'),
   CallEntry('Cross Your Neighbor','c1','c1/cross_your_neighbor',c1.CrossYourNeighbor,),
   CallEntry('Crossfire','plus','plus/crossfire',plus.Crossfire,'plus/crossfire.mp3'),
-  CallEntry('Crossfire','p26','p26/crossfire',plus.Crossfire,'plus/crossfire.mp3'),
   CallEntry('Cut the Diamond','plus','plus/cut_the_diamond',plus.CutTheDiamond,'plus/cut_the_diamond.mp3'),
-  CallEntry('Cut the Diamond','p26','p26/cut_the_diamond',plus.CutTheDiamond,'plus/cut_the_diamond.mp3'),
   CallEntry('Cut the Galaxy','c1','c1/galaxy_formation',c1.GalaxyFormation,),
   CallEntry('Cut the Hourglass','a2','a2/hourglass_circulate',a2.HourglassCirculate,'a2/cut_the_hourglass.mp3'),
   CallEntry('Cut the Interlocked Diamond','c1','c1/interlocked_diamond_circulate',c1.InterlockedDiamondCirculate,),
@@ -761,7 +748,6 @@ var callIndex = [
   CallEntry('Diagonal Box Concept','c3b','c3b/diagonal_box_concept',c3b.DiagonalBoxConcept,),
   CallEntry('Diamond Chain Thru','a2','a2/diamond_chain_thru',a2.DiamondChainThru,'a2/diamond_chain_thru.mp3'),
   CallEntry('Diamond Circulate','plus','plus/diamond_circulate',plus.DiamondCirculate,'plus/diamond_circulate.mp3'),
-  CallEntry('Diamond Circulate','p26','p26/diamond_circulate',plus.DiamondCirculate,'plus/diamond_circulate.mp3'),
   CallEntry('Dilemma','c3a','c3a/delight_dilemma',c3a.DelightDilemma,),
   CallEntry('Disband','c3b','c3b/disband',c3b.Disband,),
   CallEntry('Disconnected Concept','c2','c2/disconnected_concept',c2.DisconnectedConcept,),
@@ -772,12 +758,11 @@ var callIndex = [
   CallEntry('Divide the Ocean | Sea <direction> | <anything>','c3b','c3b/divide_the_ocean',c3b.DivideTheOcean,),
   CallEntry('Dixie Diamond','c1','c1/dixie_diamond',c1.DixieDiamond,),
   CallEntry('Dixie Grand','plus','plus/dixie_grand',plus.DixieGrand,'plus/dixie_grand.mp3'),
-  CallEntry('Dixie Grand','p26','p26/dixie_grand',plus.DixieGrand,'plus/dixie_grand.mp3'),
   CallEntry('Dixie Sashay','c1','c1/dixie_sashay',c1.DixieSashay,),
   CallEntry('Dixie Style to a Wave','ms','ms/dixie_style',ms.DixieStyle,'ms/dixie_style_to_an_ocean_wave.mp3'),
-  CallEntry('Dixie Style to a Wave','p26','p26/dixie_style',ms.DixieStyle,'ms/dixie_style_to_an_ocean_wave.mp3'),
-  CallEntry('Do Paso','b1','b1/do_paso', b1.DoPaso,'b1/do_paso.mp3'),
-  CallEntry('Do Paso','p26','b1/do_paso', b1.DoPaso,'b1/do_paso.mp3'),
+  CallEntry('Dixie Style to a Wave','plus','plus/dixie_style',ms.DixieStyle,'ms/dixie_style_to_an_ocean_wave.mp3'),
+  CallEntry('Do Paso','b1','b1/do_paso', plus.DoPaso,'b1/do_paso.mp3'),
+  CallEntry('Do Paso','plus','plus/do_paso', plus.DoPaso,'plus/do_paso.mp3'),
   CallEntry('Do Your Part','a1','a1/do_your_part',a1.DoYourPart,),
   CallEntry('Dodge <anything>','c2','c2/dodge_anything',c2.DodgeAnything,),
   CallEntry('Dosado','b1','b1/dosado',b1.Dosado,'b1/dosado.mp3'),
@@ -794,21 +779,18 @@ var callIndex = [
   CallEntry('Ease Off','c3a','c3a/ease_off',c3a.EaseOff,),
   CallEntry('Echo Concept','c3b','c3b/echo',c3b.Echo,),
   CallEntry('Eight By <anything>','c3a','c3a/eight_by_anything',c3a.EightByAnything,),
-  CallEntry('Eight Chain Thru','ms','ms/eight_chain_thru',ms.EightChainThru,'ms/eight_chain_thru.mp3'),
-  CallEntry('Eight Chain Thru','p26','p26/eight_chain_thru',ms.EightChainThru,'ms/eight_chain_thru.mp3'),
+  CallEntry('Eight Chain Thru','plus','plus/eight_chain_thru',plus.EightChainThru,'ms/eight_chain_thru.mp3'),
   CallEntry('Ends Bend','a1','a1/ends_bend',a1.EndsBend,'a1/ends_bend.mp3'),
   CallEntry('Exchange the Boxes','c3a','c3a/exchange_the_box',c3a.ExchangeTheBox,),
   CallEntry('Exchange the Diamond','c2','c2/exchange_the_diamond',c2.ExchangeTheDiamond,),
   CallEntry('Exchange the Triangles','c3a','c3a/exchange_the_box',c3a.ExchangeTheBox,),
   CallEntry('Expand the Column','c3a','c3a/expand_the_column',c3a.ExpandTheColumn,),
   CallEntry('Explode and <anything>','plus','plus/explode_and_anything',plus.ExplodeAndAnything,),
-  CallEntry('Explode and <anything>','p26','p26/explode_and_anything',plus.ExplodeAndAnything,),
   CallEntry('Explode and <anything>','a1','a1/explode_and_anything',a1.ExplodeAndAnything,),
   CallEntry('Explode the Diamond','c3b','c3b/explode_the_diamond',c3b.ExplodeTheDiamond,),
   CallEntry('Explode the Line','a1','a1/explode_the_line',a1.ExplodeTheLine,'a1/explode_the_line.mp3'),
   CallEntry('Explode the Top','c3a','c3a/explode_the_top',c3a.ExplodeTheTop,),
   CallEntry('Explode the Wave','plus','plus/explode_the_wave',plus.ExplodeTheWave,'plus/explode_the_wave.mp3'),
-  CallEntry('Explode the Wave','p26','p26/explode_the_wave',plus.ExplodeTheWave,'plus/explode_the_wave.mp3'),
   CallEntry('Extend','b2','b2/extend',
       b2.Extend,'b2/extend.mp3'),
   CallEntry('Extend','ssd','ssd/extend',ssd.Extend,),
@@ -822,7 +804,6 @@ var callIndex = [
   CallEntry('Facing Couples Rule','m26','m26/facing_couples_rule',ssd.FacingCouplesRule,),
   CallEntry('Fan Concept','c3b','c3b/fan_concept',c3b.FanConcept,),
   CallEntry('Fan the Top','plus','plus/fan_the_top',plus.FanTheTop,'plus/fan_the_top.mp3'),
-  CallEntry('Fan the Top','p26','p26/fan_the_top',plus.FanTheTop,'plus/fan_the_top.mp3'),
   CallEntry('Fancy','c3a','c3a/fancy',c3a.Fancy,),
   CallEntry('Fascinate/Fascinating','c2','c2/fascinate',c2.Fascinate,),
   CallEntry('Ferris Wheel','b2','b2/ferris_wheel',b2.FerrisWheel,'b2/ferris_wheel.mp3'),
@@ -842,7 +823,6 @@ var callIndex = [
   CallEntry('Flare Out to a Line','c3a','c3a/flare_out_to_a_line',c3a.FlareOutToALine,),
   CallEntry('Flip Back','c1','c1/tagging_calls_back_to_a_wave',c1.TaggingCallsBackToAWave,),
   CallEntry('Flip the Diamond','plus','plus/flip_the_diamond',plus.FlipTheDiamond,'plus/flip_the_diamond.mp3'),
-  CallEntry('Flip the Diamond','p26','p26/flip_the_diamond',plus.FlipTheDiamond,'plus/flip_the_diamond.mp3'),
   CallEntry('Flip the Galaxy','c1','c1/galaxy_formation',c1.GalaxyFormation,),
   CallEntry('Flip the Hourglass','a2','a2/hourglass_circulate',a2.HourglassCirculate,'a2/flip_the_hourglass.mp3'),
   CallEntry('Flip the Interlocked Diamond','c1','c1/interlocked_diamond_circulate',c1.InterlockedDiamondCirculate,),
@@ -859,7 +839,6 @@ var callIndex = [
   CallEntry('Follow to a Diamond','c3a','c3a/follow_to_a_diamond',c3a.FollowToADiamond,),
   CallEntry('Follow Your Leader','c3a','c3a/follow_your_leader',c3a.FollowYourLeader,),
   CallEntry('Follow Your Neighbor','plus','plus/follow_your_neighbor',plus.FollowYourNeighbor,'plus/follow_your_neighbor.mp3'),
-  CallEntry('Follow Your Neighbor','p26','p26/follow_your_neighbor',plus.FollowYourNeighbor,'plus/follow_your_neighbor.mp3'),
   CallEntry('Forward and Back','b1','b1/forward_and_back',b1.ForwardAndBack,'b1/forward_and_back.mp3'),
   CallEntry('Forward and Back','ssd','ssd/forward_and_back',ssd.ForwardAndBack,),
   CallEntry('Forward and Back','m26','m26/forward_and_back',ssd.ForwardAndBack,),
@@ -878,8 +857,7 @@ var callIndex = [
   CallEntry('Grand Drop','c2','c2/drop_in',c2.DropIn,),
   CallEntry('Grand Follow Your Neighbor','a1','a1/grand_follow_your_neighbor',a1.GrandFollowYourNeighbor,'a1/grand_follow_your_neighbor.mp3'),
   CallEntry('Grand Mix','c3a','c3a/grand_mix',c3a.GrandMix,),
-  CallEntry('Grand Quarter Thru','a1','a1/grand_quarter_thru',a1.GrandQuarterThru,'a1/grand_quarter_thru.mp3'),
-  CallEntry('Grand Quarter Thru','p26','p26/grand_quarter_thru',a1.GrandQuarterThru,'a1/grand_quarter_thru.mp3'),
+  CallEntry('Grand Quarter Thru','plus','plus/grand_quarter_thru',plus.GrandQuarterThru,'a1/grand_quarter_thru.mp3'),
   CallEntry('Grand Remake','a2','a2/remake',a2.Remake,'a2/grand_remake.mp3'),
   CallEntry('Grand Single Cross and Wheel','c2','c2/cross_and_wheel',c2.CrossAndWheel,),
   CallEntry('Grand Single Cross Trade and Wheel','c2','c2/cross_and_wheel',c2.CrossAndWheel,),
@@ -887,9 +865,7 @@ var callIndex = [
   CallEntry('Grand Square','ssd','ssd/grand_square',ssd.GrandSquare,),
   CallEntry('Grand Square','m26','m26/grand_square',ssd.GrandSquare,),
   CallEntry('Grand Swing Thru','plus','plus/grand_swing_thru',plus.GrandSwingThru,'plus/grand_swing_thru.mp3'),
-  CallEntry('Grand Swing Thru','p26','p26/grand_swing_thru',plus.GrandSwingThru,'plus/grand_swing_thru.mp3'),
-  CallEntry('Grand Three Quarter Thru','a1','a1/grand_quarter_thru',a1.GrandQuarterThru,),
-  CallEntry('Grand Three Quarter Thru','p26','p26/grand_quarter_thru',a1.GrandQuarterThru,),
+  CallEntry('Grand Three Quarter Thru','plus','plus/grand_quarter_thru',plus.GrandQuarterThru,),
 
   CallEntry('Half Sashay','b1','b1/sashay',b1.Sashay,),
   CallEntry('Half Sashay','ssd','ssd/sashay',ssd.Sashay,),
@@ -951,7 +927,6 @@ var callIndex = [
   CallEntry('Left Arm Turn','ssd','ssd/arm_turns',ssd.ArmTurns,),
   CallEntry('Left Arm Turn','m26','m26/arm_turns',ssd.ArmTurns,),
   CallEntry('Left Chase','plus','plus/chase_right',plus.ChaseRight,'plus/chase_right.mp3'),
-  CallEntry('Left Chase','p26','p26/chase_right',plus.ChaseRight,'plus/chase_right.mp3'),
   CallEntry('Left Roll to a Wave','a1','a1/right_roll_to_a_wave',a1.RightRollToAWave,'a1/left_roll_to_a_wave.mp3'),
   CallEntry('Left Scoot and Counter','c2','c2/counter',c2.Counter,),
   CallEntry('Left Swing Thru','b2','b2/swing_thru',b2.SwingThru,),
@@ -964,14 +939,12 @@ var callIndex = [
   CallEntry('Like a Ripple','c2','c2/ripple_the_wave',c2.RippleTheWave,),
   CallEntry('Linear Action','c1','c1/linear_action',c1.LinearAction,),
   CallEntry('Linear Cycle','plus','plus/linear_cycle',plus.LinearCycle,'plus/linear_cycle.mp3'),
-  CallEntry('Linear Cycle','p26','p26/linear_cycle',plus.LinearCycle,'plus/linear_cycle.mp3'),
   CallEntry('Linear Cycle','a1','a1/linear_cycle',a1.LinearCycle,'a1/linear_cycle.mp3'),
   CallEntry('Lines <anything> Thru','c2','c2/lines_anything_thru',c2.LinesAnythingThru,),
   CallEntry('Link Up','c3a','c3a/link_up',c3a.LinkUp,),
   CallEntry('Little','c1','c1/scoot_and_little',c1.ScootAndLittle,),
   CallEntry('Little More','c2','c2/little_more',c2.LittleMore,),
   CallEntry('Load the Boat','plus','plus/load_the_boat',plus.LoadTheBoat,'plus/load_the_boat.mp3'),
-  CallEntry('Load the Boat','p26','p26/load_the_boat',plus.LoadTheBoat,'plus/load_the_boat.mp3'),
   CallEntry('Lock \'Em Up','c3b','c3b/lock_em_up',c3b.LockEmUp,),
   CallEntry('Lock the Hinge','c3a','c3a/lock_the_hinge',c3a.LockTheHinge,),
   CallEntry('Lockers Choice','c3a','c3a/choice',c3a.Choice,),
@@ -1007,12 +980,10 @@ var callIndex = [
   CallEntry('Own the <anyone> <anything> By <anything>','c3a','c3a/own_the_anyone_anything_by_anything',c3a.OwnTheAnyoneAnythingByAnything,),
 
   CallEntry('Pair Off','a1','a1/pair_off',a1.PairOff,'a1/pair_off.mp3'),
-  CallEntry('Pair Off','p26','p26/pair_off',a1.PairOff,'a1/pair_off.mp3'),
+  CallEntry('Pair Off','plus','plus/pair_off',a1.PairOff,'a1/pair_off.mp3'),
   CallEntry('Parallelogram Concept','c2','c2/parallelogram_concept',c2.ParallelogramConcept,),
-  CallEntry('Partner Hinge','a1','a1/partner_hinge',a1.PartnerHinge,'a1/partner_hinge.mp3'),
-  CallEntry('Partner Hinge','p26','p26/partner_hinge',a1.PartnerHinge,'a1/partner_hinge.mp3'),
-  CallEntry('Partner Tag','a1','a1/partner_tag',a1.PartnerTag,'a1/partner_tag.mp3'),
-  CallEntry('Partner Tag','p26','p26/partner_tag',a1.PartnerTag,'a1/partner_tag.mp3'),
+  CallEntry('Partner Hinge','plus','plus/partner_hinge',plus.PartnerHinge,'plus/partner_hinge.mp3'),
+  CallEntry('Partner Tag','plus','plus/partner_tag',plus.PartnerTag,'plus/partner_tag.mp3'),
   CallEntry('Pass and Roll','a2','a2/pass_and_roll',a2.PassAndRoll,'a2/pass_and_roll.mp3'),
   CallEntry('Pass and Roll Your Criss Cross Neighbor','c2','c2/criss_cross_your_neighbor',c2.CrissCrossYourNeighbor,),
   CallEntry('Pass and Roll Your Cross Neighbor','c1','c1/cross_your_neighbor',c1.CrossYourNeighbor,),
@@ -1023,28 +994,23 @@ var callIndex = [
   CallEntry('Pass the Ocean','b2','b2/pass_the_ocean',b2.PassTheOcean,'b2/pass_the_ocean.mp3'),
   CallEntry('Pass the Ocean','ssd','ssd/pass_the_ocean',ssd.PassTheOcean,),
   CallEntry('Pass the Ocean','m26','m26/pass_the_ocean',ssd.PassTheOcean,),
-  CallEntry('Pass the Sea','a1','a1/pass_the_sea',a1.PassTheSea,'a1/pass_the_sea.mp3'),
-  CallEntry('Pass the Sea','p26','p26/pass_the_sea',a1.PassTheSea,'a1/pass_the_sea.mp3'),
+  CallEntry('Pass the Sea','plus','plus/pass_the_sea',plus.PassTheSea,'plus/pass_the_sea.mp3'),
   CallEntry('Pass Thru','b1','b1/pass_thru',b1.PassThru,'b1/pass_thru.mp3'),
   CallEntry('Pass Thru','ssd','ssd/pass_thru',ssd.PassThru,),
   CallEntry('Pass Thru','m26','m26/pass_thru',ssd.PassThru,),
-  CallEntry('Pass to the Center','ms','ms/pass_to_the_center',ms.PassToTheCenter,'ms/pass_to_the_center.mp3'),
-  CallEntry('Pass to the Center','p26','p26/pass_to_the_center',ms.PassToTheCenter,'ms/pass_to_the_center.mp3'),
+  CallEntry('Pass to the Center','plus','plus/pass_to_the_center',plus.PassToTheCenter,'ms/pass_to_the_center.mp3'),
   CallEntry('Passing Rule','b1','b1/passing_rule',b1.PassingRule,),
   CallEntry('Patch Anyone','c3a','c3a/patch_anyone',c3a.PatchAnyone,),
   CallEntry('Peel and Trail','a2','a2/peel_and_trail',a2.PeelAndTrail,'a2/peel_and_trail.mp3'),
   CallEntry('Peel Chain Thru','c3a','c3a/peel_chain_thru',c3a.PeelChainThru,),
   CallEntry('Peel Off','plus','plus/peel_off',plus.PeelOff,'plus/peel_off.mp3'),
-  CallEntry('Peel Off','p26','p26/peel_off',plus.PeelOff,'plus/peel_off.mp3'),
   CallEntry('Peel the Top','plus','plus/peel_the_top',plus.PeelTheTop,'plus/peel_the_top.mp3'),
-  CallEntry('Peel the Top','p26','p26/peel_the_top',plus.PeelTheTop,'plus/peel_the_top.mp3'),
   CallEntry('Peel to a Diamond','c2','c2/peel_to_a_diamond',c2.PeelToADiamond,),
   CallEntry('Percolate','c1','c1/percolate',c1.Percolate,),
   CallEntry('Perk Up','c2','c2/perk_up',c2.PerkUp,),
   CallEntry('Phantom Columns / Lines / Waves Concept','c3b','c3b/phantom_columns_lines_waves',c3b.PhantomColumnsLinesWaves,),
   CallEntry('Phantom Formation','c1','c1/phantom_formation',c1.PhantomFormation,),
   CallEntry('Ping Pong Circulate','plus','plus/ping_pong_circulate',plus.PingPongCirculate,'plus/ping_pong_circulate.mp3'),
-  CallEntry('Ping Pong Circulate','p26','p26/ping_pong_circulate',plus.PingPongCirculate,'plus/ping_pong_circulate.mp3'),
   CallEntry('Plan Ahead','c3a','c3a/plan_ahead',c3a.PlanAhead,),
   CallEntry('Plenty','c1','c1/scoot_and_plenty',c1.ScootAndPlenty,),
   CallEntry('Polly Wally','c3a','c3a/polly_wally',c3a.PollyWally,),
@@ -1066,8 +1032,7 @@ var callIndex = [
   CallEntry('Quarter Out','a1','a1/quarter_in',a1.QuarterIn,'a1/quarter_out.mp3'),
   CallEntry('Quarter Tag','ms','ms/fraction_tag',ms.FractionTag,),
   CallEntry('Quarter Tag','m26','m26/fraction_tag',ms.FractionTag,),
-  CallEntry('Quarter Thru','a1','a1/quarter_thru',a1.QuarterThru,'a1/quarter_thru.mp3'),
-  CallEntry('Quarter Thru','p26','p26/quarter_thru',a1.QuarterThru,'a1/quarter_thru.mp3'),
+  CallEntry('Quarter Thru','plus','plus/quarter_thru',plus.QuarterThru,'plus/quarter_thru.mp3'),
   CallEntry('Quick','c3a','c3a/quick',c3a.Quick,),
 
   CallEntry('Rally','c3a','c3a/rally',c3a.Rally,),
@@ -1083,7 +1048,6 @@ var callIndex = [
   CallEntry('Reflected Concept','c3b','c3b/reflected_concept',c3b.ReflectedConcept,),
   CallEntry('Regroup','c1','c1/regroup',c1.Regroup,),
   CallEntry('Relay the Deucey','plus','plus/relay_the_deucey',plus.RelayTheDeucey,'plus/relay_the_deucey.mp3'),
-  CallEntry('Relay the Deucey','p26','p26/relay_the_deucey',plus.RelayTheDeucey,'plus/relay_the_deucey.mp3'),
   CallEntry('Relay the Shadow','c1','c1/relay_the_shadow',c1.RelayTheShadow,),
   CallEntry('Relay the Top','c1','c1/relay_the_top',c1.RelayTheTop,),
   CallEntry('Release <anything>','c3a','c3a/release_anything',c3a.ReleaseAnything,),
@@ -1153,8 +1117,7 @@ var callIndex = [
   CallEntry('Scatter Scoot Chain Thru','c1','c1/scatter_scoot',c1.ScatterScoot,),
   CallEntry('Scoot and Counter','c2','c2/counter',c2.Counter,),
   CallEntry('Scoot and Cross Ramble','c2','c2/cross_ramble',c2.CrossRamble,),
-  CallEntry('Scoot and Dodge','a1','a1/scoot_and_dodge',a1.ScootAndDodge,'a1/scoot_and_dodge.mp3'),
-  CallEntry('Scoot and Dodge','p26','p26/scoot_and_dodge',a1.ScootAndDodge,'a1/scoot_and_dodge.mp3'),
+  CallEntry('Scoot and Dodge','plus','plus/scoot_and_dodge',plus.ScootAndDodge,'a1/scoot_and_dodge.mp3'),
   CallEntry('Scoot and Little','c1','c1/scoot_and_little',c1.ScootAndLittle,),
   CallEntry('Scoot and Little More','c2','c2/little_more',c2.LittleMore,),
   CallEntry('Scoot and Plenty','c1','c1/scoot_and_plenty',c1.ScootAndPlenty,),
@@ -1169,9 +1132,7 @@ var callIndex = [
   CallEntry('Scoot Reaction','c3a','c3a/anything_reaction',c3a.AnythingReaction,),
   CallEntry('Scramble','c3b','c3b/scramble',c3b.Scramble,),
   CallEntry('Secondly','c3b','c3b/secondly_thirdly_fourthly',c3b.SecondlyThirdlyFourthly,),
-  CallEntry('See Saw','b1','b1/see_saw',
-      b1.SeeSaw,'b1/see_saw.mp3'),
-  CallEntry('See Saw','p26','p26/see_saw', b1.SeeSaw,'b1/see_saw.mp3'),
+  CallEntry('See Saw','plus','plus/see_saw', plus.SeeSaw,'b1/see_saw.mp3'),
   CallEntry('Separate','b1','b1/separate',
       b1.Separate,'b1/separate.mp3'),
   CallEntry('Separate','ssd','ssd/separate',ssd.Separate,),
@@ -1180,12 +1141,10 @@ var callIndex = [
   CallEntry('Shake and Rattle','c3b','c3b/shake_and_rattle',c3b.ShakeAndRattle,),
   CallEntry('Shakedown','c1','c1/shakedown',c1.Shakedown,),
   CallEntry('Shazam','c2','c2/shazam',c2.Shazam,),
-  CallEntry('Shoot the Star','ms','ms/shoot_the_star',ms.ShootTheStar,'ms/shoot_the_star.mp3'),
-  CallEntry('Shoot the Star','p26','p26/shoot_the_star',ms.ShootTheStar,'ms/shoot_the_star.mp3'),
+  CallEntry('Shoot the Star','plus','plus/shoot_the_star',plus.ShootTheStar,'ms/shoot_the_star.mp3'),
   CallEntry('Siamese Concept','c1','c1/siamese_concept',c1.SiameseConcept,),
   CallEntry('Sidetrack','c3b','c3b/sidetrack',c3b.Sidetrack,),
   CallEntry('Single Bounce','c2','c2/bounce',c2.Bounce,),
-  CallEntry('Single Circle to a Wave','plus','plus/single_circle_to_a_wave',plus.SingleCircleToAWave,'plus/single_circle_to_a_wave.mp3'),
   CallEntry('Single Circle to a Wave','m26','m26/single_circle_to_a_wave',plus.SingleCircleToAWave,'plus/single_circle_to_a_wave.mp3'),
   CallEntry('Single Concept','c3a','c3a/single_concept',c3a.SingleConcept,),
   CallEntry('Single Cross and Wheel','c2','c2/cross_and_wheel',c2.CrossAndWheel,),
@@ -1206,20 +1165,16 @@ var callIndex = [
   CallEntry('Slide Thru','ssd','ssd/slide_thru',ssd.SlideThru,),
   CallEntry('Slide Thru','m26','m26/slide_thru',ssd.SlideThru,),
   CallEntry('Slip','a2','a2/slip',a2.Slip,'a2/slip.mp3'),
-  CallEntry('Slip the Clutch','ms','ms/slip_the_clutch',ms.SlipTheClutch,'ms/slip_the_clutch.mp3'),
-  CallEntry('Slip the Clutch','p26','p26/slip_the_clutch',ms.SlipTheClutch,'ms/slip_the_clutch.mp3'),
+  CallEntry('Slip the Clutch','plus','plus/slip_the_clutch',plus.SlipTheClutch,'ms/slip_the_clutch.mp3'),
   CallEntry('Slither','a2','a2/slip',a2.Slip,'a2/slither.mp3'),
   CallEntry('Snap the Lock','c3a','c3a/snap_the_lock',c3a.SnapTheLock,),
   CallEntry('Sock It To Me','c2','c2/sock_it_to_me',c2.SockItToMe,),
   CallEntry('Solid Concept','c2','c2/solid_concept',c2.SolidConcept,),
   CallEntry('Something New','c3a','c3a/something_new',c3a.SomethingNew,),
   CallEntry('Spin Chain and Exchange the Gears','plus','plus/spin_chain_and_exchange_the_gears',plus.SpinChainAndExchangeTheGears,'plus/spin_chain_and_exchange_the_gears.mp3'),
-  CallEntry('Spin Chain and Exchange the Gears','p26','p26/spin_chain_and_exchange_the_gears',plus.SpinChainAndExchangeTheGears,'plus/spin_chain_and_exchange_the_gears.mp3'),
   CallEntry('Spin Chain the Gears','plus','plus/spin_chain_the_gears',plus.SpinChainTheGears,'plus/spin_chain_the_gears.mp3'),
-  CallEntry('Spin Chain the Gears','p26','p26/spin_chain_the_gears',plus.SpinChainTheGears,'plus/spin_chain_the_gears.mp3'),
   CallEntry('Spin Chain the Line','c3a','c3a/spin_chain_the_line',c3a.SpinChainTheLine,),
-  CallEntry('Spin Chain Thru','ms','ms/spin_chain_thru',ms.SpinChainThru,'ms/spin_chain_thru.mp3'),
-  CallEntry('Spin Chain Thru','p26','p26/spin_chain_thru',ms.SpinChainThru,'ms/spin_chain_thru.mp3'),
+  CallEntry('Spin Chain Thru','plus','plus/spin_chain_thru',plus.SpinChainThru,'ms/spin_chain_thru.mp3'),
   CallEntry('Spin the Pulley','c3a','c3a/spin_the_pulley',c3a.SpinThePulley,),
   CallEntry('Spin the Top','ms','ms/spin_the_top',ms.SpinTheTop,'ms/spin_the_top.mp3'),
   CallEntry('Spin the Top','m26','m26/spin_the_top',ms.SpinTheTop,'ms/spin_the_top.mp3'),
@@ -1328,10 +1283,8 @@ var callIndex = [
   CallEntry('Tandem Concept','c1','c1/tandem_concept',c1.TandemConcept,),
   CallEntry('Tandem-Based Triangle Formation','c2','c2/tandem_based_triangle',c2.TandemBasedTriangle,),
   CallEntry('Teacup Chain','plus','plus/teacup_chain',plus.TeacupChain,'plus/teacup_chain.mp3'),
-  CallEntry('Teacup Chain','p26','p26/teacup_chain',plus.TeacupChain,'plus/teacup_chain.mp3'),
   CallEntry('Team Up','c3a','c3a/team_up',c3a.TeamUp,),
-  CallEntry('Thar Family','ms','ms/thar',ms.Thar,),
-  CallEntry('Thar Family','p26','p26/thar',ms.Thar,),
+  CallEntry('Thar Family','plus','plus/thar',plus.Thar,),
   CallEntry('The Axle','c1','c1/pass_the_axle',c1.PassTheAxle,),
   CallEntry('The Gamut','c3a','c3a/the_gamut',c3a.TheGamut,),
   CallEntry('The Pulley','c3a','c3a/spin_the_pulley',c3a.SpinThePulley,),
@@ -1339,8 +1292,7 @@ var callIndex = [
   CallEntry('Three by Two Acey Deucey','c1','c1/three_by_two_acey_deucey',c1.ThreeByTwoAceyDeucey,),
   CallEntry('Three Quarter Tag','ms','ms/fraction_tag',ms.FractionTag,),
   CallEntry('Three Quarter Tag','m26','m26/fraction_tag',ms.FractionTag,),
-  CallEntry('Three Quarter Thru','a1','a1/quarter_thru',a1.QuarterThru,),
-  CallEntry('Three Quarter Thru','p26','p26/quarter_thru',a1.QuarterThru,),
+  CallEntry('Three Quarter Thru','plus','plus/quarter_thru',plus.QuarterThru,),
   CallEntry('Touch a Half / Three Quarters','a1','a1/touch_12',
       a1.Touch_12,),
   CallEntry('Touch a Quarter','b2','b2/touch_a_quarter',b2.TouchAQuarter,'b2/touch_a_quarter.mp3'),
@@ -1349,7 +1301,6 @@ var callIndex = [
   CallEntry('Touch By','c3a','c3a/touch_by',c3a.TouchBy,),
   CallEntry('Track (0,1,2,3,4)','c1','c1/track_n',c1.TrackN,),
   CallEntry('Track 2','plus','plus/track_ii',plus.TrackIi,'plus/track_two.mp3'),
-  CallEntry('Track 2','p26','p26/track_ii',plus.TrackIi,'plus/track_two.mp3'),
   CallEntry('Trade','b2','b2/trade',
       b2.Trade,),
   CallEntry('Trade','ssd','ssd/trade',ssd.Trade,),
@@ -1362,7 +1313,6 @@ var callIndex = [
   CallEntry('Trade the Deucey','c3a','c3a/trade_the_deucey',c3a.TradeTheDeucey,),
   CallEntry('Trade the Diamond','c3b','c3b/trade_the_diamond',c3b.TradeTheDiamond,),
   CallEntry('Trade the Wave','plus','plus/trade_the_wave',plus.TradeTheWave,'plus/trade_the_wave.mp3'),
-  CallEntry('Trade the Wave','p26','p26/trade_the_wave',plus.TradeTheWave,'plus/trade_the_wave.mp3'),
   CallEntry('Trail Off','a2','a2/trail_off',a2.TrailOff,'a2/trail_off.mp3'),
   CallEntry('Trail to a Diamond','c2','c2/peel_to_a_diamond',c2.PeelToADiamond,),
   CallEntry('Transfer and <anything>','a2','a2/transfer_and_anything',a2.TransferAndAnything,),
@@ -1377,18 +1327,15 @@ var callIndex = [
   CallEntry('Triple Formations','c3b','c3b/triple_formations',c3b.TripleFormations,),
   CallEntry('Triple Play','c3a','c3a/triple_play',c3a.TriplePlay,),
   CallEntry('Triple Scoot','plus','plus/triple_scoot',plus.TripleScoot,'plus/triple_scoot.mp3'),
-  CallEntry('Triple Scoot','p26','p26/triple_scoot',plus.TripleScoot,'plus/triple_scoot.mp3'),
   CallEntry('Triple Star Thru','a1','a1/double_star_thru',a1.DoubleStarThru,'a1/triple_star_thru.mp3'),
-  CallEntry('Triple Trade','a1','a1/triple_trade',a1.TripleTrade,'a1/triple_trade.mp3'),
-  CallEntry('Triple Trade','p26','p26/triple_trade',a1.TripleTrade,'a1/triple_trade.mp3'),
+  CallEntry('Triple Trade','plus','plus/triple_trade',plus.TripleTrade,'plus/triple_trade.mp3'),
   CallEntry('Truck','c2','c2/truck',c2.Truck,),
   CallEntry('Turn and Deal','a1','a1/turn_and_deal',a1.TurnAndDeal,'a1/turn_and_deal.mp3'),
   CallEntry('Turn Back','b1','b1/turn_back',b1.TurnBack,),
   CallEntry('Turn Back','ssd','ssd/turn_back',ssd.TurnBack,),
   CallEntry('Turn Back','m26','m26/turn_back',ssd.TurnBack,),
   CallEntry('Turn the Key','c3b','c3b/turn_the_key',c3b.TurnTheKey,),
-  CallEntry('Turn Thru','ms','ms/turn_thru',ms.TurnThru,'ms/turn_thru.mp3'),
-  CallEntry('Turn Thru','p26','p26/turn_thru',ms.TurnThru,'ms/turn_thru.mp3'),
+  CallEntry('Turn Thru','plus','plus/turn_thru',plus.TurnThru,'ms/turn_thru.mp3'),
   CallEntry('Turn to a Line','c2','c2/turn_to_a_line',c2.TurnToALine,),
   CallEntry('Turnstyle','c3b','c3b/turnstyle',c3b.Turnstyle,),
   CallEntry('Twist and <anything>','c1','c1/twist_the_line',c1.TwistTheLine,),
@@ -1407,10 +1354,8 @@ var callIndex = [
   CallEntry('Vertical Tag Back','c1','c1/tagging_calls_back_to_a_wave',c1.TaggingCallsBackToAWave,),
   CallEntry('Vertical Tag Your Neighbor','c2','c2/any_tagging_call_your_neighbor',c2.AnyTaggingCallYourNeighbor,),
 
-  CallEntry('Walk and Dodge','ms','ms/walk_and_dodge',ms.WalkAndDodge,'ms/walk_and_dodge.mp3'),
-  CallEntry('Walk and Dodge','p26','p26/walk_and_dodge',ms.WalkAndDodge,'ms/walk_and_dodge.mp3'),
-  CallEntry('Walk Around the Corner','b1','b1/all_around_the_corner',b1.AllAroundTheCorner,'b1/walk_around_the_corner.mp3'),
-  CallEntry('Walk Around','p26','p26/all_around_the_corner',b1.AllAroundTheCorner,'b1/walk_around_the_corner.mp3'),
+  CallEntry('Walk and Dodge','plus','plus/walk_and_dodge',plus.WalkAndDodge,'ms/walk_and_dodge.mp3'),
+  CallEntry('Walk Around','plus','plus/all_around_the_corner',plus.AllAroundTheCorner,'plus/walk_around_the_corner.mp3'),
   CallEntry('Walk Out to a Wave','c2','c2/walk_out_to_a_wave',c2.WalkOutToAWave,),
   CallEntry('Wave the anyone','c3b','c3b/wave_the_anyone',c3b.WaveTheAnyone,),
   CallEntry('Weave','c1','c1/anything_and_weave',c1.AnythingAndWeave,),
@@ -1438,8 +1383,7 @@ var callIndex = [
   CallEntry('Wrong Way Promenade','b1','b1/promenade',b1.Promenade,),
   CallEntry('Wrong Way Promenade','ssd','ssd/promenade',ssd.Promenade,),
   CallEntry('Wrong Way Promenade','m26','m26/promenade',ssd.Promenade,),
-  CallEntry('Wrong Way Thar','ms','ms/thar',ms.Thar,),
-  CallEntry('Wrong Way Thar','p26','p26/thar',ms.Thar,),
+  CallEntry('Wrong Way Thar','plus','plus/thar',plus.Thar,),
 
   CallEntry('Z Axle','c3b','c3b/z_axle',c3b.ZAxle,),
   CallEntry('Z Concept','c3b','c3b/z_concept',c3b.ZConcept,),
@@ -1958,11 +1902,9 @@ String titleFromLink(String? link) {
       titleIndex[link?.replaceAll('m26', 'b1')] ??
       titleIndex[link?.replaceAll('m26', 'b2')] ??
       titleIndex[link?.replaceAll('m26', 'ms')] ??
-      titleIndex[link?.replaceAll('m26', 'plus')] ??
-      titleIndex[link?.replaceAll('p26', 'b1')] ??
-      titleIndex[link?.replaceAll('p26', 'b2')] ??
-      titleIndex[link?.replaceAll('p26', 'ms')] ??
-      titleIndex[link?.replaceAll('p26', 'plus')] ??
-      titleIndex[link?.replaceAll('p26', 'a1')] ??
+      titleIndex[link?.replaceAll('plus', 'b1')] ??
+      titleIndex[link?.replaceAll('plus', 'b2')] ??
+      titleIndex[link?.replaceAll('plus', 'ms')] ??
+      titleIndex[link?.replaceAll('plus', 'a1')] ??
       '';
 }

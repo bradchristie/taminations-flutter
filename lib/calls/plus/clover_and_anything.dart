@@ -198,35 +198,5 @@ import '../../moves.dart';
           QuarterRight.changeBeats(1.5).skew(1.0,-1.5)
       ]),
 
-    AnimatedCall('Cross Clover and',
-      formation:Formation('Couples Facing Out'),
-      group:' ',noDisplay: true,
-      paths:[
-          LeadLeft.changeBeats(3).scale(2.0,3.5) +
-          LeadLeft.scale(1.5,1.5) +
-          LeadLeft.scale(1.5,1.0),
-
-          LeadRight.changeBeats(3).scale(0.5,3.5) +
-          LeadRight.scale(1.5,0.5) +
-          LeadRight
-      ]),
-
-    AnimatedCall('Cross Clover and Swap Around',
-      formation:Formation('Trade By'),
-      group:' ',
-        taminator: 'Not in Plus 2026',
-      paths:[
-          LeadLeft.changeBeats(3).scale(2.0,3.5) +
-          LeadLeft.scale(1.5,2.5) +
-          LeadLeft.scale(1.5,1.0),
-
-          LeadRight.changeBeats(3).scale(0.5,3.5) +
-          LeadRight.scale(1.5,1.0) +
-          LeadRight.scale(1.5,1.0),
-
-          Forward_2,
-
-          FlipRight
-      ]),
   ];
 

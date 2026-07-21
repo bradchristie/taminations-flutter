@@ -21,8 +21,8 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../moves.dart';
-import '../a1/partner_hinge.dart' as a1;
-import '../a1/quarter_thru.dart' as a1;
+import '../plus/partner_hinge.dart' as a1;
+import '../plus/quarter_thru.dart' as a1;
 import '../a1/split_square_thru.dart' as a1;
 import '../a1/square_chain_thru.dart' as a1;
 import '../a1/turn_and_deal.dart' as a1;

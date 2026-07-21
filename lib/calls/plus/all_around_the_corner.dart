@@ -21,7 +21,7 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../moves.dart';
-import '../b1/see_saw.dart' as b1;
+import 'see_saw.dart' as b1;
 
   final List<AnimatedCall> AllAroundTheCorner = [
 

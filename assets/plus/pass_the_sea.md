@@ -4,7 +4,7 @@
 Timing: 6
 
 From facing couples: All [ Pass Thru](../b1/pass_thru.md), 
-[Quarter In](quarter_in.md), and Left Touch.
+[Quarter In](../a1/quarter_in.md), and Left Touch.
 
 > 
 > ![alt](pass_the_sea_1a.png)![alt](pass_the_sea_1b.png)

@@ -10,7 +10,7 @@ other dancers walk forward to form a box (or other compact formation;
 this may be less than a full circulate) in the center and do the
 (Anything) call.
 
-Example: Transfer and [ Quarter Thru](../a1/quarter_thru.md)
+Example: Transfer and [ Quarter Thru](../plus/quarter_thru.md)
 
 > 
 > ![alt](transfer_and_anything_1a.png)![alt](transfer_and_anything_1b.png)![alt](transfer_and_anything_1c.png)

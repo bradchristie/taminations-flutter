@@ -196,31 +196,9 @@ class LevelFrame extends fm.StatelessWidget {
           crossAxisAlignment: fm.CrossAxisAlignment.stretch,
           children: <fm.Widget>[
             _FullLineWidget(
-                text:'Basic and Mainstream' ,
-                background:Color.BMS),
-            _IndentedLineWidget(
-                text:'SSD' ,
-                background:Color.MS,
-                indented:Color.BMS),
-            _IndentedLineWidget(
-                text:'Basic 1' ,
-                background:Color.B1,
-                indented:Color.BMS),
-            _IndentedLineWidget(
-                text:'Basic 2' ,
-                background:Color.B2,
-                indented:Color.BMS),
-            _IndentedLineWidget(
                 text:'Mainstream' ,
-                background:Color.MS,
-                indented:Color.BMS),
-            _IndentedLineWidget(
-                text:'Mainstream 2026' ,
-                background:Color.MS,
-                indented:Color.BMS),
+                background:Color.MS),
             _FullLineWidget(text:'Plus' ,
-                background:Color.PLUS),
-            _FullLineWidget(text:'Plus 2026' ,
                 background:Color.PLUS),
             _FullLineWidget(
                 text:'Advanced' ,

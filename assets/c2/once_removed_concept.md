@@ -8,7 +8,7 @@ in the pictures below) do the call with each other.
 > ![alt](once_removed_1.png)
 > 
 
-Once Removed [Walk and Dodge](../ms/walk_and_dodge.md):
+Once Removed [Walk and Dodge](../plus/walk_and_dodge.md):
 
 > 
 > ![alt](once_removed_2.png)

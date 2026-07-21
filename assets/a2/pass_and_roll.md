@@ -4,7 +4,7 @@
 Timing: 10
 
 From Single Eight Chain Thru: All [Pass Thru](../b1/pass_thru.md); the centers
-[Turn Thru](../ms/turn_thru.md), while the outsides
+[Turn Thru](../plus/turn_thru.md), while the outsides
 do a right-face [U-Turn Back](../b1/turn_back.md). 
 All [Pass Thru](../b1/pass_thru.md), and the centers 
 [Pass Thru](../b1/pass_thru.md) as the outsides do a

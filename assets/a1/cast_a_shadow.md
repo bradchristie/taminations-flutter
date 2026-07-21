@@ -8,10 +8,10 @@ From the following formations only:
 - Promenade or Wrong Way Promenade
 
 From a 2x4 formation with the ends forming a tandem: ends 1/2
-[Zoom](../b2/zoom.md), [Arm Turn](../ms/turn_thru.md) 3/4,
+[Zoom](../b2/zoom.md), [Arm Turn](../plus/turn_thru.md) 3/4,
 and [Spread](../plus/anything_and_spread.md),
 to become ends of a 2x4. Meanwhile centers
-facing out [Cloverleaf](../ms/cloverleaf.md) and centers facing in
+facing out [Cloverleaf](../plus/cloverleaf.md) and centers facing in
 [Extend](../b2/extend.md), Arm Turn 1/4,
 and Extend. The centers finish as centers of a 2x4 by stepping in between ends who spread
 apart.  In the case in which all the centers are facing in, 
@@ -27,7 +27,7 @@ e.g., Heads Cast a Shadow.
 Everyone acts as though the formation were Two-Faced Lines, with the designated couples as
 the leads. Thus, the outsides do a ½ Zoom
 (with the designated outside acting as the lead), Arm Turn 3/4, and Spread, while the
-designated centers [Cloverleaf](../ms/cloverleaf.md),
+designated centers [Cloverleaf](../plus/cloverleaf.md),
 and the other centers Arm Turn 1/4 and Extend. Ends in Parallel Waves.
 
 Note: Cast a Shadow is not proper from Columns because 

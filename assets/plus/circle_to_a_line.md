@@ -14,7 +14,7 @@ Eight Chain Thru
 
 ### Dance action
 
-Each group of facing couples [Circle Left](circle.md) 1/2 (180 degrees).
+Each group of facing couples [Circle Left](../b1/circle.md) 1/2 (180 degrees).
 The left-side dancer in the new outside couple releases the left handhold and
 slides sideways to the left to become the left end of a One-faced Line
 (which faces the line formed by the other four dancers).
@@ -34,7 +34,7 @@ Facing Lines
 
 ### Styling
 
-The circle portion is the same styling as in [Circle Left](circle.md).
+The circle portion is the same styling as in [Circle Left](../b1/circle.md).
 Dancers lead the twirl under the arch by raising their joined hands into an arch.
 
 ### Comments

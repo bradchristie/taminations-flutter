@@ -5,7 +5,7 @@ Any Hand is typically used with an (anything) call that starts
 with the right hand and is defined
 to consist of, or begin with, a series of one or more Turn actions
 (examples: [Swing Thru](../b2/swing_thru.md),
-[Quarter Thru](quarter_thru.md), [Remake](../a2/remake.md)).
+[Quarter Thru](../plus/quarter_thru.md), [Remake](../a2/remake.md)).
 The parts of the (anything) call are all done in the same order, and for each Turn
 the same fraction is used, but the hand used may be different and the dance action may be
 modified.

@@ -8,7 +8,7 @@ Thru formation:
 ***the Center 4 (those in the Wave)
 [Hinge](../ms/hinge.md)
 and [Cross](../a1/anything_and_cross.md)***
-while ***the Ends [Turn Thru](../ms/turn_thru.md) 
+while ***the Ends [Turn Thru](../plus/turn_thru.md) 
 or Left Turn Thru*** as appropriate. From
 most places (for example, Parallel Waves) this ends in Lines Back-to-Back.
 It can be done from anywhere the Circulate, 1/2 Circulate gives

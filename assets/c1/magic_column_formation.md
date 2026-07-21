@@ -45,7 +45,7 @@ Centers have lefts before the final Extend:
 > ![alt](magic_column_circulate_3.png)
 > 
  
-In the case of "Magic Column [Walk and Dodge](../ms/walk_and_dodge.md)", the rules
+In the case of "Magic Column [Walk and Dodge](../plus/walk_and_dodge.md)", the rules
 are the same: Those who are doing the Walk follow the
 circulate path, and those doing the Dodge (and thus
 leaving the circulate path) just slide sideways as usual:

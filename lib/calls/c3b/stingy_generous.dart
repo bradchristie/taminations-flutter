@@ -21,7 +21,7 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../moves.dart';
-import '../a1/quarter_thru.dart' as a1;
+import '../plus/quarter_thru.dart' as a1;
 
   final List<AnimatedCall> StingyGenerous = [
 
