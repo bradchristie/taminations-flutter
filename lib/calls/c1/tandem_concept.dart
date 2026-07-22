@@ -53,31 +53,31 @@ import '../c3b/bingo.dart' as c3b;
   final List<AnimatedCall> TandemConcept = [
 
     AnimatedCall('Tandem Bend the Line',
-      formation:Formation('Two-Faced Lines RH'),
+      formation:Formation('Two-Faced Lines RH Compact'),
       group:'Tandem',
       paths:[
-          CounterRotateRight(2,0).changeBeats(3).changehands(Hands.RIGHT).skew(1.0,0.0),
+          CounterRotateRight(2.5,0).changeBeats(3).changehands(Hands.RIGHT),
 
-          CounterRotateRight(0,2).changeBeats(3).changehands(Hands.LEFT).skew(1.0,0.0),
+          CounterRotateRight(0.5,2).changeBeats(3).changehands(Hands.LEFT),
 
-          CounterRotateRight(-2,0).changeBeats(3).changehands(Hands.LEFT).skew(-1.0,0.0),
+          CounterRotateRight(-2.5,0).changeBeats(3).changehands(Hands.LEFT),
 
-          CounterRotateRight(0,-2).changeBeats(3).changehands(Hands.RIGHT).skew(-1.0,0.0)
+          CounterRotateRight(-0.5,-2).changeBeats(3).changehands(Hands.RIGHT)
       ]),
 
     AnimatedCall('Tandem Box Circulate',
       formation:Formation('Column RH GBGB'),
       group:'Tandem',
       paths:[
-          RunRight +
-          Forward_2,
+        CounterRotateRight(0,-2).changeBeats(2.5) +
+            CounterRotateRight(0,-2).changeBeats(2.5),
 
-          Forward_2 +
-          RunRight,
+        CounterRotateRight(2,0).changeBeats(2.5) +
+            CounterRotateRight(2,0).changeBeats(2.5),
 
-          Forward_4.changeBeats(5),
+        Forward_4.changeBeats(5),
 
-          Forward_4.changeBeats(5)
+        Forward_4.changeBeats(5)
       ]),
 
     AnimatedCall('Tandem Box Transfer',
@@ -111,32 +111,36 @@ import '../c3b/bingo.dart' as c3b;
       paths:[
           CounterRotateRight(0,-2).changehands(Hands.RIGHT) +
           CounterRotateRight(0,-2).changehands(Hands.RIGHT) +
-          CounterRotateRight(0,-2).changehands(Hands.RIGHT).skew(0.0,-1.0),
+          CounterRotateRight(0,-2.5).changehands(Hands.RIGHT),
 
           CounterRotateRight(2,0).changehands(Hands.RIGHT) +
           CounterRotateRight(2,0).changehands(Hands.RIGHT) +
-          CounterRotateRight(2,0).changehands(Hands.RIGHT).skew(0.0,1.0),
+          CounterRotateRight(2,0.5).changehands(Hands.RIGHT),
 
           CounterRotateRight(0,-2).changehands(Hands.RIGHT) +
           CounterRotateRight(0,-2).changehands(Hands.RIGHT) +
-          CounterRotateRight(0,-2).changehands(Hands.RIGHT).skew(0.0,-1.0),
+          CounterRotateRight(0,-2.5).changehands(Hands.RIGHT),
 
           CounterRotateRight(2,0).changehands(Hands.RIGHT) +
           CounterRotateRight(2,0).changehands(Hands.RIGHT) +
-          CounterRotateRight(2,0).changehands(Hands.RIGHT).skew(0.0,1.0)
+          CounterRotateRight(2,0.5).changehands(Hands.RIGHT)
       ]),
 
     AnimatedCall('Tandem Centers Run',
-      formation:Formation('Ocean Waves RH BGGB'),
+      formation:Formation('Ocean Waves RH BGGB Compact'),
       group:'Tandem',
       paths:[
           DodgeRight.changeBeats(6),
 
-          RunRight +
-          Forward_4.changeBeats(3),
+          Forward +
+              CounterRotateRight(0,-2) +
+              CounterRotateRight(0,-2) +
+              Forward_2.changeBeats(1),
 
-          Forward_4.changeBeats(3) +
-          RunRight,
+          Forward_2.changeBeats(1) +
+              CounterRotateRight(2,0) +
+              CounterRotateRight(2,0) +
+              Forward,
 
           DodgeRight.changeBeats(6)
       ]),
@@ -325,39 +329,39 @@ import '../c3b/bingo.dart' as c3b;
           Back.changeBeats(2) +
           DodgeRight +
           Forward.changeBeats(2) +
-          CounterRotateLeft(2,0).changehands(Hands.LEFT).skew(0.0,-1.0),
+          CounterRotateLeft(2,-0.5).changehands(Hands.LEFT),
 
           ExtendLeft.changeBeats(2).scale(1.5,1.5) +
           Forward_2.changeBeats(3) +
           ExtendRight.changeBeats(2).scale(0.5,1.0) +
-          CounterRotateLeft(2,0).changehands(Hands.LEFT).skew(0.0,-1.5),
+          CounterRotateLeft(2,-1).changehands(Hands.LEFT),
 
           Back_2 +
           DodgeRight +
           Forward_2 +
-          CounterRotateLeft(0,2).changehands(Hands.LEFT).skew(0.0,1.0),
+          CounterRotateLeft(0,2.5).changehands(Hands.LEFT),
 
           ExtendLeft.changeBeats(2).scale(1.0,1.5) +
           Forward_2.changeBeats(3) +
           ExtendRight.changeBeats(2) +
-          CounterRotateLeft(0,2).changehands(Hands.LEFT).skew(0.0,0.5)
+          CounterRotateLeft(0,2).changehands(Hands.LEFT)
       ]),
 
     AnimatedCall('Tandem Fan the Top',
-      formation:Formation('Ocean Waves RH BGGB'),
+      formation:Formation('Ocean Waves RH BGGB Compact'),
       group:'Tandem',
       paths:[
-          CounterRotateRight(5,-1).changeBeats(9),
+          CounterRotateRight(4.5,-1.5).changeBeats(9),
 
-          CounterRotateLeft(-1,3).changeBeats(3) +
-          CounterRotateLeft(-1,3).changeBeats(3) +
-          CounterRotateLeft(-1,3).changeBeats(3),
+          CounterRotateLeft(-0.5,2.5).changeBeats(3) +
+          CounterRotateLeft(-0.5,2.5).changeBeats(3) +
+          CounterRotateLeft(-0.5,2.5).changeBeats(3),
 
-          CounterRotateLeft(3,-1).changeBeats(3) +
-          CounterRotateLeft(3,-1).changeBeats(3) +
-          CounterRotateLeft(3,-1).changeBeats(3),
+          CounterRotateLeft(2.5,-0.5).changeBeats(3) +
+          CounterRotateLeft(2.5,-0.5).changeBeats(3) +
+          CounterRotateLeft(2.5,-0.5).changeBeats(3),
 
-          CounterRotateRight(1,-5).changeBeats(9)
+          CounterRotateRight(1.5,-4.5).changeBeats(9)
       ]),
 
     AnimatedCall('Tandem Fan the Top',
@@ -490,13 +494,13 @@ import '../c3b/bingo.dart' as c3b;
       formation:Formation('Column RH GBGB'),
       group:'Tandem',
       paths:[
-          CounterRotateRight(0,-2).changehands(Hands.RIGHT).skew(0.0,-1.0),
+          CounterRotateRight(0,-2.5).changehands(Hands.RIGHT),
 
-          CounterRotateRight(2,0).changehands(Hands.RIGHT).skew(0.0,1.0),
+          CounterRotateRight(2,0.5).changehands(Hands.RIGHT),
 
-          CounterRotateRight(0,-2).changehands(Hands.RIGHT).skew(0.0,-1.0),
+          CounterRotateRight(0,-2.5).changehands(Hands.RIGHT),
 
-          CounterRotateRight(2,0).changehands(Hands.RIGHT).skew(0.0,1.0)
+          CounterRotateRight(2,0.5).changehands(Hands.RIGHT)
       ]),
 
     AnimatedCall('Tandem Partner Hinge',
