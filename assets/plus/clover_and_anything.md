@@ -18,7 +18,7 @@ Timing: Greater of 10 or the call
 From any formation in which 2 couples are facing out and can do a
 [Cloverleaf](cloverleaf.md)
 (for example, Trade By formation): Those facing out
-[Half Sashay](../b1/sashay.md) blending into a
+[Half Sashay](../ms/sashay.md) blending into a
 [Cloverleaf](cloverleaf.md),
 while the others do the Anything call.
 

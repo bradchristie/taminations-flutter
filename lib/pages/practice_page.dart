@@ -52,7 +52,7 @@ class PracticeModel {
 
   List<List<AnimatedCall>> _callsForLevel(LevelData level) {
     var calls = callIndex.where((item) => item.level == level.dir);
-    return calls.map((e) => e.calls).toList();
+    return  calls.map((e) => flattenAnimatedCallList(e.calls)).toList();
   }
 
   Future<bool> nextAnimation(fm.BuildContext context, DanceModel danceModel) async {

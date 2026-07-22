@@ -4,7 +4,7 @@
 From a 1/4 or 3/4 Tag, Wave between Parallel
 Mini-Waves, 1/4 or 3/4 Line, or Two-Faced Line
 between Parallel Mini-Waves: ***All [Hinge](../ms/hinge.md)***,
-***[Centers Box Circulate](../b1/circulate.md) 1½,
+***[Centers Box Circulate](../ms/circulate.md) 1½,
 as outsides [Trade](../b2/trade.md)***.
 ***Those who meet
 [Cast Off 3/4](../ms/cast_off_three_quarters.md), as others move up (as in 

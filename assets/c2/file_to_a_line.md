@@ -2,7 +2,7 @@
 # File to a Line
 
 From General Columns: Ends slide apart to become Ends of Parallel Lines;
-Centers [Column Circulate](../b1/circulate.md) two spots, to become Centers of the Lines.
+Centers [Column Circulate](../ms/circulate.md) two spots, to become Centers of the Lines.
 
 Note: The Lines are close together after this call--there
 is an implicit adjustment here.

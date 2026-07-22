@@ -6,9 +6,9 @@ From any 2x4 formation with the Centers in Columns
 ***Centers [Quarter Out](../a1/quarter_in.md) (forming a momentary T-bone) and
 [Run](../b2/run.md)
 around the outsides [=Zip Code 1]***,
-***[Pass Thru](../b1/pass_thru.md) [=Zip Code 2]***,
+***[Pass Thru](../ms/pass_thru.md) [=Zip Code 2]***,
 ***[Ends Bend](../a1/ends_bend.md) [=Zip Code 3]***,
-***[Pass Thru](../b1/pass_thru.md) [= Zip Code 4]***,
+***[Pass Thru](../ms/pass_thru.md) [= Zip Code 4]***,
 etc. As this happens, the Original Outsides move
 into the center, without turning. Odd numbers give Facing Ends;
 even numbers give Back-to-Back Ends.

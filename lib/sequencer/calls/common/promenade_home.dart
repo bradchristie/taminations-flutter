@@ -100,7 +100,7 @@ Promenade Corner''';
     //  Adjust from promenade to squared set
     ctx.applyCalls('Half Wheel Around');
     ctx.adjustToFormation(Formation('Squared Set'));
-    ctx.level = LevelData.B1;  // otherwise Counter Rotate would set to C-1
+    ctx.level = LevelData.MS;  // otherwise Counter Rotate would set to C-1
   }
 
   @override

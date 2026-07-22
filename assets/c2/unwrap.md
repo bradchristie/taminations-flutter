@@ -3,7 +3,7 @@
 
 From Diamonds, an Hourglass, Interlocked Diamonds, etc.: The Trailing Point
 walks straight ahead to become #1 in a column; 
-others [Circulate](../b1/circulate.md) their formation
+others [Circulate](../ms/circulate.md) their formation
 and follow that person into Columns. (Note: The caller may also designate the
 Leader.) 
 

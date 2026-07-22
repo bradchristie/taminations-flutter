@@ -1,7 +1,7 @@
 
 # Circle to a Wave
 
-From Facing Couples: [Circle Left 1/4](../b1/circle.md),
+From Facing Couples: [Circle Left 1/4](../ms/circle.md),
 then [Beau](../a1/belles_and_beaus.md)
 [Walk](../plus/walk_and_dodge.md),
 [Belle](../a1/belles_and_beaus.md)

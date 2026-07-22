@@ -6,7 +6,7 @@
 Timing: 4
 
 From facing dancers (for example, Facing Lines, or Eight Chain Thru): 
-All [Pass Thru](../b1/pass_thru.md) and Face In.
+All [Pass Thru](../ms/pass_thru.md) and Face In.
 
 > 
 > ![alt](pass_in_1a.png)![alt](pass_in_1b.png)
@@ -24,7 +24,7 @@ Pass In.
 Timing: 4
 
 From Facing Dancers (for example, Facing Lines, or Eight Chain Thru):
-All [Pass Thru](../b1/pass_thru.md) and Face Out.
+All [Pass Thru](../ms/pass_thru.md) and Face Out.
 
 >
 > ![alt](pass_out_1a.png)![alt](pass_out_1b.png)

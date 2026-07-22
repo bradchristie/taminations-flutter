@@ -5,7 +5,7 @@
 
 Timing: 4, SS 6
 
-From Facing Couples: Similar to [Couples Lead Right](../b1/lead_right.md), 
+From Facing Couples: Similar to [Couples Lead Right](../ms/lead_right.md), 
 except that the dancers drop hands
 and the beaus pass right shoulders with each other on the way. 
 Ends in Couples Back-to-Back.
@@ -18,7 +18,7 @@ Ends in Couples Back-to-Back.
 
 Timing: 4, SS 6
 
-From Facing Couples: Similar to [Couples Lead Left](../b1/lead_right.md),
+From Facing Couples: Similar to [Couples Lead Left](../ms/lead_right.md),
 except that the dancers drop hands
 with each other, and the belles pass left shoulders with each other on the way. 
 Ends in Couples Back-to-Back.

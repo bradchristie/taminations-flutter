@@ -6,7 +6,7 @@
 Timing: 6
 
 From any appropriate formation (for example, Normal Facing Couples): Those who can
-***[Star Thru](../b1/star_thru.md)***.
+***[Star Thru](../ms/star_thru.md)***.
 Those who can ***do the mirror image of a Star Thru***
 (an arch is made with the man's left hand
 and the woman's right hand; the man goes around the arch while the lady goes under). In
@@ -23,7 +23,7 @@ Timing: 10
 
 From any appropriate formation (for example, Double Pass Thru with normal couples in the center
 and outsides sashayed): Those who can
-***[Star Thru](../b1/star_thru.md)***.
+***[Star Thru](../ms/star_thru.md)***.
 Those who can ***do the mirror image of a Star Thru***
 (as in [Double Star Thru](double_star_thru.md)).
 Those who can ***Star Thru***. In each part of the call, some

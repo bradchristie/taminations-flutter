@@ -2,7 +2,7 @@
 # 3 by 1 Checkmate the Column
 
 From Columns: The first 3 dancers in each Column
-[Circulate](../b1/circulate.md) 4 spots and Face In, while #4 in each Column
+[Circulate](../ms/circulate.md) 4 spots and Face In, while #4 in each Column
 Circulate 3 times, Face In, and Circulate. Finishes in
 Parallel 3-and-1 Lines.
 

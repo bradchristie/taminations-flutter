@@ -3,7 +3,7 @@
 
 From Tandem Couples, Box Circulate, and some T-Bone Boxes (there are usually
 2 Leaders and 2 Trailers): All [1/4 In](../a1/quarter_in.md), and the original Leaders
-[Pass Thru](../b1/pass_thru.md) (on the diagonal, if necessary) 
+[Pass Thru](../ms/pass_thru.md) (on the diagonal, if necessary) 
 to form a Right-Hand Mini-Wave with the others. The
 original Trailers slide sideways if necessary. Finishes in a Right-Hand
 Mini-Wave, except for some T-Bone Boxes.

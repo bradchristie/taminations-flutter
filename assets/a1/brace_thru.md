@@ -4,11 +4,11 @@
 Timing: 6, SS 8
 
 From Facing Couples, each composed of a man and a woman:
-***All Right [Pull By](../b1/pull_by.md)***.
+***All Right [Pull By](../ms/pull_by.md)***.
 ***Those dancers (if any) in a normal couple
-[Courtesy Turn](../b1/courtesy_turn.md)
+[Courtesy Turn](../ms/courtesy_turn.md)
 to end facing the other couple. Those in
-a half sashayed couple [U-Turn Back](../b1/turn_back.md),
+a half sashayed couple [U-Turn Back](../ms/turn_back.md),
 turning toward each other***.
 Ends in Normal Facing Couples.
 

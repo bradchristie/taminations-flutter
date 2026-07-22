@@ -3,7 +3,7 @@
 
 From a Wave: ***All [Swing](../a2/slip.md)***,
 then ***the Centers [Cast Off 3/4](../ms/cast_off_three_quarters.md)
-while the Ends [ U-Turn Back](../b1/turn_back.md)***.
+while the Ends [ U-Turn Back](../ms/turn_back.md)***.
 ***All [ Counter Rotate](counter_rotate.md) the
 diamond 1/2 (formerly called "turning the Star 1/2")***, and
 ***[Flip the Diamond](../plus/flip_the_diamond.md)***. Ends in a Wave.

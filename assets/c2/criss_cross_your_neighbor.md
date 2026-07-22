@@ -4,7 +4,7 @@
 From a Box Circulate formation: Trailers Cross Extend, [Cast 3/4](../ms/cast_off_three_quarters.md) and
 [Spread](../plus/anything_and_spread.md) (becoming
 Ends of a new Wave), while Leaders, as one smooth motion, 
-1/2 [Box Circulate](../b1/circulate.md) and
+1/2 [Box Circulate](../ms/circulate.md) and
 [Cross Run](../b2/run.md) (working outside the others) to become the Centers of a new
 Wave.
 

@@ -39,7 +39,7 @@ then [Box Counter Rotate 1/4](../a2/box_counter_rotate.md).
 From Box Circulate formation:
 Without letting go hands with the Leaders, the Trailers
 [Extend](../b2/extend.md) and
-[U-Turn Back](../b1/turn_back.md), to end with their original
+[U-Turn Back](../ms/turn_back.md), to end with their original
 outside hands joined. The Leaders follow along, becoming
 the ends of the resulting Wave.
 

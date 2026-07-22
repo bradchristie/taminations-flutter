@@ -5,11 +5,11 @@ From Parallel Waves.
 
 ## 1/4 the Deucey
 
-***[Arm Turn](../b1/allemande.md) 1/4***;
+***[Arm Turn](../ms/allemande.md) 1/4***;
 ***Centers [Cast Off 1/4](../ms/cast_off_three_quarters.md)
-as the Lead Ends [Circulate](../b1/circulate.md)
-and the Trailings End 1/2 [Circulate](../b1/circulate.md)***;
-***[Center Star turns 1/4](../b1/star.md)***;
+as the Lead Ends [Circulate](../ms/circulate.md)
+and the Trailings End 1/2 [Circulate](../ms/circulate.md)***;
+***[Center Star turns 1/4](../ms/star.md)***;
 ***those who meet (Center Wave) Cast
 Off 1/4 as the other Centers move up*** (Phantom
 [Hourglass Circulate](../a2/hourglass_circulate.md))

@@ -3,10 +3,10 @@
 
 Timing: 12
 
-From Single Eight Chain Thru: All [Pass Thru](../b1/pass_thru.md). The centers
+From Single Eight Chain Thru: All [Pass Thru](../ms/pass_thru.md). The centers
 [Turn Thru](../plus/turn_thru.md) while the outsides
-do a right-face [U-Turn Back](../b1/turn_back.md).
-All begin a [Pass Thru](../b1/pass_thru.md), blending smoothly into
+do a right-face [U-Turn Back](../ms/turn_back.md).
+All begin a [Pass Thru](../ms/pass_thru.md), blending smoothly into
 [Follow Your Neighbor](../plus/follow_your_neighbor.md)
 (equivalent to Pass Thru; Centers Touch 3/4 while outsides right-face U-Turn Back and Roll).
 Ends in a Left-Hand Wave.

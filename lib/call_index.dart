@@ -1,25 +1,12 @@
 import 'call_entry.dart';
-import 'calls/b1/squared_set_convention.dart' as b1;
-import 'calls/b1/circle_rule.dart' as b1;
-import 'calls/c1/step_and_squeeze.dart' as c1;
-import 'calls/a1/touch_12.dart' as a1;
-import 'calls/a1/cast_off_14.dart' as a1;
-import 'calls/c3b/single_file_cross_cycle.dart' as c3b;
-import 'calls/c3b/reverse_cut_flip_the_3_by_1_triangle.dart' as c3b;
-import 'calls/c3b/reverse_cut_flip_the_z.dart' as c3b;
-import 'calls/c3b/reverse_echo.dart' as c3b;
-import 'calls/c3b/single_shake_and_rattle.dart' as c3b;
-import 'calls/c3b/first_last_half_concept.dart' as c3b;
-import 'calls/c3b/contour_the_line.dart' as c3b;
-import 'calls/c3b/counterpoint.dart' as c3b;
 import 'calls/a1/any_hand_concept.dart' as a1;
 import 'calls/a1/anything_and_cross.dart' as a1;
 import 'calls/a1/as_couples.dart' as a1;
 import 'calls/a1/belles_and_beaus.dart' as a1;
 import 'calls/a1/brace_thru.dart' as a1;
 import 'calls/a1/cast_a_shadow.dart' as a1;
+import 'calls/a1/cast_off_14.dart' as a1;
 import 'calls/a1/chain_reaction.dart' as a1;
-import 'calls/plus/clover_and_anything.dart' as plus;
 import 'calls/a1/cross_clover_and_anything.dart' as a1;
 import 'calls/a1/cross_over_circulate.dart' as a1;
 import 'calls/a1/cross_trail_thru.dart' as a1;
@@ -31,31 +18,25 @@ import 'calls/a1/explode_and_anything.dart' as a1;
 import 'calls/a1/explode_the_line.dart' as a1;
 import 'calls/a1/fractional_tops.dart' as a1;
 import 'calls/a1/grand_follow_your_neighbor.dart' as a1;
-import 'calls/plus/grand_quarter_thru.dart' as plus;
 import 'calls/a1/horseshoe_turn.dart' as a1;
 import 'calls/a1/left.dart' as a1;
 import 'calls/a1/linear_cycle.dart' as a1;
 import 'calls/a1/lock_it.dart' as a1;
 import 'calls/a1/mix.dart' as a1;
 import 'calls/a1/pair_off.dart' as a1;
-import 'calls/plus/partner_hinge.dart' as plus;
-import 'calls/plus/partner_tag.dart' as plus;
 import 'calls/a1/pass_in.dart' as a1;
-import 'calls/plus/pass_the_sea.dart' as plus;
 import 'calls/a1/quarter_in.dart' as a1;
-import 'calls/plus/quarter_thru.dart' as plus;
 import 'calls/a1/reverse.dart' as a1;
 import 'calls/a1/right_roll_to_a_wave.dart' as a1;
-import 'calls/plus/scoot_and_dodge.dart' as plus;
 import 'calls/a1/six_two_acey_deucey.dart' as a1;
 import 'calls/a1/split_square_chain_thru.dart' as a1;
 import 'calls/a1/split_square_thru.dart' as a1;
 import 'calls/a1/square_chain_thru.dart' as a1;
 import 'calls/a1/step_and_slide.dart' as a1;
 import 'calls/a1/swap_around.dart' as a1;
+import 'calls/a1/touch_12.dart' as a1;
 import 'calls/a1/transfer_the_column.dart' as a1;
 import 'calls/a1/triple_cross.dart' as a1;
-import 'calls/plus/triple_trade.dart' as plus;
 import 'calls/a1/turn_and_deal.dart' as a1;
 import 'calls/a1/wheel_thru.dart' as a1;
 import 'calls/a2/all_4_all_8.dart' as a2;
@@ -84,109 +65,6 @@ import 'calls/a2/trade_circulate.dart' as a2;
 import 'calls/a2/trail_off.dart' as a2;
 import 'calls/a2/transfer_and_anything.dart' as a2;
 import 'calls/a2/zig_and_zag.dart' as a2;
-import 'calls/plus/all_around_the_corner.dart' as plus;
-import 'calls/b1/allemande.dart' as b1;
-import 'calls/b1/allemande.dart' as ssd;
-import 'calls/b1/arm_turns.dart' as b1;
-import 'calls/b1/arm_turns.dart' as ssd;
-import 'calls/b1/bend_the_line.dart' as b1;
-import 'calls/b1/bend_the_line.dart' as ssd;
-import 'calls/b1/california_twirl.dart' as b1;
-import 'calls/b1/california_twirl.dart' as ssd;
-import 'calls/b1/circle.dart' as b1;
-import 'calls/b1/circle.dart' as ssd;
-import 'calls/plus/circle_to_a_line.dart' as plus;
-import 'calls/b1/circulate.dart' as b1;
-import 'calls/b1/circulate.dart' as ssd;
-import 'calls/b1/courtesy_turn.dart' as b1;
-import 'calls/b1/courtesy_turn.dart' as ssd;
-import 'calls/b1/dive_thru.dart' as b1;
-import 'calls/b1/dive_thru.dart' as ssd;
-import 'calls/plus/do_paso.dart' as plus;
-import 'calls/b1/dosado.dart' as b1;
-import 'calls/b1/dosado.dart' as ssd;
-import 'calls/b1/double_pass_thru.dart' as b1;
-import 'calls/b1/double_pass_thru.dart' as ssd;
-import 'calls/b1/face.dart' as b1;
-import 'calls/b1/face.dart' as ssd;
-import 'calls/b1/first_couple_go.dart' as b1;
-import 'calls/b1/first_couple_go.dart' as ssd;
-import 'calls/b1/forward_and_back.dart' as b1;
-import 'calls/b1/forward_and_back.dart' as ssd;
-import 'calls/b1/grand_square.dart' as b1;
-import 'calls/b1/grand_square.dart' as ssd;
-import 'calls/b1/ladies_chain.dart' as b1;
-import 'calls/b1/ladies_chain.dart' as ssd;
-import 'calls/b1/lead_right.dart' as b1;
-import 'calls/b1/lead_right.dart' as ssd;
-import 'calls/b1/pass_thru.dart' as b1;
-import 'calls/b1/pass_thru.dart' as ssd;
-import 'calls/b1/passing_rule.dart' as b1;
-import 'calls/b1/promenade.dart' as b1;
-import 'calls/b1/promenade.dart' as ssd;
-import 'calls/b1/pull_by.dart' as b1;
-import 'calls/b1/pull_by.dart' as ssd;
-import 'calls/b1/right_and_left_grand.dart' as b1;
-import 'calls/b1/right_and_left_grand.dart' as ssd;
-import 'calls/b1/right_and_left_thru.dart' as b1;
-import 'calls/b1/right_and_left_thru.dart' as ssd;
-import 'calls/b1/same_position_rule.dart' as b1;
-import 'calls/b1/sashay.dart' as b1;
-import 'calls/b1/sashay.dart' as ssd;
-import 'calls/plus/see_saw.dart' as plus;
-import 'calls/b1/separate.dart' as b1;
-import 'calls/b1/separate.dart' as ssd;
-import 'calls/b1/split_the_outside_couple.dart' as b1;
-import 'calls/b1/split_the_outside_couple.dart' as ssd;
-import 'calls/b1/square_thru.dart' as b1;
-import 'calls/b1/square_thru.dart' as ssd;
-import 'calls/b1/star.dart' as b1;
-import 'calls/b1/star.dart' as ssd;
-import 'calls/b1/star_thru.dart' as b1;
-import 'calls/b1/star_thru.dart' as ssd;
-import 'calls/b1/step_thru.dart' as b1;
-import 'calls/b1/step_thru.dart' as ssd;
-import 'calls/b1/swing.dart' as b1;
-import 'calls/b1/swing.dart' as ssd;
-import 'calls/b1/turn_back.dart' as b1;
-import 'calls/b1/turn_back.dart' as ssd;
-import 'calls/b1/veer.dart' as b1;
-import 'calls/b1/veer.dart' as ssd;
-import 'calls/b2/alamo_style.dart' as b2;
-import 'calls/b2/alamo_style.dart' as ssd;
-import 'calls/b2/box_the_gnat.dart' as b2;
-import 'calls/b2/box_the_gnat.dart' as ssd;
-import 'calls/b2/extend.dart' as b2;
-import 'calls/b2/extend.dart' as ssd;
-import 'calls/b2/facing_couples_rule.dart' as b2;
-import 'calls/b2/facing_couples_rule.dart' as ssd;
-import 'calls/b2/ferris_wheel.dart' as b2;
-import 'calls/b2/ferris_wheel.dart' as ssd;
-import 'calls/b2/flutterwheel.dart' as b2;
-import 'calls/b2/flutterwheel.dart' as ssd;
-import 'calls/b2/ocean_wave.dart' as b2;
-import 'calls/b2/ocean_wave.dart' as ssd;
-import 'calls/b2/ocean_wave_rule.dart' as b2;
-import 'calls/b2/pass_the_ocean.dart' as b2;
-import 'calls/b2/pass_the_ocean.dart' as ssd;
-import 'calls/b2/run.dart' as b2;
-import 'calls/b2/run.dart' as ssd;
-import 'calls/b2/sweep_a_quarter.dart' as b2;
-import 'calls/b2/sweep_a_quarter.dart' as ssd;
-import 'calls/b2/swing_thru.dart' as b2;
-import 'calls/b2/swing_thru.dart' as ssd;
-import 'calls/b2/touch_a_quarter.dart' as b2;
-import 'calls/b2/touch_a_quarter.dart' as ssd;
-import 'calls/b2/trade.dart' as b2;
-import 'calls/b2/trade.dart' as ssd;
-import 'calls/b2/trade_by.dart' as b2;
-import 'calls/b2/trade_by.dart' as ssd;
-import 'calls/b2/wheel_and_deal.dart' as b2;
-import 'calls/b2/wheel_and_deal.dart' as ssd;
-import 'calls/b2/wheel_around.dart' as b2;
-import 'calls/b2/wheel_around.dart' as ssd;
-import 'calls/b2/zoom.dart' as b2;
-import 'calls/b2/zoom.dart' as ssd;
 import 'calls/c1/ah_so.dart' as c1;
 import 'calls/c1/alter_the_wave.dart' as c1;
 import 'calls/c1/anything_and_spread.dart' as c1;
@@ -254,6 +132,7 @@ import 'calls/c1/squeeze.dart' as c1;
 import 'calls/c1/start.dart' as c1;
 import 'calls/c1/step_and_flip.dart' as c1;
 import 'calls/c1/step_and_fold.dart' as c1;
+import 'calls/c1/step_and_squeeze.dart' as c1;
 import 'calls/c1/stretch_concept.dart' as c1;
 import 'calls/c1/substitute.dart' as c1;
 import 'calls/c1/swing_and_circle.dart' as c1;
@@ -362,6 +241,7 @@ import 'calls/c3a/big_block_concept.dart' as c3a;
 import 'calls/c3a/breaker_anything.dart' as c3a;
 import 'calls/c3a/catch_anything_n.dart' as c3a;
 import 'calls/c3a/central_concept.dart' as c3a;
+import 'calls/c3a/chase_the_fraction_tag.dart' as c3b;
 import 'calls/c3a/checkerboard_anything.dart' as c3a;
 import 'calls/c3a/choice.dart' as c3a;
 import 'calls/c3a/couple_up.dart' as c3a;
@@ -394,6 +274,7 @@ import 'calls/c3a/like_a_couple_up.dart' as c3a;
 import 'calls/c3a/link_up.dart' as c3a;
 import 'calls/c3a/lock_the_hinge.dart' as c3a;
 import 'calls/c3a/mini_chase.dart' as c3a;
+import 'calls/c3a/mirror_concept.dart' as c3a;
 import 'calls/c3a/open_up_the_column.dart' as c3a;
 import 'calls/c3a/own_the_anyone_anything_by_anything.dart' as c3a;
 import 'calls/c3a/patch_anyone.dart' as c3a;
@@ -440,8 +321,9 @@ import 'calls/c3b/busy_anything.dart' as c3b;
 import 'calls/c3b/change_lanes.dart' as c3b;
 import 'calls/c3b/change_the_centers.dart' as c3b;
 import 'calls/c3b/change_your_image.dart' as c3b;
-import 'calls/c3a/chase_the_fraction_tag.dart' as c3b;
 import 'calls/c3b/chuck_a_luck.dart' as c3b;
+import 'calls/c3b/contour_the_line.dart' as c3b;
+import 'calls/c3b/counterpoint.dart' as c3b;
 import 'calls/c3b/criss_cross_the_deucey.dart' as c3b;
 import 'calls/c3b/cross_cycle.dart' as c3b;
 import 'calls/c3b/cross_flip_the_line.dart' as c3b;
@@ -452,6 +334,7 @@ import 'calls/c3b/divide_the_ocean.dart' as c3b;
 import 'calls/c3b/echo.dart' as c3b;
 import 'calls/c3b/explode_the_diamond.dart' as c3b;
 import 'calls/c3b/fan_concept.dart' as c3b;
+import 'calls/c3b/first_last_half_concept.dart' as c3b;
 import 'calls/c3b/flip_your_lid.dart' as c3b;
 import 'calls/c3b/fraction_cast_and_relay.dart' as c3b;
 import 'calls/c3b/gee_whiz.dart' as c3b;
@@ -463,7 +346,6 @@ import 'calls/c3b/lickety_split.dart' as c3b;
 import 'calls/c3b/lift_off.dart' as c3b;
 import 'calls/c3b/lock_em_up.dart' as c3b;
 import 'calls/c3b/loop_and_tag.dart' as c3b;
-import 'calls/c3a/mirror_concept.dart' as c3a;
 import 'calls/c3b/n_steps_at_a_time.dart' as c3b;
 import 'calls/c3b/nuclear_reaction.dart' as c3b;
 import 'calls/c3b/oddly_evenly_concept.dart' as c3b;
@@ -473,6 +355,9 @@ import 'calls/c3b/reactivate.dart' as c3b;
 import 'calls/c3b/reflected_concept.dart' as c3b;
 import 'calls/c3b/reset.dart' as c3b;
 import 'calls/c3b/reverse_checkpoint.dart' as c3b;
+import 'calls/c3b/reverse_cut_flip_the_3_by_1_triangle.dart' as c3b;
+import 'calls/c3b/reverse_cut_flip_the_z.dart' as c3b;
+import 'calls/c3b/reverse_echo.dart' as c3b;
 import 'calls/c3b/reverse_order.dart' as c3b;
 import 'calls/c3b/reverse_the_pass.dart' as c3b;
 import 'calls/c3b/reverse_the_top.dart' as c3b;
@@ -483,6 +368,8 @@ import 'calls/c3b/scramble.dart' as c3b;
 import 'calls/c3b/secondly_thirdly_fourthly.dart' as c3b;
 import 'calls/c3b/shake_and_rattle.dart' as c3b;
 import 'calls/c3b/sidetrack.dart' as c3b;
+import 'calls/c3b/single_file_cross_cycle.dart' as c3b;
+import 'calls/c3b/single_shake_and_rattle.dart' as c3b;
 import 'calls/c3b/split_phantom_boxes.dart' as c3b;
 import 'calls/c3b/stimulate.dart' as c3b;
 import 'calls/c3b/stingy_generous.dart' as c3b;
@@ -500,64 +387,119 @@ import 'calls/c3b/wave_the_anyone.dart' as c3b;
 import 'calls/c3b/with_confidence.dart' as c3b;
 import 'calls/c3b/z_axle.dart' as c3b;
 import 'calls/c3b/z_concept.dart' as c3b;
+import 'calls/ms/alamo_style.dart' as ms;
+import 'calls/ms/allemande.dart' as ms;
+import 'calls/ms/arm_turns.dart' as ms;
+import 'calls/ms/bend_the_line.dart' as ms;
+import 'calls/ms/box_the_gnat.dart' as ms;
+import 'calls/ms/california_twirl.dart' as ms;
 import 'calls/ms/cast_off_three_quarters.dart' as ms;
-import 'calls/ms/cast_off_three_quarters.dart' as ssd;
 import 'calls/ms/centers_in.dart' as ms;
-import 'calls/ms/centers_in.dart' as ssd;
-import 'calls/plus/cloverleaf.dart' as plus;
+import 'calls/ms/circle.dart' as ms;
+import 'calls/ms/circle_rule.dart' as ms;
+import 'calls/ms/circulate.dart' as ms;
+import 'calls/ms/courtesy_turn.dart' as ms;
+import 'calls/ms/dive_thru.dart' as ms;
 import 'calls/ms/dixie_style.dart' as ms;
-import 'calls/plus/eight_chain_thru.dart' as plus;
+import 'calls/ms/dosado.dart' as ms;
+import 'calls/ms/double_pass_thru.dart' as ms;
+import 'calls/ms/extend.dart' as ms;
+import 'calls/ms/face.dart' as ms;
+import 'calls/ms/facing_couples_rule.dart' as ms;
+import 'calls/ms/ferris_wheel.dart' as ms;
+import 'calls/ms/first_couple_go.dart' as ms;
+import 'calls/ms/flutterwheel.dart' as ms;
 import 'calls/ms/fold.dart' as ms;
-import 'calls/ms/fold.dart' as ssd;
+import 'calls/ms/forward_and_back.dart' as ms;
 import 'calls/ms/fraction_tag.dart' as ms;
-import 'calls/ms/fraction_tag.dart' as ssd;
+import 'calls/ms/grand_square.dart' as ms;
 import 'calls/ms/hinge.dart' as ms;
-import 'calls/ms/hinge.dart' as ssd;
-import 'calls/plus/pass_to_the_center.dart' as plus;
+import 'calls/ms/ladies_chain.dart' as ms;
+import 'calls/ms/lead_right.dart' as ms;
+import 'calls/ms/ocean_wave.dart' as ms;
+import 'calls/ms/ocean_wave_rule.dart' as ms;
+import 'calls/ms/pass_the_ocean.dart' as ms;
+import 'calls/ms/pass_thru.dart' as ms;
+import 'calls/ms/passing_rule.dart' as ms;
+import 'calls/ms/promenade.dart' as ms;
+import 'calls/ms/pull_by.dart' as ms;
 import 'calls/ms/recycle.dart' as ms;
-import 'calls/ms/recycle.dart' as ssd;
+import 'calls/ms/right_and_left_grand.dart' as ms;
+import 'calls/ms/right_and_left_thru.dart' as ms;
+import 'calls/ms/run.dart' as ms;
+import 'calls/ms/same_position_rule.dart' as ms;
+import 'calls/ms/sashay.dart' as ms;
 import 'calls/ms/scoot_back.dart' as ms;
-import 'calls/ms/scoot_back.dart' as ssd;
-import 'calls/plus/shoot_the_star.dart' as plus;
+import 'calls/ms/separate.dart' as ms;
 import 'calls/ms/slide_thru.dart' as ms;
-import 'calls/ms/slide_thru.dart' as ssd;
-import 'calls/plus/slip_the_clutch.dart' as plus;
-import 'calls/plus/spin_chain_thru.dart' as plus;
 import 'calls/ms/spin_the_top.dart' as ms;
+import 'calls/ms/split_the_outside_couple.dart' as ms;
+import 'calls/ms/square_thru.dart' as ms;
+import 'calls/ms/squared_set_convention.dart' as ms;
+import 'calls/ms/star.dart' as ms;
+import 'calls/ms/star_thru.dart' as ms;
+import 'calls/ms/step_thru.dart' as ms;
+import 'calls/ms/sweep_a_quarter.dart' as ms;
+import 'calls/ms/swing.dart' as ms;
+import 'calls/ms/swing_thru.dart' as ms;
 import 'calls/ms/tag.dart' as ms;
-import 'calls/ms/tag.dart' as ssd;
-import 'calls/plus/thar.dart' as plus;
-import 'calls/plus/turn_thru.dart' as plus;
-import 'calls/plus/walk_and_dodge.dart' as plus;
+import 'calls/ms/touch_a_quarter.dart' as ms;
+import 'calls/ms/trade.dart' as ms;
+import 'calls/ms/trade_by.dart' as ms;
+import 'calls/ms/turn_back.dart' as ms;
+import 'calls/ms/veer.dart' as ms;
+import 'calls/ms/wheel_and_deal.dart' as ms;
+import 'calls/ms/wheel_around.dart' as ms;
+import 'calls/ms/zoom.dart' as ms;
 import 'calls/plus/acey_deucey.dart' as plus;
 import 'calls/plus/all_8_spin_the_top.dart' as plus;
+import 'calls/plus/all_around_the_corner.dart' as plus;
 import 'calls/plus/anything_and_roll.dart' as plus;
 import 'calls/plus/anything_and_spread.dart' as plus;
 import 'calls/plus/chase_right.dart' as plus;
+import 'calls/plus/circle_to_a_line.dart' as plus;
+import 'calls/plus/clover_and_anything.dart' as plus;
+import 'calls/plus/cloverleaf.dart' as plus;
 import 'calls/plus/coordinate.dart' as plus;
 import 'calls/plus/crossfire.dart' as plus;
 import 'calls/plus/cut_the_diamond.dart' as plus;
 import 'calls/plus/diamond_circulate.dart' as plus;
 import 'calls/plus/dixie_grand.dart' as plus;
+import 'calls/plus/do_paso.dart' as plus;
+import 'calls/plus/eight_chain_thru.dart' as plus;
 import 'calls/plus/explode_and_anything.dart' as plus;
 import 'calls/plus/explode_the_wave.dart' as plus;
 import 'calls/plus/fan_the_top.dart' as plus;
 import 'calls/plus/flip_the_diamond.dart' as plus;
 import 'calls/plus/follow_your_neighbor.dart' as plus;
+import 'calls/plus/grand_quarter_thru.dart' as plus;
 import 'calls/plus/grand_swing_thru.dart' as plus;
 import 'calls/plus/linear_cycle.dart' as plus;
 import 'calls/plus/load_the_boat.dart' as plus;
+import 'calls/plus/partner_hinge.dart' as plus;
+import 'calls/plus/partner_tag.dart' as plus;
+import 'calls/plus/pass_the_sea.dart' as plus;
+import 'calls/plus/pass_to_the_center.dart' as plus;
 import 'calls/plus/peel_off.dart' as plus;
 import 'calls/plus/peel_the_top.dart' as plus;
 import 'calls/plus/ping_pong_circulate.dart' as plus;
+import 'calls/plus/quarter_thru.dart' as plus;
 import 'calls/plus/relay_the_deucey.dart' as plus;
-import 'calls/plus/single_circle_to_a_wave.dart' as plus;
+import 'calls/plus/scoot_and_dodge.dart' as plus;
+import 'calls/plus/see_saw.dart' as plus;
+import 'calls/plus/shoot_the_star.dart' as plus;
+import 'calls/plus/slip_the_clutch.dart' as plus;
 import 'calls/plus/spin_chain_and_exchange_the_gears.dart' as plus;
 import 'calls/plus/spin_chain_the_gears.dart' as plus;
+import 'calls/plus/spin_chain_thru.dart' as plus;
 import 'calls/plus/teacup_chain.dart' as plus;
+import 'calls/plus/thar.dart' as plus;
 import 'calls/plus/track_ii.dart' as plus;
 import 'calls/plus/trade_the_wave.dart' as plus;
 import 'calls/plus/triple_scoot.dart' as plus;
+import 'calls/plus/triple_trade.dart' as plus;
+import 'calls/plus/turn_thru.dart' as plus;
+import 'calls/plus/walk_and_dodge.dart' as plus;
 
 var callIndex = [
   CallEntry('1/4 Mix','c3a','c3a/1_4_mix',c3a.Q14Mix,),
@@ -575,16 +517,12 @@ var callIndex = [
 
   CallEntry('Acey Deucey','plus','plus/acey_deucey',plus.AceyDeucey,'plus/acey_deucey.mp3'),
   CallEntry('Ah So','c1','c1/ah_so',c1.AhSo,),
-  CallEntry('Alamo Style','b2','b2/alamo_style',
-      b2.AlamoStyle,'b2/alamo_style.mp3'),
-  CallEntry('Alamo Style','ssd','ssd/alamo_style',ssd.AlamoStyle,),
-  CallEntry('Alamo Style','m26','m26/alamo_style',ssd.AlamoStyle,),
+  CallEntry('Alamo Style','ms','ms/alamo_style',
+      ms.AlamoStyle,'ms/alamo_style.mp3'),
   CallEntry('All 4 Couples / All 8 concepts','a2','a2/all_4_all_8',a2.All4All8,),
   CallEntry('All 8 Spin the Top','plus','plus/all_8_spin_the_top',plus.All8SpinTheTop,'plus/all_8_spin_the_top.mp3'),
   CallEntry('All Eight Recycle','c1','c1/recycle',c1.Recycle,),
-  CallEntry('Allemande Left','b1','b1/allemande',b1.Allemande,'b1/allemande.mp3'),
-  CallEntry('Allemande Left','ssd','ssd/allemande',ssd.Allemande,),
-  CallEntry('Allemande Left','m26','ssd/allemande',ssd.Allemande,),
+  CallEntry('Allemande Left','ms','ms/allemande',ms.Allemande,'ms/allemande.mp3'),
   CallEntry('Allemande Thar','plus','plus/thar',plus.Thar,'plus/allemande_thar.mp3'),
   CallEntry('Along','c2','c2/swing_along',c2.SwingAlong,),
   CallEntry('Alter and Circulate','c2','c2/alter_and_circulate',c2.AlterAndCirculate,),
@@ -605,18 +543,12 @@ var callIndex = [
   CallEntry('<anything> the Windmill','c1','c1/anything_the_windmill',c1.AnythingTheWindmill,),
   CallEntry('<anything> to a Wave','c1','c1/anything_to_a_wave',c1.AnythingToAWave,),
   CallEntry('<anything>er\'s Couple Up','c3a','c3a/anythingers_couple_up',c3a.AnythingersCoupleUp,),
-  CallEntry('Arm Turns','b1','b1/arm_turns',b1.ArmTurns,),
-  CallEntry('Arm Turns','ssd','ssd/arm_turns',ssd.ArmTurns,),
-  CallEntry('Arm Turns','m26','m26/arm_turns',ssd.ArmTurns,),
+  CallEntry('Arm Turns','ms','ms/arm_turns',ms.ArmTurns,),
   CallEntry('As Couples Concept','a1','a1/as_couples',a1.AsCouples,),
 
-  CallEntry('Backtrack','b1','b1/turn_back',b1.TurnBack,),
-  CallEntry('Backtrack','ssd','ssd/turn_back',ssd.TurnBack,),
-  CallEntry('Backtrack','m26','m26/turn_back',ssd.TurnBack,),
+  CallEntry('Backtrack','ms','ms/turn_back',ms.TurnBack,),
   CallEntry('Belles and Beaus','a1','a1/belles_and_beaus',a1.BellesAndBeaus,),
-  CallEntry('Bend the Line','b1','b1/bend_the_line',b1.BendTheLine,'b1/bend_the_line.mp3'),
-  CallEntry('Bend the Line','ssd','ssd/bend_the_line',ssd.BendTheLine,),
-  CallEntry('Bend the Line','m26','m26/bend_the_line',ssd.BendTheLine,),
+  CallEntry('Bend the Line','ms','ms/bend_the_line',ms.BendTheLine,'ms/bend_the_line.mp3'),
   CallEntry('Bias Circulate','c3a','c3a/bias_circulate',c3a.BiasCirculate,),
   CallEntry('Big Block Concept','c3a','c3a/big_block_concept',c3a.BigBlockConcept,),
   CallEntry('Bingo','c3b','c3b/bingo',c3b.Bingo,),
@@ -625,9 +557,7 @@ var callIndex = [
   CallEntry('Bounce the Anyone','c2','c2/bounce',c2.Bounce,),
   CallEntry('Box Counter Rotate','a2','a2/box_counter_rotate',a2.BoxCounterRotate,'a2/box_counter_rotate.mp3'),
   CallEntry('Box Recycle','c1','c1/recycle',c1.Recycle,),
-  CallEntry('Box the Gnat','b2','b2/box_the_gnat',b2.BoxTheGnat,'b2/box_the_gnat.mp3'),
-  CallEntry('Box the Gnat','ssd','ssd/box_the_gnat',ssd.BoxTheGnat,),
-  CallEntry('Box the Gnat','m26','m26/box_the_gnat',ssd.BoxTheGnat,),
+  CallEntry('Box the Gnat','ms','ms/box_the_gnat',ms.BoxTheGnat,'ms/box_the_gnat.mp3'),
   CallEntry('Box Transfer','a2','a2/box_transfer',a2.BoxTransfer,'a2/box_transfer.mp3'),
   CallEntry('Brace Thru','a1','a1/brace_thru',a1.BraceThru,'a1/brace_thru.mp3'),
   CallEntry('Breaker <anything>','c3a','c3a/breaker_anything',c3a.BreakerAnything,),
@@ -635,25 +565,17 @@ var callIndex = [
   CallEntry('But','c1','c1/but',c1.But,),
   CallEntry('Butterfly Formation / Concept','c1','c1/butterfly_formation',c1.ButterflyFormation,),
 
-  CallEntry('California Twirl','b1','b1/california_twirl',b1.CaliforniaTwirl,'b1/california_twirl.mp3'),
-  CallEntry('California Twirl','ssd','ssd/california_twirl',ssd.CaliforniaTwirl,),
-  CallEntry('California Twirl','m26','m26/california_twirl',ssd.CaliforniaTwirl,),
+  CallEntry('California Twirl','ms','ms/california_twirl',ms.CaliforniaTwirl,'ms/california_twirl.mp3'),
   CallEntry('Cast a Shadow','a1','a1/cast_a_shadow',a1.CastAShadow,'a1/cast_a_shadow.mp3'),
   CallEntry('Cast and Relay','c3b','c3b/fraction_cast_and_relay',c3b.FractionCastAndRelay,),
   CallEntry('Cast Back','c1','c1/cast_back',c1.CastBack,),
   CallEntry('Cast Off One Quarter / One Half','a1','a1/cast_off_14',  a1.CastOffOneQuarter,),
   CallEntry('Cast Off Three Quarters','ms','ms/cast_off_three_quarters',ms.CastOffThreeQuarters,'ms/cast_off_three_quarters.mp3'),
-  CallEntry('Cast Off Three Quarters','ssd','ssd/cast_off_three_quarters',ssd.CastOffThreeQuarters,),
-  CallEntry('Cast Off Three Quarters','m26','m26/cast_off_three_quarters',ssd.CastOffThreeQuarters,),
   CallEntry('Catch 1, 2, 3, 4','c2','c2/catch',c2.Catch,),
   CallEntry('Catch <anything>','c3a','c3a/catch_anything_n',c3a.CatchAnythingN,),
   CallEntry('Centers In','ms','ms/centers_in',ms.CentersIn,'ms/centers_in.mp3'),
-  CallEntry('Centers In','ssd','ssd/centers_in',ssd.CentersIn,),
-  CallEntry('Centers In','m26','m26/centers_in',ssd.CentersIn,),
   CallEntry('Central Concept','c3a','c3a/central_concept',c3a.CentralConcept,),
-  CallEntry('Chain Down the Line','b1','b1/ladies_chain',b1.LadiesChain,),
-  CallEntry('Chain Down the Line','ssd','ssd/ladies_chain',ssd.LadiesChain,),
-  CallEntry('Chain Down the Line','m26','m26/ladies_chain',ssd.LadiesChain,),
+  CallEntry('Chain Down the Line','ms','ms/ladies_chain',ms.LadiesChain,),
   CallEntry('Chain Reaction','a1','a1/chain_reaction',a1.ChainReaction,'a1/chain_reaction.mp3'),
   CallEntry('Chain Reaction','c1','c1/chain_reaction',c1.ChainReaction,),
   CallEntry('Chain the Square','c2','c2/chain_the_square',c2.ChainTheSquare,),
@@ -673,17 +595,11 @@ var callIndex = [
   CallEntry('Choice','c3a','c3a/choice',c3a.Choice,),
   CallEntry('Chuck-A-Luck','c3b','c3b/chuck_a_luck',c3b.ChuckALuck,),
   CallEntry('Circle By','c1','c1/circle_by',c1.CircleBy,),
-  CallEntry('Circle Left / Right','b1','b1/circle',b1.Circle,),
-  CallEntry('Circle Left / Right','ssd','ssd/circle',ssd.Circle,),
-  CallEntry('Circle Left / Right','m26','m26/circle',ssd.Circle,),
-  CallEntry('Circle Rule','b1','b1/circle_rule',b1.CircleRule),
-  CallEntry('Circle Rule','ssd','ssd/circle_rule',b1.CircleRule),
-  CallEntry('Circle Rule','m26','m26/circle_rule',b1.CircleRule),
+  CallEntry('Circle Left / Right','ms','ms/circle',ms.Circle,),
+  CallEntry('Circle Rule','ms','ms/circle_rule',ms.CircleRule),
   CallEntry('Circle to a Line','plus','plus/circle_to_a_line',plus.CircleToALine,'plus/circle_to_a_line.mp3'),
   CallEntry('Circle to a Wave','c2','c2/circle_to_a_wave',c2.CircleToAWave,),
-  CallEntry('Circulate','b1','b1/circulate',b1.Circulate,),
-  CallEntry('Circulate','ssd','ssd/circulate',ssd.Circulate,),
-  CallEntry('Circulate','m26','m26/circulate',ssd.Circulate,),
+  CallEntry('Circulate','ms','ms/circulate',ms.Circulate,),
   CallEntry('Circulate','c1','c1/circulate',c1.Circulate,),
   CallEntry('Clover and <anything>','plus','plus/clover_and_anything',plus.CloverAndAnything,),
   CallEntry('Cloverleaf','plus','plus/cloverleaf',plus.Cloverleaf,'plus/cloverleaf.mp3'),
@@ -694,9 +610,7 @@ var callIndex = [
   CallEntry('Counterpoint','c3b','c3b/counterpoint',c3b.Counterpoint,),
   CallEntry('Counter Rotate','c1','c1/counter_rotate',c1.CounterRotate,),
   CallEntry('Couple Up','c3a','c3a/couple_up',c3a.CoupleUp,),
-  CallEntry('Courtesy Turn','b1','b1/courtesy_turn',b1.CourtesyTurn,'b1/courtesy_turn.mp3'),
-  CallEntry('Courtesy Turn','ssd','ssd/courtesy_turn',ssd.CourtesyTurn,),
-  CallEntry('Courtesy Turn','m26','m26/courtesy_turn',ssd.CourtesyTurn,),
+  CallEntry('Courtesy Turn','ms','ms/courtesy_turn',ms.CourtesyTurn,'ms/courtesy_turn.mp3'),
   CallEntry('Crazy Concept','c2','c2/crazy_concept',c2.CrazyConcept,),
   CallEntry('Criss Cross the Deucey','c3b','c3b/criss_cross_the_deucey',c3b.CrissCrossTheDeucey,),
   CallEntry('Criss Cross the Shadow','c2','c2/criss_cross_the_shadow',c2.CrissCrossTheShadow,),
@@ -718,8 +632,6 @@ var callIndex = [
   CallEntry('Cross Extend','c1','c1/cross_extend',c1.CrossExtend,),
   CallEntry('Cross Flip the Line','c3b','c3b/cross_flip_the_line',c3b.CrossFlipTheLine,),
   CallEntry('Cross Fold','ms','ms/fold',ms.Fold,'ms/cross_fold.mp3'),
-  CallEntry('Cross Fold','ssd','ssd/fold',ssd.Fold,),
-  CallEntry('Cross Fold','m26','m26/fold',ssd.Fold,),
   CallEntry('Cross Invert the Column','c2','c2/invert_the_column',c2.InvertTheColumn,),
   CallEntry('Cross Kick Off','c2','c2/kick_off',c2.KickOff,),
   CallEntry('Cross Lockit','c3b','c3b/cross_lockit',c3b.CrossLockit,),
@@ -727,9 +639,7 @@ var callIndex = [
   CallEntry('Cross Over Circulate','c1','c1/cross_over_circulate',c1.CrossOverCirculate,),
   CallEntry('Cross Ramble','c2','c2/cross_ramble',c2.CrossRamble,),
   CallEntry('Cross Roll','c1','c1/cross_roll',c1.CrossRoll,),
-  CallEntry('Cross Run','b2','b2/run',b2.Run,'b2/cross_run.mp3'),
-  CallEntry('Cross Run','ssd','ssd/run',ssd.Run,),
-  CallEntry('Cross Run','m26','m26/run',ssd.Run,),
+  CallEntry('Cross Run','ms','ms/run',ms.Run,'ms/cross_run.mp3'),
   CallEntry('Cross Swap the Top','c3b','c3b/swap_the_top',c3b.SwapTheTop,),
   CallEntry('Cross the K','c2','c2/cross_the_k',c2.CrossTheK,),
   CallEntry('Cross Trade and Wheel','c2','c2/cross_and_wheel',c2.CrossAndWheel,),
@@ -751,27 +661,21 @@ var callIndex = [
   CallEntry('Dilemma','c3a','c3a/delight_dilemma',c3a.DelightDilemma,),
   CallEntry('Disband','c3b','c3b/disband',c3b.Disband,),
   CallEntry('Disconnected Concept','c2','c2/disconnected_concept',c2.DisconnectedConcept,),
-  CallEntry('Dive Thru','b1','b1/dive_thru',
-      b1.DiveThru,'b1/dive_thru.mp3'),
-  CallEntry('Dive Thru','ssd','ssd/dive_thru',ssd.DiveThru,),
-  CallEntry('Dive Thru','m26','m26/dive_thru',ssd.DiveThru,),
+  CallEntry('Dive Thru','ms','ms/dive_thru',
+      ms.DiveThru,'ms/dive_thru.mp3'),
   CallEntry('Divide the Ocean | Sea <direction> | <anything>','c3b','c3b/divide_the_ocean',c3b.DivideTheOcean,),
   CallEntry('Dixie Diamond','c1','c1/dixie_diamond',c1.DixieDiamond,),
   CallEntry('Dixie Grand','plus','plus/dixie_grand',plus.DixieGrand,'plus/dixie_grand.mp3'),
   CallEntry('Dixie Sashay','c1','c1/dixie_sashay',c1.DixieSashay,),
   CallEntry('Dixie Style to a Wave','ms','ms/dixie_style',ms.DixieStyle,'ms/dixie_style_to_an_ocean_wave.mp3'),
   CallEntry('Dixie Style to a Wave','plus','plus/dixie_style',ms.DixieStyle,'ms/dixie_style_to_an_ocean_wave.mp3'),
-  CallEntry('Do Paso','b1','b1/do_paso', plus.DoPaso,'b1/do_paso.mp3'),
+  CallEntry('Do Paso','ms','ms/do_paso', plus.DoPaso,'ms/do_paso.mp3'),
   CallEntry('Do Paso','plus','plus/do_paso', plus.DoPaso,'plus/do_paso.mp3'),
   CallEntry('Do Your Part','a1','a1/do_your_part',a1.DoYourPart,),
   CallEntry('Dodge <anything>','c2','c2/dodge_anything',c2.DodgeAnything,),
-  CallEntry('Dosado','b1','b1/dosado',b1.Dosado,'b1/dosado.mp3'),
-  CallEntry('Dosado','ssd','ssd/dosado',ssd.Dosado,),
-  CallEntry('Dosado','m26','m26/dosado',ssd.Dosado,),
+  CallEntry('Dosado','ms','ms/dosado',ms.Dosado,'ms/dosado.mp3'),
   CallEntry('Double Cross','a1','a1/triple_cross',a1.TripleCross,),
-  CallEntry('Double Pass Thru','b1','b1/double_pass_thru',b1.DoublePassThru,'b1/double_pass_thru.mp3'),
-  CallEntry('Double Pass Thru','ssd','ssd/double_pass_thru',ssd.DoublePassThru,),
-  CallEntry('Double Pass Thru','m26','m26/double_pass_thru',ssd.DoublePassThru,),
+  CallEntry('Double Pass Thru','ms','ms/double_pass_thru',ms.DoublePassThru,'ms/double_pass_thru.mp3'),
   CallEntry('Double Star Thru','a1','a1/double_star_thru',a1.DoubleStarThru,'a1/double_star_thru.mp3'),
   CallEntry('Drift Apart','c3a','c3a/drift_apart',c3a.DriftApart,),
   CallEntry('Drop In/Out/Right/Left','c2','c2/drop_in',c2.DropIn,),
@@ -791,33 +695,20 @@ var callIndex = [
   CallEntry('Explode the Line','a1','a1/explode_the_line',a1.ExplodeTheLine,'a1/explode_the_line.mp3'),
   CallEntry('Explode the Top','c3a','c3a/explode_the_top',c3a.ExplodeTheTop,),
   CallEntry('Explode the Wave','plus','plus/explode_the_wave',plus.ExplodeTheWave,'plus/explode_the_wave.mp3'),
-  CallEntry('Extend','b2','b2/extend',
-      b2.Extend,'b2/extend.mp3'),
-  CallEntry('Extend','ssd','ssd/extend',ssd.Extend,),
-  CallEntry('Extend','m26','m26/extend',ssd.Extend,),
+  CallEntry('Extend','ms','ms/extend',
+      ms.Extend,'ms/extend.mp3'),
 
-  CallEntry('Face Left / Right / In / Out','b1','b1/face',b1.Face,),
-  CallEntry('Face Left / Right / In / Out','ssd','ssd/face',ssd.Face,),
-  CallEntry('Face Left / Right / In / Out','m26','m26/face',ssd.Face,),
-  CallEntry('Facing Couples Rule','b2','b2/facing_couples_rule',b2.FacingCouplesRule,),
-  CallEntry('Facing Couples Rule','ssd','ssd/facing_couples_rule',ssd.FacingCouplesRule,),
-  CallEntry('Facing Couples Rule','m26','m26/facing_couples_rule',ssd.FacingCouplesRule,),
+  CallEntry('Face Left / Right / In / Out','ms','ms/face',ms.Face,),
+  CallEntry('Facing Couples Rule','ms','ms/facing_couples_rule',ms.FacingCouplesRule,),
   CallEntry('Fan Concept','c3b','c3b/fan_concept',c3b.FanConcept,),
   CallEntry('Fan the Top','plus','plus/fan_the_top',plus.FanTheTop,'plus/fan_the_top.mp3'),
   CallEntry('Fancy','c3a','c3a/fancy',c3a.Fancy,),
   CallEntry('Fascinate/Fascinating','c2','c2/fascinate',c2.Fascinate,),
-  CallEntry('Ferris Wheel','b2','b2/ferris_wheel',b2.FerrisWheel,'b2/ferris_wheel.mp3'),
-  CallEntry('Ferris Wheel','ssd','ssd/ferris_wheel',ssd.FerrisWheel,),
-  CallEntry('Ferris Wheel','m26','m26/ferris_wheel',ssd.FerrisWheel,),
+  CallEntry('Ferris Wheel','ms','ms/ferris_wheel',ms.FerrisWheel,'ms/ferris_wheel.mp3'),
   CallEntry('File to a Line','c2','c2/file_to_a_line',c2.FileToALine,),
   CallEntry('Finally Concept','c3a','c3a/finally_concept',c3a.FinallyConcept,),
   CallEntry('Finish','c1','c1/finish',c1.Finish,),
-  CallEntry('First Couple Go Left/Right, Next Couple Go Left/Right','b1','b1/first_couple_go',
-      b1.FirstCoupleGo,),
-  CallEntry('First Couple Go Left/Right, Next Couple Go Left/Right','ssd','ssd/first_couple_go',
-      ssd.FirstCoupleGo,),
-  CallEntry('First Couple Go Left/Right, Next Couple Go Left/Right','m26','m26/first_couple_go',
-    ssd.FirstCoupleGo,),
+  CallEntry('First Couple Go Left/Right, Next Couple Go Left/Right','ms','ms/first_couple_go',ms.FirstCoupleGo,),
   CallEntry('First Half Concept','c3b','c3b/first_last_half_concept',
       c3b.FirstLastHalfConcept,),
   CallEntry('Flare Out to a Line','c3a','c3a/flare_out_to_a_line',c3a.FlareOutToALine,),
@@ -829,19 +720,13 @@ var callIndex = [
   CallEntry('Flip the Line','c1','c1/flip_the_line',c1.FlipTheLine,),
   CallEntry('Flip Your Lid','c3b','c3b/flip_your_lid',c3b.FlipYourLid,),
   CallEntry('Flip Your Neighbor','c2','c2/any_tagging_call_your_neighbor',c2.AnyTaggingCallYourNeighbor,),
-  CallEntry('Flutterwheel','b2','b2/flutterwheel',b2.Flutterwheel,'b2/flutterwheel.mp3'),
-  CallEntry('Flutterwheel','ssd','ssd/flutterwheel',ssd.Flutterwheel,),
-  CallEntry('Flutterwheel','m26','m26/flutterwheel',ssd.Flutterwheel,),
+  CallEntry('Flutterwheel','ms','ms/flutterwheel',ms.Flutterwheel,'ms/flutterwheel.mp3'),
   CallEntry('Fold','ms','ms/fold',ms.Fold,'ms/fold.mp3'),
-  CallEntry('Fold','ssd','ssd/fold',ssd.Fold,),
-  CallEntry('Fold','m26','m26/fold',ssd.Fold,),
   CallEntry('Follow Thru','c1','c1/follow_thru',c1.FollowThru,),
   CallEntry('Follow to a Diamond','c3a','c3a/follow_to_a_diamond',c3a.FollowToADiamond,),
   CallEntry('Follow Your Leader','c3a','c3a/follow_your_leader',c3a.FollowYourLeader,),
   CallEntry('Follow Your Neighbor','plus','plus/follow_your_neighbor',plus.FollowYourNeighbor,'plus/follow_your_neighbor.mp3'),
-  CallEntry('Forward and Back','b1','b1/forward_and_back',b1.ForwardAndBack,'b1/forward_and_back.mp3'),
-  CallEntry('Forward and Back','ssd','ssd/forward_and_back',ssd.ForwardAndBack,),
-  CallEntry('Forward and Back','m26','m26/forward_and_back',ssd.ForwardAndBack,),
+  CallEntry('Forward and Back','ms','ms/forward_and_back',ms.ForwardAndBack,'ms/forward_and_back.mp3'),
   CallEntry('Fourthly','c3b','c3b/secondly_thirdly_fourthly',c3b.SecondlyThirdlyFourthly,),
   CallEntry('Fractional Tops','a1','a1/fractional_tops',a1.FractionalTops,),
   CallEntry('Funny Concept','c2','c2/funny_concept',c2.FunnyConcept,),
@@ -861,22 +746,14 @@ var callIndex = [
   CallEntry('Grand Remake','a2','a2/remake',a2.Remake,'a2/grand_remake.mp3'),
   CallEntry('Grand Single Cross and Wheel','c2','c2/cross_and_wheel',c2.CrossAndWheel,),
   CallEntry('Grand Single Cross Trade and Wheel','c2','c2/cross_and_wheel',c2.CrossAndWheel,),
-  CallEntry('Grand Square','b1','b1/grand_square',b1.GrandSquare,'b1/grand_square.mp3'),
-  CallEntry('Grand Square','ssd','ssd/grand_square',ssd.GrandSquare,),
-  CallEntry('Grand Square','m26','m26/grand_square',ssd.GrandSquare,),
+  CallEntry('Grand Square','ms','ms/grand_square',ms.GrandSquare,'ms/grand_square.mp3'),
   CallEntry('Grand Swing Thru','plus','plus/grand_swing_thru',plus.GrandSwingThru,'plus/grand_swing_thru.mp3'),
   CallEntry('Grand Three Quarter Thru','plus','plus/grand_quarter_thru',plus.GrandQuarterThru,),
 
-  CallEntry('Half Sashay','b1','b1/sashay',b1.Sashay,),
-  CallEntry('Half Sashay','ssd','ssd/sashay',ssd.Sashay,),
-  CallEntry('Half Sashay','m26','m26/sashay',ssd.Sashay,),
+  CallEntry('Half Sashay','ms','ms/sashay',ms.Sashay,),
   CallEntry('Half Tag','ms','ms/fraction_tag',ms.FractionTag,'ms/half_tag.mp3'),
-  CallEntry('Half Tag','ssd','ssd/fraction_tag',ssd.FractionTag,),
-  CallEntry('Half Tag','m26','m26/fraction_tag',ssd.FractionTag,),
   CallEntry('Here Comes the Judge','c2','c2/sock_it_to_me',c2.SockItToMe,),
   CallEntry('Hinge','ms','ms/hinge',ms.Hinge,'ms/hinge.mp3'),
-  CallEntry('Hinge','ssd','ssd/hinge',ssd.Hinge,),
-  CallEntry('Hinge','m26','m26/hinge',ssd.Hinge,),
   CallEntry('Hinge the Lock','c3a','c3a/lock_the_hinge',c3a.LockTheHinge,),
   CallEntry('Hinge the Top','c3a','c3a/lock_the_hinge',c3a.LockTheHinge,),
   CallEntry('Hocus Pocus','c2','c2/hocus_pocus',c2.HocusPocus,),
@@ -910,28 +787,18 @@ var callIndex = [
   CallEntry('Keep Busy','c3a','c3a/keep_busy',c3a.KeepBusy,),
   CallEntry('Kick Off','c2','c2/kick_off',c2.KickOff,),
 
-  CallEntry('Ladies Chain','b1','b1/ladies_chain',b1.LadiesChain,),
-  CallEntry('Ladies Chain','ssd','ssd/ladies_chain',ssd.LadiesChain,),
-  CallEntry('Ladies Chain','m26','m26/ladies_chain',ssd.LadiesChain,),
-  CallEntry('Ladies In Men Sashay','b1','b1/sashay',
-      b1.Sashay,),
-  CallEntry('Ladies In Men Sashay','ssd','ssd/sashay',ssd.Sashay,),
-  CallEntry('Ladies In Men Sashay','m26','ssd/sashay',ssd.Sashay,),
+  CallEntry('Ladies Chain','ms','ms/ladies_chain',ms.LadiesChain,),
+  CallEntry('Ladies In Men Sashay','ms','ms/sashay',
+      ms.Sashay,),
   CallEntry('Latch On','c3a','c3a/latch_on',c3a.LatchOn,),
   CallEntry('Lateral Substitute','c2','c2/lateral_substitute',c2.LateralSubstitute,),
-  CallEntry('Lead Right / Left','b1','b1/lead_right',b1.LeadRight,'b1/lead_right.mp3'),
-  CallEntry('Lead Right / Left','ssd','ssd/lead_right',ssd.LeadRight,),
-  CallEntry('Lead Right / Left','m26','m26/lead_right',ssd.LeadRight,),
+  CallEntry('Lead Right / Left','ms','ms/lead_right',ms.LeadRight,'ms/lead_right.mp3'),
   CallEntry('Left','a1','a1/left',a1.Left,),
-  CallEntry('Left Arm Turn','b1','b1/arm_turns',b1.ArmTurns,),
-  CallEntry('Left Arm Turn','ssd','ssd/arm_turns',ssd.ArmTurns,),
-  CallEntry('Left Arm Turn','m26','m26/arm_turns',ssd.ArmTurns,),
+  CallEntry('Left Arm Turn','ms','ms/arm_turns',ms.ArmTurns,),
   CallEntry('Left Chase','plus','plus/chase_right',plus.ChaseRight,'plus/chase_right.mp3'),
   CallEntry('Left Roll to a Wave','a1','a1/right_roll_to_a_wave',a1.RightRollToAWave,'a1/left_roll_to_a_wave.mp3'),
   CallEntry('Left Scoot and Counter','c2','c2/counter',c2.Counter,),
-  CallEntry('Left Swing Thru','b2','b2/swing_thru',b2.SwingThru,),
-  CallEntry('Left Swing Thru','ssd','ssd/swing_thru',ssd.SwingThru,),
-  CallEntry('Left Swing Thru','m26','m26/swing_thru',ssd.SwingThru,),
+  CallEntry('Left Swing Thru','ms','ms/swing_thru',ms.SwingThru,),
   CallEntry('Left Wheel Thru','a1','a1/wheel_thru',a1.WheelThru,'a1/left_wheel_thru.mp3'),
   CallEntry('Lickety Split','c3b','c3b/lickety_split',c3b.LicketySplit,),
   CallEntry('Lift Off','c3b','c3b/lift_off',c3b.LiftOff,),
@@ -964,13 +831,9 @@ var callIndex = [
   CallEntry('Nuclear Reaction','c3b','c3b/nuclear_reaction',c3b.NuclearReaction,),
 
   CallEntry('O Formation / Concept','c1','c1/o_formation',c1.OFormation,),
-  CallEntry('Ocean Wave','b2','b2/ocean_wave',
-      b2.OceanWave,),
-  CallEntry('Ocean Wave','ssd','ssd/ocean_wave',ssd.OceanWave,),
-  CallEntry('Ocean Wave','m26','m26/ocean_wave',ssd.OceanWave,),
-  CallEntry('Ocean Wave Rule','b2','b2/ocean_wave_rule',b2.OceanWaveRule,),
-  CallEntry('Ocean Wave Rule','ssd','ssd/ocean_wave_rule',b2.OceanWaveRule,),
-  CallEntry('Ocean Wave Rule','m26','m26/ocean_wave_rule',b2.OceanWaveRule,),
+  CallEntry('Ocean Wave','ms','ms/ocean_wave',
+      ms.OceanWave,),
+  CallEntry('Ocean Wave Rule','ms','ms/ocean_wave_rule',ms.OceanWaveRule,),
   CallEntry('Oddly | Evenly Concept','c3b','c3b/oddly_evenly_concept',c3b.OddlyEvenlyConcept,),
   CallEntry('Offset Concept','c2','c2/offset_concept',c2.OffsetConcept,),
   CallEntry('Once Removed Concept','c2','c2/once_removed_concept',c2.OnceRemovedConcept,),
@@ -991,15 +854,11 @@ var callIndex = [
   CallEntry('Pass In','a1','a1/pass_in',a1.PassIn,'a1/pass_in.mp3'),
   CallEntry('Pass Out','a1','a1/pass_in',a1.PassIn,'a1/pass_out.mp3'),
   CallEntry('Pass the Axle','c1','c1/pass_the_axle',c1.PassTheAxle,),
-  CallEntry('Pass the Ocean','b2','b2/pass_the_ocean',b2.PassTheOcean,'b2/pass_the_ocean.mp3'),
-  CallEntry('Pass the Ocean','ssd','ssd/pass_the_ocean',ssd.PassTheOcean,),
-  CallEntry('Pass the Ocean','m26','m26/pass_the_ocean',ssd.PassTheOcean,),
+  CallEntry('Pass the Ocean','ms','ms/pass_the_ocean',ms.PassTheOcean,'ms/pass_the_ocean.mp3'),
   CallEntry('Pass the Sea','plus','plus/pass_the_sea',plus.PassTheSea,'plus/pass_the_sea.mp3'),
-  CallEntry('Pass Thru','b1','b1/pass_thru',b1.PassThru,'b1/pass_thru.mp3'),
-  CallEntry('Pass Thru','ssd','ssd/pass_thru',ssd.PassThru,),
-  CallEntry('Pass Thru','m26','m26/pass_thru',ssd.PassThru,),
+  CallEntry('Pass Thru','ms','ms/pass_thru',ms.PassThru,'ms/pass_thru.mp3'),
   CallEntry('Pass to the Center','plus','plus/pass_to_the_center',plus.PassToTheCenter,'ms/pass_to_the_center.mp3'),
-  CallEntry('Passing Rule','b1','b1/passing_rule',b1.PassingRule,),
+  CallEntry('Passing Rule','ms','ms/passing_rule',ms.PassingRule,),
   CallEntry('Patch Anyone','c3a','c3a/patch_anyone',c3a.PatchAnyone,),
   CallEntry('Peel and Trail','a2','a2/peel_and_trail',a2.PeelAndTrail,'a2/peel_and_trail.mp3'),
   CallEntry('Peel Chain Thru','c3a','c3a/peel_chain_thru',c3a.PeelChainThru,),
@@ -1017,21 +876,14 @@ var callIndex = [
   CallEntry('Prefer','c1','c1/prefer',c1.Prefer,),
   CallEntry('Press Ahead','c1','c1/press',c1.Press,),
   CallEntry('Press In / Out / Left / Right','c2','c2/press',c2.Press,),
-  CallEntry('Promenade','b1','b1/promenade',b1.Promenade,),
-  CallEntry('Promenade','ssd','ssd/promenade',ssd.Promenade,),
-  CallEntry('Promenade','m26','m26/promenade',ssd.Promenade,),
-  CallEntry('Pull By','b1','b1/pull_by',b1.PullBy,
-      'b1/pull_by.mp3'),
-  CallEntry('Pull By','ssd','ssd/pull_by',ssd.PullBy,
-      'b1/pull_by.mp3'),
-  CallEntry('Pull By','m26','m26/pull_by',ssd.PullBy,
-      'b1/pull_by.mp3'),
+  CallEntry('Promenade','ms','ms/promenade',ms.Promenade,),
+  CallEntry('Pull By','ms','ms/pull_by',ms.PullBy,
+      'ms/pull_by.mp3'),
 
   CallEntry('Quadruple Formation Concept','c3b','c3b/quadruple_formation',c3b.QuadrupleFormation,),
   CallEntry('Quarter In','a1','a1/quarter_in',a1.QuarterIn,'a1/quarter_in.mp3'),
   CallEntry('Quarter Out','a1','a1/quarter_in',a1.QuarterIn,'a1/quarter_out.mp3'),
   CallEntry('Quarter Tag','ms','ms/fraction_tag',ms.FractionTag,),
-  CallEntry('Quarter Tag','m26','m26/fraction_tag',ms.FractionTag,),
   CallEntry('Quarter Thru','plus','plus/quarter_thru',plus.QuarterThru,'plus/quarter_thru.mp3'),
   CallEntry('Quick','c3a','c3a/quick',c3a.Quick,),
 
@@ -1041,8 +893,6 @@ var callIndex = [
   CallEntry('Reactivate','c3b','c3b/reactivate',c3b.Reactivate,),
   CallEntry('Recoil','c3a','c3a/recoil',c3a.Recoil,),
   CallEntry('Recycle','ms','ms/recycle',ms.Recycle,'ms/recycle.mp3'),
-  CallEntry('Recycle','ssd','ssd/recycle',ssd.Recycle,),
-  CallEntry('Recycle','m26','m26/recycle',ssd.Recycle,),
   CallEntry('Recycle','a2','a2/recycle',a2.Recycle,'a2/recycle.mp3'),
   CallEntry('Recycle','c1','c1/recycle',c1.Recycle,),
   CallEntry('Reflected Concept','c3b','c3b/reflected_concept',c3b.ReflectedConcept,),
@@ -1067,9 +917,7 @@ var callIndex = [
   CallEntry('Reverse Cut/Flip the Z','c3b','c3b/reverse_cut_flip_the_z',c3b.ReverseCutFlipTheZ,),
   CallEntry('Reverse Echo','c3b','c3b/reverse_echo',c3b.ReverseEcho,),
   CallEntry('Reverse Explode','c1','c1/reverse_explode',c1.ReverseExplode,),
-  CallEntry('Reverse Flutterwheel','b2','b2/flutterwheel',b2.Flutterwheel,'b2/reverseflutterwheel.mp3'),
-  CallEntry('Reverse Flutterwheel','ssd','ssd/flutterwheel',ssd.Flutterwheel,),
-  CallEntry('Reverse Flutterwheel','m26','m26/flutterwheel',ssd.Flutterwheel,),
+  CallEntry('Reverse Flutterwheel','ms','ms/flutterwheel',ms.Flutterwheel,'ms/reverseflutterwheel.mp3'),
   CallEntry('Reverse Order Concept','c3b','c3b/reverse_order',c3b.ReverseOrder,),
   CallEntry('Reverse Rotate','c1','c1/rotate',c1.Rotate,),
   CallEntry('Reverse Rotate','c2','c2/rotate',c2.Rotate,),
@@ -1082,36 +930,24 @@ var callIndex = [
   CallEntry('Reverse Truck','c2','c2/truck',c2.Truck,),
   CallEntry('Reverse Wheel and <anything>','c1','c1/wheel_and_anything',c1.WheelAndAnything,),
   CallEntry('Revolve To A Wave','c3b','c3b/revolve_to_a_wave',c3b.RevolveToAWave,),
-  CallEntry('Right and Left Grand','b1','b1/right_and_left_grand',b1.RightAndLeftGrand,'b1/right_and_left_grand.mp3'),
-  CallEntry('Right and Left Grand','ssd','ssd/right_and_left_grand',ssd.RightAndLeftGrand,),
-  CallEntry('Right and Left Grand','m26','m26/right_and_left_grand',ssd.RightAndLeftGrand,),
-  CallEntry('Right and Left Thru','b1','b1/right_and_left_thru',b1.RightAndLeftThru,'b1/right_and_left_thru.mp3'),
-  CallEntry('Right and Left Thru','ssd','ssd/right_and_left_thru',ssd.RightAndLeftThru,),
-  CallEntry('Right and Left Thru','m26','m26/right_and_left_thru',ssd.RightAndLeftThru,),
-  CallEntry('Right Arm Turn','b1','b1/arm_turns',b1.ArmTurns,),
-  CallEntry('Right Arm Turn','ssd','ssd/arm_turns',ssd.ArmTurns,),
-  CallEntry('Right Arm Turn','m26','m26/arm_turns',ssd.ArmTurns,),
-  CallEntry('Right / Left Hand Star','b1','b1/star',b1.Star,),
-  CallEntry('Right / Left Hand Star','ssd','ssd/star',ssd.Star,),
-  CallEntry('Right / Left Hand Star','m26','m26/star',ssd.Star,),
+  CallEntry('Right and Left Grand','ms','ms/right_and_left_grand',ms.RightAndLeftGrand,'ms/right_and_left_grand.mp3'),
+  CallEntry('Right and Left Thru','ms','ms/right_and_left_thru',ms.RightAndLeftThru,'ms/right_and_left_thru.mp3'),
+  CallEntry('Right Arm Turn','ms','ms/arm_turns',ms.ArmTurns,),
+  CallEntry('Right / Left Hand Star','ms','ms/star',ms.Star,),
   CallEntry('Right Roll to a Wave','a1','a1/right_roll_to_a_wave',a1.RightRollToAWave,'a1/right_roll_to_a_wave.mp3'),
   CallEntry('Rims Trade <anything>','c2','c2/rims_trade_anything',c2.RimsTradeAnything,),
   CallEntry('Rims Trade Back','c2','c2/rims_trade_back',c2.RimsTradeBack,),
   CallEntry('Rip Off','c3b','c3b/rip_off',c3b.RipOff,),
   CallEntry('Ripple','c2','c2/ripple_the_wave',c2.RippleTheWave,),
-  CallEntry('Rollaway','b1','b1/sashay',b1.Sashay,),
-  CallEntry('Rollaway','ssd','ssd/sashay',ssd.Sashay,),
-  CallEntry('Rollaway','m26','m26/sashay',ssd.Sashay,),
+  CallEntry('Rollaway','ms','ms/sashay',ms.Sashay,),
   CallEntry('Rotary <anything>','c2','c2/rotary',c2.Rotary,),
   CallEntry('Rotary Spin','c1','c1/rotary_spin',c1.RotarySpin,),
   CallEntry('Rotate','c1','c1/rotate',c1.Rotate,),
   CallEntry('Rotate','c3b','c3b/rotate',c3b.Rotate,),
   CallEntry('Rotate','c2','c2/rotate',c2.Rotate,),
-  CallEntry('Run','b2','b2/run',b2.Run,'b2/run.mp3'),
-  CallEntry('Run','ssd','ssd/run',ssd.Run,),
-  CallEntry('Run','m26','m26/run',ssd.Run,),
+  CallEntry('Run','ms','ms/run',ms.Run,'ms/run.mp3'),
 
-  CallEntry('Same Position Rule','b1','b1/same_position_rule',b1.SamePositionRule,),
+  CallEntry('Same Position Rule','ms','ms/same_position_rule',ms.SamePositionRule,),
   CallEntry('Scatter Circulate','c3a','c3a/scatter_circulate',c3a.ScatterCirculate,),
   CallEntry('Scatter Scoot','c1','c1/scatter_scoot',c1.ScatterScoot,),
   CallEntry('Scatter Scoot Chain Thru','c1','c1/scatter_scoot',c1.ScatterScoot,),
@@ -1125,18 +961,14 @@ var callIndex = [
   CallEntry('Scoot and Ramble','c1','c1/scoot_and_ramble',c1.ScootAndRamble,),
   CallEntry('Scoot and Weave','a2','a2/scoot_and_weave',a2.ScootAndWeave,'a2/scoot_and_weave.mp3'),
   CallEntry('Scoot Back','ms','ms/scoot_back',ms.ScootBack,'ms/scoot_back.mp3'),
-  CallEntry('Scoot Back','ssd','ssd/scoot_back',ssd.ScootBack,),
-  CallEntry('Scoot Back','m26','m26/scoot_back',ssd.ScootBack,),
   CallEntry('Scoot Chain Thru','a2','a2/scoot_chain_thru',a2.ScootChainThru,'a2/scoot_chain_thru.mp3'),
   CallEntry('Scoot the Diamond','c3a','c3a/scoot_the_diamond',c3a.ScootTheDiamond,),
   CallEntry('Scoot Reaction','c3a','c3a/anything_reaction',c3a.AnythingReaction,),
   CallEntry('Scramble','c3b','c3b/scramble',c3b.Scramble,),
   CallEntry('Secondly','c3b','c3b/secondly_thirdly_fourthly',c3b.SecondlyThirdlyFourthly,),
-  CallEntry('See Saw','plus','plus/see_saw', plus.SeeSaw,'b1/see_saw.mp3'),
-  CallEntry('Separate','b1','b1/separate',
-      b1.Separate,'b1/separate.mp3'),
-  CallEntry('Separate','ssd','ssd/separate',ssd.Separate,),
-  CallEntry('Separate','m26','m26/separate',ssd.Separate,),
+  CallEntry('See Saw','plus','plus/see_saw', plus.SeeSaw,'ms/see_saw.mp3'),
+  CallEntry('Separate','ms','ms/separate',
+      ms.Separate,'ms/separate.mp3'),
   CallEntry('Sets in Motion','c2','c2/sets_in_motion',c2.SetsInMotion,),
   CallEntry('Shake and Rattle','c3b','c3b/shake_and_rattle',c3b.ShakeAndRattle,),
   CallEntry('Shakedown','c1','c1/shakedown',c1.Shakedown,),
@@ -1145,7 +977,6 @@ var callIndex = [
   CallEntry('Siamese Concept','c1','c1/siamese_concept',c1.SiameseConcept,),
   CallEntry('Sidetrack','c3b','c3b/sidetrack',c3b.Sidetrack,),
   CallEntry('Single Bounce','c2','c2/bounce',c2.Bounce,),
-  CallEntry('Single Circle to a Wave','m26','m26/single_circle_to_a_wave',plus.SingleCircleToAWave,'plus/single_circle_to_a_wave.mp3'),
   CallEntry('Single Concept','c3a','c3a/single_concept',c3a.SingleConcept,),
   CallEntry('Single Cross and Wheel','c2','c2/cross_and_wheel',c2.CrossAndWheel,),
   CallEntry('Single Cross Trade and Wheel','c2','c2/cross_and_wheel',c2.CrossAndWheel,),
@@ -1162,8 +993,6 @@ var callIndex = [
   CallEntry('Slant','c3a','c3a/slant',c3a.Slant,),
   CallEntry('Slide','a2','a2/slip',a2.Slip,'a2/slide.mp3'),
   CallEntry('Slide Thru','ms','ms/slide_thru',ms.SlideThru,'ms/slide_thru.mp3'),
-  CallEntry('Slide Thru','ssd','ssd/slide_thru',ssd.SlideThru,),
-  CallEntry('Slide Thru','m26','m26/slide_thru',ssd.SlideThru,),
   CallEntry('Slip','a2','a2/slip',a2.Slip,'a2/slip.mp3'),
   CallEntry('Slip the Clutch','plus','plus/slip_the_clutch',plus.SlipTheClutch,'ms/slip_the_clutch.mp3'),
   CallEntry('Slither','a2','a2/slip',a2.Slip,'a2/slither.mp3'),
@@ -1177,9 +1006,8 @@ var callIndex = [
   CallEntry('Spin Chain Thru','plus','plus/spin_chain_thru',plus.SpinChainThru,'ms/spin_chain_thru.mp3'),
   CallEntry('Spin the Pulley','c3a','c3a/spin_the_pulley',c3a.SpinThePulley,),
   CallEntry('Spin the Top','ms','ms/spin_the_top',ms.SpinTheTop,'ms/spin_the_top.mp3'),
-  CallEntry('Spin the Top','m26','m26/spin_the_top',ms.SpinTheTop,'ms/spin_the_top.mp3'),
   CallEntry('Spin the Windmill','a2','a2/spin_the_windmill',a2.SpinTheWindmill,),
-  CallEntry('Split Circulate','b1','b1/circulate',b1.Circulate,),
+  CallEntry('Split Circulate','ms','ms/circulate',ms.Circulate,),
   CallEntry('Split Counter Rotate','a2','a2/box_counter_rotate',a2.BoxCounterRotate,'a2/split_counter_rotate.mp3'),
   CallEntry('Split Counter Rotate','c1','c1/split_counter_rotate',c1.SplitCounterRotate,),
   CallEntry('Split Dixie Diamond','c1','c1/split_square_thru_variations',c1.SplitSquareThruVariations,),
@@ -1194,21 +1022,13 @@ var callIndex = [
   CallEntry('Split Swap Around','c2','c2/split_swap_around',c2.SplitSwapAround,),
   CallEntry('Split Trade Circulate','c2','c2/split_trade_circulate',c2.SplitTradeCirculate,),
   CallEntry('Split Transfer','a2','a2/box_transfer',a2.BoxTransfer,'a2/split_transfer.mp3'),
-  CallEntry('Split Two','b1','b1/split_the_outside_couple',b1.SplitTheOutsideCouple,'b1/split_two.mp3'),
-  CallEntry('Split Two','ssd','ssd/split_the_outside_couple',ssd.SplitTheOutsideCouple,),
-  CallEntry('Split Two','m26','m26/split_the_outside_couple',ssd.SplitTheOutsideCouple,),
+  CallEntry('Split Two','ms','ms/split_the_outside_couple',ms.SplitTheOutsideCouple,'ms/split_two.mp3'),
   CallEntry('Square Chain the Top','c1','c1/square_chain_the_top',c1.SquareChainTheTop,),
   CallEntry('Square Chain Thru','a1','a1/square_chain_thru',a1.SquareChainThru,'a1/square_chain_thru.mp3'),
   CallEntry('Square the Bases','c1','c1/square_the_bases',c1.SquareTheBases,),
-  CallEntry('Square Thru','b1','b1/square_thru',b1.SquareThru,),
-  CallEntry('Square Thru','ssd','ssd/square_thru',ssd.SquareThru,),
-  CallEntry('Square Thru','m26','m26/square_thru',ssd.SquareThru,),
-  CallEntry('Squared Set Convention','b1','b1/squared_set_convention',
-      b1.SquaredSetConvention),
-  CallEntry('Squared Set Convention','ssd','ssd/squared_set_convention',
-      b1.SquaredSetConvention),
-  CallEntry('Squared Set Convention','m26','m26/squared_set_convention',
-      b1.SquaredSetConvention),
+  CallEntry('Square Thru','ms','ms/square_thru',ms.SquareThru,),
+  CallEntry('Squared Set Convention','ms','ms/squared_set_convention',
+      ms.SquaredSetConvention),
   CallEntry('Squeeze','c1','c1/squeeze',c1.Squeeze,),
   CallEntry('Squeeze the Galaxy','c1','c1/squeeze',c1.Squeeze,),
   CallEntry('Squeeze the Hourglass','c1','c1/squeeze',c1.Squeeze,),
@@ -1216,24 +1036,16 @@ var callIndex = [
   CallEntry('Stack the Line','c2','c2/stack_the_line',c2.StackTheLine,),
   CallEntry('Stagger Concept','c2','c2/stagger_concept',c2.StaggerConcept,),
   CallEntry('Stampede','c3a','c3a/stampede',c3a.Stampede,),
-  CallEntry('Star Promenade','b1','b1/promenade',b1.Promenade,),
-  CallEntry('Star Promenade','ssd','ssd/promenade',ssd.Promenade,),
-  CallEntry('Star Promenade','m26','m26/promenade',ssd.Promenade,),
-  CallEntry('Star Thru','b1','b1/star_thru',
-      b1.StarThru,'b1/star_thru.mp3'),
-  CallEntry('Star Thru','ssd','ssd/star_thru',ssd.StarThru,),
-  CallEntry('Star Thru','m26','m26/star_thru',ssd.StarThru,),
+  CallEntry('Star Promenade','ms','ms/promenade',ms.Promenade,),
+  CallEntry('Star Thru','ms','ms/star_thru',
+      ms.StarThru,'ms/star_thru.mp3'),
   CallEntry('Start','c1','c1/start',c1.Start,),
   CallEntry('Step and Flip','c1','c1/step_and_flip',c1.StepAndFlip,),
   CallEntry('Step and Fold','c1','c1/step_and_fold',c1.StepAndFold,),
   CallEntry('Step and Slide','a1','a1/step_and_slide',a1.StepAndSlide,'a1/step_and_slide.mp3'),
   CallEntry('Step and Squeeze','c1','c1/step_and_squeeze',c1.StepAndSqueeze,),
-  CallEntry('Step Thru','b1','b1/step_thru',b1.StepThru,'b1/step_thru.mp3'),
-  CallEntry('Step Thru','ssd','ssd/step_thru',ssd.StepThru,'b1/step_thru.mp3'),
-  CallEntry('Step Thru','m26','m26/step_thru',ssd.StepThru,'b1/step_thru.mp3'),
-  CallEntry('Step to a Wave','b2','b2/ocean_wave',b2.OceanWave,),
-  CallEntry('Step to a Wave','ssd','ssd/ocean_wave',ssd.OceanWave,),
-  CallEntry('Step to a Wave','m26','m26/ocean_wave',ssd.OceanWave,),
+  CallEntry('Step Thru','ms','ms/step_thru',ms.StepThru,'ms/step_thru.mp3'),
+  CallEntry('Step to a Wave','ms','ms/ocean_wave',ms.OceanWave,),
   CallEntry('n Steps At A Time','c3b','c3b/n_steps_at_a_time',c3b.NStepsAtATime,),
   CallEntry('Stimulate','c3b','c3b/stimulate',c3b.Stimulate,),
   CallEntry('Stingy','c3b','c3b/stingy_generous',c3b.StingyGenerous,),
@@ -1245,22 +1057,16 @@ var callIndex = [
   CallEntry('Swap Around','a1','a1/swap_around',a1.SwapAround,'a1/swap_around.mp3'),
   CallEntry('Swap the Top','c3a','c3a/swap_the_top',c3a.SwapTheTop,),
   CallEntry('Swap the Wave','c2','c2/swap_the_wave',c2.SwapTheWave,),
-  CallEntry('Sweep a Quarter','b2','b2/sweep_a_quarter',b2.SweepAQuarter,'b2/sweep_a_quarter.mp3'),
-  CallEntry('Sweep a Quarter','ssd','ssd/sweep_a_quarter',ssd.SweepAQuarter,),
-  CallEntry('Sweep a Quarter','m26','m26/sweep_a_quarter',ssd.SweepAQuarter,),
-  CallEntry('Swing','b1','b1/swing',b1.Swing,'b1/swing.mp3'),
-  CallEntry('Swing','ssd','ssd/swing',ssd.Swing,),
-  CallEntry('Swing','m26','m26/swing',ssd.Swing,),
+  CallEntry('Sweep a Quarter','ms','ms/sweep_a_quarter',ms.SweepAQuarter,'ms/sweep_a_quarter.mp3'),
+  CallEntry('Swing','ms','ms/swing',ms.Swing,'ms/swing.mp3'),
   CallEntry('Swing','a2','a2/slip',a2.Slip,'a2/swing.mp3'),
   CallEntry('Swing Along','c2','c2/swing_along',c2.SwingAlong,),
   CallEntry('Swing and Circle','c1','c1/swing_and_circle',c1.SwingAndCircle,),
   CallEntry('Swing and Mix','a2','a2/swing_and_mix',a2.SwingAndMix,'a2/swing_and_mix.mp3'),
   CallEntry('Swing Chain Thru','c3a','c3a/swing_chain_thru',c3a.SwingChainThru,),
   CallEntry('Swing the Fractions','c1','c1/swing_the_fractions',c1.SwingTheFractions,),
-  CallEntry('Swing Thru','b2','b2/swing_thru',
-      b2.SwingThru,'b2/swing_thru.mp3'),
-  CallEntry('Swing Thru','ssd','ssd/swing_thru',ssd.SwingThru,),
-  CallEntry('Swing Thru','m26','m26/swing_thru',ssd.SwingThru,),
+  CallEntry('Swing Thru','ms','ms/swing_thru',
+      ms.SwingThru,'ms/swing_thru.mp3'),
   CallEntry('Swing-O-Late','c3b','c3b/swing_o_late',c3b.SwingOLate,),
   CallEntry('Switch the Line','c1','c1/switch_the_line',c1.SwitchTheLine,),
   CallEntry('Switch the Wave','a2','a2/switch_the_wave',a2.SwitchTheWave,'a2/switch_the_wave.mp3'),
@@ -1274,8 +1080,6 @@ var callIndex = [
   CallEntry('Tag Back','c1','c1/tagging_calls_back_to_a_wave',c1.TaggingCallsBackToAWave,),
   CallEntry('Tag Chain Thru','c3a','c3a/any_tagging_call_chain_thru',c3a.AnyTaggingCallChainThru,),
   CallEntry('Tag the Line','ms','ms/tag',ms.Tag,'ms/tag_the_line.mp3'),
-  CallEntry('Tag the Line','ssd','ssd/tag',ssd.Tag,),
-  CallEntry('Tag the Line','m26','m26/tag',ssd.Tag,),
   CallEntry('Tag the Top','c3b','c3b/anything_the_top',c3b.AnythingTheTop,),
   CallEntry('Tag Your Neighbor','c2','c2/any_tagging_call_your_neighbor',c2.AnyTaggingCallYourNeighbor,),
   CallEntry('Take {n}','c3b','c3b/take_n',c3b.TakeN,),
@@ -1291,24 +1095,17 @@ var callIndex = [
   CallEntry('Thirdly','c3b','c3b/secondly_thirdly_fourthly',c3b.SecondlyThirdlyFourthly,),
   CallEntry('Three by Two Acey Deucey','c1','c1/three_by_two_acey_deucey',c1.ThreeByTwoAceyDeucey,),
   CallEntry('Three Quarter Tag','ms','ms/fraction_tag',ms.FractionTag,),
-  CallEntry('Three Quarter Tag','m26','m26/fraction_tag',ms.FractionTag,),
   CallEntry('Three Quarter Thru','plus','plus/quarter_thru',plus.QuarterThru,),
   CallEntry('Touch a Half / Three Quarters','a1','a1/touch_12',
       a1.Touch_12,),
-  CallEntry('Touch a Quarter','b2','b2/touch_a_quarter',b2.TouchAQuarter,'b2/touch_a_quarter.mp3'),
-  CallEntry('Touch a Quarter','ssd','ssd/touch_a_quarter',ssd.TouchAQuarter,),
-  CallEntry('Touch a Quarter','m26','m26/touch_a_quarter',ssd.TouchAQuarter,),
+  CallEntry('Touch a Quarter','ms','ms/touch_a_quarter',ms.TouchAQuarter,'ms/touch_a_quarter.mp3'),
   CallEntry('Touch By','c3a','c3a/touch_by',c3a.TouchBy,),
   CallEntry('Track (0,1,2,3,4)','c1','c1/track_n',c1.TrackN,),
   CallEntry('Track 2','plus','plus/track_ii',plus.TrackIi,'plus/track_two.mp3'),
-  CallEntry('Trade','b2','b2/trade',
-      b2.Trade,),
-  CallEntry('Trade','ssd','ssd/trade',ssd.Trade,),
-  CallEntry('Trade','m26','m26/trade',ssd.Trade,),
-  CallEntry('Trade By','b2','b2/trade_by',
-      b2.TradeBy,'b2/trade_by.mp3'),
-  CallEntry('Trade By','ssd','ssd/trade_by',ssd.TradeBy,),
-  CallEntry('Trade By','m26','m26/trade_by',ssd.TradeBy,),
+  CallEntry('Trade','ms','ms/trade',
+      ms.Trade,),
+  CallEntry('Trade By','ms','ms/trade_by',
+      ms.TradeBy,'ms/trade_by.mp3'),
   CallEntry('Trade Circulate','a2','a2/trade_circulate',a2.TradeCirculate,'a2/trade_circulate.mp3'),
   CallEntry('Trade the Deucey','c3a','c3a/trade_the_deucey',c3a.TradeTheDeucey,),
   CallEntry('Trade the Diamond','c3b','c3b/trade_the_diamond',c3b.TradeTheDiamond,),
@@ -1331,9 +1128,7 @@ var callIndex = [
   CallEntry('Triple Trade','plus','plus/triple_trade',plus.TripleTrade,'plus/triple_trade.mp3'),
   CallEntry('Truck','c2','c2/truck',c2.Truck,),
   CallEntry('Turn and Deal','a1','a1/turn_and_deal',a1.TurnAndDeal,'a1/turn_and_deal.mp3'),
-  CallEntry('Turn Back','b1','b1/turn_back',b1.TurnBack,),
-  CallEntry('Turn Back','ssd','ssd/turn_back',ssd.TurnBack,),
-  CallEntry('Turn Back','m26','m26/turn_back',ssd.TurnBack,),
+  CallEntry('Turn Back','ms','ms/turn_back',ms.TurnBack,),
   CallEntry('Turn the Key','c3b','c3b/turn_the_key',c3b.TurnTheKey,),
   CallEntry('Turn Thru','plus','plus/turn_thru',plus.TurnThru,'ms/turn_thru.mp3'),
   CallEntry('Turn to a Line','c2','c2/turn_to_a_line',c2.TurnToALine,),
@@ -1346,9 +1141,7 @@ var callIndex = [
 
   CallEntry('Unwrap Family','c2','c2/unwrap',c2.Unwrap,),
 
-  CallEntry('Veer Left / Right','b1','b1/veer',b1.Veer,),
-  CallEntry('Veer Left / Right','ssd','ssd/veer',ssd.Veer,),
-  CallEntry('Veer Left / Right','m26','m26/veer',ssd.Veer,),
+  CallEntry('Veer Left / Right','ms','ms/veer',ms.Veer,),
   CallEntry('Vertical <anything>','c2','c2/vertical_anything',c2.VerticalAnything,),
   CallEntry('Vertical Tag','c1','c1/vertical_tag',c1.VerticalTag,),
   CallEntry('Vertical Tag Back','c1','c1/tagging_calls_back_to_a_wave',c1.TaggingCallsBackToAWave,),
@@ -1359,16 +1152,10 @@ var callIndex = [
   CallEntry('Walk Out to a Wave','c2','c2/walk_out_to_a_wave',c2.WalkOutToAWave,),
   CallEntry('Wave the anyone','c3b','c3b/wave_the_anyone',c3b.WaveTheAnyone,),
   CallEntry('Weave','c1','c1/anything_and_weave',c1.AnythingAndWeave,),
-  CallEntry('Weave the Ring','b1','b1/right_and_left_grand',b1.RightAndLeftGrand,'b1/weave_the_ring.mp3'),
-  CallEntry('Weave the Ring','ssd','ssd/right_and_left_grand',ssd.RightAndLeftGrand,),
-  CallEntry('Weave the Ring','m26','m26/right_and_left_grand',ssd.RightAndLeftGrand,),
+  CallEntry('Weave the Ring','ms','ms/right_and_left_grand',ms.RightAndLeftGrand,'ms/weave_the_ring.mp3'),
   CallEntry('Wheel and <anything>','c1','c1/wheel_and_anything',c1.WheelAndAnything,),
-  CallEntry('Wheel and Deal','b2','b2/wheel_and_deal',b2.WheelAndDeal,),
-  CallEntry('Wheel and Deal','ssd','ssd/wheel_and_deal',ssd.WheelAndDeal,),
-  CallEntry('Wheel and Deal','m26','m26/wheel_and_deal',ssd.WheelAndDeal,),
-  CallEntry('Wheel Around','b2','b2/wheel_around',b2.WheelAround,'b2/wheel_around.mp3'),
-  CallEntry('Wheel Around','ssd','ssd/wheel_around',ssd.WheelAround,),
-  CallEntry('Wheel Around','m26','m26/wheel_around',ssd.WheelAround,),
+  CallEntry('Wheel and Deal','ms','ms/wheel_and_deal',ms.WheelAndDeal,),
+  CallEntry('Wheel Around','ms','ms/wheel_around',ms.WheelAround,'ms/wheel_around.mp3'),
   CallEntry('Wheel Fan Thru','c1','c1/wheel_fan_thru',c1.WheelFanThru,),
   CallEntry('Wheel the Ocean','c2','c2/wheel_the_ocean',c2.WheelTheOcean,),
   CallEntry('Wheel the Sea','c2','c2/wheel_the_ocean',c2.WheelTheOcean,),
@@ -1377,12 +1164,8 @@ var callIndex = [
   CallEntry('With Confidence','c3b','c3b/with_confidence',c3b.WithConfidence,),
   CallEntry('With the Flow','c1','c1/with_the_flow',c1.WithTheFlow,),
   CallEntry('Wrap To a Formation','c3a','c3a/wrap_to_a_formation',c3a.WrapToAFormation,),
-  CallEntry('Wrong Way Grand','b1','b1/right_and_left_grand',b1.RightAndLeftGrand,'b1/wrong_way_grand.mp3'),
-  CallEntry('Wrong Way Grand','ssd','ssd/right_and_left_grand',ssd.RightAndLeftGrand,),
-  CallEntry('Wrong Way Grand','m26','m26/right_and_left_grand',ssd.RightAndLeftGrand,),
-  CallEntry('Wrong Way Promenade','b1','b1/promenade',b1.Promenade,),
-  CallEntry('Wrong Way Promenade','ssd','ssd/promenade',ssd.Promenade,),
-  CallEntry('Wrong Way Promenade','m26','m26/promenade',ssd.Promenade,),
+  CallEntry('Wrong Way Grand','ms','ms/right_and_left_grand',ms.RightAndLeftGrand,'ms/wrong_way_grand.mp3'),
+  CallEntry('Wrong Way Promenade','ms','ms/promenade',ms.Promenade,),
   CallEntry('Wrong Way Thar','plus','plus/thar',plus.Thar,),
 
   CallEntry('Z Axle','c3b','c3b/z_axle',c3b.ZAxle,),
@@ -1390,9 +1173,7 @@ var callIndex = [
   CallEntry('Zig Zag','a2','a2/zig_and_zag',a2.ZigAndZag,),
   CallEntry('Zing','c1','c1/zing',c1.Zing,),
   CallEntry('Zip Code','c2','c2/zip_code',c2.ZipCode,),
-  CallEntry('Zoom','b2','b2/zoom',b2.Zoom,'b2/zoom.mp3'),
-  CallEntry('Zoom','ssd','ssd/zoom',ssd.Zoom,),
-  CallEntry('Zoom','m26','m26/zoom',ssd.Zoom,)
+  CallEntry('Zoom','ms','ms/zoom',ms.Zoom,'ms/zoom.mp3'),
 ];
 
 var titleIndex = <String,String>{
@@ -1405,10 +1186,10 @@ var titleIndex = <String,String>{
     'c2/3_by_1_triangle_formation' : '3 by 1 Triangle Formation',
     'plus/acey_deucey' : 'Acey Deucey',
     'c1/ah_so' : 'Ah So',
-    'b2/alamo_style' : 'Alamo Style',
+    'ms/alamo_style' : 'Alamo Style',
     'a2/all_4_all_8' : 'All 4 Couples / All 8 concepts',
     'plus/all_8_spin_the_top' : 'All 8 Spin the Top',
-    'b1/allemande' : 'Allemande Left',
+    'ms/allemande' : 'Allemande Left',
     'ms/thar' : 'Thar Family',
     'c2/swing_along' : 'Swing Along',
     'c2/alter_and_circulate' : 'Alter and Circulate',
@@ -1429,11 +1210,11 @@ var titleIndex = <String,String>{
     'c1/anything_the_windmill' : 'Anything the Windmill',
     'c1/anything_to_a_wave' : 'Anything to a Wave',
     'c3a/anythingers_couple_up' : '<anything>er\'s Couple Up',
-    'b1/arm_turns' : 'Arm Turns',
+    'ms/arm_turns' : 'Arm Turns',
     'a1/as_couples' : 'As Couples Concept',
-    'b1/turn_back' : 'Turn Back Family',
+    'ms/turn_back' : 'Turn Back Family',
     'a1/belles_and_beaus' : 'Belles and Beaus (naming convention)',
-    'b1/bend_the_line' : 'Bend the Line',
+    'ms/bend_the_line' : 'Bend the Line',
     'c3a/bias_circulate' : 'Bias Circulate',
     'c3a/big_block_concept' : 'Big Block Concept',
     'c3b/bingo' : 'Bingo',
@@ -1441,7 +1222,7 @@ var titleIndex = <String,String>{
     'c3b/boomerang' : 'Boomerang',
     'c2/bounce' : 'Bounce the Anyone',
     'a2/box_counter_rotate' : 'Box Counter Rotate',
-    'b2/box_the_gnat' : 'Box the Gnat',
+    'ms/box_the_gnat' : 'Box the Gnat',
     'a2/box_transfer' : 'Box Transfer',
     'a1/brace_thru' : 'Brace Thru',
     'c3a/breaker_anything' : 'Breaker Anything',
@@ -1449,7 +1230,7 @@ var titleIndex = <String,String>{
     'c1/but' : 'But',
     'c1/replace' : 'Replace / But / Skip / Delete',
     'c1/butterfly_formation' : 'Butterfly Formation / Concept',
-    'b1/california_twirl' : 'California Twirl',
+    'ms/california_twirl' : 'California Twirl',
     'a1/cast_a_shadow' : 'Cast a Shadow',
     'c1/cast_a_shadow' : 'Cast a Shadow',
     'c3b/fraction_cast_and_relay' : 'fraction Cast and Relay',
@@ -1459,7 +1240,7 @@ var titleIndex = <String,String>{
     'c3a/catch_anything_n' : 'Catch Anything N',
     'ms/centers_in' : 'Centers In',
     'c3a/central_concept' : 'Central Concept',
-    'b1/ladies_chain' : 'Ladies Chain Family',
+    'ms/ladies_chain' : 'Ladies Chain Family',
     'a1/chain_reaction' : 'Chain Reaction',
     'c1/chain_reaction' : 'Chain Reaction',
     'c2/chain_the_square' : 'Chain the Square',
@@ -1476,10 +1257,10 @@ var titleIndex = <String,String>{
     'c2/chisel_thru' : 'Chisel Thru',
     'c3b/chuck_a_luck' : 'Chuck-A-Luck',
     'c1/circle_by' : 'Circle By (m and n)',
-    'b1/circle' : 'Circle Family',
-    'b1/circle_to_a_line' : 'Circle to a Line',
+    'ms/circle' : 'Circle Family',
+    'ms/circle_to_a_line' : 'Circle to a Line',
     'c2/circle_to_a_wave' : 'Circle to a Wave',
-    'b1/circulate' : 'Circulate Family',
+    'ms/circulate' : 'Circulate Family',
     'c1/circulate' : 'Circulate',
     'a1/clover_and_anything' : 'Clover and Anything',
     'ms/cloverleaf' : 'Cloverleaf',
@@ -1488,7 +1269,7 @@ var titleIndex = <String,String>{
     'c2/counter' : 'Counter',
     'c1/counter_rotate' : 'Counter Rotate',
     'c3a/couple_up' : 'Couple Up',
-    'b1/courtesy_turn' : 'Courtesy Turn',
+    'ms/courtesy_turn' : 'Courtesy Turn',
     'c2/crazy_concept' : 'Crazy Concept',
     'c3b/criss_cross_the_deucey' : 'Criss Cross The Deucey',
     'c2/criss_cross_the_shadow' : 'Criss Cross the Shadow',
@@ -1513,7 +1294,7 @@ var titleIndex = <String,String>{
     'c1/cross_over_circulate' : 'Cross Over Circulate',
     'c2/cross_ramble' : 'Cross Ramble',
     'c1/cross_roll' : 'Cross Roll to a Wave (or Line)',
-    'b2/run' : 'Run Family',
+    'ms/run' : 'Run Family',
     'c3b/swap_the_top' : 'Swap The Top',
     'a1/cross_trail_thru' : 'Cross Trail Thru',
     'c1/cross_your_neighbor' : 'Cross Your Neighbor',
@@ -1530,18 +1311,18 @@ var titleIndex = <String,String>{
     'plus/diamond_circulate' : 'Diamond Circulate',
     'c3b/disband' : 'Disband',
     'c2/disconnected_concept' : 'Disconnected Concept',
-    'b1/dive_thru' : 'Dive Thru',
+    'ms/dive_thru' : 'Dive Thru',
     'c3b/divide_the_ocean' : 'Divide The Ocean | Sea direction | anything',
     'c1/dixie_diamond' : 'Dixie Diamond',
     'plus/dixie_grand' : 'Dixie Grand',
     'c1/dixie_sashay' : 'Dixie Sashay',
     'ms/dixie_style' : 'Dixie Style to an Ocean Wave',
-    'b1/do_paso' : 'Do Paso',
+    'ms/do_paso' : 'Do Paso',
     'a1/do_your_part' : 'Do Your Part',
     'c2/dodge_anything' : 'Dodge Anything',
-    'b1/dosado' : 'Dosado',
+    'ms/dosado' : 'Dosado',
     'a1/triple_cross' : 'Triple Cross',
-    'b1/double_pass_thru' : 'Double Pass Thru',
+    'ms/double_pass_thru' : 'Double Pass Thru',
     'a1/double_star_thru' : 'Double Star Thru',
     'c3a/drift_apart' : 'Drift Apart',
     'c2/drop_in' : 'Drop In/Out',
@@ -1559,29 +1340,29 @@ var titleIndex = <String,String>{
     'a1/explode_the_line' : 'Explode the Line',
     'c3a/explode_the_top' : 'Explode the Top',
     'plus/explode_the_wave' : 'Explode the Wave',
-    'b2/extend' : 'Extend',
-    'b1/face' : 'Face Left / Right / In / Out',
-    'b2/facing_couples_rule' : 'Facing Couples Rule',
+    'ms/extend' : 'Extend',
+    'ms/face' : 'Face Left / Right / In / Out',
+    'ms/facing_couples_rule' : 'Facing Couples Rule',
     'c3b/fan_concept' : 'Fan Concept',
     'plus/fan_the_top' : 'Fan the Top',
     'c3a/fancy' : 'Fancy',
     'c2/fascinate' : 'Fascinate',
-    'b2/ferris_wheel' : 'Ferris Wheel',
+    'ms/ferris_wheel' : 'Ferris Wheel',
     'c2/file_to_a_line' : 'File to a Line',
     'c3a/finally_concept' : 'Finally Concept',
     'c1/finish' : 'Finish',
-    'b1/first_couple_go' : 'First Couple Go Left/Right, Next Couple Go Left/Right',
+    'ms/first_couple_go' : 'First Couple Go Left/Right, Next Couple Go Left/Right',
     'c3a/flare_out_to_a_line' : 'Flare Out to a Line',
     'c1/tagging_calls_back_to_a_wave' : 'Tagging Calls Back to a Wave',
     'plus/flip_the_diamond' : 'Flip the Diamond',
     'c1/flip_the_line' : 'Flip the Line',
     'c3b/flip_your_lid' : 'Flip Your Lid',
-    'b2/flutterwheel' : 'Flutterwheel Family',
+    'ms/flutterwheel' : 'Flutterwheel Family',
     'c1/follow_thru' : 'Follow Thru',
     'c3a/follow_to_a_diamond' : 'Follow to a Diamond',
     'c3a/follow_your_leader' : 'Follow Your Leader',
     'plus/follow_your_neighbor' : 'Follow Your Neighbor',
-    'b1/forward_and_back' : 'Forward and Back',
+    'ms/forward_and_back' : 'Forward and Back',
     'c3b/secondly_thirdly_fourthly' : 'Secondly | Thirdly | Fourthly anyConcept anything',
     'a1/fractional_tops' : 'Fractional Tops',
     'c2/funny_concept' : 'Funny Concept',
@@ -1591,11 +1372,11 @@ var titleIndex = <String,String>{
     'c2/grand_chain_eight' : 'Grand Chain Eight',
     'a1/grand_follow_your_neighbor' : 'Grand Follow Your Neighbor',
     'c3a/grand_mix' : 'Grand Mix',
-    'a1/grand_quarter_thru' : 'Grand Quarter Thru',
+    'ms/grand_quarter_thru' : 'Grand Quarter Thru',
     'a2/remake' : 'Remake',
-    'b1/grand_square' : 'Grand Square',
+    'ms/grand_square' : 'Grand Square',
     'plus/grand_swing_thru' : 'Grand Swing Thru',
-    'b1/sashay' : 'Half Sashay Family',
+    'ms/sashay' : 'Half Sashay Family',
     'ms/fraction_tag' : 'Tag Family',
     'c2/sock_it_to_me' : 'Sock It To Me',
     'ms/hinge' : 'Hinge Family',
@@ -1624,10 +1405,10 @@ var titleIndex = <String,String>{
     'c3a/keep_busy' : 'Keep Busy',
     'c3a/latch_on' : 'Latch On',
     'c2/lateral_substitute' : 'Lateral Substitute',
-    'b1/lead_right' : 'Lead Right',
+    'ms/lead_right' : 'Lead Right',
     'a1/left' : 'Left',
     'a1/right_roll_to_a_wave' : 'Right Roll to a Wave',
-    'b2/swing_thru' : 'Swing Thru Family',
+    'ms/swing_thru' : 'Swing Thru Family',
     'a1/wheel_thru' : 'Wheel Thru',
     'c3b/lickety_split' : 'Lickety Split',
     'c3b/lift_off' : 'Lift Off',
@@ -1654,8 +1435,8 @@ var titleIndex = <String,String>{
     'a2/motivate' : 'Motivate',
     'c3b/nuclear_reaction' : 'Nuclear Reaction',
     'c1/o_formation' : 'O Formation / Concept',
-    'b2/ocean_wave' : 'Ocean Wave Family',
-    'b2/ocean_wave_rule' : 'Ocean Wave Rule',
+    'ms/ocean_wave' : 'Ocean Wave Family',
+    'ms/ocean_wave_rule' : 'Ocean Wave Rule',
     'c3b/oddly_evenly_concept' : 'Oddly | Evenly Concept',
     'c2/offset_concept' : 'Offset Waves/Lines/Columns Concept',
     'c2/once_removed_concept' : 'Once Removed Concept',
@@ -1669,11 +1450,11 @@ var titleIndex = <String,String>{
     'a2/pass_and_roll_your_neighbor' : 'Pass and Roll Your Neighbor',
     'a1/pass_in' : 'Pass In',
     'c1/pass_the_axle' : 'Pass the Axle',
-    'b2/pass_the_ocean' : 'Pass the Ocean',
+    'ms/pass_the_ocean' : 'Pass the Ocean',
     'a1/pass_the_sea' : 'Pass the Sea',
-    'b1/pass_thru' : 'Pass Thru',
+    'ms/pass_thru' : 'Pass Thru',
     'ms/pass_to_the_center' : 'Pass to the Center',
-    'b1/passing_rule' : 'Passing Rule',
+    'ms/passing_rule' : 'Passing Rule',
     'c3a/patch_anyone' : 'Patch Anyone',
     'a2/peel_and_trail' : 'Peel and Trail',
     'c3a/peel_chain_thru' : 'Peel Chain Thru',
@@ -1691,11 +1472,11 @@ var titleIndex = <String,String>{
     'c1/prefer' : 'Prefer',
     'c1/press' : 'Press Ahead',
     'c2/press' : 'Press In/Out/Left/Right',
-    'b1/promenade' : 'Promenade Family',
-    'b1/pull_by' : 'Pull By',
+    'ms/promenade' : 'Promenade Family',
+    'ms/pull_by' : 'Pull By',
     'c3b/quadruple_formation' : 'Quadruple Formation Concept',
     'a1/quarter_in' : 'Quarter In',
-    'a1/quarter_thru' : 'Quarter Thru',
+    'ms/quarter_thru' : 'Quarter Thru',
     'c3a/quick' : 'Quick',
     'c3a/rally' : 'Rally',
     'c1/scoot_and_ramble' : 'Scoot and Ramble',
@@ -1728,14 +1509,14 @@ var titleIndex = <String,String>{
     'c2/truck' : 'Truck',
     'c1/wheel_and_anything' : 'Wheel and Anything',
     'c3b/revolve_to_a_wave' : 'Revolve To A Wave',
-    'b1/right_and_left_grand' : 'Right and Left Grand Family',
-    'b1/right_and_left_thru' : 'Right and Left Thru',
-    'b1/star' : 'Star Family',
+    'ms/right_and_left_grand' : 'Right and Left Grand Family',
+    'ms/right_and_left_thru' : 'Right and Left Thru',
+    'ms/star' : 'Star Family',
     'c3b/rip_off' : 'Rip Off',
     'c2/rotary' : 'Rotary',
     'c1/rotary_spin' : 'Rotary Spin',
     'c3b/rotate' : 'Rotate',
-    'b1/same_position_rule' : 'Same Position Rule',
+    'ms/same_position_rule' : 'Same Position Rule',
     'c3a/scatter_circulate' : 'Scatter Circulate',
     'c1/scatter_scoot' : 'Scatter Scoot',
     'a1/scoot_and_dodge' : 'Scoot and Dodge',
@@ -1744,8 +1525,8 @@ var titleIndex = <String,String>{
     'a2/scoot_chain_thru' : 'Scoot Chain Thru',
     'c3a/scoot_the_diamond' : 'Scoot the Diamond',
     'c3b/scramble' : 'Scramble',
-    'b1/see_saw' : 'See Saw',
-    'b1/separate' : 'Separate',
+    'ms/see_saw' : 'See Saw',
+    'ms/separate' : 'Separate',
     'c2/sets_in_motion' : 'Sets in Motion',
     'c3b/shake_and_rattle' : 'Shake and Rattle',
     'c1/shakedown' : 'Shakedown',
@@ -1780,22 +1561,22 @@ var titleIndex = <String,String>{
     'a1/split_square_chain_thru' : 'Split Square Chain Thru',
     'a1/split_square_thru' : 'Split Square Thru',
     'c2/split_trade_circulate' : 'Split Trade Circulate',
-    'b1/split_the_outside_couple' : 'Split Two',
+    'ms/split_the_outside_couple' : 'Split Two',
     'c1/square_chain_the_top' : 'Square Chain the Top',
     'a1/square_chain_thru' : 'Square Chain Thru',
     'c1/square_the_bases' : 'Square the Bases',
-    'b1/square_thru' : 'Square Thru Family',
+    'ms/square_thru' : 'Square Thru Family',
     'c1/squeeze' : 'Squeeze',
     'c3a/stable_concept' : 'Stable Concept',
     'c2/stack_the_line' : 'Stack the Line',
     'c2/stagger_concept' : 'Stagger Concept',
     'c3a/stampede' : 'Stampede',
-    'b1/star_thru' : 'Star Thru',
+    'ms/star_thru' : 'Star Thru',
     'c1/start' : 'Start',
     'c1/step_and_flip' : 'Step and Flip',
     'c1/step_and_fold' : 'Step and Fold',
     'a1/step_and_slide' : 'Step and Slide',
-    'b1/step_thru' : 'Step Thru',
+    'ms/step_thru' : 'Step Thru',
     'c3b/n_steps_at_a_time' : 'n Steps At A Time',
     'c3b/stimulate' : 'Stimulate',
     'c1/stretch_concept' : 'Stretch Concept',
@@ -1805,8 +1586,8 @@ var titleIndex = <String,String>{
     'c1/substitute' : 'Substitute',
     'c3a/swap_the_top' : 'Swap the Top',
     'c2/swap_the_wave' : 'Swap the Wave',
-    'b2/sweep_a_quarter' : 'Sweep a Quarter',
-    'b1/swing' : 'Swing',
+    'ms/sweep_a_quarter' : 'Sweep a Quarter',
+    'ms/swing' : 'Swing',
     'c1/swing_and_circle' : 'Swing and Circle',
     'a2/swing_and_mix' : 'Swing and Mix',
     'c3a/swing_chain_thru' : 'Swing Chain Thru',
@@ -1830,12 +1611,12 @@ var titleIndex = <String,String>{
     'c3a/team_up' : 'Team Up',
     'c3a/the_gamut' : 'The Gamut',
     'c1/three_by_two_acey_deucey' : 'Three by Two Acey Deucey',
-    'b2/touch_a_quarter' : 'Touch a Quarter',
+    'ms/touch_a_quarter' : 'Touch a Quarter',
     'c3a/touch_by' : 'Touch By',
     'c1/track_n' : 'Track n',
     'plus/track_ii' : 'Track 2',
-    'b2/trade' : 'Trade Family',
-    'b2/trade_by' : 'Trade By',
+    'ms/trade' : 'Trade Family',
+    'ms/trade_by' : 'Trade By',
     'a2/trade_circulate' : 'Trade Circulate',
     'c3a/trade_the_deucey' : 'Trade the Deucey',
     'c3b/trade_the_diamond' : 'Trade The Diamond',
@@ -1862,16 +1643,16 @@ var titleIndex = <String,String>{
     'c3b/two_faced_concept' : 'Two-Faced Concept',
     'c3a/twosome_concept' : 'Twosome Concept',
     'c2/unwrap' : 'Unwrap Family',
-    'b1/veer' : 'Veer Family',
+    'ms/veer' : 'Veer Family',
     'c2/vertical_anything' : 'Vertical',
     'c1/vertical_tag' : 'Vertical Tag',
     'ms/walk_and_dodge' : 'Walk and Dodge',
-    'b1/all_around_the_corner' : 'Walk Around the Corner',
+    'ms/all_around_the_corner' : 'Walk Around the Corner',
     'c2/walk_out_to_a_wave' : 'Walk Out to a Wave',
     'c3b/wave_the_anyone' : 'Wave The anyone',
     'c1/anything_and_weave' : 'Weave',
-    'b2/wheel_and_deal' : 'Wheel and Deal Family',
-    'b2/wheel_around' : 'Wheel Around',
+    'ms/wheel_and_deal' : 'Wheel and Deal Family',
+    'ms/wheel_around' : 'Wheel Around',
     'c1/wheel_fan_thru' : 'Wheel Fan Thru',
     'c2/wheel_the_ocean' : 'Wheel the Ocean',
     'c3a/wind_the_bobbin' : 'Wind The Bobbin',
@@ -1883,7 +1664,7 @@ var titleIndex = <String,String>{
     'a2/zig_and_zag' : 'Zig and Zag',
     'c1/zing' : 'Zing',
     'c2/zip_code' : 'Zip Code 1-6',
-    'b2/zoom' : 'Zoom',
+    'ms/zoom' : 'Zoom',
     'c3b/contour_the_line' : 'Contour the Line',
     'c3b/counterpoint' : 'Counterpoint',
     'c3b/first_last_half_concept' : 'First / Last Half Concept',
@@ -1895,16 +1676,5 @@ var titleIndex = <String,String>{
 };
 
 String titleFromLink(String? link) {
-  return titleIndex[link] ??
-      titleIndex[link?.replaceAll('ssd', 'b1')] ??
-      titleIndex[link?.replaceAll('ssd', 'b2')] ??
-      titleIndex[link?.replaceAll('ssd', 'ms')] ??
-      titleIndex[link?.replaceAll('m26', 'b1')] ??
-      titleIndex[link?.replaceAll('m26', 'b2')] ??
-      titleIndex[link?.replaceAll('m26', 'ms')] ??
-      titleIndex[link?.replaceAll('plus', 'b1')] ??
-      titleIndex[link?.replaceAll('plus', 'b2')] ??
-      titleIndex[link?.replaceAll('plus', 'ms')] ??
-      titleIndex[link?.replaceAll('plus', 'a1')] ??
-      '';
+  return titleIndex[link] ?? '';
 }

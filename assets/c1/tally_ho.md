@@ -2,9 +2,9 @@
 # Tally Ho
 
 From Parallel Waves or Lines, Trade-By, and 2x4 T-Bones:
-***All [1/2 Circulate](../b1/circulate.md).***
+***All [1/2 Circulate](../ms/circulate.md).***
 ***The centers [Hinge](../ms/hinge.md) and
-[1/2 Box Circulate](../b1/circulate.md),
+[1/2 Box Circulate](../ms/circulate.md),
 while the outsides [Trade](../b2/trade.md).***
 ***Those who meet
 [Cast 3/4](../ms/cast_off_three_quarters.md) while the other four dancers

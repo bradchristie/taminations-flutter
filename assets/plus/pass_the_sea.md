@@ -3,7 +3,7 @@
 
 Timing: 6
 
-From facing couples: All [ Pass Thru](../b1/pass_thru.md), 
+From facing couples: All [ Pass Thru](../ms/pass_thru.md), 
 [Quarter In](../a1/quarter_in.md), and Left Touch.
 
 > 

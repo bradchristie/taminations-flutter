@@ -1,7 +1,7 @@
 
 # Weave
 
-From Box Circulate: The Leads do 1/2 a [Box Circulate](../b1/circulate.md) while
+From Box Circulate: The Leads do 1/2 a [Box Circulate](../ms/circulate.md) while
 the Trailers walk forward on a slight diagonal 
 to meet each other with their original
 outside hands (thought of by some as Cross Extend) and Hinge. 

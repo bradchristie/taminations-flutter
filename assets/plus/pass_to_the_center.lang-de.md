@@ -33,6 +33,6 @@ Durch den Pass Thru sollen einige Tänzer in die Mitte kommen und die anderen T�
 gehen. Aus Facing Lines ist dieses Kommando nicht zulässig. 
 
 Dieses Kommando ist aus Left-Hand Ocean Waves nicht zulässig. Siehe
-[Pass Thru](../b1/pass_thru.md).
+[Pass Thru](../ms/pass_thru.md).
 
 ###### @ Copyright 1994, 2000-2019 by CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed nor revised in any derivation or publication.

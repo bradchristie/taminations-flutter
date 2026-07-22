@@ -3,7 +3,7 @@
 
 From any applicable formation (for example, Lines Facing Out,
 Trade By, Inverted Lines):
-Ends 1/2 [Circulate](../b1/circulate.md)
+Ends 1/2 [Circulate](../ms/circulate.md)
 and [Hinge](../ms/hinge.md) as Centers (working in the
 Center) do a Beaus [Run](../b2/run.md) as Belles Dodge.
 If all the Centers are Beaus, they all Run (flip over to their right);

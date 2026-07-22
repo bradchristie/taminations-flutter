@@ -3,7 +3,7 @@
 
 From appropriate Parallel Waves or Lines, or Eight Chain
 Thru formation:
-***[Circulate](../b1/circulate.md)***;
+***[Circulate](../ms/circulate.md)***;
 ***1/2 Circulate***;
 ***the Center 4 (those in the Wave)
 [Hinge](../ms/hinge.md)

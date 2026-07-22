@@ -5,7 +5,7 @@ Timing: 12
 
 From a Static Square, or T-Bone. (From a Static Square, those designated step forward,
 to form two side-by-side T-bones.):
-***Those facing Right [Pull By](../b1/pull_by.md)***,
+***Those facing Right [Pull By](../ms/pull_by.md)***,
 ***[Quarter In](quarter_in.md)*** (to face those
 who didn't pull by),
 ***all [Left Swing Thru](../b2/swing_thru.md)***,

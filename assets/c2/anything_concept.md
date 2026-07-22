@@ -2,7 +2,7 @@
 # \<anything> Concept
 
 Any call that begins with everyone doing a
-[Circulate](../b1/circulate.md) can be
+[Circulate](../ms/circulate.md) can be
 modified by replacing the initial Circulate with another call. For
 example, [Chase Right](../plus/chase_right.md)
 [Perk Up](../c2/perk_up.md) means Chase Right then complete the

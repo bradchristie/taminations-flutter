@@ -25,7 +25,7 @@ Facing Lines
 8
 
 ### Stile
-La parte Circle della call ha lo stesso stile di [Circle Left](../b1/circle.md). I ballerini finali guidano la rotazione sotto
+La parte Circle della call ha lo stesso stile di [Circle Left](../ms/circle.md). I ballerini finali guidano la rotazione sotto
 l'arco alzando le mani unite in un arco.
 
 ### Commenti

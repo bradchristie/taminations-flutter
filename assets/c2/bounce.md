@@ -4,10 +4,10 @@
 ## Bounce the \<anyone>
 
 From a Two-Faced Line only:
-***[Veer Left](../b1/veer.md) or [Veer Right](../b1/veer.md)***
+***[Veer Left](../ms/veer.md) or [Veer Right](../ms/veer.md)***
 (whichever is toward the center of the line).
 Then the ***designated dancers do a 
-[U-Turn Back](../b1/turn_back.md), turning in
+[U-Turn Back](../ms/turn_back.md), turning in
 the direction of the Veer***.
 
 For example, Bounce the Centers:
@@ -18,9 +18,9 @@ For example, Bounce the Centers:
 
 ## Single Bounce the \<anyone>
 
-From a Mini-Wave only: Single [Veer Left](../b1/veer.md) or
-[Right](../b1/veer.md) (whichever is toward the
+From a Mini-Wave only: Single [Veer Left](../ms/veer.md) or
+[Right](../ms/veer.md) (whichever is toward the
 other dancer in the Mini-Wave). Then the designated dancers do a
-[U-Turn Back](../b1/turn_back.md) in flow direction.
+[U-Turn Back](../ms/turn_back.md) in flow direction.
 
 ###### @ Copyright 1983, 1986-1988, 1995-2024 Bill Davis, John Sybalsky and CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed nor revised in any derivation or publication.

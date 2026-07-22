@@ -4,18 +4,18 @@
 Timing: 12
 
 From any 1/4 Tag or 1/4 Line formation
-in which each very center can [Pass Thru](../b1/pass_thru.md)
+in which each very center can [Pass Thru](../ms/pass_thru.md)
 with an outside dancer.
 [*At Advanced, this call is restricted to starting from
 Right-or Left-hand Quarter Tag formations only.*]:
 ***The very centers
-[Pass Thru](../b1/pass_thru.md) with the
+[Pass Thru](../ms/pass_thru.md) with the
 dancers they are facing,
-while the ends of the center line/wave [Promenade](../b1/promenade.md)
+while the ends of the center line/wave [Promenade](../ms/promenade.md)
 1/4 around the outside of the set.***
 ***The original very centers and the dancers they are next to,
 [Hinge](../ms/hinge.md).***
-***The centers [Star](../b1/star.md)
+***The centers [Star](../ms/star.md)
 (or [Diamond Circulate](../plus/diamond_circulate.md))
 one spot, while the outsides [Trade](../b2/trade.md).***
 ***Those who meet now

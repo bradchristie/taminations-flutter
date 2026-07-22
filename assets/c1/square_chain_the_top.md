@@ -2,7 +2,7 @@
 # Square Chain the Top
 
 From Facing Couples:
-***Right [Pull By](../b1/pull_by.md) and
+***Right [Pull By](../ms/pull_by.md) and
 [Quarter In](../a1/quarter_in.md);***
 ***Left [Spin The Top](../ms/spin_the_top.md);***
 ***Left [Turn Thru](../plus/turn_thru.md)***.

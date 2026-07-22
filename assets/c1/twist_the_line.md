@@ -6,7 +6,7 @@
 From a Line, centers facing the same way, and genders
 arranged appropriately: The Centers step forward and 
 [Partner Trade](../b2/trade.md) while the Ends Face, move in, and 
-[Star Thru](../b1/star_thru.md). This is a gender-dependent call (because of the Star
+[Star Thru](../ms/star_thru.md). This is a gender-dependent call (because of the Star
 Thru).
 
 ## Twist and \<anything>
@@ -17,7 +17,7 @@ while the Ends Face, move in, and do the \<anything> call--which will involve
 only the original Ends unless otherwise
 specified For example, 
 
-Twist and [Square Thru 2](../b1/square_thru.md):
+Twist and [Square Thru 2](../ms/square_thru.md):
 
 >
 > ![alt](twist_and_anything_1a.png)

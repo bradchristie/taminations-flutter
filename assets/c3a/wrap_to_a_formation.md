@@ -5,7 +5,7 @@ From Columns; \<formation> will be some kind of Diamond,
 Galaxy, or Hourglass:
 
 
-\#1 dancer: 1/2 [Split Circulate](../b1/circulate.md) and Phantom \<formation> Circulate 2.  
+\#1 dancer: 1/2 [Split Circulate](../ms/circulate.md) and Phantom \<formation> Circulate 2.  
 \#2 dancer: Circulate, 1/2 Split Circulate, and Phantom \<formation> Circulate.  
 \#3 dancer: Circulate 2 & 1/2.  
 \#4 dancer: Circulate 3.  

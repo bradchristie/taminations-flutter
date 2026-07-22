@@ -8,7 +8,7 @@ From a General Line:
 then ***the new centers [Trade](../b2/trade.md)***.
 If both centers are
 facing the same way at the start of the call, they [ Half
-Sashay](../b1/sashay.md), blending into a [ Run](../b2/run.md) around
+Sashay](../ms/sashay.md), blending into a [ Run](../b2/run.md) around
 the original far end.
 
 > 

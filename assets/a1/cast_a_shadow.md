@@ -15,7 +15,7 @@ facing out [Cloverleaf](../plus/cloverleaf.md) and centers facing in
 [Extend](../b2/extend.md), Arm Turn 1/4,
 and Extend. The centers finish as centers of a 2x4 by stepping in between ends who spread
 apart.  In the case in which all the centers are facing in, 
-they [Pass In](pass_in.md) and [Pass Thru](../b1/pass_thru.md); 
+they [Pass In](pass_in.md) and [Pass Thru](../ms/pass_thru.md); 
 if all centers are facing out, they Cloverleaf.
 
 > 

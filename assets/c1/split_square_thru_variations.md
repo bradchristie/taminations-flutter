@@ -20,7 +20,7 @@ Here are proper call examples:
 
 ## Split Square Chain the Top
 From a appropriate T-Bone Box:
-Those facing right [Pull By](../b1/pull_by.md) and
+Those facing right [Pull By](../ms/pull_by.md) and
 [Quarter In](../a1/quarter_in.md);
 all Left [Spin the Top](../ms/spin_the_top.md);
 all Left [Turn Thru](../plus/turn_thru.md).
@@ -28,7 +28,7 @@ Ends in Back-to-Back Couples.
 
 ## Split Dixie Style to a Wave
 From an appropriate T-Bone Box:
-Those facing Right [Pull By](../b1/pull_by.md) and
+Those facing Right [Pull By](../ms/pull_by.md) and
 [Quarter In](../a1/quarter_in.md);
 all Left [Touch 1/4](../b2/touch_a_quarter.md). 
 Ends in a Left-Hand Box.

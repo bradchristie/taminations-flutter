@@ -5,7 +5,7 @@ Timing: 4
 
 From anywhere with a very center two, and an outside 6: 
 The very centers [Trade](../b2/trade.md), while
-the outside six [Circulate](../b1/circulate.md) in their formation.
+the outside six [Circulate](../ms/circulate.md) in their formation.
 
 For common formations, the circulate paths for the outside six are shown below:
 

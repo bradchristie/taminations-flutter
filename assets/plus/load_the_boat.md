@@ -7,11 +7,11 @@ the ends of each line facing the same (in or out) direction.
 The end dancers move forward around the outside, passing right shoulders with three
 moving end dancers, and turn one-quarter in (90°) to stand beside the third person
 passed, facing the center of the set as a couple. Simultaneously, the center four dancers
-***[Pass Thru](../b1/pass_thru.md),***
+***[Pass Thru](../ms/pass_thru.md),***
 ***turn their backs to their momentary partners,***
 ***[Partner Trade](../b2/trade.md) with their new***
 partners, and
-***[Pass Thru](../b1/pass_thru.md).***
+***[Pass Thru](../ms/pass_thru.md).***
 
 STYLING: The end dancers, while moving on the outside, leave enough room for the center dancers to work comfortably. Arms are held in  natural dance position throughout the action, blending into the appropriate hand position for the next call.
 

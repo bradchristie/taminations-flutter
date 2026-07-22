@@ -16,7 +16,7 @@ final Turn Thru:
 > ![alt](anything_to_a_wave_1c.png)
 > 
 
-[Square Thru 3](../b1/square_thru.md) to a Wave:
+[Square Thru 3](../ms/square_thru.md) to a Wave:
 
 > 
 > ![alt](anything_to_a_wave_2.png)

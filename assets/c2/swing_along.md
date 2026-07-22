@@ -6,7 +6,7 @@
 From a Tidal Wave: The Very Ends [Counter Rotate 1/4](../a2/box_counter_rotate.md) and
 [Extend](../b2/extend.md), finishing as the end of a Wave facing out.
 Meanwhile, the Center Six [Hinge](../ms/hinge.md),
-[Circulate](../b1/circulate.md), then the #1 dancer in each column
+[Circulate](../ms/circulate.md), then the #1 dancer in each column
 [Peel Off](../plus/peel_off.md) while the #2 and #3
 dancers [Extend](../b2/extend.md) and [Trade](../b2/trade.md) with each other.
 Finishes in Parallel Waves.

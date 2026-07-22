@@ -4,9 +4,9 @@
 Timing: 6-8-10, SS 8-10-12
 
 From a Static Square, or T-Bone. (From a Static Square, those designated step forward,
-to form two side-by-side T-bones.): Those facing Right [Pull By](../b1/pull_by.md), 
+to form two side-by-side T-bones.): Those facing Right [Pull By](../ms/pull_by.md), 
 [Quarter In](quarter_in.md) (to face those who didn't pull by), 
-and all [Left Square Thru 3/4](../b1/square_thru.md).
+and all [Left Square Thru 3/4](../ms/square_thru.md).
 
 Can also be done fractionally, or for a given number of hands. In these cases, the
 fraction applies to those who start the call, e.g., for a Split Square Thru 3/4, the

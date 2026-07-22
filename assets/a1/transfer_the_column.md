@@ -3,10 +3,10 @@
 
 Timing: 10
 
-From Columns: The #1 and #2 dancers [Circulate](../b1/circulate.md) 3 spots,
+From Columns: The #1 and #2 dancers [Circulate](../ms/circulate.md) 3 spots,
 working slightly wider than usual to give the centers room,
 and Face In (to become a Couple).
-Meanwhile, the #3 and #4 dancers [Circulate](../b1/circulate.md) and Arm Turn 3/4.
+Meanwhile, the #3 and #4 dancers [Circulate](../ms/circulate.md) and Arm Turn 3/4.
 From the momentary Right-Hand or Left-Hand 1/4 Tag,
 all [Extend](../b2/extend.md) to form Parallel Waves.
 

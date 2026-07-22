@@ -6,7 +6,7 @@
 Timing: 8
 
 From Box Circulate formation, or any symmetric 2x2 formation with 2 leaders and 2
-trailers: Leads [Box Circulate](../b1/circulate.md) Twice and [Quarter In](../a1/quarter_in.md), 
+trailers: Leads [Box Circulate](../ms/circulate.md) Twice and [Quarter In](../a1/quarter_in.md), 
 while the trailers [Extend](../b2/extend.md), Arm Turn 3/4, and [Extend](../b2/extend.md).
 
 > 

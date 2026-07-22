@@ -53,7 +53,7 @@ and end in the correct formation, they are dancing the call properly.
 From a Tidal Line or Tidal Two-Faced Line, the proper dance action of Cast Off 3/4 is to work on each
 side, ending in an Eight Chain Thru formation. From a Tidal Line only, if the caller wants each side
 to work as a unit, ending in Facing Lines, "Line of 8, Cast Off 3/4" may be used, similar to
-"[Line of 8, Bend The Line](../b1/bend_the_line.md)";
+"[Line of 8, Bend The Line](bend_the_line.md)";
 this variation (or the one from a line of 6) is seldom used.
 
 For variations of Cast Off with fractions other than 3/4,

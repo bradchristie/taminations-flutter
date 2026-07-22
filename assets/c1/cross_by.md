@@ -2,8 +2,8 @@
 # Cross By
 
 From a Thar, Wrong-Way Thar, or Parallel Waves:
-1/2 [Circulate](../b1/circulate.md),
-[Sashaying](../b1/sashay.md) as you go, and joining opposite
+1/2 [Circulate](../ms/circulate.md),
+[Sashaying](../ms/sashay.md) as you go, and joining opposite
 hands from initial handhold. Ends in a Wrong-Way Thar,
 Thar, or Wave between vertical Mini-Waves.
 

@@ -20,7 +20,7 @@ Columns (Columns, Double Pass Thru formation, etc.), and that ends
 in General Lines or Columns, can be done from a Butterfly.
 The dancers act as though the Ends were close together;
 however, they end on the original eight spots on the floor. For
-example, "Butterfly [ Double Pass Thru](../b1/double_pass_thru.md)":
+example, "Butterfly [ Double Pass Thru](../ms/double_pass_thru.md)":
 
 > 
 > ![alt](butterfly_formation_2.png)

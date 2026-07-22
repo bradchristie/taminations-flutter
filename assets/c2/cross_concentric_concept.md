@@ -27,7 +27,7 @@ they finish (on the outside) as though in Columns;
 if they begin in Lines, they finish
 as though in Lines.
 
-Cross-Concentric [Star Thru](../b1/star_thru.md):
+Cross-Concentric [Star Thru](../ms/star_thru.md):
 
 >
 > ![alt](cross_concentric_concept_2a.png)

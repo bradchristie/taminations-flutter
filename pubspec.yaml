@@ -56,8 +56,6 @@ flutter:
 
   assets:
     - google_fonts/
-    - assets/b1/
-    - assets/b2/
     - assets/ms/
     - assets/plus/
     - assets/a1/

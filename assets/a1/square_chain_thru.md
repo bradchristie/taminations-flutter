@@ -4,7 +4,7 @@
 Timing: 14
 
 From facing couples:
-***All Right [Pull By](../b1/pull_by.md),
+***All Right [Pull By](../ms/pull_by.md),
 [Quarter In](quarter_in.md)***,
 ***[Left Swing Thru](../b2/swing_thru.md)***,
 and ***Left [Turn Thru](../plus/turn_thru.md)***,

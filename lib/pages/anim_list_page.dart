@@ -192,10 +192,17 @@ class _AnimListState extends fm.State<AnimListFrame> {
     });
   }
 
+  fm.Widget buildNew(fm.BuildContext context) {
+    return fm.Column();
+  }
+
   @override
   fm.Widget build(fm.BuildContext context) {
+    if (callEntry!.calls.any((call) => call is! AnimatedCall))
+      return buildNew(context);
+
     if (callEntry != null)
-      _loadList(callEntry!.calls);
+      _loadList(flattenAnimatedCallList(callEntry!.calls));
 
     return fm.Column(children: [
       fm.Expanded(

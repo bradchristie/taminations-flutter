@@ -6,7 +6,7 @@
 Timing: call + 2
 
 From any appropriate formation: Do the "Anything" call.
-Trailers diagonally [Pull By](../b1/pull_by.md) with each other, using their
+Trailers diagonally [Pull By](../ms/pull_by.md) with each other, using their
 outside hands. For
 example, [Touch 1/4](../b2/touch_a_quarter.md) and Cross:
 
@@ -23,7 +23,7 @@ other on a diagonal (for example, Box Circulate formation).
 Timing: 2
 
 Any formation in which the designated dancers are facing on a diagonal: The named dancers then
-diagonally [Pull By](../b1/pull_by.md) with each other, using their outside hands.
+diagonally [Pull By](../ms/pull_by.md) with each other, using their outside hands.
 Ending formation: various. For example, Wheel And Deal, Beaus Cross:
 
 >

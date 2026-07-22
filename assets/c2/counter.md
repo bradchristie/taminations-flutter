@@ -6,7 +6,7 @@
 From a 1/4 or 3/4 Tag, or a 1/4 or 3/4 Line formation: Center 4
 [Cast 3/4](../ms/cast_off_three_quarters.md) and
 [Counter Rotate 1/4](../c1/counter_rotate.md); the Outsides
-[Separate](../b1/separate.md), Touch 1/2,
+[Separate](../ms/separate.md), Touch 1/2,
 [Step and Fold](../c1/step_and_fold.md).
 Finishes in Parallel Waves or Lines.
 

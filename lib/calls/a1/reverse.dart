@@ -23,8 +23,8 @@ import '../../common_dart.dart';
 import '../../moves.dart';
 import '../a1/swap_around.dart' as a1;
 import '../a2/recycle.dart' as a2;
-import '../b2/flutterwheel.dart' as b2;
-import '../b2/wheel_around.dart' as b2;
+import '../ms/flutterwheel.dart' as b2;
+import '../ms/wheel_around.dart' as ms;
 import '../ms/dixie_style.dart' as ms;
 
   final List<AnimatedCall> Reverse = [
@@ -52,7 +52,7 @@ import '../ms/dixie_style.dart' as ms;
 
           BackSashayLeft.changeBeats(4)
       ]),
-    b2.WheelAround.where((tam) =>
+    ms.WheelAround.where((tam) =>
       tam.title == 'Reverse Wheel Around' && tam.from == 'Facing Couples').first.xref(title: 'Reverse Wheel Around').xref(group: 'Reverse'),
 
     AnimatedCall('Reverse Courtesy Turn',

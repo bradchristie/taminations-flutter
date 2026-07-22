@@ -3,10 +3,10 @@
 
 Timing: 16
 
-From Waves: ***All [Circulate](../b1/circulate.md),***
+From Waves: ***All [Circulate](../ms/circulate.md),***
 ***the centers of each wave
 [ Cast Off 3/4](../ms/cast_off_three_quarters.md)
-while the ends [Circulate](../b1/circulate.md) 1/2, to create a star between two mini-waves.***
+while the ends [Circulate](../ms/circulate.md) 1/2, to create a star between two mini-waves.***
 ***The star turns half, while those in
 the mini-waves [Trade](../b2/trade.md).***
 ***Those who meet

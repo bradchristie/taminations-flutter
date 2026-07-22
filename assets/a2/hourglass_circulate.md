@@ -5,7 +5,7 @@
 
 Timing: 4
 
-From an Hourglass: Each dancer does a [Circulate](../b1/circulate.md) 
+From an Hourglass: Each dancer does a [Circulate](../ms/circulate.md) 
 by moving forward one position in the
 hourglass, to take that dancer's place. Dancers move along the path shown:
 

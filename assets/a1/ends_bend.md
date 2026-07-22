@@ -4,7 +4,7 @@
 Timing: 2
 
 From any formation with the ends in a line: The ends do their part of a 
-[Bend the Line](../b1/bend_the_line.md).
+[Bend the Line](../ms/bend_the_line.md).
 Note that dancers can [Roll](../plus/anything_and_roll.md) after this call.
 
 > 

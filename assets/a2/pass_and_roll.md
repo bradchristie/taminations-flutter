@@ -3,11 +3,11 @@
 
 Timing: 10
 
-From Single Eight Chain Thru: All [Pass Thru](../b1/pass_thru.md); the centers
+From Single Eight Chain Thru: All [Pass Thru](../ms/pass_thru.md); the centers
 [Turn Thru](../plus/turn_thru.md), while the outsides
-do a right-face [U-Turn Back](../b1/turn_back.md). 
-All [Pass Thru](../b1/pass_thru.md), and the centers 
-[Pass Thru](../b1/pass_thru.md) as the outsides do a
+do a right-face [U-Turn Back](../ms/turn_back.md). 
+All [Pass Thru](../ms/pass_thru.md), and the centers 
+[Pass Thru](../ms/pass_thru.md) as the outsides do a
 [Right Roll to a Wave](../a1/right_roll_to_a_wave.md) to meet the centers. 
 Ends in Parallel Mini-Waves.
 

@@ -4,12 +4,12 @@
 Timing: 6
 
 From General Lines only: Each dancer moves forward one spot along the circulate path
-shown below: A lead end [ Circulates](../b1/circulate.md) 
+shown below: A lead end [ Circulates](../ms/circulate.md) 
 to the far center spot in the same line; a lead center
-[Circulates](../b1/circulate.md) to the far end spot in the same line; 
-a trailing end [Circulates](../b1/circulate.md) to the near
+[Circulates](../ms/circulate.md) to the far end spot in the same line; 
+a trailing end [Circulates](../ms/circulate.md) to the near
 center spot in the other line, and a trailing center 
-[Circulates](../b1/circulate.md) to the near end spot in the other line. If
+[Circulates](../ms/circulate.md) to the near end spot in the other line. If
 two dancers are about to collide and they are facing the same direction, the belle goes in
 front of the beau; if they are facing each other, they pass right shoulders.
 
@@ -27,7 +27,7 @@ Examples:
 
 For Teaching: You can describe this as: 
 Leads [ Cross Run](../b2/run.md) as trailers (do their part of)
-[Couples Circulate](../b1/circulate.md) and [ Half Sashay](../b1/sashay.md) 
+[Couples Circulate](../ms/circulate.md) and [ Half Sashay](../ms/sashay.md) 
 as they go. However, it is far more effective to
 re-introduce the idea of circulate paths (already used at Basic), and use it to describe
 the call.

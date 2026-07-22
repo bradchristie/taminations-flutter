@@ -3,7 +3,7 @@
 
 Starting formation - Columns. (at Plus, Columns only)
 
-***[Circulate](../b1/circulate.md)***.
+***[Circulate](../ms/circulate.md)***.
 ***Then 1/2 (Half) Circulate.***.
 ***The center six (three adjacent
 pairs) [Trade](../b2/trade.md)***.

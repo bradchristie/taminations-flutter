@@ -24,7 +24,7 @@ import '../common.dart';
 class Step extends Action {
 
   @override LevelData get level => name.contains('Press')
-      ? LevelData.C1 : LevelData.B1;
+      ? LevelData.C1 : LevelData.MS;
   @override String get help => '$name moves dancers ahead one position.';
   @override String get helplink =>
       name.contains('Press') ? 'c1/press' : super.helplink;

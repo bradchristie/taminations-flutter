@@ -220,15 +220,6 @@ class _StartPracticeFrameState extends fm.State<StartPracticeFrame> {
                             child: fm.Row(
                               crossAxisAlignment: fm.CrossAxisAlignment.stretch,
                               children: [
-                                _StartPracticeItem(text: 'Basic 1', color: Color.B1),
-                                _StartPracticeItem(text: 'Basic 2', color: Color.B2)
-                              ],
-                            ),
-                          ),
-                          fm.Expanded(
-                            child: fm.Row(
-                              crossAxisAlignment: fm.CrossAxisAlignment.stretch,
-                              children: [
                                 _StartPracticeItem(
                                     text: 'Mainstream', color: Color.MS),
                                 _StartPracticeItem(text: 'Plus', color: Color.PLUS)

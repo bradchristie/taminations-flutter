@@ -3,8 +3,8 @@
 
 (From waves only) - Starting formation - Any 4-dancer
 ocean wave. Everyone releases handholds, steps forward and turns a quarter in (90°) to face the
-adjacent dancer, and does the (Anything) call (e.g., [Right & Left Thru](../b1/right_and_left_thru.md), 
-[ Star Thru](../b1/star_thru.md), etc.). 
+adjacent dancer, and does the (Anything) call (e.g., [Right & Left Thru](../ms/right_and_left_thru.md), 
+[ Star Thru](../ms/star_thru.md), etc.). 
 
 STYLING: In all "Explode and . . . " figures, follow the styling suggestions for each of the "and . . . " figures used.
 

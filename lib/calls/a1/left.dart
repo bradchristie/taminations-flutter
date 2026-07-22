@@ -22,15 +22,15 @@ import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../moves.dart';
 import '../plus/partner_hinge.dart' as a1;
-import '../plus/quarter_thru.dart' as a1;
+import '../plus/quarter_thru.dart' as plus;
 import '../a1/split_square_thru.dart' as a1;
 import '../a1/square_chain_thru.dart' as a1;
 import '../a1/turn_and_deal.dart' as a1;
 import '../a2/pass_and_roll.dart' as a2;
 import '../a2/remake.dart' as a2;
 import '../a2/spin_the_windmill.dart' as a2;
-import '../b2/swing_thru.dart' as b2;
-import '../b2/touch_a_quarter.dart' as b2;
+import '../ms/swing_thru.dart' as b2;
+import '../ms/touch_a_quarter.dart' as b2;
 import '../plus/track_ii.dart' as plus;
 
   final List<AnimatedCall> Left = [
@@ -68,6 +68,9 @@ import '../plus/track_ii.dart' as plus;
     b2.SwingThru.where((tam) =>
       tam.title == 'Left Swing Thru' && tam.from == 'Right-Hand Wave').first.xref(title: 'Left Swing Thru').xref(group: 'Left'),
 
+    plus.QuarterThru.where((tam) =>
+    tam.title == 'Left Quarter Thru' && tam.from == 'Left-Hand Box').first.xref(title: 'Left Quarter Thru').xref(group: 'Left'),
+
     AnimatedCall('Left 3/4 Tag the Line',
       formation:Formation('Two-Faced Lines LH'),
       group:'Left',
@@ -84,8 +87,10 @@ import '../plus/track_ii.dart' as plus;
           LeadLeft +
           Forward_2.changeBeats(3)
       ]),
+
     b2.TouchAQuarter.where((tam) =>
       tam.title == 'Left Touch a Quarter' && tam.from == 'Facing Couples').first.xref(title: 'Left Touch a Quarter').xref(group: 'Left'),
+
     plus.TrackIi.where((tam) =>
       tam.title == 'Left Track 2').first.xref(title: 'Left Track 2').xref(group: 'Left'),
 
@@ -129,8 +134,6 @@ import '../plus/track_ii.dart' as plus;
       ]),
     a1.PartnerHinge.where((tam) =>
       tam.title == 'Left Partner Hinge' && tam.from == 'Lines Facing Out').first.xref(title: 'Left Partner Hinge').xref(group: 'Left (A-1)'),
-    a1.QuarterThru.where((tam) =>
-      tam.title == 'Left Quarter Thru' && tam.from == 'Left-Hand Box').first.xref(title: 'Left Quarter Thru').xref(group: 'Left (A-1)'),
     a1.SplitSquareThru.where((tam) =>
       tam.title == 'Left Split Square Thru').first.xref(title: 'Left Split Square Thru').xref(group: 'Left (A-1)'),
     a1.SquareChainThru.where((tam) =>

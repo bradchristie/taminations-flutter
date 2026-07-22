@@ -6,7 +6,7 @@
 Timing: 4
 
 From General Lines, with the ends forming a Tandem: 
-In each line, the end facing in [Circulates](../b1/circulate.md). 
+In each line, the end facing in [Circulates](../ms/circulate.md). 
 Meanwhile, each of the other dancers (in a single, smooth motion) faces the
 vacated spot, steps forward, and turns another 1/4 the same way he first turned. Ends back
 in Parallel Lines or Waves.
@@ -29,7 +29,7 @@ vacated spot. This captures the idea of a single, flowing motion for them.
 Timing: 6
 
 From General Lines, with the ends forming a Tandem: In each line, the end facing out
-[Circulates](../b1/circulate.md). Meanwhile, each of the other dancers, 
+[Circulates](../ms/circulate.md). Meanwhile, each of the other dancers, 
 in a single, smooth motion, faces the
 vacated spot, takes a step forward, and turns another 1/4 in the same direction he first
 turned. Ends back in Parallel Waves or Lines.

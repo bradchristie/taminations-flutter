@@ -26,7 +26,7 @@ class CallEntry {
   String level;
   String link;
   String? audio;
-  List<AnimatedCall> calls;
+  List<AnimatedCallListItem> calls;
 
   CallEntry(this.title,this.level,this.link,this.calls,[this.audio]);
 

@@ -46,9 +46,6 @@ class Color extends fm.Color {
     }
   }
 
-  static const Color BMS = Color(0xffc0c0ff);
-  static const Color B1 = Color(0xffe0e0ff);
-  static const Color B2 = Color(0xffe0e0ff);
   static const Color MS = Color(0xffe0e0ff);
   static const Color PLUS = Color(0xffc0ffc0);
   static const Color ADV = Color(0xffffe080);

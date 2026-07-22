@@ -5,7 +5,7 @@
 
 From a 1/4 Tag or 3/4 Tag formation:
 ***Do a [Little](../c1/scoot_and_little.md)***,
-then ***Centers [Box Circulate](../b1/circulate.md)***.
+then ***Centers [Box Circulate](../ms/circulate.md)***.
 
 ## Scoot and Little More
 

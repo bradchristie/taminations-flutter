@@ -5,7 +5,7 @@
 
 From Facing Lines of Four:
 ***[Cross Trail Thru](../a1/cross_trail_thru.md) to form Lines of Four Facing Out,***
-***Centers [Trade](../b2/trade.md), Ends [U-Turn Back](../b1/turn_back.md)
+***Centers [Trade](../b2/trade.md), Ends [U-Turn Back](../ms/turn_back.md)
 *away from the center* to*** form Facing Lines of Four.
 
 # The K

@@ -24,8 +24,8 @@ The Crazy Concept can be fractionalized into four parts.
 
 Example: 1/2 Crazy Right and Left Thru--From Facing Lines of Four: 
 Each Side does a 
-[Right and Left Thru](../b1/right_and_left_thru.md), Center Four do a 
-[Right and Left Thru](../b1/right_and_left_thru.md).
+[Right and Left Thru](../ms/right_and_left_thru.md), Center Four do a 
+[Right and Left Thru](../ms/right_and_left_thru.md).
 
 ## Reverse Crazy Concept
 

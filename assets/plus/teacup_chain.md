@@ -9,14 +9,14 @@ e.g., "Head ladies center for a Teacup Chain". For the rest of the definition,
 these two ladies will be called the "specified ladies". 
 
 ***The specified ladies (both Head ladies or both Side ladies) move to the center and
-[Star Right](../b1/star.md) three-quarters to meet their corners for a
+[Star Right](../ms/star.md) three-quarters to meet their corners for a
 [Left Arm Turn](turn_thru.md). At the same time, the other two ladies move to the right
 around the perimeter of the square to their corners,
 and do a [Right Arm Turn](turn_thru.md).***
 
 ***Following the Arm Turns, the specified ladies move around the perimeter of the square
 to their new corners for a Right Arm Turn, while the other ladies go to the center and
-[Star Left](../b1/star.md) once and a quarter to meet their new corners for a Right Arm Turn.*** 
+[Star Left](../ms/star.md) once and a quarter to meet their new corners for a Right Arm Turn.*** 
 
 ***The specified ladies then move to the center and Star Left once and a quarter to their
 new corners for a Right Arm Turn, while the other ladies move to their new corners (around
@@ -24,7 +24,7 @@ the perimeter of the square) for a Left Arm Turn.***
 
 ***Finally, the specified ladies move to their new corners
 (their original partners) for
-either a [Courtesy Turn](../b1/courtesy_turn.md)
+either a [Courtesy Turn](../ms/courtesy_turn.md)
 or a Left Arm Turn leading into the next command, while the other
 ladies move to the center and Star Right three-quarters to meet their new corners (their
 original partners) for either a Courtesy Turn or a Left Arm Turn leading into the next

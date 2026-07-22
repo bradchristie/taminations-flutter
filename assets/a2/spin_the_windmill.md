@@ -8,7 +8,7 @@ From anywhere with a center Wave or center Facing Couples (for example,
 [Slip](slip.md), and
 [Cast Off 3/4](../ms/cast_off_three_quarters.md),
 while the outsides face as directed and
-[Circulate](../b1/circulate.md)
+[Circulate](../ms/circulate.md)
 two positions. If the centers start in Facing Couples, they first
 Touch, then finish the call.
 

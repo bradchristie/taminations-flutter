@@ -23,6 +23,6 @@ La Ocean Wave Rule si applica a questa call.
 
 Sul Pass Thru, alcuni ballerini dovrebbero andare verso il centro ed altri verso l'esterno. Questa call è
 impropria partendo da Facing Lines. E' altresì impropria partendo da Left-Hand Ocean Waves. Vedere Basic
-Definitions [Pass Thru](../b1/pass_thru).
+Definitions [Pass Thru](../ms/pass_thru.md).
 
 ###### © 1994, 2000-2023 by CALLERLAB Inc., The International Association of Square Dance Callers. È concessa l'autorizzazione a ristampare, ripubblicare e creare opere derivate senza royalty, a condizione che venga pubblicata la presente nota. È concessa la pubblicazione su Internet di opere derivate senza royalty, a condizione che venga pubblicata la presente nota. È concessa l'autorizzazione a citare parti o tutto il presente documento senza royalty, a condizione che venga inclusa la presente nota. Le informazioni contenute nel presente documento non saranno modificate o riviste in alcuna derivazione o pubblicazione

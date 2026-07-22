@@ -5,7 +5,7 @@
 wave. 
 
 Everyone releases handholds, steps forward and turns a quarter in (90°) to face the
-adjacent dancer, and right hand [pull by](../b1/pull_by.md) that person, to end as couples back-to-back. 
+adjacent dancer, and right hand [pull by](../ms/pull_by.md) that person, to end as couples back-to-back. 
 
 STYLING: A  handshake hold is used as the dancers right hand pull by. For position orientation, hands are joined in a  couple handhold at the completion of the call.
 

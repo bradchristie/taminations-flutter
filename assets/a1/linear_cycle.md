@@ -7,7 +7,7 @@ Parallel Ocean Waves or Four (4) Dancer Waves to be either right or left-handed.
 end and adjacent center can single or partner hinge. This is a three part call.) 
  
 1. ***The ends and adjacent centers [hinge](../ms/hinge.md).***  
-2. ***Those facing out [fold](../ms/fold.md) behind those facing in and all dancers will then move forward in a [Double Pass Thru](../b1/double_pass_thru.md) action.***
+2. ***Those facing out [fold](../ms/fold.md) behind those facing in and all dancers will then move forward in a [Double Pass Thru](../ms/double_pass_thru.md) action.***
 3. ***If the hinge is right-handed, [peel](../plus/peel_off.md) right; if the hinge is left-handed, peel left to end as facing couples.***  
 
 From a right-hand hinge, all will pass right shoulders. From a left-hand hinge, all
@@ -15,7 +15,7 @@ will pass left shoulders.
 
 An added note just for information from beyond the Plus Program -- 
 From any inverted lines or some three in one lines, 
-the [passing rule](../b1/passing_rule.md) shall prevail. (Not applicable in the
+the [passing rule](../ms/passing_rule.md) shall prevail. (Not applicable in the
 Plus Program.) 
 
 STYLING: Arms in  natural dance position. Similar to styling for individual components. Rejoin hands upon completion of move.

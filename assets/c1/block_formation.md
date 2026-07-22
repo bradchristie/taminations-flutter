@@ -7,9 +7,9 @@ bodies in a Block: in front, in back, left and right.
 
 In Blocks you can do only 4-person calls (or sequences of
 calls) that start and end in a 2x2 formation. for example, [Partner Trade](../b2/trade.md), 
-[Partner Tag](../plus/partner_tag.md), [Pass Thru](../b1/pass_thru.md),
+[Partner Tag](../plus/partner_tag.md), [Pass Thru](../ms/pass_thru.md),
 [Touch 1/4](../b2/touch_a_quarter.md), 
-[Star Thru](../b1/star_thru.md), [Square Thru](../b1/square_thru.md), 
+[Star Thru](../ms/star_thru.md), [Square Thru](../ms/square_thru.md), 
 [Wheel Thru](../a1/wheel_thru.md), etc. When doing a call in a
 block, dancers work only with the dancers in their own
 Block; all Block calls start and end on the same 4 spots on

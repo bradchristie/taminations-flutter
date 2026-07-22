@@ -26,7 +26,37 @@ import 'formation.dart';
 import 'level_data.dart';
 import 'math/path.dart';
 
-class AnimatedCall {
+List<AnimatedCall> flattenAnimatedCallList(List<AnimatedCallListItem> list) {
+  var retval = <AnimatedCall>[];
+  for (var item in list) {
+    switch (item) {
+      case AnimatedCall() :
+        retval.add(item);
+      case AnimatedCallListGroupHeader():
+        retval.addAll(flattenAnimatedCallList(item.calls));
+      case AnimatedCallListCallHeader():
+        retval.addAll(flattenAnimatedCallList(item.calls));
+    }
+  }
+  return retval;
+}
+
+
+sealed class AnimatedCallListItem {
+
+}
+
+class AnimatedCallListGroupHeader extends AnimatedCallListItem {
+  String group = '';
+  List<AnimatedCallListItem> calls = [];
+}
+
+class AnimatedCallListCallHeader extends AnimatedCallListItem {
+  String title = '';
+  List<AnimatedCallListItem> calls = [];
+}
+
+class AnimatedCall extends AnimatedCallListItem {
 
   String title;
   String group;
@@ -57,7 +87,7 @@ class AnimatedCall {
         this.fractions = '',
         this.difficulty = 0,
         this.actives = '',
-        this.level = LevelData.B1,
+        this.level = LevelData.MS,
         this.isPerimeter = false,
         this.isExact = false,
         this.isAsymmetric = false,

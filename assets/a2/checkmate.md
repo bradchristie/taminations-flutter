@@ -3,9 +3,9 @@
 
 Timing: 10
 
-From Columns: Numbers 1 and 2 in each column [Circulate](../b1/circulate.md) 4 spots and Face In, while
-numbers 3 and 4 [Circulate](../b1/circulate.md) twice, Face In to form a couple,
-then individually [Circulate](../b1/circulate.md). 
+From Columns: Numbers 1 and 2 in each column [Circulate](../ms/circulate.md) 4 spots and Face In, while
+numbers 3 and 4 [Circulate](../ms/circulate.md) twice, Face In to form a couple,
+then individually [Circulate](../ms/circulate.md). 
 From Columns, ends in Parallel Two-Faced Lines.
 
 > 

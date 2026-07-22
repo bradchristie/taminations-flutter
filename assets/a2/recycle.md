@@ -4,8 +4,8 @@
 Timing: 6
 
 From Facing Couples only: The beaus step forward until they are side-by-side, while
-doing a [U-Turn Back](../b1/turn_back.md), turning toward each other. Meanwhile, the belles
-[Veer Left](../b1/veer.md) and join
+doing a [U-Turn Back](../ms/turn_back.md), turning toward each other. Meanwhile, the belles
+[Veer Left](../ms/veer.md) and join
 right hands with the original beaus. Ends in a Right-Hand Wave; the beaus finish as
 centers of the Wave, and the belles finish as ends.
 

@@ -2,7 +2,7 @@
 # Rotary \<anything>
 
 From an Eight Chain Thru: ***All Right Pull By***;
-***Ends [Courtesy Turn](../b1/courtesy_turn.md) and
+***Ends [Courtesy Turn](../ms/courtesy_turn.md) and
 [Roll](../plus/anything_and_roll.md) as
 the Centers step to a Left-Hand Wave and do the \<anything> call***.
 Common applications include Rotary Explode the Wave, Rotary Mix, and

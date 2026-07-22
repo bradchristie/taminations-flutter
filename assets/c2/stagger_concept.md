@@ -6,7 +6,7 @@ From Blocks: Any call which can be done from Parallel General Columns
 and which ends in General Lines or Columns,
 can be done "Staggered." The dancers act as though all dancers were
 close together side-by-side; however, they end on the original 8 spots on the
-floor. For example: Stagger [Double Pass Thru](../b1/double_pass_thru.md),
+floor. For example: Stagger [Double Pass Thru](../ms/double_pass_thru.md),
 
 > 
 > ![alt](stagger_1.png)
@@ -29,8 +29,8 @@ path
 > 
 
 Common calls used with the Stagger Concept include
-[Circulate](../b1/circulate.md),
-[Split Circulate](../b1/circulate.md),
+[Circulate](../ms/circulate.md),
+[Split Circulate](../ms/circulate.md),
 [Walk and Dodge](../plus/walk_and_dodge.md),
 [Peel and Trail](../a2/peel_and_trail.md),
 and [Trade By](../b2/trade_by.md).

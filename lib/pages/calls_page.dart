@@ -28,14 +28,8 @@ import '../common_flutter.dart';
 import 'page.dart';
 
 final _levelColor = {
-  LevelData.B1 : Color.B1,
-  LevelData.B2 : Color.B2,
   LevelData.MS : Color.MS,
-  LevelData.BMS : Color.BMS,
-  LevelData.SSD : Color.MS,
-  LevelData.MS26 : Color.MS,
   LevelData.PLUS : Color.PLUS,
-  LevelData.P26 : Color.PLUS,
   LevelData.A1 : Color.A1,
   LevelData.A2 : Color.A2,
   LevelData.ADV : Color.ADV,
@@ -100,7 +94,7 @@ class _CallsFrameState extends fm.State<CallsFrame> {
             //  Landscape gets a grid, portrait gets a list
               child: pp.Consumer2<TitleModel,TamState>(
                 builder: (context,titleModel,tamState,_) {
-                  final levelDatum = LevelData.find(tamState.level ?? 'ssd') ?? LevelData.SSD;
+                  final levelDatum = LevelData.find(tamState.level ?? 'ms') ?? LevelData.MS;
                   titleModel.title = levelDatum.name;
                   //  Get the initial list of calls to show
                   final showLevel = RegExp('(bms|adv|cha|all)').hasMatch(levelDatum.dir);

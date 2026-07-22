@@ -22,6 +22,7 @@ import 'package:flutter/material.dart' as fm;
 import 'package:flutter_resizable_container/flutter_resizable_container.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart' as pp;
+import 'package:taminations/animated_call.dart';
 
 import '../call_index.dart';
 import '../common_flutter.dart';
@@ -49,7 +50,7 @@ class SecondLandscapePage extends fm.StatelessWidget {
 
               //  TODO this duplicates the same code in animation_page _startModel
               var callEntry = callIndex.firstWhere((element) => element.link == tamState.link);
-              var tamList = callEntry.calls
+              var tamList = flattenAnimatedCallList(callEntry.calls)
                   .where((it) => DebugSwitch.showHiddenAnimations.enabled || !it.noDisplay).toList();
               var tam = tamList[0];
               if (tamState.animnum >= 0 && tamState.animnum < tamList.length)

@@ -5,8 +5,8 @@ From Parallel Waves:
 ***All Turn 1/2***.
 ***Centers [Cast Off 3/4](../ms/cast_off_three_quarters.md)***
 and ***the Very Centers [Trade](../b2/trade.md)***,
-while ***the Ends [U-Turn Back](../b1/turn_back.md)*** and
-***[Circulate](../b1/circulate.md) once***,
+while ***the Ends [U-Turn Back](../ms/turn_back.md)*** and
+***[Circulate](../ms/circulate.md) once***,
 ***turn the Star 1/2 ([Counter Rotate](../a2/box_counter_rotate.md) each Diamond 1/2)***,
 and ***[Flip the Diamond](../plus/flip_the_diamond.md)***.
 Finishes in Waves. 
