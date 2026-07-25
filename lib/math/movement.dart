@@ -157,7 +157,7 @@ class Movement extends Cloneable<Movement> {
   /// Return a new Movement with the final facing position turned
   /// by a specific radians
   Movement twist(double adif) {
-    if (adif.abs() < 0.01)
+    if (adif.abs() < 0.02)
       return clone();
     var a = brotate.angle(1.0) + adif;
     var p1 = Vector(0,0);
