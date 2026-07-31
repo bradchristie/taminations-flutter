@@ -21,6 +21,7 @@
 
 import '../../extensions.dart';
 import '../normalize_call.dart';
+import 'plus/pair_off.dart';
 import 'ms/double_pass.dart';
 import 'c1/recycle.dart';
 import 'a1/as_couples.dart';
@@ -562,6 +563,7 @@ abstract class CodedCall extends Call {
     'Out(er|sides?)(2|4|6)?'.ri: (name) => Outsides(name),
     'Ownthe.*'.ri: (name) => OwnTheDancers(name),
 
+    'PairOff'.ri: (name) => PairOff(name),
     'PartnerTag'.ri: (name) => PartnerTag(name),
     'PassandRoll(Your(Cross)?Neighbor)?'.ri: (name) => PassAndRoll(name),
     'Pass(In|Out)'.ri: (name) => PassInOut(name),
